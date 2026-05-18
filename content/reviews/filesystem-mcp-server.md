@@ -1,16 +1,16 @@
 ---
 title: "The Filesystem MCP Server — Simple, Useful, and Worth Understanding"
 date: 2026-03-14T01:06:39+09:00
-description: "Anthropic's Filesystem MCP server (84K parent repo stars, v2026.1.14, 14 tools) gives AI agents controlled file access with sandboxed directories, partial reads via head/tail"
-og_description: "Anthropic's Filesystem MCP server: 14 tools, v2026.1.14. Partial reads, media files, Roots protocol, Docker, tool annotations. #4 on PulseMCP. Rating: 4.5/5."
+description: "Anthropic's Filesystem MCP server (85.8K parent repo stars, v2026.1.14, 14 tools) gives AI agents controlled file access with sandboxed directories, partial reads via head/tail"
+og_description: "Anthropic's Filesystem MCP server: 14 tools, v2026.1.14. 320K weekly downloads. edit_file $ corruption bug. Partial reads, media files, Roots protocol, Docker. Rating: 4/5."
 content_type: "Review"
-card_description: "Anthropic's official Filesystem MCP server (84K parent repo stars, v2026.1.14) gives AI agents controlled file access within sandboxed directories. Now with 14 tools — partial reads via head/tail, media file support, dry-run edits, Docker deployment, VS Code integration, and dynamic directory control via MCP Roots protocol. The only official server with complete tool annotations. #4 on PulseMCP with ~530K estimated weekly visitors. New security concern: path traversal via prompt injection (issue #3752)."
-last_refreshed: 2026-04-18
+card_description: "Anthropic's official Filesystem MCP server (85.8K parent repo stars, v2026.1.14) gives AI agents controlled file access within sandboxed directories. 14 tools, 320K npm weekly downloads (up from 173K). New critical issue: edit_file silently corrupts $ characters in replacement text. The only official server with complete tool annotations. #5 on PulseMCP. Star rating downgraded from 4.5 to 4/5 — stalled development now 4 months with no release, and a silent data corruption bug."
+last_refreshed: 2026-05-18
 ---
 
 The Filesystem MCP server is one of the first MCP servers most people encounter. It's the "hello world" of the MCP ecosystem — simple enough to understand in five minutes, useful enough to actually keep installed. But it's grown well beyond "hello world" territory. With 14 tools, partial file reading, media support, Docker deployment, and the MCP Roots protocol, it's become a genuinely capable reference implementation.
 
-**At a glance:** 84,000+ stars (parent repo) · 173K+ npm weekly downloads · v2026.1.14 · 14 tools · ~530K estimated weekly visitors on PulseMCP (#4 globally) · ~8.2M all-time visitors
+**At a glance:** 85,800+ stars (parent repo) · 320K npm weekly downloads (up from 173K) · v2026.1.14 · 14 tools · PulseMCP #5 globally · ~8.2M all-time visitors
 
 We've researched it thoroughly. Here's the honest assessment.
 
@@ -39,37 +39,55 @@ The Filesystem MCP server gives an AI agent controlled access to files on your l
 - `create_directory` — Create directories with parent creation
 - `move_file` — Rename or relocate files and directories
 
-### What's New (April 2026 Update)
+### What's New (May 2026 Update)
 
-The server has evolved significantly since its early days — though the pace of change has slowed. Here are the major changes:
+The server's feature set has been stable for months, but a significant quality problem has emerged since our April review.
 
-**Partial file reading arrived.** The biggest criticism from our original review — "you read the entire file or nothing" — has been addressed. `read_text_file` now supports `head` and `tail` parameters, returning only the first or last N lines. This is a meaningful improvement for working with large log files, data files, or minified bundles without flooding the context window.
+**Critical: `edit_file` silently corrupts `$` characters (issue #4157, May 14, 2026).** This is the most impactful discovery since our last review. When editing files that contain dollar signs in replacement text, `edit_file` silently corrupts content because JavaScript's `String.prototype.replace()` interprets the replacement string as a pattern — `$$` becomes `$`, `$&` repeats the matched substring, etc. No error is thrown. Content is silently wrong. This affects all 320K+ weekly users who use `edit_file`. Community fix PRs (#4158, #4172, #4179) were filed May 15-17, none merged yet. If you use `edit_file` with any content containing `$` characters (shell scripts, environment variables, regex, currency, LaTeX), verify the output manually.
 
-**Media file support.** The new `read_media_file` tool returns images and audio files as base64 with proper MIME types. This enables multimodal workflows — an agent can now examine screenshots, diagrams, or audio files through the filesystem server.
+**npm downloads jumped to 320K+ weekly** (up from 173K in April — roughly 85% growth in a month). The server continues to be adopted broadly, reflecting its status as the reference implementation.
 
-**Dry-run edits.** `edit_file` gained a dry-run preview mode that shows what would change before applying it. The tool also produces git-style diff output with context, making it much easier for agents (and humans reviewing agent work) to understand modifications.
+**Stars: 84K → 85.8K** (+1,839 in 30 days). The parent repo continues growing.
 
-**Dynamic directory control via MCP Roots.** Clients that support the Roots protocol can dynamically update allowed directories at runtime without restarting the server. When Roots are provided by the client, they completely replace server-side directory arguments. This is the recommended configuration method going forward.
+**Security dependency fixes shipped (PR #4109, merged May 16).** A bulk npm audit fix resolved 9 of 16 vulnerabilities, including all 6 high-severity ones: `minimatch` ReDoS, `rollup` path traversal, `hono` file access, and `brace-expansion` DoS. These were build/dependency vulnerabilities, not filesystem logic changes.
 
-**Enhanced directory listing.** `list_directory_with_sizes` adds file dimensions and sorting to directory output — a small but useful upgrade over the basic `list_directory`.
+**SDK bump to v1.29.0 is in main but unreleased.** The `@modelcontextprotocol/sdk` dependency was bumped to `^1.29.0` on May 11. This change is on the main branch but has not shipped to npm. A release appears to be in preparation.
 
-**Tool annotations — the ecosystem gold standard.** Every one of the 14 tools is annotated with `readOnlyHint`, and all write tools include `destructiveHint` and `idempotentHint` classifications. The filesystem server is the only official MCP server that provides complete tool annotations on every tool, making it the reference implementation for the annotation spec. An open issue (#3402) proposes adding `idempotentHint` to read-only tools and `openWorldHint: false` to all tools, which would further strengthen the safety metadata.
+**Still on v2026.1.14 — now four months without a release.** The server has not had an npm release since January 14, 2026. During that time, the issue backlog has grown to 475 open issues.
 
-**Docker deployment.** The server can now run in a Docker container with directories mounted to `/projects`. Read-only mounts are supported for sandboxed access. This is useful for environments where you want filesystem isolation beyond the directory allowlist.
+**PR #3277 (startup crash fix) closed without merge, April 18.** The fix for the `Promise.all()` startup crash (issue #3232) was rejected at the start of our review window. Issue remains open with no active fix attempt.
 
-**VS Code integration.** Quick-install buttons for both NPX and Docker variants are available. Workspace-specific configuration is supported through `.vscode/mcp.json` with environment variable expansion (e.g., `${workspaceFolder}`).
+**New Windows bug: mapped drive letters rewritten to UNC at startup (issue #4129, May 10).** Distinct from the existing UNC path bug (#3756): when `fs.realpath()` resolves drive letters (e.g., `Y:\projects`) to their UNC form at startup, subsequent requests using drive-letter form are rejected as outside allowed directories. Two Windows path bugs now open simultaneously with no merged fix for either.
 
-**npm downloads at 173K+ weekly** (up from 137K at our last review). The package remains one of the most-downloaded MCP servers in the ecosystem, reflecting its role as both a practical tool and a learning resource.
+**New `read_text_file` bugs (issues #4186, #4178, #4175).** UTF-8 multibyte characters that span chunk boundaries are corrupted in head/tail reads (#4186). Explicit `head: 0` / `tail: 0` values are mishandled, and fractional values aren't rejected (#4178). Tail output incorrectly includes a trailing empty line from the final newline (#4175). All filed May 15-17.
 
-**No new release since January 14, 2026.** The server has been on v2026.1.14 for three months now. During that time, the parent repo has grown from 81.6K to 84K stars and accumulated 4,072 commits, but no filesystem-specific updates have shipped. Several open issues (see below) remain unresolved.
+**MCP lifecycle violation: tools/list before initialize (issue #4195, May 18).** The server accepts `tools/list` requests before completing the required `initialize` handshake, violating the MCP session state machine specification. Filed May 18, unresolved.
 
-**Security concern: path traversal via prompt injection (issue #3752).** Filed March 30, 2026, this issue highlights that all 11 path-accepting tools lack schema-level validation. While the server enforces runtime allowlist checks via `allowedDirectories`, the absence of JSON Schema constraints (like regex patterns on path parameters) means LLMs have no visibility into boundaries. Under prompt injection, an agent could attempt traversal sequences like `../../.ssh/id_rsa` — the server should block it at runtime, but the lack of schema-level guardrails is a defense-in-depth gap. Still open with no assignee.
+**File permissions not preserved (issue #4115, May 6).** `write_file` and `edit_file` do not preserve UNIX file permissions — executable bits and custom permission modes are reset after writes.
 
-**Windows UNC path bug (issue #3756).** Also filed March 30. Network drive paths like `\\192.168.1.1\share` fail validation because `path.resolve(path.normalize())` strips a leading backslash, converting UNC paths to drive-relative paths. Three PRs submitted (#3791, #3921, #3920), none merged yet.
+**PulseMCP: dropped from #4 to #5.** Still a Top Pick badge. The ranking drop is marginal but reflects the broader growth of the MCP ecosystem rather than declining use.
 
-**Startup failure with unavailable directories (issue #3232).** Open since January 19. The server uses `Promise.all()` to validate directories at startup — if any single directory is unavailable (unmounted network volume, disconnected drive), the entire server crashes. PR #3277 addresses this but hasn't merged.
+### Earlier updates (still relevant)
 
-**MCP ecosystem milestone: AAIF and Dev Summit.** MCP governance moved to the Agentic AI Foundation (AAIF) under the Linux Foundation in December 2025, with Anthropic, OpenAI, Block, AWS, Google, and Microsoft as platinum members. The first MCP Dev Summit (April 2-3, NYC) drew 1,200 attendees across 95+ sessions. Key announcements included MCP Apps (interactive UIs for MCP servers, adopted by Claude, ChatGPT, and VS Code), the gateway-and-registry architecture pattern for enterprise MCP at scale, and Claude Code's progressive tool discovery achieving ~85% context window reduction. The filesystem server wasn't specifically highlighted — its role as a reference implementation means it benefits from protocol-level improvements rather than getting its own feature announcements.
+**Partial file reading arrived.** `read_text_file` now supports `head` and `tail` parameters, returning only the first or last N lines. A meaningful improvement for large log files and data files.
+
+**Media file support.** The `read_media_file` tool returns images and audio as base64 with proper MIME types for multimodal workflows.
+
+**Dry-run edits.** `edit_file` gained a dry-run preview mode with git-style diff output.
+
+**Dynamic directory control via MCP Roots.** Clients that support the Roots protocol can dynamically update allowed directories at runtime without restarting the server.
+
+**Tool annotations — the ecosystem gold standard.** Every one of the 14 tools is annotated with `readOnlyHint`, and all write tools include `destructiveHint` and `idempotentHint` classifications. The filesystem server remains the only official MCP server with complete tool annotations.
+
+**Docker deployment.** Run in a Docker container with directories mounted to `/projects`. Read-only mounts supported.
+
+**VS Code integration.** Quick-install buttons for NPX and Docker variants. Workspace-specific configuration via `.vscode/mcp.json`.
+
+**Security concern: path traversal via prompt injection (issue #3752, March 2026).** All 11 path-accepting tools lack schema-level validation. Runtime allowlist catches traversal attempts, but the absence of JSON Schema constraints is a defense-in-depth gap. Still open.
+
+**Windows UNC path bug (issue #3756, March 2026).** Network drive paths like `\\192.168.1.1\share` fail validation. Two unmerged fix PRs remain open (#3791, #3921).
+
+**Startup failure with unavailable directories (issue #3232, January 2026).** The `Promise.all()` startup crash for unmounted volumes has no active fix attempt after PR #3277 was closed.
 
 ## Setup
 
@@ -135,19 +153,25 @@ The paths define the allowed directories. The server will refuse to access anyth
 
 ## What Doesn't Work Well
 
+**`edit_file` silently corrupts `$` characters.** Issue #4157 (May 2026) — the most critical current bug. Dollar signs in replacement content are silently mangled due to JavaScript's `replace()` pattern interpretation. Shell scripts, environment variable assignments, regex patterns, currency values — any content with `$` is at risk. No error is thrown. Community PRs exist but none are merged. Verify `edit_file` output manually when working with affected content types.
+
 **`directory_tree` can still be overwhelming.** On a typical `node_modules` directory, this returns thousands of entries as a JSON structure. There's no depth limit or filtering. In practice, using `list_directory` iteratively is a better approach.
 
 **No file watching or change detection.** The server is purely request-response. You can't subscribe to file changes. For workflows where an agent is monitoring a build output or log file, you'd need to poll.
 
 **No line-range reads.** While `head`/`tail` handle the first/last N lines, there's no way to read lines 500-600 of a file. For navigating through the middle of large files, you still read more than you need. Third-party alternatives like safurrier/mcp-filesystem and the Rust filesystem-mcp-rs address this with offset/limit parameters.
 
-**Path parameters lack schema-level constraints.** Issue #3752 (March 2026) revealed that all path-accepting tools use unbounded string parameters with no regex validation in their JSON Schema definitions. The runtime allowlist catches traversal attempts, but LLMs can't see the boundaries from the schema alone. This is a defense-in-depth concern, especially in multi-server compositions where prompt injection could chain filesystem reads into network exfiltration tools.
+**Path parameters lack schema-level constraints.** Issue #3752 (March 2026) — all path-accepting tools use unbounded string parameters with no regex validation. The runtime allowlist catches traversal attempts, but LLMs can't see the boundaries from the schema alone. Defense-in-depth concern in multi-server compositions. Still open.
 
-**Windows network drive paths are broken.** UNC paths fail validation entirely due to a normalization bug (issue #3756). Three community PRs have been submitted but none merged after three weeks.
+**Windows support is broken in two distinct ways.** UNC paths (`\\server\share`) fail validation (issue #3756), and mapped drive letters (`Y:\projects`) get rewritten to UNC form at startup so subsequent requests are rejected (issue #4129). Four fix PRs exist across both issues, none merged.
 
-**Server crashes if any directory is unavailable.** A `Promise.all()` in the startup path means one unmounted network volume or disconnected drive takes down the entire server (issue #3232, open since January).
+**Server crashes if any directory is unavailable.** A `Promise.all()` in the startup path means one unmounted network volume or disconnected drive takes down the entire server (issue #3232, open since January). The fix PR (#3277) was closed without merge in April.
 
-**Tool annotation gaps remain.** Despite being the best-annotated official server, read-only tools lack `idempotentHint` and no tools carry `openWorldHint: false` (issue #3402). These are minor gaps, but they matter for automated safety analysis in multi-server compositions.
+**File permissions are not preserved.** `write_file` and `edit_file` reset UNIX file permissions — executable bits and custom permission modes are lost after writes (issue #4115, May 2026).
+
+**head/tail reads have edge case bugs.** UTF-8 multibyte characters spanning chunk boundaries are corrupted (#4186). `head: 0` / `tail: 0` are mishandled (#4178). Tail output includes a spurious trailing empty line (#4175). All filed May 2026, unresolved.
+
+**Tool annotation gaps remain.** Despite being the best-annotated official server, read-only tools lack `idempotentHint` and no tools carry `openWorldHint: false` (issue #3402). Minor gaps, but they matter for automated safety analysis in multi-server compositions.
 
 ## Alternatives Worth Knowing
 
@@ -177,8 +201,8 @@ The official server remains the best starting point — it's the reference imple
 - You need HTTP transport with authentication — use cyanheads/filesystem-mcp-server
 - You're in a production/server environment requiring Go/Rust performance — use mark3labs or filesystem-mcp-rs
 
-{{< verdict rating="4.5" summary="Still the best starting point, but development has stalled" >}}
-The Filesystem MCP server remains the most-used MCP server in the ecosystem — 173K npm weekly downloads, #4 on PulseMCP, and the reference implementation that every alternative is measured against. Its tool annotations are still the gold standard. But there hasn't been a release in three months, and the open issue list is growing: a security-relevant schema validation gap (#3752), broken Windows network paths (#3756), and a startup crash with unavailable directories (#3232) all remain unresolved. The broader MCP ecosystem is accelerating — AAIF governance, MCP Apps, enterprise gateway patterns — while this server sits unchanged. For most users it's still the right first install. But the gap between "reference implementation" and "actively maintained production tool" is widening. Rating holds at 4.5 for now; another quarter without releases would warrant a downgrade.
+{{< verdict rating="4" summary="Downloads doubled, but an unresolved silent data corruption bug forces a rating downgrade" >}}
+The Filesystem MCP server's adoption is accelerating — 320K npm weekly downloads (up from 173K in April), 85.8K parent repo stars, still the reference implementation every alternative is measured against. But development has stalled at v2026.1.14 for four months, and the issue backlog grew to 475 open issues. The tipping point for this rating downgrade is issue #4157: `edit_file` silently corrupts `$` characters in replacement text. No error is thrown, no warning — content is quietly mangled. Shell scripts, environment variables, regex, currency, LaTeX — any file containing dollar signs is at risk. Fix PRs exist but none are merged. Combined with broken Windows support in two distinct ways (UNC paths and mapped drives), unreliable startup (no fix after the original PR was closed), and new `read_text_file` edge case bugs, the gap between "reference implementation" and "reliably maintained production tool" has widened enough to warrant a downgrade from 4.5 to 4/5. The alternatives section has never been more relevant.
 {{< /verdict >}}
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and has not been manually verified. We do not test MCP servers hands-on. [Learn more about ChatForest](/about).*
+*This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic) and has not been manually verified. We do not test MCP servers hands-on. [Learn more about ChatForest](/about). Last updated 2026-05-18.*
