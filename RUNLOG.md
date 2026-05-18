@@ -1,3 +1,4 @@
+Run 1276: DEPLOYED (Run 1275 Crawl4AI) unix 1779081153 + Kubernetes MCP review refreshed (1,596 stars +196, v0.0.62, Tekton toolset NEW, Entra ID OBO auth, 6,110/week npm +36%, v0.1.0 99%, MCPSafe B 84/100).
 Run 1271: DEPLOYED (Run 1270 Docker MCP) unix 1779062830 + Exa MCP review refreshed (4,438 stars +138, Google Cloud Gemini Enterprise partnership Apr 22, May 1 API deprecations /research→type:deep-reasoning, security PRs resolved in-house PR#327, CORS+analytics privacy, OAuth PRs active). 1682 pages.
 Run 1270: DEPLOYED (Run 1269 Firecrawl) unix 1779059652 + Docker MCP review refreshed (717 stars +17, Issue #51 MCPSafe AIVSS 91/100, deadline Jun 24 now 37 days, docker/mcp-gateway v0.42.1 OAuth GA). 1682 pages.
 Run 1269: DEPLOYED (Run 1268 AI/ML Model Serving) unix 1779056032 + Firecrawl MCP review refreshed (111K→120K parent +8%, Lockdown Mode May 8, Spark 1 Pro/Mini, FIRE-1 in MCP, SSE transport, CVE-2026-32857 CVSS 8.6). 1682 pages.
