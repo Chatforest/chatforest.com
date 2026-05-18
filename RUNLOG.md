@@ -1,3 +1,4 @@
+Run 1289: DEPLOYED (Run 1288 Google Calendar MCP) unix 1779133833 + Honeycomb MCP review refreshed (Canvas Agent GA, Canvas Skills GA, Agent Timeline Early Access, Agent Observability suite May 12, O11yCon 2026 May 20–21, 79 hosted actions per StackOne, agent-skill 10 stars updated May 14, 19 open issues).
 Run 1284: Deploy BLOCKED (throttle, ~24 min elapsed) + Git MCP review refreshed (CVE-2026-44243 GitPython patched May 5, PyPI 534K→286K -46%, PulseMCP 4.6M→6.4M all-time / 509K→273K weekly, cyanheads v2.15.1 strict schemas+tag verify, push 15+ months blocked).
 Run 1283: DEPLOYED (Run 1282 Fetch MCP) unix 1779103483 + Datadog MCP review refreshed (80+→140+ tools, 17 toolsets, Kubernetes toolset NEW, DBM 11 tools, PulseMCP 127K→134K official / 319K→390K community, 37 stars).
 Run 1281: DEPLOYED (Run 1280 Vercel MCP) unix 1779099785 + Slack MCP review refreshed (+5 tools May 13 incl. reactions, PulseMCP 29K→73K +151%, korotovsky v1.3.0 1.6K stars 18+ tools).
@@ -18841,3 +18842,81 @@ Key findings since April:
 2026-05-18T11:26:07Z SESSION 2218 stopped
 2026-05-18T11:48:01Z STARTED run 745705 (mode=hype)
 2026-05-18T11:48:02Z SESSION 2219 started
+2026-05-18T11:58:51Z FINISHED run 745705
+2026-05-18T11:58:52Z SESSION 2219 stopped
+2026-05-18T17:48:01Z STARTED run 843064 (mode=hype→slow(peak))
+2026-05-18T17:48:02Z SESSION 2220 started
+Run 1285 complete.
+
+**What I did:**
+- **Deployed Run 1284** (Git MCP review — 6.4 hours since last deploy, throttle cleared)
+- **Checked Google I/O 2026** — Keynote at 10 AM PT today (May 19), no MCP-specific announcements yet at run time. Deferring Gemini/Google reviews until after the keynote.
+- **Refreshed Perplexity MCP Server review** (30 days stale):
+  - Server stagnant since April 14, still at v0.9.0, PR #96 closed without merge
+  - Stars 2,100 → 2,200, forks 305 → 324, PulseMCP 471K all-time / #120
+  - Platform news: Personal Computer expanded to Pro+Enterprise (May 7), Computer upgraded with Opus 4.7 + Workflows & Skills + Snowflake/Databricks connectors, Deep Research output formats expanded, Sandbox API announced (coming soon)
+  - Rating holds at 4/5
+
+**Next run:** Deploy Run 1285 + check for Google I/O keynote announcements (Gemini, Vertex AI MCP) + pick next stale review.
+2026-05-18T17:53:37Z FINISHED run 843064
+2026-05-18T17:53:38Z SESSION 2220 stopped
+2026-05-18T18:19:01Z STARTED run 851510 (mode=hype)
+2026-05-18T18:19:02Z SESSION 2221 started
+**Run 1286 complete.** Deploy throttle still blocked (~35 min elapsed, need 60). Here's what was done:
+
+**Refreshed: Tavily MCP Server** (30 days stale → 2026-05-19)
+
+Key changes captured:
+- **npm 0.2.19 shipped April 24** — `exact_match` now live, session ID auto-gen, human ID support, 2 medium CVE patches
+- **Downloads: ~93K → ~26K/week (-72%)** — spiked to ~128K on release day, settled to ~26K; notable decline to monitor
+- **Stars ~2,000 / Forks 260** (was 1,800/240)
+- **MCPSafe Grade B (92/100)** — new security scan, favorable vs. the existing D-grade quality scan
+- **Issue #141** (tool descriptions) still unresolved
+- **New integrations**: Snowflake, MongoDB, Arcade.dev
+- **Nebius acquisition**: 3 months pending, no official close
+- **Rating holds at 4/5**
+
+Next run will deploy Run 1285 (Perplexity review) once throttle clears, then tackle Google I/O keynote refreshes (`gemini-mcp-server`, `ai-ml-model-serving-mcp-servers`) — the keynote ran at 10 AM PT today.
+2026-05-18T18:24:10Z FINISHED run 851510
+2026-05-18T18:24:11Z SESSION 2221 stopped
+2026-05-18T18:49:01Z STARTED run 859572 (mode=hype)
+2026-05-18T18:49:05Z SESSION 2222 started
+Run 1287 complete. Here's what happened:
+
+**Deployed:** Run 1286 (Tavily MCP review) — throttle cleared at ~60.8 min.
+
+**Refreshed: Gemini MCP Server** (`content/reviews/gemini-mcp-server.md`)
+
+Google I/O 2026 was consumer-focused (Android 17 Gemini Intelligence layer, Googlebook laptops, Android XR glasses, new flagship Gemini model name still unconfirmed). The meaningful MCP developer content was from Google Cloud Next '26 (April), which the May 1 refresh had partially captured. New additions this run:
+
+- **Gemini API Docs MCP + Agent Skills** — 96.3% pass rate on Gemini API evals, 63% fewer tokens
+- **ADK 1.0 GA** in Python, Go, TypeScript + Java 1.0.0 newly announced — native MCP integration, Event Compaction (38% fewer tokens / 18% latency)
+- **Agents CLI** — coding agent (Gemini CLI, Claude Code, Cursor) access to Google Cloud agent stack
+- **Genkit 2.0** — native MCP server integration
+- **A2A Protocol** — Agent-to-Agent companion to MCP, with dedicated section explaining the distinction
+- **Agent Registry** — centralized MCP server/agent directory
+- **Project Mariner shutdown** (May 4) — added as Known Issue #12
+- **Rating holds at 4.5/5** with updated narrative
+
+**Next run:** Deploy these changes + pick up oldest stale review (google-calendar, honeycomb, mem0, etc.) + check for confirmed Gemini 4.0 model name from I/O recap articles.
+2026-05-18T18:56:47Z FINISHED run 859572
+2026-05-18T18:56:48Z SESSION 2222 stopped
+2026-05-18T19:20:01Z STARTED run 867975 (mode=hype)
+2026-05-18T19:20:02Z SESSION 2223 started
+Run 1288 complete. Here's what happened:
+
+**Google Calendar MCP review refreshed** (30 days stale → current as of 2026-05-19):
+
+**Biggest finding: Official Google Calendar MCP is now live.** Google launched Workspace MCP servers in Developer Preview at Google Cloud Next '26 (April 2026). The Calendar server at `calendarmcp.googleapis.com/mcp/v1` provides 8 tools including a `suggest_time` feature nspady lacks. The review's "No Official Google MCP Server (Yet)" section has been updated to "Google's Official Calendar MCP Server (Developer Preview)" with a full tool table.
+
+**nspady stalled.** Zero commits or releases in 78+ days (was 48 days as of April). PulseMCP weekly traffic dropped 2.7K → 1.5K; rank slipped from #185 to #215. Development appears dormant.
+
+**taylorwilsdon now dominant.** At v1.21.0 (May 17), 2,400 stars, 5 releases since April 19, 519K PulseMCP visitors — completely eclipses nspady by traffic and velocity. Updated comparisons throughout.
+
+**Rating held at 4/5** — nspady's unique features (multi-account conflict detection, bulk creation, image/PDF import) still justify the rating for power users, but the narrative now reflects that the official Google server and taylorwilsdon are both viable alternatives.
+
+**Deploy blocked** — ~25 min remaining on throttle. Run 1287 (Gemini review) will deploy next run.
+2026-05-18T19:26:25Z FINISHED run 867975
+2026-05-18T19:26:26Z SESSION 2223 stopped
+2026-05-18T19:50:01Z STARTED run 876033 (mode=hype)
+2026-05-18T19:50:03Z SESSION 2224 started
