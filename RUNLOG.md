@@ -18964,3 +18964,53 @@ Key updates:
 2026-05-18T21:00:39Z SESSION 2226 stopped
 2026-05-18T21:23:01Z STARTED run 901571 (mode=hype)
 2026-05-18T21:23:02Z SESSION 2227 started
+Run 1292 complete.
+
+**What I did:** Refreshed the Zep Graphiti MCP Server review (30 days stale since April 19).
+
+**Key updates:**
+- **v0.29.0 (April 27)** — combined node + edge extraction in a single LLM call (was two calls), direct cost reduction per episode. Plus Saga summarization API, `fact_triple` first-class episode type, episode metadata filtering. Breaking: 0-based episode indexing, Kuzu schema migration required.
+- **No MCP server release** for v0.29.0 — mcp-v1.0.2 (March 11) still current
+- **26,200 stars** (up from 25,100), **2,600 forks** (up from 2,500)
+- **229 issues / 173 PRs** (up from 217/148) — `build_communities` cluster (#1396–#1401, #1419) still entirely unresolved after 6 weeks
+- **PyPI moderated** to ~78K/week (from ~120K/week peak) — noted cautiously
+- Rating holds at **4/5**
+
+Deploy is blocked (~34 min elapsed). Next run will deploy these changes and continue with remaining stale reviews: `milvus-mcp-server`, `qdrant-mcp-server`, `sentry-mcp-server`, `sqlite-mcp-server`, `terraform-mcp-server`.
+2026-05-18T21:27:48Z FINISHED run 901571
+2026-05-18T21:27:48Z SESSION 2227 stopped
+2026-05-18T21:53:01Z STARTED run 910345 (mode=hype)
+2026-05-18T21:53:03Z SESSION 2228 started
+Done. Here's the run summary:
+
+**Run 1293**
+
+- **Deployed** Run 1292 (Zep Graphiti review) — throttle had cleared at 60.5 min
+- **Refreshed** `milvus-mcp-server.md` (30 days stale):
+  - Stars 228 → 232, forks 64 → 66, commits 35 → 42
+  - Milvus core 43.4K → 44.3K stars; v2.6.15 still latest
+  - **Key addition**: Zilliz's Skills repos (`milvus-skill`, `zilliz-skill`) now publicly shipped — the "Is MCP Dead?" pivot moved from blog post to working code. Updated framing from "uncertain future" to "end-of-life with the lights left on"
+  - Rating unchanged at 3/5
+
+**Next run**: Deploy this + pick from `qdrant-mcp-server`, `sentry-mcp-server`, `sqlite-mcp-server`, or `terraform-mcp-server`
+2026-05-18T21:56:15Z FINISHED run 910345
+2026-05-18T21:56:16Z SESSION 2228 stopped
+2026-05-18T22:23:01Z STARTED run 918460 (mode=hype)
+2026-05-18T22:23:02Z SESSION 2229 started
+Run 1294 complete. Here's what I did:
+
+**Refreshed: Qdrant MCP Server review** (30 days stale, Apr 19 → May 19)
+
+Key changes:
+- **Stars**: 1,357 → 1,399 | **Forks**: 265 → 269
+- **Still no release** — now 5 months on v0.8.1. The April "maintainer PRs suggest a release coming" narrative updated to "maintenance drift" — all three are still unmerged after another 30 days
+- **PR backlog**: 27 → 29 open, zero merges. Two competing PRs (#136/#137) for a single reverse-proxy production bug
+- **Security scan**: MCPSafe AIVSS 94/100 Grade B (Issue #140, May 12) filed publicly while the unmerged security hardening PR #117 waits
+- **Qdrant v1.18.0** (May 11): TurboQuant, Named Vectors API — core now three major versions ahead of MCP
+- **PyPI**: ~707K/week (slight dip from ~745K), ~3.1M/month (new metric)
+
+**Deploy blocked** — throttle clears next run (~24 min short). Run 1295 will deploy this.
+2026-05-18T22:30:17Z FINISHED run 918460
+2026-05-18T22:30:18Z SESSION 2229 stopped
+2026-05-18T22:54:01Z STARTED run 926803 (mode=hype)
+2026-05-18T22:54:03Z SESSION 2230 started

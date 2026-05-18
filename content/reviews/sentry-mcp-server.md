@@ -2,18 +2,18 @@
 title: "The Sentry MCP Server — Debug Production Errors Without Leaving Your Editor"
 date: 2026-03-14T02:14:39+09:00
 description: "Sentry's official MCP server brings error tracking, issue investigation, and AI-powered root cause analysis directly into your coding agent."
-og_description: "Sentry's official MCP server lets AI agents investigate production errors with OAuth auth and AI-powered analysis. 645 stars, v0.32.0 with Device Code Flow auth, replay/profile tools, and multi-agent observability. Rating: 4/5."
+og_description: "Sentry's official MCP server lets AI agents investigate production errors with OAuth auth and AI-powered analysis. 694 stars, v0.33.0, visual snapshot debugging, search consolidation, and 85K weekly npm downloads. Rating: 4/5."
 content_type: "Review"
-card_description: "Sentry's first-party MCP server for AI-assisted debugging. 645 stars, 103 forks, 963 commits. OAuth + Device Code Flow authentication, ~20 tools, Seer AI integration, replay details, profile support, and v0.32.0."
+card_description: "Sentry's first-party MCP server for AI-assisted debugging. 694 stars, 107 forks, 1,000+ commits. OAuth + Device Code Flow, ~20 tools, Seer AI integration, snapshot inspection, and v0.33.0."
 categories: ["/categories/observability-monitoring/"]
-last_refreshed: 2026-04-19
+last_refreshed: 2026-05-19
 ---
 
 The Sentry MCP server is Sentry's official tool for connecting AI coding agents to your error tracking data. Instead of switching to the Sentry dashboard, copying stack traces, and pasting them back into your editor, your agent can pull issue details, search events, and even invoke Sentry's AI (Seer) for root cause analysis — all from your IDE.
 
-It's first-party. Sentry builds and maintains it at [getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp). With 645 GitHub stars, 103 forks, 963 commits, and ~2.1K weekly PulseMCP visitors, it has real and growing adoption. And the killer feature: a hosted remote server at `mcp.sentry.dev` with OAuth 2.0 authentication, so there's nothing to install and no long-lived API tokens on disk. As of v0.31.0, the stdio transport also supports browser-based Device Code Flow authentication — no manual token generation required.
+It's first-party. Sentry builds and maintains it at [getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp). With 694 GitHub stars, 107 forks, 1,000+ commits, and 85K weekly npm downloads, it has real and accelerating adoption. And the killer feature: a hosted remote server at `mcp.sentry.dev` with OAuth 2.0 authentication, so there's nothing to install and no long-lived API tokens on disk. As of v0.31.0, the stdio transport also supports browser-based Device Code Flow authentication — no manual token generation required.
 
-**At a glance:** 645 stars / 103 forks / 963 commits / v0.32.0 (April 14, 2026) / ~20 tools / ~2.1K weekly PulseMCP visitors
+**At a glance:** 694 stars / 107 forks / 1,000+ commits / v0.33.0 (April 26, 2026) / ~20 tools / 85K weekly npm downloads
 
 This is the first observability tool we've reviewed, and it sets a high bar for what "first-party MCP server" should look like. At v0.32.0, the team is shipping fast — two releases in a month, with new replay and profiling capabilities expanding the debugging surface.
 
@@ -88,29 +88,27 @@ That's it. Your client opens a browser window, you authenticate via your existin
 
 As of v0.31.0, the stdio transport supports **Device Code Flow** (RFC 8628) for Sentry Cloud users — run `npx @sentry/mcp-server auth login` and authenticate in your browser instead of manually creating tokens. Credentials are cached at `~/.sentry/mcp.json`. For self-hosted Sentry, you still need a User Auth Token via the `SENTRY_AUTH` environment variable.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
 
-The Sentry MCP server shipped v0.31.0 (March 27) and v0.32.0 (April 14) since our last update, adding significant new capabilities to the debugging surface.
+The Sentry MCP server shipped v0.33.0 (April 26, 2026) since our last update, and main-branch development since then has added two new tool categories and a significant API consolidation.
 
-**Device Code Flow authentication (v0.31.0).** The stdio transport now supports [RFC 8628 Device Code Flow](https://github.com/getsentry/sentry-mcp/commit/bdaa60c) — run `auth login` and authenticate in your browser instead of manually generating API tokens. Credentials cache at `~/.sentry/mcp.json` with `auth logout` and `auth status` subcommands. Co-authored by David Cramer and Claude Opus 4.6, this eliminates the biggest friction point for stdio users on Sentry Cloud.
+**v0.33.0: OAuth stability and self-hosted access (April 26).** The biggest operational change: a new `--insecure-http` flag for self-hosted Sentry instances on isolated networks — this resolves [issue #891](https://github.com/getsentry/sentry-mcp/issues/891), previously listed under limitations. OAuth robustness continues to improve: cascading sign-outs across concurrent sessions are now prevented, premature token invalidation detection was added, and OAuth sign-out diagnostics now classify scheduled expiry vs. unexpected revocation. A client family classification and user tagging system was added for telemetry. Profile detail lookups were parallelized for lower latency.
 
-**Replay tools expanded.** A new [`get_replay_details`](https://github.com/getsentry/sentry-mcp/commit/) tool (April 3) provides comprehensive replay inspection with session facts, activity timelines, and related issue recommendations. Replay summaries now surface directly in `get_issue_details` (April 8), and replay lookups route correctly through org regions.
+**Snapshot inspection tools (unversioned, May 2026).** Two new tools — `get_latest_base_snapshot` and `get_snapshot_details` — allow AI agents to debug CI visual regression test failures. Comparison-aware responses return structured head/base/diff images. This extends the server's debugging surface from runtime errors into the development and CI pipeline.
 
-**Profile support added.** `get_profile_details` (March 26) fetches raw profile chunk data with improved formatting for Java/Android frames. V0.32.0 expanded profile and replay support into existing event search tools (April 16), and split V1/V2 profile sample schemas to fix parsing errors (April 17).
+**Search tool consolidation (April 28).** Six separate search and list tools were merged into three unified tools. This is a meaningful API surface reduction — agents have fewer tools to choose among for common investigation workflows. LLM routing vocabulary was also updated to improve discoverability.
 
-**Tracemetrics dataset support (April 15).** Span metrics are now queryable through the event search tools via the tracemetrics dataset, enabling raw metric aggregate expressions.
+**Seer Autofix migrated to explorer mode (May 13).** The autofix tool now operates in Seer's explorer mode; generated analysis output is now labeled with XML tags for downstream agent recognition, improving structured output parsing.
 
-**OAuth hardening continued.** Scoped MCP resources preserved through OAuth flow with RFC 8707 resource parameter support (April 14). Stale OAuth grants missing refresh tokens are now detected and revoked (April 6). The upstream token refresh logic was simplified by removing ~450 lines of distributed KV lock code (March 23), and OAuth failure diagnostics now classify expected user denials vs. unexpected errors (April 10).
+**Search correctness fix (May 15).** A bug where `search_events` silently dropped custom tag predicates in structured trace queries was fixed — a direct correctness issue that affected users building agent workflows around trace-based investigation.
 
-**Schema resilience.** Relaxed upstream response schemas across OAuth, replay, release, and flamegraph parsers to match actual Sentry API behavior (April 13). Nullable `firstSeen`/`lastSeen` fields now accepted on issues (April 17). User geo data now included in formatted event output (April 12).
+**OpenTelemetry alignment.** MCP telemetry attributes now align with OpenTelemetry MCP semantic conventions, and GenAI tool argument attributes are captured with dynamic MCP tool-call args. A pending PR (#978) would add `mcp.session.id` on MCP spans for cross-call session correlation.
 
-**Issue management improvements.** `update_issue` ignore operations now align with Sentry's schema — explicit modes for forever, duration, occurrence count, and user count (April 15). Azure OpenAI separated into dedicated provider for predictable routing (April 14).
+**Seer Agent launched (open beta, April 28).** Sentry's conversational AI debugging agent entered open beta with Slack integration. Not an MCP feature directly, but it signals where Sentry's AI investment is going — and the MCP server is the natural programmatic interface to the same Seer capabilities.
 
-**Multi-agent AI observability.** Sentry published a [blog series on debugging multi-agent AI systems](https://blog.sentry.io/debugging-multi-agent-ai-when-the-failure-is-in-the-space-between-agents/) (April 2026), positioning the platform for tracing across agent boundaries. Alongside posts on AI trace sampling and agent monitoring, Sentry is building toward being the observability layer for AI-native applications — the MCP server is the natural interface for that.
+**npm downloads surged.** Weekly downloads reached 85K in the week of May 11–17, up from ~50K/week in April — a ~70% jump with no corresponding new release. Likely driven by growing Claude/Cursor/Windsurf adoption rather than a single announcement.
 
-**AI-native development continues.** Commits are co-authored by Claude Opus 4.6, OpenAI Codex, GPT-5 Codex, and Devin AI — the Sentry team continues dogfooding AI-assisted development extensively.
-
-**Stars grew from 603 to 645** (+7%), forks from 93 to 103 (+11%), total commits reached 963. Open issues at 61 (up from 57), with 158 total closed — the team continues closing faster than new issues arrive.
+**Stars grew from 645 to 694** (+7.6%), forks from 103 to 107 (+4). The team added GPT-5 issue triage automation (GitHub Actions) using GPT-5.5 to auto-label and route newly opened issues.
 
 ## What's Good
 
@@ -126,11 +124,11 @@ The Sentry MCP server shipped v0.31.0 (March 27) and v0.32.0 (April 14) since ou
 
 ## What's Not
 
-**61 open GitHub issues — growing slightly, though triage is active.** The issue count ticked up from 57 to 61, while 158 total have been closed. Remaining pain points include:
+**Open issue/PR count growing.** GitHub's combined issue+PR count is now 85 (from 61 issues-only in April). The team added automated GPT-5 triage for new issues, which should help routing. Remaining pain points include:
 - Feature requests for Seer AI code review via MCP ([#900](https://github.com/getsentry/sentry-mcp/issues/900)) and dashboard management ([#876](https://github.com/getsentry/sentry-mcp/issues/876))
-- HTTP allowlist for self-hosted instances in isolated networks ([#891](https://github.com/getsentry/sentry-mcp/issues/891))
 - `assigned_or_suggested` filter unavailable via natural language search ([#889](https://github.com/getsentry/sentry-mcp/issues/889))
 - API communication errors where the connection works but queries fail ([#748](https://github.com/getsentry/sentry-mcp/issues/748))
+- Geographic API restrictions block some `callEmbeddedAgent` calls ([#749](https://github.com/getsentry/sentry-mcp/issues/749)) — unresolved since January 2026
 - Cross-project queries return 400 errors — you must select a specific project, limiting broad investigation
 
 **AI search requires a separate LLM provider key.** The natural language search tools — one of the server's selling points — need an OpenAI or Anthropic API key configured separately from your Sentry auth. This means additional cost, additional configuration, and a dependency on a third-party LLM service on top of Sentry itself. The non-AI tools work without it, but losing search is a significant capability gap.
@@ -171,12 +169,12 @@ The observability MCP space is maturing fast — most major platforms now have o
 - You're not already a Sentry user — this server doesn't replace Sentry, it extends it
 - You need a stable, production-grade integration — v0.32.0 is maturing but still pre-1.0
 
-{{< verdict rating="4" summary="First-party quality keeps improving — Device Code Flow, replays, and profiles at v0.32" >}}
-The Sentry MCP server remains the best example we've reviewed of how a first-party MCP integration should work. The v0.31.0–v0.32.0 releases extend its lead: Device Code Flow authentication eliminates the last manual token friction for stdio users, replay and profile tools expand the debugging surface beyond error investigation, and tracemetrics support opens span-level performance analysis. The OAuth story keeps getting cleaner — stale grants are auto-revoked, scoped resources survive auth flows, and ~450 lines of refresh lock complexity were removed. The 4/5 rating holds because the fundamentals haven't changed — cross-project investigation is still limited, AI search still requires a separate LLM key, and 61 open issues show there's work left. But at 645 stars, 963 commits, and active AI-assisted development (Claude, Codex, Devin), the project is shipping faster than most first-party MCP servers. Sentry's push into multi-agent observability signals that the MCP server will become the debugging interface for AI-native applications, not just traditional error tracking.
+{{< verdict rating="4" summary="v0.33.0 ships self-hosted access fix; snapshot tools and search consolidation follow fast" >}}
+The Sentry MCP server continues to set the benchmark for first-party MCP integration. V0.33.0 closes one of its persistent gaps — `--insecure-http` finally unblocks self-hosted Sentry users on isolated networks. What's more notable is what's happening between releases: snapshot inspection tools for visual regression debugging, search tool consolidation from six to three, and alignment with OpenTelemetry semantic conventions. Seer Autofix migrating to explorer mode and labeled XML output signals the MCP server is being hardened as a structured agent-to-agent protocol, not just a human-facing query interface. The 4/5 rating holds — cross-project investigation is still limited, AI natural-language search still requires a separate LLM key, and some long-standing bugs (#749, geographic restrictions) remain open. But at 694 stars, 1,000+ commits, 85K weekly npm downloads (surging in May with no new release), and automated GPT-5 issue triage, the operational posture keeps improving. Sentry is building toward being the observability layer for AI-native applications, and the MCP server is the natural interface for that.
 {{< /verdict >}}
 
 *Note: We research MCP servers using public documentation, GitHub repositories, npm registries, community discussions, and official changelogs. We do not test MCP servers hands-on or connect them to live services.*
 
 **Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
-*This review was last updated on 2026-04-19 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-05-19 using Claude Sonnet 4.6 (Anthropic).*
