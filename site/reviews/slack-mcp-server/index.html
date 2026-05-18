@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Mar 14, 2026 · Updated Apr 18, 2026</span>
+        <span>Published Mar 14, 2026 · Updated May 18, 2026</span>
       </div>
 
       <h1 class="article-title">The Slack MCP Server — Your Workspace, Accessible to Agents</h1>
@@ -66,8 +66,24 @@
 
       <div class="article-body">
         <p>Slack is where work conversations happen. The problem is that those conversations are locked inside Slack — an agent can&rsquo;t search your channels, read a thread, or post an update without some kind of integration. Slack&rsquo;s official MCP server changes that. Generally available since February 28, 2026, it gives AI agents direct, structured access to your workspace through the Model Context Protocol.</p>
-<p><strong>At a glance:</strong> Hosted at <code>mcp.slack.com</code> · ~15 curated tools · 50+ partner companies building agents · 25x growth in tool invocations since limited release · Streamable HTTP transport · Confidential OAuth 2.0 (PKCE now supported) · PulseMCP: ~29.1K all-time visitors, ~3.3K weekly, #827 globally. Part of our <strong><a href="/categories/communication-collaboration/">Communication &amp; Collaboration MCP category</a></strong>.</p>
+<p><strong>At a glance:</strong> Hosted at <code>mcp.slack.com</code> · ~15 curated tools (+5 added May 13: reactions, create channel, list members, list emoji, read files) · 50+ partner companies building agents · 25x growth in tool invocations since limited release · Streamable HTTP transport · Confidential OAuth 2.0 (PKCE now supported) · PulseMCP: ~73K all-time visitors (+151%), ~10.2K weekly (+209%), #507 globally. Part of our <strong><a href="/categories/communication-collaboration/">Communication &amp; Collaboration MCP category</a></strong>.</p>
 <p>This isn&rsquo;t a community wrapper or a bot token hack. It&rsquo;s Slack&rsquo;s own server, hosted at <code>mcp.slack.com</code>, using their first-party OAuth. Here&rsquo;s what it&rsquo;s actually like to work with.</p>
+<h2 id="whats-new-may-2026-updates">What&rsquo;s New (May 2026 Updates)</h2>
+<p><strong>Five new tools added (May 13).</strong> Slack&rsquo;s official changelog added five tools to the MCP server, bringing the documented total to ~15:</p>
+<ul>
+<li><strong>Add reactions</strong> — adds an emoji reaction to a message on behalf of the authenticated user. This directly addresses one of the most commonly cited limitations of the original server.</li>
+<li><strong>Create a conversation/channel</strong> — creates a new Slack channel, group DM, or IM.</li>
+<li><strong>List channel members</strong> — retrieves member user IDs for a channel or conversation.</li>
+<li><strong>List emoji</strong> — returns the custom emoji available in the workspace.</li>
+<li><strong>Read files</strong> — retrieves metadata and content of files shared in the workspace (complements the existing <code>search:read.files</code> scope).</li>
+</ul>
+<p>These additions expand the server&rsquo;s utility meaningfully — particularly reactions (previously absent) and channel creation.</p>
+<p><strong>PulseMCP traffic surges.</strong> The official Slack MCP server reached ~73K all-time visitors (up from ~29.1K at the April refresh, +151%), with ~10.2K weekly visitors (+209%). Weekly rank is now #174 — well up from the static rank of #827 tracked in April.</p>
+<p><strong>Slackbot Skills GA (April 29).</strong> Slack released pre-built reusable AI workflows: Daily Priorities, Meeting Prep, Research Synthesis, and Incident Management. Requires Business+ or Enterprise with AI access.</p>
+<p><strong>Today View Open Beta (May 6).</strong> An AI-powered daily briefing showing priorities, calendar items, and tasks in a dedicated view. Business Plus and Enterprise only.</p>
+<p><strong>Slackbot MCP Client: still upcoming.</strong> The announced capability for Slackbot to function as an MCP client (connecting to 6,000+ apps via Salesforce AgentExchange) remains in progress — GA is targeting May–June 2026, but no announcement has landed as of May 18.</p>
+<p><strong>korotovsky/slack-mcp-server v1.3.0 (May 14).</strong> The leading community alternative shipped a significant release: 6 new tools (<code>saved_list</code>, <code>saved_update</code>, <code>saved_clear_completed</code>, <code>conversations_join</code>, <code>conversations_leave</code>, <code>channels_me</code>), stale-while-revalidate caching for large workspaces, native MCP image content for attachments, rate limiting and retry in SearchContext, and multiple bug fixes. Star count rose to 1,600 (+100), open issues dropped from 43 to 22, open PRs from 40 to 8 — a healthier maintenance posture than the April snapshot.</p>
+<hr>
 <h2 id="whats-new-april-2026-updates">What&rsquo;s New (April 2026 Updates)</h2>
 <p>Since our last refresh, Slack&rsquo;s AI platform has seen its most ambitious overhaul since the Salesforce acquisition — reshaping the competitive landscape for the MCP server.</p>
 <p><strong>Slackbot becomes an agentic desktop agent (March 31).</strong> Salesforce unveiled 30+ new AI capabilities for Slackbot, the most sweeping update since the $27.7B acquisition. Slackbot now functions as an <strong>MCP client</strong> — it can connect to and coordinate with any external service that registers an MCP server through Slack&rsquo;s manifest, including Agentforce, Google Workspace, Microsoft 365, Notion, Workday, ServiceNow, and 6,000+ apps in the Salesforce ecosystem. New capabilities include <strong>reusable AI Skills</strong> (define a workflow once, Slackbot learns to run it automatically), <strong>meeting intelligence</strong> (transcribes calls across Zoom, Google Meet, and Huddles with action item extraction), <strong>desktop agent mode</strong> (monitors screen activity, deals, calendar, and habits to surface suggestions proactively), and a <strong>lightweight CRM</strong> built directly into chat. All features run on Anthropic&rsquo;s Claude. This is a massive competitive expansion — Slackbot is no longer just a chat assistant, it&rsquo;s an agent platform.</p>
@@ -81,7 +97,7 @@
 <p><strong>Interactive message composer in Claude.</strong> The MCP server features a message composer that lets you draft, format, and preview Slack messages directly within Claude — with a live preview of how the message will appear in Slack. Search conversations for context, generate a draft with AI assistance, edit it, and review before sending.</p>
 <p><strong>Expanded OAuth scopes.</strong> The permission model has grown more granular. New scopes include <code>search:read.files</code> (file search), <code>search:read.users</code> (user search), <code>canvases:read</code> (read canvases without write access), and history scopes (<code>channels:history</code>, <code>groups:history</code>, <code>mpim:history</code>, <code>im:history</code>) for reading message history. The old single <code>search:read</code> scope has been broken into fine-grained <code>search:read.*</code> variants.</p>
 <h2 id="what-it-does">What It Does</h2>
-<p>The Slack MCP server provides approximately 15 curated tools across four categories (out of Slack&rsquo;s 200+ API methods):</p>
+<p>The Slack MCP server provides approximately 15 curated tools across five categories (out of Slack&rsquo;s 200+ API methods), with five new tools added May 13, 2026:</p>
 <p><strong>Search:</strong></p>
 <ul>
 <li>Search messages across channels, filterable by date, user, and content type</li>
@@ -95,15 +111,23 @@
 <li>Read complete message history from channels</li>
 <li>Retrieve full thread conversations</li>
 <li>Draft and preview formatted messages within the AI client (with live preview in Claude)</li>
+<li>Add emoji reactions to messages <em>(new May 13)</em></li>
+<li>Create new channels, group DMs, or IMs <em>(new May 13)</em></li>
+<li>List channel members <em>(new May 13)</em></li>
+</ul>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Read file metadata and content shared in the workspace <em>(new May 13)</em></li>
 </ul>
 <p><strong>Canvases:</strong></p>
 <ul>
 <li>Create and update rich, formatted documents (Slack&rsquo;s canvas feature)</li>
 <li>Read and export canvases as markdown</li>
 </ul>
-<p><strong>Users:</strong></p>
+<p><strong>Users &amp; Workspace:</strong></p>
 <ul>
 <li>Access complete user profiles, including custom fields and status</li>
+<li>List custom emoji available in the workspace <em>(new May 13)</em></li>
 </ul>
 <p>Unlike the older community <code>@modelcontextprotocol/server-slack</code> npm package (which uses a bot token and talks to Slack&rsquo;s regular API), the official server uses confidential OAuth and is purpose-built for LLM consumption. Tool descriptions are designed for agents, and responses come back as natural language rather than raw JSON.</p>
 <h2 id="setup">Setup</h2>
@@ -133,7 +157,7 @@
 <p><strong>Canvas integration opens up document workflows.</strong> Being able to create, read, and update canvases from an agent means you can generate reports, meeting summaries, or documentation and publish them directly where your team works — inside Slack. The new <code>canvases:read</code> scope means you can give an agent read-only access without write risk.</p>
 <p><strong>No local server to manage.</strong> The server runs at <code>mcp.slack.com</code>. No npm install, no Docker, no Node.js version drama. It just works. This is how hosted MCP servers should operate.</p>
 <h2 id="what-doesnt-work-well">What Doesn&rsquo;t Work Well</h2>
-<p><strong>Only ~15 tools out of 200+ API methods.</strong> The official server covers a curated subset of Slack&rsquo;s capabilities. No reactions, no emoji, no scheduled messages, no reminders, no pins, no bookmarks. Thread creation only works by replying. For teams that need deeper Slack automation, this coverage gap is the biggest frustration.</p>
+<p><strong>Only ~15 tools out of 200+ API methods.</strong> The official server covers a curated subset of Slack&rsquo;s capabilities. The May 13 additions (reactions, channel creation, file reads, member listing, emoji) narrowed the gap noticeably. What&rsquo;s still absent: scheduled messages, reminders, pins, bookmarks. Thread creation still only works by replying. For teams that need deeper Slack automation, coverage remains the biggest frustration — though Slack is clearly expanding the set.</p>
 <p><strong>The Marketplace requirement is a barrier for custom clients.</strong> If you&rsquo;re building your own MCP client, your Slack app must be published to the Marketplace or registered as an internal app. You can&rsquo;t just create a quick app for personal use and connect it. This protects workspaces from rogue integrations, but it slows down developers who want to experiment.</p>
 <p><strong>No SSE or Dynamic Client Registration support.</strong> The server only supports Streamable HTTP (JSON-RPC 2.0). If your MCP client uses Server-Sent Events for transport — which some earlier MCP clients do — it won&rsquo;t work. The lack of DCR has caused real pain for OpenAI Codex users trying to connect. PKCE support (GA March 30) helps desktop/mobile clients authenticate without a <code>client_secret</code>, but DCR remains absent.</p>
 <p><strong>send_message has reliability issues.</strong> Multiple users report <code>slack_send_message</code> failing with MCP error -32603 (Internal Server Error) while <code>slack_schedule_message</code> works correctly on the same channel with the same credentials. This suggests a bug in the instant send code path. Separately, after a Claude.ai outage on April 6, the Slack connector failed to reconnect automatically for some users, requiring manual re-authorization.</p>
@@ -141,7 +165,7 @@
 <p><strong>Enterprise search now crosses three external systems.</strong> With Gmail, Outlook, and now GitHub Issues indexing (up to 5 organizations, added April 2026), a search query through the MCP server may surface results from email and code tracking systems. This is powerful but expands the blast radius of a <code>search:read</code> scope grant in ways users may not expect. If your organization has enabled cross-system search, review what data sources agents can reach.</p>
 <p><strong>Search scope can surprise users.</strong> If you grant <code>search:read.private</code> or <code>search:read.im</code>, the agent can search your private conversations. The OAuth consent screen explains this, but in the flow of &ldquo;just click authorize to get it working,&rdquo; people grant broader access than they intend. Be deliberate about which scopes you authorize.</p>
 <h2 id="compared-to-alternatives">Compared to Alternatives</h2>
-<p><strong>vs. korotovsky/slack-mcp-server (1,500 stars, 293 forks):</strong> The most popular community alternative, now claiming 30,000+ monthly engineer visitors and 9,000+ active users. Written in Go, supports Stdio, SSE, and HTTP transports. No Marketplace requirement, no permission restrictions, supports DMs, group DMs, GovSlack, and user group management. Has an optional &ldquo;stealth mode&rdquo; without app installation. PulseMCP: ~305K all-time visitors, ~3.5K weekly, #143 globally — significantly outpacing the official server&rsquo;s #827 ranking. The downside: raw bot tokens in environment variables, no token refresh, community maintenance only. 43 open issues and 40 open PRs suggest active development but also growing maintenance load. Good for power users; the official server is better for teams that need guardrails.</p>
+<p><strong>vs. korotovsky/slack-mcp-server (1,600 stars, 319 forks):</strong> The most popular community alternative, now claiming 30,000+ monthly engineer visitors and 9,000+ active users. Written in Go, supports Stdio, SSE, and HTTP transports. No Marketplace requirement, no permission restrictions, supports DMs, group DMs, GovSlack, and user group management. Has an optional &ldquo;stealth mode&rdquo; without app installation. v1.3.0 (May 14) added 6 new tools, stale-while-revalidate caching, native image content, and rate-limiting improvements — open issues dropped from 43 to 22, open PRs from 40 to 8. The downside: raw bot tokens in environment variables, no token refresh, community maintenance only. Good for power users; the official server is better for teams that need guardrails.</p>
 <p><strong>vs. Community Slack MCP server (@modelcontextprotocol/server-slack):</strong> The original reference implementation, now showing its age. Uses a bot token and runs locally. Simpler to set up for personal use (no Marketplace requirement), but lacks the granular OAuth scopes, natural language responses, and audit logging. The official server has clearly surpassed it for production use.</p>
 <p><strong>vs. Slackbot (now available on all plans):</strong> Massively upgraded in March 2026 with 30+ new AI capabilities. Slackbot is now an <strong>MCP client</strong> that can connect to 6,000+ apps, a <strong>desktop agent</strong> that monitors screen activity and proactively surfaces suggestions, and has <strong>reusable AI Skills</strong>, <strong>meeting intelligence</strong> (transcription + action items across Zoom/Meet/Huddles), and a <strong>lightweight CRM</strong> built into chat. All powered by Anthropic&rsquo;s Claude. A limited version is now available on free and Pro plans (previously Business+/Enterprise+ only). The relationship between Slackbot and the MCP server has shifted: Slackbot is now both a competitor (it provides AI-in-Slack without needing external clients) and a complement (as an MCP client, it can coordinate with MCP servers). If you want a full agentic assistant inside Slack, Slackbot is increasingly the answer. The MCP server&rsquo;s differentiation is now primarily about bringing <em>your choice</em> of external AI client to Slack data.</p>
 <p><strong>vs. Truto Managed MCP:</strong> A third-party managed service that dynamically generates tools from Slack&rsquo;s full API documentation (not just the curated 15). Includes automatic token refresh, method-level filtering, and expiring access URLs. The trade-off is routing your data through an external service — not suitable for strict data sovereignty requirements.</p>
@@ -164,11 +188,11 @@
 <li>Slackbot already covers your needs (now available on all plans, including free and Pro)</li>
 </ul>
 <div class="verdict">
-  <div class="verdict-rating">4 / 5 — Still the right integration for external AI clients, but Slackbot is closing the gap fast</div>
-  The Slack MCP server remains production-proven and well-architected — PKCE support, granular OAuth scopes, and 50+ partner companies confirm Slack&rsquo;s commitment. But the competitive landscape shifted dramatically in late March. Slackbot&rsquo;s 30+ feature upgrade transformed it from a basic assistant into an agentic desktop agent with MCP client capabilities, meeting intelligence, reusable AI Skills, and a lightweight CRM — and it&rsquo;s now available on free and Pro plans. The MCP server&rsquo;s value proposition has narrowed: it&rsquo;s for teams that want to bring <em>their choice</em> of external AI client (Claude, Cursor, Perplexity) to Slack data rather than using Slack&rsquo;s built-in AI. That&rsquo;s still a legitimate use case, especially for multi-tool workflows. But the gaps remain real — only ~15 out of 200+ API methods, no DCR, the Marketplace requirement, and now a <code>send_message</code> reliability bug. The community alternative (korotovsky, 1,500 stars, PulseMCP #143 vs. official #827) continues to outpace the official server in adoption. Rating holds at 4/5 — the architecture is sound and the integration works, but Slack needs to either expand the tool set or explain why 15 tools is the ceiling.
+  <div class="verdict-rating">4 / 5 — Five new tools in May signals momentum, but Slackbot and the community alternative are both closing in</div>
+  The Slack MCP server is showing clearer investment signals in May 2026. Five new tools (reactions, channel creation, file reads, member listing, custom emoji) address some of the longest-standing gaps, and PulseMCP traffic nearly tripled in a month to 73K all-time — reflecting genuine adoption growth. But the structural constraints remain: ~15 tools out of 200+ API methods, no DCR, the Marketplace registration requirement, and an unresolved <code>send_message</code> reliability bug (-32603 error, no confirmed fix). Slackbot continues its own expansion — Skills, Today View, and the still-pending MCP client capability — narrowing the &ldquo;use an external AI client to access Slack&rdquo; value proposition further. On the community side, korotovsky v1.3.0 now has 18+ tools, a cleaner issue tracker, and strong PulseMCP presence. The official server is still the right choice for teams prioritizing security, audit logging, and OAuth-first architecture. But Slack needs to keep expanding the tool set or the ceiling will feel increasingly arbitrary. Rating holds at 4/5 — the direction is better than it was, and the May additions count for something.
 </div>
 
-<p><em>Disclosure: This review is based on publicly available documentation, GitHub repositories, developer forums, and Slack&rsquo;s official announcements. ChatForest does not test MCP servers hands-on. We research, analyze, and present what we find so you can make informed decisions. Review written and edited using Claude Opus 4.6 (Anthropic). Last updated 2026-04-18.</em></p>
+<p><em>Disclosure: This review is based on publicly available documentation, GitHub repositories, developer forums, and Slack&rsquo;s official announcements. ChatForest does not test MCP servers hands-on. We research, analyze, and present what we find so you can make informed decisions. Review written and edited using Claude Sonnet 4.6 (Anthropic). Last updated 2026-05-18.</em></p>
 
       </div>
 
@@ -220,7 +244,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-18T00:00:00+09:00","datePublished":"2026-03-14T01:06:39+09:00","description":"Slack's official MCP server lets AI agents search messages, send replies, and manage canvases in your workspace. Here's the honest review of what works and what doesn't.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"The Slack MCP Server — Your Workspace, Accessible to Agents"},"name":"The Slack MCP Server — Your Workspace, Accessible to Agents","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/slack-mcp-server/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-18T00:00:00+09:00","datePublished":"2026-03-14T01:06:39+09:00","description":"Slack's official MCP server lets AI agents search messages, send replies, and manage canvases in your workspace. Here's the honest review of what works and what doesn't.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"The Slack MCP Server — Your Workspace, Accessible to Agents"},"name":"The Slack MCP Server — Your Workspace, Accessible to Agents","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/slack-mcp-server/"}
 </script>
 
 

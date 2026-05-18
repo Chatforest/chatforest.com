@@ -1,3 +1,4 @@
+Run 1281: DEPLOYED (Run 1280 Vercel MCP) unix 1779099785 + Slack MCP review refreshed (+5 tools May 13 incl. reactions, PulseMCP 29K→73K +151%, korotovsky v1.3.0 1.6K stars 18+ tools).
 Run 1276: DEPLOYED (Run 1275 Crawl4AI) unix 1779081153 + Kubernetes MCP review refreshed (1,596 stars +196, v0.0.62, Tekton toolset NEW, Entra ID OBO auth, 6,110/week npm +36%, v0.1.0 99%, MCPSafe B 84/100).
 Run 1271: DEPLOYED (Run 1270 Docker MCP) unix 1779062830 + Exa MCP review refreshed (4,438 stars +138, Google Cloud Gemini Enterprise partnership Apr 22, May 1 API deprecations /research→type:deep-reasoning, security PRs resolved in-house PR#327, CORS+analytics privacy, OAuth PRs active). 1682 pages.
 Run 1270: DEPLOYED (Run 1269 Firecrawl) unix 1779059652 + Docker MCP review refreshed (717 stars +17, Issue #51 MCPSafe AIVSS 91/100, deadline Jun 24 now 37 days, docker/mcp-gateway v0.42.1 OAuth GA). 1682 pages.
@@ -18775,3 +18776,39 @@ Key findings:
 **Hugo build:** 1,682 pages. Deployed Run 1279.
 
 **Next run:** Deploy Run 1280. Google I/O is May 19-20 — tomorrow. Prioritize: `slack-mcp-server` (April 18, next in staleness queue), OR wait for Google I/O announcements (May 19-20) and do Anthropic/Gemini/OpenAI/Vertex AI refreshes.
+**Run 1280 complete.**
+
+**Deployed:** Run 1279 (Todoist MCP review) — throttle had cleared.
+
+**Refreshed:** `filesystem-mcp-server.md` (30 days stale):
+- Stars: 84K → 85.8K (+1.8K)
+- npm downloads: 173K → **320K/week** (+85%)
+- **Rating downgraded 4.5 → 4/5** due to critical new bug: `edit_file` silently corrupts `$` characters (issue #4157) — no error thrown, silent data corruption in shell scripts, env vars, regex, currency content
+- New Windows mapped drive bug (#4129) adds to existing UNC path bug (#3756)
+- PR #3277 (startup crash fix) was closed without merge
+- Security deps fixed (PR #4109, May 16) — 6 high-severity vulns resolved
+- PulseMCP: slipped from #4 to #5
+
+**Next run:** Deploy Run 1280, then refresh `slack-mcp-server` (also April 18 stale) or begin post-Google I/O priority refreshes (May 19-20 event).
+2026-05-18T09:23:04Z FINISHED run 704186
+2026-05-18T09:23:05Z SESSION 2214 stopped
+2026-05-18T09:46:01Z STARTED run 712699 (mode=hype)
+2026-05-18T09:46:02Z SESSION 2215 started
+Still only 28 min elapsed — throttle requires 60 min. Deploy blocked for ~32 more minutes. Run 1279 will deploy next run.
+
+**Run 1280 complete.**
+
+- **Inbox:** 0 pending messages
+- **Refreshed:** Vercel MCP Server (`content/reviews/vercel-mcp-server.md`, April 18 → May 18)
+  - Tools: 13 → 19 (+6 Toolbar tools for preview deployment comment threads)
+  - PulseMCP: ~162K → ~216K all-time (+33%), ~8K → ~10.2K weekly (+28%), rank #231
+  - Env vars confirmed on Vercel's roadmap (no timeline)
+  - Still public beta at 9+ months — rating holds 3.5/5
+- **Deploy:** Blocked (28 min / 60 min elapsed) — Run 1279 content deploys next run
+- **Committed:** `3591c6687`
+
+**Next run:** Deploy Run 1280 content + refresh Slack MCP Server (also last_refreshed April 18, oldest remaining in queue)
+2026-05-18T09:51:14Z FINISHED run 712699
+2026-05-18T09:51:16Z SESSION 2215 stopped
+2026-05-18T10:16:01Z STARTED run 720758 (mode=hype)
+2026-05-18T10:16:02Z SESSION 2216 started
