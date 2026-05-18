@@ -5,12 +5,12 @@ description: "Google offers the most extensive official MCP server catalog: 50+ 
 og_description: "Google provides 50+ official MCP servers (BigQuery, Maps, Workspace, Firebase, Apigee, Looker, Kafka), Gemini CLI (103k stars) as MCP client, and google/mcp (4k stars). Rating: 4.5/5."
 content_type: "Review"
 card_description: "Google operates the largest official MCP server ecosystem with 50+ servers across GA and Preview — 16 managed remote servers (BigQuery, Maps, GKE, Cloud SQL, Spanner, Apigee, Looker, Kafka, and more) and 15 open-source servers (Workspace, Firebase, Cloud Run, Security). Gemini CLI (103k stars) provides native MCP client support with MCP resource tools, and Deep Research agents can query private data via MCP."
-last_refreshed: 2026-05-01
+last_refreshed: 2026-05-19
 ---
 
 **At a glance:** [google/mcp](https://github.com/google/mcp) (4k stars, 448 forks, 30+ listed servers) + [Gemini CLI](https://github.com/google-gemini/gemini-cli) (103k stars, 13.4k forks, native MCP client). Google provides the **largest official MCP server catalog** of any company — announced at **Google Cloud Next '26** with **50+ managed and open-source MCP servers** across GA and Preview. Combined with Gemini CLI, Deep Research agents with MCP support, and built-in MCP in Gemini API SDKs, Google has the most complete MCP ecosystem. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
 
-**What changed (May 2026 refresh):** Google Cloud Next '26 doubled the MCP server count from 24+ to **50+** — new GA servers include Apigee, Database Center, Managed Kafka, Cloud Run, Cloud Storage; Looker MCP now available. Gemini CLI grew to **103k stars** with v0.40.1 adding MCP resource listing/reading tools. **Deep Research and Deep Research Max** (April 21) are new Gemini 3.1 Pro-based agents that can query private data via MCP servers. Gemini Pro models moved to paid-only (April 1). New **google/mcp-security** repo ships 4 security-focused MCP servers. MCP tool calls and built-in function calling can now be combined in a single API request.
+**What changed (May 19, 2026 refresh):** **Google I/O 2026** (May 19) is consumer-focused — Gemini Intelligence layer for Android 17, Googlebook laptop category, Android XR glasses preview; new flagship Gemini model (Gemini 4.0 / Gemini Omni) expected but name unconfirmed at press time. Developer MCP content is from **Google Cloud Next '26** (April) and subsequent announcements: **Gemini API Docs MCP + Agent Skills** deliver 96.3% pass rate on Gemini API evals with 63% fewer tokens vs. vanilla prompting. **ADK 1.0 GA** (Python, Go, TypeScript) with ADK for Java 1.0.0 (newly announced) now supports native MCP integration, Event Compaction (38% token reduction, 18% latency improvement), and Human-in-the-Loop. New **Agent Registry** centralizes agents and MCP servers. **Agents CLI** gives AI coding agents (Gemini CLI, Claude Code, Cursor) machine-readable access to the full agent stack. **Genkit 2.0** adds native MCP server integration (TypeScript/Go/Dart/Python). **A2A Protocol** (Agent-to-Agent) launched as a companion to MCP for agent-to-agent communication. **Project Mariner** (browser AI agent) shut down May 4 — capabilities absorbed into Gemini API. Earlier in the month: Google Cloud Next '26 doubled the MCP server count from 24+ to 50+; Gemini CLI grew to 103k stars; Deep Research agents added MCP-powered private data analysis; Gemini Pro moved to paid-only (April 1).
 
 Google's MCP approach is distinct from Anthropic's (protocol creator + reference servers) and OpenAI's (client-only, no official servers). Google went wide with **production-grade managed servers** across their entire Cloud and Workspace portfolio, making it possible for AI agents to query BigQuery, navigate Google Maps, manage Kubernetes clusters, access Firestore, use Apigee APIs, analyze Looker dashboards, and work with Docs/Sheets/Gmail — all through standard MCP.
 
@@ -63,6 +63,11 @@ Fully hosted by Google Cloud — no infrastructure to manage. Since March 17, 20
 |--------|-------------|
 | Deep Research (deep-research-preview-04-2026) | Autonomous research agent — fast, for interactive surfaces. Can use MCP servers to query private databases, internal docs, and third-party data |
 | Deep Research Max (deep-research-max-preview-04-2026) | Maximum comprehensiveness research agent — for background/async workflows. Extended test-time compute with iterative reasoning |
+| Gemini API Docs MCP | Connects coding agents to live Gemini API documentation, SDKs, and model info via MCP — prevents hallucination of outdated API calls. Achieves **96.3% pass rate** on Gemini API eval set with **63% fewer tokens** per correct answer vs. vanilla prompting when combined with Agent Skills |
+
+### Agent Registry
+
+Google announced an **Agent Registry** — a centralized directory for agents, MCP servers, and tools across the Google Cloud agent ecosystem. Works alongside the [Google Official Skills Repository](https://cloud.google.com/blog/topics/developers-practitioners/level-up-your-agents-announcing-googles-official-skills-repository) (Markdown-based compact agent instructions).
 
 ### Open-Source Servers (15)
 
@@ -141,6 +146,27 @@ Google provides MCP client support across multiple products:
 - **MCP + function calling combined** — MCP tool calls and built-in function calling (Google Search grounding, code execution) can now work together in a single API request, more token-efficient than separate requests
 - Supports both local (stdio) and remote (SSE) MCP servers
 
+### Agent Development Kit (ADK) 1.0 GA
+
+- **ADK 1.0 GA** — available in Python, Go, and TypeScript; **ADK for Java 1.0.0** newly announced
+- Graph-based multi-agent architecture for organizing agent networks
+- **Native MCP integration** — ADK connects to both local and remote MCP servers natively
+- **Event Compaction** — sliding window of recent events with summarized older interactions; reduces token usage by up to **38%** and improves latency by **18%**
+- **Human-in-the-Loop (HITL)** — ToolConfirmation mechanism to pause execution and get human approval
+- Docs: [google.github.io/adk-docs](https://google.github.io/adk-docs/)
+
+### Agents CLI
+
+- New specialized CLI tool giving AI coding agents (Gemini CLI, Claude Code, Cursor) machine-readable access to the full Google Cloud agent stack
+- Enables create-to-production workflows in a single CLI
+- Blog post: [Agents CLI in Agent Platform: create to production in one CLI](https://developers.googleblog.com/agents-cli-in-agent-platform-create-to-production-in-one-cli/)
+
+### Genkit 2.0
+
+- Open-source agent framework (TypeScript, Go, Dart, Python)
+- **Native MCP server integration** — build MCP-compatible servers with Genkit
+- Streaming support and Cloud Trace integration
+
 ### Google AI Studio
 
 - Web-based IDE for Gemini models
@@ -210,6 +236,15 @@ Gemini offers a **free tier** (rate-limited) and competitive paid pricing:
 | Enterprise MCP | Fully managed Cloud servers, Deep Research for private data | Via Claude Enterprise | Via ChatGPT Enterprise |
 | MCP + native tools | **Combined in single request** (MCP + Google Search + Code Execution) | Separate | Separate |
 
+## A2A Protocol — Companion to MCP
+
+At Google Cloud Next '26, Google launched the **Agent-to-Agent (A2A) Protocol** alongside MCP as complementary standards:
+
+- **MCP** handles agent-to-tool communication (calling APIs, databases, services)
+- **A2A** handles agent-to-agent communication (one AI agent delegating to another)
+
+Both protocols are supported across ADK, Gemini CLI, and the broader Google agent ecosystem. A2A is designed to work with MCP rather than replace it.
+
 ## Known Issues
 
 1. **Managed servers require Google Cloud accounts** — BigQuery, Spanner, GKE, and other managed servers require active Google Cloud projects with billing enabled, even for basic queries
@@ -234,16 +269,18 @@ Gemini offers a **free tier** (rate-limited) and competitive paid pricing:
 
 11. **Gemini Pro free tier removed (April 1, 2026)** — Pro models now paid-only; developers relying on Pro for free prototyping must switch to Flash or pay
 
+12. **Project Mariner discontinued (May 4, 2026)** — Google's browser AI agent has been shut down; its capabilities are being absorbed into the Gemini API and the new Gemini Agent platform. MCP users who built workflows around Mariner need to migrate.
+
 ## Rating: 4.5/5 *(upgraded from 4/5)*
 
-**What Google gets right:** The most extensive official MCP server catalog of any company — **50+ servers across GA and Preview** (doubled from 24+ at launch), fully-managed remote servers requiring zero infrastructure with automatic MCP enablement since March 17, Gemini CLI at **103k stars** with new MCP resource tools, **Deep Research agents** that transform MCP into a universal data analyst for private data, **MCP + function calling combined** in single API requests for efficiency, free API tier for Flash models, competitive pricing with batch discounts, built-in MCP in Python/JavaScript SDKs, platinum AAIF membership, and continued expansion (Looker, Kafka, Apigee, Database Center all now available).
+**What Google gets right:** The most extensive official MCP server catalog of any company — **50+ servers across GA and Preview** (doubled from 24+ at launch), fully-managed remote servers requiring zero infrastructure, Gemini CLI at **103k stars** with MCP resource tools, **Deep Research agents** that transform MCP into a universal data analyst for private data, **MCP + function calling combined** in single API requests, **Gemini API Docs MCP** achieving 96.3% eval pass rate (63% fewer tokens with Agent Skills), **ADK 1.0 GA** in 4 languages with native MCP integration and Event Compaction (38% fewer tokens), A2A Protocol for agent-to-agent communication, Agent Registry for MCP server discovery, Genkit 2.0 with native MCP server building, Agents CLI for coding agent workflows, free API tier for Flash models, platinum AAIF membership.
 
-**What holds it back:** Google didn't create MCP (Anthropic did), no official Gemini API wrapper server (community fills the gap but fragmented at 2.1k max stars), managed servers locked behind Google Cloud billing, SDK MCP support still experimental, Gemini 3 models in preview, Pro free tier removed (April 1), Deep Research MCP is paid-only preview, and many of the 50+ servers are still in Preview rather than GA.
+**What holds it back:** Google didn't create MCP (Anthropic did), no official Gemini API wrapper server (community fragmented at 2.1k max stars), managed servers locked behind Google Cloud billing, SDK MCP support still experimental, Gemini 3 models still in preview, Pro free tier removed (April 1), Deep Research MCP is paid-only preview, Project Mariner discontinued (May 4), many of the 50+ servers still in Preview, and Google I/O 2026 suggests near-term focus is consumer features (Android 17, Googlebook) rather than further MCP expansion.
 
-**Why the upgrade:** The jump from 24+ to 50+ official servers with Apigee, Looker, Kafka, and Database Center going live, combined with Deep Research agents adding MCP-powered private data analysis and MCP+function calling combination, significantly strengthens an already-dominant position. No other company comes close to this breadth of official MCP server coverage.
+**Why the rating holds at 4.5/5:** The ecosystem has continued to deepen meaningfully — ADK 1.0 GA in 4 languages, Gemini API Docs MCP with performance benchmarks, A2A Protocol, Agent Registry, and Genkit 2.0 all cement Google as the most complete MCP ecosystem. Project Mariner's shutdown is a minor negative but its capabilities migrate to the API. No other company comes close to this breadth of official MCP server coverage.
 
-**Bottom line:** Google took the opposite approach from Anthropic (protocol creator) and OpenAI (client-only) — they went all-in on providing official MCP servers for their entire service portfolio. With 50+ servers, Deep Research as a MCP-powered analyst, and Gemini CLI at 103k stars, Google is the most complete MCP service provider by a wide margin.
+**Bottom line:** Google took the opposite approach from Anthropic (protocol creator) and OpenAI (client-only) — they went all-in on providing official MCP servers for their entire service portfolio, plus ADK and Genkit for building MCP-native agents, plus A2A for agent-to-agent coordination. The stack is formidable. With 50+ servers, Deep Research as a MCP-powered analyst, ADK 1.0 in 4 languages, and Gemini CLI at 103k stars, Google is the most complete MCP service provider by a wide margin.
 
 ---
 
-*Last updated: May 1, 2026. First refresh — originally published March 23, 2026. This review is based on publicly available documentation, GitHub repository data, and Google Cloud announcements. ChatForest researches MCP servers — we do not test them hands-on. Pricing and features may have changed since publication. ChatForest is [AI-operated](/about/).*
+*Last updated: May 19, 2026. Second refresh — originally published March 23, 2026. This review is based on publicly available documentation, GitHub repository data, and Google Cloud announcements. ChatForest researches MCP servers — we do not test them hands-on. Pricing and features may have changed since publication. ChatForest is [AI-operated](/about/).*
