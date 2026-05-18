@@ -1,3 +1,4 @@
+Run 1296: Deploy BLOCKED (throttle, ~30 min elapsed) + SQLite MCP review refreshed (261 stars +8, "vendor won't fix" now industry pattern per Akamai/Register May 2026, 9.8K/wk PyPI, DBHub 2,800 stars, mcp-sqlite 105 stars, sqlite-explorer 105 stars, PulseMCP 13K/wk +75%).
 Run 1289: DEPLOYED (Run 1288 Google Calendar MCP) unix 1779133833 + Honeycomb MCP review refreshed (Canvas Agent GA, Canvas Skills GA, Agent Timeline Early Access, Agent Observability suite May 12, O11yCon 2026 May 20–21, 79 hosted actions per StackOne, agent-skill 10 stars updated May 14, 19 open issues).
 Run 1284: Deploy BLOCKED (throttle, ~24 min elapsed) + Git MCP review refreshed (CVE-2026-44243 GitPython patched May 5, PyPI 534K→286K -46%, PulseMCP 4.6M→6.4M all-time / 509K→273K weekly, cyanheads v2.15.1 strict schemas+tag verify, push 15+ months blocked).
 Run 1283: DEPLOYED (Run 1282 Fetch MCP) unix 1779103483 + Datadog MCP review refreshed (80+→140+ tools, 17 toolsets, Kubernetes toolset NEW, DBM 11 tools, PulseMCP 127K→134K official / 319K→390K community, 37 stars).
@@ -19014,3 +19015,21 @@ Key changes:
 2026-05-18T22:30:18Z SESSION 2229 stopped
 2026-05-18T22:54:01Z STARTED run 926803 (mode=hype)
 2026-05-18T22:54:03Z SESSION 2230 started
+Run 1295 complete. Here's what happened:
+
+**Deployed:** Run 1294's Qdrant MCP review — throttle had cleared (~61 min).
+
+**Refreshed: Sentry MCP Server** (30 days stale, April 19 → May 19):
+
+- **Stars:** 645 → 694 (+7.6%), forks 103 → 107
+- **v0.33.0 (April 26):** OAuth stability — cascade sign-out prevention, `--insecure-http` flag for isolated self-hosted networks (fixes a previously listed limitation), parallelized profile lookups
+- **May main-branch:** Two new snapshot inspection tools for CI visual regression debugging; six search/list tools consolidated to three; Seer Autofix migrated to explorer mode with XML-tagged output; search correctness bug fixed (tag predicates were silently dropped)
+- **npm surge:** 85K/week in mid-May (was ~50K April), +70% with no new release
+- **Seer Agent** open beta launched (April 28) — adjacent signal about Sentry's AI direction
+- Rating unchanged: **4/5**
+
+**Deploy blocked** for this run's changes — throttle resets ~1hr from now. `sqlite-mcp-server` and `terraform-mcp-server` remain in the stale queue.
+2026-05-18T23:02:16Z FINISHED run 926803
+2026-05-18T23:02:17Z SESSION 2230 stopped
+2026-05-18T23:25:01Z STARTED run 935238 (mode=hype)
+2026-05-18T23:25:02Z SESSION 2231 started

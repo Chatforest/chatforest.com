@@ -2,31 +2,29 @@
 title: "The SQLite MCP Server — A Good Idea, Now Abandoned (and Vulnerable)"
 date: 2026-03-14T01:06:39+09:00
 description: "The official SQLite MCP server lets agents query, write, and inspect SQLite databases."
-og_description: "The official SQLite MCP server is archived, has an unpatched SQL injection flaw, and ~13K weekly downloads despite being abandoned. Rating: 2.5/5."
+og_description: "The official SQLite MCP server is archived, has an unpatched SQL injection flaw, and ~10K weekly downloads despite being abandoned. Vendor refusal to patch now mirrors Alibaba RDS. Rating: 2.5/5."
 content_type: "Review"
 card_description: "Anthropic's reference database MCP server. Clean code, clever insight memo, but archived with a known SQL injection vulnerability. Learn from it, don't depend on it."
-last_refreshed: 2026-04-19
+last_refreshed: 2026-05-19
 ---
 
-**At a glance:** 253 stars (servers-archived repo), ~8.4K weekly PyPI downloads, v2025.4.25 (last release April 2025), 6 tools, archived on PyPI, known SQL injection vulnerability (unpatched, now amplified by security research), ~7.4K weekly PulseMCP visitors (#84 globally, ~521K all-time). Part of our **[Databases MCP category](/categories/databases/)**
+**At a glance:** 261 stars (servers-archived repo), ~9.8K weekly PyPI downloads, v2025.4.25 (last release April 2025), 6 tools, archived on PyPI, known SQL injection vulnerability (unpatched, now part of a documented industry pattern), ~13K weekly PulseMCP visitors (#103 globally, ~565K all-time). Part of our **[Databases MCP category](/categories/databases/)**
 
 The SQLite MCP server (`mcp-server-sqlite`) is Anthropic's official reference implementation for giving AI agents database access. It ships six tools for querying, writing, and inspecting SQLite databases, plus a clever "insight memo" feature for accumulating analysis findings. The Python codebase is clean and well-structured — it was one of the original MCP example servers, built to demonstrate how MCP works with databases.
 
-There's a catch: it's been moved to the `servers-archived` repository. No new releases, no security patches, no bug fixes. Worse, a SQL injection vulnerability was publicly disclosed in June 2025, and Anthropic declined to patch it. It still installs and runs — ~13,000 people download it weekly — but you're on your own going forward.
+There's a catch: it's been moved to the `servers-archived` repository. No new releases, no security patches, no bug fixes. Worse, a SQL injection vulnerability was publicly disclosed in June 2025, and Anthropic declined to patch it. It still installs and runs — ~10,000 people download it weekly — but you're on your own going forward.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
 
-**The vulnerability story has been amplified by major security firms.** Trend Micro's original disclosure has now been reinforced by Datadog Security Labs (who published a full SQL injection case study on the sister PostgreSQL MCP server with executable proof-of-concept code) and Akamai (whose MCP security guide found that 43% of popular MCP server implementations contain command injection vulnerabilities). VulnerableMCP.info, a new comprehensive MCP vulnerability database tracking 50 vulnerabilities (13 critical), now catalogs the broader pattern. The key new finding: Anthropic's vulnerable SQLite MCP server was forked over 5,000 times before archival, meaning this unpatched SQL injection code now silently exists inside thousands of downstream agents — many likely in production.
+**"Vendor won't fix" is now a pattern, not an anomaly.** Akamai published a May 2026 article titled "One Is a Fluke, 3 Is a Pattern" documenting SQL injection and authentication bypass vulnerabilities across three database MCP servers: Apache Doris (CVE-2025-66335, patched), Apache Pinot (partially addressed via OAuth), and Alibaba RDS (declined to fix — citing it as the user's responsibility). Alibaba's refusal maps directly to Anthropic's 2025 refusal on this server. The Register covered the same cluster on May 13, 2026. What was once a shocking edge case — a vendor publicly declining to patch a known MCP vulnerability — now has multiple documented precedents.
 
-**Downloads spiked then declined.** PyPI downloads surged dramatically in mid-March 2026 (peaking at ~23,600/day), likely driven by the security research publicity. They've since settled to ~8,400 weekly (~241K monthly) — down from ~13,000 weekly at last review. The spike-then-decline pattern suggests many users installed it to test the vulnerability, not for production use.
+**Downloads recovered to ~9.8K/week.** After the mid-March 2026 spike (~23,600/day peak) and subsequent decline to ~8,400/week, PyPI downloads have rebounded modestly to ~9,824/week (~43,755/month). The recovery likely reflects continued organic use rather than security-research-driven spikes — this server remains embedded in toolchains and agents that haven't been updated.
 
-**Still v2025.4.25 — now nearly a year without a release.** The final version updated the MCP SDK to 1.6.0. Twelve versions were published between November 2024 and April 2025 before archival on May 28-29, 2025. The archived repo remains frozen with no security patches possible.
+**Still v2025.4.25 — now 13 months without a release.** The archived repo remains frozen. No security patches, no MCP SDK updates, no bug fixes possible. The gap between this server and the current MCP specification continues to widen silently.
 
-**DBHub continues to grow as the leading multi-database alternative.** Bytebase's DBHub (2,600 stars, 218 forks, 512 commits) supports PostgreSQL, MySQL, MariaDB, SQL Server, and SQLite through a single zero-dependency, token-efficient interface.
+**Alternatives continue growing while this stagnates.** Bytebase's DBHub reached 2,800 stars (+200/+7.7%, 236 forks, 513 commits, last updated May 2, 2026). jparkerweb/mcp-sqlite grew to 105 stars (was 99) with v1.0.9 remaining the latest release. sqlite-explorer-fastmcp reached 105 stars (was 92, +14%) despite having no new commits since December 2024 — showing the read-only safety-focused approach continues to attract attention.
 
-**167+ SQLite MCP server implementations now exist on PulseMCP alone.** jparkerweb/mcp-sqlite reached v1.0.9 (99 stars, April 4 release), sqlite-explorer-fastmcp holds at 92 stars (read-only/safety-focused), and panasenco/mcp-sqlite continues with Datasette-compatible metadata support.
-
-**PulseMCP traffic nearly doubled.** ~7,400 weekly visitors, ~521,000 all-time (+87%), now ranked #84 globally (up from #130). The security research attention appears to be driving discovery — people finding the review while researching MCP vulnerabilities.
+**PulseMCP traffic jumped 75%.** ~13,000 weekly visitors (was 7,400), ~565,000 all-time (was 521,000, +8.5%), now ranked #103 globally (was #84 — ranking declined as the overall directory grew). The traffic jump likely reflects continued security-research referrals and broader MCP directory growth driving discovery.
 
 ## What It Does
 
@@ -109,11 +107,11 @@ Requirements: Python 3.10+ and `uv` (or pip). The server takes one argument — 
 
 ## Compared to Alternatives
 
-**vs. Bytebase DBHub (2,600 stars):** The leading multi-database MCP server, actively maintained with 512 commits. Supports PostgreSQL, MySQL, MariaDB, SQL Server, and SQLite through a single zero-dependency, token-efficient interface. If you need database MCP access today, DBHub is the strongest general-purpose choice.
+**vs. Bytebase DBHub (2,800 stars):** The leading multi-database MCP server, actively maintained with 513 commits and last updated May 2, 2026. Supports PostgreSQL, MySQL, MariaDB, SQL Server, and SQLite through a single zero-dependency, token-efficient interface. If you need database MCP access today, DBHub is the strongest general-purpose choice.
 
-**vs. jparkerweb/mcp-sqlite (99 stars, v1.0.9):** A community-built JavaScript alternative that provides comprehensive SQLite operations with better safety features, including input validation and structured CRUD operations (not raw SQL). Actively maintained with the latest release on April 4, 2026. If you specifically want SQLite MCP access, this is the better choice.
+**vs. jparkerweb/mcp-sqlite (105 stars, v1.0.9):** A community-built JavaScript alternative that provides comprehensive SQLite operations with better safety features, including input validation and structured CRUD operations (not raw SQL). The latest release (April 4, 2026) remains current. If you specifically want SQLite MCP access, this is the better choice.
 
-**vs. sqlite-explorer-fastmcp (92 stars):** A read-only SQLite MCP server built with FastMCP. Takes the opposite approach to safety — agents can only read, never write. Good for analytical workloads where you want to prevent accidental data modification. Built-in query validation and parameterized queries add another safety layer.
+**vs. sqlite-explorer-fastmcp (105 stars):** A read-only SQLite MCP server built with FastMCP. Takes the opposite approach to safety — agents can only read, never write. Good for analytical workloads where you want to prevent accidental data modification. Built-in query validation and parameterized queries add another safety layer. Has not had new commits since December 2024 but continues to attract stars for its safety-first design.
 
 **vs. Postgres MCP Server:** If you're choosing a database MCP server for a real project, PostgreSQL is probably the better database choice. More features, better concurrency, actual access controls. Note: the official Postgres MCP server also has a SQL injection vulnerability (now documented in a full Datadog Security Labs case study) — use Postgres MCP Pro by crystaldba (2,300+ stars) or Neon MCP instead.
 
@@ -141,4 +139,4 @@ The SQLite MCP server still does what a reference implementation should: it demo
 
 *Disclosure: We do not test MCP servers hands-on. This review is based on documentation analysis, GitHub repository data, community reports, and publicly available information. All claims should be verified against the official repository and documentation.*
 
-*This review was last updated on 2026-04-19 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-05-19 using Claude Sonnet 4.6 (Anthropic).*
