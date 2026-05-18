@@ -1,15 +1,31 @@
 # The Crawl4AI MCP Server — The Most Popular Crawler Goes LLM-Native
 
-> Crawl4AI's built-in MCP server exposes the most-starred open-source web crawler (64,100+ stars) to AI agents.
+> Crawl4AI's built-in MCP server exposes the most-starred open-source web crawler (65,800+ stars) to AI agents.
 
 
-**At a glance:** 64,100+ stars, 6,600+ forks, 17 open issues, v0.8.6 (March 24, 2026), PyPI package, ~425K estimated all-time visitors on PulseMCP (community RAG server by Cole Medin)
+**At a glance:** 65,800+ stars, 6,732 forks, 89 open issues, v0.8.6 (March 24, 2026), PyPI package, 2,161 stars for Cole Medin's community RAG server
 
-Crawl4AI is the most popular open-source web crawler on GitHub — 64,100+ stars, more than Scrapy, more than Playwright. It was built from the ground up for LLM consumption: every page becomes clean markdown, not HTML soup. And since v0.8, it has a built-in MCP server that exposes its full capabilities directly to AI agents.
+Crawl4AI is the most popular open-source web crawler on GitHub — 65,800+ stars, more than Scrapy, more than Playwright. It was built from the ground up for LLM consumption: every page becomes clean markdown, not HTML soup. And since v0.8, it has a built-in MCP server that exposes its full capabilities directly to AI agents.
 
 The catch: the hosted Cloud API is still in closed beta, so most users still run Crawl4AI themselves via Docker. But the underlying crawler is battle-tested, completely free for self-hosted use, and handles things that commercial alternatives charge per-page for.
 
 We've been comparing it against Firecrawl, Tavily, and Playwright across web scraping tasks. Here's what we found.
+
+## What's New (May 2026 Update)
+
+**No new release since v0.8.6 — development quiet period.** As of May 18, 2026, v0.8.6 (March 24) remains the latest release — 7+ weeks without a version bump. The GitHub commit log shows no merges to main after March 30. Stars have grown from 64,100 to 65,800 (+1,700) and forks from 6,600 to 6,732 (+132), but the surge in open issues from 17 to 89 suggests demand is outpacing current development throughput.
+
+**Stdio transport confirmed broken — Issue #1968 (filed May 13, fix pending).** The root cause was identified: `async_logger.py:139` routes Crawl4AI's console output to `sys.stdout` instead of `sys.stderr`, corrupting JSON-RPC streams and breaking any stdio-based MCP connection. PR #1971 (filed May 17) proposes the fix — routing logger output to stderr — but it remains unmerged as of May 18. Until the fix lands, the official built-in server cannot be used via stdio; SSE and WebSocket remain the only working transports.
+
+**Four open MCP-layer issues reveal feature parity and reliability gaps:**
+- **#1968** — AsyncLogger stdout breaks stdio transport (PR #1971 pending, unmerged)
+- **#1964** — Markdown export loses structure through MCP interface (content formatting regression)
+- **#1963** — MCP scraping tools missing `wait-until` and SPA support — these options are available in the REST API and CLI but have not been surfaced as MCP tool parameters
+- **#1962** — JSON serialization escapes non-ASCII characters, causing 2.5–3× token overhead for CJK (Chinese, Japanese, Korean) content
+
+**Cloud API still in closed beta.** The README and official docs still show "Closed Beta (Launching Soon)" with an apply-for-early-access link. No public GA announcement has been made in the April 17 – May 18 window.
+
+**Firecrawl v2.10 (May 15, 2026) widens the competitive gap.** While Crawl4AI has been quiet, Firecrawl shipped a major release: `/parse` endpoint for local document upload (PDF, DOCX, HTML, spreadsheets up to 50 MB), Lockdown Mode (cache-only, zero outbound, zero data retention), Question & Highlights query formats returning grounded answers using "up to 100× fewer tokens," video extraction with signed download URLs, and four new official SDKs (Go, Ruby, PHP, .NET, Rust). Firecrawl now stands at 121,120 stars — nearly 2× Crawl4AI's 65,800.
 
 ## What's New (April 2026 Update)
 
@@ -92,9 +108,9 @@ claude mcp add --transport sse c4ai-ws ws://localhost:11235/mcp/ws
 
 **Docker is a hard requirement.** No Docker, no Crawl4AI MCP server. This rules out environments where Docker isn't available — many corporate laptops, some CI/CD environments, Codespaces with limited permissions. Every other scraping MCP server we've reviewed (Firecrawl, Playwright, Puppeteer, Browserbase) offers at least an `npx` or `pip` installation path.
 
-**The MCP integration has improved but still trails the crawler.** The two most prominent MCP bugs — #1316 (SSE connection errors) and #1311 (missing schema types breaking Gemini CLI) — were both fixed in March 2026. This is genuine progress. But the MCP layer remains thinner than competitors: seven tools compared to Firecrawl's 12+, and the powerful extraction strategies available in the Python API still aren't fully surfaced as MCP tools. The gap between what Crawl4AI can do and what it exposes through MCP is narrowing, but it's still there.
+**The MCP layer has stalled since March.** The two big MCP bugs — #1316 (SSE connection errors) and #1311 (missing schema types breaking Gemini CLI) — were fixed in March 2026, but four new issues have opened since then. Three of them are feature parity gaps where options available in the REST API or CLI haven't been surfaced as MCP tool parameters: missing `wait-until` and SPA support (#1963), CJK token overhead from Unicode escaping (#1962), and markdown structure loss (#1964). The seven tools remain fewer than Firecrawl's 12+, and the Python API's powerful extraction strategies are still not fully accessible through MCP. No new release in seven weeks.
 
-**No stdio transport (built-in).** Crawl4AI's official MCP server supports SSE and WebSocket, but not stdio — the most widely supported MCP transport. Claude Desktop, most VS Code extensions, and many MCP clients default to stdio. Community MCP servers (sadiuysal, BjornMelin, stgmt, and others) do offer stdio transport as a workaround, but these are third-party implementations with their own quirks.
+**Stdio transport is broken — and now officially confirmed.** The built-in server's SSE and WebSocket transports work, but stdio is broken at the logger level (Issue #1968, filed May 13). `async_logger.py` routes console output to `sys.stdout`, corrupting JSON-RPC streams. A fix (PR #1971) was filed May 17 and is pending merge. Claude Desktop, most VS Code extensions, and many MCP clients default to stdio — so the built-in server won't connect via the most common transport until this is resolved. Community MCP servers (sadiuysal, BjornMelin, stgmt, and others) offer stdio as a workaround but are third-party implementations.
 
 **Hosted option is still in closed beta.** Crawl4AI Cloud API launched in closed beta with credit-based pricing and SDKs for Python, Node.js, and Go — but it's not generally available yet. Until it launches publicly, most users still need to run and maintain their own Docker container. Firecrawl, Tavily, and Browserbase all have production cloud APIs today. For teams that need a hosted scraping service now, Crawl4AI Cloud isn't ready yet — but it's coming.
 
@@ -104,7 +120,7 @@ claude mcp add --transport sse c4ai-ws ws://localhost:11235/mcp/ws
 
 ## Compared to Alternatives
 
-**vs. Firecrawl:** Firecrawl remains the more polished MCP experience — 12+ tools, an autonomous research agent, LLM-powered extraction as a first-class tool, hosted cloud option, and both stdio and HTTP transports. But Firecrawl charges per page (500 non-renewable free credits, then $19+/month). Crawl4AI's Cloud API (in closed beta) will eventually compete directly on hosted offering, and the self-hosted option remains free for high-volume work. Firecrawl still lacks JavaScript execution and crash recovery.
+**vs. Firecrawl:** The gap has widened. Firecrawl v2.10 (May 15, 2026) added `/parse` for local document upload, Lockdown Mode for air-gapped deployments, Question & Highlights token-efficient query formats, video extraction, and Go/Ruby/PHP/.NET/Rust SDKs — while Crawl4AI has had no release in 7+ weeks and four open MCP issues. Firecrawl now has 121,120 stars vs. Crawl4AI's 65,800. The core trade-off still applies: Firecrawl charges per page (free tier 1,000 credits/month, then $16+/month) while Crawl4AI is free for self-hosted use. And Crawl4AI's JavaScript execution and crash recovery remain advantages. But the polished MCP experience advantage Firecrawl had is now considerably larger. Crawl4AI's Cloud API remains in closed beta, not yet a competitive hosted alternative.
 
 **vs. Playwright:** Playwright's MCP server offers 25+ tools with precise, deterministic browser control — CSS selectors, accessibility tree snapshots, network interception. It's free and doesn't need Docker. But Playwright gives you raw browser automation, not web scraping. You get HTML, not clean markdown. Crawl4AI handles the HTML-to-useful-content conversion that Playwright leaves to you, and v0.8.5's Shadow DOM flattening handles modern web components that even Playwright can struggle with.
 
@@ -136,11 +152,11 @@ claude mcp add --transport sse c4ai-ws ws://localhost:11235/mcp/ws
 - You need the simplest possible setup (use Fetch)
 - You need stdio transport from the built-in server (use a community Crawl4AI MCP server instead)
 
-{{< verdict rating="4" summary="The most powerful free web scraper, now with a maturing MCP layer" >}}
-Crawl4AI is the most popular open-source web crawler for a reason — its markdown extraction is best-in-class, it handles JavaScript-heavy sites through Playwright, and it costs nothing no matter how many pages you crawl. The project has addressed our biggest criticisms: both major MCP bugs (#1316 SSE errors, #1311 Gemini schema compatibility) are now fixed, the Cloud API is in closed beta (eliminating the "Docker-only" barrier once it launches publicly), and v0.8.6 responded within hours to a serious litellm supply chain compromise. At 64,100+ stars and growing fast, the crawler engine is battle-tested and improving rapidly. The remaining gaps are narrower: no built-in stdio transport, seven tools vs. Firecrawl's 12+, and community fragmentation that makes choosing the right Crawl4AI MCP server less obvious than it should be. But the trajectory is clearly positive. If you're comfortable with Docker (or willing to wait for Cloud API GA), this is the best free web scraper in the MCP ecosystem — and it's closing the gap on the paid alternatives.
+{{< verdict rating="4" summary="The best free web scraper — but the MCP layer is stalling" >}}
+Crawl4AI's crawler engine remains excellent: 65,800+ stars, best-in-class markdown extraction, full JavaScript execution, anti-bot detection, Shadow DOM flattening, and crash recovery — all free, no credits, no Docker limits (other than running Docker at all). These fundamentals haven't changed. But the MCP layer is showing signs of drift. As of May 18, 2026 — seven weeks since the last release — four open MCP issues reveal real gaps: stdio transport is broken at the logger level (Issue #1968, PR #1971 pending), markdown structure is lost through the MCP interface (#1964), SPA support options available in the REST API are missing from MCP tools (#1963), and CJK content suffers 2.5–3× token overhead from Unicode escaping (#1962). The Cloud API remains in closed beta. Meanwhile, Firecrawl v2.10 shipped with document parsing, token-efficient query formats, video extraction, and four new SDKs. The trajectory that looked clearly positive in April now looks more uncertain. If you're comfortable with Docker and your use case is high-volume HTML-to-markdown or JavaScript-heavy site scraping, Crawl4AI is still the best free option by a wide margin. But if you need a reliable stdio connection or SPA-aware MCP tools today, the fix is pending — not shipped.
 {{< /verdict >}}
 
 *Disclosure: ChatForest researches MCP servers using public documentation, GitHub repositories, changelogs, community discussions, and ecosystem data. We do not test or run MCP servers hands-on. Our assessments are based on publicly available information.*
 
-*This review was last edited on 2026-04-17 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic).*
 

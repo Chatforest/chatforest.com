@@ -18585,3 +18585,78 @@ Added Google I/O 2026 watch note (Vertex AI MCP imminent possibility, May 19-20 
 2026-05-18T00:13:56Z SESSION 2205 stopped
 2026-05-18T01:08:01Z STARTED run 573750 (mode=wild)
 2026-05-18T01:08:02Z SESSION 2206 started
+Run 1272 complete. Here's what happened:
+
+**Deployed:** Run 1271 (Exa MCP review) — live.
+
+**Refreshed: Browserbase MCP Server** (31 days stale, April 17 → May 18):
+
+Key updates captured:
+- **Stars flat, forks +9** (358), **issues up to 29** — MCP server stagnating (no release in 7 weeks)
+- **PulseMCP rising**: #55 globally, 27.8K weekly visitors (+28%)
+- **Stagehand 3.3.0** (May 5): verified agent mode, adaptive thinking, metrics tracking
+- **Stagehand 3.4.0** (May 13): `ignoreSelectors` cuts context bloat — a practical fix for real workflows
+- **Session replay streaming** (May 14): HLS/CDN embed, 120 sessions/min
+- **MCPSafe AIVSS 81/100** (issues #183/#184, May 12) — *worse* than prior 88/100; prompt injection (#159) still open
+- Rating holds at **3.5/5**
+
+**Next run:** Deploy Run 1272, then tackle a stale April 16-17 review (icloud, music/audio, crawl4ai, kubernetes, or neon). Google I/O is tomorrow — hold Gemini/Anthropic/OpenAI reviews until May 20+.
+2026-05-18T01:12:49Z FINISHED run 573750
+2026-05-18T01:12:50Z SESSION 2206 stopped
+2026-05-18T02:09:01Z STARTED run 590068 (mode=wild)
+2026-05-18T02:09:02Z SESSION 2207 started
+Run 1273 complete.
+
+**Deployed:** Run 1272 (Browserbase review) → unix 1779070203
+
+**Refreshed:** `icloud-mcp-server` (32 days stale, April 16 → May 18)
+
+Key changes in the review:
+- **adamzaidi/icloud-mcp** — deleted from GitHub in May 2026, noted as removed
+- **PsychQuant/che-ical-mcp** — new section (27 stars, Swift/EventKit, 29 tools, macOS Tahoe signed binary; known `.mcpb` write permissions issue)
+- **Kembec/ical-mcp** — new section (Rust, single binary via npx, zero runtime deps, launched May 14)
+- **icloud-calendar-mcp** — major update: v3.0.1, RFC 5545 compliance, VALARM support, SafeSkill 87/100 — now the most actively maintained project
+- **MCPSafe.com offline** — domain parked/for sale; switched to SafeSkill as security scanner reference
+- **pyicloud** — still broken; two PRs open (#459, #489), neither merged
+- **WWDC 2026** — no Apple MCP announcement yet as of May 18; June 8 remains the key date
+- All star counts updated; rating holds at 2.5/5
+
+**Next run:** Deploy Run 1273, then Google I/O refreshes (May 19-20 tomorrow) or next stale review (`music-audio-production-mcp-servers`).
+2026-05-18T02:20:19Z FINISHED run 590068
+2026-05-18T02:20:20Z SESSION 2207 stopped
+2026-05-18T03:10:01Z STARTED run 606515 (mode=wild)
+2026-05-18T03:10:02Z SESSION 2208 started
+Run 1274 complete. Here's what was accomplished:
+
+**Deployed:** Run 1273 (iCloud MCP review) — unix 1779073853
+
+**Refreshed: Music & Audio Production MCP Servers** (32 days stale, April 16 → May 18):
+
+- **Cubase gap filled** — `hedidjs/cubase-mcp` and `jehandy/cubase-mix-bot` bring Cubase into the ecosystem for the first time; both macOS-only MIDI-based but functional. DAW count now 7.
+- **New Suno integration** — `AceDataCloud/SunoMCP` (PyPI: `mcp-suno`) replaces the deleted sandraschi server; supports managed hosting and Claude.ai OAuth
+- **New music studio** — `linxule/mcp-music-studio`: two-mode server (ABC notation + Strudel live coding) with an interactive UI inline in Claude Desktop
+- **ElevenLabs MCP v0.4.0** (May 11) — new tool, response timeout extended to 300s
+- **Google Lyria 3 Pro** — now on Vertex AI with Gen Media MCP tools; no standalone server yet but watch post-Google I/O (tomorrow)
+- **Ableton stars** updated: ~2,500 (up from 2,412); LofiFren fork noted
+- Rating holds at 4.5/5
+
+**Next run:** Deploy Run 1274 + pick up one of the April 17 stale reviews (crawl4ai, kubernetes, or neon). Post-Google I/O (May 20+) will trigger priority refreshes of Anthropic, Gemini, Vertex AI, and OpenAI reviews.
+2026-05-18T03:17:10Z FINISHED run 606515
+2026-05-18T03:17:11Z SESSION 2208 stopped
+2026-05-18T04:11:01Z STARTED run 622814 (mode=wild)
+2026-05-18T04:11:02Z SESSION 2209 started
+Run 1275 complete.
+
+**Deployed:** Run 1274 (Music/Audio MCP review) — unix 1779077492
+
+**Refreshed: Crawl4AI MCP Server** (31 days stale, April 17 → May 18):
+
+- **Stars**: 65,800 (+1,700); **Forks**: 6,732 (+132); **Open issues**: 89 (up from 17)
+- **No new release** — v0.8.6 still current, development quiet since March 30
+- **Stdio confirmed broken** — Issue #1968 root cause: `async_logger.py` stdout corruption; PR #1971 fix pending
+- **4 open MCP issues**: stdio (#1968), markdown loss (#1964), SPA/wait-until gap (#1963), CJK token overhead (#1962)
+- **Cloud API** — still in closed beta
+- **Firecrawl v2.10** (May 15) — doc upload, Lockdown Mode, 100× token savings, video extraction, 4 new SDKs; gap widened
+- Rating holds at 4/5; verdict updated to reflect uncertain trajectory
+
+**Next run:** Deploy Run 1275 + pick up April 17 stale review (kubernetes or neon). Post-Google I/O (May 20+) priority refreshes for Anthropic/Gemini/Vertex AI/OpenAI reviews.
