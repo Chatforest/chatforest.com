@@ -3,7 +3,7 @@
 > The official Fetch MCP server gives AI agents basic web fetching with HTML-to-markdown conversion. One tool, wide adoption, and a security hole the README warns you about. Here's the honest review.
 
 
-**At a glance:** 84,100+ parent repo stars, ~202K weekly PyPI downloads, ~755K monthly, 1.45M Docker pulls, version 2025.4.7 (no new release since April 2025 — over a year), 1 tool, ~189K weekly PulseMCP visitors (#2 globally, 26.7M all-time), CVE-2025-65513 (SSRF, CVSS 9.3) disclosed December 2025 — still unpatched.
+**At a glance:** 85,800+ parent repo stars, ~244K weekly PyPI downloads, ~1.33M monthly, version 2025.4.7 (no new release since April 2025 — **13+ months**), 1 tool, ~298K weekly PulseMCP visitors (#2 globally, 28M all-time), CVE-2025-65513 (SSRF, CVSS 9.3) disclosed December 2025 — **still unpatched, 17+ months**.
 
 The Fetch MCP server (`mcp-server-fetch`) is Anthropic's official reference implementation for giving AI agents web access. It does one thing: fetch a URL and return the content as markdown. One tool. No crawling, no search, no screenshots — just HTTP GET, content extraction, and markdown conversion.
 
@@ -11,32 +11,47 @@ It's one of the most widely deployed MCP servers, pulling ~202,000 weekly downlo
 
 But the README itself warns you: "This server can access local/internal IP addresses and may represent a security risk." That warning became more concrete in December 2025 when CVE-2025-65513 was disclosed — a critical SSRF vulnerability (CVSS 9.3) in the `is_ip_private()` validation function. As of April 2026, it remains unpatched — over 16 months since the last release.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
 
-The Fetch MCP server still hasn't seen a new version release since 2025.4.7 (April 7, 2025) — now **over a year** without a version bump. But the codebase continues to see active development, with several notable PRs in March–April 2026:
+The Fetch MCP server still has no new version since 2025.4.7 (April 7, 2025) — now **13+ months** without a release. Activity in the repo continues, but the pattern is consistent: PRs open, PRs accumulate, nothing merges.
 
-**Recent PRs (March–April 2026):**
-- **Non-UTF-8 encoding detection** (PR #3880, April 9): Open PR to properly detect and handle encoding for non-UTF-8 pages — currently these can produce garbled output.
-- **Tool annotations** (PR #3876, April 8): Open PR to add MCP tool annotations to the fetch server, improving how clients discover and describe the tool.
-- **Page title in output** (PR #3739, March 28): Open PR to include the page title in extracted content — a useful metadata addition for agents deciding whether to read further.
-- **Null parameter handling** (PR #3982, April 18): Open PR to accept null for optional parameters, fixing client compatibility issues.
-- **Readability fallback** (multiple closed PRs, April 12–18): Several attempts to fix cases where the Readability library strips hidden SSR content, leaving empty output. The problem is real — Readability sometimes removes content it considers "non-article" — but the fix approach is still being iterated.
+**New PRs (April 22 – May 2026):**
+- **Readability fallback** (PR #4002, April 22): When Readability strips >95% of content, fall back to raw HTML extraction. Open, no reviews yet.
+- **HTTP content negotiation** (PR #4052, April 26): Request native markdown from servers that support it — skipping the readabilipy/markdownify pipeline for pages that already serve clean markdown. Open.
+- **Second SSRF fix** (PR #4061, April 29): Submitted by OrbisAI Security, independently proposing a fix for the same SSRF vulnerability as PR #3180. Two competing security fixes, neither merged.
+- **syncRoots idempotency** (PR #4107, May 5): Fixes error handling in root synchronization. Open.
+- **urllib3 bump** (PR #4173, May 16): Dependabot update from 2.6.3 → 2.7.0. Open.
+- **Streaming byte cap** (PR #4185, May 17): Adds an upper bound to prevent resource exhaustion from large streaming responses — a previously undocumented attack surface. Open.
 
-**Earlier Q1 2026 fixes (from our March review):**
-- **Malformed input crash fix** (PR #3515, March 15): Errors that previously killed the server process are now caught gracefully.
-- **httpx 0.28+ proxy compatibility** (PR #3293, March 7): Proxy parameter handling updated for newer httpx versions.
-- **First-ever unit tests** added January 28, 2026.
+**April 2026 PRs — status update:**
+- **PR #3880** (Non-UTF-8 encoding): Still open; author requested merge in late April, no response.
+- **PR #3876** (Tool annotations): Still open; bot-approved April 21, no human review.
+- **PR #3982** (Null parameter handling): Still open.
+- **PR #3739** (Page title in output): **Closed** April 19 — author closed due to maintainer inactivity.
 
-**Security — CVE-2025-65513 still unpatched:**
+**Security — CVE-2025-65513 now 17+ months unpatched:**
 - Disclosed December 9, 2025 via Snyk advisory (discovered by Team off-course / K-Shield.Jr)
 - The `is_ip_private()` function passes the full URL string instead of the hostname, causing the private IP check to always return false — enabling SSRF attacks to internal network services
 - CVSS 9.3 (Critical), exploitability rated "Easy", prevalence "Common"
-- **PR #3180** proposing SSRF protection remains open and unmerged since January 5, 2026 — over 3 months with no maintainer review activity (last updated March 6)
-- The broader MCP ecosystem saw 30+ CVEs filed in January–February 2026 alone, with 43% being shell injection. A dedicated tracking project, [VulnerableMCP.info](https://vulnerablemcp.info/), now catalogs MCP-specific CVEs
+- **Two competing fix PRs** — #3180 (January 2026) and #4061 (April 29, OrbisAI Security) — both open, neither reviewed by maintainers. The situation has gotten worse, not better.
+- The broader MCP ecosystem saw 30+ CVEs filed in January–February 2026 alone, with 43% being shell injection. A dedicated tracking project, [VulnerableMCP.info](https://vulnerablemcp.info/), now catalogs MCP-specific CVEs.
 
 **Repo structure note:** The Fetch server remains in the active `modelcontextprotocol/servers` repo alongside Filesystem, Memory, Git, Time, Sequential Thinking, and Everything. Many other servers (AWS, GitHub, PostgreSQL, etc.) were moved to the separate `servers-archived` repository.
 
-**What hasn't changed:** No new features, no new tools, no JavaScript rendering, no authenticated fetching, no batch mode. The server remains a single-tool reference implementation. Docker Hub shows 1.45 million pulls with the image actively maintained (last updated April 18, 2026), even as the PyPI package hasn't been released in over a year.
+**What hasn't changed:** No new features, no new tools, no JavaScript rendering, no authenticated fetching, no batch mode. The server remains a single-tool reference implementation. PyPI weekly downloads have grown to ~244K (up from ~202K in April, +21%) and monthly to ~1.33M — adoption keeps rising even as the codebase stagnates.
+
+### Earlier Updates (from our April 2026 review)
+
+**PRs from March–April 2026 (at that time open):**
+- **Non-UTF-8 encoding detection** (PR #3880, April 9): Properly detect and handle encoding for non-UTF-8 pages.
+- **Tool annotations** (PR #3876, April 8): Add MCP tool annotations to improve client discovery.
+- **Null parameter handling** (PR #3982, April 18): Accept null for optional parameters, fixing client compatibility issues.
+- **Readability fallback** (multiple PRs, April 12–18): Attempting to fix cases where Readability strips SSR content.
+
+**Q1 2026 fixes already merged:**
+- **Malformed input crash fix** (PR #3515, March 15): Errors now caught gracefully instead of killing the server process.
+- **httpx 0.28+ proxy compatibility** (PR #3293, March 7): Proxy parameter handling updated for newer httpx versions.
+- **First-ever unit tests** added January 28, 2026.
 
 ## What It Does
 
@@ -111,7 +126,7 @@ Requirements: Python 3.10+ with uvx or pip. No API keys, no accounts.
 
 ## What Doesn't Work Well
 
-**No SSRF protection — CVE unpatched for 16+ months.** This remains the biggest problem, and it's only gotten worse with time. CVE-2025-65513 (CVSS 9.3, Critical) was disclosed in December 2025, confirming that the `is_ip_private()` function passes the full URL string instead of the hostname, causing the private IP check to always return false. The server will fetch any URL you give it, including `http://localhost:8080/admin`, `http://169.254.169.254/latest/meta-data/` (AWS instance metadata), and any other internal address. PR #3180 proposing SSRF protection has been open since January 5, 2026 — over 3 months with no maintainer review. The broader MCP ecosystem saw 30+ CVEs in the first two months of 2026, and projects like [VulnerableMCP.info](https://vulnerablemcp.info/) now track MCP-specific vulnerabilities as a dedicated database. The README's warning is backed by a formal critical-severity CVE — this isn't theoretical risk anymore.
+**No SSRF protection — CVE unpatched for 17+ months.** This remains the biggest problem, and it keeps getting worse. CVE-2025-65513 (CVSS 9.3, Critical) was disclosed in December 2025, confirming that the `is_ip_private()` function passes the full URL string instead of the hostname, causing the private IP check to always return false. The server will fetch any URL you give it, including `http://localhost:8080/admin`, `http://169.254.169.254/latest/meta-data/` (AWS instance metadata), and any other internal address. Now two competing fix PRs exist — #3180 (open since January 5, 2026) and #4061 (submitted April 29 by OrbisAI Security) — and neither has received maintainer review. A separate PR (#4185, May 17) has identified a related resource exhaustion vector from unbounded streaming responses. The broader MCP ecosystem saw 30+ CVEs in the first two months of 2026, and projects like [VulnerableMCP.info](https://vulnerablemcp.info/) now track MCP-specific vulnerabilities as a dedicated database. The README's warning is backed by a formal critical-severity CVE — this isn't theoretical risk, and it's getting more public attention, not less.
 
 **No JavaScript rendering.** The server uses httpx for HTTP requests — plain HTTP, no browser engine. JavaScript-heavy SPAs, dynamically loaded content, and client-side rendered pages return empty or partial content. If the page you need relies on JavaScript to render its content (and increasingly, most do), Fetch won't help. You need a browser-based server like Playwright MCP or fetcher-mcp.
 
@@ -155,10 +170,10 @@ Requirements: Python 3.10+ with uvx or pip. No API keys, no accounts.
 - You need structured data extraction (JSON, tables) rather than markdown
 
 {{< verdict rating="3.5" summary="The simplest web access for agents — just don't point it at anything internal" >}}
-The Fetch MCP server does exactly what a reference implementation should: one tool, clearly defined behavior, easy setup. The HTML-to-markdown pipeline is solid, robots.txt handling is thoughtful, and with ~202K weekly downloads and 1.45M Docker pulls it's the second most popular MCP server on PulseMCP. Active development continues — encoding fixes, tool annotations, content extraction improvements — even without formal releases. But the SSRF vulnerability (CVE-2025-65513, CVSS 9.3) has now been unpatched for over 16 months since the last release, with the fix PR sitting unreviewed for 3+ months. No JavaScript rendering limits it to server-rendered pages, and the single-tool design means even simple multi-page tasks require multiple sequential calls. For personal use in a trusted environment fetching documentation and blog posts, it works well. For anything involving untrusted URLs, look at zcaceres/fetch-mcp (built-in SSRF protection). For JavaScript-heavy pages, look at fetcher-mcp or Playwright MCP. The official server remains the default starting point by adoption, but over a year without a version bump — while a critical CVE sits unpatched and the fix PR goes unreviewed — is hard to square with "reference implementation."
+The Fetch MCP server does exactly what a reference implementation should: one tool, clearly defined behavior, easy setup. The HTML-to-markdown pipeline is solid, robots.txt handling is thoughtful, and with ~244K weekly PyPI downloads and ~298K weekly PulseMCP visitors it's the second most popular MCP server globally. Active development continues — encoding fixes, content negotiation, Readability improvements — even without formal releases. But the SSRF vulnerability (CVE-2025-65513, CVSS 9.3) has now been unpatched for 17+ months, and the situation has worsened: two competing fix PRs (#3180 and #4061) sit unreviewed by maintainers, and a new resource exhaustion vector (PR #4185) was identified in May 2026. No JavaScript rendering limits it to server-rendered pages, and the single-tool design means even simple multi-page tasks require multiple sequential calls. For personal use in a trusted environment fetching documentation and blog posts, it works well. For anything involving untrusted URLs, look at zcaceres/fetch-mcp (built-in SSRF protection). For JavaScript-heavy pages, look at fetcher-mcp or Playwright MCP. The official server remains the default starting point by adoption, but 13+ months without a version bump — while a critical CVE accumulates competing fix PRs that no one merges — is increasingly hard to square with "Anthropic reference implementation."
 {{< /verdict >}}
 
 *ChatForest does not test MCP servers hands-on. Our reviews are based on source code analysis, documentation review, GitHub activity, community reports, and publicly available data. We link to primary sources so you can verify our findings.*
 
-*This review was last edited on 2026-04-19 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic).*
 

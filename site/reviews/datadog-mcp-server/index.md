@@ -3,7 +3,7 @@
 > Datadog's official MCP server puts 50+ tools across 14 modular toolsets at your agent's fingertips — logs, metrics, traces, APM, alerting, case management, workflows, database
 
 
-**At a glance:** 32 GitHub stars, 21 commits, MIT license, 80+ tools across 16 modular toolsets, GA since March 9 2026, PulseMCP: official ~127K all-time (#279 globally), community (winor30) ~319K all-time / ~13.5K weekly (#134 globally), Azure SRE Agent + OpenAI Codex integrations, new Code Security MCP (Preview, April 2026)
+**At a glance:** 37 GitHub stars, 21 commits, MIT license, 140+ tools across 17 modular toolsets, GA since March 9 2026, PulseMCP: official ~134K all-time (#326 globally, ~834 weekly), community (winor30) ~390K all-time / ~19.7K weekly (#145 globally, #110 weekly), Azure SRE Agent + OpenAI Codex + Gemini CLI integrations, Code Security MCP (Preview)
 
 The Datadog MCP server gives AI agents direct access to your Datadog platform — logs, metrics, traces, dashboards, monitors, incidents, hosts, services, events, notebooks, and more. Everything your team sees in the Datadog web UI, your agent can now query programmatically.
 
@@ -11,7 +11,29 @@ It's official. Datadog builds and maintains it at [datadog-labs/mcp-server](http
 
 This is the third observability MCP server we've reviewed after [Sentry](/reviews/sentry-mcp-server/) (4/5) and [Grafana](/reviews/grafana-mcp-server/) (4/5). Where Sentry is deep and narrow (error tracking) and Grafana is open-source and multi-vendor, Datadog is the enterprise full-stack play. It covers more operational surface than any other observability MCP server — and it's the only one with toolsets for LLM observability, feature flags, database monitoring, and synthetic testing.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
+
+**Tool count surged: 80+ → 140+ across 17 toolsets.** The Datadog MCP documentation now lists 140+ total tools across 17 toolsets — a near-doubling from the 80+ tools at the April review. This reflects both deeper toolsets and a new 17th toolset added since then.
+
+**Kubernetes toolset added (17th).** A new Kubernetes toolset (3 tools, GA) gives agents direct access to Kubernetes workload data from within Datadog — extending the server's operational surface into container orchestration. This means agents can now correlate infrastructure-level Kubernetes state with logs, APM traces, and monitors without switching tools.
+
+**DBM toolset deepened: 11 tools.** The Database Monitoring toolset expanded significantly — now 11 tools (GA), up from the generic "query database plans and samples" coverage in the April review. Agents can drill into slow query analysis, wait event breakdowns, and database host performance with more granularity.
+
+**Security toolset: 7 tools.** The Security toolset grew from 5 to 7 tools, adding additional security signals and findings capabilities. Combined with the companion Code Security MCP (local scanning), Datadog's security MCP surface is now the broadest of any observability vendor.
+
+**Client support expanded to 13 named clients.** The official client list now includes Gemini CLI, Kiro (Amazon's new AI IDE), Devin, and OpenCode — additions since the April review. The full confirmed list: Cursor, Claude Code, Claude Desktop, Gemini CLI, VS Code, Warp, Devin, JetBrains, Codex CLI, Goose, OpenCode, GitHub Copilot, Kiro. Rapid client integration across competing AI ecosystems suggests Datadog is treating MCP client breadth as a competitive priority.
+
+**GitHub: official repo 32 → 37 stars.** Modest growth; still no versioned releases since the server is fully remote-managed by Datadog. The community server (winor30) moved fractionally: 141 → 142 stars, 70 → 71 forks, still v1.7.0 (October 2025, no new release).
+
+**PulseMCP traffic growth.** Official server: ~127K → ~134K all-time (+5.5%), ~530 → ~834 weekly (+57%). Community server (winor30): ~319K → ~390K all-time (+22%), ~13.5K → ~19.7K weekly (+46%), now ranked #110 weekly — accelerating faster than the official server.
+
+**Datadog publishing MCP security research.** Datadog's Security Labs published a case study on SQL injection in the PostgreSQL MCP server, and the Datadog blog published a guide on building SIEM detection rules for MCP servers. This positions Datadog as both an MCP vendor and an MCP security analyst — a smart dual role that builds credibility while cross-selling Cloud SIEM.
+
+**DASH 2026: June 9-10, NYC.** Datadog's annual conference is under 3 weeks away. No specific MCP pre-announcements have been made, but DASH has historically been when Datadog reveals major product updates. Bits AI, DDSQL GA status, and additional toolset additions are all plausible announcements.
+
+### Previous updates (April 2026)
+
+
 
 **Code Security MCP launched (April 7, 2026).** Datadog released a **separate** MCP server focused on security scanning of AI-generated code. The [Code Security MCP](https://github.com/datadog-labs/datadog-code-security-mcp) (5 GitHub stars, Go, Preview) runs locally via stdio and provides 4 tools: `datadog_secrets_scan` (hardcoded credentials), `datadog_sca_scan` (dependency CVEs), `datadog_iac_scan` (infrastructure-as-code misconfigurations), and `datadog_generate_sbom` (software bill of materials — no auth required). Installs via Homebrew or GitHub releases. Supports Claude Code, Claude Desktop, Cursor, VS Code. Requires DD_API_KEY and DD_APP_KEY for most scans. This is Datadog's answer to shift-left security for the AI coding era — catching vulnerabilities before they reach a pull request.
 
@@ -52,7 +74,7 @@ This is the third observability MCP server we've reviewed after [Sentry](/review
 
 ## What It Does
 
-The server exposes 80+ tools organized into **modular toolsets** — capability groups you enable or disable via the `?toolsets=` query parameter. This is Datadog's answer to context window management: don't load tools you don't need.
+The server exposes 140+ tools organized into **modular toolsets** — capability groups you enable or disable via the `?toolsets=` query parameter. This is Datadog's answer to context window management: don't load tools you don't need.
 
 **Core Toolset** (enabled by default, ~20 tools)
 - `analyze_datadog_logs` / `search_datadog_logs` — log analysis with SQL queries
@@ -79,8 +101,8 @@ The server exposes 80+ tools organized into **modular toolsets** — capability 
 **Dashboards Toolset** (opt-in, 6 tools)
 - Full dashboard CRUD: get, upsert, delete; widget reference, validation, and widget expert assistant
 
-**Database Monitoring Toolset** (opt-in)
-- Query database plans and samples for performance analysis
+**Database Monitoring Toolset** (opt-in, 11 tools)
+- Slow query analysis, wait event breakdowns, database host performance, query plans and samples
 
 **DDSQL Toolset** (opt-in, Preview, 6 tools) — *new*
 - SQL querying against Datadog data: schema search, column inspection, unstructured field search, query execution, shareable link creation
@@ -100,8 +122,11 @@ The server exposes 80+ tools organized into **modular toolsets** — capability 
 **Reference Tables Toolset** (opt-in, 4 tools) — *new*
 - List, get rows, append rows, create reference tables
 
-**Security Toolset** (opt-in, 5 tools)
-- Secrets scanning, security signals, security findings schema/analysis/search
+**Kubernetes Toolset** (opt-in, 3 tools) — *new*
+- Kubernetes workload data access, correlating container orchestration state with Datadog observability
+
+**Security Toolset** (opt-in, 7 tools)
+- Secrets scanning, security signals, security findings schema/analysis/search, Cloud SIEM detection
 
 **Software Delivery Toolset** (opt-in, 7 tools)
 - CI pipeline event search and aggregation, flaky tests, test event aggregation/search, code coverage by branch and commit
@@ -112,7 +137,7 @@ The server exposes 80+ tools organized into **modular toolsets** — capability 
 **Workflows Toolset** (opt-in, 5 tools)
 - List, inspect, execute workflows; get workflow instances; configure agent triggers
 
-That's 16 toolsets (3 new since March), each adding specialized capabilities. The modular design means a debugging-focused agent can load just core + APM + error-tracking, while an SRE agent might load core + alerting + database monitoring + synthetics. You choose what fits the workflow.
+That's 17 toolsets (4 new since March), each adding specialized capabilities. The modular design means a debugging-focused agent can load just core + APM + error-tracking, while an SRE agent might load core + alerting + database monitoring + synthetics. You choose what fits the workflow.
 
 ## Setup
 
@@ -159,11 +184,11 @@ https://mcp.datadoghq.com/api/unstable/mcp-server/mcp?toolsets=core,apm,alerting
 
 The server uses **Streamable HTTP** transport exclusively — no stdio, no local process. Authentication supports **OAuth 2.0** for interactive flows and **API key + application key** via HTTP headers for server-to-server or headless setups.
 
-The server works with 14 clients including Claude Code, Claude Desktop, Cursor, OpenAI Codex, GitHub Copilot, JetBrains IDEs, VS Code, Warp, Goose, Cognition, and Kiro.
+The server works with 13 named clients including Claude Code, Claude Desktop, Cursor, Gemini CLI, OpenAI Codex, GitHub Copilot, JetBrains IDEs, VS Code, Warp, Goose, Devin, OpenCode, and Kiro — plus a custom agent option.
 
 ## What's Good
 
-**The broadest observability tool surface in the MCP ecosystem.** No other single MCP server covers logs, metrics, traces, APM, alerting, case management, workflow automation, database monitoring, error tracking, feature flags, LLM observability, product analytics, networks, security, software delivery, synthetic testing, DDSQL querying, and onboarding. Grafana MCP (40+ tools) is comprehensive for open-source stacks, but Datadog's 80+ tools across 16 modular toolsets cover operational surface that no other server touches — particularly LLM observability, feature flags, DDSQL, case management, workflows, and synthetics.
+**The broadest observability tool surface in the MCP ecosystem.** No other single MCP server covers logs, metrics, traces, APM, alerting, case management, workflow automation, database monitoring (11 tools), error tracking, feature flags, LLM observability, product analytics, networks, security (7 tools), software delivery, synthetic testing, DDSQL querying, Kubernetes, and onboarding. Grafana MCP (40+ tools) is comprehensive for open-source stacks, but Datadog's 140+ tools across 17 modular toolsets cover operational surface that no other server touches — particularly LLM observability, feature flags, DDSQL, case management, workflows, synthetics, and now Kubernetes workload correlation.
 
 **Agent-native tool design, not an API wrapper.** Datadog's engineering blog details how they rethought tool design specifically for agents. Key decisions: CSV output instead of JSON (50% fewer tokens for tabular data), field trimming to remove unused data, and **token-budget pagination** — the server cuts off responses after a configurable token budget and returns a cursor for more, instead of paginating by record count. This prevents the "one huge log eats the entire context window" problem that plagues other observability servers. They also support SQL-like queries against logs (`SELECT service, COUNT(*) FROM logs WHERE status='error' GROUP BY service`), achieving 40% cost reduction in evaluation scenarios compared to raw log retrieval.
 
@@ -197,7 +222,7 @@ The server works with 14 clients including Claude Code, Claude Desktop, Cursor, 
 
 **Incident timeline data missing.** The incident tools can list and retrieve incidents, but the timeline data (the chronological record of actions taken during an incident) is not yet available. For incident post-mortems, this is a significant gap.
 
-**Community alternatives are fragmented.** The most popular community Datadog MCP server ([winor30/mcp-server-datadog](https://github.com/winor30/mcp-server-datadog), 141 stars, 70 forks, 18 open PRs) predates the official server and covers different ground — host muting, downtime scheduling, RUM analysis. It actually draws more PulseMCP traffic (~13.5K weekly vs ~530 for the official server) because it supports local stdio deployment. If you need capabilities the official server doesn't have (like muting hosts or scheduling downtimes), you'd need to run both, doubling your context window cost.
+**Community alternatives are fragmented.** The most popular community Datadog MCP server ([winor30/mcp-server-datadog](https://github.com/winor30/mcp-server-datadog), 142 stars, 71 forks, 18 open PRs, still v1.7.0 from October 2025) predates the official server and covers different ground — host muting, downtime scheduling, RUM analysis. It draws significantly more PulseMCP traffic (~19.7K weekly vs ~834 for the official server, and ~390K vs ~134K all-time) because it supports local stdio deployment. If you need capabilities the official server doesn't have (like muting hosts or scheduling downtimes), you'd need to run both, doubling your context window cost.
 
 ## Alternatives
 
@@ -205,7 +230,7 @@ The server works with 14 clients including Claude Code, Claude Desktop, Cursor, 
 
 **[Grafana MCP Server](/reviews/grafana-mcp-server/)** (4/5) — the open-source alternative with 40+ tools, multi-vendor data source support (any Grafana backend), and self-hosting. If you want vendor independence, code auditability, or run a LGTM stack, Grafana is the natural choice. Datadog has more tools, but Grafana works with your existing infrastructure regardless of vendor.
 
-**[winor30/mcp-server-datadog](https://github.com/winor30/mcp-server-datadog)** (141 stars, 70 forks) — the most popular community Datadog MCP server with 20+ tools including host management (mute/unmute), downtime scheduling, and RUM analysis. TypeScript, Apache 2.0, stdio transport. Draws ~13.5K weekly PulseMCP visitors (#134 globally) — significantly more than the official server. Useful if you need local deployment, capabilities the official server doesn't cover, or want to avoid rate limits.
+**[winor30/mcp-server-datadog](https://github.com/winor30/mcp-server-datadog)** (142 stars, 71 forks, v1.7.0) — the most popular community Datadog MCP server with 20+ tools including host management (mute/unmute), downtime scheduling, and RUM analysis. TypeScript, Apache 2.0, stdio transport. Draws ~19.7K weekly PulseMCP visitors (#110 weekly, #145 all-time) — 24x the traffic of the official server this week. Useful if you need local deployment, capabilities the official server doesn't cover, or want to avoid rate limits. No updates since v1.7.0 (October 2025), so actively maintained coverage may lag official server expansion.
 
 **New Relic MCP Server** — 35 tools with natural language to NRQL translation. More accessible pricing (100GB/mo free tier). Still in Public Preview.
 
@@ -228,12 +253,12 @@ The server works with 14 clients including Claude Code, Claude Desktop, Cursor, 
 - You need incident timeline data — not yet available
 
 {{< verdict rating="4" summary="The most feature-rich observability MCP server, purpose-built for enterprise teams already on Datadog" >}}
-The Datadog MCP server is what happens when the largest commercial observability platform designs an MCP integration from the ground up — not wrapping their API, but rethinking tool design for AI agents. The token-budget pagination, CSV-over-JSON formatting, SQL-like log queries, and modular toolsets show a team that understands agent constraints. With 80+ tools across 16 modular toolsets — now including DDSQL querying, onboarding, reference tables, and significantly expanded APM (15 tools), dashboards (full CRUD), and feature flags (8 tools) — it covers more operational surface than any other MCP server. The new Code Security MCP (April 2026, Preview) adds shift-left security scanning as a companion local server, making Datadog the only observability vendor with a dedicated security MCP. The 4/5 rating reflects what's genuinely best-in-class (broadest tool coverage, agent-native design, zero-install remote hosting, GA status, RBAC-aware security, growing Bits AI agent ecosystem, 14 supported clients) balanced against real constraints (Datadog's complex pricing as the true barrier to entry, fair-use rate limits at 5K daily calls, API key auth by default, closed-source code, unstable API path, no GovCloud support, and a community server that still outdraws the official one on PulseMCP). For enterprise teams already paying for Datadog, this is the obvious integration. For everyone else, the platform cost — not the MCP server — is what keeps the door closed.
+The Datadog MCP server is what happens when the largest commercial observability platform designs an MCP integration from the ground up — not wrapping their API, but rethinking tool design for AI agents. The token-budget pagination, CSV-over-JSON formatting, SQL-like log queries, and modular toolsets show a team that understands agent constraints. With 140+ tools across 17 modular toolsets — including DDSQL querying, Kubernetes workload correlation, a deepened DBM toolset (11 tools), expanded Security toolset (7 tools), and support for 13 named AI clients including Gemini CLI and Kiro — it covers more operational surface than any other MCP server. The Code Security MCP companion server (Preview) adds shift-left security scanning, and Datadog is now publishing MCP security research, positioning itself as both vendor and ecosystem watchdog. The 4/5 rating reflects what's genuinely best-in-class (broadest tool coverage, agent-native design, zero-install remote hosting, GA status, RBAC-aware security, growing Bits AI agent ecosystem, 13 supported clients across competing AI ecosystems) balanced against real constraints (Datadog's complex pricing as the true barrier to entry, fair-use rate limits at 5K daily calls, API key auth by default, closed-source code, unstable API path, no GovCloud support, and a community server that draws 24x the weekly PulseMCP traffic of the official one). For enterprise teams already paying for Datadog, this is the obvious integration. For everyone else, the platform cost — not the MCP server — is what keeps the door closed.
 {{< /verdict >}}
 
 *Disclosure: We research MCP servers using publicly available documentation, GitHub repositories, changelogs, community discussions, and web sources. We do not test MCP servers hands-on or connect to live instances. All claims reflect what we can verify from public information.*
 
 **Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
-*This review was last edited on 2026-04-19 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic).*
 

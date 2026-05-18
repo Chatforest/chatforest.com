@@ -5,7 +5,7 @@
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
 
-**At a glance:** 1,800+ stars · 240 forks · 209 commits · 4 tools · Remote + local · Free tier: 1,000 credits/month
+**At a glance:** ~2,000 stars · 260 forks · 215 commits · 4 tools · Remote + local · Free tier: 1,000 credits/month
 
 Most search MCP servers do one thing: search. You send a query, you get links back. Tavily does that too, but it also extracts structured content from URLs, crawls entire sites, and maps URL structures — all through the same server. It's less "search tool" and more "web intelligence platform."
 
@@ -65,21 +65,23 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 - `DEFAULT_PARAMETERS` — Set defaults for all tool calls via environment variable (local) or HTTP header (remote). Pass JSON like `{"search_depth": "advanced", "max_results": 10}` to avoid repeating common parameters.
 - Named API keys — If you run multiple agents, you can assign priority-ordered API keys (`mcp_auth_default` > `team` > `default`) so different agents use different quotas.
 
-## What's New (April 2026 Updates)
+## What's New (May 2026 Updates)
 
-**`exact_match` parameter added to tavily-search (April 15).** A new boolean parameter restricts search results to those containing exact quoted phrases. This fills a gap for precise lookups where keyword-based search returned too many loosely related results. The feature is in the GitHub repo but hasn't been released to npm yet — the latest npm version is still 0.2.18 from March 12.
+**npm 0.2.19 released April 24 — `exact_match` now live.** After six weeks at 0.2.18, Tavily shipped version 0.2.19 on April 24. The update brings: the `exact_match` boolean parameter for `tavily-search` (previously in GitHub only), auto-generated `session_id` per MCP process for better multi-agent tracking, and human ID support added to requests. Two medium CVEs were also patched (follow-redirects bumped to 1.16.0, hono to 4.12.14) via PR #155.
 
-**Tavily CLI launched (`tvly`).** A command-line tool for search, extract, crawl, and sitemap discovery. Supports `--json` output and an interactive REPL. Installable via npx. This gives developers a way to test Tavily queries outside of an MCP client.
+**MCPSafe security scan: Grade B, 92/100 (issue #168, May 12).** A new security audit found 0 critical and 0 high vulnerabilities, with 2 mediums — describing the server as having a "near excellent security posture." This is a more favorable picture than the quality scan in issue #141, though they measure different things.
 
-**New integrations: OpenClaw, NVIDIA AI-Q Blueprint, JetBrains Junie.** Tavily is now a built-in web search option during OpenClaw onboarding (no extra configuration). NVIDIA featured Tavily as the retrieval layer in their AI-Q Blueprint at GTC 2026, with Jensen Huang highlighting the partnership at the Nebius booth. JetBrains published a case study showing their Junie coding agent using Tavily to fix hallucination via real-time web grounding.
+**Tool description quality (issue #141): still unresolved.** The D-grade (38/100) automated quality scan from April remains open with no assigned owner and no commits addressing it. The `extract`, `crawl`, and `map` tools still have near-zero descriptions.
 
-**Nebius acquisition: still pending formal closure.** The $275M deal (up to $400M with milestones) was announced February 10, 2026. Some sources use past-tense language, and the teams appear to be operating together already (Tavily appeared at the Nebius booth at GTC), but no official press release confirms closing. The API, data policies, and zero data retention policy remain unchanged.
+**Research endpoint repositioned as a modular building block.** Tavily's "What We Shipped: April 2026" post (published May 1) framed `/research` as infrastructure for multi-step agent workflows: due diligence, regulatory review, market monitoring. A new **Dynamic Filtering Agent Skill** benchmarks at 72.1% F1 vs 59.4% for Anthropic's Programmatic Tool Calling, using ~3.5x fewer tokens at 12x lower cost.
 
-**Tool description quality flagged.** Issue #141 reports that an automated MCP quality scan scored Tavily a D grade (38/100). Three tools (extract, crawl, map) received F grades for near-zero descriptions and zero routing guidance between overlapping capabilities. This matters because AI agents rely on tool descriptions to decide when to use each tool.
+**New integrations: Snowflake, MongoDB, Arcade.dev.** Tavily is now available as a web search tool inside Snowflake for financial agent workflows. MongoDB hybrid search now combines Atlas vector search with real-time Tavily web search in a single call. Arcade.dev (enterprise agent execution platform) integrated Tavily for real-time web intelligence on April 27.
 
-**npm downloads growing.** Weekly downloads have risen from ~82K to ~93K (+14%). Stars grew from ~1,500 to ~1,800 (+20%), forks from 201 to 240.
+**npm downloads declined sharply: ~93K → ~26K/week.** Weekly downloads spiked to ~128K around the April 24 release, then settled to ~26K by mid-May — a 72% drop from the April 19 baseline of ~93K. This is a meaningful decline; whether it reflects a normalization after an inflated baseline or genuine traffic loss is unclear, but the number warrants watching.
 
-**Previous updates (February–March 2026):** Nebius acquisition announced at $275M. Cursor MCP marketplace integration. Generative UI Research Canvas with LangChain/Tako/CopilotKit. Pay-as-you-go pricing at $0.008/credit. Research API pricing (4–250 credits/request). 3M monthly SDK downloads, 1M+ developer community.
+**Nebius acquisition: still no formal closure (3+ months).** The $275M deal was announced February 10, 2026. Three months later, no official press release confirms closing. Teams continue to operate together (Snowflake and MongoDB integrations are co-published), but no public announcement. API, data policies, and zero data retention remain unchanged.
+
+**Previous updates (February–April 2026):** Nebius acquisition announced at $275M. Cursor MCP marketplace integration. Generative UI Research Canvas with LangChain/Tako/CopilotKit. Pay-as-you-go pricing at $0.008/credit. Research API pricing (4–250 credits/request). OpenClaw, NVIDIA AI-Q Blueprint, JetBrains Junie integrations. Tavily CLI (`tvly`) launched. Stars grew from ~1,500 to ~1,800. 3M monthly SDK downloads, 1M+ developer community.
 
 ## What Works Well
 
@@ -107,9 +109,9 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 
 **Tool descriptions are inadequate for agent routing.** An automated quality scan (issue #141) gave Tavily a D grade — three of four tools have near-zero descriptions with no guidance on when to use extract vs. crawl vs. map. AI agents pick tools based on descriptions, so minimal descriptions mean agents may choose the wrong tool or ignore available capabilities. This is a straightforward fix that hasn't been addressed.
 
-**No npm release in over five weeks.** The latest npm version is still 0.2.18 from March 12. New features like `exact_match` are in the GitHub repo but not released. No formal GitHub releases exist at all — the releases page is empty. For a server with 93K weekly npm downloads, this release hygiene gap is surprising.
+**No formal GitHub releases and infrequent npm releases.** Version 0.2.19 shipped April 24 — six weeks after 0.2.18. The releases page on GitHub remains empty; versioning goes entirely through npm. That's acceptable, but the long gap between releases means any fix or new feature is unavailable to pinned users for weeks.
 
-**Nebius acquisition still pending.** The $275M deal was announced February 10, 2026. Over two months later, no official closure announcement exists, though the teams appear to be working together (GTC booth). The API continues to work unchanged, but roadmap uncertainty persists. Pricing, free tier policy, and strategic direction could all shift under new ownership.
+**Nebius acquisition still pending after three months.** The $275M deal was announced February 10, 2026. Three months later, no official closure announcement. The teams are clearly operating together (joint integrations with Snowflake and MongoDB), but no public statement confirms the close. Roadmap uncertainty persists. Pricing, free tier policy, and strategic direction could all shift under formal new ownership.
 
 ## Compared to Alternatives
 
@@ -138,8 +140,8 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 - Acquisition uncertainty is a dealbreaker for your production stack
 
 {{< verdict rating="4" summary="The best search-to-extract pipeline in one MCP server" >}}
-Tavily remains the default search API for AI frameworks — 1,800+ stars, ~93K weekly npm downloads, and integrations with NVIDIA AI-Q, OpenClaw, and JetBrains Junie expanding its reach. Four tools covering search, extraction, crawling, and site mapping in one server is still unmatched. The new `exact_match` parameter improves search precision, and the Tavily CLI gives developers a useful testing path outside MCP clients. But tool description quality needs work — a D grade on automated scans means agents may not use the right tool for the job. No npm release in five weeks and no formal GitHub releases at all are minor but growing concerns. The Nebius acquisition remains pending after two months. For the common workflow of "find it, read it, crawl for more" — Tavily still handles the whole pipeline better than anyone.
+Tavily's four-tool combination — search, extract, crawl, map — remains unmatched in one MCP server, and version 0.2.19 finally shipped the `exact_match` parameter along with CVE fixes and session tracking improvements. New integrations with Snowflake, MongoDB, and Arcade.dev expand reach, and the MCPSafe security audit gave it a solid B (92/100). The notable concern this cycle: npm weekly downloads dropped from ~93K to ~26K — a 72% decline from the April baseline that warrants monitoring. Tool description quality (issue #141, D grade) is still unresolved after more than a month. And the Nebius acquisition is now three months pending with no closure announcement. For the workflow of "find it, read it, crawl for more" — Tavily still handles the whole pipeline better than anyone, but the download trend and lingering description quality issues are worth watching.
 {{< /verdict >}}
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not test MCP servers hands-on; all findings are based on documentation, source code, community reports, and public benchmarks. Last updated 2026-04-19.*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not test MCP servers hands-on; all findings are based on documentation, source code, community reports, and public benchmarks. Last updated 2026-05-19.*
 
