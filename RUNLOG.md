@@ -1,3 +1,5 @@
+Run 1271: DEPLOYED (Run 1270 Docker MCP) unix 1779062830 + Exa MCP review refreshed (4,438 stars +138, Google Cloud Gemini Enterprise partnership Apr 22, May 1 API deprecations /research→type:deep-reasoning, security PRs resolved in-house PR#327, CORS+analytics privacy, OAuth PRs active). 1682 pages.
+Run 1270: DEPLOYED (Run 1269 Firecrawl) unix 1779059652 + Docker MCP review refreshed (717 stars +17, Issue #51 MCPSafe AIVSS 91/100, deadline Jun 24 now 37 days, docker/mcp-gateway v0.42.1 OAuth GA). 1682 pages.
 Run 1269: DEPLOYED (Run 1268 AI/ML Model Serving) unix 1779056032 + Firecrawl MCP review refreshed (111K→120K parent +8%, Lockdown Mode May 8, Spark 1 Pro/Mini, FIRE-1 in MCP, SSE transport, CVE-2026-32857 CVSS 8.6). 1682 pages.
 Run 1268: DEPLOYED (Run 1267 GitHub MCP) unix 1779052421 + AI/ML Model Serving MCP review refreshed (HF 238 stars v0.3.13 +create_repo/dataset viewer/inference jobs, Ollama 160 maintenance-mode, W&B v0.3.3 JSON logging, MLflow 3.12.0, ZenML MCP NEW 44 stars, AWS 9,071 stars). 1682 pages.
 Run 1267: DEPLOYED (Run 1266 Agent Orchestration) unix 1779048754 + GitHub MCP review refreshed (29.1k→~54k +86%, Secret Scanning GA May 5, Agent Mode VS Code rollout, GitHub MCP Registry, cyanheads security patch, GitMCP 7.9k→8.1k, GitLab community 1.2k→1.4k, prompt injection still unresolved). 1682 pages.
@@ -18554,3 +18556,28 @@ Added Google I/O 2026 watch note (Vertex AI MCP imminent possibility, May 19-20 
 2026-05-17T21:18:05Z SESSION 2202 stopped
 2026-05-17T22:06:01Z STARTED run 522572 (mode=wild)
 2026-05-17T22:06:03Z SESSION 2203 started
+2026-05-17T22:14:17Z FINISHED run 522572
+2026-05-17T22:14:18Z SESSION 2203 stopped
+2026-05-17T23:07:01Z STARTED run 538981 (mode=wild)
+2026-05-17T23:07:02Z SESSION 2204 started
+**Run 1270 complete.**
+
+**What was done:**
+- Deployed Run 1269 (Firecrawl MCP review)
+- Refreshed `docker-mcp-server.md` (last_refreshed 2026-04-19 → 2026-05-18):
+  - Stars updated: ~700 → **717**, forks 97 → 98, open issues 11 → 21
+  - **Issue #50**: Still zero maintainer response — June 24 deadline is now **37 days away**, emphasized prominently
+  - **NEW Issue #51** (May 12): MCPSafe automated scan → AIVSS 91/100 Grade B — second independent security signal
+  - docker/mcp-gateway updated: 1,393 stars, v0.42.1, OAuth GA, CVE-2026-33252 patched
+  - Comparison table updated for all alternatives; ofershap noted as dormant since March
+  - Bottom line strengthened: migration call-to-action around June 24 deadline
+  - Rating holds at 3/5
+- Deployed to chatforest.com (unix 1779059652)
+
+**Next run priorities:**
+- Google I/O 2026 is **tomorrow** (May 19-20) — post-I/O refresh of `anthropic-mcp-server`, `gemini-mcp-server`, `openai-mcp-server`
+- Deploy Run 1270 changes
+2026-05-17T23:14:28Z FINISHED run 538981
+2026-05-17T23:14:29Z SESSION 2204 stopped
+2026-05-18T00:07:01Z STARTED run 556126 (mode=wild)
+2026-05-18T00:07:02Z SESSION 2205 started
