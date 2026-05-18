@@ -3,7 +3,7 @@
 > Anthropic's official Git MCP server gives AI agents local git operations — status, diff, commit, branch. But with no push, pull, or merge, it's half a workflow. Three CVEs patched in late 2025. Tool annotations and injection guards added March 2026.
 
 
-**At a glance:** ~84,100 GitHub stars (monorepo), 10,400+ forks, v2026.1.14 (Jan 14, 2026), 12 tools, MIT, ~534K weekly PyPI downloads (~2.27M/month), PulseMCP 4.6M all-time (#12 globally, ~509K weekly, #7 this week)
+**At a glance:** ~85,800 GitHub stars (monorepo), 10,700+ forks, v2026.1.14 (Jan 14, 2026), 12 tools, MIT, ~286K weekly PyPI downloads (~1.74M/month), PulseMCP 6.4M all-time (#13 globally, ~273K weekly, #10 this week)
 
 Twelve tools. No push.
 
@@ -69,7 +69,7 @@ One-click install links exist for VS Code and Zed. Claude Desktop uses the JSON 
 
 ## What Doesn't Work Well
 
-**No push, pull, or fetch.** This is the elephant in the room. An agent can stage, commit, and branch — but can't sync with any remote. Issue [#618](https://github.com/modelcontextprotocol/servers/issues/618) requesting push support has been open since February 2025 — now 14 months — with 7 upvotes. The original push [PR (#2961)](https://github.com/modelcontextprotocol/servers/pull/2961) hasn't been touched since November 2025. A second attempt ([PR #3787](https://github.com/modelcontextprotocol/servers/pull/3787)) adding push, fetch, and pull was opened and closed the same day (April 2, 2026) without merge. Without remote operations, agents can't complete a standard development workflow. You commit locally and then... manually push.
+**No push, pull, or fetch.** This is the elephant in the room. An agent can stage, commit, and branch — but can't sync with any remote. Issue [#618](https://github.com/modelcontextprotocol/servers/issues/618) requesting push support has been open since February 2025 — now 15+ months — with 7 upvotes. On April 20, reviewer cliffhall added "enhancement" and "server-git" labels to PR #2961 — the first activity on that PR in months — but no merge is imminent. A second community attempt ([PR #3787](https://github.com/modelcontextprotocol/servers/pull/3787)) adding push, fetch, and pull was opened and self-closed the same day (April 2, 2026). Without remote operations, agents can't complete a standard development workflow. You commit locally and then... manually push.
 
 **No merge or rebase.** Even within purely local operations, there's no way for an agent to merge branches or rebase. Creating a feature branch and committing to it is possible; integrating that work back is not. This makes the branching tools feel half-implemented.
 
@@ -91,13 +91,25 @@ The Git MCP server occupies a specific niche: local git operations for AI agents
 
 **vs. [GitHub MCP Server](/reviews/github-mcp-server/) (4/5):** These are complementary, not competitive. GitHub's server handles the GitHub API — PRs, issues, Actions, code search across repos. The Git server handles local repository operations — diffs, commits, branches. A complete agent workflow would use both: Git for local work, GitHub for remote collaboration. But with no push in the Git server, you need the GitHub server (or manual intervention) to get code to the remote.
 
-**vs. cyanheads/git-mcp-server (207 stars, v2.10.5):** The community alternative offers **28 tools** across 7 categories — more than double. It includes push, pull, fetch, merge, rebase, stash, tag, blame, clone, and worktree operations. Supports both stdio and Streamable HTTP. Has enterprise features like GPG/SSH commit signing, JWT/OAuth authentication, configurable response formatting (JSON or Markdown), and optional directory sandboxing via `GIT_BASE_DIR`. Built in TypeScript on Bun/Node.js (365 commits, actively maintained). PulseMCP: ~41.6K all-time (#655), ~193 weekly. If you need a complete git workflow, this community server is significantly more capable — though less proven at scale. Licensed Apache 2.0.
+**vs. cyanheads/git-mcp-server (216 stars, v2.15.1):** The community alternative offers **28 tools** across 7 categories — more than double. It includes push, pull, fetch, merge, rebase, stash, tag, blame, clone, and worktree operations. Supports both stdio and Streamable HTTP. Has enterprise features like GPG/SSH commit signing, JWT/OAuth authentication, configurable response formatting (JSON or Markdown), and optional directory sandboxing via `GIT_BASE_DIR`. Built in TypeScript on Bun/Node.js (actively maintained — 4 releases between April 23 and May 6 alone). Recent improvements include strict schema validation (.strict() on all schemas), tag signature verification with 5 verification outcomes, and SSH/file URL support for `git_clone`. PulseMCP: ~41.6K all-time. If you need a complete git workflow, this community server is significantly more capable — though less proven at scale. Licensed Apache 2.0.
 
-**vs. GitKraken MCP Server:** GitKraken's MCP server wraps their `gk` CLI, providing git operations plus integrated issue tracking across GitHub, GitLab, Bitbucket, Azure DevOps, and Jira. Now bundled with GitLens 17.5+ — auto-installs with no configuration. Supports VS Code, Cursor, Windsurf, and Kiro. The key differentiator is multi-provider integration — commits, PRs, and issues unified across platforms. A commercial offering with safety confirmations built in.
+**vs. GitKraken MCP Server:** GitKraken's MCP server is embedded in GitLens 17.5+ (requires VS Code 1.101.0+) — auto-installs with no separate configuration. It ships **27 tools** across 6 categories covering Git operations (status, blame, diff, log, push, stash, branch, worktree), GitLens features, Issues, Pull Requests, and GitKraken workspaces. The key differentiator is multi-provider integration — commits, PRs, and issues unified across GitHub, GitLab, Bitbucket, Azure DevOps, and Jira. A commercial offering with safety confirmations built in. Supports VS Code, Cursor, Windsurf, and Kiro.
 
 **vs. [Filesystem MCP Server](/reviews/filesystem-mcp-server/) (3.5/5):** For read-only code exploration, the Filesystem server is arguably better — it can read any file, search directories, and navigate the codebase without git-specific overhead. The Git server's value is specifically in *writing* — staging, committing, branching. If you're just reading code, you don't need this.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
+
+**New GitPython CVE patched silently (May 5, 2026).** A dependency bump in the git server source addressed **CVE-2026-44243** (CVSS 7.1 HIGH) — a path traversal vulnerability in GitPython allowing arbitrary file write/delete outside the repository, fixed in GitPython 3.1.48+. The mcp-server-git source now pulls GitPython 3.1.49. Notably, **no new version of mcp-server-git was tagged** — users with flexible dependency constraints get the patch automatically; those with pinned versions do not. This is the only code change to the git server since the March 2026 security hardening.
+
+**Push support still blocked — now 15+ months.** Issue [#618](https://github.com/modelcontextprotocol/servers/issues/618) has been open since February 2025. On April 20, reviewer cliffhall added "enhancement" and "server-git" labels to PR #2961 — the first activity on that PR since November 2025. But label additions suggest awareness, not action; no merge is pending.
+
+**Weekly traffic declined sharply.** PyPI weekly downloads fell from ~534K to ~286K (-46%) since the April 2026 refresh. PulseMCP weekly visitors similarly dropped from ~509K to ~273K, while all-time visitors grew from 4.6M to 6.4M (+39%) and all-time rank held near #13 globally. The weekly drop may reflect seasonal patterns, measurement timing, or ecosystem reshuffling as the competing cyanheads server gains ground.
+
+**cyanheads community server shipped 4 releases since April 19.** The competing alternative advanced from v2.10.5 to v2.15.1 (v2.14.1, v2.14.2, v2.15.0, v2.15.1) between April 23 and May 6. Key improvements: strict schema validation (.strict() on all schemas to reject unknown fields), tag signature verification (`git_tag.mode: 'verify'` with 5 distinct outcomes), SSH/file URL support for `git_clone`, consistent input renaming (files→paths, file→filePath), and helpful conflict guidance on cherry_pick and rebase operations. Stars grew to 216 with 52 forks.
+
+**No new release in 4+ months.** v2026.1.14 (January 14, 2026) remains the latest tagged release. Beyond the May 5 dependency bump, no tools, features, or bug fixes have landed since March 24.
+
+*Earlier changes (covered in the April 2026 update):*
 
 **Tool annotations and argument injection guards (March 2026).** Two significant commits landed on March 15, 2026 — the first code changes to the git server in months. [PR #3589](https://github.com/modelcontextprotocol/servers/pull/3589) added MCP ToolAnnotations to all 12 tools, marking read-only operations (status, diff, log, show, branch) and distinguishing destructive (reset) from non-destructive writes. [PR #3545](https://github.com/modelcontextprotocol/servers/pull/3545) extended argument injection guards to `git_show`, `git_create_branch`, `git_log`, and `git_branch` — preventing user-supplied values from being interpreted as CLI flags. A README formatting fix followed on March 24. These are security-positive changes, but no new tools or capabilities were added.
 
@@ -111,7 +123,7 @@ The three vulnerabilities could be chained with the Filesystem MCP server to ach
 
 **Downloads doubled.** Weekly PyPI downloads surged from ~256K to ~534K (+109%), with monthly volume now exceeding 2.27M. PulseMCP traffic grew even faster: 2.4M → 4.6M all-time (#17→#12 globally), 341K → 509K weekly (#5→#7 this week). Adoption is accelerating despite no new features.
 
-**Push still blocked after 14 months.** Issue [#618](https://github.com/modelcontextprotocol/servers/issues/618) remains open since February 2025. The original push [PR (#2961)](https://github.com/modelcontextprotocol/servers/pull/2961) is stale since November 2025. A second community attempt ([PR #3787](https://github.com/modelcontextprotocol/servers/pull/3787)) adding push, fetch, and pull was opened and self-closed the same day (April 2, 2026). This is now clearly a deliberate design choice — Anthropic does not intend for the reference git server to have remote operations.
+**Push still blocked after 15+ months.** Issue [#618](https://github.com/modelcontextprotocol/servers/issues/618) remains open since February 2025. PR #2961 received "enhancement" and "server-git" labels on April 20 — its first activity since November 2025 — but no merge is pending. A second community attempt ([PR #3787](https://github.com/modelcontextprotocol/servers/pull/3787)) adding push, fetch, and pull was opened and self-closed the same day (April 2, 2026). This is now clearly a deliberate design choice — Anthropic does not intend for the reference git server to have remote operations.
 
 **GitPython corruption bug surfaced and fixed.** [PR #3156](https://github.com/modelcontextprotocol/servers/pull/3156) documented a GitPython bug where `index.add()` corrupts the git index with `./` prefixed paths. The underlying fix (switching to `repo.git.add("--", *files)`) was committed in December 2025. The PR was closed April 16, 2026 with a request to submit just the regression tests.
 
@@ -121,11 +133,11 @@ The three vulnerabilities could be chained with the Filesystem MCP server to ach
 
 ## The Bottom Line
 
-The Git MCP server is a competent but frustratingly incomplete tool. The 12 tools it ships are well-implemented — clean API design, sensible defaults, 100% test coverage, and now substantially hardened after three CVE patches. But the missing operations (push, pull, merge, rebase, stash, tag, blame) make it a read-and-commit server, not a full git workflow server.
+The Git MCP server is a competent but frustratingly incomplete tool. The 12 tools it ships are well-implemented — clean API design, sensible defaults, 100% test coverage, and now substantially hardened after three CVE patches plus a May 2026 GitPython dependency fix. But the missing operations (push, pull, merge, rebase, stash, tag, blame) make it a read-and-commit server, not a full git workflow server.
 
-With over two million monthly PyPI downloads and 4.6M PulseMCP visitors, it's clearly useful to many people. The most common workflow is probably: agent reads code via the Filesystem server, makes changes, uses the Git server to stage and commit, and then the human (or a GitHub MCP server) handles the push. That works. But it means the agent can never fully close the loop on its own.
+With ~1.74M monthly PyPI downloads and 6.4M all-time PulseMCP visitors, it's clearly useful to many people — though weekly traffic has declined since the April refresh, possibly reflecting the growing presence of the cyanheads community server. The most common workflow is probably: agent reads code via the Filesystem server, makes changes, uses the Git server to stage and commit, and then the human (or a GitHub MCP server) handles the push. That works. But it means the agent can never fully close the loop on its own.
 
-The February 2025 push request ([#618](https://github.com/modelcontextprotocol/servers/issues/618)) being unmerged after 14 months — with a second push PR self-closed the same day it was opened — tells a story about Anthropic's design philosophy for reference servers: they're deliberately minimal, meant to demonstrate the protocol rather than be production-complete. If you want production-complete, the cyanheads community server with 28 tools or the GitKraken MCP server (now auto-installed with GitLens) are better choices. If you want the official, well-tested, security-hardened baseline, this is it — just know you'll need to supplement it.
+The February 2025 push request ([#618](https://github.com/modelcontextprotocol/servers/issues/618)) being unmerged after 15+ months — labeled but not merged in April 2026, with a second push PR self-closed the same day it was opened — tells a story about Anthropic's design philosophy for reference servers: they're deliberately minimal, meant to demonstrate the protocol rather than be production-complete. If you want production-complete, the cyanheads community server with 28 tools (now at v2.15.1 with tag verification and strict schemas) or the GitKraken MCP server (27 tools, auto-installed with GitLens 17.5+) are better choices. If you want the official, well-tested, security-hardened baseline, this is it — just know you'll need to supplement it.
 
 **Rating: 3 out of 5** — solid implementation of half a git workflow, held back by the absence of remote operations, merge capabilities, and modern transport support.
 
@@ -134,16 +146,16 @@ The February 2025 push request ([#618](https://github.com/modelcontextprotocol/s
 | **MCP Server** | Git MCP Server |
 | **Publisher** | Anthropic (official reference implementation) |
 | **Repository** | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) (`src/git/`) |
-| **Stars** | ~84,100 (monorepo), 10,400+ forks |
+| **Stars** | ~85,800 (monorepo), 10,700+ forks |
 | **Version** | 2026.1.14 (Jan 14, 2026) |
 | **Tools** | 12 |
 | **Transport** | stdio |
 | **Language** | Python |
 | **License** | MIT |
-| **Weekly downloads** | ~534K PyPI |
-| **PulseMCP** | 4.6M all-time (#12), ~509K weekly (#7) |
+| **Weekly downloads** | ~286K PyPI |
+| **PulseMCP** | 6.4M all-time (#13), ~273K weekly (#10) |
 | **Pricing** | Free |
 | **Our rating** | 3/5 |
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and [Rob Nugen](https://www.robnugen.com). We have not personally tested or used this MCP server — our analysis is based on documentation, source code, community reports, and public data. Last updated 2026-04-19.*
+*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and [Rob Nugen](https://www.robnugen.com). We have not personally tested or used this MCP server — our analysis is based on documentation, source code, community reports, and public data. Last updated 2026-05-18.*
 
