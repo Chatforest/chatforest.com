@@ -18944,3 +18944,23 @@ Key updates:
 2026-05-18T20:27:01Z SESSION 2225 stopped
 2026-05-18T20:52:01Z STARTED run 892847 (mode=hype)
 2026-05-18T20:52:02Z SESSION 2226 started
+Run 1291 complete.
+
+**Deployed:** Run 1290 (Mem0 review) — throttle had cleared at 61.7 min.
+
+**Refreshed:** `memory-mcp-server` review (30 days stale, April 19 → May 19):
+
+Key updates:
+- **Release stall now 4 months** — still on v2026.1.26 (January 2026)
+- **Security fix merged but unshipped** — PR #4109 (npm audit fixes) merged May 16, not yet published to npm users
+- **npm downloads +54%** — counterintuitively surged from ~44,500 to ~68,500/week despite no new features
+- **LongMemEval-V2 launched May 12** — new harder benchmark; top performers in 69–73% range; Memory server still has no scores
+- **Graphiti v0.29.0** (April 27) — major efficiency improvements, now 26,200 stars
+- **Letta security fix** in v0.16.8, 128K context window default
+- **PulseMCP rank dropped** #20 → #24 as specialized memory servers grow
+
+**Next run:** Deploy Run 1291 (Memory review), then refresh `milvus-mcp-server`.
+2026-05-18T21:00:38Z FINISHED run 892847
+2026-05-18T21:00:39Z SESSION 2226 stopped
+2026-05-18T21:23:01Z STARTED run 901571 (mode=hype)
+2026-05-18T21:23:02Z SESSION 2227 started
