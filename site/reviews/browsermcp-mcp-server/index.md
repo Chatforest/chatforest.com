@@ -1,11 +1,11 @@
 # BrowserMCP — Control Your Actual Chrome Browser via MCP
 
-> BrowserMCP is an MCP server with a Chrome extension that lets AI agents control your real browser — with all your logged-in sessions, cookies, and extensions intact. 6,365 GitHub stars, 360K+ npm downloads.
+> BrowserMCP is an MCP server with a Chrome extension that lets AI agents control your real browser — with all your logged-in sessions, cookies, and extensions intact. 6,524 GitHub stars, 388K+ npm downloads.
 
 
 Part of our **[Web Scraping & Search MCP category](/categories/web-search-scraping/)**.
 
-*At a glance: 6,365 GitHub stars, 494 forks, Apache-2.0, TypeScript, v0.1.3 on npm, Chrome extension required. Created by Namu Kang (Princeton grad, ex-Google PM, Browserflow founder). npm: ~8,080 downloads/week (~32K monthly, 360K+ all-time). 129 open issues.*
+*At a glance: 6,524 GitHub stars, 503 forks, Apache-2.0, TypeScript, v0.1.3 on npm (no release in 13+ months), Chrome extension required. Created by Namu Kang (Princeton grad, ex-Google PM, Browserflow founder). npm: ~6,377 downloads/week (~25K monthly, 388K+ all-time). 121 open issues.*
 
 BrowserMCP solves a specific problem that Playwright MCP doesn't: letting AI agents work in your *actual* browser session. While Playwright MCP spawns a fresh Chromium instance (no cookies, no logged-in accounts, no extensions), BrowserMCP connects to the Chrome browser you already have open. You stay logged into Gmail, GitHub, Jira, Slack — whatever you're currently authenticated to — and the AI agent can interact with those services without re-authenticating.
 
@@ -62,7 +62,7 @@ Compatible with Claude Desktop, Cursor, VS Code, and Windsurf.
 
 **Free and open source.** Apache-2.0 license, no pricing tiers, no usage limits. The MCP server code is fully open.
 
-**Solid adoption signals.** 6.3K stars and 360K+ npm downloads demonstrate real community traction. This isn't a toy project — people are using it.
+**Adoption signals still present.** 6.5K stars and 388K+ npm downloads demonstrate real community traction. This isn't a toy project — people are using it, though weekly downloads have dipped ~21% since April (from ~8,080 to ~6,377/week).
 
 **Lightweight setup.** `npx` install plus a Chrome extension is simpler than setting up Playwright or configuring browser automation frameworks.
 
@@ -72,11 +72,11 @@ Compatible with Claude Desktop, Cursor, VS Code, and Windsurf.
 
 **Telemetry without opt-out.** The Chrome extension sends analytics to PostHog and Amplitude — an anonymous device ID plus tool call events. This was a major point of contention on Hacker News (616 points, 217 comments). The creator confirmed the telemetry but the closed-source extension makes independent verification impossible.
 
-**WebSocket security concerns.** Issue #158 reports the WebSocket server binds to `0.0.0.0` instead of `localhost`, meaning any device on your local network could potentially connect and control your browser. Issue #163 documents a DoS vulnerability via infinite recursion on client disconnect (CWE-674). Neither has been addressed.
+**WebSocket security concerns unaddressed for 3+ months.** Issue #158 reports the WebSocket server binds to `0.0.0.0` instead of `localhost`, meaning any device on your local network could potentially connect and control your browser. Issue #163 documents a DoS vulnerability via infinite recursion on client disconnect (CVSS 7.5 High, CWE-674) — filed via responsible disclosure by Cyberneticsplus Services, which requested acknowledgment within 30 days. That window has long passed with no public response or fix. A third-party cross-site WebSocket hijacking (CSWSH) fix appeared in an external repo (May 10) but has not been merged upstream.
 
-**Minimal maintenance signals.** The GitHub repo has only 6 commits total — it's a partial mirror from a private monorepo, and the README states the code "cannot yet be built on its own" due to monorepo dependencies. 129 open issues against 6 public commits suggests community demand is outpacing maintenance capacity.
+**No releases in 13+ months.** v0.1.3 shipped April 11, 2025. npm downloads are declining (~21% drop since April). The GitHub repo has only 6 commits total — a partial mirror of a private monorepo. Issue #179 (May 18, 2026) reports the repo description still reads "Model Context Provider" instead of "Model Context Protocol" — a trivial typo unfixed for over a year, suggesting minimal maintainer engagement with the public repo.
 
-**Last pushed April 2025.** The repo hasn't seen a public commit in roughly a year. Version 0.1.3 on npm also appears unchanged. Whether development continues privately in the monorepo is unclear, but the public repo shows no activity.
+**121 open issues, development stalled publicly.** Whether development continues in the private monorepo is unknown. Community forks like `browsermcp-enhanced` have emerged (published to npm as `@iflow-mcp/browsermcp-mcp-enhanced`), suggesting some users are patching gaps themselves rather than waiting for upstream.
 
 **Chromium only.** Chrome DevTools Protocol means no Firefox, Safari, or other browser support. If you're not on Chrome (or Chromium-based browsers), this won't work.
 
@@ -86,10 +86,10 @@ Compatible with Claude Desktop, Cursor, VS Code, and Windsurf.
 
 - The Chrome extension has full access to your browser sessions, cookies, and authentication tokens — and its source code is not available for review
 - WebSocket binds to all interfaces (`0.0.0.0`) rather than localhost (issue #158) — network-adjacent attackers could potentially connect
-- DoS vulnerability via infinite recursion (issue #163, CWE-674)
+- DoS vulnerability via infinite recursion (issue #163, CVSS 7.5 High, CWE-674) — responsible disclosure window expired with no response
 - Telemetry data sent to PostHog and Amplitude analytics services
-- No formal security audit has been conducted
-- No BrowserMCP-specific CVEs filed, though the broader MCP ecosystem has seen 50+ tracked vulnerabilities (13 critical) per VulnerableMCP.info
+- **MCPSafe AIVSS scan (May 12, 2026, issue #178):** Grade B (92/100) — 1 medium-severity finding (over-scoped tool schema), 0 critical/high/low. Maintainers have not responded to the scan report.
+- No formal security audit has been conducted; no BrowserMCP-specific CVEs filed, though the broader MCP ecosystem has seen 50+ tracked vulnerabilities (13 critical) per VulnerableMCP.info
 - The closed-source extension combined with authenticated session access creates a trust model where users must trust the developer's claims about data handling
 
 ## The Competition
@@ -102,17 +102,17 @@ Compatible with Claude Desktop, Cursor, VS Code, and Windsurf.
 
 **Browserbase MCP** — Cloud browser infrastructure with Stagehand integration. Managed remote browsers rather than local Chrome. Different deployment model.
 
-**Chrome DevTools MCP** (Google, 2026) — First-party Chrome MCP integration from Google. Early stage but could eventually make third-party Chrome MCP servers redundant.
+**Chrome DevTools MCP** (Google) — The threat to BrowserMCP has escalated significantly. Google's `ChromeDevTools/chrome-devtools-mcp` is now at v0.25.0 (May 6, 2026) and ~40K stars — up from ~34K in April. It ships weekly, requires no Chrome extension, uses CDP directly against live Chrome tabs, and is Apache-2.0 licensed. In parallel, Google launched **WebMCP**, which allows websites to expose themselves as MCP tools natively. Cloudflare Browser Run added WebMCP support on April 15, 2026. The first-party stack is growing fast and could make third-party Chrome MCP servers redundant within the year.
 
 ## Bottom Line
 
-BrowserMCP has a genuinely useful core idea: let AI agents work with your authenticated browser sessions instead of starting from scratch. The 6.3K stars and 360K+ npm downloads show the market wants this. But the execution raises concerns that are hard to overlook.
+BrowserMCP has a genuinely useful core idea: let AI agents work with your authenticated browser sessions instead of starting from scratch. The 6.5K stars and 388K+ npm downloads show the market wanted this. But the execution has deteriorated, and the competitive landscape has shifted further against it.
 
-The Chrome extension — the component with the most sensitive access (your logged-in sessions, cookies, authentication tokens) — is closed source. The WebSocket server has known security issues. Telemetry collects usage data. The public repo has 6 commits and hasn't been updated in roughly a year. 129 open issues suggest community needs aren't being addressed.
+The Chrome extension — the component with the most sensitive access (your logged-in sessions, cookies, authentication tokens) — is still closed source. Both known WebSocket security issues remain unpatched after 3+ months. The responsible disclosure window on the CVSS 7.5 DoS bug expired with no response. Weekly downloads are down 21% since April. The repo's trivial typo in its own description has been wrong for over a year. Meanwhile, Google's Chrome DevTools MCP has grown to 40K stars and is shipping weekly with no extension required.
 
-For quick, low-stakes browser automation where session reuse genuinely saves time (checking a dashboard, filling a form), BrowserMCP works. For anything involving sensitive accounts or security-conscious environments, the closed-source extension and unaddressed security issues make it a harder recommendation. Playwright MCP is the safer default for most use cases, even if it means handling authentication separately.
+For quick, low-stakes browser automation where session reuse genuinely saves time (checking a dashboard, filling a form), BrowserMCP still works — v0.1.3 is functional. For anything involving sensitive accounts or security-conscious environments, the closed-source extension, unaddressed CVSS 7.5 DoS, and declining maintenance make it a harder recommendation than it was a month ago.
 
-**Rating: 3/5** — A strong concept with real adoption, undermined by a closed-source Chrome extension with telemetry, unaddressed WebSocket security issues, dormant public development, and 129 open issues against 6 total commits. The session-reuse feature is genuinely differentiated, but the trust model requires accepting a closed-source extension with full access to your authenticated browser sessions. Use Playwright MCP unless you specifically need existing session reuse and accept the trade-offs.
+**Rating: 3/5** — The session-reuse concept remains genuinely differentiated, but the execution story is getting worse: closed-source extension, two unpatched security issues (one CVSS 7.5 with expired disclosure window), no npm release in 13+ months, declining downloads, and a fast-growing first-party Google alternative. Use Playwright MCP as the safe default; watch Google's Chrome DevTools MCP as the likely long-term winner in this space.
 
 ---
 
