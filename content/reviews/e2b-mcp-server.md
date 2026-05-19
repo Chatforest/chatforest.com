@@ -2,15 +2,15 @@
 title: "E2B MCP Server — Secure AI Code Execution in Cloud Sandboxes (Archived)"
 date: 2026-04-20T11:00:00+09:00
 description: "E2B's MCP server enabled Claude and other AI assistants to execute code in secure Firecracker microVM sandboxes. Archived April 16, 2026 after E2B integrated MCP support directly into their sandbox platform via Docker partnership. 390 GitHub stars."
-og_description: "E2B MCP Server: 390 stars, archived April 2026. Secure code execution via Firecracker microVMs. Replaced by native sandbox MCP integration with 200+ Docker catalog tools. Rating: 2.5/5."
+og_description: "E2B MCP Server: 390 stars, archived April 2026. Secure code execution via Firecracker microVMs. Replaced by native sandbox MCP integration with 300+ Docker catalog tools. Rating: 2.5/5."
 content_type: "Review"
-card_description: "E2B's standalone MCP server gave AI assistants the ability to execute Python and JavaScript code in secure Firecracker microVM sandboxes. Archived on April 16, 2026 — E2B shifted to native MCP support inside sandboxes via a Docker partnership, making the standalone server redundant. The parent E2B platform (11.8K stars, $43.8M raised) remains actively developed."
-last_refreshed: 2026-04-20
+card_description: "E2B's standalone MCP server gave AI assistants the ability to execute Python and JavaScript code in secure Firecracker microVM sandboxes. Archived on April 16, 2026 — E2B shifted to native MCP support inside sandboxes via a Docker partnership, making the standalone server redundant. The parent E2B platform (12.2K stars, $43.8M raised) is actively developed and now integrated in the OpenAI Agents SDK."
+last_refreshed: 2026-05-19
 ---
 
 Part of our **[Code Execution & Sandbox MCP category](/categories/code-execution-sandbox/)**.
 
-*At a glance: 390 GitHub stars, 67 forks, 67 commits, Apache-2.0 license, JavaScript (52.8%) + Python (41.5%). **Archived April 16, 2026.** npm package `@e2b/mcp-server`. Parent company E2B raised $43.8M ($21M Series A from Insight Partners). PulseMCP: 38.4K all-time visitors (#691 globally), 193 weekly.*
+*At a glance: 390 GitHub stars, 67 forks, 67 commits, Apache-2.0 license, JavaScript (52.8%) + Python (41.5%). **Archived April 16, 2026.** npm package `@e2b/mcp-server`. Parent company E2B raised $43.8M ($21M Series A from Insight Partners). PulseMCP: 38.4K all-time visitors (#691 globally), 193 weekly. Last refreshed May 19, 2026.*
 
 E2B's MCP server was a straightforward tool: it let Claude Desktop (and other MCP clients) execute code inside E2B's cloud sandboxes. The pitch was security — instead of running AI-generated code on your local machine, it ran inside Firecracker microVMs with hardware-level isolation. Each sandbox got its own dedicated kernel, started in ~150ms, and was destroyed after use.
 
@@ -18,7 +18,9 @@ On April 16, 2026, E2B archived the repository. The standalone MCP server is no 
 
 ## What Happened
 
-E2B didn't abandon MCP — they absorbed it. In October 2025, E2B partnered with Docker to integrate MCP support directly into the E2B Sandbox platform. Instead of a standalone server that only let you run code, the new approach gives every E2B sandbox access to 200+ verified MCP tools from Docker's catalog (GitHub, Stripe, Notion, Grafana, Browserbase, and many more) — plus the ability to run custom MCP servers inside the sandbox.
+E2B didn't abandon MCP — they absorbed it. In October 2025, E2B partnered with Docker to integrate MCP support directly into the E2B Sandbox platform. Instead of a standalone server that only let you run code, the new approach gives every E2B sandbox access to 300+ servers in Docker's MCP catalog (GitHub, Stripe, Notion, Grafana, Browserbase, and many more) — plus the ability to run custom MCP servers inside the sandbox.
+
+In April 2026, E2B became an **official sandbox provider in the OpenAI Agents SDK** — the integration lets agents edit files, run shell commands in isolated Firecracker environments, maintain workspace state across steps, and generate frontend output with preview URLs. Python-only at launch; TypeScript support is in progress. This integration appears to be driving the 4.4x jump in npm download volume seen between April and May 2026.
 
 The standalone `mcp-server` repository became redundant. Why maintain a separate MCP server for code execution when the sandbox itself is now an MCP-native environment?
 
@@ -42,11 +44,11 @@ Both JavaScript and Python implementations were included in a monorepo structure
 
 E2B (the company) is doing well despite archiving this one repo:
 
-- **Main SDK** (`e2b-dev/E2B`): 11,800 stars, 861 forks, 4,768 commits, v2.20.0 (April 2, 2026)
+- **Main SDK** (`e2b-dev/E2B`): 12,200 stars, 861 forks, v2.21.0 JS / v2.21.1 Python (May 14–18, 2026)
 - **Code Interpreter SDK** (`e2b-dev/code-interpreter`): 2,300 stars, 206 forks, 859 commits
 - **Funding**: $43.8M total — $21M Series A led by Insight Partners (2025), with Decibel, Sunflower Capital, Kaya
 - **Revenue**: $1.5M ARR as of mid-2025 with a 14-person team
-- **PyPI**: e2b-code-interpreter ~1.46M downloads/month; e2b SDK ~624K npm downloads/month
+- **PyPI**: e2b-code-interpreter ~1.46M downloads/month; e2b npm SDK ~2.72M downloads/month (up from ~624K in April — 4.4x growth driven by OpenAI Agents SDK adoption)
 - **Firecracker microVMs**: Sub-200ms cold starts, hardware-level isolation, dedicated kernel per sandbox
 
 ### Pricing
@@ -60,9 +62,11 @@ E2B (the company) is doing well despite archiving this one repo:
 
 **The archival itself is honest** — E2B didn't silently abandon the repo. They marked it as deprecated with a clear notice. The strategic shift to native sandbox MCP integration makes more sense than maintaining a separate server.
 
-**E2B's core platform is strong** — 11.8K stars, active daily commits, well-funded ($43.8M), growing revenue. Firecracker microVM isolation is genuinely more secure than container-based alternatives (Docker uses shared kernel; Firecracker provides hardware-level isolation per sandbox).
+**E2B's core platform is strong** — 12.2K stars, active daily commits, well-funded ($43.8M), growing revenue. Firecracker microVM isolation is genuinely more secure than container-based alternatives (Docker uses shared kernel; Firecracker provides hardware-level isolation per sandbox).
 
-**Docker MCP catalog integration** — Access to 200+ verified MCP tools inside sandboxes is a significant upgrade from a standalone code execution server.
+**Docker MCP catalog integration** — Access to 300+ servers in Docker's MCP catalog inside sandboxes is a significant upgrade from a standalone code execution server.
+
+**OpenAI Agents SDK integration** — Since April 2026, E2B is an official sandbox provider in the OpenAI Agents SDK. This is the clearest sign the archived MCP server was retired strategically, not from neglect: E2B is now embedded in two major AI ecosystems (Anthropic via MCP-native sandboxes, OpenAI via Agents SDK).
 
 **Pricing is accessible** — $100 free credit with no credit card is generous for getting started. Per-second billing at ~$0.05/hour is competitive.
 
@@ -71,6 +75,8 @@ E2B (the company) is doing well despite archiving this one repo:
 **The standalone MCP server is dead** — If you had it configured in Claude Desktop, it no longer receives updates or security patches. You need to migrate to E2B's SDK-based approach.
 
 **3 open issues will never be fixed** — Issues #6 (timeouts), #7 (CSV data), and #17 (Claude Desktop installation error) are frozen. The repo is read-only.
+
+**SDK dependency security patches (April 30, 2026)** — E2B pushed proactive dependency bumps across npm, Python SDK, and CLI packages to address vulnerable transitive dependencies. No E2B-specific CVEs were filed, but users on e2b@2.19.3 or earlier, python-sdk@2.20.2 or earlier, or cli@2.10.0 or earlier should upgrade.
 
 **The replacement is SDK-first, not MCP-first** — E2B's new approach requires using their Python or JavaScript SDK to spin up sandboxes with MCP tools inside. It's more powerful but also more complex than pointing Claude Desktop at an MCP server config.
 
@@ -93,12 +99,14 @@ The AI sandbox market has heated up significantly in 2026:
 
 | Platform | Cold Start | Isolation | GPU | MCP Support | Starting Price |
 |----------|-----------|-----------|-----|-------------|---------------|
-| **E2B** | ~150ms | Firecracker microVM | No | Native (200+ tools) | $100 free credit |
+| **E2B** | ~150ms | Firecracker microVM | No | Native (300+ tools) | $100 free credit |
 | **Daytona** | ~90ms | Docker container | Yes | No native MCP | $200 free credit |
 | **Modal** | Sub-second | gVisor | Yes (A100/H100) | No native MCP | $0.000014/core/sec |
 | **Blaxel** | Varies | VM | No | MCP-native | Free tier available |
+| **Fly.io Sprites** | 1–12s | Firecracker microVM | No | No native MCP | Usage-based |
+| **Vercel Sandbox** | Varies | Varies | No | No native MCP | Pro plan |
 
-E2B's Firecracker isolation is the strongest security boundary in the group. Daytona is fastest and cheapest for persistent environments. Modal wins for GPU workloads. None of the competitors match E2B's native MCP integration depth.
+E2B's Firecracker isolation is the strongest security boundary in the group. Daytona raised a $24M Series A in February 2026 and is the fastest for persistent environments. Modal wins for GPU workloads. Fly.io Sprites (launched January 2026) and Vercel Sandbox are new entrants — neither has native MCP. None of the competitors match E2B's native MCP integration depth or its dual presence in both the Anthropic (MCP-native sandboxes) and OpenAI (Agents SDK) ecosystems.
 
 ## Who's Behind It
 
@@ -110,7 +118,7 @@ The MCP server was primarily maintained by **mishushakov** (Mish Ushakov), who h
 
 The E2B MCP server was a clean, simple tool that did one thing: let AI assistants run code in secure cloud sandboxes. Its archival isn't a failure — it's a sign that E2B integrated MCP capabilities more deeply into their core platform, making the standalone server unnecessary.
 
-If you need sandboxed code execution for AI agents, the E2B platform itself (via their SDK) is still a strong choice. The Firecracker microVM isolation is genuinely superior to container-based alternatives, the pricing is accessible, and the Docker MCP catalog integration gives you far more than the old standalone server ever offered.
+If you need sandboxed code execution for AI agents, the E2B platform itself (via their SDK) is still a strong choice. The Firecracker microVM isolation is genuinely superior to container-based alternatives, the pricing is accessible, and the Docker MCP catalog (now 300+ servers) gives you far more than the old standalone server ever offered. The OpenAI Agents SDK integration in April 2026 added another major deployment vector — npm downloads jumped 4.4x between April and May 2026. E2B is increasingly becoming infrastructure, not just a tool.
 
 But the standalone MCP server? It's done. If you're configuring MCP servers in Claude Desktop and want code execution, look at alternatives like the Desktop Commander MCP (local, free, but less secure) or use E2B's SDK directly in your application code.
 
