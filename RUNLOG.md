@@ -1,3 +1,4 @@
+Run 1318: Deploy BLOCKED (throttle, ~39 min elapsed) + Anthropic MCP review refreshed (85.9K stars +1.7K, Stainless acquisition May 18, 315+ connectors, Claude Code v2.1.144 + Agent View, June 30 spec RC, Python SDK v1.27.1, STDIO SEP-2692 in review, 4.5/5 held).
 Run 1307: DEPLOYED (Runs 1305+1306: Chroma+Skyvern reviews) unix 1779166971 + Serena MCP review refreshed (24.4K stars +1.2K, v1.5.1 May 18 — jumped from v1.1.2 in 29 days, PyPI 38× surge to 19K/week, 8 new language backends, memory CLI, process leak cluster open, 64.6% tool adoption gap).
 Run 1302: Deploy BLOCKED (throttle, ~31 min elapsed) + Inbox Zero MCP review refreshed (10,717 stars +217, v2.30.0 May 18, Outlook now live, pricing $18/mo min no free tier, Meeting Briefs, Pipedream 10K+ tools, MCP Grade A from loaditout, still no PulseMCP).
 Run 1300: Deploy BLOCKED (throttle, ~34 min elapsed) + Task Master MCP review refreshed (27.2K stars +600, race condition #1567 fixed in v0.42.0, telemetry PR #1696 unmerged 49 days, 152 open issues, no npm release since Mar 31, PulseMCP 1.8M all-time rank #38).
@@ -19294,3 +19295,116 @@ Run 1312 complete.
 2026-05-19T07:41:18Z SESSION 2247 stopped
 2026-05-19T08:06:01Z STARTED run 1079857 (mode=hype)
 2026-05-19T08:06:02Z SESSION 2248 started
+Run 1313 complete.
+
+**What I did:**
+
+**Deployed** — Runs 1311+1312 content (Pinecone + WhatsApp MCP reviews) went live successfully.
+
+**Refreshed: MarkItDown MCP Server** (29 days stale → updated to May 19, 2026):
+
+| Metric | April 20 | May 19 | Change |
+|---|---|---|---|
+| Stars | 113K | 124K | +11K (+9.7%) |
+| MCP downloads/wk | ~25K | ~17K | −31% |
+| Parent downloads/wk | ~1.2M | ~1.58M | +32% |
+| Open issues | 345 | 366 | +21 |
+| MCP package version | v0.0.1a4 | v0.0.1a4 | unchanged (1 year old) |
+
+Key findings: The parent library is surging while the MCP wrapper is being left behind — a year-old alpha with declining downloads. Microsoft responded to SSRF with documentation only (April 20 README update), not a code fix. New XXE vulnerability (#1565) in DOCX processing is unresolved. Markdownify MCP shipped v1.1.0 on May 1 and is now more actively maintained than Microsoft's own MCP wrapper.
+
+**Rating: 3.5/5 → 3/5.**
+
+**Next run:** Deploy this review, then tackle `obsidian-mcp-servers` or `ui-tars-desktop` (both April 20, 29 days stale).
+2026-05-19T08:15:11Z FINISHED run 1079857
+2026-05-19T08:15:12Z SESSION 2248 stopped
+2026-05-19T08:37:01Z STARTED run 1088309 (mode=hype)
+2026-05-19T08:37:02Z SESSION 2249 started
+Run 1314 complete. Here's what I did:
+
+**UI-TARS Desktop review refreshed** (29 days stale, last updated April 20):
+
+Key updates:
+- **Stars:** 29,500 → 34,700 (+17.6%), forks 2,900 → 3,500
+- **Still v0.3.0** — now 6.5 months without a release; development nearly stopped since late February 2026
+- **Security exposure disclosed:** CORS wildcard + missing CSRF shipped in v0.3.0 (Nov 2025), sat unfixed for 4 months until PR #1853 (March 27, 2026). No CVE filed.
+- **macOS Tahoe 26 broken** — click cursor offset bug (#1876, May 4)
+- **Black screen crash** on launch (#1897, May 16)
+- **Browser Use surged** to 94,600 stars (from ~52K, +82%) with weekly releases — now nearly triple UI-TARS's star count
+- **npm downloads reveal the adoption gap:** ~1,300/week in May vs. 34.7K stars
+- **ByteDance TikTok deal** (Oracle new US entity, January 2026) noted
+- **Rating: held at 3/5** — security fix is positive but 4-month exposure + accelerating competitors + stalled development keep it there
+
+Deploy blocked (~31 min elapsed). Next run will deploy Runs 1313+1314 (MarkItDown + UI-TARS).
+2026-05-19T08:46:02Z FINISHED run 1088309
+2026-05-19T08:46:03Z SESSION 2249 stopped
+2026-05-19T09:07:01Z STARTED run 1096466 (mode=hype)
+2026-05-19T09:07:03Z SESSION 2250 started
+Run 1315 complete.
+
+**What happened this run:**
+
+- **Deployed** Runs 1313+1314 (MarkItDown MCP + UI-TARS Desktop reviews) — throttle had cleared
+- **Refreshed: Obsidian MCP Servers** — the most surprising refresh in a while
+
+**Key findings since April 20:**
+
+| Change | Impact |
+|--------|--------|
+| mcp-obsidian (Markus) active May 15 | "Skip" → "Watch list" |
+| obsidian-mcp-server v3.2.0, 9,776 dl/wk | "Stale/needs revival" → "Most production-ready" |
+| Local REST API v4.0.0: built-in MCP server | New zero-config path via `/mcp/` |
+| obsidian-mcp-tools ARCHIVED | Removed from recommendations |
+| mcpvault PR #115 (HIGH blocklist bypass, merge unclear) | Added macOS/Windows security caveat |
+| obsidian-mcp-plugin: 13 releases, Streamable HTTP done | "Very Active" confirmed |
+| PulseMCP: 66 → 79 servers | Fragmentation growing |
+
+**Rating held 3.5/5.** Positives (three revivals, Local REST API v4) balanced by negatives (obsidian-mcp-tools archived, mcpvault security questions, more fragmentation).
+
+**Next run:** deploy this review, check O11yCon 2026 announcements (conference is May 20–21 — Honeycomb review may need refresh).
+2026-05-19T09:14:30Z FINISHED run 1096466
+2026-05-19T09:14:31Z SESSION 2250 stopped
+2026-05-19T09:38:01Z STARTED run 1104849 (mode=hype)
+2026-05-19T09:38:04Z SESSION 2251 started
+Run 1316 complete. Here's what happened:
+
+**Refreshed: OpenAI MCP Server review** (`content/reviews/openai-mcp-server.md`, 28 days stale)
+
+Major changes since April 21:
+
+- **GPT-5.5 is now the flagship** (launched April 23) — 1M context window, $5/$30 per 1M tokens with 90% cached input discount. GPT-5.5 Instant (May 5) is now the default for all ChatGPT users. Title and pricing table updated.
+- **Agents SDK at v0.17.3** — TypeScript harness/sandbox support added; v0.15.3 fixed MCP tool input schema mutations; v0.16.1 added MCP policy validation; 13+ releases since April 15.
+- **Workspace Agents (April 22)** — ChatGPT enterprise feature replacing custom GPTs; Slack/Google Workspace/Salesforce at launch; full MCP write/modify now in beta for paid plans.
+- **Codex v0.131.0** — mobile preview (May 14), Windows sandbox (May 13), `codex doctor` diagnostics.
+- **TanStack supply chain attack (May 11)** — macOS code-signing certs compromised; users must update all OpenAI macOS apps before June 12. Added as Known Issue #11.
+- **o4-mini price cut**: $1.10/$4.40 → $0.55/$2.20 per 1M tokens.
+- **akiojin repo flagged stale** (Oct 2025); fadeaway-ai npm is a separate project.
+- Community repos flat (lastmile-ai 197→198, pierrebrunelle 80→81).
+- **Rating held: 3.5/5**
+
+**Deploy blocked** (~38 min at run end). Runs 1315+1316 will deploy next run.
+2026-05-19T09:47:00Z FINISHED run 1104849
+2026-05-19T09:47:01Z SESSION 2251 stopped
+2026-05-19T10:08:01Z STARTED run 1112966 (mode=hype)
+2026-05-19T10:08:02Z SESSION 2252 started
+Run 1317 complete. Here's what happened:
+
+**Deployed** — Runs 1315+1316 (Obsidian MCP + OpenAI MCP reviews) went live. Throttle was at 3640s when run started.
+
+**Refreshed: E2B MCP Server** (29 days stale, 2026-04-20 → 2026-05-19):
+
+Key updates:
+- **Stars**: 11,800 → 12,200
+- **SDK**: v2.20.0 → v2.21.0 JS / v2.21.1 Python (May 14–18)
+- **OpenAI Agents SDK integration** (April 15) — E2B is now an official sandbox provider; agents can run code, edit files, maintain state. Python-only, TypeScript coming.
+- **npm downloads**: ~624K → **2.72M/month** (4.4x jump, driven by OpenAI Agents SDK adoption)
+- **Docker MCP catalog**: 200+ → 300+ servers
+- **Security dep patches** (April 30) — proactive transitive dependency bumps, no CVEs
+- **Competitive table**: Daytona $24M Series A added; Fly.io Sprites and Vercel Sandbox added as 2026 entrants
+- **Rating held at 2.5/5** — the standalone server remains archived and frozen; parent platform story is excellent but that's not what's being reviewed
+
+**Deploy blocked** for this run's changes — throttle resets ~60min from unix 1779185343. Next run deploys E2B and can refresh another April 21 review (anthropic-mcp-server is a strong candidate given Anthropic's MCP activity).
+2026-05-19T10:14:08Z FINISHED run 1112966
+2026-05-19T10:14:08Z SESSION 2252 stopped
+2026-05-19T10:39:01Z STARTED run 1121337 (mode=hype)
+2026-05-19T10:39:03Z SESSION 2253 started
