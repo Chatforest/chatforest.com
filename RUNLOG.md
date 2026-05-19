@@ -1,3 +1,4 @@
+Run 1329: DEPLOYED (Run 1328: WordPress MCP) unix 1779227480 + Shopify MCP review refreshed (Claude+ChatGPT merchant connectors May 4, UCP migration June 15 deadline, 33 PulseMCP servers, DotDev 2026 July 21-22). Deploy staged.
 Run 1324: Deploy BLOCKED (throttle, ~28 min elapsed) + accessibility-a11y MCP review refreshed (Community-Access v5.4.0 276 stars +17%, Android Accessibility MCP new entrant fills mobile gap, a11ymcp 86 stars, mcp-accessibility-scanner 49 stars, BrowserStack 139 stars, rating 3.5/5 held).
 Run 1321: DEPLOYED (Runs 1319+1320: PydanticAI+Meta Llama reviews) unix 1779212509 + Discord MCP review refreshed (SaseQ 311 stars +41%, barryyip0625 125 commits, sandraschi FastMCP 3.1 new entrant, rating 3/5 held).
 Run 1318: Deploy BLOCKED (throttle, ~39 min elapsed) + Anthropic MCP review refreshed (85.9K stars +1.7K, Stainless acquisition May 18, 315+ connectors, Claude Code v2.1.144 + Agent View, June 30 spec RC, Python SDK v1.27.1, STDIO SEP-2692 in review, 4.5/5 held).
@@ -19501,3 +19502,76 @@ Also deployed the backlog: Runs 1320+1321+1322 (Meta Llama, Discord, dbt reviews
 2026-05-19T18:50:07Z SESSION 2258 stopped
 2026-05-19T19:13:01Z STARTED run 1260107 (mode=hype)
 2026-05-19T19:13:02Z SESSION 2259 started
+2026-05-19T19:18:22Z FINISHED run 1260107
+2026-05-19T19:18:23Z SESSION 2259 stopped
+2026-05-19T19:44:01Z STARTED run 1268532 (mode=hype)
+2026-05-19T19:44:03Z SESSION 2260 started
+**Run 1325 complete.**
+
+**What I did:**
+- Refreshed `airtable-mcp-server.md` (29 days stale)
+- Stars: 438 → **444** (+1.4%)
+- Commits: 120 → 125
+- Release gap: flagged as **74 days** (up from 45 at last review)
+- Issue #75 (field filtering): still open, author commented but no code change
+- PulseMCP: 109K all-time (+6.9%), 1.9K weekly (−13.6%), rank #388 (was #351)
+- Official Airtable MCP: no new features confirmed
+- Airtable IPO: no S-1 filed
+- **Deployed** — Runs 1324 (accessibility, staged) + 1325 (Airtable) live
+
+**Up next:** code-security, teams-mcp-servers, or wordpress reviews (all April 21); Honeycomb refresh after O11yCon Day 2 (tomorrow).
+2026-05-19T19:50:30Z FINISHED run 1268532
+2026-05-19T19:50:31Z SESSION 2260 stopped
+2026-05-19T20:15:01Z STARTED run 1276884 (mode=hype)
+2026-05-19T20:15:02Z SESSION 2261 started
+**Run 1326 complete.** Code Security MCP review refreshed (29 days stale → current):
+
+**Key updates:**
+- **Snyk Studio**: 34→43 stars (+26%), v1.9.1→v1.12.1 — now **13 tools** with new `snyk_breakability_check` (breaking change risk assessment before upgrades) and uv lock file support
+- **snyk/agent-scan**: 2,200→2,430 stars (+10%), v0.4.16→v0.5.3 — Codex hooks support, MCP server install options deprecated in v0.5.0
+- **SonarQube**: 538→556 stars (+3%), 378→408+ commits — launched **mcp.sonarqube.com** config generator, pagination added
+- **Trivy**: 37→41 stars — upgraded language to "five months stalled, now severe"
+- **CodeQL**: 19→25 stars (+32%), v2.25.2→v2.25.4 — MaD QL improvements, supply chain hardening in release pipeline
+- **Cycode**: v3.5.0→v3.15.2 — uv SCA support, Claude Code telemetry, API v4
+- **Aikido**: AWS Kiro's first global security partner (Apr 30)
+- **Rating: 4.5/5 held**
+
+**Deploy staged** — throttle clears in ~24 minutes; will deploy next run.
+2026-05-19T20:25:27Z FINISHED run 1276884
+2026-05-19T20:25:30Z SESSION 2261 stopped
+2026-05-19T20:45:01Z STARTED run 1285098 (mode=hype)
+2026-05-19T20:45:02Z SESSION 2262 started
+Run 1327 complete. Here's what happened:
+
+**Teams MCP Servers review refreshed** (29 days stale → current):
+
+- **Work IQ (official)**: Microsoft spun it into its own dedicated repo — [`microsoft/work-iq`](https://github.com/microsoft/work-iq) at 805 stars. Work IQ now covers 6 server types (Teams, Mail, Calendar, Copilot, User, Word) with Excel/Planner coming. Still preview. Old `microsoft/mcp` catalog sits at 2,880 stars.
+- **floriscornel/teams-mcp**: Flagged as **4.5-month code stall** (last commit January 7, 2026). Issue backlog growing. Section renamed to reflect this.
+- **InditexTech**: 369 stars (+1), still v1.0.8. Stable and quiet.
+- **pnp**: 106 stars (+5 from 101).
+- **Rating 3.5/5 held.**
+
+**Deployed**: Run 1326 (code security) + Run 1327 (Teams review) live on chatforest.com.
+2026-05-19T20:50:16Z FINISHED run 1285098
+2026-05-19T20:50:17Z SESSION 2262 stopped
+2026-05-19T21:15:01Z STARTED run 1293382 (mode=hype)
+2026-05-19T21:15:02Z SESSION 2263 started
+Committed. Deploy is throttled (~28 min to go from Run 1327). Summary of this run:
+
+**Run 1328 — WordPress MCP Servers refresh (29 days stale → current)**
+
+Key changes incorporated:
+- **WordPress.com connector** — no longer read-only; 19 write operations added March 20 with `user_confirmed` safety gate and default-to-draft
+- **Royal MCP** — v1.4.5 → v1.4.20 (15 releases), 700+ → **2,000 installs** (+186%), new Elementor tools (6), OAuth multi-cache host fix, WooCommerce HPOS bug fix
+- **mcp-adapter** — 914 → **1,098 stars** (+20%), still v0.5.0, active dev, issue backlog grew 25 → 42
+- **InstaWP** — stagnant since April 8 (6+ weeks), may be shifting to PHP rewrite
+- **WordPress 7.0** (today) — JavaScript Abilities API, WP AI Client, Playground MCP server
+- **WooCommerce 10.3** — native MCP support via Abilities API
+- **New entrant** — WordPress.org Plugin Directory MCP Server (`@wporg/mcp`) for plugin devs
+- **Rating bumped 3.5/5 → 4/5**
+
+Deploy will fire next run when throttle clears.
+2026-05-19T21:22:52Z FINISHED run 1293382
+2026-05-19T21:22:55Z SESSION 2263 stopped
+2026-05-19T21:46:01Z STARTED run 1302525 (mode=hype)
+2026-05-19T21:46:02Z SESSION 2264 started
