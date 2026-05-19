@@ -3,7 +3,7 @@
 > Meta has no official MCP server and isn't an AAIF member, but Llama Stack includes MCP integration and a thriving community ecosystem connects Ollama and Llama models to MCP. Here's the honest review.
 
 
-**At a glance:** [Llama Stack](https://github.com/llamastack/llama-stack) (8,300 stars, v0.7.1, MCP tool support with Responses API) + [llama.cpp](https://github.com/ggml-org/llama.cpp) (full MCP client merged March 2026) + [ollama-mcp-bridge](https://github.com/patruff/ollama-mcp-bridge) (969 stars, TypeScript, MIT). Meta is **not an AAIF member** at any tier (170+ organizations have joined, but not Meta), has **no official MCP server**, and has made no public announcement about MCP support. Their strategy: build their own agent ecosystem (Meta AI with 1 billion MAU, $2B Manus acquisition) rather than adopt Anthropic's protocol. The community fills the gap — **llama.cpp now has native MCP client support with an agentic loop**, Llama Stack includes MCP integration via the Responses API, and Ollama bridges let local Llama models participate in the MCP ecosystem. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+**At a glance:** [OGX (formerly Llama Stack)](https://github.com/ogx-ai/ogx) (v1.0.2 stable, now an independent model-agnostic framework, MCP tool support via Responses API) + [llama.cpp](https://github.com/ggml-org/llama.cpp) (**111K stars**, native MCP client actively evolving with 8+ WebUI PRs since March 2026) + [ollama-mcp-bridge](https://github.com/patruff/ollama-mcp-bridge) (969 stars, TypeScript, MIT, confirmed stale). Meta is **not an AAIF member** at any tier (170+ organizations have joined, but not Meta), has **no official MCP server**, and has made no public announcement about MCP support. Their strategy: build their own agent ecosystem (Meta AI with 1 billion MAU, $2B Manus acquisition) rather than adopt Anthropic's protocol. The community fills the gap — **llama.cpp has native MCP client support with an agentic loop actively improving**, and Ollama bridges let local Llama models participate in the MCP ecosystem. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
 
 Meta Llama MCP servers let AI agents **run inference on Llama 4 Scout/Maverick, manage local Ollama models, generate embeddings, and use MCP tools through locally-hosted LLMs** — all without sending data to cloud APIs. This enables **fully private, zero-cost AI agent workflows** for users willing to provide the hardware.
 
@@ -87,9 +87,9 @@ Unlike Google, OpenAI, and Anthropic — who actively participate in MCP governa
 ### AAIF Status: Still Not a Member (April 2026)
 Meta remains absent from the [AAIF](https://aaif.io/) (Agentic AI Foundation, Linux Foundation), which has grown to **170+ member organizations** in under four months. Platinum members include AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, and OpenAI. Gold members now include Cisco, Datadog, Docker, IBM, JetBrains, Oracle, Salesforce, SAP, Shopify, and Snowflake. Even Hugging Face joined at the Silver tier. Meta's absence is increasingly conspicuous as the foundation approaches universal industry coverage.
 
-## llama.cpp — Native MCP Client Support (March 2026)
+## llama.cpp — Native MCP Client Support (March 2026, Actively Evolving)
 
-**The most significant development since our original review.** On March 6, 2026, [llama.cpp](https://github.com/ggml-org/llama.cpp) merged [PR #18655](https://github.com/ggml-org/llama.cpp/pull/18655) — a massive 15,285-line, 374-commit pull request adding full MCP client support to llama-server's WebUI.
+**The most significant development in this ecosystem.** On March 6, 2026, [llama.cpp](https://github.com/ggml-org/llama.cpp) merged [PR #18655](https://github.com/ggml-org/llama.cpp/pull/18655) — a massive 15,285-line, 374-commit pull request adding full MCP client support to llama-server's WebUI.
 
 This means **anyone running any GGUF model locally** (Llama, Mistral, Qwen, Gemma, or any other) now has native MCP support with:
 
@@ -102,7 +102,9 @@ This means **anyone running any GGUF model locally** (Llama, Mistral, Qwen, Gemm
 | CORS proxy | Backend proxy enabled with `--webui-mcp-proxy` flag |
 | Processing stats | UI for tracking agentic loop performance |
 
-**Why this matters:** llama.cpp is the dominant local inference engine (74K+ stars). Adding native MCP support means local models can now browse files, query databases, call APIs, and execute multi-step agentic workflows — the same pattern that makes Claude Code and Cursor's agent mode useful. This largely eliminates the need for separate "bridge" projects for users running llama-server directly.
+**Update (May 2026):** The MCP WebUI has received **8+ additional PRs since March**, all from contributor `allozaur`: MCP Diagnostics improvements (Apr 13), "Server tools" WebUI integration (Apr 28), MCP information logic and UI refinements (May 6), import/export of MCP settings config (May 8), fix for MCP resource template parameters (May 16), request timeout for MCP tool calls (May 16), MCP service refactoring (May 18). The MCP implementation is clearly in active development, not a one-shot contribution.
+
+**Why this matters:** llama.cpp is the dominant local inference engine — now at **111,000 stars** (up from 74K at the time of the March merge, a 50% jump). Adding native MCP support means local models can browse files, query databases, call APIs, and execute multi-step agentic workflows — the same pattern that makes Claude Code and Cursor's agent mode useful. This largely eliminates the need for separate "bridge" projects for users running llama-server directly.
 
 ## Community Implementations
 
@@ -166,31 +168,37 @@ MCP server providing LLM access to other LLMs — supports Ollama, Llama, OpenAI
 
 **Key limitation:** Multi-provider scope means Llama-specific features are thin.
 
-### BeehiveInnovations/pal-mcp-server — Multi-Provider Agent
+### BeehiveInnovations/pal-mcp-server — Multi-Provider Agent (Renamed from zen-mcp-server)
 
-- **GitHub:** [BeehiveInnovations/pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) — 11,300 stars, 965 forks
+- **GitHub:** [BeehiveInnovations/pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) — **11,500 stars**, 965 forks
 - **Language:** Python
 
-The most-starred project in this space, though it's a general multi-provider MCP server (Claude Code, Gemini CLI, Codex CLI + Ollama/OpenAI/Grok). Ollama support means local Llama models can be used as one provider among many.
+The most-starred project in this space (renamed from `zen-mcp-server` to **PAL MCP** — Provider Abstraction Layer). Still a general multi-provider MCP server: supports Claude Code, Gemini CLI, and Codex CLI as orchestrators, with multi-model collaboration across Gemini, OpenAI, Anthropic, Grok, Azure, and Ollama. Ollama support means local Llama models can be used as one provider among many. Modest star growth (+200 since April review).
 
-**Key limitation:** Not Llama-specific — Ollama/Llama is one option among many providers.
+**Key limitation:** Not Llama-specific — Ollama/Llama is one option among many providers. The rename away from "zen" to "PAL" suggests evolving brand identity, not a change in functionality.
 
-## Llama Stack as MCP Platform
+## OGX (Formerly Llama Stack) as MCP Platform
 
-**[Llama Stack](https://github.com/llamastack/llama-stack)** (8,300 stars, 1,300 forks, Python, **v0.7.1** — released April 8, 2026) is Meta's official agent framework. It includes MCP support as a built-in feature:
+**[OGX](https://github.com/ogx-ai/ogx)** (formerly Llama Stack, formerly at meta-llama/llama-stack) has undergone a significant transformation since the April 2026 review. The project **rebranded as OGX (Open GenAI Stack)** and moved to an independent organization `ogx-ai/ogx`. The new mission: *"model-agnostic, multi-SDK, production-grade."*
 
+**Release history since v0.7.1 (April 8, 2026):**
+- **v0.8.0** (May 1): Native Anthropic Messages API support, Gemini integration, OpenAI API conformance up to 91.2%, SSTI prevention fix (Jinja2 sandboxing in RAG query generator), Tornado security patch (GHSA-qjxf-f2mg-c6mc)
+- **v1.0.0** (May 12): First stable release — multi-tenancy core for MaaS, gateway-first architecture, Safety API removed in favor of moderation endpoints, **Claude Code compatibility** added
+- **v1.0.1** (May 13): Async safety fixes, SQLStore/MongoDB expiration enforcement
+- **v1.0.2** (May 14): SQL engine reset fixes, UI lockfile update
+
+**Current capabilities (unchanged):**
 - **Responses API** — server-side agentic orchestration with tool calling, MCP server integration, and built-in file search (RAG) in a single API call
-- **MCP server deployment** added in v0.2.10 (Phase 1)
 - Supports **inline tools, local MCP tools, and remote MCP tools**
-- MCP servers registered via toolgroup registration process
+- MCP servers registered via toolgroup registration
 - Client SDKs in Python, TypeScript, Swift, and Kotlin
-- v0.5.0 refined MCP with reduced redundant tool/list calls
-- v0.4.5 fixed MCP CPU spike via context manager for session cleanup
-- **Streamable HTTP transport** upgrade in progress (Issue #2542) — SSE currently used but deprecated in MCP spec
 - Drop-in replacement for the OpenAI API — runs anywhere (laptop, datacenter, cloud)
+- Now also supports Claude/Anthropic and Gemini APIs natively
 
-**Known Llama Stack MCP issues:**
-- Issue #2542: Upgrade to Streamable HTTP protocol (SSE deprecated)
+**What the rebrand means for this review:** OGX is no longer Meta's framework — it's an independent, vendor-agnostic project that happens to work well with Llama models. This weakens the narrative of "Meta's agent framework includes MCP support." On the positive side, v1.0.0 stable release signals production readiness, and the model-agnostic pivot could actually accelerate MCP adoption within the project.
+
+**Known OGX/Llama Stack MCP issues (some may have been addressed in v1.0.x):**
+- Issue #2542: Upgrade to Streamable HTTP protocol (SSE deprecated in MCP spec)
 - Issue #4452: Responses request calls MCP list tools multiple times
 - Issue #2584: "Llama API not working with Tool Calling"
 
@@ -229,10 +237,10 @@ Running Llama models locally requires significant hardware — the key tradeoff 
 
 | Provider | Official MCP Server | AAIF Role | MCP Client Support | Top Community Server |
 |----------|-------------------|-----------|--------------------|--------------------|
-| **Anthropic** | Reference servers (81.8k stars) | Created MCP, Platinum | Claude.ai, Desktop, Code, API | N/A (they are the reference) |
-| **Google** | 24+ managed + open-source | Platinum | Gemini CLI (98.7k stars) | jamubc/gemini-mcp-tool (2.1k) |
-| **OpenAI** | None | Platinum, Steering Committee | ChatGPT, Agents SDK, Codex CLI | lastmile-ai (197) |
-| **Meta** | **None** | **Not a member** | **None** | ollama-mcp-bridge (972) |
+| **Anthropic** | Reference servers (85.9k stars) | Created MCP, Platinum | Claude.ai, Desktop, Code, API | N/A (they are the reference) |
+| **Google** | 24+ managed + open-source | Platinum | Gemini CLI | jamubc/gemini-mcp-tool |
+| **OpenAI** | None | Platinum, Steering Committee | ChatGPT, Agents SDK, Codex CLI | lastmile-ai |
+| **Meta** | **None** | **Not a member** | **None** | ollama-mcp-bridge (969, stale) |
 
 ## Known Issues
 
@@ -244,7 +252,7 @@ Running Llama models locally requires significant hardware — the key tradeoff 
 
 4. **Hardware barrier** — "Free" Llama inference requires substantial GPU investment. The 8B model needs ~7 GB VRAM (a $300+ GPU), while the 70B model needs 40+ GB (a $1,500+ GPU or multi-GPU setup). Llama 4 Scout requires an H100-class GPU.
 
-5. **Llama Stack MCP bugs** — Active issues (#4452, #2542, #2584) report redundant MCP tool listing, deprecated SSE transport, and unreliable tool calling. The framework is at v0.7.1 and actively developing but still maturing.
+5. **OGX/Llama Stack MCP bugs** — Active issues (#4452, #2542, #2584) report redundant MCP tool listing, deprecated SSE transport, and unreliable tool calling. The framework reached v1.0.2 stable but issue status post-rebrand is unclear — monitoring continues.
 
 6. **Licensing ambiguity** — The Meta Llama Community License restricts use by companies with 700M+ MAU and is not OSI-approved open source. Commercial users at scale need separate licensing, creating uncertainty for enterprise MCP deployments.
 
@@ -258,13 +266,17 @@ Running Llama models locally requires significant hardware — the key tradeoff 
 
 ## Bottom Line
 
-**Rating: 3.5 out of 5** *(up from 3/5 — llama.cpp's native MCP support is a game-changer for the local AI agent ecosystem)*
+**Rating: 3.5 out of 5** *(held — llama.cpp MCP is maturing well, but Llama Stack's rebrand to independent OGX weakens the Meta ecosystem narrative)*
 
-Meta's Llama MCP story has shifted significantly since our original review. While Meta remains the only major AI company absent from the AAIF (now 170+ members), publishes no official MCP server, and provides no MCP client support in consumer products, the **community infrastructure has matured dramatically**. The llama.cpp MCP merge (March 2026) means any local model can now participate in the MCP ecosystem natively — no bridges needed.
+Meta's Llama MCP story has two distinct threads running in parallel — and they're moving in opposite directions. **llama.cpp** is thriving: 111K stars (+50% since March), with 8+ additional MCP WebUI PRs showing sustained development momentum. Any GGUF model can now participate in the MCP ecosystem with an actively-improving native client — no bridges needed.
 
-**What changed:** llama.cpp (74K+ stars) — the dominant local inference engine — merged full MCP client support with an agentic loop, tool calls, prompt/resource browsing, and a WebUI. This is the same pattern that makes Claude Code and Cursor's agent mode useful, now available to anyone running a GGUF model locally. Meanwhile, Llama Stack reached v0.7.1 with the Responses API offering server-side agentic orchestration with MCP integration.
+**The OGX rebrand is the headline change this cycle.** Llama Stack reached v1.0.0 stable (May 12) and is now model-agnostic — it works with Anthropic, Gemini, OpenAI, and others alongside Llama. The framework is more capable than ever. But it's no longer Meta's framework. The rebrand to `ogx-ai/ogx` with a "model-agnostic" mission means the review's "Llama Stack is Meta's agent framework with MCP support" narrative now needs an asterisk. Meta handed off ownership; the independent project is doing fine, but it's a subtle retreat from Meta's direct ecosystem investment.
 
-The upgrade to 3.5/5 reflects the ecosystem's growing maturity. **llama.cpp's native MCP support** effectively solves the "bridge fragmentation" problem — users no longer need third-party projects to connect local models to MCP servers. Llama Stack's Responses API provides a more structured, OpenAI-compatible approach. The remaining gaps — no official Meta commitment, no AAIF membership, tool-calling reliability in smaller models, and hardware requirements — prevent a higher rating, but the practical accessibility of MCP for local Llama users is now substantially better than a month ago.
+**What's unchanged:** No official Meta MCP server, no AAIF membership (still the only major AI company absent), no MCP client support in Meta AI consumer products (WhatsApp, Messenger, Instagram), Llama 4 Behemoth still unreleased, tool-calling reliability issues in smaller local models.
+
+**New this cycle:** Meta launched official Llama API client libraries (`llama-api-python`, `llama-api-typescript` — generated via Stainless) for the hosted Llama API at llama.developer.meta.com. These are REST API clients, not MCP-related, but signal Meta is investing in developer tooling for Llama model access.
+
+Rating held at 3.5/5. The llama.cpp MCP trajectory justifies the March upgrade and the momentum continues. The OGX rebrand is a net neutral-to-negative for this specific review — it's good for the open-source ecosystem broadly, but weakens the "Meta is investing in its agent stack" framing. No change to the known gaps.
 
 **Who should use Llama MCP servers:**
 
@@ -282,5 +294,5 @@ The upgrade to 3.5/5 reflects the ecosystem's growing maturity. **llama.cpp's na
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Meta announcements. Information is current as of April 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Meta announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
 

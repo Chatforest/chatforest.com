@@ -5,17 +5,17 @@
 
 Part of our **[Data & Databases MCP category](/categories/data-databases/)**.
 
-*At a glance: The official dbt MCP server (dbt-labs/dbt-mcp, 540 stars, 115 forks, Apache-2.0, Python) provides 30+ tools for data discovery, semantic layer queries, SQL execution, lineage analysis, dbt CLI commands, and code generation. v1.14.0 released April 14, 2026 — 14 releases since launch. Two deployment modes: local (uvx, dbt Core/Fusion) and remote (HTTP, dbt Platform). Community alternatives include dbt-core-mcp (11 stars, zero-dependency bridge), dbt-cli-mcp (19 stars, CLI wrapper), and dbt-semantic-layer-mcp-server (11 stars, TypeScript semantic layer).*
+*At a glance: The official dbt MCP server (dbt-labs/dbt-mcp, 563 stars, 121 forks, Apache-2.0, Python) provides 30+ tools for data discovery, semantic layer queries, SQL execution, lineage analysis, dbt CLI commands, and code generation. v1.19.1 released May 14, 2026 — 21 releases since launch, 7 in the last 30 days. Two deployment modes: local (uvx, dbt Core/Fusion) and remote (HTTP, dbt Platform). Community alternatives include dbt-core-mcp (11 stars, zero-dependency bridge), dbt-cli-mcp (19 stars, CLI wrapper), and dbt-semantic-layer-mcp-server (11 stars, TypeScript semantic layer). dbt Developer Agent now in Preview (May 6, 2026).*
 
 dbt (data build tool) is the standard for analytics engineering — over 50,000 organizations use it to transform raw data into trusted models and metrics. The dbt MCP server bridges that structured data context to AI agents, giving them governed access to your data lineage, semantic layer, and transformation pipeline. If your organization runs dbt, this is how AI agents learn what your data means, where it comes from, and how to query it correctly.
 
 ## The Official Server (dbt-labs/dbt-mcp)
 
-[dbt-labs/dbt-mcp](https://github.com/dbt-labs/dbt-mcp) launched April 21, 2025 as an experimental open source project. One year later, it's at v1.14.0 with 14 releases, active weekly development, and deep integration with dbt's platform strategy.
+[dbt-labs/dbt-mcp](https://github.com/dbt-labs/dbt-mcp) launched April 21, 2025 as an experimental open source project. One year later, it's at v1.19.1 with 21 releases, active weekly development, and deep integration with dbt's platform strategy.
 
 **Key metrics:**
-- **Stars:** 540 | **Forks:** 115 | **Commits:** 540 | **Open issues:** 23 | **Open PRs:** 17
-- **Latest:** v1.14.0 (April 14, 2026)
+- **Stars:** 563 | **Forks:** 121 | **Commits:** 584 | **Open issues:** ~20 | **Open PRs:** ~15
+- **Latest:** v1.19.1 (May 14, 2026)
 - **Language:** Python (96%)
 - **License:** Apache-2.0
 - **PyPI downloads:** ~16,500/week, ~69,400/month (growing — up from early months)
@@ -72,16 +72,19 @@ Both modes can run simultaneously, and the experimental MCPB (MCP Bundle) publis
 
 ## Recent Release Cadence
 
-The development pace is strong — 6 releases in 8 weeks:
+The development pace is strong — 7 releases in the last 30 days alone:
 
 | Version | Date | Highlights |
 |---------|------|-----------|
-| v1.14.0 | Apr 14 | Telemetry with cloud account IDs, auto-fetch DBT_HOST_PREFIX, configurable metric threshold for list_metrics |
+| v1.19.1 | May 14 | Silenced asyncio DeprecationWarning, ToolDefinition.structured_output defaults to True |
+| v1.19.0 | May 13 | Enhanced list_metrics — multiple substring search, parallel fetching, combined dimensions/entities (3 LLM calls → 1) |
+| v1.18.0 | May 8 | Admin API parameter docs in MCP tool schemas, JSON Schema descriptions for all tools |
+| v1.17.0 | May 5 | User elicitation for DBT_HOST on first platform call, Admin API in multi-project MCP, 7-day package release age security gate |
+| v1.16.0 | Apr 27 | Fusion log warning parsing, dbt Fusion LSP via `dbt lsp` subcommand |
+| v1.15.1 | Apr 22 | list_metrics response reduced ~67% (JSON → CSV format) |
+| v1.15.0 | Apr 21 | ToolDispatcher for single/multi-project routing, clone command, removed get_job_run_artifact |
+| v1.14.0 | Apr 14 | Telemetry with cloud account IDs, auto-fetch DBT_HOST_PREFIX, configurable metric threshold |
 | v1.13.0 | Apr 7 | YML selectors for CLI tools, reduced page limits (prevented IDE freezing), OAuth project selection improvements |
-| v1.12.0 | Apr 1 | Multi-project discovery tools, configuration override support |
-| v1.11.0 | Mar 25 | steps_override for job triggers, list_projects tool, multi-project semantic layer, AG2 multi-agent example |
-| v1.10.0 | Mar 10 | Product documentation tools, Dependabot, relaxed dbt-protos version requirements |
-| v1.9.0 | Feb 11 | Docker support, macro discovery (get_all_macros), AI SDK agent example (TypeScript) |
 
 ## Community Alternatives
 
@@ -148,7 +151,11 @@ OAuth authentication is also supported for remote connections — v1.13.0 improv
 
 **Semantic Layer integration.** This is the killer feature. The dbt Semantic Layer provides governed metric definitions — dimensions, entities, filters, and compiled SQL. AI agents querying through the semantic layer get consistent, accurate answers because the metrics are pre-defined by data teams. dbt Labs [benchmarks show](https://docs.getdbt.com/blog/semantic-layer-vs-text-to-sql-2026) near-100% accuracy for covered queries vs. unreliable text-to-SQL.
 
-**Active development.** 14 releases in one year, 6 in the last 8 weeks. Features are shipping fast: multi-project support, documentation tools, OAuth improvements, MCPB bundles. This isn't a side project — it's a core part of dbt's AI strategy.
+**Active development.** 21 releases in one year, 7 in the last 30 days. Features are shipping fast: multi-project support, documentation tools, OAuth improvements, MCPB bundles, Fusion LSP, Admin API tool schemas. This isn't a side project — it's a core part of dbt's AI strategy.
+
+**Improved list_metrics (v1.19.0).** The semantic layer's flagship tool got smarter: multiple substring search, parallel fetching, and combined dimensions/entities response when count ≤10. What previously required 3 sequential LLM round trips now completes in one call. This is a real-world workflow improvement.
+
+**dbt Developer Agent in Preview (May 6, 2026).** A new AI-native capability in dbt Studio (Starter + Enterprise tiers): write/refactor dbt models from natural language, generate documentation, tests, semantic models, and SQL from scratch — with full lineage context and auditable changes. Powered by the MCP server. This signals that dbt Labs is building its AI-native product tier on the MCP foundation, not alongside it.
 
 **Local + remote flexibility.** Local mode for development (fast, offline, full CLI access), remote mode for production (semantic layer, discovery API, no local install). Run both simultaneously for the full tool surface.
 
@@ -160,11 +167,11 @@ OAuth authentication is also supported for remote connections — v1.13.0 improv
 
 **PyPI downloads are modest.** ~16,500/week is healthy for a data tooling niche but low compared to top MCP servers (Fetch: ~202K/week, Firecrawl: ~8.8K/week npm). Adoption is growing but still early.
 
-**7 open bugs.** Notable: #708 (`list_metrics` overwhelms disk with many metrics), #585 (dbt-lsp panics on connect), #594 (special characters in markdown break lineage), #560 (OAuth broken with uvx git install), #401 (BigQuery OAuth fails on Windows). These are real usability issues.
+**Open bugs.** Notable: #585 (dbt-lsp fails to connect and panics — thread connection refused), #572 (server connection error with unexpected `--env-file` argument), #412 (tool runs forever with no response — timeout), #401 (BigQuery OAuth fails on Windows), #379 (Personal Access Token not working with remote MCP). These are real usability issues affecting common setups.
 
 **Remote requires dbt Platform.** Semantic layer, discovery API, and SQL execution all require a dbt Cloud/Platform account. Local mode has CLI and code generation but not the most valuable tools. This creates a commercial dependency.
 
-**No formal security audit.** No CVEs filed against dbt-mcp specifically, but #687 requests OIDC auth gateway for remote deployments — the current token-based auth doesn't meet enterprise requirements for some teams.
+**No formal security audit.** No CVEs filed against dbt-mcp specifically as of May 2026, though v1.17.0 added a 7-day minimum package release age security gate (blocking newly published PyPI packages from being used as dependencies). #687 requests OIDC auth gateway for remote deployments — the current token-based auth still doesn't meet enterprise requirements for some teams.
 
 **Documentation tools can freeze IDEs.** v1.13.0 had to reduce page limits because documentation retrieval was crashing clients. Tool responses returning large payloads is a known MCP design challenge.
 
@@ -177,7 +184,7 @@ dbt Labs is a significant company in the data infrastructure space:
 - **Valuation:** $4.2B (Series D, $222M raised from Altimeter, a16z, Sequoia, Databricks, Snowflake)
 - **Users:** 50,000+ organizations
 - **dbt Fusion:** Next-gen engine with Rust-based LSP, significant memory and performance improvements
-- **dbt Agents:** Native AI agents for analytics development (Enterprise tier, beta/waitlist). Suite includes development, data exploration, and pipeline monitoring agents — all powered by the MCP server
+- **dbt Developer Agent:** In Preview as of May 6, 2026 (Starter + Enterprise tiers). Write/refactor dbt models from natural language, generate docs, tests, semantic models. Lives in dbt Studio IDE with auditable changes. Full suite includes development, data exploration, and pipeline monitoring agents — all powered by the MCP server
 - **Semantic Layer benchmarks:** Near-100% accuracy for governed metric queries, vs. unreliable text-to-SQL alternatives
 - **dbt Summit 2026:** Upcoming (waitlist open)
 - **Partnerships:** Microsoft (Fusion on Fabric), Snowflake (Cortex integration), Stripe (Projects co-design)
@@ -186,7 +193,7 @@ The MCP server is central to dbt's AI strategy — the [dbt Agents](https://www.
 
 ## Security Considerations
 
-**No dbt-mcp-specific CVEs** have been filed as of April 2026. However:
+**No dbt-mcp-specific CVEs** have been filed as of May 2026. However:
 
 - The broader MCP ecosystem has 30+ CVEs (tracked by VulnerableMCP.info), and dbt-mcp uses the MCP Python SDK (upgraded to v1.26.0 in v1.9.3)
 - Token-based authentication for remote connections means leaked tokens grant access to semantic layer queries, project discovery, and SQL execution
@@ -224,13 +231,13 @@ The MCP server is central to dbt's AI strategy — the [dbt Agents](https://www.
 
 ## Bottom Line
 
-The dbt MCP server is one of the strongest official MCP implementations in the data tooling space. The semantic layer integration is the standout feature — AI agents querying through governed metric definitions get reliable, consistent answers instead of hallucinated SQL. The development pace (14 releases in a year, 6 in the last 8 weeks) and platform investment (dbt Agents built on top of the MCP server) signal this is a core product, not an experiment.
+The dbt MCP server is one of the strongest official MCP implementations in the data tooling space. The semantic layer integration is the standout feature — AI agents querying through governed metric definitions get reliable, consistent answers instead of hallucinated SQL. The development pace (21 releases in one year, 7 in the last 30 days) and platform investment signal this is a core product, not an experiment. The May 2026 launch of dbt Developer Agent in Preview confirms the MCP server is the foundation of dbt's entire AI-native product tier.
 
 The main limitation is the commercial dependency: the most valuable tools (semantic layer, discovery, SQL execution) require dbt Platform. Local mode covers CLI and code generation but misses the data discovery and querying capabilities that make dbt MCP compelling. The open bugs are real but manageable, and the community alternatives (dbt-core-mcp, dbt-cli-mcp) fill specific niches.
 
-For organizations already invested in dbt, this is a no-brainer adoption. The governed data context it provides to AI agents is materially better than raw SQL access. For teams evaluating dbt adoption, the MCP server is one more reason the platform is worth the investment.
+For organizations already invested in dbt, this is a no-brainer adoption. The governed data context it provides to AI agents is materially better than raw SQL access. For teams evaluating dbt adoption, the MCP server — and now the dbt Developer Agent — is one more reason the platform is worth the investment.
 
-**Rating: 4/5** — Strong official MCP implementation with comprehensive tool coverage, active development, and the semantic layer as a genuine differentiator for governed AI data access. Docked for commercial dependency on dbt Platform for the most valuable features, modest adoption metrics, open usability bugs, and merger uncertainty.
+**Rating: 4/5** — Strong official MCP implementation with comprehensive tool coverage, active development, and the semantic layer as a genuine differentiator for governed AI data access. dbt Developer Agent in Preview strengthens the ecosystem signal. Docked for commercial dependency on dbt Platform for the most valuable features, modest adoption metrics, open usability bugs, and Fivetran merger uncertainty.
 
-*Last updated: April 21, 2026*
+*Last updated: May 20, 2026*
 
