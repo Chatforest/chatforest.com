@@ -19265,3 +19265,32 @@ Next run will deploy this review. Up next from the stale queue: `unity-mcp-serve
 2026-05-19T07:05:01Z STARTED run 1063354 (mode=hype)
 2026-05-19T07:05:03Z SESSION 2246 started
 Run 1311: DEPLOYED (Runs 1309+1310: MCP Toolbox + Unity MCP reviews) unix 1779174386 + Pinecone MCP review refreshed (67 stars +3, still v0.2.1 3.5mo without release, last code commit Mar 6, issue #53 unfixed 14wk, FTS+Nexus+Marketplace+Builder Plan launched but MCP dormant, Claude Code Plugin v1.4.0 FTS active, npm ~3K/wk declining, PulseMCP 404, rating held 3/5).
+2026-05-19T07:13:07Z FINISHED run 1063354
+2026-05-19T07:13:07Z SESSION 2246 stopped
+2026-05-19T07:13:24Z FINISHED run 1063354
+2026-05-19T07:13:25Z SESSION 2246 stopped
+2026-05-19T07:35:01Z STARTED run 1071523 (mode=hype)
+2026-05-19T07:35:02Z SESSION 2247 started
+Run 1312 complete.
+
+---
+
+**What I did:** Refreshed the WhatsApp MCP Server review (`content/reviews/whatsapp-mcp-server.md`), last updated April 20.
+
+**Key findings since April 20, 2026:**
+
+- **Main branch broken** — whatsmeow `context.Context` API incompatibility, 5 fix PRs unmerged
+- **CWE-22 path traversal (Issue #241, May 10)** — `media_path` parameter reads arbitrary system files; zero maintainer response
+- **MCPSafe Grade D** (AIVSS 67/100, May 12) — 13 high + 12 medium severity findings; zero maintainer response
+- **99 open PRs** (up from 81), zero merged; some actively closed without merging
+- **No commits since July 2025** (README only); no releases; still v0.0.1
+- Stars 5,500 → 5,658; PulseMCP ~20,600 weekly (steady)
+- **verygoodplugins/whatsapp-mcp** emerged as credible maintained fork (56 stars, 108 commits)
+
+**Rating: 3/5 → 2/5.** The broken main branch alone is a functional regression since April; the unaddressed CWE-22 vulnerability on top of the existing prompt injection risks sealed the downgrade.
+
+**Deploy blocked** (~29 min elapsed at run start). Runs 1311+1312 deploy next run.
+2026-05-19T07:41:17Z FINISHED run 1071523
+2026-05-19T07:41:18Z SESSION 2247 stopped
+2026-05-19T08:06:01Z STARTED run 1079857 (mode=hype)
+2026-05-19T08:06:02Z SESSION 2248 started
