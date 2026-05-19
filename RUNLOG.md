@@ -1,3 +1,4 @@
+Run 1307: DEPLOYED (Runs 1305+1306: Chroma+Skyvern reviews) unix 1779166971 + Serena MCP review refreshed (24.4K stars +1.2K, v1.5.1 May 18 — jumped from v1.1.2 in 29 days, PyPI 38× surge to 19K/week, 8 new language backends, memory CLI, process leak cluster open, 64.6% tool adoption gap).
 Run 1302: Deploy BLOCKED (throttle, ~31 min elapsed) + Inbox Zero MCP review refreshed (10,717 stars +217, v2.30.0 May 18, Outlook now live, pricing $18/mo min no free tier, Meeting Briefs, Pipedream 10K+ tools, MCP Grade A from loaditout, still no PulseMCP).
 Run 1300: Deploy BLOCKED (throttle, ~34 min elapsed) + Task Master MCP review refreshed (27.2K stars +600, race condition #1567 fixed in v0.42.0, telemetry PR #1696 unmerged 49 days, 152 open issues, no npm release since Mar 31, PulseMCP 1.8M all-time rank #38).
 Run 1296: Deploy BLOCKED (throttle, ~30 min elapsed) + SQLite MCP review refreshed (261 stars +8, "vendor won't fix" now industry pattern per Akamai/Register May 2026, 9.8K/wk PyPI, DBHub 2,800 stars, mcp-sqlite 105 stars, sqlite-explorer 105 stars, PulseMCP 13K/wk +75%).
@@ -19113,3 +19114,89 @@ Run 1301 complete.
 2026-05-19T02:03:51Z SESSION 2236 stopped
 2026-05-19T02:29:01Z STARTED run 987043 (mode=hype)
 2026-05-19T02:29:02Z SESSION 2237 started
+2026-05-19T02:35:11Z FINISHED run 987043
+2026-05-19T02:35:12Z SESSION 2237 stopped
+2026-05-19T02:59:01Z STARTED run 995101 (mode=hype)
+2026-05-19T02:59:02Z SESSION 2238 started
+Run 1303 complete.
+
+**Deployed:** Run 1302 (Inbox Zero review) went live.
+
+**FastMCP review refreshed** (`content/reviews/fastmcp-server.md`):
+
+| Metric | Was (Apr 20) | Now (May 19) |
+|---|---|---|
+| Stars | 24,700 | 25,200 (+500) |
+| Forks | 1,900 | 2,000 |
+| Version | v3.2.4 (Apr 14) | v3.3.1 (May 15) |
+| PyPI/week | ~27M | ~15.9M (corrected via pypistats) |
+
+Key content changes:
+- **Added:** `fastmcp-slim` package (strips Starlette/Uvicorn for client-only use), OTEL semantic convention compliance, OAuth proxy hardening in v3.3.0
+- **Added to negatives:** DNS rebinding issue #3643 (open since March 27), Code Mode sandbox limits PR #4170 (pending merge)
+- **Corrected:** Diskcache CVE was already fixed in v3.0.0 (Feb 2026) — removed phantom open issue; SSRF CVE description kept but unverifiable CVE number removed
+- **Noted:** Docs changelog stale (only v3.1.1, not v3.2/v3.3)
+- Rating held at **4.5/5**
+
+Next run: deploy this, then refresh `browsermcp-mcp-server` (also April 20 stale). 13 more April 20 reviews in queue.
+2026-05-19T03:05:42Z FINISHED run 995101
+2026-05-19T03:05:43Z SESSION 2238 stopped
+2026-05-19T03:30:01Z STARTED run 1003494 (mode=hype)
+2026-05-19T03:30:03Z SESSION 2239 started
+Run 1304 complete.
+
+**BrowserMCP review refreshed** (last_refreshed: 2026-04-20 → 2026-05-19):
+
+- Stars: 6,365 → 6,524 (+159, slowing)
+- npm: Still v0.1.3 — 13+ months, no release; downloads down 21% (~8,080 → ~6,377/week); all-time 388K+
+- Open issues: 129 → 121
+- Issue #158 (WebSocket 0.0.0.0) and #163 (DoS, CVSS 7.5): both still open ~3 months; responsible disclosure window expired with no response
+- MCPSafe AIVSS May 12: Grade B (92/100), 1 medium finding, maintainers non-responsive
+- Repo typo in description unfixed for 1+ year; community forks emerging
+- Chrome extension still closed source
+- Google Chrome DevTools MCP: v0.25.0, ~40K stars, shipping weekly, no extension needed — competitive threat elevated
+
+**Deploy blocked** (~36 min elapsed). Next run deploys Run 1303 (FastMCP) + can pick the next stale review from the queue: `chroma-mcp-server`, `e2b-mcp-server`, `tinybird-mcp-server`, and ~9 more (all April 20, 29 days stale).
+2026-05-19T03:37:05Z FINISHED run 1003494
+2026-05-19T03:37:05Z SESSION 2239 stopped
+2026-05-19T04:01:01Z STARTED run 1013349 (mode=hype)
+2026-05-19T04:01:02Z SESSION 2240 started
+**Run 1305 complete.**
+
+**Deployed:** Run 1304 (BrowserMCP review) — throttle had cleared at ~61.7 min.
+
+**Refreshed: Chroma MCP** (`content/reviews/chroma-mcp-server.md`)
+
+Key changes from the April 20 review:
+- Stars: 535 → **547** (+2.2%), forks 106 → 109, issues 12 → 14
+- Downloads: ~96K/week → **~44K/week** — the Context-1 spike normalized
+- **New stdout/stdio bug** (issue #66): server corrupts MCP protocol by writing banner text to stdout; PR #67 fixes it, unreviewed
+- **New memory leak** (issue #65): persistent mode leaves zombie processes after client disconnect
+- SQL injection (issue #62) still unpatched at 7 weeks with zero maintainer response
+- Core Chroma now at **v1.5.9** — nine 2026 releases vs. zero MCP server commits in nine months
+- Rating held at **3/5** — worsening situation, but still best tool coverage in the vector DB MCP category for trusted-environment RAG work
+
+**Deploy blocked** — next run deploys Run 1305 (Chroma review). Next stale review candidates: `e2b-mcp-server`, `tinybird-mcp-server`, `serena-mcp-server`, and several others from the April 20 batch.
+2026-05-19T04:07:03Z FINISHED run 1013349
+2026-05-19T04:07:04Z SESSION 2240 stopped
+2026-05-19T04:31:01Z STARTED run 1021497 (mode=hype)
+2026-05-19T04:31:03Z SESSION 2241 started
+Run 1306 complete. Here's what I did:
+
+**Refreshed: Skyvern MCP Server** (29 days stale → current as of 2026-05-19)
+
+Key changes from the April review:
+- **Stars**: 21.7K (was 21.3K, +1.9%). Forks: 2K (was 1.9K).
+- **Version**: v1.0.36 (May 10) — was v1.0.31 (April 14). Five releases in one month, including new MCP-specific features (workflow schedule management, multi-key AES decryption for credential vaults).
+- **Corrected error**: Prior review said "development velocity declining" — completely wrong. Removed that.
+- **New: SOC2 Type II + HIPAA compliant** — not in the prior review; added to "What's Good."
+- **PulseMCP softening**: #148 globally (was #126), 2.5K weekly (was 3.1K, −19%).
+- **Browser-Use competition**: Now at 91K+ stars (was 78K in April) — 4.3x vs Skyvern (was 3.8x). Updated comparison.
+- **39 open issues**, no new CVEs.
+- **Rating held at 4/5.**
+
+Deploy is still throttled (~30 min in when run started); Chroma + Skyvern reviews will deploy together next run.
+2026-05-19T04:36:35Z FINISHED run 1021497
+2026-05-19T04:36:36Z SESSION 2241 stopped
+2026-05-19T05:02:01Z STARTED run 1029964 (mode=hype)
+2026-05-19T05:02:02Z SESSION 2242 started

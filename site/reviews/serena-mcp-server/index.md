@@ -1,11 +1,11 @@
 # Serena MCP Server — The IDE for Your Coding Agent
 
-> Serena is an MCP server that gives AI coding agents semantic, symbol-level code understanding via Language Server Protocol and JetBrains integration. 23K GitHub stars, MIT license, 40+ language support — a step up from text-based code manipulation.
+> Serena is an MCP server that gives AI coding agents semantic, symbol-level code understanding via Language Server Protocol and JetBrains integration. 24.4K GitHub stars, MIT license, 40+ language support — a step up from text-based code manipulation.
 
 
 Part of our **[Code & Development MCP category](/categories/code-development/)**.
 
-*At a glance: 23,168 GitHub stars, 1,553 forks, MIT license, Python (89.3%), v1.1.2 (April 14, 2026). Created by Oraios Software (Germany). PulseMCP: ~724K all-time visitors, ~2.8K weekly, #74 globally. 100 open issues, 5 open PRs, 30+ contributors.*
+*At a glance: 24,351 GitHub stars, 1,632 forks, MIT license, Python (89.3%), v1.5.1 (May 18, 2026). Created by Oraios Software (Germany). PulseMCP: ~729K all-time visitors, ~4.4K weekly, #85 globally. 103 open issues, 6 open PRs, 30+ contributors.*
 
 Serena gives AI coding agents what they've been missing: actual IDE capabilities. Instead of treating code as flat text files where edits happen at line numbers, Serena operates at the symbol level — functions, classes, methods, variables — through Language Server Protocol integration. Your agent can find a symbol's definition, see all references across the project, rename it everywhere at once, or replace a function body without counting lines.
 
@@ -44,11 +44,11 @@ Both backends expose the same core MCP tools, with the JetBrains backend adding 
 - `propagate_deletions` — clean up cascading unused code after deletions
 
 **Utility tools:**
-- `search_for_pattern` — regex search across files
+- `search_for_pattern` — regex search across files (now supports `multiline` parameter as of v1.5.0)
 - `replace_content` — text-level find/replace
 - `list_dir`, `find_file`, `read_file` — standard filesystem operations
 - `execute_shell_command` — run terminal commands (disableable)
-- Memory management for long-running workflows
+- Memory management for long-running workflows — now includes cross-memory references (`mem:<name>`) and a CLI (`serena memories list/read/write/check`)
 
 ## Who Built It
 
@@ -58,7 +58,7 @@ Both backends expose the same core MCP tools, with the JetBrains backend adding 
 
 **Michael Panchenko** — co-founder with 1,034 commits. Extremely active — multiple commits daily as of April 2026.
 
-Together they've written the vast majority of Serena's code, with ~25 additional community contributors. An AI assistant ("claude") also appears in the contributor list with 25 commits, which is refreshingly transparent.
+Together they've written the vast majority of Serena's code, with ~30 additional community contributors. An AI assistant ("claude") also appears in the contributor list, which is refreshingly transparent. Issue numbers now exceed #1,500 after just 14 months.
 
 ## Setup
 
@@ -71,7 +71,7 @@ serena init
 
 For JetBrains backend: `serena init -b JetBrains`
 
-Requires Python 3.11–3.13. The maintainers explicitly warn against installing from MCP marketplaces, saying those contain "outdated and suboptimal installation commands."
+Requires Python 3.11–3.13. The maintainers explicitly warn against installing from MCP marketplaces, saying those contain "outdated and suboptimal installation commands." As of v1.3.0, the project renamed `base_modes` to `added_modes` for project-level customization — a breaking change affecting anyone using the older config.
 
 **Compatible clients:** Claude Code, OpenAI Codex, Gemini CLI, VS Code, Cursor, JetBrains IDEs (via Copilot/Junie/AI Assistant), Claude Desktop, OpenWebUI, and others.
 
@@ -79,11 +79,15 @@ Requires Python 3.11–3.13. The maintainers explicitly warn against installing 
 
 **Symbol-level operations are genuinely transformative.** When an agent can say "rename `processData` to `process_data` across the entire project" and have all references, imports, and type annotations update correctly, that's a qualitative improvement over regex find-and-replace. This is what IDEs have done for human developers for decades — Serena brings it to AI agents.
 
-**40+ language support via LSP.** Because Serena delegates to standard language servers, it inherits the code intelligence that millions of developers already rely on. Python, TypeScript, Rust, Go, Java, C++ — if there's an LSP server for it, Serena can work with it.
+**40+ language support via LSP — and growing fast.** Because Serena delegates to standard language servers, it inherits the code intelligence that millions of developers already rely on. Python, TypeScript, Rust, Go, Java, C++ — if there's an LSP server for it, Serena can work with it. Since April 2026, eight more language backends have shipped (Ada/SPARK, Svelte, Angular, HTML, SCSS/CSS, 1C/OneScript, GDScript/Godot, CUE pending), with community PRs adding more.
 
-**Extremely active development.** v1.0.0 shipped April 3, 2026, followed by three more releases in 11 days (v1.1.0, v1.1.1, v1.1.2). The founders are committing daily. Issue numbers exceed #1,381, indicating heavy community engagement. This is not abandonware.
+**Extremely active development.** v1.0.0 shipped April 3, 2026, followed by four more releases in 45 days: v1.2.0 (April 27), v1.3.0 (May 11), and v1.5.0 + v1.5.1 (both May 18). The founders are committing daily. Issue numbers now exceed #1,500, indicating heavy community engagement. This is not abandonware.
 
-**23K stars in 13 months.** From initial release (March 2025) to 23K stars by April 2026, Serena has grown faster than most MCP servers. That adoption curve suggests real utility, not just novelty.
+**24.4K stars in 14 months — and PyPI downloads exploded.** Weekly PyPI installs of `serena-agent` jumped from ~500/week (late March) to ~19,262/week by mid-May — a 38× surge. All-time downloads reached ~379K, up from ~27,400 in April. Real-world adoption is accelerating, not just star-chasing.
+
+**Language support is expanding rapidly.** Since April 20 alone, Serena added Ada/SPARK, Svelte, Angular, HTML, SCSS/CSS, 1C/OneScript (Russian ERP scripting language), GDScript/Godot Engine, and CUE (pending). Godot support in particular is notable — TCP-based LSP connection with Godot version auto-detection, opening up game development workflows.
+
+**Memory system is maturing.** The May 18 memory revamp (v1.5.0) adds cross-memory references via `mem:<name>` convention with auto rename propagation, a new CLI (`serena memories list/read/write/check`), and onboarding memory templates. Persistent project knowledge is becoming a first-class feature, not an afterthought.
 
 **LLM-agnostic, client-agnostic.** Works with any MCP-compatible client and any LLM. No subscription, no vendor lock-in, no paid tiers. MIT license.
 
@@ -91,17 +95,17 @@ Requires Python 3.11–3.13. The maintainers explicitly warn against installing 
 
 ## What's Not
 
-**No security policy.** No SECURITY.md, no responsible disclosure process, no formal security audit. A community-posted security analysis (Discussion #380) identified concerns including shell command execution via `subprocess.Popen(command, shell=True)`, the dashboard binding to `0.0.0.0` (network exposure), unrestricted filesystem access, and unencrypted storage of user interactions. The maintainers responded that some findings were incorrect and that the shell tool is disableable (off by default in IDE contexts), but the lack of a formal security framework for a tool that executes code in your development environment is a legitimate gap.
+**No security policy — still.** No SECURITY.md, no responsible disclosure process, no formal security audit. A community-posted security analysis (Discussion #380) identified concerns including shell command execution via `subprocess.Popen(command, shell=True)`, the dashboard binding to `0.0.0.0`, unrestricted filesystem access, and unencrypted storage of user interactions. As of May 19, 2026, the project still has no published security advisories page and no SECURITY.md. A new proposal (issue #1502, May 18) asks for cryptographic server identity verification — no maintainer response yet. An internal MCP spec compliance audit (issue #1467, tagged "for core team only") found 9 errors and 47 warnings across 29 tools, including missing parameter types on `read_file` and `execute_shell_command` and tool exceptions incorrectly returning `isError: false`.
 
-**Connection reliability issues.** Multiple GitHub issues report Claude Code failing to connect to Serena after installation (#494, #568, #451), timeout errors with Codex (#617), and tool name mangling in Claude Code v2.x (#780). The setup experience isn't always smooth.
+**Process leak cluster.** Issue #1490 (May 15, open) reports KotlinLanguageServer spawning 90 orphaned JVM processes consuming 21 GB RSS on a single machine during ungraceful MCP server termination. Separate issues cover Clojure LSP zombie leaks (#1464) and Python child process zombie leaks (#1488, since closed). Java users face another problem: the bundled JRE 21 is now incompatible with the new `jdt.core.javac` Java 24+ requirement, causing backend startup failures (#1469).
 
-**Windows compatibility problems.** Issue #354 reports failures on Windows related to npm/fnm PATH resolution (exit code 127). Cross-platform support is a work in progress.
+**64.6% of Claude Code sessions never use Serena tools.** Community analysis (issue #1491, May 15) of real sessions found that only 35.4% of Claude Code sessions where Serena is available actually invoke any Serena query tool. The majority of configured users aren't benefiting. The v1.5.0 "enhanced tool descriptions" is a direct response — but this adoption gap suggests Serena's discoverability problem is structural, not just a description issue.
 
-**100 open issues at this scale.** For a project growing this fast, the issue count isn't alarming, but common themes — connection failures, naming confusion between `serena` and `serena-mcp-server` packages (#647), and client-specific quirks — suggest the installation and integration story needs polish.
+**Claude Code multi-instance spawning.** The project's own `config.yml` now acknowledges: "Claude Code starts Serena in mysterious ways, often starting multiple instances without shutting down previous instances." Issue #1487 (May 14) was closed as "not a Serena bug," redirected to the Claude Code team. Connection reliability issues from the prior review (#494, #568, #451) continue in a different form.
 
 **JetBrains limitations.** Rider (C#/.NET) and CLion (C/C++) are not supported, and the backend requires the IDE to be running. If you're not already a JetBrains user, the LSP backend is more practical but less powerful.
 
-**PyPI adoption is modest.** ~27,400 total downloads and ~500/week on PyPI as of late March 2026. The `uv tool install` method may not fully register on PyPI stats, but even accounting for that, the download numbers lag far behind the star count.
+**Fixed since last review:** C# attributes/decorators silently stripped during symbol replacement (data loss bug, issue #1484, now closed); stale file buffer allowing external edits to be silently overwritten (#1013, closed May 18); Windows npm/fnm PATH resolution failure (#354, closed with commit 1a07352); tool name mangling in Claude Code v2.x (#780, closed). These were real correctness issues — their resolution matters.
 
 ## Competition
 
@@ -123,13 +127,15 @@ The real comparison is between Serena + Claude Code (or any MCP client) versus C
 
 Serena solves a real problem: AI coding agents that manipulate code as text are fundamentally limited compared to agents that understand code structure. By bridging Language Server Protocol and JetBrains IDE capabilities to the MCP ecosystem, Serena gives any AI agent access to the same "go to definition," "find all references," and "rename symbol" operations that human developers take for granted.
 
-The execution is strong — active founders, rapid iteration, growing community, MIT license. The gaps are in the operational details: no security policy for a tool that runs in your dev environment, connection reliability issues, and Windows rough edges. These are fixable problems for a project that just hit v1.0 three weeks ago.
+A month after the prior review, the velocity is striking: v1.1.2 to v1.5.1 in 29 days, 8 new language backends, a 38× surge in weekly PyPI downloads, and a memory system now mature enough to have its own CLI. The project is accelerating, not coasting.
 
-If you're using an MCP-compatible coding agent and you work with large or multi-file codebases, Serena is the most impactful MCP server in the code tooling category.
+But the process leak cluster (Kotlin spawning 90 orphaned JVM processes consuming 21 GB RAM), the MCP spec compliance issues known internally but unaddressed publicly, and the finding that 64.6% of Claude Code sessions never invoke Serena tools despite having it configured — these are real operational concerns. The first two suggest the project may be prioritizing feature velocity over robustness; the third suggests that integrating Serena well requires effort that many users aren't putting in.
+
+If you're using an MCP-compatible coding agent and you work with large or multi-file codebases, Serena remains the most impactful MCP server in the code tooling category. Just plan for process cleanup in your setup, pin your JDK if you're on Java, and read the configuration docs before assuming it's working.
 
 **ChatForest Rating: 4 out of 5**
 
-A genuine step up from text-based code manipulation, with strong technical foundations and active development. The missing point is for the lack of security infrastructure and installation friction that a tool at this star count should have addressed. Once connection reliability and security practices mature, this could be a 4.5 or 5.
+A genuine step up from text-based code manipulation, with exceptionally active development and accelerating real-world adoption. The rating holds at 4/5 — the PyPI download surge and rapid language expansion are encouraging, but process leak bugs consuming 21 GB RAM, a persistent 64% tool adoption gap, and still no security policy at 24K stars are meaningful concerns that prevent a higher score. Once the process leak cluster is resolved and the security framework matures, this could reach 4.5.
 
 ---
 
