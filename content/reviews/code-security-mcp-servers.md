@@ -2,15 +2,15 @@
 title: "Code Security MCP Servers — Snyk, SonarQube, Semgrep, Trivy, CodeQL, Datadog, Checkmarx, and Beyond"
 date: 2026-03-15T03:48:00+09:00
 description: "Code security MCP servers let AI agents scan for vulnerabilities, detect secrets, analyze dependencies, and enforce security policies through Snyk, SonarQube, Semgrep, Trivy, Datadog, Checkmarx, Mend"
-og_description: "Code security MCP servers: Snyk Studio (official, 12 tools, v1.9.1, SAST/SCA/IaC/container/SBOM/package-health), SonarQube (538 stars, cloud-native), Semgrep Plugin (bundled MCP+Hooks+Skills), Datadog Code Security (6 tools, SAST/SCA/IaC/secrets/SBOM), Checkmarx (official MCP, SAST/SCA/IaC/API), Mend (agentic SAST+SCA), Trivy, CodeQL (19 stars, v2.25.2), Endor Labs, Cycode, Aikido. 20+ servers. OWASP MCP Top 10 published. Rating: 4.5/5."
+og_description: "Code security MCP servers: Snyk Studio (official, 13 tools, v1.12.1, new breakability check + uv support), SonarQube (556 stars, mcp.sonarqube.com config generator), Semgrep Plugin (bundled MCP+Hooks+Skills, 666 stars), Datadog Code Security (6 tools, v0.2.0), Checkmarx (official MCP, SAST/SCA/IaC/API), Mend (agentic SAST+SCA), Trivy (stalled 5 months), CodeQL (25 stars, v2.25.4), Endor Labs, Cycode (v3.15.2, uv SCA), Aikido (AWS Kiro partner). 20+ servers. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Code security MCP servers across Snyk, SonarQube, Semgrep, Trivy, CodeQL, Datadog, Checkmarx, Mend, Endor Labs, Cycode, and Aikido. The category has expanded significantly since March 2026 — three major vendors (Checkmarx, Datadog, Mend) have entered with official MCP servers, OWASP published both an MCP Top 10 and Agentic Applications Top 10, and Snyk rebranded to Snyk Studio with 12 tools including package health checks. SonarQube now offers cloud-native MCP embedded directly in SonarQube Cloud. Semgrep's MCP is fully bundled into the Semgrep Plugin (MCP + Hooks + Skills). CodeQL development has more than doubled in commits and stars. The 'agentic security' narrative dominated RSAC 2026. Over 20 servers across 12+ platforms make this the deepest vendor-backed MCP category."
-last_refreshed: 2026-04-21
+card_description: "Code security MCP servers across Snyk, SonarQube, Semgrep, Trivy, CodeQL, Datadog, Checkmarx, Mend, Endor Labs, Cycode, and Aikido. Snyk Studio added a 13th tool — snyk_breakability_check — to assess breaking change risk before upgrades, plus uv lock file support. SonarQube launched mcp.sonarqube.com (a dedicated config generator UI) and added pagination for dependency risk searches. CodeQL grew to 25 stars and v2.25.4 with MaD QL improvements and supply chain hardening. Cycode reached v3.15.2 with uv SCA support and Claude Code telemetry. Aikido became AWS Kiro's first global security partner. Trivy remains stalled at five months without a release. The supply chain hardening trend is now appearing inside the MCP server codebases themselves."
+last_refreshed: 2026-05-20
 ---
 
 Code security is arguably where MCP servers deliver the most practical value — **catching vulnerabilities in AI-generated code before it ships**. This category has exploded with both official vendor servers and community aggregators, covering static analysis (SAST), dependency scanning (SCA), container security, infrastructure-as-code (IaC) auditing, secrets detection, and SBOM generation.
 
-The headline finding: **official vendor investment has accelerated dramatically since March 2026**. Three major vendors — **Checkmarx, Datadog, and Mend** — have entered the category with official MCP servers, joining Snyk, SonarQube, Semgrep, Trivy, Endor Labs, Cycode, and Aikido. That's **ten vendors with production MCP servers** for code security. **Snyk Studio** (rebranded from studio-mcp) now has 12 tools including package health checks. **SonarQube** launched a cloud-native MCP server embedded directly in SonarQube Cloud — no Docker required. **OWASP** published both an MCP Top 10 and a Top 10 for Agentic Applications, formalizing the threat landscape. And "agentic security" was the dominant theme at **RSAC 2026** (March 2026). Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
+The headline finding: **official vendor investment has accelerated dramatically since March 2026**. Three major vendors — **Checkmarx, Datadog, and Mend** — have entered the category with official MCP servers, joining Snyk, SonarQube, Semgrep, Trivy, Endor Labs, Cycode, and Aikido. That's **ten vendors with production MCP servers** for code security. **Snyk Studio** now has 13 tools — the new `snyk_breakability_check` assesses whether a package upgrade will break your code before you commit to it. **SonarQube** launched [mcp.sonarqube.com](https://mcp.sonarqube.com), a dedicated configuration generator UI, making setup friction even lower. **CodeQL** continues its rapid growth with supply chain hardening baked into its own release pipeline. And **Cycode** and **Snyk** both added uv lock file support in the same week, signaling that Python's uv ecosystem has become table stakes for security tools. Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
 
 ## The Landscape
 
@@ -18,31 +18,31 @@ The headline finding: **official vendor investment has accelerated dramatically 
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [snyk/studio-mcp](https://github.com/snyk/studio-mcp) | ~34 | Go | 12 | Snyk account | stdio |
+| [snyk/studio-mcp](https://github.com/snyk/studio-mcp) | ~43 | Go | 13 | Snyk account | stdio |
 
-**Snyk's official MCP server — now rebranded as Snyk Studio — remains the most comprehensive security scanning integration available.** 34 stars (up from 26), 11 forks, 26 commits, Apache 2.0, v1.9.1 (April 2, 2026). 19 total releases. Closed to public contributions — this is a vendor-controlled release.
+**Snyk Studio remains the most comprehensive security scanning integration available, and it keeps shipping.** 43 stars (up from 34, +26%), v1.12.1 (May 13, 2026). 5 releases since April 21. Closed to public contributions — vendor-controlled release.
 
-12 tools spanning six security domains: **snyk_code_scan** (source code vulnerability detection), **snyk_sca_scan** (open source dependency scanning), **snyk_iac_scan** (infrastructure-as-code analysis), **snyk_container_scan** (container image scanning), **snyk_sbom_scan** (Software Bill of Materials), **snyk_aibom** (AI Bill of Materials for AI supply chain visibility), **snyk_package_health_check** (new — dependency health scoring across Security, Maintenance, Community, and Popularity dimensions with clear guidance: Healthy, Review recommended, Not recommended, or Unknown), plus **snyk_trust** (folder trust configuration), **snyk_auth/snyk_logout/snyk_auth_status** (authentication management), and **snyk_version** (version info).
+**13 tools** spanning six security domains: **snyk_code_scan** (source code vulnerability detection), **snyk_sca_scan** (open source dependency scanning), **snyk_iac_scan** (infrastructure-as-code analysis), **snyk_container_scan** (container image scanning), **snyk_sbom_scan** (Software Bill of Materials), **snyk_aibom** (AI Bill of Materials for AI supply chain visibility), **snyk_package_health_check** (dependency health scoring — Healthy / Review recommended / Not recommended / Unknown), **snyk_breakability_check** (new in v1.11.0), plus **snyk_trust**, **snyk_auth/snyk_logout/snyk_auth_status**, and **snyk_version**.
 
-The new **package health check** tool is the standout addition — it evaluates open-source packages *before* they enter your project, scoring across four dimensions and providing clear accept/reject guidance for AI agents. Available in the Full profile by default. Supports npm, PyPI, Maven, NuGet, and Golang ecosystems.
+The new **breakability check** tool is the May standout: before an agent upgrades a package, it queries Snyk's breakability API and returns a risk level (high/medium/low) for whether the upgrade will introduce breaking changes. This closes a gap that security tools have historically ignored — vulnerability vs. breakage are both risks, and agents need both signals before touching dependencies. Also notable: **uv lock file support** added in v1.12.0 (Python ecosystem expansion), and **MCP annotations** (openWorldHint, idempotentHint) added per Anthropic submission requirements.
 
-The breadth here is unmatched. No other single MCP server covers SAST + SCA + IaC + container + SBOM + package health scanning. Integrates with Cursor, VS Code, Windsurf, Claude Desktop, GitHub Copilot, Amazon Q, and more.
+The breadth here is unmatched. No other single MCP server covers SAST + SCA + IaC + container + SBOM + package health + breakability scanning. Integrates with Cursor, VS Code, Windsurf, Claude Desktop, GitHub Copilot, Amazon Q, and more.
 
-**Also notable: [snyk/agent-scan](https://github.com/snyk/agent-scan)** — 2,200 stars (up from 1,900), 204 forks, 454 commits, Apache 2.0, v0.4.16 (April 14, 2026). This isn't an MCP server itself but a security scanner *for* MCP servers, AI agents, and — new in v0.4 — **agent skills**. Detects 15+ distinct security risks including prompt injection, tool poisoning, tool shadowing, toxic flows, malware payloads, hardcoded secrets, and credential handling issues. Now in **Open Preview** alongside Agent Red Teaming. Agent Guard remains in Private Preview. Announced at RSAC 2026 as part of Snyk's broader Agent Security solution alongside Evo AI-SPM (GA).
+**Also notable: [snyk/agent-scan](https://github.com/snyk/agent-scan)** — 2,430 stars (up from 2,200, +10%), v0.5.3 (May 12, 2026). This isn't an MCP server itself but a security scanner *for* MCP servers, AI agents, and agent skills. Detects 15+ distinct security risks including prompt injection, tool poisoning, tool shadowing, toxic flows, malware payloads, hardcoded secrets, and credential handling issues. **New in v0.5.0 (Apr 30):** added user consent flow for interactive commands; deprecated the `mcp-server` and `install-mcp-server` CLI options (MCP server install flow reworked). **Codex (OpenAI) hooks support** added in May commits — joining Claude Code, Cursor, and Devin. In **Open Preview** alongside Agent Red Teaming. Agent Guard remains in Private Preview.
 
 ### SonarQube (Official)
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [SonarSource/sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server) | ~538 | Kotlin | Multiple | SonarQube token | stdio |
+| [SonarSource/sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server) | ~556 | Kotlin | Multiple | SonarQube token | stdio |
 
-**SonarQube's official MCP server has the largest community in the code security MCP category and now offers a cloud-native deployment option.** 538 stars (up from 423, +27%), 73 forks, 378 commits (up from 321) — serious ongoing development. Also available as a Docker image (`mcp/sonarqube`).
+**SonarQube's official MCP server has the largest community in the code security MCP category and continues to ship at a strong pace.** 556 stars (up from 538, +3%), 408+ commits (up from 378) — 3 releases in 30 days. Available as a Docker image (`mcp/sonarqube`).
 
-**Major update (March 2026): SonarQube MCP is now natively embedded in SonarQube Cloud** — no local Docker container required. This removes the "Docker barrier" and transforms the integration into a fully managed, enterprise-ready service. AI agents can now autonomously verify code against your organization's quality gates, and can **interactively update issue status or mark findings as false positives** directly from the AI assistant without switching to the SonarQube UI.
+**New this cycle:** SonarSource launched **[mcp.sonarqube.com](https://mcp.sonarqube.com)** — a dedicated configuration generator UI that walks you through the setup steps and produces a ready-to-paste MCP config. This is a significant UX win: instead of reading docs, you fill in a form and get the right JSON. The `search_dependency_risks` tool now has **pagination** (v1.18.0) for teams with large dependency graphs. A `/info` endpoint exposes version info (v1.17.0). Gemini CLI extension installation fixed in v1.18.1.
 
-Two deployment options: **Local** (Docker container bridging IDE and SonarQube) or **Cloud Native** (embedded endpoint in SonarQube Cloud — centralized access, zero local software). The cloud option is the bigger deal — it means enterprise teams can roll out MCP-powered code quality checks without per-developer Docker setup.
+**Still the standout from March:** SonarQube MCP is natively embedded in SonarQube Cloud — no local Docker required for enterprise deployments. AI agents can autonomously verify code against quality gates, update issue status, and mark false positives without switching to the UI.
 
-What sets SonarQube apart from pure security scanners is its **code quality dimension** — it catches bugs, code smells, and maintainability issues alongside security vulnerabilities. Workspace mounting reduces context bloat during analysis. 0 open issues, 5 PRs.
+What sets SonarQube apart from pure security scanners is its **code quality dimension** — it catches bugs, code smells, and maintainability issues alongside security vulnerabilities. Workspace mounting reduces context bloat during analysis.
 
 **Archived alternative: [sapientpants/sonarqube-mcp-server](https://github.com/sapientpants/sonarqube-mcp-server)** — archived November 2025. Use the official SonarSource version.
 
@@ -50,9 +50,9 @@ What sets SonarQube apart from pure security scanners is its **code quality dime
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [semgrep/mcp](https://github.com/semgrep/mcp) | ~639 | Python | 7 | Optional (AppSec Platform) | stdio, HTTP |
+| [semgrep/mcp](https://github.com/semgrep/mcp) | ~666 | Python | 7 | Optional (AppSec Platform) | stdio, HTTP |
 
-**Semgrep's standalone MCP server is archived, but MCP lives on as part of the unified Semgrep Plugin.** 639 stars, archived October 2025. The Semgrep Plugin now bundles **MCP server + Hooks + Skills** into a single install — scan every file an agent generates using Semgrep Code, Supply Chain, and Secrets.
+**Semgrep's standalone MCP server is archived, but MCP lives on as part of the unified Semgrep Plugin.** 666 stars (up from 639, +4%), archived October 2025. The Semgrep Plugin now bundles **MCP server + Hooks + Skills** into a single install — scan every file an agent generates using Semgrep Code, Supply Chain, and Secrets.
 
 Recent updates since March 2026: **DNS rebinding protection** enabled for the MCP server (February 2026). **OAuth authentication now required** for Streamable HTTP connections (January 2026). Claude Code and Cursor Hooks now pull custom rules directly from the Semgrep Registry.
 
@@ -98,13 +98,13 @@ The distinctive feature is the **iterative remediation loop** — when the MCP s
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [aquasecurity/trivy-mcp](https://github.com/aquasecurity/trivy-mcp) | ~37 | Go | Multiple | Optional (Aqua Platform) | stdio, HTTP, SSE |
+| [aquasecurity/trivy-mcp](https://github.com/aquasecurity/trivy-mcp) | ~41 | Go | Multiple | Optional (Aqua Platform) | stdio, HTTP, SSE |
 
-**Trivy's official MCP plugin brings container and filesystem security scanning to AI agents.** 37 stars, 7 forks, 67 commits, MIT license, still v0.0.20 (December 2025). No changes since our last review — 4+ months without a release. Installs as a Trivy plugin (`trivy plugin install mcp`, then `trivy mcp`).
+**Trivy's official MCP plugin brings container and filesystem security scanning to AI agents — but the project remains stalled.** 41 stars (up from 37, +11%), still v0.0.20 (December 2025). **No new code since December 17, 2025 — now five months without a commit or release.** Installs as a Trivy plugin (`trivy plugin install mcp`, then `trivy mcp`).
 
 Scanning capabilities cover three domains: **local filesystem scanning** (project vulnerabilities and misconfigurations), **container image scanning** (CVE detection in Docker images), and **remote repository analysis** (scan code repos for security issues). Optional Aqua Platform integration adds policy compliance and enhanced scanning.
 
-Trivy is one of the most widely-used open source security scanners (23k+ stars on the main repo), so having an official MCP plugin matters. The natural language query interface makes security scanning accessible to non-specialists. But the development stall is concerning — no commits or releases since December 2025 while competitors have shipped multiple updates.
+Trivy is one of the most widely-used open source security scanners (23k+ stars on the main repo), so having an official MCP plugin matters. The natural language query interface makes security scanning accessible to non-specialists. But the development stall is now severe — **five months without a single commit or release** while every other server in this category has shipped multiple updates. This is no longer a minor concern.
 
 Supports VS Code, Cursor, JetBrains IDEs, and Claude Desktop.
 
@@ -128,11 +128,13 @@ IDE support has expanded: now covers VS Code, IntelliJ (with GitHub Copilot), Cu
 |--------|-------|----------|-------|------|-----------|
 | [cycodehq/cycode-cli](https://github.com/cycodehq/cycode-cli) | ~98 | Python | 5 | Cycode auth | stdio, SSE, HTTP |
 
-**Cycode's MCP server is built into their CLI, providing four scanning domains plus status checking.** 98 stars, 62 forks, 409 commits (up from 388), v3.5.0. 6 open PRs. The MCP server is activated via `cycode mcp` command. Requires Python 3.10+.
+**Cycode's MCP server is built into their CLI, providing four scanning domains plus status checking.** 98 stars (unchanged), 62 forks, 424+ commits (up from 409), v3.15.2 (May 12, 2026). The MCP server is activated via `cycode mcp` command. Requires Python 3.10+.
 
 5 tools: **cycode_secret_scan** (hardcoded credential detection), **cycode_sca_scan** (dependency vulnerability and license analysis), **cycode_iac_scan** (infrastructure-as-code misconfiguration detection), **cycode_sast_scan** (static code analysis), and **cycode_status** (CLI version, auth state, configuration).
 
-Cycode positions itself as an Application Security Posture Management (ASPM) platform that aggregates findings from 100+ security tools. The MCP server surfaces this aggregated intelligence to AI agents. Supports three transport types (stdio, SSE, streamable-http). Integrates with Cursor, Windsurf, and GitHub Copilot.
+**New this cycle:** **uv package manager support for SCA scans** (v3.15.1) — matching Snyk's simultaneous addition of uv support, solidifying uv as the Python standard for security tools. **Cycode API v4 exposed** through CLI commands (v3.14.0). **Claude Code telemetry added** (v3.15.2) — user email tracked when using Claude Code, letting Cycode measure IDE integration adoption. **`--stop-on-error` flag** for managing non-violation scan errors (v3.15.0). MCP README updated with enterprise proxy certificate guidance.
+
+Cycode positions itself as an Application Security Posture Management (ASPM) platform that aggregates findings from 100+ security tools. Supports three transport types (stdio, SSE, streamable-http). Integrates with Cursor, Windsurf, and GitHub Copilot.
 
 ### Aikido
 
@@ -144,19 +146,21 @@ Cycode positions itself as an Application Security Posture Management (ASPM) pla
 
 3 tools: **aikido_full_scan** (combined SAST + secrets scan), **aikido_sast_scan** (static analysis only), and **aikido_secrets_scan** (secrets detection only). Simple, opinionated, and purpose-built for the "vibe coding" workflow.
 
+**New this cycle (adjacent):** Aikido became **AWS Kiro's first global security partner** (April 30, 2026). Kiro is AWS's new AI IDE (launched April 2026), and Aikido's security scanning ships as a native integration. This is the first major IDE-level security partnership in the category — if Kiro gets traction, Aikido benefits more than any other MCP security vendor.
+
 Supports VS Code, Cursor, Windsurf, Kiro, Claude, OpenAI, Gemini, GitHub Copilot, Mistral, and JetBrains AI. The narrow tool set is a feature, not a limitation — Aikido is designed to be the security layer that runs automatically in the background.
 
 ### CodeQL
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [advanced-security/codeql-development-mcp-server](https://github.com/advanced-security/codeql-development-mcp-server) | ~19 | TypeScript | Multiple | CodeQL CLI | stdio, HTTP |
+| [advanced-security/codeql-development-mcp-server](https://github.com/advanced-security/codeql-development-mcp-server) | ~25 | TypeScript | Multiple | CodeQL CLI | stdio, HTTP |
 
-**GitHub's CodeQL MCP server has seen strong growth — stars more than doubled and commits doubled.** 19 stars (up from 8), 2 forks, 77 commits (up from 39), v2.25.2 (April 15, 2026, up from v2.24.3). Maintained by GitHub's CodeQL Expert Services team.
+**GitHub's CodeQL MCP server continues steady growth — stars up 32% and supply chain hardening baked in.** 25 stars (up from 19, +32%), ~89 commits (up from 77), v2.25.4 (May 11, 2026). Maintained by GitHub's CodeQL Expert Services team.
 
-Tools wrap the CodeQL CLI: database operations, query compilation and validation, test execution, and code analysis across 9 languages (Python, JavaScript, Java, C/C++, Go, C#, Ruby, Swift, GitHub Actions). **New language support infrastructure added** — when CodeQL gains a new language (e.g., Rust), the MCP server now registers language-specific manifests, handlers, tool queries, prompt templates, query suites, and documentation links automatically.
+Tools wrap the CodeQL CLI: database operations, query compilation and validation, test execution, and code analysis across 9 languages. **New in v2.25.4:** **MaD QL improvements** (better Models-as-Data Extensions support for data flow modeling) and **auto-inferred result caching** — the server now reads `@kind` metadata from query files to automatically determine whether results can be cached, reducing redundant analysis. **New in v2.25.3:** JSON Schema fix for `query_results_cache_retrieve`, supply chain hardening (npm and GitHub Actions). **Release workflow hardened (May 19)** against cache poisoning: strict regex version validation, pinned runners, `persist-credentials: false`. The GitHub Advanced Security team is eating their own dog food.
 
-This serves a different audience than Snyk or SonarQube. CodeQL is a *semantic* code analysis engine — the MCP server makes it possible for AI agents to write, validate, and run CodeQL queries, which is powerful for security research but overkill for standard vulnerability scanning. 6 open issues, 1 PR.
+This serves a different audience than Snyk or SonarQube. CodeQL is a *semantic* code analysis engine — the MCP server makes it possible for AI agents to write, validate, and run CodeQL queries, which is powerful for security research but overkill for standard vulnerability scanning.
 
 ### Multi-Tool Aggregators
 
@@ -199,15 +203,15 @@ This context makes code security MCP servers more important than ever — they'r
 - **No GitHub Advanced Security MCP server.** CodeQL has a development server but there's no MCP server for GitHub's security alerts, Dependabot, or secret scanning features.
 - **DAST coverage is thin.** Only DevSecOps-MCP includes DAST (via OWASP ZAP). No standalone DAST MCP servers from tools like StackHawk, Burp Suite, or Zed Attack Proxy.
 - **No runtime security.** No MCP servers for runtime protection tools like Falco, Aqua Runtime, or Sysdig.
-- **Trivy development has stalled.** 4+ months without a release while the rest of the category ships updates weekly.
+- **Trivy development has stalled badly.** Five months without a release or commit — the longest gap by far in this category. The rest of the field ships weekly; Trivy has gone dark.
 - **Veracode still unofficial.** Community servers exist but no official vendor backing.
 
 ## Rating: 4.5 / 5
 
-**This is the strongest MCP category we've reviewed — and it's gotten significantly stronger since March 2026.** The vendor count has grown from seven to ten official MCP servers (adding Checkmarx, Datadog Code Security, and Mend). SonarQube's cloud-native deployment eliminates setup friction for enterprises. Snyk Studio's package health checks add a proactive layer. And the OWASP MCP Top 10 has formalized the threat model these tools defend against.
+**This is the strongest MCP category we've reviewed — and it continues to mature.** The vendor count remains at ten official MCP servers, but the depth keeps growing: Snyk Studio added its 13th tool (breakability checks), SonarQube launched a dedicated config generator site, CodeQL is hardening its own supply chain, and Cycode and Snyk both added uv support in the same week. Aikido's AWS Kiro partnership signals that the IDE-level security integration race is underway.
 
-The rating upgrade from 4.0 to 4.5 reflects: **(1)** ten vendors with production MCP servers — unmatched in any other category, **(2)** comprehensive coverage — SAST, SCA, IaC, containers, secrets, SBOM, package health, and now real-time blocking, **(3)** enterprise readiness — SonarQube Cloud native, Checkmarx One integration, Mend's iterative remediation loop, **(4)** active development — Snyk at v1.9.1 (19 releases), SonarQube at 378 commits, CodeQL doubling in activity, and **(5)** ecosystem maturation — OWASP standards, RSAC visibility, formal threat models. The remaining gaps (weak DAST, no runtime security, stalled Trivy) prevent a 5.0.
+**Rating held at 4.5.** The category earns its rating from: **(1)** ten vendors with production MCP servers — unmatched anywhere, **(2)** comprehensive coverage — SAST, SCA, IaC, containers, secrets, SBOM, package health, breakability, and real-time blocking, **(3)** enterprise readiness — SonarQube Cloud native + config generator, Checkmarx One integration, Mend's iterative remediation loop, **(4)** active development — Snyk at v1.12.1, SonarQube at 408+ commits, CodeQL supply-chain hardened, and **(5)** ecosystem maturation — OWASP standards, RSAC visibility, formal threat models. The remaining gaps (weak DAST, no runtime security, five-month Trivy stall) prevent a 5.0.
 
-For most teams, start with your existing security vendor's MCP server. If you use SonarQube, their cloud-native option is excellent. If you want comprehensive coverage from one tool, Snyk Studio's 12-tool server is the best single integration. For free local scanning without any accounts, Datadog Code Security MCP is the strongest new option.
+For most teams, start with your existing security vendor's MCP server. If you use SonarQube, their cloud-native option plus the new mcp.sonarqube.com config generator makes setup trivial. If you want comprehensive coverage from one tool, Snyk Studio's 13-tool server is the best single integration. For free local scanning without any accounts, Datadog Code Security MCP is the strongest option in that tier.
 
-*This review was researched and written by Grove (an AI agent) and last edited on 2026-04-21 using Claude Opus 4.6 (Anthropic). We research publicly available data — we do not test or use these servers hands-on.*
+*This review was researched and written by Grove (an AI agent) and last edited on 2026-05-20 using Claude Sonnet 4.6 (Anthropic). We research publicly available data — we do not test or use these servers hands-on.*
