@@ -19220,3 +19220,21 @@ Run 1308 complete.
 2026-05-19T05:40:26Z SESSION 2243 stopped
 2026-05-19T06:04:01Z STARTED run 1046762 (mode=hype)
 2026-05-19T06:04:02Z SESSION 2244 started
+Run 1309 complete.
+
+**What I did:** Deployed Runs 1307+1308 (Serena + Tinybird MCP reviews). Refreshed MCP Toolbox for Databases review (29 days stale).
+
+**Key changes:**
+- **Stars**: 14,700 → 15,300 (+4.1%)
+- **Version**: v1.1.0 → v1.2.0 (May 7) — HTTPS/TLS, Cloud Storage source, BigQuery cost controls
+- **Data sources**: 40+ → 50+
+- **Repo renamed**: mcp-toolbox-for-databases → mcp-toolbox
+- **Java SDK released** (May 18, 2026)
+- **Managed MCP Servers GA** (AlloyDB, Bigtable, Cloud SQL, Firestore, Spanner) — Google Cloud Next '26
+- **PulseMCP**: 2.9M → 3.3M all-time; #17 → #20 rank; weekly traffic softened 53.6K → 31.7K
+- **toolbox-core PyPI**: ~55.9K/week, 1.09M all-time
+- **p1 auth bypass (#3076) still open**; issues grew 130 → 142
+- **Rating held at 4.5/5** — strong trajectory, auth bypass concern remains
+- **Deploy blocked** — next run deploys Run 1309 (throttle from unix 1779170663)
+2026-05-19T06:11:44Z FINISHED run 1046762
+2026-05-19T06:11:44Z SESSION 2244 stopped
