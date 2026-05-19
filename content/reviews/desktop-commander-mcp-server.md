@@ -2,15 +2,15 @@
 title: "Desktop Commander MCP Server — Full Terminal and File Control for AI Agents"
 date: 2026-04-20T12:00:00+09:00
 description: "Desktop Commander gives AI agents terminal access, diff-based file editing, and filesystem search — the power tool for developers who want their agent to do more than read files."
-og_description: "Desktop Commander MCP gives AI agents full terminal control, diff-based editing, and persistent sessions. 5,900+ stars, 22 tools, real power with real security tradeoffs. Rating: 3.5/5."
+og_description: "Desktop Commander MCP gives AI agents full terminal control, diff-based editing, and persistent sessions. 6,100 stars, 22 tools, real power with real security tradeoffs. Rating: 3.5/5."
 content_type: "Review"
 card_description: "A community MCP server that gives AI agents terminal access, diff-based file editing, and persistent process management. 22 tools covering terminal sessions, filesystem operations, code editing, and search — the most capable local development MCP server available, with significant security caveats."
-last_refreshed: 2026-04-20
+last_refreshed: 2026-05-19
 ---
 
 Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
 
-*At a glance: 5,916 GitHub stars, 695 forks, ~500 commits, 20 contributors, last commit April 2026, npm v0.2.38, 22+ tools, MIT license, ~10,832 npm downloads/week, PulseMCP ~1.2M all-time visitors (#50 globally, ~7,000 weekly). Solo maintainer (Eduard Ruzga) with growing team. Standalone Desktop Commander App in beta.*
+*At a glance: 6,100 GitHub stars, 712 forks, 509 commits, 20 contributors, last commit May 14 2026 (v0.2.41), npm v0.2.41, 22+ tools, MIT license, ~26,000 npm downloads/week, PulseMCP ~1.3M all-time visitors (#57 globally, ~8,100 weekly). Solo maintainer (Eduard Ruzga) with growing team. Standalone Desktop Commander App live with freemium model ($7/mo Pro).*
 
 Desktop Commander MCP is the power tool that the official [Filesystem MCP server](/reviews/filesystem-mcp-server/) never aspired to be. Where the official server gives you careful, sandboxed file operations, Desktop Commander gives your AI agent a terminal, persistent process management, diff-based code editing, and full filesystem access. It's what you get when you answer "yes" to every permission prompt.
 
@@ -91,7 +91,9 @@ Also available via Smithery, Docker (recommended for security), bash script inst
 
 **Search is fast.** Built on ripgrep, the search tools support regex, literal matching, file filtering, and result pagination. Starting a search returns immediately with initial results; you can fetch more as needed.
 
-**Active development.** 108 npm versions published since January 2025, 500+ commits, 20 contributors. The project iterates quickly on bug fixes and features. Community engagement is strong with an active Discord.
+**Active development.** v0.2.41 shipped May 14 with a symlink traversal security fix, Excel range syntax (`SheetName!A1:B2`), improved Windows stability, and `list_directory` distinction between NOT_FOUND and DENIED. v0.2.40 (April 27) patched a critical markdown corruption bug in the new WYSIWYG editor. 509 commits, 20 contributors, community engagement strong with an active Discord.
+
+**Remote MCP capability.** Running `npx @wonderwhy-er/desktop-commander@latest remote` enables the server to be used from ChatGPT, Claude web, and other AI clients via OAuth — expanding beyond Claude Desktop and local IDE setups.
 
 **Audit logging.** Every tool call is logged with 10MB rotation. The `get_recent_tool_calls` tool lets you review what your agent has been doing — helpful when you're granting this level of access.
 
@@ -103,13 +105,13 @@ Also available via Smithery, Docker (recommended for security), bash script inst
 - Command blocking can be bypassed via substitution and absolute paths
 - Terminal commands can access files outside `allowedDirectories`
 
-**14+ open security issues.** As of April 2026, security researchers have filed numerous vulnerabilities including command injection via blocklist bypass (#421, #422, #423), sandbox escape via symlink path traversal (#420), path validation bypass via config fail-open (#419), hardcoded credentials (#416), data exfiltration via missing network tool blocking (#412), and SSRF in URL fetching (#410). Several of these remain unpatched.
+**Security progress, but critical holes remain.** Three of the eight previously flagged vulnerabilities are now closed: SSRF in URL fetching (#410, closed April 19), path validation fail-open (#419, fixed April 7), and the symlink sandbox escape (#420, fixed in v0.2.41 May 11 via PR #398 resolving symlinks before allowlist checks). Progress. But five remain open, including three command-injection bypasses (#421, #422, #423 — CVSS 9.8 for #422), missing network tool blocking (#412), and hardcoded credentials in source (#416). The maintainer's response to #416 was dismissive ("not really an issue").
 
-**Maintainer is transparent but slow on security fixes.** The maintainer's position is that Docker isolation is the recommended solution for security-sensitive use. This is pragmatic but means the server itself is not safe to run with untrusted inputs or in shared environments without containerization.
+**Maintainer is transparent but selective on security.** The symlink fix came promptly after a researcher filed a clear reproduction case. The command-injection cluster has been open longer with no merge path in sight — the blocklist model is fundamentally fragile and the maintainer knows it. Docker isolation remains the official recommendation for security-sensitive work.
 
-**Commit frequency is declining.** 247 commits in the last year, but only 5 in the last 4 weeks (down from 39 in the prior 12 weeks). The maintainer appears to be focusing on the standalone Desktop Commander App, which may mean the open-source MCP server gets less attention.
+**111 open issues, 20 open PRs.** Issue backlog grew from 80 to 111 (+31) in four weeks. Bug reports include Windows hanging behavior, file read returning empty content, and MCP approval not persisting.
 
-**80 open issues, 20 open PRs.** The issue backlog is growing. Bug reports about `read_file` returning empty content (#433, #426), Windows app hanging after extended sessions (#432), and MCP approval not persisting (#435) suggest quality issues in recent versions.
+**Commit frequency has recovered.** The April concern about only 5 commits in four weeks has reversed: v0.2.39 (April 23), v0.2.40 (April 27), and v0.2.41 (May 14) shipped in quick succession. The standalone app focus appears to be complementing the MCP server, not replacing it.
 
 **Behavioral instruction in tool description.** Issue #384 flagged that tool descriptions contain behavioral instructions that could influence agent behavior — a known attack vector in the MCP ecosystem (see AgentSeal's research on prompt injection via tool descriptions).
 
@@ -124,8 +126,8 @@ Also available via Smithery, Docker (recommended for security), bash script inst
 | **Search** | ripgrep | No | ripgrep | No |
 | **Excel/PDF/DOCX** | Yes | No | No | No |
 | **Security model** | Guardrails (bypassable) | Allowlist (enforced) | Sandboxed | None |
-| **Stars** | 5,916 | 84K (monorepo) | N/A | Varies |
-| **npm downloads/week** | 10,832 | 173K | N/A | Varies |
+| **Stars** | 6,100 | 84K (monorepo) | N/A | Varies |
+| **npm downloads/week** | ~26,000 | 173K | N/A | Varies |
 
 Desktop Commander essentially replicates much of what Claude Code does natively — terminal access, diff editing, file operations, search — but exposes it to *any* MCP client. If you're already using Claude Code, you already have these capabilities built in. Desktop Commander's value is bringing this power to Claude Desktop, Cursor, and other MCP clients that lack native terminal integration.
 
@@ -135,20 +137,20 @@ The [Filesystem MCP server](/reviews/filesystem-mcp-server/) is the safer altern
 
 Desktop Commander represents the tension at the heart of the MCP ecosystem: power versus safety. The server is popular precisely because it removes the guardrails — it lets AI agents do what developers actually want them to do. Start builds, run tests, interact with databases, edit code surgically. These are real workflows that sandboxed file-only servers can't support.
 
-But the security story is genuinely concerning. When 14+ security issues are open and the maintainer's official position is "security is not our top priority," this is a server that should be used with eyes open. The recommendation to use Docker for security-sensitive work is reasonable — containerization provides the hard boundary that the server's built-in guardrails don't. But most users installing via `npx` aren't setting up Docker containers.
+The security story remains genuinely concerning. The maintainer's official position is still "security is not our top priority," and 5 of 8 originally flagged vulnerabilities remain open. The recommendation to use Docker for security-sensitive work is reasonable — containerization provides the hard boundary that the server's built-in guardrails don't. But most users installing via `npx` aren't setting up Docker containers.
 
-The project is at an interesting inflection point. The standalone Desktop Commander App (beta) and hiring page suggest Eduard Ruzga is building a company around this. The app supports any AI model and adds remote MCP capabilities. If the commercial product succeeds, it could fund better security work on the open-source server. Or the open-source version could become a secondary concern.
+The standalone Desktop Commander App is now live and commercialized — free tier (100 messages/week), Pro at $7/month, bring-your-own-API-key option. The app supports any AI model and uses remote MCP to talk back to the server. The commercial layer appears to be funding continued MCP server development rather than replacing it. Three security fixes in the past four weeks suggest the security backlog is being addressed, just selectively.
 
-The 1.2M PulseMCP visitors and nearly 6,000 GitHub stars make Desktop Commander one of the most visible community MCP servers. It fills a real gap — many MCP clients lack native terminal integration, and the official servers are deliberately conservative. But it's a tool for developers who understand what they're granting and are comfortable with the tradeoffs.
+The 1.3M PulseMCP visitors and 6,100 GitHub stars make Desktop Commander one of the most visible community MCP servers. The ~26,000 npm downloads/week is a significant jump from ~10,800 four weeks ago — suggesting real adoption growth, possibly driven by the app's launch or remote MCP feature.
 
-Worth watching: whether the declining commit frequency on the MCP server reverses as the standalone app matures, and whether the security issues get systematic attention or continue to accumulate.
+Worth watching: whether the command-injection cluster (#421–#423) gets resolved now that structural fixes have landed, and how the 111-issue backlog trends.
 
 ## Rating: 3.5/5
 
-Desktop Commander earns a 3.5/5 for being the most capable local development MCP server available — persistent terminal sessions, diff-based editing, rich file format support, and fast search in a single package. It loses points for the significant and growing security surface: 14+ open security vulnerabilities, explicitly bypassable guardrails, and a maintainer who prioritizes features over fixes. The declining commit frequency and growing issue backlog are additional concerns. Use this if you want maximum agent capability and are comfortable managing the security implications (ideally via Docker). Skip it if you need enforced sandboxing or are working in a shared/production environment.
+Desktop Commander earns a 3.5/5 for being the most capable local development MCP server available — persistent terminal sessions, diff-based editing, rich file format support, and fast search in a single package. Three meaningful security fixes landed in four weeks and development pace has recovered. But five critical vulnerabilities remain open (including CVSS 9.8 command injection), the issue backlog grew 38% in a month (80→111), and the blocklist-based security model is acknowledged as fundamentally fragile. Rating holds: use this if you want maximum agent capability and understand the tradeoffs; Docker isolation is still the right call for security-sensitive work.
 
 **Use this if:** You want your AI agent to have full developer capabilities — terminal, editing, search, process management — and you understand the security tradeoffs. Best paired with Docker for isolation.
 
 **Skip this if:** You need enforced security boundaries, work in a shared environment, or are already using Claude Code (which provides similar capabilities with better sandboxing built in).
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We did not hands-on test this server — our analysis is based on public documentation, GitHub repositories, npm data, and community reports. Last edited 2026-04-20.*
+*This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic). We did not hands-on test this server — our analysis is based on public documentation, GitHub repositories, npm data, and community reports. Last edited 2026-05-19.*
