@@ -1,18 +1,34 @@
 ---
 title: "Shopify MCP Servers — From 2 Servers to an Agentic Commerce Platform"
 date: 2026-03-15T01:45:00+09:00
-description: "Shopify now ships four official MCP servers — Dev, Storefront, Customer Accounts, and Checkout (preview) — plus a growing ecosystem of 29+ community servers. Agentic commerce connects 5.6M merchants to ChatGPT, Perplexity, and Copilot."
-og_description: "Shopify MCP servers: 4 official servers, 29+ on PulseMCP, Dev MCP 488 stars, GeLi2001 195 stars 31 tools. Agentic commerce connects 5.6M merchants to AI. Rating: 4/5."
+description: "Shopify now ships four official MCP servers — Dev, Storefront, Customer Accounts, and Checkout (preview) — plus official Claude and ChatGPT merchant connectors and 33+ community servers. Official Admin API access is now live through Claude and ChatGPT."
+og_description: "Shopify MCP servers: official Claude+ChatGPT merchant connectors launched May 4, UCP migration deadline June 15, 33+ on PulseMCP, Dev MCP 488 stars, GeLi2001 31 tools. Rating: 4/5."
 content_type: "Review"
-card_description: "Shopify's MCP ecosystem — four official servers (Dev, Storefront, Customer Accounts, Checkout preview), community Admin API servers with 31 tools, and Agentic Storefronts connecting 5.6M merchants to ChatGPT's 880M users."
-last_refreshed: 2026-04-22
+card_description: "Shopify's MCP ecosystem — four official servers (Dev, Storefront, Customer Accounts, Checkout preview), official Claude and ChatGPT merchant connectors (May 2026), UCP migration underway, and 33+ servers on PulseMCP connecting 5.6M merchants to AI."
+last_refreshed: 2026-05-20
 ---
 
-Shopify isn't just adding MCP support — they've built an agentic commerce platform around it. What started as two servers (Dev MCP and Storefront MCP) in the Winter '26 Edition has grown into a four-server official suite, a managed remote Admin API server, and 29+ servers on PulseMCP. Agentic Storefronts have connected 5.6 million merchants to ChatGPT's 880 million monthly active users, with AI-referred traffic growing 7x and AI-attributed orders up 11x between January 2025 and early 2026.
+Shopify isn't just adding MCP support — they've built an agentic commerce platform around it. What started as two servers (Dev MCP and Storefront MCP) in the Winter '26 Edition has grown into a four-server official suite, official merchant connectors inside Claude and ChatGPT, and 33+ servers on PulseMCP. Agentic Storefronts have connected 5.6 million merchants to ChatGPT's 880 million monthly active users, with AI-referred traffic growing 7x and AI-attributed orders up 11x between January 2025 and early 2026.
+
+*Updated May 20, 2026: Official Claude and ChatGPT merchant connectors launched May 4 (manage products, inventory, orders, discounts, analytics from inside Claude/ChatGPT). UCP migration replacing Storefront Catalog MCP — new endpoint effective May 30, old endpoint removed June 15 (no extension). PulseMCP count 29→33 Shopify servers. DotDev 2026 developer event scheduled July 21–22 in Toronto.*
 
 *Updated April 22, 2026: Dev MCP stars 414→488, GeLi2001 stars 39→195 with tools 12→31, official servers expanded from 2 to 4 (Customer Accounts + Checkout preview added), Gossiper remote Admin API server launched, Hydrogen MCP proxy with zero-config /api/mcp endpoint, 29 Shopify MCP servers now on PulseMCP, AI traffic stats updated. Rating upgraded from 3.5 to 4/5.*
 
-The ecosystem is maturing fast. But the most-needed piece — an official Admin API MCP server from Shopify — is still missing. Part of our **[Finance & Fintech MCP category](/categories/finance-fintech/)**.
+The ecosystem is maturing fast. The long-requested official Admin API access has now arrived — not as a standalone MCP server, but through first-party Shopify connectors embedded inside Claude and ChatGPT directly. Part of our **[Finance & Fintech MCP category](/categories/finance-fintech/)**.
+
+## What's New (May 2026)
+
+**May 4, 2026 — Official Claude and ChatGPT Merchant Connectors launched.** Shopify shipped two first-party connector apps letting merchants manage their entire store from inside Claude or ChatGPT. The Claude connector is live at [claude.com/connectors/shopify](https://claude.com/connectors/shopify). Capabilities: add products, adjust inventory across locations, create discount codes, browse recent orders, view customer details, and pull store performance analytics — all without opening the Shopify admin. Shopify's internal survey says 83% of merchants already use ChatGPT; Finkelstein's framing was "manage your store from your phone without opening the app." This addresses the main gap from the April review — official Shopify Admin API access through AI — though it arrives as a hosted connector in Claude/ChatGPT rather than a standalone MCP server for developer integrations.
+
+**UCP migration: June 15 hard deadline, no extension.** Shopify flipped the Storefront Catalog MCP to the Universal Commerce Protocol (UCP) on April 22, 2026. The migration is a Breaking API Change:
+- **May 30, 2026** — UCP endpoints become the effective API version
+- **June 15, 2026** — old endpoint and old tool names fully removed (hard deadline, no extension)
+
+Any Hydrogen app, custom AI agent, or third-party integration calling `/api/mcp` directly must migrate before June 15. Tool names and request/response shapes are changing. This affects custom agents, Hydrogen server routes, and any client SDK or middleware that hardcodes the old endpoint.
+
+**PulseMCP: 29 → 33 Shopify MCP servers.** Four new servers added to the directory since April. New entries include slackermafia-shopify-admin and additional community Admin API options.
+
+**DotDev 2026 announced: July 21–22 in Toronto.** Shopify's developer conference where the Summer '26 Edition details will likely be revealed. MCP and agentic commerce are expected to be central themes.
 
 ## The Official Servers
 
@@ -152,7 +168,9 @@ Requires a Shopify Admin API access token (generate from your store's admin pane
 
 ## What Doesn't Work Well
 
-**Still no official Admin API MCP server from Shopify.** This remains the most obvious gap. Shopify built servers for developers, shoppers, and (now) post-purchase — but nothing for store operators. The Gossiper remote server partially fills this gap, but merchants still rely on community servers for core operations like product management, inventory updates, and fulfillment processing.
+**No standalone official Admin API MCP server — but hosted connectors now exist.** Shopify's May 4 launch of Claude and ChatGPT merchant connectors addresses the merchant-facing gap: store operators can now manage products, inventory, orders, and discounts through Claude or ChatGPT without a custom setup. However, developers building AI integrations still have no official, standalone MCP server for the Admin API — the connectors are consumer-facing, not developer-extensible. The Gossiper remote server and GeLi2001 community server remain the options for programmatic store management outside Claude/ChatGPT.
+
+**UCP migration deadline June 15 — act now or break.** Shopify is migrating the Storefront Catalog MCP to the Universal Commerce Protocol (UCP). Old tool names and endpoints are removed June 15, 2026 with no extension. If you have any custom AI agent or Hydrogen integration calling `/api/mcp` directly, you have weeks to migrate. New tool names, endpoint paths, and request/response shapes are all changing.
 
 **Checkout MCP is preview-only.** The `complete_checkout` tool is limited to invited partners. Until this ships broadly, the agentic commerce loop has a human-operated gap at the most critical point: payment.
 
@@ -174,21 +192,27 @@ Requires a Shopify Admin API access token (generate from your store's admin pane
 
 **Yes, use it if:**
 - You're building Shopify apps (Dev MCP — install immediately)
+- You're a merchant wanting to manage your store through Claude or ChatGPT (official connectors — live now at claude.com/connectors/shopify)
 - You're a merchant wanting products in AI conversations (Agentic Storefronts — toggle in admin)
-- You're on Hydrogen and want AI-powered shopping (Storefront MCP — zero config)
+- You're on Hydrogen and want AI-powered shopping (Storefront MCP — zero config, but migrate to UCP before June 15)
 - You need agent access to store operations (GeLi2001/shopify-mcp at 31 tools)
 - You want hosted Admin API access (Gossiper Shopify Admin)
 
 **Skip it if:**
-- You need production-grade, Shopify-backed store management (no official Admin API server yet)
+- You need a developer-extensible, standalone official Admin API MCP server (the Claude/ChatGPT connectors are consumer-facing, not developer-programmable)
 - You need full checkout automation (Checkout MCP still in preview)
 - You're on a custom theme without Hydrogen (Storefront MCP won't work directly)
+- You're building a custom AI agent against `/api/mcp` without time to migrate before June 15 (UCP deadline)
 
-## Verdict: 4/5 — The vision is becoming reality
+## Verdict: 4/5 — Merchant Admin access arrives, UCP migration looms
 
-Shopify's MCP ecosystem has transformed in 38 days. From two servers to four official, from a handful of community projects to 29 on PulseMCP, from theoretical agentic commerce to 5.6 million merchants connected to ChatGPT with 7x traffic growth. The Dev MCP remains the gold standard for zero-friction developer tools. GeLi2001's 400% growth and 31-tool expansion shows the community filling Shopify's gaps. The Checkout MCP preview and Customer Accounts server round out the customer journey.
+The May 2026 milestone: Shopify shipped official Claude and ChatGPT merchant connectors on May 4, letting store operators manage products, inventory, orders, discounts, and analytics from inside Claude or ChatGPT — no Shopify admin, no custom setup. This addresses the merchant-facing Admin API gap that held back the April rating. What merchants want most — "manage my store through AI" — is now officially supported.
 
-The upgrade from 3.5 to 4 reflects this maturation. But the ceiling remains: Shopify itself still hasn't shipped an Admin API MCP server. The most common thing merchants want — an agent that manages their store — still depends on community or third-party servers. When Shopify ships that, and when Checkout MCP goes GA, this becomes a 4.5.
+The asterisk: the connectors are consumer-facing apps, not developer-extensible MCP servers. Developers building custom integrations still have no official standalone Admin API server and still depend on GeLi2001 (community) or Gossiper (third-party remote). The 4/5 rating holds: the connectors move the needle but don't close the developer gap.
+
+The UCP migration is the urgent action item for anyone running custom agents. The Storefront Catalog MCP is being replaced by the Universal Commerce Protocol — old tools and endpoint removed June 15, no extension. If your agent calls `/api/mcp` directly, migrate now.
+
+The 4.5 ceiling remains in reach: Shopify needs a standalone, developer-documented Admin API MCP server (not just consumer connectors), Checkout MCP needs to exit preview, and the UCP transition needs to complete. DotDev 2026 (July 21–22 in Toronto) is the likely venue for the next major developer announcements.
 
 ---
 
@@ -196,4 +220,4 @@ The upgrade from 3.5 to 4 reflects this maturation. But the ceiling remains: Sho
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 
-*This review was last refreshed on 2026-04-22 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
