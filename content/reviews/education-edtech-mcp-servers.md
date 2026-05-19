@@ -2,10 +2,10 @@
 title: "Education & EdTech MCP Servers — Canvas LMS, Moodle, Google Classroom, Anki, Udemy, EduBase, and More"
 date: 2026-03-15T15:30:00+09:00
 description: "Education and EdTech MCP servers are connecting AI agents to learning management systems, flashcard apps, academic research databases, and assessment platforms."
-og_description: "Education MCP servers: Canvas LMS (107 stars, 88 tools), Anki (237 stars, 21+ tools), arXiv (2,600 stars), paper-search-mcp (1,200 stars, 20+ sources), Moodle (36 stars), D2L Brightspace (3 implementations), Udemy Business (GA), OpenEdu (21+ tools), Khan Academy (NEW). 52 servers on PulseMCP. Rating: 3.5/5."
+og_description: "Education MCP servers: Canvas LMS (107+ stars, create_rubric added), Anki (237 stars, v0.15.1 security hardening, native addon launched), arXiv (2,700 stars), paper-search-mcp (1,500 stars +25%, 20+ sources), Moodle (36 stars), D2L Brightspace (3 implementations), Udemy Business (GA, expanding), first Coursera MCP scraper. 52+ education servers on PulseMCP. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Education and EdTech MCP servers for learning management systems, flashcard apps, academic research, assessment platforms, and STEM computation. The education MCP ecosystem is fragmented but growing fast — 52 education servers on PulseMCP. Canvas LMS dominates with multiple competing implementations — vishalsachdev/canvas-mcp (107 stars, 88 tools, FERPA compliance, v1.2.0 with accessibility scanner) has overtaken DMontgomery40/mcp-canvas-lms (96 stars, 50+ tools) as the most-starred. Moodle has peancor/moodle-mcp-server (36 stars, MIT). D2L Brightspace now has 3+ implementations including RohanMuppa (14 stars, AES-256 encryption). Google Classroom remains minimal (3 read-only tools). The flashcard space is dominated by ankimcp/anki-mcp-server (237 stars, 21+ tools, +32% growth). For academic research, blazickjp/arxiv-mcp-server (2,600 stars, MIT, 8 tools including semantic search) is the standout. openags/paper-search-mcp (1,200 stars, +52%) now aggregates 20+ academic sources. Udemy Business MCP went GA (March 31, 2026) — the first publicly-traded EdTech company shipping production MCP infrastructure. NEW: OpenEdu MCP (7 stars, 21+ tools, grade-level filtering K-2 through College, Common Core/NGSS alignment). NEW: Khan Academy MCP (12 tools, first MOOC besides Udemy with MCP). EduBase/MCP (25 stars, MIT, v1.1.5) brings assessment infrastructure with LaTeX and GDPR compliance. Policy context: 134 AI-in-education bills across 31 US states in 2026 session, Ohio mandating formal AI policies by July 2026. Notable gaps: no Blackboard/Sakai/Open edX; no Coursera/LinkedIn Learning; no SIS integrations; no library systems; no plagiarism detection; no adaptive learning. Rating: 3.5/5 — academic research tools are excellent, Canvas competition is healthy, Anki is mature, Udemy GA adds commercial credibility, and new entrants (OpenEdu, Khan Academy, D2L growth) show the ecosystem is broadening. But Blackboard's absence, missing SIS/library integrations, and thin K-12 coverage prevent a higher score."
-last_refreshed: 2026-04-22
+card_description: "Education and EdTech MCP servers for learning management systems, flashcard apps, academic research, assessment platforms, and STEM computation. The education MCP ecosystem is fragmented but growing fast — 52+ education servers on PulseMCP. Canvas LMS dominates with multiple competing implementations — vishalsachdev/canvas-mcp (107 stars, 88+ tools, May 2026: create_rubric tool + read_course_file added) has overtaken DMontgomery40/mcp-canvas-lms as the most-starred. Moodle has peancor/moodle-mcp-server (36 stars, MIT). D2L Brightspace now has 3+ implementations including RohanMuppa (14 stars, AES-256 encryption). Google Classroom remains minimal (3 read-only tools). The flashcard space is dominated by ankimcp/anki-mcp-server (237 stars, v0.15.1 — security hardening for path traversal + SSRF; native Anki addon launched at ankimcp.ai, no AnkiConnect dependency). For academic research, blazickjp/arxiv-mcp-server (2,700 stars +4%, MIT, 8 tools including semantic search) is the standout. openags/paper-search-mcp (1,500 stars +25%) now aggregates 20+ academic sources. Udemy Business MCP remains in GA (since March 31, 2026). NEW: nwolke/coursera-mcp — first Coursera MCP integration (Playwright-based progress scraper). NEW: O'Reilly Learning Platform MCP on PulseMCP. OpenEdu MCP (7 stars, 21+ tools, K-2 through College grade filtering, Common Core/NGSS). Khan Academy MCP (early stage). EduBase/MCP (25 stars, MIT) brings assessment infrastructure with LaTeX and GDPR compliance. Policy context: 134 AI-in-education bills across 31 US states, Ohio mandating formal AI policies by July 2026. Notable gaps: no Blackboard/Sakai/Open edX; no SIS integrations; no library systems; no plagiarism detection; no adaptive learning. Rating: 3.5/5 — academic research tools are excellent (paper-search-mcp +25%), Anki security-hardened with native addon, Canvas gaining new tools, first Coursera coverage. But Blackboard's absence, missing SIS/library integrations, and thin K-12 coverage prevent a higher score."
+last_refreshed: 2026-05-20
 ---
 
 *Part of the [Education & Learning](/categories/education-learning/) category.*
@@ -14,17 +14,18 @@ Education MCP servers are connecting AI agents to learning management systems, f
 
 The landscape spans seven areas: **LMS integration** (Canvas, Moodle, Google Classroom, D2L Brightspace), **flashcards & spaced repetition** (Anki implementations), **academic research** (arXiv, Semantic Scholar, multi-platform aggregators), **enterprise learning** (Udemy Business), **assessment & tutoring** (EduBase, quiz generators), **STEM tools** (Wolfram Alpha computation), and **knowledge reference** (Wikipedia).
 
-The headline findings: **vishalsachdev/canvas-mcp has overtaken DMontgomery40 as the most-starred Canvas server** — hitting 107 stars (+43%) with v1.2.0's accessibility scanner expansion. **Academic research is the fastest-growing subcategory** — paper-search-mcp surged to 1,200 stars (+52%) and now aggregates 20+ sources, while arXiv MCP hit 2,600 stars with new semantic search tools. **Anki MCP grew 32% to 237 stars** — the strongest flashcard integration in any MCP category. **Udemy Business MCP went GA on March 31, 2026** — the first publicly-traded EdTech company shipping production MCP infrastructure. **D2L Brightspace now has 3+ MCP implementations** — up from a single server. **Khan Academy gets its first MCP server** — no longer absent from the ecosystem. **52 education servers on PulseMCP.** The biggest remaining gap: **Blackboard still has zero MCP implementations**.
+The headline findings: **vishalsachdev/canvas-mcp** (107 stars) added new tools in May 2026 — `create_rubric` (PR #100) for programmatic rubric creation with criteria, ratings, and assignment association, plus `read_course_file` for remote MCP deployments. **Academic research continues to surge** — paper-search-mcp reached 1,500 stars (+25% in 28 days), now the fastest-growing server in this category, while arXiv MCP climbed to 2,700 stars. **Anki MCP Server received critical security hardening** — v0.15.1 (April 9) fixes path traversal and SSRF vulnerabilities in media operations; a new native Anki addon (ankimcp/anki-mcp-server-addon) launched with professional documentation at ankimcp.ai, eliminating the AnkiConnect dependency. **Coursera gets its first MCP integration** — nwolke/coursera-mcp scrapes learning progress via Playwright; previously Coursera was absent entirely. **O'Reilly Learning Platform MCP** now listed on PulseMCP. **52+ education servers on PulseMCP.** The biggest remaining gap: **Blackboard still has zero MCP implementations**.
 
-### Ecosystem stats (April 2026)
+### Ecosystem stats (May 2026)
 
 | Metric | Value |
 |--------|-------|
-| Education servers on PulseMCP | 52 |
+| Education servers on PulseMCP | 52+ |
 | LMS platforms with MCP servers | 4 (Canvas, Moodle, D2L, Google Classroom) |
-| Highest-starred server | arxiv-mcp-server (2,600) |
-| Fastest-growing server | paper-search-mcp (+52% in 38 days) |
+| Highest-starred server | arxiv-mcp-server (2,700, +4%) |
+| Fastest-growing server | paper-search-mcp (1,500 stars, +25% in 28 days) |
 | Official vendor servers | 1 (Udemy Business, GA) |
+| MOOC platforms with MCP coverage | 3 (Udemy GA, Coursera scraper, Khan Academy minimal) |
 | AI-in-education bills (2026) | 134 across 31 US states |
 
 ## LMS Integration
@@ -49,7 +50,7 @@ Version 2.3.0 introduced streamable HTTP transport support, Docker deployment op
 |--------|-------|----------|---------|-------|
 | [vishalsachdev/canvas-mcp](https://github.com/vishalsachdev/canvas-mcp) | ~107 | Python/TypeScript | MIT | 88 tools + 8 agent skills |
 
-**Now the most-starred Canvas implementation** (+43% growth), with **FERPA-compliant data anonymization** for educator use — a critical differentiator for institutional deployment. **v1.2.0** (April 2026) added role-based tool filtering, expanded the accessibility scanner from 4 to **20 checks**, security hardening, and Windows compatibility improvements.
+**Now the most-starred Canvas implementation**, with **FERPA-compliant data anonymization** for educator use — a critical differentiator for institutional deployment. **v1.2.0** (April 2026) added role-based tool filtering, expanded the accessibility scanner from 4 to **20 checks**, security hardening, and Windows compatibility improvements. **May 2026** added two new tools: `create_rubric` (PR #100) for programmatic rubric creation with criteria, ratings, and optional assignment association, and `read_course_file` enabling remote MCP deployments to read Canvas file content without local file system access.
 
 Offers 8 agent skills via `skills.sh` for 40+ coding agents, a code execution API for token-efficient bulk operations, and a hosted server option requiring no local installation. Supports Claude Desktop, Cursor, Zed, Windsurf, Continue, Replit, Copilot Studio, and other MCP-compatible clients. The learning designer capabilities include course quality control and accessibility auditing — features no other Canvas MCP server offers.
 
@@ -126,7 +127,9 @@ The most comprehensive Anki integration, with tools organized into five categori
 - **Media Management** (4 tools) — audio/image handling with multiple upload methods
 - **Model/Template Management** (3 tools) — template configuration with HTML/CSS awareness
 
-Deployment flexibility is a standout feature: local stdio, HTTP server, or **ngrok-tunneled remote access** for web-based AI tools. Includes a read-only safety mode to prevent accidental modifications. Still in beta with APIs subject to change.
+Deployment flexibility is a standout feature: local stdio, HTTP server, or **ngrok-tunneled remote access** for web-based AI tools. Includes a read-only safety mode to prevent accidental modifications. **v0.15.1** (April 9, 2026) added layered security validation for media operations: MIME type allowlist blocking non-media files (SSH keys, credentials, `.env` files), and SSRF prevention blocking requests to private networks, loopback addresses, and cloud metadata endpoints (169.254.169.254).
+
+**New: ankimcp/anki-mcp-server-addon** — a companion native Anki addon that implements an MCP server directly inside Anki, eliminating the AnkiConnect dependency entirely. The ankimcp organization also launched **ankimcp.ai**, a professional documentation site with guides and real-world examples.
 
 ### Anki MCP — arielbk
 
@@ -154,14 +157,14 @@ The Anki ecosystem mirrors Canvas — multiple implementations competing on diff
 |--------|-------|----------|---------|-------|
 | [blazickjp/arxiv-mcp-server](https://github.com/blazickjp/arxiv-mcp-server) | ~2,600 | Python | MIT | 8 tools |
 
-The **highest-starred education MCP server** by a wide margin, now at **v0.4.11** (April 3, 2026) with **8 tools** — double the original four. The core tools remain (paper search, download, list, read), but four experimental tools have been added:
+The **highest-starred education MCP server** by a wide margin, now at **~2,700 stars** (+4% in 28 days), with **8 tools** across paper search, download, list, read, plus four experimental tools:
 
 - **Semantic Search** — vector-based similarity search across downloaded papers
 - **Citation Graph** — explore citation relationships between papers
 - **Watch Topic** — set up alerts for new papers in specific areas
 - **Check Alerts** — review papers matching watched topics
 
-Includes a set of research prompts for comprehensive paper analysis workflows. The star count reflects broad adoption beyond education — researchers, developers, and AI practitioners all use arXiv daily. **Note:** the license is MIT (previously listed as Apache-2.0 — corrected per LICENSE file and PyPI).
+Includes a set of research prompts for comprehensive paper analysis workflows. The star count reflects broad adoption beyond education — researchers, developers, and AI practitioners all use arXiv daily. The license is MIT.
 
 ### Paper Search MCP
 
@@ -169,7 +172,7 @@ Includes a set of research prompts for comprehensive paper analysis workflows. T
 |--------|-------|----------|---------|-------|
 | [openags/paper-search-mcp](https://github.com/openags/paper-search-mcp) | ~1,200 | Python | MIT | 20+ sources |
 
-**The fastest-growing education MCP server** — stars surged from 791 to **1,200 (+52%)** in 38 days. Now aggregates **20+ academic sources** (up from 7), including:
+**The fastest-growing education MCP server** — stars surged from 1,200 to **1,500 (+25%)** in 28 days, continuing its steep growth trajectory (it was at 791 six weeks ago). Now aggregates **20+ academic sources**, including:
 
 - arXiv, PubMed, bioRxiv, medRxiv, Google Scholar, IACR ePrint Archive, Semantic Scholar, Crossref, OpenAlex, and more
 
@@ -241,7 +244,7 @@ For STEM education specifically, these servers enable AI tutors to show their wo
 
 Several implementations provide AI access to Wikipedia's knowledge base, with features including article search, content retrieval, section extraction, related topic discovery, and multi-language support. Useful as a reference layer for educational AI applications — grounding explanations in encyclopedic sources rather than relying solely on the LLM's training data.
 
-## New Entrants (Since March 2026)
+## New Entrants (Since March 2026 — Updated May 2026)
 
 ### OpenEdu MCP
 
@@ -259,11 +262,21 @@ A **curriculum-aligned educational MCP server** pulling from Open Library, Wikip
 
 The **first Khan Academy MCP server** — tools include search, list_subjects, get_topic_tree, get_content, get_course, and get_transcript. No API key required. Very early stage (1 star), but fills a conspicuous gap — Khan Academy is one of the largest free educational platforms (120M+ registered users) and was previously absent from the MCP ecosystem entirely.
 
+### Coursera MCP (nwolke/coursera-mcp)
+
+The **first Coursera MCP integration** — a Playwright-based scraper that reads your Coursera "my-learning" page and exposes learning progress as MCP tools for Claude, including progress percentages for all in-progress courses. Early stage and scraper-based (not an official Coursera API), but fills a conspicuous gap — Coursera was previously completely absent from the MCP ecosystem. A second implementation (EmilyThaHuman/coursera-mcp-server) also appeared on GitHub.
+
+### O'Reilly Learning Platform MCP
+
+Added to PulseMCP — integrates with O'Reilly's learning platform API to search and retrieve technical content from their extensive library of books, videos, and courses. Useful for corporate L&D teams and developers who want AI assistants to surface O'Reilly content inline with their workflows.
+
 ### Additional New Servers on PulseMCP
 
 - **Smartschool MCP** (by MauroDruwel) — course, grades, and assignment management for the Belgian Smartschool platform
 - **OpenEMIS MCP** (by tixuz) — education management information system integration
 - **Duolingo Game Status MCP** (by Sniffleupagus, March 24, 2026) — streaks, XP, language courses (note: Duolingo's internal 180+ MCP tools remain enterprise-only)
+- **School Tools MCP** — combined Canvas + Gradescope integration for tracking assignment deadlines and syncing to macOS Reminders
+- **Skool MCP** (by louiewoof2026) — community platform integration for the Skool learning community platform
 
 ## AI-in-Education Policy Context
 
@@ -283,7 +296,7 @@ The policy fragmentation may slow institutional MCP adoption (IT departments hes
 The education MCP ecosystem has significant gaps:
 
 - **Major LMS platforms** — Blackboard, Sakai, Open edX, Schoology have zero MCP implementations
-- **MOOC platforms** — no Coursera, LinkedIn Learning, or edX integrations (Udemy GA, Khan Academy minimal at 1 star)
+- **MOOC platforms** — Coursera now has a scraper-based MCP (unofficial); no LinkedIn Learning or edX; Udemy GA, Khan Academy minimal (1 star)
 - **Student information systems** — no Banner, PowerSchool, Infinite Campus, or Ellucian SIS connectivity
 - **Library systems** — no OCLC WorldCat, Ex Libris Alma, or MARC catalog integrations
 - **Academic integrity** — no Turnitin, Grammarly, or plagiarism detection tools
@@ -295,16 +308,14 @@ The education MCP ecosystem has significant gaps:
 
 ## The bottom line
 
-The education MCP server ecosystem is **fragmented but growing fast**. In 38 days: paper-search-mcp surged 52% to 1,200 stars, vishalsachdev/canvas-mcp overtook DMontgomery40 with 43% growth and a major v1.2.0 release, Anki MCP grew 32% to 237 stars, D2L Brightspace went from one to three implementations, and PulseMCP now lists 52 education servers.
+The education MCP server ecosystem is **fragmented but growing fast**. In the past 28 days: paper-search-mcp surged 25% to 1,500 stars (continuing its steep upward trajectory), arXiv MCP reached 2,700 stars, Anki MCP received critical security hardening plus a native addon eliminating the AnkiConnect dependency, Canvas gained new educator tools (`create_rubric`, `read_course_file`), and Coursera received its first MCP integration — a scraper-based server that moves one more MOOC from "absent" to "covered."
 
-The biggest development: **Udemy Business MCP went GA on March 31, 2026** — the first publicly-traded EdTech company shipping production MCP infrastructure. This is no longer a "signal" — it's a shipped product with OAuth, role-specific contextualization, and enterprise agent compatibility. The question is now when (not if) Coursera and LinkedIn Learning follow.
+Udemy Business MCP remains the commercial anchor — the first publicly-traded EdTech company with production MCP infrastructure, now approaching two months of GA. LinkedIn Learning remains the most significant MOOC gap.
 
-New entrants are filling gaps: OpenEdu brings the first K-12 curriculum-aligned MCP server (Common Core, NGSS), Khan Academy gets its first MCP integration (early stage), and the D2L Brightspace expansion means four of the five major LMS platforms now have MCP support.
-
-The policy landscape is creating both tailwinds and headwinds: 134 AI-in-education bills across 31 states, with Ohio mandating formal AI policies by July 2026. This pushes districts toward structured, auditable AI tooling — but the fragmentation also creates uncertainty.
+The policy landscape continues to create tailwinds: 134 AI-in-education bills across 31 states, Ohio mandating formal AI policies by July 2026. Structured, auditable AI tooling is increasingly mandated — but the MCP ecosystem still has the wrong shape for institutional deployment (strong on research tools, weak on administrative infrastructure).
 
 The ecosystem remains deeply incomplete. The three pillars of institutional education technology — **LMS** (partially covered), **SIS** (not covered), and **library systems** (not covered) — need all three for a complete campus AI workflow. Blackboard's absence is conspicuous. Academic integrity tools (Turnitin) and adaptive learning engines are still missing entirely.
 
-**Rating: 3.5/5** — Academic research tools are excellent (arXiv 2,600 stars, paper-search-mcp 1,200 stars), Canvas competition is healthy, Anki is mature, Udemy GA adds real commercial credibility, and new entrants (OpenEdu, Khan Academy, D2L growth) show the ecosystem broadening. But Blackboard's absence, missing SIS/library integrations, and thin K-12 coverage (despite OpenEdu's promising start) prevent a higher score. The growth trajectory is strong — this category could reach 4.0 if Blackboard or a major SIS vendor ships MCP support.
+**Rating: 3.5/5 held.** Paper-search-mcp's continued surge (+25%), Anki security hardening, canvas-mcp new tools, and the first Coursera coverage are solid incremental progress. But no structural change — Blackboard still absent, SIS/library still uncovered, Google Classroom still minimal (3 read-only tools for 150M+ users). This category could reach 4.0 if Blackboard or a major SIS vendor ships MCP support.
 
-*This review was last refreshed on 2026-04-22 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
