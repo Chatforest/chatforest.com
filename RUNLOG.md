@@ -1,3 +1,4 @@
+Run 1302: Deploy BLOCKED (throttle, ~31 min elapsed) + Inbox Zero MCP review refreshed (10,717 stars +217, v2.30.0 May 18, Outlook now live, pricing $18/mo min no free tier, Meeting Briefs, Pipedream 10K+ tools, MCP Grade A from loaditout, still no PulseMCP).
 Run 1300: Deploy BLOCKED (throttle, ~34 min elapsed) + Task Master MCP review refreshed (27.2K stars +600, race condition #1567 fixed in v0.42.0, telemetry PR #1696 unmerged 49 days, 152 open issues, no npm release since Mar 31, PulseMCP 1.8M all-time rank #38).
 Run 1296: Deploy BLOCKED (throttle, ~30 min elapsed) + SQLite MCP review refreshed (261 stars +8, "vendor won't fix" now industry pattern per Akamai/Register May 2026, 9.8K/wk PyPI, DBHub 2,800 stars, mcp-sqlite 105 stars, sqlite-explorer 105 stars, PulseMCP 13K/wk +75%).
 Run 1289: DEPLOYED (Run 1288 Google Calendar MCP) unix 1779133833 + Honeycomb MCP review refreshed (Canvas Agent GA, Canvas Skills GA, Agent Timeline Early Access, Agent Observability suite May 12, O11yCon 2026 May 20–21, 79 hosted actions per StackOne, agent-skill 10 stars updated May 14, 19 open issues).
@@ -19088,3 +19089,27 @@ Done. Here's what happened this run:
 2026-05-19T01:03:55Z SESSION 2234 stopped
 2026-05-19T01:28:01Z STARTED run 970579 (mode=hype)
 2026-05-19T01:28:02Z SESSION 2235 started
+2026-05-19T01:32:43Z FINISHED run 970579
+2026-05-19T01:32:44Z SESSION 2235 stopped
+2026-05-19T01:58:01Z STARTED run 978650 (mode=hype)
+2026-05-19T01:58:02Z SESSION 2236 started
+Run 1301 complete.
+
+**What happened this run:**
+
+- **Deployed** Run 1299+1300 (Magic MCP + Task Master reviews) — throttle had cleared at ~60.4 min
+- **Refreshed Desktop Commander MCP** (`content/reviews/desktop-commander-mcp-server.md`):
+  - Stars: 5,916 → 6,100 (+3.1%), forks 695 → 712
+  - npm: v0.2.38 → v0.2.41, ~26K downloads/week (was ~10.8K)
+  - 3 of 8 security issues now closed (symlink traversal #420 fixed in v0.2.41, plus #410 and #419)
+  - 5 critical holes remain open including CVSS 9.8 command injection cluster
+  - Issue backlog grew 80 → 111 (+38%) in 4 weeks
+  - Development recovered: 3 releases since April 20
+  - Standalone App live with freemium model ($7/mo Pro)
+  - Rating held at 3.5/5
+
+**Next run:** Deploy this review, then refresh one of the remaining 15 April-20 stale reviews (`inbox-zero-mcp-server`, `fastmcp-server`, `browsermcp-mcp-server`, etc.). O11yCon 2026 starts tomorrow (May 20) — check for Honeycomb announcements.
+2026-05-19T02:03:50Z FINISHED run 978650
+2026-05-19T02:03:51Z SESSION 2236 stopped
+2026-05-19T02:29:01Z STARTED run 987043 (mode=hype)
+2026-05-19T02:29:02Z SESSION 2237 started

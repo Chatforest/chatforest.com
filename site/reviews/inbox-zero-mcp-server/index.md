@@ -1,11 +1,11 @@
-# Inbox Zero MCP Server — Open-Source AI Email Assistant for Gmail
+# Inbox Zero MCP Server — Open-Source AI Email Assistant for Gmail and Outlook
 
-> Inbox Zero is an open-source AI email assistant that helps you reach inbox zero with automated triage, smart replies, and bulk unsubscribe. 10.5K GitHub stars, MCP integration for Claude and Cursor.
+> Inbox Zero is an open-source AI email assistant that helps you reach inbox zero with automated triage, smart replies, and bulk unsubscribe. 10.7K GitHub stars, MCP integration for Claude and Cursor. Now supports Gmail and Microsoft Outlook.
 
 
 Part of our **[Communication MCP category](/categories/communication/)**.
 
-*At a glance: 10,500 GitHub stars, 1,300 forks, ~9,915 commits, actively maintained (daily commits as of April 2026), v2.27.0 (January 14, 2026), TypeScript/Next.js, 15K+ signups, hosted version at getinboxzero.com. Founded by Elie Steinbock. Not listed on PulseMCP.*
+*At a glance: 10,717 GitHub stars, 1,329 forks, actively maintained (daily commits as of May 2026), v2.30.0 (May 18, 2026), TypeScript/Next.js, 15K+ signups, hosted version at getinboxzero.com. Now supports Gmail and Microsoft Outlook. Founded by Elie Steinbock. Not listed on PulseMCP.*
 
 Inbox Zero is a full-featured AI email assistant that happens to also be an MCP server. Unlike most MCP servers that are purpose-built protocol adapters, Inbox Zero is a standalone web application — a Next.js app with a PostgreSQL backend, Redis caching, and its own web UI — that exposes MCP tools as one of several integration surfaces.
 
@@ -61,7 +61,7 @@ Inbox Zero is a substantial application, not a lightweight MCP adapter:
 - **Database:** PostgreSQL
 - **Caching:** Upstash (serverless Redis)
 - **Monorepo:** Turborepo
-- **Email:** OAuth integration with Google (Gmail) — Microsoft support in progress
+- **Email:** OAuth integration with Google (Gmail) and Microsoft (Outlook/Microsoft 365) — both now supported
 - **Analytics:** PostHog, Tinybird
 - **AI:** OpenAI for classification and generation
 
@@ -76,13 +76,12 @@ The MCP integration is one layer on top of this stack. Your AI agent talks to th
 **Self-hosted:** Free and open source. Requires running your own Next.js app, PostgreSQL database, Redis instance, and configuring OAuth credentials with Google.
 
 **Hosted (getinboxzero.com):**
-- **Free:** AI email summaries, basic inbox cleanup, basic filtering
-- **Individual:** $6-12/month — advanced AI automation, unlimited summarization, priority inbox, analytics
-- **Enterprise Starter:** $18/user/month (annual)
-- **Enterprise Plus:** $28/user/month (annual)
-- **Enterprise Professional:** $42/user/month (annual)
-- 7-day free trial on all paid plans, 14-day refund policy
-- Student/nonprofit/open-source discounts available
+- **Starter:** $18/month (annual) / $20/month (monthly) — AI assistant, Smart Categories, bulk tools, analytics, Meeting Briefs
+- **Plus:** $28/month (annual) / $35/month (monthly) — 2 email accounts, Slack integration, auto-file attachments, unlimited knowledge base, email digests
+- **Professional:** $42/month (annual) / $50/month (monthly) — team analytics, priority support, dedicated onboarding
+- **Enterprise:** Custom pricing — SSO, SCIM, on-premise deployment
+- 7-day free trial on all plans (no free tier — the $6-12/month individual plan was discontinued)
+- Student/nonprofit/open-source discounts available on request
 
 ## What's Good
 
@@ -90,15 +89,23 @@ The MCP integration is one layer on top of this stack. Your AI agent talks to th
 
 **Full application behind the MCP.** The web UI, analytics, and rule engine mean you're not dependent on the MCP client for everything. You can configure rules in the browser and let the AI run in the background, then use MCP for ad-hoc queries from your IDE.
 
-**Active development.** 9,915 commits, daily activity, v2.27.0. This isn't a weekend project — it's a maintained product with a real user base (15K+ signups).
+**Active development.** Daily commits, v2.30.0 (May 18, 2026) — three minor version bumps since January. This isn't a weekend project — it's a maintained product with a real user base (15K+ signups).
 
 **Self-hostable.** Full open source, you can run everything on your own infrastructure for zero cost. Important for email, which is among the most sensitive data you have.
+
+**Outlook support live.** Microsoft Outlook and Microsoft 365 are now fully supported alongside Gmail. This was the most notable gap in the initial review — it's resolved.
+
+**Meeting Briefs.** Pre-meeting briefings (launched January 2026) pull context from your email and calendar before scheduled calls. MCP tools were added to surface meeting briefs to AI agents. Available on all paid tiers.
+
+**Pipedream integration.** Added January 2026: a single OAuth connection unlocks 10,000+ tools from 3,000+ apps via Pipedream. This extends the range of actions the AI assistant can take well beyond email.
+
+**MCP security grade A.** loaditout scanned the MCP server in April 2026 and assigned an A security grade (issue #2192).
 
 **Plain-text rule system.** Describing email rules in natural English is genuinely easier than configuring filter chains. The prompt-based approach matches how people actually think about email management.
 
 ## What's Not
 
-**Gmail only (for now).** Microsoft/Outlook support appears to be in progress but isn't production-ready. If you're not on Gmail, this isn't for you yet.
+**Limited provider support.** Gmail and Microsoft Outlook are both now supported (Outlook was in-progress at the time of initial review). General IMAP/SMTP support (other providers) remains an open issue — issue #925 is still being tracked.
 
 **Heavy self-hosting requirements.** Running Next.js + PostgreSQL + Redis + OAuth setup is significantly more complex than most MCP servers, which are typically single-binary or `npx` installs. This is a full web application, not a lightweight tool.
 
@@ -106,7 +113,7 @@ The MCP integration is one layer on top of this stack. Your AI agent talks to th
 
 **No PulseMCP listing.** Absent from the PulseMCP directory entirely, which suggests limited MCP-specific adoption despite the main project's popularity.
 
-**Hosted pricing adds up.** The free tier is limited, and enterprise pricing ($18-42/user/month) puts it in competition with Superhuman ($30/month) — a polished commercial product with years of optimization.
+**Pricing jumped.** The $6-12/month individual tier and free tier are gone. Entry is now $18/month (Starter) or $20/month monthly, putting it firmly in competition with Superhuman ($30/month) — a polished commercial product with years of optimization. The pricing shift signals a move upmarket but removes accessibility for individual users on a budget.
 
 **Single maintainer risk.** Despite 9,915 commits, this is primarily a solo project. The CLA requirement and contributor guidelines suggest some community involvement, but bus factor is a concern for an application handling your email.
 
@@ -116,7 +123,7 @@ The MCP integration is one layer on top of this stack. Your AI agent talks to th
 - SECURITY.md exists in the repository (responsible disclosure process)
 - "Human in the loop" design — MCP actions require host application consent before execution
 - Self-hosting keeps all email data on your infrastructure
-- No Inbox Zero-specific CVEs found
+- No Inbox Zero-specific CVEs found; loaditout assigned Grade A to the MCP server (April 2026, issue #2192)
 - The broad attack surface of a full web application (Next.js, PostgreSQL, Redis, OAuth) is inherently larger than a minimal MCP adapter — more components means more potential vectors
 - PostHog and Tinybird analytics integrations mean some usage data flows to third parties on the hosted version
 
@@ -138,7 +145,7 @@ Inbox Zero occupies an unusual position in the MCP ecosystem: it's primarily an 
 
 The MCP tools themselves are limited (4 tools, read-only) but intelligently designed — they expose AI-processed insights rather than raw data. If you already use Inbox Zero for email management, the MCP integration is a nice bonus. If you're specifically looking for an MCP server to give your AI agent comprehensive email control (send, search, label, archive), dedicated email MCP servers like Inbox-MCP or AgentMail offer more.
 
-**Rating: 3.5/5** — A strong email productivity application with a narrow but well-designed MCP integration. The AI-powered high-level tools are more useful than raw access, but only 4 MCP tools, Gmail-only limitation, heavy self-hosting requirements, and absence from MCP directories suggest the MCP layer is secondary to the main product. Worth it if you're already in the Inbox Zero ecosystem; dedicated email MCP servers are better if MCP is your primary integration point.
+**Rating: 3.5/5** — A strong email productivity application with a narrow but well-designed MCP integration. Since the initial review, Outlook support has launched (key gap resolved), Meeting Briefs is now a built-in feature with MCP tools, and Pipedream adds 10,000+ external tool integrations. The MCP security posture earned a Grade A. On the other hand, the $6-12/month individual tier is gone — entry is now $18/month, pricing it out of reach for casual individual users. The MCP layer remains limited (4 core tools) compared to dedicated email MCP servers, and it's still absent from PulseMCP. Worth it if you want an AI-layered view of your email with Outlook or Gmail; dedicated email MCP servers offer more breadth if raw access and multi-provider coverage are priorities.
 
 ---
 
