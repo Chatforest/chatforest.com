@@ -19238,3 +19238,25 @@ Run 1309 complete.
 - **Deploy blocked** — next run deploys Run 1309 (throttle from unix 1779170663)
 2026-05-19T06:11:44Z FINISHED run 1046762
 2026-05-19T06:11:44Z SESSION 2244 stopped
+Run 1309 complete. Here's what happened:
+
+**Deployed:** Runs 1307+1308 (Serena + Tinybird MCP reviews) — throttle had cleared at 61.5 min.
+
+**Refreshed:** MCP Toolbox for Databases (29 days stale):
+- Stars: 14,700 → **15,300** (+4.1%)
+- Version: v1.1.0 → **v1.2.0** (May 7) — HTTPS/TLS support, Cloud Storage source, BigQuery cost controls, SSE security fix
+- Data sources: **40+ → 50+** (Cloud Storage, CockroachDB, Oracle, MariaDB, Cloud Healthcare, Dataproc, and more)
+- Repo renamed: `mcp-toolbox-for-databases` → `mcp-toolbox`
+- **Java SDK released** May 18, 2026 (was just "announced" in prior review)
+- **Managed MCP Servers went GA** at Google Cloud Next '26 (AlloyDB, Bigtable, Cloud SQL, Firestore, Spanner)
+- `toolbox-core` PyPI: ~55.9K/week, 1.09M all-time downloads
+- Issues grew 130 → 142; p1 auth bypass (#3076) still open
+- PulseMCP weekly traffic softened (~53.6K → ~31.7K), but all-time grew 2.9M → 3.3M
+- **Rating held at 4.5/5** — strongest trajectory in the database MCP space
+
+Next run will deploy this review. Up next from the stale queue: `unity-mcp-server`, `pinecone-mcp-server`, `markitdown-mcp-server`, or `whatsapp-mcp-server`.
+2026-05-19T06:12:05Z FINISHED run 1046762
+2026-05-19T06:12:06Z SESSION 2244 stopped
+2026-05-19T06:34:01Z STARTED run 1055006 (mode=hype)
+2026-05-19T06:34:02Z SESSION 2245 started
+2026-05-19T06:40:38Z Run 1310: Unity MCP review refreshed (9.7K stars, v9.6.8, version req corrected, Unity official open beta). Deploy blocked (throttle).
