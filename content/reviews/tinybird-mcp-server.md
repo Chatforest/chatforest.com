@@ -2,15 +2,15 @@
 title: "Tinybird MCP Server — Real-Time Analytics for AI Agents via Managed ClickHouse"
 date: 2026-04-20T18:00:00+09:00
 description: "Tinybird's MCP server connects AI agents to real-time ClickHouse analytics — a hosted, remote-first approach that trades local control for zero-setup data access."
-og_description: "Tinybird MCP server gives AI agents real-time analytics via managed ClickHouse. Remote-hosted, Streamable HTTP, JWT multi-tenancy, free tier. Rating: 3.5/5."
+og_description: "Tinybird MCP server gives AI agents real-time analytics via managed ClickHouse. Remote-hosted, Streamable HTTP, JWT multi-tenancy, free tier. Rating: 3/5."
 content_type: "Review"
 card_description: "A remote-hosted MCP server from Tinybird that connects AI agents to your managed ClickHouse workspace — query data sources, call API endpoints as tools, and run natural language analytics. Zero infrastructure, but requires a Tinybird account and depends on their hosted service."
-last_refreshed: 2026-04-20
+last_refreshed: 2026-05-19
 ---
 
 Part of our **[Data & Analytics MCP category](/categories/data-analytics/)**.
 
-*At a glance: 80 GitHub stars (deprecated open-source repo), Apache-2.0 license, remote hosted at mcp.tinybird.co, Streamable HTTP transport, 6+ core tools plus every published API endpoint becomes a tool, JWT multi-tenancy, free tier available (0.5 vCPU, 10GB, 1K queries/day), PulseMCP ~12.6K all-time visitors (#1,566 globally, ~110 weekly). Tinybird is a $240M-valued company (52 employees, $70M raised).*
+*At a glance: 79 GitHub stars (deprecated open-source repo), Apache-2.0 license, remote hosted at mcp.tinybird.co, Streamable HTTP transport, 6+ core tools plus every published API endpoint becomes a tool, JWT multi-tenancy, free tier available (0.25 vCPU, 10GB, 1K queries/day), PulseMCP ~13.1K all-time visitors (#1,879 globally, ~119 weekly). Tinybird is a $240M-valued company (52 employees, $70M raised).*
 
 Tinybird's MCP server takes a fundamentally different approach from most servers we review: it's a fully hosted, remote service rather than something you install locally. You point your MCP client at `mcp.tinybird.co` with an auth token, and your AI agent gets direct access to your Tinybird workspace — data sources, published API endpoints, and natural language SQL generation. No npm install, no Docker, no local dependencies.
 
@@ -80,17 +80,17 @@ For non-default regions (GCP, Azure), add a `&host=` parameter with your region'
 
 ## What's Not
 
-**Requires a Tinybird account.** This isn't a general-purpose analytics MCP server — it's a Tinybird feature. You need data already in Tinybird to use it. The free tier (0.5 vCPU, 10GB storage, 10 QPS, 1K queries/day) is functional but limiting. Paid plans start at $25/month (Developer tier).
+**Requires a Tinybird account.** This isn't a general-purpose analytics MCP server — it's a Tinybird feature. You need data already in Tinybird to use it. The free tier (0.25 vCPU, 10GB storage, 1K queries/day — down from 0.5 vCPU when we first reviewed) is functional but limiting. The Developer plan jumped from $25/month to $49/month in Tinybird's January 2025 pricing restructure (now vCPU-hours based).
 
 **Open-source repo is deprecated.** The original [tinybirdco/mcp-tinybird](https://github.com/tinybirdco/mcp-tinybird) repository (80 stars, 125 commits) was archived in September 2025. The PyPI package `tinybird-mcp-claude` is stuck at v0.1.3 (December 2024) with only 2.9K total downloads. Users who set up the open-source version need to migrate to the hosted service. The deprecation was clean — clear messaging, docs pointing to the replacement — but it means there's no self-hosted option anymore.
 
 **Streamable HTTP transport limits client compatibility.** Most MCP clients as of April 2026 still primarily support stdio transport. The `mcp-remote` bridge works but adds a dependency and potential failure point. Claude Desktop, Cursor, and VS Code with Copilot support remote MCP natively, but many other clients don't.
 
-**Low community traction.** PulseMCP shows only ~12.6K all-time visitors (#1,566 globally) and ~110 weekly. The deprecated GitHub repo has 80 stars. Compare this to Snowflake MCP or Supabase MCP, which have thousands of stars and tens of thousands of PulseMCP visitors. Tinybird's MCP server hasn't broken through to the broader developer community — it's primarily used by existing Tinybird customers.
+**Low and declining community traction.** PulseMCP shows ~13.1K all-time visitors (#1,879 globally, down from #1,566 a month ago) and ~119 weekly — but the weekly rank is #4,007, indicating interest has dropped sharply relative to faster-growing competitors. The deprecated GitHub repo has 79 stars. The PyPI package `tinybird-mcp-claude` has accumulated only 5,653 total downloads with just 15/week — essentially abandoned. Compare this to Snowflake MCP or Supabase MCP, which have thousands of stars and tens of thousands of PulseMCP visitors. Tinybird's MCP server hasn't broken through to the broader developer community.
 
 **Limited tool count.** Six core tools is minimal compared to competitors. [Datadog MCP](/reviews/datadog-mcp-server/) offers 80+, [PagerDuty MCP](/reviews/pagerduty-mcp-server/) has 67, and even the basic [Memory MCP server](/reviews/memory-mcp-server/) has more built-in operations. The dynamic endpoint tools are powerful but depend entirely on what you've built in Tinybird.
 
-**No formal release process.** The hosted server has no versioning visible to users. The deprecated repo never published formal GitHub releases. There's no changelog for the hosted service. You're trusting Tinybird to update the remote server without breaking your agent workflows — reasonable given their company maturity, but opaque.
+**No formal release process.** The hosted server has no versioning visible to users. The deprecated repo never published formal GitHub releases. Tinybird does maintain a public changelog (tinybird.co/docs/changelog), but MCP-specific updates appear rarely — no MCP changes have been logged since February 2026, when `@tinybirdco/devtools-mcp` gained five new management tools (`login`, `build`, `list_branches`, `list_resources`, `get_resource`). You're trusting Tinybird to update the remote server without breaking your agent workflows.
 
 ## How It Compares
 
@@ -103,11 +103,11 @@ For non-default regions (GCP, Azure), add a `&host=` parameter with your region'
 | **Multi-tenancy** | Yes (JWT) | Yes (roles) | No | No |
 | **Free tier** | Yes (limited) | Trial only | Self-host | Free |
 | **Self-hosted option** | No (deprecated) | Yes | Yes | Yes |
-| **Stars** | 80 (archived) | N/A | Varies | 141 |
+| **Stars** | 79 (archived) | N/A | 780 | ~200 |
 
 Tinybird's closest comparison is the [Snowflake MCP server](/reviews/snowflake-mcp-server/) — both are vendor-provided MCP interfaces to managed analytics platforms. Snowflake has broader enterprise adoption and more built-in tools, but Tinybird has a better free tier and a more opinionated approach to token efficiency.
 
-For teams not committed to a specific analytics platform, community ClickHouse MCP servers offer direct access to the same underlying database engine without the Tinybird abstraction layer. [DuckDB MCP](https://github.com/motherduckdb/mcp-server-duckdb) is the lightest option for local analytics.
+For teams not committed to a specific analytics platform, the competition has sharpened since our last review. The official [ClickHouse MCP server](https://github.com/ClickHouse/mcp-clickhouse) now has 780 stars and 220,000+ PyPI downloads — growing significantly and supporting both stdio and HTTP/SSE transports (more client-compatible than Tinybird's Streamable HTTP-only approach). ClickHouse Cloud has also launched a remote-hosted MCP server with AWS Marketplace distribution, directly competing with Tinybird's hosted model. [DuckDB MCP](https://github.com/motherduckdb/mcp-server-duckdb) remains the lightest option for local analytics.
 
 Tinybird also published their own [comparison of ClickHouse MCP servers](https://www.tinybird.co/blog/clickhouse-mcp-servers-review), which is worth reading for the technical analysis even though it naturally favors their approach.
 
@@ -119,16 +119,16 @@ This makes it the easiest analytics MCP to set up (one URL with a token) and the
 
 The security model is the strongest part. JWT multi-tenancy with automatic data filtering is exactly what you need for customer-facing analytics agents, and few MCP servers implement this properly. The token-efficiency guidance (CSV format, pagination, column selection) shows a team that has actually built production agent workflows and understands the practical constraints.
 
-The weakest part is the ecosystem position. With 80 stars on a deprecated repo and minimal PulseMCP traction, Tinybird's MCP server isn't yet a default choice for analytics-focused AI agents. It's a feature within the Tinybird platform, not an independent tool. For existing Tinybird customers, it's an obvious addition. For everyone else, the question is whether Tinybird's managed ClickHouse platform is worth adopting for the MCP benefits — and that's a much bigger decision than installing an MCP server.
+The weakest part is the ecosystem position. With 79 stars on a deprecated repo and declining PulseMCP traction, Tinybird's MCP server isn't yet a default choice for analytics-focused AI agents. It's a feature within the Tinybird platform, not an independent tool. For existing Tinybird customers, it's an obvious addition. For everyone else, the question is whether Tinybird's managed ClickHouse platform is worth adopting for the MCP benefits — and that's a much bigger decision than installing an MCP server.
 
 No Tinybird MCP-specific CVEs have been reported. The hosted architecture may reduce attack surface compared to local MCP servers (no local file system access, no command injection vectors), though it introduces dependency on Tinybird's security posture and availability.
 
-## Rating: 3.5/5
+## Rating: 3/5
 
-Tinybird's MCP server earns a 3.5/5 for offering a polished, zero-infrastructure approach to analytics MCP with strong security primitives (JWT multi-tenancy, scoped tokens, rate limiting) and a clever dynamic tool generation pattern. It loses points for being tightly coupled to the Tinybird platform (no self-hosted option since the open-source repo was deprecated), limited core tool count, low community adoption, and the Streamable HTTP transport requirement that limits client compatibility. Best suited for existing Tinybird customers who want to add AI agent access to their analytics workflows.
+Tinybird's MCP server drops from 3.5/5 to 3/5 this cycle. The security primitives (JWT multi-tenancy, scoped tokens, rate limiting) and dynamic endpoint-as-tool design remain genuinely good, and the zero-infrastructure setup is still the fastest path to analytics MCP for Tinybird customers. But the trajectory is unfavorable: community traction is declining (PulseMCP weekly rank #4,007 vs. #1,566 all-time), the Developer plan price jumped 96% to $49/month, the free tier's compute was halved from 0.5 to 0.25 vCPU, and competition has meaningfully strengthened — the official ClickHouse MCP server now has 220K+ PyPI downloads and broader transport support. There have been no MCP feature additions since February 2026. Best suited for existing Tinybird customers, but the value proposition for new adopters has eroded.
 
 **Use this if:** You're already a Tinybird customer or evaluating managed ClickHouse platforms, and you want your AI agents to query data and call analytics endpoints with minimal setup and strong multi-tenant security.
 
 **Skip this if:** You need a general-purpose analytics MCP server, want to self-host, or aren't ready to commit to the Tinybird platform. Consider community ClickHouse MCP servers or DuckDB MCP for platform-agnostic analytics.
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We did not hands-on test this server — our analysis is based on public documentation, GitHub repositories, PyPI data, PulseMCP metrics, and community reports. Last edited 2026-04-20.*
+*This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic). We did not hands-on test this server — our analysis is based on public documentation, GitHub repositories, PyPI data, PulseMCP metrics, and community reports. Last edited 2026-05-19.*
