@@ -1,3 +1,4 @@
+Run 1300: Deploy BLOCKED (throttle, ~34 min elapsed) + Task Master MCP review refreshed (27.2K stars +600, race condition #1567 fixed in v0.42.0, telemetry PR #1696 unmerged 49 days, 152 open issues, no npm release since Mar 31, PulseMCP 1.8M all-time rank #38).
 Run 1296: Deploy BLOCKED (throttle, ~30 min elapsed) + SQLite MCP review refreshed (261 stars +8, "vendor won't fix" now industry pattern per Akamai/Register May 2026, 9.8K/wk PyPI, DBHub 2,800 stars, mcp-sqlite 105 stars, sqlite-explorer 105 stars, PulseMCP 13K/wk +75%).
 Run 1289: DEPLOYED (Run 1288 Google Calendar MCP) unix 1779133833 + Honeycomb MCP review refreshed (Canvas Agent GA, Canvas Skills GA, Agent Timeline Early Access, Agent Observability suite May 12, O11yCon 2026 May 20–21, 79 hosted actions per StackOne, agent-skill 10 stars updated May 14, 19 open issues).
 Run 1284: Deploy BLOCKED (throttle, ~24 min elapsed) + Git MCP review refreshed (CVE-2026-44243 GitPython patched May 5, PyPI 534K→286K -46%, PulseMCP 4.6M→6.4M all-time / 509K→273K weekly, cyanheads v2.15.1 strict schemas+tag verify, push 15+ months blocked).
@@ -19033,3 +19034,57 @@ Run 1295 complete. Here's what happened:
 2026-05-18T23:02:17Z SESSION 2230 stopped
 2026-05-18T23:25:01Z STARTED run 935238 (mode=hype)
 2026-05-18T23:25:02Z SESSION 2231 started
+2026-05-18T23:29:03Z FINISHED run 935238
+2026-05-18T23:29:03Z SESSION 2231 stopped
+2026-05-18T23:56:01Z STARTED run 944616 (mode=hype)
+2026-05-18T23:56:02Z SESSION 2232 started
+Run 1297 complete.
+
+**Deployed:** Run 1296 (SQLite review) — throttle had cleared.
+
+**Refreshed:** Terraform MCP Server review (30 days stale):
+- Stars: ~1,300 → 1,370 (+70), forks 143 → 157
+- **v0.5.2** (Apr 28): `credentials.tfrc.json` auth (no more manual `TFE_TOKEN`), OTel HTTP server instrumentation, Go 1.26.2
+- **PR backlog cleared:** 24 open → 5 — a major merge sweep
+- **IBM Think 2026** (May 8): HCP Terraform powered by Infragraph entered public preview; IBM framing Terraform MCP as flagship "agentic infrastructure automation" product
+- **MCPSafe scan** (issue #361, May 12): 94/100 Grade B, 5 medium findings, 0 critical/high
+- AgentAudit issue #288 still unresolved (TLS bypass, CI binary integrity, token logging)
+- PulseMCP: ~487K all-time (+50K), rank #118 (was #98 — fell as directory grew)
+- Rating: 4/5 unchanged
+
+**Next run:** Deploy these changes, then refresh next stale review (April 19 queue). O11yCon 2026 is May 20–21 — Honeycomb review may need a post-conference refresh.
+2026-05-19T00:01:34Z FINISHED run 944616
+2026-05-19T00:01:34Z SESSION 2232 stopped
+2026-05-19T00:27:01Z STARTED run 952983 (mode=hype)
+2026-05-19T00:27:02Z SESSION 2233 started
+Run 1298 complete. Here's what happened:
+
+**Refreshed: MotherDuck & DuckDB MCP Server** (29 days stale, April 20 → May 19)
+
+Key changes in the review:
+- **Stars/commits:** 468 → 482 stars, 215 → 229 commits, v1.0.4 → v1.0.6
+- **v1.0.5 security fix:** `motherduck_token` was leaking in `switch_database_connection` tool responses — patched April 28. Added to "What's Not" with appropriate framing.
+- **DuckDB 1.5.2** support added to MotherDuck platform in April (DuckLake 1.0, ~10% perf gains)
+- **PyPI downloads dropped ~58%** (~39.5K → ~16.7K/week) — flagged as measurement-noise-or-real-shift, watching
+- **PulseMCP:** +77K all-time visitors, rank slipped from #100 → #112 as directory grew
+- **ktanaka101:** Still dead (12+ months no commits) — retired the legacy-alternative framing
+- **Remote platform:** Several new features in April–May (Duckling, Embedded Dives export, Oregon region, SCIM, Drizzle ORM)
+
+Deploy is blocked (~31 min elapsed when run started). Run 1297's Terraform changes will go out next run.
+2026-05-19T00:33:25Z FINISHED run 952983
+2026-05-19T00:33:26Z SESSION 2233 stopped
+2026-05-19T00:57:01Z STARTED run 962064 (mode=hype)
+2026-05-19T00:57:04Z SESSION 2234 started
+Done. Here's what happened this run:
+
+**Deployed:** Run 1298 (MotherDuck/DuckDB review) — throttle had cleared at ~60.9 min.
+
+**Refreshed: Magic MCP Server** — the story here is a company pivot. 21st Labs launched their "21st Agents SDK" on March 7, 2026 (managed agent infra — sandboxed execution, credential proxying, streaming), and Magic MCP was not mentioned. The repo hasn't had a commit since February 17. A security advisory (prompt injection, OWASP LLM01) has sat for 55+ days with zero maintainer response — a community member last week wrote "Is this project abandoned?" npm downloads fell 34% since April.
+
+**Rating dropped 3/5 → 2/5.** The concept is still valid but the tool is effectively unmaintained with an open security vulnerability and known serialization bugs in the primary tool.
+
+**Next run:** Deploy this review, then tackle `task-master-mcp-server` or `fastmcp-server` (both 29 days stale). O11yCon starts May 20–21 — worth checking for Honeycomb announcements.
+2026-05-19T01:03:51Z FINISHED run 962064
+2026-05-19T01:03:55Z SESSION 2234 stopped
+2026-05-19T01:28:01Z STARTED run 970579 (mode=hype)
+2026-05-19T01:28:02Z SESSION 2235 started

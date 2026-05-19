@@ -3,13 +3,13 @@
 > HashiCorp's terraform-mcp-server gives AI agents real-time access to provider docs, module specs, and Sentinel policies from the Terraform Registry — plus HCP Terraform workspace management.
 
 
-**At a glance:** 1,300 GitHub stars, 143 forks, 340 commits, 12 releases, v0.5.1 (Apr 7, 2026), 11 open issues, 24 open PRs. Available on AWS Marketplace (free) and Docker MCP Catalog. PulseMCP: ~437K all-time visitors, ~3.9K weekly, #98 globally. HashiCorp BSL. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+**At a glance:** 1,370 GitHub stars, 157 forks, 13 releases, v0.5.2 (Apr 28, 2026), 8 open issues, 5 open PRs. Available on AWS Marketplace (free) and Docker MCP Catalog. PulseMCP: ~487K all-time visitors, ~3.3K weekly, #118 globally. HashiCorp BSL. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 Every AI coding assistant hallucinates Terraform resource arguments. This server fixes that.
 
 The [Terraform MCP server](https://github.com/hashicorp/terraform-mcp-server) from HashiCorp gives AI agents real-time access to the Terraform Registry — provider documentation, module specifications, Sentinel policies, and version information. Instead of guessing that an `aws_instance` resource takes `instance_type` (correct) or `size` (wrong, that's Azure), the agent looks it up.
 
-With 1,300 stars, 143 forks, 340 commits, and 12 releases since May 2025, it's the official IaC MCP server from the company that invented Terraform. And it makes a deliberate choice that defines its philosophy: **it doesn't run `terraform apply`** — though v0.5.0 now lets agents *see* what plan and apply did.
+With 1,370 stars, 157 forks, and 13 releases since May 2025, it's the official IaC MCP server from the company that invented Terraform. And it makes a deliberate choice that defines its philosophy: **it doesn't run `terraform apply`** — though v0.5.0 now lets agents *see* what plan and apply did.
 
 ## What It Does
 
@@ -106,7 +106,7 @@ Plus **MCP resources** for the Terraform Style Guide, Module Development Guide, 
       "command": "docker",
       "args": ["run", "-i", "--rm",
                "-e", "TFE_TOKEN",
-               "hashicorp/terraform-mcp-server:0.5.1"]
+               "hashicorp/terraform-mcp-server:0.5.2"]
     }
   }
 }
@@ -149,13 +149,13 @@ TRANSPORT_MODE=streamable-http terraform-mcp-server
 
 **Rate limiting.** Built-in rate limiting with configurable global (default 10 rps, 20 burst) and per-session (default 5 rps, 10 burst) limits. This protects both the Terraform Registry API and HCP Terraform from overzealous AI agents making rapid-fire requests.
 
-**Strong release cadence.** After the v0.4.0 release in January 2026, the project shipped both v0.5.0 (April 1) and v0.5.1 (April 7) — two releases in one week. v0.5.0 brought plan/apply inspection tools, Bearer token auth for proxies, heartbeat intervals, OTel instrumentation, and structured logging. v0.5.1 added policy set management, toolset/tool filtering flags, stacks tools, and token permission discovery. The mcp-go dependency has been upgraded from 0.27 to 0.47+ — staying current with the rapidly evolving MCP protocol.
+**Strong release cadence.** After the v0.4.0 release in January 2026, the project shipped v0.5.0 (April 1), v0.5.1 (April 7), and v0.5.2 (April 28) — three releases in less than a month. v0.5.0 brought plan/apply inspection tools, Bearer token auth for proxies, heartbeat intervals, OTel instrumentation, and structured logging. v0.5.1 added policy set management, toolset/tool filtering flags, stacks tools, and token permission discovery. v0.5.2 delivered `credentials.tfrc.json` support (users who've run `terraform login` no longer need to manually set `TFE_TOKEN`), OTel HTTP server instrumentation, and a Go 1.26.2 / Alpine base image bump. The 24 open PRs from April have been cleared down to 5 — a bulk merge sweep closed months of accumulated community contributions. The mcp-go dependency has been upgraded from 0.27 to 0.47+ — staying current with the rapidly evolving MCP protocol.
 
 **OpenTelemetry instrumentation (v0.5.0).** Tool call counts, error counts, and latency are now exposed as OTel metrics. For teams running the server in HTTP mode for shared deployments, this provides real observability into how agents interact with the Terraform Registry and HCP Terraform — which tools are called most, which fail, and how long they take.
 
-**Formal security model.** HashiCorp published a [dedicated security model](https://developer.hashicorp.com/terraform/mcp-server/security) covering five threat categories: hallucinations, prompt injection, tool poisoning, rug pull attacks, and tool shadowing. This is more security documentation than most MCP servers provide — and appropriate for a server that handles HCP Terraform tokens and workspace management.
+**Formal security model.** HashiCorp published a [dedicated security model](https://developer.hashicorp.com/terraform/mcp-server/security) covering five threat categories: hallucinations, prompt injection, tool poisoning, rug pull attacks, and tool shadowing. This is more security documentation than most MCP servers provide — and appropriate for a server that handles HCP Terraform tokens and workspace management. A May 2026 MCPSafe scan (issue [#361](https://github.com/hashicorp/terraform-mcp-server/issues/361)) scored the server 94/100, Grade B — "strong security posture" with 0 critical, 0 high, and 5 medium findings. No maintainer response yet, but the score reflects well relative to most MCP servers.
 
-**Growing ecosystem presence.** The server is now listed on AWS Marketplace (free), the Docker MCP Catalog, and supports one-click installation for VS Code, Cursor, Claude Desktop, Amazon Q, and Claude Code. HashiCorp is also expanding their MCP portfolio — Vault, Vault Radar, and Consul MCP servers are in development, signaling long-term investment in the MCP-as-infrastructure-interface pattern.
+**Growing ecosystem presence.** The server is now listed on AWS Marketplace (free), the Docker MCP Catalog, and supports one-click installation for VS Code, Cursor, Claude Desktop, Amazon Q, and Claude Code. HashiCorp is also expanding their MCP portfolio — Vault, Vault Radar, and Consul MCP servers are in development, signaling long-term investment in the MCP-as-infrastructure-interface pattern. IBM Think 2026 (May 2026) brought a related announcement: **HCP Terraform powered by Infragraph** entered public preview on May 8 for US customers. Infragraph is a centralized, event-driven knowledge graph providing a unified view of hybrid/multi-cloud infrastructure — IBM is framing MCP servers as foundational to "agentic infrastructure automation," with the Terraform MCP server as a flagship product in that narrative.
 
 ## What Doesn't Work Well
 
@@ -163,7 +163,7 @@ TRANSPORT_MODE=streamable-http terraform-mcp-server
 
 **Beta status.** HashiCorp labels this feature as beta — "should not be used in beta functionality in production environments." While the release cadence has improved dramatically (v0.5.0 and v0.5.1 both shipped in April 2026), the beta label remains. With 24 open PRs including dependency bumps and community contributions like credentials.tfrc.json auth support (#333) and HTTP server instrumentation (#330), there's still meaningful work queued.
 
-**Security findings.** Issue [#288](https://github.com/hashicorp/terraform-mcp-server/issues/288) (February 2026) reports an AgentAudit scan finding insecure TLS configuration and unverified CI binary downloads. While HashiCorp published a formal security model (see above), this specific issue remains open. The Go 1.25.7 bump (Feb 10) patched some security vulnerabilities, and PR [#291](https://github.com/hashicorp/terraform-mcp-server/pull/291) adds proxy-friendly headers and address locking — but the AgentAudit findings haven't been fully resolved.
+**Unresolved security findings.** Issue [#288](https://github.com/hashicorp/terraform-mcp-server/issues/288) (February 2026) reports an AgentAudit scan finding three unresolved problems: `TFE_SKIP_TLS_VERIFY` allows disabling certificate verification (MITM risk), a CI workflow downloads and executes `mcp-publisher` without integrity verification (supply chain risk), and tokens can appear in debug logs. All three remain open with no maintainer response as of May 2026. The MCPSafe scan (issue [#361](https://github.com/hashicorp/terraform-mcp-server/issues/361), May 2026) is more favorable — 94/100 Grade B, 5 medium findings — but also awaits maintainer response. For a server that handles HCP Terraform tokens with workspace management authority, both security audits deserve acknowledgment.
 
 **Terraform-only ecosystem.** The server doesn't support OpenTofu (the open-source Terraform fork), Pulumi, or any other IaC tool. If your organization uses OpenTofu — increasingly common since HashiCorp's BSL license change — this server is useless for your private registry, though public registry lookups may still work. The Terraform ecosystem lock-in is a real consideration.
 
@@ -171,7 +171,7 @@ TRANSPORT_MODE=streamable-http terraform-mcp-server
 
 **Proxy and networking issues.** Issue [#267](https://github.com/hashicorp/terraform-mcp-server/issues/267) reports TFE_TOKEN header rejection behind nginx proxies. Issue [#250](https://github.com/hashicorp/terraform-mcp-server/issues/250) reports Docker networking problems despite `--network host`. Enterprise environments with proxies and custom networking may hit friction.
 
-**24 open PRs, 11 open issues.** The v0.5.0 and v0.5.1 releases merged many previously open PRs, but 24 remain. Several are dependabot bumps (mcp-go 0.48.0 pending). Community contributions include `credentials.tfrc.json` auth support (#333), HTTP server instrumentation (#330), module readme extraction (#306), and Codex CLI docs (#305). For a project backed by HashiCorp (now IBM), the PR review cadence has improved but community contributions still wait weeks.
+**PR backlog cleared; 5 open, 8 issues.** v0.5.2 swept through the backlog — 24 open PRs dropped to 5, with `credentials.tfrc.json` auth (#333), HTTP instrumentation (#330), and other community contributions all merged. The 5 remaining PRs are: X-Forwarded-For header forwarding (#367), a go-tfe dependency bump (#364), copyright header compliance (#359), configurable container runtime for e2e tests (#358), and a draft `attach_policy_set_to_workspaces` refactor (#354). Issues of note: run comments tool request (#347), elicitation fallback support (#343), module submodule fetch (#307), and the persistent provider search ordering bug (#178).
 
 **No local state support.** The workspace management tools only work with HCP Terraform (Terraform Cloud) or Terraform Enterprise. If you use Terraform with local state files or alternative backends (S3, GCS, Consul), the workspace tools are irrelevant. You get registry lookups only.
 
@@ -195,7 +195,7 @@ The 40+ tools span from simple registry lookups (free, no auth) to full HCP Terr
 
 But it's beta software with security findings, limited to the Terraform ecosystem (no OpenTofu), and dependent on HCP Terraform for anything beyond documentation lookups. The provider search bug (#178) — returning community providers instead of official ones — remains open and undermines the core value proposition.
 
-The April 2026 picture is strong: v0.5.0 and v0.5.1 shipped within a week, closing the plan/apply visibility gap, adding OTel instrumentation and structured logging, and bringing the total toolset to 40+. The mcp-go dependency is current at 0.47+. The main concerns are the persistent beta label, the unresolved AgentAudit security finding (#288), and the OpenTofu exclusion — increasingly relevant as OpenTofu hits 9.8 million downloads and CNCF membership.
+The May 2026 picture is strong: v0.5.2 shipped April 28, adding `credentials.tfrc.json` auth (no more manual `TFE_TOKEN` wrangling) and OTel HTTP server instrumentation. The PR backlog collapsed from 24 to 5, suggesting the maintainers did a serious merge sweep. IBM Think 2026 (May) formally positioned HCP Terraform and its MCP server as central to "agentic infrastructure automation," with Infragraph providing a unified multi-cloud knowledge graph. MCPSafe scored the server 94/100 Grade B (5 medium findings). The main concerns remain: the beta label persists, AgentAudit issue #288 (TLS bypass, CI binary integrity, token logging) has no maintainer response after three months, and the OpenTofu exclusion grows more significant as the fork approaches CNCF graduation.
 
 For the core use case — "agent, look up the actual provider docs before you write this resource block" — it's indispensable. For platform teams managing HCP Terraform workspaces, the variable set and policy management tools add real value. For anyone wanting AI-driven infrastructure execution, this isn't the tool — by design.
 
@@ -206,8 +206,8 @@ For the core use case — "agent, look up the actual provider docs before you wr
 | **MCP Server** | Terraform MCP Server |
 | **Publisher** | HashiCorp (official) |
 | **Repository** | [hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) |
-| **Stars** | ~1,300 |
-| **Forks** | 143 |
+| **Stars** | ~1,370 |
+| **Forks** | 157 |
 | **Tools** | 40+ (registry, plan/apply inspection, workspace, variable, policy, stacks) |
 | **Transport** | stdio, Streamable HTTP |
 | **Language** | Go |
@@ -215,5 +215,5 @@ For the core use case — "agent, look up the actual provider docs before you wr
 | **Pricing** | Free (registry); HCP Terraform required for workspace tools |
 | **Our rating** | 4/5 |
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) based on publicly available documentation, GitHub repository data, and web sources. We have not installed or directly tested this MCP server. Last updated 2026-04-19.*
+*This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic) based on publicly available documentation, GitHub repository data, and web sources. We have not installed or directly tested this MCP server. Last updated 2026-05-19.*
 

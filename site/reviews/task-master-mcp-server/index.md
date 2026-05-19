@@ -5,7 +5,7 @@
 
 Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
 
-*At a glance: 26,600 GitHub stars, 2,500 forks, 1,214 commits, last commit April 2026, npm v0.43.1, 36 tools (in three loading tiers), MIT license with Commons Clause, ~30,500 npm downloads/week, PulseMCP ~1.7M all-time visitors (#30 globally, ~31,600 weekly). Created by Eyal Toledano, Ralph Krysler, and Jason Zhou. Launched March 2025.*
+*At a glance: 27,200 GitHub stars, 2,500 forks, 1,216 commits, last commit April 23 2026, npm v0.43.1 (no release in 49 days), 36 tools (in three loading tiers), MIT license with Commons Clause, ~30,500 npm downloads/week, PulseMCP ~1.8M all-time visitors (#38 globally, ~31,100 weekly). Created by Eyal Toledano, Ralph Krysler, and Jason Zhou. Launched March 2025.*
 
 Task Master is the breakout hit of the MCP ecosystem. In just over a year it went from zero to 26,600 GitHub stars — making it one of the most starred MCP servers in existence. The pitch is simple: give your AI coding agent a structured project manager. Feed it a PRD, get back a dependency-ordered task list, then let the agent work through tasks one at a time with full context awareness.
 
@@ -78,19 +78,19 @@ Configuration lives in `.taskmaster/config.json` per project, where you set mode
 
 **PRD parsing is the killer feature.** Taking a natural-language requirements document and producing a dependency-ordered, complexity-scored task list is genuinely useful. It turns vague "build me X" instructions into structured work plans.
 
-**Active development.** 1,214 commits, regular releases (roughly every 2-3 weeks), responsive issue triage with priority labels. The project isn't abandonware.
+**Active development.** 1,216 commits and responsive issue triage with priority labels — the project isn't abandonware. Notably, the race-condition data loss bug (issue [#1567](https://github.com/eyaltoledano/claude-task-master/issues/1567)) was fixed in v0.42.0: proper file locking via `proper-lockfile`, atomic writes, and stale lock cleanup closed that gap.
 
 **Claude Code integration.** The ability to use Claude Code as a provider (no separate API key needed) lowers the barrier to entry significantly.
 
 ## What's Not
 
-**Sentry telemetry captures full AI prompts and responses by default.** Issue [#1681](https://github.com/eyaltoledano/claude-task-master/issues/1681) (April 4, 2026, high-priority, still open) reports that the default Sentry configuration uses `sendDefaultPii: true` and `recordInputs: true, recordOutputs: true` on the Vercel AI SDK integration, capturing 100% of AI prompts and responses. This means your PRDs, task descriptions, implementation details, and AI-generated code are sent to Sentry by default. The opt-out mechanism is fragile — if `.taskmaster/config.json` isn't found in the working directory at MCP server start time, telemetry defaults to fully enabled. This is a significant privacy concern for anyone processing proprietary code or business requirements through Task Master.
+**Sentry telemetry captures full AI prompts and responses by default.** Issue [#1681](https://github.com/eyaltoledano/claude-task-master/issues/1681) (April 4, 2026, high-priority, still open as of May 19) reports that the default Sentry configuration uses `sendDefaultPii: true` and `recordInputs: true, recordOutputs: true` on the Vercel AI SDK integration, capturing 100% of AI prompts and responses. Your PRDs, task descriptions, implementation details, and AI-generated code are sent to Sentry by default. PR [#1696](https://github.com/eyaltoledano/claude-task-master/pull/1696) ("fix: disable AI content recording and PII collection in Sentry by default") exists but remains unmerged after 49 days. The opt-out mechanism is still fragile — if `.taskmaster/config.json` isn't found in the working directory at MCP server start time, telemetry defaults to fully enabled.
 
-**149 open issues with data integrity bugs.** Issue [#1683](https://github.com/eyaltoledano/claude-task-master/issues/1683) reports task status drift between the MCP state and `tasks.json`. Issue [#1567](https://github.com/eyaltoledano/claude-task-master/issues/1567) documents race conditions when multiple Claude Code windows write to `tasks.json` simultaneously — work can be silently lost. Issue [#1647](https://github.com/eyaltoledano/claude-task-master/issues/1647) reports task ID collisions when moving tasks between tags. For a task management tool, data integrity bugs are existential.
+**152 open issues with unresolved data integrity bugs.** Issue [#1683](https://github.com/eyaltoledano/claude-task-master/issues/1683) reports task status drift — `set_task_status` returns success without updating the on-disk file, and `next_task` may pull from the wrong tag context. Issue [#1647](https://github.com/eyaltoledano/claude-task-master/issues/1647) reports task ID collisions when moving tasks between tags (PR [#1665](https://github.com/eyaltoledano/claude-task-master/pull/1665) exists but unmerged). For a task management tool, silent state corruption is an existential problem.
 
 **MIT with Commons Clause is not open source.** The Commons Clause restricts selling Task Master itself, offering it as a SaaS, or building competing products from the code. While personal and commercial *use* is permitted, this is a meaningful restriction that disqualifies it from the OSI definition of open source. Forks exist (James-Cherished-Inc/AI-task-master, kylantomita/task-master-ai) but their legal standing under Commons Clause is ambiguous.
 
-**No release in 3 weeks.** The latest npm release is v0.43.1 from March 31, 2026 (as of this review on April 20). While the repo is active with commits, the gap between repo activity and published releases means users on the npm version may be missing fixes for known issues.
+**No npm release in 7 weeks.** v0.43.1 (March 31, 2026) remains the latest published version as of May 19. The repo has seen activity (documentation link updates, April 23) but zero code releases in 49 days — leaving the unfixed telemetry issue and open data integrity bugs sitting in a gap between commits and shipping.
 
 **Claude Code integration issues.** Issues [#1039](https://github.com/eyaltoledano/claude-task-master/issues/1039), [#963](https://github.com/eyaltoledano/claude-task-master/issues/963), and [#784](https://github.com/eyaltoledano/claude-task-master/issues/784) document problems with Task Master failing to work properly with Claude Code — ironic for a tool originally named "claude-task-master."
 
@@ -108,7 +108,7 @@ Configuration lives in `.taskmaster/config.json` per project, where you set mode
 
 **`tasks.json` is local and unencrypted.** Task data including AI-generated implementation details, PRD content, and complexity analysis sits in a plain JSON file. If your project directory is shared or version-controlled without `.gitignore` rules, this data is exposed.
 
-**Race condition data loss.** The file-based storage without proper locking (issue #1567) means concurrent access can silently corrupt or lose task data. This is a reliability concern more than a security one, but in automated pipelines, lost tasks could mean skipped security-critical work.
+**Race condition data loss — now fixed.** Issue #1567 (multiple Claude Code windows corrupting `tasks.json`) was resolved in v0.42.0 via `proper-lockfile` and atomic writes. This was a meaningful fix for multi-agent workflows.
 
 ## How It Compares
 
@@ -134,5 +134,5 @@ Task Master is the most popular task management MCP server by a wide margin, and
 
 **Rating: 3.5 out of 5** — a strong concept with real utility, held back by privacy defaults and reliability concerns that matter most in exactly the production workflows where it's most useful.
 
-*Review published April 20, 2026. This review is based on research of publicly available information including the [GitHub repository](https://github.com/eyaltoledano/claude-task-master), [npm package](https://www.npmjs.com/package/task-master-ai), [PulseMCP listing](https://www.pulsemcp.com/servers/eyaltoledano-task-master), release notes, issue tracker, and community discussion. We did not install or run this software.*
+*Review originally published April 20, 2026; refreshed May 19, 2026. This review is based on research of publicly available information including the [GitHub repository](https://github.com/eyaltoledano/claude-task-master), [npm package](https://www.npmjs.com/package/task-master-ai), [PulseMCP listing](https://www.pulsemcp.com/servers/eyaltoledano-task-master), release notes, issue tracker, and community discussion. We did not install or run this software.*
 
