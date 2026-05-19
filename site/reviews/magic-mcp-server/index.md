@@ -5,7 +5,7 @@
 
 Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
 
-*At a glance: 4,800 GitHub stars, 327 forks, 77 commits, no formal releases, TypeScript, MIT license, ~12,100 npm downloads/week (~45,700/month), PulseMCP 945K all-time visitors (#63 globally, ~26,400 weekly). Built by 21st Labs (YC W26), 2 founders, 3 employees.*
+*At a glance: 4,883 GitHub stars (+83 since April), 338 forks, 77 commits — last commit Feb 17, 2026 (3 months without activity), no formal releases, TypeScript, MIT license, ~7,977 npm downloads/week, PulseMCP 1.1M all-time visitors (#68 globally, ~31,000 weekly). Built by 21st Labs (YC W26).*
 
 Magic MCP is "v0 in your IDE." Where Vercel's v0 generates UI components in a web browser, Magic MCP does it inside Cursor, Windsurf, VS Code, and Cline through the Model Context Protocol. You type `/ui create a modern navigation bar with responsive design` in your AI agent's chat, and Magic generates a polished React/TypeScript component drawn from 21st.dev's curated library, then drops it directly into your project.
 
@@ -67,15 +67,15 @@ Replace `cursor` with `windsurf`, `cline`, or `claude` for other clients.
 
 **API key required with restrictive free tier.** You can't try Magic without signing up and generating an API key. The free tier's generation limit is very low — one reviewer burned through it in minutes of experimentation. At $20/month, it's a real cost for a tool that generates individual components. By comparison, v0 and most AI coding agents generate UI code without per-component billing.
 
-**No formal releases.** Zero tagged releases on GitHub after 77 commits. The npm packages (`@21st-dev/magic` and `@21st-dev/cli`) haven't been updated in ~10 months. This raises questions about active development — the GitHub repo shows recent issues being filed (April 2026), but the published packages appear stagnant.
+**No formal releases and repo effectively stalled.** Zero tagged releases on GitHub after 77 commits. The last commit to the repository was February 17, 2026 — now 3 months ago — a security patch that bumped the MCP SDK. The npm packages (`@21st-dev/magic` v0.1.0, published June 2025; `@21st-dev/cli` v0.0.29, published June 2025) have not been updated in ~11 months. The company is actively developing a new product (see below), but Magic MCP is not receiving it.
 
-**Open prompt injection vulnerability.** Issue #46 (March 25, 2026) details a supply chain attack vector: a malicious component in the 21st.dev library could embed prompt injection instructions in code comments or variable names. When fetched by Magic MCP, these instructions enter the LLM's context and could direct the agent to introduce backdoors, exfiltrate credentials, or modify project files. Mapped to OWASP LLM01 and OWASP Agentic AG01/AG07. No maintainer response as of April 2026.
+**Open prompt injection vulnerability — security advisory now 55 days without maintainer response.** Issue #46 (March 25, 2026) details a supply chain attack vector: a malicious component in the 21st.dev library could embed prompt injection instructions in code comments or variable names. When fetched by Magic MCP, these instructions enter the LLM's context and could direct the agent to introduce backdoors, exfiltrate credentials, or modify project files. Mapped to OWASP LLM01 and OWASP Agentic AG01/AG07. Zero maintainer engagement across three community comments — one commenter (May 14) asked "Is this project abandoned? I can't believe nobody is responding to this."
 
-**`[object Object]` errors in component builder.** Issues #55 and #58 (April 2026) report the primary `21st_magic_component_builder` tool returning `[object Object]` instead of actual component code. This suggests a serialization bug in the current version. Multiple users affected.
+**`[object Object]` errors in component builder — still unresolved.** Issues #55 and #58 (April 2026) report the primary `21st_magic_component_builder` tool returning `[object Object]` instead of actual component code. Multiple users affected across Windows and macOS. Both issues remain open with zero maintainer response. A community workaround exists for #58 but nothing official has shipped.
 
 **Limited scope — single components only.** Magic generates individual UI components, not full pages, layouts, or multi-component dashboards. For anything beyond a single component, you're making multiple requests and assembling the results yourself. Full-page generation tools like Bolt.new and v0 handle this better.
 
-**24 open issues, 6 open PRs, no visible triage.** The Gemini API compatibility issue (#37) has been open since November 2025. The prompt injection advisory (#46) has no maintainer response after a month. The issue backlog suggests limited maintainer bandwidth despite YC backing.
+**28 open issues, 7 open PRs, no visible triage — and zero commits in 3 months.** The Gemini API compatibility issue (#37) has been open since November 2025. The prompt injection advisory (#46) has no maintainer response after nearly two months. The last commit to the repository was February 17, 2026. The issue backlog is growing with no triage in sight.
 
 **Gemini incompatibility.** Issue #37 reports that Magic's tool names violate Gemini API function calling rules, making it incompatible with Gemini-based MCP clients. Unfixed since November 2025.
 
@@ -97,21 +97,23 @@ The question is whether IDE-native component generation from a curated library i
 
 ## The Bigger Picture
 
-21st Labs is positioning beyond component generation. As a YC W26 company, they're building "infrastructure and UI building blocks for the agentic internet" — including a 21st Agents SDK for deploying agents with sandboxed execution, credential security, and pre-built chat UI. The Magic MCP server is the entry point to a broader agent platform.
+21st Labs has pivoted. On March 7, 2026, the company launched the **21st Agents SDK** — managed agent infrastructure with sandboxed execution (E2B microVMs), streaming via SSE, credential proxying (preventing API keys from reaching model context), session replay/observability, and model-agnostic support for Claude and OpenAI. The announcement positioned the company as "infrastructure for the agentic internet."
 
-This explains the freemium model and API key requirement — 21st.dev is building a business, not just an open-source tool. The curated component library is the moat: as more components are added and quality-controlled, the generated output should improve relative to uncurated AI generation.
+Magic MCP is not mentioned in the Agents SDK announcement. The last commit to the Magic MCP repository was February 17, 2026 — the day before the Agents SDK push began in earnest. This timing strongly suggests the team's development focus has shifted. The curated component library and IDE-native generation workflow are mature enough to run unattended, but they are not receiving maintenance or security attention.
 
-But the current state raises concerns. The npm packages haven't been updated in 10 months. The primary tool has serialization bugs. A prompt injection vulnerability sits unaddressed. The free tier is too restrictive for evaluation. For a YC-backed company, the pace of public development is surprisingly slow — the real development may be happening on the hosted platform rather than the open-source MCP server.
+This explains the stalled npm packages (11 months since last stable release), the unaddressed security advisory (55+ days without response), the persistent serialization bugs, and the Gemini incompatibility sitting untouched since November 2025. The team isn't ignoring Magic MCP — they've moved on.
 
-Worth watching: whether the npm packages get updated (they're significantly behind the hosted service), whether the prompt injection advisory gets a response, and whether the 21st Agents SDK creates a more compelling reason to be in the 21st.dev ecosystem.
+For users, this matters: you're adopting an effectively unmaintained MCP server with an open OWASP-mapped security vulnerability and known bugs in its primary tool. The product still works for users not hitting the `[object Object]` bug, but the long-term trajectory is unclear. 21st Labs may eventually integrate Magic MCP into the Agents SDK ecosystem, or it may remain in quiet maintenance mode indefinitely.
 
-## Rating: 3/5
+**npm downloads dropped 34%** since April: ~7,977/week (was ~12,100). The market may already be voting.
 
-Magic MCP earns a 3/5 for delivering a genuinely useful concept — library-backed UI component generation inside your IDE — with execution that falls short. The component quality is good when it works, the sub-100ms response time is impressive, and the SVGL integration is a nice touch. But the stale npm packages (10 months without update), active serialization bugs returning `[object Object]`, an unaddressed prompt injection vulnerability, a restrictive free tier, and single-component-only scope limit its practical value. The YC backing and broader platform ambitions are promising, but the open-source MCP server needs more attention.
+## Rating: 2/5
 
-**Use this if:** You're building React/TypeScript frontends and want quick access to polished UI components without leaving your IDE. Best for rapid prototyping of standard UI patterns (nav bars, cards, forms, hero sections). Worth the $20/month if you generate components frequently.
+Magic MCP drops to 2/5. The concept remains sound — library-backed UI component generation inside your IDE — but the execution has deteriorated to a point that makes adoption difficult to recommend. The company has pivoted to a new product (21st Agents SDK) and the Magic MCP repository has had zero commits in 3 months, zero maintainer responses to a OWASP-mapped security advisory, active serialization bugs in the primary tool, and npm packages 11 months out of date. Weekly npm downloads have fallen 34% since April. The sub-100ms response time and SVGL integration are still good, and the tool still works for users not hitting the `[object Object]` bug — but these positives don't outweigh an effectively unmaintained security posture.
 
-**Skip this if:** You need full-page or multi-component generation (use v0 or Bolt.new), prefer free tools (use shadcn/ui CLI or ask your AI agent directly), or need Gemini compatibility. The current bugs and stale packages make it risky for production workflows.
+**Use this if:** You urgently need IDE-native React component generation, understand and accept the security risk of an unpatched prompt injection vulnerability, and are not hitting the serialization bug. Monitor the 21st Agents SDK for whether Magic MCP gets revived within that platform.
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We did not hands-on test this server — our analysis is based on public documentation, GitHub repositories, npm data, PulseMCP statistics, user reviews, and community reports. Last edited 2026-04-20.*
+**Skip this if:** You need a maintained tool for production workflows, need Gemini compatibility, want full-page generation (use v0 or Bolt.new), or prefer free tools (shadcn/ui CLI, or ask your AI agent directly). The prompt injection vulnerability and stalled maintenance make this a poor choice for any security-conscious environment.
+
+*This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic). We did not hands-on test this server — our analysis is based on public documentation, GitHub repositories, npm data, PulseMCP statistics, user reviews, and community reports. Last edited 2026-05-19.*
 
