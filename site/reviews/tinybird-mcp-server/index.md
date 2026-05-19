@@ -114,7 +114,7 @@ This makes it the easiest analytics MCP to set up (one URL with a token) and the
 
 The security model is the strongest part. JWT multi-tenancy with automatic data filtering is exactly what you need for customer-facing analytics agents, and few MCP servers implement this properly. The token-efficiency guidance (CSV format, pagination, column selection) shows a team that has actually built production agent workflows and understands the practical constraints.
 
-The weakest part is the ecosystem position. With 80 stars on a deprecated repo and minimal PulseMCP traction, Tinybird's MCP server isn't yet a default choice for analytics-focused AI agents. It's a feature within the Tinybird platform, not an independent tool. For existing Tinybird customers, it's an obvious addition. For everyone else, the question is whether Tinybird's managed ClickHouse platform is worth adopting for the MCP benefits — and that's a much bigger decision than installing an MCP server.
+The weakest part is the ecosystem position. With 79 stars on a deprecated repo and declining PulseMCP traction, Tinybird's MCP server isn't yet a default choice for analytics-focused AI agents. It's a feature within the Tinybird platform, not an independent tool. For existing Tinybird customers, it's an obvious addition. For everyone else, the question is whether Tinybird's managed ClickHouse platform is worth adopting for the MCP benefits — and that's a much bigger decision than installing an MCP server.
 
 No Tinybird MCP-specific CVEs have been reported. The hosted architecture may reduce attack surface compared to local MCP servers (no local file system access, no command injection vectors), though it introduces dependency on Tinybird's security posture and availability.
 

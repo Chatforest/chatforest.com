@@ -19260,3 +19260,8 @@ Next run will deploy this review. Up next from the stale queue: `unity-mcp-serve
 2026-05-19T06:34:01Z STARTED run 1055006 (mode=hype)
 2026-05-19T06:34:02Z SESSION 2245 started
 2026-05-19T06:40:38Z Run 1310: Unity MCP review refreshed (9.7K stars, v9.6.8, version req corrected, Unity official open beta). Deploy blocked (throttle).
+2026-05-19T06:40:50Z FINISHED run 1055006
+2026-05-19T06:40:51Z SESSION 2245 stopped
+2026-05-19T07:05:01Z STARTED run 1063354 (mode=hype)
+2026-05-19T07:05:03Z SESSION 2246 started
+Run 1311: DEPLOYED (Runs 1309+1310: MCP Toolbox + Unity MCP reviews) unix 1779174386 + Pinecone MCP review refreshed (67 stars +3, still v0.2.1 3.5mo without release, last code commit Mar 6, issue #53 unfixed 14wk, FTS+Nexus+Marketplace+Builder Plan launched but MCP dormant, Claude Code Plugin v1.4.0 FTS active, npm ~3K/wk declining, PulseMCP 404, rating held 3/5).

@@ -5,12 +5,12 @@ description: "Pinecone's official Developer MCP server connects AI coding agents
 og_description: "Pinecone's Developer MCP server brings cloud vector search to AI agents with 9 tools, cascading search, reranking, and documentation search. Cloud-only, integrated embedding only. Rating: 3/5."
 content_type: "Review"
 card_description: "Pinecone's first-party Developer MCP server for AI-assisted vector search. 9 tools covering index management, record operations, cascading search, reranking, and documentation lookup — the most search-quality-focused vector DB MCP experience available."
-last_refreshed: 2026-04-20
+last_refreshed: 2026-05-19
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 64 GitHub stars, 21 forks, ~106 commits, 7 contributors, v0.2.1 (Feb 5, 2026), last push Apr 16, 3 open issues, ~20 open PRs, ~3,900 npm downloads/week, PulseMCP ~68.9K all-time visitors (#444 globally, ~1.8K weekly, #534 this week).
+**At a glance:** 67 GitHub stars, 20 forks, ~126 commits, 5 contributors, v0.2.1 (Feb 5, 2026), last push May 9, 3 open issues, ~7 open PRs, ~3,000 npm downloads/week, PulseMCP data unavailable.
 
 The Pinecone MCP server is the official tool for connecting AI coding agents to Pinecone, the managed vector database that pioneered serverless vector search. Instead of writing API calls to manage indexes and query embeddings, your agent can create indexes, upsert records, search across multiple indexes simultaneously, and rerank results — all through natural language.
 
@@ -69,23 +69,23 @@ Without an API key, the server still works for `search-docs` — your agent can 
 
 Supported clients include Claude Desktop, Claude Code, Cursor, and Gemini CLI.
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
 
-**Development has stalled since March 6.** No feature commits have been merged since the March 6 batch (MCP SDK bump, Node.js 20 minimum, security fixes). The project still sits at v0.2.1, now over 10 weeks without a release. The only recent activity is **10 unmerged dependabot PRs** accumulating since March 21, including PR #77 bumping `@modelcontextprotocol/sdk` from 1.27.1 to 1.29.0 (opened April 1). None of these dependency bumps have been merged, suggesting reduced maintainer engagement.
+**Development remains stalled — 3.5 months without a release.** No code commits have landed since March 6, 2026 (MCP SDK bump, Node.js 20 minimum, security fixes). The project sits unchanged at v0.2.1. The "last push" date of May 9 is misleading — it reflects automated Dependabot dependency PRs, not maintainer activity. No Dependabot PRs have been merged: ~7 bump PRs have accumulated since March, including #77 (MCP SDK 1.27.1→1.29.0, opened April 1) and several in May. Pinecone is doing nothing with them.
 
-**npm downloads grew strongly through March, now plateauing.** Monthly downloads went from ~8.7K (January) to ~15.6K (February) to ~22.6K (March) — nearly 3x growth. April is tracking lower at ~6.3K through April 18, projecting roughly ~10.5K for the full month. The growth story may be slowing.
+**Issue #53 still open — 14+ weeks with no response.** The `upsert-records` tool's Zod `z.union()` generates `anyOf` in JSON Schema, which the Claude API rejects outright. No maintainer has commented on this issue since it was filed in February. This means 1 of 9 tools remains broken for Claude users — with no fix in sight. This is the same class of bug as the `$ref/$defs` issue affecting [PagerDuty MCP](/reviews/pagerduty-mcp-server/).
 
-**PulseMCP: ~68.9K all-time, ~1.8K weekly, #444 globally.** Up from ~49K all-time in March, but weekly traffic has softened from ~3.9K to ~1.8K. Ranking slipped from #527 to #444 overall but from #318 to #534 this week.
+**PR #73 (security metadata firewall) and PR #67 (careers tool) both still unmerged.** The community security PR adding PII guardrails to `search-records` has now sat unreviewed for 2 months. The Pinecone-employee careers tool PR has been unmerged for 2.5 months despite being authored by Pinecone staff. Zero community PRs have been merged since v0.2.1 released in February.
 
-**Claude Code Plugin unchanged.** The separate [Pinecone Plugin for Claude Code](https://github.com/pinecone-io/pinecone-claude-code-plugin) (57 stars, 9 forks) also hasn't been updated since March 6. Neither integration path is seeing active development.
+**npm downloads declining.** Weekly downloads peaked around 3,900 in late March, fell to ~1,168 the week of April 29 – May 5, then partially rebounded to ~3,035 (May 13–17). The early growth story (3x from January to March) has not continued.
 
-**Issue #53: `upsert-records` schema still breaks Claude API (February 9, still open).** The tool uses Zod's `z.union()` for record field values, which generates `anyOf` in the JSON Schema — a construct Claude's API rejects. Now open for over 10 weeks with no maintainer response. This means 1 of 9 tools simply doesn't work with Claude. This is the same class of bug as the `$ref/$defs` issue affecting [PagerDuty MCP](/reviews/pagerduty-mcp-server/) — MCP clients can't handle advanced JSON Schema features.
+**PulseMCP data unavailable** — the PulseMCP listing returns 404 as of May 2026.
 
-**PR #73: Security metadata firewall (March 20, still open).** Community PR adding `selectedMetadataKeys` to prevent PII exfiltration through search results and `confirmOverwrite` for destructive upsert guardrails. No maintainer review in a month.
+**Meanwhile, Pinecone the product is very active.** May 2026 saw a burst of major announcements: **Full Text Search** entered public preview May 7 (BM25 scoring, Lucene query syntax, 18-language tokenization, unified dense+sparse+metadata indexes); **Pinecone Nexus** ("Knowledge Engine for Agents") launched May 4; **Pinecone Marketplace** launched May 5; the **Builder Plan** ($20/month flat-rate tier, 10 indexes, 200 assistants) launched May 6 targeting developers between prototype and production; and **Dedicated Read Nodes** reached GA April 15. None of these product launches translated into MCP server updates.
 
-**PR #67: Careers tool (March 5, still open).** Pinecone staff PR adding job listings via Ashby API. Approved but not merged after 6+ weeks.
+**Claude Code Plugin diverged: v1.4.0 released May 7.** While the MCP server sits dormant, [the Pinecone Plugin for Claude Code](https://github.com/pinecone-io/pinecone-claude-code-plugin) (60 stars, 10 forks) jumped to v1.4.0 on May 7 — adding a Full Text Search skill same-day as the FTS product launch, with a v1.4.1 quick-fix the same day. Last pushed May 18. This is a diverging trajectory: Pinecone is investing in the Claude Code Plugin while letting the broader MCP server stagnate. For Claude users, the Plugin is increasingly the better-maintained path.
 
-**Community alternative archived.** The community-built [mcp-pinecone by sirmews](https://github.com/sirmews/mcp-pinecone) (149 stars, 36 forks) was archived in November 2025 and is now read-only. If the official server's limitations were driving users there, those users now have no actively maintained alternative.
+**Community alternative archived.** The community-built [mcp-pinecone by sirmews](https://github.com/sirmews/mcp-pinecone) (149 stars, 36 forks) was archived in November 2025 and is now read-only — leaving no maintained community alternative to the official server.
 
 ## What's Good
 
@@ -109,7 +109,7 @@ Supported clients include Claude Desktop, Claude Code, Cursor, and Gemini CLI.
 
 **Stdio transport for a cloud-only service.** Pinecone has no local component — everything runs in their cloud. Yet the MCP server requires local Node.js installation and stdio transport. This is an odd architectural choice. A remote MCP server at something like `mcp.pinecone.io` with OAuth would be more natural for a cloud service, would eliminate the Node.js dependency, and would match what [Neon](/reviews/neon-mcp-server/) and [Supabase](/reviews/supabase-mcp-server/) have already built.
 
-**`upsert-records` is broken on Claude (issue #53).** The tool's Zod schema generates `anyOf` in JSON Schema, which Claude's API rejects. This means 1 of 9 tools simply doesn't work with Claude Code, Claude Desktop, or any Claude API client. The issue has been open since February 9 — now over 10 weeks with no maintainer response. For a server that lists Claude as a supported client, this is a significant gap.
+**`upsert-records` is broken on Claude (issue #53).** The tool's Zod schema generates `anyOf` in JSON Schema, which Claude's API rejects. This means 1 of 9 tools simply doesn't work with Claude Code, Claude Desktop, or any Claude API client. The issue has been open since February 9 — now over 14 weeks with no maintainer response. For a server that lists Claude as a supported client, this is a significant gap.
 
 **64 GitHub stars — lowest adoption among official servers.** Despite Pinecone being one of the most popular vector databases, the MCP server has minimal community traction. For comparison: Qdrant MCP has 1,359 stars, Chroma MCP has 535. The community-built mcp-pinecone by sirmews had 149 stars but was archived in November 2025, leaving no maintained alternative. Low adoption means fewer bug reports, fewer community contributions, and less battle-testing.
 
@@ -119,7 +119,7 @@ Supported clients include Claude Desktop, Claude Code, Cursor, and Gemini CLI.
 
 | Feature | Pinecone MCP | Chroma MCP | Qdrant MCP | Milvus MCP |
 |---------|-------------|-----------|------------|------------|
-| **Stars** | 64 | 535 | 1,359 | 228 |
+| **Stars** | 67 | 535 | 1,359 | 228 |
 | **Tools** | 9 | 13 | 2 | 12 |
 | **Transport** | stdio | stdio | stdio, SSE, Streamable HTTP | stdio, SSE |
 | **Local mode** | No (cloud only) | Yes (4 modes) | Yes (embedded) | Yes (Milvus Lite) |
@@ -146,14 +146,14 @@ The fragmentation across three separate integrations (Developer MCP, Assistant M
 
 The `anyOf` schema bug (issue #53) is a microcosm of a broader problem: MCP tool schemas need to stay simple. Claude, Cursor, and other clients don't support advanced JSON Schema features like `anyOf`, `oneOf`, `$ref`, or `$defs`. Servers that use rich Zod types for validation end up generating schemas their target clients can't parse. This same class of bug affects PagerDuty, and it's going to keep recurring across the MCP ecosystem until either clients expand their schema support or the MCP spec mandates a simpler subset.
 
-At 64 stars and v0.2.1 (now 10+ weeks without a release), the Developer MCP server is still early — though ~3,900 weekly npm downloads show it's getting real usage. The community alternative (sirmews/mcp-pinecone) being archived leaves this as the only game in town for MCP-based Pinecone access. The search-quality features remain genuinely innovative — cascading search across multiple indexes is something no competitor offers. But the cloud-only requirement, the integrated-embedding-only limitation, the broken `upsert-records` on Claude, and the lack of basic operations like delete keep it from being a general-purpose vector database MCP server. It's a cloud search client, not a database management tool.
+At 67 stars and v0.2.1 (now 3.5 months without a release), the Developer MCP server is stagnating even as Pinecone's product moves fast — FTS, Nexus, Marketplace, new pricing tiers. The divergence between the Claude Code Plugin (actively maintained, FTS support added May 7) and this MCP server (dormant since March 6) raises the question of whether Pinecone is quietly deprioritizing the MCP server in favor of IDE-specific integrations. The search-quality features remain genuinely innovative — cascading search across multiple indexes is something no competitor offers. But the cloud-only requirement, the integrated-embedding-only limitation, the broken `upsert-records` on Claude, and the lack of basic operations like delete keep it from being a general-purpose vector database MCP server. It's a cloud search client, not a database management tool.
 
 ## Rating: 3/5
 
-The Pinecone Developer MCP server earns a 3/5 for offering genuinely innovative search features — cascading search, built-in reranking, and documentation search without auth — while being constrained by cloud-only operation, integrated-embedding-only support, a broken `upsert-records` tool on Claude (issue #53, now 10+ weeks unresolved), and missing basic operations like delete and update. Development has stalled since March 6, with no feature commits and 10 dependabot PRs accumulating unmerged. The search quality tools are best-in-class among vector DB MCP servers, but the operational limitations and declining maintainer engagement mean your agent can search effectively while being unable to maintain its own data. At 64 stars and v0.2.1, it's the least adopted official vector database MCP server — though ~3,900 weekly npm downloads suggest more usage than the star count implies.
+The Pinecone Developer MCP server earns a 3/5 for offering genuinely innovative search features — cascading search, built-in reranking, and documentation search without auth — while being constrained by cloud-only operation, integrated-embedding-only support, a broken `upsert-records` tool on Claude (issue #53, now 14+ weeks unresolved), and missing basic operations like delete and update. Development has stalled completely since March 6, with no feature commits, ~7 Dependabot PRs accumulating unmerged, and zero maintainer responses to community contributions in over 2 months. Meanwhile Pinecone launched FTS, Nexus, Marketplace, and a new pricing tier in May 2026 — none of which reached the MCP server, though the Claude Code Plugin got a FTS update same-day. The search quality tools remain best-in-class among vector DB MCP servers, but the growing disconnect between Pinecone's product velocity and the MCP server's stagnation is hard to ignore. At 67 stars and v0.2.1, it's the least adopted official vector database MCP server.
 
-**Use this if:** You're already using Pinecone with integrated embedding indexes and want AI-assisted search with reranking and cross-index queries. If you're a Claude Code user, also evaluate the [Pinecone Plugin for Claude Code](https://www.pinecone.io/blog/pinecone-plugin-for-claude-code/) — it offers a more polished experience for Claude specifically.
+**Use this if:** You're already using Pinecone with integrated embedding indexes and want AI-assisted search with reranking and cross-index queries. If you're a Claude Code user, prioritize the [Pinecone Plugin for Claude Code](https://github.com/pinecone-io/pinecone-claude-code-plugin) — it's more actively maintained and now includes Full Text Search support.
 
 **Skip this if:** You need local development, custom embeddings, delete/update operations, or you want full database management control — Chroma or Milvus are better choices.
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not have hands-on access to this MCP server; all claims are based on publicly available documentation, GitHub data, npm statistics, and community reports. Last updated 2026-04-20.*
+*This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic). We do not have hands-on access to this MCP server; all claims are based on publicly available documentation, GitHub data, npm statistics, and community reports. Last updated 2026-05-19.*
