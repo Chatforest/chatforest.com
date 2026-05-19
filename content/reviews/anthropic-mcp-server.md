@@ -2,19 +2,47 @@
 title: "Anthropic MCP Servers — The Company That Created the Model Context Protocol"
 date: 2026-03-23T12:00:00+09:00
 description: "Anthropic created MCP in November 2024 and maintains the reference servers, SDKs, and specification. Claude Desktop, Claude Code, and Claude.ai are the most mature MCP clients."
-og_description: "Anthropic created MCP and maintains reference servers (84.2k stars), Python/TypeScript SDKs (35k+ stars combined), and the most mature MCP client ecosystem. Claude Code Routines, Channels, Opus 4.7, 299 connectors, $30B ARR. Rating: 4.5/5."
+og_description: "Anthropic created MCP and maintains reference servers (85.9k stars), Python/TypeScript SDKs (35k+ stars combined), and the most mature MCP client ecosystem. Stainless acquisition, Agent View, Claude Code v2.1.144, 315+ connectors, June 30 spec RC. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Anthropic created the Model Context Protocol in November 2024 and donated it to the Agentic AI Foundation (Linux Foundation) in December 2025. They maintain 7 reference servers, official Python and TypeScript SDKs, and the most comprehensive MCP client support across Claude.ai (299 connectors), Claude Desktop (.mcpb extensions), Claude Code (Routines + Channels), and the API. $30B annualized revenue, $800B valuation offers, potential IPO in October 2026."
-last_refreshed: 2026-04-21
+card_description: "Anthropic created the Model Context Protocol in November 2024 and donated it to the Agentic AI Foundation (Linux Foundation) in December 2025. They maintain 7 reference servers, official Python and TypeScript SDKs, and the most comprehensive MCP client support across Claude.ai (315+ connectors), Claude Desktop (.mcpb extensions), Claude Code (Routines + Channels + Agent View), and the API. Acquired Stainless (May 2026) to strengthen SDK tooling. $30B annualized revenue, $800B valuation offers, potential IPO in October 2026."
+last_refreshed: 2026-05-19
 ---
 
-**At a glance:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) (84.2k stars, 10.5k forks, 7 active reference servers) + [Python SDK](https://github.com/modelcontextprotocol/python-sdk) (22.7k stars) + [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) (12.2k stars). Anthropic **invented MCP** in November 2024 and operates the most comprehensive MCP ecosystem: reference servers, official SDKs in 10+ languages, the protocol specification, and the most mature MCP client support across Claude.ai, Claude Desktop, Claude Code, and the API. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+**At a glance:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) (85.9k stars, 10.8k forks, 7 active reference servers) + [Python SDK](https://github.com/modelcontextprotocol/python-sdk) (22.7k stars) + [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) (12.2k stars). Anthropic **invented MCP** in November 2024 and operates the most comprehensive MCP ecosystem: reference servers, official SDKs in 10+ languages, the protocol specification, and the most mature MCP client support across Claude.ai, Claude Desktop, Claude Code, and the API. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
 
 Anthropic MCP servers provide the **reference implementations** that define how MCP servers should work — file system access, Git operations, web fetching, persistent memory, and sequential reasoning. These aren't wrappers around the Claude API (Anthropic's products ARE the MCP clients). Instead, they're the foundational tools that demonstrate what MCP can do and how to build servers correctly.
 
-[Anthropic](https://www.anthropic.com/) was founded in 2021 by **Dario Amodei** and **Daniela Amodei**, along with several former OpenAI researchers. As of April 2026: approximately **$30 billion annualized revenue** (up from $9B at end of 2025, ~1,400% YoY growth), **$380 billion valuation** (February 2026 Series G, $30B raised) with **$800 billion valuation offers** from investors in April 2026, approximately **3,000-5,000 employees** (estimates vary), and a potential **IPO in October 2026** (in talks with Goldman Sachs, JPMorgan, Morgan Stanley). Key products include Claude (**Opus 4.7** shipped April 16 2026, Sonnet 4.6, Haiku 4.5), Claude Code (with Routines and Channels), Claude Desktop, and the Messages/Responses API.
+[Anthropic](https://www.anthropic.com/) was founded in 2021 by **Dario Amodei** and **Daniela Amodei**, along with several former OpenAI researchers. As of May 2026: approximately **$30 billion annualized revenue** (up from $9B at end of 2025, ~1,400% YoY growth), **$380 billion valuation** (February 2026 Series G, $30B raised) with **$800 billion valuation offers** from investors, approximately **3,000-5,000 employees** (estimates vary), and a potential **IPO in October 2026** (in talks with Goldman Sachs, JPMorgan, Morgan Stanley). Key products include Claude (**Opus 4.7** shipped April 16 2026, Sonnet 4.6, Haiku 4.5), Claude Code (with Routines, Channels, and Agent View), Claude Desktop, and the Messages/Responses API. **Acquired Stainless** (May 18, 2026) to strengthen SDK tooling.
 
 **Architecture note:** Anthropic's MCP role is unique: they are both the **protocol creator** and the **leading MCP client**. Unlike OpenAI (primarily a client), Google (official remote servers), or Microsoft (enterprise MCP servers), Anthropic designed the entire protocol, maintains the specification, provides the SDKs, and built the most capable MCP client implementations. They donated MCP to the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Linux Foundation) in December 2025, co-founded with OpenAI and Block.
+
+## What's New (May 2026)
+
+**Stainless acquired May 18, 2026.** Anthropic acquired Stainless, a NYC-based startup (founded 2022) that automates creation and maintenance of language SDKs. Stainless was previously used by OpenAI, Google, and Cloudflare. Financial terms undisclosed. Strategic rationale: Stainless directly strengthens Anthropic's SDK tooling pipeline — including the MCP Python and TypeScript SDKs. Reported by TechCrunch.
+
+**Claude Code v2.1.144 (May 19).** The Claude Code CLI advanced from v2.1.91 to v2.1.144 across the month (~53 releases). MCP-relevant highlights: v2.1.132 (May 6) fixed unbounded memory growth (10GB+) with stdio MCP servers; v2.1.136 (May 8) added MCP server persistence fixes and OAuth refresh token handling; v2.1.117 (April 22) enabled concurrent MCP server connection on startup (default on, up to 67% faster `/resume`).
+
+**Agent View launched May 11 (Research Preview).** New `claude agents` command in Claude Code provides a centralized dashboard for all running Claude Code sessions. Sessions are accessible from the browser with shareable session URLs.
+
+**Claude for Small Business (May 13).** 15 ready-to-run agentic workflows via new MCP connectors to QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, and Microsoft 365. Available via claude.ai.
+
+**Claude for Creative Work (April 28).** Eight new MCP-powered creative connectors added: Ableton, Adobe Creative Cloud (50+ tools), Affinity by Canva, Autodesk Fusion, Blender, Resolume Arena/Wire, SketchUp, and Splice. Available via claude.ai.
+
+**Connectors Directory: 315+ verified integrations** (estimated), up from 299 at last review. Two major connector waves (Creative Work, Small Business) added ~23+ confirmed integrations.
+
+**MCP specification: June 30 RC coming.** PR #2750 filed May 19 — "Blog: 2026-06-30 specification release candidate." Headline change is a **stateless transport rework** (self-contained `tools/call` requests, simplified HTTP flow). Also in scope: MCP Apps primitive, Tasks primitive, Extensions framework (preventing future breaking changes to core), Authorization changes, Governance framework with conformance requirements. 22 SEPs in scope; 131 open issues, 107 open PRs in the spec repo.
+
+**Python SDK v1.27.1 (May 8).** Pydantic 2.13 compatibility fix, `httpx` restricted to `<1.0.0`, OAuth client metadata handling improvements.
+
+**Legacy model deprecation.** `claude-sonnet-4-20250514` and `claude-opus-4-20250514` (original Claude 4 generation) deprecated and retiring June 15, 2026. Current lineup: Opus 4.7, Sonnet 4.6, Haiku 4.5.
+
+**Claude Mythos Preview (Project Glasswing, April 7).** Invitation-only cybersecurity model that Anthropic claims "can surpass all but the most skilled humans at finding and exploiting software vulnerabilities." Has identified thousands of critical flaws in major operating systems and browsers. Partners: AWS, Apple, Cisco, Google, Microsoft. Anthropic committed $100M in usage credits to 40+ critical infrastructure organizations and $4M to open-source security organizations. Not publicly available.
+
+**Gates Foundation $200M commitment (May 14).** Four-year grant, Claude credits, and technical support across global health, education, and economic mobility.
+
+**Reference servers repo: 85,913 stars** (up from 84,200 — +1,700 stars), 10,752 forks, 4,102 commits, 279 open issues, 203 open PRs.
+
+---
 
 ## What's New (April 2026)
 
@@ -26,7 +54,7 @@ Anthropic MCP servers provide the **reference implementations** that define how 
 
 **Desktop Extensions renamed from .dxt to .mcpb (MCP Bundle).** Existing .dxt files continue working, but new extensions should use .mcpb. The `@anthropic-ai/dxt` package is moving to `@anthropic-ai/mcpb`. Same functionality — naming is more descriptive of what these packages do.
 
-**Connectors Directory grown to 299 verified integrations.** Up from the initial launch, now covering productivity (Asana, Notion, Linear, Atlassian), communication (Slack, Gmail, Microsoft 365), developer tools, databases, and more. Microsoft 365 connector uses delegated Graph permissions via an enterprise MCP server.
+**Connectors Directory grown to 315+ verified integrations.** Up from the initial launch, now covering productivity (Asana, Notion, Linear, Atlassian), communication (Slack, Gmail, Microsoft 365), developer tools, databases, creative tools (Blender, Adobe Creative Cloud, SketchUp, Autodesk Fusion), and small business tools (QuickBooks, PayPal, HubSpot, DocuSign). Microsoft 365 connector uses delegated Graph permissions via an enterprise MCP server.
 
 **MAJOR: Ox Security disclosed STDIO architecture vulnerability (April 16).** Security researchers found that MCP's STDIO transport mechanism allows arbitrary OS command execution — any command passed as a server spawn attempt executes before returning an error. Affects all MCP SDKs across Python, TypeScript, Java, and Rust. Impact: 150M+ downloads, 7,000+ public servers, up to 200,000 vulnerable instances. Ox discovered 10 CVEs across popular projects (LiteLLM, LangChain, LangFlow, Flowise, LettaAI, LangBot). **Anthropic declined to modify the protocol**, classifying the behavior as "expected" and stating sanitization is the developer's responsibility. Coverage in The Register, Hacker News, Infosecurity Magazine, and multiple security research blogs.
 
@@ -91,7 +119,7 @@ Anthropic operates the **most comprehensive MCP client ecosystem** — every Cla
 ### Claude.ai (Web + Mobile)
 
 - Add MCP servers via Settings → Connectors
-- Official **Connectors Directory** with **299 verified integrations** (Asana, Box, Figma, Linear, Slack, Microsoft 365, etc.)
+- Official **Connectors Directory** with **315+ verified integrations** (Asana, Box, Figma, Linear, Slack, Microsoft 365, Blender, Adobe CC, QuickBooks, HubSpot, etc.)
 - Supports read AND write operations
 - Available on all Claude.ai plans (Free, Pro, Team, Enterprise)
 - **MCP Apps** — interactive UI rendered inside the chat window (project boards, dashboards, canvases)
@@ -110,8 +138,9 @@ Anthropic operates the **most comprehensive MCP client ecosystem** — every Cla
 - If logged in with Claude.ai account, Connectors are automatically available
 - Supports local stdio servers and remote Streamable HTTP servers
 - MCP servers extend Claude Code's capabilities with custom tools
-- **Routines** (April 2026, Research Preview) — scheduled cloud automation with MCP connectors. Trigger via cron, API, or GitHub events
+- **Routines** (April 2026, Research Preview) — scheduled cloud automation with MCP connectors. Three trigger types: cron, HTTP POST API endpoint, or GitHub events (PR open/close, releases). Managed at `claude.ai/code/routines` or via `/schedule` CLI command
 - **Channels** (April 2026) — two-way MCP bridge to Discord, Telegram, and iMessage
+- **Agent View** (May 11, Research Preview) — `claude agents` command provides a centralized dashboard for all running sessions; shareable session URLs
 
 ### API (Messages + MCP Connector)
 
@@ -190,7 +219,7 @@ Anthropic donated MCP to the **Agentic AI Foundation (AAIF)** in December 2025:
 
 ## Known Issues
 
-1. **CRITICAL: STDIO transport architecture vulnerability (April 2026)** — Ox Security disclosed that MCP's STDIO transport allows arbitrary OS command execution across all official SDKs (Python, TypeScript, Java, Rust). Any command passed as a server spawn attempt executes before returning an error. Impact: 150M+ downloads, 7,000+ public servers, up to 200,000 vulnerable instances. Ox found 10 CVEs across LiteLLM, LangChain, LangFlow, Flowise, LettaAI, and LangBot. **Anthropic declined to patch**, classifying the behavior as "expected" and stating sanitization is the developer's responsibility. Covered by The Register, Hacker News, Infosecurity Magazine, and multiple security research blogs.
+1. **CRITICAL: STDIO transport architecture vulnerability (April 2026)** — Ox Security disclosed that MCP's STDIO transport allows arbitrary OS command execution across all official SDKs (Python, TypeScript, Java, Rust). Any command passed as a server spawn attempt executes before returning an error. Impact: 150M+ downloads, 7,000+ public servers, up to 200,000 vulnerable instances. Ox found 10 CVEs across LiteLLM, LangChain, LangFlow, Flowise, LettaAI, and LangBot. **Anthropic declined to patch**, classifying the behavior as "expected" and stating sanitization is the developer's responsibility. Covered by The Register, Hacker News, Infosecurity Magazine, and multiple security research blogs. **Update (May 2026):** SEP-2692 ("Stdio process lifetime") is now in active review in the MCP spec repo — this SEP directly addresses STDIO process management. No resolution yet. Claude Code v2.1.132 (May 6) separately fixed unbounded memory growth (10GB+) with stdio MCP servers.
 
 2. **No MCP server wrapping the Claude API** — Anthropic focuses on the client side. There is no official MCP server that lets other AI agents (GPT, Gemini) call Claude via MCP. Community implementations exist but have minimal adoption.
 
@@ -204,7 +233,7 @@ Anthropic donated MCP to the **Agentic AI Foundation (AAIF)** in December 2025:
 
 7. **SDK version fragmentation deepening** — Both Python and TypeScript SDKs have v2 pre-alpha on main branches while v1.x remains stable. TypeScript v2.0.0-alpha.2 (April 1, 2026) introduces breaking changes across error handling, task management, and schema validation. CVE-2026-0621 (ReDoS in UriTemplate) was patched in the TypeScript SDK. Developers must be careful to use the correct branch.
 
-8. **MCP specification still evolving** — Current spec is 2025-11-25. Next release targeting June 2026. MCP Dev Summit (April 2-3, NYC, 1,200 attendees) showcased new primitives: elicitation, tasks, structured outputs, and server-side agent loops. Servers built against older spec versions may need updates.
+8. **MCP specification still evolving** — Current spec is 2025-11-25. **June 30 RC confirmed** (PR #2750, May 19): stateless transport rework is the headline change, plus MCP Apps and Tasks primitives, Extensions framework, Authorization changes, and a new Governance Framework with conformance requirements. 22 SEPs in scope. Servers built against the 2025-11-25 spec may need updates when the RC ships.
 
 9. **Claude Code Routines is Research Preview** — Limits are restrictive (5/day Pro, 15 Max, 25 Team/Enterprise). Feature set may change significantly before GA.
 
@@ -216,9 +245,9 @@ Anthropic donated MCP to the **Agentic AI Foundation (AAIF)** in December 2025:
 
 **Rating: 4.5 out of 5**
 
-Anthropic doesn't just participate in the MCP ecosystem — they **created it**. The Model Context Protocol was designed, specified, and open-sourced by Anthropic in November 2024, and their commitment continues to accelerate: 84.2k stars on the reference servers repo, 35k+ combined stars on the Python and TypeScript SDKs, 10+ language SDKs, and the most comprehensive MCP client support of any AI company. In April 2026 alone: Opus 4.7 shipped, Claude Code gained Routines (scheduled cloud automation) and Channels (Discord/Telegram/iMessage bridge), Desktop Extensions were renamed to .mcpb bundles, and the Connectors Directory grew to 299 verified integrations.
+Anthropic doesn't just participate in the MCP ecosystem — they **created it**. The Model Context Protocol was designed, specified, and open-sourced by Anthropic in November 2024, and their commitment continues to accelerate: 85.9k stars on the reference servers repo, 35k+ combined stars on the Python and TypeScript SDKs, 10+ language SDKs, and the most comprehensive MCP client support of any AI company. Since April 2026: Opus 4.7 shipped, Claude Code gained Routines (scheduled cloud automation), Channels (Discord/Telegram/iMessage bridge), and Agent View (centralized agent dashboard), the Connectors Directory grew to 315+ verified integrations across creative and small business categories, and Anthropic acquired Stainless (May 18) to strengthen SDK tooling.
 
-On the **client side**, Anthropic is unmatched. Claude.ai Connectors (299 integrations), Claude Desktop with one-click MCP Bundles, Claude Code with Routines and Channels, the MCP Connector API, and MCP Apps (interactive UI in chat) represent the deepest MCP integration of any AI platform. Every Claude product speaks MCP natively.
+On the **client side**, Anthropic is unmatched. Claude.ai Connectors (315+ integrations), Claude Desktop with one-click MCP Bundles, Claude Code with Routines, Channels, and Agent View, the MCP Connector API, and MCP Apps (interactive UI in chat) represent the deepest MCP integration of any AI platform. Every Claude product speaks MCP natively.
 
 On the **server side**, the 7 active reference servers (Filesystem, Git, Fetch, Memory, Sequential Thinking, Time, Everything) are well-designed demonstrations of MCP capabilities, not production tools. The 14 archived servers have been superseded by independent maintainers and official implementations.
 
@@ -238,7 +267,7 @@ The 4.5/5 rating reflects Anthropic's unrivaled position as MCP's creator and mo
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Anthropic announcements. Information is current as of April 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Anthropic announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
 
 ## Related Guides
 
