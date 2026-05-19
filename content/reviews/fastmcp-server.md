@@ -1,18 +1,18 @@
 ---
 title: "FastMCP — The Python Framework Powering 70% of MCP Servers"
 date: 2026-04-20T23:30:00+09:00
-description: "FastMCP is the dominant Python framework for building MCP servers and clients. 24.7K GitHub stars, 27M+ PyPI downloads per week, decorator-based API, proxy servers, OpenAPI providers, and OAuth support. Created by Prefect's CEO."
-og_description: "FastMCP: 24.7K stars, 27M+ weekly PyPI downloads, powers 70% of MCP servers. Build MCP tools with @mcp.tool() decorators. Two CVEs patched. Rating: 4.5/5."
+description: "FastMCP is the dominant Python framework for building MCP servers and clients. 25.2K GitHub stars, 15.9M+ PyPI downloads per week, decorator-based API, proxy servers, OpenAPI providers, and OAuth support. Created by Prefect's CEO."
+og_description: "FastMCP: 25.2K stars, 15.9M+ weekly PyPI downloads, powers 70% of MCP servers. Build MCP tools with @mcp.tool() decorators. v3.3.1 with fastmcp-slim, OTEL, OAuth hardening. Rating: 4.5/5."
 content_type: "Review"
-card_description: "FastMCP is the most widely adopted framework for building MCP servers in Python. Created by Jeremiah Lowin (Prefect CEO), it provides a decorator-based API that reduces MCP server boilerplate by ~70%. Supports tools, resources, prompts, proxy servers, OpenAPI providers, and OAuth. Now at v3.2.4 with provider architecture, code mode, and granular authorization."
-last_refreshed: 2026-04-20
+card_description: "FastMCP is the most widely adopted framework for building MCP servers in Python. Created by Jeremiah Lowin (Prefect CEO), it provides a decorator-based API that reduces MCP server boilerplate by ~70%. Supports tools, resources, prompts, proxy servers, OpenAPI providers, and OAuth. Now at v3.3.1 with fastmcp-slim split, OTEL compliance, and OAuth proxy hardening."
+last_refreshed: 2026-05-19
 ---
 
 Part of our **[Agent Orchestration MCP category](/categories/agent-orchestration/)**.
 
-*At a glance: 24,700 GitHub stars, 1,900 forks, 208+ contributors, Apache-2.0 license, Python 3.10+, v3.2.4 (April 14, 2026). PyPI ~27M downloads/week (~74.6M/month). Created by Jeremiah Lowin (Prefect founder/CEO). Powers an estimated 70% of MCP servers across all languages. Originally created days after the MCP spec was announced. FastMCP Python ranks #6 on best-of-mcp-servers vs official Python SDK at #262.*
+*At a glance: 25,200 GitHub stars, 2,000 forks, Apache-2.0 license, Python 3.10+, v3.3.1 (May 15, 2026). PyPI ~15.9M downloads/week (~65M/month). Created by Jeremiah Lowin (Prefect founder/CEO). Powers an estimated 70% of MCP servers across all languages. Originally created days after the MCP spec was announced. FastMCP Python ranks #6 on best-of-mcp-servers vs official Python SDK at #262. 100th release shipped in May 2026.*
 
-FastMCP isn't an MCP server — it's the framework most MCP servers are built with. When the Model Context Protocol specification was released in late 2024, Jeremiah Lowin (founder and CEO of [Prefect](https://www.prefect.io/), the workflow orchestration platform) built FastMCP within days. The project was quickly incorporated into the official MCP Python SDK, and today some version of FastMCP powers roughly 70% of all MCP servers across all languages. It's downloaded over 27 million times per week from PyPI — making it one of the most downloaded AI infrastructure packages in the Python ecosystem.
+FastMCP isn't an MCP server — it's the framework most MCP servers are built with. When the Model Context Protocol specification was released in late 2024, Jeremiah Lowin (founder and CEO of [Prefect](https://www.prefect.io/), the workflow orchestration platform) built FastMCP within days. The project was quickly incorporated into the official MCP Python SDK, and today some version of FastMCP powers roughly 70% of all MCP servers across all languages. It's downloaded roughly 16 million times per week from PyPI — making it one of the most downloaded AI infrastructure packages in the Python ecosystem.
 
 The pitch is simple: building MCP servers with the raw SDK requires extensive boilerplate — JSON schemas, handler registration, transport configuration. FastMCP replaces all of that with Python decorators. You write `@mcp.tool()` on a function, and FastMCP infers the JSON schema from type hints, registers the handler, and manages the transport. This reduces setup code by roughly 70% compared to the raw SDK.
 
@@ -95,7 +95,7 @@ For optional extras: `pip install fastmcp[openai,anthropic,azure,code-mode,apps,
 
 **Developer experience** — FastMCP's decorator API is genuinely excellent. If you've used FastAPI, you already know how to use FastMCP. Type hints become JSON schemas, docstrings become tool descriptions. The mental model is immediately familiar to Python developers.
 
-**Ecosystem dominance** — 27M+ weekly downloads, 208+ contributors, 84% issue close rate. This isn't a side project — it's infrastructure. When something breaks, it gets fixed. The project has shipped 30+ releases in 2026 alone, maintaining a rapid release cadence.
+**Ecosystem dominance** — ~16M weekly PyPI downloads, 100th release shipped May 2026, 84%+ issue close rate. This isn't a side project — it's infrastructure. The project hit its 100th total release this month, with a sustained cadence that briefly paused for v3.3.0's development sprint before shipping three versions in four days (v3.3.0b1 through v3.3.1, May 11–15).
 
 **Provider architecture** — The v3.0 provider system is a genuine architectural innovation. OpenAPIProvider alone is transformative — point it at any REST API's OpenAPI spec and get MCP tools automatically. ProxyProvider enables protocol bridging between stdio, SSE, and Streamable HTTP.
 
@@ -103,15 +103,21 @@ For optional extras: `pip install fastmcp[openai,anthropic,azure,code-mode,apps,
 
 **Transport flexibility** — Supports stdio, SSE, and Streamable HTTP out of the box. Convert between them with ProxyProvider.
 
+**fastmcp-slim (v3.3.0)** — A new lightweight PyPI distribution strips out Starlette and Uvicorn for use in CI environments, agents, or libraries that only need client-side functionality. `pip install fastmcp-slim[client]` — same `from fastmcp import Client` API, far smaller footprint. This is an architecturally thoughtful move that avoids forcing heavy server dependencies on client-only users.
+
+**OTEL and observability** — v3.3.0 added full MCP semantic convention compliance. List operations and proxy delegate spans are now instrumented, making FastMCP servers first-class citizens in OpenTelemetry-based observability stacks.
+
 **Active leadership** — Jeremiah Lowin is publicly visible, doing podcast interviews and maintaining the project alongside Prefect. The project has a clear roadmap and responsive maintainership.
 
 ## What's Not
 
-**CVE-2026-32871: SSRF & Path Traversal in OpenAPIProvider** — The `_build_url()` method didn't URL-encode path parameters, allowing directory traversal to arbitrary backend endpoints. Patched in v3.2.0. CVSS scored as critical (AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H). Anyone using OpenAPIProvider with user-controlled path parameters before v3.2.0 was vulnerable.
+**SSRF & Path Traversal in OpenAPIProvider (patched v3.2.0)** — The `_build_url()` method didn't URL-encode path parameters, allowing directory traversal to arbitrary backend endpoints. Patched in v3.2.0 (released March 2026). Anyone using OpenAPIProvider with user-controlled path parameters before v3.2.0 was vulnerable. Upgrade if you haven't.
 
-**CVE-2025-69872: Unsafe Pickle Deserialization** — FastMCP depends on `py-key-value-aio[disk]` which pulls in `diskcache` 5.6.3, a version with known unsafe pickle deserialization (CVE-2025-69872). If an attacker can write to the cache directory, they can execute arbitrary code. [Issue #3166](https://github.com/PrefectHQ/fastmcp/issues/3166) tracks making diskcache optional or switching serialization.
+**DNS Rebinding Protection Gap (issue #3643, open)** — FastMCP's HTTP server lacks DNS rebinding protection, allowing attacker-controlled DNS to redirect requests through a victim's running server. Issue opened March 27, 2026 and still open as of mid-May. Mitigated in practice by binding to localhost (the default), but worth noting for deployments that expose FastMCP on accessible network interfaces.
 
-**Complexity growth** — FastMCP started as an elegant, minimal abstraction. With v3.0's providers, transforms, code mode, agents, and multiple auth strategies, the surface area has expanded significantly. The documentation is good but the learning curve is steeper than it was.
+**Code Mode sandbox limits (PR #4170, pending)** — A pending PR adds default sandbox resource limits and per-execution tool-call caps to Code Mode. Without it, a crafted prompt can cause runaway code execution within the sandbox. The fix is in review but not yet merged.
+
+**Complexity growth** — FastMCP started as an elegant, minimal abstraction. With v3.0's providers, transforms, code mode, agents, and multiple auth strategies, the surface area has expanded significantly. The documentation is good but the learning curve is steeper than it was — and the docs site changelog is conspicuously out of date (last entry: v3.1.1, March 14), so users tracking v3.2.x and v3.3.x changes need to read GitHub release notes directly.
 
 **Not a server itself** — FastMCP is a framework, not a ready-to-use MCP server. You still need to write the actual tool implementations. This is by design, but worth noting for users looking for plug-and-play solutions.
 
@@ -146,7 +152,9 @@ FastMCP is stewarded by PrefectHQ but accepts community contributions (208+ cont
 
 FastMCP is the most important project in the MCP ecosystem that isn't the spec itself. It's the de facto standard for building MCP servers in Python, with adoption numbers that dwarf every other framework and most individual servers. The decorator-based API is a genuinely good abstraction, the v3.0 provider architecture enables powerful composition patterns, and the project is actively maintained with a clear roadmap.
 
-The two CVEs are concerning but both are patched — the SSRF in OpenAPIProvider was particularly serious. The growing complexity is a natural consequence of the project's scope expanding from "simple decorator wrapper" to "full MCP application framework." As long as the core `@mcp.tool()` experience stays clean, this is a healthy evolution.
+v3.3.0 "Slim Reaper" (May 15, 2026) adds two particularly useful things: the `fastmcp-slim` package that removes the Starlette/Uvicorn dependency for client-only use, and full OTEL semantic convention compliance that makes FastMCP servers observable without custom instrumentation. The open DNS rebinding issue and pending Code Mode sandbox limits are worth watching, but neither is a blocker for typical deployments.
+
+The growing complexity is a natural consequence of the project's scope expanding from "simple decorator wrapper" to "full MCP application framework." As long as the core `@mcp.tool()` experience stays clean — and it does — this is a healthy evolution.
 
 If you're building MCP servers in Python, you should be using FastMCP unless you have a specific reason not to.
 
