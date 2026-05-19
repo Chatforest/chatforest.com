@@ -1,11 +1,11 @@
 # WhatsApp MCP Server — AI Agents Meet Your Private Messages
 
-> WhatsApp MCP server by Luke Harries lets AI agents read, search, and send WhatsApp messages through your personal account. 5,500 GitHub stars, 1.1M PulseMCP visitors, MIT license — but it became the poster child for MCP prompt injection attacks.
+> WhatsApp MCP server by Luke Harries lets AI agents read, search, and send WhatsApp messages through your personal account. 5,658 GitHub stars, MIT license — the prompt injection poster child, now with a path traversal vulnerability and a broken main branch.
 
 
 Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
-*At a glance: 5,500 GitHub stars, 991 forks, MIT license, Go (51.2%) + Python (48.8%), only release v0.0.1 (April 6, 2025). Created by Luke Harries (Head of Growth at ElevenLabs). PulseMCP: ~1.1M all-time visitors, ~21.1K weekly, #56 globally. 73 open issues, 81 open PRs.*
+*At a glance: 5,658 GitHub stars, 1,048 forks, MIT license, Go (51.2%) + Python (48.8%), only release v0.0.1 (April 6, 2025). Created by Luke Harries (Head of Growth at ElevenLabs). PulseMCP: ~1.1M all-time visitors, ~20,600 weekly, #56 globally. 78 open issues, 99 open PRs. Last commit: July 13, 2025 (README only). Main branch currently broken for many users.*
 
 WhatsApp MCP bridges AI agents directly to your personal WhatsApp account. You authenticate via QR code (same as WhatsApp Web), and the server gives Claude, Cursor, or other MCP clients the ability to search your messages, read conversations, look up contacts, and send messages — including images, videos, documents, and voice notes.
 
@@ -37,7 +37,7 @@ The MCP server exposes tools for:
 
 **Luke Harries** — Head of Growth at ElevenLabs, the AI voice company valued at $6.6B. Previously interim Head of Product at PostHog, before that at Microsoft Research working on reinforcement learning. Cambridge-educated (pre-med). Also co-founded Fella, a men's health startup that pivoted through AI browser automation, COVID testing, digital CBT, and GLP-1 weight loss medication.
 
-WhatsApp MCP appears to be a side project that caught fire — it has 5.5K stars but only 27 commits and a single release (v0.0.1). Harries built it, it went viral, and the community has been submitting PRs ever since (81 open PRs vs. 27 commits tells the story). He's been vocal about it on LinkedIn and Twitter, and featured it in a [Lenny's Newsletter piece](https://www.lennysnewsletter.com/p/the-ai-marketing-stack) about ElevenLabs' AI playbook that saved the company $140K.
+WhatsApp MCP appears to be a side project that caught fire — it has 5.7K stars but only 27 commits and a single release (v0.0.1, April 6, 2025). Harries built it, it went viral, and the community has been submitting PRs ever since (99 open PRs vs. 27 commits tells the story). He's been vocal about it on LinkedIn and Twitter, and featured it in a [Lenny's Newsletter piece](https://www.lennysnewsletter.com/p/the-ai-marketing-stack) about ElevenLabs' AI playbook that saved the company $140K. His last commit was a README update on July 13, 2025 — adding the prompt injection warning. He has made no public statements about the project's maintenance status or the growing security backlog.
 
 ## Setup
 
@@ -58,7 +58,7 @@ Optional: install FFmpeg for voice message support.
 
 **Local-only data storage.** Messages are stored in a local SQLite database, not shipped to a cloud service. You control the data. Messages only reach the LLM when you (or your agent) invoke a tool.
 
-**Strong adoption signals.** 5.5K stars, 991 forks, ~1.1M all-time PulseMCP visitors, and ~21.1K weekly visitors make this one of the most popular MCP servers in any category. #56 globally on PulseMCP.
+**Strong adoption signals.** 5.7K stars, 1,048 forks, ~1.1M all-time PulseMCP visitors, and ~20,600 weekly visitors make this one of the most popular MCP servers in any category. #56 globally on PulseMCP.
 
 **MIT license.** Fully open source, no restrictions, no paid tiers.
 
@@ -74,9 +74,15 @@ Optional: install FFmpeg for voice message support.
 
 Docker published a follow-up [horror story blog post](https://www.docker.com/blog/mcp-horror-stories-whatsapp-data-exfiltration-issue/) about this exact scenario. The README itself warns: *"the WhatsApp MCP is subject to the lethal trifecta... project injection could lead to private data exfiltration."* Credit to Harries for the transparency, but the vulnerability is structural and unfixed.
 
-**Only 27 commits and v0.0.1.** Despite 5.5K stars and massive community interest, the repo has just 27 commits on main and only one release. 81 open PRs suggest substantial community contributions are sitting unmerged. 73 open issues remain unaddressed. The project feels more like a viral proof-of-concept than an actively maintained tool.
+**The main branch is currently broken.** WhatsApp changed its protocol; the whatsmeow library that powers this project updated its `context.Context` API accordingly. At least five community PRs (filed May 12–18, 2026) fix the incompatibility. None have been merged. For new users trying to install and run the project, it will fail. The fix exists — it's just sitting in the PR queue.
 
-**No security policy.** No SECURITY.md, no responsible disclosure process, no CVE tracking. For a tool that accesses your entire private message history, this is a notable gap.
+**Path traversal vulnerability (CWE-22) — unaddressed.** Issue #241 (filed May 10, 2026) documents that the `sendWhatsAppMessage` function passes a `media_path` parameter directly to `os.ReadFile()` with no path sanitization. The proof-of-concept shows that posting `"media_path": "../../../etc/passwd"` reads arbitrary files from the host system. No maintainer response. No fix. No CVE assigned.
+
+**MCPSafe Grade D.** An automated security scan (Issues #246–247, filed May 12, 2026) gave the project an AIVSS score of 67/100 — Grade D — with 13 high-severity and 12 medium-severity findings. The scanner flagged it as having the highest count of high-severity findings across scanned repos. No maintainer response.
+
+**27 commits, v0.0.1 — over a year with no release.** Despite 5.7K stars and massive community interest, the repo has just 27 commits on main and only one release. 99 open PRs (up from 81 in April) suggest substantial community contributions piling up unmerged. 78 open issues remain unaddressed. The project feels more like a viral proof-of-concept that exceeded its maintenance capacity.
+
+**No security policy.** No SECURITY.md, no responsible disclosure process, no CVE tracking. For a tool that accesses your entire private message history and has an open path traversal vulnerability, this is a critical gap.
 
 **WhatsApp ToS gray area.** WhatsApp's Terms of Service prohibit automated or bulk messaging and unofficial API access. The whatsmeow library (which this project uses) reverse-engineers the WhatsApp Web protocol. Meta could ban your account — and there's no recourse if they do.
 
@@ -84,9 +90,9 @@ Docker published a follow-up [horror story blog post](https://www.docker.com/blo
 
 ## Competitors
 
-- **[whatsapp-mcp-extended](https://github.com/FelixIsaac/whatsapp-mcp-extended)** — Fork with 41 tools adding reactions, group management, polls, presence tracking, newsletters, and webhooks. Much more feature-rich but tiny community (~10 stars).
+- **[whatsapp-mcp-extended](https://github.com/FelixIsaac/whatsapp-mcp-extended)** — Fork with 41 tools adding reactions, group management, polls, presence tracking, newsletters, HMAC-SHA256 webhook security, and a web UI. Much more feature-rich; 15 stars and growing (~137 commits, actively maintained since December 2025).
 
-- **[verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp)** — Alternative WhatsApp MCP implementation focused on reading and sending messages. Smaller scope and community.
+- **[verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp)** — Explicitly positioned as the actively maintained alternative since the original "hasn't been updated since April 2025." Adds webhook forwarding, call history, and expanded media support. 56 stars, 37 forks, 108 commits. The most serious fork challenger today.
 
 - **[msaelices/whatsapp-mcp-server](https://github.com/msaelices/whatsapp-mcp-server)** — Python implementation using the WhatsApp Business API via GreenAPI (a commercial service). Officially supported API, but requires a paid GreenAPI subscription and a WhatsApp Business account.
 
@@ -98,15 +104,21 @@ Docker published a follow-up [horror story blog post](https://www.docker.com/blo
 
 WhatsApp MCP perfectly illustrates the tension at the heart of the MCP ecosystem: the most *useful* MCP servers are often the most *dangerous*. Accessing your personal messages is genuinely valuable. It's also genuinely risky when any MCP server in your stack — or any message in your inbox — can hijack the agent's behavior.
 
-The project's own README warns about this. Invariant Labs used it as their primary case study. Docker wrote a blog post about it. And yet it has 5.5K stars and growing, because the use case is compelling.
+The project's own README warns about this. Invariant Labs used it as their primary case study. Docker wrote a blog post about it. And yet it has 5.7K stars and growing, because the use case is compelling.
 
 If you use this: don't run it alongside untrusted MCP servers, be cautious about processing messages from unknown contacts, and understand that there is no permission boundary between the agent and your entire WhatsApp history.
 
-## Rating: 3/5
+One policy footnote: in January 2026, Meta banned general-purpose AI chatbots from the WhatsApp Business API, primarily affecting official business integrations. Unofficial API users (including this project, which uses whatsmeow) were already ToS-violating; this change doesn't add new risk for them specifically, but it does further narrow the space of compliant alternatives.
 
-WhatsApp MCP is a well-conceived tool that solves a real problem — AI agents that can interact with your most-used messaging platform. The local-only architecture is a sound privacy decision, the media support is thoughtful, and the adoption numbers speak for themselves. Luke Harries deserves credit for both building it and being transparent about its risks.
+## Rating: 2/5
 
-But 27 commits, one pre-release version, 81 unmerged PRs, no security policy, and the distinction of being the MCP ecosystem's most famous prompt injection case study — these are hard to overlook. The "lethal trifecta" isn't a theoretical concern; it's been publicly demonstrated with working exploits. The project reads as a viral side project that outgrew its maintenance capacity.
+WhatsApp MCP remains a well-conceived tool for a real use case, and the local-only architecture and media support are still design strengths. But a lot has changed since it first went viral.
 
-Three stars: strong concept, real adoption, genuine utility, but treat it as experimental software with serious security implications for your private communications.
+The main branch doesn't build for many users right now — a whatsmeow API change broke it, five community PRs fix it, and none have been merged. A path traversal vulnerability (CWE-22) that lets anyone read arbitrary files from your system has been sitting open since May 10 with zero maintainer response. A formal security scan gave the project a Grade D with 13 high-severity findings. Open PRs climbed from 81 to 99. No commits since July 2025. Still on v0.0.1, more than a year after release.
+
+The "lethal trifecta" prompt injection risk that defined this project's reputation hasn't been addressed — it's structural and still live. Now add an active path traversal vulnerability on top.
+
+Luke Harries built something real, and the community clearly wants it to succeed — 99 open PRs from contributors who did the work. But the project is effectively unmaintained at this point. If you need WhatsApp MCP today, consider **verygoodplugins/whatsapp-mcp** (56 stars, actively maintained, compatible with the current whatsmeow API) or **FelixIsaac/whatsapp-mcp-extended** (15 stars, feature-complete, HMAC webhook security).
+
+Two stars: strong original concept, genuine community need, but currently broken to install, has an open path traversal vulnerability, and shows no signs of active maintenance.
 
