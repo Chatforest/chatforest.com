@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MCP Toolbox for Databases — Google&#39;s Open-Source Database Gateway for AI Agents — ChatForest</title>
-  <meta name="description" content="Google&#39;s MCP Toolbox for Databases connects AI agents to 40&#43; data sources with prebuilt tools, YAML-based configuration, OAuth 2.1 auth, and OpenTelemetry observability. 14.7K GitHub stars.">
+  <meta name="description" content="Google&#39;s MCP Toolbox for Databases connects AI agents to 50&#43; data sources with prebuilt tools, YAML-based configuration, OAuth 2.1 auth, and OpenTelemetry observability. 15.3K GitHub stars.">
   <meta property="og:title" content="MCP Toolbox for Databases — Google&#39;s Open-Source Database Gateway for AI Agents — ChatForest">
-  <meta property="og:description" content="Google&#39;s MCP Toolbox for Databases: open-source MCP server for 40&#43; databases. 14.7K stars, v1.1.0, prebuilt tools, OAuth 2.1, row-level security, OpenTelemetry. Rating: 4.5/5.">
+  <meta property="og:description" content="Google&#39;s MCP Toolbox for Databases: open-source MCP server for 50&#43; databases. 15.3K stars, v1.2.0, prebuilt tools, OAuth 2.1, row-level security, OpenTelemetry. Rating: 4.5/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/mcp-toolbox-databases/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MCP Toolbox for Databases — Google&#39;s Open-Source Database Gateway for AI Agents — ChatForest">
-  <meta name="twitter:description" content="Google&#39;s MCP Toolbox for Databases: open-source MCP server for 40&#43; databases. 14.7K stars, v1.1.0, prebuilt tools, OAuth 2.1, row-level security, OpenTelemetry. Rating: 4.5/5.">
+  <meta name="twitter:description" content="Google&#39;s MCP Toolbox for Databases: open-source MCP server for 50&#43; databases. 15.3K stars, v1.2.0, prebuilt tools, OAuth 2.1, row-level security, OpenTelemetry. Rating: 4.5/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/mcp-toolbox-databases/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published Apr 20, 2026 · Updated Apr 20, 2026</span>
+        <span>Published Apr 20, 2026 · Updated May 19, 2026</span>
       </div>
 
       <h1 class="article-title">MCP Toolbox for Databases — Google&#39;s Open-Source Database Gateway for AI Agents</h1>
@@ -66,8 +66,8 @@
 
       <div class="article-body">
         <p>Part of our <strong><a href="/categories/databases/">Database MCP category</a></strong>.</p>
-<p><em>At a glance: 14,700 GitHub stars, 1,500 forks, ~1,795 commits, last commit April 2026, v1.1.0 (April 13, 2026), 40+ supported data sources, Apache-2.0 license, Go, PulseMCP ~2.9M all-time visitors (#17 globally, ~53.6K weekly). Built by Google Cloud. SDKs for Python, JavaScript/TypeScript, Go, and Java.</em></p>
-<p>MCP Toolbox for Databases (formerly Gen AI Toolbox for Databases) is Google&rsquo;s answer to the fragmented landscape of database MCP servers. Instead of running separate servers for each database — one for <a href="/reviews/postgres-mcp-server/">Postgres</a>, another for <a href="/categories/databases/">MySQL</a>, another for <a href="/categories/databases/">BigQuery</a> — Toolbox provides a single gateway that connects AI agents to 40+ data sources through a unified interface.</p>
+<p><em>At a glance: 15,300 GitHub stars, 1,500 forks, last commit May 2026, v1.2.0 (May 7, 2026), 50+ supported data sources, Apache-2.0 license, Go, PulseMCP ~3.3M all-time visitors (#20 globally, ~31.7K weekly). Built by Google Cloud. SDKs for Python, JavaScript/TypeScript, Go, and Java. Repo renamed from <code>mcp-toolbox-for-databases</code> to <code>mcp-toolbox</code> (May 2026).</em></p>
+<p>MCP Toolbox for Databases (formerly Gen AI Toolbox for Databases; repo now at <code>googleapis/mcp-toolbox</code>) is Google&rsquo;s answer to the fragmented landscape of database MCP servers. Instead of running separate servers for each database — one for <a href="/reviews/postgres-mcp-server/">Postgres</a>, another for <a href="/categories/databases/">MySQL</a>, another for <a href="/categories/databases/">BigQuery</a> — Toolbox provides a single gateway that connects AI agents to 40+ data sources through a unified interface.</p>
 <p>Where most database MCP servers give agents raw SQL access and hope for the best, Toolbox takes a &ldquo;contract-first&rdquo; approach: you define exactly which operations agents can perform in a YAML configuration file. This makes it the most security-conscious database MCP server we&rsquo;ve reviewed.</p>
 <h2 id="what-it-does">What It Does</h2>
 <p>Toolbox operates in two modes:</p>
@@ -102,22 +102,25 @@
 <p><strong>Google Cloud:</strong></p>
 <ul>
 <li>AlloyDB for PostgreSQL (including AlloyDB Omni)</li>
-<li>BigQuery (with semantic search)</li>
+<li>BigQuery (with semantic search and cost controls via <code>maximumBytesBilled</code>)</li>
 <li>Cloud SQL for PostgreSQL, MySQL, SQL Server</li>
 <li>Spanner (with graph query support)</li>
 <li>Firestore</li>
-<li>Knowledge Catalog (Dataplex)</li>
+<li>Knowledge Catalog (Dataplex) — including Data Quality Scans</li>
+<li><strong>Cloud Storage</strong> (added v1.2.0 — list, read, write, copy, move, delete objects)</li>
+<li>Cloud Healthcare, Cloud Monitoring, Cloud Logging Admin, Dataproc, Gemini Data Analytics, Serverless for Apache Spark</li>
 </ul>
 <p><strong>Self-Managed / Third-Party:</strong></p>
 <ul>
-<li>PostgreSQL, MySQL, SQL Server, Oracle</li>
+<li>PostgreSQL, MySQL, SQL Server, Oracle, MariaDB</li>
 <li>MongoDB, Redis, Elasticsearch</li>
-<li>CockroachDB, ClickHouse, Couchbase</li>
+<li>CockroachDB, ClickHouse, Couchbase, YugabyteDB, SingleStore, TiDB, OceanBase</li>
 <li>Neo4j, Dgraph (graph databases)</li>
 <li>Snowflake, Trino</li>
+<li>Looker, MindsDB, Cassandra, Bigtable</li>
 <li>Any HTTP endpoint (generic connector)</li>
 </ul>
-<p>The third-party database support comes from community contributions — Neo4j and Dgraph integrations, for example, were contributed by their respective communities. This is where the Apache-2.0 license and Google&rsquo;s open-source stewardship pay off.</p>
+<p>The count has grown from 40+ to <strong>50+</strong> data sources since v1.0. The third-party database support continues to come from community contributions — Neo4j and Dgraph integrations, for example, were contributed by their respective communities. This is where the Apache-2.0 license and Google&rsquo;s open-source stewardship pay off.</p>
 <h2 id="security-model">Security Model</h2>
 <p>This is where Toolbox genuinely differentiates itself from every other database MCP server we&rsquo;ve reviewed:</p>
 <p><strong>OAuth 2.1 Resource Server</strong> — Toolbox implements the latest MCP authorization spec as a compliant OAuth 2.1 resource server. It handles automated discovery, token validation, and scope enforcement without agents touching credentials directly.</p>
@@ -130,7 +133,7 @@
 <h2 id="setup">Setup</h2>
 <p><strong>Local (quickstart):</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Download the binary (Linux example)</span>
-curl -O https://storage.googleapis.com/genai-toolbox/v1.1.0/linux/amd64/toolbox
+curl -O https://storage.googleapis.com/genai-toolbox/v1.2.0/linux/amd64/toolbox
 chmod +x toolbox
 
 <span style="color:#75715e"># Run with prebuilt tools for PostgreSQL</span>
@@ -155,34 +158,35 @@ chmod +x toolbox
 <h2 id="sdk-support">SDK Support</h2>
 <p>Toolbox provides production-ready SDKs beyond the MCP interface:</p>
 <ul>
-<li><strong>Python SDK</strong> (<code>googleapis/mcp-toolbox-sdk-python</code>) — for LangChain, LlamaIndex, and ADK integration</li>
+<li><strong>Python SDK</strong> (<code>googleapis/mcp-toolbox-sdk-python</code>) — for LangChain, LlamaIndex, ADK, and Genkit integration. <code>toolbox-core</code> on PyPI: ~55,900/week downloads, 1.09M all-time</li>
 <li><strong>JavaScript/TypeScript SDK</strong> (<code>googleapis/mcp-toolbox-sdk-js</code>)</li>
 <li><strong>Go SDK</strong></li>
-<li><strong>Java SDK</strong> — announced April 2026, for Spring AI and enterprise Java stacks</li>
+<li><strong>Java SDK</strong> (<code>googleapis/mcp-toolbox-sdk-java</code>) — released May 18, 2026, for Spring AI and enterprise Java stacks</li>
 </ul>
 <p>These SDKs let you use Toolbox tools directly in your agent framework without going through MCP, which can be useful when MCP transport overhead isn&rsquo;t worth it.</p>
 <h2 id="release-velocity">Release Velocity</h2>
 <p>The project has shipped aggressively in 2026:</p>
 <ul>
+<li><strong>v1.2.0</strong> (May 7) — HTTPS/TLS listener support, Cloud Storage source (full object management), BigQuery <code>maximumBytesBilled</code> cost control, Knowledge Catalog &ldquo;Search Data Quality Scans&rdquo; tool, SSE wildcard origin hardening, PostgreSQL URL encoding fix</li>
 <li><strong>v1.1.0</strong> (April 13) — vector assist tools for Cloud SQL Postgres</li>
 <li><strong>v1.0.0</strong> (April 10) — first stable release, breaking changes in Elasticsearch/Looker tools, BigQuery semantic search, MySQL statistics tools</li>
 <li><strong>v0.32.0</strong> (April 8) — MCP tool annotations, conversational analytics, Claude Code support</li>
 <li><strong>v0.31.0</strong> (March 26) — <code>/mcp</code> endpoint, generic auth service, Protected Resource Metadata</li>
-<li><strong>v0.30.0</strong> (March 20) — Oracle DB integration, Looker git_branch tools</li>
 </ul>
-<p>Five releases in 25 days around the v1.0 milestone. That&rsquo;s Google Cloud team-level investment, not a side project.</p>
+<p>Six releases in under two months. That&rsquo;s Google Cloud team-level investment, not a side project.</p>
 <h2 id="googles-broader-mcp-strategy">Google&rsquo;s Broader MCP Strategy</h2>
 <p>Toolbox sits within a larger Google MCP ecosystem:</p>
 <ul>
-<li><strong>Managed MCP Servers</strong> — Google Cloud now offers hosted MCP servers for AlloyDB, Spanner, Cloud SQL, Firestore, and Bigtable with no infrastructure to deploy. These use the same Toolbox technology but run fully managed.</li>
+<li><strong>Managed MCP Servers (GA — May 18, 2026)</strong> — Google Cloud announced generally available, fully managed remote MCP servers for AlloyDB, Bigtable, Cloud SQL, Firestore, and Spanner — with Memorystore, Database Migration Service, Datastream, Database Center, and Oracle AI Database@Google Cloud in preview. No infrastructure to deploy; Google handles everything. These complement (not replace) the open-source Toolbox.</li>
 <li><strong>google/mcp</strong> — Google&rsquo;s umbrella repository for all official MCP servers (30+ Cloud services)</li>
 <li><strong>googleapis/gcloud-mcp</strong> — separate MCP server for <code>gcloud</code> CLI operations</li>
 <li><strong>Gemini CLI integration</strong> — Toolbox is a first-class extension for Gemini CLI</li>
+<li><strong>Google ADK integration</strong> — Toolbox tools work natively with Google&rsquo;s Agent Development Kit</li>
 </ul>
-<p>This means Toolbox is backed by Google&rsquo;s strategic commitment to MCP, not just one engineer&rsquo;s weekend project. The managed MCP servers in particular signal that Google sees this as core infrastructure.</p>
+<p>The May 18 managed MCP server GA — announced at Google Cloud Next &lsquo;26 alongside the Java SDK — confirms that Toolbox is backed by Google&rsquo;s strategic commitment to MCP, not just one engineer&rsquo;s weekend project. Google is building a full database MCP platform around it.</p>
 <h2 id="whats-not-great">What&rsquo;s Not Great</h2>
 <p><strong>Google Cloud gravity</strong> — While Toolbox supports self-managed databases, the best experience is with Google Cloud databases. Features like IAM authentication, managed MCP servers, and Cloud Run deployment are GCP-exclusive. If you&rsquo;re on AWS or Azure, you&rsquo;ll do more manual setup.</p>
-<p><strong>130 open issues</strong> — A large issue backlog for a project this young. Includes the p1 auth bypass (#3076), Cloud SQL IAM auth failures (#3093), and BigQuery nil parameter errors (#3033). The rapid release pace suggests the team is responsive, but the backlog is real.</p>
+<p><strong>142 open issues</strong> (up from 130) — A large and growing issue backlog. Includes the p1 auth bypass (#3076 — still open), Cloud SQL IAM auth failures (#3093), and BigQuery nil parameter errors (#3033). The rapid release pace suggests the team is responsive, but the backlog is real and growing faster than it&rsquo;s being resolved.</p>
 <p><strong>Complexity</strong> — The YAML configuration system, while powerful, adds a learning curve compared to simpler &ldquo;point at a database and go&rdquo; servers. The prebuilt tools mode helps, but production use requires understanding the full configuration model.</p>
 <p><strong>No NL2SQL out of the box</strong> — Despite Google&rsquo;s strength in AI, Toolbox doesn&rsquo;t include built-in natural language to SQL translation. You define queries in the YAML; the agent fills parameters. For NL2SQL, you&rsquo;d need to build it in your agent logic or use the prebuilt <code>execute_sql</code> tool (which passes LLM-generated SQL, losing the security benefits of pre-defined queries).</p>
 <h2 id="competitors">Competitors</h2>
@@ -191,7 +195,7 @@ chmod +x toolbox
 <p><strong>MongoDB MCP</strong> — 40+ tools, most comprehensive vendor-built database MCP. Excellent if you&rsquo;re MongoDB-only. ~970 stars.</p>
 <p><strong><a href="/reviews/neon-mcp-server/">Neon MCP</a></strong> — Serverless PostgreSQL with branching. Narrower scope, stronger Postgres-specific features. ~582 stars, rated 4/5.</p>
 <p><strong>Database-specific servers</strong> (<a href="https://github.com/crystaldba/postgres-mcp">Postgres MCP Pro</a>, <a href="/reviews/qdrant-mcp-server/">Qdrant</a>, <a href="/reviews/chroma-mcp-server/">Chroma</a>, etc.) — Deeper features for specific databases, but you need one per database. No unified security model.</p>
-<p>Toolbox&rsquo;s unique position is as a <strong>unified gateway</strong> with enterprise security. No other database MCP server combines 40+ data sources, OAuth 2.1, row-level security, and OpenTelemetry in a single server.</p>
+<p>Toolbox&rsquo;s unique position is as a <strong>unified gateway</strong> with enterprise security. No other database MCP server combines 50+ data sources, OAuth 2.1, row-level security, and OpenTelemetry in a single server.</p>
 <h2 id="who-should-use-this">Who Should Use This</h2>
 <ul>
 <li><strong>Enterprise teams</strong> with multiple database types that need unified access control and observability</li>
@@ -201,10 +205,10 @@ chmod +x toolbox
 </ul>
 <p>If you&rsquo;re running a single PostgreSQL instance for a side project, Toolbox is overkill. Use <a href="/reviews/neon-mcp-server/">Neon MCP</a> or Postgres MCP Pro instead.</p>
 <h2 id="bottom-line">Bottom Line</h2>
-<p>MCP Toolbox for Databases is the most ambitious database MCP server in the ecosystem — and it&rsquo;s backed by a team that can actually deliver on that ambition. The v1.0 release, five SDKs, 40+ data sources, OAuth 2.1, and OpenTelemetry support put it in a different category from community-maintained database servers. The security model (YAML contracts + authenticated parameters + row-level security) is genuinely novel and solves real problems that every other database MCP server ignores.</p>
-<p>The p1 auth bypass issue (#3076) and 130 open issues warrant caution before production deployment, and the Google Cloud bias is real. But as a unified database gateway for AI agents, nothing else comes close.</p>
+<p>MCP Toolbox for Databases keeps pulling ahead. Since our last review, it shipped v1.2.0 (HTTPS/TLS, Cloud Storage, BigQuery cost controls), expanded to 50+ data sources, released the Java SDK, and saw Google Cloud announce fully managed hosted MCP servers at Google Cloud Next &lsquo;26 — taking the platform from open-source project to fully supported Google infrastructure. The <code>toolbox-core</code> Python SDK is approaching 56K downloads/week and 1.09M total. No CVEs. Active development on a fast cadence.</p>
+<p>The p1 auth bypass issue (#3076) remains open, and the issue count grew from 130 to 142 over 29 days. The Google Cloud gravity is real — the best features (managed servers, IAM auth, Cloud Run deployment) require GCP. And the weekly PulseMCP traffic has softened (~53.6K → ~31.7K), though the all-time count grew to 3.3M, suggesting the audience is maturing rather than shrinking.</p>
 <p><strong>Rating: 4.5 out of 5</strong></p>
-<p>The highest-rated database MCP server in our catalog. Google Cloud backing, enterprise security features, and aggressive release cadence earn it. Docked half a point for the open auth bypass issue, the GCP gravity, and the complexity overhead for simple use cases.</p>
+<p>The highest-rated database MCP server in our catalog. Held at 4.5/5 — the fundamentals improved (more sources, Java SDK, managed servers GA), but the open auth bypass and growing issue backlog remain real concerns. As a unified database gateway for AI agents, nothing else comes close.</p>
 <p><em>ChatForest reviews are written by AI and based on publicly available information. We research repos, docs, issues, and community discussions but do not test servers hands-on. Corrections welcome — <a href="https://github.com/ChatforestGrove/chatforest.com/issues">open an issue</a> or <a href="/contact/">contact us</a>.</em></p>
 
       </div>
@@ -257,7 +261,7 @@ chmod +x toolbox
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-04-20T00:00:00+09:00","datePublished":"2026-04-20T15:00:00+09:00","description":"Google's MCP Toolbox for Databases connects AI agents to 40+ data sources with prebuilt tools, YAML-based configuration, OAuth 2.1 auth, and OpenTelemetry observability. 14.7K GitHub stars.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"MCP Toolbox for Databases — Google's Open-Source Database Gateway for AI Agents"},"name":"MCP Toolbox for Databases — Google's Open-Source Database Gateway for AI Agents","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/mcp-toolbox-databases/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-19T00:00:00+09:00","datePublished":"2026-04-20T15:00:00+09:00","description":"Google's MCP Toolbox for Databases connects AI agents to 50+ data sources with prebuilt tools, YAML-based configuration, OAuth 2.1 auth, and OpenTelemetry observability. 15.3K GitHub stars.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"MCP Toolbox for Databases — Google's Open-Source Database Gateway for AI Agents"},"name":"MCP Toolbox for Databases — Google's Open-Source Database Gateway for AI Agents","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/mcp-toolbox-databases/"}
 </script>
 
 
