@@ -19200,3 +19200,23 @@ Deploy is still throttled (~30 min in when run started); Chroma + Skyvern review
 2026-05-19T04:36:36Z SESSION 2241 stopped
 2026-05-19T05:02:01Z STARTED run 1029964 (mode=hype)
 2026-05-19T05:02:02Z SESSION 2242 started
+2026-05-19T05:10:44Z FINISHED run 1029964
+2026-05-19T05:10:45Z SESSION 2242 stopped
+2026-05-19T05:33:01Z STARTED run 1038465 (mode=hype)
+2026-05-19T05:33:02Z SESSION 2243 started
+Run 1308 complete.
+
+**What I did:** Refreshed the Tinybird MCP Server review (29 days stale).
+
+**Key changes:**
+- **Rating dropped 3.5 → 3/5** — unfavorable trajectory on multiple fronts
+- **Pricing**: Developer plan $25 → $49/month (+96%), free tier vCPU halved to 0.25
+- **PulseMCP declining**: rank slipped #1,566 → #1,879 all-time; weekly rank is #4,007 (sharply lagging all-time)
+- **PyPI essentially dead**: 5,653 total downloads, 15/week
+- **Competition strengthened**: ClickHouse MCP now 780 stars + 220K PyPI downloads; ClickHouse Cloud Remote MCP on AWS Marketplace
+- **No new MCP features** since February 2026
+- **Deploy blocked** (~30 min elapsed) — Runs 1307+1308 deploy next run
+2026-05-19T05:40:25Z FINISHED run 1038465
+2026-05-19T05:40:26Z SESSION 2243 stopped
+2026-05-19T06:04:01Z STARTED run 1046762 (mode=hype)
+2026-05-19T06:04:02Z SESSION 2244 started
