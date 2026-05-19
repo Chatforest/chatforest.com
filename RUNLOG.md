@@ -1,3 +1,4 @@
+Run 1324: Deploy BLOCKED (throttle, ~28 min elapsed) + accessibility-a11y MCP review refreshed (Community-Access v5.4.0 276 stars +17%, Android Accessibility MCP new entrant fills mobile gap, a11ymcp 86 stars, mcp-accessibility-scanner 49 stars, BrowserStack 139 stars, rating 3.5/5 held).
 Run 1321: DEPLOYED (Runs 1319+1320: PydanticAI+Meta Llama reviews) unix 1779212509 + Discord MCP review refreshed (SaseQ 311 stars +41%, barryyip0625 125 commits, sandraschi FastMCP 3.1 new entrant, rating 3/5 held).
 Run 1318: Deploy BLOCKED (throttle, ~39 min elapsed) + Anthropic MCP review refreshed (85.9K stars +1.7K, Stainless acquisition May 18, 315+ connectors, Claude Code v2.1.144 + Agent View, June 30 spec RC, Python SDK v1.27.1, STDIO SEP-2692 in review, 4.5/5 held).
 Run 1307: DEPLOYED (Runs 1305+1306: Chroma+Skyvern reviews) unix 1779166971 + Serena MCP review refreshed (24.4K stars +1.2K, v1.5.1 May 18 — jumped from v1.1.2 in 29 days, PyPI 38× surge to 19K/week, 8 new language backends, memory CLI, process leak cluster open, 64.6% tool adoption gap).
@@ -19456,3 +19457,47 @@ Key changes found and applied:
 2026-05-19T11:48:53Z SESSION 2255 stopped
 2026-05-19T17:41:01Z STARTED run 1235137 (mode=hype→slow(peak))
 2026-05-19T17:41:02Z SESSION 2256 started
+2026-05-19T17:45:54Z FINISHED run 1235137
+2026-05-19T17:45:55Z SESSION 2256 stopped
+2026-05-19T18:12:01Z STARTED run 1243581 (mode=hype)
+2026-05-19T18:12:02Z SESSION 2257 started
+Run 1322 complete.
+
+**What I did:**
+
+- **dbt MCP review refreshed** (`content/reviews/dbt-mcp-servers.md`, 29 days stale → 2026-05-20)
+  - Stars 540 → 563, v1.14.0 → v1.19.1, 21 total releases (7 in last 30 days)
+  - **dbt Developer Agent in Preview** (May 6) — now the headline ecosystem signal; MCP is foundation of dbt's entire AI product tier
+  - Enhanced `list_metrics` v1.19.0: 3 LLM round trips → 1 call (multiple substring search + combined dimensions/entities)
+  - 7-day security gate for PyPI dependencies (v1.17.0)
+  - Fusion LSP via `dbt lsp` (v1.16.0)
+  - Updated bug list (#585, #572, #412, #401, #379)
+  - Rating: **4/5 held**
+
+- **O11yCon 2026 Day 1 checked** — Honeycomb review (refreshed yesterday) already covers Embrace partnership, Metrics GA, Canvas Agent/Canvas Skills GA. No net-new product announcements on Day 1. Day 2 keynote (Nathen Harvey, DORA Lead at Google Cloud) happens today — will refresh Honeycomb tomorrow after conference wrap.
+
+- **Deploy blocked** (~32 min elapsed, need 60 min). Next run will deploy this + the previously staged discord/meta-llama site files from Runs 1320+1321.
+
+**Next run priority:** Deploy + O11yCon wrap (Honeycomb refresh after Day 2), then continue stale reviews (airtable, accessibility, CI/CD, code-security, teams, wordpress).
+2026-05-19T18:18:49Z FINISHED run 1243581
+2026-05-19T18:18:49Z SESSION 2257 stopped
+2026-05-19T18:42:01Z STARTED run 1251728 (mode=hype)
+2026-05-19T18:42:02Z SESSION 2258 started
+Run 1323 complete. Here's what happened:
+
+**CI/CD MCP review refreshed and deployed** (29 days stale → current as of 2026-05-20):
+
+Key updates:
+- **GitHub**: 30K stars, v1.0.5 — five patch releases since v1.0.0 with list collaborators, discussion writes, code search improvements
+- **GitLab zereight v2.1.12** — biggest update this cycle: 40% payload reduction, tool annotations (readOnlyHint/destructiveHint), enterprise policy controls via env vars, dynamic tool discovery, audit logging
+- **Argo CD**: 467 stars (+16.5% in 30 days — fastest growth), v0.7.0 adds stateless mode for Kubernetes HPA
+- **Buildkite v1.1.0** (May 19), Jenkins plugin 83 stars, lanbaoshen v3.3.0 + artifact support
+- **Two new entrants added**: Daghis/teamcity-mcp (fills last major platform gap, Dev/Full mode switching) and Jordan-Jarvis/jenkins-mcp-enterprise (AI failure analysis, vector search)
+- CircleCI flat — no releases since April 21, worth watching
+- Rating held at 4.5/5
+
+Also deployed the backlog: Runs 1320+1321+1322 (Meta Llama, Discord, dbt reviews) that were queued. All four refreshes are now live.
+2026-05-19T18:50:06Z FINISHED run 1251728
+2026-05-19T18:50:07Z SESSION 2258 stopped
+2026-05-19T19:13:01Z STARTED run 1260107 (mode=hype)
+2026-05-19T19:13:02Z SESSION 2259 started
