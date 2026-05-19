@@ -1,20 +1,20 @@
 ---
 title: "Skyvern MCP Server — AI Browser Automation with Computer Vision"
 date: 2026-04-20T14:00:00+09:00
-description: "Skyvern's MCP server gives AI agents browser automation powered by computer vision — no brittle selectors, no breaking when UIs change. 75+ tools for form filling, web scraping, and workflow automation."
-og_description: "Skyvern MCP server uses computer vision and LLMs for browser automation. 21.3K GitHub stars, 75+ tools, YC-backed. Vision-based approach beats brittle CSS selectors. Rating: 4/5."
+description: "Skyvern's MCP server gives AI agents browser automation powered by computer vision — no brittle selectors, no breaking when UIs change. 21.7K GitHub stars, SOC2+HIPAA compliant, v1.0.36. 75+ tools for form filling, web scraping, and workflow automation."
+og_description: "Skyvern MCP server uses computer vision and LLMs for browser automation. 21.7K GitHub stars, 75+ tools, YC-backed, SOC2+HIPAA compliant. Vision-based approach beats brittle CSS selectors. Rating: 4/5."
 content_type: "Review"
 card_description: "An AI-powered browser automation MCP server that uses computer vision and LLMs instead of brittle CSS/XPath selectors. 75+ tools covering browser sessions, natural language actions, data extraction, credential management, and multi-step workflows. Cloud and self-hosted deployment options."
-last_refreshed: 2026-04-20
+last_refreshed: 2026-05-19
 ---
 
 Part of our **[Browser Automation MCP category](/categories/browser-automation/)**.
 
-*At a glance: 21,300 GitHub stars, 1,900 forks, ~4,492 commits, 11 employees, last commit April 2026, v1.0.31 (April 14, 2026), 75+ tools, AGPL-3.0 license, ~354K total PyPI downloads, PulseMCP ~353K all-time visitors (#126 globally, ~3,100 weekly). YC-backed, $2.7M raised. Founded by Suchintan Singh, Kerem Yilmaz, and Shuchang Zheng.*
+*At a glance: 21,700 GitHub stars, 2,000 forks, last commit May 18, 2026, v1.0.36 (May 10, 2026), 75+ tools, AGPL-3.0 license, PulseMCP ~368K all-time visitors (#148 globally, ~2,500 weekly). YC-backed, $2.7M raised. SOC2 Type II certified, HIPAA compliant. Founded by Suchintan Singh, Kerem Yilmaz, and Shuchang Zheng.*
 
 Skyvern takes a fundamentally different approach to browser automation than [Playwright MCP](/reviews/playwright-mcp-server/) or [Browserbase](/reviews/browserbase-mcp-server/). Where those servers rely on DOM selectors and accessibility trees, Skyvern uses computer vision and LLMs to understand what's actually on the screen. A "Submit" button is a "Submit" button whether it's a `<button>`, a styled `<div>`, or an image — if a human can see it, Skyvern can interact with it.
 
-Built by [Skyvern-AI](https://github.com/Skyvern-AI/skyvern) and backed by Y Combinator, the platform has grown to 21,300+ GitHub stars and is used for form automation, web scraping, and RPA-adjacent workflows where traditional selector-based automation breaks constantly.
+Built by [Skyvern-AI](https://github.com/Skyvern-AI/skyvern) and backed by Y Combinator, the platform has grown to 21,700+ GitHub stars and is used for form automation, web scraping, and RPA-adjacent workflows where traditional selector-based automation breaks constantly.
 
 ## What It Does
 
@@ -100,7 +100,11 @@ Also available via one-click `.mcpb` bundle for Claude Desktop (macOS/Windows). 
 
 **Dual deployment model.** Cloud for zero-setup production use with anti-bot protection and proxy networks. Self-hosted for privacy-sensitive use cases where browser data shouldn't leave your network.
 
+**Enterprise compliance.** SOC2 Type II certified and HIPAA compliant — a meaningful differentiator for healthcare, finance, and regulated-industry deployments where competitors can't be used.
+
 **QA skill.** Local mode includes a `/qa` feature that reads `git diff`, generates test cases, and runs automated browser tests against your dev server — practical for frontend developers.
+
+**Active release cadence.** Five releases (v1.0.31 → v1.0.36) in under a month between April and May 2026, including workflow schedule management via MCP tools (v1.0.32) and multi-key AES decryption for credential vaults (v1.0.33).
 
 ## What's Not
 
@@ -114,7 +118,7 @@ Also available via one-click `.mcpb` bundle for Claude Desktop (macOS/Windows). 
 
 **Python 3.11+ requirement.** Local mode won't run on Python 3.10 or earlier, which may exclude some environments.
 
-**Active development velocity declining.** Release notes show v1.0.31 dated April 14, 2024 (sic — likely a metadata issue), but the 11-person team and YC backing suggest continued investment. Watch for commit frequency trends.
+**PulseMCP traffic dipping.** Weekly visitors dropped from ~3,100 to ~2,500 (−19%) over the past month, and global rank slipped from #126 to #148. Still 368K all-time visitors — a popular server — but attention may be migrating to faster-growing browser automation alternatives.
 
 ## Security Considerations
 
@@ -143,7 +147,7 @@ Skyvern's security model has both strengths and gaps:
 
 **vs [Desktop Commander](/reviews/desktop-commander-mcp-server/)** (5.9K stars, 3.5/5): Desktop Commander is local-only, terminal+filesystem focused. Skyvern is browser-focused with cloud option. Different tools for different jobs.
 
-**vs Browser-Use** (78K stars, no review yet): Browser-Use has much larger community (3.8x stars) and higher benchmark accuracy (89.1% vs 64.4% on WebBench). However, Browser-Use is primarily a Python library, not a dedicated MCP server — Skyvern has a more polished MCP integration and managed cloud offering.
+**vs Browser-Use** (91K+ stars, no review yet): Browser-Use has ballooned to 91K+ stars (up from 78K in April — a 4.3x advantage over Skyvern now). Higher benchmark accuracy (89.1% vs 64.4% on WebBench) and faster/cheaper per-action. However, Browser-Use is primarily a Python library, not a dedicated MCP server — Skyvern has a more polished MCP integration, managed cloud with anti-bot proxies, and enterprise compliance (SOC2, HIPAA) that Browser-Use doesn't offer.
 
 ## Who Should Use This
 
@@ -163,4 +167,4 @@ The tradeoffs are real: higher cost per action than raw Playwright, latency from
 
 **Rating: 4/5** — Best-in-class vision-based browser automation with strong MCP integration and managed cloud offering. Docked for cost at scale, accuracy ceiling below competitors, and cloud dependency for full feature set.
 
-*Last updated: April 20, 2026*
+*Last updated: May 19, 2026*
