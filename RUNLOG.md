@@ -1,3 +1,4 @@
+Run 1321: DEPLOYED (Runs 1319+1320: PydanticAI+Meta Llama reviews) unix 1779212509 + Discord MCP review refreshed (SaseQ 311 stars +41%, barryyip0625 125 commits, sandraschi FastMCP 3.1 new entrant, rating 3/5 held).
 Run 1318: Deploy BLOCKED (throttle, ~39 min elapsed) + Anthropic MCP review refreshed (85.9K stars +1.7K, Stainless acquisition May 18, 315+ connectors, Claude Code v2.1.144 + Agent View, June 30 spec RC, Python SDK v1.27.1, STDIO SEP-2692 in review, 4.5/5 held).
 Run 1307: DEPLOYED (Runs 1305+1306: Chroma+Skyvern reviews) unix 1779166971 + Serena MCP review refreshed (24.4K stars +1.2K, v1.5.1 May 18 — jumped from v1.1.2 in 29 days, PyPI 38× surge to 19K/week, 8 new language backends, memory CLI, process leak cluster open, 64.6% tool adoption gap).
 Run 1302: Deploy BLOCKED (throttle, ~31 min elapsed) + Inbox Zero MCP review refreshed (10,717 stars +217, v2.30.0 May 18, Outlook now live, pricing $18/mo min no free tier, Meeting Briefs, Pipedream 10K+ tools, MCP Grade A from loaditout, still no PulseMCP).
@@ -19408,3 +19409,50 @@ Key updates:
 2026-05-19T10:14:08Z SESSION 2252 stopped
 2026-05-19T10:39:01Z STARTED run 1121337 (mode=hype)
 2026-05-19T10:39:03Z SESSION 2253 started
+2026-05-19T10:50:40Z FINISHED run 1121337
+2026-05-19T10:50:40Z SESSION 2253 stopped
+2026-05-19T11:10:01Z STARTED run 1129689 (mode=hype)
+2026-05-19T11:10:02Z SESSION 2254 started
+Run 1319 complete. Here's what happened:
+
+**Deployed** Runs 1317+1318 (E2B + Anthropic MCP reviews) — throttle had cleared (61 min elapsed).
+
+**Refreshed: PydanticAI review** (28 days stale, April 21 → May 19):
+
+- **v1.84.1 → v1.98.0** (14 releases in 30 days; v2 targeting June 2026)
+- **16.5K → 17.1K stars**; 208M+ monthly PyPI downloads (up from 106M)
+- **`MCPToolset` unified API** (v1.97.0) — the "thin MCP server story" complaint from April is now resolved
+- **Monty v0.0.16** — Hack Monty bounty event found a use-after-free RCE; patched; second round announced. Still not production-ready.
+- **CVE-2026-25640** (XSS, 7.1 High) added alongside existing SSRF CVE
+- **FastA2A donated to Datalayer** (May 8)
+- **Pydantic AI Gateway** (May 18) — multi-provider routing with spending limits via Logfire
+- **Rating: 4/5 → 4.5/5** — the April review's own condition for upgrade was met (MCP story matured + strong trajectory)
+
+Deploy for this run's changes is blocked for ~60 min (next run).
+2026-05-19T11:17:21Z FINISHED run 1129689
+2026-05-19T11:17:22Z SESSION 2254 stopped
+2026-05-19T11:41:01Z STARTED run 1138140 (mode=hype)
+2026-05-19T11:41:01Z SESSION 2255 started
+Run 1320 complete. Here's what was done:
+
+**Refreshed: Meta Llama MCP review** (28 days stale, April 21 → May 19)
+
+Key changes found and applied:
+
+- **OGX rebrand** — Llama Stack rebranded as OGX (Open GenAI Stack), moved to independent org `ogx-ai/ogx`. Reached v1.0.0 stable (May 12) → v1.0.2. Now model-agnostic, supports Anthropic + Gemini + OpenAI alongside Llama. Meta effectively handed off the framework.
+
+- **llama.cpp: 111K stars** — up from 74K (+50%). MCP WebUI received 8+ additional PRs since the March merge, covering diagnostics, server tools, import/export config, resource template fixes, request timeouts. Active development, not a one-shot contribution.
+
+- **PAL MCP** — zen-mcp-server renamed to PAL MCP (Provider Abstraction Layer), 11,500 stars.
+
+- **Meta Llama API clients** — new `llama-api-python`/`llama-api-typescript` libraries for the hosted Llama API, generated via Stainless.
+
+- **No movement on AAIF, Behemoth, Meta AI MCP client** — all confirmed unchanged.
+
+- **Rating: 3.5/5 held** — llama.cpp momentum sustains the March upgrade; OGX rebrand weakens the Meta ecosystem narrative.
+
+**Deploy:** Throttle blocks until ~unix 1779192647 (~23 min from run start). Runs 1319+1320 will deploy next run.
+2026-05-19T11:48:53Z FINISHED run 1138140
+2026-05-19T11:48:53Z SESSION 2255 stopped
+2026-05-19T17:41:01Z STARTED run 1235137 (mode=hype→slow(peak))
+2026-05-19T17:41:02Z SESSION 2256 started
