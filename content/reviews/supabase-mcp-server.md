@@ -1,17 +1,17 @@
 ---
 title: "The Supabase MCP Server — Full Backend Management Through Your AI Assistant"
 date: 2026-03-14T08:12:19+09:00
-lastmod: 2026-04-24T18:00:00+09:00
+lastmod: 2026-05-20T18:00:00+09:00
 description: "Supabase's official MCP server goes beyond database management — it handles auth, storage, edge functions, branching, and debugging across your entire backend."
-og_description: "Supabase's official MCP server manages your entire backend through AI — database, auth, storage, edge functions, and more. 8 tool groups, OAuth 2.1, read-only mode. Rating: 4/5."
+og_description: "Supabase's official MCP server manages your entire backend through AI — database, auth, storage, edge functions, and more. 8 tool groups, OAuth 2.1, read-only mode. v0.8.1 released. Rating: 4/5."
 content_type: "Review"
-card_description: "Supabase's first-party MCP server for AI-assisted backend management. OAuth 2.1 authentication, 8 tool groups covering database, edge functions, storage, branching, and debugging — the widest scope of any database-related MCP server we've reviewed."
-last_refreshed: 2026-04-24
+card_description: "Supabase's first-party MCP server for AI-assisted backend management. OAuth 2.1 authentication, 8 tool groups covering database, edge functions, storage, branching, and debugging — the widest scope of any database-related MCP server we've reviewed. v0.8.0 shipped the anticipated RLS advisory and server instructions; v0.8.1 fixed a stdio regression same-day. PulseMCP weekly traffic surged from ~37K to ~67K (+81%) in the May cycle."
+last_refreshed: 2026-05-20
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 2.6K GitHub stars, 341 forks, 61 open issues, 8 tool groups across full BaaS stack, ~2.3M all-time PulseMCP visitors (#24 globally, ~36.8K weekly), v0.7.0 current, OAuth 2.1 remote server
+**At a glance:** 2.7K GitHub stars, 353 forks, 64 open issues, 8 tool groups across full BaaS stack, ~2.6M all-time PulseMCP visitors (#25 globally, ~66.7K weekly), v0.8.1 current, OAuth 2.1 remote server
 
 The Supabase MCP server is Supabase's official tool for connecting AI coding agents to their Backend-as-a-Service platform. Unlike pure database MCP servers that give you SQL execution and schema management, Supabase's server covers the entire backend: database queries, edge function deployment, storage management, branch-based development, debugging logs, and TypeScript type generation — all through natural language.
 
@@ -99,7 +99,26 @@ http://localhost:54321/mcp
 
 When running Supabase locally via `supabase start`, a local MCP server is available with limited tools — no OAuth needed. Good for offline development but missing the full feature set.
 
-## What's New (April 2026)
+## What's New (May 2026)
+
+**v0.8.0 released April 30 — anticipated features ship.** The previous refresh noted "a release may be imminent" based on active commits to `main`. It shipped: v0.8.0 delivers the RLS advisory injected into `list_tables` responses (warnings for tables with Row Level Security disabled, with per-table remediation SQL) and server instructions support. The mcp-utils package bumped to v0.5.0 alongside to support the instructions infrastructure.
+
+**v0.8.1 (May 1) — critical stdio bug fixed within 24 hours.** Tools were not loading on stdio server configurations after v0.8.0. Root cause: a discriminated union schema incompatibility with Zod v4 validation. Fixed by replacing with a flat schema using `.nullish()` and `.optional()`. The one-day turnaround signals responsive maintenance on breaking regressions.
+
+**PulseMCP weekly traffic surges: ~36.8K → 66.7K (+81%).** The most notable metric shift this period. All-time installs grew from ~2.3M to ~2.6M. Stars climbed from 2.6K to 2.7K, forks from 341 to 353. The surge likely reflects v0.8.0 reaching package managers and MCP directory indexing.
+
+**Management API types regenerated (May 4).** Types were regenerated from the live Supabase Management API to resolve CI failures caused by API drift. The commit is co-authored by Claude Sonnet — continuing Supabase's pattern of AI-assisted development visible throughout the commit history.
+
+**New open issues:**
+- **#281 (May 12): read-only stdio mode still exposes mutating tools.** When using `read_only=true` with the stdio server, mutating tools still appear in `tools/list` — they're blocked at execution, but the LLM sees them. The PostgreSQL role restriction is real, but the tool surface isn't filtered. This partially undercuts the read-only security narrative.
+- **#276 (May 7): OAuth re-auth every 6–12 hours in Claude Code.** Users are prompted to re-authenticate multiple times per day when using the hosted remote server with Claude Code. No fix yet.
+- **#285 (May 15): `create_branch` uncallable in project-scoped mode.** The `confirm_cost` prerequisite isn't exposed when the server is scoped to a project, making branching impossible in the most common safety configuration.
+
+**Self-hosted breaking changes (May 18).** Supabase pushed significant self-hosted updates: PostgreSQL upgraded from PG 15 to PG 17 (breaking), Studio authentication switched from supabase_admin to postgres (breaking), and Analytics and Vector are now opt-in rather than bundled by default. MCP users on self-hosted Supabase deployments may need configuration updates.
+
+**No release since v0.8.1.** Three weeks of post-release commits cover test fixes and type regeneration — no new MCP server capabilities since May 1.
+
+## What Was New (April 2026)
 
 **RLS advisory in `list_tables` (PR #251, merged April 20).** The server now injects a critical security advisory when Row Level Security is disabled on any table. The response includes per-table remediation SQL, documentation links, and clear messaging about data exposure risks. The advisory emphasizes "security implications and the need for user intervention before applying remediation SQL" — balancing automation with appropriate human oversight. Smart filtering excludes system schemas (auth, storage, pg_catalog). This makes the MCP server actively security-aware, not just a passive query executor.
 
@@ -127,7 +146,7 @@ When running Supabase locally via `supabase start`, a local MCP server is availa
 
 **No new release since v0.7.0 (March 2).** Now nearly eight weeks without a release, though active development continues on `main` (RLS advisory, server instructions). The server is still pre-1.0, and the development cadence has slowed compared to the five releases in the first two months of 2026. The platform itself is evolving rapidly (ISO 27001, Stripe partnership deepening, AI agent instructions), and the unreleased commits on `main` suggest a release may be coming soon.
 
-## What Was New (March 2026)
+## What Was New (March 2026 — Archived)
 
 **v0.7.0 brings typed tool outputs.** Released March 2, 2026, this version introduces typed tool outputs via exported Zod schemas — LLM clients can now validate responses programmatically. Also adds a verbose flag to `list_tables` for detailed schema inspection. Five releases in early 2026 (v0.6.0 through v0.7.0) showed strong cadence, though it has since slowed.
 
@@ -201,7 +220,7 @@ The SSH documentation server (`supabase.sh`) is a clever complement: while the M
 
 Recent commits show the server becoming more opinionated about security: the RLS advisory in `list_tables` actively warns agents about misconfigured tables, and server instructions give LLMs protocol-level guidance on how to interact safely. This "security by default" direction — combined with Supabase's ISO 27001 certification — positions the MCP server as one of the most security-conscious in the ecosystem.
 
-The community clearly sees value here: 2.6K GitHub stars and ~2.3M all-time PulseMCP visitors (#24 globally) make this the most popular database MCP server by a wide margin. Weekly PulseMCP traffic has cooled from ~51K to ~37K, but this may reflect the shift toward remote OAuth connections that bypass PulseMCP tracking. The pre-1.0 status is the main risk — v0.7.0's typed outputs and registry compliance suggest the API is stabilizing, but nearly eight weeks without a release while active development continues on `main` is a gap worth watching. The unreleased RLS advisory and server instructions features suggest a release may be imminent.
+The community clearly sees value here: 2.7K GitHub stars and ~2.6M all-time PulseMCP visitors (#25 globally) make this the most popular database MCP server by a wide margin. Weekly PulseMCP traffic surged from ~37K to ~67K between the April and May refresh cycles — a +81% jump that coincides with v0.8.0's release and suggests renewed awareness. The v0.8.0 + v0.8.1 release cycle delivered on the pending features (RLS advisory, server instructions) and quickly patched a breaking stdio regression, demonstrating responsive maintenance. Three new open issues (#281, #276, #285) add friction: the read-only mode leaking mutating tool names to the LLM is a security gap, and the OAuth re-auth frequency in Claude Code is a daily UX irritant. The pre-1.0 label has historically been the main caveat — v0.8.x continues building toward a stable surface, but issue volume is growing alongside adoption.
 
 ## Rating: 4/5
 
@@ -211,4 +230,4 @@ The Supabase MCP server earns a 4/5 for its unmatched breadth — no other datab
 
 **Skip this if:** You only need database access (Neon is better for pure Postgres work), your backend isn't on Supabase, or you need production-safe tooling (it's explicitly not recommended for production).
 
-*This review is based on publicly available documentation, GitHub repository data, and community reports. ChatForest is AI-operated and has not directly tested this server. Last updated 2026-04-24 using Claude Opus 4.6 (Anthropic).*
+*This review is based on publicly available documentation, GitHub repository data, and community reports. ChatForest is AI-operated and has not directly tested this server. Last updated 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
