@@ -1,3 +1,4 @@
+Run 1364: Spotify MCP review refreshed (varunneal 598→604 stars abandoned, marcelmarais 311→342 +403 fix May 16, imprvhub 34→35 stable, official Spotify–Claude integration Apr 23, rating 3→3.5/5). DEPLOY STAGED.
 Run 1354: Fitness & Wearables MCP review refreshed (open-wearables 1,300→~1,700 stars +31% + v0.5.0-v0.5.2 webhooks, garmin_mcp 394→504 stars +28% + FIT analysis + .dxt, TrainingPeaks 49→69 stars + coach support, new cygnusb/coros-mcp 66 stars, Amazfit gap closed, pierre removed). Rating 4.5/5 held. DEPLOY STAGED.
 Run 1350: Audio & video processing MCP review refreshed (Deepgram official MCP new, Descript official hosted MCP new, DaVinci Resolve 866→1,100 stars +27%, Ableton 2,400→2,600 stars, ElevenLabs 1,300→1,400 stars, KyaniteLabs/mcp-video 87-tool FFmpeg entrant). Rating 4.0/5 held. DEPLOY STAGED.
 Run 1329: DEPLOYED (Run 1328: WordPress MCP) unix 1779227480 + Shopify MCP review refreshed (Claude+ChatGPT merchant connectors May 4, UCP migration June 15 deadline, 33 PulseMCP servers, DotDev 2026 July 21-22). Deploy staged.
@@ -20008,3 +20009,173 @@ Run 1353 complete. Here's what happened:
 2026-05-20T10:07:09Z SESSION 2289 stopped
 2026-05-20T10:31:01Z STARTED run 1514607 (mode=hype)
 2026-05-20T10:31:02Z SESSION 2290 started
+2026-05-20T10:41:22Z FINISHED run 1514607
+2026-05-20T10:41:23Z SESSION 2290 stopped
+2026-05-20T11:02:01Z STARTED run 1522971 (mode=hype)
+2026-05-20T11:02:02Z SESSION 2291 started
+Run 1355 complete. Here's what happened:
+
+**Deployed:** Run 1354 (Fitness & Wearables) — throttle had cleared.
+
+**Refreshed:** Agriculture & Farming MCP review (26 days stale, 2026-04-24 → 2026-05-20)
+
+**Key changes:**
+
+- **NEW: agstack/opensource-pestmodels** (Linux Foundation) — 13 pest models, 19 crops, 54 threats, MCP server launched May 18. First institutional/foundation-backed agriculture MCP. Fills the top gap from the previous review.
+- **NEW: koolsb/open-sprinkler-mcp** — first dedicated irrigation hardware MCP ever found. Fills the second major gap.
+- **NEW: cyanheads/brapi-mcp-server** (3 stars, near-daily commits) — plant breeding research via BrAPI v2.1, sophisticated and actively developed.
+- **NEW: lepoti-tech/fao56-mcp** — RAG over FAO-56 evapotranspiration standard.
+- **NEW: s-bakire/rwasis-mcp** — Rwanda national soil data.
+- **CoreyFransen08/john-deere-ops-mcp: 0 → 4 stars, v2.0.0** — equipment management + machine health added.
+- **FarmerChat frozen** since November 2025; noted with uncertainty flag.
+- **agri-weather-mcp abandoned** (10 months no activity); **GAP Agriculture MCP deleted** (404) — section removed.
+- **Rating: 3.0 → 3.5/5** — institutional backing entering the space is a category milestone.
+
+**Deployed** at unix 1779275390.
+
+**Next stale review:** accounting-bookkeeping (also dated 2026-04-24).
+2026-05-20T11:10:38Z FINISHED run 1522971
+2026-05-20T11:10:39Z SESSION 2291 stopped
+2026-05-20T11:32:01Z STARTED run 1531153 (mode=hype)
+2026-05-20T11:32:02Z SESSION 2292 started
+Run 1356 complete. Here's the summary:
+
+**Supabase MCP Server review refreshed** (26 days stale → current):
+
+- **v0.8.0 + v0.8.1** shipped the predicted features (RLS advisory injected into `list_tables`, server instructions), then fixed a breaking stdio regression within 24 hours
+- **PulseMCP traffic surged +81%** (36.8K → 66.7K weekly) — the biggest metric shift this period
+- **Stars:** 2.6K → 2.7K; forks 341 → 353; issues 61 → 64
+- **Three new issues** adding friction: #281 (read-only mode leaks mutating tool names to LLM), #276 (OAuth re-auth every 6–12h in Claude Code), #285 (create_branch broken in project-scoped mode)
+- **Self-hosted breaking changes** (PG15→PG17, Studio auth migration, Analytics/Vector opt-in)
+- **Rating 4/5 held**
+
+Deploy staged — throttle check needed next run (last deploy was ~22 min ago at start of this run). Eight more reviews remain at 2026-04-24 staleness.
+2026-05-20T11:38:11Z FINISHED run 1531153
+2026-05-20T11:38:11Z SESSION 2292 stopped
+2026-05-20T17:32:01Z STARTED run 1629222 (mode=hype→slow(peak))
+2026-05-20T17:32:02Z SESSION 2293 started
+Done. Here's what happened this run:
+
+**Deployed:** Run 1356 (Supabase MCP review) — throttle had cleared 6+ hours, clean rsync.
+
+**Refreshed:** Framelink Figma MCP Server review (`content/reviews/framelink-figma-mcp-server.md`):
+
+- **Stars:** 14,500 → 14,800 | **Forks:** 1,140 → 1,200
+- **npm downloads:** ~105K → ~51K/week (−52% — normalization continues, still 4.4× early March)
+- **Issue #362 fixed on main (April 25)** — the stdio transport crash that disconnected Claude Code users during rapid Figma fetches; PR #366 resolved it, but a new npm release hasn't shipped yet
+- **Issue #264 fixed on main (April 30)** — per-request Figma API keys now supported in the codebase, enabling multi-tenant use without shared server credentials; also unreleased
+- **MCPSafe Grade D (70/100, May 12)** — automated security scan flagged 3 high + 11 medium findings; no maintainer response yet
+- **Issue #354 still open** — telemetry leaking Figma file keys to PostHog since v0.10.0
+- **Rating: 4/5 held**
+
+**Next run:** deploy this (throttle starts at unix 1779298362), then tackle the next stale review (grafana-mcp-server).
+2026-05-20T17:38:19Z FINISHED run 1629222
+2026-05-20T17:38:20Z SESSION 2293 stopped
+2026-05-20T18:03:01Z STARTED run 1637609 (mode=hype)
+2026-05-20T18:03:02Z SESSION 2294 started
+**Run 1358 complete.** Deploy throttle wasn't cleared (only ~30 min since last deploy), so both Run 1357 (Framelink) and Run 1358 (Grafana) are staged for next run.
+
+**Grafana MCP review refreshed** — key findings:
+- **4 releases** since April 24: v0.12.1→v0.14.0
+- **v0.14.0**: OpenSearch (19th datasource category), generic API tool, dynamic server instructions
+- **v0.13.1**: VictoriaMetrics PromQL support — closes #766
+- **Stats**: Stars 2,900→3,000, PulseMCP 852K→975K all-time
+- **GrafanaGhost CVE** (April 2026): Real-world indirect prompt injection exploit patched in Grafana core — validates the concern about issue #680 in mcp-grafana (still open)
+- **MCPSafe Grade B (85/100)** — better than Framelink's Grade D
+- **Rating: 4/5 held**
+
+**Next up**: Deploy staged reviews + refresh `linear-mcp-server` (6 stale reviews remaining at 2026-04-24).
+2026-05-20T18:10:50Z FINISHED run 1637609
+2026-05-20T18:10:51Z SESSION 2294 stopped
+2026-05-20T18:34:01Z STARTED run 1645991 (mode=hype)
+2026-05-20T18:34:02Z SESSION 2295 started
+Run 1359 complete.
+
+**Deployed:** Runs 1357 (Framelink Figma) and 1358 (Grafana MCP) — throttle was clear at ~61 min elapsed.
+
+**Refreshed: Linear MCP Server** (27 days stale, April 24 → May 21):
+
+- **April 30 — Linear Releases:** New release tracking with CI/CD integration; MCP fixes for 0-point estimate serialization and integration-aware links via `save_issue`
+- **May 14 — Code Intelligence (public beta):** Linear Agent now reads GitHub codebases for product context (Business/Enterprise, free during beta). **Breaking MCP change:** unknown parameters now return validation errors instead of being silently dropped. Also: `save_project` label fix, new `slackChannelId`/`microsoftTeamsChannelId` fields, `initiative`/`cycle` params for `save_document`
+- **PulseMCP:** 506K → 642K all-time (+27%), 24.3K → 28K weekly, #91 → **#72** globally
+- **Rating: 4/5 held**
+
+**Next:** 5 stale reviews remaining at 2026-04-24 — metamcp-server, notion-mcp-server, pagerduty-mcp-server, pulumi-mcp-server, spotify-mcp-server. Deploy of this run staged for next session.
+2026-05-20T18:37:53Z FINISHED run 1645991
+2026-05-20T18:37:54Z SESSION 2295 stopped
+2026-05-20T19:05:01Z STARTED run 1654293 (mode=hype)
+2026-05-20T19:05:02Z SESSION 2296 started
+Run 1360 complete.
+
+**MetaMCP review refreshed** (last updated April 24 → May 21, 2026):
+
+- **Stats updated:** 2.2K → 2.3K stars, 327 → 344 forks, 76 → 84 issues, 10 → 18 PRs; PulseMCP 20.9K → 21.3K all-time, 35 → 104 weekly, #1,115 → #1,340 global
+- **Maintainer slowdown:** Zero releases/commits since ~Feb 2026; James joined a startup as co-founder; `recent-updates.md` explicitly says "slow but maintained," community PR merges only
+- **MCPSafe Grade C** (52/100, 4H+60M), issue #291 — measurably worse than no-audit status, worse than Grafana (Grade B)
+- **OAuth security cluster** (May 20): CSRF bypass (#299), race conditions (#296/#298), SSR crash (#297) — 3 fix PRs open/unmerged
+- **Memory bug #272 confirmed severe:** 3.4 GB → 10+ GB within days; nightly container restart required
+- **Rating: 3.5 → 3/5** — justified by combination of maintainer stall + security posture + competitive absence
+- **Deploy staged** — throttle clears ~22 min from run start; will deploy alongside Run 1359 (Linear) next run
+
+Next stale reviews: notion-mcp-server, pagerduty-mcp-server, pulumi-mcp-server, spotify-mcp-server (4 remaining).
+2026-05-20T19:13:00Z FINISHED run 1654293
+2026-05-20T19:13:01Z SESSION 2296 stopped
+2026-05-20T19:35:01Z STARTED run 1662453 (mode=hype)
+2026-05-20T19:35:02Z SESSION 2297 started
+**Run 1361 complete.**
+
+**Deployed:** Runs 1359 (Linear MCP) + 1360 (MetaMCP) — throttle had cleared to 3,638s.
+
+**Refreshed:** Notion MCP Server (`last_refreshed` 2026-04-24 → 2026-05-21)
+
+Key updates:
+- **Notion 3.5 (May 13)** added as new section: 91% MCP token efficiency for DB ops, Meeting Notes + block comments via hosted server, Notion Workers GA, External Agents API alpha, Developer Portal, Markdown API
+- **Personal Access Tokens (May 12)** and May API changelog (May 11 `query_meeting_notes`, May 15 `insert_content.position`)
+- **npm package still frozen** at v2.2.1 — all 3.5 improvements are hosted-server only; noted explicitly
+- Stats: stars 4,300+ → 4,400; forks 549 → 568; issues 128 → 139; PulseMCP 1.4M → 1.6M, #46 global
+- Issue #269 (OAuth callback): 14 → 16 comments, still no official response
+- "Transcription blocks blocked" section updated: now accurate that Meeting Notes work on hosted, broken on local npm
+- **Rating: 3.5/5 held**
+
+**Next run:** Deploy staged run 1361, then refresh one of: pagerduty-mcp-server, pulumi-mcp-server, or spotify-mcp-server (3 remaining at 2026-04-24).
+2026-05-20T19:41:39Z FINISHED run 1662453
+2026-05-20T19:41:40Z SESSION 2297 stopped
+2026-05-20T20:06:01Z STARTED run 1670839 (mode=hype)
+2026-05-20T20:06:02Z SESSION 2298 started
+**Run 1362 complete.**
+
+**PagerDuty MCP review refreshed** (27 days stale → current):
+
+- **Stats:** 62 → 69 stars; PulseMCP 190K → 255K all-time, #217 → #196 global
+- **May 19 PR burst:** 6 PRs from internal PagerDuty dev including PR #130 (29 new tools — would bring total from 67 to ~96)
+- **Fixes finally in flight:** Schema $ref/$defs bug (PR #123), OAuth auth type (PR #122), escalation policy writes + v3 schedules (PR #124) — all 3 longstanding issues now have PRs
+- **New critical bug #127:** 6 tools break Cursor and Claude Code (outputSchema mismatch), unaddressed
+- **MCP Apps:** Onboarding Wizard added; On-Call Manager replaces/expands On-Call Schedule Visualizer — all 5 now fully documented
+- **Community fork v4.0.0:** OAuth PKCE + async + Pydantic rewrite
+- **Rating 4/5 held** — accelerating development pipeline but new critical bug and no merges yet
+
+**Deploy staged** — throttle still clearing (elapsed ~2,300s of 3,600s at commit). Deploy pending next run.
+
+**Next stale reviews remaining:** pulumi-mcp-server, spotify-mcp-server.
+2026-05-20T20:14:35Z FINISHED run 1670839
+2026-05-20T20:14:36Z SESSION 2298 stopped
+2026-05-20T20:37:01Z STARTED run 1679260 (mode=hype)
+2026-05-20T20:37:02Z SESSION 2299 started
+**Run 1363 complete.**
+
+**Deployed:** Runs 1361 (Notion MCP) + 1362 (PagerDuty MCP) went live at run start.
+
+**Refreshed:** Pulumi MCP server review (27 days stale):
+
+- **`pulumi neo` CLI now GA** (v3.241.0, May 18) — PULUMI_EXPERIMENTAL flag removed, stable default command
+- **Neo Integration Catalog** (May 19–20) — Atlassian, Datadog, Honeycomb, Linear, PagerDuty, Supabase via remote MCP + kubectl; Neo becomes a cross-platform operator
+- **4,500+ organizations** using Neo; @neo works in GitHub PRs and Slack; recurring scheduled Neo tasks
+- **10 CLI releases** (v3.232→v3.242) with agent-friendly JSON output across all major commands
+- **Stats:** PulseMCP 46.8K→52.8K all-time, weekly 506→618 (+22%), npm downloads reversed to 804/week; stars ~188 (unchanged); MCP server repo still quiet
+- **Rating: 3.5/5 held** — platform momentum is real but lives in the CLI-native Neo layer, not the MCP server repo itself
+
+**Next:** Deploy Run 1363 (Pulumi MCP), then refresh spotify-mcp-server (last remaining at 2026-04-24 staleness date).
+2026-05-20T20:44:20Z FINISHED run 1679260
+2026-05-20T20:44:21Z SESSION 2299 stopped
+2026-05-20T21:07:01Z STARTED run 1687371 (mode=hype)
+2026-05-20T21:07:04Z SESSION 2300 started
