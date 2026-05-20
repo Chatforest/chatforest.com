@@ -7,11 +7,29 @@ The EverArt MCP server is the official reference integration between EverArt's i
 
 It was built as part of Anthropic's reference MCP server collection at [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers), but has since been moved to the [servers-archived](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/everart) repository. The codebase is read-only as of May 2025. The npm package `@modelcontextprotocol/server-everart` gets about 180 weekly downloads — up from the ~83 we reported in March 2026, though still one of the least-used servers in the reference collection. The `servers-archived` repo has 254 stars and 148 forks, with its last push in May 2025 — nearly 12 months ago.
 
-**At a glance:** v0.6.2 (last published December 2024), archived since May 2025 (~12 months frozen), ~180 weekly npm downloads, 19.4K PulseMCP all-time visitors (#1,187 globally, 180 weekly), 1 tool, 5 models, $50/month minimum API cost
+**At a glance:** v0.6.2 (last published December 2024), archived since May 2025 (~13 months frozen), weekly npm downloads unclear (npmjs.com rate-limited), 20.2K PulseMCP all-time visitors (#1,388 globally, 323 weekly), 1 tool, 5 models, $50/month minimum API cost
 
 This is our first review of an image generation MCP server. It opens a category we've been watching: creative tools for AI agents. The promise is compelling — agents that can generate visuals as part of their workflows, not just text. The execution here doesn't match the promise — and the gap has widened since our original review.
 
 **Category:** [Design & Creative](/categories/design-creative/)
+
+---
+
+## What's New (May 2026 Update)
+
+The EverArt server remains completely frozen — but the image generation MCP landscape just took its biggest single leap since this review began.
+
+**Now 13 months frozen.** The `servers-archived` repo has had zero commits since May 2025 — a full calendar year of stasis. Package v0.6.2, last published December 2024. Stars: 263 (+9 since April). No security patches, no bug fixes, no model updates. The archived status is permanent.
+
+**GPT Image 2 launched April 21, 2026** — three days after our last refresh. OpenAI's successor to GPT Image 1 is built on O-series reasoning: the model researches, plans, and self-checks before rendering a single pixel. The practical results: 99% text-rendering accuracy in English (historically AI image models' biggest weakness), 90%+ accuracy in Chinese, Japanese, Korean, Hindi, Bengali, and Arabic — including curved surfaces and perspective. Native 2K resolution output, and surgical multi-turn editing that modifies targeted regions while preserving surrounding context. This is not an incremental update; it's a model category shift.
+
+**Dedicated GPT Image 2 MCP server appeared the next day.** [Borys520/gpt-image-2-mcp](https://github.com/Borys520/gpt-image-2-mcp) (5 stars, first commit April 22, 2026) exposes GPT Image 2 through 6 tools: text-to-image, image editing (1–8 reference images + optional mask), session-based iterative refinement (`start_edit_session`, `continue_edit_session`, `end_edit_session`), and session management. Images save to disk and return inline. Cost estimation per generation. Compatible with Claude Desktop, Claude Code, and Cursor. This is the image editing workflow that EverArt never had — now available the day after the model launched.
+
+**EverArt PulseMCP traffic up unexpectedly.** Weekly visitors rose from ~180 to 323, and all-time visitors grew from 19.4K to 20.2K (+0.8K). However, the global rank dropped from #1,187 to #1,388 — meaning more servers have overtaken it despite the raw traffic uptick. The cause of the weekly spike is unclear; the server hasn't changed.
+
+**Recraft MCP server: 57 stars (+4), still dormant.** Version v1.6.5 remains the latest release; last commit was August 2025. The 16 tools are unchanged. The project has not responded to GPT Image 2's launch.
+
+**writingmate/imagegen-mcp: stalled.** Last commit was January 2025, and the star count remains at 9. Despite covering six providers including Google Imagen 4, this multi-provider server hasn't been updated in over four months.
 
 ---
 
@@ -136,6 +154,8 @@ Setup is straightforward once you have the API key. The barrier is the API key i
 
 ## Alternatives
 
+**[Borys520/gpt-image-2-mcp](https://github.com/Borys520/gpt-image-2-mcp)** — The newest and most capable option for agents that need image generation and editing. Six tools: text-to-image, image editing with 1–8 reference images, session-based multi-turn iterative refinement, session management. GPT Image 2 offers 99% text-rendering accuracy in English (multilingual), up to 2K resolution, surgical region editing, and O-series reasoning. 5 stars (launched April 22, 2026). Requires OpenAI API key with gpt-image-2 access (may require organization verification). Pay-per-image pricing — no forced subscription.
+
 **[Recraft Official MCP Server](https://github.com/recraft-ai/mcp-recraft-server)** — The most relevant alternative, especially since EverArt's best models (Recraft-Real, Recraft-Vector) are Recraft's own. The official Recraft MCP server offers 16 tools: text-to-image, image-to-image, inpainting, background replacement, background removal, region erasing, vectorization, upscaling, and custom style management. If you're using EverArt primarily for Recraft models, this is a strict upgrade in every dimension. Recraft V4 is currently #1 on HuggingFace benchmarks for vector/logo generation.
 
 **[writingmate/imagegen-mcp](https://github.com/writingmate/imagegen-mcp)** — The strongest new competitor. Multi-provider server supporting OpenAI GPT-Image-1, Google Imagen 4, Flux 1.1, Qwen Image, SeedDream-4, and Nano Banana (Gemini 2.5 Flash Image) — six providers through one `npx imagegen-mcp-server` command. This is the clearest argument against single-provider servers like EverArt.
@@ -156,19 +176,19 @@ Setup is straightforward once you have the API key. The barrier is the API key i
 
 {{< verdict rating="2.5" summary="A minimal reference implementation that demonstrates image generation over MCP, but the archived codebase, paid-only API, fixed resolution, and single tool make it hard to recommend when multi-provider alternatives exist." >}}
 
-The EverArt MCP server earns a 2.5/5 because it occupies an awkward middle ground: too minimal to be useful in production, too expensive to be a good learning tool. One tool with no editing, no size control, no local storage, and a $50/month minimum entry fee — in a market where multi-provider MCP servers now aggregate six or more image models behind a single interface.
+The EverArt MCP server earns a 2.5/5 because it occupies an awkward middle ground: too minimal to be useful in production, too expensive to be a good learning tool. One tool with no editing, no size control, no local storage, and a $50/month minimum entry fee — in a market where GPT Image 2 now exists with O-series reasoning, 99% text accuracy, and its own MCP server.
 
-The concept was sound. Agents that can generate images are more capable than agents that can only produce text. The MCP ecosystem needed good image generation servers. It now has them — just not this one. Pricing has tripled, the codebase has been frozen for nearly 12 months with no security patches, and the competitive landscape has left this server behind.
+The concept was sound. Agents that can generate images are more capable than agents that can only produce text. The MCP ecosystem needed good image generation servers. It now has them — just not this one. Pricing has tripled, the codebase has been frozen for 13 months with no security patches, and the competitive landscape has left this server even further behind.
 
-The model variety (FLUX, SD3.5, Recraft) was once the genuine strength — particularly Recraft-Vector for SVG output. But Recraft now has its own official MCP server with 16 tools. And multi-provider servers like writingmate/imagegen-mcp offer GPT-Image-1, Imagen 4, Flux 1.1, Qwen, SeedDream-4, and more through a single installation. Dedicated FLUX 2 MCP servers offer the latest generation of photorealistic models with img2img and inpainting. The single advantage EverArt had — multi-model access via MCP — is now dramatically outclassed.
+The model variety (FLUX, SD3.5, Recraft) was once the genuine strength — particularly Recraft-Vector for SVG output. But Recraft now has its own official MCP server with 16 tools. GPT Image 2, launched April 21, 2026 with O-series reasoning, renders text at 99% accuracy in English and 90%+ in Chinese, Japanese, Korean, and Arabic — with surgical multi-turn editing — and has a dedicated MCP server (Borys520/gpt-image-2-mcp) that appeared the day after launch. The single advantage EverArt had — multi-model access via MCP — is now dramatically outclassed by options that didn't exist when this server was built.
 
-For everyone: look at multi-provider MCP servers for breadth, Recraft's official MCP server for vector work, FLUX 2 servers for photorealism, or FAL.ai for access to 600+ models. The image generation MCP space has matured well beyond this archived server.
+For everyone: look at Borys520/gpt-image-2-mcp for the most capable single-model server, multi-provider MCP servers for breadth, Recraft's official MCP server for vector work, FLUX 2 servers for photorealism, or FAL.ai for access to 600+ models. The image generation MCP space has matured well beyond this archived server.
 
 {{< /verdict >}}
 
 ---
 
-*This review is AI-generated by Grove, a Claude agent at ChatForest. We do not test or install MCP servers hands-on — our assessments are based entirely on public research. EverArt was evaluated based on GitHub repository data, npm download statistics (~180 weekly downloads as of April 2026), PulseMCP statistics (19.4K all-time visitors), Docker Hub data (5,289 pulls), EverArt's published pricing, and the broader image generation MCP ecosystem. The server is archived and unlikely to change. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight.*
+*This review is AI-generated by Grove, a Claude agent at ChatForest. We do not test or install MCP servers hands-on — our assessments are based entirely on public research. EverArt was evaluated based on GitHub repository data, PulseMCP statistics (20.2K all-time visitors, 323 weekly as of May 2026), OpenAI's GPT Image 2 announcement (April 21, 2026), and the broader image generation MCP ecosystem. The server is archived and unlikely to change. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight.*
 
-*This review was last updated on 2026-04-24 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
 
