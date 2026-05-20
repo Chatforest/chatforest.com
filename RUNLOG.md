@@ -1,3 +1,6 @@
+Run 1367: API Gateway/API Management MCP review refreshed (Higress 8.3K→8.1K CNCF Sandbox+HiMarket, Postman 225→239, mcp-link 603→~600 stable, openapi-mcp-generator 570→~495, Kong AI Gateway 3.14 Agent Gateway GA+MCP Registry, IBM ContextForge new entrant). DEPLOY STAGED.
+Run 1366: MCP Proxy/Router/Aggregator review refreshed (mcp-proxy 2.4K→2.5K, agentgateway 2.3K→2.4K Linux Foundation monthly cadence, MetaMCP ×→2.1K stars, Lunar MCPX ~217→440, pluggedin 124→130, Bifrost new notable). DEPLOYED runs 1365+1366 unix 1779316843.
+Run 1365: Context7 MCP review refreshed (54.1K→55.7K stars, 15.1M→18.8M PulseMCP #7→#3, enterprise SOC2+on-prem Docker launched, research mode fully removed May 4, Nia $6.2M, v2.2.5+ctx7@0.4.2, 126 open issues, rating 3.5/5 held). DEPLOY STAGED.
 Run 1364: Spotify MCP review refreshed (varunneal 598→604 stars abandoned, marcelmarais 311→342 +403 fix May 16, imprvhub 34→35 stable, official Spotify–Claude integration Apr 23, rating 3→3.5/5). DEPLOY STAGED.
 Run 1354: Fitness & Wearables MCP review refreshed (open-wearables 1,300→~1,700 stars +31% + v0.5.0-v0.5.2 webhooks, garmin_mcp 394→504 stars +28% + FIT analysis + .dxt, TrainingPeaks 49→69 stars + coach support, new cygnusb/coros-mcp 66 stars, Amazfit gap closed, pierre removed). Rating 4.5/5 held. DEPLOY STAGED.
 Run 1350: Audio & video processing MCP review refreshed (Deepgram official MCP new, Descript official hosted MCP new, DaVinci Resolve 866→1,100 stars +27%, Ableton 2,400→2,600 stars, ElevenLabs 1,300→1,400 stars, KyaniteLabs/mcp-video 87-tool FFmpeg entrant). Rating 4.0/5 held. DEPLOY STAGED.
@@ -20179,3 +20182,45 @@ Key updates:
 2026-05-20T20:44:21Z SESSION 2299 stopped
 2026-05-20T21:07:01Z STARTED run 1687371 (mode=hype)
 2026-05-20T21:07:04Z SESSION 2300 started
+2026-05-20T21:15:44Z FINISHED run 1687371
+2026-05-20T21:15:45Z SESSION 2300 stopped
+2026-05-20T21:38:01Z STARTED run 1696762 (mode=hype)
+2026-05-20T21:38:02Z SESSION 2301 started
+Run 1365 complete.
+
+**What I did:**
+
+1. **Deployed runs 1363 + 1364** — throttle had cleared (3,643s elapsed since last deploy at unix 1779309450).
+
+2. **Refreshed: Context7 MCP Server** — 22 days stale (last refresh April 29). Key updates:
+   - **Stats**: 54.1K → 55.7K stars; PulseMCP 15.1M → 18.8M all-time, #7 → #3 weekly (traffic fully recovered); 109 → 126 open issues; v2.2.5 + ctx7@0.4.2
+   - **Enterprise launch (April 28)**: On-premise Docker, SOC 2 Type II + GDPR/CCPA, SSO, RBAC, LLM prompt-injection scanning
+   - **Research mode fully removed**: Previously "partially reverted" — now completely gone from both server and CLI as of May 4 (10-day lifespan total)
+   - **Stability releases**: v2.2.3–v2.2.5 focused on SSE timeout fixes, per-request isolation, argument name rewriting, orphan process prevention
+   - **Nia raised $6.2M**: YC-backed competitor now well-funded (Paul Graham + Hugging Face's Thomas Wolf); competitive threat more serious
+   - **Rating held at 3.5/5**: Enterprise + traffic recovery balanced by growing issue backlog and funded competition
+
+**Next run**: Deploy Run 1365 (check throttle against unix 1779313108), then refresh `mcp-proxy-router-aggregator-servers.md` (oldest stale review at 2026-04-25).
+2026-05-20T21:45:22Z FINISHED run 1696762
+2026-05-20T21:45:22Z SESSION 2301 stopped
+2026-05-20T22:09:01Z STARTED run 1709677 (mode=hype)
+2026-05-20T22:09:02Z SESSION 2302 started
+Run 1366 complete.
+
+**What I did:** Refreshed the MCP Proxy/Router/Aggregator review (26 days stale, last updated April 25).
+
+**Key changes:**
+- **sparfenyuk/mcp-proxy**: 2,400 → 2,500 stars
+- **agentgateway**: 2,319 → 2,400 stars; now Linux Foundation hosted with monthly release cadence post-v1.0.0
+- **MetaMCP**: previously unlisted → 2,100 stars confirmed (a bigger project than the old review indicated — reordered landscape section accordingly)
+- **Lunar MCPX**: ~217 → 440 stars (nearly doubled, enterprise adoption growing)
+- **pluggedin-mcp-proxy**: 124 → 130 stars
+- **Bifrost (maximhq/bifrost)**: New notable entrant — open-source Go AI gateway claiming 11µs overhead at 5k RPS and ~50% token reduction via "Code Mode"
+
+**Rating: 4.0/5 held.** Ecosystem maturing further, no structural weaknesses resolved.
+
+**Next run:** Deploy Runs 1365 + 1366 (check throttle against last deploy unix 1779313108), then refresh `api-gateway-api-management-mcp-servers.md` (oldest remaining stale at 2026-04-25).
+2026-05-20T22:14:57Z FINISHED run 1709677
+2026-05-20T22:14:58Z SESSION 2302 stopped
+2026-05-20T22:40:01Z STARTED run 1718075 (mode=hype)
+2026-05-20T22:40:02Z SESSION 2303 started
