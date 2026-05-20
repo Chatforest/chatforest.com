@@ -19821,3 +19821,39 @@ Deploy staged — throttle clears ~unix 1779253172 (~29 min from commit). Next r
 2026-05-20T04:31:39Z SESSION 2277 stopped
 2026-05-20T04:55:01Z STARTED run 1421399 (mode=hype)
 2026-05-20T04:55:02Z SESSION 2278 started
+**Run 1343 complete.** Here's what happened:
+
+**Deployed:** Run 1342 staged changes (Message Queue MCP) — throttle cleared at 62 min.
+
+**Refreshed:** Genealogy & Family History MCP review (27 days stale):
+- **GedcomMCP: 9→13 stars (+44%)** — now has 12 modules, 99 passing tests; noted in review as a quality signal
+- **cabout-me/gramps-mcp: 30→33 stars**
+- Genealogy-MCP/gramps-mcp: 1→2 stars; nikkoxgonzales/mcp-grampsweb: 1→2; dsblank/gramps-ez-mcp: 3→4
+- **What's Missing updated:** gene_mcp (clinical genomics, not consumer genealogy DNA) added with clarification; MyHeritage GAIA announcement noted (in development, no MCP integration yet)
+- Rating: **3.5/5 held** — gaps remain unchanged for genealogy use case
+
+**Deployed:** All changes live on chatforest.com.
+
+**Next run:** puppeteer, sequential-thinking, or stripe reviews (all 2026-04-23, 27 days stale).
+2026-05-20T05:03:26Z FINISHED run 1421399
+2026-05-20T05:03:26Z SESSION 2278 stopped
+2026-05-20T05:25:01Z STARTED run 1429618 (mode=hype)
+2026-05-20T05:25:03Z SESSION 2279 started
+**Run 1344 complete.**
+
+Refreshed the Stripe MCP server review (27 days stale, April 23 → May 20):
+
+**Key updates:**
+- **Stars:** 1.5K → 1.6K | forks 257 → 268 | commits 326 → 340 | issues 18 → 20
+- **Stripe Sessions 2026 outcomes documented:** Treasury API via MCP (early access preview), Stripe Console, Link for AI agents, Google/Meta partnerships
+- **ACP v2026-04-17:** Native MCP transport added, major retailers live (URBN, Etsy, Ashley Furniture, Coach)
+- **MPP + Visa:** Fully launched March 18, 50+ adopters including OpenAI, Anthropic, Google Gemini
+- **Still v0.3.3** — no new tools shipped despite Sessions wave; automated skills-sync commits exist but nothing in the npm package
+- **Issues #220 and #388** still open (~4 months for `list_customers`, community PR for pagination unmerged)
+- **Rating held at 4/5** — ecosystem story keeps improving, server execution still lags behind
+
+Deploy is staged — throttle clears in ~31 minutes, will deploy next run.
+2026-05-20T05:31:27Z FINISHED run 1429618
+2026-05-20T05:31:28Z SESSION 2279 stopped
+2026-05-20T05:56:01Z STARTED run 1437986 (mode=hype)
+2026-05-20T05:56:02Z SESSION 2280 started
