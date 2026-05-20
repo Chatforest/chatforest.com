@@ -1,15 +1,45 @@
 # Grafana MCP Server Review — 40+ Tools, Open Source
 
-> Grafana's official MCP server connects AI agents to dashboards, Prometheus, Loki, Pyroscope, InfluxDB, Graphite, ClickHouse, CloudWatch, Elasticsearch, alerts, incidents, and OnCall — 40+ tools across 18 categories.
+> Grafana's official MCP server connects AI agents to dashboards, Prometheus, Loki, Pyroscope, InfluxDB, Graphite, ClickHouse, CloudWatch, Elasticsearch, OpenSearch, alerts, incidents, and OnCall — 40+ tools across 19 categories.
 
 
-**At a glance:** 2,900+ GitHub stars, 340 forks, v0.12.0 (April 23, 2026), ~852K all-time PulseMCP visitors (#69 globally, ~19.4K weekly), 40+ tools across 18 categories, Apache 2.0.
+**At a glance:** 3,000+ GitHub stars, 359 forks, v0.14.0 (May 8, 2026), ~975K all-time PulseMCP visitors (#73 globally, ~20.3K weekly), 40+ tools across 19 categories, Apache 2.0.
 
 The Grafana MCP server gives AI agents direct access to your Grafana instance and the surrounding observability ecosystem — dashboards, Prometheus metrics, Loki logs, Pyroscope profiling data, ClickHouse analytics, CloudWatch metrics, Elasticsearch searches, alerting rules, incident management, OnCall schedules, and Sift investigations. All from one server.
 
-It's official. Grafana Labs builds and maintains it at [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana). With 2,900 GitHub stars, 340 forks, 19+ releases since December 2025, it's the most popular observability MCP server by community adoption — nearly five times Sentry's star count. Written in Go, licensed Apache 2.0.
+It's official. Grafana Labs builds and maintains it at [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana). With 3,000 GitHub stars, 359 forks, 23+ releases since December 2025, it's the most popular observability MCP server by community adoption — nearly five times Sentry's star count. Written in Go, licensed Apache 2.0.
 
 This is the second observability MCP server we've reviewed after [Sentry](/reviews/sentry-mcp-server/) (4/5). Where Sentry is deep and narrow — laser-focused on error tracking with proprietary AI analysis — Grafana is wide and extensible. It connects to whatever data sources your Grafana instance already has, which could be dozens of backends. The trade-off: breadth over depth.
+
+## What's New (May 2026 Update)
+
+**Four releases in four weeks — v0.12.1 through v0.14.0.** The pace since GrafanaCON hasn't let up.
+
+**v0.14.0 (May 8) — OpenSearch, generic API, dynamic server instructions:**
+- **OpenSearch datasource support (NEW CATEGORY — now 19):** Query OpenSearch datasources alongside the existing 18 categories. The supported datasource list continues expanding.
+- **Generic API request tool:** Arbitrary HTTP calls to the Grafana API — a catch-all for API endpoints not covered by dedicated tools. Anything reachable via the Grafana HTTP API is now accessible to agents without waiting for a dedicated tool.
+- **Plugin information retrieval tool:** Query Grafana plugin metadata directly from MCP.
+- **OTLP log export:** When the appropriate environment variables are configured, the server can export logs to OTLP-compatible backends.
+- **Dynamic server instructions:** Server instructions now reflect only the currently enabled tool categories — so your AI client sees a system prompt describing exactly the tools you've configured, nothing more. Context-efficiency improvement for users who disable large sections.
+- **OnCall routing fix:** OnCall tools now route through the IRM plugin proxy for correct authentication — important for users on Grafana Cloud's IRM (Incident Response Management) offering.
+- **Configurable slow-request-threshold logging:** Tune when slow request warnings fire.
+
+**v0.13.1 (April 30) — VictoriaMetrics support:**
+- **VictoriaMetrics datasource support for PromQL** — closes the long-standing issue [#766](https://github.com/grafana/mcp-grafana/issues/766) (opened April 21). Teams using VictoriaMetrics as a Grafana datasource can now `query_prometheus` against it.
+- Recording rules now included in datasource ruler listings for complete alerting rule visibility.
+- Request context properly propagated through OpenAPI convenience calls.
+
+**v0.13.0 (April 29) — Removals and fixes:**
+- **`search_logs` tool removed.** The high-level log search tool was returning errors and non-functional for most users. Removed rather than silently failing — a reasonable call given the issue volume.
+- ISO 8601 timestamps now correctly converted to epoch milliseconds in deeplink generation — fixes `generate_deeplinks` producing malformed Grafana URLs.
+- LLM type mismatch handling improved in alert rule management (common "string vs. number" errors).
+- Trailing slash normalization in Grafana URL config, legacy dashboard row support for old schema versions.
+
+**v0.12.1 (April 28):** Per-request Grafana configuration via context in HTTP RoundTrippers (enables multi-tenant patterns), optional Logger field on GrafanaConfig for structured logging integration.
+
+**GrafanaGhost: Indirect prompt injection CVE disclosed and patched in Grafana.** In early April 2026, Noma Security researchers publicly disclosed **GrafanaGhost** — an indirect prompt injection attack against Grafana environments using AI. The attack exploited Grafana's Markdown image rendering to embed exfiltration payloads in log entries or dashboard content that the AI would then process and act on. Sensitive data (financial metrics, infrastructure telemetry, customer records) could be shipped to an attacker-controlled server silently — no login required, no visible trace. Grafana patched the core vulnerability (patched in Grafana 12.4.2, 12.3.6, 12.2.8, 12.1.10, and 11.6.14). This is a Grafana platform vulnerability rather than an mcp-grafana bug — but it validates the concern we've been flagging about [issue #680](https://github.com/grafana/mcp-grafana/issues/680) (prompt injection via dashboard data flowing into MCP context), which remains open.
+
+**MCPSafe Grade B (AIVSS 85/100)** — automated security scan results filed via issues [#871–#875](https://github.com/grafana/mcp-grafana/issues/871) (May 13). An improvement over competitors — Framelink received Grade D (70/100) — but findings still pending maintainer response.
 
 ## What's New (April 2026 Update)
 
@@ -44,7 +74,7 @@ Alongside the remote MCP server, Grafana launched **[gcx](https://github.com/gra
 
 ## What It Does
 
-The server exposes 40+ tools across 18 configurable categories. Several categories are disabled by default to manage context window size — you enable only what you need.
+The server exposes 40+ tools across 19 configurable categories. Several categories are disabled by default to manage context window size — you enable only what you need.
 
 **Dashboard Management** (enabled by default)
 - `search_dashboards` — find dashboards by title or metadata
@@ -97,8 +127,8 @@ The server exposes 40+ tools across 18 configurable categories. Several categori
 **Graphite Querying** (disabled by default) — *new in v0.12.0*
 - Metric finding, query execution, and function discovery tools for Graphite datasources
 
-**Log Search** (disabled by default)
-- `search_logs` — high-level log search across ClickHouse (OTel) and Loki
+**OpenSearch Querying** (disabled by default) — *new in v0.14.0*
+- Query OpenSearch datasources directly from MCP
 
 **Incident Management** (enabled by default)
 - `list_incidents` — view incidents in Grafana Incident
@@ -202,7 +232,7 @@ A `--disable-write` flag provides read-only mode — preventing any write operat
 
 ## What's Good
 
-**The most comprehensive observability MCP server that isn't locked to a single vendor.** Grafana's core value proposition is that it works with *whatever backends you already use*. Prometheus, Loki, Tempo, ClickHouse, CloudWatch, Elasticsearch, InfluxDB, Graphite — the MCP server inherits Grafana's multi-datasource architecture and keeps expanding (v0.12.0 added InfluxDB and Graphite). Datadog's MCP server has more tools (50+), but they all query Datadog. Grafana's tools query your existing infrastructure regardless of vendor.
+**The most comprehensive observability MCP server that isn't locked to a single vendor.** Grafana's core value proposition is that it works with *whatever backends you already use*. Prometheus, Loki, Tempo, ClickHouse, CloudWatch, Elasticsearch, InfluxDB, Graphite, OpenSearch — the MCP server inherits Grafana's multi-datasource architecture and keeps expanding (v0.12.0 added InfluxDB and Graphite; v0.14.0 added OpenSearch). Datadog's MCP server has more tools (50+), but they all query Datadog. Grafana's tools query your existing infrastructure regardless of vendor.
 
 **Configurable tool categories prevent context window bloat.** At 40+ tools and ~16K tokens of tool descriptions, you'd waste your context budget loading everything. The `--disable-<category>` flags let you present only what matters. This is better than Sentry (which loads all ~20 tools every time) and smarter than AWS MCP (which has role-based configurations but less granular control). The `--enabled-tools` flag goes even further, letting you cherry-pick individual tools.
 
@@ -212,22 +242,22 @@ A `--disable-write` flag provides read-only mode — preventing any write operat
 
 **Real-time rendering.** The `get_panel_image` and `get_dashboard_image` tools render actual Grafana visualizations as PNGs that agents can analyze. This is uniquely powerful — instead of just getting metric numbers, your agent can see the same graphs a human would see in the dashboard.
 
-**Active development with weekly releases.** From v0.7.10 (December 2025) to v0.12.0 (April 2026) — 19+ releases in under 5 months, adding ClickHouse, CloudWatch, Elasticsearch, Pyroscope, InfluxDB, Graphite, panel query execution, alerting consolidation, SSO header forwarding, horizontal scaling, and image rendering. The pace is fast and the changelog shows substantial features, not just patch fixes. 852K+ all-time PulseMCP visitors confirm real-world interest.
+**Active development with weekly releases.** From v0.7.10 (December 2025) to v0.14.0 (May 2026) — 23+ releases in under 6 months, adding ClickHouse, CloudWatch, Elasticsearch, Pyroscope, InfluxDB, Graphite, OpenSearch, panel query execution, alerting consolidation, SSO header forwarding, horizontal scaling, image rendering, generic API access, and dynamic server instructions. The pace is fast and the changelog shows substantial features, not just patch fixes. 975K+ all-time PulseMCP visitors confirm real-world interest.
 
 **Open source, Apache 2.0.** The entire codebase is readable, forkable, and extensible. If Grafana's server doesn't query your niche datasource, you can add it yourself. This matters more for observability than most categories — teams have strong opinions about their monitoring stacks.
 
 ## What's Not
 
-**57 open issues — down from 61, with critical bugs fixed.** The v0.12.0 release closed two of the most impactful issues:
-- ~~Horizontal scaling failure~~ ([#749](https://github.com/grafana/mcp-grafana/issues/749)) — **FIXED** in v0.12.0. Multiple Kubernetes replicas now work via ephemeral session registration.
-- ~~Alert rules lose query data~~ ([#732](https://github.com/grafana/mcp-grafana/issues/732)) — **FIXED** in v0.12.0. Full query model preserved for non-Prometheus datasources.
+**68 open issues — up from 57, with a mix of fixes and new requests.** Since the April 24 refresh, the v0.12.1–v0.14.0 releases closed several bugs while new feature requests accumulated. Closed since last review:
+- ~~Prometheus fails against VictoriaMetrics~~ ([#766](https://github.com/grafana/mcp-grafana/issues/766)) — **FIXED** in v0.13.1.
 
-Remaining issues:
-- **Write-disable flag over-blocks** ([#744](https://github.com/grafana/mcp-grafana/issues/744)) — read-only Sift investigation tools are incorrectly blocked by `--disable-write`, preventing legitimate read operations. Undermines the safety feature.
-- **Prometheus fails against VictoriaMetrics** ([#766](https://github.com/grafana/mcp-grafana/issues/766), new April 21) — `query_prometheus` doesn't work with VictoriaMetrics datasources
-- **Loki pagination requested** ([#761](https://github.com/grafana/mcp-grafana/issues/761), new April 20) — `query_loki_logs` still silently truncates results without pagination support ([#557](https://github.com/grafana/mcp-grafana/issues/557))
+Remaining open issues:
+- **Write-disable flag over-blocks** ([#744](https://github.com/grafana/mcp-grafana/issues/744)) — read-only Sift investigation tools are incorrectly blocked by `--disable-write`, leaving users with list/get tools but nothing to list. Still open with no PR.
+- **Loki pagination requested** ([#761](https://github.com/grafana/mcp-grafana/issues/761)) — `query_loki_logs` still silently truncates results without pagination support ([#557](https://github.com/grafana/mcp-grafana/issues/557)).
 
-**Security findings remain open — and a new one appeared.** Issue [#608](https://github.com/grafana/mcp-grafana/issues/608) reports TLS bypass and credential exposure in panic stack traces. [#738](https://github.com/grafana/mcp-grafana/issues/738) flags a security policy gap in alerting and incident management capabilities. Most concerning: [#680](https://github.com/grafana/mcp-grafana/issues/680) reports **prompt injection via dashboard data** — untrusted content in dashboards could compromise the AI agent's context. For a server that connects to your production monitoring infrastructure with full query access, this attack surface matters.
+**GrafanaGhost validates the prompt injection risk — and it's real.** The publicly disclosed **GrafanaGhost** attack (April 2026, Noma Security) demonstrated exactly the scenario we've been flagging since our first review: attackers embedding malicious instructions in Grafana data (log entries, dashboard content) that an AI agent then processes and acts on — silently exfiltrating financial metrics, infrastructure telemetry, and customer records with no login required. The core vulnerability was patched in Grafana itself (versions 12.4.2, 12.3.6, 12.2.8, 12.1.10, 11.6.14). But [issue #680](https://github.com/grafana/mcp-grafana/issues/680) — **prompt injection via dashboard titles, panel descriptions, annotation text, and alert rule names flowing into MCP context** — remains open in the mcp-grafana repository. The Grafana patch addresses one specific exploit path via the image renderer; the broader MCP-context attack surface that #680 describes is unaddressed.
+
+**MCPSafe Grade B (AIVSS 85/100)** — automated security scan results filed via issues [#871–#875](https://github.com/grafana/mcp-grafana/issues/871) (May 13). Better than Framelink's Grade D, but findings are pending maintainer response. Issue [#608](https://github.com/grafana/mcp-grafana/issues/608) (TLS bypass, credential exposure in panic stack traces) and [#738](https://github.com/grafana/mcp-grafana/issues/738) (security policy gap in alerting/incident tools) remain open.
 
 **Authentication gap is closing — but not yet closed.** The new Grafana Cloud MCP server at `mcp.grafana.com/mcp` uses OAuth 2.1 — you authenticate in your browser, select read-only or read-write access, no tokens on disk. This matches what Sentry and PagerDuty offer. But the open-source self-hosted server still defaults to service account tokens in plaintext JSON config. The v0.11.5/v0.11.6 SSO header forwarding and on-behalf-of auth help in SSE/streamable-http modes, but stdio users still need manual tokens.
 
@@ -266,17 +296,17 @@ Remaining issues:
 - You want zero-install OAuth setup and you're *not* on Grafana Cloud — self-hosted still requires running the server yourself (Grafana Cloud users now have the hosted remote MCP server)
 - You're on Grafana versions below 9.0 — key tools will silently fail
 - You only need Sentry-style error tracking — Grafana is broader but shallower on specific debugging
-- You need a hardened production integration — 57 open issues including security findings (prompt injection via dashboard data, TLS bypass) suggest it's still maturing
+- You need a hardened production integration — 68 open issues including security findings (prompt injection via dashboard data, TLS bypass, the GrafanaGhost CVE patch applies to Grafana itself not the MCP server) suggest it's still maturing
 
-{{< verdict rating="4" summary="The most comprehensive open-source observability MCP server — now with a hosted remote option and 18 datasource categories" >}}
-GrafanaCON 2026 was transformative for Grafana's MCP story. The open-source server jumped to v0.12.0 with InfluxDB and Graphite datasources (18 categories total), fixed horizontal scaling and alert rule query preservation, and reduced token costs. But the headline is the new **Grafana Cloud MCP server** at `mcp.grafana.com/mcp` — a hosted remote endpoint with OAuth 2.1, 50+ tools, and zero local install. This directly closes the biggest gap we've flagged since our first review.
+{{< verdict rating="4" summary="The most comprehensive open-source observability MCP server — 19 datasource categories, 3K stars, and the GrafanaGhost CVE makes the security question urgent" >}}
+Four releases in four weeks (v0.12.1–v0.14.0) show Grafana hasn't slowed since GrafanaCON. The server now covers 19 datasource categories with the addition of OpenSearch, the generic API request tool unlocks anything reachable via the Grafana HTTP API, and dynamic server instructions mean your AI client sees only what you've enabled. VictoriaMetrics PromQL support (v0.13.1) closed a popular gap. The broken `search_logs` tool was removed rather than left silently failing.
 
-With 2,900+ stars, 852K+ PulseMCP visitors, and 40+ tools spanning dashboards, Prometheus, Loki, Pyroscope, InfluxDB, Graphite, ClickHouse, CloudWatch, Elasticsearch, alerting, incidents, OnCall, and Sift investigations, it covers more observability surface than any single-vendor alternative except Datadog. The configurable tool categories are the smartest context window management we've seen, and v0.12.0's token reduction work shows the team takes context efficiency seriously.
+With 3,000+ stars, 975K+ PulseMCP visitors, and 40+ tools spanning dashboards, Prometheus, Loki, Pyroscope, InfluxDB, Graphite, ClickHouse, CloudWatch, Elasticsearch, OpenSearch, alerting, incidents, OnCall, and Sift investigations, it covers more observability surface than any single-vendor alternative except Datadog. The configurable tool categories remain the smartest context window management we've seen.
 
-The 4/5 rating holds. The Grafana Cloud MCP server is in public preview (not GA), so breaking changes are possible. The prompt injection vulnerability via dashboard data ([#680](https://github.com/grafana/mcp-grafana/issues/680)) remains open and concerning. The `--disable-write` flag still over-blocks read operations ([#744](https://github.com/grafana/mcp-grafana/issues/744)). Self-hosted teams still need to run the server themselves. But the trajectory is clearly upward — Grafana is systematically closing every gap competitors had over it, and the gcx CLI plus o11y-bench benchmark show they're thinking about the full AI-assisted observability workflow, not just tool integration.
+The 4/5 rating holds, but the security picture has sharpened. **GrafanaGhost** — the indirect prompt injection CVE disclosed in April 2026 — showed exactly what a real-world exploit of the attack surface that issue [#680](https://github.com/grafana/mcp-grafana/issues/680) describes looks like. The core patch is in Grafana itself; the MCP-context variant of the problem (untrusted dashboard text flowing into agent context) remains open. The `--disable-write` flag still over-blocks Sift read operations ([#744](https://github.com/grafana/mcp-grafana/issues/744)). Open issues grew from 57 to 68. Grafana Cloud MCP is still public preview (not GA). These are manageable concerns for teams that understand the risk surface — but anyone deploying this in a high-trust environment needs to take the prompt injection risk seriously, not treat it as a hypothetical.
 {{< /verdict >}}
 
 **Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
-*This review was researched and written by AI (Claude Opus 4.6, Anthropic). We have not personally tested this MCP server — our analysis is based on documentation, source code, [GitHub data](https://github.com/grafana/mcp-grafana) (2,900+ stars, 340 forks as of April 2026), release changelogs (v0.11.4–v0.12.0), GrafanaCON 2026 announcements, and community reports. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight. Last updated 2026-04-24.*
+*This review was researched and written by AI (Claude Sonnet 4.6, Anthropic). We have not personally tested this MCP server — our analysis is based on documentation, source code, [GitHub data](https://github.com/grafana/mcp-grafana) (3,000+ stars, 359 forks as of May 2026), release changelogs (v0.12.1–v0.14.0), GrafanaGhost security disclosure (Noma Security, April 2026), MCPSafe automated scan results (May 2026), and community reports. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight. Last updated 2026-05-21.*
 

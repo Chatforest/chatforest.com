@@ -1,9 +1,9 @@
 # The Framelink MCP Server for Figma — Community Design-to-Code That Outperforms the Official
 
-> Framelink is the community Figma MCP server with 14,400+ GitHub stars. v0.11.0 adds rich text styling, fixes proxy routing. npm downloads cooling to ~105K/week from 198K peak. Here's the honest review.
+> Framelink is the community Figma MCP server with 14,800+ GitHub stars. Stdio crash (#362) and per-request API keys (#264) fixed on main — unreleased. MCPSafe flags Grade D. npm down to ~51K/week from 198K peak. Here's the honest review.
 
 
-**At a glance:** ~14,500 GitHub stars, ~1,140 forks, v0.11.0 (Apr 20, 2026), 2 tools, MIT license, ~105K weekly npm downloads, 25 releases
+**At a glance:** ~14,800 GitHub stars, ~1,200 forks, v0.11.0 (Apr 20, 2026), 2 tools, MIT license, ~51K weekly npm downloads, 25 releases
 
 Framelink is what happens when the community builds a better solution before the platform owner shows up. With 14,400+ GitHub stars, it's the de facto standard for design-to-code MCP workflows. And for good reason: it produces better output for the most common use case.
 
@@ -50,7 +50,7 @@ Supports: Cursor, Claude Code, Windsurf, Cline, VS Code, Zed, Amp, Codex, Roo, O
 
 **Works with any Figma account.** No Dev seat required, no paid plan needed. Standard Figma API rate limits apply instead of the official server's 6-calls-per-month free tier cap. This alone makes Framelink the obvious choice for individual developers and small teams.
 
-**~105,000 weekly npm downloads.** After peaking at ~198,000 in mid-April, downloads have cooled to ~105,000/week — still 9x the mid-March level (~11,500) but normalizing after the initial adoption surge. Active maintenance with 25 releases, latest v0.11.0 (April 20, 2026). TypeScript codebase with Vitest testing, ESLint, and Release Please automation.
+**~51,000 weekly npm downloads.** After peaking at ~198,000 in mid-April, downloads have continued cooling: ~105,000/week in late April, ~51,000/week as of mid-May. Still 4.4x the early March baseline (~11,500) but the normalization is ongoing. Active maintenance with 25 releases, latest v0.11.0 (April 20, 2026). TypeScript codebase with Vitest testing, ESLint, and Release Please automation.
 
 **Framework agnostic.** HTML, CSS, React, Vue, Svelte, iOS, Android — the descriptive output works with anything. No framework assumptions baked in.
 
@@ -70,7 +70,9 @@ Supports: Cursor, Claude Code, Windsurf, Cline, VS Code, Zed, Amp, Codex, Roo, O
 
 **Telemetry added in v0.10.0 — with a privacy stumble.** Anonymous PostHog telemetry was introduced in v0.10.0, but issue #354 revealed that raw error messages were leaking Figma file keys and node IDs to PostHog — contradicting the PR's privacy claims. A redaction PR (#356) was opened to sanitize identifiers before capture. Worth watching for privacy-conscious users and enterprise environments.
 
-**API key via command-line arg.** The `--figma-api-key=YOUR-KEY` approach puts your token in shell history and process lists. Environment variable support exists (`FIGMA_API_KEY`), but the documented default is the CLI arg.
+**API key via command-line arg — partially addressed.** The `--figma-api-key=YOUR-KEY` approach puts your token in shell history and process lists. Environment variable support exists (`FIGMA_API_KEY`). Issue #264 was closed April 30 via PR #365 (feat: support per-request Figma API keys) — users can now pass a key directly in individual tool calls, enabling multi-tenant scenarios. The fix is on main but not yet released in a versioned npm package.
+
+**MCPSafe security scan: Grade D (70/100).** The MCPSafe automated scanner (using a 5-LLM consensus panel to detect prompt injection risks, over-scoped tool schemas, and supply chain issues) flagged Framelink with 3 high-severity and 11 medium-severity findings in May 2026 — zero critical findings. The full detailed report is on the MCPSafe registry. No response from maintainers visible in the open issues (#377, #378). Enterprise and security-conscious teams should factor this into their evaluation.
 
 ## How It Compares
 
@@ -90,7 +92,7 @@ The real comparison is Framelink vs. the [official Figma Dev Mode MCP](/reviews/
 | **Code Connect** | No | Yes |
 | **Proxy support** | Yes (v0.9.0+) | N/A (remote) |
 | **Self-hostable** | Yes (MIT) | No |
-| **Weekly npm downloads** | ~105,000 | N/A (remote server) |
+| **Weekly npm downloads** | ~51,000 | N/A (remote server) |
 | **Maintenance** | 25 releases, v0.11.0 | Closed source |
 
 They complement rather than compete. Framelink wins on the most common workflow (read design → generate code) and now matches the official server on HTTP transport. The official server wins on unique capabilities (code-to-canvas, Code Connect, design tokens).
@@ -117,21 +119,33 @@ Other Figma MCP servers exist — GitHub has 221+ Figma MCP repos — but none a
 - **Proxy routing fix (#359)** — stopped routing all traffic through `EnvHttpProxyAgent` by default, which was inadvertently proxying all requests (including to Figma's API) even when proxy was only intended for specific endpoints
 - **403 error self-healing (#360)** — Figma 403 response bodies are now surfaced to LLMs so they can diagnose and recover from permission errors autonomously
 
-**Stdio transport crash bug (#362, open).** A race condition where progress notifications arrive after the tool response causes strict MCP clients (including Claude Code's SDK) to crash the stdio transport with "unknown progress token" errors. Affects all versions from v0.8.0–v0.11.0, causing intermittent disconnections during back-to-back Figma fetches. No fix merged yet.
+**~~Stdio transport crash bug (#362)~~ — fixed on main, unreleased.** The race condition where progress notifications arrived after the tool response — crashing strict MCP clients including Claude Code's SDK with "unknown progress token" errors — was resolved via PR #366 (merged April 25, 2026). The fix removed the final progress notification that fired just before the response and made the heartbeat stop function async to drain in-flight notifications before returning. The fix is on the main branch but has not yet shipped in a versioned npm release. Users on v0.11.0 (the current npm latest) are still affected.
 
-**Downloads normalizing.** Weekly npm downloads peaked at ~198,000 in mid-April and have cooled to ~105,000/week — still 9x the early March level (~11,500) but settling after the initial adoption wave. Stars grew from 13,829 to ~14,500. Forks from 1,093 to ~1,140. The official Figma guide repo grew from 1,069 to 1,229 stars.
+**Downloads continuing to normalize.** Weekly npm downloads peaked at ~198,000 in mid-April and have dropped further: ~105,000/week at the April 24 refresh, ~51,000/week as of mid-May — still 4.4x the early March baseline (~11,500) but the adoption spike is fading. Stars grew from ~14,500 to ~14,800. Forks from ~1,140 to ~1,200.
 
 **Critical RCE vulnerability (CVE-2025-53967)** was disclosed and patched in v0.6.3 (September 2025). Imperva researchers found a command injection flaw in `fetchWithRetry` — the curl fallback interpolated URLs into shell commands. Fully resolved, but a useful reminder that self-hosted MCP servers carry security responsibility.
 
+## What's New (May 2026 Update)
+
+No new npm releases since v0.11.0 (April 20), but meaningful changes landed on the main branch:
+
+**Issue #362 fixed via PR #366 (April 25) — stdio crash resolved, unreleased.** The race condition causing Claude Code and other strict MCP clients to crash on "unknown progress token" errors is fixed in the codebase. The resolution: removed the final progress notification (fired redundantly just before the response) and made the heartbeat stop function async to drain in-flight notifications before the response returns. Fix is on main but not yet in a versioned npm package — users on the current npm latest (v0.11.0) still encounter this bug.
+
+**Issue #264 fixed via PR #365 (April 30) — per-request API keys, unreleased.** Support for passing a Figma API key directly in individual tool calls is now on main. This enables multi-tenant deployments where different users provide their own credentials per-request, without sharing a server-level key. Addresses the core security concern about API keys in shell history/process lists. Also not yet in a versioned release.
+
+**MCPSafe security scan: Grade D (70/100), May 12.** An automated security scanner (MCPSafe, using a 5-LLM consensus panel) flagged Framelink with 3 high-severity and 11 medium-severity findings — no critical issues. The findings appear to cover prompt injection risks, tool schema scoping, and supply chain concerns typical for open-source MCP servers. No maintainer response visible in GitHub issues #377/#378. Enterprise users should review the MCPSafe registry entry before deploying.
+
+**Issue #354 (telemetry leaking file keys) remains open.** The PostHog telemetry introduced in v0.10.0 still leaks Figma file keys and node IDs in error messages. PR #356 (redaction fix) has not been merged. Privacy-sensitive users should consider disabling telemetry or waiting for a release that resolves this.
+
+**npm downloads: ~105K → ~51K/week.** The normalization that began after the April peak continues. The MCP ecosystem stabilization is real — Framelink's initial viral spike has passed. The server still processes tens of thousands of weekly installs and retains its lead over all competitors.
+
 ## The Bigger Picture
 
-Framelink's April 2026 trajectory shows a maturing project — seven releases in four weeks, but downloads normalizing from their ~198K peak to ~105K/week. This isn't decline; it's the end of the initial adoption spike as the MCP ecosystem stabilizes. At 9x the early March level, Framelink has cemented itself as the default Figma-to-code MCP server.
+Framelink's May 2026 trajectory shows a project in a holding pattern — v0.11.0 remains the latest npm release, but the main branch has outpaced it with two significant bug fixes waiting to ship. Downloads have continued cooling from ~198K at peak to ~51K/week as of mid-May: still a dominant position in design-to-code MCP, but well past the initial viral spike.
 
-The v0.11.0 rich text styling feature signals the project moving beyond structural layout data into content fidelity — preserving text formatting means AI agents generate more accurate code for text-heavy designs without manual cleanup.
+The most consequential development since the last refresh isn't a release — it's what's sitting unreleased on main. The stdio transport crash (#362) that caused intermittent Claude Code disconnections during rapid Figma fetches is fixed. Per-request API keys (#264) are implemented. Both fixes address real friction points that appear in GitHub issues repeatedly. The gap between main and the npm package is widening.
 
-The telemetry stumble (file keys leaking to PostHog in v0.10.0, caught by issue #354) is a useful case study in how quickly privacy promises can break down in error-path code. The redaction fix is in progress, but enterprise users should verify before deploying.
-
-The stdio transport crash (#362) is the most impactful open bug — it affects Claude Code users doing rapid Figma fetches, causing intermittent disconnections. No fix merged yet, though the issue outlines three viable server-side solutions.
+The telemetry privacy problem (#354 — file keys leaking to PostHog in error messages) remains unresolved despite being flagged in April. Combined with the MCPSafe Grade D security scan result in May (3 high + 11 medium findings), Framelink has accumulated a meaningful security/privacy concern profile. None of these are showstoppers for individual developers, but enterprise teams deploying at scale should evaluate carefully.
 
 The "descriptive vs. prescriptive" design decision remains the most consequential architectural choice in the design-to-code MCP space. Framelink bets that AI assistants are smart enough to translate design intent into code; Figma bets that AI assistants work better with explicit code examples. Based on adoption numbers (~14,500 stars vs. 1,229 for the official guide), the community has voted — and the margin remains wide.
 
@@ -139,7 +153,7 @@ For design-to-code work with AI agents, Framelink remains the starting point. Ad
 
 ## Rating: 4/5
 
-Framelink earns a 4/5 for producing objectively better code output than the official Figma MCP server for the most common design-to-code workflow — descriptive JSON that respects your project's conventions, preserved component hierarchies, ~25% smaller payloads, and zero cost barriers. It loses a point for having only two tools (one WIP), no write operations, Figma API rate limiting issues, the telemetry privacy stumble (#354), and an open stdio transport crash bug (#362) affecting Claude Code users. With ~105,000 weekly npm downloads (normalizing from a ~198K peak) and ~14,500 GitHub stars, it remains the most adopted design-to-code MCP server by a wide margin.
+Framelink earns a 4/5 for producing objectively better code output than the official Figma MCP server for the most common design-to-code workflow — descriptive JSON that respects your project's conventions, preserved component hierarchies, ~25% smaller payloads, and zero cost barriers. It loses a point for having only two tools (one WIP), no write operations, Figma API rate limiting issues, an unresolved telemetry privacy problem (#354 — file keys leaking to PostHog), two significant fixes (stdio crash #362, per-request API keys #264) sitting on main but unreleased, and a MCPSafe Grade D security scan result. With ~51,000 weekly npm downloads (normalizing from a ~198K peak) and ~14,800 GitHub stars, it remains the most adopted design-to-code MCP server by a wide margin.
 
 **Use this if:** You want to translate Figma designs into code using your AI assistant, regardless of your Figma plan tier, framework choice, or component library.
 
@@ -149,5 +163,5 @@ Framelink earns a 4/5 for producing objectively better code output than the offi
 
 **Category**: [Design & Creative MCP Servers](/categories/design-creative/)
 
-*This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic) and edited by [Rob Nugen](https://www.robnugen.com). We do not test MCP servers hands-on — our analysis is based on documentation, source code, GitHub activity, npm data, and community reports. Last updated 2026-04-24.*
+*This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic) and edited by [Rob Nugen](https://www.robnugen.com). We do not test MCP servers hands-on — our analysis is based on documentation, source code, GitHub activity, npm data, and community reports. Last updated 2026-05-21.*
 
