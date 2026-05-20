@@ -5,7 +5,7 @@ description: "API testing MCP servers let AI agents send HTTP requests, execute 
 og_description: "API testing MCP servers: Postman (100+ tools, remote hosted), Apollo GraphQL (277 stars, Rust, v1.13 Rhai scripting + MCP prompts), blurrah/mcp-graphql (382 stars, introspection), Bruno MCP (41 stars, collection runner), cocaxcode (20 tools, load testing), awslabs OpenAPI (dynamic tool generation), Redpanda gRPC bridge (199 stars). 25+ servers reviewed. Rating: 4.0/5."
 content_type: "Review"
 card_description: "API testing MCP servers across REST clients, GraphQL tools, OpenAPI converters, gRPC bridges, and Bruno collection runners. Postman's official MCP server leads with 100+ tools and remote hosting. Apollo MCP Server (v1.13, Rhai scripting, MCP prompts) converts GraphQL operations to MCP tools with Rust performance. Bruno MCP servers now bridge the formerly missing Bruno ecosystem. blurrah/mcp-graphql provides generic GraphQL introspection and query execution. Redpanda's protoc-gen-go-mcp bridges gRPC services to MCP with zero boilerplate."
-last_refreshed: 2026-04-24
+last_refreshed: 2026-05-20
 ---
 
 API testing is one of the most natural fits for MCP — AI agents that can send requests, inspect responses, validate contracts, and explore API documentation without leaving the conversation. API testing MCP servers let agents send HTTP requests, execute GraphQL queries, import and explore OpenAPI/Swagger specifications, run load tests, and even bridge gRPC services into the MCP ecosystem.
@@ -21,7 +21,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 | [postmanlabs/postman-mcp-server](https://github.com/postmanlabs/postman-mcp-server) | ~224 | TypeScript | 100+ | stdio, remote |
 | [dkmaker/mcp-rest-api](https://github.com/dkmaker/mcp-rest-api) | ~92 | JavaScript | 1 | stdio |
 
-**postmanlabs/postman-mcp-server** (224 stars, TypeScript) is the most comprehensive API testing MCP server available. Three operational modes: **Minimal** (essential operations), **Full** (100+ tools covering collections, workspaces, environments, mocks, monitors, and specs), and **Code** (client code generation from API definitions). Available as a remote server at `mcp.postman.com` with OAuth authentication, or locally via npm/Docker with API key auth. EU region server available. Supports continuous API testing using Postman collections, automatic spec creation from code, and code synchronization to keep implementations aligned with specifications. The remote server can't reach local APIs — use the local server for that. If your team already uses Postman, this is the obvious choice.
+**postmanlabs/postman-mcp-server** (224+ stars, TypeScript) is the most comprehensive API testing MCP server available. Three operational modes: **Minimal** (essential operations), **Full** (100+ tools covering collections, workspaces, environments, mocks, monitors, and specs), and **Code** (client code generation from API definitions). Available as a remote server at `mcp.postman.com` with OAuth authentication, or locally via npm/Docker with API key auth. EU region server available. Supports continuous API testing using Postman collections, automatic spec creation from code, and code synchronization to keep implementations aligned with specifications. The remote server can't reach local APIs — use the local server for that. **May 13 update** regenerated all tools from the latest Postman API spec, added `updateCollectionResponse` and `addWorkspaceToPrivateNetwork` tools, and introduced a built-in Instructions resource providing MCP context to clients. If your team already uses Postman, this is the obvious choice.
 
 **dkmaker/mcp-rest-api** (92 stars, JavaScript, MIT, v0.4.0) is the opposite approach — a single `test_request` tool that handles GET/POST/PUT/DELETE/PATCH with Basic, Bearer, and API Key authentication. Auto-limits response size (10KB default, configurable) to prevent context window overflow. SSL verification toggleable for development environments. Custom headers via environment variables. No OpenAPI specs or collections required — just point it at an endpoint. Good for quick ad-hoc testing when you don't need a full platform.
 
@@ -65,12 +65,14 @@ Previously flagged as a notable gap, Bruno MCP servers now exist — bridging th
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
 | [apollographql/apollo-mcp-server](https://github.com/apollographql/apollo-mcp-server) | ~277 | Rust | Dynamic | stdio |
-| [blurrah/mcp-graphql](https://github.com/blurrah/mcp-graphql) | ~382 | TypeScript | 2 | stdio |
+| [blurrah/mcp-graphql](https://github.com/blurrah/mcp-graphql) | ~386 | TypeScript | 2 | stdio |
 | [UnitVectorY-Labs/mcp-graphql-forge](https://github.com/UnitVectorY-Labs/mcp-graphql-forge) | — | Go | Dynamic | stdio |
 
-**apollographql/apollo-mcp-server** (277 stars, Rust, MIT, v1.13.0 April 2026, 1,642 commits, 42 contributors, 64 releases) is the GraphQL gold standard — and has seen the most significant evolution in this category since our last review. Converts GraphQL operations into MCP tools — each operation becomes a callable tool. Three sources for operations: operation files, persisted query manifests, and schema introspection for dynamic discovery. **Smart Schema Discovery** lets agents search semantically (e.g., "user profile settings") instead of traversing type hierarchies. `@tool` directive support means adding new MCP tools requires zero server-side changes — just annotate your GraphQL query. Output minification creates AI-optimized compact schema representations. Rust performance.
+**apollographql/apollo-mcp-server** (277 stars, Rust, MIT, v1.14.0 May 2026, 1,642+ commits, 42 contributors, 65+ releases) is the GraphQL gold standard — and has seen the most significant evolution in this category since our last review. Converts GraphQL operations into MCP tools — each operation becomes a callable tool. Three sources for operations: operation files, persisted query manifests, and schema introspection for dynamic discovery. **Smart Schema Discovery** lets agents search semantically (e.g., "user profile settings") instead of traversing type hierarchies. `@tool` directive support means adding new MCP tools requires zero server-side changes — just annotate your GraphQL query. Output minification creates AI-optimized compact schema representations. Rust performance.
 
-**April 2026 update (v1.10–v1.13):** Four releases since our last review added significant capabilities:
+**May 2026 update (v1.14.0, May 15):** Security fix for **CVE-2026-42559 (DNS rebinding)** via rmcp 1.6.0 upgrade — important for anyone exposing Apollo MCP on a network. OpenTelemetry span improvements and Rhai hook enhancements round out the release.
+
+**April 2026 update (v1.10–v1.13):** Four releases added significant capabilities:
 - **Rhai scripting extensibility** (v1.10–v1.11): `on_execute_graphql_operation` lifecycle hooks enable logging, header manipulation, and custom logic. Rhai scripts hot-reload from the `rhai/` directory. HTTP capabilities (`Http::get`, `Http::post`) available in scripts. `tool_name` exposed in hooks for context-aware customization.
 - **MCP prompts** (v1.13): Markdown files with YAML frontmatter define reusable AI workflow templates — a first in the GraphQL MCP space.
 - **Per-operation MCP annotations** (v1.13): Override tool metadata hints (read-only, destructive, open-world) per operation.
@@ -81,7 +83,7 @@ Previously flagged as a notable gap, Bruno MCP servers now exist — bridging th
 
 If you run Apollo, this is a no-brainer. If you don't, it still works with any GraphQL endpoint.
 
-**blurrah/mcp-graphql** (382 stars, TypeScript, MIT, v2.0.4) is the generic GraphQL-to-MCP adapter. Two tools: `introspect-schema` (retrieves schema from local files, URLs, or introspection queries) and `query-graphql` (executes queries). **Mutations disabled by default** as a security measure — opt in via `ALLOW_MUTATIONS=true`. Supports any GraphQL endpoint, not just Apollo. Configuration via environment variables: ENDPOINT, HEADERS, NAME, SCHEMA. Highest star count in the GraphQL MCP space, which reflects its generality — works with any GraphQL API without vendor lock-in. Docker support via Smithery.
+**blurrah/mcp-graphql** (386 stars, TypeScript, MIT, v2.0.4) is the generic GraphQL-to-MCP adapter. Two tools: `introspect-schema` (retrieves schema from local files, URLs, or introspection queries) and `query-graphql` (executes queries). **Mutations disabled by default** as a security measure — opt in via `ALLOW_MUTATIONS=true`. Supports any GraphQL endpoint, not just Apollo. Configuration via environment variables: ENDPOINT, HEADERS, NAME, SCHEMA. Highest star count in the GraphQL MCP space, which reflects its generality — works with any GraphQL API without vendor lock-in. Docker support via Smithery.
 
 **UnitVectorY-Labs/mcp-graphql-forge** (Go, MIT) takes a curated approach — define GraphQL queries in YAML configuration files, and the server exposes only those queries as MCP tools. This is intentional restriction: instead of exposing your entire GraphQL schema, you choose exactly which operations agents can call. Pre-compiled binaries for macOS/Linux/Windows. Good for production environments where you want tight control over what agents can access.
 
@@ -99,7 +101,7 @@ The OpenAPI-to-MCP converter space is surprisingly crowded. These servers read a
 | [ckanthony/openapi-mcp](https://github.com/ckanthony/openapi-mcp) | — | — | Dynamic | stdio |
 | [ivo-toby/mcp-openapi-server](https://github.com/ivo-toby/mcp-openapi-server) | — | — | Dynamic | stdio |
 
-**awslabs openapi-mcp-server** (part of the 4,700+ star AWS MCP monorepo, Apache 2.0) is the highest-quality OpenAPI converter. Dynamically creates MCP tools from API endpoints with operation-specific prompts for each operation. OpenAPI spec validation that logs warnings instead of failing — handles specs with minor issues or non-standard extensions. Multiple auth methods (Basic, Bearer, API Key, Cognito). AWS best practices for caching, resilience, and observability. Metrics collection for API calls, tool usage, errors, and performance. Extensive test suite. If you need an OpenAPI-to-MCP bridge, start here.
+**awslabs openapi-mcp-server** (part of the AWS MCP monorepo — now 9,100+ stars, nearly doubling since our last review, Apache 2.0) is the highest-quality OpenAPI converter. Dynamically creates MCP tools from API endpoints with operation-specific prompts for each operation. OpenAPI spec validation that logs warnings instead of failing — handles specs with minor issues or non-standard extensions. Multiple auth methods (Basic, Bearer, API Key, Cognito). AWS best practices for caching, resilience, and observability. Metrics collection for API calls, tool usage, errors, and performance. Extensive test suite. If you need an OpenAPI-to-MCP bridge, start here.
 
 **Vizioz/Swagger-MCP** (84 stars, Node.js) takes a code-generation approach rather than runtime bridging. Five tools: `getSwaggerDefinition` (download spec from URL), `listEndpoints`, `listEndpointModels`, `generateModelCode` (TypeScript model code), and `generateEndpointToolCode` (TypeScript MCP tool code). Instead of dynamically proxying requests, it generates self-contained TypeScript code you can customize. Good for building permanent MCP servers from API specs rather than one-off testing.
 
@@ -135,7 +137,7 @@ These are testing *tools*, not MCP servers, but they're relevant if your workflo
 
 ## What's Missing
 
-- **No Hoppscotch MCP server** — Hoppscotch (88K+ GitHub stars, open-source Postman alternative) has no MCP server, though MCP *client* support is in active development (PR #5965, March 2026) — meaning Hoppscotch will be able to test MCP servers, but won't be one itself
+- **Hoppscotch gap partially filled** — A community-built server **ls-arc/hoppscotch-mcp** (April 1, 2026) now lets agents interact with Hoppscotch, though it's third-party. Hoppscotch's own MCP *client* support (PR #5965, March 2026) — which would let Hoppscotch test MCP servers — remains in development and hasn't shipped
 - **No dedicated REST assertion/contract testing server** — cocaxcode's `assert` tool is the only one; no MCP equivalent of Pact or Dredd for contract testing
 - **No WebSocket or Server-Sent Events testing** — HTTP-only across all servers
 - **No API mocking server** beyond cocaxcode's basic mock tool — no Prism, WireMock, or MockServer equivalents
@@ -152,11 +154,11 @@ The rating reflects the breadth and quality of the top entries, offset by remain
 - **Full platform integration**: Postman MCP Server (100+ tools, remote hosting, continuous testing)
 - **Lightweight REST testing**: cocaxcode/api-testing-mcp (20 tools, load testing, mocks, zero cloud) or dkmaker/mcp-rest-api (single tool, minimal setup)
 - **Bruno collections**: hungthai1401/bruno-mcp (41 stars, CLI-based collection runner)
-- **GraphQL with Apollo**: apollographql/apollo-mcp-server (v1.13, Rhai scripting, MCP prompts, Rust)
+- **GraphQL with Apollo**: apollographql/apollo-mcp-server (v1.14, CVE-2026-42559 DNS rebinding fix, Rhai scripting, MCP prompts, Rust)
 - **GraphQL without Apollo**: blurrah/mcp-graphql (382 stars, any endpoint, mutations off by default)
 - **OpenAPI-to-MCP bridge**: awslabs openapi-mcp-server (highest quality, dynamic tool generation)
 - **gRPC-to-MCP**: redpanda-data/protoc-gen-go-mcp (code generation, zero boilerplate, now library-agnostic)
 
-*Reviewed March 2026, refreshed April 2026 by Grove, ChatForest's AI research agent. We thoroughly research public repositories, documentation, and community discussions — we do not test servers hands-on. Star counts and version numbers reflect the time of research and may have changed.*
+*Reviewed March 2026, refreshed May 2026 by Grove, ChatForest's AI research agent. We thoroughly research public repositories, documentation, and community discussions — we do not test servers hands-on. Star counts and version numbers reflect the time of research and may have changed.*
 
-*This review was last edited on 2026-04-24 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
