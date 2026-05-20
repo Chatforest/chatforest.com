@@ -2,16 +2,16 @@
 title: "Message Queue MCP Servers — Kafka, RabbitMQ, Pulsar, NATS, SQS, and Beyond"
 date: 2026-03-15T03:04:00+09:00
 description: "Message queue MCP servers let AI agents produce and consume messages, manage topics and queues, monitor clusters, and orchestrate event streaming across Kafka, RabbitMQ, Pulsar"
-og_description: "Message queue MCP servers: Confluent (50+ tools, v1.2.2, billing+metrics), Google Pub/Sub (official remote, OAuth), AWS SQS/SNS (official, IAM), RabbitMQ+ActiveMQ (Amazon MQ official), Redis (490 stars, EntraID+hybrid search), RocketMQ NEW. 30+ servers across 11 platforms. Rating: 3.5/5."
+og_description: "Message queue MCP servers: Confluent (Data Governance+A2A, now self-managed Kafka), Azure MCP 2.0 (276 tools, 57 services), Google Pub/Sub (official remote, OAuth), AWS SQS/SNS (official, IAM), Redis v0.5.0 (EntraID+hybrid search), RocketMQ. 30+ servers across 11 platforms. Rating: 4.0/5."
 content_type: "Review"
-card_description: "Message queue MCP servers across Kafka, RabbitMQ, ActiveMQ, Pulsar, NATS, SQS, Google Pub/Sub, Azure Service Bus, RocketMQ, and IBM MQ. Official servers exist for most major platforms. Confluent v1.2.2 adds billing and metrics tools. Amazon MQ now covers ActiveMQ. New MCP-over-AMQP transport SDK."
-last_refreshed: 2026-04-23
-lastmod: 2026-04-23
+card_description: "Message queue MCP servers across Kafka, RabbitMQ, ActiveMQ, Pulsar, NATS, SQS, Google Pub/Sub, Azure Service Bus, RocketMQ, and IBM MQ. Confluent now supports self-managed Kafka (Confluent Platform) and added Data Governance tools plus A2A agent coordination via Kafka. Azure MCP Server 2.0 stable with 276 tools across 57 Azure services."
+last_refreshed: 2026-05-20
+lastmod: 2026-05-20
 ---
 
 Message queues and event streaming are the nervous system of modern distributed architectures — and now AI agents can interact with them directly. Every major messaging platform has at least one MCP server, but the quality ranges from comprehensive official implementations to single-developer experiments.
 
-The headline finding: **Kafka has the most fragmented MCP ecosystem** with 8+ independent servers and no clear winner until Confluent's official implementation — which just shipped v1.2.2 with billing costs and metrics tools. Meanwhile, **Google Pub/Sub** ships the most architecturally sophisticated official server — a fully managed remote endpoint with IAM-native authorization. **Amazon MQ now covers both RabbitMQ and ActiveMQ**, filling a gap we previously flagged. And a new **MCP-over-AMQP transport SDK** from Amazon MQ enables running any MCP server over AMQP message brokers — a first for the protocol.
+The headline finding this cycle: **Confluent's official server now targets self-managed Kafka (Confluent Platform)** — removing its biggest limitation — while adding Data Governance tools and A2A (Agent2Agent) protocol support for Streaming Agents. **Azure MCP Server 2.0** (April 2026) went stable with 276 tools across 57 Azure services and self-hosted remote MCP support. **Google Pub/Sub** remains the most architecturally sophisticated messaging server — a fully managed remote endpoint with IAM-native authorization. **Amazon MQ covers both RabbitMQ and ActiveMQ**, and its MCP-over-AMQP transport SDK (last updated February 2026) continues to be the only implementation using message queues as the MCP transport layer itself.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -21,21 +21,23 @@ The headline finding: **Kafka has the most fragmented MCP ecosystem** with 8+ in
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) | 151 | TypeScript | 50+ | Confluent API keys | — |
+| [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) | 153 | TypeScript | 50+ | Confluent API keys | — |
 | [kanapuli/mcp-kafka](https://github.com/kanapuli/mcp-kafka) | 76 | Go | 5+ | Kafka auth | MIT |
-| [aywengo/kafka-schema-reg-mcp](https://github.com/aywengo/kafka-schema-reg-mcp) | 31 | Python | 20+ | Registry auth + OAuth 2.1 | — |
+| [aywengo/kafka-schema-reg-mcp](https://github.com/aywengo/kafka-schema-reg-mcp) | 31 | Python | 57+ | Registry auth + OAuth 2.1 | — |
 | [wklee610/kafka-mcp](https://github.com/wklee610/kafka-mcp) | 11 | Python | 10+ | Kafka auth | — |
 | [CefBoud/kafka-mcp-server](https://github.com/CefBoud/kafka-mcp-server) | 3 | Go | 5+ | Kafka auth | — |
 
 **Kafka has the most MCP servers of any messaging platform — and the most fragmentation.** At least 8 independent implementations exist, most offering similar produce/consume/list-topics functionality with varying levels of completeness.
 
-**Confluent's official server is the clear winner.** [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) (151 stars, v1.2.2) offers [50+ tools](https://github.com/confluentinc/mcp-confluent#readme) that go well beyond basic Kafka operations. It covers Kafka topics (create, list, delete, consume with Schema Registry support), **Flink SQL** (statement creation and execution, plus catalog exploration across 5 tools), **Flink Diagnostics** (health checks, issue detection, profiling), **Schema Registry** (schema management, versioning, and deletion), **Kafka Connect** (connector management), **Tableflow** (data pipeline management plus catalog), **Metrics** (2 tools), and **Billing** (cost tracking). It supports tool filtering, HTTP/SSE transports with API key authentication, DNS rebinding protection, and natural language interaction with your Confluent Cloud environment. The v1.2.0 release (April 2) added billing costs, Flink catalog, and schema deletion — the server now covers operational costs alongside infrastructure.
+**Confluent's official server is the clear winner.** [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) (153 stars) offers [50+ tools](https://github.com/confluentinc/mcp-confluent#readme) that go well beyond basic Kafka operations. It covers Kafka topics (create, list, delete, consume with Schema Registry support), **Flink SQL** (statement creation and execution, plus catalog exploration), **Flink Diagnostics** (health checks, issue detection, profiling), **Schema Registry** (schema management, versioning, deletion), **Kafka Connect** (connector management, delete), **Tableflow** (data pipeline management plus catalog), **Metrics**, **Billing** (cost tracking), and now **Data Governance** — tag creation, searching, linking to topics/schemas, and removal. Supports tool filtering, HTTP/SSE transports, DNS rebinding protection, and vendor-backed support is now available. **Refactored with lazy-loading clients and factory pattern** for better performance.
 
-The trade-off: it's Confluent Cloud-only. If you're running self-managed Kafka, you need a community server.
+**Critical update: the "Confluent Cloud-only" limitation is removed.** The server now explicitly supports **Confluent Platform** (self-managed/on-premises Kafka) in addition to Confluent Cloud, addressing the biggest gap from prior reviews. Self-managed Kafka operators no longer need to fall back to community servers.
+
+**Confluent Intelligence Q1 2026 — A2A integration for Streaming Agents (Open Preview):** Confluent's Streaming Agents can now use the **Agent2Agent (A2A) protocol** to trigger and coordinate external AI agents across LangChain, CrewAI, SAP, Salesforce, and other A2A-capable platforms — all over a reliable, replayable Kafka backbone. The MCP+A2A two-layer stack (MCP for tool integration, A2A for agent-to-agent coordination) is Confluent's bet on the enterprise agentic architecture standard.
 
 *Full review: [Confluent MCP Server](/reviews/confluent-mcp-server/) — Rating: 3.5/5*
 
-For self-managed Kafka, **kanapuli/mcp-kafka** (76 stars, Go) is the most adopted community option with basic produce, consume, and topic management. **wklee610/kafka-mcp** adds consumer group management with offset reset/rewind. **CefBoud/kafka-mcp-server** (Go) offers Docker deployment, command logging, and a read-only mode.
+For self-managed Kafka without Confluent Platform, **kanapuli/mcp-kafka** (76 stars, Go) remains the most adopted pure community option with basic produce, consume, and topic management. **wklee610/kafka-mcp** adds consumer group management with offset reset/rewind. **CefBoud/kafka-mcp-server** (Go) offers Docker deployment, command logging, and a read-only mode.
 
 **AWS Managed Streaming for Kafka (MSK)** has an official server in [awslabs/mcp](https://github.com/awslabs/mcp) covering cluster management, configuration, VPC connections, monitoring, and security via IAM — but this manages MSK infrastructure, not Kafka messages themselves.
 
@@ -55,7 +57,7 @@ For self-managed Kafka, **kanapuli/mcp-kafka** (76 stars, Go) is the most adopte
 
 **kmitchell/rabbitmq-mcp** takes a practical operations approach: get message counts, move messages between queues, purge dead-letter queues, check for alarms in production vhosts. It wraps the RabbitMQ HTTP Management API — the management plugin must be enabled.
 
-**NEW: MCP-over-AMQP Transport.** [amazon-mq/mcp-amqp-transport](https://github.com/amazon-mq/mcp-amqp-transport) (20 stars) is an SDK for running **any MCP server over AMQP message brokers** — a first for the protocol. It supports both AMQP 0.9.1 and AMQP 1.0 protocols, provides CLI adaptors bridging stdio-based MCP with AMQP, includes an interceptor framework for custom message processors, and handles TLS/AMQPS. Available as [@aws/mcp-amqp-transport](https://www.npmjs.com/package/@aws/mcp-amqp-transport) (v1.0.2) on npm. This isn't a messaging MCP server — it uses messaging infrastructure *as the transport layer for MCP itself*, enabling fault-tolerant, scalable MCP deployments with automatic retries and dead-letter queue management.
+**MCP-over-AMQP Transport.** [amazon-mq/mcp-amqp-transport](https://github.com/amazon-mq/mcp-amqp-transport) (20 stars, last updated February 14, 2026) is an SDK for running **any MCP server over AMQP message brokers** — a first for the protocol. It supports both AMQP 0.9.1 and AMQP 1.0 protocols, provides CLI adaptors bridging stdio-based MCP with AMQP, includes an interceptor framework for custom message processors, and handles TLS/AMQPS. Available as [@aws/mcp-amqp-transport](https://www.npmjs.com/package/@aws/mcp-amqp-transport) (v1.0.2) on npm. This isn't a messaging MCP server — it uses messaging infrastructure *as the transport layer for MCP itself*, enabling fault-tolerant, scalable MCP deployments with automatic retries and dead-letter queue management.
 
 The RabbitMQ ecosystem is thinner than Kafka's. None of these servers approach Confluent's 50+ tool count. Basic queue operations work, but advanced features like exchange management, shovel configuration, or federation are limited.
 
@@ -76,7 +78,7 @@ The RabbitMQ ecosystem is thinner than Kafka's. None of these servers approach C
 |--------|-------|----------|-------|------|---------|
 | [redis/mcp-redis](https://github.com/redis/mcp-redis) | 490 | Python | Streams + Pub/Sub + JSON + Vector | Redis auth + EntraID | — |
 
-**Redis has an official MCP server that includes first-class messaging support.** [redis/mcp-redis](https://github.com/redis/mcp-redis) (490 stars, 344 commits) covers Streams (add, read, delete with consumer group support for durable event sourcing) and Pub/Sub (publish/subscribe for real-time broadcasting). It also handles JSON documents, general Redis operations, and **vector search and indexing** through query engine tools including a **hybrid_search** tool. Recent additions include **EntraID Authentication** for Azure Managed Redis with automatic token renewal and multiple authentication flows (Service Principal, Managed Identity, Default Azure Credential).
+**Redis has an official MCP server that includes first-class messaging support.** [redis/mcp-redis](https://github.com/redis/mcp-redis) covers Streams (add, read, delete with consumer group support for durable event sourcing) and Pub/Sub (publish/subscribe for real-time broadcasting). It also handles JSON documents, general Redis operations, and **vector search and indexing** through query engine tools including a **hybrid_search** tool. EntraID Authentication for Azure Managed Redis supports automatic token renewal, Service Principal, Managed Identity, and Default Azure Credential flows. **v0.5.0** (released March 16, 2026) is the latest stable release.
 
 The key distinction the server makes: Streams are durable and reliable with consumer groups (activity feeds, sensor logging), while Pub/Sub is fire-and-forget broadcasting (notifications, chat, live updates). Having both in one server is practical since Redis deployments typically use both patterns.
 
@@ -126,9 +128,11 @@ This is what a mature cloud-native MCP server looks like — managed infrastruct
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [microsoft/mcp](https://github.com/microsoft/mcp) (Azure MCP) | 3,000 | TypeScript | 10+ | Azure identities | — |
+| [microsoft/mcp](https://github.com/microsoft/mcp) (Azure MCP) | 3,000 | TypeScript | 276 across 57 services | Azure identities | — |
 
-**Microsoft's official Azure MCP server includes Service Bus support** as part of the consolidated [microsoft/mcp](https://github.com/microsoft/mcp) (3,000 stars, 465 forks) repository. Service Bus tools cover queue management (create, list, delete), topic management, subscription management, message peeking (without consuming), message details, and runtime details (message counts, status). The original [Azure/azure-mcp](https://github.com/Azure/azure-mcp) was archived in February 2026 — all development now happens in the microsoft/mcp monorepo, which also covers Azure AI Search, PostgreSQL, Key Vault, Data Explorer, AKS, DevOps, and more.
+**Azure MCP Server 2.0** (stable, April 2026) is a major milestone. The consolidated [microsoft/mcp](https://github.com/microsoft/mcp) (3,000 stars) now contains **276 MCP tools across 57 Azure services**, covering end-to-end scenarios from provisioning to deployment to monitoring and operational diagnostics. The original [Azure/azure-mcp](https://github.com/Azure/azure-mcp) was archived in February 2026 — all development is in the microsoft/mcp monorepo. **Azure MCP Server is now built into Visual Studio 2026**, further broadening its reach.
+
+The 2.0 release introduces **self-hosted remote MCP server support** — Azure MCP can now run as a remote server (not just stdio), and is also available as an **MCP Bundle (.mcpb)** format for single-file distribution. Service Bus tools remain: queue management (create, list, delete), topic management, subscription management, **message peeking** (inspect without consuming), message details, and runtime details (message counts, status).
 
 The **message peeking** capability is a thoughtful design decision — inspect messages without consuming them, which is critical for debugging and monitoring without affecting queue processing.
 
@@ -166,12 +170,12 @@ This is early-stage but notable — RocketMQ is the dominant messaging platform 
 
 | Server | Stars | Language | Brokers | Notable |
 |--------|-------|----------|---------|---------|
-| [LarsCowe/queue-pilot](https://github.com/LarsCowe/queue-pilot) | 2 | TypeScript | RabbitMQ + Kafka | JSON Schema validation |
+| [LarsCowe/queue-pilot](https://github.com/LarsCowe/queue-pilot) | 2 | TypeScript | RabbitMQ + Kafka | JSON Schema validation (v0.5.0) |
 | [messageaid/mcp](https://github.com/messageaid/mcp) | 0 | TypeScript | RabbitMQ + SQS + Service Bus | BSL 1.1 license |
 
 Two multi-broker MCP servers attempt to unify messaging across platforms.
 
-**queue-pilot** (14+ tools) stands out for **JSON Schema validation** — validate message payloads against agreed-upon schemas before sending, which matters for integration projects with multiple teams. Supports message peeking (inspect without consuming), queue inspection, and exchange management. Born from the developer's frustration with copy-pasting messages from RabbitMQ for manual validation.
+**queue-pilot** (v0.5.0, 14+ tools) stands out for **JSON Schema validation** — validate message payloads against agreed-upon schemas before sending, which matters for integration projects with multiple teams. Supports message peeking (inspect without consuming), queue inspection, and exchange management. Born from the developer's frustration with copy-pasting messages from RabbitMQ for manual validation.
 
 **messageaid/mcp** covers RabbitMQ, Azure Service Bus, and Amazon SQS with a unified interface for queues, topics, subscriptions, and message management. Note the **BSL 1.1 license** — Business Source License, which restricts commercial use.
 
@@ -187,9 +191,9 @@ Two multi-broker MCP servers attempt to unify messaging across platforms.
 
 ## Recommendations
 
-**For Kafka (Confluent Cloud):** [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) (52 tools, 152 stars) is the clear choice. It covers Kafka, Flink SQL, Schema Registry, Connect, and Tableflow in one server. See our [full Confluent MCP Server review](/reviews/confluent-mcp-server/).
+**For Kafka (Confluent Cloud or Confluent Platform):** [confluentinc/mcp-confluent](https://github.com/confluentinc/mcp-confluent) (153 stars) now covers both cloud and self-managed deployments. Kafka, Flink SQL, Schema Registry, Connect, Tableflow, Data Governance, and A2A integration in one server. See our [full Confluent MCP Server review](/reviews/confluent-mcp-server/).
 
-**For Kafka (self-managed):** [kanapuli/mcp-kafka](https://github.com/kanapuli/mcp-kafka) (75 stars) for basic operations. Add [aywengo/kafka-schema-reg-mcp](https://github.com/aywengo/kafka-schema-reg-mcp) if you need schema management.
+**For Kafka (self-managed, non-Confluent):** [kanapuli/mcp-kafka](https://github.com/kanapuli/mcp-kafka) (76 stars) for basic operations. Add [aywengo/kafka-schema-reg-mcp](https://github.com/aywengo/kafka-schema-reg-mcp) (57+ tools, v2.1.5) if you need schema management.
 
 **For RabbitMQ:** [amazon-mq/mcp-server-rabbitmq](https://github.com/amazon-mq/mcp-server-rabbitmq) (24 stars) for multi-broker support and OAuth auth. Note: kenliao94's community server has been [re-homed into this official repo](https://github.com/kenliao94/mcp-server-rabbitmq#readme).
 
@@ -207,12 +211,12 @@ Two multi-broker MCP servers attempt to unify messaging across platforms.
 
 ## The Bottom Line
 
-The message queue MCP ecosystem continues to expand — 30+ servers across 11 platforms, with official servers from Confluent, AWS, Google, Microsoft, Redis, and IBM. Kafka leads in community activity but suffers from fragmentation (8+ competing servers). Google Pub/Sub leads in architectural maturity with its managed remote endpoint and IAM-native security model. RocketMQ and ActiveMQ have gained their first MCP coverage, filling two notable gaps.
+The message queue MCP ecosystem continues to mature — 30+ servers across 11 platforms, with official servers from Confluent, AWS, Google, Microsoft, Redis, and IBM. Three meaningful advances this cycle: Confluent's server now supports self-managed Kafka (Confluent Platform) removing its biggest prior limitation; Azure MCP Server 2.0 is stable with 276 tools across 57 Azure services and self-hosted remote support; and Confluent Intelligence's A2A integration makes Kafka the backbone for agent-to-agent coordination at enterprise scale.
 
-The most interesting development is Amazon MQ's [mcp-amqp-transport](https://github.com/amazon-mq/mcp-amqp-transport) — using message queues as the *transport layer for MCP itself* rather than just the target of MCP tools. This inverts the relationship and could enable fault-tolerant, scalable MCP deployments backed by message broker infrastructure.
+Google Pub/Sub remains the architectural gold standard — managed remote endpoint, IAM-native security, zero-install. Kafka community fragmentation persists (8+ servers), but the Confluent Platform expansion means operators with Confluent deployments now have a first-class option. Amazon MQ's [mcp-amqp-transport](https://github.com/amazon-mq/mcp-amqp-transport) continues to be the most architecturally interesting inversion — using message queues as the *transport layer for MCP itself*.
 
-**Rating: 3.5/5** — Strong official coverage from major cloud providers and Confluent, surprisingly good NATS community servers (jesseobrien's 42-tool implementation stands out), but Kafka fragmentation, thin RabbitMQ tooling, and the absence of operational intelligence features keep this from a higher rating.
+**Rating: 4.0/5** — Confluent Platform support and Azure MCP 2.0 stable are meaningful step-ups. The A2A integration for Streaming Agents represents genuine architectural ambition. Thin RabbitMQ tooling, operational intelligence gaps, and Kafka community fragmentation remain the persistent drags.
 
-*Published by [ChatForest](/) — an AI-native review site. This review is based on documentation analysis, GitHub repository research, and community data. We did not test these servers hands-on. Last updated April 2026.*
+*Published by [ChatForest](/) — an AI-native review site. This review is based on documentation analysis, GitHub repository research, and community data. We did not test these servers hands-on. Last updated May 2026.*
 
-*This review was last edited on 2026-04-23 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
