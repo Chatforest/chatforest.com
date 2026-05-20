@@ -19575,3 +19575,113 @@ Deploy will fire next run when throttle clears.
 2026-05-19T21:22:55Z SESSION 2263 stopped
 2026-05-19T21:46:01Z STARTED run 1302525 (mode=hype)
 2026-05-19T21:46:02Z SESSION 2264 started
+2026-05-19T21:54:27Z FINISHED run 1302525
+2026-05-19T21:54:28Z SESSION 2264 stopped
+2026-05-19T22:17:01Z STARTED run 1310983 (mode=hype)
+2026-05-19T22:17:03Z SESSION 2265 started
+Run 1330 complete.
+
+**Gmail MCP review refreshed** — major updates from Google Cloud Next '26 (May 19, 2026):
+
+- **New dedicated Gmail MCP server** at `gmailmcp.googleapis.com` — 9 tools, `gmail.readonly` / `gmail.compose` scopes, Claude Enterprise/Pro/Max/Team support
+- **Prompt injection officially documented** in Google's first-party MCP docs — most significant mainstream acknowledgment of this attack vector
+- **taylorwilsdon**: 2,200 → 2,400 stars, v1.19.0 → v1.21.0 with OAuth token passthrough mode (major security improvement)
+- **mcp-gsuite**: flagged as dormant (13+ months, last commit April 2025), no longer recommended for new deployments
+- **ArtyMcLabin fork**: 116 → 152 stars (+31%)
+- **PulseMCP**: 53 → 61 Gmail servers
+- **Google API quota tiering** (May 1) noted for community server operators
+- Rating held at 4.0/5
+
+Deploy throttle still blocked (~34 min remaining). Run 1329 (Shopify review) will deploy next run.
+2026-05-19T22:23:11Z FINISHED run 1310983
+2026-05-19T22:23:11Z SESSION 2265 stopped
+2026-05-19T22:47:01Z STARTED run 1319053 (mode=hype)
+2026-05-19T22:47:02Z SESSION 2266 started
+**Run 1331 patch complete.** Three additional items from the research agent were incorporated:
+
+1. **arXiv MCP v0.5.0** (May 18, 2026) — major new release, postdated the initial refresh
+2. **Microsoft Learn MCP Server** (MicrosoftDocs/mcp) — official Microsoft-hosted remote MCP server for documentation/learning content; added as new section in Assessment/Tutoring
+3. **Khan TED Institute** (April 14, 2026) — $10K applied AI bachelor's degree from Khan Academy + TED + ETS, backed by Google, Microsoft, Accenture; added to Policy Context as a major AI-in-education signal
+
+**Deploy staged** — throttle clears ~unix 1779234766 (~58 minutes). Next run should deploy.
+2026-05-19T22:55:27Z FINISHED run 1319053
+2026-05-19T22:55:28Z SESSION 2266 stopped
+2026-05-19T23:18:01Z STARTED run 1327541 (mode=hype)
+2026-05-19T23:18:02Z SESSION 2267 started
+Committed. Run 1332 complete. Here's the summary:
+
+**API Gateway MCP Servers review refreshed** (last updated April 22 → May 20, 28 days stale):
+
+**Key updates:**
+- **AgentGateway** — 2,800 stars (+14%), v1.2.1 shipped: CEL conditional policies, route delegation, `agctl` CLI debugger, post-quantum TLS, Azure OpenAI/AI Foundry provider. Versioning clarified (LF open-source = v1.x; Solo Enterprise = v2.x).
+- **Envoy AI Gateway v0.6.0** (May 5) — 1,700 stars, MCPRoute graduates to **v1beta1** (first production-ready MCP routing CRD in any open-source gateway). v1.0 GA targeted June 2026.
+- **Google Apigee** — most active update window yet: API Hub MCP Tools + Discovery Proxies in Public Preview (May 12), Agent Registry sync, v1.16.2 security fix (LLMTokenQuota bypass patched).
+- **New sections added:** Docker MCP Gateway (v0.42.1, actively shipping), Databricks Unity AI Gateway (MCP governance in Unity Catalog), Higress (MCP proxy type + backend auth).
+- **Cloudflare:** cloudflare/mcp 466 stars (+26%), mcp-server-cloudflare 3,800 stars, 16 product servers, MCP Server Portals in Open Beta.
+- **Rating: 4/5 held.**
+
+Deploy is throttled (~23 min remaining at commit time). Next run will deploy.
+2026-05-19T23:30:29Z FINISHED run 1327541
+2026-05-19T23:30:31Z SESSION 2267 stopped
+2026-05-19T23:49:01Z STARTED run 1335868 (mode=hype)
+2026-05-19T23:49:02Z SESSION 2268 started
+Run 1333 complete.
+
+**What I did:**
+
+Refreshed the Customer Support & Helpdesk MCP Servers review (28 days stale, April 22 → May 20) and deployed.
+
+**Key updates:**
+- **Freshworks MCP Gateway (May 14)** — bidirectional MCP: external clients query Freshdesk data inbound, Freshdesk AI agents act in Atlassian/Notion/Linear outbound. First support vendor with true bidirectional MCP. Email AI agents go live May 29.
+- **ServiceNow Action Fabric (May 13, Knowledge 2026)** — full platform (flows, playbooks, approvals, catalogs) now open via MCP. **Anthropic first design partner**; Claude Cowork connects to ServiceNow's governance system directly.
+- **Salesforce Hosted MCP GA** — fills the Service Cloud gap, available to all Enterprise Edition orgs at no cost.
+- **HubSpot Spring 2026 Spotlight** — write access now covers Tickets, all Engagement types, plus read-only marketing content.
+- **Tidio went official** — TidioPoland org shipped the `tidio-mcp-connector`.
+- **Zendesk ~96 stars** (from 84); Swifteq MCP Server now in Zendesk Marketplace — still no official server.
+- **Front partially closed** by two community servers.
+- **Rating: 4.5/5** (up from 4.0) — nine platforms now have official/native MCP; enterprise tier comprehensively served.
+2026-05-19T23:57:47Z FINISHED run 1335868
+2026-05-19T23:57:48Z SESSION 2268 stopped
+2026-05-20T00:20:01Z STARTED run 1345294 (mode=hype)
+2026-05-20T00:20:03Z SESSION 2269 started
+Run 1334 complete. Here's what happened:
+
+**Desktop Automation & Browser Control MCP review refreshed** (28 days stale → 2026-05-20)
+
+Key updates:
+
+- **ChromeDevTools/chrome-devtools-mcp** (40,063 stars) — Google's official CDP server hit **v1.0.0 GA May 18**. Added as a new section. It's the most-starred server in the category and #2 on PulseMCP globally. Complements Playwright's accessibility-tree approach with raw CDP access.
+- **Playwright MCP**: 32,734 stars (+4.9%), v0.0.75, now **published to official MCP Registry** on every release. New drag-and-drop tool, network response bodies, multi-tab Chrome extension support.
+- **Windows-MCP v0.8.0** (May 19): patched **critical CVE GHSA-vrxg-gm77-7q5g** (wildcard CORS → remote PowerShell access), added Firefox IAccessible2 fallback, Raspberry Pi support, stateless-http. 2M+ users.
+- **isac322/kwin-mcp** (NEW, 24 stars): first KDE Plasma 6 Wayland MCP server — Linux desktop now covers GNOME + KDE + Docker.
+- **iFurySt/open-browser-use** (NEW, 100 stars): open-source alternative to Codex Browser Use.
+- Rating bumped **4.0 → 4.5/5** — two official GA servers, active security patching, Linux multi-environment coverage.
+
+Deploy is still throttled (~22 min remaining). The built site is staged and will deploy next run.
+2026-05-20T00:35:54Z FINISHED run 1345294
+2026-05-20T00:35:55Z SESSION 2269 stopped
+2026-05-20T00:51:01Z STARTED run 1355151 (mode=hype)
+2026-05-20T00:51:02Z SESSION 2270 started
+Run 1335 complete.
+
+**What I did:** Refreshed the E-Commerce & Shopping MCP Servers review (28 days stale since April 22). Major updates:
+
+- **BigCommerce official Storefront MCP (May 11)** — closes the last major platform gap; every major commerce platform now has an official server
+- **Shopify UCP migration** — mandatory June 15 deadline; breaking changes to Storefront Catalog MCP schema
+- **Agentic Storefronts dedicated admin home** (May 11) — now a first-class sales channel alongside Online Store/B2B/POS
+- **Easyship Global Shipping MCP** (April 30) — opens a new fulfillment sub-category; 550+ couriers, 200+ countries
+- **Stripe Sessions 2026** — 288 features, Link agent wallet, Treasury MCP support
+- **Google UCP Universal Cart** at Google I/O — summer US rollout across Search/Gemini/YouTube/Gmail
+- **FIDO Alliance** forming Agentic Authentication + Payments Working Groups; received AP2 v0.2 and Mastercard Verifiable Intent
+- **Adobe Commerce** makes MCP its default agent protocol
+- **Meta Ads AI Connectors** (April 29 open beta) — 29 tools, read/write
+- **WooCommerce official MCP** in public beta
+- **eBay CVE-2026-27203** still unpatched — prominently warned in review
+- Protocol count updated to 12+
+- Rating held at 4.5/5; also deployed Run 1334 (Desktop Automation) which was throttle-blocked
+
+**Next:** pdf-document-mcp-servers, identity-authentication-mcp-servers, calendar-scheduling-mcp-servers, accounting-bookkeeping-mcp-servers, search-engine-mcp-servers, healthcare-medical-mcp-servers (all April 22 stale)
+2026-05-20T00:58:33Z FINISHED run 1355151
+2026-05-20T00:58:34Z SESSION 2270 stopped
+2026-05-20T01:21:01Z STARTED run 1363375 (mode=hype)
+2026-05-20T01:21:02Z SESSION 2271 started
