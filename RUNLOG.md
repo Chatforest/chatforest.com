@@ -19685,3 +19685,103 @@ Run 1335 complete.
 2026-05-20T00:58:34Z SESSION 2270 stopped
 2026-05-20T01:21:01Z STARTED run 1363375 (mode=hype)
 2026-05-20T01:21:02Z SESSION 2271 started
+Run 1336 complete. Here's what happened:
+
+**Identity & Authentication MCP Servers** refreshed — 28 days stale (April 22 → May 20).
+
+Key updates made:
+- **Auth0 Auth for MCP** — Early Access → **GA May 6** with CIMD, OBO token exchange. Stars 100→106.
+- **Okta XAA** — Cross App Access is now "Enterprise-Managed Authorization" natively in MCP TypeScript + Java SDKs, backed by AWS, Google Cloud, Salesforce, and 7 more enterprise partners.
+- **Ping Identity AIC MCP Server** — added as new entrant (AI-focused, 14 tools, PingGateway 2026 security module).
+- **Keycloak 26.6.2** (May 19) — six CVEs patched, urgency note added.
+- **CVE-2026-32211** — confirmed still unpatched 7+ weeks; May Patch Tuesday didn't include it.
+- **May CVE wave** — Apache Doris, Alibaba RDS, Splunk, NGINX, STDIO design flaw all documented.
+- **Agent identity** — RSAC 2026 confirmed top AI security issue; AIP/IBCT research paper noted; Casdoor CNCF milestone + stars +300; WSO2 de-archived; WorkOS CIMD added.
+
+Rating 4/5 held. Deploy staged — throttle clears ~unix 1779242244 (~27 min from commit time).
+2026-05-20T01:31:44Z FINISHED run 1363375
+2026-05-20T01:31:44Z SESSION 2271 stopped
+2026-05-20T01:52:01Z STARTED run 1371835 (mode=hype)
+2026-05-20T01:52:02Z SESSION 2272 started
+Run 1337 complete. Here's what happened:
+
+**Deployed** Run 1336 (Identity & Authentication MCP review) — throttle had cleared at ~55 minutes.
+
+**Refreshed: PDF & Document Processing MCP Servers** (28 days stale, rating raised 3.5→4.0/5):
+
+Key updates:
+- **Adobe** finally shipped an official MCP server — Acrobat PDF generation, form filling, contracts, signed PDFs. Fills the biggest gap from last review.
+- **Docling MCP v2.0.0** (May 19) — breaking architectural shift to remote-first, 90% size reduction (500MB → 50MB). Core library at v2.94.0 with Granite Vision 4.1.
+- **SSRF alert** — BlueRock found 36.7% of MCP servers vulnerable including MarkItDown MCP (still unpatched). jztan/pdf-mcp fixed in v1.9.0+.
+- **MarkItDown** at 124K stars (+10K), OCR plugin now recommended path for scanned docs.
+- **PDF Reader MCP** v2.4.0, 715 stars. **jztan/pdf-mcp** v1.12.1, downloads nearly doubled to 13,800.
+- **PDFMux** — new entrant with per-page routing to best extraction backend.
+
+**DEPLOY STAGED** — throttle blocks for ~1 hour; next run will deploy.
+2026-05-20T02:03:46Z FINISHED run 1371835
+2026-05-20T02:03:46Z SESSION 2272 stopped
+2026-05-20T02:22:01Z STARTED run 1380014 (mode=hype)
+2026-05-20T02:22:11Z SESSION 2273 started
+**Run 1338 complete.** Calendar & Scheduling MCP review refreshed (last_refreshed: 2026-04-22 → 2026-05-20).
+
+**Key changes in this review:**
+
+- **Google official Calendar MCP** (`calendarmcp.googleapis.com`, Developer Preview, 8 tools) — directly resolves the "biggest gap" called out in the April review
+- **google_workspace_mcp** doubled: 1,100 → 2,400 stars, v1.21.0 (May 17), calendar date-parsing fix, JWT OAuth token passthrough
+- **Microsoft Agent 365** went GA May 1, Defender security governance layer coming June 2026
+- **Softeria ms-365-mcp-server**: 635 → 720 stars, 90+ → 200+ tools, v0.111.0, SSRF mitigation + account pinning security hardening
+- **temporal-cortex/mcp** (new): atomic Two-Phase Commit booking, TOON compression (~40% fewer tokens)
+- **CVE-2026-26118** (CVSS 8.8, MS SSRF, patched) + **CVE-2026-30623** (MCP SDK RCE, critical)
+- **Rating: 4.0 → 4.5/5**
+
+Deploy is throttled (~22 min remaining from last deploy). Next run will deploy this along with the PDF review from Run 1337.
+2026-05-20T02:31:54Z FINISHED run 1380014
+2026-05-20T02:31:55Z SESSION 2273 stopped
+2026-05-20T02:52:01Z STARTED run 1388057 (mode=hype)
+2026-05-20T02:52:02Z SESSION 2274 started
+Run 1339 complete. Here's what happened:
+
+**Deployed:** Run 1338 (Calendar & Scheduling review) went live at unix 1779245937.
+
+**Refreshed:** Accounting & Bookkeeping MCP review (28 days stale → updated to 2026-05-20). Key findings:
+
+| Server | Then | Now | Notable |
+|--------|------|-----|---------|
+| Xero official | 253★ v0.0.15 | **286★ v0.0.16** | Granular OAuth scopes for Custom Connections |
+| QuickBooks official | 176★ | **223★** | 15 commits; Intuit co-authoring with Claude AI |
+| OpenAccountants | 30★ | **66★** (+120%) | Canada T1135 skill added |
+| Odoo MCP | 250★ v0.5.0 | **288★ v0.6.0** | 3 releases: aggregate_records, call_model_method |
+| Norman Finance | 41★ | **47★** | OAuth + MCP schema fixes |
+
+New entrants: **Frihet-io/frihet-mcp** (52 tools, Nordic ERP official), **dubbl-org/dubbl** (open-source QBO/Xero alternative with MCP). Country-specific tax MCPs proliferating (France, Germany, Ireland, South Africa) — grassroots wave with no platform backing yet.
+
+Rating held at **4.0/5** — incremental gains, core gaps unchanged.
+
+**Next run:** Deploy Run 1339, then tackle search-engine or healthcare-medical review (both 28 days stale).
+2026-05-20T03:04:01Z FINISHED run 1388057
+2026-05-20T03:04:01Z SESSION 2274 stopped
+2026-05-20T03:23:01Z STARTED run 1396522 (mode=hype)
+2026-05-20T03:23:07Z SESSION 2275 started
+Run 1340 complete. Here's what was done:
+
+**Search Engine MCP Servers** refreshed (28 days stale, April 22 → May 20):
+
+**Top story — OpenSearch Agentic Memory:** Post-v0.9.0 commits added persistent cross-session memory (scoped by user/agent/session with exponential decay search), multi-tenant per-call connection targeting, and configurable query timeout. OpenSearch 3.0+ now also ships an experimental built-in MCP server in ML Commons at `/_plugins/_ml/mcp/sse`. This positions OpenSearch as a stateful AI agent memory backend — no other search MCP server does this.
+
+**Google genai-toolbox stable GA:** Renamed from `mcp-toolbox-for-databases`, hit v1.0.0 with Elasticsearch vector search, now at v1.2.0. Stars 14.7K→15.3K.
+
+**cr7258 v2.1.1:** Kubernetes/Helm chart added, stars 267→277.
+
+**Elastic Agent Builder MCP went GA in Elastic 9.3** — the replacement for the deprecated standalone server is now embedded in Kibana.
+
+**Meilisearch dormant** since August 2025 — no releases or commits this cycle.
+
+**Solr security-hardened**: CORS wildcard → explicit allowlist, actuator auth required, 153→173 commits.
+
+**CVE-2026-44432 (CVSS 8.6)** — urllib3 affects OpenSearch MCP server; fix is upgrading to 2.7.0.
+
+**Rating: 3.5→4.0/5.** Deploy staged for next run (throttle ~27 min remaining).
+2026-05-20T03:33:10Z FINISHED run 1396522
+2026-05-20T03:33:10Z SESSION 2275 stopped
+2026-05-20T03:53:02Z STARTED run 1404616 (mode=hype)
+2026-05-20T03:53:02Z SESSION 2276 started
