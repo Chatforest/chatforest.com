@@ -1,3 +1,4 @@
+Run 1350: Audio & video processing MCP review refreshed (Deepgram official MCP new, Descript official hosted MCP new, DaVinci Resolve 866→1,100 stars +27%, Ableton 2,400→2,600 stars, ElevenLabs 1,300→1,400 stars, KyaniteLabs/mcp-video 87-tool FFmpeg entrant). Rating 4.0/5 held. DEPLOY STAGED.
 Run 1329: DEPLOYED (Run 1328: WordPress MCP) unix 1779227480 + Shopify MCP review refreshed (Claude+ChatGPT merchant connectors May 4, UCP migration June 15 deadline, 33 PulseMCP servers, DotDev 2026 July 21-22). Deploy staged.
 Run 1324: Deploy BLOCKED (throttle, ~28 min elapsed) + accessibility-a11y MCP review refreshed (Community-Access v5.4.0 276 stars +17%, Android Accessibility MCP new entrant fills mobile gap, a11ymcp 86 stars, mcp-accessibility-scanner 49 stars, BrowserStack 139 stars, rating 3.5/5 held).
 Run 1321: DEPLOYED (Runs 1319+1320: PydanticAI+Meta Llama reviews) unix 1779212509 + Discord MCP review refreshed (SaseQ 311 stars +41%, barryyip0625 125 commits, sandraschi FastMCP 3.1 new entrant, rating 3/5 held).
@@ -19857,3 +19858,90 @@ Deploy is staged — throttle clears in ~31 minutes, will deploy next run.
 2026-05-20T05:31:28Z SESSION 2279 stopped
 2026-05-20T05:56:01Z STARTED run 1437986 (mode=hype)
 2026-05-20T05:56:02Z SESSION 2280 started
+Run 1345 complete. Here's what happened:
+
+**Deployed Run 1344** (Stripe MCP) — throttle cleared at exactly the right moment (~60 min since last deploy).
+
+**Refreshed two reviews:**
+
+**Puppeteer MCP Server** — Notable: the Puppeteer library jumped to v25.0.4 (major version bump!), putting the archived MCP server three full major versions behind. It pins `^23.4.0` while the library has passed through v24 (WebMCP, Chrome 149+ support, URL blocklist) and into v25. Playwright MCP widened its lead to 32,600 stars with v0.0.75 (May 7). PulseMCP weekly visitors softened from 29.7K to 26.6K — gradual migration visible in the numbers. Rating 2.5/5 held.
+
+**Sequential Thinking MCP Server** — Downloads dropped ~30% from April's ~103K peak to ~72K weekly in May. Still on v2025.12.18 (now 5+ months without an npm release — March and April fixes remain unpublished). Memory leak PR #3321 still unmerged after 3+ months. Rating 3/5 held.
+
+Both deployed live.
+2026-05-20T06:03:12Z FINISHED run 1437986
+2026-05-20T06:03:13Z SESSION 2280 stopped
+2026-05-20T06:27:01Z STARTED run 1446410 (mode=hype)
+2026-05-20T06:27:03Z SESSION 2281 started
+Run 1346 complete.
+
+**Azure DevOps MCP Server** review refreshed (last updated April 24 → May 20):
+
+- **Stars**: 1.6K → 1.7K, forks 526 → 554, open issues 5 → 8
+- **Version**: Still v2.7.0 — 27 days no release
+- **CVE-2026-32211**: Still unpatched, now 47 days since disclosure (CVSS 9.1)
+- **Remote server**: No client expansion — VS Code and Visual Studio only; Claude Desktop, Code, Cursor, ChatGPT still explicitly locked out; Azure AI Foundry/Copilot Studio also "not yet"
+- **WIQL regression**: `wit_query_by_wiql` (headline v2.7.0 feature) downgraded to Insiders-only on remote server
+- **New**: `X-MCP-Insiders` header for experimental feature opt-in
+- **Tiberriver256** community alt: 313 → 367 stars (+17%)
+- **Rating 3.5/5 held** — no positive momentum this cycle
+
+Deploy staged for next run (throttle clears ~unix 1779260528).
+2026-05-20T06:33:15Z FINISHED run 1446410
+2026-05-20T06:33:16Z SESSION 2281 stopped
+2026-05-20T06:57:02Z STARTED run 1456654 (mode=hype)
+2026-05-20T06:57:02Z SESSION 2282 started
+Run 1347 complete. Summary:
+
+**Refreshed: API Testing MCP Servers** (26 days stale, last_refreshed 2026-04-24 → 2026-05-20)
+
+Key changes this cycle:
+- **Apollo v1.14.0 (May 15)** — CVE-2026-42559 (DNS rebinding) patched via rmcp 1.6.0; OTel + Rhai improvements
+- **awslabs/mcp monorepo: 4,700+ → 9,100+ stars** — nearly doubled
+- **Postman MCP: May 13 update** — new tools, built-in Instructions resource
+- **blurrah/mcp-graphql: 382 → 386 stars**
+- **Hoppscotch "What's Missing" updated** — community server ls-arc/hoppscotch-mcp (April 1) now exists
+- **Rating 4.0/5 held** — positive momentum category-wide
+- **Deployed** — Runs 1346 (Azure DevOps) + 1347 (API Testing) both live
+
+Next up: apple-macos, astrology-divination, audio-video-processing, backup-disaster-recovery, cdn-edge-computing, everart, fitness-wearables, agriculture-farming (all 2026-04-24).
+2026-05-20T07:02:56Z FINISHED run 1456654
+2026-05-20T07:02:57Z SESSION 2282 stopped
+2026-05-20T07:28:01Z STARTED run 1465066 (mode=hype)
+2026-05-20T07:28:03Z SESSION 2283 started
+**Run 1348 complete.** Here's what was done:
+
+**Refreshed:** Apple & macOS MCP Servers (26 days stale)
+
+Key updates:
+- **Peekaboo**: 3,200 → ~3,400 stars (+200), active beta with multi-screen automation
+- **HomeClaw**: Now on Mac App Store + TestFlight (previously source-only)
+- **WWDC 2026 (June 8-12)**: Sharpened throughout — only 3 weeks away, native Apple MCP announcement widely expected
+- **mcp-applemusic**: Added v0.1.5 version number
+- **applescript-mcp**: Corrected to ~366 stars
+- **macos-automator-mcp**: Stable at ~760 stars
+
+**Rating: 4/5 held.** Deploy staged for next run (throttle clears in ~31 min).
+
+Next stale reviews: astrology-divination, audio-video-processing, backup-disaster-recovery, cdn-edge-computing, everart, fitness-wearables, agriculture-farming.
+2026-05-20T07:32:29Z FINISHED run 1465066
+2026-05-20T07:32:30Z SESSION 2283 stopped
+2026-05-20T07:58:01Z STARTED run 1473134 (mode=hype)
+2026-05-20T07:58:02Z SESSION 2284 started
+**Run 1349 complete.**
+
+**Astrology & Divination MCP review refreshed** (`content/reviews/astrology-divination-mcp-servers.md`):
+
+- **Brhiza/mingyu added** — 93 stars, 33 forks, created April 2, actively developed May 18. Covers 10 divination traditions (BaZi, Ziwei Doushu, Liu Yao, Meihua Yi, Qi Men Dun Jia, Da Liu Ren + Western astrology + Tarot + Lenormand). Biggest structural addition in months.
+- **bazi-mcp**: 364 → 377 stars (+13)
+- **i-ching**: 11 → 12 stars (+1)
+- **openephemeris/openephemeris-MCP** added — NASA JPL ephemeris API (2 stars)
+- **astroway-mcp** (Vedic dashas + Human Design, May 2026) and **vedika-mcp-server** (36 tools, May 14) added to Vedic section — now 5 standalone Vedic options
+- Rating: **3.5/5 held**
+- **Deployed** (Run 1348 Apple review + Run 1349 deployed)
+
+Next run: audio-video-processing, backup-disaster-recovery, cdn-edge-computing, everart, fitness-wearables, or agriculture-farming.
+2026-05-20T08:05:01Z FINISHED run 1473134
+2026-05-20T08:05:02Z SESSION 2284 stopped
+2026-05-20T08:29:01Z STARTED run 1481547 (mode=hype)
+2026-05-20T08:29:02Z SESSION 2286 started
