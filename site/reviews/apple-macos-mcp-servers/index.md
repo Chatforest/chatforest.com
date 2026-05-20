@@ -1,15 +1,15 @@
 # Apple & macOS MCP Servers (2026) — 30+ Reviewed
 
-> 30+ Apple and macOS MCP servers reviewed — Siri Shortcuts, HomeKit, Apple Music, Notes, Reminders, AppleScript automation, and more. Peekaboo (3,200 stars) leads, supermemoryai/apple-mcp (3,100 stars, archived), iMCP (1,400 stars) covers 7 Apple services natively. Rating: 4/5.
+> 30+ Apple and macOS MCP servers reviewed — Siri Shortcuts, HomeKit, Apple Music, Notes, Reminders, AppleScript automation, and more. Peekaboo (~3,400 stars) leads, supermemoryai/apple-mcp (3,100 stars, archived), iMCP (1,400 stars) covers 7 Apple services natively. Rating: 4/5.
 
 
 Apple and macOS MCP servers let AI assistants control your Mac — running Siri Shortcuts, managing HomeKit devices, playing Apple Music, reading Notes, setting Reminders, capturing screenshots, and automating virtually any macOS application through AppleScript. Instead of manually switching between apps, you can orchestrate your entire Mac workflow through the Model Context Protocol.
 
 This review covers the **Apple and macOS** ecosystem — comprehensive Apple integration suites, macOS automation via AppleScript/JXA, Siri Shortcuts, HomeKit smart home, Apple Music, Notes & Reminders, Calendar, Safari, screenshots, clipboard, and Raycast. For general browser automation, see our [Playwright review](/reviews/playwright-mcp-server/). For smart home beyond HomeKit, see our [IoT & Smart Home review](/reviews/iot-embedded-mcp-servers/).
 
-The headline findings: **Peekaboo ([3,200 stars](https://github.com/steipete/Peekaboo)) has evolved from a screenshot tool into a [full GUI automation platform](https://www.peekaboo.boo/)** — now the most-starred Apple MCP server. **supermemoryai/apple-mcp ([3,100 stars](https://github.com/supermemoryai/apple-mcp)) covers 8+ Apple apps** in one package — though it was [archived in January 2026](https://glama.ai/mcp/servers/supermemoryai/apple-mcp). **iMCP ([1,400 stars](https://github.com/mattt/iMCP)) is a native macOS app** providing MCP access to Messages, Contacts, Calendar, Reminders, Maps, Weather, and Location — a strong actively-maintained alternative. **macos-automator-mcp ([767 stars](https://github.com/steipete/macos-automator-mcp)) ships 200+ automation recipes**. **Siri Shortcuts provide a bridge to the entire Apple/iOS ecosystem**. **HomeKit has 3+ MCP implementations** — HomeClaw ([96 stars](https://github.com/omarshahine/HomeClaw)) reached v1.0.0 with characteristic-based automation triggers. **Apple Music has 4+ independent servers**. AppleScript is the unsung hero — decades old, but it's what makes most of these servers possible.
+The headline findings: **Peekaboo ([~3,400 stars](https://github.com/steipete/Peekaboo)) has evolved from a screenshot tool into a [full GUI automation platform](https://www.peekaboo.boo/)** — now the most-starred Apple MCP server. **supermemoryai/apple-mcp ([3,100 stars](https://github.com/supermemoryai/apple-mcp)) covers 8+ Apple apps** in one package — though it was [archived in January 2026](https://glama.ai/mcp/servers/supermemoryai/apple-mcp). **iMCP ([1,400 stars](https://github.com/mattt/iMCP)) is a native macOS app** providing MCP access to Messages, Contacts, Calendar, Reminders, Maps, Weather, and Location — a strong actively-maintained alternative. **macos-automator-mcp ([~760 stars](https://github.com/steipete/macos-automator-mcp)) ships 200+ automation recipes**. **Siri Shortcuts provide a bridge to the entire Apple/iOS ecosystem**. **HomeKit has 3+ MCP implementations** — HomeClaw ([96 stars](https://github.com/omarshahine/HomeClaw)) reached v1.0.0, now available on the Mac App Store and TestFlight. **Apple Music has 4+ independent servers**. AppleScript is the unsung hero — decades old, but it's what makes most of these servers possible.
 
-**Industry context:** macOS Tahoe 26.1 developer beta [revealed early signs of native MCP integration](https://mcp.directory/blog/apple-prepares-revolution-mcp-integration-in-macos-ios-ipados) through the App Intents framework — potentially allowing Siri, Shortcuts, and Spotlight to act as MCP clients. First public APIs are possible by WWDC 2026, with mass adoption no earlier than iOS 27/macOS 28. If realized, this would make many third-party MCP servers redundant for basic Apple app access.
+**Industry context:** macOS Tahoe 26.1 developer beta [revealed early signs of native MCP integration](https://mcp.directory/blog/apple-prepares-revolution-mcp-integration-in-macos-ios-ipados) through the App Intents framework — potentially allowing Siri, Shortcuts, and Spotlight to act as MCP clients. **WWDC 2026 (June 8-12) is now weeks away** — a major announcement of native MCP support across iOS and macOS is widely anticipated, which would allow Siri and Apple Intelligence agents to connect to any MCP server. If realized, basic app access servers may become redundant, but specialized tools like Peekaboo, macos-automator-mcp, and HomeClaw would retain their value.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -62,7 +62,7 @@ Uses the **App Sandbox security model** and **Bonjour** for local network discov
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [macos-automator-mcp](https://github.com/steipete/macos-automator-mcp) | 767 | TypeScript | — | 200+ recipes |
+| [macos-automator-mcp](https://github.com/steipete/macos-automator-mcp) | ~760 | TypeScript | — | 200+ recipes |
 
 Created by [Peter Steinberger](https://steipete.me/) (ex-founder of PSPDFKit) — transforms your AI assistant into a [macOS automation powerhouse](https://www.pulsemcp.com/servers/steipete-macos-automator):
 
@@ -79,7 +79,7 @@ The knowledge base approach is clever — rather than hardcoding capabilities, i
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [applescript-mcp](https://github.com/joshrutkowski/applescript-mcp) | 379 | TypeScript | — | ~10 |
+| [applescript-mcp](https://github.com/joshrutkowski/applescript-mcp) | ~366 | TypeScript | — | ~10 |
 
 A [standardized interface for AI applications](https://www.pulsemcp.com/servers/joshrutkowski-applescript) to control macOS through AppleScript — created by [Josh Rutkowski, a Software Development Engineer at Amazon](https://skywork.ai/skypage/en/macos-ai-applescript/1980507376320815104):
 
@@ -175,7 +175,7 @@ A unified **Mac Catalyst app** providing HomeKit smart home control via MCP — 
 - **Characteristic-based automation triggers** — motion sensors, contact sensors, occupancy detectors, and temperature thresholds (build 136, April 2026)
 - **OpenClaw compatibility** — declared compatibility metadata for ClawHub integration
 
-Compatible with Claude Desktop, Claude Code, and OpenClaw. Fixed TCC crash on macOS 26.4. Zero open issues.
+Compatible with Claude Desktop, Claude Code, and OpenClaw. Now distributed via the **Mac App Store** and **TestFlight** (beta) in addition to building from source. Fixed TCC crash on macOS 26.4. Zero open issues.
 
 ## Apple Music
 
@@ -192,7 +192,7 @@ Compatible with Claude Desktop, Claude Code, and OpenClaw. Fixed TCC crash on ma
 - **Playlists** — create playlists with specific songs
 - **Library** — browse your music collection and get statistics
 
-A local-first solution — [your music data and listening habits never leave your computer](https://skywork.ai/skypage/en/apple-music-mcp-server-guide/1977608435765022720). Installable via `uvx -p 3.13 -n mcp-applemusic`.
+A local-first solution — [your music data and listening habits never leave your computer](https://skywork.ai/skypage/en/apple-music-mcp-server-guide/1977608435765022720). Current version: **v0.1.5** on PyPI. Installable via `uvx mcp-applemusic` (or `uvx -p 3.13 -n mcp-applemusic` for explicit Python 3.13).
 
 ### epheterson/mcp-applemusic (REST API)
 
@@ -260,7 +260,7 @@ Local MCP server for **iCloud Calendar, Mail, and Reminders** with credentials s
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Peekaboo](https://github.com/steipete/Peekaboo) | 3,200 | TypeScript/Swift | — | 10+ |
+| [Peekaboo](https://github.com/steipete/Peekaboo) | ~3,400 | TypeScript/Swift | — | 10+ |
 
 The **most-starred Apple MCP server** — now far more than just screenshots. [Peter Steinberger describes it](https://steipete.me/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents) as giving AI agents "eyes" on your Mac. Version 3 evolved into a [full macOS automation driver](https://www.peekaboo.boo/) — "Think Playwright but for the OS":
 
@@ -270,7 +270,7 @@ The **most-starred Apple MCP server** — now far more than just screenshots. [P
 - **App and dock control** — launch, focus, and manage applications
 - **Natural-language agent** — chains Peekaboo tools (see, click, type, scroll, hotkey, menu, window, app, dock, space)
 
-Built with TypeScript + Swift — TypeScript for MCP/npm distribution, Swift for [direct ScreenCaptureKit access](https://steipete.me/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents) without requiring focus changes. Part of Steinberger's growing ecosystem alongside macos-automator-mcp. Estimated [11,300+ users](https://www.pulsemcp.com/servers/steipete-peekaboo). Recent development (March 2026): updated MCP runtime for swift-sdk 0.12, improved ScreenCaptureKit window capture on macOS 15. Currently on v3.0.0-beta4 with 17 open issues. Requires macOS 15+.
+Built with TypeScript + Swift — TypeScript for MCP/npm distribution, Swift for [direct ScreenCaptureKit access](https://steipete.me/posts/2025/peekaboo-mcp-lightning-fast-macos-screenshots-for-ai-agents) without requiring focus changes. Part of Steinberger's growing ecosystem alongside macos-automator-mcp. Estimated [11,300+ users](https://www.pulsemcp.com/servers/steipete-peekaboo). Stars have grown from 3,200 (April) to ~3,400 (May) — active development continues. Recent development (March–May 2026): updated MCP runtime for swift-sdk 0.12, improved ScreenCaptureKit window capture on macOS 15, native agent flows and multi-screen automation. Currently on v3.0.0-beta with open issues. Requires macOS 15+.
 
 ### jhead/macos-screen-mcp
 
@@ -333,17 +333,17 @@ Despite strong coverage, significant gaps remain:
 
 ## The Bottom Line
 
-**Rating: 4/5** — Apple and macOS MCP is surprisingly mature, now led by Peekaboo ([3,200 stars](https://github.com/steipete/Peekaboo), actively developed) and supermemoryai/apple-mcp ([3,100 stars](https://github.com/supermemoryai/apple-mcp), [archived since January 2026](https://glama.ai/mcp/servers/supermemoryai/apple-mcp)). The addition of **iMCP ([1,400 stars](https://github.com/mattt/iMCP))** fills the gap left by apple-mcp's archival — it covers 7 Apple services through native frameworks rather than AppleScript. [macos-automator-mcp (767 stars)](https://github.com/steipete/macos-automator-mcp) provides 200+ automation recipes.
+**Rating: 4/5** — Apple and macOS MCP is surprisingly mature, now led by Peekaboo ([~3,400 stars](https://github.com/steipete/Peekaboo), actively developed) and supermemoryai/apple-mcp ([3,100 stars](https://github.com/supermemoryai/apple-mcp), [archived since January 2026](https://glama.ai/mcp/servers/supermemoryai/apple-mcp)). The addition of **iMCP ([1,400 stars](https://github.com/mattt/iMCP))** fills the gap left by apple-mcp's archival — it covers 7 Apple services through native frameworks rather than AppleScript. [macos-automator-mcp (~760 stars)](https://github.com/steipete/macos-automator-mcp) provides 200+ automation recipes.
 
 The key insight: **AppleScript, despite being decades old, is the [perfect bridge](https://skywork.ai/skypage/en/macos-ai-automator-unlocking/1981180204707401728) between MCP and macOS applications.** Nearly every Mac app supports AppleScript to some degree, and MCP servers leverage this to provide AI control over the entire desktop environment. Siri Shortcuts extend this further, bridging into iOS and HomeKit. Meanwhile, iMCP demonstrates a newer approach — using native macOS frameworks (EventKit, Contacts.framework, MapKit) directly, bypassing AppleScript entirely.
 
-HomeKit gets three independent implementations (HomeClaw at [96 stars](https://github.com/omarshahine/HomeClaw) leads — now at v1.0.0 with characteristic-based automation triggers for motion sensors and temperature thresholds). Apple Music has four (kennethreitz at [84 stars](https://github.com/kennethreitz/mcp-applemusic) leads). The ecosystem benefits from macOS's strong automation foundations — AppleScript, JXA, Shortcuts, and EventKit all provide hooks that MCP servers can leverage.
+HomeKit gets three independent implementations (HomeClaw at [96 stars](https://github.com/omarshahine/HomeClaw) leads — v1.0.0 with characteristic-based automation triggers, now on Mac App Store and TestFlight). Apple Music has four (kennethreitz at [84 stars](https://github.com/kennethreitz/mcp-applemusic) leads, now at v0.1.5). The ecosystem benefits from macOS's strong automation foundations — AppleScript, JXA, Shortcuts, and EventKit all provide hooks that MCP servers can leverage.
 
-The main limitation: **these servers are macOS-only by nature**, which limits the audience compared to cross-platform MCP categories. But Apple may be about to change the game entirely — [macOS Tahoe 26.1 beta code](https://mcp.directory/blog/apple-prepares-revolution-mcp-integration-in-macos-ios-ipados) reveals early MCP integration through the App Intents framework, with possible public APIs by WWDC 2026. If Apple ships native MCP support, basic app access servers would become redundant — but specialized automation tools like Peekaboo, macos-automator-mcp, and HomeClaw would retain their value. For Mac users, this remains one of the most practical MCP categories — you're controlling your actual desktop environment, apps, and smart home through AI, not just accessing remote APIs.
+The main limitation: **these servers are macOS-only by nature**, which limits the audience compared to cross-platform MCP categories. But Apple may be about to change the game entirely — [macOS Tahoe 26.1 beta code](https://mcp.directory/blog/apple-prepares-revolution-mcp-integration-in-macos-ios-ipados) reveals early MCP integration through the App Intents framework, with **WWDC 2026 (June 8-12) now weeks away**. A native MCP announcement there could allow Siri and Apple Intelligence to connect to any MCP server directly — making basic app-access servers redundant, while specialized automation tools like Peekaboo, macos-automator-mcp, and HomeClaw would retain their value. For Mac users, this remains one of the most practical MCP categories — you're controlling your actual desktop environment, apps, and smart home through AI, not just accessing remote APIs.
 
 ---
 
 *This review is part of our [MCP Server Mega-Comparison](/guides/best-mcp-servers/). We research and analyze MCP servers — we do not test them hands-on. Star counts and tool numbers are approximations based on available data at publication time. Found an error or a server we missed? [Let us know](/about/).*
 
-*Last updated April 24, 2026 using Claude Opus 4.6 (Anthropic).*
+*Last updated May 20, 2026 using Claude Sonnet 4.6 (Anthropic).*
 
