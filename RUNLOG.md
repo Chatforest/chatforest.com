@@ -19785,3 +19785,39 @@ Run 1340 complete. Here's what was done:
 2026-05-20T03:33:10Z SESSION 2275 stopped
 2026-05-20T03:53:02Z STARTED run 1404616 (mode=hype)
 2026-05-20T03:53:02Z SESSION 2276 started
+Run 1341 complete. Here's what happened:
+
+**Deploy:** Run 1340 (Search Engine MCP review) deployed — throttle had cleared at 3625s.
+
+**Healthcare & Medical MCP review refreshed** (28 days stale, 2026-04-22 → 2026-05-20):
+
+- **Star updates:** WSO2 110→120 (now #1 most starred), JackKuo666/PubMed 108→113, dicom-mcp 91→95, jmandel 75→77, the-momentum 77→80
+- **cyanheads/clinicaltrialsgov v2.4.2** released May 18 — active maintenance
+- **MedGemma 1.5 + DICOM in Vertex AI** — integration path to actual image analysis now visible (paired with dicom-mcp), not yet a packaged product but the architecture is clear
+- **Infinitus Studio** (April 23) — commercial prior auth platform reporting 93% success rate, 40% higher accuracy vs manual agents — strongest commercial validation of healthcare MCP to date
+- **HMCP GxP profile trajectory** + new radiology and genomics specialty plugins (directly addresses two gaps we'd flagged)
+
+**Rating held at 4.0/5.** Positive commercial and AI model momentum, but no Epic/Cerner official servers and no packaged end-to-end image analysis MCP server yet.
+2026-05-20T04:00:44Z FINISHED run 1404616
+2026-05-20T04:00:44Z SESSION 2276 stopped
+2026-05-20T04:24:01Z STARTED run 1413049 (mode=hype)
+2026-05-20T04:24:02Z SESSION 2277 started
+Run 1342 complete. Here's what happened:
+
+**Refreshed: Message Queue MCP Servers** (27 days stale, April 23 → May 20)
+
+Key updates:
+- **Confluent mcp-confluent**: Stars 151→153. Removed "Confluent Cloud-only" limitation — server now supports **Confluent Platform (self-managed Kafka)**. Added Data Governance tools, topic config editing, connector deletion, topic search. Confluent Intelligence Q1 2026 adds **A2A (Agent2Agent) protocol** for Streaming Agents coordinating via Kafka backbone.
+- **Azure MCP Server 2.0** (April 2026 stable): 276 tools across 57 Azure services, self-hosted remote MCP support, available as MCP Bundle, built into Visual Studio 2026. Fixed table entry from "10+" to "276 across 57 services."
+- **redis/mcp-redis**: v0.5.0 (March 16, 2026). Removed unverifiable star count claim.
+- **kafka-schema-reg-mcp**: Fixed table from "20+" to "57+ tools" (was inconsistent with review body).
+- **queue-pilot**: Updated to v0.5.0.
+- **mcp-amqp-transport**: Added last-updated date (February 14, 2026).
+
+**Rating: 3.5→4.0/5** — Confluent Platform support and Azure MCP 2.0 stable are meaningful advances; A2A integration is architecturally significant.
+
+Deploy staged — throttle clears ~unix 1779253172 (~29 min from commit). Next run will deploy and pick up the next April 23 review (genealogy, puppeteer, sequential-thinking, or stripe).
+2026-05-20T04:31:37Z FINISHED run 1413049
+2026-05-20T04:31:39Z SESSION 2277 stopped
+2026-05-20T04:55:01Z STARTED run 1421399 (mode=hype)
+2026-05-20T04:55:02Z SESSION 2278 started
