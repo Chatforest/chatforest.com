@@ -1,15 +1,15 @@
 ---
 title: "The Stripe MCP Server — Payment Operations Through Your AI Assistant"
 date: 2026-03-14T09:00:43+09:00
-lastmod: 2026-04-23T12:00:00+09:00
+lastmod: 2026-05-20T12:00:00+09:00
 description: "Stripe's official MCP server gives AI assistants access to customers, products, payments, subscriptions, invoices, and more — with both remote OAuth and local deployment. Here's the honest review."
-og_description: "Stripe's official MCP server connects AI assistants to payment operations — customers, invoices, subscriptions, refunds, and documentation search. OAuth remote + local npx. 37K weekly PulseMCP visitors (#54 weekly). Rating: 4/5."
+og_description: "Stripe's official MCP server: 25 tools, v0.3.3, 1.6K stars. Sessions 2026 previewed Treasury MCP and Link for agents. ACP hits native MCP transport. MPP + Visa live with 50+ adopters. Issues #220 and #388 still open. Rating: 4/5."
 content_type: "Review"
-card_description: "Stripe's first-party MCP server for AI-assisted payment operations. 25 tools covering customers, products, invoices, subscriptions, and refunds. Remote OAuth server at mcp.stripe.com plus local npx deployment. PulseMCP traffic surging (37K weekly, 1.1M all-time). Stripe Sessions April 29–30 expected to bring agentic commerce updates."
-last_refreshed: 2026-04-23
+card_description: "Stripe's first-party MCP server for AI-assisted payment operations. 25 tools, v0.3.3, 1.6K stars. Stripe Sessions 2026 previewed Treasury API via MCP and Link for agents. ACP v2026-04-17 adds native MCP transport. MPP + Visa fully launched. list_customers and pagination bugs still open."
+last_refreshed: 2026-05-20
 ---
 
-**At a glance:** 1.5K GitHub stars, 257 forks, 25 tools across 13 resource categories, ~1.1M all-time PulseMCP visitors (#57 globally, ~37K weekly — up 85% from mid-April), v0.3.3 current, ChatGPT + Claude Code + Cursor + VS Code + Gemini CLI supported, part of Stripe's Agentic Commerce Suite. Visa MPP card spec + SDK launched April 2026. Stripe Sessions April 29–30.
+**At a glance:** 1.6K GitHub stars, 268 forks, 25 tools across 13 resource categories, ~1.2M all-time PulseMCP visitors (#59 globally, ~27K weekly), v0.3.3 current (no new release since March), ChatGPT + Claude Code + Cursor + VS Code + Gemini CLI supported, part of Stripe's Agentic Commerce Suite. Stripe Sessions 2026 (April 29–30) delivered 288 launches including Treasury MCP preview and Link for agents. MPP + Visa fully launched with 50+ adopters.
 
 The Stripe MCP server is Stripe's official bridge between AI assistants and payment infrastructure. It now lives in the [stripe/ai](https://github.com/stripe/ai) monorepo — a consolidated home that also includes `@stripe/agent-toolkit` (framework integrations for OpenAI, LangChain, CrewAI, Vercel AI SDK), `@stripe/ai-sdk` (connects Stripe billing with Vercel's AI libraries), and `@stripe/token-meter` (usage metering with native SDKs from OpenAI, Anthropic, and Google).
 
@@ -19,27 +19,26 @@ You can connect via Stripe's hosted remote server at `mcp.stripe.com` (OAuth) or
 
 The key question: does Stripe's MCP server cover enough of the API to be genuinely useful, or is it a marketing-friendly subset that forces you back to the dashboard for real work?
 
-## What's New (April 2026 Update)
+## What's New (May 2026 Update)
 
-**Visa launched MPP card spec + SDK (April 2026).** Visa released a card-based Machine Payments Protocol specification, an SDK implementing it, and access to Visa Intelligent Commerce and the Trusted Agent Protocol — letting AI agents authenticate via Visa, receive scoped network tokens through Stripe, and settle on Visa's rails. Visa also became an anchor validator on the Tempo blockchain (April 14). This extends MPP beyond stablecoins to card-based payments at scale. McKinsey estimates AI agents could mediate $3–5 trillion in transactions by 2030.
+**Stripe Sessions 2026 (April 29–30) — 288 launches, meaningful MCP expansions previewed.** The headline agentic items from Sessions:
 
-**Protocol version hang FIXED.** Issue #290 (local server hanging on protocol version "2025-11-25") is now closed. PR #339 added a 10-second fail-fast timeout in the stdio→HTTP proxy — if the backend doesn't respond to an initialize message, the proxy sends an immediate JSON-RPC error telling the client that "2024-11-05" is the supported version. This was the most impactful bug for local deployment.
+- **Treasury API via MCP — previewed (early access).** Agents can check balances, pay invoices, store funds, create cards, send money, and manage cash flow. Human-in-the-loop required for sensitive operations. Not yet in the published npm package.
+- **Stripe Console.** New agentic execution environment built into the Stripe Dashboard for natural language queries of Stripe data — sits alongside the MCP server for interactive use.
+- **Link for AI agents.** Stripe's Link digital wallet now allows users to authorize AI agents to spend on their behalf via explicit approval flows — closing a key consent gap for autonomous purchasing.
+- **Google partnership.** Products buyable inside "AI Mode" and the Gemini app via the Universal Commerce Protocol (UCP).
+- **Meta partnership.** Native checkout embedded inside Facebook ads.
+- **Product catalog via Dashboard.** Businesses can now upload and manage agent-accessible product catalogs directly from the Stripe Dashboard.
 
-**Gemini CLI OAuth fix.** Issue #221 (OAuth authentication failure due to trailing slash mismatch in `gemini-extension.json`) closed March 30 via PR #341. Gemini CLI is now a supported client.
+**ACP reaches v2026-04-17 with native MCP transport.** The Agentic Commerce Protocol (co-developed by Stripe, OpenAI, and now Meta as third co-author) added native MCP transport in its April release — ACP-compliant merchant endpoints can now speak directly over the MCP protocol without an adapter layer. Major retailers now live: URBN (Anthropologie, Free People, Urban Outfitters), Etsy, Ashley Furniture, Coach, Kate Spade, Revolve. ACP version history: 2025-09-29 (initial), 2025-12-12 (fulfillment), 2026-01-16 (capability negotiation), 2026-01-30 (discounts, scoped tokens), 2026-04-17 (MCP transport, cart/orders/auth).
 
-**npm bumped to v0.3.3.** Two patch releases since our last review (v0.3.1 → v0.3.3), including nullable parameter handling for better LLM agent compatibility, MCP User-Agent proxying (e.g., "stripe-mcp-local/0.3.1 (cursor)"), schema parsing improvements, and an AI SDK stack overflow fix for file part encoding.
+**MPP + Visa — fully launched March 18.** What was in preview during our last review has shipped. The Machine Payments Protocol now has 50+ adopters including OpenAI, Anthropic, Google Gemini, Dune, and Browserbase. Visa's card-based MPP specification and SDK are publicly available, letting agents transact on Visa card rails without stablecoin infrastructure. Visa serves as an anchor validator on Stripe's Tempo blockchain. MPP supports per-call microtransactions and recurring payments.
 
-**Stripe Projects for agent billing.** Stripe Projects create isolated billing environments with scoped API keys, spending limits, and merchant allowlists — letting AI agents provision services and transact without full account-level credentials. Each Project gets its own API keys with explicitly defined capabilities (read-only billing, charge limits, product catalog access). Transactions exceeding limits fail or route to human approval.
+**Still v0.3.3 — no new tools shipped.** Despite the Sessions wave and 288 launches, the published `@stripe/mcp` npm package hasn't moved from v0.3.3 since March. An automated commit ("sync skills from docs.stripe.com/.well-known/skills") suggests tool definitions are tracked from Stripe's docs system, but no new production tools have shipped in this window.
 
-**Open issues doubled: 9 → 18.** Notable new issues: #388 (no pagination — all list/search tools silently cap at 100 results with no `starting_after` parameter), #381 (policy enforcement for payment operations), #357 (subscription_schedules and charges support), #358 (multi-account support), #356 (governance layer — spend limits, merchant allowlists, audit trails), #393 (send-to-my-account bug). The pagination gap (#388) is particularly impactful — accounts with >100 subscriptions, products, or customers simply can't retrieve complete datasets through the MCP server.
+**Issues #220 and #388 still open.** `list_customers` still returns only customer IDs, not full objects (issue #220 — open since January 26, now nearly 4 months with zero official response). Pagination remains absent (issue #388 — all list tools silently cap at 100 results); a community PR #419 was filed May 11 but is unmerged. Open issue count grew from 18 to 20.
 
-**list_customers still broken.** Issue #220 (January 26) remains open with zero comments, zero PRs linked. The tool still returns only customer IDs, not the full objects the documentation promises.
-
-**Stripe Sessions April 29–30.** Stripe's annual conference in San Francisco may bring MCP-related announcements. The Agentic Commerce Suite continues expanding: MCP (for agent tool use), ACP (for agent-merchant discovery, co-developed with OpenAI), MPP (for agent payments), and x402 (for HTTP-native payments).
-
-**PulseMCP traffic surging.** Weekly visitors jumped from ~20K to 37K (up 85%), ranking #54 weekly and #57 globally with ~1.1M all-time visitors. Interest is accelerating ahead of Stripe Sessions.
-
-**Repository: 1.5K stars, 257 forks, 326 commits.** Community growth continues but issue backlog is growing faster than closures.
+**Repository: 1.6K stars (+100), 268 forks (+11), 340 commits (+14)** in the stripe/ai monorepo. Steady growth, but issue backlog continues to outpace closures.
 
 ## What It Does
 
@@ -158,15 +157,17 @@ For **AI agent builders**, the agentic stack is maturing fast. Stripe Projects p
 
 ## The Bottom Line
 
-Stripe's MCP server is a **4/5**. The security model is among the best we've reviewed — three-layer access control with OAuth, restricted keys, and manual confirmation. The documentation search is a genuinely differentiated feature. Client support now spans six platforms after Gemini CLI and the protocol version fix. The remote setup is dead simple.
+Stripe's MCP server is a **4/5**. The security model is among the best we've reviewed — three-layer access control with OAuth, restricted keys, and manual confirmation. The documentation search is a genuinely differentiated feature. Client support spans six platforms. The remote setup is dead simple.
 
-The ecosystem story around Stripe's MCP server keeps getting stronger: Visa's MPP card spec and SDK, Stripe Projects for scoped agent billing, and Stripe Sessions (April 29–30) likely bringing more agentic commerce announcements. But the MCP server itself still hasn't added new tools since launch — 25 tools covering ~10–15% of the API. list_customers remains broken (issue #220, open since January, zero activity). The new pagination gap (issue #388 — all list tools silently cap at 100 results) is arguably worse: it means the server can't even reliably retrieve existing data for non-trivial accounts.
+Stripe Sessions 2026 delivered a genuinely impressive agentic commerce picture: Treasury API via MCP (early access), Link for agents, ACP reaching native MCP transport, MPP + Visa live with 50+ adopters, and Google/Meta partnerships for in-app checkout. The surrounding ecosystem is moving fast.
 
-The protocol version fix (PR #339) resolves the biggest local deployment blocker, which is a genuine improvement. But the open issues doubled (9 → 18) while the tool count stayed flat. The community is asking for pagination, governance, multi-account support, and subscription schedules — none addressed yet.
+But the MCP server itself remains at v0.3.3 with 25 static tools — covering roughly 10–15% of Stripe's API surface — while the Sessions wave was still happening. `list_customers` is broken going on five months (issue #220, filed January 26, zero official response). The pagination gap (issue #388 — all list tools silently cap at 100 results, PR #419 filed by the community but unmerged) means the server can't reliably retrieve complete datasets from non-trivial accounts. Open issues grew from 18 to 20.
 
-The rating holds at 4/5 on the strength of security, docs search, client breadth, and the Agentic Commerce Suite positioning. But the gap between Stripe's agentic vision (MPP, ACP, Projects, Visa partnership) and the MCP server's execution (25 static tools, broken list_customers, no pagination) is widening, not closing.
+The Sessions preview of Treasury MCP tools is the most concrete signal yet that Stripe plans to expand the server's capabilities. But "previewed in early access" and "shipped in the npm package" are different things. Until new tools land and the critical bugs get addressed, the server's execution continues to trail Stripe's agentic vision.
 
-**Rating: 4/5** — Best-in-class security model, unique documentation search, and ambitious agentic commerce vision, but shallow API coverage and open bugs limit it to development workflows.
+The rating holds at 4/5 on the strength of security, docs search, client breadth, and an increasingly real Agentic Commerce Suite — but the gap between what Stripe says and what the MCP server does remains wide.
+
+**Rating: 4/5** — Best-in-class security model, unique documentation search, and the most ambitious agentic commerce ecosystem in payments — but shallow API coverage and months-old open bugs limit it to development workflows.
 
 ---
 
@@ -176,4 +177,4 @@ The rating holds at 4/5 on the strength of security, docs search, client breadth
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 
-*This review was last edited on 2026-04-23 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
