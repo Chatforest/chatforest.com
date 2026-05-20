@@ -2,17 +2,17 @@
 title: "Desktop Automation & Browser Control MCP Servers — Playwright, Selenium, Windows-MCP, macOS Automator, and More"
 date: 2026-03-15T09:45:00+09:00
 description: "Desktop automation and browser control MCP servers give AI agents eyes and hands — the ability to see screens, click buttons, type text, and control applications through the Model Context Protocol."
-og_description: "Desktop Automation & Browser Control MCP servers: microsoft/playwright-mcp (31,200 stars, TypeScript, official, accessibility-tree web interaction without vision models, multi-browser, PulseMCP #1 globally with 42.4M all-time visitors), CursorTouch/Windows-MCP (5,260 stars, Python, MIT, v0.7.1, +203 commits, DXCam screenshot backend, MSIX/UWP app launch), BrowserMCP/mcp (6,377 stars, TypeScript, Apache-2.0, Chrome extension for existing browser sessions — stagnant, no commits in 1 year), executeautomation/mcp-playwright (5,455 stars, TypeScript, MIT, 143 device presets — dormant since Dec 2025), browserbase/mcp-server-browserbase (3,277 stars, TypeScript, v3.0.0 breaking tool rename, hosted MCP at mcp.browserbase.com), NEW: GhostDesk (44 stars, Docker virtual Linux desktop for AI agents, 25+ tools), NEW: tine (10 stars, first GNOME Wayland desktop automation MCP), NEW: WinScript MCP (9 stars, 59 tools, Windows-native AppleScript equivalent), NEW: Pilot (31 stars, Chrome extension + MCP for real browser control), Power Apps MCP Server public preview (1,100+ enterprise systems), Automation Anywhere limited MCP support. Linux gap partially closing. 40+ servers reviewed. Rating: 4.0/5."
+og_description: "Desktop Automation & Browser Control MCP servers: microsoft/playwright-mcp (32,734 stars, PulseMCP #1 globally, 51.1M all-time visitors, v0.0.75, now in MCP Registry), ChromeDevTools/chrome-devtools-mcp (40,063 stars, Google-maintained official, v1.0.0 GA May 18 — most-starred MCP server in category), CursorTouch/Windows-MCP (5,637 stars, v0.8.0, CVE security patch, 2M+ users, Firefox IAccessible2 + Pi support), BrowserMCP/mcp (6,527 stars — stagnant 1+ yr), executeautomation/mcp-playwright (5,524 stars — dormant Dec 2025), browserbase/mcp-server-browserbase (3,346 stars, Stagehand v3.4.0 22,717 stars), steipete/macos-automator-mcp (798 stars), GhostDesk (50 stars, 30 tools, Docker Linux desktop), tine (18 stars, GNOME Wayland alpha), isac322/kwin-mcp NEW (24 stars, KDE Plasma 6 Wayland, 30 tools), open-browser-use NEW (100 stars, Codex alternative). Linux desktop gap closing: GNOME + KDE + Docker. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Desktop automation and browser control MCP servers across browser automation frameworks, Windows desktop control, macOS scripting, cross-platform tools, and enterprise RPA. Browser automation is the most mature subcategory — Microsoft's official Playwright MCP server (31,200 stars, PulseMCP #1 globally with 42.4M all-time visitors) continues to define accessibility-tree-driven web interaction for LLMs. The server hit v0.0.70 with Playwright 1.59 adding browser.bind() for shared browser instances and page.screencast for annotated video receipts. A Chrome Web Store extension 'Playwright MCP Bridge' now available. ExecuteAutomation's community Playwright server (5,455 stars) appears dormant since Dec 2025. BrowserMCP (6,377 stars) has had no commits in over a year — stagnant. Browserbase (3,277 stars) shipped v3.0.0 with breaking tool name changes and a hosted MCP endpoint at mcp.browserbase.com. New browser entrant Pilot (31 stars) offers Chrome extension + MCP for real browser control with logged-in sessions. Windows desktop automation is led by CursorTouch/Windows-MCP (5,260 stars, +203 commits since March) — the most actively developed server in this category, now at v0.7.1 with DXCam screenshot backend, MSIX/UWP app launch support, and UIAutomation hang fixes. New entrant WinScript MCP (9 stars, 59 tools) bills itself as 'AppleScript for Windows.' macOS has the richest scripting ecosystem — steipete/macos-automator-mcp (762 stars) ships 200+ recipes, CursorTouch launched MacOS-MCP (18 stars) for lightweight computer use, and desktop-pilot-mcp claims 30-100x faster than screenshot-based approaches. The Linux gap is finally closing — GhostDesk (44 stars) provides a full virtual Linux desktop in Docker for AI agents (25+ tools), tine (10 stars) is the first GNOME Wayland desktop automation MCP server using AT-SPI2, and gnome-ui-mcp brings Mutter remote desktop input. Enterprise RPA expanded — UiPath's official SDK shipped v0.2.0 with Streamable HTTP transport, Power Apps MCP Server entered public preview connecting to 1,100+ enterprise systems, and Automation Anywhere added limited MCP server capability. OpenAI Codex shipped desktop computer use (April 16) with broad MCP support. The category holds at 4.0/5 — browser automation is dominant with Playwright MCP as the undisputed #1 globally, Windows-MCP is thriving, the Linux gap is partially closing, and enterprise RPA is expanding. Deductions for dormant community servers (BrowserMCP, executeautomation), still-fragmented browser automation landscape, limited safety controls, and Linux desktop support still thin compared to Windows/macOS."
-last_refreshed: 2026-04-22
+card_description: "Desktop automation and browser control MCP servers across browser automation frameworks, Windows desktop control, macOS scripting, cross-platform tools, and enterprise RPA. Browser automation is the most mature subcategory. Google's ChromeDevTools/chrome-devtools-mcp (40,063 stars) hit v1.0.0 on May 18, 2026 — the most-starred MCP server in the category and #2 on PulseMCP globally (1.6M weekly visitors). Microsoft's official Playwright MCP server (32,734 stars, PulseMCP #1 with 51.1M all-time visitors) continues to define accessibility-tree web interaction; v0.0.71–v0.0.75 added drag-and-drop (browser_drop), network response bodies, multiple tab management in the Chrome extension, and the server is now published to the official MCP Registry on every release. BrowserMCP (6,527 stars) has had no commits in over a year — stagnant. Browserbase (3,346 stars) is at minimal activity with Stagehand (22,717 stars) actively developed. CursorTouch/Windows-MCP (5,637 stars, v0.8.0 May 19) patched a critical CORS CVE (GHSA-vrxg-gm77-7q5g in v0.7.5), added Firefox IAccessible2/MSAA fallback, stateless-http support, and Raspberry Pi integration — now with 2M+ users via Claude Desktop Extensions. Linux desktop support is closing more gaps: tine (18 stars, GNOME Wayland, v0.1.0 alpha) and GhostDesk (50 stars, 30 tools Docker virtual desktop) are growing, and isac322/kwin-mcp (24 stars, NEW) brings 30-tool KDE Plasma 6 Wayland automation. iFurySt/open-browser-use (100 stars) provides a multi-SDK open alternative to Codex's Browser Use. The category rates 4.5/5 — two mature official servers from Microsoft and Google, Windows-MCP shipping security patches and major versions, and Linux finally getting multi-platform coverage."
+last_refreshed: 2026-05-20
 ---
 
 Desktop automation and browser control MCP servers represent a fundamental capability shift — they give AI agents "eyes and hands" to interact with computer interfaces the same way humans do. Instead of calling APIs, these servers let agents see screens, click buttons, fill forms, navigate applications, and execute system commands through the Model Context Protocol.
 
 The landscape spans six areas: **browser automation** (the most mature, led by Microsoft's Playwright MCP), **Windows desktop control** (system-level UI interaction), **macOS automation** (AppleScript/JXA-powered scripting), **Linux desktop automation** (newly emerging), **cross-platform desktop tools** (PyAutoGUI-based and Docker-virtualized), and **enterprise RPA integration** (UiPath, Power Apps, and Automation Anywhere).
 
-The headline findings: **Microsoft's Playwright MCP server is the #1 MCP server globally** — 31,200 stars, 42.4 million PulseMCP visitors all-time, and Playwright 1.59's browser.bind() and page.screencast expand what agents can do. **Windows-MCP is thriving** with 5,260 stars and +203 commits since March, shipping v0.7.1 with DXCam screenshots and UWP app support. **The Linux gap is finally closing** — GhostDesk (44 stars) provides virtual Linux desktops in Docker, tine (10 stars) is the first GNOME Wayland MCP server, and gnome-ui-mcp adds Mutter remote input. **Enterprise RPA is expanding** — UiPath shipped SDK v0.2.0, Power Apps MCP Server entered public preview (1,100+ enterprise systems), and Automation Anywhere added limited MCP support. **OpenAI Codex shipped desktop computer use** (April 16) with MCP support, entering the space as a competitor. **Several community servers have gone dormant** — BrowserMCP (no commits in over a year), executeautomation/mcp-playwright (dormant since Dec 2025), and joshrutkowski/applescript-mcp (dormant since April 2025).
+The headline findings: **Google's ChromeDevTools/chrome-devtools-mcp hit v1.0.0 on May 18, 2026** — 40,063 stars, the most-starred MCP server in the browser automation category and #2 on PulseMCP globally (1.6 million weekly visitors). Five releases in the April–May window culminating in GA. **Microsoft's Playwright MCP server remains the #1 MCP server by traffic globally** — 32,734 stars (+4.9%), 51.1 million PulseMCP visitors all-time, 2.1 million weekly. v0.0.71–v0.0.75 added drag-and-drop, network response body access, multi-tab Chrome extension management, and **the server is now published to the official MCP Registry on every release**. **Windows-MCP hit v0.8.0** (May 19) with 5,637 stars and 2M+ Claude Desktop Extension users — also shipped a **critical CVE security fix** (GHSA-vrxg-gm77-7q5g, v0.7.5) patching HTTP wildcard CORS that allowed unauthenticated cross-origin access to the PowerShell tool. v0.8.0 adds Firefox IAccessible2/MSAA fallback, stateless-http transport, Win32 glow overlay feedback, and Raspberry Pi support. **The Linux gap is closing further** — tine grew to 18 stars (v0.1.0 alpha, GNOME Wayland), GhostDesk to 50 stars (30 tools, 239 commits), and **isac322/kwin-mcp (24 stars, NEW) brings 30-tool KDE Plasma 6 Wayland automation** — the first KDE-specific desktop MCP server. **iFurySt/open-browser-use (100 stars)** launched as an open-source multi-SDK alternative to Codex's Browser Use capability. **Several community servers have gone dormant** — BrowserMCP (no commits in over a year), executeautomation/mcp-playwright (dormant since Dec 2025), and joshrutkowski/applescript-mcp (dormant since April 2025).
 
 ## Browser Automation
 
@@ -20,9 +20,9 @@ The headline findings: **Microsoft's Playwright MCP server is the #1 MCP server 
 
 | Server | Stars | Language | Transport |
 |--------|-------|----------|-----------|
-| [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 31,200 | TypeScript | stdio, SSE, CDP |
+| [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 32,734 | TypeScript | stdio, SSE, CDP |
 
-**microsoft/playwright-mcp** (31,200 stars, 527 commits) is the official Playwright MCP server from Microsoft and the **#1 MCP server globally on PulseMCP** with 42.4 million all-time visitors and 2.5 million weekly. It uses **structured accessibility snapshots** — the same tree of labels, roles, and states that screen readers use — giving LLMs a precise, text-based representation of any web page without vision models.
+**microsoft/playwright-mcp** (32,734 stars) is the official Playwright MCP server from Microsoft and the **#1 MCP server globally by traffic on PulseMCP** with 51.1 million all-time visitors and 2.1 million weekly. It uses **structured accessibility snapshots** — the same tree of labels, roles, and states that screen readers use — giving LLMs a precise, text-based representation of any web page without vision models.
 
 This approach has three key advantages: **deterministic** (no ambiguity from pixel interpretation), **lightweight** (no vision model needed, so it's fast), and **accessible** (works with any LLM, not just multimodal ones).
 
@@ -30,49 +30,63 @@ Key features: **Multi-browser support** for Chromium, Firefox, and WebKit. **Ses
 
 Optional capabilities enabled via `--caps` flag: **Vision** (coordinate-based interactions for when accessibility trees aren't sufficient), **PDF** (document generation), and **DevTools** (developer tools integration).
 
-**What's new (March–April 2026):** v0.0.70 (April 1) is a maintenance release built from the Playwright 1.59 branch point. v0.0.69 (March 30) added network offline mode toggle, expanded mouse click options (button, count, delay), network request inspection with filtering, plain CSS and text selector support alongside aria-ref handles, and a **Chrome Web Store extension** ("Playwright MCP Bridge"). Playwright 1.59 itself added `browser.bind()` for sharing one browser across MCP/CLI/clients and `page.screencast` for annotated video receipts with action highlights and chapter titles. A new **token-efficient CLI mode** ("SKILLS") was added, favored by coding agents. File system restrictions and origin controls are now enabled **by default** for security.
+**What's new (April–May 2026):** Five rapid releases in the window. **v0.0.71** (April 27) — new `browser_drop` tool for drag-and-drop operations; `browser_network_requests` gains `responseBody` and `responseHeaders` with binary body handling. **v0.0.72** (April 30) — `browser_network_requests` returns a numbered list; new `browser_network_request` fetches individual request details; `browser_run_code` renamed to `browser_run_code_unsafe` to signal danger. **v0.0.73** (May 1) — **now published to the official MCP Registry on every release** (the authoritative registry for MCP servers); bug fixes for extension channel and executablePath resolution. **v0.0.74** (May 6) — Chrome extension now supports managing multiple tabs; `browser_take_screenshot` skips base64 data when a filename is provided; auto-recovery when remote browser disconnects mid-session. **v0.0.75** (May 7) — bug fix: serialize shared browser launch in `--isolated` mode; fix CDP command forwarding in extension mode.
 
 Notable open issues: #1565 (browser fails to launch after 2-8 days uptime), #1539 (click timeout on resolved elements), #1530 (named session management request), #1466 (GNAP: git-native multi-agent browser coordination).
 
-The 31,200-star count makes this the most-starred MCP server in any category. Its accessibility-tree approach has influenced the entire browser automation MCP ecosystem.
+The accessibility-tree approach has influenced the entire browser automation MCP ecosystem. Its PulseMCP traffic lead (2.1M weekly) remains despite the ChromeDevTools MCP (below) having a higher star count.
+
+### ChromeDevTools/chrome-devtools-mcp (Official Google — CDP-Powered, v1.0.0 GA)
+
+| Server | Stars | Language | Transport |
+|--------|-------|----------|-----------|
+| [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) | 40,063 | TypeScript | stdio |
+
+**ChromeDevTools/chrome-devtools-mcp** (40,063 stars) is the **official Google Chrome DevTools team's MCP server**, maintained under the ChromeDevTools GitHub organization. It is currently the **most-starred MCP server in the browser automation category** and **#2 on PulseMCP globally** with approximately 1.6 million weekly visitors. On May 18, 2026, it **hit v1.0.0** — the first major stable release, signaling production readiness.
+
+Where Playwright MCP abstracts the browser through accessibility trees, chrome-devtools-mcp exposes the **Chrome DevTools Protocol (CDP) directly** as MCP tools. This gives agents raw access to the full CDP surface: DOM inspection, network monitoring, JavaScript execution in any frame, performance profiling, storage management, and device emulation — the same APIs used by browser developer tools.
+
+**Five releases shipped in the April–May 2026 window:** v0.23.0 (April 22) through v1.0.1 (May 18). v1.0.0 added navigation URL reporting after page-navigating actions, `filePath` support in `evaluate_script`, improved geolocation emulation, and better error reporting for unknown tool arguments. v1.0.1 followed immediately with stability fixes.
+
+The CDP-native approach means agents can perform operations that accessibility trees don't expose well: intercepting and modifying network requests, reading raw DOM with full attribute access, running arbitrary JavaScript across iframes, and accessing browser internals (cookies, storage, service workers) at the protocol level. This complements rather than replaces Playwright MCP — the two servers suit different use cases.
 
 ### BrowserMCP/mcp (Existing Browser Automation)
 
 | Server | Stars | Language | License | Transport |
 |--------|-------|----------|---------|-----------|
-| [BrowserMCP/mcp](https://github.com/BrowserMCP/mcp) | 6,377 | TypeScript | Apache-2.0 | stdio |
+| [BrowserMCP/mcp](https://github.com/BrowserMCP/mcp) | 6,527 | TypeScript | Apache-2.0 | stdio |
 
-**BrowserMCP/mcp** (6,377 stars, 6 commits) takes a fundamentally different approach from Playwright — instead of launching new browser instances, it automates the **user's existing browser** through a Chrome extension. This means AI agents can work with already logged-in sessions, existing cookies, and real browser fingerprints.
+**BrowserMCP/mcp** (6,527 stars, 6 commits) takes a fundamentally different approach from Playwright — instead of launching new browser instances, it automates the **user's existing browser** through a Chrome extension. This means AI agents can work with already logged-in sessions, existing cookies, and real browser fingerprints.
 
 Adapted from Microsoft's Playwright MCP, the key difference is privacy and authentication: browser activity stays local, no credentials need to be passed to the MCP server, and basic bot detection is circumvented by using a real browser profile. Works with VS Code, Claude, Cursor, and Windsurf.
 
-**⚠ Stagnation warning:** The GitHub repository has had no commits since April 2024 — over two years with zero code activity despite 130+ open issues. The star count continues to grow (6,100→6,377) on reputation alone, but active maintenance has ceased. Consider [Pilot](https://github.com/TacosyHorchata/Pilot) (31 stars, March 2026) as a newer alternative offering the same Chrome extension + real browser approach.
+**⚠ Stagnation warning:** The GitHub repository has had no commits since April 2024 — over two years with zero code activity despite 130+ open issues. The star count continues to grow (6,377→6,527) on reputation alone, but active maintenance has ceased. Consider [Pilot](https://github.com/TacosyHorchata/Pilot) (31 stars, March 2026) as a newer alternative offering the same Chrome extension + real browser approach.
 
 ### executeautomation/mcp-playwright (Device Emulation & Testing)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [executeautomation/mcp-playwright](https://github.com/executeautomation/mcp-playwright) | 5,455 | TypeScript | MIT | 20+ |
+| [executeautomation/mcp-playwright](https://github.com/executeautomation/mcp-playwright) | 5,524 | TypeScript | MIT | 20+ |
 
-**executeautomation/mcp-playwright** (5,455 stars, 312 commits) extends browser automation with **143 real device presets** — iPhone, iPad, Pixel, Galaxy, Desktop configurations — complete with automatic user-agent handling, touch event emulation, and device pixel ratio simulation. This makes it particularly valuable for responsive testing and mobile web automation.
+**executeautomation/mcp-playwright** (5,524 stars, 312 commits) extends browser automation with **143 real device presets** — iPhone, iPad, Pixel, Galaxy, Desktop configurations — complete with automatic user-agent handling, touch event emulation, and device pixel ratio simulation. This makes it particularly valuable for responsive testing and mobile web automation.
 
 Key features: **Test code generation** for creating reusable Playwright test scripts. **Web scraping** capabilities. **Natural language command support** for AI assistants. **Both HTTP and stdio transport** for flexible deployment. **Automatic browser binary installation** on first use. **Cross-platform** support across Windows, macOS, and Linux.
 
 Integration support includes Claude Desktop, VS Code with GitHub Copilot, Cline, and Cursor IDE. The standalone HTTP server mode enables headless server deployments.
 
-**⚠ Dormant since December 2025:** No commits or releases in over 4 months. Stars still growing (5,300→5,455) but the project appears unmaintained.
+**⚠ Dormant since December 2025:** No commits or releases in over 5 months. Stars still growing (5,455→5,524) but the project appears unmaintained.
 
 ### browserbase/mcp-server-browserbase (Cloud Browser Sessions)
 
 | Server | Stars | Language | Transport |
 |--------|-------|----------|-----------|
-| [browserbase/mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | 3,277 | TypeScript | stdio |
+| [browserbase/mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase) | 3,346 | TypeScript | stdio |
 
-**browserbase/mcp-server-browserbase** (3,277 stars, 198 commits) provides **cloud-hosted browser sessions** via the Browserbase platform and Stagehand, offering enterprise-grade features that local browser automation can't match: **anti-detection** with stealth mode, **proxy support**, **session persistence** across interactions, and **multi-provider LLM compatibility** with OpenAI, Claude, and Gemini.
+**browserbase/mcp-server-browserbase** (3,346 stars, 198 commits) provides **cloud-hosted browser sessions** via the Browserbase platform and Stagehand, offering enterprise-grade features that local browser automation can't match: **anti-detection** with stealth mode, **proxy support**, **session persistence** across interactions, and **multi-provider LLM compatibility** with OpenAI, Claude, and Gemini.
 
 Performance claims 20-40% faster operations through automatic caching. Supports iframe and shadow DOM traversal, CSS selector-based element targeting, and structured data extraction with schemas. Viewport configuration is customizable for different testing scenarios.
 
-**What's new:** **v3.0.0** (March 31, 2026) is a **breaking release** — all tools renamed to shorter names (e.g., `browserbase_session_create` → `start`), package renamed to `@browserbasehq/mcp`, and a **hosted MCP endpoint** launched at mcp.browserbase.com for remote access without local installation.
+**What's new:** **v3.0.0** (March 31, 2026) remains the latest release — all tools renamed to shorter names (e.g., `browserbase_session_create` → `start`), package renamed to `@browserbasehq/mcp`, and a **hosted MCP endpoint** launched at mcp.browserbase.com (defaults to Gemini 2.5 Flash Lite, configurable). Minimal activity since: one commit May 5 renaming `advancedStealth` to `verified`. The underlying **Stagehand** automation library (22,717 stars) is more actively developed, with v3.4.0 shipping May 11.
 
 The cloud-hosted approach means no local browser setup, making it suitable for production automation pipelines and CI/CD integration. The trade-off is requiring a Browserbase account and API key.
 
@@ -100,17 +114,17 @@ Read-only resources expose browser status and accessibility snapshots. The natur
 
 | Server | Stars | Language | License | Transport |
 |--------|-------|----------|---------|-----------|
-| [CursorTouch/Windows-MCP](https://github.com/CursorTouch/Windows-MCP) | 5,260 | Python | MIT | stdio |
+| [CursorTouch/Windows-MCP](https://github.com/CursorTouch/Windows-MCP) | 5,637 | Python | MIT | stdio |
 
-**CursorTouch/Windows-MCP** (5,260 stars, 469 commits) is the most adopted and most actively developed Windows desktop automation MCP server, providing comprehensive system control with **0.2-0.9 second typical latency** for real-time interaction.
+**CursorTouch/Windows-MCP** (5,637 stars) is the most adopted and most actively developed Windows desktop automation MCP server, providing comprehensive system control with **0.2-0.9 second typical latency** for real-time interaction.
 
 The tool set spans three categories. **Input/Control tools:** Click, Type, Scroll, Move, Shortcut, Wait, MultiSelect, MultiEdit, and Clipboard management. **System tools:** Snapshot (with both vision and DOM modes for different interaction approaches), App (launch/resize/switch applications), Shell (PowerShell command execution), Process (list/terminate running processes), Registry (read/write/delete Windows Registry values). **Web/Data tools:** Scrape (webpage information extraction) and Notification (Windows toast notifications).
 
 Two interaction modes distinguish this server: **Snapshot mode** captures screen state for vision-based interaction, while **DOM mode** (`use_dom=True`) provides structured element trees for browser automation — similar to Playwright's accessibility-tree approach but applied to native Windows UI.
 
-**What's new (March–April 2026):** Three releases in rapid succession — v0.7.1 (March 29), v0.7.0 (March 17), v0.6.9 (March 13). **+203 commits** since our last review, making this the most actively developed server in the category. New features include: **DXCam screenshot backend** for faster screen capture, **MSIX/UWP app launch support**, PowerShell executor refactor, UIAutomation hang fix, keyboard focus fix on window switching, Dependabot integration for security, and configurable screenshot scaling via environment variable.
+**What's new (April–May 2026):** Three significant releases — **v0.7.4** (April 23): performance fix eliminating double-caching of COM tree nodes (halving COM calls per node), fixed PowerShell Tool missing environment variables, MCP config update for Claude Desktop Windows Store. **v0.7.5** (early May): **critical security patch for CVE GHSA-vrxg-gm77-7q5g** — HTTP transports were emitting `Access-Control-Allow-Origin: *` unconditionally, allowing any cross-origin page to open unauthenticated MCP sessions and invoke the PowerShell tool (remote code execution risk). Fix: no wildcard CORS by default, new `--cors-origins` opt-in flag, DNS rebinding protection via TrustedHostMiddleware. **v0.8.0** (May 19): Firefox IAccessible2/MSAA fallback for DOM extraction (cross-browser accessibility), `--stateless-http` support for streamable-http transport, screenshot capture with Win32 glow overlay feedback, Raspberry Pi integration, Authlib CVE-2026-44681 security patch.
 
-The combination of system-level access (registry, processes, shell) with UI automation makes this suitable for both simple click-and-type tasks and complex Windows administration workflows. CursorTouch also launched **[MacOS-MCP](https://github.com/CursorTouch/MacOS-MCP)** (18 stars) — a lightweight macOS computer use server, extending their cross-platform ambitions.
+The README now reports **2M+ users** via Claude Desktop Extensions — the first Windows desktop MCP server to claim that scale. The combination of system-level access (registry, processes, shell) with UI automation makes this suitable for both simple click-and-type tasks and complex Windows administration workflows. CursorTouch also maintains **[MacOS-MCP](https://github.com/CursorTouch/MacOS-MCP)** (18 stars) — a lightweight macOS computer use server, extending their cross-platform ambitions.
 
 ### mario-andreschak/mcp-windows-desktop-automation (AutoIt-Based)
 
@@ -132,9 +146,9 @@ The 4-commit count suggests this is more of a wrapper than a deeply developed pr
 
 | Server | Stars | Language | Transport |
 |--------|-------|----------|-----------|
-| [steipete/macos-automator-mcp](https://github.com/steipete/macos-automator-mcp) | 762 | TypeScript | stdio |
+| [steipete/macos-automator-mcp](https://github.com/steipete/macos-automator-mcp) | 798 | TypeScript | stdio |
 
-**steipete/macos-automator-mcp** (762 stars, 101 commits) ships with **over 200 pre-programmed automation sequences** for AppleScript and JavaScript for Automation (JXA), turning AI agents into macOS power users.
+**steipete/macos-automator-mcp** (798 stars) ships with **over 200 pre-programmed automation sequences** for AppleScript and JavaScript for Automation (JXA), turning AI agents into macOS power users.
 
 Three core tools: **execute_script** runs AppleScript or JXA scripts (inline content, file paths, or knowledge base references), **get_scripting_tips** searches the 200+ recipe knowledge base by category or keyword, and **accessibility_query** provides UI element inspection and interaction via the macOS Accessibility framework.
 
@@ -168,29 +182,41 @@ Requires only two macOS permissions: Accessibility and Screen Recording. The zer
 
 ## Linux Desktop Automation (NEW)
 
-The Linux desktop gap — flagged in our original review as "conspicuously absent" — is now being addressed by several new projects.
+The Linux desktop gap — flagged in our original review as "conspicuously absent" — is now being actively addressed across all three major desktop environments: GNOME, KDE, and Docker-virtualized.
 
 ### GhostDesk (Docker Virtual Linux Desktop)
 
 | Server | Stars | Language | Transport |
 |--------|-------|----------|-----------|
-| [YV17labs/GhostDesk](https://github.com/YV17labs/GhostDesk) | 44 | Python | stdio |
+| [YV17labs/GhostDesk](https://github.com/YV17labs/GhostDesk) | 50 | Python | stdio |
 
-**YV17labs/GhostDesk** (44 stars, March 2026) takes a different approach to the Linux desktop problem — instead of wrapping native Linux desktop APIs, it provides a **full virtual Linux desktop inside Docker** for AI agents. 25+ tools cover screenshots, mouse control, keyboard input, UI reading, clipboard, and shell access. Human-like input patterns help bypass bot detection. Works with any MCP client.
+**YV17labs/GhostDesk** (50 stars, 239 commits) provides a **full virtual Linux desktop inside Docker** for AI agents. Now with 30 tools covering screenshots (WebP/PNG), mouse control, keyboard input, UI reading, clipboard, application launch and monitoring. Human-like input patterns help bypass bot detection. Supports self-hosted models (Qwen family) and frontier LLMs. Actively developed — last updated May 19.
 
 The Docker isolation is both a strength (sandboxed, reproducible, no risk to host) and a limitation (can't interact with the user's actual desktop). Best suited for automated workflows, testing, and agent research rather than personal desktop automation.
 
-### smythp/tine (GNOME Wayland — First Native Linux MCP)
+### smythp/tine (GNOME Wayland)
 
 | Server | Stars | Language | Transport |
 |--------|-------|----------|-----------|
-| [smythp/tine](https://github.com/smythp/tine) | 10 | Python | stdio |
+| [smythp/tine](https://github.com/smythp/tine) | 18 | Python | stdio |
 
-**smythp/tine** (10 stars, April 2026) is the first dedicated **GNOME Wayland** desktop automation MCP server. CLI-first, using AT-SPI2 (Assistive Technology Service Provider Interface) for accessibility-based UI interaction — no portals, no consent dialogs. This is the Linux equivalent of macOS Accessibility API access.
+**smythp/tine** (18 stars, v0.1.0 alpha) is a dedicated **GNOME Wayland** desktop automation server for AI agents. Three reading modes: AT-SPI2 accessibility tree, labeled coordinate grid overlay, optional OCR. Uses kernel-level event injection via `/dev/uinput` (no Wayland portals required). Post-click tree hashing detects "silent misses." Tested on GNOME 49 / Arch Linux. Actively developed — last commit May 16.
+
+### isac322/kwin-mcp (KDE Plasma 6 Wayland — NEW)
+
+| Server | Stars | Language | Transport |
+|--------|-------|----------|-----------|
+| [isac322/kwin-mcp](https://github.com/isac322/kwin-mcp) | 24 | — | stdio |
+
+**isac322/kwin-mcp** (24 stars, created February 2026) is the **first KDE-specific desktop MCP server** — a significant gap filler given KDE Plasma's substantial Linux market share. Provides **30 tools** for KDE Plasma 6 Wayland desktop automation. Actively maintained — last updated May 19. This, combined with tine (GNOME) and GhostDesk (Docker), means the major Linux desktop environments now all have MCP coverage.
 
 ### Other Linux Servers
 
-**asattelmaier/gnome-ui-mcp** (1 star, March 2026) — GNOME Wayland automation via AT-SPI element discovery and Mutter remote desktop input. Listed on PulseMCP.
+**asattelmaier/gnome-ui-mcp** (1 star, May 14, 2026) — GNOME Wayland automation via AT-SPI element discovery and Mutter remote desktop input. Listed on PulseMCP.
+
+**kurojs/wayland-mcp** (4 stars, May 15, 2026) — Wayland-native MCP server.
+
+**nordbyte/PeekabooX** (2 stars, May 18, 2026) — Linux AI operator toolkit with screen capture and accessibility tree access.
 
 **vito1317/linux-control-mcp** (0 stars, April 2026) — X11-based Linux desktop control (mouse, keyboard, window, accessibility, screenshot, animations).
 
@@ -250,7 +276,9 @@ Key technical decisions: **aggressive image compression** (50% scaling, WebP qua
 
 **anomalous3/ahk-mcp** (6 stars, April 2026) — AutoHotkey v2 + UI Automation as token-efficient computer use for AI agents.
 
-**anaisbetts/mcp-computer-use** (9 stars, April 2026) — MCP server implementing OpenAI CUA (Computer-Using Agent) for desktop. Written in Rust.
+**anaisbetts/mcp-computer-use** (12 stars, April 2026) — MCP server implementing the OpenAI CUA (Computer-Using Agent) spec for desktop. Written in Rust. Cross-platform: Windows Capture, libwayshot for Linux/Wayland, ScreenCaptureKit for macOS 14+. Action schemas match the CUA spec exactly (click, double-click, scroll, type, wait, keypress, drag, screenshot).
+
+**iFurySt/open-browser-use** (100 stars, April 24, 2026) — Open-source multi-SDK alternative to Codex's Browser Use feature. Available as JS/TS SDK, Python SDK, Go SDK, CLI, and MCP server. Platform-neutral browser automation. v0.1.39 (May 17, 2026). Describes itself as "open-source alternative to the Chrome Browser Use capability recently shipped in Codex.app."
 
 **VersoXBT/desktop-pilot-mcp** (8 stars, April 2026) — macOS app automation via Accessibility API, AppleScript, CGEvent. Claims 30-100x faster than screenshot-based computer use.
 
@@ -286,7 +314,7 @@ Power Automate does not have an official first-party MCP server yet, but communi
 
 ## Gaps and missing pieces
 
-**Linux desktop support still thin** — The gap is partially closing with tine (GNOME Wayland), gnome-ui-mcp, and GhostDesk (Docker virtual desktop), but coverage remains far behind Windows and macOS. No KDE-specific server exists. No MCP server wraps ydotool (Wayland) or xdotool (X11) directly.
+**Linux desktop still maturing** — tine (GNOME), kwin-mcp (KDE), and GhostDesk (Docker) now cover all three major Linux desktop configurations. Coverage has improved significantly from "conspicuously absent" to multi-environment. xdotool (X11) and ydotool (Wayland) remain unwrapped as dedicated MCP servers, but the practical gaps are smaller.
 
 **Dormant community servers** — BrowserMCP (6,377 stars, no commits in over a year), executeautomation/mcp-playwright (5,455 stars, dormant since Dec 2025), and joshrutkowski/applescript-mcp (379 stars, dormant since April 2025) have large star counts but no maintenance. Users relying on these servers may face unpatched issues.
 
@@ -302,16 +330,16 @@ Power Automate does not have an official first-party MCP server yet, but communi
 
 ## Bottom line
 
-**Rating: 4.0 / 5** — Desktop automation and browser control remains one of the most transformative MCP categories. Microsoft's Playwright MCP (31,200 stars, PulseMCP #1 globally) continues to dominate browser automation with its accessibility-tree approach, now enhanced by Playwright 1.59's browser.bind() and screencast capabilities. Windows-MCP (5,260 stars, +203 commits) is thriving with v0.7.1 adding DXCam screenshots and UWP app support. The Linux gap is finally closing — GhostDesk (44 stars) provides Docker virtual desktops and tine is the first GNOME Wayland MCP server. Enterprise RPA expanded with UiPath SDK v0.2.0, Power Apps MCP public preview (1,100+ systems), and Automation Anywhere's limited entry. OpenAI Codex shipping desktop computer use with MCP support marks a significant competitive development.
+**Rating: 4.5 / 5** — Desktop automation and browser control has reached a new level of maturity. The browser automation subcategory now has **two official servers from major tech companies** hitting major milestones simultaneously: Google's ChromeDevTools/chrome-devtools-mcp (40,063 stars, v1.0.0 GA May 18, #2 on PulseMCP) and Microsoft's Playwright MCP (32,734 stars, PulseMCP #1 globally, 51.1M all-time visitors, now in the official MCP Registry). These two servers take complementary approaches — accessibility trees vs. CDP — and together provide comprehensive browser automation coverage. Windows-MCP (5,637 stars, v0.8.0, 2M+ users) is actively patching security CVEs and shipping major features. Linux desktop support now spans GNOME (tine), KDE (kwin-mcp), and Docker-virtualized (GhostDesk) environments.
 
-Deductions: several high-profile community servers have gone dormant (BrowserMCP, executeautomation — combined 11,800+ stars with no maintenance), Linux desktop support still thin compared to Windows/macOS, limited safety controls across desktop automation servers (Playwright improving with default origin restrictions, but most provide unrestricted system access), fragmented browser automation landscape, Power Automate still missing official MCP despite Power Apps entering preview, and no cross-platform desktop abstraction.
+Deductions: several high-profile community servers remain dormant (BrowserMCP and executeautomation — combined 12,000+ stars with no maintenance), limited safety controls across most desktop automation servers (Windows-MCP just patched a severe CORS CVE, highlighting the risk), Power Automate still missing official MCP, and no true cross-platform desktop abstraction exists.
 
 ## Further Reading
 
 - [Holo3: How a 10B-Parameter Open Model Beat GPT-5.4 and Opus 4.6 at Controlling Desktops](/guides/holo3-desktop-agent-osworld-record/) — H Company's open-source model scores 78.85% on OSWorld, offering a visual understanding approach to desktop automation that complements MCP tool-calling
 
-*This review reflects research conducted in March–April 2026. Star counts, features, and ecosystem dynamics change rapidly in the MCP space. The content is based on documentation, GitHub repositories, and community reports — not hands-on testing.*
+*This review reflects research conducted in March–May 2026. Star counts, features, and ecosystem dynamics change rapidly in the MCP space. The content is based on documentation, GitHub repositories, and community reports — not hands-on testing.*
 
 **Category**: [Business & Productivity](/categories/business-productivity/)
 
-*This review was last edited on 2026-04-22 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
