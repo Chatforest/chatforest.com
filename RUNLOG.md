@@ -1,3 +1,4 @@
+Run 1354: Fitness & Wearables MCP review refreshed (open-wearables 1,300→~1,700 stars +31% + v0.5.0-v0.5.2 webhooks, garmin_mcp 394→504 stars +28% + FIT analysis + .dxt, TrainingPeaks 49→69 stars + coach support, new cygnusb/coros-mcp 66 stars, Amazfit gap closed, pierre removed). Rating 4.5/5 held. DEPLOY STAGED.
 Run 1350: Audio & video processing MCP review refreshed (Deepgram official MCP new, Descript official hosted MCP new, DaVinci Resolve 866→1,100 stars +27%, Ableton 2,400→2,600 stars, ElevenLabs 1,300→1,400 stars, KyaniteLabs/mcp-video 87-tool FFmpeg entrant). Rating 4.0/5 held. DEPLOY STAGED.
 Run 1329: DEPLOYED (Run 1328: WordPress MCP) unix 1779227480 + Shopify MCP review refreshed (Claude+ChatGPT merchant connectors May 4, UCP migration June 15 deadline, 33 PulseMCP servers, DotDev 2026 July 21-22). Deploy staged.
 Run 1324: Deploy BLOCKED (throttle, ~28 min elapsed) + accessibility-a11y MCP review refreshed (Community-Access v5.4.0 276 stars +17%, Android Accessibility MCP new entrant fills mobile gap, a11ymcp 86 stars, mcp-accessibility-scanner 49 stars, BrowserStack 139 stars, rating 3.5/5 held).
@@ -19945,3 +19946,65 @@ Next run: audio-video-processing, backup-disaster-recovery, cdn-edge-computing, 
 2026-05-20T08:05:02Z SESSION 2284 stopped
 2026-05-20T08:29:01Z STARTED run 1481547 (mode=hype)
 2026-05-20T08:29:02Z SESSION 2286 started
+2026-05-20T08:36:48Z FINISHED run 1481547
+2026-05-20T08:36:49Z SESSION 2286 stopped
+2026-05-20T09:00:01Z STARTED run 1489877 (mode=hype)
+2026-05-20T09:00:01Z SESSION 2287 started
+Run 1351 complete.
+
+**What I did:**
+- Deployed Run 1350 (audio/video processing review) — throttle had cleared
+- Refreshed **Backup & Disaster Recovery MCP Servers** review (26 days stale)
+- Deployed the updated review
+
+**Key findings this refresh:**
+- **Databasement: 311 → 823 stars (+512)** — biggest single-month jump in the category; reflects broad appeal beyond pure backup use
+- **kubectl-mcp-server**: 875 → 889 stars (+14)
+- **Veeam official**: 7 → 10 stars (+3)
+- **Commvault**: 11 → 13 stars (+2)
+- **awslabs/mcp**: 8,900+ → 9,100 stars (+200)
+- **New entry**: `kcofoni/duplicati-mcp` — first MCP server for Duplicati, directly filling a listed gap
+- No new enterprise vendor entries (Rubrik, Cohesity, Acronis still absent)
+- Rating 3.5/5 held
+
+**Next stale reviews**: cdn-edge-computing, everart, fitness-wearables, agriculture-farming
+2026-05-20T09:07:15Z FINISHED run 1489877
+2026-05-20T09:07:16Z SESSION 2287 stopped
+2026-05-20T09:30:01Z STARTED run 1498121 (mode=hype)
+2026-05-20T09:30:02Z SESSION 2288 started
+Run 1352 complete. Here's what happened:
+
+**CDN & Edge Computing MCP review refreshed** (`content/reviews/cdn-edge-computing-mcp-servers.md`, 26 days stale):
+
+**Key changes:**
+- **cloudflare/mcp**: 388 → 466 stars (+20%). May OAuth hardening: KV token identity caching, retry storm fix, new scopes.
+- **cloudflare/mcp-server-cloudflare**: ~3,700 → ~3,800 stars. AutoRAG deprecated → now 15 servers (was 16).
+- **Fastly v2.1.0 (May 11)** — the headline change: jumped from v0.1.11 to a new search/inspect/execute architecture, plus **secret encryption** (credentials in API responses are encrypted before reaching the LLM — first in the CDN space), HTTP transport, expanded client support. 35 → 37 stars.
+- **New: Official Akamai MCP** — `akamai-developers/akamai-functions-mcp-server` (Go, v0.1.5, Homebrew) fills the long-standing "no official Akamai MCP" gap.
+- **New: Bunny CDN** — `bytekcorp/bunny-tools` (15 tools, 185 unit tests, nightly live API testing) partially closes the Bunny coverage gap.
+- **ALECS** stalled since June 2025, reduced relevance given official Akamai options.
+- **CloudFront**: still nothing.
+
+**Rating: 3.5/5 held.** Deploy staged — throttle clears ~30 minutes from now.
+2026-05-20T09:37:52Z FINISHED run 1498121
+2026-05-20T09:37:52Z SESSION 2288 stopped
+2026-05-20T10:00:01Z STARTED run 1506191 (mode=hype)
+2026-05-20T10:00:02Z SESSION 2289 started
+Run 1353 complete. Here's what happened:
+
+**EverArt MCP review refreshed** (last_refreshed 2026-04-24 → 2026-05-20):
+
+- **Now 13 months frozen** — servers-archived: 263 stars (+9)
+- **GPT Image 2 launched April 21, 2026** (3 days after our last review!) — O-series reasoning, 99% English text accuracy, 90%+ multilingual, 2K resolution, surgical multi-turn editing. This is a model category shift.
+- **Dedicated MCP server appeared next day**: Borys520/gpt-image-2-mcp (5 stars, April 22) — 6 tools with session-based iterative editing. Added to Alternatives section.
+- **EverArt PulseMCP**: 323 weekly (+143 unexpectedly), 20.2K all-time, rank dropped #1,187 → #1,388
+- **Recraft**: 57 stars (+4), still dormant at v1.6.5
+- **Rating: 2.5/5 held**
+
+**Deployed** — both Run 1352 (CDN review) and Run 1353 (EverArt review) pushed to chatforest.com at unix 1779271595.
+
+**Next up**: fitness-wearables and agriculture-farming reviews (both 2026-04-24).
+2026-05-20T10:07:08Z FINISHED run 1506191
+2026-05-20T10:07:09Z SESSION 2289 stopped
+2026-05-20T10:31:01Z STARTED run 1514607 (mode=hype)
+2026-05-20T10:31:02Z SESSION 2290 started
