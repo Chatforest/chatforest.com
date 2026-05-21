@@ -2,10 +2,10 @@
 title: "Code Coverage & Test Intelligence MCP Servers — SonarQube, Codacy, Test-Coverage-MCP, Codecov, and More"
 date: 2026-04-25T17:00:00+09:00
 description: "Code coverage and test intelligence MCP servers give AI agents awareness of test coverage gaps, quality metrics, and test execution results through the Model Context Protocol."
-og_description: "Code coverage MCP servers: SonarQube (540 stars — official, coverage + quality gates), Codacy (56 stars — 23 tools, coverage + security), test-coverage-mcp (40 stars — LCOV awareness for agents), Codecov MCP (8 tools), Vitest MCP (14 stars — line-by-line coverage). Rating: 3.5/5."
+og_description: "Code coverage MCP servers: SonarQube (556 stars — official, v1.18.1 config generator, coverage + quality gates), Codacy (59 stars — 23 tools, coverage + security), test-coverage-mcp (41 stars — LCOV awareness for agents), mutmut-mcp (NEW — mutation testing gap), Vitest MCP (15 stars). Rating: 3.5/5."
 content_type: "Review"
-card_description: "Code coverage and test intelligence MCP servers that make AI agents aware of test gaps, quality gates, and coverage trends — turning coverage-blind code generation into coverage-aware development. **Official enterprise coverage** — SonarSource/sonarqube-mcp-server (540 stars, Kotlin, official) connects AI agents to SonarQube Server or Cloud for coverage metrics, quality gates, issue tracking, and security hotspots. Native MCP endpoint in SonarQube Cloud (March 2026) — zero installation. Supports Claude Code, VS Code, Cursor, Gemini CLI, and 10+ other clients. Docker-based for self-hosted instances. **Multi-platform quality** — codacy/codacy-mcp-server (56 stars, MIT, TypeScript, 23 tools across 8 categories) integrates coverage metrics with code quality, security findings, duplication analysis, and pull request diff coverage. Install from VS Code/Cursor extension. Works with any CI-generated coverage report. **Coverage awareness for agents** — goldbergyoni/test-coverage-mcp (40 stars, MIT, TypeScript, 4 tools) solves coverage blindness during coding sessions. LCOV-based parsing delivers coverage summaries in under 100 tokens instead of thousands. Baseline tracking shows coverage impact of each change. Works with any language that produces LCOV output. By Yoni Goldberg (Node.js best practices, 103K GitHub stars). **Codecov integration** — turquoisedragon2926/codecov-mcp-server (MIT, TypeScript, 8 tools) wraps Codecov's API for coverage totals, file-level line-by-line data, hierarchical coverage trees, and cross-branch/PR comparisons. Early-stage (6 commits) but functionally complete. **Vitest coverage** — djankies/vitest-mcp (14 stars, TypeScript, 4 tools) provides line-by-line coverage analysis with gap identification for Vitest projects. LLM-optimized output reduces token waste. Multi-repo context switching. Safety guards prevent full-project runs. **Multi-framework test runner** — privsim/mcp-test-runner (15 stars, MIT, TypeScript) unifies test execution across Bats, Pytest, Jest, Go, Rust, and Flutter through a single MCP interface. Parsed results with pass/fail summaries. **Enterprise entrants** — Parasoft MCP server connects AI agents to C/C++test coverage data, generating targeted tests for uncovered paths. Perforce Helix QAC 2026.1 added MCP for static analysis context. TestSprite MCP provides AI-first autonomous testing with 42%→93% pass rate improvement. **The gap this fills** — both our Testing & QA and Code Quality reviews identified coverage reporting as a missing capability. This category is now emerging with SonarQube's official backing, purpose-built tools like test-coverage-mcp, and platform integrations from Codacy and Codecov. Rating: 3.5/5 — strong enterprise options and a clever coverage-awareness tool, but most open-source servers have minimal adoption, no unified standard for coverage data exchange exists, and mutation testing is nearly absent."
-last_refreshed: 2026-04-25
+card_description: "Code coverage and test intelligence MCP servers that make AI agents aware of test gaps, quality gates, and coverage trends — turning coverage-blind code generation into coverage-aware development. **Official enterprise coverage** — SonarSource/sonarqube-mcp-server (556 stars, Kotlin, official) connects AI agents to SonarQube Server or Cloud for coverage metrics, quality gates, issue tracking, and security hotspots. v1.18.1 (May 2026) adds config generator at mcp.sonarqube.com and sandbox container fix. Native MCP endpoint in SonarQube Cloud — zero installation. Supports Claude Code, VS Code, Cursor, Gemini CLI, and 10+ other clients. **Multi-platform quality** — codacy/codacy-mcp-server (59 stars, MIT, TypeScript, 23 tools across 8 categories) integrates coverage metrics with code quality, security findings, duplication analysis, and pull request diff coverage. Works with any CI-generated coverage report. **Coverage awareness for agents** — goldbergyoni/test-coverage-mcp (41 stars, MIT, TypeScript, 4 tools) solves coverage blindness during coding sessions. LCOV-based parsing delivers coverage summaries in under 100 tokens instead of thousands. Baseline tracking shows coverage impact of each change. Works with any language that produces LCOV output. By Yoni Goldberg (Node.js best practices, 103K GitHub stars). **Mutation testing** — wdm0006/mutmut-mcp (NEW, MIT, Python, 6 tools) fills the long-standing mutation testing gap: run mutmut, display survivors, generate test suggestions for uncovered paths. **Codecov integration** — turquoisedragon2926/codecov-mcp-server (MIT, TypeScript, 8 tools) wraps Codecov's API for coverage totals, file-level line-by-line data, and cross-branch/PR comparisons. Early-stage (0 stars). **Vitest coverage** — djankies/vitest-mcp (15 stars, TypeScript, 4 tools) provides line-by-line coverage analysis with gap identification for Vitest projects. LLM-optimized output. **Multi-framework test runner** — privsim/mcp-test-runner (16 stars, MIT, TypeScript) unifies test execution across Bats, Pytest, Jest, Go, Rust, and Flutter. **Enterprise entrants** — Parasoft MCP server, Perforce Helix QAC 2026.1, TestSprite MCP. Rating: 3.5/5 — strong enterprise options, a mutation testing entrant fills a key gap, but most open-source servers have minimal adoption and no unified coverage data standard exists."
+last_refreshed: 2026-05-21
 ---
 
 AI coding agents write code. They refactor functions. They add features. But until recently, they had no idea whether their changes improved or degraded test coverage. Coverage-blind agents produce code that passes linting and type checks but leaves critical paths untested — a problem that only surfaces when bugs hit production.
@@ -22,7 +22,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server) | 540 | Kotlin | See LICENSE | 10+ toolsets |
+| [sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server) | 556 | Kotlin | See LICENSE | 10+ toolsets |
 
 **The enterprise leader in code coverage + quality MCP integration.** SonarSource — the company behind SonarQube, SonarCloud, and SonarLint — ships an official MCP server that connects AI agents to the full SonarQube platform:
 
@@ -41,13 +41,15 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 
 **Why it matters:** SonarQube is used by 400,000+ organizations. Having coverage data flow directly from SonarQube into AI coding sessions means agents can check coverage impact before committing, understand which files have weak coverage, and prioritize test writing where it matters most.
 
+**May 2026 updates (v1.17–v1.18.1):** v1.17.0 (Apr 27) launched a configuration generator at **mcp.sonarqube.com** — generate your MCP config for any client without touching JSON manually, plus a `/info` endpoint for version retrieval. v1.18.0 (May 4) added pagination for `search_dependency_risks` and patched security vulnerabilities in dependencies. v1.18.1 (May 11) fixed a startup crash in sandboxed container runtimes (the Docker image would not start on restricted environments) and resolved a Gemini CLI installation issue. Separately, SonarSource's AC/DC (Agent-Centric Development Cycle) framework exposes two dedicated coverage tools — `search_files_by_coverage` (pinpoint candidates for test improvements by coverage level) and `get_file_coverage_details` (line-by-line coverage for a specific file) — surfacing coverage navigation as a first-class agent capability.
+
 **Limitation:** Requires a SonarQube Server or Cloud instance — this isn't a standalone coverage tool. The Kotlin/JVM stack means the Docker image is heavier than Node.js alternatives. Coverage data is only as fresh as your last SonarQube analysis (typically CI/CD pipeline runs). Advanced analysis features require entitlements on certain SonarQube editions.
 
 ### codacy/codacy-mcp-server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [codacy-mcp-server](https://github.com/codacy/codacy-mcp-server) | 56 | TypeScript | MIT | 23 |
+| [codacy-mcp-server](https://github.com/codacy/codacy-mcp-server) | 59 | TypeScript | MIT | 23 |
 
 **23 tools across 8 categories** connecting AI agents to Codacy's code quality platform:
 
@@ -59,6 +61,8 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 
 **Key differentiator:** Codacy aggregates coverage reports from any CI provider (GitHub Actions, GitLab CI, Jenkins, etc.) and combines them with static analysis, duplication detection, and complexity metrics. The MCP server surfaces all of this through a single integration. Install directly from the Codacy VS Code or Cursor extension.
 
+**May 2026 update:** Quiet since April 8, when GitHub Actions were pinned to SHA hashes for supply-chain security. No new tools added; the 23-tool surface remains unchanged.
+
 **Limitation:** Requires a Codacy account and configured repositories. The 23 tools may be overwhelming for agents that only need coverage data — no way to load a subset. TypeScript/npm dependency chain.
 
 ## Coverage-Aware Development
@@ -67,7 +71,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [test-coverage-mcp](https://github.com/goldbergyoni/test-coverage-mcp) | 40 | TypeScript | MIT | 4 |
+| [test-coverage-mcp](https://github.com/goldbergyoni/test-coverage-mcp) | 41 | TypeScript | MIT | 4 |
 
 **The purpose-built coverage awareness tool** — designed specifically to make AI agents aware of their coverage impact during coding sessions. Created by Yoni Goldberg, author of [Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices) (103K+ stars).
 
@@ -84,7 +88,9 @@ Four focused tools:
 
 **Works with any language** that produces LCOV output — JavaScript/TypeScript (Istanbul/c8), Python (coverage.py), Go, Ruby, PHP, Java (JaCoCo with LCOV export), and more.
 
-**Limitation:** LCOV-only — doesn't support Cobertura XML, JUnit XML, or other coverage formats directly. Requires running your test suite externally first (it reads coverage files, doesn't execute tests). 40 stars suggests early adoption. Single maintainer.
+**May 2026 update:** Dormant since October 2025. No new commits or releases in 7 months. The tool remains functionally complete but unmaintained — single maintainer, no community activity.
+
+**Limitation:** LCOV-only — doesn't support Cobertura XML, JUnit XML, or other coverage formats directly. Requires running your test suite externally first (it reads coverage files, doesn't execute tests). 41 stars suggests limited adoption. Single maintainer.
 
 ### turquoisedragon2926/codecov-mcp-server
 
@@ -109,13 +115,36 @@ Four focused tools:
 
 **Limitation:** Very early stage — 6 commits total, ~0 stars. Requires a Codecov account and API token. No Coveralls equivalent exists yet. No official backing from Codecov (Sentry).
 
+## Mutation Testing
+
+### wdm0006/mutmut-mcp
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mutmut-mcp](https://github.com/wdm0006/mutmut-mcp) | ~0 | Python | MIT | 6 |
+
+**The first mutation testing MCP server** — and the entry that partially fills one of this category's most glaring gaps. Where code coverage tells you which lines were executed, mutation testing tells you whether your tests can actually catch bugs. mutmut-mcp wraps the [mutmut](https://github.com/boxed/mutmut) Python mutation testing tool:
+
+| Tool | Purpose |
+|------|---------|
+| `run_mutmut` | Execute mutation testing session |
+| `show_results` | Display overall mutation outcomes |
+| `show_survivors` | List mutations that survived (tests didn't catch) |
+| `generate_test_suggestion` | Identify areas needing stronger tests |
+| `rerun_mutmut_on_survivor` | Re-run mutmut on specific surviving mutations |
+| `clean_mutmut_cache` | Clear the mutmut cache |
+
+**Why mutation testing matters:** A project can have 95% line coverage and still have tests that assert nothing meaningful. Mutation testing modifies your source code (flips conditions, changes values) and checks whether tests fail. Surviving mutations = tests that pass even with broken code = coverage that doesn't prove correctness. The `generate_test_suggestion` tool turns survivors into actionable guidance for AI agents — "write a test that catches this mutation."
+
+**Limitation:** Python and mutmut only — no JavaScript/Stryker, no Java/PIT equivalents yet. ~0 stars, no formal releases, early stage. Mutmut itself can be slow on large codebases. The gap remains for JS/TS mutation testing (StrykerJS has no MCP server as of May 2026).
+
 ## Test Framework Integration
 
 ### djankies/vitest-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [vitest-mcp](https://github.com/djankies/vitest-mcp) | 14 | TypeScript | — | 4 |
+| [vitest-mcp](https://github.com/djankies/vitest-mcp) | 15 | TypeScript | — | 4 |
 
 **Vitest-specific MCP server** with built-in coverage analysis:
 
@@ -132,7 +161,7 @@ Four focused tools:
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-test-runner](https://github.com/privsim/mcp-test-runner) | 15 | TypeScript | MIT | 1 |
+| [mcp-test-runner](https://github.com/privsim/mcp-test-runner) | 16 | TypeScript | MIT | 1 |
 
 **Unified test execution** across 7 frameworks through a single `run_tests` tool:
 
@@ -199,7 +228,7 @@ The coverage and test intelligence MCP ecosystem has notable gaps:
 |-----|--------|
 | **No Coveralls MCP server** | One of two major coverage platforms lacks MCP integration |
 | **No JaCoCo/Cobertura direct support** | Java's most common coverage formats require LCOV conversion for test-coverage-mcp |
-| **No mutation testing** | StrykerJS, mutmut, and PIT have no MCP servers despite being the gold standard for test quality measurement |
+| **Mutation testing: Python only** | wdm0006/mutmut-mcp (new, ~0 stars) covers Python/mutmut; StrykerJS and Java/PIT have no MCP servers yet |
 | **No test impact analysis** | No server maps code changes to affected tests for selective execution |
 | **No CI/CD coverage gate integration** | Coverage checks happen in SonarQube/Codacy, not in the agent's coding session |
 | **No unified coverage standard** | LCOV, Cobertura, JUnit XML, Istanbul JSON — every tool speaks a different format |
@@ -220,12 +249,12 @@ The platform connectors are the most mature. The local parsers are the most prac
 
 ## Rating: 3.5 / 5
 
-**What earns the 3.5:** SonarQube's official server brings enterprise-grade coverage intelligence to AI agents. test-coverage-mcp is a genuinely clever tool that solves a real problem (coverage blindness) with elegant token efficiency. Codacy provides the most comprehensive single-server integration. The Parasoft and Perforce entries show enterprise vendors taking this seriously.
+**What earns the 3.5:** SonarQube's official server brings enterprise-grade coverage intelligence to AI agents, with steady release velocity (three releases in 26 days) and the mcp.sonarqube.com config generator lowering the setup barrier. test-coverage-mcp is a genuinely clever tool that solves a real problem (coverage blindness) with elegant token efficiency. Codacy provides the most comprehensive single-server integration. The Parasoft and Perforce entries show enterprise vendors taking this seriously. mutmut-mcp is a welcome new entrant that starts to fill the mutation testing gap.
 
-**What holds it back:** Most open-source servers have very low adoption (under 60 stars). No mutation testing support exists in the MCP ecosystem. The Java/JVM coverage ecosystem (JaCoCo, Cobertura) has no direct MCP integration. No Coveralls server. No test impact analysis. The category is emerging — it exists because the gap was too large to ignore, but it hasn't reached the maturity of [Code Intelligence](/reviews/code-intelligence-codebase-graph-mcp-servers/) or [Testing & QA](/reviews/testing-qa-mcp-servers/) categories.
+**What holds it back:** Most open-source servers have very low adoption (under 60 stars, several at 0). test-coverage-mcp has gone dormant (no commits since October 2025). The Java/JVM coverage ecosystem (JaCoCo, Cobertura) has no direct MCP integration. No Coveralls server. No test impact analysis. Mutation testing is Python-only. No unified coverage data standard. The category is emerging — it exists because the gap was too large to ignore, but it hasn't reached the maturity of [Code Intelligence](/reviews/code-intelligence-codebase-graph-mcp-servers/) or [Testing & QA](/reviews/testing-qa-mcp-servers/) categories.
 
-**Who should use these:** Teams that already use SonarQube or Codacy should add their MCP servers immediately — the coverage data is already there, the MCP server just surfaces it to agents. Individual developers working in Node.js/TypeScript projects should try test-coverage-mcp for coverage-aware coding sessions. Everyone else should wait for the ecosystem to mature, particularly around Java coverage format support and mutation testing.
+**Who should use these:** Teams that already use SonarQube or Codacy should add their MCP servers immediately — the coverage data is already there, the MCP server just surfaces it to agents. Individual developers working in Node.js/TypeScript projects should try test-coverage-mcp for coverage-aware coding sessions. Python developers should explore mutmut-mcp if mutation testing is part of their quality strategy. Everyone else should wait for the ecosystem to mature, particularly around Java coverage format support and JS/TS mutation testing.
 
 ---
 
-*This review is part of ChatForest's [MCP Server Directory](/). We research MCP servers by analyzing GitHub repositories, documentation, and community discussions — we do not install or test servers hands-on. Star counts and details reflect our research as of April 2026. For corrections or additions, see our [about page](/about/).*
+*This review is part of ChatForest's [MCP Server Directory](/). We research MCP servers by analyzing GitHub repositories, documentation, and community discussions — we do not install or test servers hands-on. Star counts and details reflect our research as of May 2026. For corrections or additions, see our [about page](/about/).*
