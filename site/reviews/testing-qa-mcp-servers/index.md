@@ -1,9 +1,9 @@
 # Testing & QA MCP Servers — From Browser Automation to Mobile, Cloud, and Test Runner Integration
 
-> Testing MCP servers now span browser automation (Microsoft Playwright MCP 31.4k stars), mobile (Appium 329 stars), cloud platforms (BrowserStack 137 stars), and official vendor MCP servers from Cypress, WebdriverIO, and LambdaTest/TestMu AI
+> Testing MCP servers now span browser automation (Microsoft Playwright MCP 32.8k stars, v0.0.75), mobile (Appium), cloud platforms (BrowserStack 139 stars), and official vendor MCP servers from Cypress, WebdriverIO, LambdaTest/TestMu AI, and new entrant Testkube AI
 
 
-**At a glance:** The testing MCP landscape has expanded dramatically. **Browser automation** is dominated by Microsoft's [Playwright MCP](https://github.com/microsoft/playwright-mcp) (31.4k stars, TypeScript, v0.0.70) — now one of the most-starred MCP servers in any category, with a built-in Healer agent and 11M weekly npm downloads. **Mobile testing** arrived with the official [Appium MCP](https://github.com/appium/appium-mcp) (329 stars, AI-powered element discovery) and [WebdriverIO MCP](https://github.com/webdriverio/mcp) (26 stars, 25+ tools, browser + mobile). **Cloud testing platforms** now have official MCP servers: [BrowserStack](https://github.com/browserstack/mcp-server) (137 stars, 20 tools, remote), [Cypress Cloud](https://docs.cypress.io/cloud/integrations/cloud-mcp) (remote, OAuth, flaky test detection), and LambdaTest/TestMu AI (3 MCP servers). Community alternatives include [executeautomation/mcp-playwright](https://github.com/executeautomation/mcp-playwright) (5.5k stars) and [angiejones/mcp-selenium](https://github.com/angiejones/mcp-selenium) (391 stars). **Test runner integration** remains less mature but the official [MCP Inspector](https://github.com/modelcontextprotocol/inspector) (9.6k stars) provides robust tooling for testing MCP servers themselves. **Playwright's 45.1% QA adoption rate** makes it the gravity well pulling testing toward MCP. This is the **eighth review in our [Developer Tools MCP category](/categories/developer-tools/)**.
+**At a glance:** The testing MCP landscape continues to mature. **Browser automation** is dominated by Microsoft's [Playwright MCP](https://github.com/microsoft/playwright-mcp) (32.8k stars, TypeScript, v0.0.75, May 7 2026) — one of the most-starred MCP servers in any category, with a built-in Healer agent and 11M weekly npm downloads. New in v0.0.75: serialized shared browser launch in `--isolated` mode and forwarding browser-level CDP commands in extension mode. **Mobile testing** is covered by the official [Appium MCP](https://github.com/appium/appium-mcp) and [WebdriverIO MCP](https://github.com/webdriverio/mcp) (25+ tools, with LambdaTest and Sauce Labs cloud support on the roadmap). **Cloud testing platforms** now have official MCP servers: [BrowserStack](https://github.com/browserstack/mcp-server) (139 stars, 20 tools, remote), [Cypress Cloud](https://docs.cypress.io/cloud/integrations/cloud-mcp) (remote, OAuth, flaky test detection), and LambdaTest/TestMu AI — which launched **Test.md** on May 14, 2026, an agent-native test framework for Kane CLI with deterministic replay and 120+ integrations. **New entrant: Testkube AI** (May 2026) brings Kubernetes-native test orchestration with a native MCP server exposing test workflows, results, logs, and artifacts to Claude Code, Cursor, and other MCP clients. Community alternatives include [executeautomation/mcp-playwright](https://github.com/executeautomation/mcp-playwright) and [angiejones/mcp-selenium](https://github.com/angiejones/mcp-selenium) (387 stars, v0.1.21). **Test runner integration** remains less mature but the official [MCP Inspector](https://github.com/modelcontextprotocol/inspector) provides robust tooling for testing MCP servers themselves. **Playwright's 45.1% QA adoption rate** makes it the gravity well pulling testing toward MCP. This is the **eighth review in our [Developer Tools MCP category](/categories/developer-tools/)**.
 
 Testing and quality assurance sit at the intersection of multiple MCP trends: AI agents that *use* browsers (browser automation), AI agents that *test mobile apps* (Appium, WebdriverIO), AI agents that *run tests* on cloud platforms (BrowserStack, LambdaTest), and AI agents that *analyze test results* (Cypress Cloud, test runners). Since our March 2026 review, the ecosystem has expanded from browser-automation-dominant to a full-spectrum testing platform. Microsoft's Playwright MCP server tripled its stars (9.8k → 31.4k), and every major testing vendor now ships or hosts an official MCP server.
 
@@ -16,13 +16,13 @@ Testing and quality assurance sit at the intersection of multiple MCP trends: AI
 | Aspect | Detail |
 |--------|--------|
 | Repository | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) |
-| Stars | ~31,400 |
-| Forks | ~2,600 |
+| Stars | ~32,800 |
+| Forks | ~2,700 |
 | Language | TypeScript |
 | License | Apache-2.0 |
 | Creator | Microsoft (official) |
 | First release | March 2025 |
-| Latest version | v0.0.70 (April 2026) |
+| Latest version | v0.0.75 (May 7, 2026) |
 
 **24 tools** across browser interaction categories:
 
@@ -36,7 +36,7 @@ Testing and quality assurance sit at the intersection of multiple MCP trends: AI
 
 **Key differentiator:** The **most-starred testing MCP server** by a massive margin — 31.4k stars makes it one of the top MCP servers in any category. Built by the Playwright team at Microsoft, ensuring tight integration with Playwright's accessibility snapshot engine. Uses structured accessibility data instead of screenshots — AI agents interact with page elements by reference (`ref="e42"`) rather than coordinates or CSS selectors. This makes interactions deterministic and avoids vision model costs. Supports Chromium, Firefox, and WebKit. Auto-installs browser binaries on first use. Both `--vision` mode (screenshots) and default accessibility mode available. Used by GitHub Copilot for agent browser tasks. Cloudflare forked it for Cloudflare Browser Rendering.
 
-**New in 2026:** Playwright 1.59 introduced `browser.bind()` — a single launched browser can now be shared across `@playwright/mcp`, `@playwright/cli`, and other clients simultaneously. The **built-in Healer agent** monitors runs in real time and auto-corrects selector failures (75%+ success rate). New `page.screencast` API replaces the old video recorder with action annotations and real-time frame streaming. Workspace isolation gives each workspace its own daemon process. Microsoft now also recommends `@playwright/cli` over MCP for coding agents (4× fewer tokens per session), though MCP remains the standard for AI tool integration. 11M weekly npm downloads for `@playwright/mcp`.
+**New in 2026:** Playwright 1.59 introduced `browser.bind()` — a single launched browser can now be shared across `@playwright/mcp`, `@playwright/cli`, and other clients simultaneously. The **built-in Healer agent** monitors runs in real time and auto-corrects selector failures (75%+ success rate). New `page.screencast` API replaces the old video recorder with action annotations and real-time frame streaming. Workspace isolation gives each workspace its own daemon process. Microsoft now also recommends `@playwright/cli` over MCP for coding agents (4× fewer tokens per session), though MCP remains the standard for AI tool integration. **v0.0.75 (May 7, 2026)** adds serialized shared browser launch in `--isolated` mode, preventing race conditions when multiple MCP clients share a browser instance, and forwards browser-level CDP commands in extension mode for lower-level browser control. 11M weekly npm downloads for `@playwright/mcp`.
 
 **Limitation:** TypeScript/Node.js only. The accessibility tree approach, while more reliable than screenshots, can miss visual layout issues that a human tester would catch. No built-in test assertion framework — it's browser *automation*, not browser *testing*. You still need a separate test runner to evaluate results. Some sites with heavy custom rendering may have poor accessibility tree representation.
 
@@ -63,7 +63,7 @@ Selenium still holds significant market share in test automation (~23% in testin
 | Aspect | Detail |
 |--------|--------|
 | Repository | [angiejones/mcp-selenium](https://github.com/angiejones/mcp-selenium) |
-| Stars | ~391 |
+| Stars | ~387 |
 | Forks | ~119 |
 | Language | TypeScript |
 | Creator | Angie Jones (prominent test automation advocate) |
@@ -134,16 +134,16 @@ Cypress MCP servers focus less on browser automation and more on **test generati
 | Device | `get_app_state`, `rotate_device`, `hide_keyboard`, `set_geolocation` |
 | BrowserStack | `upload_app`, `list_apps` |
 
-**Key differentiator:** **Only MCP server covering both browser and mobile automation** in a single package. Built-in BrowserStack integration for cloud testing. Provides 10+ MCP Resources for accessing session data, steps, generated code, and screenshots. Official from the WebdriverIO project, actively maintained (last updated April 2026).
+**Key differentiator:** **Only MCP server covering both browser and mobile automation** in a single package. Built-in BrowserStack integration for cloud testing, with **LambdaTest and Sauce Labs cloud support on the roadmap** — which would make it the only testing MCP server natively spanning multiple cloud testing platforms. Provides 10+ MCP Resources for accessing session data, steps, generated code, and screenshots. Official from the WebdriverIO project, actively maintained.
 
-**Limitation:** Very early (26 stars, launched February 2026). WebdriverIO has a smaller ecosystem than Playwright or Selenium. The combined browser + mobile scope means it may not excel at either as much as dedicated servers (Playwright for browser, Appium for mobile).
+**Limitation:** Very early adoption (launched February 2026). WebdriverIO has a smaller ecosystem than Playwright or Selenium. The combined browser + mobile scope means it may not excel at either as much as dedicated servers (Playwright for browser, Appium for mobile). LambdaTest and Sauce Labs cloud integrations are not yet shipped.
 
 ### BrowserStack MCP — Official Cloud Testing Platform (NEW)
 
 | Aspect | Detail |
 |--------|--------|
 | Repository | [browserstack/mcp-server](https://github.com/browserstack/mcp-server) |
-| Stars | ~137 |
+| Stars | ~139 |
 | Forks | ~45 |
 | Language | TypeScript |
 | Creator | BrowserStack (official) |
@@ -163,17 +163,27 @@ Cypress MCP servers focus less on browser automation and more on **test generati
 
 **Limitation:** AGPL-3.0 license may be restrictive for some organizations. Requires a BrowserStack account (paid service). No community alternative — if BrowserStack's MCP server doesn't cover your use case, there's no fallback.
 
-### LambdaTest / TestMu AI MCP Servers (NEW)
+### LambdaTest / TestMu AI MCP Servers
 
-LambdaTest rebranded to **TestMu AI** in January 2026 and launched three MCP servers:
+LambdaTest rebranded to **TestMu AI** in January 2026 and has expanded its MCP presence significantly. Original three MCP servers remain:
 
 - **HyperExecute MCP** — Test command generation and configuration automation for LambdaTest's HyperExecute platform
 - **Automation MCP** — Test failure triage and debugging
-- **SmartUI MCP** — Visual regression debugging
+- **SmartUI MCP** — Visual regression debugging (120+ integrations)
 
-**Key differentiator:** Most comprehensive MCP coverage from a cloud testing vendor — three purpose-built servers covering execution, debugging, and visual testing. Positions TestMu AI as an "AI-native" testing platform.
+**New (May 14, 2026): Test.md framework** — TestMu AI launched Test.md, an agent-native test framework for the Kane CLI. Test.md enables deterministic replay of agent-driven test sessions — you describe tests in Markdown-style syntax and Kane CLI executes them with reproducible results. The framework is designed for AI-first workflows where tests are written as natural-language specifications rather than imperative code. This positions TestMu AI at the intersection of AI coding assistants and traditional QA automation.
 
-**Limitation:** Requires LambdaTest/TestMu AI subscription. No consolidated GitHub repo found — servers appear distributed across documentation rather than as standalone open-source projects. The rebrand may create confusion about discoverability.
+**Key differentiator:** Most comprehensive MCP coverage from a cloud testing vendor — three purpose-built servers covering execution, debugging, and visual testing, now extended with an agent-native test framework. The Test.md approach challenges traditional code-based test authoring with natural-language specifications backed by deterministic replay.
+
+**Limitation:** Requires LambdaTest/TestMu AI subscription. No consolidated GitHub repo found — servers appear distributed across documentation rather than as standalone open-source projects. The Test.md framework is newly launched and production maturity is unproven.
+
+### Testkube AI — Kubernetes-Native Test Orchestration (NEW)
+
+Testkube, an open-source test orchestration platform for Kubernetes-native CI/CD pipelines, launched **Testkube AI** in May 2026 with native MCP server support. The MCP server exposes test workflows, test results, execution logs, and test artifacts directly to MCP-compatible clients including Claude Code, Cursor, and VS Code Copilot.
+
+**Key differentiator:** First Kubernetes-native test orchestration platform with a purpose-built MCP server. Testkube already supports 30+ testing frameworks (Playwright, Cypress, k6, Postman, JMeter, pytest, and more) — the MCP server makes all of these accessible through a single interface. AI agents can query test results, retrieve failure logs, analyze artifacts, and trigger test runs across any framework Testkube manages. For teams already running Testkube in their Kubernetes clusters, this is additive with no new infrastructure required.
+
+**Limitation:** Requires an existing Testkube deployment. Open-source Testkube is self-hosted; the MCP server adds AI accessibility but the underlying test infrastructure still needs to be managed. Star count and adoption metrics for the MCP component were not yet established at launch.
 
 ### Test Runner MCP Servers
 
@@ -242,7 +252,7 @@ Lightweight testing library from ThoughtSpot. Works with any testing framework (
 
 | Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD | IDE/Editor | Testing/QA | Monitoring | Security | IaC | Packages | Code Gen | API Dev | Logging | DB Migration | Doc Tooling | Debugging | Profiling | Code Review |
 |--------|--------|--------|-----------|--------|------------|-------|------------|------------|------------|---------- | ------- |----------|----------|----------|---------------------- | --------------|-----------|-----------|-------------|
-| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright 31.4k stars, Appium 329, BrowserStack 137, Cypress Cloud, WebdriverIO 26) | [Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)](/reviews/monitoring-observability-mcp-servers/) | [Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast)](/reviews/security-scanning-mcp-servers/) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
+| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright 32.8k stars, BrowserStack 139, Appium, Cypress Cloud, WebdriverIO, Testkube AI) | [Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)](/reviews/monitoring-observability-mcp-servers/) | [Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast)](/reviews/security-scanning-mcp-servers/) | Yes (Terraform 1.3k, Pulumi remote, AWS IaC, OpenTofu 84) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 192, Apollo GraphQL 275, Kong deprecated, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview 19 tools, Prisma built-in CLI v6.6.0+) | Yes (Microsoft Learn 1.5k, Mintlify auto, ReadMe per-project, Stainless, OpenAI Docs) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 442 stars, Codacy 56 stars, Graphite GT built-in) |
 | **Remote hosting** | Yes (`api.githubcopilot.com/mcp/`) | No | No | No | AWS EKS MCP (preview) | Yes (Buildkite remote MCP) | No (requires running IDE) | Yes (BrowserStack, Cypress Cloud, LambdaTest — OAuth) | [Yes (Datadog, Sentry — OAuth)](/reviews/monitoring-observability-mcp-servers/) | [No (all local/CLI-based)](/reviews/security-scanning-mcp-servers/) | [Yes (Pulumi remote MCP)](/reviews/infrastructure-as-code-mcp-servers/) | N/A | N/A | N/A | N/A | — | N/A | No (local debuggers) | No (local profiling agents) | N/A |
 | **Top community server** | GitMCP (7.8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.5k stars) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | Ansible (25 stars, 40+ tools) | mcp-package-version (122 stars, 9 registries) | Context7 (50.3k stars), magic-mcp (4.5k stars) | openapi-mcp-generator (495 stars), mcp-graphql (374 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (7.8k stars), Grounded Docs (1.2k stars), Docs MCP (87 stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
 | **Community tool count** | 28+ (local Git) | 100+ | 25+ | 25 (container mgmt) | 20+ (core) to 253+ (claimed) | 9-21 per server | 13-19 per server | 24 (official) + API testing | [16+ (Datadog) to 100+ (Instana)](/reviews/monitoring-observability-mcp-servers/) | [7 (Semgrep) to full platform (Snyk)](/reviews/security-scanning-mcp-servers/) | [20+ (Terraform), full platform (Pulumi)](/reviews/infrastructure-as-code-mcp-servers/) | N/A | N/A | N/A | N/A | — | N/A | N/A | N/A | N/A |
@@ -278,11 +288,11 @@ Lightweight testing library from ThoughtSpot. Works with any testing framework (
 
 ## Bottom Line
 
-**Rating: 4.0 out of 5** *(upgraded from 3.5 — April 2026)*
+**Rating: 4.0 out of 5** *(held — May 2026)*
 
-The testing MCP ecosystem has **matured dramatically** since March 2026. Browser automation remains dominant — Microsoft's Playwright MCP server (31.4k stars, v0.0.70, Healer agent, 11M weekly npm downloads) is now one of the most-starred MCP servers in any category. But the ecosystem is no longer lopsided: official MCP servers from Appium (329 stars, mobile), BrowserStack (137 stars, cloud, 20 tools), Cypress Cloud (remote, OAuth), WebdriverIO (25+ tools, browser + mobile), and LambdaTest/TestMu AI (3 servers) mean every major testing vendor except Selenium now ships MCP support.
+The testing MCP ecosystem continues to mature. Browser automation remains dominant — Microsoft's Playwright MCP server (32.8k stars, v0.0.75, Healer agent, 11M weekly npm downloads) is one of the most-starred MCP servers in any category and continues to improve: v0.0.75 (May 7, 2026) adds shared browser launch serialization in `--isolated` mode and CDP forwarding in extension mode. New test orchestration entrants broaden the landscape: **TestMu AI's Test.md framework** (May 14) introduces agent-native natural-language test authoring with deterministic replay via Kane CLI, and **Testkube AI** (May 2026) brings Kubernetes-native test orchestration with a native MCP server for Claude Code and Cursor. WebdriverIO's roadmap now includes LambdaTest and Sauce Labs cloud integrations, which would give it multi-cloud coverage no other testing MCP server provides.
 
-The **4.0/5 rating** reflects: Playwright MCP's 31.4k stars and new Healer agent represent production-grade browser automation; official vendor MCP servers from 5+ major testing platforms (up from just Microsoft in March); mobile testing arriving via Appium and WebdriverIO; cloud testing platforms (BrowserStack, LambdaTest) enabling remote MCP with no local setup; and the MCP Inspector (9.6k stars) maturing as the standard for MCP server testing. It loses points for: no official Selenium server despite ongoing demand (GitHub issue open), test runner MCP servers still having negligible adoption, no built-in test assertion capabilities in browser automation servers, and the fundamental question of whether AI agents need MCP for test execution when shell commands suffice.
+The **4.0/5 rating** reflects: Playwright MCP's 32.8k stars and continued releases represent production-grade browser automation; official vendor MCP servers from 5+ major testing platforms; mobile testing via Appium and WebdriverIO; cloud testing platforms enabling remote MCP with no local setup; and new entrants (Testkube AI, Test.md) expanding from browser automation into full test orchestration and agent-native test authoring. It loses points for: no official Selenium server despite ongoing demand (GitHub issue open), test runner MCP servers still having negligible adoption, no built-in test assertion capabilities in browser automation servers, and the fundamental question of whether AI agents need MCP for test execution when shell commands suffice.
 
 **Who benefits from testing MCP servers today:**
 
@@ -302,5 +312,5 @@ The **4.0/5 rating** reflects: Playwright MCP's 31.4k stars and new Healer agent
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of April 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
 
