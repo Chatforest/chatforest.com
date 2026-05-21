@@ -1,6 +1,6 @@
-# Deployment Platform & PaaS MCP Servers — Vercel, Cloudflare, Netlify, Railway, Dokploy, Coolify, ArgoCD, FluxCD, and More
+# Deployment Platform & PaaS MCP Servers — Vercel, Cloudflare, Netlify, Railway, Render, Dokploy, Coolify, ArgoCD, FluxCD, and More
 
-> Deployment platform and PaaS MCP servers reviewed: Vercel (official, OAuth, remote MCP), Cloudflare (official, 2500+ endpoints), Netlify (official, 9 tools), Railway (186 stars, official), Dokploy (26K stars, 508 tools), Coolify (38 tools, self-hosted PaaS), ArgoCD (354 stars, GitOps), FluxCD (Go, GitOps operator), Heroku (official, Salesforce Agentforce), DigitalOcean (official, 9 services), DeployHQ (7 tools), Fly.io (community). 15+ tools reviewed. Rating: 4.0/5.
+> Deployment platform and PaaS MCP servers reviewed: Vercel (official, OAuth, remote MCP), Cloudflare (13 specialized servers + Code Mode), Netlify (official, 9 tools), Railway (192 stars, remote MCP), Render (133 stars, NEW), Dokploy (508 tools), Coolify (379 stars, 42 tools, v2.11), ArgoCD (467 stars, write ops + MCP_READ_ONLY), FluxCD (v0.50.0), Heroku (remote MCP), DigitalOcean (v1.0.59), Koyeb (NEW, Mistral AI). 17+ tools reviewed. Rating: 4.5/5.
 
 
 You just merged a PR. Now you need to deploy it. You open a browser tab, navigate to your hosting dashboard, find the project, click deploy, wait for the build, check logs, maybe update some environment variables first. Three clicks become ten. Ten become twenty when something breaks.
@@ -19,19 +19,19 @@ Part of our **[DevOps MCP category](/categories/devops/)**. The headline finding
 
 | Server | Stars | Language | License | MCP Features |
 |--------|-------|----------|---------|--------------|
-| [cloudflare/mcp](https://github.com/cloudflare/mcp) | — | TypeScript | — | 2500+ endpoints |
-| [cloudflare/mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | — | TypeScript | — | Domain-specific tools |
+| [cloudflare/mcp](https://github.com/cloudflare/mcp) | — | TypeScript | — | 2500+ endpoints, Code Mode |
+| [cloudflare/mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | — | TypeScript | — | 13 specialized servers |
 | [cloudflare/workers-mcp](https://github.com/cloudflare/workers-mcp) | — | TypeScript | — | Worker bridge |
 
-**The broadest deployment platform MCP coverage available.** Cloudflare's unified MCP server at mcp.cloudflare.com covers 2500+ API endpoints in approximately 1K tokens using Code Mode — a remarkably token-efficient approach that compresses the entire Cloudflare API surface.
+**The broadest deployment platform MCP coverage available — now with 13 specialized servers and a unified portal.** Cloudflare's Code Mode MCP server at mcp.cloudflare.com covers 2500+ API endpoints using just two tools — `search()` and `execute()` — running inside an isolated Dynamic Worker sandbox. Cloudflare claims up to 99.9% token reduction versus raw API coverage.
 
-Coverage spans across: **Workers** (serverless compute), **Pages** (static sites), **KV** (key-value storage), **R2** (object storage), **D1** (SQLite databases), **DNS**, **Firewall**, **Load Balancers**, **Stream** (video), **Images**, **AI Gateway**, **Vectorize** (vector database), **Access** (zero-trust), and more.
+Coverage spans: **Workers** (serverless compute), **Pages** (static sites), **KV** (key-value storage), **R2** (object storage), **D1** (SQLite databases), **DNS**, **Firewall**, **Load Balancers**, **Stream** (video), **Images**, **AI Gateway**, **Vectorize** (vector database), **Access** (zero-trust), and more.
 
-Cloudflare also offers domain-specific servers at `*.mcp.cloudflare.com` — curated, typed tools for specific product areas when you need focused coverage rather than the full API surface.
+Cloudflare launched **MCP Server Portals** — a unified gateway providing discovery and access to all 13 specialized domain servers (Audit Logs, DNS, Workers, R2, Zero Trust, and more). In May 2026, Cloudflare integrated with Anthropic's Claude Managed Agents for isolated code execution.
 
-**Why it matters:** Cloudflare's approach of wrapping their entire API surface into a single MCP server with Code Mode is architecturally distinctive. Instead of creating dozens of individual tools, the server provides a code-execution interface that lets the AI construct and execute API calls dynamically. This scales to thousands of endpoints without bloating the tool list. For teams running on Cloudflare's stack, this means one MCP server covers everything from DNS management to Worker deployment to database queries.
+**Why it matters:** Cloudflare's Code Mode is architecturally distinctive — instead of hundreds of individual tools, the AI gets a code-execution interface that constructs and fires API calls dynamically. This scales to thousands of endpoints without bloating the tool list. The MCP Server Portals addition makes it easier to choose focused coverage (a specific product's server) vs. unified access.
 
-**Limitation:** The breadth-over-depth approach means individual operations may require more AI reasoning to construct compared to purpose-built tools. The Code Mode approach requires the AI to understand Cloudflare API semantics rather than just calling named tools.
+**Limitation:** Code Mode requires the AI to understand Cloudflare API semantics rather than calling named tools. The breadth-over-depth trade-off means individual operations need more AI reasoning than purpose-built tools provide.
 
 ### Vercel MCP Server
 
@@ -80,9 +80,9 @@ The 9 tools cover:
 
 **Why it matters:** Netlify pioneered the Jamstack deployment model. Their MCP server covers the essentials for the typical static site / serverless function deployment workflow. The focus on 9 well-curated tools (rather than trying to cover every API endpoint) makes for clean AI interactions.
 
-**Community alternative:** DynamicEndpoints/Netlify-MCP-Server offers 43 tools with comprehensive CLI coverage including Blobs, Dev Server, and Recipes — useful when you need deeper Netlify CLI integration than the official 9-tool server provides.
+**Community status:** DynamicEndpoints/Netlify-MCP-Server (previously 43 tools with full CLI coverage) is no longer publicly accessible as of May 2026. The official server is the only actively available option.
 
-**Limitation:** 9 tools is relatively thin compared to competitors. No deployment rollback capability visible in the tool set. Star count not publicly available.
+**Limitation:** 9 tools is relatively thin compared to competitors. The official repository shows last commit in March 2025 — development appears stagnant. No deployment rollback capability. Star count not publicly available.
 
 ## Developer PaaS MCP Servers
 
@@ -90,23 +90,18 @@ The 9 tools cover:
 
 | Server | Stars | Language | License | MCP Features |
 |--------|-------|----------|---------|--------------|
-| [railwayapp/railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) | 186 | TypeScript | — | Project & deploy management |
+| [railwayapp/railway-mcp-server](https://github.com/railwayapp/railway-mcp-server) | 192 | TypeScript | — | 14 tools, project & deploy management |
+| [Railway Remote MCP](https://railway.com/mcp) | — | — | — | Remote MCP, OAuth, railway-agent |
 
-**Railway's official MCP server connects AI assistants to the full Railway deployment lifecycle.** Railway positions itself as "stateful, serverful, pay-per-use infrastructure" — ideal for backend services, databases, and always-on processes.
+**Railway's official MCP server connects AI assistants to the full Railway deployment lifecycle — and now ships a hosted remote MCP at mcp.railway.com.** Railway positions itself as "stateful, serverful, pay-per-use infrastructure" — ideal for backend services, databases, and always-on processes.
 
-Key capabilities:
+The local server exposes 14 tools for project management, environments, deployments, services, and log retrieval. The **new remote MCP server** (OAuth authentication, no local install) adds a particularly powerful tool: `railway-agent` — which delegates complex multi-step operations to Railway's internal AI agent for log analysis, debugging, database setup, and more. Compatible with Claude, Cursor, GitHub Copilot, Cline, and Devin.
 
-- **Create projects** and deploy from templates
-- **Manage environments** — create, select, and configure staging/production environments
-- **Pull environment variables** — access runtime configuration
-- **Retrieve build and deployment logs** — essential for AI-assisted debugging of deployed services
-- **Manage services** — create, configure, and monitor Railway services
+**Why it matters:** Railway's remote MCP launch significantly lowers the barrier to adoption — zero local configuration. The `railway-agent` tool enables the kind of autonomous multi-step operations (debug a failing deployment, spin up a database, wire environment variables) that single-purpose tools can't handle.
 
-**Why it matters:** Railway's $5/month Hobby plan makes it one of the most accessible PaaS options for individual developers. The MCP server turns Railway into an AI-managed deployment platform — you describe what you want deployed and how, and the AI handles the infrastructure. The deployment log retrieval is particularly valuable: an AI can analyze why a deployment failed without you having to navigate the Railway dashboard.
+**Community alternative:** jason-tan-swe/railway-mcp (72 stars) remains available but has seen no updates since June 2025 as the official server has caught up.
 
-**Community alternative:** jason-tan-swe/railway-mcp (72 stars) provides additional integration features as an unofficial community implementation.
-
-**Limitation:** 186 stars suggests moderate adoption. The tool set focuses on Railway-specific resources rather than providing generic deployment primitives.
+**Limitation:** 192 stars suggests moderate adoption. The `railway-agent` delegation model is useful but means some operations route through Railway's internal AI rather than being direct tool calls.
 
 ### Heroku MCP Server
 
@@ -114,35 +109,35 @@ Key capabilities:
 |--------|-------|----------|---------|--------------|
 | [heroku/heroku-mcp-server](https://github.com/heroku/heroku-mcp-server) | — | TypeScript | — | Heroku CLI integration |
 
-**Heroku's official MCP server is the only deployment platform with native Salesforce Agentforce integration.** The server wraps the Heroku CLI, providing platform management through AI assistants.
+**Heroku's official MCP server is the only deployment platform with native Salesforce Agentforce integration — now available as a remote MCP server at mcp.heroku.com.** The server wraps the Heroku CLI, providing platform management through AI assistants.
 
-Heroku provides official MCP server templates in **Python, Node.js, Ruby, and Go**, making it easy to deploy MCP servers on the platform itself. The managed `heroku-inference` add-on handles tool routing, authentication, and scaling for AI agents automatically.
+The hosted remote MCP (launched June 2025, now production-stable) uses OAuth authentication and supports Claude Desktop, Cursor, and VS Code. It covers app lifecycle, dyno scaling, PostgreSQL administration, add-ons, pipelines, and teams. Heroku provides official MCP server templates in **Python, Node.js, Ruby, and Go** for teams building their own MCP servers on the platform.
 
-**Why it matters:** Heroku's Salesforce integration is unique in the deployment MCP space. For enterprise teams already in the Salesforce ecosystem, this is the natural deployment MCP choice. Review Apps integration means every PR can spin up a disposable test environment — and with the MCP server, an AI agent can manage the full PR → Review App → Production pipeline.
+**Why it matters:** Heroku's Salesforce integration remains unique in the deployment MCP space. Review Apps integration means every PR can spin up a disposable test environment managed by an AI agent through the full PR → Review App → Production pipeline.
 
-**Limitation:** Heroku has no free tier for new accounts. The MCP server wraps the CLI rather than the API directly, which may limit some advanced workflows. Star count not publicly available.
+**Limitation:** Heroku has no free tier for new accounts. v1.2.2 (April 22, 2026) was a bug fix; development pace is measured relative to the newer platforms.
 
 ### DigitalOcean MCP Server
 
 | Server | Stars | Language | License | MCP Features |
 |--------|-------|----------|---------|--------------|
-| [digitalocean/digitalocean-mcp](https://github.com/digitalocean/digitalocean-mcp) | — | — | — | 9 services |
+| [digitalocean-labs/mcp-digitalocean](https://github.com/digitalocean-labs/mcp-digitalocean) | 106 | — | — | 9+ services, v1.0.59 |
 
-**DigitalOcean's official MCP server covers App Platform deployment and broader infrastructure management.** The server exposes 9 service categories (and growing):
+**DigitalOcean's active MCP server (now at digitalocean-labs/mcp-digitalocean, v1.0.59) covers App Platform deployment and broader infrastructure management.** The original `digitalocean/digitalocean-mcp` repo was archived; the labs repo is the current maintained version with 600+ commits.
 
-- **App Platform** — deploy and manage applications
+Service coverage includes:
+
+- **App Platform** — deploy and manage applications (supports native remote MCP hosting with HTTP response streaming)
 - **Databases** — managed database provisioning and management
 - **DOKS** — DigitalOcean Kubernetes Service
 - **Droplets** — virtual machine management
 - **Networking** — VPCs, load balancers, firewalls
 - **Spaces Storage** — S3-compatible object storage
-- **Accounts, Insights, Marketplace** — account and platform tools
+- **GenAI / Custom Models** — NEW in May 2026: import, manage, and evaluate custom ML models (v1.0.54–1.0.59); safe deletion with user consent prompt
 
-DigitalOcean App Platform now natively supports hosting remote MCP servers with HTTP response streaming and subdomain routing — making DigitalOcean both an MCP-managed platform and an MCP server hosting platform.
+**Why it matters:** DigitalOcean's blend of simplicity and infrastructure depth makes their MCP server a one-stop shop for teams on DO. The GenAI/custom model management additions in May 2026 reflect DO's push into AI infrastructure — unusual for a deployment platform MCP server.
 
-**Why it matters:** DigitalOcean's blend of simplicity and infrastructure depth makes their MCP server a one-stop shop for teams that run on DO. Unlike pure PaaS servers (Railway, Render), the DigitalOcean MCP covers both app deployment and underlying infrastructure — Droplets, networking, storage, and managed databases.
-
-**Limitation:** The original digitalocean/digitalocean-mcp repository was archived, with the recommendation to use a newer version — suggesting an API transition that may cause confusion. Star count not publicly available.
+**Limitation:** The repo migration (archived → labs) may cause confusion in documentation and tooling configs that reference the old path. Development pace is very active (multiple releases weekly) which means feature sets evolve quickly.
 
 ### DeployHQ MCP Server
 
@@ -158,6 +153,34 @@ The 7 tools cover: List Projects, Get Project Details, List Servers, List Deploy
 
 **Limitation:** 7 tools is minimal. No rollback, no environment variable management, no build configuration. The server covers the read/deploy cycle but not the full deployment lifecycle.
 
+### Render MCP Server
+
+| Server | Stars | Language | License | MCP Features |
+|--------|-------|----------|---------|--------------|
+| [render-oss/render-mcp-server](https://github.com/render-oss/render-mcp-server) | 133 | TypeScript | — | Hosted remote MCP, create + manage + logs |
+
+**Render's official MCP server launched in January 2026, hosted at mcp.render.com.** Render is an alternative to Heroku/Railway for web services, static sites, background workers, and managed databases — and their MCP server covers the full deployment lifecycle with a safety-conscious design.
+
+Tools cover: create web services, static sites, cron jobs, Postgres instances, and Key Value stores; list and update services; deployment history; filtered logs; metrics (CPU, memory, bandwidth); and read-only SQL queries against managed Postgres.
+
+**Why it matters:** 133 stars for a ~4-month-old server indicates solid early adoption. The read-only SQL query tool is particularly useful — AI can analyze production database state during an incident without needing direct database credentials. Compatible with Cursor, Codex, and Claude Code.
+
+**Limitation:** No image-backed service creation, no IP allowlists, no deploy triggering (list deployments but can't trigger), no resource deletion except environment variables — intentional conservative scope for v0.3.0.
+
+### Koyeb MCP Server
+
+| Server | Stars | Language | License | MCP Features |
+|--------|-------|----------|---------|--------------|
+| [koyeb/mcp-server-koyeb](https://github.com/koyeb/mcp-server-koyeb) | 6 | — | — | Beta, app/service/deployment management |
+
+**Koyeb's official MCP server launched in 2026.** Koyeb is a serverless platform offering one-click deployment from Git or Docker — and was **acquired by Mistral AI in February 2026**, making it the only deployment platform MCP server from an AI company.
+
+Tools cover: create and list apps; manage services; deployment tracking with logs; instance monitoring.
+
+**Why it matters:** The Mistral AI acquisition could accelerate Koyeb's MCP integration and position it as the natural home for Mistral-based AI workloads. Early days — 6 stars and beta status — but the strategic parent is notable.
+
+**Limitation:** Beta with no formal releases. 6 stars indicates very early adoption. Tool coverage is minimal compared to established platforms.
+
 ## Self-Hosted PaaS MCP Servers
 
 ### Dokploy MCP Server
@@ -168,9 +191,11 @@ The 7 tools cover: List Projects, Get Project Details, List Servers, List Deploy
 
 **The most tool-rich deployment MCP server we've reviewed — 508 tools across 49 categories.** Dokploy (26K+ stars) is an open-source, self-hostable PaaS alternative to Vercel, Heroku, and Netlify.
 
-The MCP server exposes the full Dokploy API: project and application management, databases, Docker configuration, notifications, SSO, backups, domain management, SSL certificates, environment variables, and more. Modern HTTP mode supports both Streamable HTTP (MCP 2025-03-26 spec) and Legacy SSE (MCP 2024-11-05).
+The MCP server (251 stars) exposes the full Dokploy API: project and application management, databases, Docker configuration, notifications, SSO, backups, domain management, SSL certificates, environment variables, and more. Modern HTTP mode supports both Streamable HTTP (MCP 2025-03-26 spec) and Legacy SSE (MCP 2024-11-05).
 
-**Why it matters:** 508 tools is exceptional coverage. For teams running Dokploy as their self-hosted deployment platform, this MCP server turns the entire platform into an AI-managed resource. The breadth means an AI agent can handle everything from creating a new project to configuring SSL to managing database backups — the complete operational lifecycle.
+**Notable May 2026 update:** Secret field redaction added (May 3) — an opt-in security feature that redacts secret-bearing fields from API responses, preventing credential leakage into AI context. A meaningful security improvement for production deployments.
+
+**Why it matters:** 508 tools is exceptional coverage. For teams running Dokploy as their self-hosted deployment platform, this MCP server turns the entire platform into an AI-managed resource. The breadth means an AI agent can handle everything from creating a new project to configuring SSL to managing database backups.
 
 **Limitation:** 508 tools is a lot for an AI to navigate efficiently. Tool discovery and selection may degrade with this many options. The server is auto-generated from the API spec, so tool descriptions may not be optimized for AI consumption.
 
@@ -178,27 +203,30 @@ The MCP server exposes the full Dokploy API: project and application management,
 
 | Server | Stars | Language | License | MCP Features |
 |--------|-------|----------|---------|--------------|
-| [StuMason/coolify-mcp](https://github.com/StuMason/coolify-mcp) | — | TypeScript | — | 38 tools |
-| [dazeb/coolify-mcp-enhanced](https://github.com/dazeb/coolify-mcp-enhanced) | — | TypeScript | — | Enhanced AI features |
+| [StuMason/coolify-mcp](https://github.com/StuMason/coolify-mcp) | 379 | TypeScript | — | 42 tools, v2.11.0 |
+| [dazeb/coolify-mcp-enhanced](https://github.com/dazeb/coolify-mcp-enhanced) | 16 | TypeScript | — | Enhanced AI features |
 
-**Coolify (35K+ stars) is the most-starred self-hosted PaaS platform, and its MCP ecosystem reflects that popularity.** StuMason/coolify-mcp provides 38 optimized tools covering:
+**Coolify (35K+ stars) is the most-starred self-hosted PaaS platform, and StuMason/coolify-mcp is among the most actively developed community MCP servers in the DevOps space.** At 379 stars and 5 releases since late April 2026, it's now at v2.11.0 with 42 tools (up from 38).
+
+Core tools cover:
 
 - **Teams and Projects** — organizational management
-- **Servers** — manage deployment targets
+- **Servers** — manage deployment targets, including Hetzner cloud provider (NEW v2.11.0)
 - **Private Keys** — SSH key management for server access
-- **Applications** — deploy, configure, and manage apps
-- **Databases** — provision and manage databases
+- **Applications** — deploy, configure, and manage apps with full build config (Dockerfile path, base dir, install/build commands) and all 12 health-check parameters
+- **Databases** — provision and manage databases with backup management
 - **Services** — manage background services
-- **Environment Variables** — configure runtime settings
+- **Environment Variables** — configure runtime settings; values masked by default to prevent secret leakage (v2.9.0)
 - **Deployments** — trigger and monitor deployments
+- **Storages, Scheduled Tasks, System** — NEW in v2.11.0
 
-The enhanced version (dazeb/coolify-mcp-enhanced) adds AI-powered natural language infrastructure management, letting you manage your entire Coolify infrastructure through conversational prompts.
+The enhanced version (dazeb/coolify-mcp-enhanced, 16 stars) adds AI-powered natural language infrastructure management. A v3 rewrite is in development that reframes the server as a subscribable surface with Resources, Tasks, and Prompts primitives.
 
-**Why it matters:** Coolify's 35K stars make it the most popular self-hosted PaaS, and 38 tools is a sweet spot for AI usability — comprehensive enough for real work, focused enough for efficient tool selection. For teams that want Vercel-like deployment experience on their own hardware, Coolify + its MCP server delivers that with AI assistance.
+**Why it matters:** 379 stars for a community-built server reflects real adoption. The v2.9.0 security improvement (env var value masking) and v2.11.0 Hetzner integration show the project responding to real production needs.
 
 **Additional implementations:** GoCoder7/coolify-mcp-server provides a focused 4-tool implementation for simpler use cases.
 
-**Limitation:** No official MCP server from the Coolify team — all implementations are community-built. 38 tools covers the core workflow but may miss edge cases of the full Coolify API.
+**Limitation:** No official MCP server from the Coolify team — all implementations are community-built. The active v3 rewrite may introduce breaking changes.
 
 ## GitOps Deployment MCP Servers
 
@@ -206,43 +234,50 @@ The enhanced version (dazeb/coolify-mcp-enhanced) adds AI-powered natural langua
 
 | Server | Stars | Language | License | MCP Features |
 |--------|-------|----------|---------|--------------|
-| [argoproj-labs/mcp-for-argocd](https://github.com/argoproj-labs/mcp-for-argocd) | 354 | Go | — | GitOps tools |
+| [argoproj-labs/mcp-for-argocd](https://github.com/argoproj-labs/mcp-for-argocd) | 467 | Go | — | GitOps tools, write ops + MCP_READ_ONLY |
 
-**The most-starred GitOps MCP server, from the ArgoCD Labs organization.** ArgoCD (18K+ stars) is the dominant Kubernetes GitOps tool, and this MCP server enables AI-assisted GitOps workflows.
+**The most-starred GitOps MCP server, from the ArgoCD Labs organization — now with full write operation support.** ArgoCD (18K+ stars) is the dominant Kubernetes GitOps tool, and this MCP server has grown rapidly (354 → 467 stars since April 2026, 14 total releases).
 
-Core tools:
+**v0.7.0 (May 2, 2026)** added stateless mode (`--stateless` flag) for Kubernetes deployments with horizontal pod autoscaling, eliminating session affinity requirements. A `/healthz` health check endpoint enables proper liveness probes in HTTP mode.
+
+Tool set:
 
 - **list_clusters** — list all clusters registered with ArgoCD
 - **list_applications** — list and filter all applications across clusters
-- **get_application** — get detailed information about a specific application, including sync status, health, and deployment history
+- **get_application** — detailed status, sync state, health, and deployment history
+- **create_application**, **update_application**, **delete_application** — full CRUD
+- **sync_application** — trigger ArgoCD sync (the critical write operation)
+- **run_resource_action** — perform actions on Kubernetes resources
 
-Supports both **stdio and HTTP stream transport** for flexible integration with different MCP clients.
+**Safety model:** All write operations can be disabled via `MCP_READ_ONLY=true` environment variable — allowing read-only deployments in sensitive environments. This is the safety control pattern the deployment MCP space has needed.
 
-**Why it matters:** 354 stars is strong community adoption for a GitOps MCP server. ArgoCD manages Kubernetes deployments declaratively through Git — and with this MCP server, an AI agent can answer questions like "which applications are out of sync?" or "what's the health status of our production cluster?" without navigating the ArgoCD UI. For GitOps-driven deployment workflows, this bridges the gap between code changes and deployment visibility.
+Supports both **stdio and HTTP stream transport** for flexible client integration.
 
-**Community alternative:** severity1/argocd-mcp provides a community implementation that integrates with the ArgoCD API for natural language management including additional operations beyond the labs version.
+**Community alternative:** severity1/argocd-mcp (12 stars) provides a community Python implementation that integrates with the ArgoCD API; dormant since April 2025.
 
-**Limitation:** The tool set is currently read-heavy — list and get operations. No sync, rollback, or application creation tools visible. 354 stars is solid but suggests the server is still maturing.
+**Limitation:** 467 stars is strong growth but the server is still maturing. The write operations (especially `delete_application`) require careful access control configuration — the `MCP_READ_ONLY=true` guard is necessary but opt-in.
 
 ### FluxCD MCP Server
 
 | Server | Stars | Language | License | MCP Features |
 |--------|-------|----------|---------|--------------|
-| [flux-operator MCP](https://github.com/controlplaneio-fluxcd/flux-operator) | — | Go | — | GitOps tools |
+| [flux-operator MCP](https://github.com/controlplaneio-fluxcd/flux-operator) | 634 | Go | — | GitOps tools, v0.50.0 |
 
-**The Flux Operator MCP Server connects AI assistants directly to Kubernetes clusters running Flux GitOps.** Built as a component of the Flux Operator project by ControlPlane.
+**The Flux Operator MCP Server connects AI assistants directly to Kubernetes clusters running Flux GitOps.** Built as a component of the Flux Operator project by ControlPlane (634 stars).
+
+**v0.50.0 (May 20, 2026)** added OpenShift v4.21 compatibility. **v0.49.0 (May 12)** fixed MCP tool schemas to include the required "properties" field for OpenAI compatibility, added AWS provider GitRepository sync, and upgraded OCIRepository to v1. The MCP Go SDK was upgraded to v1.4.0+.
 
 The server enables AI assistants to:
 
 - **Analyze cluster state** — trace issues from high-level GitOps resources (ResourceSets, HelmReleases, Kustomizations) all the way down to Kubernetes deployments and pod logs
-- **Troubleshoot deployment issues** — correlate events across the GitOps stack
+- **Troubleshoot deployment issues** — correlate events across the GitOps stack with natural-language GitOps root cause analysis
 - **Perform operations** — interact with Flux resources through conversational prompts
 
-Distributed as a **single statically-compiled Go binary** with no external dependencies, available for Linux, macOS, and Windows on both AMD64 and ARM64.
+Distributed as a **single statically-compiled Go binary** with no external dependencies, for Linux, macOS, and Windows on AMD64 and ARM64.
 
-**Why it matters:** Flux's MCP server has a unique architectural advantage — it traces the full deployment path from Git source to running pod. When something breaks, the AI doesn't just tell you "the pod is crashing" — it traces back through the HelmRelease, the Kustomization, the GitRepository source, and identifies where in the reconciliation chain the issue occurred. This depth of GitOps observability is uncommon.
+**Why it matters:** Flux's MCP server traces the full deployment path from Git source to running pod — when something breaks, the AI identifies where in the reconciliation chain the issue occurred (HelmRelease, Kustomization, GitRepository). The v0.49.0 OpenAI schema fix improves compatibility with non-Claude MCP clients.
 
-**Limitation:** The MCP server is embedded within the Flux Operator rather than being a standalone project, which may make adoption tracking and independent updates more difficult. Star count for the MCP component specifically is not trackable separately.
+**Limitation:** The MCP server is embedded within the Flux Operator rather than being a standalone project, making adoption tracking and independent versioning harder.
 
 ## Cloud Deployment Assistants
 
@@ -250,80 +285,88 @@ Distributed as a **single statically-compiled Go binary** with no external depen
 
 | Server | Stars | Language | License | MCP Features |
 |--------|-------|----------|---------|--------------|
-| [brannn/fly-mcp](https://github.com/brannn/fly-mcp) | — | — | — | Infrastructure management |
+| [superfly/flymcp](https://github.com/superfly/flymcp) | 31 | Go | — | Official, experimental, wraps flyctl CLI |
+| [brannn/fly-mcp](https://github.com/brannn/fly-mcp) | 0 | — | — | Community, early stage |
 
-**Community-built MCP server for managing Fly.io infrastructure.** Provides core tools: `ping`, `fly_list_apps` (list all applications with filtering), `fly_app_info` (detailed application information), `fly_status` (real-time status), and `fly_restart` (restart applications).
+**Fly.io's official `flymcp` server wraps the flyctl CLI for managing Fly.io infrastructure from AI assistants — currently experimental.** Enabled via `fly mcp server --claude`, it supports: apps, certs, logs, machines, orgs, and status checks.
 
-Fly.io also offers the **official `fly mcp launch` command** — a first-party CLI integration that deploys any stdio-based MCP server (npx, uv, go run, or Docker image) to a Fly machine and configures MCP client connectivity. This makes Fly.io both an MCP-managed platform and an MCP server hosting platform.
+Fly.io also offers the **official `fly mcp launch` command** — which deploys any stdio-based MCP server (npx, uv, go run, or Docker image) to a Fly machine and configures MCP client connectivity. This makes Fly.io both an MCP-managed platform and an MCP server hosting platform.
 
-**NakulRajan/mcp-fly-deployer** generates Dockerfiles and fly.toml configurations for deploying MCP servers to Fly.io — useful for teams standardizing MCP server deployment on the platform.
+**NakulRajan/mcp-fly-deployer** generates Dockerfiles and fly.toml configurations for deploying MCP servers to Fly.io.
 
-**Limitation:** No official Fly.io MCP server for managing Fly.io itself (the community fly-mcp is the closest). Star counts suggest early adoption.
+**Limitation:** The official server (31 stars) is marked **experimental** with no formal releases. The community `brannn/fly-mcp` (0 stars) remains early-stage. Fly.io's MCP story is functionally available but not production-recommended.
 
 ## The Deployment Platform MCP Landscape
 
-The deployment platform MCP space reveals a clear market structure:
+The deployment platform MCP space reveals a clear market structure — and the gap between tiers has narrowed significantly since April 2026:
 
 **Tier 1 — Full API coverage:**
-- Cloudflare (2500+ endpoints via Code Mode)
-- Dokploy (508 tools, auto-generated from OpenAPI)
+- Cloudflare (2500+ endpoints via Code Mode + 13 specialized servers + MCP Server Portals)
+- Dokploy (508 tools, auto-generated from OpenAPI, now with secret field redaction)
 
 **Tier 2 — Production-ready official servers:**
 - Vercel (remote MCP, OAuth, deployment management)
 - Netlify (9 curated tools, prompt to production)
-- Railway (186 stars, project/deploy/log management)
-- Heroku (CLI integration, Salesforce Agentforce)
-- DigitalOcean (9 services, infrastructure + PaaS)
-- ArgoCD (354 stars, GitOps visibility)
+- Railway (192 stars, remote MCP at mcp.railway.com, railway-agent tool)
+- Heroku (remote MCP at mcp.heroku.com, Salesforce Agentforce)
+- DigitalOcean (v1.0.59, 9+ services, GenAI custom model management)
+- ArgoCD (467 stars, full write ops + MCP_READ_ONLY safety)
+- Render (133 stars, NEW, hosted at mcp.render.com)
+- Coolify (379 stars, 42 tools, community-built, very active)
 
 **Tier 3 — Emerging/community:**
-- Coolify (38 tools, community-built, strong self-hosted PaaS)
-- FluxCD (Flux Operator component, deep GitOps tracing)
+- FluxCD (Flux Operator component, v0.50.0, deep GitOps tracing)
 - DeployHQ (7 tools, traditional deployment)
-- Fly.io (community + official CLI integration)
+- Koyeb (6 stars, NEW, beta, Mistral AI subsidiary)
+- Fly.io (official experimental CLI + community)
 
-### Key Trends
+### Key Trends (May 2026)
 
-1. **Every major platform has an official server.** Vercel, Netlify, Railway, Heroku, DigitalOcean, Cloudflare, and ArgoCD all ship official MCP servers. This level of first-party support didn't exist 12 months ago.
+1. **Remote MCP is now standard for cloud platforms.** Vercel, Cloudflare, Railway, Heroku, DigitalOcean, and Render all offer hosted remote MCP servers. Zero local installation, OAuth authentication. The ecosystem has completed the shift to remote-first that was just starting in late 2025.
 
-2. **Self-hosted PaaS has the strongest MCP coverage.** Dokploy (508 tools) and Coolify (38 tools) — the two leading open-source PaaS platforms — have remarkably comprehensive MCP integration. This makes sense: self-hosted PaaS users are exactly the audience likely to adopt AI-assisted infrastructure management.
+2. **GitOps is no longer read-only.** ArgoCD's MCP server (467 stars) added full write operations in 2026 — `sync_application`, `create_application`, `update_application`, `delete_application` — with `MCP_READ_ONLY=true` as an explicit safety gate. This is a meaningful shift: AI agents can now trigger syncs and manage applications, not just inspect them.
 
-3. **Remote MCP is the default for cloud platforms.** Vercel, Cloudflare, and DigitalOcean all offer remote MCP servers. No local installation, no API key management complexity, no version synchronization. This matches the broader MCP ecosystem trend toward hosted remote servers.
+3. **Safety controls are becoming standard.** ArgoCD's `MCP_READ_ONLY=true`, Dokploy's secret field redaction, Coolify's masked env var values — these security patterns are appearing across the space. The gap between "destructive operations allowed by default" (the April 2026 status) and "safety-conscious defaults" is closing.
 
-4. **GitOps MCP is read-heavy.** Both ArgoCD (354 stars) and FluxCD MCP servers focus on listing and inspecting resources rather than modifying them. This is appropriate for GitOps (where changes should go through Git, not direct API calls), but limits what an AI agent can automate.
+4. **Self-hosted PaaS has the strongest MCP coverage.** Dokploy (508 tools) and Coolify (379 stars, 42 tools) — the two leading open-source PaaS platforms — continue to outpace cloud PaaS on coverage depth. The audience overlap (self-hosters who want control) with AI-assisted infrastructure management is real.
 
-5. **Write-safety controls are rare.** Unlike PagerDuty's explicit `--enable-write-tools` flag or ArgoCD's read-only approach, most deployment platform MCP servers allow destructive operations (creating deployments, modifying configurations) without guardrails. This is a meaningful gap for production environments.
+5. **New entrants in every sub-segment.** Render (133 stars) fills the gap between Railway and Heroku. Koyeb (Mistral AI) bridges AI and deployment platform. The space is still actively developing first-party coverage.
 
 ## Comparison Table
 
 | Platform | Server | Stars | Tools | Official | Transport | Key Strength |
 |----------|--------|-------|-------|----------|-----------|-------------|
-| Cloudflare | cloudflare/mcp | — | 2500+ endpoints | Yes | Remote | Broadest API coverage |
-| Dokploy | Dokploy/mcp | — | 508 | Yes | HTTP/SSE | Most tools, self-hosted |
-| Coolify | StuMason/coolify-mcp | — | 38 | Community | stdio | Self-hosted PaaS |
-| ArgoCD | argoproj-labs/mcp-for-argocd | 354 | 3+ | Labs | stdio/HTTP | GitOps visibility |
-| Railway | railwayapp/railway-mcp-server | 186 | Multiple | Yes | stdio | Deploy + debug logs |
-| Vercel | Vercel MCP | — | Multiple | Yes | Remote | Frontend deployment |
+| Cloudflare | cloudflare/mcp | — | 2500+ endpoints | Yes | Remote | Broadest API coverage, 13 servers |
+| Dokploy | Dokploy/mcp | 251 | 508 | Yes | HTTP/SSE | Most tools, secret redaction |
+| Coolify | StuMason/coolify-mcp | 379 | 42 | Community | stdio | Self-hosted PaaS, very active |
+| ArgoCD | argoproj-labs/mcp-for-argocd | 467 | 7+ | Labs | stdio/HTTP | GitOps write ops + MCP_READ_ONLY |
+| Railway | railwayapp/railway-mcp-server | 192 | 14 | Yes | stdio/Remote | Remote MCP, railway-agent |
+| Render | render-oss/render-mcp-server | 133 | Multiple | Yes | Remote | NEW, hosted, read-only SQL |
+| Vercel | Vercel MCP | — | 13 | Yes | Remote | Frontend deployment |
 | Netlify | netlify/netlify-mcp | — | 9 | Yes | stdio | Prompt to production |
-| Heroku | heroku/heroku-mcp-server | — | Multiple | Yes | stdio | Salesforce integration |
-| DigitalOcean | digitalocean/digitalocean-mcp | — | 9 services | Yes | stdio | Infrastructure + PaaS |
+| Heroku | heroku/heroku-mcp-server | 77 | Multiple | Yes | stdio/Remote | Salesforce integration |
+| DigitalOcean | digitalocean-labs/mcp-digitalocean | 106 | 9+ services | Yes | stdio | Infrastructure + PaaS + GenAI |
+| FluxCD | flux-operator | 634 | Multiple | Yes | stdio | Deep GitOps tracing, v0.50.0 |
 | DeployHQ | deployhq/deployhq-mcp-server | — | 7 | Yes | stdio | Traditional deployment |
-| FluxCD | flux-operator | — | Multiple | Yes | stdio | Deep GitOps tracing |
-| Fly.io | brannn/fly-mcp | — | 5 | Community | stdio | Container deployment |
+| Fly.io | superfly/flymcp | 31 | 5+ | Yes (exp.) | stdio | Experimental official CLI |
+| Koyeb | koyeb/mcp-server-koyeb | 6 | Multiple | Yes | — | NEW, beta, Mistral AI subsidiary |
 
-## Rating: 4.0 / 5
+## Rating: 4.5 / 5
 
-**Every major deployment platform now ships an official MCP server.** Cloudflare's 2500+ endpoint coverage and Dokploy's 508-tool breadth demonstrate the upper end of what's possible. ArgoCD's 354 stars shows real community adoption for GitOps workflows. The self-hosted PaaS category (Dokploy, Coolify) has particularly strong AI integration.
+**The deployment platform MCP space matured significantly in the first half of 2026.** ArgoCD (354 → 467 stars) added full write operations with `MCP_READ_ONLY=true` safety controls, directly addressing the biggest gap from April 2026. Railway launched a remote MCP with an AI-agent delegation tool. Coolify reached 379 stars with 42 tools across 5 releases in 3 weeks. Render (133 stars) and Koyeb entered the space with official servers. Cloudflare expanded to 13 specialized servers and launched MCP Server Portals.
 
-**Deducted 1.0 point for:**
-- **Missing write-safety controls** — most servers allow destructive deployment operations without guardrails, unlike the safety-conscious defaults in SRE tooling
-- **Fragmented quality** — official servers range from comprehensive (Cloudflare) to minimal (DeployHQ's 7 tools), with no consistent baseline
-- **GitOps servers are read-only** — ArgoCD and FluxCD MCP servers can inspect but not trigger syncs or rollbacks, limiting automated deployment workflows
-- **Star counts are low or unavailable** — many official servers don't have public star counts, making adoption difficult to assess
+**Raised from 4.0 to 4.5:**
+- ArgoCD write operations + MCP_READ_ONLY resolves the "GitOps servers are read-only" deduction
+- Safety patterns (secret redaction, env var masking, read-only guards) are appearing across the space
+- New entrants (Render, Koyeb) fill coverage gaps that existed in April
 
-For teams deploying to a single platform, their platform's official MCP server is the obvious choice. For multi-platform deployment, there's no cross-platform MCP server that abstracts deployment across providers — you'll need to configure multiple platform-specific servers.
+**Remaining deductions (0.5 points):**
+- **Cross-platform orchestration still absent** — no MCP server abstracts deployment across providers; multi-platform teams still need N separate server configs
+- **Quality floor inconsistency** — Netlify's official server shows last commit March 2025 and its community alternative has gone 404; not every platform maintains parity with the ecosystem leaders
+
+For teams deploying to a single platform, their platform's official MCP server is the clear choice. For multi-platform deployment, configure each platform's server separately and use an MCP client that manages multiple server connections.
 
 ---
 
-*This review covers publicly available data as of April 2026. Star counts and feature sets change; check the linked repositories for current information. ChatForest researches MCP servers — we do not test or endorse specific tools. See our [methodology](/about/#methodology) for how we research and rate MCP servers.*
+*This review covers publicly available data as of May 2026. Star counts and feature sets change; check the linked repositories for current information. ChatForest researches MCP servers — we do not test or endorse specific tools. See our [methodology](/about/#methodology) for how we research and rate MCP servers.*
 

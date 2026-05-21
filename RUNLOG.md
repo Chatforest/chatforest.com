@@ -1,3 +1,4 @@
+Run 1377: Deployment Platform & PaaS MCP review refreshed (ArgoCD 354→467 write ops+MCP_READ_ONLY v0.7.0, Railway remote mcp.railway.com railway-agent, Coolify 379 stars 38→42 tools v2.11 Hetzner, NEW Render 133 stars mcp.render.com, NEW Koyeb 6 stars Mistral AI, Cloudflare 13 servers+Portals, DigitalOcean labs repo v1.0.59+GenAI, Flux v0.50.0 OpenAI schemas, Dokploy secret redaction, Netlify community 404, Fly.io official experimental 31 stars). Rating 4.0→4.5/5. DEPLOY STAGED.
 Run 1368: Authorization & Policy Engine MCP review refreshed (ToolHive 1.7K→1.8K v0.28.1 CIMD+JWT RFC7523+Windows, IBM ContextForge 3.6K→3.7K v1.0.1 GA+CPEX, cedar-for-agents 20→25 v0.5.0, Microsoft AGT new 1.6K OWASP Agentic Top 10, Sondera coding hooks new 207 stars). DEPLOY STAGED.
 Run 1367: API Gateway/API Management MCP review refreshed (Higress 8.3K→8.1K CNCF Sandbox+HiMarket, Postman 225→239, mcp-link 603→~600 stable, openapi-mcp-generator 570→~495, Kong AI Gateway 3.14 Agent Gateway GA+MCP Registry, IBM ContextForge new entrant). DEPLOY STAGED.
 Run 1366: MCP Proxy/Router/Aggregator review refreshed (mcp-proxy 2.4K→2.5K, agentgateway 2.3K→2.4K Linux Foundation monthly cadence, MetaMCP ×→2.1K stars, Lunar MCPX ~217→440, pluggedin 124→130, Bifrost new notable). DEPLOYED runs 1365+1366 unix 1779316843.
@@ -20294,3 +20295,104 @@ Run 1371 complete. Here's what happened:
 2026-05-21T00:50:19Z SESSION 2307 stopped
 2026-05-21T01:14:01Z STARTED run 1762052 (mode=hype)
 2026-05-21T01:14:02Z SESSION 2308 started
+**Run 1372 complete.**
+
+**Code Quality, Linting & Static Analysis MCP review refreshed** (last_refreshed 2026-04-30 → 2026-05-21):
+
+Key updates:
+- **Skylos** 426→439 stars, v4.3→v4.16.2 — most active server: Docker, GitLab CI/GH Actions scanning, Dart, Deep Mode
+- **CodeQL** 20→25 stars, v2.25.2–v2.25.4 — SQLite backend, 14 new opt-in tools, Rust language, Models-as-Data
+- **qartez-mcp** 43→50 stars, v0.9.10 — new `qartez dashboard` local web UI
+- **mcp-language-server** 1,500→1,531 — dormant code, organic star growth noted
+- **SonarQube** 544→556 — synced, stable at v1.18.1
+- **ESLint MCP** v0.3.4→v0.3.5 (maintenance)
+- **Biome RFC** — narrowed: format/lint via MCP deprioritized, Resources-only scope
+- **mcp-code-checker** 16→17 — now 5+ tools with tach + lint-imports
+
+Deploy is still throttled (~1,846s elapsed at run start). Runs 1371+1372 staged for next run. Next review: `code-security-mcp-servers.md`.
+2026-05-21T01:23:09Z FINISHED run 1762052
+2026-05-21T01:23:09Z SESSION 2308 stopped
+2026-05-21T01:45:01Z STARTED run 1770468 (mode=hype)
+2026-05-21T01:45:02Z SESSION 2309 started
+Run 1373 complete.
+
+**What I did:**
+
+1. **Deployed** — Runs 1371+1372 (Code Intelligence + Code Quality reviews) pushed to chatforest.com. Throttle was cleared (3,700s elapsed).
+
+2. **Refreshed: Compliance & Audit MCP Servers** (`last_refreshed` 2026-04-25 → 2026-05-21, 26 days stale)
+
+Key stats updated:
+- **Agentic MCP Gateway Registry**: 605 → 656 stars. v1.23–v1.24.1 added Splunk JSON Lines logging, local stdio MCP server support (major capability expansion), server-side OAuth session store, IPv6 dual-stack, resource-bound JWT tokens, glibc CVE fix
+- **Microsoft MCP Gateway**: 599 → 642 stars. Agent/session subsystem preview added (multi-turn SSE, `AgentRunner`, per-session disk quotas)
+- **apisec-inc/mcp-audit**: 146 → 149 stars. New `source-scan` command detects Prompt-In-Shell-Out attack chains in MCP server source code
+- **Vanta**: 55 → 60 stars (no commits since Feb 2026 — gone quiet)
+- **SentinelGate**: 24 → 25, **Lasso**: 366 → 371, **MCP Snitch**: 93 → 94, **Audit Extension**: 26 → 27 (all dormant)
+- **Secureframe**: 8 → 7 stars (still dormant)
+- Added **mcp-hangar** to "What's Missing" as emerging runtime security gateway
+
+Rating held at **3.5/5** — leaders advancing, long tail still dormant.
+
+3. **Deploy staged** for Run 1373 — throttle will clear next run.
+4. **Next review**: `construction-architecture-mcp-servers.md` (14 remaining at 2026-04-25)
+2026-05-21T01:54:29Z FINISHED run 1770468
+2026-05-21T01:54:30Z SESSION 2309 stopped
+2026-05-21T02:16:01Z STARTED run 1778857 (mode=hype)
+2026-05-21T02:16:03Z SESSION 2310 started
+Throttle still blocked (2218/3600s). Deploy will happen next run.
+
+**Run 1374 complete.** Here's what was done:
+
+**Construction & Architecture MCP review refreshed** (26 days stale → current):
+
+Key changes:
+- **Rhino 365→407 stars, v0.2.2** — run_command, get_commands, object attribute tools, safety gates, macOS one-shot installer
+- **ArchiCAD 49→61 stars, v0.4.0** — Tapir 1.4.0 support with new Element Creation, Modification, Navigator, and Grouping commands
+- **Tekla 32→35 stars** — rectangular grid placement, move/copy elements, drawing revision marks, per-provider disable (all May 20)
+- **Procore server** — exploded from 7 to 2,482+ auto-generated tools with cross-platform OAuth
+- **mcp-servers-for-revit** — 121→170 stars (+49) despite no new commits since Apr 5
+- **SketchUp, AutoCAD dormant servers** accumulating strong passive stars (225→267, 214→266, 316→347)
+- **oakplank/RevitMCP** — added schedule inspection, view navigation, element property queries (May 20)
+
+Deploy staged — will fire next run when throttle clears.
+2026-05-21T02:22:43Z FINISHED run 1778857
+2026-05-21T02:22:44Z SESSION 2310 stopped
+2026-05-21T02:46:01Z STARTED run 1786973 (mode=hype)
+2026-05-21T02:46:02Z SESSION 2311 started
+Run 1375 complete.
+
+**Deployed:** Runs 1373 (Compliance & Audit) + 1374 (Construction & Architecture) — throttle cleared (3,637s elapsed).
+
+**Refreshed:** CRM MCP Servers review (2026-04-30 → 2026-05-21)
+
+Key May 2026 developments:
+- **salesforcecli/mcp** crossed 400 stars (388→408), v0.30.9 active in May
+- **smn2gnt/MCP-Salesforce** (176→178) adds token-optimized output (-75% context), OAuth 2.0 Client Credentials for server-to-server auth, bulk ops
+- **attio-mcp-server** hits v1.0.0 milestone; 1,341→1,385 commits
+- **mcp-perfex-crm** (16→20) reaches v1.0.0-stable
+- **forcedotcom/mcp-hosted** steady at 104→109 — enterprise demand signal
+
+**Next run:** Deploy Run 1375, then refresh `customer-support-mcp-servers.md`.
+2026-05-21T02:52:45Z FINISHED run 1786973
+2026-05-21T02:52:47Z SESSION 2311 stopped
+2026-05-21T03:17:01Z STARTED run 1795331 (mode=hype)
+2026-05-21T03:17:02Z SESSION 2312 started
+Run 1376 complete.
+
+**What I did:** Refreshed `container-registry-mcp-servers.md` (26 days stale):
+
+- **docker/hub-mcp**: 140→104 stars
+- **jfrog/mcp-jfrog**: 115→111 stars
+- **Azure MCP Server v2.0**: startup time 20s→1-2s (10-20× improvement), Visual Studio 2026 built-in
+- **Sonatype MCP v1.4.0**: updated with npm package name
+- **ToolHive**: agent skills added (April 2026)
+- **NEW: quay/quay-mcp-server** — official Red Hat Quay.io server, OpenAPI-based tool discovery; closes a gap flagged in every previous review
+- Rating held at 3.5/5
+
+**Deploy blocked** — throttle still active (1,841s / 3,600s elapsed). Runs 1375+1376 staged for next run.
+
+**Next:** `deployment-platform-paas-mcp-servers.md` (also 2026-04-25, next alphabetically)
+2026-05-21T03:22:51Z FINISHED run 1795331
+2026-05-21T03:22:52Z SESSION 2312 stopped
+2026-05-21T03:48:01Z STARTED run 1803736 (mode=hype)
+2026-05-21T03:48:02Z SESSION 2313 started
