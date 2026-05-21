@@ -5,7 +5,7 @@
 
 CRM data is some of the most valuable information a business owns — contacts, deals, pipeline stages, revenue forecasts, customer histories. Giving an AI agent access to that data changes how sales teams, customer success managers, and operations work. Instead of clicking through dashboards, you ask. Part of our **[Business & Productivity MCP category](/categories/business-productivity/)**.
 
-The CRM MCP landscape has transformed since early 2026. HubSpot's remote MCP server went GA on April 13 with full read/write CRM access. Zoho launched official MCP support across 14 products including CRM. Microsoft's Dataverse MCP server reached GA — and in April 2026, Microsoft added a **Management MCP Server** that lets developers discover 1,470+ connectors and build custom MCP servers from them. Salesforce leads the community with 388 stars, and its hosted server (forcedotcom/mcp-hosted) surged to 104 stars as enterprises embrace hosted MCP endpoints.
+The CRM MCP landscape has transformed since early 2026. HubSpot's remote MCP server went GA on April 13 with full read/write CRM access. Zoho launched official MCP support across 14 products including CRM. Microsoft's Dataverse MCP server reached GA — and in April 2026, Microsoft added a **Management MCP Server** that lets developers discover 1,470+ connectors and build custom MCP servers from them. Salesforce leads the community with 408 stars (crossed 400 in May), and its hosted server (forcedotcom/mcp-hosted) reached 109 stars as enterprises embrace hosted MCP endpoints. Attio hit its **v1.0.0 milestone** in May 2026 with 1,385 commits, and smn2gnt/MCP-Salesforce added token-optimized output formats cutting LLM context usage by ~75%.
 
 ## The Landscape
 
@@ -13,13 +13,13 @@ The CRM MCP landscape has transformed since early 2026. HubSpot's remote MCP ser
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [salesforcecli/mcp](https://github.com/salesforcecli/mcp) | 388 | TypeScript | 60+ | SF CLI org auth | Apache 2.0 |
-| [smn2gnt/MCP-Salesforce](https://github.com/smn2gnt/MCP-Salesforce) | 176 | Python | 7+ | OAuth / CLI / Password | MIT |
-| [tsmztech/mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce) | 155 | TypeScript | 15 | Password / OAuth / CLI | — |
-| [forcedotcom/mcp-hosted](https://github.com/forcedotcom/mcp-hosted) | 104 | — | Hosted (GA) | External Client Apps | Apache 2.0 |
+| [salesforcecli/mcp](https://github.com/salesforcecli/mcp) | 408 | TypeScript | 60+ | SF CLI org auth | Apache 2.0 |
+| [smn2gnt/MCP-Salesforce](https://github.com/smn2gnt/MCP-Salesforce) | 178 | Python | 7+ | OAuth / CLI / Password | MIT |
+| [tsmztech/mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce) | 156 | TypeScript | 15 | Password / OAuth / CLI | — |
+| [forcedotcom/mcp-hosted](https://github.com/forcedotcom/mcp-hosted) | 109 | — | Hosted (GA) | External Client Apps | Apache 2.0 |
 | [kablewy/salesforce-mcp-server](https://github.com/kablewy/salesforce-mcp-server) | 44 | TypeScript | 3+ | Env vars | MIT |
-| [jaworjar95/salesforce-mcp-server](https://github.com/jaworjar95/salesforce-mcp-server) | 39 | TypeScript | 17 | OAuth / Password | MIT |
-| [advancedcommunities/salesforce-mcp-server](https://github.com/advancedcommunities/salesforce-mcp-server) | 28 | TypeScript | 41 | SF CLI | MIT |
+| [jaworjar95/salesforce-mcp-server](https://github.com/jaworjar95/salesforce-mcp-server) | 41 | TypeScript | 17 | OAuth / Password | MIT |
+| [advancedcommunities/salesforce-mcp-server](https://github.com/advancedcommunities/salesforce-mcp-server) | 30 | TypeScript | 41 | SF CLI | MIT |
 
 ### HubSpot
 
@@ -27,11 +27,11 @@ The CRM MCP landscape has transformed since early 2026. HubSpot's remote MCP ser
 |--------|-------|----------|-------|------|---------|
 | **[HubSpot Remote MCP](https://developers.hubspot.com/mcp)** | — | Hosted (GA) | Full CRM R/W | OAuth 2.1 | Official |
 | **[HubSpot Developer MCP](https://developers.hubspot.com/changelog/hubspot-developer-mcp-server-for-app-and-cms-development-now-in-ga)** | — | Local CLI (GA) | App/CMS dev | CLI | Official |
-| [peakmojo/mcp-hubspot](https://github.com/peakmojo/mcp-hubspot) | 121 | Python | 7 | Access token | MIT |
-| [lkm1developer/hubspot-mcp-server](https://github.com/lkm1developer/hubspot-mcp-server) | 12 | TypeScript | 8 | Access token | MIT |
+| [peakmojo/mcp-hubspot](https://github.com/peakmojo/mcp-hubspot) | 123 | Python | 7 | Access token | MIT |
+| [lkm1developer/hubspot-mcp-server](https://github.com/lkm1developer/hubspot-mcp-server) | 13 | TypeScript | 8 | Access token | MIT |
 | [scopiousdigital/hubspot-mcp](https://github.com/scopiousdigital/hubspot-mcp) | 10 | JavaScript | 6+ | Private App (14 scopes) | MIT |
 | [adeel0x01/hubspot-mcp-tools](https://github.com/adeel0x01/hubspot-mcp-tools) | 4 | TypeScript | 58 | Private App | MIT |
-| [HubSpot/mcp-server](https://github.com/HubSpot/mcp-server) | 4 | — | — | — | — |
+| [HubSpot/mcp-server](https://github.com/HubSpot/mcp-server) | 5 | — | — | — | — |
 
 ### Zoho
 
@@ -52,19 +52,19 @@ The CRM MCP landscape has transformed since early 2026. HubSpot's remote MCP ser
 
 | Server | CRM | Stars | Language | Tools | License |
 |--------|-----|-------|----------|-------|---------|
-| [kesslerio/attio-mcp-server](https://github.com/kesslerio/attio-mcp-server) | Attio | 67 | TypeScript | 18 (universal) | Apache 2.0 |
-| [WillDent/pipedrive-mcp-server](https://github.com/WillDent/pipedrive-mcp-server) | Pipedrive | 56 | TypeScript | 15 | MIT |
-| [mhenry3164/twenty-crm-mcp-server](https://github.com/mhenry3164/twenty-crm-mcp-server) | Twenty | 59 | JavaScript | CRUD + search | MIT |
-| [clay-inc/clay-mcp](https://github.com/clay-inc/clay-mcp) | Clay | 29 | — | 5+ | — |
-| [gunnit/bitrix24-mcp-server](https://github.com/gunnit/bitrix24-mcp-server) | Bitrix24 | 25 | TypeScript | 8+ | MIT |
-| [Descomplicar-Marketing-e-Tecnologia/mcp-perfex-crm](https://github.com/Descomplicar-Marketing-e-Tecnologia/mcp-perfex-crm) | Perfex | 16 | TypeScript | 186 | MIT |
-| [Teapot-Agency/mcp_pipedrive](https://github.com/Teapot-Agency/mcp_pipedrive) | Pipedrive | 5 | TypeScript | 40 | MIT |
+| [kesslerio/attio-mcp-server](https://github.com/kesslerio/attio-mcp-server) | Attio | 68 | TypeScript | 18 (universal) | Apache 2.0 |
+| [WillDent/pipedrive-mcp-server](https://github.com/WillDent/pipedrive-mcp-server) | Pipedrive | 55 | TypeScript | 15 | MIT |
+| [mhenry3164/twenty-crm-mcp-server](https://github.com/mhenry3164/twenty-crm-mcp-server) | Twenty | 62 | JavaScript | CRUD + search | MIT |
+| [clay-inc/clay-mcp](https://github.com/clay-inc/clay-mcp) | Clay | 31 | — | 5+ | — |
+| [gunnit/bitrix24-mcp-server](https://github.com/gunnit/bitrix24-mcp-server) | Bitrix24 | 28 | TypeScript | 8+ | MIT |
+| [Descomplicar-Marketing-e-Tecnologia/mcp-perfex-crm](https://github.com/Descomplicar-Marketing-e-Tecnologia/mcp-perfex-crm) | Perfex | 20 | TypeScript | 186 | MIT |
+| [Teapot-Agency/mcp_pipedrive](https://github.com/Teapot-Agency/mcp_pipedrive) | Pipedrive | 6 | TypeScript | 40 | MIT |
 
 The landscape has shifted dramatically. Four CRM platforms — Salesforce, HubSpot, Zoho, and Microsoft — now have official, production-grade MCP servers. Microsoft's Dataverse Management MCP Server adds a unique meta-layer for building custom MCP servers from 1,470+ connectors. Salesforce still leads the community ecosystem.
 
 ## salesforcecli/mcp — The Official Salesforce Server
 
-[salesforcecli/mcp](https://github.com/salesforcecli/mcp) (388 stars, 747 commits, Apache 2.0) is officially maintained by Salesforce as part of their CLI toolchain. It remains the most comprehensive CRM MCP server in any ecosystem.
+[salesforcecli/mcp](https://github.com/salesforcecli/mcp) (408 stars, Apache 2.0) is officially maintained by Salesforce as part of their CLI toolchain. It crossed 400 stars in May 2026 — the first CRM MCP server to do so — and remains the most comprehensive CRM MCP server in any ecosystem. The latest release is v0.30.9 (May 7, 2026) with multiple provider updates across mobile-web, metadata-enrichment, devops, and code-analyzer.
 
 **60+ tools organized into toolsets:**
 
@@ -99,13 +99,13 @@ The landscape has shifted dramatically. Four CRM platforms — Salesforce, HubSp
 
 ## Community Salesforce Servers
 
-**[smn2gnt/MCP-Salesforce](https://github.com/smn2gnt/MCP-Salesforce)** (176 stars, Python, MIT) — The leading community alternative. Covers SOQL queries, SOSL search, record CRUD, metadata retrieval, Tooling API, and direct REST API calls. Three auth modes (OAuth, CLI, username/password). Now at v0.1.14 (April 2026) with 69 commits and 8 releases. Install via `uvx mcp-salesforce-connector`. Best option if you want a Python-based Salesforce MCP server or need the Tooling API.
+**[smn2gnt/MCP-Salesforce](https://github.com/smn2gnt/MCP-Salesforce)** (178 stars, Python, MIT) — The leading community alternative. Covers SOQL queries, SOSL search, record CRUD, metadata retrieval, Tooling API, and direct REST API calls. Three auth modes (OAuth, CLI, username/password). Recent additions include **token-optimized output formats** (CSV, compact, JSON) that reduce LLM context usage by ~75%, **OAuth 2.0 Client Credentials** for server-to-server integrations, and bulk operations support. Install via `uvx mcp-salesforce-connector`. Best option if you want a Python-based Salesforce MCP server, need the Tooling API, or want to minimize token consumption from query results.
 
-**[tsmztech/mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce)** (155 stars, TypeScript) — Now at 15 tools and 98 commits. Strong feature set including aggregate queries, field-level security management, anonymous Apex execution, debug logging, and multi-org support with switchable authentication. Ships as a Claude Desktop extension (`.dxt`). Notable for being one of the few servers that handles field-level security explicitly.
+**[tsmztech/mcp-server-salesforce](https://github.com/tsmztech/mcp-server-salesforce)** (156 stars, TypeScript) — Now at 15 tools and 98 commits. Updated to MCP SDK 1.22.0. Strong feature set including aggregate queries, field-level security management, anonymous Apex execution, debug logging, and multi-org support with switchable authentication. Ships as a Claude Desktop extension (`.dxt`). Notable for being one of the few servers that handles field-level security explicitly.
 
-**[advancedcommunities/salesforce-mcp-server](https://github.com/advancedcommunities/salesforce-mcp-server)** (28 stars, TypeScript, MIT) — 41 tools including Apex execution, SOQL with CSV/JSON export, test runner, metadata management, and code analysis. Now at v1.6.5 (April 2026) with 120 commits. Recent releases fix tool call argument normalization for improved MCP client compatibility and improve server startup performance by removing eager org enumeration. Standout feature: **read-only mode** and **org restriction** for safety. Supports Claude Code skill installation. Install via `npx @advanced-communities/salesforce-mcp-server`.
+**[advancedcommunities/salesforce-mcp-server](https://github.com/advancedcommunities/salesforce-mcp-server)** (30 stars, TypeScript, MIT) — 41 tools including Apex execution, SOQL with CSV/JSON export, test runner, metadata management, and code analysis. Now at v1.6.5 (April 2026) with 120 commits. Recent releases fix tool call argument normalization for improved MCP client compatibility and improve server startup performance by removing eager org enumeration. Standout feature: **read-only mode** and **org restriction** for safety. Supports Claude Code skill installation. Install via `npx @advanced-communities/salesforce-mcp-server`.
 
-**[forcedotcom/mcp-hosted](https://github.com/forcedotcom/mcp-hosted)** (104 stars, 46 commits, Apache 2.0) — Salesforce-hosted MCP servers that let external AI agents access Salesforce logic through admin-governed endpoints. **Now GA** (graduated from beta). Uses External Client Apps for auth. This is the enterprise deployment model — Salesforce runs the server, your agent connects remotely. Stars surged from 74 to 104 in just 8 days — the fastest-growing Salesforce MCP repo right now, reflecting enterprise demand for hosted MCP.
+**[forcedotcom/mcp-hosted](https://github.com/forcedotcom/mcp-hosted)** (109 stars, Apache 2.0) — Salesforce-hosted MCP servers that let external AI agents access Salesforce logic through admin-governed endpoints. **GA** (graduated from beta). Uses External Client Apps for auth. This is the enterprise deployment model — Salesforce runs the server, your agent connects remotely. Stars continue to climb from 74 (March) to 104 (April) to 109 (May) — steady enterprise adoption.
 
 ## HubSpot — From Empty Repo to Full GA in One Quarter
 
@@ -133,7 +133,7 @@ The [Developer MCP server](https://developers.hubspot.com/changelog/hubspot-deve
 
 ### peakmojo/mcp-hubspot — Still Relevant?
 
-[peakmojo/mcp-hubspot](https://github.com/peakmojo/mcp-hubspot) (121 stars, Python, MIT) was the community standard before HubSpot went official. Its **FAISS semantic search** — building a local vector index for fuzzy matching across contacts and companies — remains a differentiator the official server doesn't offer. If you need "companies similar to [description]" queries, peakmojo still has a unique edge.
+[peakmojo/mcp-hubspot](https://github.com/peakmojo/mcp-hubspot) (123 stars, Python, MIT) was the community standard before HubSpot went official. Its **FAISS semantic search** — building a local vector index for fuzzy matching across contacts and companies — remains a differentiator the official server doesn't offer. If you need "companies similar to [description]" queries, peakmojo still has a unique edge.
 
 But for standard CRM operations (CRUD on deals, tickets, contacts, companies, engagements), the official remote server now covers far more ground with proper auth, write access, and HubSpot's own maintenance guarantee. The community server's 7 tools can't match the breadth of the official server's full CRM coverage.
 
@@ -145,7 +145,7 @@ But for standard CRM operations (CRUD on deals, tickets, contacts, companies, en
 
 ### Attio — Still Punching Above Its Weight
 
-[kesslerio/attio-mcp-server](https://github.com/kesslerio/attio-mcp-server) (67 stars, 1,341 commits, TypeScript, Apache 2.0) remains the most actively maintained CRM MCP server by commit count. For a CRM with a fraction of Salesforce's market share, the MCP server quality is disproportionately high.
+[kesslerio/attio-mcp-server](https://github.com/kesslerio/attio-mcp-server) (68 stars, 1,385 commits, TypeScript, Apache 2.0) reached **v1.0.0** in May 2026 — a meaningful milestone for a server that has been in intensive development. It remains the most actively maintained CRM MCP server by commit count. For a CRM with a fraction of Salesforce's market share, the MCP server quality is disproportionately high.
 
 **v1.4.0 consolidated 70+ resource-specific tools into 18 universal tools** (68% reduction) while maintaining full functionality. Complete CRUD for Companies, People, Deals, Tasks, Lists, and Notes. Advanced AND/OR filtering, batch operations, content search, 10 MCP prompts, and Claude Skills with workspace schema auto-generation. ChatGPT Developer Mode integration with MCP safety annotations for auto-approval workflows. OAuth support for Cloudflare Workers deployment. 89.7% speed improvement with 227KB memory reduction in recent performance work.
 
@@ -153,9 +153,9 @@ If you use Attio, this is a first-class MCP integration. The 97.15/100 productio
 
 ### Pipedrive — Read-Only Leader, Write-Capable Newcomer
 
-[WillDent/pipedrive-mcp-server](https://github.com/WillDent/pipedrive-mcp-server) (56 stars, TypeScript, MIT) — The most popular Pipedrive server, with 15 tools and 8 predefined prompts for deals, persons, organizations, and pipelines. But it's still **read-only** — no creating or modifying records. For sales teams that want their agent to update deal stages or add notes, this remains a blocker.
+[WillDent/pipedrive-mcp-server](https://github.com/WillDent/pipedrive-mcp-server) (55 stars, TypeScript, MIT) — The most popular Pipedrive server, with 15 tools and 8 predefined prompts for deals, persons, organizations, and pipelines. But it's still **read-only** — no creating or modifying records. For sales teams that want their agent to update deal stages or add notes, this remains a blocker.
 
-[Teapot-Agency/mcp_pipedrive](https://github.com/Teapot-Agency/mcp_pipedrive) (5 stars, TypeScript, MIT) — Full CRUD with 40 tools (20 read, 20 write). Deals, persons, organizations, activities, notes, and leads. Fuzzy person search and soft delete recovery. Much lower adoption, but if you need write access, this is the only real option.
+[Teapot-Agency/mcp_pipedrive](https://github.com/Teapot-Agency/mcp_pipedrive) (6 stars, TypeScript, MIT) — Full CRUD with 40 tools (20 read, 20 write). Deals, persons, organizations, activities, notes, and leads. Fuzzy person search and soft delete recovery. **v2.1** added documented search improvements. Much lower adoption, but if you need write access, this is the only real option.
 
 ### Dynamics 365 / Dataverse — From Minimal to Official, Now a Platform
 
@@ -167,7 +167,7 @@ The Dynamics 365 story has changed completely. **Microsoft's Dataverse MCP serve
 
 **Billing:** Charged per Copilot Credits when accessed by non-Copilot Studio agents. Free for Dynamics 365 Premium license holders and Microsoft 365 Copilot USL holders.
 
-The community [srikanth-paladugula/mcp-dynamics365-server](https://github.com/srikanth-paladugula/mcp-dynamics365-server) (17 stars, 5 tools) still exists for simpler setups, plus [rajyraman/mcp-dataverse](https://github.com/rajyraman/mcp-dataverse) for SQL-based querying. But the official Dataverse server — now with the Management MCP layer — is the clear choice for enterprise deployments.
+The community [srikanth-paladugula/mcp-dynamics365-server](https://github.com/srikanth-paladugula/mcp-dynamics365-server) (20 stars, 5 tools) still exists for simpler setups, plus [rajyraman/mcp-dataverse](https://github.com/rajyraman/mcp-dataverse) for SQL-based querying. But the official Dataverse server — now with the Management MCP layer — is the clear choice for enterprise deployments.
 
 ### Zoho — No Longer Missing
 
@@ -181,20 +181,20 @@ On the community side, [CDataSoftware/zoho-crm-mcp-server-by-cdata](https://gith
 
 ### Notable Others
 
-**[mhenry3164/twenty-crm-mcp-server](https://github.com/mhenry3164/twenty-crm-mcp-server)** (59 stars, JavaScript, MIT) — For [Twenty](https://twenty.com), the open-source CRM. Dynamic schema discovery, advanced search, full CRUD. Stars jumped from 42 to 59 in a week — Twenty's growing open-source CRM community is driving adoption.
+**[mhenry3164/twenty-crm-mcp-server](https://github.com/mhenry3164/twenty-crm-mcp-server)** (62 stars, JavaScript, MIT) — For [Twenty](https://twenty.com), the open-source CRM. Dynamic schema discovery, advanced search, full CRUD. Stars continue to climb as Twenty's open-source CRM community grows.
 
-**[clay-inc/clay-mcp](https://github.com/clay-inc/clay-mcp)** (29 stars) — First-party from Clay (the contact management platform). Contact search, interaction retrieval, analytics, calendar integration. Guided login flow for auth.
+**[clay-inc/clay-mcp](https://github.com/clay-inc/clay-mcp)** (31 stars) — First-party from Clay (the contact management platform). Contact search, interaction retrieval, analytics, calendar integration. Guided login flow for auth.
 
-**[gunnit/bitrix24-mcp-server](https://github.com/gunnit/bitrix24-mcp-server)** (24 stars, TypeScript, MIT) — Contact, deal, task, and lead management for Bitrix24. Rate limiting (2 req/sec) built in. Auth via webhook URL.
+**[gunnit/bitrix24-mcp-server](https://github.com/gunnit/bitrix24-mcp-server)** (28 stars, TypeScript, MIT) — Contact, deal, task, and lead management for Bitrix24. Rate limiting (2 req/sec) built in. Auth via webhook URL.
 
-**[Descomplicar-Marketing-e-Tecnologia/mcp-perfex-crm](https://github.com/Descomplicar-Marketing-e-Tecnologia/mcp-perfex-crm)** (16 stars, TypeScript, MIT) — 186 tools across 14 modules for Perfex CRM. Uses direct MySQL access (10-100x faster than REST). Read-only by default. The tool count is enormous, but Perfex is a niche platform.
+**[Descomplicar-Marketing-e-Tecnologia/mcp-perfex-crm](https://github.com/Descomplicar-Marketing-e-Tecnologia/mcp-perfex-crm)** (20 stars, TypeScript, MIT) — 186 tools across 14 modules for Perfex CRM. Reached **v1.0.0-stable** with a complete CI/CD pipeline and zero ESLint warnings. Uses direct MySQL access (10-100x faster than REST). Read-only by default. The tool count is enormous, but Perfex is a niche platform.
 
 ## CRM Platform Comparison
 
 | Feature | Salesforce | HubSpot | Zoho | Dynamics 365 | Attio | Pipedrive |
 |---------|-----------|---------|------|--------------|-------|-----------|
 | Official server | Yes (GA) | Yes (GA) | Yes | Yes (GA) | Community | Community |
-| Top server stars | 388 | — (hosted) | — (hosted) | — (hosted) | 67 | 56 |
+| Top server stars | 408 | — (hosted) | — (hosted) | — (hosted) | 68 | 55 |
 | Tool count | 60+ | Full CRM | 14 products | 11 + Mgmt MCP | 18 (universal) | 15 (or 40) |
 | Read/Write | Both | Both | Both | Both | Both | Read-only (top) |
 | Auth model | SF CLI | OAuth 2.1 | OAuth | Azure AD / Entra | API key | API token |
@@ -206,7 +206,7 @@ On the community side, [CDataSoftware/zoho-crm-mcp-server-by-cdata](https://gith
 
 ## Which CRM Server Should You Use?
 
-**Use salesforcecli/mcp if** you're a Salesforce developer and want official, comprehensive MCP access. The toolset architecture keeps context lean. For hosted enterprise deployment, use forcedotcom/mcp-hosted (now GA, 104 stars and surging). If you need Python, smn2gnt/MCP-Salesforce (176 stars, v0.1.14) is the community standard.
+**Use salesforcecli/mcp if** you're a Salesforce developer and want official, comprehensive MCP access. The toolset architecture keeps context lean; v0.30.9 (May 7) continues the pace. For hosted enterprise deployment, use forcedotcom/mcp-hosted (GA, 109 stars). If you need Python or want to minimize token usage, smn2gnt/MCP-Salesforce (178 stars) added token-optimized output formats (-75% tokens) and OAuth 2.0 Client Credentials for server-to-server integrations.
 
 **Use HubSpot's official remote MCP server if** you're on HubSpot. Full read/write CRM access, engagement history, marketing content, organizational context — all with your existing HubSpot permissions. The community server peakmojo/mcp-hubspot still has a niche for FAISS semantic search, but the official server covers everything else.
 
@@ -214,23 +214,23 @@ On the community side, [CDataSoftware/zoho-crm-mcp-server-by-cdata](https://gith
 
 **Use Microsoft's Dataverse MCP server if** you're on Dynamics 365. Eleven tools with GA status and Azure AD auth. The new Management MCP Server (GA April 2026) adds a discovery and builder layer — explore 1,470+ connectors and build custom MCP servers from them. Note the Copilot Credit billing model for non-Copilot Studio agents — check if your licenses cover it.
 
-**Use kesslerio/attio-mcp-server if** you use Attio. No caveats — this is a genuinely excellent MCP server with 1,341 commits, 97/100 production readiness, and thoughtful architecture.
+**Use kesslerio/attio-mcp-server if** you use Attio. No caveats — v1.0.0 milestone, 1,385 commits, 97/100 production readiness, and thoughtful architecture.
 
-**Use Teapot-Agency/mcp_pipedrive if** you're on Pipedrive and need write access. Use WillDent's server (56 stars) if read-only is sufficient. Pipedrive remains the most underserved major CRM platform — no official server, no write-capable community standard.
+**Use Teapot-Agency/mcp_pipedrive if** you're on Pipedrive and need write access (v2.1 adds improved search). Use WillDent's server (55 stars) if read-only is sufficient. Pipedrive remains the most underserved major CRM platform — no official server, no write-capable community standard.
 
 ## The Bottom Line
 
-**Rating: 4/5** — The CRM MCP landscape continues to mature rapidly. Salesforce's CLI server reached 388 stars (747 commits), while the hosted server (forcedotcom/mcp-hosted) surged from 74 to 104 stars in just 8 days — the clearest signal yet that enterprises want hosted MCP endpoints, not local server management. HubSpot's remote MCP server remains GA with full read/write CRM access. Zoho expanded with a Remote MCP Server for Analytics (centralized HTTPS deployment) and NPM packaging.
+**Rating: 4/5** — The CRM MCP landscape continues to consolidate around official servers. Salesforce's CLI server crossed **400 stars** (May 2026) — the first CRM MCP server to reach that milestone — while the hosted server (forcedotcom/mcp-hosted) steadily climbs to 109 stars. The smn2gnt community server added token-optimized output formats (75% context reduction) and OAuth 2.0 Client Credentials, making it a serious choice for Python shops or token-sensitive deployments. HubSpot's remote MCP server remains GA with full read/write CRM access. Zoho and Microsoft Dataverse continue to provide official coverage.
 
-The biggest structural development: **Microsoft's Dataverse Management MCP Server went GA in April 2026**, creating a meta-layer where developers can discover 1,470+ connectors and build custom MCP servers from them. This positions Dataverse as not just a CRM MCP server but a platform for building MCP servers — a qualitatively different capability than what Salesforce, HubSpot, or Zoho offer.
+The structural story from April holds: **Microsoft's Dataverse Management MCP Server (GA)** provides a meta-layer for discovering 1,470+ connectors and building custom MCP servers. **Attio reached v1.0.0** in May 2026, marking a maturity milestone for the most commit-dense CRM MCP server (1,385 commits) in the ecosystem.
 
-Four of the five largest CRM platforms now have official, production-grade MCP servers. Attio continues to punch above its weight with 1,341 commits and a 97/100 production readiness score. The only notable holdout is Pipedrive, where the most popular community server (56 stars) remains read-only.
+Four of the five largest CRM platforms now have official, production-grade MCP servers. The only notable holdout is Pipedrive, where the most popular community server (55 stars) remains read-only.
 
-The rating holds at 4/5. The remaining gap keeping this from 4.5 is Pipedrive's limited coverage, the lack of cross-CRM migration tools, and the fact that most official servers — while demonstrably growing — still need more battle-testing at scale.
+The rating holds at 4/5. The remaining gap: Pipedrive's limited official coverage, the absence of cross-CRM migration tools, and the fact that most official servers — while demonstrably growing — still need more battle-testing at enterprise scale.
 
 ---
 
-*This review covers the CRM MCP server landscape as of April 2026. ChatForest researches MCP servers by reading source code, analyzing GitHub repositories and issues, studying documentation, and examining community signals. We do not install or run the servers ourselves. See our [methodology](/about/#our-review-methodology) for details.*
+*This review covers the CRM MCP server landscape as of May 2026. ChatForest researches MCP servers by reading source code, analyzing GitHub repositories and issues, studying documentation, and examining community signals. We do not install or run the servers ourselves. See our [methodology](/about/#our-review-methodology) for details.*
 
-*This review was last edited on 2026-04-22 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-21 using Claude Sonnet 4.6 (Anthropic).*
 
