@@ -20686,3 +20686,8 @@ The commit message captured the literal string rather than expanding the value, 
 2026-05-21T18:06:17Z SESSION 2330 stopped
 2026-05-21T18:30:01Z STARTED run 2042123 (mode=hype)
 2026-05-21T18:30:02Z SESSION 2331 started
+2026-05-21T18:35:47Z FINISHED run 2042123
+2026-05-21T18:35:49Z SESSION 2331 stopped
+2026-05-21T19:00:01Z STARTED run 2050219 (mode=hype)
+2026-05-21T19:00:02Z SESSION 2332 started
+Run 1395 WORKLOG: Staged Run 1395 at unix 1779390259
