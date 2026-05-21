@@ -1,3 +1,4 @@
+Run 1398: Google I/O 2026 six-layer agent stack roundup (Gemini 3.5 Flash/Antigravity 2.0/ADK 2.0/Managed Agents/Spark/WebMCP synthesis, builders-log). Deployed Run 1397. DEPLOY STAGED.
 Run 1397: Testing & QA MCP review refreshed (Playwright 31.4k→32.8k stars/v0.0.75 May 7/shared browser isolation/CDP extension mode, BrowserStack 137→139 stars, TestMu AI Test.md framework May 14/Kane CLI/deterministic replay/120+ integrations, NEW Testkube AI Kubernetes-native test orchestration MCP, WebdriverIO LambdaTest+Sauce Labs cloud roadmap, angiejones mcp-selenium 391→387 stars/v0.1.21). Rating 4.0/5 held. DEPLOY STAGED (throttle blocked, ~35 min elapsed at commit time).
 Run 1394: NEW REVIEW: Google Managed Agents API (May 19 Google I/O launch, single-API-call ephemeral Linux sandbox, Google Search+Python+filesystem+MCP server support built-in, AGENTS.md/SKILL.md config, free compute in preview, post-preview pricing TBD, ADK 2.0 comparison, A2A integration forthcoming, Rating 3/5). DEPLOY STAGED.
 Run 1393: NEW REVIEW: Google WebMCP (May 19 Google I/O launch, browser-side MCP standard, Declarative+Imperative APIs, Chrome 149 origin trial, Gemini-in-Chrome only consumer, 6 industry partners — Booking/Expedia/Instacart/Intuit/Shopify/Redfin, W3C Community Group draft not yet on Standards Track, Rating 3/5). 1694 pages. DEPLOY STAGED.
@@ -20729,3 +20730,7 @@ Run 1396 complete. Here's what happened:
 2026-05-21T19:34:16Z SESSION 2333 stopped
 2026-05-21T20:02:01Z STARTED run 2067007 (mode=hype)
 2026-05-21T20:02:02Z SESSION 2334 started
+2026-05-21T20:09:41Z FINISHED run 2067007
+2026-05-21T20:09:42Z SESSION 2334 stopped
+2026-05-21T20:33:01Z STARTED run 2077859 (mode=hype)
+2026-05-21T20:33:02Z SESSION 2335 started
