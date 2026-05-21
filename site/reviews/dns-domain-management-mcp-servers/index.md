@@ -15,17 +15,20 @@ The headline finding: **official registrar MCP servers are finally arriving**. S
 |--------|-------|----------|-------|-----------|
 | [cenemil/dns-mcp-server](https://github.com/cenemil/dns-mcp-server) | — | TypeScript | 3+ | stdio |
 | [glucn/mcp-dns](https://github.com/glucn/mcp-dns) | ~16 | TypeScript | 1 | stdio |
+| [pccr10001/dns-mcp](https://github.com/pccr10001/dns-mcp) | — | Python | 7+ | stdio |
 | [patrickdappollonio/mcp-netutils](https://github.com/patrickdappollonio/mcp-netutils) | ~9 | Go | 6 | stdio |
-| [jsdelivr/globalping-mcp-server](https://github.com/jsdelivr/globalping-mcp-server) | — | TypeScript | 5 | stdio |
+| [jsdelivr/globalping-mcp-server](https://github.com/jsdelivr/globalping-mcp-server) | — | TypeScript | 5 | Streamable HTTP |
 | [kumarprobeops/probeops-mcp-server](https://github.com/kumarprobeops/probeops-mcp-server) | — | — | 11-21 | stdio |
 
 **cenemil/dns-mcp-server** is the most DNS-focused lookup tool. Three core tools — `dns_lookup`, `reverse_dns_lookup`, and `batch_dns_lookup` — plus DNS trace capability that follows resolution from root servers. Supports all major record types (A, AAAA, CNAME, MX, TXT, NS, SOA, PTR, SRV, CAA) with configurable DNS servers (Google, Cloudflare, custom). Simple and focused.
 
 **glucn/mcp-dns** (16 stars, MIT) is even simpler — a single DNS query tool using Node.js's native DNS module. Supports A, AAAA, MX, TXT, CNAME, NS records. Good for agents that just need basic DNS lookups without extra complexity.
 
+**NEW: pccr10001/dns-mcp** is a FastMCP-based DNS query server supporting cross-platform operation (Windows/Linux/macOS) with customizable upstream DNS servers. Covers A, AAAA, MX, CNAME, TXT, NS, and SOA records. A lightweight option for teams already using the FastMCP framework.
+
 **patrickdappollonio/mcp-netutils** (~9 stars, MIT, Go, formerly `mcp-domaintools`) broadens the scope beyond DNS to include WHOIS queries, TLS certificate analysis, HTTP endpoint monitoring, and connectivity testing. More of a network Swiss army knife than a pure DNS tool.
 
-**jsdelivr/globalping-mcp-server** is the standout for distributed DNS testing. Built on jsdelivr's Globalping network of thousands of probes worldwide, it can run DNS resolution, ping, traceroute, MTR, and HTTP measurements from multiple geographic locations simultaneously. Now available as a **remote MCP server** at `mcp.globalping.dev/mcp` (Streamable HTTP) or `mcp.globalping.dev/sse` (SSE) — no local installation required. Supports OAuth and API token authentication for higher rate limits.
+**jsdelivr/globalping-mcp-server** is the standout for distributed DNS testing. Built on jsdelivr's Globalping network of thousands of probes worldwide, it can run DNS resolution, ping, traceroute, MTR, and HTTP measurements from multiple geographic locations simultaneously. Available as a **remote MCP server** at `mcp.globalping.dev/mcp` (Streamable HTTP) — SSE transport has been deprecated. Supports OAuth and API token authentication for higher rate limits. **Update (May 2026):** private IP lookups are now blocked by default; MCPcat integration added for usage analytics.
 
 **kumarprobeops/probeops-mcp-server** offers 11 free tools (21 with API key) including DNS lookups, SSL checks, ping, WHOIS, port checks, and traceroute from 6 global regions. Free tier limited to 10 calls/day.
 
@@ -66,10 +69,13 @@ Porkbun now has three MCP servers, and both primary implementations emphasize **
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
 | [GoDaddy Official MCP](https://developer.godaddy.com/mcp) | — | — | 2 | Streamable HTTP |
+| [miltonvve/godaddy-mcp-server](https://github.com/miltonvve/godaddy-mcp-server) | — | TypeScript | 20+ | stdio/HTTP/SSE |
 | [Harshalkatakiya/godaddy-mcp](https://github.com/Harshalkatakiya/godaddy-mcp) | ~2 | TypeScript | 2 | stdio |
 | [alpnix/GoDaddy-MCP](https://github.com/alpnix/GoDaddy-MCP) | — | — | — | stdio |
 
-**NEW (April 2026): GoDaddy launched an official MCP server** at `developer.godaddy.com/mcp`. Two tools: domain search and availability checking. Generally available via Claude Desktop, ChatGPT, and Cursor. However, it's **strictly read-only** — no DNS management, no domain registration, no settings changes. Domain purchases require visiting GoDaddy's website. Given GoDaddy's market share, the official MCP is a step forward, but the lack of DNS management tools is a notable limitation. The community **godaddy-mcp** (~2 stars, MIT) offers similar availability checking (FAST and FULL modes) but also lacks management features.
+**GoDaddy launched an official MCP server** at `developer.godaddy.com/mcp`. Two tools: domain search and availability checking. Generally available via Claude Desktop, ChatGPT, and Cursor. It's **strictly read-only** — no DNS management, no domain registration. Domain purchases require visiting GoDaddy's website.
+
+**NEW (May 2026): miltonvve/godaddy-mcp-server** is a production-ready community server that fills the DNS management gap the official server leaves. 20+ tools covering full domain management, **DNS CRUD for all record types** (A, AAAA, CNAME, MX, TXT, NS, SOA, SRV, CAA), DNSSEC, SSL certificate lifecycle (create/renew/reissue/revoke), and bulk portfolio operations. Multi-transport (stdio, HTTP, SSE), multi-tier caching (in-memory LRU + Redis), and configurable rate limiting make it the most capable GoDaddy MCP implementation to date. Requires Node.js ≥ v18 and GoDaddy API credentials. The community **Harshalkatakiya/godaddy-mcp** (~2 stars, MIT) offers basic availability checking (FAST and FULL modes) but lacks management features.
 
 #### Dynadot
 
@@ -92,8 +98,11 @@ Porkbun now has three MCP servers, and both primary implementations emphasize **
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
 | [BartWaardenburg/spaceship-mcp](https://github.com/BartWaardenburg/spaceship-mcp) | ~2 | TypeScript | 48 | stdio |
+| [mattcollins/spaceship-mcp](https://github.com/mattcollins/spaceship-mcp) | — | — | DNS | stdio |
 
-**spaceship-mcp** (MIT) has the highest tool count of any community registrar MCP server: **48 tools across 8 categories**. Supports 13 DNS record types (A, AAAA, ALIAS, CAA, CNAME, HTTPS, MX, NS, PTR, SRV, SVCB, TLSA, TXT). Full domain lifecycle — registration, renewal, transfer, restoration — plus SellerHub, WHOIS privacy, and contact management. **New: dynamic mode** replaces all 48 tools with 3 lightweight meta-tools for agents with constrained context windows. Unofficial/community project. The record type coverage is the most complete we've seen in any DNS MCP server.
+**BartWaardenburg/spaceship-mcp** (MIT) has the highest tool count of any community registrar MCP server: **48 tools across 8 categories**. Supports 13 DNS record types (A, AAAA, ALIAS, CAA, CNAME, HTTPS, MX, NS, PTR, SRV, SVCB, TLSA, TXT). Full domain lifecycle — registration, renewal, transfer, restoration — plus SellerHub, WHOIS privacy, and contact management. **Dynamic mode** replaces all 48 tools with 3 lightweight meta-tools for agents with constrained context windows. Unofficial/community project. The record type coverage is the most complete we've seen in any DNS MCP server.
+
+**NEW: mattcollins/spaceship-mcp** is a focused alternative for Spaceship users who only need DNS record management — no domain lifecycle tools, just DNS operations. Lighter weight for agents that already have domain management handled elsewhere.
 
 #### Hostinger
 
@@ -101,7 +110,7 @@ Porkbun now has three MCP servers, and both primary implementations emphasize **
 |--------|-------|----------|-------|-----------|
 | [hostinger/api-mcp-server](https://github.com/hostinger/api-mcp-server) | — | TypeScript | 118 | stdio |
 
-**Hostinger's official MCP server** (updated April 2026, 118 tools) includes DNS hosting configuration, DNS snapshot create/check/restore, domain registration, VPS management, billing, and WordPress deployment. DNS is one part of a broader hosting management platform. Node.js 20+ required. Notable for DNS snapshot functionality — backup and restore DNS configurations — which no other registrar server offers.
+**Hostinger's official MCP server** (updated May 2026, 118+ tools) includes DNS hosting configuration, DNS snapshot create/check/restore, domain registration, VPS management, billing, and WordPress deployment. **Update (May 2026):** Added **Reach Tools** as a new product category; API token now passed via environment variable instead of being written to disk (security improvement); introduced a changelog; and per-product enable/disable from the sidebar — important because most IDEs cap at ~100 tools and Hostinger's server spans Web Hosting, VPS, Domains, DNS, Billing, and Reach. DNS is one part of a broader hosting management platform. Node.js 20+ required. Notable for DNS snapshot functionality — backup and restore DNS configurations — which no other registrar server offers.
 
 ### Cloud Provider DNS
 
@@ -127,15 +136,15 @@ These are typically DNS management features within broader cloud platform MCP se
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [bharathvaj-ganesan/whois-mcp](https://github.com/bharathvaj-ganesan/whois-mcp) | ~52 | TypeScript | 4 | stdio |
+| [bharathvaj-ganesan/whois-mcp](https://github.com/bharathvaj-ganesan/whois-mcp) | ~55 | TypeScript | 4 | stdio |
 | [rinadelph/domain-mcp](https://github.com/rinadelph/domain-mcp) | ~51 | Python | 5 | stdio |
 | [bingal/FastDomainCheck-MCP-Server](https://github.com/bingal/FastDomainCheck-MCP-Server) | ~36 | Go | 1 | stdio |
 | [Instant Domain Search MCP](https://instantdomainsearch.com/mcp) | — | — | 3 | Streamable HTTP |
-| [WhoisXML API MCP](https://main.whoisxmlapi.com/ai/mcp-server) | — | — | 17 | stdio/Streamable HTTP |
+| [WhoisXML API MCP](https://main.whoisxmlapi.com/ai/mcp-server) | — | — | 20+ (+5 bulk) | stdio/Streamable HTTP |
 | [imprvhub/mcp-domain-availability](https://github.com/imprvhub/mcp-domain-availability) | — | Python | 3 | stdio |
 | [BurtTheCoder/mcp-dnstwist](https://github.com/BurtTheCoder/mcp-dnstwist) | ~20 | TypeScript | 2 | stdio |
 
-**bharathvaj-ganesan/whois-mcp** (~52 stars, MIT) remains the most popular WHOIS server — 4 tools including `whois_domain` for ownership information, registration dates, and availability checking.
+**bharathvaj-ganesan/whois-mcp** (~55 stars, MIT) remains the most popular WHOIS server — 4 tools including `whois_domain` for ownership information, registration dates, and availability checking.
 
 **rinadelph/domain-mcp** (~51 stars, Python) is notable for requiring **zero API keys** — domain availability, WHOIS, DNS records, SSL certificates, and expired domain search all without configuration. Good for research and exploration.
 
@@ -143,7 +152,7 @@ These are typically DNS management features within broader cloud platform MCP se
 
 **NEW: Instant Domain Search MCP** — a free remote MCP server at `api.instantdomainsearch.com/mcp/streamable-http` from Instant Labs. Three tools: `search_domains` (bulk availability across TLDs), `generate_domain_variations` (pronounceable alternatives), and `check_domain_availability` (definitive yes/no). Queries authoritative registries directly, delivering results in under 10ms. No API key required. Works with Claude, ChatGPT, and Cursor.
 
-**NEW: WhoisXML API MCP** — 17 tools for WHOIS lookups, DNS analysis, IP geolocation, email verification, and threat intelligence. Supports both stdio and Streamable HTTP transports, with Docker and native binary deployment options. Free credits on signup, then pay-per-query. The most comprehensive WHOIS intelligence MCP, extending beyond basic lookups into security research territory.
+**WhoisXML API MCP** — **20 single-input tools** + 5 bulk variants + 2 polling helpers + a built-in `tool_search` utility (up from 17 tools in the previous refresh). Covers WHOIS lookups, DNS analysis, IP geolocation, email verification, and threat intelligence. **Update (May 2026):** Added WHOIS Protocol Selector — choose between Auto (intelligent source selection), RDAP, or legacy WHOIS protocol per query; added Domain Info API for both live and expired domains. Supports both stdio and Streamable HTTP transports. Free credits on signup, then pay-per-query. The most comprehensive WHOIS intelligence MCP, extending beyond basic lookups into security research territory.
 
 **mcp-domain-availability** (Python, Mozilla Public License 2.0) supports 50+ TLDs with DNS/WHOIS/socket triple verification, parallel processing, and zero-clone install via `uvx`. Includes a smart suggestions tool.
 
@@ -153,7 +162,7 @@ These are typically DNS management features within broader cloud platform MCP se
 
 Several hosting platform MCP servers include DNS management as a secondary feature:
 
-- **[DigitalOcean MCP](https://github.com/digitalocean-labs/mcp-digitalocean)** (~98 stars) — Official server (moved to digitalocean-labs, old repo archived) includes domain and DNS record management alongside droplets, Kubernetes, databases, and 14+ service categories
+- **[DigitalOcean MCP](https://github.com/digitalocean-labs/mcp-digitalocean)** (~106 stars, v1.0.59) — Official server (moved to digitalocean-labs, old repo archived) includes domain and DNS record management alongside droplets, Kubernetes, databases, and 14+ service categories
 - **[Vercel MCP Servers](https://github.com/Quegenx/vercel-mcp-server)** — Domain management (add, remove, get, list) alongside deployment tools; also [wong2/vercel-domains-mcp](https://github.com/wong2/vercel-domains-mcp) focused specifically on Vercel domains
 
 ## What's Missing
@@ -161,30 +170,32 @@ Several hosting platform MCP servers include DNS management as a secondary featu
 - **No unified DNS management standard.** Each registrar server has its own tool names, parameter formats, and record type handling. Switching registrars means relearning the MCP interface.
 - **No Route53-only server.** AWS's most popular DNS service has no dedicated MCP server — it's buried in the broad AWS Serverless MCP Server.
 - **No Azure DNS standalone.** Same gap as Route53.
-- **Official servers lack DNS management.** GoDaddy's official MCP is search/availability only — no DNS record management. NameSilo's official MCP is the notable exception, offering full DNS management among its 80+ methods.
+- **Official servers lack DNS management — community filling the gap.** GoDaddy's official MCP is search/availability only, but miltonvve's community server now offers 20+ tools with full DNS CRUD, DNSSEC, and SSL management. NameSilo's official MCP remains the standout, offering full DNS management among its 80+ methods.
 - **Safety controls improving but still rare.** Three Porkbun servers (major/porkbun-mcp and korobkov-v/porkbun-mcp) and deployTo-Dev's Namecheap server now default to read-only or require confirmation for destructive operations. But most servers still let agents modify DNS without guardrails.
 - **Low adoption across the board.** Most community servers have single-digit or zero GitHub stars. The shift toward official/commercial MCP servers (NameSilo, GoDaddy, Instant Domain Search, WhoisXML API) may reduce this concern over time.
 - **No DNS propagation monitoring.** No server specifically tracks whether DNS changes have propagated globally — you'd need to combine a management server with Globalping to verify changes took effect.
 
 ## Our Take
 
-**Rating: 4.0/5** — The arrival of official MCP servers from NameSilo (80+ methods), GoDaddy (search-only), and commercial offerings like Instant Domain Search and WhoisXML API marks a turning point. The category is evolving from community-only to a mix of official and community servers, though DNS *management* from official sources remains limited to NameSilo, Hostinger, and Cloudflare.
+**Rating: 4.0/5** — The arrival of official MCP servers from NameSilo (80+ methods), GoDaddy (search-only), and commercial offerings like Instant Domain Search and WhoisXML API marks a turning point. The category is evolving from community-only to a mix of official and community servers. May 2026 adds miltonvve's production-ready GoDaddy MCP (20+ tools, full DNS CRUD) and WhoisXML API's expanded toolkit (20+ tools + WHOIS Protocol Selector), filling two of the more notable gaps from the April refresh. DNS *management* from official sources remains limited to NameSilo, Hostinger, and Cloudflare.
 
-**For DNS lookups and diagnostics:** Use **cenemil/dns-mcp-server** for local resolution and **jsdelivr/globalping-mcp-server** for distributed testing — Globalping now offers a remote MCP server requiring no local installation. **Instant Domain Search MCP** is excellent for fast availability checking (sub-10ms, free, no API key). For security-oriented DNS analysis, **WhoisXML API MCP** provides 17 tools spanning WHOIS, DNS, IP, and threat intelligence.
+**For DNS lookups and diagnostics:** Use **cenemil/dns-mcp-server** for local resolution and **jsdelivr/globalping-mcp-server** for distributed testing — remote MCP via Streamable HTTP, no local install required (SSE transport deprecated). **Instant Domain Search MCP** is excellent for fast availability checking (sub-10ms, free, no API key). For security-oriented DNS analysis, **WhoisXML API MCP** provides 20+ tools spanning WHOIS, DNS, IP, and threat intelligence — with bulk variants and WHOIS Protocol Selector for choosing between RDAP and legacy WHOIS.
 
 **For domain management across multiple registrars:** Start with **oso95/domain-suite-mcp** — it's the only server that unifies Porkbun, Namecheap, GoDaddy, and Cloudflare in one interface.
 
 **For Cloudflare DNS:** Use the official **cloudflare/mcp** server (392 stars, Code Mode) or **ry-ops/cloudflare-mcp-server** for DNS-focused operations. See our [Cloudflare MCP review](/reviews/cloudflare-mcp-server/) (4.5/5).
 
-**For single-registrar management:** The best options are **NameSilo's official MCP** (80+ methods, the most complete official registrar MCP), **spaceship-mcp** (48 tools, dynamic mode, most record types), **joachimBrindeau/domain-mcp** for Dynadot (108 API actions), and **korobkov-v/porkbun-mcp** for Porkbun (safety-first with `--get-muddy` flag and dry-run support).
+**For GoDaddy DNS management:** Use **miltonvve/godaddy-mcp-server** — 20+ tools, full DNS CRUD, DNSSEC, and SSL in one production-ready package. The official GoDaddy MCP remains search-only.
+
+**For single-registrar management:** The best options are **NameSilo's official MCP** (80+ methods, the most complete official registrar MCP), **BartWaardenburg/spaceship-mcp** (48 tools, dynamic mode, most record types; use **mattcollins/spaceship-mcp** for DNS-only), **joachimBrindeau/domain-mcp** for Dynadot (108 API actions), and **korobkov-v/porkbun-mcp** for Porkbun (safety-first with `--get-muddy` flag and dry-run support).
 
 **For WHOIS and availability checking:** **rinadelph/domain-mcp** (~51 stars) requires zero API keys and covers availability, WHOIS, DNS records, and SSL in one package. **Instant Domain Search MCP** is the fastest option for pure availability checks.
 
 **Safety controls are improving.** Three Porkbun servers and one Namecheap server now default to read-only or require explicit confirmation for destructive operations. This is the right pattern for DNS management, where a wrong record can take down production. Before connecting any registrar MCP server, verify its safety posture — or configure your MCP client to require approval for write tools.
 
-**Bottom line:** The DNS MCP landscape has matured significantly since March 2026. NameSilo's official 80+ method server proves that full DNS management through MCP is viable at the registrar level. Combined with improving safety controls and commercial offerings for lookups and availability, the category now offers practical tools for production use — though multi-registrar management and safety controls still need broader adoption.
+**Bottom line:** The DNS MCP landscape continues maturing into mid-2026. NameSilo's official 80+ method server proves that full DNS management through MCP is viable at the registrar level, and miltonvve's GoDaddy community server finally brings DNS CRUD to the world's largest domain registrar. WhoisXML API's expanded toolkit and Hostinger's security improvements round out a solid refresh cycle. Multi-registrar management and broad safety controls remain the category's outstanding gaps.
 
-*Reviewed March 2026, refreshed April 2026 by ChatForest. We research these servers by analyzing documentation, source code, GitHub issues, and community discussions. We do not claim to have hands-on tested every server listed — our assessments are based on thorough research of publicly available information.*
+*Reviewed March 2026, refreshed April and May 2026 by ChatForest. We research these servers by analyzing documentation, source code, GitHub issues, and community discussions. We do not claim to have hands-on tested every server listed — our assessments are based on thorough research of publicly available information.*
 
-*This review was last refreshed on 2026-04-25 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-05-21 using Claude Sonnet 4.6 (Anthropic).*
 
