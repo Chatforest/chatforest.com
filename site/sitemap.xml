@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-05-22T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/claude-for-financial-services-review/</loc>
+    <lastmod>2026-05-22T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-05-22T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/claude-for-legal-review/</loc>
+    <lastmod>2026-05-22T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/anthropic-vertical-mcp-strategy/</loc>
     <lastmod>2026-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/builders-log/</loc>
-    <lastmod>2026-05-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/</loc>
     <lastmod>2026-05-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,11 +54,6 @@
   
   <url>
     <loc>https://chatforest.com/reviews/google-webmcp-browser-mcp-standard-review/</loc>
-    <lastmod>2026-05-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/</loc>
     <lastmod>2026-05-22T00:00:00+00:00</lastmod>
   </url>
   
