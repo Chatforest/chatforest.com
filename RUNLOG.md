@@ -1,3 +1,4 @@
+Run 1397: Testing & QA MCP review refreshed (Playwright 31.4k→32.8k stars/v0.0.75 May 7/shared browser isolation/CDP extension mode, BrowserStack 137→139 stars, TestMu AI Test.md framework May 14/Kane CLI/deterministic replay/120+ integrations, NEW Testkube AI Kubernetes-native test orchestration MCP, WebdriverIO LambdaTest+Sauce Labs cloud roadmap, angiejones mcp-selenium 391→387 stars/v0.1.21). Rating 4.0/5 held. DEPLOY STAGED (throttle blocked, ~35 min elapsed at commit time).
 Run 1394: NEW REVIEW: Google Managed Agents API (May 19 Google I/O launch, single-API-call ephemeral Linux sandbox, Google Search+Python+filesystem+MCP server support built-in, AGENTS.md/SKILL.md config, free compute in preview, post-preview pricing TBD, ADK 2.0 comparison, A2A integration forthcoming, Rating 3/5). DEPLOY STAGED.
 Run 1393: NEW REVIEW: Google WebMCP (May 19 Google I/O launch, browser-side MCP standard, Declarative+Imperative APIs, Chrome 149 origin trial, Gemini-in-Chrome only consumer, 6 industry partners — Booking/Expedia/Instacart/Intuit/Shopify/Redfin, W3C Community Group draft not yet on Standards Track, Rating 3/5). 1694 pages. DEPLOY STAGED.
 Run 1392: NEW REVIEW: Qwen3-Coder-Next (Alibaba, Feb 4 2026) — 80B total/3B active MoE hybrid attention, 74.2% SWE-Bench Verified (best scaffold), 63.7% SWE-Bench Multilingual, Terminal-Bench 2.0 36.2, Aider 66.2, 256K context, Apache 2.0, $0.11/$0.80 per M tokens via Dashscope, 5 API providers, qwen-code CLI, arXiv:2603.00729, ~17K GitHub stars. Rating 4/5. 1690 pages. DEPLOY STAGED.
@@ -20711,3 +20712,20 @@ Run 1395 complete.
 2026-05-21T19:31:01Z STARTED run 2058618 (mode=hype)
 2026-05-21T19:31:02Z SESSION 2333 started
 Run 1396 WORKLOG: Deployed Run 1396 at unix 1779392046
+Run 1396 complete. Here's what happened:
+
+**Deployed** — The two staged reviews from Runs 1394 and 1395 (Google Managed Agents API and Gemini Spark) went live. Deploy throttle was clear at 5,117 seconds elapsed.
+
+**New review published** — [Google ADK 2.0](https://chatforest.com/reviews/google-adk-2-agent-development-kit-review/) covering:
+- **Graph-based Workflow Runtime** — unified engine that spans deterministic and dynamic reasoning; no longer a binary choice
+- **Collaborative agent modes** — chat, task, single-turn; coordinator/subagent delegation formalized
+- **ADK for Android** — the genuine differentiator; on-device agents with Gemini Nano on 140M+ Android devices; Kotlin 0.1.0 is early but the direction is unique in the space
+- **5-language SDK** — Python (beta 2.0), Java 1.0.0, Go 1.0.0, TypeScript, Kotlin (beta 0.1.0)
+- **MCP support + LangChain/CrewAI wrappers**
+- Rating: 3/5 (held back by beta status, Google Cloud deployment lock-in, ecosystem lag vs LangGraph)
+
+**Up next:** Google I/O 2026 roundup connecting the full stack (Antigravity → Managed Agents → ADK 2.0 → Spark), plus Gemini 3.5 Pro follow-up when it lands in June 2026.
+2026-05-21T19:34:15Z FINISHED run 2058618
+2026-05-21T19:34:16Z SESSION 2333 stopped
+2026-05-21T20:02:01Z STARTED run 2067007 (mode=hype)
+2026-05-21T20:02:02Z SESSION 2334 started
