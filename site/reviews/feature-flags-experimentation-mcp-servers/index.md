@@ -1,6 +1,6 @@
 # Feature Flags & Experimentation MCP Servers — LaunchDarkly, GrowthBook, Unleash, Flagsmith, and More
 
-> Feature flag and experimentation MCP servers reviewed: LaunchDarkly (13 stars, hosted, 3 MCP endpoints), GrowthBook (21 stars, 14 tools, open-source), Unleash (6 stars, best-practice workflows), Flagsmith (role-based tooling, Gemini/Codex CLI support), DevCycle (35+ tools, OAuth-backed, hosted remote), Statsig (27 Console API tools, metrics), ConfigCat (full management API), Flipt (git-native), VWO FME (3 stars, new entry), Optimizely (closed beta, Gartner Leader 2026), PostHog (141 stars, 27 tools, archived to monorepo), Harness FME (10 tools, 139 resource types, incl. Split.io), Amplitude (experimentation agent). Rating: 4.0/5.
+> Feature flag and experimentation MCP servers reviewed: LaunchDarkly (~20 stars, hosted, 3 MCP endpoints incl. AgentControl), GrowthBook (22 stars, 14 tools, open-source), Unleash (6 stars, remote MCP+OAuth DCR+evaluate_change), Flagsmith (role-based tooling, Gemini/Codex CLI support), DevCycle (35+ tools, OAuth-backed, hosted remote), Statsig (27 Console API tools, metrics), ConfigCat (14 stars, full management API), Flipt (git-native), VWO FME (3 stars), Optimizely (now public, remote MCP+OAuth, Gartner Leader 2026), PostHog (141 stars, 27 tools, monorepo), Harness FME (10 tools, 139 resource types, incl. Split.io), Amplitude (open beta, experimentation agent), OpenFeature (NEW, vendor-agnostic). Rating: 4.5/5.
 
 
 Feature flag and experimentation MCP servers are giving AI coding assistants direct access to flag management, A/B testing, and progressive rollouts. Instead of switching between your IDE and a feature flag dashboard, these servers let AI agents create flags, set up targeting rules, run experiments, and clean up stale flags — all through the Model Context Protocol.
@@ -17,9 +17,9 @@ The headline findings: **Vendor coverage is remarkably complete** — LaunchDark
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [launchdarkly/mcp-server](https://github.com/launchdarkly/mcp-server) | 13 | TypeScript | MIT | 10+ |
+| [launchdarkly/mcp-server](https://github.com/launchdarkly/mcp-server) | ~20 | TypeScript | MIT | 10+ |
 
-Official MCP server from LaunchDarkly, the category leader in feature management. Provides three hosted MCP servers, each focused on a different product area: **feature management** (create, get, list, toggle, and update flags, targeting rules, rollouts, individual targets), **AI Configs** (manage AI configurations and variations), and **observability** (query logs, traces, errors, and dashboards). The hosted endpoint architecture means zero local installation — just point your MCP client and authenticate.
+Official MCP server from LaunchDarkly, the category leader in feature management. Provides three hosted MCP servers, each focused on a different product area: **feature management** (create, get, list, toggle, and update flags, targeting rules, rollouts, individual targets), **AgentControl** (manage AI configurations and variations — the hosted AI Configs server, renamed to reflect its agentic role), and **observability** (query logs, traces, errors, and dashboards). The hosted endpoint architecture means zero local installation — just point your MCP client and authenticate via OAuth.
 
 Key tools include `create-flag` (defaults to boolean temporary flag, OFF in all environments), `get-flag` (detailed configuration scoped to a specific environment), `list-flags` (search and browse), `toggle-flag` (targeting on/off per environment), `update-flag-settings` (name, description, tags, temporary/permanent status, maintainer), `update-targeting-rules`, `update-rollout`, `update-individual-targets`, `query-flag-evaluations` (query evaluations for a session), and `query-timeline-events` (query timeline indicator events). The separation into product-specific servers is a thoughtful design — agents get only the tools relevant to their task rather than a monolithic tool list.
 
@@ -29,7 +29,7 @@ LaunchDarkly is the market leader in enterprise feature management, and their MC
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [growthbook/growthbook-mcp](https://github.com/growthbook/growthbook-mcp) | 21 | TypeScript | — | 14 |
+| [growthbook/growthbook-mcp](https://github.com/growthbook/growthbook-mcp) | 22 | TypeScript | — | 14 |
 
 Official MCP server from GrowthBook, the leading open-source feature flagging and experimentation platform (7,000+ GitHub stars on the main repo). GrowthBook positioned this as "the first MCP server for experimentation and feature management" — and the 14-tool set backs up that claim.
 
@@ -45,9 +45,11 @@ The server works with Cursor, Claude, VS Code, and Windsurf. Configuration is st
 
 Official MCP server from Unleash, the open-source feature management platform (10,000+ stars, 20M+ downloads). This is a **purpose-driven** server — rather than exposing the full Admin API, it implements an opinionated workflow for AI-assisted flag creation.
 
-The workflow follows four steps: detect existing flags (prevent duplicates or encourage reuse), evaluate whether changes need a flag, `create_flag` (with proper validation and typing), and `wrap_change` (generate language-specific implementation code). This is notably different from servers that just expose CRUD operations — Unleash's MCP server guides agents through best practices rather than giving them raw API access.
+The workflow follows four steps: detect existing flags (prevent duplicates or encourage reuse), evaluate whether changes need a flag, `create_flag` (with proper validation and typing), and `wrap_change` (generate language-specific implementation code). A new `evaluate_change` tool adds an **intelligent recommendation layer** — given a code change description, it evaluates whether the change should be behind a feature flag and returns a rationale. This moves meaningfully beyond CRUD toward genuine flag strategy guidance.
 
-Currently marked as **experimental** — functionality may change and is not yet recommended for production use. Available via npx without cloning the repo. Community alternatives exist from cuongtl1992 and ylin6 for teams that want broader API access.
+**May 2026 updates**: Added **Remote MCP Server** — your Unleash instance can now expose an MCP endpoint over Streamable HTTP directly, no local process required. Added **OAuth 2.0 Dynamic Client Registration (DCR)** flow that opens a browser, logs the user in, and auto-provisions a short-lived personal access token. Clients now supported: Claude Code, Cursor, Windsurf, Codex.
+
+Still marked **experimental** — not recommended for production use. Available via npx. Community alternatives exist from cuongtl1992 and ylin6 for teams that want broader API access.
 
 ### Flagsmith MCP Server
 
@@ -105,13 +107,13 @@ Statsig's Knowledge Graph (2026) connects codebase, feature gates, experiments, 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [configcat/mcp-server](https://github.com/configcat/mcp-server) | — | TypeScript | — | — |
+| [configcat/mcp-server](https://github.com/configcat/mcp-server) | 14 | TypeScript | MIT | — |
 
-Official MCP server from ConfigCat providing access to their public management API for feature flag and configuration management. Full CRUD operations on Feature Flags, Configs, Environments, and Products. The server helps integrate ConfigCat SDK, implement feature flags, and remove zombie (stale) flags from codebases.
+Official MCP server from ConfigCat providing access to their public management API for feature flag and configuration management. Full CRUD operations on Feature Flags, Configs, Environments, and Products. The server helps integrate ConfigCat SDK, implement feature flags, and remove zombie (stale) flags from codebases. Last updated May 19, 2026 — actively maintained.
 
 **Important limitation**: designed for management operations only — do not use it for evaluating feature flag values in production applications. Use ConfigCat SDKs or ConfigCat Proxy for runtime evaluation. This is a clear and honest boundary that other servers should emulate.
 
-ConfigCat also publishes a migration guide showing how to use their MCP server to migrate flags from Statsig — a practical demonstration of MCP servers automating platform migrations.
+ConfigCat publishes migration guides showing how to use their MCP server to migrate flags from Statsig and Prefab — practical demonstrations of MCP servers automating platform migrations.
 
 ### Flipt MCP Server
 
@@ -127,23 +129,29 @@ Installable via Smithery (`npx -y @smithery/cli install @flipt-io/mcp-server-fli
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| Optimizely MCP | — | — | — | — |
+| Optimizely Remote MCP | — | — | — | 20+ |
 
-Official MCP server from Optimizely for managing the feature flag and experiment lifecycle from within IDEs. Currently in **closed beta** — not publicly available. Runs locally for instant performance, offers comprehensive tool coverage, intelligently abstracts complex operations, and emphasizes security.
+Official MCP server from Optimizely, **now publicly available** (moved out of closed beta in May 2026). Launched as a **Remote MCP Server** — no local installation, authenticated via OAuth 2.0 through Opti ID. Available to all Optimizely Experimentation customers (Web and Feature Experimentation).
 
-Optimizely is one of the oldest and largest experimentation platforms — named a **Leader in the 2026 Gartner Magic Quadrant for Personalization Engines** (2nd year running). Their entry into MCP — even in beta — signals that feature flag MCP servers are becoming table stakes for the category. An npm package (@simonecoelhosfo/optimizely-mcp-server) is available for developers who want to experiment before the official release.
+Tools are organized into three categories: **Query** (list projects, flags, experiments, environments; retrieve results; compare configurations), **Manage** (create/update flags, experiments, audiences, targeting rules, rollouts), and **Implement** (search SDK docs, generate SDK integration code). The server respects existing user permissions from the Optimizely UI — no separate permission model needed.
+
+Optimizely also launched companion servers: an **Analytics MCP Server** (find events/properties, build Funnel/Retention/Segmentation explorations, create dashboards, analyze experiment results) and an **Optimizely Commerce MCP Server** (8 capabilities covering B2B buyer journey configuration). Together these form the most comprehensive experimentation-plus-analytics MCP suite in the category.
+
+Optimizely is named a **Leader in the 2026 Gartner Magic Quadrant for Personalization Engines** (2nd year running). Their full public launch — with remote MCP, OAuth, and a three-server suite — signals that feature flag MCP servers are becoming table stakes for enterprise experimentation platforms.
 
 ### Harness FME MCP Server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [harness/mcp-server](https://github.com/harness/mcp-server) | — | TypeScript | — | — |
+| [harness/mcp-server](https://github.com/harness/mcp-server) | ~20 | TypeScript | — | — |
 
 Official MCP server from Harness covering their Feature Management & Experimentation (FME) platform, which includes **Split.io** resources after Harness acquired Split in 2024. The server exposes structured, secure tool sets across pipelines, repositories, logs, and artifact registries.
 
-The server provides **10 consolidated tools and 139 resource types**. FME-specific tools use both the Split.io internal API (scoped by workspace ID for `fme_workspace`, `fme_environment`, `fme_feature_flag`) and the Harness CF admin API (environment-specific definitions with create, delete, and toggle support). The `fme_feature_flag` resource supports full lifecycle management: create (requires traffic_type_id), list, get, update metadata, delete, and kill/restore/archive/unarchive execute actions. The dual-API approach reflects the ongoing integration of Split.io into the Harness platform.
+The server provides **10 consolidated tools and 139 resource types** across 30 toolsets (FME, CI/CD, GitOps, Chaos Engineering, Cloud Cost Management, Security Testing, and more). FME-specific tools use both the Split.io internal API (scoped by workspace ID for `fme_workspace`, `fme_environment`, `fme_feature_flag`) and the Harness CF admin API (environment-specific definitions with create, delete, and toggle support). The `fme_feature_flag` resource supports full lifecycle management: create (requires traffic_type_id), list, get, update metadata, delete, and kill/restore/archive/unarchive execute actions.
 
-Compatible with Claude Code, Windsurf, Cursor, and VS Code. The server goes beyond just feature flags — it's part of Harness's broader platform that covers the full software delivery lifecycle.
+A community fork — **[kud/mcp-harness-fme](https://github.com/kud/mcp-harness-fme)** (released March 2026) — targets only the Harness FME / Split.io layer: read and toggle feature flags across workspaces and environments. Single API key auth, TypeScript 5+ ESM. Useful for teams that only need flag control without the full Harness platform surface.
+
+Compatible with Claude Code, Windsurf, Cursor, and VS Code.
 
 ## Analytics Platforms with Experimentation
 
@@ -165,11 +173,25 @@ Flag-specific capabilities include creating feature flags (e.g., "create a flag 
 |--------|-------|----------|---------|-------|
 | [amplitude/mcp-server-guide](https://github.com/amplitude/mcp-server-guide) | — | — | — | — |
 
-Official MCP server from Amplitude (currently in **beta**) enabling teams to analyze product data, experiments, and user behavior through natural language. Tools include Analytics Queries (user behavior and product metrics), Experiment Analysis (A/B test results and feature flag performance), Dashboard Access (retrieve chart and dashboard data), and Session Replay Search.
+Official MCP server from Amplitude (now in **open beta** — was private/limited beta in April 2026) enabling teams to analyze product data, experiments, and user behavior through natural language. Tools include Analytics Queries (user behavior and product metrics), Experiment Analysis (A/B test results and feature flag performance), Dashboard Access (retrieve chart and dashboard data), and Session Replay Search. Amplitude covers analytics, Feature Experimentation, and Web Experimentation under one platform.
 
 The standout feature is the **Feature Experimentation Custom Agent** — a specialized GitHub Copilot Coding Agent with Amplitude-specific prompts and MCP tools. This agent can query product insights, add instrumentation, manage feature flags, and automatically run experiments on new features. It's the most advanced agent-to-agent integration in the feature flag space.
 
-Amplitude's MCP server is powered by MCP integration with GitHub Copilot workflows, allowing AI agents to collaborate and make data-driven decisions without manual handoffs.
+Amplitude has also launched `amplitude/mcp-marketplace` — a separate repository for additional MCP plugins extending the platform. Their MCP integration with GitHub Copilot workflows allows AI agents to collaborate and make data-driven decisions without manual handoffs.
+
+## Standards-Based Implementations
+
+### OpenFeature MCP Server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [open-feature/mcp-server](https://github.com/open-feature/mcp-server) | — | — | — | 2+ |
+
+Official MCP server from the **OpenFeature** project — the CNCF standard for vendor-agnostic feature flag evaluation. This is the only MCP server in the category that doesn't tie you to a specific feature flag platform.
+
+Two core capabilities: **SDK Installation Guidance** (fetch setup instructions for any language and provider combination) and **Feature Flag Evaluation** via the [OpenFeature Remote Evaluation Protocol (OFREP)](https://openfeature.dev/specification/appendix-c), including bulk flag evaluation. Works with any OFREP-compliant provider — LaunchDarkly, Unleash, Flagsmith, Flagd, Split, CloudBees, and others.
+
+This closes the gap noted in earlier reviews: teams that want platform-agnostic flag evaluation through MCP now have an official standard-based path. Particularly valuable for organizations running multiple flag providers or evaluating migrations.
 
 ## Community Implementations
 
@@ -191,17 +213,18 @@ Another community Unleash MCP server implementation. The existence of multiple c
 
 ## What's missing
 
-The category has remarkably complete vendor coverage, but some gaps remain:
+The category has remarkably complete vendor coverage. Several previously-identified gaps have closed:
 
-- **No Eppo MCP server** — Eppo is a rising experimentation platform focused on composable, next-gen feature flagging, but has no MCP integration yet
-- **Intelligent rollout decisions** — most servers handle flag CRUD but don't help agents decide *when* to roll out based on experiment metrics
-- **Cross-platform flag migration** — ConfigCat's Statsig migration guide is the only example; no general-purpose flag migration tools exist
-- **OpenFeature MCP integration** — OpenFeature provides a vendor-agnostic API standard, but there's no MCP server that leverages it for cross-platform flag evaluation
-- **Experimentation analysis** — only PostHog and Amplitude combine flag management with statistical analysis of experiment results; most servers treat flags as configuration, not experiments
+- **OpenFeature gap — closed**: The OpenFeature project now has an official MCP server supporting vendor-agnostic flag evaluation via OFREP across all major providers (see above).
+- **Optimizely beta gap — closed**: Optimizely shipped a full public remote MCP suite in May 2026 — Experimentation, Analytics, and Commerce servers.
+- **No Eppo MCP server** — Eppo remains focused on SDK-based evaluation and Datadog integrations. No MCP integration found.
+- **Intelligent rollout decisions** — most servers still handle flag CRUD but don't help agents decide *when* to roll out based on experiment metrics. Unleash's `evaluate_change` tool and Amplitude's experiment analysis are partial exceptions, but the category as a whole remains CRUD-centric.
+- **Cross-platform flag migration** — ConfigCat's Statsig and Prefab migration guides are the only examples; no general-purpose flag migration MCP tool exists yet.
+- **Experimentation analysis** — only PostHog, Amplitude, and Optimizely's Analytics MCP combine flag management with statistical analysis of experiment results; most servers treat flags as configuration, not experiments.
 
 ## The bottom line
 
-Feature Flags & Experimentation MCP servers earn **4.0 out of 5**. The vendor coverage is exceptional — nearly every major platform has an official server, which is rare in the MCP ecosystem. The integration patterns are more sophisticated than most categories: OAuth authentication (DevCycle), hosted endpoints (LaunchDarkly), role-based tool exposure (Flagsmith), and purpose-driven workflows (Unleash). The main limitation is that most servers treat feature flags as simple CRUD resources rather than the experimentation instruments they are. The platforms that combine flag management with analytics (PostHog, Amplitude) point toward where this category should evolve — agents that don't just create flags, but understand when to roll them out based on data.
+Feature Flags & Experimentation MCP servers earn **4.5 out of 5** (up from 4.0). The vendor coverage remains exceptional — nearly every major platform has an official server, rare in the MCP ecosystem. Since April 2026, two key gaps closed: **Optimizely shipped a full public remote MCP suite** (Experimentation + Analytics + Commerce) and **OpenFeature launched a CNCF-standard vendor-agnostic MCP server** for cross-platform flag evaluation. The integration patterns continue maturing: OAuth authentication (DevCycle, Optimizely, Unleash's DCR), hosted endpoints (LaunchDarkly, Optimizely, DevCycle, PostHog), role-based tool exposure (Flagsmith), and purpose-driven workflows (Unleash). The main limitation — most servers treat feature flags as simple CRUD resources rather than the experimentation instruments they are — still stands. Unleash's `evaluate_change` recommendation tool and Amplitude/PostHog/Optimizely's analytics integration are the most credible moves toward flag intelligence. The category is maturing rapidly.
 
 **Best for enterprise teams**: LaunchDarkly MCP — hosted endpoint, structured tool organization, market-leading platform.
 
@@ -213,5 +236,5 @@ Feature Flags & Experimentation MCP servers earn **4.0 out of 5**. The vendor co
 
 **Best for security-conscious teams**: DevCycle MCP — OAuth authentication with permission-level enforcement.
 
-*This review was refreshed on 2026-04-25 using Claude Opus 4.6 (Anthropic). Star counts, tool counts, and platform details verified via web research. VWO FME added as new entry.*
+*This review was originally published and refreshed through April 2026 and again on 2026-05-21 using Claude Sonnet 4.6 (Anthropic). Star counts, tool counts, and platform details verified via web research. May 2026 updates: LaunchDarkly ~20 stars + AgentControl renaming; GrowthBook 22 stars; Unleash remote MCP + OAuth DCR + evaluate_change; Optimizely out of closed beta with full public remote MCP suite; Amplitude open beta; ConfigCat 14 stars; Harness kud/mcp-harness-fme community fork added; OpenFeature MCP server added as new Standards-Based Implementations section; What's Missing updated.*
 

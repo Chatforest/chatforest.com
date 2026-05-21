@@ -5,7 +5,7 @@
 
 Infrastructure as Code changed how teams manage cloud resources — **Terraform configurations, Ansible playbooks, Pulumi programs, OpenTofu modules**. Infrastructure automation MCP servers let AI agents interact with these tools directly: looking up provider documentation, executing plans, managing workspaces, running playbooks, and even delegating multi-step provisioning to autonomous agents.
 
-The headline finding: **IaC MCP is rapidly expanding beyond documentation into execution and governance**. HashiCorp's Terraform MCP server (1,300 stars) crossed a major threshold with v0.5.0 — adding plan/apply tools alongside its registry intelligence, plus Stacks support and policy set management. Pulumi surged to 188 stars (+224%) with Neo delegation for autonomous provisioning. Three previously missing gaps are now filled: **env0 launched an official MCP server**, **Infracost has a community cost estimation MCP**, and **Upbound shipped a Crossplane marketplace MCP server** with 9 tools. Red Hat deepened its Ansible MCP ecosystem with the ansible.mcp collection enabling playbooks to discover and call MCP servers. The remaining gap is configuration management — Chef (EOL November 2026), Puppet/OpenVox, and Salt still have zero MCP presence. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+The headline finding: **IaC MCP is rapidly expanding beyond documentation into execution and governance**. HashiCorp's Terraform MCP server (1,400 stars) reached v0.5.2 — building on plan/apply tools, Stacks support, and policy set management from earlier releases. Pulumi continues with Neo delegation for autonomous provisioning. Red Hat open-sourced **ansible/aap-mcp-server** and reached GA — now a public GitHub repo with full multi-service AAP coverage. Two additional gaps from our April review are now filled: **Spacelift launched spacelift-io/spacelift-intent** (133 stars, natural language provisioning via provider APIs) and **Terramate shipped an MCP server** (5 stars) with dedicated drift detection. The remaining gap is configuration management — Chef (EOL November 2026), Puppet/OpenVox, and Salt still have zero MCP presence. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## The Landscape
 
@@ -13,14 +13,14 @@ The headline finding: **IaC MCP is rapidly expanding beyond documentation into e
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | ~1,300 | Go | 40+ | stdio, StreamableHTTP |
+| [hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | ~1,400 | Go | 40+ | stdio, StreamableHTTP |
 | [severity1/terraform-cloud-mcp](https://github.com/severity1/terraform-cloud-mcp) | ~23 | Python | 60+ | stdio |
-| [nwiizo/tfmcp](https://github.com/nwiizo/tfmcp) | ~363 | Rust | 31 | stdio |
+| [nwiizo/tfmcp](https://github.com/nwiizo/tfmcp) | ~364 | Rust | 34 | stdio |
 | [CodeSSRockMan/terraform-plan-mcp-server](https://github.com/CodeSSRockMan/terraform-plan-mcp-server) | — | — | ~6 | stdio |
 
-**HashiCorp's official terraform-mcp-server is the ecosystem leader.** 1,300 stars, 146 forks, 343 commits. Now at **v0.5.1** (April 2026), the server has crossed a significant architectural threshold — **it now includes plan and apply tools alongside its registry intelligence**. This is a major shift from the original documentation-only philosophy.
+**HashiCorp's official terraform-mcp-server is the ecosystem leader.** ~1,400 stars, 146 forks, 354+ commits. Now at **v0.5.2** (April 28, 2026), the server has crossed a significant architectural threshold — **it now includes plan and apply tools alongside its registry intelligence**. This is a major shift from the original documentation-only philosophy.
 
-v0.4.0 (January 2026) added **Terraform Stacks support** (`list_stacks`, `get_stack_details`), policy set management (`attach_policy_set_to_workspaces`), `get_token_permissions`, and granular `--toolsets`/`--tools` flags for selective capability enablement. v0.5.0 (April 2026) added **five plan/apply tools** for structured JSON plan output and execution logs, bearer token authorization, heartbeat interval configuration for load-balanced environments, and **OpenTelemetry instrumentation** for tool usage metrics. v0.5.1 fixed TLS flag propagation for air-gapped environments.
+v0.4.0 (January 2026) added **Terraform Stacks support** (`list_stacks`, `get_stack_details`), policy set management (`list_workspace_policy_sets`, `attach_policy_set_to_workspaces`), `get_token_permissions`, and granular `--toolsets`/`--tools` flags for selective capability enablement. v0.5.0 (April 2026) added **five plan/apply tools** for structured JSON plan output and execution logs, bearer token authorization, heartbeat interval configuration for load-balanced environments, and **OpenTelemetry instrumentation** for tool usage metrics. v0.5.1 fixed TLS flag propagation for air-gapped environments. v0.5.2 (April 28, 2026) is the current release — further refinements and stability improvements.
 
 40+ tools now organized into toolsets:
 
@@ -30,11 +30,11 @@ v0.4.0 (January 2026) added **Terraform Stacks support** (`list_stacks`, `get_st
 | Registry-Private | Private registry access for enterprise providers/modules |
 | Terraform | Workspace management, variables, runs, **plan/apply operations**, **Stacks**, **policy sets**, token permissions |
 
-Install: `go install github.com/hashicorp/terraform-mcp-server/cmd/terraform-mcp-server@latest` or Docker `hashicorp/terraform-mcp-server:0.5.1`. Dual transport: stdio for local dev, StreamableHTTP at `localhost:8080/mcp` for remote setups. Tool filtering via `--toolsets` (registry, registry-private, terraform) and `--tools` flags.
+Install: `go install github.com/hashicorp/terraform-mcp-server/cmd/terraform-mcp-server@latest` or Docker `hashicorp/terraform-mcp-server:0.5.2`. Dual transport: stdio for local dev, StreamableHTTP at `localhost:8080/mcp` for remote setups. Tool filtering via `--toolsets` (registry, registry-private, terraform) and `--tools` flags.
 
 **severity1/terraform-cloud-mcp** (23 stars, 80 commits, Python, v0.8.20) fills the gap HashiCorp deliberately left: **full Terraform Cloud API coverage**. 60+ tools spanning workspaces, runs, plans, applies, projects, organizations, state versions, variable sets, cost estimation, and assessment results. Features `safe_delete_workspace()` with explicit `ENABLE_DELETE_TOOLS=true` guard for destructive operations and audit-safe response filtering. If you manage HCP Terraform at scale, this is the operational complement to HashiCorp's server.
 
-**nwiizo/tfmcp** (363 stars, 58 commits, Rust, MIT, v0.1.9) takes the opposite philosophy: **full execution**. Init, plan, apply, destroy, state management, workspace operations, import, taint/untaint, formatting, and dependency graphing. Plus security scanning with secret detection, risk-scored plan analysis, drift detection, and module health metrics. 31 tools in a single Rust binary. Now available via **Homebrew** (`brew install tfmcp`). Migrated to Rust Edition 2024 (requires Rust 1.85.0+). This is the "give my AI agent full Terraform CLI access" option — powerful but risky in production.
+**nwiizo/tfmcp** (364 stars, 58+ commits, Rust, MIT, v0.2.0) takes the opposite philosophy: **full execution**. Init, plan, apply, destroy, state management, workspace operations, import, taint/untaint, formatting, and dependency graphing. Plus security scanning with secret detection, risk-scored plan analysis, drift detection, and module health metrics. **v0.2.0** (March 26, 2026) expanded to **34 tools** — adding policy search and provider capability search tools, toolset/individual tool filtering flags (mirrors the `--toolsets`/`--tools` pattern HashiCorp adopted), and upgraded the MCP SDK from rmcp 0.12 to 1.2. Available via **Homebrew** (`brew install tfmcp`). Built on Rust Edition 2024 (requires Rust 1.85.0+). This is the "give my AI agent full Terraform CLI access" option — powerful but risky in production.
 
 **CodeSSRockMan/terraform-plan-mcp-server** adds plan analysis with Webex Teams integration for automated workflow notifications. Niche but useful for CI/CD pipeline integration.
 
@@ -44,24 +44,24 @@ Install: `go install github.com/hashicorp/terraform-mcp-server/cmd/terraform-mcp
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| Red Hat AAP MCP (official) | — | — | 20+ | stdio |
+| [ansible/aap-mcp-server](https://github.com/ansible/aap-mcp-server) | ~27 | TypeScript | 20+ | stdio |
 | [Ansible Development Tools MCP](https://docs.ansible.com/projects/vscode-ansible/mcp/) | — | Python | 10+ | stdio |
 | [ansible-collections/ansible.mcp](https://github.com/ansible-collections/ansible.mcp) | ~4 | Python | MCP plugins | stdio |
-| [bsahane/mcp-ansible](https://github.com/bsahane/mcp-ansible) | ~26 | Python | 35+ | stdio |
-| [sibilleb/AAP-Enterprise-MCP-Server](https://github.com/sibilleb/AAP-Enterprise-MCP-Server) | ~28 | Python | 50+ | stdio |
+| [bsahane/mcp-ansible](https://github.com/bsahane/mcp-ansible) | ~27 | Python | 35+ | stdio |
+| [sibilleb/AAP-Enterprise-MCP-Server](https://github.com/sibilleb/AAP-Enterprise-MCP-Server) | ~30 | Python | 50+ | stdio |
 | [tarnover/mcp-sysoperator](https://github.com/tarnover/mcp-sysoperator) | ~26 | TypeScript | 15+ | stdio |
 
 **Ansible has the broadest MCP server ecosystem of any IaC tool** — six distinct options spanning official, semi-official, and community implementations. Red Hat has also expanded the ecosystem with the **ansible.mcp collection** enabling playbooks to dynamically discover and call MCP servers.
 
-**Red Hat's official AAP MCP server** ships as a technology preview in Ansible Automation Platform 2.6.4, installed as part of the standard AAP installation process. Two modes: read-only for safe querying and monitoring, or read-write for AI agents to execute jobs and implement changes. Covers job management, inventory management, and security compliance. Available as a container image at `ansible-automation-platform-26/mcp-tools-rhel9`. Telemetry data is automatically collected for AAP MCP deployments on January 2026+ patch releases.
+**ansible/aap-mcp-server** (27 stars, TypeScript, Node.js 22+) is the **official open-source Red Hat AAP MCP server**, now at general availability. Previously a closed technology preview bundled with Ansible Automation Platform 2.6.4, Red Hat open-sourced the server at github.com/ansible/aap-mcp-server in 2026. Key features: multi-service support covering EDA (Event-Driven Ansible), Controller, Gateway, and Galaxy; YAML-based configuration with RBAC toolsets for fine-grained access control; Prometheus metrics for observability. Two modes: read-only for safe querying and monitoring, or read-write for AI agents to execute jobs and implement changes. Available as a container image at `ansible-automation-platform-26/mcp-tools-rhel9`. Red Hat positions Ansible as the "execution layer for agentic AI."
 
 **Ansible Development Tools MCP** (tech preview, documented March 2026) is a separate offering focused on development workflows rather than platform operations. Provides access to the Zen of Ansible design philosophy, best practices, virtual environment management, project scaffolding (playbooks, collections), Ansible Lint with auto-fixing, Execution Environment Builder, and Ansible Navigator for playbook execution. Requires Python 3.11+ and Node.js 18+. Communicates via JSON-RPC 2.0 over stdio.
 
 **ansible-collections/ansible.mcp** (4 stars, 112 commits, GPL-3.0, created September 2025) is the official **Ansible MCP Collection** — not an MCP server itself, but Ansible plugins that let playbooks interact with MCP servers. Playbooks can dynamically discover available MCP servers, retrieve tool lists, and execute tools from within automation workflows. This is the complement to mcp_builder: where mcp_builder installs MCP servers into Execution Environments, ansible.mcp lets playbooks consume them.
 
-**bsahane/mcp-ansible** (26 stars, Python) is the most feature-rich community server. 35+ tools across playbook execution, inventory management (parse, graph, diff, find-host), project management, vault operations (encrypt, decrypt, view, rekey), troubleshooting (remote commands, log fetching, service management), diagnostics (health monitoring, performance baselines, state comparison), and advanced analysis (network matrix, security audit, auto-heal). The "Swiss Army knife" for Ansible operations.
+**bsahane/mcp-ansible** (27 stars, Python) is the most feature-rich community server. 35+ tools across playbook execution, inventory management (parse, graph, diff, find-host), project management, vault operations (encrypt, decrypt, view, rekey), troubleshooting (remote commands, log fetching, service management), diagnostics (health monitoring, performance baselines, state comparison), and advanced analysis (network matrix, security audit, auto-heal). The "Swiss Army knife" for Ansible operations.
 
-**sibilleb/AAP-Enterprise-MCP-Server** (28 stars, 10 commits, Python) targets enterprise AAP + EDA environments. 50+ tools covering AAP inventory/host/job/project management, Ansible Galaxy search and recommendations, Event-Driven Ansible (activation management, rulebook querying, event monitoring), Ansible Lint quality tools, and Red Hat documentation access with secure domain validation. This is the enterprise-grade community option.
+**sibilleb/AAP-Enterprise-MCP-Server** (30 stars, Python) targets enterprise AAP + EDA environments. 50+ tools covering AAP inventory/host/job/project management, Ansible Galaxy search and recommendations, Event-Driven Ansible (activation management, rulebook querying, event monitoring), Ansible Lint quality tools, and Red Hat documentation access with secure domain validation. This is the enterprise-grade community option.
 
 **tarnover/mcp-sysoperator** (26 stars, 37 commits, TypeScript, MIT) combines Ansible with Terraform and LocalStack in a single server. Ansible tools for playbook execution, inventory management, and vault operations. Terraform tools for init/plan/apply/destroy. AWS tools for EC2/S3/VPC/CloudFormation. LocalStack integration for testing without real AWS credentials. Still in active development with a disclaimer against production use.
 
@@ -92,9 +92,9 @@ The standout feature is **Neo delegation**: `neo-bridge` launches Pulumi Neo —
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [opentofu/opentofu-mcp-server](https://github.com/opentofu/opentofu-mcp-server) | ~89 | TypeScript | 5 | stdio, HTTP |
+| [opentofu/opentofu-mcp-server](https://github.com/opentofu/opentofu-mcp-server) | ~95 | TypeScript | 5 | stdio, HTTP |
 
-**OpenTofu's official MCP server** (89 stars, 33 commits) mirrors Terraform's documentation-focused philosophy — registry access only, no execution.
+**OpenTofu's official MCP server** (95 stars, 33 commits) mirrors Terraform's documentation-focused philosophy — registry access only, no execution.
 
 5 tools:
 
@@ -133,10 +133,13 @@ The [Kubernetes MCP server](/reviews/kubernetes-mcp-server/) can also interact w
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
 | [env0/mcp-server](https://github.com/env0/mcp-server) | ~4 | TypeScript | 10+ | stdio |
+| [spacelift-io/spacelift-intent](https://github.com/spacelift-io/spacelift-intent) | ~133 | — | 18 | Hosted |
 
-**env0 launched an official MCP server** (4 stars, 46 commits, TypeScript) — the **first Terraform Cloud alternative with MCP support**. Connects AI agents to env0's platform for environment deployment, cancellation, and log retrieval, plus **Cloud Compass** integration for retrieving cloud resource configurations with advanced filtering. Can generate Terraform/OpenTofu code from existing cloud resources. Compatible with Cursor, Claude Code, VS Code, Windsurf, Cline, Zed, JetBrains, and others. env0's platform also includes Cloud Analyst (AI-powered infrastructure insights via natural language) and Code Optimizer (beta, IaC security/config scanning with actionable Git fixes).
+**env0 launched an official MCP server** (4 stars, 46 commits, TypeScript) — connecting AI agents to env0's platform for environment deployment, cancellation, and log retrieval, plus **Cloud Compass** integration for retrieving cloud resource configurations with advanced filtering. Can generate Terraform/OpenTofu code from existing cloud resources. Compatible with Cursor, Claude Code, VS Code, Windsurf, Cline, Zed, JetBrains, and others. env0's platform also includes Cloud Analyst (AI-powered infrastructure insights via natural language) and Code Optimizer (beta, IaC security/config scanning with actionable Git fixes).
 
-Spacelift and Scalr still have no MCP presence.
+**Spacelift now has MCP presence via two offerings.** First, **spacelift-io/spacelift-intent** (133 stars) — an MCP server for natural language infrastructure provisioning that calls provider APIs directly, bypassing IaC files entirely. 18 tools covering provider discovery, resource lifecycle (create/update/delete/refresh/import), state management, and dependency management. Second, Spacelift accounts expose a hosted MCP endpoint (`/mcp` at your account URL) with 5 tools: `discover`, `query`, `mutate`, `provider`, and `intent` — giving Claude agents access to Spacelift's GraphQL API directly. The previously flagged gap is now filled.
+
+Scalr still has no MCP presence.
 
 ### Cost Estimation
 
@@ -145,6 +148,14 @@ Spacelift and Scalr still have no MCP presence.
 | [phildougherty/infracost_mcp](https://github.com/phildougherty/infracost_mcp) | ~2 | TypeScript | 16 | stdio |
 
 **phildougherty/infracost_mcp** (2 stars, 10 commits, MIT) is the **first Infracost MCP server** — filling a gap we flagged in the previous version of this review. 16 tools: cost breakdown generation (JSON, HTML, table, diff formats), configuration comparison (`diff`), Infracost Cloud upload for centralized tracking, PR commenting (GitHub, GitLab, Azure Repos, Bitbucket), tagging policy management (create/list/get/update/delete with ANY/LIST/REGEX validation), cost guardrail management (thresholds that block PRs), and usage YAML templates (small/medium/large). Early-stage but functional.
+
+### Drift Detection
+
+| Server | Stars | Language | Tools | Transport |
+|--------|-------|----------|-------|-----------|
+| [terramate-io/terramate-mcp-server](https://github.com/terramate-io/terramate-mcp-server) | ~5 | — | 13 | stdio |
+
+**terramate-io/terramate-mcp-server** (5 stars) is the **first MCP server with dedicated IaC drift detection** — filling a gap we flagged in the April review. 13 tools covering Terramate Cloud operations: stack management, **drift detection** (view drift runs and retrieve Terraform plan outputs for drifted resources), pull request integration, deployment tracking, and stack resource listing. This fills a meaningful monitoring gap — where tfmcp's `analyze_state` approach requires direct CLI access, Terramate's server connects to cloud-managed drift monitoring. Still very early-stage (5 stars), but the category needed exactly this.
 
 ### Multi-Tool / Cross-Platform
 
@@ -157,29 +168,34 @@ MCP-sysoperator (covered under Ansible above) is the only server attempting cros
 ## What's Missing
 
 - **No Chef, Puppet/OpenVox, or SaltStack MCP servers** — Chef Infra Server hits end-of-life November 2026, Puppet's community forked to OpenVox after Perforce restricted binary access, and SaltStack remains quiet. Zero MCP presence across all three, reflecting the industry's accelerating shift toward IaC and immutable infrastructure
-- **No CDK MCP server** — AWS CDK has no dedicated MCP server (the [AWS MCP collection](/reviews/aws-mcp-servers/) covers CDK through broader AWS tooling)
 - **No cross-IaC registry** — no single server queries Terraform Registry, Pulumi Registry, and OpenTofu Registry simultaneously
-- **No Spacelift or Scalr MCP servers** — only env0 among Terraform Cloud alternatives has shipped MCP support
-- **No drift detection MCP** — no server specifically monitors for infrastructure drift across providers (tfmcp's `analyze_state` comes closest)
+- **No Scalr MCP server** — Scalr remains the only major Terraform Cloud alternative with no MCP presence
+- ~~No Spacelift MCP server~~ — **gap filled**: spacelift-io/spacelift-intent (133 stars) for natural language provisioning + hosted MCP endpoint at Spacelift account URL
+- ~~No drift detection MCP~~ — **gap filled**: terramate-io/terramate-mcp-server (5 stars, 13 tools) adds cloud-managed drift monitoring via Terramate Cloud
+- ~~No CDK MCP server~~ — **gap filled** (covered via [AWS MCP collection](/reviews/aws-mcp-servers/)'s dedicated `cdk-mcp-server` sub-server)
 - ~~No cost estimation MCP~~ — **gap filled**: phildougherty/infracost_mcp now provides 16 tools for Terraform cost estimation, though still early-stage (2 stars)
 - ~~No Crossplane official server~~ — **gap filled**: upbound/marketplace-mcp-server provides 9 tools for Crossplane package discovery
 - ~~No env0 MCP server~~ — **gap filled**: env0 shipped an official MCP server with Cloud Compass integration
 
 ## The Bottom Line
 
-**Rating: 4.0 / 5** — The category is maturing rapidly. HashiCorp's Terraform MCP server (1,300 stars, v0.5.1) crossed the execution threshold with plan/apply tools, Stacks support, and policy management — it's no longer just registry intelligence. Pulumi surged to 188 stars (+224%) with Neo delegation for autonomous provisioning. Red Hat deepened the Ansible ecosystem with the ansible.mcp collection for playbook-level MCP integration. Three previously flagged gaps are now filled: env0 shipped an official MCP server, Infracost has community cost estimation, and Upbound launched a Crossplane marketplace server. The category still loses points for the configuration management gap (Chef EOL November 2026, no Puppet/OpenVox or SaltStack MCP servers) and limited cross-platform tooling.
+**Rating: 4.5 / 5** — The category has matured significantly. HashiCorp's Terraform MCP server (1,400 stars, v0.5.2) is now firmly in execution territory — plan/apply, Stacks, policy management, and OpenTelemetry instrumentation. Red Hat open-sourced ansible/aap-mcp-server at GA (27 stars) with full multi-service AAP coverage and Prometheus metrics. Two additional previously-flagged gaps are now filled: Spacelift shipped spacelift-io/spacelift-intent (133 stars) for natural language provisioning plus a hosted GraphQL MCP endpoint, and Terramate launched a dedicated drift detection MCP server. The category loses half a point for the configuration management gap (Chef EOL November 2026, no Puppet/OpenVox or SaltStack MCP servers) and the lack of a cross-IaC registry — but these reflect declining market relevance rather than missed opportunities.
 
-**Best for Terraform teams:** [hashicorp/terraform-mcp-server](/reviews/terraform-mcp-server/) for registry intelligence + plan/apply (v0.5.1), paired with severity1/terraform-cloud-mcp for full TFC API coverage or nwiizo/tfmcp for direct CLI access.
+**Best for Terraform teams:** [hashicorp/terraform-mcp-server](/reviews/terraform-mcp-server/) for registry intelligence + plan/apply (v0.5.2), paired with severity1/terraform-cloud-mcp for full TFC API coverage or nwiizo/tfmcp (v0.2.0, 34 tools) for direct CLI access.
 
-**Best for Ansible teams:** Red Hat's official AAP MCP server if you run AAP 2.6.4+. Otherwise, sibilleb/AAP-Enterprise-MCP-Server (50+ tools) for enterprise environments or bsahane/mcp-ansible (35+ tools) for standalone Ansible.
+**Best for Ansible teams:** ansible/aap-mcp-server (official, open-source, GA) for AAP 2.6.4+ deployments. For enterprise environments, sibilleb/AAP-Enterprise-MCP-Server (50+ tools) adds EDA and Galaxy AI recommendations. For standalone Ansible, bsahane/mcp-ansible (35+ tools) covers the most operational ground.
 
 **Best for Pulumi teams:** [pulumi/mcp-server](/reviews/pulumi-mcp-server/) — the remote hosted mode with Neo delegation is unique in the IaC space.
 
+**Best for Spacelift teams:** spacelift-io/spacelift-intent for natural language infrastructure provisioning, or the hosted GraphQL endpoint for account-level operations.
+
 **Best for cost management:** phildougherty/infracost_mcp for Terraform cost estimation — early-stage but fills a critical gap.
+
+**Best for drift monitoring:** terramate-io/terramate-mcp-server for Terramate Cloud environments — the first dedicated drift detection MCP server in the IaC space.
 
 ---
 
-*This review covers publicly available information as of April 2026. ChatForest researches MCP servers thoroughly through documentation, GitHub repositories, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. Always check the linked repositories for the latest status.*
+*This review covers publicly available information as of May 2026. ChatForest researches MCP servers thoroughly through documentation, GitHub repositories, and community discussions — we do not test servers hands-on. Star counts are approximate and change over time. Always check the linked repositories for the latest status.*
 
-*This review was last edited on 2026-04-25 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-21 using Claude Sonnet 4.6 (Anthropic).*
 
