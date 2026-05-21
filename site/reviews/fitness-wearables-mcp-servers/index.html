@@ -1144,6 +1144,20 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-22 00:00:00</span></div>
+  <h3><a href="/reviews/google-gemini-managed-agents-api-review/">Google Managed Agents API Review — Full Agent Sandbox in One API Call</a></h3>
+  <p>Google launched the Managed Agents API in preview at Google I/O 2026. It provisions a full agent sandbox — ephemeral Linux environment, code execution, web browsing, MCP servers, and file access — with a single Gemini API call. We cover the architecture, AGENTS.md configuration, pricing model, ADK 2.0 context, and the real limitations before production deployment.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-22 00:00:00</span></div>
+  <h3><a href="/reviews/google-webmcp-browser-mcp-standard-review/">Google WebMCP Review — Bringing MCP to the Browser</a></h3>
+  <p>Google WebMCP is a proposed open web standard, announced at Google I/O 2026, that lets any website expose structured tools to in-browser AI agents without a backend. Two API surfaces — Declarative (HTML form annotations) and Imperative (navigator.modelContext) — let developers register MCP-style tools that Gemini in Chrome can call directly. The Chrome 149 origin trial is open to developers now. We cover what WebMCP is, how it compares to server-side MCP, who is backing it, its limitations, and whether it matters.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-05-21 11:00:00</span></div>
   <h3><a href="/reviews/alibaba-qwen3-coder-next-efficient-coding-agent-review/">Qwen3-Coder-Next Review: 80B/3B MoE, 74% SWE-Bench, Apache 2.0 — The Efficiency Story</a></h3>
   <p>Qwen3-Coder-Next (released February 4, 2026) is the efficient successor to the Qwen3-Coder 480B-A35B flagship. Architecture: sparse MoE with hybrid attention, 80 billion total parameters, 3 billion active per token — roughly 12x fewer active parameters than the 480B predecessor. Despite the active parameter reduction, Qwen3-Coder-Next scores 74.2% on SWE-Bench Verified (with SWE-Agent scaffold) and 63.7% on SWE-Bench Multilingual, making it one of the most benchmark-efficient coding models ever measured. Context: 256K tokens. License: Apache 2.0 — fully open-weight, commercial use permitted. API access: Alibaba Cloud Dashscope at $0.11/M input, $0.80/M output, plus OpenRouter, Together.ai, Novita, and Parasail. qwen-code CLI tool (adapted from Gemini CLI) ships as a companion terminal agent. GitHub: QwenLM/Qwen3-Coder, ~17K stars. Technical report: arXiv:2603.00729. Rating: 4/5.</p>
@@ -1154,20 +1168,6 @@
   <div class="card-meta"><span>Reviews</span> <span>2026-05-21 00:00:00</span></div>
   <h3><a href="/reviews/google-antigravity-2-agent-first-dev-platform-review/">Google Antigravity 2.0 Review — Agent-First Dev Platform With a Rocky Launch</a></h3>
   <p>Google Antigravity 2.0 launched at Google I/O 2026 on May 19 as a five-surface agent-first development platform: desktop app, CLI, SDK, Managed Agents API, and Enterprise Platform. Powered by Gemini 3.5 Flash, it adds parallel subagent orchestration, a built-in browser agent, A2A protocol support, and a $100/month AI Ultra tier. The 2.0 auto-update also broke existing user environments and shipped a CLI that isn&#39;t yet available on any package manager. We cover the full feature set, pricing, competitive comparison with Claude Code and Cursor, and the launch-day fallout.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Reviews</span> <span>2026-05-21 00:00:00</span></div>
-  <h3><a href="/reviews/google-gemini-3-5-flash-agentic-speed-llm-review/">Google Gemini 3.5 Flash Review — Flash-Tier Speed, Pro-Tier Agentic Performance</a></h3>
-  <p>Google Gemini 3.5 Flash launched at Google I/O 2026 on May 19 as the first Flash-tier model to lead Pro-tier models on agentic benchmarks. It tops MCP Atlas (83.6%), MMMU-Pro, CharXiv Reasoning, and Finance Agent v2 while running at 289 tok/s — four times the speed of competing frontier models. We cover the launch, benchmarks, pricing, hallucination rate, limitations, and where Gemini 3.5 Flash fits against GPT-5.5 and Claude Opus 4.7.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-21 00:00:00</span></div>
-  <h3><a href="/reviews/openai-gpt-realtime-2-voice-intelligence-review/">OpenAI GPT-Realtime-2 — Voice Intelligence with GPT-5-Class Reasoning</a></h3>
-  <p>OpenAI&#39;s GPT-Realtime-2 (May 7, 2026) is the first voice model built on GPT-5-class reasoning — it thinks while it talks. The 128K-token context window is four times larger than its predecessor. On Artificial Analysis Big Bench Audio it leads at 96.6%, tied with Google&#39;s Gemini 3.1 Flash Live Preview. On Scale AI Audio MultiChallenge S2S it scores 70.8% versus 36.7% for the prior generation. It can plan, use multiple tools simultaneously, recover from interruptions, and integrate remote MCP servers directly in the session config. Two companion models ship alongside: GPT-Realtime-Translate (70&#43; input languages → 13 output languages, $0.034/min) and GPT-Realtime-Whisper (streaming transcription, $0.017/min). The Realtime API exits beta and becomes generally available for production. Pricing for GPT-Realtime-2: $32/$64 per 1M audio in/out tokens. Prompt caching drops input cost 80× to $0.40/1M. All-in cost on a typical conversation: roughly $0.30/min. The tension: reasoning capability adds latency (2.33s at high effort vs 1.12s at minimal), and the output language count for Translate (13) lags broader translation services. Rating: 4/5.</p>
 </div>
 
   
