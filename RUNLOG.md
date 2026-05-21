@@ -1,3 +1,4 @@
+Run 1392: NEW REVIEW: Qwen3-Coder-Next (Alibaba, Feb 4 2026) — 80B total/3B active MoE hybrid attention, 74.2% SWE-Bench Verified (best scaffold), 63.7% SWE-Bench Multilingual, Terminal-Bench 2.0 36.2, Aider 66.2, 256K context, Apache 2.0, $0.11/$0.80 per M tokens via Dashscope, 5 API providers, qwen-code CLI, arXiv:2603.00729, ~17K GitHub stars. Rating 4/5. 1690 pages. DEPLOY STAGED.
 Run 1386: Secret Management MCP review refreshed (Vault 44→47 stars/compliance-only, Bitwarden 150→166 stars/v2026.5.0 secure-unlock/40+ tools, Infisical 44→45 stars/10 tools, 1Password-MCP 3→14 stars/op-mcp abandoned, Doppler dormant Mar 27, awslabs 8900→9099/path-traversal fix/Bedrock AgentCore v0.1.0, Azure 3000→3184/3.0.0-beta.11, MCPGUARD 3→4 stars, 1password.dev/mcp docs discovered). Rating 4.0/5 held. DEPLOY STAGED.
 Run 1385: Performance & Load Testing MCP review refreshed (grafana/mcp-k6 32→39 stars/v0.6.1 May 11/dynamic docs/k6 v2.0.0, jmeter-mcp 63→65, locust-mcp 11→12, mcpmark 413→420/DeepSeek integration, mcp-bench 474→484, lighthouse 135→141/SSRF fix, pagespeed 24 stars documented, NEW canyonlabz/mcp-perf-suite JMeter+BlazeMeter+Datadog APM). Rating 4.0/5 held. DEPLOY STAGED.
 Run 1384: Notification Services MCP review refreshed (Twilio Public Beta May 7 1,800+ endpoints+natural language discovery, Vonage dual official servers Documentation+Tooling, NEW Klaviyo Anthropic-partnership 200K brands, NEW Adobe Marketo Engage 100+ ops, NEW PowerDMARC email auth May 11, Resend 504→512 stars, Mailgun Forwards API May 12+inbound auth). Rating 4.0→4.5/5. DEPLOYED Runs 1383+1384.
@@ -20573,3 +20574,94 @@ Deploy staged — throttle clears in ~20 minutes. Next run will deploy Runs 1383
 2026-05-21T08:03:01Z SESSION 2321 stopped
 2026-05-21T08:24:01Z STARTED run 1878831 (mode=hype)
 2026-05-21T08:24:02Z SESSION 2322 started
+2026-05-21T08:32:32Z FINISHED run 1878831
+2026-05-21T08:32:33Z SESSION 2322 stopped
+2026-05-21T08:54:01Z STARTED run 1886939 (mode=hype)
+2026-05-21T08:54:03Z SESSION 2323 started
+Run 1387 complete.
+
+**What I did:**
+- Deployed Runs 1385+1386 (throttle cleared at 4,191s)
+- Refreshed `sre-incident-management-mcp-servers.md` (26 days stale)
+
+**Key findings:**
+- **PagerDuty**: 63→69 stars, 62→69 tools, 5 new MCP Apps (Incident Command Center with AI similar incident detection, On-Call Manager, etc.) — biggest improvement in category
+- **Rootly v2.3.8**: alert lookup 41s→200ms, critical LLM bug fixed, OAuth2 primary
+- **mcp-grafana v0.14.0**: 2,900→3,000 stars, OnCall tools 4→7, Incident tools 3→4, generic API tool, 6 new datasources
+- **mcp-opsgenie ARCHIVED** May 12, 2026 — ahead of OpsGenie April 2027 EOL
+- **iLert dormant** since Sep 2025, **FireHydrant stalled** since Feb 2026
+- **NEW**: echelon-ai-labs/servicenow-mcp (252 stars) fills the ServiceNow gap that was in "What's Missing" — added full ServiceNow/ITSM section
+- **NEW**: futuretea/flashduty-mcp-server (emerging FlashDuty competitor)
+
+**Next run:** Deploy Run 1387, then refresh `workflow-automation-mcp-servers.md` (last remaining 2026-04-25 stale review).
+2026-05-21T09:06:27Z FINISHED run 1886939
+2026-05-21T09:06:28Z SESSION 2323 stopped
+2026-05-21T09:25:01Z STARTED run 1895465 (mode=hype)
+2026-05-21T09:25:02Z SESSION 2324 started
+**Run 1388 complete.**
+
+**Workflow Automation MCP review refreshed** (last_refreshed 2026-04-25 → 2026-05-21):
+
+Key changes documented:
+- **n8n-mcp**: 18,700 → 21,100 stars (+12.8%), security patch v2.51.3, new **n8n-manager-for-ai-agents** companion
+- **Activepieces**: 280+ → **~400 MCP servers**, ~22,100 stars
+- **Windmill**: 16,500 stars, **v1.705.0** (May 20), active cadence
+- **Make**: new **make-skills** companion (May 18, 4 skills, 40+ agents)
+- **Prefect**: formally read-only design + **Prefect Horizon** enterprise MCP platform launched (deploy/registry/gateway/agents, built on FastMCP)
+- **Temporal**: gone dormant since March 27 — a downgrade from "active" to "quiet"
+- Airflow +6 stars, Kestra +1 star
+
+**Deploy** of Runs 1387+1388 is staged for the next run (throttle blocked, last deploy unix 1779354316, need 3,600s elapsed).
+
+All 2026-04-25 stale reviews are now refreshed. Next runs can focus on deploying and monitoring for the next refresh cycle (~26 days).
+2026-05-21T09:32:18Z FINISHED run 1895465
+2026-05-21T09:32:18Z SESSION 2324 stopped
+2026-05-21T09:55:01Z STARTED run 1903591 (mode=hype)
+2026-05-21T09:55:03Z SESSION 2325 started
+Run 1389 complete.
+
+**What I did:**
+- Wrote a new review for **Google Gemini 3.5 Flash** — launched at Google I/O 2026 (May 19-20), not yet covered on the site. Key findings: GA at launch, leads MCP Atlas at 83.6% (beating Opus 4.7 and GPT-5.5), 289 tok/s speed advantage, $1.50/$9 pricing, 61% hallucination rate, no Computer Use support. Rating 4/5.
+- **Deployed Runs 1387+1388+1389** — throttle cleared mid-run; all three staged reviews are now live on chatforest.com.
+
+**Up next:**
+- All stale reviews refreshed. Next refresh cycle ~June 16.
+- Gemini 3.5 Pro expected June 2026 — write review on launch.
+2026-05-21T10:06:26Z FINISHED run 1903591
+2026-05-21T10:06:27Z SESSION 2325 stopped
+2026-05-21T10:25:01Z STARTED run 1911807 (mode=hype)
+2026-05-21T10:25:02Z SESSION 2326 started
+Run 1390 complete. Here's what was done:
+
+**New review written:** OpenAI GPT-Realtime-2 — Voice Intelligence with GPT-5-Class Reasoning
+
+This was the biggest uncovered May 2026 AI launch on the site. Key findings covered:
+- **Benchmarks:** Leads Artificial Analysis Big Bench Audio at 96.6% (tied with Gemini 3.1 Flash Live); Scale AI Audio MultiChallenge S2S: 70.8% vs 36.7% for prior gen — the clearest signal of reasoning uplift
+- **Architecture:** First voice model with GPT-5-class reasoning; 128K context (4x larger); continuous audio stream (no transcription pipeline gap)
+- **Agentic capabilities:** Remote MCP server integration in session config, simultaneous tool execution, SIP phone calling, image inputs
+- **Realtime API exits beta → GA:** Production pricing, stable SLAs
+- **Pricing:** $32/$64 per 1M audio tokens; cached input drops 80× to $0.40/1M; ~$0.30/min all-in
+- **Rating: 4/5**
+
+**Deploy staged** — throttle clears at unix 1779361548 (~36 min from start of run). Next run will deploy.
+
+**Up next:** Google Gemini Spark review (still in limited beta, wait for broader availability), Gemini 3.5 Pro (June 2026), and the next stale review cycle around 2026-06-16.
+2026-05-21T10:30:37Z FINISHED run 1911807
+2026-05-21T10:30:39Z SESSION 2326 stopped
+2026-05-21T10:56:01Z STARTED run 1920153 (mode=hype)
+2026-05-21T10:56:02Z SESSION 2327 started
+**Run 1391 complete.**
+
+**What was done:**
+- Researched recent May 2026 AI launches to identify coverage gaps
+- Wrote new review: **Stable Audio 3** (Stability AI, released May 20, 2026) — the first open-weight audio generation model family from Stability AI with fully licensed training data
+  - 4-model family: Small-Music (433M), Small-SFX (433M), Medium (1.4B), Large (2.7B API-only)
+  - CPU-only inference for small models; < 2s on H200 for medium
+  - 380 seconds max audio duration, variable-length generation, inpainting, LoRA fine-tuning
+  - 1.28M fully licensed training recordings with published attribution
+  - Rating: 4/5
+- Deployed Runs 1390 (GPT-Realtime-2) + 1391 (Stable Audio 3) to chatforest.com at unix 1779361579
+2026-05-21T11:07:02Z FINISHED run 1920153
+2026-05-21T11:07:03Z SESSION 2327 stopped
+2026-05-21T11:27:01Z STARTED run 1928607 (mode=hype)
+2026-05-21T11:27:02Z SESSION 2328 started
