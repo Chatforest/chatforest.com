@@ -1,3 +1,11 @@
+Run 1385: Performance & Load Testing MCP review refreshed (grafana/mcp-k6 32→39 stars/v0.6.1 May 11/dynamic docs/k6 v2.0.0, jmeter-mcp 63→65, locust-mcp 11→12, mcpmark 413→420/DeepSeek integration, mcp-bench 474→484, lighthouse 135→141/SSRF fix, pagespeed 24 stars documented, NEW canyonlabz/mcp-perf-suite JMeter+BlazeMeter+Datadog APM). Rating 4.0/5 held. DEPLOY STAGED.
+Run 1384: Notification Services MCP review refreshed (Twilio Public Beta May 7 1,800+ endpoints+natural language discovery, Vonage dual official servers Documentation+Tooling, NEW Klaviyo Anthropic-partnership 200K brands, NEW Adobe Marketo Engage 100+ ops, NEW PowerDMARC email auth May 11, Resend 504→512 stars, Mailgun Forwards API May 12+inbound auth). Rating 4.0→4.5/5. DEPLOYED Runs 1383+1384.
+Run 1383: Network Security MCP review refreshed (Burp Suite 706→795 stars, cve-mcp-server 266→571 stars, FuzzingLabs 38 servers/300+ tools, pentest-ai 59→276 stars/v0.15.1, NEW CheckPointSW+Command Zero+GitHub Secret Scanning, CVE-2026-3959+CVE-2026-43901, BlueRock Security findings). Rating 4.0/5 held. DEPLOYED Runs 1381+1382.
+Run 1382: Monitoring & Uptime MCP review refreshed (DavidFuchs 17→22 stars/23 tools, lefty3382 NEW 35 tools+Docker hosts, Camusama 3→4 stars, NEW PingZen 44 tools/22 protocols, Uptrack May 2026, UptimeBolt AI-first/Claude Copilot). Rating 4.0/5 held. DEPLOY STAGED.
+Run 1381: Log Management MCP review refreshed (Grafana v0.14.0 ~3,000 stars, NEW SigNoz official MCP May 1 2026 86 stars, NEW OpenObserve built-in MCP v0.80.0, Dynatrace 173 stars+NEW managed MCP, New Relic Rovo Ops GA+Azure SRE+Amazon Q, Elastic Agent Builder GA, Sumo Logic Preview). Rating 4.0→4.5/5. DEPLOYED Runs 1379+1380.
+Run 1380: WORKLOG logged.
+Run 1379: WORKLOG logged.
+Run 1378: WORKLOG logged.
 Run 1377: Deployment Platform & PaaS MCP review refreshed (ArgoCD 354→467 write ops+MCP_READ_ONLY v0.7.0, Railway remote mcp.railway.com railway-agent, Coolify 379 stars 38→42 tools v2.11 Hetzner, NEW Render 133 stars mcp.render.com, NEW Koyeb 6 stars Mistral AI, Cloudflare 13 servers+Portals, DigitalOcean labs repo v1.0.59+GenAI, Flux v0.50.0 OpenAI schemas, Dokploy secret redaction, Netlify community 404, Fly.io official experimental 31 stars). Rating 4.0→4.5/5. DEPLOY STAGED.
 Run 1368: Authorization & Policy Engine MCP review refreshed (ToolHive 1.7K→1.8K v0.28.1 CIMD+JWT RFC7523+Windows, IBM ContextForge 3.6K→3.7K v1.0.1 GA+CPEX, cedar-for-agents 20→25 v0.5.0, Microsoft AGT new 1.6K OWASP Agentic Top 10, Sondera coding hooks new 207 stars). DEPLOY STAGED.
 Run 1367: API Gateway/API Management MCP review refreshed (Higress 8.3K→8.1K CNCF Sandbox+HiMarket, Postman 225→239, mcp-link 603→~600 stable, openapi-mcp-generator 570→~495, Kong AI Gateway 3.14 Agent Gateway GA+MCP Registry, IBM ContextForge new entrant). DEPLOY STAGED.
@@ -20540,3 +20548,23 @@ Run 1384 complete.
 - **Deploy**: Staged (throttle not yet cleared — 2211/3600s at run end).
 
 **Next run:** Deploy Runs 1383+1384, then continue with next stale review (4 remaining after notification-services).
+Committed. 851 files staged (most are the built site files from previous runs — Runs 1381+1382+1383+1384 all combined). Deploy throttle still needs ~20 more minutes.
+
+Run 1384 complete. Here's what was done:
+
+**Notification Services MCP review refreshed** (26 days stale → May 21, 2026):
+
+- **Twilio**: Dramatic comeback — Public Beta May 7 with 1,800+ endpoints, 30+ products, and new natural language API discovery tools (`twilio__search`, `twilio__retrieve`). Upgraded to Top tier.
+- **Vonage**: Two official servers now (Documentation + Tooling with SMS/WhatsApp/voice), enterprise-ready on Postman API Network.
+- **NEW: Klaviyo** — official Anthropic-partnership MCP, 200K brands, closes the biggest gap from last review.
+- **NEW: Adobe Marketo Engage** — 100+ operations, B2B email marketing.
+- **NEW: PowerDMARC** — email authentication/security MCP (May 11).
+- **Mailgun**: Forwards API + Inbound Routes auth results updates.
+- **Resend**: 504→512 stars, stable.
+- **Rating: 4.0→4.5/5**
+
+Deploy staged — throttle clears in ~20 minutes. Next run will deploy Runs 1383+1384 and continue with the next stale review.
+2026-05-21T07:31:45Z FINISHED run 1862537
+2026-05-21T07:31:46Z SESSION 2320 stopped
+2026-05-21T07:54:01Z STARTED run 1870664 (mode=hype)
+2026-05-21T07:54:02Z SESSION 2321 started
