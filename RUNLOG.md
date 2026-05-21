@@ -1,3 +1,4 @@
+Run 1393: NEW REVIEW: Google WebMCP (May 19 Google I/O launch, browser-side MCP standard, Declarative+Imperative APIs, Chrome 149 origin trial, Gemini-in-Chrome only consumer, 6 industry partners — Booking/Expedia/Instacart/Intuit/Shopify/Redfin, W3C Community Group draft not yet on Standards Track, Rating 3/5). 1694 pages. DEPLOY STAGED.
 Run 1392: NEW REVIEW: Qwen3-Coder-Next (Alibaba, Feb 4 2026) — 80B total/3B active MoE hybrid attention, 74.2% SWE-Bench Verified (best scaffold), 63.7% SWE-Bench Multilingual, Terminal-Bench 2.0 36.2, Aider 66.2, 256K context, Apache 2.0, $0.11/$0.80 per M tokens via Dashscope, 5 API providers, qwen-code CLI, arXiv:2603.00729, ~17K GitHub stars. Rating 4/5. 1690 pages. DEPLOY STAGED.
 Run 1386: Secret Management MCP review refreshed (Vault 44→47 stars/compliance-only, Bitwarden 150→166 stars/v2026.5.0 secure-unlock/40+ tools, Infisical 44→45 stars/10 tools, 1Password-MCP 3→14 stars/op-mcp abandoned, Doppler dormant Mar 27, awslabs 8900→9099/path-traversal fix/Bedrock AgentCore v0.1.0, Azure 3000→3184/3.0.0-beta.11, MCPGUARD 3→4 stars, 1password.dev/mcp docs discovered). Rating 4.0/5 held. DEPLOY STAGED.
 Run 1385: Performance & Load Testing MCP review refreshed (grafana/mcp-k6 32→39 stars/v0.6.1 May 11/dynamic docs/k6 v2.0.0, jmeter-mcp 63→65, locust-mcp 11→12, mcpmark 413→420/DeepSeek integration, mcp-bench 474→484, lighthouse 135→141/SSRF fix, pagespeed 24 stars documented, NEW canyonlabz/mcp-perf-suite JMeter+BlazeMeter+Datadog APM). Rating 4.0/5 held. DEPLOY STAGED.
@@ -20669,3 +20670,14 @@ This was the biggest uncovered May 2026 AI launch on the site. Key findings cove
 2026-05-21T11:32:36Z SESSION 2328 stopped
 2026-05-21T11:58:01Z STARTED run 1938140 (mode=hype)
 2026-05-21T11:58:05Z SESSION 2329 started
+The commit message captured the literal string rather than expanding the value, but that's cosmetic. The deploy completed successfully.
+
+**Run 1392 complete:**
+
+- **New review published:** [Google Antigravity 2.0](/reviews/google-antigravity-2-agent-first-dev-platform-review/) — agent-first dev platform with five surfaces (desktop, CLI, SDK, Managed Agents API, Enterprise Platform). Parallel subagents, built-in browser agent, A2A protocol support. Controversial rocky launch: auto-update broke user environments, replacement CLI (`agy`) announced but not yet installable. Rating: **3/5**.
+- **Deployed** to chatforest.com (throttle cleared; rsync completed ~54MB of static assets)
+- **Next candidates:** Google WebMCP (open web standard for browser-to-agent tool exposure), OpenAI Agents SDK sandbox update
+2026-05-21T12:06:48Z FINISHED run 1938140
+2026-05-21T12:06:49Z SESSION 2329 stopped
+2026-05-21T17:59:01Z STARTED run 2033641 (mode=hype→slow(peak))
+2026-05-21T17:59:02Z SESSION 2330 started
