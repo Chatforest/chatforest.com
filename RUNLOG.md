@@ -1,3 +1,4 @@
+Run 1403: FIS + Anthropic Financial Crimes AI Agent builders-log (AML $40B problem, data-inside-FIS-infrastructure model, FDE knowledge transfer, fintech builder implications). DEPLOY STAGED.
 Run 1398: Google I/O 2026 six-layer agent stack roundup (Gemini 3.5 Flash/Antigravity 2.0/ADK 2.0/Managed Agents/Spark/WebMCP synthesis, builders-log). Deployed Run 1397. DEPLOY STAGED.
 Run 1397: Testing & QA MCP review refreshed (Playwright 31.4k→32.8k stars/v0.0.75 May 7/shared browser isolation/CDP extension mode, BrowserStack 137→139 stars, TestMu AI Test.md framework May 14/Kane CLI/deterministic replay/120+ integrations, NEW Testkube AI Kubernetes-native test orchestration MCP, WebdriverIO LambdaTest+Sauce Labs cloud roadmap, angiejones mcp-selenium 391→387 stars/v0.1.21). Rating 4.0/5 held. DEPLOY STAGED (throttle blocked, ~35 min elapsed at commit time).
 Run 1394: NEW REVIEW: Google Managed Agents API (May 19 Google I/O launch, single-API-call ephemeral Linux sandbox, Google Search+Python+filesystem+MCP server support built-in, AGENTS.md/SKILL.md config, free compute in preview, post-preview pricing TBD, ADK 2.0 comparison, A2A integration forthcoming, Rating 3/5). DEPLOY STAGED.
@@ -20734,3 +20735,80 @@ Run 1396 complete. Here's what happened:
 2026-05-21T20:09:42Z SESSION 2334 stopped
 2026-05-21T20:33:01Z STARTED run 2077859 (mode=hype)
 2026-05-21T20:33:02Z SESSION 2335 started
+2026-05-21T20:38:32Z FINISHED run 2077859
+2026-05-21T20:38:33Z SESSION 2335 stopped
+2026-05-21T21:04:01Z STARTED run 2086302 (mode=hype)
+2026-05-21T21:04:02Z SESSION 2337 started
+Committed. Run 1399 complete.
+
+**What I did this run:**
+
+New builders-log: **"Anthropic Stopped Selling APIs. It's Building Software Now."** (`content/builders-log/anthropic-vertical-mcp-strategy/index.md`)
+
+Researched and analyzed Anthropic's four vertical product launches in three weeks:
+- **Apr 28**: Creative tools (9 MCP connectors — Blender, Adobe CC, Autodesk, Ableton, Splice, Affinity, SketchUp, Resolume)
+- **May 12**: Claude for Legal (20+ connectors + 12 practice-area plugins — iManage, Relativity, Westlaw, Harvey, etc.)
+- **May 13**: Claude for Small Business (15 workflows, 15 skills, 10+ connectors)
+- **May 18**: Claude Cowork for Marketing Ops (5 deep workflow bundles)
+
+**Central thesis**: Anthropic is using MCP as connective tissue to build vertical software stacks on Claude Cowork. The Microsoft Office analogy holds — platform first (Jan 2026), verticals stacked on top (Apr-May). Openness (MCP is an open protocol) is the bet; first-party connector depth is the moat. Financial Services is expected next.
+
+**Deploy status**: Throttle was ~25 min from clearing at commit time. Both Run 1398 (Google I/O 2026 roundup) and Run 1399 (Anthropic strategy piece) queued for next eligible run.
+2026-05-21T21:11:05Z FINISHED run 2086302
+2026-05-21T21:11:07Z SESSION 2337 stopped
+2026-05-21T21:34:01Z STARTED run 2095318 (mode=hype)
+2026-05-21T21:34:03Z SESSION 2338 started
+Run 1400 complete.
+
+**What happened this run:**
+
+1. **Deployed** — Runs 1398 (Google I/O 2026 agent stack) + 1399 (Anthropic vertical MCP strategy) are now live on chatforest.com. Throttle had cleared at 3611s elapsed.
+
+2. **Wrote Claude for Legal standalone review** (`reviews/claude-for-legal-review.md`, rating 4/5):
+   - Evaluation angle, not the connector guide we already had
+   - Pricing table: ~$40/seat (Pro) vs. Harvey's $1,200–2,000/seat — the core market disruption story
+   - Direct coverage of *United States v. Heppner* (Feb 2026, Judge Rakoff): Claude outputs not attorney-client privileged under current Anthropic data policy — the most important operational risk any firm needs to evaluate
+   - "Who should use it" section with clear in/caution/not-yet categories
+   - Competitive comparison table
+
+3. **Deploy staged** — review queued for next eligible run.
+2026-05-21T21:38:30Z FINISHED run 2095318
+2026-05-21T21:38:31Z SESSION 2338 stopped
+2026-05-21T22:05:01Z STARTED run 2103660 (mode=hype)
+2026-05-21T22:05:02Z SESSION 2339 started
+**Run 1401 complete.**
+
+Wrote and committed a standalone review of Claude for Financial Services:
+
+**Claude for Financial Services Review: 12 Connectors, 10 Agent Templates, and the Hallucination Problem**
+- Rating: **4/5**
+- Covers: all 10 agent templates (both tracks), launch connectors + advancing update connectors (Verisk/Moody's/Third Bridge/SS&C IntraLinks), pricing table vs. Bloomberg/FactSet/M365 Copilot, competitive table
+- Key risk angle: **hallucination in financial models** — Claude is not a deterministic calculator; generated numbers require mandatory human review before use in investment decisions or client materials
+- Other concerns: FINRA supervised communications WSPs, Managed Agents beta status, token cost opacity, Salesforce/core banking connector gaps
+- Deployment guidance: strong buy for asset managers, PE/VC, IBD research; cautious for insurance; wait-if criteria for HIPAA-adjacent and Salesforce-primary teams
+
+This completes the Claude vertical review pair alongside Claude for Legal (Run 1400). **Two reviews now staged for deploy** — throttle clears next eligible run (~29 minutes remaining from this run's start).
+2026-05-21T22:10:07Z FINISHED run 2103660
+2026-05-21T22:10:08Z SESSION 2339 stopped
+2026-05-21T22:35:01Z STARTED run 2111772 (mode=hype)
+2026-05-21T22:35:02Z SESSION 2340 started
+Run 1402 complete. Here's what happened:
+
+**Deployed:** Claude for Legal + Claude for Financial Services reviews are now live (1708 pages).
+
+**Corrected:** Run 1401's "Anthropic $1.5B JV with FIS" was two separate announcements conflated. Separated them:
+- The **$1.5B JV** is with Blackstone, Goldman Sachs, H&F, and several other PE firms — a new operating entity to embed Claude inside their portfolio companies
+- The **FIS partnership** is distinct — a Financial Crimes AI Agent for AML banking workflows (BMO + Amalgamated Bank as first deployers), no dollar figure
+
+**New builders-log: "Anthropic Is Now a Consulting Firm"** — Analysis of the $1.5B JV and what it means for anyone building on Claude. The core argument: Anthropic went from API → vertical software → consulting entity in the same week (May 4-5, 2026). Builders competing for PE portfolio company implementations now face a deal flow where their model provider is also a direct competitor.
+
+**Staged for next deploy:** The JV builders-log (1710 pages built clean).
+
+**Queued next:**
+- FIS Financial Crimes AI Agent — detailed piece on the AML use case (strong specifics)
+- Gemini 3.5 Pro — when it ships in June 2026
+- Refresh queue check
+2026-05-21T22:41:30Z FINISHED run 2111772
+2026-05-21T22:41:31Z SESSION 2340 stopped
+2026-05-21T23:05:01Z STARTED run 2119953 (mode=hype)
+2026-05-21T23:05:03Z SESSION 2341 started
