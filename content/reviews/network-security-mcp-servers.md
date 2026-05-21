@@ -2,15 +2,15 @@
 title: "Network Security & Monitoring MCP Servers — Packet Capture, Port Scanning, Pentesting, and Reconnaissance"
 date: 2026-03-15T07:04:00+09:00
 description: "Network security MCP servers let AI agents capture packets, scan ports, run penetration tests, and perform reconnaissance."
-og_description: "Network security MCP servers: Burp Suite (706 stars, official), FuzzingLabs mcp-security-hub (530 stars, 20+ offensive tools), WireMCP (443 stars, Wireshark), NEW cve-mcp-server (266 stars, 27 tools across 21 security APIs), pentest-mcp (135 stars, multi-transport), Globalping (54 stars, distributed probes), NEW bx33661 Wireshark-MCP (107 stars, actively maintained). 35+ servers reviewed. Rating: 4.0/5."
+og_description: "Network security MCP servers: Burp Suite (795 stars, official), FuzzingLabs mcp-security-hub (38 servers/300+ offensive tools), WireMCP (443 stars, CVE-2026-3959 unpatched), cve-mcp-server (571 stars, 27 tools/21 security APIs), 0xSteph pentest-ai (276 stars, v0.15.1), NEW CheckPointSW enterprise MCP, NEW Command Zero Autonomous SOC. 35+ servers reviewed. Rating: 4.0/5."
 content_type: "Review"
-card_description: "Network security MCP servers across packet capture, port scanning, pentesting, web security, SSL/TLS, CVE intelligence, and reconnaissance. PortSwigger's Burp Suite MCP leads with 706 stars and official vendor backing. FuzzingLabs' mcp-security-hub surged to 530 stars with 20+ offensive tools. NEW cve-mcp-server aggregates 27 tools across 21 security APIs. Globalping runs diagnostics from thousands of global probes without local installation."
-last_refreshed: 2026-04-25
+card_description: "Network security MCP servers across packet capture, port scanning, pentesting, web security, SSL/TLS, CVE intelligence, and reconnaissance. PortSwigger's Burp Suite MCP leads with 795 stars and official vendor backing. FuzzingLabs' mcp-security-hub expanded to 38 bundled servers covering 300+ offensive tools. mukul975/cve-mcp-server surged to 571 stars aggregating 27 tools across 21 security APIs. Enterprise entrants: Check Point MCP and Command Zero Autonomous SOC launched in May 2026."
+last_refreshed: 2026-05-21
 ---
 
 Network security is one of the most powerful — and most dangerous — applications of MCP. AI agents that can capture packets, scan ports, run vulnerability assessments, and perform reconnaissance have enormous potential for security professionals. They also have enormous potential for misuse. Every server in this review should be used only with proper authorization on systems you own or have explicit permission to test. Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
 
-The headline finding: **this space has matured significantly**. PortSwigger's official Burp Suite MCP server (706 stars, +32% since March) remains the highest-credibility entry. FuzzingLabs' mcp-security-hub has surged to 530 stars and become the most comprehensive offensive security suite. The biggest newcomer is **mukul975/cve-mcp-server** — 266 stars in just 11 days after launch, aggregating 27 security intelligence tools across 21 APIs (CVE, EPSS, CISA KEV, MITRE ATT&CK, Shodan, VirusTotal). For packet capture, WireMCP (443 stars) leads in adoption but is dormant since July 2025; the actively maintained alternative **bx33661/Wireshark-MCP** (107 stars) is rising fast. For distributed testing, Globalping (54 stars) stands alone with remote MCP from thousands of global probes.
+The headline finding: **enterprise adoption has arrived**. PortSwigger's Burp Suite MCP server has crossed **795 stars** (+12.6% since April). **mukul975/cve-mcp-server** exploded from 266 to **571 stars** in a month — the fastest-growing server in the ecosystem. FuzzingLabs' mcp-security-hub has expanded from "20+ tools" to **38 bundled MCP servers covering 300+ offensive tools** with hardened Docker containers. New enterprise entrants have arrived: **Check Point** launched official MCP servers (May 11) for Workforce AI and Browse Security, and **Command Zero** opened its Autonomous SOC platform via MCP (April 29). **0xSteph/pentest-ai** surged from 59 to **276 stars** with v0.15.1 adding production-safe engagement flags. The security picture is also sobering: WireMCP's command injection issue is now formally **CVE-2026-3959**, bx33661/Wireshark-MCP received **CVE-2026-43901** (arbitrary file write, CVSS 6.8, May 11), and a BlueRock Security ecosystem-wide analysis found 41% of MCP servers have no authentication and 53% use static API keys.
 
 ## Packet Capture & Traffic Analysis
 
@@ -21,9 +21,9 @@ The headline finding: **this space has matured significantly**. PortSwigger's of
 | [khuynh22/mcp-wireshark](https://github.com/khuynh22/mcp-wireshark) | ~31 | Python | 5+ | stdio |
 | [mixelpixx/Wireshark-MCP](https://github.com/mixelpixx/Wireshark-MCP) | — | Python | Multiple | stdio |
 
-**0xKoda/WireMCP** (443 stars, Python, March 2025) remains the most popular Wireshark MCP server by adoption. Three tools: `capture_packets` (real-time traffic capture as JSON), `get_summary_stats` (protocol hierarchy statistics), and `get_conversations` (TCP/UDP conversation tracking). **However, this project is dormant** — no commits since July 2025 (9+ months). The command injection vulnerability (Issue #12) remains unpatched. Stars continue growing organically but the codebase is unmaintained. Consider alternatives below.
+**0xKoda/WireMCP** (443 stars, Python, March 2025) remains the most popular Wireshark MCP server by adoption. Three tools: `capture_packets` (real-time traffic capture as JSON), `get_summary_stats` (protocol hierarchy statistics), and `get_conversations` (TCP/UDP conversation tracking). **However, this project is dormant** — no commits since July 2025 (10+ months). The command injection vulnerability has been formally assigned **CVE-2026-3959** (Medium, CVSS 5.3) — still unpatched. Stars continue growing organically but the codebase is unmaintained. Do not use in production.
 
-**bx33661/Wireshark-MCP** (107 stars, Python, created February 2026) is the **fastest-growing Wireshark MCP alternative** and actively maintained (last updated April 2026). Combines Wireshark packet analysis with complementary network tools. Growing rapidly and filling the gap left by WireMCP's dormancy. If you're choosing a Wireshark MCP server today, this is the strongest actively-maintained option.
+**bx33661/Wireshark-MCP** (Python, created February 2026) is the **most active Wireshark MCP alternative** — combines Wireshark packet analysis with complementary network tools, available on PyPI. **Important caveat as of May 2026**: an **arbitrary file write vulnerability was disclosed as CVE-2026-43901** (CVSS 6.8, published May 11, 2026). Check for patches before deploying. If you're choosing a Wireshark MCP server today, this remains the strongest actively-maintained option — but verify the CVE status against the current release.
 
 **khuynh22/mcp-wireshark** (31 stars, Python 3.10+, pip-installable via `pip install mcp-wireshark`, v0.2.0) is the most polished Wireshark MCP server from an engineering standpoint. Live capture, PCAP file parsing, display filter support, stream following, and JSON export. Published on PyPI with proper packaging — no git cloning required. Cross-platform, typed, and tested. The only server with proper versioned releases.
 
@@ -57,17 +57,18 @@ The headline finding: **this space has matured significantly**. PortSwigger's of
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [FuzzingLabs/mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub) | — | Python | 20+ | stdio |
+| [FuzzingLabs/mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub) | — | Python | 300+ (38 servers) | stdio |
+| [0xSteph/pentest-ai](https://github.com/0xSteph/pentest-ai) | ~276 | Python | 200+ | stdio |
 | [DMontgomery40/pentest-mcp](https://github.com/DMontgomery40/pentest-mcp) | — | TypeScript | Multiple | stdio + HTTP + SSE |
 | [0x4m4/hexstrike-ai](https://github.com/0x4m4/hexstrike-ai) | — | Python | 150+ | stdio + HTTP |
 | [ramkansal/pentestMCP](https://github.com/ramkansal/pentestMCP) | — | Python | 20+ | stdio |
 | [neptune1212/MCP_servers_cybersecurity](https://github.com/neptune1212/MCP_servers_cybersecurity) | — | Python | Multiple | stdio |
 
-**FuzzingLabs/mcp-security-hub** (530 stars, Python) has surged to become the **most popular offensive security MCP server** — up from near-zero visibility to 530 stars, making it the #2 security MCP server overall behind Burp Suite. **20+ tools** covering: **Reconnaissance** (Nmap, Masscan, Shodan, WhatWeb), **Web security** (Nikto, FFUF, SQLMap, Burp Suite wrapper), **Binary analysis** (Ghidra, Radare2, Binwalk, YARA, Capa), **Password cracking** (Hashcat), **Vulnerability scanning** (Nuclei), and newly added **Go fuzzing** (4 tools for Go-specific fuzz testing pipelines). Modular architecture — enable only the tool categories you need. Also covers blockchain security. Actively maintained with 72 forks. The clear winner for comprehensive offensive security MCP integration.
+**FuzzingLabs/mcp-security-hub** (Python) has significantly expanded since April — now a **collection of 38 bundled MCP servers covering 300+ offensive security tools**, up from "20+ tools" in prior reviews. Organized across: **Reconnaissance** (Nmap, Masscan, Shodan, WhatWeb), **Web security** (Nikto, FFUF, SQLMap, Burp Suite wrapper), **Binary analysis** (Ghidra, Radare2, Binwalk, YARA, Capa), **Password cracking** (Hashcat), **Vulnerability scanning** (Nuclei), **Go fuzzing**, and **Blockchain security**. The May 2026 update adds production-hardened non-root Docker containers and Trivy security scanning for container images. Actively maintained with 72 forks. The clear winner for comprehensive offensive security MCP integration — now genuinely one of the largest security tool bundles in the MCP ecosystem.
 
-**DMontgomery40/pentest-mcp** (135 stars, TypeScript, npm) covers nmap, gobuster/dirbuster, nikto, John the Ripper, hashcat, and wordlist building. The standout feature: **full transport support** — stdio, HTTP (primary), and SSE (deprecated compatibility mode). Recently updated for **MCP spec compliance** with tool annotations (readOnly, destructive, idempotent) and behavior tests. GPU-accelerated hashcat cracking for WPA/WPA2, NTLM, bcrypt, and 300+ hash types.
+**DMontgomery40/pentest-mcp** (TypeScript, npm, last updated March 23, 2026) covers nmap, gobuster/dirbuster, nikto, John the Ripper, hashcat, and wordlist building. The standout feature: **full transport support** — stdio, HTTP (primary), and SSE (deprecated compatibility mode). Updated to MCP SDK @1.26.0 with **Bearer token auth via OIDC JWKS** — the most secure authentication model of any pentest MCP server. GPU-accelerated hashcat cracking for WPA/WPA2, NTLM, bcrypt, and 300+ hash types.
 
-**0xSteph/pentest-ai** (59 stars, Python, created April 2026) is a newcomer positioning itself as "the most autonomous pentesting AI." MCP server with Python agents running 150+ security tools. Actively developed (last updated April 23, 2026). Early but growing fast.
+**0xSteph/pentest-ai** (276 stars, Python, v0.15.1 May 16, 2026) has grown from 59 to 276 stars in a month — the fastest-growing pentest MCP server this cycle. Positions itself as "the most autonomous pentesting AI" with **17 specialist agents and 200+ wrapped security tools**. The May 2026 release added critical production-safe flags: `intensity=safe`, `respect_rate_limits=true`, and `strict_scope=true` — plus 60 SPA-aware probes for OWASP Top 10. These safety controls make it more viable for authorized client engagements where accidental out-of-scope testing could cause legal exposure.
 
 **0x4m4/hexstrike-ai** (8,284 stars, Python) claims 150+ cybersecurity tools organized across 12+ autonomous AI agents with a Flask API backend. The star count is exceptional but warrants caution — no commits since March 2026, no releases, and the star-to-fork ratio (8.3K stars, 1.8K forks) is atypical for this space. The tool count is ambitious but independent verification of all claims is difficult.
 
@@ -79,13 +80,13 @@ The headline finding: **this space has matured significantly**. PortSwigger's of
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [PortSwigger/mcp-server](https://github.com/PortSwigger/mcp-server) | ~706 | Kotlin | Multiple | HTTP + stdio proxy |
+| [PortSwigger/mcp-server](https://github.com/PortSwigger/mcp-server) | ~795 | Kotlin | Multiple | HTTP + stdio proxy |
 | [Cy-S3c/BurpMCP-Ultra](https://github.com/Cy-S3c/BurpMCP-Ultra) | ~16 | — | 137 | — |
 | [LisBerndt/zap-mcp-server](https://github.com/LisBerndt/zap-mcp-server) | ~5 | Python | 5+ | stdio |
 | [dtkmn/mcp-zap-server](https://github.com/dtkmn/mcp-zap-server) | — | Java/Kotlin | 4+ | HTTP |
 | [cyproxio/mcp-for-security](https://github.com/cyproxio/mcp-for-security) | — | TypeScript | Multiple | stdio |
 
-**PortSwigger/mcp-server** (706 stars, +32% since March, Kotlin, official) is the highest-credibility security MCP server in the entire ecosystem. Runs as a **Burp Suite extension** — HTTP request/response handling, vulnerability testing, traffic analysis, and Burp configuration. Tools toggled via the Burp UI. Runs on localhost:9876 with a stdio proxy for Claude Desktop compatibility. Recent additions include CI workflow for automated testing and proxy end-to-end tests. The official vendor backing means this will be maintained as long as Burp Suite exists. If your security team already uses Burp, this integration turns your AI agent into an intelligent testing assistant that can craft requests, analyze responses, and identify vulnerabilities within Burp's established workflow.
+**PortSwigger/mcp-server** (795 stars, +12.6% since April, Kotlin, official) is the highest-credibility security MCP server in the entire ecosystem. Runs as a **Burp Suite extension** — HTTP request/response handling, vulnerability testing, traffic analysis, and Burp configuration. Tools toggled via the Burp UI. Runs on localhost:9876 with a stdio proxy for Claude Desktop compatibility. Recent additions include CI workflow for automated testing and proxy end-to-end tests. The official vendor backing means this will be maintained as long as Burp Suite exists. If your security team already uses Burp, this integration turns your AI agent into an intelligent testing assistant that can craft requests, analyze responses, and identify vulnerabilities within Burp's established workflow.
 
 **Cy-S3c/BurpMCP-Ultra** (16 stars, created April 2026) is a community-built Burp Suite MCP extension offering **137 tools**, a real-time dashboard, and custom scan checks — significantly more tools than PortSwigger's official server. Early adoption but ambitious scope for teams wanting deeper Burp integration.
 
@@ -93,7 +94,7 @@ The headline finding: **this space has matured significantly**. PortSwigger's of
 
 **dtkmn/mcp-zap-server** (Java/Kotlin, Spring Boot 4.0.3) is the enterprise-flavored ZAP integration — spider, active scan, OpenAPI spec import, and report generation. HTTP transport via Spring Boot, ZAP Client API 1.17.0. Better suited for CI/CD integration where you want to trigger ZAP scans from an agent in an automated pipeline.
 
-**cyproxio/mcp-for-security** (TypeScript) provides modular per-tool MCP servers covering SQLMap, FFUF, NMAP, Masscan, web screenshots, HTTP header analysis (OWASP), web crawling, and mobile app security. The OWASP header analysis is unique — evaluates security headers against OWASP recommendations.
+**cyproxio/mcp-for-security** (318 stars, TypeScript) provided modular per-tool MCP servers covering SQLMap, FFUF, NMAP, Masscan, web screenshots, HTTP header analysis (OWASP), web crawling, and mobile app security. **Note (May 2026): this project has been superseded** — the maintainers have fully rewritten and migrated the tooling to **Bolt**, a Docker-supported successor with broader capability. Existing users are directed to the Bolt project. The star count reflects historical interest; new installations should use Bolt instead.
 
 ## SSL/TLS Certificate Analysis
 
@@ -113,21 +114,35 @@ The headline finding: **this space has matured significantly**. PortSwigger's of
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [mukul975/cve-mcp-server](https://github.com/mukul975/cve-mcp-server) | ~266 | — | 27 | stdio |
-| [BurtTheCoder/mcp-shodan](https://github.com/BurtTheCoder/mcp-shodan) | ~124 | TypeScript | Multiple | stdio |
+| [mukul975/cve-mcp-server](https://github.com/mukul975/cve-mcp-server) | ~571 | — | 27 | stdio |
+| [BurtTheCoder/mcp-shodan](https://github.com/BurtTheCoder/mcp-shodan) | ~110 | TypeScript | Multiple | stdio |
 | [nickpending/mcp-censys](https://github.com/nickpending/mcp-censys) | — | Python | Multiple | stdio |
 | [addcontent/nuclei-mcp](https://github.com/addcontent/nuclei-mcp) | — | — | Multiple | stdio |
 | [RobertoDure/mcp-vulnerability-scanner](https://github.com/RobertoDure/mcp-vulnerability-scanner) | — | — | Multiple | stdio |
 
-**mukul975/cve-mcp-server** (266 stars in 11 days, created April 14, 2026) is the **fastest-growing newcomer** in the entire network security MCP space. A production-grade MCP server providing **27 security intelligence tools across 21 APIs** — CVE lookup, EPSS scoring, CISA Known Exploited Vulnerabilities (KEV), MITRE ATT&CK mapping, Shodan, VirusTotal, and more. This aggregates what previously required separate MCP servers (Shodan, CVE databases, threat intelligence) into a single unified server. The explosive adoption suggests strong demand for consolidated security intelligence tooling.
+**mukul975/cve-mcp-server** (571 stars, created April 14, 2026) has grown from 266 to **571 stars in a single month** — making it the fastest-growing server in the entire network security MCP space and one of the strongest adoption stories across all MCP categories. A production-grade MCP server providing **27 security intelligence tools across 21 APIs** — CVE lookup, EPSS scoring, CISA Known Exploited Vulnerabilities (KEV), MITRE ATT&CK mapping, Shodan, VirusTotal, and more. This aggregates what previously required separate MCP servers (Shodan, CVE databases, threat intelligence) into a single unified server. The sustained explosive adoption confirms strong demand for consolidated security intelligence tooling.
 
-**BurtTheCoder/mcp-shodan** (124 stars, TypeScript) connects agents to Shodan's internet-wide scanning database — IP reconnaissance, DNS operations, CVE/CPE vulnerability intelligence, and device discovery. Recent security fix: **pinned axios below compromised v1.14.1** — demonstrating responsible maintenance practices. Shodan sees every internet-facing device. Combined with an AI agent, this enables natural-language queries like "find all exposed Redis instances on our subnet" or "what CVEs affect this IP's running services." Requires a Shodan API key (free tier available with rate limits).
+**BurtTheCoder/mcp-shodan** (~110 stars, TypeScript) connects agents to Shodan's internet-wide scanning database — IP reconnaissance, DNS operations, CVE/CPE vulnerability intelligence, and device discovery. Recent security fix: **pinned axios below compromised v1.14.1** — demonstrating responsible maintenance practices. Now documented for use with Claude Code, OpenAI Codex, Gemini CLI, and Claude Desktop. Shodan sees every internet-facing device. Combined with an AI agent, this enables natural-language queries like "find all exposed Redis instances on our subnet" or "what CVEs affect this IP's running services." Requires a Shodan API key (free tier available with rate limits).
 
 **nickpending/mcp-censys** (Python) provides domain, IP, and FQDN reconnaissance via the Censys Search API. Similar to Shodan but with Censys's own internet-wide scanning perspective. No updates since April 2025 — dormant but functional. Useful as a complementary data source — Shodan and Censys often discover different services on the same hosts.
 
 **addcontent/nuclei-mcp** provides context-aware Nuclei vulnerability scanning with template management. Nuclei (by ProjectDiscovery) is one of the most popular open-source vulnerability scanners with thousands of community templates covering CVEs, misconfigurations, and exposed panels.
 
 **RobertoDure/mcp-vulnerability-scanner** runs single or batch IP vulnerability scanning via Nmap plus API checks, with severity levels and remediation steps in reports. Good for quick vulnerability assessments with actionable output.
+
+## Enterprise & SOC Security (May 2026 Additions)
+
+| Server | Stars | Provider | Focus | Launched |
+|--------|-------|----------|-------|---------|
+| [CheckPointSW/mcp-servers](https://github.com/CheckPointSW/mcp-servers) | — | Check Point | Workforce AI + Browse Security | May 11, 2026 |
+| [Command Zero MCP](https://commandzero.com/) | — | Command Zero | Autonomous SOC | Apr 29, 2026 |
+| [GitHub Secret Scanning MCP](https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/) | — | GitHub | Credential detection | May 5, 2026 |
+
+**CheckPointSW/mcp-servers** (official, launched May 11, 2026) brings Check Point's enterprise security capabilities directly into AI tools. Covers **Workforce AI** security (protecting AI assistant usage within organizations) and **Browse Security** (protecting AI agents browsing the web). Designed for on-premises deployment with full governance and auditability. The first major network security vendor to launch a dedicated MCP presence. Significant for enterprise teams already on Check Point infrastructure.
+
+**Command Zero Autonomous SOC MCP** (launched April 29, 2026) opens Command Zero's AI-powered SOC platform via MCP — investigation APIs, business context APIs, threat hunting, and remediation automation. Targets MSSP and enterprise SOC teams that want to plug MCP-compatible agents into their existing security operations workflow. The "autonomous SOC" positioning aligns with the broader trend of security vendors treating MCP as the integration layer for AI-native operations.
+
+**GitHub Secret Scanning MCP** (Generally Available May 5, 2026, Preview March 2026) adds automated credential detection and remediation to AI-assisted development workflows. Scans repositories for exposed API keys, tokens, and credentials. Available to all repositories with GitHub Secret Protection enabled. Significant for security teams who want AI agents that can both write code and flag leaked credentials in the same workflow.
 
 ## Decision Guide
 
@@ -137,20 +152,24 @@ The headline finding: **this space has matured significantly**. PortSwigger's of
 
 **For web application security testing**: **PortSwigger/mcp-server** if your team uses Burp Suite — official vendor backing and the most starred server in this category. **LisBerndt/zap-mcp-server** for free/open-source ZAP integration.
 
-**For comprehensive pentesting**: **FuzzingLabs/mcp-security-hub** for the broadest tool coverage in a single server. **pentest-mcp** if you need multi-transport support or GPU-accelerated password cracking.
+**For comprehensive pentesting**: **FuzzingLabs/mcp-security-hub** for the broadest tool coverage (300+ tools, 38 servers). **0xSteph/pentest-ai** if you need autonomous agents with production-safe engagement flags. **pentest-mcp** if you need OIDC JWKS authentication or GPU-accelerated password cracking.
 
 **For SSL/TLS management**: **CERT-MCP-SERVER** for certificate lifecycle operations across enterprise infrastructure. **tls-mcp** for quick analysis and health checks.
 
 **For security intelligence**: **cve-mcp-server** for consolidated CVE/EPSS/CISA KEV/MITRE ATT&CK/Shodan/VirusTotal intelligence in one server (27 tools, 21 APIs). **mcp-shodan** for focused Shodan reconnaissance. Add **mcp-censys** for complementary scanning data.
 
+**For enterprise/SOC teams**: **CheckPointSW/mcp-servers** if you're already on Check Point infrastructure. **Command Zero** if you run or manage a SOC and want autonomous investigation workflows. **GitHub Secret Scanning MCP** for any team using GitHub — free for repositories with Secret Protection enabled.
+
 ## The Security Elephant in the Room
 
 Every server in this review wraps tools that can cause real harm if misused. Unlike a database MCP server where the worst case is a dropped table, a misconfigured pentest MCP server could scan production systems without authorization, exfiltrate network data, or trigger intrusion detection alerts. None of these servers implement authorization boundaries beyond what their underlying tools provide.
 
-**Before installing any of these**: ensure you have written authorization to test the target systems, understand the legal implications in your jurisdiction, and limit tool access to authorized personnel only. The MCP ecosystem currently has no standard for security tool authorization — each server trusts that the agent (and the human behind it) will use it responsibly.
+**The ecosystem-wide security picture has gotten worse**, not better. A May 2026 analysis by BlueRock Security of MCP servers at large found: **41% have no authentication**, **53% use static API keys** (vs. proper OAuth), **36.7% are vulnerable to SSRF**, and only **8.5% use OAuth**. Security-focused MCP servers are not immune — two servers in this review received CVEs in May 2026 alone (CVE-2026-3959 for WireMCP, CVE-2026-43901 for bx33661/Wireshark-MCP). A systemic **MCP STDIO transport RCE vulnerability** affecting all language SDKs (Python, TypeScript, Java, Rust) was also disclosed — affecting an estimated 150M+ downloads across 7,000+ public servers.
+
+**Before installing any of these**: ensure you have written authorization to test the target systems, understand the legal implications in your jurisdiction, and limit tool access to authorized personnel only. The MCP ecosystem still has no standard for security tool authorization — each server trusts that the agent (and the human behind it) will use it responsibly. For security tools specifically, that trust is especially high-stakes.
 
 ## Rating: 4.0/5
 
-The network security MCP ecosystem has matured significantly since our March review. PortSwigger's Burp Suite MCP (706 stars) and FuzzingLabs' mcp-security-hub (530 stars) provide strong vendor-backed and community foundations respectively. The biggest development is **convergence**: mukul975/cve-mcp-server aggregates 27 tools across 21 security APIs into a single server, addressing the fragmentation problem we flagged previously. The distributed diagnostics category (Globalping, ProbeOps) remains genuinely innovative with remote MCP servers providing global visibility. The packet capture space is sorting itself out — WireMCP's dormancy has opened the door for bx33661/Wireshark-MCP (107 stars, actively maintained). The pentest suites (FuzzingLabs, pentest-mcp, pentest-ai) now cover MCP spec compliance with tool annotations. Remaining concerns: some projects show suspicious star inflation (hexstrike-ai's 8K+ stars with minimal development), several dormant servers still accumulate stars without maintenance, and there's still no ecosystem-wide standard for authorization or safety controls. The upgrade from 3.5 to 4.0 reflects stronger top-tier servers, better tooling consolidation, and continued growth in adoption and vendor participation.
+The network security MCP ecosystem continues to mature, with notable growth across all tiers in May 2026. PortSwigger's Burp Suite MCP (795 stars) and FuzzingLabs' mcp-security-hub (now 38 servers/300+ tools) anchor the top tier. **mukul975/cve-mcp-server** (571 stars in 5 weeks) confirms explosive demand for consolidated security intelligence. Enterprise adoption has arrived: Check Point and Command Zero both launched MCP offerings in late April/early May 2026, and GitHub Secret Scanning MCP went GA. 0xSteph/pentest-ai (276 stars, v0.15.1) added production-safe engagement flags that address a real gap in pentest tooling. The packet capture space stabilized — WireMCP holds stars despite dormancy, while bx33661/Wireshark-MCP remains the actively maintained option (now with its own CVE to monitor). Remaining concerns: the BlueRock Security ecosystem-wide analysis is alarming — 41% of MCP servers have no authentication and the systemic STDIO transport RCE affects the entire ecosystem. Security-focused servers ironically carry significant security risk. Some projects still show suspicious star inflation (hexstrike-ai at 8K+ stars with minimal development remains unexplained). Rating held at **4.0/5** — the growth in top-tier and enterprise tools is real, but the ecosystem-wide vulnerability findings are a serious counterweight that prevent a higher score.
 
-*This review was last edited on 2026-04-25 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-05-21 using Claude Sonnet 4.6 (Anthropic).*
