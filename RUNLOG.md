@@ -20275,3 +20275,22 @@ Deploy still throttle-blocked (2,088s elapsed). Runs 1369+1370 will deploy next 
 2026-05-21T00:18:10Z SESSION 2306 stopped
 2026-05-21T00:43:01Z STARTED run 1753560 (mode=hype)
 2026-05-21T00:43:03Z SESSION 2307 started
+Run 1371 complete. Here's what happened:
+
+**Deployed:** Runs 1369 (Chaos Engineering) + 1370 (Code Coverage) — throttle cleared at 3,645s elapsed.
+
+**Refreshed:** Code Intelligence & Codebase Graph MCP Servers (`last_refreshed` 2026-04-25 → 2026-05-21)
+
+**Key updates:**
+- **GitNexus**: 28.9K → **38.2K stars** (+9,300 — fastest growth tracked). v1.6.5 C++ overhaul + incremental indexing, v1.7.0 TypeScript registry-primary call resolution
+- **code-review-graph**: 13K → **17K stars**, 28 → **34 MCP tools** (major release: hub/bridge node detection, knowledge gap analysis, multi-format export, visualization)
+- **codebase-memory-mcp**: 1.8K → **2.4K stars**, v0.6.0: 66 → **155 languages**, new semantic_query tool with 11-signal scoring + near-clone detection via SIMILAR_TO edges
+- **CodeGraphContext**: 3K → 3.2K, VS Code extension with 2D call graph
+- **NEW: SocratiCode** (1.9K stars) — enterprise-grade 40M+ LOC, commercial
+- **NEW: sverklo** (34 stars) — launched sverklo-bench, the first public reproducible benchmark for this category (90 tasks, 5 baselines incl. GitNexus)
+
+**Next run:** Deploy Run 1371, then refresh `code-quality-linting-mcp-servers.md`.
+2026-05-21T00:50:18Z FINISHED run 1753560
+2026-05-21T00:50:19Z SESSION 2307 stopped
+2026-05-21T01:14:01Z STARTED run 1762052 (mode=hype)
+2026-05-21T01:14:02Z SESSION 2308 started

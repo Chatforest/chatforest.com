@@ -7,7 +7,7 @@ Code quality tools are among the most-used developer utilities — ESLint, Prett
 
 This review covers **linters, formatters, and static analysis tools** available as MCP servers. For security-specific scanning, see our [Code Security review](/reviews/code-security-mcp-servers/). For testing frameworks, see [Testing & QA](/reviews/testing-qa-mcp-servers/).
 
-Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. The headline finding: **enterprise code quality platforms have arrived** — SonarQube surged 28% to 544 stars with Context Augmentation and workspace mounting, Codacy launched an official 25+ tool MCP server with real-time Guardrails enforcement, and Semgrep moved MCP support directly into its main binary. Meanwhile, Skylos (426 stars) brought dead code detection and SAST with MCP integration, and the LSP bridge approach proved out with a second implementation (jonrad/lsp-mcp, 181 stars).
+Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. The headline finding: **enterprise code quality platforms are maturing** — SonarQube settled at 556 stars and v1.18.1 after a strong growth cycle, Skylos surged to v4.16.2 with Docker, GitLab CI scanning, GitHub Actions workflow scanning, and Dart language support, and CodeQL added a SQLite backend with 14 new opt-in tools. The LSP bridge servers continue accumulating stars despite dormant code, confirming the approach's long-term value.
 
 ## Cross-Language
 
@@ -15,7 +15,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-language-server](https://github.com/isaacphi/mcp-language-server) | 1,500 | Go | BSD-3-Clause | 6 |
+| [mcp-language-server](https://github.com/isaacphi/mcp-language-server) | 1,531 | Go | BSD-3-Clause | 6 |
 
 **The most versatile code quality MCP server** — instead of wrapping individual linters, this bridges any Language Server Protocol server to MCP clients:
 
@@ -26,13 +26,13 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 - **`rename_symbol`** — project-wide renaming
 - **`edit_file`** — multi-line text edits
 
-Supports Go (gopls), Rust (rust-analyzer), Python (pyright), TypeScript, and C/C++ (clangd). Currently in beta at v0.1.1 with 104 commits and 126 forks. The approach is pragmatic: rather than rebuilding linting logic for MCP, leverage the LSP ecosystem that editors have relied on for years.
+Supports Go (gopls), Rust (rust-analyzer), Python (pyright), TypeScript, and C/C++ (clangd). Currently in beta at v0.1.1 with 104 commits and 126 forks. No code changes since March 2026 — growing organically on star count alone. The approach is pragmatic: rather than rebuilding linting logic for MCP, leverage the LSP ecosystem that editors have relied on for years.
 
 ### jonrad/lsp-mcp (Second LSP Bridge)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [lsp-mcp](https://github.com/jonrad/lsp-mcp) | 181 | TypeScript | MIT | Multiple |
+| [lsp-mcp](https://github.com/jonrad/lsp-mcp) | 183 | TypeScript | MIT | Multiple |
 
 **Second LSP-to-MCP bridge** — validates the LSP bridge approach with a TypeScript implementation:
 
@@ -41,7 +41,7 @@ Supports Go (gopls), Rust (rust-analyzer), Python (pyright), TypeScript, and C/C
 - **Supports Claude Desktop, Cursor, and MCP CLI Client**
 - **POC state** — functional but still early
 
-62 commits, 26 forks. The existence of a second LSP bridge implementation with 181 stars confirms that bridging existing LSP infrastructure is a viable long-term strategy for code quality MCP.
+62 commits, 26 forks. Dormant since March 2025 — but still accumulating stars (+2 this cycle). The existence of a second LSP bridge implementation with 183 stars confirms that bridging existing LSP infrastructure is a viable long-term strategy for code quality MCP.
 
 ## Static Analysis & Security
 
@@ -49,9 +49,9 @@ Supports Go (gopls), Rust (rust-analyzer), Python (pyright), TypeScript, and C/C
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server) | 544 | Java | SonarSource | Multiple |
+| [sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server) | 556 | Java | SonarSource | Multiple |
 
-**Official SonarQube MCP server** connecting AI agents to SonarQube Server or Cloud — **surged 28% since March**:
+**Official SonarQube MCP server** connecting AI agents to SonarQube Server or Cloud — **settled at v1.18.1 after a strong growth cycle**:
 
 - **Context Augmentation (CAG)** — Open Beta, provides AI agents with enriched code context (STDIO mode, restricted users)
 - **Workspace mounting** — reads files directly from disk to reduce context bloat instead of passing content through agent contexts
@@ -64,7 +64,7 @@ Supports Go (gopls), Rust (rust-analyzer), Python (pyright), TypeScript, and C/C
 - **Multi-tenant support** — HTTP mode for SonarQube Cloud
 - **Broad IDE support** — Claude Code, GitHub Copilot, VS Code, Cursor, Windsurf, Zed
 
-Now at 400 commits and 78 forks with v1.17.0. The fastest-growing enterprise code quality MCP server.
+Now at 400+ commits and 78 forks, stable at v1.18.1 (May 11, 2026). No new releases since then. The features added this cycle — config generator, sandbox fix, CAG, AC/DC coverage tools — represent a substantial feature investment now settling into adoption.
 
 ### Semgrep MCP (Built into Semgrep Binary)
 
@@ -88,15 +88,18 @@ The move from standalone repo to built-in integration signals maturity — Semgr
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [codeql-development-mcp-server](https://github.com/advanced-security/codeql-development-mcp-server) | 20 | TypeScript | GitHub CodeQL Terms | Multiple |
+| [codeql-development-mcp-server](https://github.com/advanced-security/codeql-development-mcp-server) | 25 | TypeScript | GitHub CodeQL Terms | Multiple |
 
-**CodeQL query development for AI agents** — **grew 150% (8→20 stars)**, now at v2.25.2 with 81 commits:
+**CodeQL query development for AI agents** — **grew 25% (20→25 stars) this cycle**, now at v2.25.4 with active releases:
 
-- **9 languages** — Python, JavaScript, Java, C/C++, C#, Go, Ruby, Swift, GitHub Actions
+- **9 languages** — Python, JavaScript, Java, C/C++, C#, Go, Ruby, Swift, GitHub Actions; **Rust added in v2.25.2**
+- **SQLite backend** — new in v2.25.2 with 14 additional opt-in tools (annotation, audit, query result caching)
+- **Models-as-Data (MaD) Extensions** — v2.25.4 added auto-infer `codeql_query_run` format from `@kind` for result caching
 - **AI-optimized prompts** guiding assistants through CodeQL development workflows
 - **Test-driven validation** for query accuracy
+- **Supply chain hardening** — Node.js security patches and invalid JSON Schema fix in v2.25.3
 - **Stdio and HTTP transports**
-- **Active development** — maintained by GitHub's CodeQL Expert Services team, used in production environments
+- **Active development** — maintained by GitHub's CodeQL Expert Services team
 
 This is for security researchers writing custom CodeQL queries, not general-purpose code scanning. Requires CodeQL CLI installation and GitHub CodeQL license agreement.
 
@@ -104,7 +107,7 @@ This is for security researchers writing custom CodeQL queries, not general-purp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [codacy-mcp-server](https://github.com/codacy/codacy-mcp-server) | 56 | TypeScript | MIT | 25+ |
+| [codacy-mcp-server](https://github.com/codacy/codacy-mcp-server) | 59 | TypeScript | MIT | 25+ |
 
 **Official Codacy MCP server** — first enterprise code quality platform with comprehensive MCP coverage:
 
@@ -122,36 +125,42 @@ This is for security researchers writing custom CodeQL queries, not general-purp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [skylos](https://github.com/duriantaco/skylos) | 426 | Python | Apache 2.0 | Multiple |
+| [skylos](https://github.com/duriantaco/skylos) | 439 | Python | Apache 2.0 | Multiple |
 
-**The biggest new entrant in code quality MCP** — combines dead code detection, SAST, secrets scanning, and AI code guardrails:
+**The most actively developed code quality MCP server this cycle** — surged from v4.3 to v4.16.2 in one cycle, expanding from dead code + SAST into a broader multi-language security and architecture audit platform:
 
 - **Dead code detection** — unused functions, classes, imports with framework awareness (Django, FastAPI, Flask)
-- **Security analysis** — SQL injection, XSS, SSRF, path traversal across Python, TypeScript/JavaScript, Java, Go, PHP, Rust
+- **Security analysis** — SQL injection, XSS, SSRF, path traversal across Python, TypeScript/JavaScript, Java, Go, PHP, Rust; **Dart added in May 2026**
 - **Secrets detection** — hardcoded credentials and high-entropy strings
 - **AI code guardrails** — catches phantom security calls, missing decorators, unfinished stubs, and disabled controls from AI-generated code
+- **CI/CD scanning** — GitLab CI scanner and GitHub Actions workflow scanning added (v4.12–v4.16)
+- **Official Docker image** on GHCR (v4.5.0)
+- **JS/JSX support** and PHP foundation (v4.6.0)
+- **Deep Mode audit** — foundation added (v4.16.x)
 - **Framework-aware** — 98% recall with reduced false positives vs traditional tools
 - **MCP server** — exposes all scans to AI agents via dedicated `/skylos_mcp` module
 
-703 commits, 19 forks. Unlike Vulture (dead code only) or Bandit (security only), Skylos combines both with a hybrid AST + optional LLM engine. Privacy-first — core analysis runs locally without cloud uploads.
+700+ commits, 19 forks. Unlike Vulture (dead code only) or Bandit (security only), Skylos combines both with a hybrid AST + optional LLM engine. Privacy-first — core analysis runs locally without cloud uploads.
 
 ### kuberstar/qartez-mcp (Semantic Code Intelligence)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [qartez-mcp](https://github.com/kuberstar/qartez-mcp) | 43 | Rust | Dual | 39 |
+| [qartez-mcp](https://github.com/kuberstar/qartez-mcp) | 50 | Rust | Dual | Multiple |
 
-**Semantic code intelligence server designed for AI agents** — builds knowledge graphs for code analysis:
+**Semantic code intelligence server designed for AI agents** — builds knowledge graphs for code analysis, now with a local web dashboard:
 
-- **39 tools** across 4 tiers — Core (8), Analysis (18), Refactor (7), Meta (6)
 - **37 languages** supported
 - **Knowledge graph indexing** — symbols, imports, and call edges
 - **Impact analysis** — blast radius of file changes
 - **Code complexity** — cyclomatic complexity and PageRank scoring
 - **Modification guard** — prevents AI from editing critical files blindly
+- **`qartez dashboard`** — new in v0.9.8: local web UI via axum HTTP server + SvelteKit frontend with live filesystem event updates
+- **Cross-process file locking + workspace fingerprinting** — fast startup (v0.9.7)
+- **macOS watcher fix** — reduced per-save latency for large repos (v0.9.10)
 - **~92% token savings** vs grep/read workflows
 
-28 commits, 7 forks. The token savings claim is significant — pre-computed analysis replaces expensive runtime file scanning. Supports 19 editors including Claude Code, Cursor, and Zed.
+Active through v0.9.10 (May 2026). The dashboard subcommand is a notable new capability — moves code intelligence from CLI-only to an interactive browser UI. Supports 19 editors including Claude Code, Cursor, and Zed.
 
 ## JavaScript / TypeScript
 
@@ -159,9 +168,9 @@ This is for security researchers writing custom CodeQL queries, not general-purp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [@eslint/mcp](https://eslint.org/docs/latest/use/mcp) | Part of ESLint (27,200) | JavaScript | MIT | Linting + fixing |
+| [@eslint/mcp](https://eslint.org/docs/latest/use/mcp) | Part of ESLint (27,300) | JavaScript | MIT | Linting + fixing |
 
-**ESLint includes native MCP server support** via @eslint/mcp, now at **v0.3.4** — no separate installation needed:
+**ESLint includes native MCP server support** via @eslint/mcp, now at **v0.3.5** — no separate installation needed:
 
 ```
 npx @eslint/mcp@latest
@@ -173,20 +182,20 @@ npx @eslint/mcp@latest
 - Works with **VS Code** (GitHub Copilot agent mode), **Cursor**, and **Windsurf**
 - Stdio transport
 
-The simplest code quality MCP integration available — if you already use ESLint, you already have an MCP server.
+v0.3.5 (May 1, 2026) updated the ESLint dependency to 10.3.0 — maintenance release. The simplest code quality MCP integration available — if you already use ESLint, you already have an MCP server.
 
 ### RyuzakiShinji/biome-mcp-server (Unofficial)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [biome-mcp-server](https://github.com/RyuzakiShinji/biome-mcp-server) | 4 | TypeScript | MIT | 2 |
+| [biome-mcp-server](https://github.com/RyuzakiShinji/biome-mcp-server) | 5 | TypeScript | MIT | 2 |
 
 **Unofficial Biome MCP server** with two tools:
 
 - **`biome-lint`** — analyze JS/TS files and return diagnostics (errors, warnings, suggestions)
 - **`biome-format`** — auto-format code per Biome rules
 
-An [official Biome MCP server RFC](https://github.com/biomejs/biome/discussions/6017) exists but hasn't shipped yet. This fills the gap for teams using Biome today.
+The [official Biome MCP server RFC](https://github.com/biomejs/biome/discussions/6017) has narrowed in scope: format/lint via MCP was deprioritized because editor integrations already handle those workflows. The refined direction is MCP **Resources** to expose Biome documentation and GritQL resources for AI agents writing plugins and configuration — no implementation timeline set. This unofficial server remains the only option for teams wanting Biome format/lint via MCP today.
 
 ### ncalteen/prettier-mcp
 
@@ -218,15 +227,17 @@ Docker support with multi-architecture containers and Sigstore supply chain sign
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-code-checker](https://github.com/MarcusJellinghaus/mcp-code-checker) | 16 | Python | — | 3 |
+| [mcp-code-checker](https://github.com/MarcusJellinghaus/mcp-code-checker) | 17 | Python | — | 5+ |
 
-**Three Python quality tools in one server:**
+**Growing Python quality toolbox** — expanded from 3 to 5+ tools this cycle:
 
 - **`run_pylint_check`** — code quality analysis with customizable parameters
 - **`run_pytest_check`** — test execution with parallel processing support
 - **`run_mypy_check`** — static type checking with strict mode
+- **`run_tach_check`** — dependency boundary and layer enforcement (added v0.1.9)
+- **`lint-imports`** — structured import linting output (added v0.1.10)
 
-Includes LLM-friendly prompt generation for structured analysis output. Works with Claude Desktop, VS Code with Copilot, and other MCP clients.
+Includes LLM-friendly prompt generation for structured analysis output. Active through v0.1.10 (May 2026). Works with Claude Desktop, VS Code with Copilot, and other MCP clients.
 
 ### drewsonne/ruff-mcp-server
 
@@ -266,7 +277,7 @@ Designed for Claude Code and VS Code environments.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [NDepend.MCP.Server](https://github.com/ndepend/NDepend.MCP.Server) | 36 | C# | NDepend | 14 |
+| [NDepend.MCP.Server](https://github.com/ndepend/NDepend.MCP.Server) | 37 | C# | NDepend | 14 |
 
 **Privacy-first .NET static analysis** — fills the .NET code quality gap:
 
@@ -285,7 +296,7 @@ Requires .NET 10.0+ and NDepend 2026.1.3+. Works with GitHub Copilot and VS Code
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [sonar-mcp](https://github.com/wadew/sonar-mcp) | 0 | Python | MIT | 21 |
+| [sonar-mcp](https://github.com/wadew/sonar-mcp) | 1 | Python | MIT | 21 |
 
 **Feature-rich community SonarQube MCP server** with more capabilities than the official one:
 
@@ -302,7 +313,7 @@ More feature-rich than the official server, but lacks SonarSource's long-term ma
 The gaps are closing but some remain:
 
 - **No official Prettier MCP server** — the most popular code formatter still has no official MCP integration
-- **No official Biome MCP server** — RFC active (discussion #6017) but hasn't shipped yet
+- **No Biome format/lint MCP server** — the official RFC narrowed scope to Resources-only (docs/GritQL); format and lint via MCP is explicitly deprioritized
 - **No Stylelint MCP server** with traction
 - **No golangci-lint MCP** — Go's standard multi-linter has no dedicated MCP integration (fpt/go-dev-mcp covers Go documentation but not golangci-lint)
 - **No Checkstyle or SpotBugs MCP** — Java linting gaps persist
@@ -311,11 +322,11 @@ The gaps are closing but some remain:
 
 ## Bottom line
 
-**Rating: 4/5** *(up from 3.5/5)* — The category has matured significantly. Enterprise code quality platforms now have strong MCP support: SonarQube surged 28% with Context Augmentation and workspace mounting, Codacy launched a comprehensive 25+ tool server with real-time Guardrails, and Semgrep integrated MCP directly into its main binary. Skylos (426 stars) filled the dead code + SAST gap, NDepend brought .NET coverage, and the LSP bridge approach was validated by a second implementation (jonrad/lsp-mcp, 181 stars).
+**Rating: 4/5** *(held)* — The category continued maturing this cycle. SonarQube settled at 556 stars and v1.18.1 after a strong development run. Skylos was the standout — surging from v4.3 to v4.16.2 in one cycle, adding Docker, GitLab CI and GitHub Actions scanning, Dart, and Deep Mode audit, making it the most actively developed server in the category. CodeQL added a SQLite backend, 14 new opt-in tools, and Rust support. mcp-code-checker expanded to 5+ tools with tach and lint-imports. The Biome RFC narrowed scope away from format/lint, closing that door for now.
 
-The category is no longer fragmented across tiny projects — several servers now have hundreds of stars and active development. The main remaining gaps are official MCP servers from Prettier, Biome, and golangci-lint.
+The category is stable at the enterprise end and actively expanding at the mid-tier. The main remaining gaps are official MCP servers from Prettier and golangci-lint.
 
-**Recommendations:** For enterprise code quality, SonarQube's official server (544 stars) is the clear leader. For security scanning, Semgrep's built-in MCP integration is the most seamless. For dead code and SAST, Skylos (426 stars) is the most comprehensive. For cross-language diagnostics, the LSP bridge approach (mcp-language-server or lsp-mcp) gives you coverage across all LSP-supported languages. For JavaScript/TypeScript, ESLint's built-in MCP (v0.3.4) requires zero setup. For .NET, NDepend is the first dedicated option.
+**Recommendations:** For enterprise code quality, SonarQube's official server (556 stars) is the clear leader. For security scanning, Semgrep's built-in MCP integration is the most seamless. For dead code and SAST with active development, Skylos (439 stars, v4.16.2) is the most comprehensive. For cross-language diagnostics, the LSP bridge approach (mcp-language-server or lsp-mcp) gives you coverage across all LSP-supported languages. For JavaScript/TypeScript, ESLint's built-in MCP (v0.3.5) requires zero setup. For .NET, NDepend is the first dedicated option. For CodeQL query development, the official server is now at v2.25.4 with SQLite-backed caching.
 
-*This review was last refreshed on 2026-04-30 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-05-21 using Claude Sonnet 4.6 (Anthropic).*
 
