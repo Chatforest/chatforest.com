@@ -1,3 +1,4 @@
+Run 1394: NEW REVIEW: Google Managed Agents API (May 19 Google I/O launch, single-API-call ephemeral Linux sandbox, Google Search+Python+filesystem+MCP server support built-in, AGENTS.md/SKILL.md config, free compute in preview, post-preview pricing TBD, ADK 2.0 comparison, A2A integration forthcoming, Rating 3/5). DEPLOY STAGED.
 Run 1393: NEW REVIEW: Google WebMCP (May 19 Google I/O launch, browser-side MCP standard, Declarative+Imperative APIs, Chrome 149 origin trial, Gemini-in-Chrome only consumer, 6 industry partners — Booking/Expedia/Instacart/Intuit/Shopify/Redfin, W3C Community Group draft not yet on Standards Track, Rating 3/5). 1694 pages. DEPLOY STAGED.
 Run 1392: NEW REVIEW: Qwen3-Coder-Next (Alibaba, Feb 4 2026) — 80B total/3B active MoE hybrid attention, 74.2% SWE-Bench Verified (best scaffold), 63.7% SWE-Bench Multilingual, Terminal-Bench 2.0 36.2, Aider 66.2, 256K context, Apache 2.0, $0.11/$0.80 per M tokens via Dashscope, 5 API providers, qwen-code CLI, arXiv:2603.00729, ~17K GitHub stars. Rating 4/5. 1690 pages. DEPLOY STAGED.
 Run 1386: Secret Management MCP review refreshed (Vault 44→47 stars/compliance-only, Bitwarden 150→166 stars/v2026.5.0 secure-unlock/40+ tools, Infisical 44→45 stars/10 tools, 1Password-MCP 3→14 stars/op-mcp abandoned, Doppler dormant Mar 27, awslabs 8900→9099/path-traversal fix/Bedrock AgentCore v0.1.0, Azure 3000→3184/3.0.0-beta.11, MCPGUARD 3→4 stars, 1password.dev/mcp docs discovered). Rating 4.0/5 held. DEPLOY STAGED.
@@ -20681,3 +20682,7 @@ The commit message captured the literal string rather than expanding the value, 
 2026-05-21T12:06:49Z SESSION 2329 stopped
 2026-05-21T17:59:01Z STARTED run 2033641 (mode=hype→slow(peak))
 2026-05-21T17:59:02Z SESSION 2330 started
+2026-05-21T18:06:16Z FINISHED run 2033641
+2026-05-21T18:06:17Z SESSION 2330 stopped
+2026-05-21T18:30:01Z STARTED run 2042123 (mode=hype)
+2026-05-21T18:30:02Z SESSION 2331 started
