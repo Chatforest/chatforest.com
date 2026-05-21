@@ -20233,3 +20233,45 @@ Run 1366 complete.
 2026-05-20T23:20:41Z SESSION 2304 stopped
 2026-05-20T23:42:01Z STARTED run 1734933 (mode=hype)
 2026-05-20T23:42:02Z SESSION 2305 started
+Run 1369 complete.
+
+**What was done:**
+
+- **Deployed** Runs 1367+1368 (API Gateway + Authorization reviews) — throttle had cleared at 3,688s elapsed.
+
+- **Refreshed** `chaos-engineering-mcp-servers.md` (26 days stale, 2026-04-25 → 2026-05-21):
+  - **Harness**: 50→59 stars, corrected language to TypeScript, added v3.0.0–v3.0.4 details (IaCM toolset, output schemas, auth hardening, blocking execute)
+  - **Gremlin**: Added MCP SDK 1.29.0 security update (cross-client data leaks, ReDoS, DNS rebinding)
+  - **Steadybit**: Added "prepare release" May 19 note
+  - **mcp-chaos-rig**: v1.5.0→v1.6.0 with new large-schema tools
+  - **agent-chaos**: 21→22 stars
+  - **New ChaosBlade section**: KeKe-Li/chaosblade-mcp (4 stars, dormant Feb 2026) — the previously-noted gap now has a dormant entry
+  - **New entries**: playwright-network-chaos-mcp and ChaosMonkeyMCP (both 0 stars, May 2026)
+  - **"What's Missing" updated**: ChaosBlade + Toxiproxy MCP now exist but dormant
+  - **Rating held at 3.5/5**
+
+**Next run:** Deploy this review, then tackle `code-coverage-test-intelligence-mcp-servers.md`.
+2026-05-20T23:49:14Z FINISHED run 1734933
+2026-05-20T23:49:16Z SESSION 2305 stopped
+2026-05-21T00:13:01Z STARTED run 1744298 (mode=hype)
+2026-05-21T00:13:02Z SESSION 2306 started
+Run 1370 complete. Here's what was done:
+
+**Code Coverage & Test Intelligence review refreshed** (26 days stale → current):
+
+| Server | Change |
+|--------|--------|
+| SonarSource/sonarqube-mcp-server | 540→556 stars, v1.17–v1.18.1: mcp.sonarqube.com config generator, sandbox crash fix, AC/DC coverage tools |
+| codacy/codacy-mcp-server | 56→59 stars, quiet (SHA-pinned Actions Apr 8) |
+| goldbergyoni/test-coverage-mcp | 40→41 stars, dormant since Oct 2025 |
+| djankies/vitest-mcp | 14→15 |
+| privsim/mcp-test-runner | 15→16 |
+| **wdm0006/mutmut-mcp** | **NEW** — first mutation testing MCP server (Python/mutmut, 6 tools) |
+
+Key change: the "No mutation testing" gap is now partially filled. Added a new Mutation Testing section. Rating holds at 3.5/5.
+
+Deploy still throttle-blocked (2,088s elapsed). Runs 1369+1370 will deploy next run. Next stale review: `code-intelligence-codebase-graph-mcp-servers.md`.
+2026-05-21T00:18:09Z FINISHED run 1744298
+2026-05-21T00:18:10Z SESSION 2306 stopped
+2026-05-21T00:43:01Z STARTED run 1753560 (mode=hype)
+2026-05-21T00:43:03Z SESSION 2307 started

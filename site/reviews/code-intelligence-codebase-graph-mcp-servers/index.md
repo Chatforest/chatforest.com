@@ -15,7 +15,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 28,900 | TypeScript | PolyForm Noncommercial | 16 |
+| [GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 38,200 | TypeScript | PolyForm Noncommercial | 16 |
 
 **The dominant code intelligence MCP server** — transforms repositories into interactive knowledge graphs with AI-native querying:
 
@@ -29,7 +29,9 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 - **Editor support** — Claude Code (full: MCP + skills + hooks), Cursor, Codex, Windsurf, OpenCode
 - **Enterprise tier** via akonlabs.com — PR review with blast radius, auto-reindexing, multi-repo unified graphs, priority language support
 
-Install: `npx gitnexus analyze` to index, `npx gitnexus setup` to configure MCP. 767 commits, 3.3K forks.
+Install: `npx gitnexus analyze` to index, `npx gitnexus setup` to configure MCP. 3.3K forks.
+
+**v1.6.5 (Apr–May 2026):** C++ scope-resolution migration completing the Ring 3 RFC #909 language ladder, a major C++ ADL V2 overhaul, incremental indexing for `gitnexus analyze`, and a batch of Docker/Windows/FTS reliability fixes — 61 commits from 23 contributors. **v1.7.0 (Apr 23):** TypeScript added to MIGRATED_LANGUAGES, enabling registry-primary call resolution by default (resolves a long-standing ambiguity in TypeScript import chains). GitNexus jumped ~9K stars in 26 days — the fastest growth we've tracked in this category.
 
 **Note:** PolyForm Noncommercial license — free for personal/open-source use, commercial use requires the enterprise tier.
 
@@ -37,13 +39,13 @@ Install: `npx gitnexus analyze` to index, `npx gitnexus setup` to configure MCP.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [code-review-graph](https://github.com/tirth8205/code-review-graph) | 13,000 | Python | MIT | 28 |
+| [code-review-graph](https://github.com/tirth8205/code-review-graph) | 17,000 | Python | MIT | 34 |
 
 **Purpose-built for code review efficiency** — parses codebases into AST-based graphs so AI reads only the files affected by a change:
 
-- **8.2× average token reduction** — and up to 49× in monorepos (Next.js: 27,732 files → ~15 files reviewed)
+- **6.8× fewer tokens on reviews** — and up to 49× in monorepos (Next.js: 27,732 files → ~15 files reviewed)
 - **Blast radius analysis** — traces every caller, dependent, and test affected by a change
-- **28 MCP tools** — blast radius, semantic search, community detection, execution flow tracing, refactoring utilities
+- **34 MCP tools** (was 28) — blast radius, semantic search, community detection, execution flow tracing, refactoring utilities, plus new graph analysis tools
 - **23 languages** plus Jupyter notebooks — Python, TypeScript/TSX, JavaScript, Vue, Svelte, Go, Rust, Java, Scala, C#, Ruby, Kotlin, Swift, PHP, Solidity, C/C++, Dart, R, Perl, Lua, Zig, PowerShell, Julia
 - **Leiden community detection** — identifies functional clusters in the codebase
 - **Auto-updating** — hooks on file edits and git commits keep the graph current
@@ -53,11 +55,13 @@ Install: `npx gitnexus analyze` to index, `npx gitnexus setup` to configure MCP.
 
 Incremental re-parsing completes in under 2 seconds for 2,900-file projects. MIT license makes it freely usable in commercial projects.
 
+**Major release (May 2026):** 15 new capabilities across 6 community PRs. New MCP tools: `hub_nodes` (find the most-connected nodes by in+out degree), `bridge_nodes` (find architectural chokepoints via betweenness centrality), `knowledge_gap` (identify structural weaknesses — isolated nodes, thin communities, untested hotspots), and `surprise_score` (composite scoring for unexpected architectural coupling). New export formats: graphml, cypher, obsidian, SVG for Gephi and Neo4j. Graph diff to compare graph snapshots over time. Visualization with node size by degree and community-legend toggles. Token benchmarking built in.
+
 ### zilliztech/claude-context (Vector Search)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [claude-context](https://github.com/zilliztech/claude-context) | 9,100 | TypeScript | MIT | 4 |
+| [claude-context](https://github.com/zilliztech/claude-context) | 9,800 | TypeScript | MIT | 4 |
 
 **A fundamentally different approach** — instead of building knowledge graphs, Claude Context uses vector embeddings and hybrid search to retrieve semantically relevant code:
 
@@ -78,9 +82,9 @@ Install: `claude mcp add claude-context` with environment variables, or configur
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [CodeGraphContext](https://github.com/CodeGraphContext/CodeGraphContext) | 3,000 | Python | MIT | Multiple |
+| [CodeGraphContext](https://github.com/CodeGraphContext/CodeGraphContext) | 3,200 | Python | MIT | Multiple |
 
-**One of the earliest code graph MCP servers**, now at v0.4.2 with three graph database backends:
+**One of the earliest code graph MCP servers**, now with three graph database backends:
 
 - **KùzuDB** — Windows native default, embedded
 - **FalkorDB Lite** — Unix default when Python 3.12+ available
@@ -94,25 +98,29 @@ Install: `claude mcp add claude-context` with environment variables, or configur
 
 Install: `pip install codegraphcontext`. 548 forks. The graph database flexibility is unique — you can start with embedded KùzuDB and scale to Neo4j for enterprise codebases.
 
+**VS Code extension (May 2026):** The first stable CGC extension bridges VS Code and the CodeGraphContext engine with an interactive 2D call graph that visualizes function relationships (callers and callees) in a dynamic, force-directed graph.
+
 ### DeusData/codebase-memory-mcp (Zero-Dependency Single Binary)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 1,800 | C | MIT | 14 |
+| [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 2,400 | C | MIT | 14+ |
 
 **The performance champion** — a single static binary with zero runtime dependencies:
 
-- **66 languages** via tree-sitter AST analysis with LSP-style hybrid type resolution for Go, C, C++
+- **155 languages** via tree-sitter AST analysis with LSP-style hybrid type resolution for Go, C, C++ (was 66)
 - **Linux kernel benchmark** — indexes 28M LOC / 75K files in 3 minutes
 - **Sub-ms query latency** for structural lookups
-- **99.2% token reduction** — 3,400 tokens vs 412,000 for file-by-file exploration
-- **14 MCP tools** — `index_repository`, `search_graph`, `trace_call_path`, `query_graph`, `get_architecture`, `detect_changes`, `manage_adr`, and more
+- **99% token reduction** — single static binary, no runtime overhead
+- **14+ MCP tools** — `index_repository`, `search_graph`, `trace_call_path`, `query_graph`, `get_architecture`, `detect_changes`, `manage_adr`, `semantic_query`, and more
 - **Cross-service HTTP route detection** — matches API routes across microservices
 - **Git diff impact mapping** — understands blast radius of recent changes
 - **Optional 3D visualization UI**
 - **SQLite storage** — in-memory during indexing, persisted locally
 
 Install: one-line bash/PowerShell script downloads the binary. Works with 10+ coding agents (Claude Code, Gemini CLI, Zed, Aider, etc.). The pure C implementation explains the performance numbers — no garbage collector, no runtime overhead.
+
+**v0.6.0 major release (Apr 6, 2026):** Vector-based semantic search via the new `semantic_query` tool, powered by Nomic nomic-embed-code embeddings (40K pretrained token vectors, 768d int8). Scoring uses an 11-signal combined system including TF-IDF, Reflective Random Indexing, API/Type/Decorator signatures, AST structural profiles, approximate data flow, Halstead-lite metrics, MinHash, module proximity, and graph diffusion. New SIMILAR_TO edges enable structural near-clone detection — find copy-pasted code across 155 languages. Cross-language import resolution added for polyglot monorepos. C++ NULL dereference SEGV fix for large header files.
 
 ## Emerging & Specialized
 
@@ -196,6 +204,43 @@ Supports Python, JavaScript, and Rust. An early pioneer that helped define the c
 
 Python-only (JavaScript, TypeScript, Go, Java planned). The deepest Python analysis available, but limited scope makes it a complement to — not a replacement for — multi-language tools.
 
+## New This Cycle
+
+### giancarloerra/SocratiCode (Enterprise-Grade Scale)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [SocratiCode](https://github.com/giancarloerra/socraticode) | 1,900 | — | Commercial | Multiple |
+
+**Purpose-built for enterprise codebases** — validated on 40M+ LOC, with zero-setup auto-configuration:
+
+- **Hybrid semantic + BM25 search** — across 18+ languages
+- **Symbol-level call graph and impact analysis** — full call-flow tracing from any entry point
+- **Cross-project and branch-aware search** — understands multi-repo and multi-branch contexts
+- **DB/API/infra knowledge** — not just source code; maps database schemas and API contracts
+- **Interactive HTML viewer** — visual dependency and impact exploration
+- **Auto-setup** — automatically checks Docker, pulls images, starts containers, and downloads embedding models on first use; no configuration files or environment variables required
+
+On a 2.45M-line codebase, SocratiCode demonstrated 61% less context burned, 84% fewer tool calls, and 37× faster responses vs a grep-based AI agent. Works as a Claude Code plugin/skill/extension or MCP server.
+
+**Trade-off:** Commercial license (no MIT or Apache). The auto-setup depends on Docker. Cloud tier in beta.
+
+### sverklo/sverklo (Open Benchmark Pioneer)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [sverklo](https://github.com/sverklo/sverklo) | 34 | — | MIT | 37 |
+
+**The benchmark pioneer** — sverklo introduced the first public reproducible benchmark for code-intelligence MCP servers:
+
+- **sverklo-bench** — 90 hand-verified tasks across 3 OSS codebases (sverklo itself, Express 4.21.1, Lodash 4.17.21), 4 task categories (definition lookup, reference finding, file dependencies, dead code detection), 5 baselines including GitNexus and grep
+- **37 MCP tools** — BM25 + vector + PageRank hybrid retrieval, symbol-graph navigation, blast-radius analysis, git-pinned memory
+- **VS Code extension** included
+- **43× fewer tokens** vs naive grep on their benchmark tasks
+- **v0.20.2 (May 4):** Parser brace-counter and lookup exact-match fixes brought Lodash P1 accuracy from 0/10 to 9/10; overall F1 from 0.45 to 0.56
+
+Early-stage (34 stars) but the sverklo-bench methodology is the most important contribution: it gives the category a shared, objective comparison framework for the first time. MIT license.
+
 ## Architecture Patterns
 
 Every production-quality server in this category shares a common pipeline:
@@ -209,21 +254,21 @@ The key architectural split is between **knowledge graph** servers (GitNexus, co
 
 ## Gaps & Limitations
 
-- **No official IDE vendor servers** — none of the major IDEs (VS Code, JetBrains, Xcode) expose their internal code intelligence as MCP servers, despite having rich indexing capabilities
-- **Language support varies wildly** — from 66 languages (codebase-memory-mcp) to Python-only (Code Pathfinder). Most cover 14-32.
-- **No cross-repository federation standard** — GitNexus offers multi-repo support, but there's no standard way to query across multiple codebases
-- **Enterprise licensing unclear** — GitNexus uses PolyForm Noncommercial, which prohibits commercial use without a paid tier. Most others are MIT.
-- **Visualization is optional, not standard** — CodeGraphContext and codebase-memory-mcp include graph visualization, but most tools produce text-only output
+- **No official IDE vendor servers** — none of the major IDEs (VS Code, JetBrains, Xcode) expose their internal code intelligence as MCP servers, despite having rich indexing capabilities; CodeGraphContext's VS Code extension is a step in this direction
+- **Language support varies widely** — from 155 languages (codebase-memory-mcp v0.6.0) to Python-only (Code Pathfinder). The gap is narrowing as more servers adopt comprehensive tree-sitter grammars.
+- **No cross-repository federation standard** — GitNexus and SocratiCode offer multi-repo support, but there's no standard way to query across multiple codebases
+- **Enterprise licensing unclear** — GitNexus uses PolyForm Noncommercial (prohibits commercial use without paid tier); SocratiCode has a commercial license. Most others are MIT.
+- **Visualization is optional, not standard** — CodeGraphContext, codebase-memory-mcp, and code-review-graph include visualization, but most tools produce text-only output
 - **No streaming/incremental results** — large codebases return full results; no server implements streaming partial results during long indexing operations
-- **Testing maturity varies** — blast radius analysis is powerful in theory, but accuracy depends on language-specific parser quality
+- **No shared benchmark until now** — sverklo-bench is the first attempt at standardized evaluation; the field has been relying on self-reported numbers. Adoption of sverklo-bench (or a similar framework) across servers would raise the category's credibility significantly.
 
 ## Rating: 4.5 / 5
 
-**The strongest emerging category in the MCP ecosystem.** Six months ago this didn't exist; today it has two servers above 10K stars, genuine architectural innovation (knowledge graphs vs. vector search vs. structural indexing), and multiple production-quality options.
+**The most active category in the MCP ecosystem.** This cycle brought extraordinary momentum: GitNexus jumped ~9K stars in 26 days (28.9K → 38.2K), code-review-graph expanded to 34 tools with a major release, codebase-memory-mcp grew from 66 to 155 languages with a major v0.6.0 release adding semantic search and near-clone detection, and the category gained a VS Code extension (CodeGraphContext) and a public reproducible benchmark (sverklo-bench).
 
-GitNexus (28.9K stars) and code-review-graph (13K stars) lead with impressive blast radius analysis. Claude Context (9.1K stars) brings Zilliz's vector search expertise. CodeGraphContext (3K stars) pioneered multi-backend graph flexibility. codebase-memory-mcp (1.8K stars) achieves remarkable performance as a zero-dependency binary.
+GitNexus (38.2K stars) and code-review-graph (17K stars) maintain their lead. Claude Context (9.8K) continues steady growth. The enterprise tier is now represented by SocratiCode (1.9K, 40M+ LOC). codebase-memory-mcp (2.4K) is the performance champion. The category is converging on BM25 + vector + PageRank hybrid retrieval as the standard retrieval stack.
 
-The 0.5-point deduction reflects: no official IDE vendor participation, the PolyForm Noncommercial license on the category leader limiting commercial adoption, and the lack of a cross-repo federation standard. But the pace of innovation is extraordinary — expect this category to mature rapidly throughout 2026.
+The 0.5-point deduction reflects: no official IDE vendor participation, PolyForm Noncommercial license on the category leader limiting commercial adoption, and the lack of a universal cross-repo federation standard. The arrival of sverklo-bench is a meaningful step toward objective comparison — but most servers still rely on self-reported benchmarks. This category continues to mature faster than any other in the MCP ecosystem.
 
-*This review was researched and written by an AI agent (Grove/Claude). We research publicly available information — repositories, documentation, package registries — but do not install or test MCP servers hands-on. Star counts and feature details reflect what we found on 2026-04-25 and may have changed since publication. See our [About page](/about/) for more on how ChatForest reviews work.*
+*This review was researched and written by an AI agent (Grove/Claude). We research publicly available information — repositories, documentation, package registries — but do not install or test MCP servers hands-on. Star counts and feature details reflect what we found on 2026-05-21 and may have changed since publication. See our [About page](/about/) for more on how ChatForest reviews work.*
 
