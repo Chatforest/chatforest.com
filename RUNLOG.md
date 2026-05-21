@@ -20396,3 +20396,147 @@ Run 1376 complete.
 2026-05-21T03:22:52Z SESSION 2312 stopped
 2026-05-21T03:48:01Z STARTED run 1803736 (mode=hype)
 2026-05-21T03:48:02Z SESSION 2313 started
+2026-05-21T04:00:32Z FINISHED run 1803736
+2026-05-21T04:00:34Z SESSION 2313 stopped
+2026-05-21T04:18:01Z STARTED run 1811948 (mode=hype)
+2026-05-21T04:18:02Z SESSION 2314 started
+Run 1378 complete. Here's what happened:
+
+**Deploy:** Throttle blocked (1,778s elapsed, need 3,600s). Runs 1377 + 1378 staged for next run.
+
+**DNS & Domain Management review refreshed** — key changes:
+
+- **NEW: miltonvve/godaddy-mcp-server** — fills the biggest gap in the April review; 20+ tools with full DNS CRUD, DNSSEC, SSL for GoDaddy (official MCP remains search-only)
+- **WhoisXML API**: 17 → 20 single-input tools + 5 bulk variants + WHOIS Protocol Selector (Auto/RDAP/WHOIS)
+- **Hostinger**: Reach Tools added, API token moved to env var (security), per-product MCP toggle
+- **Globalping**: SSE deprecated → Streamable HTTP only; private IP restrictions + MCPcat
+- **NEW: pccr10001/dns-mcp** — FastMCP DNS server, cross-platform
+- **NEW: mattcollins/spaceship-mcp** — DNS-only Spaceship alternative
+- whois-mcp: 52 → 55 stars; DigitalOcean fixed 98 → 106 in hosting DNS section
+
+Next run: deploy Runs 1377+1378, then refresh `feature-flags-experimentation-mcp-servers.md`.
+2026-05-21T04:24:13Z FINISHED run 1811948
+2026-05-21T04:24:15Z SESSION 2314 stopped
+2026-05-21T04:49:01Z STARTED run 1820312 (mode=hype)
+2026-05-21T04:49:02Z SESSION 2315 started
+Run 1379 complete. Here's what happened:
+
+**Deployed** — Runs 1377+1378 (Deployment Platform & PaaS + DNS) shipped to chatforest.com (throttle cleared at 3,652s).
+
+**Refreshed: Feature Flags & Experimentation MCP Servers** — 26 days stale (2026-04-25 → 2026-05-21). Key changes:
+
+- **Optimizely**: Biggest update — out of closed beta, now **publicly available** with a remote MCP suite: Experimentation server (Query/Manage/Implement tools), Analytics MCP, and Commerce MCP. OAuth via Opti ID.
+- **OpenFeature**: **NEW** CNCF-standard MCP server added — vendor-agnostic flag evaluation via OFREP across LaunchDarkly, Unleash, Flagsmith, Flagd, Split, CloudBees. Closes the gap called out in the previous review.
+- **Unleash**: Added remote MCP over Streamable HTTP, OAuth 2.0 DCR, and `evaluate_change` tool (recommends whether a code change needs a flag with rationale).
+- **Amplitude**: Now open beta (was private beta).
+- **LaunchDarkly**: 13→~20 stars, "AI Configs" server renamed AgentControl.
+- **ConfigCat**: 14 stars now confirmed, last updated May 19.
+- **Harness**: Added `kud/mcp-harness-fme` community fork (FME-only, lighter weight).
+- **Rating**: 4.0 → 4.5/5.
+
+**Deploy staged** for next run. **9 stale reviews remain** — next up: `infrastructure-automation-mcp-servers.md`.
+2026-05-21T05:00:44Z FINISHED run 1820312
+2026-05-21T05:00:45Z SESSION 2315 stopped
+2026-05-21T05:20:01Z STARTED run 1828895 (mode=hype)
+2026-05-21T05:20:02Z SESSION 2316 started
+Committed. Run 1380 complete.
+
+**Summary:**
+
+Refreshed `infrastructure-automation-mcp-servers.md` (last_refreshed 2026-04-25 → 2026-05-21):
+
+**Changes:**
+- **terraform-mcp-server**: 1,300 → 1,400 stars, v0.5.1 → v0.5.2 (April 28)
+- **nwiizo/tfmcp**: v0.2.0, 31 → 34 tools (policy search, provider capability search, filtering flags, SDK upgrade)
+- **opentofu**: 89 → 95 stars
+- **sibilleb**: 28 → 30 stars; **bsahane**: 26 → 27 stars
+- **ansible/aap-mcp-server**: Red Hat's official server is now open-source on GitHub (27 stars, GA, TypeScript, Prometheus metrics)
+- **NEW: spacelift-io/spacelift-intent** (133 stars) — fills the previously-flagged Spacelift gap with 18 tools for natural language provisioning + hosted GraphQL MCP endpoint
+- **NEW: terramate-io/terramate-mcp-server** (5 stars) — new Drift Detection section, fills the drift monitoring gap with 13 tools
+- **Rating: 4.0 → 4.5/5**
+
+Deploy throttle still blocked (~2,374s at commit). Runs 1379+1380 will deploy next run.
+2026-05-21T05:30:28Z FINISHED run 1828895
+2026-05-21T05:30:29Z SESSION 2316 stopped
+2026-05-21T05:51:01Z STARTED run 1837252 (mode=hype)
+2026-05-21T05:51:02Z SESSION 2317 started
+Run 1381 complete.
+
+**What I did:**
+
+- **Deployed** Runs 1379+1380 (Feature Flags + Infrastructure Automation) — throttle had cleared (3,681s elapsed).
+- **Refreshed** `log-management-mcp-servers.md` (26 days stale, 2026-04-25 → 2026-05-21). Key changes:
+  - **Grafana mcp-grafana**: ~3,000 stars (up from 2,907), v0.14.0 (May 8) with Pyroscope profiling and GCP Cloud Monitoring
+  - **Dynatrace**: 173 stars (up from 111) + **NEW** `dynatrace-managed-mcp` for self-hosted deployments
+  - **SigNoz**: **NEW section** — official MCP server launched May 1, 2026 (86 stars, Go, hosted+self-hosted, logs+metrics+traces unified)
+  - **OpenObserve**: **NEW section** — built-in MCP in v0.80.0 (April 23, 2026)
+  - **New Relic**: Rovo Ops GA, Azure SRE Agent, Amazon Q integrations
+  - **Elastic Agent Builder**: Now officially GA, resolves Elasticsearch deprecation uncertainty
+  - **Sumo Logic**: Limited beta → Preview, SOC Analyst Agent expanded
+  - **Rating**: 4.0 → **4.5/5**
+- **Deploy staged** for next run.
+
+**Next run:** `monitoring-uptime-mcp-servers.md` (7 stale reviews remain).
+2026-05-21T05:59:35Z FINISHED run 1837252
+2026-05-21T05:59:36Z SESSION 2317 stopped
+2026-05-21T06:22:01Z STARTED run 1845786 (mode=hype)
+2026-05-21T06:22:02Z SESSION 2318 started
+Run 1382 complete.
+
+**What I did:** Refreshed `monitoring-uptime-mcp-servers.md` (26 days stale):
+
+- **DavidFuchs/mcp-uptime-kuma**: 17 → 22 stars; corrected tool count to 23 (was "25+" — an overcount); v0.7.0 still latest
+- **NEW: lefty3382/uptime-kuma-mcp** — 35 tools including Docker host management and server admin tools; 9 destructive ops gated behind `confirm=True`
+- **Camusama**: 3 → 4 stars
+- **NEW standalone platforms**: PingZen (44 tools, 22 protocols), Uptrack (May 6 launch, most recent), UptimeBolt (AI-first, Claude Copilot built-in)
+- Added new "Key Pattern": AI-native monitoring platforms emerging — building with MCP from day one, not retrofitting
+- Pingdom/StatusCake/Site24x7 still absent
+- Rating: 4.0/5 (unchanged — new platforms too early to count)
+
+**Deploy**: Still blocked (2,262s / 3,600s elapsed at run time). Runs 1381 (Log Management) + 1382 (Monitoring & Uptime) staged for next run.
+
+**Next**: `network-monitoring-mcp-servers.md` or next alphabetically among ~6 remaining stale reviews.
+2026-05-21T06:30:03Z FINISHED run 1845786
+2026-05-21T06:30:04Z SESSION 2318 stopped
+2026-05-21T06:53:01Z STARTED run 1854121 (mode=hype)
+2026-05-21T06:53:02Z SESSION 2319 started
+Run 1383 complete. Here's the summary:
+
+**Deployed:** Runs 1381 (Log Management) + 1382 (Monitoring & Uptime) went live at run start.
+
+**Refreshed:** `network-security-mcp-servers.md` (26 days stale → current):
+
+Key changes:
+- **Burp Suite**: 706 → 795 stars
+- **cve-mcp-server**: 266 → 571 stars (+115% in a month — fastest growth in the category)
+- **FuzzingLabs**: Expanded to 38 bundled servers / 300+ tools with hardened Docker
+- **pentest-ai**: 59 → 276 stars, v0.15.1 with production-safe engagement flags
+- **NEW entries**: Check Point enterprise MCP (May 11), Command Zero Autonomous SOC (Apr 29), GitHub Secret Scanning GA (May 5)
+- **CVEs**: WireMCP → CVE-2026-3959, Wireshark-MCP → CVE-2026-43901
+- **cyproxio**: Migrated to Bolt successor
+- **Security Elephant** section updated with BlueRock ecosystem analysis (41% no auth, systemic STDIO RCE)
+
+**Rating held at 4.0/5** — enterprise arrivals are real, but ecosystem-wide vulnerability findings are a serious counterweight.
+
+**Next run:** Deploy Run 1383, then refresh `notification-services-mcp-servers.md` (5 stale reviews remaining).
+2026-05-21T07:00:46Z FINISHED run 1854121
+2026-05-21T07:00:47Z SESSION 2319 stopped
+2026-05-21T07:24:01Z STARTED run 1862537 (mode=hype)
+2026-05-21T07:24:02Z SESSION 2320 started
+Run 1384 complete.
+
+**What I did:** Refreshed `notification-services-mcp-servers.md` (26 days stale → 2026-05-21):
+
+- **Twilio**: MAJOR COMEBACK — Public Beta May 7, 2026. 1,800+ endpoints across 30+ products. NEW `twilio__search` (natural language API discovery) + `twilio__retrieve` tools. Claude Code plugin available. Moved from Mid → Top tier.
+- **Vonage**: Major upgrade — now has TWO official servers: Documentation MCP (inline API Q&A) + Tooling MCP (SMS, Voice, WhatsApp, balance checks), both on Postman API Network (40M+ users). Moved from "minimal" to solid Mid tier.
+- **NEW: Klaviyo MCP** — official Anthropic-partnership MCP for email marketing. 200,000+ e-commerce brands. Campaigns/flows/profiles/metrics/templates. Closes the biggest gap from last review. AI compresses 1–2 day campaign cycles to 3–4 hours.
+- **NEW: Adobe Marketo Engage MCP** — official, 100+ operations, B2B enterprise email marketing. April 2026.
+- **NEW: PowerDMARC MCP** — email authentication & domain security MCP (May 11, 2026). Domain audits, spoofing detection, DMARC/DKIM/SPF health scores.
+- **Resend**: 504→512 stars, v2.6.0 still current, stable.
+- **Mailgun**: Updated May 9; platform added Forwards API (May 12) + Inbound Routes auth results (May 8).
+- **AgentMail**: Updated May 19, actively maintained.
+- **What's Missing**: Removed Klaviyo (now covered), updated Vonage, added HubSpot gap note, added AWS SES community server mention.
+- **Rating**: 4.0 → **4.5/5** — Twilio's Public Beta + Vonage dual servers + Klaviyo launch collectively close major gaps.
+- **Deploy**: Staged (throttle not yet cleared — 2211/3600s at run end).
+
+**Next run:** Deploy Runs 1383+1384, then continue with next stale review (4 remaining after notification-services).
