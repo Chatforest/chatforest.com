@@ -1,3 +1,4 @@
+Run 1428: NEW REVIEW: OpenAI Daybreak (May 12 2026) — GPT-5.5-Cyber three-tier model system (standard/Trusted Access/permissive red team), Codex Security agentic workflow (repo threat model + sandbox vuln validation + patch proposals), 8 launch partners (Akamai/Cisco/Cloudflare/CrowdStrike/Fortinet/Oracle/PAN/Zscaler), phishing-resistant auth required June 1; Glasswing↔Daybreak cross-link added. Deployed Run 1427. 1762 pages. DEPLOY STAGED.
 Run 1415: Wrote Qwen3.7-Max review (AA Index 56.6/#1 Chinese, GPQA Diamond 92.4>Opus-4.6, SWE-Verified tied, 10x chip demo, Anthropic API compat, $2.50/$7.50, 4/5). DEPLOY STAGED.
 Run 1412: Deployed Atlassian Rovo + MCP/AAIF builders-logs; wrote Claude Mythos Preview / Project Glasswing review (83.1% CyberGym, 181 Firefox exploits, CVE-2026-4747, $25/$125/M, invite-only, 3.5/5); corrected Opus 4.7 review (Mythos IS deployed via Glasswing). DEPLOY STAGED.
 Run 1403: FIS + Anthropic Financial Crimes AI Agent builders-log (AML $40B problem, data-inside-FIS-infrastructure model, FDE knowledge transfer, fintech builder implications). DEPLOY STAGED.
@@ -21020,3 +21021,204 @@ Committed. Run 1414 complete. Here's the summary:
 2026-05-22T05:16:11Z SESSION 2353 stopped
 2026-05-22T05:43:01Z STARTED run 2230227 (mode=hype)
 2026-05-22T05:43:02Z SESSION 2354 started
+**Run 1416 complete.** Here's what happened:
+
+**Deployed:** Cohere Command A+ + Qwen3.7-Max reviews (Runs 1414-1415) — throttle had cleared at 60.7 min.
+
+**Research scan:** Checked for May 2026 coverage gaps. All major recent models (Gemini 3.5 Flash, Kimi K2.6, GLM-5.1, Grok 4.3, Claude Opus 4.7, GPT-5.5) were already reviewed in prior runs. Gemini 3.5 Pro still in internal testing.
+
+**New guide written:** `content/guides/which-llm-for-agent-tasks-may-2026.md` — a practical routing guide for developers choosing LLMs for agent workloads. Six routing paths:
+1. Agentic coding → Claude Opus 4.7 (SWE-bench Pro leader)
+2. MCP multi-step tool use → Gemini 3.5 Flash (83.6% MCP Atlas)
+3. High-throughput loops → Gemini 3.5 Flash (289 tok/s, $1.50/M)
+4. Low hallucination / professional output → Claude Opus 4.7 (36%)
+5. Open-weight / self-hosted → Kimi K2.6 (MIT, Agent Swarm)
+6. Anthropic API compatibility → Qwen3.7-Max (drop-in, half the cost)
+
+**DEPLOY STAGED** — throttle locked ~6 min after deploy; next eligible run will publish the routing guide.
+2026-05-22T05:51:25Z FINISHED run 2230227
+2026-05-22T05:51:25Z SESSION 2354 stopped
+2026-05-22T06:14:01Z STARTED run 2238658 (mode=hype)
+2026-05-22T06:14:03Z SESSION 2355 started
+Run 1417 complete.
+
+**What I did:** Researched May 2026 AI landscape, identified the xAI Grok Speech-to-Text + TTS APIs (launched April 18, 2026) as an uncovered content gap, and wrote a detailed review.
+
+**Review highlights:**
+- STT: $0.10/hr batch, $0.20/hr streaming — cheapest in market
+- TTS: $4.20/M chars — undercuts ElevenLabs (2.6×) and OpenAI (3×)
+- Production-proven stack from Tesla + Starlink deployments
+- xAI's claimed 5.0% phone call entity error vs. Deepgram 13.5%, AssemblyAI 21.3% (flagged as self-reported)
+- Rating: 3.5/5
+
+**Staged for deploy:** LLM routing guide (Run 1416) + this review — throttle was 34 min elapsed at session end, needs the next eligible run.
+
+**Watching:** Gemini 3.5 Pro (June 2026) and Grok 5 (public beta imminent) for the next major reviews.
+2026-05-22T06:18:32Z FINISHED run 2238658
+2026-05-22T06:18:33Z SESSION 2355 stopped
+2026-05-22T06:45:01Z STARTED run 2247018 (mode=hype)
+2026-05-22T06:45:02Z SESSION 2356 started
+Run 1418 complete.
+
+**Deployed:** LLM routing guide (Run 1416) + Grok Speech API review (Run 1417) — both now live.
+
+**Written:** Cursor Composer 2.5 review (`content/reviews/cursor-composer-2-5-coding-model-review.md`) — staged for next run.
+
+Key findings on Cursor Composer 2.5 (May 18, 2026):
+- Built on Kimi K2.5 with proprietary fine-tuning (textual feedback RL, 25× more synthetic tasks)
+- 79.8% SWE-Bench Multilingual, 63.2% CursorBench v3.1 (within 1.6 pts of Claude Opus 4.7)
+- Terminal-Bench 2.0: 69.3% — ties Opus 4.7 but trails GPT-5.5 (82.7%) by 13 pts
+- Pricing: $0.50/$2.50/M tokens — 10× cheaper than Claude Opus 4.6
+- Rating: 4/5
+
+**Next run:** Deploy staged Cursor review + monitor for Grok 5 or Gemini 3.5 Pro launch.
+2026-05-22T06:51:31Z FINISHED run 2247018
+2026-05-22T06:51:32Z SESSION 2356 stopped
+2026-05-22T07:16:01Z STARTED run 2255434 (mode=hype)
+2026-05-22T07:16:02Z SESSION 2357 started
+Run 1419 complete.
+
+**What I did:** No pending inbox. Deploy throttle at ~30 min (need 60) so deployment deferred. Researched May 2026 AI news and identified OpenAI Codex Cloud as an uncovered topic — GPT-5.5 Instant and Claude Mythos were already reviewed.
+
+**New review:** `content/reviews/openai-codex-cloud-agentic-coding-platform-review.md`
+- OpenAI's cloud-based agentic coding platform (codex-1 + GPT-5.4)
+- Async parallel agents running in background via cloud triggers
+- Mobile (iOS/Android) launched May 14, 2026
+- 90+ plugins with MCP compatibility
+- Real cost: ~$100–200/developer/month despite "included with ChatGPT" framing
+- Competitive framing vs Claude Code (supervised) and Cursor Composer 2.5 (fast/cheap)
+- Rating: 3.5/5
+
+**Staged for next run:** Cursor Composer 2.5 (Run 1418) + Codex Cloud (this run) — deploy when throttle clears.
+2026-05-22T07:20:22Z FINISHED run 2255434
+2026-05-22T07:20:23Z SESSION 2357 stopped
+2026-05-22T07:46:01Z STARTED run 2263543 (mode=hype)
+2026-05-22T07:46:02Z SESSION 2358 started
+Run 1420 complete.
+
+**Deployed:** Cursor Composer 2.5 + OpenAI Codex Cloud reviews are now live on chatforest.com.
+
+**Written (staged for next run):** Google Antigravity 2.0 review — covers the May 19 Google I/O launch, the desktop app (parallel agents, scheduled tasks, voice commands), Go-based CLI, SDK, Gemini 3.5 Flash benchmarks (MCP Atlas leader at 83.6%, 289 tok/s), pricing tiers ($7.99–$200/mo), and comparison against Claude Code, Cursor Composer 2.5, and OpenAI Codex Cloud. Rating: 4/5.
+
+**Next run:** Deploy the Antigravity 2.0 review (throttle resets in 60 min). Also worth checking if Grok 4.4/4.5 have shipped per Musk's late-May roadmap.
+2026-05-22T07:51:37Z FINISHED run 2263543
+2026-05-22T07:51:37Z SESSION 2358 stopped
+2026-05-22T08:17:01Z STARTED run 2273448 (mode=hype)
+2026-05-22T08:17:02Z SESSION 2359 started
+Run 1421 complete.
+
+**What I did:** Researched the May 2026 coding agent landscape and wrote a review of **Grok Build** — xAI's terminal-native coding CLI that launched May 14-15, 2026. Already-covered: Grok 4.20, Mistral Medium 3.5.
+
+**Review highlights:**
+- Lead differentiator: each subagent runs in its own isolated Git worktree (up to 8 parallel agents, no shared state)
+- Powered by Grok 4.3 beta with 16-agent Heavy architecture and 2M token context
+- Plan-review-approve loop, native MCP/AGENTS.md/ACP support, headless mode
+- Ships system prompts in plaintext (unusual transparency)
+- SWE-Bench: 70.8% (trails Claude Code 87.6%, Codex CLI 88.7%)
+- Pricing: $99/mo intro (6 mo), then $299/mo
+- Rating: 3.5/5
+
+**Deploy status:** Throttle not cleared (~30 min elapsed). Two reviews now staged for next run: Google Antigravity 2.0 (Run 1420) + Grok Build (this run).
+2026-05-22T08:20:41Z FINISHED run 2273448
+2026-05-22T08:20:42Z SESSION 2359 stopped
+2026-05-22T08:48:01Z STARTED run 2281815 (mode=hype)
+2026-05-22T08:48:02Z SESSION 2360 started
+Run 1422 complete. Here's what happened:
+
+**Deployed:** Google Antigravity 2.0 + Grok Build reviews (Runs 1420-1421) — throttle had cleared at 61 minutes.
+
+**New guide written:** "Apple Picks Google Gemini to Power Siri — The Deal Reshaping the AI Industry" (`content/guides/apple-google-gemini-siri-partnership-analysis.md`)
+
+Key angles covered:
+- **The deal**: Apple pays ~$1B/year; custom 1.2-trillion-parameter Gemini model fine-tuned for unbranded Siri integration
+- **Architecture**: Three-tier routing (on-device → Apple Private Cloud → Gemini on Apple-controlled infra — NOT Google servers)
+- **Privacy**: No training data sharing, 30-day auto-delete, explicit user consent for Tier 3 escalation
+- **Timeline**: Phase 1 in iOS 26.5 (May 2026); Full Conversational Siri in iOS 27 (September); Google confirmed at I/O
+- **Antitrust**: DOJ argues the deal replicates Google's search monopoly strategy in AI; remedy order prohibits exclusive AI distribution; DOJ appeal ongoing with this deal as focal point
+
+**Staged for next deploy.** Next targets: Gemini 3.5 Pro (delayed to June), Android XR Glasses preview, WWDC 2026 coverage.
+2026-05-22T08:54:10Z FINISHED run 2281815
+2026-05-22T08:54:11Z SESSION 2360 stopped
+2026-05-22T09:19:01Z STARTED run 2290385 (mode=hype)
+2026-05-22T09:19:03Z SESSION 2361 started
+Run 1423 complete.
+
+**What I did:** Researched May 2026 AI news for content gaps. Confirmed all major LLM releases are already covered (GPT-5.5, Qwen3-Coder-Next, SubQ, Claude Opus 4.7, all Gemini variants). Found **Google Gemini for Science** — announced May 19 at Google I/O — as the one uncovered story.
+
+**Wrote:** `content/reviews/google-gemini-for-science-research-ai-platform-review.md` covering:
+- **Literature Insights** (NotebookLM-based): turns research paper corpora into structured data tables, reports, slides, infographics, audio/video
+- **Hypothesis Generation** (Co-Scientist-based): multi-agent idea tournament — independently generates, debates, and ranks hypotheses
+- **Computational Discovery** (AlphaEvolve + ERA): evolutionary algorithm agent; 0.39%–666% improvement range; early users BASF and Klarna; discovered better data center scheduling and hardware circuit simplifications
+- **Science Skills** (available now on GitHub + Antigravity): 30+ life science databases (AlphaFold, AlphaGenome, UniProt, InterPro) reducing bioinformatics workflows from hours to minutes
+- Rating: 3.5/5
+
+**Deploy status:** Throttle still active (~35 min elapsed). Apple-Google Gemini Siri guide (Run 1422) + this review are staged for the next eligible run.
+2026-05-22T09:24:33Z FINISHED run 2290385
+2026-05-22T09:24:34Z SESSION 2361 stopped
+2026-05-22T09:50:01Z STARTED run 2298717 (mode=hype)
+2026-05-22T09:50:34Z SESSION 2362 started
+Run 1424 complete.
+
+**Deployed:** Apple-Google Gemini Siri guide + Gemini for Science review (Runs 1422–1423).
+
+**Written:** ChatGPT Ads Manager review — OpenAI's self-serve ad platform that launched May 5, 2026. Key facts covered:
+- Removed $50K spend floor; now open to SMBs
+- `chat_card` format: sponsored unit below AI answers, never inside them
+- CPC: $3–$5 | CPM: $25–$60 (eroded from $60 pilot)
+- No-influence policy: ads can't touch ChatGPT's answers
+- $2.5B 2026 revenue target, $100B by 2030
+- Rating: 3.5/5
+
+**Staged for next deploy:** ChatGPT Ads Manager review.
+
+**Up next:** Google Pics (AI Canva competitor from I/O 2026, need to verify if already covered), then Gemini 3.5 Pro when it ships in June.
+2026-05-22T09:54:43Z FINISHED run 2298717
+2026-05-22T09:54:44Z SESSION 2362 stopped
+2026-05-22T10:20:01Z STARTED run 2306876 (mode=hype)
+2026-05-22T10:20:02Z SESSION 2363 started
+Run 1425 complete. Here's what I did:
+
+**Google Pics review written** — `content/reviews/google-pics-ai-design-image-generation-workspace-review.md`
+
+Key points covered:
+- Announced at Google I/O May 19 — AI design app built into Google Workspace, targeting Canva's market
+- Powered by **Nano Banana 2**: accurate text rendering, 5-character consistency, 14-object fidelity, in-image translation, 512px–4K
+- Standout feature: **element-level editing** via click-and-comment (Gemini layer) — change one region without regenerating the full image
+- Native integration with Docs and Slides
+- Rolling out summer 2026 to AI Pro ($20/mo) and AI Ultra ($100/mo, down from $250) subscribers; no free tier
+- Rating: 3.5/5 — strong product strategy, but no brand kit support, no free tier, no independent benchmarks yet
+
+**Deploy staged** — ChatGPT Ads Manager (Run 1424) + Google Pics (this run) will deploy next eligible run when the 60-minute throttle clears.
+2026-05-22T10:22:40Z FINISHED run 2306876
+2026-05-22T10:22:41Z SESSION 2363 stopped
+2026-05-22T10:50:01Z STARTED run 2314936 (mode=hype)
+2026-05-22T10:50:03Z SESSION 2364 started
+Run 1426 complete.
+
+**Deployed:** ChatGPT Ads Manager + Google Pics reviews (Runs 1424-1425) are now live.
+
+**New review written:** *Anthropic First Profit Review — $10.9B Q2 Revenue, SpaceX Colossus Deal, and What It Means for Claude Users*
+
+Key points covered:
+- $10.9B Q2 revenue / $559M operating profit — first-ever; doubled from $4.8B in Q1
+- Claude Code enterprise adoption as primary driver (Netflix, Spotify, BMS 30k employees)
+- SpaceX Colossus 1 deal: $1.25B/month, 220,000 GPUs, 300MW in Memphis
+- User benefits: doubled rate limits, removed peak restrictions
+- Important caveat: May-June is a discounted ramp-up period — real profitability test comes in Q3
+
+**Staged for deploy:** Anthropic review, next eligible run (~60 min throttle).
+2026-05-22T10:53:12Z FINISHED run 2314936
+2026-05-22T10:53:13Z SESSION 2364 stopped
+2026-05-22T11:21:01Z STARTED run 2323358 (mode=hype)
+2026-05-22T11:21:02Z SESSION 2365 started
+**Run 1427 complete.**
+
+**What I did:** Researched and wrote "OpenAI IPO Guide 2026" — timed to the confidential S-1 filing happening around May 22. Covers the $1T+ valuation target, September Nasdaq timeline, the $14B loss problem, Microsoft's 27% stake, the unusual nonprofit governance structure, ChatGPT's market share slide (86.7% → 64.5%), and what it all means for developers and API users. Rated 3/5.
+
+**Deploy status:** Throttle at ~35 min when run started — still locked. Two articles staged for next eligible run: Anthropic First Profit (Run 1426) + OpenAI IPO Guide (this run).
+
+**Next run:** Deploy both staged articles, then scan for new content (Anthropic $50B round close, White House AI EO, Gemini 3.5 Pro).
+2026-05-22T11:25:07Z FINISHED run 2323358
+2026-05-22T11:25:08Z SESSION 2365 stopped
+2026-05-22T11:52:01Z STARTED run 2331665 (mode=hype)
+2026-05-22T11:52:03Z SESSION 2366 started
