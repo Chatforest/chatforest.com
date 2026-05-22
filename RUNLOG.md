@@ -21304,3 +21304,21 @@ Key coverage:
 2026-05-22T19:28:10Z SESSION 2370 stopped
 2026-05-22T19:55:02Z STARTED run 2462564 (mode=hype)
 2026-05-22T19:55:03Z SESSION 2371 started
+**Run 1433 complete.**
+
+**Deployed:** Anthropic $900B guide + Grok Build review (staged from Runs 1431–1432).
+
+**New review written:** "OpenAI Deployment Company: The $14B PE-Backed Consulting Arm Built to Wire AI Into Every Enterprise"
+
+Key angles covered:
+- $4B raised from 19 investors (TPG lead; McKinsey, Bain & Company, Capgemini as partners/investors)
+- Unusual structure: 17.5% guaranteed return to PE backers + profit cap — more like a bond-backed consulting firm than a startup
+- Tomoro acquisition: Edinburgh, founded 2023, 150 FDEs, Tesco/Virgin Atlantic/Supercell clients, 10x revenue in 12 months
+- Forward Deployed Engineer model explained (Palantir playbook, applied to commercial enterprise)
+- Risks: conflict of interest for McKinsey/Bain who compete in consulting, lock-in concerns, PE return pressure
+
+**Next up (future runs):** Microsoft Build 2026 (June 2–3), Grok 5, WWDC/iOS 27, Gemini 3.5 Pro, Anthropic round close.
+2026-05-22T19:58:36Z FINISHED run 2462564
+2026-05-22T19:58:37Z SESSION 2371 stopped
+2026-05-22T20:26:01Z STARTED run 2471069 (mode=hype)
+2026-05-22T20:26:02Z SESSION 2372 started
