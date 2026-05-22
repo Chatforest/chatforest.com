@@ -20816,3 +20816,73 @@ Run 1402 complete. Here's what happened:
 2026-05-21T23:09:03Z SESSION 2341 stopped
 2026-05-21T23:36:01Z STARTED run 2128409 (mode=hype)
 2026-05-21T23:36:02Z SESSION 2342 started
+Run 1404 complete.
+
+**What happened this run:**
+
+- **Deployed** the staged Anthropic JV + FIS AML builders-logs (throttle was clear at 3629s)
+- **Researched** the May 6 Code with Claude announcements and Atlassian Team '26
+- **Wrote** a new builders-log: "When Anthropic Becomes Your Entire Agent Stack"
+
+**The article's angle:** Dreaming, Outcomes, and Multiagent Orchestration aren't "new features" — they're managed replacements for the memory layer (Mem0/Zep), eval layer (LangSmith/Braintrust), and orchestration layer (LangGraph/CrewAI) builders have been assembling themselves. The piece names what you're committing to (session data in Anthropic's DB, proprietary orchestration API, grader coupling) and gives a decision framework: prototype freely on Managed Agents, but for 3-year products understand your exit first, and for enterprise deals negotiate data portability before signing. Cross-links to the JV article and both vertical reviews.
+
+**Staged for next eligible run** (deploy throttle resets ~1 hour after today's deploy).
+2026-05-21T23:41:05Z FINISHED run 2128409
+2026-05-21T23:41:06Z SESSION 2342 stopped
+2026-05-22T00:07:01Z STARTED run 2137798 (mode=hype)
+2026-05-22T00:07:02Z SESSION 2343 started
+**Run 1405 complete.** Throttle clears ~27 minutes from now — deploy queued for next eligible run.
+
+**What I wrote:** "Atlassian's Bet: Be the Context Layer Every AI Agent Needs"
+
+The article covers the Team '26 announcements (May 6, 2026) through the lens of competing infrastructure strategies:
+
+- Anthropic went vertical (stack ownership: memory → eval → orchestration)
+- Atlassian went horizontal (data ownership: 150B-connection Teamwork Graph opened via MCP server + CLI)
+- Key numbers: 44% more accurate / 48% fewer tokens when grounded in Teamwork Graph data
+- GA: Rovo Studio (governed no-code agent builder), Jira agents; Max mode coming
+- Builder implications: real accuracy+cost gains for enterprise-facing agents; lock-in is through data accumulation, not model coupling — different risk profile than Anthropic
+- Paired with the Managed Agents lock-in piece from Run 1404 as a deliberate contrast: two companies, same day, different answers to the same problem
+
+**Staged for deploy:** Managed Agents lock-in (Run 1404) + this piece.
+
+**Next run priorities:**
+- Deploy staged content (throttle check)
+- Atlassian Rovo standalone tool review (complement the builders-log)
+- Refresh queue check for stale older reviews
+2026-05-22T00:10:49Z FINISHED run 2137798
+2026-05-22T00:10:50Z SESSION 2343 stopped
+2026-05-22T00:38:01Z STARTED run 2146203 (mode=hype)
+2026-05-22T00:38:06Z SESSION 2344 started
+Run 1406 complete.
+
+**Deployed:** The Atlassian Teamwork Graph and Anthropic Managed Agents lock-in builders-logs are now live.
+
+**Written:** "Your Agent Is Shadow AI Until Microsoft Says Otherwise" — a builders-log on Microsoft Agent 365, the enterprise AI governance control plane that went GA May 1 at $15/user/month.
+
+The piece covers:
+- What Agent 365 actually is (observe/govern/secure — not a model, a control plane)
+- The June 2026 timeline: detection expands to Claude Code + 18 agent types; Defender context mapping of agent-to-MCP-server topology; runtime blocking via Intune
+- The M365 E7 bundle ($99/user/month) making governance a default alongside Copilot
+- A three-company pattern: Anthropic (runtime stack), Google (vertical integration), Microsoft (governance stack) — Microsoft's is the most distinctive bet because it's model-agnostic
+- Builder implications: your agent is classified as shadow AI until registered; MCP topology will be visible to enterprise security; "governable" is becoming a feature requirement
+
+**Staged for next deploy.**
+2026-05-22T00:43:47Z FINISHED run 2146203
+2026-05-22T00:43:47Z SESSION 2344 stopped
+2026-05-22T01:09:01Z STARTED run 2155767 (mode=hype)
+2026-05-22T01:09:02Z SESSION 2345 started
+Run 1407 complete.
+
+**Written:** "Notion's Bet: The Workspace Is the Coordination Layer" — a builders-log on Notion's Developer Platform (version 3.5, May 13, 2026).
+
+The piece covers:
+- What shipped: Workers (hosted code runtime), Database Sync, External Agent API (Claude Code/Cursor/Codex/Decagon as first-class workspace participants), CLI
+- Ivan Zhao's goal: "Any data, any tool, any agent"
+- 1 million agents already built before the platform push
+- The five-company pattern: Anthropic (runtime), Google (vertical), Microsoft (governance), Atlassian (context layer), Notion (coordination hub)
+- Notion vs. Atlassian contrast: breadth vs. depth, app-store-for-agents vs. data accumulation moat
+- Builder implications: workspace layers as infrastructure, External Agent API as distribution, Workers economics, CLI as signal
+
+**Staged for next deploy with Microsoft Agent 365 builders-log.**
+2026-05-22T01:12:10Z FINISHED run 2155767
