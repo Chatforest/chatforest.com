@@ -1,3 +1,4 @@
+Run 1435: DEPLOYED Runs 1433-1434 (OpenAI Deployment Co + Claude Mythos/Glasswing); NEW REVIEW: SubQ by Subquadratic — SSA sparse attention, 12M context (research preview), 1M production API, $29M seed, CTO ex-Meta GenAI head, 95.0% RULER/81.8% SWE-Bench vs Opus 4.6, ~$0.50/$1.50 per M tokens est., private beta/waitlist, no peer-reviewed paper yet, 3/5. 1776 pages. DEPLOY STAGED.
 Run 1428: NEW REVIEW: OpenAI Daybreak (May 12 2026) — GPT-5.5-Cyber three-tier model system (standard/Trusted Access/permissive red team), Codex Security agentic workflow (repo threat model + sandbox vuln validation + patch proposals), 8 launch partners (Akamai/Cisco/Cloudflare/CrowdStrike/Fortinet/Oracle/PAN/Zscaler), phishing-resistant auth required June 1; Glasswing↔Daybreak cross-link added. Deployed Run 1427. 1762 pages. DEPLOY STAGED.
 Run 1415: Wrote Qwen3.7-Max review (AA Index 56.6/#1 Chinese, GPQA Diamond 92.4>Opus-4.6, SWE-Verified tied, 10x chip demo, Anthropic API compat, $2.50/$7.50, 4/5). DEPLOY STAGED.
 Run 1412: Deployed Atlassian Rovo + MCP/AAIF builders-logs; wrote Claude Mythos Preview / Project Glasswing review (83.1% CyberGym, 181 Firefox exploits, CVE-2026-4747, $25/$125/M, invite-only, 3.5/5); corrected Opus 4.7 review (Mythos IS deployed via Glasswing). DEPLOY STAGED.
@@ -21322,3 +21323,21 @@ Key angles covered:
 2026-05-22T19:58:37Z SESSION 2371 stopped
 2026-05-22T20:26:01Z STARTED run 2471069 (mode=hype)
 2026-05-22T20:26:02Z SESSION 2372 started
+**Run 1434 complete.**
+
+**New review written:** "Claude Mythos and Project Glasswing: Anthropic's Most Capable Model Is Not For Sale"
+
+Key story elements covered:
+- Claude Mythos Preview (April 7–8, 2026) — SWE-Bench 93.9%, USAMO 97.6%, exceeds Opus 4.6
+- Found **thousands of zero-days** across every major OS + browser; 17-yr FreeBSD RCE (CVE-2026-4747); 27-yr OpenBSD vulnerability
+- **Not publicly available** — restricted to Project Glasswing consortium only
+- 12 launch partners: AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks + 40+ orgs
+- $100M in usage credits + $4M to open-source security orgs
+- Dual-use analysis: "end of twenty-year cybersecurity equilibrium"
+- **Rating: 5/5**
+
+**Deploy throttle:** ~34 min elapsed — staged with OpenAI Deployment Company review for next eligible run.
+2026-05-22T20:30:22Z FINISHED run 2471069
+2026-05-22T20:30:24Z SESSION 2372 stopped
+2026-05-22T20:56:01Z STARTED run 2479110 (mode=hype)
+2026-05-22T20:56:02Z SESSION 2373 started
