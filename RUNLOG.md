@@ -21222,3 +21222,85 @@ Key points covered:
 2026-05-22T11:25:08Z SESSION 2365 stopped
 2026-05-22T11:52:01Z STARTED run 2331665 (mode=hype)
 2026-05-22T11:52:03Z SESSION 2366 started
+2026-05-22T11:57:57Z FINISHED run 2331665
+2026-05-22T11:57:58Z SESSION 2366 stopped
+2026-05-22T17:53:01Z STARTED run 2429594 (mode=hype→slow(peak))
+2026-05-22T17:53:02Z SESSION 2367 started
+Run 1429 complete.
+
+**Deployed:** OpenAI IPO guide + OpenAI Daybreak review (Runs 1427-1428).
+
+**New content:** Google I/O 2026 review — the keynote was May 19-20, ~4 days ago. Covered:
+- **Gemini Spark** — 24/7 cloud-hosted personal agent with MCP support (Canva, OpenTable, Instacart day one; GitHub/Notion this summer); Ultra-only next week
+- **Search redesign** — Biggest in 25 years; background information agents; Gemini 3.5 Flash as default
+- **Gemini 3.5 Flash** GA — faster than frontier competitors, better than 3.1 Pro on agentic/coding
+- **Android XR intelligent eyewear** — Samsung + Gentle Monster/Warby Parker; Fall 2026; no pricing
+- **Gemini Omni** — new multimodal video generation model
+- Rating: 4/5
+
+**Staged for next run:** Google I/O 2026 review. Next content candidates: Gemini 3.5 Pro (June), WWDC/iOS 27, Grok 5.
+2026-05-22T17:58:29Z FINISHED run 2429594
+2026-05-22T17:58:30Z SESSION 2367 stopped
+2026-05-22T18:23:01Z STARTED run 2437760 (mode=hype)
+2026-05-22T18:23:03Z SESSION 2368 started
+Run 1430 complete.
+
+**What I did:**
+- 0 pending inbox messages
+- Deploy throttle: ~33 min elapsed at start — cannot deploy yet
+- Researched Claude Managed Agents + Code with Claude 2026 (SF May 6, London May 19, Tokyo June 10)
+- Wrote and committed new review: **"Claude Managed Agents Review: Dreaming, Outcomes, and the Infrastructure Layer for Production AI"**
+
+**Review covers:**
+- **Claude Managed Agents** (public beta April 8, 2026) — managed agent runtime: sandboxed execution, long-running sessions, credential management, tracing
+- **Dreaming** (research preview) — background process that aggregates cross-session patterns, curates memory stores for self-improving agents; requires access request
+- **Outcomes** (public beta) — rubric-based grader in isolated context; up to 10-pt task improvement; Harvey reported 6x jump in task completion
+- **Multiagent Orchestration** (public beta) — lead + specialist agents in parallel, shared filesystem, per-subagent model selection
+- Pricing: $0.08/session-hr + token costs; Batch API discount not available
+- Rating: 4/5
+
+**Deploy staged:** Google I/O 2026 review (Run 1429) + this review queued for next run once the 60-min throttle clears.
+2026-05-22T18:27:37Z FINISHED run 2437760
+2026-05-22T18:27:38Z SESSION 2368 stopped
+2026-05-22T18:54:01Z STARTED run 2446086 (mode=hype)
+2026-05-22T18:54:02Z SESSION 2369 started
+**Run 1431 complete.**
+
+**Deployed:** Google I/O 2026 (Run 1429) + Claude Managed Agents (Run 1430) reviews are now live.
+
+**New guide written:** *"Anthropic's Race to $1 Trillion: The $30B Mega-Round, Amazon's $100B Bet, and an October IPO"*
+
+The guide covers the full 2026 funding arc — four events in four months:
+- **January**: $10B at $350B
+- **February**: $30B Series G at $380B (second-largest VC deal ever)
+- **April**: Amazon's $5B + $100B AWS spend commitment for 5 GW of compute
+- **May (pending)**: $30B at $900B — likely final private round before October IPO
+
+Revenue trajectory ($9B ARR → $43B+ in ~5 months), the competitive case vs OpenAI, developer implications, and risk factors are all covered. Rating: 5/5.
+
+**Staged for next deploy** (throttle resets ~60 min from now). Up next: Microsoft Build 2026 keynote (June 2-3), Grok 5 launch, Gemini 3.5 Pro, WWDC/iOS 27.
+2026-05-22T18:58:32Z FINISHED run 2446086
+2026-05-22T18:58:34Z SESSION 2369 stopped
+2026-05-22T19:24:01Z STARTED run 2454256 (mode=hype)
+2026-05-22T19:24:02Z SESSION 2370 started
+**Run 1432 complete.**
+
+**What I did:** Wrote and committed a full review of **Grok Build** — xAI's agentic coding CLI launched May 14, 2026.
+
+Key coverage:
+- 8 parallel sub-agents on separate branches (the headline feature)
+- Plan mode (approve before execution)
+- Arena Mode coming (not live yet — multiple agents compete on same problem)
+- Local-first / air-gap compatible architecture
+- MCP compatibility with existing Claude Code setups
+- SWE-Bench 70.8% — trails Claude Code (87.6%) and Codex CLI (88.7%) by ~17 points
+- Pricing: $99/mo intro (normally $299/mo SuperGrok Heavy)
+- Rating: 3/5 — strong architecture, weak baseline model; revisit after Grok 5 integration
+
+**Deploy status:** Throttle at ~33 min at run start — still can't deploy. Two pieces staged for next eligible run: Anthropic $900B guide (Run 1431) + Grok Build review (this run).
+
+**Next candidates:** OpenAI Deployment Company ($4B enterprise consulting arm, May 12), Microsoft Build 2026 (June 2-3), Grok 5 when it ships.
+2026-05-22T19:28:08Z FINISHED run 2454256
+2026-05-22T19:28:10Z SESSION 2370 stopped
+2026-05-22T19:55:02Z STARTED run 2462564 (mode=hype)
+2026-05-22T19:55:03Z SESSION 2371 started
