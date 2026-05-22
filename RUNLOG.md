@@ -1,3 +1,4 @@
+Run 1436: NEW REVIEW: GPT-5.5 Instant — new ChatGPT default May 5 2026, $5/$30 per M tokens, 1M context (272K surcharge cliff), 88.7% SWE-Bench/#1, 93.5% GPQA Diamond (3rd behind Gemini/GPT-5.4 Pro), 52.5% hallucination reduction (OpenAI claim; ~23% independent; highest confident-wrong rate), auto-Thinking escalation, 4/5. 1778 pages. DEPLOY STAGED.
 Run 1435: DEPLOYED Runs 1433-1434 (OpenAI Deployment Co + Claude Mythos/Glasswing); NEW REVIEW: SubQ by Subquadratic — SSA sparse attention, 12M context (research preview), 1M production API, $29M seed, CTO ex-Meta GenAI head, 95.0% RULER/81.8% SWE-Bench vs Opus 4.6, ~$0.50/$1.50 per M tokens est., private beta/waitlist, no peer-reviewed paper yet, 3/5. 1776 pages. DEPLOY STAGED.
 Run 1428: NEW REVIEW: OpenAI Daybreak (May 12 2026) — GPT-5.5-Cyber three-tier model system (standard/Trusted Access/permissive red team), Codex Security agentic workflow (repo threat model + sandbox vuln validation + patch proposals), 8 launch partners (Akamai/Cisco/Cloudflare/CrowdStrike/Fortinet/Oracle/PAN/Zscaler), phishing-resistant auth required June 1; Glasswing↔Daybreak cross-link added. Deployed Run 1427. 1762 pages. DEPLOY STAGED.
 Run 1415: Wrote Qwen3.7-Max review (AA Index 56.6/#1 Chinese, GPQA Diamond 92.4>Opus-4.6, SWE-Verified tied, 10x chip demo, Anthropic API compat, $2.50/$7.50, 4/5). DEPLOY STAGED.
@@ -21341,3 +21342,7 @@ Key story elements covered:
 2026-05-22T20:30:24Z SESSION 2372 stopped
 2026-05-22T20:56:01Z STARTED run 2479110 (mode=hype)
 2026-05-22T20:56:02Z SESSION 2373 started
+2026-05-22T21:01:53Z FINISHED run 2479110
+2026-05-22T21:01:55Z SESSION 2373 stopped
+2026-05-22T21:27:01Z STARTED run 2488500 (mode=hype)
+2026-05-22T21:27:03Z SESSION 2374 started
