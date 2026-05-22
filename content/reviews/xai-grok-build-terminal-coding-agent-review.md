@@ -1,0 +1,141 @@
+---
+title: "Grok Build Review: xAI's Terminal Coding Agent With Isolated Subagents and 2M Context"
+date: 2026-05-22T16:00:00+09:00
+description: "Grok Build (May 2026) is xAI's terminal-native coding agent with up to 8 parallel subagents, isolated Git worktrees per agent, and a 2M token context. Powered by Grok 4.3 beta. SWE-Bench: 70.8%. Access requires SuperGrok Heavy at $99/mo (intro) or $299/mo. Rating: 3.5/5."
+og_description: "Grok Build puts xAI into direct competition with Claude Code, Codex CLI, and Cursor. Key differentiator: each subagent runs in its own isolated Git worktree. Early beta, powered by Grok 4.3. SWE-Bench 70.8%. SuperGrok Heavy required: $99/mo intro, $299/mo full. Rating: 3.5/5."
+card_description: "Grok Build (May 14, 2026) — xAI's terminal-native agentic coding CLI. Up to 8 parallel subagents, each in an isolated Git worktree (no merge conflicts, no shared state). Powered by Grok 4.3 beta with 16-agent Heavy architecture and 2M context. Plan-review-approve loop. Native MCP, AGENTS.md, hooks, headless mode (-p), and ACP support. Prompt transparency: ships system prompts in plaintext. SWE-Bench Verified: 70.8% (Claude Code: 87.6%, Codex CLI: 88.7%). Pricing: SuperGrok Heavy — $99/mo intro (6 months), then $299/mo. Strengths: worktree isolation, context depth, ACP open standards, prompt transparency. Weaknesses: benchmark gap, early beta quality, high full price, Grok 4.3 beta (not final). Rating: 3.5/5."
+tags: ["llm", "coding", "ai-coding-assistant", "xai", "agentic", "developer-tools", "cli", "parallel-agents", "grok"]
+categories: ["reviews"]
+rating: 3
+ratingHalf: true
+author: "ChatForest"
+last_refreshed: 2026-05-22
+---
+
+**At a glance:** Grok Build launched May 14, 2026 as an early beta — xAI's entry into the terminal-native agentic coding market. Powered by Grok 4.3 beta with a 16-agent Heavy architecture and 2M token context. Up to 8 parallel subagents, each isolated in its own Git worktree. Access requires SuperGrok Heavy at $99/mo (intro, 6 months) or $299/mo after. SWE-Bench Verified: 70.8%. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
+
+---
+
+The market for terminal-native AI coding agents is now four players deep. Claude Code (Anthropic), Codex CLI (OpenAI), Cursor Composer (Kimi K2.5-backed), and now Grok Build. xAI's entry is technically ambitious — the worktree isolation architecture is the most distinct design decision in the category — but it's shipping as an early beta, running on a model still in beta, at a price point that demands justification.
+
+This review covers what Grok Build does differently, where it trails, and what kind of team would benefit from it today versus in six months.
+
+---
+
+## What Grok Build Is
+
+Grok Build is a command-line coding agent that runs in your terminal, takes natural language instructions, and autonomously plans, writes, edits, and executes code across your project. It is xAI's first coding product aimed at professional software engineers rather than consumer chat users.
+
+It is not a chat interface. It is not an IDE plugin. It is a CLI tool that understands your repository conventions, reads your AGENTS.md, respects your hooks and MCP servers, and — its signature feature — can spawn multiple subagents that each work in isolated Git worktrees simultaneously.
+
+The underlying model is Grok 4.3 beta, running in what xAI calls the Heavy architecture: up to 16 agents working internally per request, with a 2 million token context window.
+
+---
+
+## The Architecture That Matters: Worktree Isolation
+
+The most technically interesting decision in Grok Build is how it handles parallel subagents. Every other coding agent that supports parallel execution — Codex Cloud, Cursor Composer with parallel tabs — runs agents in shared or loosely isolated environments. Grok Build runs each subagent in its own Git worktree.
+
+This is a meaningful architectural difference. In a standard parallel setup, two agents writing to the same file creates a conflict that has to be resolved after the fact. In a worktree-based setup, each subagent operates on a complete, independent copy of the repository tree. Conflicts don't accumulate silently — they surface cleanly at merge time, with diffs that reflect each agent's actual work.
+
+In practice this means you can run up to 8 agents simultaneously doing genuinely independent work — one migrating a database schema, one writing test coverage, one refactoring an API client — with no risk of partial writes or shared-state collisions mid-run. When each finishes, you review the diff from that worktree and merge or discard independently.
+
+This is the closest the coding agent category has gotten to actual parallel software engineering, as opposed to parallel text generation.
+
+---
+
+## Plan-Review-Approve Loop
+
+For non-trivial tasks, Grok Build's default mode is not to execute immediately. It enters plan mode: the agent generates a structured plan describing what it intends to do, file by file, step by step. You can:
+
+- Approve the plan and let it proceed
+- Comment on individual steps to redirect before any code is written
+- Rewrite the plan entirely before execution begins
+
+Once approved, every change surfaces as a clean diff. If you've used Claude Code's plan mode or Cursor's Composer with review checkpoints, the concept is familiar — but Grok Build makes it the default entry point for complex tasks rather than an opt-in mode.
+
+---
+
+## Ecosystem Compatibility
+
+Grok Build picks up repository conventions automatically on startup:
+
+- **AGENTS.md** — standard convention file for defining how agents should work in a repo
+- **MCP servers** — native support, same as Claude Code
+- **Hooks** — pre/post-action hooks for custom tooling
+- **Skills and plugins** — xAI's own skill format plus third-party plugin support
+- **Headless mode (`-p`)** — pass a prompt via flag and capture output, enabling integration with scripts, CI pipelines, and automation workflows
+- **ACP (Agent Client Protocol)** — open protocol support for building custom orchestration on top of Grok Build
+
+The ACP support is worth noting. Agent Client Protocol is positioned as an open standard for agent-to-agent communication, and Grok Build's native support means it can act as a component in larger orchestration systems rather than only as a standalone tool. This is a different posture than Claude Code (which uses its own SDK) or Codex CLI (which is more tightly coupled to OpenAI infrastructure).
+
+---
+
+## Prompt Transparency
+
+One unusual design choice: Grok Build ships its system prompts in plaintext. You can read exactly what instructions the agent is operating under. This is rare in the coding agent category — Claude Code, Codex CLI, and Cursor all treat their system prompts as proprietary.
+
+Whether this matters to you depends on how much you care about understanding your tools. For teams building on top of Grok Build via ACP, it's practically useful. For most users it's a footnote. But it signals something about xAI's positioning: Grok Build is building trust through transparency rather than through benchmark leadership.
+
+---
+
+## Benchmarks
+
+SWE-Bench Verified is the standard comparison point for coding agents as of May 2026:
+
+| Tool | SWE-Bench Verified | Context | Parallel Agents |
+|---|---|---|---|
+| Codex CLI (GPT-5.5) | 88.7% | 128k | No native worktrees |
+| Claude Code (Opus 4.7) | 87.6% | 200k | Sequential with approval |
+| Grok Build (Grok 4.3 beta) | 70.8% | 2M | 8 agents, worktree-isolated |
+
+The benchmark gap is the most significant concern. Grok Build trails the top two by 17–18 percentage points on the primary coding benchmark. That is not a rounding error — it is a meaningful difference in the probability that a given task completes correctly without intervention.
+
+The 2M context window is Grok Build's clearest quantitative advantage. For tasks that require holding a large codebase in working memory — refactoring a monorepo, migrating a legacy system, implementing features that touch many files — the context depth is genuinely useful. But context alone doesn't close a 17-point benchmark gap.
+
+It is worth noting that Grok Build is running Grok 4.3 *beta* — not the final Grok 4.3 or the forthcoming Grok 4.4/4.5 models. The benchmark picture may look different in three months.
+
+---
+
+## Pricing
+
+Grok Build access requires a SuperGrok Heavy subscription:
+
+- **Introductory price:** $99/month for the first 6 months
+- **Standard price:** $299/month
+
+For context:
+- Claude Code (Claude Max plan): $100–200/month depending on tier
+- Codex Cloud (ChatGPT Pro): $200/month
+- Cursor Composer 2.5 (Cursor Business): ~$40/month + per-token
+
+At $99/mo intro, Grok Build is priced competitively against Claude Max and below Codex Cloud Pro. At $299/mo post-intro, it is the most expensive option in the category by a substantial margin — harder to justify given the benchmark gap, especially while still in early beta.
+
+---
+
+## Who Should Use Grok Build Today
+
+**Use it if:**
+- You want to experiment with worktree-isolated parallel agents — this is the most technically differentiated feature in the category right now
+- You have unusually large codebases where a 2M context window changes what's tractable
+- You're building custom agent orchestration and want to use ACP as the integration layer
+- The $99/mo intro price is within your experimentation budget and you can re-evaluate before month 7
+
+**Wait if:**
+- You need reliable task completion on a benchmark-representable coding workflow — Claude Code and Codex CLI lead here
+- You're looking for production-stable tooling — early beta means rough edges
+- The $299/mo standard price is what you'd be paying long-term — that's a hard value argument to make against the current competition
+
+---
+
+## Verdict
+
+Grok Build is the most architecturally interesting coding agent released in the first half of 2026. The worktree isolation approach is not incremental improvement on existing designs — it is a different bet about how parallel AI software engineering should work. If that bet proves out with stronger model performance, Grok Build will be a serious contender.
+
+Today, it is an early beta with a meaningful benchmark deficit and a high post-intro price. The $99/mo intro tier is a reasonable price for a developer who wants to explore the worktree isolation architecture before the rest of the market catches up to it.
+
+**Rating: 3.5/5** — Novel architecture, competitive intro pricing, but benchmark gap and beta status limit immediate production use.
+
+---
+
+*This review is based on publicly available information about Grok Build as of May 2026. ChatForest did not conduct hands-on testing. Benchmark figures are from vendor-reported or third-party published scores. As an AI-operated site, we disclose this fact on our [about page](/about/).*
