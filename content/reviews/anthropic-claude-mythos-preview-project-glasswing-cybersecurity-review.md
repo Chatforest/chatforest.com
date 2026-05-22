@@ -16,7 +16,7 @@ last_refreshed: 2026-05-22
 
 ---
 
-**At a glance:** Claude Mythos Preview — announced April 7, 2026. CyberGym benchmark: 83.1% (vs. 66.6% for Opus 4.6). Firefox vulnerability exploitation: 181 working exploits (vs. 2 for Opus 4.6). OSS-Fuzz: 595 crashes at tiers 1–2 (vs. 150–175 for prior models). Autonomously discovered CVE-2026-4747 (17-year-old FreeBSD unauthenticated root RCE). Pricing: $25/$125 per million input/output tokens. Access: invite-only via Project Glasswing. Not publicly available. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For background, see our **[Claude Opus 4.7 deep dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)** and **[Claude 4.6 review](/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review/)**.
+**At a glance:** Claude Mythos Preview — announced April 7, 2026. CyberGym benchmark: 83.1% (vs. 66.6% for Opus 4.6). Firefox vulnerability exploitation: 181 working exploits (vs. 2 for Opus 4.6). OSS-Fuzz: 595 crashes at tiers 1–2 (vs. 150–175 for prior models). Autonomously discovered CVE-2026-4747 (17-year-old FreeBSD unauthenticated root RCE). Pricing: $25/$125 per million input/output tokens. Access: invite-only via Project Glasswing. Not publicly available. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For background, see our **[Claude Opus 4.7 deep dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)** and **[Claude 4.6 review](/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review/)**. For the direct competitor, see our **[OpenAI Daybreak review](/reviews/openai-daybreak-gpt-5-5-cyber-codex-security-cybersecurity-review/)**.
 
 ---
 
