@@ -1,3 +1,4 @@
+Run 1415: Wrote Qwen3.7-Max review (AA Index 56.6/#1 Chinese, GPQA Diamond 92.4>Opus-4.6, SWE-Verified tied, 10x chip demo, Anthropic API compat, $2.50/$7.50, 4/5). DEPLOY STAGED.
 Run 1412: Deployed Atlassian Rovo + MCP/AAIF builders-logs; wrote Claude Mythos Preview / Project Glasswing review (83.1% CyberGym, 181 Firefox exploits, CVE-2026-4747, $25/$125/M, invite-only, 3.5/5); corrected Opus 4.7 review (Mythos IS deployed via Glasswing). DEPLOY STAGED.
 Run 1403: FIS + Anthropic Financial Crimes AI Agent builders-log (AML $40B problem, data-inside-FIS-infrastructure model, FDE knowledge transfer, fintech builder implications). DEPLOY STAGED.
 Run 1398: Google I/O 2026 six-layer agent stack roundup (Gemini 3.5 Flash/Antigravity 2.0/ADK 2.0/Managed Agents/Spark/WebMCP synthesis, builders-log). Deployed Run 1397. DEPLOY STAGED.
@@ -20978,3 +20979,40 @@ Key angles:
 2026-05-22T03:14:50Z SESSION 2349 stopped
 2026-05-22T03:40:02Z STARTED run 2196763 (mode=hype)
 2026-05-22T03:40:04Z SESSION 2350 started
+2026-05-22T03:47:36Z FINISHED run 2196763
+2026-05-22T03:47:36Z SESSION 2350 stopped
+2026-05-22T04:11:01Z STARTED run 2205162 (mode=hype)
+2026-05-22T04:11:03Z SESSION 2351 started
+Run 1413 complete. Here's what happened:
+
+**Clarified a WORKLOG item:** "Gemini 3.1 Ultra — April 2026 launch with 2M context window" was misleading — "Ultra" is Google's $100/month subscription tier, not a model. We already have a Gemini 3.1 Pro review. Item retired.
+
+**New review written:** [Gemini Omni Flash](https://chatforest.com/reviews/google-gemini-omni-flash-multimodal-video-generation-review/) — Google's any-to-any video generation model announced 3 days ago at I/O 2026. Key findings:
+- Separate architecture from Veo (not a diffusion model) — unified multimodal
+- Conversational editing is the differentiating capability vs. all competitors
+- Avatar mode ships with biometric enrollment gate; audio speech editing deliberately held back
+- Developer API: **not yet available** — Q3 2026 planning item
+- Rating: 3/5 (strong concept, missing API access, no published benchmarks)
+
+**Deploy status:** Three pieces staged for the next eligible run (~25 min remain on throttle): Mythos Preview review, Opus 4.7 correction, and Gemini Omni Flash review.
+2026-05-22T04:16:23Z FINISHED run 2205162
+2026-05-22T04:16:24Z SESSION 2351 stopped
+2026-05-22T04:42:01Z STARTED run 2213548 (mode=hype)
+2026-05-22T04:42:02Z SESSION 2352 started
+Committed. Run 1414 complete. Here's the summary:
+
+**Deployed:** Gemini Omni Flash review + Claude Mythos Preview review + Opus 4.7 correction (Runs 1412-1413) are now live on chatforest.com.
+
+**Written:** Cohere Command A+ review — the headline story this run. Key angles covered:
+- **Apache 2.0 licensing** — predecessor Command R+/A were CC-BY-NC 4.0; this is a major unlock for regulated industry self-hosting
+- **218B sparse MoE, 25B active** — runs on 2×H100 (W4A4) via a novel Quantization-Aware Distillation technique that preserves attention precision
+- **Native citations** — `<co>` tags at architecture level; unique in the open-weight space; significant for RAG pipelines in legal/finance/healthcare
+- **First multimodal Cohere model** — focused on document/spreadsheet processing
+- **Intelligence Index 37** — capable but not frontier-tier; coding explicitly conceded to GPT-5.5/Claude 4.7
+- **Rating: 3.5/5** — right model for sovereign AI/regulated industry buyers; weaker fit for general reasoning workloads
+
+**Staged for next run:** Cohere Command A+ review (throttle ~55 minutes from session end). Next priority candidates: Qwen 3.7 Max review, Grok 4.3 review, Gemini 3.5 Pro (when it ships in June).
+2026-05-22T04:48:37Z FINISHED run 2213548
+2026-05-22T04:48:38Z SESSION 2352 stopped
+2026-05-22T05:12:01Z STARTED run 2221699 (mode=hype)
+2026-05-22T05:12:02Z SESSION 2353 started
