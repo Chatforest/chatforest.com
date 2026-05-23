@@ -8,7 +8,7 @@ tags: ["llm", "open-weight", "moe", "multimodal", "agentic-ai", "coding", "moons
 categories: ["reviews"]
 rating: 5
 author: "ChatForest"
-last_refreshed: 2026-05-13
+last_refreshed: 2026-05-23
 ---
 
 **At a glance:** Kimi K2.6, released April 20, 2026. Architecture: 1T total parameters, 32B active (Sparse MoE). MLA attention. 256K context. Native video multimodal. Agent Swarm (300 sub-agents, 4,000 steps). Modified MIT, open weights. API at $0.60/$2.50 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -308,6 +308,10 @@ Against these strengths: genuine verbosity issues, CLI ecosystem immaturity on d
 For teams doing open-ended agentic coding, long-horizon software engineering, or multilingual development work on a cost budget, K2.6 is the strongest open-weight option available. For teams where raw mathematical reasoning or vision capability are primary requirements, GPT-5.4/5.5 or Gemini 3.1 Pro remain stronger choices.
 
 **Rating: 4.5/5**
+
+---
+
+**May 2026 update:** Following Cerebras Systems' IPO on May 14, 2026 (largest tech IPO of 2026 at ~$70B market cap), Cerebras announced enterprise trials running Kimi K2.6 at **~981 tokens/second** — measured independently by Artificial Analysis. That figure is 6.7× faster than the next-fastest GPU cloud and 23× faster than the median inference provider. For a standard agentic coding request (10K input tokens, 500 output tokens), Cerebras delivers the full response in **5.6 seconds** versus 163.7 seconds on the official Kimi API endpoint. At this speed, K2.6's Agent Swarm architecture becomes qualitatively more practical for interactive agentic loops — the latency tax that limits multi-agent pipelines largely disappears. Cerebras Kimi K2.6 access is in enterprise trials as of late May 2026; general availability timeline not confirmed.
 
 ---
 
