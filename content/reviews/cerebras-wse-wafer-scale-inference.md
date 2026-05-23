@@ -1,7 +1,8 @@
 ---
 title: "Cerebras: Wafer-Scale AI Inference at 3,000 Tokens Per Second"
 date: 2026-05-08T05:08:09Z
-description: "Cerebras built the largest chip ever made — a silicon wafer the size of a plate — and the results are extraordinary. gpt-oss-120B at 3,000 t/s. Llama 4 Scout at 2,600 t/s. Now backed by a $20B OpenAI compute deal and filing for IPO at $26.6B. The catch: a catalog of ~5 models and no fine-tuning on the public API."
+last_refreshed: 2026-05-23
+description: "Cerebras built the largest chip ever made — a silicon wafer the size of a plate — and the results are extraordinary. gpt-oss-120B at 3,000 t/s. Llama 4 Scout at 2,600 t/s. Backed by a $20B OpenAI compute deal. Completed the largest tech IPO of 2026 on May 14 ($185/share, 70% first-day surge, $70B market cap). The catch: a catalog of ~5 models and no fine-tuning on the public API."
 categories: ["reviews"]
 tags: ["inference", "llm-providers", "hardware", "ai-infrastructure", "speed"]
 provider: "Cerebras"
@@ -24,7 +25,7 @@ cons:
   - "Code Pro/Max subscription plans listed as sold out"
 ---
 
-When Cerebras launched the first Wafer Scale Engine in 2019, most AI researchers assumed it was a curiosity — impressive engineering theater, impractical for production. Seven years later, Meta runs its flagship Llama API on Cerebras hardware. OpenAI committed to spend more than $20 billion on Cerebras compute. The company is filing for IPO at a $26.6 billion valuation.
+When Cerebras launched the first Wafer Scale Engine in 2019, most AI researchers assumed it was a curiosity — impressive engineering theater, impractical for production. Seven years later, Meta runs its flagship Llama API on Cerebras hardware. OpenAI committed to spend more than $20 billion on Cerebras compute. The company completed the largest tech IPO of 2026 on May 14 — priced at $185/share, surged 70% on debut to a ~$70 billion market cap.
 
 The chip worked.
 
@@ -76,6 +77,8 @@ Cerebras was founded in 2015 by Andrew Feldman (CEO), Gary Lauterbach, Michael J
 Total private equity raised: approximately $2.8B across all rounds.
 
 The company filed its initial S-1 in September 2024, then withdrew it in October 2025 when CFIUS opened a national security review over G42 (a UAE AI firm) having a minority stake, citing concerns about technology transfer risks. The review concluded in October 2025; G42's stake was restructured to non-voting shares. Cerebras refiled a second S-1 on April 17, 2026, seeking to raise $3.5 billion at $115–$125 per share — targeting a $26.6 billion valuation at the high end under the ticker CBRS on Nasdaq.
+
+**IPO completed May 14, 2026.** Cerebras priced above its expected range at **$185/share** on May 13, then opened at **$350/share** on May 14 — the largest tech IPO of 2026. First-day trading saw the stock surge ~70%, pushing the market capitalization to nearly $70 billion at peak. The stock gave back roughly 10% on the second day of trading, settling into the $280–$330 range in subsequent sessions. Total capital raised: approximately **$5.55 billion**. The market validated the hardware story: a wafer-scale AI company with a $20 billion compute deal and actual profitability commands a premium that far exceeded the S-1 filing range.
 
 **Revenue is real and growing:**
 
@@ -259,7 +262,7 @@ If you need the fastest possible inference for a supported model, Cerebras wins.
 
 Cerebras is the fastest AI inference provider we have reviewed. It is not close. 3,000 tokens per second on a 120B parameter model — with full 128K context — does not have a comparable number anywhere else.
 
-The hardware backing this speed is genuine. The WSE-3 is the largest chip ever built. The company is profitable. The OpenAI $20B deal is validated infrastructure spending, not marketing. The upcoming IPO at $26.6B suggests the market agrees.
+The hardware backing this speed is genuine. The WSE-3 is the largest chip ever built. The company is profitable. The OpenAI $20B deal is validated infrastructure spending, not marketing. The completed IPO — $185/share priced, 70% first-day surge, ~$70B market cap — confirms the market agrees at a scale that exceeded even the bull-case S-1 valuation.
 
 The limitation for most developers in 2026 is catalog depth. Five models — several of them in preview and being deprecated simultaneously — is thin. If the model you need is not gpt-oss-120B or a Llama 4 variant, Cerebras likely cannot serve your use case today via the public API. The enterprise path exists but requires a sales conversation.
 
