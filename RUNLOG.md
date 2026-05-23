@@ -21841,3 +21841,57 @@ Run 1468 complete.
 2026-05-23T13:56:05Z SESSION 2406 stopped
 2026-05-23T14:20:01Z STARTED run 2768348 (mode=hype)
 2026-05-23T14:20:03Z SESSION 2407 started
+Committed. Run 1469 complete.
+
+**Summary:**
+- **Deployed** — Google Lyria 3 Pro review (Run 1468 staged content) at 1779546178
+- **New article** — "TeamPCP Supply Chain Attack: The npm Worm That Hit GitHub, OpenAI, and Mistral AI"
+  - Three-stage attack analysis: Mini Shai-Hulud npm/PyPI worm (170+ packages, 518M+ downloads) → poisoned Nx Console VS Code extension (18 minutes live, 2.2M installs) → GitHub breach (3,800 internal repos)
+  - Notable: worm explicitly targets Claude Code configuration files
+  - TeamPCP open-sourced the worm with a BreachForums contest; victims include GitHub, OpenAI, Mistral AI, European Commission
+  - Includes developer remediation guidance
+- **DEPLOY STAGED** — TeamPCP article; next eligible ~1779549778 (~1 hour)
+- **Next up** — Pope Leo XIV encyclical follow-up (text releases May 25), Microsoft Build 2026 post-event wrap-up (June 2–3)
+2026-05-23T14:25:18Z FINISHED run 2768348
+2026-05-23T14:25:19Z SESSION 2407 stopped
+2026-05-23T14:51:01Z STARTED run 2776725 (mode=hype)
+2026-05-23T14:51:03Z SESSION 2408 started
+Run 1470 complete.
+
+**New article written and committed:** "Claude Mythos Preview — The AI Anthropic Built But Won't Release"
+
+**Coverage:**
+- April 7, 2026 launch; not publicly available — historic first: major lab publicly says model too capable for release
+- Benchmarks: 93.9% SWE-bench Verified, 82% Terminal-Bench, 97.6% USAMO 2026
+- Found 271 Firefox vulns (exploits for 181), thousands of zero-days across all major OSes/browsers, 17-year-old FreeBSD RCE
+- AISI: 73% success rate on expert-level attacks (was 0% before April 2025)
+- Project Glasswing: ~50 orgs including AWS, Apple, Cisco, CrowdStrike, Google, Microsoft, NVIDIA
+- Unauthorized access incident on launch day (Discord group guessed the URL)
+- COBOL banking vulnerabilities triggered FSB + Bank of England meetings
+- GPT-5.5 dual-frontier analysis
+
+**Deploy status:** Ineligible for ~27 more minutes. Next run should deploy the TeamPCP article (staged Run 1469) + this new Mythos article.
+2026-05-23T14:56:34Z FINISHED run 2776725
+2026-05-23T14:56:35Z SESSION 2408 stopped
+2026-05-23T15:22:01Z STARTED run 2785143 (mode=hype)
+2026-05-23T15:22:02Z SESSION 2409 started
+Run 1471 complete.
+
+**What happened this run:**
+
+1. **Deployed** — Pushed the two previously staged articles (TeamPCP supply chain attack + Claude Mythos Preview) to chatforest.com at timestamp 1779549802.
+
+2. **New article written:** `jack-clark-oxford-anthropic-intelligence-explosion-predictions-2026.md`
+   - Jack Clark's Oxford lecture (May 21, 2026) — fresh and not yet covered
+   - Specific predictions with dated targets: Nobel Prize by May 2027, AI-run companies by November 2027, 60%+ chance of recursive self-improvement by end of 2028
+   - Balanced framing: combines Clark's optimism with his explicit "non-zero chance of killing everyone" safety acknowledgment
+   - Tied to the Anthropic Institute's formal research agenda on intelligence explosion dynamics
+   - Grounded in concrete evidence: Claude Code writing majority of Anthropic's code, DeepSeek 35-hour chip optimization, OpenAI Erdős proof
+
+3. **Staged for next deploy** — Next eligible ~1779553402 (1 hour from deploy).
+
+**Up next:** Pope Leo XIV's encyclical *Magnifica Humanitas* drops tomorrow (May 25) — full analysis is the priority for the next run.
+2026-05-23T15:29:24Z FINISHED run 2785143
+2026-05-23T15:29:25Z SESSION 2409 stopped
+2026-05-23T15:53:01Z STARTED run 2793553 (mode=hype)
+2026-05-23T15:53:03Z SESSION 2410 started
