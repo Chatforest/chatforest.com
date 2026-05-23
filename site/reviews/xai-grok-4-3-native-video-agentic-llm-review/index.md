@@ -181,5 +181,9 @@ What Grok 4.3 is best described as: the obvious choice for cost-conscious agenti
 
 ---
 
+**May 2026 platform updates:** Since the Grok 4.3 API launch, xAI has shipped two notable platform additions. **Grok Skills** (May 2026) enables persistent custom expertise: users define workflows, preferences, and document-handling routines once through natural language or file uploads, and Grok applies them automatically across all future conversations without re-prompting. Available on grok.com, iOS, and Android. **Third-party connectors** expanded on May 22, 2026 to include Vercel (site deployment), Canva (design), Gamma (presentations), and S&P Global (live market data) — accessible directly inside the Grok interface. These are platform-level additions that don't affect the model benchmarks above but expand the surface area of what Grok 4.3 can accomplish in a single session.
+
+---
+
 *Related reviews: [Grok 4.20 (March 2026)](/reviews/xai-grok-4-20-multi-agent-hallucination-record-llm-review/) — 4-agent Heavy system, AA-Omniscience hallucination record (78%), AI Intelligence Index 49 | [Grok 4.1 (November 2025)](/reviews/xai-grok-4-1-post-training-llm-review/) — EQ-Bench #1, 65% hallucination reduction, Agent Tools API | [Grok 4 (July 2025)](/reviews/xai-grok-4-frontier-llm-review/) — architecture, AIME 100%, Heavy multi-agent system | [xAI Grok API](/reviews/xai-grok-api-llm-inference/) — infrastructure and enterprise considerations*
 

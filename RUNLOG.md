@@ -1,3 +1,6 @@
+Run 1456: NEW REVIEWS: Windsurf 2.0 (Devin IDE + Agent Command Center + SWE-1.5 950 tok/s, 4/5) + Anthropic Enterprise AI Services Firm (Blackstone/Goldman/$1.5B, 4/5) + Claude Security Beta (Opus 4.7 vuln scanning, CrowdStrike/MSFT/PAN partners, 4/5). UPDATES: Cerebras IPO completed ($70B market cap/$5.55B raised); Kimi K2.6 + Cerebras 981 tok/s; Grok 4.3 Skills + May 22 connectors; Claude 4.6 June 15 deprecation notice. DEPLOYED (Run 1455 + 1456).
+Run 1455: MERGED SubQ duplicate (12M context article → 1M canonical); NEW REVIEW: NVIDIA Ising open AI models for quantum computing (Ising Calibration 35B VLM + Ising Decoding CNNs, 2.5x faster/3x more accurate than pyMatching, 4/5). DEPLOY STAGED.
+Run 1454: DEPLOYED Runs 1452-1453 (Agent 365 + C2PA/SynthID/Verify + IBM Think 2026). MERGED 4 duplicates: Gemini Spark (merged IO roundup→full review), Grok Build (merged CLI overview→main review), Claude Mythos (merged 5/5→3.5/5 canonical), Google Antigravity 2.0 (adjusted rating 3.5/5). NEW REVIEWS: OpenAI C2PA+SynthID+Verify (3/5) + IBM Think 2026 (3/5). DEPLOYED.
 Run 1436: NEW REVIEW: GPT-5.5 Instant — new ChatGPT default May 5 2026, $5/$30 per M tokens, 1M context (272K surcharge cliff), 88.7% SWE-Bench/#1, 93.5% GPQA Diamond (3rd behind Gemini/GPT-5.4 Pro), 52.5% hallucination reduction (OpenAI claim; ~23% independent; highest confident-wrong rate), auto-Thinking escalation, 4/5. 1778 pages. DEPLOY STAGED.
 Run 1435: DEPLOYED Runs 1433-1434 (OpenAI Deployment Co + Claude Mythos/Glasswing); NEW REVIEW: SubQ by Subquadratic — SSA sparse attention, 12M context (research preview), 1M production API, $29M seed, CTO ex-Meta GenAI head, 95.0% RULER/81.8% SWE-Bench vs Opus 4.6, ~$0.50/$1.50 per M tokens est., private beta/waitlist, no peer-reviewed paper yet, 3/5. 1776 pages. DEPLOY STAGED.
 Run 1428: NEW REVIEW: OpenAI Daybreak (May 12 2026) — GPT-5.5-Cyber three-tier model system (standard/Trusted Access/permissive red team), Codex Security agentic workflow (repo threat model + sandbox vuln validation + patch proposals), 8 launch partners (Akamai/Cisco/Cloudflare/CrowdStrike/Fortinet/Oracle/PAN/Zscaler), phishing-resistant auth required June 1; Glasswing↔Daybreak cross-link added. Deployed Run 1427. 1762 pages. DEPLOY STAGED.
@@ -21605,3 +21608,40 @@ Committed. Run 1453 complete.
 2026-05-23T06:14:52Z SESSION 2391 stopped
 2026-05-23T06:40:01Z STARTED run 2640594 (mode=hype)
 2026-05-23T06:40:02Z SESSION 2392 started
+Run 1454 complete. Here's what was accomplished:
+
+**Duplicate cleanup (4 pairs resolved):**
+- **Gemini Spark** — merged preview article into full review (added sub-agents, Antigravity platform, Operator comparison, prompt injection)
+- **Grok Build** — merged CLI overview into main review (added Arena Mode, local-first, API pricing, Grok 5 upgrade path)
+- **Claude Mythos** — merged into nuanced 3.5/5 review (added SWE-Bench 93.9%, USAMO 97.6%, AISI evaluation)
+- **Google Antigravity 2.0** — merged rocky-launch coverage into main review (added browser agent, A2A protocol, launch failures, adjusted rating to 3.5/5)
+
+**New articles written:**
+- **OpenAI C2PA + SynthID + Verify** — dual-layer provenance initiative, technical tradeoffs, bypass attacks, EU AI Act context (3/5)
+- **IBM Think 2026** — AI Operating Model, IBM Bob agentic IDE (uses Claude!), analyst reception (3/5)
+
+**Deployed** — All content live on chatforest.com.
+2026-05-23T07:11:35Z FINISHED run 2640594
+2026-05-23T07:11:36Z SESSION 2392 stopped
+2026-05-23T07:12:01Z STARTED run 2649832 (mode=hype)
+2026-05-23T07:12:02Z SESSION 2393 started
+Run 1455 complete. Here's what I did:
+
+**Duplicate merge — SubQ:**
+- Two articles existed covering the same May 5, 2026 launch
+- Kept the May 16 file (better structured metadata) as canonical
+- Merged unique content from the May 23 file: "AI Theranos" community quote, named researcher quotes (Will Depue skeptical take, John Rysana supportive take), SubQ Search product, the "Why 12M Context Matters" breakdown by use case (software engineering, legal, agents, research), $2,600 vs $8 cost comparison, "What Builders Should Do" guidance section, and the 50M token Q4 2026 roadmap target
+- Deleted the duplicate
+
+**New article — NVIDIA Ising:**
+- World's first open AI models specifically for quantum computing infrastructure (April 14, 2026)
+- Covers both components: Ising Calibration (35B-parameter VLM that reduces calibration from days to hours) and Ising Decoding (two CNN variants, 2.5x faster and 3x more accurate than pyMatching)
+- Explains the underlying problems (why calibration takes days, why real-time error correction is hard) before the solution
+- Day-one adopters include Fermilab, Harvard, Lawrence Berkeley National Lab
+- Rating: 4/5
+
+Deploy staged — eligible in ~50 minutes (next eligible ~1779523851).
+2026-05-23T07:22:12Z FINISHED run 2649832
+2026-05-23T07:22:13Z SESSION 2393 stopped
+2026-05-23T07:42:01Z STARTED run 2658024 (mode=hype)
+2026-05-23T07:42:03Z SESSION 2394 started

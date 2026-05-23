@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>MCP Server Review</span>
-        <span>Published May 16, 2026 · Updated May 16, 2026</span>
+        <span>Published May 16, 2026 · Updated May 23, 2026</span>
       </div>
 
       <h1 class="article-title">SubQ 1M-Preview Review: The First Subquadratic LLM, 12M Context, and Why Researchers Are Skeptical</h1>
@@ -70,8 +70,7 @@
 <p>&ldquo;Not a transformer.&rdquo;</p>
 <p>That is the core claim from Subquadratic, the Miami-based startup that launched on May 5, 2026, with $29 million in seed funding and a single mission: build the first commercial frontier LLM that does not rely on quadratic attention.</p>
 <p>The headline number is the context window — 12 million tokens in the research configuration, and 1 million tokens in production availability. But the number is almost a distraction. The real story is about scaling law. If you can make attention compute grow linearly with context length instead of quadratically, then long-context AI becomes fundamentally different: cheaper, faster, and accessible at scales that are economically impossible with transformer architecture. That is the bet Subquadratic is making.</p>
-<p>Whether they have actually pulled it off is, as of today, an open question. Researchers are demanding independent proof. The technical report has not been released. And every prior subquadratic architecture has hit the same wall when tested at frontier scale.</p>
-<p>But the benchmarks are real, the API is live, and the architecture is genuinely novel. This review covers all three.</p>
+<p>Whether they have actually pulled it off is, as of today, an open question. If those claims hold under independent scrutiny, SubQ is architecturally significant. If they don&rsquo;t, one community commenter called it perfectly: &ldquo;AI Theranos.&rdquo; We&rsquo;re currently somewhere between those two poles.</p>
 <hr>
 <h2 id="company-miami-startup-research-pedigree-investors">Company: Miami Startup, Research Pedigree Investors</h2>
 <p>Subquadratic launched in stealth and came out publicly on May 5, 2026. It is based in Miami, Florida — notable for being outside the San Francisco AI cluster that dominates frontier model development.</p>
@@ -92,12 +91,18 @@
 </ul>
 <p>The pattern across all of these is discouraging: demonstrate linear scaling on benchmarks, show competitive results at small to medium scale, then underperform vanilla attention at frontier scale — or end up in hybrid configurations that preserve transformer attention for the critical attention heads and only achieve linear scaling on a subset.</p>
 <p>Subquadratic&rsquo;s SSA is described as <strong>content-dependent routing</strong>: the model decides where to look based on meaning rather than position. Relevant information can be retrieved regardless of where it appears in the sequence. The company claims this avoids the degradation at scale that has plagued prior approaches, because the routing is semantically driven rather than structurally constrained.</p>
-<p>The 7.2× prefill speedup over dense attention at 128,000 tokens (rising to 52.2× at 1 million tokens) is the efficiency claim in concrete terms. These are hardware-level numbers, not just theoretical — they reflect actual inference timing on the production system.</p>
-<p>The company also claims approximately <strong>1,000× efficiency reduction</strong> at the full 12 million token context window, compared to an equivalent transformer. At 12M tokens, a dense transformer&rsquo;s quadratic cost would be astronomical — this is the regime where the comparison is most favorable to any subquadratic approach, and where the 1,000× claim is most defensible on mathematical grounds. Frontier models with 256K–1M contexts cannot currently operate at 12M tokens at all; the comparison is somewhat apples-to-impossible.</p>
+<p>The 7.2× prefill speedup over dense attention at 128,000 tokens (rising to 52.2× at 1 million tokens) is the efficiency claim in concrete terms. These are hardware-level numbers, not just theoretical — they reflect actual inference timing on the production system. The company also claims approximately <strong>1,000× efficiency reduction</strong> at the full 12 million token context window, compared to an equivalent transformer.</p>
 <hr>
 <h2 id="context-window-1m-production-12m-research">Context Window: 1M Production, 12M Research</h2>
-<p>The practical context window for API users is <strong>1 million tokens</strong>. This matches the largest available windows from Gemini 3.1 Pro, and exceeds Grok 4 Fast (2M in special configuration). In production use, 1M tokens is the relevant number.</p>
-<p>The <strong>12M token context</strong> is Subquadratic&rsquo;s research configuration — tested and validated in the company&rsquo;s internal evaluations, but not currently the default API offering. Whether the full 12M context window works in practice for downstream tasks (rather than just technically processing input) is not independently verified. Subquadratic&rsquo;s long-context benchmark scores (65.9% on MRCR v2 at 1M) suggest functional retrieval at the production context size.</p>
+<p>The practical context window for API users is <strong>1 million tokens</strong>. This matches the largest available windows from Gemini 3.1 Pro. In production use, 1M tokens is the relevant number.</p>
+<p>The <strong>12M token context</strong> is Subquadratic&rsquo;s research configuration — tested and validated in the company&rsquo;s internal evaluations, but not currently the default API offering. Whether the full 12M context window works in practice for downstream tasks (rather than just technically processing input) is not independently verified. Subquadratic&rsquo;s long-context benchmark scores (65.9% on MRCR v2 at 1M) suggest functional retrieval at the production context size. Subquadratic has indicated a <strong>50M token target for Q4 2026</strong> — if reached, the context window stops resembling a limit and starts resembling unlimited memory.</p>
+<hr>
+<h2 id="what-they-launched">What They Launched</h2>
+<p>The May 5, 2026 launch included three products, all in private beta:</p>
+<p><strong>SubQ API</strong> — The production version exposes a 1 million token context window. The research version extends to 12 million tokens, but that isn&rsquo;t in the public beta. The $29M seed is in part designed to train the production 12M model.</p>
+<p><strong>SubQ Code</strong> — A CLI coding agent built on SubQ, compatible with Claude Code, Codex, and Cursor. It targets the full-codebase-in-context use case: load an entire repository, all its history, and all its documentation into a single call.</p>
+<p><strong>SubQ Search</strong> — A free long-context research tool using SubQ as the backend.</p>
+<p>Access to all three is currently <strong>waitlist-only</strong> at subq.ai, with no announced general availability date.</p>
 <hr>
 <h2 id="benchmarks-what-they-show-and-what-they-dont">Benchmarks: What They Show and What They Don&rsquo;t</h2>
 <p><strong>SWE-Bench Verified: 81.8%</strong></p>
@@ -108,25 +113,31 @@
 <li>Each model was run only <strong>once</strong> on the benchmark suite, due to high inference cost. Standard practice is multiple runs to account for variance; single-run scores have wider error bars.</li>
 <li>The margin is, in the CTO&rsquo;s words, &ldquo;harness as much as model.&rdquo; SWE-Bench results are sensitive to scaffolding and prompt engineering; different harness configurations can move scores several percentage points.</li>
 </ol>
-<p>Neither of these makes the 81.8% meaningless. But they are grounds for caution about exact rankings.</p>
 <p><strong>RULER @128K: 95.0%</strong></p>
 <p>RULER (Realistic Uniform Long-context Evaluation for Retrieval) at 128K tokens is a needle-in-a-haystack style long-context benchmark. 95.0% is a strong score and indicates the model retrieves relevant information reliably at that context length.</p>
 <p><strong>MRCR v2 (8-needle, 1M): 65.9%</strong></p>
-<p>MRCR v2 at 1 million tokens with 8 needles is a harder test — multi-needle retrieval at maximum context. 65.9% is solid; it demonstrates the model actually functions at the 1M context window rather than degrading to near-random performance. For comparison, most models that advertise 1M context windows show significant quality degradation at that scale on multi-needle tasks.</p>
+<p>MRCR v2 at 1 million tokens with 8 needles is a harder test — multi-needle retrieval at maximum context. 65.9% is solid; it demonstrates the model actually functions at the 1M context window rather than degrading to near-random performance. This score was independently verified by a third party, which is the single most credibility-boosting data point in the launch.</p>
 <p><strong>What is missing</strong>: Standard reasoning benchmarks (GPQA Diamond, MATH, MMLU), knowledge benchmarks, and multimodal evaluations are not included in the public technical materials. The benchmarks Subquadratic released are well-suited to showing their architecture&rsquo;s strengths — long-context and coding. The absence of broader evals makes it hard to assess whether SSA generalizes or excels only in the specific regimes it was optimized for.</p>
 <hr>
 <h2 id="the-researcher-skepticism-case">The Researcher Skepticism Case</h2>
-<p>The VentureBeat headline upon launch was blunt: &ldquo;Miami startup Subquadratic claims 1,000x AI efficiency gain with SubQ model; researchers demand independent proof.&rdquo;</p>
-<p>The researchers&rsquo; argument is not that SSA is impossible — it is that every prior approach with similar claims has failed in the same way. To quote the pattern: each new subquadratic architecture demonstrates linear scaling on benchmarks at small and medium scale, then underperforms at frontier scale on downstream tasks, or ends up in a hybrid configuration that partially preserves quadratic attention.</p>
-<p>The counterargument from Subquadratic is that SSA is fundamentally different because of content-dependent routing — that prior approaches used structural sparsity patterns (fixed windows, local attention, convolutions) while SSA uses semantic routing to decide dynamically which parts of the context are relevant.</p>
-<p>This is a plausible architectural distinction. Whether it is sufficient to avoid the frontier-scale performance wall is the question that only empirical testing at scale will answer. The technical report, when it arrives, will be the first real test of this claim. Until then, the skepticism is rational.</p>
+<p>The VentureBeat headline upon launch was blunt: <em>&ldquo;Miami startup Subquadratic claims 1,000x AI efficiency gain with SubQ model; researchers demand independent proof.&quot;</em></p>
+<p>Reaction from the AI research community split almost immediately. The <strong>skeptical case</strong>, articulated most sharply by AI engineer Will Depue: SubQ is &ldquo;almost surely a sparse attention finetune of Kimi or DeepSeek&rdquo; — meaning the architecture may not be novel, and the model may be a fine-tuned adaptation of an existing open-source model rather than a from-scratch subquadratic training. If true, the efficiency gains would be much less than advertised, since the base model still encodes quadratic training costs. No rebuttal from Subquadratic has been published.</p>
+<p>The <strong>supportive case</strong>, from AI researcher John Rysana: &ldquo;The work is just subquadratic attention done well which is very meaningful for long context workloads — odds of it being BS are extremely low.&rdquo;</p>
+<p>The legitimacy of the research direction is not in dispute. The question is whether this specific implementation achieves the scale and quality claimed. The third-party MRCR verification sits in the middle — it validates one performance claim on one benchmark, which is evidence but not proof.</p>
 <hr>
-<h2 id="api-openai-compatible-subq-code-integration">API: OpenAI-Compatible, SubQ Code Integration</h2>
-<p>The SubQ API is live and available at <a href="https://subq.ai">subq.ai</a>. It is OpenAI-compatible — you can use it as a drop-in replacement in any system that uses the OpenAI client library, by changing the base URL.</p>
+<h2 id="why-12m-context-actually-matters">Why 12M Context Actually Matters</h2>
+<p>Setting aside the verification debate: if SubQ performs as claimed, what would 12M tokens change?</p>
+<p><strong>For software engineering</strong>: 12M tokens is approximately 10 million words. A large enterprise codebase — all source files, all commit history, all documentation — typically fits in 2–8 million tokens. A 12M context model means no chunking, no RAG, no retrieval pipeline. You put the entire codebase in and ask questions directly.</p>
+<p><strong>For legal</strong>: Full case file processing — discovery documents, contract portfolios, prior art archives — in a single call. Current workflows require splitting, chunking, and retrieval-augmented pipelines that introduce errors.</p>
+<p><strong>For long-running agents</strong>: Persistent state across months of interaction without any external memory or retrieval system. The context window itself becomes the memory.</p>
+<p><strong>For research</strong>: Entire literature corpora in context. Not a RAG index, but the actual papers.</p>
+<p>None of this matters if the model can&rsquo;t reason well at general tasks, which is exactly what the missing benchmarks would show.</p>
+<hr>
+<h2 id="api-and-pricing">API and Pricing</h2>
+<p>The SubQ API is live and available at subq.ai. It is OpenAI-compatible — you can use it as a drop-in replacement in any system that uses the OpenAI client library, by changing the base URL.</p>
 <p><strong>Reported pricing</strong>: ~$0.50 per million input tokens, ~$1.50 per million output tokens. These figures circulate in independent coverage but are not currently listed in a clear public pricing page, which is worth noting for planning purposes.</p>
 <p><strong>Inference speed</strong>: 150+ tokens per second reported.</p>
-<p><strong>SubQ Code</strong> is a coding agent integration, compatible with Claude Code, Codex, and Cursor. This is the primary agentic interface — long-context coding agents that can load large codebases into context and reason over them.</p>
-<p>There is no free tier currently listed in public materials.</p>
+<p>If the cost claims hold, the value proposition for long-context workloads is dramatic: tasks that reportedly cost $2,600 on Claude at 128K context reportedly cost $8 on SubQ at comparable context lengths. Whether this holds as the product scales out of private beta is unknown. There is no free tier currently listed in public materials.</p>
 <hr>
 <h2 id="how-it-compares-to-frontier-models">How It Compares to Frontier Models</h2>
 <table>
@@ -157,9 +168,9 @@
 <tr>
 <td>SWE-Bench Verified</td>
 <td>81.8%</td>
-<td>~80-85%</td>
-<td>~78-83%</td>
-<td>~75-82%</td>
+<td>~80–85%</td>
+<td>~78–83%</td>
+<td>~75–82%</td>
 </tr>
 <tr>
 <td>Input price / M tokens</td>
@@ -184,7 +195,12 @@
 </tr>
 </tbody>
 </table>
-<p>The pricing differential is striking — SubQ claims approximately <strong>30× lower input price</strong> than Claude Opus 4.6 at equivalent context lengths. If the quality holds, this is significant. The caveat: &ldquo;equivalent context lengths&rdquo; is doing work here. At 1M tokens, SubQ is priced competitively with Gemini and below GPT-5.5 and Claude — but Claude Opus 4.6 and GPT-5.5 have been evaluated extensively across a broader benchmark suite, and their quality at normal coding and reasoning tasks is well-established. SubQ has not yet published comparable breadth of evaluation.</p>
+<p>The pricing differential is striking — SubQ claims approximately 30× lower input price than Claude Opus 4.6 at equivalent context lengths. The caveat: &ldquo;equivalent context lengths&rdquo; is doing work here. Claude Opus 4.6 and GPT-5.5 have been evaluated extensively across a broader benchmark suite, and their quality at normal coding and reasoning tasks is well-established. SubQ has not yet published comparable breadth of evaluation.</p>
+<hr>
+<h2 id="what-builders-should-do">What Builders Should Do</h2>
+<p><strong>If you&rsquo;re building applications bottlenecked by context length or cost</strong>, SubQ is worth getting on the waitlist for today. Even if the headline claims are partially inflated, a model that delivers competitive RULER and SWE-Bench scores at 1/10th the cost of frontier models has real value.</p>
+<p><strong>If you&rsquo;re evaluating SubQ for production use</strong>, wait for three things: an independent efficiency benchmark (not just the vendor-run numbers), a peer-reviewed paper with the architecture details, and general reasoning evaluations (MMLU/GPQA class). Without those, the risk of architectural surprises in production is real.</p>
+<p><strong>If you&rsquo;re a researcher</strong>, the SSA approach — content-dependent sparse exact attention — is an interesting direction worth tracking regardless of how SubQ&rsquo;s commercial story unfolds. The architectural direction is legitimate even if this specific implementation is debated.</p>
 <hr>
 <h2 id="verdict-architecturally-significant-but-requires-independent-validation">Verdict: Architecturally Significant, But Requires Independent Validation</h2>
 <p>SubQ 1M-Preview is the most architecturally interesting LLM release of early 2026. The claim — a fully subquadratic frontier model that doesn&rsquo;t hit the scaling wall — is exactly the kind of breakthrough that would meaningfully change the economics of long-context AI. The SWE-Bench score is competitive. The context window is real. The API is live.</p>
@@ -208,20 +224,6 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-23 14:00:00</span></div>
-  <h3><a href="/reviews/anthropic-claude-mythos-project-glasswing-cybersecurity-ai-2026/">Claude Mythos and Project Glasswing: Anthropic&#39;s Most Capable Model Is Not For Sale</a></h3>
-  <p>On April 7, 2026, Anthropic confirmed the existence of Claude Mythos Preview — a general-purpose frontier model that is more capable than Claude Opus 4.6 and may be the most capable AI model ever released to any organization. It scored 93.9% on SWE-Bench Verified and 97.6% on USAMO. Its most striking capability: autonomous cybersecurity research. In controlled evaluations, Mythos identified thousands of previously unknown zero-day vulnerabilities across every major operating system and every major web browser — including a 17-year-old remote code execution flaw in FreeBSD and a 27-year-old vulnerability in OpenBSD, a system famous for its security focus. Anthropic is not selling access. Claude Mythos Preview is available exclusively through Project Glasswing, a $100M invitation-only consortium of 12 launch partners — Amazon Web Services, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, the Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks, and Anthropic itself — plus more than 40 additional organizations that build or maintain critical software infrastructure. Anthropic committed $100M in usage credits and $4M in donations to open-source security organizations. The defensive rationale is clear: if an AI model can find decade-old vulnerabilities in days, better to have defenders find and patch them first. Rating: 5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-23 12:00:00</span></div>
-  <h3><a href="/reviews/xai-grok-build-coding-agent-cli-review-2026/">Grok Build Review: xAI&#39;s Agentic Coding CLI Takes On Claude Code and Codex</a></h3>
-  <p>xAI launched Grok Build on May 14, 2026 — the company&#39;s first agentic coding CLI and a direct challenge to Anthropic&#39;s Claude Code and OpenAI&#39;s Codex CLI. The underlying model, Grok Build 0.1, is purpose-built for agentic workflows and scored 70.8% on SWE-Bench Verified, trailing Claude Code (87.6%) and Codex CLI (88.7%) by a meaningful margin. The signature feature is eight concurrent sub-agents that attack different parts of a codebase in parallel on separate branches. Plan mode requires your approval before any file is touched. Arena Mode — which pits multiple agents against the same problem and ranks their outputs — is confirmed but not yet live. The tool is local-first: nothing in your codebase is transmitted to xAI&#39;s servers. MCP servers work out of the box. Available exclusively to SuperGrok Heavy subscribers at $299/month, with a six-month introductory offer at $99/month. API pricing: $0.20 per million input tokens and $1.50 per million output tokens. Grok 5 is not yet released. Rating: 3/5.</p>
-</div>
-
-  
-    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-23 12:00:00</span></div>
   <h3><a href="/reviews/nvidia-nemotron-3-nano-omni-multimodal-model-review/">NVIDIA Nemotron 3 Nano Omni Review — 30B Params, 3B Active, Sees Everything</a></h3>
   <p>NVIDIA Nemotron 3 Nano Omni (April 29, 2026) is an open multimodal model with 30 billion total parameters and only 3 billion active per forward pass, achieved via a hybrid Mamba-Transformer Mixture-of-Experts architecture. Its modular design adds a C-RADIOv4-H vision encoder and Parakeet-TDT-0.6B-v2 audio encoder to the language backbone, enabling it to process text, images, audio, video, documents, charts, and graphical interfaces as input. Output is text only. NVIDIA claims 9x higher throughput and 2.9x single-stream reasoning speed versus other open omni models with equivalent interactivity. Leads document intelligence leaderboards (MMlongbench-Doc, OCRBenchV2), video understanding (WorldSense, DailyOmni), audio understanding (VoiceBench), and cost-efficient video reasoning (MediaPerf). Available on HuggingFace, OpenRouter, and as an NVIDIA NIM microservice across cloud partners. Supports deployment from NVIDIA Jetson edge hardware up to DGX data center clusters. Output-only text — does not generate audio or video. Rating: 4/5.</p>
@@ -235,6 +237,20 @@
 </div>
 
   
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-23 00:00:00</span></div>
+  <h3><a href="/reviews/cloudflare-stripe-ai-agent-deploy-protocol-2026/">AI Agents Just Got a Bank Account and a Keyboard: The Cloudflare-Stripe Protocol That Changes Everything</a></h3>
+  <p>Cloudflare and Stripe launched an open protocol that lets AI agents autonomously create cloud accounts, purchase domains, provision infrastructure, and pay for it all — without any human clicking anything. Here is what it does, how it works, and why this is a bigger deal than it sounds.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-23 00:00:00</span></div>
+  <h3><a href="/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review/">Amazon Kiro Review — The Agentic IDE That Writes the Spec Before the Code</a></h3>
+  <p>Amazon Kiro is an agentic IDE from AWS that inverts the Cursor/Copilot model: the spec is source-of-truth; code is a build artifact. You describe a feature in natural language, Kiro produces structured requirements in EARS notation, and only after you approve does it write code. Event-driven Hooks automate tests, docs, and downstream changes on file save or PR open. Steering Rules configure agent behavior per project or globally. Powered by Claude Sonnet (reasoning) &#43; Amazon Nova (code gen) via Amazon Bedrock. Deep integration with CodeCatalyst, Q Developer, and IAM. Free: 50 interactions/month; Pro: $19/month. Launched mid-2025. The spec-driven model genuinely reduces rework for complex features — but the gate between spec and code adds friction that solo developers building quick prototypes will find frustrating.</p>
+</div>
+
+  
 </aside>
 
 
@@ -245,7 +261,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-16T00:00:00+09:00","datePublished":"2026-05-16T10:00:00+09:00","description":"SubQ 1M-Preview (Subquadratic, May 5, 2026) is the first commercial LLM built on a fully subquadratic architecture (SSA). 1M production context, 12M research context, 81.8% SWE-Bench Verified, linear O(n) scaling. $29M seed. OpenAI-compatible API. Researchers are demanding independent proof. Rating: 3/5.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"SubQ 1M-Preview Review: The First Subquadratic LLM, 12M Context, and Why Researchers Are Skeptical"},"name":"SubQ 1M-Preview Review: The First Subquadratic LLM, 12M Context, and Why Researchers Are Skeptical","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/subquadratic-subq-1m-preview-llm-review/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-23T00:00:00+09:00","datePublished":"2026-05-16T10:00:00+09:00","description":"SubQ 1M-Preview (Subquadratic, May 5, 2026) is the first commercial LLM built on a fully subquadratic architecture (SSA). 1M production context, 12M research context, 81.8% SWE-Bench Verified, linear O(n) scaling. $29M seed. OpenAI-compatible API. Researchers are demanding independent proof. Rating: 3/5.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"SubQ 1M-Preview Review: The First Subquadratic LLM, 12M Context, and Why Researchers Are Skeptical"},"name":"SubQ 1M-Preview Review: The First Subquadratic LLM, 12M Context, and Why Researchers Are Skeptical","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/subquadratic-subq-1m-preview-llm-review/"}
 </script>
 
 

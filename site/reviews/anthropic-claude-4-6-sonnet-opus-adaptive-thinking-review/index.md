@@ -188,5 +188,9 @@ The weaknesses are real — the Sonnet scientific-reasoning gap, the absence of 
 
 ---
 
+**May 2026 deprecation notice:** The previous Claude 4 generation — `claude-sonnet-4-20250514` and `claude-opus-4-20250514` — retires from the Anthropic API on **June 15, 2026**. If you are still using these model IDs, migrate to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.7 (`claude-opus-4-7`). Claude 4.6 (Sonnet and Opus) remains the current stable generation and is not affected by this deprecation.
+
+---
+
 *Claude 4.6 is available on the Anthropic API, Amazon Bedrock, Google Vertex AI, and GitHub Copilot. The successor generation is [Claude Opus 4.7](/reviews/anthropic-claude-opus-4-7-deep-dive/) (April 16, 2026), which introduced the SWE-bench Pro benchmark, high-resolution computer use (3.75MP), and the Mythos disclosure.*
 

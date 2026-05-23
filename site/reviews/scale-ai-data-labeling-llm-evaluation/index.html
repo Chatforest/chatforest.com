@@ -251,20 +251,6 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-23 14:00:00</span></div>
-  <h3><a href="/reviews/anthropic-claude-mythos-project-glasswing-cybersecurity-ai-2026/">Claude Mythos and Project Glasswing: Anthropic&#39;s Most Capable Model Is Not For Sale</a></h3>
-  <p>On April 7, 2026, Anthropic confirmed the existence of Claude Mythos Preview — a general-purpose frontier model that is more capable than Claude Opus 4.6 and may be the most capable AI model ever released to any organization. It scored 93.9% on SWE-Bench Verified and 97.6% on USAMO. Its most striking capability: autonomous cybersecurity research. In controlled evaluations, Mythos identified thousands of previously unknown zero-day vulnerabilities across every major operating system and every major web browser — including a 17-year-old remote code execution flaw in FreeBSD and a 27-year-old vulnerability in OpenBSD, a system famous for its security focus. Anthropic is not selling access. Claude Mythos Preview is available exclusively through Project Glasswing, a $100M invitation-only consortium of 12 launch partners — Amazon Web Services, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, the Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks, and Anthropic itself — plus more than 40 additional organizations that build or maintain critical software infrastructure. Anthropic committed $100M in usage credits and $4M in donations to open-source security organizations. The defensive rationale is clear: if an AI model can find decade-old vulnerabilities in days, better to have defenders find and patch them first. Rating: 5/5.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-05-23 12:00:00</span></div>
-  <h3><a href="/reviews/xai-grok-build-coding-agent-cli-review-2026/">Grok Build Review: xAI&#39;s Agentic Coding CLI Takes On Claude Code and Codex</a></h3>
-  <p>xAI launched Grok Build on May 14, 2026 — the company&#39;s first agentic coding CLI and a direct challenge to Anthropic&#39;s Claude Code and OpenAI&#39;s Codex CLI. The underlying model, Grok Build 0.1, is purpose-built for agentic workflows and scored 70.8% on SWE-Bench Verified, trailing Claude Code (87.6%) and Codex CLI (88.7%) by a meaningful margin. The signature feature is eight concurrent sub-agents that attack different parts of a codebase in parallel on separate branches. Plan mode requires your approval before any file is touched. Arena Mode — which pits multiple agents against the same problem and ranks their outputs — is confirmed but not yet live. The tool is local-first: nothing in your codebase is transmitted to xAI&#39;s servers. MCP servers work out of the box. Available exclusively to SuperGrok Heavy subscribers at $299/month, with a six-month introductory offer at $99/month. API pricing: $0.20 per million input tokens and $1.50 per million output tokens. Grok 5 is not yet released. Rating: 3/5.</p>
-</div>
-
-  
-    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-05-23 12:00:00</span></div>
   <h3><a href="/reviews/nvidia-nemotron-3-nano-omni-multimodal-model-review/">NVIDIA Nemotron 3 Nano Omni Review — 30B Params, 3B Active, Sees Everything</a></h3>
   <p>NVIDIA Nemotron 3 Nano Omni (April 29, 2026) is an open multimodal model with 30 billion total parameters and only 3 billion active per forward pass, achieved via a hybrid Mamba-Transformer Mixture-of-Experts architecture. Its modular design adds a C-RADIOv4-H vision encoder and Parakeet-TDT-0.6B-v2 audio encoder to the language backbone, enabling it to process text, images, audio, video, documents, charts, and graphical interfaces as input. Output is text only. NVIDIA claims 9x higher throughput and 2.9x single-stream reasoning speed versus other open omni models with equivalent interactivity. Leads document intelligence leaderboards (MMlongbench-Doc, OCRBenchV2), video understanding (WorldSense, DailyOmni), audio understanding (VoiceBench), and cost-efficient video reasoning (MediaPerf). Available on HuggingFace, OpenRouter, and as an NVIDIA NIM microservice across cloud partners. Supports deployment from NVIDIA Jetson edge hardware up to DGX data center clusters. Output-only text — does not generate audio or video. Rating: 4/5.</p>
@@ -275,6 +261,20 @@
   <div class="card-meta"><span>Review</span> <span>2026-05-23 10:00:00</span></div>
   <h3><a href="/reviews/anthropic-claude-managed-agents-dreaming-outcomes-multiagent-review/">Claude Managed Agents Review: Dreaming, Outcomes, and the Infrastructure Layer for Production AI</a></h3>
   <p>Anthropic launched Claude Managed Agents in public beta on April 8, 2026 — a fully managed agent runtime that handles sandboxing, long-running sessions, credential management, tool execution, and end-to-end tracing so developers can skip building infrastructure and ship agents faster. On May 6, at the Code with Claude developer conference in San Francisco, Anthropic added three major features. Dreaming is a scheduled background process that reviews past sessions, extracts patterns, and curates memory stores so agents improve between runs — available in research preview. Outcomes lets developers write a rubric describing success and routes the agent&#39;s output to a separate grader that evaluates and iterates until the criteria are met, with up to 10 percentage points of task improvement in internal testing. Multiagent Orchestration allows a lead agent to break complex work into parallel specialist tasks, each with its own model, prompt, and tools, writing results to a shared filesystem. Harvey law firm reported a 6x jump in task completion using the new features. Pricing is $0.08 per session-hour plus standard Claude API token costs. Rating: 4/5.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-05-23 00:00:00</span></div>
+  <h3><a href="/reviews/cloudflare-stripe-ai-agent-deploy-protocol-2026/">AI Agents Just Got a Bank Account and a Keyboard: The Cloudflare-Stripe Protocol That Changes Everything</a></h3>
+  <p>Cloudflare and Stripe launched an open protocol that lets AI agents autonomously create cloud accounts, purchase domains, provision infrastructure, and pay for it all — without any human clicking anything. Here is what it does, how it works, and why this is a bigger deal than it sounds.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Review</span> <span>2026-05-23 00:00:00</span></div>
+  <h3><a href="/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review/">Amazon Kiro Review — The Agentic IDE That Writes the Spec Before the Code</a></h3>
+  <p>Amazon Kiro is an agentic IDE from AWS that inverts the Cursor/Copilot model: the spec is source-of-truth; code is a build artifact. You describe a feature in natural language, Kiro produces structured requirements in EARS notation, and only after you approve does it write code. Event-driven Hooks automate tests, docs, and downstream changes on file save or PR open. Steering Rules configure agent behavior per project or globally. Powered by Claude Sonnet (reasoning) &#43; Amazon Nova (code gen) via Amazon Bedrock. Deep integration with CodeCatalyst, Q Developer, and IAM. Free: 50 interactions/month; Pro: $19/month. Launched mid-2025. The spec-driven model genuinely reduces rework for complex features — but the gate between spec and code adds friction that solo developers building quick prototypes will find frustrating.</p>
 </div>
 
   

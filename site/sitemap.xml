@@ -4,21 +4,11 @@
   
   <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-05-23T14:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/anthropic-claude-mythos-project-glasswing-cybersecurity-ai-2026/</loc>
-    <lastmod>2026-05-23T14:00:00+09:00</lastmod>
+    <lastmod>2026-05-23T12:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/reviews/</loc>
-    <lastmod>2026-05-23T14:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/xai-grok-build-coding-agent-cli-review-2026/</loc>
     <lastmod>2026-05-23T12:00:00+09:00</lastmod>
   </url>
   
@@ -53,12 +43,22 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/reviews/anthropic-enterprise-ai-services-company-blackstone-goldman-sachs-review/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/reviews/anthropic-900-billion-valuation-30b-round-2026-guide/</loc>
     <lastmod>2026-05-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/reviews/openai-chatgpt-personal-finance-plaid-bank-accounts-2026/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/anthropic-claude-security-code-vulnerability-scanning-enterprise-beta/</loc>
     <lastmod>2026-05-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,17 +78,17 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/google-gemini-spark-24-7-personal-ai-agent-google-io-2026-review/</loc>
-    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chatforest.com/reviews/google-io-2026-gemini-spark-intelligent-eyewear-search-agents-review/</loc>
     <lastmod>2026-05-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/reviews/openai-gpt-5-5-instant-chatgpt-default-model-2026/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/ibm-think-2026-ai-operating-model-bob-ide-review/</loc>
     <lastmod>2026-05-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -118,7 +118,7 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/reviews/subquadratic-subq-12m-context-window-sparse-attention-llm-2026/</loc>
+    <loc>https://chatforest.com/reviews/openai-c2pa-synthid-verify-content-provenance-ai-images-review/</loc>
     <lastmod>2026-05-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -134,6 +134,11 @@
   
   <url>
     <loc>https://chatforest.com/reviews/openai-goblin-incident-alignment-reward-hacking-personality-leak-explainer/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/windsurf-2-0-cognition-devin-agent-command-center-ide-review/</loc>
     <lastmod>2026-05-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -330,11 +335,6 @@
   <url>
     <loc>https://chatforest.com/reviews/alibaba-qwen3-coder-next-efficient-coding-agent-review/</loc>
     <lastmod>2026-05-21T11:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/google-antigravity-2-agent-first-dev-platform-review/</loc>
-    <lastmod>2026-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -1675,6 +1675,11 @@
   <url>
     <loc>https://chatforest.com/guides/claude-design-anthropic-labs-guide/</loc>
     <lastmod>2026-04-17T17:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/nvidia-ising-open-ai-models-quantum-computing-review/</loc>
+    <lastmod>2026-04-15T12:00:00+09:00</lastmod>
   </url>
   
   <url>
