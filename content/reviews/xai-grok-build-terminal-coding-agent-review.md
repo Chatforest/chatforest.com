@@ -56,6 +56,20 @@ Once approved, every change surfaces as a clean diff. If you've used Claude Code
 
 ---
 
+## Arena Mode: The Feature That Isn't Live Yet
+
+The most discussed future feature is one you cannot use today. **Arena Mode** runs multiple agents against the same problem independently, ranks their outputs, and lets you choose the best solution rather than accepting or rejecting a single answer. The concept is borrowed from how human code review works: more approaches, better signal on which solution is correct.
+
+Arena Mode was confirmed in code traces as early as February 2026 and included in the launch announcement — but it is not live in the May 14 early beta. Its absence matters for evaluating Grok Build as it exists today. When it ships, Arena Mode would make the benchmark gap between Grok Build and its competitors narrower in practice, since selecting the best of several outputs is more forgiving of per-generation model weaknesses than committing to a single result.
+
+---
+
+## Local-First Architecture
+
+All code runs on your machine. Nothing in your codebase is transmitted to xAI's servers during a working session. Grok Build is also air-gap compatible — it can operate in offline environments once initial setup is complete. For developers working on sensitive codebases in financial services, government, or healthcare, this is a significant differentiator. Most SaaS coding agents require uploading your code to a cloud runtime to function.
+
+---
+
 ## Ecosystem Compatibility
 
 Grok Build picks up repository conventions automatically on startup:
@@ -111,6 +125,8 @@ For context:
 
 At $99/mo intro, Grok Build is priced competitively against Claude Max and below Codex Cloud Pro. At $299/mo post-intro, it is the most expensive option in the category by a substantial margin — harder to justify given the benchmark gap, especially while still in early beta.
 
+**API pricing:** Grok Build 0.1 is available via API at $0.20 per million input tokens and $1.50 per million output tokens — competitive with Claude and Codex API pricing, though parallel sub-agents can compound token usage quickly when multiple agents are reasoning simultaneously.
+
 ---
 
 ## Who Should Use Grok Build Today
@@ -133,6 +149,8 @@ At $99/mo intro, Grok Build is priced competitively against Claude Max and below
 Grok Build is the most architecturally interesting coding agent released in the first half of 2026. The worktree isolation approach is not incremental improvement on existing designs — it is a different bet about how parallel AI software engineering should work. If that bet proves out with stronger model performance, Grok Build will be a serious contender.
 
 Today, it is an early beta with a meaningful benchmark deficit and a high post-intro price. The $99/mo intro tier is a reasonable price for a developer who wants to explore the worktree isolation architecture before the rest of the market catches up to it.
+
+The benchmark picture will change. Grok 5 — xAI's next flagship model — is expected to ship in the near term. Once Grok 5 powers Grok Build, the SWE-Bench gap is likely to close substantially; the architecture would remain the same while the underlying model capability increases significantly. Evaluate Grok Build again after that upgrade.
 
 **Rating: 3.5/5** — Novel architecture, competitive intro pricing, but benchmark gap and beta status limit immediate production use.
 

@@ -32,6 +32,18 @@ At launch, Spark connects natively to:
 
 Third-party integrations shipping on day one include **Canva**, **OpenTable**, and **Instacart**. MCP-based integrations covering GitHub, Notion, and Slack are announced for "over the summer" 2026.
 
+Spark also supports **sub-agent creation**: users can spin up specialized sub-agents — a "travel Spark" for itinerary research, a "shopping Spark" for price tracking, a "news Spark" for morning briefings. These lightweight instances report back to the primary Spark instance, allowing users to delegate entire domains of recurring work rather than individual tasks.
+
+---
+
+## The Antigravity Platform
+
+Google's infrastructure layer underneath Spark is called **Antigravity** — a dedicated agentic compute platform built to run persistent, stateful AI workloads at consumer scale. This is not standard cloud VM hosting; Antigravity is optimized for low-latency, high-concurrency agentic tasks that run continuously rather than on-demand.
+
+Google has not released technical details, but the design intent is clear: infrastructure built to run hundreds of millions of persistent AI agents simultaneously. Stateful agents that run continuously are fundamentally different from stateless inference calls — they require session state, task queues, retry logic, and persistent context management at scale. Antigravity is Google's answer to that engineering challenge.
+
+The same Antigravity infrastructure powers the [Google Managed Agents API](https://chatforest.com/reviews/google-gemini-managed-agents-api-review/) for developers; Spark is the consumer product expression of the same underlying platform.
+
 ---
 
 ## How Spark Handles High-Stakes Actions
@@ -70,9 +82,11 @@ Google's managed agents infrastructure already supports MCP natively (as covered
 
 ---
 
-## Privacy Concerns
+## Security and Privacy Concerns
 
 Gemini Spark requires more trust than any previous Google product, and the trust story at launch is incomplete.
+
+**Prompt injection is a real attack surface.** A persistent agent that reads arbitrary web content, emails, and documents on your behalf is a high-value target for adversarial instructions embedded in those sources. Malicious websites and emails can contain hidden text designed to hijack an AI agent's actions — redirecting purchases, exfiltrating data, or executing unauthorized tasks. Google said in May 2026 that malicious websites are actively targeting AI agents via hidden prompts, and stated that Spark includes "adversarial prompt detection." No one has fully solved prompt injection. Running a 24/7 agent that reads arbitrary external content is a meaningful attack surface, and users should treat it as such.
 
 A leaked onboarding screen from an early Gemini app beta disclosed that Spark "may do things like share your info or make purchases without asking." Google has acknowledged the screen but clarified that high-stakes actions require approval before Spark will execute them. The framing of the leaked text, however, suggests the eventual steady-state — particularly after the Agents Payment Protocol launches — involves a meaningfully larger autonomous surface than today's consent patterns train users to expect.
 
@@ -81,6 +95,16 @@ As of the I/O keynote, **Google has not published a Spark-specific privacy polic
 The absence of a Spark privacy policy is not unusual for a product in trust-tester rollout — but it is notable that the commercial launch timeline for Ultra subscribers does not appear to be gated on publishing one.
 
 Google's stance is that Spark requires user approval for high-stakes actions. What constitutes "high-stakes" and what the data retention model looks like for an always-on agent with full Workspace access are questions the current documentation does not fully answer.
+
+---
+
+## Comparison: Spark vs. OpenAI Operator
+
+OpenAI launched Operator in early 2025 — an agent that could browse the web and fill out forms on your behalf. It was a meaningful capability, but reactive: you had to be present to kick off a task, and it ran in a browser session tied to your active session.
+
+Gemini Spark is more architecturally ambitious. The persistent cloud VM model means true asynchronous operation — assign a task Monday night, find results in your email Tuesday morning without having opened an app. The email interface is also differentiated: Operator uses a chat interface; Spark treats email as a first-class input channel, which is lower-friction for delegation.
+
+The tradeoff: Spark is tightly coupled to Google's ecosystem. It works with Gmail, Google Calendar, Chrome, and Google Workspace natively. If you live outside that ecosystem — Outlook, Firefox, Apple Pay — the value proposition shrinks. OpenAI Operator is more browser-agnostic; Claude's agentic capabilities are more API-extensible for developers. Spark wins on consumer integration within Google's world; it is less compelling outside it.
 
 ---
 
