@@ -142,6 +142,18 @@ The Anthropic/Gates partnership is notable for:
 3. **Language infrastructure** — explicit investment in low-resource African languages, which is technically valuable and commercially underincentivized
 4. **Sovereignty framing** — explicit design around avoiding proprietary lock-in, which is unusual for a partnership anchored to one vendor's model
 
+## Anthropic's Broader Healthcare Push
+
+The Gates Foundation partnership does not exist in isolation. April 2026 brought two other major Anthropic moves into global health and life sciences — and taken together, they describe a coordinated strategic bet on healthcare as a priority vertical.
+
+**Coefficient Bio acquisition (April 3, 2026).** Anthropic acquired Coefficient Bio, a stealth AI biotech startup founded by former Genentech researchers, for approximately $400 million in all-stock consideration. Coefficient Bio's platform targets drug discovery, clinical trial planning, and regulatory workflow automation — the commercial, enterprise-facing side of AI in healthcare. The Gates Foundation partnership occupies the public-goods and global-health side of the same domain.
+
+**Vas Narasimhan joins Anthropic's board (April 14, 2026).** Narasimhan, who has served as CEO of Novartis since 2018, became the first pharmaceutical executive on Anthropic's Board of Directors. His appointment also gave the Long-Term Benefit Trust — the entity designed to ensure Anthropic's mission survives commercial pressure — a majority of board seats. The signal here is structural: Anthropic is not just signing healthcare partnerships, it is integrating pharmaceutical leadership into its governance.
+
+Together, these moves suggest Anthropic sees healthcare as a strategic vertical in the same way it sees enterprise AI coding tools. The Gates Foundation partnership is the public-goods and global-health expression of that thesis; Coefficient Bio is the commercial research and development expression; Narasimhan is the institutional credibility layer.
+
+---
+
 ## What to Watch
 
 The partnership was announced in May 2026. Implementation will take years. Key indicators of whether it succeeds:
