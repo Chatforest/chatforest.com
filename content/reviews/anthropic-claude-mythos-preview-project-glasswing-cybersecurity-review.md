@@ -2,7 +2,7 @@
 title: "Claude Mythos Preview — Anthropic's Restricted Frontier Model for Cybersecurity"
 date: 2026-05-22T10:00:00+09:00
 description: "Claude Mythos Preview (April 2026) is Anthropic's most capable model — and its most restricted. Deployed only through Project Glasswing, a 12-partner coalition with 40+ critical infrastructure organizations, it autonomously found thousands of zero-day vulnerabilities. Priced at $25/$125 per million tokens. Not publicly available."
-og_description: "Claude Mythos Preview: 83.1% CyberGym (vs 66.6% Opus 4.6), 181 working Firefox exploits (vs 2 for Opus 4.6), found CVE-2026-4747 (17-yr FreeBSD RCE autonomously). Project Glasswing: 12 partners (AWS, Apple, Google, Microsoft, NVIDIA + 7 more), $100M usage credits. $25/$125 per million tokens. Invite-only. Rating: 3.5/5."
+og_description: "Claude Mythos Preview: 93.9% SWE-Bench, 97.6% USAMO, 83.1% CyberGym (vs 66.6% Opus 4.6), 181 working Firefox exploits (vs 2). Found CVE-2026-4747 (17-yr FreeBSD RCE) and 27-yr OpenBSD bug. Project Glasswing: 12 partners, $100M usage credits. $25/$125 per M tokens. Invite-only. Rating: 3.5/5."
 content_type: "Review"
 card_description: "Claude Mythos Preview is Anthropic's strongest model — and the one they decided not to release to the general public. Announced April 7, 2026 as the engine of Project Glasswing, Mythos Preview can autonomously identify and exploit zero-day vulnerabilities at a scale no prior model approached: 83.1% on the CyberGym vulnerability reproduction benchmark (versus 66.6% for Opus 4.6), 181 working Firefox exploits versus 2 for Opus 4.6, and full autonomous discovery of CVE-2026-4747, a 17-year-old remote code execution vulnerability in FreeBSD. Access is limited to Project Glasswing participants — 12 launch partners (including AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, and Palo Alto Networks) plus 40+ critical infrastructure organizations — via an invite-only program. Pricing is $25 per million input tokens and $125 per million output tokens. The capabilities that make Mythos Preview effective at defense are identical to those that would make it dangerous in offense. Anthropic's bet is that deploying them under controlled conditions gets the vulnerabilities patched before attackers find them. Rating: 3.5/5."
 tags: ["llm", "anthropic", "claude", "claude-4", "claude-mythos", "cybersecurity", "vulnerability-research", "project-glasswing", "zero-day", "enterprise-ai", "restricted-access", "agentic-ai"]
@@ -32,7 +32,7 @@ This review covers what Mythos Preview is, what it demonstrated it can do, how P
 
 Claude Opus 4.7, released nine days after Project Glasswing (April 16, 2026), is Anthropic's strongest publicly deployed model. Its SWE-bench Verified score of 87.6% is the highest of any available model. On Artificial Analysis's hallucination benchmark, it scores 36% — the lowest (best) of any frontier LLM.
 
-But Anthropic simultaneously disclosed that Opus 4.7 is not their most capable model. Mythos Preview exists above it on the capability curve, and the company chose not to release it.
+But Anthropic simultaneously disclosed that Opus 4.7 is not their most capable model. Mythos Preview exists above it on the capability curve — scoring **93.9% on SWE-Bench Verified** (vs. Opus 4.7's 87.6%) and **97.6% on USAMO** (mathematics competition benchmark) — and the company chose not to release it.
 
 The reason was cybersecurity.
 
@@ -54,13 +54,15 @@ Anthropic published detailed performance figures in April 2026. The numbers are 
 
 **CVE-2026-4747 (FreeBSD NFS):** Mythos autonomously identified and exploited a 17-year-old remote code execution vulnerability in FreeBSD that allows unauthenticated root access on any machine running NFS. No human involvement after the initial request. The vulnerability survived 17 years of human code review and automated testing.
 
-**OpenBSD SACK vulnerability:** A 27-year-old vulnerability in OpenBSD's TCP stack, identified autonomously.
+**OpenBSD SACK vulnerability:** A 27-year-old vulnerability in OpenBSD's TCP stack — a system specifically designed and maintained with security as its primary engineering priority. OpenBSD's historically minimal attack surface makes this finding particularly significant: a 27-year-old flaw in a security-first OS is not what automated scanners are expected to find.
 
 **Multi-vulnerability chaining:** Mythos regularly linked two, three, or four vulnerabilities together to achieve privilege escalation. One documented case involved a JIT heap spray that escaped both the renderer sandbox and the OS sandbox — a class of exploit that requires understanding how multiple system layers interact.
 
 **Reverse engineering closed-source software:** The model reconstructed plausible source code from stripped binaries and used the reconstruction to find vulnerabilities in closed-source targets — extending coverage beyond open-source software.
 
 **Logic bugs beyond memory corruption:** Beyond classic memory safety vulnerabilities (use-after-free, integer overflow, buffer overflow), Mythos identified authentication bypasses and domain-specific logic vulnerabilities that fuzzing tools do not catch.
+
+The UK AI Safety Institute (AISI) conducted an independent evaluation of Mythos Preview's cyber capabilities and aligned with Anthropic's assessment: the model represents a qualitative advance in autonomous vulnerability discovery. Anthropic's own description notes that Mythos "mostly saturates established benchmarks" — which is why the company shifted evaluation focus to novel real-world security tasks rather than continuing to publish standard benchmark comparisons. When a model runs out of hard tests, you find harder tests.
 
 A key finding from Anthropic's evaluation: these capabilities "emerged as a downstream consequence of general improvements in code, reasoning, and autonomy" — they were not the result of explicit security-focused training. The same improvements that make Mythos better at writing and debugging code also make it better at finding and exploiting vulnerabilities.
 
