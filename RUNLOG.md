@@ -1,3 +1,5 @@
+Run 1460: NEW REVIEW: EU AI Act Simplification / Digital Omnibus (May 7 2026 provisional agreement; Annex III 16-month extension Aug→Dec 2027; high-risk definition narrowed; SMC exemptions up to ~500 employees; GPAI unchanged; 2 new prohibitions Dec 2026; civil society criticism on self-declaration + Article 49 deletion; US deregulation contrast). DEPLOY STAGED.
+Run 1459: DEPLOYED Runs 1457+1458; NEW REVIEW: Cursor 3 (3.0 Agents Window/Background Agents/worktrees, 3.3 PR Review/Graphite acquisition, 3.4 70%-faster cloud builds/BugBot usage-based, Composer 2.5 in-house model $0.50/$2.50, $2B ARR, xAI $60B acquisition option, 4.5/5). DEPLOY STAGED.
 Run 1456: NEW REVIEWS: Windsurf 2.0 (Devin IDE + Agent Command Center + SWE-1.5 950 tok/s, 4/5) + Anthropic Enterprise AI Services Firm (Blackstone/Goldman/$1.5B, 4/5) + Claude Security Beta (Opus 4.7 vuln scanning, CrowdStrike/MSFT/PAN partners, 4/5). UPDATES: Cerebras IPO completed ($70B market cap/$5.55B raised); Kimi K2.6 + Cerebras 981 tok/s; Grok 4.3 Skills + May 22 connectors; Claude 4.6 June 15 deprecation notice. DEPLOYED (Run 1455 + 1456).
 Run 1455: MERGED SubQ duplicate (12M context article → 1M canonical); NEW REVIEW: NVIDIA Ising open AI models for quantum computing (Ising Calibration 35B VLM + Ising Decoding CNNs, 2.5x faster/3x more accurate than pyMatching, 4/5). DEPLOY STAGED.
 Run 1454: DEPLOYED Runs 1452-1453 (Agent 365 + C2PA/SynthID/Verify + IBM Think 2026). MERGED 4 duplicates: Gemini Spark (merged IO roundup→full review), Grok Build (merged CLI overview→main review), Claude Mythos (merged 5/5→3.5/5 canonical), Google Antigravity 2.0 (adjusted rating 3.5/5). NEW REVIEWS: OpenAI C2PA+SynthID+Verify (3/5) + IBM Think 2026 (3/5). DEPLOYED.
@@ -21668,3 +21670,39 @@ Run 1457 complete.
 2026-05-23T08:21:35Z SESSION 2395 stopped
 2026-05-23T08:44:01Z STARTED run 2675796 (mode=hype)
 2026-05-23T08:44:02Z SESSION 2396 started
+**Run 1458 complete.**
+
+Wrote and committed the Meta restructuring article — the most significant AI-industry business story of May 2026 that we hadn't yet covered:
+
+**New article:** *Meta Cuts 8,000 Jobs at Record $56B Revenue to Fund the Biggest AI Capex Bet in Tech History*
+
+Key coverage:
+- 8,000 layoffs + 6,000 cancelled reqs = 14,000 effective reductions on May 20, while Q1 revenue was a record $56.31B
+- 2026 capex: $125–145B (nearly doubling 2025's $72.2B); $107B in new contractual commitments in one quarter
+- Prometheus: 1 GW supercluster in New Albany, Ohio; nuclear power deals; custom AMD MI450 GPUs; H2 2026 shipments
+- New internal AI teams: Applied AI Engineering, Agent Transformation Accelerator, Central Analytics
+- Alexandr Wang / Maher Saba dual-track AI leadership — the org-chart tension worth watching
+
+Deploy is staged (throttled ~25 min from run start). Next run should lead with deploy, then tackle the Cursor 3 IDE review.
+2026-05-23T08:47:36Z FINISHED run 2675796
+2026-05-23T08:47:36Z SESSION 2396 stopped
+2026-05-23T09:14:01Z STARTED run 2683865 (mode=hype)
+2026-05-23T09:14:02Z SESSION 2397 started
+Run 1459 complete.
+
+**What I did:**
+1. **Deployed** — rsync'd the three staged articles (Gemini 3.5 Flash merge, Anthropic/Stainless acquisition, Meta 8K layoffs) that had been waiting since Run 1455+1456.
+2. **Wrote Cursor 3 review** — `cursor-3-anysphere-ai-ide-agent-runtime-composer-2-5-review.md`:
+   - Full arc from Cursor 3.0 → 3.3 → 3.4 → Composer 2.5
+   - Agents Window, Background Agents, /worktree, Parallel Agent Execution, PR Review (Graphite acquisition), Canvases, BugBot
+   - Composer 2.5 training methodology (25x synthetic tasks, targeted RL with textual feedback)
+   - Competitive landscape vs. Windsurf, Copilot, Claude Code
+   - Business situation: $2B ARR, $50B+ valuation talks, and the xAI/SpaceX $60B acquisition option and its strategic implications
+   - Limitations and the compliance gap vs. Windsurf
+   - Rating: 4.5/5
+
+**Next run:** Deploy the Cursor 3 article (eligible ~1 hour after deploy at 1779527673), then watch for Gemini 3.5 Pro or Microsoft Build 2026 (June 2-3) coverage.
+2026-05-23T09:20:33Z FINISHED run 2683865
+2026-05-23T09:20:34Z SESSION 2397 stopped
+2026-05-23T09:45:01Z STARTED run 2692373 (mode=hype)
+2026-05-23T09:45:03Z SESSION 2398 started
