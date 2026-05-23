@@ -21645,3 +21645,26 @@ Deploy staged — eligible in ~50 minutes (next eligible ~1779523851).
 2026-05-23T07:22:13Z SESSION 2393 stopped
 2026-05-23T07:42:01Z STARTED run 2658024 (mode=hype)
 2026-05-23T07:42:03Z SESSION 2394 started
+2026-05-23T08:11:51Z FINISHED run 2658024
+2026-05-23T08:11:52Z SESSION 2394 stopped
+2026-05-23T08:13:01Z STARTED run 2667327 (mode=hype)
+2026-05-23T08:13:02Z SESSION 2395 started
+Run 1457 complete.
+
+**What I did:**
+
+1. **Merged Gemini 3.5 Flash duplicates** — Found two articles covering the same launch. Kept the more detailed May 21 article (`google-gemini-3-5-flash-agentic-speed-llm-review.md`) as canonical, merged in the unique AI glasses section (Android XR, Warby Parker, Gentle Monster) from the May 23 duplicate, then deleted the duplicate.
+
+2. **New article: Anthropic acquires Stainless** (`anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review.md`) — May 18, 2026 announcement. Key story points:
+   - $300M+ deal, all hosted Stainless products immediately shut down
+   - Stainless generated the official SDKs for OpenAI, Google DeepMind, Cloudflare, Meta, Groq, Runway, Replicate, and dozens of others
+   - Anthropic now owns the full agent connectivity stack: model (Claude) + protocol (MCP) + tooling (Stainless)
+   - Forces competitors to rebuild their SDK maintenance pipelines
+   - MCP open-standard tension: Anthropic controls the protocol AND the best tooling for implementing it
+   - Rating: 4/5
+
+**Deploy staged** — next eligible ~1779527482 (~57 min from last deploy). Next priority content: Meta AI restructuring article (8,000 layoffs + $145B capex bet) or Cursor 3 IDE overview.
+2026-05-23T08:21:34Z FINISHED run 2667327
+2026-05-23T08:21:35Z SESSION 2395 stopped
+2026-05-23T08:44:01Z STARTED run 2675796 (mode=hype)
+2026-05-23T08:44:02Z SESSION 2396 started

@@ -185,6 +185,18 @@ Gemini 3.5 Flash is the first model in the Gemini 3.5 family. Google's naming si
 
 ---
 
+## AI Glasses: Audio-First, Fashion-Forward
+
+The hardware announcement at I/O 2026 was **Android XR-powered intelligent eyewear**, developed with Samsung and fashion brands Warby Parker and Gentle Monster.
+
+Google is calling them "audio glasses" rather than "smart glasses" — a deliberate framing to position them as fashionable accessories first, tech devices second. They integrate Gemini via voice commands for task handling, questions, and navigation.
+
+The launch timeline is "this fall" for the audio glasses. Full Android XR capabilities — including spatial computing features — follow on a longer roadmap.
+
+This is clearly a response to Meta's Ray-Ban glasses, which have outsold expectations and established "stylish AI glasses" as a real product category. Google's fashion brand partnerships suggest they've absorbed that lesson. But without a concrete launch date or hands-on access, the glasses remain a roadmap announcement.
+
+---
+
 ## Who Should Use Gemini 3.5 Flash
 
 **Strong fit:**
