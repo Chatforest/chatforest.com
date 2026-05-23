@@ -8,7 +8,7 @@ tags: ["llm", "frontier-model", "grok", "xai", "reasoning", "multimodal", "video
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
-last_refreshed: 2026-05-15
+last_refreshed: 2026-05-23
 ---
 
 **At a glance:** Grok 4.3, released to API on April 30, 2026 by xAI. Native video input (5 min, 1080p). Always-on chain-of-thought — reasoning is no longer a toggle. AI Intelligence Index: 53 (#10/146 models). GDPval-AA ELO: 1,500 (+321 vs Grok 4.20). Pricing: $1.25/$2.50/M — 40–58% cheaper than its predecessor. Context: 1M tokens (halved from 4.20's 2M). The current xAI production model as of May 2026. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For context on the Grok 4.x lineage, see our **[Grok 4.20 review](/reviews/xai-grok-4-20-multi-agent-hallucination-record-llm-review/)** and **[Grok 4.1 review](/reviews/xai-grok-4-1-post-training-llm-review/)**.
@@ -186,6 +186,10 @@ The limitations are real. It is not the intelligence leader; it does not replica
 What Grok 4.3 is best described as: the obvious choice for cost-conscious agentic development at frontier capability, with native video as a genuine differentiator and pricing that makes the math work for production workloads. Not the model you reach for when you need the deepest reasoning. The model you reach for when you need strong agentic performance at a price point that scales.
 
 **Rating: 4/5** — A well-positioned current flagship. Meaningfully better on agentic benchmarks than Grok 4.20, substantially cheaper, and genuinely new in multimodal input. Loses a full point for the intelligence gap to GPT-5.5 and Claude Opus 4.7, the context window halving, and the hallucination regression from Grok 4.20. The right model for a large class of production workflows, not the unconditional recommendation.
+
+---
+
+**May 2026 platform updates:** Since the Grok 4.3 API launch, xAI has shipped two notable platform additions. **Grok Skills** (May 2026) enables persistent custom expertise: users define workflows, preferences, and document-handling routines once through natural language or file uploads, and Grok applies them automatically across all future conversations without re-prompting. Available on grok.com, iOS, and Android. **Third-party connectors** expanded on May 22, 2026 to include Vercel (site deployment), Canva (design), Gamma (presentations), and S&P Global (live market data) — accessible directly inside the Grok interface. These are platform-level additions that don't affect the model benchmarks above but expand the surface area of what Grok 4.3 can accomplish in a single session.
 
 ---
 
