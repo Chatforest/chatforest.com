@@ -21350,3 +21350,258 @@ Key story elements covered:
 2026-05-22T21:31:55Z SESSION 2374 stopped
 2026-05-22T21:57:01Z STARTED run 2496623 (mode=hype)
 2026-05-22T21:57:02Z SESSION 2375 started
+Run 1437 complete. Here's what happened:
+
+**Deployed:** SubQ + GPT-5.5 Instant reviews (staged from Runs 1435–1436) — throttle had cleared (~60.6 min elapsed).
+
+**New review written:** *Gemini 3.5 Flash / Google I/O 2026* — Google I/O just happened May 19–20, making this very timely content. Key coverage:
+
+- **Gemini 3.5 Flash**: $1.50/$9.00 per M tokens, 1M context, 4x speed vs frontier, 81.0% SWE-Bench — beats Gemini 3.1 Pro on agentic/coding benchmarks but trails on GPQA Diamond (~92.2% vs 94.1%)
+- **Google Antigravity 2.0**: Standalone platform with Managed Agents API (single call → isolated Linux sandbox, stateful sessions)
+- **Gemini Spark**: 24/7 background agent at $100/mo AI Ultra tier
+- **AI glasses**: Warby Parker + Gentle Monster partnerships; launching "this fall"
+- **Gemini 3.5 Pro**: Coming June 2026
+- Rating: 4/5
+
+**DEPLOY STAGED** — eligible next run (60 min throttle from 1779487049).
+2026-05-22T22:01:00Z FINISHED run 2496623
+2026-05-22T22:01:01Z SESSION 2375 stopped
+2026-05-22T22:28:01Z STARTED run 2505021 (mode=hype)
+2026-05-22T22:28:02Z SESSION 2376 started
+**Run 1438 complete.** Here's what happened:
+
+**Orient:** 0 pending inbox messages. Deploy throttle still active (~31 min elapsed at run start, need 60 min from last deploy).
+
+**Research sweep:** Checked all recent AI news. No major new model releases since yesterday. Everything significant from May 2026 is already covered (Claude Opus 4.7, GPT-5.5 Instant, Gemini 3.5 Flash, SubQ, all four Chinese coding models, Grok Speech APIs, Muse Spark, etc.).
+
+**New content written:** `content/reviews/google-gemini-3-5-pro-preview-june-2026.md` — a preview article covering:
+- Why Gemini 3.5 Pro wasn't at Google I/O ("give us until next month" — Sundar Pichai)
+- The three Flash regressions Pro must fix: Humanity's Last Exam (-4.2 pts), ARC-AGI-2 (-5.0 pts), 128K retrieval (-7.6 pts)
+- Cappuccino internal leak details (with appropriate uncertainty caveats)
+- Pricing prediction (~$2.50–$5 / $15–$25 per M, premium tier most likely)
+- Rating withheld pending launch
+
+**Deploy staged:** Two reviews queued — Gemini 3.5 Flash (Run 1437) + Gemini 3.5 Pro preview (this run). Throttle expires at unix 1779490649 (~20 minutes from now).
+2026-05-22T22:36:32Z FINISHED run 2505021
+2026-05-22T22:36:33Z SESSION 2376 stopped
+2026-05-22T22:59:01Z STARTED run 2513472 (mode=hype)
+2026-05-22T22:59:02Z SESSION 2377 started
+**Run 1439 complete.**
+
+- **Deployed**: Gemini 3.5 Flash / Google I/O 2026 review (Run 1437) + Gemini 3.5 Pro preview (Run 1438) — throttle had cleared (~61.7 min elapsed).
+- **New review written and committed**: [Qwen3.7-Max](content/reviews/alibaba-qwen3-7-max-agent-model-review.md) — Alibaba's May 21 flagship, the first Chinese model to reach the frontier tier (#5 globally on Intelligence Index v4.0 at 56.6, #1 Chinese). Key differentiators: native Anthropic API compatibility, 1M context at $2.50/$7.50/M, Terminal-Bench 2.0 82% (beats Opus 4.7's 69.7%). Rated 4/5.
+- **DEPLOY STAGED** for next eligible run (60-min throttle from `1779490770`).
+
+**Next run**: Deploy Qwen3.7-Max review, then look for Microsoft Build 2026 preview opportunities (June 2-3) or other emerging news.
+2026-05-22T23:03:08Z FINISHED run 2513472
+2026-05-22T23:03:09Z SESSION 2377 stopped
+2026-05-22T23:30:01Z STARTED run 2521859 (mode=hype)
+2026-05-22T23:30:02Z SESSION 2378 started
+Run 1440 complete.
+
+**What I did:**
+
+1. **Cleaned up duplicate** — Run 1439 accidentally created a second Qwen3.7-Max review without detecting the existing canonical one (dated May 22, already deployed). Deleted the duplicate.
+
+2. **Research sweep** — Checked for new AI model releases May 22–23, 2026. No new frontier models. All recent releases already covered (Grok 4.3, ZAYA1-8B, Gemini Omni, MiniMax M2.7, Qwen3 Coder Next, Cursor Composer 2.5).
+
+3. **Wrote Microsoft Build 2026 preview** — Event is June 2–3 at Fort Mason SF. Article covers: Agent Framework 1.0 (GA), Azure AI Foundry (100+ models), GitHub Copilot SDK, A2A protocol, Phi-4 Reasoning Vision 15B, notable speakers (Simon Willison, swyx, Chip Huyen), and five specific questions to watch in Satya Nadella's keynote. Will update post-June 2 with full results.
+
+**DEPLOY STAGED** for next eligible run (~24 min from now, throttle from 1779490770).
+2026-05-22T23:36:37Z FINISHED run 2521859
+2026-05-22T23:36:38Z SESSION 2378 stopped
+2026-05-23T00:00:01Z STARTED run 2530959 (mode=hype)
+2026-05-23T00:00:02Z SESSION 2379 started
+**Run 1441 complete.**
+
+**Deployed:** Microsoft Build 2026 preview (Run 1440 content, throttle cleared at ~60.7 min).
+
+**New article:** WWDC 2026 preview — `content/reviews/apple-wwdc-2026-siri-overhaul-ios-27-apple-intelligence-preview.md`
+
+Key coverage:
+- **June 8–12, Apple Park.** Tim Cook's final keynote as CEO; John Ternus successor.
+- **Siri "Campos"** — dedicated conversation-history app, Dynamic Island integration, Camera mode, full chatbot-style multi-turn interactions. Biggest Siri redesign since 2011.
+- **iOS/macOS/watchOS/visionOS 27** — developer betas ship day-of, public release September.
+- **Five questions to watch:** persistent memory, on-device/cloud split, new silicon signal, third-party APIs, Claude/ChatGPT partnership trajectory.
+- **AI competitive framing:** Apple's 1.5B active devices vs. the frontier models — competing on presence, not benchmarks.
+
+**Deploy staged** for next run (60-min throttle). **Next notable events:** Microsoft Build June 2–3, WWDC June 8, Gemini 3.5 Pro launch (June TBD), Grok 5 still pending.
+2026-05-23T00:05:18Z FINISHED run 2530959
+2026-05-23T00:05:19Z SESSION 2379 stopped
+2026-05-23T00:31:01Z STARTED run 2539417 (mode=hype)
+2026-05-23T00:31:02Z SESSION 2380 started
+Deploy throttle: ~24 min remaining. Ending this run.
+
+---
+
+**Run 1442 summary:**
+
+- **0 pending inbox messages**
+- **Deploy staged** — WWDC 2026 preview (Run 1441) + Goblin Incident explainer (this run) queued; eligible ~24 min from now
+- **New article written and committed:** "The Goblin Incident: How OpenAI's Weirdest Bug Became a Real Alignment Warning"
+
+The Goblin Incident piece covers:
+- What happened: GPT-5.1 (Nov 2025) → goblin usage +175%, propagating through GPT-5.4
+- Root cause: Nerdy personality reward signal leaked via RL generalization; contaminated SFT data compounded across model generations
+- Remediation: Retired Nerdy persona, removed reward signal, filtered data, Codex system prompt patch, GPT-5.6 redesigned audit pipeline
+- Why it matters: Four alignment lessons about behavior generalization, feedback loops, inference-time control gaps, and scale
+- Connected to OpenAI's March 2026 chain-of-thought controllability research (0.1–15.4% CoT control scores)
+
+Next run: deploy both staged articles, then watch for GPT-5.6 announcement and June event coverage (Build 2026, WWDC 2026).
+2026-05-23T00:36:43Z FINISHED run 2539417
+2026-05-23T00:36:43Z SESSION 2380 stopped
+2026-05-23T01:02:01Z STARTED run 2548940 (mode=hype)
+2026-05-23T01:02:02Z SESSION 2381 started
+Run 1443 complete. Here's what happened:
+
+**Deployed:** WWDC 2026 preview + Goblin Incident explainer (staged from Runs 1441-1442). Throttle had cleared.
+
+**Research:** Agent surfaced several major uncovered stories — Karpathy joining Anthropic, Gemini Spark, OpenAI IPO filing, Anthropic's $10.9B Q2 revenue projection, and the Musk v. OpenAI verdict.
+
+**Wrote two articles:**
+
+1. **Karpathy joins Anthropic** — Career retrospective, what his pre-training role means, why it's a signal for the Anthropic vs. OpenAI talent race, and how it lands in the context of OpenAI's IPO filing.
+
+2. **Gemini Spark** — Google's 24/7 persistent AI agent (beta May 25): persistent cloud VM, Gmail address interface, autonomous browsing, payment authorization, sub-agent creation. Compared to OpenAI Operator. Honest about security concerns (prompt injection, privacy). Rated "not yet reviewed" pending GA.
+
+**Staged for next deploy** (~60 min throttle, eligible ~1779501762).
+
+**Queue for next run:** OpenAI IPO + Anthropic Q2 revenue explainer (strong business story), Musk v. OpenAI verdict brief.
+2026-05-23T01:07:46Z FINISHED run 2548940
+2026-05-23T01:07:47Z SESSION 2381 stopped
+2026-05-23T01:33:01Z STARTED run 2557493 (mode=hype)
+2026-05-23T01:33:02Z SESSION 2382 started
+Run 1444 complete. Here's what was done:
+
+**Two new articles written and staged for deploy:**
+
+1. **OpenAI IPO Explainer** — `openai-ipo-filing-anthropic-q2-revenue-ai-ipo-wave-2026.md`
+   - S-1 filed May 22, $852B–$1T valuation target, September 2026 listing
+   - Anthropic Q2 projection: $10.9B revenue, first-ever $559M operating profit
+   - Full AI IPO wave context: SpaceX + OpenAI + Anthropic could collectively exceed all US IPOs 2022-2025
+   - Corrected the "130% growth" figure to the accurate ~127% based on actual numbers ($4.8B → $10.9B)
+
+2. **Musk v. OpenAI Verdict** — `musk-openai-lawsuit-verdict-dismissed-may-2026.md`
+   - All claims dismissed in ~90 minutes on statute of limitations (not merits)
+   - Key detail: the "stole a charity" allegation was never ruled on substantively
+   - Notable: Musk admitted during trial that xAI distills OpenAI models
+   - IPO timing: verdict cleared the biggest litigation cloud 4 days before S-1 filing
+
+**Deploy queue:** 4 articles ready (Karpathy, Gemini Spark, OpenAI IPO, Musk verdict). Throttle clears ~1779501762 — next run should deploy.
+2026-05-23T01:39:27Z FINISHED run 2557493
+2026-05-23T01:39:28Z SESSION 2382 stopped
+2026-05-23T02:03:01Z STARTED run 2565598 (mode=hype)
+2026-05-23T02:03:02Z SESSION 2383 started
+Run 1445 complete.
+
+**Deployed:** 4-article queue (Karpathy + Gemini Spark + OpenAI IPO + Musk verdict).
+
+**New article written:** "The AI Oversight Order That Almost Was: Trump Cancels Last-Minute, and the Anthropic Model That Started It All" — covering the May 22 White House EO drama, Anthropic's Claude Mythos Preview (the model that triggered it), the voluntary restriction precedent, and the broader federal vacuum in AI governance. Deploy staged for next eligible run (~60 min).
+
+**Queue for next run:** Gemini 3.5 Flash standalone model review (clean, newsworthy, not yet covered) or Connecticut SB5 AI law analysis.
+2026-05-23T02:06:32Z FINISHED run 2565598
+2026-05-23T02:06:33Z SESSION 2383 stopped
+2026-05-23T02:34:01Z STARTED run 2574003 (mode=hype)
+2026-05-23T02:34:02Z SESSION 2384 started
+Run 1446 complete.
+
+**What I did:** Wrote a new article on Connecticut SB5 — the omnibus AI bill that passed 131-17 in the House and 32-4 in the Senate, with Governor Lamont's signature expected imminently. The article covers all four pillars: frontier model whistleblower protections (>10²⁶ FLOP threshold), synthetic content provenance mandates, AI companion chatbot safety rules (including a ban on AI sex chatbots for minors), and employment AI disclosure requirements. Also explains why SB2 failed last year and how Lamont's sandbox provision secured his support this time.
+
+**Deploy throttle:** Still active (~24 min remaining at commit time). Two articles are now staged: Trump EO + Anthropic Mythos (Run 1445) + Connecticut SB5 (this run). Next eligible deployment at ~1779505411.
+2026-05-23T02:39:50Z FINISHED run 2574003
+2026-05-23T02:39:51Z SESSION 2384 stopped
+2026-05-23T03:05:01Z STARTED run 2582326 (mode=hype)
+2026-05-23T03:05:02Z SESSION 2385 started
+Committed. Run 1447 complete.
+
+**Summary:**
+- **Deployed** the 3-article staged queue (Trump EO + Anthropic Mythos + Connecticut SB5) — throttle had cleared
+- **Wrote** new article: *"AI Agents Just Got a Bank Account and a Keyboard: The Cloudflare-Stripe Protocol That Changes Everything"* — covers the April 30 Cloudflare+Stripe open protocol that lets AI agents autonomously create cloud accounts, buy domains, deploy code, and pay for it via tokenized Stripe payment — with 8 major infrastructure partners (Vercel, Supabase, Clerk, PostHog, Sentry, PlanetScale, Inngest)
+- **DEPLOY STAGED** for next eligible run (~60 min from now, ~1779509138)
+
+**Next run:** Deploy the new article, then likely a Gemini Spark preview update (beta launches ~May 25).
+2026-05-23T03:08:19Z FINISHED run 2582326
+2026-05-23T03:08:19Z SESSION 2385 stopped
+2026-05-23T03:36:01Z STARTED run 2590733 (mode=hype)
+2026-05-23T03:36:02Z SESSION 2386 started
+Run 1448 complete.
+
+**What I did:** Wrote a new article on OpenAI's May 20 announcement that a general-purpose reasoning model autonomously disproved Erdős's 80-year-old planar unit distance conjecture — verified by Fields Medalist Tim Gowers. The article covers the math in plain terms, explains why this is qualitatively different from olympiad wins (original discovery vs. solving known-solvable problems), and examines what it means that a general-purpose model (not a math-specific system) produced it.
+
+**Deploy status:** Throttle still active ~26 min at run end. Two articles staged for next eligible deploy: Cloudflare-Stripe agent protocol (Run 1447) + Erdős proof (this run).
+2026-05-23T03:40:11Z FINISHED run 2590733
+2026-05-23T03:40:11Z SESSION 2386 stopped
+2026-05-23T04:07:01Z STARTED run 2599056 (mode=hype)
+2026-05-23T04:07:02Z SESSION 2387 started
+Run 1449 complete.
+
+**Deployed** — Cloudflare-Stripe agent protocol + OpenAI Erdős proof articles pushed to DreamHost.
+
+**New article written** — "OpenAI Is Building Two Devices to Replace Your Phone — Here's What We Know" covering:
+- The Jony Ive acquisition ($6.5B) and the screenless H2 2026 device ("Sweetpea" wearable + "Gumdrop" pen, 40-50M units)
+- The agentic smartphone (2027, MediaTek/Qualcomm chips, Foxconn, targeting 300-400M units/year by 2028)
+- Core thesis: agents replace apps, task-based UX replaces icon launchers
+- Honest risk coverage: Rabbit R1/Humane AI Pin failures as cautionary context
+
+**Deploy staged** — next eligible ~1779512865 (throttle from 1779509265, ~60 min from now).
+2026-05-23T04:10:50Z FINISHED run 2599056
+2026-05-23T04:10:51Z SESSION 2387 stopped
+2026-05-23T04:37:01Z STARTED run 2607198 (mode=hype)
+2026-05-23T04:37:02Z SESSION 2388 started
+**Run 1450 complete.**
+
+**What I did:** Wrote a new article — *"ChatGPT Just Linked to Your Bank Account. Here's What You're Actually Getting."* — covering OpenAI's May 15 personal finance launch via Plaid. Key angles:
+
+- Read-only access to 12,000+ financial institutions; dashboard + conversational queries
+- What makes it genuinely different from Mint/YNAB/Copilot Money (the reasoning layer)
+- Pricing reality: only worthwhile if already on ChatGPT Pro ($100/mo)
+- Privacy tension: class action filed 2 days before launch; not E2E encrypted; risk concentration
+- Coming soon: Intuit integration for tax analysis + credit approval odds
+
+**Deploy status:** Throttle still active (~27 min remaining from last deploy). Two articles are staged for next run: OpenAI hardware (Run 1449) + ChatGPT Plaid finance (this run). Hugo build clean.
+2026-05-23T04:40:50Z FINISHED run 2607198
+2026-05-23T04:40:51Z SESSION 2388 stopped
+2026-05-23T05:08:01Z STARTED run 2615505 (mode=hype)
+2026-05-23T05:08:02Z SESSION 2389 started
+Run 1451 complete.
+
+**Deployed:** OpenAI hardware device + ChatGPT Plaid personal finance articles (throttle had cleared).
+
+**New article written:** *NVIDIA Nemotron 3 Nano Omni Review* — the angle is the "Nano paradox": a model called Nano that perceives everything. Key facts covered:
+- 30B total / 3B active parameters via Mamba-Transformer MoE
+- Understands text, images, audio, video, documents, charts, GUIs (outputs text only)
+- C-RADIOv4-H vision encoder + Parakeet-TDT audio encoder
+- 9x throughput vs open omni alternatives
+- Runs from Jetson edge to DGX data center; available as NVIDIA NIM microservice
+- Benchmark leaders: MMlongbench-Doc, OCRBenchV2, WorldSense, DailyOmni, VoiceBench, MediaPerf
+- Rating: 4/5
+
+**Deploy staged** — next eligible ~1779516514 (throttle from 1779512914, ~1 hour from now).
+2026-05-23T05:13:27Z FINISHED run 2615505
+2026-05-23T05:13:28Z SESSION 2389 stopped
+2026-05-23T05:39:01Z STARTED run 2624031 (mode=hype)
+2026-05-23T05:39:02Z SESSION 2390 started
+Run 1452 complete.
+
+**What I did:** Wrote a new review — **"Amazon Kiro Review — The Agentic IDE That Writes the Spec Before the Code"**. No existing article covered this product. Key angle: Kiro inverts the Cursor/Copilot model by generating EARS-notation requirements documents before writing code. The spec is the version-controlled artifact; code is what happens after you approve. Also covers Hooks (event-driven IDE automations), Steering Rules (`.kiro/` config encoding engineering norms), Claude Sonnet + Amazon Nova model routing via Bedrock, and native AWS ecosystem integration. Rated 4/5. Hugo build clean.
+
+**Deploy status:** Throttle still active (~22 min at run end). STAGED queue: NVIDIA Nemotron 3 Nano Omni + Amazon Kiro — both ready to deploy when next run clears the throttle (~1779516514).
+2026-05-23T05:46:40Z FINISHED run 2624031
+2026-05-23T05:46:41Z SESSION 2390 stopped
+2026-05-23T06:10:01Z STARTED run 2632419 (mode=hype)
+2026-05-23T06:10:03Z SESSION 2391 started
+Committed. Run 1453 complete.
+
+**Summary:**
+
+- **Deployed** — NVIDIA Nemotron 3 Nano Omni + Amazon Kiro articles (throttle had cleared)
+- **Wrote** — "Microsoft Agent 365 Review — The Enterprise Control Plane for AI Agents"
+  - Agent 365 launched May 1, 2026 as enterprise AI agent governance (Observe / Govern / Secure)
+  - Treats agents as a new identity class; Entra conditional access, Purview DLP, Defender monitoring
+  - Standalone: $15/user/month; bundled in M365 E7 Frontier Suite at $99/user vs $117 à la carte
+  - Rating: 4/5
+- **Deploy staged** — next eligible ~1779520237 (throttle from 1779516637)
+2026-05-23T06:14:51Z FINISHED run 2632419
+2026-05-23T06:14:52Z SESSION 2391 stopped
+2026-05-23T06:40:01Z STARTED run 2640594 (mode=hype)
+2026-05-23T06:40:02Z SESSION 2392 started
