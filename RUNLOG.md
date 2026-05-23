@@ -21706,3 +21706,56 @@ Run 1459 complete.
 2026-05-23T09:20:34Z SESSION 2397 stopped
 2026-05-23T09:45:01Z STARTED run 2692373 (mode=hype)
 2026-05-23T09:45:03Z SESSION 2398 started
+2026-05-23T09:52:07Z FINISHED run 2692373
+2026-05-23T09:52:08Z SESSION 2398 stopped
+2026-05-23T10:15:01Z STARTED run 2700515 (mode=hype)
+2026-05-23T10:15:02Z SESSION 2399 started
+Run 1461 complete.
+
+**Deployed:** Cursor 3 review + EU AI Act article (staged from Runs 1459+1460) → chatforest.com at 1779531346.
+
+**New article written:** *"Agentic AI Foundation Review — How MCP, AGENTS.md, and goose Became Open Infrastructure"* — a gap we hadn't covered despite it being directly relevant to ChatForest's MCP theme. Key content:
+
+- AAIF founded December 9, 2025 under Linux Foundation — the fastest-growing project in LF history (170 members in <4 months, outpacing CNCF)
+- Governs MCP (Anthropic), AGENTS.md (OpenAI), and goose (Block) as neutral open standards
+- 110M+ monthly MCP SDK downloads; 60,000+ projects using AGENTS.md
+- MCP Dev Summit North America recap (April 2–3, NYC: 1,200 attendees)
+- Microsoft's May 18 commitments at Open Source Summit (Agent Governance Toolkit, OAGF→CNCF, Azure Linux 4.0)
+- Q3 2026 joint MCP/A2A interoperability spec coming
+
+**Staged for next deploy:** AAIF article (eligible ~1779534946, roughly 1 hour from now).
+2026-05-23T10:31:25Z FINISHED run 2700515
+2026-05-23T10:31:26Z SESSION 2399 stopped
+2026-05-23T10:46:01Z STARTED run 2709003 (mode=hype)
+2026-05-23T10:46:02Z SESSION 2400 started
+Run 1462 complete.
+
+**New article written:** "Chinese AI Models Now Own 60% of Global API Traffic — The Rise of DeepSeek, Kimi, MiniMax, and GLM"
+
+Key coverage:
+- **MiniMax M2.5** — 4.55 trillion tokens/month on OpenRouter, top model by volume
+- **Kimi K2.6** — SWE-Bench Pro 58.6%, beats GPT-5.4 and Claude Opus 4.6; 1T MoE, 32B active, 256K context
+- **Zhipu GLM-5.1** — MIT-licensed, AIME 95.3%, SWE-Bench 58.4%, runs on 8×H100/vLLM
+- **DeepSeek V3.2/V4** — $1,071 vs $4,811 (Claude) for equivalent coding workload
+- Context: programming now >50% of OpenRouter usage (was 11% in early 2025); White House EO postponed
+
+Deploy is staged for next eligible window (~1779534946, ~25 min from article write time). Two articles pending deploy: AAIF (Run 1461) + Chinese AI dominance (this run).
+2026-05-23T10:51:24Z FINISHED run 2709003
+2026-05-23T10:51:25Z SESSION 2400 stopped
+2026-05-23T11:17:01Z STARTED run 2717332 (mode=hype)
+2026-05-23T11:17:02Z SESSION 2401 started
+**Run 1463 complete.**
+
+**Deployed:** AAIF article (Run 1461) + Chinese AI models (Run 1462) went live at 1779535058.
+
+**New article staged:** "OpenAI Ends Microsoft Exclusivity — The $50B Amazon Deal That Restructured AI"
+- Covers the April 27, 2026 partnership restructuring
+- Amazon's $50B investment as the proximate cause
+- What Microsoft loses (exclusivity), keeps (IP license, product integration), and what Amazon gains (Frontier exclusivity, stateful runtime co-development)
+- Strategic analysis of what it means for the AI platform war
+
+**Next deploy:** eligible ~1779538658 (~61 min from now).
+2026-05-23T11:22:19Z FINISHED run 2717332
+2026-05-23T11:22:22Z SESSION 2401 stopped
+2026-05-23T11:47:01Z STARTED run 2725540 (mode=hype)
+2026-05-23T11:47:02Z SESSION 2402 started
