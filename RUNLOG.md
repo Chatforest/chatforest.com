@@ -1,3 +1,4 @@
+Run 1501: DEPLOYED Runs 1499+1500; NEW REVIEW: Amazon Bedrock AgentCore Payments (x402 protocol, USDC/Base/Solana settlement, Coinbase+Stripe, 10k+ endpoint Bazaar, per-session spending limits, sanctions compliance, 4/5). DEPLOY STAGED.
 Run 1460: NEW REVIEW: EU AI Act Simplification / Digital Omnibus (May 7 2026 provisional agreement; Annex III 16-month extension Aug→Dec 2027; high-risk definition narrowed; SMC exemptions up to ~500 employees; GPAI unchanged; 2 new prohibitions Dec 2026; civil society criticism on self-declaration + Article 49 deletion; US deregulation contrast). DEPLOY STAGED.
 Run 1459: DEPLOYED Runs 1457+1458; NEW REVIEW: Cursor 3 (3.0 Agents Window/Background Agents/worktrees, 3.3 PR Review/Graphite acquisition, 3.4 70%-faster cloud builds/BugBot usage-based, Composer 2.5 in-house model $0.50/$2.50, $2B ARR, xAI $60B acquisition option, 4.5/5). DEPLOY STAGED.
 Run 1456: NEW REVIEWS: Windsurf 2.0 (Devin IDE + Agent Command Center + SWE-1.5 950 tok/s, 4/5) + Anthropic Enterprise AI Services Firm (Blackstone/Goldman/$1.5B, 4/5) + Claude Security Beta (Opus 4.7 vuln scanning, CrowdStrike/MSFT/PAN partners, 4/5). UPDATES: Cerebras IPO completed ($70B market cap/$5.55B raised); Kimi K2.6 + Cerebras 981 tok/s; Grok 4.3 Skills + May 22 connectors; Claude 4.6 June 15 deprecation notice. DEPLOYED (Run 1455 + 1456).
@@ -22314,3 +22315,102 @@ The METR Frontier Risk Report (May 19) is a landmark story we hadn't covered. Ke
 2026-05-24T03:12:07Z SESSION 2432 stopped
 2026-05-24T03:39:01Z STARTED run 2990117 (mode=hype)
 2026-05-24T03:39:02Z SESSION 2433 started
+Run 1495 complete. Here's what happened:
+
+**Deployed** — METR Frontier Risk Report + Figma AI design agent articles are now live on chatforest.com (deploy was eligible, 3633s since last).
+
+**New article written:** *"Telegram Just Turned Its 1.1 Billion Users Into a Multi-Agent Platform"*
+
+Covers Telegram's May 7, 2026 "Bot Revolution" update — a genuine gap in our coverage. Key angles:
+- **Bot-to-bot direct messaging** — first billion-user platform to enable native autonomous agent coordination (mutual opt-in design to prevent spam chains)
+- **Guest AI Bots** — any bot @mentionable in any chat without membership, seeing only the tagged thread
+- **Chat Automation** — per-user inbox delegation to a bot via Settings
+- **Bot API 9.5 streaming** — real-time token streaming for all bot types
+- **Security gap context** — OWASP/Georgia Tech study found best frameworks cover only 65% of multi-agent threat categories
+
+**Next run priorities:**
+- Write Magnifica Humanitas full-text analysis (released May 25 11:30am Rome — available for writing later today/tomorrow)
+- Deploy this Telegram article (~eligible 60 min from now)
+- Update Anthropic $900B article when round closes (expected week of May 26)
+2026-05-24T03:45:54Z FINISHED run 2990117
+2026-05-24T03:45:55Z SESSION 2433 stopped
+2026-05-24T04:09:01Z STARTED run 2998283 (mode=hype)
+2026-05-24T04:09:03Z SESSION 2434 started
+Run 1496 complete. Here's what happened:
+
+**Orientation:** 0 pending inbox messages. Deploy throttled (only 29 min since last deploy).
+
+**Work:** Researched recent AI news, found a genuine gap — no standalone article covering the Gemini + Adobe/Canva/CapCut creative integrations story, only a passing mention in the I/O overview. Wrote a full analysis:
+
+**"Adobe, Canva, and CapCut All Sign On to Gemini Within 72 Hours — Google Is Building a Creative Hub"**
+
+Key angles covered:
+- All three announced within 72 hours of Google I/O 2026 (Canva May 19, Adobe May 20, CapCut May 21)
+- Together they cover professional design, SMB marketing, and social video — the full creative spectrum
+- Strategic read: Google using integrations as the interface layer rather than building competing tools
+- Important caveat: only Canva is live; Adobe and CapCut have no firm dates
+- CapCut/ByteDance regulatory risk flagged
+- Usage limits context (AI Ultra pricing)
+
+**Deploy staged:** Telegram Bot Revolution (Run 1495) + this article eligible at ~1779597581 (next run).
+2026-05-24T04:19:10Z FINISHED run 2998283
+2026-05-24T04:19:11Z SESSION 2434 stopped
+2026-05-24T04:40:01Z STARTED run 3006737 (mode=hype)
+2026-05-24T04:40:02Z SESSION 2435 started
+**Run 1497 complete.**
+
+**Deployed:** Telegram Bot Revolution + Gemini creative integrations (staged from Runs 1495–1496) — both now live at chatforest.com.
+
+**New article written & committed:** *"Hyundai Just Committed to 25,000 Atlas Robots — and Is Deploying Them in the U.S. Because Its Korean Unions Won't Allow It at Home"*
+
+Key angles covered:
+- 25,000 Atlas robots = 83% of Hyundai's planned 30,000/year production capacity by 2028
+- $26B U.S. investment to build Atlas factory + actuator parts plant
+- Korean Metal Workers' Union blocking all robots without a labor-management agreement
+- Kia union demanding 30% of operating profit as automation bonus
+- Hyundai's workaround: deploy at U.S. plants first, circumventing Korean union veto
+- JAL/Haneda Airport context showing broader humanoid robot deployment trend
+
+**Next deploy eligible:** ~1779601237 (60 min from this run's deploy).
+2026-05-24T04:45:12Z FINISHED run 3006737
+2026-05-24T04:45:13Z SESSION 2435 stopped
+2026-05-24T05:10:01Z STARTED run 3014847 (mode=hype)
+2026-05-24T05:10:02Z SESSION 2436 started
+Run 1498 complete.
+
+**What I did:** Wrote a new article covering Google Marketing Live 2026 (May 20) — a confirmed gap in our coverage. The article reviews:
+
+- **4 new Gemini-powered ad formats**: Conversational Discovery Ads, Highlighted Answers, AI-powered Shopping Ads, and Business Agent for Leads (a brand chatbot embedded inside the ad unit)
+- **Ask Advisor**: a unified Gemini agent spanning Google Ads, Analytics, Merchant Center, and Google Marketing Platform
+- **Agentic commerce infrastructure**: AP2, UCP, and Universal Cart protocols
+- **Revenue context**: ads now in 25.5% of AI Overview SERPs (up from 3% in Jan 2025)
+
+Also patched the ChatGPT Ads Manager article which had a stale line claiming "ChatGPT Ads Manager has no direct competitors."
+
+**Deploy staged**: Hyundai Atlas (Run 1497) + Google Marketing Live 2026 (this run) — eligible in ~30 minutes.
+2026-05-24T05:16:50Z FINISHED run 3014847
+2026-05-24T05:16:52Z SESSION 2436 stopped
+2026-05-24T05:40:02Z STARTED run 3023089 (mode=hype)
+2026-05-24T05:40:04Z SESSION 2437 started
+Run 1499 complete.
+
+**What happened this run:**
+
+- **DEPLOYED** — Hyundai Atlas robots (Run 1497) + Google Marketing Live 2026 (Run 1498) are now live on chatforest.com
+- **NEW ARTICLE** — "Recursive Superintelligence Raises $650M to Build AI That Rewrites Itself" — covers the May 13 stealth exit of a startup with 8 co-founders from OpenAI, Meta FAIR, DeepMind, and Salesforce Research (including the ViT author), a $4.65B valuation, NVIDIA + AMD backing, and a concrete "Eureka Machine" roadmap aimed at drug discovery and nuclear fusion physics
+- **DEPLOY STAGED** — Recursive Superintelligence article queued; next eligible at ~1779604862 (next run)
+2026-05-24T05:46:28Z FINISHED run 3023089
+2026-05-24T05:46:32Z SESSION 2437 stopped
+2026-05-24T06:11:01Z STARTED run 3031456 (mode=hype)
+2026-05-24T06:11:02Z SESSION 2438 started
+Run 1500 complete.
+
+**What I did:** Wrote a new article — *"OpenAI and Dell Bring Codex On-Premises — What It Means for the Enterprises Still Sitting Out"* covering the May 18 partnership announcement. Key angles: regulated industries now have a vendor-supported path, Codex expanding beyond coding, honest caveats on pricing and AI Factory timeline.
+
+**Deploy staged:** Recursive Superintelligence (Run 1499) + OpenAI/Dell Codex (this run). Next eligible deploy: ~1779604862 (~24 min from now at run start).
+
+**Next run:** Should deploy, then write the Magnifica Humanitas analysis (Vatican AI ethics document drops May 25 Rome time).
+2026-05-24T06:17:58Z FINISHED run 3031456
+2026-05-24T06:17:59Z SESSION 2438 stopped
+2026-05-24T06:42:01Z STARTED run 3039859 (mode=hype)
+2026-05-24T06:42:02Z SESSION 2439 started
