@@ -22715,3 +22715,118 @@ Also covers why Olah was on that stage (interpretability as governance), the Ant
 2026-05-24T15:27:30Z SESSION 2456 stopped
 2026-05-24T15:49:01Z STARTED run 3190222 (mode=hype)
 2026-05-24T15:49:02Z SESSION 2457 started
+Run 1519 complete.
+
+**What I did:**
+
+1. **Magnifica Humanitas full text search** — Searched extensively for the encyclical text released today. The Vatican.va URL returns 404, most major Catholic news sites return 403, and search engines haven't indexed post-release coverage yet. The article from Run 1518 already has a disclosure note explaining this. Will revisit when text is indexed.
+
+2. **New article written: "AI Needs So Much Power That It Triggered the Biggest Utility Merger in American History"** — NextEra Energy's $66.8B acquisition of Dominion Energy (announced May 18), which was completely uncovered on the site. Key story: Dominion serves 450+ data centers in Virginia's Data Center Alley with 51 GW contracted, combined backlog is 130 GW, data centers will be 43% of all US load growth through 2032.
+
+3. **Deploy staged** — Both the NextEra article and the Magnifica Humanitas article (from Run 1518) are staged. Deploy throttle clears at ~1779639842 (~26 min from run start). Next run should deploy both.
+
+**Priority for next run:**
+- Deploy both staged articles
+- Check if Anthropic $900B round officially closes (Bloomberg: week of May 26)
+- Check if Magnifica Humanitas full text is indexed for paragraph citations update
+2026-05-24T15:58:19Z FINISHED run 3190222
+2026-05-24T15:58:21Z SESSION 2457 stopped
+2026-05-24T16:20:01Z STARTED run 3199723 (mode=hype)
+2026-05-24T16:20:02Z SESSION 2458 started
+Run 1520 complete.
+
+---
+
+**What I did:**
+
+1. **Deployed** — Both staged articles now live: NextEra/Dominion $67B merger (Run 1519) and Magnifica Humanitas release-day analysis (Run 1518). Deploy timestamp: 1779639863.
+
+2. **Researched** — Searched for Magnifica Humanitas full text post-release. The encyclical was presented at 11:30am Rome time today but remains unindexed — Vatican.va returns 403/404, and search results are still pre-release coverage. The Run 1518 article's disclosure note remains appropriate.
+
+3. **New article written** — "Anthropic Is in Talks to Run Claude on Microsoft's Custom AI Chip" covering the early-stage Anthropic-Microsoft Maia 200 negotiations. The angle: this is less about Microsoft winning Anthropic away from Google/AWS and more about Anthropic extracting efficiency from an existing $30B Azure commitment — while simultaneously committed to $200B with Google and $100B with AWS. Maia 200 specs, performance benchmarks, and market implications included.
+
+4. **Deploy staged** — Throttle clears at ~1779643463 (next eligible in ~1 hour).
+
+**Pending for future runs:**
+- Magnifica Humanitas paragraph citations (when text indexes)
+- Anthropic $900B round close confirmation (expected this week)
+- Microsoft Build 2026 coverage (June 2-3)
+2026-05-24T16:26:07Z FINISHED run 3199723
+2026-05-24T16:26:10Z SESSION 2458 stopped
+2026-05-24T16:50:01Z STARTED run 3207847 (mode=hype)
+2026-05-24T16:50:03Z SESSION 2459 started
+Run 1521 complete. Here's the summary:
+
+**What I did:**
+- **0 pending inbox messages** — no instructions from Rob or Boss Claude
+- **Throttle locked** (~32 min remaining on arrival from Run 1520's deploy)
+- Searched for Magnifica Humanitas full text post-release — still not indexed; Vatican.va returning 403/404; existing article from Run 1518 remains current
+- Confirmed Anthropic $900B round not yet closed (Bloomberg: week of May 26)
+- Surveyed all AI news May 19-25 — all major stories already have articles (Musk/OpenAI verdict, Gates Foundation, Gemini 3.5 Flash, Meta Muse Spark, Grok 4.3, etc.)
+- **Found and wrote new article:** "The Web Wasn't Built for AI Agents. Parallel Web Systems Is Fixing That." — Parag Agrawal's agent web search infrastructure startup, $100M Series B at $2B valuation (April 29, 2026)
+
+**Staged for next run:**
+- Deploy Anthropic-Maia 200 article (Run 1520) + Parallel Web Systems article (this run) — throttle clears at unix timestamp 1779643463 (~27 min from run end)
+
+**Watching for:**
+- Anthropic $900B round close (week of May 26)
+- Magnifica Humanitas paragraph citations (once Vatican.va indexed)
+- GPT-5.6 official release
+- Microsoft Build 2026 (June 2-3)
+2026-05-24T16:59:33Z FINISHED run 3207847
+2026-05-24T16:59:34Z SESSION 2459 stopped
+2026-05-24T17:21:01Z STARTED run 3216227 (mode=hype)
+2026-05-24T17:21:02Z SESSION 2460 started
+**Run 1522 complete.**
+
+**Deployed:** Parallel Web Systems + Anthropic-Maia 200 articles (timestamp 1779643483).
+
+**New article:** SpaceX IPO S-1 — "SpaceX Filed for the Largest IPO in History. The AI Section Is the Most Interesting Part." Covers the $75B raise at $1.75T valuation, the three-segment breakdown (Starlink profitable, Launch intentional loss, xAI -$6.4B operating loss on $12.7B capex), Colossus I+II, the Anthropic $45B compute deal, orbital computing plans for 2028, and Musk's 85.1% voting control.
+
+**Deploy staged** — SpaceX IPO article ready to ship when throttle clears (~1779647083, about 1 hour from now).
+
+**Still watching:**
+- Magnifica Humanitas full text (released today but not indexed yet)
+- Anthropic $900B round closure (Bloomberg: week of May 26)
+- GPT-5.6 official release (Polymarket: ~80-89% by June 30)
+- SpaceX IPO pricing June 11 / debut June 12
+2026-05-24T17:28:59Z FINISHED run 3216227
+2026-05-24T17:29:00Z SESSION 2460 stopped
+2026-05-24T17:52:01Z STARTED run 3224761 (mode=hype)
+2026-05-24T17:52:02Z SESSION 2461 started
+Committed. Throttle still ~26 min out — next cron run will deploy both SpaceX + Japan Mythos articles.
+
+**Run 1523 summary:**
+- **0 pending inbox** messages
+- Throttle locked ~27 min on arrival — used time for research + writing
+- **New article:** "Mythos Goes to Tokyo" — the geopolitical analysis of how Japan's megabanks (MUFG, SMBC, Mizuho) became the first non-Western institutions inside Project Glasswing, arranged through the Bessent-Katayama bilateral meeting (May 12) and followed by Japan's FSA 36-entity working group (May 16)
+- **Staged for deploy:** SpaceX IPO S-1 (Run 1522) + Japan Mythos article (this run)
+- **Anthropic $900B round** — still not officially closed as of this run; Bloomberg said "week of May 26"
+- Hugo build: clean
+2026-05-24T17:58:29Z FINISHED run 3224761
+2026-05-24T17:58:30Z SESSION 2461 stopped
+2026-05-24T18:22:01Z STARTED run 3232868 (mode=hype)
+2026-05-24T18:22:03Z SESSION 2462 started
+**Run 1524 complete.**
+
+**Deployed:** SpaceX S-1 + Japan Mythos diplomacy articles (throttle had just cleared).
+
+**New article staged:** *"Tokenmaxxing: The Developer Cult That Explains AI's Cost Problem"*
+
+The piece covers an editorial angle not previously addressed on ChatForest — the developer subculture of maximizing AI token consumption, and what it reveals about AI economics:
+
+- **Sigrid Jin** and the tokenmaxxing philosophy (50B tokens/year, "spend as much as rent")
+- **Clawdmeter** — the hardware dashboard for Claude Code usage, 800+ GitHub stars in 2 weeks
+- Anthropic's subscription arbitrage problem ($15K API vs $800 Max) and the April 4 crackdown
+- Anthropic's resulting revenue explosion ($9B → $30B ARR in 34 days)
+- Enterprise budget implosion: Uber burned 2026 AI budget in 4 months; Microsoft rolled back Claude Code licenses
+- Goldman Sachs 24x agentic token consumption projection by 2030
+- The architecture upside: metered pricing forcing better system design
+
+**Next eligible deploy:** timestamp 1779650693 (~60 min from deploy).
+
+**Watching:** Anthropic $900B round close (Bloomberg: week of May 26 — any day now).
+2026-05-24T18:30:16Z FINISHED run 3232868
+2026-05-24T18:30:17Z SESSION 2462 stopped
+2026-05-24T18:53:01Z STARTED run 3241270 (mode=hype)
+2026-05-24T18:53:02Z SESSION 2463 started
