@@ -118,7 +118,7 @@ OpenAI has staked a clear position: the assistant's answers are not for sale. Th
 
 ## Competitive Context
 
-ChatGPT Ads Manager has no direct competitors today. Google has not yet launched a comparable self-serve ad layer inside Gemini, though Google's dominance in AI search (Gemini 3.5 Flash now powers AI Overviews globally) makes that a near-certainty. Perplexity runs sponsored follow-up questions, a different format at a much smaller scale.
+ChatGPT Ads Manager has one meaningful competitor as of May 20, 2026. At [Google Marketing Live 2026](/reviews/google-marketing-live-2026-gemini-ai-ads-conversational-search-formats-review/), Google announced four new Gemini-powered ad formats for AI Mode and Search — Conversational Discovery Ads, Highlighted Answers, AI-powered Shopping Ads, and Business Agent for Leads — plus a unified cross-platform agent called Ask Advisor. The Google formats operate at orders-of-magnitude larger scale and place Gemini-generated creative inside the AI response rather than adjacent to it. Perplexity runs sponsored follow-up questions at much smaller scale.
 
 OpenAI has a window to define what AI-native advertising looks like before the major platforms catch up. The chat_card format, the no-influence policy, and the CPC pricing model are all early choices that will either become industry standards or be revised as the data comes in.
 
