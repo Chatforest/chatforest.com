@@ -1,10 +1,11 @@
 ---
 title: "Salesforce Headless 360 Review — The Entire CRM Platform Is Now an MCP Server"
 date: 2026-05-23
+last_refreshed: 2026-05-24
 description: "Salesforce Headless 360, launched at TDX 2026, exposes every capability of the world's largest CRM as an API, MCP tool, or CLI command. AI agents can now operate Salesforce — creating accounts, running DevOps pipelines, querying data — without a browser or human login. 60+ new MCP tools, free Developer Edition access. Here's what changed and why it matters."
 og_description: "Salesforce Headless 360 (TDX 2026): entire platform as API/MCP/CLI for AI agents. 60+ MCP tools, Agentforce Vibes 2.0, DevOps Center MCP, Experience Layer. Works with Claude Code, Cursor, Codex, Windsurf. Developer Edition free. The most significant platform shift in Salesforce's 27-year history."
 content_type: "Review"
-card_description: "Salesforce Headless 360, announced April 15, 2026 at TDX developer conference, makes the entire Salesforce platform — Data 360, Customer 360 apps, Agentforce, and Slack — accessible to AI agents without a browser. 60+ new MCP tools, 30+ preconfigured coding skills, Agentforce Vibes 2.0 (multi-model: Claude Sonnet + GPT-5), DevOps Center MCP, Agent Broker (beta April 2026, GA June 2026), Agentforce Experience Layer (renders natively in Slack, ChatGPT, Claude, Gemini, Teams). Developer Edition is free with hosted MCP servers. Salesforce calls it 'the most significant platform shift in our 27-year history.' Also announced: AgentExchange, a marketplace for Agentforce agents. Works with Claude Code, Cursor, Codex, and Windsurf today."
+card_description: "Salesforce Headless 360, announced April 15, 2026 at TDX developer conference, makes the entire Salesforce platform — Data 360, Customer 360 apps, Agentforce, and Slack — accessible to AI agents without a browser. 60+ new MCP tools, 30+ preconfigured coding skills, Agentforce Vibes 2.0 (multi-model: Claude Sonnet + GPT-5), DevOps Center MCP, Agent Broker (beta April 2026, GA June 2026), Agentforce Experience Layer (renders natively in Slack, ChatGPT, Claude, Gemini, Teams). Developer Edition is free with hosted MCP servers. Salesforce calls it 'the most significant platform shift in our 27-year history.' Also announced: AgentExchange, a marketplace for Agentforce agents. Works with Claude Code, Cursor, Codex, and Windsurf today. Companion product Agentforce Coworker ('AI in every search bar') is now available for all Agentforce customers: conversational CRM layer embedded in every Salesforce search bar for human-initiated Q&A, summaries, and actions."
 tags: ["salesforce", "mcp", "ai-agents", "enterprise", "agentforce", "developer-tools", "api", "headless", "crm", "salesforce-headless-360", "agentforce-vibes"]
 categories: ["reviews"]
 rating: 4
@@ -92,6 +93,26 @@ Two additional TDX 2026 announcements round out the picture:
 **Agent Broker** — A new orchestration service that lets AI agents from different vendors interoperate inside Salesforce workflows. A coding agent from Cursor, an ops agent from Workday, and an Agentforce agent can hand off tasks to each other through a common protocol. Agent Broker entered beta in April 2026 and is targeting general availability in June 2026.
 
 **AgentExchange** — A marketplace for Agentforce agents, skills, and partner integrations. Think of it as the Salesforce AppExchange, but for agent components rather than traditional apps. At TDX launch, hundreds of pre-built agents from Salesforce partners were available, covering industry-specific workflows in financial services, healthcare, retail, and manufacturing.
+
+---
+
+## Agentforce Coworker: AI in Every Search Bar
+
+Shipping alongside the broader Agentforce ecosystem is **Agentforce Coworker**, now available for all Agentforce customers.
+
+Coworker is a conversational AI layer embedded directly into the Salesforce interface — specifically, into every search bar across Sales Cloud, Service Cloud, and the platform broadly. The design premise is simple: wherever a Salesforce user is already working, they can stop, ask a question or issue an instruction, get a structured response, and continue. No switching to a separate AI tool, no copying context out of Salesforce and into a chat window.
+
+Use cases at launch include:
+
+- Summarizing account history or case context in natural language
+- Answering "what happened with this deal last quarter?" without running a report
+- Drafting follow-up emails based on CRM activity
+- Surfacing next-best actions and recommendations from existing Salesforce data
+- Executing simple CRM actions (update a field, log a call, move a stage) through chat
+
+Coworker is explicitly **not** Agentforce Operations. Coworker requires a human to initiate each interaction — it is a query/response model, not an autonomous process execution model. It is also not Agentforce Vibes 2.0, which is the developer-facing coding environment. Coworker's audience is the sales rep, service agent, or account manager who lives in Salesforce all day and wants AI embedded in that existing workflow rather than having to reach for a separate tool.
+
+The distinction matters because Salesforce now has three different AI modalities inside one platform: Vibes 2.0 (developer, code-generation), Coworker (CRM worker, conversational assistance), and Operations (back-office, autonomous process execution). Understanding which one applies to which user and workflow is increasingly important for organizations making Agentforce purchasing decisions.
 
 ---
 
