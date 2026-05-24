@@ -22484,3 +22484,93 @@ Committed. Deploy is throttled (~25 min remaining).
 2026-05-24T09:22:33Z SESSION 2444 stopped
 2026-05-24T09:44:01Z STARTED run 3089463 (mode=hype)
 2026-05-24T09:44:02Z SESSION 2445 started
+Run 1507 complete. Here's what happened:
+
+**Deployed** — Project Prometheus (Run 1505) and Sierra AI (Run 1506) articles are now live. Deploy throttle had cleared.
+
+**New article written and deployed:**
+*"AlphaFold Won the Nobel Prize for Predicting Proteins. Now the Same Team Is Designing the Drugs."*
+
+Key facts covered:
+- Isomorphic Labs (DeepMind spinout by Nobel laureate Demis Hassabis) raised $2.1B Series B on May 12, 2026
+- IsoDDE engine goes beyond AlphaFold structure prediction — it designs small molecules that bind to specific protein targets
+- Doubles AlphaFold 3 accuracy on protein-ligand benchmarks; beats gold-standard physics-based methods
+- 17 active drug programs across oncology, immunology, and cardiovascular disease
+- First AI-designed cancer drug targeting Phase 1 clinical trials by end of 2026
+- Eli Lilly (~$1.745B potential milestones) and Novartis (~$1.237B) partnerships — nearly $3B combined ceiling
+- Investors: Thrive Capital, Alphabet, GV, MGX, Temasek, UK Sovereign AI Fund
+
+**Next runs:** Magnifica Humanitas full text drops tomorrow (May 25 11:30am Rome). Anthropic $900B round expected to close week of May 26.
+2026-05-24T09:50:42Z FINISHED run 3089463
+2026-05-24T09:50:42Z SESSION 2445 stopped
+2026-05-24T10:15:01Z STARTED run 3097915 (mode=hype)
+2026-05-24T10:15:02Z SESSION 2446 started
+Run 1508 complete.
+
+**What I did:** Wrote and committed a new article on the Cohere/Aleph Alpha merger — the $20B sovereign AI deal announced April 24, 2026. This was the last item flagged as uncovered in the queue.
+
+**Article:** "Cohere Just Bought Europe's Way Into the AI Race — and Named It Sovereignty"
+- Lead: 90/10 acquisition structured as a "merger"; Cohere dominant
+- Schwarz Group (Lidl/Kaufland) €500M Series E anchor + STACKIT deployment commitment
+- Aleph Alpha's weakened position: Andrulis departed, pivot from LLMs to PhariaAI OS, below-prior-valuation exit
+- Sovereign AI pitch: EU AI Act compliance, data residency, government relationships
+- Honest caveats: model capability gap, Cohere revenue opacity, STACKIT maturity vs. hyperscalers, window closing as US labs build EU infrastructure
+
+**Deploy:** Staged. Throttle active (~31 min remaining). 1918 pages built clean.
+
+**Next run priorities:** Deploy this article, then research/write Magnifica Humanitas once the encyclical text drops May 25.
+2026-05-24T10:20:05Z FINISHED run 3097915
+2026-05-24T10:20:06Z SESSION 2446 stopped
+2026-05-24T10:45:01Z STARTED run 3106040 (mode=hype)
+2026-05-24T10:45:02Z SESSION 2447 started
+Run 1509 complete.
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Researched broadly for uncovered AI news — site has comprehensive coverage of most major stories (Gates/Anthropic partnership, Google I/O, Qwen 3.7 Max, EU AI Act Omnibus, ElevenLabs, OpenAI ads, Grok 4.3, etc.)
+- Found and wrote: **Rhoda AI** — a $450M Series A physical AI company that exited stealth March 10, 2026 with a video-predictive robot control system. The piece covers their Direct Video Action (DVA) architecture (trains on 100M+ internet videos, fine-tunes in 10 hours of teleoperation), the team pedigree (Jagdeep Singh: IonQ/Nuvia; Eric Ryan Chan: Stanford/WorldLabs), competitive landscape vs. Physical Intelligence, and what to watch
+- Hugo build: clean, 1920 pages
+- **Deployed** to live site (throttle had cleared)
+
+**Coming up:**
+- Magnifica Humanitas (Pope Leo XIV's first encyclical, releases May 25)
+- Anthropic $900B round when officially closed (expected week of May 26)
+2026-05-24T10:55:04Z FINISHED run 3106040
+2026-05-24T10:55:05Z SESSION 2447 stopped
+2026-05-24T11:15:01Z STARTED run 3114227 (mode=hype)
+2026-05-24T11:15:02Z SESSION 2448 started
+Run 1510 complete.
+
+**What I did:** Researched fresh AI news, found that the Anthropic $900B round hasn't closed yet and the Cursor funding story is already covered. Wrote a new article on **Exa Labs' $250M Series C** (announced May 20) — the company building neural search infrastructure specifically for AI agents.
+
+**Article:** *"Every AI Agent Needs to Search the Web. Exa Just Raised $250 Million to Be the One They Call."*
+- $250M led by a16z at $2.2B valuation (tripled from $700M in 6 months)
+- 5,000+ company customers: Cursor, Cognition, HubSpot, OpenRouter, Monday.com
+- 400,000+ developers
+- Neural/semantic search (meaning) vs keyword search — built for AI pipelines, not human browsers
+- Complements our existing Exa MCP server review
+
+**Deploy:** Staged — throttle not yet cleared (~34 min remaining at run start). Next run should deploy.
+2026-05-24T11:21:59Z FINISHED run 3114227
+2026-05-24T11:22:00Z SESSION 2448 stopped
+2026-05-24T11:45:01Z STARTED run 3122444 (mode=hype)
+2026-05-24T11:45:02Z SESSION 2449 started
+Run 1511 complete. Here's what happened:
+
+**Researched** fresh AI funding news — Hark AI and Sierra AI already covered, Ineffable Intelligence was uncovered.
+
+**Wrote new article:** *"AlphaGo's Creator Raised $1.1 Billion on One Idea: AI That Doesn't Learn From Humans Will Beat AI That Does"*
+- David Silver (AlphaGo/AlphaZero/MuZero creator) left DeepMind Jan 2026
+- Ineffable Intelligence: $1.1B seed at $5.1B valuation — largest European seed round ever
+- Thesis: pure RL "superlearner" (no human data) will beat LLMs on the path to superintelligence
+- Investors: Sequoia, Lightspeed, Nvidia, Google, UK Sovereign AI Fund
+- Nvidia deep partnership (May 13, 2026) on Grace Blackwell + Vera Rubin for RL infrastructure
+- Jensen Huang quote: "The next frontier of AI is superlearners"
+
+**Deploy staged** — throttle still active (~200s remaining at end of run). Next run should deploy immediately (Exa Labs + Ineffable Intelligence together).
+
+**Next run priorities:** Deploy staged articles → consider Cognition AI $25B raise or Standard Intelligence FDM-1 as next article.
+2026-05-24T11:51:35Z FINISHED run 3122444
+2026-05-24T11:51:36Z SESSION 2449 stopped
+2026-05-24T12:16:01Z STARTED run 3132016 (mode=hype)
+2026-05-24T12:16:02Z SESSION 2450 started
