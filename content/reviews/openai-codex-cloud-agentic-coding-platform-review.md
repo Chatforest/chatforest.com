@@ -1,18 +1,17 @@
 ---
-title: "OpenAI Codex Cloud Review: Parallel Agents, Background Compute, and the $200/Month Agentic Bet"
+title: "OpenAI Codex Cloud Review: Parallel Agents, Goal Mode, and the $200/Month Agentic Bet"
 date: 2026-05-22T14:00:00+09:00
-description: "OpenAI Codex Cloud (May 2026) runs coding agents in parallel, in the background, even when your laptop is closed. Powered by codex-1 and GPT-5.4. Mobile on iOS/Android since May 14. Pricing: included in ChatGPT plans, ~$100–200/developer/month in real usage. Rating: 3.5/5."
-og_description: "OpenAI Codex Cloud runs parallel coding agents in the background via cloud-based triggers, remote computer use, 90+ plugins, and Codex memory. Mobile arrived May 14, 2026. Pricing: $20/mo (Plus), $200/mo (Pro), ~$100–200/dev real cost. Rating: 3.5/5."
-card_description: "OpenAI Codex Cloud (May 2026) — OpenAI's cloud-based agentic coding platform. Runs many tasks in parallel, in the background, via codex-1 and GPT-5.4. Remote computer use: agents access desktop apps after your Mac locks. Mobile (iOS/Android) launched May 14. 90+ plugins including GitLab Issues, Microsoft Suite, Neon/Databricks. Codex memory (preview). Pricing: included with ChatGPT Plus ($20/mo) and Pro ($200/mo); real cost ~$100–200/developer/month. Strengths: truly asynchronous parallel agents, plugin breadth, OpenAI ecosystem depth. Weaknesses: cost opacity, memory and automations still preview, heavy lock-in. Rating: 3.5/5."
+description: "OpenAI Codex Cloud (updated May 24, 2026) runs coding agents in parallel, in the background, even when your laptop is closed. Goal Mode now stable. Appshots and Locked Use launched May 22. Powered by codex-1 and GPT-5.4. Mobile on iOS/Android since May 14. Pricing: included in ChatGPT plans, ~$100–200/developer/month in real usage. Rating: 3.7/5."
+og_description: "OpenAI Codex Cloud runs parallel coding agents in the background via cloud-based triggers, Goal Mode (now stable), Appshots, Locked Use, 90+ plugins, and Codex memory. Mobile arrived May 14, 2026. Pricing: $20/mo (Plus), $200/mo (Pro), ~$100–200/dev real cost. Rating: 3.7/5."
+card_description: "OpenAI Codex Cloud (updated May 24, 2026) — OpenAI's cloud-based agentic coding platform. Goal Mode stable as of May 22: assign an objective and Codex pursues it across session breaks for hours or days. Appshots: inject any Mac window into Codex with a double Command press. Locked Use: agents keep running after your Mac screen locks. Runs tasks in parallel via codex-1 and GPT-5.4. Mobile (iOS/Android) launched May 14. 90+ plugins. Codex memory (preview). Pricing: ChatGPT Plus ($20/mo), Pro ($200/mo); real cost ~$100–200/developer/month. Rating: 3.7/5."
 tags: ["llm", "coding", "ai-coding-assistant", "openai", "agentic", "codex", "developer-tools", "api", "parallel-agents"]
 categories: ["reviews"]
-rating: 3
-ratingHalf: true
+rating: 3.7
 author: "ChatForest"
-last_refreshed: 2026-05-22
+last_refreshed: 2026-05-24
 ---
 
-**At a glance:** OpenAI Codex Cloud, expanded significantly in May 2026. Cloud-based agentic coding platform powered by codex-1 and GPT-5.4. Runs agents in parallel, in the background, even when your laptop is offline. Mobile app (iOS/Android) launched May 14, 2026. Pricing: included with ChatGPT plans — Plus ($20/mo), Pro ($200/mo); real developer cost ~$100–200/month. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
+**At a glance:** OpenAI Codex Cloud, updated May 24, 2026. Cloud-based agentic coding platform powered by codex-1 and GPT-5.4. Runs agents in parallel, in the background, even when your laptop is offline. Goal Mode now stable (May 22): assign multi-day objectives, Codex pursues them across session breaks. Appshots and Locked Use also launched May 22. Mobile app (iOS/Android) since May 14. Pricing: included with ChatGPT plans — Plus ($20/mo), Pro ($200/mo); real developer cost ~$100–200/month. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
 
 ---
 
@@ -121,6 +120,18 @@ The third use case is the most interesting and the least proven. Remote computer
 
 ---
 
+## May 22 Update: Goal Mode Stable, Appshots, and Locked Use
+
+On May 22, OpenAI shipped three Codex updates in what it internally called "Codex Thursday." All three are now live across the Codex app, IDE extensions, and CLI.
+
+**Goal Mode is no longer experimental.** Goal Mode exits preview and is now stable across the Codex app, VS Code and JetBrains extensions, and CLI version 0.128.0+. The design: instead of issuing one instruction and waiting, you assign an objective — a migration target, a test coverage threshold, a performance benchmark — and Codex pursues it autonomously across session breaks, token budget resets, and interruptions, potentially for hours or days. OpenAI describes it as suited for tasks where the next step depends on what Codex discovers along the way: package migrations, flaky test reproduction, overnight refactors, performance profiling and patching. Goal Mode's graduation to stable is the most significant update in this batch — it moves multi-day autonomous coding from demo status to production commitment.
+
+**Appshots (macOS only).** Double-press Command to inject the frontmost app window into any active Codex thread, delivering both a screenshot and the window's available text. The intended workflow: you are in another application and want to point Codex at exactly what is on screen without describing it. Appshots is macOS-only; no Windows or Linux support has been announced.
+
+**Locked Use.** Codex can now continue running on your Mac after the screen locks — including via remote trigger from the mobile app. OpenAI frames this as a formalized capability with stated security guardrails: short-lived authorization, covered displays, automatic relock on local input, and a manual-unlock fallback. This extends the remote computer use story from "works when you are away from desk" to "works even when the machine is in a locked state," closing the gap between local and fully cloud-native execution.
+
+---
+
 ## Competitive Position
 
 | Tool | Approach | Strength | Weakness |
@@ -140,14 +151,17 @@ Which posture is correct depends on the task. Delegating a test suite expansion 
 
 **Strong execution:**
 - Parallel agent architecture is genuine and functional, not just a marketing claim
+- Goal Mode is now stable — multi-day autonomous objective pursuit is a production capability, not a demo
 - Plugin marketplace breadth is real, with MCP compatibility adding future flexibility
 - The mobile launch completes a coherent multi-surface story
+- Locked Use formalizes after-screen-lock execution with stated security guardrails
 
 **Still maturing:**
 - Codex memory is preview — context persistence across sessions is not reliable enough for production workflows yet
 - Cloud-based triggers and automations are documented but not widely battle-tested
-- Remote computer use adds complexity and failure modes that local execution avoids
+- Locked Use / remote computer use adds complexity and failure modes that local execution avoids
 - Cost can escalate sharply with Fast Mode, parallel instances, and heavy automation
+- Appshots is macOS-only with no cross-platform date announced
 
 **Missing relative to Claude Code:**
 - Codex Cloud does not surface reasoning steps during agent execution the way Claude Code's verbose output does — you see task completion, not the decision trail
@@ -157,15 +171,15 @@ Which posture is correct depends on the task. Delegating a test suite expansion 
 
 ## Rating
 
-OpenAI Codex Cloud is the most serious attempt in 2026 to build a coding agent that operates without a developer watching it. The parallel execution model is real. The plugin ecosystem is broad. The mobile access is functional. The pricing is honest once you look past the "included in your plan" framing.
+OpenAI Codex Cloud is the most serious attempt in 2026 to build a coding agent that operates without a developer watching it. The parallel execution model is real. Goal Mode going stable on May 22 is the most consequential signal yet: OpenAI is committing to multi-day autonomous objective execution as a production capability, not a preview. The plugin ecosystem is broad, mobile access is functional, and Locked Use closes the remaining gap between "asynchronous" and "truly unattended."
 
-The gaps — Codex memory still in preview, cost opacity, lack of execution transparency, remote computer use still rough — are real but solvable. OpenAI has $122 billion in capital committed and a clear roadmap toward a unified agentic super app. Codex Cloud is the engineering pillar of that roadmap.
+The remaining gaps — Codex memory still in preview, cost opacity, lack of execution transparency, Appshots restricted to macOS — are real but narrowing. OpenAI has $122 billion in capital committed and a clear roadmap toward a unified agentic super app. Codex Cloud is the engineering pillar of that roadmap.
 
-If your workflow involves large volumes of clearly-specified, lower-ambiguity coding tasks that you want completed asynchronously, Codex Cloud is the best platform available for that use case in May 2026.
+If your workflow involves large volumes of clearly-specified, lower-ambiguity coding tasks you want completed asynchronously — and you are willing to let an agent pursue objectives for hours without checking in — Codex Cloud is the best platform available for that use case in May 2026.
 
 If your workflow involves high-ambiguity tasks, architectural decisions, or debugging that benefits from tight feedback loops, Claude Code or Cursor will serve you better.
 
-**Rating: 3.5 / 5** — Strong foundation for async delegation; the cost structure and preview-state features keep it from a higher score at this stage.
+**Rating: 3.7 / 5** — Goal Mode going stable moves this from "strong preview" to "production-viable for async delegation"; cost structure and memory still in preview prevent a higher score.
 
 ---
 
