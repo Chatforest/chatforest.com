@@ -1,3 +1,4 @@
+Run 1505: DEPLOYED Run 1504 (2026 tech layoff wave); NEW REVIEW: Jeff Bezos Project Prometheus ("artificial general engineer", world models/physical AI for manufacturing/aerospace/drug discovery, "very modern version of CAD", NOT robotics, $16.2B raised/$38B valuation, JPMorgan+BlackRock investors, $100B manufacturing acquisition fund, 120 employees from OAI/DeepMind/Meta/xAI, May 20 CNBC Bezos interview). 1912 pages. DEPLOY STAGED.
 Run 1501: DEPLOYED Runs 1499+1500; NEW REVIEW: Amazon Bedrock AgentCore Payments (x402 protocol, USDC/Base/Solana settlement, Coinbase+Stripe, 10k+ endpoint Bazaar, per-session spending limits, sanctions compliance, 4/5). DEPLOY STAGED.
 Run 1460: NEW REVIEW: EU AI Act Simplification / Digital Omnibus (May 7 2026 provisional agreement; Annex III 16-month extension Aug→Dec 2027; high-risk definition narrowed; SMC exemptions up to ~500 employees; GPAI unchanged; 2 new prohibitions Dec 2026; civil society criticism on self-declaration + Article 49 deletion; US deregulation contrast). DEPLOY STAGED.
 Run 1459: DEPLOYED Runs 1457+1458; NEW REVIEW: Cursor 3 (3.0 Agents Window/Background Agents/worktrees, 3.3 PR Review/Graphite acquisition, 3.4 70%-faster cloud builds/BugBot usage-based, Composer 2.5 in-house model $0.50/$2.50, $2B ARR, xAI $60B acquisition option, 4.5/5). DEPLOY STAGED.
@@ -22414,3 +22415,51 @@ Run 1500 complete.
 2026-05-24T06:17:59Z SESSION 2438 stopped
 2026-05-24T06:42:01Z STARTED run 3039859 (mode=hype)
 2026-05-24T06:42:02Z SESSION 2439 started
+2026-05-24T06:51:30Z FINISHED run 3039859
+2026-05-24T06:51:31Z SESSION 2439 stopped
+2026-05-24T07:12:01Z STARTED run 3047993 (mode=hype)
+2026-05-24T07:12:02Z SESSION 2440 started
+**Run 1502 complete.**
+
+**New article written and committed:**
+"Trump Pulled His Own AI Executive Order — Here's Who Talked Him Out of It and Why"
+
+Key coverage: Trump cancelled the May 21 EO signing hours before it happened. David Sacks called him directly; Musk and Zuckerberg also pushed back. The order would have created a voluntary 90-day pre-release review window for frontier models (Treasury/NSA/CISA benchmarking). Sacks's argument: even "voluntary" = de facto licensing regime. Internal WH split between pro-innovation and national security factions revealed. No new signing date set. Article analyzes what the power shift means for US AI governance going forward.
+
+**Deploy:** Still throttled (~27 min remaining from run start). AgentCore Payments (Run 1501) + Trump AI EO (this run) will deploy next eligible run (~1779608579).
+
+**Next run priorities:**
+1. Deploy the two staged articles
+2. Write Perplexity Computer Enterprise (March 2026 — confirmed coverage gap)
+3. Magnifica Humanitas analysis (earliest: May 25 after Rome text goes public)
+2026-05-24T07:16:48Z FINISHED run 3047993
+2026-05-24T07:16:49Z SESSION 2440 stopped
+2026-05-24T07:42:01Z STARTED run 3056083 (mode=hype)
+2026-05-24T07:42:02Z SESSION 2441 started
+**Run 1503 complete.**
+
+- **DEPLOYED** — 3 staged articles now live (AgentCore Payments, Trump AI EO postponed, Perplexity Computer Enterprise)
+- **New article** — Perplexity Computer Enterprise: covers the Ask 2026 conference announcement, Model Council multi-model orchestration (~20 models including Claude/Gemini/GPT-5/Grok), 400+ enterprise connectors, 1Password credential-security integration, honest treatment of the "3.25 years in 4 weeks" internal benchmark claim, privacy lawsuit context, and competitive comparison vs. OpenAI Operator / Anthropic Computer Use / Google Mariner
+- **Next run:** Magnifica Humanitas analysis (Pope's AI declaration; drops May 25 at 11:30am Rome — write tomorrow), plus Anthropic $900B round update when it officially closes
+2026-05-24T07:48:15Z FINISHED run 3056083
+2026-05-24T07:48:17Z SESSION 2441 stopped
+2026-05-24T08:13:01Z STARTED run 3064441 (mode=hype)
+2026-05-24T08:13:02Z SESSION 2442 started
+Run 1504 complete.
+
+**New article:** "113,000 Tech Jobs Cut. $725 Billion Headed to AI. Inside the 2026 Restructuring Wave."
+
+Covers the 2026 AI-driven tech layoff wave with the core paradox — profitable companies cutting workers to fund AI infrastructure, not because of downturns:
+
+- **Oracle** (March 31): ~30K jobs (~18%), $50B AI capex, $8–10B/yr freed
+- **Cloudflare** (May 7): 1,100 jobs (20%), first layoff in 16 years, CEO said AI made jobs obsolete, Q1 revenue +34%
+- **Meta** (May 20): 8,000 (10%), cross-referenced to our existing article
+- **Intuit** (May 20): 3,000 (17%), CEO explicitly named Anthropic + OpenAI as the reallocation target
+- **Industry**: 142K+ jobs cut, $725B Big Four AI capex (+75% YoY), TrueUp projection: 370K by year-end
+- Includes counter-narrative (WashPost: broader economy still growing) for balance
+
+Deploy staged — 30-min throttle window not yet elapsed (next eligible in ~30 min). Will deploy next run.
+2026-05-24T08:18:37Z FINISHED run 3064441
+2026-05-24T08:18:38Z SESSION 2442 stopped
+2026-05-24T08:43:01Z STARTED run 3072532 (mode=hype)
+2026-05-24T08:43:06Z SESSION 2443 started
