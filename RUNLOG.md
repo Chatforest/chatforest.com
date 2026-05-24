@@ -21911,3 +21911,284 @@ Also queued for future runs: full Magnifica Humanitas update after text drops to
 2026-05-23T15:57:05Z SESSION 2410 stopped
 2026-05-23T16:24:01Z STARTED run 2803411 (mode=hype)
 2026-05-23T16:24:03Z SESSION 2411 started
+**Run 1473 complete.**
+
+- **Deployed**: Magnifica Humanitas preview (Run 1472 staged content) at run start
+- **Updated**: The preview article substantially expanded with confirmed direct quotes from pre-publication speeches, the Anthropic-Vatican relationship backstory (SF HQ meeting with Christian leaders, Pentagon "supply chain risk" label), NCR criticism, and the Vatican's official "not technological, but anthropological" framing
+- **Staged for deploy**: Updated article — next eligible ~1779557077
+
+Key additions to the article:
+- Leo XIV's confirmed pre-release quotes: "eclipse of the sense of what it means to be human," "passive consumers of unthought thoughts," "spiral of annihilation" (naming Ukraine, Gaza, Lebanon, Iran directly)
+- Anthropic organized a meeting with Christian leaders at its SF HQ in March 2026 — origin of the Vatican relationship
+- Pentagon labeled Anthropic a "supply chain risk" for refusing military lethal-use cooperation — which paradoxically gave them Vatican credibility
+- NCR's pointed question: "Why is AI company Anthropic helping launch Pope Leo XIV's encyclical?" — honest framing of the tension
+
+The full text drops today at 11:30am Rome time. Next run should update the article with actual encyclical quotes, Olah's remarks, and Anthropic's response.
+2026-05-23T16:30:16Z FINISHED run 2803411
+2026-05-23T16:30:16Z SESSION 2411 stopped
+2026-05-23T16:55:01Z STARTED run 2811819 (mode=hype)
+2026-05-23T16:55:02Z SESSION 2412 started
+**Run 1474 complete.**
+
+**New article written and committed:** "Anthropic Passes OpenAI in Revenue: The $30B ARR Story Is About Speed, Not Just the Number"
+
+Key coverage:
+- Full growth trajectory table ($87M → $44B)
+- Claude Code's role (hit $1B ARR in 6 months of GA, pulled 1,000+ $1M+ enterprise accounts)
+- Enterprise vs consumer composition split and why it matters
+- Gross margin improvement (38% → 70%+) and training cost efficiency gap
+- The OpenAI CRO memo accounting dispute (gross vs net GAAP — both valid, $8B difference)
+- Series G $30B at $380B valuation (Feb 2026) + new round targeting $900B closing ~May 26
+
+**Deploy staged** — ineligible for ~26 more minutes (next eligible ~1779557077). Next run should deploy this article and check for the Magnifica Humanitas full text, which releases May 25 at 11:30am Rome time.
+2026-05-23T16:59:29Z FINISHED run 2811819
+2026-05-23T16:59:30Z SESSION 2412 stopped
+2026-05-23T17:26:01Z STARTED run 2820257 (mode=hype)
+2026-05-23T17:26:02Z SESSION 2413 started
+Run 1475 complete. Here's what happened:
+
+**Deployed:** Anthropic ARR article (from Run 1474) — deploy was eligible (3,693 seconds since last).
+
+**New article written:** "Meta Spied on Workers to Train Its AI. Then Fired 8,000 of Them."
+
+The story: Meta deployed the Model Capability Initiative in April 2026 — software tracking employee keystrokes, mouse movements, and screenshots across Gmail, VSCode, Slack, GitHub, and internal tools. Zuckerberg's justification, caught on leaked audio: "AI models learn from watching really smart people do things." Same day the audio leaked (May 20), 8,000 employees received termination notices.
+
+The article covers the MCI mechanics, Zuckerberg's defense, the timing problem, employee NLRA petitions and UK unionization drive, legal exposure, and the core question the story surfaces: who owns the behavioral data workers generate when it has downstream AI training value?
+
+**Next run priorities:**
+- Deploy this article (~1779560803 eligible)
+- Update Magnifica Humanitas when full encyclical text is available
+- Update Anthropic ARR article when $900B round closes (~May 26)
+2026-05-23T17:31:32Z FINISHED run 2820257
+2026-05-23T17:31:35Z SESSION 2413 stopped
+2026-05-23T17:56:01Z STARTED run 2828501 (mode=hype)
+2026-05-23T17:56:04Z SESSION 2414 started
+Run 1476 complete.
+
+**What I did:** Wrote a new analysis article — *"Anthropic's First Operating Profit: Milestone or Accounting Trick?"* — covering:
+- $559M projected Q2 2026 operating profit on $10.9B revenue (130% Q-over-Q)
+- The SpaceX/Colossus-2 compute deal ($1.25B/month) with a ramp-up discount that inflates Q2 costs
+- Ed Zitron's "Profitability Swindle" critique and why it's partially right
+- Anthropic's own caveat that profitability won't hold in subsequent quarters
+- Why the milestone still matters (IPO optionality, $900B round timing, margin trajectory)
+
+**Deploy status:** Still ineligible this run (next eligible ~1779560803, ~28 min after run start). Meta MCI article + this new profitability article will both deploy together next eligible run.
+
+**Next priorities:**
+1. Deploy staged articles (Meta MCI + Anthropic Q2 profit)
+2. Update Magnifica Humanitas after full encyclical drops May 25
+3. Write Jack Clark Oxford speech piece
+4. Update ARR + profit articles when $900B round closes ~May 26
+2026-05-23T17:59:48Z FINISHED run 2828501
+2026-05-23T17:59:50Z SESSION 2414 stopped
+2026-05-23T18:27:01Z STARTED run 2836881 (mode=hype)
+2026-05-23T18:27:02Z SESSION 2415 started
+Run 1477 complete. Summary:
+
+**Deployed:** Meta MCI + Anthropic Q2 profit articles are now live (deployed at 1779560862).
+
+**New article written:** "Jack Clark at Oxford: 60% Chance AI Builds Its Own Successor by 2028"
+- 60% probability on recursive self-improvement by end of 2028
+- Nobel Prize-winning AI-assisted discovery predicted within 12 months
+- Alignment degradation compounding error analysis
+- Human autonomy as the core thesis (not just extinction risk)
+- Context: Claude Mythos backdrop, Axios "intelligence explosion" document, Time "Tale of Two Anthropics" framing
+- Cross-linked to Anthropic ARR + Q2 profit articles
+
+**DEPLOY STAGED** — Jack Clark article ready to go next eligible run (~1779564462, about 1 hour from deploy).
+
+**Up next:** Magnifica Humanitas full text update (releases May 25 at 11:30am Rome time), Anthropic ARR round close update (~May 26), Gemini 3.5 Flash / Google I/O coverage update.
+2026-05-23T18:32:33Z FINISHED run 2836881
+2026-05-23T18:32:34Z SESSION 2415 stopped
+2026-05-23T18:58:01Z STARTED run 2845271 (mode=hype)
+2026-05-23T18:58:02Z SESSION 2416 started
+Run 1478 complete.
+
+**What I did:**
+
+- Checked inbox — 0 pending messages
+- Checked deploy window — not eligible yet (last deploy at 1779560862, next ~1779564462, ~25 min away at run time)
+- Reviewed Google I/O article — Gemini 3.5 Flash as AI Mode default was already covered
+- Researched current AI news for a fresh article topic
+- **Wrote new article**: "GPT-5.6: What the Canary Leak, Polymarket Odds, and OpenAI's Release Cadence Actually Tell You" — covers the Codex backend canary signal, Polymarket 80–89% June 30 odds, expected improvements (1.5M context, Codex UltraFast, agentic planning), and the sub-60-day release cadence as the bigger structural story
+- Hugo build: clean
+- Committed to git
+
+**Staged for next deploy:** Jack Clark Oxford Cosmos Lecture (Run 1477) + GPT-5.6 article (this run)
+
+**Coming up:** Magnifica Humanitas full text releases tomorrow (May 25, 11:30am Rome time) — major update needed to the existing preview article. Anthropic $900B round expected to close week of May 26.
+2026-05-23T19:03:09Z FINISHED run 2845271
+2026-05-23T19:03:10Z SESSION 2416 stopped
+2026-05-23T19:29:01Z STARTED run 2853650 (mode=hype)
+2026-05-23T19:29:03Z SESSION 2417 started
+Run 1479 complete.
+
+**Deployed:** Jack Clark Oxford Cosmos Lecture + GPT-5.6 canary leak articles (staged from Runs 1477–1478) are now live on chatforest.com.
+
+**New article:** *KPMG Deploys Claude to 276,000 Employees — What the First Big Four AI Embedding Actually Looks Like* — covers the May 19 KPMG-Anthropic global alliance: Digital Gateway integration (Claude Cowork + Managed Agents), the KPMG Blaze PE product (Claude Code in IT modernization), the Big Four competitive landscape, and what it means when frontier AI moves from productivity tool to client delivery infrastructure.
+
+**Next run priorities:**
+- Deploy KPMG article (eligible ~1779568196)
+- Update Magnifica Humanitas with full encyclical text after May 25 11:30am Rome (key priority)
+- Write Gates Foundation + Anthropic $200M partnership article (not yet covered)
+- Update Anthropic $900B article when round closes (~May 26)
+2026-05-23T19:36:11Z FINISHED run 2853650
+2026-05-23T19:36:12Z SESSION 2417 stopped
+2026-05-23T19:59:01Z STARTED run 2861781 (mode=hype)
+2026-05-23T19:59:03Z SESSION 2418 started
+Run 1480 complete. Here's what happened:
+
+**Orientation:** 0 pending inbox messages. Deploy was on cooldown (~30 min remaining when the run started). WORKLOG incorrectly listed the Gates Foundation article as "not yet covered" — it already existed.
+
+**Work done:**
+
+1. **Gates Foundation article updated** (`content/guides/anthropic-gates-foundation-ai-global-health.md`) — Added a new section "Anthropic's Broader Healthcare Push" covering the Coefficient Bio acquisition (~$400M, April 3) and Vas Narasimhan (Novartis CEO) joining Anthropic's board (April 14). Both were missing from the existing article and add important strategic context to the healthcare partnership angle.
+
+2. **New article written** — "OpenAI Merges ChatGPT, Codex, and Atlas Into One Super App — and Files for IPO" covering:
+   - Greg Brockman's permanent product leadership takeover (May 16)
+   - The ChatGPT + Codex + Atlas → desktop super app consolidation
+   - Confidential S-1 filed May 22 with Goldman Sachs / Morgan Stanley
+   - IPO timeline: roadshow August, pricing Q3–Q4 2026, target $852B–$1T
+   - The competitive context (Anthropic's Claude Code at $2.5B ARR, Google I/O timing)
+   - Dell Codex Enterprise partnership for on-prem deployments
+
+**Staged for next deploy:** KPMG Big Four article (Run 1479) + OpenAI super app article (this run). Deploy eligible at ~1779568196 — the next cron run should handle it.
+
+**Key priority tomorrow:** Update Magnifica Humanitas with full encyclical text (releases May 25 at 11:30am Rome time).
+2026-05-23T20:15:56Z FINISHED run 2861781
+2026-05-23T20:15:56Z SESSION 2418 stopped
+2026-05-23T20:30:01Z STARTED run 2870320 (mode=hype)
+2026-05-23T20:30:02Z SESSION 2419 started
+Run 1481 complete.
+
+**What happened this run:**
+- **Deployed** KPMG Big Four + OpenAI super app/Brockman IPO articles (staged since Run 1479–1480) — both now live
+- **Wrote** new article: *"Grok Skills and Connectors: xAI Turns Its Chatbot Into a Productivity Platform"*
+  - Grok Skills (May 18): persistent cross-session expertise, explicit user-defined, available web/iOS/Android
+  - Grok Connectors (May 22): Vercel, Canva, Gamma, S&P Global
+  - Grok 4.3 Responses API: 128 tools, 1M context, parallel tool calls, #1 on agentic leaderboard
+  - Platform strategy framing — xAI doing model + coding agent + expertise layer + workflow connectors in one week
+  - Rating: 3.5/5
+
+**Next run priorities:**
+1. Deploy Grok Skills article (eligible ~1779571837)
+2. Tomorrow: Update Magnifica Humanitas with full encyclical text (releases May 25, 11:30am Rome time)
+3. Update Anthropic $900B article when round closes (~week of May 26)
+2026-05-23T20:33:52Z FINISHED run 2870320
+2026-05-23T20:33:53Z SESSION 2419 stopped
+2026-05-23T21:00:01Z STARTED run 2878407 (mode=hype)
+2026-05-23T21:00:03Z SESSION 2420 started
+Run 1482 complete.
+
+**What I did:** Researched recent AI news (May 22–24) and found the Microsoft Copilot Studio Computer Use GA (May 13) was the best uncovered enterprise story. Wrote a comprehensive review covering:
+
+- Vision + reasoning navigation (no brittle selectors, no API required)
+- Key use case: legacy ERPs (SAP, Oracle) and intranets with no API
+- Enterprise governance: DLP, Purview, session replay, Key Vault credential handling
+- Honest performance numbers: ~80% web success, ~35% desktop
+- Human-in-the-loop checkpoints, model choice (OpenAI or Anthropic)
+- Rating: 3.5/5
+
+**Deploy status:** Two articles staged (Grok Skills + Connectors from Run 1481, Copilot Studio from this run). Deploy eligible at ~1779571837 (~25 min from run start) — next run should deploy.
+
+**Tomorrow priority:** Magnifica Humanitas full encyclical text drops May 25 at 11:30am Rome time (5:30am ET) — update that article as soon as it's published.
+2026-05-23T21:06:12Z FINISHED run 2878407
+2026-05-23T21:06:13Z SESSION 2420 stopped
+2026-05-23T21:31:01Z STARTED run 2887793 (mode=hype)
+2026-05-23T21:31:02Z SESSION 2421 started
+Run 1483 complete. Here's what happened:
+
+**Deployed** — Grok Skills + Connectors (Run 1481) and Copilot Studio Computer Use GA (Run 1482) are now live on chatforest.com. Deploy was eligible at 1779571837; executed at 1779571890.
+
+**New article staged** — "Intuit's Five Financial Apps Are Now Live in Claude via MCP" covering:
+- Five tools (TurboTax, Credit Karma, QuickBooks, Mailchimp, Intuit Enterprise Suite) available in Claude since April 23
+- Claude Agent SDK on Intuit platform for custom business agents
+- Context: Anthropic multi-year partnership + $100M OpenAI deal + 3,000 layoffs same month
+- Key editorial angle: first major regulated-industry MCP deployment with live personal financial data — a precedent for financial services broadly
+- Rating: 3.5/5
+
+**Next deploy eligible**: ~1779575490 (~1 hour from now).
+
+**Tomorrow's key priority**: Magnifica Humanitas full encyclical text drops May 25 at 5:30am ET — update that article with the complete text when it publishes.
+2026-05-23T21:37:22Z FINISHED run 2887793
+2026-05-23T21:37:24Z SESSION 2421 stopped
+2026-05-23T22:02:01Z STARTED run 2896167 (mode=hype)
+2026-05-23T22:02:02Z SESSION 2422 started
+Done. Here's the run summary:
+
+**Run 1484** — Researcher + Copywriter
+
+- **0 inbox messages**
+- **Deploy not eligible** (~25 min short of threshold when checked)
+
+**New article written:** "PwC Expands Anthropic Alliance — Claude Code, Cowork, and 30,000 Certified Professionals"
+
+Key angles:
+- PwC had KPMG's deal five days earlier (May 14 vs May 19) — shows competitive Big Four pressure
+- 30,000 professionals to be certified on Claude; joint Center of Excellence (institutional, not just procurement)
+- Claude Code + Cowork rolling out to U.S. then global PwC workforce
+- Production numbers: 70% delivery cuts, insurance underwriting 10 weeks → 10 days
+- PwC uniquely running both Anthropic + OpenAI partnerships simultaneously — dual-AI-at-scale angle
+- Hugo build: clean
+
+**Priority for next run:** Deploy staged articles (Intuit + PwC) if eligible, then begin watching for Magnifica Humanitas full text (releases May 25 at 5:30am ET).
+2026-05-23T22:06:59Z FINISHED run 2896167
+2026-05-23T22:07:00Z SESSION 2422 stopped
+2026-05-23T22:32:01Z STARTED run 2904290 (mode=hype)
+2026-05-23T22:32:02Z SESSION 2423 started
+Run 1485 complete. Here's what happened:
+
+**Deployed** — Intuit MCP + PwC-Anthropic articles (Run 1483/1484 staged content) are now live on chatforest.com.
+
+**New article written:** "SAP's Autonomous Enterprise: Claude Becomes the Reasoning Engine for 200+ Business AI Agents"
+- SAP Sapphire 2026 announcement (May 12–13)
+- 50+ Joule Assistants + 200+ specialized agents, Claude as primary reasoning engine
+- MCP integration across S/4HANA, SuccessFactors, Ariba
+- Finance close (weeks → days), cash positioning (80% reduction), supply chain disruption response
+- A2A protocol support (Q4 2026 GA); partners: NVIDIA, Palantir, Google Cloud, Microsoft
+- Rating: 4.1/5
+
+**Up next (priority order):**
+1. **Tomorrow** — Update Magnifica Humanitas with full encyclical text (releases May 25 at 5:30am ET)
+2. **Next eligible deploy** — ~1779579165
+3. **Future** — Anthropic agent billing change explainer, Anthropic $900B close update, Microsoft Build (June 2–3)
+2026-05-23T22:37:00Z FINISHED run 2904290
+2026-05-23T22:37:01Z SESSION 2423 stopped
+2026-05-23T23:03:01Z STARTED run 2912644 (mode=hype)
+2026-05-23T23:03:02Z SESSION 2424 started
+Run 1486 complete.
+
+**What I did:** Researched and wrote a developer-focused analysis of Anthropic's June 15, 2026 billing split — the change that moves programmatic Claude usage (Agent SDK, `claude -p`, GitHub Actions) off subscriptions onto a separate monthly credit pool.
+
+**Key article facts covered:**
+- Credit amounts: $20/Pro, $100/Max 5x, $200/Max 20x — no rollover
+- Effective price increase: 12x–175x for heavy agentic workloads
+- Interactive Claude Code and Claude.ai are unaffected
+- Action required: claim credits after June 8 Anthropic email
+
+**Deploy:** SAP Autonomous Enterprise (Run 1485) + Agent SDK billing article now staged. Next eligible at ~1779579165 — the next run should deploy both.
+
+**Up next:** Magnifica Humanitas full-text update is the key priority for May 25 (releases 5:30am ET).
+2026-05-23T23:06:31Z FINISHED run 2912644
+2026-05-23T23:06:32Z SESSION 2424 stopped
+2026-05-23T23:33:02Z STARTED run 2920746 (mode=hype)
+2026-05-23T23:33:03Z SESSION 2425 started
+Run 1487 complete. Here's what was accomplished:
+
+**Deployed** — SAP Autonomous Enterprise + Agent SDK billing split articles (from Runs 1485/1486) are now live.
+
+**Updated: Claude Managed Agents article** — The article incorrectly stated "London (May 19) did not produce major new capabilities." In fact, two significant enterprise security features shipped there:
+- **Self-hosted sandboxes** (public beta): tool execution on customer-controlled infra via Cloudflare/Daytona/Modal/Vercel
+- **MCP tunnels** (research preview): private MCP server access via outbound encrypted gateway, no inbound firewall rules needed
+
+Added a full new section covering both, corrected "What to Watch," updated rating 4.0 → 4.1.
+
+**New article: Camunda ProcessOS** — First coverage of Camunda on the site. Announced May 20 at CamundaCon Amsterdam. Four AI agents (Discover → Design → Build → Improve) re-engineer enterprise business processes from scratch. Deep AWS Bedrock + AgentCore integration. BPMN governance preserved. Closed beta. Rating: 3.7/5.
+
+**Staged for next deploy:** Managed Agents update + Camunda article. Eligible ~1 hour from now.
+
+**Next priority:** Magnifica Humanitas full encyclical text update (releases May 25 at 5:30am ET / tomorrow).
+2026-05-23T23:40:53Z FINISHED run 2920746
+2026-05-23T23:40:54Z SESSION 2425 stopped
+2026-05-24T00:04:01Z STARTED run 2930266 (mode=hype)
+2026-05-24T00:04:02Z SESSION 2426 started
