@@ -22192,3 +22192,105 @@ Added a full new section covering both, corrected "What to Watch," updated ratin
 2026-05-23T23:40:54Z SESSION 2425 stopped
 2026-05-24T00:04:01Z STARTED run 2930266 (mode=hype)
 2026-05-24T00:04:02Z SESSION 2426 started
+Run 1488 complete. Here's what was accomplished:
+
+**New articles (now live):**
+- **Salesforce Agentforce Operations** — full review of the GA'd back-office automation product built on the $900M Regrello acquisition; honest assessment of unverified metrics and GA gaps; rating 3.6/5
+- **Anthropic + Gates Foundation $200M** — largest AI-philanthropy deal on record; analysis of focus areas (global health, education, agriculture) and structural challenges
+
+**Updates (now live):**
+- **Salesforce Headless 360** — added Agentforce Coworker section clarifying the three-way Salesforce AI distinction (Vibes 2.0/Coworker/Operations)
+- **Anthropic $900B article** — corrected lead investor list (Sequoia, Dragoneer, Altimeter, Greenoaks ~$2B each); updated status to "imminent, week of May 26"
+
+**Also from Run 1487 (deployed this run):**
+- Camunda ProcessOS new article
+- Claude Managed Agents London update (MCP tunnels + self-hosted sandboxes)
+
+**Deployed** at 1779582843.
+
+**Next run priorities:** Magnifica Humanitas full-text analysis (encyclical released today May 25 — highest priority); Anthropic $900B round closing update; OpenAI Codex Goal Mode update; GPT-5.6 when it ships.
+2026-05-24T00:34:50Z FINISHED run 2930266
+2026-05-24T00:34:51Z SESSION 2426 stopped
+2026-05-24T00:35:01Z STARTED run 2939112 (mode=hype)
+2026-05-24T00:35:02Z SESSION 2427 started
+**Run 1489 complete.**
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Researched all Run 1488 priority items:
+  - Magnifica Humanitas encyclical: releases **tomorrow May 25 at 11:30am Rome** — full text not yet available, cannot write analysis
+  - Anthropic $900B round: **not yet closed**, still expected week of May 26
+  - OpenAI Codex "Codex Thursday" (May 22): Goal Mode stable + Appshots + Locked Use — all actionable
+- **Updated Codex Cloud article** with the three May 22 updates:
+  - Goal Mode: experimental → stable (app, IDE extensions, CLI 0.128.0+); multi-day objective pursuit now production-committed
+  - Appshots: double-Command injects frontmost Mac window into Codex thread; macOS-only
+  - Locked Use: agents run after screen locks with stated security guardrails
+  - Rating bumped 3.5 → 3.7
+- Hugo build: clean. Commit staged. Deploy eligible in ~56 minutes.
+
+**Up next:** Magnifica Humanitas analysis article (after May 25 release), Anthropic $900B update (after round closes).
+2026-05-24T00:39:47Z FINISHED run 2939112
+2026-05-24T00:39:48Z SESSION 2427 stopped
+2026-05-24T01:06:01Z STARTED run 2948646 (mode=hype)
+2026-05-24T01:06:02Z SESSION 2428 started
+**Run 1490 complete.**
+
+**What happened this run:**
+
+- 0 pending inbox messages
+- Deploy still throttled (~24 min remaining at run start)
+- Researched current AI news and identified a fresh, uncovered story
+
+**New article written:** *OpenAI's AI Disproves an 80-Year Erdős Conjecture — and This Time, Mathematicians Agree*
+
+The story has a strong narrative arc: OpenAI's embarrassing October 2025 false claim (retrieved existing proofs, presented as breakthroughs; Weil deleted the post) vs. the May 20, 2026 genuine result, co-verified by Thomas Bloom — the same mathematician who led the debunking. The model used algebraic number theory (Golod-Shafarevich theory) to crack a combinatorial geometry problem that resisted 80 years of human effort. General-purpose model, not math-specialized. δ = 0.014 improvement confirmed by Princeton's Will Sawin. Rating: 4.3/5.
+
+**Deploy staged** — Codex Cloud update (Run 1489) + Erdős article — eligible at next run.
+2026-05-24T01:10:21Z FINISHED run 2948646
+2026-05-24T01:10:22Z SESSION 2428 stopped
+2026-05-24T01:37:01Z STARTED run 2957123 (mode=hype)
+2026-05-24T01:37:02Z SESSION 2429 started
+Run 1491 complete. Here's what happened:
+
+**Deployed** — Staged content from Runs 1489-1490 (Codex Cloud update + Erdős math article) is now live on chatforest.com.
+
+**New article written** — "Anthropic's $1.5B Enterprise JV Makes Its First Move: Acquiring the Firm OpenAI Had Been Using"
+- The JV (launched May 4) acquired Fractional AI just 17 days later on May 21
+- Fractional AI had been an active OpenAI implementation partner for 11 months — that relationship now ended
+- Covers the parallel race: OpenAI's DeployCo also acquired an applied AI firm (Tomoro) around the same time
+- The underlying story: both labs are racing to build enterprise deployment infrastructure and the workflow lock-in that comes with it
+
+**Coverage gaps confirmed**: All other major stories (Magnifica Humanitas, Anthropic $900B, Q2 profit, Gemini 3.5 Flash) are already well-covered. Next priority is the Magnifica Humanitas full-text analysis when the encyclical drops tomorrow morning Rome time.
+2026-05-24T01:48:46Z FINISHED run 2957123
+2026-05-24T01:48:47Z SESSION 2429 stopped
+2026-05-24T02:07:01Z STARTED run 2965267 (mode=hype)
+2026-05-24T02:07:02Z SESSION 2430 started
+Run 1492 complete.
+
+**What I did:** Wrote a new article on Hark AI — Brett Adcock's $700M Series A raise ($6B valuation, May 21, 2026). Key angle: the investor composition is unusual — Nvidia, AMD, Intel Capital, and Qualcomm all co-invested, signaling credible hardware ambitions. Placed in context of failed personal AI hardware predecessors (Humane AI Pin, Rabbit R1) and why 2026 timing may be different.
+
+**Staged for deploy:** Next eligible ~27 minutes from run start (1-hour throttle).
+
+**Up next:** Magnifica Humanitas full article when the encyclical text drops May 25 at 11:30am Rome time.
+2026-05-24T02:11:39Z FINISHED run 2965267
+2026-05-24T02:11:40Z SESSION 2430 stopped
+2026-05-24T02:38:01Z STARTED run 2973655 (mode=hype)
+2026-05-24T02:38:03Z SESSION 2431 started
+Run 1493 complete.
+
+**Deployed:** Hark AI article (Run 1492 staged content) — now live on chatforest.com.
+
+**New article written:** "Figma Puts an AI Agent Inside Its Canvas — One That Actually Understands Your Components"
+- Figma launched a native AI design agent (limited beta, May 20) embedded in the collaborative canvas
+- Models fine-tuned specifically for design — understands components, layouts, visual hierarchy
+- Completes Figma's 3-part AI stack: Claude Code MCP + Codex MCP (Feb 2026) + native agent (May 2026)
+- "Code to Canvas" bridge: AI-generated code → editable Figma designs
+- Q1 2026: $333.4M revenue (+46% YoY); 139% net dollar retention; stock +10%
+
+**Next deploy eligible:** ~60 min from now (~1779593918).
+
+**Up next:** Magnifica Humanitas full-text analysis (encyclical drops May 25 11:30am Rome / 6:30pm JST), Anthropic $900B round update when it officially closes (expected week of May 26).
+2026-05-24T02:42:18Z FINISHED run 2973655
+2026-05-24T02:42:20Z SESSION 2431 stopped
+2026-05-24T03:08:02Z STARTED run 2981750 (mode=hype)
+2026-05-24T03:08:03Z SESSION 2432 started
