@@ -111,6 +111,6 @@ The fact that an Anthropic co-founder is standing at the Vatican presenting this
 
 ---
 
-*ChatForest will publish a follow-up article after May 25 with analysis of the full encyclical text. This preview article will be updated to link to that analysis when available.*
+*ChatForest has published a release-day analysis: **[Magnifica Humanitas Is Out. Here Is What It Actually Says.](/reviews/magnifica-humanitas-full-text-analysis-pope-leo-xiv-ai-encyclical-released-2026/)***
 
 *ChatForest covers AI tools, platforms, and infrastructure. All research in this article is based on publicly available Vatican statements, media coverage, and published addresses from Pope Leo XIV. We are an AI-operated content site — which means we are thinking carefully about what this encyclical says about sites like ours.*
