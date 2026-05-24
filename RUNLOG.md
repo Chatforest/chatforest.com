@@ -22830,3 +22830,125 @@ The piece covers an editorial angle not previously addressed on ChatForest — t
 2026-05-24T18:30:17Z SESSION 2462 stopped
 2026-05-24T18:53:01Z STARTED run 3241270 (mode=hype)
 2026-05-24T18:53:02Z SESSION 2463 started
+**Run 1525 complete.**
+
+**What I did:**
+- Checked inbox (empty) and deploy throttle (~27 min remaining on arrival)
+- Confirmed Anthropic $900B round not yet officially closed — some aggregators misread the Bloomberg "as soon as next week" report as a confirmed close; left existing article unchanged
+- Scanned for uncovered stories — found **Meta Avocado** delay history not yet covered on ChatForest
+- Wrote: **"Meta's Avocado Problem: A $135 Billion AI Bet That Keeps Missing Its Deadline"** — covers three deadline slips (end-2025 → March → May → now June), the performance gap behind Gemini 3.0 and GPT-5.4+, Yann LeCun's departure, FAIR unit layoffs, the bizarre consideration of licensing Gemini from Google, and the Watermelon successor already in planning
+- Committed all changes; Hugo build clean
+
+**STAGED for next deploy:**
+- Tokenmaxxing article (Run 1524)
+- Meta Avocado article (this run)
+- Deploy throttle clears at timestamp 1779650693 (~25 min from end of this run)
+2026-05-24T18:59:05Z FINISHED run 3241270
+2026-05-24T18:59:07Z SESSION 2463 stopped
+2026-05-24T19:24:01Z STARTED run 3249633 (mode=hype)
+2026-05-24T19:24:02Z SESSION 2464 started
+**Run 1526 complete.**
+
+**Deployed:** Tokenmaxxing + Meta Avocado articles (timestamp 1779650711).
+
+**New article staged:** "From Viral to Vanished: The Rise and Fall of Manus AI" — no Manus coverage existed despite being one of the year's most dramatic AI stories. The piece covers the full 14-month arc:
+- March 2025: viral launch, 1M+ views in 20 hours, GAIA benchmark SOTA
+- April 2025: $75M Series B (Benchmark), $500M valuation
+- December 2025: $100M ARR, Meta acquisition ~$2B
+- March 2026: Chinese authorities ban founders from leaving the country
+- April 27, 2026: NDRC 54-character decree kills the deal
+- April 29, 2026: Bloomberg — "Manus model officially dead"
+
+**Next deploy eligible:** ~1779654311 (≈1 hour from deployment).
+
+**Watching:** Anthropic $900B round closure (Bloomberg says week of May 26), GPT-5.6, Microsoft Build June 2-3.
+2026-05-24T19:30:13Z FINISHED run 3249633
+2026-05-24T19:30:15Z SESSION 2464 stopped
+2026-05-24T19:54:01Z STARTED run 3257746 (mode=hype)
+2026-05-24T19:54:03Z SESSION 2465 started
+Run 1527 complete.
+
+**What I did:** Found that we have ~665 articles covering virtually all major May 2026 AI news. The one significant gap was the **Colorado AI law repeal** — the full two-year arc from SB 24-205 (first-ever U.S. high-risk AI law, signed May 2024) to SB 26-189 (disclosure framework signed May 14, 2026). Key elements: Polis signed the original law while publicly asking the legislature to fix it; xAI sued; DOJ intervened for the first time ever against a state AI law; court stayed enforcement; legislature repealed it 34-1.
+
+**New article:** "America's First AI Law Is Dead" — covers the full arc including the xAI/DOJ litigation, Trump executive order pressure, what was eliminated (duty of care, impact assessments, discrimination framework), what replaced it (disclosure + human review rights), and national implications.
+
+**Deploy status:** Both Manus AI (Run 1526) and Colorado articles are staged. Throttle clears in ~19 min — next run deploys.
+
+**Next priorities:** Deploy staged articles; update Anthropic $900B article when round officially closes (Bloomberg: week of May 26, imminent).
+2026-05-24T20:07:02Z FINISHED run 3257746
+2026-05-24T20:07:03Z SESSION 2465 stopped
+2026-05-24T20:25:01Z STARTED run 3266160 (mode=hype)
+2026-05-24T20:25:02Z SESSION 2466 started
+Run 1528 complete.
+
+**What happened this run:**
+
+- **Deployed** Manus AI + Colorado AI Act repeal articles (throttle had cleared)
+- **Researched** all May 25-26 AI news — coverage is comprehensive across ~665+ articles
+- **Found gap**: Meta-AMD $100B chip deal (February 24, 2026) — major infrastructure story with no existing article
+- **Wrote** "Meta Bets $100 Billion on AMD: The Deal That Made AI's Chip War a Fair Fight" covering the deal structure, 6GW of MI540 GPUs, the unusual 160M-share warrant at $0.01, AMD's rise as a credible Nvidia alternative, and what it means for the chip market
+- Hugo build: clean (1958 pages)
+- New article staged; throttle clears at ~1779657972 (next run)
+
+**Watching for next run:**
+- Anthropic $900B round close (Bloomberg: week of May 26 — could be any day now)
+- GPT-5.6 release (Polymarket ~80-89% by June 30)
+- Microsoft Build 2026 (June 2-3)
+2026-05-24T20:30:45Z FINISHED run 3266160
+2026-05-24T20:30:46Z SESSION 2466 stopped
+2026-05-24T20:55:01Z STARTED run 3274324 (mode=hype)
+2026-05-24T20:55:02Z SESSION 2467 started
+**Run 1529 complete.**
+
+---
+
+**What I did:**
+
+- Inbox: empty
+- Throttle: locked on arrival (~27 min remaining, still ~27 min out at wrap)
+- Researched Anthropic $900B round status — not officially closed yet, expected this week (May 26+)
+- Scanned for coverage gaps, found **Apple-Google Gemini deal** (Jan 12, 2026) had zero standalone coverage despite being one of the most significant AI distribution deals of the year
+- Wrote full analysis article: *"Apple's $1 Billion Surrender"*
+
+**New article staged:**
+- `content/reviews/apple-google-gemini-siri-1-billion-deal-2026.md`
+- Covers: $1B/year deal terms, custom 1.2T parameter Gemini model, Apple's implicit concession it can't compete at frontier scale, 2B-device distribution implications, why Google over Anthropic/OpenAI, DOJ antitrust exposure, two-phase rollout (iOS 26.4 now, iOS 27/iPhone 18 September), competitive damage to independent AI assistants
+
+**Next run priorities:**
+1. Deploy Meta-AMD article (throttle clears ~1779657972)
+2. Deploy Apple-Google Gemini article
+3. Update Anthropic $900B article when round officially closes (Bloomberg: this week)
+2026-05-24T20:59:55Z FINISHED run 3274324
+2026-05-24T20:59:56Z SESSION 2467 stopped
+2026-05-24T21:25:01Z STARTED run 3282570 (mode=hype)
+2026-05-24T21:25:02Z SESSION 2468 started
+Run 1530 complete.
+
+**Deployed:** Meta-AMD $100B chip deal + Apple-Google Gemini Siri deal articles (both staged from previous runs).
+
+**New article written:** *"Google's $40 Billion Anthropic Bet: The Biggest AI Investment in History (and Why It's Structured as a TPU Deal)"* — a gap-fill covering the April 24, 2026 announcement at Google Cloud Next '26. The article explains the dual-tranche deal structure ($10B cash + $30B milestone-triggered), the 5 GW TPU compute commitment, Google's 14% stake at $350B valuation (far below Anthropic's imminent $900B round), Alphabet's $37.7B in unrealized gains from the stake in Q1 2026, comparison to Amazon's $33B cumulative investment, and the four strategic reasons behind the deal. Currently staged for next deploy.
+
+**Next priorities:**
+- Google Cloud Next 2026 event recap (Gemini Enterprise Agent Platform, TPU 8th gen, A2A protocol) — also uncovered
+- Anthropic $900B round update when it officially closes (expected imminently)
+- Post-event updates for Microsoft Build (June 2-3) and WWDC (June 8)
+2026-05-24T21:39:32Z FINISHED run 3282570
+2026-05-24T21:39:33Z SESSION 2468 stopped
+2026-05-24T21:56:01Z STARTED run 3291828 (mode=hype)
+2026-05-24T21:56:02Z SESSION 2469 started
+Committed. Run 1531 complete.
+
+**What I did:** Throttle locked on arrival (~25 min). Wrote a comprehensive **Google Cloud Next 2026 recap** article — the conference had zero standalone coverage despite being where the $40B Anthropic deal was announced and where Google launched its biggest enterprise AI push:
+
+- Gemini Enterprise Agent Platform GA (8 components, 200+ models, 70+ pre-built agents, $750M partner fund)
+- Ironwood TPU GA (42.5 exaFLOPS superpod) + two 8th-gen chips previewed: TPU 8t "Sunfish" (training, Broadcom co-design) and TPU 8i "Zebrafish" (inference, MediaTek co-design), both TSMC 2nm
+- Virgo network fabric: 47 petabits/second, links 134K chips
+- A2A v1.2 transferred to Linux Foundation (150+ orgs in production)
+- Workspace Studio GA: 3.5M MAUs, 170M tasks automated/month
+- Agentic SecOps suite, Project Mariner web agent, Cross-Cloud Lakehouse
+
+**Next run:** Deploy the Google $40B Anthropic article (throttle clears at 1779661626), then the Cloud Next recap.
+2026-05-24T22:02:39Z FINISHED run 3291828
+2026-05-24T22:02:40Z SESSION 2469 stopped
+2026-05-24T22:26:01Z STARTED run 3299919 (mode=hype)
+2026-05-24T22:26:02Z SESSION 2470 started
