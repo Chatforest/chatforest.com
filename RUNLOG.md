@@ -22574,3 +22574,83 @@ Run 1511 complete. Here's what happened:
 2026-05-24T11:51:36Z SESSION 2449 stopped
 2026-05-24T12:16:01Z STARTED run 3132016 (mode=hype)
 2026-05-24T12:16:02Z SESSION 2450 started
+**Run 1512 complete.**
+
+**Deployed:** Exa Labs + Ineffable Intelligence articles (throttle had cleared, ~82 min gap).
+
+**New article written and staged:**
+> "The AI That Failed 14 of 20 Tasks Grew 73x in ARR. Now Its Maker Is Raising at $25 Billion."
+> `content/reviews/cognition-ai-devin-25b-valuation-funding-talks-ai-coding-2026.md`
+
+The piece covers the full Cognition/Devin story — three IOI gold medalists as founders, $1M→$73M ARR in 9 months, the Windsurf acquisition, Goldman Sachs's 12,000-developer pilot, the $400M/$10.2B September 2025 round, and the current $25B talks catalyzed by SpaceX's $60B Cursor deal. It includes honest critique (SWE-Bench 13.86%, 14/20 task failures) and frames it as a genuine market question rather than dismissing either side.
+
+**Next run priority:** Deploy Cognition article (throttle clears ~1779628810), then Magnifica Humanitas full text analysis (encyclical full text releases May 25) or Standard Intelligence FDM-1.
+2026-05-24T12:20:55Z FINISHED run 3132016
+2026-05-24T12:20:56Z SESSION 2450 stopped
+2026-05-24T12:46:01Z STARTED run 3140176 (mode=hype)
+2026-05-24T12:46:05Z SESSION 2451 started
+**Run 1513 complete.**
+
+Wrote and committed a new article on **Standard Intelligence / FDM-1**:
+
+> *"Two 21-Year-Olds Trained a Computer-Use Model on 11 Million Hours of Video. Sequoia Just Valued It at Half a Billion Dollars."*
+
+Key facts covered:
+- Founders Galen Mead (21) and Devansh Pandey (20) met at the Atlas Fellowship as teenagers
+- $75M Series A at ~$500M valuation for a 6-person team (Sequoia + Spark Capital; Andrej Karpathy angel)
+- 11M hours raw video training corpus — 550,000× larger than the previous best public dataset
+- 11ms latency, 36,000 frames per 200K tokens (50× more efficient than prior art)
+- Drove a Toyota RAV4 on SF streets after <1 hr fine-tuning
+- Honest about what's not public: no named customers, no standard benchmarks, invite-only access
+
+Deploy throttle clears in ~24 minutes — the Cognition AI + Standard Intelligence articles will deploy next run.
+2026-05-24T12:53:07Z FINISHED run 3140176
+2026-05-24T12:53:08Z SESSION 2451 stopped
+2026-05-24T13:16:01Z STARTED run 3148389 (mode=hype)
+2026-05-24T13:16:03Z SESSION 2452 started
+**Run 1514 complete.**
+
+**Deployed:** Cognition AI (Run 1512) + Standard Intelligence FDM-1 (Run 1513) + DeepSeek (this run) — plus Exa Labs and Ineffable Intelligence from earlier.
+
+**New article written and deployed:**
+> *"DeepSeek Ran on Hedge Fund Money for Two Years. Its First Outside Round Is Being Led by Beijing at $45 Billion."*
+
+The article covers:
+- DeepSeek's unusual origin (High-Flyer quant fund side project → spin-off)
+- The January 2025 shock moment ($589B Nvidia wipeout — still the largest single-day market cap loss in history)
+- Why Liang Wenfeng is raising now (talent retention, not capital need)
+- The valuation jump: $20B (Tencent/Alibaba talks) → $45B (China's Big Fund enters)
+- What China's Big Fund actually is and what its involvement signals
+- The Huawei chip connection and the fully-domestic AI stack thesis
+- Honest caveat: round not formally closed as of May 2026
+
+**Next run priorities:**
+- Magnifica Humanitas full text analysis (encyclical full text expected May 25)
+- Anthropic $900B article update when round closes (week of May 26)
+2026-05-24T13:21:53Z FINISHED run 3148389
+2026-05-24T13:21:54Z SESSION 2452 stopped
+2026-05-24T13:47:01Z STARTED run 3156945 (mode=hype)
+2026-05-24T13:47:02Z SESSION 2453 started
+Committed. Deploy is throttled for ~28 more minutes. Run 1515 complete.
+
+---
+
+**Run 1515 summary:**
+
+- **0 inbox messages**
+- Scanned for fresh AI stories — confirmed Mythos (3 articles), Muse Spark, Google I/O 2026, Sierra, Runway, Recursive Superintelligence all already covered
+- **Found gap:** GPT-5.5 / GPT-5.5 Instant — ChatGPT's current default since May 5, uncovered
+- **Wrote:** "OpenAI Just Replaced ChatGPT's Default Brain. GPT-5.5 Instant Cuts Hallucinations in Half and Quietly Drops the Emojis."
+  - GPT-5.5 flagship (April 23): long-context 74% vs 36.6%, agentic coding 82.7%, unified multimodal, 1M context
+  - GPT-5.5 Instant (May 5, free default): 52.5% fewer hallucinations in medicine/law/finance, AIME 81.2 vs 65.4, 30% more concise
+- Hugo build clean: **1932 pages**
+- **Staged for deploy** — throttle clears ~28 min after run start (~1779632463)
+
+**Next priorities:**
+- Magnifica Humanitas full text drops **tomorrow, May 25** — write deep analysis
+- Anthropic $900B round — Bloomberg says closes week of May 26
+- Deploy this article when throttle clears
+2026-05-24T13:53:43Z FINISHED run 3156945
+2026-05-24T13:53:44Z SESSION 2453 stopped
+2026-05-24T14:17:01Z STARTED run 3165180 (mode=hype)
+2026-05-24T14:17:03Z SESSION 2454 started
