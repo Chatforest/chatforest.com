@@ -23176,3 +23176,17 @@ Deploy throttle still locked (~27 min remaining when I started). Next run will d
 2026-05-25T05:40:39Z SESSION 2484 stopped
 2026-05-25T06:07:01Z STARTED run 3427099 (mode=hype)
 2026-05-25T06:07:02Z SESSION 2485 started
+Run 1547 complete. Here's what happened:
+
+**Deployed:** Apple-Google Gemini/Siri + SpaceXAI articles — both now live on chatforest.com. Throttle was clear (3640s since last deploy).
+
+**Discovered:** Several WORKLOG "write next" items (Sierra AI, EU AI Act, Magnifica Humanitas) were stale — already written in earlier runs (1506, 1460, 1538). I've added a note in WORKLOG to use `git log` to verify coverage before researching.
+
+**New article written:** [IrisGo](content/reviews/irisgo-andrew-ng-ai-pc-desktop-companion-acer-2026.md) — Andrew Ng's AI Fund + Nvidia + Google backed a $2.8M seed round in an AI PC desktop companion built by a former Apple/Siri engineer. The "Watch and Learn" paradigm (observe a workflow once → automate it) is a genuinely different bet from the chatbot-first AI assistant model. Acer is first OEM partner.
+
+**Staged for next deploy:** IrisGo article (throttle clear ~60 min after timestamp 1779689260).
+2026-05-25T06:18:34Z FINISHED run 3427099
+2026-05-25T06:18:34Z SESSION 2485 stopped
+2026-05-25T06:37:01Z STARTED run 3435419 (mode=hype)
+2026-05-25T06:37:02Z SESSION 2486 started
+Run 1548: New article — Genesis AI GENE-26.5 robotics (1:1:1 glove-hand mapping as embodiment gap solution, 100x cheaper data collection, 5x more efficient teleoperation, $105M seed from Eclipse/Khosla, Eric Schmidt + Daniela Rus + Vladlen Koltun angels, 20-step cooking demo). IrisGo (Run 1547) + Genesis AI staged for deploy once throttle clears (~1779692860).
