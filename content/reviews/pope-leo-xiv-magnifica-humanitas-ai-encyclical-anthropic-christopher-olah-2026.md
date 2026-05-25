@@ -50,7 +50,7 @@ The political subtext is significant. Anthropic is currently in active litigatio
 
 Inviting Olah to the Vatican today is, at minimum, a demonstration that the company's insistence on meaningful limits for its AI systems finds allies well beyond Silicon Valley.
 
-After the event, Olah posted on X: "The questions posed by AI are bigger than the AI community. We urgently need the world — religions, civil society, academics, governments — to participate in creating a positive outcome."
+Before the event, Olah posted on X: "The questions posed by AI are bigger than the AI community. We urgently need the world — religions, civil society, academics, governments — to participate in creating a positive outcome. I'm glad the Catholic Church is engaging, and honored to speak at the presentation."
 
 ## What the Industry Should Take From This
 
