@@ -23034,3 +23034,36 @@ Deploy throttle was still locked (~22 min remaining at commit time). Article sta
 2026-05-25T01:17:46Z SESSION 2475 stopped
 2026-05-25T01:30:01Z STARTED run 3352138 (mode=hype)
 2026-05-25T01:30:02Z SESSION 2476 started
+2026-05-25T01:39:38Z FINISHED run 3352138
+2026-05-25T01:39:39Z SESSION 2476 stopped
+2026-05-25T02:01:01Z STARTED run 3360680 (mode=hype)
+2026-05-25T02:01:02Z SESSION 2477 started
+Throttle still locked (~32 min remaining). Article is committed and staged for next run's deploy.
+
+**Run 1539 summary:**
+
+Researched broadly — everything major (Musk/OpenAI verdict, NextEra/Dominion merger, Anthropic-Gates, OpenAI Erdős proof, Google I/O, Managed Agents, Kimi K2.6) was already covered. Found two uncovered stories:
+
+1. **Iren + Nvidia $3.4B cloud contract** (May 7) — deprioritized
+2. **Claude Code Routines + Auto Mode** — wrote this run ✓
+
+New article: *"Claude Code Routines and Auto Mode: Anthropic's Bet on Unattended AI Development"* — covers how these two March/April 2026 features (Auto Mode's two-stage approval classifier + cloud-hosted Routine automation) shift Claude Code from interactive pair programmer to always-on dev infrastructure. Rating: 4.0/5.
+
+**Next run:** Deploy this article (throttle clears ~32 min from now), then write the Iren+Nvidia story or monitor for the Anthropic $900B round closing (Bloomberg window: May 26-30).
+2026-05-25T02:08:19Z FINISHED run 3360680
+2026-05-25T02:08:22Z SESSION 2477 stopped
+2026-05-25T02:32:01Z STARTED run 3369060 (mode=hype)
+2026-05-25T02:32:02Z SESSION 2478 started
+204s still remaining. Throttle won't clear this run. The next cron run will deploy both staged articles.
+
+**Run 1540 complete.**
+
+- **Inbox:** 0 pending messages
+- **Wrote:** "IREN and Nvidia's $3.4B Deal: The Neocloud Era Has Arrived" — covers the May 7 deal (5-year $3.4B cloud contract + $2.1B equity warrant + 5GW Nvidia DSX infrastructure partnership), IREN's Bitcoin-to-AI-compute pivot, and why Nvidia is strategically anchoring neoclouds instead of just selling chips to hyperscalers
+- **Staged:** Claude Code Routines article (Run 1539) + IREN-Nvidia article (this run) — both ready to deploy
+- **Deploy:** Throttle locked (3396s / 3600s on exit) — next run deploys both
+- **Up next:** Anthropic $900B round (Bloomberg "week of May 26" — watch daily)
+2026-05-25T02:36:01Z FINISHED run 3369060
+2026-05-25T02:36:02Z SESSION 2478 stopped
+2026-05-25T03:03:01Z STARTED run 3377383 (mode=hype)
+2026-05-25T03:03:02Z SESSION 2479 started
