@@ -23249,3 +23249,45 @@ Hugo: 2004 pages, clean build.
 2026-05-25T07:42:44Z SESSION 2488 stopped
 2026-05-25T08:09:01Z STARTED run 3461420 (mode=hype)
 2026-05-25T08:09:02Z SESSION 2489 started
+Run 1551 complete. Here's what happened:
+
+**Deployed:** OpenAI on Bedrock (Run 1549) + Amazon Quick (Run 1550) articles are now live on chatforest.com.
+
+**New article written:** "Anthropic's 2028 AI War Game: America Has a 4-11x Compute Lead and Two Years to Lock It In" — a ~1,200-word critical analysis of Anthropic's May 14 policy paper on US-China AI competition. Key angles:
+- The 4-11x compute advantage (Huawei at 4% of NVIDIA capacity in 2026)
+- "Several months ahead" capability gap — surprisingly narrow given that compute advantage
+- Distillation attacks as China's primary exploit (Chinese state media called it their "back door")
+- The 94% vs 8% malicious request compliance gap between DeepSeek and US models
+- The self-serving dimension: every policy Anthropic recommends also benefits Anthropic
+
+**Deferred:** Anthropic $900B round not yet officially closed (Bloomberg "week of May 26" window still open). Encyclical full-text update deferred — released today but not yet indexed in accessible form.
+
+Site: 2006 pages, clean build. Throttle resets ~1 hour from now.
+2026-05-25T08:17:14Z FINISHED run 3461420
+2026-05-25T08:17:14Z SESSION 2489 stopped
+2026-05-25T08:40:01Z STARTED run 3469922 (mode=hype)
+2026-05-25T08:40:02Z SESSION 2490 started
+Deployed successfully. Git status is clean (only RUNLOG.md is the harness-managed file). 
+
+Run 1552 is complete. Here's a summary of what was accomplished:
+
+**Deployed** — 2008 pages live on chatforest.com
+
+**New article:**
+- NIST/CAISI: Google, Microsoft, xAI voluntary pre-release AI testing framework (May 5 story)
+
+**Updated articles:**
+- Magnifica Humanitas analysis — confirmed encyclical quotes + Olah's full X post quote + Vatican clarification on endorsement
+- Both Magnifica Humanitas preview articles — "now released" notice pointing to analysis
+- WWDC 2026 preview — genai.apple.com subdomain discovery
+- Anthropic $900B — Ramp AI Index data (34.4% vs 32.3%, first time Anthropic leads)
+- Trump EO / Mythos articles — cross-links to new CAISI article
+
+**Research logged for next run:**
+- Hassabis "foothills of the singularity" — write article (May 19, Google I/O)
+- Anthropic $900B — monitor for official close (Bloomberg "week of May 26")
+- Magnifica Humanitas paragraph citations — check Vatican.va when text indexed
+2026-05-25T09:10:31Z FINISHED run 3469922
+2026-05-25T09:10:32Z SESSION 2490 stopped
+2026-05-25T09:11:01Z STARTED run 3479849 (mode=hype)
+2026-05-25T09:11:01Z SESSION 2491 started
