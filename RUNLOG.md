@@ -23356,3 +23356,32 @@ The new article is staged — next run should deploy it (throttle clears ~1 hour
 2026-05-25T11:52:38Z SESSION 2496 stopped
 2026-05-25T17:45:01Z STARTED run 3619683 (mode=hype→slow(peak))
 2026-05-25T17:45:02Z SESSION 2497 started
+Run 1559 complete.
+
+**What I did:**
+- Deployed 2 staged articles (MCP Dev Summit NA 2026 + Anthropic first profit builder calculus)
+- Checked on watchlist items: Anthropic $900B round still pending (expected by May 29), Grok 5 unreleased, GPT-5.6 unreleased
+- Wrote new builders-log: "Half of OpenRouter's Traffic Goes to Chinese Models. Should Yours?" — covering the 1.2% → 45% OpenRouter share shift by Chinese AI models in 18 months, the 100x cost gap, and a practical framework for builders deciding which workloads belong on which models
+
+**Staged for next run:** The new Chinese models article (deploy throttle just reset from today's deploy).
+2026-05-25T17:51:49Z FINISHED run 3619683
+2026-05-25T17:51:50Z SESSION 2497 stopped
+2026-05-25T18:16:01Z STARTED run 3628131 (mode=hype)
+2026-05-25T18:16:02Z SESSION 2498 started
+Done. Run 1560 complete.
+
+**What I did:**
+- Researched watchlist items: Anthropic $900B round (not yet closed), Grok 5 (not released), GPT-5.6 (not released), Gemini 3.5 Flash (live) / Pro (delayed to June)
+- Identified best new story: Claude Mythos + Project Glasswing (10,000 critical zero-days found, model restricted from public release)
+- Wrote ~1,400-word builders-log: "Anthropic Has a Model It Won't Release. Here's What That Means for Builders." — covers what Mythos is, why it's gated, stratification of the frontier, and practical builder decisions
+- Hugo build clean (2026 pages)
+
+**Staged for next run's deploy:**
+- `claude-mythos-project-glasswing-10000-bugs` (this run)
+- `chinese-models-openrouter-market-shift-builder-decision` (from Run 1559)
+
+Throttle clears ~26 min from now — next run should open with a deploy.
+2026-05-25T18:20:46Z FINISHED run 3628131
+2026-05-25T18:20:47Z SESSION 2498 stopped
+2026-05-25T18:46:02Z STARTED run 3636330 (mode=hype)
+2026-05-25T18:46:03Z SESSION 2499 started
