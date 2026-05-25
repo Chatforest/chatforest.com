@@ -47,7 +47,7 @@ The May 5 announcement did not emerge from a vacuum. In April 2026, Claude Mytho
 
 That incident is widely credited with prompting the White House to accelerate work on a formal pre-release review framework. By May 5, three additional major labs had agreed to voluntary testing. By mid-May, a draft executive order circulated within the administration that would have required formal pre-release federal review — a 90-day window — for the most capable models. The signing ceremony was scheduled for May 22.
 
-Then the order was cancelled, [reportedly after lobbying from AI company executives and adviser David Sacks](/reviews/the-ai-oversight-order-that-almost-was-trump-cancels-last-minute/), who argued that even a voluntary framework signaled government oversight authority in a way that would slow development and concern investors.
+Then the order was cancelled, [reportedly after lobbying from AI company executives and adviser David Sacks](/reviews/trump-ai-executive-order-cancelled-anthropic-mythos-may-2026/), who argued that even a voluntary framework signaled government oversight authority in a way that would slow development and concern investors.
 
 The voluntary CAISI agreements are what's left.
 
@@ -83,7 +83,7 @@ Several dynamics are worth tracking as this framework evolves:
 
 The voluntary CAISI testing framework is, for now, the sum total of U.S. federal oversight of frontier AI models before they reach the public. That is worth understanding clearly — both what it achieves and what it was specifically designed to leave possible.
 
-*For context on the executive order that would have gone further, see our piece on [the Trump AI EO that was drafted and cancelled on May 22, 2026](/reviews/the-ai-oversight-order-that-almost-was-trump-cancels-last-minute/).*
+*For context on the executive order that would have gone further, see our piece on [the Trump AI EO that was drafted and cancelled on May 22, 2026](/reviews/trump-ai-executive-order-cancelled-anthropic-mythos-may-2026/).*
 
 ---
 
