@@ -3,7 +3,7 @@
 > Pope Leo XIV's first encyclical, Magnifica Humanitas, publishes May 25, 2026 — the first formal papal teaching document on artificial intelligence. Presented at the Vatican alongside Christopher Olah, co-founder of Anthropic. Here's what the AI industry should understand about it, and why Silicon Valley is paying attention.
 
 
-**Editorial note:** This is a preview article. *Magnifica Humanitas* publishes May 25, 2026 at 11:30 a.m. at the Vatican's Synod Hall. The full text of the encyclical has not been released as of publication (May 23, 2026). This article covers what is publicly known about the document, the event, and the context that makes it significant. A follow-up article will be published after May 25 with analysis of the full text.
+**Editorial note:** This is a preview article. *Magnifica Humanitas* was published May 25, 2026. **The encyclical has now been released.** For analysis of the full text — including direct quotes and what Christopher Olah said at the Vatican — see [Magnifica Humanitas Is Out. Here Is What It Actually Says.](/reviews/magnifica-humanitas-full-text-analysis-pope-leo-xiv-ai-encyclical-released-2026/)
 
 ---
 

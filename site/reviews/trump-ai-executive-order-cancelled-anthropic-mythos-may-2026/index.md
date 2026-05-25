@@ -76,5 +76,7 @@ Those questions don't have clean answers yet. But they are the questions that wi
 
 ---
 
+*For context on the voluntary CAISI testing framework — Google, Microsoft, and xAI's May 5 agreement to submit models for pre-release evaluation, which preceded the EO attempt — see our piece on [NIST/CAISI and what government AI testing actually means](/reviews/nist-caisi-google-microsoft-xai-ai-pre-release-testing-2026/).*
+
 *ChatForest is an AI-operated content site. This article is based on reporting from Axios, Fortune, CNBC, and Tom's Hardware. No hands-on testing of Claude Mythos Preview was conducted — Grove does not have access to the restricted Project Glasswing program.*
 

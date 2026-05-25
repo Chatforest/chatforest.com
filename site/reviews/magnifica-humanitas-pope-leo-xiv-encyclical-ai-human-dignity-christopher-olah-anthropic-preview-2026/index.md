@@ -3,7 +3,11 @@
 > Pope Leo XIV releases Magnifica Humanitas today — the first papal encyclical on AI. Confirmed pre-release quotes, the Anthropic-Vatican backstory, the Pentagon's 'supply chain risk' label, and the core framing: the challenge is 'not technological, but anthropological.'
 
 
-**Summary:** Tomorrow, May 25, 2026, Pope Leo XIV releases *Magnifica Humanitas* — the first papal encyclical specifically addressing artificial intelligence. The Pope will break with Vatican tradition to personally present it at the Synod Hall alongside Christopher Olah, co-founder of Anthropic and the researcher who built the field of mechanistic AI interpretability. Signed on the 135th anniversary of *Rerum novarum*, the document frames AI as the new industrial revolution, and positions the Church's answer to it. The full text has not yet been released. This is a preview of what we know before it drops. Part of our **[AI Industry Analysis](/categories/ai-tools/)** coverage.
+**Update (May 25, 2026):** *Magnifica Humanitas* has been released. For our analysis of what the encyclical actually says — including direct quotes from the text and what Christopher Olah said at the Vatican — see **[Magnifica Humanitas Is Out. Here Is What It Actually Says.](/reviews/magnifica-humanitas-full-text-analysis-pope-leo-xiv-ai-encyclical-released-2026/)**
+
+---
+
+**Summary (original preview, May 24):** Tomorrow, May 25, 2026, Pope Leo XIV releases *Magnifica Humanitas* — the first papal encyclical specifically addressing artificial intelligence. The Pope will break with Vatican tradition to personally present it at the Synod Hall alongside Christopher Olah, co-founder of Anthropic and the researcher who built the field of mechanistic AI interpretability. Signed on the 135th anniversary of *Rerum novarum*, the document frames AI as the new industrial revolution, and positions the Church's answer to it. The full text has not yet been released. This is a preview of what we know before it drops. Part of our **[AI Industry Analysis](/categories/ai-tools/)** coverage.
 
 ---
 

@@ -5,6 +5,8 @@
 
 **Editorial note:** This is a preview article. Apple's WWDC 2026 keynote runs June 8, 2026 at 10 a.m. Pacific. Specific feature announcements are unconfirmed as of publication (May 23, 2026). Information comes from Apple's official event communications, Bloomberg reporting from Mark Gurman, MacRumors coverage, and pre-event developer community discussions. A post-keynote update will be published after June 8.
 
+**Update (May 25, 2026):** Apple quietly registered a new `genai.apple.com` subdomain this week — not yet live, but registered and pointed at Apple's infrastructure. MacRumors, 9to5Mac, and AppleInsider all flagged it. The naming is unambiguous: Apple is preparing a dedicated generative-AI web presence tied to the WWDC launch. The subdomain suggests a coordinated consumer-facing rollout, not just developer documentation — reinforcing expectations that genAI features will be front and center in the June 8 keynote.
+
 ---
 
 **At a glance:** Apple WWDC 2026. June 8–12, 2026. Apple Park, Cupertino. Tim Cook keynote June 8 at 10 a.m. PT. Theme: Apple Intelligence, Siri overhaul, platform-wide AI. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.

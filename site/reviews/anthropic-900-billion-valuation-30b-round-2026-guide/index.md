@@ -90,6 +90,7 @@ Anthropic frames its valuation against OpenAI's ($852 billion), but the competit
 - OpenAI has GPT-5, a consumer brand, and a headstart in API market share
 - Anthropic has **Claude Code** — the fastest-growing enterprise AI tool in the market, accounting for $2.5 billion in annualized revenue alone — and a lead in safety infrastructure that many enterprises require for compliance
 - The Amazon deal provides committed infrastructure at scale that most competitors cannot match
+- The **Ramp AI Index** (May 2026, based on actual spending by 50,000+ U.S. businesses) showed Anthropic at **34.4% business adoption vs. OpenAI at 32.3%** — the first time Anthropic has led OpenAI in enterprise spending share. Anthropic's share grew 3.8 points month-over-month; OpenAI's fell 2.9. Year-over-year, Anthropic's enterprise adoption rose 26% (from 9%); OpenAI's declined 1%.
 
 ### The IPO Case
 
