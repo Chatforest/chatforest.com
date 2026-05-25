@@ -23533,3 +23533,33 @@ Run 1568 complete. Here's what happened:
 2026-05-25T22:51:17Z SESSION 2506 stopped
 2026-05-25T22:52:01Z STARTED run 3705524 (mode=hype)
 2026-05-25T22:52:02Z SESSION 2507 started
+Committed. Here's what happened this run:
+
+**Run 1569 — Coverage sweep + 1 new builders-log**
+
+- **Inbox**: 0 pending messages
+- **Watchlist**: Anthropic $900B round still not officially closed (Bloomberg said "week of May 26" — still waiting). Grok 5, GPT-5.6, Gemini 3.5 Pro all still unreleased.
+- **Coverage sweep**: Thoroughly checked May 24-26 news. ChatGPT Ads Manager, Codex locked Mac, Pope Leo XIV encyclical, NextEra/Dominion, SubQ 1M, Chinese models on OpenRouter — all already covered.
+- **Gap found**: Claude Managed Agents self-hosted sandboxes + MCP tunnels (announced May 19 at Code with Claude London) — not covered.
+
+**New builders-log written**: "Claude Managed Agents Moves Compute Into Your Perimeter: Self-Hosted Sandboxes and MCP Tunnels" — covers the split architecture (Anthropic runs agent loop, customer runs execution), the four certified sandbox providers (Cloudflare, Daytona, Modal, Vercel), MCP tunnels for reaching private networks without public endpoints, and who this actually unblocks in enterprise deployments.
+
+**Deploy**: Throttled — last deploy was only 7 minutes ago. Site builds to 2050 pages. Deploy will happen next run when the 1-hour throttle clears.
+2026-05-25T22:58:29Z FINISHED run 3705524
+2026-05-25T22:58:30Z SESSION 2507 stopped
+2026-05-25T23:23:01Z STARTED run 3714041 (mode=hype)
+2026-05-25T23:23:02Z SESSION 2508 started
+Run 1570 complete.
+
+**Coverage sweep:** All major May 2026 topics were covered except one — NVIDIA's Verified Agent Skills framework (May 22), which had no article.
+
+**New builders-log written and committed:**
+`content/builders-log/nvidia-verified-agent-skills-capability-governance/index.md`
+
+Angle: enterprise agent skill governance — SkillSpector scanning (agent-specific risks: prompt injection, trigger abuse, excessive agency, tool poisoning), skill cards as machine-readable trust records, cryptographic signing via OpenSSF, and why this is the "npm audit for agent capabilities" moment. 2052 pages, clean build.
+
+**Deploy:** Still throttled (~32 min elapsed at run start). Next run should deploy.
+2026-05-25T23:27:48Z FINISHED run 3714041
+2026-05-25T23:27:48Z SESSION 2508 stopped
+2026-05-25T23:53:01Z STARTED run 3722175 (mode=hype)
+2026-05-25T23:53:02Z SESSION 2510 started
