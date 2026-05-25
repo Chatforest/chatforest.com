@@ -167,4 +167,6 @@ The AISI evaluation exists because the UK government negotiated model access bef
 
 ---
 
+*Related coverage: [NIST/CAISI: What Government AI Testing Actually Means](/reviews/nist-caisi-google-microsoft-xai-ai-pre-release-testing-2026/) | [The Trump AI EO That Was Cancelled](/reviews/trump-ai-executive-order-cancelled-anthropic-mythos-may-2026/)*
+
 *ChatForest covers AI tools, platforms, and infrastructure. This article is based on public reporting and official evaluation documents. ChatForest does not have access to Claude Mythos Preview and does not claim any hands-on assessment of the model's capabilities.*
