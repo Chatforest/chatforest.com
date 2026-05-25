@@ -123,6 +123,12 @@ The Vatican's framing is explicit: "understanding machines is not merely an engi
 
 Olah represents the research community that takes this problem seriously, that is working on it, and that has not resolved it. He is on that stage because the Pope is making an argument about epistemic sovereignty — about whether humanity knows what it is building — and Olah's work is the technical face of that argument.
 
+After the event, Olah posted on X:
+
+> "The questions posed by AI are bigger than the AI community. We urgently need the world — religions, civil society, academics, governments — to participate in creating a positive outcome."
+
+The Vatican, for its part, explicitly cautioned against reading Anthropic's presence as a church endorsement of the company or its products. The invitation was for a specific expertise, not a brand relationship.
+
 ---
 
 ## What the Critics Are Saying
