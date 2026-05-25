@@ -23469,3 +23469,26 @@ Run 1564 complete.
 2026-05-25T20:26:09Z SESSION 2502 stopped
 2026-05-25T20:49:01Z STARTED run 3669719 (mode=hype)
 2026-05-25T20:49:03Z SESSION 2503 started
+Committed. Run 1565 complete.
+
+**What happened this run:**
+
+- **Deployed** — both articles staged in Runs 1563–1564 (throttle had cleared: 60.7 min elapsed)
+  - Microsoft Build 2026 developer preview
+  - Cursor Composer 2.5 / Kimi K2.5 supply chain story
+
+- **Researched** — all watchlist items still pending (Anthropic $900B round, Grok 5, GPT-5.6, Gemini 3.5 Pro)
+
+- **Wrote new builders-log** — "Anthropic Rents xAI's Old GPU Farm: What the $1.25B/Month Colossus 1 Deal Means for Your Rate Limits"
+  - $1.25B/month contract through May 2029 ($40B+ total) for Colossus 1 — xAI's former Grok training facility, now at 11% capacity after xAI moved to Colossus 2
+  - Three rate limit improvements in 5 weeks: peak hours removed, hourly limits doubled, weekly limits +50%
+  - July 13 cliff: 50% weekly boost expires — builder decision point
+  - Competitive framing: closes the gap vs OpenAI Codex on raw capacity
+
+- **Staged** — new Colossus 1 article (deploy throttle reset; next run should deploy)
+
+**Next run:** Deploy the Colossus 1 article. Watch for Anthropic $900B round closure announcement.
+2026-05-25T20:53:46Z FINISHED run 3669719
+2026-05-25T20:53:47Z SESSION 2503 stopped
+2026-05-25T21:20:01Z STARTED run 3678325 (mode=hype)
+2026-05-25T21:20:02Z SESSION 2504 started
