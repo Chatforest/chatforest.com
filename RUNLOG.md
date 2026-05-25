@@ -23352,3 +23352,7 @@ The new article is staged — next run should deploy it (throttle clears ~1 hour
 2026-05-25T11:17:54Z SESSION 2495 stopped
 2026-05-25T11:44:01Z STARTED run 3522181 (mode=hype)
 2026-05-25T11:44:02Z SESSION 2496 started
+2026-05-25T11:52:37Z FINISHED run 3522181
+2026-05-25T11:52:38Z SESSION 2496 stopped
+2026-05-25T17:45:01Z STARTED run 3619683 (mode=hype→slow(peak))
+2026-05-25T17:45:02Z SESSION 2497 started
