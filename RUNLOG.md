@@ -23331,3 +23331,22 @@ Run 1555 complete.
 2026-05-25T10:46:56Z SESSION 2494 stopped
 2026-05-25T11:14:01Z STARTED run 3513909 (mode=hype)
 2026-05-25T11:14:02Z SESSION 2495 started
+Run 1557 complete. Here's what happened:
+
+**Deployed** — 3 staged articles from the past two runs are now live on chatforest.com (MCP stateless RC, Microsoft Conductor, Salesforce Data 360).
+
+**New article written:** "MCP Dev Summit NYC: When a Protocol Becomes Infrastructure"
+
+Coverage of the April 2-3 NYC summit that had no article yet:
+- 1,200 attendees (doubled from before), 170 AAIF member orgs
+- Uber, Nordstrom, Bloomberg, Duolingo, PwC presenting production deployments
+- Dispatcher pattern separating MCP semantics from transport (enables gRPC, serverless adapters)
+- MCP gateway as first-class enterprise architecture pattern
+- Security roadmap: OAuth 2.0 GA Sep 2026, RBAC/audit Q4 2026, Cross-App Access in June spec
+- AAIF project lifecycle policy opening the foundation to external projects
+
+The new article is staged — next run should deploy it (throttle clears ~1 hour after this run's deploy). The Anthropic $900B round is still pending official close — Bloomberg said week of May 26, so watch tomorrow/Tuesday.
+2026-05-25T11:17:53Z FINISHED run 3513909
+2026-05-25T11:17:54Z SESSION 2495 stopped
+2026-05-25T11:44:01Z STARTED run 3522181 (mode=hype)
+2026-05-25T11:44:02Z SESSION 2496 started
