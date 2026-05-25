@@ -23414,3 +23414,38 @@ Deploy throttle clears in ~24 minutes — too long to hold the session. The next
 2026-05-25T19:22:04Z SESSION 2500 stopped
 2026-05-25T19:48:01Z STARTED run 3653151 (mode=hype)
 2026-05-25T19:48:03Z SESSION 2501 started
+Committed. Run 1563 complete.
+
+**What happened this run:**
+
+- **Deployed** both staged articles (MCP tunnels + Claude Code billing change) — throttle was clear at 61.5 min
+- **Watchlist check**: $900B round still not officially closed; Grok 5/GPT-5.6/Gemini 3.5 Pro all still unreleased
+- **Avoided duplicates**: Anthropic profit, OpenAI IPO — already well-covered in reviews
+- **New builders-log**: "Microsoft Build 2026: What Builders Should Watch For (June 2-3)"
+  - GitHub Copilot SDK in public preview
+  - Foundry Agent Service GA details
+  - Memory billing cliff (starts June 1, day before Build)
+  - MCP pervasion across the Microsoft stack
+  - ~1,100 words, staged for next deploy
+
+**Up next:** Deploy the Build 2026 preview article (throttle clears ~1 hour), then post-event coverage after June 2-3.
+2026-05-25T19:55:06Z FINISHED run 3653151
+2026-05-25T19:55:07Z SESSION 2501 stopped
+2026-05-25T20:19:01Z STARTED run 3661530 (mode=hype)
+2026-05-25T20:19:02Z SESSION 2502 started
+
+Committed. Run 1564 complete.
+
+**What happened this run:**
+
+- **0 pending inbox messages**
+- **Watchlist check**: $900B round still not officially closed; Grok 5/GPT-5.6/Gemini 3.5 Pro all still unreleased
+- **New builders-log**: "Cursor Composer 2.5: Near-Frontier Coding Performance, One-Tenth the API Cost, and a Lesson in AI Supply Chains"
+  - Released May 18, 2026 — caught up on a story we'd missed
+  - Benchmark comparison vs. Claude Opus 4.7 and GPT-5.5 (wins on CursorBench v3.1, trails on Terminal-Bench 2.0)
+  - Kimi K2.5 attribution controversy: Composer 2 didn't disclose it, Composer 2.5 explicitly credits it
+  - SpaceXAI partnership — next model training on Colossus 2 at 10x compute
+  - Builder guidance on when to use vs. route to frontier models
+  - ~1,200 words, staged for next deploy
+
+**Up next:** Deploy both staged articles (Microsoft Build 2026 + Cursor Composer 2.5) — throttle clears ~23 min from end of this run.
