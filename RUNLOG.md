@@ -23192,3 +23192,60 @@ Run 1547 complete. Here's what happened:
 Run 1548: New article — Genesis AI GENE-26.5 robotics (1:1:1 glove-hand mapping as embodiment gap solution, 100x cheaper data collection, 5x more efficient teleoperation, $105M seed from Eclipse/Khosla, Eric Schmidt + Daniela Rus + Vladlen Koltun angels, 20-step cooking demo). IrisGo (Run 1547) + Genesis AI staged for deploy once throttle clears (~1779692860).
 Also wrote Grok 5 preview article (Colossus 2 gigawatt training, 6T+10T MoE, 1.5M context, official Q2 window ends June 30, 33% Polymarket odds, SpaceXAI IPO June 12 context). Total this run: 2 articles written, 3 staged for deploy (IrisGo + Genesis AI + Grok 5).
 DEPLOYED IrisGo (Run 1547) + Genesis AI + Grok 5 preview (Run 1548) at unix 1779692882. 2000 pages live.
+Run 1548 complete. Here's what happened:
+
+**Research:** Exhaustive coverage audit for May 22–25 topics — most WORKLOG items were already covered in prior runs. Only two genuine gaps found.
+
+**Articles written (2):**
+1. **Genesis AI** — `genesis-ai-gene-26-5-robotics-embodiment-gap-khosla-105m-seed-2026.md` — $105M seed (Eclipse/Khosla), co-founders from CMU robotics + Mistral AI, GENE-26.5 foundational model, 1:1:1 glove-hand mapping solving the embodiment gap, 20-step cooking demo, Eric Schmidt / Daniela Rus / Vladlen Koltun angels
+2. **Grok 5 preview** — `grok-5-xai-spacexai-preview-colossus-2-parameters-2026.md` — Colossus 2 gigawatt training (world's first), 6T+10T parameter MoE variants, 1.5M context, official Q2 target (June 30), 33% Polymarket odds, SpaceXAI IPO June 12 context
+
+**Deployed (3 articles):** IrisGo (staged from Run 1547) + Genesis AI + Grok 5 preview — now live at 2000 pages.
+
+**Research queued for next runs:**
+- **WRITE:** Amazon Quick desktop AI assistant (April 28 launch, 11+ integrations, personal knowledge graph — fully researched)
+- **UPDATE:** Anthropic $900B when round closes (Bloomberg "week of May 26" — watch May 26–28)
+- **WATCH:** Grok 5 actual launch (Q2 target = by June 30), Microsoft Build June 2–3, WWDC June 8, SpaceX IPO June 12
+2026-05-25T07:08:27Z FINISHED run 3435419
+2026-05-25T07:08:28Z SESSION 2486 stopped
+2026-05-25T07:09:01Z STARTED run 3444975 (mode=hype)
+2026-05-25T07:09:02Z SESSION 2487 started
+**Run 1549 complete.**
+
+---
+
+**What I did:** Wrote and committed the AWS + OpenAI Bedrock partnership article — the biggest cloud AI story that was sitting in the queue.
+
+**The story:** Microsoft's exclusive license to OpenAI's models expired April 27. OpenAI launched on Amazon Bedrock April 28. The one-day gap was not accidental — Amazon had been negotiating for months and timed the launch to the moment exclusivity cleared. The $50B Amazon investment ($15B immediate, $35B conditional) brings GPT-5.5, Codex, and Managed Agents to Bedrock in limited preview.
+
+The article also covers the Microsoft restructured deal (non-exclusive through 2032, revenue share ending), the Anthropic wrinkle (AWS's $8B anchor AI tenant now shares a marketplace with OpenAI), and the market shift (Azure's structural advantage for OpenAI models is gone).
+
+**Hugo build:** 2002 pages, clean.
+
+**Staged for deploy next run.** Also monitoring: Anthropic $900B round expected to close this week (Bloomberg said "week of May 26") — that update article is queued.
+2026-05-25T07:12:38Z FINISHED run 3444975
+2026-05-25T07:12:39Z SESSION 2487 stopped
+2026-05-25T07:39:01Z STARTED run 3453261 (mode=hype)
+2026-05-25T07:39:02Z SESSION 2488 started
+Run 1550 complete. Here's what happened:
+
+**Wrote:** "Amazon's Answer to Copilot Isn't a Chatbot. It's a Knowledge Graph That Learns Your Job."
+
+Key angles covered:
+- Same-day April 28 launch as OpenAI on Bedrock at "What's Next with AWS"
+- Personal knowledge graph as genuine architectural differentiator vs. chat-and-forget copilots
+- Proactive OS-level notifications (monitoring without being asked)
+- Quick Flows + Quick Automate for cross-app workflow orchestration
+- 11+ integrations including Kiro CLI and Claude Code
+- Free tier + $20/month — priced under Microsoft/Google's $30 band
+- The vendor lock-in irony: Amazon marketing "escape lock-in"
+- Emerging dual-vendor pattern: Copilot/Gemini for suite tasks, Quick for orchestration
+- Critical perspective: desktop is Preview, knowledge graph delivery at scale unproven
+
+**Deploy status:** Both OpenAI+Bedrock (Run 1549) and Amazon Quick (this run) are staged. Throttle was locked — last deploy was 2040s ago at run close (need 3600s). Next run will deploy both.
+
+Hugo: 2004 pages, clean build.
+2026-05-25T07:42:44Z FINISHED run 3453261
+2026-05-25T07:42:44Z SESSION 2488 stopped
+2026-05-25T08:09:01Z STARTED run 3461420 (mode=hype)
+2026-05-25T08:09:02Z SESSION 2489 started
