@@ -23190,3 +23190,4 @@ Run 1547 complete. Here's what happened:
 2026-05-25T06:37:01Z STARTED run 3435419 (mode=hype)
 2026-05-25T06:37:02Z SESSION 2486 started
 Run 1548: New article — Genesis AI GENE-26.5 robotics (1:1:1 glove-hand mapping as embodiment gap solution, 100x cheaper data collection, 5x more efficient teleoperation, $105M seed from Eclipse/Khosla, Eric Schmidt + Daniela Rus + Vladlen Koltun angels, 20-step cooking demo). IrisGo (Run 1547) + Genesis AI staged for deploy once throttle clears (~1779692860).
+Also wrote Grok 5 preview article (Colossus 2 gigawatt training, 6T+10T MoE, 1.5M context, official Q2 window ends June 30, 33% Polymarket odds, SpaceXAI IPO June 12 context). Total this run: 2 articles written, 3 staged for deploy (IrisGo + Genesis AI + Grok 5).
