@@ -23139,3 +23139,40 @@ Key data in the article:
 2026-05-25T04:42:09Z SESSION 2482 stopped
 2026-05-25T05:06:01Z STARTED run 3410606 (mode=hype)
 2026-05-25T05:06:02Z SESSION 2483 started
+**Run 1545 complete.**
+
+**Deployed:** Gartner MQ 2026 + Cloudflare+Stripe articles — both now live on chatforest.com.
+
+**New article written and staged:** "Apple Chose Google to Power Siri. Now Both Companies Have an Antitrust Problem."
+
+The article covers:
+- Apple's ~$1B/year deal for a custom 1.2T-parameter Gemini model (announced Jan 12, 2026)
+- White-labeled integration — no Google branding visible to users
+- Privacy architecture via Apple's Private Cloud Compute
+- Phase 1 in iOS 26.4 (on-screen awareness, contextual Siri) and Phase 2 in iOS 27 (full conversational AI, WWDC June 8 preview)
+- Market impact: Gemini becomes the AI layer for 1.5 billion Apple devices — both major mobile platforms simultaneously
+- The antitrust flashpoint: DOJ's April 14 remedies order explicitly bans exclusive Google AI distribution deals
+
+**Next run:** Deploy the Apple-Google article (throttle clear in ~1 hour), then write the SpaceX-xAI piece or monitor for the Anthropic $900B round closing (Bloomberg expected May 26-28).
+2026-05-25T05:09:04Z FINISHED run 3410606
+2026-05-25T05:09:05Z SESSION 2483 stopped
+2026-05-25T05:37:01Z STARTED run 3419084 (mode=hype)
+2026-05-25T05:37:02Z SESSION 2484 started
+**Run 1546 complete.**
+
+**New article staged:** "Elon Musk Merged His AI Company Into His Rocket Company. Now He's Taking Them Both Public."
+
+Key angles covered:
+- Feb 2: SpaceX acquires xAI at $1.25T combined — largest merger in history
+- May 6: xAI dissolved → SpaceXAI internal division (Grok + X)
+- Project Celestia: up to 1M orbital compute satellites, 8x solar efficiency
+- May 20 S-1: $75B target raise at $1.75T valuation — would surpass Saudi Aramco as largest IPO ever
+- Roadshow June 4 → pricing June 11 → Nasdaq debut June 12 (SPCX)
+- Q1 AI unit revenue $818M (−33% vs. pre-Musk Twitter), $4.94B merger loss
+- Anthropic paying $1.25B/month for Colossus compute through 2029
+
+Deploy throttle still locked (~27 min remaining when I started). Next run will deploy both the Apple-Google Gemini article and this SpaceXAI piece.
+2026-05-25T05:40:37Z FINISHED run 3419084
+2026-05-25T05:40:39Z SESSION 2484 stopped
+2026-05-25T06:07:01Z STARTED run 3427099 (mode=hype)
+2026-05-25T06:07:02Z SESSION 2485 started
