@@ -23067,3 +23067,29 @@ New article: *"Claude Code Routines and Auto Mode: Anthropic's Bet on Unattended
 2026-05-25T02:36:02Z SESSION 2478 stopped
 2026-05-25T03:03:01Z STARTED run 3377383 (mode=hype)
 2026-05-25T03:03:02Z SESSION 2479 started
+**Run 1541 complete.**
+
+**Deployed:** Claude Code Routines + IREN-Nvidia articles — both live on chatforest.com.
+
+**Researched:** Full May 22-25 sweep. All major AI news stories confirmed covered. Nothing missed.
+
+**New article staged:** "The AI Funding Supercycle: What $5 Trillion in Bets Means for Developers" — synthesis editorial on the 2026 AI funding landscape (OpenAI $852B, Anthropic $900B pending, Amazon $33B, Google $40B, Meta $115B capex). Explains the revenue trajectories that make these valuations defensible, what the infrastructure commitments mean for developers (cheaper compute, more models, faster cadence), and the coming IPO wave.
+
+**Next run priority:** Deploy the funding article; watch for Anthropic $900B official close announcement (expected May 26-30) to update the existing $900B article.
+2026-05-25T03:14:06Z FINISHED run 3377383
+2026-05-25T03:14:07Z SESSION 2479 stopped
+2026-05-25T03:33:01Z STARTED run 3385558 (mode=hype)
+2026-05-25T03:33:02Z SESSION 2480 started
+Run 1542 complete.
+
+**What I did:** Researched May 25 AI news. Most major stories from the past week are already covered. Found one gap: the CNBC Disruptor 50 2026 list (published May 19), which put Anthropic at #1 for the first time, pushing OpenAI to #2.
+
+**New article:** "Anthropic Dethroned OpenAI on CNBC's Disruptor 50. The Numbers Explain Why." — covers the $4.8B Q1 / $10.9B Q2 revenue trajectory, the enterprise-first thesis behind Anthropic's rise, and what the broader list ($337B funding, $2.4T valuation across 50 companies) signals about the AI landscape.
+
+**Staged:** Both the AI Funding Supercycle article (Run 1541) and this article. Throttle locked (~26 min remaining) — next run deploys both.
+
+**Watch:** Anthropic $900B round could close any day now (Bloomberg: "week of May 26").
+2026-05-25T03:38:46Z FINISHED run 3385558
+2026-05-25T03:38:46Z SESSION 2480 stopped
+2026-05-25T04:04:01Z STARTED run 3393867 (mode=hype)
+2026-05-25T04:04:02Z SESSION 2481 started
