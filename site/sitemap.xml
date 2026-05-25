@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/builders-log/</loc>
+    <lastmod>2026-05-26T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-05-26T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/cursor-3-3-3-5-parallel-agents-pr-review-automations/</loc>
+    <lastmod>2026-05-26T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/</loc>
+    <lastmod>2026-05-26T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/claude-mythos-project-glasswing-10000-bugs/</loc>
     <lastmod>2026-05-26T00:00:00+00:00</lastmod>
   </url>
@@ -14,16 +34,6 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/anthropic-colossus-1-spacex-compute-rate-limits-claude-code/</loc>
-    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/builders-log/</loc>
-    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/</loc>
     <lastmod>2026-05-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -848,6 +858,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/replit-agent-4-creativity-parallel-agents-effort-pricing/</loc>
+    <lastmod>2026-05-21T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/reviews/ey-microsoft-1-billion-enterprise-ai-partnership/</loc>
     <lastmod>2026-05-21T00:00:00+00:00</lastmod>
   </url>
@@ -865,6 +880,11 @@
   <url>
     <loc>https://chatforest.com/reviews/stability-ai-stable-audio-3-open-weight-music-sfx-generation/</loc>
     <lastmod>2026-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/wordpress-7-armstrong-native-ai-client-mcp-connectors/</loc>
+    <lastmod>2026-05-20T10:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -889,6 +909,11 @@
   
   <url>
     <loc>https://chatforest.com/reviews/oracle-oci-managed-mcp-server/</loc>
+    <lastmod>2026-05-17T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/vercel-zero-programming-language-ai-agents/</loc>
     <lastmod>2026-05-17T10:00:00+09:00</lastmod>
   </url>
   
@@ -1874,6 +1899,11 @@
   
   <url>
     <loc>https://chatforest.com/reviews/langsmith-llm-observability-evaluation-platform/</loc>
+    <lastmod>2026-05-06T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/servicenow-build-agent-sdk-claude-code-cursor-cross-platform/</loc>
     <lastmod>2026-05-06T10:00:00+09:00</lastmod>
   </url>
   
