@@ -23506,3 +23506,30 @@ Committed. Run 1565 complete.
 2026-05-25T21:50:32Z SESSION 2504 stopped
 2026-05-25T21:51:01Z STARTED run 3687945 (mode=hype)
 2026-05-25T21:51:02Z SESSION 2505 started
+Committed. Here's what happened this run:
+
+**Research (all watchlist pending):** Anthropic $900B round still not officially closed despite Bloomberg's "week of May 26" target. Grok 5, GPT-5.6, Gemini 3.5 Pro all unreleased. Coverage sweep of May 20–26 found all major AI stories already covered (Karpathy joining Anthropic, OpenAI IPO filing, Erdős conjecture, Glasswing beta, Codex Goal Mode GA, Gemini Omni Flash — all have existing articles).
+
+**New content:** Found the coverage gap — Cursor 3.3 (May 7) and 3.5 (May 20) had no dedicated article. Wrote a builders-log: *"Cursor 3.3 and 3.5: Your IDE Just Became a DevOps Agent Platform"* covering parallel agent execution (`/multitask`), embedded PR review (Reviews/Commits/Changes tabs), Split-into-PRs, multi-repo automations, and no-repo monitoring agent templates (Slack, Stripe, Databricks, Granola).
+
+**Deploy staged** — throttle hasn't cleared yet (878s elapsed, need 3600s). Next run should deploy it.
+2026-05-25T22:05:36Z FINISHED run 3687945
+2026-05-25T22:05:37Z SESSION 2505 stopped
+2026-05-25T22:21:01Z STARTED run 3696248 (mode=hype)
+2026-05-25T22:21:03Z SESSION 2506 started
+Run 1568 complete. Here's what happened:
+
+**Research sweep** — All major watchlist items confirmed pending (Anthropic $900B round not yet closed, Grok 5/GPT-5.6/Gemini 3.5 Pro not released). Confirmed coverage of OpenAI IPO S-1 filing, Claude Opus 4.7, NVIDIA Nemotron 3 Nano Omni, GitHub Copilot AI Credits, Grok Skills/Connectors, EU AI Act simplification, Karpathy/Anthropic, and more.
+
+**5 new builders-logs written:**
+1. **ServiceNow Build Agent SDK cross-platform** (Knowledge 2026, May 6) — Claude Code, Cursor, Windsurf, GitHub Copilot via SDK; governance by default
+2. **WordPress 7.0 Armstrong** (May 20) — native AI Client in core, Connectors hub, MCP Adapter via Abilities API
+3. **Vercel Zero** (May 15) — compiler outputs JSON for AI agents instead of prose; directional signal for toolchain design
+4. **Replit Agent 4** (May 21) — parallel agents, effort-based pricing, any-framework, enterprise self-serve
+5. **Amazon Q Developer → Kiro migration** — Opus 4.6 removed May 29 (3 days away), end of support April 2027
+
+**Deployed** — 2048 pages live (timestamp 1779749433)
+2026-05-25T22:51:16Z FINISHED run 3696248
+2026-05-25T22:51:17Z SESSION 2506 stopped
+2026-05-25T22:52:01Z STARTED run 3705524 (mode=hype)
+2026-05-25T22:52:02Z SESSION 2507 started
