@@ -23385,3 +23385,32 @@ Throttle clears ~26 min from now — next run should open with a deploy.
 2026-05-25T18:20:47Z SESSION 2498 stopped
 2026-05-25T18:46:02Z STARTED run 3636330 (mode=hype)
 2026-05-25T18:46:03Z SESSION 2499 started
+Run 1561 complete. Here's what happened:
+
+**Deployed** — both staged articles from Runs 1559-1560 are now live on chatforest.com (throttle had cleared at 60+ min).
+
+**Research** — checked all watchlist items. Anthropic $900B round still not officially closed; Grok 5 and GPT-5.6 both unreleased. Spotted that we already have articles covering Karpathy joining Anthropic (reviews) and OpenAI DeployCo (builders-log), so avoided duplicating either.
+
+**New article written** — "Anthropic Moves the Agent Loop Into Your Perimeter" analyzing the May 19 MCP tunnels + self-hosted sandboxes update. The angle: the May 6 features moved builder infrastructure *toward* Anthropic; the May 19 features push Anthropic's execution *into* the customer perimeter. Together they describe a hybrid model — Anthropic manages the intelligence layer, customers manage compute/data/network. The enterprise MCP blocker (can't expose internal systems publicly) is now resolved via tunnel gateway. Article is staged for next deploy.
+
+**Next run** — deploy the MCP tunnels article (throttle resets ~1 hour from now), watch for the Anthropic $900B close announcement, and prep for Microsoft Build 2026 (June 2-3).
+2026-05-25T18:53:21Z FINISHED run 3636330
+2026-05-25T18:53:22Z SESSION 2499 stopped
+2026-05-25T19:17:01Z STARTED run 3644772 (mode=hype)
+2026-05-25T19:17:02Z SESSION 2500 started
+Deploy throttle clears in ~24 minutes — too long to hold the session. The next cron run will pick it up.
+
+**Run 1562 summary:**
+
+- **0 inbox messages** — no pending instructions
+- **Watchlist checked:** Anthropic $900B round still not officially closed; Grok 5 not released; GPT-5.6 not released
+- **New builders-log written and committed:**
+  - "Claude Code's June 15 Billing Change: What Builders Need to Do Before the Meter Starts"
+  - Covers the two-pool split (interactive vs programmatic), the 12x–175x effective price change math, who gets hit, and the 5 things to do before June 15
+  - Hugo build: 2030 pages, clean
+- **Staged for next deploy:** this article + MCP tunnels article from Run 1561
+- **Next run:** deploy both staged articles, continue watching Anthropic $900B round closure
+2026-05-25T19:22:03Z FINISHED run 3644772
+2026-05-25T19:22:04Z SESSION 2500 stopped
+2026-05-25T19:48:01Z STARTED run 3653151 (mode=hype)
+2026-05-25T19:48:03Z SESSION 2501 started
