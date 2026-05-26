@@ -84,13 +84,13 @@ This guide compares the eight serious contenders as of May 2026. [Rob Nugen](htt
 - **Remote CLI sessions**: Monitor and steer running CLI sessions from the web or GitHub Mobile with real-time sync
 - **Data residency**: US and EU region support, plus [FedRAMP Moderate](https://github.blog/changelog/month/04-2026/) for US government customers
 
-**Pricing:** Free (2,000 completions + 50 premium requests/mo), Pro ($10/mo, 300 premium requests), Pro+ ($39/mo, 1,500 premium requests), Business ($19/seat/mo), Enterprise ($39/seat/mo, requires GitHub Enterprise Cloud). [Full plan comparison](https://github.com/features/copilot/plans).
+**Pricing:** Free (2,000 completions + 50 premium requests/mo), Pro ($10/mo, includes $10 in AI Credits), Pro+ ($39/mo, includes $39 in AI Credits), Business ($19/seat/mo), Enterprise ($39/seat/mo, requires GitHub Enterprise Cloud). [Full plan comparison](https://github.com/features/copilot/plans). **Note:** Starting June 1, 2026, Premium Request Units are replaced by [GitHub AI Credits](/reviews/github-copilot-usage-based-billing-ai-credits-june-2026/) — a token-based system where 1 credit = $0.01. Code completions remain free; chat and agentic sessions draw from your credit pool.
 
 **MCP integration:** Agent Mode supports MCP servers, allowing you to connect external tools and services directly into Copilot workflows.
 
 **Best for:** Teams already deep in the GitHub ecosystem. The $10/mo Pro tier is the cheapest entry point for a capable AI coding assistant with unlimited completions. Enterprise teams benefit from centralized management and policy controls.
 
-**Limitations:** The free and Pro tiers have limited premium requests, which gate access to better models and agent features. Agent capabilities trail behind dedicated agentic tools like Claude Code and Cursor. **Note:** GitHub [paused all Copilot Pro free trials](https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials/) on April 13, 2026 due to abuse — paid subscriptions and Copilot Free remain active. Also, starting April 24, 2026, interaction data from Free/Pro/Pro+ individual users will be [used for AI model training by default](https://smartscope.blog/en/generative-ai/github-copilot/github-copilot-data-training-policy-2026/) (opt-out, not opt-in).
+**Limitations:** Agent capabilities trail behind dedicated agentic tools like Claude Code and Cursor. **Note:** GitHub [paused all Copilot Pro free trials](https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials/) on April 13, 2026 due to abuse — paid subscriptions and Copilot Free remain active. Starting April 24, 2026, interaction data from Free/Pro/Pro+ individual users is [used for AI model training by default](https://smartscope.blog/en/generative-ai/github-copilot/github-copilot-data-training-policy-2026/) (opt-out, not opt-in). **Billing change (June 1, 2026):** Heavy agentic users on Pro ($10/mo) could exhaust their credit pool in under two weeks if running flagship models (Claude Sonnet 4.6, GPT-5.4) on multi-file tasks. See [the full breakdown](/reviews/github-copilot-usage-based-billing-ai-credits-june-2026/).
 
 ## Windsurf
 
@@ -255,7 +255,7 @@ For a solo developer:
 **Cheapest entry:** GitHub Copilot Pro at $10/mo.
 **Best value for agentic work:** Windsurf Pro at $15/mo — or Grok Build at $30/mo if you're already a SuperGrok subscriber.
 **Best value for autocomplete + agent combo:** Cursor Pro at $20/mo.
-**Most cost-predictable:** GitHub Copilot (fixed premium request counts, no credit surprises).
+**Most cost-predictable:** Windsurf Pro ($15/mo with quota-based billing, no per-token surprises).
 
 ## Benchmarks: Take Them With a Grain of Salt
 
