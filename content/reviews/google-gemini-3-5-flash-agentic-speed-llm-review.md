@@ -6,6 +6,7 @@ tags: ["llm", "multimodal", "agentic", "google", "speed", "frontier-models", "th
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+last_refreshed: 2026-05-26
 ---
 
 Google launched **Gemini 3.5 Flash** at Google I/O 2026 on May 19, 2026, and the positioning is direct: this is not a Pro model with Flash's name on it, and it is not a Flash model trimmed for price. It is an argument that the Flash tier has grown up.
@@ -151,9 +152,10 @@ Google claims enterprise teams running high-volume agentic workflows at competit
 
 The 3x price increase over Gemini 3 Flash is the counterpoint. Teams that built cost models around Gemini 3 Flash pricing will need to revisit those assumptions. The capability improvement is substantial, but the price increase is not trivial.
 
-**Consumer subscriptions:**
-- Google AI Pro ($19.99/month): includes Gemini 3.5 Flash
-- Google AI Ultra ($249.99/month, $124.99 first three months): includes Gemini 3.5 Flash
+**Consumer subscriptions** *(updated May 26, 2026 per Google I/O 2026 restructuring)*:
+- Google AI Pro (~$19.99/month, formerly Gemini Advanced): includes Gemini 3.5 Flash
+- Google AI Ultra $100/month (new tier, announced I/O 2026): includes Gemini 3.5 Flash, 5× Pro usage limits, 20 TB storage, YouTube Premium, priority Antigravity access
+- Google AI Ultra $200/month (formerly $250/month): includes Gemini 3.5 Flash, 20× Pro usage limits, Gemini 3.5 Pro preview access
 - Free tier: Gemini 3 Flash; not Gemini 3.5 Flash
 
 ---
