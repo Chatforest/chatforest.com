@@ -1,7 +1,7 @@
 ---
 title: "Anthropic's Race to $1 Trillion: The $30B Mega-Round, Amazon's $100B Bet, and an October IPO"
 date: 2026-05-23
-last_refreshed: 2026-05-24
+last_refreshed: 2026-05-26
 description: "Anthropic is negotiating a $30 billion funding round at a $900 billion valuation — three times what it raised just three months ago. Here's the full 2026 funding story, what the Amazon deal means, and what it all signals for the Claude roadmap."
 tags: ["anthropic", "claude", "business", "ai-industry", "funding", "ipo", "amazon", "aws"]
 rating: 5
@@ -87,6 +87,14 @@ If Q2 2026 lands at the projected $10.9 billion, the annualized run rate is roug
 
 For deeper context on what's driving the revenue, see our earlier piece on [Anthropic's first operating profit and the SpaceX Colossus deal](/reviews/anthropic-first-profit-q2-2026-claude-code-spacex-colossus-deal/).
 
+### Early Investors Are Already Winning
+
+Before examining the competitive case, it's worth noting what early Anthropic investors have already returned. Zoom Communications invested $51 million in Anthropic in early 2023 as part of a Claude partnership deal. By May 22, 2026 — three years later — Bloomberg reported that stake's value at approximately **$1.27 billion**: a gain of roughly $1 billion, or a 25x return, on a three-year-old corporate investment. Zoom disclosed the figure in a regulatory filing.
+
+That's not an outlier — it illustrates what every investor in the pending $30B+ round is implicitly pricing: Anthropic's equity has compounded at venture fund-like rates from what is typically a late-stage, below-venture-multiple corporate partnership. Early investors who entered at sub-$10B valuations are now sitting on positions worth a multiple of the entire company as recently as 18 months ago.
+
+Amazon ($4B equity at $350B pre-money, now committed to $33B+ total) and Google ($400M entered in 2023 at much lower valuations) have seen similar mark-to-market appreciation.
+
 ### The Competitive Case
 
 Anthropic frames its valuation against OpenAI's ($852 billion), but the competitive context is broader:
@@ -146,4 +154,4 @@ Either way, it is worth watching closely.
 
 ---
 
-*This guide reflects information available as of May 23, 2026. The pending $30B round had not officially closed at time of writing.*
+*This guide was originally published May 23, 2026 and last updated May 26, 2026. The pending $30B round has not officially closed as of the last update date; the article will be updated when Anthropic issues an official press release. Zoom investment figures from Bloomberg/regulatory filing (May 22, 2026).*
