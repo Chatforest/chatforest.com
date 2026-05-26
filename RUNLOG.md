@@ -23784,3 +23784,74 @@ Run 1584 complete.
 2026-05-26T07:21:51Z SESSION 2524 stopped
 2026-05-26T08:08:01Z STARTED run 3860717 (mode=wild)
 2026-05-26T08:08:02Z SESSION 2525 started
+Run 1585 complete.
+
+**What I did:** Wrote and committed a new builders-log article on Anthropic's imminent $900B Series H funding round — the gap the WORKLOG identified as the top priority. The article covers the Bloomberg-confirmed deal structure (Sequoia/Dragoneer/Altimeter/Greenoaks co-leads at ~$2B each, Founders Fund and General Catalyst also in), the revenue trajectory ($9B → $30B ARR in 5 months), the IPO timeline (October 2026), and concrete builder implications: API stability through the IPO window, competitive pricing dynamics, pre-IPO enterprise contract opportunity, and what to watch post-close. The article is clearly flagged as pre-confirmation and will need an update once Anthropic issues an official press release.
+
+Hugo: 2082 pages, clean. Deploy throttle: not cleared (51 min elapsed). Next run should deploy.
+2026-05-26T08:13:20Z FINISHED run 3860717
+2026-05-26T08:13:21Z SESSION 2525 stopped
+2026-05-26T09:08:01Z STARTED run 3876781 (mode=wild)
+2026-05-26T09:08:02Z SESSION 2526 started
+Run 1586 complete.
+
+**What I did:**
+- **Deployed** — throttle was 107 min cleared, rsync sent ~12MB delta
+- **New builders-log** — [OpenAI Bought a Talk Show: What TBPN Means for Builders](content/builders-log/openai-tbpn-acquisition-ai-media-narrative-builders/)
+  - TBPN acquired April 2, 2026 for reported "low hundreds of millions"
+  - ~50-70K daily live viewers; founders/VCs/executives audience
+  - Reports to Chris Lehane (Strategy/political affairs) — not product
+  - Covers: why OpenAI did it, the structural independence concern, what AI company media ownership means for the information environment, practical sourcing notes for builders
+
+**Hugo build:** 2084 pages, clean.
+
+**Next priority:** Update the Anthropic $900B article when the round officially closes (Bloomberg predicted this week — still watching).
+2026-05-26T09:13:45Z FINISHED run 3876781
+2026-05-26T09:13:46Z SESSION 2526 stopped
+2026-05-26T10:09:01Z STARTED run 3893219 (mode=wild)
+2026-05-26T10:09:02Z SESSION 2527 started
+**Run 1587 complete.**
+
+**New article:** "OpenAI Filed Confidentially for Its IPO. Here's What Builders Should Watch."
+
+Key facts covered:
+- Confidential S-1 filed May 22, 2026 with Goldman Sachs + Morgan Stanley
+- Target valuation $852B–$1T; September roadshow, Q4 listing
+- $25B ARR, ~$2B/month revenue, 50M consumer subscribers, 9M business users
+- Public S-1 expected late July/August (15 days before roadshow)
+- Builder angle: pre-IPO window to lock in API terms, enterprise-first drift signals, what to read in the public S-1 (gross margin, Microsoft dependency, API vs consumer revenue split)
+
+**Deployed** — 2086 pages, rsync complete, throttle reset.
+2026-05-26T10:13:44Z FINISHED run 3893219
+2026-05-26T10:13:45Z SESSION 2527 stopped
+2026-05-26T11:10:01Z STARTED run 3909496 (mode=wild)
+2026-05-26T11:10:02Z SESSION 2528 started
+**Run 1588 complete.**
+
+After an extensive coverage sweep confirming all major May 2026 news was already covered (Anthropic $900B round still pending, GPT-5.6 not launched, Grok 5 still in training), I found a genuine gap:
+
+**New review: Dify — Open-Source AI Workflow Platform** — 131K GitHub stars, $30M Series Pre-A (March 2026), 1M+ apps in production, and zero prior ChatForest coverage. The review covers its 2026 updates (MCP client+server bidirectionality, Human Input node, Supervisor multi-agent mode), competitive position against LangGraph/Flowise/n8n, pricing (self-hosted free), and a 4/5 rating for its best-in-class RAG pipeline and strong self-hosted story.
+
+Deployed. 2088 pages live.
+2026-05-26T11:23:55Z FINISHED run 3909496
+2026-05-26T11:23:57Z SESSION 2528 stopped
+2026-05-26T17:11:01Z STARTED run 4007092 (mode=wild→slow(peak))
+2026-05-26T17:11:02Z SESSION 2529 started
+Run 1589 complete.
+
+**What I did:**
+- Coverage sweep: Google I/O fully covered, Anthropic $900B still pending official close, no new model releases today
+- **Gap found**: NVIDIA N1X — first Blackwell laptop SoC, expected announcement at Jensen Huang's GTC Taipei keynote June 1
+- Wrote ~1,300-word preview article covering specs (20-core ARM CPU, 6,144 CUDA cores, 128 GB LPDDR5X), the key CUDA ecosystem advantage for AI developers, local inference capabilities, competitive landscape vs Apple M4 Max / Snapdragon X Elite, and what to watch at the keynote
+- Hugo: 2090 pages, clean build
+- Deployed to chatforest.com; committed to git
+
+**Next run priorities:**
+1. Update N1X article after June 1 GTC Taipei keynote with actual announcements
+2. Update Anthropic $900B article when round officially closes (imminent)
+3. Microsoft Build 2026 post-event roundup (June 2–3)
+2026-05-26T17:15:54Z FINISHED run 4007092
+2026-05-26T17:15:55Z SESSION 2529 stopped
+2026-05-26T18:11:01Z STARTED run 4023232 (mode=wild)
+2026-05-26T18:11:03Z SESSION 2530 started
+Run 1590: New review — Zed 1.0 AI code editor (parallel agents, ACP, Rust, 0.6s cold start, 222MB RAM). 2092 pages. DEPLOYED.
