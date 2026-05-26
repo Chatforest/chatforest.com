@@ -1,11 +1,11 @@
-# AI Coding Assistants Compared (2026) — 7 Tools Ranked
+# AI Coding Assistants Compared (2026) — 8 Tools Ranked
 
-> Claude Code vs Cursor vs Copilot vs Windsurf vs Codex vs Kiro vs Antigravity — features, pricing, and agent mode compared. Which AI coding tool fits your workflow?
+> Claude Code vs Cursor vs Copilot vs Windsurf vs Codex vs Kiro vs Antigravity vs Grok Build — features, pricing, and agent mode compared. Which AI coding tool fits your workflow?
 
 
 The AI coding assistant landscape in 2026 has shifted from autocomplete to autonomous agents. Every major tool now offers some form of agent mode — AI that can read your codebase, plan changes across files, run commands, and open pull requests. The question is no longer "should I use an AI coding tool?" but "which one fits how I work?"
 
-This guide compares the seven serious contenders as of April 2026. [Rob Nugen](https://robnugen.com) operates ChatForest, but the site's content is researched and written by AI.
+This guide compares the eight serious contenders as of May 2026. [Rob Nugen](https://robnugen.com) operates ChatForest, but the site's content is researched and written by AI.
 
 ## The Quick Comparison
 
@@ -18,6 +18,7 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 | **OpenAI Codex** | Terminal agent + web | $20/mo (ChatGPT Plus) | Yes | Yes | Open-source flexibility, token efficiency |
 | **Amazon Kiro** | IDE (VS Code-based) | $20/mo | Yes | Yes | Spec-driven development, AWS integration |
 | **Google Antigravity** | IDE + manager | Free (AI Studio) | Yes | Yes | Parallel agents, Google/Firebase ecosystem |
+| **Grok Build** | Terminal agent | $30/mo (SuperGrok) | Yes (worktree-isolated) | Yes (ACP + MCP) | Worktree parallel agents, X ecosystem |
 
 ## Claude Code
 
@@ -53,6 +54,8 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 - **[Bugbot](https://cursor.com/bugbot)**: Automated code review with [78% resolution rate](https://cursor.com/blog/building-bugbot) across 50,000+ PRs, MCP support, and [self-improvement from PR feedback](https://cursor.com/blog/bugbot-learning)
 
 **Pricing:** Free (Hobby), Pro ($20/mo with credit pool), Pro+ ($60/mo, 3x credits), Ultra ($200/mo, 20x credits), Teams ($40/seat/mo). [Credit-based billing](https://cursor.com/pricing) since June 2025 — auto mode is unlimited, premium model selection draws from credits.
+
+*(May 2026 update: [Cursor Composer 2.5](/reviews/cursor-composer-2-5-kimi-k2-5-coding-agent-benchmark/) launched May 18, powered by Kimi K2.5. Standard tier pricing: $0.50 input / $2.50 output per M tokens — roughly 10–60× cheaper than GPT-5.5/Claude Opus 4.7 for comparable coding performance. This significantly changes the cost calculus for Cursor business users who were paying for premium model credits.)*
 
 **MCP integration:** Supports MCP servers for extending capabilities, including in Bugbot for automated code review. MCP Apps now support structured content for richer tool outputs.
 
@@ -164,6 +167,29 @@ This guide compares the seven serious contenders as of April 2026. [Rob Nugen](h
 
 **Limitations:** Google ecosystem bias — MCP integrations are strongest for Google services. Newer than competitors, so community resources and third-party integrations are still catching up.
 
+## Grok Build
+
+**What it is:** xAI's [terminal-native agentic coding agent](/reviews/xai-grok-build-terminal-coding-agent-review/), launched May 2026. Its defining architecture: every parallel subagent runs in its own isolated Git worktree. Powered by Grok Build 0.1 (a purpose-built agentic coding model separate from the Grok 4 chat model).
+
+**Key strengths:**
+- **Worktree isolation**: Each parallel subagent works in an isolated Git worktree — no shared-state collisions, no mid-run partial writes. Conflicts surface cleanly at merge time with clean diffs. This is the most architecturally distinct approach to parallel coding in the market
+- **Plan-review-approve loop**: Default mode for complex tasks is structured planning, not immediate execution — review and redirect before any code is written
+- **ACP (Agent Client Protocol)**: Open standard for agent-to-agent communication, making Grok Build composable in larger orchestration systems
+- **Prompt transparency**: Ships system prompts in plaintext — you can read exactly what instructions the agent is operating under (Claude Code, Codex CLI, and Cursor do not)
+- **Local-first**: All code runs on your machine; air-gap compatible for sensitive codebases
+- **Standard ecosystem**: Reads AGENTS.md, native MCP support, hooks, headless mode (`-p`)
+- **Accessible pricing**: As of May 24, 2026, access expanded from SuperGrok Heavy-only ($99–299/mo) to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers
+
+**Pricing:** SuperGrok at **$30/month** or X Premium+ at $40/month — both include full Grok Build access. SuperGrok Heavy ($99/mo intro, $299/mo standard) provides higher throughput allocations. API: $1.00/$2.00 per M tokens.
+
+**Benchmarks:** SWE-Bench Verified: **70.8%** — compared to Claude Code (87.6%) and Codex CLI (88.7%). A 17-point gap that limits production use for benchmark-representable coding tasks today.
+
+**MCP integration:** Supported, plus ACP for agent-to-agent orchestration.
+
+**Best for:** Developers experimenting with worktree-isolated parallel architectures, teams building custom orchestration layers (ACP gives open-standard integration), and existing SuperGrok/X Premium+ subscribers for whom Grok Build has zero marginal cost.
+
+**Limitations:** Significant SWE-Bench gap vs. top competitors. Early access quality — expect rough edges. 256K context (Grok Build 0.1) vs. 2M for Grok 4 chat. Arena Mode (multi-agent result comparison) is confirmed in code but not yet live.
+
 ## Feature Comparison Deep Dive
 
 ### Agent Capabilities
@@ -215,12 +241,13 @@ For a solo developer:
 | Cursor | $20/mo (Pro) | $60/mo (Pro+) | $200/mo (Ultra) |
 | Copilot | $10/mo (Pro) | $39/mo (Pro+) | $39/mo (Pro+) |
 | Windsurf | $15/mo (Pro) | $30/mo (Teams) | $60/mo (Pro Ultimate) |
-| Codex | $20/mo (ChatGPT Plus) | API billing | API billing |
+| Codex | $20/mo (ChatGPT Plus) | $100/mo (Pro, 5x Codex) | $200/mo (Pro, 20x Codex) |
 | Kiro | $20/mo (Pro) | $40/mo (Pro+) | $200/mo (Power) |
 | Antigravity | Free (AI Studio) | Usage-based | Usage-based |
+| Grok Build | $30/mo (SuperGrok, bundled) | $99/mo intro (Heavy) | $299/mo (Heavy standard) |
 
 **Cheapest entry:** GitHub Copilot Pro at $10/mo.
-**Best value for agentic work:** Windsurf Pro at $15/mo.
+**Best value for agentic work:** Windsurf Pro at $15/mo — or Grok Build at $30/mo if you're already a SuperGrok subscriber.
 **Best value for autocomplete + agent combo:** Cursor Pro at $20/mo.
 **Most cost-predictable:** GitHub Copilot (fixed premium request counts, no credit surprises).
 
@@ -256,9 +283,11 @@ The practical takeaway: Claude Mythos Preview's 93.9% suggests a genuine capabil
 
 **Choose Google Antigravity if** you're in the Google/Firebase ecosystem and want to run multiple parallel agents. The Manager View orchestration is genuinely novel, and MCP Store integrations connect directly to Google Data Cloud services.
 
+**Choose Grok Build if** you're already a SuperGrok or X Premium+ subscriber (zero marginal cost), you want to experiment with worktree-isolated parallel agents before the rest of the market catches up, or you're building agent orchestration systems and want open ACP integration. Not recommended as a production replacement for Claude Code or Codex CLI yet — the SWE-Bench gap is real. Worth evaluating if Grok 5 closes that gap later in 2026.
+
 ## The Bigger Picture
 
-The 2026 AI coding landscape has converged on a common architecture: autocomplete for fast typing, agent mode for complex tasks, and MCP for extensibility — all seven tools now support MCP. The differentiation is shifting from "can it write code?" to:
+The 2026 AI coding landscape has converged on a common architecture: autocomplete for fast typing, agent mode for complex tasks, and MCP for extensibility — all eight tools now support MCP. The newest differentiator is worktree-isolated parallel agents, pioneered by Windsurf (Wave 13) and now by Grok Build's deeper architectural commitment. The differentiation is shifting from "can it write code?" to:
 
 - **How does it integrate with your existing workflow?** (Terminal vs IDE, GitHub vs AWS vs Google)
 - **How autonomous can it be?** (Background agents, cloud routines, parallel processing, headless CI/CD)
@@ -283,7 +312,7 @@ Yes, and most developers do. A common setup: Claude Code for complex refactoring
 
 **How much do AI coding assistants cost in 2026?**
 
-GitHub Copilot starts at $10/month. Windsurf is $15/month. Cursor Pro is $20/month. Claude Code is $20/month for Max (or pay-per-use via API). OpenAI Codex is included with ChatGPT Pro ($200/month) or Plus ($20/month with limits). Amazon Kiro and Google Antigravity are free during preview. Most offer free tiers with limited usage.
+GitHub Copilot starts at $10/month. Windsurf is $15/month. Cursor Pro is $20/month. Grok Build is included in SuperGrok ($30/month) and X Premium+ ($40/month). Claude Code is included with Claude Max at $100/month (5×) or $200/month (20×). OpenAI Codex is included with ChatGPT Plus ($20/month with limits), Pro $100/month (5× Codex vs. Plus), or Pro $200/month (20× Codex, unlimited frontier). Most offer free tiers with limited usage.
 
 **What is MCP and why does it matter for coding tools?**
 

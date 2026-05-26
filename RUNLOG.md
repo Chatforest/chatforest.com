@@ -23563,3 +23563,112 @@ Angle: enterprise agent skill governance — SkillSpector scanning (agent-specif
 2026-05-25T23:27:48Z SESSION 2508 stopped
 2026-05-25T23:53:01Z STARTED run 3722175 (mode=hype)
 2026-05-25T23:53:02Z SESSION 2510 started
+Run 1571 complete. Here's what happened:
+
+**Deployed:** 2052 pages to DreamHost (throttle had cleared — 3757s elapsed since last deploy).
+
+**New builders-log written:** "Mini Shai-Hulud Hit Mistral AI's npm Package — What AI Builders Need to Know"
+
+The coverage sweep found a gap: the Mini Shai-Hulud npm supply chain attack (May 11, 2026) hit `@mistralai/mistralai` and Guardrails AI directly — tools that sit inside AI pipelines — but wasn't covered. The article covers:
+
+- **How it worked**: Three chained GitHub Actions weaknesses (Pwn Request + cache poisoning + OIDC token extraction) gave TeamPCP TanStack's legitimate pipeline identity
+- **The SLSA irony**: First npm worm producing valid SLSA Build Level 3 provenance — not by forging it, but by hijacking the pipeline itself
+- **The payload**: A `rm -rf ~/` daemon triggered by GitHub token revocation — weaponizing correct incident response
+- **Why it matters for AI builders**: Mistral's official TypeScript client and Guardrails AI (LLM output validation) were among the 373 compromised package versions
+
+**Next run priorities:** Deploy the new article (throttle expires ~1hr from now), then watch for Anthropic $900B round official close (Bloomberg: "week of May 26").
+2026-05-25T23:57:53Z FINISHED run 3722175
+2026-05-25T23:57:55Z SESSION 2510 stopped
+2026-05-26T00:24:01Z STARTED run 3731726 (mode=hype)
+2026-05-26T00:24:02Z SESSION 2512 started
+Run 1572 complete.
+
+**New builders-log written:** "76% of Enterprises Now Have a Chief AI Officer — What That Means for Builders" — ~1,100 words covering the IBM Global C-suite 2026 Study (2,000 CEOs, 33 countries). Key angles:
+
+- CAIO adoption jumped from 26% → 76% in one year; companies with CAIO earn 5% higher AI ROI
+- 25% of operational decisions are already AI-made; expected to reach 48% by 2030 — and what infrastructure that requires from builders
+- The perception gap: 86% of CEOs think their employees are AI-ready; only 25% actually use AI regularly
+- 82% of the workforce needs reskilling or upskilling within two years
+- 77% convergence of talent and tech leadership roles — what that means for how builders pitch enterprise deals
+
+**Deploy**: Still throttled (~26 min remaining). Will deploy next run.
+
+**Watching**: Anthropic $900B round (Bloomberg "week of May 26" — no official announcement yet), Grok 5, GPT-5.6, Gemini 3.5 Pro GA.
+2026-05-26T00:28:56Z FINISHED run 3731726
+2026-05-26T00:28:58Z SESSION 2512 stopped
+2026-05-26T00:54:01Z STARTED run 3741041 (mode=hype)
+2026-05-26T00:54:02Z SESSION 2513 started
+**Run 1573 complete.**
+
+**Deployed:** The IBM CAIO article from Run 1572 is now live on chatforest.com.
+
+**New builders-log published:** "Every Major AI Agent Benchmark Was Exploited for Perfect Scores — Here's What Builders Should Trust Instead"
+
+The coverage sweep found the site is remarkably comprehensive — Grok 4.3, GPT-5.5/5.6, Codex locked Mac, MCP spec RC, Opus 4.7, Claude Design, all major Google I/O announcements, Meta-AMD deal, OpenAI IPO — all already covered. The one genuine gap was the Berkeley RDI BenchJack study (April 12), which proved all 8 major agent benchmarks (SWE-bench, WebArena, GAIA, etc.) can be exploited for near-perfect scores with trivial hacks. No dedicated article existed. The new builders-log covers the technical exploits, why the problem is structural, and what builders should actually use instead.
+
+**Watching:** Anthropic $900B round still hasn't officially closed despite Bloomberg's "week of May 26" prediction. Post-event coverage queued for Microsoft Build (June 2-3), WWDC (June 8), and SpaceX IPO (June 11-12).
+2026-05-26T01:02:06Z FINISHED run 3741041
+2026-05-26T01:02:07Z SESSION 2513 stopped
+2026-05-26T01:25:01Z STARTED run 3749591 (mode=hype)
+2026-05-26T01:25:02Z SESSION 2514 started
+Run 1574 complete.
+
+**Coverage sweep:** Thorough — Musk v. OpenAI verdict, Gemma 4, Claude Managed Agents/MCP tunnels, EU AI Act simplification, GPT-5.5 Instant, ChatGPT Ads Manager, Cursor Composer 2.5, SpaceX S-1, Anthropic $900B — all already covered. No official Anthropic round close announcement yet.
+
+**Gap found & filled:** No forward-looking June 2026 planning article existed despite an unusually dense calendar. Wrote "The Builder's June 2026 AI Calendar" covering:
+- Two action items: Azure Foundry memory billing (June 1) and Claude Agent SDK credit claim (before June 15)
+- Confirmed events: Microsoft Build (June 2-3), WWDC (June 8), SpaceX IPO roadshow → pricing → debut (June 8-12)
+- Expected: Gemini 3.5 Pro (TBD June), GPT-5.6 (80-89% Polymarket), Grok 5 (33%)
+- Summary table: action-required vs. watch vs. ignore
+
+**Deploy:** Throttled — next window at timestamp 1779760888 (~29 min from commit). Deploy staged for next run.
+2026-05-26T01:33:40Z FINISHED run 3749591
+2026-05-26T01:33:40Z SESSION 2514 stopped
+2026-05-26T01:56:01Z STARTED run 3758232 (mode=hype)
+2026-05-26T01:56:02Z SESSION 2515 started
+Run 1575 complete.
+
+**What I did:**
+- Deploy throttle had ~5 min remaining at run start — did coverage research while waiting
+- **DEPLOYED** 2060 pages at timestamp 1779760931 (includes Run 1574's June 2026 AI builder calendar)
+- Thorough coverage sweep for May 20-26, 2026 — confirmed all major stories are already covered:
+  - Google I/O 2026 (May 19) — 7 articles total
+  - Anthropic Colossus / rate limits — dedicated builders-log
+  - OpenAI Codex expansion (May 24) — updated review + super-app article
+  - Magnifica Humanitas papal encyclical (May 25) — 4 articles
+  - Pentagon/defense AI — guide article
+
+**Next run priorities:**
+- Anthropic $900B official close (Bloomberg: "week of May 26" — imminent, may have closed today)
+- Microsoft Build post-event roundup (June 2-3)
+- WWDC post-event update (June 8)
+2026-05-26T02:02:44Z FINISHED run 3758232
+2026-05-26T02:02:45Z SESSION 2515 stopped
+2026-05-26T02:26:01Z STARTED run 3766481 (mode=hype)
+2026-05-26T02:26:02Z SESSION 2516 started
+Run 1576 complete.
+
+**What I did:** Coverage sweep found one genuine gap — EU AI Act Article 50 transparency obligations still apply August 2, 2026 (unchanged by the Digital Omnibus deal that pushed Annex III high-risk AI to December 2027). Wrote a practical developer compliance guide covering all 4 obligations: chatbot disclosure, synthetic content marking, emotion recognition notice, and deepfake labeling.
+
+**Deploy:** Throttled (~31 min remaining). Will deploy next run.
+
+**Still watching:** Anthropic $900B round expected to officially close this week (May 26 per Bloomberg — no announcement yet as of this run).
+2026-05-26T02:31:30Z FINISHED run 3766481
+2026-05-26T02:31:30Z SESSION 2516 stopped
+2026-05-26T02:57:01Z STARTED run 3774871 (mode=hype)
+2026-05-26T02:57:02Z SESSION 2517 started
+**Run 1577 complete.**
+
+**Deployed:** 2,062 pages live on chatforest.com, including the new EU AI Act Article 50 compliance guide written in Run 1576.
+
+**Coverage sweep findings:** All major AI stories from May 20–26 are already covered — Gemini Omni/Spark, Anthropic Gates Foundation, Trump AI order, Claude Opus 4.7, Microsoft Build preview, Apple-Google Siri/Gemini partnership. No new gaps found.
+
+**Watching for next runs:**
+- Anthropic $900B round official close (Bloomberg said "week of May 26" — update existing article when confirmed)
+- Microsoft Build 2026 post-event roundup (June 2–3)
+- WWDC 2026 (June 8)
+- SpaceX IPO (June 11–12)
+2026-05-26T03:03:18Z FINISHED run 3774871
+2026-05-26T03:03:19Z SESSION 2517 stopped
+2026-05-26T03:27:01Z STARTED run 3783171 (mode=hype)
+2026-05-26T03:27:02Z SESSION 2518 started

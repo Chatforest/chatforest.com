@@ -1,9 +1,9 @@
 # DeepSeek V4 — Open-Weight Frontier, Huawei Chips, and 93.5% on LiveCodeBench
 
-> DeepSeek V4 (April 24, 2026) continues the Chinese AI lab's run of surprising the industry: 1.6 trillion parameters, 80.6% SWE-bench Verified, 93.5% LiveCodeBench, a three-tier thinking system — and standard pricing at $1.74/$3.48 per million. Open weights, MIT license, and a live political controversy over restricted US chips.
+> DeepSeek V4 (April 24, 2026) continues the Chinese AI lab's run of surprising the industry: 1.6 trillion parameters, 80.6% SWE-bench Verified, 93.5% LiveCodeBench, a three-tier thinking system — and permanent pricing of $0.435/$0.87 per million (May 25: 75% discount made permanent). Open weights, MIT license.
 
 
-**At a glance:** DeepSeek V4 Pro — released April 24, 2026. 1.6T total parameters / 49B active. SWE-bench Verified: 80.6%. LiveCodeBench: 93.5%. GPQA Diamond: 90.1%. Codeforces: 3,206 Elo. Context window: 1 million tokens. Pricing: $1.74/$3.48 per million (standard); promotional $0.435/$0.87/M through May 31. V4 Flash: $0.14/$0.28/M. Open weights, MIT license. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** DeepSeek V4 Pro — released April 24, 2026. 1.6T total parameters / 49B active. SWE-bench Verified: 80.6%. LiveCodeBench: 93.5%. GPQA Diamond: 90.1%. Codeforces: 3,206 Elo. Context window: 1 million tokens. **Pricing: $0.435/$0.87/M (permanent — 75% discount made permanent on May 25, 2026; original $1.74/$3.48 rate no longer applies).** V4 Flash: $0.14/$0.28/M. Open weights, MIT license. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -21,7 +21,7 @@ This is a review of what DeepSeek V4 actually does, what the architecture actual
 
 DeepSeek V4 ships as two variants:
 
-**V4 Pro**: 1.6 trillion total parameters, 49 billion active per token. MoE architecture. 1 million token context. Supports images. Three-tier reasoning. Standard pricing: $1.74 input / $3.48 output per million tokens.
+**V4 Pro**: 1.6 trillion total parameters, 49 billion active per token. MoE architecture. 1 million token context. Supports images. Three-tier reasoning. Pricing: **$0.435 input / $0.87 output per million tokens** (permanent rate as of May 25, 2026 — see Pricing section below).
 
 **V4 Flash**: 284 billion total parameters, 13 billion active per token. 1 million token context. Designed for high-throughput, cost-sensitive workloads. Pricing: $0.14 input / $0.28 output per million tokens.
 
@@ -137,13 +137,14 @@ The controversy is unresolved as of publication. We'll note it and move on, as t
 
 ### API Pricing
 
+*(Pricing update — May 26, 2026: On May 25, 2026, DeepSeek announced the 75% promotional discount is now permanent. The original standard rate of $1.74/$3.48/M is no longer the regular rate — $0.435/$0.87/M is now the list price.)*
+
 | Variant | Input | Output |
 |---|---|---|
-| V4 Pro (standard, post-May 31) | $1.74/M | $3.48/M |
-| V4 Pro (promotional, through May 31) | $0.435/M | $0.87/M |
+| V4 Pro (permanent rate as of May 25) | **$0.435/M** | **$0.87/M** |
 | V4 Flash | $0.14/M | $0.28/M |
 
-For comparison: Claude Opus 4.7 is $5.00/$25.00/M. Gemini 3.1 Pro is $2.00/$12.00/M. DeepSeek V4 Pro at standard pricing sits below both — at roughly one-third of Opus 4.7's input cost.
+For comparison: Claude Opus 4.7 is $5.00/$25.00/M. GPT-5.5 is ~$8.75/$35.00/M. Gemini 3.1 Pro is $2.00/$12.00/M. DeepSeek V4 Pro at $0.435/M input is roughly 20× cheaper than GPT-5.5 and 11× cheaper than Claude Opus 4.7 — at comparable or better coding benchmark performance.
 
 The V4 Flash tier is aggressively cheap and suitable for high-volume, lower-complexity tasks. $0.14/M input is in the same range as commodity inference pricing from 2024.
 

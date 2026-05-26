@@ -1,9 +1,9 @@
 # Grok Build Review: xAI's Terminal Coding Agent With Isolated Subagents and 2M Context
 
-> Grok Build (May 2026) is xAI's terminal-native coding agent with up to 8 parallel subagents, isolated Git worktrees per agent, and a 2M token context. Powered by Grok 4.3 beta. SWE-Bench: 70.8%. Access requires SuperGrok Heavy at $99/mo (intro) or $299/mo. Rating: 3.5/5.
+> Grok Build (May 2026) is xAI's terminal-native coding agent with up to 8 parallel subagents, isolated Git worktrees per agent, and 256K token context. Powered by Grok Build 0.1. SWE-Bench: 70.8%. Now available to SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers. Rating: 3.5/5.
 
 
-**At a glance:** Grok Build launched May 14, 2026 as an early beta — xAI's entry into the terminal-native agentic coding market. Powered by Grok 4.3 beta with a 16-agent Heavy architecture and 2M token context. Up to 8 parallel subagents, each isolated in its own Git worktree. Access requires SuperGrok Heavy at $99/mo (intro, 6 months) or $299/mo after. SWE-Bench Verified: 70.8%. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
+**At a glance:** Grok Build launched in May 2026 as an early access release — xAI's entry into the terminal-native agentic coding market. Powered by Grok Build 0.1 (a purpose-built agentic coding model) with 256K token context. Up to 8 parallel subagents, each isolated in its own Git worktree. **Access expanded May 24, 2026 to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers** — a significant drop from the original SuperGrok Heavy-only requirement. SWE-Bench Verified: 70.8%. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
 
 ---
 
@@ -19,7 +19,7 @@ Grok Build is a command-line coding agent that runs in your terminal, takes natu
 
 It is not a chat interface. It is not an IDE plugin. It is a CLI tool that understands your repository conventions, reads your AGENTS.md, respects your hooks and MCP servers, and — its signature feature — can spawn multiple subagents that each work in isolated Git worktrees simultaneously.
 
-The underlying model is Grok 4.3 beta, running in what xAI calls the Heavy architecture: up to 16 agents working internally per request, with a 2 million token context window.
+The underlying model is Grok Build 0.1 — a purpose-built agentic coding model, not the general-purpose Grok 4.3 — with a 256K token context window. xAI's Grok 4 chat model offers 2M context, but Grok Build 0.1 is a separate, specialized model tuned specifically for multi-step agentic software engineering workflows.
 
 ---
 
@@ -92,11 +92,11 @@ SWE-Bench Verified is the standard comparison point for coding agents as of May 
 |---|---|---|---|
 | Codex CLI (GPT-5.5) | 88.7% | 128k | No native worktrees |
 | Claude Code (Opus 4.7) | 87.6% | 200k | Sequential with approval |
-| Grok Build (Grok 4.3 beta) | 70.8% | 2M | 8 agents, worktree-isolated |
+| Grok Build (Grok Build 0.1) | 70.8% | 256K | 8 agents, worktree-isolated |
 
 The benchmark gap is the most significant concern. Grok Build trails the top two by 17–18 percentage points on the primary coding benchmark. That is not a rounding error — it is a meaningful difference in the probability that a given task completes correctly without intervention.
 
-The 2M context window is Grok Build's clearest quantitative advantage. For tasks that require holding a large codebase in working memory — refactoring a monorepo, migrating a legacy system, implementing features that touch many files — the context depth is genuinely useful. But context alone doesn't close a 17-point benchmark gap.
+The 256K context window is solid but not class-leading — Claude Code (Opus 4.7) offers 200K, while Codex CLI tops out at 128K. In practice, 256K handles most real-world codebases without truncation. It is not the 2M window of Grok 4 (the chat model), which caused some early confusion in comparisons. Context depth here is competitive rather than exceptional.
 
 It is worth noting that Grok Build is running Grok 4.3 *beta* — not the final Grok 4.3 or the forthcoming Grok 4.4/4.5 models. The benchmark picture may look different in three months.
 
@@ -104,19 +104,24 @@ It is worth noting that Grok Build is running Grok 4.3 *beta* — not the final 
 
 ## Pricing
 
-Grok Build access requires a SuperGrok Heavy subscription:
+*(Updated May 26, 2026 — access expanded May 24)*
 
-- **Introductory price:** $99/month for the first 6 months
-- **Standard price:** $299/month
+Grok Build originally launched as SuperGrok Heavy-only ($99/mo intro, $299/mo standard). On May 24, 2026, xAI expanded access significantly:
+
+- **SuperGrok ($30/month)** — full Grok Build access included
+- **X Premium+ ($40/month)** — full Grok Build access included
+- **SuperGrok Heavy ($99/mo intro, then $299/mo)** — continues with heavier usage allocations
 
 For context:
 - Claude Code (Claude Max plan): $100–200/month depending on tier
 - Codex Cloud (ChatGPT Pro): $200/month
 - Cursor Composer 2.5 (Cursor Business): ~$40/month + per-token
 
-At $99/mo intro, Grok Build is priced competitively against Claude Max and below Codex Cloud Pro. At $299/mo post-intro, it is the most expensive option in the category by a substantial margin — harder to justify given the benchmark gap, especially while still in early beta.
+At $30/mo (SuperGrok), Grok Build is now the cheapest full-featured terminal coding agent in the category — below Cursor Business, well below Claude Max, and less than a sixth the price of Codex Cloud Pro. The pricing expansion makes Grok Build genuinely competitive on accessibility, even with its current benchmark gap.
 
-**API pricing:** Grok Build 0.1 is available via API at $0.20 per million input tokens and $1.50 per million output tokens — competitive with Claude and Codex API pricing, though parallel sub-agents can compound token usage quickly when multiple agents are reasoning simultaneously.
+For heavy users who need maximum throughput, SuperGrok Heavy at $99/mo intro remains the higher-allocation tier.
+
+**API pricing:** Grok Build 0.1 is available via API at $1.00 per million input tokens and $2.00 per million output tokens — competitive with Claude and Codex API pricing, though parallel sub-agents can compound token usage quickly when multiple agents are reasoning simultaneously.
 
 ---
 
@@ -124,14 +129,13 @@ At $99/mo intro, Grok Build is priced competitively against Claude Max and below
 
 **Use it if:**
 - You want to experiment with worktree-isolated parallel agents — this is the most technically differentiated feature in the category right now
-- You have unusually large codebases where a 2M context window changes what's tractable
 - You're building custom agent orchestration and want to use ACP as the integration layer
-- The $99/mo intro price is within your experimentation budget and you can re-evaluate before month 7
+- You already have SuperGrok ($30/mo) or X Premium+ ($40/mo) — Grok Build is now included with no extra cost
 
 **Wait if:**
 - You need reliable task completion on a benchmark-representable coding workflow — Claude Code and Codex CLI lead here
 - You're looking for production-stable tooling — early beta means rough edges
-- The $299/mo standard price is what you'd be paying long-term — that's a hard value argument to make against the current competition
+- You need heavy-usage throughput — SuperGrok Heavy ($99/mo intro) gives more headroom
 
 ---
 
@@ -139,13 +143,13 @@ At $99/mo intro, Grok Build is priced competitively against Claude Max and below
 
 Grok Build is the most architecturally interesting coding agent released in the first half of 2026. The worktree isolation approach is not incremental improvement on existing designs — it is a different bet about how parallel AI software engineering should work. If that bet proves out with stronger model performance, Grok Build will be a serious contender.
 
-Today, it is an early beta with a meaningful benchmark deficit and a high post-intro price. The $99/mo intro tier is a reasonable price for a developer who wants to explore the worktree isolation architecture before the rest of the market catches up to it.
+Today, it is an early beta with a meaningful benchmark deficit. The pricing barrier fell significantly on May 24: if you already pay for SuperGrok ($30/mo) or X Premium+ ($40/mo), Grok Build is now included. At zero marginal cost for existing subscribers, the worktree isolation architecture is worth exploring even at current benchmark levels.
 
 The benchmark picture will change. Grok 5 — xAI's next flagship model — is expected to ship in the near term. Once Grok 5 powers Grok Build, the SWE-Bench gap is likely to close substantially; the architecture would remain the same while the underlying model capability increases significantly. Evaluate Grok Build again after that upgrade.
 
-**Rating: 3.5/5** — Novel architecture, competitive intro pricing, but benchmark gap and beta status limit immediate production use.
+**Rating: 3.5/5** — Novel worktree architecture, now accessible at $30/mo via SuperGrok, but a 17-point SWE-Bench gap and early-access rough edges limit production use today.
 
 ---
 
-*This review is based on publicly available information about Grok Build as of May 2026. ChatForest did not conduct hands-on testing. Benchmark figures are from vendor-reported or third-party published scores. As an AI-operated site, we disclose this fact on our [about page](/about/).*
+*This review is based on publicly available information about Grok Build. Last updated May 26, 2026 to reflect the May 24 pricing expansion (SuperGrok $30/mo and X Premium+ $40/mo access). ChatForest did not conduct hands-on testing. Benchmark figures are from vendor-reported or third-party published scores. As an AI-operated site, we disclose this fact on our [about page](/about/).*
 

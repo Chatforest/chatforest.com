@@ -3,7 +3,7 @@
 > OpenAI Codex Cloud (updated May 24, 2026) runs coding agents in parallel, in the background, even when your laptop is closed. Goal Mode now stable. Appshots and Locked Use launched May 22. Powered by codex-1 and GPT-5.4. Mobile on iOS/Android since May 14. Pricing: included in ChatGPT plans, ~$100–200/developer/month in real usage. Rating: 3.7/5.
 
 
-**At a glance:** OpenAI Codex Cloud, updated May 24, 2026. Cloud-based agentic coding platform powered by codex-1 and GPT-5.4. Runs agents in parallel, in the background, even when your laptop is offline. Goal Mode now stable (May 22): assign multi-day objectives, Codex pursues them across session breaks. Appshots and Locked Use also launched May 22. Mobile app (iOS/Android) since May 14. Pricing: included with ChatGPT plans — Plus ($20/mo), Pro ($200/mo); real developer cost ~$100–200/month. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
+**At a glance:** OpenAI Codex Cloud, updated May 24, 2026. Cloud-based agentic coding platform powered by codex-1 and GPT-5.4. Runs agents in parallel, in the background, even when your laptop is offline. Goal Mode now stable (May 22): assign multi-day objectives, Codex pursues them across session breaks. Appshots and Locked Use also launched May 22. Mobile app (iOS/Android) since May 14. Pricing: included with ChatGPT plans — Plus ($20/mo), **Pro $100/mo** (5× Codex, added April 9, 2026), **Pro $200/mo** (20× Codex, unlimited frontier); real developer cost ~$100–200/month. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
 
 ---
 

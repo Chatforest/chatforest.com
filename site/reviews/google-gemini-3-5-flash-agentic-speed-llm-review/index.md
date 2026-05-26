@@ -146,9 +146,10 @@ Google claims enterprise teams running high-volume agentic workflows at competit
 
 The 3x price increase over Gemini 3 Flash is the counterpoint. Teams that built cost models around Gemini 3 Flash pricing will need to revisit those assumptions. The capability improvement is substantial, but the price increase is not trivial.
 
-**Consumer subscriptions:**
-- Google AI Pro ($19.99/month): includes Gemini 3.5 Flash
-- Google AI Ultra ($249.99/month, $124.99 first three months): includes Gemini 3.5 Flash
+**Consumer subscriptions** *(updated May 26, 2026 per Google I/O 2026 restructuring)*:
+- Google AI Pro (~$19.99/month, formerly Gemini Advanced): includes Gemini 3.5 Flash
+- Google AI Ultra $100/month (new tier, announced I/O 2026): includes Gemini 3.5 Flash, 5× Pro usage limits, 20 TB storage, YouTube Premium, priority Antigravity access
+- Google AI Ultra $200/month (formerly $250/month): includes Gemini 3.5 Flash, 20× Pro usage limits, Gemini 3.5 Pro preview access
 - Free tier: Gemini 3 Flash; not Gemini 3.5 Flash
 
 ---

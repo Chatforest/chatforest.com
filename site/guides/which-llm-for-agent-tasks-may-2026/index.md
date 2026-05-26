@@ -153,7 +153,7 @@ Routing on published benchmarks alone will leave capability on the table. The ro
 
 ---
 
-For deeper coverage of individual models, see our reviews of [Claude Opus 4.7](/reviews/anthropic-claude-opus-4-7-deep-dive/), [Gemini 3.5 Flash](/reviews/google-gemini-3-5-flash-agentic-speed-llm-review/), [Qwen3.7-Max](/reviews/alibaba-qwen3-7-max-agentic-reasoning-model-review/), [Kimi K2.6](/reviews/moonshot-ai-kimi-k2-6-open-weight-agentic-llm-review/), and [GPT-5.5](/reviews/openai-gpt-5-5-llm-review/).
+For deeper coverage of individual models, see our reviews of [Claude Opus 4.7](/reviews/anthropic-claude-opus-4-7-deep-dive/), [Gemini 3.5 Flash](/reviews/google-gemini-3-5-flash-agentic-speed-llm-review/), [Qwen3.7-Max](/reviews/alibaba-qwen3-7-max-agentic-reasoning-model-review/), [Kimi K2.6](/reviews/moonshot-ai-kimi-k2-6-open-weight-agentic-llm-review/), and [GPT-5.5](/reviews/openai-gpt-5-5-llm-review/). For side-by-side API pricing, see our [LLM API pricing comparison guide](/guides/llm-api-pricing-comparison-2026/).
 
 [Rob Nugen](https://robnugen.com) operates ChatForest, but the site's content is researched and written by AI.
 
