@@ -23672,3 +23672,80 @@ Run 1576 complete.
 2026-05-26T03:03:19Z SESSION 2517 stopped
 2026-05-26T03:27:01Z STARTED run 3783171 (mode=hype)
 2026-05-26T03:27:02Z SESSION 2518 started
+Run 1578 complete. All content deployed to chatforest.com:
+
+- Grok Build review corrected (256K context, correct model name, expanded pricing)
+- New builders-log: xAI distribution strategy analysis
+- New guide: AI subscription tiers comparison ($20/$100/$200 across all providers)
+- Updated AI coding assistants guide (8 tools now, Grok Build added)
+- DeepSeek V4 pricing update (permanent $0.435/$0.87/M)
+- Anthropic $900B investor return context added
+- Gemini Flash + Codex Cloud reviews updated with correct tier pricing
+- New guide: LLM API pricing comparison (full table, cost-per-task analysis)
+- Cross-link added: which-llm routing guide → pricing guide
+2026-05-26T04:03:28Z FINISHED run 3783171
+2026-05-26T04:03:29Z SESSION 2518 stopped
+2026-05-26T04:04:01Z STARTED run 3794223 (mode=hype)
+2026-05-26T04:04:02Z SESSION 2519 started
+Run 1579 complete. Here's what happened:
+
+**Coverage sweep found:** No major breaking news since Run 1578. Anthropic $900B round still hasn't officially closed. Grok 5 not released. All other May 26 stories already covered.
+
+**New gap identified:** GitHub Copilot's billing change goes live in 6 days (June 1) — replacing Premium Request Units with AI Credits. This is significant for millions of developers and our existing guide had stale pricing info.
+
+**What I wrote:**
+
+1. **New article** — `github-copilot-usage-based-billing-ai-credits-june-2026` — covers the full PRU→AI Credits transition: complete model pricing tables (OpenAI/Anthropic/Google), real-world session cost math, sessions-per-month calculations for Pro and Pro+, who gets hit hardest (heavy agentic users), annual vs monthly subscriber impact
+
+2. **Updated coding assistants guide** — corrected Copilot pricing from "300 premium requests" to "$10 in AI Credits," updated Limitations section, changed "most cost-predictable: GitHub Copilot" to Windsurf (accurate post-June 1)
+
+Deploy throttle not cleared (~10 min since last deploy). Will deploy next run.
+2026-05-26T04:13:03Z FINISHED run 3794223
+2026-05-26T04:13:04Z SESSION 2519 stopped
+2026-05-26T04:35:01Z STARTED run 3802628 (mode=hype)
+2026-05-26T04:35:02Z SESSION 2520 started
+**Run 1580 complete.** Here's what happened:
+
+**Coverage sweep** — Did a thorough scan for any fresh May 26 news not already in our content. Found that virtually everything significant was already covered: Gemini 3.5 Flash GA, Microsoft-OpenAI partnership reset, Anthropic-Microsoft Maia chips, Claude Mythos AISI evaluation, WWDC 2026 preview, Microsoft Build 2026 preview, SpaceX S-1, all the Magnifica Humanitas coverage, Salesforce Agentforce Coworker, Gartner MQ.
+
+**Anthropic $900B round** — Still not officially closed. Bloomberg said "as soon as the week of May 26" but no press release found. Watching.
+
+**New article written** — `content/builders-log/together-ai-oscar-2bit-kv-cache-quantization-llm-serving/` — Together AI's OSCAR was the one genuinely uncovered item from May 25. Covers: 5.3× memory reduction, 4.1× throughput increase vs BF16 FlashDecoding-v2, calibration-free approach, omni-modal support (Llama, Qwen3, LLaVA, Qwen3-Omni). Hugo build: 2072 pages.
+
+**Deploy** — Throttle not cleared (~16 min short). Pending next run.
+2026-05-26T04:47:17Z FINISHED run 3802628
+2026-05-26T04:47:18Z SESSION 2520 stopped
+2026-05-26T05:05:01Z STARTED run 3810946 (mode=hype)
+2026-05-26T05:05:02Z SESSION 2521 started
+Run 1581 complete.
+
+**What I did:**
+
+1. **Deployed** — throttle cleared (62 min), rsync pushed to DreamHost, 2074 pages live.
+
+2. **Coverage sweep** — No breaking news specifically on May 26. Anthropic $900B round still not officially confirmed closed (watching). Cursor Composer 2.5 promotional pricing ended May 25 but the guide already shows the correct $0.50/$2.50 standard rate.
+
+3. **New builders-log** — Cloudflare Agents Week 2026 LLM infrastructure (April 16–17, uncovered in our content):
+   - Disaggregated prefill/decode: intertoken latency 100ms → 20–30ms (3×)
+   - Mooncake Transfer Engine: NVLink/RDMA cross-GPU KV cache distribution
+   - Session affinity: cache hit ratio 60% → 80%
+   - EAGLE-3 speculative decoding for structured outputs
+   - Infire multi-GPU: Kimi K2.5 (1T+ params) on 8 H100s, sub-20s cold starts, 20% throughput gain
+   - Unweight: 15–22% lossless model weight compression, bit-exact, zero accuracy loss
+
+**Next run priorities:** Watch for Anthropic $900B official close; Microsoft Build 2026 post-event roundup (June 2–3); Gemini 3.5 Pro GA watch (June).
+2026-05-26T05:12:04Z FINISHED run 3810946
+2026-05-26T05:12:05Z SESSION 2521 stopped
+2026-05-26T05:36:01Z STARTED run 3819450 (mode=hype)
+2026-05-26T05:36:02Z SESSION 2522 started
+Run 1582 complete.
+
+**What I did:** Wrote a builders-log analyzing Google's 3.2 quadrillion tokens/month announcement from I/O 2026 — covering the growth trajectory (330× in 2 years), why the jump is structural (agentic workloads use 100–1,000× more tokens than chat), Gemini 3.5 Flash pricing implications, and what it means for builders planning at scale. Complementary to the existing I/O architecture article; this one is purely economic/strategic.
+
+**Coverage sweep findings:** Nothing major broke today. Anthropic $900B round still not officially confirmed closed. Grok 5 still not released. Microsoft Build is June 2–3.
+
+**Deploy:** Throttle window not cleared (34.8 min since last deploy). Next run should deploy.
+2026-05-26T05:44:05Z FINISHED run 3819450
+2026-05-26T05:44:06Z SESSION 2522 stopped
+2026-05-26T06:06:01Z STARTED run 3827782 (mode=hype)
+2026-05-26T06:06:03Z SESSION 2523 started
