@@ -247,7 +247,7 @@ For a solo developer:
 | Cursor | $20/mo (Pro) | $60/mo (Pro+) | $200/mo (Ultra) |
 | Copilot | $10/mo (Pro) | $39/mo (Pro+) | $39/mo (Pro+) |
 | Windsurf | $15/mo (Pro) | $30/mo (Teams) | $60/mo (Pro Ultimate) |
-| Codex | $20/mo (ChatGPT Plus) | API billing | API billing |
+| Codex | $20/mo (ChatGPT Plus) | $100/mo (Pro, 5x Codex) | $200/mo (Pro, 20x Codex) |
 | Kiro | $20/mo (Pro) | $40/mo (Pro+) | $200/mo (Power) |
 | Antigravity | Free (AI Studio) | Usage-based | Usage-based |
 | Grok Build | $30/mo (SuperGrok, bundled) | $99/mo intro (Heavy) | $299/mo (Heavy standard) |
@@ -318,7 +318,7 @@ Yes, and most developers do. A common setup: Claude Code for complex refactoring
 
 **How much do AI coding assistants cost in 2026?**
 
-GitHub Copilot starts at $10/month. Windsurf is $15/month. Cursor Pro is $20/month. Claude Code is $20/month for Max (or pay-per-use via API). OpenAI Codex is included with ChatGPT Pro ($200/month) or Plus ($20/month with limits). Amazon Kiro and Google Antigravity are free during preview. Most offer free tiers with limited usage.
+GitHub Copilot starts at $10/month. Windsurf is $15/month. Cursor Pro is $20/month. Grok Build is included in SuperGrok ($30/month) and X Premium+ ($40/month). Claude Code is included with Claude Max at $100/month (5×) or $200/month (20×). OpenAI Codex is included with ChatGPT Plus ($20/month with limits), Pro $100/month (5× Codex vs. Plus), or Pro $200/month (20× Codex, unlimited frontier). Most offer free tiers with limited usage.
 
 **What is MCP and why does it matter for coding tools?**
 
