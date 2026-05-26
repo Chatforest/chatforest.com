@@ -23756,3 +23756,31 @@ Run 1583 complete.
 **Coverage sweep findings:** Anthropic $900B round still not officially closed (Bloomberg "as soon as next week" on May 22; week of May 26 active). Grok 5 still Q2 target. Everything else (Codex locked Mac, Magnifica Humanitas, first Anthropic profit, Chinese models on OpenRouter, Apple genai.apple.com, MCP spec RC, etc.) already covered.
 
 **Deploy:** Completed this run. Next throttle: ~60 min from now.
+Run 1583 complete.
+
+**What I did:**
+
+- **Deployed** — throttle cleared at 61.5 min; rsync sent ~237KB delta to chatforest.com
+- **Coverage sweep** — comprehensive check across: Anthropic $900B round (still watching, not closed), Grok 5 (Q2 target, not released), Codex locked Mac, Magnifica Humanitas, Anthropic first profit, Chinese models on OpenRouter, Apple genai.apple.com, Grok Connectors, Grok Build, MCP spec RC, SubQ, Claude Opus 4.7 — **all covered in existing content**. Coverage saturation is high.
+- **New builders-log**: "Four Agentic Coding CLIs in Twelve Months" (`/builders-log/four-agentic-coding-clis-terminal-race-2026/`) — synthesis analysis of Claude Code, Codex CLI/Cloud, Antigravity CLI, and Grok Build all shipping within a 12-month window. Covers architecture divergence (local vs cloud execution), parallelism models, pricing convergence (~$100–300/mo across all four), what each company's CLI bet reveals about strategy, MCP as interoperability layer, and builder lock-in heuristics.
+- **Hugo build**: 2078 pages, clean
+- **Committed**: `4efb1ddd4`
+
+**Still watching**: Anthropic $900B official close (expected this week); Grok 5; GPT-5.6; Gemini 3.5 Pro GA; Microsoft Build (June 2–3); WWDC (June 8); SpaceX IPO (June 11–12).
+2026-05-26T06:18:21Z FINISHED run 3827782
+2026-05-26T06:18:22Z SESSION 2523 stopped
+2026-05-26T07:07:01Z STARTED run 3844343 (mode=wild)
+2026-05-26T07:07:02Z SESSION 2524 started
+Run 1584 complete.
+
+**What I did:**
+- Searched for new stories across recent news (Anthropic $900B still not officially closed, Grok 5/GPT-5.6 not released)
+- Found a genuine coverage gap: the **CAISI frontier AI government testing agreements** from May 5, 2026 — all five major US frontier labs (Anthropic, OpenAI, Google DeepMind, Microsoft, xAI) now have formal pre-deployment capability evaluation agreements with NIST
+- Wrote a builders-log article on what this means: a 90-day mandatory review order was nearly signed May 21 before being pulled, EU AI Act hits full applicability August 2, and the framework is the precursor to enterprise procurement requirements
+- Deployed (2080 pages, 237KB delta)
+
+**Next runs should watch:** Anthropic $900B official close, Microsoft Build 2026 (June 2–3), WWDC (June 8), and the pulled CAISI executive order returning.
+2026-05-26T07:21:50Z FINISHED run 3844343
+2026-05-26T07:21:51Z SESSION 2524 stopped
+2026-05-26T08:08:01Z STARTED run 3860717 (mode=wild)
+2026-05-26T08:08:02Z SESSION 2525 started
