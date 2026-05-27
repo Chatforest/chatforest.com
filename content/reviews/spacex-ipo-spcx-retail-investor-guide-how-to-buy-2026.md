@@ -2,14 +2,14 @@
 title: "How to (Actually) Buy SPCX: SpaceX's Unprecedented Retail IPO Allocation, Platform by Platform"
 date: 2026-05-28
 description: "SpaceX is reserving 30% of its IPO shares for retail investors — triple the historical norm. Here's how to request SPCX shares on Robinhood, Fidelity, Schwab, SoFi, and E*TRADE, and what to realistically expect."
-og_description: "SpaceX IPO retail guide: 30% of SPCX shares go to retail (vs. 10% historical average). Platform-by-platform breakdown — Robinhood COB process, Schwab's $100K minimum, SoFi suitability quiz. Roadshow week of June 8. Pricing June 11. Trading June 12."
-card_description: "SpaceX SPCX IPO: 30% retail allocation (vs. ~10% norm). Platforms: Robinhood (conditional offer to buy), Fidelity (account in good standing), Schwab ($100K minimum + questionnaire), SoFi (Self-Directed Invest account + suitability quiz), E*TRADE (individual/joint/IRAs eligible). Roadshow: week of June 8. Pricing: June 11. Trading: June 12, Nasdaq. Most retail investors should expect partial fill or no allocation — demand will far exceed supply."
+og_description: "SpaceX IPO retail guide: 30% of SPCX shares go to retail (vs. 10% historical average). Platform-by-platform breakdown — Robinhood COB process, Schwab's $100K minimum, SoFi suitability quiz. Roadshow begins June 4. Pricing June 11. Trading June 12."
+card_description: "SpaceX SPCX IPO: 30% retail allocation (vs. ~10% norm). Platforms: Robinhood (conditional offer to buy), Fidelity (account in good standing), Schwab ($100K minimum + questionnaire), SoFi (Self-Directed Invest account + suitability quiz), E*TRADE (individual/joint/IRAs eligible). Roadshow begins June 4 (accelerated from earlier estimates). Pricing: June 11. Trading: June 12, Nasdaq. Most retail investors should expect partial fill or no allocation — demand will far exceed supply."
 tags: ["spacex", "ipo", "spcx", "retail-investors", "robinhood", "fidelity", "schwab", "nasdaq", "investing"]
 categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** SpaceX is targeting a **$1.75 trillion valuation** and a **$75 billion raise** in what would be the largest IPO in history. The roadshow begins the week of **June 8**. Pricing is **June 11**. Trading opens on Nasdaq under **SPCX** on **June 12**. SpaceX CFO Bret Johnsen has said: *"Retail is going to be a critical part of this and a bigger part than any IPO in history."* Shares will be accessible through Robinhood, Fidelity, Schwab, SoFi, and E*TRADE — but demand will far exceed supply, and most retail investors should expect a partial fill or nothing.
+**At a glance:** SpaceX is targeting a **$1.75 trillion valuation** and a **$75 billion raise** in what would be the largest IPO in history. The roadshow begins **June 4** (accelerated from earlier estimates). Pricing is **June 11**. Trading opens on Nasdaq under **SPCX** on **June 12**. SpaceX CFO Bret Johnsen has said: *"Retail is going to be a critical part of this and a bigger part than any IPO in history."* Shares will be accessible through Robinhood, Fidelity, Schwab, SoFi, and E*TRADE — but demand will far exceed supply, and most retail investors should expect a partial fill or nothing.
 
 ---
 
@@ -32,11 +32,12 @@ What that means practically: **you can request shares. You are unlikely to get a
 | Date | Event |
 |------|-------|
 | May 20, 2026 | S-1 filed with SEC |
-| Week of June 8 | Investor roadshow begins |
-| June 11 | Pricing (IPO price set) |
-| June 12 | Trading opens on Nasdaq (ticker: **SPCX**) |
+| May 22, 2026 | Starship V3 (Flight 12) debut test flight |
+| June 4, 2026 | Investor roadshow begins |
+| June 11, 2026 | Pricing (IPO price set) |
+| June 12, 2026 | Trading opens on Nasdaq (ticker: **SPCX**) |
 
-The retail request windows on the brokerage platforms are expected to open during the roadshow week. Check your platform for specific availability dates.
+**Update (May 28, 2026):** Reuters and CNBC confirmed SpaceX accelerated its IPO roadshow to begin June 4 — roughly one week earlier than earlier estimates of the week of June 8. The June 11 pricing and June 12 trading debut remain unchanged. The retail request windows on the brokerage platforms are expected to open during the roadshow week. Check your platform for specific availability dates.
 
 ---
 

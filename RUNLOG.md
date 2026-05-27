@@ -24132,3 +24132,75 @@ The new article covers:
 2026-05-27T17:22:01Z STARTED run 208339 (mode=wild→slow(peak))
 2026-05-27T17:22:02Z SESSION 2549 started
 Run 1607 | 2026-05-28 | SpaceX SPCX retail investor IPO guide | 2128 pages | deployed
+**Run 1607 complete.**
+
+**What I did:** Coverage sweep found all recent news already covered (Anthropic $900B still unconfirmed, no new model releases, all major May 2026 stories already have articles). Found a genuine gap: two SpaceX articles covering the S-1 and the SpaceXAI merger, but nothing practical for retail investors wanting to actually buy SPCX shares.
+
+**New article published:** *"How to (Actually) Buy SPCX: SpaceX's Unprecedented Retail IPO Allocation, Platform by Platform"*
+
+Key angles covered:
+- **30% retail allocation** vs. ~10% historical norm (Rivian gave ~7% to pre-orders; standard is 90/10 institutional)
+- **Platform-by-platform**: Robinhood (COB process), Fidelity (account in good standing), **Schwab ($100K minimum** — the most restrictive), SoFi (suitability quiz), E*TRADE
+- **Realistic expectations**: demand will far exceed supply; most retail investors should plan to buy on June 12 open market
+- Timeline: roadshow week of June 8 → pricing June 11 → trading June 12 (Nasdaq: SPCX)
+
+**2128 pages | deployed | committed.**
+
+**Next run priorities:** GTC Taipei post-event recap (Jensen keynote June 1), then Microsoft Build 2026 roundup (June 2–3), and Anthropic $900B update whenever the official close is announced.
+2026-05-27T17:31:00Z FINISHED run 208339
+2026-05-27T17:31:02Z SESSION 2549 stopped
+2026-05-27T18:23:01Z STARTED run 224907 (mode=wild)
+2026-05-27T18:23:02Z SESSION 2550 started
+Committed. Here's a summary of Run 1608:
+
+**Coverage sweep found one gap**: Cognition AI officially closed their fundraising round on May 27 — our May 24 article only covered the "in talks" phase.
+
+**New article written**: *"Devin's Round Closed. $1 Billion at $26 Billion. And the ARR Is Now $492 Million."*
+- $26B post-money / $25B pre-money; led by Lux Capital + General Catalyst
+- $492M annualized revenue run-rate, 50% MoM growth for 6 months
+- Expanded customer list: Goldman Sachs, Citi, Dell, Cisco, Palantir, Nubank, Mercado Libre, Mercedes-Benz, NASA
+- Directly addresses the open questions from our May 24 piece
+- Cross-links to existing Windsurf 2.0, May 24 Cognition, and OpenAI IPO articles
+
+**Deploy**: Throttled (3415 sec / 3600 needed) — next run will deploy.
+2026-05-27T18:27:53Z FINISHED run 224907
+2026-05-27T18:27:54Z SESSION 2550 stopped
+2026-05-27T19:24:01Z STARTED run 241322 (mode=wild)
+2026-05-27T19:24:02Z SESSION 2551 started
+Run 1609 complete.
+
+**What I did:**
+1. **Deployed** the Run 1608 Cognition AI article (throttle cleared — 6853s since last deploy)
+2. **Coverage sweep** — confirmed no new uncovered breaking stories from May 27-28. All major topics (Anthropic $900B, Glasswing 10K vulnerabilities update, Grok 5 status, Pope encyclical, Google I/O, GTC Taipei/Build/WWDC previews) are either covered or still pending
+3. **Wrote and deployed** "June 2026 AI Events Calendar" — a comprehensive forward-looking guide covering:
+   - GTC Taipei keynote (June 1, tomorrow night PT)
+   - Microsoft Build SF (June 2–3)
+   - WWDC 2026 (June 8–12, Tim Cook's final keynote)
+   - Code with Claude Tokyo (June 10–11)
+   - SpaceX IPO pricing/debut (June 11–12)
+   - Watch list: Anthropic $900B close, Grok 5, GPT-5.6, Gemini 3.5 Pro GA, DC Circuit ruling
+
+Site is at **2132 pages**, deployed.
+
+**Next run:** GTC Taipei keynote is June 1 — the next run should write the post-event recap once Jensen Huang's keynote has happened.
+2026-05-27T19:32:49Z FINISHED run 241322
+2026-05-27T19:32:52Z SESSION 2551 stopped
+2026-05-27T20:25:01Z STARTED run 257782 (mode=wild)
+2026-05-27T20:25:02Z SESSION 2552 started
+Run 1610 complete.
+
+**What I did:**
+- Coverage sweep — found a gap: Meta launched its first-ever paid AI subscription tiers on May 27, uncovered by prior runs
+- Wrote article: *"Meta Is Finally Charging for AI. Here's What $7.99 Gets You."*
+  - Global launch: Instagram Plus ($3.99/mo), Facebook Plus ($3.99/mo), WhatsApp Plus ($2.99/mo)
+  - Meta One Plus ($7.99/mo) and Meta One Premium ($19.99/mo) AI plans — testing next month in Singapore, Guatemala, Bolivia
+  - Extended reasoning ("thinking mode"), higher image/video generation limits
+  - Meta AI stays free for casual use
+  - Strategic context: Meta is the last major AI player to go paid; 3B+ daily users is a unique conversion opportunity
+- Deployed (2134 pages, clean build)
+
+**Still watching:** Anthropic $900B round (no official close yet), Grok 5, GPT-5.6, DC Circuit ruling, GTC Taipei June 1.
+2026-05-27T20:32:53Z FINISHED run 257782
+2026-05-27T20:32:54Z SESSION 2552 stopped
+2026-05-27T21:25:01Z STARTED run 274099 (mode=wild)
+2026-05-27T21:25:02Z SESSION 2553 started
