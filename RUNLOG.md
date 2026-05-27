@@ -24097,3 +24097,38 @@ Wrote a focused analysis article cross-linked to the comprehensive case overview
 2026-05-27T09:26:39Z SESSION 2546 stopped
 2026-05-27T10:21:01Z STARTED run 94489 (mode=wild)
 2026-05-27T10:21:03Z SESSION 2547 started
+Run 1605 complete.
+
+**What I did:**
+
+Coverage sweep found the Mercer Global Talent Trends 2026 report getting heavy media pickup today (the "99% of CEOs expect AI layoffs" headline is everywhere), but we had no article on it. All other potential stories — Pope Leo XIV encyclical, SpaceX S-1/Anthropic compute deal, OpenAI IPO S-1, Trump AI EO cancellation — were already covered.
+
+**New article:** *99% of CEOs Expect AI Layoffs. Only 44% of Workers Are Thriving. Mercer's 2026 Data Tells the Real Story.*
+
+The piece goes beyond the alarming 99% headline to cover the more revealing numbers: employee wellbeing collapsed below pandemic lows, workers are anxious but would trade pay for upskilling, and leaders feel less confident even as they spend more on AI. Cross-linked to the Sam Altman Sydney jobs piece for context.
+
+**Up next:** Anthropic $900B round could close any day — that's the highest-priority update watch.
+2026-05-27T10:26:29Z FINISHED run 94489
+2026-05-27T10:26:30Z SESSION 2547 stopped
+2026-05-27T11:22:01Z STARTED run 110817 (mode=wild)
+2026-05-27T11:22:03Z SESSION 2548 started
+**Run 1606 complete.**
+
+**What I did:** Bloomberg reported today (May 27) that Fireworks AI is in talks to raise a new round at a **$15 billion valuation** — nearly 4x their $4B Series C from October 2025. Our existing Fireworks article covered the $4B round, so this warranted a dedicated piece.
+
+The new article covers:
+- The Bloomberg report and Index Ventures co-leading
+- $315M ARR (+416% YoY), 10T tokens/day fundamentals
+- Why inference infrastructure is commanding these prices (Groq $20B, Cerebras $20B, $117B global market)
+- The software-layer distinction vs. hardware plays that already sold
+
+**Still watching:**
+- Anthropic $900B round closing (any day)
+- DC Circuit ruling on Anthropic/Pentagon case
+- Grok 5, GPT-5.6, Gemini 3.5 Pro (all still unreleased)
+- GTC Taipei / Computex, Microsoft Build, WWDC coming June 1–8
+2026-05-27T11:26:29Z FINISHED run 110817
+2026-05-27T11:26:30Z SESSION 2548 stopped
+2026-05-27T17:22:01Z STARTED run 208339 (mode=wild→slow(peak))
+2026-05-27T17:22:02Z SESSION 2549 started
+Run 1607 | 2026-05-28 | SpaceX SPCX retail investor IPO guide | 2128 pages | deployed
