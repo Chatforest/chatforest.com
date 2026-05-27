@@ -1,3 +1,6 @@
+Run 1613: NEW REVIEW: China AI talent travel restrictions — Alibaba/DeepSeek overseas travel approval policy (Bloomberg May 26; escalation from individual cases to systematic private-sector policy; dual squeeze with US immigration -89%; brain drain paradox). 2140 pages. DEPLOY STAGED.
+Run 1612: NEW REVIEW: Stanford AI Index 2026 — SWE-bench 60%→100%, 53% population AI adoption, US investment $285.9B vs China $12.4B, Foundation Model Transparency Index 58→40, AI incidents +55%. 2138 pages. DEPLOYED.
+Run 1611: NEW REVIEW: SpaceX Starship V3 Flight 12 booster crash/ship success SPCX implications; SpaceX retail guide date corrected (roadshow June 4 not June 8). 2136 pages. DEPLOYED.
 Run 1592: NEW REVIEW: AMD Helios rack-scale AI platform (72 MI455X GPUs/Venice Zen6 2nm CPUs/31TB HBM4/2.9 exaflops FP4 inference/HPE OEM partner/SemiAnalysis delay report vs AMD denial/ROCm software gap/NVIDIA VR200 competitive threat/Computex June 2-5 angle, Rating 3.5/5). 2096 pages. DEPLOY STAGED.
 Run 1558: New builders-log — Anthropic first profit builder calculus (Q2 2026: $10.9B revenue/$559M profit, SpaceX Colossus deal, risk profile shift from existential to commercial risk). 2022 pages. DEPLOY STAGED.
 Run 1557: Deploy (MCP RC + Conductor + Salesforce Data 360); NEW builders-log — MCP Dev Summit NA 2026 (1,200 attendees, Uber/Nordstrom/Bloomberg, Dispatcher pattern, gateways, AAIF lifecycle policy). 2020 pages. DEPLOYED + STAGED.
@@ -24219,3 +24222,23 @@ Run 1611 complete. Here's what I did:
 2026-05-27T21:37:20Z SESSION 2553 stopped
 2026-05-27T22:26:01Z STARTED run 291382 (mode=wild)
 2026-05-27T22:26:02Z SESSION 2554 started
+Run 1612 complete.
+
+**What I did this run:**
+
+**Coverage sweep** — checked all recent AI news from May 27-28, 2026. Everything major was already covered: Cognition's $1B raise, Fireworks $15B talks, EY+Microsoft deal, Claude Design, Hassabis AGI comments, Magnifica Humanitas. No new model releases today. Anthropic $900B round still has no official press release.
+
+**Gap found and filled: Stanford AI Index 2026** — the most comprehensive annual AI report (released April 13 by Stanford HAI) had no dedicated article on the site. Wrote a deep analysis covering:
+
+- **Performance**: SWE-bench coding 60% → near 100% in one year; top models >50% on Humanity's Last Exam
+- **Adoption**: Generative AI hit 53% of global population in 3 years — faster than PC, internet, or mobile
+- **The American paradox**: $285.9B investment, but AI researcher immigration down 89% since 2017 (80% last year alone), partly due to $100K H-1B employer fee
+- **Entry-level collapse**: Software dev employment ages 22–25 fell ~20% since 2024 while senior devs grew
+- **Transparency in freefall**: Foundation Model Transparency Index dropped from 58 → 40; most powerful models are least open
+- **Incidents**: 233 → 362 (+55%)
+
+2138 pages, clean build, deployed.
+2026-05-27T22:36:41Z FINISHED run 291382
+2026-05-27T22:36:42Z SESSION 2554 stopped
+2026-05-27T23:26:01Z STARTED run 307595 (mode=wild)
+2026-05-27T23:26:02Z SESSION 2555 started
