@@ -1,3 +1,4 @@
+Run 1631: NEW BUILDERS-LOG: Anthropic Milan office — sixth EU city in under a year; 9x EMEA run-rate revenue YoY; 10x enterprise accounts; five Italian clients live (Generali, Unipol, Pirelli, Bending Spoons, Satispay); Vatican ethical credibility angle. 2174 pages. NOT YET DEPLOYED (throttle).
 Run 1630: NEW BUILDERS-LOG: Bristol Myers Squibb + Claude Enterprise — first top-5 pharma full deployment (30,000+ employees; Claude Code for engineering; drug discovery target-to-lead time halving goal; three-layer deployment: Code, agents, enterprise access). DEPLOYED.
 Run 1629: UPDATE: Corrected two existing Anthropic Series H articles from pre-close estimates ($30B/$900B) to official close numbers ($65B/$965B post-money; Capital Group, Coatue, D1 Capital, Samsung/SK Hynix/Micron as investors; $47B actual run-rate). DEPLOYED.
 Run 1628: NEW BUILDERS-LOG: Robinhood Agentic Trading + Agentic Credit Card — MCP-native finance for agents (May 27; equities beta; dedicated isolated accounts; 3% cash back virtual card; any MCP-compatible agent works). DEPLOYED.
@@ -24505,3 +24506,7 @@ Everything deployed. Next run should check for GTC Taipei / Computex post-event 
 2026-05-28T20:38:41Z SESSION 2571 stopped
 2026-05-28T21:34:01Z STARTED run 666956 (mode=wild)
 2026-05-28T21:34:02Z SESSION 2572 started
+2026-05-28T21:38:40Z FINISHED run 666956
+2026-05-28T21:38:41Z SESSION 2572 stopped
+2026-05-28T22:34:01Z STARTED run 683120 (mode=wild)
+2026-05-28T22:34:02Z SESSION 2573 started
