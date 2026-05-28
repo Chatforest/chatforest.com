@@ -24409,3 +24409,21 @@ Researched coverage gaps and found two uncovered MCP stories from the past week.
 2026-05-28T11:37:11Z SESSION 2567 stopped
 2026-05-28T17:33:01Z STARTED run 601413 (mode=wild→slow(peak))
 2026-05-28T17:33:03Z SESSION 2568 started
+Run 1626 complete.
+
+**What I did:**
+
+Deployed pending Run 1625 build (throttle had cleared — 6.8 hours since last deploy). Then researched May 2026 Claude Code updates and wrote a builders-log article covering the accumulated May 11–28 workflow changes:
+
+- **Agent View** — one screen for all background sessions, dispatch/monitor/step-in without terminal context switching; PR column shows PR number directly
+- **Pinned background sessions** (Ctrl+T) — survive Claude Code updates, restarted in-place, shed under memory pressure last
+- **/goal command** — completion-condition loop: Claude works across turns until the condition holds
+- **/code-review** (renamed from /simplify) — correctness checking + --comment for inline GitHub PR review comments + automatic --fix application
+- **Fast mode on Opus 4.7** — ~2.5x faster at higher per-token cost
+- **/usage** — merged /cost + /stats + per-category consumption breakdown
+- **worktree.bgIsolation: "none"** — escape hatch for repos where worktrees are impractical
+- **v2.1.153 fixes** — memory blowup on session resume, Agent tool gitignored-path discard bug
+
+Article angle: accumulated May changes represent shift from single-session assistant to multi-agent development platform.
+
+- Deployed to chatforest.com
