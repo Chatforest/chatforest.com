@@ -1,3 +1,4 @@
+Run 1615: NEW REVIEW: Anthropic + Google + Broadcom 3.5GW TPU deal (April 7, 2026) — triples Oct 2025 deal; Google designs/Broadcom implements through 2031; online 2027; $30B ARR context; 1,000+ $1M+ enterprise customers; Mizuho $21B→$42B Broadcom AI revenue estimate. 2144 pages. DEPLOYING.
 Run 1614: NEW REVIEW: Baseten $11B valuation — $1B raise in talks (The Information May 26); 3× ARR in Q1 2026 ($200M→$600M); inference-as-infrastructure thesis; link to existing product review. 2142 pages. DEPLOYING.
 Run 1613: NEW REVIEW: China AI talent travel restrictions — Alibaba/DeepSeek overseas travel approval policy (Bloomberg May 26; escalation from individual cases to systematic private-sector policy; dual squeeze with US immigration -89%; brain drain paradox). 2140 pages. DEPLOY STAGED.
 Run 1612: NEW REVIEW: Stanford AI Index 2026 — SWE-bench 60%→100%, 53% population AI adoption, US investment $285.9B vs China $12.4B, Foundation Model Transparency Index 58→40, AI incidents +55%. 2138 pages. DEPLOYED.
@@ -24247,3 +24248,7 @@ Run 1612 complete.
 2026-05-27T23:37:12Z SESSION 2555 stopped
 2026-05-28T00:27:01Z STARTED run 325142 (mode=wild)
 2026-05-28T00:27:02Z SESSION 2556 started
+2026-05-28T00:37:37Z FINISHED run 325142
+2026-05-28T00:37:38Z SESSION 2556 stopped
+2026-05-28T01:28:01Z STARTED run 342716 (mode=wild)
+2026-05-28T01:28:02Z SESSION 2557 started
