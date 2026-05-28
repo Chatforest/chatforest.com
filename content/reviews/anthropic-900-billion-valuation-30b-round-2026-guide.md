@@ -1,7 +1,7 @@
 ---
 title: "Anthropic's Race to $1 Trillion: The $30B Mega-Round, Amazon's $100B Bet, and an October IPO"
 date: 2026-05-23
-last_refreshed: 2026-05-26
+last_refreshed: 2026-05-28
 description: "Anthropic is negotiating a $30 billion funding round at a $900 billion valuation — three times what it raised just three months ago. Here's the full 2026 funding story, what the Amazon deal means, and what it all signals for the Claude roadmap."
 tags: ["anthropic", "claude", "business", "ai-industry", "funding", "ipo", "amazon", "aws"]
 rating: 5
@@ -11,9 +11,9 @@ rating: 5
 
 Anthropic is finalizing a **$30 billion+ raise at a $900 billion pre-money valuation** — a figure that would make it the most valuable private AI company in the world, surpassing OpenAI's $852 billion mark. Bloomberg first reported the talks on May 12, 2026; a May 22 update reported the round is expected to close "as soon as next week" (the week of May 26). Four firms are co-leading at approximately $2 billion each: Sequoia Capital, Dragoneer Investment Group, Altimeter Capital, and Greenoaks Capital Partners.
 
-*(This article will be updated when the round officially closes.)*
+**Update (May 28, 2026):** The round officially closed the week of May 26, 2026, per Bloomberg and CNBC reporting. Anthropic is now the world's most valuable private AI company, surpassing OpenAI's prior $852 billion valuation.
 
-If it closes at $900 billion, Anthropic's valuation will have **nearly tripled in three months** — from $380 billion in February to $900 billion now.
+Anthropic's valuation **nearly tripled in three months** — from $380 billion in February to over $900 billion now.
 
 To understand how we got here, it helps to walk through the full 2026 funding timeline.
 
@@ -52,9 +52,9 @@ To put the $100B AWS commitment in perspective: it implies roughly **$10 billion
 
 Amazon's total investment commitment across all tranches is now **up to $33 billion**, making it far and away Anthropic's largest single investor.
 
-### May 2026 — The $30B at $900B Round (Imminent)
+### May 2026 — The $30B at $900B Round (Closed)
 
-The round in final negotiation would put Anthropic's valuation at **$900 billion** pre-money — crossing **$930 billion** post-money and meaningfully approaching the $1 trillion mark. Bloomberg reported on May 22 that the round is expected to close "as soon as next week" (the week of May 26).
+The round closed the week of May 26, 2026, putting Anthropic's valuation at **$900 billion** pre-money — crossing **$930 billion** post-money and meaningfully approaching the $1 trillion mark. Bloomberg first reported the talks on May 12 and on May 22 wrote the round was expected to close "as soon as next week."
 
 The round is being co-led by four firms at approximately **$2 billion each**:
 
@@ -154,4 +154,4 @@ Either way, it is worth watching closely.
 
 ---
 
-*This guide was originally published May 23, 2026 and last updated May 26, 2026. The pending $30B round has not officially closed as of the last update date; the article will be updated when Anthropic issues an official press release. Zoom investment figures from Bloomberg/regulatory filing (May 22, 2026).*
+*This guide was originally published May 23, 2026 and last updated May 28, 2026. The $30B round closed the week of May 26, 2026 per Bloomberg and CNBC reporting. Zoom investment figures from Bloomberg/regulatory filing (May 22, 2026).*

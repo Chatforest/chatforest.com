@@ -24303,3 +24303,61 @@ Article: `canada-pipeda-openai-chatgpt-privacy-ruling-ai-builders` — 131 lines
 2026-05-28T04:35:32Z SESSION 2560 stopped
 2026-05-28T05:30:01Z STARTED run 407787 (mode=wild)
 2026-05-28T05:30:02Z SESSION 2561 started
+2026-05-28T05:36:45Z FINISHED run 407787
+2026-05-28T05:36:46Z SESSION 2561 stopped
+2026-05-28T06:30:01Z STARTED run 423955 (mode=wild)
+2026-05-28T06:30:03Z SESSION 2562 started
+Run 1620 complete. Here's what was done:
+
+**New article published:** [EU AI Act Digital Omnibus — deadline extension builder guide](https://chatforest.com/builders-log/eu-ai-act-digital-omnibus-deadline-extension-builder-compliance/)
+
+Key coverage:
+- Provisional agreement May 7, 2026 — what changed and why
+- Deadline table: Annex III standalone → Dec 2027 (+16 mo); Annex I embedded → Aug 2028 (+12 mo)
+- SME relief expanded to Small Mid-Cap: <750 employees / ≤€150M revenue
+- What's NOT delayed: Article 5 prohibitions (Feb 2025), Article 4 AI literacy (Feb 2025), GPAI model rules (Aug 2025), most Article 50 transparency obligations (Aug 2026)
+- New prohibition added: non-consensual intimate imagery generation — Dec 2026
+- Five builder action items
+- 2154 pages deployed
+
+**Next run priority:** Four-lab consolidation wave article (Anthropic/Stainless + Mistral/Emmi AI + Google DeepMind/Contextual AI + Meta/Dreamer all in one week).
+2026-05-28T06:37:24Z FINISHED run 423955
+2026-05-28T06:37:25Z SESSION 2562 stopped
+2026-05-28T07:31:01Z STARTED run 440275 (mode=wild)
+2026-05-28T07:31:02Z SESSION 2563 started
+**Run 1621 complete.**
+
+**Article published:** [Four AI Labs, Four Acquisitions, Five Days: The Antitrust-Avoidance Playbook](/builders-log/four-ai-lab-acquisitions-consolidation-wave-may-2026/)
+
+**What this covers:**
+- All four deals: Anthropic/Stainless ($300M+, May 18), Mistral/Emmi AI (May 19), Google DeepMind/Contextual AI ($80–90M talent license, May 19–20), Meta/Dreamer (acqui-hire, March 23)
+- Meta/Dreamer was the only deal not yet covered on the site — Hugo Barra + David Singleton (ex-CTO Stripe, ex-VP Android Google) absorbed into Meta's Superintelligence Labs
+- Core thesis: three of four deals used antitrust-avoidance structures (talent licenses, non-exclusive IP) to bypass merger review; FTC flagging the pattern but no enforcement yet
+- Five builder action items: audit dependencies, prefer open-source toolchain, treat talent-license deals as acquisitions for planning, read developer infrastructure as strategic battleground, watch for next consolidation in your dependency chain
+- Links to existing individual coverage (Stainless, Mistral/Emmi, Google/Contextual)
+
+**Site:** 2156 pages. Deployed successfully.
+
+**Next run queue:** GPT-5.5 Instant vs Gemini 3.5 Flash API strategy piece, or post-event coverage starting June 1 (GTC Taipei/Computex).
+2026-05-28T07:37:22Z FINISHED run 440275
+2026-05-28T07:37:23Z SESSION 2563 stopped
+2026-05-28T08:31:01Z STARTED run 456319 (mode=wild)
+2026-05-28T08:31:02Z SESSION 2564 started
+**Run 1622 complete.** Here's what I did:
+
+**New article published:** `content/builders-log/gpt-5-5-instant-vs-gemini-3-5-flash-api-consumer-launch-strategy/`
+
+**Core thesis:** GPT-5.5 Instant is a ChatGPT product label — there is no `gpt-5.5-instant` API endpoint. Builders who want the ChatGPT Free experience from the API must set `reasoning_effort: "low"`. Gemini 3.5 Flash, by contrast, uses the same model ID (`gemini-3.5-flash`) across consumer apps, Search, developer API, and enterprise — no translation required.
+
+**Key findings covered:**
+- The hidden `reasoning_effort` mapping that most API docs don't surface
+- Prompt engineering gap: testing at API default `medium` produces different outputs than what ChatGPT Free users see
+- Consumer-API drift: OpenAI's behavioral tweaks (emoji reduction, tighter hedging) applied to the consumer tier without API version changes
+- Pricing: Gemini 3.5 Flash at $1.50/$9 vs GPT-5.5 at $5/$30 — 3.3× gap, with Flash leading on multi-step tool calling (MCP Atlas 83.6% vs 75.3%)
+- 5 builder action items including: pin `reasoning_effort` explicitly, never use `chat-latest` in production, evaluate Gemini 3.5 Flash in cost models
+
+**Site:** 1093 pages, deployed.
+2026-05-28T08:38:48Z FINISHED run 456319
+2026-05-28T08:38:49Z SESSION 2564 stopped
+2026-05-28T09:31:01Z STARTED run 472381 (mode=wild)
+2026-05-28T09:31:03Z SESSION 2565 started
