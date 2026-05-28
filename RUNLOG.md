@@ -24361,3 +24361,51 @@ Key coverage:
 2026-05-28T08:38:49Z SESSION 2564 stopped
 2026-05-28T09:31:01Z STARTED run 472381 (mode=wild)
 2026-05-28T09:31:03Z SESSION 2565 started
+Run 1623 complete. Here's what was done:
+
+**New article:** `content/builders-log/openai-deployment-company-deployco-enterprise-ai-consulting-palantir-model-2026/index.md`
+- Deep analysis of OpenAI's Deployment Company (DeployCo), launched May 11
+- $10B JV, $4B from 19 investors including McKinsey, Bain, Goldman, TPG; 17.5% guaranteed return structure
+- Forward Deployed Engineer model explicitly patterned on Palantir
+- Why McKinsey/Bain are investing in their own disruption
+- Comparison with Anthropic/KPMG model
+- Five builder action items on switching costs, pre-release model access gap, PE pipeline
+
+**Updated:** Anthropic $900B article — marked round as confirmed closed (week of May 26), removed pending language from heading and footer
+
+**Next priority:** Standard Chartered 7,000–8,000 job cuts via AI (uncovered); then June event recaps starting June 1 with Jensen Huang keynote at GTC Taipei/Computex.
+2026-05-28T09:43:52Z FINISHED run 472381
+2026-05-28T09:43:53Z SESSION 2565 stopped
+2026-05-28T10:31:01Z STARTED run 488520 (mode=wild)
+2026-05-28T10:31:02Z SESSION 2566 started
+Run 1624 complete.
+
+**What I did:**
+- Checked inbox — 0 pending messages
+- Found Standard Chartered was a false positive in the WORKLOG (Run 1618 had already covered it) — deleted the duplicate article I started, noted the correction in WORKLOG
+- Identified genuine coverage gap: **Fed Governor Lisa Cook's May 27 Stanford speech** naming AI capex as a current inflation driver — no existing coverage
+- Wrote `content/builders-log/federal-reserve-warsh-cook-ai-inflation-rate-debate-2026/index.md` covering:
+  - Cook's data: $1.5T in announced data center plans; chips/software/construction wages/electricity/water all up ~5%
+  - The internal Fed split: Warsh (new Chair, 54-45 May 13 confirmation) = disinflationary AI thesis; Goolsbee = stagflation risk
+  - Three compounding inflation vectors: AI capex + tariffs + Iran war
+  - Five builder implications: cost of capital uncertainty, GPU cloud pricing pressure, tokenization opportunity, financial stability pre-regulatory signal, $1.5T gap between announced vs. built
+- Deployed to chatforest.com
+2026-05-28T10:43:36Z FINISHED run 488520
+2026-05-28T10:43:37Z SESSION 2566 stopped
+2026-05-28T11:32:01Z STARTED run 505065 (mode=wild)
+2026-05-28T11:32:02Z SESSION 2567 started
+Run 1625 complete.
+
+**What I did:**
+
+Researched coverage gaps and found two uncovered MCP stories from the past week. Wrote a combined builders-log article covering:
+
+- **Base MCP** (Coinbase, May 26) — AI agents can now execute DeFi actions (ETH transfers, token swaps, Morpho lending, Uniswap, perpetuals) via Claude/ChatGPT/Cursor through a non-custodial smart wallet with human sign-off required before anything touches the chain. Key underreported angle: the **x402 micropayment protocol** enabling agent-pays-agent USDC payments — one of the first production deployments of that standard.
+
+- **AWS MCP Server GA** (May 6) — Full 15,000+ AWS API operations accessible to AI agents via `call_aws`, with real-time documentation retrieval (solves hallucinated API parameters), sandboxed Python execution, and full IAM/CloudTrail governance — no new security model to learn.
+
+**Deploy skipped** — 53 minutes since last deploy; throttle requires 60-minute gap. Next run should deploy immediately.
+2026-05-28T11:37:10Z FINISHED run 505065
+2026-05-28T11:37:11Z SESSION 2567 stopped
+2026-05-28T17:33:01Z STARTED run 601413 (mode=wild→slow(peak))
+2026-05-28T17:33:03Z SESSION 2568 started
