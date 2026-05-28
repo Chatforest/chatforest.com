@@ -1,19 +1,17 @@
 ---
-title: "Anthropic's Race to $1 Trillion: The $30B Mega-Round, Amazon's $100B Bet, and an October IPO"
+title: "Anthropic's Race to $1 Trillion: The $65B Series H Close, Samsung and Memory Chip Giants, October IPO"
 date: 2026-05-23
-last_refreshed: 2026-05-28
-description: "Anthropic is negotiating a $30 billion funding round at a $900 billion valuation — three times what it raised just three months ago. Here's the full 2026 funding story, what the Amazon deal means, and what it all signals for the Claude roadmap."
+last_refreshed: 2026-05-29
+description: "Anthropic closed a $65 billion Series H on May 28, 2026 at a $965 billion post-money valuation — eclipsing OpenAI as the most valuable private AI company. Run-rate revenue hit $47 billion. Here's the full 2026 funding story and what it means for builders."
 tags: ["anthropic", "claude", "business", "ai-industry", "funding", "ipo", "amazon", "aws"]
 rating: 5
 ---
 
 ## The Headline
 
-Anthropic is finalizing a **$30 billion+ raise at a $900 billion pre-money valuation** — a figure that would make it the most valuable private AI company in the world, surpassing OpenAI's $852 billion mark. Bloomberg first reported the talks on May 12, 2026; a May 22 update reported the round is expected to close "as soon as next week" (the week of May 26). Four firms are co-leading at approximately $2 billion each: Sequoia Capital, Dragoneer Investment Group, Altimeter Capital, and Greenoaks Capital Partners.
+**Update (May 28, 2026 — official close):** Anthropic closed its Series H at **$65 billion raised** and a **$965 billion post-money valuation**, per Anthropic's own announcement and Bloomberg/CNBC reporting. The round eclipses OpenAI's $852 billion valuation, making Anthropic the most valuable private AI company in the world. Run-rate revenue crossed **$47 billion** earlier in May. The round was roughly twice the size originally anticipated — early reports cited $30B at $900B; the actual close was $65B at $965B.
 
-**Update (May 28, 2026):** The round officially closed the week of May 26, 2026, per Bloomberg and CNBC reporting. Anthropic is now the world's most valuable private AI company, surpassing OpenAI's prior $852 billion valuation.
-
-Anthropic's valuation **nearly tripled in three months** — from $380 billion in February to over $900 billion now.
+Anthropic's valuation **nearly tripled in three months** — from $380 billion in February to $965 billion post-money now.
 
 To understand how we got here, it helps to walk through the full 2026 funding timeline.
 
@@ -52,24 +50,31 @@ To put the $100B AWS commitment in perspective: it implies roughly **$10 billion
 
 Amazon's total investment commitment across all tranches is now **up to $33 billion**, making it far and away Anthropic's largest single investor.
 
-### May 2026 — The $30B at $900B Round (Closed)
+### May 28, 2026 — The $65B Series H Close (Official)
 
-The round closed the week of May 26, 2026, putting Anthropic's valuation at **$900 billion** pre-money — crossing **$930 billion** post-money and meaningfully approaching the $1 trillion mark. Bloomberg first reported the talks on May 12 and on May 22 wrote the round was expected to close "as soon as next week."
+Anthropic officially closed its **Series H on May 28, 2026**, raising **$65 billion** at a **$965 billion post-money valuation** — roughly twice the size originally reported. Bloomberg first reported the talks on May 12 and on May 22 wrote the round was expected to close "as soon as next week." The actual close came in larger than the leaks indicated.
 
-The round is being co-led by four firms at approximately **$2 billion each**:
+The round was co-led by:
 
+- **Altimeter Capital**
+- **Dragoneer Investment Group**
+- **Greenoaks Capital Partners**
 - **Sequoia Capital** — first time leading an Anthropic round
-- **Dragoneer Investment Group** — existing Anthropic investor
-- **Altimeter Capital** — existing Anthropic investor
-- **Greenoaks Capital Partners** — existing Anthropic investor
+- **Capital Group**
+- **Coatue Management**
+- **D1 Capital Partners**
 
-Existing investors also participating: **Founders Fund** (Peter Thiel) and **General Catalyst**.
+Institutional investors also participating: **Baillie Gifford**, **Blackstone**, **Brookfield**, **D.E. Shaw Ventures**, **DST Global**, **Fidelity Management & Research**.
 
-This round is entirely separate from the February 2026 Series G ($30B at $380B), which closed just three months prior. Anthropic is raising another $30B+ at 2.4× the valuation of its previous round — a trajectory made possible by revenue growth that is compounding monthly rather than annually.
+Strategic infrastructure partners new to this round: **Samsung**, **SK Hynix**, and **Micron** — the three largest suppliers of memory and storage chips in the world. Their participation is explicitly tied to Anthropic's growing compute infrastructure needs.
+
+**$15 billion of the round** is comprised of previously committed hyperscaler investments, including the $5 billion Amazon equity announced in April. Amazon's total commitment across all tranches now stands at up to $33 billion.
+
+This round is entirely separate from the February 2026 Series G ($30B at $380B), which closed just three months prior. In three months, Anthropic's valuation went from $380 billion to $965 billion — a trajectory made possible by revenue compounding monthly rather than annually.
 
 ---
 
-## Why $900 Billion?
+## Why $965 Billion?
 
 ### The Revenue Case
 
@@ -81,9 +86,9 @@ Anthropic's revenue trajectory makes the number defensible, if aggressive:
 | February 2026 | ~$14B |
 | March 2026 | ~$20B |
 | April 2026 | $30B+ |
-| Q2 2026 projection | ~$43B+ |
+| May 2026 (actual) | **$47B+** |
 
-If Q2 2026 lands at the projected $10.9 billion, the annualized run rate is roughly **$44 billion**. At a $900 billion valuation, that's approximately a **20x forward revenue multiple** — high, but comparable to OpenAI's implied multiple and typical for frontier AI companies where growth is compounding monthly rather than quarterly.
+Run-rate revenue crossed **$47 billion** in May, confirmed at Series H close. At the $965 billion post-money valuation, that's approximately a **20x forward revenue multiple** — high, but consistent with OpenAI's implied multiple and typical for frontier AI companies where growth compounds monthly rather than quarterly.
 
 For deeper context on what's driving the revenue, see our earlier piece on [Anthropic's first operating profit and the SpaceX Colossus deal](/reviews/anthropic-first-profit-q2-2026-claude-code-spacex-colossus-deal/).
 
@@ -106,7 +111,7 @@ Anthropic frames its valuation against OpenAI's ($852 billion), but the competit
 
 ### The IPO Case
 
-Investors putting money in at $900 billion are pricing in an IPO. Sources close to the discussions describe the pending round as **likely Anthropic's final private fundraise before going public**, with an IPO targeted as early as **October 2026**.
+Investors putting money in at $965 billion are pricing in an IPO. This is widely described as Anthropic's **final private fundraise before going public**, with an IPO targeted as early as **October 2026** — Goldman Sachs, JPMorgan, and Morgan Stanley are in discussions as lead underwriters.
 
 At IPO, comparable high-growth software and AI companies have historically commanded 25–40x forward revenue multiples in public markets. If Anthropic hits $60B ARR by Q4 2026 (extrapolating current growth), a $1.2–$2.4 trillion public market cap is within the range of analyst models — not a certainty, but not a fantasy either.
 
@@ -146,7 +151,7 @@ The valuation is not without risk:
 
 ## The Bigger Picture
 
-What Anthropic's 2026 funding arc illustrates is the velocity of value creation in frontier AI. In January, the company was valued at $350 billion. By May, the pending round targets $900 billion. If the IPO happens at $1 trillion+, Anthropic will have gone from $9 billion in annualized revenue to $60 billion and from Series F to public company in roughly 18 months.
+What Anthropic's 2026 funding arc illustrates is the velocity of value creation in frontier AI. In January, the company was valued at $350 billion. By May 28, the Series H closed at $965 billion — nearly a trillion dollars. If the IPO happens at $1 trillion+, Anthropic will have gone from $9 billion in annualized revenue to $60 billion+ and from Series F to public company in roughly 18 months.
 
 That pace has no real precedent in venture history. It either validates the AI infrastructure thesis completely, or it represents the kind of compressed cycle that ends with a notable correction.
 
@@ -154,4 +159,4 @@ Either way, it is worth watching closely.
 
 ---
 
-*This guide was originally published May 23, 2026 and last updated May 28, 2026. The $30B round closed the week of May 26, 2026 per Bloomberg and CNBC reporting. Zoom investment figures from Bloomberg/regulatory filing (May 22, 2026).*
+*This guide was originally published May 23, 2026. Updated May 29, 2026 with official Series H close details: $65 billion raised, $965 billion post-money valuation, $47B run-rate revenue, and strategic participation from Samsung, SK Hynix, and Micron (per Anthropic's announcement, Bloomberg, CNBC, and TechCrunch, May 28, 2026). Zoom investment figures from Bloomberg/regulatory filing (May 22, 2026).*
