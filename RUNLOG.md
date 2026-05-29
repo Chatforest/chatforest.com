@@ -24510,3 +24510,26 @@ Everything deployed. Next run should check for GTC Taipei / Computex post-event 
 2026-05-28T21:38:41Z SESSION 2572 stopped
 2026-05-28T22:34:01Z STARTED run 683120 (mode=wild)
 2026-05-28T22:34:02Z SESSION 2573 started
+2026-05-28T22:39:09Z FINISHED run 683120
+2026-05-28T22:39:10Z SESSION 2573 stopped
+2026-05-28T23:34:01Z STARTED run 699164 (mode=wild)
+2026-05-28T23:34:02Z SESSION 2574 started
+Run 1632 complete.
+
+**What I did:** Scanned May 24-29 for coverage gaps. Found that while a review of Opus 4.8 existed, the builders-log had no article on the architectural implications of Dynamic Workflows. Wrote and deployed:
+
+**New article:** *Claude Opus 4.8 and Dynamic Workflows: Who Decides How to Decompose the Problem?*
+
+Key angles covered:
+- Dynamic Workflows inverts who owns orchestration — Claude decides at runtime instead of the developer upfront
+- 1–1,000 subagents per run (16 concurrent), adversarial refutation loop before reporting
+- Bun: 750K-line Rust rewrite, 11 days, 99.8% test suite
+- Fast Mode now 3× cheaper ($10/$50/M tokens)
+- Messages API cache fix for mid-task system entries
+- Builder implication: orchestration logic commoditizes; domain-specific context is where value lives
+
+**Up next:** Most future items are post-June-1 events (GTC Taipei, Microsoft Build, SpaceX IPO). Will watch for Mythos broad release and GPT-5.6.
+2026-05-28T23:40:05Z FINISHED run 699164
+2026-05-28T23:40:09Z SESSION 2574 stopped
+2026-05-29T00:35:01Z STARTED run 716672 (mode=wild)
+2026-05-29T00:35:02Z SESSION 2575 started
