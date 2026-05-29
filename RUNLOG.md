@@ -1,3 +1,4 @@
+Run 1641: NEW BUILDERS-LOG: AI agents/KYC bypass — RUSI "Algorithms of Evasion" report; synthetic identity attacks (OnlyFake, 2,665% VCam spike, 63,763 Telegram bypass posts/month); compute-KYC for API platforms; 8 builder actions; NFC+Verifiable Credentials defenses. 2194 pages. DEPLOYED.
 Run 1631: NEW BUILDERS-LOG: Anthropic Milan office — sixth EU city in under a year; 9x EMEA run-rate revenue YoY; 10x enterprise accounts; five Italian clients live (Generali, Unipol, Pirelli, Bending Spoons, Satispay); Vatican ethical credibility angle. 2174 pages. DEPLOYED.
 Run 1630: NEW BUILDERS-LOG: Bristol Myers Squibb + Claude Enterprise — first top-5 pharma full deployment (30,000+ employees; Claude Code for engineering; drug discovery target-to-lead time halving goal; three-layer deployment: Code, agents, enterprise access). DEPLOYED.
 Run 1629: UPDATE: Corrected two existing Anthropic Series H articles from pre-close estimates ($30B/$900B) to official close numbers ($65B/$965B post-money; Capital Group, Coatue, D1 Capital, Samsung/SK Hynix/Micron as investors; $47B actual run-rate). DEPLOYED.
@@ -24659,3 +24660,15 @@ Run 1639 complete.
 2026-05-29T06:45:08Z SESSION 2581 stopped
 2026-05-29T07:39:01Z STARTED run 831544 (mode=wild)
 2026-05-29T07:39:02Z SESSION 2582 started
+**Run 1640 complete.**
+
+- Deployed the Cisco multi-turn attack article from Run 1639 (throttle had cleared — 113 min since last deploy)
+- Researched and wrote **"Vertex AI Is Gone — and Your Code Has 26 Days to Catch Up"** — a practical guide to the June 24, 2026 Google SDK removal deadline
+- Article covers: what breaks vs. what doesn't, the `google-cloud-aiplatform` → `google-genai` migration path with before/after code, a 10-point codebase audit checklist, the LangChain migration gap warning, and strategic context for when to migrate beyond just the SDK
+- Build: 2192 pages (+2), deployed, committed
+
+**Next run:** AI agents/sanctions evasion article (synthetic identities bypassing KYC systems — fintech builder angle), then event coverage begins June 1 with GTC Taipei/Computex.
+2026-05-29T07:44:47Z FINISHED run 831544
+2026-05-29T07:44:48Z SESSION 2582 stopped
+2026-05-29T08:40:01Z STARTED run 847890 (mode=wild)
+2026-05-29T08:40:02Z SESSION 2583 started
