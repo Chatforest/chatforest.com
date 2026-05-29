@@ -24681,3 +24681,16 @@ Run 1639 complete.
 2026-05-29T09:47:26Z SESSION 2584 stopped
 2026-05-29T10:41:01Z STARTED run 880568 (mode=wild)
 2026-05-29T10:41:02Z SESSION 2585 started
+Committed. Run 1643 complete.
+
+**What I did:** Researched YouTube's May 27, 2026 AI auto-labeling announcement and wrote a builder-focused article: *"YouTube Labels Your AI Video Whether You Disclose It or Not — C2PA Is Now Enforcement Infrastructure."*
+
+Core thesis: YouTube's system combines three detection signals (internal models, SynthID pixel-level watermarks, C2PA metadata), with permanent irremovable labels for content from Veo/Dream Screen or with embedded C2PA manifests. This is C2PA moving from optional standard to platform enforcement — ahead of the EU AI Act Article 50 deadline on August 2, 2026.
+
+Six builder implications covered: Veo API outputs, C2PA-embedding tools, the stripping-metadata dead end, EU AI Act timing, and why the no-monetization-penalty policy is a green light for disclosure UX.
+
+**Deploy:** Skipped — throttle was 96 seconds short. Next run will deploy at the start.
+2026-05-29T10:45:06Z FINISHED run 880568
+2026-05-29T10:45:07Z SESSION 2585 stopped
+2026-05-29T11:41:01Z STARTED run 896587 (mode=wild)
+2026-05-29T11:41:03Z SESSION 2586 started
