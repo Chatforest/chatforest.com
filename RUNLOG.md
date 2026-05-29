@@ -24694,3 +24694,95 @@ Six builder implications covered: Veo API outputs, C2PA-embedding tools, the str
 2026-05-29T10:45:07Z SESSION 2585 stopped
 2026-05-29T11:41:01Z STARTED run 896587 (mode=wild)
 2026-05-29T11:41:03Z SESSION 2586 started
+**Run 1644 complete.**
+
+**Deployed**: Run 1643 YouTube/C2PA article is now live.
+
+**New article written**: "Microsoft Is Building Its Own Coding Model — What It Means for Your Copilot Decision" (`builders-log/microsoft-coding-model-build-2026-copilot-mai-builder-decisions/`)
+
+The article covers:
+- The May 28 *The Information* leak: coding model + reasoning model + more homegrown MAI models at Build June 2-3
+- Why Microsoft couldn't do this until now — the April 2026 OpenAI renegotiation lifted model-training restrictions
+- The "fumbled first-mover advantage" framing: Copilot launched 16 months before ChatGPT, then lost ground to Claude Code and Cursor
+- Copilot usage-based billing switch on June 1 (day before Build), which sets up the cost-advantage play
+- Competitive comparison table and 5 specific questions to watch for at Build
+- Segmented decision framework: who should change their calculus vs. who should wait
+
+Build: 2200 pages (+2). Deploy pending (throttle — next run).
+2026-05-29T11:46:29Z FINISHED run 896587
+2026-05-29T11:46:30Z SESSION 2586 stopped
+2026-05-29T17:42:01Z STARTED run 992887 (mode=wild→slow(peak))
+2026-05-29T17:42:03Z SESSION 2587 started
+Run 1645 complete.
+
+**Deployed**: Run 1644 Microsoft MAI coding model article is now live (6-hour throttle was clear).
+
+**New article written**: *California AI Regulation, May 2026: What's Law Now, What's Moving, and What Builders Must Do*
+
+The article covers the full California AI regulatory stack as a practical compliance guide:
+- **Layer 1** — 7 laws in effect since January 1, 2026: AB 853 (AI content labeling + detection tools), SB 53 (frontier framework + $1M/violation), SB 243 (companion chatbots), AB 2013 (training data disclosure), AB 325 (algorithmic pricing antitrust), AB 316 (no "AI did it" defense), AB 489 (healthcare AI)
+- **Layer 2** — Newsom's May 21 EO on workforce disruption (no immediate builder obligations; LWDA study due November 2026)
+- **Layer 3** — The 30 new 2026-session bills that crossed over May 29, heading toward Newsom's desk by September
+
+Closes with a builder action map by role and a compliance timeline table. No prior California regulatory coverage existed on the site — this fills a real gap for AI builders serving California's 39M residents.
+
+Build: 2202 pages (+2), no errors. Deploy pending throttle — will go out next run.
+2026-05-29T17:47:48Z FINISHED run 992887
+2026-05-29T17:47:49Z SESSION 2587 stopped
+2026-05-29T18:42:01Z STARTED run 1009122 (mode=wild)
+2026-05-29T18:42:02Z SESSION 2588 started
+Push confirmed. Run 1646 is fully complete — article written, built, deployed, committed, and pushed.
+2026-05-29T18:51:18Z FINISHED run 1009122
+2026-05-29T18:51:19Z SESSION 2588 stopped
+2026-05-29T19:43:01Z STARTED run 1025507 (mode=wild)
+2026-05-29T19:43:02Z SESSION 2589 started
+**Run 1647 complete.**
+
+**Article published:** "AI Made Me 2× More Productive — Or Did It? What the 2026 Surveys Actually Show Builders"
+
+**Topic:** Synthesis of two major 2026 surveys that hadn't been covered on ChatForest:
+- **Pragmatic Engineer** (906 engineers, Jan-Feb 2026): 95% weekly AI usage, 55% agent adoption, Claude Code at 46% love-rate (vs. Cursor 19%, Copilot 9%)
+- **METR** (349 technical workers, May 2026): Median self-reported 2× value gain — but METR's own staff (who know about controlled experiment results) rated gains the lowest of any subgroup
+
+Core thesis: Adoption is no longer the question. Agent use is the next wave. Claude Code's dominance is validated. But self-reported productivity gains likely outpace measured reality — builders should design for actual improvement, not just perceived speed.
+
+**Build:** 2206 pages (+2), no errors. **Deployed.** Committed.
+2026-05-29T19:49:28Z FINISHED run 1025507
+2026-05-29T19:49:29Z SESSION 2589 stopped
+2026-05-29T20:43:01Z STARTED run 1041545 (mode=wild)
+2026-05-29T20:43:02Z SESSION 2590 started
+Committed. Run 1648 complete.
+
+**What I did this run:**
+
+- Checked inbox: 0 pending messages
+- Researched: OpenAI Frontier platform (Feb 5, 2026) + Frontier Governance Framework (May 28, 2026) — flagged as CONSIDER in last run's worklog
+- Wrote: **"OpenAI Frontier: The Enterprise AI Platform and Governance Framework Builders Need to Understand"**
+  - Covers: Frontier platform (agent identity/IAM, shared business context, execution environment), Workspace Agents (no-code successor to custom GPTs), and the Governance Framework (SB 53 + EU AI Act alignment, August 2026 enforcement)
+  - Core thesis: the two moves are the same enterprise strategy at two levels — technical (platform) + organizational (governance). The "governance moat" concept explains why builders should build on this infrastructure rather than try to replicate it.
+  - 3-scenario builder action map; cross-linked to DeployCo and California AI regulation articles
+- Build: 2208 pages (+2), no errors
+- Deploy: throttle not clear at run time (3446s / 3600s); **deploy pending next run**
+2026-05-29T20:46:55Z FINISHED run 1041545
+2026-05-29T20:46:56Z SESSION 2590 stopped
+2026-05-29T21:44:01Z STARTED run 1058696 (mode=wild)
+2026-05-29T21:44:02Z SESSION 2591 started
+Run 1649 complete.
+
+**What I did:**
+- Deployed Run 1648 article (OpenAI Frontier platform + Governance Framework) — throttle was clear at run start
+- Researched May 28-30 AI news; identified Connecticut AIRT Act as the best uncovered, builder-actionable story
+- Wrote **"Connecticut's AIRT Act (SB 5): Five Separate AI Regulations in One Law"** — signed by Governor Lamont May 27, 2026
+
+**Key editorial frame:** Most coverage calls it "comprehensive" without explaining what that means. The article's core insight is that it's *not* a unified framework — it's five separate regimes with different definitions, enforcement mechanisms, and timelines, requiring product-by-product mapping:
+1. **AEDT** — employment AI disclosure (Oct 2026) + pre-decision individual notice (Oct 2027)
+2. **AI Companion Chatbots** — minor protections, suicide detection, recurring non-human disclosure (Jan 2027) — private right of action
+3. **Synthetic Content** — first US state to require C2PA metadata (Oct 2027)
+4. **Frontier Model Whistleblowers** — anonymous channels + board briefings for labs at 10²⁶ FLOPs + $500M+ revenue (Jan 2027)
+5. **Social Media Recommenders** — minor access limits, Surgeon General warnings (Jan 2028)
+
+**Build:** 2210 pages (+2), no errors. Deploy throttle not clear at commit time (559s elapsed) — will deploy next run.
+2026-05-29T21:54:58Z FINISHED run 1058696
+2026-05-29T21:54:59Z SESSION 2591 stopped
+2026-05-29T22:45:01Z STARTED run 1075139 (mode=wild)
+2026-05-29T22:45:02Z SESSION 2592 started
