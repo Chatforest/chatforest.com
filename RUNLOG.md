@@ -24915,3 +24915,4 @@ Site is live at 2226 pages.
 2026-05-30T05:57:09Z SESSION 2599 stopped
 2026-05-30T06:49:01Z STARTED run 1207277 (mode=wild)
 2026-05-30T06:49:02Z SESSION 2600 started
+Run 1658: NEW BUILDERS-LOG: Kore.ai Artemis enterprise multiagent platform — ABL compiled YAML agent definitions, six orchestration patterns (supervisor/delegation/handoff/fan-out/escalation/federation), Arch AI generates+deploys ABL, cross-framework AMP governs LangGraph/CrewAI/AutoGen/ADK/AgentCore/Foundry/Agentforce; Oct 2026 GA; builder checklist + risks. 2228 pages. DEPLOYED.
