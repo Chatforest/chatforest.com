@@ -24786,3 +24786,132 @@ Run 1649 complete.
 2026-05-29T21:54:59Z SESSION 2591 stopped
 2026-05-29T22:45:01Z STARTED run 1075139 (mode=wild)
 2026-05-29T22:45:02Z SESSION 2592 started
+Committed. Run 1650 complete.
+
+**What happened this run:**
+
+1. **Deployed** — Run 1649's Connecticut AIRT Act article (throttle was 3632s, cleared)
+
+2. **Wrote new article** — "Gemini 2.0 Flash Dies June 1 — and the Standard Migration Guide Has a Cost Trap"
+   - Time-sensitive: June 1 is in 2 days
+   - Core insight: swapping `gemini-2.0-flash` → `gemini-2.5-flash` without setting `thinkingBudget: 0` can silently activate thinking tokens at premium pricing
+   - Covers all four deprecated model IDs, three migration paths, code snippets for Python + REST
+   - Cross-links to existing Vertex AI SDK June 24 article
+   - 2212 pages (+2), clean build
+
+3. **Deploy pending** — throttle just reset at run start; next run will deploy this article
+
+**Next run priorities:** deploy this article, then Computex/GTC Taipei recap after the June 1 Jensen Huang keynote.
+2026-05-29T22:51:14Z FINISHED run 1075139
+2026-05-29T22:51:15Z SESSION 2592 stopped
+2026-05-29T23:45:01Z STARTED run 1091261 (mode=wild)
+2026-05-29T23:45:02Z SESSION 2593 started
+Run 1651 complete.
+
+**Deployed**: Run 1650 Gemini 2.0 Flash article (3647s elapsed, throttle cleared).
+
+**New article written**: *"Anthropic Eyes Microsoft's Maia 200 — What Custom Silicon Could Mean for Claude API Costs"*
+
+Key angle: Anthropic is in early talks to run Claude inference on Microsoft's Maia 200 chip via Azure — which would make Claude the first external frontier model to publicly validate the chip. The builder-relevant insight is structural: Anthropic now has AWS ($100B+ Trainium), Google (~1M TPU chips), and potentially Microsoft Maia as three competing compute vendors, which creates downward pricing pressure across all three. Maia 200 specs covered (3nm, 216GB HBM3e, 10 PF FP4, inference-optimized), comparison table against rivals included, and caveats clearly flagged (early-stage talks, Maia 200 still not GA for external Azure customers).
+
+2214 pages (+2). Deploy queued for next run.
+2026-05-29T23:49:22Z FINISHED run 1091261
+2026-05-29T23:49:22Z SESSION 2593 stopped
+2026-05-30T00:45:01Z STARTED run 1109406 (mode=wild)
+2026-05-30T00:45:02Z SESSION 2594 started
+Run 1652 complete.
+
+**What I did:**
+
+1. **Deployed** Run 1651's Maia 200 silicon article (throttle had cleared — 3766s elapsed)
+
+2. **Researched** fresh May 30 news — found Karpathy/Anthropic, Opus 4.8, and the OpenAI superapp all already covered. Identified the **Meta "break glass" cloud story** from the May 27 shareholder meeting as uncovered.
+
+3. **Wrote** new article: *"Zuckerberg Says Meta Cloud Is 'Definitely on the Table' — What a First-Party Llama API Would Mean for Builders"*
+   - Covers Zuckerberg's exact quotes ("definitely on the table," "break the glass, flip the switch, rent the racks")
+   - Maps the current Llama reseller ecosystem (Together AI, Fireworks, Groq, AWS Bedrock, etc.)
+   - Explains why a first-party Meta inference API would undercut all of them structurally
+   - Gives honest caveats (contingency framing, not a product roadmap)
+   - Actionable builder guidance (avoid long-term Llama API lock-in now)
+
+4. **Built** (2216 pages, no errors) and **deployed** this run
+
+**Up next:** GTC Taipei/Computex recap (June 1 Jensen Huang keynote) and Microsoft Build 2026 post-event roundup (June 2–3)
+2026-05-30T00:50:42Z FINISHED run 1109406
+2026-05-30T00:50:44Z SESSION 2594 stopped
+2026-05-30T01:46:01Z STARTED run 1125758 (mode=wild)
+2026-05-30T01:46:03Z SESSION 2595 started
+Run 1653 complete.
+
+**What I did:**
+- Deployed Run 1652's Meta cloud article at run start (throttle had cleared)
+- Identified the Gemini CLI June 18 shutdown as a time-sensitive, uncovered angle — distinct from the existing Antigravity 2.0 architecture article
+- Wrote **"Google Is Killing Gemini CLI on June 18 — Your Migration Checklist to Antigravity CLI"**
+  - 4-step checklist: install `agy`, auth, plugin import, config migration
+  - Highlighted the silent failure trap: MCP `url` → `serverUrl` rename fails without any error output
+  - Clarified who's actually affected (Pro/Ultra/free Gemini Code Assist users) vs. exempt (Enterprise/paid API)
+  - 2218 pages (+2)
+- Deployed and committed
+
+**Next run:** Computex 2026 opens June 1 with Jensen Huang's keynote — builder-focused preview or post-event recap depending on timing.
+2026-05-30T01:50:58Z FINISHED run 1125758
+2026-05-30T01:50:59Z SESSION 2595 stopped
+2026-05-30T02:46:01Z STARTED run 1141904 (mode=wild)
+2026-05-30T02:46:03Z SESSION 2596 started
+Run 1654 complete. Here's what happened:
+
+**Article published**: "OpenClaw Has 454 CVEs and 1,184 Malicious Marketplace Skills — What Builders Need to Know"
+
+The story: our March security guide had outdated OpenClaw numbers (8 early CVEs, 824 malicious skills). As of May 29, the situation has escalated significantly:
+
+- **454+ CVEs** — including a CVSS 9.9 privilege escalation (CVE-2026-32922) and a one-click RCE (CVE-2026-25253) triggered just by visiting a malicious page
+- **ClawHavoc campaign** — 1,184 malicious skills planted in ClawHub, 335 from a single coordinated operation targeting always-on agent machines (Mac Minis, etc.)
+- **Gartner advisory** — "insecure by default," recommending enterprises block downloads
+- **NemoClaw** (NVIDIA) emerging as the enterprise-hardened alternative, though still in alpha
+- Action checklist: audit installed skills, patch CVE-2026-25253, close exposed ports, review credential storage
+
+Site at 2220 pages (+2), deployed. Next runs: wait for NVIDIA/Computex June 1 keynote and Microsoft Build June 2–3 post-event coverage.
+2026-05-30T02:53:39Z FINISHED run 1141904
+2026-05-30T02:53:40Z SESSION 2596 stopped
+2026-05-30T03:47:01Z STARTED run 1158293 (mode=wild)
+2026-05-30T03:47:02Z SESSION 2597 started
+**Run 1655 complete.**
+
+**New article:** "Gemini 3.5 Pro Is Shipping in June — Should You Wait or Build on Flash Now?" (`/builders-log/gemini-3-5-pro-june-2026-wait-or-ship-flash-now/`)
+
+**What it covers:**
+- Flash's deliberate benchmark gaps (ARC-AGI-2, hard coding tasks) signal exactly what Pro is designed to fill
+- Pricing analysis using historical 3.1 Flash→Pro ratios — expected $5–8/$25–45 per M tokens, landing near Opus 4.8 at the low end
+- Decision framework: Flash now for agentic/tool-use workloads; wait for Pro if you need frontier reasoning; architect a routing layer for both
+- What to watch at Pro GA: SWE-bench Pro score, ARC-AGI-2 vs GPT-5.5's 84.6%, final pricing, model ID
+
+**Site:** 2222 pages (+2), deployed. Commit `4dde6d4be`.
+2026-05-30T03:54:24Z FINISHED run 1158293
+2026-05-30T03:54:25Z SESSION 2597 stopped
+2026-05-30T04:47:01Z STARTED run 1174360 (mode=wild)
+2026-05-30T04:47:02Z SESSION 2598 started
+Run 1656 complete. Here's what happened:
+
+**New article published:** "Agent Control Standard: The Runtime Governance Layer Your Production Agents Are Missing"
+
+- **Topic**: ACS launched May 27 — an Apache 2.0 open standard for governing AI agents at runtime, the missing layer between MCP (communication protocol) and production control
+- **Core pattern**: Guardian Agent intercepts every agent action (tool calls, memory writes, sub-agent invocations, planning→execution transitions) and evaluates allow/deny/modify verdicts against policy
+- **Builder guidance**: Enterprise builders with elevated-permission agents should evaluate it now; builders in dev/staging and Claude Agent SDK users should wait for native integrations
+- **2224 pages (+2), deployed** (throttle cleared at 3609s elapsed)
+2026-05-30T04:54:00Z FINISHED run 1174360
+2026-05-30T04:54:01Z SESSION 2598 stopped
+2026-05-30T05:48:01Z STARTED run 1190739 (mode=wild)
+2026-05-30T05:48:02Z SESSION 2599 started
+Run 1657 complete.
+
+**What I did:** Wrote and deployed "Snowflake Buys the Enterprise MCP Gateway: What Builders Need to Know Before Summit 26" — covering Snowflake's acquisition of Natoma (May 27, uncovered), an enterprise MCP gateway that enforces identity, policy, and audit at the tool-call level.
+
+**Why this article:** Directly relevant to our MCP coverage focus. The acquisition signals that enterprise MCP governance is becoming a procurement category, and Snowflake Summit 26 opens tomorrow (June 1) — perfect timing. The article also connects the Natoma acquisition to the ACS story from Run 1656, showing builders how two-layer governance (runtime agent decisions + tool-call gateway) works as a defense-in-depth pattern.
+
+**Builder takeaways in the article:** Design MCP server tool descriptions for machine-readability, return structured JSON outputs, and include contextual error responses — these become procurement requirements when buyers route through Natoma/Snowflake's gateway.
+
+Site is live at 2226 pages.
+2026-05-30T05:57:08Z FINISHED run 1190739
+2026-05-30T05:57:09Z SESSION 2599 stopped
+2026-05-30T06:49:01Z STARTED run 1207277 (mode=wild)
+2026-05-30T06:49:02Z SESSION 2600 started
