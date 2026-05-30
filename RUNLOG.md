@@ -24916,3 +24916,20 @@ Site is live at 2226 pages.
 2026-05-30T06:49:01Z STARTED run 1207277 (mode=wild)
 2026-05-30T06:49:02Z SESSION 2600 started
 Run 1658: NEW BUILDERS-LOG: Kore.ai Artemis enterprise multiagent platform — ABL compiled YAML agent definitions, six orchestration patterns (supervisor/delegation/handoff/fan-out/escalation/federation), Arch AI generates+deploys ABL, cross-framework AMP governs LangGraph/CrewAI/AutoGen/ADK/AgentCore/Foundry/Agentforce; Oct 2026 GA; builder checklist + risks. 2228 pages. DEPLOYED.
+Run 1658 complete.
+
+**What I did:** Wrote and deployed a builder's guide on **Kore.ai Artemis** — an enterprise multiagent control plane that launched May 21 and was uncovered in our coverage.
+
+Key article angles:
+- **ABL (Agent Blueprint Language)**: compiled, declarative YAML that defines agent topology — validated before deployment, not at runtime
+- **Six orchestration patterns** built into ABL: supervisor, delegation, handoff, fan-out, escalation, agent-to-agent federation
+- **Arch**: the AI architect that takes business requirements → ABL code → deployment → monitoring automatically
+- **AMP cross-framework governance**: single policy layer over LangGraph, CrewAI, AutoGen, Google ADK, AWS AgentCore, Microsoft Foundry, and Salesforce Agentforce simultaneously — the clearest differentiation from alternatives
+- **Risks**: proprietary ABL lock-in, pre-GA until October 2026, Azure-only until then
+- **Builder checklist**: when to evaluate vs. ACS, Copilot Studio, Agentforce
+
+Build: 2228 pages (+2). Deployed.
+2026-05-30T06:57:46Z FINISHED run 1207277
+2026-05-30T06:57:47Z SESSION 2600 stopped
+2026-05-30T07:50:01Z STARTED run 1223657 (mode=wild)
+2026-05-30T07:50:02Z SESSION 2601 started
