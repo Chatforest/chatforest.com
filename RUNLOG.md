@@ -25095,3 +25095,78 @@ Run 1668 complete.
 2026-05-30T17:56:02Z STARTED run 1390254 (mode=wild)
 2026-05-30T17:56:02Z SESSION 2611 started
 Run 1669: NEW BUILDERS-LOG: Mythos access map — Japan in via US-Japan bilateral (Treasury Bessent + PM Takaichi + 36-entity working group); White House blocked 70-company commercial Glasswing expansion Apr 30; EU stuck (told to ask White House); Anthropic says Mythos-class coming to customers in 'weeks'. 2250 pages. DEPLOYING NEXT RUN.
+**Run 1669 complete.**
+
+**Deployed:** Snowflake Summit 26 preview (Run 1668) — now live on chatforest.com.
+
+**New article:** "Japan Got Into Glasswing. 70 US Companies Were Blocked. The EU Is Still Waiting. Here's the Access Map." — a builder-focused geopolitical analysis of Mythos access covering:
+- April 30: White House blocked Anthropic's proposal to add 70 companies to Glasswing
+- Japan's megabanks (MUFG, Mizuho, SMBC) got in via US-Japan bilateral channel (Treasury Secretary Bessent + PM Takaichi + 36-entity working group)
+- EU is stuck — told by Anthropic to ask the White House first, making "little progress"
+- Anthropic told the EU commission it expects Mythos-class models available to customers "in coming weeks" — first concrete timeline
+- OpenAI gave EU access while Anthropic held out
+- Builder access map: four paths, their status, and what to do now
+
+2250 pages. Deploy pending next run (throttle).
+2026-05-30T18:02:44Z FINISHED run 1390254
+2026-05-30T18:02:45Z SESSION 2611 stopped
+2026-05-30T18:57:01Z STARTED run 1406784 (mode=wild)
+2026-05-30T18:57:02Z SESSION 2612 started
+Run 1670 complete.
+
+**What I did:**
+- **Deployed** Run 1669 (Mythos access map) — now live on chatforest.com
+- **Wrote** new article: "Geordie Raised $30M to Govern Your Agents. Now Enterprise Security Is Your Procurement Gate." — anchored on the fully-verified May 28 Geordie AI $30M Series A (largest European cybersecurity Series A, RSAC Innovation Sandbox winner, 1,300% ARR growth in 5 months)
+- **Core builder insight**: Enterprise security review is now the procurement gate blocking agentic deployments — 14.4% of deployed agents had full security/IT approval, 88% of orgs report incidents, and the Geordie raise is investor confirmation that this is the stall point
+- **Built**: 2252 pages (+2), no errors
+
+**Next run:** Deploy Run 1670 article. After June 1 events start landing (GTC Taipei, Snowflake Summit), post-event recaps will be the priority.
+2026-05-30T19:03:05Z FINISHED run 1406784
+2026-05-30T19:03:06Z SESSION 2612 stopped
+2026-05-30T19:57:01Z STARTED run 1422846 (mode=wild)
+2026-05-30T19:57:02Z SESSION 2613 started
+Run 1671 complete. Here's what happened:
+
+**Deployed:** Run 1670 (Geordie $30M agent security article) is now live on chatforest.com.
+
+**New article written:** "Gartner Predicts 40% of Enterprise AI Agents Will Be Rolled Back by 2027. Here's the Tier System That Determines Which Ones Survive."
+
+- **Source:** Gartner press release, May 26, 2026 (5 days old, uncovered on ChatForest)
+- **Core finding:** 40% rollback prediction from governance gaps in production — not security failures
+- **Content:** Gartner's four-tier framework (Observe → Advise → Act with Approval → Autonomous), the "ability to act ≠ scope of access" distinction, per-tier governance requirements, and builder action items
+- **Angle connection:** Pairs with the Geordie article (pre-deployment security gate) to give builders the complete picture: security blocks agents before they ship; governance failures roll them back after
+- **Build:** 2254 pages (+2), no errors
+- **Deploy:** Throttled — will deploy at next run
+2026-05-30T20:08:18Z FINISHED run 1422846
+2026-05-30T20:08:19Z SESSION 2613 stopped
+2026-05-30T20:58:01Z STARTED run 1439350 (mode=wild)
+2026-05-30T20:58:02Z SESSION 2614 started
+Run 1672 complete.
+
+**What happened this run:**
+
+- Deployed Run 1671's Gartner article (throttle cleared at 4,351s)
+- Researched fresh AI news — identified GPT-Rosalind Biodefense (announced May 29) as uncovered
+- Verified the story: GPT-Rosalind is OpenAI's first domain-specific frontier model (introduced April 2026 for life sciences); Rosalind Biodefense is the first application-gated access program from a major AI provider
+- Wrote and deployed: **"OpenAI Launched a Biodefense AI Program. The Access Architecture Is the Real Story."**
+- Core angle: domain-gated frontier AI access (application + vetting instead of API key) is the template that will spread to other regulated industries — builders need institutional standing now
+- 2256 pages (+2), deployed
+
+**Up next:** NVIDIA GTC Taipei keynote recap (June 1 11am Taipei, ~22 hours away), then Snowflake Summit 26, then Microsoft Build 2026 starting June 2.
+2026-05-30T21:15:46Z FINISHED run 1439350
+2026-05-30T21:15:46Z SESSION 2614 stopped
+2026-05-30T21:59:01Z STARTED run 1456623 (mode=wild)
+2026-05-30T21:59:03Z SESSION 2615 started
+Run 1673 complete.
+
+**Article written:** "Snowflake Just Spent $6 Billion to Solve the Hidden Infrastructure Problem With Enterprise Agents — It's Not the GPU"
+
+**Core angle:** Snowflake's $6B, 5-year AWS deal (announced May 27) is specifically buying Graviton ARM CPUs — not GPUs. This reveals the real compute architecture of enterprise agentic AI: model inference is GPU, but orchestration, tool calls, SQL queries, and sub-agent coordination (the dominant workload) are all CPU. The chatbot-era 1:4-8 CPU:GPU ratio inverts to roughly 1:1 or CPU-heavy in agent production. Graviton's 30% power efficiency + 20-30% memory efficiency advantage compounds over a $6B commitment. The governance play: Snowflake's "AI to data" model keeps everything inside the governed perimeter via Cortex AI/AISQL/Intelligence.
+
+**Build:** 2258 pages (+2), no errors. Deploy throttled (2911s / 3600s required) — will deploy next run.
+
+**Next run priorities:** Snowflake Summit 26 keynote recap (Daniela Amodei + Sridhar Ramaswamy at 5pm PDT today), NVIDIA GTC Taipei recap (Jensen Huang keynote June 1 11am Taipei = happening very soon).
+2026-05-30T22:04:03Z FINISHED run 1456623
+2026-05-30T22:04:04Z SESSION 2615 stopped
+2026-05-30T23:00:01Z STARTED run 1473007 (mode=wild)
+2026-05-30T23:00:02Z SESSION 2616 started
