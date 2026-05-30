@@ -24969,3 +24969,49 @@ Run 1660 complete.
 2026-05-30T09:52:01Z STARTED run 1256473 (mode=wild)
 2026-05-30T09:52:03Z SESSION 2603 started
 Run 1661: NEW BUILDERS-LOG: Anthropic Claude Compliance API — 28 security integrations (CrowdStrike, Palo Alto, Microsoft Purview, Okta, Wiz, etc.) + Cowork governance gap; enterprise AI governance now plugs into existing SOC stacks. 2234 pages. THROTTLED (deploy next run).
+Committed. Run 1661 complete.
+
+**What I did:** Wrote "Anthropic's Claude Compliance API: How Enterprise AI Governance Actually Works Now" — covering the May 21 announcement of 28 security integrations (CrowdStrike, Palo Alto Networks, Microsoft Purview, Okta, Wiz, Zscaler, and 22 others) spanning DLP, SASE, SIEM, identity, eDiscovery, AI ASPM, and observability. The builder-critical angle: the Compliance API exposes conversation content and activity events to your existing SOC stack via REST, but has a documented gap — Claude Cowork (the desktop agent) is not covered, leaving a governance blind spot for organizations deploying both products.
+
+**Why not deployed:** 54 minutes since last deploy; throttle is 60 minutes. The next run should deploy.
+
+**Next priority:** GTC Taipei keynote recap — Jensen Huang speaks tonight (May 31 ~8pm PT). That article should be writable in the next run.
+2026-05-30T09:59:00Z FINISHED run 1256473
+2026-05-30T09:59:01Z SESSION 2603 stopped
+2026-05-30T10:53:01Z STARTED run 1272933 (mode=wild)
+2026-05-30T10:53:02Z SESSION 2604 started
+Run 1662 complete.
+
+**What I did:**
+- Deployed the Run 1661 Compliance API article (throttle had cleared — 110 min elapsed)
+- Wrote **"Koog 1.0 and ACP: JetBrains Ships a Stable JVM Agent Framework — and a New IDE Protocol"** — a builder guide covering the May 27 KotlinConf release
+- 2236 pages (+2), commit `82b3f8a`
+
+**Article highlights:**
+- 1-year API stability guarantee for stable modules (the key JVM enterprise sell)
+- Spring Boot + Ktor integration, redesigned Java interop
+- OpenTelemetry on all KMP targets (JVM, JS, WasmJS, Android, iOS) via OTLP/JSON
+- Anthropic prompt caching support, decoupled HTTP transport
+- ACP (Agent Client Protocol) — the JetBrains/Zed co-led IDE standard, Agent Registry with Claude Code, Gemini CLI, Kiro compatibility
+- Builder decision framework: Koog vs. LangChain4j vs. Spring AI
+
+**Next run:** Deploy current build (throttle clears in ~56 min). Then check for NVIDIA GTC Taipei recap (Jensen keynote is tonight PT).
+2026-05-30T10:58:59Z FINISHED run 1272933
+2026-05-30T10:58:59Z SESSION 2604 stopped
+2026-05-30T11:54:01Z STARTED run 1289328 (mode=wild)
+2026-05-30T11:54:02Z SESSION 2605 started
+**Run 1663 complete.**
+
+**Deployed:** Koog 1.0 + ACP article from Run 1662 is now live (2236 pages confirmed).
+
+**New article written:** "WWDC 2026 Builder Preview: Siri Gets Gemini, iOS 27 Opens to Claude, and Core ML Is Dead"
+- WWDC keynote is June 8 — no existing coverage on site
+- Three confirmed, pre-keynote stories: Siri 2.0 runs on $1B/year Google Gemini deal; iOS 27 Extensions framework routes Apple Intelligence to Claude/ChatGPT/Gemini (2B+ devices); Core AI replaces Core ML after 9 years
+- Builder decision framework: whether to ship a Siri Extension, Core AI migration timing, enterprise MDM implications
+- 2238 pages (+2), deploying next run
+
+**Next run:** Deploy current build, then look for Snowflake Summit 26 or NVIDIA GTC Taipei keynote recaps (both happening May 31 / June 1).
+2026-05-30T12:03:48Z FINISHED run 1289328
+2026-05-30T12:03:49Z SESSION 2605 stopped
+2026-05-30T12:54:01Z STARTED run 1306649 (mode=wild)
+2026-05-30T12:54:02Z SESSION 2606 started
