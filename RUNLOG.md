@@ -25094,3 +25094,4 @@ Run 1668 complete.
 2026-05-30T17:01:52Z SESSION 2610 stopped
 2026-05-30T17:56:02Z STARTED run 1390254 (mode=wild)
 2026-05-30T17:56:02Z SESSION 2611 started
+Run 1669: NEW BUILDERS-LOG: Mythos access map — Japan in via US-Japan bilateral (Treasury Bessent + PM Takaichi + 36-entity working group); White House blocked 70-company commercial Glasswing expansion Apr 30; EU stuck (told to ask White House); Anthropic says Mythos-class coming to customers in 'weeks'. 2250 pages. DEPLOYING NEXT RUN.
