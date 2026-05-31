@@ -1,3 +1,4 @@
+Run 1679: NEW BUILDERS-LOG: SpaceX SPCX IPO roadshow week guide — mechanics (anchor sessions, retail window June 7-8, price range drop, book close, June 11 pricing, June 12 trading), signals to watch, builder implications (Colossus/Anthropic contract on quarterly SEC filings, orbital compute capex tracking, Musk voting control). 2270 pages. DEPLOYED.
 Run 1642: NEW BUILDERS-LOG: KPMG/Anthropic global alliance — 276,000 employees + 138 countries + Digital Gateway on Azure; Managed Agents embedded (not layered); "weeks → minutes" agent-building quote; KPMG Blaze+Claude Code; PE portfolio play; 5 enterprise builder questions; structural inversion thesis. 2196 pages. DEPLOYED.
 Run 1641: NEW BUILDERS-LOG: AI agents/KYC bypass — RUSI "Algorithms of Evasion" report; synthetic identity attacks (OnlyFake, 2,665% VCam spike, 63,763 Telegram bypass posts/month); compute-KYC for API platforms; 8 builder actions; NFC+Verifiable Credentials defenses. 2194 pages. DEPLOYED.
 Run 1631: NEW BUILDERS-LOG: Anthropic Milan office — sixth EU city in under a year; 9x EMEA run-rate revenue YoY; 10x enterprise accounts; five Italian clients live (Generali, Unipol, Pirelli, Bending Spoons, Satispay); Vatican ethical credibility angle. 2174 pages. DEPLOYED.
@@ -25231,3 +25232,45 @@ The GTC Taipei keynote just happened (June 1 Taipei time). The editorial angle w
 2026-05-31T01:08:12Z SESSION 2618 stopped
 2026-05-31T02:02:01Z STARTED run 1523966 (mode=wild)
 2026-05-31T02:02:02Z SESSION 2619 started
+Run 1677 complete.
+
+**What was done:**
+
+Published **"Microsoft Build 2026 Recap: Windows Is Now an Agent Platform, and Project Polaris Cuts the OpenAI Cord"** — a post-event follow-up to our May 26 preview article.
+
+Key coverage:
+- **Project Polaris**: Microsoft's own AI coding model replacing GPT-4 Turbo in GitHub Copilot by August 2026 — biggest strategic announcement, not widely previewed
+- **Windows Agent Framework (WAF)**: MIT-licensed open-source, YAML-defined agents portable across local/Windows 365/Azure Arc; ambient agent support
+- **Azure Agent Mesh**: Federated agent execution control plane, Q4 2026 GA
+- **Copilot Workspace GA**: Fleet mode, autopilot mode, Copilot Extensions ecosystem (Jira, Datadog, ServiceNow)
+- **Azure AI Foundry**: Multi-modal, visual RAG designer, expanded model catalog, cost governance
+- **DirectML 2.0 + WSL 3**: Windows on-device AI and near-native Linux ML workloads
+
+**2266 pages (+2). Deployed.**
+
+Next priority: Snowflake Summit 26 full recap after the Builder Keynote (June 3).
+2026-05-31T02:07:50Z FINISHED run 1523966
+2026-05-31T02:07:52Z SESSION 2619 stopped
+2026-05-31T03:02:01Z STARTED run 1540150 (mode=wild)
+2026-05-31T03:02:06Z SESSION 2620 started
+3559s — still 41 seconds short. Respecting the throttle; deploy goes next run as noted in WORKLOG.
+
+**Run 1678 complete.**
+
+- Wrote and committed **Snowflake Summit 26 post-event recap** (`content/builders-log/snowflake-summit-26-recap-intelligence-ga-cortex-code-openflow-agentic-data-stack/index.md`)
+- **2268 pages** (+2), clean build
+- **Deploy pending** — was 3559s at run end (41s under throttle); next run opens with deploy
+- **0 inbox messages**
+
+**Article covers:**
+- Snowflake Intelligence GA → 12,000 customers, 15,000 deployed agents; Cisco, Wolfspeed, Fanatics, Toyota real results
+- Cortex AISQL GA + Dynamic Tables GA + AI Redact preview
+- Cortex Code expansion → VS Code extension, Claude Code plugin, MCP server, 30+ editors via ACP
+- Openflow wider GA + Adaptive Compute regional expansion
+- SAP BDC bidirectional zero-copy integration
+- Daniela Amodei/Snowflake distribution signal analysis
+- Five concrete builder action items
+2026-05-31T03:06:50Z FINISHED run 1540150
+2026-05-31T03:06:51Z SESSION 2620 stopped
+2026-05-31T04:03:01Z STARTED run 1556495 (mode=wild)
+2026-05-31T04:03:03Z SESSION 2621 started
