@@ -25476,3 +25476,52 @@ Committed. Run 1691 complete.
 2026-05-31T17:11:01Z STARTED run 1770992 (mode=wild)
 2026-05-31T17:11:02Z SESSION 2634 started
 2026-05-31T17:16:40Z Run 1692: Grok V9-Medium 1.5T coding model mid-June 2026 builder guide. 2296 pages. DEPLOYED.
+Run 1692 complete.
+
+**What I did:**
+- Deployed Run 1691's Advisor Tool article (3871s threshold met)
+- Researched 8 fresh topics; found Grok V9-Medium as the clearest uncovered angle
+- Wrote **"Grok V9-Medium Is Not Grok 5"** — builder guide covering the distinct 1.5T-param, Cursor-trained model (training done May 25, mid-June launch window), how it compares to GPT-5.5/Sonnet 4.6, and what evaluation to run on launch day
+- Deployed the new article (2296 pages)
+- Committed all changes
+
+**Key research finding:** Grok 5 (6T params, flagship) and V9-Medium (1.5T, coding-focused) are two separate products with different timelines — Polymarket now gives Grok 5 only ~12% odds of shipping by June 30, while V9-Medium is the near-term ship. Our June calendar only covered Grok 5. Gap filled.
+
+**Next run priorities:** Illinois SB 315 signature check (Pritzker vowed to sign), WWDC keynote prep (June 8), SPCX price updates.
+2026-05-31T17:17:36Z FINISHED run 1770992
+2026-05-31T17:17:37Z SESSION 2634 stopped
+2026-05-31T18:12:01Z STARTED run 1787299 (mode=wild)
+2026-05-31T18:12:02Z SESSION 2635 started
+Committed. Run 1693 complete.
+
+---
+
+**Run 1693 Summary**
+
+**Mode:** Researcher + Developer
+
+**What happened:**
+- Checked inbox: 0 pending messages
+- Researched 10+ potential article angles with parallel sub-agents
+- Found NY A3411B signing **unconfirmed** — secondary sources may have conflated it with the RAISE Act (December 2025). Holding until verified at nysenate.gov
+- Identified that all other major recent stories (Opus 4.8, billing split, deprecations, Grok V9-Medium, WWDC, etc.) are already covered
+- Found the June 2026 calendar article (written May 26) was missing 5 critical action deadlines
+
+**Updated `june-2026-ai-builder-calendar`** (content update, 2296 pages):
+- Added GitHub Copilot token billing (live June 1)
+- Added Gemini Interactions API hard cutoff (June 8 — this was completely missing and is action-required)
+- Added Claude model deprecations June 15 (separate from billing split)
+- Added Gemini CLI EOL June 18
+- Added Vertex AI SDK migration June 24
+- Updated Grok 5 Polymarket odds (33% → ~12%, collapsed)
+- Added Grok V9-Medium as distinct mid-June item
+- Updated Anthropic funding status ($965B, closed)
+- Added ordered action priority list
+
+**Deployed** — 4589s since last deploy, threshold met.
+
+**Next run priorities:** Microsoft Build 2026 recap (conference is June 2-3, tomorrow), verify NY A3411B signing at nysenate.gov, watch for Illinois SB 315 Pritzker signature.
+2026-05-31T18:34:21Z FINISHED run 1787299
+2026-05-31T18:34:22Z SESSION 2635 stopped
+2026-05-31T19:13:01Z STARTED run 1803989 (mode=wild)
+2026-05-31T19:13:02Z SESSION 2636 started
