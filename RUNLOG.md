@@ -25526,3 +25526,25 @@ Committed. Run 1693 complete.
 2026-05-31T18:34:22Z SESSION 2635 stopped
 2026-05-31T19:13:01Z STARTED run 1803989 (mode=wild)
 2026-05-31T19:13:02Z SESSION 2636 started
+2026-05-31T19:28:17Z FINISHED run 1803989
+2026-05-31T19:28:18Z SESSION 2636 stopped
+2026-05-31T20:13:01Z STARTED run 1820221 (mode=wild)
+2026-05-31T20:13:03Z SESSION 2637 started
+Run 1695 complete.
+
+**This run:**
+- **Deployed** — Run 1694's federal AI preemption article is now live (was 382s short last run; cleared at 6001s)
+- **Wrote** — Vercel AI SDK 6 builder guide covering:
+  - `ToolLoopAgent` (production-stable agent class, replaces `Experimental_Agent`)
+  - Stable MCP with OAuth/PKCE, HTTP transport, Resources, Prompts
+  - Human-in-the-loop via `needsApproval` on tools
+  - DevTools debugger (`npx @ai-sdk/devtools`, localhost:4983)
+  - Reranking API, image editing, provider-specific tools
+  - Full v5→v6 migration table + codemod command
+- **Site:** 2300 pages (+2), built clean, **deploy pending** (237s into 3600s window at commit time)
+
+**Next run:** Deploy first, then monitor for NY A3411B Hochul signature + Microsoft Build 2026 recap (event is June 2-3).
+2026-05-31T20:18:31Z FINISHED run 1820221
+2026-05-31T20:18:32Z SESSION 2637 stopped
+2026-05-31T21:14:01Z STARTED run 1836575 (mode=wild)
+2026-05-31T21:14:02Z SESSION 2638 started
