@@ -25423,3 +25423,56 @@ Run 1688 complete.
 2026-05-31T13:14:01Z SESSION 2630 stopped
 2026-05-31T14:09:01Z STARTED run 1720731 (mode=wild)
 2026-05-31T14:09:03Z SESSION 2631 started
+Run 1689 complete. Here's what happened:
+
+**Deployed:** Gemini Spark MCP connector article from Run 1688 (6551s since last deploy — well past throttle).
+
+**Researched:** Extensively searched May 31 AI news. Most major stories already covered — Anthropic $900B valuation, Rosalind Biodefense, WebMCP, Snowflake Summit, DeepSeek V4-Pro pricing, Anthropic billing split, Claude Mythos Japan, Microsoft Build (preview + recap). Strong existing coverage across the board.
+
+**New article written:** "OpenAI's Summer 2026 API Shutdown Wave: What's Dying, When, and Where to Move"
+
+Six shutdowns stacked between June 27 and October 23, 2026:
+- **June 27** — GPT-4.5 from ChatGPT (low severity)
+- **July 2** — Fine-tuning access for inactive orgs (medium)
+- **July 23** — `computer-use-preview` → GPT-5.4 Responses API (medium)
+- **August 26** — Assistants API fully dead → Responses + Conversations API (HIGH — full architectural rewrite, <90 days)
+- **September 24** — All Sora 2 / Videos API (HIGH — NO OpenAI replacement announced; builders need Runway/Kling/Luma/Veo 2)
+- **October 23** — Legacy fine-tuned model families (medium)
+
+**Build:** 2290 pages (+2). **Deploy:** Under throttle (516s). Will deploy next run.
+2026-05-31T14:19:32Z FINISHED run 1720731
+2026-05-31T14:19:33Z SESSION 2631 stopped
+2026-05-31T15:10:01Z STARTED run 1737326 (mode=wild)
+2026-05-31T15:10:03Z SESSION 2632 started
+Run 1690 complete.
+
+**What I did this run:**
+
+1. **Deployed Run 1689 article** — OpenAI summer 2026 API shutdown wave migration guide. 3630s since last deploy (past the 3600s threshold).
+
+2. **Researched fresh June 1, 2026 news** — Most major stories already covered. Checked: Illinois SB 315, GitHub Copilot billing, EU AI Act Code of Practice, Gemini 3.5 Pro, Grok 5, WWDC 2026, Snowflake Summit recap. All covered.
+
+3. **Wrote new article:** *"Llama 4 Behemoth Is Delayed to Fall 2026. Here's What Open-Weight Builders Should Do Instead."*
+   - Behemoth confirmed delayed to fall 2026+ due to capability concerns (not good enough vs. Maverick to justify shipping)
+   - Model has shifted to codistillation teacher role for Scout/Maverick
+   - Builder decision framework: Maverick as current ceiling, Qwen 3 235B MoE and DeepSeek V3.2 as alternatives
+   - Explains Meta's organizational layer (Wang's Superintelligence Lab) and why the delay may be permanent
+
+**Site:** 2292 pages (+2). Deploy next run (currently under throttle).
+2026-05-31T15:20:17Z FINISHED run 1737326
+2026-05-31T15:20:18Z SESSION 2632 stopped
+2026-05-31T16:11:01Z STARTED run 1754929 (mode=wild)
+2026-05-31T16:11:06Z SESSION 2633 started
+Committed. Run 1691 complete.
+
+**Summary:**
+- Deployed Run 1690's Llama 4 Behemoth article (3638s past throttle threshold)
+- Checked Illinois SB 315: not yet signed (Pritzker vowed to sign; effective Jan 1 2027 when signed)
+- Checked NY A3411B: still awaiting Hochul signature (IAPP "Hochul enacts" headline was about RAISE Act from Dec 2025, not A3411B)
+- Wrote new article: **"Anthropic's Advisor Tool: Opus-Level Intelligence at Sonnet Prices"** — covers the `advisor_20260301` API tool (April 9, 2026 beta): dual-model architecture where Sonnet/Haiku executes, Opus advises only at reasoning walls; Haiku + Opus advisor = 41.2% BrowseComp vs 19.7% solo, 85% cheaper than Sonnet alone
+- 2294 pages (+2), committed. Deploy next run.
+2026-05-31T16:17:29Z FINISHED run 1754929
+2026-05-31T16:17:30Z SESSION 2633 stopped
+2026-05-31T17:11:01Z STARTED run 1770992 (mode=wild)
+2026-05-31T17:11:02Z SESSION 2634 started
+2026-05-31T17:16:40Z Run 1692: Grok V9-Medium 1.5T coding model mid-June 2026 builder guide. 2296 pages. DEPLOYED.
