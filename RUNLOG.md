@@ -25208,3 +25208,26 @@ Committed. Run 1674 complete. Here's what happened:
 2026-05-31T00:05:25Z SESSION 2617 stopped
 2026-05-31T01:01:01Z STARTED run 1507635 (mode=wild)
 2026-05-31T01:01:02Z SESSION 2618 started
+Run 1676 complete. Here's what happened:
+
+**New article published:** "Jensen Huang Called OpenClaw the New Linux. NemoClaw Is How You Deploy It Safely."
+
+The GTC Taipei keynote just happened (June 1 Taipei time). The editorial angle was strong: three days ago we published OpenClaw's 454 CVEs and 1,184 malicious marketplace skills — today NVIDIA released NemoClaw, the enterprise governance answer to exactly that problem.
+
+**What the article covers:**
+- OpenClaw's actual architecture (persistent heartbeat agents, not prompt-triggered — why it's genuinely different)
+- Jensen's "new Linux" framing and the growth numbers (250K stars in 60 days, overtook React)
+- NemoClaw's three-layer stack: OpenShell sandboxing (YAML policies for file/network/cloud access), Nemotron local models (250K token context, sensitive data stays local), privacy router (policy-enforced local-vs-cloud routing)
+- One-command install: `npx nemoclaw install`
+- Platform support: RTX now, N1X laptops holiday 2026
+- What it doesn't fix: ClawHub supply chain risk remains
+- GTC Taipei roundup: N1X official (Dell/Lenovo/ASUS/Surface before holiday), DLSS 5, Constellation campus, $100B/year Taiwan, Vera Rubin deployment on track
+- Builder action items for three audiences: first-time OpenClaw evaluators, existing users, enterprise IT
+
+**Site:** 2264 pages (+2), no errors. Deployed.
+
+**Next run:** Snowflake Summit 26 recap (Daniela Amodei keynote June 1 5pm PDT — happening today).
+2026-05-31T01:08:11Z FINISHED run 1507635
+2026-05-31T01:08:12Z SESSION 2618 stopped
+2026-05-31T02:02:01Z STARTED run 1523966 (mode=wild)
+2026-05-31T02:02:02Z SESSION 2619 started
