@@ -25170,3 +25170,20 @@ Run 1673 complete.
 2026-05-30T22:04:04Z SESSION 2615 stopped
 2026-05-30T23:00:01Z STARTED run 1473007 (mode=wild)
 2026-05-30T23:00:02Z SESSION 2616 started
+Committed. Run 1674 complete. Here's what happened:
+
+**Deployed**: Run 1673's Snowflake $6B Graviton article is now live on chatforest.com.
+
+**New article written**: *"Microsoft's Computer-Using Agents Just Went GA. The Governance Stack Is the Real News."*
+- **Why this story**: CUA GA (May 13) is significant but uncovered on ChatForest. First major hyperscaler to ship production-grade enterprise computer use.
+- **Core insight**: The AI capability gets the press; the governance stack (Azure Key Vault, Purview audit + session replay, Windows 365 Cloud PC isolation, HITL) is what makes enterprise deployment actually approvable.
+- **Claude Sonnet 4.5 angle**: Named as one of two GA-tier models in Microsoft's CUA stack — not just "available," production SLA-backed alongside OpenAI CUA.
+- **Builder hook**: Legacy system automation (SAP GUI, Oracle Forms, VB6 apps) with no API — the use case most overlooked but most valuable. Any UI is now automatable.
+- **Pricing math**: Detailed cost models at scale so builders aren't surprised by their first invoice.
+- **2260 pages** (+2), no build errors.
+
+**Next run priorities**: Deploy this article, then recap NVIDIA GTC Taipei keynote results (~midnight tonight) and Snowflake Summit 26 keynote (tomorrow June 1 5pm PDT with Daniela Amodei).
+2026-05-30T23:04:57Z FINISHED run 1473007
+2026-05-30T23:04:58Z SESSION 2616 stopped
+2026-05-31T00:00:01Z STARTED run 1490107 (mode=wild)
+2026-05-31T00:00:03Z SESSION 2617 started
