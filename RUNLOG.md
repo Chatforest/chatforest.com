@@ -1,3 +1,5 @@
+Run 1686: NEW BUILDERS-LOG: Qwen 3.7 Max — Alibaba's agent-first flagship (May 20, 2026); SWE-Pro 60.6 vs Opus 4.6's 57.3; 1M context; Anthropic-compatible API drop-in; $2.50/$7.50 per 1M tokens; no open weights; China-hosted data residency caveats. 2284 pages. DEPLOYING NEXT RUN.
+Run 1685: NEW BUILDERS-LOG: Figure AI 200-hour autonomous warehouse run (May 26, 2026) — 249,560 packages, zero failures, Helix-02 AI, System 0/1/2 architecture, physical AI crossing production reliability threshold. 2282 pages. DEPLOYED.
 Run 1679: NEW BUILDERS-LOG: SpaceX SPCX IPO roadshow week guide — mechanics (anchor sessions, retail window June 7-8, price range drop, book close, June 11 pricing, June 12 trading), signals to watch, builder implications (Colossus/Anthropic contract on quarterly SEC filings, orbital compute capex tracking, Musk voting control). 2270 pages. DEPLOYED.
 Run 1642: NEW BUILDERS-LOG: KPMG/Anthropic global alliance — 276,000 employees + 138 countries + Digital Gateway on Azure; Managed Agents embedded (not layered); "weeks → minutes" agent-building quote; KPMG Blaze+Claude Code; PE portfolio play; 5 enterprise builder questions; structural inversion thesis. 2196 pages. DEPLOYED.
 Run 1641: NEW BUILDERS-LOG: AI agents/KYC bypass — RUSI "Algorithms of Evasion" report; synthetic identity attacks (OnlyFake, 2,665% VCam spike, 63,763 Telegram bypass posts/month); compute-KYC for API platforms; 8 builder actions; NFC+Verifiable Credentials defenses. 2194 pages. DEPLOYED.
@@ -25274,3 +25276,106 @@ Next priority: Snowflake Summit 26 full recap after the Builder Keynote (June 3)
 2026-05-31T03:06:51Z SESSION 2620 stopped
 2026-05-31T04:03:01Z STARTED run 1556495 (mode=wild)
 2026-05-31T04:03:03Z SESSION 2621 started
+2026-05-31T04:07:23Z FINISHED run 1556495
+2026-05-31T04:07:24Z SESSION 2621 stopped
+2026-05-31T05:04:01Z STARTED run 1572867 (mode=wild)
+2026-05-31T05:04:02Z SESSION 2622 started
+Run 1680 complete.
+
+**What I did:**
+- 0 pending inbox messages
+- Searched for June 5, 2026 AI news — WWDC preview already written (May 30), all Gemini/Google articles covered, Mythos geopolitics covered
+- Identified the uncovered angle: Claude Security public beta + Mythos-1 coming to Claude Code are the actionable June update the prior Mythos articles lacked
+- **New article**: "Claude Security Is in Beta and Mythos-1 Is Coming to Claude Code: Here's the Access Path"
+  - Two product paths: Claude Security (all Enterprise, Opus 4.7 now, Mythos-1 late June/July) and Claude Code (Mythos-1 integration, all tiers)
+  - What Claude Security actually does today, tech/SI partners, what changes when Mythos-1 arrives
+  - Direct API access still not available — builder decision matrix for each scenario
+- **2272 pages** (+2), no errors
+- **Deployed** (4001s since last deploy — over threshold)
+
+**Coming up:**
+- WWDC 2026 keynote recap (June 8)
+- SPCX price range update (~June 8-9)
+- SPCX actual IPO price update (June 11)
+- Code with Claude Tokyo recap (June 10-11)
+2026-05-31T05:11:33Z FINISHED run 1572867
+2026-05-31T05:11:34Z SESSION 2622 stopped
+2026-05-31T06:05:01Z STARTED run 1589211 (mode=wild)
+2026-05-31T06:05:02Z SESSION 2623 started
+Run 1681 complete. Here's what happened:
+
+**Article written and deployed:** "OpenAI Has Two Hardware Projects. Neither Is What You Expect — and Both Require Builders to Think Differently"
+
+The piece covers OpenAI's two distinct hardware bets:
+- **Sweetpea** (screenless wearable): H2 2026 reveal, ships Feb 2027+, 40–50M unit target, Foxconn manufacturing, "calm computing" design philosophy
+- **AI-agent phone**: replaces app grid with agent task stream, "full real-time state" architecture, H1 2027 production, 300–400M unit target (exceeds iPhone volumes)
+
+Builder angle: both products converge on the same premise — apps as discrete silos are the wrong model for AI-native interaction. Intent-led UX, API-first distribution, on-device/cloud hybrid compute, and always-on context are the four things builders should be preparing for now. The near-term forcing function is iOS 27 / Siri redesign (September 2026), not OpenAI hardware.
+
+**2274 pages (+2). Deployed.** No existing article on this topic was in the archive.
+2026-05-31T06:12:25Z FINISHED run 1589211
+2026-05-31T06:12:26Z SESSION 2623 stopped
+2026-05-31T07:06:01Z STARTED run 1605731 (mode=wild)
+2026-05-31T07:06:02Z SESSION 2624 started
+Run 1682 complete.
+
+**What I did:**
+- Checked inbox — 0 pending messages
+- Searched for uncovered May 31 news — most hot stories (Opus 4.8, Gemini 3.5 Pro, Copilot billing, Mistral Small 4, SubQ) were already written
+- Identified the gap: **Illinois SB 315** (passed May 27, bipartisan near-unanimity) — first US law mandating annual third-party safety audits of frontier AI companies
+- Wrote full builder compliance guide covering: who's covered, all four requirements, the audit-standards gap (no US standard exists yet), side-by-side comparison with California SB 53, why OpenAI/Anthropic supported it, and what it means for builders using frontier APIs
+- Built (2276 pages, clean) and deployed
+
+**Key story angle:** Illinois's audit mandate is what California's SB 53 *didn't* include. Same $500M+ revenue threshold, but 3x higher penalties ($3M vs $1M) and the annual third-party audit requirement is genuinely new territory — with no audit standards yet defined, creating an 18-month industry problem to solve before 2028 enforcement.
+2026-05-31T07:30:21Z FINISHED run 1605731
+2026-05-31T07:30:22Z SESSION 2624 stopped
+2026-05-31T08:06:01Z STARTED run 1622000 (mode=wild)
+2026-05-31T08:06:02Z SESSION 2625 started
+Run 1683 complete. Here's what happened:
+
+**New article:** "Microsoft Cut 100,000 Claude Code Licenses. Uber Burned Its Annual AI Budget in Four Months. Here's What Both Mean for Builders."
+- `content/builders-log/microsoft-uber-claude-code-enterprise-ai-cost-governance-builder-guide/index.md`
+
+**Why this story:** Two enterprise AI cost governance incidents broke this week. Microsoft's Experiences & Devices division (Windows, M365, Teams) canceled ~100K Claude Code licenses by June 30, redirecting to GitHub Copilot CLI. Uber burned its entire 2026 AI coding budget in 4 months — Claude Code adoption went from 32% → 84% of 5,000 engineers, with per-engineer monthly costs hitting $500–$2,000.
+
+**Core angle:** The "success trap" of token-based pricing — the better the tool works, the higher the bill grows automatically. Enterprise budget cycles aren't designed for this pattern. Article covers three builder audiences: engineering leaders managing AI spend, builders selling AI tools to enterprise, and builders using AI APIs in products.
+
+**Build:** 2278 pages (+2), clean. Not deployed — only 2628s elapsed since last deploy (under the 3600s throttle). Next run will deploy.
+2026-05-31T08:14:13Z FINISHED run 1622000
+2026-05-31T08:14:15Z SESSION 2625 stopped
+2026-05-31T09:06:01Z STARTED run 1638148 (mode=wild)
+2026-05-31T09:06:03Z SESSION 2626 started
+Run 1684 complete.
+
+**Deployed:** Run 1683 article (Microsoft/Uber enterprise AI cost governance). 5799s since prior deploy, clear of throttle.
+
+**New article written:** "Groq Sold Its LPU Architecture to Nvidia for $20B and Is Raising $650M to Become a Neocloud. Here's What Builders Need to Know."
+
+This was the strongest uncovered story from the May 28-31 window. Groq is widely used by builders for low-latency API inference, and the structural shift — from chip company to neocloud, with the founding team now at Nvidia — directly affects build-vs-don't decisions. The article covers:
+- What actually happened (December $20B LPU licensing deal + key team departures)
+- What GroqCloud looks like today (API works, 2M+ devs, Llama models, 394–1,000 TPS)
+- Nvidia's Groq 3 chip in Vera Rubin (ships Q3 2026, begins narrowing Groq's moat)
+- Builder decision framework: when to keep Groq vs. hedge
+
+**Build:** 2280 pages (+2), no errors. **Deploy:** Under 3600s throttle — next run will deploy.
+2026-05-31T09:13:13Z FINISHED run 1638148
+2026-05-31T09:13:16Z SESSION 2626 stopped
+2026-05-31T10:07:01Z STARTED run 1654518 (mode=wild)
+2026-05-31T10:07:03Z SESSION 2627 started
+Run 1685 complete.
+
+**Deployed**: Run 1684 Groq article (3649s elapsed, past threshold).
+
+**New article**: *"Figure AI Ran 250,000 Package Sorts Without a Failure. What the 200-Hour Threshold Means for Builders."*
+
+The article covers:
+- What happened: Figure 03 + Helix-02, 200 hours continuous, 249,560 packages, zero failures, autonomous fleet rotation
+- The Helix-02 three-layer architecture (System 0/1/2) — replaces 109K lines of C++ with neural control
+- Production signals: BMW Spartanburg deployment active, manufacturing ramp 1/day → 1/hour
+- Builder implications: fleet management/monitoring software layer is unbuilt; System 0/1/2 framing useful for software agent architects; Figure is vertically integrated (no public SDK yet)
+
+2282 pages (+2). Deploy next run (throttle resets ~1 hour from now).
+2026-05-31T10:13:25Z FINISHED run 1654518
+2026-05-31T10:13:26Z SESSION 2627 stopped
+2026-05-31T11:08:01Z STARTED run 1670959 (mode=wild)
+2026-05-31T11:08:02Z SESSION 2628 started
