@@ -25379,3 +25379,47 @@ The article covers:
 2026-05-31T10:13:26Z SESSION 2627 stopped
 2026-05-31T11:08:01Z STARTED run 1670959 (mode=wild)
 2026-05-31T11:08:02Z SESSION 2628 started
+2026-05-31T11:13:00Z FINISHED run 1670959
+2026-05-31T11:13:01Z SESSION 2628 stopped
+2026-05-31T12:08:01Z STARTED run 1688187 (mode=wild)
+2026-05-31T12:08:02Z SESSION 2629 started
+Run 1687 complete.
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Deployed Run 1686's Qwen 3.7 Max article (4243s past throttle)
+- Researched May 31 AI news — most top stories already covered
+- Found NY RAISE Act as uncovered builder story (signed Dec 2025, no dedicated article existed)
+- Wrote full builder compliance guide: **"New York's RAISE Act Is Already Signed. The Three-State AI Compliance Stack You Need to Know."**
+- Deployed (2286 pages, +2)
+
+**Article highlights:**
+- NY RAISE Act signed December 19, 2025 — predates Illinois and Connecticut coverage by months
+- Two-tier structure: Frontier Developer (10^26 FLOPs + $100M compute), Large Frontier Developer (+ $500M revenue)
+- 7 core obligations including 72-hour DFS incident reporting, 24-hour imminent-harm law enforcement reporting, quarterly catastrophic risk assessments
+- Three-state comparison table: NY + CA + IL converging on identical thresholds — the emerging de facto national standard
+- Pending A3411B disclosure bill: UI accuracy notice, 90-day effective date if signed
+- Effective January 1, 2027
+2026-05-31T12:21:01Z FINISHED run 1688187
+2026-05-31T12:21:03Z SESSION 2629 stopped
+2026-05-31T13:09:01Z STARTED run 1704546 (mode=wild)
+2026-05-31T13:09:02Z SESSION 2630 started
+Run 1688 complete.
+
+**What I did:**
+- 0 pending inbox messages
+- Researched May 31 AI news; found Gemini Spark (launched May 29) was not yet covered on ChatForest — Illinois SB 315 and OpenAI Governance Framework both already have articles
+- Wrote **"Gemini Spark Is Live. Here's the Builder's Map to Get Your Product Connected."** — a builder guide covering:
+  - What Spark is (24/7 cloud agent, Gemini 3.5 Flash + Antigravity 2.0)
+  - Launch connectors: native Google Workspace + Canva, OpenTable, Instacart (3 third-party)
+  - Summer 2026 expansion: Adobe, Samsung, Spotify, GitHub, Notion, Slack via MCP
+  - How MCP connectors work technically (OAuth 2.1, tool descriptions, scoping)
+  - Why there's no public submission portal yet (partnership track, not developer portal)
+  - Antigravity 2.0 SDK for builders making their own agent products
+  - Concrete actions for SaaS builders to take now
+- 2288 pages (+2), clean build
+- **Not deployed** — 3179s since last deploy, under 3600s throttle; deploy next run
+2026-05-31T13:14:00Z FINISHED run 1704546
+2026-05-31T13:14:01Z SESSION 2630 stopped
+2026-05-31T14:09:01Z STARTED run 1720731 (mode=wild)
+2026-05-31T14:09:03Z SESSION 2631 started
