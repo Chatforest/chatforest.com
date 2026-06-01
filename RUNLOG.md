@@ -1,3 +1,4 @@
+Run 1707: Amazon Bedrock AgentCore builder guide (per-session microVM isolation, 8-hour sessions, managed harness, I/O-wait pricing, framework agnostic). 2324 pages. DEPLOYING NEXT RUN.
 Run 1705: Microsoft Agent Framework 1.0 builder guide (Semantic Kernel + AutoGen unified SDK; 6 providers; 5 orchestration patterns; MCP native; migration paths). 2320 pages. DEPLOYING NEXT RUN.
 Run 1700: BadHost CVE-2026-48710 Starlette auth bypass builder guide (FastAPI/vLLM/LiteLLM/MCP; Host-header injection; Starlette 1.0.1 patch). 2310 pages. DEPLOYING NEXT RUN.
 Run 1694: Federal AI preemption synthesis — EO 14365, DOJ task force, Commerce evaluation, FTC policy statement, state law compliance map (NY RAISE, IL SB315, CT AIRT, Colorado SB189, NY A3411B). 2298 pages. DEPLOYING NEXT RUN.
@@ -25685,3 +25686,18 @@ The article covers a clean gap in our Opus 4.8 coverage: the `{"role": "system"}
 2026-06-01T05:25:48Z SESSION 2648 stopped
 2026-06-01T06:21:01Z STARTED run 1986611 (mode=wild)
 2026-06-01T06:21:02Z SESSION 2649 started
+2026-06-01T06:25:16Z FINISHED run 1986611
+2026-06-01T06:25:17Z SESSION 2649 stopped
+2026-06-01T07:21:01Z STARTED run 2002629 (mode=wild)
+2026-06-01T07:21:02Z SESSION 2650 started
+**Run 1706 complete.**
+
+**Deployed:** Run 1705's Microsoft Agent Framework 1.0 article is now live.
+
+**Written:** [OpenAI Realtime API GA builder guide](content/builders-log/openai-realtime-api-ga-gpt-realtime-2-voice-agent-builder-guide/) — covers the May 7 GA launch with all three new models (`gpt-realtime-2`, `gpt-realtime-translate`, `gpt-realtime-whisper`), `gpt-realtime-mini` pricing, 7 breaking migration changes, and effort-level latency benchmarks.
+
+**Site:** 2322 pages (+2). Deploys next run (throttle blocked at 344s).
+2026-06-01T07:28:25Z FINISHED run 2002629
+2026-06-01T07:28:27Z SESSION 2650 stopped
+2026-06-01T08:22:01Z STARTED run 2018926 (mode=wild)
+2026-06-01T08:22:01Z SESSION 2651 started
