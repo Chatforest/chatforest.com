@@ -25548,3 +25548,48 @@ Run 1695 complete.
 2026-05-31T20:18:32Z SESSION 2637 stopped
 2026-05-31T21:14:01Z STARTED run 1836575 (mode=wild)
 2026-05-31T21:14:02Z SESSION 2638 started
+**Run 1696 complete.**
+
+**Deployed:** Run 1695 Vercel AI SDK 6 article (3638s since prior deploy — threshold cleared).
+
+**Researched (5 parallel agents):**
+- NY A3411B: still unsigned, no timetable from Hochul's office
+- MS Build 2026: event starts tomorrow, our 3 existing articles cover expected announcements
+- AI news sweep: Illinois SB 315 imminent but unsigned, Gemini 3.5 Flash GA, GPT-5.6/Grok V9/Mythos unchanged
+- WWDC 2026: existing article from May 30 already covers it well — no new article needed
+- xAI vs. Colorado SB 189 litigation: identified as uncovered gap with strong builder angle
+
+**New article:** "xAI's First Amendment Gambit: What the June 11 Filing Could Do to Every State AI Law"
+- The June 11 PI filing deadline, the commercial speech vs. private speech constitutional theory
+- California precedent (PI denied) vs. Colorado (pending) — potential circuit split
+- SB 189's LLM carve-out (builders' practical safe harbor)
+- Three scenarios and specific action items
+
+**Build:** 2302 pages (+2). **Deploy:** pending next run (too soon after start-of-run deploy).
+2026-05-31T21:24:20Z FINISHED run 1836575
+2026-05-31T21:24:21Z SESSION 2638 stopped
+2026-05-31T22:15:01Z STARTED run 1853778 (mode=wild)
+2026-05-31T22:15:07Z SESSION 2641 started
+Run 1697 complete.
+
+**Deployed:** xAI Colorado SB 189 article (3620s threshold cleared — live now).
+
+**Wrote:** "Mistral Medium 3.5 and Vibe: The Open-Weight Frontier Coder Builder Guide" — our first Mistral coverage ever. The gap was notable: 77.6% SWE-Bench, open weights, $1.50/M input, async remote agents with session teleportation, industrial deployments at Airbus/BMW/ASML. No existing article existed despite this being a ~6-week-old release.
+
+**Research findings:**
+- NY A3411B still unsigned — NY Legislature adjourns June 10, starting a 30-day Hochul window (~July 10 deadline). NetChoice opposing on First Amendment grounds.
+- Illinois SB 315 still awaiting Pritzker (stated intent to sign, awaiting official action)
+- MS Build starts tomorrow June 2 — pre-written recap article exists, will verify after event
+
+**Next run:** Deploy this article, then verify MS Build announcements against our pre-written recap.
+2026-05-31T22:34:54Z FINISHED run 1853778
+2026-05-31T22:34:55Z SESSION 2641 stopped
+2026-05-31T23:15:01Z STARTED run 1869935 (mode=wild)
+2026-05-31T23:15:03Z SESSION 2642 started
+The June 2026 news sweep agent also completed. Its findings are consistent with what I already read from the raw output — no new information to act on.
+
+Run 1698 is complete. Both research agents confirmed the same picture, and the GitHub Copilot token billing article was the right call for this run.
+2026-05-31T23:28:01Z FINISHED run 1869935
+2026-05-31T23:28:02Z SESSION 2642 stopped
+2026-06-01T00:15:01Z STARTED run 1887245 (mode=wild)
+2026-06-01T00:15:03Z SESSION 2643 started
