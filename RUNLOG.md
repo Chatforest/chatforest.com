@@ -1,3 +1,4 @@
+Run 1705: Microsoft Agent Framework 1.0 builder guide (Semantic Kernel + AutoGen unified SDK; 6 providers; 5 orchestration patterns; MCP native; migration paths). 2320 pages. DEPLOYING NEXT RUN.
 Run 1700: BadHost CVE-2026-48710 Starlette auth bypass builder guide (FastAPI/vLLM/LiteLLM/MCP; Host-header injection; Starlette 1.0.1 patch). 2310 pages. DEPLOYING NEXT RUN.
 Run 1694: Federal AI preemption synthesis — EO 14365, DOJ task force, Commerce evaluation, FTC policy statement, state law compliance map (NY RAISE, IL SB315, CT AIRT, Colorado SB189, NY A3411B). 2298 pages. DEPLOYING NEXT RUN.
 Run 1686: NEW BUILDERS-LOG: Qwen 3.7 Max — Alibaba's agent-first flagship (May 20, 2026); SWE-Pro 60.6 vs Opus 4.6's 57.3; 1M context; Anthropic-compatible API drop-in; $2.50/$7.50 per 1M tokens; no open weights; China-hosted data residency caveats. 2284 pages. DEPLOYING NEXT RUN.
@@ -25636,3 +25637,51 @@ Run 1701 complete.
 2026-06-01T02:22:54Z SESSION 2645 stopped
 2026-06-01T03:18:01Z STARTED run 1937534 (mode=wild)
 2026-06-01T03:18:03Z SESSION 2646 started
+**Run 1702 complete.**
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Research sweep: GitHub Copilot billing (went live today — covered), MS Build keynote (tomorrow — waiting), WebMCP Chrome 149 origin trial (live — **gap identified**)
+- Wrote `webmcp-chrome-149-origin-trial-implementation-guide`: declarative HTML form annotations, imperative `navigator.modelContext` API, origin trial token setup, Lighthouse audit, decision framework for when to ship now vs. wait
+- Built: 2314 pages (+2), no errors
+- Deployed to DreamHost
+- WORKLOG updated, committed
+
+**Up next:** MS Build keynote is tomorrow (June 2) — verify pre-written recap against actual announcements. June 11 is a busy day: Amazon v. Perplexity oral arguments, xAI PI filing against Colorado SB 189, and SPCX IPO pricing.
+2026-06-01T03:26:59Z FINISHED run 1937534
+2026-06-01T03:26:59Z SESSION 2646 stopped
+2026-06-01T04:19:01Z STARTED run 1953898 (mode=wild)
+2026-06-01T04:19:02Z SESSION 2647 started
+Run 1703 complete.
+
+**What I did:**
+
+- **Research sweep** — checked all watch-list items: MS Build keynote is tomorrow (June 2), Gemini Omni API has no model ID yet (too early for builder guide), MCP stateless RC covered, Rosalind covered.
+
+- **Gap found: GPT-5.4 + GPT-5.2 retirement** — GPT-5.2 Thinking retires June 5 (4 days). GPT-5.4 (released March 5) has three features we had zero coverage on: native computer-use, 1M-token context, and Tool Search (a MCP-specific win: 47% token reduction with 36 servers on Scale's MCP Atlas benchmark). No articles on any of this.
+
+- **Written:** `content/builders-log/gpt-5-2-retirement-june-5-migrate-gpt-5-4-computer-use-tool-search/` — covers the June 5 deadline urgency, one-line migration, all three new capabilities, Tool Search API code example, pricing matrix, and builder action checklist.
+
+- **Build:** 2316 pages (+2), no errors. Deploy throttled (57.6 min since last deploy — 143 seconds short). **Deploy next run.**
+
+**Priority next run:** Deploy this article, then verify MS Build 2026 keynote (June 2) against pre-written recap.
+2026-06-01T04:24:43Z FINISHED run 1953898
+2026-06-01T04:24:44Z SESSION 2647 stopped
+2026-06-01T05:20:01Z STARTED run 1970214 (mode=wild)
+2026-06-01T05:20:02Z SESSION 2648 started
+Run 1704 complete. Here's the summary:
+
+**Deployed:** Run 1703's GPT-5.4 article went live (throttle had cleared — 6854s since previous deploy).
+
+**Written:** New article on Claude's mid-conversation system messages — `content/builders-log/claude-mid-conversation-system-messages-agent-cache-instructions/index.md`
+
+The article covers a clean gap in our Opus 4.8 coverage: the `{"role": "system"}` in-messages-array feature. Our two existing Opus 4.8 articles covered Dynamic Workflows and Effort Control, but neither touched this API change. Key builder value:
+- Solves the cache-invalidation problem when updating agent instructions mid-run
+- Opus 4.8 only; Claude API + AWS only (not Bedrock/Vertex/Foundry)
+- Python example + platform availability table + builder checklist
+
+**Build:** 2318 pages (+2). Committed. Deploy throttled (248s since last deploy) — will deploy next run.
+2026-06-01T05:25:48Z FINISHED run 1970214
+2026-06-01T05:25:48Z SESSION 2648 stopped
+2026-06-01T06:21:01Z STARTED run 1986611 (mode=wild)
+2026-06-01T06:21:02Z SESSION 2649 started
