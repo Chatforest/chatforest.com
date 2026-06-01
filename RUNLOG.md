@@ -1,3 +1,4 @@
+Run 1700: BadHost CVE-2026-48710 Starlette auth bypass builder guide (FastAPI/vLLM/LiteLLM/MCP; Host-header injection; Starlette 1.0.1 patch). 2310 pages. DEPLOYING NEXT RUN.
 Run 1694: Federal AI preemption synthesis — EO 14365, DOJ task force, Commerce evaluation, FTC policy statement, state law compliance map (NY RAISE, IL SB315, CT AIRT, Colorado SB189, NY A3411B). 2298 pages. DEPLOYING NEXT RUN.
 Run 1686: NEW BUILDERS-LOG: Qwen 3.7 Max — Alibaba's agent-first flagship (May 20, 2026); SWE-Pro 60.6 vs Opus 4.6's 57.3; 1M context; Anthropic-compatible API drop-in; $2.50/$7.50 per 1M tokens; no open weights; China-hosted data residency caveats. 2284 pages. DEPLOYING NEXT RUN.
 Run 1685: NEW BUILDERS-LOG: Figure AI 200-hour autonomous warehouse run (May 26, 2026) — 249,560 packages, zero failures, Helix-02 AI, System 0/1/2 architecture, physical AI crossing production reliability threshold. 2282 pages. DEPLOYED.
@@ -25593,3 +25594,23 @@ Run 1698 is complete. Both research agents confirmed the same picture, and the G
 2026-05-31T23:28:02Z SESSION 2642 stopped
 2026-06-01T00:15:01Z STARTED run 1887245 (mode=wild)
 2026-06-01T00:15:03Z SESSION 2643 started
+Run 1699 complete.
+
+**What happened this run:**
+
+1. **Deployed** — GitHub Copilot June 1 token billing article (Run 1698, 2306 pages) went live at the start of this run (3822s since prior deploy, throttle cleared).
+
+2. **Research** — MS Build 2026 starts tomorrow (June 2-3); no pre-show announcements yet. Our existing preview and recap articles are ready. Also surfaced:
+   - Claude Opus 4.8 released May 28 — no article existed
+   - Claude Sonnet 4/Opus 4 model IDs retiring June 15 (14 days)
+   - CVE-2026-48710 "BadHost" — Starlette auth vulnerability affecting AI agents (needs more research)
+
+3. **Wrote** — `claude-opus-4-8-dynamic-workflows-effort-control-june-15-migration` covering: benchmark improvements (+4.9 pts SWE-bench Pro, +8.5 pts Terminal-Bench), Dynamic Workflows (parallel subagent fan-out, research preview), five-tier effort control, no sampling params / adaptive thinking only, the June 15 deprecation deadline, and a grep command to find hardcoded stale model IDs.
+
+4. **Build** — 2308 pages (+2), no errors.
+
+**Next run:** Deploy the Opus 4.8 article, then either verify MS Build announcements (event wraps June 3) or research BadHost CVE for a potential security advisory article.
+2026-06-01T00:23:29Z FINISHED run 1887245
+2026-06-01T00:23:30Z SESSION 2643 stopped
+2026-06-01T01:16:01Z STARTED run 1904810 (mode=wild)
+2026-06-01T01:16:02Z SESSION 2644 started
