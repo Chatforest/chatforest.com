@@ -26,7 +26,7 @@ Polaris is a mixture-of-experts architecture with specialized sub-modules tuned 
 
 ---
 
-## Windows Agent Framework: Open-Sourced and Portable
+## Windows Agent Framework, Agent Runtime, and Agent Store
 
 **Windows Agent Framework (WAF)** v1.0 shipped April 2 and was MIT-licensed at Build. It is Microsoft's library for building agents that run across local Windows machines, Windows 365 Cloud PCs, and Azure Arc-enabled edge devices.
 
@@ -36,7 +36,11 @@ WAF integrates with Copilot Studio for no-code agent composition and supports **
 
 The open-source MIT license is meaningful. Unlike Azure-specific SDKs, WAF can be forked and deployed outside Microsoft's cloud. Teams that want to build agent runtimes for on-premises Windows infrastructure without Azure dependency now have a permissive foundation to start from.
 
-**What this means for builders**: If you are building enterprise automation that needs to span a Windows-heavy organization — workstations, cloud desktops, and edge — WAF gives you a portable agent definition layer. The ambient agent pattern is particularly relevant for operational use cases (monitoring, alerting, background enrichment) that do not fit the request-response model most agent frameworks assume.
+**Windows Agent Runtime** was previewed at Build as an OS-level layer distinct from WAF. Where WAF is a developer SDK, the Agent Runtime provides native agent APIs embedded directly in the Windows shell — agents run as first-class OS citizens, not as application processes. The preview (available to Insiders in June) initially supports text-based agents operating on structured data: JSON, XML, and PDF files. Early design partners include Adobe (agents that learn designer layout habits and prepare InDesign templates automatically) and Zoom (agents that join meetings on behalf of a user and push summarized action items directly into Microsoft Planner).
+
+**Windows Agent Store** was announced alongside the Runtime: a curated marketplace where developers can sell agent manifests and companion services. The store enforces security reviews and offers an 85% revenue share — matching the current Microsoft Store model. This gives developers a distribution channel for agents with better economics than typical app store splits.
+
+**What this means for builders**: The three-layer architecture is worth mapping: WAF (build and define agents), Agent Runtime (OS-level host and execution context), Agent Store (distribution and monetization). If you are building agents targeting Windows end-users, the Agent Store's 85% revenue share and OS-native execution model are meaningful commercial levers — especially compared to deploying agents as standalone apps that users have to find and install manually.
 
 ---
 
@@ -82,6 +86,22 @@ The Foundry is now the unified surface for building, evaluating, and deploying m
 
 ---
 
+## MAI Model Suite v2: Microsoft's Multimodal Independence Push
+
+Alongside Project Polaris, Microsoft announced the next generation of its MAI (Microsoft AI) model suite at Build — its most coordinated attempt to replace OpenAI models across image, voice, and transcription simultaneously.
+
+**MAI-Image-2.5** ships in two variants: a standard high-quality version and a faster MAI-Image-2.5e (efficient). The 2.5 generation adds image input, enabling editing workflows in addition to generation — a capability the original MAI-Image-2 lacked. This puts MAI-Image-2.5 in direct competition with GPT-4o's image editing features.
+
+**MAI-Voice-2** is a multilingual successor to MAI-Voice-1, expanding language support to cover German, Australian and US English, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Dutch, Portuguese, Turkish, Vietnamese, and Chinese. The 2.0 generation also expands the emotional range of generated speech to include tones such as angry, confused, and embarrassed — moving toward contextually appropriate voice output rather than uniformly neutral delivery.
+
+**MAI-Transcribe-1.5** is an incremental improvement over the April 2026 MAI-Transcribe-1, which already claimed the lowest word error rate across 25 languages (3.9% WER on FLEURS, beating Whisper). The 1.5 version is positioned as a steady-state improvement rather than a capability leap — the v1 baseline was already strong.
+
+**Pricing for v2 models has not yet been disclosed.** For reference, the April 2026 v1 generation launched at $0.36/hour for MAI-Transcribe-1, $22/million characters for MAI-Voice-1, and $5/$33 per million tokens (text/image output) for MAI-Image-2. The v2 pricing is expected when the models reach GA in Microsoft Foundry.
+
+**What this means for builders**: The coordination across three modalities simultaneously is the signal. Microsoft is not iterating incrementally on one model at a time — it is building a complete multimodal stack designed to undercut OpenAI pricing at every layer. Teams currently paying for Whisper (via Azure Speech or OpenAI API), DALL-E, and TTS should benchmark the MAI v2 suite against their current costs once pricing is confirmed. The Polaris + MAI v2 combination represents Microsoft's credible path to AI independence from OpenAI.
+
+---
+
 ## Windows Local AI: DirectML 2.0 and WSL 3
 
 Two infrastructure announcements shift what's possible for developers building on Windows hardware.
@@ -94,9 +114,19 @@ Two infrastructure announcements shift what's possible for developers building o
 
 ---
 
+## Hardware: First Nvidia-Powered Windows PCs
+
+Alongside the software announcements, Microsoft and Nvidia jointly unveiled the first Windows PCs powered by Nvidia chips as the primary processors — Arm-based systems from Microsoft's Surface line and Dell. The launches were simultaneously staged at Build in San Francisco and Computex in Taipei. This extends the Arm-native Windows ecosystem that Qualcomm has led, now with Nvidia entering as a second silicon partner.
+
+For builders, this is relevant primarily for DirectML 2.0 compatibility: Nvidia NPUs are a new target in the silicon abstraction layer alongside Intel, AMD, and Qualcomm.
+
+---
+
 ## What Was Not Announced
 
 Windows 12 — codenamed "Hudson Valley" internally — was not shown at Build. The next major OS version remains in early development. Microsoft's engineering teams indicated a potential preview in late 2026 or early 2027 at the earliest. Build was explicitly framed as a developer platform event, not an OS announcement event.
+
+MAI v2 model pricing was not disclosed at Build. Pricing for MAI-Image-2.5, MAI-Voice-2, and MAI-Transcribe-1.5 is expected when the models reach GA in Microsoft Foundry.
 
 ---
 
@@ -111,6 +141,10 @@ Windows 12 — codenamed "Hudson Valley" internally — was not shown at Build. 
 **4. Enable DirectML 2.0 for on-device workloads.** If you are building Windows apps that currently call a cloud API for transcription, image generation, or lightweight inference, DirectML 2.0 gives you a path to local execution that works across your user base's hardware. Evaluate latency and accuracy against your cloud baseline.
 
 **5. Move Copilot Workspace GA into your team's trial scope.** Autopilot and fleet modes are now production features, not research previews. Pick one bounded class of issue (dependency updates, test generation, documentation updates) and run an unattended trial for 30 days. The coverage and error rate data from that trial is more useful than any benchmark Microsoft published.
+
+**6. Benchmark MAI v2 against your current multimodal spend when pricing lands.** If you are using Azure Cognitive Services, OpenAI Whisper, DALL-E, or TTS today, track the MAI v2 GA announcement. Microsoft's April 2026 v1 pricing was already competitive — the v2 generation is expected to maintain or improve on that. Teams with significant multimodal API spend should run a benchmark trial before committing to a renewal cycle.
+
+**7. Register interest in the Windows Agent Store if you are building Windows-native agents.** The 85% revenue share and OS-level distribution are a meaningful commercial model for agents targeting enterprise Windows environments. The store is in preview; early design partner access may be available through the Windows Insider program or Microsoft's developer partner programs.
 
 ---
 
