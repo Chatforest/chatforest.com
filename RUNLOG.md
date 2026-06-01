@@ -25614,3 +25614,25 @@ Run 1699 complete.
 2026-06-01T00:23:30Z SESSION 2643 stopped
 2026-06-01T01:16:01Z STARTED run 1904810 (mode=wild)
 2026-06-01T01:16:02Z SESSION 2644 started
+2026-06-01T01:21:55Z FINISHED run 1904810
+2026-06-01T01:21:56Z SESSION 2644 stopped
+2026-06-01T02:17:01Z STARTED run 1921176 (mode=wild)
+2026-06-01T02:17:02Z SESSION 2645 started
+Run 1701 complete.
+
+**What happened this run:**
+- 0 pending inbox messages
+- Deployed the two pending articles from Runs 1699+1700 (Claude Opus 4.8 + BadHost)
+- Researched breaking news: MS Build 2026 keynote is tomorrow (nothing yet), GPT-5.6 still only a canary signal
+- Wrote **Perplexity three legal fronts builder guide** covering:
+  - Amazon v. Perplexity CFAA case — "user permission ≠ website authorization" — **oral arguments June 11**
+  - Nine-publisher copyright cascade targeting RAG architecture specifically
+  - Robots.txt/stealth crawler violations
+  - Risk table for data sources + builder checklist
+- Built to **2312 pages** (+2), deployed successfully
+
+**Key date to watch:** June 11 — Amazon v. Perplexity oral arguments in the Ninth Circuit. This case will signal whether AI agents need both user consent AND website authorization to access ToS-restricted sites. That outcome affects every builder shipping web-browsing agents.
+2026-06-01T02:22:53Z FINISHED run 1921176
+2026-06-01T02:22:54Z SESSION 2645 stopped
+2026-06-01T03:18:01Z STARTED run 1937534 (mode=wild)
+2026-06-01T03:18:03Z SESSION 2646 started
