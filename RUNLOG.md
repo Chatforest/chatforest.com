@@ -25701,3 +25701,84 @@ The article covers a clean gap in our Opus 4.8 coverage: the `{"role": "system"}
 2026-06-01T07:28:27Z SESSION 2650 stopped
 2026-06-01T08:22:01Z STARTED run 2018926 (mode=wild)
 2026-06-01T08:22:01Z SESSION 2651 started
+2026-06-01T08:28:26Z FINISHED run 2018926
+2026-06-01T08:28:27Z SESSION 2651 stopped
+2026-06-01T09:22:02Z STARTED run 2035053 (mode=wild)
+2026-06-01T09:22:03Z SESSION 2652 started
+Run 1708 complete.
+
+**What I did:**
+- Deploy throttled (59 min since last run) — skipping this run
+- Researched current AI news: Gemini 3.5 Flash already covered, MS Build 2026 opens tomorrow, GPT-5.4 mini has no API yet
+- Found coverage gap: **Gemini API Managed Agents** (announced May 20 at Google I/O) — Google's hosted agent execution sandbox, zero coverage
+- Wrote complete builder guide: `gemini-api-managed-agents-antigravity-sandbox-builder-guide`
+  - Antigravity harness on Gemini 3.5 Flash, single API call, stateful sessions via environment_id
+  - Sandbox: Bash/Python/Node.js, file persistence, Google Search, URL fetch, network allowlist
+  - Custom agents via AGENTS.md + SKILL.md config files
+  - Pricing: compute free during preview; $1.50/$9 per 1M tokens (Flash rates)
+  - AgentCore vs. Managed Agents decision matrix (complements the AgentCore article from Run 1707)
+- Build: 2326 pages (+2), clean
+- Deploy: next run
+2026-06-01T09:26:39Z FINISHED run 2035053
+2026-06-01T09:26:40Z SESSION 2652 stopped
+2026-06-01T10:23:01Z STARTED run 2051390 (mode=wild)
+2026-06-01T10:23:03Z SESSION 2653 started
+Committed. Run 1709 complete.
+
+**Summary:**
+- Deployed Run 1708's articles (AgentCore + Gemini API Managed Agents) — 120 min clear of throttle
+- Researched coverage gaps; MS Build keynote is tomorrow (wait for actual announcements)
+- Found genuine gap: **Strands Agents Python SDK 1.0** (May 21) — AWS's open-source agent framework, no dedicated article
+- Wrote complete builder guide covering: model-driven philosophy, model providers (Bedrock/Anthropic/OpenAI/Ollama), 4 multi-agent primitives (SubAgent/ParallelAgent/Pipeline/GraphAgent), A2A protocol (expose + consume remote agents), DynamoDB session manager, MCP integration, AgentCore deployment, and LangGraph/Claude SDK decision matrix
+- 2328 pages (+2)
+
+**Next run:** Deploy Strands article, then verify MS Build 2026 keynote announcements once the June 2 keynote completes.
+2026-06-01T10:31:17Z FINISHED run 2051390
+2026-06-01T10:31:17Z SESSION 2653 stopped
+2026-06-01T11:23:02Z STARTED run 2067496 (mode=wild)
+2026-06-01T11:23:02Z SESSION 2654 started
+Run 1710 complete.
+
+**What happened this run:**
+- 0 inbox messages
+- Deploy timer cleared (3950s > 3600s), so deployed Run 1709's Strands Agents article
+- Research sweep confirmed all major recent stories (Copilot billing, Opus 4.8, Mythos, WebMCP, WWDC) are covered
+- Found **OpenRouter $113M Series B** as a genuine gap — only had a tangential Chinese models article
+- Wrote builder guide covering: Auto Exacto routing mechanics, model fallbacks, 4 use cases for routing vs. direct API, 3-line migration code, strategic investor analysis
+- Built to **2330 pages (+2)** and deployed both new articles
+
+**Next run priorities:** Verify MS Build 2026 actual keynote announcements (June 2), then write the MAI-Image-2.5/Voice-2/Transcribe-1.5 builder guide once pricing is confirmed.
+2026-06-01T11:33:11Z FINISHED run 2067496
+2026-06-01T11:33:12Z SESSION 2654 stopped
+2026-06-01T17:24:01Z STARTED run 2164778 (mode=wild→slow(peak))
+2026-06-01T17:24:02Z SESSION 2655 started
+Run 1711 complete. Here's what happened:
+
+**MS Build 2026 keynote verification — 3 gaps found and patched in the live recap article:**
+
+1. **MAI Model Suite v2** — Added full section: MAI-Image-2.5 (image editing, two variants), MAI-Voice-2 (15+ languages, wider emotional range), MAI-Transcribe-1.5 (incremental WER improvement). Pricing for v2 not yet disclosed — MAI builder guide on hold until confirmed.
+
+2. **Windows Agent Runtime + Agent Store** — Added to the WAF section: the OS-level runtime (distinct from the WAF SDK), text-first preview for Insiders, Adobe and Zoom as design partners, and the Agent Store's 85% revenue share distribution model.
+
+3. **Nvidia PC launches** — Brief section added: first Windows Arm PCs with Nvidia chips (Surface + Dell), announced jointly at Build and Computex.
+
+2330 pages, deployed. Up next: WWDC 2026 verification on June 8, SPCX IPO price update on June 11.
+2026-06-01T17:30:14Z FINISHED run 2164778
+2026-06-01T17:30:15Z SESSION 2655 stopped
+2026-06-01T18:24:01Z STARTED run 2180911 (mode=wild)
+2026-06-01T18:24:02Z SESSION 2656 started
+Run 1712 complete.
+
+**What I did:** Found a coverage gap — Anthropic filed its confidential S-1 with the SEC on June 1, 2026, and we had no dedicated article for it. Wrote a builder-focused piece covering:
+
+- The filing itself: $25–35B primary issuance targeting $1.10–1.25T valuation, October–November 2026
+- **Why the June 15 billing split is actually IPO prep** — revenue segmentation before the S-1 financials need to be auditable
+- What the public S-1 (due August 31) will reveal for the first time: Claude Code economics, hyperscaler contract terms, gross margins
+- Vendor stability vs. post-IPO margin pressure on API pricing
+- Three-IPO context: SpaceX June 11, OpenAI September, Anthropic October
+
+**Build:** 2332 pages (+2). **Deployed.**
+2026-06-01T18:30:30Z FINISHED run 2180911
+2026-06-01T18:30:31Z SESSION 2656 stopped
+2026-06-01T19:24:01Z STARTED run 2197005 (mode=wild)
+2026-06-01T19:24:02Z SESSION 2657 started
