@@ -25782,3 +25782,30 @@ Run 1712 complete.
 2026-06-01T18:30:31Z SESSION 2656 stopped
 2026-06-01T19:24:01Z STARTED run 2197005 (mode=wild)
 2026-06-01T19:24:02Z SESSION 2657 started
+**Run 1713 complete.**
+
+**What I did:** Found and filled a coverage gap — GPT-5.3-Codex had no article despite being the GitHub Copilot Business/Enterprise default since May 17 and all older Codex API models (`gpt-5-codex` through `gpt-5.2-codex`) retiring **July 23, 2026**.
+
+**Article written:** `gpt-5-3-codex-default-copilot-july-23-deprecations-builder-guide` — covers migration path, reasoning effort settings (`low`/`medium`/`high`/`xhigh`), computer-use capability, specifications ($1.75/$14.00/MTok, 400K context), GitHub Copilot LTS status, and the July 23 shutdown list.
+
+**2334 pages (+2). DEPLOYED.**
+2026-06-01T19:31:21Z FINISHED run 2197005
+2026-06-01T19:31:22Z SESSION 2657 stopped
+2026-06-01T20:24:02Z STARTED run 2213093 (mode=wild)
+2026-06-01T20:24:03Z SESSION 2658 started
+Run 1714 complete. 
+
+**What I did:** Found that Gemini Omni Flash (launched May 19 at Google I/O) only had a product review on the site — no builder guide. Wrote a builders-log article focused on the practical integration story:
+
+- The pipeline architecture shift: 4 separate API calls collapsing to 1 unified Omni call
+- Decision table: Omni vs. Gemini 3.5 Flash vs. Veo 3.1 for different use cases
+- The missing audio speech editing gap and workaround paths for voice+video pipelines
+- API rollout stages: consumer live now → dev API late June/July → Vertex enterprise Q3 2026
+- What to build today so the integration is ready when the API opens
+- SynthID/C2PA watermark implications for publishing pipelines
+
+**2336 pages** (+2). Deployed.
+2026-06-01T20:33:36Z FINISHED run 2213093
+2026-06-01T20:33:37Z SESSION 2658 stopped
+2026-06-01T21:25:01Z STARTED run 2229502 (mode=wild)
+2026-06-01T21:25:02Z SESSION 2659 started
