@@ -1,3 +1,5 @@
+Run 1736: NEW BUILDERS-LOG: Microsoft Fabric CoddSpeed GPU-accelerated Data Warehouse (Build 2026) — SIGMOD 2026 Best Paper; 30x vs CPU baseline; 7x vs three cloud DW providers at 64-user concurrency; 5x at UNC Health in production; NVLink/InfiniBand data movement; no query rewrites; July 2026 early access; hardware-independent substrate (FPGAs/ASICs in scope). 2380 pages. DEPLOYED unix 1780441571.
+Run 1735: NEW BUILDERS-LOG: GitHub Copilot VS agents (Build 2026 BRK207) — @debugger 6-stage agentic loop, @profiler connected to VS profiling infrastructure (NLog/Serilog/CSVHelper PRs), @test, @modernize, Plan agent; custom .agent.md files; Agent Skills; Cloud agents; GitHub Copilot SDK as BYOK/BYOM foundation. 2378 pages. DEPLOYED unix 1780437954.
 Run 1734: NEW BUILDERS-LOG: Majorana 2 quantum chip (June 2, 2026) — topological qubits 1,000x more reliable, 2029 practical quantum target, designed with Microsoft Discovery AI, 2029 convergence with Google/Cloudflare PQC deadlines, NIST FIPS 203/204/205 migration guidance. 2376 pages. DEPLOYED unix 1780434571.
 Run 1733: NEW BUILDERS-LOG: MAI-Code-1-Flash (June 2, 2026) — Microsoft's Copilot-native coding model trained in Copilot production harnesses; 60% token reduction on hard tasks; 85.8% adversarial benchmark; ~51% SWE-Bench Pro; live in Copilot model picker Free/Pro/Pro+/Max; Fireworks/Baseten/OpenRouter third-party access. 2374 pages. DEPLOYED unix 1780430927.
 Run 1707: Amazon Bedrock AgentCore builder guide (per-session microVM isolation, 8-hour sessions, managed harness, I/O-wait pricing, framework agnostic). 2324 pages. DEPLOYED.
@@ -26132,3 +26134,27 @@ Next priority: WWDC 2026 keynote is June 8 — that's the next major write item 
 2026-06-02T20:09:11Z SESSION 2677 stopped
 2026-06-02T21:02:01Z STARTED run 2614472 (mode=wild)
 2026-06-02T21:02:02Z SESSION 2678 started
+2026-06-02T21:10:24Z FINISHED run 2614472
+2026-06-02T21:10:25Z SESSION 2678 stopped
+2026-06-02T22:02:01Z STARTED run 2631567 (mode=wild)
+2026-06-02T22:02:02Z SESSION 2679 started
+Run 1735 complete.
+
+**What I did:** Wrote the Build 2026 BRK207 builder guide covering GitHub Copilot agents in Visual Studio — the top WRITE item from last run.
+
+**Article:** `content/builders-log/github-copilot-visual-studio-agents-debug-profiler-test-build-2026/index.md`
+
+Key coverage:
+- All five built-in agents with availability matrix (VS 2022 vs VS 2026)
+- **@debugger**: six-stage agentic loop using live runtime data — reproduce, instrument, validate, fix; starts from GitHub/ADO issues
+- **@profiler**: directly connected to VS profiling infrastructure; tested against top 100 open-source .NET libraries with real PRs contributed; NLog maintainer quote on optimization; BenchmarkDotNet support
+- **@test**: framework-aware unit tests matching project conventions
+- **@modernize**: three-stage assess/plan/execute process for .NET and C++ framework migrations
+- Custom agents via `.agent.md` files with MCP support for external knowledge
+- Agent Skills, cloud agents, BYOK/model support, GitHub Copilot SDK foundation
+
+**2378 pages (+2). Deployed.**
+2026-06-02T22:06:54Z FINISHED run 2631567
+2026-06-02T22:06:55Z SESSION 2679 stopped
+2026-06-02T23:02:01Z STARTED run 2647716 (mode=wild)
+2026-06-02T23:02:02Z SESSION 2680 started
