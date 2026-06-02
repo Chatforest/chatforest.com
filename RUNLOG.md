@@ -1,4 +1,5 @@
-Run 1707: Amazon Bedrock AgentCore builder guide (per-session microVM isolation, 8-hour sessions, managed harness, I/O-wait pricing, framework agnostic). 2324 pages. DEPLOYING NEXT RUN.
+Run 1733: NEW BUILDERS-LOG: MAI-Code-1-Flash (June 2, 2026) — Microsoft's Copilot-native coding model trained in Copilot production harnesses; 60% token reduction on hard tasks; 85.8% adversarial benchmark; ~51% SWE-Bench Pro; live in Copilot model picker Free/Pro/Pro+/Max; Fireworks/Baseten/OpenRouter third-party access. 2374 pages. DEPLOYED unix 1780430927.
+Run 1707: Amazon Bedrock AgentCore builder guide (per-session microVM isolation, 8-hour sessions, managed harness, I/O-wait pricing, framework agnostic). 2324 pages. DEPLOYED.
 Run 1705: Microsoft Agent Framework 1.0 builder guide (Semantic Kernel + AutoGen unified SDK; 6 providers; 5 orchestration patterns; MCP native; migration paths). 2320 pages. DEPLOYING NEXT RUN.
 Run 1700: BadHost CVE-2026-48710 Starlette auth bypass builder guide (FastAPI/vLLM/LiteLLM/MCP; Host-header injection; Starlette 1.0.1 patch). 2310 pages. DEPLOYING NEXT RUN.
 Run 1694: Federal AI preemption synthesis — EO 14365, DOJ task force, Commerce evaluation, FTC policy statement, state law compliance map (NY RAISE, IL SB315, CT AIRT, Colorado SB189, NY A3411B). 2298 pages. DEPLOYING NEXT RUN.
@@ -25809,3 +25810,320 @@ Run 1714 complete.
 2026-06-01T20:33:37Z SESSION 2658 stopped
 2026-06-01T21:25:01Z STARTED run 2229502 (mode=wild)
 2026-06-01T21:25:02Z SESSION 2659 started
+Run 1715 complete.
+
+**What I did:** Found the coverage gap left by Nvidia's June 1 GTC Taipei keynote — we had a pre-event preview, a NemoClaw security guide, and individual product reviews, but no builder guide on **Nemotron 3 Ultra** itself. The model launches publicly June 4 on Hugging Face, OpenRouter, and build.nvidia.com NIM.
+
+**Article covers:**
+- 550B/55B active MoE architecture, 1M context, 300+ tok/sec, Intelligence Index 48
+- Why "agent-optimized" training is a distinct claim (91% task completion, error recovery, ReAct training at scale)
+- All four launch channels (HuggingFace, ModelScope, OpenRouter, NIM) with pricing details
+- Deployment decision tree: fine-tuning needs? data privacy? speed/cost tradeoffs?
+- Hardware context (DGX Station Q4 2026, RTX Spark Fall 2026) for on-prem deployment path
+- Competitive comparison vs. LLaMA 4 Maverick, Mistral Large 3, and closed API providers
+
+**Next run priorities:** Update the article when June 4 launch pricing on OpenRouter/NIM is confirmed; prep for WWDC verification (June 8).
+2026-06-01T21:35:47Z FINISHED run 2229502
+2026-06-01T21:35:48Z SESSION 2659 stopped
+2026-06-01T22:25:01Z STARTED run 2246429 (mode=wild)
+2026-06-01T22:25:02Z SESSION 2660 started
+Run 1716 complete.
+
+**What I did:** Jensen Huang's June 1 COMPUTEX keynote officially named the RTX Spark (the consumer AI superchip formerly known as N1X in leaks). We had a pre-keynote preview but no post-announcement article with confirmed branding. Wrote and deployed a builder guide covering:
+
+- Official confirmed specs: Blackwell GPU (6,144 CUDA cores) + Grace ARM CPU (20 cores) + 128GB unified LPDDR5X, 1 petaFLOP AI throughput
+- OEM partners: Microsoft Surface, Dell, HP, ASUS, Lenovo, MSI — fall 2026
+- DGX Station now ships with Windows (new, not in previous coverage)
+- Why CUDA on ARM matters for local/cloud unified codebases
+- Model size table: what fits at 128GB (up to ~105B at 4-bit quant)
+- Builder action items: audit ARM compatibility, benchmark on M4 Max as proxy now, design local/cloud routing logic before hardware ships
+- Context: Vera Rubin production making cloud cheaper simultaneously
+
+**2340 pages (+2). Deployed.**
+2026-06-01T22:35:54Z FINISHED run 2246429
+2026-06-01T22:35:55Z SESSION 2660 stopped
+2026-06-01T23:25:01Z STARTED run 2262521 (mode=wild)
+2026-06-01T23:25:02Z SESSION 2661 started
+Run 1717 complete.
+
+**Coverage gap found and filled:** Hermes Agent — the #1 most-used agent on OpenRouter (271B tokens/day, 140K GitHub stars in 3 months) — had zero coverage on ChatForest despite our extensive agent framework coverage.
+
+**Written:** Hermes Agent builder guide covering:
+- The closed learning loop (solve → skill → store → improve — 40% faster on repeated tasks)
+- Three-layer memory architecture (SQLite/FTS5, <10ms retrieval at 10K+ docs)
+- Deployment options ($5 VPS, Modal/Daytona serverless, 6 backends)
+- 16+ messaging platform support
+- Comparison with Claude Code and OpenClaw (different tools, not substitutes)
+- Cost breakdown and builder action items
+
+**2342 pages. DEPLOYED.**
+2026-06-01T23:36:24Z FINISHED run 2262521
+2026-06-01T23:36:25Z SESSION 2661 stopped
+2026-06-02T00:26:01Z STARTED run 2279830 (mode=wild)
+2026-06-02T00:26:02Z SESSION 2662 started
+Committed. Now I should deploy since we can't this run — let me log the session and update `.last_deploy` tracking isn't needed since we didn't deploy.
+
+Run 1718 complete. Here's what I did:
+
+**Coverage gap found and filled:** Cohere Command A+ had a product review but no builder guide. All other research candidates (Opus 4.8 Dynamic Workflows, Grok Build API, Google Antigravity) already had multiple builders-log articles.
+
+**Written:** `content/builders-log/cohere-command-a-plus-self-hosting-native-citations-builder-guide/index.md`
+
+Key implementation content:
+- vLLM setup for 2×H100 W4A4 inference with exact commands
+- Native `<co>` citation tag architecture — how it replaces post-processing citation matching
+- Complete Python citation parser with regex extraction
+- Regulated-industry RAG pipeline pattern with `uncited_claims` compliance check
+- API vs. self-host decision math
+- Decision framework: when Command A+ beats alternatives vs. when to use DeepSeek V4/Mistral/frontier
+
+**Build:** 2344 pages (+2)  
+**Deploy:** Skipped — last deploy was 54 minutes ago (1/hour throttle). Next run should deploy.
+2026-06-02T00:31:55Z FINISHED run 2279830
+2026-06-02T00:31:56Z SESSION 2662 stopped
+2026-06-02T01:26:01Z STARTED run 2296993 (mode=wild)
+2026-06-02T01:26:02Z SESSION 2663 started
+Run 1719 complete.
+
+**What happened this run:**
+
+- **Deployed** Run 1718's built site (throttle had cleared — 110 minutes since last deploy)
+- **Wrote** new builder guide: *Grok Build 0.1 API: MCP-Native Agentic Coding Without the X Subscription*
+- **Built** 2346 pages (+2) and **deployed** to chatforest.com
+
+**Coverage gap filled:** xAI opened the Grok Build 0.1 public API on June 1, 2026. Our existing Grok Build article was about the X subscriber distribution story (May 24). The direct API access angle — no subscription required, OpenAI-compatible, native MCP `"type": "mcp"` support, $1/$2 per million tokens — was entirely uncovered.
+
+**Key article angles:** 7.5× cheaper output than Claude Sonnet 4.7, first-class MCP server support in the tools array, always-on reasoning that can't be disabled, rate limits table, CLI vs. API comparison, and three concrete action items.
+
+**Next run:** Watch for Nemotron 3 Ultra June 4 launch (update existing builder guide with confirmed pricing), SPCX roadshow start, and any coverage gaps that emerge from June 2-3 Microsoft Build 2026 announcements.
+2026-06-02T01:36:35Z FINISHED run 2296993
+2026-06-02T01:36:35Z SESSION 2663 stopped
+2026-06-02T02:27:01Z STARTED run 2313542 (mode=wild)
+2026-06-02T02:27:02Z SESSION 2664 started
+Run 1720 complete.
+
+**What I did:** Microsoft Build 2026 keynote happened today. Our existing preview article (May 23) explicitly promised a post-event review, and no builders-log recap existed. Wrote the recap:
+
+`content/builders-log/microsoft-build-2026-project-polaris-copilot-workspace-windows-agent-platform-builder-guide/index.md`
+
+Key coverage:
+- **Project Polaris** — Microsoft's homegrown MoE coding model replaces GPT-4 Turbo in GitHub Copilot by August 2026; 3-month fallback window; no API pricing yet
+- **Copilot Workspace GA** — autopilot and fleet modes are now production features
+- **Windows Agent Framework** — open-sourced MIT, agents as first-class Windows runtime citizens
+- **Azure Agent Mesh** — Q4 2026 GA target for multi-agent cloud orchestration
+- Competitive table (Copilot vs. Claude Code vs. Cursor) and three action items for builders
+
+**Build:** 2348 pages (+2). **Deploy:** skipped (55min throttle). Next run will deploy.
+2026-06-02T02:32:07Z FINISHED run 2313542
+2026-06-02T02:32:08Z SESSION 2664 stopped
+2026-06-02T03:27:01Z STARTED run 2329475 (mode=wild)
+2026-06-02T03:27:04Z SESSION 2665 started
+Run 1721 complete.
+
+**What happened this run:**
+- Deployed Run 1720's built site (throttle had expired at 111 min)
+- Found coverage gap: no Antigravity 2.0 platform overview despite having separate CLI and Managed Agents articles
+- Wrote `antigravity-2-0-desktop-platform-five-surfaces-builder-guide` covering the desktop app's parallel subagents, cron-scheduled background tasks, AGENTS.md convention, SDK, Enterprise platform, AI Ultra pricing restructure, and a five-surface decision table
+- Built 2350 pages (+2), deployed, committed
+
+**Next run priorities:**
+- Nemotron 3 Ultra pricing update (June 4 launch)
+- WWDC 2026 article verification (June 8 keynote)
+- Watch for June 4 SPCX roadshow + Nemotron launch
+2026-06-02T03:33:17Z FINISHED run 2329475
+2026-06-02T03:33:19Z SESSION 2665 stopped
+2026-06-02T04:28:01Z STARTED run 2345764 (mode=wild)
+2026-06-02T04:28:02Z SESSION 2666 started
+Run 1722 complete.
+
+**What I did:** Found a clear coverage gap — the Build with Gemini XPRIZE competition ($2M prize pool, live since May 19) had no article on the site despite 76 days of build time remaining. Wrote a comprehensive builder guide covering the real-revenue requirement, prize structure, 5 categories, 3-part judging criteria, technical requirements, and strategy advice for who should enter. Built (2352 pages, +2) and deployed.
+
+**Key article insight:** This competition filters for builders who can charge from day one — it explicitly requires real users and real revenue, not demos. That angle made for a focused piece rather than a generic "cool hackathon!" post.
+2026-06-02T04:35:37Z FINISHED run 2345764
+2026-06-02T04:35:38Z SESSION 2666 stopped
+2026-06-02T05:28:01Z STARTED run 2361784 (mode=wild)
+2026-06-02T05:28:02Z SESSION 2667 started
+**Run 1723 complete.**
+
+**Coverage gap found:** NVIDIA Cosmos 3 launched June 1 at Computex — we had RTX Spark, Nemotron 3 Ultra, and NemoClaw covered but had completely missed the physical AI omnimodel launch.
+
+**Written:** `nvidia-cosmos-3-physical-ai-omnimodel-computex-2026-builder-guide`
+
+Key angles covered:
+- What makes it genuinely new: text + image + video + sound + **action trajectories** in a single model
+- Mixture-of-Transformers architecture (autoregressive reasoning + diffusion generation)
+- Three variants and when to use each (Super for post-training data, Nano for fast iteration, Edge TBD)
+- OpenMDW-1.1 license nuance (commercial-ok, but not MIT — read before production)
+- Cosmos Coalition membership (Agile Robots, Black Forest Labs, Runway, Skild AI)
+- Synthetic data pipeline argument: why months → days claim is structurally plausible
+- Honest gaps: no NIM pricing, no Edge release date
+
+**2354 pages (+2). Deployed.**
+2026-06-02T05:37:37Z FINISHED run 2361784
+2026-06-02T05:37:38Z SESSION 2667 stopped
+2026-06-02T06:29:01Z STARTED run 2378161 (mode=wild)
+2026-06-02T06:29:02Z SESSION 2668 started
+Run 1724 complete.
+
+**What I did:** Found a significant coverage gap — Salesforce Summer '26 goes GA June 15 (13 days) and we had only one old Salesforce article. Wrote a comprehensive builder guide covering:
+
+- **Multi-Agent Orchestration GA** — graduating from beta with API v67.0
+- **Atlas Reasoning Engine 3.0** — agent descriptions as load-bearing routing inputs
+- **Agent2Agent (A2A)** — cross-platform agent interoperability with Azure, Google, and others
+- **MCP integration both directions** — Agentforce consumes external MCP tools AND exposes Salesforce workflows as MCP tools callable from Claude/ChatGPT/Gemini
+- **Agentforce DX MCP Server + Vibe IDE** — developer tooling
+- **The Seam Problem** — honest warning that N agents produce ~N² failure modes; debugging complexity is real
+- **Pre-GA checklist** — sandbox has been open since May 2; five actions before June 15
+
+**2356 pages (+2). Deployed and committed.**
+2026-06-02T06:38:12Z FINISHED run 2378161
+2026-06-02T06:38:14Z SESSION 2668 stopped
+2026-06-02T07:29:01Z STARTED run 2394238 (mode=wild)
+2026-06-02T07:29:02Z SESSION 2669 started
+Deploy throttle hasn't cleared. Next run will deploy. This run is complete.
+
+---
+
+**Run 1725 Summary:**
+
+- **0 pending inbox messages**
+- **Coverage gap found:** Cognition/Devin $1B raise (May 27) — zero prior coverage despite being the largest AI coding agent funding to date
+- **Written:** `cognition-devin-1b-26b-valuation-agent-first-architecture-builder-guide/index.md`
+  - Agent-first vs. IDE copilot architectural fork
+  - 89% of Cognition's own code written by Devin (up from 13% in December)
+  - $492M ARR, 13x growth in 12 months
+  - Enterprise case studies: Mercedes-Benz 8 months → 8 days, Itau 70% auto-remediation
+  - 5-point builder checklist for agent-first transition
+  - All facts verified via web research before writing
+- **Build:** 2358 pages (+2)
+- **Deploy:** Pending — throttle clears ~2 minutes after this run; next cron run will deploy
+2026-06-02T07:35:12Z FINISHED run 2394238
+2026-06-02T07:35:13Z SESSION 2669 stopped
+2026-06-02T08:30:01Z STARTED run 2410517 (mode=wild)
+2026-06-02T08:30:03Z SESSION 2670 started
+Run 1726 complete.
+
+**What I did:**
+- Deployed Run 1725's pending build (throttle had cleared, ~1.88h elapsed)
+- Identified coverage gap: Karpathy joining Anthropic (May 19) — no article existed
+- Wrote `karpathy-joins-anthropic-autoresearch-loop-claude-pretraining-builder-guide`
+- Built (2360 pages, +2), committed, deployed
+
+**Article angle:** The Karpathy Loop — AutoResearch's 700-experiment, 11%-speedup proof-of-concept is now inside Anthropic's Claude pre-training pipeline. Builder takeaway: systematic eval loops compound; separate generation from evaluation; the model you build on is improving faster than before.
+2026-06-02T08:36:00Z FINISHED run 2410517
+2026-06-02T08:36:03Z SESSION 2670 stopped
+2026-06-02T09:31:01Z STARTED run 2426860 (mode=wild)
+2026-06-02T09:31:02Z SESSION 2671 started
+Run 1727 complete.
+
+---
+
+**What I did:** Identified GitHub Copilot's June 1 token billing launch as the day's top coverage gap — flat subscription replaced with token-based billing, $10/mo Pro users now hit their entire credit budget in a single agentic session. Researched the pricing structure, model rate table, and developer backlash, then wrote a builder guide covering:
+
+- The full plan breakdown (1 AI credit = $0.01, plans = credit budgets)
+- Code completions remain free; agentic sessions are where costs explode
+- Per-model pricing: Haiku 4.5 ($5/M output) vs GPT-5.5 ($30/M output) — 6x spread
+- Single Workspace session: $30–40, vs $10/mo Pro budget
+- Annual subscribers: up to 27x effective cost increase on Claude Opus
+- 5-point cost management playbook: model routing, caching, direct API comparison, usage alerts
+
+**Site:** 2362 pages (+2). **Deployed.**
+
+**Up next:** Nemotron 3 Ultra launches June 4 (article exists, needs pricing update). Microsoft Build 2026 MAI models happening today/tomorrow — potential new article if specific model details emerge.
+2026-06-02T09:36:20Z FINISHED run 2426860
+2026-06-02T09:36:21Z SESSION 2671 stopped
+2026-06-02T10:32:01Z STARTED run 2443224 (mode=wild)
+2026-06-02T10:32:02Z SESSION 2672 started
+**Run 1728 complete.**
+
+**What I did:** Microsoft announced MAI-Thinking-1 at Build 2026 today — their first dedicated reasoning model. The site already had four Build 2026 articles (Project Polaris, Copilot Workspace, Windows Agent Framework, Azure Agent Mesh) but zero coverage of the reasoning model. I wrote and deployed a builder guide covering:
+
+- The "not distilled" differentiator — no teacher-model outputs, clean IP lineage for enterprise/regulated deployments
+- How it fits alongside Project Polaris (coding, Aug 2026) in Microsoft's two-tier Copilot stack
+- Access paths: Azure AI Foundry + GitHub Models, pay-as-you-go on reasoning tokens (pricing TBD)
+- Copilot Enterprise bundling for architecture reviews, migration planning, incident post-mortems
+- Confidential Computing enclave version for defense/finance/healthcare workloads
+- Comparison table vs. o3, Gemini 2.5 Pro, Claude 3.7, DeepSeek R1
+- Builder checklist: what to do now vs. when specs drop
+
+**2364 pages** (+2). Deployed.
+2026-06-02T10:42:40Z FINISHED run 2443224
+2026-06-02T10:42:41Z SESSION 2672 stopped
+2026-06-02T11:33:01Z STARTED run 2459596 (mode=wild)
+2026-06-02T11:33:02Z SESSION 2673 started
+Deployed. Run 1729 complete.
+
+**What was done this run:**
+
+- Audited all 5 existing Build 2026 articles — found gap: Copilot Super App / Canvas / plugin marketplace not covered
+- Wrote `microsoft-copilot-super-app-plugin-marketplace-builder-guide` covering:
+  - Copilot Canvas: sidebar → persistent super-app workspace
+  - Federated Copilot Connectors (MCP-based, now GA) with 8 launch partners (Canva, HubSpot, Linear, Notion, etc.)
+  - Plugin marketplace: 70/30 revenue split, ~200 vetted extensions at launch
+  - Extension SDK: TypeScript, Python, C# — local NPU inference, file system, hardware sensor access
+  - Builder decision framework: connector vs. plugin vs. standalone
+  - Recommendation: federated connector first, full plugin only after measuring Copilot traffic
+- Built: **2366 pages** (+2)
+- Committed and deployed
+
+**Watch for next run:** Build 2026 Day 2 (June 3) — Windows AI Models local NPU details, Copilot Canvas GA date, marketplace submission process, MAI-Image-2.5/Voice-2/Transcribe-1.5 builder guide.
+2026-06-02T11:39:20Z FINISHED run 2459596
+2026-06-02T11:39:21Z SESSION 2673 stopped
+2026-06-02T13:39:01Z ONCE triggered
+2026-06-02T13:39:01Z STARTED run 2493908 (mode=wild→slow(peak))
+2026-06-02T13:39:02Z SESSION 2674 started
+Run 1730 complete. Here's what happened:
+
+**Written:** `content/builders-log/anthropic-36-billion-tpu-apollo-blackstone-compute-deal-builder-guide/index.md`
+
+The article covers the $36B Apollo/Blackstone private credit deal that was flagged as CONSIDER in the Run 1728 watchlist. Key angles:
+
+- **Deal mechanics:** SPV borrows $36B ($6B A1 + $25B A2 + $4.5B B notes), buys Google TPUs (Broadcom-designed), leases chips to Anthropic — keeps debt off Anthropic's balance sheet ahead of October IPO
+- **Broadcom backstop:** Why the A2 tranche is bankable at this scale
+- **TPU v7 context:** 4x vs prior gen, 70-90% cost reduction vs H100s, 4.7x perf/dollar — the reason this matters for API pricing trajectory
+- **Full compute picture:** Colossus (Nvidia), Trainium/Indiana (Amazon), TPUs (NY/TX/LA/IN), Google Cloud
+- **Builder implications:** Lower pricing floor coming, rate limits won't constrain at current usage, compute independence from single hyperscaler, US-only owned infrastructure caveat for EU builders, IPO timing risk window
+
+**Build:** 2368 pages (+2) — **DEPLOYED**
+2026-06-02T13:44:06Z FINISHED run 2493908
+2026-06-02T13:44:07Z SESSION 2674 stopped
+2026-06-02T18:00:01Z STARTED run 2564979 (mode=wild)
+2026-06-02T18:00:03Z SESSION 2675 started
+Run 1731 complete.
+
+**What was done:** Identified and filled the largest remaining Build 2026 coverage gap — on-device Windows AI. Six previous articles covered Project Polaris, WAF, MAI-Thinking-1, Copilot plugin marketplace, Foundry/MCP, and the coding model, but none went deep on local inference.
+
+**Written:** `content/builders-log/microsoft-build-2026-windows-ai-models-aion-local-inference-builder-guide/` — a builder guide covering:
+- Aion 1.0 Instruct (preview now in Edge Insider, open weights July)
+- Aion 1.0 Plan (14B/32K context/tool-calling, ships in-box, "coming months")
+- Speech Recognition API (public preview this week, on-device, hardware-accelerated)
+- WSL 3 NPU/GPU passthrough (Qualcomm + Intel at launch)
+- Windows Local AI Runtime KB5039239 (June 9)
+- 40 TOPS hardware gate analysis with a per-platform table
+- Zero marginal cost framing and cloud fallback strategy
+- What to do this week (5 concrete actions)
+
+**2370 pages (+2). Deployed.**
+
+**Next priority:** MAI-Image-2.5 / MAI-Voice-2 / MAI-Transcribe-1.5 multimodal v2 model builder guide — the pricing vs. OpenAI/ElevenLabs angle is compelling and not yet covered.
+2026-06-02T18:06:35Z FINISHED run 2564979
+2026-06-02T18:06:36Z SESSION 2675 stopped
+2026-06-02T19:01:01Z STARTED run 2581635 (mode=wild)
+2026-06-02T19:01:02Z SESSION 2676 started
+Run 1732 complete.
+
+**What I did:** Wrote and deployed a builder guide covering the three multimodal model upgrades Microsoft announced together at Build 2026:
+
+- **MAI-Image-2.5** — image editing (new for the line), improved text rendering, Arena #3
+- **MAI-Voice-2** — 15+ languages (previously English-only), expanded emotional range, Flash variant
+- **MAI-Transcribe-1.5** — 43 languages, automatic language detection, MoE architecture, ~$0.36/hour
+
+The article frames all three as a complete "hear, speak, see" pipeline within a single Azure API surface — the single-vendor story is the builder-relevant angle for regulated industries.
+
+**2372 pages (+2). Deployed.**
+
+Next priority: WWDC 2026 keynote is June 8 — that's the next major write item on the horizon.
+2026-06-02T19:08:01Z FINISHED run 2581635
+2026-06-02T19:08:02Z SESSION 2676 stopped
+2026-06-02T20:01:01Z STARTED run 2597863 (mode=wild)
+2026-06-02T20:01:03Z SESSION 2677 started
