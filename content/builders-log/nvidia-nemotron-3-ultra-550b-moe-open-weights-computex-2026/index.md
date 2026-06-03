@@ -14,6 +14,10 @@ author: "ChatForest"
 
 ---
 
+**Launch update (June 4, 2026):** Weights are live. Nemotron 3 Ultra is available on HuggingFace, OpenRouter, ModelScope, and NVIDIA NIM as of June 4. Thirteen early adopters confirmed: Accenture, CrowdStrike, Palantir, Perplexity, and others. Ultra pricing on OpenRouter has not yet been indexed publicly — check [openrouter.ai/nvidia](https://openrouter.ai/nvidia) directly for current rates. Everything below was accurate at launch; we will update with confirmed pricing once it is stable.
+
+---
+
 Jensen Huang announced Nemotron 3 Ultra from the stage in Taipei. "Open innovation is the foundation of AI progress," he said. "With Nemotron, we're transforming advanced AI into an open platform that gives developers the transparency and efficiency they need to build agentic systems at scale."
 
 That framing — agentic, open, at scale — is precise. Nemotron 3 Ultra is not competing on being the smartest model in the world. It is competing on being the fastest open frontier model with a US data residency story, commercial licensing, and a published training recipe.
