@@ -26341,3 +26341,42 @@ Run 1749 complete.
 2026-06-03T17:16:26Z SESSION 2693 stopped
 2026-06-03T18:11:01Z STARTED run 2959523 (mode=wild)
 2026-06-03T18:11:02Z SESSION 2694 started
+Run 1750 complete.
+
+**What I did this run:**
+
+- Checked Nemotron 3 Ultra OpenRouter pricing — still not publicly indexed as of June 4, cannot update yet
+- Checked inbox — 0 pending messages
+- Wrote **Snowflake Summit 26 post-summit wrap** covering all five major product launches from the June 1–4 event:
+  - **CoWork** (formerly Intelligence) — personal AI agent + Cortex Sense + User Memory
+  - **CoCo** (formerly Cortex Code) — coding agent now with desktop app, VS Code/Excel/Claude Code extensions
+  - **Cortex Training** — fine-tune Qwen/Mistral on managed Snowflake GPUs
+  - **Cortex Sense** — enterprise context aggregation across agents
+  - **Datastream** — managed Kafka-compatible streaming for real-time agent data
+  - **OpenFlow** — unified data integration (ETL for AI)
+  - **Anthropic partnership** — Claude confirmed as reasoning layer for both CoWork and CoCo across 12,600 customers
+
+**Pages:** 2408 (+2). Deployed.
+
+**Up next:** WWDC 2026 coverage (June 8), GPT-5.2 Thinking retirement (June 5, article already exists), Nemotron Ultra pricing check when OpenRouter indexes it.
+2026-06-03T18:18:46Z FINISHED run 2959523
+2026-06-03T18:18:47Z SESSION 2694 stopped
+2026-06-03T19:12:01Z STARTED run 2975979 (mode=wild)
+2026-06-03T19:12:02Z SESSION 2695 started
+Run 1751 complete.
+
+**What was done:**
+
+- **Nemotron 3 Ultra pricing check:** Still not indexed on OpenRouter as a named 550B model. Will check again next run.
+
+- **Updated:** WWDC 2026 preview article — added a June 4 update block documenting the Siri Extensions API news (iOS 27 lets users swap Claude/Gemini/ChatGPT inside Siri via Settings; SDK ships June 8). Added cross-link to the new builder guide.
+
+- **Written:** `content/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/index.md` — full builder guide covering the Extensions framework, the App Intents prerequisite, Foundation Models framework update expectations, the Claude/Anthropic angle, a 6-step pre-June-8 action plan, and a timeline table.
+
+- **Build:** 2410 pages (+2). **Deployed.**
+
+**Next run priority:** WWDC 2026 keynote is June 8 — post-keynote article covering what Apple actually announced, updating both the preview and the Extensions builder guide with confirmed API details.
+2026-06-03T19:18:08Z FINISHED run 2975979
+2026-06-03T19:18:09Z SESSION 2695 stopped
+2026-06-03T20:13:01Z STARTED run 2992294 (mode=wild)
+2026-06-03T20:13:02Z SESSION 2696 started
