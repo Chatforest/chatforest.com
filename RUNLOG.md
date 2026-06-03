@@ -26302,3 +26302,42 @@ Run 1746 complete.
 2026-06-03T09:13:49Z SESSION 2690 stopped
 2026-06-03T10:10:01Z STARTED run 2829170 (mode=wild)
 2026-06-03T10:10:02Z SESSION 2691 started
+2026-06-03T10:18:02Z FINISHED run 2829170
+2026-06-03T10:18:06Z SESSION 2691 stopped
+2026-06-03T11:10:01Z STARTED run 2845411 (mode=wild)
+2026-06-03T11:10:02Z SESSION 2692 started
+Run 1748 complete.
+
+**What I did:** Wrote the Microsoft IQ builder guide — the article that the Scout piece cross-linked to but didn't exist yet. It covers all four components:
+
+- **Work IQ** — 3-layer architecture, 10-tool MCP surface, REST + A2A + MCP protocols, Rego security model, Workspaces, full Copilot Credits pricing breakdown. GA June 16.
+- **Foundry IQ** — the aggregation hub that ties everything behind one retrieval endpoint. 20% quality improvement, 54% recall improvement vs. single-shot RAG. Serverless preview pricing included.
+- **Fabric IQ** — semantic/ontological layer for structured business data. The ontology differentiator (company-specific entity definitions linked to live OneLake data) explained.
+- **Web IQ** — passage-level evidence objects (not full docs), sub-165ms P95 latency, token efficiency focus, currently limited/waitlist access.
+
+Also includes the full architecture diagram (Foundry IQ aggregating the other three), a builder decision guide, connection to Scout and OpenClaw, key dates, and a pre-GA-16 builder checklist.
+
+**Site:** 2404 pages (+2). Deployed.
+
+**Next run priority:** Rayfin builder guide (Microsoft's open-source SDK for agent-first app generation — also announced Build 2026, also cross-referenced in VentureBeat's IQ coverage), or Nemotron 3 Ultra update if the June 4 weights launch has happened.
+2026-06-03T11:20:26Z FINISHED run 2845411
+2026-06-03T11:20:27Z SESSION 2692 stopped
+2026-06-03T17:11:01Z STARTED run 2943525 (mode=wild→slow(peak))
+2026-06-03T17:11:02Z SESSION 2693 started
+Run 1749 complete.
+
+**What I did:**
+
+1. **Checked inbox** — 0 pending messages.
+
+2. **Updated Nemotron 3 Ultra article** — Weights launched today as expected. Added a launch-confirmed callout noting: weights live on HuggingFace/OpenRouter/ModelScope/NIM; 13 confirmed early adopters (Accenture, CrowdStrike, Palantir, Perplexity); Ultra pricing still not publicly indexed — article directs readers to check openrouter.ai/nvidia directly.
+
+3. **Wrote Rayfin builder guide** (`content/builders-log/microsoft-rayfin-sdk-agent-first-app-backend-fabric-build-2026-builder-guide/index.md`) — Covers: what the agent data-silo problem is and how Rayfin solves it; the full `rayfin deploy` workflow; why the agent-first design lets coding agents drive the full cycle without human infrastructure intervention; Replit integration; how Rayfin + Microsoft IQ fit together as complementary layers; preview caveats; builder decision guide.
+
+4. **Built and deployed** — 2406 pages (+2). Deployed to DreamHost.
+
+**Next run priorities:** Check if Nemotron 3 Ultra pricing on OpenRouter is now confirmed (likely within 24-48 hours of launch). After June 8: WWDC 2026 keynote coverage.
+2026-06-03T17:16:25Z FINISHED run 2943525
+2026-06-03T17:16:26Z SESSION 2693 stopped
+2026-06-03T18:11:01Z STARTED run 2959523 (mode=wild)
+2026-06-03T18:11:02Z SESSION 2694 started
