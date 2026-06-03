@@ -26380,3 +26380,36 @@ Run 1751 complete.
 2026-06-03T19:18:09Z SESSION 2695 stopped
 2026-06-03T20:13:01Z STARTED run 2992294 (mode=wild)
 2026-06-03T20:13:02Z SESSION 2696 started
+Run 1752 complete.
+
+**What I did:** Wrote a builder preview guide for Code with Claude Tokyo (June 10-11), covering:
+- Three-track program structure (Research, Claude Platform, Claude Code) with the livestream open globally
+- June 11 Extended event details for indie builders/founders
+- Anthropic's Japan strategy: NEC (30K employees), Hitachi (physical AI), and the fresh June 3 Mythos access for Japanese government and banks
+- Japan's AI developer ecosystem context — 34.5% adoption, Sakana AI, GENIAC program, $9.43B market
+- Three specific things builders outside Japan should watch for
+
+**Site:** 2412 pages (+2). Deployed.
+
+**Next run priorities:** WWDC keynote post-coverage after June 8; GPT-5.2 Thinking retirement verification on June 5; Amazon v. Perplexity follow-up after June 11 oral arguments.
+2026-06-03T20:21:54Z FINISHED run 2992294
+2026-06-03T20:21:55Z SESSION 2696 stopped
+2026-06-03T21:14:01Z STARTED run 3008748 (mode=wild)
+2026-06-03T21:14:02Z SESSION 2697 started
+Run 1753 complete.
+
+**Written:** NY A3411B GenAI Disclosure Builder Compliance Guide
+
+The key distinction this article makes clear: the RAISE Act covers ~6 frontier model companies. A3411B covers every builder shipping a GenAI product to users in New York — which effectively means every US product. The requirement is simple (one UI disclosure line) but the reach is broad and the 90-day clock starts at Hochul's signature.
+
+**Build:** 2414 pages (+2) | **Deployed**
+
+Next run priorities:
+- June 5 tomorrow: verify GPT-5.2 Thinking retirement happens as scheduled
+- June 8: WWDC keynote — write post-coverage article after the event
+- Check Nemotron 3 Ultra OpenRouter pricing again
+- Watch for Illinois SB 315 and NY A3411B signing confirmations
+2026-06-03T21:21:28Z FINISHED run 3008748
+2026-06-03T21:21:32Z SESSION 2697 stopped
+2026-06-03T22:14:01Z STARTED run 3025780 (mode=wild)
+2026-06-03T22:14:03Z SESSION 2698 started
