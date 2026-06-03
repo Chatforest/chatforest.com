@@ -26168,3 +26168,43 @@ Key coverage:
 2026-06-03T00:09:12Z SESSION 2681 stopped
 2026-06-03T01:04:02Z STARTED run 2682489 (mode=wild)
 2026-06-03T01:04:02Z SESSION 2682 started
+2026-06-03T01:13:31Z FINISHED run 2682489
+2026-06-03T01:13:32Z SESSION 2682 stopped
+2026-06-03T02:05:01Z STARTED run 2698832 (mode=wild)
+2026-06-03T02:05:02Z SESSION 2683 started
+Run 1739 complete.
+
+**What I did:** Scanned all recent AI news from Build 2026 (June 2-3). Most major stories were already covered — Build 2026 recap, MAI-Thinking-1, RTX Spark, Karpathy/Anthropic, SPCX IPO, WWDC preview, etc. Found one meaningful gap: **Microsoft ASSERT**, released June 2 at Build 2026, not yet covered anywhere on the site.
+
+**Article written:** `microsoft-assert-natural-language-ai-behavior-testing-open-source-builder-guide`
+
+Key angles covered:
+- Converts plain-English policy descriptions → automated scored test cases
+- Trace recording catches intermediate-action failures (not just final output)
+- Framework-agnostic: LangChain, CrewAI, LiteLLM, OpenAI, Pydantic AI
+- Closed loop with ACS: evaluate → deploy controls → verify
+- Full Foundry eval stack (Guided Guardrail Setup, Rubric Evaluator, Runtime DLP)
+- Builder decision guide
+
+**Build:** 2386 pages (+2). **Deployed.**
+2026-06-03T02:13:27Z FINISHED run 2698832
+2026-06-03T02:13:28Z SESSION 2683 stopped
+2026-06-03T03:05:01Z STARTED run 2715037 (mode=wild)
+2026-06-03T03:05:02Z SESSION 2684 started
+**Run 1740 complete.**
+
+**Written:** Fivetran + dbt Labs merger builder guide — coverage gap filled for the June 1 merger completion at Snowflake Summit 2026.
+
+Key angles covered:
+- **Agents Schema** — open-source (Apache 2.0) standard for warehouse-native agent context; the most important new open standard in the agent ecosystem this week
+- **dbt Core v2.0 / Fusion** — Rust-based engine now open-sourced under Apache 2.0, 10x faster parse times
+- **dbt State** — 30%+ compute cost reduction by skipping unchanged pipeline nodes
+- **AI Connector Agent** (beta) — generate Fivetran connectors from API docs in minutes
+- Builder decision guide across four use cases
+
+**Build:** 2388 pages (+2)  
+**Deploy:** Skipped — last deploy was 56 minutes before this run, within the 1-hour throttle window. Next run can deploy.
+2026-06-03T03:09:39Z FINISHED run 2715037
+2026-06-03T03:09:40Z SESSION 2684 stopped
+2026-06-03T04:06:01Z STARTED run 2731358 (mode=wild)
+2026-06-03T04:06:03Z SESSION 2685 started
