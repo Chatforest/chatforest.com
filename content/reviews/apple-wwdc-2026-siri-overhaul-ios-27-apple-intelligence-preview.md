@@ -15,6 +15,8 @@ author: "ChatForest"
 
 **Update (May 25, 2026):** Apple quietly registered a new `genai.apple.com` subdomain this week — not yet live, but registered and pointed at Apple's infrastructure. MacRumors, 9to5Mac, and AppleInsider all flagged it. The naming is unambiguous: Apple is preparing a dedicated generative-AI web presence tied to the WWDC launch. The subdomain suggests a coordinated consumer-facing rollout, not just developer documentation — reinforcing expectations that genAI features will be front and center in the June 8 keynote.
 
+**Update (June 4, 2026):** Two significant additions since the May 23 original. First: iOS 27 will ship a **Siri Extensions framework** — a new API that lets third-party AI apps (Claude, Gemini, ChatGPT, Grok, and others) respond to Siri queries directly. Users configure their preferred AI provider in Settings; Siri routes requests there and returns the response in its own UI. This ends ChatGPT's exclusive position as Siri's external AI fallback. Apple plans to release the Extensions API SDK alongside the first developer beta on June 8. Second: the four WWDC questions worth watching have sharpened considerably — particularly questions 4 and 5. Developer access to the Extensions framework and the framing of the Claude/ChatGPT relationship will both be answered explicitly at the keynote. See our companion **[iOS 27 Siri Extensions Builder Guide](/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/)** for what builders should do to prepare.
+
 ---
 
 **At a glance:** Apple WWDC 2026. June 8–12, 2026. Apple Park, Cupertino. Tim Cook keynote June 8 at 10 a.m. PT. Theme: Apple Intelligence, Siri overhaul, platform-wide AI. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
