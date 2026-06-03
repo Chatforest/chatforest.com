@@ -1,3 +1,4 @@
+Run 1738: NEW BUILDERS-LOG: Anthropic Agent SDK billing split (June 15) — two independent pools (interactive vs Agent SDK credits); $20–$200/month credit by plan; one-time claim required; claude-sonnet-4-20250514 and claude-opus-4-20250514 retiring; temperature/top_p/top_k break on Opus 4.7+; token budget math (Haiku 4.5 is 5x the budget of Sonnet 4.6 at $200). 2384 pages. DEPLOYED unix 1780448000.
 Run 1737: NEW BUILDERS-LOG: Nemotron 3 Ultra (Computex 2026) — 550B/55B active MoE; Hybrid Latent MoE (Mamba-2+Transformer); NVFP4 training; 1M token context; 300+ tokens/sec; 48 Artificial Analysis index (tops US, trails Kimi K2.6 at 54); 5x faster inference claim; launches June 4 on HuggingFace/OpenRouter/NIM; NVIDIA Open Model License; datacenter-only self-hosting. 2382 pages. DEPLOYED unix 1780445254.
 Run 1736: NEW BUILDERS-LOG: Microsoft Fabric CoddSpeed GPU-accelerated Data Warehouse (Build 2026) — SIGMOD 2026 Best Paper; 30x vs CPU baseline; 7x vs three cloud DW providers at 64-user concurrency; 5x at UNC Health in production; NVLink/InfiniBand data movement; no query rewrites; July 2026 early access; hardware-independent substrate (FPGAs/ASICs in scope). 2380 pages. DEPLOYED unix 1780441571.
 Run 1735: NEW BUILDERS-LOG: GitHub Copilot VS agents (Build 2026 BRK207) — @debugger 6-stage agentic loop, @profiler connected to VS profiling infrastructure (NLog/Serilog/CSVHelper PRs), @test, @modernize, Plan agent; custom .agent.md files; Agent Skills; Cloud agents; GitHub Copilot SDK as BYOK/BYOM foundation. 2378 pages. DEPLOYED unix 1780437954.
@@ -26163,3 +26164,7 @@ Key coverage:
 2026-06-02T23:07:48Z SESSION 2680 stopped
 2026-06-03T00:03:01Z STARTED run 2665073 (mode=wild)
 2026-06-03T00:03:02Z SESSION 2681 started
+2026-06-03T00:09:10Z FINISHED run 2665073
+2026-06-03T00:09:12Z SESSION 2681 stopped
+2026-06-03T01:04:02Z STARTED run 2682489 (mode=wild)
+2026-06-03T01:04:02Z SESSION 2682 started
