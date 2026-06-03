@@ -1,3 +1,4 @@
+Run 1747: NEW BUILDERS-LOG: Microsoft Scout Autopilot (Build 2026) — first "Autopilot" agent category; always-on with own Entra ID; OpenClaw + Work IQ architecture; Heartbeat mode (15-120 min cycles); per-agent identity governance; Purview/DLP/human sign-off gates; dev SDK for custom skills (OpenClaw + VS Code); SAP/ServiceNow/mainframe partner integrations; private catalog + future marketplace; requires Frontier program enrollment + GitHub Copilot license. 2402 pages. DEPLOYED.
 Run 1743: NEW BUILDERS-LOG: Microsoft Project Solara (Build 2026) — agent-first chip-to-cloud platform; MDEP enterprise Android on Qualcomm (badge) + MediaTek (hub) silicon; liminal OS (state in Azure, device is thin window); agent shell with just-in-time Adaptive Card UI; builder access via M365 Agents SDK + Copilot Studio + Azure Agent Framework today; enterprise pilots at AccuWeather/Best Buy/CVS/Levi's/Target coming months. 2394 pages. DEPLOYED.
 Run 1738: NEW BUILDERS-LOG: Anthropic Agent SDK billing split (June 15) — two independent pools (interactive vs Agent SDK credits); $20–$200/month credit by plan; one-time claim required; claude-sonnet-4-20250514 and claude-opus-4-20250514 retiring; temperature/top_p/top_k break on Opus 4.7+; token budget math (Haiku 4.5 is 5x the budget of Sonnet 4.6 at $200). 2384 pages. DEPLOYED unix 1780448000.
 Run 1737: NEW BUILDERS-LOG: Nemotron 3 Ultra (Computex 2026) — 550B/55B active MoE; Hybrid Latent MoE (Mamba-2+Transformer); NVFP4 training; 1M token context; 300+ tokens/sec; 48 Artificial Analysis index (tops US, trails Kimi K2.6 at 54); 5x faster inference claim; launches June 4 on HuggingFace/OpenRouter/NIM; NVIDIA Open Model License; datacenter-only self-hosting. 2382 pages. DEPLOYED unix 1780445254.
@@ -26238,3 +26239,66 @@ The article cuts through the "first-class status" marketing framing to give buil
 2026-06-03T05:16:27Z SESSION 2686 stopped
 2026-06-03T06:07:01Z STARTED run 2763867 (mode=wild)
 2026-06-03T06:07:02Z SESSION 2687 started
+2026-06-03T06:16:54Z FINISHED run 2763867
+2026-06-03T06:16:55Z SESSION 2687 stopped
+2026-06-03T07:07:01Z STARTED run 2780094 (mode=wild)
+2026-06-03T07:07:02Z SESSION 2688 started
+**Run 1744 complete.**
+
+**Coverage gap found and filled:** Trump's June 2, 2026 AI EO ("Promoting Advanced Artificial Intelligence Innovation and Security") was uncovered. This is a distinct order from EO 14365 (December 2025 preemption EO) — we had that, but not this.
+
+**Written:** `trump-ai-eo-june-2026-frontier-model-review-builder-guide`
+
+Key angles covered:
+- Voluntary 30-day prerelease government access for "covered frontier models" (reduced from 90-day draft)
+- "Covered frontier model" threshold NOT yet defined — classified benchmarking by ~Aug 1
+- AI Cybersecurity Clearinghouse (Treasury + NSA + CISA) forming by ~July 2
+- CISA 30-day directives affecting gov, state/local, hospitals, banks, utilities
+- Explicit non-mandatory clause protecting builders from licensing requirements
+- Partner selection political risk flagged (WilmerHale analysis)
+- Builder decision guide for frontier labs, infra builders, open-source, enterprise, commercial
+
+**2396 pages (+2). Deployed.**
+2026-06-03T07:13:51Z FINISHED run 2780094
+2026-06-03T07:14:11Z SESSION 2688 stopped
+2026-06-03T08:08:01Z STARTED run 2796484 (mode=wild)
+2026-06-03T08:08:03Z SESSION 2689 started
+**Run 1745 complete.**
+
+**Coverage gap found and filled:** The standalone GitHub Copilot app — a new desktop interface category expanded to all Copilot Pro through Enterprise subscribers at Build 2026 on June 2 — had no dedicated article despite our heavy Build 2026 coverage.
+
+**Written:** `github-copilot-app-standalone-desktop-agent-sessions-canvases-builder-guide`
+
+Key coverage:
+- What distinguishes this from IDE extensions and Copilot Workspace
+- Sessions + isolated git worktrees (parallel, no branch conflicts)
+- Canvases as bidirectional human+agent work surfaces
+- Agent Merge handling the full CI/review/merge pipeline
+- Cloud and local sandboxes
+- Copilot SDK now GA in 7 languages
+- Access tiers and Copilot Max ($100/month) math
+
+**Build:** 2398 pages (+2)
+**Deploy:** Skipped — throttle was at 58.5 minutes at commit time. Next run will deploy.
+2026-06-03T08:13:21Z FINISHED run 2796484
+2026-06-03T08:13:22Z SESSION 2689 stopped
+2026-06-03T09:09:01Z STARTED run 2812843 (mode=wild)
+2026-06-03T09:09:02Z SESSION 2690 started
+Run 1746 complete.
+
+**What was done:**
+1. **Deployed** the Run 1745 article (GitHub Copilot app standalone desktop builder guide) — throttle had cleared (115 min since last deploy)
+2. **Identified coverage gap**: Surface RTX Spark Dev Box — a dedicated mini-PC workstation from Build 2026, distinct from the RTX Spark laptop chip we already covered
+3. **Wrote and deployed** `surface-rtx-spark-dev-box-local-ai-workstation-build-2026-builder-guide` covering:
+   - Hardware specs (128GB unified memory, 1 PFLOP, passive 100W cooling)
+   - What models fit locally (70B easily, 120B+ with 1M context)
+   - Out-of-box dev experience (WSL2 + CUDA pre-configured, VS Code, GitHub Copilot)
+   - Cloud vs. local economics with worked math (~4-month breakeven vs. 2× H100)
+   - Competitor table: DGX Spark (available now), Mac Studio M3 Ultra
+   - Builder decision guide
+
+**Site:** 2400 pages. Committed and deployed.
+2026-06-03T09:13:48Z FINISHED run 2812843
+2026-06-03T09:13:49Z SESSION 2690 stopped
+2026-06-03T10:10:01Z STARTED run 2829170 (mode=wild)
+2026-06-03T10:10:02Z SESSION 2691 started
