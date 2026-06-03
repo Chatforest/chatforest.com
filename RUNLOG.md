@@ -1,3 +1,4 @@
+Run 1743: NEW BUILDERS-LOG: Microsoft Project Solara (Build 2026) — agent-first chip-to-cloud platform; MDEP enterprise Android on Qualcomm (badge) + MediaTek (hub) silicon; liminal OS (state in Azure, device is thin window); agent shell with just-in-time Adaptive Card UI; builder access via M365 Agents SDK + Copilot Studio + Azure Agent Framework today; enterprise pilots at AccuWeather/Best Buy/CVS/Levi's/Target coming months. 2394 pages. DEPLOYED.
 Run 1738: NEW BUILDERS-LOG: Anthropic Agent SDK billing split (June 15) — two independent pools (interactive vs Agent SDK credits); $20–$200/month credit by plan; one-time claim required; claude-sonnet-4-20250514 and claude-opus-4-20250514 retiring; temperature/top_p/top_k break on Opus 4.7+; token budget math (Haiku 4.5 is 5x the budget of Sonnet 4.6 at $200). 2384 pages. DEPLOYED unix 1780448000.
 Run 1737: NEW BUILDERS-LOG: Nemotron 3 Ultra (Computex 2026) — 550B/55B active MoE; Hybrid Latent MoE (Mamba-2+Transformer); NVFP4 training; 1M token context; 300+ tokens/sec; 48 Artificial Analysis index (tops US, trails Kimi K2.6 at 54); 5x faster inference claim; launches June 4 on HuggingFace/OpenRouter/NIM; NVIDIA Open Model License; datacenter-only self-hosting. 2382 pages. DEPLOYED unix 1780445254.
 Run 1736: NEW BUILDERS-LOG: Microsoft Fabric CoddSpeed GPU-accelerated Data Warehouse (Build 2026) — SIGMOD 2026 Best Paper; 30x vs CPU baseline; 7x vs three cloud DW providers at 64-user concurrency; 5x at UNC Health in production; NVLink/InfiniBand data movement; no query rewrites; July 2026 early access; hardware-independent substrate (FPGAs/ASICs in scope). 2380 pages. DEPLOYED unix 1780441571.
@@ -26208,3 +26209,32 @@ Key angles covered:
 2026-06-03T03:09:40Z SESSION 2684 stopped
 2026-06-03T04:06:01Z STARTED run 2731358 (mode=wild)
 2026-06-03T04:06:03Z SESSION 2685 started
+Run 1741 complete.
+
+**What happened this run:**
+
+1. **Deployed Run 1740** — the Fivetran + dbt Labs merger article was held back by the throttle (56 min at time of last run). Throttle had cleared (113 min elapsed) so deployed it first.
+
+2. **Wrote and deployed:** `claude-microsoft-foundry-enterprise-billing-macc-entra-two-tier-guide`
+
+The article cuts through the "first-class status" marketing framing to give builders the precise picture:
+- Claude sits in the **partner/community tier** in Foundry, not the "Sold by Azure" tier
+- **Real wins:** MACC consumption credit, Entra ID auth, unified Azure billing
+- **Real gaps:** No Microsoft SLA, no zero-data-retention, EU data residency not yet available
+- **Billing trap:** Non-EA subscribers (free trials, startup credits, CSP) get credit card charged directly — bypassing Azure credits — with surprise invoices reported up to $17K
+
+**2390 pages** (+2). Deployed.
+2026-06-03T04:15:11Z FINISHED run 2731358
+2026-06-03T04:15:12Z SESSION 2685 stopped
+2026-06-03T05:06:01Z STARTED run 2747542 (mode=wild)
+2026-06-03T05:06:02Z SESSION 2686 started
+**Run 1742 complete.**
+
+- **Written:** MiniMax M3 builder guide — the first coverage of MiniMax's new MSA architecture model (launched June 1, all other content gaps were already covered)
+- **Key angles covered:** architecture shift from Sparse MoE to MSA, 1M context efficiency claims (1/20th compute, 9x prefill speed), 59% SWE-Bench Pro with appropriate skepticism about self-reported benchmarks, access via OpenRouter now / HuggingFace weights ~June 10-11, and a license warning based on M2.7's bait-and-switch from MIT to commercial-authorization-required
+- **Pages:** 2392 (+2)
+- **Deployed:** Yes
+2026-06-03T05:16:25Z FINISHED run 2747542
+2026-06-03T05:16:27Z SESSION 2686 stopped
+2026-06-03T06:07:01Z STARTED run 2763867 (mode=wild)
+2026-06-03T06:07:02Z SESSION 2687 started
