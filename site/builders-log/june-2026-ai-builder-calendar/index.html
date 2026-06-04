@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Builder&#39;s June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore — ChatForest</title>
-  <meta name="description" content="Sixteen events in 30 days — from Microsoft Build to the SpaceX IPO to five separate API deadlines. A practical calendar for AI builders navigating June 2026.">
+  <meta name="description" content="Twenty events in 30 days — from Microsoft Build to the SpaceX IPO to six separate API deadlines. A practical calendar for AI builders navigating June 2026.">
   <meta property="og:title" content="The Builder&#39;s June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore — ChatForest">
-  <meta property="og:description" content="June 2026: Microsoft Build, WWDC, SpaceX IPO, Claude/Gemini/Copilot billing changes, five hard API cutoffs, and two possible frontier model launches. Updated June 1.">
+  <meta property="og:description" content="June 2026: Microsoft Build, WWDC, SpaceX IPO, Claude/Gemini/Copilot billing changes, six hard API cutoffs, and two frontier model launches. Updated June 4.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/builders-log/june-2026-ai-builder-calendar/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Builder&#39;s June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore — ChatForest">
-  <meta name="twitter:description" content="June 2026: Microsoft Build, WWDC, SpaceX IPO, Claude/Gemini/Copilot billing changes, five hard API cutoffs, and two possible frontier model launches. Updated June 1.">
+  <meta name="twitter:description" content="June 2026: Microsoft Build, WWDC, SpaceX IPO, Claude/Gemini/Copilot billing changes, six hard API cutoffs, and two frontier model launches. Updated June 4.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/builders-log/june-2026-ai-builder-calendar/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>Builder's Log</span>
-        <span>Published May 26, 2026 · Updated Jun 1, 2026</span>
+        <span>Published May 26, 2026 · Updated Jun 4, 2026</span>
       </div>
 
       <h1 class="article-title">The Builder&#39;s June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore</h1>
@@ -66,6 +66,7 @@
 
       <div class="article-body">
         <p>June 2026 has more scheduled AI events than most quarters. Within 30 days: a major developer conference, a historic IPO, five separate API deprecation cutoffs, multiple billing model changes, and two frontier models that prediction markets think are likely. This is not a news roundup. It is a planning document.</p>
+<p><em>Updated June 4, 2026: Corrected SpaceX roadshow start date (June 4, not June 8 — roadshow confirmed open today per Goldman syndicate communications and CNBC). Updated iOS 27 (was iOS 26 — confirmed by WWDC preview sources). Added: Nemotron 3 Ultra launch (June 4, today), Windows Local AI Runtime KB5039239 (June 9), Code with Claude Tokyo (June 10), Work IQ APIs GA (June 16 — action required for M365/enterprise agent builders), GPT-4.5 ChatGPT retirement (June 27). Added Claude Sonnet 4.8 as a mid-June watch item.</em></p>
 <p><em>Updated June 1, 2026: Added GitHub Copilot token billing (live today), Gemini Interactions API hard cutoff (June 8, action required), Claude model deprecations (June 15), Gemini CLI EOL (June 18), Vertex AI SDK migration (June 24), and Grok V9-Medium as a distinct mid-June watch item. Updated Grok 5 odds and Anthropic funding status.</em></p>
 <hr>
 <h2 id="what-requires-action-before-june-updated-june-1">What Requires Action Before June (Updated June 1)</h2>
@@ -90,6 +91,12 @@
 </ul>
 <p>The headline framing from Microsoft&rsquo;s pre-conference communications: AI is infrastructure, not a feature. Build 2026 is where they try to make that concrete for enterprise developers.</p>
 <p>Worth watching: any announcements around Windows AI Foundry (the on-device version) and DirectML integration for edge deployments. Microsoft&rsquo;s stated intent is a unified SDK that handles ONNX Runtime, DirectML, and Copilot Runtime as a single target.</p>
+<p><strong>June 4 — Nvidia Nemotron 3 Ultra launches</strong> <em>(today)</em></p>
+<p>Nvidia&rsquo;s Nemotron 3 Ultra — 550B parameters, 55B active via sparse MoE, 300+ tokens/second — went live today on Hugging Face, OpenRouter, and build.nvidia.com. It is the first open-weights model to land in the same performance tier as closed-API frontier models, with native agent reasoning built in. Per-token pricing on OpenRouter is not yet published; NIM prototyping access is available free through the Nvidia Developer Program.</p>
+<p>If you have been evaluating open-weights vs. closed-API economics for production agent pipelines, this is the model to test. The open-weights download means you can self-host — but the hardware requirement is substantial (H100/H200 or DGX-grade infrastructure for the full 550B). The Nemotron 3 Super (120B, 12B active) is available now if you need smaller-footprint inference today.</p>
+<p><strong>June 4 — SpaceX roadshow opens</strong> <em>(today)</em></p>
+<p>The SPCX roadshow opened today, not June 8 as originally projected in this calendar. The syndicate (Goldman, Morgan Stanley, BofA, Citi, JPMorgan) is meeting with anchor institutional investors this week. Retail order windows open June 7-8. Price range announcement expected June 7-9. Pricing June 11. Trading June 12.</p>
+<p>The $135/share target price was confirmed in CNBC&rsquo;s June 3 reporting from lead underwriter sources. That implies a $1.77 trillion valuation at close — above the $1.75T initial target. No builder action required; track as AI infrastructure context.</p>
 <hr>
 <h2 id="the-week-of-june-8">The Week of June 8</h2>
 <p><strong>June 8 — Gemini Interactions API hard cutoff (action required)</strong></p>
@@ -97,20 +104,28 @@
 <p>The new schema became the default on May 26 (already live). You have until June 8. This affects text, streaming, function calling, and multimodal responses — any code path that reads from Gemini&rsquo;s response object needs to be checked. The migration itself is a field rename, not an architectural change, but the deadline is hard.</p>
 <p>Verify your Gemini integrations now. If you use a Gemini SDK wrapper, check whether the SDK has already absorbed this change in a recent version update.</p>
 <p><strong>June 8 — Apple WWDC 2026 keynote</strong></p>
-<p>WWDC reveals iOS 26, macOS, and the next iteration of Apple Intelligence. The practical builder interest is the <strong>Apple-Google Gemini partnership</strong> going live: Siri is integrating Gemini for queries it cannot handle natively, and iOS 26 is the first shipping version with this capability.</p>
-<p>The $1 billion annual deal (Google paying Apple) positions Gemini as the default AI assistant layer across Apple&rsquo;s user base. For builders targeting iOS, iOS 26 is the first release where users will have Gemini-class reasoning available through system APIs.</p>
-<p>Also at WWDC: expect Apple to show its MCP client implementation for on-device agents. Confirmed to be in internal testing since April.</p>
-<p><strong>June 8 — SpaceX roadshow begins</strong></p>
-<p>SpaceX&rsquo;s IPO roadshow opens June 8. Pricing targets June 11. Nasdaq debut (ticker SPCX) on June 12 at a $1.75 trillion valuation — which would surpass Saudi Aramco&rsquo;s 2019 offering as the largest IPO in history.</p>
-<p>Why this matters for builders: SpaceX&rsquo;s S-1 (filed May 20) reveals it is renting the Colossus supercomputer to Anthropic for $1.25 billion per month and committing $12.7 billion to AI compute capex. The orbital data center timeline (2028) is in the prospectus. This is background context for anyone building on Anthropic&rsquo;s infrastructure long-term — Colossus is not just a training facility; it is a supply chain node.</p>
-<p>The IPO itself does not create any immediate builder action. Track it as AI infrastructure context.</p>
+<p>WWDC reveals iOS 27, macOS, and the next iteration of Apple Intelligence. The practical builder interest is the <strong>Apple-Google Gemini partnership</strong> going live: Siri is integrating Gemini for queries it cannot handle natively, and iOS 27 is the first shipping version with this capability.</p>
+<p>The $1 billion annual deal (Google paying Apple) positions Gemini as the default AI assistant layer across Apple&rsquo;s user base. For builders targeting iOS, iOS 27 is the first release where users will have Gemini-class reasoning available through system APIs.</p>
+<p>Also at WWDC: expect Apple to reveal the <strong>Siri Extensions API</strong> — iOS 27 opens Siri to Claude, ChatGPT, Grok, and other AI assistants as routing targets. Users will be able to direct Siri queries to their preferred AI via a new Extensions setting. If you are building AI assistant integrations, this is the API to evaluate this week.</p>
+<p><strong>June 9 — Windows Local AI Runtime update ships (KB5039239)</strong></p>
+<p>The Windows Update KB5039239 — which ships the expanded Windows Local AI Runtime — lands on June 9 for Windows 11 24H2. This update enables the Speech Recognition API public preview (on-device, English, NPU-accelerated) and the Phi Silica GPU expansion announced at Build 2026.</p>
+<p>If you are building Windows-native AI applications targeting Copilot+ PCs, apply this update to your test machines immediately after it ships. The runtime exposes local model inference through a system API — any Windows application can call local models without bundling its own runtime, starting with Phi Silica and Aion 1.0 Instruct.</p>
+<p><strong>June 10 — Code with Claude Tokyo</strong> <em>(+ June 11 Extended)</em></p>
+<p>Anthropic&rsquo;s developer conference arrives in Tokyo on June 10. Full-day format with workshops, live Claude demos, and 1:1 office hours with Anthropic engineers. Sessions primarily in English with live Japanese interpretation. Livestream available.</p>
+<p>A second day — Code with Claude Tokyo Extended — is scheduled June 11 specifically for independent developers and early-stage founders. If you are in Japan or building in the Asia-Pacific region, this is the opportunity to get direct access to the Claude team. Register for the livestream if you are remote.</p>
+<p><strong>June 11 — SpaceX IPO pricing</strong></p>
+<p>The syndicate prices the offering June 11 based on aggregated institutional and retail demand. Target: $135/share ($1.77T valuation). The retail window (Robinhood, Fidelity, SoFi, Schwab) was open June 7-9; allocations are finalized this day. No builder action.</p>
 <p><strong>June 11-12 — SpaceX IPO pricing and Nasdaq debut</strong></p>
 <p>Market context only for most builders. If you are building in the space infrastructure vertical (orbital computing, Starlink connectivity, satellite-native applications), the prospectus is worth reading; it has detailed Starlink ARPU and growth data not previously public.</p>
 <p><strong>June 15 — Claude model deprecations (action required)</strong></p>
 <p>Separate from the billing split: <code>claude-sonnet-4-20250514</code> and <code>claude-opus-4-20250514</code> retire from the API on June 15. If you have these model IDs hardcoded in production, they will stop resolving. Migrate to Sonnet 4.6 (<code>claude-sonnet-4-6</code>) and Opus 4.8 (<code>claude-opus-4-8</code>). The dated snapshot format remains valid for the new models going forward.</p>
 <p>Audit your codebase for these strings now. This is separate from the Agent SDK billing change — both happen June 15 but require different actions.</p>
 <hr>
-<h2 id="the-week-of-june-18">The Week of June 18</h2>
+<h2 id="the-week-of-june-16">The Week of June 16</h2>
+<p><strong>June 16 — Microsoft Work IQ APIs GA (action required for M365 enterprise builders)</strong></p>
+<p>The Work IQ API endpoints — A2A, remote MCP server, and REST API — go generally available on June 16. Work IQ is the organizational intelligence layer that gives agents access to M365 signals: email threads, calendar patterns, meeting history, file activity, and people relationships. It is the context layer behind Microsoft Scout and the broader Microsoft IQ family announced at Build 2026.</p>
+<p>Pricing is consumption-based via Copilot Credits (roughly $0.20–$1.50 per call depending on the endpoint). No separate per-user license is required.</p>
+<p>If you are building agents for enterprise M365 environments and you are not already in the preview: start now. The GA date means SLA commitments, production readiness, and enterprise procurement approvals are unblocked.</p>
 <p><strong>June 18 — Gemini CLI deprecated</strong></p>
 <p>Google is deprecating the standalone <code>gemini</code> CLI on June 18. The replacement is Antigravity CLI (<code>agy</code>) — a third-party wrapper with MCP support that Google is treating as the community standard. If you have automation scripts or CI pipelines that call the <code>gemini</code> CLI directly, they will need to be updated before June 18.</p>
 <p>The <code>agy</code> migration requires installing the new binary and updating your command structure. Key changes: <code>gemini generate</code> → <code>agy run</code>, and function-call syntax has changed. Check the Antigravity documentation for the full mapping.</p>
@@ -135,6 +150,10 @@
 <p><strong>Grok 5 — 12% Polymarket odds by June 30 (updated)</strong></p>
 <p>xAI has not announced a release date. Polymarket odds have collapsed from 33% to approximately 12% since the original calendar was published — traders now strongly expect Grok 5 to slip into Q3 or Q4. Expected specs: 6 trillion parameters, MoE architecture, 1.5 million token context. Do not build anything around a June Grok 5 assumption.</p>
 <p>Treat Grok 5 as a Q3 watch item. Grok V9-Medium (above) is the near-term xAI story.</p>
+<p><strong>Claude Sonnet 4.8 — expected mid-June (~June 16-18)</strong></p>
+<p>Anthropic has not announced Sonnet 4.8. The expected release pattern follows Opus 4.8 (May 28) — a Sonnet-tier follow-on within 2-3 weeks. Sonnet 4.8 would likely bring Dynamic Workflows and effort control to the mid-tier at Sonnet pricing ($3/$15 per million tokens). Monitor Anthropic&rsquo;s release notes channel.</p>
+<p><strong>GPT-4.5 retirement from ChatGPT — June 27</strong></p>
+<p>GPT-4.5 will be retired from ChatGPT on June 27, 2026 — just four months after its February 2026 launch. No API impact: this retirement is ChatGPT-only. GPT-5 and GPT-5.5 have fully superseded it. ChatGPT users on plans that defaulted to GPT-4.5 are automatically shifted to GPT-5; no action required.</p>
 <p><strong>GPT-5.6 — 80-89% Polymarket odds by June 30</strong></p>
 <p>OpenAI has not announced GPT-5.6. The model surfaced briefly in Codex internal logs before being removed. Prediction markets price it at 80-89% probability by June 30.</p>
 <p>If OpenAI&rsquo;s recent cadence holds (GPT-5.4 → 5.5 → 5.5 Instant in rapid succession), GPT-5.6 is the next iteration — likely a targeted improvement over 5.5 rather than a generation leap. Worth monitoring OpenAI&rsquo;s release channel.</p>
@@ -166,9 +185,19 @@
 <td>Check billing if using Foundry memory</td>
 </tr>
 <tr>
-<td>June 2-3</td>
+<td>June 2-3 ✓</td>
 <td>Microsoft Build 2026</td>
-<td>Watch for MCP/Foundry GA details</td>
+<td>Done: review Build announcements</td>
+</tr>
+<tr>
+<td>June 4 ✓</td>
+<td>Nemotron 3 Ultra launches (today)</td>
+<td>Evaluate for open-weights agent pipelines</td>
+</tr>
+<tr>
+<td>June 4 ✓</td>
+<td>SpaceX IPO roadshow opens (today)</td>
+<td>No action — track as infrastructure context</td>
 </tr>
 <tr>
 <td>June 8</td>
@@ -177,13 +206,18 @@
 </tr>
 <tr>
 <td>June 8</td>
-<td>Apple WWDC 2026</td>
-<td>Watch for iOS 26 Gemini/MCP details</td>
+<td>Apple WWDC 2026 (iOS 27, Siri Extensions)</td>
+<td>Watch for Siri Extensions API and iOS 27 MCP details</td>
 </tr>
 <tr>
-<td>June 8</td>
-<td>SpaceX IPO roadshow opens</td>
-<td>No action</td>
+<td>June 9</td>
+<td>Windows Local AI Runtime KB5039239 ships</td>
+<td>Apply update for Windows AI dev environments</td>
+</tr>
+<tr>
+<td>June 10</td>
+<td>Code with Claude Tokyo</td>
+<td>Register for livestream</td>
 </tr>
 <tr>
 <td>June 11</td>
@@ -206,6 +240,11 @@
 <td><strong>Migrate hardcoded model IDs</strong></td>
 </tr>
 <tr>
+<td>June 16</td>
+<td>Work IQ APIs GA</td>
+<td><strong>Start building if targeting M365 enterprise agents</strong></td>
+</tr>
+<tr>
 <td>June 18</td>
 <td>Gemini CLI deprecated</td>
 <td>Update scripts using <code>gemini</code> CLI to <code>agy</code></td>
@@ -214,6 +253,16 @@
 <td>June 24</td>
 <td>Vertex AI Gemini SDK migration</td>
 <td><strong>Migrate to <code>google-genai</code> package</strong></td>
+</tr>
+<tr>
+<td>June 27</td>
+<td>GPT-4.5 retired from ChatGPT</td>
+<td>No API action — ChatGPT users auto-migrate to GPT-5</td>
+</tr>
+<tr>
+<td>TBD ~June 16-18</td>
+<td>Claude Sonnet 4.8 (expected)</td>
+<td>Monitor Anthropic releases</td>
 </tr>
 <tr>
 <td>TBD mid-June</td>
@@ -239,11 +288,12 @@
 </table>
 <p><strong>Action items in order of urgency:</strong></p>
 <ol>
-<li><strong>Today</strong>: Check Copilot credit burn if running agentic workflows</li>
 <li><strong>Before June 8</strong>: Migrate Gemini Interactions API code off legacy <code>outputs</code> schema</li>
 <li><strong>Before June 15</strong>: Claim Claude Agent SDK credit; migrate deprecated model IDs</li>
+<li><strong>Before June 16</strong>: If building M365 enterprise agents, set up Work IQ API access</li>
 <li><strong>Before June 18</strong>: Update <code>gemini</code> CLI scripts to Antigravity <code>agy</code></li>
 <li><strong>Before June 24</strong>: Migrate Vertex AI Python SDK to <code>google-genai</code></li>
+<li><strong>Ongoing</strong>: Monitor WWDC (June 8) for Siri Extensions API details</li>
 </ol>
 
       </div>
@@ -267,22 +317,22 @@
   
     <div class="article-card">
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-04 00:00:00</span></div>
+  <h3><a href="/builders-log/anthropic-claude-partner-network-services-track-partner-hub-builder-guide/">Anthropic Formalizes Its Partner Ecosystem: Services Track, Partner Hub, and What It Means for Builders</a></h3>
+  <p>Anthropic launched the Services Track and Partner Hub of the Claude Partner Network on June 3, 2026. Three tiers (Select, Preferred, Global Premier), a public directory for enterprise buyers, and a new MCP connector that lets partners query their standing from inside Claude. Here&#39;s what matters for builders on both sides.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-04 00:00:00</span></div>
   <h3><a href="/builders-log/code-with-claude-tokyo-june-10-builder-preview-guide/">Code with Claude Tokyo: Builder&#39;s Preview for June 10 (And Why Japan Is Where Anthropic&#39;s Agent Bet Is Playing Out)</a></h3>
   <p>Anthropic&#39;s Code with Claude Tokyo runs June 10, with a livestream open globally. Here&#39;s what the three-track program covers, what makes this event different from the SF and London editions, and why the Japanese market is worth watching for anyone shipping agents.</p>
 </div>
 
   
     <div class="article-card">
-  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-04 00:00:00</span></div>
-  <h3><a href="/builders-log/glasswing-150-orgs-nato-enisa-critical-infrastructure-expansion-builder-guide/">Glasswing Just Opened to 150 More Organizations — Including NATO and ENISA. What Changed.</a></h3>
-  <p>Anthropic expanded Project Glasswing to 150 new organizations in 15&#43; countries on June 2, including NATO and the EU&#39;s cyber agency ENISA. The White House had blocked a smaller expansion six weeks earlier. Here&#39;s what shifted, who can now apply, and why Anthropic says the next 6-12 months are the critical window.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-04 00:00:00</span></div>
-  <h3><a href="/builders-log/gpt-5-5-aws-bedrock-azure-foundry-ga-multi-cloud-deployment-guide/">GPT-5.5 Is Now GA on AWS Bedrock and Azure Foundry: Builder Multi-Cloud Deployment Guide</a></h3>
-  <p>GPT-5.5 and Codex went GA on Amazon Bedrock June 1 and on Azure Foundry June 3. Pricing matches the direct OpenAI API on both platforms. Here is when to use each path.</p>
+  <div class="card-meta"><span>Builders-Log</span> <span>2026-06-04 00:00:00</span></div>
+  <h3><a href="/builders-log/deepseek-74-billion-funding-tencent-catl-builder-guide/">DeepSeek&#39;s $7.4B Round: Tencent Leads, CATL Bets, and What the Capital Means for Builders</a></h3>
+  <p>DeepSeek is closing a $7.4B first-ever external round led by Tencent and CATL at a $52–59B valuation. The investor mix matters more than the headline number — here&#39;s what changes for builders and what doesn&#39;t.</p>
 </div>
 
   
@@ -295,7 +345,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-01T00:00:00+09:00","datePublished":"2026-05-26T00:00:00+09:00","description":"Sixteen events in 30 days — from Microsoft Build to the SpaceX IPO to five separate API deadlines. A practical calendar for AI builders navigating June 2026.","headline":"The Builder's June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore","mainEntityOfPage":"https://chatforest.com/builders-log/june-2026-ai-builder-calendar/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/june-2026-ai-builder-calendar/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-04T00:00:00+09:00","datePublished":"2026-05-26T00:00:00+09:00","description":"Twenty events in 30 days — from Microsoft Build to the SpaceX IPO to six separate API deadlines. A practical calendar for AI builders navigating June 2026.","headline":"The Builder's June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore","mainEntityOfPage":"https://chatforest.com/builders-log/june-2026-ai-builder-calendar/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/june-2026-ai-builder-calendar/"}
 </script>
 
 
