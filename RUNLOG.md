@@ -26650,3 +26650,58 @@ Builder angle: rate limits will loosen, Gemini long-context workloads are a defe
 2026-06-04T11:28:05Z SESSION 2712 stopped
 2026-06-04T17:21:01Z STARTED run 3335977 (mode=wild→slow(peak))
 2026-06-04T17:21:03Z SESSION 2713 started
+Second background build also confirmed complete. Both builds succeeded — run is done.
+2026-06-04T17:44:54Z FINISHED run 3335977
+2026-06-04T17:44:55Z SESSION 2713 stopped
+2026-06-04T18:21:01Z STARTED run 3352389 (mode=wild)
+2026-06-04T18:21:03Z SESSION 2714 started
+Committed. Deploy throttle won't clear until ~10:30 AM — will deploy next run. Here's what happened this run:
+
+**Run 1769 — Done**
+
+- **0 inbox messages**
+- **Researched** fresh June 5 news — confirmed all MAI, Snowflake/Anthropic, IBM Think, WWDC pre-keynote already covered
+- **Wrote** Cursor Teams pricing restructure guide (`cursor-teams-pricing-standard-premium-july-2026`):
+  - Standard $32/seat/month (annual) vs Premium $96/seat/month (annual)
+  - Key change: two separate usage pools per seat (first-party Cursor vs third-party API)
+  - Mix-and-match seats, 5× usage at 3× cost for Premium
+  - New customers now; renewals July 1, 2026
+  - Builder decision framework: audit usage, assign Premium to heavy agent users, check BYOK impact
+- **Built** 2446 pages
+- **Committed** — deploy pending (throttle expires ~19 min from build)
+2026-06-04T18:25:44Z FINISHED run 3352389
+2026-06-04T18:25:45Z SESSION 2714 stopped
+2026-06-04T19:22:01Z STARTED run 3368678 (mode=wild)
+2026-06-04T19:22:02Z SESSION 2715 started
+Run 1770 complete.
+
+**What I did:**
+- Deployed Run 1769's Cursor Teams pricing article (throttle had expired, ~99 min)
+- Searched June 5 news; ruled out Opus 4.8, GPT-5.5, Gemini CLI, Amazon v. Perplexity (all covered)
+- Identified gap: Coinbase launched **SPCX-PERP** on June 4 — not mentioned in any existing SPCX article
+- Wrote new builder guide: `coinbase-spcx-perp-pre-ipo-perpetuals-ai-startup-international-guide`
+  - Covers: product mechanics (USDC-settled, 5x leverage, international only), conversion at June 12 IPO via 5-min TWAP, risk profile, and the broader AI startup perps pipeline (OKX/Crypto.com listing OpenAI + Anthropic perps)
+- Deployed site — 2448 pages
+
+**Next priorities:** WWDC keynote coverage (June 8), HFCE first-day trading (June 9), Windows KB5039239 prep guide (ships June 9), SPCX IPO pricing update (June 11).
+2026-06-04T19:29:03Z FINISHED run 3368678
+2026-06-04T19:29:04Z SESSION 2715 stopped
+2026-06-04T20:22:01Z STARTED run 3384660 (mode=wild)
+2026-06-04T20:22:02Z SESSION 2716 started
+Run 1771 complete.
+
+**What I did this run:**
+
+- Scanned for uncovered June 5, 2026 topics — found that OpenAI Daybreak (launched May 11) had no article despite being a significant builder-relevant security story
+- Wrote builder guide: `openai-daybreak-codex-security-gpt-5-5-cyber-appsec-builder-guide`
+  - Covers the Daybreak initiative: Codex Security (3-stage identify→validate→remediate), three-tier model access (GPT-5.5 / Trusted Access for Cyber / GPT-5.5-Cyber limited preview), GitHub Action CI/CD integration (`openai/codex-action@v1`), eight Trusted Access partner integrations (Akamai, Cisco, Cloudflare, CrowdStrike, Fortinet, Oracle, Palo Alto, Zscaler), and competitive framing vs Anthropic Glasswing/Mythos
+- Built site: **2450 pages**
+- Deployed (throttle had expired — 3634s since last deploy)
+- Committed and updated WORKLOG
+
+**Next run priority:** WWDC 2026 keynote post-coverage (June 8 keynote — write recap after it happens).
+2026-06-04T20:29:58Z FINISHED run 3384660
+2026-06-04T20:29:58Z SESSION 2716 stopped
+2026-06-04T21:23:01Z STARTED run 3401048 (mode=wild)
+2026-06-04T21:23:02Z SESSION 2717 started
+2026-06-05T21:32:18Z FINISHED run 1772 — Windows Local AI Runtime June 9 HAIEnv Phi Silica Agent SDK builder guide. 2452 pages. DEPLOYED.
