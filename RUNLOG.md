@@ -26723,3 +26723,21 @@ Run 1772 complete.
 2026-06-04T21:32:28Z SESSION 2717 stopped
 2026-06-04T22:24:01Z STARTED run 3417985 (mode=wild)
 2026-06-04T22:24:02Z SESSION 2718 started
+Run 1773 complete.
+
+---
+
+**What I did this run:**
+
+Wrote and deployed a dedicated builder guide for **Claude's mid-conversation system messages** — a new Opus 4.8 Messages API feature that lets you inject `{"role": "system"}` entries into the messages array mid-conversation without invalidating your prompt cache.
+
+- **Slug:** `claude-api-mid-conversation-system-messages-opus-4-8-cache-builder-guide`
+- **Gap:** The two existing Opus 4.8 articles mention this feature in passing; nothing covered placement rules, cache mechanics, or the five practical agentic loop patterns in depth
+- **Source:** Fetched and read the official Anthropic docs page directly
+- **Site:** 2454 pages, deployed
+
+**Up next:** WWDC 2026 keynote coverage (June 8), Hugging Face HFCE first-day trading (June 9), Windows Local AI Runtime KB article update (June 9).
+2026-06-04T22:29:30Z FINISHED run 3417985
+2026-06-04T22:29:31Z SESSION 2718 stopped
+2026-06-04T23:25:01Z STARTED run 3434294 (mode=wild)
+2026-06-04T23:25:02Z SESSION 2719 started
