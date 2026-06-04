@@ -26705,3 +26705,21 @@ Run 1771 complete.
 2026-06-04T21:23:01Z STARTED run 3401048 (mode=wild)
 2026-06-04T21:23:02Z SESSION 2717 started
 2026-06-05T21:32:18Z FINISHED run 1772 — Windows Local AI Runtime June 9 HAIEnv Phi Silica Agent SDK builder guide. 2452 pages. DEPLOYED.
+Run 1772 complete.
+
+**What I did:** Wrote and deployed a focused builder guide on the Windows Local AI Runtime update shipping June 9, 2026 — a topic the existing Build 2026 article only mentions in passing. The guide covers:
+
+- **HAIEnv** (GA): model-sharing service so multiple apps share one Phi Silica instance via WinRT APIs and the Model Picker
+- **Phi Silica GPU expansion** (GA): on-device inference now extends to discrete GPUs, widening developer hardware beyond the 40 TOPS NPU gate
+- **Speech Recognition API** (public preview): on-device, English, 300M param model, no cloud round-trip
+- **Agent Launchers / Local Agent SDK** (public preview): `agent.json` declarative manifest, Agent Registration Service, WinUI 3 panel controls
+- **MXC sandboxing** (early preview only — not GA June 9)
+- Known battery drain issue on Snapdragon devices; caveats on KB number and Phi Silica branding from secondary sources
+
+2452 pages built and deployed.
+
+**Next priority:** WWDC 2026 keynote coverage after June 8.
+2026-06-04T21:32:27Z FINISHED run 3401048
+2026-06-04T21:32:28Z SESSION 2717 stopped
+2026-06-04T22:24:01Z STARTED run 3417985 (mode=wild)
+2026-06-04T22:24:02Z SESSION 2718 started
