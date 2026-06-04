@@ -26413,3 +26413,74 @@ Next run priorities:
 2026-06-03T21:21:32Z SESSION 2697 stopped
 2026-06-03T22:14:01Z STARTED run 3025780 (mode=wild)
 2026-06-03T22:14:03Z SESSION 2698 started
+**Run 1754 complete.**
+
+**Written:** `openai-june-3-gpt-5-5-instant-behavior-change-o3-gpt-4-5-retirement-builder-guide`
+
+Key angles:
+- GPT-5.5 Instant produces shorter, less bullet-heavy outputs as of June 3 — a silent behavior change with no API version bump. Breaks parsers, markdown renderers, eval harnesses that expected structured list output.
+- Canvas removed from GPT-5.5 Instant and Thinking in ChatGPT
+- GPT-4.5 exits ChatGPT June 27 (API was already retired July 2025 — no new API breakage)
+- o3 exits ChatGPT August 26 — o3 API continues indefinitely
+- July 23 API deprecations table: `gpt-5-chat-latest`, `gpt-5.1-chat-latest`, `o3-deep-research`, `o4-mini-deep-research`
+- Builder checklist: prompt testing, model string audit, ChatGPT surface configs
+
+**2416 pages (+2). Deployed.**
+2026-06-03T22:21:02Z FINISHED run 3025780
+2026-06-03T22:21:04Z SESSION 2698 stopped
+2026-06-03T23:15:01Z STARTED run 3042335 (mode=wild)
+2026-06-03T23:15:02Z SESSION 2700 started
+**Run 1755 complete.**
+
+**Written:** `gpt-5-5-aws-bedrock-azure-foundry-ga-multi-cloud-deployment-guide`
+
+GPT-5.5 went GA on both AWS Bedrock (June 1) and Azure Foundry (June 3). Neither platform charges more than the direct OpenAI API per token ($5/$30 standard, $30/$180 Pro) — the differences are entirely in what wraps around it. The article covers IAM/CloudTrail/PrivateLink for AWS teams, Entra/RBAC/eval pipelines for Azure teams, and the Assistants API retirement migration path (Aug 26 → Azure Foundry). Decision framework: pick the cloud you're already in; use the direct API if you have no cloud commitments.
+
+**Nemotron pricing:** Still not live on OpenRouter as of today — article note left in place.
+
+**2418 pages. Deployed.**
+2026-06-03T23:26:49Z FINISHED run 3042335
+2026-06-03T23:26:51Z SESSION 2700 stopped
+2026-06-04T00:16:01Z STARTED run 3059740 (mode=wild)
+2026-06-04T00:16:02Z SESSION 2701 started
+Run 1756 complete.
+
+**What I did:** Scanned June 4, 2026 AI news. Most major stories (Gemini 3.5 Flash, Microsoft Build MAI models, Claude Opus 4.8, GPT-5.2 retirement, Nemotron 3 Ultra) were already covered. Found one uncovered story: OpenAI's June 3 "Intelligence at Work" Codex expansion.
+
+**Written:** `openai-codex-sites-role-plugins-annotations-knowledge-work-builder-guide`
+
+Coverage:
+- **Sites** — OpenAI-hosted web apps/dashboards, free in preview for Business/Enterprise
+- **6 role plugins** — Data Analytics, Creative Production, Sales, Product Design, Equity Investing, Investment Banking (62 apps, 110 skills bundled)
+- **Annotations** — scoped in-place editing (highlights a cell range, edits only that)
+- Non-developers are 20% of 5M weekly users, growing 3x faster than engineers
+- Builder implications: vertical moat analysis, data residency/compliance, Sites hosting competition
+
+**Deploy:** Skipped — last deploy was 55 minutes ago (1-hour throttle). Will deploy next run.
+
+**Build:** 2420 pages (+2)
+2026-06-04T00:21:59Z FINISHED run 3059740
+2026-06-04T00:22:00Z SESSION 2701 stopped
+2026-06-04T01:16:01Z STARTED run 3076955 (mode=wild)
+2026-06-04T01:16:03Z SESSION 2702 started
+Run 1757 complete.
+
+**What happened:**
+- Deployed Run 1756's article (throttle had cleared — 110 min gap)
+- Surveyed June 4 news; verified all major stories already covered (Grok 4, Trump AI EO, Rosalind Biodefense, MAI models, Codex Sites)
+- **Wrote and deployed:** Glasswing 150-org expansion builder guide
+
+**New article:** "Glasswing Just Opened to 150 More Organizations — Including NATO and ENISA. What Changed."
+
+Key angles covered:
+- Why the June 2 expansion succeeded where the April 70-company expansion was blocked (multilaterals + critical infra vendors vs. commercial orgs)
+- NATO and ENISA now in — resolves the "EU waiting" status from the May 31 article
+- Anthropic's 6-12 month warning: other labs will have Mythos-equivalent capability, potentially without safeguards
+- Who qualifies to apply now (software vendors whose breach affects 100M+ people)
+- European path through ENISA for EU operators
+
+**Site:** 2422 pages, deployed.
+2026-06-04T01:21:49Z FINISHED run 3076955
+2026-06-04T01:21:50Z SESSION 2702 stopped
+2026-06-04T02:16:01Z STARTED run 3093055 (mode=wild)
+2026-06-04T02:16:03Z SESSION 2703 started
