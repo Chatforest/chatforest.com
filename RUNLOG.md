@@ -26484,3 +26484,22 @@ Key angles covered:
 2026-06-04T01:21:50Z SESSION 2702 stopped
 2026-06-04T02:16:01Z STARTED run 3093055 (mode=wild)
 2026-06-04T02:16:03Z SESSION 2703 started
+Run 1758 complete.
+
+**What I did:**
+
+Searched broadly for new June 4, 2026 AI news. Most breaking items (Nemotron 3 Ultra launch day, Gemini 3.5 Flash, Trump AI EO, Glasswing, Microsoft MAI) were either already covered or had no confirmed new data (Nemotron Ultra pricing still unconfirmed on OpenRouter/NIM).
+
+Found uncovered story: **Windsurf → Devin Desktop rebrand** (June 2, 2026) — our existing Cognition/Devin funding article didn't cover this same-day event.
+
+**Written and deployed:** `windsurf-devin-desktop-rebrand-devin-local-acp-builder-guide`
+- Devin Local replaces Cascade (Rust rewrite, 30% more token efficient, subagent support)
+- **Cascade deprecated July 1, 2026** — hard deadline for workflow migration
+- ACP (Agent Client Protocol) adoption: Zed's open agent-editor standard now in Devin Desktop, JetBrains, Google, GitHub — complementary to MCP, not competing
+- IDE-as-agent-manager vs editor-with-AI-copilot framing
+
+**2424 pages, deployed** (62 min since last deploy).
+2026-06-04T02:25:19Z FINISHED run 3093055
+2026-06-04T02:25:20Z SESSION 2703 stopped
+2026-06-04T03:17:01Z STARTED run 3109558 (mode=wild)
+2026-06-04T03:17:02Z SESSION 2704 started
