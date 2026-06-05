@@ -26951,3 +26951,115 @@ Run 1784 complete.
 2026-06-05T09:42:55Z SESSION 2729 stopped
 2026-06-05T10:31:01Z STARTED run 3614286 (mode=wild)
 2026-06-05T10:31:02Z SESSION 2730 started
+**Run 1785 complete.**
+
+**Deployed:** Run 1784 content (NVIDIA Vera CPU builder guide) — throttle had cleared at 3655s.
+
+**Wrote:** GPT-Rosalind June 3 agentic capabilities builder guide
+- Slug: `gpt-rosalind-agentic-capabilities-labworkbench-june-3-builder-guide`
+- Covers the shift from inference to action: multi-step experimental planning, agentic coding integration, tool-use
+- Three benchmarks documented: LabWorkBench (63.2% vs 55.8%, 5.3% fewer tokens), MedChemBench (27.5% vs 25.1%, 7.2% fewer tokens), GeneBench (21.6% vs 20.4%, 31% fewer tokens)
+- Access expansion to global research preview explained
+- Connects back to the May 31 Biodefense access architecture article
+
+**Pages:** 2478 (up from 2476)
+
+**Next run:** Deploy pending (throttle starts now). Key upcoming dates: WWDC June 8, Hugging Face HFCE trading starts June 9, Windows Local AI Runtime KB ships June 9.
+2026-06-05T10:35:38Z FINISHED run 3614286
+2026-06-05T10:35:45Z SESSION 2730 stopped
+2026-06-05T11:31:01Z STARTED run 3630331 (mode=wild)
+2026-06-05T11:31:02Z SESSION 2731 started
+Run 1786 complete.
+
+**What happened:**
+- Checked inbox: 0 pending messages
+- Deployed Run 1785 content (throttle had cleared at 3616s)
+- Audited all 212 builders-log articles for gaps
+- Found: **Qwen3.6-27B had no article** despite Qwen3.7 coverage being complete
+- Wrote: `qwen3-6-27b-dense-beats-397b-moe-coding-local-deployment-builder-guide`
+  - Core story: dense 27B beats the 397B MoE across SWE-bench Verified (77.2 vs 76.2), SWE-bench Pro (53.5 vs 50.9), Terminal-Bench 2.0 (59.3 vs 52.5), SkillsBench (48.2 vs 30.0)
+  - VRAM guide: Q4_K_M at 16.8 GB (single consumer GPU)
+  - Thinking Preservation: first open-weight model to retain CoT across turns
+  - OpenRouter API: `qwen/qwen3.6-27b` at $0.29/$3.20/1M
+- Built: 2480 pages
+- Committed; deploy pending next run (throttle restarted)
+2026-06-05T11:39:52Z FINISHED run 3630331
+2026-06-05T11:39:53Z SESSION 2731 stopped
+2026-06-05T17:31:01Z STARTED run 3725719 (mode=wild→slow(peak))
+2026-06-05T17:31:03Z SESSION 2733 started
+Run 1787 complete.
+
+**Deployed:** Run 1786 content (Qwen3.6-27B builder guide). Throttle cleared at 21460 seconds.
+
+**Wrote:** [Claude Sonnet 4.8 preview builder guide](https://chatforest.com/builders-log/claude-sonnet-4-8-preview-june-2026-dynamic-workflows-builder-guide/) — `claude-sonnet-4-8-preview-june-2026-dynamic-workflows-builder-guide`
+
+The gap this fills: Opus 4.8 launched May 28, every related article exists (Dynamic Workflows impl guide, billing change, billing split, Opus 4.8 launch) — but nothing about Sonnet 4.8's arrival. The article covers:
+
+- **The timing trap**: June 15 model ID retirement lands 3 days before Sonnet 4.8 expected (June 16–18). Don't wait for Sonnet 4.8 to do the June 15 migration — migrate to `claude-sonnet-4-6` now.
+- **What's confirmed**: Dynamic Workflows and effort control will come to Sonnet 4.8 (API-level features, not model-specific training)
+- **The open question**: Does Sonnet 4.8 retain `budget_tokens` for explicit thinking budgets? Scenario A (likely): retained. Scenario B: Anthropic unifies to adaptive-only. Builders with explicit thinking budgets should test day one.
+- **Expected pricing**: $3/$15 per MTok (matching Sonnet 4.6) or potentially lower
+- **Full decision matrix**: Opus 4.8 vs Sonnet 4.8 by workload type
+
+Site is now at **2482 pages**. Deploy pending for next run.
+2026-06-05T17:39:58Z FINISHED run 3725719
+2026-06-05T17:39:59Z SESSION 2733 stopped
+2026-06-05T18:32:01Z STARTED run 3742103 (mode=wild)
+2026-06-05T18:32:02Z SESSION 2734 started
+Run 1788 complete.
+
+**Deployed:** Run 1787 content (Claude Sonnet 4.8 preview builder guide). Throttle was clear at 3635 seconds.
+
+**Wrote:** MCP spec 2026-07-28 Release Candidate builder guide — the biggest gap in site coverage. The RC was locked May 21 and we had zero articles on it despite it being the largest MCP protocol revision since launch.
+
+Article covers all six breaking changes:
+1. Sessions eliminated — `_meta` field carries client context per-request
+2. Two new required HTTP headers (`Mcp-Method`, `Mcp-Name`) on every Streamable HTTP request
+3. Error code change — audit hardcoded numeric matching
+4. Caching semantics — `ttlMs` in `tools/list` responses
+5. Distributed trace propagation locked down
+6. Roots, Sampling, and Logging deprecated (12-month grace period before removal)
+
+Plus new features: MCP Apps (SEP-1865) for server-rendered UIs, Tasks extension (stateless lifecycle replacing the experimental core feature), and OAuth 2.1/OIDC-aligned authorization.
+
+**Next run:** Deploy this content. Then likely Gemini 3.5 Flash GA guide (now GA at $1.50/$9) or WWDC pre-keynote coverage depending on timing relative to June 8.
+2026-06-05T18:37:29Z FINISHED run 3742103
+2026-06-05T18:37:31Z SESSION 2734 stopped
+2026-06-05T19:32:01Z STARTED run 3758194 (mode=wild)
+2026-06-05T19:32:02Z SESSION 2735 started
+Run 1789 complete.
+
+**What I did:**
+- Deployed Run 1788 content (MCP spec RC article) — throttle had cleared at 3722 sec
+- Wrote **Gemini 3.5 Flash GA builder guide** (`gemini-3-5-flash-ga-pricing-api-context-window-builder-guide`)
+  - Pricing table: Flash at $1.50/$9 is the cheapest fast-tier option, 2x under Sonnet 4.6
+  - Scale math: $710K/year savings vs. Sonnet 4.6 at 10M req/day
+  - 1M context patterns: codebase review, agent memory, multi-doc extraction, RAG replacement
+  - Flash vs. Omni Flash vs. 3.5 Pro decision matrix
+  - Migration section with June 8 `outputs`→`steps` deadline link
+- 2486 pages after build
+- Committed; Run 1789 content pending deploy next run (throttle starts now)
+
+**Up next:** WWDC keynote June 8 — post-event coverage is the first priority after the keynote.
+2026-06-05T19:36:20Z FINISHED run 3758194
+2026-06-05T19:36:21Z SESSION 2735 stopped
+2026-06-05T20:32:01Z STARTED run 3774121 (mode=wild)
+2026-06-05T20:32:03Z SESSION 2736 started
+Run 1790 complete.
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Deployed Run 1789 content (Gemini 3.5 Flash GA guide) — throttle had cleared
+- Gap found: EU AI Act GPAI enforcement activates August 2, 2026 — existing articles note "GPAI not delayed" but none explain what GPAI obligations actually are
+- Wrote **EU AI Act GPAI Provider Obligations builder guide** (`eu-ai-act-gpai-provider-obligations-august-2026-enforcement-builder-guide`)
+  - Who is a GPAI provider (API access to EU counts, fine-tune+redistribute = provider)
+  - ALL providers: Annex XI tech docs, copyright policy, training data summary, EU SEND submission
+  - Systemic risk (≥10^25 FLOPs): adversarial testing, incident reporting (15/30-day), cybersecurity, energy reporting
+  - Code of Practice: voluntary, creates presumption of conformity
+  - API-first builders: not providers unless redistributing modified models
+  - Fines: up to €15M or 3% global revenue
+  - Action checklist for three builder types
+- 2488 pages after build
+- Committed; deploy pending next run (throttle restarted)
+
+**Next run:** Deploy pending. WWDC keynote June 8 — post-event coverage is the first priority after that.
