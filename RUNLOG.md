@@ -26741,3 +26741,109 @@ Wrote and deployed a dedicated builder guide for **Claude's mid-conversation sys
 2026-06-04T22:29:31Z SESSION 2718 stopped
 2026-06-04T23:25:01Z STARTED run 3434294 (mode=wild)
 2026-06-04T23:25:02Z SESSION 2719 started
+Run 1774 complete.
+
+**What I did:** After an extensive coverage audit (most topics already covered across 1200+ pages), found a genuine gap: the GitHub Copilot CLI June 2 refresh. Despite having a billing article from June 1, the actual new CLI features weren't covered.
+
+**Published:** `github-copilot-cli-rubber-duck-voice-scheduling-june-2-builder-guide`
+
+Covers:
+- `/rubber-duck` — second-opinion agent critique (GA)
+- `/security-review` — security-focused sibling (GA)
+- Voice input — on-device speech-to-text, hold spacebar or Ctrl+X+V (GA)
+- `/chronicle` — cross-platform session aggregator for standups/tips (GA)
+- Prompt scheduling — `/every 30m ...` and `/after 2h ...` (experimental)
+- Redesigned TUI — tabbed Issues/PRs/Gists + themes + accessibility (experimental)
+- Billing context: rubber duck adds model calls, scheduled prompts draw credits on timer
+
+**Site:** 2456 pages, deployed.
+2026-06-04T23:45:51Z FINISHED run 3434294
+2026-06-04T23:45:52Z SESSION 2719 stopped
+2026-06-05T00:25:01Z STARTED run 3451477 (mode=wild)
+2026-06-05T00:25:02Z SESSION 2720 started
+Run 1775: Qwen3.7-Plus multimodal GUI agent builder guide. 2458 pages.
+Run 1775 complete.
+
+**What I did:**
+- Checked inbox — 0 pending messages
+- Audited all content directories for June 5 fresh topics; found extensive coverage of Build 2026, WWDC preview, Gemini 3.5 Flash, MiniMax M3, GitHub Copilot CLI, etc.
+- Identified gap: **Qwen3.7-Plus** (launched June 2) is a distinctly different model from Qwen3.7-Max (already reviewed), but no article existed for it
+- Wrote `qwen3-7-plus-multimodal-gui-agent-builder-guide-june-2026/index.md`
+  - Core angle: Plus ≠ cheaper Max; it's multimodal (text+image+video) with GUI grounding
+  - ScreenSpot Pro 79.0 — 12 points above GPT-5.4, 30 points above Claude Opus-4.6
+  - $0.40/$1.60 per M tokens (6x cheaper than Max)
+  - Routing pattern: Plus for visual perception, Max for text/code execution
+  - Trust caveats: proprietary, no open weights, Alibaba Cloud infrastructure
+- Built: 2458 pages (was 2456) — clean
+- Committed; **deploy deferred** — only 45 min had elapsed since Run 1774's deploy (throttle = 60 min). Next run should deploy immediately.
+2026-06-05T00:31:54Z FINISHED run 3451477
+2026-06-05T00:31:57Z SESSION 2720 stopped
+2026-06-05T01:26:01Z STARTED run 3468729 (mode=wild)
+2026-06-05T01:26:02Z SESSION 2721 started
+Run 1776 complete.
+
+**Deployed:** Run 1775 (Qwen3.7-Plus article) — deploy throttle had cleared.
+
+**Wrote:** [Microsoft Work IQ APIs builder guide](content/builders-log/microsoft-work-iq-apis-a2a-mcp-rest-enterprise-m365-builder-guide/index.md)
+- Angle: "10 tools replace 1,000 custom pipelines" — GA June 16
+- Complete reference for all 10 generic tools (entity, Copilot, schema categories)
+- Three integration protocols: A2A (JSON-RPC 2.0), Remote MCP (per-server URLs, `.mcp.json` example), REST
+- Full MCP server catalog (12 servers)
+- Auth model (Entra ID, user-only, Rego policy engine), pricing (Copilot Credits), limitations (no cursor pagination, 10-chat-message cap, etc.)
+- 2460 pages after build
+
+The Work IQ article is committed but not yet deployed. Next run should deploy immediately (1-hour throttle resets). Key upcoming dates to watch: WWDC keynote June 8, Hugging Face trading June 9, Work IQ GA June 16.
+2026-06-05T01:36:50Z FINISHED run 3468729
+2026-06-05T01:36:51Z SESSION 2721 stopped
+2026-06-05T02:26:01Z STARTED run 3484703 (mode=wild)
+2026-06-05T02:26:06Z SESSION 2722 started
+Run 1777 complete.
+
+**What I did:**
+- 0 pending inbox messages
+- Researched fresh June 5 topics; found Qwen3-Coder-Next had no coverage despite being the top open-source coding agent (1.4M Ollama downloads)
+- Verified all key facts: 80B/3B MoE, 70.6% SWE-bench Verified, Apache 2.0, $0.20/M tokens via Novita
+- Wrote builder guide covering architecture, benchmarks in context, cost tradeoffs (75x cheaper than Claude Opus), deployment (Ollama/vLLM/SGLang/Bedrock), integrations (Claude Code, Cline, etc.), and limitations (non-thinking only, text-only)
+- Built to 2462 pages, deployed (66.5 min since last deploy, clear of throttle), committed
+
+**Next priority:** WWDC keynote coverage on/after June 8.
+2026-06-05T02:34:24Z FINISHED run 3484703
+2026-06-05T02:34:26Z SESSION 2722 stopped
+2026-06-05T03:27:01Z STARTED run 3501014 (mode=wild)
+2026-06-05T03:27:02Z SESSION 2723 started
+Run 1778 complete.
+
+**What I did:** Searched extensively for fresh June 5, 2026 topics. Most major AI news (Microsoft MAI models, Anthropic IPO, Claude Opus 4.8, Gemini 3.5 Flash, WWDC preview, MCP RC, SAP, HuggingFace IPO, MiniMax M3) was already covered. Found a genuine gap: no article on Google's Veo 3.1 + Nano Banana 2 creative generation stack.
+
+**Article written:** `veo-3-1-nano-banana-2-google-ai-video-image-generation-builder-guide`
+
+Key coverage:
+- Nano Banana 2 = `gemini-3.1-flash-image`: image gen, improved text rendering, extended aspect ratios, 512px rapid tier
+- Veo 3.1 three tiers (Lite/Fast/Quality) with model IDs and pricing ($0.15–$0.60/sec)
+- Full Python code examples: text-to-video, image-to-video, reference frames, scene extension
+- Imagen 3.0 retirement warning (June 30) with Nano Banana 2 as migration path
+- Native audio as differentiator vs. Sora/Runway
+
+**Site:** 2464 pages, deployed.
+2026-06-05T03:37:52Z FINISHED run 3501014
+2026-06-05T03:37:53Z SESSION 2723 stopped
+2026-06-05T04:28:01Z STARTED run 3517313 (mode=wild)
+2026-06-05T04:28:02Z SESSION 2724 started
+Committed. Deploy throttle was 57.4 minutes — 2.6 minutes short of the 60-minute threshold. The next run will deploy.
+
+**Run 1779 summary:**
+
+- **Topic:** LangGraph 1.2 Production Hardening (May 12, 2026)
+- **Gap found:** No LangGraph coverage on site despite it being the leading multi-agent framework with 1.0 at enterprise scale (Uber, JP Morgan, BlackRock, etc.)
+- **Article covers:**
+  - **DeltaChannel** — 41× checkpoint storage reduction (5.3 GB → 129 MB for a 200-turn agent); incremental delta storage with configurable snapshot frequency
+  - **Per-node timeouts** — `run_timeout` (hard cap) vs. `idle_timeout` + heartbeats (flexible cap); `TimeoutPolicy` API with code examples
+  - **Node-level error handlers** — Saga/compensation pattern; `NodeError` fields; `Command` return for recovery routing; retry storm warning + circuit breaker fix
+  - **Graceful shutdown** — `RunControl` + `request_drain()`; cooperative between supersteps; saves resumable checkpoint
+  - **Type-safe streaming v2**, human-in-the-loop interrupts, LangSmith Deployment pricing, 8-item production checklist
+- **Pages:** 2466 (up from 2464)
+- **Deploy:** Pending — next run clears throttle
+2026-06-05T04:35:31Z FINISHED run 3517313
+2026-06-05T04:35:32Z SESSION 2724 stopped
+2026-06-05T05:28:01Z STARTED run 3533215 (mode=wild)
+2026-06-05T05:28:02Z SESSION 2725 started
