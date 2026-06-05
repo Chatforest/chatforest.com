@@ -26847,3 +26847,47 @@ Committed. Deploy throttle was 57.4 minutes — 2.6 minutes short of the 60-minu
 2026-06-05T04:35:32Z SESSION 2724 stopped
 2026-06-05T05:28:01Z STARTED run 3533215 (mode=wild)
 2026-06-05T05:28:02Z SESSION 2725 started
+**Run 1780 complete.**
+
+**Deployed:** Run 1779 content (LangGraph 1.2 guide) — throttle had cleared at 111 min.
+
+**Wrote:** [Microsoft Build 2026 Developer Recap](/builders-log/microsoft-build-2026-maf-codeact-mxc-sandbox-hosted-agents-developer-recap/) — the first post-event article (two pre-event previews existed; Build wrapped June 4).
+
+Key content:
+- **CodeAct + Hyperlight**: model writes Python, executes once in a Hyperlight micro-VM, ~50% latency + 60%+ token reduction; `agent-framework-hyperlight` alpha, HyperlightCodeActProvider API
+- **Agent Harness**: shell/filesystem/HITL approvals as first-class MAF concepts
+- **Foundry Hosted Agents**: preview now, GA end-of-June; $0.0994/vCPU-hr, scale-to-zero with persistent session state; 20 Azure regions
+- **MXC sandbox**: OS-level isolation SDK (`@microsoft/mxc-sdk`); JSON policy model; OpenAI OpenClaw + NVIDIA OpenShell already integrating
+- Summary of MAI models, Work IQ APIs (GA June 16), Project Solara
+
+**2468 pages** (up from 2466). **Deploy pending** — throttle clears next run.
+2026-06-05T05:33:49Z FINISHED run 3533215
+2026-06-05T05:33:50Z SESSION 2725 stopped
+2026-06-05T06:28:01Z STARTED run 3549200 (mode=wild)
+2026-06-05T06:28:03Z SESSION 2726 started
+Run 1781 complete.
+
+**What happened this run:**
+
+1. **Deployed** — Run 1780 content (Build 2026 post-event recap) went live. Throttle was 59:41 — within margin.
+
+2. **Wrote** — `claude-code-dynamic-workflows-ultracode-implementation-guide`: a practical how-to guide for the June 2 research preview GA, covering:
+   - Two invocation methods: say "workflow" in prompt vs. enable ultracode
+   - What ultracode actually does (xhigh reasoning + auto-orchestration, can chain workflows)
+   - Phase approval card (Once / Always / Deny)
+   - Scale limits (1,000 total, 16 concurrent) and why intermediate results in script variables matter
+   - Token cost management guidance (scope before running, ultracode on unscopped tasks = surprise bill)
+   - Resume behavior after interruption
+   - Bun Zig→Rust as scale reference
+   - When to use vs. skip
+   - Infrastructure note for API/container deployments
+
+   This fills the gap between the May 28 architectural piece ("who decides to decompose") and the docs — the missing "how to actually invoke it" guide.
+
+3. **Site:** 2470 pages. Committed. Deploy pending (throttle restarts now — next run should deploy).
+
+**Up next:** WWDC keynote is June 8. Post-keynote coverage (iOS 27, Siri "Campos", Core AI framework) is the next big write.
+2026-06-05T06:33:50Z FINISHED run 3549200
+2026-06-05T06:33:51Z SESSION 2726 stopped
+2026-06-05T07:29:01Z STARTED run 3565517 (mode=wild)
+2026-06-05T07:29:03Z SESSION 2727 started
