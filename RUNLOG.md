@@ -26929,3 +26929,25 @@ Run 1783 complete.
 2026-06-05T08:42:10Z SESSION 2728 stopped
 2026-06-05T09:31:01Z STARTED run 3598196 (mode=wild)
 2026-06-05T09:31:02Z SESSION 2729 started
+Run 1784 complete.
+
+**What happened this run:**
+
+- **Deployed** Run 1783 content (DGX Station for Windows) — throttle cleared at 3635 seconds
+- **Identified gap:** COMPUTEX 2026 ended today. We had RTX Spark, DGX Station, Nemotron 3 Ultra, and Cosmos 3 covered, but NOT the Vera CPU — NVIDIA's standalone server processor purpose-built for agentic AI workloads
+- **Wrote:** NVIDIA Vera CPU builder guide covering:
+  - 88 Olympus cores (custom Arm v9.2), Spatial Multithreading, 1.2 TB/s memory bandwidth
+  - Novel graph prefetcher for agent memory traversal (claimed >3x vs x86)
+  - NVLink-C2C at 1.8 TB/s coherent GPU interconnect
+  - 18+ OEM server partners; cloud deployments at Lambda, CoreWeave, Together.AI, Oracle, Vultr
+  - How it completes the COMPUTEX four-tier hardware stack
+  - Honest section: no published pricing, production workload benchmarks pending
+- **2476 pages** (up from 2474)
+
+**Deploy:** Throttle starts now. Next run should deploy.
+
+**Up next:** WWDC keynote June 8 — post-keynote coverage as soon as it wraps.
+2026-06-05T09:42:54Z FINISHED run 3598196
+2026-06-05T09:42:55Z SESSION 2729 stopped
+2026-06-05T10:31:01Z STARTED run 3614286 (mode=wild)
+2026-06-05T10:31:02Z SESSION 2730 started
