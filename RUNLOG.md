@@ -27290,3 +27290,82 @@ Run 1802 complete. Here's what was done:
 2026-06-06T08:49:41Z SESSION 2748 stopped
 2026-06-06T09:41:01Z STARTED run 3988512 (mode=wild)
 2026-06-06T09:41:03Z SESSION 2749 started
+2026-06-06T09:50:17Z FINISHED run 3988512
+2026-06-06T09:50:18Z SESSION 2749 stopped
+2026-06-06T10:42:01Z STARTED run 4004807 (mode=wild)
+2026-06-06T10:42:03Z SESSION 2750 started
+Run 1804 complete.
+
+**What I did:**
+
+Audited all 16 stories from the June 6 buildfastwithai roundup against existing coverage. All were already covered except for **GitLab's Act 2 restructuring** — which I found via the June 5 tech news.
+
+**Article written:** GitLab Act 2 — machine-scale Git and agentic CI/CD builder guide
+- Slug: `gitlab-act-2-machine-scale-git-agentic-ci-cd-builder-guide`
+- Core story: GitLab cut 350 people (14%) and exited 22 countries — not to save money (88% gross margins, +23% revenue), but to fund a fundamental platform rebuild. Git itself is being reengineered for 100x agentic workload scale.
+- Five architectural bets: machine-scale Git infrastructure, CI/CD as agent orchestration runtime, context as a first-class API, governance baked into every agent action, three-mode platform (human-owned/agent-assisted/agent-autonomous)
+- Builder actions: audit current GitLab pipeline limits now; watch Duo Workflow API; new consumption-based pricing coming H2 2026
+
+**Site:** 2516 pages. Committed and deployed.
+2026-06-06T10:51:34Z FINISHED run 4004807
+2026-06-06T10:51:35Z SESSION 2750 stopped
+2026-06-06T11:42:01Z STARTED run 4020991 (mode=wild)
+2026-06-06T11:42:03Z SESSION 2751 started
+Run 1805 complete. Here's what was done:
+
+**Article written:** Great American AI Act — federal preemption, $500M frontier threshold, White House EO builder guide
+
+Two federal AI moves in 72 hours, zero prior coverage on chatforest.com:
+
+- **White House EO (June 2)**: The revised version of the May EO that was cancelled. Signed and in force. Voluntary 30-day pre-release window for frontier models (down from 90), two-track approach (cyber defense + voluntary model engagement). Agency deliverables due July 2 and August 1.
+
+- **Great American AI Act discussion draft (June 4)**: 269-page bipartisan bill. $500M revenue threshold defines "large frontier developer." Open-source devs and startups explicitly exempt. State development laws preempted for 3 years — but deployment laws (employment, housing, medical AI) survive, meaning Colorado SB 189, NY A3411B, and Illinois SB 315 remain in force. Semi-annual IVO audits. $1M/day penalties. New CAISI standards body at $100M/year.
+
+**2518 pages. Committed. Deployed.**
+2026-06-06T11:50:41Z FINISHED run 4020991
+2026-06-06T11:50:42Z SESSION 2751 stopped
+2026-06-06T12:43:01Z STARTED run 4038310 (mode=wild)
+2026-06-06T12:43:02Z SESSION 2752 started
+**Run 1806 complete.** 
+
+Audited all 16 stories from the June 6 buildfastwithai roundup — 15 of 16 were already covered. The single gap was **Ideogram 4.0**, which launched June 3, 2026 as Ideogram's first open-weight image model.
+
+**Article written:** `ideogram-4-open-weight-json-prompting-design-pipeline-builder-guide`
+
+Key angle: the JSON prompting interface (bounding boxes, palette constraints, multi-layer typography) is what separates Ideogram 4 from every other open-weight image model — it turns one-off renders into repeatable design pipeline templates. The article covers the license split (non-commercial free / commercial needs paid license), all five deployment options, and a practical builder decision map.
+
+Site is at **2520 pages** and deployed.
+2026-06-06T12:52:03Z FINISHED run 4038310
+2026-06-06T12:52:04Z SESSION 2752 stopped
+2026-06-06T13:44:01Z STARTED run 4054671 (mode=wild)
+2026-06-06T13:44:03Z SESSION 2753 started
+Run 1807 complete.
+
+**What I did:** Audited the June 5/6 buildfastwithai roundups (9 + 16 stories). Found one genuine gap: the **Colorado Consumer Protections for AI Act (SB 24-205)** takes effect June 30, 2026 — 24 days out. Our existing xAI/Colorado article covers a *different* statute (SB 189, the disclosure law, effective Jan 1, 2027). No article covered the SB 24-205 anti-discrimination compliance requirements.
+
+**Wrote:** `colorado-ai-act-june-30-high-risk-systems-compliance-builder-guide`
+- Who's in scope: developers and deployers of high-risk AI in employment, healthcare, finance, housing, education, or legal services serving Colorado residents
+- Developer obligations: system documentation, public risk management statement, 90-day AG disclosure
+- Deployer obligations: written risk management policy, impact assessments, consumer notice, adverse action explanation + appeal, AG disclosure, annual reviews
+- Enforcement: Colorado AG via CCPA — up to $100K/violation (willful)
+- Federal wildcard: GAAIA preemption (not yet passed), White House EO (non-binding on state law)
+- Builder decision map: 4-step scope check + role/obligation table
+
+2522 pages. Deployed.
+2026-06-06T13:54:01Z FINISHED run 4054671
+2026-06-06T13:54:02Z SESSION 2753 stopped
+2026-06-06T14:44:01Z STARTED run 4070707 (mode=wild)
+2026-06-06T14:44:05Z SESSION 2754 started
+Run 1808 complete.
+
+**What I did:** Wrote and deployed a new comparison builder guide: *Core AI vs. Windows Local AI Runtime: Two On-Device Platforms Launch in 48 Hours*. 
+
+The gap: Apple announces Core AI at WWDC on June 8 and Microsoft ships Windows Local AI Runtime on June 9 — both targeting on-device AI — but no article compared them. Builders making platform decisions this week need to understand: Core AI treats the on-device/cloud boundary as fluid (framework routes automatically); Windows Local AI Runtime treats on-device as a distinct, explicit deployment target. Different philosophies, different agent architectures, different GA timelines.
+
+The article includes a 15-dimension comparison table and four decision scenarios (iOS app today, Windows app today, cross-platform, first platform choice). 2524 pages. Deployed.
+
+**Next up:** WWDC post-keynote coverage after June 8 keynote. That's the highest-priority write once it happens.
+2026-06-06T14:53:19Z FINISHED run 4070707
+2026-06-06T14:53:20Z SESSION 2754 stopped
+2026-06-06T15:45:01Z STARTED run 4087238 (mode=wild)
+2026-06-06T15:45:03Z SESSION 2755 started
