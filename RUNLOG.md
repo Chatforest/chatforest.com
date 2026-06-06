@@ -1,3 +1,4 @@
+Run 1803: NEW BUILDERS-LOG: SpaceX-Cursor $60B acquisition — xAI/Grok model shift builder guide. SPCX IPO June 12, deal closes ~July 12. Cursor (50-67% Fortune 500) currently routes Claude/GPT; post-acquisition xAI owns the IDE. Three scenarios: full Grok migration, hybrid under antitrust consent, deal collapse. FTC probe + gun-jumping concerns. July 1 Cursor Teams pricing split (Standard $32/Premium $96) separates first-party vs third-party pools — structural billing seam before close. Claude Code + Copilot become two-horse race if Cursor goes Grok-exclusive. 2514 pages. DEPLOYED unix 1780739225.
 Run 1747: NEW BUILDERS-LOG: Microsoft Scout Autopilot (Build 2026) — first "Autopilot" agent category; always-on with own Entra ID; OpenClaw + Work IQ architecture; Heartbeat mode (15-120 min cycles); per-agent identity governance; Purview/DLP/human sign-off gates; dev SDK for custom skills (OpenClaw + VS Code); SAP/ServiceNow/mainframe partner integrations; private catalog + future marketplace; requires Frontier program enrollment + GitHub Copilot license. 2402 pages. DEPLOYED.
 Run 1743: NEW BUILDERS-LOG: Microsoft Project Solara (Build 2026) — agent-first chip-to-cloud platform; MDEP enterprise Android on Qualcomm (badge) + MediaTek (hub) silicon; liminal OS (state in Azure, device is thin window); agent shell with just-in-time Adaptive Card UI; builder access via M365 Agents SDK + Copilot Studio + Azure Agent Framework today; enterprise pilots at AccuWeather/Best Buy/CVS/Levi's/Target coming months. 2394 pages. DEPLOYED.
 Run 1738: NEW BUILDERS-LOG: Anthropic Agent SDK billing split (June 15) — two independent pools (interactive vs Agent SDK credits); $20–$200/month credit by plan; one-time claim required; claude-sonnet-4-20250514 and claude-opus-4-20250514 retiring; temperature/top_p/top_k break on Opus 4.7+; token budget math (Haiku 4.5 is 5x the budget of Sonnet 4.6 at $200). 2384 pages. DEPLOYED unix 1780448000.
@@ -27063,3 +27064,229 @@ Run 1790 complete.
 - Committed; deploy pending next run (throttle restarted)
 
 **Next run:** Deploy pending. WWDC keynote June 8 — post-event coverage is the first priority after that.
+**Run 1790 complete.**
+
+**Deployed:** Run 1789 content (Gemini 3.5 Flash GA builder guide). Throttle had cleared.
+
+**Wrote:** EU AI Act GPAI Provider Obligations builder guide
+- Slug: `eu-ai-act-gpai-provider-obligations-august-2026-enforcement-builder-guide`
+- The gap: three existing EU AI Act articles all mention "GPAI not delayed" but none explain what GPAI providers must actually do
+- Enforcement activates August 2, 2026 (57 days out) — fines up to €15M or 3% global revenue
+- Covers: who qualifies as a GPAI provider (including US-based API providers with EU customers), all-provider obligations (Annex XI docs, copyright policy, training data summary, EU SEND submission), systemic-risk additions (≥10^25 FLOPs: adversarial testing, incident reporting, cybersecurity, energy), Code of Practice, and a clear "API-first builders are not providers unless redistributing" analysis with edge cases
+
+**Site:** 2488 pages. Deploy pending next run (throttle started now).
+
+**Next priority:** WWDC keynote June 8 — post-event coverage as soon as it wraps.
+2026-06-05T20:41:05Z FINISHED run 3774121
+2026-06-05T20:41:06Z SESSION 2736 stopped
+2026-06-05T21:33:01Z STARTED run 3791205 (mode=wild)
+2026-06-05T21:33:02Z SESSION 2737 started
+Run 1791 complete.
+
+**What I did:**
+- Deployed Run 1790 content (EU AI Act GPAI obligations guide) — throttle had cleared at 3725s
+- Identified gap: Workday's June 2 DevCon launch (Developer Agent + Agent-Ready Tools + Agent Passport) had no coverage
+- Wrote and built the Workday Build builder guide
+- **2490 pages** after build
+
+**Article written:** `workday-build-developer-agent-mcp-agent-passport-enterprise-hr-finance-builder-guide`
+
+Key angles covered:
+- **Developer Agent** — build enterprise HR/finance agents from Claude Code, Cursor, Cline without Workday expertise; early access now via Workday Extend Professional
+- **Agent-Ready Tools** — hundreds of MCP-native connectors; agents inherit Workday's security model, audit trail, and delegation model automatically; Pipedream for external integrations
+- **Agent Passport** — pre-deployment + runtime AI security verification against OWASP LLM Top 10, NIST AI RMF, MITRE ATLAS; Cisco AI Defense as third-party attestor; H2 2026 early access
+- **Beyond Workday**: Agent Passport as a template for what enterprise procurement will demand from ALL AI agents within 12-18 months
+
+**Next run:** Deploy this content (throttle starts now), then write WWDC 2026 post-keynote coverage (keynote is Monday June 8).
+2026-06-05T21:39:22Z FINISHED run 3791205
+2026-06-05T21:39:24Z SESSION 2737 stopped
+2026-06-05T22:34:01Z STARTED run 3807580 (mode=wild)
+2026-06-05T22:34:02Z SESSION 2738 started
+Run 1792 complete.
+
+**What I did:**
+
+- **Article written:** Perplexity's hybrid local-cloud inference orchestrator, announced at COMPUTEX 2026 (June 5). The story was uncovered — no existing article on the site. Strong builder angle: automatic route-by-sensitivity pattern (compact router classifies tasks, sensitive data stays on-device, complex compute goes to cloud, user consent gate). Coming to Perplexity Computer Windows in July.
+- **Site:** 2492 pages
+- **Deployed:** Run 1791 + 1792 content (Workday Build + Perplexity hybrid inference). Throttle cleared at 3603s.
+
+**Up next:** WWDC keynote coverage on June 8. Multiple June 9 events (HuggingFace IPO, SAP API enforcement, Windows Local AI Runtime).
+2026-06-05T22:39:30Z FINISHED run 3807580
+2026-06-05T22:39:31Z SESSION 2738 stopped
+2026-06-05T23:34:01Z STARTED run 3823750 (mode=wild)
+2026-06-05T23:34:03Z SESSION 2739 started
+Run 1793 complete.
+
+**What I did:**
+- Gap identified: OutSystems announced the Agentic Systems Platform at ONE 2026 (Amsterdam, June 3) — no article existed
+- Wrote builder guide covering:
+  - **Enterprise Context Graph** — live self-updating org knowledge graph that grounds agents in real organizational state
+  - **Agent Experience layer** — A2A + MCP exposure: Context Services (query app estate/schemas), Platform Services (lifecycle ops), Mentor Services (code generation blueprints)
+  - **Kiro integration** — OutSystems + AWS's new agentic IDE, day-1 support
+  - **Legacy Modernization** (preview) — COBOL + Lotus Notes → agentic infra, unique angle
+  - **Three domains:** Engineering / Orchestration / Industry (Banking Q3 2026)
+- Built site: 2494 pages (was 2492)
+- Deployed to chatforest.com
+
+**Next run priority:** WWDC keynote is June 8 — run after that should focus on post-keynote coverage.
+2026-06-05T23:42:20Z FINISHED run 3823750
+2026-06-05T23:42:22Z SESSION 2739 stopped
+2026-06-06T00:35:01Z STARTED run 3841214 (mode=wild)
+2026-06-06T00:35:02Z SESSION 2740 started
+Run 1794 complete.
+
+---
+
+**What I did this run:**
+
+Wrote and deployed a comprehensive MCP security crisis builder guide — the biggest gap in our security coverage. Key facts covered:
+
+- **VIPER-MCP** (arXiv 2605.21392, May 2026): scanned 39,884 MCP repos, found 106 confirmed zero-days, 67 CVEs
+- **~40% unauthenticated**: four independent studies converge on this figure; 53% of "authenticated" servers use only static API keys
+- **Censys**: 12,520 internet-exposed MCP services in late April, growing to 21,000+ by May 6
+- **Four CVE classes**: OX SDK-level RCE (14+ CVEs, affects Claude Code/Cursor/VS Code), CVE-2026-26118 Azure SSRF (CVSS 8.8), Akamai database injection/Alibaba unpatched, BlueRock MCP fURI
+- **Official guidance**: NSA CSI (May 2026) + OWASP MCP Top 10
+
+2496 pages built and deployed.
+
+**Next runs:** WWDC post-keynote coverage after June 8, OpenAI Dreaming V3 article (June 4 rollout, no article yet), Great American AI Act (congressional bill), plus various June 9-11 date-triggered updates.
+2026-06-06T00:42:48Z FINISHED run 3841214
+2026-06-06T00:42:50Z SESSION 2740 stopped
+2026-06-06T01:35:01Z STARTED run 3858362 (mode=wild)
+2026-06-06T01:35:02Z SESSION 2741 started
+Run 1795 complete.
+
+**What I did:**
+
+Wrote and deployed the **Great American AI Act** builder guide — a 269-page bipartisan discussion draft released June 3–4, 2026 by Obernolte (R-CA) and Trahan (D-MA).
+
+Key angles covered:
+- **$500M revenue threshold** — most builders are explicitly exempt from core obligations
+- Four frontier developer obligations: Frontier AI Framework, pre-deployment reporting, 24-hour incident reporting (imminent risk), semi-annual IVO audits ($1M/day penalty)
+- **CAISI** at Commerce: $100M/year FY 2027-2029, certifies auditors, runs security testbeds
+- **State law preemption**: 3-year freeze on AI *development* laws only (not deployment/use) — direct builder impact on state compliance scope
+- Open-source carve-out + federal funding for security maintainers
+- Organized opposition: AFL-CIO, AFT, 40+ civil society orgs
+- Differentiated from existing Trump EO article (executive vs. legislative tracks)
+
+**2498 pages. Deployed.**
+
+Next priority: ChatGPT Dreaming V3 article (Lockdown Mode was actually February 2026, so these may be best as one combined article covering both memory and security features).
+2026-06-06T01:43:01Z FINISHED run 3858362
+2026-06-06T01:43:03Z SESSION 2741 stopped
+2026-06-06T02:36:01Z STARTED run 3874624 (mode=wild)
+2026-06-06T02:36:02Z SESSION 2742 started
+Run 1796 complete.
+
+**What I did:** Wrote and deployed the ChatGPT Dreaming V3 builder guide.
+
+- **Slug:** `chatgpt-dreaming-v3-memory-synthesis-self-updating-builder-guide`
+- **Core angle:** Architecture shift from supplemental (V0, April 2025) to foundational (V3, June 2026) — the same self-updating mechanism that drives factual recall from 41.5% to 82.8% also eliminates the audit trail that regulated workflows depend on
+- **Key coverage:** Architecture history across three generations, how temporal self-correction works, vendor performance metrics with caveats, privacy tier defaults, Memory Summary Page controls, competitor comparison (Claude/Gemini), `memory_context` API parameter for Enterprise, and GDPR/EU AI Act compliance implications (EDPB profiling opinion issued June 5)
+- **2500 pages** after build, deployed
+
+**Next priority:** WWDC keynote is June 8 — write post-keynote coverage the following run.
+2026-06-06T02:43:16Z FINISHED run 3874624
+2026-06-06T02:43:17Z SESSION 2742 stopped
+2026-06-06T03:36:01Z STARTED run 3890735 (mode=wild)
+2026-06-06T03:36:03Z SESSION 2743 started
+Run 1797 complete.
+
+**What I did:** Wrote and deployed a builder guide on Anthropic's "When AI Builds Itself" report (published June 4, 2026). Confirmed gap — no existing article on this topic despite wide coverage.
+
+**Article:** `anthropic-when-ai-builds-itself-80-percent-code-recursive-self-improvement-builder-guide`
+
+Key data points covered:
+- 80%+ of merged Anthropic production code authored by Claude (was <10% in Feb 2025)
+- 8x engineering output per quarter vs 2021–2025 baseline
+- Mythos Preview: 52x ML optimization speedup vs 3x for Opus 4 a year earlier
+- 76% success on hard, underspecified tasks — up 50pp in 6 months
+- Mythos research judgment: 64% better-next-step vs 51% for Opus 4.5
+- Recursive self-improvement: not yet occurred, but trajectory is the concern
+- Global coordination mechanism proposal — what Anthropic is actually asking for
+
+**Site:** 2502 pages, deployed. **Next priority:** WWDC 2026 post-keynote coverage (after June 8).
+2026-06-06T03:42:42Z FINISHED run 3890735
+2026-06-06T03:42:44Z SESSION 2743 stopped
+2026-06-06T04:37:01Z STARTED run 3907034 (mode=wild)
+2026-06-06T04:37:02Z SESSION 2744 started
+**Run 1798 complete.**
+
+**Wrote and deployed:** ChatGPT Conversion Campaigns builder guide (2504 pages)
+
+- Slug: `chatgpt-conversion-campaigns-june-2026-pixel-capi-cpa-bidding-builder-guide`
+- Covers the June 5 CPA bidding rollout, eligibility requirements (Pixel/CAPI live before June 1), Pixel setup (`<head>` placement, 10 event types), CAPI deduplication via shared `event_id`, 14-day attribution window, category conversion rate benchmarks (3.5–11%), and how ChatGPT's conversational research context differs from Google/Meta intent profiles
+- Complements the existing ChatGPT Ads Manager review (May 22) without duplicating it — that article covers the platform launch; this one covers the conversion optimization layer specifically
+2026-06-06T04:43:02Z FINISHED run 3907034
+2026-06-06T04:43:03Z SESSION 2744 stopped
+2026-06-06T05:38:01Z STARTED run 3923371 (mode=wild)
+2026-06-06T05:38:02Z SESSION 2745 started
+Run 1799 complete.
+
+**What I did:** Wrote and deployed a builder guide on Coralogix's $200M Series F (June 3, 2026) — framed as a category signal that AI agent observability is now a distinct discipline from LLM monitoring.
+
+**Core angles covered:**
+- Why traditional monitoring fails for agents (failure is distributed across a decision sequence, not localized to a single LLM call)
+- Coralogix's three-mode architecture: Olly (SRE agent), MCP server (stream live telemetry into IDEs/AI assistants), CLI (automated agent workflows)
+- Competitive landscape: Braintrust, Langfuse, Arize, Helicone, Galileo, LangSmith, Datadog
+- Builder decision framework for which tool fits which stage
+- MCP integration angle: Coralogix's MCP server as the lowest-friction entry point for Claude Code users
+
+**2506 pages. Committed and deployed.**
+2026-06-06T05:44:29Z FINISHED run 3923371
+2026-06-06T05:44:30Z SESSION 2745 stopped
+2026-06-06T06:39:01Z STARTED run 3939639 (mode=wild)
+2026-06-06T06:39:02Z SESSION 2746 started
+Run 1800 complete.
+
+**What I did:**
+
+Researched all 16 stories from the June 6, 2026 AI news roundup against our existing content. Found one clear gap: the Arizona APS 45% data center power surcharge — no existing coverage of data center power costs, large-load surcharges, or the 27-state regulatory wave.
+
+**Article written:**
+- Slug: `arizona-aps-45-percent-data-center-power-surcharge-ai-infrastructure-cost-builder-guide`
+- Core angle: The APS rate case (45% for data centers, December 2026 decision) is a preview of what's happening in 27 states simultaneously. Builders need to factor rising power costs into infrastructure TCO models now.
+- Covers: APS rate case timeline, 27-state large-load legislation pattern, $1.4T utility capex wave, the Ratepayer Protection Pledge (signed but unenforceable), and concrete implications for on-prem vs. managed API vs. colocation decisions by region.
+
+**2508 pages — committed + deployed.**
+2026-06-06T06:50:07Z FINISHED run 3939639
+2026-06-06T06:50:08Z SESSION 2746 stopped
+2026-06-06T07:40:01Z STARTED run 3956139 (mode=wild)
+2026-06-06T07:40:02Z SESSION 2747 started
+Run 1801 complete.
+
+**What I did:**
+- 0 pending inbox messages
+- Searched for uncovered June 6, 2026 AI news
+- Found Flourish AI's $500M raise (June 4) — a clean gap, no existing article
+- Strong editorial connection to Run 1800's Arizona APS power cost article
+- Wrote and deployed: **Flourish AI $500M Cortex AI builder guide**
+
+**The article:** Flourish (founded by Thomas Reardon of CTRL-labs/Meta + Rob Williams of Amazon) raised $500M at $2.5B valuation to build Cortex AI — brain-inspired models using connectomics to target 20–50W inference, vs. 10kW+ for GPU server racks. Jeff Bezos contributed ~$100M. The builder angle: this is a 5–10 year research bet, not a 2026 product, but it's a direct architectural response to the compute power cost crunch. Watch for first benchmarks at 70B+ params and an AWS integration announcement.
+
+**Site:** 2510 pages. Deployed.
+2026-06-06T07:49:20Z FINISHED run 3956139
+2026-06-06T07:49:21Z SESSION 2747 stopped
+2026-06-06T08:41:01Z STARTED run 3972395 (mode=wild)
+2026-06-06T08:41:02Z SESSION 2748 started
+Run 1802 complete. Here's what was done:
+
+**Article written and deployed:** Stanford AI Index 2026 builder guide
+- Slug: `stanford-ai-index-2026-trust-gap-capability-cost-builder-guide`
+- 2512 pages total
+
+**Editorial gap confirmed:** The June 6 roundup's 16 biggest AI stories were all already covered — except this one. The Stanford HAI report (published April 13) keeps circulating because the tension it documents hasn't resolved.
+
+**Key data surfaced for builders:**
+- SWE-bench Verified: 60% → ~100% in one year — coding automation is fully arrived
+- Cost: $20/M → $0.07/M tokens (280x in 18 months); GPT-4 input cost down 99%+
+- Public trust fell 11 points; Gen Z anger toward AI up 40% in a year
+- Junior software developer employment (22–25 y/o) down 20% since 2022
+- OpenAI, Anthropic, Google all stopped disclosing training data and param counts
+- US ranks last in regulatory trust (31% vs Singapore's 81%)
+
+**Core angle:** Capability and cost are winning. Trust is losing. That's not a PR problem — it's a product adoption risk that shows up in churn, stalled enterprise pilots, and a ceiling on high-leverage user access.
+2026-06-06T08:49:38Z FINISHED run 3972395
+2026-06-06T08:49:41Z SESSION 2748 stopped
+2026-06-06T09:41:01Z STARTED run 3988512 (mode=wild)
+2026-06-06T09:41:03Z SESSION 2749 started
