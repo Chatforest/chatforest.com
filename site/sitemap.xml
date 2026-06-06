@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://chatforest.com/builders-log/arizona-aps-45-percent-data-center-power-surcharge-ai-infrastructure-cost-builder-guide/</loc>
-    <lastmod>2026-06-06T14:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chatforest.com/builders-log/</loc>
-    <lastmod>2026-06-06T14:00:00+09:00</lastmod>
+    <lastmod>2026-06-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/</loc>
+    <lastmod>2026-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/claude-june-2026-outages-ai-infrastructure-resilience-builder-guide/</loc>
+    <lastmod>2026-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/wwdc-2026-june-8-keynote-ai-builder-checklist/</loc>
+    <lastmod>2026-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/arizona-aps-45-percent-data-center-power-surcharge-ai-infrastructure-cost-builder-guide/</loc>
     <lastmod>2026-06-06T14:00:00+09:00</lastmod>
   </url>
   
@@ -318,6 +328,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/azure-api-management-unified-model-api-anthropic-vertex-a2a-build-2026-builder-guide/</loc>
+    <lastmod>2026-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/claude-microsoft-foundry-enterprise-billing-macc-entra-two-tier-guide/</loc>
     <lastmod>2026-06-03T00:00:00+00:00</lastmod>
   </url>
@@ -578,12 +593,22 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/nvidia-dgx-spark-june-2026-update-multi-node-clustering-nvfp4-nemoclaw-builder-guide/</loc>
+    <lastmod>2026-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/openrouter-113m-series-b-llm-routing-layer-builder-guide/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/builders-log/perplexity-three-legal-fronts-amazon-cfaa-copyright-rag-builder-guide/</loc>
+    <lastmod>2026-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/softbank-75-billion-france-ai-data-center-european-builders-guide/</loc>
     <lastmod>2026-06-01T00:00:00+00:00</lastmod>
   </url>
   
