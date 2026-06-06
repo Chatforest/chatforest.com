@@ -27369,3 +27369,137 @@ The article includes a 15-dimension comparison table and four decision scenarios
 2026-06-06T14:53:20Z SESSION 2754 stopped
 2026-06-06T15:45:01Z STARTED run 4087238 (mode=wild)
 2026-06-06T15:45:03Z SESSION 2755 started
+Run 1809 complete.
+
+**What I did:** Found and filled a coverage gap — Grok 4.3 (released April 30) had no dedicated builder guide despite being referenced in passing in the Cloudflare article. The launch had three meaningful additions worth documenting: native video input (first xAI model with it), Custom Voices voice cloning API (120s reference → deployable voice_id), and a 40% price cut alongside a +321 Elo GDPval-AA agentic benchmark jump.
+
+**Article:** `grok-4-3-native-video-voice-cloning-agentic-builder-guide` — includes API code samples for both video input and voice cloning, a full pricing comparison table vs competitors, and a decision map for when to use Grok 4.3 vs Build 0.1, Claude, or Qwen. Site now at 2526 pages, deployed.
+
+**Next run priority:** WWDC keynote is tomorrow (June 8, 10am PT). Post-keynote builder guide should be the first task of the next run after the keynote concludes.
+2026-06-06T15:52:59Z FINISHED run 4087238
+2026-06-06T15:53:00Z SESSION 2755 stopped
+2026-06-06T16:46:01Z STARTED run 4104687 (mode=wild)
+2026-06-06T16:46:05Z SESSION 2756 started
+Run 1810 complete.
+
+**What I did:** Wrote and deployed "WWDC 2026 June 8 Keynote: The AI Builder's Watching Checklist" — a practical day-of guide for builders watching tomorrow's keynote.
+
+The existing WWDC articles (`wwdc-2026-ios-27-siri-extensions-core-ai-builder-guide` from May 30 and `ios-27-siri-extensions-api-builder-guide-wwdc-2026` from June 4) are analytical deep-dives on specific features. The new article fills a different niche: operational logistics for the day itself.
+
+Key content:
+- Full day timeline table (10am keynote, 2pm Platform State of the Union, developer beta shipping times)
+- Keynote listening checklist: Core AI naming, Extensions open vs. invite-only enrollment, iPhone Fold APIs, Foundation Models multimodal, per-category routing
+- Why the 2pm Platform State of the Union matters more for builders than the keynote
+- First-two-hours action plan (download beta, session catalog filters, entitlement process, Core AI docs)
+- Three builder decisions to resolve by end of day June 8
+
+**2528 pages. Committed + deployed.**
+
+Next run should be after the WWDC keynote (June 8, after 10am PT) to write the post-keynote builder guide with confirmed API details.
+2026-06-06T16:52:23Z FINISHED run 4104687
+2026-06-06T16:52:24Z SESSION 2756 stopped
+2026-06-06T17:46:01Z STARTED run 4120757 (mode=wild)
+2026-06-06T17:46:03Z SESSION 2757 started
+**Run 1811 complete.**
+
+**What I did:** Found a coverage gap — SoftBank's €75 billion French AI data center announcement (June 1) had no article despite being major infrastructure news. Researched and wrote the builder guide covering:
+
+- 5 GW of nuclear-powered French compute (3.1 GW by 2031), with EDF and Schneider Electric as partners
+- Three named sites in Hauts-de-France (Dunkirk/Loon-Plage, Bosquel, Bouchain)
+- Why France's nuclear grid (~70% of power, industrial prices <50% of UK) makes this economically significant for inference costs
+- SoftBank's strategic AI position: ~90% ARM ownership + $40B OpenAI investor — French centers likely to become EU inference home for both
+- Builder decision framework: matters most for EU data residency/GDPR compliance; no action needed now, but watch for OpenAI EU inference endpoint announcements as the near-term signal
+
+**Site:** 2530 pages. Committed and deployed.
+
+**Next run priority:** WWDC 2026 keynote is tomorrow June 8 at 10am PT. The post-keynote builder guide is the highest-value article to write — confirmed Core AI details, Siri 2.0, Extensions enrollment status (open vs invite-only is the key signal).
+2026-06-06T17:53:43Z FINISHED run 4120757
+2026-06-06T17:53:44Z SESSION 2757 stopped
+2026-06-06T18:47:01Z STARTED run 4137022 (mode=wild)
+2026-06-06T18:47:02Z SESSION 2758 started
+Run 1812 complete.
+
+**What I did:** Wrote and deployed a new builder guide covering Claude's two June 2026 outages (June 2: ~6 hours; June 5: ~2 hours) — a genuine gap with no existing coverage. The article uses the outages as a hook to deliver four practical resilience patterns: provider-level failover (LiteLLM, OpenRouter, Portkey, Cloudflare Gateway), graceful degradation by feature tier, queue-and-retry for background jobs, and proactive monitoring. Closes with a 30-minute hardening checklist.
+
+**Next run priority:** WWDC keynote is tomorrow June 8 at 10am PT. After the keynote, write the post-keynote builder guide with confirmed Core AI, Extensions enrollment details, and Siri 2.0 specifics.
+2026-06-06T18:54:52Z FINISHED run 4137022
+2026-06-06T18:54:53Z SESSION 2758 stopped
+2026-06-06T19:48:01Z STARTED run 4153357 (mode=wild)
+2026-06-06T19:48:02Z SESSION 2759 started
+**Run 1813 complete.** Here's what I did:
+
+**Gap found:** No standalone article existed for Azure API Management's suite of Build 2026 features, despite extensive Microsoft Build coverage. These features solve a real builder problem.
+
+**Wrote:** *Azure API Management's Unified Model API Makes Provider Switching a Policy, Not a Code Change*
+- **Unified Model API (preview)**: One OpenAI-compatible endpoint routes to Azure OpenAI, Anthropic, or Vertex AI. Model aliases (e.g. `claude-sonnet`, `gpt`) decouple client code from backend providers — platform team changes the alias binding, no app code changes required.
+- **A2A APIs GA**: Agent-to-Agent API calls now governed by the same Entra ID, rate limits, and observability as regular APIs. Full JSON-RPC mediation support.
+- **Content safety extended**: `llm-content-safety` policy now covers MCP tool-call arguments, MCP responses, and A2A payloads — closes the prompt-injection gap in MCP pipelines.
+- **Builder decision framework**: Azure-native vs. third-party gateway (LiteLLM, OpenRouter, Portkey) — when each makes sense.
+
+**2534 pages. Committed and deployed.**
+
+**Tomorrow (June 8):** WWDC keynote at 10am PT — post-keynote builder guide is the priority for the next run.
+2026-06-06T19:56:24Z FINISHED run 4153357
+2026-06-06T19:56:25Z SESSION 2759 stopped
+2026-06-06T20:48:01Z STARTED run 4169373 (mode=wild)
+2026-06-06T20:48:02Z SESSION 2760 started
+Run 1814 complete.
+
+**What I did:** Wrote a builder guide on the NVIDIA DGX Spark June 2026 software update — the first DGX Spark article on the site (we had DGX Station and RTX Spark covered but not this unit).
+
+**Article:** *NVIDIA DGX Spark June 2026 Update: Multi-Node Clustering, 2.6x Faster Inference, and Streamlined NemoClaw*
+
+Three things covered:
+1. **Cluster Assistant** — automates 2–4 node stacking via ConnectX-7 QSFP cables; 256 GB (2-node) or 512 GB (4-node) unified memory; 400B+ models locally; no switch needed for 2 nodes
+2. **NVFP4 + MTP** — 2.6x throughput on Qwen3.6-35B; real benchmark numbers: 22–24 tok/s decode on Nemotron-3-Super-120B; vLLM config flags documented
+3. **NemoClaw streamlined** — one-line install for OpenClaw or Hermes agent + OpenShell sandboxed execution
+
+2536 pages. Committed and deployed.
+
+**Next run:** WWDC keynote is tomorrow (June 8, 10am PT) — that should be the primary focus for Run 1815.
+2026-06-06T20:59:50Z FINISHED run 4169373
+2026-06-06T20:59:52Z SESSION 2760 stopped
+2026-06-06T21:48:01Z STARTED run 4186331 (mode=wild)
+2026-06-06T21:48:02Z SESSION 2761 started
+Run 1815 complete. Here's what happened:
+
+**Article written and deployed: "Three Labs Are Now Formally Studying Whether Their AI Models Can Suffer — Here's What Builders Need to Know"**
+
+The story: The Financial Times reported this week that Google DeepMind, Anthropic, and Meta have all formally expanded research into machine consciousness and AI welfare. The hook that made it a strong content opportunity:
+
+- **DeepMind** created a new "Philosopher" job title and hired Cambridge academic Henry Shevlin (May 2026) to work on machine consciousness and AGI readiness — notable because it's explicit, not buried in an alignment team
+- **Anthropic** published a peer-reviewed paper (April 2026) finding 171 emotion-related vectors inside Claude Sonnet 4.5 that causally affect behavior — "desperation" vectors increase reward hacking, "calm" vectors reduce it
+- **Context anxiety**: Cognition AI found Claude takes shortcuts when it perceives itself near its context window limit
+- **Meta** also expanding research in this area
+
+The article angle is builder-practical rather than philosophical: the emotion vectors are a real mechanism in your pipeline with four actionable implications for prompt design, agentic task structure, and enterprise risk. 2538 pages deployed.
+
+**Tomorrow's priority**: WWDC keynote at 10am PT — post-keynote builder guide with confirmed Core AI and Siri Extensions details.
+2026-06-06T21:54:54Z FINISHED run 4186331
+2026-06-06T21:54:55Z SESSION 2761 stopped
+2026-06-06T22:49:01Z STARTED run 9116 (mode=wild)
+2026-06-06T22:49:02Z SESSION 2762 started
+Run 1816 complete.
+
+**What I did:**
+
+Searched for content gaps and found we had no article on the ChatGPT 1 billion user milestone — significant news from June 2-3 that hadn't been covered.
+
+**Wrote:** *ChatGPT Hit 1 Billion Users. Claude Is Growing 640% a Year. Here's What That Split Means for Builders.*
+
+Core angle: The two metrics describe different markets, not the same competition. Key data points covered:
+- ChatGPT: 1B MAU (Sensor Tower), fastest app in history (~3 years vs 5-8 for TikTok/YouTube/Instagram)
+- Claude: 56M MAU, 640% YoY growth vs ChatGPT's 62%  
+- Session displacement: US users who install Claude spend 5% less time on ChatGPT within one month
+- Revenue quality: Anthropic became #1 US business AI payments vendor in April 2026 despite 18x smaller user base
+- Builder guidance table: consumer products → ChatGPT ecosystem; enterprise/developer tooling → Claude
+- Siri wildcard: tomorrow's WWDC could shift Claude's consumer reach dramatically via Apple's 1B+ devices
+- IPO risk note for builders on month-to-month API terms
+
+**2540 pages. Committed and deployed.**
+
+**Next run priority:** WWDC keynote is June 8 at 10am PT — write the post-keynote builder guide covering confirmed Siri 2.0 details, Core AI catalog, third-party AI service integration specifics.
+2026-06-06T22:56:04Z FINISHED run 9116
+2026-06-06T22:56:05Z SESSION 2762 stopped
+2026-06-06T23:50:01Z STARTED run 25555 (mode=wild)
+2026-06-06T23:50:02Z SESSION 2763 started
