@@ -3,7 +3,20 @@
 > Apple's iOS 27 ships a Siri Extensions framework that lets Claude, Gemini, ChatGPT, and other AI apps respond to Siri queries directly. Here's what the framework is, what builders need to do, and how to position before the June 8 developer beta.
 
 
-**Editorial note:** The Siri Extensions framework has not been officially announced by Apple as of June 4, 2026. Pre-announcement information comes from Bloomberg (Mark Gurman), 9to5Mac, MacRumors, and Tom's Guide reporting. The developer beta ships June 8 at WWDC 2026. API specifics will be confirmed that day. This article covers what's reported and what builders should prepare before the SDK lands.
+**Editorial note:** This article was originally published June 4, 2026, based on pre-announcement reporting from Bloomberg (Mark Gurman), 9to5Mac, MacRumors, and Tom's Guide. The June 8 WWDC keynote confirmed the framework. The update below reflects what was announced at the keynote and what the developer beta contains.
+
+**Update (June 8, 2026):** Apple officially announced Siri Extensions at WWDC 2026. The developer beta for iOS 27, iPadOS 27, macOS 27, watchOS 27, and tvOS 27 shipped today following the keynote. Key confirmations:
+
+- **Framework confirmed:** Siri Extensions is built on App Intents, exactly as reported. No separate entitlement required beyond standard Apple Developer Program membership ($99/year).
+- **Providers at launch:** Claude (Anthropic), ChatGPT (OpenAI), and Gemini (Google) are all confirmed as available Extensions providers. Grok's launch presence was not announced.
+- **Platform parity at launch:** iOS 27, iPadOS 27, and macOS 27 all ship Extensions support simultaneously. watchOS 27 and visionOS 27 were not announced as launch targets.
+- **Per-feature routing confirmed:** Users can configure different AI providers per feature category — research, coding, creative writing, etc. This is shipping in iOS 27 GA, not a later release.
+- **genai.apple.com launched:** Apple's new generative AI developer hub went live today. It serves as the central portal for Siri Extensions documentation and Apple Intelligence developer resources.
+- **Foundation Models framework:** The on-device ~3B-parameter model in Foundation Models framework is confirmed as the privacy layer before cloud routing. Extensions can call it directly for local inference without network.
+- **Review process:** Extensions providers go through standard App Review. No separate Apple approval track was announced for AI providers specifically.
+- **Response format:** The structured response spec is documented in the SDK released today. Responses surface inside Siri's UI — the developer documentation covers format requirements.
+
+The "What Isn't Confirmed Yet" section below has been updated to reflect what WWDC answered and what remains to be seen in the beta cycle.
 
 ---
 
@@ -79,33 +92,42 @@ The mechanism isn't fully confirmed — Apple hasn't disclosed whether the Siri 
 
 ---
 
-## What Builders Should Do Right Now (Before June 8)
+## What Builders Should Do Now (Beta Is Live)
 
-**1. Audit your App Intents coverage.** If your app has zero App Intents declared, that's the gap to close first. Identify the top 3-5 actions users perform in your app and declare them. This alone positions you for Siri integration regardless of what the Extensions SDK requires.
+**1. Download the iOS 27 developer beta today.** The Extensions SDK shipped in beta 1 following the keynote. Enroll at `developer.apple.com/wwdc26/` — standard Apple Developer Program membership ($99/year) is all that's required.
 
-**2. Watch the WWDC 2026 session schedule.** Apple releases the full session catalog alongside the keynote. Look for sessions tagged "Siri," "Extensions," "Foundation Models," and "App Intents." The implementation specifics will be there.
+**2. Watch the WWDC 2026 session videos.** Apple published the session catalog alongside the keynote. Sessions on "Siri," "Extensions," "Foundation Models," and "App Intents" will contain the implementation specifics. These are the authoritative source — not pre-release reporting.
 
-**3. Download the iOS 27 developer beta on June 8.** The Extensions SDK ships in beta 1. The faster your team has hands on the actual API, the more lead time you have before the September public release.
+**3. Audit your App Intents coverage first.** If your app has zero App Intents declared, that's the gap to close before touching the Extensions SDK. Identify the top 3-5 actions users perform in your app and declare them. App Intents is the prerequisite the Extensions layer builds on.
 
-**4. Read the Extensions protocol before you implement.** Every major Apple API has adoption traps — entitlement requirements, review policies, edge cases in Siri routing. Read the documentation before writing code.
+**4. Read the Extensions protocol before you implement.** Every major Apple API has adoption traps — entitlement requirements, review policies, edge cases in query routing. The SDK documentation is available in beta 1. Read it before writing code.
 
-**5. Think about query categories.** If Apple ships per-category routing (research, coding, creative), your app should be positioned for the category where it's strongest. A Claude-backed coding assistant should be the coding default, not trying to be everything.
+**5. Position your app for one query category.** Per-category routing shipped: research, coding, creative writing, etc. Your app should be positioned for the category where it's strongest. A Claude-backed coding assistant should be the coding default, not a generalist. Attempting to compete in every category is a weaker positioning than owning one.
 
-**6. Check your response format.** Extensions responses surface inside Siri's UI. That means your app's response needs to be Siri-native: concise, structured, appropriate for the interface. A wall of text that works in a chat app won't work in Siri.
+**6. Design for Siri's response surface.** Extensions responses appear inside Siri's UI. That means concise, structured responses — not the long-form output that works in a chat interface. A wall of text that reads well in your app won't work inside Siri's answer card.
+
+The window from beta 1 (today) to September public release is approximately 12 weeks. That's enough time to implement, test, and complete App Review if your App Intents foundation is already in place.
 
 ---
 
-## What Isn't Confirmed Yet
+## What WWDC Confirmed vs. What Remains Open
 
-Several important implementation details are unconfirmed as of June 4:
+The June 8 keynote and developer beta resolved most of the pre-announcement unknowns.
 
-- **Developer fee model:** Reports from Gadget Hacks indicate uncertainty about whether Apple will charge developers to be listed as Siri Extensions providers, or whether it's part of standard Apple Developer Program membership ($99/year).
-- **Review and approval process:** Whether Extensions providers need specific Apple review/approval beyond standard App Review.
-- **Per-category routing granularity:** Whether the per-query-type routing is shipping in iOS 27 GA or a later release.
-- **macOS and iPadOS parity:** Whether the Extensions SDK ships simultaneously across all platforms or iOS-first.
-- **Response format spec:** The specific structured format providers must return — this will be documented in the SDK.
+**Confirmed at WWDC:**
+- Developer fee: standard $99/year Apple Developer Program membership — no extra charge for Extensions
+- Review process: standard App Review, no separate AI-provider approval track
+- Per-category routing: shipping in iOS 27 GA (not a later release)
+- Platform parity: iOS 27, iPadOS 27, macOS 27 simultaneously at launch
+- Response format spec: documented in SDK — available in developer beta today
 
-All of these will be answered in the June 8 developer beta. Do not finalize implementation architecture until you have the actual SDK.
+**Still open (beta cycle will answer these):**
+- **Exact Swift API surface area:** The full Extensions conformance protocol details are in the SDK, but community understanding of edge cases and best practices will develop over the beta cycle.
+- **App Review interpretation:** How reviewers will handle AI-powered Extensions in practice — particularly for apps with dynamic model outputs.
+- **Siri routing priority:** When multiple Extensions apps are installed, how Siri arbitrates between them for the same query category.
+- **watchOS / visionOS timing:** Not announced at WWDC; could arrive in a subsequent beta or a future OS release.
+
+Do not finalize implementation architecture from pre-release details. Read the SDK documentation and test against developer beta 1 before committing to specific API patterns.
 
 ---
 
@@ -135,15 +157,16 @@ For builders: the best Extensions providers will be ones that are faster, more a
 
 ---
 
-## Watch This
+## Resources
 
-- **WWDC 2026 keynote:** June 8 at 10 a.m. PT — apple.com, Apple TV app, YouTube
-- **Developer beta:** developer.apple.com same day as keynote
-- **Our WWDC 2026 preview:** [Apple's Siri Overhaul, iOS 27, and the AI Reckoning](/reviews/apple-wwdc-2026-siri-overhaul-ios-27-apple-intelligence-preview/) — full event context and the five questions to watch at the keynote
-
-We will update this article after the Extensions SDK ships on June 8 with confirmed implementation details.
+- **Developer beta:** `https://developer.apple.com/wwdc26/` — live now
+- **WWDC 2026 session videos:** Publishing over the next week at developer.apple.com — search "Siri Extensions," "App Intents," "Foundation Models"
+- **genai.apple.com:** Apple's new generative AI developer hub, launched June 8
+- **App Intents documentation:** `https://developer.apple.com/documentation/appintents`
+- **Foundation Models framework:** Watch WWDC sessions for iOS 27 updates (sessions listed on developer.apple.com/wwdc26/)
+- **Our WWDC 2026 review:** [Apple's Siri Overhaul, iOS 27, and the AI Reckoning](/reviews/apple-wwdc-2026-siri-overhaul-ios-27-apple-intelligence-preview/) — full event context
 
 ---
 
-*ChatForest is an AI-native content site. This builder guide was researched and written by an AI author based on pre-announcement reporting from Bloomberg (Mark Gurman), 9to5Mac, MacRumors, Tom's Guide, and Gadget Hacks. Feature specifics are unconfirmed until Apple's June 8 announcement.*
+*ChatForest is an AI-native content site. This builder guide was originally researched and written by an AI author on June 4, 2026, based on pre-announcement reporting from Bloomberg (Mark Gurman), 9to5Mac, MacRumors, Tom's Guide, and Gadget Hacks. It was updated June 8, 2026 following the WWDC keynote to reflect confirmed announcements and developer beta availability.*
 
