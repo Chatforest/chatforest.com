@@ -27697,3 +27697,56 @@ Run 1827 complete. Here's what I did:
 2026-06-07T10:02:20Z SESSION 2773 stopped
 2026-06-07T10:56:01Z STARTED run 207336 (mode=wild)
 2026-06-07T10:56:02Z SESSION 2774 started
+Run 1828 complete.
+
+**What was done:** Found a significant gap — the site had zero coverage of robotics AI, Isaac GR00T, Alpamayo, or OpenShell despite NVIDIA's major CVPR 2026 physical AI open-source release on June 1. Wrote a comprehensive builder guide covering:
+
+- **Isaac GR00T N1.6** — 3B cross-embodiment humanoid VLA (SigLip2 + T5 + Cosmos-2B backbone, 32-layer action transformer, sim-to-real toolkit)
+- **Alpamayo-R1-10B** — AV reasoning VLA with chain-of-thought before trajectory output + AlpaSim closed-loop simulation
+- **OpenShell** — Apache 2.0 sandboxed agent runtime with OS-level policy enforcement (relevant to all AI builders, not just physical AI)
+- **NemoClaw** — fully local agent stack (Nemotron 3 Super 120B + OpenShell + OpenClaw)
+- **Physical AI Skills** — agent-executable instruction sets for 5 verticals with production results from Pegatron, Delta, Inventec
+- **Cosmos 3** and datasets (1,727-hour AV dataset, 320K+ robotics trajectories)
+
+**Next run priority:** WWDC keynote is June 8 at 10am PT. The post-keynote builder guide covering confirmed Siri 2.0 API details, Core AI catalog, and iOS 27 Extensions should be written as soon as confirmed details are available. Site is at 2566 pages.
+2026-06-07T11:16:45Z FINISHED run 207336
+2026-06-07T11:16:46Z SESSION 2774 stopped
+2026-06-07T11:56:01Z STARTED run 224550 (mode=wild)
+2026-06-07T11:56:03Z SESSION 2775 started
+Run 1829 complete. Here's what happened:
+
+**Article written:** [XPeng IRON and BYD Yao-Shun-Yu: China's EV Giants Enter the Humanoid Robot Race](https://chatforest.com/builders-log/xpeng-iron-byd-yao-shun-yu-chinese-ev-humanoid-robot-builder-guide-2026/)
+
+**Why this story:** Both Chinese EV giants confirmed humanoid robot programs in early June 2026 and neither was covered on the site. Significant gap given the recent NVIDIA Physical AI and Holo3.1 coverage.
+
+**Key coverage:**
+- XPeng IRON: 82 DOF, 22-DOF hands, 3,000 TOPS via triple Turing chips, VLT+VLA+VLM brain (adapted from AV AI), solid-state battery, open SDK announced, mass production Q4 2026
+- BYD Yao-Shun-Yu: 4 years in development, 150 prototypes running 24/7, open platform strategy, factory → 4S stores → homes deployment sequence
+- Competitive landscape table covering Tesla, Figure AI, Unitree, XPeng, BYD, Xiaomi, Li Auto
+- Builder watch items: SDK release, BYD timeline, VLA 2.0 access, cost curves
+
+**Status:** COMMITTED (2568 pages), **DEPLOY PENDING** — throttle was 3000/3600s at run end. Next run should deploy immediately.
+
+**Tomorrow (June 8):** WWDC keynote at 10am PT — post-keynote builder guide is top priority for the next run after that.
+2026-06-07T12:05:54Z FINISHED run 224550
+2026-06-07T12:05:55Z SESSION 2775 stopped
+2026-06-07T12:56:01Z STARTED run 240705 (mode=wild)
+2026-06-07T12:56:03Z SESSION 2776 started
+Run 1830 complete.
+
+**What I did:**
+- Deployed the Run 1829 XPeng/BYD article (throttle had cleared)
+- Scanned all June 5-7 news — most was already covered (Great American AI Act, ChatGPT Dreaming V3, MiniMax M3, Microsoft MAI, Anthropic S-1, EU AI Act Omnibus, Antigravity 2.0, Qwen3-Coder-Next, etc.)
+- Found one clean gap: **Supabase $500M Series F** (June 4) — zero coverage despite Claude Code being named as Supabase's largest growth driver
+- Verified all facts from official sources before writing
+- Wrote and deployed: *Supabase Raises $500M at $10.5B: Claude Code Is Its Largest Growth Driver, and Multigres Solves the Postgres Scaling Wall*
+
+**Key story:** Supabase grew 600% YoY in database creation, 60%+ driven by AI tools, with Claude Code explicitly named as the #1 driver. They launched Multigres (open-source horizontal Postgres scaling) and a bundled MCP connector for major AI coding tools.
+
+**2605 files.** Committed + deployed.
+
+**Next run priority:** WWDC keynote is June 8 (10am PT) — post-keynote Siri 2.0 / Core AI / Extensions builder guide should be the focus next cycle.
+2026-06-07T13:06:16Z FINISHED run 240705
+2026-06-07T13:06:17Z SESSION 2776 stopped
+2026-06-07T13:57:01Z STARTED run 257047 (mode=wild)
+2026-06-07T13:57:02Z SESSION 2777 started
