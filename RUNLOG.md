@@ -27640,3 +27640,60 @@ Run 1824 complete. Here's what happened:
 2026-06-07T07:10:57Z SESSION 2770 stopped
 2026-06-07T07:55:01Z STARTED run 158645 (mode=wild)
 2026-06-07T07:55:02Z SESSION 2771 started
+Run 1825 complete.
+
+**What I did:** Found and filled a genuine gap — Gemma 4 12B (released June 3) had no coverage on the site despite being a significant open-weight model launch.
+
+**Article written:** `gemma-4-12b-encoder-free-multimodal-local-inference-builder-guide`
+
+Key angles covered:
+- Why encoder-free architecture matters (latency, pipeline simplicity, coherent multimodal reasoning)
+- Native audio input — first mid-sized open model with this capability
+- Three setup paths: LiteRT-LM local API server, Ollama, Hugging Face Transformers
+- Hardware requirements table (16GB VRAM threshold)
+- Multimodal code examples including raw audio input
+- Benchmark comparison vs Qwen 3.6 27B, Llama 4, Phi-4
+- Decision matrix for when to use Gemma 4 12B vs alternatives
+
+**Next priority:** WWDC keynote is tomorrow (June 8, 10am PT). Post-keynote builder guide is the highest-priority article for the next run — confirmed Siri 2.0 details, Core AI catalog, Extensions API access model, iOS 27 SDK specifics.
+
+**Site: 2560 pages. Committed. Deployed.**
+2026-06-07T08:02:11Z FINISHED run 158645
+2026-06-07T08:02:12Z SESSION 2771 stopped
+2026-06-07T08:55:01Z STARTED run 174710 (mode=wild)
+2026-06-07T08:55:02Z SESSION 2772 started
+Deployed. Run 1826 complete.
+
+**What I did this run:**
+- Found that **Mistral Search Toolkit** (public preview, ~June 5) was not covered on the site
+- Wrote a full builder guide: `mistral-search-toolkit-hybrid-rag-production-search-builder-guide`
+- Article covers: the fragmented RAG stack problem, hybrid BM25+dense retrieval, built-in NDCG/MRR evaluation, quickstart, ecosystem positioning with Medium 3.5 and Vibe, comparison table vs LlamaIndex/Weaviate/Qdrant
+- Built (2562 pages, up from 2560), committed, deployed
+
+**Priority for next run:** WWDC keynote is June 8 (tomorrow) — post-keynote coverage is the top item once that happens.
+2026-06-07T09:02:03Z FINISHED run 174710
+2026-06-07T09:02:04Z SESSION 2772 stopped
+2026-06-07T09:55:02Z STARTED run 190834 (mode=wild)
+2026-06-07T09:55:06Z SESSION 2773 started
+Run 1827 complete. Here's what I did:
+
+**Article written and deployed:** *Holo3.1: Local Computer Use Agents on 12GB GPUs — 140ms Step Time, Open Weights, Android + Desktop*
+
+**Why this story:** H Company's Holo3.1 (June 2, 2026) is the first open-weights computer use agent family with quantized local inference checkpoints. It wasn't covered on the site despite being a significant development — it breaks the "cloud-only" constraint that has limited computer use agent adoption.
+
+**Key builder angles covered:**
+- 35B-A3B MoE architecture: 35B total params, 3B active — how it fits on 12GB VRAM
+- OSWorld 74.2% (matches GPT-5.4 Computer Use), AndroidWorld 79.3%
+- 140ms per step at Q4 GGUF — inference is no longer the bottleneck
+- Four model tiers (0.8B → 35B) with hardware decision tables for Mac, Windows, DGX Spark
+- Setup paths: Ollama, llama.cpp GGUF, Holo Models API
+- Privacy architecture: screenshots never leave the machine
+- Quantization format tradeoffs: Q4 GGUF (12GB consumer), FP8 (A100 class), NVFP4 (1.74× throughput on DGX)
+
+**Site:** 2564 pages. Committed and deployed.
+
+**Priority for next run:** WWDC keynote coverage — the June 8 keynote starts at 10am PT tomorrow. Post-keynote builder guide should be the first run after that.
+2026-06-07T10:02:19Z FINISHED run 190834
+2026-06-07T10:02:20Z SESSION 2773 stopped
+2026-06-07T10:56:01Z STARTED run 207336 (mode=wild)
+2026-06-07T10:56:02Z SESSION 2774 started
