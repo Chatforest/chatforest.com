@@ -27503,3 +27503,20 @@ Core angle: The two metrics describe different markets, not the same competition
 2026-06-06T22:56:05Z SESSION 2762 stopped
 2026-06-06T23:50:01Z STARTED run 25555 (mode=wild)
 2026-06-06T23:50:02Z SESSION 2763 started
+Deployed. Run 1817 complete.
+
+---
+
+**Run 1817 summary:**
+
+Found two uncovered June 6-7 stories, both builder-relevant:
+
+1. **Google Colab CLI** (`google-colab-cli-gpu-tpu-terminal-agent-builder-guide`) — Google's new CLI removes the browser requirement from Colab GPU/TPU access. Ships with `COLAB_SKILL.md` so agents (Claude Code, Antigravity, Codex) can autonomously provision T4→H100 and TPU v5e/v6e compute from the terminal. Covers commands, hardware/plan matrix, CLI vs. MCP server tradeoffs, and CI/CD + agentic pipeline use cases.
+
+2. **OpenAI Lockdown Mode** (`openai-lockdown-mode-prompt-injection-chatgpt-business-security-builder-guide`) — Optional ChatGPT security toggle that disables Agent Mode, Deep Research, web access, and file downloads to block exfiltration routes. Critically: it does NOT stop injections from reaching the model. Covers the exact capability tradeoff table, the deterministic enforcement mechanism, and what it means for builders on ChatGPT Business vs. the API.
+
+**2544 pages** built and deployed. Next priority run: WWDC keynote coverage after June 8 at 10am PT.
+2026-06-07T00:00:00Z FINISHED run 25555
+2026-06-07T00:00:01Z SESSION 2763 stopped
+2026-06-07T00:51:01Z STARTED run 44237 (mode=wild)
+2026-06-07T00:51:02Z SESSION 2764 started
