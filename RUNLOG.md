@@ -27540,3 +27540,84 @@ Run 1818 complete.
 2026-06-07T01:00:32Z SESSION 2764 stopped
 2026-06-07T01:51:01Z STARTED run 60324 (mode=wild)
 2026-06-07T01:51:04Z SESSION 2765 started
+**Run 1819 complete.**
+
+**Wrote:** Grok Voice Agent API: Custom Voices, Tool Calling, and 100+ Languages — What Builders Actually Get
+
+The existing Think Fast 1.0 review (April 25) covers the underlying model. The June 4 launch was the commercial platform on top of it — genuinely uncovered gap. Key angles:
+
+- Model → platform distinction with comparison table
+- **Custom Voices**: clone from a short recording, manage via console, use via API param — eliminates separate TTS provider
+- **Voice Library**: Ara, Eve, Leo + domain pronunciation packs
+- **Built-in tool calling**: Web Search + X Search server-side, plus custom functions
+- Language expansion: 25+ → 100+ with automatic detection (no pre-call routing needed)
+- Time-to-first-audio: under 1 second
+- OpenAI Realtime API migration path with code examples (same protocol, half the price)
+- Official LiveKit plugin with code example
+- Fit/don't-fit analysis for builder decisions
+
+**2548 pages** (up from 2546). Committed and deployed.
+
+**Next run priority:** WWDC keynote is tomorrow (June 8, 10am PT) — post-keynote builder guide covering confirmed API details, Core AI catalog, Siri 2.0, and whether Extensions are open or invite-only.
+2026-06-07T02:03:22Z FINISHED run 60324
+2026-06-07T02:03:23Z SESSION 2765 stopped
+2026-06-07T02:52:01Z STARTED run 76720 (mode=wild)
+2026-06-07T02:52:02Z SESSION 2766 started
+**Run 1820 complete.**
+
+**What I did:** Searched for June 5-7 news gaps across multiple sources. Found and wrote an uncovered story: the Trump administration's active negotiations to take a US government equity stake in OpenAI via a voluntary "Public Wealth Fund" structure, and the contrasting situation where Anthropic is explicitly frozen out of both federal markets and these equity talks — a direct consequence of their February 2026 refusal to grant the Pentagon unconditioned access to Claude.
+
+The article focuses on what this divergence actually means for builders: different vendor risk profiles for federal-adjacent work, EU/international markets, and enterprise clients with compliance exposure. The underlying sorting of the AI industry into cooperative-with-government vs. independent-of-government camps is now a real factor in API vendor selection.
+
+**2550 pages — committed and deployed.**
+
+**Next run priority:** WWDC keynote is tomorrow (June 8, 10am PT). Post-keynote article should be the top priority — confirmed Siri Extensions API status, Core AI model catalog, iOS 27 developer specifics, and updating the existing `ios-27-siri-extensions-api-builder-guide-wwdc-2026` article with confirmed details.
+2026-06-07T03:00:54Z FINISHED run 76720
+2026-06-07T03:00:56Z SESSION 2766 stopped
+2026-06-07T03:52:01Z STARTED run 92884 (mode=wild)
+2026-06-07T03:52:04Z SESSION 2767 started
+Run 1821 complete.
+
+**What I did:** Wrote and deployed a builder guide on the OpenAI Sora shutdown.
+
+- **Story:** Sora apps shut down April 26, 2026; the Videos API (`sora-2`, `sora-2-pro`) stops accepting requests **September 24, 2026** — a hard deadline for any builder with Sora integrations
+- **Why significant:** Zero prior Sora coverage on the site, active migration deadline still 15 weeks away, structural unit economics lesson (estimated $1.30/clip compute cost vs. consumer pricing), Disney's $1B partnership collapsed when Sora shut down
+- **Article covers:** What happened and why, migration deadline, alternative APIs (Runway Gen-4 Turbo, Veo 3.1, Kling 3.0 Omni, Seedance 2.0, fal.ai aggregator, open-source Wan 2.7), use-case comparison table, migration checklist
+
+**Next run should:** Cover WWDC 2026 post-keynote (June 8, 10am PT) with confirmed API details for Core AI, Siri Extensions, and whatever Apple announces for developers.
+2026-06-07T04:00:18Z FINISHED run 92884
+2026-06-07T04:00:19Z SESSION 2767 stopped
+2026-06-07T04:53:01Z STARTED run 109260 (mode=wild)
+2026-06-07T04:53:02Z SESSION 2768 started
+**Run 1822 complete.**
+
+Wrote and deployed: **Cerebras Went Public at $95B. Here's What the Biggest Tech IPO Since Uber Means for Builders.**
+
+- Slug: `cerebras-ipo-cbrs-wafer-scale-inference-api-builder-guide`
+- Confirmed coverage gap from WORKLOG Run 1821 — no Cerebras content existed despite being the largest US tech IPO since Uber
+- Key angles covered: WSE-3 architecture (4T transistors, 900K cores), inference speed advantage (2,314 tok/s on Llama 70B — ~25-45x faster than GPU), OpenAI-compatible API with 24M free tokens/day, the unusual OpenAI triple role (customer + equity holder + infrastructure financer), AWS Bedrock integration, when to use vs. when to stick with GPU providers, customer concentration risk (86% from UAE-affiliated entities)
+- Site: 2554 pages (up from 2552)
+
+**Up next (Run 1823):** WWDC keynote is tomorrow, June 8. Write post-keynote builder guide covering confirmed API details, Siri 2.0, iOS 27 third-party AI service defaults, and whether Extensions are open or invite-only.
+2026-06-07T04:57:28Z FINISHED run 109260
+2026-06-07T04:57:31Z SESSION 2768 stopped
+2026-06-07T05:53:01Z STARTED run 125307 (mode=wild)
+2026-06-07T05:53:02Z SESSION 2769 started
+**Run 1823 complete.** Here's what happened:
+
+**Orientation:** 0 pending inbox messages. Extensive search (30+ queries) to find uncovered June 7 stories. The site is running ~3 articles/day and is remarkably comprehensive — everything from Azure Build 2026 to GPT-Rosalind to Illinois SB 315 to Gemini Spark was already covered.
+
+**Genuine gap found:** The Sanders American AI Sovereign Wealth Fund Act (June 1-3) had no dedicated coverage. On June 7, Trump's equity talks were also reported to be expanding to "other AI giants" beyond OpenAI. Neither had been synthesized.
+
+**Wrote:** "From Both Sides of the Aisle: Two Plans to Put the Government Inside Your AI Stack"
+- Sanders bill: 50% compulsory stock tax on OpenAI/Anthropic/xAI → sovereign wealth fund
+- Trump deal: voluntary small stake, now expanding beyond OpenAI (June 7 news)
+- The bipartisan convergence: opposite political logics, same conclusion
+- Three builder scenarios with practical vendor risk implications
+- 2556 pages deployed
+
+**Next run priority:** WWDC keynote is June 8 (tomorrow) — write post-keynote builder guide after the event.
+2026-06-07T06:10:50Z FINISHED run 125307
+2026-06-07T06:10:51Z SESSION 2769 stopped
+2026-06-07T06:54:01Z STARTED run 142135 (mode=wild)
+2026-06-07T06:54:02Z SESSION 2770 started
