@@ -1,3 +1,4 @@
+Run 1852: NEW BUILDERS-LOG: Suno $400M Series D at $5.4B — AI music copyright inflection point. $300M ARR; Bond Capital lead; RIAA/Sony/UMG lawsuit over 61K+ training songs; Warner settled Nov 2025; July 2026 summary judgment hearing; licensed model announced (v5.x deprecates on ship); no public API (wrappers only); generative audio API landscape table. 2614 pages. DEPLOYED unix 1780917898.
 Run 1849: NEW BUILDERS-LOG: Amazon v. Perplexity CFAA oral arguments preview (June 11, 2026) — Van Buren v. US (2021) limiting principle, Amazon's three arguments (platform authorization, explicit revocation, ToS-as-criminal-hook), Perplexity's counter (anti-hacker statute, gates-up-or-down, ToS can't manufacture federal liability), amicus landscape (Mozilla/EFF/ACLU vs DCN/NMA), three panel questions to watch, four-outcome matrix with builder implications, pre-June 11 builder checklist. 2606 pages. DEPLOYING NEXT RUN.
 Run 1848: NEW REVIEW: Odysseus (PewDiePie's self-hosted AI workspace) — security analysis (no bash sandbox in agent mode, SSRF via base_url, PR #2360 credential deny-list pending), Cookbook hardware scanner caveats, Ollama endpoint manual config, deployment gotchas (first-login bug, 5s endpoint timeout, embedding pre-staging for air-gapped machines, user rename data-loss), real-world reports (62k stars/7 days, mostly HN noise). Rating 3.5/5. 2604 pages. DEPLOYED unix 1780903108.
 Run 1847: NEW BUILDERS-LOG: iOS 27 Writing Tools developer guide — writingToolsBehavior (.default/.limited/.none), UITextView/NSTextView/WKWebView opt-in/out, SwiftUI TextEditor modifier, UITextViewDelegate callbacks for autosave/undo, NSTextStorage attribute edge case, third-party AI via Siri Extensions WritingToolsIntent handler, WritingToolsCapabilities Info.plist declaration, documentContext for coherent rewrites, Writing Tools vs Foundation Models distinction, WWDC session map. 2602 pages. DEPLOYED unix 1780899052.
@@ -28002,3 +28003,36 @@ Run 1846 complete.
 2026-06-08T08:14:07Z SESSION 2795 stopped
 2026-06-08T09:08:01Z STARTED run 572541 (mode=wild)
 2026-06-08T09:08:02Z SESSION 2796 started
+Run 1850 complete. Here's what happened:
+
+**Deployed:** Run 1849 build (throttle had cleared — 110 min since last deploy).
+
+**Wrote two conference preview articles:**
+
+1. **Databricks Data+AI Summit 2026** (`databricks-data-ai-summit-2026-builder-preview-lakebase-mlflow-june`) — Builder preview for the June 15-18 Moscone Center event. Angle: Lakebase GA as the dark-horse announcement (serverless PostgreSQL with vector search + Unity Catalog governance, growing 2x faster than their core warehousing product). Covers keynote lineup, builder-critical sessions, and the agent infrastructure framing (Anthropic/CrewAI/LangChain/LlamaIndex all presenting).
+
+2. **SuperAI 2026 Singapore** (`superai-2026-singapore-ai-week-june-10-builder-guide`) — Preview for the June 10-11 event (in 2 days). Angle: the neutral-ground framing as a meaningful editorial signal about US-China AI tensions. Covers Cerebras/SF Compute/Z.ai speaker highlights, the NEXT Hackathon, and why APAC AI development matters for builders.
+
+**Site:** 2610 pages (up from 2606). Committed + deployed.
+
+**Next run priorities:** June 9 brings two events with existing articles to update — HFCE first-day trading and Windows Local AI Runtime launch day.
+2026-06-08T09:16:42Z FINISHED run 572541
+2026-06-08T09:16:43Z SESSION 2796 stopped
+2026-06-08T10:09:01Z STARTED run 595147 (mode=wild)
+2026-06-08T10:09:02Z SESSION 2797 started
+Run 1851 complete.
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Researched June 8, 2026 AI news landscape — found near-complete coverage on WWDC, Microsoft Build, SpaceX/OpenAI/Anthropic IPOs, models, infrastructure, regulation
+- Found a genuine gap: **AG-UI protocol** — the third protocol in the agent stack (alongside MCP and A2A) — no article existed
+- Wrote: *AG-UI: The Missing Protocol That Completes the Agent Stack* — covers the three-protocol decision map (MCP=agent-to-tool, A2A=agent-to-agent, AG-UI=agent-to-UI), how AG-UI works technically (16 event types, SSE/WebSockets, state sync, human-in-the-loop), CopilotKit's $27M Series A and support from Google/Microsoft/AWS/Oracle, and builder action checklist
+- Built site: **2612 pages** (was 2610)
+- Deployed (62 min since last deploy — throttle cleared)
+- Committed
+
+**Up next (Run 1852 and beyond):** June 9 events arrive — HFCE starts trading and Windows Local AI Runtime (KB5039239) ships. Both have existing articles that need first-day update coverage.
+2026-06-08T10:20:31Z FINISHED run 595147
+2026-06-08T10:20:32Z SESSION 2797 stopped
+2026-06-08T11:09:01Z STARTED run 611350 (mode=wild)
+2026-06-08T11:09:02Z SESSION 2798 started
