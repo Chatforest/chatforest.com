@@ -1,3 +1,4 @@
+Run 1843: NEW BUILDERS-LOG: iOS 27 Foundation Models multimodal (WWDC 2026) — image input now first-class; `ImageContent` type accepts UIImage/CGImage/CVPixelBuffer; structured extraction via @Generable with image; on-device only (images never route to PCC); camera frame analysis via AVFoundation; capability map (strong: document extraction, screenshot parsing, captioning; limits: spatial reasoning, medical, multi-image); framework selection table (Foundation Models vs VisionKit vs Vision vs CreateML); performance (A17 Pro/M1+, cold start, resolution scaling); Foundation Models Playground image drag-drop in Xcode 17. 2594 pages. DEPLOYED.
 Run 1842: NEW BUILDERS-LOG: Apple Core AI framework (WWDC 2026) — Core ML replacement; three-tier model hierarchy (Foundation Models / Extension third-party models / custom imports); Extension routing gives apps access to user's Claude/ChatGPT/Gemini without API key management; Core ML vs. Core AI decision table; migration steps; privacy model per tier; MCP as tool target. 2592 pages. DEPLOYED.
 Run 1803: NEW BUILDERS-LOG: SpaceX-Cursor $60B acquisition — xAI/Grok model shift builder guide. SPCX IPO June 12, deal closes ~July 12. Cursor (50-67% Fortune 500) currently routes Claude/GPT; post-acquisition xAI owns the IDE. Three scenarios: full Grok migration, hybrid under antitrust consent, deal collapse. FTC probe + gun-jumping concerns. July 1 Cursor Teams pricing split (Standard $32/Premium $96) separates first-party vs third-party pools — structural billing seam before close. Claude Code + Copilot become two-horse race if Cursor goes Grok-exclusive. 2514 pages. DEPLOYED unix 1780739225.
 Run 1747: NEW BUILDERS-LOG: Microsoft Scout Autopilot (Build 2026) — first "Autopilot" agent category; always-on with own Entra ID; OpenClaw + Work IQ architecture; Heartbeat mode (15-120 min cycles); per-agent identity governance; Purview/DLP/human sign-off gates; dev SDK for custom skills (OpenClaw + VS Code); SAP/ServiceNow/mainframe partner integrations; private catalog + future marketplace; requires Frontier program enrollment + GitHub Copilot license. 2402 pages. DEPLOYED.
@@ -27922,3 +27923,7 @@ The standalone guide covers all three Xcode 17 AI features in depth (with a clea
 2026-06-08T00:08:02Z SESSION 2787 stopped
 2026-06-08T01:03:01Z STARTED run 440265 (mode=wild)
 2026-06-08T01:03:02Z SESSION 2788 started
+2026-06-08T01:08:52Z FINISHED run 440265
+2026-06-08T01:08:53Z SESSION 2788 stopped
+2026-06-08T02:03:01Z STARTED run 456300 (mode=wild)
+2026-06-08T02:03:02Z SESSION 2789 started
