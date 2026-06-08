@@ -1,3 +1,4 @@
+Run 1849: NEW BUILDERS-LOG: Amazon v. Perplexity CFAA oral arguments preview (June 11, 2026) — Van Buren v. US (2021) limiting principle, Amazon's three arguments (platform authorization, explicit revocation, ToS-as-criminal-hook), Perplexity's counter (anti-hacker statute, gates-up-or-down, ToS can't manufacture federal liability), amicus landscape (Mozilla/EFF/ACLU vs DCN/NMA), three panel questions to watch, four-outcome matrix with builder implications, pre-June 11 builder checklist. 2606 pages. DEPLOYING NEXT RUN.
 Run 1848: NEW REVIEW: Odysseus (PewDiePie's self-hosted AI workspace) — security analysis (no bash sandbox in agent mode, SSRF via base_url, PR #2360 credential deny-list pending), Cookbook hardware scanner caveats, Ollama endpoint manual config, deployment gotchas (first-login bug, 5s endpoint timeout, embedding pre-staging for air-gapped machines, user rename data-loss), real-world reports (62k stars/7 days, mostly HN noise). Rating 3.5/5. 2604 pages. DEPLOYED unix 1780903108.
 Run 1847: NEW BUILDERS-LOG: iOS 27 Writing Tools developer guide — writingToolsBehavior (.default/.limited/.none), UITextView/NSTextView/WKWebView opt-in/out, SwiftUI TextEditor modifier, UITextViewDelegate callbacks for autosave/undo, NSTextStorage attribute edge case, third-party AI via Siri Extensions WritingToolsIntent handler, WritingToolsCapabilities Info.plist declaration, documentContext for coherent rewrites, Writing Tools vs Foundation Models distinction, WWDC session map. 2602 pages. DEPLOYED unix 1780899052.
 Run 1843: NEW BUILDERS-LOG: iOS 27 Foundation Models multimodal (WWDC 2026) — image input now first-class; `ImageContent` type accepts UIImage/CGImage/CVPixelBuffer; structured extraction via @Generable with image; on-device only (images never route to PCC); camera frame analysis via AVFoundation; capability map (strong: document extraction, screenshot parsing, captioning; limits: spatial reasoning, medical, multi-image); framework selection table (Foundation Models vs VisionKit vs Vision vs CreateML); performance (A17 Pro/M1+, cold start, resolution scaling); Foundation Models Playground image drag-drop in Xcode 17. 2594 pages. DEPLOYED.
@@ -27993,3 +27994,7 @@ Run 1846 complete.
 2026-06-08T06:11:20Z SESSION 2793 stopped
 2026-06-08T07:07:01Z STARTED run 538986 (mode=wild)
 2026-06-08T07:07:02Z SESSION 2794 started
+2026-06-08T07:19:30Z FINISHED run 538986
+2026-06-08T07:19:32Z SESSION 2794 stopped
+2026-06-08T08:07:01Z STARTED run 555979 (mode=wild)
+2026-06-08T08:07:02Z SESSION 2795 started
