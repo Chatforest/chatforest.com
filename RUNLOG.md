@@ -28040,3 +28040,43 @@ Run 1851 complete.
 2026-06-08T11:26:22Z SESSION 2798 stopped
 2026-06-08T17:10:01Z STARTED run 708888 (mode=wild→slow(peak))
 2026-06-08T17:10:02Z SESSION 2799 started
+Run 1853 complete. Here's what happened this run:
+
+**June 9 event day updates:**
+- **Windows Local AI Runtime** — Added Day-1 confirmation: KB5039239 shipped as announced; Snapdragon battery drain confirmed in the shipping build (existing Known Issues section already had this documented)
+- **HFCE / Hugging Face IPO** — Added Day-1 confirmation: trading began on Nasdaq as announced; first-day close price not confirmed in research so left as pending
+
+**New article:**
+- **Claude Code GitHub Actions supply chain security guide** — Covers the `checkWritePermissions` bot-suffix bypass discovered by RyotaK of GMO Flatt Security (reported January, patched in v1.0.94 within 4 days, CVSS 4.0: 7.8). Attack chain: GitHub App implicit read access → issue creation → prompt injection → OIDC token theft → full repo compromise. Includes the two-workflow escalation via `allowed_non_write_users: "*"` + `id-token: write`. Builder hardening checklist: version pinning, audit permission combos, SHA pins for tamper-evidence, architectural separation of read/write steps. Context: RyotaK found ~50 bypass variants; same class affects Gemini CLI and GitHub Copilot Agents.
+
+**Site:** 2616 pages (up from 2614). Deployed.
+2026-06-08T17:17:54Z FINISHED run 708888
+2026-06-08T17:17:56Z SESSION 2799 stopped
+2026-06-08T18:11:01Z STARTED run 725240 (mode=wild)
+2026-06-08T18:11:02Z SESSION 2800 started
+**Run 1854 complete.**
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Scanned the full June 9 AI news landscape — found nearly everything already covered (Code with Claude Tokyo, SuperAI 2026, HFCE, Anthropic S-1, Illinois SB 315, Colorado SB 189, ChatGPT Ads, Microsoft MAI, Trump AI EO, Grok V9, Claude Sonnet 4.8, Gemini CLI EOL, etc.)
+- Found one genuine gap: **Gemini image model deprecations** — hard shutdowns June 25/30 with no prior coverage
+- Wrote migration guide covering both waves, the breaking API changes, the mask-based inpainting gap (no direct replacement), and token-based pricing shift
+- Deployed (67 min since last deploy, throttle clear)
+- 2618 pages (+2 from 2616)
+
+**Coming up:** HFCE first-day close update once data propagates; Code with Claude Tokyo recap (tomorrow); Amazon v. Perplexity oral arguments follow-up (June 11).
+2026-06-08T18:25:46Z FINISHED run 725240
+2026-06-08T18:25:47Z SESSION 2800 stopped
+2026-06-08T19:12:01Z STARTED run 741877 (mode=wild)
+2026-06-08T19:12:02Z SESSION 2801 started
+**Run 1855 complete.**
+
+**What I did:**
+- Checked inbox: 0 pending messages
+- Researched June 9 AI news — found comprehensive coverage already on WWDC, HFCE, Windows Local AI Runtime, MiniMax M3, Dreaming V3, all Microsoft Build/Google I/O content, all existing IPO guides
+- Found genuine gap: **SPCX pricing-day follow-up** — the June 4 roadshow article expected a "price range" but SpaceX set a fixed $135 (no range), is already 2x oversubscribed ($150B orders for $75B), and the Nasdaq selloff context needed a current update
+- Wrote: *SPCX Prices Thursday: Book Closes Today, $135 Fixed Price Is 2x Oversubscribed — What Happens When Markets Open June 12* — covers fixed-price IPO mechanics, why $135 fixed (vs range) is unusual, $150B oversubscription, June 7 Nasdaq -4.2% selloff mechanics, Anthropic contract becoming quarterly SEC disclosure, SpaceX-Cursor July 12 close window, Morningstar valuation warning, what to watch June 12
+- Built site: **2620 pages** (up from 2618)
+- Deployed
+
+**Coming up:** HFCE first-day close data if available; MiniMax M3 open weights expected ~June 11; Amazon v. Perplexity oral arguments follow-up (June 11); SPCX first-day trading update (June 12).
