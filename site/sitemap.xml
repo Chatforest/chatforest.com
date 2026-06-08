@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/builders-log/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-06-08T10:00:00+09:00</lastmod>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/claude-code-github-action-prompt-injection-supply-chain-security-builder-guide/</loc>
+    <lastmod>2026-06-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -54,11 +64,6 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/autoscientist-adaption-closed-loop-model-training-challenge-builder-guide/</loc>
-    <lastmod>2026-06-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/builders-log/</loc>
     <lastmod>2026-06-08T00:00:00+00:00</lastmod>
   </url>
   

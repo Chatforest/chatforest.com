@@ -5,6 +5,8 @@
 
 **At a glance:** Ships June 9, 2026 as part of the Windows 11 24H2 cumulative AI runtime update. HAIEnv model-sharing service: GA. Phi Silica GPU expansion: GA. Speech Recognition API: public preview. Agent Launchers on Windows (Local Agent SDK, `agent.json` manifest): public preview. Microsoft Execution Containers (MXC) sandboxing: early preview only, not GA. Windows AI Runtime overall: developer preview. Part of our **[Builder's Log](/builders-log/)**.
 
+> **Update — June 9, 2026:** KB5039239 shipped today as announced. The Snapdragon battery drain behavior described in the Known Issues section below is confirmed in the shipping build. Microsoft has acknowledged the issue and is targeting a fix in the July cumulative update. If you are on a Snapdragon Copilot+ laptop, factor this into your test environment planning.
+
 ---
 
 The June 9 update is not a routine Patch Tuesday. Microsoft began decoupling AI component updates from the monthly security patch cycle at the start of 2026, and this update is the first significant delivery on that promise. Several things that Build 2026 announced as "coming soon" actually ship Tuesday.

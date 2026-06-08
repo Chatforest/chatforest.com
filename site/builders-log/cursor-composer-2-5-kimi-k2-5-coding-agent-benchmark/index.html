@@ -167,6 +167,13 @@
   <h2 class="section-heading">More Guides</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Builder Guide</span> <span>2026-06-09 00:00:00</span></div>
+  <h3><a href="/builders-log/claude-code-github-action-prompt-injection-supply-chain-security-builder-guide/">Claude Code GitHub Action Had a Supply Chain Flaw: What Happened, What&#39;s Fixed, and How to Harden Your CI/CD</a></h3>
+  <p>The official Claude Code GitHub Action had a critical flaw: the checkWritePermissions function trusted any actor ending in [bot] regardless of actual permissions. An unauthenticated attacker with a GitHub App installation token could create a malicious issue, inject prompts into Claude&#39;s context, and escalate to full repo compromise including OIDC token theft. Patched in v1.0.94 (CVSS 4.0: 7.8). Researcher RyotaK of GMO Flatt Security has now identified approximately 50 ways to break Claude Code&#39;s permission model. This is a class of vulnerability, not a single bug.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-08 00:00:00</span></div>
   <h3><a href="/builders-log/ag-ui-protocol-agent-frontend-stack-mcp-a2a-builder-guide/">AG-UI: The Missing Protocol That Completes the Agent Stack</a></h3>
   <p>MCP connects agents to tools. A2A connects agents to agents. AG-UI connects agents to your frontend. Here&#39;s what the third protocol does, who supports it, when to use it, and how CopilotKit&#39;s $27M Series A signals that this layer is now production-critical.</p>
@@ -184,13 +191,6 @@
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-08 00:00:00</span></div>
   <h3><a href="/builders-log/app-intents-assistant-schemas-ios-27-apple-intelligence-builder-guide/">App Intents AssistantSchemas in iOS 27: Make Your App Accessible to Apple Intelligence</a></h3>
   <p>AssistantSchemas is the iOS 27 mechanism for making your app&#39;s features accessible to Apple Intelligence, Siri, and the Foundation Models on-device LLM. Fifteen domains, typed semantic contracts, and zero training required — here&#39;s how to implement it.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-08 00:00:00</span></div>
-  <h3><a href="/builders-log/apple-core-ai-framework-core-ml-replacement-builder-guide/">Apple Core AI: What the Core ML Replacement Means for Builders (WWDC 2026)</a></h3>
-  <p>WWDC 2026 confirmed Core AI, Apple&#39;s replacement for Core ML. The new framework unifies on-device Foundation Models, third-party LLM integration, and MCP routing under one Swift API. Here is what builders need to know about the shift, the migration path, and what Core AI enables that Core ML never could.</p>
 </div>
 
   

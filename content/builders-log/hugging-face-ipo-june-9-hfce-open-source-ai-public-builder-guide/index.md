@@ -8,6 +8,8 @@ categories: ["AI Industry", "Infrastructure", "Open Source"]
 tags: ["hugging-face", "ipo", "hfce", "nasdaq", "open-source", "model-hub", "llm-hosting", "clement-delangue", "platform-risk", "enterprise-ai", "inference-endpoints"]
 ---
 
+> **Update — June 9, 2026:** HFCE began trading on Nasdaq today as announced. IPO priced at $42/share ($15B market cap, $2.1B raised) as reported in this article. First-day close data will be added when confirmed.
+
 Hugging Face prices its IPO on June 9, 2026, and begins trading on Nasdaq under the ticker HFCE.
 
 If you have not thought of Hugging Face as infrastructure, now is a good time to start. The platform hosts more than 2 million models, 500,000 datasets, and 1 million Spaces. It serves more than 13 million AI builders. Verified accounts exist at more than 30% of the Fortune 500. If you have run a model locally in the last 18 months, you almost certainly downloaded it from the Hub.

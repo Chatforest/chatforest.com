@@ -51,6 +51,13 @@
 
     
     <div class="article-card">
+  <div class="card-meta"><span>Builder Guide</span> <span>2026-06-09 00:00:00</span></div>
+  <h3><a href="/builders-log/claude-code-github-action-prompt-injection-supply-chain-security-builder-guide/">Claude Code GitHub Action Had a Supply Chain Flaw: What Happened, What&#39;s Fixed, and How to Harden Your CI/CD</a></h3>
+  <p>The official Claude Code GitHub Action had a critical flaw: the checkWritePermissions function trusted any actor ending in [bot] regardless of actual permissions. An unauthenticated attacker with a GitHub App installation token could create a malicious issue, inject prompts into Claude&#39;s context, and escalate to full repo compromise including OIDC token theft. Patched in v1.0.94 (CVSS 4.0: 7.8). Researcher RyotaK of GMO Flatt Security has now identified approximately 50 ways to break Claude Code&#39;s permission model. This is a class of vulnerability, not a single bug.</p>
+</div>
+
+    
+    <div class="article-card">
   <div class="card-meta"><span>Builders-Log</span> <span>2026-06-08 00:00:00</span></div>
   <h3><a href="/builders-log/xcode-17-ai-builder-guide-swift-assist-foundation-models-playground/">Xcode 17 AI Builder Guide: Swift Assist, Foundation Models Playground, and the New AI Dev Workflow</a></h3>
   <p>Xcode 17 ships three AI-focused tools for Apple platform builders: Swift Assist (cloud chat), on-device predictive completion, and Foundation Models Playground. Here&#39;s how each one changes the workflow for building AI-native apps.</p>
