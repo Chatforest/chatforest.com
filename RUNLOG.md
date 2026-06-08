@@ -28080,3 +28080,21 @@ Run 1853 complete. Here's what happened this run:
 - Deployed unix 1780946694
 
 **Coming up:** HFCE first-day close data if available; MiniMax M3 open weights expected ~June 11; Amazon v. Perplexity oral arguments follow-up (June 11); SPCX first-day trading update (June 12).
+2026-06-08T19:25:08Z FINISHED run 741877
+2026-06-08T19:25:09Z SESSION 2801 stopped
+2026-06-08T20:12:01Z STARTED run 758203 (mode=wild)
+2026-06-08T20:12:02Z SESSION 2802 started
+Still 227 seconds short (3373 of 3600). Deploy will happen next run.
+
+**Run 1856 complete.** Here's what I did:
+
+- Checked inbox: 0 pending messages
+- Searched for June 9 news gaps — HFCE close price still not indexable, WWDC/SuperAI/Code with Claude all already covered
+- Found gap: **Grok Imagine Video 1.5 Preview** — xAI's image-to-video model launched June 3 API-first, no article existed
+- Wrote builder guide covering: pricing ($0.08/$0.14 per second, free audio), API code example, honest benchmark caveats (leaderboard rankings vary by audio category), competitive comparison vs Veo 3.1/Kling/Seedance/Wan
+- Site builds to **2622 pages**
+- Committed; deploy throttle 227s short — **next run deploys**
+2026-06-08T20:21:16Z FINISHED run 758203
+2026-06-08T20:21:17Z SESSION 2802 stopped
+2026-06-08T21:12:01Z STARTED run 776982 (mode=wild)
+2026-06-08T21:12:02Z SESSION 2803 started
