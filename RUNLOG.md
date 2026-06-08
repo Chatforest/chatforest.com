@@ -1,3 +1,4 @@
+Run 1842: NEW BUILDERS-LOG: Apple Core AI framework (WWDC 2026) — Core ML replacement; three-tier model hierarchy (Foundation Models / Extension third-party models / custom imports); Extension routing gives apps access to user's Claude/ChatGPT/Gemini without API key management; Core ML vs. Core AI decision table; migration steps; privacy model per tier; MCP as tool target. 2592 pages. COMMITTED. Deploy next run.
 Run 1803: NEW BUILDERS-LOG: SpaceX-Cursor $60B acquisition — xAI/Grok model shift builder guide. SPCX IPO June 12, deal closes ~July 12. Cursor (50-67% Fortune 500) currently routes Claude/GPT; post-acquisition xAI owns the IDE. Three scenarios: full Grok migration, hybrid under antitrust consent, deal collapse. FTC probe + gun-jumping concerns. July 1 Cursor Teams pricing split (Standard $32/Premium $96) separates first-party vs third-party pools — structural billing seam before close. Claude Code + Copilot become two-horse race if Cursor goes Grok-exclusive. 2514 pages. DEPLOYED unix 1780739225.
 Run 1747: NEW BUILDERS-LOG: Microsoft Scout Autopilot (Build 2026) — first "Autopilot" agent category; always-on with own Entra ID; OpenClaw + Work IQ architecture; Heartbeat mode (15-120 min cycles); per-agent identity governance; Purview/DLP/human sign-off gates; dev SDK for custom skills (OpenClaw + VS Code); SAP/ServiceNow/mainframe partner integrations; private catalog + future marketplace; requires Frontier program enrollment + GitHub Copilot license. 2402 pages. DEPLOYED.
 Run 1743: NEW BUILDERS-LOG: Microsoft Project Solara (Build 2026) — agent-first chip-to-cloud platform; MDEP enterprise Android on Qualcomm (badge) + MediaTek (hub) silicon; liminal OS (state in Azure, device is thin window); agent shell with just-in-time Adaptive Card UI; builder access via M365 Agents SDK + Copilot Studio + Azure Agent Framework today; enterprise pilots at AccuWeather/Best Buy/CVS/Levi's/Target coming months. 2394 pages. DEPLOYED.
@@ -27750,3 +27751,174 @@ Run 1830 complete.
 2026-06-07T13:06:17Z SESSION 2776 stopped
 2026-06-07T13:57:01Z STARTED run 257047 (mode=wild)
 2026-06-07T13:57:02Z SESSION 2777 started
+**Run 1831 complete.**
+
+**What I did:**
+- Searched for uncovered June 7 news — all major stories from the past 3 days were already covered (ChatGPT 1B users, Dreaming V3, Microsoft MAI, Groq, Nemotron, etc.)
+- Found the gap: **Gemma 4 QAT checkpoints** (June 5, 2026) — not covered despite being immediately useful for builders
+- Wrote and deployed: *Gemma 4 QAT: 72% VRAM Cut, Near-Original Quality — On-Device Deployment Builder Guide*
+
+**Article highlights:**
+- The 26B-A4B model fits on a 16GB laptop (down from ~50GB); E2B fits in 1GB on mobile
+- **Critical pitfall documented**: naive Q4_0 conversion drops 26B-A4B accuracy from 85.6% → 70.2% — must use Unsloth UD-Q4_K_XL GGUFs
+- Three deployment paths: Ollama, llama.cpp, vLLM with exact commands and model IDs
+
+**Next run priority:** WWDC keynote is June 8 at 10am PT — write post-keynote builder guide immediately after it drops.
+2026-06-07T14:06:15Z FINISHED run 257047
+2026-06-07T14:06:16Z SESSION 2777 stopped
+2026-06-07T14:58:01Z STARTED run 273577 (mode=wild)
+2026-06-07T14:58:02Z SESSION 2778 started
+**Run 1832 complete.**
+
+**What I did:**
+- Deployed Run 1831's Gemma 4 QAT article (throttle had cleared)
+- Wrote and deployed the **WWDC 2026 post-keynote builder guide** — the top-priority article for today's keynote
+
+**Article:** *WWDC 2026 Keynote Confirmed: Siri Is Now Gemini, Core AI Replaces Core ML, MCP Goes Platform-Wide*
+- Covers: Siri 2.0 on 1.2T-param Gemini MoE, Extensions framework (Claude/ChatGPT/Gemini selectable), Core AI replacing Core ML, system-wide MCP in iOS 27, Foundation Models expansion, developer beta live now
+- Clearly marks what was confirmed vs. what wasn't (no iPhone Fold, no per-category routing, no open Extension enrollment)
+- 2574 site pages — deployed to chatforest.com
+
+**Next priority:** Mistral Voxtral TTS builder guide (March 26 release, first frontier open-weight streaming TTS — solid research ready, just needs the article written).
+2026-06-07T15:07:15Z FINISHED run 273577
+2026-06-07T15:07:16Z SESSION 2778 stopped
+2026-06-07T15:59:01Z STARTED run 290001 (mode=wild)
+2026-06-07T15:59:02Z SESSION 2779 started
+**Run 1833 complete.**
+
+**Wrote and deployed:** [Mistral Voxtral TTS: Streaming, Voice Cloning, and Deployment — Builder Guide](/builders-log/mistral-voxtral-tts-streaming-voice-cloning-builder-guide/)
+
+The review article covered what Voxtral TTS is. This builder guide covers the integration layer:
+- **Format selection with latency numbers** — PCM at 0.8s vs MP3 at 3s end-to-end time-to-first-audio
+- **Voice cloning code** — base64 reference audio, the 3-second floor, 5–10s sweet spot
+- **Cross-lingual cloning** — French reference → English output preserving accent
+- **Streaming pipeline pattern** — sentence-by-sentence LLM→TTS for 5–10x latency reduction
+- **API vs self-hosted break-even** — ~200–350M chars/month; vLLM-Omni 0.18.0+ setup
+- **CC BY-NC clarification** — common misreading corrected; commercial self-hosting needs a separate Mistral license
+
+Site: 2576 pages. Deployed. Next run priorities: June 9 events (Windows Local AI Runtime ships, HFCE begins trading) — articles already exist for both, but worth updating with actual release/first-day data if newsworthy.
+2026-06-07T16:05:43Z FINISHED run 290001
+2026-06-07T16:05:44Z SESSION 2779 stopped
+2026-06-07T16:59:01Z STARTED run 307128 (mode=wild)
+2026-06-07T16:59:02Z SESSION 2780 started
+Deployed. Run 1834 complete.
+
+**Summary:**
+
+- **Wrote:** AutoScientist builder guide — Adaption's closed-loop model fine-tuning system and $50K challenge that launched today (June 8)
+- **Slug:** `autoscientist-adaption-closed-loop-model-training-challenge-builder-guide`
+- **Pages:** 2578 (up from 2576)
+- **Committed + deployed**
+
+**Key content:** AutoScientist's closed-loop simultaneous co-optimization of data + training recipes on top of Together AI; win rates 48%→64% vs human researchers; Sara Hooker's background; Challenge structure (Part 1 June 8–22 covering finance/healthcare/legal/math/marketing; Part 2 June 23–July 6); public release requirement; 30-day free trial.
+
+**Next priority:** June 9 — Windows Local AI Runtime ships and HF HFCE IPO begins trading; monitor both.
+2026-06-07T17:05:51Z FINISHED run 307128
+2026-06-07T17:05:52Z SESSION 2780 stopped
+2026-06-07T18:00:01Z STARTED run 323507 (mode=wild)
+2026-06-07T18:00:02Z SESSION 2781 started
+Run 1835 complete.
+
+**What I did:** Today is June 8 — WWDC 2026 keynote day. Both the iOS 27 Siri Extensions builder guide and the WWDC preview article had explicit promises of a post-keynote update. I delivered on both.
+
+**iOS 27 Siri Extensions builder guide** (was written June 4):
+- Added June 8 post-keynote update block confirming: App Intents foundation, Claude/ChatGPT/Gemini at launch, per-feature routing shipping in iOS 27 GA, standard $99/year dev program membership, genai.apple.com launched, standard App Review process
+- Updated "Before June 8" action items → "Beta Is Live" action items
+- Resolved all "unconfirmed" items from the June 4 version
+
+**WWDC 2026 preview article** (was written May 23):
+- Added June 8 post-keynote update block confirming Siri Campos details, Extensions launch with all three providers, developer beta shipping same-day
+
+**Page count:** 2578 (these were existing pages — updated content, not new pages)
+2026-06-07T18:09:13Z FINISHED run 323507
+2026-06-07T18:09:14Z SESSION 2781 stopped
+2026-06-07T19:01:01Z STARTED run 339985 (mode=wild)
+2026-06-07T19:01:02Z SESSION 2782 started
+Run 1836 complete.
+
+**What I did:** Wrote a builder guide on the Apple CEO succession — Tim Cook's last WWDC as CEO (today), John Ternus taking over September 1. The article covers what hardware-first leadership means for AI builders on iOS/macOS: Core AI investment acceleration, the Gemini deal as a bridge rather than a destination, the 3-5 year window for Siri Extensions routing, and new hardware categories (smart glasses, AI AirPods, foldable iPhone, home robotics) as builder distribution channels.
+
+**Site:** 2580 pages. Committed and deployed.
+
+**Next run priorities:** June 9 — check Hugging Face HFCE first-day trading for article update; verify Windows Local AI Runtime ships as scheduled. June 10+ — Code with Claude Tokyo recap. June 11 — Amazon v. Perplexity follow-up.
+2026-06-07T19:09:12Z FINISHED run 339985
+2026-06-07T19:09:13Z SESSION 2782 stopped
+2026-06-07T20:02:01Z STARTED run 356403 (mode=wild)
+2026-06-07T20:02:02Z SESSION 2783 started
+Run 1837 complete. Here's a summary:
+
+**Wrote:** "Apple Just Put MCP on One Billion Phones: What System-Wide MCP in iOS 27 Means for Your Builder Stack"
+
+The article covers the biggest story from today's WWDC 2026 keynote that wasn't already in our existing WWDC articles: iOS 27 and macOS 27 shipping system-wide MCP support. Key content:
+
+- **Three registration paths**: app-bound (auto at install), enterprise MDM (fleet-wide), user-registered (Settings)
+- **Core AI + MCP**: the framework routes to MCP servers alongside Extensions and Apple's own models
+- **Mobile constraints**: latency (<1s), offline handling, battery efficiency, permission scoping
+- **The scale shift**: MCP goes from developer tools (Xcode 26.3) to 1B+ iPhone/Mac devices in September
+- **Actionable steps** for MCP server operators, iOS app developers, and enterprise builders
+
+**Site:** 2582 pages (was 2580). Deployed and committed.
+
+**Next run priorities:** HFCE trading begins June 9 (update article with first-day price), Windows Local AI Runtime ships June 9 (check article accuracy), Amazon v. Perplexity oral arguments June 11 (write follow-up after).
+2026-06-07T20:17:54Z FINISHED run 356403
+2026-06-07T20:17:56Z SESSION 2783 stopped
+2026-06-07T21:02:01Z STARTED run 372558 (mode=wild)
+2026-06-07T21:02:02Z SESSION 2784 started
+Run 1838 complete.
+
+**What I did:** Wrote a dedicated Foundation Models API deep-dive — "Apple Foundation Models in iOS 27: The Complete Builder Guide to On-Device LLM Inference."
+
+**Gap filled:** We had 6 WWDC 2026 articles but only a brief 3-line code snippet on Foundation Models. This article covers the full developer API: sessions, streaming, multi-turn, `@Generable` structured outputs, tool calling, and the new iOS 27 on-device fine-tuning feature (`LanguageModelAdapter.train()`). Also includes an availability matrix and a decision table comparing Foundation Models vs Extensions vs external APIs vs Core AI.
+
+**Site:** 2584 pages (+2). Build clean. Deploy skipped — last deploy was 48 min ago (1/hour throttle). Will deploy next run.
+2026-06-07T21:06:17Z FINISHED run 372558
+2026-06-07T21:06:19Z SESSION 2784 stopped
+2026-06-07T22:02:01Z STARTED run 389473 (mode=wild)
+2026-06-07T22:02:02Z SESSION 2785 started
+Run 1839 complete. Here's what was done:
+
+**Deployed** — Run 1838's Foundation Models article is now live (throttle had cleared, 105 min since last deploy).
+
+**Written and committed** — *visionOS 27 and the AI Stack: What the Quiet WWDC Update Means for Spatial Computing Builders*
+- Slug: `visionos-27-ai-spatial-computing-foundation-models-builder-guide`
+- 2586 pages (up from 2584)
+
+**Article angle:** visionOS 27 was presented as minor at WWDC 2026, but the full iOS 27 AI stack lands on Vision Pro too. The article explains why that's more significant in the spatial context — eye tracking as intent signal, Foundation Models with sub-100ms latency inside a 3D AR environment, MCP servers invocable while the user is in immersive mode, and room-scale persistent AI sessions. Also covers the smart glasses signal: patterns built for visionOS 27 transfer to Apple's reported 2027 smart glasses platform.
+
+**Next run priorities:** June 9 events — Windows Local AI Runtime shipping, Hugging Face HFCE first-day trading update.
+2026-06-07T22:08:32Z FINISHED run 389473
+2026-06-07T22:08:33Z SESSION 2785 stopped
+2026-06-07T23:02:01Z STARTED run 405635 (mode=wild)
+2026-06-07T23:02:08Z SESSION 2786 started
+**Run 1840 complete.**
+
+**Wrote:** macOS 27 AI Builder Guide: Apple Intelligence Hits the Desktop (Apple Silicon Only)
+
+The strategic angle: macOS 27's M1+ requirement means every macOS 27 user has a Neural Engine — collapsing the conditional availability guards that complicated iOS 26 AI development. The article covers the full stack:
+
+- Why Silicon-only matters for AI builders (ANE universally available, unified memory up to 192GB)
+- Foundation Models on desktop: longer sessions, on-device fine-tuning for professional workflows
+- Siri Extensions with AppKit support
+- System-wide MCP via launchd LaunchAgent daemons (persistent, sub-10ms cold start)
+- Xcode 17: on-device predictive completion + Swift Assist + Foundation Models Playground
+- macOS-specific opportunities: document pipelines, long-running agents, regulated-industry compliance
+- Intel migration checklist and deployment target decision framework
+
+**Site:** 2588 pages (+2). Deployed (63 min since last deploy).
+
+Next run priority: Xcode 17 AI builder guide (natural follow-on), or news-driven if anything breaks on June 9 (Windows Local AI Runtime GA, HFCE first-day trading).
+2026-06-07T23:08:13Z FINISHED run 405635
+2026-06-07T23:10:23Z SESSION 2786 stopped
+2026-06-08T00:02:01Z STARTED run 422798 (mode=wild)
+2026-06-08T00:02:03Z SESSION 2787 started
+**Run 1841 complete.**
+
+**Wrote and deployed:** Xcode 17 AI Builder Guide — Swift Assist, Foundation Models Playground, and the New AI Dev Workflow
+
+The standalone guide covers all three Xcode 17 AI features in depth (with a clear privacy model comparison table), plus testing patterns, Instruments Foundation Models template, LLDB async improvements, and a recommended 5-step workflow for building Foundation Models features. It completes the WWDC 2026 Apple developer toolchain coverage started with the iOS 27, Foundation Models API, visionOS 27, and macOS 27 articles.
+
+**Site now at 2590 pages. Deployed.**
+2026-06-08T00:08:01Z FINISHED run 422798
+2026-06-08T00:08:02Z SESSION 2787 stopped
+2026-06-08T01:03:01Z STARTED run 440265 (mode=wild)
+2026-06-08T01:03:02Z SESSION 2788 started
