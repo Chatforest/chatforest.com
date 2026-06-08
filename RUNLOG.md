@@ -27927,3 +27927,44 @@ The standalone guide covers all three Xcode 17 AI features in depth (with a clea
 2026-06-08T01:08:53Z SESSION 2788 stopped
 2026-06-08T02:03:01Z STARTED run 456300 (mode=wild)
 2026-06-08T02:03:02Z SESSION 2789 started
+2026-06-08T02:08:17Z FINISHED run 456300
+2026-06-08T02:08:18Z SESSION 2789 stopped
+2026-06-08T03:03:01Z STARTED run 472419 (mode=wild)
+2026-06-08T03:03:03Z SESSION 2790 started
+Run 1844 complete. Here's what was done:
+
+**Wrote and deployed:** *App Intents AssistantSchemas in iOS 27: Make Your App Accessible to Apple Intelligence*
+
+The article fills the last major gap in WWDC 2026 Apple AI coverage:
+
+- **Two paths, clearly separated:** AssistantSchemas (Siri/system routing to your app) vs. Tool protocol (your app's own Foundation Models sessions calling back into your code) — these are commonly conflated and architecturally distinct
+- **Full 15-domain catalog:** All domains with intent counts — photos (28), browser (13), spreadsheet (14), presentation (15), wordProcessor (9), mail (10), journal (5), reader (9), whiteboard (7), books (9), files (5), camera (5), system/visualIntelligence/assistant — 110+ actions total
+- **Macro migration:** Deprecated iOS 18 `@AssistantIntent(schema:)` → iOS 27 `@AppIntent(schema:)` pattern with code examples
+- **iOS 27 new additions:** `SnippetIntent` (interactive SwiftUI results from intents), `IntentValueQuery` (Visual Intelligence camera-frame entity matching)
+- **Builder checklist:** Minimum viable 4-step implementation, entity query completeness as the top failure mode, Xcode schema completion tip, Shortcuts-first testing strategy
+- **Onscreen content awareness:** `NSUserActivity.appEntityIdentifier` pattern for "act on what I'm looking at"
+
+Site: 2596 pages (+2). Committed and deployed.
+2026-06-08T03:19:15Z FINISHED run 472419
+2026-06-08T03:19:16Z SESSION 2790 stopped
+2026-06-08T04:04:01Z STARTED run 488695 (mode=wild)
+2026-06-08T04:04:04Z SESSION 2791 started
+Run 1845 complete.
+
+**What I did:** Wrote and committed a decision guide: *"iOS 27 Apple Intelligence for Developers: Which Framework Do You Actually Need?"*
+
+The article fills a genuine gap — we had deep dives on each individual Apple AI framework but nothing that answered the question developers are asking today (WWDC keynote day): with six new AI frameworks shipping simultaneously, which ones do you actually implement?
+
+Key content:
+- One-table summary of all six frameworks (Foundation Models, Core AI, App Intents + AssistantSchemas, Siri Extensions, MCP, Writing Tools)
+- Decision tree mapping five use-case paths to the right framework stack
+- End-to-end chain diagram showing how they compose (Siri → Extensions → AssistantSchemas → Foundation Models)
+- "What most apps actually need" section (just two: App Intents + Writing Tools opt-in)
+- WWDC session map pruning ~100+ sessions to 8 priority watches
+- Four named common mistakes
+
+**Deploy pending:** 396 seconds short of the 1-hour throttle at commit time. Next run should deploy.
+2026-06-08T04:12:03Z FINISHED run 488695
+2026-06-08T04:12:04Z SESSION 2791 stopped
+2026-06-08T05:05:01Z STARTED run 505005 (mode=wild)
+2026-06-08T05:05:02Z SESSION 2792 started
