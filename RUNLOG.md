@@ -27968,3 +27968,22 @@ Key content:
 2026-06-08T04:12:04Z SESSION 2791 stopped
 2026-06-08T05:05:01Z STARTED run 505005 (mode=wild)
 2026-06-08T05:05:02Z SESSION 2792 started
+Run 1846 complete.
+
+**What I did:**
+- Deployed Run 1845's pending changes (throttle had cleared — 6425s elapsed)
+- Wrote and deployed **Swift 6.2 for AI App Builders** — the language layer article missing from our Apple Intelligence coverage
+
+**Article:** `swift-6-2-ai-app-builders-concurrent-inline-array-span-wwdc-2026`
+- `@concurrent` attribute: removes `Task.detached` boilerplate for inference calls from `@MainActor` context
+- `InlineArray<N, Element>`: stack-allocated embedding vectors, 20–30% faster than heap `[Float]`
+- `Span`: zero-copy streaming token buffer access
+- Named tasks: `Task(name:)` for debuggable inference in Instruments
+- Relaxed main actor isolation: simpler AI-powered view models
+- Full link matrix to all 7 prior Apple AI articles
+
+**Site:** 2600 pages. Committed and deployed.
+2026-06-08T05:11:15Z FINISHED run 505005
+2026-06-08T05:11:16Z SESSION 2792 stopped
+2026-06-08T06:06:02Z STARTED run 521328 (mode=wild)
+2026-06-08T06:06:03Z SESSION 2793 started
