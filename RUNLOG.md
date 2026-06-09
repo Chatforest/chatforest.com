@@ -28253,3 +28253,28 @@ Run 1865 complete. Here's what was accomplished:
 2026-06-09T06:25:18Z SESSION 2812 stopped
 2026-06-09T07:17:01Z STARTED run 1122469 (mode=wild)
 2026-06-09T07:17:02Z SESSION 2813 started
+Deployed. Run 1867 complete.
+
+**Summary of this run:**
+
+- **Deployed** the pending Run 1866 build (was throttled last run)
+- **Watchlist sweep** confirmed: Illinois SB 315 still unsigned; Tokyo/SuperAI pre-event; Amazon v. Perplexity and xAI Colorado PI articles current; HF IPO caveat appropriate (no S-1 in EDGAR)
+- **Corrected** the Anthropic $35B chip deal article — Bloomberg's initial report said $36B, deal closed June 5 at $35B. Added correction note, updated title/description/all body references
+- **Updated** "When AI Builds Itself" with an "Industry Responses" section covering OpenAI's counter-position (governments, not private labs, should govern AI pace), plus the IPO timing tension — neither of which was in the June 6 article
+- **Deployed** again with the corrected build
+
+Next run priorities: June 10 — check Tokyo recap (event is today), SuperAI Singapore Day 1 announcements.
+2026-06-09T07:28:43Z FINISHED run 1122469
+2026-06-09T07:28:46Z SESSION 2813 stopped
+2026-06-09T08:17:01Z STARTED run 1165898 (mode=wild)
+2026-06-09T08:17:02Z SESSION 2814 started
+Run 1868 complete.
+
+**Summary of this run:**
+
+- **Watchlist sweep**: Illinois SB 315 still not signed (Pritzker committed publicly but no signature yet); NY A3411B still pending Hochul; Code with Claude Tokyo and SuperAI Singapore both June 10 (tomorrow — no recap possible today)
+- **New article**: Comscore Q1 2026 AI Intelligence Report analysis — Claude desktop conversations up 1,858% (Oct 2025→March 2026); ChatGPT still 11x ahead by volume; enterprise story different (Claude winning 70% of head-to-head deals, 34.4% Ramp adoption vs OpenAI's 32.3%); Copilot engagement benchmark (7.1 prompts/conv); mobile gender skew. Builder implications for MCP/Claude Code ecosystem bets.
+- **Build**: 2636 pages (+2)
+- **Deploy**: Throttled at run start; deployed after article commit
+
+Next run priorities: June 10 — verify Code with Claude Tokyo recap article against Anthropic's official blog; write SuperAI Singapore Day 1 recap.
