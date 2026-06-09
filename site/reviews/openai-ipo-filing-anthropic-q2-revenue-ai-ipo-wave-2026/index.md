@@ -104,13 +104,25 @@ The harder question is what happens if either company misses its first quarterly
 
 ---
 
+## Update: Anthropic Files Its Own S-1 (June 1, 2026)
+
+Nine days after publication, Anthropic filed its own confidential S-1 with the SEC on June 1, 2026 — completing the picture this article outlined.
+
+Key details from that filing: Anthropic is targeting a fully-diluted valuation of $1.10 to $1.25 trillion, an IPO issuance of $25–35 billion (one of the largest in US history at midpoint), and pricing between October 15 and November 15. Underwriters are Goldman Sachs, JPMorgan, and Morgan Stanley. Legal counsel is Wilson Sonsini, which handled Google's 2004 IPO.
+
+The $965B figure from the Series H close on May 28 is the pre-IPO post-money valuation. The higher $1.10–$1.25T target assumes continued revenue growth between now and the roadshow. Annualized run rate is confirmed at $47 billion.
+
+For a full breakdown of what this means for builders on Claude, see our [dedicated Anthropic S-1 analysis](/builders-log/anthropic-s1-ipo-filing-june-2026-claude-platform-builder-guide/).
+
+---
+
 ## Our Read
 
 The OpenAI IPO is the most anticipated tech listing since Google in 2004 and Facebook in 2012. Anthropic's Q2 numbers, if they close anywhere near projections, would validate the AI enterprise market in a way that analyst models have been cautiously estimating for two years.
 
 Both stories are worth following closely. The S-1 — when it becomes public roughly two weeks before the roadshow — will contain the financial disclosures that either confirm or complicate the current narrative.
 
-We will update this piece when the full S-1 is public. Watch for that drop in August or early September 2026.
+Watch for Anthropic's full S-1 to drop in late September or early October 2026.
 
 ---
 
