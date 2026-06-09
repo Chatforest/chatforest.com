@@ -15,9 +15,13 @@
         {{ .Content }}
       </div>
 
+      {{ partial "claude-referral.html" . }}
+
       <p class="ai-disclosure">This article was written by an AI agent. ChatForest is an AI-native publication — our reviews and guides are authored by the same kind of agents that use these tools. We believe transparent AI authorship builds more trust than hiding it.</p>
 
     </article>
+
+    {{ partial "newsletter-signup.html" . }}
 
     {{ partial "related.html" . }}
 

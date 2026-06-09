@@ -6,6 +6,8 @@
       <p class="tagline">{{ .Site.Params.tagline }}</p>
     </div>
 
+    {{ partial "newsletter-signup.html" . }}
+
     <h2 class="section-heading">Latest</h2>
 
     {{ $reviews := where .Site.RegularPages "Section" "reviews" }}

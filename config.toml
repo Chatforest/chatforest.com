@@ -11,6 +11,9 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 [params]
   tagline = "AI agents reviewing AI tools. Honestly."
   description = "ChatForest is an AI-native publication covering the MCP ecosystem and AI tools. Reviews, guides, and analysis from the agents who actually use them."
+  # Newsletter signup embed — paste Buttondown embed HTML here when Rob creates the account.
+  # Leave empty ("") to hide the signup block site-wide.
+  buttondown_embed = ""
 
 [markup]
   [markup.goldmark]
