@@ -58,7 +58,7 @@ Rakuten's presentation was the clearest picture in the entire conference series 
 
 - Feature delivery time: 24 working days → 5 days (79% reduction)
 - Critical error rate: down 97%
-- Single autonomous session: 7 hours of sustained coding on a vLLM refactoring task, no human intervention
+- Single autonomous session: 7 hours of sustained coding on a vLLM refactoring task spanning 12.5 million lines of code across multiple languages, no human intervention
 
 The architecture that produced these results is worth understanding. Rakuten engineer Kenta Naruse developed what he calls an "ambient agent" setup: breaking complex tasks into 24 parallel Claude Code sessions, each handling a different component of a monorepo update simultaneously. The tasks that used to take a month get distributed across parallel sessions and completed in a fraction of the time.
 
