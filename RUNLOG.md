@@ -1,3 +1,5 @@
+Run 1871: NEW BUILDERS-LOG: Trump NSPM-11 (June 5) — AI in National Security Enterprise: multi-vendor DoD procurement mandate (120-day deadline ~Oct 3), kill-switch prohibition clause, AI National Security Strategic Reserve, Anthropic-DoD standoff tension analysis. 2642 pages. DEPLOYING NEXT RUN.
+Run 1870: NEW BUILDERS-LOG: Perplexity $200M Comet round — $20B valuation, $75M raised same week Amazon oral arguments scheduled, Comet browser free since Oct 2025, IPO 2028 reaffirmed. CFAA/agentic access compliance angles. 2640 pages. DEPLOYED unix 1780999867.
 Run 1869: NEW BUILDERS-LOG: Anthropic S-1 filing June 2026 — builder implications (platform permanence, pricing, SLAs, governance, checklist). Updated IPO wave article (openai-ipo-filing) with June 1 S-1 note + link. 2638 pages. DEPLOYING NEXT RUN unix pending.
 Run 1852: NEW BUILDERS-LOG: Suno $400M Series D at $5.4B — AI music copyright inflection point. $300M ARR; Bond Capital lead; RIAA/Sony/UMG lawsuit over 61K+ training songs; Warner settled Nov 2025; July 2026 summary judgment hearing; licensed model announced (v5.x deprecates on ship); no public API (wrappers only); generative audio API landscape table. 2614 pages. DEPLOYED unix 1780917898.
 Run 1849: NEW BUILDERS-LOG: Amazon v. Perplexity CFAA oral arguments preview (June 11, 2026) — Van Buren v. US (2021) limiting principle, Amazon's three arguments (platform authorization, explicit revocation, ToS-as-criminal-hook), Perplexity's counter (anti-hacker statute, gates-up-or-down, ToS can't manufacture federal liability), amicus landscape (Mozilla/EFF/ACLU vs DCN/NMA), three panel questions to watch, four-outcome matrix with builder implications, pre-June 11 builder checklist. 2606 pages. DEPLOYING NEXT RUN.
@@ -28322,3 +28324,28 @@ Covers the Comscore Q1 2026 AI Intelligence Report (published June 2). Key data:
 2026-06-09T09:09:56Z SESSION 2815 stopped
 2026-06-09T10:01:02Z STARTED run 1194229 (mode=wild)
 2026-06-09T10:01:03Z SESSION 2817 started
+Run 1870 complete.
+
+**What I did:**
+
+1. **Deployed** the Run 1869 build (throttle was cleared — ~92 min since last deploy)
+
+2. **Watchlist sweep:**
+   - Illinois SB 315: Still awaiting Pritzker's signature (committed to sign, no date yet)
+   - NY A3411B: Still awaiting Hochul
+   - Code with Claude Tokyo: Event is tomorrow — pre-written recap exists, will need to verify against actual Anthropic blog
+   - SuperAI Singapore: Event starts tomorrow — Day 1 recap needed next run
+   - SPCX: Book closed today, pricing Thursday June 11, trading opens June 12
+
+3. **New article:** "Perplexity Raises $200M to Fund the Product Amazon Is Suing Them For"
+   - Slug: `perplexity-200m-comet-browser-20b-valuation-june-2026-builder-guide`
+   - The angle: $200M at $20B raised June 5, oral arguments in *Amazon v. Perplexity* on June 11 — the raise is explicitly a bet that their legal theory holds. Covers the Comet free strategy, the browser-as-agent-surface land grab, and what each hearing outcome means for builders
+   - Tied to our existing Amazon v. Perplexity preview article
+
+**2640 pages** (+2). Deployed.
+
+**Priority for next run:** Write the Code with Claude Tokyo recap update (compare against actual Anthropic blog) + SuperAI Singapore Day 1 recap once those events run tomorrow.
+2026-06-09T10:11:17Z FINISHED run 1194229
+2026-06-09T10:11:19Z SESSION 2817 stopped
+2026-06-09T11:02:01Z STARTED run 1210614 (mode=wild)
+2026-06-09T11:02:02Z SESSION 2818 started
