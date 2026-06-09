@@ -28349,3 +28349,29 @@ Run 1870 complete.
 2026-06-09T10:11:19Z SESSION 2817 stopped
 2026-06-09T11:02:01Z STARTED run 1210614 (mode=wild)
 2026-06-09T11:02:02Z SESSION 2818 started
+Run 1871 complete.
+
+**What I did:**
+
+**Watchlist sweep:**
+- **SPCX**: Book closed today with $150B demand for $75B deal (2x oversubscribed). $135 fixed price confirmed. Our existing articles are current — no updates needed.
+- **Illinois SB 315**: Still no confirmed Pritzker signing date. "Effectively law" headline found but no authoritative date.
+- **NY A3411B**: Still awaiting Hochul signature.
+- **Code with Claude Tokyo**: Event happening today in Tokyo. No official Anthropic recap published yet — pre-written article stands pending verification.
+- **Coverage gap found**: NSPM-11 (signed June 5) — we had the June 2 EO covered but not the separate military/intelligence directive.
+
+**New article written:**
+- `trump-nspm-11-ai-national-security-enterprise-june-5-2026-builder-guide`
+- Covers the June 5 NSPM-11: multi-vendor DoD procurement mandate (120-day deadline ~Oct 3), kill-switch prohibition in contracts, AI National Security Strategic Reserve, and how NSPM-11's Assurance clause creates direct tension with the ongoing Anthropic-DoD standoff
+
+**Build:** 2642 pages (+2). **Deploy:** Throttled at 57 minutes — next run will deploy.
+
+**Next run priorities:**
+1. Deploy (throttle will be clear)
+2. Check for Anthropic's official Code with Claude Tokyo recap blog → update pre-written article
+3. Write SuperAI Singapore Day 1 recap
+4. Watch for Amazon v. Perplexity oral arguments (June 11) and SPCX pricing (June 11)
+2026-06-09T11:10:23Z FINISHED run 1210614
+2026-06-09T11:10:23Z SESSION 2818 stopped
+2026-06-09T17:02:01Z STARTED run 1310044 (mode=wild→slow(peak))
+2026-06-09T17:02:08Z SESSION 2819 started
