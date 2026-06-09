@@ -4,7 +4,7 @@ date: 2026-04-07T23:30:00+09:00
 description: "On March 26, 2026, a CMS configuration error exposed nearly 3,000 unpublished Anthropic assets — including a draft blog post describing Claude Mythos, a new model tier above Opus that Anthropic calls 'by far the most powerful AI model we have ever developed.' The leaked documents reveal a 'Capybara' product tier with dramatically higher scores in coding, reasoning, and cybersecurity, alongside private government warnings that Mythos makes large-scale cyberattacks 'significantly more likely in 2026.' Cybersecurity stocks dropped on the news."
 content_type: "Guide"
 card_description: "On March 26, 2026, security researchers Roy Paz (LayerX Security) and Alexandre Pauwels (University of Cambridge) discovered that a configuration error in Anthropic's content management system had left nearly 3,000 unpublished assets publicly accessible — including a draft blog post describing Claude Mythos, an unreleased model that sits above Opus in a new 'Capybara' tier. Anthropic confirmed the model represents 'a step change' in capabilities and is 'the most capable we've built to date,' with dramatically higher scores than Opus 4.6 in software coding, academic reasoning, and cybersecurity. The leaked documents also revealed that Anthropic has been privately warning senior government officials that Mythos makes large-scale cyberattacks significantly more likely, and that agents running on systems at this capability level can plan and carry out complex operations with minimal human involvement. Cybersecurity stocks fell on the disclosure. This analysis covers the leak itself, what the documents reveal about Mythos capabilities, the cybersecurity implications, Anthropic's response, the planned staged rollout to defensive security teams, and what this means for the frontier AI landscape."
-last_refreshed: 2026-04-07
+last_refreshed: 2026-06-09
 ---
 
 On March 26, 2026, a misconfigured content management system exposed Anthropic's biggest secret: an unreleased AI model that the company internally describes as "by far the most powerful AI model we have ever developed." The model is called Claude Mythos, and it has governments worried.
@@ -147,6 +147,26 @@ Several important caveats:
 - **Defensive-first rollout depends on trust** — Anthropic's plan to give defenders a head start works only if the model remains restricted during that window. If competitors ship comparable capabilities without similar restrictions, the head start evaporates.
 
 - **September 2025 attack figure needs context** — The claim that an earlier Claude model executed "80-90%" of a coordinated attack is striking, but it's unclear from reporting what the 30 target organizations were, whether this was a controlled test, and what the remaining 10-20% required.
+
+---
+
+## June 2026 Updates
+
+### Project Glasswing Expansion (June 2, 2026)
+
+On June 2, Anthropic expanded Project Glasswing from its initial cohort to 150 additional organizations across more than 15 countries, with explicit priority given to critical infrastructure sectors that were underrepresented at launch: power, water, healthcare, communications, and hardware manufacturing.
+
+The results since the initial April launch are significant. Anthropic reported that Glasswing partners had identified more than 10,000 high or critical severity vulnerabilities, with Mythos having scanned over 1,000 open source projects and surfacing more than 6,200 high or critical issues among them. The wolfSSL example stands out: Mythos identified an exploitable vulnerability in wolfSSL, an open-source cryptography library used by billions of devices — the kind of systemic exposure that would typically take years to surface through conventional security research.
+
+Anthropic continues to frame the expansion as defensive-first: "We need highly robust safeguards that prevent the model's cyber capabilities from being misused, safeguards that we and all other AI developers have yet to develop." General release remains contingent on those safeguards being in place.
+
+### Claude Oceanus-v1-p (June 3, 2026)
+
+One day after the Glasswing expansion, the identifier `claude-oceanus-v1-p` appeared in Anthropic's Claude Console and surfaced among red teamer communities. The model appears to represent the next generation of Mythos-class capability — referencing enhanced code interpreter access, database querying, and a "thinking budget" parameter for dynamic compute allocation.
+
+Within hours of the model reaching validated red teamers, reports emerged that an unidentified actor had allegedly resold API access to claude-oceanus-v1-p through an unauthorized proxy service at a reported rate of $16 per million input tokens. Anthropic reportedly paused broader red team access pending an internal investigation into the distribution breach.
+
+The Oceanus incident represents a pattern: sensitive model access appears to be difficult to contain once it reaches any cohort beyond direct Anthropic employees. For a company whose safety model depends on staged, controlled distribution, this is both an operational and reputational problem. The details of the breach have not been officially confirmed by Anthropic on the record.
 
 ---
 

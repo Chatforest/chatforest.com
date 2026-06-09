@@ -17,7 +17,7 @@ On May 27, 2026, the Illinois House voted 110-0 to pass SB 315 — the Artificia
 
 This is a meaningfully different law from California's SB 53. California requires frontier developers to publish safety frameworks and report incidents. Illinois requires all of that, plus something no US state has done before: **mandatory annual third-party audits**, with penalties capped at $3 million per violation — three times California's ceiling.
 
-The law does not take effect until January 1, 2028. But the auditing infrastructure it anticipates doesn't exist yet, the standards it references aren't written yet, and the labs that will be subject to it are going to spend the next 18 months figuring out what compliance actually looks like. Builders who use those labs' APIs — which is most of the industry — should understand what their providers are being asked to do.
+The law takes effect in two stages. Framework disclosure and incident reporting requirements begin January 1, 2027. The third-party audit mandate — the provision no US state has previously required — begins January 1, 2028 (or 90 days after a developer first qualifies, whichever is later). But the auditing infrastructure it anticipates doesn't exist yet, the standards it references aren't written yet, and the labs that will be subject to it are going to spend the next two years figuring out what compliance actually looks like. Builders who use those labs' APIs — which is most of the industry — should understand what their providers are being asked to do.
 
 ---
 
@@ -110,17 +110,17 @@ The strategic logic: Anthropic and OpenAI already do these things. Codifying the
 | Standard incident reporting window | 15 days | **72 hours** |
 | Imminent harm reporting window | 24 hours | 24 hours |
 | Max penalty per violation | $1 million | **$3 million** |
-| In effect | Already (2025) | January 1, 2028 |
+| In effect | Already (2025) | Jan 1, 2027 (disclosure/reporting); Jan 1, 2028 (audits) |
 | Enforcement | California AG | Illinois AG |
 | Private right of action | No | No |
 
-California's law is already in effect. Illinois's is the more demanding law but doesn't take effect for 18 months.
+California's law is already in effect. Illinois's is the more demanding law — framework disclosures start January 1, 2027, and the audit mandate starts January 1, 2028.
 
 ---
 
 ## What This Means for Builders
 
-**If you train or deploy your own frontier models above the revenue threshold:** SB 315 applies to you. Start mapping your existing safety practices against the framework requirements now. The 18-month runway is shorter than it sounds — annual audit processes take months to design and execute, and the auditing standards you'll need to comply with don't exist yet. Engaging with the audit-standards development process (NIST, Big Four, AI evaluation orgs) now is not optional if you want to be audit-ready in 2028.
+**If you train or deploy your own frontier models above the revenue threshold:** SB 315 applies to you. Framework disclosure and incident reporting requirements begin January 1, 2027 — those are 7 months away. Start mapping your existing safety practices against the framework requirements now. The audit mandate starts January 1, 2028, giving you a bit more time, but annual audit processes take months to design and execute, and the auditing standards you'll need to comply with don't exist yet. Engaging with the audit-standards development process (NIST, Big Four, AI evaluation orgs) now is not optional if you want to be audit-ready by then.
 
 **If you build on top of frontier APIs (most builders):** SB 315 doesn't apply to you directly, but it will shape what your providers publish. Starting in 2028, every major lab's Frontier AI Framework becomes a legally mandated, annually audited document — not a voluntary marketing artifact. When you evaluate model providers, their compliance posture will be a concrete, attestable factor rather than a policy-page promise.
 
