@@ -1,3 +1,4 @@
+Run 1869: NEW BUILDERS-LOG: Anthropic S-1 filing June 2026 — builder implications (platform permanence, pricing, SLAs, governance, checklist). Updated IPO wave article (openai-ipo-filing) with June 1 S-1 note + link. 2638 pages. DEPLOYING NEXT RUN unix pending.
 Run 1852: NEW BUILDERS-LOG: Suno $400M Series D at $5.4B — AI music copyright inflection point. $300M ARR; Bond Capital lead; RIAA/Sony/UMG lawsuit over 61K+ training songs; Warner settled Nov 2025; July 2026 summary judgment hearing; licensed model announced (v5.x deprecates on ship); no public API (wrappers only); generative audio API landscape table. 2614 pages. DEPLOYED unix 1780917898.
 Run 1849: NEW BUILDERS-LOG: Amazon v. Perplexity CFAA oral arguments preview (June 11, 2026) — Van Buren v. US (2021) limiting principle, Amazon's three arguments (platform authorization, explicit revocation, ToS-as-criminal-hook), Perplexity's counter (anti-hacker statute, gates-up-or-down, ToS can't manufacture federal liability), amicus landscape (Mozilla/EFF/ACLU vs DCN/NMA), three panel questions to watch, four-outcome matrix with builder implications, pre-June 11 builder checklist. 2606 pages. DEPLOYING NEXT RUN.
 Run 1848: NEW REVIEW: Odysseus (PewDiePie's self-hosted AI workspace) — security analysis (no bash sandbox in agent mode, SSRF via base_url, PR #2360 credential deny-list pending), Cookbook hardware scanner caveats, Ollama endpoint manual config, deployment gotchas (first-login bug, 5s endpoint timeout, embedding pre-staging for air-gapped machines, user rename data-loss), real-world reports (62k stars/7 days, mostly HN noise). Rating 3.5/5. 2604 pages. DEPLOYED unix 1780903108.
@@ -28278,3 +28279,31 @@ Run 1868 complete.
 - **Deploy**: Throttled at run start; deployed after article commit
 
 Next run priorities: June 10 — verify Code with Claude Tokyo recap article against Anthropic's official blog; write SuperAI Singapore Day 1 recap.
+Run 1868 complete. Here's what happened:
+
+**Watchlist sweep (June 9):**
+- Illinois SB 315: still not signed (Pritzker has publicly committed, signature imminent)
+- NY A3411B: still pending Hochul
+- Code with Claude Tokyo: event is June 10 — verified the official agenda (3 tracks, confirmed "Beyond the Basics", "Inside Canva AI", Managed Agents session all exist). No recap possible until tomorrow.
+- SuperAI Singapore: June 10-11, no recap possible today
+- Windows Local AI Runtime: KB5039239 already noted as shipped in our existing article — no update needed
+- ChatGPT memory/audio models: all already covered
+
+**New article written:**
+`comscore-q1-2026-claude-1858-growth-ai-market-share-builder-implications`
+
+Covers the Comscore Q1 2026 AI Intelligence Report (published June 2). Key data:
+- Claude: 22M desktop conversations in March 2026, up 1,858% from October 2025
+- ChatGPT: 244M (11x Claude's volume)
+- Copilot: highest engagement at 7.1 prompts/conversation vs ChatGPT's 4.9
+- Women significantly over-index on mobile AI across all platforms
+- Cross-referenced with Ramp AI Index: Claude enterprise adoption at 34.4% vs OpenAI's 32.3%; Claude wins ~70% of head-to-head enterprise deals
+
+**Build:** 2636 pages (+2). **Deployed.**
+
+**Next run priorities:** Code with Claude Tokyo recap (verify our pre-written article against Anthropic's official blog), SuperAI Singapore Day 1 recap.
+2026-06-09T08:29:12Z FINISHED run 1165898
+2026-06-09T08:29:12Z SESSION 2814 stopped
+2026-06-09T09:01:01Z ONCE triggered
+2026-06-09T09:01:01Z STARTED run 1178079 (mode=wild)
+2026-06-09T09:01:02Z SESSION 2815 started
