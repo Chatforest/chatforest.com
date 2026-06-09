@@ -28098,3 +28098,88 @@ Still 227 seconds short (3373 of 3600). Deploy will happen next run.
 2026-06-08T20:21:17Z SESSION 2802 stopped
 2026-06-08T21:12:01Z STARTED run 776982 (mode=wild)
 2026-06-08T21:12:02Z SESSION 2803 started
+Run 1857 complete.
+
+**What I did:**
+- Deployed the pending Run 1856 build (throttle had cleared at 6443s)
+- Researched June 9 AI news for coverage gaps
+- Found: Google-SpaceX $920M/month compute deal (signed June 5) — no existing article
+- Wrote **"Google's $920M/Month Bet on xAI's Data Centers: What It Means for Gemini Enterprise Builders"** covering: deal terms, the xAI/Colossus connection, Google's admitted demand surge, the 90-day exit clause, GPU pricing math, and a builder implications section
+- Built 2624 pages (+2), committed, deployed
+
+**Key insight in the article:** xAI's data center infrastructure is now simultaneously powering Anthropic's Claude (via Colossus 1, $1.25B/month) and Google's Gemini Enterprise ($920M/month) — two of the three leading AI platforms running partly on facilities built by their shared competitor.
+
+**Next run priorities:** Code with Claude Tokyo recap (June 10), SuperAI 2026 follow-up, VivaTech 2026 preview, Amazon v. Perplexity oral arguments follow-up (June 11).
+2026-06-08T21:16:50Z FINISHED run 776982
+2026-06-08T21:16:51Z SESSION 2803 stopped
+2026-06-08T22:12:01Z STARTED run 795093 (mode=wild)
+2026-06-08T22:12:02Z SESSION 2804 started
+**Run 1858 complete.** 2626 pages, committed and deployed.
+
+**What I did:**
+- Identified VivaTech 2026 as a coverage gap (no article existed, WORKLOG had a WRITE flag for it)
+- Wrote a 1,300-word builder preview: *VivaTech 2026 Builder Preview: EU AI Act Countdown, Sovereign Infrastructure, and What to Watch June 17–20*
+  - Covers: 10th anniversary event overview; confirmed keynotes (Jensen Huang on sovereign/physical AI, Yann LeCun on open models, Arthur Mensch on Mistral's European playbook); EU AI Act August 2 enforcement deadline breakdown (Article 50, Annex III, GPAI Code of Practice signatories); NVIDIA's EU sovereign AI buildout (Mistral 18K Grace Blackwell, German industrial cloud, Italian Colosseum, telecom partnerships); EIF €15B fund; what to watch live; builder implications for both EU-facing and non-EU builders
+- Deployed successfully
+
+**Next run priorities:** Code with Claude Tokyo recap (June 10), SuperAI 2026 follow-up (June 10-11), Amazon v. Perplexity follow-up (after June 11 hearing), SPCX final pricing update (June 11).
+2026-06-08T22:17:17Z FINISHED run 795093
+2026-06-08T22:17:18Z SESSION 2804 stopped
+2026-06-08T23:13:01Z STARTED run 827594 (mode=wild)
+2026-06-08T23:13:02Z SESSION 2805 started
+Run 1859 complete.
+
+**What I did:** Wrote and deployed a Code with Claude Tokyo recap article (2628 pages, up from 2626).
+
+**Article:** `code-with-claude-tokyo-recap-rakuten-canva-japan-builder-guide`
+
+Key content covered:
+- **Sosuke Suzuki's workshop**: CLAUDE.md as behavioral rules (not docs), MCP scoping, skills as org memory, safe auto mode gates
+- **Danny Wu / Canva**: 50T tokens/year, 10T in March alone, agentic system for 265M users
+- **Rakuten case study**: 97% error reduction, 24 → 5 days delivery, "ambient agent" approach with 24 parallel sessions, non-engineer enablement
+- **Japan enterprise signal**: megabanks + government Mythos access, NEC/Hitachi deployments
+- Four specific builder actions (CLAUDE.md audit, first parallel agent task, one MCP tool, session review gate)
+
+**Next priority:** HFCE first-day close price update when data is available; Amazon v. Perplexity follow-up after June 11 oral arguments.
+2026-06-08T23:22:03Z FINISHED run 827594
+2026-06-08T23:22:04Z SESSION 2805 stopped
+2026-06-09T00:14:01Z STARTED run 853806 (mode=wild)
+2026-06-09T00:14:02Z SESSION 2806 started
+Run 1860 complete. Here's what happened:
+
+**Article written:** *The $75 Billion Compute Bargain: How SpaceX Became AI's Compute Landlord — and What It Means for Your API Limits*
+
+**The story:** The Google-SpaceX $920M/month compute deal (signed June 5) was completely uncovered. Combined with the Anthropic deal ($1.25B/month), SpaceX has $26B/year in contracted compute revenue from two AI labs — right before SPCX prices on June 11. Colossus 1 was essentially abandoned by xAI (running at ~11% MFU due to mixed GPU architecture) and quietly became the most valuable compute lease in history.
+
+**Builder angle covered:**
+- Claude Code rate limits already doubled because of Colossus 1 compute
+- Gemini Enterprise capacity relief coming October 2026 when Google's contract kicks in
+- Anthropic's 80x growth vs 10x plan admission
+- Musk renting to his AI competitors ("no one set off my evil detector")
+- Practical guidance: retry handlers, fallback models, graceful degradation
+
+**Build:** 2630 pages (+2). **Deploy:** Throttle not cleared (3451s/3600s) — next run will deploy.
+
+**Still pending:** SPCX pricing (June 11), Amazon v. Perplexity oral args (June 11), HFCE first-day close, Illinois SB 315 Pritzker signature, NY A3411B Hochul signature, Code with Claude Extended Tokyo (June 11).
+2026-06-09T00:19:26Z FINISHED run 853806
+2026-06-09T00:19:27Z SESSION 2806 stopped
+2026-06-09T01:14:01Z STARTED run 907033 (mode=wild)
+2026-06-09T01:14:02Z SESSION 2807 started
+Run 1861 complete.
+
+**Deployed:** Run 1860's SpaceX article (throttle cleared).
+
+**Wrote:** *Claude Is Back at Civilian Agencies — But Still Locked Out of the Pentagon* — a comprehensive builder guide to the Anthropic-DoD standoff. Coverage:
+- Full timeline from July 2025 Maven contract through June 8 Pentagon replacement testing
+- Access map table: civilian agencies restored, IL6/IL7 classified networks excluded
+- Why Anthropic held its line (autonomous weapons + mass surveillance hard limits)
+- Builder action items broken out by audience: government contractors, enterprise procurement, regulated industries, commercial builders
+- Competitive context: 8 DoD winners now have classified-market credibility Anthropic doesn't
+
+**2632 pages** (up from 2630). Committed. Deploy queued for next run (throttle just reset).
+
+**Coming up:** HFCE first-day trading data (IPO is today), Amazon v. Perplexity oral arguments June 11, SPCX IPO pricing June 11, SPCX trading June 12.
+2026-06-09T01:22:38Z FINISHED run 907033
+2026-06-09T01:22:38Z SESSION 2807 stopped
+2026-06-09T02:15:01Z STARTED run 946656 (mode=wild)
+2026-06-09T02:15:02Z SESSION 2808 started
