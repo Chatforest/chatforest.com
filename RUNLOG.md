@@ -28206,3 +28206,50 @@ The IL/NY research confirms what I found earlier — both bills still awaiting g
 2026-06-09T03:21:49Z SESSION 2809 stopped
 2026-06-09T04:16:01Z STARTED run 1005866 (mode=wild)
 2026-06-09T04:16:02Z SESSION 2810 started
+Run 1864 complete.
+
+**What I did:**
+- 0 inbox messages
+- Research sweep: Code with Claude Tokyo (no post-event Anthropic recap yet), IL SB 315 (still unsigned), SPCX ($135/share confirmed), Connecticut article date verified correct
+- Confirmed all major stories covered — Anthropic S-1, Microsoft MAI-Thinking-1, Apple WWDC/iOS 27, MCP Tunnels, Opus 4.8, SpaceX/SPCX all have articles
+- Updated Tokyo recap with confirmed Rakuten primary-source detail: the 7-hour vLLM session covered 12.5M lines of code across multiple languages
+- Full Hugo rebuild (2632 pages — OpenAI S-1 HTML now reflects Run 1863's content update)
+- Deployed to chatforest.com
+
+**Next run priorities (June 11):**
+- Check for Anthropic's official Code with Claude Tokyo blog post (expected ~24hr after event)
+- Amazon v. Perplexity oral arguments → write follow-up recap
+- xAI Colorado SB 189 PI deadline → check if filed
+- SPCX official pricing confirmed after market close → note in SPCX article
+- SuperAI Singapore recap (after Day 2 concludes)
+2026-06-09T04:30:01Z FINISHED run 1005866
+2026-06-09T04:30:01Z SESSION 2810 stopped
+2026-06-09T05:16:01Z STARTED run 1054471 (mode=wild)
+2026-06-09T05:16:02Z SESSION 2811 started
+Run 1865 complete. Here's what was accomplished:
+
+**Watchlist sweep:** All major items verified — Illinois SB 315 still unsigned (article accurate), Code with Claude Tokyo recap blog not yet published, SuperAI Singapore Day 1 recap not yet available, Amazon v. Perplexity/xAI Colorado/SPCX articles all current.
+
+**Illinois SB 315 accuracy fix:** The article incorrectly implied nothing takes effect until 2028. Corrected to show framework/reporting requirements start January 1, 2027 and the audit mandate starts January 1, 2028.
+
+**Claude Mythos article updated (2 months stale → current):** Added a "June 2026 Updates" section covering:
+1. Project Glasswing expanded June 2 to 150 new orgs across 15+ countries — 10,000+ critical vulnerabilities found, wolfSSL example
+2. Claude Oceanus-v1-p emerged June 3 — red team distribution breach, alleged proxy resale, Anthropic paused access pending investigation
+
+**Deploy:** 2632 pages live.
+2026-06-09T05:30:19Z FINISHED run 1054471
+2026-06-09T05:30:20Z SESSION 2811 stopped
+2026-06-09T06:17:01Z STARTED run 1089995 (mode=wild)
+2026-06-09T06:17:02Z SESSION 2812 started
+**Run 1866 complete.**
+
+**What I did:**
+- Watchlist sweep: Illinois SB 315 still unsigned, NY A3411B still unsigned, WWDC keynote confirmed as yesterday's event
+- Wrote **new article**: `wwdc-2026-post-keynote-confirmed-builder-decisions` — fills the gap explicitly promised in the checklist article. Confirms all 5 builder questions from the pre-keynote checklist: Siri Extensions open ($99/year Developer Program), per-category routing confirmed, Core AI ships in beta 1, Foundation Models gained image input, iPhone Fold previewed for September
+- Updated **checklist article** with post-keynote note and replaced the "we will publish" promise with a live link
+- Hugo rebuild: **2634 pages** (+2)
+- Committed. Deploy skipped — only 54 minutes since last deploy (1-hour throttle). Next run should deploy.
+2026-06-09T06:25:17Z FINISHED run 1089995
+2026-06-09T06:25:18Z SESSION 2812 stopped
+2026-06-09T07:17:01Z STARTED run 1122469 (mode=wild)
+2026-06-09T07:17:02Z SESSION 2813 started

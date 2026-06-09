@@ -1,13 +1,15 @@
 ---
-title: "Anthropic's $36 Billion TPU Deal: What Apollo, Blackstone, and Google Chips Mean for Builders"
+title: "Anthropic's $35 Billion TPU Deal: What Apollo, Blackstone, and Google Chips Mean for Builders"
 date: 2026-06-02
-description: "Apollo and Blackstone arranged $36B in private credit to buy Google TPUs and lease them to Anthropic — the largest chip financing deal in history. Here's the structure, the TPU context, and what it means if you're building on Claude."
+description: "Apollo and Blackstone arranged $35B in private credit to buy Google TPUs and lease them to Anthropic — the largest chip financing deal in history. Here's the structure, the TPU context, and what it means if you're building on Claude."
 content_type: "Builder's Log"
 categories: ["Anthropic", "Infrastructure", "AI Industry"]
 tags: ["anthropic", "tpu", "google", "apollo", "blackstone", "compute", "infrastructure", "private-credit", "claude", "api", "rate-limits", "cost"]
 ---
 
-On May 28, 2026 — the same day Anthropic closed its $65 billion Series H — Bloomberg reported that Apollo Global Management and Blackstone had arranged a separate $36 billion debt deal to buy Google's custom TPU chips and lease them to Anthropic. The two announcements landed together, but they're different structures with different implications. The Series H is equity. The chip deal is debt. And for builders, the chip deal is the more operationally significant piece.
+> **Correction — June 9, 2026:** Bloomberg's initial May 28 reporting cited $36 billion. When the deal formally closed on June 5, 2026, the final amount was confirmed at $35 billion. References throughout this article have been updated accordingly.
+
+On May 28, 2026 — the same day Anthropic closed its $65 billion Series H — Bloomberg reported that Apollo Global Management and Blackstone had arranged a separate debt deal (initially cited at $36 billion) to buy Google's custom TPU chips and lease them to Anthropic. The deal closed at $35 billion on June 5. The two Series H and chip deal announcements landed together, but they're different structures with different implications. The Series H is equity. The chip deal is debt. And for builders, the chip deal is the more operationally significant piece.
 
 This is the largest private credit transaction ever structured, and the largest chip-financing deal in history. Here is what it is, how it works, and what it changes.
 
@@ -25,7 +27,7 @@ The debt is divided into three tranches:
 
 Broadcom, which co-develops the TPU chips with Google, is backstopping payments on the largest portions of the transaction. The involvement of Broadcom as payment guarantor is what makes the deal bankable at this scale — lenders get a creditworthy backstop that isn't Anthropic.
 
-The leasing structure keeps all $36 billion of associated debt off Anthropic's own balance sheet. Anthropic shows compute expense, not debt. This matters for the upcoming IPO (October 2026 target): Anthropic can present a clean balance sheet while simultaneously commanding enough compute to run training and inference at scale.
+The leasing structure keeps all $35 billion of associated debt off Anthropic's own balance sheet. Anthropic shows compute expense, not debt. This matters for the upcoming IPO (October 2026 target): Anthropic can present a clean balance sheet while simultaneously commanding enough compute to run training and inference at scale.
 
 ---
 
@@ -40,7 +42,7 @@ Google has been developing custom tensor processing units since 2015. By 2026, t
 
 This isn't a minor efficiency gain. At a 70–90% cost reduction for inference, the per-token cost floor for running Claude at scale drops substantially. Anthropic's two most capable models — Claude Opus and the current frontier releases — already run predominantly on TPUs and Amazon's Trainium chips, not Nvidia H100s.
 
-Anthropic has committed to at least 1 million TPUs from Google: approximately 600,000 leased and 400,000 purchased outright. The $36 billion deal is the financing mechanism that makes that scale of purchase possible without Anthropic carrying the debt directly.
+Anthropic has committed to at least 1 million TPUs from Google: approximately 600,000 leased and 400,000 purchased outright. The $35 billion deal is the financing mechanism that makes that scale of purchase possible without Anthropic carrying the debt directly.
 
 ---
 
@@ -52,7 +54,7 @@ This deal fits into a broader compute buildout that has accelerated over the pas
 
 **Amazon Trainium (Indiana):** Amazon opened a dedicated data center campus on 1,200 acres for Anthropic in Indiana — an $11 billion facility for Trainium-based training infrastructure. Amazon has a $5 billion equity stake in Anthropic and chip access is part of that arrangement.
 
-**Google TPUs (NY, TX, LA, IN):** The $36 billion deal finances 1 million+ TPUs across four states. 3.5 gigawatts of committed power capacity — up from an earlier deal that was roughly one-third the size.
+**Google TPUs (NY, TX, LA, IN):** The $35 billion deal finances 1 million+ TPUs across four states. 3.5 gigawatts of committed power capacity — up from an earlier deal that was roughly one-third the size.
 
 **Google Cloud TPUs:** Anthropic continues to use Google Cloud's TPU pods for portions of training and inference, separate from the directly leased hardware.
 
@@ -64,9 +66,9 @@ No other AI lab has a comparable multi-source compute position with separate phy
 
 The SPV-and-leaseback model is a specific financial technology for avoiding a particular problem: balance sheet debt in the IPO window.
 
-Anthropic is targeting an October 2026 IPO with Goldman Sachs, JPMorgan, and Morgan Stanley as underwriters. A company carrying $36 billion in debt on its balance sheet is not an ideal IPO candidate — the debt-to-equity ratio dominates the story. A company paying compute lease expenses is a different financial narrative.
+Anthropic is targeting an October 2026 IPO with Goldman Sachs, JPMorgan, and Morgan Stanley as underwriters. A company carrying $35 billion in debt on its balance sheet is not an ideal IPO candidate — the debt-to-equity ratio dominates the story. A company paying compute lease expenses is a different financial narrative.
 
-By putting the debt in the SPV, Anthropic gets access to the chips it needs while the balance sheet shows lease payments rather than long-term debt. The debt is real, but the entity holding it is not Anthropic. This is a standard structure in infrastructure finance — airlines do this with aircraft, energy companies do this with pipelines — but at $36 billion it is extraordinary in the technology sector.
+By putting the debt in the SPV, Anthropic gets access to the chips it needs while the balance sheet shows lease payments rather than long-term debt. The debt is real, but the entity holding it is not Anthropic. This is a standard structure in infrastructure finance — airlines do this with aircraft, energy companies do this with pipelines — but at $35 billion it is extraordinary in the technology sector.
 
 Broadcom's role as backstop matters here. Lenders in private credit markets need assurance they'll get paid even if the ultimate customer (Anthropic) has problems. Broadcom, a $900+ billion semiconductor company with reliable cash flows, backstopping the A2 tranche makes the deal credit-worthy at scale.
 
@@ -90,7 +92,7 @@ In 2024, a significant portion of Anthropic's compute ran through Google Cloud a
 
 Anthropic now has:
 - Direct physical access to Colossus (SpaceX facility)
-- Directly leased TPUs (the $36B deal, not cloud instances)
+- Directly leased TPUs (the $35B deal, not cloud instances)
 - Dedicated Amazon data center campus (not shared cloud)
 - Google Cloud residual capacity
 
@@ -128,11 +130,11 @@ For builders on multi-year enterprise contracts, the post-IPO Anthropic is a mor
 
 ## The Bottom Line for Builders
 
-The $36 billion chip deal does three things that matter:
+The $35 billion chip deal does three things that matter:
 
 1. It locks in Anthropic's compute costs at TPU-level economics — significantly cheaper per token than GPU alternatives — for the infrastructure funded by this deal
 2. It distributes Anthropic's compute across four physical locations and two chip architectures (TPU + Nvidia GPU), reducing single-point infrastructure dependency
-3. It does all of this without putting $36 billion on Anthropic's balance sheet before its IPO
+3. It does all of this without putting $35 billion on Anthropic's balance sheet before its IPO
 
 The immediate effect on your API calls: none. The medium-term effect on API pricing and rate limits: positive. The long-term effect on Anthropic's ability to run a profitable business at scale: substantial.
 

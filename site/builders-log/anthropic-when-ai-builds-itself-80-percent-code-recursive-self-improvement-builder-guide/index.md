@@ -58,6 +58,22 @@ For builders, the practical implication is not "prepare for an imminent pause." 
 
 ---
 
+## Industry Responses
+
+> **Update — June 9, 2026:** OpenAI and other labs responded to Anthropic's proposal in the days following publication.
+
+**OpenAI** published a direct counter-position: "democratic governments — not private companies acting alone — must ultimately determine the rules, safeguards, and accountability mechanisms." The specific language: "Our view is that decisions about the pace of AI innovation should not be left to any one lab, company, or special interest group."
+
+This is a coherent alternative framing. Anthropic's model is voluntary lab coordination — fast, private, but susceptible to defection and requires trusting competitors. OpenAI's model is government mandate — slower, requiring legislative capacity that most governments don't yet have for AI, but democratically legitimate and potentially more durable.
+
+Neither position addresses the China question directly. A pause agreed among US and European labs with no participation from Chinese frontier development would not be a global pause. Both Anthropic and OpenAI implicitly acknowledge this; neither has a clean answer.
+
+**Google, Meta, and xAI** have not made public statements in response as of June 9, 2026.
+
+The timing drew comment: Anthropic filed its confidential S-1 with the SEC on June 1, four days before "When AI Builds Itself" published, and the $35 billion chip financing deal closed June 5. Some critics framed the post as contradictory — why file for a trillion-dollar IPO and then call for a brake pedal? The more accurate read: Anthropic is not calling for an immediate halt to its own work. It is calling for the option to halt to exist before it is needed. Those are compatible positions. The strategic incentive is real but doesn't invalidate the argument.
+
+---
+
 ## Builder Implications
 
 **On productivity:** The 8x output figure is a data point, not a ceiling. Anthropic's engineering team reached it by moving from AI-assisted coding (autocomplete, inline suggestions) to AI-driven agentic development — long-horizon tasks, Claude Code operating over large codebases, agents running test suites and iterating. If your team is still in the autocomplete phase, the productivity gap between your output and a team operating at agentic scale is growing.
