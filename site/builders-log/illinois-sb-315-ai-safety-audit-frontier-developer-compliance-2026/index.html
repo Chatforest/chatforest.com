@@ -67,7 +67,7 @@
       <div class="article-body">
         <p>On May 27, 2026, the Illinois House voted 110-0 to pass SB 315 — the Artificial Intelligence Safety Measures Act. The Senate had already cleared it 52-5 on May 21. Governor Pritzker has stated he will sign it. No veto, no delay, no fight. Bipartisan near-unanimity in a divided legislature.</p>
 <p>This is a meaningfully different law from California&rsquo;s SB 53. California requires frontier developers to publish safety frameworks and report incidents. Illinois requires all of that, plus something no US state has done before: <strong>mandatory annual third-party audits</strong>, with penalties capped at $3 million per violation — three times California&rsquo;s ceiling.</p>
-<p>The law does not take effect until January 1, 2028. But the auditing infrastructure it anticipates doesn&rsquo;t exist yet, the standards it references aren&rsquo;t written yet, and the labs that will be subject to it are going to spend the next 18 months figuring out what compliance actually looks like. Builders who use those labs&rsquo; APIs — which is most of the industry — should understand what their providers are being asked to do.</p>
+<p>The law takes effect in two stages. Framework disclosure and incident reporting requirements begin January 1, 2027. The third-party audit mandate — the provision no US state has previously required — begins January 1, 2028 (or 90 days after a developer first qualifies, whichever is later). But the auditing infrastructure it anticipates doesn&rsquo;t exist yet, the standards it references aren&rsquo;t written yet, and the labs that will be subject to it are going to spend the next two years figuring out what compliance actually looks like. Builders who use those labs&rsquo; APIs — which is most of the industry — should understand what their providers are being asked to do.</p>
 <hr>
 <h2 id="who-sb-315-covers">Who SB 315 Covers</h2>
 <p>SB 315 applies to <strong>&ldquo;large frontier developers&rdquo;</strong>: companies that <strong>build or train</strong> AI models above a frontier-scale compute threshold, with <strong>annual gross revenues above $500 million</strong> (including affiliates).</p>
@@ -155,7 +155,7 @@
 <tr>
 <td>In effect</td>
 <td>Already (2025)</td>
-<td>January 1, 2028</td>
+<td>Jan 1, 2027 (disclosure/reporting); Jan 1, 2028 (audits)</td>
 </tr>
 <tr>
 <td>Enforcement</td>
@@ -169,10 +169,10 @@
 </tr>
 </tbody>
 </table>
-<p>California&rsquo;s law is already in effect. Illinois&rsquo;s is the more demanding law but doesn&rsquo;t take effect for 18 months.</p>
+<p>California&rsquo;s law is already in effect. Illinois&rsquo;s is the more demanding law — framework disclosures start January 1, 2027, and the audit mandate starts January 1, 2028.</p>
 <hr>
 <h2 id="what-this-means-for-builders">What This Means for Builders</h2>
-<p><strong>If you train or deploy your own frontier models above the revenue threshold:</strong> SB 315 applies to you. Start mapping your existing safety practices against the framework requirements now. The 18-month runway is shorter than it sounds — annual audit processes take months to design and execute, and the auditing standards you&rsquo;ll need to comply with don&rsquo;t exist yet. Engaging with the audit-standards development process (NIST, Big Four, AI evaluation orgs) now is not optional if you want to be audit-ready in 2028.</p>
+<p><strong>If you train or deploy your own frontier models above the revenue threshold:</strong> SB 315 applies to you. Framework disclosure and incident reporting requirements begin January 1, 2027 — those are 7 months away. Start mapping your existing safety practices against the framework requirements now. The audit mandate starts January 1, 2028, giving you a bit more time, but annual audit processes take months to design and execute, and the auditing standards you&rsquo;ll need to comply with don&rsquo;t exist yet. Engaging with the audit-standards development process (NIST, Big Four, AI evaluation orgs) now is not optional if you want to be audit-ready by then.</p>
 <p><strong>If you build on top of frontier APIs (most builders):</strong> SB 315 doesn&rsquo;t apply to you directly, but it will shape what your providers publish. Starting in 2028, every major lab&rsquo;s Frontier AI Framework becomes a legally mandated, annually audited document — not a voluntary marketing artifact. When you evaluate model providers, their compliance posture will be a concrete, attestable factor rather than a policy-page promise.</p>
 <p><strong>On the audit-standards gap:</strong> The most significant open question from this law is not the regulation itself — it is what &ldquo;frontier AI safety audit&rdquo; will come to mean in practice. The industry has 18 months to answer that. Watch NIST, watch the Big Four&rsquo;s emerging AI practice groups, watch METR and AVERI. Whoever defines the audit methodology in that window will define what compliance looks like for this entire category of law.</p>
 <p><strong>On state patchwork:</strong> Illinois and California now both have frontier model safety laws. Connecticut and New York passed related AI bills in the same May 2026 legislative window (IAPP reports). The pattern is: no federal standard, so states act. The 50-state patchwork risk that lobbying groups have warned about is no longer hypothetical. If you build at scale across the US, this is a multi-jurisdiction compliance problem, not a single-state one.</p>

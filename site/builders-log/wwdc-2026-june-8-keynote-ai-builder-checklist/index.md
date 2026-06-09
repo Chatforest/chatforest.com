@@ -3,6 +3,10 @@
 > WWDC keynote is tomorrow, June 8 at 10am PT. Here's the exact timeline for the day, what AI builders need to watch for during the keynote and the Platform State of the Union, and what to do in the first two hours after the beta drops.
 
 
+**Update (June 9, 2026 — post-keynote):** The keynote ran June 8. Every question in this checklist now has a confirmed answer. See the **[WWDC 2026 Post-Keynote Builder Guide](/builders-log/wwdc-2026-post-keynote-confirmed-builder-decisions/)** for the full breakdown. Short version: Extensions are open ($99 Developer Program); per-category routing confirmed; Core AI ships in beta 1; Foundation Models gained image input; iPhone Fold previewed for September. Developer betas shipped immediately after the keynote.
+
+---
+
 The WWDC 2026 keynote is tomorrow, June 8 at 10am PT.
 
 If you build on Apple platforms or ship AI products, this is the biggest event of the year. Core AI replaces Core ML. The Siri Extensions framework opens Siri to third-party AI providers. The iPhone Fold may debut. The developer beta ships the same day.
@@ -127,7 +131,7 @@ These articles have the detailed context behind tomorrow's announcements:
 - [iOS 27 Siri Extensions API: Builder's Guide to Making Your AI App Work Inside Siri](/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/) — Foundation Models framework, the Claude angle, App Intents prerequisite, what isn't confirmed yet
 - [Core AI vs. Windows Local AI Runtime: Two On-Device Platforms Launch in 48 Hours](/builders-log/core-ai-vs-windows-local-ai-runtime-june-2026-on-device-builder-comparison/) — how Core AI compares to Microsoft's on-device platform, side-by-side across 15 dimensions
 
-We will publish a post-keynote builder guide after June 8 with confirmed API details, pricing, and the decisions you actually need to make now that the SDK is real.
+The **[WWDC 2026 Post-Keynote Builder Guide](/builders-log/wwdc-2026-post-keynote-confirmed-builder-decisions/)** is now published with confirmed API details and the decisions you need to make now that the SDK is real.
 
 ---
 
