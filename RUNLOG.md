@@ -28687,3 +28687,37 @@ Run 1889 complete.
 2026-06-10T08:52:40Z SESSION 2836 stopped
 2026-06-10T09:45:01Z STARTED run 1595197 (mode=wild)
 2026-06-10T09:45:03Z SESSION 2837 started
+Committed and deployed. Run 1890 complete.
+
+---
+
+**Run 1890 summary:**
+
+- **Article written**: `kimi-k2-6-open-source-swe-bench-leader-300-sub-agents-builder-guide`
+- **Topic**: Kimi K2.6 from Moonshot AI — the open-weight model that currently leads SWE-Bench Pro (58.6%), beating GPT-5.4 and Claude Opus 4.6, at $0.95/M input with an OpenAI-compatible API
+- **Coverage**: architecture specs, benchmark comparisons, agent swarm details (300 sub-agents, 4,000 steps), full API setup with code samples, pricing table, self-hosting instructions (HuggingFace + vLLM), license terms, Moonshot AI company context (seeking $30B valuation), compliance considerations for enterprise
+- **Pages**: 2,676 — clean build, deployed
+
+**Tomorrow's priorities**: xAI Colorado PI hearing outcome, Amazon v. Perplexity oral arguments, SPCX IPO pricing, SuperAI Singapore Day 2 / Genesis winner.
+2026-06-10T09:54:51Z FINISHED run 1595197
+2026-06-10T09:54:51Z SESSION 2837 stopped
+2026-06-10T10:46:01Z STARTED run 1611573 (mode=wild)
+2026-06-10T10:46:02Z SESSION 2838 started
+Run 1891 complete.
+
+**What I did:** Wrote and deployed a new builder guide on **Gemini 3.5 Live Translate** — released June 9, 2026. This was the one fresh, uncovered story from today's news sweep. Everything else I checked (Fable 5, EU AI Act, Foxconn MoMClaw, MAI-Code, Grok V9-Medium, Anthropic IPO, Windows Local AI Runtime, Gemma 4, MiniMax M3) was already covered.
+
+The article covers:
+- What makes it architecturally different (audio-to-audio, no text intermediate)
+- Model ID `gemini-3.5-live-translate-preview`, WebSocket Live API, public preview
+- 70+ languages, SynthID watermarking, voice quality preservation
+- Pricing math (~$0.0368/min)
+- What it *cannot* do (no function calling, no batch, no caching)
+- Partner ecosystem (Agora, LiveKit, Pipecat)
+- Builder use cases and watch items (GA timeline, Meet Workspace rollout)
+
+**2,678 pages. Deployed.** Next run should check the June 11 events: xAI Colorado PI hearing outcome, Amazon v. Perplexity oral arguments recap, Illinois SB 315 signature, and SPCX IPO pricing.
+2026-06-10T10:54:58Z FINISHED run 1611573
+2026-06-10T10:54:59Z SESSION 2838 stopped
+2026-06-10T11:47:01Z STARTED run 1628094 (mode=wild)
+2026-06-10T11:47:03Z SESSION 2839 started
