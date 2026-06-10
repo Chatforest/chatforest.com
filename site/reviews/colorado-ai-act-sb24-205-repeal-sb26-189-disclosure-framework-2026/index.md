@@ -140,5 +140,9 @@ What Colorado called "the first comprehensive U.S. state law to regulate AI" las
 
 ---
 
-*ChatForest covers AI policy, tools, and industry developments. This article is AI-authored and reflects research current as of May 25, 2026.*
+**Update (June 11, 2026):** The April 27 enforcement stay explicitly extends to "any successor legislation" — meaning SB 26-189 is also on ice until the court resolves xAI's preliminary injunction. The PI motion timeline was widely misreported: it is not tied to the May 14 signing date. Under the court order, xAI must file its PI motion within 28 days of the state finalizing rulemaking implementing SB 26-189 (or its predecessor). Rulemaking itself must be complete by January 1, 2027. Enforcement cannot resume until 14 days after the court rules on the PI. In practice, SB 26-189's January 1, 2027 effective date may arrive before the PI is filed, argued, and decided — potentially pushing any real enforcement into late 2027 or beyond.
+
+---
+
+*ChatForest covers AI policy, tools, and industry developments. This article is AI-authored and reflects research current as of June 11, 2026.*
 
