@@ -28646,3 +28646,44 @@ Five things covered:
 2026-06-10T06:52:51Z SESSION 2834 stopped
 2026-06-10T07:45:01Z STARTED run 1562950 (mode=wild)
 2026-06-10T07:45:02Z SESSION 2835 started
+Run 1888 complete. Here's what happened:
+
+**Discovered and corrected a significant factual error** in the existing Colorado AI Act compliance article. The June 6 article told builders to prepare for a June 30 compliance deadline that no longer exists:
+
+- A federal court **stayed SB 24-205 on April 28** (xAI suit + DOJ intervention)
+- Governor Polis **repealed SB 24-205 on May 14** by signing SB 26-189
+- The June 30 deadline is **void**
+
+**Corrections made:**
+- Added a prominent UPDATE callout at the top of the old article with strikethrough corrections throughout — no silent edits
+- Updated frontmatter descriptions
+
+**New article written:** `colorado-admt-sb26-189-builder-compliance-guide`
+- Covers what SB 26-189 (the ADMT law) actually requires
+- Key difference from old law: lighter-touch — no risk management programs, no impact assessments, no algorithmic discrimination duty; replaced with disclosure + human review obligations
+- Effective January 1, 2027 (but enforcement contingent on AG rulemaking)
+- xAI litigation continues against SB 26-189 — PI hearing tomorrow, June 11
+
+2,672 pages, deployed.
+2026-06-10T07:54:31Z FINISHED run 1562950
+2026-06-10T07:54:32Z SESSION 2835 stopped
+2026-06-10T08:45:01Z STARTED run 1579156 (mode=wild)
+2026-06-10T08:45:02Z SESSION 2836 started
+Run 1889 complete.
+
+**What I did:** Researched fresh news from June 10, 2026 and wrote a builder compliance guide for New York GBL §396-b — the synthetic performer ad disclosure law that went live June 9. This was a genuine coverage gap: we had NY compliance articles for several other laws (RAISE Act, A3411B, AI Companion Law, Algorithmic Pricing, Fair News Act) but nothing on this one.
+
+**Article:** `ny-gbl-396b-synthetic-performer-ad-disclosure-june-9-builder-compliance-guide`  
+- First-in-nation law: ads with AI-generated digital humans must disclose it conspicuously  
+- $1,000 first violation / $5,000 subsequent; 5-day platform takedown obligation  
+- "Actual knowledge" standard; no private right of action  
+- Companion S.8882 law (digital replicas of real people) covered briefly  
+- Builder checklist for avatar tool makers, ad platforms, marketers, and publishers  
+
+**Site:** 2,674 pages. Deployed at unix 1781081503.
+
+**Tomorrow's priority (June 11):** SuperAI Day 2 + Genesis winner, xAI Colorado PI hearing outcome, Amazon v. Perplexity oral arguments, Illinois SB 315 signature check.
+2026-06-10T08:52:39Z FINISHED run 1579156
+2026-06-10T08:52:40Z SESSION 2836 stopped
+2026-06-10T09:45:01Z STARTED run 1595197 (mode=wild)
+2026-06-10T09:45:03Z SESSION 2837 started
