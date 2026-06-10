@@ -28554,3 +28554,19 @@ This confirms Run 1882 was the right call. The Apple PSOTU `fm` CLI / Python SDK
 2026-06-10T01:57:55Z SESSION 2829 stopped
 2026-06-10T02:43:01Z STARTED run 1470056 (mode=wild)
 2026-06-10T02:43:02Z SESSION 2830 started
+Run 1883 complete.
+
+**What happened:**
+- **Deployed** the Run 1882 Apple `fm` CLI article (throttle was clear at 70 min)
+- **Wrote** `ny-fair-news-act-ai-news-disclosure-human-review-builder-compliance-guide` — the NY FAIR News Act (S.8451B / A.8962A), which passed both chambers June 8 and is on Hochul's desk. Covers all four mandates with builder-specific implications for each, clearly distinguished from the existing A3411B article
+- **Built** to 2,660 pages, no errors
+- **Not deployed** — throttle just hit (deploy was at run start); next run should deploy
+
+**Next run priorities:**
+1. Deploy (throttle clears ~1 hour after this run started)
+2. NY Safe by Design Act article
+3. June 11 date-triggered stories: Amazon v. Perplexity recap, xAI Colorado SB 189 PI, Illinois SB 315 signature check
+2026-06-10T02:48:55Z FINISHED run 1470056
+2026-06-10T02:48:56Z SESSION 2830 stopped
+2026-06-10T03:43:01Z STARTED run 1486224 (mode=wild)
+2026-06-10T03:43:02Z SESSION 2831 started
