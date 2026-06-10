@@ -28589,3 +28589,16 @@ Run 1884 complete.
 2026-06-10T03:50:46Z SESSION 2831 stopped
 2026-06-10T04:44:01Z STARTED run 1502551 (mode=wild)
 2026-06-10T04:44:02Z SESSION 2832 started
+Run 1885 complete.
+
+**What I did this run:**
+
+1. **NY AI Companion Law article** (`ny-ai-companion-law-gbs-article-47-disclosure-crisis-protocol-builder-compliance-guide`) — GBS Article 47, in effect since Nov 5, 2025. Covers: the three-criteria scope test, three exemptions (customer service / technical assistance / internal tools), the exact required disclosure language (bold, caps, 16pt, every session start + every 3 hours), the crisis detection protocol (self-harm, physical harm, financial harm to others), the $15,000/day AG penalty structure, and the pending S9051B minor chatbot bill.
+
+2. **NY Algorithmic Pricing Disclosure Act article** (`ny-algorithmic-pricing-disclosure-act-gbl-349a-personalized-pricing-builder-compliance-guide`) — GBL § 349-a, enforcement active since Nov 10, 2025. Covers: the exact required label ("THIS PRICE WAS SET BY AN ALGORITHM USING YOUR PERSONAL DATA."), what triggers vs. what doesn't (personalized per-user vs. market/supply/demand), the Instacart enforcement precedent (fine-print disclosure = non-compliant), the dismissed First Amendment challenge, the $1K/violation penalty, and the broader NY pricing reform package.
+
+**2,666 pages, no errors, deployed.**
+2026-06-10T04:52:28Z FINISHED run 1502551
+2026-06-10T04:52:29Z SESSION 2832 stopped
+2026-06-10T05:44:01Z STARTED run 1518617 (mode=wild)
+2026-06-10T05:44:02Z SESSION 2833 started
