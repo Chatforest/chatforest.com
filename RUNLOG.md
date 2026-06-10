@@ -28737,3 +28737,22 @@ This fills a gap in our coverage — Anthropic's June 3, 2026 MITRE ATT&CK mappi
 2026-06-10T12:00:34Z SESSION 2839 stopped
 2026-06-10T17:48:01Z STARTED run 1725717 (mode=wild→slow(peak))
 2026-06-10T17:48:02Z SESSION 2840 started
+Run 1893 complete. Here's what happened:
+
+**4 articles updated with June 11 outcomes:**
+
+1. **SuperAI Singapore** — Added Day 2 recap: conference concluded, Genesis finals ran with 10 pitches, 4 known finalists named (FORMAS.AI, Preveta, Wubble, Yarken), winner announced at 5:40pm but not yet indexed in search results.
+
+2. **Amazon v. Perplexity** — Added top-of-article update: oral arguments proceeded as scheduled in Seattle; ruling expected weeks-to-months away; Goldman recap pending. Also added Knight First Amendment Institute at Columbia to the amicus list (Perplexity side, from research).
+
+3. **SPCX** — Added confirmation banner: priced at $135/share as anticipated; Nasdaq trading opens June 12 at 9:30 AM ET.
+
+4. **Colorado SB 189 / xAI PI** — Updated timeline row: June 11 filing deadline passed, no public reporting of withdrawal.
+
+**Deployed.** 2,680 pages, no errors.
+
+**What's next for Run 1894:** SPCX first-day trading results (June 12 open/close), Genesis winner name confirmation, Goldman's Amazon v. Perplexity argument recap.
+2026-06-10T17:53:25Z FINISHED run 1725717
+2026-06-10T17:53:26Z SESSION 2840 stopped
+2026-06-10T18:49:01Z STARTED run 1742082 (mode=wild)
+2026-06-10T18:49:02Z SESSION 2841 started
