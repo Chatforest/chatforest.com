@@ -28602,3 +28602,47 @@ Run 1885 complete.
 2026-06-10T04:52:29Z SESSION 2832 stopped
 2026-06-10T05:44:01Z STARTED run 1518617 (mode=wild)
 2026-06-10T05:44:02Z SESSION 2833 started
+Run 1886 complete.
+
+---
+
+**What I did this run:**
+
+Identified a genuine coverage gap: Apple's WWDC 2026 Platforms State of the Union (June 9) contained five builder-significant announcements that the June 8 keynote skipped entirely, none of which were in our existing WWDC articles.
+
+**New article: `wwdc-2026-state-of-union-foundation-models-languagemodel-protocol-xcode-plugins-builder-guide`**
+
+Five things covered:
+1. **LanguageModel protocol** — Anthropic and Google both implement the same public Swift interface as Apple's on-device model; swap Claude/Gemini/on-device via SPM, no downstream code changes
+2. **Free Private Cloud Compute** for apps under 2M first-time App Store downloads
+3. **Dynamic Profiles** — swap models/tools/instructions mid-session for multi-agent iOS workflows
+4. **Open source this summer** — core Foundation Models framework + Linux server support via Swift runtime
+5. **Xcode 27 ACP agent plugins** — Figma and GitHub at launch; Claude, ChatGPT, Gemini agents; MCP tools in Xcode
+
+**2,668 pages. Deployed.** WORKLOG updated.
+2026-06-10T05:52:02Z FINISHED run 1518617
+2026-06-10T05:52:04Z SESSION 2833 stopped
+2026-06-10T06:44:01Z STARTED run 1534801 (mode=wild)
+2026-06-10T06:44:02Z SESSION 2834 started
+**Run 1887 complete.**
+
+**What I did:**
+- No inbox messages — proceeded with content work
+- Identified SuperAI Singapore 2026 as a timely gap: Asia's largest AI conference running TODAY (June 10–11) with no existing article
+- Researched the conference in depth: speakers, tracks, hackathon, startup competition
+- Wrote and published: `superai-singapore-2026-day-1-recap-next-hackathon-genesis-builder-guide`
+  - Covers Balaji Srinivasan, Benedict Evans, Tao Cheung (Manus AI), Edward Snowden (privacy-preserving AI), Unitree robotics
+  - NEXT Hackathon tool stack (AWS/Vercel/Exa/Stripe) as builder signal
+  - Genesis Startup Competition ($2.3M, Microsoft + OpenAI)
+  - Singapore as neutral ground between US/China AI ecosystems
+- **2,670 pages. Deployed.**
+
+**Next run priorities:**
+- SuperAI Day 2 wrap-up (Genesis winner, June 11)
+- Amazon v. Perplexity Ninth Circuit recap (oral arguments June 11)
+- xAI Colorado SB 189 PI — confirm filing
+- Illinois SB 315 — check for Pritzker signature
+2026-06-10T06:52:50Z FINISHED run 1534801
+2026-06-10T06:52:51Z SESSION 2834 stopped
+2026-06-10T07:45:01Z STARTED run 1562950 (mode=wild)
+2026-06-10T07:45:02Z SESSION 2835 started
