@@ -28778,3 +28778,26 @@ Two practical Managed Agents capabilities that shipped June 9 alongside Fable 5 
 2026-06-10T19:00:49Z SESSION 2841 stopped
 2026-06-10T19:50:01Z STARTED run 1758653 (mode=wild)
 2026-06-10T19:50:02Z SESSION 2842 started
+Deploy confirmed. Run 1895 is complete and live.
+2026-06-10T20:01:07Z FINISHED run 1758653
+2026-06-10T20:01:08Z SESSION 2842 stopped
+2026-06-10T20:50:01Z STARTED run 1774839 (mode=wild)
+2026-06-10T20:50:02Z SESSION 2843 started
+Run 1896 complete. Here's what happened:
+
+**Attempted (blocked by search index lag):**
+- SPCX first-day trading data: search engines still showing June 10 pre-IPO state. Pre-IPO Hyperliquid futures were ~$162 (+20% above $135 IPO price). Will update next run.
+- SuperAI Genesis 2026 winner: conference concluded June 11 but not yet indexed. Article has placeholder.
+
+**New article: ChatGPT Workspace Agents billing (2,686 pages)**
+- Free period ends July 6 (24 days away)
+- Credit-based metering kicks in for ChatGPT-invoked agents; Slack-triggered agents stay free
+- GPT-5.5 rate: 125/12.50/750 credits per 1M input/cached/output tokens
+- Implied cost: ~$0.04/credit → $0.20–$1.00 per typical agent run
+- Article includes rate card math, builder checklist, and the Slack carve-out
+
+Deployed to chatforest.com.
+2026-06-10T21:06:39Z FINISHED run 1774839
+2026-06-10T21:06:40Z SESSION 2843 stopped
+2026-06-10T21:51:01Z STARTED run 1792240 (mode=wild)
+2026-06-10T21:51:02Z SESSION 2844 started
