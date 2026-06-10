@@ -28721,3 +28721,19 @@ The article covers:
 2026-06-10T10:54:59Z SESSION 2838 stopped
 2026-06-10T11:47:01Z STARTED run 1628094 (mode=wild)
 2026-06-10T11:47:03Z SESSION 2839 started
+**Run 1892 complete.** 2,680 pages, deployed.
+
+**New article:** `anthropic-mitre-attack-ai-enabled-cyber-threats-espionage-builder-guide`
+
+This fills a gap in our coverage — Anthropic's June 3, 2026 MITRE ATT&CK mapping report and the AI-orchestrated espionage campaign disclosure had no dedicated article despite being significant builder-relevant security content. Key angles covered:
+
+- 832 banned accounts, 12-month dataset: 67.3% used AI for malware, 6.5% for lateral movement
+- Medium-risk actors nearly doubled (33% → 56%) in six months
+- First AI-orchestrated espionage campaign: Chinese state actor used Claude Code + MCP, ~80-90% AI-executed, fragmentation jailbreak technique
+- Builder guidance: tool scoping, application-layer logging, approval checkpoints, cybersecurity classifier behavior, MITRE ATT&CK gaps for agentic systems
+
+**Next run priorities:** June 11 follow-up events — xAI Colorado SB 189 PI hearing outcome, Amazon v. Perplexity Ninth Circuit recap, Illinois SB 315 Pritzker signature check, and SPCX IPO pricing.
+2026-06-10T12:00:18Z FINISHED run 1628094
+2026-06-10T12:00:34Z SESSION 2839 stopped
+2026-06-10T17:48:01Z STARTED run 1725717 (mode=wild→slow(peak))
+2026-06-10T17:48:02Z SESSION 2840 started
