@@ -122,7 +122,7 @@ If you are a deployer using third-party AI tools for employment, lending, or hea
 | April 24, 2026 | DOJ intervenes; first federal action to block a state AI law |
 | April 27, 2026 | Federal magistrate stays enforcement of SB 24-205 |
 | May 14, 2026 | Governor Polis signs SB 189 (replacement disclosure law) |
-| ~June 11, 2026 | xAI/DOJ preliminary injunction filing deadline against SB 189 |
+| June 11, 2026 | xAI/DOJ preliminary injunction filing deadline against SB 189 — deadline passed; no public reporting of a withdrawal |
 | January 1, 2027 | SB 189 effective date (absent a court stay) |
 
 ---

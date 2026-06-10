@@ -8,6 +8,10 @@ categories: ["Legal", "Agents"]
 tags: ["legal", "perplexity", "cfaa", "amazon", "ninth-circuit", "ai-agents", "agentic-ai", "builder-guide", "authorization", "van-buren", "comet", "oral-arguments"]
 ---
 
+**June 11 update:** Oral arguments proceeded as scheduled today in Seattle before a three-judge panel of the Ninth Circuit. A written ruling is expected weeks to months after argument — this is standard appellate timeline. The panel's questions are not yet in the public record; a transcript or detailed recap has not been published as of this update. Eric Goldman's Technology & Marketing Law Blog published a pre-argument guest post on June 6 analyzing the district court's PI; his post-argument recap is expected shortly at [blog.ericgoldman.org](https://blog.ericgoldman.org). We will update this article when the opinion issues.
+
+---
+
 On June 11, 2026, a three-judge panel of the United States Court of Appeals for the Ninth Circuit will hear oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.*, case 26-1444, in Seattle. The hearing will not produce a final ruling — those typically come weeks to months after argument. But the panel's questions will reveal which legal theory the court finds credible, and that signal matters now for every builder shipping AI agents that act on behalf of users.
 
 If you're not already tracking this case: it started in March 2026 when U.S. District Judge Maxine Chesney issued a preliminary injunction blocking Perplexity's Comet browser from accessing the password-protected portions of Amazon.com. The core holding was four words that reshaped the agentic AI legal landscape: *user permission, but not authorized*. The Ninth Circuit immediately stayed the injunction pending this appeal. The injunction is currently paused.
@@ -95,7 +99,7 @@ Comet's users have explicitly authorized it to act on their behalf. Blocking Com
 
 ## The Amicus Landscape
 
-**Supporting Perplexity:** Mozilla, the Electronic Frontier Foundation, the American Civil Liberties Union. Their briefs argue that the Amazon theory, if accepted, would expand the CFAA into a general-purpose tool for platforms to block any software they dislike, chilling accessibility tools, browser extensions, automation scripts, and privacy-protecting agents that act on user behalf.
+**Supporting Perplexity:** Mozilla, the Electronic Frontier Foundation, the American Civil Liberties Union, and the Knight First Amendment Institute at Columbia University. Their briefs argue that the Amazon theory, if accepted, would expand the CFAA into a general-purpose tool for platforms to block any software they dislike, chilling accessibility tools, browser extensions, automation scripts, and privacy-protecting agents that act on user behalf.
 
 **Supporting Amazon:** The Digital Content Next coalition (DCN, whose members reach 259 million readers) and the News/Media Alliance. Their briefs frame the case in terms of platform integrity and the right of content owners to control automated access to their systems — a framing that aligns their interests with Amazon's even though their underlying concerns are different (content scraping vs. commerce automation).
 
