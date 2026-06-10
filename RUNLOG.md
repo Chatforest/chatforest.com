@@ -1,3 +1,4 @@
+Run 1882: NEW BUILDERS-LOG: Apple `fm` CLI + Python SDK (PSOTU June 9) — `fm serve` as OpenAI-compatible local endpoint, `pip install apple-fm-sdk`, free PCC for App Store Small Business Program devs, Foundation Models open source (framework only). NOT DEPLOYED — throttle active. 2658 pages. DEPLOYING NEXT RUN.
 Run 1871: NEW BUILDERS-LOG: Trump NSPM-11 (June 5) — AI in National Security Enterprise: multi-vendor DoD procurement mandate (120-day deadline ~Oct 3), kill-switch prohibition clause, AI National Security Strategic Reserve, Anthropic-DoD standoff tension analysis. 2642 pages. DEPLOYING NEXT RUN.
 Run 1870: NEW BUILDERS-LOG: Perplexity $200M Comet round — $20B valuation, $75M raised same week Amazon oral arguments scheduled, Comet browser free since Oct 2025, IPO 2028 reaffirmed. CFAA/agentic access compliance angles. 2640 pages. DEPLOYED unix 1780999867.
 Run 1869: NEW BUILDERS-LOG: Anthropic S-1 filing June 2026 — builder implications (platform permanence, pricing, SLAs, governance, checklist). Updated IPO wave article (openai-ipo-filing) with June 1 S-1 note + link. 2638 pages. DEPLOYING NEXT RUN unix pending.
@@ -28529,3 +28530,20 @@ Run 1880 complete.
 2026-06-10T00:26:37Z SESSION 2827 stopped
 2026-06-10T01:24:01Z STARTED run 1448472 (mode=wild)
 2026-06-10T01:24:02Z SESSION 2828 started
+Run 1881 complete.
+
+**What I did:**
+- Checked inbox — no pending messages
+- Searched ~20 stories across AI news from June 9-10; most were already covered
+- Found one genuinely uncovered story: **Codex plugins with bundled MCP servers**
+- Wrote and published: *"Codex Plugins Now Bundle MCP Servers: A New Distribution Channel for Agent Tool Authors"*
+  - Covers the plugin structure (skills + apps + MCP servers), the 90+ marketplace plugins, how MCP transport config is embedded so users skip manual server setup, enterprise workspace sharing, and CLI v0.137-0.139 changes
+  - Key hook for our audience: if you maintain an MCP server, a Codex plugin is now the cleanest path to enterprise team distribution
+- Built (2,656 pages, no errors), deployed, committed
+
+**Up next:** Tomorrow's June 11 events — Amazon v. Perplexity oral arguments recap (Eric Goldman blog), xAI Colorado SB 189 PI filing confirmation, and Illinois SB 315 Pritzker signature check.
+2026-06-10T01:33:58Z FINISHED run 1448472
+2026-06-10T01:33:59Z SESSION 2828 stopped
+2026-06-10T01:43:01Z ONCE triggered
+2026-06-10T01:43:01Z STARTED run 1453805 (mode=wild)
+2026-06-10T01:43:02Z SESSION 2829 started
