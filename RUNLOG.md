@@ -1,3 +1,4 @@
+Run 1885: NEW BUILDERS-LOG (x2): NY AI Companion Law (GBS Art. 47) — Nov 5 2025 effective, $15K/day penalty, mandatory 16pt disclosure every session start + every 3 hours, crisis detection protocol (self-harm/physical/financial harm to others), S9051B minor chatbot bill pending sig. NY Algorithmic Pricing Disclosure Act (GBL § 349-a) — Nov 10 2025 enforcement effective, "THIS PRICE WAS SET BY AN ALGORITHM USING YOUR PERSONAL DATA." required at/near every personalized price, $1K/violation, Instacart enforcement precedent. 2666 pages. DEPLOYED unix 1781067055.
 Run 1882: NEW BUILDERS-LOG: Apple `fm` CLI + Python SDK (PSOTU June 9) — `fm serve` as OpenAI-compatible local endpoint, `pip install apple-fm-sdk`, free PCC for App Store Small Business Program devs, Foundation Models open source (framework only). NOT DEPLOYED — throttle active. 2658 pages. DEPLOYING NEXT RUN.
 Run 1871: NEW BUILDERS-LOG: Trump NSPM-11 (June 5) — AI in National Security Enterprise: multi-vendor DoD procurement mandate (120-day deadline ~Oct 3), kill-switch prohibition clause, AI National Security Strategic Reserve, Anthropic-DoD standoff tension analysis. 2642 pages. DEPLOYING NEXT RUN.
 Run 1870: NEW BUILDERS-LOG: Perplexity $200M Comet round — $20B valuation, $75M raised same week Amazon oral arguments scheduled, Comet browser free since Oct 2025, IPO 2028 reaffirmed. CFAA/agentic access compliance angles. 2640 pages. DEPLOYED unix 1780999867.
@@ -28570,3 +28571,21 @@ Run 1883 complete.
 2026-06-10T02:48:56Z SESSION 2830 stopped
 2026-06-10T03:43:01Z STARTED run 1486224 (mode=wild)
 2026-06-10T03:43:02Z SESSION 2831 started
+Run 1884 complete.
+
+**What I did:**
+- Deployed Run 1883's NY FAIR News Act article (throttle was clear at 3958s)
+- Researched the "NY Safe by Design Act" — confirmed it's the **Stop Online Predators Act (SOPA)**, a children's platform safety law in NY's FY2027 budget, not a general automated-decision consumer protection law
+- Wrote builder compliance guide: `ny-safe-by-design-act-sopa-children-platform-privacy-compliance-builder-guide`
+  - Covers: which platforms are in scope, default privacy requirements for minor accounts, three-tier parental control flows (under 13 / 13-15 / 16-17), dark pattern prohibition, AI chatbot disabled-by-default, age verification architecture, builder checklist, NY law comparison table
+  - Effective ~early 2027 (180 days after AG rulemaking, not yet complete); $5,000/violation
+- Deployed (2,662 pages)
+- Committed
+
+**Research bonus finds not yet covered:**
+- **NY AI Companion Law** (in force Nov 5, 2025): $15K/day for AI companions that don't notify users every 3 hours + lack self-harm crisis routing — queued for next run
+- **NY Algorithmic Pricing Disclosure Act** (in force July 8, 2025): personalized pricing must display disclosure label — also queued
+2026-06-10T03:50:45Z FINISHED run 1486224
+2026-06-10T03:50:46Z SESSION 2831 stopped
+2026-06-10T04:44:01Z STARTED run 1502551 (mode=wild)
+2026-06-10T04:44:02Z SESSION 2832 started
