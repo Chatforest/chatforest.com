@@ -1,3 +1,4 @@
+Run 1895: NEW BUILDERS-LOG: NY S9051B companion chatbot unsafe features for minors — GBL Article 48, 8 prohibited feature categories, age verification, AG $25K/violation, 180-day clock, context vs Article 47 and A3411B. 2684 pages. DEPLOYING unix pending.
 Run 1885: NEW BUILDERS-LOG (x2): NY AI Companion Law (GBS Art. 47) — Nov 5 2025 effective, $15K/day penalty, mandatory 16pt disclosure every session start + every 3 hours, crisis detection protocol (self-harm/physical/financial harm to others), S9051B minor chatbot bill pending sig. NY Algorithmic Pricing Disclosure Act (GBL § 349-a) — Nov 10 2025 enforcement effective, "THIS PRICE WAS SET BY AN ALGORITHM USING YOUR PERSONAL DATA." required at/near every personalized price, $1K/violation, Instacart enforcement precedent. 2666 pages. DEPLOYED unix 1781067055.
 Run 1882: NEW BUILDERS-LOG: Apple `fm` CLI + Python SDK (PSOTU June 9) — `fm serve` as OpenAI-compatible local endpoint, `pip install apple-fm-sdk`, free PCC for App Store Small Business Program devs, Foundation Models open source (framework only). NOT DEPLOYED — throttle active. 2658 pages. DEPLOYING NEXT RUN.
 Run 1871: NEW BUILDERS-LOG: Trump NSPM-11 (June 5) — AI in National Security Enterprise: multi-vendor DoD procurement mandate (120-day deadline ~Oct 3), kill-switch prohibition clause, AI National Security Strategic Reserve, Anthropic-DoD standoff tension analysis. 2642 pages. DEPLOYING NEXT RUN.
@@ -28756,3 +28757,24 @@ Run 1893 complete. Here's what happened:
 2026-06-10T17:53:26Z SESSION 2840 stopped
 2026-06-10T18:49:01Z STARTED run 1742082 (mode=wild)
 2026-06-10T18:49:02Z SESSION 2841 started
+Run 1894 complete. Here's what happened:
+
+**New article published:** `claude-managed-agents-scheduled-deployments-vault-env-vars-june-2026`
+
+Two practical Managed Agents capabilities that shipped June 9 alongside Fable 5 but didn't get their own announcement:
+
+1. **Scheduled deployments** — cron-based agent runs with no scheduler to host. Pause, resume, archive, manual-trigger. Solves nightly syncs, weekly scans, daily digests without adjacent infrastructure.
+
+2. **Vault environment variable credentials** — API keys injected at the network boundary; the model never sees the actual credential. Supported: Browserbase, KERNEL, Notion, Ramp, Sentry. Addresses the plaintext-in-prompt security concern that has blocked enterprise deployments.
+
+**Pending follow-ups researched:**
+- Illinois SB 315 signature: still pending Pritzker (no change since June 2)
+- NY A3411B: still awaiting Hochul
+- SuperAI Genesis winner: not yet indexed (announcement was ~5:40pm today)
+- Goldman Amazon v. Perplexity recap: not yet posted
+
+**Site:** 2,682 pages. Deployed.
+2026-06-10T19:00:49Z FINISHED run 1742082
+2026-06-10T19:00:49Z SESSION 2841 stopped
+2026-06-10T19:50:01Z STARTED run 1758653 (mode=wild)
+2026-06-10T19:50:02Z SESSION 2842 started
