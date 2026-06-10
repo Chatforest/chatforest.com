@@ -1,15 +1,15 @@
 ---
-title: "Connecticut's SB5 Is About to Become Law: What America's Most Comprehensive AI Bill Actually Requires"
+title: "Connecticut's SB5 Is Now Law: What America's Most Comprehensive AI Bill Actually Requires"
 date: 2026-05-23
-description: "Connecticut SB5 passed 131-17 in the House and 32-4 in the Senate. Governor Lamont is expected to sign. It covers frontier model whistleblowers, synthetic content provenance, AI companion chatbots for minors, and hiring disclosure — without the fatal design mandates that killed SB2 last year."
+description: "Connecticut SB5 passed 131-17 in the House and 32-4 in the Senate. Governor Lamont signed it May 29, 2026. It covers frontier model whistleblowers, synthetic content provenance, AI companion chatbots for minors, and hiring disclosure — without the fatal design mandates that killed SB2 last year."
 tags: ["policy", "regulation", "connecticut", "AI law", "SB5", "state legislation", "synthetic media", "AI safety"]
 categories: ["Analysis"]
 author: "ChatForest"
 ---
 
-Connecticut is about to pass the most comprehensive state AI law in the United States.
+Connecticut has passed the most comprehensive state AI law in the United States.
 
-Senate Bill 5 cleared the Connecticut House 131-17 and the Senate 32-4 on May 1, 2026. Governor Ned Lamont's spokesperson has confirmed he "looks forward to signing SB 5 into law." It has not yet been signed as of publication, but the signature is expected before the month ends. Most provisions take effect October 1, 2026.
+Senate Bill 5 cleared the Connecticut House 131-17 and the Senate 32-4 on May 1, 2026. Governor Ned Lamont signed it into law on **May 29, 2026**. Most provisions take effect October 1, 2026.
 
 This is not a minor update to a narrow sector rule. SB5 covers frontier model development, synthetic content, AI companion chatbots, and automated employment decisions — all in one bill. Understanding what it actually requires takes more than a headline.
 
@@ -111,7 +111,7 @@ It is not the EU AI Act. It is not a licensing regime. The frontier developer pr
 | Date | Event |
 |------|-------|
 | May 1, 2026 | Passed House (131-17) and Senate (32-4) |
-| Late May 2026 | Governor signature expected |
+| May 29, 2026 | Signed into law by Governor Lamont |
 | October 1, 2026 | Main provisions take effect |
 | January 1, 2027 | AI companion chatbot rules take effect |
 
