@@ -1,3 +1,4 @@
+Run 1913: REFRESH food-restaurant-mcp-servers (47 days stale) — kroger-mcp 4→61 (+1425%), picnic 51→72, HowToCook 713→724, OpenNutrition 179→187, Uber Eats 221→229, iFood Brazil new entry (OAuth 2.1), Swiggy Builders Club now open (invite-led), Zomato 168 stars, BrewSource+Untappd flagged stalled. NOT DEPLOYED (throttle).
 Run 1912: REFRESH event-management-ticketing-mcp-servers (47 days stale) — taylorwilsdon 2.2K→2.7K (May 17: XSS fix, JWT signing, LLM date parsing), mcp-ical 304→315, punkpeye/eventbrite deleted, Google Calendar MCP still Developer Preview (Cloud Next '26 spotlight), writerWithoutPrivateAccess GA June 29. DEPLOYED unix 1781199078.
 Run 1904: REFRESH google-cloud-mcp-servers (40 days stale) — ADK 2.0 (May 19 graph-based multi-language MCP-native), Gemini 3.5 Flash MCP Atlas 83.6%, MCP Toolbox v1.4.0, Managed Agents API preview (MCP NOT yet supported — flagged), Gemini CLI deprecated→Antigravity 2.0 by June 18, WebMCP Chrome 149 origin trial. MCP cadence restarted per Rob msg #1807. DEPLOYED unix 1781152051. 2700 pages.
 Run 1903: NEW REVIEW: NY S9051B Kids Chatbot Safety Act — GBL Article 48, 8 prohibited features for minor chatbots, AG $25K/violation, Hochul pending (deadline Dec 31, 2026). 2700 pages. DEPLOYED unix 1781148313.
@@ -29060,3 +29061,27 @@ Deployed to live site. Rating held at 3.5/5.
 2026-06-11T11:34:21Z SESSION 2859 stopped
 2026-06-11T17:23:01Z STARTED run 2184699 (mode=wild→slow(peak))
 2026-06-11T17:23:02Z SESSION 2860 started
+Committed. Run 1912 complete.
+
+---
+
+**Run 1912 summary:**
+
+**MCP Refresh: Event Management & Ticketing** (47 days stale → 2026-06-12)
+
+Key updates:
+- `taylorwilsdon/google_workspace_mcp`: 2,200 → **2,700 stars** (+500); May 17 release with XSS fix, JWT signing key support, LLM date parsing, OAuth improvements
+- `Omar-V2/mcp-ical`: 304 → **315 stars**
+- `icloud-calendar-mcp`: 8 → **9 stars**
+- `vishalsachdev/eventbrite-mcp`: 2 → **3 stars**
+- `punkpeye/eventbrite-mcp`: **removed** (repo deleted/404)
+- `nspady/google-calendar-mcp`: ~1,100 unchanged; v2.6.2 June 1 RE2-safe regex patch noted
+- Google official Calendar MCP: still in Developer Preview; highlighted at **Cloud Next '26** (50+ Google-managed MCP servers now GA broadly); new `writerWithoutPrivateAccess` Calendar API permission level GA June 29
+
+**Other checks:** SPCX first-day trading data not yet indexed, Eric Goldman recap pending, SuperAI Genesis winner not yet surfaced — all rolling to next run.
+
+**Next run priorities:** SPCX trading results, Goldman recap, food-restaurant MCP refresh (11 remaining categories at 2026-04-26).
+2026-06-11T17:37:46Z FINISHED run 2184699
+2026-06-11T17:37:48Z SESSION 2860 stopped
+2026-06-11T18:24:01Z STARTED run 2201068 (mode=wild)
+2026-06-11T18:24:02Z SESSION 2861 started
