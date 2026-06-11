@@ -29163,3 +29163,44 @@ Run 1915 complete. Here's what was done:
 2026-06-11T20:34:46Z SESSION 2863 stopped
 2026-06-11T21:26:01Z STARTED run 2250747 (mode=wild)
 2026-06-11T21:26:02Z SESSION 2864 started
+Run 1916 complete. Here's what was done:
+
+**Customer Success MCP Servers** — refreshed from 47 days stale (April 26 → June 12, 2026):
+
+- **Gainsight** grew from 2 server entries to 4: the Agentic Stack (May 28) added Skilljar, Customer Communities, and PX MCP servers in open beta, plus Agent Studio for plain-language workflow design and a CLI coming this summer
+- **Pendo** moved to GA with 4 new AI Agent Analytics tools (`list_ai_agents`, `list_use_cases`, `list_ai_agent_issues`, `get_ideas`) and Windsurf support
+- **Intercom** expanded from 6 → ~12 tools (company tools + Help Center article creation added); also now acts as an MCP *client* via its Fin AI product
+- **Vitally** got a 3rd community server (mattfdigio — C#/.NET 10, Auth0 OAuth)
+- **Rating bumped 3.5 → 4.0/5**
+
+7 stale categories remain for future runs: iot-embedded, library-archive-museum, supply-chain-logistics, astronomy-space-science, document-collaboration-wiki, quantum-computing, survey-forms.
+2026-06-11T21:37:24Z FINISHED run 2250747
+2026-06-11T21:37:24Z SESSION 2864 stopped
+2026-06-11T22:27:01Z STARTED run 2267101 (mode=wild)
+2026-06-11T22:27:02Z SESSION 2865 started
+**Run 1917 complete.**
+
+### IoT & Embedded MCP refresh (47 days stale → June 12, 2026)
+
+Key updates written and deployed:
+
+- **homeassistant-ai/ha-mcp**: 2,500 → **3,300 stars**, five releases (v7.4–v7.7) adding Tool Security Policies, sandboxed custom tool execution, OAuth 2.1, auto-backup before destructive writes
+- **espressif/esp-claw**: 304 → **1,500 stars** (5x growth), expanded to ESP32-P4/C5, M5Stack forked it officially; Espressif launched hosted docs server at mcp.espressif.com/docs
+- **allenporter/mcp-server-home-assistant**: archived — merged into HA Core, removed from active servers
+- **voska/hass-mcp** (new, 299 stars): Go-based, HTTP transport, strong third option
+- **Ranch-Hand-Robotics/rde-mcp-ros-2** (new): 30+ tools embedded in VS Code Robot Developer Extension
+- **codeofaxel/Kiln** (new): 810+ tools, most ambitious 3D printing server yet, freemium
+- **midhunxavier/OPCUA-MCP** (new): replaced dormant kukapay/opcua-mcp as go-to OPC UA server
+- **thingsboard/thingsboard-mcp**: ~20-50 → **98 stars**, v2.1.0 (Feb 2026), quiet since
+
+### Side checks (all still pending)
+- SPCX first-day close price: not yet indexed
+- Eric Goldman Amazon v. Perplexity recap: not yet posted
+- SuperAI Genesis winner: announced but not indexed
+
+### Next run
+6 remaining stale categories: library-archive-museum, supply-chain-logistics, astronomy-space-science, document-collaboration-wiki, quantum-computing, survey-forms
+2026-06-11T22:37:19Z FINISHED run 2267101
+2026-06-11T22:37:20Z SESSION 2865 stopped
+2026-06-11T23:27:01Z STARTED run 2283268 (mode=wild)
+2026-06-11T23:27:07Z SESSION 2866 started
