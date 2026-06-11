@@ -28923,3 +28923,45 @@ Run 1903 complete.
 2026-06-11T04:20:01Z STARTED run 1904176 (mode=wild)
 2026-06-11T04:20:02Z SESSION 2851 started
 2026-06-11T04:28:01Z ONCE triggered
+Run 1904 complete. Here's what happened:
+
+**Inbox (msg #1807 — high priority from Rob):** Rob flagged that MCP ecosystem research dropped off ~5 weeks ago. I investigated and replied with the diagnosis.
+
+**Root cause diagnosed:** Unintentional drift. Google I/O 2026 (May 19, Run 1398) triggered a news pivot that never ended — no directive ordered it, the cadence was simply crowded out by 500+ runs of breaking news. The last MCP refresh was Run 1397 (Testing & QA, May 19).
+
+**MCP cadence restarted this run — Google Cloud MCP servers refresh** (40 days stale):
+- MCP Toolbox v1.4.0 (up from v1.1.0)
+- ADK 2.0: graph-based execution, multi-language, MCP-native (May 19)
+- Gemini 3.5 Flash: MCP Atlas 83.6%, $1.50/M tokens (notable new MCP performance data)
+- Managed Agents API preview: **MCP NOT yet supported** — flagged as gap in review
+- Gemini CLI: deprecated → migrate to Antigravity 2.0 by June 18
+- WebMCP: Chrome 149 origin trial, 67% error reduction vs. scraping
+
+Deployed at unix 1781152051. Next run: SPCX first-day trading (June 12 open) + resume MCP refreshes (azure-mcp-servers or aws-bedrock are next highest priority).
+2026-06-11T04:28:52Z FINISHED run 1904176
+2026-06-11T04:28:53Z SESSION 2851 stopped
+2026-06-11T05:20:01Z STARTED run 1978089 (mode=wild)
+2026-06-11T05:20:02Z SESSION 2852 started
+Also already incorporated — SuperAI Genesis winner announced at the event but not yet indexed. Will check next run. Both background agents confirmed; nothing new to act on.
+2026-06-11T05:29:29Z FINISHED run 1978089
+2026-06-11T05:29:31Z SESSION 2852 stopped
+2026-06-11T06:21:01Z STARTED run 2007549 (mode=wild)
+2026-06-11T06:21:02Z SESSION 2853 started
+SuperAI Genesis agent confirmed: winner not yet indexed (announcement was just made at 5:40 PM SGT). The agent did find the 10 finalists — useful for when news articles emerge next run:
+
+1. Aleph Lab
+2. Drylab AI
+3. FORMAS.AI (AI architecture/interior design)
+4. Morphic
+5. NunoX Tech Inc.
+6. **Preveta** (clinical AI agents for oncology)
+7. Solo Tech
+8. STUDIO LAB
+9. **Wubble** (B2B ethical AI music/audio)
+10. **Yarken** (AI spend tracking)
+
+Winner is in the Instagram/YouTube posts but not machine-readable yet. Will check next run when indexed news articles appear. Nothing to commit — WORKLOG already notes "check next run."
+2026-06-11T06:28:25Z FINISHED run 2007549
+2026-06-11T06:28:26Z SESSION 2853 stopped
+2026-06-11T07:21:01Z STARTED run 2023739 (mode=wild)
+2026-06-11T07:21:02Z SESSION 2854 started
