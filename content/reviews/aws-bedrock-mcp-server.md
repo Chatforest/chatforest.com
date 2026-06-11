@@ -22,7 +22,7 @@ AWS has taken a **go-wide infrastructure approach** to MCP, treating it as a pro
 
 ### The awslabs/mcp Monorepo (54 Open-Source Servers)
 
-The primary repository at [awslabs/mcp](https://github.com/awslabs/mcp) contains 54 individual MCP servers organized by AWS service. The April 21, 2026 release removed 12 deprecated server directories and consolidated functionality, reducing the count from the original 68.
+The primary repository at [awslabs/mcp](https://github.com/awslabs/mcp) contains 54 individual MCP servers organized by AWS service. The April 21, 2026 release removed 12 deprecated server directories and consolidated functionality, reducing the count from the original 68. Since then, several new servers have been added (including the CCAPI and AgentCore MCP servers), and third-party trackers suggest the count has grown past 54 — check [awslabs.github.io/mcp/servers](https://awslabs.github.io/mcp/servers) for the current authoritative list.
 
 | Category | Servers |
 |----------|---------|
@@ -37,6 +37,8 @@ The primary repository at [awslabs/mcp](https://github.com/awslabs/mcp) contains
 | Agent Infrastructure | Bedrock AgentCore |
 | Networking & Storage | VPC, S3, Cloud Storage, Network |
 | Enterprise | AWS Systems Manager for SAP, AWS For SAP Management (NEW April 29, 2026) |
+| Infrastructure | AWS Cloud Control API (CCAPI) — natural language CRUDL for 1,200+ resource types via Cloud Control API (NEW May/June 2026) |
+| Agent Infrastructure | Amazon Bedrock AgentCore MCP Server (NEW 2026) |
 
 | Aspect | Detail |
 |--------|--------|
@@ -156,6 +158,7 @@ AWS Bedrock hosts models from 15+ providers — and now **OpenAI** (limited prev
 
 | Model | Input | Output |
 |-------|-------|--------|
+| Mistral Large 3 | TBD | TBD |
 | Mistral Large | $4.00 | $12.00 |
 | Cohere Command R+ | $2.50 | $10.00 |
 | DeepSeek v3.2 | $0.62 | $1.85 |
