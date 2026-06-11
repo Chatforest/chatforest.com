@@ -1,6 +1,6 @@
 # IoT & Embedded MCP Servers — Home Assistant, MQTT, ESP32, ROS, Industrial PLCs, 3D Printers, and More
 
-> IoT and embedded MCP servers are bridging AI agents and the physical world via the Model Context Protocol. We reviewed 55+ servers across 9 subcategories.
+> IoT and embedded MCP servers are bridging AI agents and the physical world via the Model Context Protocol. We reviewed 60+ servers across 9 subcategories.
 
 
 *Part of the [IoT & Hardware](/categories/iot-hardware/) category.*
@@ -9,7 +9,7 @@ IoT and embedded MCP servers are bridging the gap between AI agents and the phys
 
 The landscape spans nine areas: **smart home platforms** (Home Assistant dominates with an official integration plus multiple community servers), **smart home devices** (Tuya, Philips Hue, Apple HomeKit), **IoT platforms** (ThingsBoard, AWS IoT SiteWise), **MQTT brokers** (the backbone of IoT communication), **ESP32 and Arduino** (AI-driven embedded development), **Raspberry Pi** (GPIO, I2C, SPI, and camera access), **robotics** (ROS/ROS2 integration), **industrial IoT** (OPC UA, Siemens PLCs, SCADA), and **3D printing** (multi-platform printer control and STL operations).
 
-The headline findings: **Espressif has gone all-in on MCP** with four official efforts — ESP-Claw (304 stars, AI agent framework on ESP32), ESP-IDF 6.0's built-in MCP server, ESP RainMaker MCP, and a Documentation MCP server. **robotmcp/ros-mcp-server jumped to 1,200 stars** (up from 873) with bidirectional AI-robot communication across ROS1 and ROS2. **homeassistant-ai/ha-mcp doubled to 2,500 stars** with v7.3.0 bringing Agent Skills that guide AI through automations and device configuration. **78/xiaozhi-esp32 has 24K stars** as an MCP-based chatbot running on ESP32 with cloud-side MCP for smart home, desktop control, and knowledge search. **thingsboard/thingsboard-mcp provides the most tools** — 120+ for the full IoT platform lifecycle. **DMontgomery40/mcp-3D-printer-server tripled to 168 stars** with new Bambu FTP operations, OrcaSlicer CLI slicing, and mesh preparation tools. **A MicroPython MCP server** now bridges AI agents to any MicroPython board via USB Serial or WebREPL. **Ten or more vendors provide official MCP servers** — Home Assistant, ThingsBoard, Tuya, AWS, OctoEverywhere, Coreflux, ThingsPanel, and now Espressif with multiple entries.
+The headline findings since our April 2026 refresh: **homeassistant-ai/ha-mcp hit 3,300 stars** with five major releases (v7.4 through v7.7), adding Tool Security Policies, sandboxed custom tool execution via `ha_manage_custom_tool`, OAuth 2.1, auto-backup before destructive write calls, and a web UI for per-tool enable/disable/pin. **espressif/esp-claw quintupled to 1,500 stars** with expanded hardware support (ESP32-P4, C5, and more) and an official M5Stack fork. **Espressif launched a hosted documentation MCP server** at `mcp.espressif.com/docs` — real-time AI access to all official ESP chip and SDK documentation. **allenporter/mcp-server-home-assistant is now archived** — its work was fully merged into Home Assistant Core, which runs at 2026.6.2. **voska/hass-mcp (299 stars)** emerged as a strong Go-based third option for Home Assistant. **Ranch-Hand-Robotics/rde-mcp-ros-2** brings 30+ tools embedded in VS Code's Robot Developer Extension. In 3D printing, **DMontgomery40 spun off a Bambu-only fork** (57 stars) and **codeofaxel/Kiln** appeared as a new 810+-tool competitor. **midhunxavier/OPCUA-MCP** filled the gap left by dormant kukapay/opcua-mcp.
 
 ## Smart Home Platforms
 
@@ -19,37 +19,48 @@ The headline findings: **Espressif has gone all-in on MCP** with four official e
 |--------|-------|----------|---------|-------|
 | [Home Assistant MCP](https://www.home-assistant.io/integrations/mcp_server/) | — | Python | Apache-2.0 | Built-in |
 
-Home Assistant now includes MCP server support as an official core integration. This means any Home Assistant installation can expose its entities, automations, and services to MCP-compatible AI agents without installing third-party add-ons.
+Home Assistant includes MCP server support as an official core integration (since HA 2025.2, now at **2026.6.2**). Any Home Assistant installation can expose its entities, automations, and services to MCP-compatible AI agents without third-party add-ons.
 
-The official integration brings the weight of the Home Assistant project — the most popular open-source home automation platform — behind the Model Context Protocol.
+**2026.6 update**: Previously advanced options are now enabled by default, broadening accessibility. HA now ships two integrations: **MCP Server** (HA acts as server for external clients) and **MCP Client** (HA connects out to external MCP servers, including Claude, ChatGPT, Cursor). A read-only home state snapshot resource was added for inspection and debugging. **Silver quality classification**. Adopted by **2.6% of active HA installations** — meaningful scale for a relatively new protocol integration.
 
-### tevonsb/homeassistant-mcp (Most Popular Community Server)
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [tevonsb/homeassistant-mcp](https://github.com/tevonsb/homeassistant-mcp) | 554 | TypeScript | MIT | 20+ |
-
-A well-established community-built Home Assistant MCP server. Exposes Home Assistant to LLM applications through HTTP/SSE/WebSocket APIs. Supports natural language control and monitoring of all connected devices.
-
-TypeScript implementation with **20+ tools** covering entity control, state monitoring, and automation management. The MIT license and active community make this a strong choice if you need more control than the official integration provides.
-
-### homeassistant-ai/ha-mcp
+### homeassistant-ai/ha-mcp (Community Leader — 3,300 Stars)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 2,500 | TypeScript/Python | MIT | 80+ |
+| [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 3,300 | TypeScript/Python | MIT | 80+ |
 
-The most feature-rich and fastest-growing Home Assistant MCP server with **80+ tools** — providing the deepest AI control surface for home automation. Covers entities, automations, devices, scenes, and service calls.
+The fastest-growing and most feature-rich Home Assistant MCP server — and the one with the most aggressive release cadence in the entire IoT category. Grew from 2,500 to 3,300 stars (+32%) since our April refresh, with five major releases:
 
-**v7.3.0 (April 2026)** introduced **Agent Skills** — domain-specific guides that teach AI agents how to write automations, select helpers, control devices, and safely refactor Home Assistant configurations. Skills are served as MCP resources (not auto-injected — clients must explicitly request them). The new **Webhook Proxy add-on** routes MCP traffic through existing reverse proxy setups with no separate tunnel or port forwarding needed. Stars doubled from 1,200 to 2,500 in six weeks.
+- **v7.4.0 (Apr 29)**: Unified helper deletion across 27 types, energy preferences tool, addon API renamed to `ha_manage_addon`
+- **v7.5.0 (May 13)**: **Sandboxed code execution** via `ha_manage_custom_tool` — AI agents can create and run custom tools within a safe sandbox; scene config tools; event bus publishing; web UI for per-tool enable/disable/pin; **OAuth 2.1 mode (beta)**
+- **v7.6.0 (May 27)**: **Tool Security Policies** — per-tool approval gating so sensitive operations require explicit user sign-off; configurable HTTP bind host; **auto-backup before destructive write calls**; Assist pipeline management
+- **v7.7.0 (Jun 10)**: User-configurable filesystem directories; consolidated search; nested beta toggle panel; improved automation/script YAML handling
 
-### allenporter/mcp-server-home-assistant
+The Agent Skills system (introduced in April's v7.3.0) remains a differentiator — domain-specific guides served as MCP resources that teach AI agents how to write automations, select helpers, and safely refactor HA configurations. The Webhook Proxy add-on routes MCP traffic through existing reverse proxies with no separate tunnel needed.
+
+### tevonsb/homeassistant-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [allenporter/mcp-server-home-assistant](https://github.com/allenporter/mcp-server-home-assistant) | 55 | Python | Apache-2.0 | ~10 |
+| [tevonsb/homeassistant-mcp](https://github.com/tevonsb/homeassistant-mcp) | 575 | TypeScript | MIT | 20+ |
 
-A Python-based Home Assistant MCP server that was being upstreamed into Home Assistant Core. Focused on clean, minimal integration.
+The original well-established community server, now in slow maintenance mode. Star count essentially flat (554 → 575). No major new releases since April 2026. Still useful as a stable, minimal alternative — but ha-mcp has superseded it for feature depth.
+
+### voska/hass-mcp (NEW — 299 Stars)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [voska/hass-mcp](https://github.com/voska/hass-mcp) | 299 | Go | — | 30+ |
+
+A strong new entrant. Go-based with **HTTP transport** (vs. most HA servers using stdio), enabling Docker deployment without local process management. Focuses on entity management, device history, statistics, and guided conversations. Notable for being the only major HA MCP server in Go — a language choice that brings different deployment characteristics and potentially better concurrency for multi-agent setups.
+
+### ~~allenporter/mcp-server-home-assistant~~ (Archived)
+
+| Server | Stars | Language | License | Status |
+|--------|-------|----------|---------|--------|
+| [allenporter/mcp-server-home-assistant](https://github.com/allenporter/mcp-server-home-assistant) | 67 | Python | Apache-2.0 | **Archived** |
+
+**Archived on March 2, 2025** — read-only. This project served its purpose: the custom component was upstreamed into Home Assistant Core via [PR #134122](https://github.com/home-assistant/core/pull/134122). Superseded by the built-in HA integration. No longer relevant for new deployments.
 
 ### tdeckers/openhab-mcp
 
@@ -57,7 +68,7 @@ A Python-based Home Assistant MCP server that was being upstreamed into Home Ass
 |--------|-------|----------|---------|-------|
 | [tdeckers/openhab-mcp](https://github.com/tdeckers/openhab-mcp) | <10 | Python | — | ~5-10 |
 
-MCP server for **openHAB** — the other major open-source smart home platform. Interacts with openHAB via its REST API, enabling AI control of openHAB-managed devices. Lower adoption than Home Assistant servers but fills an important gap for openHAB users.
+MCP server for **openHAB** — the other major open-source smart home platform. Interacts via its REST API. Lower adoption than Home Assistant servers but fills an important gap for openHAB users.
 
 ## Smart Home Devices
 
@@ -65,11 +76,11 @@ MCP server for **openHAB** — the other major open-source smart home platform. 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tuya/tuya-mcp-sdk](https://github.com/tuya/tuya-mcp-sdk) | 10-20 | Python, Go, C# | Apache-2.0 | SDK |
+| [tuya/tuya-mcp-sdk](https://github.com/tuya/tuya-mcp-sdk) | ~16 | Python, Go, C# | Apache-2.0 | SDK |
 
-Official SDK from **Tuya** — one of the world's largest IoT cloud platforms powering thousands of smart device brands. Provides Python, Go, and **C# SDKs** (C# added March 2026) for integrating Tuya Cloud capabilities with AI agents via MCP. Tuya's AI Agent Development Platform now fully supports MCP server integration, with official MCP tools continuously expanding. This is significant: Tuya powers devices from hundreds of white-label brands, so this SDK potentially reaches millions of devices.
+Official SDK from **Tuya** — one of the world's largest IoT cloud platforms. Provides Python, Go, and C# SDKs for integrating Tuya Cloud capabilities with AI agents via MCP. Tuya's AI Agent Development Platform fully supports MCP server integration. Star count essentially flat since April — the SDK is in maintenance mode rather than active development.
 
-A community-built **Tuya Smart Home MCP Server** (4,500+ downloads) adds local control via tinytuya, communicating directly over Wi-Fi for lower latency and better privacy. Offers 10 tools for complete device control (on/off, brightness, color, temperature, custom commands) with Claude, ChatGPT, Copilot, and Cursor compatibility.
+A community-built **Tuya Smart Home MCP Server** (4,500+ downloads) adds local control via tinytuya for lower latency and better privacy.
 
 ### rmrfslashbin/hue-mcp
 
@@ -77,7 +88,7 @@ A community-built **Tuya Smart Home MCP Server** (4,500+ downloads) adds local c
 |--------|-------|----------|---------|-------|
 | [rmrfslashbin/hue-mcp](https://github.com/rmrfslashbin/hue-mcp) | 10-20 | Go | — | 15+ |
 
-Modern MCP server for **Philips Hue** lighting systems. Supports multi-bridge control, real-time sync, cached responses, and comprehensive tools for lights, rooms, scenes, and bridges. The Go implementation is notable — most IoT MCP servers are Python.
+Modern MCP server for **Philips Hue** lighting systems. Supports multi-bridge control, real-time sync, and comprehensive tools for lights, rooms, scenes, and bridges. The Go implementation is notable — most IoT MCP servers are Python.
 
 ### ykhli/mcp-light-control
 
@@ -85,7 +96,7 @@ Modern MCP server for **Philips Hue** lighting systems. Supports multi-bridge co
 |--------|-------|----------|---------|-------|
 | [ykhli/mcp-light-control](https://github.com/ykhli/mcp-light-control) | ~10 | TypeScript | — | ~5 |
 
-Philips Hue light control for Cursor and Claude Desktop — including the ability to send messages through lights using **Morse code**. A creative demonstration of AI-hardware interaction.
+Philips Hue light control for Cursor and Claude Desktop — including sending messages through lights using **Morse code**. A creative demonstration of AI-hardware interaction.
 
 ### thomasvincent/home-mcp
 
@@ -101,11 +112,11 @@ MCP server for **Apple Home** on macOS. Controls HomeKit devices, scenes, and au
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [thingsboard/thingsboard-mcp](https://github.com/thingsboard/thingsboard-mcp) | 20-50 | Python | Apache-2.0 | 120+ |
+| [thingsboard/thingsboard-mcp](https://github.com/thingsboard/thingsboard-mcp) | 98 | Python | Apache-2.0 | 120+ |
 
-Official MCP server from **ThingsBoard** — the most popular open-source IoT platform. With **120+ tools**, this has the highest tool count of any server in the IoT/embedded category. Connects AI agents to the full ThingsBoard lifecycle: querying devices, managing entities, analyzing telemetry, creating dashboards, and automating operations.
+Official MCP server from **ThingsBoard** — the most popular open-source IoT platform. Stars grew significantly (from ~20-50 range to 98). With **120+ tools**, this has the highest tool count of any server in the IoT/embedded category: device provisioning, entity management, telemetry analytics, dashboard creation, and operational automation.
 
-The breadth is impressive — this is a full-stack IoT management interface exposed through MCP. From device provisioning to telemetry analytics, AI agents get access to everything ThingsBoard offers.
+**v2.1.0 (February 2026)**: Added API key authentication, tool groups for context window optimization, OTA package management, device creation tools, and improved cross-LLM tool descriptions. **No new commits since February 2026** — the project is well-featured but currently quiet.
 
 ### ThingsPanel/thingspanel-mcp (Official)
 
@@ -119,11 +130,9 @@ Official MCP server from **ThingsPanel** — another open-source IoT platform. S
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [awslabs/mcp — IoT SiteWise](https://github.com/awslabs/mcp) | Part of 8.5K | Python | Apache-2.0 | 20+ |
+| [awslabs/mcp — IoT SiteWise](https://github.com/awslabs/mcp) | Part of 9,254 | Python | Apache-2.0 | 20+ |
 
-Official AWS MCP server for **IoT SiteWise** — AWS's industrial IoT service. Provides **20+ tools** for asset management, data ingestion, monitoring, analytics, and time-series aggregations. Part of the awslabs/mcp monorepo (8.5K stars).
-
-This is the strongest industrial IoT offering from a cloud provider. IoT SiteWise is designed for manufacturing, energy, and infrastructure monitoring — having AI agents query and analyze this data through MCP is a meaningful use case.
+Official AWS MCP server for **IoT SiteWise** — AWS's industrial IoT service. **20+ tools** for asset management, data ingestion, monitoring, analytics, time-series aggregations, and bulk export via S3 with KMS encryption. Part of the awslabs/mcp monorepo (9,254 stars, up from 8,500). Received routine maintenance updates in April–May 2026 but no new features.
 
 ### Duke-CEI-Center/IoT-MCP-Servers
 
@@ -131,7 +140,7 @@ This is the strongest industrial IoT offering from a cloud provider. IoT SiteWis
 |--------|-------|----------|---------|-------|
 | [Duke-CEI-Center/IoT-MCP-Servers](https://github.com/Duke-CEI-Center/IoT-MCP-Servers) | <10 | Python | — | ~10 |
 
-Academic IoT MCP server from **Duke University**. Reads sensor data and dispatches data collection tasks for AI assistants. Interesting as an academic perspective on AI-IoT integration.
+Academic IoT MCP server from **Duke University**. Reads sensor data and dispatches data collection tasks for AI assistants.
 
 ## MQTT
 
@@ -143,7 +152,7 @@ MQTT is the dominant messaging protocol in IoT — lightweight, pub/sub, designe
 |--------|-------|----------|---------|-------|
 | [ezhuk/mqtt-mcp](https://github.com/ezhuk/mqtt-mcp) | 5-15 | Python | — | ~5 |
 
-Lightweight MCP server connecting LLM agents to MQTT devices. Designed for **building automation**, **industrial control**, and **smart home** systems. Uses FastMCP 2.0 for clean integration.
+Lightweight MCP server connecting LLM agents to MQTT devices. Designed for **building automation**, **industrial control**, and **smart home** systems. Uses FastMCP 2.0.
 
 ### Benniu/emqx-mcp-server
 
@@ -151,7 +160,7 @@ Lightweight MCP server connecting LLM agents to MQTT devices. Designed for **bui
 |--------|-------|----------|---------|-------|
 | [Benniu/emqx-mcp-server](https://github.com/Benniu/emqx-mcp-server) | 5-10 | Python | — | ~10 |
 
-MCP server for **EMQX** — the most popular open-source MQTT broker. Supports both EMQX Cloud and self-hosted clusters, giving AI agents access to MQTT message streams and broker management.
+MCP server for **EMQX** — the most popular open-source MQTT broker. Supports both EMQX Cloud and self-hosted clusters.
 
 ### CorefluxCommunity/Coreflux-MQTT-MCP-Server (Official)
 
@@ -159,7 +168,7 @@ MCP server for **EMQX** — the most popular open-source MQTT broker. Supports b
 |--------|-------|----------|---------|-------|
 | [CorefluxCommunity/Coreflux-MQTT-MCP-Server](https://github.com/CorefluxCommunity/Coreflux-MQTT-MCP-Server) | ~2 | Python | — | 15+ |
 
-Enterprise-grade MCP server from **Coreflux** for their MQTT broker. Full TLS support, API access, AI code generation, and health monitoring. **15+ tools** make this the most feature-rich MQTT-specific MCP server.
+Enterprise-grade MCP server from **Coreflux** for their MQTT broker. Full TLS support, API access, AI code generation, and health monitoring. **15+ tools** — the most feature-rich MQTT-specific MCP server.
 
 ### tspspi/mcpMQTT
 
@@ -167,7 +176,7 @@ Enterprise-grade MCP server from **Coreflux** for their MQTT broker. Full TLS su
 |--------|-------|----------|---------|-------|
 | [tspspi/mcpMQTT](https://github.com/tspspi/mcpMQTT) | <10 | Python | — | ~5 |
 
-Generic MQTT interface for LLM orchestrators with fine-grained topic permissions using wildcard matching. Security-conscious design for multi-tenant MQTT environments.
+Generic MQTT interface with fine-grained topic permissions using wildcard matching. Security-conscious design for multi-tenant MQTT environments.
 
 ### mqtt-ai/mcp-over-mqtt
 
@@ -175,23 +184,23 @@ Generic MQTT interface for LLM orchestrators with fine-grained topic permissions
 |--------|-------|----------|---------|-------|
 | [mqtt-ai/mcp-over-mqtt](https://github.com/mqtt-ai/mcp-over-mqtt) | 10-20 | TypeScript/Python | — | Transport layer |
 
-Not a tool server per se — this is an **MCP-over-MQTT transport specification**. Enables MCP to run over MQTT with built-in service registry, discovery, and load balancing. Could be significant for deploying MCP in IoT environments where HTTP isn't practical.
+An **MCP-over-MQTT transport specification** with built-in service registry, discovery, and load balancing. Enables MCP in IoT environments where HTTP isn't practical.
 
 ## ESP32, Arduino, and Embedded Frameworks
 
-The embedded MCP space has transformed since our original review. **Espressif** — the company behind ESP32 — has made the strongest vendor commitment of any hardware manufacturer to MCP, with four official efforts shipping in early 2026.
+The embedded MCP space continues to accelerate. **Espressif** — the company behind ESP32 — has made the most visible vendor commitment of any hardware manufacturer to MCP, and that commitment deepened significantly since our April refresh.
 
-### espressif/esp-claw (Official — AI Agent Framework)
+### espressif/esp-claw (Official — AI Agent Framework — 1,500 Stars)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [espressif/esp-claw](https://github.com/espressif/esp-claw) | 304 | C/Lua | Apache-2.0 | Framework |
+| [espressif/esp-claw](https://github.com/espressif/esp-claw) | 1,500 | C/Lua | Apache-2.0 | Framework |
 
-The headline addition. ESP-Claw is Espressif's official **"Chat Coding" AI agent framework** for ESP32 devices. It acts as **both MCP server and client** — exposing hardware capabilities to external agents while calling external services. Devices self-declare capabilities via MCP, replacing per-device adapters.
+**The biggest star-growth story in the IoT category since our April refresh: ESP-Claw quintupled from 304 to 1,500 stars.** Espressif's official "Chat Coding" AI agent framework for ESP32 devices acts as **both MCP server and client** — exposing hardware capabilities to external agents while calling external services.
 
-Key features: **on-device memory** (structured long-term memory lives on-chip, preferences and routines auto-extracted from conversations, events never leaving the device), **Chat Coding** (define device behavior through natural conversation, with LLM handling dynamic decisions and local Lua scripts executing deterministically even offline), and support for OpenAI, Anthropic, DeepSeek, Qwen, and custom LLM endpoints.
+Key features: **on-device memory** (structured long-term memory lives on-chip, preferences and routines auto-extracted from conversations), **Chat Coding** (define device behavior through natural conversation, with LLM handling dynamic decisions and local Lua scripts executing deterministically even offline), and support for OpenAI, Anthropic, DeepSeek, Qwen, and custom LLM endpoints.
 
-Requires 8MB Flash + 8MB PSRAM. Currently supports ESP32-S3, with ESP32-P4 coming soon. M5Stack has already forked it for their device line.
+Hardware support has expanded: originally ESP32-S3 only, now also supports **ESP32-P4, ESP32-C5, ESP32-S31**, and a variety of dev boards including M5Stack CoreS3. **M5Stack has officially forked esp-claw** for their device line — a significant sign of ecosystem momentum. Last updated June 2026.
 
 ### ESP-IDF 6.0 Built-in MCP Server (Official)
 
@@ -199,39 +208,57 @@ Requires 8MB Flash + 8MB PSRAM. Currently supports ESP32-S3, with ESP32-P4 comin
 |--------|-------|----------|---------|-------|
 | ESP-IDF 6.0 MCP Server | Part of ESP-IDF | Python | Apache-2.0 | ~8 |
 
-ESP-IDF 6.0, released March 2026, ships with a **built-in MCP server** for development workflows. Tools cover building, flashing, setting the target, and cleaning, plus resources for querying project configuration, build status, and connected devices. Launched via `eim run` using the new ESP-IDF Installation Manager. Particularly useful for IDE-based AI agents (VS Code Copilot, Cursor) that run outside an active ESP-IDF environment.
+ESP-IDF 6.0 (released March 2026) ships with a **built-in MCP server** for development workflows. Tools cover building, flashing, setting the target, and cleaning, plus resources for querying project configuration, build status, and connected devices. Launched via `eim run` using the ESP-IDF Installation Manager.
 
-This is significant: the official embedded development framework for the world's most popular IoT microcontroller now includes MCP as a first-class feature.
+The official embedded development framework for the world's most popular IoT microcontroller now treats MCP as a first-class feature.
+
+### Espressif Documentation MCP Server (Official Hosted — NEW)
+
+Espressif launched a **hosted documentation MCP server** at `https://mcp.espressif.com/docs` (announced April 8, 2026). Authentication via GitHub or WeChat. Connects AI agents to all official Espressif documentation in real time — ESP-IDF, ESP chips, SDKs. Read-only; does not execute code or modify files.
+
+Combined with the ESP-IDF 6.0 built-in tools server, this gives AI agents a complete ESP32 development workflow: look up docs via the hosted server, build and flash via the local tools server.
 
 ### espressif/esp-rainmaker-mcp (Official — IoT Device Control)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [espressif/esp-rainmaker-mcp](https://github.com/espressif/esp-rainmaker-mcp) | 9 | Python | Apache-2.0 | ~10 |
+| [espressif/esp-rainmaker-mcp](https://github.com/espressif/esp-rainmaker-mcp) | ~7 | Python | Apache-2.0 | ~10 |
 
-Official MCP wrapper for **ESP RainMaker** — Espressif's cloud IoT platform. Bridges MCP clients with the RainMaker CLI, enabling natural language control of IoT devices, parameter reading, and schedule modification via Claude, Cursor, Gemini CLI, and Windsurf.
-
-### Espressif Documentation MCP Server (Official)
-
-Espressif also ships a **Documentation MCP server** (April 2026) that retrieves public Espressif documentation and supplies it as context for AI agents working with ESP chips and ESP SDKs. Read-only — does not execute code or modify files.
+Official MCP wrapper for **ESP RainMaker** — Espressif's cloud IoT platform. Bridges MCP clients with the RainMaker CLI for natural language control of IoT devices via Claude, Cursor, Gemini CLI, and Windsurf. Star count essentially flat (~9 → ~7, likely noise in trackers).
 
 ### 78/xiaozhi-esp32 (MCP-Based Chatbot — 24K Stars)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) | 24,000 | C/C++ | — | MCP client |
+| [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) | ~24,000 | C/C++ | — | MCP client |
 
-By far the most starred project in the IoT MCP space. Xiaozhi is an open-source MCP-based chatbot running on ESP32 hardware, designed as a personalized AI assistant using low-cost hardware. Uses **cloud-side MCP** to extend LLM capabilities including smart home control, PC desktop operation, knowledge search, and email. Built on ESP-IDF.
+The most starred project in the IoT MCP space. Xiaozhi is an open-source MCP-based chatbot running on ESP32 hardware. Latest firmware: **v2.2.6**. The v1 branch was retired in February 2026. Recent updates include new hardware board support (Waveshare ESP32-S3-Touch-LCD, M5Stack Cardputer Adv), wake word fixes, LCD layout improvements, and camera/audio optimization. Now supports **70+ boards** with cloud-side MCP for smart home control, PC desktop operation, and knowledge search.
 
-While technically an MCP client rather than server, its 24K stars and active community make it the most visible demonstration of MCP in the embedded world. A companion project, mac8005/xiaozhi-mcp-ha, integrates it with Home Assistant.
+While technically an MCP client rather than server, its 24K stars and active community make it the most visible demonstration of MCP in the embedded world.
 
 ### horw/esp-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [horw/esp-mcp](https://github.com/horw/esp-mcp) | 150 | Python | MIT | ~5 |
+| [horw/esp-mcp](https://github.com/horw/esp-mcp) | ~150 | Python | MIT | ~5 |
 
-The original community ESP-IDF MCP server, now complemented by ESP-IDF 6.0's official built-in server. Centralizes **ESP-IDF** commands for AI-driven interaction — build, flash, and automatic issue fixing. Still useful as a more flexible alternative to the official built-in server.
+The original community ESP-IDF MCP server. Centralizes ESP-IDF commands for AI-driven interaction — build, flash, and automatic issue fixing. Star count flat since April. Still useful as a more configurable alternative to the official built-in server.
+
+### rzeldent/esp32-cam-ai (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [rzeldent/esp32-cam-ai](https://github.com/rzeldent/esp32-cam-ai) | <10 | C++ | — | ~5-8 |
+
+New MCP server for **ESP32-CAM** modules: image capture, LED/flash control, and system diagnostics. Connects AI agents directly to ESP32 cameras for vision tasks without a separate Pi or compute board.
+
+### jurgen178/esp32-mcp (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [jurgen178/esp32-mcp](https://github.com/jurgen178/esp32-mcp) | <10 | C++ | — | Framework |
+
+Notable for running MCP **natively on Arduino Nano ESP32** entirely in C++ — without an official C++ MCP SDK. A proof-of-concept that MCP can run server-side on very constrained hardware using only the Arduino framework.
 
 ### MicroPython MCP Server
 
@@ -239,7 +266,7 @@ The original community ESP-IDF MCP server, now complemented by ESP-IDF 6.0's off
 |--------|-------|----------|---------|-------|
 | MicroPython MCP Bridge | — | Python | — | ~5 |
 
-New in April 2026 — an MCP bridge server allowing direct code execution from an LLM on any board running **MicroPython** (ESP32, RP2040, etc.) via USB Serial or WebREPL. Compatible with Claude Desktop, VS Code Codex, Copilot, and Antigravity. This fills an important gap — MicroPython runs on far more boards than ESP-IDF, making MCP accessible to a broader embedded audience.
+An MCP bridge server allowing direct code execution from an LLM on any board running **MicroPython** (ESP32, RP2040, etc.) via USB Serial or WebREPL. Compatible with Claude Desktop, VS Code Codex, Copilot, and Antigravity.
 
 ### solnera/esp32-mcpserver
 
@@ -247,23 +274,7 @@ New in April 2026 — an MCP bridge server allowing direct code execution from a
 |--------|-------|----------|---------|-------|
 | [solnera/esp32-mcpserver](https://github.com/solnera/esp32-mcpserver) | — | C++ (Arduino) | — | Framework |
 
-A lightweight MCP server framework for ESP32, available on **PlatformIO** (the embedded package manager). Seamlessly connects embedded devices to LLMs via WebSocket/JSON-RPC. Designed as a framework — developers build custom tools for their specific hardware.
-
-### navado/ESP32MCPServer
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [navado/ESP32MCPServer](https://github.com/navado/ESP32MCPServer) | <10 | C++ (Arduino) | — | ~5 |
-
-MCP running **directly on ESP32 hardware**. Provides a WebSocket-based interface for resource discovery and monitoring. Supports NMEA2k, OBD/ODBII, and NMEA0183 sensor data.
-
-### ertgtct/mcpesp
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [ertgtct/mcpesp](https://github.com/ertgtct/mcpesp) | <10 | C++ (Arduino) | — | Library |
-
-Arduino library for implementing MCP servers on ESP32. Exposes hardware capabilities as MCP tools via HTTP/JSON-RPC. Developers can create custom tools for their specific hardware configurations.
+A lightweight MCP server framework for ESP32, available on **PlatformIO**. Seamlessly connects embedded devices to LLMs via WebSocket/JSON-RPC. Developers build custom tools for their specific hardware.
 
 ### Serial Communication Servers
 
@@ -273,7 +284,7 @@ Arduino library for implementing MCP servers on ESP32. Exposes hardware capabili
 | [Adancurusul/serial-mcp-server](https://github.com/Adancurusul/serial-mcp-server) | 10-20 | Python | — | 10+ |
 | [bmdragos/serial-mcp](https://github.com/bmdragos/serial-mcp) | <10 | Python | — | ~3-5 |
 
-Three serial communication MCP servers for talking to Arduino, ESP32, and other hardware over USB serial. **mcp2serial** (33 stars) leads with initial Raspberry Pi Pico support. **serial-mcp-server** provides the most comprehensive serial capabilities including professional debugging features. **serial-mcp** offers a minimal implementation built specifically for Claude Code.
+Three serial communication MCP servers for talking to Arduino, ESP32, and other hardware over USB serial. **mcp2serial** (33 stars) leads with Raspberry Pi Pico support. **serial-mcp-server** provides the most comprehensive serial capabilities with professional debugging features. **serial-mcp** is a minimal implementation built specifically for Claude Code.
 
 ## Raspberry Pi
 
@@ -292,8 +303,6 @@ The most comprehensive Raspberry Pi MCP server. Modular design with **15+ tools*
 - **SPI and serial** — hardware bus access
 - **Camera** — Pi camera control and capture
 
-This is the server that turns a Raspberry Pi into a fully AI-controllable device.
-
 ### UnitApi/mcp
 
 | Server | Stars | Language | License | Tools |
@@ -308,31 +317,26 @@ Secure hardware control through MCP with real-time GPIO streaming. Supports LED 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | 1,200 | Python | Apache-2.0 | 15+ |
+| [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) | 1,300 | Python | Apache-2.0 | 15+ |
 
-The most starred IoT MCP server — and for good reason. Provides **bidirectional AI-robot communication** across both ROS1 and ROS2:
+The most starred IoT MCP server. Provides **bidirectional AI-robot communication** across both ROS1 and ROS2: natural language → robot commands (topic publications, service calls, action goals), and robot state → AI understanding (topics, transforms, sensor data). Grew from 1,200 to 1,300 stars. The roadmap lists ROS Actions support and Permission controls as upcoming.
 
-- **Natural language → robot commands** — AI translates user intent into ROS topic publications, service calls, and action goals
-- **Robot state → AI understanding** — full visibility into robot topics, transforms, and sensor data
-- **Works with Claude, GPT, Gemini, and more** — compatible with Claude Code, Codex CLI, Gemini CLI, Claude Desktop, ChatGPT, Cursor, and other MCP clients
-
-Jumped from 873 to 1,200 stars (+37%) since our last review. The robotics community's interest in AI-controlled physical systems through MCP continues to accelerate.
-
-### wise-vision/ros2_mcp (NEW — Production-Ready ROS2)
+### wise-vision/ros2_mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [wise-vision/ros2_mcp](https://github.com/wise-vision/ros2_mcp) | 73 | Python | — | 10+ |
+| [wise-vision/ros2_mcp](https://github.com/wise-vision/ros2_mcp) | ~60 | Python | — | 10+ |
+| [wise-vision/mcp_server_ros_2](https://github.com/wise-vision/mcp_server_ros_2) | — | Python | — | 10+ |
 
-An advanced ROS 2 MCP server that bridges AI agents directly into robotics. Notable features:
+An advanced ROS 2 MCP server with 1-minute setup, auto type discovery, image streaming (Image and CompressedImage), and full action support. wise-vision also published this as **mcp_server_ros_2** on the Docker MCP Catalog, pushing toward broader distribution and containerized deployment.
 
-- **1-minute setup** — zero-friction configuration using stdio transport with no brokers or webserver
-- **Auto type discovery** — built-in "list interfaces" tool that dynamically enumerates available topics and services
-- **Image streaming** — supports Image and CompressedImage message types, enabling MCP to receive image streams from ROS2 topics
-- **Full action support** — complete tools for handling ROS2 Actions
-- **Drone demo** — includes documentation for natural language drone control
+### Ranch-Hand-Robotics/rde-mcp-ros-2 (NEW)
 
-Positioned as a production-ready, general-purpose AI integration for ROS2. The auto-discovery and image streaming features make it particularly valuable for rapid prototyping.
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [ranch-hand-robotics/rde-mcp-ros-2](https://github.com/ranch-hand-robotics/rde-mcp-ros-2) | <10 | Python | — | 30+ |
+
+A new ROS 2 MCP server embedded in the **Robot Developer Extension for VS Code**. **30+ tools** for full system introspection — topics, services, actions, nodes, parameters, and logs. Designed for IDE-native robot development with AI assistance. The VS Code integration is notable: developers get AI-assisted ROS 2 development without leaving their editor.
 
 ### lpigeon/ros-mcp-server
 
@@ -340,42 +344,41 @@ Positioned as a production-ready, general-purpose AI integration for ROS2. The a
 |--------|-------|----------|---------|-------|
 | [lpigeon/ros-mcp-server](https://github.com/lpigeon/ros-mcp-server) | 50-100 | Python | — | ~10 |
 
-Another ROS/ROS2 MCP server focused on transforming natural language into robot commands. Lower star count than robotmcp but still actively maintained.
+ROS/ROS2 MCP server focused on transforming natural language into robot commands. Actively maintained.
 
 ### Additional ROS Servers
 
 | Server | Stars | Language | Description |
 |--------|-------|----------|-------------|
+| [Yutarop/ros-mcp](https://github.com/Yutarop/ros-mcp) | <10 | Python | Lightweight ROS/ROS2: topics, services, actions with any message type |
 | [kakimochi/ros2-mcp-server](https://github.com/kakimochi/ros2-mcp-server) | <10 | Python | ROS 2 velocity commands via /cmd_vel |
 | [TakanariShimbo/rosbridge-mcp-server](https://github.com/TakanariShimbo/rosbridge-mcp-server) | <10 | Python | ROS via rosbridge WebSocket |
 
 ## Industrial IoT — OPC UA, PLCs, and SCADA
 
+### midhunxavier/OPCUA-MCP (NEW — Most Capable OPC UA Server)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [midhunxavier/OPCUA-MCP](https://github.com/midhunxavier/OPCUA-MCP) | 13 | Python, Node.js | — | ~10 |
+
+The new leader for OPC UA MCP integration. Dual Python and Node.js implementations, supporting browse nodes, read/write variables, call methods, historical data retrieval, and batch operations. Actively updated through June 2026. Has effectively superseded kukapay/opcua-mcp as the go-to community OPC UA server.
+
 ### kukapay/opcua-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [kukapay/opcua-mcp](https://github.com/kukapay/opcua-mcp) | <10 | Python | — | ~5 |
+| [kukapay/opcua-mcp](https://github.com/kukapay/opcua-mcp) | 26 | Python | — | ~5 |
 
-MCP server connecting to **OPC UA**-enabled industrial systems. Reads and writes OPC UA node values — the standard protocol for factory floor communication. Enables AI agents to query and control industrial equipment through the same protocol used by SCADA systems.
-
-### midhunxavier/OPCUA-MCP
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [midhunxavier/OPCUA-MCP](https://github.com/midhunxavier/OPCUA-MCP) | <10 | Python, TypeScript | — | ~10 |
-
-More comprehensive OPC UA server with both Python and TypeScript implementations. Supports read/write variables, browse nodes, call methods, and batch operations.
+MCP server connecting to **OPC UA**-enabled industrial systems — reads and writes OPC UA node values. **Dormant since October 2025** — no updates in 2026. Star count grew to 26 but the project appears stalled. midhunxavier/OPCUA-MCP is the more actively maintained alternative.
 
 ### cadugrillo/s7-mcp-bridge
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cadugrillo/s7-mcp-bridge](https://github.com/cadugrillo/s7-mcp-bridge) | <10 | Go | — | ~5-10 |
+| [cadugrillo/s7-mcp-bridge](https://github.com/cadugrillo/s7-mcp-bridge) | ~19 | Go | — | ~5-10 |
 
-MCP server connecting AI agents to **Siemens S7-1500 and S7-1200 PLCs** — the world's most widely deployed programmable logic controllers. The Go implementation communicates using the S7 protocol for direct PLC data access.
-
-This is early-stage but potentially significant: Siemens PLCs run a large portion of global manufacturing. Having AI agents read PLC variables through MCP could enable intelligent manufacturing monitoring.
+MCP server connecting AI agents to **Siemens S7-1500 and S7-1200 PLCs** using the S7 protocol. **Dormant since January 2026** — no updates for five months. The Go implementation and S7 protocol support remain unique, but the project is stalled.
 
 ### poly-mcp/IoT-Edge-MCP-Server
 
@@ -383,39 +386,69 @@ This is early-stage but potentially significant: Siemens PLCs run a large portio
 |--------|-------|----------|---------|-------|
 | [poly-mcp/IoT-Edge-MCP-Server](https://github.com/poly-mcp/IoT-Edge-MCP-Server) | <10 | Python | — | 15-20 |
 
-Enterprise-grade MCP server for Industrial IoT. Unifies **MQTT sensors**, **Modbus devices**, and industrial equipment with InfluxDB time-series storage and Redis caching. Features real-time monitoring, alarms, and actuator control — the closest thing to a SCADA MCP interface.
+Enterprise-grade MCP server for Industrial IoT. Unifies **MQTT sensors**, **Modbus devices**, and industrial equipment with InfluxDB time-series storage and Redis caching. Real-time monitoring, alarms, and actuator control — the closest thing to a SCADA MCP interface.
 
-## 3D Printing
-
-### DMontgomery40/mcp-3D-printer-server (Tripled to 168 Stars)
+### AddisonTech/Hermes (NEW)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [DMontgomery40/mcp-3D-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | 168 | JavaScript/TypeScript | GPL-2.0 | 25+ |
+| [AddisonTech/Hermes](https://github.com/AddisonTech/Hermes) | <5 | Rust | — | ~5 |
 
-The most comprehensive 3D printing MCP server — and the fastest-growing in the category, tripling from 61 to 168 stars. Connects to **8 printer platforms**: OrcaSlicer, Bambu Lab, OctoPrint, Klipper, Duet, Repetier, Prusa, and Creality.
+Very new (updated June 11, 2026). Rust-based bridge connecting AI agents to plant-floor industrial data via OPC-UA. Noteworthy as the only Rust-based OPC UA MCP server — early stage but potentially interesting for latency-sensitive industrial use cases.
 
-**Recent updates** add significant capabilities: **Bambu FTP-backed file operations**, **OrcaSlicer CLI slicing** (via `slice_stl` tool), new mesh preparation tools (`merge_vertices`, `center_model`, `lay_flat`), and support for reading **Bambu Studio preset files** (machine, filament, process) as MCP resources. The project aims for feature parity across all platforms, with Bambu implementation leading.
+## 3D Printing
 
-Also available on Docker Hub and npm for easy deployment.
+### DMontgomery40/mcp-3D-printer-server
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [DMontgomery40/mcp-3D-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) | 195 | JavaScript/TypeScript | GPL-2.0 | 25+ |
+
+The most comprehensive multi-platform 3D printing MCP server. Grew from 168 to 195 stars. Connects to **8 printer platforms**: OrcaSlicer, Bambu Lab, OctoPrint, Klipper, Duet, Repetier, Prusa, and Creality.
+
+**Recent updates (v1.2.4, v1.2.6 — May 2026)**: Added FULU OrcaSlicer/Bambu support, fixed HTTP compatibility entrypoints, and fixed a schema bug in `upload_gcode` inputSchema for Anthropic tool compatibility. Available on Docker Hub and npm.
+
+The maintainer also spun off **DMontgomery40/bambu-printer-mcp** (see below) as a leaner Bambu-only alternative.
+
+### DMontgomery40/bambu-printer-mcp (NEW — Bambu-Only Fork)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [DMontgomery40/bambu-printer-mcp](https://github.com/DMontgomery40/bambu-printer-mcp) | 57 | TypeScript | GPL-2.0 | 20+ |
+
+A new spin-off from the same author. Strips all non-Bambu platforms for a leaner, faster install focused entirely on Bambu Lab printers. **57 stars** since creation in May 2026. Includes STL manipulation, BambuStudio slicing, AMS management, and camera snapshots. Good choice for Bambu-only shops that don't need multi-platform overhead.
+
+### codeofaxel/Kiln (NEW — Most Ambitious New Entrant)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [codeofaxel/Kiln](https://github.com/codeofaxel/Kiln) | 21 | — | — | 810+ |
+
+The most ambitious new 3D printing MCP server. **810+ tools** — more than any other server in the 3D printing category. End-to-end text-to-print workflows with multi-printer support (OctoPrint, Klipper, Bambu, Creality, Prusa, AnyCubic, Elegoo, USB/Marlin), failure recovery with layer-level resumption, and marketplace integration (MyMiniFactory, Cults3D). Includes outsourcing via Craftcloud. **Freemium** ($49–$199/month for premium tiers). Very recently updated (within the last day as of June 12). Worth watching — the scope is far beyond any other 3D printing MCP server.
 
 ### OctoEverywhere/mcp (Official)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [OctoEverywhere/mcp](https://github.com/OctoEverywhere/mcp) | 20-50 | Python | — | ~5 |
+| [OctoEverywhere/mcp](https://github.com/OctoEverywhere/mcp) | ~34 | Python | — | ~5 |
 
-Official MCP server from **OctoEverywhere** — the most popular cloud management platform for 3D printers. Supports OctoPrint, Klipper, Bambu Lab, Elegoo, Prusa, and Creality. Provides live printer state, webcam snapshots, and printer control.
-
-The official backing means reliable API access and ongoing maintenance.
+Official MCP server from **OctoEverywhere** — the most popular cloud management platform for 3D printers. Supports OctoPrint, Klipper, Bambu Lab, Elegoo, Prusa, and Creality. Provides live printer state, webcam snapshots, and printer control. **Code-frozen since July 2025** — the server remains in production but no new features have shipped in nearly a year. The cloud backend continues to improve, but the MCP server layer is stable/static.
 
 ### schwarztim/bambu-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [schwarztim/bambu-mcp](https://github.com/schwarztim/bambu-mcp) | 10-20 | TypeScript | MIT | 25 |
+| [schwarztim/bambu-mcp](https://github.com/schwarztim/bambu-mcp) | ~15 | TypeScript | MIT | 25 |
 
-Complete MCP server for **Bambu Lab** 3D printers. **25 tools** covering print control, status monitoring, camera access, AMS (Automatic Material System), temperature monitoring, and LED control. Uses local MQTT for communication with X.509 certificate authentication and FTPS file upload.
+Complete MCP server for **Bambu Lab** 3D printers. **25 tools** covering print control, status monitoring, camera access, AMS, temperature monitoring, and LED control. Local MQTT communication with X.509 certificate authentication. Quiet since April 2026.
+
+### Disane87/spoolman-mcp (NEW)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [Disane87/spoolman-mcp](https://github.com/Disane87/spoolman-mcp) | ~2 | — | — | ~10 |
+
+A new adjacent tool: filament inventory management via the **Spoolman API**. Not a printer controller — manages vendors, filament types, and spool inventory with full CRUD, JSON/CSV export, and database backup. Useful alongside any of the printer control servers for tracking material consumption.
 
 ## Other Notable Servers
 
@@ -425,7 +458,7 @@ Complete MCP server for **Bambu Lab** 3D printers. **25 tools** covering print c
 |--------|-------|----------|---------|-------|
 | [0xKoda/drone-mcp](https://github.com/0xKoda/drone-mcp) | <10 | Python | — | ~5-10 |
 
-MCP server for controlling **DJI Tello** drones — takeoff, landing, movement commands, and video streaming through MCP.
+MCP server for controlling **DJI Tello** drones — takeoff, landing, movement commands, and video streaming.
 
 ### Bluetooth
 
@@ -433,7 +466,7 @@ MCP server for controlling **DJI Tello** drones — takeoff, landing, movement c
 |--------|-------|----------|---------|-------|
 | [Hypijump31/bluetooth-mcp-server](https://github.com/Hypijump31/bluetooth-mcp-server) | 14 | Python | — | 1 |
 
-Bluetooth device scanning and interaction for AI assistants. Supports both BLE and Classic Bluetooth on Windows, macOS, and Linux.
+Bluetooth device scanning and interaction. Supports both BLE and Classic Bluetooth on Windows, macOS, and Linux.
 
 ### Zigbee2MQTT
 
@@ -441,7 +474,7 @@ Bluetooth device scanning and interaction for AI assistants. Supports both BLE a
 |--------|-------|----------|---------|-------|
 | [ichbinder/MCP2ZigBee2MQTT](https://github.com/ichbinder/MCP2ZigBee2MQTT) | <10 | Python | — | ~5-10 |
 
-MCP server for **Zigbee2MQTT** with intelligent device discovery. Auto-analyzes all connected Zigbee devices and exposes their capabilities.
+MCP server for **Zigbee2MQTT** with intelligent device discovery — auto-analyzes all connected Zigbee devices and exposes their capabilities.
 
 ### Node-RED Integration
 
@@ -450,7 +483,7 @@ MCP server for **Zigbee2MQTT** with intelligent device discovery. Auto-analyzes 
 | [TobiasLante/node-red-contrib-mcp](https://github.com/TobiasLante/node-red-contrib-mcp) | 10-20 | JavaScript | — | Node-RED nodes |
 | [karavaev-evgeniy/node-red-mcp-server](https://github.com/karavaev-evgeniy/node-red-mcp-server) | <10 | JavaScript | — | ~10 |
 
-Two approaches to **Node-RED** MCP integration: node-red-contrib-mcp adds MCP nodes to Node-RED's visual flow editor for manufacturing and IoT automation, while node-red-mcp-server lets AI agents manage Node-RED flows, nodes, and settings.
+Two approaches to **Node-RED** MCP integration: node-red-contrib-mcp adds MCP nodes to Node-RED's visual flow editor; node-red-mcp-server lets AI agents manage Node-RED flows, nodes, and settings.
 
 ### Sensor Monitoring
 
@@ -458,7 +491,7 @@ Two approaches to **Node-RED** MCP integration: node-red-contrib-mcp adds MCP no
 |--------|-------|----------|---------|-------|
 | [diegobit/aranet4-mcp-server](https://github.com/diegobit/aranet4-mcp-server) | <10 | Python | — | ~5 |
 
-MCP server for the **Aranet4 CO2 sensor**. Scans for devices, fetches data, stores in local SQLite, and provides historical querying with visualization. A niche but well-implemented example of purpose-built sensor MCP integration.
+MCP server for the **Aranet4 CO2 sensor**. Scans for devices, fetches data, stores in local SQLite, and provides historical querying with visualization.
 
 ## Curated Resources
 
@@ -466,11 +499,11 @@ MCP server for the **Aranet4 CO2 sensor**. Scans for devices, fetches data, stor
 
 ## What's missing
 
-The gap list is shorter than in March, but significant holes remain:
+The gap list is largely unchanged from our April refresh:
 
-- **No official Arduino IDE integration** — the most popular embedded development platform has no MCP server for project management, board configuration, or compilation (though ESP-IDF 6.0's built-in MCP server partially addresses this for Espressif chips)
+- **No official Arduino IDE integration** — the most popular embedded development platform has no MCP server for project management, board configuration, or compilation (Espressif's ESP-IDF 6.0 built-in server partially addresses this for ESP chips only)
 - **No major Zigbee/Z-Wave hub vendors** — Samsung SmartThings, Hubitat, and Aeotec have no official MCP servers
-- **No PLC vendor servers** — Siemens, Allen-Bradley (Rockwell), Mitsubishi, and ABB have no official MCP offerings (only community bridges)
+- **No PLC vendor servers** — Siemens, Allen-Bradley (Rockwell), Mitsubishi, and ABB have no official MCP offerings (only dormant community bridges)
 - **No Matter/Thread protocol servers** — the new smart home standard has no dedicated MCP support (accessible indirectly through Home Assistant)
 - **No LoRaWAN servers** — the dominant LPWAN technology for IoT remains absent from the MCP ecosystem
 - **No edge AI servers** — no MCP integration for TensorFlow Lite, ONNX Runtime, or other edge inference frameworks (ESP-Claw's on-device inference is closest)
@@ -478,9 +511,11 @@ The gap list is shorter than in March, but significant holes remain:
 
 ## The bottom line
 
-**Rating: 4.0/5** — The IoT/embedded MCP ecosystem has grown significantly since our March review. Ten or more vendors now provide official servers, up from seven — with Espressif's four-pronged MCP commitment being the biggest single vendor story in the entire IoT category. Robotics leads in adoption with 1,200 stars on the top server. Smart home has the most options, with ha-mcp doubling to 2,500 stars. The embedded chatbot space exploded with xiaozhi-esp32 at 24K stars. 3D printing tripled in adoption.
+**Rating: 4.0/5** — The IoT/embedded MCP ecosystem is deepening, not just widening. The home automation subcategory stands out: homeassistant-ai/ha-mcp hit 3,300 stars with five releases in under seven weeks, adding enterprise-grade features (Tool Security Policies, sandboxed execution, OAuth 2.1) that put it ahead of most non-IoT MCP servers in sophistication. The allenporter project completing its mission — merging into Home Assistant Core and gracefully archiving — shows what healthy open-source MCP development looks like.
 
-The real story is that AI-hardware interaction through MCP has moved from "interesting experiment" to "vendor-supported infrastructure." Espressif shipping MCP in ESP-IDF 6.0 means every new ESP32 project has MCP available out of the box. ESP-Claw running as both MCP server and client on-device — with on-chip memory and offline Lua execution — shows where this is heading: AI agents that live on the hardware itself. The 55+ servers now span consumer smart homes, industrial factories, 3D printers, drones, robots, and embedded chatbots. The remaining gaps are in vendor adoption (where are Siemens, Arduino, and SmartThings officially?), emerging standards (Matter, LoRaWAN), and edge AI inference.
+Espressif's story is the other big headline: ESP-Claw quintupled in stars, ESP-IDF 6.0 ships MCP as a built-in feature, and a hosted documentation server at mcp.espressif.com/docs completes a three-part official AI development stack for ESP32. M5Stack forking ESP-Claw signals that the embedded AI agent paradigm is moving downstream from experiments to product.
 
-*This review was refreshed on 2026-04-26 using Claude Opus 4.6 (Anthropic). Originally published 2026-03-15.*
+The remaining gaps — vendor adoption from Siemens, Arduino, and SmartThings; emerging standards like Matter and LoRaWAN — are consistent. The category will hit 5.0/5 when industrial PLC vendors and smart home hub makers ship official servers. Until then, 4.0/5 reflects a well-developed ecosystem with meaningful but still-present holes.
+
+*This review was refreshed on 2026-06-12 using Claude Sonnet 4.6 (Anthropic). Originally published 2026-03-15.*
 
