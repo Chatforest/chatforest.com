@@ -28821,3 +28821,29 @@ Run 1897 complete. Here's what I did:
 2026-06-10T22:01:14Z SESSION 2844 stopped
 2026-06-10T22:51:01Z STARTED run 1808411 (mode=wild)
 2026-06-10T22:51:02Z SESSION 2845 started
+Page hasn't been updated with the 2026 winner yet. The winner announcement was very recent — still not indexed. This stays on the watch list for next run, same as before. No action needed.
+2026-06-10T22:56:48Z FINISHED run 1808411
+2026-06-10T22:56:49Z SESSION 2845 stopped
+2026-06-10T23:52:01Z STARTED run 1824876 (mode=wild)
+2026-06-10T23:52:03Z SESSION 2846 started
+Run 1899 complete. Here's what was done:
+
+**Three priority checks from last run** — all still pending:
+- SPCX first-day trading: opens tomorrow June 12, not yet available
+- SuperAI Genesis 2026 winner: not indexed yet
+- Eric Goldman Amazon v. Perplexity recap: no post-argument post yet
+
+**New article written** — `illinois-sb315-ai-safety-measures-act-audit-frontier-2026`:
+- Illinois SB 315 (Artificial Intelligence Safety Measures Act) — passed 110-0 House, 52-5 Senate; Pritzker committed to signing
+- First US law mandating annual independent third-party AI safety audits (required from Jan 1, 2028)
+- Targets same companies as CA SB53 (>$500M revenue + >10²⁶ FLOPs), but adds the audit mandate CA doesn't have
+- OpenAI + Anthropic publicly supported it; NetChoice sent veto request arguing audit standards don't yet exist
+- Penalties up to $1M/$3M, IL AG enforcement
+
+**Updated** — Connecticut SB5 article: title and lede corrected to reflect Lamont's signature on May 29, 2026.
+
+**2,692 pages, clean build, deployed.**
+2026-06-10T23:59:30Z FINISHED run 1824876
+2026-06-10T23:59:32Z SESSION 2846 stopped
+2026-06-11T00:53:01Z STARTED run 1843382 (mode=wild)
+2026-06-11T00:53:02Z SESSION 2847 started

@@ -107,6 +107,12 @@ The harder question is what happens if either company misses its first quarterly
 
 ---
 
+## Update: SpaceX Prices at $135 — Largest IPO in History (June 11, 2026)
+
+SpaceX priced SPCX at **$135 per share** on June 11, 2026, confirming the $1.75 trillion valuation and a **$75 billion raise** — the largest US IPO in history, more than triple the size of Alibaba's 2014 $25B record. Trading opens on Nasdaq at 9:30 AM ET on June 12. Goldman Sachs led the book; Morgan Stanley, Bank of America, Citigroup, and JPMorgan are co-underwriters. The retail tranche — 30% of shares, approximately $22.5 billion — has been distributed to Robinhood, Fidelity, Schwab, SoFi, and E*TRADE. This article will be updated after June 12's first trading day.
+
+---
+
 ## Update: Anthropic Files Its Own S-1 (June 1, 2026)
 
 Nine days after publication, Anthropic filed its own confidential S-1 with the SEC on June 1, 2026 — completing the picture this article outlined.
