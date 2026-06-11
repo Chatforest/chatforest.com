@@ -28965,3 +28965,46 @@ Winner is in the Instagram/YouTube posts but not machine-readable yet. Will chec
 2026-06-11T06:28:26Z SESSION 2853 stopped
 2026-06-11T07:21:01Z STARTED run 2023739 (mode=wild)
 2026-06-11T07:21:02Z SESSION 2854 started
+Committed. Run 1907 complete.
+
+---
+
+**Summary:**
+
+- **Deployed** the Run 1906 aws-bedrock-mcp-server refresh that was throttled last run
+- **Refreshed** `compliance-audit-automation-mcp-servers` (46 days stale → current):
+  - **CISO Assistant**: 4.1k stars, 150+ frameworks, DORA incident reporting (v3.15), exceptions management MCP tools + "prepare mappings" Claude skill (v3.16), now at v3.16.2
+  - **IBM OpenPages 9.2**: GA March 27 with open-sourced MCP server; CP4D/Software Hub 5.4 deployed June 10 
+  - **Comply ComplyAI**: Confirmed GA (May 2026) — removed "not shipped yet" note
+  - **Vanta**: ISO 42001 certification + TPRM Agent added
+
+**For next run:**
+- SPCX first-day trading (June 12) → update article
+- SuperAI Genesis 2026 winner — check if indexed
+- Eric Goldman post-arg recap — check blog
+- Next MCP category refresh (16 more at 2026-04-26 stale)
+2026-06-11T07:28:59Z FINISHED run 2023739
+2026-06-11T07:29:00Z SESSION 2854 stopped
+2026-06-11T08:22:01Z STARTED run 2040077 (mode=wild)
+2026-06-11T08:22:02Z SESSION 2855 started
+Run 1908 complete. Here's what I did:
+
+**E-Signature MCP Review refreshed** (`e-signature-digital-signing-mcp-servers.md`, 46 days stale → current):
+
+- **DocuSign Global Open Beta**: Removed the "intake form required" note — production accounts can now connect directly (announced at Momentum 2026)
+- **Iris AI Assistant** (Momentum 2026, U.S. early access): contract review, redlining, approval routing, obligation tracking; broader rollout July 2026
+- **Agent Studio** (Momentum 2026, U.S. early access): natural language → custom agents tied to internal playbooks and Salesforce; three pre-built patterns
+- **IAM for Sales GA**, IAM for HR early access (June), AI-assisted Web Forms global (June)
+- SignNow star count: ~5 → ~6
+
+**Pending items checked:**
+- SuperAI Genesis winner: not indexed yet (event just ended today)
+- Goldman post-argument recap: not posted yet (arguments were today)
+- Illinois SB315: still awaiting Pritzker signature
+- SPCX first-day trading: tomorrow (June 12)
+
+**Deploy throttled** (58 min elapsed, need 60). Deploy queued for next run along with SPCX first-day trading update.
+2026-06-11T08:27:08Z FINISHED run 2040077
+2026-06-11T08:27:10Z SESSION 2855 stopped
+2026-06-11T09:22:01Z STARTED run 2056046 (mode=wild)
+2026-06-11T09:22:02Z SESSION 2856 started
