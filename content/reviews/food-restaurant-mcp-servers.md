@@ -2,10 +2,10 @@
 title: "Food & Restaurant MCP Servers — Yelp, Instacart, Spoonacular, Uber Eats, Swiggy, Zomato, OpenFoodFacts, and More"
 date: 2026-03-15T17:33:00+09:00
 description: "Food and restaurant MCP servers are enabling AI agents to search recipes, order food delivery, make restaurant reservations, track nutrition, manage grocery shopping, and explore cocktails and beer."
-og_description: "Food & restaurant MCP servers: HowToCook (713 stars, meal planning), OpenNutrition (179 stars, 300K+ foods), Uber Eats (221 stars), official Yelp MCP (agent-to-agent), official Instacart (recipes + shopping), Swiggy Builders Club (3 MCP servers 18+ tools open developer platform April 2026), official Zomato, Spoonacular (official), Edamam (official), NEW Picnic supermarket (51 stars 30+ tools NL/DE/FR), NEW H-E-B grocery (20 stars 20+ tools coupon clipping), NEW Toast POS (50+ tools restaurant operations), NEW Whole Foods (browser automation), NEW HelloFresh meal kit, NEW Mealie recipe manager, NEW BrewSource beer BJCP styles breweries, Resy + OpenTable unified search. Rating: 4.0/5."
+og_description: "Food & restaurant MCP servers: HowToCook (724 stars, meal planning), OpenNutrition (187 stars, 300K+ foods), Uber Eats (229 stars), official Yelp MCP (agent-to-agent), official Instacart (recipes + shopping), Swiggy Builders Club now open (3 MCP servers 18+ tools invite-led developer platform), official Zomato (168 stars), Spoonacular (official), Edamam (official), Picnic supermarket (72 stars 30+ tools NL/DE/FR), H-E-B grocery (28 stars 20+ tools coupon clipping), Kroger MCP (61 stars +1425%), Toast POS (5 stars 50+ tools), Whole Foods browser automation, HelloFresh meal kit, Mealie recipe manager, NEW iFood MCP (Brazil, OAuth 2.1), Walmart community MCP. Rating: 4.0/5."
 content_type: "Review"
-card_description: "Food and restaurant MCP servers for recipes, food delivery, restaurant reservations, nutrition tracking, grocery shopping, cocktail discovery, and beer. This category has surprisingly strong official vendor participation — Yelp, Instacart, Swiggy, Zomato, Spoonacular (by the API creator), and Edamam all have official MCP servers, making food one of the most commercially embraced MCP verticals. The biggest April 2026 story is Swiggy launching Builders Club — opening 3 MCP servers and 18+ API tools across Food, Instamart, and Dineout to external developers, the first food delivery platform to create a formal developer ecosystem around MCP. The standout for recipes is worryzyy/HowToCook-mcp (713 stars, up from 569, TypeScript, MIT), built on the wildly popular programmer's guide to home cooking with smart meal planning. A new Mealie MCP server (eds3028/mealie-mcp) brings self-hosted recipe management to the MCP ecosystem. For nutrition data, deadletterq/mcp-opennutrition (179 stars, up from 122, +47%) stands out by running fully locally with 300,000+ food items. The restaurant space has Yelp's official MCP with agent-to-agent communication, plus a new Toast POS MCP server (BusyBee3333/toast-mcp-2026-complete, 50+ tools) filling the restaurant operations gap. Food delivery continues to shine with official adoption from Swiggy and Zomato, and Uber Eats at 221 stars. Grocery shopping expanded significantly: Instacart's official MCP, CupOfOwls/kroger-mcp with shopping path optimization, NEW ivo-toby/mcp-picnic (51 stars, 30+ tools for Picnic supermarket in NL/DE/FR with meal planning and budget tracking), NEW mgwalkerjr95/texas-grocery-mcp (20 stars, 20+ tools for H-E-B with coupon clipping), NEW benjiebob/whole-foods-mcp (Whole Foods ordering via browser automation), and NEW Samvox1/nl-supermarkt-mcp (Dutch 12+ supermarket price comparison). The meal kit gap is now filled by striderlabs/mcp-hellofresh for HelloFresh management. Beverages expanded beyond cocktails: zhdenny/bar-assistant-mcp-server for cocktails plus NEW CharlRitter/brewsource-mcp for beer BJCP style guides and brewery discovery, and jtucker/mcp-untappd-server for Untappd beer checkins. Remaining gaps: no official DoorDash or GrubHub servers; no dietary condition management; no food safety databases; no wine databases. The category earns 4.0/5 — impressive official vendor adoption, rapidly filling gaps in grocery (Whole Foods, Picnic, H-E-B), restaurant operations (Toast POS), meal kits (HelloFresh), and beverages (beer), with Swiggy's Builders Club pointing toward a developer-ecosystem future for food commerce MCP."
-last_refreshed: 2026-04-26
+card_description: "Food and restaurant MCP servers for recipes, food delivery, restaurant reservations, nutrition tracking, grocery shopping, cocktail discovery, and beer. This category has surprisingly strong official vendor participation — Yelp, Instacart, Swiggy, Zomato, Spoonacular (by the API creator), and Edamam all have official MCP servers, making food one of the most commercially embraced MCP verticals. The June 2026 headline: Swiggy Builders Club is now open with invite-led access — 3 MCP servers and 18+ API tools across Food, Instamart, and Dineout, the first food delivery platform to create a formal developer ecosystem around MCP. The standout for recipes is worryzyy/HowToCook-mcp (724 stars, up from 569 in March), built on the wildly popular programmer's guide to home cooking with smart meal planning. For nutrition data, deadletterq/mcp-opennutrition (187 stars, up 53% from March's 122) runs fully locally with 300,000+ food items. Biggest grocery mover: CupOfOwls/kroger-mcp exploded from 4 to 61 stars (+1,425%) since April. Food delivery added iFood (Brazil's largest platform, OAuth 2.1 login, stdio + HTTP). Remaining gaps: no official DoorDash or GrubHub servers; no dietary condition management; no food safety databases; no wine databases. The category earns 4.0/5 — strong official vendor adoption, mature grocery coverage, and Swiggy's Builders Club pointing toward a developer-ecosystem future for food commerce MCP."
+last_refreshed: 2026-06-12
 category_url: "/categories/lifestyle-personal/"
 ---
 
@@ -13,7 +13,7 @@ Food and restaurant MCP servers are enabling AI agents to find recipes, order fo
 
 The landscape spans ten areas: **recipes & cooking** (HowToCook, Spoonacular, CookWith, TheMealDB), **recipe managers** (Tandoor with 3 implementations, Mealie), **nutrition & food databases** (OpenNutrition, USDA FoodData Central, Edamam, Nutritionix), **food tracking & calories** (OpenFoodFacts, calorie trackers, meal loggers), **restaurants & reservations** (Yelp, Resy, OpenTable, SevenRooms), **restaurant operations** (Toast POS), **food delivery** (Uber Eats, DoorDash, Swiggy, Zomato), **grocery** (Instacart, Kroger, Picnic, H-E-B, Whole Foods), **meal kits** (HelloFresh), **beverages** (Bar Assistant cocktails, BrewSource beer, Untappd), and **multi-source food data** (barcode scanning, product databases).
 
-The headline findings: **Swiggy launched Builders Club in April 2026** — opening 3 MCP servers and 18+ API tools to external developers, the first food platform to create a formal MCP developer ecosystem. **Official vendor adoption remains exceptionally strong** — Yelp, Instacart, Swiggy, Zomato, Spoonacular, and Edamam all have official MCP servers. **HowToCook-mcp grew to 713 stars** (up 25% from 569) with smart meal planning. **OpenNutrition surged to 179 stars** (up 47% from 122) running fully locally with 300,000+ foods. **The grocery space expanded dramatically** — Picnic (51 stars, 30+ tools), H-E-B (20 stars, 20+ tools), and Whole Foods all gained MCP servers. **Toast POS fills the restaurant operations gap** with 50+ tools. **HelloFresh fills the meal kit gap.** **Beer gets its first MCP servers** with BrewSource (BJCP styles) and Untappd.
+The headline findings: **Swiggy Builders Club is now open** (June 2026) — invite-led access to 3 MCP servers and 18+ API tools, the first food delivery platform to create a formal MCP developer ecosystem with real external access. **Official vendor adoption remains exceptionally strong** — Yelp, Instacart, Swiggy, Zomato (168 stars), Spoonacular, and Edamam all have official MCP servers. **HowToCook-mcp grew to 724 stars** (up 27% from 569 in March) with smart meal planning. **OpenNutrition climbed to 187 stars** (up 53% from 122 in March) running fully locally with 300,000+ foods. **Kroger-mcp is the biggest mover** — surging from 4 to 61 stars (+1,425%) in 47 days. **iFood arrives** — Brazil's largest food delivery platform joins the ecosystem with OAuth 2.1 authentication. **Picnic grew to 72 stars** (up 41% from 51) as the most popular grocery MCP. **Toast POS fills the restaurant operations gap** with 50+ tools. **HelloFresh fills the meal kit gap.** **Beer MCP space added two servers but both stalled** — BrewSource has 0 stars and no updates since Nov 2025; Untappd is API-locked.
 
 ## Recipes & Cooking
 
@@ -21,11 +21,11 @@ The headline findings: **Swiggy launched Builders Club in April 2026** — openi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [worryzyy/HowToCook-mcp](https://github.com/worryzyy/HowToCook-mcp) | 713 | TypeScript | MIT | 4 |
+| [worryzyy/HowToCook-mcp](https://github.com/worryzyy/HowToCook-mcp) | 724 | TypeScript | MIT | 4 |
 
 The **most popular food MCP server** — built on the viral Anduin2017/HowToCook project ("a programmer's guide to home cooking"), which has 70,000+ stars on GitHub. Four tools: query all recipes, query by category, get specific recipe (exact + fuzzy matching), and smart meal planning that generates weekly plans based on dietary restrictions, allergies, and number of diners. Available via npm (`howtocook-mcp`) and now also as a DXT (Desktop Extension) for one-click Claude Desktop installation. Chinese-origin with English README.
 
-The meal planning tool is the differentiator — it doesn't just search recipes but creates coherent weekly meal plans accounting for nutritional balance and dietary constraints. 713 stars (up 25% from 569 in March) makes it the highest-starred food-related MCP server.
+The meal planning tool is the differentiator — it doesn't just search recipes but creates coherent weekly meal plans accounting for nutritional balance and dietary constraints. 724 stars (up 27% from 569 in March) makes it the highest-starred food-related MCP server.
 
 ### Spoonacular MCP (Official)
 
@@ -87,9 +87,9 @@ A new MCP server for **Mealie**, another popular self-hosted recipe manager. Sev
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [deadletterq/mcp-opennutrition](https://github.com/deadletterq/mcp-opennutrition) | 179 | TypeScript | 3 |
+| [deadletterq/mcp-opennutrition](https://github.com/deadletterq/mcp-opennutrition) | 187 | TypeScript | 3 |
 
-The **best nutrition MCP server** — 300,000+ food items running **fully locally** with no external API calls. Three tools: food search, nutritional data lookup, and barcode scanning. Comprehensive nutritional profiles including macros, vitamins, and minerals. 179 stars (up 47% from 122 in March) — second-highest in the food MCP category. The fully-local approach means no API keys, no rate limits, no privacy concerns with dietary data, and offline capability. Data combines authoritative public sources (USDA, CNF, FRIDA, AUSNUT) for transparent, consistent nutritional data.
+The **best nutrition MCP server** — 300,000+ food items running **fully locally** with no external API calls. Three tools: food search, nutritional data lookup, and barcode scanning. Comprehensive nutritional profiles including macros, vitamins, and minerals. 187 stars (up 53% from 122 in March) — second-highest in the food MCP category. The fully-local approach means no API keys, no rate limits, no privacy concerns with dietary data, and offline capability. Data combines authoritative public sources (USDA, CNF, FRIDA, AUSNUT) for transparent, consistent nutritional data.
 
 ### USDA FoodData Central Servers
 
@@ -173,7 +173,7 @@ jrklein343-svg/restaurant-mcp is the standout — it **searches both Resy and Op
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [BusyBee3333/toast-mcp-2026-complete](https://github.com/BusyBee3333/toast-mcp-2026-complete) | 2 | TypeScript | MIT | 50+ |
+| [BusyBee3333/toast-mcp-2026-complete](https://github.com/BusyBee3333/toast-mcp-2026-complete) | 5 | TypeScript | MIT | 50+ |
 
 The **first restaurant POS MCP server** — a community-built integration with Toast, the leading restaurant management platform. 50+ tools across 10 categories: order lifecycle management (12 tools), menu and inventory operations (11 tools), payment and cash management (8 tools), sales reporting and analytics (6 tools), staff and labor analytics (6 tools), and customer relationship management (4 tools). Implements OAuth 2.0 authentication with the Toast API and provides both stdio mode (MCP integration) and HTTP mode (web UI).
 
@@ -185,9 +185,9 @@ This fills a significant gap from the original review — restaurant operations 
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [ericzakariasson/uber-eats-mcp-server](https://github.com/ericzakariasson/uber-eats-mcp-server) | 221 | Python | — |
+| [ericzakariasson/uber-eats-mcp-server](https://github.com/ericzakariasson/uber-eats-mcp-server) | 229 | Python | — |
 
-The **most popular food delivery MCP server** at 221 stars (up slightly from 217). A proof-of-concept using browser automation for restaurant search, menu exploration, and food ordering. While not production-grade, it demonstrates the potential for AI-driven food ordering workflows.
+The **most popular food delivery MCP server** at 229 stars (up from 221 in April). A proof-of-concept using browser automation for restaurant search, menu exploration, and food ordering. While not production-grade, it demonstrates the potential for AI-driven food ordering workflows.
 
 ### DoorDash Servers
 
@@ -204,12 +204,15 @@ amannm/doordash-mcp is the most focused — a minimal transformation layer betwe
 | Server | Notes |
 |--------|-------|
 | [Swiggy MCP](https://github.com/Swiggy/swiggy-mcp-server-manifest) | **Official** — three services: swiggy-food (restaurant ordering), swiggy-instamart (grocery/quick-commerce, 40,000+ SKUs), swiggy-dineout (restaurant discovery). Launched January 2026. **First quick-commerce platform globally to adopt MCP.** |
-| [Zomato MCP](https://github.com/Zomato/mcp-server-manifest) | **Official** — food ordering, order tracking, QR code payment. Production endpoint at mcp-server.zomato.com. Integrates with ChatGPT and Claude. |
+| [Zomato MCP](https://github.com/Zomato/mcp-server-manifest) | **Official** — food ordering, order tracking, QR code payment. Production endpoint at mcp-server.zomato.com. Integrates with ChatGPT and Claude. 168 stars (active as of June 2026). |
+| [arioliv/ifood-mcp](https://github.com/arioliv/ifood-mcp) | **iFood** — Brazil's largest food delivery platform. Browse, search, cart, and ordering. OAuth 2.1 with real iFood OTP login. stdio + HTTP transports. New June 2026. |
 | [GrubHub Scraper MCP](https://apify.com/natanielsantos/grubhub-scraper) | Apify-based scraper, not official |
 
 Swiggy and Zomato — India's two largest food delivery platforms — both have official MCP servers, making India the most MCP-advanced food delivery market. Swiggy's Instamart integration is particularly notable as the **first quick-commerce (instant grocery delivery) MCP** globally, covering 40,000+ SKUs via natural language. Zomato's QR code payment feature shows how MCP can bridge digital ordering with physical restaurant experiences.
 
-**April 2026 update: Swiggy Builders Club** — Swiggy announced [Builders Club](https://mcp.swiggy.com/builders/), a developer programme opening its AI commerce infrastructure to external developers, startups, and enterprises. Built on AWS (Amazon Bedrock and AgentCore), the programme gives approved builders access to **3 MCP servers and 18+ API tools** spanning Food, Instamart, and Dineout. Builders can create AI agents, copilots, and integrations that take real-world actions — ordering food, shopping groceries, booking dining. Includes a "Skills framework" of reusable capabilities for agentic commerce. This makes Swiggy the **first food delivery platform to create a formal developer ecosystem around MCP**, with live API access, generous rate limits, and direct engineering support. A significant milestone for the entire food MCP space.
+**June 2026: Swiggy Builders Club now open** — Swiggy's [Builders Club](https://mcp.swiggy.com/builders/) is now accepting developers under an invite-led model. Built on AWS (Amazon Bedrock and AgentCore), approved builders receive API keys giving access to **3 MCP servers and 18+ API tools** spanning Food, Instamart, and Dineout. Localhost development is allowed without production approval, lowering the barrier to entry. Builders can create AI agents, copilots, and integrations that take real-world actions — ordering food, shopping groceries, booking dining. Includes a "Skills framework" of reusable capabilities for agentic commerce. This makes Swiggy the **first food delivery platform to create a formal developer ecosystem around MCP**, now with live invite-led API access and direct engineering support.
+
+**iFood arrives (June 2026)** — Brazil's largest food delivery platform joins the MCP ecosystem with `arioliv/ifood-mcp`, a community-built server covering browse, search, cart, and ordering. Notably implements **OAuth 2.1 with real iFood OTP login** — one of the most production-grade authentication flows in the community food delivery MCP space. Supports both stdio and HTTP transports. While unofficial, Brazil being represented (alongside India's Swiggy/Zomato) shows MCP food delivery expanding beyond the US and UK markets.
 
 ### Multi-Platform Delivery
 
@@ -232,9 +235,9 @@ Instacart's official MCP creates a compelling workflow: describe a meal, get a r
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [ivo-toby/mcp-picnic](https://github.com/ivo-toby/mcp-picnic) | 51 | TypeScript | 30+ |
+| [ivo-toby/mcp-picnic](https://github.com/ivo-toby/mcp-picnic) | 72 | TypeScript | 30+ |
 
-An impressive MCP server for **Picnic**, the European online supermarket delivery service (Netherlands, Germany, France). 30+ tools covering product search, cart management, order placement, meal planning with automatic shopping list generation, delivery tracking and optimization, budget management with spending analysis, and transaction history. Supports session persistence with 2FA, works with Claude Desktop and other MCP clients. Available via npm (`mcp-picnic`). 51 stars makes it the most popular grocery-specific MCP server.
+An impressive MCP server for **Picnic**, the European online supermarket delivery service (Netherlands, Germany, France). 30+ tools covering product search, cart management, order placement, meal planning with automatic shopping list generation, delivery tracking and optimization, budget management with spending analysis, and transaction history. Supports session persistence with 2FA, works with Claude Desktop and other MCP clients. Available via npm (`mcp-picnic`). 72 stars (up 41% from 51 in April) makes it the most popular grocery-specific MCP server.
 
 An alternative exists at [YussufSassi/picnic-mcp](https://github.com/YussufSassi/picnic-mcp).
 
@@ -242,9 +245,9 @@ An alternative exists at [YussufSassi/picnic-mcp](https://github.com/YussufSassi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mgwalkerjr95/texas-grocery-mcp](https://github.com/mgwalkerjr95/texas-grocery-mcp) | 20 | Python | MIT | 20+ |
+| [mgwalkerjr95/texas-grocery-mcp](https://github.com/mgwalkerjr95/texas-grocery-mcp) | 28 | Python | MIT | 20+ |
 
-A comprehensive MCP server for **H-E-B**, the beloved Texas grocery chain. 20+ tools across five categories: store location (3 tools), product search with real-time pricing (3 tools), cart management with confirmation requirements (5 tools), **digital coupon discovery and clipping** (4 tools), and session management (4 tools). The coupon clipping feature is unique — no other grocery MCP server offers automated deal discovery. Uses unofficial web APIs and browser automation. Note: unofficial integration.
+A comprehensive MCP server for **H-E-B**, the beloved Texas grocery chain. 20+ tools across five categories: store location (3 tools), product search with real-time pricing (3 tools), cart management with confirmation requirements (5 tools), **digital coupon discovery and clipping** (4 tools), and session management (4 tools). The coupon clipping feature is unique — no other grocery MCP server offers automated deal discovery. Uses unofficial web APIs and browser automation. Note: unofficial integration. 28 stars (up 40% from 20 in April).
 
 ### Whole Foods MCP (New)
 
@@ -258,7 +261,7 @@ The **first Whole Foods MCP server** — enables automated grocery ordering from
 
 | Server | Stars | Language | License |
 |--------|-------|----------|---------|
-| [Samvox1/nl-supermarkt-mcp](https://github.com/Samvox1/nl-supermarkt-mcp) | 5 | Python | MIT |
+| [Samvox1/nl-supermarkt-mcp](https://github.com/Samvox1/nl-supermarkt-mcp) | 11 | Python | MIT |
 
 Searches and compares prices across **12+ Dutch supermarket chains** (Albert Heijn, Jumbo, Lidl, Aldi, Plus, DekaMarkt, Dirk, and more) plus 7 drugstore chains (Kruidvat, Etos, etc.). Features include shopping list optimization to find the cheapest combinations, weekly promotion tracking, price history alerts, budget management, and weekly menu planning with automatic grocery generation. A creative multi-vendor approach.
 
@@ -266,11 +269,11 @@ Searches and compares prices across **12+ Dutch supermarket chains** (Albert Hei
 
 | Server | Stars | Language | License | Notes |
 |--------|-------|----------|---------|-------|
-| [CupOfOwls/kroger-mcp](https://github.com/CupOfOwls/kroger-mcp) | 4 | Python | MIT | Product search, store finder, cart management, **shopping path optimization** |
+| [CupOfOwls/kroger-mcp](https://github.com/CupOfOwls/kroger-mcp) | 61 | Python | MIT | Product search, store finder, cart management, **shopping path optimization** |
 | [jessalva7/grocery-mcp-server](https://github.com/jessalva7/grocery-mcp-server) | — | Python | — | General grocery item and shopping list management |
 | [o-b-one/groceries-mcp](https://github.com/o-b-one/groceries-mcp) | 3 | Python | MIT | Multi-vendor grocery API (Rami Levy, Keshet), cart automation |
 
-CupOfOwls/kroger-mcp has a unique **shopping path optimization tool** — it finds the optimal route through a Kroger store based on your shopping list. While a niche feature, it demonstrates how MCP servers can provide utility beyond simple API wrappers.
+CupOfOwls/kroger-mcp is the **biggest mover in the grocery category** — jumping from 4 to 61 stars (+1,425%) since April, suggesting Kroger shoppers are actively discovering and adopting this server. Its unique **shopping path optimization tool** — which finds the optimal route through a Kroger store based on your shopping list — may be driving word-of-mouth. Also notable: Walmart partially enters the space with a community server (`DomingosNgongo/walmart-mcp`) for product search, though no official Walmart MCP server exists yet. Separately, LinkedIn reports Walmart is using Anthropic's MCP internally for "super agents" — external API access may follow.
 
 ## Meal Kits (New)
 
@@ -294,42 +297,47 @@ An alternative by markswendsen-code uses Playwright browser automation for the s
 
 Smart cocktail search with natural language + similarity matching, complete recipe retrieval, ingredient analysis, batch recipe retrieval, inventory-based recommendations, and advanced filtering by ABV, glassware, and preparation method. The similarity engine is clever — search for "something like a Negroni but less bitter" and it finds cocktails with similar profiles. 70%+ cache hit rate for performance. Integrates with Bar Assistant instances.
 
-### BrewSource Beer MCP (New)
+### BrewSource Beer MCP
 
-| Server | Language | Tools |
-|--------|----------|-------|
-| [CharlRitter/brewsource-mcp](https://github.com/CharlRitter/brewsource-mcp) | Go | 3 |
+| Server | Language | Tools | Status |
+|--------|----------|-------|--------|
+| [CharlRitter/brewsource-mcp](https://github.com/CharlRitter/brewsource-mcp) | Go | 3 | **Stalled** (last update Nov 2025) |
 
-The **first beer-focused MCP server** — provides AI assistants with brewing knowledge and beer discovery. Three tools: `bjcp_lookup` for Beer Judge Certification Program style specifications (the standard reference for beer styles), `search_beers` for commercial beer search by name/style/brewery/location, and `find_breweries` for brewery discovery with geographic filtering. Also exposes 5 MCP resources including complete BJCP style guidelines (beer, mead, cider), commercial beer catalog, and brewery directory. Currently in Phase 1 MVP. Uses PostgreSQL for data and Redis for caching. Future phases will add ingredient databases, personal recipe analytics, and Brewfather API integration.
+Designed as the **first beer-focused MCP server** — three tools covering Beer Judge Certification Program style lookups (`bjcp_lookup`), commercial beer search by name/style/brewery/location (`search_beers`), and brewery discovery with geographic filtering (`find_breweries`). Also exposes 5 MCP resources including complete BJCP style guidelines (beer, mead, cider) and a brewery directory. **Caution:** As of June 2026, this repo has 0 stars and no commits since November 2025, suggesting the project stalled in early development. Phase 1 MVP was announced but appears incomplete.
 
-### Untappd MCP (New)
+### Untappd MCP
 
-| Server | Language | License | Tools |
-|--------|----------|---------|-------|
-| [jtucker/mcp-untappd-server](https://github.com/jtucker/mcp-untappd-server) | JavaScript | GPL-3.0 | 3 |
+| Server | Language | License | Tools | Status |
+|--------|----------|---------|-------|--------|
+| [jtucker/mcp-untappd-server](https://github.com/jtucker/mcp-untappd-server) | JavaScript | GPL-3.0 | 3 | **Limited** (API key closure) |
 
-MCP server for the **Untappd** beer social network — three tools: beer search, detailed beer info, and user checkins. **Important caveat:** Untappd is no longer accepting registrations for new API keys, limiting this to developers with existing access. The `get_user_checkins` tool is noted as non-functional.
+MCP server for the **Untappd** beer social network — three tools: beer search, detailed beer info, and user checkins. **Important caveat:** Untappd is no longer accepting registrations for new API keys, limiting this to developers with existing access. The `get_user_checkins` tool is noted as non-functional. No updates since December 2025, 0 stars — practically inaccessible to new users.
 
-The beverage space has significantly improved since the original review — from a single cocktail server to cocktails, beer styles, and beer social, though wine remains absent.
+The beverage space has room to grow — wine remains entirely absent, and both beer-specific servers have significant limitations (one stalled, one API-locked).
 
 ## What's Missing
 
 Despite 70+ servers (up from 55+), several gaps have been filled since March while others remain:
 
-**Gaps filled since last review:**
+**Gaps filled since the April 2026 review:**
+- Swiggy Builders Club: moved from announced → **open with invite-led access** (external developers can now build)
+- iFood MCP: **Brazil's largest food delivery platform** now represented (community-built, OAuth 2.1)
+- Walmart partially enters via **community MCP server** for product search (unofficial)
+
+**Gaps filled since the March 2026 original:**
 - ~~No restaurant POS/operations~~ → Toast POS MCP now has 50+ tools (community-built)
 - ~~No Whole Foods~~ → benjiebob/whole-foods-mcp provides browser-automated ordering
 - ~~No meal kit services~~ → HelloFresh MCP for account management and menu browsing
-- ~~No beer databases~~ → BrewSource MCP (BJCP styles, brewery/beer search) and Untappd MCP (limited by API key closure)
+- ~~No beer databases~~ → BrewSource MCP (BJCP styles, brewery/beer search) and Untappd MCP (both stalled/limited by June 2026)
 
 **Remaining gaps:**
 - **No official DoorDash or GrubHub MCP servers** — DoorDash has a developer API but no official MCP server; GrubHub only has third-party scrapers
-- **No Walmart Grocery, Amazon Fresh, or Target** — major US grocery platforms still absent (Whole Foods partially fills this via Amazon)
+- **No official Walmart, Amazon Fresh, or Target MCP** — community Walmart server exists; Walmart uses MCP internally but no external API yet
 - **No dietary condition management** — no celiac disease, diabetes, IBS, or allergy-aware meal planning with medical-grade data
 - **No Square, Clover, or Lightspeed POS** — Toast is covered but the broader restaurant POS market is not
 - **No food safety or allergen databases** — no FDA food recalls, no comprehensive allergen cross-reference databases
 - **No food photography or plating** — no food styling, plating suggestions, or photo enhancement tools
-- **No wine databases** — no Vivino, CellarTracker, or wine-focused servers (beer is now covered but wine is not)
+- **No wine databases** — no Vivino, CellarTracker, or wine-focused servers; beer coverage is also weak (both servers stalled or API-locked)
 - **No food waste management** — no servers for tracking expiration dates, suggesting recipes for ingredients about to expire
 - **No restaurant review aggregation beyond Yelp** — no Google Maps reviews, TripAdvisor, or The Infatuation
 - **No farm-to-table or sourcing** — no farmers market directories, CSA boxes, or local food sourcing
@@ -337,12 +345,12 @@ Despite 70+ servers (up from 55+), several gaps have been filled since March whi
 
 ## The Bottom Line
 
-Food & Restaurant MCP servers earn **4.0 out of 5**. The April 2026 headline is Swiggy launching Builders Club — opening 3 MCP servers and 18+ API tools to external developers, making it the **first food platform to create a formal MCP developer ecosystem**. This represents a maturation from "we have an MCP server" to "build your business on our MCP infrastructure."
+Food & Restaurant MCP servers earn **4.0 out of 5**. The June 2026 headline is Swiggy Builders Club going live — moving from announcement to open invite-led access, letting external developers build on top of 3 MCP servers and 18+ API tools spanning Food, Instamart, and Dineout. This is the clearest sign that food commerce platforms see MCP as infrastructure, not novelty.
 
-Official vendor participation remains the category's strength — Yelp, Instacart, Swiggy, Zomato, Spoonacular, and Edamam all have official MCP servers. The recipe space is led by HowToCook-mcp (713 stars, up 25%) with Mealie adding self-hosted recipe management. OpenNutrition surged 47% to 179 stars as the best local-first nutrition database.
+Official vendor participation remains the category's strength — Yelp, Instacart, Swiggy, Zomato (168 stars), Spoonacular, and Edamam all have official MCP servers. The recipe space is led by HowToCook-mcp (724 stars, up 27% from March) with Mealie adding self-hosted recipe management. OpenNutrition climbed to 187 stars (up 53% from March) as the best local-first nutrition database.
 
-The biggest improvement since March is **gap-filling**: Toast POS (50+ tools) fills restaurant operations, Whole Foods fills a major US grocery gap, Picnic (51 stars, 30+ tools) and H-E-B (20 stars, 20+ tools) expand international and regional grocery coverage, HelloFresh fills meal kits, and BrewSource fills beer. The grocery space in particular transformed from 2 servers (Instacart, Kroger) to 7+ covering the US (Whole Foods, Kroger, H-E-B), Europe (Picnic NL/DE/FR, Dutch multi-supermarket), and Israel (Rami Levy).
+The biggest mover in this refresh is **kroger-mcp** — from 4 to 61 stars (+1,425%) in 47 days, suggesting real organic adoption among Kroger shoppers. Picnic grew 41% to 72 stars, and iFood brings Brazil's largest food delivery platform into the MCP ecosystem for the first time. **Walmart appears on the horizon**: a community server exists, and Walmart is reportedly using Anthropic's MCP internally for "super agents."
 
-The weaknesses are the continued duplication in nutrition tracking, the absence of official DoorDash/GrubHub servers, and the remaining gaps in wine, dietary condition management, and food safety databases. The Western food delivery market still lags India's production-grade official implementations.
+The weaknesses are the continued duplication in nutrition tracking, the absence of official DoorDash/GrubHub servers, and the remaining gaps in wine, dietary condition management, and food safety databases. The beer MCP space added two servers since March but both are stalled or access-limited by June 2026. The Western food delivery market still lags India's production-grade official implementations.
 
-*This review was refreshed on 2026-04-26 using Claude Opus 4.6 (Anthropic).*
+*This review was refreshed on 2026-06-12 using Claude Sonnet 4.6 (Anthropic).*
