@@ -1,16 +1,16 @@
 ---
-title: "AWS Bedrock MCP Servers — The Cloud Giant's MCP Arsenal (Refreshed May 2026)"
+title: "AWS Bedrock MCP Servers — The Cloud Giant's MCP Arsenal (Refreshed June 2026)"
 date: 2026-03-23T18:00:00+09:00
-description: "AWS operates the largest official MCP server collection: 54 open-source servers plus managed remote servers, covering databases, compute, security, cost management, and more."
-og_description: "AWS publishes 54 open-source MCP servers (8.9K stars) plus managed remote servers, added OpenAI models to Bedrock, and is replacing Q Developer with Kiro IDE. Rating: 4.5/5."
+description: "AWS operates the largest official MCP server collection: 54 open-source servers plus a managed GA remote server, covering databases, compute, security, cost management, and more."
+og_description: "AWS publishes 54 open-source MCP servers (8.9K stars) plus a GA managed remote server, moved OpenAI GPT-5.5/5.4/Codex to GA on Bedrock, and added Terraform support for AgentCore. Rating: 4.5/5."
 content_type: "Review"
-card_description: "AWS operates the largest official MCP server collection: 54 open-source servers in a single Apache 2.0 monorepo plus managed remote MCP servers. Combined with MCP client support in Kiro IDE and Bedrock AgentCore, AWS has built the most comprehensive cloud-native MCP ecosystem."
-last_refreshed: 2026-05-01
+card_description: "AWS operates the largest official MCP server collection: 54 open-source servers in a single Apache 2.0 monorepo plus a GA managed remote MCP server. Combined with MCP client support in Kiro IDE and Bedrock AgentCore, AWS has built the most comprehensive cloud-native MCP ecosystem."
+last_refreshed: 2026-06-11
 ---
 
-**At a glance:** AWS publishes **54 open-source MCP servers** in [awslabs/mcp](https://github.com/awslabs/mcp) (8,900 stars, Apache 2.0) plus **managed remote MCP servers** (AWS MCP Server, EKS, ECS, SageMaker) — the largest MCP server collection from any single organization. Servers cover databases (DynamoDB, Neptune, Redshift), compute (ECS, EKS, Lambda), security (IAM, Well-Architected), cost management, and more. MCP client support exists in **Kiro IDE** (replacing Amazon Q Developer), the Q Developer CLI, and Bedrock AgentCore. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+**At a glance:** AWS publishes **54 open-source MCP servers** in [awslabs/mcp](https://github.com/awslabs/mcp) (8,900 stars, Apache 2.0) plus a **GA managed remote MCP server** (AWS MCP Server) — the largest MCP server collection from any single organization. Servers cover databases (DynamoDB, Neptune, Redshift), compute (ECS, EKS, Lambda), security (IAM, Well-Architected), cost management, and more. MCP client support exists in **Kiro IDE** (replacing Amazon Q Developer), the Q Developer CLI, and Bedrock AgentCore. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
 
-**May 2026 update:** Since our initial review, AWS has **cleaned house** — removing 12 deprecated server directories (April 21), deprecating Core MCP Server, and launching the **AWS MCP Server (Preview)**, a managed remote server combining API access to 15,000+ AWS services with documentation and Agent SOPs. **OpenAI models arrived on Bedrock** (April 28) including GPT-5.5 and Codex. **Amazon Q Developer IDE plugins are sunsetting** in favor of **Kiro**, AWS's new agentic IDE with native MCP support. Bedrock spending grew **170% quarter-over-quarter** in Q1 2026.
+**June 2026 update:** The **AWS MCP Server reached general availability** (May 6, 2026) with major new capabilities: **Agent Skills** replacing Agent SOPs, **sandboxed Python execution** against AWS APIs, IAM context keys for human/agent permission separation, and no additional charge. It is now part of the **Agent Toolkit for AWS** umbrella. **OpenAI GPT-5.5, GPT-5.4, and Codex moved from limited preview to GA on Bedrock** (June 1, 2026) with pricing now matching OpenAI first-party rates. **AgentCore gained Terraform support** via provider v6.49.0 (June 4, 2026), and the Runtime added AG-UI protocol support and bring-your-own filesystem via S3/EFS. **Kiro IDE** added parallel task execution, Quick Plan mode, and Requirements Analysis in June. Three new CVEs to note.
 
 AWS has taken a **go-wide infrastructure approach** to MCP, treating it as a protocol for connecting AI agents to cloud services. Rather than wrapping a single API, AWS built dozens of purpose-specific servers — each one a gateway to a different AWS service. This reflects AWS's core business: they don't sell models (though Bedrock now hosts models from 15+ providers including OpenAI), they sell the infrastructure those models connect to.
 
@@ -40,24 +40,27 @@ The primary repository at [awslabs/mcp](https://github.com/awslabs/mcp) contains
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [awslabs/mcp](https://github.com/awslabs/mcp) — 8,900 stars (+4.2%), 1,500 forks (+8.8%) |
+| GitHub | [awslabs/mcp](https://github.com/awslabs/mcp) — 8,900 stars, 1,566 forks |
 | Language | Python |
 | License | Apache 2.0 |
-| Commits | ~1,505 (+7.5%) |
-| Releases | 200+ (latest: April 30, 2026) |
+| Commits | 1,500+ |
+| Releases | 210+ (latest: June 2026) |
 | Transport | stdio only (SSE removed May 2025; Streamable HTTP planned) |
 | Installation | `uvx` with one-click install for Kiro, Cursor, VS Code |
 
-### AWS MCP Server (Preview) — Managed Remote
+### AWS MCP Server (GA) — Managed Remote
 
-**NEW since our initial review.** The [AWS MCP Server (Preview)](https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html) is a **managed remote MCP server hosted by AWS** that consolidates capabilities from the AWS API MCP and AWS Knowledge servers into a unified interface:
+The [AWS MCP Server](https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html) **reached general availability on May 6, 2026** — graduating from preview with major new capabilities. It is now part of the **Agent Toolkit for AWS**, a suite that includes the MCP Server, skills, and plugins to help coding agents work more effectively on AWS:
 
-- **15,000+ AWS APIs** — generate and execute calls including for newly released services
-- **Real-time AWS documentation** — docs, API references, What's New posts, Getting Started guides, Builder Center, blogs, architectural references, Well-Architected guidance
-- **Agent SOPs** — pre-built workflows that guide AI agents through common AWS tasks following best practices, now with **semantic similarity search** for SOP discovery
-- **IAM-based auth** — uses existing AWS IAM roles and policies; full CloudTrail audit logging
-- **CloudWatch metrics** — operational metrics published for monitoring (March 2026 enhancement)
+- **15,000+ AWS APIs** — any API through a single tool, including operations requiring file uploads and long-running execution
+- **Real-time AWS documentation** — docs, API references, What's New posts, Getting Started guides, Builder Center, blogs, architectural references, Well-Architected guidance; **documentation retrieval no longer requires authentication**
+- **Agent Skills** (replaced Agent SOPs) — curated guidance loaded on demand, keeping context window usage low; contributed and maintained by AWS service teams; **reduces hallucination and keeps agents focused**
+- **Sandboxed script execution** — agents run Python code against AWS services for multi-step operations, without access to your local filesystem or shell tools
+- **IAM context keys** — fine-grained permission separation between human and agent calls; restrict agent to read-only while human retains mutating operations
+- **CloudWatch metrics** under the AWS-MCP namespace — observe MCP server calls separately from direct human calls for compliance audit trails
 - **Zero local setup** — connects over HTTPS from any MCP-compatible client
+- **No additional charge** — pay only for the AWS resources your agents use
+- **Available in** Northern Virginia and Frankfurt at GA launch
 
 This is AWS's answer to the "stdio only" limitation of the open-source servers — a remote, managed alternative that requires no local Python environment or uvx installation.
 
@@ -78,24 +81,24 @@ AWS offers MCP client support across multiple products:
 
 | Product | MCP Support | Detail |
 |---------|------------|--------|
-| **Kiro IDE** (NEW) | Yes | AWS's new agentic IDE replacing Q Developer IDE plugins. Native MCP support including remote servers. Specs, hooks, steering files, custom subagents |
+| **Kiro IDE** | Yes | AWS's agentic IDE replacing Q Developer IDE plugins. Native MCP support including remote servers. Specs, hooks, steering files, custom subagents. **GA November 2025.** June 2026: parallel task execution (up to 4x faster), Quick Plan mode (single-pass spec generation), Requirements Analysis (automated reasoning to catch logical gaps). Claude Opus 4.8 added experimentally (1M context). |
 | Amazon Q Developer CLI | Yes (since April 2025) | stdio and HTTP MCP server support. Progressive server loading — tools become available as servers initialize |
 | Amazon Q Developer IDE | **Sunsetting** | End of support April 30, 2027. New signups end May 15, 2026. Users should migrate to Kiro |
 | Bedrock Agents | Yes | Native MCP server invocation via AgentCore |
 | AgentCore Gateway | Yes | Server-side tool execution — Bedrock auto-discovers tools, presents to model, executes server-side in a single API call (February 2026) |
 | AgentCore Runtime | Yes (March 2026) | Stateful MCP sessions in dedicated microVMs, elicitation, sampling, progress notifications |
 
-**Major shift: Amazon Q Developer → Kiro.** AWS announced that Q Developer IDE plugins and paid subscriptions reach [end of support on April 30, 2027](https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/), with new signups ending May 15, 2026. The replacement is **[Kiro](https://kiro.dev/)** — an agentic IDE built for spec-driven development with native MCP support, hooks (automated triggers on file save/commit), steering files (persistent project context), and custom subagents. Q Developer in the AWS Management Console and first-party AWS experiences are not affected.
+**Amazon Q Developer → Kiro (ongoing migration).** AWS announced that Q Developer IDE plugins and paid subscriptions reach [end of support on April 30, 2027](https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/), with new signups ending May 15, 2026. The replacement is **[Kiro](https://kiro.dev/)** — an agentic IDE built for spec-driven development with native MCP support, hooks (automated triggers on file save/commit), steering files (persistent project context), and custom subagents. Kiro reached GA in November 2025 and added a Kiro CLI at GA. Q Developer in the AWS Management Console and first-party AWS experiences are not affected.
 
 ### Bedrock AgentCore
 
 AgentCore is AWS's platform for deploying and managing AI agents with native MCP support. Several components reached GA in spring 2026:
 
 - **AgentCore Gateway** — centralized MCP tool server; agents discover and invoke MCP tools through a unified interface. **Server-side tool execution** (February 2026) eliminates client-side tool orchestration loops
-- **AgentCore Runtime** — deploys MCP servers in managed infrastructure with stateful session support (dedicated microVMs, announced March 10, 2026). Available across 14 AWS regions
-- **AgentCore Policy** — GA March 3, 2026. Quality controls and governance for agent deployments
-- **AgentCore Evaluations** — GA March 31, 2026. Automated quality evaluations for deployed agents
-- **AgentCore CLI** — launched April 2026. Infrastructure-as-code deployment via AWS CDK (Terraform coming). Available in 14 regions at no additional charge
+- **AgentCore Runtime** — GA October 2025. Deploys MCP servers in managed infrastructure with stateful session support (dedicated microVMs). Available across 14 AWS regions. **March 2026**: added AG-UI protocol support. **May 2026**: bring-your-own file system via Amazon S3 Files and Amazon EFS
+- **AgentCore Policy** — GA March 3, 2026. Security controls defining agent action boundaries; verification happens outside the agent's reasoning loop before reaching tools or data
+- **AgentCore Evaluations** — GA March 31, 2026. Automated quality evaluations for deployed agents based on real-world behavior
+- **AgentCore CLI** — launched April 2026. **Terraform support now available** via Terraform AWS provider v6.49.0 (June 4, 2026), adding `aws_bedrockagentcore_gateway` and related resources alongside existing CDK support. Available in 14 regions at no additional charge
 - Supports elicitation, sampling, and progress notifications for stateful MCP sessions
 
 ## Community Servers
@@ -124,14 +127,14 @@ AWS Bedrock hosts models from 15+ providers — and now **OpenAI** (limited prev
 | Nova Lite | $0.06 | $0.24 |
 | Nova Micro | $0.035 | $0.14 |
 
-### OpenAI (on Bedrock — NEW, Limited Preview)
+### OpenAI (on Bedrock — GA June 1, 2026)
 
 | Model | Input | Output |
 |-------|-------|--------|
-| GPT-5.5 | TBD (preview) | TBD (preview) |
-| GPT-5.4 | TBD (preview) | TBD (preview) |
+| GPT-5.5 | Matches OpenAI pricing | Matches OpenAI pricing |
+| GPT-5.4 | Matches OpenAI pricing | Matches OpenAI pricing |
 
-**Also available:** Codex (coding agent) and Bedrock Managed Agents powered by OpenAI. OpenAI models on Bedrock inherit IAM, PrivateLink, guardrails, encryption, and CloudTrail logging. Launched **one day after Microsoft's exclusivity deal ended** (April 28, 2026).
+**Also available:** Codex (via Codex App, Codex CLI, and IDE integrations with VS Code, JetBrains, Xcode). OpenAI models on Bedrock inherit IAM, PrivateLink, guardrails, encryption, and CloudTrail logging. Launched in limited preview April 28, 2026 (one day after Microsoft's exclusivity ended); **moved to GA June 1, 2026**. Pricing matches OpenAI first-party rates and usage counts toward existing AWS commitments. GPT-5.5 and GPT-5.4 support the Responses API on Bedrock; console support coming. GPT-5.4 now available in AWS GovCloud (US-West).
 
 ### Anthropic Claude (on Bedrock)
 
@@ -200,9 +203,11 @@ AWS Bedrock hosts models from 15+ providers — and now **OpenAI** (limited prev
 
 7. **No Bedrock API wrapper** — While AWS publishes servers for AWS *services*, there's no official MCP server that wraps the Bedrock API itself for model inference. Developers wanting to call Bedrock models via MCP need community solutions.
 
-8. **AWS MCP Server is Preview** — The managed remote server is not yet GA. Expect rapid changes, limited documentation, and potential breaking changes.
+8. **CVE-2026-4270: File access restriction bypass** — Improper protection in the no-access and workdir feature of AWS API MCP Server (versions >= 0.2.14, < 1.3.9) allowed bypass of intended file access restrictions and exposure of arbitrary local file contents. Patched in v1.3.9.
 
-9. **AgentCore maturing rapidly** — AgentCore Policy (GA March 3) and Evaluations (GA March 31) reached general availability, but the overall platform is still evolving. AgentCore CLI launched in April 2026 with CDK support only (Terraform coming).
+9. **CVE-2026-5058 and CVE-2026-5059: Critical RCE in community aws-mcp-server** — Two critical command injection vulnerabilities (CVSS 9.8) disclosed April 11, 2026 in community aws-mcp-server packages allow remote code execution without authentication. These affect community-maintained packages, not the official awslabs/mcp monorepo. If you use third-party AWS MCP server packages, verify they are not affected.
+
+10. **AgentCore maturing rapidly** — The platform continues to evolve. AgentCore CLI now supports both CDK and Terraform (June 4, 2026). Runtime added AG-UI protocol and bring-your-own filesystem. The overall pattern is rapid iteration, so check release notes before upgrading.
 
 10. **Monorepo complexity** — 54 servers in one repository means navigating a large codebase. Individual servers vary in maturity, documentation quality, and maintenance frequency.
 
@@ -212,17 +217,24 @@ AWS Bedrock hosts models from 15+ providers — and now **OpenAI** (limited prev
 
 AWS continues to operate the **most extensive MCP server infrastructure** of any company. The shift from 68 to 54 open-source servers is actually a positive — removing deprecated directories and consolidating into managed remote servers shows maturation, not retreat. The **AWS MCP Server (Preview)** with 15,000+ API access and Agent SOPs represents the industry's most comprehensive managed MCP offering.
 
-**What changed since March 2026:**
+**What changed since May 2026:**
 
-- **Cleaned house**: 12 deprecated servers removed, Core MCP Server deprecated, OpenAPI server fixed
-- **Managed remote MCP**: AWS MCP Server (Preview) with 15,000+ APIs, Agent SOPs, IAM auth, CloudWatch metrics
-- **OpenAI on Bedrock**: GPT-5.5, GPT-5.4, Codex, and Managed Agents (limited preview, April 28)
-- **Q Developer → Kiro**: IDE plugins sunsetting by April 2027; Kiro is the replacement with native MCP, specs, hooks
-- **AgentCore maturing**: Policy GA (March 3), Evaluations GA (March 31), CLI launched (April), server-side tool execution (February)
-- **Business momentum**: AWS revenue +28% YoY (15-quarter high), Bedrock spending +170% QoQ, 80% Fortune 100 on Bedrock
-- **Security**: URL allowlist bypass patched, injection filter hardening, DSQL safe_query
+- **AWS MCP Server → GA** (May 6, 2026): Agent Skills replace Agent SOPs, sandboxed Python execution, IAM context keys, now part of Agent Toolkit for AWS; available in N. Virginia + Frankfurt; no additional charge
+- **OpenAI on Bedrock → GA** (June 1, 2026): GPT-5.5, GPT-5.4, Codex move from limited preview to production; pricing matches OpenAI first-party rates; GovCloud availability added
+- **AgentCore Terraform**: Provider v6.49.0 (June 4, 2026) adds AgentCore resources to Terraform Registry, closing the CDK-only gap
+- **AgentCore Runtime updates**: AG-UI protocol support (March 2026); bring-your-own filesystem via S3 Files and EFS (May 2026)
+- **Kiro IDE June updates**: Parallel task execution (up to 4x faster), Quick Plan mode, Requirements Analysis, Claude Opus 4.8 experimental
+- **Security**: CVE-2026-4270 patched (file access bypass in AWS API MCP Server); CVE-2026-5058/5059 critical RCE in community aws-mcp-server packages (CVSS 9.8)
+- **Cloud Control API MCP Server**: New server managing 1,200+ AWS resources through natural language via Cloud Control API
 
-**Why rating holds 4.5/5:** The positives (managed remote servers, OpenAI models, AgentCore maturation, 170% Bedrock growth) are offset by the Q Developer sunset transition risk, AWS MCP Server still in preview, continued lack of Bedrock inference wrapper, and cloud billing requirement. The overall trajectory is clearly positive — AWS is investing more heavily in MCP infrastructure than any other company — but the platform is in transition (Q Developer → Kiro, open-source → managed remote) and transitions carry risk.
+**Prior changes (March → May 2026):**
+- Cleaned house: 12 deprecated servers removed (68→54), Core MCP deprecated, OpenAPI server fixed
+- OpenAI arrived on Bedrock (limited preview, April 28)
+- Q Developer → Kiro announced; IDE plugins sunset by April 2027
+- AgentCore: Policy GA (March 3), Evaluations GA (March 31), CLI launched (April), server-side tool execution (February)
+- URL allowlist bypass patched; 170% Bedrock spending growth QoQ
+
+**Why rating holds 4.5/5:** The managed server reaching GA and OpenAI models moving to production are meaningful positive milestones. The new CVEs in community packages are a warning, and the open-source/managed transition is still ongoing. The Q Developer sunset transition continues to carry friction risk. The overall trajectory is the strongest of any cloud provider — AWS is investing more in MCP infrastructure than anyone else — but the platform is in continuous transition and that carries inherent risk.
 
 **Who benefits most from AWS's MCP ecosystem:**
 
@@ -239,4 +251,6 @@ AWS continues to operate the **most extensive MCP server infrastructure** of any
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official AWS announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official AWS announcements. Information is current as of June 2026. See our [About page](/about/) for details on our review process.*
+
+**Refresh history:** Initial review March 2026 · Refreshed May 2026 · Refreshed June 2026
