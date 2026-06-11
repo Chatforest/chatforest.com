@@ -1,3 +1,4 @@
+Run 1915: REFRESH product-management-roadmapping-mcp-servers (47 days stale) — sooperset 5K→5.4K + CRITICAL CVE-2026-27825 (RCE 9.1) + CVE-2026-27826 (SSRF 8.2) patched in v0.17.0, Linear Agent MCP support + diff mentions, Asana V2 GA + V1 SSE shutdown May 11, Monday.com 396→380, Notion 4.3K→3.7K + Meeting Notes + 91% token efficiency + hosted-only, Plane 204→228, ClickUp 460→144 (new repo), Wrike official hosted NEW, Smartsheet official hosted NEW, removed from What's Missing. DEPLOYED unix 1781210006. 2700 pages.
 Run 1913: REFRESH food-restaurant-mcp-servers (47 days stale) — kroger-mcp 4→61 (+1425%), picnic 51→72, HowToCook 713→724, OpenNutrition 179→187, Uber Eats 221→229, iFood Brazil new entry (OAuth 2.1), Swiggy Builders Club now open (invite-led), Zomato 168 stars, BrewSource+Untappd flagged stalled. NOT DEPLOYED (throttle).
 Run 1912: REFRESH event-management-ticketing-mcp-servers (47 days stale) — taylorwilsdon 2.2K→2.7K (May 17: XSS fix, JWT signing, LLM date parsing), mcp-ical 304→315, punkpeye/eventbrite deleted, Google Calendar MCP still Developer Preview (Cloud Next '26 spotlight), writerWithoutPrivateAccess GA June 29. DEPLOYED unix 1781199078.
 Run 1904: REFRESH google-cloud-mcp-servers (40 days stale) — ADK 2.0 (May 19 graph-based multi-language MCP-native), Gemini 3.5 Flash MCP Atlas 83.6%, MCP Toolbox v1.4.0, Managed Agents API preview (MCP NOT yet supported — flagged), Gemini CLI deprecated→Antigravity 2.0 by June 18, WebMCP Chrome 149 origin trial. MCP cadence restarted per Rob msg #1807. DEPLOYED unix 1781152051. 2700 pages.
@@ -29111,3 +29112,23 @@ Key updates:
 2026-06-11T18:35:31Z SESSION 2861 stopped
 2026-06-11T19:24:01Z STARTED run 2217232 (mode=wild)
 2026-06-11T19:24:02Z SESSION 2862 started
+Run 1914 complete. Here's what was done:
+
+**Deploy**: Food & restaurant article from Run 1913 deployed (throttle had expired).
+
+**Refresh: `real-estate-property-mcp-servers`** (47 days stale, now current as of June 12, 2026)
+
+Key updates:
+- **Star count gains**: agentic-ops +57% (26→41), Zillow +21% (37→45), Airbnb +7% (437→467), BatchData +11% (27→30), AppFolio +33% (6→8)
+- **HouseCanary MCP added**: 149 tools launched April 27 — the most analytically comprehensive real estate MCP, with 36-month forecasts from property level up to state level
+- **LoopnetMCP added**: New "Commercial Real Estate" section; first LoopNet access via 3-tool scraper (8 stars)
+- **Apify aggregators added**: Portal data (Zillow+Redfin+Realtor.com+Apartments.com) now accessible without enterprise contracts via Apify actors
+- **brokeria-mcp-server added**: Brazil enters the regional map
+- **PriceHubble updated**: External early access beta now open (Q2 2026)
+- **Rating upgraded 3.5→4.0/5**: HouseCanary's depth + LoopNet access + Apify aggregators represent meaningful gap-filling
+
+**Still pending**: SPCX trading results, Eric Goldman post-oral-argument recap, SuperAI Genesis 2026 winner — none indexed yet, check next run.
+2026-06-11T19:32:30Z FINISHED run 2217232
+2026-06-11T19:32:31Z SESSION 2862 stopped
+2026-06-11T20:25:01Z STARTED run 2233508 (mode=wild)
+2026-06-11T20:25:02Z SESSION 2863 started
