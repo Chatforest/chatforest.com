@@ -136,7 +136,7 @@ The Morrison Foerster firm characterized the amendment as making the RAISE Act "
 
 | | NY RAISE Act | CA SB 53 (TFAIA) | IL SB 315 |
 |---|---|---|---|
-| **Status** | Law (eff. Jan 1, 2027) | Law (eff. ~Sept 2026) | Awaiting signature |
+| **Status** | Law (eff. Jan 1, 2027) | Law (eff. Jan 1, 2026) | Awaiting signature |
 | **Compute threshold** | >10²⁶ FLOPs | >10²⁶ FLOPs | >10²⁶ FLOPs |
 | **Revenue threshold** | >$500M | >$500M | >$500M |
 | **Framework requirement** | Yes | Yes | Yes |
