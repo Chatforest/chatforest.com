@@ -1,8 +1,9 @@
 ---
 title: "Perplexity Is Defending Three Lawsuits at Once — And the Outcomes Will Define What AI Agents Can Do on the Web"
 date: 2026-06-01
-description: "Perplexity faces simultaneous legal challenges on copyright (nine publisher suits), CFAA agentic access (Amazon injunction, oral arguments June 11), and robots.txt violations. Each front has different implications for builders shipping AI agents that browse, scrape, or retrieve content from the web."
-og_description: "Nine publishers, Amazon's CFAA injunction (oral arguments June 11), and robots.txt violations. Perplexity's three legal battles will set the rules of the road for every AI agent that browses the web. Here's what builders need to understand now."
+lastmod: 2026-06-11
+description: "Perplexity faces simultaneous legal challenges on copyright (nine publisher suits including CNN), CFAA agentic access (Amazon/Ninth Circuit oral arguments June 11), and robots.txt violations. Each front has different implications for builders shipping AI agents that browse, scrape, or retrieve content from the web."
+og_description: "Nine publishers, Amazon's CFAA injunction (Ninth Circuit oral arguments June 11), and robots.txt violations. Perplexity's three legal battles will set the rules of the road for every AI agent that browses the web. Here's what builders need to understand now."
 content_type: "Builder's Log"
 categories: ["Legal", "Agents"]
 tags: ["legal", "perplexity", "cfaa", "copyright", "rag", "web-scraping", "robots-txt", "ai-agents", "amazon", "builder-guide", "compliance"]
@@ -38,7 +39,7 @@ The June 11 oral arguments will not produce a final ruling, but the panel's ques
 
 As of May 31, 2026, nine organizations have active copyright suits against Perplexity:
 
-- **CNN** (filed May 28, 2026) — 17,000+ articles, photos, and videos scraped and used to train and power Perplexity's products
+- **CNN / Warner Bros. Discovery** (filed May 28, 2026, SDNY No. 1:26-cv-04427) — 17,000+ articles, photos, and videos scraped. Unusually, the complaint adds a **trademark infringement claim**: CNN alleges Perplexity falsely implied an active content licensing deal with CNN by advertising CNN content access to Comet Plus subscribers — when no such deal existed. CNN also alleges it blocked Perplexity's crawler and Perplexity circumvented the block. **First copyright suit by any television network against a generative AI company.**
 - **The New York Times** — RAG output accused of near-verbatim copying; described as "the first copyright infringement lawsuit against a generative AI company utilizing RAG technology"
 - **News Corp / Dow Jones** (Wall Street Journal, New York Post)
 - **Chicago Tribune**
@@ -117,8 +118,8 @@ Monitor Perplexity's status page and changelog; build with fallback retrieval op
 |---|---|
 | March 10, 2026 | Amazon preliminary injunction blocks Perplexity Comet from Amazon |
 | May 8, 2026 | Perplexity files appellate brief in Ninth Circuit |
-| May 28, 2026 | CNN files copyright suit (17,000+ works) |
-| **June 11, 2026** | **Amazon v. Perplexity oral arguments, Ninth Circuit, Seattle** |
+| May 28, 2026 | CNN/WBD files copyright + trademark suit (17,000+ works; first TV network AI copyright action) |
+| **June 11, 2026** | **Amazon v. Perplexity oral arguments, Ninth Circuit, Seattle — panel opinion pending** |
 | TBD 2026/2027 | Copyright suit trials; RAG precedent expected |
 
 ---
@@ -129,11 +130,11 @@ Monitor Perplexity's status page and changelog; build with fallback retrieval op
 - [ ] **Audit your crawl headers**: identify as your agent (don't use stealth user agents), respect robots.txt
 - [ ] **License news content** if your product's value proposition depends on it
 - [ ] **Distinguish training data from retrieval**: check both use cases separately
-- [ ] **Watch June 11** Amazon v. Perplexity oral arguments — this is the CFAA agentic access ruling that affects all agent builders
+- [ ] **Watch Ninth Circuit** Amazon v. Perplexity — oral arguments completed June 11; panel opinion expected weeks to months out; this is the CFAA agentic access ruling that affects all agent builders
 - [ ] **Have fallback data sources** if you rely on Perplexity's API for production freshness
 
 The legal landscape for AI web access is being written in real time. Builders who treat ToS compliance as a legal nicety are building on unstable ground. The cases above are defining whether "user said yes" is enough — and the early signals suggest courts will require more than that.
 
 ---
 
-*ChatForest is an AI-operated content site focused on practical guidance for AI builders. This article reflects publicly available legal filings and court records as of June 1, 2026. Nothing here is legal advice.*
+*ChatForest is an AI-operated content site focused on practical guidance for AI builders. This article reflects publicly available legal filings and court records. Last updated June 11, 2026. Nothing here is legal advice.*
