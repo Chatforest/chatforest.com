@@ -1,3 +1,5 @@
+Run 1904: REFRESH google-cloud-mcp-servers (40 days stale) — ADK 2.0 (May 19 graph-based multi-language MCP-native), Gemini 3.5 Flash MCP Atlas 83.6%, MCP Toolbox v1.4.0, Managed Agents API preview (MCP NOT yet supported — flagged), Gemini CLI deprecated→Antigravity 2.0 by June 18, WebMCP Chrome 149 origin trial. MCP cadence restarted per Rob msg #1807. DEPLOYED unix 1781152051. 2700 pages.
+Run 1903: NEW REVIEW: NY S9051B Kids Chatbot Safety Act — GBL Article 48, 8 prohibited features for minor chatbots, AG $25K/violation, Hochul pending (deadline Dec 31, 2026). 2700 pages. DEPLOYED unix 1781148313.
 Run 1902: NEW REVIEW: Claude Fable 5 — first publicly available Mythos-class model (June 9 2026). $10/$50 per million tokens, 1M context, 80.3% SWE-bench Pro, three safety classifiers. NOT DEPLOYED — throttle active. DEPLOYING NEXT RUN. 2698 pages.
 Run 1897: NEW REVIEW: Grok V9 Tesla-X distribution flywheel competitive analysis — 9.2M Tesla deliveries + 550M X MAU + 117M Grok MAU, US share 1.9%→17.8% in 12 months, OTA deployment advantage vs OpenAI/Anthropic/Google. NOT DEPLOYED — throttle active. DEPLOYING NEXT RUN. 2688 pages.
 Run 1896: NEW BUILDERS-LOG: OpenAI Workspace Agents July 6 billing — credit-based metering, GPT-5.5 rate card (125/12.50/750 credits/1M tokens), Slack stays free, 5-25 credits/run estimate, caching 10x discount. DEPLOYED unix 1781125583. 2686 pages.
@@ -28881,3 +28883,43 @@ Run 1900 complete. Here's what happened:
 2026-06-11T02:43:01Z ONCE triggered
 2026-06-11T02:43:01Z STARTED run 1872979 (mode=wild)
 2026-06-11T02:43:03Z SESSION 2849 started
+Run 1902 complete. Here's what happened:
+
+**Inbox:** Message 1804 (subscriber check) — confirmed no existing subscribers, no email list files anywhere. Replied and marked done.
+
+**Three priority items checked — all still pending:**
+- SPCX first-day trading: opens June 12, no data yet
+- SuperAI Genesis 2026 winner: conference ended hours ago, not yet indexed
+- Eric Goldman oral arguments recap: not posted yet (most recent Goldman post is June 9)
+
+**New article written:** `anthropic-claude-fable-5-mythos-class-general-availability-review-2026`
+- Claude Fable 5 launched June 9 — first publicly available Mythos-class model, and we had zero coverage on it
+- Angle: "Mythos for the masses" — the model Anthropic said was too dangerous to release, now available with three safety classifiers
+- Full specs, benchmarks (80.3% SWE-bench Pro vs GPT-5.5's 58.6%), fallback/billing API mechanics, Stripe case study
+- Links back to our existing Mythos Preview article for context
+
+**Build:** 2,698 pages, clean. **Deploy:** Throttled (~14 min short of 1-hour window). Next run deploys.
+2026-06-11T02:49:58Z FINISHED run 1872979
+2026-06-11T02:49:58Z SESSION 2849 stopped
+2026-06-11T03:19:01Z ONCE triggered
+2026-06-11T03:19:01Z STARTED run 1883062 (mode=wild)
+2026-06-11T03:19:03Z SESSION 2850 started
+Run 1903 complete.
+
+**What I did:**
+- Deployed Run 1902's pending build (75 min after last deploy, throttle clear)
+- Checked all priority items — SPCX (June 12, not yet), SuperAI winner (not indexed), Goldman recap (not yet posted), IL SB315 Pritzker sig (unconfirmed)
+- Marked inbox message 1806 (Buttondown API key) as seen
+- **New article:** NY S9051B — Kids Chatbot Safety Act (2,700 pages, deployed)
+  - Prohibits 12 specific "unsafe features" for AI companions used with minors
+  - Unanimous passage (137-0 / 60-0), awaiting Hochul by Dec 31, 2026
+  - Covers Sewell Setzer III background, Character.ai settlements, Hochul's own proposals
+  - Comparison table: S9051B vs. frontier AI laws (RAISE Act, CA SB53, IL SB315)
+  - Also covers the 4 companion bills in NY's AI legislative package
+
+**Next run priorities:** SPCX first-day trading (June 12), SuperAI Genesis winner, Goldman recap, Pritzker signature on IL SB315.
+2026-06-11T03:26:23Z FINISHED run 1883062
+2026-06-11T03:26:24Z SESSION 2850 stopped
+2026-06-11T04:20:01Z STARTED run 1904176 (mode=wild)
+2026-06-11T04:20:02Z SESSION 2851 started
+2026-06-11T04:28:01Z ONCE triggered
