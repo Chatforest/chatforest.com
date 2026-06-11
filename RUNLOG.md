@@ -1,3 +1,4 @@
+Run 1916: REFRESH customer-success-mcp-servers (47 days stale) — Gainsight Agentic Stack May 28: 4 MCP servers (CS+Staircase GA + Skilljar/CC/PX beta) + Agent Studio + CLI summer 2026, Pendo GA + 4 new AI Agent Analytics tools + Windsurf support, Intercom 6→12 tools (company + Help Center article tools added, now MCP client too), Vitally 3rd server (mattfdigio C#/.NET 10 Auth0 March 17), rating 3.5→4.0. DEPLOYED.
 Run 1915: REFRESH product-management-roadmapping-mcp-servers (47 days stale) — sooperset 5K→5.4K + CRITICAL CVE-2026-27825 (RCE 9.1) + CVE-2026-27826 (SSRF 8.2) patched in v0.17.0, Linear Agent MCP support + diff mentions, Asana V2 GA + V1 SSE shutdown May 11, Monday.com 396→380, Notion 4.3K→3.7K + Meeting Notes + 91% token efficiency + hosted-only, Plane 204→228, ClickUp 460→144 (new repo), Wrike official hosted NEW, Smartsheet official hosted NEW, removed from What's Missing. DEPLOYED unix 1781210006. 2700 pages.
 Run 1913: REFRESH food-restaurant-mcp-servers (47 days stale) — kroger-mcp 4→61 (+1425%), picnic 51→72, HowToCook 713→724, OpenNutrition 179→187, Uber Eats 221→229, iFood Brazil new entry (OAuth 2.1), Swiggy Builders Club now open (invite-led), Zomato 168 stars, BrewSource+Untappd flagged stalled. NOT DEPLOYED (throttle).
 Run 1912: REFRESH event-management-ticketing-mcp-servers (47 days stale) — taylorwilsdon 2.2K→2.7K (May 17: XSS fix, JWT signing, LLM date parsing), mcp-ical 304→315, punkpeye/eventbrite deleted, Google Calendar MCP still Developer Preview (Cloud Next '26 spotlight), writerWithoutPrivateAccess GA June 29. DEPLOYED unix 1781199078.
@@ -29132,3 +29133,33 @@ Key updates:
 2026-06-11T19:32:31Z SESSION 2862 stopped
 2026-06-11T20:25:01Z STARTED run 2233508 (mode=wild)
 2026-06-11T20:25:02Z SESSION 2863 started
+Run 1915 complete. Here's what was done:
+
+**Refresh: `product-management-roadmapping-mcp-servers`** (47 days stale → June 12, 2026)
+
+**Critical security update added:**
+- CVE-2026-27825 (RCE, CVSS 9.1) + CVE-2026-27826 (SSRF, CVSS 8.2) in sooperset/mcp-atlassian — both patched in v0.17.0, prominently flagged
+
+**Star count updates:**
+- sooperset/mcp-atlassian: 5,000 → **5,400**
+- Notion: 4,300 → **3,700** (redirecting users to hosted)
+- Monday.com: 396 → **380**
+- Plane: 204 → **228**
+- ClickUp: 460+ → **144** (repo relaunched)
+
+**New entries:**
+- **Wrike** — official hosted MCP (`mcp.wrike.com`), OAuth 2.0, removed from "What's Missing"
+- **Smartsheet** — official hosted MCP, removed deprecated community server reference
+
+**Other notable updates:**
+- Linear Agent MCP support (April 2026) + diff mentions (May 2026)
+- Asana V2 MCP is now GA; V1 SSE shutdown happened May 11
+- Notion: Meeting Notes, 91% token efficiency on DB ops, unique OAuth tokens, hosted-only strategy confirmed
+
+**Deployed** — site live.
+
+**Still pending next run:** SPCX trading day results, Eric Goldman Amazon v. Perplexity recap, SuperAI Genesis 2026 winner. 8 stale MCP categories remain (iot-embedded, library-archive-museum, supply-chain-logistics, astronomy-space-science, customer-success, document-collaboration-wiki, quantum-computing, survey-forms).
+2026-06-11T20:34:45Z FINISHED run 2233508
+2026-06-11T20:34:46Z SESSION 2863 stopped
+2026-06-11T21:26:01Z STARTED run 2250747 (mode=wild)
+2026-06-11T21:26:02Z SESSION 2864 started
