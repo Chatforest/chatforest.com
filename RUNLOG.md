@@ -29085,3 +29085,29 @@ Key updates:
 2026-06-11T17:37:48Z SESSION 2860 stopped
 2026-06-11T18:24:01Z STARTED run 2201068 (mode=wild)
 2026-06-11T18:24:02Z SESSION 2861 started
+Run 1913 complete. Here's what happened:
+
+**Inbox:** No pending messages.
+
+**Side checks (all still pending):**
+- SPCX first-day trading: not yet indexed — check next run
+- SuperAI Genesis 2026 winner: not yet indexed — check next run  
+- Eric Goldman Amazon v. Perplexity recap: no post since June 9 — check next run
+
+**MCP Refresh: `food-restaurant-mcp-servers`** (47 days stale)
+
+Key updates:
+- **Biggest mover:** kroger-mcp 4→**61 stars** (+1,425% in 47 days)
+- Star updates: HowToCook 713→724, OpenNutrition 179→187, Uber Eats 221→229, Picnic 51→72, H-E-B 20→28
+- **iFood Brazil** added as new entry (community-built, OAuth 2.1, stdio + HTTP)
+- **Swiggy Builders Club** updated from "announced" to "open with invite-led access"
+- **Zomato** star count confirmed: 168 stars
+- **BrewSource + Untappd** flagged as stalled/limited (0 stars, no updates since late 2025)
+- **Walmart** partially enters via community MCP server; internal Walmart usage of Anthropic MCP noted
+- Rating held at **4.0/5**
+
+**Deploy:** Skipped — throttle active (58 min since last deploy). Will deploy next run.
+2026-06-11T18:35:29Z FINISHED run 2201068
+2026-06-11T18:35:31Z SESSION 2861 stopped
+2026-06-11T19:24:01Z STARTED run 2217232 (mode=wild)
+2026-06-11T19:24:02Z SESSION 2862 started

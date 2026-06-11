@@ -1,13 +1,13 @@
 # Real Estate & Property MCP Servers — Zillow, MLS, Airbnb, BatchData, Mortgage Analysis, and More
 
-> Real estate and property MCP servers are bringing property search, valuation, and market analysis into AI workflows. We reviewed 35+ servers across 7 subcategories.
+> Real estate and property MCP servers are bringing property search, valuation, and market analysis into AI workflows. We reviewed 40+ servers across 8 subcategories.
 
 
 Real estate MCP servers are connecting AI assistants to property data, market analytics, and transaction workflows. Instead of manually searching Zillow, pulling MLS comps, or running mortgage calculators, these servers let AI agents search listings, retrieve valuations, parse mortgage documents, and analyze investment opportunities — all through the Model Context Protocol.
 
-The landscape spans seven areas: **property search & listings** (Airbnb, Zillow, portal ChatGPT apps), **property data & valuation** (ATTOM, Cotality, PriceHubble, BatchData), **real estate CRM & management** (agent tools, deal pipelines, property management), **MLS & industry standards** (RESO-based servers), **mortgage & investment analysis** (document parsing, financial calculators), **regional market servers** (country-specific property data), and **enterprise property intelligence** (multi-country valuation platforms).
+The landscape spans eight areas: **property search & listings** (Airbnb, Zillow, portal ChatGPT apps, Apify aggregators), **property data & valuation** (ATTOM, Cotality, PriceHubble, BatchData, HouseCanary), **real estate CRM & management** (agent tools, deal pipelines, property management), **MLS & industry standards** (RESO-based servers), **mortgage & investment analysis** (document parsing, financial calculators), **commercial real estate** (LoopNet, CRE-adjacent platforms), **regional market servers** (country-specific property data), and **enterprise property intelligence** (multi-country valuation platforms).
 
-The headline findings: **Airbnb dominates by star count** — openbnb-org/mcp-server-airbnb (437 stars, v0.2.0) is the most popular real estate MCP server by a wide margin, though it only covers vacation rentals. **All three major U.S. portals now have ChatGPT MCP apps** — Zillow (October 2025), Redfin (February 2026), and Realtor.com (March 2026) all launched apps inside ChatGPT built on OpenAI's Apps SDK, which uses MCP. These are ChatGPT-exclusive integrations, not open MCP servers, but they signal that the industry's largest platforms are engaging with MCP as infrastructure. **Enterprise property data is MCP-native** — Cotality (formerly CoreLogic) launched its MCP server in March 2026, joining ATTOM (January 2026) as the second major U.S. property data provider with MCP support, and a community server (nkbud/mcp-server-attom) now exposes 55+ ATTOM API endpoints as open-source MCP tools. **PriceHubble launched 4 enterprise MCPs** — the property intelligence platform's MCP suite (Listings, Transactions, Market Trends, Valuation) covers 11 countries with ISO 27001/GDPR compliance, making it the first proptech platform with multi-country MCP support. **Property management enters the ecosystem** — CryptoCultCurt/appfolio-mcp-server brings AppFolio's Reporting API to MCP, filling the rental/property management gap. **The MLS industry is paying attention** — David Gumpper's UNLOCK MLS RESO Reference server represents the first standards-based MLS data access via MCP, built on Bridge Interactive's RESO Web API. **Mortgage document parsing exists** — confersolutions/mcp-mortgage-server converts Loan Estimates and Closing Disclosures into MISMO-compliant JSON. **Regional diversity is remarkable** — servers exist for Korean, Australian, Swedish, French, Spanish, Philippine, and Russian property markets. **Commercial real estate is stirring** — PriceHubble's entry provides CRE-adjacent valuation data, but dedicated CoStar, LoopNet, or CREXi MCP servers still don't exist.
+The headline findings: **Airbnb dominates by star count** — openbnb-org/mcp-server-airbnb (467 stars, up from 437 in April) is the most popular real estate MCP server by a wide margin, though it only covers vacation rentals. **All three major U.S. portals now have ChatGPT MCP apps** — Zillow (October 2025), Redfin (February 2026), and Realtor.com (March 2026) all launched apps inside ChatGPT built on OpenAI's Apps SDK, which uses MCP. These are ChatGPT-exclusive integrations, not open MCP servers, but Apify now offers portal aggregators (Zillow+Redfin+Realtor.com+Apartments.com in one run) without enterprise contracts. **HouseCanary launched 149-tool MCP** — the most comprehensive property analytics MCP yet, covering valuations, 36-month forecasts, comps, rental estimates, hazard data, market pulse, and portfolio monitoring across 11 endpoint categories. Launched April 27, 2026. **LoopNet's commercial real estate gap is partially closed** — johnstenner/LoopnetMCP provides structured access to LoopNet listings via 3 tools (PropertySummary, PropertyDetail, MarketOverview); LoopNet has no public API so this uses TLS fingerprinting + Akamai bypass. **Enterprise property data is MCP-native** — Cotality (formerly CoreLogic) launched its MCP server in March 2026, joining ATTOM (January 2026) as the second major U.S. property data provider with MCP support, and a community server (nkbud/mcp-server-attom) now exposes 55+ ATTOM API endpoints as open-source MCP tools. **PriceHubble external access now open** — the 4-MCP property intelligence suite (11 countries, ISO 27001/GDPR) moved from internal-only to external early access beta in Q2 2026. **Property management enters the ecosystem** — CryptoCultCurt/appfolio-mcp-server brings AppFolio's Reporting API to MCP, filling the rental/property management gap (8 stars, up from 6). **The MLS industry is paying attention** — David Gumpper's UNLOCK MLS RESO Reference server represents the first standards-based MLS data access via MCP, built on Bridge Interactive's RESO Web API. **Mortgage document parsing exists** — confersolutions/mcp-mortgage-server converts Loan Estimates and Closing Disclosures into MISMO-compliant JSON. **Regional diversity is remarkable** — servers now exist for Korean, Australian, Swedish, French, Spanish, Philippine, Russian, and Brazilian property markets.
 
 **Category:** [Finance & Fintech](/categories/finance-fintech/)
 
@@ -17,9 +17,9 @@ The headline findings: **Airbnb dominates by star count** — openbnb-org/mcp-se
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [openbnb-org/mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) | 437 | JavaScript | MIT | 2 |
+| [openbnb-org/mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) | 467 | JavaScript | MIT | 2 |
 
-The **most popular real estate MCP server** by far, with over 430 stars. Provides two focused tools:
+The **most popular real estate MCP server** by far, with over 460 stars (467 as of June 2026, up from 437 in April). Provides two focused tools:
 
 - **airbnb_search** — location-based property search with filtering by dates, guest count, price range, and amenities, plus Google Maps Place ID integration for precise location targeting
 - **airbnb_listing_details** — comprehensive property information including amenities, policies, and neighborhood details
@@ -30,7 +30,7 @@ Packaged as a Desktop Extension (DXT) for easy installation with Claude Desktop 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [sap156/zillow-mcp-server](https://github.com/sap156/zillow-mcp-server) | 37 | Python | MIT | 7 |
+| [sap156/zillow-mcp-server](https://github.com/sap156/zillow-mcp-server) | 45 | Python | MIT | 7 |
 
 The leading community-built Zillow integration, connecting to **Zillow's Bridge API** for real-time property data. Seven tools cover the core residential real estate workflow:
 
@@ -85,13 +85,24 @@ A major development since the original review: **all three major U.S. consumer r
 
 **Important caveat:** These are ChatGPT-exclusive integrations, not open MCP servers that any client can connect to. You can't point Claude Desktop or a custom agent at Zillow's MCP endpoint. But they represent the first time major real estate platforms have engaged with MCP as infrastructure for AI data access, and they signal where the industry is heading.
 
+### Apify Portal Aggregators (Third-Party)
+
+A workaround for the portal exclusivity problem: **multiple Apify MCP actors** now aggregate portal data across Zillow, Redfin, Realtor.com, and Apartments.com without enterprise contracts:
+
+- **sovereigntaylor/real-estate-aggregator** — searches all four portals in one run, deduplicates listings by address, unifies property data, and computes market analytics (median price, price/sqft, days on market)
+- **nexgendata/real-estate-mcp-server** — Zillow + Redfin combined server with free tier
+- **nexgendata/redfin-mcp-server** — Redfin-focused (listings, sold history, price estimates, neighborhood data)
+- **afanasenko/zillow-mcp-server** — Zillow-only via Apify
+
+These are pay-per-use Apify actors exposed as MCP servers. They use scraping rather than official APIs, so reliability may vary and terms-of-service compliance is a consideration. But for developers who need cross-portal listing data without six-figure enterprise contracts, these fill a significant gap. Compatible with Claude Desktop, Cursor, and ChatGPT.
+
 ## Property Data & Valuation
 
 ### batchdata-mcp-real-estate (zellerhaus)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [zellerhaus/batchdata-mcp-real-estate](https://github.com/zellerhaus/batchdata-mcp-real-estate) | 27 | TypeScript | MIT | 8 |
+| [zellerhaus/batchdata-mcp-real-estate](https://github.com/zellerhaus/batchdata-mcp-real-estate) | 30 | TypeScript | MIT | 8 |
 
 Integrates with **BatchData.io's property and address APIs** across two tool categories:
 
@@ -162,6 +173,26 @@ The first **open-source community implementation** of the ATTOM Data API as MCP 
 
 Supports querying by property ID, address, coordinates, or parcel number (APN). Requires an ATTOM API key. A second community implementation exists at jmclaughlin724/attom-mcp-server (TypeScript, MIT) with a unified `attom_query` tool and smart fallback strategies, though it has fewer stars.
 
+### HouseCanary MCP Server (Enterprise)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [HouseCanary MCP](https://www.housecanary.com/blog/housecanary-mcp-server) | — | Python | Commercial | 149 |
+
+**The highest tool count of any real estate MCP server**, launched April 27, 2026. AI agents — Claude, ChatGPT, custom internal copilots — can call 149 HouseCanary endpoints directly across 11 categories:
+
+- **Property valuations** — automated valuations at individual property level
+- **36-month forecasts** — available at property, ZIP, block, block group, metro division, MSA, and state levels
+- **Comps** — comparable property selection for valuation support
+- **Rental estimates** — automated rental value models
+- **Hazard data** — property-level climate and risk scoring
+- **Market pulse** — local market dynamics
+- **Portfolio monitoring** — bulk property tracking across owned/managed portfolios
+
+Installed with one pip command. Existing HouseCanary API credentials work as-is — no separate signup, demo request, or waitlist. The server is **read-only by design**, filtering out write endpoints so an agent can read data but cannot mutate portfolios. Pricing: every tool call counts as a normal HouseCanary API call billed against your existing plan — no separate MCP fee, but agentic workflows can generate many calls quickly.
+
+**Why it matters:** With 149 tools, HouseCanary's MCP has the broadest analytical depth of any property data server. The 36-month forecast capability at multiple geographic granularities (ZIP through state) is a capability no other MCP server currently offers. For professional investors, lenders, and portfolio managers already using HouseCanary, this is the fastest path to AI-native property analytics.
+
 ### PriceHubble MCP Suite (Enterprise)
 
 | Server | Stars | Language | License | Tools |
@@ -175,7 +206,7 @@ Supports querying by property ID, address, coordinates, or parcel number (APN). 
 - **Market Trends MCP** — local pricing dynamics, supply indicators, and market evolution metrics
 - **Valuation MCP** — direct access to PriceHubble's automated valuation outputs
 
-Compliance-first design with ISO 27001, GDPR, and NIST AI Risk Management Framework adherence. Already deployed internally in PriceHubble's AI Companion and AI Copilot products. The 11-country coverage makes this the broadest geographic reach of any single real estate MCP implementation.
+Compliance-first design with ISO 27001, GDPR, and NIST AI Risk Management Framework adherence. Already deployed internally in PriceHubble's AI Companion and AI Copilot products. The 11-country coverage makes this the broadest geographic reach of any single real estate MCP implementation. **As of Q2 2026, PriceHubble's MCPs are available to external customers through an early access beta** — sign up via their [MCP page](https://www.pricehubble.com/use-cases/model-context-protocol-mcp).
 
 **Why it matters:** PriceHubble sits at the intersection of residential and commercial real estate, serving property professionals, mortgage lenders, and institutional investors. Its MCP suite is the first to provide governed, multi-country property intelligence to AI agents — a significant step beyond the U.S.-focused ATTOM and Cotality offerings.
 
@@ -185,7 +216,7 @@ Compliance-first design with ISO 27001, GDPR, and NIST AI Risk Management Framew
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [agentic-ops/real-estate-mcp](https://github.com/agentic-ops/real-estate-mcp) | 26 | Python | — | 30+ |
+| [agentic-ops/real-estate-mcp](https://github.com/agentic-ops/real-estate-mcp) | 41 | Python | — | 30+ |
 
 The **most comprehensive general-purpose real estate MCP server**, with 30+ tools across six categories:
 
@@ -220,7 +251,7 @@ Integrates with **Propstack**, a real estate CRM platform used primarily in Euro
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [CryptoCultCurt/appfolio-mcp-server](https://github.com/CryptoCultCurt/appfolio-mcp-server) | 6 | TypeScript | ISC | Multiple |
+| [CryptoCultCurt/appfolio-mcp-server](https://github.com/CryptoCultCurt/appfolio-mcp-server) | 8 | TypeScript | ISC | Multiple |
 
 The first MCP server for **property management software**, connecting AI agents to AppFolio's Property Manager Reporting API. AppFolio is one of the largest property management platforms in the U.S., serving residential, commercial, and community association managers.
 
@@ -303,15 +334,36 @@ The real estate MCP ecosystem has notable **international breadth**:
 | BACH-AI-Tools/realty-in-ca1 | California | California listings with demographic data |
 | yasg1988/mcp-rosreestr | Russia | Rosreestr cadastral data with coordinates and valuations |
 | GodModeArch/lts-mcp | Philippines | DHSUD License to Sell verification |
+| [raklapimenta/brokeria-mcp-server](https://github.com/raklapimenta/brokeria-mcp-server) | Brazil | Property search, financing simulation, lead qualification, visit scheduling |
 
-The Korean market is best served with two competing implementations — one for raw price data (MOLIT API), one for AI-powered recommendations. The BACH-AI-Tools pattern (multiple regional servers with the same architecture) provides the broadest geographic coverage from a single developer.
+The Korean market is best served with two competing implementations — one for raw price data (MOLIT API), one for AI-powered recommendations. The BACH-AI-Tools pattern (multiple regional servers with the same architecture) provides the broadest geographic coverage from a single developer. **Brazil enters the picture** — brokeria-mcp-server (June 2026) is the first Brazilian real estate MCP server, covering property search, financing simulation, lead qualification, and visit scheduling, compatible with Claude, Gemini, and ChatGPT.
+
+## Commercial Real Estate
+
+Commercial real estate has historically been the biggest gap in the MCP ecosystem. That gap is starting to narrow.
+
+### LoopnetMCP (johnstenner)
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [johnstenner/LoopnetMCP](https://github.com/johnstenner/LoopnetMCP) | 8 | — | — | 3 |
+
+The **first MCP server providing access to LoopNet**, the largest commercial real estate marketplace in the U.S. LoopNet has no public API — this server scrapes the site and exposes structured data through three tools:
+
+- **PropertySummary** — search result cards with name, address, city, state, zip, property type, price, size, URL, image, and broker info
+- **PropertyDetail** — full listing pages adding cap rate, NOI, year built, building class, zoning, parking, stories, units, description, highlights, images, and broker phone
+- **MarketOverview** — aggregated statistics including total listings, average price, average price/SF, average size, price ranges, and listing type breakdowns
+
+Technically, the server uses **TLS fingerprinting** and, when needed, falls back to **nodriver** (undetectable headless Chrome) to solve JavaScript challenges from Akamai. This makes it more robust than typical scrapers — it's designed specifically to bypass LoopNet's bot detection.
+
+**Caveats:** This is a scraping-based server, not an official API integration. Terms of service compliance is a real concern for production use. Star count is low (8) as of launch. CoStar and CREXi still have no MCP presence. But for developers who need any structured commercial listing access via MCP, this currently stands alone.
 
 ## What's Missing
 
 The real estate MCP ecosystem has narrowed some gaps but significant ones remain:
 
-- **Portal MCP access is ChatGPT-only** — Zillow, Redfin, and Realtor.com all have ChatGPT MCP apps, but these are exclusive to OpenAI's platform. No open MCP servers exist that any client can connect to. Trulia and Homes.com have no MCP presence at all.
-- **Commercial real estate is barely served** — PriceHubble provides CRE-adjacent valuation data, but CoStar, LoopNet, CREXi, and dedicated commercial listing platforms have no MCP servers. CRE data remains locked behind expensive subscriptions.
+- **Portal MCP access is ChatGPT-only (or scraper-based)** — Zillow, Redfin, and Realtor.com's official ChatGPT MCP apps are exclusive to OpenAI's platform. Third-party Apify aggregators work across clients but use scraping. No open, officially-sanctioned MCP servers exist that any client can connect to. Trulia and Homes.com have no MCP presence at all.
+- **Commercial real estate: partial progress** — LoopnetMCP (johnstenner, 8 stars) now provides access to LoopNet listings via scraping, and PriceHubble covers CRE-adjacent valuation data. But CoStar and CREXi — the industry's primary data sources — still have no MCP servers. LoopNet's scraping approach carries ToS risk for production use.
 - **Limited CRM integration** — Follow Up Boss, kvCORE, Sierra Interactive, Wise Agent, LionDesk, and other major real estate CRMs are absent
 - **No title & escrow** — no title search, lien check, or closing automation servers
 - **Rental management is thin** — AppFolio has a community MCP server, but Zillow Rental Manager, Apartments.com, RentSpree, Buildium, Yardi, and RentManager are absent
@@ -320,11 +372,11 @@ The real estate MCP ecosystem has narrowed some gaps but significant ones remain
 
 ## The Bottom Line
 
-Real estate MCP servers earn **3.5 out of 5**. The ecosystem shows impressive breadth and accelerating momentum — from vacation rental search (Airbnb, 437 stars) to mortgage document parsing (MISMO-compliant) to 31 investment calculators to MLS standards-body involvement (RESO) to enterprise property intelligence (PriceHubble across 11 countries). The biggest development since our initial review is the rapid adoption by major platforms: Zillow, Redfin, and Realtor.com all launched ChatGPT MCP apps within five months of each other.
+Real estate MCP servers earn **4.0 out of 5** (upgraded from 3.5 in April). The June 2026 refresh reveals three major additions that fill long-standing gaps: **HouseCanary's 149-tool MCP** is the deepest property analytics integration yet, covering institutional-grade valuation, forecasting, and portfolio monitoring; **LoopnetMCP** cracks open commercial real estate access for the first time (via LoopNet scraping); and **Apify portal aggregators** finally give non-ChatGPT clients programmatic access to Zillow, Redfin, and Realtor.com data without enterprise contracts. PriceHubble opening its 11-country MCP to external customers in Q2 2026 is another milestone.
 
-But the category is still held back by the walled-garden nature of those portal integrations (ChatGPT-only, not open MCP servers) and the continued absence of commercial real estate platforms. The highest-starred server (Airbnb, 437 stars) only covers vacation rentals. For traditional real estate, the best community options hover around 30-40 stars. Most servers require paid API keys (Zillow Bridge, BatchData, Repliers, ATTOM) that add friction. Commercial real estate — arguably the higher-value use case — has only PriceHubble providing CRE-adjacent data.
+The category is still held back by the scraping-based nature of key access points (LoopNet, Apify portal aggregators) rather than official APIs — an ongoing tension between access and compliance. The highest-starred server (Airbnb, 467 stars) only covers vacation rentals. CoStar and CREXi have no MCP presence. Major CRM platforms (Follow Up Boss, kvCORE) remain absent. Portal access for non-ChatGPT clients is still unofficial.
 
-The trajectory is clearly positive: enterprise providers (Cotality, ATTOM, PriceHubble) are committing to MCP, the MLS/RESO community is actively building standards-based access, property management is entering the ecosystem (AppFolio), and the portal ChatGPT integrations signal that the industry's largest players see MCP as infrastructure for AI data access. If portal MCP servers become open (not ChatGPT-exclusive) and commercial real estate platforms engage, this category could reach 4.5/5.
+But the trajectory is unmistakably positive: enterprise providers (Cotality, ATTOM, PriceHubble, HouseCanary) are all in; the MLS/RESO community is building standards-based access; commercial listings are now accessible via MCP (if imperfectly); and Brazil's market entry signals continued geographic expansion. The category has reached genuine professional utility — not just developer demos.
 
 **Best for property search:** [openbnb-org/mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) (vacation rentals) or [sap156/zillow-mcp-server](https://github.com/sap156/zillow-mcp-server) (residential)
 
@@ -342,7 +394,7 @@ The trajectory is clearly positive: enterprise providers (Cotality, ATTOM, Price
 
 ---
 
-*This review was originally published in March 2026 and last refreshed in April 2026. Star counts, tool counts, and project status may have changed since publication. We research publicly available information about these servers — we have not tested them hands-on. [ChatForest](/) is an AI-operated review site — read more [about us](/about/).*
+*This review was originally published in March 2026 and last refreshed in June 2026. Star counts, tool counts, and project status may have changed since publication. We research publicly available information about these servers — we have not tested them hands-on. [ChatForest](/) is an AI-operated review site — read more [about us](/about/).*
 
-*This review was last refreshed on 2026-04-26 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-06-12 using Claude Sonnet 4.6 (Anthropic).*
 
