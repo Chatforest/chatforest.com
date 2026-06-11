@@ -1,6 +1,6 @@
 # E-Signature & Digital Signing MCP Servers — DocuSign, PandaDoc, SignNow, BoldSign, and More
 
-> E-signature MCP servers reviewed: DocuSign official hosted MCP (beta, IAM + eSignature + Navigator + Maestro, Anthropic partnership), PandaDoc official hosted remote (12+ tools, documents/templates/contacts/webhooks), SignNow sn-mcp-server (5 stars, 18 tools, embedded signing/editor, STDIO + Streamable HTTP), eSignatures.com (36 stars, contract lifecycle, MIT), BoldSign (4 stars, official, 14 tools, TypeScript npm), DocuSign Navigator MCP (This Dot Labs, agreement search), luthersystems DocuSign (JWT FastMCP 8 tools), CData DocuSign (read-only JDBC), SignWell (official npx install + Pipedream hosted), Adobe Sign via Cequence AI Gateway (enterprise MCP proxy). 10+ servers. Rating: 3.5/5.
+> E-signature MCP servers reviewed: DocuSign official hosted MCP (Global Open Beta, no intake form, IAM + eSignature + Navigator + Maestro + Iris AI Assistant + Agent Studio, Anthropic partnership), PandaDoc official hosted remote (12+ tools, documents/templates/contacts/webhooks), SignNow sn-mcp-server (6 stars, 18 tools, embedded signing/editor, STDIO + Streamable HTTP), eSignatures.com (36 stars, contract lifecycle, MIT), BoldSign (4 stars, official, 14 tools, TypeScript npm), DocuSign Navigator MCP (This Dot Labs, agreement search), luthersystems DocuSign (JWT FastMCP 8 tools), CData DocuSign (read-only JDBC), SignWell (official npx install + Pipedream hosted), Adobe Sign via Cequence AI Gateway (enterprise MCP proxy). 10+ servers. Rating: 3.5/5.
 
 
 E-signatures are one of the few business workflows where AI automation has an obvious, immediate payoff. Draft a contract, fill in signer details, send for signature, track status, download the signed document — every step is API-shaped and benefits from natural language orchestration.
@@ -40,13 +40,19 @@ The biggest name in e-signatures now has an official hosted MCP server at `mcp-d
 
 **Multi-client support.** Available as a managed connector in Claude's Connectors Directory, plus documented integrations with GitHub Copilot and ChatGPT.
 
+**Iris AI Assistant (Momentum 2026, U.S. early access).** DocuSign's Iris-powered AI assistant transforms contracts into active workflow components: review, redlining, approval routing, obligation tracking, and automated follow-up. Broader U.S. rollout begins July 2026.
+
+**Agent Studio (Momentum 2026, U.S. early access).** Describe agreement workflows in natural language; Agent Studio converts them into custom agents tied to internal playbooks, policies, and connected systems like Salesforce. Three pre-built agent patterns: intake and triage, smart redlining, and relationship intelligence.
+
+**IAM for Sales GA.** Globally available as of Momentum 2026. **IAM for HR** entering early access in June 2026. **AI-assisted Web Forms** going global in June 2026.
+
 ### What Doesn't Work Well
 
-**Beta status.** Still in beta with potential breaking changes. Production deployment requires DocuSign approval via the developer portal beta program.
+**Beta status.** Now in Global Open Beta (as of Momentum 2026) — no intake form or additional approval required for production use. Developer and production accounts can connect directly. Potential breaking changes still possible before GA.
 
 **No public GitHub repository.** Unlike the other servers in this review, the official DocuSign MCP server isn't open source. You can't inspect the code, contribute fixes, or self-host it.
 
-**Beta enrollment required.** Developer accounts can access, but production use requires explicit approval — a friction point compared to the self-serve model of open-source alternatives.
+**Iris and Agent Studio are U.S.-only early access.** The MCP integration itself is globally available, but the highest-value features (Iris AI Assistant, Agent Studio) are in U.S. early access with broader rollout beginning July 2026.
 
 ### PandaDoc MCP Server (Official, Hosted)
 
@@ -85,7 +91,7 @@ The biggest name in e-signatures now has an official hosted MCP server at `mcp-d
 
 | Detail | Info |
 |--------|------|
-| [signnow/sn-mcp-server](https://github.com/signnow/sn-mcp-server) | ~5 stars |
+| [signnow/sn-mcp-server](https://github.com/signnow/sn-mcp-server) | ~6 stars |
 | License | Open source |
 | Language | Python 3.11+ |
 | Tools | 18 |
@@ -346,5 +352,5 @@ The e-signature MCP ecosystem stands out for one reason: **vendors actually buil
 
 The 3.5 rating reflects two realities: vendor support is better than any other MCP category, but star counts are low across the board (the highest is 36), no single server handles the full "draft, negotiate, sign, store" workflow, and Adobe Sign — the second-largest e-signature platform — still lacks a native MCP server. This is a category where MCP adoption is ahead of community adoption — the servers exist, but most developers haven't found them yet.
 
-*Last updated: April 26, 2026. Star counts and features reflect what we found during research. We do not install or test these servers hands-on — our reviews are based on documentation, source code analysis, GitHub activity, and community feedback. See our [methodology note](/reviews/#methodology) for details.*
+*Last updated: June 11, 2026. Star counts and features reflect what we found during research. We do not install or test these servers hands-on — our reviews are based on documentation, source code analysis, GitHub activity, and community feedback. See our [methodology note](/reviews/#methodology) for details.*
 

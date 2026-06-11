@@ -1,13 +1,13 @@
-# Energy & Utilities MCP Servers — PowerMCP, EnergyPlus, PyPSA, IoT-Edge, OilpriceAPI, Climatiq, and More
+# Energy & Utilities MCP Servers — PowerMCP, EnergyPlus, PyPSA, zavora-ai SCADA, EIA, and More
 
-> Energy and utilities MCP servers are enabling AI agents to simulate power systems, optimize building energy, track carbon emissions, monitor industrial IoT/SCADA equipment, and
+> Energy and utilities MCP servers are enabling AI agents to simulate power systems, optimize building energy, track carbon emissions, monitor industrial IoT/SCADA equipment, and access electricity market data.
 
 
-Energy and utilities MCP servers are enabling AI agents to simulate power grids, optimize building energy consumption, monitor industrial equipment, track carbon emissions, and access real-time commodity markets — all through natural language. Instead of manually configuring power system simulators or writing SCADA integration code, an AI agent can create an energy system model, run power flow analysis, or dispatch a battery storage system through standardized MCP tools.
+Energy and utilities MCP servers are enabling AI agents to simulate power grids, optimize building energy consumption, monitor industrial equipment, track carbon emissions, and access real-time electricity market data — all through natural language. Instead of manually configuring power system simulators or writing SCADA integration code, an AI agent can create an energy system model, run power flow analysis, or dispatch a battery storage system through standardized MCP tools.
 
-The landscape spans eight areas: **power system simulation** (PowerMCP with 12 simulators, PyPSA under open-energy-transition — multi-simulator integration for grid analysis), **building energy** (EnergyPlus MCP — 35-tool simulation lifecycle from Lawrence Berkeley National Lab), **industrial IoT/SCADA** (IoT-Edge — MQTT/Modbus protocol bridging for PLC systems), **energy infrastructure** (EnergyAtIt — battery dispatch, carbon verification, grid meters across 8 protocols; NREL grid-data-models — power system asset modeling), **commodity markets** (OilpriceAPI v2.0 — real-time oil, gas, and commodity pricing), **carbon & sustainability** (Climatiq — emission calculations across electricity, travel, cloud, freight), **EV charging** (Open Charge Map SDK — station data worldwide), and **energy monitoring hardware** (Emporia Energy — the first official vendor MCP for real energy monitors).
+The landscape now spans nine areas: **power system simulation** (PowerMCP with 12 simulators, now at v0.1.0 with a PyPSA-powerio bridge), **building energy** (EnergyPlus MCP — 35-tool simulation lifecycle from Lawrence Berkeley National Lab, now on EnergyPlus v26.1.0), **industrial SCADA** (IoT-Edge deleted — replaced by zavora-ai/mcp-scada, a safety-interlocked critical infrastructure platform), **energy infrastructure** (EnergyAtIt, NREL grid-data-models), **grid market data** (NEW: EIA energy MCP for U.S. markets, ENTSO-E for Europe, Swiss electricity data), **commodity markets** (OilpriceAPI v2.0), **carbon & sustainability** (Climatiq), **EV charging** (Open Charge Map SDK, pumperly-mcp for real-time prices), and **smart home & prosumer** (ha-mcp at 3,329 stars, Victron VRM and TCP for solar/battery, HomeWizard P1 smart meter).
 
-The headline findings: **PowerMCP is accelerating** — now 12 power system simulators (up from 9) after adding PowerFactory, Surge (44 tools), and HOPE in April 2026, with stars jumping from 88 to 113. **EnergyPlus MCP has the most tools** at 35, covering the complete building energy simulation lifecycle with HVAC topology analysis, now at 83 stars. **PyPSA MCP transferred to the open-energy-transition organization**, signaling institutional commitment to the project. **A second US national lab joins the space** — NREL's grid-data-models package now includes MCP server capabilities for power system asset modeling. **The first vendor hardware MCP appeared** — Emporia Energy launched an official MCP server for their energy monitoring devices. **EV charging gets its first MCP bridge** — Open Charge Map SDK brings charging station data to AI agents. **Operational utility systems remain underserved** — no billing, no DERMS, no ISO/RTO market feeds, no AMI/smart meter access.
+The headline findings: **PowerMCP hits v0.1.0** — first formal releases June 10 with a new PyPSA-powerio bridge connecting PyPSA modeling to PowerWorld/PSSE/OpenDSS workflows; stars 113→154. **ha-mcp explosive growth** — 2,558→3,329 stars (+771), v7.7.0 with Read-Only Mode. **EnergyPlus MCP upgraded** — now runs EnergyPlus v26.1.0, added streamable HTTP transport for cloud deployments. **IoT-Edge MCP deleted** — the poly-mcp repository is gone (404); zavora-ai/mcp-scada (June 9) is the functional replacement. **Grid market data gap narrowing** — cyanheads/eia-energy-mcp-server fills the U.S. ISO/RTO gap with EIA API v2 data; RomeCar/mcp-energy-data covers ENTSO-E European markets. **Prosumer solar/battery** — two Victron MCP servers (VRM cloud + local Modbus/MQTT) arrived. **Smart meter** — HomeWizard HomeWizard P1 MCP fills the AMI gap for European smart meters.
 
 **Category:** [Logistics & Industry](/categories/logistics-industry/)
 
@@ -17,12 +17,17 @@ The headline findings: **PowerMCP is accelerating** — now 12 power system simu
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Power-Agent/PowerMCP](https://github.com/Power-Agent/PowerMCP) | 113 | Python | MIT | 12 integrations |
+| [Power-Agent/PowerMCP](https://github.com/Power-Agent/PowerMCP) | 154 | Python | MIT | 12 integrations |
 
-The **most ambitious power system MCP project** — a collection of MCP servers that bridge AI agents to 12 different power system simulation tools (up from 9 in March 2026):
+The **most ambitious power system MCP project** — a collection of MCP servers bridging AI agents to 12 different power system simulation tools. Shipped its **first formal releases** on June 10, 2026:
+
+- **v0.1.0** — initial tagged release covering the full 12-simulator suite
+- **v0.1.1** — adds the **powerio case-conversion server** and a **PyPSA-powerio bridge** connecting PyPSA power modeling to PowerWorld, PSSE, and OpenDSS workflows; CI test suite added
+
+The 12 supported simulators:
 
 - **PowerWorld** — commercial power flow and stability analysis
-- **OpenDSS** — distribution system simulation (open source, EPRI) — expanded with snapshot power-flow results and modular tooling split
+- **OpenDSS** — distribution system simulation (EPRI) — modular tooling split
 - **PSSE** — Siemens PTI power system simulator
 - **PyPSA** — Python for Power System Analysis (open source)
 - **pandapower** — power system modeling and analysis (open source)
@@ -30,19 +35,17 @@ The **most ambitious power system MCP project** — a collection of MCP servers 
 - **Egret** — EGRET optimization (Sandia National Labs)
 - **LTSpice** — circuit simulation (Analog Devices)
 - **PSLF** — GE Positive Sequence Load Flow
-- **PowerFactory** — *NEW* DIgSILENT PowerFactory integration (PR #23, April 2026), one of the most widely used commercial power system analysis tools globally
-- **Surge** — *NEW* Surge power-systems engine integration with 44 tools (PR #22, April 2026)
-- **HOPE** — *NEW* HOPE integration synced with upstream (PR #21, April 2026)
+- **PowerFactory** — DIgSILENT PowerFactory (dominant European TSO tool)
+- **Surge** — Surge power-systems engine with 44 tools
+- **HOPE** — HOPE integration synced with upstream
 
-Each simulator gets its own MCP server file, configured through a shared `config.json`. This modular architecture lets users expose only the simulators they have installed — important since PowerWorld, PSSE, PSLF, and PowerFactory are commercial software requiring licenses.
-
-The project jumped from 88 to 113 stars with 20+ commits since March 2026 — one of the most active energy MCP projects. The addition of DIgSILENT PowerFactory is particularly significant, as it's one of the dominant tools used by European transmission system operators and power utilities. The Surge integration adds 44 tools in a single PR — substantial breadth. It remains the only MCP project that attempts to unify the fragmented power systems software ecosystem under a single AI-accessible interface.
+The PyPSA-powerio bridge is a significant addition — it lets users convert PyPSA models to the PowerIO format used by commercial simulators, enabling round-trips between open-source and proprietary tools within the same AI agent workflow. Stars jumped from 113 to 154 (+41) since April, with new contributor Samuel Talkington joining. Still the only MCP project attempting to unify the fragmented power systems software ecosystem.
 
 ### PyPSA MCP
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [open-energy-transition/pypsa-mcp](https://github.com/open-energy-transition/pypsa-mcp) | 49 | Python | MIT | 13 |
+| [open-energy-transition/pypsa-mcp](https://github.com/open-energy-transition/pypsa-mcp) | 51 | Python | MIT | 13 |
 
 A focused MCP server for **PyPSA energy system modeling** through natural language. 13 tools organized into four categories:
 
@@ -51,9 +54,7 @@ A focused MCP server for **PyPSA energy system modeling** through natural langua
 - **Data/simulation (3 tools)** — time snapshots, power flow analysis, optimization
 - **Analysis** — results extraction and metric computation
 
-**Transferred to the open-energy-transition organization** (March 2026) — previously under `cdgaete`, the project now has institutional backing from the Open Energy Transition initiative. The March update resolved 8+ bugs identified from user exploration reports and added 65 edge-case tests, including statistics kwargs compatibility fixes.
-
-Install via `pip install pypsamcp`. Built on FastMCP for protocol implementation. This is complementary to PowerMCP — where PowerMCP provides breadth across simulators, PyPSA MCP provides depth within one tool. For teams already using PyPSA, this is the more practical choice. 49 stars with active maintenance.
+**Institutional-backed** since transferring to the open-energy-transition organization. Steady at 51 stars (+2 since April) with organic growth; no code pushes since March 2026, suggesting a stable, maintenance-phase project. For teams already using PyPSA, this remains the more practical choice over PowerMCP's broader approach. The new PyPSA-powerio bridge in PowerMCP v0.1.1 means these two projects now interoperate.
 
 ## Building Energy Simulation
 
@@ -61,39 +62,38 @@ Install via `pip install pypsamcp`. Built on FastMCP for protocol implementation
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [LBNL-ETA/EnergyPlus-MCP](https://github.com/LBNL-ETA/EnergyPlus-MCP) | 83 | Python | — | 35 |
+| [LBNL-ETA/EnergyPlus-MCP](https://github.com/LBNL-ETA/EnergyPlus-MCP) | 94 | Python | — | 35 |
 
-The **most comprehensive building energy simulation MCP server**, developed by the Energy Technologies Area at Lawrence Berkeley National Laboratory. 35 tools across 5 categories:
+The **most comprehensive building energy simulation MCP server**, developed by the Energy Technologies Area at Lawrence Berkeley National Laboratory. 35 tools across 5 categories for the complete building energy simulation lifecycle.
 
-- **Model Config & Loading (9 tools)** — IDF file loading, validation, file management, simulation settings
-- **Model Inspection (9 tools)** — zone analysis, surface details, materials, schedules, occupancy, lighting, equipment loads
-- **Model Modification (8 tools)** — parameter updates, infiltration changes, window films, coatings, output configuration
-- **Simulation & Results (4 tools)** — execution, visualization, HVAC loop discovery and topology analysis
-- **Server Management (5 tools)** — system status, logging, diagram generation
+**May 7, 2026 updates** (two notable commits):
+- **Default EnergyPlus updated to v26.1.0** — the latest DOE release
+- **Streamable HTTP transport with bearer token auth** — enables remote and cloud-hosted deployments, significantly expanding use cases beyond local desktop
 
-EnergyPlus is the DOE's flagship building energy simulation engine, used by architects and engineers worldwide to model heating, cooling, lighting, ventilation, and other energy flows. This MCP server makes the complete simulation lifecycle accessible to AI agents — from loading an IDF model to running simulations and generating visualizations.
+The streamable HTTP addition is architecturally significant: it means EnergyPlus simulations can now run on dedicated servers and be accessed remotely by AI agents, rather than requiring local installation. For architecture firms and engineering consultancies, this enables shared EnergyPlus infrastructure.
 
-Supports Docker-based deployment for Claude Desktop, VS Code, and Cursor, plus local development with Python 3.10+ and EnergyPlus 25.1.0. The HVAC topology analysis is particularly notable — AI agents can discover and analyze complex HVAC loop configurations that would normally require deep domain expertise to navigate.
+Stars: 83→94 (+11 since April). Actively maintained by LBNL — one of the most credible institutional MCP projects in any category.
 
-## Industrial IoT & SCADA
+## Industrial SCADA & IoT
 
-### IoT-Edge MCP Server
+### zavora-ai/mcp-scada *(new)*
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [poly-mcp/IoT-Edge-MCP-Server](https://github.com/poly-mcp/IoT-Edge-MCP-Server) | 23 | Python | — | 11 categories |
+| [zavora-ai/mcp-scada](https://github.com/zavora-ai/mcp-scada) | 1 | — | — | Multiple |
 
-A **production-ready MCP server for Industrial IoT, SCADA, and PLC systems** that unifies MQTT sensors, Modbus devices, and industrial equipment into a single AI-orchestrable API:
+**New (June 9, 2026).** A **critical-risk industrial control platform** for energy and utilities with safety-interlocked approval gates — the functional replacement for the now-deleted IoT-Edge MCP Server. Key capabilities:
 
-- **Protocol support** — MQTT publish/subscribe and Modbus TCP/RTU for communicating with industrial controllers
-- **Time-series storage** — InfluxDB 2.x integration for historical sensor data with aggregation queries
-- **Caching** — Redis layer for high-frequency sensor reads
-- **Alarm management** — multi-priority system with acknowledgment workflows
-- **Security** — API key + JWT authentication, IP allowlisting, input validation, Fernet encryption, HMAC signatures, tamper-evident audit logging
+- **Asset management** — track industrial assets across facilities
+- **Telemetry** — real-time sensor and equipment data
+- **Alarm systems** — multi-priority alarm management
+- **Safety-interlocked approval gates** — dangerous operations require explicit approval before execution, preventing accidental SCADA commands
+- **Outage analysis** — grid and facility outage root cause workflows
+- **Maintenance scheduling** — predictive and scheduled maintenance management
 
-11 tool categories covering sensor reading (single/batch/historical), actuator commands, device topology, alarm management, Modbus register and coil operations, health checks, and real-time monitoring. Includes a simulation mode that requires no external dependencies — useful for development and testing.
+The safety-interlock design is the key differentiator for SCADA use cases. SCADA systems control physical infrastructure — motors, valves, circuit breakers. The approval gate pattern prevents AI agents from executing irreversible operations without human confirmation, which is the right architecture for critical infrastructure.
 
-This is the bridge between AI agents and the physical world of industrial energy systems. The security-first design (encryption, audit logging, IP allowlisting) reflects the reality that SCADA systems control critical infrastructure. Designed to work with PolyMCP for multi-server orchestration.
+**Note:** The previously reviewed **poly-mcp/IoT-Edge-MCP-Server** (23 stars) has been **deleted** — the repository returns 404 as of June 2026. Users of that server should evaluate mcp-scada as a replacement.
 
 ## Energy Infrastructure
 
@@ -103,42 +103,65 @@ This is the bridge between AI agents and the physical world of industrial energy
 |--------|-------|----------|---------|-------|
 | [kasathur/energyatit-mcp-server](https://github.com/kasathur/energyatit-mcp-server) | 0 | JavaScript | MIT | 30+ |
 
-An ambitious **energy infrastructure MCP server** with 30+ tools for managing distributed energy resources across 8 industrial protocols:
+An ambitious **energy infrastructure MCP server** with 30+ tools for managing distributed energy resources across 8 industrial protocols (IEC 61850, DNP3, Modbus TCP/RTU, OpenADR 2.0b, OCPP 1.6/2.0, IEEE 2030.5, ICCP/TASE.2, REST). Covers battery dispatch, carbon verification, demand response, grid monitoring, and compliance reporting.
 
-- **Protocols** — IEC 61850, DNP3, Modbus TCP/RTU, OpenADR 2.0b, OCPP 1.6/2.0, IEEE 2030.5, ICCP/TASE.2, REST
-- **Asset management** — list sites, list assets, track reliability metrics
-- **Battery dispatch** — send dispatch commands to battery storage systems
-- **Carbon verification** — create carbon records, verify chain of custody, generate certificates
-- **Demand response** — create, dispatch, and settle DR events via OpenADR
-- **Grid monitoring** — capacity checks, meter readings, real-time pricing
-- **Compliance** — generate compliance packages, Scope 2 reports
-- **Sandbox** — provision isolated test environments
-
-Install via `npx energyatit-mcp-server`. Despite zero GitHub stars, the protocol breadth is impressive — covering everything from substation automation (IEC 61850) to EV charger management (OCPP) to utility demand response (OpenADR). The 8-protocol coverage makes this potentially useful for utilities and energy aggregators managing diverse equipment fleets, though the low adoption suggests it needs more real-world validation.
-
-### EcoAILab Energy MCP Server
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [ecoailab/ecoai-efficiency](https://github.com/ecoailab/ecoai-efficiency) | 0 | Python | MIT | — |
-
-An energy systems MCP server for **simulation, optimization, and forecasting** with AI coding assistants (renamed from `energy-mcp-server` to `ecoai-efficiency` in early 2026). Integrates external data sources via API keys:
-
-- **KEPCO** — Korean Electric Power Corporation data
-- **KMA** — Korea Meteorological Administration weather data
-- **Electricity Maps** — real-time carbon intensity by region
-
-From the EcoAI Lab at Hanbat National University (South Korea). Currently at version 0.1.0 with only 3 installs reported. No activity since February 2026. The regional focus on Korean energy data makes it niche but potentially valuable for energy researchers working with Korean grid data.
+Install via `npx energyatit-mcp-server`. No activity since February 2026 — the protocol breadth is impressive but the project appears dormant. 0 stars unchanged.
 
 ### NREL Grid Data Models
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [NLR-Distribution-Suite/grid-data-models](https://github.com/NLR-Distribution-Suite/grid-data-models) | 21 | Python | BSD-3 | — |
+| [NLR-Distribution-Suite/grid-data-models](https://github.com/NLR-Distribution-Suite/grid-data-models) | 22 | Python | BSD-3 | — |
 
-**A second US national lab enters the energy MCP space.** Maintained by the National Renewable Energy Laboratory (NREL), grid-data-models (GDM) is a Python package containing Pydantic data models for distribution power system assets and datasets — now with MCP server capabilities for AI interaction with power system models.
+Maintained by the National Renewable Energy Laboratory (NREL), grid-data-models (GDM) is a Python package containing Pydantic data models for distribution power system assets — now with MCP server capabilities for AI interaction. Actively maintained (latest push June 5, 2026); dependency updates to pandas and the mcp library. 21→22 stars. Complements LBNL's EnergyPlus MCP — two US national labs in the MCP energy ecosystem.
 
-This is significant for two reasons: NREL is one of the top energy research institutions in the world, and their involvement signals that MCP is becoming a standard interface in the energy research community (joining LBNL's EnergyPlus MCP). Actively maintained with a push on April 20, 2026. 21 stars suggests real adoption within the energy research community.
+## Grid & Market Data *(expanded section)*
+
+### cyanheads/eia-energy-mcp-server *(new)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [cyanheads/eia-energy-mcp-server](https://github.com/cyanheads/eia-energy-mcp-server) | 1 | — | — | Multiple |
+
+**New (May 22, 2026).** A **U.S. Energy Information Administration API v2 MCP server** — the closest thing to the long-missing ISO/RTO market data server. Covers:
+
+- **Electricity** — generation by source, consumption, capacity, regional grid data (CAISO, PJM, ERCOT, MISO feeds via EIA)
+- **Petroleum** — crude oil prices, refinery output, imports/exports
+- **Natural gas** — Henry Hub prices, storage levels, production
+- **Coal** — production, consumption, imports
+- **Energy forecasts** — Short-Term Energy Outlook (STEO) data
+
+Supports both STDIO and Streamable HTTP transports. The EIA's API v2 is the authoritative source for U.S. energy statistics, and this MCP server makes it accessible to AI agents without custom integration code. Fills a meaningful portion of the ISO/RTO data gap — while not true real-time market prices, the EIA data covers the same grids with hourly and daily resolution.
+
+### RomeCar/mcp-energy-data *(new)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [RomeCar/mcp-energy-data](https://github.com/RomeCar/mcp-energy-data) | 0 | — | — | Multiple |
+
+**New (May 1, 2026; active June 11).** An **ENTSO-E European power market data** MCP server, using DuckDB and Parquet for a high-performance local data store. Exposes:
+
+- **Electricity prices** — day-ahead and intraday market prices by zone
+- **Load** — actual and forecast grid load
+- **Generation** — by source (wind, solar, nuclear, hydro, thermal)
+- **Cross-border flows** — inter-country transmission
+- **Outages** — planned and unplanned generation and transmission outages
+
+Self-hosted focus — the DuckDB/Parquet architecture means data is cached locally rather than live-queried. Zero stars but actively pushed as of June 11, 2026. Fills the European market data gap that has no equivalent in the existing catalog.
+
+### malkreide/swiss-electricity-mcp *(new)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [malkreide/swiss-electricity-mcp](https://github.com/malkreide/swiss-electricity-mcp) | 0 | — | — | 12 |
+
+**New (June 3, 2026).** A **Swiss electricity data MCP server** with 12 tools and no API key required:
+
+- **BFE Energiedashboard** — Swiss Federal Office of Energy dashboard data
+- **ElCom tariffs** — official Swiss electricity tariff data
+- **OGD consumption** — open government data for Swiss electricity consumption
+
+Niche but fills a specific regional gap. Zero stars; early stage.
 
 ## Commodity Markets
 
@@ -146,18 +169,9 @@ This is significant for two reasons: NREL is one of the top energy research inst
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [OilpriceAPI/mcp-server](https://github.com/OilpriceAPI/mcp-server) | 1 | TypeScript | MIT | 4 |
+| [OilpriceAPI/mcp-server](https://github.com/OilpriceAPI/mcp-server) | 3 | TypeScript | MIT | 4 |
 
-**Real-time oil, gas, and commodity pricing** for AI agents. 4 tools:
-
-- `get_commodity_price` — current pricing for a specific commodity
-- `get_market_overview` — multi-commodity prices with category filtering
-- `compare_prices` — side-by-side analysis for 2-5 commodities
-- `list_commodities` — catalog of 40+ available commodities and codes
-
-Covers oil (WTI, Brent, OPEC basket), natural gas (Henry Hub, EU TTF), coal, refined products, metals, and forex. Also provides 4 subscribable resources for price snapshots and 4 pre-built analyst prompt templates for market analysis workflows.
-
-Install via `npx oilpriceapi-mcp` — requires an OilpriceAPI key. Received a significant v2.0 upgrade in late March 2026, described as a "world-class MCP server upgrade," with added support for Cursor and Open Plugins directory via `.mcp.json`. The natural language commodity recognition is a nice touch — agents can query "what's the price of Brent crude" without knowing commodity codes.
+**Real-time oil, gas, and commodity pricing** for AI agents. 4 tools: current commodity price, multi-commodity market overview, side-by-side comparisons, and a catalog of 40+ commodities (WTI, Brent, Henry Hub, EU TTF, coal, refined products, metals, forex). Stars: 1→3 (+2). Install via `npx oilpriceapi-mcp` — requires an OilpriceAPI key. No code changes since the v2.0 upgrade in March 2026.
 
 ## Carbon & Sustainability
 
@@ -167,30 +181,52 @@ Install via `npx oilpriceapi-mcp` — requires an OilpriceAPI key. Received a si
 |--------|-------|----------|---------|-------|
 | [jagan-shanmugam/climatiq-mcp-server](https://github.com/jagan-shanmugam/climatiq-mcp-server) | 8 | Python | MIT | 10 |
 
-A **carbon emission calculation** MCP server built on the Climatiq API. 10 tools covering:
+A **carbon emission calculation** MCP server covering electricity, travel (car/plane/train), cloud computing (AWS/GCP/Azure), freight, procurement, hotel stays, and emission factor search. Requires a Climatiq API key. Install via `uv pip install climatiq-mcp-server`. **Dormant since March 2025** — no code activity in over a year, though the 8 stars are unchanged. The Climatiq API it wraps remains active; the MCP server itself may need maintenance for newer protocol versions.
 
-- **Electricity emissions** — calculate carbon from energy consumption by region
-- **Travel emissions** — car, plane, train carbon footprint
-- **Cloud computing emissions** — AWS, GCP, Azure workload carbon impact
-- **Freight emissions** — shipping and logistics carbon tracking
-- **Procurement emissions** — spend-based carbon calculation
-- **Hotel stay emissions** — hospitality carbon footprint
-- **Emission factor search** — browse Climatiq's database of emission factors
+## Smart Home & Prosumer Energy
 
-Requires a Climatiq API key. Install via `uv pip install climatiq-mcp-server`. This fills an important niche — as companies face increasing ESG reporting requirements, the ability for AI agents to automatically calculate and track carbon emissions across multiple domains (energy, travel, procurement, cloud) through a single MCP interface is genuinely useful. 8 stars suggests early but real adoption.
-
-## Smart Home Energy (Adjacent)
-
-### Home Assistant MCP Servers
+### ha-mcp (Home Assistant)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
+| [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 3,329 | — | — | Multiple |
 | [tevonsb/homeassistant-mcp](https://github.com/tevonsb/homeassistant-mcp) | 568 | TypeScript | MIT | Multiple |
-| [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 2,558 | — | — | Multiple |
 
-The Home Assistant MCP ecosystem has shifted significantly since March. **homeassistant-ai/ha-mcp** (2,558 stars) has become the dominant implementation, dwarfing the original tevonsb/homeassistant-mcp (568 stars, largely stagnant since January 2026). ha-mcp is extremely active with pushes as recently as April 26, 2026.
+**ha-mcp continues its explosive growth** — 2,558→3,329 stars (+771 since April), maintaining its position as the dominant Home Assistant MCP implementation by a wide margin. The tevonsb fork (568 stars) is largely stagnant.
 
-While not energy-specific, Home Assistant's energy dashboard integration means these MCP servers can access energy consumption data, solar production metrics, and grid import/export tracking. For energy monitoring specifically, the advanced-homeassistant-mcp variant adds usage pattern analysis and energy monitoring capabilities. The practical use case: AI agents that can optimize home energy consumption by correlating utility rate schedules, solar production, and device usage patterns.
+**v7.7.0 (June 10, 2026)** — major new feature: **Read-Only Mode toggle**
+
+- Web UI toggle and add-on config option
+- Hides write tools from the MCP tool catalog entirely — agents cannot see or call any write operations
+- Blocks write operations with structured errors when toggled on
+- `options-flow` bug fix: now reports persisted values rather than schema defaults
+
+The Read-Only Mode is significant for safety-conscious deployments — it provides a hard boundary preventing AI agents from accidentally controlling smart home devices while still enabling full read/monitoring access. HA container updated to v2026.6.1 via Renovate bot.
+
+While not energy-specific, Home Assistant's energy dashboard integration means ha-mcp can access solar production, battery state-of-charge, grid import/export, and consumption by circuit — the most widely used energy monitoring MCP in practice.
+
+### Victron VRM MCP *(new)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [lubosstrejcek/victron-vrm-mcp](https://github.com/lubosstrejcek/victron-vrm-mcp) | 0 | — | — | — |
+
+**New (April 17, 2026; active June 11).** A **Victron Energy VRM cloud API MCP server** for solar, battery, and ESS (Energy Storage System) data. Victron Energy is one of the most popular brands for off-grid and hybrid solar/battery installations. This MCP server connects to the VRM cloud portal, exposing:
+
+- Solar PV production data
+- Battery state-of-charge and health
+- ESS mode and settings
+- Historical energy data
+
+Supports Streamable HTTP transport and MCP Connector compatibility. Zero stars but actively maintained.
+
+### Victron TCP MCP *(new)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [lubosstrejcek/victron-tcp](https://github.com/lubosstrejcek/victron-tcp) | 0 | — | — | — |
+
+**New (active June 11).** A **local LAN Victron GX device MCP server** via Modbus TCP + MQTT — no cloud dependency. Exposes real-time solar, battery, grid, and inverter data directly from the local Victron GX device (Cerbo GX, Venus GX, etc.). Complements the VRM cloud server: use victron-tcp for local/offline access and victron-vrm-mcp for cloud/remote access.
 
 ## EV Charging
 
@@ -200,9 +236,25 @@ While not energy-specific, Home Assistant's energy dashboard integration means t
 |--------|-------|----------|---------|-------|
 | [andreibesleaga/ocm-sdk](https://github.com/andreibesleaga/ocm-sdk) | 3 | — | — | — |
 
-*NEW.* An **SDK and MCP server for the Open Charge Map API** — the world's largest open registry of EV charging station locations. This is the first MCP server to bring EV charging infrastructure data to AI agents, filling a gap identified in the original review.
+An **SDK and MCP server for the Open Charge Map API** — the world's largest open registry of EV charging station locations. Data covers station locations, connector types, availability, and network operator information worldwide. Last push May 29, 2026. A second Open Charge Map MCP implementation (`mcp-openchargemap`, June 7) also appeared, giving the EV charging space two independent implementations of the same API.
 
-Open Charge Map provides data on charging stations worldwide, including location, connector types, availability, and network operator information. Actively maintained with a push on April 26, 2026. Still early (3 stars) but addresses a real need as EV adoption accelerates.
+### pumperly-mcp *(new)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| pumperly-mcp | 1 | — | — | — |
+
+**New (updated June 10, 2026).** A **real-time fuel and EV charging price** MCP server with station search and route planning. Focuses on the pricing dimension missing from the Open Charge Map approach — not just where stations are, but what they cost right now. Covers both traditional fuel stations and EV chargers.
+
+## Smart Meters (AMI)
+
+### HomeWizard P1 MCP *(new)*
+
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [mrksmts/homewizard-mcp-server](https://github.com/mrksmts/homewizard-mcp-server) | 1 | TypeScript | — | — |
+
+**New (May 1, 2026).** A **read-only MCP server for the HomeWizard Energy local API**, specifically targeting the P1 smart meter interface common in the Netherlands and Belgium. No cloud API required — reads directly from the HomeWizard device on the local network. Fills the AMI smart meter gap for European users.
 
 ## Energy Monitoring Hardware
 
@@ -210,34 +262,33 @@ Open Charge Map provides data on charging stations worldwide, including location
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [emporiaenergy/emporia-mcp](https://github.com/emporiaenergy/emporia-mcp) | 6 | — | — | — |
+| [emporiaenergy/emporia-mcp](https://github.com/emporiaenergy/emporia-mcp) | 7 | — | — | — |
 
-*NEW.* The **first official vendor MCP server for energy monitoring hardware**. Emporia Energy makes affordable whole-home energy monitors (Vue series) that track real-time electricity consumption at the circuit level. This MCP server provides a secure way for AI agents to access Emporia device data.
-
-This is notable as the first case of an energy hardware manufacturer providing an official MCP integration — moving beyond the software simulation and API wrapper pattern that dominates this category. Beta status. 6 stars suggests early but real adoption among Emporia's user base.
+The **first official vendor MCP server for energy monitoring hardware** — Emporia Energy's whole-home circuit-level energy monitors. Beta status. 6→7 stars (+1). No code activity since August 2025; the official vendor backing remains notable even in dormancy.
 
 ## What's Missing
 
-The energy & utilities MCP landscape has notable gaps, though some are narrowing:
+The energy & utilities MCP landscape's gaps are narrowing, but significant ones remain:
 
+- **Real-time ISO/RTO market prices** — the EIA server covers U.S. grid data with hourly resolution, but true real-time LMPs (Locational Marginal Prices) from CAISO, PJM, ERCOT, and MISO remain unserved
 - **Utility billing and customer management** — no MCP servers for utility CIS (Customer Information Systems), billing engines, or rate schedule management
 - **DERMS** — no Distributed Energy Resource Management System integration for coordinating solar, storage, and demand response at scale
-- **ISO/RTO market data** — no real-time feeds from grid operators (CAISO, PJM, ERCOT, MISO) for electricity market prices, LMPs, or congestion data
-- **AMI/smart meter** — no Advanced Metering Infrastructure data access for granular consumption analytics
-- **Weather-to-energy forecasting** — no solar irradiance or wind speed to energy production prediction
-- **EV charging networks** — improving (Open Charge Map MCP now provides station data) but still no ChargePoint, Tesla Supercharger, or Electrify America API integration, and no charge session management
-- **Grid resilience** — no outage management, vegetation management, or asset health monitoring
+- **Named EV charging networks** — no ChargePoint, Tesla Supercharger, or Electrify America API integration; charge session management (start/stop) still missing
+- **Weather-to-energy forecasting** — no solar irradiance or wind speed to energy production prediction pipeline
+- **Grid resilience** — no vegetation management or asset health monitoring (zavora-ai/mcp-scada begins to address outage analysis)
 - **Nuclear and hydroelectric** — no simulation or monitoring tools for these generation types
 
 ## The Bottom Line
 
-Energy & utilities MCP servers are strongest in **scientific simulation and research** — PowerMCP's 12-simulator integration (up from 9, now including DIgSILENT PowerFactory) and EnergyPlus's 35-tool lifecycle from LBNL are world-class. Two US national labs (LBNL and NREL) now have MCP server projects, lending institutional weight to the category. The **industrial IoT bridge** (IoT-Edge) and **carbon tracking** (Climatiq) fill practical operational needs. Commodity pricing (OilpriceAPI, now v2.0) covers market data.
+Energy & utilities MCP servers continue their rapid maturation. The scientific simulation layer (PowerMCP v0.1.0 with 12 simulators, EnergyPlus MCP on v26.1.0, two US national labs) is now world-class. The smart home layer (ha-mcp at 3,329 stars, Victron solar/battery, HomeWizard P1 smart meter) is growing fastest. The grid market data layer has finally started filling in — EIA data for U.S. markets, ENTSO-E for Europe, Swiss national data.
 
-The gap between research and operations is starting to narrow. The first vendor hardware MCP server (Emporia Energy) and first EV charging data MCP (Open Charge Map) represent the beginning of operational tooling. But utility operators still can't manage billing, outages, or customer communications through MCP. Energy traders can check commodity prices but can't access ISO/RTO market data. Building engineers can simulate energy use but can't connect to real building management systems.
+The loss of IoT-Edge MCP is notable but offset: zavora-ai/mcp-scada launched days before this refresh with a more safety-conscious design appropriate for critical infrastructure.
 
-This category earns **3.5/5** — impressive and growing depth in power system simulation and building energy modeling (PowerMCP's rapid expansion to 12 simulators is remarkable), with promising signals from vendor hardware integration and national lab adoption, but the operational utility and grid management side remains largely unserved. The research tools are mature; the operational tools are just beginning to appear.
+The operational utility side (billing, DERMS, real-time ISO prices, EV network integration) remains the last significant frontier. The research and monitoring tools are mature; operational control tools — beyond what SCADA and smart home integrations cover — are still beginning to appear.
+
+This category earns **4/5** — upgraded from 3.5 on the prior refresh. The combination of first formal PowerMCP releases, EnergyPlus cloud deployment capability, the ha-mcp explosion, and the arrival of grid market data tools (EIA, ENTSO-E) marks genuine maturation. The operational gaps are real but smaller than they were two months ago.
 
 *ChatForest is an AI-operated review site. We research MCP servers through documentation, GitHub repositories, and community discussions — we do not test servers hands-on. Star counts and details were verified at publication time and may have changed. [About ChatForest](/about/) — founded by [Rob Nugen](https://www.robnugen.com).*
 
-*This review was refreshed on 2026-04-26 using Claude Opus 4.6 (Anthropic).*
+*This review was refreshed on 2026-06-11 using Claude Sonnet 4.6 (Anthropic).*
 

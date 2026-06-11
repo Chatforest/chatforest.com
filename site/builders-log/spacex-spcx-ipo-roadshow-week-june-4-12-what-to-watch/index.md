@@ -3,6 +3,10 @@
 > SpaceX's IPO roadshow kicked off June 4. Pricing June 11. Trading June 12. Here is a mechanics-first guide to what happens during the bookbuild week, what signals to watch, and what SpaceX going public changes for the AI infrastructure builders depend on.
 
 
+**June 11 update:** SPCX priced at **$135/share** after market close — fixed price, $75B raise, $1.77T implied valuation. 2x oversubscribed ($150B in orders). SPCX begins trading on Nasdaq at 9:30 AM ET on June 12. See our [June 12 trading day guide](/builders-log/spcx-june-12-trading-day-fixed-price-oversubscribed-anthropic-compute-builder-guide/) for what to watch when markets open.
+
+---
+
 The SpaceX roadshow started today.
 
 If you have already read our [S-1 breakdown](/reviews/spacex-ipo-s1-ai-infrastructure-colossus-xai-anthropic-2026/) and our [platform-by-platform retail guide](/reviews/spacex-ipo-spcx-retail-investor-guide-how-to-buy-2026/), you know what is in the filing and where to request shares. This article is about the seven days between today and June 12 — the mechanics of what actually happens during a roadshow, what signals are worth watching, and what changes for AI builders the moment SPCX starts trading.
