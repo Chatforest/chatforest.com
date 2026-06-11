@@ -1,3 +1,4 @@
+Run 1912: REFRESH event-management-ticketing-mcp-servers (47 days stale) — taylorwilsdon 2.2K→2.7K (May 17: XSS fix, JWT signing, LLM date parsing), mcp-ical 304→315, punkpeye/eventbrite deleted, Google Calendar MCP still Developer Preview (Cloud Next '26 spotlight), writerWithoutPrivateAccess GA June 29. DEPLOYED unix 1781199078.
 Run 1904: REFRESH google-cloud-mcp-servers (40 days stale) — ADK 2.0 (May 19 graph-based multi-language MCP-native), Gemini 3.5 Flash MCP Atlas 83.6%, MCP Toolbox v1.4.0, Managed Agents API preview (MCP NOT yet supported — flagged), Gemini CLI deprecated→Antigravity 2.0 by June 18, WebMCP Chrome 149 origin trial. MCP cadence restarted per Rob msg #1807. DEPLOYED unix 1781152051. 2700 pages.
 Run 1903: NEW REVIEW: NY S9051B Kids Chatbot Safety Act — GBL Article 48, 8 prohibited features for minor chatbots, AG $25K/violation, Hochul pending (deadline Dec 31, 2026). 2700 pages. DEPLOYED unix 1781148313.
 Run 1902: NEW REVIEW: Claude Fable 5 — first publicly available Mythos-class model (June 9 2026). $10/$50 per million tokens, 1M context, 80.3% SWE-bench Pro, three safety classifiers. NOT DEPLOYED — throttle active. DEPLOYING NEXT RUN. 2698 pages.
@@ -29030,3 +29031,32 @@ Run 1909 complete. Here's what happened:
 2026-06-11T11:22:01Z STALE LOCK removed (older than 30min)
 2026-06-11T11:22:02Z STARTED run 2088410 (mode=wild)
 2026-06-11T11:22:02Z SESSION 2859 started
+Run 1911 complete. Here's what happened:
+
+**Game Development MCP Servers — refreshed** (46 days stale → June 11, 2026):
+
+**Unity:**
+- CoplayDev: 8.9K → **10.5K** (+1,650); v9.7.1 with Antigravity 2.x and Roslyn fixes
+- IvanMurzak: 2.3K → **3.1K** (+35%, fastest-growing); rebranded "AI Game Developer"; **v0.80.1 released today** with macOS/Windows code-signing
+- CoderGamester: 1.6K → **1.8K**; v1.3.0 batch execution 10-100x perf gains
+- Unity Technologies "official MCP": corrected — **no public open-source repo found**, appears commercial/embedded
+- **NEW**: AnkleBreaker-Studio — **268 tools**, highest tool count of any Unity MCP server
+
+**Unreal Engine:**
+- chongdashu: flagged **abandoned** (last commit April 2025, not January as previously noted)
+- ChiR24: now the active choice at **700 stars**; v0.5.30 (June 5) with PCG automation, Behavior Tree authoring, native HTTP JSON-RPC
+
+**Godot — big story:**
+- Coding-Solo: **4,111 stars** (was listed as minor "other" entry) — now dominant
+- hi-godot/godot-ai: **brand new** (April 12), 527 stars, actively pushed today
+- yurineko73/Godot-MCP-Native: new May 2026, no-dependency implementation
+
+**Blender:** 20.6K → **22.6K**; **prompt injection security fix** (tool docstrings), Supabase dependency removed
+
+**New engine:** Flax Engine MCP — 47 tools, newest game engine entrant
+
+Deployed to live site. Rating held at 3.5/5.
+2026-06-11T11:34:20Z FINISHED run 2088410
+2026-06-11T11:34:21Z SESSION 2859 stopped
+2026-06-11T17:23:01Z STARTED run 2184699 (mode=wild→slow(peak))
+2026-06-11T17:23:02Z SESSION 2860 started

@@ -30,6 +30,8 @@ The server lives at `https://calendarmcp.googleapis.com/mcp/v1` and works with G
 
 Google also launched official MCP servers for **Gmail** (10 tools), **Google Drive** (7 tools), **People API** (3 tools), and **Google Chat** (2 tools) as part of the same Workspace MCP initiative. This makes Google the first major productivity platform to ship official MCP across multiple services.
 
+**June 2026 update**: Google highlighted all Workspace MCP servers at **Google Cloud Next '26** as part of the broader Google-managed MCP platform (50+ servers, generally available). The Calendar MCP server itself remains in Developer Preview. Also notable: the Google Calendar API is adding a new access level, **`writerWithoutPrivateAccess`** (GA June 29, 2026), which allows read/write access to non-private events while marking private events as busy blocks — a useful addition for agent workflows that need to schedule around private appointments without exposing their content.
+
 ### Google Calendar MCP (Community)
 
 | Server | Stars | Language | License | Tools |
@@ -48,13 +50,17 @@ The **most popular community calendar MCP server** and one of the highest-starre
 
 The intelligent import feature is particularly useful — paste a screenshot of a conference schedule and it creates calendar events automatically.
 
+**v2.6.2** (June 1, 2026) replaced email validation with RE2-safe regex — a security patch for ReDoS prevention. Previous notable release v2.6.0/v2.6.1 added PKCE+OAuth state validation and bulk event creation.
+
 ### Google Workspace MCP (Community)
 
 | Server | Stars | Language | License | Services |
 |--------|-------|----------|---------|----------|
-| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 2,200 | Python | MIT | 12 |
+| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 2,700 | Python | MIT | 12 |
 
 The **most-starred community server touching Google Calendar** — though it's a comprehensive Workspace MCP, not calendar-specific. Covers Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Chat, Tasks, Contacts, Apps Script, and Custom Search. Features OAuth 2.1 multi-user support, tiered tool loading (core/extended/complete), read-only mode, and stateless container-friendly deployment. If you need calendar plus other Google services from a single MCP server, this is the leading option.
+
+**May 17, 2026 release**: Added defensive parsing for malformed LLM date inputs, JWT signing key support for external OAuth 2.1 providers, improved Google API resource cleanup, HTML escaping in OAuth callbacks (XSS fix), and skipping trashed messages in thread replies.
 
 ### shade-solutions/calender-mcp
 
@@ -90,7 +96,7 @@ The duplication pattern is extreme — Google Calendar may have more MCP impleme
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Omar-V2/mcp-ical](https://github.com/Omar-V2/mcp-ical) | 304 | Python | MIT | ~5 |
+| [Omar-V2/mcp-ical](https://github.com/Omar-V2/mcp-ical) | 315 | Python | MIT | ~5 |
 
 The **most popular Apple Calendar MCP server.** Uses PyObjC to interact directly with macOS Calendar (not iCloud API), supporting:
 
@@ -106,7 +112,7 @@ Two additional Apple Calendar implementations exist: **shadowfax92/apple-calenda
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [icloud-calendar-mcp/icloud-calendar-mcp](https://github.com/icloud-calendar-mcp/icloud-calendar-mcp) | 8 | Kotlin/JVM | Apache 2.0 | 5 |
+| [icloud-calendar-mcp/icloud-calendar-mcp](https://github.com/icloud-calendar-mcp/icloud-calendar-mcp) | 9 | Kotlin/JVM | Apache 2.0 | 5 |
 
 The **first iCloud Calendar MCP server via CalDAV** — works with any CalDAV-compatible calendar, not just Apple's. The standout feature is security: built with **OWASP MCP Top 10 compliance** and 282 dedicated security tests covering credential protection, input validation with SSRF protection, rate limiting (60 reads/min, 20 writes/min), ReDoS protection, and audit logging for all mutations. Available on npm, PyPI, and as a standalone JAR.
 
@@ -179,9 +185,8 @@ The **most complete Eventbrite implementation** with full event lifecycle manage
 
 This is one of the few event MCP servers that supports **write operations** — most are read-only discovery tools.
 
-Two additional Eventbrite implementations:
-- **vishalsachdev/eventbrite-mcp** (2 stars, API Blueprint, MIT) — event listing with planned analytics and attendee management
-- **punkpeye/eventbrite-mcp** (1 star, JavaScript, MIT, 4 tools) — search, details, categories, and venue lookup
+One additional Eventbrite implementation:
+- **vishalsachdev/eventbrite-mcp** (3 stars, API Blueprint, MIT) — event listing with planned analytics and attendee management
 
 ### The Events Calendar (WordPress)
 
@@ -303,11 +308,11 @@ The calendar gap has narrowed significantly with Google's official MCP, but even
 
 ## The Bottom Line
 
-The event management and ticketing MCP ecosystem remains **split**: calendaring is now officially supported by Google (Developer Preview, 8 tools, remote MCP) alongside mature community options (nspady at 1,100 stars, google_workspace_mcp at 2,200 stars, mcp-ical at 304 stars, plus iCloud Calendar via CalDAV). But event management proper is still early-stage. Most ticketing servers are thin read-only wrappers around discovery APIs. The few write-capable servers (joshuachestang's Eventbrite, The Events Calendar) are promising but low-traction.
+The event management and ticketing MCP ecosystem remains **split**: calendaring is now officially supported by Google (Developer Preview, 8 tools, remote MCP — highlighted at Cloud Next '26) alongside mature community options (nspady at 1,100 stars, google_workspace_mcp at 2,700 stars, mcp-ical at 315 stars, plus iCloud Calendar via CalDAV). But event management proper is still early-stage. Most ticketing servers are thin read-only wrappers around discovery APIs. The few write-capable servers (joshuachestang's Eventbrite, The Events Calendar) are promising but low-traction.
 
 The biggest remaining opportunity: **official MCP servers from major ticketing platforms.** Eventbrite alone processes billions of dollars in ticket sales — an official MCP server enabling agents to create events, manage attendees, and track sales would be immediately useful. Eventtia's "agentic event software" vision points the way, but the industry hasn't followed yet.
 
 **Rating: 3.5 / 5** — Google's official Calendar MCP is a landmark, but it strengthens an already-mature subcategory. Ticketing, event logistics, and virtual events remain wide open.
 
-*This review was last edited on 2026-04-26 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-06-12 using Claude Sonnet 4.6 (Anthropic).*
 
