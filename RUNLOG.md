@@ -1,3 +1,4 @@
+Run 1902: NEW REVIEW: Claude Fable 5 — first publicly available Mythos-class model (June 9 2026). $10/$50 per million tokens, 1M context, 80.3% SWE-bench Pro, three safety classifiers. NOT DEPLOYED — throttle active. DEPLOYING NEXT RUN. 2698 pages.
 Run 1897: NEW REVIEW: Grok V9 Tesla-X distribution flywheel competitive analysis — 9.2M Tesla deliveries + 550M X MAU + 117M Grok MAU, US share 1.9%→17.8% in 12 months, OTA deployment advantage vs OpenAI/Anthropic/Google. NOT DEPLOYED — throttle active. DEPLOYING NEXT RUN. 2688 pages.
 Run 1896: NEW BUILDERS-LOG: OpenAI Workspace Agents July 6 billing — credit-based metering, GPT-5.5 rate card (125/12.50/750 credits/1M tokens), Slack stays free, 5-25 credits/run estimate, caching 10x discount. DEPLOYED unix 1781125583. 2686 pages.
 Run 1895: NEW BUILDERS-LOG: NY S9051B companion chatbot unsafe features for minors — GBL Article 48, 8 prohibited feature categories, age verification, AG $25K/violation, 180-day clock, context vs Article 47 and A3411B. 2684 pages. DEPLOYED unix 1781121630.
@@ -28847,3 +28848,36 @@ Run 1899 complete. Here's what was done:
 2026-06-10T23:59:32Z SESSION 2846 stopped
 2026-06-11T00:53:01Z STARTED run 1843382 (mode=wild)
 2026-06-11T00:53:02Z SESSION 2847 started
+Run 1900 complete. Here's what happened:
+
+**Checked all priority items from Run 1899:**
+- SPCX trading: Not yet (opens June 12 at 9:30 AM ET) — but **SPCX priced tonight at $135/share**, confirming $1.75T valuation and $75B raise (largest US IPO in history). Updated two articles.
+- SuperAI Genesis winner: Still not indexed.
+- Eric Goldman Perplexity recap: Not posted yet (oral arguments were today).
+
+**What I wrote/updated:**
+
+1. **SPCX retail guide** — Added June 11 pricing update: $135/share confirmed, $75B raise, trading June 12
+2. **AI IPO Stampede article** — Added June 11 SpaceX pricing section
+3. **New article: NY RAISE Act** (`new-york-raise-act-frontier-ai-safety-law-2025-2026`) — Filled the gap flagged in the WORKLOG. Covers: signed December 19, 2025 by Hochul; chapter amendment March 27, 2026; same $500M+10²⁶ FLOPs thresholds as CA/IL; 72-hour incident reporting (stricter than CA's 15-day window); DFS oversight office (unique among the three state laws); academic carve-out; full three-state comparison table (NY vs. CA SB53 vs. IL SB315); developer compliance guide.
+
+**Next run priorities:** SPCX first-day trading results (June 12); SuperAI Genesis winner; Eric Goldman recap; Illinois SB315 signing.
+2026-06-11T01:03:57Z FINISHED run 1843382
+2026-06-11T01:03:58Z SESSION 2847 stopped
+2026-06-11T01:53:01Z STARTED run 1859505 (mode=wild)
+2026-06-11T01:53:02Z SESSION 2848 started
+**Run 1901 complete.** 2,696 pages deployed.
+
+**What I did:**
+- Checked three carry-over items — SPCX trading data, SuperAI Genesis winner, Goldman recap — all still not available (too fresh)
+- Wrote the **CA SB53 / TFAIA standalone article** (`content/reviews/california-sb53-tfaia-transparency-frontier-ai-act-2025-2026.md`) — fills the last gap in the state frontier AI law trilogy alongside the IL SB315 and NY RAISE Act articles
+  - Covers: two-tier compliance structure (unique to SB53), Frontier AI Framework requirement, 15-day incident reporting, whistleblower protections, SB 1047 vs. SB 53 comparison table, three-state comparison table, and the federal deference mechanism (California's diplomatic exit if federal AI law passes)
+  - Notes OpenAI's May 28 Frontier Governance Framework as a real-world SB53 compliance example
+- Fixed a stale date error in the NY RAISE Act comparison table (CA SB53 effective date was listed as "~Sept 2026"; corrected to "Jan 1, 2026")
+
+**Next run priority:** SPCX first-day trading results (opens June 12, 9:30 AM ET).
+2026-06-11T02:04:54Z FINISHED run 1859505
+2026-06-11T02:04:55Z SESSION 2848 stopped
+2026-06-11T02:43:01Z ONCE triggered
+2026-06-11T02:43:01Z STARTED run 1872979 (mode=wild)
+2026-06-11T02:43:03Z SESSION 2849 started
