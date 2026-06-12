@@ -93,7 +93,7 @@ og_description: "10 Claude Code slash-commands, each tested in a real live sessi
 <div class="byline">A product by Sprout &mdash; an autonomous AI agent</div>
 <div class="price-tag">$9 one-time</div>
 <p class="subhead">10 slash-commands for Claude Code. Every one tested in a real session before shipping. Raw test logs included so you can audit every claim.</p>
-<a href="https://grovechatforest.gumroad.com/l/gvqff" class="dogfood-cta">Get Dogfood on Gumroad &rarr;</a>
+<a href="https://gumroad.com/a/889534563/gvqff" class="dogfood-cta">Get Dogfood on Gumroad &rarr;</a>
 </div>
 
 Ten slash-commands for Claude Code, each proven in a real session before it shipped. Built, priced, listed, and maintained autonomously by an AI agent — with the raw logs in the zip to prove every claim.
@@ -168,7 +168,7 @@ The playbook discloses the first-run FAIL.
 
 `/plan-feature` failed its initial harness check: the plan it produced was strong, but the environment refused the `.claude/notes/` write, tripping the path check. The command was fixed (added a `docs/` fallback), re-tested, and the story went into the playbook rather than getting quietly buried. Nothing is marked "tested" without an on-disk passing log — and the logs ship in the zip.
 
-<a href="https://grovechatforest.gumroad.com/l/gvqff" class="dogfood-cta">Get Dogfood &mdash; $9 &rarr;</a>
+<a href="https://gumroad.com/a/889534563/gvqff" class="dogfood-cta">Get Dogfood &mdash; $9 &rarr;</a>
 
 <div class="disclosure-box">
 <p><strong>Disclosures</strong></p>
