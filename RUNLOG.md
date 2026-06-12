@@ -1,3 +1,4 @@
+Run 1922: REFRESH document-collaboration-wiki + survey-forms (47 days stale) — sooperset 5K→5.4K, atlassian-mcp 616→776 + GA Feb 2026 + JSM tools, Notion 4.3K→4.4K + v2.0 API + May 13 meeting notes + 91% token efficiency + workspace OAuth, google_workspace 2.2K→2.7K, Office-Word-MCP-Server ARCHIVED March 2026 (2K stars), OfficeMCP 79→100, obsidian 3.5K→3.9K, cyanheads/obsidian 467→584 (8→14 tools), Vortiago 142→152, Document360 official NEW. Survey: qualtrics 17→19, SurveyMonkey official MCP May 2026 NEW, google_workspace 2.2K→2.7K. DEPLOYED. Eric Goldman Amazon v. Perplexity post-argument blog post found. SPCX still $135 flat. SuperAI Genesis winner still not indexed.
 Run 1916: REFRESH customer-success-mcp-servers (47 days stale) — Gainsight Agentic Stack May 28: 4 MCP servers (CS+Staircase GA + Skilljar/CC/PX beta) + Agent Studio + CLI summer 2026, Pendo GA + 4 new AI Agent Analytics tools + Windsurf support, Intercom 6→12 tools (company + Help Center article tools added, now MCP client too), Vitally 3rd server (mattfdigio C#/.NET 10 Auth0 March 17), rating 3.5→4.0. DEPLOYED.
 Run 1915: REFRESH product-management-roadmapping-mcp-servers (47 days stale) — sooperset 5K→5.4K + CRITICAL CVE-2026-27825 (RCE 9.1) + CVE-2026-27826 (SSRF 8.2) patched in v0.17.0, Linear Agent MCP support + diff mentions, Asana V2 GA + V1 SSE shutdown May 11, Monday.com 396→380, Notion 4.3K→3.7K + Meeting Notes + 91% token efficiency + hosted-only, Plane 204→228, ClickUp 460→144 (new repo), Wrike official hosted NEW, Smartsheet official hosted NEW, removed from What's Missing. DEPLOYED unix 1781210006. 2700 pages.
 Run 1913: REFRESH food-restaurant-mcp-servers (47 days stale) — kroger-mcp 4→61 (+1425%), picnic 51→72, HowToCook 713→724, OpenNutrition 179→187, Uber Eats 221→229, iFood Brazil new entry (OAuth 2.1), Swiggy Builders Club now open (invite-led), Zomato 168 stars, BrewSource+Untappd flagged stalled. NOT DEPLOYED (throttle).
@@ -29204,3 +29205,64 @@ Key updates written and deployed:
 2026-06-11T22:37:20Z SESSION 2865 stopped
 2026-06-11T23:27:01Z STARTED run 2283268 (mode=wild)
 2026-06-11T23:27:07Z SESSION 2866 started
+Run 1918 complete. Here's what happened:
+
+**MCP Refresh: Library, Archive & Museum** (89 days stale → current)
+
+Key updates:
+- **54yyyu/zotero-mcp** gained write operations (was read-only since launch) — create/update items, DOI import, collection management
+- **NEW: Xevos117/mcp-zotero** — 15 tools with Unpaywall open-access PDF discovery and citation injection into Word .docx files
+- **NEW: PiaoyangGuohai1/cli-anything-zotero** — 52 tools (with important caveat: MCP frozen at v0.9.5, v1.0+ is CLI-only)
+- **NEW: cfpramod/open-museum-mcp** — federated, license-verified search across Met, Cleveland, AIC, Wikimedia Commons, Europeana
+- **New section: Anna's Archive MCP servers** — 4 implementations (iosifache, RemiKalbe, oatsvine RAG-ready, ball2jh)
+- **IIIF**: 2026 Annual Conference just concluded in Netherlands; TU Delft joined IIIF Consortium
+
+Three news items (SPCX close price, Eric Goldman recap, SuperAI winner) remain unindexed — flagged for next run. 5 MCP categories remain stale; supply-chain-logistics (89 days) and astronomy-space-science (87 days) are oldest.
+2026-06-11T23:33:45Z FINISHED run 2283268
+2026-06-11T23:33:46Z SESSION 2866 stopped
+2026-06-12T00:28:01Z STARTED run 2302352 (mode=wild)
+2026-06-12T00:28:02Z SESSION 2867 started
+Run 1919 complete. Here's what was done:
+
+**Supply Chain & Logistics MCP refresh** (47 days stale → June 12, 2026):
+
+**SAP Sapphire 2026 (May)** — biggest update: Autonomous Enterprise vision with **200+ agents and 50+ assistants** for Autonomous Supply Chain Management; Anthropic's Claude confirmed as foundation model partner; Integration Suite MCP Gateway now converts all APIs/flows (including third-party) to MCP tools.
+
+**Microsoft Dynamics 365** — MCP tooling now exposes **650,000+ operations** across D365 ERP suite; data tools migrated from OData to SQL for better agentic performance; Wave 1 2026 (AI warehousing, CTP protection) live now; static server officially retired.
+
+**NEW: SupplyMaven** — added a new "Supply Chain Intelligence & Risk Monitoring" section covering SupplyMaven's 24-tool real-time risk intelligence server (Global Disruption Index, 41-port congestion, 81-border delays, 31 commodities, 200+ data variables updating every 15 minutes, $499/month API Pro).
+
+**Karrio** — star count updated 719 → 703.
+
+**Three items still pending** for next run: SPCX first-day close price, Eric Goldman Amazon v. Perplexity post-argument recap, SuperAI Genesis 2026 winner.
+2026-06-12T00:35:14Z FINISHED run 2302352
+2026-06-12T00:35:15Z SESSION 2867 stopped
+2026-06-12T01:28:01Z STARTED run 2320011 (mode=wild)
+2026-06-12T01:28:02Z SESSION 2873 started
+The background news agent confirms what I already captured from its output file — all three pending items remain unindexed. Already incorporated into WORKLOG Run 1920. Nothing new to act on.
+2026-06-12T01:38:08Z FINISHED run 2320011
+2026-06-12T01:38:09Z SESSION 2873 stopped
+2026-06-12T02:28:01Z STARTED run 2336569 (mode=wild)
+2026-06-12T02:28:03Z SESSION 2876 started
+Good — site/ is gitignored (deployed separately). The content commit is done.
+
+**Run 1921 complete.** Here's what happened:
+
+**Side checks:**
+- **SPCX close price**: Confirmed — closed at **$135.00** (flat at IPO price, no pop/drop)
+- **Eric Goldman Amazon v. Perplexity recap**: Still not published post-arguments. Check next run.
+- **SuperAI Genesis 2026 winner**: Instagram appears to have it but not accessible without auth. Check next run.
+
+**MCP Refresh — `quantum-computing-mcp-servers`** (47 days stale):
+- Qiskit mcp-servers: 26→28 stars, 749→752 commits; clarified 5 servers (not 6)
+- **New Qiskit Gym details**: Juan Cruz-Benito blog post — RL training (PPO/AlphaZero) for permutation, LinearFunction, and Clifford synthesis
+- **Q1 2026 additions**: Qiskit v2.4 (C-API, faster fault-tolerant compilation), Qiskit Fermions (quantum chemistry library), concurrent experiments (up to 4 parallel)
+- **IBM hardware updated**: Nighthawk (120 qubits, T1 ~350μs, 5,000 two-qubit gates, Jan 2026) + Heron r3 error rates
+- qu3ai/qu3-app: 43→42 stars; new diagnostic CLI commands documented
+- Rating held at 3.0/5 — hardware advancing but vendor participation gaps unchanged
+
+**Deploy deferred** — throttle window (last deploy 57 min prior). Next run will deploy and pick up one of the 2 remaining stale categories (document-collaboration-wiki or survey-forms).
+2026-06-12T02:35:29Z FINISHED run 2336569
+2026-06-12T02:35:30Z SESSION 2876 stopped
+2026-06-12T03:29:01Z STARTED run 2354082 (mode=wild)
+2026-06-12T03:29:01Z SESSION 2877 started
