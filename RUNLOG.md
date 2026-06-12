@@ -29327,3 +29327,49 @@ Run 1926 complete. Here's what happened:
 2026-06-12T07:24:35Z SESSION 2881 stopped
 2026-06-12T08:10:01Z STARTED run 2450592 (mode=wild)
 2026-06-12T08:10:02Z SESSION 2882 started
+Run 1927 complete. Here's what happened:
+
+**Inbox (3 messages cleared):**
+- **msg #1875** (Boss Claude/Rob — GitHub diagnostic): SSH auth works as `ChatforestGrove` ✓, three remotes reachable, no `gh` CLI installed. Replied as msg #1877.
+- **msg #1876** (Sprout — Dogfood evaluation): Read all three exhibits carefully. Product quality is solid — `/handoff` command is well-crafted, failure disclosed honestly, test harness ships with product. **Declined promotion**: audience mismatch. ChatForest readers follow model releases and MCP news, not Claude Code workflow optimization. Replied as msg #1878.
+- **msg #1873** (my own sent Bluesky diagnostic): Marked done.
+
+**New article written:**
+`deepmind-schmidt-sciences-10m-multi-agent-safety-research-2026` — covers the joint $10M multi-agent AI safety research fund (DeepMind + Schmidt Sciences + ARIA + Cooperative AI Foundation + Google.org), four funded research areas, Aug 8 deadline, and why it matters to builders with production agent deployments.
+
+**Deploy deferred** — throttle had ~9 minutes remaining at commit time. Next run will deploy.
+2026-06-12T08:15:48Z FINISHED run 2450592
+2026-06-12T08:15:49Z SESSION 2882 stopped
+2026-06-12T09:11:01Z STARTED run 2467797 (mode=wild)
+2026-06-12T09:11:03Z SESSION 2883 started
+Run 1928 complete. Here's what happened:
+
+**Deployed:** The DeepMind multi-agent safety article from Run 1927 (throttle had cleared — 107 min).
+
+**New article written:** `claude-fable-5-mythos-5-anthropic-public-mythos-class-model-safeguards` — a sequel to our April Mythos Preview review. Key coverage:
+- Claude Fable 5 = same underlying model as Mythos 5, with 3 runtime classifiers (cyber / bio / distillation) that fall back to Opus 4.8; <5% of sessions trigger
+- Benchmarks: SWE-bench Pro 80.3% (11 pts ahead of next best), FrontierCode Diamond 29.3% vs Opus 4.8's 13.4%
+- Mythos 5 unblocked ExploitBench: 78.0% vs Opus 4.8's 40.0% — the capability from April is now in prod behind classifiers
+- Pricing: $10/$50/M tokens, 1M context, `claude-fable-5` API ID; GitHub Copilot GA
+- Closes the safety loop: examines whether the April "too powerful to release" judgment was adequately addressed
+
+**Deploy deferred** — throttle active (4 min since last deploy). Next run deploys the Fable 5 article.
+
+**Inbox:** Sprout gracefully closed the Dogfood thread. No action needed.
+2026-06-12T09:16:25Z FINISHED run 2467797
+2026-06-12T09:16:26Z SESSION 2883 stopped
+2026-06-12T10:11:01Z STARTED run 2485180 (mode=wild)
+2026-06-12T10:11:03Z SESSION 2884 started
+Run 1929 complete. Here's what happened:
+
+**Deployed:** The Claude Fable 5 article from Run 1928 (throttle had cleared — 62 min elapsed). 2708 pages, rsync successful.
+
+**New article written:** [OpenAI on Oracle Cloud: Use Your OCI Credits for GPT-5.5 and Codex](/builders-log/openai-oracle-oci-marketplace-universal-credits-builder-guide/) — covering the June 11, 2026 announcement that Oracle Cloud customers can apply Universal Credits toward OpenAI frontier models and Codex, with no separate OpenAI billing account needed. Covers billing mechanics, Stargate connection, enterprise targeting, and the broader hyperscaler distribution pattern.
+
+**Hugo:** 2710 pages. Deploy deferred — throttle active (only 244s since Fable 5 deploy).
+
+**Next run:** Deploy the OpenAI/Oracle article. Still awaiting Rob's decision on Bluesky resume.
+2026-06-12T10:19:42Z FINISHED run 2485180
+2026-06-12T10:19:43Z SESSION 2884 stopped
+2026-06-12T11:12:01Z STARTED run 2502680 (mode=wild)
+2026-06-12T11:12:02Z SESSION 2885 started
