@@ -29271,3 +29271,59 @@ The news agent result matches what I already captured from the output file. Run 
 2026-06-12T03:36:17Z SESSION 2877 stopped
 2026-06-12T04:29:01Z STARTED run 2372614 (mode=wild)
 2026-06-12T04:29:02Z SESSION 2878 started
+Run 1923 complete.
+
+**What I did:**
+- Committed outstanding Run 1922 artifacts (logging entries + tracked site files)
+- Updated the Amazon v. Perplexity article with post-argument reporting: panel showed notable skepticism (Bloomberg Law: "cool reception"), Judge Hinderaker acknowledged the 1986 statute wasn't built for these circumstances, Amazon pressed the Brave/Edge factual point, Perplexity countered with the user-intent delegation argument. Expanded "What Happens Next" to four outcome scenarios and cited Goldman's post-argument analysis.
+- Deployed to chatforest.com
+
+**Pending:** SuperAI Genesis 2026 winner still not indexed. Next MCP refresh wave ~June 26.
+2026-06-12T04:36:35Z FINISHED run 2372614
+2026-06-12T04:36:36Z SESSION 2878 stopped
+2026-06-12T05:09:01Z ONCE triggered
+2026-06-12T05:09:01Z STARTED run 2384485 (mode=wild)
+2026-06-12T05:09:02Z SESSION 2879 started
+Committed. Run 1924 complete.
+
+**What I did this run:**
+
+- Checked inbox — no pending messages
+- Checked SuperAI Genesis 2026 winner — still not indexed (scheduled announcement happened June 11, but winner name not appearing in search results)
+- Researched major AI news to find uncovered content; MAI-Code-1-Flash, Colorado AI Act, GPT-5.5, MiniMax M2.5/M2.7 were already covered
+- **New article**: `minimax-m3-1m-context-multimodal-msa-coding-review` — MiniMax M3 (June 1, 2026)
+
+**M3 article covers:**
+- MSA (MiniMax Sparse Attention) architecture — 9.7x prefill / 15.6x decode speedup at 1M context vs M2
+- Native multimodal from pretraining step zero (text/image/video)
+- SWE-bench Pro 59.0% (ties GPT-5.5 tier, below Opus 4.7's 64.3%)
+- BrowseComp 83.5 (beats Opus 4.7)
+- Pricing: $0.60/$2.40 standard, 50% launch promo
+- Open-weight pending confirmation; license not published; M2.7 commercial-restriction precedent flagged
+- Rating: 4/5
+
+**Deploy deferred** — last deploy was 39 minutes before run end (throttle: 1/hour). Will deploy next run.
+2026-06-12T05:16:12Z FINISHED run 2384485
+2026-06-12T05:16:13Z SESSION 2879 stopped
+2026-06-12T06:09:01Z STARTED run 2402748 (mode=wild)
+2026-06-12T06:09:02Z SESSION 2880 started
+Confirmed — the background agent's result matches what I already read from the output file. SuperAI Genesis 2026 winner is abandoned. Run 1925 is fully complete.
+2026-06-12T06:10:52Z FINISHED run 2402748
+2026-06-12T06:10:52Z SESSION 2880 stopped
+2026-06-12T07:10:01Z STARTED run 2433407 (mode=wild)
+2026-06-12T07:10:02Z SESSION 2881 started
+2026-06-12T07:11:01Z ONCE triggered
+Run 1926 complete. Here's what happened:
+
+**Inbox (high priority):**
+- **Bluesky diagnostic**: Auth works perfectly (tested `createSession` — got valid JWT). The gap is drift, not breakage: posting was always an inline step per run, tied to guide creation. When the work mode shifted to builders-log news articles (~Run 693+), the social step wasn't replicated. Script, credentials, and AT Protocol endpoint are all functional. Sent full diagnostic to Rob via Jikan msg #1873 — awaiting his decision on whether/how to resume.
+- **Sprout Dogfood pitch**: Replied asking for 3 specifics before deciding to promote (full command text, failure story verbatim, a PASS log excerpt). Evaluation pending their reply.
+
+**New article:**
+**Cohere North Mini Code** — released June 11, genuinely uncovered topic. 30B total / 3B active MoE, Apache 2.0, SWE-Bench Pro 61.0% pass@1 (beats Claude Opus 4.7), single H100 in FP8. Covers architecture, training methodology (RLVR on 70K+ verifiable tasks), deployment (vLLM/SGLang — no llama.cpp yet), comparison table, and builder checklist. Deployed: 2704 pages.
+
+**Next run:** Await Rob's Bluesky reply + Sprout's eval data; consider Google DeepMind $10M multi-agent safety piece (also fresh from June 11, uncovered).
+2026-06-12T07:24:34Z FINISHED run 2433407
+2026-06-12T07:24:35Z SESSION 2881 stopped
+2026-06-12T08:10:01Z STARTED run 2450592 (mode=wild)
+2026-06-12T08:10:02Z SESSION 2882 started
