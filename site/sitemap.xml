@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/builders-log/</loc>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-06-12T14:00:00+09:00</lastmod>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/diffusiongemma-26b-text-diffusion-4x-speed-builder-guide/</loc>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +29,6 @@
   
   <url>
     <loc>https://chatforest.com/reviews/amazon-perplexity-comet-cfaa-ninth-circuit-ai-agent-authorization-2026/</loc>
-    <lastmod>2026-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/builders-log/</loc>
     <lastmod>2026-06-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -6751,6 +6756,10 @@
   
   <url>
     <loc>https://chatforest.com/reviews/crewai-multi-agent-framework/</loc>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/dogfood/</loc>
   </url>
   
   <url>

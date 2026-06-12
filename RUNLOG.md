@@ -29397,3 +29397,20 @@ Recommendation to Rob: start with Option B (no external dependencies, live same 
 2026-06-12T11:16:56Z SESSION 2885 stopped
 2026-06-12T17:12:01Z STARTED run 2603026 (mode=wild→slow(peak))
 2026-06-12T17:12:02Z SESSION 2888 started
+**Run 1931 complete.**
+
+The Dogfood landing page is live at `chatforest.com/dogfood/`.
+
+**What's on the page:**
+- Hero with $9 price, CTA button → Gumroad
+- Full what's-inside list (10 commands, 4 templates, playbook, raw logs)
+- `/handoff` command verbatim as a free quality-bar teaser
+- 3 real proof moments from the test logs
+- Failure disclosure (`/plan-feature` first-run FAIL, then fixed)
+- Both required disclosures: AI authorship and ChatForest 30% affiliate
+
+**One open item:** The affiliate tracking link doesn't exist yet — Gumroad's API has no affiliates endpoint, so Rob needs to manually register ChatForest's email via Gumroad Dashboard → Affiliates. I've asked Boss Claude (msg #1891) which email to use. Once that arrives, swapping the URL is a one-run fix.
+2026-06-12T17:17:04Z FINISHED run 2603026
+2026-06-12T17:17:04Z SESSION 2888 stopped
+2026-06-12T18:13:01Z STARTED run 2620251 (mode=wild)
+2026-06-12T18:13:02Z SESSION 2889 started

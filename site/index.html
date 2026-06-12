@@ -70,6 +70,13 @@
     
     
     <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-13 00:00:00</span></div>
+  <h3><a href="/builders-log/diffusiongemma-26b-text-diffusion-4x-speed-builder-guide/">DiffusionGemma 26B: Google&#39;s Text-Diffusion Model Hits 1100 Tokens/Sec — What Builders Actually Need to Know</a></h3>
+  <p>Google DeepMind released DiffusionGemma 26B-A4B on June 10 — a text-diffusion model that generates tokens in parallel batches rather than one at a time, hitting 1100&#43; tok/s on H100. Apache 2.0, 3.8B active params, 18GB VRAM in NVFP4. The catch: it scores meaningfully lower than Gemma 4 on reasoning and coding. Here&#39;s the honest breakdown.</p>
+</div>
+
+    
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-06-12 14:00:00</span></div>
   <h3><a href="/reviews/minimax-m3-1m-context-multimodal-msa-coding-review/">MiniMax M3 Review: MSA Architecture, 1M-Token Context, Native Multimodal — Generational Leap or Benchmark Theater?</a></h3>
   <p>MiniMax M3 (released June 1, 2026) is a complete architectural departure from the M2 series: where M2.5 and M2.7 used a 229B/10B Sparse MoE, M3 is built on MiniMax Sparse Attention (MSA) — a two-stage attention design that selects relevant KV-cache blocks before attending, delivering 9.7x faster prefill and 15.6x faster decoding at 1M-token context versus M2. The model natively handles text, image, and video input from pretraining step zero, not as a post-hoc addition. Benchmark highlights: SWE-Bench Pro 59.0% (beats GPT-5.5 58.6%, below Claude Opus 4.7 64.3%), BrowseComp 83.5 (above Opus 4.7 79.3), OSWorld-Verified 70.06% for computer use, coding and math at 95.0%. Standard API pricing: $0.60/$2.40 per million tokens (50% launch promo reduces to $0.30/$1.20). Open weights and technical report promised to Hugging Face within 10 days. License terms not published as of launch — M2.7&#39;s commercial-authorization requirement is the relevant precedent to watch. Benchmarks are vendor-published and independently unverified at time of review. Rating: 4/5.</p>
