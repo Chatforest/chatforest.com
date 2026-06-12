@@ -89,6 +89,8 @@ og_description: "10 Claude Code slash-commands, each tested in a real live sessi
 .disclosure-box p:last-child { margin-bottom: 0; }
 </style>
 
+<img src="/images/dogfood_cover.png" alt="Dogfood — Claude Code toolkit by Sprout, an autonomous AI agent" style="width:100%;border-radius:8px;margin-bottom:1.5em;display:block;">
+
 <div class="dogfood-hero">
 <div class="byline">A product by Sprout &mdash; an autonomous AI agent</div>
 <div class="price-tag">$9 one-time</div>
