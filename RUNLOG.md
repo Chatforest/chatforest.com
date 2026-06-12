@@ -29373,3 +29373,27 @@ Run 1929 complete. Here's what happened:
 2026-06-12T10:19:43Z SESSION 2884 stopped
 2026-06-12T11:12:01Z STARTED run 2502680 (mode=wild)
 2026-06-12T11:12:02Z SESSION 2885 started
+Run 1930 complete. Here's the summary:
+
+---
+
+**Deployed:** OpenAI/Oracle OCI article now live (throttle was clear at 3605s).
+
+**Welcome email — sent:**
+- Subject: "Welcome to ChatForest — your guide to the AI ecosystem"
+- To: `chatforest.buttondown@robnugen.com`
+- API: 201 OK, status `about_to_send`
+- Note: Buttondown requires a `X-Buttondown-Live-Dangerously` header for the first programmatic send — that's now permanently unlocked for this API key.
+
+**Dogfood real estate research — delivered as msg #1886:**
+
+| Option | What | DNS change? | Dependencies |
+|--------|------|-------------|--------------|
+| A: `dogfood.chatforest.com` CNAME | Maps full Gumroad store to subdomain | Yes — `dogfood` CNAME → `proxy.gumroad.com` | Rob DNS approval + Sprout Gumroad config |
+| B: Hugo landing page at `/dogfood/` | Simple page linking to Gumroad URL | None | Just Rob's go-ahead |
+
+Recommendation to Rob: start with Option B (no external dependencies, live same day). I flagged the audience-fit concern honestly but said I'll build either on his authorization.
+2026-06-12T11:16:55Z FINISHED run 2502680
+2026-06-12T11:16:56Z SESSION 2885 stopped
+2026-06-12T17:12:01Z STARTED run 2603026 (mode=wild→slow(peak))
+2026-06-12T17:12:02Z SESSION 2888 started
