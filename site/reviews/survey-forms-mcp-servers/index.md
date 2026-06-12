@@ -1,13 +1,13 @@
 # Survey & Forms MCP Servers — Qualtrics, Tally, Typeform, Jotform, Google Forms, and More
 
-> Survey and forms MCP servers reviewed: Qualtrics community (17 stars, 53 tools across 8 domains), Tally official (20+ tools, free, safety-first), Typeform official (beta, PAT auth) + community (47 tools), Jotform official (24 stars, 6 tools, OAuth, hosted), Google Forms community (multiple servers including google_workspace_mcp 2.2K stars), survey-mcp-server (8 tools, skip logic, pluggable storage), SurveyMars official (1 tool), Weavely (AI form generation). Rating: 3.0/5.
+> Survey and forms MCP servers reviewed: SurveyMonkey official MCP (May 2026), Qualtrics community (19 stars, 53 tools across 8 domains), Tally official (20+ tools, free, safety-first), Typeform official (beta, PAT auth) + community (47 tools), Jotform official (6 tools, OAuth, hosted), Google Forms community (multiple servers including google_workspace_mcp 2.7K stars), survey-mcp-server (8 tools, skip logic, pluggable storage), SurveyMars official (1 tool), Weavely (AI form generation). Rating: 3.0/5.
 
 
 Survey and forms platforms are among the most widely used SaaS tools — from customer feedback and market research to academic studies and internal data collection. MCP servers in this space let AI agents create forms, manage questions, distribute surveys, and analyze responses through natural language. The ecosystem is fragmented: a few platforms have invested in official MCP servers while most rely on community implementations of varying quality. Part of our **[Productivity & Office MCP category](/categories/productivity-office/)**.
 
 This review covers **enterprise research platforms** (Qualtrics), **modern form builders** (Tally, Typeform, Jotform), **Google Forms** community servers, **AI-native survey tools** (survey-mcp-server, SurveyMars, Weavely), and the broader landscape of form-adjacent MCP access through workspace integrations. For CRM-related form handling, see our [CRM MCP Servers](/reviews/crm-mcp-servers/) review. For marketing forms and lead capture, see [Marketing Automation MCP Servers](/reviews/marketing-automation-mcp-servers/).
 
-The headline finding: **Qualtrics has the deepest MCP integration** with 53 tools, but it's community-built. **Tally is the best free option** with official MCP, unlimited forms, and safety guardrails. **Typeform's official MCP is still beta** with limited documentation, while a community server fills the gap with 47 tools. **Google Forms has no official MCP** despite being the most-used form tool globally. **SurveyMonkey has no MCP server at all** — only third-party middleware like Zapier MCP. **Most servers have very low star counts**, reflecting how early this category is.
+The headline finding: **SurveyMonkey launched an official Claude MCP integration in May 2026**, closing the category's biggest gap. **Qualtrics has the deepest integration** with 53 tools, but it's community-built. **Tally is the best free option** with official MCP, unlimited forms, and safety guardrails. **Typeform's official MCP is still beta** with limited documentation, while a community server fills the gap with 47 tools. **Google Forms has no official MCP** despite being the most-used form tool globally. **Most servers have very low star counts**, reflecting how early this category still is.
 
 ## Enterprise Research Platforms
 
@@ -15,9 +15,9 @@ The headline finding: **Qualtrics has the deepest MCP integration** with 53 tool
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| qualtrics-mcp-server (yrvelez) | ~17 | TypeScript | MIT | 53 tools | No |
+| qualtrics-mcp-server (yrvelez) | ~19 | TypeScript | MIT | 53 tools | No |
 
-**Qualtrics MCP** ([yrvelez/qualtrics-mcp-server](https://github.com/yrvelez/qualtrics-mcp-server), 17 stars, MIT, TypeScript) is the most comprehensive survey MCP server available. It exposes **53 tools across 8 domains**, giving full control over the Qualtrics platform through natural language:
+**Qualtrics MCP** ([yrvelez/qualtrics-mcp-server](https://github.com/yrvelez/qualtrics-mcp-server), 19 stars, MIT, TypeScript) is the most comprehensive survey MCP server available. It exposes **53 tools across 8 domains**, giving full control over the Qualtrics platform through natural language:
 
 - **Surveys (8 tools)** — list, get, create, update, delete, activate, deactivate, estimate export size
 - **Questions (7 tools)** — list, get, create, update, delete, plus helpers for multiple-choice, text entry, and matrix questions
@@ -106,7 +106,7 @@ A community alternative ([The-AI-Workshops/jotform-mcp-server](https://github.co
 
 | Server | Stars | Language | License | Tools | Official |
 |--------|-------|----------|---------|-------|----------|
-| google_workspace_mcp | ~2,200 | Python | MIT | Forms + 11 services | No |
+| google_workspace_mcp | ~2,700 | Python | MIT | Forms + 11 services | No |
 | google-forms-mcp (matteoantoci) | ~11 | JavaScript | — | 5 tools | No |
 | mcp-server-google-forms (HosakaKeigo) | ~0 | TypeScript | MIT | 3 tools | No |
 | google-forms-mcp (delorenj) | — | — | — | — | No |
@@ -115,7 +115,7 @@ A community alternative ([The-AI-Workshops/jotform-mcp-server](https://github.co
 
 **Google Forms has no official MCP server.** Google announced MCP support for several Cloud services in 2025, but Google Forms was not included. Multiple community implementations exist, with varying levels of maturity.
 
-The best path to Google Forms MCP access is through **google_workspace_mcp** ([taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp), 2,200 stars, MIT, Python) — a comprehensive Google Workspace server covering 12 services including Forms. Forms capabilities include creation, publish settings, and response management alongside Gmail, Calendar, Drive, Docs, Sheets, Slides, Tasks, Contacts, Chat, and Search. Available on PyPI as `workspace-mcp`. This is the **highest-adoption server in this entire review** by a wide margin, though Forms is just one of its many services.
+The best path to Google Forms MCP access is through **google_workspace_mcp** ([taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp), 2,700 stars, MIT, Python) — a comprehensive Google Workspace server covering 12 services including Forms. Forms capabilities include creation, publish settings, and response management alongside Gmail, Calendar, Drive, Docs, Sheets, Slides, Tasks, Contacts, Chat, and Search. Available on PyPI as `workspace-mcp`. This is the **highest-adoption server in this entire review** by a wide margin, though Forms is just one of its many services.
 
 **google-forms-mcp** ([matteoantoci/google-forms-mcp](https://github.com/matteoantoci/google-forms-mcp), 11 stars, JavaScript) is the most popular Forms-dedicated server with 5 tools: `create_form`, `add_text_question`, `add_multiple_choice_question`, `get_form`, `get_form_responses`. Uses OAuth 2.0.
 
@@ -161,11 +161,17 @@ Microsoft Forms has **no dedicated MCP server**, but access is available through
 
 None of these servers have dedicated Forms tools — access is through the broader Microsoft Graph API. See our [Spreadsheet & Office Suite MCP Servers](/reviews/spreadsheet-office-suite-mcp-servers/) review for more Microsoft 365 coverage.
 
+## SurveyMonkey (Official — May 2026)
+
+**SurveyMonkey** launched an **official MCP connector for Claude in May 2026**, closing the biggest gap in this category. The integration enables users to create and send surveys, analyze responses, and surface patterns in Claude conversations directly. SurveyMonkey announced the integration as part of a broader Claude AI partnership, positioning it as a way for researchers and marketers to work with survey data through natural language rather than the SurveyMonkey dashboard.
+
+This is a significant development — SurveyMonkey is the second-most popular survey platform globally, and its absence was previously the most notable gap in this category. Note that the integration was announced through a partnership announcement rather than an open-source GitHub repository; the MCP connector may be hosted/managed rather than self-hosted.
+
 ## What's Missing
 
 The survey and forms MCP ecosystem has significant gaps:
 
-- **SurveyMonkey** — the second-most popular survey platform has **no MCP server**. Only accessible through third-party middleware: Zapier MCP (action wrapper), CData (read-only SQL connector), Composio, and viaSocket
+- **SurveyMonkey** — now has an official MCP connector (May 2026), but it appears to be a managed/hosted integration rather than an open-source server
 - **Hotjar / Survicate / SurveySparrow** — no MCP servers for any major website feedback and in-app survey tools
 - **Alchemer (SurveyGizmo)** — no MCP server despite enterprise research focus
 - **Qualaroo** — no MCP server for on-site survey widgets
@@ -178,9 +184,9 @@ The survey and forms MCP ecosystem has significant gaps:
 
 ## Rating: 3.0 / 5
 
-The survey and forms MCP ecosystem is **functional but immature**. Qualtrics has the deepest integration at 53 tools, but it's community-built and limited to enterprise Qualtrics customers. Tally stands out as the only form builder offering a genuinely free, full-featured official MCP with safety guardrails. Jotform has a clean official implementation but with only 6 tools. Typeform is beta with undocumented tools. Google Forms relies entirely on community servers. The most popular survey platform (SurveyMonkey) has no MCP presence at all.
+The survey and forms MCP ecosystem is **functional but maturing**. Qualtrics has the deepest integration at 53 tools, but it's community-built and limited to enterprise Qualtrics customers. Tally stands out as the only form builder offering a genuinely free, full-featured official MCP with safety guardrails. Jotform has a clean official implementation. Typeform is beta with undocumented tools. Google Forms relies entirely on community servers. The **May 2026 SurveyMonkey official MCP** closes the category's biggest gap.
 
-**Strengths**: Qualtrics community server depth, Tally's free official MCP with safety design, Jotform's hosted OAuth model, Google Workspace MCP providing Forms alongside 11 other services, survey-mcp-server's AI-native approach with pluggable backends.
+**Strengths**: Qualtrics community server depth, Tally's free official MCP with safety design, Jotform's hosted OAuth model, SurveyMonkey's official Claude integration (May 2026), Google Workspace MCP providing Forms alongside 11 other services, survey-mcp-server's AI-native approach with pluggable backends.
 
-**Weaknesses**: Most servers have under 20 stars, SurveyMonkey completely absent, no feedback/NPS tools, Typeform beta is underdocumented, Google Forms fragmented across 5+ competing community servers with no clear winner, minimal analytics capabilities.
+**Weaknesses**: Most servers have under 20 stars, no feedback/NPS tools, Typeform beta is underdocumented, Google Forms fragmented across 5+ competing community servers with no clear winner, minimal analytics capabilities, SurveyMonkey integration appears managed rather than open-source.
 

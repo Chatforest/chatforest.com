@@ -3,7 +3,7 @@
 > Document collaboration and wiki MCP servers reviewed: Atlassian Confluence official remote MCP (OAuth 2.1, Rovo) + sooperset community (5K stars, 72 tools), Microsoft SharePoint Work IQ (official hosted, Entra ID, Copilot license required) + 5 community servers, Google Workspace official (5 servers, OAuth 2.0, Docs+Drive+Sheets+Calendar+Chat) + community (2.2K stars, 12 services), Notion official (4.3K stars, 22 tools, hosted mcp.notion.com), Outline official (OAuth) + community (142 stars, 40+ tools), Coda official beta (coda.io/apis/mcp, OAuth) + 3 community servers, GitBook (auto-generated MCP for every published site, OAuth DCR), Guru official (knowledge base MCP, 5 tools, permission-aware answers), Dropbox official beta (mcp.dropbox.com, OAuth, 4 tools), BookStack community (47 API endpoints), MediaWiki community (create/edit/search), Wiki.js community (GraphQL integration), DokuWiki plugin (Streaming HTTP), Obsidian community (3.5K stars, 7 tools, MIT), Office Word MCP (1.9K stars, python-docx, document generation), OfficeMCP (79 stars, COM automation, Word+Excel+OneNote+PowerPoint), Microsoft Work IQ Word (official, create/read/comment), Quip community (4 tools, ISC), Slab community (Slabby, GraphQL). Rating: 4.0/5.
 
 
-Document collaboration is where teams spend their working hours — writing specs, maintaining wikis, editing shared documents, building knowledge bases. The MCP ecosystem has responded with **exceptional vendor participation**: Atlassian, Microsoft, Google, Notion, Outline, Coda, GitBook, Guru, and Dropbox all ship official MCP servers. The community has built even more, led by the **sooperset/mcp-atlassian** server with 5,000 stars — the most popular community MCP server covering any enterprise platform. Part of our **[Communication & Collaboration](/categories/communication-collaboration/)** category.
+Document collaboration is where teams spend their working hours — writing specs, maintaining wikis, editing shared documents, building knowledge bases. The MCP ecosystem has responded with **exceptional vendor participation**: Atlassian, Microsoft, Google, Notion, Outline, Coda, GitBook, Guru, and Dropbox all ship official MCP servers. The community has built even more, led by the **sooperset/mcp-atlassian** server with 5,400 stars — the most popular community MCP server covering any enterprise platform. Part of our **[Communication & Collaboration](/categories/communication-collaboration/)** category.
 
 This review covers **enterprise collaboration platforms** (Confluence, SharePoint, Google Workspace), **modern document tools** (Notion, Coda, Quip, Dropbox Paper), **wiki platforms** (Outline, BookStack, MediaWiki, Wiki.js, DokuWiki), **knowledge base platforms** (Guru, Slab), **personal note-taking with collaboration features** (Obsidian), and **document creation/editing tools** (Office Word MCP, OfficeMCP, Text Control). For project management tools that overlap with collaboration (Linear, Asana), see our [Communication & Collaboration](/categories/communication-collaboration/) category. For CMS platforms, see [CMS & Content Management](/reviews/cms-content-management-mcp-servers/). For PDF and document processing, see [PDF & Document Processing](/reviews/pdf-document-mcp-servers/).
 
@@ -20,9 +20,11 @@ The headline finding: **vendor participation is exceptional** — 9+ vendors shi
 
 **Confluence** has the strongest MCP coverage of any enterprise collaboration platform, with both an official remote server and the most popular community server in the entire MCP ecosystem.
 
-**Atlassian's official remote MCP server** (616 stars, 74 forks, Apache 2.0) provides a cloud-based bridge to Jira, Confluence, and Compass. Hosted on Cloudflare infrastructure, it supports OAuth 2.1 and API token authentication. Key Confluence capabilities include summarizing and searching Confluence content, creating new pages, and navigating spaces — all with permission-respecting access. Works with Claude, ChatGPT, GitHub Copilot CLI, Gemini CLI, Amazon Quick Suite, and VS Code.
+**Atlassian's official remote MCP server** (776 stars, 74 forks, Apache 2.0) reached **GA in February 2026** and provides a cloud-based bridge to Jira, Confluence, and Compass. Hosted on Cloudflare infrastructure, it supports OAuth 2.1 and API token authentication. Key Confluence capabilities include summarizing and searching Confluence content, creating new pages, and navigating spaces — all with permission-respecting access. Works with Claude, ChatGPT, GitHub Copilot CLI, Gemini CLI, Amazon Quick Suite, and VS Code.
 
-**sooperset/mcp-atlassian** (5,000 stars, 1,100 forks, MIT) is the comprehensive community alternative. **72 tools** spanning both Jira and Confluence, with Confluence-specific tools including `confluence_search` (CQL search), `confluence_get_page`, `confluence_create_page`, `confluence_update_page`, and `confluence_add_comment`. Python, supports both Cloud and Server/Data Center deployments — a critical advantage over the official server, which is Cloud-only. Available on PyPI as `mcp-atlassian`.
+**February 2026 update** added **JSM (Jira Service Management) tools**: on-call schedule queries, schedule management, incident queue access, and ITSM workflow automation. JSM tools currently require API token auth (OAuth support pending). Compass support was also added for real-time component data interaction.
+
+**sooperset/mcp-atlassian** (5,400 stars, 1,100 forks, MIT) is the comprehensive community alternative. **72 tools** spanning both Jira and Confluence, with Confluence-specific tools including `confluence_search` (CQL search), `confluence_get_page`, `confluence_create_page`, `confluence_update_page`, and `confluence_add_comment`. Python, supports both Cloud and Server/Data Center deployments — a critical advantage over the official server, which is Cloud-only. Available on PyPI as `mcp-atlassian`.
 
 Additional community servers: **jonigl/confluence-mcp-server** (HTTP server exposing Confluence search), **cosmix/confluence-mcp** (search and read access), **dsazz-mcp-confluence** (LobeHub listing). The community ecosystem is exceptionally active due to Confluence's enterprise prevalence and API maturity.
 
@@ -62,7 +64,7 @@ The community has built extensively around SharePoint. **ftaricano/mcp-onedrive-
 
 **Google** ships **five official Workspace MCP servers** — the most granular official offering of any vendor. Each service has its own endpoint, auth scope, and tool set. The Google Drive MCP server handles document operations: `create_file`, `download_file_content`, `read_file_content`, `search_files`, and metadata. OAuth 2.0 with IAM policy controls. All servers are in **preview** as of April 2026. An official Workspace CLI is "coming soon."
 
-**taylorwilsdon/google_workspace_mcp** (2,200 stars, 673 forks, MIT) is the comprehensive community alternative — **12 services and 100+ tools** in a single unified interface covering Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar, Chat, Apps Script, Tasks, Contacts, and Search. Multi-user OAuth 2.1 support, one-click Claude Desktop installation via `.dxt` bundles, stateless container-friendly operation, read-only and granular permission controls. No telemetry, no external dependencies beyond Google APIs. Full source code transparency for security auditing. This is one of the highest-starred MCP servers in any productivity category.
+**taylorwilsdon/google_workspace_mcp** (2,700 stars, 673 forks, MIT) is the comprehensive community alternative — **12 services and 100+ tools** in a single unified interface covering Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar, Chat, Apps Script, Tasks, Contacts, and Search. Multi-user OAuth 2.1 support, one-click Claude Desktop installation via `.dxt` bundles, stateless container-friendly operation, read-only and granular permission controls. No telemetry, no external dependencies beyond Google APIs. Full source code transparency for security auditing. This is one of the highest-starred MCP servers in any productivity category.
 
 Additional community servers: **piotr-agier/google-drive-mcp** (Drive, Docs, Sheets, Slides, Calendar integration), **isaacphi/mcp-gdrive** (read from Drive, edit Sheets), **a-bonus/google-docs-mcp** (deep document editing), **ophydami/MCP-Google-Doc** (Docs-specific), **aaronsb/google-workspace-mcp** (authenticated Gmail, Calendar, Drive). Also available via Google Apps Script for custom integrations.
 
@@ -75,9 +77,11 @@ Additional community servers: **piotr-agier/google-drive-mcp** (Drive, Docs, She
 | [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | stdio / Streamable HTTP | Bearer token / OAuth | 22 | Yes |
 | Notion Hosted MCP | Remote (`mcp.notion.com/mcp`) | OAuth | 22 | Yes |
 
-**Notion's official MCP server** (4,300 stars, 550 forks) is one of the most popular MCP servers overall. Version 2.0 introduced **data sources as the primary abstraction for databases**, with 22 tools covering search, page creation/editing (Markdown), database queries, and the new Views API (March 2026 — table, board, calendar, timeline, gallery, list, form, chart, map, dashboard views). Two transport modes: stdio (default, npm) and Streamable HTTP. Docker deployment available.
+**Notion's official MCP server** (4,400 stars, 550 forks) is one of the most popular MCP servers overall. Version 2.0 (Notion API 2025-09-03) introduced **data sources as the primary abstraction for databases**, replacing `post-database-query`, `update-a-database`, and `create-a-database` with new tools including `query-data-source`, `create-a-data-source`, and `move-page`. Two transport modes: stdio (default, npm) and Streamable HTTP. Docker deployment available.
 
-The **hosted server at `mcp.notion.com/mcp`** provides zero-config OAuth installation — prioritized by Notion over local installation, which may be sunset. Works with Claude, Cursor, VS Code Copilot, ChatGPT.
+**May 13, 2026 update** added Meeting Notes support and block-level comments, and made creating/updating databases **91% more token-efficient**. Workspace-scoped OAuth and personal access tokens are now both supported alongside the previous integration token approach.
+
+The **hosted server at `mcp.notion.com/mcp`** provides zero-config OAuth installation — prioritized by Notion over local installation, which may be sunset. Works with Claude, Cursor, VS Code Copilot, ChatGPT. **Notion Workers** launched as a hosted runtime for deploying custom code alongside Notion MCP integrations.
 
 **Note:** Notion is also covered in our [Notion MCP Server](/reviews/notion-mcp-server/) individual review with more detail.
 
@@ -128,7 +132,7 @@ Community alternative: **amgadabdelhafez/dbx-mcp-server** for local stdio integr
 
 **Outline** has launched its own **official MCP server with OAuth support**, causing the previously maintained community server (mmmeff/outline-mcp-server) to archive itself. The official server is now the recommended option for Outline integration.
 
-**Vortiago/mcp-outline** (142 stars, 45 forks, MIT) remains the most feature-rich community server with **40+ tools** across search/discovery, document reading, management, lifecycle operations, collaboration (threaded comments), collection administration, batch processing, and AI-powered functionality. Supports both cloud-hosted and self-hosted Outline instances with automatic rate limiting and retry mechanisms. MCP Resources provide direct content access via URIs.
+**Vortiago/mcp-outline** (152 stars, 45 forks, MIT) remains the most feature-rich community server with **40+ tools** across search/discovery, document reading, management, lifecycle operations, collaboration (threaded comments), collection administration, batch processing, and AI-powered functionality. Supports both cloud-hosted and self-hosted Outline instances with automatic rate limiting and retry mechanisms. MCP Resources provide direct content access via URIs.
 
 **huiseo/outline-smart-mcp** adds RAG-based Q&A capabilities on top of standard document management.
 
@@ -152,6 +156,14 @@ MCP clients that support the MCP authorization spec (including Claude and Claude
 **Guru** (enterprise knowledge management) ships an **official MCP server** connecting your Guru knowledge base to any MCP-compatible AI tool. **5 tools**: answer generation (direct answers, not just documents), document search, Knowledge Agent listing, card draft creation, and card updates. All interactions are **permission-aware and cited** — the MCP server relies on Guru's verified knowledge layer, not raw documents.
 
 Governance features: all MCP interactions flow into the **AI Agent Center** with audit logs, lineage tracking, permissions, and verification workflows. No code or API setup required — communication happens entirely through the MCP framework. Works with ChatGPT, Claude, Cursor.
+
+### Document360 (Official)
+
+| Server | Transport | Auth | Tools | Official |
+|--------|-----------|------|-------|----------|
+| Document360 MCP Server | Remote | API key | Multiple | Yes |
+
+**Document360** (SaaS knowledge base platform) added an official MCP server making its documentation accessible to AI agents. Agents can search, retrieve, and query Document360 knowledge base content directly through the MCP framework. Part of Document360's broader AI-readiness initiative to ensure their customers' documentation is available to AI tools.
 
 ### BookStack (Community)
 
@@ -201,7 +213,7 @@ Governance features: all MCP interactions flow into the **AI Agent Center** with
 |--------|-------|----------|---------|-------|----------|
 | [GongRzhe/Office-Word-MCP-Server](https://github.com/GongRzhe/Office-Word-MCP-Server) | 1,900 | Python | N/A | 30+ | No |
 
-The **Office-Word-MCP-Server** (1,900 stars, 250 forks) is the most popular standalone document creation MCP server. Uses **python-docx** to directly create and manipulate Open XML (.docx) files — ideal for servers and containerized environments where installing Microsoft Office is not feasible.
+The **Office-Word-MCP-Server** (2,000 stars, 250 forks) reached this milestone before being **archived on March 3, 2026** — no further updates are planned. It remains usable for its existing feature set but is no longer maintained. Uses **python-docx** to directly create and manipulate Open XML (.docx) files — ideal for servers and containerized environments where installing Microsoft Office is not feasible.
 
 Capabilities span document management (create, read, extract text, copy, convert to PDF), content creation (headings, paragraphs, tables, images, lists, footnotes, page breaks), text formatting (bold, italic, color, font, search/replace), table operations (cell merging, alignment, padding, column width, alternating row colors), document protection (password, restricted editing, digital signatures), and comment extraction.
 
@@ -211,7 +223,7 @@ Capabilities span document management (create, read, extract text, copy, convert
 |--------|-------|----------|---------|-------|----------|
 | [OfficeMCP/OfficeMCP](https://github.com/OfficeMCP/OfficeMCP) | 79 | Python | N/A | 12 | No |
 
-**OfficeMCP** (79 stars, 13 forks) automates Microsoft Office applications via **COM interface on Windows** — Word, Excel, PowerPoint, Access, OneNote, Visio, Project, and WPS alternatives. **12 tools** including `AvailableApps`, `Launch`, `Quit`, and the powerful `RunPython` tool that allows unrestricted Python execution within the server context.
+**OfficeMCP** (100 stars, 13 forks) automates Microsoft Office applications via **COM interface on Windows** — Word, Excel, PowerPoint, Access, OneNote, Visio, Project, and WPS alternatives. **12 tools** including `AvailableApps`, `Launch`, `Quit`, and the powerful `RunPython` tool that allows unrestricted Python execution within the server context.
 
 Two deployment modes: stdio server (single client) and SSE server (multiple clients). **Windows-only** — COM interface does not work on Linux/macOS. **Security warning**: the RunPython tool permits arbitrary code execution.
 
@@ -226,9 +238,9 @@ Microsoft's official **Work IQ Word** MCP server (preview) provides document cre
 | [MarkusPfundstein/mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) | 3,500 | Python | MIT | 7 | No |
 | [cyanheads/obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | 467 | TypeScript | Apache 2.0 | 8 | No |
 
-While primarily a personal note-taking tool, **Obsidian** has strong community MCP coverage relevant to collaborative knowledge work. **MarkusPfundstein/mcp-obsidian** (3,500 stars, 405 forks, MIT) provides 7 tools: `list_files_in_vault`, `list_files_in_dir`, `get_file_contents`, `search`, `patch_content`, `append_content`, `delete_file`. Requires the Obsidian Local REST API community plugin.
+While primarily a personal note-taking tool, **Obsidian** has strong community MCP coverage relevant to collaborative knowledge work. **MarkusPfundstein/mcp-obsidian** (3,900 stars, 405 forks, MIT) provides 7 tools: `list_files_in_vault`, `list_files_in_dir`, `get_file_contents`, `search`, `patch_content`, `append_content`, `delete_file`. Requires the Obsidian Local REST API community plugin.
 
-**cyanheads/obsidian-mcp-server** (467 stars, Apache 2.0) offers 8 tools with additional features like frontmatter management, tag management, regex-supported global search, and an in-memory cache system. JWT and OAuth 2.1 authentication options. Production-ready with 187 commits.
+**cyanheads/obsidian-mcp-server** (584 stars, Apache 2.0) offers **14 tools** across read, write, edit, search, and management categories — up from 8 at last review. Features frontmatter management, tag management, regex-supported global search, and an in-memory cache system. JWT and OAuth 2.1 authentication options. Production-ready with active ongoing development.
 
 **Note:** Obsidian is also covered in our [Note-Taking & Knowledge Management](/reviews/note-taking-knowledge-management-mcp-servers/) review.
 
@@ -246,7 +258,7 @@ Google provides the most comprehensive official MCP offering when combining thei
 
 All use **OAuth 2.0** with IAM policy controls. Administrative controls via IAM policies govern which agents can access which services. An official **Workspace CLI** is coming soon for direct agent management.
 
-The community server **taylorwilsdon/google_workspace_mcp** (2,200 stars, MIT) remains valuable for unified access — 12 services and 100+ tools in one server, versus 5 separate official endpoints.
+The community server **taylorwilsdon/google_workspace_mcp** (2,700 stars, MIT) remains valuable for unified access — 12 services and 100+ tools in one server, versus 5 separate official endpoints.
 
 ## What's Missing
 
