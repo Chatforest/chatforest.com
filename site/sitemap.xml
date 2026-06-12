@@ -3,23 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://chatforest.com/builders-log/</loc>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-06-12T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/</loc>
+    <lastmod>2026-06-12T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/minimax-m3-1m-context-multimodal-msa-coding-review/</loc>
+    <lastmod>2026-06-12T14:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/reviews/amazon-perplexity-comet-cfaa-ninth-circuit-ai-agent-authorization-2026/</loc>
     <lastmod>2026-06-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/</loc>
+    <loc>https://chatforest.com/builders-log/</loc>
     <lastmod>2026-06-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/builders-log/openai-workspace-agents-july-6-credit-pricing-cost-model-builder-guide/</loc>
     <lastmod>2026-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/amazon-perplexity-comet-cfaa-ninth-circuit-ai-agent-authorization-2026/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -50,11 +60,6 @@
   <url>
     <loc>https://chatforest.com/reviews/illinois-sb315-ai-safety-measures-act-audit-frontier-2026/</loc>
     <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/reviews/</loc>
-    <lastmod>2026-06-12T00:00:00+09:00</lastmod>
   </url>
   
   <url>
