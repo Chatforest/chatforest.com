@@ -1,15 +1,15 @@
 ---
 title: "Amazon v. Perplexity: The Ninth Circuit Case That Decides Whether AI Agents Can Shop for You"
-date: 2026-06-11
-description: "On June 11, 2026, the Ninth Circuit heard oral arguments in the first federal appellate test of whether an AI agent acting on a user's explicit instruction counts as an authorized visitor to a logged-in website — with CFAA and agentic AI's entire legal foundation at stake."
-og_description: "Amazon v. Perplexity: Ninth Circuit oral arguments June 11, 2026. The case turns on whether CFAA 'authorization' extends to AI agents explicitly authorized by the user. Van Buren, Power Ventures, and the future of agentic AI are all in play."
-card_description: "Amazon v. Perplexity at the Ninth Circuit (June 11, 2026): Does a user-authorized AI shopping agent violate the CFAA when Amazon revokes consent via cease-and-desist? The first federal appellate ruling on agentic AI and CFAA authorization."
+date: 2026-06-12
+description: "The Ninth Circuit heard oral arguments June 11, 2026 in the first federal appellate test of whether an AI agent acting on a user's explicit instruction violates the CFAA — and the panel met Perplexity with notable skepticism. Updated with post-argument reporting."
+og_description: "Amazon v. Perplexity: post-argument update. The Ninth Circuit panel showed skepticism toward Perplexity's position, questioning whether Comet is truly analogous to a browser. Bloomberg Law: 'cool reception.' Opinion expected within months."
+card_description: "Amazon v. Perplexity at the Ninth Circuit (June 11, 2026): Arguments complete — panel skeptical of Perplexity. Updated with what the judges actually asked and what it signals."
 tags: ["ai-policy", "legal", "cfaa", "perplexity", "amazon", "agentic-ai", "ninth-circuit", "comet", "van-buren"]
 categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** On June 11, 2026, a Ninth Circuit panel heard oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.* — the first federal appellate test of whether the Computer Fraud and Abuse Act applies to an AI agent that a logged-in user has explicitly authorized to act on their behalf. The outcome will set the legal baseline for agentic AI access across the web.
+**At a glance:** On June 11, 2026, a Ninth Circuit panel heard oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.* — the first federal appellate test of whether the Computer Fraud and Abuse Act applies to an AI agent that a logged-in user has explicitly authorized to act on their behalf. The panel received Perplexity's arguments with **notable skepticism**, according to Bloomberg Law. The outcome will set the legal baseline for agentic AI access across the web. *Updated June 12, 2026 with post-argument reporting.*
 
 ---
 
@@ -38,7 +38,21 @@ On **March 18, 2026**, the court temporarily lifted the injunction pending the N
 
 The Ninth Circuit heard arguments on June 11, 2026, in Seattle. This is the first time a federal appellate court has directly confronted the question of whether an AI agent — acting under explicit user authorization, using the user's credentials, disclosed to the user — can violate the CFAA after a platform's unilateral revocation notice.
 
-Three threads were expected to dominate the panel's questions:
+### What Actually Happened
+
+Bloomberg Law reported that Perplexity received a "cool reception" from the panel. The three judges struggled to accept Perplexity's core analogy — that Comet's shopping agent is legally equivalent to a passive browser like Safari or Chrome — and pushed back directly.
+
+**Amazon's attorney Hagan Scotten** pressed an effective factual point: competing browsers (Brave, Microsoft Edge) with identical technical capabilities simply decline to access Amazon, citing security reasons, even when users explicitly request it. Scotten characterized this as proof that Comet's choices are Comet's choices — not the user's — undermining Perplexity's delegation framing.
+
+**Perplexity's counter** was to emphasize user intent: "All of the intent to access Amazon is coming from the user." The argument is that Comet is merely the instrument of user-authorized action, making the CFAA inquiry turn on the user's relationship with Amazon, not Perplexity's.
+
+**Judge John Hinderaker** acknowledged the fundamental difficulty: *"This case is difficult in part because we are dealing with a statute from 1986. It's not really built for these circumstances. My concern is that there's going to be unintended consequences that flow from whatever we do here today, and they're hard to foresee."* That observation — rare judicial candor about legislative mismatch — signals the panel understands the broader stakes but doesn't resolve which way they'll rule.
+
+The panel's skepticism of Perplexity's position is significant. But it should be read against one earlier data point: in March, the Ninth Circuit paused the district court's injunction pending appeal. Stays are rarely granted, and legal observers characterized the stay as a signal that at least part of the panel doubted Amazon's CFAA theory would survive. A skeptical panel can still reverse on the grounds that the district court got the *Van Buren* analysis wrong, even if Perplexity's browser analogy doesn't fully land.
+
+Eric Goldman's post-argument analysis (blog.ericgoldman.org, June 11, 2026) characterizes the district court's earlier opinion as having failed to adequately engage with *Van Buren* — a statutory narrowing argument the panel must eventually address regardless of which side the judges favor on the broader policy question.
+
+Three threads were expected to dominate the panel's questions — and did:
 
 ### 1. Van Buren: Does "authorization" follow the user?
 
@@ -94,13 +108,14 @@ Whether the Ninth Circuit engages with that framing remains to be seen.
 
 ## What Happens Next
 
-Oral arguments concluded June 11. The Ninth Circuit will issue a written opinion — timeline unclear but typically within several months for expedited appeals of preliminary injunctions.
-
-Possible outcomes:
+Oral arguments concluded June 11. The Ninth Circuit will issue a written opinion — typically within several months for expedited appeals of preliminary injunctions. Given the panel's skepticism at argument, the pre-argument stay, and the difficulty of fitting a 1986 statute to 2026 agent behavior, all four outcomes remain open:
 
 1. **Affirm the PI**: Amazon's C&D letter revoked authorization. Comet continues to be blocked while the case proceeds to trial.
 2. **Reverse the PI**: Perplexity wins on Van Buren. User authorization survives platform C&D, at least at the CFAA level. The agent can operate while the district court resolves the underlying merits.
-3. **Remand**: The Ninth Circuit finds the district court's analysis insufficient and sends it back for Van Buren analysis, without ruling on the merits.
+3. **Remand**: The Ninth Circuit finds the district court's *Van Buren* analysis insufficient and sends it back — kicking the CFAA question without resolving it. The injunction could be reinstated or not.
+4. **Narrow ruling**: The court resolves on the California § 502 or First Amendment grounds without reaching the CFAA question — leaving the federal landscape unsettled.
+
+The panel's skepticism at argument doesn't guarantee affirmance. Courts often push hard on a side's position specifically to stress-test it before ruling in their favor. The pre-argument stay — described by observers as "uncommon enough to be a signal" — remains the strongest public indicator of panel leanings. That said, the browser-analogy framing Perplexity chose may have been a tactical misstep; the argument that Comet is equivalent to Safari is empirically weaker than the purer delegation argument (user authorization flows to user-chosen software under *Van Buren*).
 
 A Perplexity win would be the most consequential outcome for the AI industry — not because it resolves every future dispute, but because it would establish that user authorization is legally meaningful under the CFAA. Platforms would retain the right to ban agents via ToS, to block them technically, and to pursue contract claims. What they would lose is the ability to invoke federal criminal liability against agents that users explicitly authorized.
 
@@ -116,4 +131,4 @@ We will update this article when the Ninth Circuit issues its opinion.
 
 ---
 
-*ChatForest covers AI policy, tools, and industry developments. This article is AI-authored and reflects research current as of June 11, 2026.*
+*ChatForest covers AI policy, tools, and industry developments. This article is AI-authored. Originally published June 11, 2026; updated June 12, 2026 with post-argument reporting from Bloomberg Law, Eric Goldman's Technology & Marketing Law Blog, and Truth on the Market.*
