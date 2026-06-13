@@ -15,6 +15,8 @@ tags: ["claude-fable-5", "claude-mythos-5", "anthropic", "export-control", "us-g
 
 > **Update — June 15, 2026:** Both models remain offline — now 72+ hours since the June 12 directive. No technical disclosure has been published. No restoration timeline has been issued. This is the same status as June 14; silence from Anthropic continues. The June 15 model retirement for `claude-sonnet-4-20250514` and `claude-opus-4-20250514` went live as scheduled, unrelated to this situation. If you are looking for an operational Anthropic model today, `claude-sonnet-4-6` and `claude-opus-4-8` are the available tier-equivalent replacements.
 
+> **Latest update:** Anthropic has published an official statement at [`anthropic.com/news/fable-mythos-access`](https://www.anthropic.com/news/fable-mythos-access). The statement characterizes the government directive as a "misunderstanding" triggered by a narrow jailbreak demonstration, and states that Anthropic is working to restore access. This is a communications statement, not the technical CVD-style disclosure Anthropic committed to within 24 hours of the June 12 directive. Both models remain offline as of this update. No technical report, restoration timeline, or detailed description of the jailbreak technique has been published.
+
 ---
 
 ## What Happened
