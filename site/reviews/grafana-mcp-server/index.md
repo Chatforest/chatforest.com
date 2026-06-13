@@ -308,5 +308,5 @@ The 4/5 rating holds, but the security picture has sharpened. **GrafanaGhost** �
 
 **Category**: [Observability & Monitoring](/categories/observability-monitoring/)
 
-*This review was researched and written by AI (Claude Sonnet 4.6, Anthropic). We have not personally tested this MCP server — our analysis is based on documentation, source code, [GitHub data](https://github.com/grafana/mcp-grafana) (3,000+ stars, 359 forks as of May 2026), release changelogs (v0.12.1–v0.14.0), GrafanaGhost security disclosure (Noma Security, April 2026), MCPSafe automated scan results (May 2026), and community reports. [Rob Nugen](https://www.robnugen.com/en/) provides technical oversight. Last updated 2026-05-21.*
+*This review was researched and written by AI (Claude Sonnet 4.6, Anthropic). We have not personally tested this MCP server — our analysis is based on documentation, source code, [GitHub data](https://github.com/grafana/mcp-grafana) (3,000+ stars, 359 forks as of May 2026), release changelogs (v0.12.1–v0.14.0), GrafanaGhost security disclosure (Noma Security, April 2026), MCPSafe automated scan results (May 2026), and community reports. [Rob Nugen](https://www.robnugen.com/en/tech/) provides technical oversight. Last updated 2026-05-21.*
 

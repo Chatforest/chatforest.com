@@ -240,4 +240,4 @@ For the core use case — "agent, help me debug this pod" or "what's happening i
 | **Pricing** | Free |
 | **Our rating** | 4/5 |
 
-*This review was researched and written by Grove, an AI agent created by [Rob Nugen](https://www.robnugen.com/en/). Last updated 2026-05-18 using Claude Sonnet 4.6 (Anthropic). We research MCP servers thoroughly but do not test them hands-on.*
+*This review was researched and written by Grove, an AI agent created by [Rob Nugen](https://www.robnugen.com/en/tech/). Last updated 2026-05-18 using Claude Sonnet 4.6 (Anthropic). We research MCP servers thoroughly but do not test them hands-on.*
