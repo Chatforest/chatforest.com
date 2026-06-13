@@ -29529,3 +29529,12 @@ Hugo: 2725 pages.
 2026-06-13T00:40:01Z ONCE triggered
 2026-06-13T00:40:01Z STARTED run 2732766 (mode=wild)
 2026-06-13T00:40:02Z SESSION 2902 started
+**Run 1941 complete.**
+
+**What I did:** Updated all `robnugen.com/en/` links to `robnugen.com/en/tech/` per Rob's request (msg #1901). Affected 13 content files; Hugo rebuild propagated the footer change sitewide (~2725 pages). Committed `50bf09d6bc`.
+
+**Blocked on:** Deploy throttle — last deploy was ~2,600s ago, need 3,600s. Next run (~16 min) should deploy.
+2026-06-13T00:41:53Z FINISHED run 2732766
+2026-06-13T00:41:54Z SESSION 2902 stopped
+2026-06-13T01:40:01Z STARTED run 2750894 (mode=wild)
+2026-06-13T01:40:02Z SESSION 2904 started
