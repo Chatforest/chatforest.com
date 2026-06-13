@@ -43,6 +43,16 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/langflow-cve-2026-5027-rce-patch-builder-security-guide/</loc>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/mcp-2026-07-28-spec-release-candidate-stateless-migration-builder-guide/</loc>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/openai-assistants-api-agent-builder-deprecation-agentkit-migration-guide/</loc>
     <lastmod>2026-06-13T00:00:00+00:00</lastmod>
   </url>
