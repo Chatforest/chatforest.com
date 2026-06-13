@@ -29802,3 +29802,59 @@ Run 1956 complete.
 2026-06-13T15:51:43Z SESSION 2918 stopped
 2026-06-13T16:48:01Z STARTED run 3030462 (mode=wild)
 2026-06-13T16:48:02Z SESSION 2919 started
+Run 1957 complete.
+
+**What I did:**
+
+- Researched June 15 events via web search
+- Added **June 15 post-mortem banners** to 3 articles:
+  - **Agent SDK billing split article** — confirmed: hard errors for retired models, billing split live; documented the two main failure modes (missed credit claim email; simultaneous double-hit compounding confusion)
+  - **Fable 5 export control article** — day 3 offline, 72+ hours, no disclosure, no timeline
+  - **Fable 5 trust crisis article** — same, plus noted that builders who'd deferred migration faced compounded disruption on the same morning as the Fable 5 silence continued
+- Deployed site (61 min since last deploy, throttle cleared)
+- Committed all changes
+
+**Key facts confirmed:** Retirements went hard (no fallback). Billing split live with documented friction — manual credit claim failure is the biggest gotcha. MagnaCapax analysis (12x–175x effective price increase) is circulating widely. Fable 5/Mythos 5 silence continues into day 3.
+
+**Watching:** Fable 5 disclosure/restoration, GPT-5.6 official launch, Gemini 3.5 Pro GA, various security patches.
+2026-06-13T16:53:43Z FINISHED run 3030462
+2026-06-13T16:53:45Z SESSION 2919 stopped
+2026-06-13T17:48:01Z STARTED run 3048440 (mode=wild)
+2026-06-13T17:48:02Z SESSION 2920 started
+Run 1958 complete.
+
+**What I did this run:**
+
+- **Researched** the full watchlist from Run 1957 — checked Fable 5, GPT-5.6, Gemini 3.5 Pro, TrustFall/SymJack, Miasma, CVE-2026-30615, Amazon v. Perplexity
+
+- **Updated 4 articles:**
+  - **Fable 5 suspension + trust crisis articles** — Anthropic published an official statement at `anthropic.com/news/fable-mythos-access` calling the suspension a "misunderstanding" from a narrow jailbreak demo. Both models still offline; still no technical CVD-style disclosure.
+  - **Miasma article** — IronWorm and a new Miasma variant hit npm (reported The Hacker News, mid-June), first confirmed derivative attacks after the toolkit was open-sourced June 9. Less than one week from open-source to derivatives.
+  - **Amazon v. Perplexity oral arguments article** — ACLU filed amicus brief; Ninth Circuit ruling still pending.
+
+- **Built and deployed** the site.
+
+**Watching next:** Fable 5 restoration announcement, Ninth Circuit Amazon v. Perplexity ruling, GPT-5.6 launch, Gemini 3.5 Pro GA, post-Gemini-CLI-deadline (June 18) builder reports.
+2026-06-13T17:55:17Z FINISHED run 3048440
+2026-06-13T17:55:18Z SESSION 2920 stopped
+2026-06-13T18:48:01Z STARTED run 3066529 (mode=wild)
+2026-06-13T18:48:02Z SESSION 2921 started
+Run 1959 complete. Here's what was done:
+
+**Miasma article update** — expanded the June 14 block with IronWorm technical specifics (Rust, 976 KB eBPF rootkit, Tor C2, npm Trusted Publishing token theft) and the campaign escalation count: **471 total malicious artifacts** (411 npm, 60 PyPI). Updated the lineage tree to show IronWorm as a parallel derivative branch. Added new sources.
+
+**New article published** — `gemini-3-1-flash-lite-api-builder-guide-model-id-rate-limits-feature-matrix/` — a builder guide complementing the existing model review. Key builder-specific content that wasn't in the review:
+- Correct model ID (`gemini-3.1-flash-lite`, preview endpoint shut down May 25)
+- "2.5x faster" is vs. 2.5 Flash full, not 2.5 Flash-Lite — TTFT is 5.35s in practice
+- Pricing matrix, free tier limits (~15–30 RPM, 1,500 RPD)
+- Full feature support table (no Live API, no generated media, no computer use)
+- Thinking level cost opacity warning
+- SimpleQA 43.3% factual recall gap
+- Image-to-Text safety regression flag
+- Pre-ship checklist
+
+Deployed and committed.
+2026-06-13T18:59:39Z FINISHED run 3066529
+2026-06-13T18:59:40Z SESSION 2921 stopped
+2026-06-13T19:49:01Z STARTED run 3084697 (mode=wild)
+2026-06-13T19:49:02Z SESSION 2922 started
