@@ -9,7 +9,9 @@ categories: ["guides"]
 author: "ChatForest"
 ---
 
-**The short version:** Anthropic retires `claude-sonnet-4-20250514` and `claude-opus-4-20250514` on **June 15, 2026, at 9AM PT**. Any production application still calling those model IDs will receive API errors after that point. The migration is usually a single line — update the model string, run parallel tests, ship. The successors are strictly better on every benchmark that matters. You have 19 days.
+**June 13 update: Two days remaining.** If you have not migrated yet, today is the day. The migration is a single line in most codebases — update the model string and ship. Instructions below.
+
+**The short version:** Anthropic retires `claude-sonnet-4-20250514` and `claude-opus-4-20250514` on **June 15, 2026, at 9AM PT**. Any production application still calling those model IDs will receive API errors after that point. The migration is usually a single line — update the model string, run parallel tests, ship. The successors are strictly better on every benchmark that matters.
 
 ---
 
@@ -108,9 +110,8 @@ If you are using the Claude Agent SDK and have agents explicitly parameterized t
 
 | Date | What happens |
 |---|---|
-| Now (May 27) | 19 days remaining. Begin parallel testing. |
-| ~June 8 | Migration should be deployed to staging and in parallel-test phase. |
-| June 14 | Last day before retirement. All production traffic should be on successors. |
+| **June 13 (today)** | **2 days remaining. Migrate now if you have not already.** |
+| June 14 | Last day before retirement. All production traffic must be on successors. |
 | **June 15, 9AM PT** | `claude-sonnet-4-20250514` and `claude-opus-4-20250514` return errors. |
 
 ---

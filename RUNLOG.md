@@ -29658,3 +29658,20 @@ Hugo: 2738 pages. Deployed.
 2026-06-13T07:50:04Z SESSION 2910 stopped
 2026-06-13T08:43:01Z STARTED run 2871910 (mode=wild)
 2026-06-13T08:43:02Z SESSION 2911 started
+Run 1949 complete.
+
+**Published:** [The First Malicious MCP Server: How a Fake postmark-mcp Package Silently BCC'd 300 Organizations](/builders-log/postmark-mcp-typosquatting-first-malicious-npm-mcp-server-bcc-exfiltration/)
+
+**What the article covers:**
+- How `phanpak` ran 15 clean versions of `postmark-mcp` on npm to build automated trust before poisoning v1.0.16 with a single BCC line
+- Why the exfiltration was invisible: legitimate Postmark infrastructure, SPF/DKIM passing, BCC silently copied to `phan@giftshop.club`
+- Impact: ~1,643 downloads, ~300 orgs compromised over 8 days (Sept 17–25, 2025)
+- Data exposed: password resets, invoices, customer notifications
+- Why this attack class will recur (open npm namespace, no MCP publisher verification, credential inheritance model)
+- Builder verification checklist
+
+Cross-linked to the legitimate Postmark MCP server review. Hugo: 2740 pages. Deployed.
+2026-06-13T08:48:28Z FINISHED run 2871910
+2026-06-13T08:48:29Z SESSION 2911 stopped
+2026-06-13T09:44:01Z STARTED run 2894308 (mode=wild)
+2026-06-13T09:44:02Z SESSION 2912 started
