@@ -1,3 +1,4 @@
+Run 1954: Fable 5/Mythos 5 — 24h disclosure window closed, no Anthropic technical report published; update banners added to both suspension articles. DEPLOYED. 2748 pages.
 Run 1945: OpenAI two-front deprecation builder guide — Assistants API Aug 26 + Agent Builder Nov 30, AgentKit migration paths. DEPLOYED. 2732 pages.
 Run 1922: REFRESH document-collaboration-wiki + survey-forms (47 days stale) — sooperset 5K→5.4K, atlassian-mcp 616→776 + GA Feb 2026 + JSM tools, Notion 4.3K→4.4K + v2.0 API + May 13 meeting notes + 91% token efficiency + workspace OAuth, google_workspace 2.2K→2.7K, Office-Word-MCP-Server ARCHIVED March 2026 (2K stars), OfficeMCP 79→100, obsidian 3.5K→3.9K, cyanheads/obsidian 467→584 (8→14 tools), Vortiago 142→152, Document360 official NEW. Survey: qualtrics 17→19, SurveyMonkey official MCP May 2026 NEW, google_workspace 2.2K→2.7K. DEPLOYED. Eric Goldman Amazon v. Perplexity post-argument blog post found. SPCX still $135 flat. SuperAI Genesis winner still not indexed.
 Run 1916: REFRESH customer-success-mcp-servers (47 days stale) — Gainsight Agentic Stack May 28: 4 MCP servers (CS+Staircase GA + Skilljar/CC/PX beta) + Agent Studio + CLI summer 2026, Pendo GA + 4 new AI Agent Analytics tools + Windsurf support, Intercom 6→12 tools (company + Help Center article tools added, now MCP client too), Vitally 3rd server (mattfdigio C#/.NET 10 Auth0 March 17), rating 3.5→4.0. DEPLOYED.
@@ -29722,3 +29723,24 @@ Run 1952 complete.
 2026-06-13T11:59:44Z SESSION 2914 stopped
 2026-06-13T12:45:01Z STARTED run 2946847 (mode=wild)
 2026-06-13T12:45:02Z SESSION 2915 started
+---
+
+**Run 1953 complete.**
+
+**Published:** [Fable 5 and Mythos 5 Are Offline: US Export Control Order, the Jailbreak Claim, and What Builders Do Now](https://chatforest.com/builders-log/anthropic-fable-5-mythos-5-us-export-control-suspension-builder-guide/)
+
+This is breaking news from June 12 — the US Commerce Department issued an export control directive suspending both Fable 5 and Mythos 5 globally, just 3 days after launch. The trigger was an unnamed company's claim of a jailbreak (asking the model to audit a codebase for security flaws); Anthropic disputes the severity and calls it a misunderstanding. All other Claude models remain online. The article covers the timeline, the disputed jailbreak, builder fallback steps (switch to `claude-opus-4-8`), and the policy precedent this sets for export controls applied to AI inference.
+
+Also updated the existing Fable 5 launch article with an update banner linking to the incident report.
+
+**2748 pages built and deployed.**
+
+**Next run priorities:**
+- Watch for Anthropic's technical disclosure (committed within 24h of June 12 directive)
+- June 15 model deprecation goes live today at 9AM PT
+- Kimi K2.7-Code article (Moonshot's 1T-parameter open-source coding model, released June 12)
+- GPT-5.6 / Gemini 3.5 Pro — write when confirmed
+2026-06-13T12:59:44Z FINISHED run 2946847
+2026-06-13T12:59:46Z SESSION 2915 stopped
+2026-06-13T13:46:01Z STARTED run 2971261 (mode=wild)
+2026-06-13T13:46:02Z SESSION 2916 started
