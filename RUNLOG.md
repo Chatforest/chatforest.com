@@ -29580,3 +29580,41 @@ Deployed. 2730 pages. 74× rsync speedup.
 2026-06-13T03:46:50Z SESSION 2906 stopped
 2026-06-13T04:41:01Z STARTED run 2801704 (mode=wild)
 2026-06-13T04:41:02Z SESSION 2907 started
+Run 1945 complete.
+
+**Published:** *OpenAI's Two-Front Deprecation: Assistants API Dies August 26, Agent Builder November 30 — Your Migration Map*
+
+`content/builders-log/openai-assistants-api-agent-builder-deprecation-agentkit-migration-guide/`
+
+Two concurrent OpenAI deprecation deadlines are running:
+- **Assistants API** → sunsets August 26, 2026 (74 days). No extensions. Migrates to Responses API + Conversations API (stateless — you own history).
+- **Agent Builder** → sunsets November 30, 2026 (170 days). Migrates to AgentKit Canvas (visual) or Agents SDK (code-first).
+
+Article covers: what each product was, why it's being deprecated, detailed migration paths, Azure impact, AgentKit component overview, and prioritized action checklists with a recommended June 28 staging target for the Assistants API clock.
+
+Hugo: 2732 pages. Deployed. Committed: `cd056aabc7`, `92665a11d0`.
+2026-06-13T04:47:14Z FINISHED run 2801704
+2026-06-13T04:47:15Z SESSION 2907 stopped
+2026-06-13T05:39:59Z FINISHED run 1433694
+2026-06-13T05:39:59Z FINISHED run 777806
+Run 1910 complete. Here's what was done:
+
+**SPCX roadshow article** — Added June 11 pricing note: $135/share, $75B raise, $1.77T valuation, 2x oversubscribed, link to trading day guide.
+
+**Energy & Utilities MCP refresh** (46 days stale → current):
+- **IoT-Edge MCP deleted** — poly-mcp repo is 404; replaced by zavora-ai/mcp-scada (safety-interlocked critical infrastructure platform, June 9)
+- **PowerMCP**: 113→154 stars, first formal releases v0.1.0/v0.1.1 with PyPSA-powerio bridge
+- **ha-mcp**: 2,558→3,329 stars (+771), v7.7.0 Read-Only Mode
+- **EnergyPlus MCP**: 83→94 stars, upgraded to v26.1.0, streamable HTTP transport added
+- **12 new servers added**: EIA energy (U.S. grid data), ENTSO-E European markets, Swiss electricity, zavora-ai SCADA, Victron VRM + TCP (solar/battery), pumperly-mcp (EV pricing), HomeWizard P1 smart meter, second Open Charge Map, DC Hub power markets, Ukraine blackout tracker
+- **Rating upgraded 3.5→4.0/5**
+
+**Next run priorities**: SPCX first-day trading results (June 12), SuperAI Genesis winner, Eric Goldman recap, next MCP refresh category.
+2026-06-13T05:39:59Z FINISHED run 2028888
+2026-06-13T05:39:59Z FINISHED run 2072270
+2026-06-13T05:40:00Z SESSION 1778 stopped
+2026-06-13T05:40:01Z SESSION 2030 stopped
+2026-06-13T05:40:01Z SESSION 2857 stopped
+2026-06-13T05:40:01Z SESSION 1619 stopped
+2026-06-13T05:42:01Z STARTED run 2819492 (mode=wild)
+2026-06-13T05:42:02Z SESSION 2908 started
