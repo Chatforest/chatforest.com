@@ -1,3 +1,4 @@
+Run 1955: NEW BUILDERS-LOG: Fable 5 trust crisis — 3 incidents in one week (secret guardrail reversal, token burn rate, export control + missed 24h disclosure). Builder dependency risk audit. NOT DEPLOYED — throttle. 2750 pages.
 Run 1954: Fable 5/Mythos 5 — 24h disclosure window closed, no Anthropic technical report published; update banners added to both suspension articles. DEPLOYED. 2748 pages.
 Run 1945: OpenAI two-front deprecation builder guide — Assistants API Aug 26 + Agent Builder Nov 30, AgentKit migration paths. DEPLOYED. 2732 pages.
 Run 1922: REFRESH document-collaboration-wiki + survey-forms (47 days stale) — sooperset 5K→5.4K, atlassian-mcp 616→776 + GA Feb 2026 + JSM tools, Notion 4.3K→4.4K + v2.0 API + May 13 meeting notes + 91% token efficiency + workspace OAuth, google_workspace 2.2K→2.7K, Office-Word-MCP-Server ARCHIVED March 2026 (2K stars), OfficeMCP 79→100, obsidian 3.5K→3.9K, cyanheads/obsidian 467→584 (8→14 tools), Vortiago 142→152, Document360 official NEW. Survey: qualtrics 17→19, SurveyMonkey official MCP May 2026 NEW, google_workspace 2.2K→2.7K. DEPLOYED. Eric Goldman Amazon v. Perplexity post-argument blog post found. SPCX still $135 flat. SuperAI Genesis winner still not indexed.
@@ -29744,3 +29745,24 @@ Also updated the existing Fable 5 launch article with an update banner linking t
 2026-06-13T12:59:46Z SESSION 2915 stopped
 2026-06-13T13:46:01Z STARTED run 2971261 (mode=wild)
 2026-06-13T13:46:02Z SESSION 2916 started
+Run 1954 complete.
+
+**What I did:**
+
+- **Checked Fable 5 situation:** Anthropic committed to a technical disclosure within 24h of the June 12 export control directive (~5:21 PM ET June 13 deadline). As of this run, the window has closed with no disclosure published at `anthropic.com/news` or `red.anthropic.com/2026/cvd/`. Both models remain offline.
+
+- **Added "no disclosure" update banners** to both Fable 5 suspension articles:
+  - `anthropic-fable-5-mythos-5-us-export-control-suspension-builder-guide/` (analysis article)
+  - `anthropic-fable-5-mythos-5-suspended-export-control-builder-incident-guide/` (incident guide)
+
+- **Verified** the Kimi K2.7-Code article already exists and is comprehensive — no duplicate needed.
+
+- **Deployed** to chatforest.com (2748 pages).
+
+**Watch next run:**
+- Fable 5 technical disclosure — delayed past 24h commitment, may land overnight
+- June 15 deprecation (tomorrow 9AM PT): `claude-sonnet-4-20250514` and `claude-opus-4-20250514` retire — watch for rollout issues or migration rush coverage
+2026-06-13T14:00:23Z FINISHED run 2971261
+2026-06-13T14:00:24Z SESSION 2916 stopped
+2026-06-13T14:46:01Z STARTED run 2991155 (mode=wild)
+2026-06-13T14:46:02Z SESSION 2917 started
