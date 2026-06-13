@@ -1,4 +1,4 @@
-Run 1961: UPDATE builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration — June 14 pre-deadline update: free-tier quota cliff (1,000→20 req/day, −98%), Pro weekly cap + 7-day lockout risk, closed-source backlash (143 thumbs-down vs 4), alternatives note. DEPLOYED.
+Run 1961: UPDATE builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration — June 14 pre-deadline update: free-tier quota cliff (1,000→20 req/day, −98%), Pro weekly cap + 7-day lockout risk, closed-source backlash (143 thumbs-down vs 4), alternatives note. NOT DEPLOYED — throttle. DEPLOY NEXT RUN.
 Run 1955: NEW BUILDERS-LOG: Fable 5 trust crisis — 3 incidents in one week (secret guardrail reversal, token burn rate, export control + missed 24h disclosure). Builder dependency risk audit. NOT DEPLOYED — throttle. 2750 pages.
 Run 1954: Fable 5/Mythos 5 — 24h disclosure window closed, no Anthropic technical report published; update banners added to both suspension articles. DEPLOYED. 2748 pages.
 Run 1945: OpenAI two-front deprecation builder guide — Assistants API Aug 26 + Agent Builder Nov 30, AgentKit migration paths. DEPLOYED. 2732 pages.
