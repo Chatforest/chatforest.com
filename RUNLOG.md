@@ -1,3 +1,4 @@
+Run 1945: OpenAI two-front deprecation builder guide — Assistants API Aug 26 + Agent Builder Nov 30, AgentKit migration paths. DEPLOYED. 2732 pages.
 Run 1922: REFRESH document-collaboration-wiki + survey-forms (47 days stale) — sooperset 5K→5.4K, atlassian-mcp 616→776 + GA Feb 2026 + JSM tools, Notion 4.3K→4.4K + v2.0 API + May 13 meeting notes + 91% token efficiency + workspace OAuth, google_workspace 2.2K→2.7K, Office-Word-MCP-Server ARCHIVED March 2026 (2K stars), OfficeMCP 79→100, obsidian 3.5K→3.9K, cyanheads/obsidian 467→584 (8→14 tools), Vortiago 142→152, Document360 official NEW. Survey: qualtrics 17→19, SurveyMonkey official MCP May 2026 NEW, google_workspace 2.2K→2.7K. DEPLOYED. Eric Goldman Amazon v. Perplexity post-argument blog post found. SPCX still $135 flat. SuperAI Genesis winner still not indexed.
 Run 1916: REFRESH customer-success-mcp-servers (47 days stale) — Gainsight Agentic Stack May 28: 4 MCP servers (CS+Staircase GA + Skilljar/CC/PX beta) + Agent Studio + CLI summer 2026, Pendo GA + 4 new AI Agent Analytics tools + Windsurf support, Intercom 6→12 tools (company + Help Center article tools added, now MCP client too), Vitally 3rd server (mattfdigio C#/.NET 10 Auth0 March 17), rating 3.5→4.0. DEPLOYED.
 Run 1915: REFRESH product-management-roadmapping-mcp-servers (47 days stale) — sooperset 5K→5.4K + CRITICAL CVE-2026-27825 (RCE 9.1) + CVE-2026-27826 (SSRF 8.2) patched in v0.17.0, Linear Agent MCP support + diff mentions, Asana V2 GA + V1 SSE shutdown May 11, Monday.com 396→380, Notion 4.3K→3.7K + Meeting Notes + 91% token efficiency + hosted-only, Plane 204→228, ClickUp 460→144 (new repo), Wrike official hosted NEW, Smartsheet official hosted NEW, removed from What's Missing. DEPLOYED unix 1781210006. 2700 pages.
@@ -29538,3 +29539,44 @@ Hugo: 2725 pages.
 2026-06-13T00:41:54Z SESSION 2902 stopped
 2026-06-13T01:40:01Z STARTED run 2750894 (mode=wild)
 2026-06-13T01:40:02Z SESSION 2904 started
+Run 1942 complete.
+
+**What was done:**
+- No inbox messages
+- Deploy throttle had cleared (6156s elapsed) — rebuilt Hugo and deployed all pending commits from runs 1940–1941 to chatforest.com
+- Live now: nested sub-agents builder guide + Rob Nugen link fixes across 13 files + sitewide footer
+
+**Standing queue:**
+- Bluesky resume: awaiting Rob's decision
+- MCP refresh cycle: ~June 26+
+- Amazon v. Perplexity: waiting on Ninth Circuit opinion
+2026-06-13T01:40:57Z FINISHED run 2750894
+2026-06-13T01:40:57Z SESSION 2904 stopped
+2026-06-13T02:41:01Z STARTED run 2767898 (mode=wild)
+2026-06-13T02:41:02Z SESSION 2905 started
+Run 1943 complete.
+
+**Published:** "US Government Suspends Claude Fable 5 and Mythos 5 Globally: Builder Incident Guide"
+
+Breaking news from June 12 (yesterday): a US government export control directive forced Anthropic to pull both models globally at 5:21 PM ET. The article covers what happened, Anthropic's dispute of the jailbreak rationale, fallback model options (Opus 4.8 → Sonnet 4.6), a builder action checklist, and the broader implication — government export controls on deployed AI inference are now a real operational risk category for builders.
+
+Hugo: 2728 pages. Deployed clean. Commits: `0abad54b9c`, `09ca7bb859`.
+2026-06-13T02:46:49Z FINISHED run 2767898
+2026-06-13T02:46:50Z SESSION 2905 stopped
+2026-06-13T03:41:01Z STARTED run 2784843 (mode=wild)
+2026-06-13T03:41:02Z SESSION 2906 started
+Run 1944 complete.
+
+**Published:** *Your Agent Just Committed a Federal Crime: The CFAA Test Case Every Builder Must Watch*
+
+The article covers the June 11 Ninth Circuit oral arguments in Amazon v. Perplexity — the case that will decide whether AI agents can access third-party authenticated services on behalf of users, or whether doing so violates the 1986 Computer Fraud and Abuse Act.
+
+Key builder insight: **user authorization ≠ platform authorization.** Even if a user explicitly directs your agent to log in and act on their behalf, the platform's ToS can make that access "unauthorized" under CFAA — a federal statute with criminal penalties. The panel was skeptical of Perplexity's browser-analogy argument, partly because Comet allegedly disguised itself as a human user.
+
+The article includes a risk table by agent type, five design actions builders should take now (agent identity disclosure, ToS audit, OAuth preference, authenticated/public access separation, legal review gate for commerce features), and a watch list for when the ruling drops.
+
+Deployed. 2730 pages. 74× rsync speedup.
+2026-06-13T03:46:49Z FINISHED run 2784843
+2026-06-13T03:46:50Z SESSION 2906 stopped
+2026-06-13T04:41:01Z STARTED run 2801704 (mode=wild)
+2026-06-13T04:41:02Z SESSION 2907 started
