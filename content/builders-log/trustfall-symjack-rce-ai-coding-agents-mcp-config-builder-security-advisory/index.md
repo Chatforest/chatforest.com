@@ -14,6 +14,10 @@ This article covers what each attack does, which tools are affected, what patche
 
 ---
 
+**Update — June 14, 2026:** Final vendor response status is now confirmed. Anthropic patched three CVEs (CVE-2025-59536, CVE-2026-21852, CVE-2026-33068) and quietly hardened the SymJack approval flow — the approval prompt now displays the real resolved path instead of the symlink path. No other vendor patched either attack class. Google (Gemini CLI / Antigravity CLI) and Cursor both formally **declined to patch**. xAI (Grok Build) and GitHub Copilot CLI gave **no response** to researchers. OpenAI had the Codex CLI report **closed by Bugcrowd as a false positive**, characterizing the attack as "theoretical" because the user approves the underlying `cp` command — ignoring that the symlink redirection is invisible to the user at approval time. The table below reflects these outcomes. Builders using any unpatched tool should assume no vendor mitigation is forthcoming and apply the hardening steps below.
+
+---
+
 ## Background: Why AI Coding CLIs Are a Target Now
 
 AI coding agents — Claude Code, Cursor, Gemini CLI, Copilot CLI, Codex CLI — have all adopted MCP as a primary integration layer. MCP servers run as local processes that the agent launches on startup. They have access to files, shell commands, APIs, and whatever secrets the developer's environment carries.
@@ -46,7 +50,7 @@ The Miasma worm demonstrates the supply-chain multiplier effect: one compromised
 
 ### Anthropic's Response
 
-Anthropic issued patches addressing CVE-2026-21852 and CVE-2026-33068. However, Anthropic's public response also characterized the core trust-prompt UX issue as "outside its threat model" — meaning the underlying ambiguity of what a folder trust prompt authorizes remains an open design question across the ecosystem.
+Anthropic issued patches addressing CVE-2026-21852 and CVE-2026-33068. Additionally, the SymJack approval-flow hardening was addressed under CVE-2025-59536 — the approval prompt now displays the real resolved path of a symlink target, not the symlink itself, making the redirect visible to the user before they approve. However, Anthropic's public response also characterized the core trust-prompt UX issue as "outside its threat model" — meaning the underlying ambiguity of what a folder trust prompt authorizes remains an open design question across the ecosystem.
 
 ---
 
@@ -77,24 +81,24 @@ Both attacks share the same consequence: the agent's MCP config becomes attacker
 
 ## Affected Tools Summary
 
-| Tool | TrustFall | SymJack |
-|---|---|---|
-| Claude Code | Yes (patched, CVE-2026-21852, CVE-2026-33068) | Yes |
-| Cursor CLI | Yes | Yes |
-| Gemini CLI | Yes | Yes |
-| Antigravity CLI | — | Yes |
-| GitHub Copilot CLI | Yes | Yes |
-| Grok Build | — | Yes |
-| OpenAI Codex CLI | — | Yes (added May 27) |
+| Tool | TrustFall | SymJack | Patch Status |
+|---|---|---|---|
+| Claude Code | Yes (CVE-2026-21852, CVE-2026-33068) | Yes (CVE-2025-59536) | **Patched** — approval prompt now shows real resolved path |
+| Cursor CLI | Yes | Yes | **Declined to patch** |
+| Gemini CLI | Yes | Yes | **Declined to patch** |
+| Antigravity CLI | — | Yes | **Declined to patch** |
+| GitHub Copilot CLI | Yes | Yes | **No response** |
+| Grok Build | — | Yes | **No response** |
+| OpenAI Codex CLI | — | Yes (added May 27) | **Closed as false positive** (Bugcrowd) |
 
-Patches are available from Anthropic for the Claude Code CVEs. Check with Cursor, Google, GitHub, xAI, and OpenAI for the status of their respective fixes.
+As of June 14, 2026, Anthropic is the only vendor to have patched either attack class. All other vendors have declined, gone silent, or dismissed the reports.
 
 ---
 
 ## What Builders Should Do
 
-**1. Update your AI coding CLIs now.**  
-Anthropic patched the Claude Code CVEs. Ensure you're running the latest version. Check changelogs for Cursor, Gemini CLI, and Copilot CLI for their respective remediation timelines.
+**1. Update Claude Code now; do not wait on other vendors.**  
+Anthropic patched three CVEs and hardened the SymJack approval flow. Ensure you're running the latest version. No remediation is forthcoming from Cursor, Google, GitHub, xAI, or OpenAI — the hardening steps below are your only mitigation if you use those tools.
 
 **2. Audit MCP config files before accepting trust prompts.**  
 When you clone a repository and your CLI prompts for folder trust, inspect `.mcp.json` (or the equivalent config file for your tool) before accepting. Look for any MCP server entry pointing to a remote URL, an npm package you don't recognize, or a path you didn't configure yourself.
