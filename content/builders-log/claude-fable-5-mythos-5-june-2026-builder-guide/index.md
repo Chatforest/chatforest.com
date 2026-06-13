@@ -8,6 +8,10 @@ categories: ["Models", "Anthropic"]
 tags: ["claude", "fable-5", "mythos-5", "anthropic", "api", "builder-guide", "pricing", "agentic-ai", "coding", "project-glasswing", "june-2026"]
 ---
 
+**Update — June 13, 2026:** Both Fable 5 and Mythos 5 are currently offline. The US Commerce Department issued an export control directive on June 12 ordering suspension for all foreign nationals; because Anthropic cannot filter users in real time, both models are globally disabled. All other Claude models remain operational. See [full incident report and builder fallback guide](/builders-log/anthropic-fable-5-mythos-5-us-export-control-suspension-builder-guide/).
+
+---
+
 Anthropic released Claude Fable 5 on June 9, 2026. This is the first generally available model built on the Mythos architecture — the model family that has been restricted to Project Glasswing partners since April. If you have been waiting for Mythos-class capabilities on the public API, the wait is over.
 
 There are three things you need to know before you use it.
