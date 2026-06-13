@@ -66,7 +66,16 @@
 
       <div class="article-body">
         <p>On June 1, MiniMax released M3 — their first model built on a completely new attention architecture rather than the Sparse MoE foundation that defined the M2.x line. The headline claims are competitive: 1M token context, 59.0% on SWE-Bench Pro, and inference speeds that make the 1M window usable in production rather than theoretical.</p>
-<p>Open weights are coming to HuggingFace within roughly 10 days of launch. The API is live on OpenRouter now.</p>
+<hr>
+<p><strong>Update — June 14, 2026:</strong></p>
+<ul>
+<li><strong>Open weights shipped.</strong> Weights are now available at <a href="https://huggingface.co/MiniMaxAI/MiniMax-M3">huggingface.co/MiniMaxAI/MiniMax-M3</a> and via Ollama (<code>ollama pull minimax-m3</code>). Technical report also published.</li>
+<li><strong>Promo pricing ended June 8.</strong> Standard rate is now <strong>$0.60/M input, $2.40/M output</strong> for calls up to 512K tokens. Long-context calls (&gt;512K input) are billed at ~4x the standard rate: approximately <strong>$2.40/M input, $9.60/M output</strong>. The OpenRouter listing confirms tiered pricing — factor the jump into any cost projection that approaches or exceeds the 512K threshold.</li>
+<li><strong>Independent benchmark: 80.5% SWE-bench Verified.</strong> Third-party evaluations place M3 at 80.5% on SWE-bench Verified — a meaningful upgrade from the launch claim of 59.0% on SWE-Bench Pro (different benchmark variant). For comparison, Claude Opus 4.8 scores 88.6% on the same benchmark. The gap is real but M3 at 80.5% is solidly in the competitive range for most coding pipelines.</li>
+<li><strong>Baseline caveat confirmed.</strong> MiniMax compared M3 against Claude Opus 4.7 in launch materials. By the time M3 shipped, Anthropic had already released Opus 4.8. The coding gap vs. current-generation Claude is wider than MiniMax&rsquo;s stated comparison suggests.</li>
+<li><strong>License:</strong> Available on the HuggingFace model card — verify commercial use terms before committing to self-hosted deployment, especially given the M2.7 license tightening precedent.</li>
+</ul>
+<hr>
 <p>This is the full breakdown: what M3 actually is, why the architecture change matters, what the benchmark claims mean and where to be skeptical, how to access it, and who should care.</p>
 <hr>
 <h2 id="the-architecture-shift-from-sparse-moe-to-msa">The Architecture Shift: From Sparse MoE to MSA</h2>
@@ -154,8 +163,8 @@
 </thead>
 <tbody>
 <tr>
-<td>Claude Opus 4.6</td>
-<td>80.8% Verified</td>
+<td>Claude Opus 4.8</td>
+<td>88.6% Verified</td>
 <td>200K</td>
 <td>$15/M</td>
 <td>No</td>
@@ -163,11 +172,11 @@
 </tr>
 <tr>
 <td>MiniMax M3</td>
-<td>59.0% SWE-Pro*</td>
+<td>80.5% Verified†</td>
 <td>1M</td>
-<td>~$0.30/M</td>
-<td>Soon</td>
-<td>Long-context efficiency, low cost</td>
+<td>$0.60/M</td>
+<td>Yes</td>
+<td>Long-context efficiency, open weights</td>
 </tr>
 <tr>
 <td>MiniMax M2.7</td>
@@ -176,14 +185,6 @@
 <td>$0.30/M</td>
 <td>Yes (restricted)</td>
 <td>Self-evolution training</td>
-</tr>
-<tr>
-<td>Nemotron 3 Ultra</td>
-<td>48 (AI Index)</td>
-<td>1M</td>
-<td>TBD June 4</td>
-<td>Yes</td>
-<td>Agent-optimized, US open-weight frontier</td>
 </tr>
 <tr>
 <td>Gemini 3.5 Flash</td>
@@ -195,7 +196,7 @@
 </tr>
 </tbody>
 </table>
-<p>*MiniMax&rsquo;s own benchmarks, agent scaffolding included — independent verification pending.</p>
+<p>†Independent third-party evaluation; MiniMax&rsquo;s own launch figure was 59.0% on SWE-Bench Pro (different benchmark variant, self-reported).</p>
 <p>The clearest M3 advantage is the combination of <strong>1M token context + $0.30/M pricing</strong>. Gemini 3.5 Flash offers similar context but at 5x the input cost. Claude Opus 4.6 has a 200K limit and costs 50x more per token. If MiniMax&rsquo;s speed claims for MSA at 1M context hold up, M3 becomes a serious candidate for any pipeline that needs to process long documents, large codebases, or extended conversation histories at scale.</p>
 <hr>
 <h2 id="who-should-evaluate-m3-now">Who Should Evaluate M3 Now</h2>

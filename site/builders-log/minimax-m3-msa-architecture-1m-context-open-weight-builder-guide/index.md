@@ -5,7 +5,17 @@
 
 On June 1, MiniMax released M3 — their first model built on a completely new attention architecture rather than the Sparse MoE foundation that defined the M2.x line. The headline claims are competitive: 1M token context, 59.0% on SWE-Bench Pro, and inference speeds that make the 1M window usable in production rather than theoretical.
 
-Open weights are coming to HuggingFace within roughly 10 days of launch. The API is live on OpenRouter now.
+---
+
+**Update — June 14, 2026:**
+
+- **Open weights shipped.** Weights are now available at [huggingface.co/MiniMaxAI/MiniMax-M3](https://huggingface.co/MiniMaxAI/MiniMax-M3) and via Ollama (`ollama pull minimax-m3`). Technical report also published.
+- **Promo pricing ended June 8.** Standard rate is now **$0.60/M input, $2.40/M output** for calls up to 512K tokens. Long-context calls (>512K input) are billed at ~4x the standard rate: approximately **$2.40/M input, $9.60/M output**. The OpenRouter listing confirms tiered pricing — factor the jump into any cost projection that approaches or exceeds the 512K threshold.
+- **Independent benchmark: 80.5% SWE-bench Verified.** Third-party evaluations place M3 at 80.5% on SWE-bench Verified — a meaningful upgrade from the launch claim of 59.0% on SWE-Bench Pro (different benchmark variant). For comparison, Claude Opus 4.8 scores 88.6% on the same benchmark. The gap is real but M3 at 80.5% is solidly in the competitive range for most coding pipelines.
+- **Baseline caveat confirmed.** MiniMax compared M3 against Claude Opus 4.7 in launch materials. By the time M3 shipped, Anthropic had already released Opus 4.8. The coding gap vs. current-generation Claude is wider than MiniMax's stated comparison suggests.
+- **License:** Available on the HuggingFace model card — verify commercial use terms before committing to self-hosted deployment, especially given the M2.7 license tightening precedent.
+
+---
 
 This is the full breakdown: what M3 actually is, why the architecture change matters, what the benchmark claims mean and where to be skeptical, how to access it, and who should care.
 
@@ -98,13 +108,12 @@ MiniMax has committed to releasing weights within approximately 10 days of API l
 
 | Model | SWE-Bench | Context | Input Cost | Open Weights | Standout |
 |---|---|---|---|---|---|
-| Claude Opus 4.6 | 80.8% Verified | 200K | $15/M | No | Best coding agents, deepest reasoning |
-| MiniMax M3 | 59.0% SWE-Pro* | 1M | ~$0.30/M | Soon | Long-context efficiency, low cost |
+| Claude Opus 4.8 | 88.6% Verified | 200K | $15/M | No | Best coding agents, deepest reasoning |
+| MiniMax M3 | 80.5% Verified† | 1M | $0.60/M | Yes | Long-context efficiency, open weights |
 | MiniMax M2.7 | 56.22% SWE-Pro | 200K | $0.30/M | Yes (restricted) | Self-evolution training |
-| Nemotron 3 Ultra | 48 (AI Index) | 1M | TBD June 4 | Yes | Agent-optimized, US open-weight frontier |
 | Gemini 3.5 Flash | Strong agentic | 1M | $1.50/M | No | 4x speed, GA stability |
 
-*MiniMax's own benchmarks, agent scaffolding included — independent verification pending.
+†Independent third-party evaluation; MiniMax's own launch figure was 59.0% on SWE-Bench Pro (different benchmark variant, self-reported).
 
 The clearest M3 advantage is the combination of **1M token context + $0.30/M pricing**. Gemini 3.5 Flash offers similar context but at 5x the input cost. Claude Opus 4.6 has a 200K limit and costs 50x more per token. If MiniMax's speed claims for MSA at 1M context hold up, M3 becomes a serious candidate for any pipeline that needs to process long documents, large codebases, or extended conversation histories at scale.
 

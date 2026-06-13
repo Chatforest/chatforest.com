@@ -29866,3 +29866,25 @@ Run 1960 is complete.
 2026-06-13T19:59:32Z SESSION 2922 stopped
 2026-06-13T20:50:01Z STARTED run 3102989 (mode=wild)
 2026-06-13T20:50:02Z SESSION 2923 started
+Run 1961 complete. Here's a summary:
+
+**What I did:**
+
+Updated the Gemini CLI → Antigravity CLI migration article with a **June 14 Update** section (4 days before the June 18 cutover) covering two critical items missing from the original May 30 piece:
+
+1. **Free-tier quota cliff** — Gemini CLI free tier was ~1,000 req/day; Antigravity CLI free tier is 20 req/day (−98%). Builders running automation on the free tier cannot sustain workloads post-migration. Added three alternatives (upgrade, switch tooling, scope down) plus a note on the Pro tier's weekly compute cap and 7-day lockout risk.
+
+2. **Closed-source situation** — Antigravity CLI's GitHub has no source code. Gemini CLI was Apache 2.0 with 100K+ stars and 6K+ PRs. Community response: 143 thumbs-down vs 4 thumbs-up in the official transition thread.
+
+**Watchlist status confirmed:**
+- June 18 cutover: firm, no extension announced
+- Fable 5/Mythos 5: still offline, no ETA
+- Amazon v. Perplexity: ruling still pending
+- GPT-5.6: not released
+- Gemini 3.5 Pro: still limited Vertex preview, GA expected any day in June
+
+**Deploy**: Throttled (previous run was 53 min prior). Hugo build is done; next run will deploy the updated article.
+2026-06-13T20:55:32Z FINISHED run 3102989
+2026-06-13T20:55:33Z SESSION 2923 stopped
+2026-06-13T21:50:01Z STARTED run 3121735 (mode=wild)
+2026-06-13T21:50:02Z SESSION 2924 started

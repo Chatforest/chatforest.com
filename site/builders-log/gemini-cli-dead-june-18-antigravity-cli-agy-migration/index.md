@@ -114,11 +114,28 @@ If you used Gemini CLI as a terminal assistant and that's all you want from `agy
 
 **Not yet full feature parity.** Google stated explicitly at I/O that Antigravity CLI does not have 1:1 feature parity with Gemini CLI out of the gate. Some edge-case behaviors from Gemini CLI's Python extension ecosystem may not be present. If you had deeply customized Gemini CLI behavior, test `agy` carefully before June 18.
 
+## June 14 Update: Two Things to Know Before You Migrate
+
+**The free-tier quota cliff.** Gemini CLI's free tier ran at roughly 1,000 requests per day. Antigravity CLI's free tier is capped at 20 requests per day — a 98% reduction. If you are running meaningful automation on Gemini CLI's free tier, migrating to `agy`'s free tier will not sustain it. The binary swap is five minutes; the capacity shortfall hits you the first night your pipeline runs.
+
+Options if you hit this wall:
+- Upgrade to Antigravity Pro (weekly compute cap, price comparable to Gemini Advanced)
+- Switch your automation to a different AI CLI (Claude Code, Cursor CLI, or direct API calls with a script wrapper)
+- Scope down automation to fit within 20 daily requests
+
+Note on Pro tier: Google moved Pro users from a daily to a weekly compute cap in March 2026. If you burn through the weekly cap, you are locked out for up to 7 days — not until tomorrow. For CI pipelines with variable load, budget the weekly cap conservatively.
+
+**The open-source situation.** Gemini CLI launched as Apache 2.0 open-source, accumulated 100,000+ GitHub stars and 6,000+ merged community pull requests, and was spotlighted by the Linux Foundation. Antigravity CLI's GitHub repository contains a changelog, a readme, and a demonstration GIF. There is no source code. Running a fork or an offline build is not practically possible.
+
+The developer community response has been direct: the official transition thread collected roughly 143 thumbs-down vs. 4 approvals within 24 hours of the May 19 announcement. If your organization has a policy on open-source dependencies, or if you contributed to Gemini CLI, factor this into your migration decision.
+
+Migrating to `agy` is the right call for the June 18 deadline if you're staying in Google's ecosystem. But for builders who relied on the free tier for volume automation, or who chose Gemini CLI specifically because it was open-source, this is worth treating as a genuine re-evaluation point rather than a simple binary swap.
+
 ## The Bigger Picture
 
 This migration is part of [Google's six-layer Antigravity stack](/builders-log/google-io-2026-agent-stack/) announced at Google I/O 2026. Antigravity CLI is the terminal surface of that stack — the same agent harness as the desktop app, the SDK, and the Managed Agents API, exposed as a command you run in a terminal. The consolidation makes sense architecturally: one agent platform, multiple surfaces, consistent behavior.
 
-The practical consequence for builders is that Gemini CLI as a standalone terminal tool is a dead end. Google's agent investment flows through Antigravity now. Getting on `agy` before June 18 is a deadline; staying on it is the right long-term call regardless.
+The practical consequence for builders is that Gemini CLI as a standalone terminal tool is a dead end. Google's agent investment flows through Antigravity now. Getting on `agy` before June 18 is a deadline; staying on it is the right long-term call — unless the quota or open-source concerns change your evaluation.
 
 ## Do It Now, Not June 17
 
