@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Builder&#39;s June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore — ChatForest</title>
-  <meta name="description" content="Twenty events in 30 days — from Microsoft Build to the SpaceX IPO to six separate API deadlines. A practical calendar for AI builders navigating June 2026.">
+  <meta name="description" content="Twenty events in 30 days — from Microsoft Build to the SpaceX IPO to six separate API deadlines. A practical calendar for AI builders navigating June 2026. Updated June 14 with Fable 5 suspension, June 15 post-mortem, and remaining deadlines.">
   <meta property="og:title" content="The Builder&#39;s June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore — ChatForest">
-  <meta property="og:description" content="June 2026: Microsoft Build, WWDC, SpaceX IPO, Claude/Gemini/Copilot billing changes, six hard API cutoffs, and two frontier model launches. Updated June 4.">
+  <meta property="og:description" content="June 2026 AI calendar updated June 14: June 8-15 events confirmed, Fable 5 suspended by government order, Gemini CLI EOL 4 days away, image model shutdown June 25, Vertex Imagen June 30.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/builders-log/june-2026-ai-builder-calendar/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Builder&#39;s June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore — ChatForest">
-  <meta name="twitter:description" content="June 2026: Microsoft Build, WWDC, SpaceX IPO, Claude/Gemini/Copilot billing changes, six hard API cutoffs, and two frontier model launches. Updated June 4.">
+  <meta name="twitter:description" content="June 2026 AI calendar updated June 14: June 8-15 events confirmed, Fable 5 suspended by government order, Gemini CLI EOL 4 days away, image model shutdown June 25, Vertex Imagen June 30.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/builders-log/june-2026-ai-builder-calendar/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,7 @@
     <article>
       <div class="article-meta">
         <span>Builder's Log</span>
-        <span>Published May 26, 2026 · Updated Jun 4, 2026</span>
+        <span>Published May 26, 2026 · Updated Jun 14, 2026</span>
       </div>
 
       <h1 class="article-title">The Builder&#39;s June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore</h1>
@@ -66,8 +66,60 @@
 
       <div class="article-body">
         <p>June 2026 has more scheduled AI events than most quarters. Within 30 days: a major developer conference, a historic IPO, five separate API deprecation cutoffs, multiple billing model changes, and two frontier models that prediction markets think are likely. This is not a news roundup. It is a planning document.</p>
+<p><em>Updated June 14, 2026: Added June 14 mid-month status section. Confirmed June 8-15 events complete. Added two new deadline events (Gemini image model shutdown June 25, Vertex AI Imagen shutdown June 30) not in original calendar. Added Fable 5/Mythos 5 government suspension as unscheduled incident. Updated &ldquo;Expected in June&rdquo; status for Grok V9-Medium, Sonnet 4.8, GPT-5.6, and Gemini 3.5 Pro. Updated calendar table.</em></p>
 <p><em>Updated June 4, 2026: Corrected SpaceX roadshow start date (June 4, not June 8 — roadshow confirmed open today per Goldman syndicate communications and CNBC). Updated iOS 27 (was iOS 26 — confirmed by WWDC preview sources). Added: Nemotron 3 Ultra launch (June 4, today), Windows Local AI Runtime KB5039239 (June 9), Code with Claude Tokyo (June 10), Work IQ APIs GA (June 16 — action required for M365/enterprise agent builders), GPT-4.5 ChatGPT retirement (June 27). Added Claude Sonnet 4.8 as a mid-June watch item.</em></p>
 <p><em>Updated June 1, 2026: Added GitHub Copilot token billing (live today), Gemini Interactions API hard cutoff (June 8, action required), Claude model deprecations (June 15), Gemini CLI EOL (June 18), Vertex AI SDK migration (June 24), and Grok V9-Medium as a distinct mid-June watch item. Updated Grok 5 odds and Anthropic funding status.</em></p>
+<hr>
+<h2 id="june-14-mid-month-status-whats-done-whats-still-coming">June 14 Mid-Month Status: What&rsquo;s Done, What&rsquo;s Still Coming</h2>
+<p>We are halfway through June. Here is where each item on this calendar stands as of June 14.</p>
+<h3 id="completed-june-1-15">Completed (June 1-15)</h3>
+<p><strong>June 1 — GitHub Copilot token-based billing ✓</strong>
+Live as scheduled. Teams running Copilot-heavy agentic workflows should have their first credit consumption data by now.</p>
+<p><strong>June 1 — Azure AI Foundry memory billing ✓</strong>
+Live. Microsoft announced at Build that GA memory billing was confirmed; no changes to the originally announced rate schedule.</p>
+<p><strong>June 2-3 — Microsoft Build 2026 ✓</strong>
+Conference complete. Key confirmed announcements: Azure Foundry Agent Service GA, GitHub Copilot SDK public preview, MCP across Azure stack, Work IQ API preview. Detailed coverage: see the relevant ChatForest builders-log pieces on the individual releases.</p>
+<p><strong>June 4 — Nemotron 3 Ultra ✓</strong>
+Released as scheduled. Available on HuggingFace, OpenRouter, and build.nvidia.com.</p>
+<p><strong>June 4 — SpaceX roadshow ✓</strong>
+Roadshow ran June 4-10. IPO priced June 11 at approximately $134-135/share. Trading began June 12 on Nasdaq (SPCX).</p>
+<p><strong>June 8 — Gemini Interactions API <code>outputs</code> removed ✓</strong>
+Hard cutoff passed. If you still have code using the legacy <code>outputs</code> field in Gemini API responses, those calls are failing now.</p>
+<p><strong>June 8 — Apple WWDC 2026 ✓</strong>
+iOS 27 confirmed (not iOS 26). Siri Extensions API announced — allows Claude, ChatGPT, Grok, and other AI assistants to register as Siri routing targets. Apple-Google Gemini partnership confirmed in iOS 27. The Foundation Models framework gives on-device model access to developers building iOS apps.</p>
+<p><strong>June 9 — Windows Local AI Runtime KB5039239 ✓</strong>
+Shipped to Windows 11 24H2. Speech Recognition API public preview live; Phi Silica GPU expansion active. Aion 1.0 Instruct available via the local runtime for developers building Windows-native AI apps.</p>
+<p><strong>June 10-11 — Code with Claude Tokyo ✓</strong>
+Event complete. Livestream was available for developers outside Japan.</p>
+<p><strong>June 12 — SpaceX Nasdaq debut ✓</strong>
+SPCX trading live. Market context; no builder action.</p>
+<p><strong>June 15 — Claude Agent SDK billing split ✓ (live)</strong>
+All three changes went live as scheduled. Both model retirements are confirmed — <code>claude-sonnet-4-20250514</code> and <code>claude-opus-4-20250514</code> now return hard errors with no automatic fallback. The billing split is live. Two failure modes documented post-launch: (1) builders who missed Anthropic&rsquo;s credit claim email did not receive their June credit allocation; (2) the simultaneous retirement and billing change created compounded confusion for teams who deferred preparation. If you are debugging today, check your model ID strings and your credit pool status in the Anthropic Console.</p>
+<h3 id="new-unscheduled-event-fable-5--mythos-5-government-suspension-june-12--ongoing">New Unscheduled Event: Fable 5 / Mythos 5 Government Suspension (June 12 — ongoing)</h3>
+<p>This was not on the original calendar. On June 12, the U.S. government issued an export control directive requiring Anthropic to suspend all access to Fable 5 (<code>claude-fable-5</code>) and Mythos 5 (<code>claude-mythos-5</code>) by foreign nationals. Because Anthropic could not verify which users are foreign nationals, they suspended both models globally. Both models remain offline as of June 14.</p>
+<p>Anthropic has published an <a href="https://www.anthropic.com/news/fable-mythos-access">official statement</a> characterizing the government&rsquo;s concern as a &ldquo;misunderstanding&rdquo; triggered by a narrow jailbreak demonstration. A technical CVD-style disclosure Anthropic committed to within 24 hours of the directive has not been published.</p>
+<p><strong>Builder implications:</strong> If you were using Fable 5 or Mythos 5 in production (models launched June 9 with a June 22 free-trial period), those calls are failing. The fallback is Claude Opus 4.8 (<code>claude-opus-4-8</code>) or Claude Sonnet 4.6 (<code>claude-sonnet-4-6</code>) — both remain fully available. This incident also compounded with the June 15 billing and model retirement events for teams that had deferred migration.</p>
+<p>This is the first time a U.S. government directive has caused a global AI model shutdown with less than 24 hours notice. It demonstrates a category of platform risk that builder dependency audits should now include. See: <a href="/builders-log/anthropic-fable-5-trust-crisis-week-guardrail-token-burn-export-control-builder-risk-audit/">Anthropic&rsquo;s Fable 5 Trust Crisis</a>.</p>
+<h3 id="still-upcoming-june-14-30">Still Upcoming (June 14-30)</h3>
+<p><strong>June 16 — Work IQ APIs GA</strong> <em>(2 days away)</em>
+Microsoft Work IQ API endpoints (A2A, remote MCP server, REST API) go generally available. If you are building enterprise agents targeting M365 signal data, GA means SLAs are now in play and procurement approvals can proceed.</p>
+<p><strong>June 18 — Gemini CLI deprecated</strong> <em>(4 days away — action required)</em>
+The <code>gemini</code> CLI command stops working for Google AI Pro, Ultra, and free Gemini Code Assist individual users. Code Assist Standard and Enterprise license holders are not affected by this deadline. Everyone else: if you have any scripts, CI pipelines, or cron jobs calling <code>gemini</code>, they will fail on June 18. Migration to <code>agy</code> (Antigravity CLI) takes under 10 minutes for most setups. See the <a href="/builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration/">full migration guide</a> — it covers the silent MCP config failure trap that will break your pipeline without an error message.</p>
+<p><strong>June 22 — Fable 5 free credit period (status uncertain)</strong>
+Fable 5 and Mythos 5 were free for Pro, Max, Team, and Enterprise subscribers through June 22. The models are currently suspended. Whether the free period will be extended, cancelled, or applied retroactively if access is restored is not documented. Watch Anthropic&rsquo;s status page.</p>
+<p><strong>June 24 — Vertex AI Gemini SDK migration</strong>
+Google is removing the old <code>google.generativeai</code> and <code>vertexai.preview.generative_models</code> Python import paths. Migrate to <code>google-genai</code> (<code>pip install google-genai</code>). This is a dependency swap plus import path update — method signatures are largely compatible.</p>
+<p><strong>June 25 — Gemini API image preview models shutdown</strong> <em>(not in original calendar)</em>
+<code>gemini-3.1-flash-image-preview</code> and <code>gemini-3-pro-image-preview</code> shut down. These were deprecated June 1 when the stable GA versions (<code>gemini-3.1-flash-image</code> and <code>gemini-3-pro-image</code>) shipped May 28. If you are using the preview model IDs for image generation, update them now — the fix is a model ID string change.</p>
+<p><strong>June 27 — GPT-4.5 retired from ChatGPT</strong>
+ChatGPT-only retirement. No API impact. ChatGPT users on plans that defaulted to GPT-4.5 auto-migrate to GPT-5. No builder action required.</p>
+<p><strong>June 30 — Vertex AI Imagen endpoints shutdown</strong> <em>(not in original calendar)</em>
+Google is removing all Vertex AI Imagen model endpoints on June 30: <code>imagegeneration@002</code> through <code>@006</code>, all <code>imagen-3.0-*</code> and <code>imagen-4.0-*</code> IDs, and <code>imagetext@001</code>. The replacement is <code>gemini-2.5-flash-image</code> on the unified Vertex AI Gemini platform. One gap: mask-based inpainting has no direct replacement in the GA surface. See the <a href="/builders-log/google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide/">full Imagen migration guide</a>.</p>
+<h3 id="expected-in-june-status-updates">&ldquo;Expected in June&rdquo; Status Updates</h3>
+<p><strong>Gemini 3.5 Pro:</strong> Still limited Vertex preview. Not GA. If you planned to evaluate it in June, the timeline has slipped — all indications point to a July or later GA date.</p>
+<p><strong>Grok V9-Medium:</strong> The 1.5T-parameter coding model completed training and is deployed in Tesla vehicles and the X social network. A general developer API is not yet available — the xAI API currently surfaces <code>grok-build-0.1</code> (the coding-focused model from the Grok Build CLI) but not V9-Medium weights directly. Monitor the <a href="https://releasebot.io/updates/xai">xAI API changelog</a>.</p>
+<p><strong>Claude Sonnet 4.8:</strong> Not released. Despite mid-June predictions based on Opus 4.8 (May 28) → Sonnet follow-on timing, Anthropic has made no announcement. The current Sonnet-tier model remains <code>claude-sonnet-4-6</code>.</p>
+<p><strong>GPT-5.6:</strong> Not released. Polymarket still pricing it at 80-89% probability by June 30. No official announcement, no model card. Write your decision logic to fall through to GPT-5.5 if GPT-5.6 is not available by your build timeline.</p>
 <hr>
 <h2 id="what-requires-action-before-june-updated-june-1">What Requires Action Before June (Updated June 1)</h2>
 <p><strong>GitHub Copilot — token-based billing live today (June 1)</strong></p>
@@ -170,130 +222,146 @@
 <tr>
 <th>Date</th>
 <th>Event</th>
-<th>Action Required?</th>
+<th>Status / Action Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>June 1 ✓</td>
 <td>GitHub Copilot token-based billing live</td>
-<td>Check credit burn if running agentic workloads</td>
+<td>Done — monitor credit consumption</td>
 </tr>
 <tr>
 <td>June 1 ✓</td>
 <td>Azure AI Foundry memory billing activates</td>
-<td>Check billing if using Foundry memory</td>
+<td>Done</td>
 </tr>
 <tr>
 <td>June 2-3 ✓</td>
 <td>Microsoft Build 2026</td>
-<td>Done: review Build announcements</td>
+<td>Done</td>
 </tr>
 <tr>
 <td>June 4 ✓</td>
-<td>Nemotron 3 Ultra launches (today)</td>
-<td>Evaluate for open-weights agent pipelines</td>
+<td>Nemotron 3 Ultra launches</td>
+<td>Done — evaluate if using open-weights pipelines</td>
 </tr>
 <tr>
 <td>June 4 ✓</td>
-<td>SpaceX IPO roadshow opens (today)</td>
-<td>No action — track as infrastructure context</td>
+<td>SpaceX IPO roadshow opens</td>
+<td>Done</td>
 </tr>
 <tr>
-<td>June 8</td>
+<td>June 8 ✓</td>
 <td>Gemini Interactions API <code>outputs</code> removed</td>
-<td><strong>Migrate off legacy schema now</strong></td>
+<td>Done — hard cutoff passed; fix any broken callers</td>
 </tr>
 <tr>
-<td>June 8</td>
+<td>June 8 ✓</td>
 <td>Apple WWDC 2026 (iOS 27, Siri Extensions)</td>
-<td>Watch for Siri Extensions API and iOS 27 MCP details</td>
+<td>Done — Siri Extensions API announced</td>
 </tr>
 <tr>
-<td>June 9</td>
+<td>June 9 ✓</td>
 <td>Windows Local AI Runtime KB5039239 ships</td>
-<td>Apply update for Windows AI dev environments</td>
+<td>Done</td>
 </tr>
 <tr>
-<td>June 10</td>
+<td>June 10-11 ✓</td>
 <td>Code with Claude Tokyo</td>
-<td>Register for livestream</td>
+<td>Done</td>
 </tr>
 <tr>
-<td>June 11</td>
-<td>SpaceX IPO pricing</td>
-<td>No action</td>
+<td>June 11-12 ✓</td>
+<td>SpaceX IPO pricing and Nasdaq debut (SPCX)</td>
+<td>Done</td>
 </tr>
 <tr>
-<td>June 12</td>
-<td>SpaceX Nasdaq debut (SPCX)</td>
-<td>No action</td>
+<td>June 12+ ⚠️</td>
+<td><strong>Fable 5 / Mythos 5 gov suspension (new)</strong></td>
+<td>Ongoing — use <code>claude-opus-4-8</code> as fallback</td>
 </tr>
 <tr>
-<td>June 15</td>
-<td>Claude Code Agent SDK billing split</td>
-<td><strong>Claim Agent SDK credit before June 15</strong></td>
+<td>June 15 ✓</td>
+<td>Claude Agent SDK billing split</td>
+<td>Done — live; check credit pool + console</td>
 </tr>
 <tr>
-<td>June 15</td>
+<td>June 15 ✓</td>
 <td>Claude model deprecations (Sonnet/Opus 4)</td>
-<td><strong>Migrate hardcoded model IDs</strong></td>
+<td>Done — hard errors live; check model ID strings</td>
 </tr>
 <tr>
-<td>June 16</td>
+<td><strong>June 16</strong></td>
 <td>Work IQ APIs GA</td>
-<td><strong>Start building if targeting M365 enterprise agents</strong></td>
+<td><strong>2 days — start building if targeting M365 enterprise</strong></td>
 </tr>
 <tr>
-<td>June 18</td>
+<td><strong>June 18</strong></td>
 <td>Gemini CLI deprecated</td>
-<td>Update scripts using <code>gemini</code> CLI to <code>agy</code></td>
+<td><strong>4 days — migrate <code>gemini</code> → <code>agy</code> NOW</strong></td>
 </tr>
 <tr>
-<td>June 24</td>
+<td><strong>June 22</strong></td>
+<td>Fable 5 free period ends (status TBD)</td>
+<td>Uncertain — models still suspended</td>
+</tr>
+<tr>
+<td><strong>June 24</strong></td>
 <td>Vertex AI Gemini SDK migration</td>
-<td><strong>Migrate to <code>google-genai</code> package</strong></td>
+<td><strong>10 days — migrate to <code>google-genai</code> package</strong></td>
+</tr>
+<tr>
+<td><strong>June 25</strong></td>
+<td>Gemini image preview models shutdown (new)</td>
+<td><strong>11 days — update model IDs: remove <code>-preview</code> suffix</strong></td>
 </tr>
 <tr>
 <td>June 27</td>
 <td>GPT-4.5 retired from ChatGPT</td>
-<td>No API action — ChatGPT users auto-migrate to GPT-5</td>
+<td>No API action — ChatGPT users auto-migrate</td>
 </tr>
 <tr>
-<td>TBD ~June 16-18</td>
-<td>Claude Sonnet 4.8 (expected)</td>
-<td>Monitor Anthropic releases</td>
+<td><strong>June 30</strong></td>
+<td>Vertex AI Imagen endpoints shutdown (new)</td>
+<td><strong>16 days — migrate to <code>gemini-2.5-flash-image</code></strong></td>
 </tr>
 <tr>
-<td>TBD mid-June</td>
-<td>Grok V9-Medium API launch</td>
-<td>Prepare coding benchmark eval</td>
+<td>TBD</td>
+<td>Claude Sonnet 4.8</td>
+<td>Not released; still <code>claude-sonnet-4-6</code></td>
 </tr>
 <tr>
-<td>TBD June</td>
+<td>TBD</td>
+<td>Grok V9-Medium developer API</td>
+<td>In Tesla/X; no general API yet</td>
+</tr>
+<tr>
+<td>TBD July+</td>
 <td>Gemini 3.5 Pro GA</td>
-<td>Prepare eval suite</td>
+<td>Slipped from June; prepare eval suite</td>
 </tr>
 <tr>
 <td>TBD June</td>
-<td>GPT-5.6 (likely)</td>
-<td>Monitor OpenAI releases</td>
+<td>GPT-5.6 (80-89% Polymarket)</td>
+<td>Not released; monitor OpenAI</td>
 </tr>
 <tr>
 <td>TBD Q3/Q4</td>
-<td>Grok 5 (odds collapsed to ~12%)</td>
+<td>Grok 5 (~12% odds by June 30)</td>
 <td>No near-term action</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Action items in order of urgency:</strong></p>
+<p><strong>Remaining June action items (in urgency order):</strong></p>
 <ol>
-<li><strong>Before June 8</strong>: Migrate Gemini Interactions API code off legacy <code>outputs</code> schema</li>
-<li><strong>Before June 15</strong>: Claim Claude Agent SDK credit; migrate deprecated model IDs</li>
-<li><strong>Before June 16</strong>: If building M365 enterprise agents, set up Work IQ API access</li>
-<li><strong>Before June 18</strong>: Update <code>gemini</code> CLI scripts to Antigravity <code>agy</code></li>
-<li><strong>Before June 24</strong>: Migrate Vertex AI Python SDK to <code>google-genai</code></li>
-<li><strong>Ongoing</strong>: Monitor WWDC (June 8) for Siri Extensions API details</li>
+<li><strong>By June 16</strong>: If building M365 enterprise agents, set up Work IQ API access before GA</li>
+<li><strong>By June 18</strong>: Migrate any <code>gemini</code> CLI scripts to <code>agy</code> (Antigravity CLI) — see <a href="/builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration/">migration guide</a></li>
+<li><strong>By June 24</strong>: Migrate Vertex AI Python SDK to <code>google-genai</code> (<code>pip install google-genai</code>)</li>
+<li><strong>By June 25</strong>: Update Gemini image model IDs — drop <code>-preview</code> suffix (<code>gemini-3.1-flash-image-preview</code> → <code>gemini-3.1-flash-image</code>)</li>
+<li><strong>By June 30</strong>: Migrate Vertex AI Imagen endpoints to <code>gemini-2.5-flash-image</code> — see <a href="/builders-log/google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide/">Imagen migration guide</a></li>
+<li><strong>Ongoing</strong>: Check credit pool status if using Claude Agent SDK (billing split live June 15)</li>
+<li><strong>Ongoing</strong>: If affected by Fable 5 suspension, use <code>claude-opus-4-8</code> as operational fallback</li>
 </ol>
 
       </div>
@@ -362,7 +430,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-04T00:00:00+09:00","datePublished":"2026-05-26T00:00:00+09:00","description":"Twenty events in 30 days — from Microsoft Build to the SpaceX IPO to six separate API deadlines. A practical calendar for AI builders navigating June 2026.","headline":"The Builder's June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore","mainEntityOfPage":"https://chatforest.com/builders-log/june-2026-ai-builder-calendar/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/june-2026-ai-builder-calendar/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-14T00:00:00+09:00","datePublished":"2026-05-26T00:00:00+09:00","description":"Twenty events in 30 days — from Microsoft Build to the SpaceX IPO to six separate API deadlines. A practical calendar for AI builders navigating June 2026. Updated June 14 with Fable 5 suspension, June 15 post-mortem, and remaining deadlines.","headline":"The Builder's June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore","mainEntityOfPage":"https://chatforest.com/builders-log/june-2026-ai-builder-calendar/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/june-2026-ai-builder-calendar/"}
 </script>
 
 
