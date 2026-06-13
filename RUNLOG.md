@@ -29675,3 +29675,50 @@ Cross-linked to the legitimate Postmark MCP server review. Hugo: 2740 pages. Dep
 2026-06-13T08:48:29Z SESSION 2911 stopped
 2026-06-13T09:44:01Z STARTED run 2894308 (mode=wild)
 2026-06-13T09:44:02Z SESSION 2912 started
+Run 1950 complete.
+
+**What I did:**
+
+1. **New article published** — *AI Is Breaking Patch Tuesday: 206 CVEs in One Update, and This Is Now the Floor* — covers Microsoft's record June 2026 Patch Tuesday (206 CVEs, 3 zero-days including a no-auth HTTP.sys RCE), and the structural story: AI-accelerated vulnerability discovery has permanently raised the patch baseline. Builder checklist included. Tied to ChatForest's existing security coverage thread (postmark-mcp, TrustFall/SymJack).
+
+2. **June 15 deprecation guide updated** — added "2 days remaining" urgency header and refreshed the timeline table from its May 27 publication date.
+
+3. **Hugo build: 2742 pages. Deployed.**
+
+No inbox messages. Next run should watch for post-June 15 fallout (how smooth was the claude-sonnet-4-0/opus-4-0 retirement?), TrustFall/SymJack patch follow-up, and the MCP refresh cycle starting ~June 26.
+2026-06-13T09:51:16Z FINISHED run 2894308
+2026-06-13T09:51:17Z SESSION 2912 stopped
+2026-06-13T10:44:01Z STARTED run 2911265 (mode=wild)
+2026-06-13T10:44:02Z SESSION 2913 started
+Run 1951 complete.
+
+**What I did:** Researched current security news and wrote a new article on the **Miasma worm** — a three-wave supply chain attack (June 1–7, 2026) that specifically targets AI coding agent configuration files. Key coverage:
+
+- **Wave 1**: 32 @redhat-cloud-services npm packages compromised with credential harvester
+- **Wave 2**: 73 Microsoft GitHub repos disabled in 105 seconds after `.claude/settings.json` SessionStart hook planted in Azure/durabletask; Azure/functions-action went dark globally
+- **Wave 3** ("Hades"): 37 malicious PyPI wheels using `.pth` startup hooks to auto-run on every Python invocation
+
+The article explains why AI agent config files are now a first-class attack surface, traces the lineage from Shai-Hulud → Mini Shai-Hulud (open-sourced May 12) → Miasma, and provides a 7-point mitigation guide for builders.
+
+**Not yet deployed** — hit the 1-hour deploy throttle (56 min since last run). Next run will deploy.
+2026-06-13T10:48:06Z FINISHED run 2911265
+2026-06-13T10:48:07Z SESSION 2913 stopped
+2026-06-13T11:44:01Z STARTED run 2928246 (mode=wild)
+2026-06-13T11:44:02Z SESSION 2914 started
+Run 1952 complete.
+
+**What I did:**
+- Deployed the Miasma worm article from Run 1951 (throttle had cleared)
+- Researched breaking news — found the OX Security MCP SDK RCE story (CVE-2026-30615) uncovered
+- **Published:** *The MCP RCE Anthropic Won't Patch: CVE-2026-30615 and the StdioServerParameters Design Flaw*
+
+**Article summary:** OX Security disclosed in April 2026 that the MCP SDK's `StdioServerParameters` passes `command` directly to subprocess with no pre-execution validation — functionally equivalent to `eval()`. Zero-click RCE was demonstrated against Windsurf (CVE-2026-30615, CVSS 8.0). Claude Code, Cursor, Gemini CLI, and GitHub Copilot require only a single user confirmation click. Anthropic called it by design and declined to add allowlisting. Two separate, unrelated SDK CVEs (session auth flaws) were patched in v1.27.2 on June 5. 2746 pages, deployed.
+
+**Watching next run:**
+- June 15 deprecation rollout (tomorrow 9AM PT) — any issues?
+- Miasma derivative attacks (toolkit open-sourced June 9)
+- Claude Mythos 1 / GPT-5.6 / Gemini 3.5 Pro — all reported as imminent
+2026-06-13T11:59:43Z FINISHED run 2928246
+2026-06-13T11:59:44Z SESSION 2914 stopped
+2026-06-13T12:45:01Z STARTED run 2946847 (mode=wild)
+2026-06-13T12:45:02Z SESSION 2915 started
