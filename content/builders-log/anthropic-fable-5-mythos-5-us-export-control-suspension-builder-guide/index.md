@@ -13,6 +13,8 @@ tags: ["claude-fable-5", "claude-mythos-5", "anthropic", "export-control", "us-g
 
 > **Update — June 14, 2026:** The disclosure commitment is now more than 24 hours overdue. Both `claude-fable-5` and `claude-mythos-5` remain offline — now 48+ hours since the suspension. No technical disclosure has been published, no restoration timeline has been issued, and no statement explaining the delay has appeared. Bloomberg's framing that Anthropic is "limiting foreign access" (rather than suspending globally) suggests ongoing negotiation with the Commerce Department, but no public update has been provided.
 
+> **Update — June 15, 2026:** Both models remain offline — now 72+ hours since the June 12 directive. No technical disclosure has been published. No restoration timeline has been issued. This is the same status as June 14; silence from Anthropic continues. The June 15 model retirement for `claude-sonnet-4-20250514` and `claude-opus-4-20250514` went live as scheduled, unrelated to this situation. If you are looking for an operational Anthropic model today, `claude-sonnet-4-6` and `claude-opus-4-8` are the available tier-equivalent replacements.
+
 ---
 
 ## What Happened
