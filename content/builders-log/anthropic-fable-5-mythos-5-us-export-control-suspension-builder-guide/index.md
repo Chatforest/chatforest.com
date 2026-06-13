@@ -11,6 +11,8 @@ tags: ["claude-fable-5", "claude-mythos-5", "anthropic", "export-control", "us-g
 
 > **Update — June 13, 2026, evening:** Anthropic committed to releasing technical details within 24 hours of the June 12 directive (deadline approximately 5:21 PM ET, June 13). As of this update, no technical disclosure has been published at `anthropic.com/news` or `red.anthropic.com/2026/cvd/`. Both models remain offline. The 24-hour window has closed without a public release. No statement has been issued explaining the delay. We will update when a disclosure or restoration announcement appears.
 
+> **Update — June 14, 2026:** The disclosure commitment is now more than 24 hours overdue. Both `claude-fable-5` and `claude-mythos-5` remain offline — now 48+ hours since the suspension. No technical disclosure has been published, no restoration timeline has been issued, and no statement explaining the delay has appeared. Bloomberg's framing that Anthropic is "limiting foreign access" (rather than suspending globally) suggests ongoing negotiation with the Commerce Department, but no public update has been provided.
+
 ---
 
 ## What Happened
