@@ -110,11 +110,17 @@ fi
 # v3.4: --output-format json lets us account for tokens. stdout = one JSON
 # object (result + usage); stderr still flows to RUNLOG for crash diagnostics.
 TOKENLOG="$WORKDIR/TOKENLOG.tsv"
-RUN_JSON=$(cd "$WORKDIR" && claude -p "$(cat $WORKDIR/PROMPT.md)" \
+RUN_JSON=$(cd "$WORKDIR" && timeout -k 1m 30m claude -p "$(cat $WORKDIR/PROMPT.md)" \
     --model sonnet \
     --output-format json \
     --allowedTools "Read,Write,Edit,Bash,Glob,Grep,WebFetch,WebSearch,mcp__jikan__list_todos,mcp__jikan__list_inbox,mcp__jikan__send_inbox,mcp__jikan__mark_inbox_seen,mcp__jikan__mark_inbox_done,mcp__jikan__create_todo,mcp__jikan__complete_todo,mcp__jikan__update_todo,mcp__jikan__log_emotion_event,mcp__jikan__get_emotion_vocab,mcp__jikan__post_emotion_vocab,mcp__jikan__get_emotion_events,mcp__jikan__list_activities,mcp__jikan__list_sessions" \
     2>> "$LOGFILE")
+RUN_RC=$?
+# Guard: timeout returns 124 (SIGTERM fired) or 137 (escalated to SIGKILL after -k).
+# Log it loudly so a hung run shows up in RUNLOG instead of lingering silently.
+if [ "$RUN_RC" = 124 ] || [ "$RUN_RC" = 137 ]; then
+    echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) RUN TIMED OUT after 30m (rc=$RUN_RC); claude was killed by timeout guard" >> "$LOGFILE"
+fi
 
 # Append the human-readable result to RUNLOG (preserve prior prose behavior).
 # On parse failure (crash / non-JSON), fall back to dumping the raw output.

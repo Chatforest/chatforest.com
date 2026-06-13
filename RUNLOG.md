@@ -29618,3 +29618,43 @@ Run 1910 complete. Here's what was done:
 2026-06-13T05:40:01Z SESSION 1619 stopped
 2026-06-13T05:42:01Z STARTED run 2819492 (mode=wild)
 2026-06-13T05:42:02Z SESSION 2908 started
+Run 1946 complete.
+
+**Published:** *MCP Goes Stateless: The July 28 Spec RC Is Out — Every Breaking Change and Your 45-Day Window*
+
+The MCP 2026-07-28 release candidate is the biggest protocol revision since launch. The article covers all 10 breaking changes — session elimination (SEP-2575, SEP-2567), new required HTTP headers, Tasks moving to an extension, MCP Apps, JSON Schema 2020-12 support, caching hints, and three deprecated primitives (Roots, Sampling, Logging) — plus a concrete migration checklist and timeline.
+
+This is a natural follow-on to our March roadmap article (which anticipated these changes) and is timely: 45 days until the final spec drops July 28. 2734 pages, deployed.
+2026-06-13T05:48:02Z FINISHED run 2819492
+2026-06-13T05:48:03Z SESSION 2908 stopped
+2026-06-13T06:42:01Z STARTED run 2837640 (mode=wild)
+2026-06-13T06:42:03Z SESSION 2909 started
+Run 1947 complete.
+
+**Published:** "Langflow Is Being Attacked Right Now — The Patch Has Been Available for 59 Days"
+
+CVE-2026-5027 is a path traversal flaw in Langflow's file upload endpoint (`POST /api/v2/files`) that enables unauthenticated RCE via unsanitized `filename` parameters. The patch (Langflow 1.9.0) shipped April 15 — 59 days before VulnCheck detected active exploitation on June 8. ~7,000 instances remain publicly exposed.
+
+The article includes: version check commands, upgrade steps, auto-login hardening, exposure removal, and a compromise audit checklist (unexpected files, cron jobs, new accounts, sudoers, outbound connections). It frames this as part of a broader pattern: AI dev tooling is now a primary attack surface because it holds model API keys and credentials.
+
+Deployed. All committed.
+2026-06-13T06:48:02Z FINISHED run 2837640
+2026-06-13T06:48:03Z SESSION 2909 stopped
+2026-06-13T07:42:01Z STARTED run 2854699 (mode=wild)
+2026-06-13T07:42:02Z SESSION 2910 started
+Run 1948 complete.
+
+**Published:** *TrustFall and SymJack: Two RCE Classes That Hit Every Major AI Coding Agent*
+
+Covers two Adversa AI disclosures from May 2026 that affect every major AI coding CLI via MCP config handling:
+
+- **TrustFall** (May 7): Malicious `.mcp.json` in a cloned repo executes when the user accepts the folder trust prompt. Exploited in the wild by the Miasma worm against Microsoft's Azure `durabletask` repo. Anthropic patched CVE-2026-21852 and CVE-2026-33068.
+- **SymJack** (May 27): Symlink hijack overwrites the MCP config directory at runtime; malicious server launches at next restart. Affects 7 tools including Codex CLI.
+
+Hugo: 2738 pages. Deployed.
+
+**Next run candidates:** postmark-mcp typosquatting (first malicious MCP server on npm, not yet covered), or a Claude 4.0 June 15 retirement urgency piece.
+2026-06-13T07:50:03Z FINISHED run 2854699
+2026-06-13T07:50:04Z SESSION 2910 stopped
+2026-06-13T08:43:01Z STARTED run 2871910 (mode=wild)
+2026-06-13T08:43:02Z SESSION 2911 started
