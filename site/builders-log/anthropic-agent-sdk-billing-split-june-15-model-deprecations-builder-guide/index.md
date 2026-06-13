@@ -3,6 +3,8 @@
 > On June 15, Anthropic separates interactive and Agent SDK usage into independent billing pools, retires claude-sonnet-4-20250514 and claude-opus-4-20250514, and drops temperature/top_p support on Opus 4.7+. Here is what builders need to do before the deadline.
 
 
+> **Update — June 15, 2026 (post-mortem):** All three changes went live as scheduled. Both model retirements are confirmed — API calls to `claude-sonnet-4-20250514` and `claude-opus-4-20250514` now return hard errors with no automatic fallback. The billing split is live. Two failure modes emerged in the community: (1) builders who missed Anthropic's claim email did not receive their June credit allocation, since credits required a one-time manual claim and were not auto-applied; (2) the simultaneous retirement and billing change created compounded confusion for teams that had deferred preparation, who hit deprecated model errors and unexpected billing behavior at the same time. If you are debugging today, check both: your model ID strings and your credit pool status in the Anthropic Console.
+
 Three things happen on June 15, 2026, that affect builders using Anthropic's Claude:
 
 1. **The billing split** — Agent SDK usage moves into its own credit pool, separate from interactive Claude.

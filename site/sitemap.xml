@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/builders-log/</loc>
+    <lastmod>2026-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/gemini-3-1-flash-lite-api-builder-guide-model-id-rate-limits-feature-matrix/</loc>
+    <lastmod>2026-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/ai-patch-tuesday-record-206-cves-june-2026-vulnerability-discovery-builder-guide/</loc>
     <lastmod>2026-06-13T00:00:00+00:00</lastmod>
   </url>
@@ -14,16 +29,6 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/artificial-analysis-agentperf-agentic-hardware-benchmark-gpu-builder-guide/</loc>
-    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/builders-log/</loc>
-    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/</loc>
     <lastmod>2026-06-13T00:00:00+00:00</lastmod>
   </url>
   
