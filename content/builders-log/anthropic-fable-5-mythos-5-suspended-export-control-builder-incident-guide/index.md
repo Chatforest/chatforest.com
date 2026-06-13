@@ -12,6 +12,8 @@ At 5:21 PM ET on June 12, 2026 — three days after general availability — Ant
 
 If you built on either model, your product stopped working last night. This post covers what happened, what Anthropic is saying, and the practical steps to get back online.
 
+> **Update — June 13, 2026, evening:** Both models remain offline. Anthropic committed to releasing technical details within 24 hours of the directive (deadline ~5:21 PM ET, June 13). As of this update, no disclosure has been published. We will update when Anthropic publishes its technical report or the models are restored.
+
 ---
 
 ## What Happened

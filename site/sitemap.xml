@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/builders-log/ai-patch-tuesday-record-206-cves-june-2026-vulnerability-discovery-builder-guide/</loc>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/artificial-analysis-agentperf-agentic-hardware-benchmark-gpu-builder-guide/</loc>
     <lastmod>2026-06-13T00:00:00+00:00</lastmod>
   </url>
@@ -33,6 +38,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/anthropic-fable-5-mythos-5-us-export-control-suspension-builder-guide/</loc>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/five-eyes-agentic-ai-security-guidance-cisa-nsa-may-2026-builder-guide/</loc>
     <lastmod>2026-06-13T00:00:00+00:00</lastmod>
   </url>
@@ -53,6 +63,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/miasma-worm-73-microsoft-repos-ai-coding-agent-supply-chain-attack-builder-guide/</loc>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/openai-assistants-api-agent-builder-deprecation-agentkit-migration-guide/</loc>
     <lastmod>2026-06-13T00:00:00+00:00</lastmod>
   </url>
@@ -64,6 +79,11 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/postmark-mcp-typosquatting-first-malicious-npm-mcp-server-bcc-exfiltration/</loc>
+    <lastmod>2026-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/ox-security-mcp-sdk-rce-cve-2026-30615-by-design-builder-security-guide/</loc>
     <lastmod>2026-06-13T00:00:00+00:00</lastmod>
   </url>
   

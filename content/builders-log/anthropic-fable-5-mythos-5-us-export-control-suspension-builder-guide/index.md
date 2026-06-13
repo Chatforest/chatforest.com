@@ -9,6 +9,8 @@ tags: ["claude-fable-5", "claude-mythos-5", "anthropic", "export-control", "us-g
 
 **Status as of June 13, 2026:** `claude-fable-5` and `claude-mythos-5` are offline globally. Requests to either model fail at Anthropic's infrastructure level. No restoration timeline has been given. All other Anthropic models remain operational.
 
+> **Update — June 13, 2026, evening:** Anthropic committed to releasing technical details within 24 hours of the June 12 directive (deadline approximately 5:21 PM ET, June 13). As of this update, no technical disclosure has been published at `anthropic.com/news` or `red.anthropic.com/2026/cvd/`. Both models remain offline. The 24-hour window has closed without a public release. No statement has been issued explaining the delay. We will update when a disclosure or restoration announcement appears.
+
 ---
 
 ## What Happened
