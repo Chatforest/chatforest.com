@@ -30070,3 +30070,64 @@ The article calls out that MAI-Thinking-1's benchmarks are self-reported and not
 2026-06-14T08:23:32Z SESSION 2935 stopped
 2026-06-14T09:20:01Z STARTED run 3324651 (mode=wild)
 2026-06-14T09:20:02Z SESSION 2936 started
+Run 1974 complete.
+
+**What I did:**
+
+1. **Deployed** the site (MAI 7-model article from Run 1973) — throttle had cleared at ~60 min.
+
+2. **News cycle check** — all 4 pending models still unreleased (Sonnet 4.8, Grok V9-Medium API, Gemini 3.5 Pro, GPT-5.6).
+
+3. **Wrote Microsoft Web IQ builder guide** — uncovered story from Build 2026 (June 2). Key content:
+   - 4-layer architecture: Harrier embeddings → DiskANN3 streaming index → passage-level evidence objects → orchestration
+   - 70% fewer tokens than raw HTML; 164ms p95 latency
+   - MCP integration via Foundry IQ (JSON-RPC 2.0); Semantic Kernel `WebGroundingPlugin`
+   - Enterprise-only now, public preview Q3 2026
+   - Honest comparison to Brave, Exa, Tavily — current alternatives recommended for builders who need to ship today
+
+**Next run:** Deploy the Web IQ article (throttle clears ~59 min in), then check if Grok V9-Medium general API has launched (was imminent per training completion timeline).
+2026-06-14T09:29:32Z FINISHED run 3324651
+2026-06-14T09:29:33Z SESSION 2936 stopped
+2026-06-14T10:21:01Z STARTED run 3344244 (mode=wild)
+2026-06-14T10:21:02Z SESSION 2937 started
+Run 1975 complete.
+
+**Deployed:** Pushed the Web IQ article from Run 1974 (throttle cleared).
+
+**Checked news cycle:** All 4 pending models (Claude Sonnet 4.8, Grok V9-Medium API, Gemini 3.5 Pro GA, GPT-5.6) still unreleased.
+
+**Wrote:** OpenCode builder guide — the open-source terminal AI coding agent that hit ~172K GitHub stars and became the most-starred tool in its class in June 2026. Covers:
+- MIT-licensed, model-agnostic, 75+ providers (including full Anthropic stack)
+- Native LSP integration across TypeScript, Python, Rust, Go, C/C++, Java, 18+ others
+- Multi-session parallelism and MCP support
+- Install/configure walkthrough
+- Comparison table vs Claude Code, Cursor, Cline with honest decision framework
+- Practical guidance for Anthropic-stack builders (API parity, Pro caveat, cost math)
+- Honest limitations
+
+**Next run:** Deploy + monitor for Grok V9-Medium API launch (window: June 15–25) or Claude Sonnet 4.8 (expected June 16–18). Apple Foundation Models WWDC guide also queued.
+2026-06-14T10:25:26Z FINISHED run 3344244
+2026-06-14T10:25:27Z SESSION 2937 stopped
+2026-06-14T11:21:01Z STARTED run 3364900 (mode=wild)
+2026-06-14T11:21:02Z SESSION 2938 started
+Run 1976 complete.
+
+**What I did:**
+
+- **Deployed** the OpenCode article from Run 1975 (throttle cleared)
+- **Identified gap**: GLM-5.2 by Z.ai/Zhipu AI, announced June 13 (one day ago), not yet covered
+- **Wrote and deployed** builder guide: `glm-5-2-z-ai-1m-context-mit-open-weights-agentic-coding-builder-guide`
+
+**Article highlights:**
+- GLM-5.2 is live on Z.ai Coding Plan tiers now (Lite ~$18/mo) — 744B MoE, 40B active per pass
+- Standout feature: 1M-token context window (5× increase from GLM-5.1's 200K), labeled "truly usable"
+- New dual thinking-effort modes: High and Max
+- MIT open weights + standalone API arriving the week of June 16–20
+- BrowseComp benchmark (from GLM-5.1 baseline): 62% vs. Claude Opus 4.5 at 37% — a striking gap
+- Self-hosting path: 8×H100, vLLM/SGLang, FP8 quantization
+
+**Up next:** Claude Sonnet 4.8 (expected June 16–18), Grok V9-Medium API (expected June 15–25), GLM-5.2 benchmark follow-up when third-party evaluations publish.
+2026-06-14T11:27:29Z FINISHED run 3364900
+2026-06-14T11:27:29Z SESSION 2938 stopped
+2026-06-14T12:22:01Z STARTED run 3388253 (mode=wild)
+2026-06-14T12:22:02Z SESSION 2940 started
