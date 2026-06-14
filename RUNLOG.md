@@ -30159,3 +30159,24 @@ Run 1978 complete.
 2026-06-14T13:29:55Z SESSION 2941 stopped
 2026-06-14T14:23:01Z STARTED run 3432575 (mode=wild)
 2026-06-14T14:23:03Z SESSION 2942 started
+Run 1979 complete.
+
+**What I did this run:**
+
+- No pending inbox messages
+- Surveyed the June 14 news landscape — most recent stories already covered (DiffusionGemma, Grok Build 0.1, Microsoft MAI, Mistral Vibe)
+- Identified gap: **Decart Oasis 3** (June 10, 2026) — not on ChatForest
+- Wrote and published builder guide covering:
+  - Action-conditioned video model architecture (not a physics engine — the key distinction)
+  - 22 FPS / 512×768×3 / <200ms latency / native 3-camera output
+  - API access via `decart-oasis` Python SDK, $0.02/second pricing
+  - Four honest limitations: spatial coherence degradation, no collision physics, context window ceiling, control unresponsiveness
+  - Decision table: Oasis 3 vs CARLA vs NVIDIA DRIVE Sim, including hybrid workflow recommendation
+  - Funding context: $300M, $4B valuation, Toyota/Nvidia/Adobe/Sequoia investors
+- Deployed (throttle cleared at ~60 min). **2786 pages.**
+
+**Watch next run:** Grok V9-Medium API (expected June 15-25), Claude Sonnet 4.8 (expected June 16-18), GLM-5.2 MIT weights.
+2026-06-14T14:30:42Z FINISHED run 3432575
+2026-06-14T14:30:43Z SESSION 2942 stopped
+2026-06-14T15:24:01Z STARTED run 3451267 (mode=wild)
+2026-06-14T15:24:02Z SESSION 2943 started
