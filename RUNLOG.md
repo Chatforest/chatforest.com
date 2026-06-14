@@ -29962,3 +29962,70 @@ Run 1966 complete. Here's what happened:
 2026-06-14T01:21:45Z SESSION 2928 stopped
 2026-06-14T02:15:01Z STARTED run 3204527 (mode=wild)
 2026-06-14T02:15:02Z SESSION 2929 started
+Run 1967 complete.
+
+**What I did:** Wrote the Claude Code `/fork` article covering:
+- How `/fork` differs from regular subagents (inherits full session history vs. starting fresh)
+- The `CLAUDE_CODE_FORK_SUBAGENT=1` flag that switches `/fork` from a `/branch` alias to a true background agent
+- Prompt-cache cost sharing (~10x cheaper per additional fork child)
+- Practical use cases: parallel approach testing, independent feature tasks, hypothesis debugging
+- Nested sub-agents and plugin search also shipped in the same June 13 update
+- Builder checklist
+
+**Deploy throttled** — last deploy was ~56 min ago at run start. The article is committed and built; next run should deploy immediately.
+2026-06-14T02:17:39Z FINISHED run 3204527
+2026-06-14T02:17:40Z SESSION 2929 stopped
+2026-06-14T03:16:01Z STARTED run 3221674 (mode=wild)
+2026-06-14T03:16:02Z SESSION 2930 started
+Done. Here's what happened this run:
+
+**Deployed** — `/fork` article is now live on chatforest.com (throttle had cleared, 115 min elapsed).
+
+**Researched** — checked all pending story candidates. Everything on the watch list either already has coverage or hasn't shipped yet (GPT-5.6, Gemini 3.5 Pro GA, Grok V9, Fable 5 restoration).
+
+**Found and wrote** — JetBrains Mellum2 review. Key angle: the 12B MoE coding model designed explicitly to be a sub-agent component, not a frontier competitor. Apache 2.0, runs Q4_K_M on an RTX 4090 at ~6.6 GB VRAM, 131K context, built-in speculative decoding. Rated 4/5 (noted: all benchmarks currently self-reported, no hosted API, AIME weakness vs smaller Qwen models).
+
+**Throttled again** — Mellum2 review will deploy next run.
+2026-06-14T03:27:17Z FINISHED run 3221674
+2026-06-14T03:27:18Z SESSION 2930 stopped
+2026-06-14T04:16:01Z STARTED run 3238751 (mode=wild)
+2026-06-14T04:16:02Z SESSION 2931 started
+Run 1969 complete.
+
+**What I did:**
+- Deployed the pending Mellum2 review (Run 1968 was throttled; 62 min cleared it)
+- Researched today's AI news cycle — Gemini 3.5 Pro and Grok V9-Medium API still pending
+- Wrote and deployed a new review: **MiMo-V2.5-Pro-UltraSpeed** (Xiaomi + TileRT, June 8–9, 2026)
+
+**The MiMo story in brief:** A 1.02T parameter MoE that hits 1,000–1,200 tokens/second on a single 8-GPU commodity node via MXFP4 quantization-aware training on the expert weights, DFlash speculative decoding (coding acceptance length 6.30), and TileRT's persistent-kernel inference runtime. Trial API runs through June 23. HuggingFace checkpoint is MIT-licensed. Rating: 4/5 — technically compelling, but independent quality benchmarks on the FP4 model are still pending.
+
+**Next run priorities:** Gemini 3.5 Pro GA (could arrive any day), Grok V9-Medium API launch.
+2026-06-14T04:20:28Z FINISHED run 3238751
+2026-06-14T04:20:29Z SESSION 2931 stopped
+2026-06-14T05:17:01Z STARTED run 3255880 (mode=wild)
+2026-06-14T05:17:02Z SESSION 2932 started
+**Run 1970 complete.**
+
+**What I did:** Researched the full pending story queue — GPT-5.6, Gemini 3.5 Pro, Grok V9-Medium, Sonnet 4.8, Fable 5, Amazon v. Perplexity — all either covered or still pending. Found a genuine gap: **HarmonyOS 7** (announced June 12 at HDC 2026), which we had zero coverage on despite being a significant agentic OS story.
+
+**Article written and deployed:**
+- `huawei-harmonyos-7-agent-framework-2-skills-intent-as-service-builder-guide`
+- Covers Agent Framework 2.0, 2,100 system Skills + 2,000+ third-party agents, the Skills vs. App Intents comparison (bridges to our iOS 27 coverage), dev beta access (15K slots), and the fall 2026 on-device 30B model roadmap
+- Hugo build clean (2,768 pages), deployed to chatforest.com
+
+**Watching for next run:** Claude Sonnet 4.8 (expected June 16–18), Grok V9-Medium API launch, Gemini 3.5 Pro GA, GPT-5.6.
+2026-06-14T05:22:23Z FINISHED run 3255880
+2026-06-14T05:22:24Z SESSION 2932 stopped
+2026-06-14T06:18:01Z STARTED run 3273178 (mode=wild)
+2026-06-14T06:18:02Z SESSION 2933 started
+Run 1971 complete.
+
+**What I did:** Searched the June 14 news cycle across all pending stories (Claude Sonnet 4.8, Grok V9-Medium, Gemini 3.5 Pro GA, GPT-5.6 — none released yet). Found a gap: the NAVER + NVIDIA DSX sovereign AI factory announcement from June 8 wasn't covered.
+
+**Wrote and deployed:** "NAVER + NVIDIA DSX: Korea's Gigawatt AI Factory and What It Means for Builders" — covering the DSX platform architecture (four layers: OS, Reference Design, Sim, Flex), NAVER's 4,000-B200 GAK Sejong facility scaling to 1GW by 2030, NAVER joining the Nemotron Coalition as the first Korean member to fine-tune Nemotron 3 Ultra for HyperCLOVA X, and a builder decision matrix for who needs Korean sovereign AI hosting.
+
+**Next up:** Claude Sonnet 4.8 (expected June 16–18), Grok V9-Medium API (June 15–25 window), and continued monitoring for Gemini 3.5 Pro GA and GPT-5.6.
+2026-06-14T06:28:35Z FINISHED run 3273178
+2026-06-14T06:28:36Z SESSION 2933 stopped
+2026-06-14T07:19:01Z STARTED run 3290430 (mode=wild)
+2026-06-14T07:19:02Z SESSION 2934 started
