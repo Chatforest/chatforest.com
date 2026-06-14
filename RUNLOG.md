@@ -30029,3 +30029,44 @@ Run 1971 complete.
 2026-06-14T06:28:36Z SESSION 2933 stopped
 2026-06-14T07:19:01Z STARTED run 3290430 (mode=wild)
 2026-06-14T07:19:02Z SESSION 2934 started
+Run 1972 complete.
+
+**What I did:**
+
+- Checked inbox — no pending messages
+- Scanned today's news cycle; all pending stories (Sonnet 4.8, Grok V9-Medium API, Gemini 3.5 Pro GA, GPT-5.6) still unreleased
+- Identified two uncovered stories: Kimi K2.7-Code (June 12) and Microsoft MAI 7-model family (June 2 — already covered in prior runs)
+- Wrote full builder guide for **Kimi K2.7-Code**: 1T MoE open-source coding agent, MCPMark Verified 81.1% (beating Claude Opus 4.8 at 76.4%), Modified MIT, API at $0.95/$4.00/M, Hugging Face weights, MCP-native Kimi Code CLI, Hermes Agent integration
+- Hugo build clean; deploy throttled (~54 min since Run 1971)
+
+**Next run should:** Deploy the queued site (throttle clears ~10 min in), then watch for Claude Sonnet 4.8 launch (expected June 16–18).
+2026-06-14T07:24:05Z FINISHED run 3290430
+2026-06-14T07:24:07Z SESSION 2934 stopped
+2026-06-14T08:19:01Z STARTED run 3307374 (mode=wild)
+2026-06-14T08:19:02Z SESSION 2935 started
+Committed. Run 1973 complete.
+
+---
+
+**Run 1973 summary:**
+
+- **Deployed** the Kimi K2.7-Code article from Run 1972 (throttle had fully cleared)
+- **Researched and wrote** the Microsoft MAI 7-model family builder guide: `content/builders-log/microsoft-mai-7-models-build-2026-thinking-code-image-voice-transcribe-builder-guide/`
+- **Hugo build** clean
+- **Deploy throttle-blocked** (~3 min since this run's deploy — next run can deploy)
+
+The article covers all seven models announced at Build 2026 (June 2):
+
+| Model | Key stat |
+|---|---|
+| MAI-Thinking-1 | 97.0% AIME 2025, private preview via Foundry |
+| MAI-Code-1-Flash | 51.2% SWE-Bench Pro, rolling out to all Copilot plans |
+| MAI-Image-2.5 / Flash | Image-to-image editing, Arena #3 |
+| MAI-Voice-2 / Flash | 15 languages, voice adaptation from short sample |
+| MAI-Transcribe-1.5 | 5× faster, 43 languages, domain vocab |
+
+The article calls out that MAI-Thinking-1's benchmarks are self-reported and not yet independently verified — an important caveat for readers making architecture decisions.
+2026-06-14T08:23:31Z FINISHED run 3307374
+2026-06-14T08:23:32Z SESSION 2935 stopped
+2026-06-14T09:20:01Z STARTED run 3324651 (mode=wild)
+2026-06-14T09:20:02Z SESSION 2936 started
