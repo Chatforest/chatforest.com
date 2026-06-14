@@ -579,6 +579,20 @@
   <h2 class="section-heading">More Reviews</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-06-14 00:00:00</span></div>
+  <h3><a href="/reviews/nvidia-cosmos-3-open-physical-ai-foundation-model-review/">NVIDIA Cosmos 3: The First Open Omnimodel for Physical AI</a></h3>
+  <p>Cosmos 3 launched June 1 as NVIDIA&#39;s open physical AI foundation model — the first to unify world generation, physical reasoning, and robot action generation in a single open-weight model. Free via HuggingFace.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Reviews</span> <span>2026-06-14 08:00:00</span></div>
+  <h3><a href="/reviews/moonshot-ai-kimi-k2-7-code-open-weight-coding-llm-review/">Kimi K2.7-Code Review: Moonshot&#39;s Coding-Specialized Open-Weight Model — 30% Fewer Thinking Tokens, But At What Cost?</a></h3>
+  <p>Kimi K2.7-Code (released June 12, 2026) is Moonshot AI&#39;s coding-specialized open-weight model, built on the same 1T MoE chassis as K2.6 (32B active, 384 experts, 256K context, MLA attention, MoonViT multimodal). Two substantive changes from K2.6: (1) the model now authors implementations directly rather than routing through existing library wrappers, and (2) thinking-token usage is reduced ~30% vs K2.6. Benchmark improvements (&#43;21.8% Kimi Code Bench v2, &#43;11% Program Bench, &#43;31.5% MLS Bench Lite) are all Moonshot-proprietary — no independent SWE-Bench Verified, LiveCodeBench, or Terminal-Bench results exist as of publication. VentureBeat ran a skeptical piece noting practitioners could not replicate the benchmark gains on real-world tasks. Pricing increased from $0.60/$2.50 to $0.95/$4.00 per million input/output tokens — a 58% input cost increase with no externally verified performance justification yet. Modified MIT license; open weights on Hugging Face. Rating: 3.5/5.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Reviews</span> <span>2026-06-12 14:00:00</span></div>
   <h3><a href="/reviews/minimax-m3-1m-context-multimodal-msa-coding-review/">MiniMax M3 Review: MSA Architecture, 1M-Token Context, Native Multimodal — Generational Leap or Benchmark Theater?</a></h3>
   <p>MiniMax M3 (released June 1, 2026) is a complete architectural departure from the M2 series: where M2.5 and M2.7 used a 229B/10B Sparse MoE, M3 is built on MiniMax Sparse Attention (MSA) — a two-stage attention design that selects relevant KV-cache blocks before attending, delivering 9.7x faster prefill and 15.6x faster decoding at 1M-token context versus M2. The model natively handles text, image, and video input from pretraining step zero, not as a post-hoc addition. Benchmark highlights: SWE-Bench Pro 59.0% (beats GPT-5.5 58.6%, below Claude Opus 4.7 64.3%), BrowseComp 83.5 (above Opus 4.7 79.3), OSWorld-Verified 70.06% for computer use, coding and math at 95.0%. Standard API pricing: $0.60/$2.40 per million tokens (50% launch promo reduces to $0.30/$1.20). Open weights and technical report promised to Hugging Face within 10 days. License terms not published as of launch — M2.7&#39;s commercial-authorization requirement is the relevant precedent to watch. Benchmarks are vendor-published and independently unverified at time of review. Rating: 4/5.</p>
@@ -589,20 +603,6 @@
   <div class="card-meta"><span>Reviews</span> <span>2026-06-12 00:00:00</span></div>
   <h3><a href="/reviews/amazon-perplexity-comet-cfaa-ninth-circuit-ai-agent-authorization-2026/">Amazon v. Perplexity: The Ninth Circuit Case That Decides Whether AI Agents Can Shop for You</a></h3>
   <p>Amazon v. Perplexity at the Ninth Circuit (June 11, 2026): Arguments complete — panel skeptical of Perplexity. Updated with what the judges actually asked and what it signals.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Review</span> <span>2026-06-12 00:00:00</span></div>
-  <h3><a href="/reviews/claude-fable-5-mythos-5-anthropic-public-mythos-class-model-safeguards/">Claude Fable 5 — Anthropic&#39;s Mythos-Class Model, Now Public</a></h3>
-  <p>Claude Fable 5 is the first Mythos-class model Anthropic has released to the public. Launched June 9, 2026. It shares the same underlying model as Claude Mythos 5 — Anthropic&#39;s most capable tier — but ships with three classifier-based safeguards that block cybersecurity, biology/chemistry, and model distillation queries, falling back to Claude Opus 4.8 when triggered. Benchmark results: 80.3% SWE-bench Pro, 29.3% FrontierCode Diamond, 29.8% GDP.pdf vision. Priced at $10/$50 per million tokens. 1M context window. Available on Claude API, Claude.ai plans, and GitHub Copilot.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Analysis</span> <span>2026-06-11 00:00:00</span></div>
-  <h3><a href="/reviews/california-sb53-tfaia-transparency-frontier-ai-act-2025-2026/">California SB 53: The First US Frontier AI Safety Law</a></h3>
-  <p>California SB 53 (TFAIA) was signed by Governor Newsom on September 29, 2025 — the first enforceable frontier AI statute in the United States. Effective January 1, 2026. Two tiers: all frontier developers (&gt;10²⁶ FLOPs) must publish pre-deployment transparency reports; large frontier developers (revenue &gt;$500M) must additionally maintain a public annual Frontier AI Framework. Incident reporting to Cal OES within 15 days (24 hours if imminent danger). $1M/violation penalty enforced by the California AG. No dedicated regulatory office — that came later with New York. Unique: a built-in federal deference provision allowing companies to comply with equivalent federal standards instead.</p>
 </div>
 
   

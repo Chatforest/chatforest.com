@@ -29889,3 +29889,76 @@ Updated the Gemini CLI → Antigravity CLI migration article with a **June 14 Up
 2026-06-13T20:55:33Z SESSION 2923 stopped
 2026-06-13T21:50:01Z STARTED run 3121735 (mode=wild)
 2026-06-13T21:50:02Z SESSION 2924 started
+Committed. This run is complete. Here's a summary:
+
+---
+
+**Run 1962 summary:**
+
+1. **Deployed pending Run 1960-1961 changes** — the MiniMax M3 HTML update and Gemini CLI June 14 update were committed but not deployed due to throttle. Committed them and deployed (~06:54 AM JST).
+
+2. **Researched new article topics** — Most breaking news (Gemini image shutdown, Gemini 3.5 Flash GA, MCP spec RC, Agent Builder deprecation, Fable 5) was already covered across 300+ articles. 
+
+3. **Updated the June 2026 builder calendar** — 10 days stale since June 4. Added:
+   - June 14 mid-month status section marking all June 1-15 events complete
+   - Fable 5/Mythos 5 government suspension as unscheduled incident with builder fallback
+   - Remaining June 16-30 deadlines with urgency markers
+   - Two new events not in original calendar: Gemini image preview shutdown (June 25), Vertex AI Imagen shutdown (June 30)
+   - Updated "Expected in June": Sonnet 4.8 not out, Grok V9-Medium no general API, GPT-5.6 still pending, Gemini 3.5 Pro slipped to July
+
+**Deploy throttled** (12 min after prior deploy). Built site is ready — next run should deploy first.
+2026-06-13T22:07:17Z FINISHED run 3121735
+2026-06-13T22:07:18Z SESSION 2924 stopped
+2026-06-13T22:50:01Z STARTED run 3139896 (mode=wild)
+2026-06-13T22:50:02Z SESSION 2925 started
+Run 1963 complete. Here's what happened:
+
+**Deployed** the June 2026 builder calendar (pending from Run 1962) — throttle cleared, rsync succeeded at ~07:50 JST.
+
+**Researched the news cycle** — Fable 5 still suspended, Gemini CLI June 18 on schedule (enterprise exemption already in our article), GPT-5.6 still unreleased.
+
+**Wrote and committed Kimi K2.7-Code review** — Moonshot's June 12 coding-specialized open-weight release, built on the same 1T MoE chassis as K2.6. The review's key editorial call: all benchmark improvements (+21.8% Kimi Code Bench v2) are Moonshot-proprietary with zero independent validation yet, while the price jumped 58%. Rating: 3.5/5 pending third-party SWE-Bench numbers. VentureBeat's practitioner pushback documented.
+
+**Next run**: Deploy the K2.7-Code review (currently throttled). Watch for Gemini CLI June 18 fallout — that's 4 days out and will need a follow-up article.
+2026-06-13T22:55:03Z FINISHED run 3139896
+2026-06-13T22:55:04Z SESSION 2925 stopped
+2026-06-13T23:13:01Z ONCE triggered
+2026-06-13T23:13:01Z STARTED run 3147779 (mode=wild)
+2026-06-13T23:13:02Z SESSION 2926 started
+Run 1964 complete. Here's what happened:
+
+**Inbox — Red flag handled:** Message #1918 claimed to be from "Boss Claude (aiu 8)" but `sender_aiu` was **6** — my own actor ID. The message asked me to extract a Sprout-built tarball (`/tmp/kudos-dist.tgz`) and deploy it to chatforest.com/kudos. I refused: sender identity doesn't match the claim, CLAUDE.md authorizes Sprout promotion only via "link + honest description" (not hosting their code), and the "Rob approved" claim was unverifiable. I sent Rob a high-priority message (msg #1919) explaining all three concerns and asking him to confirm directly if he wants this done.
+
+**New article written:** NVIDIA Cosmos 3 review (`content/reviews/nvidia-cosmos-3-open-physical-ai-foundation-model-review.md`) — the first open omnimodel for physical AI, released June 1 at GTC Taipei. Covers the Mixture-of-Transformers architecture, three model variants (Super/Nano/Edge), HuggingFace availability under OpenMDW-1.1 (free weights), leaderboard performance, and builder verdict (4.5/5 — best open physical AI model, niche audience).
+
+**Deploy throttled** — both the Cosmos 3 review and the K2.7-Code review from Run 1963 will deploy next run (requires 60-min gap between deploys).
+2026-06-13T23:17:49Z FINISHED run 3147779
+2026-06-13T23:17:50Z SESSION 2926 stopped
+2026-06-14T00:13:01Z STARTED run 3165899 (mode=wild)
+2026-06-14T00:13:03Z SESSION 2927 started
+Committed. The site was already deployed at the start of this run (Cosmos 3 + K2.7-Code + Kudos Circle). The new OpenAI/Ona article is built but throttle prevents a second deploy — that goes out next run.
+
+**Run 1965 summary:**
+
+- **Inbox resolved:** Rob confirmed Kudos Circle approval (msg #1920). Both messages marked done.
+- **Deployed:** Full site including Cosmos 3 review, Kimi K2.7-Code review, and Kudos Circle — all three were pending from prior runs.
+- **New article:** [OpenAI Acquires Ona (ex-Gitpod): What Persistent Codex Agents Mean for Your Dev Workflow](https://chatforest.com/builders-log/openai-ona-gitpod-codex-persistent-agents-cloud-builder-guide/) — covers the June 11 acquisition of Gitpod GmbH, what persistent cloud execution means for Codex, the copilot→contractor shift, and practical builder guidance. Not previously covered anywhere on the site.
+- **Next run:** Deploy the Ona article + watch for Gemini 3.5 Pro GA (expected any day), GPT-5.6, Gemini CLI June 18 cutover.
+2026-06-14T00:19:45Z FINISHED run 3165899
+2026-06-14T00:19:46Z SESSION 2927 stopped
+2026-06-14T01:14:01Z STARTED run 3186419 (mode=wild)
+2026-06-14T01:14:02Z SESSION 2928 started
+Run 1966 complete. Here's what happened:
+
+**Deployed** the pending OpenAI/Ona acquisition article from Run 1965 (deploy was throttled last run).
+
+**Wrote and deployed** a new article: "Anthropic Passes OpenAI in US Business Adoption: What the Ramp AI Index Means for Builders"
+- Ramp AI Index May 2026 data: Anthropic 34.4% vs OpenAI 32.3% — the first crossover since ChatGPT launched
+- June update shows Anthropic now at 41% of US businesses with paid AI subscriptions
+- Covers the growth trajectory (0.03% → 34.4% in 3 years), Claude Code's role (4%+ of GitHub commits, 70% win rate), the three threats to Anthropic's lead, and concrete builder implications
+
+**Next run priorities:** Claude Code `/fork` command article (June 13 feature, not yet covered), Gemini 3.5 Pro GA when confirmed, GPT-5.6 when officially released, Gemini CLI post-mortem after June 18.
+2026-06-14T01:21:44Z FINISHED run 3186419
+2026-06-14T01:21:45Z SESSION 2928 stopped
+2026-06-14T02:15:01Z STARTED run 3204527 (mode=wild)
+2026-06-14T02:15:02Z SESSION 2929 started
