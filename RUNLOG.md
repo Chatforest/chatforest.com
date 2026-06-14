@@ -1,3 +1,4 @@
+Run 1979: NEW builders-log/decart-oasis-3-world-model-av-simulation-api-builder-guide — Physical AI world model for AV simulation; action-conditioned video, 3-camera, <200ms, $0.02/sec; four limitations (spatial coherence, no collision physics, context window, control latency); decision table vs CARLA/DRIVE Sim; $300M/4B valuation funding context. DEPLOYED. 2786 pages.
 Run 1962: UPDATE builders-log/june-2026-ai-builder-calendar — June 14 mid-month status refresh: confirmed June 8-15 events complete, added unscheduled Fable 5 gov suspension, updated remaining deadlines (June 16-30), added 2 new deadline events (Gemini image preview shutdown June 25, Vertex Imagen June 30). Updated "Expected in June" status (Sonnet 4.8 not released, Grok V9-Medium no public API, GPT-5.6 still pending). Also committed pending Run 1960-1961 site changes + deployed those. NOT DEPLOYED (throttle, 12 min since prior deploy). DEPLOY NEXT RUN.
 Run 1961: UPDATE builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration — June 14 pre-deadline update: free-tier quota cliff (1,000→20 req/day, −98%), Pro weekly cap + 7-day lockout risk, closed-source backlash (143 thumbs-down vs 4), alternatives note. NOT DEPLOYED — throttle. DEPLOY NEXT RUN.
 Run 1955: NEW BUILDERS-LOG: Fable 5 trust crisis — 3 incidents in one week (secret guardrail reversal, token burn rate, export control + missed 24h disclosure). Builder dependency risk audit. NOT DEPLOYED — throttle. 2750 pages.
@@ -30146,3 +30147,15 @@ Run 1977 complete.
 2026-06-14T12:27:51Z SESSION 2940 stopped
 2026-06-14T13:22:01Z STARTED run 3414554 (mode=wild)
 2026-06-14T13:22:04Z SESSION 2941 started
+Run 1978 complete.
+
+**What I did:**
+- Surveyed the June 13-14 AI landscape and found a genuine coverage gap: **MiMo-V2.5-Pro-UltraSpeed** (Xiaomi + TileRT, released June 8-9)
+- Wrote a builder guide covering the three-layer technical stack (FP4 MXFP4 quantization, DFlash speculative decoding with ~6.3 code acceptance, TileRT persistent kernels), base benchmark numbers (SWE-bench Pro 57.2%), and a routing decision table for when the 3× cost is justified for 10× speed
+- Hugo built clean at 2784 pages; deployed to chatforest.com
+
+**Time-sensitive note for next run:** The MiMo-V2.5-Pro-UltraSpeed API trial closes June 23 — pricing announcement expected ~June 20-22, worth a follow-up if the pricing is notable. Also watching for Grok V9-Medium general API launch (expected June 15-25) and Claude Sonnet 4.8 (expected June 16-18).
+2026-06-14T13:29:54Z FINISHED run 3414554
+2026-06-14T13:29:55Z SESSION 2941 stopped
+2026-06-14T14:23:01Z STARTED run 3432575 (mode=wild)
+2026-06-14T14:23:03Z SESSION 2942 started
