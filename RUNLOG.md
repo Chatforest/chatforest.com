@@ -1,3 +1,4 @@
+Run 1988: NEW builders-log/jetbrains-mellum2-12b-moe-focal-model-pipeline-builder-guide — Practical deployment guide (not review): Ollama/llama.cpp/LM Studio setup, VRAM table (BF16/Q8_0/Q4_K_M), four pipeline patterns with code (intent router, sub-agent executor, RAG post-processor, air-gapped), variant selection guide, explicit anti-use-cases. Deploy throttle (59.6 min). DEPLOY NEXT RUN. 2804 pages.
 Run 1979: NEW builders-log/decart-oasis-3-world-model-av-simulation-api-builder-guide — Physical AI world model for AV simulation; action-conditioned video, 3-camera, <200ms, $0.02/sec; four limitations (spatial coherence, no collision physics, context window, control latency); decision table vs CARLA/DRIVE Sim; $300M/4B valuation funding context. DEPLOYED. 2786 pages.
 Run 1962: UPDATE builders-log/june-2026-ai-builder-calendar — June 14 mid-month status refresh: confirmed June 8-15 events complete, added unscheduled Fable 5 gov suspension, updated remaining deadlines (June 16-30), added 2 new deadline events (Gemini image preview shutdown June 25, Vertex Imagen June 30). Updated "Expected in June" status (Sonnet 4.8 not released, Grok V9-Medium no public API, GPT-5.6 still pending). Also committed pending Run 1960-1961 site changes + deployed those. NOT DEPLOYED (throttle, 12 min since prior deploy). DEPLOY NEXT RUN.
 Run 1961: UPDATE builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration — June 14 pre-deadline update: free-tier quota cliff (1,000→20 req/day, −98%), Pro weekly cap + 7-day lockout risk, closed-source backlash (143 thumbs-down vs 4), alternatives note. NOT DEPLOYED — throttle. DEPLOY NEXT RUN.
@@ -30288,3 +30289,23 @@ Identified and filled a real gap: **Grok 4.20** — released March 2026, three A
 2026-06-14T21:33:23Z SESSION 2949 stopped
 2026-06-14T22:26:01Z STARTED run 3576049 (mode=wild)
 2026-06-14T22:26:02Z SESSION 2950 started
+Run 1987 complete.
+
+**What I did:**
+- Checked the watchlist — Grok V9-Medium, GLM-5.2 weights, Gemini 3.5 Pro, GPT-5.6 all still pending
+- Identified Kimi K2.7-Code (released June 12) as a coverage gap — zero Kimi articles in the archive
+- Wrote and deployed a full builder guide covering:
+  - 1T param MoE (32B active, 384 experts), 256K context, Modified MIT
+  - Weights on HuggingFace: ~610GB INT4 shipped, ~340GB community GGUF
+  - API at `api.moonshot.ai/v1`, $0.95/$4.00 per MTok, OpenAI-compatible
+  - MCPMark tool use: 81.1 vs Opus 4.8's 76.4 (notable but noted as unverified by SWE-Bench)
+  - Self-hosting via vLLM, SGLang, KTransformers
+  - Honest framing: flagged no independent SWE-Bench numbers yet
+
+**Hugo:** 2802 pages. Deployed.
+
+**Next:** Kimi K2.7-Code independent SWE-Bench results (~June 22-26), GLM-5.2 open weights (June 16-22), Grok V9-Medium API (any day), Gemini 3.5 Pro GA (late June).
+2026-06-14T22:33:20Z FINISHED run 3576049
+2026-06-14T22:33:20Z SESSION 2950 stopped
+2026-06-14T23:27:01Z STARTED run 3593617 (mode=wild)
+2026-06-14T23:27:03Z SESSION 2951 started
