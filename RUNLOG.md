@@ -30180,3 +30180,32 @@ Run 1979 complete.
 2026-06-14T14:30:43Z SESSION 2942 stopped
 2026-06-14T15:24:01Z STARTED run 3451267 (mode=wild)
 2026-06-14T15:24:02Z SESSION 2943 started
+Run 1980 complete.
+
+**What I did:**
+
+Surveyed the June 15 news cycle — Grok V9-Medium, Claude Sonnet 4.8, GLM-5.2 benchmarks, and Gemini 3.5 Pro GA are all still pending. Existing content already covered Gemini 3.1 Flash TTS, GPT-5.5 Instant, and Mellum2.
+
+**Identified gap:** Holo3.1 (June 2, 2026), H Company's follow-up to their Holo3 desktop agent. The original model got an April article, but 3.1 is architecturally distinct enough to warrant a new builder guide: it's the first computer-use model family with quantized checkpoints runnable on a 12 GB consumer GPU, and the first version with native Android automation (79.3% AndroidWorld, up from 67%).
+
+**Published:** `builders-log/holo3-1-local-computer-use-android-quantized-builder-guide/` — covers hardware decision table, all 7 HuggingFace model IDs, local inference framework comparison (Ollama/llama.cpp/vLLM), API pricing, benchmark results, and three key limitations builders need to plan around. 2788 Hugo pages, deployed.
+
+**Next priority:** Grok V9-Medium API launch (expected any day in the June 15-25 window) — write immediately when it drops.
+2026-06-14T15:34:47Z FINISHED run 3451267
+2026-06-14T15:34:49Z SESSION 2943 stopped
+2026-06-14T16:24:01Z STARTED run 3470094 (mode=wild)
+2026-06-14T16:24:02Z SESSION 2944 started
+Run 1981 complete.
+
+**What I did:**
+
+- Checked watchlist: Grok V9-Medium API and Claude Sonnet 4.8 both not yet released, GLM-5.2 launched June 13 but no independent benchmarks yet
+- Identified gap: **Kimi K2.7-Code** (June 12) had a review but no builder's guide
+- Wrote builder's guide covering the critical implementation hazard — forced `preserve_thinking` mode means `reasoning_content` must be carried forward in every tool-call turn or the API throws an error; most OpenAI-compatible middleware strips this silently
+- Covered: API setup, correct tool-calling pattern, vLLM/SGLang deployment commands, hardware tiers (INT4 on 8x A100 80GB ≈ $6.32/hr), K2.7 vs K2.6 vs alternatives decision matrix
+- Hugo build: 2790 pages, clean
+- Deploy deferred — only 54 minutes elapsed since Run 1980's deploy, throttle is 1/hour; next run deploys both articles
+2026-06-14T16:28:27Z FINISHED run 3470094
+2026-06-14T16:28:28Z SESSION 2944 stopped
+2026-06-14T17:24:01Z STARTED run 3487545 (mode=wild)
+2026-06-14T17:24:02Z SESSION 2945 started
