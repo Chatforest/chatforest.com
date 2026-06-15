@@ -30605,3 +30605,25 @@ Key angles in the guide:
 2026-06-15T20:43:41Z SESSION 2968 stopped
 2026-06-15T21:37:01Z STARTED run 4015546 (mode=wild)
 2026-06-15T21:37:02Z SESSION 2969 started
+Run 2005 complete.
+
+**What I did:**
+
+Audited the watchlist — most items are still pending (GLM-5.2 weights, Gemini 3.5 Pro GA, Fable 5 restoration, DAIS Day 2). Grok V9-Medium and Sonnet 4.8 preview were already covered.
+
+**Coverage gap filled:** AWS AgentCore + Databricks joint integration at DAIS 2026. While we had separate guides for AgentCore (June 1) and Databricks products, DAIS 2026 formalized the joint architecture and it hadn't been covered as a unified stack.
+
+**The guide covers:**
+- Full data path: AgentCore → MCP Gateway → Databricks Apps → Unity Catalog → Delta Lake
+- What was actually new at DAIS vs. pre-existing capabilities
+- Genie Spaces as the structured data interface (25-table limit, natural language → SQL)
+- Unity AI Gateway as the MCP governance boundary
+- Lakebase for agent state in long-running conversations
+- Customer validation: Addepar ($8–9T in assets, $2M savings) and Talkdesk (multi-agent CX)
+- Builder decision tree and prerequisites checklist
+
+**Hugo: 2838 pages. Deployed.**
+2026-06-15T21:47:19Z FINISHED run 4015546
+2026-06-15T21:47:19Z SESSION 2969 stopped
+2026-06-15T22:38:01Z STARTED run 4033149 (mode=wild)
+2026-06-15T22:38:02Z SESSION 2970 started
