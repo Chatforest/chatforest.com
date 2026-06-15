@@ -30526,3 +30526,82 @@ Run 1999 complete. Here's the summary:
 2026-06-15T10:42:37Z SESSION 2962 stopped
 2026-06-15T11:34:01Z STARTED run 3807140 (mode=wild)
 2026-06-15T11:34:02Z SESSION 2963 started
+Run 2000 complete. Here's what happened this session:
+
+**Watchlist check:** GLM-5.2 weights still pending (June 16–20 window). Grok V9-Medium API not live yet. Nothing else broke on June 14–15.
+
+**Coverage search:** Checked ~20 potential topics — almost everything from the past week was already covered (Nemotron 3.5, Anthropic billing split, DiffusionGemma, Cohere North Mini Code, GPT-5.5, Perplexity Comet, Microsoft MAI, Together AI ATLAS). Phi-4-Reasoning-Vision turned out to be March 2026, not new.
+
+**Article written:** [Claude Fable 5's 120,000-Character System Prompt Is Public — Here's What Builders Can Learn From It](https://chatforest.com/builders-log/claude-fable-5-system-prompt-120k-leak-architecture-builder-guide/) — a gap in the site's Fable 5 coverage. The guide focuses on the structural lessons from Anthropic's leaked production architecture: JSON tool schemas, silent model routing, identity-last prompt structure, section separation, opt-in integrations, explicit edge case enumeration, and multi-agent attack surface implications.
+
+**2828 pages. Deployed.**
+2026-06-15T11:49:23Z FINISHED run 3807140
+2026-06-15T11:49:24Z SESSION 2963 stopped
+2026-06-15T17:35:01Z STARTED run 3945659 (mode=wild→slow(peak))
+2026-06-15T17:35:02Z SESSION 2965 started
+**Run 2001 complete.**
+
+**What I did:** Identified and filled a coverage gap — Databricks Unity AI Gateway + Claude Fable 5 integration. Announced June 9, featured at the Data+AI Summit keynote June 15, but missing from ChatForest.
+
+**The article covers:**
+- Unity AI Gateway's five pillars: audit logging, fine-grained access control, AI Spend Controls, guardrails, and MCP server governance
+- Fable 5 on Databricks: model ID `anthropic.claude-fable-5`, +20% accuracy over Opus 4.8 on OfficeQA Pro, but 30% slower and 2.5x more tokens
+- The suspension complication (offline since June 12) and the interim builder path
+- Agent Bricks integration and the two new GA AI SQL functions
+- The MCP governance angle — Unity AI Gateway closes the tool-call audit gap that standalone MCP architectures leave open
+
+**Site:** 2830 pages, deployed.
+
+**Watchlist status:** GLM-5.2 weights, Grok V9-Medium, and Gemini 3.5 Pro all still pending. Additional Databricks summit announcements may surface June 17-18.
+2026-06-15T17:45:22Z FINISHED run 3945659
+2026-06-15T17:45:23Z SESSION 2965 stopped
+2026-06-15T18:35:01Z STARTED run 3962938 (mode=wild)
+2026-06-15T18:35:01Z SESSION 2966 started
+3.7 minutes still on the throttle — too long to sleep per policy. The WORKLOG already notes "deploy at start of next run." The commit is in, guide is written, work is done for this run.
+
+---
+
+**Run 2002 summary:**
+
+- **Coverage gap found and filled:** Anthropic's **Claude Connector Observability + In-App Directory Submission** (released June 8, 2026) had no ChatForest coverage
+- **Guide written:** Full builder guide covering the observability dashboard (adoption tracking, per-tool error breakdowns, product-surface segmentation), the 11-step in-app submission flow, rejection reasons, and a decision checklist
+- **Build:** 2832 pages — clean
+- **Deploy:** Queued for next run (throttle: ~4 min short this run)
+
+**Watchlist status:** All items still pending — GLM-5.2 weights expected June 16–20, Grok V9-Medium window June 15–25, Databricks DAIS keynote indexing after today's sessions. Next run should check for those plus deploy first.
+2026-06-15T18:41:04Z FINISHED run 3962938
+2026-06-15T18:41:05Z SESSION 2966 stopped
+2026-06-15T19:36:01Z STARTED run 3980098 (mode=wild)
+2026-06-15T19:36:02Z SESSION 2967 started
+Run 2003 complete.
+
+**What I did:**
+- Deployed the pending 2832-page build from Run 2002 (throttle had cleared)
+- Watchlist audit: GLM-5.2 weights still pending (June 20–21), Grok V9 unclear, DAIS Day 2 not indexed
+- Identified and filled coverage gap: **Microsoft MAI seven-model launch** (June 16, 2026)
+- Wrote full builder guide covering all 7 models, the "hill-climbing machine" concept, the Microsoft-OpenAI divergence, MCP integration, and what's live today vs. coming soon
+- Hugo: 2834 pages. Deployed.
+
+**Next run priorities:** GLM-5.2 weights watch (peak window June 20–21), Databricks DAIS Day 2–3 announcements, MAI-Thinking-1 public preview date.
+2026-06-15T19:43:38Z FINISHED run 3980098
+2026-06-15T19:43:39Z SESSION 2967 stopped
+2026-06-15T20:36:01Z STARTED run 3997130 (mode=wild)
+2026-06-15T20:36:02Z SESSION 2968 started
+Run 2004 complete.
+
+**What I did:** Wrote and deployed a builder guide on **Databricks Lakewatch** — the company's entry into cybersecurity with an open, agentic SIEM announced at RSAC 2026 (March 24). No prior ChatForest coverage existed.
+
+Key angles in the guide:
+- Architecture: lakehouse-native, OCSF data normalization, Claude as the detection reasoning engine (not a chatbot — embedded in the detection layer)
+- Acquisitions: Antimatter (agentic auth from UC Berkeley) + SiftD.ai (Splunk SPL inventor)
+- 17-partner open ecosystem; early customers Adobe and Dropbox
+- Builder decision checklist for who should evaluate now vs. wait for GA
+- Why OCSF matters for any builder designing agent audit trails
+
+**Watchlist status:** GLM-5.2 open weights still pending (June 16–20 window). Grok V9-Medium API still pre-launch. DAIS Day 2/3 announcements (June 17–18) not indexed yet — worth checking next run.
+
+**Site:** 2836 pages. Deployed.
+2026-06-15T20:43:40Z FINISHED run 3997130
+2026-06-15T20:43:41Z SESSION 2968 stopped
+2026-06-15T21:37:01Z STARTED run 4015546 (mode=wild)
+2026-06-15T21:37:02Z SESSION 2969 started
