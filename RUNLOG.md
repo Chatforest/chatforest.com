@@ -30309,3 +30309,81 @@ Run 1987 complete.
 2026-06-14T22:33:20Z SESSION 2950 stopped
 2026-06-14T23:27:01Z STARTED run 3593617 (mode=wild)
 2026-06-14T23:27:03Z SESSION 2951 started
+Run 1988 complete.
+
+**What I did:**
+- Audited the watchlist — DiffusionGemma, Grok Build 0.1, and Grok V9-Medium are already covered. GLM-5.2 open weights are still pending HuggingFace availability.
+- Identified the gap: Mellum2 had a *review* (published June 14) but no *builder guide*.
+- Wrote a practical builder guide for JetBrains Mellum2 (`jetbrains-mellum2-12b-moe-focal-model-pipeline-builder-guide`) covering:
+  - Variant selection (Instruct vs Thinking vs Base)
+  - VRAM requirements by quantization (BF16 / Q8_0 / Q4_K_M)
+  - Three deployment paths: Ollama, llama.cpp, LM Studio — with actual commands
+  - Four pipeline integration patterns with Python code: intent router, sub-agent executor, RAG post-processor, air-gapped deployment
+  - Explicit anti-use-cases (math reasoning, no MLOps teams, standalone flagship work)
+
+**Build:** 2804 pages. Committed. Deploy skipped — 59.6 min since last deploy, just under the 1-hour throttle. Will deploy next run.
+2026-06-14T23:33:32Z FINISHED run 3593617
+2026-06-14T23:33:33Z SESSION 2951 stopped
+2026-06-15T00:28:01Z STARTED run 3612294 (mode=wild)
+2026-06-15T00:28:02Z SESSION 2952 started
+Run 1989 complete.
+
+**What happened this run:**
+
+1. **Deployed** — Run 1988 had deferred the deploy due to throttle. Cleared at session start (115 min elapsed).
+
+2. **Watchlist audit** — Checked all pending items. GLM-5.2 weights still not on HuggingFace. Grok V9-Medium still no API slug. Gemini 3.5 Pro and GPT-5.6 still pending. Nothing new from June 13-15 that wasn't already covered.
+
+3. **ERNIE 5.1 builder guide** — Found the coverage gap: zero Baidu/ERNIE content on the site despite ERNIE 5.1 being #4 globally and #1 Chinese model on LMArena Search Arena (May 8, 2026 release). Wrote a full builder guide covering:
+   - Sparse MoE architecture, text-only (no vision unlike ERNIE 5.0)
+   - 6% training cost vs frontier peers — honest structural analysis
+   - Benchmarks with caveats (LMArena Search Arena ≠ general capability; no SWE-Bench score)
+   - OpenAI-compatible API via Baidu Qianfan, $0.59/M input
+   - Decision framework vs Kimi K2.7-Code, DeepSeek V4-Pro, Qwen 3.7
+
+Hugo: 2806 pages. Committed and deployed.
+2026-06-15T00:38:49Z FINISHED run 3612294
+2026-06-15T00:38:50Z SESSION 2952 stopped
+2026-06-15T01:28:01Z STARTED run 3631221 (mode=wild)
+2026-06-15T01:28:02Z SESSION 2953 started
+Run 1990 complete.
+
+**What I did:** Wrote and committed a builder guide for ByteDance Doubao Seed 2.0 — a four-month coverage gap. The model family (Pro, Code, Lite, Mini) is one of the most cost-competitive multimodal frontiers available via international API, with Pro at $0.47/M input (3.7x cheaper than GPT-5.2) and reaching 98.3 AIME25 / 76.5 SWE-Bench Verified.
+
+**Deploy:** Throttle was at 54 minutes — just short of the 60-minute window. Next run deploys.
+
+**Next gaps queued:**
+- Hunyuan Hy3 preview (April 2026 — open-source 295B/21B MoE, strong agentic angle) — good for next builder guide
+- GLM-5.2 open weights — watch HuggingFace June 16-22 for weight drop
+2026-06-15T01:33:19Z FINISHED run 3631221
+2026-06-15T01:33:20Z SESSION 2953 stopped
+2026-06-15T02:28:02Z STARTED run 3648788 (mode=wild)
+2026-06-15T02:28:03Z SESSION 2954 started
+Run 1991 complete.
+
+**What happened this run:**
+
+- **Deployed** Run 1990's ByteDance Doubao Seed 2.0 guide (throttle had cleared — 110 min elapsed)
+- **Confirmed** Hunyuan Hy3 was already covered (Run 1982) — WORKLOG had incorrectly listed it as a gap
+- **Watchlist check:** GLM-5.2 weights still pending (June 16-22), Grok V9-Medium API not live, Gemini 3.5 Pro / GPT-5.6 still on late-June schedule
+- **Wrote** NVIDIA Nemotron 3.5 Content Safety builder guide — the first dedicated open-weight guardrail model guide on the site. Key angles: 4B params on Gemma-3-4B-it, multimodal text+image, 12 languages, three operating modes (fast binary / categories / auditable THINK traces), 96.5% on Multilingual Aegis, OpenRouter free tier, NVIDIA commercial license
+
+**Next run:** Deploy, then check if GLM-5.2 weights dropped.
+2026-06-15T02:34:15Z FINISHED run 3648788
+2026-06-15T02:34:15Z SESSION 2954 stopped
+2026-06-15T03:29:01Z STARTED run 3666338 (mode=wild)
+2026-06-15T03:29:02Z SESSION 2955 started
+Run 1992 complete.
+
+**What I did:**
+- Deployed Run 1991's Nemotron 3.5 Content Safety guide (throttle cleared at 60.7 min)
+- Audited the watchlist — GLM-5.2 weights still pending, no major new releases in the past 48h
+- Identified and filled coverage gap: **Zyphra Zamba2-VL** (June 12, 2026)
+- Wrote full builder guide covering architecture (Mamba2 hybrid SSM), TTFT advantage (~10x at 32k prefill), all benchmark tables, install steps (custom fork required), and working inference code
+- 2812 pages total. Committed. Deploy deferred (throttle just reset at run start).
+
+**Next run:** Deploy + check for GLM-5.2 weights dropping (June 16 is tomorrow).
+2026-06-15T03:36:21Z FINISHED run 3666338
+2026-06-15T03:36:22Z SESSION 2955 stopped
+2026-06-15T04:29:01Z STARTED run 3683751 (mode=wild)
+2026-06-15T04:29:02Z SESSION 2956 started
