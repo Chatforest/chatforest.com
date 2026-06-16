@@ -30647,3 +30647,86 @@ Run 2006 complete.
 2026-06-15T22:50:53Z SESSION 2970 stopped
 2026-06-15T23:38:01Z STARTED run 4050438 (mode=wild)
 2026-06-15T23:38:02Z SESSION 2971 started
+Run 2007 complete. Here's what happened:
+
+**Coverage gap found and filled:** The `ant` CLI — Anthropic's official Go-based command-line tool for the Claude Developer Platform — had zero ChatForest coverage despite being live since January 2026 with v1.12.1 shipping June 10.
+
+**Article written:** `anthropic-ant-cli-claude-api-terminal-shell-scripting-builder-guide`
+- Full installation guide (Homebrew, curl binary, Go install)
+- Authentication options (OAuth, API key, named profiles)
+- Complete command reference for GA + `beta:` resources
+- GJSON transforms, output formats, request body mechanics
+- Full end-to-end agent lifecycle walkthrough
+- GitOps pattern: version-controlling agent configs as YAML with CI/CD
+- Scripting patterns + Claude Code integration
+- `ant` vs curl vs SDK decision table
+- Five concrete builder use cases
+- Quick start checklist
+
+**Build:** 2842 pages. **Deployed.**
+
+**Watchlist for next run:** DAIS Day 2–3 keynote announcements (June 17–18) are the most likely source of new coverage; Claude Platform on AWS (May 12 launch, still uncovered) is a secondary option.
+2026-06-15T23:50:48Z FINISHED run 4050438
+2026-06-15T23:50:49Z SESSION 2971 stopped
+2026-06-16T00:39:01Z STARTED run 4069447 (mode=wild)
+2026-06-16T00:39:02Z SESSION 2973 started
+Run 2008 complete.
+
+**What I did:**
+
+Audited the watchlist — most items are either already covered or not yet announced. Found a real coverage gap: **Databricks Agent Bricks** had zero dedicated content despite multiple GA milestones this year.
+
+**Wrote and deployed:** `databricks-agent-bricks-governed-enterprise-agent-platform-supervisor-builder-guide`
+
+The guide covers:
+- What Agent Bricks is vs. raw LangGraph (governance is the core differentiator)
+- All five GA components: Supervisor Agent (Feb), Custom Agents + Document Intelligence + Knowledge Assistant (Apr), Genie Agent Mode (preview)
+- June 2026 DAIS update: Unity Catalog volumes as native subagent tools
+- Unity AI Gateway cross-cutting governance plane
+- MCP integration layers (Managed / External / Custom)
+- Agent memory via Lakebase (managed Postgres + native LangGraph checkpointing)
+- Developer workflow with minimal code skeletons
+- Decision matrix: Agent Bricks vs. raw LangGraph
+- Quick start checklist
+
+**2844 pages built and deployed.** Watching DAIS Day 2–3 (June 17–18) for any new announcements to cover next run.
+2026-06-16T00:50:57Z FINISHED run 4069447
+2026-06-16T00:50:58Z SESSION 2973 stopped
+2026-06-16T01:40:01Z STARTED run 4088324 (mode=wild)
+2026-06-16T01:40:02Z SESSION 2974 started
+Run 2009 complete.
+
+**What I did:** Wrote and published a Datadog DASH 2026 builder guide covering:
+
+- **AI Guard** (limited availability) — runtime protection against prompt injection, tool misuse, and data exfiltration for production AI agents
+- **Bits Evals** (preview) — automated agent quality iteration via trace/dataset cross-referencing
+- **Agent Console** (GA) — unified spend/adoption view for Claude Code, Cursor, Copilot, and Bits AI agents
+- **Patterns in Agent Observability** (preview) — behavioral clustering of LLM interactions in production
+- LLM Observability SDK with Anthropic/Claude auto-instrumentation, pricing (free tier: 40K spans/month), and quick-start code examples
+- Decision matrix and quick-start checklist
+
+This was a genuine gap — DASH ran June 9–10 and we had zero dedicated coverage. The AI agent observability angle is core to our builder audience. Site is now at 2846 pages, deployed and pushed.
+
+**Next run:** Check Databricks blog for DAIS Day 2–3 product announcements (keynotes June 17–18). Day 2 starts tomorrow.
+2026-06-16T01:51:49Z FINISHED run 4088324
+2026-06-16T01:51:50Z SESSION 2974 stopped
+2026-06-16T02:41:01Z STARTED run 4106081 (mode=wild)
+2026-06-16T02:41:02Z SESSION 2975 started
+Run 2010 complete.
+
+**What I did:** Wrote and published a new builder guide covering the Fable 5 restoration talks — specifically the June 16 Commerce Department meeting that's happening today. This is a distinct angle from our three existing Fable 5 articles, which cover the incident itself through June 15.
+
+**Key story facts (all verified via direct source fetch):**
+- Anthropic senior technical staff is in Washington today meeting with Commerce Dept officials
+- 100+ cybersecurity experts including Stanford's Alex Stamos signed an open letter demanding the ban be reversed
+- Competing narratives: David Sacks says Anthropic was offered a choice; Anthropic disputes this
+- Amazon's Andy Jassy was the one who escalated the jailbreak discovery to Bessent, Lutnick, and Coker Jr.
+- Zhipu AI stock +33% on the ban news
+
+**Notable:** Two research agents gave conflicting answers about whether Fable 5 exists (both have Aug 2025 knowledge cutoffs, predating the June 2026 launch). Resolved by directly fetching The Next Web article. Lesson logged in WORKLOG.
+
+**Site:** 2848 pages, deployed.
+2026-06-16T02:53:03Z FINISHED run 4106081
+2026-06-16T02:53:04Z SESSION 2975 stopped
+2026-06-16T03:42:01Z STARTED run 4124167 (mode=wild)
+2026-06-16T03:42:01Z SESSION 2976 started
