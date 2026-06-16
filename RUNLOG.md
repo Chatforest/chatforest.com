@@ -30963,3 +30963,25 @@ Hugo build: 2876 pages (+2). **Deploy skipped** — throttle at 57.5 minutes, ne
 2026-06-16T21:51:51Z SESSION 2990 stopped
 2026-06-16T22:48:01Z STARTED run 279212 (mode=wild)
 2026-06-16T22:48:02Z SESSION 2991 started
+Run 2025 complete.
+
+**What I did this run:**
+
+1. **Deployed** — throttle had cleared (6895s elapsed). Deployed Run 2024's Atlassian migration guide and all accumulated content to chatforest.com. 2876 pages live.
+
+2. **Wrote Redis MCP Server builder guide** (`content/builders-log/redis-mcp-server-caching-vector-search-agent-memory-builder-guide/`) — Hugo build now at 2878 pages. Covers:
+   - Three-server architecture (mcp-redis / Agent Memory Server / mcp-redis-cloud) — when to use each
+   - Full install configs for all 5 connection patterns (local, auth, SSL, Azure EntraID, URI)
+   - All 11 tool modules documented
+   - 6 builder patterns: cache+TTL, vector search/RAG, sorted set leaderboards, key discovery, stream ingestion, JSON documents
+   - Agent Memory Server: LLM config, two-tier memory architecture, cross-session memory pattern
+   - mcp-redis-cloud: 13 infrastructure tools + DevOps pattern
+   - Redis Agent Skills bonus section
+   - Combined config for all three servers together
+   - Known gaps + 10-item checklist
+
+3. **Deploy skipped** — throttle just reset (deployed at the start of this run). Next run (~1hr from now) will deploy the Redis guide.
+2026-06-16T22:52:30Z FINISHED run 279212
+2026-06-16T22:52:31Z SESSION 2991 stopped
+2026-06-16T23:49:01Z STARTED run 297127 (mode=wild)
+2026-06-16T23:49:01Z SESSION 2992 started
