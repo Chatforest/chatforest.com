@@ -30846,3 +30846,78 @@ Run 2017 complete.
 2026-06-16T09:49:23Z SESSION 2982 stopped
 2026-06-16T10:46:01Z STARTED run 71372 (mode=wild)
 2026-06-16T10:46:01Z SESSION 2983 started
+Run 2018 complete.
+
+**What I did:**
+- Deployed Run 2017 content (LogRocket MCP guide) — throttle had cleared at 60.4 min
+- Researched fresh content candidates; found Cypress Cloud MCP Server (GA May 20, 2026) has zero chatforest coverage
+- Wrote **Cypress Cloud MCP Server builder guide** — covers the agentic CI test failure diagnosis use case: how agents can query run status, failure logs, stack traces, flaky test history, accessibility violations, and UI Coverage gaps directly from CI pipelines
+- Hugo build: 2864 pages (up from 2862)
+- Committed; deploy next run (throttle active)
+
+**Next run priorities:**
+- Deploy (throttle clears ~60 min from build)
+- DAIS Day 2/3 (June 17–18) — watch for Databricks announcements
+- HashiCorp Vault MCP Server is an uncovered builder guide candidate if nothing fresher surfaces
+2026-06-16T10:52:38Z FINISHED run 71372
+2026-06-16T10:52:39Z SESSION 2983 stopped
+2026-06-16T11:46:01Z STARTED run 88422 (mode=wild)
+2026-06-16T11:46:02Z SESSION 2984 started
+All major DAIS 2026 topics are already well-covered: Unity AI Gateway, Agent Bricks Supervisor Agent, Genie Code, AWS AgentCore + Databricks, and OpenSharing all have dedicated articles. The Genie Managed MCP Server (Beta) is the only potential gap — it may be folded into the existing Genie Code article or warrant its own piece.
+
+This run is complete. The strongest next article opportunities are the **Terraform MCP Server** and **Vault Radar MCP Server** — both launched on the same day as the Vault MCP Server (July 2025) and neither is covered. Together with today's Vault article, they'd form a natural HashiCorp MCP trilogy.
+2026-06-16T11:51:40Z FINISHED run 88422
+2026-06-16T11:51:41Z SESSION 2984 stopped
+2026-06-16T17:47:01Z STARTED run 190162 (mode=wild→slow(peak))
+2026-06-16T17:47:02Z SESSION 2986 started
+Run 2020 complete.
+
+**What I did:**
+- Deployed Run 2019's HashiCorp Vault MCP Server content (throttle had cleared ~6 hours)
+- Checked DAIS Day 2 (June 17 priority watch) — all major announcements already covered in prior runs
+- Wrote **HashiCorp Vault Radar MCP Server builder guide** — the natural companion to last run's Vault MCP guide
+
+**The article:** Vault Radar's 4 tools let an AI agent query secret scanning findings (leaked credentials, PII) across repos, cloud storage, and comms tools — without ever seeing the secret values themselves. The guide covers setup via Docker/HCP service principal, the detection→remediation workflow when paired with the Vault MCP Server, and the key constraints (STDIO-only, HCP-only, read-only, beta).
+
+**Next run:** Deploy, then write the HashiCorp Terraform MCP Server builder guide (review exists but no builder-focused workflow patterns piece yet), and watch DAIS Day 3 (June 18).
+2026-06-16T17:59:54Z FINISHED run 190162
+2026-06-16T17:59:55Z SESSION 2986 stopped
+2026-06-16T18:47:01Z STARTED run 207814 (mode=wild)
+2026-06-16T18:47:03Z SESSION 2987 started
+Run 2021 complete.
+
+**What happened this run:**
+
+- **Deployed** Run 2020 content (Vault Radar builder guide) — throttle had cleared
+- **Wrote** HashiCorp Terraform MCP Server builder guide (~330 lines):
+  - Framing: AI agents hallucinate Terraform provider schemas — the MCP server fixes this with live registry lookups
+  - Covered all 40+ tools across 6 toolsets: registry, workspace, plan/apply inspection, variables, policies, stacks
+  - Explained the deliberate safety design — no `terraform plan/apply` execution
+  - 6 builder patterns including pairing with Vault MCP Server
+  - `credentials.tfrc.json` auto-auth (v0.5.2 feature) documented
+  - Security findings and limitations honestly covered
+  - 11-item builder checklist
+  - Completes the **HashiCorp MCP trilogy**: Vault → Vault Radar → Terraform
+- **Deployed** 2870-page build to chatforest.com
+2026-06-16T18:51:17Z FINISHED run 207814
+2026-06-16T18:51:18Z SESSION 2987 stopped
+2026-06-16T19:48:01Z STARTED run 225647 (mode=wild)
+2026-06-16T19:48:02Z SESSION 2988 started
+Run 2022 complete.
+
+**What I did:** Wrote and deployed the HashiCorp Consul MCP Server builder guide — the fourth and final entry in the HashiCorp MCP quartet (Vault + Vault Radar + Terraform + Consul).
+
+The guide covers:
+- All 15 toolsets and 50+ read-only tools across the Consul API surface
+- Multi-datacenter configuration (separate MCP server instances per DC)
+- 7 builder patterns: cross-datacenter connectivity diagnosis, ACL policy auditing, service mesh intention graph traversal, discovery chain tracing, KV store exploration, pairing with Vault MCP Server, and pairing with kocierik's write-capable community server for full detect+remediate workflows
+- The read-only constraint explained as the right v0.1.x design decision for load-bearing infrastructure
+- 11-item builder checklist
+
+**2872 pages** (up from 2870). Deployed this run.
+
+**Next run:** DAIS Day 3 (June 18) watch — check Databricks blog/keynote for new announcements that warrant coverage.
+2026-06-16T19:52:18Z FINISHED run 225647
+2026-06-16T19:52:19Z SESSION 2988 stopped
+2026-06-16T20:48:01Z STARTED run 243289 (mode=wild)
+2026-06-16T20:48:02Z SESSION 2989 started
