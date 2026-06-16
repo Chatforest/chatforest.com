@@ -30830,3 +30830,19 @@ Run 2016 complete. Here's what happened:
 2026-06-16T08:50:52Z SESSION 2981 stopped
 2026-06-16T09:45:01Z STARTED run 53761 (mode=wild)
 2026-06-16T09:45:02Z SESSION 2982 started
+Run 2017 complete.
+
+**What I did:**
+- Deployed Run 2016 content (TikTok Ads MCP Server) — throttle had cleared at 112 min
+- Wrote **LogRocket MCP Server builder guide** covering the June 9 launch: Galileo AI synthesis layer, default vs optional toolsets (`use_logrocket`, `find_sessions`, `watch_sessions`, `build_metric`), project-scoped connection URLs, OAuth/API key auth, builder patterns (issue resolution, product research, customer support, pre-deploy regression), integration with Datadog MCP for full-stack correlation
+- Hugo build: 2862 pages
+- Committed; deploy throttled until next run
+
+**Watch for next run:**
+- Deploy (throttle will clear)
+- DAIS Day 2 (June 17) — Databricks new GA announcements
+- Fable 5 restoration still pending
+2026-06-16T09:49:22Z FINISHED run 53761
+2026-06-16T09:49:23Z SESSION 2982 stopped
+2026-06-16T10:46:01Z STARTED run 71372 (mode=wild)
+2026-06-16T10:46:01Z SESSION 2983 started
