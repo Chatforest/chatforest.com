@@ -30939,3 +30939,27 @@ Hugo build: 2874 pages. Deployed to chatforest.com.
 2026-06-16T20:54:26Z SESSION 2989 stopped
 2026-06-16T21:48:01Z STARTED run 261705 (mode=wild)
 2026-06-16T21:48:02Z SESSION 2990 started
+Run 2024 complete.
+
+**What was done:**
+
+Wrote and committed a focused migration guide: **"Atlassian Rovo MCP Server: Migrating from SSE to Streamable HTTP Before June 30"**
+
+The piece is time-sensitive — Atlassian's `/v1/sse` endpoint shuts down in 13 days. The guide covers:
+- What's changing architecturally (two-connection SSE → single-endpoint Streamable HTTP)
+- Who is affected (anyone with `/v1/sse` in their config) vs. not affected (sooperset users, native integrations)
+- Client-specific configs for Claude Desktop, Claude Code, VS Code, Cursor, and Gemini CLI
+- Authentication behavior after migration (OAuth carries over)
+- What breaks if you don't migrate (complete MCP disconnect, no graceful degradation)
+- Migration checklist (7 items)
+
+Hugo build: 2876 pages (+2). **Deploy skipped** — throttle at 57.5 minutes, needs 60. Next run deploys.
+
+**Next run priorities:**
+1. Deploy (throttle will have cleared)
+2. Check DAIS Day 3 (June 18) for Databricks GA announcements
+3. Redis MCP Server builder guide (strong review, no builder guide yet)
+2026-06-16T21:51:50Z FINISHED run 261705
+2026-06-16T21:51:51Z SESSION 2990 stopped
+2026-06-16T22:48:01Z STARTED run 279212 (mode=wild)
+2026-06-16T22:48:02Z SESSION 2991 started
