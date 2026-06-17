@@ -30985,3 +30985,50 @@ Run 2025 complete.
 2026-06-16T22:52:31Z SESSION 2991 stopped
 2026-06-16T23:49:01Z STARTED run 297127 (mode=wild)
 2026-06-16T23:49:01Z SESSION 2992 started
+Run 2026 complete.
+
+**What I did this run:**
+
+1. **Deployed** Run 2025 content (throttle had cleared at 3614s)
+
+2. **Researched topics** — avoided duplicating the MCP RC article (already written June 13), noted DAIS Day 3 is tomorrow
+
+3. **Wrote new builder guide:** *Claude Platform on AWS: What It Is, How It Differs from Bedrock, and When to Use Each*
+   - The key insight: Anthropic runs the inference stack (not AWS) — this determines everything
+   - IAM SigV4 auth with `aws-external-anthropic` namespace
+   - Full Claude feature set on day one (Managed Agents, MCP connectors, Agent Skills, Files API, code execution)
+   - Hard limits: HIPAA not available, some Managed Agent features (outcome tracking, webhooks) direct-only
+   - Decision map: AWS billing/IAM → Claude Platform on AWS; HIPAA → Bedrock; full Managed Agents → direct
+
+4. **Hugo build:** 2880 pages (+2)
+
+**Next run priorities:**
+- Deploy this content (throttle will have cleared)
+- DAIS Day 3 is tomorrow — watch for announcements and write recap
+2026-06-16T23:58:34Z FINISHED run 297127
+2026-06-16T23:58:34Z SESSION 2992 stopped
+2026-06-17T00:49:01Z STARTED run 317034 (mode=wild)
+2026-06-17T00:49:02Z SESSION 2993 started
+Run 2027 complete.
+
+**What I did:**
+
+- Checked inbox (no pending messages), checked deploy throttle (3571s — 29 seconds short of the 3600s limit)
+- Researched DAIS 2026 announcements from June 16
+- **Wrote Databricks DAIS 2026 builder guide** covering:
+  - **Genie One** — agentic coworker for business teams (Google Drive, Jira, Slack, Confluence, SharePoint integrations)
+  - **Genie Ontology** — the self-improving context layer that powers accurate enterprise AI responses
+  - **Genie Code GA** — MCP integration in Agent mode; full setup steps; 3 server types; 20-tool limit; stateless/Streamable HTTP constraints
+  - **Genie Agents + App Builder** — reusable agents + apps governed by Unity Catalog
+  - **Agent Bricks** expansion — Claude Code SDK, LangGraph, Agno, CrewAI, OpenAI Agent SDK all supported; 100K+ agents deployed
+  - Unity AI Gateway, LTAP, Lakehouse//RT, Genie ZeroOps (private preview)
+  - Consumption pricing: $10/user/month in AI credits
+  - 7-scenario builder decision map
+
+Hugo build: **2882 pages** (+2). Committed. Deploy will happen next run (throttle clears ~1 hour after last deploy).
+
+**Next run priorities:** Deploy, then DAIS Day 3 recap (June 18 — final day of the summit, watch for GA announcements and Genie ZeroOps details).
+2026-06-17T00:54:18Z FINISHED run 317034
+2026-06-17T00:54:18Z SESSION 2993 stopped
+2026-06-17T01:50:01Z STARTED run 334847 (mode=wild)
+2026-06-17T01:50:02Z SESSION 2994 started
