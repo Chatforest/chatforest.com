@@ -1,15 +1,91 @@
 # The Builder's June 2026 AI Calendar: What to Watch, What to Act On, What to Ignore
 
-> Twenty events in 30 days — from Microsoft Build to the SpaceX IPO to six separate API deadlines. A practical calendar for AI builders navigating June 2026. Updated June 14 with Fable 5 suspension, June 15 post-mortem, and remaining deadlines.
+> Twenty events in 30 days — from Microsoft Build to the SpaceX IPO to six separate API deadlines. A practical calendar for AI builders navigating June 2026. Updated June 17 with DAIS 2026 recap, Gemini CLI deprecation warning (tomorrow), Fable 5 restoration talks, and late-June model watch.
 
 
 June 2026 has more scheduled AI events than most quarters. Within 30 days: a major developer conference, a historic IPO, five separate API deprecation cutoffs, multiple billing model changes, and two frontier models that prediction markets think are likely. This is not a news roundup. It is a planning document.
+
+*Updated June 17, 2026: Added June 17 mid-month status. Confirmed June 16 events complete. **Gemini CLI deprecated tomorrow (June 18) — action required today.** Added DAIS 2026 recap (Days 1–3 complete, final day June 18). Updated Fable 5 restoration status (Commerce Department talks June 16, still offline). Updated model watch: Sonnet 4.8 still unannounced, GPT-5.6 expected June 22–28, Gemini 3.5 Pro slipping to July.*
 
 *Updated June 14, 2026: Added June 14 mid-month status section. Confirmed June 8-15 events complete. Added two new deadline events (Gemini image model shutdown June 25, Vertex AI Imagen shutdown June 30) not in original calendar. Added Fable 5/Mythos 5 government suspension as unscheduled incident. Updated "Expected in June" status for Grok V9-Medium, Sonnet 4.8, GPT-5.6, and Gemini 3.5 Pro. Updated calendar table.*
 
 *Updated June 4, 2026: Corrected SpaceX roadshow start date (June 4, not June 8 — roadshow confirmed open today per Goldman syndicate communications and CNBC). Updated iOS 27 (was iOS 26 — confirmed by WWDC preview sources). Added: Nemotron 3 Ultra launch (June 4, today), Windows Local AI Runtime KB5039239 (June 9), Code with Claude Tokyo (June 10), Work IQ APIs GA (June 16 — action required for M365/enterprise agent builders), GPT-4.5 ChatGPT retirement (June 27). Added Claude Sonnet 4.8 as a mid-June watch item.*
 
 *Updated June 1, 2026: Added GitHub Copilot token billing (live today), Gemini Interactions API hard cutoff (June 8, action required), Claude model deprecations (June 15), Gemini CLI EOL (June 18), Vertex AI SDK migration (June 24), and Grok V9-Medium as a distinct mid-June watch item. Updated Grok 5 odds and Anthropic funding status.*
+
+---
+
+## June 17 Update: Act Today on Gemini CLI, Then Watch June 18
+
+### ⚠️ URGENT: Gemini CLI Deprecated Tomorrow (June 18)
+
+The `gemini` CLI command stops working for Google AI Pro, Ultra, and free Gemini Code Assist individual users on **June 18 — tomorrow**. If you have any scripts, CI pipelines, or cron jobs calling `gemini`, they will fail silently or hard tomorrow. The migration to `agy` (Antigravity CLI) takes under 10 minutes for most setups. The [full migration guide](/builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration/) covers the silent MCP config failure trap that can break your pipeline without a visible error message. Do this today.
+
+*Not affected: Code Assist Standard and Enterprise license holders.*
+
+---
+
+### Completed Since June 14
+
+**June 16 — Microsoft Work IQ APIs GA ✓**
+Microsoft Work IQ API endpoints (A2A, remote MCP server, REST API) are generally available as of June 16. Teams with enterprise agents targeting Microsoft 365 signal data can now proceed with SLA-backed production deployments and procurement approvals.
+
+**June 15–17 — DAIS 2026 (Days 1–3) ✓ (in progress)**
+Databricks Data + AI Summit 2026 is underway at Moscone Center, San Francisco. Days 1–3 are complete. Major confirmed announcements (covering roughly two-thirds of the summit):
+
+- **Genie One**: Agentic coworker for business teams; integrates Google Drive, Jira, Slack, Confluence, SharePoint out of the box
+- **Genie Code MCP** (GA): Agent mode supports three MCP server types — Managed (Unity Catalog, Genie Space, Vector Search), External (OAuth-authenticated SaaS), Custom (Databricks Apps). 20-tool maximum; Streamable HTTP only; same-workspace requirement
+- **Agent Bricks**: Claude Code SDK, LangGraph, Agno, CrewAI, and OpenAI Agent SDK all supported; horizontal autoscaling; 100K+ agents claimed built
+- **Unity AI Gateway**: Governance and cost control layer across all Databricks AI surfaces
+- **Genie Ontology**: Self-improving context layer; ingests data, docs, tickets, chats, meetings
+- **LTAP**: Eliminates ETL between operational and analytical systems — relevant for action-taking agents
+- **Genie ZeroOps**: Private preview; no external detail published yet
+
+Full DAIS 2026 builder guide: [Databricks Genie One, Genie Code MCP, and Agent Bricks Builder Guide](/builders-log/databricks-genie-one-agent-bricks-dais-2026-builder-guide/)
+
+**Day 4 (June 18) is tomorrow — final keynotes. Watch for Genie ZeroOps details and any GA announcements.**
+
+---
+
+### Still Upcoming: June 17–30
+
+**June 18 — Gemini CLI deprecated** *(tomorrow — action required today)*
+See urgent note above. The migration path is `agy`; do it before midnight tonight if you have any automation touching the `gemini` CLI.
+
+**June 18 — DAIS 2026 final day**
+The closing keynote typically carries the biggest product GA announcements that are held back from earlier sessions. Genie ZeroOps (currently private preview) is the most-watched item. If you are building on Databricks, monitor the [Databricks blog](https://www.databricks.com/blog) tomorrow morning.
+
+**June 22 — Fable 5 free credit period (status uncertain)**
+The 14-day free trial for Fable 5 and Mythos 5 was set to end June 22. Both models remain suspended. Anthropic has not announced whether the free period will be extended, credited, or voided. Status: **suspended, ongoing Commerce Department negotiations**.
+
+**June 22–28 — GPT-5.6 expected window**
+Polymarket prices GPT-5.6 at 83–89% probability by June 30. OpenAI's chief scientist has confirmed it is a "meaningful leap" over GPT-5.5. Codenames `iris-alpha`, `ember-alpha`, and `beacon-alpha` surfaced in backend logs. No official release date or model card. If you are building on GPT-5.5, plan for a 4-to-6-week evaluation cycle; with sub-60-day release cadence, continuous benchmarking infrastructure is more durable than chasing each new model manually.
+
+**June 24 — Vertex AI Gemini SDK migration (action required)**
+Google is removing the old `google.generativeai` and `vertexai.preview.generative_models` Python import paths. Migrate to `google-genai` (`pip install google-genai`). This is a dependency swap — method signatures are largely compatible. Deadline is hard with no fallback.
+
+**June 25 — Gemini API image preview models shutdown**
+`gemini-3.1-flash-image-preview` and `gemini-3-pro-image-preview` shut down. Fix is a model ID string swap to the stable GA versions.
+
+**June 27 — GPT-4.5 retired from ChatGPT**
+ChatGPT-only, no API impact. Auto-migration to GPT-5.
+
+**June 30 — Vertex AI Imagen endpoints shutdown**
+All Vertex AI Imagen model endpoints removed: `imagegeneration@002` through `@006`, all `imagen-3.0-*` and `imagen-4.0-*` IDs, and `imagetext@001`. Replace with `gemini-2.5-flash-image`. One gap: mask-based inpainting has no direct replacement in the GA surface. See [Imagen migration guide](/builders-log/google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide/).
+
+---
+
+### "Expected in June" Model Status — June 17
+
+**Fable 5 / Mythos 5:** Still suspended. Anthropic's senior technical staff met with Commerce Department officials in Washington on June 16 — the first face-to-face negotiation since the June 12 directive. Over 100 cybersecurity professionals including former Facebook CSO Alex Stamos signed an open letter demanding the ban be reversed. No restoration date announced. Polymarket prices restoration by July 1 at 75–81%. Operational fallback: `claude-opus-4-8` and `claude-sonnet-4-6` remain fully available. See [the June 16 Commerce Department update](/builders-log/anthropic-fable-5-mythos-5-commerce-department-june-16-restoration-talks-builder-guide/) for restoration scenarios.
+
+**Claude Sonnet 4.8:** Not released. The predicted June 16–18 window (based on pattern timing from Opus 4.8's May 28 release) has passed with no announcement. Current Sonnet-tier model remains `claude-sonnet-4-6`. No official timeline from Anthropic.
+
+**GPT-5.6:** Not released. See June 22–28 window above.
+
+**Gemini 3.5 Pro:** Slipping past June. As of June 17, still in limited Vertex enterprise preview. The 2M-token context window and Deep Think reasoning mode remain in allowlist access only. Realistic expectation: July or later for broad GA. If you have workloads waiting on 2M context, evaluate Gemini 3.1 Ultra Pro as a bridge — it is fully GA with 1M context.
+
+**Grok V9-Medium:** General developer API not yet available. The model runs in Tesla vehicles and the X social network. xAI API currently exposes `grok-build-0.1` but not V9-Medium weights directly.
 
 ---
 
