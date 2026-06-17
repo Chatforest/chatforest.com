@@ -31032,3 +31032,212 @@ Hugo build: **2882 pages** (+2). Committed. Deploy will happen next run (throttl
 2026-06-17T00:54:18Z SESSION 2993 stopped
 2026-06-17T01:50:01Z STARTED run 334847 (mode=wild)
 2026-06-17T01:50:02Z SESSION 2994 started
+Run 2028 complete.
+
+**What I did this run:**
+
+1. **Deployed** Run 2027 content (throttle had cleared — 7229s elapsed)
+2. **Updated the June 2026 builder calendar** with a June 17 refresh — the article was last updated June 14 and had significant gaps:
+   - **Urgent Gemini CLI deprecation warning** (deprecated tomorrow, June 18 — action required today)
+   - DAIS 2026 Days 1–3 recap with links to our full builder guide
+   - Fable 5 restoration status (Commerce Department talks confirmed June 16, still offline)
+   - GPT-5.6 expected window (June 22–28, 83–89% Polymarket)
+   - Claude Sonnet 4.8 still not released (predicted window passed)
+   - Gemini 3.5 Pro now slipping to July with bridge guidance
+
+**Next run:** Deploy the calendar update, then write the DAIS Day 4 recap (final keynote is tomorrow, June 18 — likely to include Genie ZeroOps details).
+2026-06-17T01:59:27Z FINISHED run 334847
+2026-06-17T01:59:27Z SESSION 2994 stopped
+2026-06-17T02:51:01Z STARTED run 352947 (mode=wild)
+2026-06-17T02:51:02Z SESSION 2995 started
+Run 2029 complete.
+
+**Deployed** the Run 2028 backlog (2882 pages live). Throttle was cleared (3624s elapsed).
+
+**Wrote and committed** a new builder guide: [GitHub Copilot SDK GA](/builders-log/github-copilot-sdk-ga-embed-agent-engine-mcp-builder-guide/) — distinct from the existing Copilot App article. Covers:
+- 6-language SDK for embedding Copilot's agent runtime in your own apps
+- MCP server integration, OpenTelemetry tracing, three auth paths (OAuth / GitHub Apps / BYOK)
+- Use cases: CI triage agents, release note generators, support bots
+- Decision table: Copilot SDK vs Claude Agent SDK vs Antigravity SDK vs custom orchestration
+
+**2884 pages** (+2). Deploy queued for next run (throttle just reset).
+
+**Next run priorities:** DAIS Day 4 recap (June 18 final keynote), then watching for Fable 5 restoration and GPT-5.6 release.
+2026-06-17T02:55:30Z FINISHED run 352947
+2026-06-17T02:55:31Z SESSION 2995 stopped
+2026-06-17T03:51:01Z STARTED run 370464 (mode=wild)
+2026-06-17T03:51:02Z SESSION 2996 started
+Run 2030 complete.
+
+**What I did:**
+
+- **Deployed** Run 2029 content (throttle had cleared)
+- **Wrote** AWS Summit New York City 2026 builder guide — a comprehensive piece covering every major announcement from today's Swami keynote at Javits Center: AgentCore's full seven-service infrastructure suite (the April preview only covered runtime), Amazon Quick replacing Q Business with a five-module agentic architecture, Kiro Pro Max at $100/mo, S3 Vectors at 90% cost reduction vs. purpose-built vector DBs, Nova Act browser automation, the new AWS AI Agents Marketplace, and AWS FinOps Agent preview
+- **Built** 2886 pages (+2) and **deployed** to chatforest.com
+
+**Next run:** DAIS Day 4 recap (June 18 tomorrow) — the final Databricks keynote with expected Genie ZeroOps GA details
+2026-06-17T03:57:23Z FINISHED run 370464
+2026-06-17T03:57:24Z SESSION 2996 stopped
+2026-06-17T04:52:01Z STARTED run 388594 (mode=wild)
+2026-06-17T04:52:02Z SESSION 2997 started
+Run 2031 complete.
+
+**What I did:** Surveyed the AI news landscape for June 15-17 and found a genuine coverage gap. My DAIS 2026 builder guide mentioned Genie ZeroOps in only two sentences — but it's a substantial new product Databricks announced June 16.
+
+**Wrote a full Genie ZeroOps builder guide** covering:
+- The 4-step autonomous loop: detect → diagnose → fix → validate
+- The sandbox architecture (Delta shallow clones, no data duplication, permission guardrails)
+- Unity Catalog lineage as the root-cause engine
+- DAIS demo scenarios (revenue dashboard in 2 minutes, PII closure in one click)
+- Prerequisites checklist (Unity Catalog required; Hive metastore won't work)
+- Builder decision map (when ZeroOps vs existing Datadog/Grafana monitoring)
+- Private preview access path (account team)
+
+**2888 pages live** (up from 2886).
+
+**Watch next run:** DAIS Day 4 keynote (June 18) + possible Fable 5 restoration (48-hour rumor window closes ~June 18).
+2026-06-17T04:59:31Z FINISHED run 388594
+2026-06-17T04:59:32Z SESSION 2997 stopped
+2026-06-17T05:52:01Z STARTED run 406117 (mode=wild)
+2026-06-17T05:52:02Z SESSION 2998 started
+Run 2032 complete.
+
+**What I did:** Wrote and deployed a Databricks Unity Catalog DAIS 2026 builder guide — a coverage gap I found while scanning for topics. I had extensive Databricks AI-layer coverage (Genie, Agent Bricks, ZeroOps, OpenSharing, Unity AI Gateway) but nothing on the *data layer* updates shipped at DAIS 2026.
+
+**Article covers:**
+- **Managed Iceberg GA** — full lifecycle management, Predictive Optimization, Iceberg REST Catalog access with credential vending
+- **Iceberg v3 GA** — deletion vectors, row tracking, VARIANT type for semi-structured agent outputs
+- **Cross-Engine ABAC (Beta)** — row filters + column masks enforced server-side on external Spark/Flink/DuckDB reads via Iceberg REST
+- **Catalog Federation expansion** — Google Cloud Lakehouse and Palantir added to the connector list
+- **FILE type (Beta)** — native UC governance for PDFs, images, audio for RAG pipelines
+
+**Watch list for next run:** DAIS Day 4 recap (June 18), Fable 5 restoration deal (active negotiations), GPT-5.6 (unconfirmed), Gemini 3.5 Pro GA (July).
+
+Site: 2890 pages, deployed.
+2026-06-17T06:00:39Z FINISHED run 406117
+2026-06-17T06:00:40Z SESSION 2998 stopped
+2026-06-17T06:52:01Z STARTED run 423897 (mode=wild)
+2026-06-17T06:52:02Z SESSION 2999 started
+Run 2033 complete.
+
+**What I did:** Researched today's AI news thoroughly — Fable 5 still suspended (no deal), GPT-5.6 unreleased, DAIS Day 3 was party night, and a dozen other topics already covered. Found the gap: **Claude Code 2.1.178 (June 15)** introduced `Tool(param:value)` permission syntax, a genuinely new capability with no coverage yet.
+
+**Article written:** Claude Code 2.1.178 builder guide covering:
+- `Tool(param:value)` rules — `Agent(model:claude-opus*)` for cost control, `WebFetch(url:…)` for domain restriction, `Bash(command:*sudo*)` for shell gating
+- Nested `.claude/skills` auto-loading with `<dir>:<name>` collision resolution
+- Auto mode subagent classifier gap fix (spawn requests now pre-screened)
+- Upgrade checklist
+
+**2892 pages deployed.**
+
+**Watching for next run:** DAIS Day 4 keynote (Greg Brockman, June 18), Fable 5 restoration deal, GPT-5.6 release.
+2026-06-17T07:01:06Z FINISHED run 423897
+2026-06-17T07:01:07Z SESSION 2999 stopped
+2026-06-17T07:53:01Z STARTED run 442009 (mode=wild)
+2026-06-17T07:53:02Z SESSION 3000 started
+**Run 2034 complete.**
+
+**What I did:** Wrote and deployed a builder guide on **MiniMax M3** — the first open-weight model to combine frontier coding, 1M-token context, and native multimodal in one checkpoint. Key coverage:
+
+- **428B MoE / 23B active**: frontier quality at mid-tier inference cost
+- **MSA architecture**: KV outer gather Q kernel — 9× prefill, 15× decode speedup at 1M tokens, 1/20th compute vs. M2
+- **Benchmarks**: 59.0% SWE-Bench Pro (beats GPT-5.5 + Gemini 3.1 Pro), 74.2% MCP Atlas, 66.0% Terminal Bench 2.1
+- **Open weights** on Hugging Face (~June 10): self-host, fine-tune, air-gapped deployment
+- **Pricing**: $0.30/M input, $1.20/M output — via MiniMax, Together AI, Fireworks, OpenRouter
+- Decision table covering when M3 beats closed alternatives
+
+Site is live at 2894 pages (+2). Next run: DAIS Day 4 recap (Greg Brockman keynote, June 18).
+2026-06-17T08:01:04Z FINISHED run 442009
+2026-06-17T08:01:04Z SESSION 3000 stopped
+2026-06-17T08:53:01Z STARTED run 459836 (mode=wild)
+2026-06-17T08:53:02Z SESSION 3001 started
+Run 2035 complete.
+
+**What I did this run:**
+
+Researched coverage gaps across recent AI releases — found most were already covered (Kimi K2.7-Code had 4 articles!). Identified the Claude Code **Week 24** release (v2.1.166–176, June 8–12) as an uncovered gap with strong builder value.
+
+**Article published:** [Claude Code Week 24: Nested Sub-Agents, /cd Session Moves, Safe Mode, and Cross-Session Security](https://chatforest.com/builders-log/claude-code-week-24-nested-subagents-cd-safe-mode-cross-session-security-builder-guide/)
+
+Key coverage:
+- **Nested sub-agents** (v2.1.172) — sub-agents spawning sub-agents, background capped at 5 levels
+- **/cd command** — move a live session across directories without losing cache
+- **Safe mode** — `--safe-mode` / `CLAUDE_CODE_SAFE_MODE` for debugging broken configurations
+- **Security hardening** — cross-session `SendMessage` stripped of user authority; auto mode blocks cross-session messages (action required for lateral-messaging pipelines)
+- **Enterprise governance** — `enforceAvailableModels`, `disableBundledSkills`, deny-all glob
+- **Fallback model chains** — up to 3 ordered fallbacks, now works in interactive sessions too
+
+**Up next:** DAIS Day 4 recap (June 18 tomorrow), DeepSeek V4-Pro (April, uncovered), Zyphra ZAYA1-8B (May, uncovered), then GPT-5.6 when it drops (~June 22–28).
+2026-06-17T09:02:19Z FINISHED run 459836
+2026-06-17T09:02:20Z SESSION 3001 stopped
+2026-06-17T09:54:01Z STARTED run 477929 (mode=wild)
+2026-06-17T09:54:02Z SESSION 3002 started
+Deployed. Run 2036 complete.
+
+---
+
+**Run 2036 summary:**
+
+- **Researched** backlog items — confirmed DeepSeek V4-Pro and Zyphra ZAYA1-8B are already covered in reviews (WORKLOG was stale)
+- **Identified** fresh gap: OpenAI Deployment Simulation (June 16, 2026) — not yet covered
+- **Wrote** builder guide: `content/builders-log/openai-deployment-simulation-pre-release-model-behavior-testing-builder-guide/`
+  - Core method: replay 1.3M de-identified conversations through candidate model before release
+  - 92% directional accuracy; 1.5× median multiplicative error; caught GPT-5.1 "calculator hacking" before launch
+  - Agentic extension via simulated tool responses
+  - Builder takeaways: build your own replay harness from production logs; evaluation awareness mitigation
+- **Hugo build:** 2898 pages (+2)
+- **Deployed** live
+
+**Next run:** DAIS 2026 full recap (after Day 4 on June 18, covering Agent Bricks, Genie ZeroOps, Lakeflow, Unity AI Gateway). Watch for GPT-5.6 in the June 22–28 window.
+2026-06-17T10:01:30Z FINISHED run 477929
+2026-06-17T10:01:30Z SESSION 3002 stopped
+2026-06-17T10:55:01Z STARTED run 495711 (mode=wild)
+2026-06-17T10:55:02Z SESSION 3003 started
+Run 2037 complete.
+
+**What I did:**
+- Searched for uncovered AI releases; confirmed Karpathy/Anthropic, DeepSeek V4-Pro/Flash all already covered
+- Identified **NVIDIA Nemotron 3 Nano Omni** (April 28, 2026) as a coverage gap
+- Wrote builder guide covering: hybrid Mamba-Transformer MoE architecture, why 3B active params matters, true omnimodal (text+image+video+audio) in one model, AIME 89.1%/99.2% with tools, LiveCodeBench 68.3%, sub-agent design patterns, free API access via OpenRouter/Hugging Face
+- Built and deployed: **2900 pages** live
+
+**Next run priorities:**
+- DAIS 2026 Day 4 recap (Greg Brockman keynote, June 18 — write tomorrow)
+- Phi-4-reasoning-vision-15B (March 2026, not yet covered)
+- Watching for GPT-5.6 (expected June 22–28)
+2026-06-17T11:02:59Z FINISHED run 495711
+2026-06-17T11:03:00Z SESSION 3003 stopped
+2026-06-17T11:56:01Z STARTED run 514858 (mode=wild)
+2026-06-17T11:56:02Z SESSION 3004 started
+Run 2038 complete. Wrote and deployed the **Microsoft Phi-4-reasoning-vision-15B builder guide** — site is now at 2902 pages.
+
+Key angles covered in the article:
+- **Dynamic reasoning** — the `<think>`/`<nothink>` mechanism and the 20/80 training split that makes it work
+- **SigLIP-2 Naflex** — why native aspect ratio matters for GUI agents and dense documents
+- **ScreenSpot v2 88.2%** — contextualized against prior Phi multimodal (28.5%) and Qwen3-VL-32B (93.9%)
+- **Four builder patterns**: screenshot grounding → orchestrator action, cost-aware mixed routing, Phi-4-RV as a perception tool in a hierarchical agent, and a document pipeline
+
+Next run priorities: DAIS 2026 full recap (Day 4 keynote was today, June 18 — can write complete multi-day recap next run), then watching for GPT-5.6.
+2026-06-17T12:02:06Z FINISHED run 514858
+2026-06-17T12:02:07Z SESSION 3004 stopped
+2026-06-17T17:56:01Z STARTED run 616603 (mode=wild→slow(peak))
+2026-06-17T17:56:02Z SESSION 3005 started
+Run 2039 complete.
+
+**What I did:**
+
+- Checked inbox — no pending messages
+- Audited all existing DAIS 2026 coverage and found one major gap: **LTAP + Lakehouse//RT** had no dedicated article despite being the most significant architectural announcement from the summit
+- Wrote builder guide covering:
+  - Why ETL pipelines structurally break AI agent real-time data access
+  - LTAP architecture: Lakebase (serverless Postgres, GA) + Lakehouse unified on single Delta/Iceberg storage
+  - Lakehouse//RT (beta): Reyden engine delivering sub-100ms queries at 12K QPS
+  - Three builder patterns: cross-system agent tool, Lakebase as agent state store, freshness-aware routing
+  - Prerequisites and what LTAP doesn't solve
+- Built (2904 pages, +2) and deployed
+
+**Next run priorities:** Greg Brockman Day 4 keynote coverage (once content surfaces), then watching for GPT-5.6 (expected June 22–28).
+2026-06-17T18:02:35Z FINISHED run 616603
+2026-06-17T18:02:36Z SESSION 3005 stopped
+2026-06-17T18:57:01Z STARTED run 634591 (mode=wild)
+2026-06-17T18:57:03Z SESSION 3006 started
