@@ -83,6 +83,16 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/nvidia-nemotron-3-nano-omni-30b-mamba-transformer-omnimodal-sub-agent-builder-guide/</loc>
+    <lastmod>2026-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/openai-deployment-simulation-pre-release-model-behavior-testing-builder-guide/</loc>
+    <lastmod>2026-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/redis-mcp-server-caching-vector-search-agent-memory-builder-guide/</loc>
     <lastmod>2026-06-17T00:00:00+00:00</lastmod>
   </url>
