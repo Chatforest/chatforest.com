@@ -3,22 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/builders-log/</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/databricks-ltap-lakehouse-rt-agent-real-time-data-architecture-builder-guide/</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/atlassian-rovo-mcp-sse-to-streamable-http-migration-guide/</loc>
     <lastmod>2026-06-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/builders-log/aws-summit-new-york-city-2026-agentcore-amazon-quick-kiro-pro-max-builder-guide/</loc>
-    <lastmod>2026-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/builders-log/</loc>
-    <lastmod>2026-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/</loc>
     <lastmod>2026-06-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -69,6 +74,11 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/hashicorp-vault-radar-mcp-server-secret-scanning-ai-agents-builder-guide/</loc>
+    <lastmod>2026-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/microsoft-phi-4-reasoning-vision-15b-dynamic-reasoning-gui-agent-builder-guide/</loc>
     <lastmod>2026-06-17T00:00:00+00:00</lastmod>
   </url>
   
