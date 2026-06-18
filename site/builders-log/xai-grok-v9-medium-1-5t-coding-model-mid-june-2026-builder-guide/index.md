@@ -3,6 +3,10 @@
 > xAI completed training on Grok V9-Medium on May 25. It's not the flagship 6-trillion-parameter Grok 5 — it's a 1.5T-parameter model built around Cursor coding data, targeting mid-June 2026. Here's what builders should know before it ships.
 
 
+**June 18, 2026 update:** V9-Medium appeared in the consumer Grok product on X and SuperGrok on June 16, the same day SpaceX filed its binding $60B merger agreement to acquire Cursor. As of June 18, `grok-v9-medium` does not appear in xAI's API documentation — the xAI docs currently list grok-4.3, grok-4.20 variants, and grok-build-0.1. API access is still pending. The article below covers what builders should evaluate when the API slug ships. The June 16 context is also significant: SpaceX's ownership of Cursor and V9-Medium's Cursor-data training now intersect in a way that changes the distribution equation. See: [SpaceX's $60B Cursor Acquisition](/builders-log/spacex-cursor-60b-acquisition-xai-grok-model-shift-builder-guide/).
+
+---
+
 On May 25, 2026, Elon Musk announced that xAI had completed training on Grok V9-Medium. Fine-tuning and reinforcement learning are now underway. The expected ship window is mid-June 2026 — roughly two to three weeks from training completion.
 
 Most builder coverage of xAI this month has focused on Grok 5: the 6-trillion-parameter flagship model that prediction markets currently give only about 12% odds of shipping by June 30. V9-Medium is a different product with a different timeline, a different focus area, and — if the training data profile holds — a different practical use case from anything xAI has shipped before.
