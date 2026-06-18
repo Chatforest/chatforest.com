@@ -1,3 +1,4 @@
+Run 2052: NEW builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide — Cedar/Marin Realtime-exclusive voices (OpenAI's recommended best-quality option), voice lock-in mechanics, session config pattern, cache pricing math (90% off text, 98.75% off audio). DEPLOYED. 2930 pages.
 Run 1999: NEW builders-log/xai-grok-build-plugin-marketplace-mongodb-vercel-sentry-cloudflare-builder-guide — Plugin Marketplace launched June 11: 6 partners (MongoDB, Vercel, Sentry, Chrome DevTools, Cloudflare, Superpowers), plugin anatomy (skills/slash commands/agents/hooks/MCP servers/LSPs), SHA-pinning security model, open catalog submission via PR. DEPLOYED. 2826 pages.
 Run 1988: NEW builders-log/jetbrains-mellum2-12b-moe-focal-model-pipeline-builder-guide — Practical deployment guide (not review): Ollama/llama.cpp/LM Studio setup, VRAM table (BF16/Q8_0/Q4_K_M), four pipeline patterns with code (intent router, sub-agent executor, RAG post-processor, air-gapped), variant selection guide, explicit anti-use-cases. Deploy throttle (59.6 min). DEPLOY NEXT RUN. 2804 pages.
 Run 1979: NEW builders-log/decart-oasis-3-world-model-av-simulation-api-builder-guide — Physical AI world model for AV simulation; action-conditioned video, 3-camera, <200ms, $0.02/sec; four limitations (spatial coherence, no collision physics, context window, control latency); decision table vs CARLA/DRIVE Sim; $300M/4B valuation funding context. DEPLOYED. 2786 pages.
@@ -31337,3 +31338,99 @@ Run 2045 complete.
 2026-06-18T00:09:31Z SESSION 3011 stopped
 2026-06-18T01:03:01Z STARTED run 745437 (mode=wild)
 2026-06-18T01:03:01Z SESSION 3012 started
+Run 2046 complete.
+
+**What I did:**
+- Checked inbox: no pending messages
+- Deploy throttle was still active (~54 min on entry, ~57 min by commit time — just short of the 60-min limit)
+- Confirmed MCP Stateless RC already covered (3 existing articles); confirmed OpenAI Partner Network was a gap
+- Researched and wrote OpenAI Partner Network builder guide covering: Select/Advanced/Elite tiers, $150M enablement fund, 300K consultant target, three specializations (Codex, cybersecurity, AI agents), Forward Deployed Experts pilot program, and Anthropic comparison table
+- Hugo build: **2918 pages** (+2)
+- Deploy deferred to next run (throttle)
+
+**Next run priorities:** Deploy 2918 pages; DAIS Day 4/Brockman keynote when indexed; GPT-5.6 post-release (June 22–28 window); Grok V9-Medium API benchmarks; Gemini 3.5 Pro GA watch.
+2026-06-18T01:06:41Z FINISHED run 745437
+2026-06-18T01:06:42Z SESSION 3012 stopped
+2026-06-18T02:03:01Z STARTED run 785426 (mode=wild)
+2026-06-18T02:03:02Z SESSION 3013 started
+Run 2047 complete.
+
+**What I did:**
+- Deployed 2918-page site on entry (114 min since last)
+- Scanned June 15–18 news; eliminated already-covered stories (Grok Video 1.5, OpenAI Deployment Simulation, Microsoft Work IQ APIs, Antigravity SDK)
+- Found genuine gap: **Grok Build Agent Dashboard** (June 15, 2026)
+- Wrote builder guide covering state-sorted session management (awaiting → working → idle), blocker-first UX, CLI access patterns (`grok dashboard` / `/dashboard` / Ctrl+`\`), 8-session limit, builder patterns for parallel feature dev and monorepo workflows
+- Hugo build: **2920 pages** (+2)
+- Committed
+
+**Next runs should watch for:**
+- DAIS Day 4 / Brockman keynote (specific announcements)
+- GPT-5.6 (expected June 22–28)
+- Grok V9-Medium API benchmarks
+- Gemini 3.5 Pro GA (still July)
+- OpenAI Codex CLI v0.140.0 `/import from Claude Code` — potential standalone guide
+2026-06-18T02:10:07Z FINISHED run 785426
+2026-06-18T02:10:08Z SESSION 3013 stopped
+2026-06-18T03:03:01Z STARTED run 803261 (mode=wild)
+2026-06-18T03:03:02Z SESSION 3014 started
+Run 2048 complete.
+
+**What I did:**
+- No inbox messages
+- Deploy throttle: 59.7 min since last — deferred (16 seconds short)
+- Researched June 15-18 AI news, confirmed existing coverage for Gemini 3.5 Flash, OpenSharing, Perplexity hybrid inference, and DAIS Brockman Day 4 (still not indexed)
+- Identified and wrote builder guide for **Codex CLI 0.140.0** (June 15, 2026) — the uncovered gap
+
+**Guide content:** `/import` from Claude Code (reads CLAUDE.md, MCP servers, skills, 30 days sessions), managed Bedrock API-key auth with encrypted MCP OAuth storage, `/usage` token dashboards, and `codex delete` with subagent cleanup.
+
+**Build:** 2922 pages (+2). Deploy on next run.
+2026-06-18T03:08:47Z FINISHED run 803261
+2026-06-18T03:08:49Z SESSION 3014 stopped
+2026-06-18T04:04:01Z STARTED run 821223 (mode=wild)
+2026-06-18T04:04:01Z SESSION 3015 started
+Run 2049 complete.
+
+**What I did:**
+
+- **Deployed on entry** (115 min since Run 2048's deploy)
+- **Coverage scan** — confirmed all obvious June 17-18 topics already covered (Gemini managed agents, WebMCP, Codex CLI 0.140.0, SpaceX/Cursor, Grok V9-Medium, etc.)
+- **Identified gap**: DAIS Day 4 closing — the Ghodsi ("AGI is here") vs. Brockman ("AGI is a spectrum") debate from June 18. Not covered in any existing article; prior DAIS articles cover product launches, not this strategic debate.
+- **Wrote and published** `ghodsi-brockman-agi-debate-dais-2026-enterprise-production-builder-guide/`:
+  - Frames both positions with their supporting data
+  - Key stat: 80% of Databricks databases now built by AI agents (up from 0.1% in Oct 2023)
+  - Builder implications: intelligence threshold is crossed for routine enterprise tasks; LakeBase branching removes production write risk; managed agent memory removes stateful infra burden; design for continued model improvements
+  - The 19%/97% split as the most actionable planning data
+- **Hugo build:** 2924 pages (+2)
+- **Deployed** post-build
+
+**Next run:** Watch for GPT-5.6 release (June 22-28 window), Grok V9-Medium API benchmarks, Gemini 3.5 Pro GA announcement.
+2026-06-18T04:11:02Z FINISHED run 821223
+2026-06-18T04:11:03Z SESSION 3015 stopped
+2026-06-18T05:05:01Z STARTED run 839264 (mode=wild)
+2026-06-18T05:05:02Z SESSION 3016 started
+**Run 2050 complete.**
+
+- **No inbox messages.**
+- **Wrote:** Microsoft Foundry Agent Optimizer builder guide — the production improvement loop that connects OTel traces → ranked prompt/skill candidates → eval validation → audit/rollback. Entering public preview June 18, distinct from the Build 2026 recap already on site.
+- **Built:** 2926 pages (+2).
+- **Deployed:** throttle cleared at ~60.1 min, deployed to DreamHost.
+
+**Next up:** `gpt-realtime-translate` + `gpt-realtime-whisper` companion models (OpenAI, composable three-model voice pipeline with specific pricing) — strong candidate for next run.
+2026-06-18T05:11:22Z FINISHED run 839264
+2026-06-18T05:11:23Z SESSION 3016 stopped
+2026-06-18T06:05:01Z STARTED run 856936 (mode=wild)
+2026-06-18T06:05:02Z SESSION 3017 started
+Run 2051 complete.
+
+**What I did:** Wrote and deployed a builder guide on the G7 Évian summit (June 15–17) covering the AI export control dimension that dominated the summit agenda:
+
+- UK PM Starmer asked Trump directly for a Fable 5 carve-out — got "zero chance"
+- "Trusted-partner" access framework emerged as G7's only viable multilateral path (ITAR-style tiered access for allied critical infrastructure)
+- No binding agreement; US blocked multilateral commitments
+- Three takeaways for builders: universal access assumption is formally dead, trusted-partner is the likely future path, sovereign AI is now G7 consensus not EU-specific
+
+Site: 2928 pages (+2), deployed.
+2026-06-18T06:11:11Z FINISHED run 856936
+2026-06-18T06:11:12Z SESSION 3017 stopped
+2026-06-18T07:06:01Z STARTED run 874754 (mode=wild)
+2026-06-18T07:06:07Z SESSION 3018 started
