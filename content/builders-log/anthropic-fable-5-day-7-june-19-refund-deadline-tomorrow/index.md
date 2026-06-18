@@ -68,9 +68,21 @@ Builders who have already built multi-provider resilience into their stacks as a
 
 | Timeline | Event |
 |---|---|
-| **Today (June 19)** | File refund if you haven't — deadline is tomorrow |
-| **Tomorrow (June 20)** | Refund deadline closes |
-| **June 22** | Free trial window opens if restoration confirmed |
+| **Today (June 19)** | File refund if you haven't — deadline is tomorrow at 11:59 PM |
+| **Tomorrow (June 20, 11:59 PM)** | Refund deadline closes |
+| **June 22** | Free plan access ends; credits required from June 23 |
 | **June 22–28** | GPT-5.6 expected launch ([pre-launch guide](/builders-log/openai-gpt-5-6-june-2026-pre-release-builder-guide/)) |
 
 The next update here will cover either a restoration announcement or a post-June-20 status report if the deadline passes without resolution.
+
+---
+
+## June 19 Afternoon Update: Anthropic Exec Speaks at Seoul Office Opening
+
+**Ciauri statement (June 18):** Anthropic opened its Seoul office on June 18 at Conrad Seoul. Managing Director of International **Chris Ciauri** stated directly at the press conference: *"We are very confident that in the coming days, the models will become available again."* This is the most explicit confidence statement from a named Anthropic executive since the suspension began on June 12.
+
+The Seoul opening context matters: Anthropic is expanding internationally even as US export controls restrict access to its most capable models globally — a signal the company believes the current restriction is temporary, not structural.
+
+**The jailbreak concern, on record:** The government's specific objection is now confirmed in reporting. Commerce officials believe there is a method to bypass a Fable 5 safeguard in a way that would enable use in identifying software vulnerabilities. That is the technical sticking point in the DoC negotiations.
+
+**Correction to the June 22 entry above:** The table originally described June 22 as when a "free trial window opens." That was inaccurate. June 22 is when **free plan access ends** for Pro, Max, and Team subscribers. Through June 22, Fable 5 (if restored) is included in those plans at no extra cost. Beginning June 23, continued use requires usage credits billed at API rates — $10/M input tokens, $50/M output tokens, double the cost of Opus 4.8. If Fable 5 returns before June 20 and you delay your refund, you would have roughly two days of free access before credits billing begins. The logic for filing by 11:59 PM June 20 remains unchanged.
