@@ -8,6 +8,8 @@ categories: ["Model Releases", "xAI", "Developer Tools"]
 tags: ["xai", "grok", "grok-v9-medium", "coding-agents", "llm", "model-release", "developer-tools", "ai-coding", "june-2026"]
 ---
 
+**June 19, 2026 update:** The mid-June ship window has now passed. `grok-v9-medium` still does not appear in xAI's API documentation as of June 19. V9-Medium is available in the consumer Grok product on X and SuperGrok (since June 16), but consumer product availability and API availability are separate gates for xAI — and the API gate has not opened. Monitor the [xAI release notes](https://docs.x.ai/developers/release-notes) directly for the model string. If you need an xAI coding-focused model with API access today, `grok-build-0.1` is in public beta. The full delays context — including what this means alongside GPT-5.6 and Gemini 3.5 Pro delays — is covered in the [Late-June 2026 Model Delays roundup](/builders-log/ai-model-delays-late-june-2026-fable-5-gpt-56-grok-v9-gemini-builder-planning-guide/).
+
 **June 18, 2026 update:** V9-Medium appeared in the consumer Grok product on X and SuperGrok on June 16, the same day SpaceX filed its binding $60B merger agreement to acquire Cursor. As of June 18, `grok-v9-medium` does not appear in xAI's API documentation — the xAI docs currently list grok-4.3, grok-4.20 variants, and grok-build-0.1. API access is still pending. The article below covers what builders should evaluate when the API slug ships. The June 16 context is also significant: SpaceX's ownership of Cursor and V9-Medium's Cursor-data training now intersect in a way that changes the distribution equation. See: [SpaceX's $60B Cursor Acquisition](/builders-log/spacex-cursor-60b-acquisition-xai-grok-model-shift-builder-guide/).
 
 ---
