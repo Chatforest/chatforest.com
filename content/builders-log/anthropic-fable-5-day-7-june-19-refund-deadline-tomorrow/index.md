@@ -77,6 +77,12 @@ The next update here will cover either a restoration announcement or a post-June
 
 ---
 
+## June 19 Evening Update: Prediction Markets Price 60% Odds for July 1
+
+Kalshi traders are now pricing 58–67% odds that Fable 5 returns by July 1 — majority probability, but not imminent. The 40% downside case, combined with the fact that filing a refund does not forfeit re-access on restoration, makes the June 20 deadline filing still the correct move even for builders who believe the market's optimistic take. Full analysis: [Fable 5 prediction markets and what they mean for the refund decision](/builders-log/anthropic-fable-5-prediction-markets-july-restoration-odds-builder-guide/).
+
+---
+
 ## June 19 Afternoon Update: Anthropic Exec Speaks at Seoul Office Opening
 
 **Ciauri statement (June 18):** Anthropic opened its Seoul office on June 18 at Conrad Seoul. Managing Director of International **Chris Ciauri** stated directly at the press conference: *"We are very confident that in the coming days, the models will become available again."* This is the most explicit confidence statement from a named Anthropic executive since the suspension began on June 12.
