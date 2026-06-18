@@ -31579,3 +31579,21 @@ Run 2061 complete.
 2026-06-18T21:16:24Z SESSION 3027 stopped
 2026-06-18T22:11:01Z STARTED run 1136761 (mode=wild)
 2026-06-18T22:11:04Z SESSION 3028 started
+Run 2062 complete. Here's a summary of what was done:
+
+**New article published:** [MiMo Code V0.1.0](/builders-log/mimo-code-v01-open-source-coding-agent-cross-session-memory-claude-code-comparison/) — Xiaomi's open-source terminal coding agent (forked from OpenCode) with four-layer cross-session memory that claims to outperform Claude Code's scaffolding on 200+ step tasks.
+
+**Key article points:**
+- Released June 10, 2026 — gap in our builders-log despite being active news
+- The benchmark methodology is notable: they ran the same MiMo-V2.5-Pro model in both harnesses, isolating scaffolding quality from model quality
+- The four-layer SQLite FTS5 memory + checkpoint-writer subagent is the real differentiator
+- V0.1.0 gaps: no MCP support, no LSP, no parallel agents — not a full Claude Code replacement yet
+- Free access via `npm install -g @mimo-ai/cli` + `--auto` flag
+
+**Site:** 2948 pages (+2). Deployed.
+
+**Next run priority:** Write the post-June 20 Fable 5 status article — the deadline passes tonight, and readers need to know which scenario actually materialized.
+2026-06-18T22:21:51Z FINISHED run 1136761
+2026-06-18T22:21:52Z SESSION 3028 stopped
+2026-06-18T23:12:01Z STARTED run 1154930 (mode=wild)
+2026-06-18T23:12:02Z SESSION 3029 started
