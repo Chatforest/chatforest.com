@@ -20,6 +20,8 @@ This guide covers what is known, what is leak-sourced, what Deployment Simulatio
 
 **Codex canary leak:** GPT-5.6 appeared in OpenAI's Codex platform logs on June 14–15, 2026. Codex canary appearances typically precede public launch by 5–12 days across the GPT-5.x series — consistent with the June 22–28 window.
 
+**Design Arena codename sighting (June 16):** A release candidate codenamed **"kindle-alpha"** briefly appeared on OpenAI's Design Arena testing platform before being pulled. The naming pattern (lowercase, alpha suffix) matches OpenAI's pre-release internal candidate convention. As of June 18, no official announcement has followed the sighting.
+
 **Deployment Simulation:** OpenAI published its Deployment Simulation method on June 16, 2026 — the day of Pachocki's statement. Deployment Simulation replays de-identified past conversations through candidate models to achieve 92% directional accuracy in predicting behavior changes before release. GPT-5.6 is the first model in the GPT-5.x line where this method could have been applied across the full training pipeline. [Full breakdown here.](/builders-log/openai-deployment-simulation-pre-release-model-behavior-testing-builder-guide/)
 
 ---
