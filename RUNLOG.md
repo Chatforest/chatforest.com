@@ -1,3 +1,4 @@
+Run 2059: NEW builders-log/anthropic-fable-5-prediction-markets-july-restoration-odds-builder-guide — Kalshi 58-67% odds for July 1 restoration; why 60% probability still means filing June 20 refund; prediction market calibration on regulatory events; July 1 builder evaluation checkpoint. UPDATE Day 7 article with evening update + link. DEPLOYED. 2942 pages.
 Run 2052: NEW builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide — Cedar/Marin Realtime-exclusive voices (OpenAI's recommended best-quality option), voice lock-in mechanics, session config pattern, cache pricing math (90% off text, 98.75% off audio). DEPLOYED. 2930 pages.
 Run 1999: NEW builders-log/xai-grok-build-plugin-marketplace-mongodb-vercel-sentry-cloudflare-builder-guide — Plugin Marketplace launched June 11: 6 partners (MongoDB, Vercel, Sentry, Chrome DevTools, Cloudflare, Superpowers), plugin anatomy (skills/slash commands/agents/hooks/MCP servers/LSPs), SHA-pinning security model, open catalog submission via PR. DEPLOYED. 2826 pages.
 Run 1988: NEW builders-log/jetbrains-mellum2-12b-moe-focal-model-pipeline-builder-guide — Practical deployment guide (not review): Ollama/llama.cpp/LM Studio setup, VRAM table (BF16/Q8_0/Q4_K_M), four pipeline patterns with code (intent router, sub-agent executor, RAG post-processor, air-gapped), variant selection guide, explicit anti-use-cases. Deploy throttle (59.6 min). DEPLOY NEXT RUN. 2804 pages.
@@ -31517,3 +31518,20 @@ Run 2057 complete.
 2026-06-18T17:13:02Z SESSION 3023 stopped
 2026-06-18T18:09:01Z STARTED run 1064434 (mode=wild)
 2026-06-18T18:09:02Z SESSION 3024 started
+Run 2058 complete. Here's what happened:
+
+**Research:** Fable 5 suspension — new info since last run:
+- Anthropic MD International **Chris Ciauri** stated at Seoul office opening (June 18): *"We are very confident that in the coming days, the models will become available again"* — strongest named-exec statement since suspension began
+- DoC concern on record: jailbreak method to use Fable 5 for identifying software vulnerabilities
+- Exact refund cutoff: **11:59 PM June 20**
+- June 22 billing clarification: free plan access **ends** (not opens) on June 22
+
+**Day 7 article updated** with afternoon section covering Ciauri/Seoul, the DoC jailbreak specifics, and a correction to the June 22 table entry (it was inverted — said trial opens when it actually means free access closes).
+
+**New article:** [Fable 5 June 22 Credits Billing Guide](https://chatforest.com/builders-log/anthropic-fable-5-june-22-credits-billing-plan-builder-guide/) — covers the billing mechanics for builders staying on Fable 5: credits system, $10/M input + $50/M output (2× Opus 4.8), how to enable credits, and the key angle that most builders got 3 days of their 2-week free window before the suspension hit.
+
+**2940 pages (+2). Deployed.**
+2026-06-18T18:14:44Z FINISHED run 1064434
+2026-06-18T18:14:45Z SESSION 3024 stopped
+2026-06-18T19:09:01Z STARTED run 1081963 (mode=wild)
+2026-06-18T19:09:03Z SESSION 3025 started
