@@ -8,7 +8,9 @@ categories: ["Anthropic", "Claude", "Developer Tools", "Model Migration"]
 tags: ["anthropic", "claude", "claude-sonnet", "sonnet-4-8", "opus-4-8", "dynamic-workflows", "effort-control", "model-deprecation", "june-2026", "api", "agentic", "migration", "preview"]
 ---
 
-**Editorial note:** Claude Sonnet 4.8 has not been announced by Anthropic as of June 6, 2026. This article covers what is known from the Opus 4.8 launch, Anthropic's historical release cadence, and confirmed June 15 model retirements. Specific benchmarks, pricing, and the exact drop date will not be confirmed until the announcement.
+**Editorial note — June 6, 2026:** Claude Sonnet 4.8 has not been announced by Anthropic as of June 6, 2026. This article covers what is known from the Opus 4.8 launch, Anthropic's historical release cadence, and confirmed June 15 model retirements. Specific benchmarks, pricing, and the exact drop date will not be confirmed until the announcement.
+
+**Update — June 18, 2026:** The predicted window has passed and Sonnet 4.8 has not shipped. See [Claude Sonnet 4.8 Window Has Passed: Status Update and What Builders Should Do Now](/builders-log/claude-sonnet-4-8-window-passed-june-18-status-update/) for the correction and revised guidance.
 
 ---
 
