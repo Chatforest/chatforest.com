@@ -114,6 +114,18 @@ If you used Gemini CLI as a terminal assistant and that's all you want from `agy
 
 **Not yet full feature parity.** Google stated explicitly at I/O that Antigravity CLI does not have 1:1 feature parity with Gemini CLI out of the gate. Some edge-case behaviors from Gemini CLI's Python extension ecosystem may not be present. If you had deeply customized Gemini CLI behavior, test `agy` carefully before June 18.
 
+## June 18 Update: The Cutoff Is Live — Three More Breaking Changes to Check
+
+The June 18 deadline is in effect as of today. Gemini CLI is shut off for affected tiers. If you're reading this mid-incident, the migration steps above still apply. Three breaking changes that surfaced after the June 14 note:
+
+**CPU compatibility crash.** The `agy` binary is written in Go and uses AES-NI hardware acceleration. It fails to start on CPUs without AES-NI support — Intel Ivy Bridge (3rd gen), some AMD Bulldozer/Piledriver chips, and certain VM environments with CPU features masked. If `agy --version` exits immediately with no output, check your CI runner's CPU capability: `grep -m 1 aes /proc/cpuinfo`. Affected environments need a software-fallback build (not yet publicly available) or a switch to a different runner.
+
+**`--stream` now outputs SSE, not JSON.** Gemini CLI's `--stream` flag emitted newline-delimited JSON. Antigravity CLI emits Server-Sent Events (SSE) format: `data: {...}\n\n` event frames. Any downstream parser, log aggregator, or test fixture that split on newlines and parsed each line as JSON will produce parse errors. Update stream consumers before migrating automated pipelines.
+
+**Non-zero exit codes on tool-use failures.** Gemini CLI returned exit code 0 even when a tool call failed — only the response content indicated failure. `agy` returns non-zero when a tool-use error occurs. CI scripts that checked `$?` expecting 0 on all completions will now fire error branches on tool failures they previously silently swallowed. This is more correct behavior, but it will break scripts that relied on the old pattern.
+
+---
+
 ## June 14 Update: Two Things to Know Before You Migrate
 
 **The free-tier quota cliff.** Gemini CLI's free tier ran at roughly 1,000 requests per day. Antigravity CLI's free tier is capped at 20 requests per day — a 98% reduction. If you are running meaningful automation on Gemini CLI's free tier, migrating to `agy`'s free tier will not sustain it. The binary swap is five minutes; the capacity shortfall hits you the first night your pipeline runs.

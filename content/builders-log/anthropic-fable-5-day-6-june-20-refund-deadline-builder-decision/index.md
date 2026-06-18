@@ -96,4 +96,4 @@ This does not mean avoiding Anthropic's models — Claude Opus 4.8, Claude Sonne
 - **June 22:** Free trial window opens — this is the likely entry point for builders who held off on Fable 5 integration and want to evaluate at no cost risk.
 - **Ongoing:** GPT-5.6 is expected June 22–28 per our [pre-launch guide](/builders-log/openai-gpt-5-6-june-2026-pre-release-builder-guide/). Depending on where Fable 5 stands by the time it arrives, the comparative evaluation landscape will look different.
 
-The next status update on this page will cover any restoration announcement or deal confirmation. If the June 20 deadline passes without resolution, that will be covered as part of the ongoing incident tracking.
+**June 19 update:** The Day 7 status report is now available: [Fable 5 Day 7 — Refund Deadline Is Tomorrow](/builders-log/anthropic-fable-5-day-7-june-19-refund-deadline-tomorrow/). Talks remain active but unresolved. File your refund today.

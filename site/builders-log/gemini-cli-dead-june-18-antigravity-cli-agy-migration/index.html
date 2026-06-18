@@ -135,6 +135,12 @@ git mv .gemini/skills .agents/skills
 <p><strong>Background parallel agents.</strong> <code>agy</code> can run multiple agent tasks simultaneously in the background — <code>agy run refactor-auth &amp;</code> while you do other work in the foreground. Gemini CLI was single-threaded in the foreground.</p>
 <p><strong>Shared harness with Antigravity desktop.</strong> The agent backing <code>agy</code> is the same one powering the Antigravity 2.0 desktop app. Improvements to the desktop app&rsquo;s agent capabilities flow into the CLI automatically. Gemini CLI was a separate implementation that lagged desktop releases.</p>
 <p><strong>Not yet full feature parity.</strong> Google stated explicitly at I/O that Antigravity CLI does not have 1:1 feature parity with Gemini CLI out of the gate. Some edge-case behaviors from Gemini CLI&rsquo;s Python extension ecosystem may not be present. If you had deeply customized Gemini CLI behavior, test <code>agy</code> carefully before June 18.</p>
+<h2 id="june-18-update-the-cutoff-is-live--three-more-breaking-changes-to-check">June 18 Update: The Cutoff Is Live — Three More Breaking Changes to Check</h2>
+<p>The June 18 deadline is in effect as of today. Gemini CLI is shut off for affected tiers. If you&rsquo;re reading this mid-incident, the migration steps above still apply. Three breaking changes that surfaced after the June 14 note:</p>
+<p><strong>CPU compatibility crash.</strong> The <code>agy</code> binary is written in Go and uses AES-NI hardware acceleration. It fails to start on CPUs without AES-NI support — Intel Ivy Bridge (3rd gen), some AMD Bulldozer/Piledriver chips, and certain VM environments with CPU features masked. If <code>agy --version</code> exits immediately with no output, check your CI runner&rsquo;s CPU capability: <code>grep -m 1 aes /proc/cpuinfo</code>. Affected environments need a software-fallback build (not yet publicly available) or a switch to a different runner.</p>
+<p><strong><code>--stream</code> now outputs SSE, not JSON.</strong> Gemini CLI&rsquo;s <code>--stream</code> flag emitted newline-delimited JSON. Antigravity CLI emits Server-Sent Events (SSE) format: <code>data: {...}\n\n</code> event frames. Any downstream parser, log aggregator, or test fixture that split on newlines and parsed each line as JSON will produce parse errors. Update stream consumers before migrating automated pipelines.</p>
+<p><strong>Non-zero exit codes on tool-use failures.</strong> Gemini CLI returned exit code 0 even when a tool call failed — only the response content indicated failure. <code>agy</code> returns non-zero when a tool-use error occurs. CI scripts that checked <code>$?</code> expecting 0 on all completions will now fire error branches on tool failures they previously silently swallowed. This is more correct behavior, but it will break scripts that relied on the old pattern.</p>
+<hr>
 <h2 id="june-14-update-two-things-to-know-before-you-migrate">June 14 Update: Two Things to Know Before You Migrate</h2>
 <p><strong>The free-tier quota cliff.</strong> Gemini CLI&rsquo;s free tier ran at roughly 1,000 requests per day. Antigravity CLI&rsquo;s free tier is capped at 20 requests per day — a 98% reduction. If you are running meaningful automation on Gemini CLI&rsquo;s free tier, migrating to <code>agy</code>'s free tier will not sustain it. The binary swap is five minutes; the capacity shortfall hits you the first night your pipeline runs.</p>
 <p>Options if you hit this wall:</p>
@@ -187,6 +193,13 @@ git mv .gemini/skills .agents/skills
   <h2 class="section-heading">More Guides</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-19 00:00:00</span></div>
+  <h3><a href="/builders-log/anthropic-fable-5-day-7-june-19-refund-deadline-tomorrow/">Fable 5 Day 7: Refund Deadline Is Tomorrow, Talks Remain Unresolved</a></h3>
+  <p>Day 7 of the Fable 5 / Mythos 5 suspension. The June 20 refund deadline is tomorrow. Trump said talks are &#39;going fine&#39; at the G7; Intellectia flagged contrary signals. No deal has been announced. Here is what builders need to do today.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-18 00:00:00</span></div>
   <h3><a href="/builders-log/anthropic-frontier-carbon-removal-scope-3-ai-compute-enterprise-builder-guide/">Anthropic Joins the $1.8B Carbon Removal Coalition: Scope 3 Disclosures, the 50-Gigawatt Problem, and What This Means for Your API Stack</a></h3>
   <p>On June 17, Anthropic became the first AI-native company to join Frontier, the Stripe-founded coalition that has now pledged $1.8 billion to carbon removal. It&#39;s the right headline — but the builder implications run deeper than sustainability optics. Here&#39;s what Scope 3 compliance, energy constraints, and enterprise procurement mean for teams building on Claude APIs.</p>
@@ -204,13 +217,6 @@ git mv .gemini/skills .agents/skills
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-18 00:00:00</span></div>
   <h3><a href="/builders-log/claude-sonnet-4-8-window-passed-june-18-status-update/">Claude Sonnet 4.8 Window Has Passed: Status Update and What Builders Should Do Now</a></h3>
   <p>The predicted June 16–18 window for Claude Sonnet 4.8 has passed. No API model ID, no Anthropic announcement. Claude Sonnet 4.6 remains the current Sonnet. Here is what happened, why the prediction missed, and what the revised timeline looks like.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-06-18 00:00:00</span></div>
-  <h3><a href="/builders-log/databricks-ltap-lakehouse-rt-agent-real-time-data-architecture-builder-guide/">Databricks LTAP and Lakehouse//RT: The End of ETL for AI Agent Data Architectures Builder Guide</a></h3>
-  <p>Databricks&#39; LTAP architecture unifies Lakebase (serverless Postgres) and the Lakehouse on a single storage layer — eliminating CDC pipelines and ETL for AI agents. Lakehouse//RT adds millisecond query latency via the Reyden engine. Here is the complete builder breakdown.</p>
 </div>
 
   
