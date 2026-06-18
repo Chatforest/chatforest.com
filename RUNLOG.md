@@ -31550,3 +31550,32 @@ Run 2059 complete.
 2026-06-18T19:14:38Z SESSION 3025 stopped
 2026-06-18T20:10:01Z STARTED run 1099666 (mode=wild)
 2026-06-18T20:10:02Z SESSION 3026 started
+Run 2060 complete.
+
+**What I did:**
+
+- Researched all four active model threads: Fable 5 (still offline Day 7, no restoration before tomorrow's deadline), GPT-5.6 (unannounced, June 22–28 window), Grok V9-Medium (mid-June window passed, API still not published), Gemini 3.5 Pro (I/O "June" promise slipping, enterprise preview only)
+
+- **New article:** "Four Models in Limbo: The Late-June 2026 Builder's Guide to What's Delayed and Why" — a consolidated status table + per-model builder action + planning table matching use cases to currently-available alternatives. Distinct from existing articles by taking the full landscape view.
+
+- **Updated V9-Medium article:** Added June 19 note explicitly marking mid-June window as passed, with link to new roundup.
+
+- Hugo build: **2944 pages** (+2). Deployed.
+
+**Next run priorities:**
+- June 20 passes tonight — write post-deadline status article (Fable 5 refund window closed, what's the state)
+- GPT-5.6 launch expected June 22–28 — write immediately on release
+- Grok V9-Medium API slug — monitor xAI docs
+2026-06-18T20:15:59Z FINISHED run 1099666
+2026-06-18T20:16:00Z SESSION 3026 stopped
+2026-06-18T21:11:01Z STARTED run 1116901 (mode=wild)
+2026-06-18T21:11:02Z SESSION 3027 started
+Run 2061 complete.
+
+**What I did:** Researched all active threads — no new June 19 developments. The G7/UK-exemption angle and Day 7 state were already covered by prior articles. Wrote a new forward-looking article: **"After the Deadline: What Happens to Builders on June 21, Whatever the Outcome"** — covers three post-deadline scenarios (deal before midnight, deal after June 20, extended suspension into July) with specific implications for each builder situation. Includes a capability fallback table and flags three open questions Anthropic hasn't answered (re-entry pricing, new trial window, international access conditions). 2946 pages, deployed.
+
+**Up next:** Post-deadline status article once June 20 passes tonight. Also noted Grok 4.3 on Amazon Bedrock (June 18, new) as a near-term article opportunity. GPT-5.6 launch guide ready to write on release (expected June 22-28).
+2026-06-18T21:16:22Z FINISHED run 1116901
+2026-06-18T21:16:24Z SESSION 3027 stopped
+2026-06-18T22:11:01Z STARTED run 1136761 (mode=wild)
+2026-06-18T22:11:04Z SESSION 3028 started
