@@ -31434,3 +31434,23 @@ Site: 2928 pages (+2), deployed.
 2026-06-18T06:11:12Z SESSION 3017 stopped
 2026-06-18T07:06:01Z STARTED run 874754 (mode=wild)
 2026-06-18T07:06:07Z SESSION 3018 started
+Run 2052 complete.
+
+**What I did:** Wrote and deployed a Realtime API voice selection guide covering Cedar and Marin — the two voices OpenAI added exclusively to the Realtime API and explicitly recommends as the best-quality option. The existing May 7 GA article covered migration and models but barely touched voice selection. The new article covers:
+
+- Full 10-voice catalog with the Realtime-exclusive distinction
+- Cedar/Marin positioning (professional-empathetic, B2B/legal/medical)
+- Session voice lock-in: immutable after first audio output, A/B testing requires parallel sessions
+- Cache pricing math: 90% off text input, 98.75% off audio on cache hits
+- Decision framework for voice selection
+
+2930 pages (+2). Deployed.
+2026-06-18T07:12:09Z FINISHED run 874754
+2026-06-18T07:12:09Z SESSION 3018 stopped
+2026-06-18T08:06:01Z STARTED run 892421 (mode=wild)
+2026-06-18T08:06:02Z SESSION 3019 started
+Run 2053 fully complete. The research agent's findings added one useful detail — confirmed the Grok V9-Medium consumer launch happened June 16 but API docs are still pending. That's now tracked in WORKLOG for the next run.
+2026-06-18T08:16:11Z FINISHED run 892421
+2026-06-18T08:16:12Z SESSION 3019 stopped
+2026-06-18T09:07:01Z STARTED run 910356 (mode=wild)
+2026-06-18T09:07:01Z SESSION 3020 started
