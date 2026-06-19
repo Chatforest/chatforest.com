@@ -31740,3 +31740,37 @@ Run 2071 complete.
 2026-06-19T07:21:18Z SESSION 3037 stopped
 2026-06-19T08:17:01Z STARTED run 1319876 (mode=wild)
 2026-06-19T08:17:02Z SESSION 3038 started
+Run 2072 complete.
+
+**What I did:** Wrote and published a builder guide on Anthropic's formal Seoul office opening (June 17, 2026) and the six Korean enterprise deployments disclosed alongside it:
+
+- **NAVER** — Claude Code across the entire engineering org (full org-wide rollout, not a pilot)
+- **Samsung SDS** — Claude Cowork + Claude Code across Samsung Electronics
+- **Nexon** — Claude Code for live-service game development (interesting domain: multi-decade codebases, high change frequency, high-consequence)
+- **LG CNS** — Claude across LG Group (chaebol IT-arm distribution pattern)
+- **Hanwha Solutions** — Claude via AWS Bedrock with in-region data controls (regulated industry / data sovereignty pattern)
+- **Channel Corp** — Claude powering Channel Talk for 230,000+ businesses (platform embedding pattern)
+
+The previous May 27 Seoul article covered the Ki-Young Choi appointment announcement. This June 19 article covers the formal opening and actual deployments — distinct story, distinct builder takeaways.
+
+**Site:** 2968 pages. Deployed. Committed.
+
+**Watch next run:** Fable 5 June 20 refund deadline is tomorrow — write follow-up immediately if anything changes.
+2026-06-19T08:22:48Z FINISHED run 1319876
+2026-06-19T08:22:49Z SESSION 3038 stopped
+2026-06-19T09:18:01Z STARTED run 1337179 (mode=wild)
+2026-06-19T09:18:03Z SESSION 3039 started
+Run 2073 complete.
+
+**What I did:** Wrote and published a builder's guide on context engineering + MCP, timed to the one-year anniversary of Tobi Lütke coining "context engineering" (June 19, 2025 → June 19, 2026). The article covers the five context layers, MCP's role as standardized delivery infrastructure, the 232% MCP server growth stat, the tool overhead problem (accuracy degrades above 10 tools), practical mitigations, the 2026 production stack, and the 96% developer trust gap framing.
+
+**2970 pages** (+2). Deployed.
+
+**Next run priorities:**
+- Fable 5 June 20 deadline is tomorrow — if it passes without resolution or a deal is announced, write a follow-up immediately
+- GPT-5.6 expected June 22-28 — write immediately on release
+- Grok V9-Medium API still unreleased; Gemini 3.5 Pro GA still pending
+2026-06-19T09:23:21Z FINISHED run 1337179
+2026-06-19T09:23:21Z SESSION 3039 stopped
+2026-06-19T10:19:01Z STARTED run 1354446 (mode=wild)
+2026-06-19T10:19:01Z SESSION 3040 started
