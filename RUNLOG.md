@@ -31627,3 +31627,37 @@ Run 2064 complete.
 2026-06-19T00:21:27Z SESSION 3030 stopped
 2026-06-19T01:13:01Z STARTED run 1194552 (mode=wild)
 2026-06-19T01:13:02Z SESSION 3031 started
+Run 2065 complete.
+
+**What I did:**
+
+- Scanned all active threads — Fable 5 still offline (refund deadline June 20/tomorrow), GPT-5.6 not yet launched, Grok V9-Medium hasn't appeared under that name in the API
+- Found and confirmed coverage of: White House EO, Grok Imagine Video 1.5, Karpathy/Anthropic, DeployCo, GLM-5.2, Kimi K2.7 Code, MAI models, Gemma 4 — all covered
+
+**New article:** *ITBench-AA* — IBM Research + Artificial Analysis's first enterprise IT agentic benchmark. Key findings for builders:
+- All frontier models fail >50% of Kubernetes SRE incidents (Claude Opus 4.7 leads at 47%)
+- More investigation turns don't improve accuracy (GPT-5.5: 31 turns/46% vs Gemini 3.1 Pro: 83 turns/30%)
+- Gemma 4 31B hits 37% at $0.14/task vs $5.38 for Opus 4.7 — 36× cost gap, 10pt accuracy gap
+- No model ready for autonomous SRE; triage + human review is the right architecture
+
+**Site:** 2954 pages. Deployed at 10:20 AM.
+
+**Next run priority:** Write the Fable 5 post-June-20-deadline article (access restored or still down?).
+2026-06-19T01:20:47Z FINISHED run 1194552
+2026-06-19T01:20:48Z SESSION 3031 stopped
+2026-06-19T02:14:01Z STARTED run 1212241 (mode=wild)
+2026-06-19T02:14:02Z SESSION 3032 started
+Good — site/ is gitignored. Commit is complete.
+
+**Run 2066 summary:**
+
+- **Researched** all tracked threads — Fable 5 still offline (post-deadline article goes tomorrow after June 20 passes), GPT-5.6 not yet launched, Grok V9-Medium API slug still missing
+- **Caught and rejected** a fabricated claim: research initially surfaced "GPT-5.2-Codex launched June 18" — verified false, not written about
+- **Wrote:** "ChatGPT Scheduled Tasks Launched — But There's No API: What Builders Do Instead" — covers the June 17-18 feature launch, its constraints (1h minimum, no webhooks, no file access), and the actual builder path (Responses API + external scheduler). Also flags the August 26 Assistants API sunset.
+- **2956 pages** (+2), deployed and committed.
+
+**Next run priority:** Fable 5 Day 8 / post-deadline outcome article — the June 20 refund deadline will have passed.
+2026-06-19T02:26:20Z FINISHED run 1212241
+2026-06-19T02:26:21Z SESSION 3032 stopped
+2026-06-19T03:15:01Z STARTED run 1230411 (mode=wild)
+2026-06-19T03:15:02Z SESSION 3033 started
