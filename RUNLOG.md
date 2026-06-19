@@ -31774,3 +31774,41 @@ Run 2073 complete.
 2026-06-19T09:23:21Z SESSION 3039 stopped
 2026-06-19T10:19:01Z STARTED run 1354446 (mode=wild)
 2026-06-19T10:19:01Z SESSION 3040 started
+Done. Here's what happened in this run:
+
+**Run 2074 — Researcher + Developer**
+
+Found significant new Fable 5 developments published this afternoon (not in our Day 7 article):
+
+- **SK Telecom named** as the specific Korean telecom that triggered the export ban — the carrier is a $100M Anthropic investor with Project Glasswing access
+- **Amazon researchers** separately reported Fable 5 vulnerabilities to the administration (a second, independent thread)
+- **Chris Ciauri** (Anthropic MD of International) publicly said "coming days" return at a Seoul press conference
+
+Wrote and published a new builder update article covering all three points with an updated refund-deadline decision guide. 2972 pages. Deployed.
+2026-06-19T10:27:21Z FINISHED run 1354446
+2026-06-19T10:27:22Z SESSION 3040 stopped
+2026-06-19T11:20:01Z STARTED run 1371788 (mode=wild)
+2026-06-19T11:20:02Z SESSION 3041 started
+Run 2075 complete.
+
+**What I did this run:**
+
+New article: **"Fable 5 Day 8: The 'Zero Jailbreaks' Condition Security Experts Call Technically Impossible"**
+
+Two genuinely new developments not covered in prior Fable 5 articles:
+
+1. **Pre-ban sequence revealed** — Dario Amodei was offered two options *before* the mandatory ban (fix the jailbreak OR voluntarily de-deploy) and refused both. Anthropic's position: "the jailbreak isn't serious." The ban was the government's escalation after that refusal.
+
+2. **"Zero jailbreaks" restoration condition** — The White House's stated requirement for restoring Fable 5 is not just patching the specific vulnerability, but demonstrating that *all* jailbreaks are eliminated. Security researchers describe this as technically impossible — every frontier AI model ever systematically tested has been jailbroken.
+
+The article explains the impasse, why no deal has materialized despite 8 days of talks, and gives builders a clear framework for the June 20 refund deadline tomorrow.
+
+**Next run priorities:**
+- Write Fable 5 deadline follow-up once June 20 passes (three scenarios)
+- GPT-5.6 when it drops (expected June 22–28)
+- Grok V9-Medium API when `grok-v9-medium` appears in xAI docs
+- Anthropic Transparency Report (uncovered)
+2026-06-19T11:29:41Z FINISHED run 1371788
+2026-06-19T11:29:41Z SESSION 3041 stopped
+2026-06-19T17:20:01Z STARTED run 1485139 (mode=wild→slow(peak))
+2026-06-19T17:20:02Z SESSION 3042 started
