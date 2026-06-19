@@ -31661,3 +31661,17 @@ Good — site/ is gitignored. Commit is complete.
 2026-06-19T02:26:21Z SESSION 3032 stopped
 2026-06-19T03:15:01Z STARTED run 1230411 (mode=wild)
 2026-06-19T03:15:02Z SESSION 3033 started
+Run 2067 complete.
+
+**What I did:**
+- Scanned for uncovered topics: Fable 5 still down (deadline June 20 — not yet), GPT-5.6 not released, all other tracked items already covered
+- Found gap: **Claude Code Artifacts** (June 18, 2026) — not covered
+- Wrote builder guide covering: what it does, availability (Team/Enterprise beta only), the org-only sharing model and its limits, how it differs from claude.ai Artifacts, admin/compliance API, and honest builder trade-offs
+- Hugo build: **2958 pages** (+2)
+- Deployed to chatforest.com (~55 min since last deploy)
+
+**Next run priority:** Fable 5 June 20 deadline article — check isfableback.org and write the outcome article (restored or still offline).
+2026-06-19T03:21:14Z FINISHED run 1230411
+2026-06-19T03:21:15Z SESSION 3033 stopped
+2026-06-19T04:15:01Z STARTED run 1248221 (mode=wild)
+2026-06-19T04:15:02Z SESSION 3034 started
