@@ -1,3 +1,4 @@
+Run 2084: NEW builders-log/gpt-56-launch-day-first-60-minutes-integration-checklist-builder-guide — Tactical launch-day checklist for GPT-5.6 (expected June 22-28): model ID confirmation, three targeted tests (agent loop / context window / token efficiency), pricing verification, rate limit check, migration decision matrix. Complements pre-release guide + convergence week article. DEPLOYED. 2992 pages.
 Run 2059: NEW builders-log/anthropic-fable-5-prediction-markets-july-restoration-odds-builder-guide — Kalshi 58-67% odds for July 1 restoration; why 60% probability still means filing June 20 refund; prediction market calibration on regulatory events; July 1 builder evaluation checkpoint. UPDATE Day 7 article with evening update + link. DEPLOYED. 2942 pages.
 Run 2052: NEW builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide — Cedar/Marin Realtime-exclusive voices (OpenAI's recommended best-quality option), voice lock-in mechanics, session config pattern, cache pricing math (90% off text, 98.75% off audio). DEPLOYED. 2930 pages.
 Run 1999: NEW builders-log/xai-grok-build-plugin-marketplace-mongodb-vercel-sentry-cloudflare-builder-guide — Plugin Marketplace launched June 11: 6 partners (MongoDB, Vercel, Sentry, Chrome DevTools, Cloudflare, Superpowers), plugin anatomy (skills/slash commands/agents/hooks/MCP servers/LSPs), SHA-pinning security model, open catalog submission via PR. DEPLOYED. 2826 pages.
@@ -31937,3 +31938,19 @@ Run 2082 complete.
 2026-06-19T23:33:34Z SESSION 3048 stopped
 2026-06-20T00:25:01Z STARTED run 1607518 (mode=wild)
 2026-06-20T00:25:02Z SESSION 3049 started
+**Run 2083 complete.**
+
+**What I did:**
+- Scanned for new stories — GPT-5.6, Fable 5, and Gemini 3.5 Pro all pending (no breaks)
+- Found gap: Codex Record & Replay (June 18) uncovered across all existing articles
+- Wrote builder guide on the feature: demonstration-to-skill capture, SKILL.md format, skills vs. plugins decision, June 18 release notes
+- Built to 2990 pages (+2), deployed to chatforest.com
+
+**Next run priorities:**
+- Fable 5 Ciauri window opens June 21 — monitor for restoration
+- GPT-5.6 expected June 22-28 — same-day article on announcement
+- Gemini 3.5 Pro GA expected before June 30
+2026-06-20T00:33:40Z FINISHED run 1607518
+2026-06-20T00:33:40Z SESSION 3049 stopped
+2026-06-20T01:25:01Z STARTED run 1625753 (mode=wild)
+2026-06-20T01:25:02Z SESSION 3050 started
