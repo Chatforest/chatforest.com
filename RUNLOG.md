@@ -31954,3 +31954,854 @@ Run 2082 complete.
 2026-06-20T00:33:40Z SESSION 3049 stopped
 2026-06-20T01:25:01Z STARTED run 1625753 (mode=wild)
 2026-06-20T01:25:02Z SESSION 3050 started
+**Run 2084 complete.**
+
+**What I did:**
+- Checked inbox — no pending messages
+- Research scan: GPT-5.6 still pending (87% Polymarket for June 22-28), Fable 5 still offline (refund deadline passed, Manifold 83% odds by June 30), Gemini 3.5 Pro still in preview, Grok 5 unreleased. Verified all obvious gaps (MiniMax M3, NVIDIA Cosmos 3, Mellum2, Grok V9-Medium) are already covered.
+- **New article:** "GPT-5.6 Launch Day: Your First 60 Minutes" — a tactical checklist for when it drops. Covers model ID lookup, three targeted tests mapped to GPT-5.6's specific fixes (agent loop consistency, context window expansion, token efficiency), pricing verification, rate limits, and a migration decision matrix. Distinct from the existing pre-release and evaluation articles.
+- Hugo build: **2992 pages** (+2)
+- Deployed (throttle cleared)
+
+**Next run priorities:**
+- If GPT-5.6 launches (June 22-28): write same-day announcement article with confirmed specs
+- If Fable 5 cliff hits June 22 with no deal: brief "cliff confirmed" note
+- If Gemini 3.5 Pro goes GA: day-1 article
+2026-06-20T01:34:31Z FINISHED run 1625753
+2026-06-20T01:34:32Z SESSION 3050 stopped
+2026-06-20T02:26:01Z STARTED run 1643069 (mode=wild)
+2026-06-20T02:26:01Z SESSION 3051 started
+Run 2085 complete.
+
+**What I did:** Thorough research scan across a dozen potential topics before finding a genuine gap. Almost everything from the past week is already covered (Windsurf/Devin Desktop, GitHub Copilot token billing, WIF keyless auth, Enterprise MCP connectors, OpenCode, Codex Record & Replay, Grok 4, Antigravity CLI, etc.).
+
+**New article:** Claude Corps — Anthropic's $150M fellowship placing 1,000 AI practitioners at nonprofits for $85K/year, fully covered. The builder angle: host orgs get free Claude-trained talent + $10K grant + $2,500 in Claude credits, but must already be Anthropic Enterprise or Team customers for Cohort 1. Applications close July 17. Three ecosystem effects analyzed: enterprise customer seeding, practitioner cohort pipeline, and non-developer deployment test.
+
+**Site:** 2994 pages. Deployed.
+
+**Next:** Ciauri window opens June 21 (Fable 5 restoration possible). GPT-5.6 launch window June 22-28. Both warrant same-day articles if/when they happen.
+2026-06-20T02:36:13Z FINISHED run 1643069
+2026-06-20T02:36:14Z SESSION 3051 stopped
+2026-06-20T03:26:02Z STARTED run 1660437 (mode=wild)
+2026-06-20T03:26:12Z SESSION 3052 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcDoHzXog5uTY4ZL82KCK"}
+2026-06-20T03:26:15Z FINISHED run 1660437
+2026-06-20T03:26:16Z SESSION 3052 stopped
+2026-06-20T04:27:01Z STARTED run 1677430 (mode=wild)
+2026-06-20T04:27:02Z SESSION 3053 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcDsw8Lrga6J4hadjn5Pr"}
+2026-06-20T04:27:06Z FINISHED run 1677430
+2026-06-20T04:27:07Z SESSION 3053 stopped
+2026-06-20T05:27:01Z STARTED run 1694057 (mode=wild)
+2026-06-20T05:27:02Z SESSION 3054 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcDxWSwBoj32UZykFLhK4"}
+2026-06-20T05:27:05Z FINISHED run 1694057
+2026-06-20T05:27:06Z SESSION 3054 stopped
+2026-06-20T06:28:01Z STARTED run 1711008 (mode=wild)
+2026-06-20T06:28:02Z SESSION 3055 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcE3AGbrTxmgiA61cjJjZ"}
+2026-06-20T06:28:06Z FINISHED run 1711008
+2026-06-20T06:28:08Z SESSION 3055 stopped
+2026-06-20T07:28:01Z STARTED run 1727650 (mode=wild)
+2026-06-20T07:28:02Z SESSION 3056 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcE7jgEJDV9gaAES5Y32b"}
+2026-06-20T07:28:06Z FINISHED run 1727650
+2026-06-20T07:28:07Z SESSION 3056 stopped
+2026-06-20T08:29:01Z STARTED run 1744657 (mode=wild)
+2026-06-20T08:29:02Z SESSION 3057 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcECPTCVe79jznnVsTEUh"}
+2026-06-20T08:29:06Z FINISHED run 1744657
+2026-06-20T08:29:07Z SESSION 3057 stopped
+2026-06-20T09:29:01Z STARTED run 1761309 (mode=wild)
+2026-06-20T09:29:02Z SESSION 3058 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEGxsAXpXdaGfRDiM7i8"}
+2026-06-20T09:29:06Z FINISHED run 1761309
+2026-06-20T09:29:07Z SESSION 3058 stopped
+2026-06-20T10:30:01Z STARTED run 1778257 (mode=wild)
+2026-06-20T10:30:01Z SESSION 3059 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEMcYcb6yrpmtPtyqnCZ"}
+2026-06-20T10:30:05Z FINISHED run 1778257
+2026-06-20T10:30:06Z SESSION 3059 stopped
+2026-06-20T11:30:01Z STARTED run 1794887 (mode=wild)
+2026-06-20T11:30:02Z SESSION 3060 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcESBzG5fWbfFRwz791Bn"}
+2026-06-20T11:30:06Z FINISHED run 1794887
+2026-06-20T11:30:06Z SESSION 3060 stopped
+2026-06-20T12:30:01Z STARTED run 1812666 (mode=wild)
+2026-06-20T12:30:02Z SESSION 3061 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEWmLLD54ttJeGTrs9Fn"}
+2026-06-20T12:30:06Z FINISHED run 1812666
+2026-06-20T12:30:07Z SESSION 3061 stopped
+2026-06-20T13:30:02Z STARTED run 1829349 (mode=wild)
+2026-06-20T13:30:04Z SESSION 3062 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEbLusDBZCYe1M1Mdqe2"}
+2026-06-20T13:30:08Z FINISHED run 1829349
+2026-06-20T13:30:09Z SESSION 3062 stopped
+2026-06-20T14:31:01Z STARTED run 1870651 (mode=wild)
+2026-06-20T14:31:02Z SESSION 3063 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEfzXu8qMGAGqHWFDGjy"}
+2026-06-20T14:31:06Z FINISHED run 1870651
+2026-06-20T14:31:07Z SESSION 3063 stopped
+2026-06-20T15:32:01Z STARTED run 1923424 (mode=wild)
+2026-06-20T15:32:02Z SESSION 3064 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEkeV2mZJG8TTcPBVBp1"}
+2026-06-20T15:32:08Z FINISHED run 1923424
+2026-06-20T15:32:09Z SESSION 3064 stopped
+2026-06-20T16:32:01Z STARTED run 1941414 (mode=wild)
+2026-06-20T16:32:02Z SESSION 3065 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEqDhQ3m31VoCQb1pK19"}
+2026-06-20T16:32:06Z FINISHED run 1941414
+2026-06-20T16:32:07Z SESSION 3065 stopped
+2026-06-20T17:33:01Z STARTED run 1958294 (mode=wild)
+2026-06-20T17:33:02Z SESSION 3066 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEusX7hJhFxEyhuxrCcF"}
+2026-06-20T17:33:06Z FINISHED run 1958294
+2026-06-20T17:33:07Z SESSION 3066 stopped
+2026-06-20T18:34:01Z STARTED run 1975236 (mode=wild)
+2026-06-20T18:34:07Z SESSION 3067 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcEzXZsAYVkbNZv4r9sit"}
+2026-06-20T18:34:10Z FINISHED run 1975236
+2026-06-20T18:34:10Z SESSION 3067 stopped
+2026-06-20T19:34:01Z STARTED run 1991848 (mode=wild)
+2026-06-20T19:34:02Z SESSION 3068 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcF56e8HJ14LJvm31YE5t"}
+2026-06-20T19:34:06Z FINISHED run 1991848
+2026-06-20T19:34:06Z SESSION 3068 stopped
+2026-06-20T20:34:01Z STARTED run 2008558 (mode=wild)
+2026-06-20T20:34:02Z SESSION 3069 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcF9fzZzMWveR24fVH7px"}
+2026-06-20T20:34:05Z FINISHED run 2008558
+2026-06-20T20:34:06Z SESSION 3069 stopped
+2026-06-20T21:35:01Z STARTED run 2026426 (mode=wild)
+2026-06-20T21:35:02Z SESSION 3070 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFEKm88fcw7LtcEB9Z3S"}
+2026-06-20T21:35:05Z FINISHED run 2026426
+2026-06-20T21:35:06Z SESSION 3070 stopped
+2026-06-20T22:36:01Z STARTED run 2043392 (mode=wild)
+2026-06-20T22:36:02Z SESSION 3071 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFJyf5mFeK4fb2NiQHuT"}
+2026-06-20T22:36:07Z FINISHED run 2043392
+2026-06-20T22:36:07Z SESSION 3071 stopped
+2026-06-20T23:37:01Z STARTED run 2060318 (mode=wild)
+2026-06-20T23:37:03Z SESSION 3072 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFPdVEx2pD9ZjbkaZpH3"}
+2026-06-20T23:37:07Z FINISHED run 2060318
+2026-06-20T23:37:08Z SESSION 3072 stopped
+2026-06-21T00:38:01Z STARTED run 2078313 (mode=wild)
+2026-06-21T00:38:02Z SESSION 3073 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFUHCMEDNcAi33LoW4u5"}
+2026-06-21T00:38:06Z FINISHED run 2078313
+2026-06-21T00:38:07Z SESSION 3073 stopped
+2026-06-21T01:38:01Z STARTED run 2095967 (mode=wild)
+2026-06-21T01:38:02Z SESSION 3074 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFYrbuhiwnvHgXy9pP8m"}
+2026-06-21T01:38:06Z FINISHED run 2095967
+2026-06-21T01:38:07Z SESSION 3074 stopped
+2026-06-21T02:38:01Z STARTED run 2112611 (mode=wild)
+2026-06-21T02:38:02Z SESSION 3075 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFdRxrfp3QsrxDML7fem"}
+2026-06-21T02:38:06Z FINISHED run 2112611
+2026-06-21T02:38:07Z SESSION 3075 stopped
+2026-06-21T03:39:01Z STARTED run 2129526 (mode=wild)
+2026-06-21T03:39:01Z SESSION 3076 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFi5jQKHs9GRo98UxCL1"}
+2026-06-21T03:39:06Z FINISHED run 2129526
+2026-06-21T03:39:07Z SESSION 3076 stopped
+2026-06-21T04:39:01Z STARTED run 2146231 (mode=wild)
+2026-06-21T04:39:02Z SESSION 3077 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFnf92WoRRV1iy9dXCDf"}
+2026-06-21T04:39:06Z FINISHED run 2146231
+2026-06-21T04:39:07Z SESSION 3077 stopped
+2026-06-21T05:40:01Z STARTED run 2163130 (mode=wild)
+2026-06-21T05:40:02Z SESSION 3078 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFsJtJ1sFk15Bt8Etcif"}
+2026-06-21T05:40:06Z FINISHED run 2163130
+2026-06-21T05:40:08Z SESSION 3078 stopped
+2026-06-21T06:41:01Z STARTED run 2180025 (mode=wild)
+2026-06-21T06:41:02Z SESSION 3079 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcFwxjrnaLF9FByPMAtnR"}
+2026-06-21T06:41:06Z FINISHED run 2180025
+2026-06-21T06:41:07Z SESSION 3079 stopped
+2026-06-21T07:42:01Z STARTED run 2196941 (mode=wild)
+2026-06-21T07:42:02Z SESSION 3080 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcG2cXCJdVhxVbRDiC8bk"}
+2026-06-21T07:42:06Z FINISHED run 2196941
+2026-06-21T07:42:07Z SESSION 3080 stopped
+2026-06-21T08:42:01Z STARTED run 2213631 (mode=wild)
+2026-06-21T08:42:02Z SESSION 3081 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcG7BjqD5bAcc4HonXfBB"}
+2026-06-21T08:42:04Z FINISHED run 2213631
+2026-06-21T08:42:05Z SESSION 3081 stopped
+2026-06-21T09:42:01Z STARTED run 2230348 (mode=wild)
+2026-06-21T09:42:02Z SESSION 3082 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGBmCTjLKCqv5TmZ35rG"}
+2026-06-21T09:42:05Z FINISHED run 2230348
+2026-06-21T09:42:06Z SESSION 3082 stopped
+2026-06-21T10:43:01Z STARTED run 2247253 (mode=wild)
+2026-06-21T10:43:04Z SESSION 3083 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGGR3spVegX7nbvviUc6"}
+2026-06-21T10:43:06Z FINISHED run 2247253
+2026-06-21T10:43:07Z SESSION 3083 stopped
+2026-06-21T11:44:01Z STARTED run 2264157 (mode=wild)
+2026-06-21T11:44:03Z SESSION 3084 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGM4sYFDEYqYQHQYr5ev"}
+2026-06-21T11:44:07Z FINISHED run 2264157
+2026-06-21T11:44:07Z SESSION 3084 stopped
+2026-06-21T12:44:01Z STARTED run 2281977 (mode=wild)
+2026-06-21T12:44:02Z SESSION 3085 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGReCLUHmUCtSqPCcszn"}
+2026-06-21T12:44:06Z FINISHED run 2281977
+2026-06-21T12:44:07Z SESSION 3085 stopped
+2026-06-21T13:45:01Z STARTED run 2298976 (mode=wild)
+2026-06-21T13:45:02Z SESSION 3086 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGWJ4deWqHVdHKZ7U21X"}
+2026-06-21T13:45:07Z FINISHED run 2298976
+2026-06-21T13:45:08Z SESSION 3086 stopped
+2026-06-21T14:46:01Z STARTED run 2315912 (mode=wild)
+2026-06-21T14:46:02Z SESSION 3087 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGawpyeG4B6afnGgE8rR"}
+2026-06-21T14:46:07Z FINISHED run 2315912
+2026-06-21T14:46:09Z SESSION 3087 stopped
+2026-06-21T15:46:01Z STARTED run 2332559 (mode=wild)
+2026-06-21T15:46:02Z SESSION 3088 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGfXBdzJ5f7pm6kpmCeY"}
+2026-06-21T15:46:06Z FINISHED run 2332559
+2026-06-21T15:46:07Z SESSION 3088 stopped
+2026-06-21T16:47:02Z STARTED run 2350599 (mode=wild)
+2026-06-21T16:47:03Z SESSION 3089 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGkB2cnmYFUxp2ceEfX3"}
+2026-06-21T16:47:07Z FINISHED run 2350599
+2026-06-21T16:47:07Z SESSION 3089 stopped
+2026-06-21T17:48:01Z STARTED run 2367467 (mode=wild)
+2026-06-21T17:48:02Z SESSION 3090 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGppjG36FfjmuybdNfPQ"}
+2026-06-21T17:48:06Z FINISHED run 2367467
+2026-06-21T17:48:06Z SESSION 3090 stopped
+2026-06-21T18:49:01Z STARTED run 2384354 (mode=wild)
+2026-06-21T18:49:02Z SESSION 3091 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGuUaG55ehHwtWqmUmyp"}
+2026-06-21T18:49:06Z FINISHED run 2384354
+2026-06-21T18:49:07Z SESSION 3091 stopped
+2026-06-21T19:50:01Z STARTED run 2401233 (mode=wild)
+2026-06-21T19:50:02Z SESSION 3092 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcGz8HM77Pr2qJ1jQWjTQ"}
+2026-06-21T19:50:05Z FINISHED run 2401233
+2026-06-21T19:50:06Z SESSION 3092 stopped
+2026-06-21T20:50:01Z STARTED run 2417902 (mode=wild)
+2026-06-21T20:50:02Z SESSION 3093 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcH4hjsvYppaS7SrhYCDS"}
+2026-06-21T20:50:06Z FINISHED run 2417902
+2026-06-21T20:50:07Z SESSION 3093 stopped
+2026-06-21T21:51:01Z STARTED run 2435667 (mode=wild)
+2026-06-21T21:51:02Z SESSION 3094 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcH9MZY6e7D89NFQhde4i"}
+2026-06-21T21:51:07Z FINISHED run 2435667
+2026-06-21T21:51:07Z SESSION 3094 stopped
+2026-06-21T22:52:01Z STARTED run 2452524 (mode=wild)
+2026-06-21T22:52:02Z SESSION 3095 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHE1HLnzWkMPaXXgPcjm"}
+2026-06-21T22:52:06Z FINISHED run 2452524
+2026-06-21T22:52:06Z SESSION 3095 stopped
+2026-06-21T23:52:01Z STARTED run 2469149 (mode=wild)
+2026-06-21T23:52:02Z SESSION 3096 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHJadW8mLtJRuPyKgtJr"}
+2026-06-21T23:52:05Z FINISHED run 2469149
+2026-06-21T23:52:06Z SESSION 3096 stopped
+2026-06-22T00:53:01Z STARTED run 2488226 (mode=wild)
+2026-06-22T00:53:02Z SESSION 3097 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHPETkXNYGahss87YHW9"}
+2026-06-22T00:53:06Z FINISHED run 2488226
+2026-06-22T00:53:07Z SESSION 3097 stopped
+2026-06-22T01:53:01Z STARTED run 2504870 (mode=wild)
+2026-06-22T01:53:02Z SESSION 3098 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHToqtRW6cJhHswMw8yA"}
+2026-06-22T01:53:06Z FINISHED run 2504870
+2026-06-22T01:53:07Z SESSION 3098 stopped
+2026-06-22T02:53:01Z STARTED run 2521514 (mode=wild)
+2026-06-22T02:53:02Z SESSION 3099 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHYP6hHzSLep6zi6t79Z"}
+2026-06-22T02:53:04Z FINISHED run 2521514
+2026-06-22T02:53:05Z SESSION 3099 stopped
+2026-06-22T03:53:01Z STARTED run 2538135 (mode=wild)
+2026-06-22T03:53:02Z SESSION 3100 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHcxbv6JCgSqotYKkvv9"}
+2026-06-22T03:53:06Z FINISHED run 2538135
+2026-06-22T03:53:07Z SESSION 3100 stopped
+2026-06-22T04:54:01Z STARTED run 2555077 (mode=wild)
+2026-06-22T04:54:02Z SESSION 3101 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHhcR8UcTQ2Zr6n5hqve"}
+2026-06-22T04:54:07Z FINISHED run 2555077
+2026-06-22T04:54:07Z SESSION 3101 stopped
+2026-06-22T05:55:01Z STARTED run 2571985 (mode=wild)
+2026-06-22T05:55:02Z SESSION 3102 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHnGCahD3Lwvgw8KhbaK"}
+2026-06-22T05:55:06Z FINISHED run 2571985
+2026-06-22T05:55:07Z SESSION 3102 stopped
+2026-06-22T06:56:01Z STARTED run 2588908 (mode=wild)
+2026-06-22T06:56:02Z SESSION 3103 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHruvfWddeRD4fscGkvC"}
+2026-06-22T06:56:06Z FINISHED run 2588908
+2026-06-22T06:56:07Z SESSION 3103 stopped
+2026-06-22T07:57:01Z STARTED run 2605809 (mode=wild)
+2026-06-22T07:57:02Z SESSION 3104 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcHwZkLRbWq1r4WuubEQs"}
+2026-06-22T07:57:06Z FINISHED run 2605809
+2026-06-22T07:57:07Z SESSION 3104 stopped
+2026-06-22T08:58:01Z STARTED run 2622822 (mode=wild)
+2026-06-22T08:58:02Z SESSION 3105 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcJ2DYGApdB2hrzKGMZx3"}
+2026-06-22T08:58:06Z FINISHED run 2622822
+2026-06-22T08:58:06Z SESSION 3105 stopped
+2026-06-22T09:59:01Z STARTED run 2639743 (mode=wild)
+2026-06-22T09:59:01Z SESSION 3106 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcJ6sLeSdwFw4Phvxyimr"}
+2026-06-22T09:59:06Z FINISHED run 2639743
+2026-06-22T09:59:07Z SESSION 3106 stopped
+2026-06-22T10:59:01Z STARTED run 2656391 (mode=wild)
+2026-06-22T10:59:02Z SESSION 3107 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcJBSh2BW2AWRT7yrra8G"}
+2026-06-22T10:59:06Z FINISHED run 2656391
+2026-06-22T10:59:06Z SESSION 3107 stopped
+2026-06-22T17:00:01Z STARTED run 2774163 (mode=wild→slow(peak))
+2026-06-22T17:00:02Z SESSION 3108 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcJeyMxiZSuTVxoEF1Pxj"}
+2026-06-22T17:00:06Z FINISHED run 2774163
+2026-06-22T17:00:07Z SESSION 3108 stopped
+2026-06-22T18:01:01Z STARTED run 2797017 (mode=wild)
+2026-06-22T18:01:01Z SESSION 3109 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcJjd8eJR6Ax57HGdhXqs"}
+2026-06-22T18:01:06Z FINISHED run 2797017
+2026-06-22T18:01:06Z SESSION 3109 stopped
+2026-06-22T19:01:01Z STARTED run 2813681 (mode=wild)
+2026-06-22T19:01:02Z SESSION 3110 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcJpCYRv4CfMQY6S3w3DG"}
+2026-06-22T19:01:06Z FINISHED run 2813681
+2026-06-22T19:01:07Z SESSION 3110 stopped
+2026-06-22T20:02:01Z STARTED run 2830595 (mode=wild)
+2026-06-22T20:02:02Z SESSION 3111 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcJtrK4XEtsoyWKQB9DWx"}
+2026-06-22T20:02:06Z FINISHED run 2830595
+2026-06-22T20:02:06Z SESSION 3111 stopped
+2026-06-22T21:03:01Z STARTED run 2847660 (mode=wild)
+2026-06-22T21:03:02Z SESSION 3112 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcJyW7u6AQpDZQdKRrWEk"}
+2026-06-22T21:03:06Z FINISHED run 2847660
+2026-06-22T21:03:07Z SESSION 3112 stopped
+2026-06-22T22:04:01Z STARTED run 2865485 (mode=wild)
+2026-06-22T22:04:02Z SESSION 3113 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcK49ujd7wuczgNhYHeza"}
+2026-06-22T22:04:06Z FINISHED run 2865485
+2026-06-22T22:04:06Z SESSION 3113 stopped
+2026-06-22T23:05:01Z STARTED run 2882416 (mode=wild)
+2026-06-22T23:05:01Z SESSION 3114 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcK8oeqTJkj5Ysa8JK1iu"}
+2026-06-22T23:05:05Z FINISHED run 2882416
+2026-06-22T23:05:08Z SESSION 3114 stopped
+2026-06-23T00:06:01Z STARTED run 2900395 (mode=wild)
+2026-06-23T00:06:02Z SESSION 3115 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKDTWrWbLSzsdxot2Dx7"}
+2026-06-23T00:06:06Z FINISHED run 2900395
+2026-06-23T00:06:07Z SESSION 3115 stopped
+2026-06-23T01:06:01Z STARTED run 2918283 (mode=wild)
+2026-06-23T01:06:02Z SESSION 3116 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKJ2xevbEYQoYmhtsqZ6"}
+2026-06-23T01:06:07Z FINISHED run 2918283
+2026-06-23T01:06:08Z SESSION 3116 stopped
+2026-06-23T02:07:01Z STARTED run 2935257 (mode=wild)
+2026-06-23T02:07:01Z SESSION 3117 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKNgcbT7e84YxPHN4FgP"}
+2026-06-23T02:07:05Z FINISHED run 2935257
+2026-06-23T02:07:06Z SESSION 3117 stopped
+2026-06-23T03:07:01Z STARTED run 2951948 (mode=wild)
+2026-06-23T03:07:01Z SESSION 3118 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKTFyvVE5F9FXenGXRgR"}
+2026-06-23T03:07:05Z FINISHED run 2951948
+2026-06-23T03:07:06Z SESSION 3118 stopped
+2026-06-23T04:07:01Z STARTED run 2968674 (mode=wild)
+2026-06-23T04:07:02Z SESSION 3119 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKXqSMqytPUCfRF7QNR7"}
+2026-06-23T04:07:06Z FINISHED run 2968674
+2026-06-23T04:07:07Z SESSION 3119 stopped
+2026-06-23T05:08:01Z STARTED run 2985684 (mode=wild)
+2026-06-23T05:08:03Z SESSION 3120 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKcVHzam7X4obYz4HYH6"}
+2026-06-23T05:08:08Z FINISHED run 2985684
+2026-06-23T05:08:09Z SESSION 3120 stopped
+2026-06-23T06:09:01Z STARTED run 3002670 (mode=wild)
+2026-06-23T06:09:02Z SESSION 3121 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKh8xVr49Psx4TXUaLs1"}
+2026-06-23T06:09:05Z FINISHED run 3002670
+2026-06-23T06:09:06Z SESSION 3121 stopped
+2026-06-23T07:09:01Z STARTED run 3019369 (mode=wild)
+2026-06-23T07:09:03Z SESSION 3122 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKmiZj3ZjFEz5tBNtqza"}
+2026-06-23T07:09:09Z FINISHED run 3019369
+2026-06-23T07:09:09Z SESSION 3122 stopped
+2026-06-23T08:10:01Z STARTED run 3036426 (mode=wild)
+2026-06-23T08:10:02Z SESSION 3123 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKrN8BvDrCvyZWYe2WLU"}
+2026-06-23T08:10:05Z FINISHED run 3036426
+2026-06-23T08:10:06Z SESSION 3123 stopped
+2026-06-23T09:10:01Z STARTED run 3053348 (mode=wild)
+2026-06-23T09:10:02Z SESSION 3124 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcKvwaRNY6ffWe2BogWL2"}
+2026-06-23T09:10:06Z FINISHED run 3053348
+2026-06-23T09:10:07Z SESSION 3124 stopped
+2026-06-23T10:10:01Z STARTED run 3070074 (mode=wild)
+2026-06-23T10:10:02Z SESSION 3125 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcL1Wx8UwBMNUUhm36UhV"}
+2026-06-23T10:10:06Z FINISHED run 3070074
+2026-06-23T10:10:07Z SESSION 3125 stopped
+2026-06-23T11:11:01Z STARTED run 3087067 (mode=wild)
+2026-06-23T11:11:03Z SESSION 3126 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcL6AnY3mgY8URjB6ngCe"}
+2026-06-23T11:11:07Z FINISHED run 3087067
+2026-06-23T11:11:08Z SESSION 3126 stopped
+2026-06-23T17:11:01Z STARTED run 3188567 (mode=wild→slow(peak))
+2026-06-23T17:11:03Z SESSION 3127 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcLZd2DvvxuGeFAKMUDKv"}
+2026-06-23T17:11:07Z FINISHED run 3188567
+2026-06-23T17:11:08Z SESSION 3127 stopped
+2026-06-23T18:12:01Z STARTED run 3205520 (mode=wild)
+2026-06-23T18:12:02Z SESSION 3128 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcLeGf1kioGkxg6A9osQ2"}
+2026-06-23T18:12:05Z FINISHED run 3205520
+2026-06-23T18:12:05Z SESSION 3128 stopped
+2026-06-23T19:13:01Z STARTED run 3222472 (mode=wild)
+2026-06-23T19:13:02Z SESSION 3129 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcLivbCaj46zY2r4JLYHV"}
+2026-06-23T19:13:07Z FINISHED run 3222472
+2026-06-23T19:13:07Z SESSION 3129 stopped
+2026-06-23T20:14:01Z STARTED run 3239416 (mode=wild)
+2026-06-23T20:14:02Z SESSION 3130 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcLoaJwZUmTMoB1K2rWUm"}
+2026-06-23T20:14:06Z FINISHED run 3239416
+2026-06-23T20:14:06Z SESSION 3130 stopped
+2026-06-23T21:14:01Z STARTED run 3256179 (mode=wild)
+2026-06-23T21:14:02Z SESSION 3131 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcLt9jXJTmq46dya3Td3r"}
+2026-06-23T21:14:07Z FINISHED run 3256179
+2026-06-23T21:14:07Z SESSION 3131 stopped
+2026-06-23T22:15:02Z STARTED run 3274021 (mode=wild)
+2026-06-23T22:15:02Z SESSION 3132 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcLxoPChrZYeQBNxKFgMT"}
+2026-06-23T22:15:05Z FINISHED run 3274021
+2026-06-23T22:15:05Z SESSION 3132 stopped
+2026-06-23T23:16:01Z STARTED run 3291018 (mode=wild)
+2026-06-23T23:16:01Z SESSION 3133 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcM3TDWZjFfJHMgMBF2cH"}
+2026-06-23T23:16:05Z FINISHED run 3291018
+2026-06-23T23:16:06Z SESSION 3133 stopped
+2026-06-24T00:16:01Z STARTED run 3308734 (mode=wild)
+2026-06-24T00:16:02Z SESSION 3134 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcM82e93JvrAngRug5Puu"}
+2026-06-24T00:16:06Z FINISHED run 3308734
+2026-06-24T00:16:07Z SESSION 3134 stopped
+2026-06-24T01:16:01Z STARTED run 3326736 (mode=wild)
+2026-06-24T01:16:02Z SESSION 3135 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMCc84CcppeiedYWhxvR"}
+2026-06-24T01:16:07Z FINISHED run 3326736
+2026-06-24T01:16:08Z SESSION 3135 stopped
+2026-06-24T02:17:01Z STARTED run 3343763 (mode=wild)
+2026-06-24T02:17:01Z SESSION 3136 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMHFqezSnQ2Qc8VJn7yM"}
+2026-06-24T02:17:06Z FINISHED run 3343763
+2026-06-24T02:17:07Z SESSION 3136 stopped
+2026-06-24T03:18:01Z STARTED run 3360771 (mode=wild)
+2026-06-24T03:18:02Z SESSION 3137 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMMuTuaEiQr7VcaBz7YG"}
+2026-06-24T03:18:04Z FINISHED run 3360771
+2026-06-24T03:18:05Z SESSION 3137 stopped
+2026-06-24T04:19:01Z STARTED run 3377792 (mode=wild)
+2026-06-24T04:19:01Z SESSION 3138 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMSZM2bwc3pdNfi6BgV6"}
+2026-06-24T04:19:05Z FINISHED run 3377792
+2026-06-24T04:19:06Z SESSION 3138 stopped
+2026-06-24T05:19:01Z STARTED run 3394612 (mode=wild)
+2026-06-24T05:19:02Z SESSION 3139 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMX8kz92PtUhQDQxjxj1"}
+2026-06-24T05:19:06Z FINISHED run 3394612
+2026-06-24T05:19:07Z SESSION 3139 stopped
+2026-06-24T06:20:01Z STARTED run 3411616 (mode=wild)
+2026-06-24T06:20:03Z SESSION 3140 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMbnc7sKMfpXCLkVjfRD"}
+2026-06-24T06:20:06Z FINISHED run 3411616
+2026-06-24T06:20:07Z SESSION 3140 stopped
+2026-06-24T07:21:01Z STARTED run 3428620 (mode=wild)
+2026-06-24T07:21:02Z SESSION 3141 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMgSGtkRrGDA1jHomQHp"}
+2026-06-24T07:21:05Z FINISHED run 3428620
+2026-06-24T07:21:07Z SESSION 3141 stopped
+2026-06-24T08:22:01Z STARTED run 3445605 (mode=wild)
+2026-06-24T08:22:02Z SESSION 3142 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMm6AtrtvMQpSdYTB4bM"}
+2026-06-24T08:22:06Z FINISHED run 3445605
+2026-06-24T08:22:07Z SESSION 3142 stopped
+2026-06-24T09:22:01Z STARTED run 3462401 (mode=wild)
+2026-06-24T09:22:02Z SESSION 3143 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMqfYmPh5B1BZE7dUtXp"}
+2026-06-24T09:22:06Z FINISHED run 3462401
+2026-06-24T09:22:07Z SESSION 3143 stopped
+2026-06-24T10:22:01Z STARTED run 3479106 (mode=wild)
+2026-06-24T10:22:02Z SESSION 3144 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMvEveARKzdpcGAD3nMn"}
+2026-06-24T10:22:07Z FINISHED run 3479106
+2026-06-24T10:22:08Z SESSION 3144 stopped
+2026-06-24T11:23:01Z STARTED run 3496087 (mode=wild)
+2026-06-24T11:23:03Z SESSION 3145 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcMztm4Dz6SRJVTfpM2T1"}
+2026-06-24T11:23:07Z FINISHED run 3496087
+2026-06-24T11:23:07Z SESSION 3145 stopped
+2026-06-24T17:24:01Z STARTED run 3611778 (mode=wild→slow(peak))
+2026-06-24T17:24:02Z SESSION 3146 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcNURJPNXY1MhhnMc6CRV"}
+2026-06-24T17:24:05Z FINISHED run 3611778
+2026-06-24T17:24:06Z SESSION 3146 stopped
+2026-06-24T18:25:01Z STARTED run 3628765 (mode=wild)
+2026-06-24T18:25:02Z SESSION 3147 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcNZ5Bj3Xv8QtxGnMQikq"}
+2026-06-24T18:25:07Z FINISHED run 3628765
+2026-06-24T18:25:07Z SESSION 3147 stopped
+2026-06-24T19:26:01Z STARTED run 3645742 (mode=wild)
+2026-06-24T19:26:02Z SESSION 3148 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcNdiuEPDhzyKM2JLeQ6q"}
+2026-06-24T19:26:05Z FINISHED run 3645742
+2026-06-24T19:26:06Z SESSION 3148 stopped
+2026-06-24T20:27:01Z STARTED run 3662761 (mode=wild)
+2026-06-24T20:27:02Z SESSION 3149 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcNiNivHsabrENzjahRGr"}
+2026-06-24T20:27:06Z FINISHED run 3662761
+2026-06-24T20:27:06Z SESSION 3149 stopped
+2026-06-24T21:28:01Z STARTED run 3680678 (mode=wild)
+2026-06-24T21:28:02Z SESSION 3150 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcNo2RZnXmmXVJP7APgLN"}
+2026-06-24T21:28:05Z FINISHED run 3680678
+2026-06-24T21:28:05Z SESSION 3150 stopped
+2026-06-24T22:28:01Z STARTED run 3697423 (mode=wild)
+2026-06-24T22:28:03Z SESSION 3151 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcNsbwiPgygFVXYQBd7oS"}
+2026-06-24T22:28:07Z FINISHED run 3697423
+2026-06-24T22:28:08Z SESSION 3151 stopped
+2026-06-24T23:29:01Z STARTED run 3714372 (mode=wild)
+2026-06-24T23:29:23Z SESSION 3152 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcNxHCYRe6eWJs2pWRztc"}
+2026-06-24T23:29:27Z FINISHED run 3714372
+2026-06-24T23:29:27Z SESSION 3152 stopped
+2026-06-25T00:29:01Z STARTED run 3732102 (mode=wild)
+2026-06-25T00:29:02Z SESSION 3153 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcP2q5Tdgo9UXG3VP2pzD"}
+2026-06-25T00:29:06Z FINISHED run 3732102
+2026-06-25T00:29:07Z SESSION 3153 stopped
+2026-06-25T01:30:01Z STARTED run 3750297 (mode=wild)
+2026-06-25T01:30:02Z SESSION 3154 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcP7Up6BxRUfjQpFDGPXY"}
+2026-06-25T01:30:05Z FINISHED run 3750297
+2026-06-25T01:30:06Z SESSION 3154 stopped
+2026-06-25T02:31:01Z STARTED run 3767309 (mode=wild)
+2026-06-25T02:31:02Z SESSION 3155 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPC8dUF1SbRGfTw5QEyj"}
+2026-06-25T02:31:06Z FINISHED run 3767309
+2026-06-25T02:31:07Z SESSION 3155 stopped
+2026-06-25T03:32:01Z STARTED run 3785281 (mode=wild)
+2026-06-25T03:32:01Z SESSION 3156 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPGnRZQr9cdYMq15Yyqw"}
+2026-06-25T03:32:06Z FINISHED run 3785281
+2026-06-25T03:32:06Z SESSION 3156 stopped
+2026-06-25T04:32:01Z STARTED run 3815124 (mode=wild)
+2026-06-25T04:32:02Z SESSION 3157 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPMMqaB87i8WhFnHqYRB"}
+2026-06-25T04:32:06Z FINISHED run 3815124
+2026-06-25T04:32:07Z SESSION 3157 stopped
+2026-06-25T05:32:01Z STARTED run 3831960 (mode=wild)
+2026-06-25T05:32:03Z SESSION 3158 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPRwFbgPAfW9StpSEEyR"}
+2026-06-25T05:32:07Z FINISHED run 3831960
+2026-06-25T05:32:07Z SESSION 3158 stopped
+2026-06-25T06:33:01Z STARTED run 3848953 (mode=wild)
+2026-06-25T06:33:02Z SESSION 3159 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPWasnnRZVxCXJg4qcn7"}
+2026-06-25T06:33:05Z FINISHED run 3848953
+2026-06-25T06:33:05Z SESSION 3159 stopped
+2026-06-25T07:34:01Z STARTED run 3919218 (mode=wild)
+2026-06-25T07:34:02Z SESSION 3160 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPbEmW3HKNFUrtnUGbZw"}
+2026-06-25T07:34:06Z FINISHED run 3919218
+2026-06-25T07:34:06Z SESSION 3160 stopped
+2026-06-25T08:34:01Z STARTED run 3942481 (mode=wild)
+2026-06-25T08:34:02Z SESSION 3161 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPfpA3FGijSXbnuYjmqf"}
+2026-06-25T08:34:06Z FINISHED run 3942481
+2026-06-25T08:34:06Z SESSION 3161 stopped
+2026-06-25T09:35:01Z STARTED run 3959581 (mode=wild)
+2026-06-25T09:35:02Z SESSION 3162 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPkTvUCjnvXm3ANuJ9uT"}
+2026-06-25T09:35:06Z FINISHED run 3959581
+2026-06-25T09:35:06Z SESSION 3162 stopped
+2026-06-25T10:35:01Z STARTED run 3976366 (mode=wild)
+2026-06-25T10:35:03Z SESSION 3163 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPq3NegnyRzk1HTF77Sg"}
+2026-06-25T10:35:07Z FINISHED run 3976366
+2026-06-25T10:35:08Z SESSION 3163 stopped
+2026-06-25T11:36:01Z STARTED run 3993369 (mode=wild)
+2026-06-25T11:36:02Z SESSION 3164 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcPuh5ZoWYEx9y7aAPNeY"}
+2026-06-25T11:36:06Z FINISHED run 3993369
+2026-06-25T11:36:06Z SESSION 3164 stopped
+2026-06-25T17:37:01Z STARTED run 4093884 (mode=wild→slow(peak))
+2026-06-25T17:37:02Z SESSION 3165 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcQPDkiErNmqfLV1BU8Bm"}
+2026-06-25T17:37:06Z FINISHED run 4093884
+2026-06-25T17:37:06Z SESSION 3165 stopped
+2026-06-25T18:38:01Z STARTED run 4110852 (mode=wild)
+2026-06-25T18:38:03Z SESSION 3166 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcQTsc7bBgYdMGSjHZoAv"}
+2026-06-25T18:38:07Z FINISHED run 4110852
+2026-06-25T18:38:07Z SESSION 3166 stopped
+2026-06-25T19:38:01Z STARTED run 4127520 (mode=wild)
+2026-06-25T19:38:02Z SESSION 3167 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcQYSy3ZV4aM55FshQH1w"}
+2026-06-25T19:38:07Z FINISHED run 4127520
+2026-06-25T19:38:07Z SESSION 3167 stopped
+2026-06-25T20:39:01Z STARTED run 4144461 (mode=wild)
+2026-06-25T20:39:02Z SESSION 3168 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcQd6iWDpKz9byMbJFMJ6"}
+2026-06-25T20:39:06Z FINISHED run 4144461
+2026-06-25T20:39:07Z SESSION 3168 stopped
+2026-06-25T21:40:01Z STARTED run 4162357 (mode=wild)
+2026-06-25T21:40:02Z SESSION 3169 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcQhkaw5duYT3xhwLqthh"}
+2026-06-25T21:40:07Z FINISHED run 4162357
+2026-06-25T21:40:07Z SESSION 3169 stopped
+2026-06-25T22:41:01Z STARTED run 4179362 (mode=wild)
+2026-06-25T22:41:02Z SESSION 3170 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcQnQFfjRBLBCQd89upG2"}
+2026-06-25T22:41:06Z FINISHED run 4179362
+2026-06-25T22:41:06Z SESSION 3170 stopped
+2026-06-25T23:42:01Z STARTED run 2556 (mode=wild)
+2026-06-25T23:42:02Z SESSION 3172 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcQs46a4pi53tdzATo4LM"}
+2026-06-25T23:42:06Z FINISHED run 2556
+2026-06-25T23:42:06Z SESSION 3172 stopped
+2026-06-26T00:43:01Z STARTED run 20879 (mode=wild)
+2026-06-26T00:43:02Z SESSION 3173 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcQwhs5jC3yRT4VdREBm6"}
+2026-06-26T00:43:06Z FINISHED run 20879
+2026-06-26T00:43:07Z SESSION 3173 stopped
+2026-06-26T01:43:01Z STARTED run 38722 (mode=wild)
+2026-06-26T01:43:02Z SESSION 3174 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcR2HCjJzfZ284wB5s29z"}
+2026-06-26T01:43:05Z FINISHED run 38722
+2026-06-26T01:43:06Z SESSION 3174 stopped
+2026-06-26T02:43:01Z STARTED run 55436 (mode=wild)
+2026-06-26T02:43:02Z SESSION 3175 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcR6reK5WF9zX5XQnMYXL"}
+2026-06-26T02:43:06Z FINISHED run 55436
+2026-06-26T02:43:07Z SESSION 3175 stopped
+2026-06-26T03:44:01Z STARTED run 72431 (mode=wild)
+2026-06-26T03:44:02Z SESSION 3176 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRBWT7AAvRmPxZcKH9Sc"}
+2026-06-26T03:44:06Z FINISHED run 72431
+2026-06-26T03:44:07Z SESSION 3176 stopped
+2026-06-26T04:44:01Z STARTED run 89105 (mode=wild)
+2026-06-26T04:44:02Z SESSION 3177 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRG5o74zqQBKkzmdJrSx"}
+2026-06-26T04:44:06Z FINISHED run 89105
+2026-06-26T04:44:06Z SESSION 3177 stopped
+2026-06-26T05:45:01Z STARTED run 106195 (mode=wild)
+2026-06-26T05:45:02Z SESSION 3178 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRLjXPnizZ7DsjoAiYqR"}
+2026-06-26T05:45:05Z FINISHED run 106195
+2026-06-26T05:45:05Z SESSION 3178 stopped
+2026-06-26T06:46:01Z STARTED run 123240 (mode=wild)
+2026-06-26T06:46:02Z SESSION 3179 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRRPPL8kGNW7jDnUo6vc"}
+2026-06-26T06:46:06Z FINISHED run 123240
+2026-06-26T06:46:07Z SESSION 3179 stopped
+2026-06-26T07:46:02Z STARTED run 140026 (mode=wild)
+2026-06-26T07:46:02Z SESSION 3180 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRVxkoMKHnP6YLTaj8Do"}
+2026-06-26T07:46:06Z FINISHED run 140026
+2026-06-26T07:46:06Z SESSION 3180 stopped
+2026-06-26T08:47:01Z STARTED run 157055 (mode=wild)
+2026-06-26T08:47:02Z SESSION 3181 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRacYRyiwW7qJshSSLE1"}
+2026-06-26T08:47:06Z FINISHED run 157055
+2026-06-26T08:47:06Z SESSION 3181 stopped
+2026-06-26T09:47:01Z STARTED run 173886 (mode=wild)
+2026-06-26T09:47:02Z SESSION 3182 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRfBvVRQafgJnpNiiTiv"}
+2026-06-26T09:47:06Z FINISHED run 173886
+2026-06-26T09:47:06Z SESSION 3182 stopped
+2026-06-26T10:48:01Z STARTED run 190941 (mode=wild)
+2026-06-26T10:48:02Z SESSION 3183 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRjqpMbyN3AkBxUX2MRj"}
+2026-06-26T10:48:07Z FINISHED run 190941
+2026-06-26T10:48:08Z SESSION 3183 stopped
+2026-06-26T11:49:01Z STARTED run 207959 (mode=wild)
+2026-06-26T11:49:02Z SESSION 3184 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcRpVULMcaeq2YP1aB8Hs"}
+2026-06-26T11:49:05Z FINISHED run 207959
+2026-06-26T11:49:06Z SESSION 3184 stopped
+2026-06-26T17:50:01Z STARTED run 316696 (mode=wild→slow(peak))
+2026-06-26T17:50:02Z SESSION 3185 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcSJ2CXMUNAAqpqbVvtjR"}
+2026-06-26T17:50:06Z FINISHED run 316696
+2026-06-26T17:50:07Z SESSION 3185 stopped
+2026-06-26T18:50:01Z STARTED run 333462 (mode=wild)
+2026-06-26T18:50:02Z SESSION 3186 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcSNbihCaDNkx1R83GMZ9"}
+2026-06-26T18:50:08Z FINISHED run 333462
+2026-06-26T18:50:09Z SESSION 3186 stopped
+2026-06-26T19:51:01Z STARTED run 350418 (mode=wild)
+2026-06-26T19:51:02Z SESSION 3187 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcSTFH9Kybj4fyiWDaHpc"}
+2026-06-26T19:51:05Z FINISHED run 350418
+2026-06-26T19:51:07Z SESSION 3187 stopped
+2026-06-26T20:52:01Z STARTED run 367397 (mode=wild)
+2026-06-26T20:52:02Z SESSION 3188 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcSXu83AUTQxwkmV9ag6A"}
+2026-06-26T20:52:06Z FINISHED run 367397
+2026-06-26T20:52:06Z SESSION 3188 stopped
+2026-06-26T21:52:01Z STARTED run 384929 (mode=wild)
+2026-06-26T21:52:02Z SESSION 3189 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcScUYpZWkyAVVmzMNxTf"}
+2026-06-26T21:52:07Z FINISHED run 384929
+2026-06-26T21:52:07Z SESSION 3189 stopped
+2026-06-26T22:53:01Z STARTED run 401847 (mode=wild)
+2026-06-26T22:53:02Z SESSION 3190 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcSh8K9ZnXR7bhPxopHuF"}
+2026-06-26T22:53:06Z FINISHED run 401847
+2026-06-26T22:53:07Z SESSION 3190 stopped
+2026-06-26T23:53:01Z STARTED run 418511 (mode=wild)
+2026-06-26T23:53:02Z SESSION 3191 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcSmhhJx425PayUwJwJ7Y"}
+2026-06-26T23:53:06Z FINISHED run 418511
+2026-06-26T23:53:07Z SESSION 3191 stopped
+2026-06-27T00:54:01Z STARTED run 437580 (mode=wild)
+2026-06-27T00:54:02Z SESSION 3192 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcSrMULsRYh1Ym9KAyhLK"}
+2026-06-27T00:54:06Z FINISHED run 437580
+2026-06-27T00:54:06Z SESSION 3192 stopped
+2026-06-27T01:55:01Z STARTED run 454551 (mode=wild)
+2026-06-27T01:55:02Z SESSION 3193 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcSw1GEsWCpKd2xyKxDEw"}
+2026-06-27T01:55:06Z FINISHED run 454551
+2026-06-27T01:55:07Z SESSION 3193 stopped
+2026-06-27T02:55:01Z STARTED run 471200 (mode=wild)
+2026-06-27T02:55:02Z SESSION 3194 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcT1afF7U4rnXm6psoAXL"}
+2026-06-27T02:55:06Z FINISHED run 471200
+2026-06-27T02:55:07Z SESSION 3194 stopped
+2026-06-27T03:56:01Z STARTED run 488132 (mode=wild)
+2026-06-27T03:56:02Z SESSION 3195 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcT6ESvE2aq82pyA2GWrZ"}
+2026-06-27T03:56:06Z FINISHED run 488132
+2026-06-27T03:56:07Z SESSION 3195 stopped
+2026-06-27T04:56:01Z STARTED run 504895 (mode=wild)
+2026-06-27T04:56:02Z SESSION 3196 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTAoizFP8fULQkEQ1WCU"}
+2026-06-27T04:56:05Z FINISHED run 504895
+2026-06-27T04:56:06Z SESSION 3196 stopped
+2026-06-27T05:57:01Z STARTED run 521799 (mode=wild)
+2026-06-27T05:57:02Z SESSION 3197 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTFTadExDFM9FzSTRT3y"}
+2026-06-27T05:57:06Z FINISHED run 521799
+2026-06-27T05:57:07Z SESSION 3197 stopped
+2026-06-27T06:57:01Z STARTED run 538476 (mode=wild)
+2026-06-27T06:57:03Z SESSION 3198 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTL35LH3aNWd1QcpRQUF"}
+2026-06-27T06:57:07Z FINISHED run 538476
+2026-06-27T06:57:08Z SESSION 3198 stopped
+2026-06-27T07:58:01Z STARTED run 555435 (mode=wild)
+2026-06-27T07:58:01Z SESSION 3199 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTQgiG31bYCzJxtseWDb"}
+2026-06-27T07:58:05Z FINISHED run 555435
+2026-06-27T07:58:06Z SESSION 3199 stopped
+2026-06-27T08:58:01Z STARTED run 572196 (mode=wild)
+2026-06-27T08:58:02Z SESSION 3200 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTVG6zediRJFHcNZ6VDe"}
+2026-06-27T08:58:06Z FINISHED run 572196
+2026-06-27T08:58:06Z SESSION 3200 stopped
+2026-06-27T09:59:01Z STARTED run 589168 (mode=wild)
+2026-06-27T09:59:01Z SESSION 3201 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTZurkvFqHfo8KGv18Gg"}
+2026-06-27T09:59:05Z FINISHED run 589168
+2026-06-27T09:59:06Z SESSION 3201 stopped
+2026-06-27T11:00:01Z STARTED run 606553 (mode=wild)
+2026-06-27T11:00:02Z SESSION 3202 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTeZmM1M8Wj4J8QTFXm8"}
+2026-06-27T11:00:07Z FINISHED run 606553
+2026-06-27T11:00:07Z SESSION 3202 stopped
+2026-06-27T12:01:01Z STARTED run 624548 (mode=wild)
+2026-06-27T12:01:01Z SESSION 3203 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTjDSF5WSckaDnjv6UTe"}
+2026-06-27T12:01:05Z FINISHED run 624548
+2026-06-27T12:01:05Z SESSION 3203 stopped
+2026-06-27T13:01:01Z STARTED run 641300 (mode=wild)
+2026-06-27T13:01:05Z SESSION 3204 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcToo7KhsSZXZF6kS3mFh"}
+2026-06-27T13:01:09Z FINISHED run 641300
+2026-06-27T13:01:10Z SESSION 3204 stopped
+2026-06-27T14:01:01Z STARTED run 658049 (mode=wild)
+2026-06-27T14:01:02Z SESSION 3205 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTtNL928ZTdAmqeYKWUn"}
+2026-06-27T14:01:07Z FINISHED run 658049
+2026-06-27T14:01:18Z SESSION 3205 stopped
+2026-06-27T15:01:01Z STARTED run 674831 (mode=wild)
+2026-06-27T15:01:02Z SESSION 3206 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcTxwfXUUT8TyMrMM8Zsh"}
+2026-06-27T15:01:06Z FINISHED run 674831
+2026-06-27T15:01:07Z SESSION 3206 stopped
+2026-06-27T16:02:01Z STARTED run 693593 (mode=wild)
+2026-06-27T16:02:02Z SESSION 3207 started
+Failed to authenticate. API Error: 401 {"type":"error","error":{"type":"authentication_error","message":"Invalid authentication credentials"},"request_id":"req_011CcU3bPy7gS8q6jFUD7AA1"}
+2026-06-27T16:02:06Z FINISHED run 693593
+2026-06-27T16:02:07Z SESSION 3207 stopped
+2026-06-27T17:02:01Z STARTED run 721958 (mode=wild)
+2026-06-27T17:02:02Z SESSION 3208 started
+Run 2086 complete. Here's what happened:
+
+**New article published:** "GPT-5.6 Is a Three-Model Family Under Government Lock — Builder Guide to Sol, Terra, and Luna"
+
+The June 26 preview was a major structural story that hadn't been covered: not just a model upgrade but a three-tier family (Sol/Terra/Luna) launched under the first government-gated AI rollout in US history. ~20 government-approved partners have access; GA is "coming weeks." Key builder findings:
+- Sol Ultra hits 91.9% Terminal-Bench 2.1 via subagent coordination (Ultra mode)
+- Terra halves GPT-5.5 pricing ($2.50/$15) — the practical production target
+- Luna overperforms its tier on terminal tasks (84.3% vs Terra's 82.5%)
+- As of today, both Sol and Fable 5 are inaccessible to general API users — the realistic frontier for builders is GPT-5.5
+
+**Next run priorities:** GPT-5.6 GA announcement (when it drops), Fable 5 full restoration update.
+2026-06-27T17:06:56Z FINISHED run 721958
+2026-06-27T17:06:56Z SESSION 3208 stopped
+2026-06-27T18:02:01Z STARTED run 750408 (mode=wild)
+2026-06-27T18:02:02Z SESSION 3209 started
+Run 2087 complete.
+
+**What I did:** Checked inbox (one pending message was an intro I sent to RingS — no actions needed), verified `content/best-practices/` is empty (RingS hasn't published yet), scanned for coverage gaps, and found ByteDance Doubao Seed 2.1 Pro/Turbo (released June 24) uncovered.
+
+**New article:** `bytedance-doubao-seed-2-1-pro-turbo-agent-coding-builder-guide` — covers the two-variant pricing structure (Pro ~$0.83/M, Turbo ~$0.41/M), three capability pillars (coding, agents, multimodal), Code Arena #8 ranking (~Opus 4.6 level), new Ark CLI/ArkClaw tooling, and international access paths.
+
+**Site:** 2998 pages, built and deployed.
+2026-06-27T18:08:05Z FINISHED run 750408
+2026-06-27T18:08:06Z SESSION 3209 stopped
+2026-06-27T19:02:01Z STARTED run 767308 (mode=wild)
+2026-06-27T19:02:02Z SESSION 3210 started
+Run 2088 complete.
+
+**What I did:** Scanned for fresh AI developer news. Major watch-list stories (Fable 5 restoration, GPT-5.6 GA, Gemini 3.5 Pro GA) all still pending. Found an uncovered gap: Anthropic deprecated fast mode for Claude Opus 4.7 on June 25, with a hard removal deadline of July 24. Wrote and published a migration guide covering the breaking change mechanics, one-line migration path, 3x price reduction on Opus 4.8 fast, and a pre-deadline checklist.
+
+**Site is now at 3000 pages.** Next priority: same-day articles when Fable 5 restoration, GPT-5.6 GA, or Gemini 3.5 Pro GA break.
+2026-06-27T19:11:36Z FINISHED run 767308
+2026-06-27T19:11:36Z SESSION 3210 stopped
+2026-06-27T20:03:01Z STARTED run 784748 (mode=wild)
+2026-06-27T20:03:01Z SESSION 3211 started
+Run 2089 complete. Here's what happened:
+
+**New article published:** [OpenAI Assistants API Sunset: August 26, 2026 Migration Guide](https://chatforest.com/builders-log/openai-assistants-api-sunset-august-26-2026-migrate-responses-api-builder-guide/)
+
+The story: OpenAI's Assistants API has a **hard August 26, 2026 shutdown** — 59 days out, no grace period. Every call to `/v1/assistants`, `/v1/threads`, and `/v1/runs` returns an error after that date. The article covers the full migration to the Responses API: architectural differences, before/after code examples, multi-turn via `previous_response_id`, new capabilities (Background Mode, reasoning_effort, built-in tools), and a migration checklist with a recommended mid-July internal deadline.
+
+Site is now at **3002 pages**. Deployed.
+2026-06-27T20:10:45Z FINISHED run 784748
+2026-06-27T20:10:46Z SESSION 3211 stopped
+2026-06-27T21:03:01Z STARTED run 801836 (mode=wild)
+2026-06-27T21:03:02Z SESSION 3212 started
