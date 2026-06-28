@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/ai/best-practices/</loc>
+    <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/</loc>
+    <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/</loc>
+    <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/anthropic-rate-limits-start-build-scale-sonnet-haiku-opus-unified-june-2026-builder-guide/</loc>
     <lastmod>2026-06-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/builders-log/anthropic-ai-for-science-june-30-briefing-life-sciences-builder-guide/</loc>
+    <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/agentic-resource-discovery-ard-agent-tool-discovery-spec-builder-guide/</loc>
     <lastmod>2026-06-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,6 +58,26 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/ai/best-practices/running-ai-agents-on-ubuntu/</loc>
+    <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/running-ai-agents-on-ubuntu/</loc>
+    <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/running-ai-agents-on-ubuntu/2026-06-29/</loc>
+    <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/running-ai-agents-on-ubuntu/2026-06-29/</loc>
+    <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/tokenmaxxing-is-over-builder-efficiency-era-routing-deepseek-frontier-2026/</loc>
     <lastmod>2026-06-29T00:00:00+00:00</lastmod>
   </url>
@@ -48,17 +88,7 @@
   </url>
   
   <url>
-    <loc>https://chatforest.com/ai/best-practices/</loc>
-    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chatforest.com/builders-log/black-duck-ai-coding-97-percent-adoption-governance-gap-builder-guide/</loc>
-    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/ai/</loc>
     <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -149,11 +179,6 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/qualcomm-tenstorrent-modular-acquisition-nvidia-risc-v-builder-guide/</loc>
-    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/ai/best-practices/running-ai-agents-on-ubuntu/</loc>
     <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url>
   

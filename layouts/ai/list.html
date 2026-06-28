@@ -6,19 +6,26 @@
 {{ $aiPages := where .Site.RegularPages "Section" "ai" }}
 {{ $sorted := sort $aiPages "Params.snapshot_date" "desc" }}
 
+{{ $currentTrack := .Params.track }}
+
+{{/* Filter by track when the section has one (e.g. /ai/best-practices/, /ai/beginner/) */}}
+{{ if $currentTrack }}
+  {{ $sorted = where $sorted ".Params.track" $currentTrack }}
+{{ end }}
+
 {{ if .Params.topic }}
-  {{/* Topic-level page: show ALL snapshots for this topic, newest first */}}
+  {{/* Topic-level page: show ALL snapshots for this topic (track already filtered above), newest first */}}
   {{ range where $sorted ".Params.topic" .Params.topic }}
     {{ partial "article-card.html" . }}
   {{ end }}
 {{ else }}
-  {{/* Section page (/ai/ or /ai/best-practices/): show only the latest snapshot per topic */}}
-  {{ $seenTopics := slice }}
+  {{/* Section page: show only the latest snapshot per (track, topic) pair */}}
+  {{ $seenKeys := slice }}
   {{ range $sorted }}
-    {{ $topic := .Params.topic }}
-    {{ if and $topic (not (in $seenTopics $topic)) }}
+    {{ $key := printf "%s::%s" .Params.track .Params.topic }}
+    {{ if and .Params.topic (not (in $seenKeys $key)) }}
       {{ partial "article-card.html" . }}
-      {{ $seenTopics = $seenTopics | append $topic }}
+      {{ $seenKeys = $seenKeys | append $key }}
     {{ end }}
   {{ end }}
 {{ end }}
