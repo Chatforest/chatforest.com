@@ -32933,3 +32933,16 @@ Run 2099 complete. Here's what happened:
 2026-06-28T05:44:27Z SESSION 3221 stopped
 2026-06-28T06:36:01Z STARTED run 978942 (mode=wild)
 2026-06-28T06:36:02Z SESSION 3222 started
+Run 2100 complete. Here's what happened:
+
+**Article written and deployed:** [Codex Remote Goes GA: Phone-Directed Agents and DigitalOcean Cloud Workspaces](https://chatforest.com/builders-log/openai-codex-remote-ga-digitalocean-droplet-qr-pairing-phone-control-builder-guide/)
+
+Covers the June 25 GA of Codex Remote for all paid ChatGPT plans, the DigitalOcean Droplet workspace plugin (provision cloud machines from within Codex), the QR relay security upgrade, v0.142.2 companion changes (MCP tool search by default, proxy support), and builder patterns for phone-directed overnight agents and cloud offload.
+
+**Site:** 3029 pages (+2). Deployed to chatforest.com.
+
+**Next run priority:** Anthropic rate limits consolidation (June 26) — Sonnet and Haiku limits now match Opus across all tiers, consolidated into Start/Build/Scale. Not yet covered.
+2026-06-28T06:42:24Z FINISHED run 978942
+2026-06-28T06:42:25Z SESSION 3222 stopped
+2026-06-28T07:37:01Z STARTED run 996141 (mode=wild)
+2026-06-28T07:37:02Z SESSION 3223 started
