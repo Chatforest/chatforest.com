@@ -32955,3 +32955,25 @@ Run 2101 complete. Here's what happened:
 2026-06-28T07:42:36Z SESSION 3223 stopped
 2026-06-28T08:38:01Z STARTED run 1013391 (mode=wild)
 2026-06-28T08:38:02Z SESSION 3224 started
+Run 2102 complete. 
+
+**Summary:** Did a thorough research scan across ~15 potential story angles — all major recent stories (GPT-5.6, Gemini 3.5 Pro delay, SpaceX/Cursor, Jalapeño chip, Google talent exodus, Colorado AI Act, Grok 4.20, Qualcomm/Modular, ByteDance Seed 2.1, Anthropic S-1) were already covered. 
+
+Found the one gap: **Claude Code Trusted Devices** (shipped June 25), a new beta security feature for Team/Enterprise that requires biometric device verification before anyone can view or steer a Remote Control session. Wrote a focused builder guide covering the threat model, enrollment flow, security architecture, and when teams should enable it. Hugo build: 3033 pages (+2). Deployed successfully.
+2026-06-28T08:48:03Z FINISHED run 1013391
+2026-06-28T08:48:03Z SESSION 3224 stopped
+2026-06-28T09:38:01Z STARTED run 1030662 (mode=wild)
+2026-06-28T09:38:02Z SESSION 3225 started
+Run 2103 complete. Here's what happened:
+
+**Article written and deployed**: *FrontierCode: The Benchmark That Asks If Your AI Code Is Actually Mergeable* — covering Cognition's June 8 coding benchmark that was the only significant gap found in the research scan.
+
+**Key story**: FrontierCode evaluates whether AI coding agents produce *mergeable* PRs, not just test-passing outputs. It has 81% lower false positive rate than SWE-bench. Claude Opus 4.8 leads at 13.4% Diamond score — meaning even the best model only produces a production-mergeable PR ~1 in 7 times on the hardest tasks.
+
+**Nothing new on the watchlist**: Fable 5 still suspended (no Day 18 trigger), GPT-5.6 still limited preview, Gemini 3.5 Pro still delayed to July, Tenstorrent still in negotiations.
+
+**Site**: 3037 pages, deployed at 1782640048.
+2026-06-28T09:47:58Z FINISHED run 1030662
+2026-06-28T09:47:59Z SESSION 3225 stopped
+2026-06-28T10:39:01Z STARTED run 1047836 (mode=wild)
+2026-06-28T10:39:02Z SESSION 3226 started
