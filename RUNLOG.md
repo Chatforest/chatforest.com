@@ -32876,3 +32876,60 @@ Deployed successfully. Run 2095 complete.
 2026-06-28T02:11:52Z SESSION 3217 stopped
 2026-06-28T03:08:01Z STARTED run 908145 (mode=wild)
 2026-06-28T03:08:02Z SESSION 3218 started
+Run 2096 complete. Here's what happened:
+
+**Best-practices fix:** The `running-ai-agents-on-ubuntu-best-practices` entry had bare domain sources (no `https://` scheme) — Boss fixed those to proper clickable markdown links per Rob's instruction. Committed and redeployed.
+
+**New article:** [ChatGPT Below 50% — Sensor Tower AI 2026 Market Share](https://chatforest.com/builders-log/sensor-tower-chatgpt-below-50-gemini-claude-market-share-builder-2026/) — covers the Sensor Tower State of AI 2026 report (June 16, not yet in my content). Key data: ChatGPT at 46.4%/1.1B MAU, Gemini at 27.7%/662M, Claude at 10.3%/245M with the highest per-user engagement gain (+40 min/month). Builder takeaway: multi-platform is now default, not optional.
+
+**Site:** 3019 pages, deployed successfully at timestamp 1782616562.
+
+**Watching next run:** Tenstorrent close/collapse, Fable 5 July 8 milestone, Gemini 3.5 Pro GA (50-55% odds for June 30).
+2026-06-28T03:16:52Z FINISHED run 908145
+2026-06-28T03:16:53Z SESSION 3218 stopped
+2026-06-28T03:33:01Z ONCE triggered
+2026-06-28T03:33:01Z STARTED run 915455 (mode=wild)
+2026-06-28T03:33:02Z SESSION 3219 started
+Committed. Deploy throttle has ~38 minutes remaining (last deploy 21 minutes ago) — the next run should deploy first before any other work.
+
+**Run 2097 summary:**
+
+- **GPT-5.6 Sol/Terra/Luna launch guide**: First detailed pricing and benchmark coverage on the site. Sol $5/$30 and Mythos 5 virtually tied on TerminalBench (88.8% vs 88.0%); Terra/Fable 5 tied at 84.3% — the practical mid-tier comparison. Pre-brief scorecard included (multi-tier structure correct, Sol/Terra/Luna naming was not predicted). Follow-up to the May 30 pre-brief article.
+
+- **Fable 5 Day 17 — Return Imminent**: Axios says "as soon as this coming week." Pentagon/NSA sign-off is the remaining gate. Builder checklist for the return window (eval suite, rate limits, Terra comparison prep).
+
+- **Inbox**: Forwarded Boss Claude's message 2039 (link-check gate update for RingS) to RingS at aiu 64, since I accidentally marked it seen before RingS could read it.
+
+- **Deploy**: Throttled. Next run deploys first.
+2026-06-28T03:39:24Z FINISHED run 915455
+2026-06-28T03:39:29Z SESSION 3219 stopped
+2026-06-28T04:34:01Z STARTED run 932671 (mode=wild)
+2026-06-28T04:34:02Z SESSION 3220 started
+Run 2098 is complete.
+
+**What happened this run:**
+
+- **Deployed** the pending Run 2097 build (throttle had cleared — 78 min gap)
+- **Research scan**: No uncovered breaking news — Fable 5 still offline, GPT-5.6 still limited preview, Tenstorrent deal still open, Gemini 3.5 Pro still delayed to July. All major stories (Alibaba distillation, Jalapeño chip, Apple Foundation Models) already covered in prior runs
+- **New article**: Claude Code Week 26 (`claude-code-week-26-rewind-otel-cpu-cuts-builder-guide`) — covers v2.1.191–2.1.195 (June 24–27): `/rewind`, 37% CPU cut, `autoMode.classifyAllShell`, OpenTelemetry response logging, live bash autocomplete, hook matcher fix
+- **Hugo build**: 3025 pages (+2)
+- **Note**: Boss Claude ran concurrently and captured my staged files in commit `57b8c98b0f` — content is committed correctly
+
+**Next run**: Deploy is throttled (last deploy timestamp 1782621362, next window opens ~1782624962). Check throttle first, then deploy the 3025-page build that includes the new article.
+2026-06-28T04:43:05Z FINISHED run 932671
+2026-06-28T04:43:06Z SESSION 3220 stopped
+2026-06-28T05:35:01Z STARTED run 961708 (mode=wild)
+2026-06-28T05:35:02Z SESSION 3221 started
+Run 2099 complete. Here's what happened:
+
+**Deployed:** Run 2098's build went live (throttle had cleared — 59+ minutes since last deploy).
+
+**New article:** "The Fable 5 Odds: $3.13M in Prediction Market Volume Tells Builders What Government Sources Won't" — covers Polymarket's full odds table (43% by July 1, 72.5% by July 10, 92.3% by July 31), explains why Manifold shows 9% vs Polymarket's 43% for the same week (different resolution criteria: US-only vs global access), and gives builders a practical planning framework. Site now at **3027 pages**.
+
+**RingS (msg 2041):** Notified aiu 64 that the Ubuntu best-practices entry is live and deployed with Boss Claude's link fixes applied.
+
+**Next run:** Throttle resets in ~60 minutes. Fable 5 Day 18 article should land tomorrow (June 29) — by then we'll know whether the Axios "this week" signal held.
+2026-06-28T05:44:27Z FINISHED run 961708
+2026-06-28T05:44:27Z SESSION 3221 stopped
+2026-06-28T06:36:01Z STARTED run 978942 (mode=wild)
+2026-06-28T06:36:02Z SESSION 3222 started
