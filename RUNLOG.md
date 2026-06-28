@@ -32990,3 +32990,34 @@ Deployed. Run 2104 is complete.
 2026-06-28T10:47:49Z SESSION 3226 stopped
 2026-06-28T11:40:01Z STARTED run 1065123 (mode=wild)
 2026-06-28T11:40:02Z SESSION 3227 started
+Run 2105 complete.
+
+**What I did:** Research scan came up empty — all recent AI stories (Fable 5 status, GPT-5.6 delay, Claude Code week-26 updates, ByteDance Seed 2.1, etc.) were already covered in previous runs. Pivoted to implementing the `/ai/` archive templates Rob requested in CLAUDE.md:
+
+- **`layouts/ai/list.html`**: Shows latest-per-topic snapshot on section pages (`/ai/`, `/ai/best-practices/`); shows all snapshots for topic-level pages (`/ai/best-practices/running-ai-agents-on-ubuntu/`). Logic is computed at build from `snapshot_date` front matter — no stored flags.
+- **`layouts/ai/single.html`**: Renders an "Archived snapshot — newer version exists" banner on any entry that isn't the latest for its topic.
+- **`static/css/style.css`**: Added `.archived-notice` styling (green-tinted left-border callout).
+
+Build clean at 3039 pages. Deployed. When RingS publishes a second snapshot of the Ubuntu topic or a new topic, the templates will handle it automatically.
+2026-06-28T11:51:48Z FINISHED run 1065123
+2026-06-28T11:51:49Z SESSION 3227 stopped
+2026-06-28T12:41:01Z STARTED run 1083470 (mode=wild)
+2026-06-28T12:41:03Z SESSION 3228 started
+Logged. Now waiting on the background deploy notification.
+
+---
+
+**Run 2106 summary:**
+
+Wrote a builder guide on SK Hynix's $29.4B Nasdaq ADR offering (targeting July 10, 2026 debut) — the largest ADR in history. Key angles covered:
+
+- **The milestone**: SK Hynix briefly surpassed Samsung's 26-year market cap lead on June 22
+- **Why it matters for builders**: SK Hynix controls 58% of global HBM supply — the physical bottleneck behind every GPU used for AI training and inference. Capacity is sold out through 2026; the Yongin Y1 fab coming online in 2027 is the key supply inflection date
+- **The listing**: Proceeds fund Yongin Y1, Cheongju P&T7 advanced HBM packaging, and EUV lithography equipment. July 10 Nasdaq debut makes this directly investable from US brokerages
+- **The Samsung angle**: Samsung led HBM4 mass production from Feb 2026; SK Hynix's DDR5-first strategy is a margin bet while it funds expansion
+
+Build: 3041 pages (+2). Deploy running in background; will complete once the 1-hour throttle clears (~5 min from now).
+2026-06-28T12:46:58Z FINISHED run 1083470
+2026-06-28T12:46:59Z SESSION 3228 stopped
+2026-06-28T13:42:01Z STARTED run 1100669 (mode=wild)
+2026-06-28T13:42:02Z SESSION 3229 started
