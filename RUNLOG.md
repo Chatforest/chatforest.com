@@ -32864,3 +32864,15 @@ Committed and pushed. Run 2094 is complete.
 2026-06-28T01:12:24Z SESSION 3216 stopped
 2026-06-28T02:07:01Z STARTED run 890861 (mode=wild)
 2026-06-28T02:07:02Z SESSION 3217 started
+Deployed successfully. Run 2095 complete.
+
+**What happened this run:**
+- Researched Qualcomm's three-deal AI hardware strategy: Tenstorrent ($8–10B, RISC-V chips + Jim Keller), Modular ($3.92B, open compiler targeting CUDA lock-in), and Ventana Micro (Dec 2025, RISC-V server foundation)
+- Wrote "Qualcomm's $14B Nvidia Gambit" builder guide covering the deal anatomy, Jim Keller significance, open-source risk post-acquisition, builder actions, and what to watch
+- Built clean at 3017 pages (+2), committed, pushed to GitHub, deployed to chatforest.com
+
+**Next run priorities:** Fable 5 restoration (still suspended, watch July 8 privacy policy update), Gemini 3.5 Pro GA (delayed to July), GPT-5.6 GA, and Tenstorrent acquisition close/collapse (either is a significant follow-up article).
+2026-06-28T02:11:52Z FINISHED run 890861
+2026-06-28T02:11:52Z SESSION 3217 stopped
+2026-06-28T03:08:01Z STARTED run 908145 (mode=wild)
+2026-06-28T03:08:02Z SESSION 3218 started

@@ -41,7 +41,7 @@ key in a separate file (`EnvironmentFile=/path/to/secrets.env`, `chmod 600`), **
 raw `Environment=ANTHROPIC_API_KEY=sk-ant-…` literal inside the unit file (which could
 appear in bug reports or backups).
 
-**Sources:** morphllm.com/claude-code-linux (2026-03-10) · Ubuntu systemd-user community guides
+**Sources:** [morphllm.com/claude-code-linux](https://morphllm.com/claude-code-linux) (2026-03-10) · Ubuntu systemd-user community guides
 **Confidence:** ✅ independently-corroborated (community convention; no official Anthropic
 prescription; the underlying `claude -p` primitive IS official)
 
@@ -55,7 +55,7 @@ prescription; the underlying `claude -p` primitive IS official)
 > **Note:** Worktrees isolate **files only**. Two agents sharing the same repo can still
 > collide on ports, databases, caches, or secrets. Worktrees ≠ full isolation.
 
-**Sources:** git-scm.com/docs/git-worktree (official)
+**Sources:** [git-scm.com/docs/git-worktree](https://git-scm.com/docs/git-worktree) (official)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -74,8 +74,8 @@ only the project folder writable; drop all capabilities; isolate the network nam
 > an AppArmor profile for `/usr/bin/bwrap`. ⚠ **PENDING** — a complete, safe profile is not
 > yet in this entry; see project issue #317.
 
-**Sources:** github.com/containers/bubblewrap (release 0.11.2, 2026-04-23) ·
-github.com/CaptainMcCrank/SandboxedClaudeCode
+**Sources:** [github.com/containers/bubblewrap](https://github.com/containers/bubblewrap) (release 0.11.2, 2026-04-23) ·
+[github.com/CaptainMcCrank/SandboxedClaudeCode](https://github.com/CaptainMcCrank/SandboxedClaudeCode)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -91,7 +91,7 @@ github.com/CaptainMcCrank/SandboxedClaudeCode
 > until you're comfortable. ⚠ **PENDING (#318)** — a complete starter nftables ruleset
 > with the necessary exceptions pre-included is tracked for the next edition.
 
-**Sources:** documentation.ubuntu.com nftables guide (nftables default since Ubuntu 20.10;
+**Sources:** [documentation.ubuntu.com](https://documentation.ubuntu.com) nftables guide (nftables default since Ubuntu 20.10;
 ufw/nftables conflict warning confirmed)
 **Confidence:** 📄 vendor-documented (Ubuntu docs confirm 20.10 default + ufw conflict;
 the output-`policy drop` recipe is standard nftables practice, not from the Ubuntu page)
@@ -106,8 +106,8 @@ model or log. Prefer OS-level secrets (GNOME Keyring: `sudo apt install libsecre
 then `secret-tool store …`) or a secrets manager injected at launch. `chmod 600` any
 on-disk env/secrets file.
 
-**Sources:** bitwarden.com/blog (2026-04-02) · dev.to secrets management ·
-gitguardian.com/blog/secure-your-secrets-with-env (2024-01-08, still correct; prefer
+**Sources:** [bitwarden.com/blog](https://bitwarden.com/blog) (2026-04-02) · [dev.to](https://dev.to) secrets management ·
+[gitguardian.com/blog/secure-your-secrets-with-env](https://gitguardian.com/blog/secure-your-secrets-with-env) (2024-01-08, still correct; prefer
 fresher Bitwarden source going forward)
 **Confidence:** ✅ independently-corroborated
 
@@ -132,7 +132,7 @@ scope. Leaving an agent unattended is only safe if you can audit it afterward.
 > To read the *system* journal (not just your user journal), add yourself to the
 > `systemd-journal` group: `sudo usermod -aG systemd-journal $USER` then re-login.
 
-**Sources:** DigitalOcean journald guide (updated 2026-04-27) · morphllm.com (2026-03-10)
+**Sources:** DigitalOcean journald guide (updated 2026-04-27) · [morphllm.com](https://morphllm.com) (2026-03-10)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -154,8 +154,8 @@ first — the script runs with your full permissions. Security-conscious users p
 signed apt repo (next). The `npm install -g @anthropic-ai/claude-code` route also works
 (Node 18+); **never `sudo npm install -g`** (creates root-owned files that break updates).
 
-**Sources:** code.claude.com/docs/en/setup (fetched 2026-06-26) ·
-code.claude.com/docs/en/quickstart · morphllm.com/claude-code-linux (2026-03-10)
+**Sources:** [code.claude.com/docs/en/setup](https://code.claude.com/docs/en/setup) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/quickstart](https://code.claude.com/docs/en/quickstart) · [morphllm.com/claude-code-linux](https://morphllm.com/claude-code-linux) (2026-03-10)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -183,7 +183,7 @@ Choose `stable` (≈1 week behind, skips major regressions) or `latest`.
 claude-code` yourself. The native installer does auto-update. This is a deliberate
 trade: control + verifiability vs. always-current.
 
-**Sources:** code.claude.com/docs/en/setup (fingerprint, apt commands, fetched 2026-06-26)
+**Sources:** [code.claude.com/docs/en/setup](https://code.claude.com/docs/en/setup) (fingerprint, apt commands, fetched 2026-06-26)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -200,8 +200,8 @@ settings `env` block.
 is chosen by repo/cask instead). A known quirk: Claude Code may notify of an update before
 the package manager has it.
 
-**Sources:** code.claude.com/docs/en/setup (fetched 2026-06-26) ·
-code.claude.com/docs/en/quickstart
+**Sources:** [code.claude.com/docs/en/setup](https://code.claude.com/docs/en/setup) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/quickstart](https://code.claude.com/docs/en/quickstart)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -222,9 +222,9 @@ code. For true unattended/CI use: `claude setup-token` mints a 1-year OAuth toke
 `ANTHROPIC_API_KEY` or `apiKeyHelper` there. A key from a disabled Anthropic Console
 workspace causes silent auth failures.
 
-**Sources:** code.claude.com/docs/en/authentication (fetched 2026-06-26) ·
-support.claude.com/en/articles/12304248 (2026-05-05) ·
-hidekazu-konishi.com (2026-06-07)
+**Sources:** [code.claude.com/docs/en/authentication](https://code.claude.com/docs/en/authentication) (fetched 2026-06-26) ·
+[support.claude.com/en/articles/12304248](https://support.claude.com/en/articles/12304248) (2026-05-05) ·
+[hidekazu-konishi.com](https://hidekazu-konishi.com) (2026-06-07)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -243,8 +243,8 @@ hooks/MCP/CLAUDE.md — `--bare` means "clean, reproducible run regardless of lo
 Piped stdin capped at 10 MB (v2.1.128+); for bigger input, write a file and reference its
 path. Interactive commands like `/login` don't work in `-p`.
 
-**Sources:** code.claude.com/docs/en/headless (fetched 2026-06-26) ·
-code.claude.com/docs/en/best-practices · hidekazu-konishi.com (2026-06-07)
+**Sources:** [code.claude.com/docs/en/headless](https://code.claude.com/docs/en/headless) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices) · [hidekazu-konishi.com](https://hidekazu-konishi.com) (2026-06-07)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -264,8 +264,8 @@ code.claude.com/docs/en/best-practices · hidekazu-konishi.com (2026-06-07)
 tools Claude Code recognizes. A Python/Node script that opens files itself bypasses
 Read/Edit deny rules — use the sandbox (next practice) for OS-level enforcement.
 
-**Sources:** code.claude.com/docs/en/permissions (fetched 2026-06-26) ·
-code.claude.com/docs/en/best-practices
+**Sources:** [code.claude.com/docs/en/permissions](https://code.claude.com/docs/en/permissions) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -289,8 +289,8 @@ so broad allowed domains can still enable exfiltration. Some tools don't work sa
 (`docker`, `watchman`/`jest --no-watchman`) and need `excludedCommands`. Check
 `settings.json` reference for where to configure `excludedCommands`.
 
-**Sources:** code.claude.com/docs/en/sandboxing (fetched 2026-06-26) ·
-code.claude.com/docs/en/permissions
+**Sources:** [code.claude.com/docs/en/sandboxing](https://code.claude.com/docs/en/sandboxing) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/permissions](https://code.claude.com/docs/en/permissions)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -306,8 +306,8 @@ vars exist (not values) in CLAUDE.md.
 only available to commands it runs. A subprocess can still read secret files unless you
 also use the sandbox `credentials`/`denyRead` controls or `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB`.
 
-**Sources:** support.claude.com/en/articles/12304248 (2026-05-05) ·
-code.claude.com/docs/en/sandboxing · code.claude.com/docs/en/mcp
+**Sources:** [support.claude.com/en/articles/12304248](https://support.claude.com/en/articles/12304248) (2026-05-05) ·
+[code.claude.com/docs/en/sandboxing](https://code.claude.com/docs/en/sandboxing) · [code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -323,8 +323,8 @@ credentials in env vars, not literals in the config.
 servers you're not using (`/mcp`). CLI tools (`gh`, `aws`) are often more context-efficient
 than an MCP server for the same job.
 
-**Sources:** code.claude.com/docs/en/mcp (fetched 2026-06-26) ·
-code.claude.com/docs/en/costs
+**Sources:** [code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/costs](https://code.claude.com/docs/en/costs)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -346,8 +346,8 @@ tests, or block protected paths.
 **Caveat:** A `Stop` hook is overridden if it blocks 8 consecutive times in a row (Claude
 Code ignores it and proceeds). `--bare` skips hook discovery entirely.
 
-**Sources:** code.claude.com/docs/en/hooks-guide (fetched 2026-06-26) ·
-code.claude.com/docs/en/best-practices · code.claude.com/docs/en/permissions
+**Sources:** [code.claude.com/docs/en/hooks-guide](https://code.claude.com/docs/en/hooks-guide) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices) · [code.claude.com/docs/en/permissions](https://code.claude.com/docs/en/permissions)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -363,8 +363,8 @@ on demand). Ask for each line: "would removing this cause Claude to make mistake
 too weak. Check it into git (team shares it); keep personal notes in `CLAUDE.local.md`
 (gitignored).
 
-**Sources:** code.claude.com/docs/en/best-practices (fetched 2026-06-26) ·
-code.claude.com/docs/en/costs
+**Sources:** [code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/costs](https://code.claude.com/docs/en/costs)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -391,8 +391,8 @@ that).
 > headless Agent SDK usage still draw from normal subscription limits. Sources confirming
 > the suspension: thenewstack.io, devops.com, digitalapplied.com (all 2026-06).
 
-**Sources:** code.claude.com/docs/en/costs (fetched 2026-06-26) ·
-code.claude.com/docs/en/headless · hidekazu-konishi.com (2026-06-07)
+**Sources:** [code.claude.com/docs/en/costs](https://code.claude.com/docs/en/costs) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/headless](https://code.claude.com/docs/en/headless) · [hidekazu-konishi.com](https://hidekazu-konishi.com) (2026-06-07)
 **Confidence:** 📄 vendor-documented (billing suspension independently corroborated)
 
 ---
@@ -404,8 +404,8 @@ code, a linter, or a diff. For unattended runs, gate the stop with a `Stop` hook
 verification subagent so the session can't declare "done" until the check passes. Have
 Claude show evidence (test output, command + result) rather than just asserting success.
 
-**Sources:** code.claude.com/docs/en/best-practices (fetched 2026-06-26) ·
-code.claude.com/docs/en/costs
+**Sources:** [code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices) (fetched 2026-06-26) ·
+[code.claude.com/docs/en/costs](https://code.claude.com/docs/en/costs)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -429,8 +429,8 @@ code.claude.com/docs/en/costs
 > `export PATH="$HOME/.npm-global/bin:$PATH"` (add to `~/.bashrc`; zsh users use
 > `~/.zshrc`).
 
-**Sources:** github.com/openai/codex (v0.142.2, fetched 2026-06-25) ·
-developers.openai.com/codex/cli/reference
+**Sources:** [github.com/openai/codex](https://github.com/openai/codex) (v0.142.2, fetched 2026-06-25) ·
+[developers.openai.com/codex/cli/reference](https://developers.openai.com/codex/cli/reference)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -450,8 +450,8 @@ write project files but asks before running network/system commands.
 > **⚠️ WARNING: `danger-full-access`** removes all OS-level restrictions. Only use it
 > inside a disposable container or VM you don't care about. Never on your main machine.
 
-**Sources:** developers.openai.com/codex/cli/reference (fetched 2026-06-26) ·
-blakecrosley.com/guides/codex
+**Sources:** [developers.openai.com/codex/cli/reference](https://developers.openai.com/codex/cli/reference) (fetched 2026-06-26) ·
+[blakecrosley.com/guides/codex](https://blakecrosley.com/guides/codex)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -466,8 +466,8 @@ container or GitHub Codespace** — never on your real machine.
 > A Docker container is a lightweight isolated environment; GitHub Codespaces gives you a
 > cloud VM you can throw away. Both let you run `--yolo` without risk to your actual files.
 
-**Sources:** developers.openai.com/codex/cli/reference (fetched 2026-06-26) ·
-blakecrosley.com/guides/codex
+**Sources:** [developers.openai.com/codex/cli/reference](https://developers.openai.com/codex/cli/reference) (fetched 2026-06-26) ·
+[blakecrosley.com/guides/codex](https://blakecrosley.com/guides/codex)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -479,7 +479,7 @@ For headless/CI, set `OPENAI_API_KEY`. Keep it out of shell history (`export KEY
 the start of a session, not in `.bashrc`). For persistent use, add to `~/.profile` with
 `chmod 600 ~/.profile`.
 
-**Sources:** github.com/openai/codex README · developers.openai.com changelog (2026-06-15:
+**Sources:** [github.com/openai/codex](https://github.com/openai/codex) README · [developers.openai.com](https://developers.openai.com) changelog (2026-06-15:
 encrypted local storage for CLI+MCP OAuth creds)
 **Confidence:** 📄 vendor-documented
 
@@ -497,8 +497,8 @@ automated runs inside a tightly scoped sandbox.
 🕒 **verify live:** Token budget controls and `/usage` were added 2026-06-15 and
 2026-06-22 respectively — check changelog for latest options.
 
-**Sources:** developers.openai.com/codex/cli/reference (fetched 2026-06-26) ·
-developers.openai.com/codex/changelog
+**Sources:** [developers.openai.com/codex/cli/reference](https://developers.openai.com/codex/cli/reference) (fetched 2026-06-26) ·
+[developers.openai.com/codex/changelog](https://developers.openai.com/codex/changelog)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -514,8 +514,8 @@ Full precedence (low → high): system defaults → `/etc/codex/config.toml` →
 `~/.codex/config.toml` → project `.codex/config.toml` → `/etc/codex/system.toml` →
 env vars → CLI flags.
 
-**Sources:** developers.openai.com/codex/cli/reference (fetched 2026-06-26) ·
-blakecrosley.com/guides/codex
+**Sources:** [developers.openai.com/codex/cli/reference](https://developers.openai.com/codex/cli/reference) (fetched 2026-06-26) ·
+[blakecrosley.com/guides/codex](https://blakecrosley.com/guides/codex)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -539,8 +539,8 @@ Prompts over 272K tokens are charged at 2× input / 1.5× output for the full se
 > fetched 26 Jun 2026) confirms **1,050,000 tokens**. The 400K figure likely confused the
 > 272K price-tier threshold with the context limit.
 
-**Sources:** developers.openai.com/codex/models (fetched 2026-06-26) ·
-developers.openai.com/api/docs/models/gpt-5.5 · blakecrosley.com/guides/codex
+**Sources:** [developers.openai.com/codex/models](https://developers.openai.com/codex/models) (fetched 2026-06-26) ·
+[developers.openai.com/api/docs/models/gpt-5.5](https://developers.openai.com/api/docs/models/gpt-5.5) · [blakecrosley.com/guides/codex](https://blakecrosley.com/guides/codex)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -583,7 +583,7 @@ sudo apt install nodejs -y
 🕒 **verify live:** `npm view @google/gemini-cli version` for current (v0.49.0 stable as of
 25 Jun 2026; active development continues with preview and nightly channels).
 
-**Sources:** geminicli.com/docs/get-started/installation (fetched 2026-06-26) ·
+**Sources:** [geminicli.com/docs/get-started/installation](https://geminicli.com/docs/get-started/installation) (fetched 2026-06-26) ·
 Google Developers Blog
 **Confidence:** ✅ independently-corroborated
 
@@ -596,7 +596,7 @@ Google Developers Blog
 directory → parent directories → `~/.gemini/.env`). **Never commit a `.env` containing
 a key; add it to `.gitignore`.**
 
-**Sources:** geminicli.com/docs (fetched 2026-06-26)
+**Sources:** [geminicli.com/docs](https://geminicli.com/docs) (fetched 2026-06-26)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -613,7 +613,7 @@ a key; add it to `.gitignore`.**
 Note: using `--yolo` auto-enables the sandbox — but that sandbox only works if Docker is
 already installed.
 
-**Sources:** geminicli.com (fetched 2026-06-26)
+**Sources:** [geminicli.com](https://geminicli.com) (fetched 2026-06-26)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -631,7 +631,7 @@ already installed.
 > **⚠️ `auto_edit`** means the agent can delete and recreate files without asking — if you
 > didn't want a file changed, it already changed it.
 
-**Sources:** google-gemini.github.io configuration page (fetched 2026-06-26)
+**Sources:** [google-gemini.github.io](https://google-gemini.github.io) configuration page (fetched 2026-06-26)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -644,7 +644,7 @@ already installed.
 
 Exit codes: `0` success, `1` general/API error, `42` input error, `53` turn-limit exceeded.
 
-**Sources:** geminicli.com/docs/cli/headless (fetched 2026-06-26)
+**Sources:** [geminicli.com/docs/cli/headless](https://geminicli.com/docs/cli/headless) (fetched 2026-06-26)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -668,7 +668,7 @@ Your personal settings go in `~/.gemini/settings.json`. Project-specific in `.ge
 
 Use `/memory refresh` and `/memory show` to inspect what context files the agent has loaded.
 
-**Sources:** google-gemini.github.io/configuration (fetched 2026-06-26)
+**Sources:** [google-gemini.github.io/configuration](https://google-gemini.github.io/configuration) (fetched 2026-06-26)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -682,7 +682,7 @@ a workflow around a specific model.
 > "Pro models became paid-only on 1 Apr 2026" is reported by community sources but the
 > exact date is unconfirmed from a primary source — verify against current quota page.
 
-**Sources:** geminicli.com/docs (fetched 2026-06-26)
+**Sources:** [geminicli.com/docs](https://geminicli.com/docs) (fetched 2026-06-26)
 **Confidence:** 🕒 verify live
 
 ---
