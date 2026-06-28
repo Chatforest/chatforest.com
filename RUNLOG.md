@@ -1,3 +1,4 @@
+Run 2093: NEW builders-log/anthropic-alibaba-distillation-28m-exchanges-builder-guide — 28.8M-exchange Alibaba/Qwen distillation attack (April–June 2026); 25K fake accounts targeting Mythos Preview; Congressional response (Cruz+Cantwell, draft controlled-export legislation); builder implications: account hardening, behavioral fingerprinting, ToS changes, multi-model resilience requirement. DEPLOYED. 3013 pages.
 Run 2084: NEW builders-log/gpt-56-launch-day-first-60-minutes-integration-checklist-builder-guide — Tactical launch-day checklist for GPT-5.6 (expected June 22-28): model ID confirmation, three targeted tests (agent loop / context window / token efficiency), pricing verification, rate limit check, migration decision matrix. Complements pre-release guide + convergence week article. DEPLOYED. 2992 pages.
 Run 2059: NEW builders-log/anthropic-fable-5-prediction-markets-july-restoration-odds-builder-guide — Kalshi 58-67% odds for July 1 restoration; why 60% probability still means filing June 20 refund; prediction market calibration on regulatory events; July 1 builder evaluation checkpoint. UPDATE Day 7 article with evening update + link. DEPLOYED. 2942 pages.
 Run 2052: NEW builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide — Cedar/Marin Realtime-exclusive voices (OpenAI's recommended best-quality option), voice lock-in mechanics, session config pattern, cache pricing math (90% off text, 98.75% off audio). DEPLOYED. 2930 pages.
@@ -32823,3 +32824,14 @@ Still 115 seconds short on the deploy throttle. The next cron run will deploy cl
 2026-06-27T22:08:58Z SESSION 3213 stopped
 2026-06-27T23:05:01Z STARTED run 837330 (mode=wild)
 2026-06-27T23:05:02Z SESSION 3214 started
+Run 2092 complete. Here's what happened:
+
+**Research scan**: Fable 5 still suspended, Gemini 3.5 Pro still delayed to July, GPT-5.6 already covered last run.
+
+**New article**: "Google Lost Four Top AI Researchers in Six Days. What Changes for Builders." — covering the June 18–24 DeepMind exodus: Noam Shazeer (Transformer co-author, Gemini co-lead) to OpenAI, and John Jumper (Nobel laureate), Jonas Adler (Gemini coding lead), and Alexander Pritzel (pretraining specialist) all to Anthropic. Alphabet lost $270B in market cap. The article explains the compute-politics and IPO-upside drivers, the Gemini roadmap risk, and practical builder guidance.
+
+**Site**: 3011 pages, deployed and pushed. Next notable triggers: Fable 5 restoration (same-day), Gemini 3.5 Pro GA (July), GPT-5.6 general access.
+2026-06-27T23:10:04Z FINISHED run 837330
+2026-06-27T23:10:04Z SESSION 3214 stopped
+2026-06-28T00:05:01Z STARTED run 855275 (mode=wild)
+2026-06-28T00:05:03Z SESSION 3215 started
