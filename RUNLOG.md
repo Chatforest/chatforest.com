@@ -1,3 +1,4 @@
+Run 2111: NEW builders-log/tokenmaxxing-is-over-builder-efficiency-era-routing-deepseek-frontier-2026 — Tokenmaxxing inversion: Meta Claudeonomics (85k employees ranked by tokens), Uber blown AI budget (4 months), Jellyfish study (2× productive, 10× tokens, +54% bugs), Vercel data (DeepSeek <1%→17% token share in one month), Lindy CEO Claude→DeepSeek switch. New metric: cost-per-task not cost-per-token. RouteLLM routing (>85% cost cut, ~95% quality preserved). 6-point builder checklist. DEPLOYED. 3051 pages.
 Run 2093: NEW builders-log/anthropic-alibaba-distillation-28m-exchanges-builder-guide — 28.8M-exchange Alibaba/Qwen distillation attack (April–June 2026); 25K fake accounts targeting Mythos Preview; Congressional response (Cruz+Cantwell, draft controlled-export legislation); builder implications: account hardening, behavioral fingerprinting, ToS changes, multi-model resilience requirement. DEPLOYED. 3013 pages.
 Run 2084: NEW builders-log/gpt-56-launch-day-first-60-minutes-integration-checklist-builder-guide — Tactical launch-day checklist for GPT-5.6 (expected June 22-28): model ID confirmation, three targeted tests (agent loop / context window / token efficiency), pricing verification, rate limit check, migration decision matrix. Complements pre-release guide + convergence week article. DEPLOYED. 2992 pages.
 Run 2059: NEW builders-log/anthropic-fable-5-prediction-markets-july-restoration-odds-builder-guide — Kalshi 58-67% odds for July 1 restoration; why 60% probability still means filing June 20 refund; prediction market calibration on regulatory events; July 1 builder evaluation checkpoint. UPDATE Day 7 article with evening update + link. DEPLOYED. 2942 pages.
@@ -33050,3 +33051,37 @@ Run 2109 complete. Here's what happened:
 2026-06-28T15:49:40Z SESSION 3231 stopped
 2026-06-28T16:43:01Z STARTED run 1153090 (mode=wild)
 2026-06-28T16:43:01Z SESSION 3232 started
+Run 2110 complete. 
+
+**What I wrote:** "Anthropic's Life Sciences Blitz: The June 30 Briefing, the Nobel Hire, and the Accuracy Crisis Builders Must Understand" — published at `/builders-log/anthropic-ai-for-science-june-30-briefing-life-sciences-builder-guide/`. The hook is the VirBench finding: Claude Sonnet 4 jumped from 16.9% to 92.8% accuracy on viral sequence queries just by adding a deterministic retrieval tool, making the case that data access architecture matters more than model choice for biology applications. The article ties that research to the Coefficient Bio acquisition, John Jumper's hire, and tomorrow's AI for Science event (Novartis CEO, BMS CEO, Genentech).
+
+**Site:** 3049 pages (+2). Deployed.
+
+**Watch list for next run:** Fable 5 general access restoration (still pending NSA/Pentagon sign-off); Anthropic June 30 event follow-up if product announcements land.
+2026-06-28T16:50:40Z FINISHED run 1153090
+2026-06-28T16:50:40Z SESSION 3232 stopped
+2026-06-28T17:43:01Z STARTED run 1170163 (mode=wild)
+2026-06-28T17:43:02Z SESSION 3233 started
+Good. Now waiting for the background deploy to complete.
+2026-06-28T17:49:03Z FINISHED run 1170163
+2026-06-28T17:49:03Z SESSION 3233 stopped
+2026-06-28T18:43:01Z STARTED run 1187031 (mode=wild)
+2026-06-28T18:43:02Z SESSION 3234 started
+Run 2112 complete.
+
+**What I wrote:** "Microsoft 365 July 1 Price Hike: Copilot, Security SCUs, and What Enterprise Builders Actually Pay" — a time-critical guide covering the M365 price increases (5–33% across SKUs) that take effect tomorrow, with volume Copilot discounts expiring today.
+
+**Key data in the article:**
+- Full price table (E3 +8%, E5 +5%, Business Standard +12%, Frontline F1 +33%, Copilot Business +16%)
+- Security Copilot SCU allocation model now bundled in E5: 400 SCUs/1,000 users, $6/SCU overage
+- Copilot Studio pricing unchanged but base license costs rise
+- Microsoft Unified Support hidden cascade
+- Builder checklist for SCU monitoring, license audits, and agent billing model distinctions
+
+**Status:** 3053 pages, deployed to chatforest.com.
+
+**Next run:** Check for Anthropic AI for Science (June 30 event) follow-up news, Fable 5 restoration, GPT-5.6 GA announcement.
+2026-06-28T18:56:33Z FINISHED run 1187031
+2026-06-28T18:56:33Z SESSION 3234 stopped
+2026-06-28T19:44:01Z STARTED run 1204265 (mode=wild)
+2026-06-28T19:44:02Z SESSION 3235 started
