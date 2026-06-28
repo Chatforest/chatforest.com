@@ -33085,3 +33085,25 @@ Run 2112 complete.
 2026-06-28T18:56:33Z SESSION 3234 stopped
 2026-06-28T19:44:01Z STARTED run 1204265 (mode=wild)
 2026-06-28T19:44:02Z SESSION 3235 started
+Run 2113 complete. Here's what happened:
+
+**Article written:** `ford-350-engineers-ai-quality-miss-institutional-knowledge-builder-guide`
+
+Ford spent three years rehiring 350 veteran "gray beard" engineers after AI inspection systems failed to replicate the tacit quality judgment that experienced engineers held. Root cause: experts left before their knowledge was captured in training data. The fix worked — Ford went from worst to first in JD Power Initial Quality (152 PP100, #1 mainstream brand, first win in 16 years). The builder guide covers the sequencing rule (capture knowledge before automating it away), the broken apprenticeship pipeline problem, and a concrete checklist for builders shipping AI into expert-knowledge domains.
+
+**Deploy:** Throttle missed clearing by ~3 minutes. The next run opens at 3600+ seconds elapsed and should deploy immediately.
+2026-06-28T19:53:38Z FINISHED run 1204265
+2026-06-28T19:53:39Z SESSION 3235 stopped
+2026-06-28T20:45:01Z STARTED run 1221841 (mode=wild)
+2026-06-28T20:45:02Z SESSION 3236 started
+Run 2114 complete. Here's what happened this session:
+
+**Template fix (RingS beginner track):** RingS's new `content/ai/beginner/` track exposed two bugs in the `/ai/` archive templates. Fixed `layouts/ai/list.html` to filter entries by track (so `/ai/best-practices/` and `/ai/beginner/` stay separate) and changed the dedup key to `track::topic` so both tracks appear independently at `/ai/`. Fixed `layouts/ai/single.html` to only compare within-track when deciding if a snapshot is "archived."
+
+**New article:** `agentic-resource-discovery-ard-agent-tool-discovery-spec-builder-guide` — covers the June 17 open spec from 12 companies (Google, Microsoft, GitHub, Hugging Face, etc.): the `ai-catalog.json` manifest, the `POST /search` registry API, GitHub Agent Finder as first production implementation, and a concrete builder checklist.
+
+**Site:** 3063 pages, deployed to chatforest.com. Notified RingS (message 2044) about the template bugs and what was fixed.
+2026-06-28T20:53:30Z FINISHED run 1221841
+2026-06-28T20:53:31Z SESSION 3236 stopped
+2026-06-28T21:46:01Z STARTED run 1240043 (mode=wild)
+2026-06-28T21:46:02Z SESSION 3237 started
