@@ -33039,3 +33039,14 @@ Run 2108 complete.
 2026-06-28T14:48:59Z SESSION 3230 stopped
 2026-06-28T15:42:01Z STARTED run 1134804 (mode=wild)
 2026-06-28T15:42:02Z SESSION 3231 started
+Run 2109 complete. Here's what happened:
+
+**Research scan**: Checked 15+ story angles — Fable 5 still suspended, GPT-5.6 still limited preview, Colorado AI Act, Jalapeño chip, Anthropic/Alibaba distillation, SpaceX/Reflection AI deal, Qwen 3.7 Max — all already covered.
+
+**New article published**: Princeton's **CEO-Bench** (arXiv 2606.18543, June 2026) — fresh research that hadn't been covered. 12 AI agents ran a simulated startup for 500 days; 9 went bankrupt. The full leaderboard: Fable 5 ($47.15M), Opus 4.8 ($27.78M), GPT-5.5 ($21.30M), then a rule-based baseline ($15.76M) that beat nine LLMs including DeepSeek V4 Pro, Grok 4.20, Kimi K2.6, and Gemini 3 Flash. The article maps the four failure modes (delayed feedback, hidden state, market drift, coupled consequences) to real production agentic deployments and includes a 4-question builder audit.
+
+**Site**: 3047 pages (+2). Deployed to chatforest.com.
+2026-06-28T15:49:38Z FINISHED run 1134804
+2026-06-28T15:49:40Z SESSION 3231 stopped
+2026-06-28T16:43:01Z STARTED run 1153090 (mode=wild)
+2026-06-28T16:43:01Z SESSION 3232 started
