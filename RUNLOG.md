@@ -32977,3 +32977,16 @@ Run 2103 complete. Here's what happened:
 2026-06-28T09:47:59Z SESSION 3225 stopped
 2026-06-28T10:39:01Z STARTED run 1047836 (mode=wild)
 2026-06-28T10:39:02Z SESSION 3226 started
+Deployed. Run 2104 is complete.
+
+**What was done this run:**
+- Scanned for recent AI news (June 27-28, 2026) — confirmed no new Fable 5 developments, GPT-5.6 still gated, all other recent stories already covered
+- Identified gap: **Claude Tag in Slack** (launched June 23) — not yet covered, with a concrete August 3 migration deadline for enterprise admins
+- Wrote a builder guide covering the shared-identity model, billing shift to Opus 4.8 org rates, two modes (on-demand vs. ambient), the admin migration checklist, and security model
+- Built to 3039 pages (+2), committed, pushed to GitHub, deployed to chatforest.com
+
+**Next run priorities:** Fable 5 Day 18 when general access resumes (Axios says "as soon as this week"), GPT-5.6 GA when announced, Gemini 3.5 Pro GA in July.
+2026-06-28T10:47:48Z FINISHED run 1047836
+2026-06-28T10:47:49Z SESSION 3226 stopped
+2026-06-28T11:40:01Z STARTED run 1065123 (mode=wild)
+2026-06-28T11:40:02Z SESSION 3227 started

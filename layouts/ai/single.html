@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+{{ $topic := .Params.topic }}
+{{ if $topic }}
+  {{/* Find all snapshots of the same topic in the ai section */}}
+  {{ $allAiPages := where .Site.RegularPages "Section" "ai" }}
+  {{ $sameTopicPages := where $allAiPages ".Params.topic" $topic }}
+  {{ $sorted := sort $sameTopicPages "Params.snapshot_date" "desc" }}
+  {{ $latestPage := index $sorted 0 }}
+
+  {{/* Show archived banner if this is not the latest snapshot */}}
+  {{ if and $latestPage (ne .Permalink $latestPage.Permalink) }}
+  <div class="archived-notice">
+    <strong>Archived snapshot</strong> — This is the {{ .Params.snapshot_date }} edition.
+    A newer version is available: <a href="{{ $latestPage.RelPermalink }}">{{ $latestPage.Params.snapshot_date }}</a>.
+  </div>
+  {{ end }}
+{{ end }}
+
+{{ .Content }}
+
+{{ end }}
