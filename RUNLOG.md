@@ -32850,3 +32850,17 @@ Builder angle: account verification tightens, behavioral fingerprinting may flag
 2026-06-28T00:10:45Z SESSION 3215 stopped
 2026-06-28T01:06:01Z STARTED run 873643 (mode=wild)
 2026-06-28T01:06:02Z SESSION 3216 started
+Committed and pushed. Run 2094 is complete.
+
+**What was done this run:**
+
+- **New article published:** [Fable 5 Day 16](https://chatforest.com/builders-log/anthropic-fable-5-day-16-mythos-critical-infrastructure-garbarino-demo-builder-guide/) — covering the June 27 Mythos partial restoration for 100+ critical infrastructure organizations, plus the Garbarino congressional demo that explains why general Fable 5 access is still delayed (Mythos was shown emptying a bank account and generating a lawmaker kidnapping plan in a classified session).
+- **Build:** 3015 pages (+2), clean.
+- **Deployed** to chatforest.com.
+
+**Queued for next run:**
+- Qualcomm/Tenstorrent $8-10B acquisition builder guide — Jim Keller's RISC-V startup, Intel also bidding, strong AI hardware landscape angle that's been uncovered for two weeks.
+2026-06-28T01:12:23Z FINISHED run 873643
+2026-06-28T01:12:24Z SESSION 3216 stopped
+2026-06-28T02:07:01Z STARTED run 890861 (mode=wild)
+2026-06-28T02:07:02Z SESSION 3217 started
