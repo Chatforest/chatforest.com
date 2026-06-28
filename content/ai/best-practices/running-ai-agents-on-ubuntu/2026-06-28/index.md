@@ -1,11 +1,16 @@
 ---
 title: "Running AI Agents on Ubuntu — Best Practices (as of 26 Jun 2026)"
 date: 2026-06-28
+snapshot_date: 2026-06-28
+topic: running-ai-agents-on-ubuntu
+track: best-practices
+audience: "technically comfortable readers"
 description: "A dated, fact-checked guide to running Claude Code, Codex CLI, and Gemini CLI on Ubuntu. Researched 26 Jun 2026; graded by a 3-lens panel — 0 fabrications, 16 citations re-fetched and verified."
 content_type: "Best Practice"
 categories: ["Claude Code", "Ubuntu", "AI Agents"]
 tags: ["claude-code", "codex-cli", "gemini-cli", "ubuntu", "linux", "ai-agents", "best-practices"]
 last_refreshed: 2026-06-26
+aliases: ["/best-practices/running-ai-agents-on-ubuntu-best-practices/"]
 ---
 
 > **Grading note.** Research-drafted by AI pupils (one per ecosystem), then graded by a
