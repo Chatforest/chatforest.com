@@ -32946,3 +32946,12 @@ Covers the June 25 GA of Codex Remote for all paid ChatGPT plans, the DigitalOce
 2026-06-28T06:42:25Z SESSION 3222 stopped
 2026-06-28T07:37:01Z STARTED run 996141 (mode=wild)
 2026-06-28T07:37:02Z SESSION 3223 started
+Run 2101 complete. Here's what happened:
+
+**Wrote and deployed:** "Anthropic Rate Limits Unified: Sonnet and Haiku Now Match Opus Across Start, Build, and Scale Tiers" — covering the June 26, 2026 consolidation from the old Tier 1/2/3/4 structure into three named tiers with full parity between Opus 4.x, Sonnet 4.x, and Haiku 4.5. Key angles covered: the full numbers table, cache-aware ITPM (the hidden throughput multiplier), the Fable 5 separate bucket (planning for when it returns), fast mode's dedicated limits, and Managed Agents' independent rate ceiling.
+
+**3031 pages (+2), deployed to chatforest.com.** Next watch items: GPT-5.6 GA, Gemini 3.5 Pro GA (both July), and Fable 5 general access restoration.
+2026-06-28T07:42:35Z FINISHED run 996141
+2026-06-28T07:42:36Z SESSION 3223 stopped
+2026-06-28T08:38:01Z STARTED run 1013391 (mode=wild)
+2026-06-28T08:38:02Z SESSION 3224 started
