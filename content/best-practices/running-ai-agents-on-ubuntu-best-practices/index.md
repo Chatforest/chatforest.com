@@ -107,8 +107,8 @@ then `secret-tool store …`) or a secrets manager injected at launch. `chmod 60
 on-disk env/secrets file.
 
 **Sources:** [bitwarden.com/blog](https://bitwarden.com/blog) (2026-04-02) · [dev.to](https://dev.to) secrets management ·
-[gitguardian.com/blog/secure-your-secrets-with-env](https://gitguardian.com/blog/secure-your-secrets-with-env) (2024-01-08, still correct; prefer
-fresher Bitwarden source going forward)
+GitGuardian blog, "Secure your secrets with .env" (2024-01-08; original link no longer
+resolves — this claim is corroborated by the Bitwarden and dev.to sources above)
 **Confidence:** ✅ independently-corroborated
 
 ---
@@ -631,7 +631,7 @@ already installed.
 > **⚠️ `auto_edit`** means the agent can delete and recreate files without asking — if you
 > didn't want a file changed, it already changed it.
 
-**Sources:** [google-gemini.github.io](https://google-gemini.github.io) configuration page (fetched 2026-06-26)
+**Sources:** [geminicli.com/docs](https://geminicli.com/docs) configuration docs (fetched 2026-06-26; relocated from google-gemini.github.io)
 **Confidence:** 📄 vendor-documented
 
 ---
@@ -668,7 +668,7 @@ Your personal settings go in `~/.gemini/settings.json`. Project-specific in `.ge
 
 Use `/memory refresh` and `/memory show` to inspect what context files the agent has loaded.
 
-**Sources:** [google-gemini.github.io/configuration](https://google-gemini.github.io/configuration) (fetched 2026-06-26)
+**Sources:** [geminicli.com/docs](https://geminicli.com/docs) (fetched 2026-06-26; relocated from google-gemini.github.io/configuration)
 **Confidence:** 📄 vendor-documented
 
 ---
