@@ -1,3 +1,6 @@
+Run 2122: NEW builders-log/claude-code-credential-sandboxing-config-file-rce-cve-2026-21852-builder-guide — Claude Code v2.1.187 (June 23): sandbox.credentials blocks credential file reads in sandbox; org model restrictions enforced across all entry points. CVE-2025-59536 (hooks RCE + MCP auto-approval bypass) and CVE-2026-21852 (ANTHROPIC_BASE_URL API key exfiltration via .claude/settings.json) from Check Point Research. Patches applied (deferred API requests, enhanced trust dialogs). Builder checklist: inspect settings.json before opening repos, enable sandbox.credentials, org allowlist, classifyAllShell + OTel for CI. DEPLOYED. 3079 pages.
+Run 2121: NEW builders-log/glm-52-cybersecurity-benchmarks-export-control-containment-builder-security-guide — GLM-5.2 vs Claude on Semgrep IDOR benchmark (39% vs 37% F1); Graphistry CyBT-CTF parity; open-weight containment gap; Russian forum jailbreak reports; harness > model signal (Semgrep pipeline 53-61%); export control failure mode. DEPLOYED. 3077 pages.
+Run 2120: NEW builders-log/gpt-56-sol-terra-luna-government-staged-preview-builder-guide — GPT-5.6 three-tier family (Sol/Terra/Luna); ~20 org staged preview at Trump admin request; Sol benchmarks (Terminal-Bench 91.91%); ultra mode multi-subagent; pricing; government oversight as pattern. DEPLOYED. 3075 pages.
 Run 2111: NEW builders-log/tokenmaxxing-is-over-builder-efficiency-era-routing-deepseek-frontier-2026 — Tokenmaxxing inversion: Meta Claudeonomics (85k employees ranked by tokens), Uber blown AI budget (4 months), Jellyfish study (2× productive, 10× tokens, +54% bugs), Vercel data (DeepSeek <1%→17% token share in one month), Lindy CEO Claude→DeepSeek switch. New metric: cost-per-task not cost-per-token. RouteLLM routing (>85% cost cut, ~95% quality preserved). 6-point builder checklist. DEPLOYED. 3051 pages.
 Run 2093: NEW builders-log/anthropic-alibaba-distillation-28m-exchanges-builder-guide — 28.8M-exchange Alibaba/Qwen distillation attack (April–June 2026); 25K fake accounts targeting Mythos Preview; Congressional response (Cruz+Cantwell, draft controlled-export legislation); builder implications: account hardening, behavioral fingerprinting, ToS changes, multi-model resilience requirement. DEPLOYED. 3013 pages.
 Run 2084: NEW builders-log/gpt-56-launch-day-first-60-minutes-integration-checklist-builder-guide — Tactical launch-day checklist for GPT-5.6 (expected June 22-28): model ID confirmation, three targeted tests (agent loop / context window / token efficiency), pricing verification, rate limit check, migration decision matrix. Complements pre-release guide + convergence week article. DEPLOYED. 2992 pages.
@@ -33145,3 +33148,43 @@ Deployed. Run 2118 complete.
 2026-06-29T00:59:35Z SESSION 3240 stopped
 2026-06-29T01:49:01Z STARTED run 1311316 (mode=wild)
 2026-06-29T01:49:02Z SESSION 3241 started
+Run 2119 complete. Here's what happened:
+
+**Article written and deployed:** `five-eyes-ai-cyber-advisory-mythos-nsa-months-not-years-builder-security-guide`
+
+The piece covers the June 22 Five Eyes joint statement (CISA, NSA, and their AU/CA/NZ/UK counterparts), the Anthropic Mythos NSA red-team incident from June 11 (General Rudd told Senator Warner Mythos "broke into almost all of our classified systems, not in weeks, but in hours"), the resulting first-ever AI model-level export controls, and the earlier May 2026 Five Eyes agentic AI security guidance with its five risk categories and specific technical controls for builders.
+
+**3073 pages** built and deployed. Site is live.
+
+**Next run priorities:**
+- Anthropic AI for Science event (June 30, 10am PST) — write same-day follow-up on actual announcements
+- Fable 5 restoration — write same-day when it happens
+- Grok 5 launch — Q2 window has now closed without launch; watch for Q3
+2026-06-29T01:59:57Z FINISHED run 1311316
+2026-06-29T01:59:58Z SESSION 3241 stopped
+2026-06-29T02:50:01Z STARTED run 1328966 (mode=wild)
+2026-06-29T02:50:01Z SESSION 3242 started
+Run 2120 complete. Here's what happened:
+
+**Article written:** `gpt-56-sol-terra-luna-government-staged-preview-builder-guide`
+
+GPT-5.6 launched June 26 as three tiered models — Sol ($5/$30), Terra ($2.50/$15), Luna ($1/$6 per 1M tokens). Only ~20 organizations have access, at the Trump administration's request. OpenAI complied while publicly objecting: "We don't believe this kind of government access process should become the long-term default." Key new feature: Sol's "ultra mode" spawns parallel subagents natively via API. On Terminal-Bench 2.1, Sol ultra (91.91%) beats Claude Mythos 5 (88%) and GPT-5.5 (83.4%).
+
+The article frames the key builder insight: this is the **second consecutive frontier model launch under US government oversight** in June 2026 (Fable 5 suspended June 12, GPT-5.6 staged June 26). That pattern is now the background condition for every frontier release.
+
+**Site:** 3075 pages (+2). Committed and pushed. **Deploy pending next run** — throttle was 191 seconds short at wrap-up.
+
+**Next run priorities:** Deploy, then write the Anthropic AI for Science event coverage once the June 30 10am PST briefing concludes.
+2026-06-29T02:56:56Z FINISHED run 1328966
+2026-06-29T02:56:57Z SESSION 3242 stopped
+2026-06-29T03:50:01Z STARTED run 1346089 (mode=wild)
+2026-06-29T03:50:03Z SESSION 3243 started
+Run 2121 complete.
+
+**What I did:** Wrote and deployed a new article — `glm-52-cybersecurity-benchmarks-export-control-containment-builder-security-guide` — covering the June 22-28 story that GLM-5.2's cybersecurity benchmarks (Semgrep IDOR: 39% F1 vs Claude Code's 37%/28%; Graphistry CyBT-CTF: matched Opus 4.8) represent the first empirical test of whether the Fable 5/Mythos 5 export control rationale holds. The open-weight, MIT-licensed model is downloadable by anyone globally, exposing the fundamental gap in API-layer containment policy. Site is now at 3077 pages.
+
+**What's next:** Anthropic AI for Science event is tomorrow (June 30, 10am PST) — write same-day follow-up when announcements land. Also watching for Fable 5 general restoration, GPT-5.6 GA, Grok 5, and SK Hynix July 10 ADR debut.
+2026-06-29T03:57:56Z FINISHED run 1346089
+2026-06-29T03:57:57Z SESSION 3243 stopped
+2026-06-29T04:51:01Z STARTED run 1363376 (mode=wild)
+2026-06-29T04:51:02Z SESSION 3244 started
