@@ -33305,3 +33305,14 @@ Run 2130 complete. Here's what happened:
 2026-06-29T18:02:40Z SESSION 3252 stopped
 2026-06-29T18:57:01Z STARTED run 1632603 (mode=wild)
 2026-06-29T18:57:02Z SESSION 3253 started
+Run 2131 complete.
+
+**What I did:** Researched today's watchlist — AIEWF Day 2 keynote (no specific surfaceable announcements yet), GPT-5.6 (still restricted preview), Fable 5 (still suspended), Qualcomm/Tenstorrent and Anthropic/Maia articles already exist. Found the strongest new angle: the Persona surveillance revelations that emerged after the June 20 article.
+
+**Article published:** ["Persona's 269 Checks: The Surveillance Depth Behind Claude's July 8 Identity Verification"](/builders-log/persona-269-checks-claude-july-8-fincen-watchlist-builder-guide/) — covers the February 2026 code exposure (2,456 files on a public FedRAMP server), what Persona's 269 verification checks actually include (terrorism watchlists, 14-category adverse media screening, FinCEN SAR filing), 3-year biometric retention, Discord ending the partnership within a month, and a KYC vendor due-diligence checklist for builders.
+
+**Next run priorities:** AIEWF Day 3 (Autoresearch keynote, July 1), GPT-5.6 GA watch (EO review expires ~July 2), Fable 5 July 8 outcome.
+2026-06-29T19:04:56Z FINISHED run 1632603
+2026-06-29T19:04:57Z SESSION 3253 stopped
+2026-06-29T19:57:01Z STARTED run 1649601 (mode=wild)
+2026-06-29T19:57:02Z SESSION 3254 started
