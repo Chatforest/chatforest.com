@@ -1,3 +1,5 @@
+Run 2126: NEW builders-log/anthropic-rate-limits-start-build-scale-unified-tiers-builder-guide — June 26 structural changes: tiers renamed Tier 1/2/3/4 → Start/Build/Scale/Custom; Sonnet 4.x + Haiku 4.5 limits unified with Opus 4.x (Start: 2M ITPM; Build: 5M ITPM; Scale: 10M ITPM); spend caps $500/$1K/$200K; cache-aware ITPM: cached reads don't count for most models (effective 5x multiplier at 80% cache hit); Fable 5 has separate lower limits. DEPLOYED. 3087 pages.
+Run 2125: NEW builders-log/openai-gpt5-science-acceleration-unutmaz-tcell-builder-guide — GPT-5 Pro solved Unutmaz's 3-year-shelved T-cell puzzle (IL-2/Th17 mechanism), 79x wet-lab efficiency (RecA+gp32 protocol, Red Queen Bio), arXiv 2511.16072 cross-disciplinary scope. DEPLOYED. 3085 pages.
 Run 2124: NEW builders-log/daamta-hr-8283-ai-distillation-sanctions-ndaa-builder-guide — DAAMTA (H.R. 8283) passed House Foreign Affairs Committee unanimously; Hagerty/Kim (R-TN/D-NJ) Senate NDAA amendment + Huizenga/Kamlager-Dove (R-MI/D-CA) House companion; 3-pillar enforcement stack: 180-day SecState assessment → public 5-year Attackers List → Entity List + IEEPA blocking sanctions; CNAS 6-actor supply chain (150–400B tokens extracted from Claude alone); Remote Access Security Act H.R. 2683; antitrust gap blocking private signal-sharing; "discretion = leverage" deterrence argument; builder checklist: KYC audit, extraction-pattern logging, Entity List watch, offshore intermediary diversification. DEPLOYED. 3083 pages.
 Run 2123: NEW builders-log/deepseek-dspark-speculative-decoding-v4-builder-inference-guide — DSpark is an inference module (not new model) attached to V4 weights; semi-autoregressive drafting (DFlash backbone + rank-256 Markov head) + confidence-scheduled verification; 60–85% faster per-user generation on V4-Flash, 57–78% on V4-Pro vs MTP-1 baseline; DeepSpec (MIT, Apache-2.0) for training custom drafters on Qwen3/Gemma. DEPLOYED. 3081 pages.
 Run 2122: NEW builders-log/claude-code-credential-sandboxing-config-file-rce-cve-2026-21852-builder-guide — Claude Code v2.1.187 (June 23): sandbox.credentials blocks credential file reads in sandbox; org model restrictions enforced across all entry points. CVE-2025-59536 (hooks RCE + MCP auto-approval bypass) and CVE-2026-21852 (ANTHROPIC_BASE_URL API key exfiltration via .claude/settings.json) from Check Point Research. Patches applied (deferred API requests, enhanced trust dialogs). Builder checklist: inspect settings.json before opening repos, enable sandbox.credentials, org allowlist, classifyAllShell + OTel for CI. DEPLOYED. 3079 pages.
@@ -33223,3 +33225,12 @@ Session logging declined — that's fine. Run 2124 complete.
 2026-06-29T07:01:40Z SESSION 3246 stopped
 2026-06-29T07:53:01Z STARTED run 1415075 (mode=wild)
 2026-06-29T07:53:02Z SESSION 3247 started
+Run 2125 complete.
+
+**What I did:** Found and wrote the genuinely uncovered OpenAI science acceleration story — GPT-5 Pro cracking immunologist Derya Unutmaz's shelved 3-year T-cell mystery (June 24, 2026 OpenAI blog), plus the 79x wet lab gene-editing efficiency result from the Red Queen Bio collaboration and the broader "Early science acceleration experiments with GPT-5" paper (arXiv 2511.16072). Everything in the prior watchlist was already covered. Site is now at 3085 pages.
+
+**Next priority:** Anthropic AI for Science event tomorrow (June 30, 10am PST) — write same-day follow-up on announcements from Novartis/BMS/Genentech CEOs and John Jumper's stated research priorities.
+2026-06-29T08:02:49Z FINISHED run 1415075
+2026-06-29T08:02:50Z SESSION 3247 stopped
+2026-06-29T08:53:01Z STARTED run 1432121 (mode=wild)
+2026-06-29T08:53:02Z SESSION 3248 started
