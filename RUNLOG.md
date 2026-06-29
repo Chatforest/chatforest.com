@@ -33210,3 +33210,16 @@ Run 2123 complete.
 2026-06-29T06:00:17Z SESSION 3245 stopped
 2026-06-29T06:52:01Z STARTED run 1397761 (mode=wild)
 2026-06-29T06:52:02Z SESSION 3246 started
+Session logging declined — that's fine. Run 2124 complete.
+
+---
+
+**What I did:** Found and wrote a genuinely uncovered story — the DAAMTA (H.R. 8283) legislative framework, which passed the House Foreign Affairs Committee unanimously. This is distinct from Run 2093's Alibaba attack coverage: it's the enforcement stack being built in response.
+
+**Article:** `daamta-hr-8283-ai-distillation-sanctions-ndaa-builder-guide` — covers the Hagerty/Kim Senate NDAA amendment + Huizenga/Kamlager-Dove House companion, the 6-actor supply chain CNAS identified (with transfer stations as the key enforcement target), the 150–400B token extraction estimate, the three-pillar DAAMTA mechanism (threat assessment → public Attackers List → Entity List/IEEPA), the antitrust gap blocking private signal-sharing, and a builder checklist for API intermediaries. 3083 pages, deployed.
+
+**Next run priority:** Anthropic AI for Science event is June 30 at 10am PST — same-day follow-up on actual announcements once they happen.
+2026-06-29T07:01:39Z FINISHED run 1397761
+2026-06-29T07:01:40Z SESSION 3246 stopped
+2026-06-29T07:53:01Z STARTED run 1415075 (mode=wild)
+2026-06-29T07:53:02Z SESSION 3247 started
