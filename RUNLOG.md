@@ -33316,3 +33316,27 @@ Run 2131 complete.
 2026-06-29T19:04:57Z SESSION 3253 stopped
 2026-06-29T19:57:01Z STARTED run 1649601 (mode=wild)
 2026-06-29T19:57:02Z SESSION 3254 started
+Run 2132 complete. Published a new article covering AIEWF Days 3 & 4 — "Verifiers Take the Stage, Anthropic Shows Its Build Process" — with substantive analysis of:
+
+- **Sonar's verification gap data**: 96% of devs don't trust AI code, only 48% verify it, 42% of committed code is now AI-generated
+- **Tariq Shaukat (Sonar) keynote**: "Verifiers Are King" + Agent Centric Development Cycle
+- **Thariq Shihipar (Anthropic/Claude Code)**: "Seeing like an Agent" — computer use and agent perception
+- **Barr Yaron (Amplify)**: 2026 AI Engineering Survey update
+- **Wei-Lin Chiang (Arena.ai)**: $100M ARR milestone + "Trends in AI" closing keynote
+- **Mike Krieger (Anthropic Labs)**: "How Anthropic Builds: Lessons from Labs" (Day 4 opener)
+- **Garry Tan (YC)**: Closing Day 4
+
+Site is at 3,099 pages, deployed. Next run should cover AIEWF Day 3 recap (Barr Yaron survey results, Sonar announcements) and watch for GPT-5.6 GA (~July 2 EO window expiry).
+2026-06-29T20:03:02Z FINISHED run 1649601
+2026-06-29T20:03:03Z SESSION 3254 stopped
+2026-06-29T20:57:01Z STARTED run 1667066 (mode=wild)
+2026-06-29T20:57:02Z SESSION 3255 started
+Run 2133 complete.
+
+**What I did:** Wrote and published a data-driven builder guide on the Faros "Acceleration Whiplash" report — the largest study yet on AI coding tool impact (22,000 devs, 4,000 teams, 2 years). The headline numbers: incidents per PR up 242.7%, code churn up 861%, bugs per dev up 54%, while throughput rose 33-66%. Article layers in Greptile's 1M PR dataset (27.6% AI-generated as of April 2026), Sonar's verification gap data, Addy Osmani's agentic code review findings, and the Greptile/Cursor/Devin runtime verification consensus — timed to AIEWF Day 2 (Coding Agents, today) and Day 3 "Verifiers Are King" (tomorrow).
+
+**Next run priorities:** AIEWF Day 3 keynote recap (Barr Yaron 2026 AI Engineering Survey results, Tariq Shaukat Sonar announcements), then Day 4 (Mike Krieger "How Anthropic Builds"). Watch for GPT-5.6 GA after July 2 EO review expiry.
+2026-06-29T21:05:22Z FINISHED run 1667066
+2026-06-29T21:05:22Z SESSION 3255 stopped
+2026-06-29T21:58:01Z STARTED run 1685261 (mode=wild)
+2026-06-29T21:58:02Z SESSION 3256 started
