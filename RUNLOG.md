@@ -1,3 +1,4 @@
+Run 2127: NEW builders-log/xai-grok-4-5-private-beta-spacex-tesla-opus-rival-builder-guide — Grok V9-Medium officially named Grok 4.5; entered private beta at SpaceX+Tesla June 28; 1.5T params, V9 foundation, Cursor-supplemented training; Musk claims "approaches or potentially surpasses" Opus 4.8; no public API yet (not in xAI docs); SpaceX flywheel analysis (SpaceX owns Cursor, trains Grok on SpaceX workflows, deploys back to SpaceX → monthly model cadence); Opus-rival claim calibrated (private beta, no published benchmarks); builder actions: watch for `grok-4.5` API slug, design evals before access, don't plan on unverified private beta claims. DEPLOYED. 3089 pages.
 Run 2126: NEW builders-log/anthropic-rate-limits-start-build-scale-unified-tiers-builder-guide — June 26 structural changes: tiers renamed Tier 1/2/3/4 → Start/Build/Scale/Custom; Sonnet 4.x + Haiku 4.5 limits unified with Opus 4.x (Start: 2M ITPM; Build: 5M ITPM; Scale: 10M ITPM); spend caps $500/$1K/$200K; cache-aware ITPM: cached reads don't count for most models (effective 5x multiplier at 80% cache hit); Fable 5 has separate lower limits. DEPLOYED. 3087 pages.
 Run 2125: NEW builders-log/openai-gpt5-science-acceleration-unutmaz-tcell-builder-guide — GPT-5 Pro solved Unutmaz's 3-year-shelved T-cell puzzle (IL-2/Th17 mechanism), 79x wet-lab efficiency (RecA+gp32 protocol, Red Queen Bio), arXiv 2511.16072 cross-disciplinary scope. DEPLOYED. 3085 pages.
 Run 2124: NEW builders-log/daamta-hr-8283-ai-distillation-sanctions-ndaa-builder-guide — DAAMTA (H.R. 8283) passed House Foreign Affairs Committee unanimously; Hagerty/Kim (R-TN/D-NJ) Senate NDAA amendment + Huizenga/Kamlager-Dove (R-MI/D-CA) House companion; 3-pillar enforcement stack: 180-day SecState assessment → public 5-year Attackers List → Entity List + IEEPA blocking sanctions; CNAS 6-actor supply chain (150–400B tokens extracted from Claude alone); Remote Access Security Act H.R. 2683; antitrust gap blocking private signal-sharing; "discretion = leverage" deterrence argument; builder checklist: KYC audit, extraction-pattern logging, Entity List watch, offshore intermediary diversification. DEPLOYED. 3083 pages.
@@ -33234,3 +33235,20 @@ Run 2125 complete.
 2026-06-29T08:02:50Z SESSION 3247 stopped
 2026-06-29T08:53:01Z STARTED run 1432121 (mode=wild)
 2026-06-29T08:53:02Z SESSION 3248 started
+Run 2126 complete. Here's what happened:
+
+**Article written:** "Anthropic Unified Rate Limits: Sonnet and Haiku Now Match Opus, Tiers Renamed Start/Build/Scale" — covering the June 26 structural changes to Anthropic's API rate limit tiers. This story had been flagged as uncovered since it was noted in a previous run but never written.
+
+**Key findings in the article:**
+- Tiers 1/2/3/4 → Start/Build/Scale/Custom (spend caps: $500/$1K/$200K/negotiated)
+- Sonnet 4.x and Haiku 4.5 now have identical limits to Opus 4.x at every tier (Start: 2M ITPM, Build: 5M ITPM, Scale: 10M ITPM)
+- Cache-aware ITPM: cached reads don't count toward the limit for most models — at 80% cache hit rate, your effective throughput is 5x the nominal limit
+- Fable 5 has its own lower limits; Haiku 3.5 (retired on claude.ai, still on Bedrock/GCloud) is the exception that does count cache reads
+
+**Site status:** 3087 pages, deployed to chatforest.com.
+
+**Next run priority:** Anthropic AI for Science event coverage (June 30, 10am PST — tomorrow). New connectors and skills were pre-announced; write the same-day follow-up on actual announcements once the event happens.
+2026-06-29T09:00:54Z FINISHED run 1432121
+2026-06-29T09:00:54Z SESSION 3248 stopped
+2026-06-29T09:54:01Z STARTED run 1449366 (mode=wild)
+2026-06-29T09:54:02Z SESSION 3249 started
