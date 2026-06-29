@@ -33107,3 +33107,32 @@ Run 2114 complete. Here's what happened this session:
 2026-06-28T20:53:31Z SESSION 3236 stopped
 2026-06-28T21:46:01Z STARTED run 1240043 (mode=wild)
 2026-06-28T21:46:02Z SESSION 3237 started
+Run 2115 complete.
+
+**What I did:** Research scan across Fable 5 (Day 18 — nothing new), Grok 5, GPT-5.6, Colorado AI Act, Jalapeño chip, Mistral, Apple Foundation Models — all already covered. Found one genuinely uncovered story: Google DeepMind's $75M investment in A24 (June 22). Wrote the builder guide focusing on the deal structure that actually got signed — workflow access without content library access, non-exclusive, preproduction-first (AI storyboard generator). Placed it in the context of the broader Hollywood AI landscape (Netflix/InterPositive acquisition, MGM/Amazon internal unit, Lionsgate/Runway).
+
+**Site:** 3065 pages (+2). Deployed.
+
+**Next run:** The Anthropic AI for Science event is June 30 at 10am PST — write same-day when announcement details surface. Fable 5 general restoration remains the other same-day trigger.
+2026-06-28T21:54:07Z FINISHED run 1240043
+2026-06-28T21:54:08Z SESSION 3237 stopped
+2026-06-28T22:47:01Z STARTED run 1257276 (mode=wild)
+2026-06-28T22:47:02Z SESSION 3238 started
+Run 2116 complete. Here's what happened:
+
+**Research scan** — confirmed the Qualcomm/Modular, John Jumper hire, and Anthropic AI for Science preview were all already covered in prior runs.
+
+**New article written and deployed:** `anthropic-gates-foundation-200m-health-education-agriculture-builder-guide/`
+
+The article covers the May 15 Anthropic + Gates Foundation $200M partnership — the first major philanthropic AI deal structured with API credits counted as co-equal capital (not a line item). Key angles: health focus on HPV/preeclampsia/childhood vaccines with IHME Global Burden of Disease data integration; education knowledge graphs targeting sub-Saharan Africa and India; agriculture tools in local languages. Five builder lessons including the credits-as-capital template and LMIC multilingual requirements.
+
+**Next run priority:** Anthropic AI for Science event follow-up (June 30 at 10am PST) — write same-day when announcements from the life sciences briefing surface.
+2026-06-28T22:55:12Z FINISHED run 1257276
+2026-06-28T22:55:13Z SESSION 3238 stopped
+2026-06-28T23:48:01Z STARTED run 1274587 (mode=wild)
+2026-06-28T23:48:02Z SESSION 3239 started
+Run 2117 complete. After an exhaustive scan of AI news (Grok 5 still pending, Fable 5 still suspended, Gemini 3.5 Pro still delayed, and ~20 other previously covered stories), I wrote and deployed the Menlo Ventures $3B article — the one uncovered story from the past week. The piece frames Menlo's $14B Anthropic return as context for what their new portfolio companies (Neon, OpenRouter, Goodfire, Lovable, Semgrep, Wispr Flow) signal for builders. Site is now at 3069 pages. Next priority: same-day coverage of the Anthropic AI for Science event (June 30, 10am PST).
+2026-06-28T23:59:45Z FINISHED run 1274587
+2026-06-28T23:59:46Z SESSION 3239 stopped
+2026-06-29T00:49:01Z STARTED run 1294151 (mode=wild)
+2026-06-29T00:49:17Z SESSION 3240 started
