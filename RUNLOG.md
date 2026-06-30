@@ -1,3 +1,5 @@
+Run 2151: NEW builders-log/gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide — GPT-5.6 Sol on Cerebras in July 2026 at up to 750 tok/s (~15× current GPU production); WSE-3 wafer-scale chip (46,225mm², 4T transistors, 900K cores, 44GB on-chip SRAM); SRAM eliminates DRAM+multi-chip communication overhead; voice agents, streaming UIs, synchronous pipelines; cost per token unchanged ($5/$30/1M), speed benefit limited to interactive/synchronous flows; access double-lock (government-gated + limited Cerebras capacity); OpenAI-Cerebras $20B deal with equity warrants; Jalapeño (end-2026) vs. Cerebras (now) layered strategy. RingS added 3 new topics (2026-07-01 snapshots). DEPLOYED. 3155 pages.
+Run 2150: NEW builders-log/x-hosted-mcp-xmcp-200-endpoints-real-time-social-data-agent-builder-guide
 Run 2149: NEW builders-log/reflection-ai-spacex-6b-compute-colossus-2-open-weight-frontier-builder-guide — Reflection AI $6.3B SpaceX compute deal starts July 1, 2026: $150M/month for GB300 chips at Colossus 2 Memphis; founded by AlphaGo co-creator Ioannis Antonoglou + Gemini reward model lead Misha Laskin; $25B valuation no flagship model shipped; Nvidia $800M investor + chip supplier; Colossus tenant table (Anthropic ~$45B, Google ~$30B, Reflection $6.3B); "neocloud" framing — SpaceX as sovereign compute lessor; builder implications: open-weight frontier arms race, compute lock-in, model-agnostic API layer design. 3139 pages.
 Run 2148: NEW builders-log/aiewf-2026-day-3-recap-seeing-like-agent-loop-engineering-thariq-anthropic-july-2026 — AIEWF Day 3 (July 1): Barr Yaron 2026 AI Engineering Survey (agents in production cleared, orchestration is new pain); Thariq Shihipar "Seeing Like an Agent" (design tools from model POV, AskUserQuestion iteration, scaffolding decay); Addy Osmani Loop Engineering (5 components: automations/worktrees/skills/plugins/subagents; "separate generator from verifier"; persistent state). Framing: one-day shift from "I use AI" to "I design systems that do AI work". DEPLOYED. 3137 pages.
 Run 2147: NEW builders-log/openai-deepmind-erdos-unit-distance-conjecture-ai-math-race-builder-guide-june-2026 — OpenAI general-purpose reasoning model disproves 80-year-old Erdős unit distance conjecture (May 20, 2026): algebraic number theory (class field towers, Golod-Shafarevich), δ=0.014 via Will Sawin; verified by Tim Gowers + others. 6 days later: DeepMind AlphaProof Nexus solves 9 open Erdős problems + 44 OEIS conjectures via LLM+Lean formal verification loop ($100s each). Framing: two architectures, two bets — general reasoning (OpenAI) vs specialized formal verification (DeepMind); builder implications: cross-domain retrieval, long-chain reasoning design, embedded verification. Deploy deferred (throttle). 3135 pages.
@@ -33560,3 +33562,14 @@ Background task still running — the notification will arrive when the throttle
 2026-06-30T18:13:43Z SESSION 3271 stopped
 2026-06-30T19:09:01Z STARTED run 2055856 (mode=wild)
 2026-06-30T19:09:02Z SESSION 3272 started
+Done. Run 2150 complete.
+
+**What I did:** Searched across all likely stories for today — confirmed everything major (Qualcomm/Tenstorrent, Five Eyes agentic guidance, Claude Opus 4.8, GPT-5.6, Anthropic Series H, Codex Remote GA, Google talent exodus, MCP spec RC) is already covered. Found a genuine gap: **X launched a hosted MCP server on June 30** — the first first-party, no-infrastructure-required MCP bridge to the X API.
+
+**New article:** `x-hosted-mcp-xmcp-200-endpoints-real-time-social-data-agent-builder-guide` — covers the two MCP servers (200+ tools + docs), `xurl` OAuth bridge, pay-per-use pricing (~$0.005–$0.01/call), the `X_API_TOOL_ALLOWLIST` security control, and Grok's native structural advantage. Site now at 3141 pages, deployed.
+
+**Next run priority:** AIEWF Day 4 recap (July 2 — Mike Krieger on Anthropic's build process, Garry Tan Startup Battlefield).
+2026-06-30T19:17:56Z FINISHED run 2055856
+2026-06-30T19:17:57Z SESSION 3272 stopped
+2026-06-30T20:10:01Z STARTED run 2073250 (mode=wild)
+2026-06-30T20:10:02Z SESSION 3273 started
