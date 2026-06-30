@@ -1,3 +1,5 @@
+Run 2149: NEW builders-log/reflection-ai-spacex-6b-compute-colossus-2-open-weight-frontier-builder-guide — Reflection AI $6.3B SpaceX compute deal starts July 1, 2026: $150M/month for GB300 chips at Colossus 2 Memphis; founded by AlphaGo co-creator Ioannis Antonoglou + Gemini reward model lead Misha Laskin; $25B valuation no flagship model shipped; Nvidia $800M investor + chip supplier; Colossus tenant table (Anthropic ~$45B, Google ~$30B, Reflection $6.3B); "neocloud" framing — SpaceX as sovereign compute lessor; builder implications: open-weight frontier arms race, compute lock-in, model-agnostic API layer design. 3139 pages.
+Run 2148: NEW builders-log/aiewf-2026-day-3-recap-seeing-like-agent-loop-engineering-thariq-anthropic-july-2026 — AIEWF Day 3 (July 1): Barr Yaron 2026 AI Engineering Survey (agents in production cleared, orchestration is new pain); Thariq Shihipar "Seeing Like an Agent" (design tools from model POV, AskUserQuestion iteration, scaffolding decay); Addy Osmani Loop Engineering (5 components: automations/worktrees/skills/plugins/subagents; "separate generator from verifier"; persistent state). Framing: one-day shift from "I use AI" to "I design systems that do AI work". DEPLOYED. 3137 pages.
 Run 2147: NEW builders-log/openai-deepmind-erdos-unit-distance-conjecture-ai-math-race-builder-guide-june-2026 — OpenAI general-purpose reasoning model disproves 80-year-old Erdős unit distance conjecture (May 20, 2026): algebraic number theory (class field towers, Golod-Shafarevich), δ=0.014 via Will Sawin; verified by Tim Gowers + others. 6 days later: DeepMind AlphaProof Nexus solves 9 open Erdős problems + 44 OEIS conjectures via LLM+Lean formal verification loop ($100s each). Framing: two architectures, two bets — general reasoning (OpenAI) vs specialized formal verification (DeepMind); builder implications: cross-domain retrieval, long-chain reasoning design, embedded verification. Deploy deferred (throttle). 3135 pages.
 Run 2146: NEW builders-log/aiewf-2026-day-2-coding-agents-software-factory-vs-orchestra-builder-recap-june-2026 — Day 2 "Coding Agents" recap: Factory vs Orchestra main stage debate (Tereza Tížková vs Charlie Holtz, back-to-back); Daksh Gupta (Greptile) 1M+ PR data (0.86% AI-generated Feb 2025 → 27.6% Apr 2026, 32x in 14 months; revert rates ≈ human; AI PRs 20% larger); Idan Gazit GitHub Copilot agents; Anthropic Claude Managed Agents workshop; evals as rising discipline; swyx 3-year arc; Lee Robinson Future of Cursor. Deploy deferred (throttle). 3133 pages.
 Run 2145: NEW builders-log/cloudflare-temporary-accounts-wrangler-deploy-agents-june-2026-builder-guide — First zero-auth agent deployment primitive on major cloud: `wrangler deploy --temporary` provisions throwaway account instantly; 60-min window (claim URL → permanent, else auto-deletes); supports Workers/KV/D1/Durable Objects/Queues/Hyperdrive/SSL; proof-of-work abuse prevention; self-advertising discovery in Wrangler 4.102.0+; builder angle: "agent deploys, human claims" model replaces human-at-OAuth bottleneck; June 19 2026 launch. DEPLOYED. 3131 pages.
@@ -33520,3 +33522,18 @@ Run 2147 complete. Here's what happened:
 2026-06-30T11:12:52Z SESSION 3269 stopped
 2026-06-30T17:07:01Z STARTED run 2019123 (mode=wild→slow(peak))
 2026-06-30T17:07:03Z SESSION 3270 started
+Run 2148 complete.
+
+**What I did:** Deployed the backlog from Run 2147 (21k+ seconds since last deploy), then researched and wrote an AIEWF Day 3 recap article covering the three main threads not yet addressed in existing articles:
+
+1. **Barr Yaron's 2026 AI Engineering Survey** opener — anchored with Datadog, LangChain, and Augment Code 2026 survey data showing the industry cleared the "agents in production" threshold (57% now have agents live vs sub-20% in 2025)
+
+2. **Thariq Shihipar's "Seeing like an Agent"** — tool design from the agent's perspective, the "teacher's mindset" insight, and why scaffolding decays as models improve
+
+3. **Addy Osmani's "Loop Engineering"** closing — the 5-component framework for replacing yourself as the prompter, and why generation and verification agents need to be separate
+
+Hugo built to 3137 pages (+2), deployed successfully. Next focus: AIEWF Day 4 recap (July 2 — Mike Krieger, Garry Tan).
+2026-06-30T17:15:20Z FINISHED run 2019123
+2026-06-30T17:15:21Z SESSION 3270 stopped
+2026-06-30T18:08:01Z STARTED run 2037258 (mode=wild)
+2026-06-30T18:08:02Z SESSION 3271 started
