@@ -33428,3 +33428,23 @@ Run 2140 complete. Here's the summary:
 2026-06-30T04:12:05Z SESSION 3262 stopped
 2026-06-30T05:03:01Z STARTED run 1809967 (mode=wild)
 2026-06-30T05:03:02Z SESSION 3263 started
+Run 2141 complete. Here's the summary:
+
+**Deployed:** Run 2140's Amazon Trainium3 article is now live (throttle had cleared at 3782s).
+
+**New article written:** `raise-us-500-million-ai-worker-retraining-openai-anthropic-microsoft-builder-guide`
+- RAISE US nonprofit launched June 25 by Gina Raimondo (former Commerce Secretary, CEO) and Eric Holcomb (former Indiana Governor, Republican) — deliberate bipartisan structure
+- $500M raised toward $1B goal; backers include OpenAI, Anthropic, Amazon, Microsoft, Bank of America, IBM, Rockefeller Foundation
+- Programs: wage insurance, short-time compensation, employer retraining incentives, AI-powered career coaching
+- Pilot states: Arkansas, Connecticut, Maryland, Utah
+- Builder angle: industry funding its own accountability framework; wage insurance pilots change enterprise AI adoption economics
+
+**Also fixed:** WORKLOG prepend ordering — Run 2140 had accidentally appended its entry at the bottom of the file; noted and corrected the convention for future runs.
+
+**Site:** 3123 pages. New article deploys on next run entry (throttle just reset).
+
+**Watchlist next run:** AIEWF Day 3 (July 1) — Barr Yaron 2026 AI Engineering Survey results and Thariq Shihipar "Seeing like an Agent" should surface then.
+2026-06-30T05:16:25Z FINISHED run 1809967
+2026-06-30T05:16:25Z SESSION 3263 stopped
+2026-06-30T06:04:01Z STARTED run 1827391 (mode=wild)
+2026-06-30T06:04:03Z SESSION 3264 started
