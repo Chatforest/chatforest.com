@@ -3,22 +3,107 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/builders-log/</loc>
+    <lastmod>2026-07-01T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/</loc>
+    <lastmod>2026-07-01T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide/</loc>
+    <lastmod>2026-07-01T10:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/aiewf-2026-day-3-recap-seeing-like-agent-loop-engineering-thariq-anthropic-july-2026/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/builders-log/</loc>
+    <loc>https://chatforest.com/ai/beginner/prompt-engineering-claude-code/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chatforest.com/</loc>
+    <loc>https://chatforest.com/builders-log/claude-opus-48-haiku-45-azure-foundry-ga-enterprise-builder-guide/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/cursor-prompt-engineering/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/cursor-prompt-engineering/2026-07-01/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/cursor-prompt-engineering/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/cursor-prompt-engineering/2026-07-01/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/builders-log/sonar-aiewf-2026-guide-verify-solve-agent-centric-verification-gap-builder-guide/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/prompt-engineering-github-copilot/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/prompt-engineering-claude-code/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/prompt-engineering-claude-code/2026-07-01/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/prompt-engineering-claude-code/2026-07-01/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/prompt-engineering-github-copilot/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/prompt-engineering-github-copilot/2026-07-01/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/prompt-engineering-github-copilot/2026-07-01/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,21 +124,6 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/ai-acceleration-whiplash-faros-2026-incidents-code-quality-aiewf-builder-guide/</loc>
-    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/ai/best-practices/</loc>
-    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/ai/beginner/</loc>
-    <lastmod>2026-06-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/ai/</loc>
     <lastmod>2026-06-30T00:00:00+00:00</lastmod>
   </url>
   
