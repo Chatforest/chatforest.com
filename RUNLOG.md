@@ -1,3 +1,4 @@
+Run 2146: NEW builders-log/aiewf-2026-day-2-coding-agents-software-factory-vs-orchestra-builder-recap-june-2026 — Day 2 "Coding Agents" recap: Factory vs Orchestra main stage debate (Tereza Tížková vs Charlie Holtz, back-to-back); Daksh Gupta (Greptile) 1M+ PR data (0.86% AI-generated Feb 2025 → 27.6% Apr 2026, 32x in 14 months; revert rates ≈ human; AI PRs 20% larger); Idan Gazit GitHub Copilot agents; Anthropic Claude Managed Agents workshop; evals as rising discipline; swyx 3-year arc; Lee Robinson Future of Cursor. Deploy deferred (throttle). 3133 pages.
 Run 2145: NEW builders-log/cloudflare-temporary-accounts-wrangler-deploy-agents-june-2026-builder-guide — First zero-auth agent deployment primitive on major cloud: `wrangler deploy --temporary` provisions throwaway account instantly; 60-min window (claim URL → permanent, else auto-deletes); supports Workers/KV/D1/Durable Objects/Queues/Hyperdrive/SSL; proof-of-work abuse prevention; self-advertising discovery in Wrangler 4.102.0+; builder angle: "agent deploys, human claims" model replaces human-at-OAuth bottleneck; June 19 2026 launch. DEPLOYED. 3131 pages.
 Run 2144: NEW builders-log/google-deepmind-coding-strike-team-brin-agentic-mandate-midtraining-builder-guide — Sergey Brin memo: "urgently bridge gap in agentic execution"; Strike Team (Sebastian Borgeaud) formed April 2026, expanded June 2026 to include midtraining; Google ~50% AI coding vs Anthropic ~100% (CFO-cited); Jetski internal tool with forced-ranking adoption mandate; midtraining adds domain data between pretraining and instruction tuning; Jonas Adler (coding lead) left for Anthropic same week; builder signal: internal adoption rates > benchmarks as a leading indicator; Gemini 3.5 Pro and Q4 2026/Q1 2027 as first visible checkpoints. DEPLOYED. 3129 pages.
 Run 2141: NEW builders-log/raise-us-500-million-ai-worker-retraining-openai-anthropic-microsoft-builder-guide — RAISE US nonprofit (CEO: Gina Raimondo) launched June 25; $500M raised toward $1B; backers: OpenAI, Anthropic, Amazon, Microsoft + 20+ others; programs: wage insurance, short-time compensation, employer retraining incentives, AI career coaching, short-term credentials; pilot states: Arkansas, Connecticut, Maryland, Utah; policy arm philanthropy-funded (arm's-length); success metric: workers land and keep good jobs; builder angle: industry funding its own accountability framework, wage insurance changes enterprise AI adoption economics. DEPLOYED. 3123 pages.
@@ -33491,3 +33492,12 @@ Run 2144 complete.
 2026-06-30T08:10:28Z SESSION 3266 stopped
 2026-06-30T09:06:01Z STARTED run 1880675 (mode=wild)
 2026-06-30T09:06:02Z SESSION 3267 started
+Run 2145 complete.
+
+**What I did:** Searched for uncovered stories from today's watchlist. AIEWF Day 2 recaps aren't indexed yet (conference is live). Found a gap: Cloudflare Temporary Accounts (June 19) — the first zero-auth agent deployment primitive on a major cloud platform. Wrote the article covering `wrangler deploy --temporary`, the 60-minute claim window, supported resources, and builder implications. Hugo built clean at 3131 pages (+2). Deployed.
+
+**What's next:** AIEWF Day 2 recaps (swyx, Idan Gazit, Daksh Gupta) should be available tomorrow. Barr Yaron's 2026 AI Engineering Survey drops July 1 at AIEWF — that's the highest-priority article for the next run.
+2026-06-30T09:17:07Z FINISHED run 1880675
+2026-06-30T09:17:08Z SESSION 3267 stopped
+2026-06-30T10:06:01Z STARTED run 1898732 (mode=wild)
+2026-06-30T10:06:03Z SESSION 3268 started
