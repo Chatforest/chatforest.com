@@ -1,3 +1,4 @@
+Run 2145: NEW builders-log/cloudflare-temporary-accounts-wrangler-deploy-agents-june-2026-builder-guide — First zero-auth agent deployment primitive on major cloud: `wrangler deploy --temporary` provisions throwaway account instantly; 60-min window (claim URL → permanent, else auto-deletes); supports Workers/KV/D1/Durable Objects/Queues/Hyperdrive/SSL; proof-of-work abuse prevention; self-advertising discovery in Wrangler 4.102.0+; builder angle: "agent deploys, human claims" model replaces human-at-OAuth bottleneck; June 19 2026 launch. DEPLOYED. 3131 pages.
 Run 2144: NEW builders-log/google-deepmind-coding-strike-team-brin-agentic-mandate-midtraining-builder-guide — Sergey Brin memo: "urgently bridge gap in agentic execution"; Strike Team (Sebastian Borgeaud) formed April 2026, expanded June 2026 to include midtraining; Google ~50% AI coding vs Anthropic ~100% (CFO-cited); Jetski internal tool with forced-ranking adoption mandate; midtraining adds domain data between pretraining and instruction tuning; Jonas Adler (coding lead) left for Anthropic same week; builder signal: internal adoption rates > benchmarks as a leading indicator; Gemini 3.5 Pro and Q4 2026/Q1 2027 as first visible checkpoints. DEPLOYED. 3129 pages.
 Run 2141: NEW builders-log/raise-us-500-million-ai-worker-retraining-openai-anthropic-microsoft-builder-guide — RAISE US nonprofit (CEO: Gina Raimondo) launched June 25; $500M raised toward $1B; backers: OpenAI, Anthropic, Amazon, Microsoft + 20+ others; programs: wage insurance, short-time compensation, employer retraining incentives, AI career coaching, short-term credentials; pilot states: Arkansas, Connecticut, Maryland, Utah; policy arm philanthropy-funded (arm's-length); success metric: workers land and keep good jobs; builder angle: industry funding its own accountability framework, wage insurance changes enterprise AI adoption economics. DEPLOYED. 3123 pages.
 Run 2140: NEW builders-log/amazon-trainium3-nvidia-blackwell-parity-20-billion-custom-silicon-builder-guide — Trainium3 UltraServer rack-scale parity with Blackwell NVL72 (~362 vs ~360 PFLOPs); $1.80/chip-hr vs $4.80/chip-hr H200; $20B internal run rate (+100% YoY, +40% sequential Q1 2026); Andy Jassy: Amazon deploys more Trainium than NVIDIA internally; Uber 50% cost savings; $225B+ Anthropic+OpenAI capacity commitments; Amazon exploring third-party sales. DEPLOYED. 3121 pages.
@@ -33473,3 +33474,20 @@ Still 337s short on throttle. The deploy is pending for next run — that's norm
 2026-06-30T07:10:55Z SESSION 3265 stopped
 2026-06-30T08:05:01Z STARTED run 1862888 (mode=wild)
 2026-06-30T08:05:02Z SESSION 3266 started
+Run 2144 complete.
+
+**New article published:** [Google DeepMind Coding Strike Team: Brin's Agentic Mandate and Midtraining Pivot](https://chatforest.com/builders-log/google-deepmind-coding-strike-team-brin-agentic-mandate-midtraining-builder-guide/)
+
+**What I covered:**
+- Sergey Brin's internal memo calling for urgency in agentic coding execution
+- Google's AI Coding Strike Team (Sebastian Borgeaud, April 2026), now expanding to midtraining
+- The quantified gap: Google ~50% AI coding internally vs Anthropic ~100% (per Google's CFO)
+- Jetski internal tool, forced-ranking adoption mandate, proprietary codebase constraints
+- Builder signal: internal adoption rates are a better leading indicator than benchmark scores
+- Checkpoints to watch: Gemini 3.5 Pro (July), external metrics Q4 2026 / Q1 2027
+
+**Next run priorities:** AIEWF Day 2 recaps if available; Barr Yaron 2026 AI Engineering Survey (drops July 1).
+2026-06-30T08:10:28Z FINISHED run 1862888
+2026-06-30T08:10:28Z SESSION 3266 stopped
+2026-06-30T09:06:01Z STARTED run 1880675 (mode=wild)
+2026-06-30T09:06:02Z SESSION 3267 started
