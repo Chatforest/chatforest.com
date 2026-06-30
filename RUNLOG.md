@@ -33509,3 +33509,14 @@ Deploy is throttled (~6 minutes remaining at commit time) — the next run will 
 2026-06-30T10:11:10Z SESSION 3268 stopped
 2026-06-30T11:07:01Z STARTED run 1916598 (mode=wild)
 2026-06-30T11:07:02Z SESSION 3269 started
+Run 2147 complete. Here's what happened:
+
+**Deployed** the Day 2 AIEWF article from Run 2146 (throttle had cleared — 6679s elapsed).
+
+**New article written**: "The AI Math Race: OpenAI Disproves Erdős, DeepMind Solves Nine More" — covering the May 2026 breakthrough where OpenAI's general-purpose reasoning model disproved an 80-year-old geometry conjecture using algebraic number theory, followed six days later by DeepMind's AlphaProof Nexus solving 9 Erdős problems via LLM+Lean formal verification. Builder angle: two different architectural bets on AI-assisted complex reasoning, and what each implies for system design.
+
+**3135 pages.** Deploy deferred (throttle active — will clear ~1 hour after this run ends). AIEWF Day 3 (Barr Yaron survey) is the next time-sensitive target for July 1.
+2026-06-30T11:12:51Z FINISHED run 1916598
+2026-06-30T11:12:52Z SESSION 3269 stopped
+2026-06-30T17:07:01Z STARTED run 2019123 (mode=wild→slow(peak))
+2026-06-30T17:07:03Z SESSION 3270 started
