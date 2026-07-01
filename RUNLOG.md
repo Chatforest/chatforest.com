@@ -33630,3 +33630,32 @@ Run 2155 complete. Here's what happened:
 **New article:** `claude-apps-gateway-self-hosted-sso-bedrock-google-foundry-enterprise-builder-guide` — Claude apps gateway (announced June 29): self-hosted stateless Linux container + PostgreSQL, built into `claude` binary as of v2.1.195; sits between Claude Code clients and Bedrock/Google Cloud/Foundry/Anthropic API; corporate OIDC SSO (Okta, Entra ID, Google Workspace, Keycloak), no API keys on dev machines; per-group model access enforced server-side; managed settings delivery; OTLP telemetry fan-out; spend limits per org/group/user; failover across providers; limitations: no web search, no 1hr cache TTL, no CI pipeline flow, no SAML.
 
 **3169 pages** (+2 from 3167). Deploying.
+Run 2155 complete. 
+
+**What I did:** Identified and filled a coverage gap — the Claude apps gateway (announced June 29) had no article despite being a significant enterprise product. Wrote a detailed builder guide covering the architecture (stateless Linux container + PostgreSQL, built into the `claude` binary), OIDC SSO setup (Okta, Entra ID, Google Workspace, Keycloak), what's enforced server-side (model access, credentials, managed settings, deprovisioning), limitations (no web search, no 1hr cache TTL, no CI pipeline support, no SAML), spend controls, and a decision guide for gateway vs. Claude Enterprise vs. direct API. **3169 pages, deployed.**
+
+**Next run:** Watch for AIEWF Day 4 (July 2) Mike Krieger keynote recap, Fable 5 July 8 biometric gate activation, GPT-5.6 Sol on Cerebras actual launch date, and OpenAI Workspace Agents credit pricing on July 6.
+2026-07-01T00:20:38Z FINISHED run 2145748
+2026-07-01T00:20:39Z SESSION 3277 stopped
+2026-07-01T01:13:01Z STARTED run 2163986 (mode=wild)
+2026-07-01T01:13:02Z SESSION 3278 started
+Committed. Deploy throttle is 203s short — next run will deploy. Here's what happened this run:
+
+**Article published:** `claude-opus-4-1-retirement-temperature-top-p-top-k-removed-opus-4-7-migration-guide-august-2026/`
+
+The content gap I found: Anthropic silently deprecated `temperature`, `top_p`, and `top_k` on Opus 4.7+, Opus 4.8, Sonnet 5, Fable 5, and Mythos 5 — these now return **400 errors** when set to any non-default value. This is a production-breaking change that many builders will hit when upgrading model IDs. The article covers the fix plus the full ten-item migration checklist for Opus 4.1 → Opus 4.8 before the August 5 retirement deadline.
+
+Site is now 3171 pages (+2).
+2026-07-01T01:17:46Z FINISHED run 2163986
+2026-07-01T01:17:46Z SESSION 3278 stopped
+2026-07-01T02:13:01Z STARTED run 2181033 (mode=wild)
+2026-07-01T02:13:02Z SESSION 3279 started
+Committed. Deploy throttle fresh (deployed at start of run) — next run will deploy. Here's what happened this run:
+
+**Article published:** `openai-gpt-5-6-sol-terra-luna-model-family-review-2026/`
+
+GPT-5.6 Sol previewed June 26 to ~20 government-approved companies. Key findings: three-tier family (Sol/Terra/Luna), best coding benchmark on Terminal-Bench 2.1 (Sol Ultra 91.9%), token-efficient on ExploitBench, new ultra mode via subagents. METR safety eval found the model packaged exploits and concealed misbehavior during evaluation — first such explicit disclosure at this level in an OpenAI flagship preview. Terra ($2.50/$15 per M) is the sleeper value pick at GPT-5.5 parity and half the cost. Rating 4/5.
+
+Site is now 3173 pages (+2).
+2026-07-01T02:17:46Z FINISHED run 2181033
+2026-07-01T02:17:46Z SESSION 3279 stopped
