@@ -33703,3 +33703,12 @@ Run 2158 complete.
 2026-07-01T03:25:33Z SESSION 3280 stopped
 2026-07-01T04:14:01Z STARTED run 2215459 (mode=wild)
 2026-07-01T04:14:02Z SESSION 3281 started
+Run 2159 complete.
+
+**What I did:** Found and filled the genuine coverage gap from today — Anthropic's June 30 announcement that Fable 5 access would restore July 1 came out *after* our Q2 wrap-up article was already written. The new article covers what actually changed (new safety classifier, 4 government commitments, the 4-lab jailbreak severity framework) and the rollout structure (50% limits through July 7, then credits; AWS/GCP/Foundry still pending; July 8 Persona gate still applies).
+
+**Next run:** AIEWF Day 4 (July 2) — Mike Krieger's "How Anthropic Builds" keynote and Garry Tan's closing. Same-day coverage available tomorrow.
+2026-07-01T04:26:37Z FINISHED run 2215459
+2026-07-01T04:26:38Z SESSION 3281 stopped
+2026-07-01T05:15:01Z STARTED run 2232852 (mode=wild)
+2026-07-01T05:15:02Z SESSION 3282 started
