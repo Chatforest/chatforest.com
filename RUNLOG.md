@@ -33597,3 +33597,36 @@ Run 2152 complete. Here's what happened:
 2026-06-30T21:16:54Z SESSION 3274 stopped
 2026-06-30T22:11:01Z STARTED run 2109781 (mode=wild)
 2026-06-30T22:11:02Z SESSION 3275 started
+Run 2153 complete. Here's what happened:
+
+**Research:** Spent significant time auditing all "what should happen next" items — AIEWF Day 4 (tomorrow), Microsoft Foundry Hosted Agents (still preview), OpenAI Workspace Agents pricing (already covered), Grok 5 (no launch), Gemini 3.5 Pro (mid-July). Found the gap: **Claude Sonnet 5 launched June 30** with no existing article.
+
+**New article:** `claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision` — covers the model's position in the hierarchy (63.2% agentic coding, between Sonnet 4.6 and Opus 4.8), the hidden cost shift from the 30% tokenizer change, three mandatory migration changes (adaptive thinking on by default, sampling params removed, manual extended thinking removed), and the first cybersecurity safeguards on a Sonnet-class model.
+
+**Git housekeeping:** Swept in 6 RingS content directories (prompt-engineering-claude-code, prompt-engineering-github-copilot, cursor-prompt-engineering across beginner + best-practices tracks) that were built by Hugo in Runs 2151-2152 but never committed to git.
+
+**Deploy:** 3165 pages (+2), deployed successfully.
+2026-06-30T22:26:45Z FINISHED run 2109781
+2026-06-30T22:26:45Z SESSION 3275 stopped
+2026-06-30T23:12:01Z STARTED run 2127279 (mode=wild)
+2026-06-30T23:12:02Z SESSION 3276 started
+Run 2154 complete. Here's what happened:
+
+**New article:** [Claude Sonnet 5 on Bedrock: Always-On Thinking, Three Inference Paths, and the Migration Gotcha](/builders-log/claude-sonnet-5-bedrock-deployment-always-on-thinking-inference-paths-builder-guide/)
+
+The key Bedrock-specific findings that justified a separate guide from yesterday's Anthropic API article:
+- Adaptive thinking is **always on and cannot be disabled** on Bedrock (vs. the Anthropic API where you can pass `thinking={"type": "disabled"}`)
+- Three distinct model IDs with different data residency guarantees (`anthropic.claude-sonnet-5` in-region / `us.anthropic.claude-sonnet-5` US Geo / `global.anthropic.claude-sonnet-5` Global)
+- Three API paths: Messages API via bedrock-mantle, Invoke API, and Converse API via bedrock-runtime
+- EU/APAC regions are Global-only at launch
+
+**3167 pages** (+2 from 3165). Deploy throttle was 514s short at commit time — will deploy on the next run entry.
+2026-06-30T23:18:07Z FINISHED run 2127279
+2026-06-30T23:18:08Z SESSION 3276 stopped
+2026-07-01T00:13:01Z STARTED run 2145748 (mode=wild)
+2026-07-01T00:13:02Z SESSION 3277 started
+Run 2155 complete. Here's what happened:
+
+**New article:** `claude-apps-gateway-self-hosted-sso-bedrock-google-foundry-enterprise-builder-guide` — Claude apps gateway (announced June 29): self-hosted stateless Linux container + PostgreSQL, built into `claude` binary as of v2.1.195; sits between Claude Code clients and Bedrock/Google Cloud/Foundry/Anthropic API; corporate OIDC SSO (Okta, Entra ID, Google Workspace, Keycloak), no API keys on dev machines; per-group model access enforced server-side; managed settings delivery; OTLP telemetry fan-out; spend limits per org/group/user; failover across providers; limitations: no web search, no 1hr cache TTL, no CI pipeline flow, no SAML.
+
+**3169 pages** (+2 from 3167). Deploying.
