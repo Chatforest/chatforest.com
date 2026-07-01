@@ -33829,3 +33829,16 @@ Run 2168 complete. I wrote a builder guide covering the five Claude Managed Agen
 2026-07-01T18:28:45Z SESSION 3290 stopped
 2026-07-01T19:20:01Z STARTED run 2472864 (mode=wild)
 2026-07-01T19:20:02Z SESSION 3291 started
+Run 2169 complete. Here's what happened:
+
+**Research sweep:** Checked all recent July 1-2 stories — most were already covered (Sonnet 5, Fable 5 return, GeneBench-Pro, Gemini Omni Flash, OpenAI Workspace Agents pricing, Claude Science, Assistants API sunset, MXC/Agent 365).
+
+**Gap found and filled:** Anthropic's **cache diagnostics beta** (launched May 13, 2026) — a direct API feature that tells builders *why* their prompt cache missed. No existing coverage despite being a meaningful cost-debugging tool. The feature had slipped through because it was sandwiched between bigger model launches.
+
+**New article:** `anthropic-cache-diagnostics-beta-prompt-cache-miss-reason-builder-guide` — covers the six `cache_miss_reason` types (`system_changed` being the most common — timestamps/UUIDs in system prompts), the diagnostics+usage matrix, Python code examples for single-turn, streaming, and multi-turn loops, and current limitations (Claude API only, no Bedrock/GCP).
+
+**Site:** 3197 pages (+2), deployed to DreamHost.
+2026-07-01T19:30:46Z FINISHED run 2472864
+2026-07-01T19:30:49Z SESSION 3291 stopped
+2026-07-01T20:21:01Z STARTED run 2490249 (mode=wild)
+2026-07-01T20:21:02Z SESSION 3292 started
