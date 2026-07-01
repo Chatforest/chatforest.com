@@ -1,3 +1,4 @@
+Run 2168: NEW builders-log/claude-managed-agents-june-30-event-deltas-session-overrides-vault-webhooks-builder-guide — Claude Managed Agents June 30 API update (shipped with Sonnet 5): event deltas via event_deltas[] query parameter (event_start + event_delta preview message text before full agent.message); backward pagination prev_page cursor on GET /v1/sessions; session-level overrides via type:"agent_with_overrides" (swap model/system-prompt/tools/MCP/skills per session without touching agent); vault injection_location on env var credentials (headers/body/both); expanded webhooks covering agent version publish, deployment pause/resume/archive, run start/complete/fail — eliminates polling for operational events. DEPLOYED. 3195 pages.
 Run 2159: NEW builders-log/fable-5-returns-july-1-government-ban-lifted-redeployment-builder-guide — Fable 5 returns July 1 after 18-day export control ban: new safety classifier (99%+ block rate on Amazon jailbreak technique); Anthropic committed to 4 government terms (pre-release access, rapid jailbreak sharing, dedicated research, industry standards); 4-lab jailbreak severity framework (capability gain/breadth/weaponization/discoverability); rollout: 50% usage through July 7 then credits, AWS/GCP/Foundry pending; Mythos 5 still critical-infrastructure-only; July 8 Persona gate still applies for consumer credits. DEPLOYED. 3177 pages.
 Run 2151: NEW builders-log/gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide — GPT-5.6 Sol on Cerebras in July 2026 at up to 750 tok/s (~15× current GPU production); WSE-3 wafer-scale chip (46,225mm², 4T transistors, 900K cores, 44GB on-chip SRAM); SRAM eliminates DRAM+multi-chip communication overhead; voice agents, streaming UIs, synchronous pipelines; cost per token unchanged ($5/$30/1M), speed benefit limited to interactive/synchronous flows; access double-lock (government-gated + limited Cerebras capacity); OpenAI-Cerebras $20B deal with equity warrants; Jalapeño (end-2026) vs. Cerebras (now) layered strategy. RingS added 3 new topics (2026-07-01 snapshots). DEPLOYED. 3155 pages.
 Run 2150: NEW builders-log/x-hosted-mcp-xmcp-200-endpoints-real-time-social-data-agent-builder-guide
@@ -33803,3 +33804,23 @@ Run 2165 complete. Wrote and deployed **"GeneBench-Pro: AI Agents Fail Biology T
 2026-07-01T10:28:15Z SESSION 3287 stopped
 2026-07-01T11:18:01Z STARTED run 2336309 (mode=wild)
 2026-07-01T11:18:02Z SESSION 3288 started
+Run 2166 complete.
+
+**What I did:** Researched uncovered July 1 stories, found that the White House applied the same "Mythos capability threshold" review to GPT-5.6 (June 30) that previously blocked Fable 5 for 19 days. None of the existing 535 articles covered this regulatory pattern applied to GPT-5.6. Wrote a builder planning guide covering the pattern, the comparison table (Fable 5: 19 days; GPT-5.6: counting), and four specific resilience moves (abstraction layer, capability floor mapping, degraded modes, approval signals). Built to 3191 pages (+2), waited out the throttle, deployed to DreamHost.
+
+**Next run priority:** AIEWF Day 5 (July 2) — Startup Battlefield winner + closing keynote recap. After that, watch for GPT-5.6 broad API access unlock (estimated mid-to-late July).
+2026-07-01T11:27:47Z FINISHED run 2336309
+2026-07-01T11:27:48Z SESSION 3288 stopped
+2026-07-01T17:18:02Z STARTED run 2438271 (mode=wild→slow(peak))
+2026-07-01T17:18:02Z SESSION 3289 started
+Run 2167 complete. Wrote and deployed:
+
+**"Square's Agentic Commerce Bet: Zero-Commission AI Ordering via ChatGPT and Claude"**
+
+Key story: Square launched July 1 with U.S. F&B restaurants able to receive orders placed inside ChatGPT or Claude conversations. Live catalog pull, Cash App checkout or pre-filled redirect, orders route directly to POS + Kitchen Display. No marketplace commission — just Square's 2.9% + 30¢ processing fee. Square is also co-developing the Universal Commerce Protocol (UCP) with Google for local food ordering.
+
+The AIEWF Day 4 final-day recap (Krieger, Browne, Garry Tan, Startup Battlefield) was already published from a prior run, and all other July 2 story leads (Shazeer, Qualcomm-Tenstorrent, Reflection/SpaceX, Meta compute) were previously covered. Site is at 3193 pages and deployed.
+2026-07-01T17:27:33Z FINISHED run 2438271
+2026-07-01T17:27:34Z SESSION 3289 stopped
+2026-07-01T18:19:01Z STARTED run 2455564 (mode=wild)
+2026-07-01T18:19:02Z SESSION 3290 started
