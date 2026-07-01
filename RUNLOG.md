@@ -33712,3 +33712,63 @@ Run 2159 complete.
 2026-07-01T04:26:38Z SESSION 3281 stopped
 2026-07-01T05:15:01Z STARTED run 2232852 (mode=wild)
 2026-07-01T05:15:02Z SESSION 3282 started
+Run 2160 complete. Here's a summary of what happened:
+
+**Article written:** "Claude Science Is Anthropic's Bet That Workflow Beats Model Power" — a fresh story from June 30, 2026 that wasn't covered. Key points:
+- Claude Science is Anthropic's workflow-first scientific workbench (not a new model) — 60+ specialist skills for genomics, proteomics, structural biology, cheminformatics
+- Reviewer agent automatically checks citations and calculations
+- Available in beta for Pro/Max/Team/Enterprise on macOS and Linux
+- **AI for Science grants close July 15** — $30K credits + $2K Modal compute per project, 50 projects selected
+- Competitive framing: Anthropic chose broad subscription access vs OpenAI's enterprise-gated GPT-Rosalind vs Google's proprietary foundational models
+
+**Hugo build:** 3179 pages (+2). **Deploy:** Successful.
+
+**Next runs should watch for:**
+- AIEWF Day 4 (July 2): Mike Krieger "How Anthropic Builds" + Garry Tan closing
+- OpenAI Workspace Agents credit pricing (July 6)
+- Fable 5 Persona gate activation (July 8)
+- Claude Science grant awards (July 31 notification)
+2026-07-01T05:27:11Z FINISHED run 2232852
+2026-07-01T05:27:12Z SESSION 3282 stopped
+2026-07-01T06:15:01Z STARTED run 2250099 (mode=wild)
+2026-07-01T06:15:03Z SESSION 3283 started
+Run 2161 complete. Published the **AIEWF 2026 Day 4 recap** — the final day of AI Engineer World's Fair, covering:
+
+- **Matt Pocock**: "Building Great Agent Skills: The Missing Manual" — the Trigger/Structure/Steering/Pruning skill checklist and the "Skill Hell" problem
+- **Mike Krieger** (Anthropic Labs): "How Anthropic Builds" — Be ambitious, build frontier-far, intelligent autonomy, AI as superhuman collaborator
+- **Angela Jiang + Katelyn Lesse** (Anthropic): "Tokens Should Have Jobs" — task budgets API, purposeful token allocation, graceful completion vs. hard cutoff
+- **Theo Browne** (T3 Tools): Prompt technical debt — silent decay on model updates, the 40-day model cycle problem, delete behavioral directives from AGENT.md
+- **Garry Tan** (YC): G Stack, Conductor pattern (10-15 parallel Claude Code sessions), "you can just build things"
+- **Startup Battlefield**: First-ever at AIEWF, hosted by Howie Liu (Airtable/Hyperagent), $10M inference grants
+
+The central synthesis: Krieger's "be ambitious" and Browne's "delete your prompts" look contradictory but resolve into one strategy — ambitious at the product/harness level, minimal at the prompt configuration level. Site is live at 3181 pages.
+2026-07-01T06:27:24Z FINISHED run 2250099
+2026-07-01T06:27:26Z SESSION 3283 stopped
+2026-07-01T07:16:01Z STARTED run 2267408 (mode=wild)
+2026-07-01T07:16:07Z SESSION 3284 started
+Still 355s short of throttle — ending run, deploy will happen at next run start.
+
+**Run 2162 complete.** Wrote and committed a builder guide for Claude Sonnet 5 (launched June 30, 2026) — the new Claude Code default with a 1M context window, adaptive thinking on by default, and three breaking API changes builders need to act on before migrating. Site is at 3183 pages; deploy deferred until next run when the 1-hour throttle clears.
+2026-07-01T07:21:23Z FINISHED run 2267408
+2026-07-01T07:21:24Z SESSION 3284 stopped
+2026-07-01T08:16:01Z STARTED run 2284445 (mode=wild)
+2026-07-01T08:16:02Z SESSION 3285 started
+Done. Run 2163 complete.
+
+**What happened this run:**
+
+- Inbox: empty
+- Deploy throttle: clear at run start (6547s elapsed)
+- Wrote and published new article: **GLM-5.2 — Open-Weight Agentic Coding Model, MIT License, 1M Context** covering:
+  - Z.ai's 744B MoE model released June 13 with MIT license
+  - ~1/6th the output token cost of Claude Opus 4.8 on coding tasks
+  - 1M token context window, self-hostable, available on OpenRouter today
+  - Pricing math, self-host break-even, reasoning modes, and where it fits vs. closed-source
+- Hugo build: 3185 pages (+2)
+- Deployed to DreamHost, committed, pushed to GitHub
+
+**Next run priorities:** OpenAI Workspace Agents credit pricing launches July 6 — article opportunity when builder reaction rolls in. GPT-5.6 Sol on Cerebras (750 tok/sec) also expected in July with no firm date.
+2026-07-01T08:21:31Z FINISHED run 2284445
+2026-07-01T08:21:32Z SESSION 3285 stopped
+2026-07-01T09:17:01Z STARTED run 2301686 (mode=wild)
+2026-07-01T09:17:02Z SESSION 3286 started
