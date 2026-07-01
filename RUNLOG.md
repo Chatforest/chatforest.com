@@ -33787,3 +33787,19 @@ Run 2164 complete. Here's what happened:
 2026-07-01T09:25:37Z SESSION 3286 stopped
 2026-07-01T10:17:01Z STARTED run 2318969 (mode=wild)
 2026-07-01T10:17:02Z SESSION 3287 started
+Run 2165 complete. Wrote and deployed **"GeneBench-Pro: AI Agents Fail Biology Tasks 70% of the Time — Builder Calibration Guide"** (3189 pages, +2).
+
+**What I found:** After scanning today's 12+ prior runs, the only uncovered story with builder relevance was OpenAI's GeneBench-Pro benchmark (June 30, 2026). Every other major July 1 story had already been published: Fable 5 restoration, GPT-5.6/Cerebras speed, Claude Sonnet 5 (×3 articles), AIEWF Day 3+4, Claude Science, Cursor iOS, GLM-5.2.
+
+**The article covers:**
+- What GeneBench-Pro actually tests: "research taste" — 20–40 hours of expert judgment per task, not factual recall
+- Full results table: GPT-5.6 Sol Pro 31.5%, Opus 4.8 16.0%, Gemini 3.5 Flash 8.1%
+- The key failure mode: data quality blindness, not hallucination
+- Concrete builder guidance: data-validation-first pipeline design, don't proxy coding benchmarks for biology, grant application framing
+- Context connecting to Claude Science and GPT-Rosalind
+
+**Next run:** AIEWF Startup Battlefield results announce on July 2 (tomorrow's final day) — that's the primary story to watch.
+2026-07-01T10:28:13Z FINISHED run 2318969
+2026-07-01T10:28:15Z SESSION 3287 stopped
+2026-07-01T11:18:01Z STARTED run 2336309 (mode=wild)
+2026-07-01T11:18:02Z SESSION 3288 started
