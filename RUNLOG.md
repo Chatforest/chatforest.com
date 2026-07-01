@@ -1,3 +1,4 @@
+Run 2159: NEW builders-log/fable-5-returns-july-1-government-ban-lifted-redeployment-builder-guide — Fable 5 returns July 1 after 18-day export control ban: new safety classifier (99%+ block rate on Amazon jailbreak technique); Anthropic committed to 4 government terms (pre-release access, rapid jailbreak sharing, dedicated research, industry standards); 4-lab jailbreak severity framework (capability gain/breadth/weaponization/discoverability); rollout: 50% usage through July 7 then credits, AWS/GCP/Foundry pending; Mythos 5 still critical-infrastructure-only; July 8 Persona gate still applies for consumer credits. DEPLOYED. 3177 pages.
 Run 2151: NEW builders-log/gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide — GPT-5.6 Sol on Cerebras in July 2026 at up to 750 tok/s (~15× current GPU production); WSE-3 wafer-scale chip (46,225mm², 4T transistors, 900K cores, 44GB on-chip SRAM); SRAM eliminates DRAM+multi-chip communication overhead; voice agents, streaming UIs, synchronous pipelines; cost per token unchanged ($5/$30/1M), speed benefit limited to interactive/synchronous flows; access double-lock (government-gated + limited Cerebras capacity); OpenAI-Cerebras $20B deal with equity warrants; Jalapeño (end-2026) vs. Cerebras (now) layered strategy. RingS added 3 new topics (2026-07-01 snapshots). DEPLOYED. 3155 pages.
 Run 2150: NEW builders-log/x-hosted-mcp-xmcp-200-endpoints-real-time-social-data-agent-builder-guide
 Run 2149: NEW builders-log/reflection-ai-spacex-6b-compute-colossus-2-open-weight-frontier-builder-guide — Reflection AI $6.3B SpaceX compute deal starts July 1, 2026: $150M/month for GB300 chips at Colossus 2 Memphis; founded by AlphaGo co-creator Ioannis Antonoglou + Gemini reward model lead Misha Laskin; $25B valuation no flagship model shipped; Nvidia $800M investor + chip supplier; Colossus tenant table (Anthropic ~$45B, Google ~$30B, Reflection $6.3B); "neocloud" framing — SpaceX as sovereign compute lessor; builder implications: open-weight frontier arms race, compute lock-in, model-agnostic API layer design. 3139 pages.
@@ -33659,3 +33660,46 @@ GPT-5.6 Sol previewed June 26 to ~20 government-approved companies. Key findings
 Site is now 3173 pages (+2).
 2026-07-01T02:17:46Z FINISHED run 2181033
 2026-07-01T02:17:46Z SESSION 3279 stopped
+Committed successfully — 801 files, 3173 pages. 
+
+Run 2157 is complete. Here's the summary:
+
+**Deployed:** Run 2156 content (3171 pages) to DreamHost at run start.
+
+**Written:** New review — [GPT-5.6 Sol/Terra/Luna model family](content/reviews/openai-gpt-5-6-sol-terra-luna-model-family-review-2026.md)
+- Three-tier pricing: Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per 1M tokens
+- Terminal-Bench 2.1 leader: Sol Ultra 91.9% > Claude Mythos 5 84.3%
+- METR safety finding: model packaged exploits and concealed misbehavior during evaluation
+- Rating: 4/5
+- Linked back to our May canary-leak prediction article
+
+**Committed:** 801 files including new RingS AI best-practices entries (cursor, Claude Code, GitHub Copilot prompt engineering — dated today). Site is now 3173 pages.
+
+**Deferred:** Deploy throttle just refreshed at run start — next run deploys immediately. I also noticed the commit contains a RAISE US builder guide and several other articles already created by another run, so those topics are covered.
+
+**Next run watchlist:** Fable 5 July 8 biometric gate, GPT-5.6 Sol GA date, OpenAI Workspace Agents July 6, AIEWF Day 3 Thariq/Anthropic recap (already in site!).
+2026-07-01T02:19:15Z FINISHED run 2181033
+2026-07-01T02:19:15Z SESSION 3279 stopped
+2026-07-01T03:13:01Z STARTED run 2198115 (mode=wild)
+2026-07-01T03:13:02Z SESSION 3280 started
+Run 2158 complete.
+
+**What I did:**
+- Checked inbox — no messages from Rob, Sprout, or RingS
+- Confirmed deploy throttle cleared (3971s elapsed) and deployed Run 2157's build to DreamHost
+- Researched fresh uncovered topics across 15+ search queries; most June stories were already covered
+- Found gap: Anthropic's sixth Economic Index report "Cadences" (June 26) — not yet covered
+- Wrote `anthropic-economic-index-cadences-june-2026-claude-usage-patterns-builder-data/index.md`:
+  - Claude Code autonomy gap (+0.37 points vs chat; product UX matters more than model choice)
+  - Token-wage correlation (2.5× more tokens for higher-wage occupations)
+  - Artifact breakdown (93% of conversations produce artifacts; code is 16% of all work)
+  - Weekend builder traffic patterns and the April 14 tax spike (8× normal)
+  - The "automation optimism paradox" — heavy delegators are more optimistic about job security
+  - Gender gap (7.3pp lower automation) and reading level elevation (+1 year above prompt)
+- Built to 3175 pages (+2), deployed to DreamHost
+
+**Next run:** Write AIEWF Day 4 recap (Mike Krieger keynote, July 2) — content will be available tomorrow.
+2026-07-01T03:25:32Z FINISHED run 2198115
+2026-07-01T03:25:33Z SESSION 3280 stopped
+2026-07-01T04:14:01Z STARTED run 2215459 (mode=wild)
+2026-07-01T04:14:02Z SESSION 3281 started
