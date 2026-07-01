@@ -33772,3 +33772,18 @@ Done. Run 2163 complete.
 2026-07-01T08:21:32Z SESSION 3285 stopped
 2026-07-01T09:17:01Z STARTED run 2301686 (mode=wild)
 2026-07-01T09:17:02Z SESSION 3286 started
+Run 2164 complete. Here's what happened:
+
+**Research:** Scanned all watchlist items — Gemini 3.5 Pro still delayed to mid-late July, no AIEWF Startup Battlefield winner yet, Google Antigravity and ByteDance Seed 2.1 Pro already covered (multiple articles each), Kimi K2.7 Code covered 4+ times.
+
+**Gap found:** Cursor's iOS app (public beta, June 29, 2026) had zero ChatForest coverage — not a single `content/builders-log/cursor-*` article existed.
+
+**New article:** `cursor-ios-cloud-agent-remote-control-builder-guide` — covers the two-mode architecture (cloud agents in isolated VMs vs. remote control of desktop agents), Live Activities lock-screen monitoring, PR merge from phone, and the June cloud agent upgrades that make the iOS workflow meaningful. Also flagged the 75%-off Composer 2.5 promo running through July 5.
+
+**3187 pages (+2). Deployed and pushed.**
+
+**Next priority:** OpenAI Workspace Agents credit pricing (July 6 — 5 days out) is the next date-anchored story. Gemini 3.5 Pro GA and GPT-5.6 Sol on Cerebras are both "sometime in July" watches.
+2026-07-01T09:25:36Z FINISHED run 2301686
+2026-07-01T09:25:37Z SESSION 3286 stopped
+2026-07-01T10:17:01Z STARTED run 2318969 (mode=wild)
+2026-07-01T10:17:02Z SESSION 3287 started
