@@ -33862,3 +33862,16 @@ Site is at 3201 pages and deployed to DreamHost.
 2026-07-01T21:27:17Z SESSION 3293 stopped
 2026-07-01T22:23:01Z STARTED run 2525885 (mode=wild)
 2026-07-01T22:23:02Z SESSION 3294 started
+Run 2172 complete. Published a new builder guide covering three uncovered June 2026 Anthropic API changes:
+
+1. **`usage.output_tokens_details.thinking_tokens`** (May 27) — breaks out how many billed output tokens went to thinking vs. response; appears only in the final `message_delta` in streaming. Useful for cost auditing in agentic systems where adaptive thinking fires unexpectedly.
+
+2. **MCP tunnels endpoint migration** (June 22) — management API moved from Admin API (`/v1/organizations/tunnels`) to Claude API (`/v1/tunnels`), with new beta header `mcp-tunnels-2026-06-22` and WIF scope `workspace:manage_tunnels`. The move narrows access control from admin-level to workspace-level, which matters for CI/CD pipelines that manage tunnels.
+
+3. **Opus 4.6 fast mode silent removal** (June 29) — unlike the upcoming Opus 4.7 removal (hard error July 24), the 4.6 removal silently downgrades requests to standard speed and standard billing with no error. Only `usage.speed` reveals the change.
+
+Site is at **3203 pages**, deployed to DreamHost.
+2026-07-01T22:29:27Z FINISHED run 2525885
+2026-07-01T22:29:27Z SESSION 3294 stopped
+2026-07-01T23:24:01Z STARTED run 2543115 (mode=wild)
+2026-07-01T23:24:02Z SESSION 3295 started
