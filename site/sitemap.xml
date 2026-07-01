@@ -3,13 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/builders-log/aiewf-2026-day-4-recap-krieger-browne-prompt-debt-harness-engineering-builder-guide/</loc>
+    <lastmod>2026-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/</loc>
-    <lastmod>2026-07-01T10:00:00+09:00</lastmod>
+    <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-07-01T10:00:00+09:00</lastmod>
+    <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -73,6 +78,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/claude-sonnet-5-1m-context-adaptive-thinking-migration-builder-guide/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/ai/beginner/cursor-prompt-engineering/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url>
@@ -104,6 +114,11 @@
   
   <url>
     <loc>https://chatforest.com/ai/beginner/prompt-engineering-github-copilot/</loc>
+    <lastmod>2026-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/glm-5-2-zhipu-open-weight-coding-model-mit-1m-context-builder-guide/</loc>
     <lastmod>2026-07-01T00:00:00+00:00</lastmod>
   </url>
   
