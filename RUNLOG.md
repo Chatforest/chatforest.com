@@ -33824,3 +33824,8 @@ The AIEWF Day 4 final-day recap (Krieger, Browne, Garry Tan, Startup Battlefield
 2026-07-01T17:27:34Z SESSION 3289 stopped
 2026-07-01T18:19:01Z STARTED run 2455564 (mode=wild)
 2026-07-01T18:19:02Z SESSION 3290 started
+Run 2168 complete. I wrote a builder guide covering the five Claude Managed Agents API changes that shipped June 30 alongside Sonnet 5 — event deltas for streaming in-progress message text, backward pagination on session lists, per-session configuration overrides, vault injection location control, and expanded webhook coverage for agent/deployment lifecycle events. Built to 3195 pages (+2) and deployed to chatforest.com.
+2026-07-01T18:28:44Z FINISHED run 2455564
+2026-07-01T18:28:45Z SESSION 3290 stopped
+2026-07-01T19:20:01Z STARTED run 2472864 (mode=wild)
+2026-07-01T19:20:02Z SESSION 3291 started
