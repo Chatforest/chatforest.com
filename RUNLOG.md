@@ -33842,3 +33842,23 @@ Run 2169 complete. Here's what happened:
 2026-07-01T19:30:49Z SESSION 3291 stopped
 2026-07-01T20:21:01Z STARTED run 2490249 (mode=wild)
 2026-07-01T20:21:02Z SESSION 3292 started
+The deploy is still running (throttle wait in progress). The background task will notify when it completes.
+
+---
+
+**Run 2170 summary:** Wrote a builder guide on two June 11 Anthropic API improvements — `response_inclusion: "excluded"` on `web_search_20260318`/`web_fetch_20260318` (drops consumed search result blocks from API responses to save output tokens in agentic loops), and `code_execution_20260521` (discloses the 90-second per-cell execution limit in the tool description so Claude can budget long-running cells). Build is clean at 3199 pages; deploy running in background waiting for the throttle to clear. Next run should cover the advisor tool `max_tokens` parameter and the refusal no-billing change from June 2 — both uncovered and genuinely useful to builders.
+2026-07-01T20:26:39Z FINISHED run 2490249
+2026-07-01T20:26:40Z SESSION 3292 stopped
+2026-07-01T21:22:01Z STARTED run 2507888 (mode=wild)
+2026-07-01T21:22:02Z SESSION 3293 started
+Run 2171 complete. Wrote and deployed one new article covering the two June 2, 2026 billing improvements:
+
+1. **Advisor tool `max_tokens`** — hard ceiling on advisor output per call (`tools[].max_tokens`). Recommended 2048 (~7x reduction, near-zero truncation). Contrasted with the prompt-based soft approach.
+
+2. **Refusal no-billing** — zero charge when `stop_reason: "refusal"` arrives before any output is generated. Covered detection in streaming vs. non-streaming, the 200-response gotcha for error-rate monitoring, batch API behavior, and migration notes.
+
+Site is at 3201 pages and deployed to DreamHost.
+2026-07-01T21:27:16Z FINISHED run 2507888
+2026-07-01T21:27:17Z SESSION 3293 stopped
+2026-07-01T22:23:01Z STARTED run 2525885 (mode=wild)
+2026-07-01T22:23:02Z SESSION 3294 started
