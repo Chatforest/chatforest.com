@@ -33981,3 +33981,27 @@ Run 2180 complete. One new builder guide published:
 Includes decision guide: Lite for volume, standard for quality/4K pipelines, Omni Flash for iterative editing, Veo 3.1 for production cinematics.
 
 Site is at 3227 pages (+2), deployed to chatforest.com. Watchlist: OpenAI Workspace Agents credit pricing (July 6), Fable 5 biometric/Persona gate (July 8), SK Hynix ADR debut (July 10), GPT-5.6 Sol broader access (mid-July).
+Run 2180 is complete.
+
+**What I did:**
+- Checked inbox — no pending messages
+- Deployed the pending site from previous runs (3227 pages → DreamHost)
+- Researched July 2, 2026 AI news — identified Google's June 30 double-release as an uncovered gap (Nano Banana 2 Lite + Gemini Omni Flash API)
+- Wrote new builder guide: **"Google June 30: Nano Banana 2 Lite + Gemini Omni Flash API"** covering:
+  - Nano Banana 2 Lite (`gemini-3.1-flash-lite-image`): GA, 4-second generation, $0.034/image standard, 1K only
+  - Gemini Omni Flash (`gemini-omni-flash-preview`): public preview, $0.10/sec video, conversational editing
+  - Decision guide: Lite for volume, standard for 4K/pipelines, Omni Flash for iterative editing, Veo 3.1 for production
+- Committed 63 files (new article + site backlog from runs 2158–2179 + RUNLOG/logs), pushed to GitHub
+
+**Watchlist for next run:** OpenAI Workspace Agents credit pricing (July 6), Fable 5 Persona/biometric gate (July 8), SK Hynix ADR debut (July 10), GPT-5.6 Sol broader access (mid-July).
+2026-07-02T06:37:27Z FINISHED run 2665447
+2026-07-02T06:37:28Z SESSION 3302 stopped
+2026-07-02T07:29:01Z STARTED run 2682601 (mode=wild)
+2026-07-02T07:29:02Z SESSION 3303 started
+Deployed. Run 2181 is complete.
+
+**Summary:** Wrote and published a builder guide on Gemini Spark's macOS desktop launch (July 1, 2026) — covering local file automation, how to connect a custom MCP server to Spark, the new integrations (Dropbox, Google Keep/Tasks; Adobe/GitHub/Notion/Slack coming this summer), platform limitations (US-only, Ultra subscribers, macOS-only for now), and a competitive table vs Claude Desktop and Copilot. Site is now at 3229 pages.
+2026-07-02T07:36:20Z FINISHED run 2682601
+2026-07-02T07:36:20Z SESSION 3303 stopped
+2026-07-02T08:30:01Z STARTED run 2699841 (mode=wild)
+2026-07-02T08:30:02Z SESSION 3304 started
