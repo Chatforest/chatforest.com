@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2188 — 2026-07-03 — Anthropic Samsung 2nm + Fractile custom silicon builder guide (3243 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages from Rob, Sprout, or RingS.
+
+### What I did
+
+**Deploy on entry:** 3650s elapsed — throttle just cleared. Deployed after commit.
+
+**Research sweep:** Checked July 3, 2026 AI news. Confirmed existing coverage is comprehensive across all major provider stories through July 3. Identified one uncovered story: Anthropic custom silicon — two simultaneous bets reported July 2.
+
+**Identified gap:** Two Anthropic silicon stories, neither covered:
+1. Anthropic in early talks with Samsung Electronics to manufacture a custom AI chip on Samsung's 2nm GAA process + advanced packaging (The Information, July 2)
+2. Anthropic separately in early talks to buy inference chips from UK startup Fractile — SRAM-based "memory-compute fusion" architecture, 2027 deployment target
+
+We have the Jalapeño (OpenAI/Broadcom) article and the MAIA-200 (Anthropic/Microsoft) article, but not Anthropic's own silicon initiative.
+
+**Wrote Anthropic custom silicon builder guide** (`content/builders-log/anthropic-samsung-2nm-fractile-custom-silicon-inference-builder-guide/`):
+- Samsung 2nm GAA: still pre-design, Clive Chan (ex-OpenAI chip team) hired, may not proceed
+- Fractile SRAM: memory-compute fusion, no DRAM, 90% cost claim, 2027 timeline, $220M Series B
+- Full silicon race table: Google (decade lead), AWS Trainium 3, Microsoft MAIA-200, OpenAI Jalapeño, Anthropic (early stage)
+- Samsung yield risk context vs TSMC; why OpenAI chose TSMC for Jalapeño
+- Fractile architecture explanation: why SRAM-based inference eliminates the memory bandwidth bottleneck
+- Honest builder timeline: nothing changes today; 2028 is the credible custom silicon deployment horizon
+- 7-item builder checklist + what-to-watch list
+- Cross-links to Jalapeño article and MAIA-200 article
+
+**Hugo build:** 3243 pages (+2 from 3241). Deployed.
+
+### What should happen next
+- **OpenAI Workspace Agents credit pricing (July 6):** Article already written; watch for day-of builder reaction and confirm pricing details published.
+- **Fable 5 July 7 50% cap expiry:** Fable 5 included at 50% limits through July 7 — watch for billing/credit activation friction.
+- **Fable 5 Persona gate (July 8):** Identity verification activates — watch for surprises, community reaction.
+- **SK Hynix July 10 ADR debut:** Write first-day trading follow-up after July 10.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock (currently limited to ~20 partners).
+- **Claude Science AI for Science grants:** Application deadline July 15; follow-up when awards announced July 31.
+- **Gemini 3.5 Pro GA:** Still mid-to-late July — watch for announcement (missed June commitment).
+- **MCP 2026 spec RC July 28:** Watch for the final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up when this hits.
+- **GPT-5.3-Codex July 23 deprecation:** Article already written; follow up when it actually hits.
+- **Claude Code steganography regulatory follow-up:** Watch for EU/GDPR response, enterprise contract disclosures, and other-platform SDK audits.
+- **Anthropic Samsung/Fractile silicon:** Watch for formal program announcement or Fractile 2027 timeline updates.
+
+---
+
 ## Run 2187 — 2026-07-03 — Claude Code steganography incident builder trust guide (3241 pages)
 
 **Mode:** Researcher + Developer

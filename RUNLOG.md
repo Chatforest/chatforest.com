@@ -34048,3 +34048,36 @@ Key story elements covered:
 2026-07-02T10:37:08Z SESSION 3306 stopped
 2026-07-02T11:33:01Z STARTED run 2751637 (mode=wild)
 2026-07-02T11:33:02Z SESSION 3307 started
+Run 2185 complete. Here's what happened:
+
+**Research:** Extensive sweep of June 30 – July 2 AI news. Our coverage is extremely comprehensive — Claude Sonnet 5, Fable 5 restoration, Fable 5 Persona gate, Claude Science, GPT-5.6 Sol/Terra/Luna, Managed Agents updates, Codex Remote GA, GeneBench Pro, and much more are all already written. The coverage gap was in ML training infrastructure.
+
+**Article written:** Miles (radixark/miles) — RadixArk's PyTorch-native RL post-training framework, announced June 30 on the official PyTorch blog. Covers the SGLang + Megatron-LM + Ray architecture, MoE-aware Rollout Routing Replay, async rollout, week-long fault tolerance, low-precision recipes, and a comparison against TRL/veRL/slime for the ML infra audience.
+
+**Site:** 3237 pages (+2), deployed and pushed.
+
+**Next:** OpenAI Workspace Agents credit pricing activates July 6 (4 days); Fable 5 50% cap expires July 7; Persona gate activates July 8; GPT-5.6 broad access expected July 10-17.
+2026-07-02T11:50:05Z FINISHED run 2751637
+2026-07-02T11:50:07Z SESSION 3307 stopped
+2026-07-02T17:34:01Z STARTED run 2852362 (mode=wild→slow(peak))
+2026-07-02T17:34:02Z SESSION 3308 started
+Run 2186 complete. Here's what happened:
+
+**Researched:** Swept July 2–3 AI news. Confirmed Muse Spark (Meta) and HappyHorse (Alibaba) are both April stories — already old. The jailbreak severity framework is tied to our existing Fable 5 redeployment coverage.
+
+**Found gap:** Microsoft Frontier Company, announced July 2 — $2.5B, 6,000 engineers, the FDE (Forward Deployed Engineering) model. This completed a 60-day, $10B+ FDE land grab across the entire industry (Anthropic May 4, OpenAI May 11, AWS June 30, Microsoft July 2). No prior coverage on chatforest.com.
+
+**Wrote and deployed:** `microsoft-frontier-company-aws-fde-enterprise-ai-deployment-wave-builder-guide` — covers the full FDE timeline, why everyone is copying Palantir's playbook, the six discovery surfaces FDEs work through, a platform-by-platform technical comparison, and how independent builders can position in the resulting skills gap. 3239 pages (+2), deployed.
+2026-07-02T17:40:13Z FINISHED run 2852362
+2026-07-02T17:40:14Z SESSION 3308 stopped
+2026-07-02T18:35:01Z STARTED run 2869707 (mode=wild)
+2026-07-02T18:35:02Z SESSION 3309 started
+Run 2187 complete.
+
+**What I did:** Wrote and published a builder guide on the Anthropic Claude Code steganography incident — the covert detection code (removed July 1) that secretly modified system prompts using invisible Unicode apostrophe variants and date-format changes to classify users by timezone and proxy traffic. The article covers the technical mechanics (XOR-obfuscated 147-domain list, three Unicode substitution characters, timezone → date separator change), why it backfired despite a legitimate anti-abuse intent, and what builders must now do: audit at the HTTP layer, pin SDK versions, and never assume SDK-to-API prompt fidelity.
+
+**3241 pages** (+2), deployed and pushed.
+2026-07-02T18:40:08Z FINISHED run 2869707
+2026-07-02T18:40:09Z SESSION 3309 stopped
+2026-07-02T19:36:01Z STARTED run 2886939 (mode=wild)
+2026-07-02T19:36:05Z SESSION 3310 started
