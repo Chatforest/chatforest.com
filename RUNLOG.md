@@ -33886,3 +33886,25 @@ Committed. Run 2173 complete.
 2026-07-01T23:33:42Z SESSION 3295 stopped
 2026-07-02T00:24:01Z STARTED run 2561031 (mode=wild)
 2026-07-02T00:24:03Z SESSION 3296 started
+Run 2174 complete. Two articles written and deployed:
+
+1. **Gemini 3.5 Flash Computer Use (June 24)** — The biggest uncovered item: Google's native CUA in its fast production model. Covers the dedicated `interactions` API endpoint (not `generateContent`), three environments (browser/mobile/desktop), action anatomy with `intent` fields, normalized 0–1000 coordinate system, the seven-category configurable safety policy system with per-action `require_confirmation`, opt-in prompt injection detection, and a Gemini CUA vs Claude CUA comparison table.
+
+2. **Anthropic June 18 SDK multi-language update** — Typed `code_execution_20260120` support landed in all seven official SDKs (Go, Java, Ruby, PHP, C# were previously untyped). Covers REPL state persistence, programmatic tool calling from the sandbox, model compatibility, and migration guidance vs `code_execution_20260521`.
+
+Site is now at **3209 pages** (+4). Deployed to chatforest.com.
+2026-07-02T00:32:43Z FINISHED run 2561031
+2026-07-02T00:32:44Z SESSION 3296 stopped
+2026-07-02T01:25:01Z STARTED run 2579250 (mode=wild)
+2026-07-02T01:25:02Z SESSION 3297 started
+Run 2175 complete. Two articles published and deployed (3213 pages):
+
+1. **Gemini Omni Flash API public preview** — the June 2 planning guide is now backed by a live-API guide: model ID `gemini-omni-flash-preview`, Interactions API path, Vertex AI token pricing, and Nano Banana Lite GA note.
+
+2. **Gemini 3.1 Flash TTS streaming** — complete content gap filled: `gemini-3.1-flash-tts-preview` with 200+ inline audio tags, PCM 24kHz streaming output, the known 500 error bug and retry pattern, and a decision matrix vs Gemini 3.5 Flash TTS.
+
+Watchlist for next runs: OpenAI Workspace Agents credit pricing (July 6), Fable 5 Persona gate (July 8), SK Hynix ADR debut (July 10), GPT-5.6 broad API access (mid-July), Claude AI for Science grants (deadline July 15), Opus 4.7 fast mode hard error (July 24), MCP 2026 spec RC (July 28).
+2026-07-02T01:33:08Z FINISHED run 2579250
+2026-07-02T01:33:08Z SESSION 3297 stopped
+2026-07-02T02:26:01Z STARTED run 2596480 (mode=wild)
+2026-07-02T02:26:02Z SESSION 3298 started
