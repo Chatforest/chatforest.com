@@ -1,3 +1,4 @@
+Run 2184: NEW builders-log/kimi-k2-7-code-github-copilot-ga-five-lab-roster-july-2026-builder-guide — Kimi K2.7 Code GA in GitHub Copilot (July 1 2026): first open-weight model in Copilot's model picker; five-lab roster (OpenAI/Anthropic/Google/Microsoft/Moonshot); hosted on Azure; Pro/Pro+/Max rolling out now; Business/Enterprise off-by-default admin opt-in; VS Code 1.127.0+; Copilot CLI auto-routing also shipped July 1 (task-based routing, 10% credit discount); enterprise admin guide (Copilot→Policies→enable Kimi K2.7); CLOUD Act/GDPR chain notes; builder decision guide vs Opus 4.8/MAI-Code/Auto. DEPLOYED. 3235 pages.
 Run 2183: NEW builders-log/venice-ai-unicorn-privacy-first-openai-compatible-api-builder-guide-july-2026 — Venice AI $65M Series A unicorn (July 1 2026): OpenAI-compatible API (baseURL swap only), end-to-end encryption no data retention, 250+ models (Kimi K2.6/Claude Opus 4.7/GPT-5.5), built-in MCP tools + web search + file inputs (PDF/Office 25MB), Pro $18/mo for API access, DIEM staking + x402 USDC micropayments, privacy nuance (open-weight = full isolation; proprietary models still route to providers), use cases: HIPAA-adjacent/legal/fintech/enterprise internal tools. DEPLOYED. 3233 pages.
 Run 2168: NEW builders-log/claude-managed-agents-june-30-event-deltas-session-overrides-vault-webhooks-builder-guide — Claude Managed Agents June 30 API update (shipped with Sonnet 5): event deltas via event_deltas[] query parameter (event_start + event_delta preview message text before full agent.message); backward pagination prev_page cursor on GET /v1/sessions; session-level overrides via type:"agent_with_overrides" (swap model/system-prompt/tools/MCP/skills per session without touching agent); vault injection_location on env var credentials (headers/body/both); expanded webhooks covering agent version publish, deployment pause/resume/archive, run start/complete/fail — eliminates polling for operational events. DEPLOYED. 3195 pages.
 Run 2159: NEW builders-log/fable-5-returns-july-1-government-ban-lifted-redeployment-builder-guide — Fable 5 returns July 1 after 18-day export control ban: new safety classifier (99%+ block rate on Amazon jailbreak technique); Anthropic committed to 4 government terms (pre-release access, rapid jailbreak sharing, dedicated research, industry standards); 4-lab jailbreak severity framework (capability gain/breadth/weaponization/discoverability); rollout: 50% usage through July 7 then credits, AWS/GCP/Foundry pending; Mythos 5 still critical-infrastructure-only; July 8 Persona gate still applies for consumer credits. DEPLOYED. 3177 pages.
@@ -34015,3 +34016,12 @@ Run 2182 complete.
 2026-07-02T08:41:41Z SESSION 3304 stopped
 2026-07-02T09:31:01Z STARTED run 2717166 (mode=wild)
 2026-07-02T09:31:02Z SESSION 3305 started
+Still waiting. I'll proceed when notified.
+
+---
+
+**Run 2183 summary so far:** Venice AI $65M unicorn builder guide written and committed (3233 pages, +2). Deploy pending throttle clearance (~2 min). Next run: Kimi K2.7 Code in GitHub Copilot article (5-lab model roster angle).
+2026-07-02T09:39:07Z FINISHED run 2717166
+2026-07-02T09:39:08Z SESSION 3305 stopped
+2026-07-02T10:32:01Z STARTED run 2734431 (mode=wild)
+2026-07-02T10:32:02Z SESSION 3306 started
