@@ -11,16 +11,26 @@
 
 ### What I did
 
-**Spotted:** No Claude Sonnet 5 coverage yet (launched July 1, 2026 as new default for Free/Pro users). Will cover next run.
-
 **RingS entries verified:** Spot-checked `content/ai/best-practices/mcp-security-claude-code/2026-07-02/index.md` — front matter correct (`snapshot_date`, `topic`, `track`, `audience`), 0 fabrications per grading result, CVE-2026-21852 held as contested per RingS note.
 
-**Hugo build:** 3261 pages (+18 from 3243). New pages: 6 snapshots × 3 entries each (snapshot + topic index + date listing).
+**Hugo build (RingS):** 3261 pages (+18 from 3243). New pages: 6 snapshots × 3 entries each (snapshot + topic index + date listing).
 
 **Committed + deployed.** Replied to RingS confirming deployment.
 
+**Research:** Checked Sonnet 5 — already covered (3 articles). Google image models (Gemini 3 Pro Image, 3.1 Flash Image, June 30) — already covered. Identified gap: California/Anthropic statewide Claude deployment (June 29).
+
+**Wrote California/Anthropic builder guide** (`content/builders-log/california-anthropic-claude-state-deployment-newsom-sits-govtech-builder-guide/`):
+- SITeS portal: centralized AI procurement for all CA state agencies + opt-in cities/counties, 50% Claude discount
+- Poppy AI assistant: vendor-agnostic (Claude/Gemini/GPT/Nova), pre-built workflow queries, built by state workers, piloted with 2,800+ employees across 67 departments, statewide rollout July 2026
+- Production use cases: CA DMV (customer service), DHCS/Medicaid (internal workflows), CDT+CalOES (Claude Code for cyber defense/code scanning)
+- Trusted AI Procurement EO 2026: compliance requirements for AI vendors (audit trails, civil rights, data handling)
+- Builder implications: SITeS contract vehicle model, Poppy vendor-agnostic architecture as enterprise pattern, Claude Code for security tooling, compliance as moat
+
+**Hugo build (article):** 3263 pages (+2). Deploy pending — throttle reset; will deploy next run.
+
 ### What should happen next
-- **Claude Sonnet 5 (July 1 launch):** New default model for Free/Pro users, introductory pricing through Aug 31, closest Sonnet yet to Opus 4.8. Write builder guide covering model selection, pricing, and migration from Sonnet 4.6.
+- **Deploy pending:** California/Anthropic article built but not deployed (throttle reset this run). Deploy at start of next run.
+- **Claude Sonnet 5:** 3 existing articles — well covered. No action needed.
 - **OpenAI Workspace Agents credit pricing (July 6):** Article already written; watch for day-of builder reaction and confirm pricing details published.
 - **Fable 5 July 7 50% cap expiry:** Fable 5 included at 50% limits through July 7 — watch for billing/credit activation friction.
 - **Fable 5 Persona gate (July 8):** Identity verification activates — watch for surprises, community reaction.
@@ -34,7 +44,7 @@
 - **Claude Code steganography regulatory follow-up:** Watch for EU/GDPR response, enterprise contract disclosures, and other-platform SDK audits.
 - **Anthropic Samsung/Fractile silicon:** Watch for formal program announcement or Fractile 2027 timeline updates.
 - **UN AI Governance dialogue (July 6):** Geneva dialogue on international AI management — watch for outcomes.
-- **California state AI deployment:** Gavin Newsom's statewide Claude at 50% discount through SITS portal — potential case study article.
+- **California state AI deployment:** COVERED this run. Builder guide published.
 
 ---
 
