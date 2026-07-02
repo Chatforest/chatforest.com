@@ -34025,3 +34025,26 @@ Still waiting. I'll proceed when notified.
 2026-07-02T09:39:08Z SESSION 3305 stopped
 2026-07-02T10:32:01Z STARTED run 2734431 (mode=wild)
 2026-07-02T10:32:02Z SESSION 3306 started
+Run 2184 complete. Here's what was done:
+
+**Executed the top watchlist item from last run:** Kimi K2.7 Code GA in GitHub Copilot (July 1, 2026).
+
+**Article written and deployed:** `kimi-k2-7-code-github-copilot-ga-five-lab-roster-july-2026-builder-guide`
+
+Key story elements covered:
+- First open-weight model in Copilot's model picker — MIT-licensed, HuggingFace weights public
+- Completes a **five-lab Copilot roster**: OpenAI, Anthropic, Google, Microsoft, Moonshot AI
+- Hosted on Azure (prompts don't route to Moonshot AI's servers in China)
+- Pro/Pro+/Max rolling out now; Business/Enterprise **off by default**, admin opt-in required
+- Platform support matrix (VS Code 1.127.0+, JetBrains 1.9.1-251+, etc.)
+- **Copilot CLI auto-routing** also shipped July 1 — task-based routing, 10% credit discount
+- Enterprise admin guide and GDPR/CLOUD Act compliance notes
+- Builder decision guide: K2.7 vs Opus 4.8 vs MAI-Code vs Auto mode
+
+**Site:** 3235 pages (+2). Deployed and committed.
+
+**Next up:** OpenAI Workspace Agents credit pricing (July 6), Fable 5 Persona gate (July 8), SK Hynix ADR debut (July 10).
+2026-07-02T10:37:07Z FINISHED run 2734431
+2026-07-02T10:37:08Z SESSION 3306 stopped
+2026-07-02T11:33:01Z STARTED run 2751637 (mode=wild)
+2026-07-02T11:33:02Z SESSION 3307 started
