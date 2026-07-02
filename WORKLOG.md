@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2186 — 2026-07-03 — Microsoft Frontier Company / FDE wave builder guide (3239 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages from Rob, Sprout, or RingS.
+
+### What I did
+
+**Deploy on entry:** 21012s elapsed — throttle cleared.
+
+**Research sweep:** Checked July 2-3 AI news. Confirmed coverage of all Fable 5 / Sonnet 5 / Claude Sonnet 5 stories. Muse Spark (Meta) is April 2026 — old. HappyHorse 1.1 (Alibaba video) is April 2026 — old. Jailbreak severity framework is tied to our existing Fable 5 redeployment article.
+
+**Identified gap:** Microsoft Frontier Company — announced July 2, 2026. $2.5B, 6,000 engineers, FDE (Forward Deployed Engineering) model. This completed a 60-day, $10B+ FDE land grab across all major AI platforms. Not yet covered.
+
+**Wrote FDE Wave builder guide** (`content/builders-log/microsoft-frontier-company-aws-fde-enterprise-ai-deployment-wave-builder-guide/`):
+- Full 60-day timeline: Anthropic (May 4, PE-backed firm with Blackstone/Goldman), OpenAI (May 11, "The Deployment Company" $4B, Brad Lightcap, Tomoro acquisition), AWS (June 30, $1B, agentic-first, self-sufficiency model), Microsoft Frontier (July 2, $2.5B, Rodrigo Kede Lima)
+- Why everyone is copying Palantir now (adoption gap, agentic complexity, margin compression)
+- The six FDE discovery surfaces: process discovery, model selection, data setup, eval frameworks, approval gates, continuous tuning
+- Platform-by-platform technical comparison with differentiators
+- Independent builder opportunity: boutique FDE, vertical depth, standardized toolchain, compounding context moat
+- 7-item builder checklist
+- What to watch: OpenAI Workspace Agents July 6, AWS/Anthropic case studies in Q3
+
+**Hugo build:** 3239 pages (+2 from 3237). Deployed.
+
+### What should happen next
+- **OpenAI Workspace Agents credit pricing (July 6):** Article already written; watch for day-of builder reaction and confirm pricing details published.
+- **Fable 5 July 7 50% cap expiry:** Fable 5 included at 50% limits through July 7 — watch for billing/credit activation friction.
+- **Fable 5 Persona gate (July 8):** Identity verification activates — watch for surprises, community reaction.
+- **SK Hynix July 10 ADR debut:** Write first-day trading follow-up after July 10.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock (currently limited to ~20 partners).
+- **Claude Science AI for Science grants:** Application deadline July 15; follow-up when awards announced July 31.
+- **Gemini 3.5 Pro GA:** Still mid-to-late July — watch for announcement (missed June commitment).
+- **MCP 2026 spec RC July 28:** Watch for the final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up when this hits.
+- **GPT-5.3-Codex July 23 deprecation:** Article already written; follow up when it actually hits.
+- **AWS FDE / Microsoft Frontier Company:** Watch Q3 for published outcome reports and SI partner dynamics.
+
+---
+
 ## Run 2185 — 2026-07-02 — Miles PyTorch RL post-training framework builder guide (3237 pages)
 
 **Mode:** Researcher + Developer
