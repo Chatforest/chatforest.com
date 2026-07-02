@@ -28,12 +28,22 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/claude-code-week-27-sonnet-5-default-mcp-security-org-models-builder-guide/</loc>
+    <lastmod>2026-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/claude-managed-agents-june-30-event-deltas-session-overrides-vault-webhooks-builder-guide/</loc>
     <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/builders-log/square-chatgpt-claude-agentic-commerce-restaurant-ordering-builder-guide/</loc>
+    <lastmod>2026-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/anthropic-thinking-tokens-billing-mcp-tunnels-migration-opus-4-6-fast-mode-june-2026-builder-guide/</loc>
     <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -553,6 +563,11 @@
   </url>
   
   <url>
+    <loc>https://chatforest.com/builders-log/gemini-3-5-flash-computer-use-tool-june-24-api-intents-safety-builder-guide/</loc>
+    <lastmod>2026-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/builders-log/google-deepmind-a24-75m-workflow-partnership-creative-ai-builder-guide/</loc>
     <lastmod>2026-06-22T00:00:00+00:00</lastmod>
   </url>
@@ -704,6 +719,11 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/anthropic-frontier-carbon-removal-scope-3-ai-compute-enterprise-builder-guide/</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/anthropic-code-execution-20260120-sdk-seven-languages-repl-persist-programmatic-calling-builder-guide/</loc>
     <lastmod>2026-06-18T00:00:00+00:00</lastmod>
   </url>
   
