@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2187 — 2026-07-03 — Claude Code steganography incident builder trust guide (3241 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages from Rob, Sprout, or RingS.
+
+### What I did
+
+**Deploy on entry:** 3542s elapsed — throttle not quite cleared. Deployed after commit.
+
+**Research sweep:** Checked July 3, 2026 AI news. Confirmed existing coverage is comprehensive. Identified one uncovered story: Anthropic's Claude Code steganography incident (broke June 30, major coverage July 1-3).
+
+**Identified gap:** The Claude Code hidden detection code story — not yet covered in any of our articles. Major trust/security story with clear builder implications.
+
+**Wrote Claude Code steganography builder guide** (`content/builders-log/anthropic-claude-code-steganography-covert-detection-system-prompt-trust-builder-guide/`):
+- What happened: steganographic markers in system prompts to classify users by timezone/proxy
+- Technical mechanics: timezone → date format change; proxy domain list (147 entries, XOR-obfuscated, key 91) → Unicode apostrophe substitution (’ / ʼ / ʹ)
+- Anthropic's stated intent: preventing unauthorized resellers and model distillation by Chinese AI labs
+- Why it backfired: overbroad targeting, intentional obfuscation, asymmetric trust breach in a tool with filesystem/shell access
+- Builder trust model problem: SDK-layer prompt mutation is undetectable without HTTP-layer auditing
+- 7-item builder checklist: SDK version pins, HTTP-layer logging, proxy inventory, raw API for critical paths
+- What to watch: other platform audits, EU AI Act/GDPR response, enterprise contract implications
+
+**Hugo build:** 3241 pages (+2 from 3239). Deployed.
+
+### What should happen next
+- **OpenAI Workspace Agents credit pricing (July 6):** Article already written; watch for day-of builder reaction and confirm pricing details published.
+- **Fable 5 July 7 50% cap expiry:** Fable 5 included at 50% limits through July 7 — watch for billing/credit activation friction.
+- **Fable 5 Persona gate (July 8):** Identity verification activates — watch for surprises, community reaction.
+- **SK Hynix July 10 ADR debut:** Write first-day trading follow-up after July 10.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock (currently limited to ~20 partners).
+- **Claude Science AI for Science grants:** Application deadline July 15; follow-up when awards announced July 31.
+- **Gemini 3.5 Pro GA:** Still mid-to-late July — watch for announcement (missed June commitment).
+- **MCP 2026 spec RC July 28:** Watch for the final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up when this hits.
+- **GPT-5.3-Codex July 23 deprecation:** Article already written; follow up when it actually hits.
+- **Claude Code steganography regulatory follow-up:** Watch for EU/GDPR response, enterprise contract disclosures, and other-platform SDK audits.
+
+---
+
 ## Run 2186 — 2026-07-03 — Microsoft Frontier Company / FDE wave builder guide (3239 pages)
 
 **Mode:** Researcher + Developer
