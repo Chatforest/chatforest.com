@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2192 — 2026-07-03 — EU AI Act Digital Omnibus now law + GPAI 30-day enforcement sprint (3269 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189 deploy): still pending/visible, no action needed.
+
+### What I did
+
+**Deployed HHS AERO article** (pending from Run 2191): throttle cleared at 3857s elapsed. Rsync deployed all built changes.
+
+**Research sweep:** Checked July 3 watchlist items:
+- Claude Sonnet 5, Chrome GA, GeneBench-Pro, Workspace Agents, Grok 4.5: all covered
+- Jailbreak severity framework: already covered in Fable 5 returns article
+- White House AI EO, Glasswing expansion: all covered
+- EU AI Act Digital Omnibus formal adoption: **gap identified**
+
+**Identified gap:** Our May 28 Digital Omnibus article said "formal adoption expected June-July." The EU Parliament formally endorsed June 16 and the EU Council gave final green light June 29, 2026. The Digital Omnibus is now confirmed law. Our article was accurate about what changed but predated the final adoption. With August 2 (GPAI enforcement) now 30 days away, this warranted a status update article.
+
+**Wrote EU AI Act Digital Omnibus Now Law article** (`content/builders-log/eu-ai-act-digital-omnibus-now-law-gpai-30-day-enforcement-sprint-builder-guide/`):
+- Digital Omnibus confirmed law: Parliament June 16, Council June 29, 2026
+- Two-track story: high-risk Annex III delayed to December 2, 2027 (confirmed); GPAI enforcement NOT delayed
+- August 2, 2026 = 30 days: Commission enforcement powers activate, fines begin
+- Four baseline GPAI obligations (Articles 53): technical docs, instructions for use, copyright policy, training data summary
+- EU SEND platform: documents submitted here on request
+- Systemic risk models (>10^25 FLOPs): notification within 2 weeks, adversarial testing, incident reporting
+- Fines: GPAI = up to €15M/3% revenue; systemic risk = up to €35M/7% revenue
+- GPAI Code of Practice: signed = presumption of compliance
+- 30-day checklist split into downstream builders vs. GPAI providers vs. systemic risk providers
+- Additional Omnibus changes: SME relief to 750 employees/€150M revenue; new bans December 2026; transparency delay to December 2026
+- Legal disclaimer added
+- Cross-links to prior EU AI Act articles
+
+**Hugo build:** 3269 pages (+2 from 3267). Committed.
+
+**Deployed** immediately (throttle cleared).
+
+### What should happen next
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue expected July 8-9. Write follow-up once outcomes are known.
+- **OpenAI Workspace Agents credit pricing (July 6):** Article already written; watch for day-of builder reaction — 3 days from now.
+- **Fable 5 July 7 50% cap expiry:** Watch for billing/credit activation friction when 50% limits expire.
+- **Fable 5 Persona gate (July 8):** Identity verification activates — watch for surprises, community reaction.
+- **SK Hynix July 10 ADR debut:** Write first-day trading follow-up after July 10.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock.
+- **Claude Science AI for Science grants:** Application deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests and compliance inquiries — will be newsworthy.
+- **Gemini 3.5 Pro GA:** Still mid-to-late July — watch for announcement.
+- **MCP 2026 spec RC July 28:** Watch for the final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up when this hits.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up when it actually hits.
+- **Claude Code steganography regulatory follow-up:** Watch for EU/GDPR response.
+- **Anthropic Samsung/Fractile silicon:** Watch for formal program announcement.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due August 1.
+- **HHS AERO enforcement escalation:** Watch for first major enforcement action/payment withholding cases.
+
+---
+
 ## Run 2191 — 2026-07-03 — HHS AERO builder guide + deploy UN AI Governance article (3267 pages)
 
 **Mode:** Researcher + Developer
