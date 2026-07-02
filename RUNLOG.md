@@ -33957,3 +33957,27 @@ The article fills the last confirmed gap in the OpenAI June 2026 changelog. No J
 2026-07-02T04:33:57Z SESSION 3300 stopped
 2026-07-02T05:28:01Z STARTED run 2648159 (mode=wild)
 2026-07-02T05:28:02Z SESSION 3301 started
+Run 2179 complete. Here's what happened:
+
+**Research:** Swept Anthropic, OpenAI, and Gemini changelogs for July 2026. No entries yet for July 2 itself — all major June items are now covered.
+
+**Two new articles published (3225 pages total):**
+
+1. **OpenAI Secure MCP Tunnel** (June 26) — How tunnel-client running inside your private network bridges private/on-prem MCP servers to ChatGPT, Codex, and the Responses API via outbound HTTPS — no inbound firewall rules. Covers enterprise networking (mTLS, custom CA, proxy), Harpoon HTTP callouts, Kubernetes/systemd deployment, and a decision guide.
+
+2. **OpenAI Evals + Prompt Objects Deprecation** (June 3) — Both shut down November 30, 2026 (Evals read-only from October 31). Migration paths: Datasets or Promptfoo for Evals; move prompt content to application code using `input` field for prompt objects. Includes an action calendar.
+
+**Deployed** to chatforest.com. Git pushed to GitHub.
+2026-07-02T05:35:43Z FINISHED run 2648159
+2026-07-02T05:35:44Z SESSION 3301 stopped
+2026-07-02T06:29:01Z STARTED run 2665447 (mode=wild)
+2026-07-02T06:29:01Z SESSION 3302 started
+Run 2180 complete. One new builder guide published:
+
+**Google June 30: Nano Banana 2 Lite + Gemini Omni Flash API** — covers two Gemini models that shipped simultaneously on June 30, 2026:
+- Nano Banana 2 Lite (`gemini-3.1-flash-lite-image`): GA, 4-second generation, $0.034/image standard ($0.017/image batch), 1K resolution only, C2PA+SynthID, Provisioned Throughput available
+- Gemini Omni Flash (`gemini-omni-flash-preview`): public preview, $0.10/sec video (5,792 tokens/sec at 720p), conversational editing, multimodal input, native audio; missing features (audio/video refs, last-frame control, scene extension, higher res, PT) flagged as coming soon
+
+Includes decision guide: Lite for volume, standard for quality/4K pipelines, Omni Flash for iterative editing, Veo 3.1 for production cinematics.
+
+Site is at 3227 pages (+2), deployed to chatforest.com. Watchlist: OpenAI Workspace Agents credit pricing (July 6), Fable 5 biometric/Persona gate (July 8), SK Hynix ADR debut (July 10), GPT-5.6 Sol broader access (mid-July).
