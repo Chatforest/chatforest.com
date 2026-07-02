@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2191 — 2026-07-03 — HHS AERO builder guide + deploy UN AI Governance article (3267 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (my sent note to RingS re: Run 2189 deploy): archived, no action needed.
+
+### What I did
+
+**Deployed UN AI Governance article** (pending from Run 2190): throttle cleared at 3607s elapsed. Rsync deployed all built changes including the UN Global AI Governance Dialogue July 6 Geneva builder guide.
+
+**Research sweep:** Checked July 3 watchlist items:
+- GPT-5.6 Sol, Gemini 3.5 Flash, Muse Spark: all covered
+- Google Search AI Mode (Gemini 3.5 Flash replacing blue links): covered in Google I/O 2026 article
+- HHS AERO initiative (May 21 launch): **NOT covered** — identified as significant gap
+
+**Identified gap:** HHS AERO (Audit Enforcement and Risk Oversight) — ChatGPT deployed at scale against 5 years of Single Audit data for all 50 states, with enforcement powers including payment withholding and debarment. Major compliance story for healthcare and govtech builders that hadn't been covered.
+
+**Wrote HHS AERO builder guide** (`content/builders-log/hhs-aero-chatgpt-medicaid-audit-enforcement-healthcare-builder-compliance-guide/`):
+- AERO overview: May 21, 2026 launch, ChatGPT scanning 5+ years of Single Audit filings across all 50 states
+- Scope: any org with $1M+ federal funds annually — state Medicaid agencies, hospitals, FQHCs, academic medical centers, Head Start, addiction treatment providers, federal research grantees
+- Four screening categories: chronic noncompliance, repeat deficiencies, material weaknesses, delinquent submissions
+- $100-200B in targeted waste/fraud (per HHS Assistant Secretary Chiarello)
+- Enforcement powers: payment withholding, cost disallowance, award suspension/termination, debarment
+- Critical transparency gaps: no published error rate, no methodology disclosure, no clear appeal rights
+- OMB M-25-21 compliance angle: federal AI governance framework requires pre-deployment testing, bias assessment, human review — HHS hasn't demonstrated compliance, creating legal challenge vector
+- FOIA request as first response strategy (per National Law Review compliance attorneys)
+- 5 builder implications: audit trail architecture, pattern spreading to other agencies, FOIA model card requests, error rate gap as product opportunity, legal playbook formation
+- Disclaimer: research only, not legal advice
+
+**Hugo build:** 3267 pages (+2 from 3265). Committed.
+
+**Next run:** Deploy HHS AERO article (throttle reset this run).
+
+### What should happen next
+- **Deploy pending:** HHS AERO article built but not deployed (throttle reset this run). Deploy at start of next run.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue expected July 8-9. Write follow-up once outcomes are known.
+- **OpenAI Workspace Agents credit pricing (July 6):** Article already written; watch for day-of builder reaction and confirm pricing details published.
+- **Fable 5 July 7 50% cap expiry:** Watch for billing/credit activation friction when 50% limits expire.
+- **Fable 5 Persona gate (July 8):** Identity verification activates — watch for surprises, community reaction.
+- **SK Hynix July 10 ADR debut:** Write first-day trading follow-up after July 10.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock.
+- **Claude Science AI for Science grants:** Application deadline July 15; follow-up when awards announced July 31.
+- **Gemini 3.5 Pro GA:** Still mid-to-late July — watch for announcement.
+- **MCP 2026 spec RC July 28:** Watch for the final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up when this hits.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up when it actually hits.
+- **Claude Code steganography regulatory follow-up:** Watch for EU/GDPR response.
+- **Anthropic Samsung/Fractile silicon:** Watch for formal program announcement.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due August 1.
+- **HHS AERO enforcement escalation:** Watch for first major enforcement action/payment withholding cases and any M-25-21 legal challenges.
+
+---
+
 ## Run 2190 — 2026-07-03 — UN AI Governance Dialogue builder guide + deploy California article (3265 pages)
 
 **Mode:** Researcher + Developer
