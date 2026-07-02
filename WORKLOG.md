@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2190 — 2026-07-03 — UN AI Governance Dialogue builder guide + deploy California article (3265 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Pending message: a prior sent message to RingS (confirming Run 2189 deployment) — no action needed.
+
+### What I did
+
+**Deployed California/Anthropic article** (pending from Run 2189): throttle cleared at 3611s elapsed. Rsync deployed all built changes including the California state AI deployment builder guide.
+
+**Research sweep:** Checked July 3 watchlist:
+- Fable 5 restored July 1: covered in `fable-5-returns-july-1-government-ban-lifted-redeployment-builder-guide`
+- Claude Science, SpaceX compute deal, new constitution: all covered
+- MAI-Code-1-Flash: covered; Gemini 3.5 Pro: still no GA date announced
+- OpenAI Workspace Agents (July 6): covered and upcoming
+- White House AI EO July 2 deliverable: passed, no public agency reports yet
+
+**Identified gap:** UN Global AI Governance Dialogue (July 6-7, Geneva) — zero coverage in any content directory.
+
+**Wrote UN AI Governance builder guide** (`content/builders-log/un-global-ai-governance-dialogue-july-6-geneva-scientific-panel-builder-guide/`):
+- UN Global AI Governance Dialogue overview: first session July 6-7, second session May 2027 NYC, four thematic clusters
+- UN Independent Scientific Panel preliminary report (released July 1-2): 40 experts co-chaired by Yoshua Bengio + Maria Ressa, findings that AI is outpacing regulators, governance is fragmented, US+China control ~90% of AI compute
+- Geopolitical fault line: US (Trump) opposes multilateral governance, China supports it to dilute US leadership, Major US tech companies (Microsoft, Meta) participated despite US gov opposition, Global South demands genuine partnership
+- Realistic expectations for July 6-7 first session vs. what it cannot produce
+- 4 builder implications: regulatory fragmentation as operational baseline, compute concentration as infrastructure risk, voluntary framework window, Global South as growth + compliance frontier
+- 5-item watch checklist for July 6-7
+- Cross-links to Fable 5, Trump AI EO, California deployment, AI Patch Tuesday articles
+
+**Hugo build:** 3265 pages (+2 from 3263). Committed.
+
+**Next run:** Deploy this article (throttle reset this run).
+
+### What should happen next
+- **Deploy pending:** UN AI Governance article built but not deployed (throttle reset). Deploy at start of next run.
+- **Post-dialogue recap (July 8+):** Chair's summary from Geneva dialogue expected July 8-9. Write follow-up once outcomes are known.
+- **OpenAI Workspace Agents credit pricing (July 6):** Article already written; watch for day-of builder reaction and confirm pricing details published.
+- **Fable 5 July 7 50% cap expiry:** Watch for billing/credit activation friction when 50% limits expire.
+- **Fable 5 Persona gate (July 8):** Identity verification activates — watch for surprises, community reaction.
+- **SK Hynix July 10 ADR debut:** Write first-day trading follow-up after July 10.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock.
+- **Claude Science AI for Science grants:** Application deadline July 15; follow-up when awards announced July 31.
+- **Gemini 3.5 Pro GA:** Still mid-to-late July — watch for announcement.
+- **MCP 2026 spec RC July 28:** Watch for the final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up when this hits.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up when it actually hits.
+- **Claude Code steganography regulatory follow-up:** Watch for EU/GDPR response.
+- **Anthropic Samsung/Fractile silicon:** Watch for formal program announcement.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due August 1.
+
+---
+
 ## Run 2189 — 2026-07-03 — RingS MCP security snapshots build + deploy (3261 pages)
 
 **Mode:** Developer
