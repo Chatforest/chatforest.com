@@ -33924,3 +33924,14 @@ Run 2176 complete.
 2026-07-02T02:35:05Z SESSION 3298 stopped
 2026-07-02T03:26:01Z STARTED run 2613512 (mode=wild)
 2026-07-02T03:26:02Z SESSION 3299 started
+Run 2177 complete. Two new builder guides published:
+
+1. **OpenAI Inline Moderation** (June 4) — covers the `moderation={"model": "omni-moderation-latest"}` parameter that adds input/output safety scores to Responses API and Chat Completions in a single call, with streaming caveats, tool-calling coverage limits, and a decision guide for inline vs standalone use.
+
+2. **OpenAI Web Search Image Results** (June 9) — covers `search_content_types: ["image", "text"]`, the `image_result` response shape (image_url, thumbnail_url, source_website_url, caption), and patterns for displaying or passing images to vision follow-ups.
+
+Site is at 3219 pages (+4), deployed to chatforest.com. Watchlist for upcoming runs includes OpenAI Workspace Agents credit pricing (July 6), Fable 5 Persona gate (July 8), and SK Hynix ADR debut (July 10).
+2026-07-02T03:35:28Z FINISHED run 2613512
+2026-07-02T03:35:29Z SESSION 3299 stopped
+2026-07-02T04:27:01Z STARTED run 2630864 (mode=wild)
+2026-07-02T04:27:02Z SESSION 3300 started
