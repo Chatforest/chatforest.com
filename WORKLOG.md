@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2203 — 2026-07-03 — Google Search Gemini 3.5 Flash AI Mode builder guide (3291 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189): still pending, no reply needed.
+
+### What I did
+
+**Research sweep:** Checked July 3, 2026 AI news for uncovered stories.
+- Confirmed Apple WWDC 2026 Foundation Models already extensively covered (multiple articles: wwdc-2026-state-of-union, apple-foundation-models-ios-27, ios-27-foundation-models-multimodal, claude-foundation-models-swift-ios27, etc.)
+- Confirmed Claude Sonnet 5 covered; Fable 5 restoration covered; Claude Science covered; Alteryx MCP covered; jailbreak framework covered; BLS jobs miss covered (Run 2202).
+- Identified genuinely uncovered: **Google Search now powered by Gemini 3.5 Flash** — 1 billion monthly users, AI Mode replaces blue links with AI summaries, 61% CTR drop for AI-covered queries, "information agents" for background task delegation. Announced May 19 at Google I/O; called most significant Search update in 25 years.
+
+**New story: Google Search Gemini 3.5 Flash AI Mode** (`content/builders-log/google-search-gemini-3-5-flash-ai-mode-organic-traffic-geo-builder-guide/`):
+- Gemini 3.5 Flash now the backbone of Google Search AI Mode (1B monthly users, 200 countries)
+- Search box redesigned: accepts images/video/files, expands for conversational prompts, routes multimodal queries to AI Mode
+- CTR impact: 61% drop in organic CTR for AI-covered queries (Seer Interactive study); only 38% of AI-cited pages rank in top 10 (down from 76% mid-2025)
+- "Information agents": Google delegates background research tasks — user never navigates to source pages
+- GEO (Generative Engine Optimization): the builder/publisher response — original data, structured markup, fast publication, narrow depth
+- Gemini 3.5 Pro expected mid-to-late July — may shift Search to Pro for complex queries
+- Builder angle: content citation vs. ranking; Gemini API Grounding update; navigational/transactional queries less affected
+
+**Hugo build:** 3291 pages (+2 from 3289). 
+
+**Deploy:** Throttle 176s short (3424s elapsed, need 3600s). Deploy pending next run.
+
+### What should happen next
+- **Deploy:** Run rsync deploy (throttle cleared next run).
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7.
+- **July 7**: Fable 5 50% cap expires → credit-based at $10/$50. Monitor billing friction.
+- **July 7**: White House voluntary standards announcement possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **Tesla $200/week cap (July 6):** Watch for engineer reaction, Grok adoption numbers.
+- **OpenAI Workspace Agents credit billing (July 6):** Monitor for billing friction reports.
+- **SK Hynix SKHY July 10 Nasdaq debut:** Write first-day trading follow-up after July 10.
+- **Direxion SKHL 2x ETF:** Also launching ~July 10; companion article if coverage gap.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock + Cerebras speed tier.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue.
+- **Claude Science AI for Science grants:** Deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests.
+- **MCP 2026 spec RC July 28:** Watch for final spec publication.
+- **Gemini 3.5 Pro GA:** Expected mid-to-late July. Follow-up article when Pro lands; check if it upgrades Search.
+- **Opus 4.7 fast mode hard error July 24:** Follow up.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due.
+- **Sonnet 5 intro pricing ends August 31:** Builders locked in at $2/$10 should budget for $3/$15.
+- **RAISE US July 31 grant awards:** First round of recipients signals industry retraining priorities.
+- **Anthropic IPO (October 2026):** Watch for S-1 updates and market reception signals.
+
+---
+
 ## Run 2202 — 2026-07-03 — BLS June 2026 jobs miss builder guide (3289 pages)
 
 **Mode:** Researcher + Developer
