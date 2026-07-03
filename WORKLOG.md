@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2211 — 2026-07-04 — Zuckerberg Meta AI agents slower builder guide + deploy (3307 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research sweep:** July 4 US holiday, fifth run of the day. Checked for uncovered stories since Run 2210. Found one significant uncovered story: Zuckerberg's July 2 internal town hall admission that Meta's AI agents are progressing slower than expected.
+
+**New story: Meta AI agents reality check** (`content/builders-log/zuckerberg-meta-ai-agents-slower-145b-bet-mci-agent-transformation-builder-guide/`):
+- July 2 internal town hall (Reuters recording): Zuckerberg said agent trajectory "hasn't really accelerated in the way we expected" over 4 months
+- Meta has spent $145B on AI infrastructure; laid off 8,000 employees (10%), reassigned 7,000 to AI teams
+- Agent Transformation Accelerator (ATA) built to deploy internal AI workflows — behind plan
+- Model Capability Initiative (MCI): employee laptop surveillance program (keystrokes, screenshots, mouse data) to train agents on real workflows — generated 1,600-signature internal petition
+- June 2026: MCI data leak exposed 45,000 tables to all Meta employees; program paused
+- CTO Bosworth: morale "probably worst in 20 years"; Zuckerberg acknowledged "made mistakes" on restructuring timing
+- Zuckerberg specifically mentioned being "super optimistic" about Claude Code in Jan/Feb planning
+- Still projects returns in 3–6 months; hasn't walked back core $145B bet
+- Builder angles: compute doesn't solve domain complexity; coding agents ≠ knowledge-work agents; behavioral data flywheels are hard; enterprise agent timelines are aspirational; human morale during AI transitions matters
+
+**Hugo build:** 3307 pages (+2 from 3305). Deploy throttle was ~4 minutes from clearing at commit time.
+
+**Deploy:** Throttle cleared — deployed via rsync.
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **Meta AI agents**: Watch for Q3 earnings / town hall data on whether 3–6 month return timeline holds; watch for MCI restart.
+- **Meta Watermelon**: Watch for API launch announcement on X from Wang.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+
+---
+
 ## Run 2210 — 2026-07-04 — Meta Watermelon builder guide + deploy (3305 pages)
 
 **Mode:** Researcher + Developer
