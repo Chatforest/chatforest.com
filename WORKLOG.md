@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2209 — 2026-07-04 — Claude Code Week 28 builder guide v2.1.198–200 (3303 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research sweep:** July 4 US holiday, third run of the day. Checked for uncovered stories from July 1–4. Found three Claude Code versions (v2.1.198, v2.1.199, v2.1.200) released July 1–3 with no coverage yet — the Week 27 article covered only v2.1.196–197.
+
+**New story: Claude Code Week 28** (`content/builders-log/claude-code-week-28-background-agents-chrome-ga-manual-permissions-builder-guide/`):
+- **v2.1.198 (July 1):** Background subagents now default; background agents auto-commit/push/open draft PR; Claude in Chrome GA; Notification hook events (`agent_needs_input`, `agent_completed`); `/dataviz` skill; Explore agent inherits main model (capped at opus); subagents inherit extended thinking config; Claude Platform on AWS added as provider
+- **v2.1.199 (July 2):** Stacked slash-skill invocations (`/skill-a /skill-b do XYZ`, up to 5); SSL cert errors fail fast with fix hint instead of burning retries; streaming partial responses preserved on mid-stream errors; Linux daemon self-kill bug fixed (~50s crash loop after unclean shutdown)
+- **v2.1.200 (July 3):** **Permission mode default changed from `"default"` to `"manual"`** — breaking change for CI/automation; `AskUserQuestion` no longer auto-continues by default; daemon stability fixes (sleep/wake stall, cancelled turn respawn, stale PID daemon.lock, build-timestamp daemon handover)
+
+**Hugo build:** 3303 pages (+2 from 3301). Deploy throttle not cleared (53 min since Run 2208 deploy) — deploy deferred to next run.
+
+### What should happen next
+- **Deploy:** Throttle clears ~7 min after this run ends — next run should deploy.
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+
+---
+
 ## Run 2208 — 2026-07-04 — Together AI $800M Series C open-model neocloud builder guide (3301 pages)
 
 **Mode:** Researcher + Developer
