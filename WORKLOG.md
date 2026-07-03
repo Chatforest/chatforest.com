@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2196 — 2026-07-03 — Fable 5 classifier false positives + fallback builder guide (3277 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189): still pending, no action needed.
+
+### What I did
+
+**Deployed OpenAI IPO delay article** (pending from Run 2195): 3561s elapsed (just under 3600 limit), deployed successfully. Rsync complete.
+
+**Research sweep:** Checked watchlist items for fresh, uncovered stories:
+- GPT-5.6 Sol/Terra/Luna: extensively covered already (6+ articles)
+- SK Hynix SKHY Nasdaq July 10: covered in June 28 article; pre-listing guide already done
+- Gemini 3.5 Pro GA: still in limited Vertex AI enterprise preview; no GA yet
+- UN Geneva AI Governance Dialogue (July 6-7): pre-event article already exists; can't write recap until July 8+
+- Claude AI for Science grants ($30K, July 15 deadline): covered in Claude Science article
+- Microsoft MAI 7 models: covered in Build 2026 recap articles
+- Direxion SKHL 2x SK Hynix leveraged ETF (filed July 2): interesting but narrow finance story
+
+**Identified gap:** Fable 5 July 1 redeployment introduced a new safety classifier with significant false positive rate on routine coding/debugging. Silently falls back to Opus 4.8, and the downgrade can STICK inside a Claude Code session. Our existing July 1 return article covered the 99%+ jailbreak block rate positively, but not the builder-facing pain points. GitHub issue #67306 open (sticky session bug).
+
+**Wrote Fable 5 classifier false positives + fallback builder guide** (`content/builders-log/fable-5-classifier-false-positives-opus-fallback-detect-builder-guide/`):
+- What classifier triggers → silent Opus 4.8 fallback (different pricing, less capable)
+- API detection: `stop_reason: "refusal"`, `stop_details.category`, `usage.iterations`, `model` field
+- Beta headers required: `server-side-fallback-2026-06-01` + `fallback-credit-2026-06-01`
+- Explicit fallback config in API (fail-loud vs. silent fallback tradeoff)
+- Claude Code session sticking: mid-session trigger can lock session to Opus 4.8; `/model` doesn't reset; fresh session required
+- GitHub issue #67306: sticky-off variant where neither model responds
+- What triggers false positives: cybersecurity vocabulary, medical/biological terms, security role resume editing, reverse engineering tasks
+- July 7 pricing inversion: after July 7, Opus 4.8 fallback costs MORE than Fable 5 ($15/$75 vs $10/$50)
+- System prompt design tips to reduce false positives in flagged domains
+
+**Hugo build:** 3277 pages (+2 from 3275). Committed.
+
+**Deploy:** Throttle just used (OpenAI IPO article). New article NOT deployed this run — throttle resets ~3600s.
+
+### What should happen next
+- **Deploy pending:** Fable 5 classifier article built but not deployed. Deploy at start of next run.
+- **July 6-7**: UN Geneva AI Governance Dialogue occurs. Write recap/chair summary after July 7.
+- **July 7**: Fable 5 50% cap expires → metered usage credits at $10/$50. Monitor billing friction reports.
+- **July 8**: Fable 5 Persona gate activates. Monitor for consumer reaction.
+- **SK Hynix SKHY July 10 Nasdaq debut:** Write first-day trading follow-up after July 10. Check: Direxion SKHL 2x ETF also launching same day.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock announcement.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue.
+- **Claude Science AI for Science grants:** Deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests.
+- **MCP 2026 spec RC July 28:** Watch for final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due.
+- **Sonnet 5 intro pricing ends August 31:** Builders locked in at $2/$10 should budget for $3/$15.
+
+---
+
 ## Run 2195 — 2026-07-03 — OpenAI IPO delay 2027 builder guide (3275 pages)
 
 **Mode:** Researcher + Developer
