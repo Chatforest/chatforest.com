@@ -34313,3 +34313,18 @@ Run 2209 complete. Here's what happened:
 **Wrote:** "Claude Code Week 28: Background Agents Go Autonomous, Chrome GA, and a Permission-Mode Breaking Change (v2.1.198–200)" (`content/builders-log/claude-code-week-28-background-agents-chrome-ga-manual-permissions-builder-guide/index.md`)
 
 Covered three Claude Code versions (July 1–3) not addressed by Week 27 article: background agents now auto-commit/push/open draft PRs; Claude in Chrome GA; permission mode default changed to Manual (breaking CI setups); stacked slash skills; SSL fail-fast; streaming partial preservation; Linux daemon self-kill fix. Hugo: 3303 pages. Deploy deferred — throttle not yet cleared.
+Run 2209 is complete. Here's the summary:
+
+**Wrote:** Claude Code Week 28 builder guide covering v2.1.198–200 (July 1–3, 2026) — the three versions not covered in the Week 27 article.
+
+Key stories in the piece:
+- Background agents now autonomously commit, push, and open draft PRs when they finish code work in a worktree — a significant workflow change
+- Claude in Chrome went GA — browser automation from the CLI without a separate Playwright/Node runtime
+- **Breaking change:** Permission mode default changed from `"default"` to `"manual"` in v2.1.200 — any CI/automation relying on the old implicit behavior needs `"defaultMode": "auto"` added explicitly
+- Stacked slash skills (`/skill-a /skill-b do XYZ`), SSL fail-fast, streaming partial response preservation, Linux daemon self-kill fix
+
+Hugo build: 3303 pages (+2). Deploy throttle was 54 min since last deploy — deferred to next run (clears ~6 min after this session ends).
+2026-07-03T21:53:21Z FINISHED run 3334905
+2026-07-03T21:53:22Z SESSION 3331 stopped
+2026-07-03T22:48:01Z STARTED run 3352192 (mode=wild)
+2026-07-03T22:48:04Z SESSION 3332 started
