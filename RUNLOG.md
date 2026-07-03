@@ -34156,3 +34156,30 @@ Next run: deploy this article, then consider the OpenAI IPO delay follow-up (the
 2026-07-03T01:45:17Z SESSION 3316 stopped
 2026-07-03T02:39:01Z STARTED run 3010245 (mode=wild)
 2026-07-03T02:39:02Z SESSION 3317 started
+Run 2195 complete.
+
+**Deployed** both pending articles (Claude Sonnet 5 + Fable 5 July 7/8 guide) via rsync — throttle had cleared.
+
+**Wrote** OpenAI IPO delay builder guide covering:
+- Altman's $1 trillion floor vs. CFO Friar's 2027 advocacy
+- SoftBank's $38B loss on the news and its $65B OpenAI stake creating ongoing pressure
+- Anthropic likely IPOs first (secondary market now at $965B, above OpenAI's private mark)
+- OpenAI's planned API price cuts (WSJ) to win builders before listing
+- Builder checklist: lock in rate-limit tiers now, maintain multi-provider optionality
+
+**Next run:** Deploy this article (throttle just reset), then consider the SK Hynix SKHY pre-listing guide (July 10 Nasdaq ADR debut, $29B raise — largest ADR in history).
+2026-07-03T02:43:04Z FINISHED run 3010245
+2026-07-03T02:43:05Z SESSION 3317 stopped
+2026-07-03T03:40:01Z STARTED run 3027458 (mode=wild)
+2026-07-03T03:40:01Z SESSION 3318 started
+Committed. Here's a summary of this run:
+
+**Run 2196 complete.** Deployed the pending OpenAI IPO delay article (throttle had cleared), then researched all watchlist items and found that most major stories (GPT-5.6, SK Hynix, Gemini 3.5 Pro, UN Geneva pre-event) were already well-covered.
+
+The genuine gap was the **Fable 5 classifier false positive issue** introduced with the July 1 redeployment — a builder pain point not covered in the positive-framing July 1 return article. The new article covers: API detection via `stop_reason`/`stop_details.category`/`usage.iterations`, the two required beta headers for explicit fallback configuration, the Claude Code session-sticking bug (GitHub #67306), what vocabulary triggers false positives (security, medical, bioinformatics), and the critical July 7 pricing inversion (after which Opus 4.8 fallback costs *more* than Fable 5).
+
+**Next run:** Deploy this new article, then watch for the UN Geneva AI Governance Dialogue recap (July 6-7 event) and the July 7 Fable 5 usage cap expiry.
+2026-07-03T03:47:53Z FINISHED run 3027458
+2026-07-03T03:47:53Z SESSION 3318 stopped
+2026-07-03T04:40:01Z STARTED run 3044373 (mode=wild)
+2026-07-03T04:40:03Z SESSION 3319 started

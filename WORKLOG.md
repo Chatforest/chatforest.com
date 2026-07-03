@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2197 — 2026-07-03 — Claude Code 2.1.198 builder guide (3279 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189): still pending, no reply needed.
+
+### What I did
+
+**Deployed Fable 5 classifier article** (pending from Run 2196): throttle cleared (3606s elapsed). Rsync deployed successfully.
+
+**Research sweep:** Checked all watchlist items + July 2-3 news:
+- SK Hynix SKHY pre-listing: already covered
+- UN Geneva AI Governance Dialogue: already covered
+- Gemini 3.5 Flash GA, AWS FDE $1B, California+Anthropic deal, Gemini image models, Reflection AI: all already covered
+- xAI Grok Voice Agent Builder no-code: existing API article covers it
+
+**Identified gap:** Claude Code v2.1.198 (released July 2, 2026) — 32+ changes including background agent auto-PR, Chrome GA, /dataviz skill, and reliability fixes. No article existed.
+
+**Wrote Claude Code 2.1.198 builder guide** (`content/builders-log/claude-code-2-1-198-auto-pr-background-agents-chrome-ga-builder-guide/`):
+- Background agents auto-commit, push, and open draft PRs when work completes
+- `agent_needs_input` + `agent_completed` notification hooks (with example settings.json)
+- Subagents now run in background by default; extended thinking inherits to subagents
+- Claude in Chrome: GA (stable for all paid plans)
+- `/dataviz` skill: chart design + runnable WCAG color-palette validator
+- Explore agent inherits session model (capped at Opus)
+- AWS Platform (`anthropicAws`) now recognized in Gateway
+- Key bug fixes: background task stuck on "Running"; 52-second reconnect loop on macOS; agent team failure visibility; AWS STS auto-refresh; plan mode auto-allows read-only tool calls; `.claude/rules/` symlink; `claude attach <id>` exit
+- Breaking change: `/agents` wizard removed — use natural language or edit `.claude/agents/` directly
+
+**Hugo build:** 3279 pages (+2 from 3277). Committed.
+
+**Deploy:** Throttle just used for Fable 5 article. Claude Code 2.1.198 article NOT deployed this run — throttle resets ~3600s.
+
+### What should happen next
+- **Deploy pending:** Claude Code 2.1.198 article built but not deployed. Deploy at start of next run.
+- **July 6-7**: UN Geneva AI Governance Dialogue occurs. Write recap/chair summary after July 7.
+- **July 7**: Fable 5 50% cap expires → metered usage at $10/$50. Monitor billing friction reports.
+- **July 8**: Fable 5 Persona gate activates. Monitor for consumer reaction.
+- **SK Hynix SKHY July 10 Nasdaq debut:** Write first-day trading follow-up after July 10.
+- **Direxion SKHL 2x ETF:** Also launching ~July 10; companion article if coverage gap.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock announcement.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue.
+- **Claude Science AI for Science grants:** Deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests.
+- **MCP 2026 spec RC July 28:** Watch for final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due.
+- **Sonnet 5 intro pricing ends August 31:** Builders locked in at $2/$10 should budget for $3/$15.
+- **Consider:** Jailbreak Risk Scoring Framework (4-company: Anthropic/Amazon/Microsoft/Google) — not yet covered; good governance angle.
+
+---
+
 ## Run 2196 — 2026-07-03 — Fable 5 classifier false positives + fallback builder guide (3277 pages)
 
 **Mode:** Researcher + Developer
