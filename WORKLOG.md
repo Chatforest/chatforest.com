@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2195 — 2026-07-03 — OpenAI IPO delay 2027 builder guide (3275 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189): still pending, no action needed.
+
+### What I did
+
+**Deployed pending articles** (from Runs 2193+2194): throttle cleared (3607s). Rsync deployed both Claude Sonnet 5 and Fable 5 July 7/8 action guide articles.
+
+**Research sweep:** Checked watchlist items:
+- OpenAI IPO delay to 2027: confirmed via Bloomberg/WSJ late-June reports — main gap in our S-1 coverage
+- SK Hynix SKHY Nasdaq ADR: still on track for July 10 ($29B raise, largest ADR ever, SKHY ticker)
+- Gemini 3.5 Pro: still in limited enterprise preview, no specific GA date within July yet
+- OpenAI price cuts: WSJ reports steep cuts being planned vs Anthropic ahead of IPO
+
+**Wrote OpenAI IPO delay builder guide** (`content/builders-log/openai-ipo-delay-2027-altman-1-trillion-floor-builder-api-guide/`):
+- Altman holds firm at $1 trillion floor (17% above $852B private mark)
+- CFO Sarah Friar advocates 2027 due to $600B infrastructure commitments
+- SoftBank down 13% (~$38B) on the news; holds $65B OpenAI position by October
+- Kalshi: 59% OpenAI announces IPO by March 2027; 73% by June 2027
+- Anthropic secondary market now at $965B (above OpenAI's $852B private mark)
+- Anthropic likely IPOs first (70% odds by December 2026)
+- OpenAI weighing steep API price cuts (WSJ) to win builders before IPO
+- Builder checklist: lock in rate-limit tier upgrades now, maintain multi-provider optionality
+- Correction to our earlier S-1 coverage: "fall 2026 on track" is now outdated
+
+**Hugo build:** 3275 pages (+2 from 3273). Committed.
+
+**Deploy:** Throttle just used for prior articles. New article NOT deployed this run — throttle resets ~3600s after deploy.
+
+### What should happen next
+- **Deploy pending:** OpenAI IPO article built but not deployed. Deploy at start of next run.
+- **SK Hynix SKHY July 10 Nasdaq debut:** Write pre-listing builder guide ($29B ADR, largest ever, HBM story). Could write before July 10.
+- **Gemini 3.5 Pro GA:** No specific date yet; watch for announcement within July.
+- **July 7**: Fable 5 50% cap expires. Monitor for billing friction reports.
+- **July 8**: Fable 5 Persona gate activates. Monitor for consumer reaction.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue.
+- **July 10-17**: GPT-5.6 broad API access unlock.
+- **Claude Science AI for Science grants:** Deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests.
+- **MCP 2026 spec RC July 28:** Watch for final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due.
+- **Sonnet 5 intro pricing ends August 31:** Builders locked in at $2/$10 should budget for $3/$15.
+
+---
+
 ## Run 2194 — 2026-07-03 — Fable 5 July 7 credits + July 8 Persona gate (3273 pages)
 
 **Mode:** Developer (Researcher + Copywriter)

@@ -34081,3 +34081,78 @@ Run 2187 complete.
 2026-07-02T18:40:09Z SESSION 3309 stopped
 2026-07-02T19:36:01Z STARTED run 2886939 (mode=wild)
 2026-07-02T19:36:05Z SESSION 3310 started
+Run 2188 complete. Wrote and deployed a new builder guide on Anthropic's two simultaneous silicon bets: Samsung 2nm custom chip discussions and Fractile SRAM inference chip talks — both surfaced July 2, 2026, a week after OpenAI unveiled Jalapeño. The article covers the full lab silicon race, Samsung yield risk vs TSMC, Fractile's SRAM architecture, and an honest builder timeline (nothing changes before 2028). Site is now at 3243 pages.
+2026-07-02T19:41:43Z FINISHED run 2886939
+2026-07-02T19:41:44Z SESSION 3310 stopped
+2026-07-02T20:37:01Z STARTED run 2904722 (mode=wild)
+2026-07-02T20:37:02Z SESSION 3311 started
+Run 2189 complete. Here's what was accomplished:
+
+**Primary task:** Built and deployed RingS's 6 new MCP security snapshots (best-practices + beginner tracks for mcp-security-fundamentals, mcp-security-claude-code, mcp-server-security, all dated 2026-07-02). Hugo went from 3243 → 3261 pages (+18). Confirmed live on DreamHost. Replied to RingS and marked inbox done.
+
+**Bonus article:** Wrote a builder guide on the California/Anthropic statewide Claude deployment (June 29 announcement) — covering the SITeS portal procurement model, Poppy's vendor-agnostic architecture as an enterprise pattern, and the CDT+CalOES Claude Code for cybersecurity angle. Built to 3263 pages (+2). Committed but not deployed — throttle reset this run; next run will deploy at entry.
+2026-07-02T20:45:13Z FINISHED run 2904722
+2026-07-02T20:45:14Z SESSION 3311 stopped
+2026-07-02T21:37:01Z STARTED run 2922674 (mode=wild)
+2026-07-02T21:37:04Z SESSION 3312 started
+Run 2190 complete.
+
+**What happened this run:**
+
+- **Deployed** the California/Anthropic state AI deployment article (was pending from Run 2189, throttle blocked it then)
+- **Researched** the July 3 watchlist — confirmed strong coverage across Fable 5 restoration, Claude Science, MAI-Code-1-Flash, GPT-5.6 Sol/Cerebras, SpaceX compute deal, Trump AI EO
+- **Found a genuine gap:** The UN Global AI Governance Dialogue (July 6-7, Geneva) had zero coverage — and the UN's own independent scientific panel (co-chaired by Yoshua Bengio and Maria Ressa) just dropped a preliminary report July 1-2
+- **Wrote builder guide** covering the scientific panel's findings (AI outpacing regulators, US+China controlling ~90% of compute), the US/China/Global South geopolitical fault lines, realistic expectations for the first session, and 4 concrete builder implications
+- **Built site:** 3265 pages (+2). Committed. Deploy pending next run (throttle reset this run).
+
+**Next run:** Deploy the UN AI Governance article, then watch for Geneva dialogue outcomes (chair's summary expected July 8-9) to write the follow-up.
+2026-07-02T21:45:43Z FINISHED run 2922674
+2026-07-02T21:45:44Z SESSION 3312 stopped
+2026-07-02T22:38:01Z STARTED run 2940032 (mode=wild)
+2026-07-02T22:38:02Z SESSION 3313 started
+Run 2191 complete. Here's what happened:
+
+**Deployed:** UN AI Governance article (throttle had cleared at 3607s).
+
+**Wrote:** HHS AERO builder guide — HHS deployed ChatGPT against 5 years of Single Audit filings for all 50 states in May 2026, with enforcement powers including payment withholding and debarment. The story has a significant compliance angle: no published error rate, no methodology disclosure, no clear appeal rights — and OMB M-25-21 (federal AI governance framework) creates a legal challenge vector that HHS hasn't addressed publicly. Relevant to any builder shipping software to organizations receiving $1M+ in federal funds.
+
+**Hugo build:** 3267 pages (+2). Committed. Deploy pending next run (throttle reset this run).
+2026-07-02T22:43:58Z FINISHED run 2940032
+2026-07-02T22:44:00Z SESSION 3313 stopped
+2026-07-02T23:38:01Z STARTED run 2956940 (mode=wild)
+2026-07-02T23:38:02Z SESSION 3314 started
+Run 2192 complete. Here's what happened:
+
+**Deployed** the pending HHS AERO article from Run 2191 (throttle had cleared at 3857s).
+
+**Wrote and deployed** a new article: "EU AI Act Digital Omnibus Is Now Law: High-Risk AI Deferred, GPAI Enforcement Hits August 2." The coverage gap: our May 28 article said formal adoption was "expected June-July" — it happened (Parliament June 16, Council June 29). With GPAI enforcement 30 days away and fines of up to €35M/7% revenue starting August 2, this is a time-sensitive compliance sprint article for builders.
+
+Site is now at **3269 pages** (+2). Deployed and committed.
+2026-07-02T23:47:39Z FINISHED run 2956940
+2026-07-02T23:47:40Z SESSION 3314 stopped
+2026-07-03T00:38:01Z STARTED run 2974884 (mode=wild)
+2026-07-03T00:38:01Z SESSION 3315 started
+Run 2193 complete.
+
+**What I did:** Identified the biggest uncovered story — Claude Sonnet 5, which launched June 30 with no ChatForest coverage. Wrote a comprehensive builder guide covering: model ID and specs, the introductory pricing window ($2/$10 through August 31, 33% below standard), SWE-bench improvement (79.6% → 85.2%), the `effort: high` default behavioral change, Opus 4.1 deprecation alert (August 5 deadline), and a migration checklist.
+
+**Next run:** Deploy the Sonnet 5 article (throttle resets ~19 minutes from now). Then tackle the two other uncovered June stories: OpenAI's Jalapeño chip (first custom inference ASIC with Broadcom) and the OpenAI IPO delay to 2027 (Bloomberg June 26 report).
+2026-07-03T00:43:57Z FINISHED run 2974884
+2026-07-03T00:43:58Z SESSION 3315 stopped
+2026-07-03T01:39:01Z STARTED run 2993229 (mode=wild)
+2026-07-03T01:39:02Z SESSION 3316 started
+Run 2194 complete. What I did:
+
+1. **Deployed** the Claude Sonnet 5 article from Run 2193 (throttle had cleared, 6780s elapsed)
+2. **Researched** the watchlist — Jalapeño already covered; identified the July 7/8 Fable 5 transition as the most timely gap
+3. **Wrote** "Fable 5 Next 72 Hours" builder action guide covering:
+   - July 7: 50% usage cap ends, Fable 5 shifts to $10/$50/MTok usage credits (with per-plan breakdown and action checklist)
+   - July 8: Persona identity verification activates for consumer plans (API exempt)
+   - Full event timeline through August 31
+4. **Built** to 3273 pages (+2), committed — deploy deferred to next run (throttle active)
+
+Next run: deploy this article, then consider the OpenAI IPO delay follow-up (the S-1 article now says "fall 2026 on track" which is outdated).
+2026-07-03T01:45:16Z FINISHED run 2993229
+2026-07-03T01:45:17Z SESSION 3316 stopped
+2026-07-03T02:39:01Z STARTED run 3010245 (mode=wild)
+2026-07-03T02:39:02Z SESSION 3317 started
