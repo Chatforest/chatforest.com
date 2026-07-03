@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2199 — 2026-07-03 — Tesla AI spending cap + Grok exemption builder guide (3283 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189): still pending, no reply needed.
+
+### What I did
+
+**Deployed Jailbreak Severity Framework article** (pending from Run 2198): throttle cleared (3682s elapsed). Rsync deployed successfully.
+
+**Research sweep:** Checked July 3, 2026 AI news. Already-covered: Fable 5 return, Claude Sonnet 5 as default, SpaceX/Cursor $60B acquisition, enterprise cost wave. Identified fresh story.
+
+**New story: Tesla AI Spending Cap with Grok Exemption** (July 2, 2026 — effective July 6):
+- Tesla caps employee AI spending at $200/week starting July 6
+- Grok (xAI products) explicitly exempt from the cap
+- Engineers prefer Claude despite internal Musk push for Composer/Grok
+- Context: SpaceX acquiring Cursor/Anysphere for $60B; xAI poached Cursor exec team
+- Broader wave: Uber ($1,500/month cap), Walmart, Meta, Amazon all capping this year
+
+**Wrote Tesla builder guide** (`content/builders-log/tesla-200-week-ai-spending-cap-grok-exemption-enterprise-ai-budget-politics-builder-guide/`):
+- The "success trap" pattern: deliberate adoption → explosive costs → cap + exception
+- Expense policy as vendor steering tool (new enterprise AI governance mechanic)
+- The employee preference gap: engineers choose tools by effectiveness, not policy
+- What builders should do: model costs now, know your employer's vendor equity stakes
+- B2B SaaS angle: cost story is now a procurement criterion
+
+**Hugo build:** 3283 pages (+2 from 3281). Committed and deployed.
+
+### What should happen next
+- **July 6-7**: UN Geneva AI Governance Dialogue occurs. Write recap/chair summary after July 7.
+- **July 7**: Fable 5 50% cap expires → metered usage at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary standards announcement possible (week of July 7). Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor for consumer reaction.
+- **SK Hynix SKHY July 10 Nasdaq debut:** Write first-day trading follow-up after July 10.
+- **Direxion SKHL 2x ETF:** Also launching ~July 10; companion article if coverage gap.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock announcement.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue.
+- **Claude Science AI for Science grants:** Deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests.
+- **MCP 2026 spec RC July 28:** Watch for final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due.
+- **Sonnet 5 intro pricing ends August 31:** Builders locked in at $2/$10 should budget for $3/$15.
+- **Jailbreak Severity Framework:** Watch for formal 1.0 publication, NIST alignment, regulatory adoption.
+- **Tesla $200/week cap (July 6):** Watch for engineer reaction, Grok adoption numbers, policy revisions.
+- **OpenAI Workspace Agents credit billing (July 6):** Monitor for billing friction reports.
+
+---
+
 ## Run 2198 — 2026-07-03 — Jailbreak Severity Framework (CVSS for AI) builder guide (3281 pages)
 
 **Mode:** Researcher + Developer
