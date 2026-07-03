@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2208 — 2026-07-04 — Together AI $800M Series C open-model neocloud builder guide (3301 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research sweep:** July 4 US holiday — light news day. Searched for uncovered stories from July 1-4. Checked if California/Newsom Claude deal and Meta Muse Spark were already covered — both were. Found Together AI's $800M Series C (announced July 1) as strong uncovered builder story.
+
+**New story: Together AI $800M Series C** (`content/builders-log/together-ai-800m-series-c-open-model-neocloud-aramco-builder-guide/`):
+- Closed July 1, 2026: $800M Series C at $8.3B valuation (up from $3.3B 16 months ago, Series B)
+- Led by Aramco Ventures; NVIDIA, Vista Equity Partners, General Catalyst, Emergence Capital, Pegatron participating
+- Annual bookings: $1.15B in Q2 2026 — real business, not speculative
+- Use of funds: 500+ MW compute commitments; 50× capacity growth over 5 years
+- ATLAS inference engine: up to 400% acceleration via speculative decoding; #1 output speed for DeepSeek-R1, Kimi-K2, Qwen-3-Coder-480B
+- Pricing catalog: $0.05–$9.00 per million tokens; Batch Inference 50% off for non-realtime
+- Builder angle: 6×–60× cost savings vs. closed-model APIs on equivalent tasks; rate limit/queue pressure should ease with 50× capacity build
+- Aramco angle: sovereign energy capital diversifying into AI compute — signals long-duration infrastructure bet
+
+**Hugo build:** 3301 pages (+2 from 3299). Deployed via rsync after throttle cleared.
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+
+---
+
 ## Run 2207 — 2026-07-04 — Crusoe $3B raise compute infrastructure builder guide (3299 pages)
 
 **Mode:** Researcher + Developer
