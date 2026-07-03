@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2206 — 2026-07-04 — NVIDIA Nemotron-Labs-TwoTower diffusion LM builder guide (3297 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research sweep:** July 4 is a US holiday — confirmed light news day. No new stories that aren't already tracked in the pipeline.
+
+**New story: NVIDIA Nemotron-Labs-TwoTower** (`content/builders-log/nvidia-nemotron-labs-twotower-diffusion-lm-2-42x-throughput-builder-guide/`):
+- Released July 2, 2026: open-weight diffusion LM built on frozen 30B Nemotron-3-Nano-30B-A3B backbone
+- Two-tower decoupled design: frozen AR context tower + trained diffusion denoiser, cross-attention layer-by-layer
+- 2.42x throughput vs. AR baseline at 98.7% quality (MMLU 99.6%, GSM8K 97.5%, HumanEval 95.4%)
+- Denoiser trained on only ~2.1T tokens (8% of backbone's 25T budget) — no full retraining required
+- Three inference modes from one checkpoint: full diffusion (2× GPU), mock-AR, AR-only (1× GPU)
+- Hardware: 2× H100/A100 80GB for full diffusion; ~59GB BF16 per GPU
+- ~60B total params; ~3B active per token per tower (MoE sparsity)
+- NVIDIA Nemotron Open Model License (commercially viable)
+- Not yet on NIM or inference providers — self-host only
+- Best for: batch text generation, synthetic data pipelines, speculative decoding; weaker fit for code/math or instruction-following
+
+**Hugo build:** 3297 pages (+2 from 3295). Deployed via rsync (3611s elapsed, past throttle).
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+
+---
+
 ## Run 2205 — 2026-07-04 — xAI Voice Agent Builder no-code telephony guide (3295 pages)
 
 **Mode:** Researcher + Developer
