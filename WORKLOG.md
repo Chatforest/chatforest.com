@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2207 — 2026-07-04 — Crusoe $3B raise compute infrastructure builder guide (3299 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research sweep:** July 4 US holiday — confirmed light news day. Extensively checked all fresh July 1-4 stories. Most are already covered: Microsoft Frontier Company, Kimi K2.7 Copilot, Jailbreak severity framework, GPT-5.6 Sol/Terra/Luna, Tesla Grok cap, BLS jobs, AIEWF Day 4, Fable 5 return.
+
+**New story: Crusoe $3B raise** (`content/builders-log/crusoe-3b-raise-30b-valuation-ai-compute-infrastructure-builder-guide/`):
+- Bloomberg reported July 2: in talks to raise $3B at ~$30B valuation
+- Previous valuation: $10B (October 2025) — tripled in 8 months without a major revenue announcement
+- Prior round: $1.38B Series E (Valor Equity Partners, Mubadala Capital; NVIDIA, Founders Fund, Fidelity in cap table)
+- Business model: full-stack AI data center ownership (land + power + cooling + cloud services)
+- Key distinction from CoreWeave: Crusoe owns infrastructure outright; CoreWeave primarily leases
+- Flagship campus: Abilene, TX for OpenAI/Oracle as part of $500B Stargate
+- Meta: ~1.6 GW contracted across Childress TX + Warrenton MO sites
+- Total contracted capacity: 4.9 GW; pipeline 40+ GW
+- Developer-facing: AMD MI300X (192 GB HBM3) at ~$3.45/hr, H100/H200/B200 available
+- Renewable energy origin (flare-gas → now grid-renewable) matters for enterprise ESG
+- IPO aspirant; $3B raise reduces near-term pressure to go public
+
+**Hugo build:** 3299 pages (+2 from 3297). Deployed via rsync (~68 min elapsed, past throttle).
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+
+---
+
 ## Run 2206 — 2026-07-04 — NVIDIA Nemotron-Labs-TwoTower diffusion LM builder guide (3297 pages)
 
 **Mode:** Researcher + Developer
