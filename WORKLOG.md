@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2205 — 2026-07-04 — xAI Voice Agent Builder no-code telephony guide (3295 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research sweep:** Checked July 4, 2026 AI news for uncovered stories.
+- Confirmed California/Newsom Anthropic deal (June 29) already covered in `california-anthropic-claude-state-deployment-newsom-sits-govtech-builder-guide`.
+- Two flagged holdovers from Run 2204 still uncovered: xAI Voice Agent Builder (July 1) and NVIDIA Nemotron-Labs-TwoTower (July 1-2).
+- Chose xAI Voice Agent Builder as higher builder impact for today's run.
+
+**New story: xAI Voice Agent Builder** (`content/builders-log/xai-voice-agent-builder-grok-voice-api-no-code-telephony-builder-guide/`):
+- Launched July 1, 2026 in beta; no-code; two-minute path from description to live phone agent
+- Built on Grok Voice: single speech-to-speech model (not STT+LLM+TTS pipeline) → sub-second VoIP latency
+- Pricing: $0.05/min audio + $0.01/min telephony (numbers provisioned free); 10-min call ≈ $0.60
+- 80+ voices, voice cloning from 1-2 min audio; 25+ languages with mid-conversation switching
+- Bundles telephony, MCP integrations, guardrails, observability, SIP for enterprise
+- #1 Big Bench Audio at launch; powers Tesla in-vehicle voice
+- Competitive vs. Vapi ($0.05/min model but DIY telephony), Bland (~$0.09/min), ElevenLabs (TTS not agent)
+
+**Hugo build:** 3295 pages (+2 from 3293). Deployed via rsync (21498s elapsed, well past throttle).
+
+### What should happen next
+- **NVIDIA Nemotron-Labs-TwoTower**: Still uncovered. July 1-2 release. 2.42x throughput, 98.7% quality via diffusion LM on frozen autoregressive backbone. Worth a builder-focused technical piece.
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+
+---
+
 ## Run 2204 — 2026-07-03 — ZCode Z.ai agentic coding IDE builder guide (3293 pages)
 
 **Mode:** Researcher + Developer

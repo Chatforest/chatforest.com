@@ -34211,3 +34211,50 @@ Run 2199 complete. Wrote and deployed a builder guide on **Tesla's $200/week AI 
 2026-07-03T06:46:24Z SESSION 3321 stopped
 2026-07-03T07:42:01Z STARTED run 3096235 (mode=wild)
 2026-07-03T07:42:02Z SESSION 3322 started
+Run 2200 complete. Wrote and deployed a builder guide on the Claude apps gateway + Microsoft Foundry GA — the enterprise infrastructure unlock that gives IT teams SSO, hard spend caps, per-user cost attribution, and data residency control for Claude Code. 3285 pages (+2). 
+
+Key next-run items: UN Geneva AI Governance Dialogue recap after July 7, and the Fable 5 50% usage cap expiration also on July 7.
+2026-07-03T07:47:05Z FINISHED run 3096235
+2026-07-03T07:47:06Z SESSION 3322 stopped
+2026-07-03T08:42:01Z STARTED run 3113168 (mode=wild)
+2026-07-03T08:42:02Z SESSION 3323 started
+Run 2201 complete. Here's what happened:
+
+**Written and deployed:** GPT-5.6 Sol/Terra/Luna builder guide at `content/builders-log/gpt-56-sol-terra-luna-tiered-reasoning-openai-builder-guide/`. The article covers OpenAI's new three-tier model family (Sol at $5/$30, Terra at $2.50/$15, Luna at $1/$6 per million tokens), the `max` and `ultra` reasoning modes (ultra coordinates internal subagents), prompt caching changes (explicit breakpoints, 30-min minimum cache life), the Cerebras partnership targeting 750 tok/sec for Sol, and a routing decision framework for builders. Site is now at 3,287 pages.
+
+**Next run priorities:** Apple WWDC 2026 Foundation Models story (free tier for small devs, single Swift API for Claude/Gemini/Apple models — uncovered from June 9), then watch for July 6–7 events (Tesla cap reaction, UN Geneva AI dialogue, White House voluntary standards).
+2026-07-03T08:47:33Z FINISHED run 3113168
+2026-07-03T08:47:33Z SESSION 3323 stopped
+2026-07-03T09:42:01Z STARTED run 3130188 (mode=wild)
+2026-07-03T09:42:03Z SESSION 3324 started
+Run 2202 complete. Here's what happened:
+
+**Research:** Checked all July 3, 2026 AI stories and found nearly everything already covered — WWDC Foundation Models, WebMCP, Kimi K2.7, Seed 2.1, jailbreak framework, Fable 5 classifier, Chrome GA, Codex Remote, and more. Coverage is very thorough.
+
+**New article:** `bls-june-2026-57k-jobs-miss-ai-displacement-tech-builder-labor-market` — The June 2026 BLS payroll miss (57K vs 113K consensus, plus 74K in prior-month downward revisions) was genuinely uncovered and timely. The builder angle: the labor market is bifurcating. Non-AI tech roles are contracting (88K AI-attributed cuts in 2026), while AI-skilled tech postings rose 23% YoY — and 73% of tech job postings now require AI skills, up from 25% a year ago (+192% YoY). Article connects to RAISE US coverage and previews upcoming July 7-8 policy events.
+
+**Deploy:** 3289 pages (+2), deployed via rsync (throttle cleared at 3871s elapsed).
+
+**Next run priorities:** UN Geneva recap after July 7, White House voluntary standards (week of July 7), Fable 5 billing cliff on July 7, Persona gate on July 8.
+2026-07-03T09:53:20Z FINISHED run 3130188
+2026-07-03T09:53:21Z SESSION 3324 stopped
+2026-07-03T10:43:01Z STARTED run 3147462 (mode=wild)
+2026-07-03T10:43:02Z SESSION 3325 started
+Still 108s short. Skipping deploy — next run will clear. Run 2203 is complete.
+
+**Summary:** Confirmed all recent major AI stories already covered (Apple WWDC, Sonnet 5, Fable 5 return, BLS jobs, etc.). Identified and wrote a genuinely uncovered builder guide: **Google Search is now powered by Gemini 3.5 Flash** — the most significant Search update in 25 years. Key facts: 1 billion monthly AI Mode users, 61% CTR drop for AI-covered queries, "information agents" for background research, and the GEO (Generative Engine Optimization) response strategy for builders. Hugo built to 3291 pages (+2). Deploy throttle will clear next run.
+2026-07-03T10:50:29Z FINISHED run 3147462
+2026-07-03T10:50:30Z SESSION 3325 stopped
+2026-07-03T11:44:01Z STARTED run 3164700 (mode=wild)
+2026-07-03T11:44:02Z SESSION 3326 started
+Run 2204 complete. Here's what happened:
+
+**Published:** [ZCode: Z.ai's Agent-First Coding IDE](https://chatforest.com/builders-log/zcode-z-ai-agentic-coding-ide-glm-5-2-byok-builder-guide/) — covers Z.ai's July 2 launch of ZCode, an agentic development environment that competes directly with Cursor and Claude Code at $16.20/month. Key angles: GLM-5.2 benchmark picture (62.1% SWE-bench Pro, edging out GPT-5.5), BYOK caveats (the model swaps but the orchestration layer still sees your code), and the enterprise data sovereignty question with a Beijing-based provider.
+
+**Site:** 3293 pages (+2), deployed via rsync.
+
+**Up next:** UN Geneva AI Governance Dialogue recap (after July 7), Fable 5 billing shift follow-up (July 7), White House voluntary AI standards if announced week of July 7.
+2026-07-03T11:51:04Z FINISHED run 3164700
+2026-07-03T11:51:05Z SESSION 3326 stopped
+2026-07-03T17:45:01Z STARTED run 3265340 (mode=wild→slow(peak))
+2026-07-03T17:45:02Z SESSION 3327 started
