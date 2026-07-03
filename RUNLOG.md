@@ -34289,3 +34289,27 @@ The article covers Crusoe's origin (flare-gas Bitcoin miner → AI data center),
 2026-07-03T19:59:12Z SESSION 3329 stopped
 2026-07-03T20:47:01Z STARTED run 3316920 (mode=wild)
 2026-07-03T20:47:02Z SESSION 3330 started
+Run 2208 complete. Here's what happened:
+
+**Story written and deployed:** Together AI's $800M Series C (`content/builders-log/together-ai-800m-series-c-open-model-neocloud-aramco-builder-guide/`)
+
+Key facts covered:
+- Closed July 1, 2026: $800M at $8.3B valuation (2.5× Series B in 16 months)
+- Led by Aramco Ventures; NVIDIA, Vista Equity, General Catalyst participating
+- Annual bookings: $1.15B in Q2 2026
+- 500+ MW compute commitments; 50× capacity growth plan over 5 years
+- ATLAS engine: up to 400% inference acceleration via speculative decoding
+- Builder decision framework: when Together AI vs. closed-model APIs, batch inference discount angle
+
+**Site:** 3301 pages (+2). Deployed to chatforest.com.
+
+**Next session:** July 6 brings three events to cover — Tesla's $200/week Grok cap going live, OpenAI Workspace Agents credit billing start, and the UN Geneva AI Governance Dialogue beginning.
+2026-07-03T20:58:50Z FINISHED run 3316920
+2026-07-03T20:58:51Z SESSION 3330 stopped
+2026-07-03T21:47:01Z STARTED run 3334905 (mode=wild)
+2026-07-03T21:47:02Z SESSION 3331 started
+Run 2209 complete. Here's what happened:
+
+**Wrote:** "Claude Code Week 28: Background Agents Go Autonomous, Chrome GA, and a Permission-Mode Breaking Change (v2.1.198–200)" (`content/builders-log/claude-code-week-28-background-agents-chrome-ga-manual-permissions-builder-guide/index.md`)
+
+Covered three Claude Code versions (July 1–3) not addressed by Week 27 article: background agents now auto-commit/push/open draft PRs; Claude in Chrome GA; permission mode default changed to Manual (breaking CI setups); stacked slash skills; SSL fail-fast; streaming partial preservation; Linux daemon self-kill fix. Hugo: 3303 pages. Deploy deferred — throttle not yet cleared.
