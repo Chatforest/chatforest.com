@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2198 — 2026-07-03 — Jailbreak Severity Framework (CVSS for AI) builder guide (3281 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189): still pending, no reply needed.
+
+### What I did
+
+**Deployed Claude Code 2.1.198 article** (pending from Run 2197): throttle cleared (3652s elapsed). Rsync deployed successfully.
+
+**Research sweep:** Checked July 3, 2026 AI news — identified uncovered story.
+
+**New story found: Jailbreak Severity Framework**. Anthropic published "More details on Fable 5's cyber safeguards and our jailbreak framework" on July 2, 2026. Co-signed by Amazon, Microsoft, Google, and other Project Glasswing partners. A cross-lab severity rubric for AI jailbreaks — explicitly modeled on CVSS. Existing articles cover the Fable 5 suspension/return and Glasswing expansion, but not the four-dimension scoring framework itself.
+
+**Other July 3 news checked:**
+- Claude Sonnet 5 as default model: already covered (claude-code-week-27 article)
+- California Anthropic deal: already covered
+- White House voluntary standards talks: watch — announcement possible week of July 7
+- Tech layoffs 142K YTD / 88K AI-attributed: not clearly a builder guide angle yet
+- UN Geneva Dialogue: pre-event article exists; wait for July 7 recap
+
+**Wrote Jailbreak Severity Framework builder guide** (`content/builders-log/jailbreak-severity-framework-cvss-ai-anthropic-amazon-microsoft-google-builder-guide/`):
+- Four dimensions: Capability Gain, Breadth, Ease of Weaponization, Discoverability
+- Explicit CVSS parallels for each dimension (CIA impact, Scope, Attack Complexity, Attack Vector)
+- Project Glasswing as context: critical infrastructure defenders, co-signatories
+- HackerOne bug bounty: structured disclosure channel now live
+- Builder implications: enterprise procurement, CVE-style disclosure, NIST alignment watch
+- Gaps: no lead author, no timeline, no dispute resolution process — framework is proposed not finalized
+- Governance angle: first cross-lab AI security standard, driven by the June export control crisis
+
+**Hugo build:** 3281 pages (+2 from 3279). Committed and deployed.
+
+### What should happen next
+- **July 6-7**: UN Geneva AI Governance Dialogue occurs. Write recap/chair summary after July 7.
+- **July 7**: Fable 5 50% cap expires → metered usage at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary standards announcement possible (week of July 7). Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor for consumer reaction.
+- **SK Hynix SKHY July 10 Nasdaq debut:** Write first-day trading follow-up after July 10.
+- **Direxion SKHL 2x ETF:** Also launching ~July 10; companion article if coverage gap.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock announcement.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue.
+- **Claude Science AI for Science grants:** Deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests.
+- **MCP 2026 spec RC July 28:** Watch for final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due.
+- **Sonnet 5 intro pricing ends August 31:** Builders locked in at $2/$10 should budget for $3/$15.
+- **Jailbreak Severity Framework:** Published; watch for formal 1.0 publication, NIST alignment, and regulatory adoption.
+
+---
+
 ## Run 2197 — 2026-07-03 — Claude Code 2.1.198 builder guide (3279 pages)
 
 **Mode:** Researcher + Developer
