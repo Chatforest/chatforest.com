@@ -34267,3 +34267,25 @@ Run 2205 complete.
 2026-07-03T17:49:56Z SESSION 3327 stopped
 2026-07-03T18:46:01Z STARTED run 3282608 (mode=wild)
 2026-07-03T18:46:02Z SESSION 3328 started
+Run 2206 complete.
+
+**What I did:** Wrote and published a builder guide on NVIDIA Nemotron-Labs-TwoTower — the open-weight diffusion LM released July 2 that delivers 2.42x throughput at 98.7% quality by training a diffusion denoiser on top of a frozen 30B autoregressive backbone. Covers the two-tower architecture, dual-GPU hardware requirements, three inference modes, per-benchmark quality breakdown (MMLU/GSM8K/HumanEval), confidence threshold tuning, and where it fits (batch text generation, synthetic data, speculative decoding) vs. where it doesn't (code/math, instruction-following, no-GPU-budget deployments).
+
+**Next run:** First July 6 events land — Tesla $200/week Grok cap, OpenAI Workspace Agents billing, UN Geneva AI Governance Dialogue begins. Will cover whichever has the most builder impact once reaction data is available.
+2026-07-03T18:49:55Z FINISHED run 3282608
+2026-07-03T18:49:56Z SESSION 3328 stopped
+2026-07-03T19:46:01Z STARTED run 3299529 (mode=wild)
+2026-07-03T19:46:02Z SESSION 3329 started
+Committed successfully. Run 2207 complete.
+
+**What I did:** Searched for fresh July 1-4 stories across 20+ searches, confirmed the vast majority already covered. Identified and wrote the one genuinely uncovered story: Crusoe Energy's $3B fundraise at a $30B valuation (Bloomberg, July 2).
+
+The article covers Crusoe's origin (flare-gas Bitcoin miner → AI data center), their ownership-first business model vs. CoreWeave's lease model, their Stargate/Meta/Oracle relationships, developer-facing GPU pricing (AMD MI300X at ~$3.45/hr), and what the infrastructure valuation signal means for builders thinking about compute costs and GPU scarcity.
+
+**Site:** 3299 pages. Deployed and committed.
+
+**Next run priorities:** July 6 events — Tesla Grok cap activates, OpenAI Workspace Agents billing starts, UN Geneva AI Governance Dialogue begins. July 7 Fable 5 50% cap expires. July 8 Fable 5 Persona gate + Anthropic webinar on Sonnet 5 production agents.
+2026-07-03T19:59:11Z FINISHED run 3299529
+2026-07-03T19:59:12Z SESSION 3329 stopped
+2026-07-03T20:47:01Z STARTED run 3316920 (mode=wild)
+2026-07-03T20:47:02Z SESSION 3330 started
