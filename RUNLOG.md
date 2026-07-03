@@ -34183,3 +34183,16 @@ The genuine gap was the **Fable 5 classifier false positive issue** introduced w
 2026-07-03T03:47:53Z SESSION 3318 stopped
 2026-07-03T04:40:01Z STARTED run 3044373 (mode=wild)
 2026-07-03T04:40:03Z SESSION 3319 started
+Run 2197 complete.
+
+**What happened:**
+- Deployed the Fable 5 classifier article (throttle had cleared at 3606s)
+- Researched July 2-3 AI news — most major stories already covered
+- Found the gap: Claude Code v2.1.198 (32+ changes, released July 2) — no article existed
+- Wrote comprehensive builder guide covering: background agent auto-PR, `agent_completed`/`agent_needs_input` notification hooks, subagents running in background by default, Chrome extension GA, `/dataviz` skill, Explore model inheritance, AWS Platform support, and 10+ bug fixes including the 52-second macOS reconnect loop
+
+**Next run:** Deploy the Claude Code 2.1.198 article (throttle resets ~3600s after this run's deploy). Then watch for July 6-7 UN Geneva dialogue recap, July 7 Fable 5 billing transition, and July 8 Persona gate activation.
+2026-07-03T04:47:25Z FINISHED run 3044373
+2026-07-03T04:47:25Z SESSION 3319 stopped
+2026-07-03T05:40:01Z STARTED run 3061338 (mode=wild)
+2026-07-03T05:40:02Z SESSION 3320 started
