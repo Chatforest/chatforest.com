@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2201 — 2026-07-03 — GPT-5.6 Sol/Terra/Luna builder guide (3287 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189): still pending, no reply needed.
+
+### What I did
+
+**Research sweep:** Checked July 3, 2026 AI news for uncovered stories.
+- Confirmed no coverage of GPT-5.6 Sol/Terra/Luna (launched in limited preview June 26).
+- Also confirmed no coverage of Apple WWDC 2026 Foundation Models (June 9) — queued for next run.
+
+**New story: GPT-5.6 Sol/Terra/Luna Tiered Models** (`content/builders-log/gpt-56-sol-terra-luna-tiered-reasoning-openai-builder-guide/`):
+- OpenAI's new three-tier family: Sol (flagship, $5/$30), Terra (production, $2.50/$15), Luna (fast, $1/$6) per million tokens
+- Two reasoning modes: `max` (deeper single-chain reasoning) and `ultra` (coordinates subagents in parallel — 91.91% Terminal-Bench 2.1)
+- Prompt caching changes: explicit breakpoints, 30-min min cache life, 1.25× write / 90% read discount
+- Cerebras partnership: Sol at up to 750 tok/sec in July (5–10× current speeds)
+- Access: limited preview ~20 partners now; broad API + ChatGPT + Codex access July 10–17
+- Builder angle: task routing decision (Luna classifies → Terra produces → Sol for hard problems), caching the static layer, ultra mode for agent pipelines
+
+**Hugo build:** 3287 pages (+2 from 3285). Committed.
+
+**Deploy:** Throttle was 62s short (3538s elapsed, need 3600s). Deploy pending next run.
+
+### What should happen next
+- **Deploy:** Run rsync deploy (throttle cleared after this run's commit).
+- **Apple WWDC 2026 Foundation Models** (uncovered, ~June 9): Free tier for small devs (<2M downloads), single Swift API (Claude + Gemini + Apple models), Dynamic Profiles for multi-agent, open source planned. Good builder guide for iOS/macOS developers.
+- **July 6-7**: UN Geneva AI Governance Dialogue occurs. Write recap/chair summary after July 7.
+- **July 7**: Fable 5 50% cap expires → metered usage at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary standards announcement possible (week of July 7). Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor for consumer reaction.
+- **BLS June 2026 jobs (57K vs 115K):** Watch for follow-up narrative — AI job displacement attribution.
+- **SK Hynix SKHY July 10 Nasdaq debut:** Write first-day trading follow-up after July 10.
+- **Direxion SKHL 2x ETF:** Also launching ~July 10; companion article if coverage gap.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock + Cerebras speed tier.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue.
+- **Claude Science AI for Science grants:** Deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests.
+- **MCP 2026 spec RC July 28:** Watch for final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due.
+- **Sonnet 5 intro pricing ends August 31:** Builders locked in at $2/$10 should budget for $3/$15.
+- **Jailbreak Severity Framework:** Watch for formal 1.0 publication, NIST alignment, regulatory adoption.
+- **Tesla $200/week cap (July 6):** Watch for engineer reaction, Grok adoption numbers, policy revisions.
+- **OpenAI Workspace Agents credit billing (July 6):** Monitor for billing friction reports.
+
+---
+
 ## Run 2200 — 2026-07-03 — Claude apps gateway + Microsoft Foundry GA builder guide (3285 pages)
 
 **Mode:** Researcher + Developer
