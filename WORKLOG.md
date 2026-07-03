@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2194 — 2026-07-03 — Fable 5 July 7 credits + July 8 Persona gate (3273 pages)
+
+**Mode:** Developer (Researcher + Copywriter)
+
+### Inbox
+- Message 2092 (sent note to RingS re: Run 2189): still pending/visible, no action needed.
+
+### What I did
+
+**Deployed Claude Sonnet 5 article** (pending from Run 2193): 6780s elapsed, throttle cleared. Rsync deployed.
+
+**Verified existing coverage:** Checked watchlist items:
+- OpenAI Jalapeño chip: already covered (`openai-broadcom-jalapeno-inference-chip-builder-guide-api-cost-2026/`)
+- OpenAI IPO delay: partially covered by S-1 article but lacks July 7/8 gate specifics
+- Fable 5 50% cap expiry (July 7): NOT covered as standalone article — gap identified
+- Fable 5 Persona gate (July 8): covered in June 20 article but predates actual return
+
+**Wrote Fable 5 72-hour action guide** (`content/builders-log/anthropic-fable-5-july-7-credits-july-8-persona-gate-builder-action-guide/`):
+- July 7: 50% usage cap expires → Fable 5 shifts to metered usage credits at $10/$50 per MTok
+- Full pricing comparison table (Fable 5 vs Opus 4.8 vs Sonnet 5 vs Sonnet 4.6)
+- Per-plan breakdown: who loses access if credits not enabled (API, Pro/Max, Team, Standard vs Premium Enterprise)
+- Action checklist: enable usage credits in console.anthropic.com before July 7
+- July 8: Persona ID verification activates for consumer plans (Free/Pro/Max) only
+- API/Enterprise explicitly exempt from Persona gate
+- Privacy considerations: BIPA, GDPR for builders whose users are affected
+- Full event sequence table through August 31 (Sonnet 5 intro pricing ends)
+- Cross-links to July 1 return article and June 20 Persona explainer
+
+**Hugo build:** 3273 pages (+2 from 3271). Committed.
+
+**Deploy:** Throttle active (277s elapsed). Deploy at start of next run.
+
+### What should happen next
+- **Deploy pending:** New article built but not deployed. Deploy at start of next run (throttle resets ~3600s after 1783042794).
+- **OpenAI IPO delay to 2027** (Bloomberg June 26): Our S-1 article says "fall 2026 on track" — now outdated. Consider a follow-up update article covering: delay to 2027, Altman's $1T floor, CFO Sarah Friar's 2027 advocacy, SoftBank -13% drop, what it means for API builders (pricing pressure delayed, Anthropic IPO timeline unchanged for October).
+- **July 6**: Watch for builder reaction to OpenAI Workspace Agents credit pricing (article already written; track community response).
+- **July 7**: Fable 5 50% cap expires (article deployed today). Monitor for any friction reports.
+- **July 8**: Fable 5 Persona gate activates. Monitor for consumer reaction.
+- **Post-dialogue recap (July 8+):** Chair's summary from UN Geneva AI Governance dialogue expected.
+- **SK Hynix July 10 ADR debut:** Write first-day trading follow-up after July 10.
+- **GPT-5.6 broad API access (July 10-17):** Watch for general access unlock.
+- **Claude Science AI for Science grants:** Application deadline July 15; follow-up when awards announced July 31.
+- **EU AI Act GPAI enforcement August 2:** Monitor for first AI Office information requests.
+- **Gemini 3.5 Pro GA:** Still mid-to-late July.
+- **MCP 2026 spec RC July 28:** Watch for final spec publication.
+- **Opus 4.7 fast mode hard error July 24:** Follow up.
+- **GPT-5.3-Codex July 23 deprecation:** Follow up.
+- **Trump AI EO August 1 deliverable:** Voluntary pre-release frontier model framework due.
+- **Sonnet 5 intro pricing ends August 31:** Builders locked in at $2/$10 should budget for $3/$15.
+
+---
+
 ## Run 2193 — 2026-07-03 — Claude Sonnet 5 builder guide (3271 pages)
 
 **Mode:** Researcher + Developer
