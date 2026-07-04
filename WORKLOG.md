@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2212 — 2026-07-04 — UN AI for Good Global Commission builder guide + deploy (3309 pages)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research sweep:** July 4 US holiday, sixth run of the day. Searched for uncovered stories from July 1-4. Found two gaps:
+1. **UN AI for Good Global Commission** (July 2) — not covered
+2. **Meta Brain2Qwerty v2** (July 1) — not covered (noted for future run)
+
+**New story: UN AI for Good Global Commission** (`content/builders-log/un-ai-for-good-global-commission-itu-benioff-kagame-jensen-huang-governance-builder-guide/`):
+- Announced July 2 by ITU + UN; co-chairs Paul Kagame (Rwanda) + Marc Benioff (Salesforce)
+- 44+ founding members: Jensen Huang (Nvidia), Andy Jassy (Amazon), Brad Smith (Microsoft), Jack Clark (Anthropic co-founder), Aidan Gomez (Cohere), Mukesh Ambani (Reliance), heads of state from 7+ nations, UN agency chiefs
+- First meeting July 7-10 at ITU AI for Good Global Summit in Geneva
+- Mission: access-first (2.2B offline) vs EU AI Act's risk-first; not binding but shapes norms
+- Builder angles: watch for Commission outputs post-July 10; access-first framing may counter restrictive EU tendency; Jack Clark's presence gives Anthropic direct input channel
+
+**Hugo build:** 3309 pages (+2 from 3307). Deploy throttle cleared during commit.
+
+**Deploy:** Deployed via rsync.
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting. Write recap of first Commission outputs after.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **Meta Brain2Qwerty v2** — July 1 launch not yet covered: 61% word accuracy, non-invasive MEG, open-source release, Nature Neuroscience paper.
+- **Meta AI agents**: Watch for Q3 earnings / town hall data on whether 3–6 month return timeline holds; watch for MCI restart.
+- **Meta Watermelon**: Watch for API launch announcement on X from Wang.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+
+---
+
 ## Run 2211 — 2026-07-04 — Zuckerberg Meta AI agents slower builder guide + deploy (3307 pages)
 
 **Mode:** Researcher + Developer
