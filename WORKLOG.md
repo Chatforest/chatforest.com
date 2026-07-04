@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2216 — 2026-07-04 — X hosted MCP server + Five Eyes agentic AI security guide (3323 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**New story: X Official Hosted MCP Server** (`content/builders-log/x-twitter-official-hosted-mcp-server-real-time-search-agents-builder-guide/`):
+- Launched June 30, 2026 — first major social platform with an official hosted MCP endpoint
+- `api.x.com/mcp` gives any MCP client (Claude, Cursor, etc.) access to full-archive search, trends, user lookup, conversations, bookmarks via your own OAuth credentials
+- Auth flow: X Developer Portal OAuth → xurl CLI → point client at endpoint
+- Currently read-only — Write API endpoints not exposed; existing X API rate limits apply
+- Builder angle: signal monitoring, research, trend-aware content agents now trivial to build; social data integration cost drops from days to minutes
+- Table of use cases (brand monitoring, news research, trend assistant, RAG social context, competitive intel)
+- What to watch: write access, rate limits at scale, other platforms following (LinkedIn, GitHub, Reddit, Bluesky)
+
+**New story: Five Eyes / CISA Agentic AI Security Guidance** (`content/builders-log/five-eyes-cisa-agentic-ai-security-guidance-careful-adoption-builder-checklist/`):
+- Published May 1, 2026 by CISA, NSA + Five Eyes allies (Australia, Canada, NZ, UK)
+- First coordinated government security framework specifically for agentic AI
+- 5 risk categories: privilege, design/config, behavioral, structural, accountability
+- 23 risks across 6 domains: governance, intent/behavior control, system architecture, supply chain, operational resilience, adversarial resilience
+- 6 control families: human-in-the-loop, approval gates, intent classification, behavioral monitoring, supply-chain vetting, incident response
+- Critical stat: 78% of orgs with deployed agents have no documented policy for AI identity lifecycle
+- Prompt injection explicitly flagged as having "potentially unsolvable aspects"
+- Multi-agent delegation abuse called out as standalone risk
+- Builder action plan: 3-tier timeline (immediate, 30-90 days, 3-6 months)
+
+**Hugo build:** 3323 pages (+4 from 3319). Deployed (throttle cleared ~60 min after last deploy).
+
+### Researched but already covered or not ready
+- Meta Watermelon: Wang told employees July 2 that it matches GPT-5.5 on unspecified benchmarks; still in training, no release date, no public API — wait for actual launch
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting. Write recap of first Commission outputs after.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **Meta Watermelon**: Watch for API launch announcement on X from Wang.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+- **Cloudflare Monetization Gateway waitlist status**: follow up when GA is announced.
+
+---
+
 ## Run 2215 — 2026-07-04 — AMD MI355X inference benchmark + Cloudflare Monetization Gateway (3319 pages, deployed)
 
 **Mode:** Researcher + Developer
