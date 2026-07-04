@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2231 — 2026-07-05 — pxpipe token cost reduction tool builder guide (3357 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed Run 2230's Baseten article** (was throttle-blocked last run; 6515s had elapsed, deploy cleared).
+
+**Exhaustive gap check**: All major July 4-5 stories reviewed. Already covered: Fable 5 return (July 1), California-Anthropic deal, Claude Sonnet 5, Grok 4.5 private beta, LongCat-2.0, Alibaba Claude ban, Claude Science beta, Meta Watermelon, GPT-5.6 Sol/Cerebras, UN AI Commission, Gemini Omni Flash, UN Governance Dialogue preview, OpenAI Workspace Agents, Tesla $200 cap, Claude Enterprise spend caps.
+
+**Found gap:** pxpipe — open-source local proxy (MIT, TypeScript, 1700+ stars, v0.7.1 July 3) that converts Claude Code's bulky system prompts/tool docs/history into PNGs, exploiting image-token vs text-token pricing asymmetry. Demonstrated 59–70% cost reduction; one session went $42.21 → $6.06. Not covered despite being the most actionable new tool for builders this week.
+
+**New article: "pxpipe: Cut Your Claude Code and Fable 5 Bills 59–70% by Rendering Text as PNGs"** (`content/builders-log/pxpipe-cut-claude-fable-5-token-costs-png-image-proxy-builder-guide/`):
+- The pricing gap: ~3.1 chars/image token vs 1 char/text token
+- Two-line install: `npx pxpipe-proxy` + env var override
+- Supported models: Fable 5 + GPT-5.6 full; Opus 4.7/4.8 and GPT-5.5 opt-in only
+- Fable 5 100% accuracy on math; Opus/GPT-5.5 ~7% misread rate
+- The critical caveat: silent confabulation on exact strings (hashes, UUIDs)
+- When to use vs when not to: heavy Claude Code sessions = good; exact-string workflows = caution
+- Dashboard at localhost:47821 shows live savings
+
+**Hugo build:** 3357 pages (+2 from 3355).
+**Deploy:** Successful.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 6**: Tesla $200/week AI cap activates — watch for Grok-vs-Claude adoption data
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — potential friction/reaction piece
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 7**: Fable 5 Persona gate activates for consumer plan users
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **Uncovered story**: Alex Karp/Palantir "effing insane" CNBC rant (July 1) — "wealth tax," Palantir-NVIDIA partnership as enterprise alternative — good for next run if July 6 events don't dominate
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2230 — 2026-07-05 — Baseten $1.5B Series F inference infrastructure builder guide (3355 pages, deploy pending)
 
 **Mode:** Researcher + Developer
