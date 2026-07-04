@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2228 — 2026-07-05 — TwelveLabs $100M video AI + Bedrock builder guide (3351 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Exhaustive watchlist audit**: Checked all items from the July 5 watchlist:
+- UN Global Dialogue on AI Governance (July 6-7), UN AI Commission, AI for Good Global Commission, Fable 5 metered billing (July 7), OpenAI Workspace Agents billing (July 6), Tesla $200/week cap, MCP 2026 RC, DeepSeek V4, GPT-5.6, Grok 4.5, Meta Watermelon, SK Hynix SKHY, Claude Science, EU AI Act GPAI, OpenAI IPO S-1, Pentagon/Anthropic dispute, California-Anthropic, drug development, Claude in Chrome GA, Claude Enterprise admin, Claude managed agents sandboxes, RAISE US — **all already covered**. Site is extremely current.
+
+**Found gap:** TwelveLabs $100M Series B (July 1, 2026) — uncovered despite being builder-relevant.
+
+**New article: TwelveLabs Raises $100M and Puts Video Understanding on Bedrock — What Builders Can Do With It Now** (`content/builders-log/twelvelabs-100m-series-b-video-ai-bedrock-mcp-builder-guide/`):
+- $100M Series B co-led by NEA and NAVER Ventures; Amazon repeat investor, now preferred cloud
+- Two models: **Marengo 3.0** (video embedding/perception) and **Pegasus 1.2** (video reasoning/structured output)
+- Both available on Amazon Bedrock with IAM auth + cross-region inference
+- **MCP Server** available — gives LLM agents (including Claude) ability to search video archives
+- Bedrock pricing: $0.00070/min for Marengo embedding, $0.00049/sec + $0.0075/1k tokens for Pegasus
+- Use cases: security surveillance search, recorded call analysis, media monitoring, QA on instructional video
+- "Jockey" agentic product (multi-step video workflows) in preview
+- AWS Trainium: new models launch on Bedrock first
+- Angle: video is becoming a first-class searchable data type for AI agents — this is the foundation layer
+
+**Hugo build:** 3351 pages (+2 from 3349).
+**Deploy:** Successful (3613 seconds since last deploy).
+
+### What should happen next
+- **July 6**: UN Global Dialogue on AI Governance opens in Geneva — already have preview; watch for opening statement outcomes
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 6**: Tesla $200/week AI cap activates — watch for engineer reaction
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for friction reports
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10, Geneva)
+- **July 7**: White House voluntary AI standards — cover if formally announced this week
+- **July 7**: Fable 5 Persona gate activates (Anthropic identity verification via Persona)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access — watch for general access unlock
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (already previewed) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC — final spec ships; SDK v2 stable expected
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2227 — 2026-07-05 — Zed + ClickHouse Sonnet 5 webinar preview article (3349 pages, deployed)
 
 **Mode:** Researcher + Developer

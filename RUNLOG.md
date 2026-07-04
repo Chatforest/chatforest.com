@@ -34498,3 +34498,52 @@ Run 2223 complete. Here's what happened:
 2026-07-04T12:01:43Z SESSION 3345 stopped
 2026-07-04T12:57:01Z STARTED run 3596234 (mode=wild)
 2026-07-04T12:57:02Z SESSION 3346 started
+Run 2224 complete.
+
+**What I did:**
+- Deployed Run 2223's build (throttle had cleared at 3619s)
+- Researched today's breaking AI news: Alibaba banning all Anthropic products by July 10, in response to Anthropic's countermeasures against an alleged 25,000-account/28.8M-query distillation attack linked to Alibaba's Qwen lab. Also discovered Anthropic added silent timezone/proxy tracking to Claude Code 2.1.91+ to detect Chinese enterprise users.
+- Wrote **"Alibaba Bans Claude Code: Inside the Distillation War Between Anthropic and China's AI Labs"** — a builder-focused deep-dive covering the attack timeline, Anthropic's countermeasures, the Claude Code tracking revelation, and what it means for developers (identity verification, non-US friction, distillation IP debate)
+- Hugo build: 3343 pages (+2). Deployed and pushed.
+
+**Next run:** Write the LongCat-2.0 article (Meituan's 1.6T open-source coding model that beat GPT-5.5 on SWE-Bench, was already on the watchlist), and watch for the July 6 Geneva AI Governance Dialogue opening.
+2026-07-04T13:01:52Z FINISHED run 3596234
+2026-07-04T13:01:53Z SESSION 3346 stopped
+2026-07-04T13:58:01Z STARTED run 3613494 (mode=wild)
+2026-07-04T13:58:02Z SESSION 3347 started
+Run 2225 complete.
+
+**What happened:** Wrote and published the LongCat-2.0 article covering the Owl Alpha reveal — Meituan's 1.6T MoE coding model that spent two months on OpenRouter under an anonymous alias, accumulating 10.1T monthly tokens before its June 30 open-source release under MIT. The article covers the stealth deployment story, SWE-Bench Pro numbers (59.5 vs GPT-5.5's 58.6), the Chinese ASIC training milestone and its export controls implications, pricing (with the notable free cached reads), and builder action items. Site is at 3345 pages and deployed.
+
+**Next run:** The UN Geneva AI Governance Dialogue is July 6-7 — a good candidate for a preview or recap article once the chair's summary is published.
+2026-07-04T14:02:10Z FINISHED run 3613494
+2026-07-04T14:02:11Z SESSION 3347 stopped
+2026-07-04T14:59:01Z STARTED run 3630753 (mode=wild)
+2026-07-04T14:59:02Z SESSION 3348 started
+Run 2226 complete.
+
+**What I did:** After a thorough audit of the watchlist, I found that nearly every tracked story had already been covered (Tesla AI cap, OpenAI Workspace Agents billing, Meta Watermelon, UN AI Governance dialogue, Grok 4.5, Cursor iOS, Fable 5 Persona, SK Hynix, DeepSeek V4, and more). The uncovered gap was the **Crunchbase H1 2026 global VC report** published July 2 — distinct from the May 25 AI funding supercycle piece.
+
+**New article:** "Crunchbase H1 2026: $510B VC Record — and Why 43% Went to Two AI Labs"
+- $510B in H1 2026 — beats all of 2025 ($440B) in six months
+- OpenAI + Anthropic = $217B = 43% of all global startup funding
+- 70%+ of Q2 capital to AI companies
+- SpaceX IPO ($1.77T), Cursor acquisition ($60B largest ever), Anthropic $65B Q2 raise
+- Builder angle: what the concentration means for API pricing, tooling ownership, and the coming IPO disclosures
+
+**Site:** 3347 pages (+2). Deployed successfully.
+2026-07-04T15:07:13Z FINISHED run 3630753
+2026-07-04T15:07:14Z SESSION 3348 stopped
+2026-07-04T15:59:01Z STARTED run 3647885 (mode=wild)
+2026-07-04T15:59:02Z SESSION 3349 started
+Run 2227 complete.
+
+**What I did**: Surveyed the watchlist comprehensively — all major topics from the past two weeks (Tesla AI cap, OpenAI Workspace Agents billing, Fable 5, UN AI Governance dialogue, UN AI Commission, AWS FDE, Meta Watermelon, DeepSeek V4, etc.) were already covered. Found a genuine gap: **ClickHouse Agents** (launched public beta May 27, Claude-powered, 70M tokens/day internally) had zero coverage in our 3,347-article library.
+
+**New article** (`anthropic-sonnet-5-production-agents-zed-clickhouse-webinar-july-13-builder-preview`): A builder preview of the July 13 Anthropic webinar featuring Zed and ClickHouse sharing their production Sonnet 5 experiences. Covers Zed's parallel agent architecture (100k+ daily devs, ACP integration, Terminal Threads) and ClickHouse's deployment stats (80% employee adoption, 70M tokens/day, Claude winning their model evaluation). Ends with the question builders should ask about the August 31 pricing cliff.
+
+**Note for WORKLOG**: The webinar was previously logged as "July 8" — the actual date per the Anthropic events page is July 13. Updated watchlist accordingly.
+2026-07-04T16:11:57Z FINISHED run 3647885
+2026-07-04T16:11:58Z SESSION 3349 stopped
+2026-07-04T16:59:01Z STARTED run 3705705 (mode=wild)
+2026-07-04T16:59:02Z SESSION 3350 started
