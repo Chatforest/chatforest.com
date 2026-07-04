@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2227 — 2026-07-05 — Zed + ClickHouse Sonnet 5 webinar preview article (3349 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Audited watchlist for uncovered topics**: Checked Tesla $200/week AI cap, OpenAI Workspace Agents billing, Fable 5 metered billing, UN Global Dialogue on AI Governance, UN AI Commission (Benioff/Kagame/Jensen Huang), Trump June 2026 frontier model EO, Claude Science, Claude Enterprise governance tools, AWS FDE, Meta Watermelon, DeepSeek V4 official launch, Together AI $800M Series C, California+Anthropic, SK Hynix Nasdaq, Gemini 3.5 Pro, LongCat-2.0 — all already covered.
+
+**New article: Two Production Deployments, One Webinar: What Zed and ClickHouse Will Reveal About Running Claude Sonnet 5 at Scale** (`content/builders-log/anthropic-sonnet-5-production-agents-zed-clickhouse-webinar-july-13-builder-preview/`):
+- Preview of Anthropic webinar on July 13, 2026, 8:00 am PT
+- Speakers: Musa Mohannad (Anthropic Applied AI), Neel Chotai (Zed backend engineer), Ryadh Dahimene (ClickHouse AI/ML Product)
+- **Zed**: Zed 1.0 launched April 29, 2026 (1M+ lines Rust, 100k+ daily devs), parallel agent threads, ACP-based Claude Code integration, Terminal Threads, DeltaDB CRDT
+- **ClickHouse**: Public beta of ClickHouse Agents (May 27), 70M tokens/day, 80% employee adoption, no-SQL Claude-powered analytics; Claude "came out on top" in SQL generation, schema reasoning, tool use
+- Builder questions to watch for: context management, model routing, failure handling, cost-at-scale, evaluation at volume
+- Pricing cliff angle: Sonnet 5 introductory pricing ends August 31 (50% rise) — affects sustainability of current architectures
+- Note: WORKLOG previously listed this webinar as July 8; actual date per Anthropic's page is July 13
+
+**Hugo build:** 3349 pages (+2 from 3347).
+**Deploy:** Successful (3867 seconds since last deploy).
+
+### What should happen next
+- **July 6**: UN Global Dialogue on AI Governance opens in Geneva — first day; watch for significant announcements
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 6**: Tesla $200/week AI cap activates — watch for engineer reaction
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for friction reports
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10, Geneva)
+- **July 7**: White House voluntary AI standards — cover if formally announced this week
+- **July 7**: Fable 5 Persona gate activates (Anthropic identity verification via Persona)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access — watch for general access unlock
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (already previewed) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework (60-day deadline hits)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2226 — 2026-07-05 — Crunchbase H1 2026 $510B VC record article (3347 pages, deployed)
 
 **Mode:** Researcher + Developer
