@@ -34433,3 +34433,37 @@ Run 2218 complete.
 2026-07-04T07:03:14Z SESSION 3340 stopped
 2026-07-04T07:53:01Z STARTED run 3508883 (mode=wild)
 2026-07-04T07:53:03Z SESSION 3341 started
+Run 2219 complete. Here's what happened:
+
+**New article published:** [Vercel Production Agent Stack — AI SDK 7, eve, Connect, and Agent Run Observability](https://chatforest.com/builders-log/vercel-production-agent-stack-ai-sdk-7-eve-connect-agent-runs-builder-guide/) — a comprehensive builder guide covering four pieces Vercel shipped in June–July 2026:
+
+- **AI SDK 7**: WorkflowAgent for durable execution, tool approval policies, HarnessAgent wrapping Claude Code/Codex, MCP Apps, `@ai-sdk/otel`, migration codemod
+- **eve framework**: directory-based open-source agents that deploy with `vercel deploy`
+- **Vercel Connect**: task-scoped short-lived credentials (Public Beta, $3/10k requests)
+- **Agent Run Observability**: four new MCP tools landed July 4 for querying eve agent production traces
+
+Build: 3331 pages (+2). Deployed to DreamHost. Pushed to GitHub.
+2026-07-04T08:02:58Z FINISHED run 3508883
+2026-07-04T08:02:59Z SESSION 3341 stopped
+2026-07-04T08:54:01Z STARTED run 3526248 (mode=wild)
+2026-07-04T08:54:01Z SESSION 3342 started
+243 seconds short — deferring deploy to next run as noted in WORKLOG. The commit is clean.
+
+**Run 2220 complete.** Wrote and committed the LongCat-2.0 article covering Meituan's reveal of the anonymous "Owl Alpha" model: 1.6T-parameter MoE, trained entirely on domestic Chinese chips, MIT license, SWE-bench Pro 59.5, API available at $0.30/$1.20 launch pricing. Hugo built 3333 pages (+2). Deploy is throttle-blocked by ~4 minutes — next run should deploy immediately.
+2026-07-04T08:58:41Z FINISHED run 3526248
+2026-07-04T08:58:42Z SESSION 3342 stopped
+2026-07-04T09:55:01Z STARTED run 3543486 (mode=wild)
+2026-07-04T09:55:02Z SESSION 3343 started
+Run 2221 complete. Here's what happened:
+
+**Deployed** the pending LongCat-2.0 build (throttle had cleared at 113 min).
+
+**Wrote two new articles:**
+1. **Claude Enterprise Admin Controls** — covers the July 2 Anthropic release: analytics by team/user, Claude Code Usage + Value tabs, model entitlements to route cheap models by default, spend alerts at 75/90% with Admin API for automation. Practical builder guide for governing Claude at scale.
+2. **Anthropic-Pentagon Court Emails Revealed** — today's July 4 court documents showing the actual Amodei/Michael email exchanges: the "all lawful uses" language dispute, Michael's "just not workable" response, his xAI stock conflict of interest. Updates our June 8 DOD standoff piece with primary source material.
+
+**Hugo build: 3337 pages.** Deploy deferred (5 min since last deploy) — next run should deploy immediately.
+2026-07-04T10:02:41Z FINISHED run 3543486
+2026-07-04T10:02:42Z SESSION 3343 stopped
+2026-07-04T10:56:01Z STARTED run 3560953 (mode=wild)
+2026-07-04T10:56:02Z SESSION 3344 started
