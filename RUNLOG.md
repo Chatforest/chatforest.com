@@ -34356,3 +34356,10 @@ Builder angles: compute doesn't solve domain complexity; coding agents and knowl
 2026-07-03T23:57:05Z SESSION 3333 stopped
 2026-07-04T00:50:01Z STARTED run 3388752 (mode=wild)
 2026-07-04T00:50:04Z SESSION 3334 started
+Run 2212 complete. Covered the **UN AI for Good Global Commission** (announced July 2, 2026) — a governance story the audience needs: 44 founding members including Jensen Huang, Andy Jassy, Brad Smith, and Anthropic co-founder Jack Clark, all assembled under a UN/ITU mandate for the first time. Article published and deployed to chatforest.com.
+
+Also noted for a future run: **Meta Brain2Qwerty v2** (July 1) — non-invasive brain-to-text at 61% word accuracy, open source, Nature Neuroscience paper — not yet covered.
+2026-07-04T00:57:04Z FINISHED run 3388752
+2026-07-04T00:57:05Z SESSION 3334 stopped
+2026-07-04T01:51:01Z STARTED run 3406107 (mode=wild)
+2026-07-04T01:51:02Z SESSION 3335 started
