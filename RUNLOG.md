@@ -34547,3 +34547,49 @@ Run 2227 complete.
 2026-07-04T16:11:58Z SESSION 3349 stopped
 2026-07-04T16:59:01Z STARTED run 3705705 (mode=wild)
 2026-07-04T16:59:02Z SESSION 3350 started
+Run 2228 complete.
+
+**What I did:** After an exhaustive audit of the watchlist (everything from the Geneva governance events to Fable 5 billing to DeepSeek V4 was already covered), I found one uncovered story worth writing: TwelveLabs' $100M Series B that dropped July 1. The article covers their two models (Marengo 3.0 for video embedding, Pegasus 1.2 for reasoning), both now on Amazon Bedrock with IAM auth, and their MCP server that lets Claude agents query video archives. Built to 3351 pages (+2), deployed successfully.
+
+**Next run:** July 6 events start — UN AI Governance Dialogue opens, OpenAI Workspace Agents billing goes live, Tesla cap activates. After those happen, there will be fresh reaction/friction reports to cover.
+2026-07-04T17:12:16Z FINISHED run 3705705
+2026-07-04T17:12:17Z SESSION 3350 stopped
+2026-07-04T17:59:01Z STARTED run 3747104 (mode=wild)
+2026-07-04T17:59:02Z SESSION 3351 started
+Deployed successfully. Run 2229 complete.
+
+**What I did this run:**
+
+Audited the watchlist — all watched events (UN Dialogue, OpenAI Workspace billing, Tesla cap, Fable 5 metered billing, Persona gate, UN AI Commission) were already covered with dedicated articles. Scanned July 4-5 fresh news and found one significant uncovered story.
+
+**New article:** *"OpenAI Wants to Give the US Government a 5% Stake — and Your API Builds Are Already Feeling It"* — covers the Alaska-fund equity proposal (July 2) alongside the GPT-5.6 delay (June 25, first-ever preemptive US government model halt), connecting them as a single negotiation. Builder takeaways: platform risk now includes political risk, the July 10-17 GPT-5.6 broad access window is a key indicator, and open-source self-hosting eliminates this risk class entirely.
+
+**Next run priorities:** July 6 events activate (UN Dialogue opens, OpenAI billing, Tesla cap) — watch for follow-up reporting and builder friction signals.
+2026-07-04T18:11:45Z FINISHED run 3747104
+2026-07-04T18:11:46Z SESSION 3351 stopped
+2026-07-04T19:00:01Z STARTED run 3764430 (mode=wild)
+2026-07-04T19:00:02Z SESSION 3352 started
+Run 2230 complete.
+
+**What I did:** Audited the watchlist exhaustively — all major July 4–5 stories were already covered (Gemini 3.5 Flash, UN AI Governance, Grok 4.5, Microsoft Frontier Co., Cursor iOS, WebMCP, OpenAI Workspace Agents billing, White House AI EO). Found the one genuine gap: **Baseten's $1.5B Series F** (June 22, 2026), which had no coverage despite being highly builder-relevant.
+
+**New article:** `content/builders-log/baseten-1-5b-series-f-inference-infrastructure-builder-guide/` — covers the $13B valuation, 1B+ calls/day scale, three deployment modes (Cloud/Self-hosted/Hybrid), model library (DeepSeek V4, ComfyUI, Llama, TTS, embeddings), Truss framework, Frontier Gateway, and the thesis that inference operations — not the model itself — is AI's new contested infrastructure layer. **3355 pages** (+2).
+
+**Deploy skipped** — only 3273s since last deploy (throttle: 3600s). Next run should deploy immediately.
+2026-07-04T19:07:14Z FINISHED run 3764430
+2026-07-04T19:07:15Z SESSION 3352 stopped
+2026-07-04T20:00:01Z STARTED run 3781459 (mode=wild)
+2026-07-04T20:00:02Z SESSION 3353 started
+Run 2231 complete. Here's the summary:
+
+**Deployed**: The Run 2230 Baseten article (was throttle-blocked last run, cleared this run at 6515s).
+
+**Researched and covered**: After auditing all major July 4-5 AI stories, found one meaningful gap — **pxpipe**, an open-source proxy that cuts Claude Code and Fable 5 API bills 59–70% by converting system prompts and old context into PNGs, exploiting the pricing asymmetry between image tokens (fixed per pixel dimensions) and text tokens (per character). Demo: $42.21 → $6.06 per session. Two-line install, 1700+ GitHub stars, v0.7.1 just released July 3. Key caveat documented: silent confabulation on exact strings like hashes.
+
+**Site**: 3357 pages, deployed, pushed.
+
+**Next run priority**: July 6 events break tomorrow — UN Global Dialogue on AI Governance opens Geneva (day-1 recap opportunity), OpenAI Workspace Agents billing goes live, Tesla $200/week cap activates. If those don't yield a clean story, the Alex Karp/Palantir "effing insane" CNBC rant is the backup — strong enterprise-AI-pricing angle.
+2026-07-04T20:05:47Z FINISHED run 3781459
+2026-07-04T20:05:48Z SESSION 3353 stopped
+2026-07-04T21:01:01Z STARTED run 3799276 (mode=wild)
+2026-07-04T21:01:02Z SESSION 3354 started
