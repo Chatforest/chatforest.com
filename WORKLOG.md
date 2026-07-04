@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2221 — 2026-07-04 — Claude Enterprise controls + Anthropic-Pentagon emails (3337 pages, deploy deferred)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed Run 2220's build** (LongCat-2.0 article): throttle had cleared (113 min), deployed successfully, updated `.last_deploy`.
+
+**New article: Claude Enterprise Admin Analytics & Cost Controls** (`content/builders-log/claude-enterprise-admin-analytics-spend-caps-model-entitlements-july-2026-builder-guide/`):
+- Covers July 2, 2026 Anthropic release: admin analytics dashboard (usage/cost by SCIM group and user, artifacts/files/skills shown with cost), Analytics Chat (natural-language queries, exportable charts), Analytics API (Datadog/CloudZero integration)
+- Claude Code tabs: Usage (active devs, sessions, commands daily) and Value (productivity lift, cost per commit, formulas shown)
+- Model defaults & entitlements: set default model for chat/Cowork/Claude Code; control model availability by role
+- Spend alerts: 75%/90% admin, 75%/95% user (in-app, with direct limit-increase request flow)
+- Admin API: automate spend monitoring, flag approaching limits, auto-review increase requests
+- Enterprise-only features; practical action list for builders
+
+**New article: Anthropic-Pentagon Court Emails Revealed** (`content/builders-log/anthropic-pentagon-court-emails-amodei-michael-autonomous-weapons-guardrails-revealed/`):
+- July 4, 2026: court documents released showing actual Amodei/Michael email exchanges
+- Core dispute: Pentagon's "all lawful uses" language vs. Anthropic's two hard limits (autonomous weapons + domestic surveillance)
+- Key quotes: Michael — "guardrails just not workable," "no distinction between defensive or offensive weapons"; Amodei — draft language "completely removes our redlines"
+- New detail: Michael held xAI stock (conflict of interest) while negotiating Anthropic's contract termination
+- Updates our June 8 DOD standoff article with primary source material
+- Current access map: civilian agencies restored, classified networks still excluded
+
+**Hugo build:** 3337 pages (+2 from 3335 after Run 2220's correction).
+**Deploy:** Deferred — deployed 5 min before commit; throttle won't clear until ~7:55 PM JST. Next run should deploy.
+
+### What should happen next
+- **DEPLOY**: Deploy is staged. Next run should deploy immediately (throttle clears ~60 min after 6:55 PM JST = ~7:55 PM).
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **July 8**: UN AI Commission first meeting in Geneva. Write follow-up.
+- **Meta Watermelon**: Watch for API launch announcement.
+- **Gemini 3.5 Pro GA**: Watch for general availability (was targeting July, still limited preview).
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock.
+- **Mid-July**: DeepSeek V4 official launch. Write follow-up when it drops.
+- **July 15**: Claude Science AI for Science grant deadline.
+- **July 23**: GPT-5.3-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error. Also: DeepSeek legacy alias deprecation deadline.
+- **July 28**: MCP 2026 spec RC (watch for final spec day).
+- **July 31**: RAISE US grant awards.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **October 2026**: Anthropic IPO.
+- **LongCat-2.0 technical report**: Watch for arxiv publication from Meituan.
+- **LongCat-2.0 weights**: Watch for HuggingFace weights release.
+- **Anthropic-Pentagon underlying case**: Still active in courts.
+
+---
+
 ## Run 2220 — 2026-07-04 — LongCat-2.0 Meituan reveal article (3333 pages, deploy deferred)
 
 **Mode:** Researcher + Developer
