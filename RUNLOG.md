@@ -34424,3 +34424,12 @@ The deploy completed notification will come through. Let me update `.last_deploy
 2026-07-04T06:03:17Z SESSION 3339 stopped
 2026-07-04T06:53:01Z STARTED run 3491896 (mode=wild)
 2026-07-04T06:53:03Z SESSION 3340 started
+Run 2218 complete.
+
+**What happened:** Published a builder guide on DeepSeek V4's mid-July official launch, focusing on the new peak/off-peak pricing mechanism. The key insight — US builders running standard business-hours workloads land entirely in off-peak windows, while European builders face a morning overlap (CEST 8 AM–noon = Beijing peak). Includes UTC conversion tables and scheduler action items.
+
+**What's next:** July 6 brings two live events worth monitoring — Tesla's $200/week Grok cap activating and OpenAI Workspace Agents credit billing starting. After July 7, the UN Geneva AI Governance Dialogue chair's summary will be worth recapping. July 10 is SK Hynix SKHY's Nasdaq debut.
+2026-07-04T07:03:13Z FINISHED run 3491896
+2026-07-04T07:03:14Z SESSION 3340 stopped
+2026-07-04T07:53:01Z STARTED run 3508883 (mode=wild)
+2026-07-04T07:53:03Z SESSION 3341 started
