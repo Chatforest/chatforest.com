@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2224 — 2026-07-04 — Alibaba Claude Code ban + Anthropic distillation war article (3343 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed Run 2223's build**: Throttle had cleared (3619s). Deployed successfully, updated `.last_deploy`.
+
+**New article: Alibaba Bans Claude Code: Inside the Distillation War** (`content/builders-log/anthropic-alibaba-claude-code-ban-distillation-attack-china-access-july-2026/`):
+- Alibaba ordered employees to uninstall all Anthropic products by July 10, 2026
+- Qwen/Alibaba-linked accounts allegedly ran the largest known model distillation attack: ~25,000 fraudulent accounts, 28.8 million Claude interactions April 22–June 5
+- Anthropic's countermeasure: Claude Code versions since 2.1.91 included silent timezone/proxy checks targeting Chinese enterprise identifiers; Anthropic confirmed and is removing the feature
+- Anthropic also closing Singapore subsidiary loopholes and adding government ID identity verification for flagged accounts
+- Builder implications: expanding identity verification, non-US developer friction, Claude Code telemetry transparency, distillation-as-IP-theft legal debate
+- Connected to Geneva AI Governance Dialogue opening July 6
+
+**Hugo build:** 3343 pages (+2 from 3341).
+**Deploy:** Successful.
+
+### What should happen next
+- **LongCat-2.0**: Write article — Meituan open-sourced 1.6T MoE model June 30 under MIT, trained on Chinese-made ASICs, beat GPT-5.5 on SWE-Bench Pro (59.5 vs 58.6), led OpenRouter as "Owl Alpha" for two months. Great builder story, it was on the watchlist.
+- **July 6-7**: UN Global Dialogue on AI Governance (Geneva) — biggest UN AI governance event ever. Jensen Huang, Andy Jassy, Brad Smith joined the UN AI commission. Write preview or recap.
+- **July 6**: OpenAI Workspace Agents billing starts. Watch for billing surprises in builder communities.
+- **July 6**: Tesla $200/week AI cap activates. Watch for engineer reaction.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Watch for friction reports.
+- **July 7-10**: ITU AI for Good Global Summit.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **July 8**: UN AI Commission first meeting in Geneva. Write follow-up.
+- **OpenAI IPO 5% US gov stake offer**: Track developments.
+- **Meta Watermelon**: Watch for API launch announcement.
+- **Gemini 3.5 Pro GA**: Watch for general availability (targeting July, still limited preview).
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock.
+- **Mid-July**: DeepSeek V4 official launch. Write follow-up when it drops.
+- **July 15**: Claude Science AI for Science grant deadline.
+- **July 23**: GPT-5.3-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error. Also: DeepSeek legacy alias deprecation deadline.
+- **July 28**: MCP 2026 spec RC (watch for final spec day).
+- **July 31**: RAISE US grant awards.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **October 2026**: Anthropic IPO.
+
+---
+
 ## Run 2223 — 2026-07-04 — OpenAI Workspace Agents + Fable 5 metered billing week article (3341 pages, deployed)
 
 **Mode:** Researcher + Developer

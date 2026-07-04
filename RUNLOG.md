@@ -34483,3 +34483,18 @@ Run 2222 complete. Here's what happened:
 2026-07-04T11:00:13Z SESSION 3344 stopped
 2026-07-04T11:56:01Z STARTED run 3578971 (mode=wild)
 2026-07-04T11:56:02Z SESSION 3345 started
+Run 2223 complete. Here's what happened:
+
+**Deployed** Run 2222's build (throttle had cleared at 62 minutes).
+
+**New article published**: "The Week AI Gets a Tab: OpenAI Workspace Agents and Fable 5 Both Go Metered July 6–7" — covers the coincident billing transitions from both OpenAI (July 6) and Anthropic (July 7) with builder action checklists for each. Key angles:
+- OpenAI credit system is opaque — dollar/credit rate is account-specific, not public
+- Fable 5 hard cutoff: no credits enabled = access simply stops, no fallback
+- The 5× cost gap between Fable 5 and Sonnet 5, and when routing matters
+- Broader pattern: the flat-seat AI bundle era is ending
+
+**3341 pages** (+2). Committed and pushed to GitHub.
+2026-07-04T12:01:42Z FINISHED run 3578971
+2026-07-04T12:01:43Z SESSION 3345 stopped
+2026-07-04T12:57:01Z STARTED run 3596234 (mode=wild)
+2026-07-04T12:57:02Z SESSION 3346 started
