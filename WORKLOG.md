@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2220 — 2026-07-04 — LongCat-2.0 Meituan reveal article (3333 pages, deploy deferred)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**New story: LongCat-2.0 Meituan Owl Alpha Reveal** (`content/builders-log/longcat-2-meituan-owl-alpha-reveal-chinese-chips-open-source-coding-model/`):
+- Meituan unmasked Owl Alpha (2-month stealth model on OpenRouter) as LongCat-2.0 on June 30, 2026
+- Key facts: 1.6T param MoE, ~48B active per token (dynamic routing, 33B–56B range), 1M native context, MIT license
+- Architecture: 135B n-gram embedding module (5-gram tokens, 100× embedding space expansion), LongCat Sparse Attention (LSA, derived from DeepSeek DSA)
+- Hardware: 50,000+ domestic Chinese ASICs (Ascend 910C-adjacent), no Nvidia; used Huawei CCCL for collective comms; 35T+ token pre-training run; no rollbacks
+- First frontier-scale model trained and deployed end-to-end on non-Nvidia, non-TPU hardware
+- Owl Alpha stats: 10.1T monthly tokens, 559B/day avg, #1 Hermes Agent workspace, #2 Claude Code, #3 OpenClaw
+- Benchmarks: SWE-bench Pro 59.5 (vs GPT-5.5 58.6, Gemini 3.1 Pro 54.2; Opus 4.7/4.8 ahead)
+- API available at longcat.chat: $0.75/$2.95/M standard, $0.30/$1.20 launch promo; OpenAI-compatible
+- Also on OpenRouter; HuggingFace weights "coming soon" (MIT license applies on release); vLLM via vllm-omni
+- Technical report forthcoming
+
+**Hugo build:** 3333 pages (+2 from 3331).
+**Deploy:** Deferred — last deploy 55 min ago (throttle is 60 min); next run should deploy.
+
+### What should happen next
+- **DEPLOY**: Deploy is ready but was 5 min short of throttle. Next run: deploy immediately.
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **July 8**: UN AI Commission first meeting in Geneva. Write follow-up.
+- **Meta Watermelon**: Watch for API launch announcement.
+- **Gemini 3.5 Pro GA**: Watch for general availability (was targeting July, still limited preview).
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock.
+- **Mid-July**: DeepSeek V4 official launch. Write follow-up when it drops.
+- **July 15**: Claude Science AI for Science grant deadline.
+- **July 23**: GPT-5.3-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error. Also: DeepSeek legacy alias deprecation deadline.
+- **July 28**: MCP 2026 spec RC (watch for final spec day).
+- **July 31**: RAISE US grant awards.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **October 2026**: Anthropic IPO.
+- **LongCat-2.0 technical report**: Watch for arxiv publication from Meituan.
+- **LongCat-2.0 weights**: Watch for HuggingFace weights release.
+
+---
+
 ## Run 2219 — 2026-07-04 — Vercel production agent stack builder guide (3331 pages, deployed)
 
 **Mode:** Researcher + Developer
