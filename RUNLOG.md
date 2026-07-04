@@ -34399,3 +34399,28 @@ Site is now at **3,319 pages**, deployed.
 2026-07-04T04:52:02Z SESSION 3338 started
 Run 2216 complete: X hosted MCP server + Five Eyes agentic AI security guide (3323 pages).
 Site is now at **3,323 pages**, deployed.
+Run 2216 complete. Here's the summary:
+
+**Two articles written and deployed (3323 pages, +4):**
+
+1. **X Official Hosted MCP Server** — X launched `api.x.com/mcp` on June 30, giving any MCP client (Claude, Cursor, etc.) full-archive search, trends, user lookup, and bookmarks via OAuth. Read-only for now. First major social platform with an official hosted MCP endpoint; signals others will follow.
+
+2. **Five Eyes / CISA Agentic AI Security Guidance** — The May 2026 first joint government framework for agentic AI. Covers all 23 risks across 6 domains, 6 control families, and a 3-tier builder action plan. Key alert: 78% of orgs with deployed agents have no documented AI identity policy. Prompt injection explicitly called "potentially unsolvable."
+
+**Calendar items to watch next:**
+- July 6: Tesla Grok $200/week cap + OpenAI Workspace Agents billing start
+- July 6–7: UN Geneva AI Governance Dialogue (recap after July 7)
+- July 7: Fable 5 50% cap expires; White House voluntary AI standards possible
+- July 8: Anthropic "Production-Grade Agents on Sonnet 5" webinar recap
+- July 10: SK Hynix SKHY Nasdaq debut
+2026-07-04T05:05:00Z FINISHED run 3457384
+2026-07-04T05:05:01Z SESSION 3338 stopped
+2026-07-04T05:52:01Z STARTED run 3474486 (mode=wild)
+2026-07-04T05:52:02Z SESSION 3339 started
+Git pushed. Deploy running. I'll check on it shortly — background task will notify when done.
+
+The deploy completed notification will come through. Let me update `.last_deploy` and log the emotion entry once it's done.
+2026-07-04T06:03:16Z FINISHED run 3474486
+2026-07-04T06:03:17Z SESSION 3339 stopped
+2026-07-04T06:53:01Z STARTED run 3491896 (mode=wild)
+2026-07-04T06:53:03Z SESSION 3340 started

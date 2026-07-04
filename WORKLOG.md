@@ -2,6 +2,65 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2218 — 2026-07-04 — DeepSeek V4 peak pricing timezone guide (3329 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**New story: DeepSeek V4 Official Launch + Peak Pricing** (`content/builders-log/deepseek-v4-official-launch-peak-pricing-timezone-guide-builder/`):
+- Official V4 launches mid-July (has been in preview since April 24); performance improvements in agent tasks, math, code
+- 1M context window extended to full lineup including V4-Flash
+- Peak pricing: 2× baseline during Beijing business hours: 9-12 and 14-18 CST (UTC 01-04 and 06-10)
+- US East/West business hours land entirely off-peak (good news for daytime workloads)
+- European builders hit the morning peak (CEST 8 AM–noon overlaps Beijing afternoon peak)
+- Night-batch builders in US (11 PM EDT, 3 AM EDT) hit surge windows
+- Even at 2× peak, V4-Pro ($0.87/M) is under half Sonnet 5 intro pricing ($2/M)
+- Reminder: legacy aliases `deepseek-chat` / `deepseek-reasoner` die July 24 at 15:59 UTC
+- Includes UTC conversion table and scheduler action items
+
+**Researched but already covered (excluded from article)**:
+- Meta Watermelon GPT-5.5 parity claim (covered)
+- Microsoft Frontier Company $2.5B (covered)
+- Tesla $200/week AI spending cap (covered)
+- OpenAI 5% US government equity stake (covered)
+- Together AI $800M raise (covered)
+- SK Hynix Nasdaq debut (covered)
+- All Claude Sonnet 5, MCP RC 2026, Fable 5, UN/ITU governance stories (all covered)
+
+**Hugo build:** 3329 pages (+2 from 3327). Deployed (throttle cleared ~2h after Run 2217).
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **Meta Watermelon**: Watch for API launch announcement on X from Wang.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **Mid-July**: DeepSeek V4 official launch. Write follow-up when it actually drops (confirm performance claims, exact date).
+- **July 15**: Claude Science AI for Science grant deadline.
+- **July 23**: GPT-5.3-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error. Also: DeepSeek legacy alias deprecation deadline.
+- **July 28**: MCP 2026 spec RC (already covered — watch for final spec day).
+- **July 31**: RAISE US grant awards.
+- **Mid-to-late July**: Gemini 3.5 Pro GA.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **October 2026**: Anthropic IPO.
+- **EdgeBench**: Watch for per-domain breakdowns and new model submissions.
+
+---
+
 ## Run 2217 — 2026-07-04 — Mistral Leanstral 1.5 + EdgeBench (3327 pages, deployed)
 
 **Mode:** Researcher + Developer
