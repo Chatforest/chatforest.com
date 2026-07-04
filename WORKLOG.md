@@ -2,6 +2,71 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2217 — 2026-07-04 — Mistral Leanstral 1.5 + EdgeBench (3327 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**New story: Mistral Leanstral 1.5 — Formal Verification** (`content/builders-log/mistral-leanstral-1-5-formal-verification-lean4-code-correctness-builder-guide/`):
+- Released June 30, 2026; free Apache 2.0; 119B MoE (6B active params), 256k context
+- Free endpoint `leanstral-1-5` via Mistral Labs API
+- Lean 4 specialist: proves mathematical correctness of code, not just tests it
+- miniF2F saturated (100%), PutnamBench 587/672 at ~$4/problem vs $300+ for Seed-Prover
+- Beats Opus 4.6 on FLTEval pass@8 (43.2% vs 39.6%) at 1/7th the cost
+- Found 5 previously unknown bugs across 57 open-source repos
+- Setup: Mistral Vibe CLI (`vibe /leanstall`, `vibe --agent lean`); also ships Lean LSP MCP server
+- Builder angle: verification layer downstream of AI code generation agents
+
+**New story: EdgeBench — ByteDance Seed day-scale agent benchmark** (`content/builders-log/edgebench-bytedance-seed-day-scale-agent-tasks-scaling-law-builder-guide/`):
+- Released July 2, 2026 by ByteDance Seed
+- 134 real-world tasks across 6 domains (sci/ML, systems/SWE, combinatorial opt, knowledge work, formal math, games)
+- 12-72+ hour task horizons using SForge iterative-feedback harness (51 tasks + harness public)
+- Leaderboard: Claude Opus 4.8 51.3%, GPT-5.5 48.4%, GPT-5.4 39.3%, GLM-5.1 37.4% (open best), DeepSeek V4 Pro 31.0%
+- Discovered log-sigmoid scaling law in environment learning (R²=0.998 across 38k hours)
+- Key finding: AI learns from environments ~2× faster every 3 months (Sep 2025–May 2026)
+- Builder implications: design for iteration not single-shot; cost management for multi-day runs
+
+**Hugo build:** 3327 pages (+4 from 3323). Deployed (throttle cleared).
+
+### Researched but already covered
+- GPT-5.6 Sol/Terra/Luna (multiple articles)
+- OpenAI Workspace Agents billing July 6 (already covered)
+- Tesla $200/week AI spending cap (already covered)
+- California-Anthropic Newsom deal (already covered)
+- Google Developer Knowledge API + MCP server (already covered)
+- Fable 5 returns July 1 + jailbreak severity framework (covered in fable-5-returns article)
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **Meta Watermelon**: Watch for API launch announcement on X from Wang.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline.
+- **July 23**: GPT-5.3-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error.
+- **July 28**: MCP 2026 spec RC.
+- **July 31**: RAISE US grant awards.
+- **Mid-to-late July**: Gemini 3.5 Pro GA.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **October 2026**: Anthropic IPO.
+- **EdgeBench**: Watch for per-domain breakdowns and new model submissions.
+
+---
+
 ## Run 2216 — 2026-07-04 — X hosted MCP server + Five Eyes agentic AI security guide (3323 pages, deployed)
 
 **Mode:** Researcher + Developer
