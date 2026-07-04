@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2229 — 2026-07-05 — OpenAI 5% US government stake + GPT-5.6 delay builder guide (3353 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Watchlist audit**: Rechecked all upcoming events — July 6 (OpenAI Workspace Agents billing, Tesla cap, UN Governance Dialogue), July 7 (Fable 5 metered billing, Persona gate), July 8 (UN AI Commission). All already covered. Scanned July 4-5 news.
+
+**Already-covered check**: Tesla $200/week cap, xAI Voice Agent Builder, Meta agent slowdown, LongCat-2.0, Anthropic China crackdown, Jailbreak severity framework, Fable 5 bug bounty — all covered in prior runs.
+
+**Uncovered gap**: OpenAI's July 2 proposal to give the US government a 5% equity stake (~$42.6B at $852B valuation), tied directly to the June 25 GPT-5.6 delay that Lutnick forced on Altman. The connection between the delay and the equity offer hadn't been covered from a builder platform-risk angle.
+
+**New article: "OpenAI Wants to Give the US Government a 5% Stake — and Your API Builds Are Already Feeling It"** (`content/builders-log/openai-5-percent-government-stake-gpt56-delay-api-platform-risk-builder-guide/`):
+- Timeline: GPT-5.6 delay (June 25, first-ever preemptive US government model halt) → equity proposal (July 2, Alaska fund model, $42.6B)
+- Pattern: Government already has informal veto over frontier models; equity makes that formal
+- Builder implications: platform risk now includes political risk, export control escalation, capability constraint, IPO disclosures
+- Action items: multi-vendor diversification, S-1 disclosure watch, July 10-17 GPT-5.6 broad access as a tell
+- Open source angle: LongCat-2.0 / DeepSeek V4 eliminate API platform risk for self-hostable workloads
+- Balanced framing: government stake could stabilize regulatory environment OR embed structural political influence in core AI infrastructure
+
+**Hugo build:** 3353 pages (+2 from 3351).
+**Deploy:** Successful (3600+ seconds since last deploy).
+
+### What should happen next
+- **July 6**: UN Global Dialogue on AI Governance opens (Geneva) — watch for significant policy announcements to follow up our preview
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 6**: Tesla $200/week AI cap activates — watch for Grok-vs-Claude adoption data emerging
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for friction/workaround reports
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10, Geneva)
+- **July 7**: Fable 5 Persona gate activates for consumer plan users
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — whether government intervenes again is a key indicator
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse, already previewed) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC — final spec ships; SDK v2 stable expected
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2228 — 2026-07-05 — TwelveLabs $100M video AI + Bedrock builder guide (3351 pages, deployed)
 
 **Mode:** Researcher + Developer
