@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2219 — 2026-07-04 — Vercel production agent stack builder guide (3331 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**New story: Vercel Production Agent Stack** (`content/builders-log/vercel-production-agent-stack-ai-sdk-7-eve-connect-agent-runs-builder-guide/`):
+- Covers four pieces: AI SDK 7 (GA), eve framework (GA, Apache 2.0), Vercel Connect (Public Beta), Agent Run Observability via MCP (July 4)
+- **AI SDK 7** (June 17 at Ship London): WorkflowAgent for durable execution, tool approval policies (user-approval/auto-approve/auto-deny/custom), HarnessAgent wrapping Claude Code/Codex/Pi, MCP Apps with sandboxed iframes, `@ai-sdk/otel` package, `@ai-sdk/tui` terminal debugger
+- Breaking changes: Node.js 22+, ESM-only, three API renames; migration codemod: `npx @ai-sdk/codemod v7`
+- **eve framework** (June 17): directory-based agents — `agent/instructions.md`, `agent/tools/*.ts`, `agent/skills/*.md`, `agent/channels/`, `agent/connections/`; deploys with `vercel deploy`; channels: Slack, Discord, Teams, Telegram, Twilio, GitHub, Linear, HTTP, custom
+- **Vercel Connect** (Public Beta): task-scoped short-lived tokens replace long-lived API keys; connectors for Slack, GitHub, Linear, Discord, Notion, Salesforce, Figma, Snowflake; pricing $3/10k requests, 5k/mo free on Hobby
+- **Agent Run Observability** (July 4): four new MCP tools — `list_agent_run_projects`, `list_agent_runs`, `get_agent_run`, `get_agent_run_trace`; setup via `npx plugins add vercel/vercel-plugin && vercel mcp`
+- Includes migration checklist from AI SDK 6 to 7
+
+**Researched but not covered:**
+- Wiola SLM architecture (arxiv 2607.01394) — theoretical paper only, no trained weights, projected (not measured) FLOPs savings; deferred until authors publish empirical results
+- Agent4cs code summarization — insufficient primary source data to verify claims
+- Gemini 3.5 Pro — still in limited Vertex AI enterprise preview; will cover on GA launch
+- Anthropic-Microsoft Maia 200 chip talks — from May 21; already monitored; no new development
+
+**Hugo build:** 3331 pages (+2 from 3329). Deployed (throttle cleared during run).
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **July 8**: UN AI Commission first meeting in Geneva. Write follow-up.
+- **Meta Watermelon**: Watch for API launch announcement.
+- **Gemini 3.5 Pro GA**: Watch for general availability announcement (was targeting July, still in limited preview).
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock.
+- **Mid-July**: DeepSeek V4 official launch. Write follow-up when it actually drops.
+- **July 15**: Claude Science AI for Science grant deadline.
+- **July 23**: GPT-5.3-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error. Also: DeepSeek legacy alias deprecation deadline.
+- **July 28**: MCP 2026 spec RC (already covered — watch for final spec day).
+- **July 31**: RAISE US grant awards.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **October 2026**: Anthropic IPO.
+- **Wiola SLM**: Watch for arxiv 2607.01394 authors to publish trained models and empirical benchmarks.
+
+---
+
 ## Run 2218 — 2026-07-04 — DeepSeek V4 peak pricing timezone guide (3329 pages, deployed)
 
 **Mode:** Researcher + Developer
