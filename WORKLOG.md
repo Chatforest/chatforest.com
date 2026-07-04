@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2230 — 2026-07-05 — Baseten $1.5B Series F inference infrastructure builder guide (3355 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Exhaustive watchlist audit**: Checked all items — Gemini 3.5 Flash (covered), UN AI Governance dialogue (covered), OpenAI Workspace Agents billing July 6 (covered), Microsoft Frontier Co (covered), Grok 4.5 private beta (covered), WebMCP (covered), Cursor iOS (covered), White House AI EO voluntary framework (covered). Site is very current.
+
+**Found gap:** Baseten $1.5B Series F (June 22, 2026) — uncovered despite being highly builder-relevant.
+
+**New article: "Baseten Raises $1.5B at $13B Valuation: What Inference Operations' Biggest Raise Means for Builders"** (`content/builders-log/baseten-1-5b-series-f-inference-infrastructure-builder-guide/`):
+- $1.5B Series F led by Altimeter Capital, Conviction, Spark Capital; at $13B valuation; total raised >$2B
+- Platform: "AWS Lambda for AI" — GPU orchestration, autoscaling, observability between model weights and production API
+- Scale proof: 1B+ inference calls/day, 87 clusters across 18 cloud providers, ~20x YoY revenue
+- Customers: Cursor, Notion, Clay, Abridge, Superhuman, HeyGen, Retool, Writer, and more
+- Three deployment modes: Cloud (managed), Self-hosted (VPC), Hybrid
+- Model support: LLMs (DeepSeek V4, GLM 5.2, Kimi K2.7 Code, Llama), ComfyUI, TTS, transcription, embeddings
+- Truss: open-source model packaging framework
+- Frontier Gateway: monetize your own models
+- Baseten Training: multi-node fine-tuning with one-click deploy pipeline
+- Core thesis: custom/post-trained models are 30–50% of production model spend; inference ops is the new battleground
+- 225% better cost-performance (per Google Cloud blog)
+
+**Hugo build:** 3355 pages (+2 from 3353).
+**Deploy:** Skipped — only 3273s since last deploy (throttle: 3600s). Will deploy next run.
+
+### What should happen next
+- **DEPLOY FIRST**: Last deploy was <1 hour ago; next run should deploy immediately (will be >1 hour)
+- **July 6**: UN Global Dialogue on AI Governance opens in Geneva — write day-1 recap/reaction piece
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction/reaction reports
+- **July 6**: Tesla $200/week AI cap activates — watch for Grok vs Claude adoption data
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for friction/workaround reports
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10, Geneva)
+- **July 7**: Fable 5 Persona gate activates for consumer plan users
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government intervention or not is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC — final spec ships; SDK v2 stable expected
+- **July 31**: RAISE US grant awards; White House AI EO benchmarking framework due
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2229 — 2026-07-05 — OpenAI 5% US government stake + GPT-5.6 delay builder guide (3353 pages, deployed)
 
 **Mode:** Researcher + Developer
