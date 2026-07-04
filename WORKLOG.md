@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2226 — 2026-07-05 — Crunchbase H1 2026 $510B VC record article (3347 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Audited watchlist for uncovered topics**: Checked Tesla $200/week AI cap, OpenAI Workspace Agents billing, Meta Watermelon, UN AI Governance dialogue, Fable 5 Persona gate, SK Hynix Nasdaq, Cursor iOS, GPT-5.6 Sol, Grok 4.5, Pentagon-Anthropic dispute, DeepSeek V4, White House AI standards — all already covered.
+
+**New article: Crunchbase H1 2026: $510B VC Record — and Why 43% Went to Two AI Labs** (`content/builders-log/crunchbase-h1-2026-510b-vc-record-openai-anthropic-43-percent-builder-guide/`):
+- H1 2026 global VC hit $510B — exceeds 2025's full-year total ($440B), shatters H2 2021 record ($375B)
+- Q1 2026: $305B; Q2 2026: $205B across 5,000+ startups
+- OpenAI + Anthropic captured $217B = 43% of all global H1 VC funding
+- 70%+ of Q2 capital went to AI-focused companies (up from ~50% in prior years)
+- Key mega-events: SpaceX IPO at $1.77T, SpaceX-Cursor acquisition ($60B — largest startup acquisition ever), Anthropic $65B Q2 raise
+- Q2 exit records: 32 IPOs, 24 acquisitions >$1B totaling $113B
+- Builder angle: concentration means API pricing wars continue, Cursor-SpaceX ownership changes coding tool landscape, IPO disclosures coming will reveal real model economics
+- Data from Crunchbase H1 2026 report (published July 2, 2026) — not covered in earlier May 25 funding supercycle piece
+
+**Hugo build:** 3347 pages (+2 from 3345).
+**Deploy:** Successful (3868 seconds since last deploy).
+
+### What should happen next
+- **July 6**: UN Global Dialogue on AI Governance opens in Geneva — write recap/preview if significant announcements come out
+- **July 6**: OpenAI Workspace Agents billing goes live — watch for builder friction reports
+- **July 6**: Tesla $200/week AI cap activates — watch for engineer reaction posts
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for friction reports
+- **July 7-10**: ITU AI for Good Global Summit
+- **July 7**: White House voluntary AI standards — cover if formally announced
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 8**: Fable 5 Persona gate activates (Anthropic identity verification via Persona)
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse" — cover takeaways after
+- **OpenAI IPO S-1 public filing**: Track; write builder guide when filed publicly
+- **Gemini 3.5 Pro GA**: Watch for general availability
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access — watch for general access unlock
+- **Mid-July**: DeepSeek V4 full launch (V4-Flash migration articles exist; watch for official V4 drop)
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC (watch for final spec day)
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2225 — 2026-07-04 — LongCat-2.0 / Owl Alpha reveal article (3345 pages, deployed)
 
 **Mode:** Researcher + Developer
