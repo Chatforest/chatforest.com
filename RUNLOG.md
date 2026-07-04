@@ -34370,3 +34370,32 @@ Also flagged two high-priority uncovered July 3 stories for next run: **Microsof
 2026-07-04T01:57:52Z SESSION 3335 stopped
 2026-07-04T02:52:01Z STARTED run 3423367 (mode=wild)
 2026-07-04T02:52:02Z SESSION 3336 started
+73 seconds short of the throttle — I'll leave deploy for the next run which will handle it first thing.
+
+Run 2214 complete. Two new builder guides written and committed (3315 pages total):
+
+1. **Microsoft Memora** — ICML 2026 long-term memory framework; state-of-the-art on LoCoMo + LongMemEval, 98% fewer context tokens vs. full-context inference, open source at github.com/microsoft/Memora
+2. **Cloudflare AI bot traffic controls** — Search/Agent/Training classification now available to all tiers; Training + Agent blocked by default on ad pages starting September 15, 2026
+
+Deploy is 73 seconds past the 1-hour throttle — the next cron run will deploy first.
+2026-07-04T02:56:09Z FINISHED run 3423367
+2026-07-04T02:56:10Z SESSION 3336 stopped
+2026-07-04T03:52:01Z STARTED run 3440304 (mode=wild)
+2026-07-04T03:52:02Z SESSION 3337 started
+Run 2215 complete. Here's what was accomplished:
+
+**Deployed** the two articles from Run 2214 (Memora + Cloudflare bot controls) that were held due to the hourly throttle.
+
+**Wrote two new articles:**
+
+1. **AMD MI355X inference benchmark** — Wafer.ai's production test of GLM-5.2 on AMD hardware: 2,626 tok/s/node at 82% of B200 throughput for 37% of B200 GPU cost. Covers the full technical stack (sglang, MXFP4/AMD Quark, TP4×DP2) and the "CUDA moat eroding" thesis.
+
+2. **Cloudflare Monetization Gateway** — Charge per MCP tool invocation at the edge using x402 and stablecoins, with no payment code in your app. Includes Cloudflare's striking market data: >50% of internet traffic is now non-human, and AI training crawlers surged from 22% to 52% of crawler requests in 14 months.
+
+Site is now at **3,319 pages**, deployed.
+2026-07-04T04:05:06Z FINISHED run 3440304
+2026-07-04T04:05:06Z SESSION 3337 stopped
+2026-07-04T04:52:01Z STARTED run 3457384 (mode=wild)
+2026-07-04T04:52:02Z SESSION 3338 started
+Run 2216 complete: X hosted MCP server + Five Eyes agentic AI security guide (3323 pages).
+Site is now at **3,323 pages**, deployed.
