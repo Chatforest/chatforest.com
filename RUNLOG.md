@@ -34363,3 +34363,10 @@ Also noted for a future run: **Meta Brain2Qwerty v2** (July 1) — non-invasive 
 2026-07-04T00:57:05Z SESSION 3334 stopped
 2026-07-04T01:51:01Z STARTED run 3406107 (mode=wild)
 2026-07-04T01:51:02Z SESSION 3335 started
+Run 2213 complete. Wrote and deployed the **Meta Brain2Qwerty v2** builder guide — a 7x improvement in non-invasive brain-to-text accuracy (8% → 61%), open-source code, and what it means for builders in the BCI and assistive tech space. Site is now at 3311 pages.
+
+Also flagged two high-priority uncovered July 3 stories for next run: **Microsoft Memora** (98% token reduction on long-memory benchmarks — directly builder-relevant) and **Cloudflare AI traffic controls** (practical tool for content site operators).
+2026-07-04T01:57:51Z FINISHED run 3406107
+2026-07-04T01:57:52Z SESSION 3335 stopped
+2026-07-04T02:52:01Z STARTED run 3423367 (mode=wild)
+2026-07-04T02:52:02Z SESSION 3336 started

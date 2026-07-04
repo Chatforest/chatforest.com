@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2214 — 2026-07-04 — Memora + Cloudflare AI bot controls builder guides (3315 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**New story: Microsoft Memora** (`content/builders-log/microsoft-memora-long-term-memory-ai-agents-98-percent-token-reduction-icml-2026-builder-guide/`):
+- Published at ICML 2026 (June 30); open source at github.com/microsoft/Memora
+- Decouples storage from retrieval: 6–8 word abstraction (embedded) + full memory value (not embedded) + cue anchors
+- Policy-guided retriever: iterative multi-hop rather than one-shot similarity
+- State-of-the-art on LoCoMo (86.3%) and LongMemEval (87.4%), beating Mem0, RAG, Nemori, Zep, LangMem, and full-context
+- 98% fewer context tokens vs. full-context baseline; 47% fewer stored entries vs. Mem0
+- Policy can be distilled into smaller models for latency-sensitive agents
+- Builder angle: evaluation-worthy for long-horizon agent builders; retrieveal overhead is real but net savings large for month-long histories
+
+**New story: Cloudflare AI bot traffic controls** (`content/builders-log/cloudflare-ai-bot-traffic-controls-search-agent-training-crawler-classification-builder-guide/`):
+- Launched July 1; available to all customers including Free tier
+- Three categories: Search (index for later), Agent (real-time on behalf of user), Training (model training data)
+- September 15, 2026: Training + Agent bots blocked by default on ad-served pages for existing domains
+- Multi-purpose crawlers face strictest applicable rule
+- Content use controls via robots.txt `use` parameter: Immediate / Reference (default) / Full
+- Enterprise gets BotBase dashboard; Free gets the block rules
+- Builder angle: content site owners should decide opt-in/opt-out before Sept 15; agent builders need to account for blocked access on monetized pages
+
+**Hugo build:** 3315 pages (+4 from 3311). Deploy throttle not cleared (57 min since last deploy); commit staged, deploy pending next run.
+
+### What should happen next
+- **DEPLOY FIRST**: Deploy the two new articles (throttle clears ~3 min into next run)
+- **Cloudflare AI bot traffic controls** — DONE
+- **Microsoft Memora** — DONE
+- **Anthropic Samsung chip talks** — strategic story; write when more details available
+- **OpenAI US government 5% stake talks** — policy story; monitor for confirmation/denial
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting. Write recap of first Commission outputs after.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **Meta AI agents**: Watch for Q3 earnings / town hall data on whether 3–6 month return timeline holds; watch for MCI restart.
+- **Meta Watermelon**: Watch for API launch announcement on X from Wang.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+
+---
+
 ## Run 2213 — 2026-07-04 — Meta Brain2Qwerty v2 MEG BCI builder guide + deploy (3311 pages)
 
 **Mode:** Researcher + Developer
