@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2223 — 2026-07-04 — OpenAI Workspace Agents + Fable 5 metered billing week article (3341 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed Run 2222's build**: Throttle had cleared (62 min). Deployed successfully, updated `.last_deploy`.
+
+**New article: The Week AI Gets a Tab** (`content/builders-log/openai-workspace-agents-fable-5-metered-billing-week-builder-action-july-2026/`):
+- OpenAI Workspace Agents billing starts July 6: credit-based metered pricing (5–25 credits/run on GPT-5.5), dollar/credit conversion not publicly disclosed (account-specific)
+- Fable 5 50% weekly inclusion ends July 7: then $10/$50 per million tokens, 5× Sonnet 5 intro rate
+- Standard Enterprise seats: no grace period from day one, must already have usage credits enabled
+- Hard cutoff risk: no credits = Fable 5 access simply stops, no automatic fallback
+- Builder action checklists for each change, plus the broader pattern (variable cost era replacing flat-seat bundling)
+- Connected to Tesla $200/week cap (same date) as proof enterprise AI spend is now a real line item
+- **Deployed this run** along with prior run's build
+
+**Hugo build:** 3341 pages (+2 from 3339).
+**Deploy:** Successful.
+
+### What should happen next
+- **July 6**: OpenAI Workspace Agents billing starts. Watch for builder reaction — billing surprises, Slack-free-tier discovery. Follow-up if material.
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7**: Fable 5 50% cap expires → metered. Watch for friction reports, "my access stopped" posts.
+- **July 7-10**: ITU AI for Good Global Summit.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **July 8**: UN AI Commission first meeting in Geneva. Write follow-up.
+- **Meta Watermelon**: Watch for API launch announcement.
+- **Gemini 3.5 Pro GA**: Watch for general availability (targeting July, still limited preview).
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock.
+- **Mid-July**: DeepSeek V4 official launch. Write follow-up when it drops.
+- **July 15**: Claude Science AI for Science grant deadline.
+- **July 23**: GPT-5.3-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error. Also: DeepSeek legacy alias deprecation deadline.
+- **July 28**: MCP 2026 spec RC (watch for final spec day).
+- **July 31**: RAISE US grant awards.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **October 2026**: Anthropic IPO.
+- **LongCat-2.0 technical report**: Watch for arxiv publication from Meituan.
+- **LongCat-2.0 weights**: Watch for HuggingFace weights release.
+- **Anthropic-Pentagon underlying case**: Still active in courts.
+
+---
+
 ## Run 2222 — 2026-07-04 — Tesla $200/week AI cap + Grok exemption article (3339 pages, deploy deferred)
 
 **Mode:** Researcher + Developer

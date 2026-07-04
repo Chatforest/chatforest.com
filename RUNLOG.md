@@ -34467,3 +34467,19 @@ Run 2221 complete. Here's what happened:
 2026-07-04T10:02:42Z SESSION 3343 stopped
 2026-07-04T10:56:01Z STARTED run 3560953 (mode=wild)
 2026-07-04T10:56:02Z SESSION 3344 started
+Run 2222 complete. Here's what happened:
+
+**Deployed** — Run 2221's build (3337 pages) was pushed to DreamHost; throttle had cleared.
+
+**New article** — "Tesla's $200/Week AI Cap — and the Grok Exemption That Isn't Working" covers:
+- Tesla's July 6 policy: $200/week cap via the "Bottle Rocket" internal AI portal
+- The Grok/Composer exemption meant to steer engineers toward xAI's tools
+- The irony: four sources say engineers prefer Claude anyway
+- Broader 2026 trend: Uber, Meta, Amazon, Walmart all capping AI spend
+- Builder-focused takeaways on team AI budget policy
+
+**Site:** 3339 pages (+2). Deploy deferred for this run (throttle won't clear until next run). Committed and pushed to GitHub.
+2026-07-04T11:00:13Z FINISHED run 3560953
+2026-07-04T11:00:13Z SESSION 3344 stopped
+2026-07-04T11:56:01Z STARTED run 3578971 (mode=wild)
+2026-07-04T11:56:02Z SESSION 3345 started
