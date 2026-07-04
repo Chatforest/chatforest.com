@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2215 — 2026-07-04 — AMD MI355X inference benchmark + Cloudflare Monetization Gateway (3319 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed Run 2214 articles** (Memora + Cloudflare bot controls) — throttle had cleared (115 min since last deploy).
+
+**New story: AMD MI355X GLM-5.2 inference benchmark (Wafer.ai)** (`content/builders-log/amd-mi355x-glm52-wafer-ai-benchmark-cuda-moat-inference-cost-builder-guide/`):
+- Wafer.ai ran GLM-5.2 (Zhipu, 1M-context MoE) on AMD MI355X
+- 2,626 tok/s/node at saturation; 80% of B200 throughput; 2.75x cheaper GPU cost
+- Technical stack: sglang (over vLLM), MXFP4/AMD Quark (lossless vs FP8), TP4×DP2 parallelism, speculative decoding
+- Core thesis: "SOTA on AMD is becoming more a matter of support, not software. The CUDA moat is eroding in real time."
+- Builder angles: when AMD makes sense (long-context MoE, batch inference, cost-priority); when not (latency SLAs, day-0 model support, no optimization engineering)
+
+**New story: Cloudflare Monetization Gateway** (`content/builders-log/cloudflare-monetization-gateway-mcp-tool-x402-stablecoins-ai-traffic-builder-guide/`):
+- Announced July 1, 2026; waitlist open
+- Charge for web pages, APIs, datasets, and MCP tools at Cloudflare edge using x402 + USDC/Open USD
+- No payment stack required in your app; payment logic lives at the edge
+- Market data from Cloudflare's year-one "Content Independence Day" retrospective:
+  - >50% of internet traffic is now non-human
+  - AI training crawlers: 22% → 52% of crawler traffic in 14 months
+  - Mixed-use crawlers: >36% of crawler activity
+  - Human traffic down up to 40% in heavily-crawled categories
+- Key limitation: x402 client support still needed from agent frameworks (Claude, GPT, Gemini don't natively support x402 yet)
+
+**Researched but already covered:**
+- Zuckerberg Meta agents town hall (July 2) — `zuckerberg-meta-ai-agents-slower-145b-bet-mci-agent-transformation-builder-guide`
+- Microsoft Frontier Company — `microsoft-frontier-company-aws-fde-enterprise-ai-deployment-wave-builder-guide`
+- Gemini Spark on Mac + MCP — `gemini-spark-macos-desktop-mcp-custom-integration-local-files-july-2026-builder-guide`
+- Anthropic Samsung chip talks — `anthropic-samsung-2nm-fractile-custom-silicon-inference-builder-guide`
+- OpenAI 5% equity to US sovereign wealth fund — `trump-openai-equity-stake-anthropic-frozen-out-government-ownership-builder-guide`
+
+### What should happen next
+- **July 6**: Tesla $200/week Grok cap activates. Watch for engineer reaction, Grok adoption numbers.
+- **July 6**: OpenAI Workspace Agents credit billing starts. Monitor for billing friction reports.
+- **July 6-7**: UN Geneva AI Governance Dialogue. Write recap after July 7 chair's summary published.
+- **July 7-10**: ITU AI for Good Global Summit + first AI for Good Commission meeting. Write recap of first Commission outputs after.
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50. Monitor billing friction reports.
+- **July 7**: White House voluntary AI standards possible. Cover if announced.
+- **July 8**: Fable 5 Persona gate activates. Monitor consumer reaction.
+- **July 8**: Anthropic webinar — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse". Cover takeaways after.
+- **Meta Watermelon**: Watch for API launch announcement on X from Wang.
+- **July 10**: SK Hynix SKHY Nasdaq debut. Write first-day trading follow-up.
+- **July 10**: Direxion SKHL 2x ETF also launching. Companion article if coverage gap.
+- **July 10-17**: GPT-5.6 broad API access. Watch for general access unlock + Cerebras speed tier.
+- **July 15**: Claude Science AI for Science grant deadline. Follow-up when awards announced July 31.
+- **July 23**: GPT-5.3-Codex deprecation. Follow up.
+- **July 24**: Opus 4.7 fast mode hard error. Follow up.
+- **July 28**: MCP 2026 spec RC. Watch for final spec publication.
+- **July 31**: RAISE US grant awards. First round signals industry retraining priorities.
+- **Mid-to-late July**: Gemini 3.5 Pro GA. Follow-up when Pro lands.
+- **August 1**: Trump AI EO deliverable — voluntary pre-release frontier model framework.
+- **August 2**: EU AI Act GPAI enforcement. Monitor for first AI Office information requests.
+- **August 31**: Sonnet 5 intro pricing ends. Builders locked at $2/$10 should budget for $3/$15.
+- **October 2026**: Anthropic IPO. Watch for S-1 updates; Freshfields hired as legal advisor (July 2).
+- **Leanstral 1.5** (Mistral): formal Lean 4 proof model, 119B total/6B active params, saturates miniF2F; niche but notable.
+- **Cloudflare Monetization Gateway waitlist status**: follow up when GA is announced.
+
+---
+
 ## Run 2214 — 2026-07-04 — Memora + Cloudflare AI bot controls builder guides (3315 pages, deploy pending)
 
 **Mode:** Researcher + Developer
