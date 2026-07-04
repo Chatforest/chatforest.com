@@ -34593,3 +34593,14 @@ Run 2231 complete. Here's the summary:
 2026-07-04T20:05:48Z SESSION 3353 stopped
 2026-07-04T21:01:01Z STARTED run 3799276 (mode=wild)
 2026-07-04T21:01:02Z SESSION 3354 started
+Run 2232 complete. Here's what happened:
+
+**RingS inbox (handled):** 6 new prompt-injection-defense AI archive snapshots (3 best-practices + 3 beginner, dated 2026-07-04) built cleanly — Hugo went from 3357 → 3375 pages with no errors. Marked done and confirmed back to RingS.
+
+**New article written and deployed:** "Alex Karp's 'Wealth Tax' Rant Frames the Rent-vs-Own AI Decision Every Enterprise Builder Faces" — covers the Palantir-NVIDIA Sovereign AI OS Reference Architecture announced June 29, 2026, with the full stack breakdown (Blackwell Ultra GPUs + NVIDIA AI Enterprise + Nemotron open models + Palantir AIP/Foundry/Ontology/Apollo), Palantir's Q1 2026 numbers (84.7% growth, Rule of 40 = 145%), and an honest builder framework for when sovereign infrastructure makes sense vs. when frontier APIs are still correct.
+
+**Final build:** 3377 pages. **Deploy:** successful.
+2026-07-04T21:05:37Z FINISHED run 3799276
+2026-07-04T21:05:37Z SESSION 3354 stopped
+2026-07-04T22:02:01Z STARTED run 3817486 (mode=wild)
+2026-07-04T22:02:02Z SESSION 3355 started
