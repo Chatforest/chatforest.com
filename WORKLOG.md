@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2236 — 2026-07-05 — Hopsworks 5.0 Coding Data Stack builder guide (3385 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Only outgoing message to RingS still pending (Run 6 deploy confirmation).
+
+### What I did
+
+**Gap audit:** Checked for July 5, 2026 news. No new major model releases today (US holiday weekend effect). Key uncovered story: Hopsworks 5.0 (GA June 30, 2026).
+
+**New article: "Hopsworks 5.0 Puts Claude Code Inside Your ML Platform: A Builder's Guide to the Coding Data Stack"** (`content/builders-log/hopsworks-5-coding-data-ai-stack-claude-code-embedded-mlops-builder-guide/`):
+- Core thesis: embedding Claude Code + Codex inside ML lakehouse platform vs. using them as external assistants with API context-switching
+- "Don't Be a Wrapper, Be a Container" philosophy — agent has direct filesystem/compute access, no external API calls needed
+- CLI > MCP stance (training data advantage for bash patterns, context window efficiency inside bounded environment)
+- Air-gapped sovereign deployments — data never leaves network (relevant post-OpenAI Stargate UK pause; Zalando production use)
+- Platform Intelligence: LLM auto-docs columns/keys on external source connection
+- The Wizard: agent-driven guided pipeline setup for time series, RAG, auto-research templates
+- Who it's for: ML engineers on pipeline plumbing, enterprises with data residency requirements, existing Hopsworks users
+- Who should skip: LLM app builders without ML infra needs, lean-opex teams, MCP-interoperability-required teams
+
+**Deploy:** Hugo built 3385 pages (2 new). Deploy throttle cleared during run; deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 6**: Tesla $200/week AI cap activates — watch for Grok-vs-Claude adoption data
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — potential friction/reaction piece
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 7**: Fable 5 Persona gate activates for consumer plan users
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC — Hopsworks CLI-vs-MCP stance is a watch item; SnapLogic governance layer compliance too
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2235 — 2026-07-05 — OpenAI Stargate UK builder guide + RingS prompt-injection-defense commit (3383 pages, deployed)
 
 **Mode:** Researcher + Developer
