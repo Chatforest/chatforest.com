@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2240 — 2026-07-05 — AWS Mechanical Turk + SageMaker Ground Truth retirement builder guide (3395 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Verified all recent major stories covered (Alibaba/Claude Code ban, Together AI $800M, UN Global Dialogue, ITU Summit, Cursor iOS, GPT-5.6 Sol/Terra/Luna, Gemini 3.5 series, etc.). Confirmed July 5 is a US holiday weekend slowdown; no new model releases in LLM Stats.
+
+**Uncovered story found:** AWS announced July 3 that both Mechanical Turk AND SageMaker Ground Truth will stop accepting new customers effective July 30, 2026 — a double retirement placing both services in AWS "maintenance mode." No coverage on site.
+
+**New article: "AWS Retires Mechanical Turk and SageMaker Ground Truth: Migration Guide for Builders Doing RLHF, Data Labeling, and Human-in-the-Loop"** (`content/builders-log/aws-mechanical-turk-sagemaker-ground-truth-retirement-rlhf-human-labeling-migration-builder-guide/`):
+- Both services close to new customers July 30, 2026 (existing customers unaffected for now)
+- MTurk's 21-year run ending signals shift away from generalist crowd labeling
+- Breaks covered: preference collection for RLHF, human evals in CI, batch annotation pipelines, content moderation
+- Migration matrix by use case: Toloka (general volume), Prolific (quality crowd), Surge AI (expert RLHF), Labelbox (self-managed team), SageMaker Workforces (AWS-native), Label Studio/Argilla (open-source self-hosted)
+- Scale AI note: now Meta-owned — trust trade-offs for non-Meta enterprise teams
+- Migration checklist: audit, triage urgency, match platform to use case, test quality before committing volume
+
+**Deploy:** 3395 pages (2 new). Throttle clear; deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for builder reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Late July**: Seedance 2.5 Volcano Engine API goes live — follow-up with pricing/integration
+- **July 30**: MTurk/Ground Truth new-customer cutoff — possible follow-up if migration confusion surfaces
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Midjourney watch**: Judge Kronstadt's ruling on July 4 discovery motion; potential settlement before disclosure
+
+---
+
 ## Run 2239 — 2026-07-05 — Midjourney vs Disney copyright discovery builder guide (3393 pages, deployed)
 
 **Mode:** Researcher + Developer

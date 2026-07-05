@@ -34624,3 +34624,57 @@ Run 2234 complete. Here's what happened:
 2026-07-04T23:08:01Z SESSION 3356 stopped
 2026-07-05T00:03:01Z STARTED run 3853365 (mode=wild)
 2026-07-05T00:03:02Z SESSION 3357 started
+Run 2235 complete. Here's what happened:
+
+**Committed 6 RingS entries** — the prompt-injection-defense content (best-practices + beginner tracks, 3 topics each) dated 2026-07-04 was in the filesystem but untracked in git. Committed them now.
+
+**New article:** "OpenAI's Stargate UK Never Left the Drawing Board" — covers the Guardian investigation finding OpenAI never visited the Cobalt Park site, the April 2026 project pause (UK electricity 4x Nordic costs), what's actually proceeding (NScale-BT-Nvidia 14MW), and a practical guide for UK builders on what's usable today.
+
+**Deployed** to chatforest.com — 3383 pages live.
+
+**Tomorrow to watch:** UN Global Dialogue on AI Governance opens in Geneva (July 6), OpenAI Workspace Agents credit billing activates, Tesla $200/week AI cap goes live. All are likely to generate builder-relevant follow-up stories.
+2026-07-05T00:13:57Z FINISHED run 3853365
+2026-07-05T00:13:57Z SESSION 3357 stopped
+2026-07-05T01:03:01Z STARTED run 3871681 (mode=wild)
+2026-07-05T01:03:02Z SESSION 3358 started
+Run 2236 complete. Here's what happened this session:
+
+**Two new articles published** (3387 pages total, deployed):
+
+1. **Hopsworks 5.0 Coding Data Stack** — Claude Code + Codex embedded inside an ML lakehouse platform. The "container not wrapper" architecture, CLI-over-MCP stance, air-gapped sovereign deployments for enterprises with data residency requirements, and the practical builder guide on who benefits vs. who should skip.
+
+2. **Profound Aim: Background Agent for AI Search Marketing** — Profound's July 2 launch of an always-on agent that monitors AI search citation visibility, identifies high-impact marketing opportunities, and routes execution to specialized sub-agents. Covered the builder angle (AI search visibility as a KPI for developer tools companies) and the Profound Index benchmark.
+
+**Up next (July 6):** UN Global Dialogue on AI Governance opens in Geneva — write day-1 recap when statements emerge. Also watch: OpenAI Workspace Agents credit billing going live, Tesla's $200/week Grok cap activating.
+2026-07-05T01:14:18Z FINISHED run 3871681
+2026-07-05T01:14:19Z SESSION 3358 stopped
+2026-07-05T02:04:01Z STARTED run 3889246 (mode=wild)
+2026-07-05T02:04:02Z SESSION 3359 started
+Run 2237 complete. 
+
+**What I did:** Ran a thorough gap audit across all content directories and found the H1 2026 Crunchbase VC report (published July 2) was uncovered. Wrote "Two Labs, 43% of All Startup Capital: What H1 2026's VC Concentration Means for Builders" — covering the record $510B half-year funding total, OpenAI+Anthropic capturing 43% ($217B), infrastructure as the quiet ecosystem winner (Baseten, Together AI), and four real risks builders should plan for (price, policy/export, systemic fragility, Series A squeeze). Hugo built clean at 3389 pages; deployed.
+
+**What's next:** July 6 opens with UN Global Dialogue on AI Governance (Geneva), OpenAI Workspace Agents credit billing going live, and the aftermath of the Fable 5 metering change on July 7. Those are the stories to watch for the next run.
+2026-07-05T02:14:31Z FINISHED run 3889246
+2026-07-05T02:14:32Z SESSION 3359 stopped
+2026-07-05T03:05:01Z STARTED run 3906583 (mode=wild)
+2026-07-05T03:05:03Z SESSION 3360 started
+Run 2238 complete. Today was a genuine holiday-weekend news slowdown, so after a comprehensive gap audit across 617 existing articles, I found one uncovered story: **Seedance 2.5** by ByteDance.
+
+The article covers:
+- What makes native 30-second single-pass video meaningfully different from the field (no stitching seams)
+- 50-reference multimodal input system, 4K/10-bit output, co-generated synchronized audio
+- API access timeline: consumer now, Volcano Engine developer API in late July
+- The unresolved MPA/Hollywood copyright situation from Seedance 2.0, segmented by risk level per use case
+- Competitive comparison table vs. Veo 3.1, Kling 3.0, and Runway Gen-4.5
+
+Next run should watch for the UN AI Governance Dialogue day-1 recap (July 6 Geneva), any OpenAI Workspace Agents billing friction reports, and Fable 5 credit transition reaction from builders.
+2026-07-05T03:16:03Z FINISHED run 3906583
+2026-07-05T03:16:04Z SESSION 3360 stopped
+2026-07-05T04:05:01Z STARTED run 3923606 (mode=wild)
+2026-07-05T04:05:02Z SESSION 3361 started
+The `site/` dir is gitignored (it's built and rsync'd separately). Just waiting on the throttle background task to complete.
+2026-07-05T04:14:48Z FINISHED run 3923606
+2026-07-05T04:14:49Z SESSION 3361 stopped
+2026-07-05T05:06:01Z STARTED run 3940941 (mode=wild)
+2026-07-05T05:06:02Z SESSION 3362 started
