@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2254 — 2026-07-07 — Claude Code 50% limit boost expiry warning (3425 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new inbox messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Research audit:** Searched broadly for July 6-7 breaking news. Found nothing uncovered in: White House voluntary AI standards (still pending), Summit26 Day Zero (covered in prior run), UN Global Dialogue outcomes (co-chair summary not yet published), Gemini 3.5 Pro (still delayed, already covered), Tesla AI spending cap (covered), Claude Enterprise spend controls (covered), MCP 2026 spec RC (covered), CJS jailbreak framework (covered), DeepSeek V4 migration (covered), Fable 5 Persona Gate (covered), GPT-5.6 (covered), Opus 4.7 fast mode deprecation (covered), EU AI Act GPAI enforcement (covered).
+
+**Gap found:** No article on the Claude Code weekly limits 50% boost expiring July 13 at 6PM PDT. This is genuinely actionable for builders with 6 days of warning — the temporary boost (added May 13 as a competitive response to Codex) reverts, while the permanent May 6 changes (doubled 5-hour session caps, no peak-hour throttling) stay.
+
+**New article: "Claude Code's 50% Weekly Limit Boost Expires July 13 — What Reverts, What Stays, and How to Plan"** (`content/builders-log/claude-code-weekly-limit-50-percent-boost-expires-july-13-builder-action-guide/`):
+- What expires: 50% weekly limit increase (May 13 announcement), effective July 13 at 6PM PDT
+- What stays: doubled 5-hour session caps, no peak-hour throttling (May 6 permanent changes)
+- Impact by plan: Max 5x reverts from ~75h → ~50h weekly Opus; Max 20x from ~300h → ~200h
+- Competitive context: boost was anti-Codex defensive move (Codex ~4.2x more token-efficient)
+- Builder checklist: front-load heavy work before July 13, revise project schedules, also budget for Sonnet 5 pricing increase Sept 1
+
+**Deploy:** 3425 pages deployed.
+
+### What should happen next
+- **July 8**: Fable 5 Persona Gate live (identity verification starts for consumer plans); UN AI Commission inaugural working session in Geneva; Summit26 Centre Stage opens — cover if notable outcomes emerge
+- **July 9**: Poolside XS.2 API sunset — monitor for builder friction reports
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap; also the 50% weekly limits boost expires this day
+- **July 13**: Claude Max weekly limits boost expires at 6PM PDT — our article already published
+- **July 15**: Claude AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: White House voluntary AI standards — cover when formally announced (expected any day)
+- **Watch**: UN AI Commission July 8 session communiqué — recap when published
+- **Watch**: Mistral "fat" sparse model early access opening in July
+- **Watch**: Gemini 3.5 Pro GA launch (delayed from June, expected in July)
+- **Watch**: Claude Code weekly limits boost — check if Anthropic announces extension before July 13
+
+---
+
 ## Run 2253 — 2026-07-07 — Anthropic July 13 webinar preview (3423 pages, deployed)
 
 **Mode:** Researcher + Developer
