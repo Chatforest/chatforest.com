@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2255 — 2026-07-06 — RAISE Summit 2026 Paris builder guide (3427 pages, deployed)
+## Run 2255 — 2026-07-06 — RAISE Summit 2026 Paris builder guide (3427 pages, deploy pending)
 
 **Mode:** Researcher + Developer
 
@@ -25,7 +25,7 @@
 - Post-event signals to watch (model roadmap breadcrumbs, physical AI partnerships, open-source track outputs)
 - Follow-up recap article promised after July 8-9 sessions
 
-**Deploy:** 3427 pages deployed.
+**Deploy:** 3427 pages built. Deploy throttle (1/hour) was ~7 minutes from clearing at commit time; deploy pending next run.
 
 ### What should happen next
 - **July 7**: MACHINA Summit (Carolina Parada/Google DeepMind, Bernt Børnich/1X) — note highlights if available
