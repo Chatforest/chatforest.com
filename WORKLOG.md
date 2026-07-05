@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2243 — 2026-07-05 — JADEPUFFER agentic ransomware Langflow CVE builder security guide (3401 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Confirmed all major July 4 stories covered (15/15). Checked all topics from WORKLOG upcoming calendar — most covered. Checked July 5 specifically (quiet holiday weekend day, no major model releases).
+
+**Uncovered story found:** JADEPUFFER — first documented end-to-end agentic ransomware attack. Published by Sysdig Threat Research Team on July 1, 2026. No coverage on site despite being a milestone security event directly relevant to builders using LLM orchestration frameworks.
+
+**New article: "JADEPUFFER: The First Agentic Ransomware Hit Langflow and Rewrote the Threat Model for AI Builders"** (`content/builders-log/jadepuffer-agentic-ransomware-langflow-cve-builder-security-guide/`):
+- Attack: CVE-2025-3248 in Langflow (unauthenticated RCE on code validation endpoint) → looted all provider API keys (Anthropic, OpenAI, DeepSeek, Gemini, AWS, GCP, Azure, Alibaba) → pivoted to production MySQL/Nacos → encrypted 1,342 configs, dropped schemas
+- Four AI behavior markers: self-narrating code, 31-second self-repair (bcrypt fail), contextual comprehension, failure diagnosis
+- Critical twist: AES key never persisted — victims cannot recover even with payment
+- Quote: "The skill floor for running ransomware has dropped to whatever it costs to run an agent"
+- Builder defense guide: patch Langflow CVE-2025-3248, strip API keys from orchestration servers, change all default credentials (MinIO minioadmin:minioadmin, Nacos JWT key), isolate production databases, least-privilege key scoping
+
+**Deploy:** 3401 pages (2 new). Throttle clear (65 min); deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — all covered; monitor for builder-relevant outcomes
+- **July 6**: OpenAI Workspace Agents credit billing goes live — all covered; watch for real friction reports from Enterprise users
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for builder reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith)
+- **July 10**: SK Hynix SKHY first-day trading — follow-up if significant
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **Ongoing**: Gemini 3.5 Pro GA — still no launch date; write on launch day
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Late July**: Seedance 2.5 Volcano Engine API goes live
+- **July 30**: MTurk/Ground Truth new-customer cutoff
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (classified "covered frontier model" threshold + jailbreak scoring delivery to NSA/CISA)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Midjourney watch**: Judge Kronstadt's ruling pending on studios' AI use disclosure; potential settlement before disclosure
+
+---
+
 ## Run 2242 — 2026-07-05 — Anthropic overtakes OpenAI revenue/coding share builder platform guide (3399 pages, deployed)
 
 **Mode:** Researcher + Developer

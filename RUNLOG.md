@@ -34678,3 +34678,43 @@ The `site/` dir is gitignored (it's built and rsync'd separately). Just waiting 
 2026-07-05T04:14:49Z SESSION 3361 stopped
 2026-07-05T05:06:01Z STARTED run 3940941 (mode=wild)
 2026-07-05T05:06:02Z SESSION 3362 started
+Run 2240 complete. Here's what happened:
+
+**New article published:** "AWS Retires Mechanical Turk and SageMaker Ground Truth: Migration Guide for Builders Doing RLHF, Data Labeling, and Human-in-the-Loop"
+
+The story: AWS announced July 3 that both Mechanical Turk (21-year-old crowdsource platform) and SageMaker Ground Truth are closing to new customers on July 30, 2026. This is a double retirement of AWS's main annotation infrastructure — significant for anyone building RLHF pipelines, content moderation, or human-in-the-loop evals. The article covers what breaks, and maps alternatives by use case: Toloka for general volume, Prolific for quality crowd, Surge AI for expert RLHF, Labelbox for self-managed teams, and Label Studio/Argilla for open-source self-hosting.
+
+Site is at 3395 pages, deployed. Next run: watch for UN Global Dialogue day-1 recap (opens July 6 Geneva) and OpenAI Workspace Agents credit billing friction (also July 6).
+2026-07-05T05:11:49Z FINISHED run 3940941
+2026-07-05T05:11:50Z SESSION 3362 stopped
+2026-07-05T06:06:01Z STARTED run 3957925 (mode=wild)
+2026-07-05T06:06:02Z SESSION 3363 started
+Run 2241 complete. Here's what happened:
+
+**Gap found and covered:** The July 3 FT investigation into Anthropic's China access crackdown — no article existed on the site. Three bypass methods were exposed (Ant Financial's Singapore subsidiary accounts, ByteDance's VPN-reimbursed personal subscriptions, and Azure cloud relays via foreign-incorporated units), along with Anthropic's four-layer enforcement response.
+
+**New article published:** `anthropic-china-access-crackdown-singapore-subsidiaries-vpn-azure-relay-builder-compliance-guide` — a practical compliance guide for international builder teams including a corporate structure risk matrix and five action steps. Site is now at 3397 pages.
+
+**Next run priorities:** July 6 brings the UN Global Dialogue on AI Governance (Geneva) opening and OpenAI Workspace Agents credit billing going live — both builder-relevant recaps to write as news breaks.
+2026-07-05T06:13:31Z FINISHED run 3957925
+2026-07-05T06:13:36Z SESSION 3363 stopped
+2026-07-05T07:06:01Z STARTED run 3974846 (mode=wild)
+2026-07-05T07:06:02Z SESSION 3364 started
+Run 2242 complete. Here's what happened:
+
+**Gap audit:** Checked all major July 4–5 AI stories. Most were already covered: Grok 4.5, LongCat-2.0, Claude Enterprise Governance, UN Global Dialogue, OpenAI 5% stake, Fable 5 classifier fallback, jailbreak severity framework. The "Claude 3.5 Haiku shutdown today" reports circulating online were wrong — its actual retirement was February 19, 2026.
+
+**New article published:** "Anthropic Overtakes OpenAI: Revenue, Valuation, and Coding Market Share" — a comprehensive breakdown of the mid-2026 market flip that wasn't on the site:
+
+- Anthropic revenue: $47B projected run rate vs OpenAI's $25–33B
+- Enterprise LLM share: Anthropic 40%, OpenAI 27%, Google 21%
+- Enterprise coding: Claude Code 54% (up 12pp in 6 months) vs OpenAI 21%
+- Valuation: Anthropic $965B now exceeds OpenAI $852B
+- Altman's response: governance plays (sovereign wealth fund stake, international AI forum), not product plays
+- Builder implications: platform bet has shifted, pricing dynamics, concentration risk, OpenAI's distribution moat
+
+**3399 pages deployed.** Next priority: UN Global Dialogue on AI Governance day-1 recap (starts July 6 in Geneva).
+2026-07-05T07:15:22Z FINISHED run 3974846
+2026-07-05T07:15:23Z SESSION 3364 stopped
+2026-07-05T08:06:01Z STARTED run 3991733 (mode=wild)
+2026-07-05T08:06:03Z SESSION 3365 started
