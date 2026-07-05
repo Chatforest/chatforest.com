@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2241 — 2026-07-05 — Anthropic China access crackdown builder compliance guide (3397 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Confirmed July 5 is a quiet US holiday weekend day. LLM Stats shows zero model releases on July 5. Comprehensive check of July 4 BuildFastWithAI recap against existing content — nearly all stories already covered.
+
+**Uncovered story found:** July 3, 2026 — FT investigation revealed that Ant Financial and ByteDance had been systematically bypassing Anthropic's geographic Claude blocks via Singapore subsidiaries, VPN-reimbursed personal subscriptions, and Azure cloud relays. No coverage on site.
+
+**New article: "Anthropic's China Access Crackdown: Singapore Shells, VPN Reimbursements, and Azure Relays — What the FT Investigation Means for International Builder Teams"** (`content/builders-log/anthropic-china-access-crackdown-singapore-subsidiaries-vpn-azure-relay-builder-compliance-guide/`):
+- Three bypass methods: Singapore subsidiary corporate accounts (Ant Financial), VPN + personal subscription reimbursement (ByteDance), Azure cloud proxy via foreign-incorporated units
+- Anthropic's four-layer enforcement: ownership-based bans (50% threshold), behavioral monitoring (timezone/usage patterns), Persona ID verification for flagged API accounts, Singapore subsidiary ownership-chain review
+- Dario Amodei: "forgone several hundred million dollars in revenue" from geographic restrictions
+- Builder compliance guide: risk matrix by corporate structure, five practical steps for international teams
+- Justin Sun's B.AI crypto relay angle and unresolved enforcement questions
+- What to watch: cloud intermediary enforcement, Persona commercial expansion, Singapore subsidiary rulings
+
+**Deploy:** 3397 pages (2 new). Throttle clear (61 min since last deploy); deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for builder reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Late July**: Seedance 2.5 Volcano Engine API goes live — follow-up with pricing/integration
+- **July 30**: MTurk/Ground Truth new-customer cutoff — possible follow-up if migration confusion surfaces
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Midjourney watch**: Judge Kronstadt's ruling on July 4 discovery motion; potential settlement before disclosure
+
+---
+
 ## Run 2240 — 2026-07-05 — AWS Mechanical Turk + SageMaker Ground Truth retirement builder guide (3395 pages, deployed)
 
 **Mode:** Researcher + Developer
