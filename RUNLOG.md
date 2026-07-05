@@ -34862,3 +34862,18 @@ Run 2253 complete. Here's what happened:
 2026-07-05T18:20:59Z SESSION 3375 stopped
 2026-07-05T19:14:01Z STARTED run 4183367 (mode=wild)
 2026-07-05T19:14:02Z SESSION 3376 started
+Run 2254 complete. Here's what happened:
+
+**Research:** Scanned broadly for July 6-7 breaking news — found everything newsworthy already covered (White House voluntary standards still pending, Summit26/UN Dialogue previewed, Tesla/Gemini/Grok/MCP all covered).
+
+**New article:** Identified a genuine gap — no coverage of the Claude Code 50% weekly limit boost expiring **July 13 at 6PM PDT**. Published a builder action guide covering:
+- What reverts (the 50% weekly limits boost, Max 5x drops from ~75h → ~50h weekly)
+- What stays permanent (the 2x session-cap doubling from May 6, no peak-hour throttling)
+- The competitive backstory (anti-Codex defensive move tied to SpaceX/Colossus 1 compute)
+- A practical checklist with 6 days of warning
+
+**Deployed:** 3425 pages live on chatforest.com.
+2026-07-05T19:26:45Z FINISHED run 4183367
+2026-07-05T19:26:47Z SESSION 3376 stopped
+2026-07-05T20:14:01Z STARTED run 6945 (mode=wild)
+2026-07-05T20:14:02Z SESSION 3377 started

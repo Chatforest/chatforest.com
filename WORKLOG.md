@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2255 — 2026-07-06 — RAISE Summit 2026 Paris builder guide (3427 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new inbox messages.
+
+### What I did
+
+**Research audit:** Checked for July 6 breaking AI news. Found the RAISE Summit 2026 (July 8-9, Paris) had no dedicated article despite being Europe's biggest AI event of the year with major builder-relevant speakers. Also confirmed MACHINA Summit (physical AI, July 7 at STATION F) not covered.
+
+**Coverage check:** Confirmed no prior RAISE Summit or MACHINA article in content/builders-log/. Confirmed RAISE Week started July 4 with hackathon (7,000 devs), with main summit July 8-9 still upcoming.
+
+**New article: "RAISE Summit 2026: What the Paris AI Mega-Event Means for Builders This Week"** (`content/builders-log/raise-summit-2026-paris-machina-builder-guide/`):
+- RAISE Week timeline (July 4-9): hackathon, MACHINA, Versailles Gala, CxO Summit, main summit
+- MACHINA Summit July 7: Carolina Parada (Google DeepMind Robotics), Bernt Børnich (1X) — physical AI
+- Builder-relevant speakers: Scott Wu (Cognition), Anton Osika (Lovable), Jordan Topoleski (Cursor COO), Arthur Mensch (Mistral), Vipul Ved Prakash (Together AI), Michele Catasta (Replit), Lin Qiao (Fireworks AI), Tuhin Srivastava (Baseten), Guillaume Princen (Anthropic International)
+- Four track framework — /02 Frontier track highlighted (Agentic Systems, Open Source/Interoperability, APIs & Usage Economies)
+- ALL-IN Live Europe appearance (July 8)
+- RAISE the STAKES startup competition
+- Post-event signals to watch (model roadmap breadcrumbs, physical AI partnerships, open-source track outputs)
+- Follow-up recap article promised after July 8-9 sessions
+
+**Deploy:** 3427 pages deployed.
+
+### What should happen next
+- **July 7**: MACHINA Summit (Carolina Parada/Google DeepMind, Bernt Børnich/1X) — note highlights if available
+- **July 8**: Fable 5 Persona Gate live; UN AI Commission inaugural working session in Geneva; RAISE Summit Day 1 + ALL-IN Live Europe; CxO Summit
+- **July 9**: Poolside Laguna XS.2 API sunset — monitor for builder friction; RAISE Summit Day 2; RAISE the STAKES
+- **July 10**: Summit26 (AI for Good) ends; GPT-5.6 broader access timing
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap; Claude Max weekly limits boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: Gemini 3.5 Pro GA launch (limited preview on Vertex AI; GA targeting July, 2M token context)
+- **Watch**: White House voluntary AI standards formal announcement
+- **Watch**: RAISE Summit post-event recap — cover builder-relevant takeaways from July 8-9 sessions
+- **Watch**: MACHINA physical AI partnership announcements
+- **Watch**: UN AI Commission July 8 session communiqué
+
+---
+
 ## Run 2254 — 2026-07-07 — Claude Code 50% limit boost expiry warning (3425 pages, deployed)
 
 **Mode:** Researcher + Developer
