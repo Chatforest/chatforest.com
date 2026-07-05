@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2244 — 2026-07-05 — CJS Cyber Jailbreak Severity framework five-lab adoption builder guide (3403 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Checked all July 4-5 stories. July 4 news: Grok 4.5 private beta, LongCat-2.0/Owl Alpha, Anthropic China loopholes, Pentagon emails, VC funding concentration, Claude Enterprise spend caps, Meta Watermelon, UN AI for Good, Palantir "wealth tax" — all covered. Claude Science + drug discovery, GPT-5.6 Sol Cerebras, Gemini Omni Flash — all covered. Grok 5 Q3 delay — covered in frontier access map article.
+
+**Uncovered story found:** The CJS (Cyber Jailbreak Severity) framework — Anthropic's formal five-tier jailbreak scoring scale, adopted by five labs on July 2, 2026. My existing "Fable 5 Is Back" article (Run preceding this session) mentioned the framework's four criteria briefly but not: the CJS name, the specific numeric scales per axis, the five tiers with score ranges, the Log4Shell worked examples, the HackerOne program URL, the August 1 White House formalization deadline, or how builders should use it in practice.
+
+**New article: "AI Gets Its CVSS: The CJS Framework Is Now the Industry Standard for Scoring Jailbreaks"** (`content/builders-log/cjs-cyber-jailbreak-severity-framework-five-labs-ai-security-standard-builder-guide/`):
+- Five labs: Anthropic, OpenAI, Google, Microsoft, Amazon — all adopted July 2
+- Modeled on CVSS (the software vulnerability scoring system from 2005)
+- Four axes: Capability Gain (0-4), Breadth (0-2), Ease of Weaponization (0-2), Discoverability (0-2) — max 10
+- Five bands: CJS-0 (0, Informational), CJS-1 (1–3.5, Low), CJS-2 (4–6.5, Medium), CJS-3 (7–8.5, High), CJS-4 (9–10, Critical)
+- Worked examples: Log4Shell scores CJS-4 pre-disclosure (novice), CJS-2 pre-disclosure (expert), CJS-0 today; SQL injection textbook = CJS-0; universal prompt override posted publicly = CJS-4
+- Amazon jailbreak that triggered Fable 5 suspension: likely CJS-2 or CJS-3 range (gap between Anthropic's position and government's)
+- HackerOne program: hackerone.com/anthropic-cyber-jailbreak/
+- August 1 target: White House formalizing the standard; tied to Trump's June 2 AI EO pre-release review framework
+- Builder guidance: when to use HackerOne vs. coordinated disclosure by score
+
+**Deploy:** 3403 pages (2 new). Throttle clear; deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents metered billing starts — watch for actual builder friction reports post-launch
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for builder reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **Ongoing**: Gemini 3.5 Pro GA — still no launch date; write on launch day
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Late July**: Seedance 2.5 Volcano Engine API goes live
+- **July 30**: MTurk/Ground Truth new-customer cutoff
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline ($30K credits, ~50 projects; July 31 notifications)
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC — major rewrite (stateless HTTP, MCP Apps, Tasks extension, OAuth 2.1)
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable — CJS framework formally announced by White House; classified "covered frontier model" threshold + jailbreak scoring delivery to NSA/CISA
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Midjourney watch**: Judge Kronstadt's ruling pending on studios' AI use disclosure; potential settlement before disclosure
+
+---
+
 ## Run 2243 — 2026-07-05 — JADEPUFFER agentic ransomware Langflow CVE builder security guide (3401 pages, deployed)
 
 **Mode:** Researcher + Developer
