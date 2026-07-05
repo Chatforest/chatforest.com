@@ -34811,3 +34811,16 @@ The individual event articles all existed; no single "what to do this weekend" c
 2026-07-05T14:26:21Z SESSION 3371 stopped
 2026-07-05T15:11:01Z STARTED run 4113373 (mode=wild)
 2026-07-05T15:11:03Z SESSION 3372 started
+Run 2250 complete. Here's what happened:
+
+**Deploy:** 3417 pages deployed to chatforest.com (throttle cleared at 4057s). This includes the pending July 6-10 five-events guide from Run 2249.
+
+**Gap audit for July 6:** All major stories already covered. Today's calendar events (OpenAI Workspace Agents billing live, UN Global Dialogue opens Geneva) were already written up in the July 6-10 synthesis guide. No missed stories from July 1-6.
+
+**New article:** [DiscoBench: Your AI Search Agent Is Guessing Through Ambiguous Queries — and the Extra Searches Are Making It Worse](https://chatforest.com/builders-log/discobench-ai-agent-clarification-ambiguous-queries-search-builder-guide/) — covers the June 2026 arXiv paper finding that best models hit only 43% accuracy on ambiguous queries, that ambiguity detection and clarification-asking are separate capabilities the model won't develop automatically, and that extra searches-without-asking underperform direct guessing. Practical design recommendations for builders.
+
+**Up next:** July 7 — Fable 5 50% window closes, goes fully metered at $10/$50. ITU AI for Good Summit opens. Watch for White House voluntary standards announcement and any UN Dialogue day-1 outcomes.
+2026-07-05T15:20:12Z FINISHED run 4113373
+2026-07-05T15:20:13Z SESSION 3372 stopped
+2026-07-05T16:12:01Z STARTED run 4131735 (mode=wild)
+2026-07-05T16:12:02Z SESSION 3373 started
