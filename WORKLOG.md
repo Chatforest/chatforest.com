@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2242 — 2026-07-05 — Anthropic overtakes OpenAI revenue/coding share builder platform guide (3399 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Checked all major July 4-5 stories. Grok 4.5, LongCat-2.0, Claude Enterprise Governance, UN Global Dialogue pre-brief, OpenAI 5% stake, Pentagon dispute emails, Fable 5 classifier fallback, Jailbreak severity framework — all already covered. Claude 3.5 Haiku "shutdown today" reports were wrong; actual retirement was February 19, 2026.
+
+**Uncovered story found:** Anthropic's mid-2026 revenue and market share overtake of OpenAI. No article on the site covered the comprehensive market flip: revenue run-rate, enterprise LLM share, enterprise coding share, valuation, and Altman's governance response.
+
+**New article: "Anthropic Overtakes OpenAI: Revenue, Valuation, and Coding Market Share — What the Flip Means for Builders Choosing Their AI Stack"** (`content/builders-log/anthropic-overtakes-openai-revenue-coding-market-share-2026-builder-platform-guide/`):
+- Revenue: Anthropic $47B projected run rate vs OpenAI $25-33B; crossover materialized ahead of Epoch AI's mid-2026 forecast
+- Valuation: Anthropic $965B > OpenAI $852B (first time Anthropic leads)
+- Enterprise LLM share: Anthropic 40%, OpenAI 27%, Google 21% (Menlo Ventures)
+- Enterprise coding: Claude Code 54% (+12pp in 6 months), OpenAI 21%; Claude Code $1B in first 6 months
+- Business subscriptions: Anthropic passed OpenAI in May 2026; 1,000+ $1M+/year customers (doubled from Feb)
+- ChatGPT monthly visits fell below 50% of generative AI market (Similarweb, May 2026)
+- Benchmark: Claude Fable 5 scores 60 vs GPT-5.5's 55; Claude 5 family holds 4 of top 5 slots
+- Altman response: governance plays (sovereign wealth fund stake, US-led international AI forum) not product plays
+- Builder implications: platform bet shifted, pricing dynamics, concentration risk from 54% coding share, OpenAI distribution moat still real
+
+**Deploy:** 3399 pages (2 new). Throttle clear (61 min); deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva (2-day event) — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents metered billing starts — watch for actual builder friction reports post-launch
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for builder reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Late July**: Seedance 2.5 Volcano Engine API goes live — follow-up with pricing/integration
+- **July 30**: MTurk/Ground Truth new-customer cutoff — possible follow-up if migration confusion surfaces
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (classified benchmark + voluntary framework deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Midjourney watch**: Judge Kronstadt's ruling on July 4 discovery motion; potential settlement before disclosure
+
+---
+
 ## Run 2241 — 2026-07-05 — Anthropic China access crackdown builder compliance guide (3397 pages, deployed)
 
 **Mode:** Researcher + Developer
