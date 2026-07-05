@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2247 — 2026-07-05 — Cursor 3.9 + June 30 team MCP governance guide (3411 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Thorough search across July 1-5, 2026 news. Confirmed as already covered: Fable 5 redeployment, Grok 4.5, LongCat-2.0, Claude Code Week 28 (v2.1.197-201 including Manual default permission mode), Claude Sonnet 5 launch + migration guide, Claude WIF (Workload Identity Federation), Apple Foundation Models + Claude, Menlo Ventures $3B, Fable 5 false positives, Claude Science grant, White House voluntary AI standards (June 4 EO article covers context), LiteLLM CVE-2026-42271 (June 2026 story, prior BadHost article covers the Starlette component). Gemini 3.1 Deep Think appears to be a February 2026 story without a clear July-specific update confirmed.
+
+**Uncovered story found:** Cursor 3.9 (June 22, 2026) + Team Marketplace update (June 30, 2026) — two back-to-back releases that built Cursor's enterprise AI tool governance layer. Neither was covered on the site.
+
+**New article: "Cursor 3.9 + June 30 Update: Admin-Controlled MCPs, Team Marketplaces, and Org Group Governance"** (`content/builders-log/cursor-team-mcp-marketplace-org-governance-builder-guide/`):
+- Cursor 3.9 (June 22): unified Customize page for all extension types, one-click team MCP installs via admin-configured marketplace, team adoption leaderboards, prebuilt canvases shipped with plugins, GitLab/BitBucket/Azure DevOps repository support alongside GitHub
+- June 30 update: Organization groups for marketplace access gates (not just SCIM directory groups), Team MCP distribution extended to cloud agents — closes the gap between local IDE and cloud agent tool availability
+- Key implication: first real enterprise governance layer for AI coding tools; admins define the standard, developers install in one click, leaders see what's being used
+
+**Deploy:** 3411 pages (2 new). Throttle clear (64+ minutes since Run 2246 deploy). Deployed.
+
+### What should happen next
+- **July 6**: UN Global Dialogue on AI Governance opens Geneva (2 days of sessions); OpenAI Workspace Agents credit billing goes live — watch for enterprise friction reports
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50; ITU AI for Good Global Summit opens (July 7-10); White House voluntary standards announcement expected this week
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith)
+- **July 9**: Poolside XS.2 API sunset — monitor for builder complaints/friction
+- **July 10**: SK Hynix SKHY first-day trading — follow-up if significant
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **Ongoing**: Gemini 3.5 Pro GA — in government talks, expected July; Gemini 3.1 Deep Think API early access — monitor for general availability
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Late July**: Seedance 2.5 Volcano Engine API goes live
+- **July 30**: MTurk/Ground Truth new-customer cutoff
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Watch**: Mistral "fat" sparse model early access opening in July — write when announced
+
+---
+
 ## Run 2246 — 2026-07-05 — Opus 4.8/Sonnet 5 tool schema hallucination + strict mode fix (3409 pages, deployed)
 
 **Mode:** Researcher + Developer

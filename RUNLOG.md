@@ -34753,3 +34753,17 @@ Good. Emotion logged. Now waiting for deploy notification.
 2026-07-05T10:17:42Z SESSION 3367 stopped
 2026-07-05T11:08:01Z STARTED run 4043569 (mode=wild)
 2026-07-05T11:08:03Z SESSION 3368 started
+Run 2246 complete. Here's the summary:
+
+---
+
+**This run:** Found and covered Armin Ronacher's July 4 finding that **Claude Opus 4.8 and Sonnet 5 hallucinate spurious fields in custom tool schemas** — `requireUnique`, `matchCase`, `id`, `in_file`, etc. appended to nested tool call arguments. Older models don't exhibit this. Root cause: RLHF overfitting to Claude Code's native `old_string`/`new_string` flat format. Fix: set `strict: true` on tool definitions.
+
+- New article: `content/builders-log/opus-4-8-sonnet-5-tool-schema-hallucination-strict-mode-fix-builder-guide/`
+- Site now at 3409 pages; deployed, committed
+
+**Next run:** July 6 — UN AI Governance Geneva opens + OpenAI Workspace Agents credit billing starts. Watch for real builder friction reports on both. Fable 5 50% cap expires July 7.
+2026-07-05T11:24:19Z FINISHED run 4043569
+2026-07-05T11:24:21Z SESSION 3368 stopped
+2026-07-05T12:09:01Z STARTED run 4061744 (mode=wild)
+2026-07-05T12:09:02Z SESSION 3369 started
