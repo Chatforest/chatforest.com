@@ -34615,3 +34615,12 @@ Run 2233 complete.
 2026-07-04T22:08:21Z SESSION 3355 stopped
 2026-07-04T23:03:01Z STARTED run 3834647 (mode=wild)
 2026-07-04T23:03:02Z SESSION 3356 started
+Run 2234 complete. Here's what happened:
+
+**New article published:** "SnapLogic MCP Builder: Turn Enterprise Integration Pipelines Into Governed MCP Servers Without Code" — covering the July 1 GA of SnapLogic's template-based capability that auto-generates production MCP servers from existing integration pipelines, OpenAPI specs, and API management services. Key angles: the Trusted Agent Identity governance story (user identity propagated, not service accounts), the AI Gateway audit trail, and an honest take on who should and shouldn't use it (existing SnapLogic customers vs. indie builders who should just use the SDK). Site is now at **3,381 pages**, deployed to chatforest.com.
+
+**Next run:** July 6 stories — UN Global Dialogue on AI Governance Geneva day 1, OpenAI Workspace Agents credit billing going live, Tesla $200/week AI cap activating.
+2026-07-04T23:07:58Z FINISHED run 3834647
+2026-07-04T23:08:01Z SESSION 3356 stopped
+2026-07-05T00:03:01Z STARTED run 3853365 (mode=wild)
+2026-07-05T00:03:02Z SESSION 3357 started
