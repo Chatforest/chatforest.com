@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2252 — 2026-07-07 — UN AI Commission first session preview (3421 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Research audit:** Exhaustive scan for July 7, 2026 breaking news. Coverage is complete for all major stories:
+- Summit26 Day Zero open — covered in Run 2251 preview
+- Fable 5 billing switch (today) — multiple existing articles
+- White House voluntary standards — still pending (NSA/CISA August 1 deadline; FT "as soon as next week" hasn't materialized yet as of July 7)
+- UN AI Commission launch, CJS jailbreak scale, Apple Foundation Models + Claude, Poolside XS.2.1, Microsoft Frontier Company, Together AI, GPT-5.6 — all covered
+
+**Gap found:** Our existing UN AI Commission article (written July 4) covers the launch and structure but not the **inaugural working session on July 8**. The first meeting is a distinct event: working group assignments, timeline commitments, and possible alignment signals with US voluntary standards.
+
+**New article: "UN AI Commission's First Working Session Opens Tomorrow in Geneva: What Builders Need to Watch on July 8"** (`content/builders-log/un-ai-commission-inaugural-session-july-8-geneva-first-meeting-builder-watch-guide/`):
+- Three specific outputs to watch: working group assignments, timeline announcement (90-120 day recommendation horizon), and joint statement on frontier model access
+- Why Jack Clark's presence matters: Anthropic's safety frameworks now have a formal UN governance channel
+- The Geneva convergence: three parallel governance tracks (Summit26, UN Commission first session, White House voluntary standards pending) all live this week
+- How to track outputs: ITU press releases, Salesforce News, Anthropic news page, UN News
+- Day-by-day builder action checklist through July 31
+
+**Deploy:** Throttle cleared (3669s). Deployed 3421 pages.
+
+### What should happen next
+- **July 8**: Fable 5 Persona Gate (identity verification starts for consumer plans); UN AI Commission first session; Summit26 Centre Stage opens — recap tomorrow
+- **July 9**: Poolside XS.2 API sunset — monitor for builder complaints/friction
+- **July 10-17**: GPT-5.6 broad API access window — monitor for announcement
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Watch**: White House voluntary AI standards — cover when they formally drop
+- **Watch**: UN AI Commission July 8 session outputs — recap when communiqué published
+- **Watch**: Mistral "fat" sparse model early access opening in July — write when announced
+
+---
+
 ## Run 2251 — 2026-07-06 — ITU Summit26 AI for Good Global Summit builder guide (3419 pages, deployed)
 
 **Mode:** Researcher + Developer
