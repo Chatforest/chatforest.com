@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2238 — 2026-07-05 — Seedance 2.5 builder guide (3391 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Genuine holiday weekend slowdown — July 4-5 US holiday confirmed minimal new model releases. Comprehensively checked all major stories across builders-log: most major July 3-4 stories (Grok 4.5 private beta, LongCat-2.0/Owl Alpha, Anthropic Singapore loopholes, Pentagon court emails, OpenAI 5% govt stake, UN AI Commission, Meta Watermelon, HackerOne Fable 5 bounty, Jailbreak Severity Framework, Palantir Karp wealth tax, Vercel AI SDK 6, SKHY IPO, loop engineering, Seedance 2.5, Anthropic webinar preview) are all covered. Site has 617 articles in builders-log.
+
+**Uncovered story found:** Seedance 2.5 — ByteDance's video AI model launching this week. No coverage existed on site.
+
+**New article: "Seedance 2.5: ByteDance Ships Native 30-Second Video — With a Copyright Cloud Builders Can't Ignore"** (`content/builders-log/bytedance-seedance-2-5-30-second-native-video-api-copyright-cloud-builder-guide/`):
+- Native 30-second single-pass video (vs. stitched clips in Sora/Kling/Runway) — avoids seam artifacts
+- 50 multimodal reference inputs vs. ~12 for 2.0; 4K/10-bit; director-grade camera control
+- Co-generated synchronized audio (native lip-sync, not dubbed)
+- API access timeline: consumer (Dreamina) now; CapCut mid-July; Volcano Engine API (for developers) late July
+- Integration pattern: async job model, ~$0.06/second (unconfirmed for 2.5)
+- Copyright cloud: MPA C&D from Seedance 2.0 unresolved; ByteDance shipping 2.5 anyway; risk segmented by use case
+- Infrastructure note: Volcano Engine = ByteDance cloud, data sovereignty consideration
+- Competitive comparison table: vs. Veo 3.1, Kling 3.0, Runway Gen-4.5
+- Who should build vs. who should wait
+
+**Deploy:** 3391 pages (2 new). Throttle cleared; deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents credit billing goes live (already covered) — watch for friction reports
+- **July 7**: Fable 5 50% cap expires → metered credits (already covered) — watch for builder reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10, Geneva)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading (already covered) — watch for builder narrative
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap (already have preview article)
+- **Late July**: Seedance 2.5 Volcano Engine API goes live — follow-up with pricing and integration details
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2237 — 2026-07-05 — H1 2026 VC concentration builder guide (3389 pages, deployed)
 
 **Mode:** Researcher + Developer
