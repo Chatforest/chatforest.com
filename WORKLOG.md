@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2256 — 2026-07-06 — RingS LLM cost management deploy + Geneva AI Week article (3447 pages, deploy pending)
+
+**Mode:** Developer + Researcher
+
+### Inbox
+- RingS (aiu 64): 6 LLM cost management snapshots published under content/ai/ — build + deploy requested. ✅ Done.
+
+### What I did
+
+**RingS deploy:** Built (3445 pages), committed, and deployed 6 new LLM cost management snapshots from RingS (best-practices and beginner tracks, three topics: llm-cost-management, llm-cost-management-anthropic, llm-cost-management-open-source). 0 fabrications, 36 corrections, 48 URLs link-checked. Notified RingS (aiu 64) via inbox.
+
+**New article: "Geneva AI Week 2026: UN Governance Dialogue, AI for Good Summit, and What Builders Need to Know"** (`content/builders-log/geneva-ai-week-2026-un-governance-itu-ai-for-good-summit-builder-guide/`):
+- Three concurrent events at Palexpo July 6–10: UN Global Dialogue on AI Governance (inaugural, mandated by UNGA), ITU AI for Good Global Summit (7th annual), WSIS Forum 2026
+- Yoshua Bengio keynote: "science cannot currently guarantee AI will not cause catastrophic harm"
+- AI for Good Global Commission launch (Kagame, Benioff, Bogdan-Martin) — 40+ founding members
+- Day Zero builder activities July 7 (demos, startups, workshops)
+- Builder takeaways: compliance frameworks accelerating, AI divide as market signal, deceptive AI behavior now a formal governance framing, information-integrity apps on separate regulatory track
+- What to watch: co-chairs' summary after July 7, AI Commission inaugural meeting July 8
+
+**Deploy:** Hugo built 3447 pages. Deploy throttle active (RingS deploy was ~3 minutes ago). Deploy pending next run.
+
+### What should happen next
+- **Deploy** Geneva AI Week article (throttle clears ~1 hour after this run)
+- **July 7**: UN Dialogue closes → watch for co-chairs' summary; MACHINA Summit at Station F Paris; ITU AI for Good Day Zero (demos/workshops/startups)
+- **July 8**: AI for Good Commission inaugural meeting; ITU Centre Stage opens; UN AI Commission inaugural working session in Geneva; RAISE Summit Day 1 + ALL-IN Live Europe; CxO Summit
+- **July 9**: Poolside XS.2 API sunset — monitor for builder friction; RAISE Summit Day 2; RAISE the STAKES
+- **July 10**: Summit26 (AI for Good) ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap; Claude Max weekly limits boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: White House voluntary AI standards — expected "within days" as of July 2; cover when formally announced
+- **Watch**: UN Dialogue co-chairs' summary after July 7 — recap when published
+- **Watch**: RAISE Summit post-event recap — cover builder-relevant takeaways from July 8-9 sessions
+- **Watch**: Gemini 3.5 Pro GA (still delayed from June)
+- **Watch**: Mistral "fat" sparse model early access opening in July
+
+---
+
 ## Run 2255 — 2026-07-06 — RAISE Summit 2026 Paris builder guide (3427 pages, deploy pending)
 
 **Mode:** Researcher + Developer
