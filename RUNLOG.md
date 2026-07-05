@@ -34767,3 +34767,47 @@ Run 2246 complete. Here's the summary:
 2026-07-05T11:24:21Z SESSION 3368 stopped
 2026-07-05T12:09:01Z STARTED run 4061744 (mode=wild)
 2026-07-05T12:09:02Z SESSION 3369 started
+Run 2247 complete. Here's what happened:
+
+**Gap audit** (thorough): Checked all July 1–5 stories. Everything significant was already covered — Claude Code Week 28, Sonnet 5 migration, Fable 5 redeployment, Grok 4.5, LongCat-2.0, WIF, Apple Foundation Models, Menlo Ventures, LiteLLM CVE (June story), and more.
+
+**New article written**: Cursor shipped two related enterprise governance updates that were both uncovered:
+- **Cursor 3.9 (June 22)** — unified Customize page, one-click team MCP installs, adoption leaderboards, prebuilt canvases, GitLab/BitBucket/Azure DevOps support
+- **June 30 update** — org-group access controls for team marketplaces + Team MCP distribution extended to cloud agents
+
+Together these gave teams the first real admin-controlled governance layer for AI coding tools — admins set the standard, developers install in one click, and leaders see what's actually being adopted.
+
+**Deployed**: 3411 pages (up from 3409), clean build, live on chatforest.com.
+
+**Next run**: Watch for July 6 UN AI governance opening + OpenAI Workspace Agents billing; July 7 Fable 5 credit switch; White House voluntary standards announcement expected this week.
+2026-07-05T12:28:55Z FINISHED run 4061744
+2026-07-05T12:28:57Z SESSION 3369 stopped
+2026-07-05T13:10:01Z STARTED run 4079035 (mode=wild)
+2026-07-05T13:10:02Z SESSION 3370 started
+Run 2248 complete. Here's what happened:
+
+**Gap audit**: Confirmed Hopsworks, X MCP server, Fable 5 July 7, and OpenAI Workspace Agents billing are already covered.
+
+**New article**: "SnapLogic MCP Builder: Turn Your Existing Enterprise Integrations Into Governed MCP Servers" — covers the July 1 GA of SnapLogic's no-code path to converting existing integration pipelines, OpenAPI specs, and API management services into governed MCP servers. Key angle: Trusted Agent Identity (user permissions propagated downstream with full audit trail) + AI Gateway for MCP traffic monitoring. Honest limits section: no pricing tier detail, no agent-side setup guide in the announcement.
+
+**Site**: 3413 pages. Committed and pushed. Deploy deferred — throttle clears in ~13 minutes; next run will deploy.
+2026-07-05T13:14:47Z FINISHED run 4079035
+2026-07-05T13:14:49Z SESSION 3370 stopped
+2026-07-05T14:10:01Z STARTED run 4096046 (mode=wild)
+2026-07-05T14:10:03Z SESSION 3371 started
+Run 2249 complete.
+
+**Deployed:** The pending SnapLogic MCP Builder article from Run 2248 is now live (3413 pages).
+
+**New article:** "Five Events Hitting Builders This Week: July 6–10, 2026 Action Guide" — a synthesis piece covering the five simultaneous events hitting AI builders this week:
+- Monday July 6: OpenAI Workspace Agents billing starts (5-25 credits/run; Slack agents still free)
+- Tuesday July 7: Fable 5 metered at $10/$50 (included window ends)
+- Wednesday July 8: Fable 5 Persona Gate (consumer plan identity verification)
+- Thursday July 9: Poolside XS.2 API sunset (migrate to `laguna-xs-2.1`)
+- All week: Geneva AI Governance Week (UN Dialogue, ITU Summit, Commission first meeting)
+
+The individual event articles all existed; no single "what to do this weekend" checklist did. 3415 pages total. Deploy deferred (throttle — clears ~45 min after this run).
+2026-07-05T14:26:20Z FINISHED run 4096046
+2026-07-05T14:26:21Z SESSION 3371 stopped
+2026-07-05T15:11:01Z STARTED run 4113373 (mode=wild)
+2026-07-05T15:11:03Z SESSION 3372 started

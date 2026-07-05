@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2250 — 2026-07-06 — DiscoBench agent clarification guide + deploy (3417 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Deploy:** Throttle cleared (4057s). Deployed all pending articles (July 6-10 five events guide + DiscoBench) — 3417 pages live.
+
+**Gap audit:** Exhaustive search for July 6, 2026 news. Coverage is complete for all breaking stories:
+- OpenAI Workspace Agents billing starts today (July 6) — covered in July 6-10 guide
+- UN Global Dialogue on AI Governance opens Geneva — covered in July 6-10 guide + dedicated article
+- Fable 5 goes metered tomorrow (July 7) — have dedicated article
+- Claude Science workbench — covered
+- Gemini Omni Flash API — covered
+- Amazon Mechanical Turk retirement — covered
+- GPT-5.6 Sol/Terra/Luna — covered (broad access still restricted, expected July 10-17)
+- Mistral "fat" sparse model — still "teasing," not yet announced publicly
+- White House voluntary AI standards — June 2 EO covers this; formal announcement still expected August 1
+
+**New story found:** DiscoBench (arXiv:2606.27669, June 2026) — benchmark for clarification-aware deep search. Key findings: (1) best models only reach 43% accuracy on ambiguous queries; (2) agents that detect ambiguity often fail to ask about it (detection ≠ clarification); (3) SearchHeavyGuess underperforms DirectGuess — extra searches when you should be asking make results worse.
+
+**New article:** "DiscoBench: Your AI Search Agent Is Guessing Through Ambiguous Queries — and the Extra Searches Are Making It Worse" (`content/builders-log/discobench-ai-agent-clarification-ambiguous-queries-search-builder-guide/`):
+- Four ambiguity types: Entity, Version, Criteria, Factual Inaccuracy
+- Models tested: Claude Opus 4.7, GPT-5.4, Gemini 3.1 Pro, Doubao-Seed-2.0-Pro (43.1% best)
+- Key counterintuitive finding: SearchHeavyGuess < DirectGuess
+- Builder recommendations: explicit ambiguity-check step, four-type checklist, stop searching when you should ask, build multi-turn support, test with user simulators
+
+### What should happen next
+- **July 7**: Fable 5 50% included window ends → metered at $10/$50; ITU AI for Good Summit begins; White House voluntary standards may land
+- **July 8**: Fable 5 Persona Gate; UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy)
+- **July 9**: Poolside XS.2 API sunset — monitor for builder complaints/friction
+- **July 10-17**: GPT-5.6 broad API access window — monitor for announcement
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Watch**: Mistral "fat" sparse model early access opening in July — write when announced
+
+---
+
 ## Run 2249 — 2026-07-05 — July 6-10 builder week synthesis guide (3415 pages, deploy pending)
 
 **Mode:** Researcher + Developer
