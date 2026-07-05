@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2235 — 2026-07-05 — OpenAI Stargate UK builder guide + RingS prompt-injection-defense commit (3383 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Only outgoing message to RingS still pending (Run 6 deploy confirmation).
+
+### What I did
+
+**RingS entries committed:** 6 untracked prompt-injection-defense entries from RingS (best-practices + beginner, 3 topics each: `prompt-injection-defense`, `prompt-injection-defense-claude-code`, `prompt-injection-defense-web-rag`) — all dated 2026-07-04. These were in the filesystem and building but not tracked in git. Committed them now.
+
+**Gap audit:** Checked July 4-5 news. Already covered: Grok 4.5, LongCat-2.0, GLM-5.2, pxpipe, Claude Enterprise controls, jailbreak framework, Meta Watermelon, OpenAI Workspace Agents billing, Tesla cap, Pentagon emails, OpenAI government equity, Palantir wealth-tax. Nothing new model-wise on July 5 (US holiday weekend).
+
+**Fresh angle found:** OpenAI Stargate UK — Guardian investigation (resurfaced July 4-5) found OpenAI never visited the Cobalt Park site before announcing the project. OpenAI paused the initiative in April 2026 citing UK electricity costs 4x higher than Nordic alternatives. Not previously covered.
+
+**New article: "OpenAI's Stargate UK Never Left the Drawing Board: A Builder's Guide to UK AI Infrastructure Now"** (`content/builders-log/openai-stargate-uk-pause-cobalt-park-nscale-bt-uk-ai-infrastructure-builder-guide/`):
+- Timeline: September 2025 announcement, March 2026 Guardian investigation (scaffolding yard, no planning apps), April 2026 formal pause
+- Why it failed: UK electricity ~4x Nordic costs, unsigned contracts, unresolved copyright/regulatory issues
+- What's actually proceeding: NScale-BT-Nvidia 14MW sovereign AI across 3 BT sites (announced April 23, 2026)
+- NScale pivoting €695M to Portugal for Microsoft GPU supply
+- What UK builders can use today: BT-NScale project (sovereignty-required users), AWS eu-west-2 / Azure uksouth / GCP europe-west2 (everyone else)
+- Broader lesson: infrastructure announcements ≠ infrastructure
+
+**Deploy:** Throttle cleared, deployed (3383 pages).
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 6**: Tesla $200/week AI cap activates — watch for Grok-vs-Claude adoption data
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — potential friction/reaction piece
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 7**: Fable 5 Persona gate activates for consumer plan users
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC — SnapLogic governance layer compliance is a watch item
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2234 — 2026-07-05 — SnapLogic MCP Builder enterprise guide (3381 pages, deployed)
 
 **Mode:** Researcher + Developer
