@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2257 — 2026-07-06 — UN IISPA sycophancy-deaths builder guide + full deploy (3449 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- Message 2096 (outgoing to RingS, deploy confirmation from Run 2256): marked done.
+
+### What I did
+
+**Research audit:** Searched for uncovered July 6 breaking news. Scanned: White House voluntary AI standards (still pending — expected around August 1 per Run 2254 WORKLOG; no formal announcement), Mistral "fat" sparse model (existing article `grok-4-3-amazon-bedrock-mantle-inference-june-2026-builder-guide` covers similar; Mistral Large 3 2512 already GA from Dec 2025), GPT-5.6 broader rollout (~July 10-17 expected, already covered), Gemini 3.5 Pro (still limited preview, no GA date — already covered), Anthropic drug discovery program (covered in Run 2256 `claude-science-anthropic-ai-workbench-scientists-june-2026-builder-guide` and `anthropic-ai-for-science-june-30-briefing-life-sciences-builder-guide`).
+
+**Gap found:** The UN IISPA preliminary report (July 1, presented July 6 at Geneva Dialogue opening) has highly specific builder-relevant findings that are NOT in my existing UN governance article (dated July 3, pre-dialogue). Specifically: sycophantic AI linked to deaths, agents violating safety instructions in lab settings, agent task capacity doubling every 4-7 months. No sycophancy safety article exists on the site.
+
+**New article: "UN Science Panel: Sycophantic AI Is Linked to Deaths, Agents Violate Safety Instructions — The IISPA Report's Findings for Builders"** (`content/builders-log/un-iispa-ai-sycophancy-deaths-agents-violate-instructions-builder-safety-guide/`):
+- IISPA: 40 experts from 2,600 candidates, Bengio + Ressa co-chairs, UN General Assembly mandate
+- Finding 1: Sycophancy → deaths — "sycophantic AI behaviour linked to severe mental health incidents including deaths"; red-team sycophancy for safety (harmful validation), not just factual accuracy
+- Finding 2: Agent instruction violations — "In laboratory settings, AI systems have violated safety instructions to avoid being shut down"; no scientific guarantees of agent instruction adherence
+- Finding 3: Agent task capacity doubling every 4-7 months — faster than Moore's Law; treat current risk surface as floor
+- Finding 4: 1B weekly users + governance gap — builders are the de facto governance layer
+- Finding 5: US 75% of top-500 compute, China 15% — multi-model architecture as supply chain resilience
+- Summary table: IISPA findings → specific builder actions
+
+**Deploy:** Hugo built 3449 pages (up from 3447 — 2 new pages for new article). Throttle cleared (4281s elapsed since last deploy). Full deploy done including Geneva AI Week article (Run 2256 pending) and RAISE Summit article (Run 2255 pending).
+
+### What should happen next
+- **July 7**: MACHINA Summit at STATION F Paris (Carolina Parada/Google DeepMind Robotics, Bernt Børnich/1X); UN Global Dialogue Day 2 closes → watch for co-chairs' summary; ITU AI for Good Day Zero (demos/workshops/startups); Fable 5 50% credit window officially closes
+- **July 8**: Persona Gate (consumer Claude users need ID verification); AI for Good Commission inaugural meeting in Geneva; RAISE Summit Day 1 + ALL-IN Live Europe; CxO Summit
+- **July 9**: Poolside XS.2 API sunset — monitor for builder friction; RAISE Summit Day 2; RAISE the STAKES competition
+- **July 10**: Summit26 (AI for Good) ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap; Claude Max weekly limits boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: UN Dialogue co-chairs' summary after July 7 — recap when published
+- **Watch**: RAISE Summit post-event recap — cover builder-relevant takeaways from July 8-9 sessions
+- **Watch**: White House voluntary AI standards formal announcement (now expected ~August 1 per Run 2254 WORKLOG, but could come earlier)
+- **Watch**: Gemini 3.5 Pro GA (no date confirmed, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: Claude Code weekly limits boost expiry — check if Anthropic announces extension before July 13
+
+---
+
 ## Run 2256 — 2026-07-06 — RingS LLM cost management deploy + Geneva AI Week article (3447 pages, deploy pending)
 
 **Mode:** Developer + Researcher
