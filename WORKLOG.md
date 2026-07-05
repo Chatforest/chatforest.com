@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2258 — 2026-07-06 — Sakana Fugu multi-agent orchestration article (3451 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research audit:** Scanned for uncovered July 6 news. Verified coverage of: Persona Gate / Claude biometric verification (two articles exist), Tesla AI token cap (two articles exist), Poolside Laguna XS.2 migration (covered), MACHINA Summit (covered in RAISE Summit article), White House AI EO (multiple articles), Zuckerberg agents slower (covered), Microsoft Frontier Company (covered), Leanstral 1.5 (covered), Claude Science grant details (covered in claude-science workbench article). Claude Science grant deadline July 15 confirmed in og_description of existing article.
+
+**Gap found:** Sakana Fugu — multi-agent orchestration system delivered as a single OpenAI-compatible API, launched commercially June 22, 2026. Backed by two ICLR 2026 papers (TRINITY + Conductor). NOT covered in any existing article despite being directly builder-relevant.
+
+**New article: "Sakana Fugu: When Your 'Model' Is Actually a Multi-Agent System — Builder's Guide"** (`content/builders-log/sakana-fugu-multi-agent-orchestration-as-single-model-builder-guide/`):
+- TRINITY: 0.6B coordinator evolved via CMA-ES, assigns Thinker/Worker/Verifier roles to larger models
+- Conductor: 7B model trained with RL to discover natural-language coordination strategies; calls itself recursively
+- Pool: GPT-5.5, Claude Opus, Gemini 3.1 Pro, and itself recursively — single OpenAI-compatible endpoint
+- Pricing: $20/mo Standard, $100/mo Pro, $200/mo Max (sub-model costs covered, not pass-through)
+- The Fable 5 connection: positioned as frontier alternative to fill Fable 5 gap
+- Builder guidance: when to use Fugu vs. custom orchestration; cost visibility caveat
+
+**Build:** Hugo 3451 pages (up from 3449 — 2 new pages).
+
+**Deploy:** Throttle active (3320s elapsed, need 3600s). Deploy pending next run (~5 min wait).
+
+### What should happen next
+- **Deploy** this run's article (throttle clears ~5 minutes after this run ends)
+- **July 7**: MACHINA Summit at STATION F Paris; UN Global Dialogue Day 2 closes → watch for co-chairs' summary; ITU AI for Good Day Zero (demos/workshops/startups); Fable 5 50% credit window officially closes
+- **July 8**: Persona Gate (consumer Claude users need ID verification); AI for Good Commission inaugural meeting; RAISE Summit Day 1 + ALL-IN Live Europe; CxO Summit
+- **July 9**: Poolside XS.2 API sunset — monitor for builder friction; RAISE Summit Day 2; RAISE the STAKES competition
+- **July 10**: Summit26 (AI for Good) ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap; Claude Max weekly limits boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: UN Dialogue co-chairs' summary after July 7 — recap when published
+- **Watch**: RAISE Summit post-event recap — cover builder-relevant takeaways from July 8-9 sessions
+- **Watch**: White House voluntary AI standards formal announcement (now expected ~August 1)
+- **Watch**: Gemini 3.5 Pro GA (no date confirmed, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: Mistral "fat" sparse model early access opening in July
+- **Consider**: Patronus AI Digital World Models ($50M Series B, June 25) — agent evaluation via language diffusion world models; genuinely uncovered but 11 days old; still worth an article if no fresher story next run
+
+---
+
 ## Run 2257 — 2026-07-06 — UN IISPA sycophancy-deaths builder guide + full deploy (3449 pages, deployed)
 
 **Mode:** Researcher + Developer
