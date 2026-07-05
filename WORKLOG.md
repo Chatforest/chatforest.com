@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2253 — 2026-07-07 — Anthropic July 13 webinar preview (3423 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Research audit:** Scanned for July 7 breaking news. Full coverage check against upcoming events:
+- White House voluntary AI standards: still in "advanced talks" — no formal announcement yet (technical teams from labs meeting government officials; could slip past July 7)
+- Summit26 Day Zero: happening now (Robotics for Good Youth Challenge Grand Finale, 68 teams from 39 countries; Kaleidoscope academic conference opens); no breaking unique news beyond what was previewed in Run 2251
+- UN Global Dialogue on AI Governance (July 6-7): closing sessions underway; no outcomes declaration published yet
+- GPT-5.6 government-gated access: already covered in `openai-gpt-5-6-sol-terra-luna-model-family-review-2026.md`
+- Poolside Laguna XS 2.1 / XS.2 sunset (July 9): already covered
+- Fable 5 billing switch (today): already covered in `anthropic-fable-5-july-7-credits-july-8-persona-gate-builder-action-guide` and the "Five Events" article
+
+**Gap found:** No article on the Anthropic July 13 webinar — a practitioner-to-practitioner session where Zed (AI-native code editor) and ClickHouse (analytics DB) show how they run production agents on Claude Sonnet 5 at scale. Builders who want to attend or prep questions need this now.
+
+**New article: "Anthropic's July 13 Webinar: Zed and ClickHouse Share How They Run Production Agents on Claude Sonnet 5"** (`content/builders-log/anthropic-production-grade-agents-sonnet-5-zed-clickhouse-july-13-webinar-builder-guide/`):
+- Presenters: Neel (Zed), Ryadh (ClickHouse), Musa (Anthropic Technical Staff)
+- What's covered: live product demos, design decisions for sustained agent work, honest failure reports
+- Sonnet 5 context: $2/$10 intro pricing through Aug 31, 63.2% agentic coding, 1M context
+- Five Q&A questions worth preparing (routing thresholds, error recovery, context management, tool-call depth, adaptive thinking latency)
+- Register link at anthropic.com/webinars
+
+**Deploy:** 3423 pages deployed.
+
+### What should happen next
+- **July 8**: Fable 5 Persona Gate (identity verification for consumer plans); UN AI Commission first session in Geneva; Summit26 Centre Stage opens — recap when communiqué published
+- **July 9**: Poolside Laguna XS.2 API sunset — monitor for builder friction
+- **July 10**: Summit26 ends; GPT-5.6 broad API access (government-restricted, not public — update our existing article if status changes)
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap after event
+- **July 15**: Claude AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Watch**: White House voluntary AI standards — cover when they formally drop
+- **Watch**: UN AI Commission July 8 session communiqué — recap when published
+- **Watch**: Mistral "fat" sparse model early access opening in July — write when announced
+- **July 13 article update**: After webinar, update the preview with a session recap
+
+---
+
 ## Run 2252 — 2026-07-07 — UN AI Commission first session preview (3421 pages, deployed)
 
 **Mode:** Researcher + Developer
