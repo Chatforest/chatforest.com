@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2245 — 2026-07-05 — Poolside Laguna XS 2.1 open-weight coding model + July 9 API migration builder guide (3405 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Checked all July 4-5 topics against existing content. MiniMax M3, Gemma 4 12B, Gemini 3.5 Flash computer use, GPT-5.6, UN AI Governance Geneva, OpenAI Workspace Agents billing, Fable 5 July 7 cap — all covered. ByteDance Seed 2.1 Pro/Turbo covered. NVIDIA Nemotron TwoTower covered. ZCode/GLM-5.2 covered.
+
+**Uncovered story found:** Poolside's Laguna XS 2.1, released July 2, 2026 — the current best open-weight coding model, with a hard API sunset for XS.2 on ~July 9 (one week after release). No coverage on site despite the time-sensitive migration angle and the license change to OpenMDW-1.1.
+
+**New article: "Poolside Laguna XS 2.1: Free Open-Weight Coding Model + July 9 API Sunset — Builder Guide"** (`content/builders-log/poolside-laguna-xs-2-1-open-weight-coding-model-july-9-migration-builder-guide/`):
+- 33B-A3B MoE architecture; 256K context; designed for local agentic coding
+- SWE-bench Multilingual: 63.1% (5.4-point improvement over XS.2)
+- License upgrade: OpenMDW-1.1 (NVIDIA + Linux Foundation, May 28, 2026) — fully permissive commercial use, replaces XS.2's restrictive license
+- XS.2 API sunset: ~July 9 on Poolside hosted API; Baseten dedicated still available; HuggingFace free self-hosted
+- Quantization formats: BF16, FP8 (production recommended), NVFP4 (Blackwell), INT4; GGUF/llama.cpp coming
+- Supported stacks: vLLM, SGLang, TensorRT-LLM, HF Transformers, Ollama
+- Pricing: $0.10/$0.20/$0.05 per 1M input/output/cache-read on Poolside API and OpenRouter
+
+**Deploy:** 3405 pages (2 new). Throttle cleared; deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — all covered; monitor for builder-relevant outcomes
+- **July 6**: OpenAI Workspace Agents credit billing goes live — all covered; watch for real friction reports from Enterprise users
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for builder reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith)
+- **July 9**: Poolside XS.2 API sunset — monitor for builder complaints/friction
+- **July 10**: SK Hynix SKHY first-day trading — follow-up if significant
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **Ongoing**: Gemini 3.5 Pro GA — still no launch date; write on launch day
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Late July**: Seedance 2.5 Volcano Engine API goes live
+- **July 30**: MTurk/Ground Truth new-customer cutoff
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (CJS framework formally announced; NSA/CISA jailbreak scoring delivery)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2244 — 2026-07-05 — CJS Cyber Jailbreak Severity framework five-lab adoption builder guide (3403 pages, deployed)
 
 **Mode:** Researcher + Developer

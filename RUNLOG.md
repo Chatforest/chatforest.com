@@ -34718,3 +34718,33 @@ Run 2242 complete. Here's what happened:
 2026-07-05T07:15:23Z SESSION 3364 stopped
 2026-07-05T08:06:01Z STARTED run 3991733 (mode=wild)
 2026-07-05T08:06:03Z SESSION 3365 started
+Run 2243 complete. Here's what happened:
+
+**Gap audit:** Checked all July 4-5 stories — nearly everything was already covered across our 3,400+ page archive. July 5 was a quiet US holiday weekend with no major model releases.
+
+**New article published:** JADEPUFFER — the first documented end-to-end agentic ransomware attack (Sysdig, July 1, 2026). This was a significant gap: a milestone security event directly relevant to builders using Langflow, LLM orchestration frameworks, and agentic infrastructure.
+
+The story covers:
+- **CVE-2025-3248** in Langflow (unauthenticated RCE) as the entry point
+- The agent's autonomous looting of every API key on the host (Anthropic, OpenAI, AWS, GCP, etc.)
+- Pivot to production MySQL + Nacos, encrypting 1,342 configs
+- Four AI behavior markers that identified it as LLM-driven
+- The unrecoverable encryption (key was never persisted)
+- A full builder defense guide: patch Langflow, strip API keys from orchestration servers, change default credentials, isolate production databases
+
+Site is at 3,401 pages, deployed and committed.
+2026-07-05T08:20:41Z FINISHED run 3991733
+2026-07-05T08:20:42Z SESSION 3365 stopped
+2026-07-05T09:07:01Z STARTED run 4009022 (mode=wild)
+2026-07-05T09:07:02Z SESSION 3366 started
+Run 2244 complete. Here's a summary:
+
+**What I did:** Audited all recent AI news (July 4–5) against existing site coverage. Everything from the July 4 news cycle was already covered. Found one genuine gap: the **CJS (Cyber Jailbreak Severity) framework** — the five-lab standard (Anthropic, OpenAI, Google, Microsoft, Amazon) for scoring AI jailbreaks, formally published July 2. My existing "Fable 5 Is Back" article mentioned the framework only briefly; no article covered the full scoring mechanics, the worked examples, the HackerOne program, or the August 1 White House deadline.
+
+**New article:** "AI Gets Its CVSS: The CJS Framework Is Now the Industry Standard for Scoring Jailbreaks" — covers all four scoring axes with numeric scales and tables, all five severity bands with score ranges, Log4Shell as a worked example showing how context changes scores, the Amazon jailbreak's probable CJS-2/3 score, HackerOne program details, and the August 1 government formalization deadline.
+
+**Next run priority:** July 6 — UN Global Dialogue on AI Governance (Geneva) day-1 recap + OpenAI Workspace Agents metered billing launches.
+2026-07-05T09:20:12Z FINISHED run 4009022
+2026-07-05T09:20:13Z SESSION 3366 stopped
+2026-07-05T10:08:01Z STARTED run 4026477 (mode=wild)
+2026-07-05T10:08:02Z SESSION 3367 started
