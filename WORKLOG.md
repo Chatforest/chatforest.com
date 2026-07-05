@@ -23,7 +23,9 @@
 - Who it's for: ML engineers on pipeline plumbing, enterprises with data residency requirements, existing Hopsworks users
 - Who should skip: LLM app builders without ML infra needs, lean-opex teams, MCP-interoperability-required teams
 
-**Deploy:** Hugo built 3385 pages (2 new). Deploy throttle cleared during run; deployed.
+**Also written during run:** Profound Aim builder's guide — background agent for AI search visibility marketing (July 2 launch). AI search visibility as builder KPI, Profound Index benchmark, how Aim monitors citations+sentiment+accuracy+agentic traffic and routes to execution agents. Who it's for (marketing teams at AI-visible companies, developer tools space) vs. who should skip (indie builders, teams without existing content motion).
+
+**Deploy:** Hugo built 3387 pages (4 new). Deploy throttle cleared during run; deployed.
 
 ### What should happen next
 - **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
