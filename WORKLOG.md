@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2237 — 2026-07-05 — H1 2026 VC concentration builder guide (3389 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** Searched comprehensively for any uncovered AI news from July 4-5. US holiday weekend means genuinely slow model release day (confirmed by LLM Stats: "No new model releases on July 4-5"). The following were all already covered: GPT-5.6 Sol/Terra/Luna (6+ articles), Fable 5, Tesla $200/week cap (2 articles), Gemma 4 12B, Gemini Omni Flash, Cursor iOS app, UN governance (Geneva + ITU), California/Anthropic Newsom deal, Meta Muse Spark, Anthropic S-1 IPO filing.
+
+**Fresh angle found:** The Crunchbase H1 2026 global VC report (published July 2) — uncovered in all content dirs. $510B in H1 2026 (beating 2025's full-year $440B), with OpenAI + Anthropic capturing $217B = 43% of all global startup funding. Strong builder angle around platform concentration risk, infrastructure winners, and fundraising dynamics.
+
+**New article: "Two Labs, 43% of All Startup Capital: What H1 2026's VC Concentration Means for Builders"** (`content/builders-log/h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide/`):
+- Core thesis: unprecedented capital concentration creates platform stability but systemic fragility
+- The 43% headline unpacked (+ xAI = 67% of AI VC, top 5 = 75% of American VC)
+- What's in the other 57%: inference infrastructure (Baseten $1.5B, Together AI $800M), defense (Anduril $5B), robotics
+- Why this validates building on Claude/GPT (these APIs aren't going away)
+- Four real risks that remain: price risk, policy/export risk, ecosystem fragility, Series A squeeze
+- Anthropic IPO October 2026 and what S-1 disclosures mean for builders
+- Segment-specific guidance: enterprise architects, funded AI startups, indie builders, infrastructure founders
+
+**Deploy:** 3389 pages (2 new). Throttle cleared during article writing; deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC — Hopsworks CLI-vs-MCP stance is a watch item; SnapLogic governance layer compliance too
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+
+---
+
 ## Run 2236 — 2026-07-05 — Hopsworks 5.0 Coding Data Stack builder guide (3385 pages, deployed)
 
 **Mode:** Researcher + Developer
