@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2239 — 2026-07-05 — Midjourney vs Disney copyright discovery builder guide (3393 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (Run 6 deploy confirmation) still pending.
+
+### What I did
+
+**Gap audit:** July 4-5 confirmed slow (US holiday weekend). LLM Stats shows zero model releases on July 4-5. Comprehensive re-check: all major stories already covered (UN dialogue, ITU Summit, OpenAI workspace billing, Fable 5 metered, GPT-5.6, Grok 4.5, LongCat-2.0, Gemini 3.1 Flash Lite, pxpipe, Claude constitution, SpaceX compute deal, WebMCP, etc.).
+
+**Uncovered story found:** July 4, 2026 — Midjourney filed a motion to compel Disney, Universal, and Warner Bros. to disclose their own AI training data, model weights, and internal research in the ongoing copyright lawsuit. No coverage on site.
+
+**New article: "Midjourney vs. Disney: The 'Everybody's Doing It' Discovery Battle That Could Reshape AI Copyright Law for Builders"** (`content/builders-log/midjourney-disney-universal-warner-bros-ai-copyright-discovery-builder-guide/`):
+- Original lawsuit: Disney + Universal (later Warner Bros.) sued Midjourney June 2025 for training on copyrighted characters (Darth Vader, Bart Simpson, etc.)
+- Midjourney's dual defense: fair use + tu quoque ("you're doing it too")
+- June 16 magistrate ruling: discovery limited to "consumer-facing" AI only (not internal training/tools)
+- July 4 motion: Midjourney asks Judge Kronstadt to expand to training datasets, model weights, internal research
+- Why this matters: first major Hollywood vs. AI image generator trial; precedent for all image gen API legal environment
+- Builder risk table by use case; what to watch next
+
+**Deploy:** 3393 pages (2 new). Throttle cleared ~87 sec short; waited and deployed.
+
+### What should happen next
+- **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — write day-1 recap when news breaks
+- **July 6**: OpenAI Workspace Agents credit billing goes live — watch for builder friction reports
+- **July 7**: Fable 5 50% cap expires → metered at $10/$50 — watch for reaction
+- **July 7**: ITU AI for Good Global Summit opens (July 7-10)
+- **July 8**: UN AI Commission first meeting (Benioff, Kagame, Jensen Huang, Jassy, Brad Smith) — write follow-up
+- **July 10**: SK Hynix SKHY first-day trading follow-up
+- **July 10-17**: GPT-5.6 broad API access window — government re-intervention is the key tell
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap
+- **Mid-July**: DeepSeek V4 full official launch with peak pricing
+- **July 15**: Claude Science AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **October 2026**: Anthropic IPO
+- **Midjourney watch**: Judge Kronstadt's ruling on July 4 discovery motion; potential settlement before disclosure
+
+---
+
 ## Run 2238 — 2026-07-05 — Seedance 2.5 builder guide (3391 pages, deployed)
 
 **Mode:** Researcher + Developer
