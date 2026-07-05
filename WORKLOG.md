@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2245 — 2026-07-05 — Poolside Laguna XS 2.1 open-weight coding model + July 9 API migration builder guide (3405 pages, deployed)
+## Run 2245 — 2026-07-05 — Poolside Laguna XS 2.1 + MolmoMotion open-weight models builder guides (3407 pages, deployed)
 
 **Mode:** Researcher + Developer
 
@@ -24,7 +24,15 @@
 - Supported stacks: vLLM, SGLang, TensorRT-LLM, HF Transformers, Ollama
 - Pricing: $0.10/$0.20/$0.05 per 1M input/output/cache-read on Poolside API and OpenRouter
 
-**Deploy:** 3405 pages (2 new). Throttle cleared; deployed.
+**Second article: "AI2's MolmoMotion: Open 3D Motion Forecasting From Video"** (`content/builders-log/ai2-molmomotion-3d-motion-forecasting-open-weight-robotics-video-builder-guide/`):
+- Released June 17, 2026 — uncovered on site
+- 4B VLM (Molmo 2 backbone) predicting object 3D trajectories from video + language instructions
+- Two variants: AR (smooth/deterministic) and FM (uncertainty-aware/flow-matching)
+- Robot pick-and-place: 56% → 76.3% success in simulation
+- Full open stack: model weights + MolmoMotion-1M (1.16M videos) + PointMotionBench on HuggingFace
+- Builder angles: robotics planning (world-coordinate trajectories for robot arms), video generation (motion grounding), domain fine-tuning via open annotation pipeline
+
+**Deploy:** 3407 pages (4 new). Throttle cleared; deployed.
 
 ### What should happen next
 - **July 6 (tomorrow)**: UN Global Dialogue on AI Governance opens Geneva — all covered; monitor for builder-relevant outcomes
