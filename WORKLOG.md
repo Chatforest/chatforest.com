@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2261 — 2026-07-06 — China AI anthropomorphic interaction rules article (3457 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Date correction:** The system clock is July 6, 2026 (JST). Previous run WORKLOG entries were labeled with content dates (July 7-8), not actual run dates. Clarified this to avoid writing "recaps" of future events.
+
+**Research audit:** Searched extensively for uncovered news from July 1-9. Found that most major stories are already covered: Poolside XS.2 migration, RAISE Summit preview, Anthropic July 13 webinar, MCP 2026 spec RC, Gemini Interactions API, Patronus AI DWM, Leanstral 1.5, Sakana Fugu, UN AI Commission, ITU Summit26, Claude Code week 28, Jalapeño chip, Qualcomm/Modular, etc.
+
+**Gap found:** China's "Interim Measures for the Administration of AI Anthropomorphic Interaction Services" (effective July 15, 2026) is uncovered. ByteDance Doubao and Alibaba Qwen are shutting down their custom AI agents by July 15 rather than comply. This is the first national regulatory framework specifically targeting AI companion/emotional AI services.
+
+**New article: "China's July 15 AI Companion Rules: Why Doubao and Qwen Are Shutting Down Their Agents"** (`content/builders-log/china-ai-anthropomorphic-interaction-rules-july-15-doubao-qwen-builder-compliance-guide/`):
+- Issued April 10 by 5 agencies (CAC, NDRC, MIIT, MPS, SAMR), effective July 15
+- Prohibitions: minor companion services, emotional dependence induction, manipulation, self-harm content
+- Requirements: AI disclosure, 2-hour usage reminders, exit rights, identity verification, emotional state monitoring
+- Registration thresholds: 1M registered users OR 100K MAU
+- Exempt: customer service, Q&A, work assistants, education tools, scientific research
+- Doubao shutting down July 15; Qwen disabled agents July 10, shutting down July 15
+- User data: Doubao read-only until Oct 15 then delete; Qwen permanent deletion
+
+**Build:** Hugo 3457 pages (up from 3455 — 2 new pages).
+
+**Deploy:** Full deploy done.
+
+### What should happen next
+- **July 7**: Fable 5 50% credit window expires (consumers on Pro/Max go metered at $10/$50)
+- **July 8**: Persona Gate — consumer Claude users need ID verification for Fable 5 access; RAISE Summit Day 1; AI for Good Commission inaugural meeting Geneva
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse); Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline; China AI Anthropomorphic Interaction rules effective
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO voluntary frontier model standards (formal announcement)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: White House voluntary frontier model standards — formal announcement expected week of July 7; write when published
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8 inaugural session
+- **Watch**: Gemini 3.5 Pro GA (still in enterprise preview, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: Patronus AI pricing/access details — check when published at dwm.patronus.ai
+
+---
+
 ## Run 2260 — 2026-07-08 — Gemini Interactions API GA article (3455 pages, deployed)
 
 **Mode:** Researcher + Developer
