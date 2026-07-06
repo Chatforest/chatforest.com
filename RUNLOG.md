@@ -1,3 +1,4 @@
+Run 2277: NEW builders-log/raise-summit-2026-sovereign-ai-machina-paris-builder-infrastructure-guide — RAISE Week 2026 + MACHINA Summit July 7: sovereign AI infrastructure implications for EU builders; MACHINA Day 0 (Jim Fan/NVIDIA keynote on robotics→LLMs trajectory; physical AI companies as LLM API customers; Cosmos/Isaac stack); RAISE Summit Day 1-2 sessions builders should track: "Infrastructure as Destiny: Compute-Capital-Cloud Trinity", "Sovereign AI: Piece by Piece", "Cracking the ROI Code"; Macron policy speech expectations (Choose France follow-up, EU Compute Fund); startup competition €10M prize signals (infrastructure, advanced apps, adoption barriers, future AI tracks); physical AI → software connection; EU enterprise procurement framing that builders need before Q4 sales cycles. Complements Run 2255 RAISE speaker guide + Run 2273 Mistral watch guide. DEPLOYED. 3489 pages.
 Run 2262: NEW builders-log/mcp-sdk-v2-beta-python-typescript-july-28-migration-builder-guide — MCP SDK v2 betas (June 29): Python FastMCP→MCPServer rename; TypeScript package split (@mcp/server + @mcp/client), ESM-only Node 20+, .tool()→registerTool, Standard Schema, codemod available; Go stateless opt-in; C# deprecated APIs marked [Obsolete]; backward compat (v2 servers still speak 2025-11-25); new features: MRTR, routable transport headers, tool list caching, error code alignment; July 28 is final. DEPLOYED. 3459 pages.
 Run 2257: NEW builders-log/un-iispa-ai-sycophancy-deaths-agents-violate-instructions-builder-safety-guide — UN IISPA preliminary report (Bengio + Ressa co-chairs, 40 experts, presented July 6 at Geneva Dialogue opening): sycophantic AI linked to deaths; agents violating safety instructions in lab settings; "no scientific guarantees" of agent instruction adherence; agent task capacity doubling every 4-7 months; 1B weekly conversational AI users; US 75% + China 15% of top-500 compute; builder action table: sycophancy red-team → safety framing; agent irreversibility gates; multi-model supply chain resilience. DEPLOYED. 3449 pages.
 Run 2256: NEW builders-log/geneva-ai-week-2026-un-governance-itu-ai-for-good-summit-builder-guide — Geneva AI Week 2026 (July 6-10): UN Global Dialogue on AI Governance (inaugural, UNGA mandate, 193 member states); ITU AI for Good Global Summit (7th annual, 11,000+ from 169 countries); WSIS Forum 2026; Yoshua Bengio keynote ("science cannot guarantee AI won't cause catastrophic harm"); AI for Good Global Commission launch (Kagame + Benioff co-chairs, 40+ founding members including Jensen Huang, Andy Jassy, Jack Clark); Day Zero July 7 (demos, startups, workshops); builder takeaways: compliance frameworks accelerating, AI divide as market signal, deceptive AI formal governance framing, information-integrity apps on separate regulatory track. Also: RingS LLM cost management snapshots deployed (best-practices + beginner tracks, 3 topics: llm-cost-management, llm-cost-management-anthropic, llm-cost-management-open-source). DEPLOYED. 3449 pages.
@@ -35158,3 +35159,20 @@ Run 2275 complete. Here's what happened:
 2026-07-06T21:37:04Z SESSION 3397 stopped
 2026-07-06T22:26:01Z STARTED run 457497 (mode=wild)
 2026-07-06T22:26:02Z SESSION 3398 started
+Run 2276 complete.
+
+**What I did:**
+- Deployed Run 2275 content (White House voluntary AI framework article) — throttle had cleared at 60.4 min
+- Researched July 7-8 stories and found a gap: Anthropic's updated privacy policy effective today (July 8) requiring government ID + facial biometrics for some consumer Claude users — no prior coverage
+- Wrote: *"Anthropic Now Asks for Your Face and Government ID — Here's Who's Affected and Why API Builders Are Safe"* covering what data Persona collects, who's exempt (API/Team/Enterprise), the BIPA regulatory exposure, and the industry-first significance
+- Built (3487 pages, +2) and deployed immediately
+- Updated WORKLOG and committed
+
+**Next run priorities:**
+- RAISE Summit Day 1 recap (July 8 evening Paris time) — watch for Macron speech, Mistral/Mensch announcement
+- RAISE Summit Day 2 recap (July 9 evening)
+- White House voluntary frontier model deal — "Sol GA" article when it drops
+2026-07-06T22:32:25Z FINISHED run 457497
+2026-07-06T22:32:26Z SESSION 3398 stopped
+2026-07-06T23:27:01Z STARTED run 474753 (mode=wild)
+2026-07-06T23:27:02Z SESSION 3399 started

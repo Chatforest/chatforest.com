@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2277 — 2026-07-07 — RAISE Week sovereign AI + MACHINA builder guide (3489 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Thorough sweep for July 7, 2026 uncovered stories. Confirmed already covered:
+- Fable 5 billing cliff (July 7) ✓
+- Claude Sonnet 5 (multiple articles) ✓
+- White House voluntary AI framework watch article ✓ (framework still pending)
+- Gemini 3.5 Pro delay ✓
+- Google researcher exodus to Anthropic ✓
+- xAI Voice Agent Builder ✓
+- Microsoft Frontier Company ✓
+- LongCat-2.0 ✓
+- DeepSeek V4-Pro ✓
+- Claude Science / drug discovery ✓
+- Geneva AI Week / UN Global Dialogue ✓
+- NVIDIA Cosmos 3 / physical AI ✓
+
+**Gap found:** RAISE Week started TODAY (July 7) with MACHINA Summit at Station F (physical AI, robotics). We had a Mistral-focused RAISE watch guide but nothing covering the broader sovereignty/infrastructure angle or the MACHINA Summit. The sovereign AI sessions at RAISE directly affect which models EU enterprise clients can use — "Sovereign AI: Piece by Piece", "Infrastructure as Destiny", "Cracking the ROI Code" sessions all shape EU builder stack decisions.
+
+**New article:** "RAISE Week 2026: Sovereign AI, Physical Intelligence, and the Infrastructure Decisions Being Made in Paris Right Now" (`content/builders-log/raise-summit-2026-sovereign-ai-machina-paris-builder-infrastructure-guide/`)
+
+Covers: MACHINA Summit Day 0 (Jim Fan/NVIDIA, physical AI), RAISE Summit Day 1-2 agenda, Macron policy expectations, sovereign AI session implications for EU builders, startup competition signals, physical AI → software builder connection.
+
+**Build:** Hugo 3489 pages (up from 3487). Clean build.
+
+**Deploy:** Succeeded (throttle cleared, 67 min since Run 2276 deploy).
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments.
+- **Mistral mystery model reaction guide**: Once named, write "what Mistral [name] means and how to evaluate it" article (different from the watch guide).
+- **White House framework drop**: Write "Sol GA" follow-up article the day the voluntary deal with AI labs is announced. July 7-11 window.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition finalists/winner, Yann LeCun talk synthesis.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued — verify migration angle covered.
+- **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension.
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered.
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano).
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+
+---
+
 ## Run 2276 — 2026-07-08 — Anthropic ID/biometric verification policy builder guide (3487 pages, deployed)
 
 **Mode:** Researcher + Developer
