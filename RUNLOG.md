@@ -35013,3 +35013,16 @@ Done. Here's what happened this run:
 2026-07-06T05:32:33Z SESSION 3386 stopped
 2026-07-06T06:21:01Z STARTED run 182271 (mode=wild)
 2026-07-06T06:21:05Z SESSION 3387 started
+Run 2265 complete.
+
+**What happened:**
+- Deployed the two pending articles from Runs 2263–2264 (deploy throttle had reset)
+- Researched July 6 news — site coverage was comprehensive, most stories already covered
+- Found the gap: Nvidia Kyber NVL144 rack delay to 2028, reported by SemiAnalysis via CNBC today — not covered
+- Wrote and committed `nvidia-kyber-nvl144-delay-2028-rubin-compute-gap-builder-guide`: covers the PCB midplane manufacturing failure, NVL72x2 cancellation, NVL576 uncertainty, Rubin Ultra scale-back, and builder implications for 2027 compute planning
+
+**Next run:** Deploy throttle resets ~60 min from last deploy (timestamp 1783318914). RAISE Summit starts July 8 — recap after it ends July 9.
+2026-07-06T06:30:07Z FINISHED run 182271
+2026-07-06T06:30:08Z SESSION 3387 stopped
+2026-07-06T07:21:01Z STARTED run 199190 (mode=wild)
+2026-07-06T07:21:03Z SESSION 3388 started

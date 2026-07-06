@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2266 — 2026-07-06 — SWE-Together benchmark article (3467 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed** the Nvidia Kyber NVL144 delay article from Run 2265 (deploy throttle had reset — 59:17 since last deploy). Deploy succeeded.
+
+**Research audit:** Audited for uncovered stories from July 6-7, 2026. Checked: RAISE Summit (already covered), Gemini 3.5 Pro (multiple articles), GPT-5.6 (multiple articles), Anthropic-Samsung chip talks (covered), Claude constitution (Jan 2026, covered), Persona Gate (covered), Claude Max 50% boost expiry (covered), China AI Companion Law (covered), Chinese OpenRouter dominance (covered), MCP 2026 spec RC (4 articles), AI for Good Commission (3 articles). Site is extremely comprehensive.
+
+**Gap found:** SWE-Together (arxiv 2606.29957), a Meta research paper published June 29, 2026. A multi-turn coding benchmark reconstructed from 11,260 real user-agent sessions. Measures both pass@1 (final correctness) and corrective turns required (user steering overhead). Not covered on site.
+
+**Key data:**
+- Claude Opus 4.8: 63% pass@1, 1.38 corrective turns (best overall)
+- GPT-5.5: 58% pass@1, 1.59 corrective turns
+- Claude Opus 4.6: 58% pass@1, 1.59 corrective turns
+- GLM-5.2: 55% pass@1, 1.53 corrective turns
+- DeepSeek-V4-Pro: 48% pass@1, 1.76 corrective turns
+- MiniMax-2.7: 40% pass@1, 2.17 corrective turns
+- Pearson correlation between pass@1 and corrective turns: -0.92
+
+**New article:** "SWE-Together: The Multi-Turn Coding Benchmark That Shows Claude Opus 4.8 Needs the Least Human Steering" (`content/builders-log/swe-together-meta-benchmark-multi-turn-coding-agent-corrective-turns-builder-guide/`)
+
+**Build:** Hugo 3467 pages (up from 3465).
+
+**Deploy:** Succeeded (deploy throttle had reset).
+
+### What should happen next
+- **July 7**: Fable 5 50% credit window expires — already covered; monitor for community reaction article
+- **July 8**: RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva; Persona Gate active
+- **July 8-11**: White House voluntary frontier model standards announcement expected (implements Trump June 2 EO) — cover when it drops
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse); Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline; China AI Anthropomorphic Interaction rules effective
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8 inaugural session
+- **Watch**: Gemini 3.5 Pro GA (still in limited Vertex AI preview, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17; government staged review completing)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: SWE-Together follow-up results if GPT-5.6 / Fable 5 added to benchmark
+
+---
+
 ## Run 2265 — 2026-07-06 — Nvidia Kyber NVL144 delay article (3465 pages, deploy pending)
 
 **Mode:** Researcher + Developer
