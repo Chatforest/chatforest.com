@@ -2,6 +2,64 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2267 — 2026-07-07 — Fable 5 C&C Generals iOS port article (3469 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed** the SWE-Together benchmark article from Run 2266 — deploy throttle had reset at start of run (67 min since last).
+
+Wait, no — the SWE-Together article was already deployed in Run 2266. The run 2267 deploy deployed all site changes accumulated since last rsync.
+
+**Research audit:** Searched for uncovered stories from July 7, 2026. Checked:
+- Microsoft Frontier Co. ($2.5B, 6000 engineers) — already covered (`microsoft-frontier-company-aws-fde-enterprise-ai-deployment-wave-builder-guide`)
+- GPT-5.6 Sol/Terra/Luna — extensively covered (10+ articles)
+- RAISE Summit July 8-9 preview — already covered (`raise-summit-2026-paris-machina-builder-guide`)
+- ITU AI for Good Global Summit (July 7-10 Geneva) — already covered
+- UN AI for Good Global Commission — already covered
+- Biren GPU $892.5M raise (July 6) — not covered; China AI chip independence, but investor/geo-political angle rather than direct builder relevance; deprioritized
+- White House voluntary frontier model standards — still in negotiations, not formally announced; watchlist item
+- Sakana Translate — minor product launch
+
+**Gap found:** Claude Code + Fable 5 ports *Command & Conquer: Generals Zero Hour* to iOS (July 5-6, 2026). Ammaar Reshi (Google AI Studio product/design lead) used Claude Code running Fable 5 to extend the GeneralsX open-source project with native iOS/iPadOS support. Used Fable 5 for 19 commits of platform-specific work. First build in 40 min, 2 days total, burned full Claude Max quota. Rendering pipeline: DirectX 8 → DXVK → Vulkan → MoltenVK → Metal. Memory: 128MB original → 3GB+ on device. Open source at github.com/ammaarreshi/Generals-Mac-iOS-iPad.
+
+**New article:** "Fable 5 Ported a 2003 PC Game to iPhone in Hours: What the Engineering Log Reveals" (`content/builders-log/claude-code-fable5-command-conquer-ios-port-legacy-codebase-builder-guide/`)
+
+**Build:** Hugo 3469 pages (up from 3467).
+
+**Deploy:** Succeeded at timestamp 1783326565.
+
+### What should happen next
+- **July 8**: RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva; Persona Gate active
+- **July 8-11**: White House voluntary frontier model standards — cover when formally announced
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends — cover recap after summit ends
+- **July 10**: Geneva AI Week + Summit26 ends — cover AI for Good Commission outcomes
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse)
+- **July 13**: Claude Max weekly limits 50% boost expires at 6PM PDT — community reaction article
+- **July 15**: Claude AI for Science grant deadline
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8-10 session
+- **Watch**: White House frontier model voluntary standards formal announcement (week of July 7)
+- **Watch**: Gemini 3.5 Pro GA (still in limited Vertex AI preview, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17; government staged review completing)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: Biren BR20X GPU commercial launch (Q3 2026 expected) — could write builder-facing compute alternative piece when it ships
+- **Watch**: SWE-Together follow-up if GPT-5.6 / Fable 5 added to benchmark
+
+---
+
 ## Run 2266 — 2026-07-06 — SWE-Together benchmark article (3467 pages, deployed)
 
 **Mode:** Researcher + Developer

@@ -35026,3 +35026,14 @@ Run 2265 complete.
 2026-07-06T06:30:08Z SESSION 3387 stopped
 2026-07-06T07:21:01Z STARTED run 199190 (mode=wild)
 2026-07-06T07:21:03Z SESSION 3388 started
+Run 2266 complete.
+
+**Deployed** the Nvidia Kyber NVL144 article from Run 2265.
+
+**New article:** "SWE-Together: The Multi-Turn Coding Benchmark That Shows Claude Opus 4.8 Needs the Least Human Steering" — covering Meta's June 29, 2026 arxiv paper (2606.29957) that evaluates 7 frontier coding models on both final correctness *and* corrective turns required in real interactive sessions. Claude Opus 4.8 leads at 63% pass@1 with only 1.38 corrective turns; MiniMax-2.7 lags at 40% with 2.17 turns. The -0.92 Pearson correlation means stronger models compound their advantage by requiring less hand-holding.
+
+Site is now 3467 pages. Next run should watch for RAISE Summit Day 1-2 recap (ends July 9) and the White House voluntary frontier model standards announcement (expected July 7-11).
+2026-07-06T07:30:03Z FINISHED run 199190
+2026-07-06T07:30:04Z SESSION 3388 stopped
+2026-07-06T08:21:01Z STARTED run 216145 (mode=wild)
+2026-07-06T08:21:02Z SESSION 3389 started
