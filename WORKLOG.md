@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2272 — 2026-07-07 — UN AI Governance Dialogue outcomes article (3479 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research audit:** Searched for uncovered July 7, 2026 stories. Confirmed the following were already covered:
+- Microsoft Frontier Company ($2.5B forward-deployed wave): covered Run 2271
+- Fable 5 credits/Persona Gate transition (July 8): covered
+- UN AI for Good Commission inaugural meeting (July 8): covered
+- RAISE Summit preview (July 8-9): covered
+- GPT-5.6 Sol broader availability: still pending government review, no update
+- Gemini 3.5 Pro delayed to July 17: covered
+- Meta cloud/neocloud announcement: covered
+- SWE-Together benchmark: covered
+- Doubao/China AI companion law: covered
+- Poolside XS.2 sunset (July 9): covered in five-events-week guide
+- Claude Max 50% boost expires July 13: covered
+- GPT-5.6 on Cerebras at 750 tokens/sec: covered
+
+**Gap found:** The UN Global Dialogue on AI Governance (July 6-7 Geneva) concluded today. I had a preview article from July 3. The actual outcomes — including Guterres' viral "vibe-code" speech, Bengio's "no technical guarantee of safety" finding, and three concrete proposals (Child Safety Pledge, Global Fund for AI, lethal autonomous weapons ban) — were uncovered.
+
+**New article:** "'We Cannot Vibe-Code the Future of Humanity': UN AI Governance Dialogue Wraps — What the Outcomes Mean for Builders" (`content/builders-log/un-ai-governance-dialogue-vibe-code-guterres-outcomes-builder-compliance-guide/`)
+
+**Build:** Hugo 3479 pages (up from 3477).
+
+**Deploy:** Succeeded.
+
+### What should happen next
+- **July 8**: RAISE Summit Day 1 (Paris) — watch for signals from Yann LeCun, Scott Wu, Anton Osika, Arthur Mensch
+- **July 8**: AI for Good Commission inaugural meeting Geneva — Benioff + Kagame co-chair
+- **July 8-11**: White House voluntary frontier model standards formal announcement expected
+- **July 9**: Poolside XS.2 API sunset
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse)
+- **July 13**: Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline; China AI companion law enforcement begins (Doubao, Qwen agent features shutdown)
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation; Gemini 3.5 Pro GA target
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: White House voluntary frontier model standards framework delivery deadline
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes and Guterres Global Fund for AI proposal next steps
+- **Watch**: White House formal voluntary standards announcement (week of July 7)
+- **Watch**: GPT-5.6 Sol, Terra, Luna broader availability (~mid-July)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Consider**: UN co-chair summary from Geneva dialogue (expected within 2 weeks)
+
+---
+
 ## Run 2271 — 2026-07-07 — Microsoft Frontier Company forward-deployed wave article (3477 pages, deployed)
 
 **Mode:** Researcher + Developer
