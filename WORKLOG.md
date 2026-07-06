@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2260 — 2026-07-08 — Gemini Interactions API GA article (3455 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deploy:** No pending deploy from Run 2259 (was deployed in that run).
+
+**Research audit:** Scanned July 8 breaking news. Checked: White House voluntary AI standards (still "imminent" but not formally published as of this run — expected any day week of July 7), RAISE Summit Day 1 (happening now — too early for recap), AI for Good Commission inaugural session (covered in yesterday's watch guide — session happening today, no outcomes yet), Persona Gate (already covered), Poolside XS.2 sunset (already covered), Meta layoffs + GLM-5.2 (already covered), Microsoft Frontier Company (already covered).
+
+**Gap found:** Gemini Interactions API GA (July 1, 2026) — not specifically covered. We had a June 8 migration article about the schema change, and a June 1 article about Managed Agents beta, and a July 2 article about Gemini Omni Flash, but nothing specifically about the GA release itself. Key uncovered items: stable schema (backward-compatibility commitment), background execution (`background=True` for async long-running tasks), mixed built-in + custom tools in one request, tool results returning images, Managed Agents 2.0 improvements, and the **July 17 deprecation deadline** for Gemini Enterprise Agent Platform preview endpoints. That deadline is 9 days away and actionable for affected builders.
+
+**New article: "Gemini Interactions API Is Now GA: Background Execution, Stable Schema, and a July 17 Deadline"** (`content/builders-log/gemini-interactions-api-ga-background-execution-july-17-deadline-builder-guide/`):
+- GA milestone: schema is now stable, backward-compatibility commitment
+- Background execution: `background=True` for async tasks on Google's servers
+- Mixed tools: built-in (Google Search, Maps) + custom functions in one call
+- Tool results can return images alongside text
+- Managed Agents 2.0: improved web browsing, persistent file storage, code execution
+- July 17 deadline: Gemini Enterprise Agent Platform preview endpoints deprecating
+- generateContent legacy status: still supported, but frontier features go Interactions API only
+- Migration guidance: step-typed response structure vs. legacy response.text
+
+**Build:** Hugo 3455 pages (up from 3453 — 2 new pages).
+
+**Deploy:** Full deploy done.
+
+### What should happen next
+- **July 9**: Poolside XS.2 API sunset (covered — builders need to migrate to XS 2.1)
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap; Claude Max weekly limits boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation (covered in today's article)
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards — may have come earlier this week)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: White House voluntary frontier model standards — expected week of July 7, still not formally announced as of this run; write when published
+- **Watch**: RAISE Summit Day 1+2 recap (July 8-9) — cover builder-relevant takeaways after summit ends
+- **Watch**: AI for Good Commission outcomes from July 8 inaugural session — cover when published
+- **Watch**: Gemini 3.5 Pro GA (no date confirmed, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: Patronus AI pricing/access details — check when published at dwm.patronus.ai
+
+---
+
 ## Run 2259 — 2026-07-07 — Patronus AI Digital World Models article (3453 pages, deployed)
 
 **Mode:** Researcher + Developer
