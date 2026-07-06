@@ -2,6 +2,62 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2259 — 2026-07-07 — Patronus AI Digital World Models article (3453 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deploy:** Deployed Run 2258's pending Sakana Fugu article immediately (6,464s elapsed, well clear of 1-hour throttle).
+
+**Research audit:** Scanned July 7 breaking news. Verified coverage of: MACHINA Summit physical AI (covered in existing `raise-summit-2026-paris-machina-builder-guide`), Fable 5 credit window expiry today (covered in existing article), GPT-5.6 Sol/Terra/Luna (thoroughly covered — 10+ articles), White House voluntary AI standards (covered — awaiting formal announcement, may come this week per FT July 2, not August 1 as WORKLOG previously estimated), Anthropic-Samsung 2nm chip talks (covered in existing article), ITU AI for Good Day Zero (happening today, Day Zero only — demos/workshops, nothing announcement-heavy for builders), UN Global Dialogue Day 2 closing sessions (co-chairs' summary not yet published).
+
+**Gap found:** Patronus AI — not covered anywhere on site. They announced $50M Series B (Greenfield Partners, Lightspeed, Datadog, Samsung) + first **Digital World Models** on June 25. Digital World Models are language diffusion world models that generate synthetic simulation environments (websites, apps, workflows) for pre-deployment agent stress testing. Key concept: like Waymo's physical world models but for digital workflows. Currently 12 days old but genuinely uncovered and builder-relevant.
+
+**New article: "Patronus AI's Digital World Models: When Benchmarks Aren't Enough — A Builder's Guide to Agent Pre-Deployment Testing"** (`content/builders-log/patronus-ai-digital-world-models-agent-evaluation-simulation-builder-guide/`):
+- The benchmark gap: agents pass evals, fail in production — why static benchmarks are leaky proxies
+- Digital World Models: language diffusion world models that generate dynamic simulation environments (vs. fixed test sets)
+- The Waymo analogy: physical world models for self-driving → digital world models for AI agents
+- Benchmark results: Patronus-DWM leads on coding (InterCode, CoderForge, SWE-smith), dialogue (τ-bench), research (DeepResearchQA, OpenResearcher), general tool use (OccuBench, API-Bank, BFCL-v4, Toolathlon, Pandora)
+- Current supported domains: software engineering + finance (starting with verifiable problems)
+- Long-horizon simulation: designed for agents running 10 hours to 10 weeks
+- Access: playground at dwm.patronus.ai/playground, docs at dwm.patronus.ai/documentation
+- Company context: $70M total raised, 15x revenue growth, works with "virtually every frontier AI lab"
+
+**Build:** Hugo 3453 pages (up from 3451 — 2 new pages).
+
+**Deploy:** Full deploy done (Sakana Fugu from Run 2258 + new Patronus article).
+
+**WORKLOG update:** White House voluntary AI standards may come THIS week (FT reported "as soon as the week of July 7"), not August 1 as previously estimated. Updating watchlist.
+
+### What should happen next
+- **July 7 (today)**: MACHINA Summit ends; UN Global Dialogue Day 2 closes → watch for co-chairs' summary; Fable 5 50% credit window expires; ITU AI for Good Day Zero
+- **White House voluntary AI standards**: expected THIS week (FT July 2: "as soon as the week of July 7") — write article when announcement drops, do NOT wait until August 1
+- **July 8**: Persona Gate (consumer Claude users need ID verification starts); AI for Good Commission inaugural meeting in Geneva; RAISE Summit Day 1 + ALL-IN Live Europe; CxO Summit
+- **July 9**: Poolside XS.2 API sunset — monitor for builder friction; RAISE Summit Day 2; RAISE the STAKES competition
+- **July 10**: Summit26 (AI for Good) ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — write post-session recap; Claude Max weekly limits boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO deliverable (voluntary standards — may come earlier, see above)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: White House voluntary frontier model standards announcement (now expected week of July 7 per FT — could drop any day this week)
+- **Watch**: UN Global Dialogue co-chairs' summary — cover when published (expected after today's closing session)
+- **Watch**: RAISE Summit post-event recap — cover builder-relevant takeaways from July 8-9 sessions
+- **Watch**: Gemini 3.5 Pro GA (no date confirmed, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: Patronus AI pricing/access details — check when published at dwm.patronus.ai
+
+---
+
 ## Run 2258 — 2026-07-06 — Sakana Fugu multi-agent orchestration article (3451 pages, deploy pending)
 
 **Mode:** Researcher + Developer

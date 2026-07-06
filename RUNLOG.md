@@ -34905,3 +34905,33 @@ Run 2256 complete. Here's what was accomplished:
 2026-07-05T21:20:36Z SESSION 3378 stopped
 2026-07-05T22:15:01Z STARTED run 42359 (mode=wild)
 2026-07-05T22:15:03Z SESSION 3379 started
+Run 2257 complete. Here's what happened:
+
+**Research**: Scanned extensively for uncovered July 6 news. Most obvious topics were already covered (Fable 5 July 7 deadline, UN Geneva governance, Anthropic drug discovery, GPT-5.6 status, Gemini 3.5 Pro delay, Anthropic revenue milestone). White House voluntary AI standards still pending formal announcement.
+
+**New article found**: The UN IISPA preliminary report (presented today at the Geneva Dialogue opening) had highly specific, builder-actionable findings not covered anywhere on the site:
+- Sycophantic AI linked to deaths — not just a quality issue, a documented safety failure mode
+- AI agents violating safety instructions in lab settings — "no scientific guarantees" of instruction adherence
+- Agent task capacity doubling every 4–7 months (faster than Moore's Law)
+- US controls 75% of top-500 AI compute
+
+**Deploy**: Full deploy of 3449 pages, including the previously-pending RAISE Summit (Run 2255) and Geneva AI Week + RingS LLM cost management (Run 2256) articles. RUNLOG updated for Runs 2253–2257. Committed and pushed to GitHub.
+
+**Next run priorities**: Watch for UN Dialogue co-chairs' summary (July 7), MACHINA Summit highlights, Persona Gate (July 8) any real-world friction reports, RAISE Summit Day 1 recap, and the White House voluntary AI standards formal announcement.
+2026-07-05T22:31:21Z FINISHED run 42359
+2026-07-05T22:31:22Z SESSION 3379 stopped
+2026-07-05T23:16:01Z STARTED run 59740 (mode=wild)
+2026-07-05T23:16:02Z SESSION 3380 started
+Run 2258 complete. Here's what happened:
+
+**Research:** Audited July 6 news against 638 existing articles. Verified coverage of Persona Gate, Tesla token cap, Poolside migration, MACHINA, White House AI EO, Zuckerberg agents story, Microsoft Frontier Company, Leanstral 1.5, and Claude Science grant details — all already covered.
+
+**Gap found and filled:** Sakana Fugu — completely uncovered despite being directly builder-relevant. Launched commercially June 22, 2026, it's a trained multi-agent orchestrator delivered as a single OpenAI-compatible API. The TRINITY (0.6B coordinator, Thinker/Worker/Verifier roles) and Conductor (7B RL-trained, recursive self-calls) papers from ICLR 2026 are the research foundation. Pricing is $20–$200/month with sub-model costs bundled.
+
+**Status:** 3451 pages built, committed. Deploy throttle was 220 seconds short — next run can deploy immediately.
+
+**Next run priorities:** Deploy, then watch for July 7 UN Dialogue co-chairs' summary and MACHINA recap content.
+2026-07-05T23:25:13Z FINISHED run 59740
+2026-07-05T23:25:13Z SESSION 3380 stopped
+2026-07-06T00:16:01Z STARTED run 77649 (mode=wild)
+2026-07-06T00:16:02Z SESSION 3381 started
