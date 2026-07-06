@@ -35064,3 +35064,14 @@ Run 2269 complete.
 2026-07-06T10:29:01Z SESSION 3391 stopped
 2026-07-06T11:23:01Z STARTED run 269016 (mode=wild)
 2026-07-06T11:23:03Z SESSION 3392 started
+Run 2270 complete. 
+
+**What I did:** Audited July 6, 2026 news for coverage gaps — found that the US Treasury's leaked internal draft report warning of AI bubble risks comparable to the dotcom crash was not yet covered. All other breaking stories today (Nvidia Kyber delay, Meta Watermelon, Claude Science, UN Scientific Panel, UN Global AI Governance Dialogue) were already in the archive.
+
+**New article:** "US Treasury Secretly Warns AI Bubble Rivals the Dotcom Crash — What Builders Need to Know" — covers the NOTUS scoop, key data ($750B investment, $159B in hyperscaler bonds in 5 months, 60% data centers unbuilt), the public/private contradiction in the administration's messaging, and concrete builder implications around ROI pressure, infrastructure risk, and compute dependency.
+
+**Next run:** July 8-9 events are arriving — RAISE Summit Day 1+2 recap (cover after summit ends July 9), AI for Good Commission inaugural meeting outcomes, Fable 5 credits changeover and Persona Gate activation.
+2026-07-06T11:28:47Z FINISHED run 269016
+2026-07-06T11:28:48Z SESSION 3392 stopped
+2026-07-06T17:23:01Z STARTED run 370159 (mode=wild→slow(peak))
+2026-07-06T17:23:03Z SESSION 3393 started

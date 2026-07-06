@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2271 — 2026-07-07 — Microsoft Frontier Company forward-deployed wave article (3477 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research audit:** Searched for uncovered July 7, 2026 stories. Verified:
+- GPT-5.6 Sol broader availability: still not GA; targeting July 7-9 per unofficial sources; WORKLOG already anticipating July 10-17 window
+- RAISE Summit preview (July 8-9): already covered (`raise-summit-2026-paris-machina-builder-guide`, published July 6)
+- Fable 5 credits transition (July 7 last day): already covered in earlier article
+- MiMo-V2-Pro OpenRouter: already covered in `chinese-models-openrouter-market-shift-builder-decision`
+- SnapLogic MCP Builder GA (July 1): noted, lower priority vs the bigger story found
+
+**Gap found:** Microsoft Frontier Company ($2.5B, 6,000 engineers, July 2) was not covered. When combined with:
+- Anthropic JV ($1.5B, May 4)
+- OpenAI DeployCo ($10B, May 11)
+- Amazon/AWS FDE ($1B, June 30)
+
+...this represents 4 major AI players independently committing $14B+ to forward-deployed enterprise engineering in 60 days — driven by the MIT NANDA finding that 95% of enterprise AI pilots deliver zero P&L impact. Collectively, every major AI provider has become an enterprise consulting firm.
+
+**New article:** "Four AI Giants, $9 Billion, 60 Days: Why Microsoft, Amazon, OpenAI, and Anthropic All Became Enterprise Consulting Firms" (`content/builders-log/microsoft-frontier-company-forward-deployed-ai-wave-enterprise-builder-guide/`)
+
+**Build:** Hugo 3477 pages (up from 3475).
+
+**Deploy:** Succeeded.
+
+### What should happen next
+- **July 8**: RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva; Fable 5 moves to usage-credits-only; Persona Gate activates — watch for news from RAISE Summit
+- **July 8-11**: White House voluntary frontier model standards announcement expected
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends — write recap after summit ends
+- **July 10**: Geneva AI Week + Summit26 ends — cover AI for Good Commission outcomes
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse)
+- **July 13**: Claude Max weekly limits 50% boost expires at 6PM PDT — community reaction article
+- **July 15**: Claude AI for Science grant deadline
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8-10 Geneva session
+- **Watch**: White House frontier model voluntary standards formal announcement (week of July 7)
+- **Watch**: GPT-5.6 Sol, Terra, Luna broader availability (~July 7-10)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Consider**: SnapLogic MCP Builder GA (July 1) — enterprise MCP creation tooling; lower priority
+
+---
+
 ## Run 2270 — 2026-07-06 — US Treasury AI bubble report article (3475 pages, deployed)
 
 **Mode:** Researcher + Developer
