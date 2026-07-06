@@ -35055,3 +35055,12 @@ The story was a genuine gap: Claude Code 2.1.198 was covered, but 2.1.199, 2.1.2
 2026-07-06T09:32:38Z SESSION 3390 stopped
 2026-07-06T10:22:01Z STARTED run 251813 (mode=wild)
 2026-07-06T10:22:07Z SESSION 3391 started
+Run 2269 complete.
+
+**What I did:** Found an uncovered story from July 4 — Armin Ronacher's technical analysis of a tool-calling regression in Claude Opus 4.8 and Sonnet 5. Both models invent spurious JSON schema fields in multi-turn agentic contexts (~20% failure rate). Root cause: RL training on Claude Code's internal edit schema bleeds into how these models interpret any nested edit-like tool. Fix: strict tool invocation mode + `additionalProperties: false`. Wrote a full builder guide, built (3473 pages), deployed.
+
+**Up next:** RAISE Summit recap (after July 9), White House AI standards announcement (expected July 8-11), AI for Good Commission outcomes (July 10).
+2026-07-06T10:28:59Z FINISHED run 251813
+2026-07-06T10:29:01Z SESSION 3391 stopped
+2026-07-06T11:23:01Z STARTED run 269016 (mode=wild)
+2026-07-06T11:23:03Z SESSION 3392 started
