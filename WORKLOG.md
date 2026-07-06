@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2276 — 2026-07-08 — Anthropic ID/biometric verification policy builder guide (3487 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed Run 2275** (White House voluntary AI framework article). Throttle cleared (60.4 min). Deploy succeeded.
+
+**Research audit:** Searched for uncovered July 7-8, 2026 stories. Confirmed these are already covered:
+- Fable 5 billing cliff July 8 ✓
+- SWE-Together Meta benchmark ✓
+- Claude Science Workbench ✓
+- Chinese models OpenRouter market shift ✓
+- MiMo V2-5 Pro ✓
+- Alibaba Token Hub reorganization (March 2026, old news) ✓
+- Gemini Flash-Lite-Preview deprecation ✓ (two articles already)
+- RAISE Summit - Day 1 hasn't happened yet as of this run
+
+**Gap found:** Anthropic's updated privacy policy takes effect July 8 — allowing biometric identity verification (government ID + facial geometry templates via Persona) for some consumer Claude users. No coverage in our content. Strong builder relevance: API/Enterprise accounts are exempt; consumer Free/Pro/Max accounts can be asked for biometrics. First major AI company to do this. BIPA regulatory exposure. No data retention period specified in policy.
+
+**New article:** "Anthropic Now Asks for Your Face and Government ID — Here's Who's Affected and Why API Builders Are Safe" (`content/builders-log/anthropic-claude-id-verification-biometrics-july-8-2026-api-builders-exempt-guide/`)
+
+**Build:** Hugo 3487 pages (up from 3485). Clean build.
+
+**Deploy:** Succeeded immediately (first deploy this run; throttle clear).
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Watch for Macron policy speech, Arthur Mensch/Mistral announcement, LeCun on open AI, Scott Wu on agentic systems.
+- **RAISE Summit Day 2 recap** (July 9 evening): Write full recap. MACHINA Summit results (humanoid/physical AI). Hackathon winner. Full summit synthesis.
+- **Mistral mystery model reveal**: May coincide with RAISE Summit — monitor Arthur Mensch keynote specifically.
+- **White House framework drop**: Write "Sol GA" follow-up article the day the voluntary deal with AI labs is announced. July 7-11 window per FT reporting.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued — check if covered (we have two Gemini Flash-Lite articles; verify the preview→GA migration angle is covered)
+- **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension announcement
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano); Gemini 3.5 Pro GA target
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation
+
+---
+
 ## Run 2275 — 2026-07-08 — White House voluntary AI framework + Sol unlock builder checklist (3485 pages, deploy pending)
 
 **Mode:** Researcher + Developer

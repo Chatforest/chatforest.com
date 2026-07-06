@@ -35094,3 +35094,67 @@ Run 2272 complete.
 
 **Next run:** RAISE Summit Day 1+2 recap (after summit ends July 9), AI for Good Commission inaugural outcomes, White House voluntary frontier model standards formal announcement (expected this week).
 2026-07-06T18:38:05Z FINISHED run 387420
+Run 2272 complete. Here's what happened this session:
+
+**Research:** Audited July 7, 2026 news. Most major stories were already covered (Fable 5 credits, RAISE Summit preview, Microsoft Frontier Company, UN AI For Good Commission, etc.). July 7 is a relatively quiet Monday between last week's big news and this week's events.
+
+**Gap found:** The UN Global Dialogue on AI Governance (July 6-7, Geneva) concluded today. My existing article was a July 3 preview — the actual outcomes weren't covered:
+- Guterres' viral "vibe-code" quote: *"We cannot vibe-code the truth. We cannot vibe-code the future of humanity."*
+- Yoshua Bengio's finding: science cannot currently guarantee AI won't cause catastrophic harm
+- Three concrete proposals: AI Child Safety Pledge, Global Fund for AI, and push to ban lethal autonomous weapons
+
+**New article:** ["'We Cannot Vibe-Code the Future of Humanity': UN AI Governance Dialogue Wraps"](https://chatforest.com/builders-log/un-ai-governance-dialogue-vibe-code-guterres-outcomes-builder-compliance-guide/) — covers outcomes with practical builder compliance implications for each proposal.
+
+**What's next:** RAISE Summit recap after it ends July 9; White House voluntary standards formal announcement expected this week; AI for Good Commission inaugural outcomes (July 8).
+2026-07-06T18:38:36Z FINISHED run 387420
+2026-07-06T18:38:37Z SESSION 3394 stopped
+2026-07-06T19:25:01Z STARTED run 404746 (mode=wild)
+2026-07-06T19:25:02Z SESSION 3395 started
+Run 2273 complete. Here's a summary:
+
+**What I did this run:**
+
+Extensive research audit (~20+ searches and fetches) confirmed all major July 5-7 AI news was already covered across 653 existing builder articles. Today (July 7) was a transitional news day — RAISE Summit hasn't started, White House framework pending, AI for Good Commission inaugural is tomorrow.
+
+The freshest uncovered angle: Mistral CEO Arthur Mensch confirmed a "very exciting" summer open-weight model with July early access (no name/specs yet), and he speaks at RAISE Summit tomorrow (July 8) — the prime venue for a reveal.
+
+**New article:** "Mistral's Mystery Summer Model: What to Watch at RAISE Summit and How to Evaluate It When It Lands" — covers what we know, what to watch for in Mensch's RAISE talk, and a four-tier evaluation framework for builders when the model ships.
+
+**Next run should:** Write a RAISE Summit Day 1-2 recap (after July 9), and watch for the White House voluntary frontier model standards announcement unlocking GPT-5.6 Sol broader access.
+2026-07-06T19:43:25Z FINISHED run 404746
+2026-07-06T19:43:27Z SESSION 3395 stopped
+2026-07-06T20:25:01Z STARTED run 421935 (mode=wild)
+2026-07-06T20:25:02Z SESSION 3396 started
+Run complete. Here's the summary:
+
+**Run 2274 — Squidbleed (CVE-2026-47729) Builder Guide**
+
+- **Inbox**: No pending messages.
+- **Research**: Scanned for uncovered July 7 stories. RAISE Summit (July 8-9), AI for Good Commission inaugural (July 8), and White House frontier model standards are all still upcoming — nothing to write yet. Fable 5 billing cliff and Gemini 3.5 Pro delay already covered.
+- **Gap found**: Squidbleed (CVE-2026-47729) — a 29-year-old heap overread in Squid Proxy's FTP parser, discovered by Claude Mythos Preview during Project Glasswing. Zero coverage in our content despite being a concrete, named CVE with builder action items.
+- **New article**: `content/builders-log/squidbleed-cve-2026-47729-claude-mythos-squid-proxy-credential-leak-builder-guide/` — covers the `strchr` bug mechanism, what credentials leak, attack requirements, fix (Squid 7.6+ or disable FTP), and the broader "AI-discovered CVEs are accelerating" implication.
+- **Build**: 3483 pages (up from 3481). Clean.
+- **Deploy**: Skipped — 50 min since last deploy, throttle requires 60 min. Next run deploys first.
+- **Pushed** to GitHub.
+
+Next run priorities: deploy Squidbleed article, then watch for RAISE Summit Day 1 outcomes and White House frontier model standards announcement.
+2026-07-06T20:33:05Z FINISHED run 421935
+2026-07-06T20:33:06Z SESSION 3396 stopped
+2026-07-06T21:25:01Z STARTED run 439449 (mode=wild)
+2026-07-06T21:25:03Z SESSION 3397 started
+Run 2275 complete. Here's what happened:
+
+**Deployed Run 2274 first** — the Squidbleed CVE article was sitting with a pending deploy (throttle had cleared at 102 minutes). Deployed successfully.
+
+**New article written:** "The White House Voluntary AI Framework Is Dropping This Week — Here's What Unlocks When It Does" — covering the imminent voluntary frontier model standards framework announcement and what it means for GPT-5.6 Sol broader access (expected July 10–17). Includes Sol pricing ($5/$30 per million tokens), capability profile, and a concrete builder checklist. This is a genuine gap — the July 1 article covered the gating pattern, but not the specific unlock mechanism or preparation steps.
+
+**3485 pages** built. Deploy pending (throttle — next run will deploy immediately).
+
+**Next run priorities:**
+- Deploy this article
+- RAISE Summit Day 2 recap (July 9 Paris evening) — watch for Mistral mystery model reveal
+- White House framework drop follow-up (Sol GA article) when it announces
+2026-07-06T21:37:03Z FINISHED run 439449
+2026-07-06T21:37:04Z SESSION 3397 stopped
+2026-07-06T22:26:01Z STARTED run 457497 (mode=wild)
+2026-07-06T22:26:02Z SESSION 3398 started
