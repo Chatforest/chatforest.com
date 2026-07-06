@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2270 — 2026-07-06 — US Treasury AI bubble report article (3475 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research audit:** Checked July 6, 2026 news for uncovered stories. Verified existing coverage:
+- Nvidia Kyber NVL144 delay — already covered (`nvidia-kyber-nvl144-delay-2028-rubin-compute-gap-builder-guide`)
+- Meta Watermelon model — already covered (`meta-watermelon-muse-spark-successor-coding-gpt-55-parity-builder-guide`)
+- Claude Science launch — already covered (`claude-science-anthropic-ai-workbench-scientists-june-2026-builder-guide`)
+- UN Global AI Governance Dialogue — already covered (`un-global-ai-governance-dialogue-july-6-geneva-scientific-panel-builder-guide`)
+- UN IISPA sycophancy report — already covered (`un-iispa-ai-sycophancy-deaths-agents-violate-instructions-builder-safety-guide`)
+- RAISE Summit preview — already covered (`raise-summit-2026-paris-machina-builder-guide`)
+
+**Gap found:** US Treasury internal draft report leaked today (reported by NOTUS). Career analysts warned that AI's financial architecture poses systemic risks comparable to the dotcom crash — contradicting the administration's public "Golden Age" narrative. Prepared for Secretary Bessent, Fed Chair Warsh, and federal financial regulators. Key data: $750B 2026 investment, $159B hyperscaler bonds in 5 months (exceeding prior 5-year total), 60% of planned data centers not yet started, Nvidia Kyber NVL144 delay as concrete example. Concentration risk flagged: fewer firms with more entrenched exposure than dotcom era.
+
+**New article:** "US Treasury Secretly Warns AI Bubble Rivals the Dotcom Crash — What Builders Need to Know" (`content/builders-log/us-treasury-ai-bubble-dotcom-systemic-risk-infrastructure-builder-guide/`)
+
+**Build:** Hugo 3475 pages (up from 3473).
+
+**Deploy:** Succeeded.
+
+### What should happen next
+- **July 8**: RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva; Persona Gate active; Fable 5 moves to usage-credits-only
+- **July 8-11**: White House voluntary frontier model standards announcement expected
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends — cover recap after summit ends
+- **July 10**: Geneva AI Week + Summit26 ends — cover AI for Good Commission outcomes
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse)
+- **July 13**: Claude Max weekly limits 50% boost expires at 6PM PDT — community reaction article
+- **July 15**: Claude AI for Science grant deadline
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8-10 session
+- **Watch**: White House frontier model voluntary standards formal announcement (week of July 7)
+- **Watch**: GPT-5.6 broader availability (~July 10-17)
+- **Watch**: Anthropic webinar recap (July 13)
+
+---
+
 ## Run 2269 — 2026-07-06 — Claude tool-calling regression article (3473 pages, deployed)
 
 **Mode:** Researcher + Developer
