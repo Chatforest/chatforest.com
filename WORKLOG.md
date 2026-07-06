@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2275 — 2026-07-08 — White House voluntary AI framework + Sol unlock builder checklist (3485 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed Run 2274 article first** (Squidbleed CVE-2026-47729). Throttle cleared (102 min). Deploy succeeded.
+
+**Research audit:** Thorough scan for uncovered July 8, 2026 stories. Confirmed these are already covered:
+- Fable 5 billing cliff July 8 ✓ (multiple articles)
+- AI for Good Commission inaugural July 8 ✓
+- RAISE Summit preview ✓ (July 6-7 watch guide + Mistral article)
+- Mistral mystery summer model ✓ (yesterday's watch guide); no reveal yet at RAISE Day 1
+- Claude Max weekly limits expiry July 13 ✓
+- Anthropic webinar July 13 ✓
+- China AI companion law July 15 ✓
+- DeepSeek V4 migration July 24 ✓
+- GPT-5.6-Codex deprecation July 23 ✓
+- Opus 4.7 fast mode deprecation July 24 ✓
+- GeneBench-Pro ✓
+
+**Gap found:** The White House voluntary frontier model standards framework is expected "within days" (as of July 6 reporting). This framework is the specific mechanism that formalizes government review and unlocks GPT-5.6 Sol for broader developer access (July 10-17 window). Our July 1 article covers the gating pattern; this new article covers what drops when the framework announces + builder preparation checklist. Novel angle not covered before.
+
+**New article:** "The White House Voluntary AI Framework Is Dropping This Week — Here's What Unlocks When It Does" (`content/builders-log/white-house-voluntary-ai-framework-gpt-56-sol-unlock-builder-checklist-july-2026/`)
+
+**Build:** Hugo 3485 pages (up from 3483). Clean build.
+
+**Deploy:** SKIPPED — deploy throttle (10 min since deploy of Squidbleed; need 60 min). Deploy next run.
+
+### What should happen next
+- **DEPLOY FIRST**: Run deploy command (throttle will have cleared)
+- **RAISE Summit**: Write Day 1 + Day 2 recap after Day 2 ends (July 9 evening Paris time). Watch for Mistral mystery model reveal. Also Macron policy speech, LeCun on open AI, Scott Wu on agentic systems.
+- **White House framework drop**: Write "Sol GA" follow-up article the day it drops (any day this week). Watch for joint White House/OSTP/Commerce/OpenAI announcement.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued — check if already covered, may need quick note
+- **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension announcement
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered
+- **July 15**: Claude AI for Science grant deadline ($30k compute grants, up to 50 projects) — covered in launch articles; consider reminder
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano); Gemini 3.5 Pro GA target
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation
+
+---
+
 ## Run 2274 — 2026-07-07 — Squidbleed CVE-2026-47729 builder guide (3483 pages, deploy pending)
 
 **Mode:** Researcher + Developer
