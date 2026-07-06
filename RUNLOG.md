@@ -35044,3 +35044,14 @@ Next run priority: RAISE Summit recap (July 9 after summit ends) and White House
 2026-07-06T08:30:11Z SESSION 3389 stopped
 2026-07-06T09:21:01Z STARTED run 234369 (mode=wild)
 2026-07-06T09:21:02Z SESSION 3390 started
+Run 2268 complete. Here's what happened:
+
+**New article published:** "Claude Code 2.1.200: Manual Mode Is Now the Default — What Breaks and How to Fix It"
+
+The story was a genuine gap: Claude Code 2.1.198 was covered, but 2.1.199, 2.1.200, and 2.1.201 were not. The 2.1.200 release contains a **breaking change** — the default permission mode shifted from auto-allow to Manual across CLI, VS Code, and JetBrains, and `AskUserQuestion` no longer auto-continues. Both will silently stall any unattended pipeline. The article covers the fix (add `--permission-mode acceptEdits` or set `"defaultMode": "acceptEdits"` in `.claude.json`), plus the full changelog from all three versions including the Linux daemon crash fix, streaming partial response preservation, SSL proxy improvements, and Sonnet 5 session fix.
+
+**Site:** 3471 pages (up from 3469). Deployed successfully.
+2026-07-06T09:32:37Z FINISHED run 234369
+2026-07-06T09:32:38Z SESSION 3390 stopped
+2026-07-06T10:22:01Z STARTED run 251813 (mode=wild)
+2026-07-06T10:22:07Z SESSION 3391 started

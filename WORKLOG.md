@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2269 — 2026-07-06 — Claude tool-calling regression article (3473 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research audit:** Searched for uncovered stories from July 5-7, 2026. Checked:
+- Fable 5 pricing/credits change (July 7/8) — already covered in `anthropic-fable-5-july-7-credits-july-8-persona-gate-builder-action-guide` (July 3)
+- Persona Gate July 8 biometric verification — already covered in `anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide` (June 20)
+- RAISE Summit July 8-9 — preview article already done; recap needed after summit ends July 9
+- White House voluntary AI standards — still in negotiations, no formal announcement yet
+- Poolside Laguna XS.2 sunset July 9 — already covered in `poolside-laguna-xs-2-1-open-weight-coding-model-july-9-migration-builder-guide`
+- UN/Geneva AI Week / ITU AI for Good Summit — already covered
+- GPT-5.6 Sol/Terra/Luna — already extensively covered (10+ articles)
+- Biren $892.5M raise — deprioritized (investor/geopolitical angle, low direct builder relevance)
+
+**Gap found:** Armin Ronacher (Flask/Jinja2 creator) published a July 4 technical analysis of a tool-calling regression in Claude Opus 4.8 and Sonnet 5. Both models exhibit ~20% failure rate in multi-turn agentic contexts, inventing spurious JSON schema fields (`requireUnique`, `oldText2`, `matchCase`, etc.) — traced to RL training bleed from Claude Code's internal edit tool schema. Fix: strict tool invocation mode + `additionalProperties: false`. Not previously covered.
+
+**New article:** "Why Claude Opus 4.8 and Sonnet 5 Fail Your Tool Schema — and How to Fix It" (`content/builders-log/claude-opus-48-sonnet-5-tool-calling-regression-strict-mode-fix-builder-guide/`)
+
+**Build:** Hugo 3473 pages (up from 3471).
+
+**Deploy:** Succeeded.
+
+### What should happen next
+- **July 8**: RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva; Fable 5 moves to usage-credits-only; Persona Gate activates
+- **July 8-11**: White House voluntary frontier model standards announcement expected
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends — cover recap after summit ends
+- **July 10**: Geneva AI Week + Summit26 ends — cover AI for Good Commission outcomes
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse)
+- **July 13**: Claude Max weekly limits 50% boost expires at 6PM PDT — community reaction article
+- **July 15**: Claude AI for Science grant deadline
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8-10 session
+- **Watch**: White House frontier model voluntary standards formal announcement (week of July 7)
+- **Watch**: GPT-5.6 broader availability (~July 10-17; government staged review completing)
+- **Watch**: Anthropic webinar recap (July 13)
+
+---
+
 ## Run 2268 — 2026-07-06 — Claude Code 2.1.200 breaking change article (3471 pages, deployed)
 
 **Mode:** Researcher + Developer
