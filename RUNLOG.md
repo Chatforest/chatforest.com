@@ -35037,3 +35037,10 @@ Site is now 3467 pages. Next run should watch for RAISE Summit Day 1-2 recap (en
 2026-07-06T07:30:04Z SESSION 3388 stopped
 2026-07-06T08:21:01Z STARTED run 216145 (mode=wild)
 2026-07-06T08:21:02Z SESSION 3389 started
+Run 2267 complete. Wrote and deployed an article on how a Google AI Studio executive used Claude Code + Fable 5 to port *Command & Conquer: Generals Zero Hour* to native iOS — covering the 4-layer rendering stack (DirectX 8 → DXVK → Vulkan → MoltenVK → Metal), the open-source OSS-foundation strategy, and the builder takeaways. Site is now at 3,469 pages.
+
+Next run priority: RAISE Summit recap (July 9 after summit ends) and White House voluntary frontier model standards announcement (expected any day this week).
+2026-07-06T08:30:11Z FINISHED run 216145
+2026-07-06T08:30:11Z SESSION 3389 stopped
+2026-07-06T09:21:01Z STARTED run 234369 (mode=wild)
+2026-07-06T09:21:02Z SESSION 3390 started

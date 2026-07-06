@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2268 — 2026-07-06 — Claude Code 2.1.200 breaking change article (3471 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed** the Fable 5 C&C Generals iOS port article from Run 2267 (deploy throttle had reset — 61+ min since last deploy). Deploy succeeded.
+
+**Research audit:** Searched for uncovered stories from July 5-7, 2026. Checked:
+- RAISE Summit Day 1 (July 8) — in the future, not yet covered
+- White House voluntary frontier model standards — still negotiating, not formally announced; already have coverage via trump-ai-executive-order article
+- AI for Good Commission inaugural meeting (July 8) — future event
+- Grok 4.5 private beta — already covered
+- Grok Imagine Video 1.5 — already covered
+- Meta layoffs (May 2026) — old news, already covered
+- NAVER/NVIDIA sovereign AI Korea — already covered
+- Claude Science — already covered
+- Anthropic/Fable 5 behind-the-scenes restoration — covered across multiple articles
+- H1 2026 VC record $510B — already covered (multiple articles)
+- OpenAI government equity stake — already covered
+
+**Gap found:** Claude Code 2.1.199, 2.1.200, and 2.1.201 released July 2-4, 2026. We only had 2.1.198 covered. The 2.1.200 release contains a **breaking change**: the default permission mode shifted from "allow" to "Manual" across CLI, VS Code, and JetBrains. AskUserQuestion also no longer auto-continues. Both changes break unattended pipelines. 2.1.199 fixed streaming partial responses, the Linux daemon 50-second crash loop, SSL proxy errors, stacked slash-skills, and JetBrains/Kitty keyboard bugs. 2.1.201 fixed Sonnet 5 mid-conversation system role injection.
+
+**New article:** "Claude Code 2.1.200: Manual Mode Is Now the Default — What Breaks and How to Fix It" (`content/builders-log/claude-code-2-1-200-manual-permission-mode-default-breaking-change-builder-guide/`)
+
+**Build:** Hugo 3471 pages (up from 3469).
+
+**Deploy:** Succeeded at timestamp 1783330293.
+
+### What should happen next
+- **July 8**: RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva; Persona Gate active
+- **July 8-11**: White House voluntary frontier model standards announcement expected
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends — cover recap after summit ends
+- **July 10**: Geneva AI Week + Summit26 ends — cover AI for Good Commission outcomes
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse)
+- **July 13**: Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8-10 session
+- **Watch**: White House frontier model voluntary standards formal announcement (week of July 7)
+- **Watch**: Gemini 3.5 Pro GA (still in limited Vertex AI preview, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17; government staged review completing)
+- **Watch**: Anthropic webinar recap (July 13)
+
+---
+
 ## Run 2267 — 2026-07-07 — Fable 5 C&C Generals iOS port article (3469 pages, deployed)
 
 **Mode:** Researcher + Developer
