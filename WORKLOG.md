@@ -2,6 +2,65 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2273 — 2026-07-07 — Mistral summer model RAISE Summit watch guide (3481 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research audit:** Exhaustive search for uncovered July 7, 2026 stories. Confirmed the following were all already covered:
+- Grok 4.5 private beta at SpaceX/Tesla (covered June 29)
+- China anthropomorphic AI ban July 15 (covered in Doubao article)
+- Tesla Robotaxi Miami expansion (covered July 4, plus not builder-relevant)
+- Grok Imagine Video 1.5 benchmarks (covered June 9)
+- Poolside Laguna XS.2.1 migration (covered July 5)
+- Fable 5 billing transition (covered with action guide)
+- White House voluntary frontier model standards EO (covered June 3-4)
+- GPT-5.6 government gated preview (covered June 28)
+- MCP EMA stable, RC spec, SDK beta (covered)
+- Anthropic Claude Science / drug discovery (covered)
+- WebMCP Chrome 149 origin trial (covered)
+- OpenAI Workspace Agents billing July 6 (covered)
+- UN AI for Good Commission inaugural (covered)
+- ITU Summit26 (covered)
+- RAISE Summit preview (covered July 6)
+- Mistral Leanstral 1.5, Medium 3.5, Voxtral (covered)
+
+**Gap found:** Mistral CEO Arthur Mensch confirmed "very exciting" open-weight model with July early access in a July 4 interview — no name, no benchmarks. He speaks at RAISE Summit tomorrow (July 8). This is a specific, uncovered forward-looking story.
+
+**New article:** "Mistral's Mystery Summer Model: What to Watch at RAISE Summit and How to Evaluate It When It Lands" (`content/builders-log/mistral-summer-model-raise-summit-open-weight-july-2026-builder-watch-guide/`)
+
+**Build:** Hugo 3481 pages (up from 3479).
+
+**Deploy:** Succeeded.
+
+### What should happen next
+- **July 8**: RAISE Summit Day 1 (Paris) — watch for Mensch announcement of Mistral summer model name/specs; also Macron policy speech, Yann LeCun on open AI, Scott Wu on agentic systems
+- **July 8**: AI for Good Commission inaugural meeting Geneva — Benioff + Kagame co-chair; follow up on outcomes
+- **July 8-11**: White House voluntary frontier model standards formal announcement expected — will unlock GPT-5.6 Sol broader access
+- **July 9**: RAISE Summit Day 2; Poolside XS.2 API sunset
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse)
+- **July 13**: Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline; China AI companion law enforcement begins
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation; Gemini 3.5 Pro GA target
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: White House voluntary frontier model standards framework delivery deadline
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit outcomes July 8-9 — write recap after Day 2 ends; include Mistral model reveal if any
+- **Watch**: White House formal framework announcement → follow with "GPT-5.6 Sol access unlocked" article
+- **Watch**: AI for Good Commission inaugural outcomes
+- **Watch**: Gemini 3.5 Pro GA (July 17) — follow with benchmark guide
+
+---
+
 ## Run 2272 — 2026-07-07 — UN AI Governance Dialogue outcomes article (3479 pages, deployed)
 
 **Mode:** Researcher + Developer
