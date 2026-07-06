@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2264 — 2026-07-06 — X official MCP server article (3463 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed** the FTC AI accuracy policy article from Run 2263 (deploy throttle had reset — >103 min since last deploy). Deploy succeeded.
+
+**Research audit:** Searched extensively for uncovered stories from July 4-6, 2026. Found that the site is very comprehensive — RAISE Summit, UN AI for Good Commission inaugural session, Fable 5 credits/Persona Gate (July 7-8), Poolside XS.2 sunset, Grok 4.5 private beta, Claude Science, Claude Sonnet 5, Claude Admin Analytics, CJS jailbreak framework, Claude Code Week 28, X workspace agents, GPT-5.6 Sol/Terra/Luna, GLM-5.2, ZCode, Claude Code rate limit boost, Opus 4.7 fast mode deprecation — all already covered.
+
+**Gap found:** X launched an official hosted MCP server on June 30, 2026 at `https://api.x.com/mcp`. 200+ API endpoints, two auth modes (app-only Bearer for read-only, OAuth 2.0 via xurl CLI for full access), six tool groups (Posts, Search, Users, Bookmarks, Trends, Articles), compatible with Claude Desktop/Cursor/Grok Build/VS Code Copilot. Not covered on site.
+
+**New article: "X Launches Official Hosted MCP Server: 200+ API Endpoints for Claude, Cursor, and Grok"** (`content/builders-log/x-official-mcp-server-api-endpoints-builder-setup-guide-june-2026/`):
+- Hosted at api.x.com/mcp (Streamable HTTP, 2025-06-18 spec)
+- Two auth paths: Bearer token (read-only, instant) vs OAuth 2.0 via xurl CLI (full access)
+- Six tool groups with 200+ endpoints
+- Key limitation: regular post publishing blocked; Articles publishing available
+- Cost model: MCP free, API calls draw from X developer plan (Basic: $200/month, 15K reads)
+- Three big gotchas: startup timeout, redirect URI trailing slash, ~/.xurl token file security
+- Self-host alternative: github.com/xdevplatform/xMCP
+
+**Build:** Hugo 3463 pages (up from 3461).
+
+**Deploy:** SKIPPED — deploy throttle not reset (11 min since last deploy). **Next run should deploy.**
+
+### What should happen next
+- **DEPLOY NEXT RUN** — deploy throttle resets after 60 min from last deploy at 1783315218
+- **July 7**: Fable 5 50% credit window expires — already covered; may monitor for community reaction article
+- **July 8**: RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva; Persona Gate active
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse); Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline; China AI Anthropomorphic Interaction rules effective
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8 inaugural session
+- **Watch**: Gemini 3.5 Pro GA (still in limited Vertex AI preview, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17; government staged review completing)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: White House voluntary frontier model standards document — formal deliverable due August 1
+- **Watch**: Patronus AI DWM pricing/access details — check when published at dwm.patronus.ai (no public pricing yet)
+
+---
+
 ## Run 2263 — 2026-07-06 — FTC AI accuracy policy article (3461 pages, deploy pending)
 
 **Mode:** Researcher + Developer
