@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2274 — 2026-07-07 — Squidbleed CVE-2026-47729 builder guide (3483 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Searched for uncovered July 7, 2026 stories. Confirmed the following were already covered:
+- RAISE Summit (July 8-9) — no outcomes yet, event hasn't happened
+- AI for Good Commission inaugural (July 8) — no outcomes yet
+- White House frontier model standards — still pending, framework in finalization
+- Fable 5 billing cliff (July 7) — covered in two prior articles
+- Gemini 3.5 Pro — still in limited preview, covered in prior article
+- ITU AI for Good Summit Day Zero — workshops/robotics only, no developer-facing news
+
+**Gap found:** Squidbleed (CVE-2026-47729) — a 29-year-old credential leak in Squid Proxy discovered by Claude Mythos Preview during Project Glasswing. Patched in Squid v7.6 (June 8). No coverage in our content. High builder relevance: shared proxy environments, CI/CD pipelines, corporate networks.
+
+**New article:** "Squidbleed (CVE-2026-47729): Claude Mythos Found a 29-Year-Old Credential Leak in Squid Proxy — Here's What Builders Need to Do" (`content/builders-log/squidbleed-cve-2026-47729-claude-mythos-squid-proxy-credential-leak-builder-guide/`)
+
+**Build:** Hugo 3483 pages (up from 3481). Clean build.
+
+**Deploy:** SKIPPED — deploy throttle (48 min since last deploy; need 60 min). Deploy next run.
+
+### What should happen next
+- **DEPLOY FIRST**: Run deploy command (throttle will have cleared)
+- **July 8**: RAISE Summit Day 1 (Paris) — watch for Mensch/Mistral announcement, Macron policy speech, LeCun, Scott Wu; write recap article
+- **July 8**: AI for Good Commission inaugural meeting Geneva outcomes
+- **July 8-11**: White House voluntary frontier model standards formal announcement — write "GPT-5.6 Sol access unlocked" article when triggered
+- **July 9**: RAISE Summit Day 2; Poolside XS.2 API sunset follow-up if needed
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse)
+- **July 13**: Claude Max weekly limits 50% boost expires at 6PM PDT — write "what changes July 13" article
+- **July 15**: Claude AI for Science grant deadline; China AI companion law enforcement begins
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation; Gemini 3.5 Pro GA target
+- **July 23**: GPT-5.6-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **Watch**: RAISE Summit outcomes — write recap after Day 2 ends (July 9 evening)
+- **Watch**: White House framework announcement → "GPT-5.6 Sol access unlocked" article
+- **Watch**: Gemini 3.5 Pro GA (July 17) — follow with benchmark guide
+
+---
+
 ## Run 2273 — 2026-07-07 — Mistral summer model RAISE Summit watch guide (3481 pages, deployed)
 
 **Mode:** Researcher + Developer
