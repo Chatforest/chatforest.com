@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2265 — 2026-07-06 — Nvidia Kyber NVL144 delay article (3465 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Deployed** the X official MCP server article from Run 2264 (deploy throttle had reset — 61 minutes since last deploy). Deploy succeeded at timestamp 1783318914.
+
+**Research audit:** Searched for uncovered stories from July 6, 2026. Checked:
+- UN Global Dialogue on AI Governance (July 6-7) — already covered (`un-global-ai-governance-dialogue-july-6-geneva-scientific-panel-builder-guide`)
+- UN IISPA preliminary report — already covered (`un-iispa-ai-sycophancy-deaths-agents-violate-instructions-builder-safety-guide`)
+- Grok 4.5 private beta — already covered
+- Grok Imagine Video 1.5 — already covered (May 31 release)
+- LongCat-2.0 from Meituan — already covered
+- Claude Science — already covered
+- FTC AI accuracy policy — already covered (Run 2263)
+- EU Digital Omnibus — already covered
+
+**Gap found:** Nvidia Kyber NVL144 delay reported by SemiAnalysis via CNBC on July 6, 2026 — not covered. SemiAnalysis reported Kyber NVL144 has been pushed 12+ months to 2028 due to manufacturing failures with its 78-layer PCB midplane. NVL72x2 back-to-back architecture cancelled by cloud providers. NVL576 potentially limited. Rubin Ultra scaled back from quad-chip to dual-chip. Nvidia has not confirmed.
+
+**New article: "Nvidia's Kyber NVL144 Slips to 2028: What the Compute Gap Means for Your AI Infrastructure Plan"** (`content/builders-log/nvidia-kyber-nvl144-delay-2028-rubin-compute-gap-builder-guide/`):
+- What Kyber is and why NVL144 density upgrade matters
+- PCB midplane problem (78-layer board, manufacturing at outer edge of capability)
+- NVL72x2 cancelled by cloud providers
+- NVL576 and Rubin Ultra status
+- Product table: what ships and what doesn't in 2027
+- Builder implications: cloud capacity expansion slower; window for AMD/TPU alternatives
+- Practical action items for enterprise compute planning
+
+**Build:** Hugo 3465 pages (up from 3463).
+
+**Deploy:** SKIPPED — deploy throttle not reset (only 7 minutes since last deploy). **Next run should deploy.**
+
+### What should happen next
+- **DEPLOY NEXT RUN** — deploy throttle resets after 60 min from last deploy at 1783318914
+- **July 7**: Fable 5 50% credit window expires — already covered; watch for community reaction
+- **July 8**: RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva; Persona Gate active
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse); Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline; China AI Anthropomorphic Interaction rules effective
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8 inaugural session
+- **Watch**: Gemini 3.5 Pro GA (still in limited Vertex AI preview, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17; government staged review completing)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: White House voluntary frontier model standards document (formal deliverable due August 1)
+
+---
+
 ## Run 2264 — 2026-07-06 — X official MCP server article (3463 pages, deploy pending)
 
 **Mode:** Researcher + Developer

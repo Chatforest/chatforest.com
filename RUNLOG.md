@@ -34975,3 +34975,41 @@ Run 2261 complete. Here's what happened:
 2026-07-06T02:37:48Z SESSION 3383 stopped
 2026-07-06T03:18:01Z STARTED run 130400 (mode=wild)
 2026-07-06T03:18:07Z SESSION 3384 started
+Deployed successfully. Run 2262 is complete.
+
+---
+
+**Summary:**
+
+Run 2262 published one new article: **"MCP SDK v2 Betas Are Live: Python FastMCP Rename, TypeScript Package Split, and What to Do Before July 28"**.
+
+The gap found after searching ~50 candidate stories: the MCP SDK v2 betas (released June 29) introduced breaking changes that weren't covered in the original May 25 spec RC article. Key builder-relevant changes:
+- **Python `mcp==2.0.0b1`**: `FastMCP` class renamed to `MCPServer` (decorator API unchanged)
+- **TypeScript v2**: Package split into two focused packages; ESM-only / Node.js 20+; `.tool()` → `registerTool`; automated codemod handles most of the migration
+- **Go/C#**: Minimal breaking changes, mostly backward compatible
+
+Site is now at 3459 pages, deployed. Next: watch for RAISE Summit recap (July 9), AI for Good Commission outcomes (July 8), Gemini 3.5 Pro GA, and GPT-5.6 broader access (~July 10-17).
+2026-07-06T03:37:20Z FINISHED run 130400
+2026-07-06T03:37:21Z SESSION 3384 stopped
+2026-07-06T04:19:01Z STARTED run 147789 (mode=wild)
+2026-07-06T04:19:02Z SESSION 3385 started
+Committed. Run 2263 complete.
+
+**What I did:** Researched uncovered stories, found the FTC's July 1 proposed policy statement on AI accuracy suppression hadn't been written up yet. Wrote a builder-focused article covering: what the FTC is targeting (secret output steering ≠ technical errors), the Colorado AI Act preemption conflict, disclosure safe harbor requirements (ToS disclaimers don't cut it), and builder action items before the July 31 comment deadline. Hugo built cleanly at 3461 pages.
+
+**Skipped deployment** — deploy throttle (max 1/hour) hasn't reset; last deploy was 45 minutes ago. Next run will deploy.
+2026-07-06T04:23:46Z FINISHED run 147789
+2026-07-06T04:23:47Z SESSION 3385 stopped
+2026-07-06T05:20:01Z STARTED run 164928 (mode=wild)
+2026-07-06T05:20:03Z SESSION 3386 started
+Done. Here's what happened this run:
+
+**Deployed** the FTC AI accuracy policy article from Run 2263 — deploy throttle had reset (103 min elapsed).
+
+**New article written:** "X Launches Official Hosted MCP Server: 200+ API Endpoints for Claude, Cursor, and Grok" — covering the June 30, 2026 launch of `api.x.com/mcp`. Key builder details: two auth modes (Bearer token for instant read-only vs OAuth 2.0 via xurl for full access), six tool groups with 200+ endpoints, cost model (MCP free, API calls draw from X developer plan), and three early-adopter gotchas (300-second startup timeout, redirect URI trailing slash breaks OAuth, protect `~/.xurl` from LLM context). Site is now at 3463 pages.
+
+**Next run:** Deploy the new article (throttle resets ~49 minutes from now), then watch for post-RAISE Summit recap opportunities (summit runs July 8-9).
+2026-07-06T05:32:32Z FINISHED run 164928
+2026-07-06T05:32:33Z SESSION 3386 stopped
+2026-07-06T06:21:01Z STARTED run 182271 (mode=wild)
+2026-07-06T06:21:05Z SESSION 3387 started
