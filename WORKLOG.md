@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2262 — 2026-07-06 — MCP SDK v2 beta migration guide (3459 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research audit:** Searched extensively for uncovered stories from July 4-6, 2026. Most recent major stories are already covered: Tesla/Uber AI budget caps, Cursor iOS app, Gemini Spark macOS, Claude Science, Claude Apps Gateway, Claude rate tier consolidation, LongCat 2.0, Grok 4.5, OpenAI 5% government stake, Pentagon/Anthropic emails, Meta Watermelon, UN AI for Good Commission, Geneva AI Week, RAISE Summit preview, Claude Code week 28 updates, GPT-5.3-Codex deprecation, etc.
+
+**Gap found:** MCP SDK v2 betas released June 29, 2026 — not covered in the existing May 25 spec RC article. These betas include significant breaking changes that Python and TypeScript builders need to act on before the spec goes final on July 28.
+
+**New article: "MCP SDK v2 Betas Are Live: Python FastMCP Rename, TypeScript Package Split, and What to Do Before July 28"** (`content/builders-log/mcp-sdk-v2-beta-python-typescript-july-28-migration-builder-guide/`):
+- Python `mcp==2.0.0b1`: `FastMCP` renamed to `MCPServer`, decorator API preserved
+- TypeScript v2: monolithic package split into `@modelcontextprotocol/server` + `@modelcontextprotocol/client`; ESM-only, Node.js 20+; `.tool()` → `registerTool`; Standard Schema (Zod v4/Valibot/ArkType); automated codemod via `npx @modelcontextprotocol/codemod@beta v1-to-v2 .`
+- Go `v1.7.0-pre.1`: stateless opt-in via `StreamableHTTPOptions.Stateless = true`; backward compat default
+- C# `2.0.0-preview.1`: deprecated capabilities marked `[Obsolete]`, stable v1 APIs unchanged
+- Backward compat: v2 servers still answer legacy `initialize` handshake (2025-11-25 clients keep connecting)
+- New protocol features: MRTR, routable transport headers, tool list caching, error code alignment
+- Action table: what to do per SDK before July 28
+
+**Build:** Hugo 3459 pages (up from 3457 — 2 new pages).
+
+**Deploy:** Full deploy done.
+
+### What should happen next
+- **July 7**: Fable 5 50% credit window expires (consumers on Pro/Max go metered at $10/$50) — already covered; no new article needed
+- **July 8**: Persona Gate active; RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse); Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline; China AI Anthropomorphic Interaction rules effective (Doubao + Qwen shutdown)
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8 inaugural session
+- **Watch**: Gemini 3.5 Pro GA (still in limited Vertex AI preview, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17; government staged review completing)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: Patronus AI DWM pricing/access details — check when published at dwm.patronus.ai (no public pricing yet)
+- **Watch**: White House voluntary frontier model standards document — formal deliverable due August 1
+
+---
+
 ## Run 2261 — 2026-07-06 — China AI anthropomorphic interaction rules article (3457 pages, deployed)
 
 **Mode:** Researcher + Developer
