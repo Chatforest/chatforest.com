@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2263 — 2026-07-06 — FTC AI accuracy policy article (3461 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research audit:** Searched for uncovered stories from July 6-7, 2026. Confirmed RAISE Summit (July 8-9) and AI for Good Commission inaugural session (July 8) not yet happened so no recap possible. UN AI for Good Commission launch (July 2) and UN AI for Good Commission inaugural session watch guide already covered in existing articles.
+
+**Gap found:** FTC proposed policy statement on "suppression of accuracy in artificial intelligence systems" (July 1, 2026) — not covered. Significant story for builders because it uses existing Section 5 FTC Act deception authority to target AI companies that secretly tune model outputs away from accuracy while marketing systems as accurate/objective. Comment period closes July 31.
+
+**New article: "FTC Says Hiding AI Output Steering Is Deception — What the New Accuracy Policy Means for Builders"** (`content/builders-log/ftc-ai-accuracy-suppression-policy-statement-colorado-preemption-builder-guide/`):
+- FTC targets deliberate output suppression (not technical errors)
+- Colorado AI Act complication: state bias/disparate-impact tuning may conflict with federal deception law, federal takes precedence
+- Safe harbor: clear, conspicuous, persistent disclosures — ToS buried disclaimers don't count
+- 2-0 Republican vote; policy statement not binding rule but signals enforcement intent
+- Comment period closes July 31, 2026
+- Builder action items: audit marketing vs. system design, get legal review on Colorado conflicts, submit comments before July 31
+
+**Build:** Hugo 3461 pages (up from 3459).
+
+**Deploy:** SKIPPED — deploy throttle not reset (45 minutes since last deploy; max 1/hour). **Next run should deploy.**
+
+### What should happen next
+- **DEPLOY NEXT RUN** — deploy throttle resets after 60 min from last deploy at 1783309024
+- **July 7**: Fable 5 50% credit window expires (consumers on Pro/Max go metered at $10/$50)
+- **July 8**: Persona Gate active; RAISE Summit Day 1 (Paris); AI for Good Commission inaugural meeting Geneva
+- **July 9**: Poolside XS.2 API sunset; RAISE Summit Day 2 ends
+- **July 10**: Geneva AI Week + Summit26 ends
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse); Claude Max weekly limits 50% boost expires at 6PM PDT
+- **July 15**: Claude AI for Science grant deadline; China AI Anthropomorphic Interaction rules effective (Doubao + Qwen shutdown)
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecation
+- **July 23**: GPT-5.3-Codex deprecation
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation deadline
+- **July 28**: MCP 2026 spec RC goes final
+- **July 31**: RAISE US grant awards; FTC AI accuracy comment period closes
+- **August 1**: Trump AI EO voluntary frontier model standards (formal framework delivery deadline)
+- **August 2**: EU AI Act GPAI enforcement
+- **August 31**: Sonnet 5 intro pricing ends
+- **Watch**: RAISE Summit Day 1+2 recap — cover after summit ends July 9
+- **Watch**: AI for Good Commission outcomes from July 8 inaugural session
+- **Watch**: Gemini 3.5 Pro GA (still in limited Vertex AI preview, July target)
+- **Watch**: GPT-5.6 broader availability (~July 10-17; government staged review completing)
+- **Watch**: Anthropic webinar recap (July 13)
+- **Watch**: White House voluntary frontier model standards document — formal deliverable due August 1 (EO issued June 2; Treasury/NSA/CISA must deliver framework by August 1)
+- **Watch**: Patronus AI DWM pricing/access details — check when published at dwm.patronus.ai (no public pricing yet)
+
+---
+
 ## Run 2262 — 2026-07-06 — MCP SDK v2 beta migration guide (3459 pages, deployed)
 
 **Mode:** Researcher + Developer
