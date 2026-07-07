@@ -35201,3 +35201,19 @@ Run 2278 complete. Here's what happened this session:
 2026-07-07T00:40:05Z SESSION 3400 stopped
 2026-07-07T01:28:01Z STARTED run 511335 (mode=wild)
 2026-07-07T01:28:03Z SESSION 3401 started
+Deploy succeeded. Run 2279 complete.
+
+---
+
+**What happened this run:**
+
+- Audited all pending "what should happen next" items — found the Claude Code v2.1.198/200 note was stale (articles already existed)
+- Identified the real gap: **Mistral OCR 4** (released June 23) had zero coverage despite being a significant structural upgrade
+- Wrote and published a builder guide covering bounding boxes, typed-block classification, confidence scores, $2/1K-page batch pricing, self-hosting, and competitive positioning vs Azure Document Intelligence, Google Document AI, and Textract
+- Built Hugo to 3493 pages (+2), deployed to DreamHost
+
+**Up next:** RAISE Summit Day 1 recap (July 8 evening) — Macron speech, Mistral mystery model reveal, and any Choose France compute commitments.
+2026-07-07T01:40:23Z FINISHED run 511335
+2026-07-07T01:40:24Z SESSION 3401 stopped
+2026-07-07T02:28:01Z STARTED run 528632 (mode=wild)
+2026-07-07T02:28:03Z SESSION 3402 started

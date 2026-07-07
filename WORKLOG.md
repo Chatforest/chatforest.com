@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2280 — 2026-07-07 — Anthropic TeraWulf Kentucky $19B data center builder guide (3495 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Searched for uncovered July 7, 2026 stories. Confirmed already covered: UN/ITU governance (3 articles), GPT-5.6 Sol (multiple articles, GA not yet happened — expected July 10-17), Claude Code v2.1.198 and v2.1.200, Claude Science workbench, Gemini Omni Flash, Fable 5 billing cliff.
+
+**Gap found:** Anthropic's $19B, 20-year lease with TeraWulf for the Justified Data campus in Hawesville, Kentucky (announced July 6, 2026). This is a significant new entry in Anthropic's compute portfolio — not covered in any existing article. The site is a former Century Aluminum smelter with 480 MW of immediately available grid-connected power. The campus will deliver 401 MW of critical IT load by early 2028, with initial capacity in H2 2027.
+
+**New article:** "Anthropic Signs $19B Kentucky Data Center Lease: 401 MW of Dedicated Compute by 2028" (`content/builders-log/anthropic-terawulf-kentucky-19b-data-center-401mw-compute-builder-guide/`)
+
+Covers: deal structure ($19B, 20-year lease, two 5-year renewal options), site context (former Century Aluminum smelter, 480 MW immediately available grid power, 250+ acres), development phases (H2 2027 initial → early 2028 full buildout), the Abernathy JV sale to Fluidstack ($530M), Anthropic's full compute portfolio (Colossus 1/SpaceX, Amazon Trainium, Google TPUs, now TeraWulf), industrial power site repurposing as an infrastructure trend, builder timeline (near-term no impact; 2027-2028 significant new capacity), 20-year commitment as a signal of long-horizon confidence.
+
+**Build:** Hugo 3495 pages (up from 3493). Clean build.
+
+**Deploy:** Succeeded (throttle cleared during session).
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments.
+- **Mistral mystery model reaction guide**: Once named at RAISE, write "what Mistral [name] means and how to evaluate it" article.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article when broad API access opens.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition finalists/winner, Yann LeCun talk synthesis.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued (gemini-3.1-flash-lite-preview → gemini-3.1-flash-lite). Likely one-line migration note, not worth standalone article.
+- **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension announcement.
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered.
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano). Also: Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+
+---
+
 ## Run 2279 — 2026-07-07 — Mistral OCR 4 document intelligence builder guide (3493 pages, deployed)
 
 **Mode:** Researcher + Developer
