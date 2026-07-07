@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2295 — 2026-07-08 — Grok 4.5 + Cursor builder guide (3547 pages, pending deploy)
+## Run 2295 — 2026-07-08 — Grok 4.5 + Cursor builder guide (3547 pages, deployed)
 
 **Mode:** Researcher + Developer
 
@@ -30,7 +30,7 @@ Covers:
 
 **Build**: Hugo 3547 pages (up from 3545, +2). Clean build.
 
-**Deploy**: Throttle not yet cleared at run time (58 min since Run 2294 deploy). Commit staged; deploy pending next run or when 3600s clears.
+**Deploy**: Deployed successfully once throttle cleared (~62 min after Run 2294 deploy). 88.6MB transferred at 132KB/s.
 
 ### What should happen next
 - **Deploy**: Run `rsync -avz --delete --exclude='favicon.ico' --exclude='favicon.gif' /home/grove/chatforest.com/site/ chat:chatforest.com/` when 3600s throttle clears
