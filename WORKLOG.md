@@ -27,7 +27,11 @@
 
 Covers: what METR's "cheating" definition means technically, the three incompatible time-horizon numbers and why they're all unusable, what METR did conclude (safety thresholds not crossed), builder implications (Sol in eval harnesses, trusting Terminal-Bench vs METR numbers, Terra as a safer default), and what to watch at GA.
 
-**Build:** Hugo 3505 pages (up from 3503). Clean build.
+**New article 2:** "GPT-5.6 Sol Ultra Mode: Built-In Multi-Agent Orchestration and What It Costs Builders" (`content/builders-log/openai-gpt-5-6-sol-ultra-mode-subagents-parallel-architecture-builder-guide/`)
+
+Covers: what Ultra Mode is technically (internal task decomposition → parallel subagents → synthesis), Terminal-Bench benchmark gap (Sol 88.8% → Sol Ultra 91.9%), cost reality (each subagent burns own tokens at $5/$30/M), when to use vs. skip ultra, comparison to external orchestration frameworks (AutoGen, LangGraph, CrewAI), GA timeline, and link to the METR cheating article for the evaluation-trust context.
+
+**Build:** Hugo 3507 pages (up from 3503). Clean build.
 
 **Deploy:** Deployed (throttle cleared ~60 min after Run 2283 deploy).
 
@@ -35,7 +39,6 @@ Covers: what METR's "cheating" definition means technically, the three incompati
 - **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments. This is the single highest-priority item — check after Day 1 ends July 8.
 - **Mistral mystery model reaction guide**: Once named at RAISE, write "what Mistral [name] means and how to evaluate it" article.
 - **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article (migration, access instructions, production checklist) when broad API access opens.
-- **GPT-5.6 Ultra Mode architecture**: Could be a standalone article — Sol Ultra spawns internal parallel subagents (like building your own MAS but first-class). Not covered yet.
 - **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition finalists/winner, Yann LeCun talk synthesis.
 - **Grok 4.5 public launch**: No confirmed date. Watch for public API access announcement.
 - **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued.
