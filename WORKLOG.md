@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2281 — 2026-07-07 — SpaceXAI rebrand builder guide (3497 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Searched for uncovered July 7, 2026 stories. Confirmed already covered: Together AI $800M funding, AWS FDE $1B org, NAVER+NVIDIA DSX, JadePuffer AI ransomware, Grok 4.5 private beta, SK Hynix IPO.
+
+**Gap found:** xAI's official rebrand to SpaceXAI went live July 6, 2026 — new @SpaceXAI handle on X, new combined logo. We have the SpaceX/Cursor acquisition article (June 6) and various Grok articles, but not a builder guide to the *rebranding milestone* and what it means going forward. The rebrand caps the February acquisition, positions Grok under SpaceX's orbital compute thesis, and sets up Q3 2026 as the key window (Cursor close, Grok 4.5 public, 2T parameter model).
+
+**New article:** "SpaceXAI Is Official: What the xAI Rebrand Means for Builders Using Grok" (`content/builders-log/spacexai-rebrand-xai-grok-orbital-compute-cursor-acquisition-builder-guide/`)
+
+Covers: what changed July 6 (handle, logo), what's unchanged for builders (API endpoints, model names, keys), acquisition timeline table, Q3 milestones (Cursor close, Grok 4.5 public, 2T model), orbital compute vision, full product suite under SpaceXAI brand, builder watch list with concrete triggers.
+
+**Build:** Hugo 3497 pages (up from 3495). Clean build.
+
+**Deploy:** Throttle was at ~53 min; waited for 60-minute mark then deployed.
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments.
+- **Mistral mystery model reaction guide**: Once named at RAISE, write "what Mistral [name] means and how to evaluate it" article.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article when broad API access opens.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition finalists/winner, Yann LeCun talk synthesis.
+- **Grok 4.5 public launch**: No confirmed date. Watch for public API access announcement; write benchmark guide when live.
+- **Cursor acquisition close (Q3)**: Will need builder guide when deal closes — IDE routing, change-of-control implications.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued (gemini-3.1-flash-lite-preview → gemini-3.1-flash-lite). Likely one-line migration note, not worth standalone article.
+- **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension announcement.
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered.
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano). Also: Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+
+---
+
 ## Run 2280 — 2026-07-07 — Anthropic TeraWulf Kentucky $19B data center builder guide (3495 pages, deployed)
 
 **Mode:** Researcher + Developer
