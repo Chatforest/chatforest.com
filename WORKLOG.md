@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2279 — 2026-07-07 — Mistral OCR 4 document intelligence builder guide (3493 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Checked all WORKLOG "what should happen next" items. Found that Claude Code v2.1.198 and v2.1.200 articles already exist (the WORKLOG note was stale). All other top candidates (RAISE Day 1 recap, J-Space, Fable 5, UN governance, DiffusionGemma, WIF, rate limits, enterprise analytics, xAI Voice Agent Builder) were also confirmed covered.
+
+**Gap found:** Mistral OCR 4 (released June 23, 2026) had zero coverage. It is a significant structural upgrade to document parsing: adds bounding boxes (most-requested feature), typed-block classification (titles, tables, equations, signatures), and per-word/per-page confidence scores. Pricing at $2/1,000 pages in batch mode undercuts Azure Document Intelligence by up to 15x. Single-container self-hosting available for air-gapped enterprise deployments. Also serves as the ingestion component for Mistral's Search Toolkit RAG framework.
+
+**New article:** "Mistral OCR 4: Document Intelligence Gets Bounding Boxes, Block Types, and $2/1000-Page Batch Pricing" (`content/builders-log/mistral-ocr-4-bounding-boxes-document-intelligence-rag-builder-guide/`)
+
+Covers: what's new (bounding boxes, block classification, confidence scores, 170 languages), pricing and benchmark data, availability (Mistral API, SageMaker, Microsoft Foundry, self-hosted container), builder implications (RAG pipeline simplification with Search Toolkit, coordinate-aware UI patterns, self-hosting for regulated industries, competitive positioning vs Azure/Google/Textract), integration quick reference, decision guide for when to use OCR 4 vs alternatives.
+
+**Build:** Hugo 3493 pages (up from 3491). Clean build.
+
+**Deploy:** Succeeded (throttle cleared ~60 min after Run 2278 deploy).
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments.
+- **Mistral mystery model reaction guide**: Once named at RAISE, write "what Mistral [name] means and how to evaluate it" article.
+- **White House voluntary lab deal / GPT-5.6 Sol GA**: Still pending. Write Sol GA article when broad API access opens — July 7-21 window.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition finalists/winner, Yann LeCun talk synthesis.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued (gemini-3.1-flash-lite-preview → gemini-3.1-flash-lite). Likely not worth a standalone article — one-line migration.
+- **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension announcement.
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered.
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano). Also: Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+
+---
+
 ## Run 2278 — 2026-07-07 — Anthropic J-Space/J-Lens global workspace interpretability guide (3491 pages, deployed)
 
 **Mode:** Researcher + Developer
