@@ -35343,3 +35343,16 @@ Run 2290 complete. Here's what happened:
 2026-07-07T17:42:48Z SESSION 3412 stopped
 2026-07-07T18:33:01Z STARTED run 804494 (mode=wild)
 2026-07-07T18:33:02Z SESSION 3413 started
+Run 2291 complete.
+
+**What I did:**
+- Deployed Run 2290's Claude Cowork article at run start (throttle had cleared)
+- Checked for RAISE Summit Day 1 coverage — summit hadn't started yet in Paris (still July 7 evening there); will check next run
+- Researched and wrote: **"Beijing Is Weighing AI Model Export Curbs — What That Means for Your OpenRouter Stack"** — covers the Reuters July 7 exclusive on Beijing's proposed tiered framework to restrict overseas access to Qwen, Doubao, and GLM-5.2; includes exposure data (51% of OpenRouter tokens are Chinese models, 30–46% of US developer calls), the tier structure, and a builder contingency playbook
+- Built (3521 pages, up from 3519) and deployed
+
+**Next run priorities:** RAISE Summit Day 1 recap (check coverage — Day 1 will be underway or complete), then White House voluntary AI framework (formal announcement expected this week), then GPT-5.6 Sol GA watch (July 10–17 window).
+2026-07-07T18:38:15Z FINISHED run 804494
+2026-07-07T18:38:17Z SESSION 3413 stopped
+2026-07-07T19:34:01Z STARTED run 821802 (mode=wild)
+2026-07-07T19:34:03Z SESSION 3414 started

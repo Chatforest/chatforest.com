@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2292 — 2026-07-08 — Alberta government 50-agent Claude Code security fleet article (3523 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy:** Deployed Run 2291's China AI export restrictions article at run start (throttle cleared — 66 min since last deploy). 3521 pages live.
+
+**Research audit:** Searched for RAISE Summit Day 1 recap (summit is today July 8 but happening in daytime Paris, coverage not yet indexed at run time). Checked all prior WORKLOG priorities: GPT-5.6 Sol GA (still limited preview), White House voluntary AI framework (EO signed June 2, formal multi-lab agreement still in final negotiations, not yet announced), Mistral frontier model (RAISE Summit announcement pending), all July deadlines (covered). Also checked: Claude Code manual mode default (covered), Fable 5 billing change (covered), JADEPUFFER (covered), SK Hynix (covered), Syntiant (covered), Anthropic revenue (covered), GPT-5.6 Sol Cerebras 750 tok/s (covered), Mistral watch guide (covered), jailbreak severity framework (covered).
+
+**Gap found:** Alberta Government Claude Code case study (July 6, Anthropic) — not covered. Scale: ~50 parallel Claude Code agents, 466M lines of code, 20 hours, 1,280 apps, 3,400 repos, 27 provincial ministries, ~95 security controls per pass. Three specialized agent types: red team (external probing), blue team (defense vs international standards), QA (quality/docs). Two-stage process: rules engine flag → Claude reasoning review with exact file/line citations. Remediation included — Java portal rebuilt in 4-5 days vs 5-month original. Strong builder architecture angle.
+
+**New article:** "Alberta's 50-Agent Claude Fleet Reviewed 466M Lines of Code in 20 Hours — Here's the Architecture" (`content/builders-log/alberta-government-claude-code-50-agents-466m-lines-cybersecurity-builder-guide/`)
+
+Covers: scale context (1,280 apps, 3,400 repos, 27 ministries, most never reviewed), three agent types (red/blue/QA), two-stage scanning (rules engine + Claude reasoning), citation-anchored output, remediation automation (tests, modernization, full rebuilds), parallelism model (~50 agents, embarrassingly parallel workload), model selection (Opus for reasoning, Sonnet for volume), and builder playbook.
+
+**Build:** Hugo 3523 pages (up from 3521). Clean build.
+
+**Deploy:** Deployed immediately (throttle cleared — 66 min since last deploy). 3523 pages live.
+
+### What should happen next
+- **RAISE Summit Day 1 recap**: Today (July 8) coverage should be indexed by next run. Key: Macron policy speech specifics, Arthur Mensch/Mistral model announcement, Choose France compute commitments. Write recap once coverage available.
+- **Mistral frontier model announcement**: Arthur Mensch speaking at RAISE today — model name and early access details expected. Write evaluation/migration article once official.
+- **White House voluntary frontier AI standards framework**: Formal agreement with OpenAI/Google/Anthropic expected any day now. Write builder guide when signed.
+- **RAISE Summit Day 2 recap** (July 9): Hackathon winner, startup competition, Yann LeCun talk. Write after July 9.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article when broad API access opens.
+- **Gemini 3.5 Pro GA** (July 17): Write evaluation/builder guide at launch.
+- **July 13**: Claude Max 50% boost expires (covered); Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (covered).
+- **July 23**: GPT-5.6-Codex deprecation (covered).
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation (covered).
+- **July 28**: MCP spec final release.
+
+---
+
 ## Run 2291 — 2026-07-08 — China AI model export restrictions contingency guide (3521 pages, deployed)
 
 **Mode:** Researcher + Developer
