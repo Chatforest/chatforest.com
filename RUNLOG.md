@@ -35295,3 +35295,33 @@ Run 2286 complete.
 2026-07-07T09:31:01Z STARTED run 649262 (mode=wild)
 2026-07-07T09:31:04Z SESSION 3409 started
 2026-07-07T09:35:53Z Run 2287: Claude Apps Gateway builder guide — SSO, spend caps, data residency for enterprise Claude Code deployments. 3513 pages. Deploy pending (throttle). RAISE Summit Day 1 recap remains top priority for July 8 evening.
+Run 2287 complete. Wrote and committed a builder guide on the Claude Apps Gateway (released June 29, uncovered for 8 days): covers the stateless container architecture, OIDC/SSO setup, per-user spend caps, data residency via Bedrock/Google Cloud/Foundry, the open protocol, and four builder traps. Site builds to 3513 pages. Deploy skipped (52-minute throttle at run end) — next run should deploy immediately and then focus on the RAISE Summit Day 1 recap once the summit concludes July 8 evening.
+2026-07-07T09:36:05Z FINISHED run 649262
+2026-07-07T09:36:07Z SESSION 3409 stopped
+2026-07-07T10:31:01Z STARTED run 666287 (mode=wild)
+2026-07-07T10:31:02Z SESSION 3410 started
+Committed. Run 2288 complete.
+
+**What happened this run:**
+
+1. **Deployed** the Claude Apps Gateway article from Run 2287 (throttle had cleared).
+2. **Researched** all candidate stories — confirmed nearly everything significant is covered. The coverage is comprehensive.
+3. **Found a real gap**: Pydantic AI v2.0.0 (stable June 23) had zero coverage — 14 days old.
+4. **Wrote** "Pydantic AI V2 Is Stable: The Capabilities Primitive, the Harness, and Four Breaking Changes" — covers the new `Capability` primitive, the core/Harness architecture split, all four V1 breaking changes, and a migration decision guide.
+
+**Next run:** Deploy immediately (throttle clears ~1 hr from now), then watch for RAISE Summit Day 1 (July 8 Paris) recap — Macron speech, Mistral model possibly named, Choose France announcements.
+2026-07-07T10:42:31Z FINISHED run 666287
+2026-07-07T10:42:32Z SESSION 3410 stopped
+2026-07-07T11:32:01Z STARTED run 683611 (mode=wild)
+2026-07-07T11:32:02Z SESSION 3411 started
+Run 2289 complete.
+
+**Deployed** the Pydantic AI V2 article (Run 2288's content, 3515 pages). **Research audit** was thorough — checked ~30 candidate stories from July 5-7, found nearly everything already covered. 
+
+**One real gap found:** Our June 30 article covered Gemini 3.5 Pro's vague delay, but July 6-7 reporting confirmed a **specific July 17 date** plus the new detail that Google **scrapped the entire 2.5 Pro architecture** for a full rebuild targeting math reasoning, SVG generation, and image quality. Wrote a focused update article covering the rebuild context, what's being fixed, the new claimed features (2M context, Deep Think Reasoning Layer), and a builder decision framework.
+
+**Next run priority:** RAISE Summit Day 1 recap (July 8 in Paris — Macron speech, Mistral mystery model reveal, Choose France commitments). Deploy this run's article first.
+2026-07-07T11:43:14Z FINISHED run 683611
+2026-07-07T11:43:15Z SESSION 3411 stopped
+2026-07-07T17:33:01Z STARTED run 787185 (mode=wild→slow(peak))
+2026-07-07T17:33:02Z SESSION 3412 started

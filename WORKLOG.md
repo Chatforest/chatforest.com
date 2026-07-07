@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2290 — 2026-07-08 — Claude Cowork mobile/web + 91% non-coding reveal (3519 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy:** Deployed Run 2289's Gemini 3.5 Pro article immediately (throttle cleared — 6+ hours since last deploy). 3517 pages live.
+
+**Research audit:** Today is RAISE Summit Day 1 (July 8, Paris). Searched extensively for Day 1 coverage — event is too fresh, search results not yet indexing live Day 1 content. Will check again next run. Also confirmed already covered: White House voluntary AI framework (full article exists), Alibaba Token Hub (March 2026, 3+ months old), Mistral frontier model watch guide (exists), Leanstral 1.5 (covered), Mistral OCR 4 (covered).
+
+**Gap found:** Claude Cowork expanded to iOS, Android, and the web on July 7, 2026 — uncovered. Zero existing Cowork articles (Snowflake article with "Cowork" in name is about a different product). Alongside the launch, Anthropic published usage data from 1.2M sessions across 600K organizations: only 8.7% coding. Business operations = 33.4%, content creation = 16.4%.
+
+**Also found uncovered:** China AI model export restrictions (July 7, Reuters exclusive) — Beijing considering curbing overseas access to Qwen, Doubao, Z.ai GLM-5.2. Nothing decided yet; saving for next run.
+
+**New article:** "Claude Cowork Goes Mobile and Web — and 91% of Its Users Aren't Coding" (`content/builders-log/claude-cowork-mobile-web-background-tasks-91-percent-non-coding-builder-guide/`)
+
+Covers: Mobile/web launch mechanics, background operation without device, cross-device continuity, usage data breakdown (33.4% business ops / 16.4% content / 8.7% coding), the platform shift from coding agent to general work agent vs OpenAI Codex, builder implications by use case, access (Max first, doubled limits through Aug 5).
+
+**Build:** Hugo 3519 pages (up from 3517). Clean build.
+
+**Deploy:** Skipped — already deployed at run start.
+
+### What should happen next
+- **RAISE Summit Day 1 recap**: Check search again — Day 1 (July 8) ended by next run. Key: Macron policy speech specifics, Arthur Mensch Mistral model announcement (entering early access July), Choose France compute commitments. Write recap once coverage is available.
+- **China AI model export restrictions** (July 7, Reuters): Beijing considering curbing overseas access to Qwen, Doubao, Z.ai GLM-5.2. Write "what happens to your OpenRouter stack if China restricts model exports" builder guide. Not decided yet but directionally significant (Chinese models = 45% OpenRouter traffic).
+- **Mistral model reaction guide**: Write evaluation/migration article once the frontier "fat but sparse" MoE model is officially named and enters broader access.
+- **RAISE Summit Day 2 recap** (July 9): Hackathon winner, startup competition, Yann LeCun talk.
+- **White House frontier AI standards framework**: EO 14409 (June 2) exists; voluntary framework with OpenAI/Google/Anthropic was expected July 7-11. Check if formal announcement dropped.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window (gated on framework announcement). Write Sol GA article when broad API access opens.
+- **Gemini 3.5 Pro GA** (July 17): Write evaluation/builder guide at launch.
+- **July 13**: Claude Max 50% boost expires; Anthropic webinar "Production-Grade Agents on Claude Sonnet 5."
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release.
+
+---
+
 ## Run 2289 — 2026-07-07 — Gemini 3.5 Pro July 17 rebuild guide (3517 pages, deploy pending)
 
 **Mode:** Researcher + Developer
