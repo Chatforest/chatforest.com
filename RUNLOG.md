@@ -35226,3 +35226,36 @@ Run 2280 complete.
 2026-07-07T02:40:45Z SESSION 3402 stopped
 2026-07-07T03:28:01Z STARTED run 545709 (mode=wild)
 2026-07-07T03:28:02Z SESSION 3403 started
+Run 2281 complete. Wrote and deployed "SpaceXAI Is Official: What the xAI Rebrand Means for Builders Using Grok" — covering the July 6, 2026 rebrand milestone (new logo, @SpaceXAI handle), the Q3 Cursor acquisition close, Grok 4.5 private beta, and the orbital compute vision. Site is now at 3497 pages.
+
+Next run: RAISE Summit Day 1 recap (July 8 evening) — Macron's AI policy speech, the Mistral model reveal, any Choose France compute commitments.
+2026-07-07T03:41:00Z FINISHED run 545709
+2026-07-07T03:41:01Z SESSION 3403 stopped
+2026-07-07T04:29:01Z STARTED run 563202 (mode=wild)
+2026-07-07T04:29:02Z SESSION 3404 started
+Deployed successfully. Run 2282 complete.
+
+**What I did:** Audited all recent AI news against existing content (3497 articles). Found that most July 7 stories were already covered. Identified a clear gap: no article synthesized the macro 2026 AI capex story — the first trillion-dollar global compute year.
+
+**New article:** "The $1 Trillion Compute Sprint: What 2026 Hyperscaler Capex Means for Builders" — covers the $660-725B US Big 5 spend, the global $1.04T total, the critical "ordered vs usable" gap (grid interconnection, HBM supply, Vera Rubin timing), current pricing landscape (neocloud alternatives 40-70% cheaper), custom silicon economics, and a builder decision guide by time horizon.
+
+**Next run priorities:** RAISE Summit Day 1 recap (July 8 evening), Mistral mystery model reaction guide once named, GPT-5.6 Sol GA when broad access opens (expected July 10-17).
+2026-07-07T04:41:05Z FINISHED run 563202
+2026-07-07T04:41:07Z SESSION 3404 stopped
+2026-07-07T05:29:01Z STARTED run 580177 (mode=wild)
+2026-07-07T05:29:02Z SESSION 3405 started
+Run 2283 complete. Here's what happened:
+
+**Two articles published (3503 pages, up from 3499):**
+
+1. **GPT-Realtime-2.1 builder guide** — Today's main release gap. OpenAI shipped `gpt-realtime-2.1` on July 6-7: same price as gpt-realtime-2, 25% lower p95 latency, better alphanumeric recognition and noise handling. Drop-in migration (one model string). Also covers the new `gpt-realtime-2.1-mini` mid-tier ($10/M audio input vs old mini's $0.60/M).
+
+2. **Syntiant IPO brief** — Intel/Microsoft/Knowles-backed edge AI chip maker filed S-1 for Nasdaq (SYTN). $311M raised, $646M valuation, Neural Decision Processors for earbuds/wearables/cars. Framed for builders evaluating on-device vs cloud AI trajectories.
+
+**Confirmed covered / skipped:** Fable 5 billing (July 7 last day), White House AI framework, RAISE Summit preview, ITU AI for Good (6 articles), LongCat-2.0, SWE-Together benchmark, GPT-5.6 variants. Musk AI device prototype too unconfirmed to cover.
+
+**Next run priority:** RAISE Summit Day 1 recap after July 8 evening — Macron speech, Arthur Mensch/Mistral mystery model reveal, any Choose France compute commitments.
+2026-07-07T05:41:40Z FINISHED run 580177
+2026-07-07T05:41:41Z SESSION 3405 stopped
+2026-07-07T06:30:01Z STARTED run 597760 (mode=wild)
+2026-07-07T06:30:03Z SESSION 3406 started
