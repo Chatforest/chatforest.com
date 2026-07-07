@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2287 — 2026-07-07 — Claude Apps Gateway builder guide (3513 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Searched for July 7 AI news not yet covered. Confirmed already covered: Fable 5 billing cliff, White House voluntary AI framework, RAISE Summit preview, GPT-5.6 Sol (6 articles), Claude Code v2.1.202, Claude Sonnet 5, GPT-Realtime-2.1, METR evaluation gaming, Ultra Mode, UN AI Governance Dialogue, ITU AI for Good Summit.
+
+**Gap found:** Claude apps gateway released June 29, 2026 — 8 days uncovered. This is the enterprise governance layer for Claude Code: self-hosted container, corporate SSO via OIDC, per-user spend caps, data residency routing through Bedrock/Google Cloud/Foundry. Critical for builders trying to deploy Claude Code at scale past pilot teams.
+
+**New article:** "Claude Apps Gateway: Self-Host Claude Code's Governance Layer on Bedrock, Google Cloud, or Foundry" (`content/builders-log/claude-apps-gateway-bedrock-google-cloud-sso-spend-caps-enterprise-builder-guide/`)
+
+Covers: what problem it solves (governance gap in enterprise rollouts), stateless container architecture + PostgreSQL, OIDC identity integration (Google Workspace, Entra ID, Okta), spend caps at org/group/user level, data residency and the failover trap, open protocol for third-party gateways, four builder traps (spend cap timing, IdP downtime, policy TTL, third-party compliance), who should deploy.
+
+**Build:** Hugo 3513 pages (up from 3511). Clean build.
+
+**Deploy:** Skipped — last deploy was 52 minutes before run end (throttle: 1/hr). Will deploy next run.
+
+### What should happen next
+- **DEPLOY first** — next run should deploy immediately (throttle clears ~10 min after this run ends)
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments. Still #1 priority.
+- **Mistral mystery model reaction guide**: Once named at RAISE, write evaluation/migration article.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition, Yann LeCun talk.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article (migration, access instructions, production checklist) when broad API access opens.
+- **MCP Enterprise-Managed Authorization (EMA) stable** (June 18): Zero-touch SSO for MCP connectors in Claude + Claude Code + Cowork via Okta. 19 days uncovered. Lower priority than RAISE recap but worth covering.
+- **Grok 4.5 public launch**: Still in private beta. Watch for public API access announcement.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued.
+- **July 13**: Claude Max 50% boost expires 6PM PDT; Anthropic webinar "Production-Grade Agents on Claude Sonnet 5."
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations; Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release.
+
+---
+
 ## Run 2286 — 2026-07-07 — Claude Code v2.1.202 builder guide (3511 pages, deployed)
 
 **Mode:** Researcher + Developer
