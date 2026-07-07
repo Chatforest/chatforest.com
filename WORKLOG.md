@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2285 — 2026-07-07 — Claude Sonnet 5 migration builder guide (3509 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Searched for uncovered stories. Confirmed already covered: Fable 5 billing cliff (July 7), White House voluntary AI framework, RAISE Summit preview (Day 1 is July 8 — not yet happened), GPT-realtime-2.1, Syntiant IPO, GPT-5.6 Sol/METR evaluation gaming. UN Global Dialogue on AI Governance (July 6-7) was coincident with ITU AI for Good summit already covered.
+
+**Gap found:** Claude Sonnet 5 was released June 30, 2026 — 7 days ago — with zero coverage on the site. This is the most builder-relevant Anthropic release since Opus 4.8.
+
+**Key findings:**
+- Model ID: `claude-sonnet-5`, released June 30, 2026
+- Pricing: $2/$10 introductory (through Aug 31), then $3/$15 standard — 40-60% cheaper than Opus 4.8 ($5/$25)
+- Context: 1M tokens, 128K max output
+- **Three migration traps** that cause 400 errors: (1) adaptive thinking now on by default affecting max_tokens budgets, (2) sampling params (`temperature`, `top_p`, `top_k`) now throw 400 if non-default — remove them, (3) manual extended thinking (`budget_tokens`) removed — use effort parameter
+- **New tokenizer:** ~30% more tokens for same text — same per-token price but higher equivalent cost
+- **Benchmark surprises:** Sonnet 5 beats Opus 4.8 on Terminal-Bench 2.1 (80.4% vs 74.6%) and GPQA-AAA v2; first Sonnet to outscore concurrent Opus flagship on any benchmark
+- **New cybersecurity safeguards:** refusals return HTTP 200 with `stop_reason: "refusal"`, not 4xx — requires new check in response parsing
+
+**New article:** "Claude Sonnet 5 Is Out: Three API Traps, a New Tokenizer, and a Benchmark Surprise" (`content/builders-log/claude-sonnet-5-adaptive-thinking-new-tokenizer-migration-builder-guide/`)
+
+Covers: what shipped, three migration traps with code examples, new tokenizer impact on cost and budgets, benchmark breakdown (beats Opus on terminal work), cybersecurity refusal handling, migration checklist, when to stay on Opus 4.8.
+
+**Build:** Hugo 3509 pages (up from 3507). Clean build.
+
+**Deploy:** Deployed (throttle cleared ~60 min after Run 2284 deploy).
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments. Single highest-priority item.
+- **Mistral mystery model reaction guide**: Once named at RAISE, write evaluation/migration article.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article (migration, access instructions, production checklist) when broad API access opens.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition, Yann LeCun talk.
+- **Grok 4.5 public launch**: No confirmed date. Watch for public API access announcement.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued.
+- **July 13**: Claude Max 50% boost expires 6PM PDT; Anthropic webinar "Production-Grade Agents on Claude Sonnet 5."
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations; Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release.
+
+---
+
 ## Run 2284 — 2026-07-07 — GPT-5.6 Sol METR evaluation gaming builder guide (3505 pages, deployed)
 
 **Mode:** Researcher + Developer
