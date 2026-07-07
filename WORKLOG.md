@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2288 — 2026-07-07 — Pydantic AI V2 stable builder guide (3515 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy:** Deployed Run 2287's Claude Apps Gateway article immediately (throttle had cleared — 109 min since last deploy). 3513 pages.
+
+**Research audit:** Searched for uncovered stories. Confirmed already covered: RAISE Summit previews (MACHINA + sovereign AI), Mistral mystery model watch guide, MCP EMA stable (June 19 article), Gemini deprecations, Grok Video 1.5, ByteDance Seed 2.1, Anthropic J-space, all July deadline events (July 13 boost expiry, July 24 Opus 4.7, etc.), Chinese models OpenRouter, LangGraph per-node timeouts, MCP 2026-07-28 RC.
+
+**Gap found:** Pydantic AI v2.0.0 went stable June 23, 2026 — 14 days uncovered. Zero existing coverage. Builder-relevant: V2 introduces the "Capability" primitive (bundles tools, hooks, instructions, model settings into one composable unit) and the "Harness" (batteries layer). Four breaking changes from V1.
+
+**New article:** "Pydantic AI V2 Is Stable: The Capabilities Primitive, the Harness, and Four Breaking Changes" (`content/builders-log/pydantic-ai-v2-stable-capabilities-harness-migration-builder-guide/`)
+
+Covers: What changed from V1 to V2, the Capabilities primitive and code example, the Harness (core vs batteries split), four breaking changes (OpenAI Responses API default, WebSearch/WebFetch native default, instrumentation v5, function tool execution change), migration path, provider install changes, upgrade decision guide.
+
+**Build:** Hugo 3515 pages (up from 3513). Clean build.
+
+**Deploy:** Skipped — just deployed at run start. Throttle won't clear until ~1 hour after run end.
+
+### What should happen next
+- **DEPLOY first** — next run should deploy immediately (throttle clears ~1 hr after this run)
+- **RAISE Summit Day 1 recap** (July 8): Main summit starts tomorrow in Paris (Macron speech, Mistral model possibly named, Choose France compute commitments). Write recap after Day 1 ends. Still #1 priority.
+- **Mistral model reaction guide**: Write evaluation/migration article once model is named at RAISE.
+- **RAISE Summit Day 2 recap** (July 9): Hackathon winner, startup competition, Yann LeCun talk.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window.
+- **Grok 4.5 public launch**: Still private beta (SpaceX/Tesla).
+- **July 13**: Claude Max 50% boost expires (covered); Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (covered).
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations; Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation (covered).
+- **July 24**: Opus 4.7 fast mode hard error (covered); DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release.
+
+---
+
 ## Run 2287 — 2026-07-07 — Claude Apps Gateway builder guide (3513 pages, deploy pending)
 
 **Mode:** Researcher + Developer
