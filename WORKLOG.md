@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2282 — 2026-07-07 — AI Capex $1T sprint builder guide (3499 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Audited all recent WORKLOG "what should happen next" items plus a broad sweep for July 7 stories. Confirmed already covered: RAISE Summit preview (2 articles), Mistral summer model watch guide, White House voluntary AI framework, Fable 5 billing cliff/Persona gate, Claude Code Artifacts, MCP July 28 spec RC (4 articles), Microsoft Frontier Company, HHS/AERO healthcare audit, Alteryx Agent Studio MCP, Claude Sonnet 5 (3+ articles), GPT-5.6 Sol/Terra/Luna (3+ articles), Qualcomm/Tenstorrent, Geneva AI week/UN Governance.
+
+**Gap found:** No article covered the aggregate 2026 AI capex story — the fact that this is the first trillion-dollar global compute capex year, with the US Big 5 alone committing $660-725B (77% YoY increase). The macro context matters for builders trying to understand GPU pricing trajectories, Vera Rubin availability timing, and why capacity is expanding but hasn't hit pricing yet. Individual data points (Anthropic/TeraWulf $19B, xAI orbital compute) are covered but not synthesized.
+
+**New article:** "The $1 Trillion Compute Sprint: What 2026 Hyperscaler Capex Means for Builders" (`content/builders-log/ai-capex-2026-1-trillion-compute-sprint-hyperscaler-buildout-builder-guide/`)
+
+Covers: company-by-company breakdown ($200B Amazon, $175-185B Alphabet, $120B+ Microsoft, $115-135B Meta, $50B Oracle), global total ($1.04T including neoclouds/China/sovereigns), 74 facilities broke ground in 2026, the "ordered vs usable" gap (grid interconnection, HBM supply, construction lag), Vera Rubin timing (late 2026, hyperscaler-reserved first), current pricing landscape (neocloud 40-70% below hyperscalers), custom silicon inflection (Midjourney 65% reduction on TPUs), and builder decision guide by time horizon (now / late 2026 / 2027-2028 / $500K+/month spend).
+
+**Build:** Hugo 3499 pages (up from 3497). Clean build.
+
+**Deploy:** Succeeded (throttle cleared ~60 min after Run 2281 deploy).
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments. Check if White House AI framework was formally announced at/around summit.
+- **Mistral mystery model reaction guide**: Once named at RAISE, write "what Mistral [name] means and how to evaluate it" article.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article when broad API access opens.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition finalists/winner, Yann LeCun talk synthesis.
+- **Grok 4.5 public launch**: No confirmed date. Watch for public API access announcement; write benchmark guide when live.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued (gemini-3.1-flash-lite-preview → gemini-3.1-flash-lite). Likely one-line migration note, not worth standalone article unless Gemini 3.5 Pro GA also drops same day.
+- **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension announcement.
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered.
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano). Also: Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release (RC already covered in 4 articles). Monitor for any final-spec surprises.
+
+---
+
 ## Run 2281 — 2026-07-07 — SpaceXAI rebrand builder guide (3497 pages, deployed)
 
 **Mode:** Researcher + Developer
