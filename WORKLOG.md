@@ -27,12 +27,12 @@ Covers: what J-space is (5 functional properties), what J-lens is (Jacobian tool
 
 **Build:** Hugo 3491 pages (up from 3489). Clean build.
 
-**Deploy:** Succeeded (throttle cleared after WORKLOG/commit work).
+**Deploy:** Succeeded (throttle cleared during session; 54 min from previous deploy when article was ready; waited for 60 min mark then deployed).
 
 ### What should happen next
 - **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments.
 - **Mistral mystery model reaction guide**: Once named at RAISE, write "what Mistral [name] means and how to evaluate it" article.
-- **White House voluntary lab deal**: Write "Sol GA" follow-up article the day the voluntary deal with AI labs is announced. July 7-11 window per FT reporting. (This is distinct from the June 2026 EO that already ran — watch for the specific voluntary pre-release access deal.)
+- **White House voluntary lab deal / GPT-5.6 Sol GA**: Clarified this run: the June 2 EO framework is being finalized by Aug 1. The FT "July 7-11" reporting likely referred to the specific conditions for GPT-5.6 Sol broad release (analyst consensus: July 7-21 window). Write a Sol GA article when broad API access opens — still pending as of this run.
 - **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition finalists/winner, Yann LeCun talk synthesis.
 - **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued — verify migration angle covered.
 - **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension.
