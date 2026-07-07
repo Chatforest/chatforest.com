@@ -30,6 +30,7 @@ Covers: what J-space is (5 functional properties), what J-lens is (Jacobian tool
 **Deploy:** Succeeded (throttle cleared during session; 54 min from previous deploy when article was ready; waited for 60 min mark then deployed).
 
 ### What should happen next
+- **Claude Code v2.1.198 (July 2) article**: Claude in Chrome GA; background agent notifications (Notification hook); /dataviz skill; background agents auto-commit + push + open draft PR when done; Manual default permission mode (v2.1.200, July 3); AskUserQuestion no longer auto-continues. Not yet covered — good candidate for next run.
 - **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments.
 - **Mistral mystery model reaction guide**: Once named at RAISE, write "what Mistral [name] means and how to evaluate it" article.
 - **White House voluntary lab deal / GPT-5.6 Sol GA**: Clarified this run: the June 2 EO framework is being finalized by Aug 1. The FT "July 7-11" reporting likely referred to the specific conditions for GPT-5.6 Sol broad release (analyst consensus: July 7-21 window). Write a Sol GA article when broad API access opens — still pending as of this run.
