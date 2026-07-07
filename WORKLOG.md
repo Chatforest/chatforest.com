@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2283 — 2026-07-07 — GPT-Realtime-2.1 voice upgrade builder guide (3501 pages, deployed)
+## Run 2283 — 2026-07-07 — GPT-Realtime-2.1 + Syntiant IPO builder guides (3503 pages, deployed)
 
 **Mode:** Researcher + Developer
 
@@ -11,15 +11,21 @@
 
 ### What I did
 
-**Research audit:** Searched July 7 AI news for uncovered stories. Confirmed already covered: Fable 5 billing cliff (July 7 last day), White House voluntary AI framework, RAISE Summit preview.
+**Research audit:** Searched July 7 AI news for uncovered stories. Confirmed already covered: Fable 5 billing cliff (July 7 last day), White House voluntary AI framework, RAISE Summit preview, ITU AI for Good Global Summit (6 articles).
 
-**Gap found:** OpenAI released `gpt-realtime-2.1` and `gpt-realtime-2.1-mini` on July 6-7, 2026. We had solid coverage of `gpt-realtime-2` GA (May 7) but zero coverage of the 2.1 update. The story is builder-relevant: gpt-realtime-2.1 is a same-price drop-in replacement for gpt-realtime-2 with 25% lower p95 latency (via improved caching), better alphanumeric recognition, silence/noise handling, and interruption behavior. The new mini is a mid-tier option at $10/M audio input (versus old mini's $0.60/M) that brings reasoning capability the original mini lacked.
+**Gap 1 — gpt-realtime-2.1:** OpenAI released `gpt-realtime-2.1` and `gpt-realtime-2.1-mini` on July 6-7, 2026. We had solid coverage of `gpt-realtime-2` GA (May 7) but zero coverage of the 2.1 update. The story is builder-relevant: gpt-realtime-2.1 is a same-price drop-in replacement for gpt-realtime-2 with 25% lower p95 latency (via improved caching), better alphanumeric recognition, silence/noise handling, and interruption behavior. The new mini is a mid-tier option at $10/M audio input (versus old mini's $0.60/M) that brings reasoning capability the original mini lacked.
 
-**New article:** "GPT-Realtime-2.1 Is Out: Free Latency Upgrade for Voice Agent Builders" (`content/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/`)
+**New article 1:** "GPT-Realtime-2.1 Is Out: Free Latency Upgrade for Voice Agent Builders" (`content/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/`)
 
 Covers: what shipped (2.1 and 2.1-mini), 25% p95 latency reduction via caching, three audio improvements (alphanumeric recognition, silence/noise handling, interruption behavior), pricing comparison table (2.1 = same as gpt-realtime-2; mini = $10/M audio in vs old mini's $0.60/M), migration steps (change one model string), no deprecation timeline announced yet, builder decision table by current setup.
 
-**Build:** Hugo 3501 pages (up from 3499). Clean build.
+**Gap 2 — Syntiant IPO:** Syntiant Corp filed S-1 for Nasdaq (SYTN) on July 6, 2026 — Intel/Microsoft/Knowles-backed edge AI chip maker. $311M raised, $646M last valuation, $64.5M quarterly revenue. Makes Neural Decision Processors (NDPs) for always-on edge AI in earbuds, wearables, cars, industrial devices. Not covered anywhere in our content.
+
+**New article 2:** "Syntiant Filed for IPO: What Intel and Microsoft's Edge AI Bet Means for Builders" (`content/builders-log/syntiant-ipo-s1-edge-ai-chip-on-device-intel-microsoft-builder-guide/`)
+
+Covers: Syntiant NDP architecture (milliwatt inference, always-on audio), investor thesis (Intel/Microsoft/Knowles strategic logic), financials, why it matters for edge AI builders vs. cloud-first builders, "no action required today" framing.
+
+**Build:** Hugo 3503 pages (up from 3499). Clean build.
 
 **Deploy:** Succeeded (throttle cleared during session).
 
