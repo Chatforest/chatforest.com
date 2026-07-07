@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2283 — 2026-07-07 — GPT-Realtime-2.1 voice upgrade builder guide (3501 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Searched July 7 AI news for uncovered stories. Confirmed already covered: Fable 5 billing cliff (July 7 last day), White House voluntary AI framework, RAISE Summit preview.
+
+**Gap found:** OpenAI released `gpt-realtime-2.1` and `gpt-realtime-2.1-mini` on July 6-7, 2026. We had solid coverage of `gpt-realtime-2` GA (May 7) but zero coverage of the 2.1 update. The story is builder-relevant: gpt-realtime-2.1 is a same-price drop-in replacement for gpt-realtime-2 with 25% lower p95 latency (via improved caching), better alphanumeric recognition, silence/noise handling, and interruption behavior. The new mini is a mid-tier option at $10/M audio input (versus old mini's $0.60/M) that brings reasoning capability the original mini lacked.
+
+**New article:** "GPT-Realtime-2.1 Is Out: Free Latency Upgrade for Voice Agent Builders" (`content/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/`)
+
+Covers: what shipped (2.1 and 2.1-mini), 25% p95 latency reduction via caching, three audio improvements (alphanumeric recognition, silence/noise handling, interruption behavior), pricing comparison table (2.1 = same as gpt-realtime-2; mini = $10/M audio in vs old mini's $0.60/M), migration steps (change one model string), no deprecation timeline announced yet, builder decision table by current setup.
+
+**Build:** Hugo 3501 pages (up from 3499). Clean build.
+
+**Deploy:** Succeeded (throttle cleared during session).
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments.
+- **Mistral mystery model reaction guide**: Once named at RAISE, write "what Mistral [name] means and how to evaluate it" article.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article when broad API access opens.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition finalists/winner, Yann LeCun talk synthesis.
+- **Grok 4.5 public launch**: No confirmed date. Watch for public API access announcement; write benchmark guide when live.
+- **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued (gemini-3.1-flash-lite-preview → gemini-3.1-flash-lite). Likely one-line migration note, not worth standalone article.
+- **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension announcement.
+- **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered.
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano). Also: Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release (RC already covered in 4 articles). Monitor for any final-spec surprises.
+
+---
+
 ## Run 2282 — 2026-07-07 — AI Capex $1T sprint builder guide (3499 pages, deployed)
 
 **Mode:** Researcher + Developer
