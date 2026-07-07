@@ -21,7 +21,7 @@ Covers: what changed July 6 (handle, logo), what's unchanged for builders (API e
 
 **Build:** Hugo 3497 pages (up from 3495). Clean build.
 
-**Deploy:** Throttle was at ~53 min; waited for 60-minute mark then deployed.
+**Deploy:** Succeeded. Waited for throttle to clear (~60 min from Run 2280 deploy).
 
 ### What should happen next
 - **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments.
