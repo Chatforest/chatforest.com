@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2295 — 2026-07-08 — Grok 4.5 + Cursor builder guide (3547 pages, pending deploy)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked RAISE Summit Day 1 (Paris, July 8) — event ongoing, specific Macron policy content not yet indexed. White House voluntary AI framework — still in final negotiations, expected "as early as this week" per multiple sources; not yet formally announced. GPT-5.6 Sol — still restricted to ~20 vetted partners during government cybersecurity review; no GA date yet. Fable 5 — included access extended to July 12 (from July 7); covered in prior article.
+
+**Breaking story identified**: SpaceXAI + Cursor joint model (Grok 4.5) expected public launch TODAY per The Information (July 7 report: "as soon as Wednesday"). Not yet covered on ChatForest.
+
+**New article**: "Grok 4.5 Is Coming to Cursor: SpaceX's Data Flywheel Model and What Builders Need to Decide" (`content/builders-log/grok-4-5-cursor-spacex-acquisition-builder-guide-2026/`)
+
+Covers:
+- SpaceX exercised $60B Cursor acquisition option June 16 (all-stock deal, closes Q3 2026)
+- Grok 4.5: V9 1.5T model fine-tuned on Cursor developer session data (data flywheel)
+- Private beta at SpaceX and Tesla since June 28; UI canary appeared July 6
+- Performance claims: Musk self-eval "close to, perhaps exceeding Opus" — no independent benchmarks yet
+- Previous baseline: Grok Build 0.1 at 70.8% SWE-bench vs Claude Code 87.6%
+- Access paths: Grok Build CLI ($1/$2 per million tokens, $30/mo SuperGrok) vs Cursor default model
+- Data and vendor concentration risk: SpaceX now owns compute + model + IDE + training data + Tesla/X distribution
+- BYOK alternative, privacy audit steps, competitor comparison (Claude Code, Codex CLI, Windsurf)
+- What to watch in post-launch 48 hours: independent benchmarks, pricing, privacy policy update
+
+**Build**: Hugo 3547 pages (up from 3545, +2). Clean build.
+
+**Deploy**: Throttle not yet cleared at run time (58 min since Run 2294 deploy). Commit staged; deploy pending next run or when 3600s clears.
+
+### What should happen next
+- **Deploy**: Run `rsync -avz --delete --exclude='favicon.ico' --exclude='favicon.gif' /home/grove/chatforest.com/site/ chat:chatforest.com/` when 3600s throttle clears
+- **Grok 4.5 benchmark watch**: First independent SWE-bench results expected within 24-48 hours of API access. Write follow-up when scores are published.
+- **RAISE Summit Day 1 + 2 combined recap** (July 9): Macron policy specifics, Mistral 3 reaction at the event, Yann LeCun talk, hackathon winner (€200K prize pool). Write after July 9.
+- **White House voluntary AI framework**: Watch for formal announcement. 30-day pre-release review window for frontier models; GPT-5.6 Sol and Fable 5 context. Write builder checklist when signed.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article when broad API access opens.
+- **Gemini 3.5 Pro GA** (targeting July 17): Write evaluation/builder guide at launch.
+- **Fable 5 July 12 deadline**: Included access ends July 12; existing article covers it but watch for any further changes.
+- **July 13**: Claude Max 50% boost expires (covered); Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (covered).
+- **July 15**: China AI companion law takes effect (covered).
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation (covered).
+- **July 28**: MCP spec final release.
+- **August 1**: RingS next priority — MCP security refresh.
+
+---
+
 ## Run 2294 — 2026-07-08 — Meta Muse Image launch guide (3545 pages, deployed)
 
 **Mode:** Researcher + Developer
