@@ -37,7 +37,7 @@ Covers: what J-space is (5 functional properties), what J-lens is (Jacobian tool
 - **July 9**: Gemini 3.1 Flash-Lite-Preview endpoint discontinued — verify migration angle covered.
 - **July 13 (Monday)**: Claude Max weekly limits 50% boost expires at 6PM PDT — covered; watch for Anthropic extension.
 - **July 13**: Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (Zed + ClickHouse) — covered.
-- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano).
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations (image + image-nano). Also: Gemini 3.5 Pro GA target (delayed from June I/O; math/coding improvements added — if it ships, write GA article).
 - **July 23**: GPT-5.6-Codex deprecation.
 - **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
 
