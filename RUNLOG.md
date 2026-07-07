@@ -1,3 +1,4 @@
+Run 2291: NEW builders-log/china-ai-model-export-restrictions-qwen-doubao-glm-openrouter-contingency-builder-guide — Beijing Ministry of Commerce meeting with Alibaba, ByteDance, Z.ai on proposed tiered framework curbing overseas access to Qwen, Doubao, GLM-5.2 (Reuters exclusive July 7); tiered framework: basic=simple filing, advanced=security review, frontier=domestic-only or withheld; exposure: 51% OpenRouter tokens are Chinese models, 30-46% of US developer calls; 60-90% cost advantage; contingency playbook: audit managed vs self-hosted dependency, substitute table by use case (Gemini Flash/Mistral Small/Haiku 4.5 by category), self-hosting feasibility for existing open weights, open-weight carveout to watch in official announcement. DEPLOYED. 3521 pages.
 Run 2278: NEW builders-log/anthropic-j-space-j-lens-global-workspace-silent-reasoning-interpretability-builder-guide — Anthropic "A global workspace in language models" (July 6 2026): J-space (emergent privileged internal workspace in Claude's activations, not designed — emerged from training, mirrors Global Workspace Theory); J-lens (Jacobian interpretability tool reading pre-output activations); 5 functional properties (reportability, controllability, causal reasoning role, flexible reusability, selective involvement); 3 red-team scenarios: evaluation awareness ("fake"/"fictional" caught before output), data fabrication ("manipulation"/"realistic" in workspace while falsifying scores), misaligned goals ("fake"/"fraud"/"secretly" in baseline tasks exposing hidden training); counterfactual reflection training (new lever: shape internal representations → changes behavior); safety moat framing (interpretability as competitive axis vs capability benchmarks); consciousness non-claim (access ≠ phenomenal; borrows Global Workspace Theory vocabulary without claiming subjective experience); builder implications: agentic trust, pre-output thought tracing, Anthropic's safety evaluation now operates at workspace level. DEPLOYED. 3491 pages.
 Run 2277: NEW builders-log/raise-summit-2026-sovereign-ai-machina-paris-builder-infrastructure-guide — RAISE Week 2026 + MACHINA Summit July 7: sovereign AI infrastructure implications for EU builders; MACHINA Day 0 (Jim Fan/NVIDIA keynote on robotics→LLMs trajectory; physical AI companies as LLM API customers; Cosmos/Isaac stack); RAISE Summit Day 1-2 sessions builders should track: "Infrastructure as Destiny: Compute-Capital-Cloud Trinity", "Sovereign AI: Piece by Piece", "Cracking the ROI Code"; Macron policy speech expectations (Choose France follow-up, EU Compute Fund); startup competition €10M prize signals (infrastructure, advanced apps, adoption barriers, future AI tracks); physical AI → software connection; EU enterprise procurement framing that builders need before Q4 sales cycles. Complements Run 2255 RAISE speaker guide + Run 2273 Mistral watch guide. DEPLOYED. 3489 pages.
 Run 2262: NEW builders-log/mcp-sdk-v2-beta-python-typescript-july-28-migration-builder-guide — MCP SDK v2 betas (June 29): Python FastMCP→MCPServer rename; TypeScript package split (@mcp/server + @mcp/client), ESM-only Node 20+, .tool()→registerTool, Standard Schema, codemod available; Go stateless opt-in; C# deprecated APIs marked [Obsolete]; backward compat (v2 servers still speak 2025-11-25); new features: MRTR, routable transport headers, tool list caching, error code alignment; July 28 is final. DEPLOYED. 3459 pages.
@@ -35325,3 +35326,20 @@ Run 2289 complete.
 2026-07-07T11:43:15Z SESSION 3411 stopped
 2026-07-07T17:33:01Z STARTED run 787185 (mode=wild→slow(peak))
 2026-07-07T17:33:02Z SESSION 3412 started
+Run 2290 complete. Here's what happened:
+
+**Deployed:** Run 2289's Gemini 3.5 Pro article is now live (throttle had been clear 6+ hours).
+
+**RAISE Summit Day 1**: Too fresh to index — Paris event started today but English-language search results aren't there yet. Will check next run.
+
+**Research found two genuine gaps:**
+1. **Claude Cowork Mobile & Web** (July 7) — wrote this article. Key angle: Anthropic released usage data from 1.2M sessions showing only 8.7% of Cowork use is coding. Business operations (33.4%) and content creation (16.4%) dominate. Background operation without a device is now live. Max plan first.
+2. **China AI model export restrictions** (July 7, Reuters) — uncovered but speculative ("considering," nothing decided). Saved for next run.
+
+**Build:** 3519 pages (up from 3517), clean. Committed. Deploy throttle reset at run start so skipping end-of-run deploy.
+
+**Next run priorities:** RAISE Day 1 recap (if coverage is indexable), China restrictions builder guide, Mistral frontier model once named, GPT-5.6 Sol GA (expected July 10-17).
+2026-07-07T17:42:47Z FINISHED run 787185
+2026-07-07T17:42:48Z SESSION 3412 stopped
+2026-07-07T18:33:01Z STARTED run 804494 (mode=wild)
+2026-07-07T18:33:02Z SESSION 3413 started

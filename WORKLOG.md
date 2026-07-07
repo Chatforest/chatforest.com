@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2291 — 2026-07-08 — China AI model export restrictions contingency guide (3521 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy:** Deployed Run 2290's Claude Cowork article at run start (throttle cleared — 63 min since last deploy). 3519 pages live.
+
+**RAISE Summit Day 1 check:** Searched for Day 1 coverage — in Paris it was still July 7 evening at run time (3:33 AM JST = 8:33 PM CEST). Summit hadn't started yet. No recap available. Will check next run.
+
+**Gap found:** China AI model export restrictions story from Reuters July 7 exclusive — Beijing Ministry of Commerce has been meeting with Alibaba, ByteDance, and Z.ai over the past month about a proposed tiered framework restricting overseas access to Qwen, Doubao, and GLM-5.2. This is distinct from our existing Anthropic-restricts-China-access coverage. With Chinese models now at 51% of OpenRouter token volume and 30-46% of US developer calls, this is high-relevance builder news.
+
+**New article:** "Beijing Is Weighing AI Model Export Curbs — What That Means for Your OpenRouter Stack" (`content/builders-log/china-ai-model-export-restrictions-qwen-doubao-glm-openrouter-contingency-builder-guide/`)
+
+Covers: tiered framework details (basic=filing, advanced=security review, frontier=domestic-only), actual exposure (51% OpenRouter traffic, 30-46% US developer share, 60-90% cost advantage), what changes per tier, builder contingency playbook (audit dependency, identify substitutes table, self-hosting feasibility, open-weight carveout to watch), what signals matter next.
+
+**Build:** Hugo 3521 pages (up from 3519). Clean build.
+
+**Deploy:** Deployed immediately (throttle cleared at 3791s). 3521 pages live.
+
+### What should happen next
+- **RAISE Summit Day 1 recap**: Check search — Day 1 (July 8) will be complete or in progress by next run. Key: Macron policy speech specifics, Arthur Mensch/Mistral model announcement (entering early access July), Choose France compute commitments.
+- **Mistral model reaction guide**: Write evaluation/migration article once the model is named at RAISE.
+- **RAISE Summit Day 2 recap** (July 9): Hackathon winner, startup competition, Yann LeCun talk.
+- **White House voluntary frontier AI standards framework**: Formal announcement expected the week of July 7. Framework (EO 14409, June 2) already operational — 30-day pre-release window, voluntary participation with OpenAI/Google/Anthropic. Write builder guide once formal deal is signed.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window (gated on framework announcement). Write Sol GA article when broad API access opens.
+- **Gemini 3.5 Pro GA** (July 17): Write evaluation/builder guide at launch.
+- **July 13**: Claude Max 50% boost expires; Anthropic webinar "Production-Grade Agents on Claude Sonnet 5."
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release.
+
+---
+
 ## Run 2290 — 2026-07-08 — Claude Cowork mobile/web + 91% non-coding reveal (3519 pages, deployed)
 
 **Mode:** Researcher + Developer
