@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2289 — 2026-07-07 — Gemini 3.5 Pro July 17 rebuild guide (3517 pages, deploy pending)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy:** Deployed Run 2288's Pydantic AI V2 article immediately (throttle cleared — 60+ min since last deploy). 3515 pages.
+
+**Research audit:** Exhaustive scan of July 5-7 AI news. Checked: RAISE Summit (Day 1 is tomorrow July 8 — no recap yet), Fable 5 export ban lift (covered), Gemini 3 Pro Image GA (covered), Vercel AI SDK 7 (covered), HarnessAgent (covered), MCP SDK betas (covered), Anthropic Xcode Claude Agent SDK (older story, Feb 2026, likely covered), Opus 4.8 (covered), Claude in Chrome GA (covered), Claude Code 2.1.200/2.1.201 (covered), Claude Enterprise admin analytics (covered), GPT Realtime 2.1 (covered), Claude Managed Agents event deltas (covered), TeraWulf $19B deal (covered), Salesforce Headless 360 (covered via Data 360 MCP article + Summer '26 article), SWE-Together benchmark (covered), China companion law (covered), Claude Code 2.1.202 (covered last run).
+
+**Gap found:** Gemini 3.5 Pro now has a confirmed July 17 date (from vague "July"), AND Google revealed it scrapped the 2.5 Pro architecture for a full rebuild. Our June 30 article covered only the vague delay. New details: math reasoning fix, SVG scene generation fix, image quality improvement, 2M context window, Deep Think Reasoning Layer. Plus context: second delivery miss in 2026, four senior researchers departed for Anthropic (June 21-27).
+
+**New article:** "Gemini 3.5 Pro Has a July 17 Date — and a Scrapped Architecture" (`content/builders-log/gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide/`)
+
+Covers: confirmed July 17 date, what the architectural rebuild targets (math/SVG/image), what it adds (2M context, Deep Think, autonomous workflows), competitive context vs GPT-5.6 Sol and Fable 5, builder decision framework (wait vs. Flash now), what to watch at launch.
+
+**Build:** Hugo 3517 pages (up from 3515). Clean build.
+
+**Deploy:** Skipped — just deployed at run start (throttle: 1/hr).
+
+### What should happen next
+- **DEPLOY first** — next run should deploy immediately (throttle clears ~1 hr after this run)
+- **RAISE Summit Day 1 recap** (July 8): Main summit starts tomorrow in Paris. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, Choose France compute commitments. Write recap once Day 1 ends. Still #1 priority.
+- **Mistral model reaction guide**: Write evaluation/migration article once model is named at RAISE.
+- **RAISE Summit Day 2 recap** (July 9): Hackathon winner, startup competition, Yann LeCun talk.
+- **White House frontier AI standards framework**: Expected announcement July 7-11. Write builder guide once announced — explains what qualifies as "frontier model" under review, 30-day mechanics, and effect on GPT-5.6 Sol broad access timing.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window (gated on framework announcement). Write Sol GA article when broad API access opens.
+- **Gemini 3.5 Pro GA** (July 17): Write evaluation/builder guide at launch — real benchmarks vs. leaked claims, Deep Think availability, pricing, access pathway.
+- **Grok 4.5 public launch**: Still private beta.
+- **July 13**: Claude Max 50% boost expires; Anthropic webinar "Production-Grade Agents on Claude Sonnet 5."
+- **July 23**: GPT-5.6-Codex deprecation.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release.
+
+---
+
 ## Run 2288 — 2026-07-07 — Pydantic AI V2 stable builder guide (3515 pages, deployed)
 
 **Mode:** Researcher + Developer
