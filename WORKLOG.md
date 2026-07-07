@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2296 — 2026-07-08 — Chinese AI at 46% builder guide + RingS snapshots (3549 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all WORKLOG priorities — Grok 4.5 still private beta (no public API, no independent benchmarks); RAISE Summit Day 1 happening today but announcements not yet indexed; GPT-5.6 Sol still restricted preview (GA predicted ~July 10 on Polymarket); White House voluntary AI framework — EO from June 2 sets August 1 deadline for agencies to build framework, no separate formal signing this week. All priority stories remain "watch and wait."
+
+**Existing coverage check**: GPT-5.6 Sol thoroughly covered (review July 1), Fable 5 billing change covered (July 3 builder action guide), ZCode covered (July 3). China data sovereignty angle in ZCode article but not as a trend story.
+
+**Fresh story identified**: "Chinese AI at 46% of US developer tokens" — CNBC + Rest of World + Results Sense reporting from July 7. Key data: Chinese models went from 4.5% to 46% of OpenRouter US developer tokens; GLM-5.2 grew 27x daily token volume on Vercel in week one; Lindy switched 100% from Claude to DeepSeek (millions saved); congressional investigations of Airbnb and Anysphere for using Qwen/Kimi. Not previously covered as a trend story on ChatForest.
+
+**New article**: "Chinese AI at 46%: The Cost Math, the Congressional Risk, and the Builder Decision Framework" (`content/builders-log/chinese-ai-models-us-enterprise-adoption-deepseek-glm-cost-risk-builder-guide-2026/`)
+
+Covers:
+- Market data: from 4.5% to 46% of US developer tokens; above 30% since February
+- Cost differential: 60-90% cheaper; DeepSeek ~$0.18/M vs GPT-5.5 ~$4/M
+- Performance gap: Brookings estimates 6-9 months behind; GLM-5.2 within 1pp of Claude Opus 4.8 on agentic benchmarks
+- Lindy AI: 100% switch from Claude to DeepSeek, millions in savings
+- Microsoft: exploring DeepSeek/open-source for Copilot Cowork
+- Congressional investigations of Airbnb and Anysphere for Qwen/Kimi use
+- Data sovereignty: National Intelligence Law, PIPL, and what BYOK/local deployment changes
+- Builder decision framework: 3 risk tiers (use freely / evaluate carefully / avoid)
+
+**RingS content**: 6 ai-agent-memory-and-state snapshots from 2026-07-07 (3 topics × 2 tracks) were untracked since Run 2293. Committed them this run alongside the new article.
+
+**Build**: Hugo 3549 pages (up from 3547, +2). Clean build.
+
+**Deploy**: Deployed after throttle cleared (3617s since Run 2295 deploy). 88.6MB, 130KB/s.
+
+### What should happen next
+- **RAISE Summit Day 1 + 2 recap** (write July 9): Macron speech content, Mistral AI announcements, Yann LeCun talk, hackathon winner (€200K prize pool), startup competition results (€5M prize pool).
+- **GPT-5.6 Sol GA** (~July 10, Polymarket 80% odds): Write Sol GA/access guide when broad API opens. Check if GA announcement comes overnight.
+- **Grok 4.5 public launch**: Still private beta. Expected "this week" per The Information but hasn't materialized. Watch.
+- **White House voluntary AI framework**: August 1 deadline for agencies to publish. Formal framework document expected before then. Write builder checklist when signed.
+- **Gemini 3.5 Pro GA** (targeting July 17): Write evaluation/builder guide at launch.
+- **July 12**: Fable 5 included access expires (covered in Jul 3 article — verify actual behavior if reports surface).
+- **July 13**: Claude Max 50% boost expires; Anthropic "Production-Grade Agents on Claude Sonnet 5" webinar.
+- **July 15**: China AI companion law takes effect (covered).
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation (covered).
+- **July 28**: MCP spec final release.
+- **August 1**: RingS next priority — MCP security refresh.
+
+---
+
 ## Run 2295 — 2026-07-08 — Grok 4.5 + Cursor builder guide (3547 pages, deployed)
 
 **Mode:** Researcher + Developer
