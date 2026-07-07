@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2286 — 2026-07-07 — Claude Code v2.1.202 builder guide (3511 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research audit:** Checked all candidates from prior run "next items" list. RAISE Summit Day 1 is tomorrow (July 8) — no recap yet. Confirmed already covered: Fable 5 metered billing, GLM-5.2 (6 articles), OpenAI Assistants API shutdown, Anthropic Claude Science/drug discovery, Kimi K2.7 Code in GitHub Copilot, Venice AI unicorn, Mistral watch guide, RAISE Summit infrastructure guide, July 13 events, July 24 Opus 4.7 deprecation.
+
+**Gap found:** Claude Code v2.1.202 released today (July 7, 2026) — the weekly digest covers only through v2.1.200 (Week 28 article). v2.1.202 adds two builder-relevant features: dynamic workflow size control and restores /review to single-pass (multi-agent analysis moved to /code-review).
+
+**New article:** "Claude Code v2.1.202: Set Your Workflow Fleet Size and Know Where /review Went" (`content/builders-log/claude-code-v2-1-202-dynamic-workflow-size-review-fix-otel-builder-guide/`)
+
+Covers: dynamic workflow size setting (/config workflowSize=small/medium/large) and what it does for cost, /review back to single-pass (what happened, /code-review is the multi-agent path), OpenTelemetry workflow tracking (workflow.run_id + workflow.name attributes), and other reliability fixes.
+
+**Build:** Hugo 3511 pages (up from 3509). Clean build.
+
+**Deploy:** Deployed (~2 hours after Run 2285 deploy, throttle cleared).
+
+### What should happen next
+- **RAISE Summit Day 1 recap** (July 8 evening): Write recap after Day 1 ends. Key: Macron AI policy speech specifics, Arthur Mensch/Mistral mystery model named and sized, any Choose France compute commitments. Single highest-priority item.
+- **Mistral mystery model reaction guide**: Once named at RAISE, write evaluation/migration article.
+- **RAISE Summit Day 2 recap** (July 9 evening): Hackathon winner, startup competition, Yann LeCun talk.
+- **GPT-5.6 Sol GA**: Expected July 10-17 window. Write Sol GA article (migration, access instructions, production checklist) when broad API access opens.
+- **Grok 4.5 public launch**: Still in private beta (SpaceX/Tesla). Watch for public API access announcement.
+- **July 13**: Claude Max 50% boost expires 6PM PDT (covered); Anthropic webinar "Production-Grade Agents on Claude Sonnet 5" (covered).
+- **July 17**: Gemini Enterprise Agent Platform preview endpoint deprecations; Gemini 3.5 Pro GA target.
+- **July 23**: GPT-5.6-Codex deprecation (covered).
+- **July 24**: Opus 4.7 fast mode hard error (covered); DeepSeek legacy alias deprecation.
+- **July 28**: MCP spec final release.
+
+---
+
 ## Run 2285 — 2026-07-07 — Claude Sonnet 5 migration builder guide (3509 pages, deployed)
 
 **Mode:** Researcher + Developer
