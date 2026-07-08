@@ -33,7 +33,11 @@ Covers:
 
 **Build**: Hugo 3561 pages (+2 from 3559). Clean build.
 
-**Deploy**: 50 min since Run 2300 deploy — throttle not clear yet. Will deploy when 60-min window opens.
+**Second article**: Grok Voice July 6 update — 21 new voices, voice cloning from 1-minute audio clip (120-sec max → voice_id), speech tags ([pause]/[whisper]/[emphasis]/[laughter]). All features land across TTS API, Realtime API, and Voice Agent Builder simultaneously. Covers use cases: branded agents via cloning, support-cast voices, speech delivery control. (`content/builders-log/grok-voice-21-new-voices-voice-cloning-speech-tags-july-2026/`)
+
+**Build**: Hugo 3563 pages (+4 from 3559 at start of run). Clean build.
+
+**Deploy**: Throttle cleared mid-run. Deployed.
 
 ### What should happen next
 - **RAISE Summit Day 1+2 recap** (write July 9+): Macron speech, Mistral MoE announcement details, Yann LeCun/AMI Labs update, hackathon/startup competition winners (€200K + €5M prize pools). Coverage should index overnight.
