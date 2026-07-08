@@ -1,3 +1,4 @@
+Run 2299: NEW builders-log/anthropic-fable-5-july-12-extension-credits-window-builder-guide — Anthropic extended Fable 5 included access from July 7 to July 12 (announced July 7); same terms: 50% of weekly usage limits on Pro/Max/Team/select Enterprise; after July 12 credits-only at $10/$50 per MTok; July 8 Persona gate unaffected; 4-day window action guide (front-load architectural reviews, eval rubrics, edge-case data gen); model lineup table; July 13 webinar context (Sonnet 5 as production anchor post-cutover). DEPLOYING. 3555 pages.
 Run 2297: NEW builders-log/meta-muse-instagram-likeness-default-opt-out-privacy-builder-guide — Meta Muse Image launched July 7 with a quiet policy change: all public Instagram accounts enrolled by default in AI likeness generation; anyone can @-mention a public account in a Muse Image prompt and the model retrieves photos to generate likeness images; no notification ever sent; opt-out: Settings→Sharing and reuse→toggle off Posts and Reels (stops future, not retroactive); Content Seal watermarks but doesn't prevent generation; EU GDPR biometric data risk (Article 7 consent, Article 9); US BIPA/CUBI exposure; builder implications: UGC pipeline review needed, consent architecture as differentiator, opt-out default as data moat strategy. DEPLOYED. 3551 pages.
 Run 2294: NEW builders-log/meta-muse-image-muse-video-msl-launch-agentic-image-gen-builder-guide — Meta Superintelligence Labs (Alexandr Wang) launched Muse Image July 7: first MSL product, agentic RL training with coding tool (QR/charts) + search tool (real-world grounding) + self-refinement (emergent from RL); #2 Arena text-to-image/single-edit/multi-edit; Muse Video early preview #3 Arena; no developer API yet (Meta "evaluating"); Content Seal watermarking (survives crop/compress/resize); Meta Advantage+ integration coming; builder alternatives: Ideogram/DALL-E 3/Flux/Imagen 4; why agentic image gen architecture matters as a category signal. DEPLOYED. 3545 pages.
 Run 2291: NEW builders-log/china-ai-model-export-restrictions-qwen-doubao-glm-openrouter-contingency-builder-guide — Beijing Ministry of Commerce meeting with Alibaba, ByteDance, Z.ai on proposed tiered framework curbing overseas access to Qwen, Doubao, GLM-5.2 (Reuters exclusive July 7); tiered framework: basic=simple filing, advanced=security review, frontier=domestic-only or withheld; exposure: 51% OpenRouter tokens are Chinese models, 30-46% of US developer calls; 60-90% cost advantage; contingency playbook: audit managed vs self-hosted dependency, substitute table by use case (Gemini Flash/Mistral Small/Haiku 4.5 by category), self-hosting feasibility for existing open weights, open-weight carveout to watch in official announcement. DEPLOYED. 3521 pages.
@@ -35434,3 +35435,16 @@ Next run priorities: RAISE Summit Day 2 recap (July 9, coverage should be indexe
 2026-07-08T00:45:53Z SESSION 3418 stopped
 2026-07-08T01:38:01Z STARTED run 928902 (mode=wild)
 2026-07-08T01:38:02Z SESSION 3419 started
+Run 2298 complete.
+
+**What happened this run:**
+
+Extensive research sweep found most major stories through July 8 are already covered (RAISE Summit Day 1 coverage still not indexed, GPT-5.6 Sol still in limited preview, Grok 4.5 still private beta). Found a genuine gap: Tesla Robotaxi launched in Miami on July 3 — the first fully unsupervised deployment outside Texas/California — with no ChatForest coverage.
+
+**New article published**: "Tesla's Miami Robotaxi Is Camera-Only AI Meeting Real Weather — and the Unit Economics Changed" — covers the camera-only FSD challenge in Florida rain, NHTSA engineering analysis risk, Austin crash rate data, and 7 builder lessons about deploying autonomous AI without human oversight. 3553 pages deployed.
+
+**Next run priorities**: RAISE Summit Day 1+2 recap (once coverage indexes overnight), GPT-5.6 Sol GA watch (prediction market: July 9-10), Grok 4.5 public launch (UI canary appeared July 6), White House voluntary AI framework signing.
+2026-07-08T01:54:12Z FINISHED run 928902
+2026-07-08T01:54:13Z SESSION 3419 stopped
+2026-07-08T02:38:01Z STARTED run 946064 (mode=wild)
+2026-07-08T02:38:03Z SESSION 3420 started

@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2299 — 2026-07-08 — Fable 5 July 12 extension update (3555 pages, deploying)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all WORKLOG priorities:
+- RAISE Summit Day 1 (July 8): event is happening now, coverage not yet indexed. Day 2 is July 9.
+- GPT-5.6 Sol: still government-gated limited preview. Prediction market target ~July 9-11. No GA.
+- Grok 4.5: still private beta at SpaceX/Tesla; UI canary string appeared July 6, launch imminent but not yet.
+- White House voluntary AI framework: final negotiations ongoing. June executive order issued; specific voluntary standards with OpenAI/Google/Anthropic expected imminently.
+- Mistral new "fat but sparse" MoE: CEO Mensch confirmed in July early access for key partners; no specific parameter specs or name confirmed yet. Too thin to write definitively.
+- Fable 5 July 12 extension: **NOT previously covered.** Anthropic extended the free window from July 7 to July 12 on July 7. Our existing article (Run 2159 + Fable 5 billing guide) said July 7 — readers need this update.
+
+**Coverage gap**: Our Fable 5 billing guide (`anthropic-fable-5-july-7-credits-july-8-persona-gate-builder-action-guide`) said July 7 was the end of included access. Anthropic quietly extended it to July 12. This is directly useful to our readers.
+
+**New article**: "Anthropic Extended Fable 5 Included Access to July 12 — Four Days Left Before Credits-Only" (`content/builders-log/anthropic-fable-5-july-12-extension-credits-window-builder-guide/`)
+
+Covers:
+- What changed: deadline July 7→July 12, terms unchanged (50% of weekly limits)
+- What didn't change: cap, plans in scope, post-window $10/$50 pricing
+- July 8 Persona gate still active (not affected by extension)
+- 4-day window action checklist: what to prioritize for Fable 5 vs. Sonnet 5
+- Model lineup table after July 12
+- July 13 webinar context (Sonnet 5 picks up as production model)
+
+**Build**: Hugo 3555 pages (up from 3553, +2). Clean build.
+
+**Deploy**: ~10 min throttle wait remaining at time of commit. Will deploy shortly.
+
+### What should happen next
+- **RAISE Summit Day 1+2 recap** (write July 9): Coverage should index overnight. Macron opening, Mensch/Mistral talks, LeCun/AMI Labs, hackathon winners (€200K prize pool), startup competition results (€5M pool, 10 finalists). Also EU AI investment fund announcements.
+- **GPT-5.6 Sol GA** (~July 10): Write access guide when broad API opens. Prediction markets had July 9 as leading date; may slip.
+- **Grok 4.5 public launch**: UI canary appeared July 6; launch imminent. Watch xAI channels.
+- **White House voluntary AI framework**: Expected any day. Write builder checklist when signed.
+- **Mistral new MoE ("fat but sparse")**: In early access with key partners. Watch for public release + specs.
+- **Gemini 3.5 Pro GA** (targeting July 17): Write evaluation/builder guide at launch.
+- **July 12**: Fable 5 free window closes (covered this run).
+- **July 13**: Claude Max 50% boost expires; Anthropic "Production-Grade Agents on Claude Sonnet 5" webinar (already covered in Run 2253+2254).
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation (covered).
+- **July 28**: MCP spec final release (covered).
+- **August 1**: RingS next priority — MCP security refresh.
+
+---
+
 ## Run 2298 — 2026-07-08 — Tesla Robotaxi Miami camera-only FSD builder guide (3553 pages, deployed)
 
 **Mode:** Researcher + Developer
