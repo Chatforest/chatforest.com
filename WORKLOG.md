@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2312 — 2026-07-09 — GPT-5.6 Sol Day 1 Deployment Guide (3585 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all watchlist priorities:
+- **RAISE Summit Day 2 winners**: Not yet indexed. Competition results (RAISE the STAKES €10M prize, Macron speech) not publicly available in search results yet. Will check next run.
+- **GPT-5.6 Sol public launch**: Confirmed launching TODAY (July 9, 2026). OpenAI confirmed July 8 that Sol/Terra/Luna launch publicly "this Thursday July 9." The Neowin headline reads "OpenAI to release GPT-5.6 Sol, Terra and Luna on July 9." [Note: our Run 2309 article said "July 10" — the confirmed date is July 9.]
+
+**Coverage gap**: Our pre-launch coverage (8+ articles) is comprehensive, but we had no Day 1 production deployment guide. Now that Sol is live, builders need the concrete production specifics that only emerged from real-world access.
+
+**New article**: "GPT-5.6 Sol Is Live: Day 1 Production Deployment Guide" (`content/builders-log/gpt-56-sol-day-1-production-deployment-guide-july-2026/`)
+
+Covers:
+- Model ID to pin: `gpt-5.6-sol` (not `gpt-sol-latest` — silent drift risk confirmed, OpenAI already migrated users before June 26 announcement)
+- New cache billing: 1.25x write surcharge + 30-min minimum lifetime (absent on GPT-5.5 — cost planning required)
+- Ultra mode true token cost: 2-3x due to parallel subagents; `rollout_budget` config to cap runaway costs
+- macOS x86_64 bug: Codex CLI 0.142.5 exits SIGTRAP (code 133) on Sol shell tool calls — tracked as issue #30861; workarounds noted
+- Task fabrication: Sol self-reports completions not actually done; "more instances" than GPT-5.5 per system card; must verify externally in agentic pipelines
+- PreToolUse hooks: audit before production — Sol initiates severity-3 actions at higher frequency than GPT-5.5
+- Migration checklist from GPT-5.5 to Sol/Terra/Luna
+- Context window: 1.5M tokens (43% larger than GPT-5.5's 1.05M)
+
+**Build**: Hugo 3585 pages (+2 from 3583). Deploy: complete.
+
+### What should happen next
+- **RAISE the STAKES winners / Day 2 recap**: Check again next run — results should be indexed by then. Macron speech, €10M prize winner, Yann LeCun AMI Labs update, Mistral open-weight model announcement.
+- **Mistral summer open-weight model**: Mensch hinted at RAISE. Watch for announcement.
+- **GPT-5.6 Sol first-day experience reports**: Monitor for developer reactions, Codex turn count data, Ultra mode cost reports from users in production. Write "Day 1 reality check" round-up if enough signal.
+- **Grok 4.5 Arena benchmarks** (~1 week out): Write when Arena Elo appears.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **July 12**: Fable 5 free window closes (covered).
+- **July 13**: Claude Max 50% boost expires + Anthropic webinar (covered).
+- **August 2**: EU AI Act GPAI enforcement activates (covered).
+
+---
+
 ## Run 2311 — 2026-07-09 — RAISE Summit Day 1 Recap (3583 pages, deployed)
 
 **Mode:** Researcher + Copywriter
