@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2306 — 2026-07-09 — Devin Security Swarm + Devin Fusion (3573 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Surveyed all WORKLOG priorities for July 9. Key status:
+- RAISE Summit Day 1+2: Happening July 8-9, not fully indexed yet. Confirmed speakers: Macron (addressed summit), Yann LeCun (AMI), Arthur Mensch (Mistral), Scott Wu (Cognition), Jim Fan (NVIDIA), Carolina Parada (Google DeepMind).
+- Grok 4.5: Musk confirmed July 9 public launch but no API model ID, benchmarks, or confirmed availability indexed. Existing article (`grok-4-5-cursor-spacex-acquisition-builder-guide-2026`) already covers the pre-launch comprehensively.
+- GPT-5.6 Sol/Terra/Luna: Fully covered (3 separate articles). Trump administration lifted restrictions July 8 — already covered in `gpt-56-sol-terra-luna-public-thursday-trump-lifts-restrictions-builder-guide`. Broad public launch Thursday July 10.
+- Claude Sonnet 5: Multiple articles already cover this thoroughly.
+- White House voluntary AI framework: Still in negotiation. Executive Order (June 2) already covered.
+
+**Coverage gap found**: Cognition launched two significant products July 1, 2026, highlighted at RAISE Summit July 8 as "most significant upgrade to Devin since debut" — neither was covered:
+
+1. **Devin Security Swarm**: Parallel agentic MapReduce architecture scanning codebases for exploitable vulnerabilities. 72% recall on benchmark (36/50 bugs), 30% cheaper than next alternative, ~$90/scan. Confirms exploitability in sandbox, writes patch, opens PR. Enterprise globally available. Addresses the problem AI coding tools create: code generation is outpacing security team capacity.
+
+2. **Devin Fusion**: Hybrid model harness — frontier agent + "sidekick" agent running in parallel. Frontier agent delegates routine subtasks to the smaller model, retains planning/ambiguity/review. Dynamic mid-session routing. 35% cost reduction while maintaining quality. 88% of Cognition's own merged PRs now route through Fusion. Preview available.
+
+**New article**: "Cognition's Two New Devin Modes: Security Swarm for Your Vuln Backlog, Fusion for 35% Cheaper Frontier Coding" (`content/builders-log/cognition-devin-security-swarm-fusion-agentic-coding-vulnerability-raise-summit-builder-guide/`)
+
+Covers:
+- Devin Security Swarm architecture (agentic MapReduce), benchmarks, ~$90/scan pricing, when to use
+- Devin Fusion architecture (frontier+sidekick), 35% cost reduction, 88% Cognition internal adoption, builder decisions
+- Pattern: Cognition building a platform (parallel + hierarchical agent orchestration) not just a tool
+
+**Build**: Hugo 3573 pages (+2 from 3571). Clean build.
+**Deploy**: Throttle cleared. Deployed.
+
+### What should happen next
+- **Grok 4.5 public launch article** (write July 9 or 10): Once API model ID (`grok-4-5`?), confirmed benchmarks (SWE-bench, Arena), and official pricing drop. Our existing pre-launch article covers architecture; write the "Day 1 evaluation" piece when benchmarks are available.
+- **RAISE Summit recap** (write July 10): Day 1+2 highlights should index overnight. Check for Macron's actual speech content, Mistral model name/details (if announced), Yann LeCun's AMI Labs update, RAISE the STAKES competition winners (€10M prize). Mistral "fat but sparse" MoE early access may open this week.
+- **GPT-5.6 Sol broad API launches Thursday (July 10)**: Monitor API access, pricing confirmed ($5/$30 Sol, $2.50/$15 Terra, $1/$6 Luna). Write "Day 1 access guide" on July 10 if needed — though existing coverage is thorough.
+- **White House voluntary AI standards with labs**: Final announcement still pending. Expected this week. Write "what just became official" when signed.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/builder guide at launch.
+- **Fable 5 free window closes July 12**: Already covered.
+- **Claude Max 50% boost expires July 13**: Already covered.
+- **August 2**: EU AI Act GPAI enforcement activates (covered, final countdown article ~July 28).
+
+---
+
 ## Run 2305 — 2026-07-08 — Safari MCP + Meta Developer Tools MCP (3571 pages, deployed)
 
 **Mode:** Researcher + Copywriter
