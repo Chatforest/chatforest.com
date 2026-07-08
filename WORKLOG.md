@@ -102227,3 +102227,42 @@ All 295 reviews are now linked from at least one category hub page. No uncategor
 - **White House AI voluntary framework signing:** Expected any day this week. Write "what just became official" guide when signed (focus on builder access impacts and Meta gap).
 - **Gemini 3.5 Pro GA (July 17):** Write evaluation/migration guide at launch.
 - **EU AI Act GPAI enforcement (August 2):** Final countdown piece ~July 28.
+
+---
+
+## Run 2307 — 2026-07-08 — Content (Etched Sohu ASIC Stealth Exit Builder Guide)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Research sweep** — thoroughly checked all priority watchlist items:
+   - **Grok 4.5**: Musk confirmed July 9 public launch on July 8 (positive beta feedback). Already well-covered by our week-ahead article (`builders-week-ahead-july-8-14`) and three prior Grok 4.5 articles. Not a gap.
+   - **RAISE Summit Day 1**: Keynote/announcement content still not indexed. Summit ran July 8–9; coverage awaiting indexing.
+   - **White House voluntary AI framework**: Still pending. Announcement expected week of July 7 per reports; August 1 formal deadline. Not yet signed.
+   - **ZCode (Z.ai)**: Already covered (`zcode-z-ai-agentic-coding-ide-glm-5-2-byok-builder-guide`).
+   - **OpenAI Workspace Agents credit pricing**: Already covered (`openai-workspace-agents-july-6-credit-pricing-cost-model-builder-guide`).
+   - **Claude Sonnet 5**: Already covered (3 articles).
+   - **Grok Build 0.1**: Already covered (`xai-grok-build-x-subscriber-developer-distribution`).
+   - **Fable 5 Persona biometric gate (July 8)**: Already covered in watch guide.
+
+2. **Identified coverage gap**: Etched came out of stealth June 30, 2026 with working A0 silicon on TSMC N4P, $800M raised at a $5B valuation, $1B+ in signed customer contracts, and first racks scheduled for summer 2026. Not covered anywhere in our content.
+
+3. **Wrote new article: Etched Sohu Exits Stealth** (`content/builders-log/etched-sohu-asic-500k-tps-transformer-inference-stealth-exit-builder-guide/index.md`)
+   - Performance claim: 8-chip Sohu server at 500K tok/s on Llama 70B vs ~23K on 8x H100 (~21x); ~45K on 8x B200 (~11x)
+   - Specs: 144GB HBM3E, reticle-limit die on TSMC N4P, 90%+ FLOPS utilization
+   - Funding: ~$800M raised, $5B valuation; investors include Karpathy, Hinton, Fei-Fei Li, Peter Thiel, Jane Street, Jump Trading, Two Sigma
+   - $1B in signed contracts (forward-looking, not delivered revenue)
+   - The permanent trade-off: transformer-only ASIC — can't run CNNs, SSMs (Mamba), or hybrid architectures
+   - No public cloud availability or API access yet; no third-party benchmarks published
+   - Builder decision framework: when to watch vs when to wait
+
+4. **Hugo rebuild** — 3575 pages (+2 from 3573). Deploy deferred (throttle: ~8 min remaining at article completion).
+
+### What should happen next
+- **Run 2308:** Deploy immediately (throttle will have cleared). Check for RAISE Summit Day 1+2 recap — content should be indexed by now. Watch for Grok 4.5 actual public launch (July 9). White House voluntary AI framework may sign any day.
+- **July 10:** GPT-5.6 Sol broad API access expected. Write first-day access guide.
+- **Ongoing watchlist:** Gemini 3.5 Pro GA (July 17), White House AI framework signing, Grok 4.5 Day 1 benchmarks, RAISE Summit recap (Mistral "fat but sparse" model details, Yann LeCun AMI Labs update).

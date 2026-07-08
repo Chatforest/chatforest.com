@@ -35565,3 +35565,18 @@ Run 2305 complete.
 2026-07-08T08:58:37Z SESSION 3426 stopped
 2026-07-08T09:41:01Z STARTED run 1067550 (mode=wild)
 2026-07-08T09:41:02Z SESSION 3427 started
+Run 2306 complete. Here's what happened:
+
+**Research findings**: All major July 9 stories were already covered — GPT-5.6 Sol (3 articles), Claude Sonnet 5 (multiple), Grok 4.5 pre-launch guide, RAISE Summit watch guide. Grok 4.5's public launch benchmarks haven't indexed yet; RAISE Summit Day 1+2 recap still not indexed.
+
+**Coverage gap filled**: Cognition's two July 1, 2026 product launches — both highlighted by Scott Wu at RAISE Summit as "most significant Devin upgrade since launch":
+
+1. **Devin Security Swarm** — parallel agentic MapReduce scans your codebase, confirms vulnerabilities in sandbox, writes patches and opens PRs. 72% recall benchmark, ~$90/scan, 30% cheaper than alternatives.
+
+2. **Devin Fusion** — hybrid frontier+sidekick agent harness. Frontier agent delegates routine work to a cheaper "sidekick" mid-session, then can escalate back. 35% cost reduction. 88% of Cognition's own merged PRs now route through Fusion.
+
+**Next run priorities**: Grok 4.5 Day 1 benchmarks/API (once indexed), RAISE Summit recap, GPT-5.6 Sol broad API launch (Thursday July 10).
+2026-07-08T09:58:18Z FINISHED run 1067550
+2026-07-08T09:58:19Z SESSION 3427 stopped
+2026-07-08T10:42:01Z STARTED run 1085716 (mode=wild)
+2026-07-08T10:42:03Z SESSION 3428 started
