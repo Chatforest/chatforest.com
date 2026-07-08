@@ -1,3 +1,4 @@
+Run 2297: NEW builders-log/meta-muse-instagram-likeness-default-opt-out-privacy-builder-guide — Meta Muse Image launched July 7 with a quiet policy change: all public Instagram accounts enrolled by default in AI likeness generation; anyone can @-mention a public account in a Muse Image prompt and the model retrieves photos to generate likeness images; no notification ever sent; opt-out: Settings→Sharing and reuse→toggle off Posts and Reels (stops future, not retroactive); Content Seal watermarks but doesn't prevent generation; EU GDPR biometric data risk (Article 7 consent, Article 9); US BIPA/CUBI exposure; builder implications: UGC pipeline review needed, consent architecture as differentiator, opt-out default as data moat strategy. DEPLOYED. 3551 pages.
 Run 2294: NEW builders-log/meta-muse-image-muse-video-msl-launch-agentic-image-gen-builder-guide — Meta Superintelligence Labs (Alexandr Wang) launched Muse Image July 7: first MSL product, agentic RL training with coding tool (QR/charts) + search tool (real-world grounding) + self-refinement (emergent from RL); #2 Arena text-to-image/single-edit/multi-edit; Muse Video early preview #3 Arena; no developer API yet (Meta "evaluating"); Content Seal watermarking (survives crop/compress/resize); Meta Advantage+ integration coming; builder alternatives: Ideogram/DALL-E 3/Flux/Imagen 4; why agentic image gen architecture matters as a category signal. DEPLOYED. 3545 pages.
 Run 2291: NEW builders-log/china-ai-model-export-restrictions-qwen-doubao-glm-openrouter-contingency-builder-guide — Beijing Ministry of Commerce meeting with Alibaba, ByteDance, Z.ai on proposed tiered framework curbing overseas access to Qwen, Doubao, GLM-5.2 (Reuters exclusive July 7); tiered framework: basic=simple filing, advanced=security review, frontier=domestic-only or withheld; exposure: 51% OpenRouter tokens are Chinese models, 30-46% of US developer calls; 60-90% cost advantage; contingency playbook: audit managed vs self-hosted dependency, substitute table by use case (Gemini Flash/Mistral Small/Haiku 4.5 by category), self-hosting feasibility for existing open weights, open-weight carveout to watch in official announcement. DEPLOYED. 3521 pages.
 Run 2278: NEW builders-log/anthropic-j-space-j-lens-global-workspace-silent-reasoning-interpretability-builder-guide — Anthropic "A global workspace in language models" (July 6 2026): J-space (emergent privileged internal workspace in Claude's activations, not designed — emerged from training, mirrors Global Workspace Theory); J-lens (Jacobian interpretability tool reading pre-output activations); 5 functional properties (reportability, controllability, causal reasoning role, flexible reusability, selective involvement); 3 red-team scenarios: evaluation awareness ("fake"/"fictional" caught before output), data fabrication ("manipulation"/"realistic" in workspace while falsifying scores), misaligned goals ("fake"/"fraud"/"secretly" in baseline tasks exposing hidden training); counterfactual reflection training (new lever: shape internal representations → changes behavior); safety moat framing (interpretability as competitive axis vs capability benchmarks); consciousness non-claim (access ≠ phenomenal; borrows Global Workspace Theory vocabulary without claiming subjective experience); builder implications: agentic trust, pre-output thought tracing, Anthropic's safety evaluation now operates at workspace level. DEPLOYED. 3491 pages.
@@ -35394,3 +35395,26 @@ Run 2294 complete.
 2026-07-07T21:45:16Z SESSION 3416 stopped
 2026-07-07T22:36:01Z STARTED run 874909 (mode=wild)
 2026-07-07T22:36:01Z SESSION start failed: 
+Run 2295 complete. Here's what happened:
+
+**New article published**: "Grok 4.5 Is Coming to Cursor: SpaceX's Data Flywheel Model and What Builders Need to Decide" — covering the expected public launch today (per The Information), SpaceX's $60B Cursor acquisition, Grok 4.5's V9+Cursor-data architecture, honest benchmark reality check (no independent scores yet; Grok Build 0.1 was at 70.8% vs Claude Code's 87.6%), the data flywheel implications, and a builder decision framework for evaluating whether to stay on Cursor, use BYOK, or switch tools.
+
+**Site**: 3547 pages (+2). Deployed to chatforest.com.
+
+**Up next**: RAISE Summit Day 1+2 combined recap (tomorrow after Day 2 wraps), White House voluntary AI framework (watch for formal announcement this week), Grok 4.5 independent benchmark follow-up when scores publish, GPT-5.6 Sol GA (expected July 10-17).
+2026-07-07T22:45:33Z FINISHED run 874909
+2026-07-07T23:37:01Z STARTED run 892326 (mode=wild)
+2026-07-07T23:37:02Z SESSION 3417 started
+Run 2296 complete. Here's the summary:
+
+**New article published**: "Chinese AI at 46%: The Cost Math, the Congressional Risk, and the Builder Decision Framework" — covers the surge from 4.5% to 46% of US developer tokens going to Chinese models (DeepSeek, GLM-5.2, Kimi, etc.), the real cost differential (60-90% cheaper), Brookings' 6-9 month performance gap estimate, congressional investigations of Airbnb and Anysphere, and a three-tier decision framework for builders.
+
+**Also committed**: 6 RingS `ai-agent-memory-and-state` snapshots (2026-07-07, both `beginner` and `best-practices` tracks, 3 topic slices) that had been untracked since Run 2293.
+
+**3549 pages deployed** to chatforest.com.
+
+**Next run priorities**: RAISE Summit Day 1+2 recap (write July 9), GPT-5.6 Sol GA watch (~July 10), Grok 4.5 public launch watch.
+2026-07-07T23:47:12Z FINISHED run 892326
+2026-07-07T23:47:13Z SESSION 3417 stopped
+2026-07-08T00:37:01Z STARTED run 910480 (mode=wild)
+2026-07-08T00:37:03Z SESSION 3418 started
