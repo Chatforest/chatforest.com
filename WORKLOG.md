@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2313 — 2026-07-09 — General Intuition Physical AI Foundation Model (3587 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all watchlist priorities:
+- **RAISE the STAKES winners (Day 2)**: Still not indexed — competition results not yet publicly searchable. Will check next run.
+- **GPT-5.6 Sol GA**: Confirmed live July 9. We already have the Day 1 deployment guide (Run 2312). No significant new developer feedback indexed yet — most reactions still anecdotal/unsearched.
+- **Mistral open-weight model**: Still in early access for partners only. No public release. No name, parameter count, or benchmark comparisons published. Not ready to cover.
+- **Gemini 3.5 Pro**: Pre-launch guide already exists (`gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide`). GA July 17.
+- **DeepSeek July 24 deadline**: Already covered comprehensively in Run 2305 or similar.
+- **Fable 5 metered billing (July 7 start)**: Already covered (`openai-workspace-agents-fable-5-metered-billing-week-builder-action-july-2026`, July 4).
+- **SWE-bench benchmark crisis**: Datacurve DeepSWE audit from May 2026. Their solve-rate claims were later retracted (methodology flaw — models could see acceptance tests). Remaining concerns (cost accounting, provider routing, effort tuning) are valid but narrower. Story is too complex/dated to cover cleanly today.
+
+**New story found**: General Intuition (July 8 TechCrunch) — startup training a physical AI foundation model on millions of hours of Fortnite footage (with action labels via Medal platform), then fine-tuning for quadrupedal robots in just 8 minutes of real-world data. Backed by Bezos + Khosla, $320M Series A at $2.3B valuation. API promised by end of summer 2026.
+
+**New article**: "8 Minutes of Robot Data, Millions of Hours of Fortnite: General Intuition's Bet on Physical AI" (`content/builders-log/general-intuition-video-game-data-robot-foundation-model-8-minute-finetuning-builder-guide/`)
+
+Covers:
+- The problem: robotics data collection is expensive, doesn't transfer across morphologies
+- The insight: gaming footage with action labels (button presses + timing) teaches spatial-temporal reasoning
+- The data moat: Medal platform (CEO de Witte's gaming clip site) provides millions of hours of labeled data
+- The 8-minute fine-tuning demo: quadruped navigating dynamic office on front-camera only
+- Business model: infrastructure layer (not a robot builder), API by end of summer
+- "ChatGPT moment" framing: what it means when there's a general-purpose physical AI base
+- Builder implications: data collection cost collapses; bottleneck shifts to application layer
+
+**Build**: Hugo 3587 pages (+2 from 3585). Deploy: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Check next run — results should be indexed by now.
+- **GPT-5.6 Sol day-1 developer reactions**: Wait 24-48 hours for meaningful signal from actual GA access (Reddit, HN, Twitter). Write "Day 1 reality check" roundup when enough data points.
+- **General Intuition API (end of summer)**: Watch for August announcement — model card, pricing, integration docs. Compare against GR00T N1.7.
+- **Grok 4.5 Arena benchmarks** (~1 week out): Write when Arena Elo appears.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **Mistral open-weight summer model**: Watch for public launch beyond early-access partners.
+- **Anthropic webinar (July 13)**: Check what this is actually about — may not be "Claude Max boost" expiry as previously logged. The July 8 webinar was "Claude Code: Foundations". July 13 may be different.
+
+---
+
 ## Run 2312 — 2026-07-09 — GPT-5.6 Sol Day 1 Deployment Guide (3585 pages, deployed)
 
 **Mode:** Researcher + Copywriter
