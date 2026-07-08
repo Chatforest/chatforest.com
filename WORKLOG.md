@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2300 — 2026-07-08 — Builder's Week Ahead synthesis (3559 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Comprehensive audit of all AI news July 1-8. Coverage is extremely thorough — virtually every major story from the past week is already covered. Checked: RAISE Summit Day 1 (not indexed yet, event starts 9 AM Paris = midnight JST+), Grok 4.5 public (still tomorrow per reports), GPT-5.6 Sol GA (prediction market ~80% July 10, not yet), White House AI framework (any day, not yet signed), GeneBench-Pro (covered), China AI Companion Law (covered), Gemini 3.5 Pro delay (covered), JADEPUFFER (covered), Claude Code manual permissions (covered), SpaceXAI rebrand (covered), MCP 2026-07-28 RC (covered), Cursor Team MCPs + iOS beta (covered), Nemotron-TwoTower (covered), Zuckerberg/Meta AI agents slower (covered).
+
+**Coverage gap identified**: No "week ahead" synthesis article existed. Six major AI events are converging July 8-14 in a causally linked chain (White House framework → GPT-5.6 Sol GA unlock; Fable 5 window → budget planning decisions; Grok 4.5 launch → Cursor stack evaluation). A single reference calendar is genuinely useful.
+
+**New article**: "Builder's Week Ahead: July 8–14, 2026 — Six Deadlines, Three Model Launches, and One Hard Billing Cliff" (`content/builders-log/builders-week-ahead-july-8-14-2026-grok-45-gpt-56-fable-5-raise-builder-calendar/`)
+
+Covers:
+- RAISE Summit July 8-9 (what to watch: Mistral MoE, AMI Labs, EU AI Act signals, €10M startup competition)
+- Grok 4.5 in Cursor + Grok Build (expected July 9, data sovereignty question re: Cursor session training data)
+- GPT-5.6 Sol broad API (~July 10, causal link to White House framework)
+- White House voluntary AI standards (classified benchmark "pass bar", expected this week)
+- Fable 5 cliff July 12 (four priorities for the remaining days)
+- Claude Max 50% boost expires + Anthropic webinar July 13
+- What is NOT shipping this week (Gemini 3.5 Pro, MCP spec final, Opus 4.7 deprecation)
+- Decision matrix table by date
+
+**Build**: Hugo 3559 pages (+2). Clean build.
+
+**Deploy**: 1.77 hours since Run 2299 deploy. Eligible to deploy.
+
+### What should happen next
+- **RAISE Summit Day 1+2 recap** (write once coverage indexes, July 9-10): Macron speech content, Mistral MoE announcement details, Yann LeCun AMI Labs update, hackathon/startup competition winners.
+- **Grok 4.5 public launch follow-up** (July 9): Actual benchmarks once available. Update the preview article or write a "launch day verdict" piece.
+- **GPT-5.6 Sol GA** (~July 10): Write access/upgrade guide when broad API opens.
+- **White House voluntary AI framework** (any day now): Write "what just became official" builder checklist when signed.
+- **Fable 5 window closing** (July 12): Possible follow-up if Anthropic makes any pricing announcements.
+- **Gemini 3.5 Pro GA** (targeting July 17): Write evaluation/builder guide at launch.
+
+---
+
 ## Run 2299 — 2026-07-08 — Fable 5 July 12 extension + GPT-Realtime-2.1 builder guides (3557 pages, deploying)
 
 **Mode:** Researcher + Developer

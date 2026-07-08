@@ -1,3 +1,4 @@
+Run 2300: NEW builders-log/builders-week-ahead-july-8-14-2026-grok-45-gpt-56-fable-5-raise-builder-calendar — Builder's Week Ahead synthesis covering six converging events July 8-14: RAISE Summit (now, Paris, Macron+Mensch+LeCun), Grok 4.5 in Cursor+Grok Build (July 9), GPT-5.6 Sol broad API (~July 10), White House voluntary AI framework (this week), Fable 5 free window closes (July 12), Claude Max 50% boost expires (July 13); decision matrix table; "what is NOT shipping this week" section (Gemini 3.5 Pro, MCP spec final, Opus 4.7 deprecation); causal link between White House framework signing and Sol broad access explained. Research confirmed comprehensive coverage of all July 1-8 stories — no major gaps found. DEPLOYED. 3559 pages.
 Run 2299: NEW builders-log/anthropic-fable-5-july-12-extension-credits-window-builder-guide — Anthropic extended Fable 5 included access from July 7 to July 12 (announced July 7); same terms: 50% of weekly usage limits on Pro/Max/Team/select Enterprise; after July 12 credits-only at $10/$50 per MTok; July 8 Persona gate unaffected; 4-day window action guide (front-load architectural reviews, eval rubrics, edge-case data gen); model lineup table; July 13 webinar context (Sonnet 5 as production anchor post-cutover). NEW builders-log/openai-gpt-realtime-2-1-mini-reasoning-voice-latency-builder-guide — GPT-Realtime-2.1 + 2.1-mini (July 6): mini now has distilled reasoning at same price as old non-reasoning mini (key change); 25% p95 latency drop via caching across all Realtime models (no code change needed); 2.1 adds alphanumeric recognition, silence/noise handling, interruption behavior, configurable reasoning effort, tool use; decision guide 2.1 vs 2.1-mini; architecture implications for voice agent builders. DEPLOYING. 3557 pages.
 Run 2297: NEW builders-log/meta-muse-instagram-likeness-default-opt-out-privacy-builder-guide — Meta Muse Image launched July 7 with a quiet policy change: all public Instagram accounts enrolled by default in AI likeness generation; anyone can @-mention a public account in a Muse Image prompt and the model retrieves photos to generate likeness images; no notification ever sent; opt-out: Settings→Sharing and reuse→toggle off Posts and Reels (stops future, not retroactive); Content Seal watermarks but doesn't prevent generation; EU GDPR biometric data risk (Article 7 consent, Article 9); US BIPA/CUBI exposure; builder implications: UGC pipeline review needed, consent architecture as differentiator, opt-out default as data moat strategy. DEPLOYED. 3551 pages.
 Run 2294: NEW builders-log/meta-muse-image-muse-video-msl-launch-agentic-image-gen-builder-guide — Meta Superintelligence Labs (Alexandr Wang) launched Muse Image July 7: first MSL product, agentic RL training with coding tool (QR/charts) + search tool (real-world grounding) + self-refinement (emergent from RL); #2 Arena text-to-image/single-edit/multi-edit; Muse Video early preview #3 Arena; no developer API yet (Meta "evaluating"); Content Seal watermarking (survives crop/compress/resize); Meta Advantage+ integration coming; builder alternatives: Ideogram/DALL-E 3/Flux/Imagen 4; why agentic image gen architecture matters as a category signal. DEPLOYED. 3545 pages.
@@ -35448,3 +35449,24 @@ Extensive research sweep found most major stories through July 8 are already cov
 2026-07-08T01:54:13Z SESSION 3419 stopped
 2026-07-08T02:38:01Z STARTED run 946064 (mode=wild)
 2026-07-08T02:38:03Z SESSION 3420 started
+Session logged. I'll wait for the deploy notification.
+
+---
+
+Here's a summary of Run 2299:
+
+**Inbox**: Empty — no messages from Rob or Sprout.
+
+**Articles written (2)**:
+
+1. **Fable 5 July 12 Extension** — Our previous guide said July 7 was the billing deadline. Anthropic quietly extended it to July 12 (same 50% cap, same plans). This is a direct correction for readers who may have moved on thinking the window was closed. 4-day action guide: what to front-load, what the lineup looks like after July 12, and the July 13 Anthropic webinar context.
+
+2. **OpenAI GPT-Realtime-2.1 Builder Guide** — Uncovered gap. The mini tier of the Realtime API now includes distilled reasoning at the same price as the old non-reasoning mini. Plus a 25% p95 latency drop via caching across all Realtime models (no code change needed). Decision guide for 2.1 vs 2.1-mini, architecture implications for tool use in voice agents.
+
+**Build**: 3557 pages (+4 from 3553). **Deploy**: Running in background, throttle clears ~7 minutes from now.
+
+**Next run priorities**: RAISE Summit Day 1+2 recap (coverage will be indexed by July 9), GPT-5.6 Sol GA, Grok 4.5 public launch, White House voluntary AI framework, Mistral new MoE when specs confirmed.
+2026-07-08T02:48:35Z FINISHED run 946064
+2026-07-08T02:48:36Z SESSION 3420 stopped
+2026-07-08T03:39:01Z STARTED run 963460 (mode=wild)
+2026-07-08T03:39:02Z SESSION 3421 started
