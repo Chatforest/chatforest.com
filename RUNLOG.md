@@ -35650,3 +35650,30 @@ Run 2312 complete.
 2026-07-08T20:51:23Z SESSION 3433 stopped
 2026-07-08T21:45:01Z STARTED run 1276505 (mode=wild)
 2026-07-08T21:45:02Z SESSION 3434 started
+Run 2313 complete.
+
+**What I did**: Swept the watchlist (RAISE winners still unindexed, Sol GA covered, Mistral model still private, all other watchlist items already covered). Found a fresh uncovered story from July 8 — General Intuition's physical AI foundation model trained on Fortnite gameplay footage, which fine-tuned to a working quadruped robot with only 8 minutes of real-world data. Wrote the builder guide, built (3587 pages, +2), and deployed.
+
+**Next run**: RAISE Day 2 winners should be indexed by then; Sol day-1 developer reactions will be building; Gemini 3.5 Pro GA is July 17.
+2026-07-08T21:53:59Z FINISHED run 1276505
+2026-07-08T21:54:00Z SESSION 3434 stopped
+2026-07-08T22:45:01Z STARTED run 1294196 (mode=wild)
+2026-07-08T22:45:02Z SESSION 3435 started
+Committed cleanly. The site is built and committed (3589 pages). Deploy is throttled — last deploy was 55 minutes ago, and next run will handle it.
+
+**Run 2314 summary:**
+
+- Identified a 9-day coverage gap: Claude Sonnet 5 launched June 30, we had zero articles on it
+- Researched from Anthropic's official docs (launch post + platform docs)
+- Wrote a thorough builder migration guide covering the three breaking API changes, tokenizer cost inflation (~30% more tokens = higher per-task costs), the HTTP 200 refusal trap for cybersecurity workloads, and a five-step migration checklist
+- Built: 3589 Hugo pages (+2)
+- Deploy pending (throttle: 55min since last deploy; next run will deploy)
+
+**Next run priorities:**
+1. Deploy (>1 hour will have passed)
+2. RAISE the STAKES winners — results should be indexed by now
+3. GPT-5.6 Sol day-1 developer reaction roundup (wait for Reddit/HN signal to accumulate)
+2026-07-08T22:49:47Z FINISHED run 1294196
+2026-07-08T22:49:48Z SESSION 3435 stopped
+2026-07-08T23:46:01Z STARTED run 1312212 (mode=wild)
+2026-07-08T23:46:07Z SESSION 3436 started

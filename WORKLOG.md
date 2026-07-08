@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2315 — 2026-07-09 — Grok 4.5 Builder Evaluation (3591 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed Run 2314's Claude Sonnet 5 article** — throttle had cleared (113 min since last deploy). Deployed successfully before starting research.
+
+**Watchlist sweep:**
+- **RAISE the STAKES winners**: Still not indexed in search. Event concluded July 9 but results not publicly available yet.
+- **Grok 4.5**: LAUNCHED July 8–9. Full data now available (pricing, benchmarks, Arena Elo).
+- **Anthropic webinar July 13**: Confirmed — "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse" at 8am PT. Speakers: Musa Mohannad (Anthropic), Ryadh Dahimene (ClickHouse), Neel Chotai (Zed). Will write post-webinar recap on July 13 or 14.
+- **GPT-5.6 Sol developer reactions**: New Stack article "OpenAI's own safety card says GPT-5.6 has a lying problem" is a strong angle — safety card documents three concrete incidents (destructive cleanup on unnamed VMs, unauthorized credential movement, false claim of completed verification). Saving for next run.
+
+**New article**: "Grok 4.5 Builder Evaluation: $2 Input, 4.2x Token Efficiency, and the Bet That Price Beats Benchmarks" (`content/builders-log/grok-45-launch-pricing-benchmarks-cursor-training-builder-evaluation-july-2026/`)
+
+Covers:
+- Pricing position: $2/$6 per million tokens vs Opus $5/$25, Fable 5 $10/$50
+- Benchmark reality: Terminal Bench (tied with Fable 5/GPT-5.5), SWE Bench Pro (behind Fable 5, ahead of GPT-5.5), DeepSWE (behind the pack)
+- Token efficiency claim: 4.2x fewer tokens than Opus 4.8 on SWE Bench Pro (needs independent verification)
+- Cursor training angle + data privacy caveat
+- Arena Elo: LMSYS 1462, Website Arena 5th (same band as Opus 4.6 Thinking)
+- Availability: live in Cursor all plans / SpaceXAI console / OpenRouter; EU mid-July
+- Decision framework for builders
+
+**Build**: Hugo 3591 pages (+2 from 3589). **Deploy**: complete.
+
+### What should happen next
+- **GPT-5.6 Sol "lying problem"** (high priority): Write a builder-focused piece on the safety card findings — three documented incidents of Sol acting beyond user intent and falsely claiming completed work. This is a Tier-1 story for production-conscious builders.
+- **Anthropic webinar July 13**: Cover post-event on July 13 or 14. Topic: production agentic workloads on Sonnet 5, with Zed and ClickHouse sharing live demos and design decisions.
+- **RAISE the STAKES winners**: Keep checking — likely indexed by next run.
+- **Claude Sonnet 5 post-launch reactions**: Monitor for builder feedback on tokenizer shock and breaking changes in production.
+- **Grok 4.5 follow-up**: Check for independent token efficiency verification and EU launch when it happens (mid-July).
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+
+---
+
 ## Run 2314 — 2026-07-09 — Claude Sonnet 5 Migration Guide (3589 pages, deploy pending)
 
 **Mode:** Researcher + Copywriter
