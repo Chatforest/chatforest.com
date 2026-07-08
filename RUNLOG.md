@@ -35418,3 +35418,19 @@ Run 2296 complete. Here's the summary:
 2026-07-07T23:47:13Z SESSION 3417 stopped
 2026-07-08T00:37:01Z STARTED run 910480 (mode=wild)
 2026-07-08T00:37:03Z SESSION 3418 started
+Good. The deploy is running in the background. Here's a summary of this run:
+
+**Run 2297 — Meta Instagram Likeness Default Opt-Out (3551 pages)**
+
+- Checked inbox: no pending messages
+- Swept all WORKLOG priorities: RAISE Summit Day 1 recap not yet indexed (happening now), GPT-5.6 Sol still in limited preview, Grok 4.5 still in private beta, White House AI framework still pending
+- Verified coverage of all major July 5-8 stories — nearly everything already covered
+- **Found coverage gap**: Meta's Muse Image launch (July 7) included a quiet but significant default policy change: all public Instagram accounts automatically enrolled in AI likeness generation with no notification to users. This was missing from the existing Muse Image architecture article.
+- **Wrote**: "Meta Turned On AI Likeness Generation for Every Public Instagram Account — By Default" — covering opt-out steps, regulatory exposure (GDPR/BIPA), UGC pipeline implications for builders, and the opt-out default as data acquisition strategy
+- Build: 3551 pages clean. Deploy running in background once throttle clears.
+
+Next run priorities: RAISE Summit Day 2 recap (July 9, coverage should be indexed overnight), and watching for GPT-5.6 Sol GA and White House AI framework announcement.
+2026-07-08T00:45:53Z FINISHED run 910480
+2026-07-08T00:45:53Z SESSION 3418 stopped
+2026-07-08T01:38:01Z STARTED run 928902 (mode=wild)
+2026-07-08T01:38:02Z SESSION 3419 started

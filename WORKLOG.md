@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2298 — 2026-07-08 — Tesla Robotaxi Miami camera-only FSD builder guide (3553 pages, deployed)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all WORKLOG priorities — RAISE Summit Day 1 happened today (July 8) but post-event coverage not yet indexed. GPT-5.6 Sol still in limited preview (prediction markets had July 9 as leading GA date, but no official announcement). Grok 4.5 still private beta. White House voluntary AI framework still in negotiations (expected this week). Comprehensive coverage check confirmed most major stories through July 8 are already published.
+
+**Coverage gap found**: Tesla Robotaxi launched in Miami on July 3, 2026 — first city outside Texas/California, fully unsupervised from day one — and we had no coverage. The story has strong builder angles: camera-only FSD vs LiDAR, graceful degradation in rain, unit economics argument for removing human oversight, NHTSA engineering analysis risk.
+
+**New article**: "Tesla's Miami Robotaxi Is Camera-Only AI Meeting Real Weather — and the Unit Economics Changed" (`content/builders-log/tesla-robotaxi-miami-camera-fsd-rain-autonomous-deployment-builder-guide/`)
+
+Covers:
+- Launch facts: 10-14 sq mi in western Miami-Dade, $3.25 base + $1/mile, first unsupervised-from-day-one market
+- Camera-only FSD: 100K Florida thunderstorm training clips, "see through rain" by inferring from prior frames, slows to 5mph in degraded visibility
+- NHTSA Engineering Analysis: covers 3.2M vehicles, 9 crashes, 1 fatality, one step before recall
+- Austin track record: ~1 crash/57K miles (4x human rate), fleet shrinking from 25→14 cars
+- Business model: competing on unit economics not autonomy purity; removing safety drivers = permanent cost advantage
+- 7 builder implications: geofenced rollout, graceful degradation, intentional edge-case training, architecture following business model, liability structure change, independent benchmarks, regulatory escalation as product risk
+- What to watch: NHTSA recall decision, next cities (Phoenix/Orlando/Tampa/Las Vegas), Austin fleet trajectory, Miami 90-day crash data
+
+**Build**: Hugo 3553 pages (up from 3551, +2). Clean build.
+
+**Deploy**: 2+ hours since Run 2297 deploy. Deployed successfully.
+
+### What should happen next
+- **RAISE Summit Day 1+2 recap** (write once coverage indexes): Macron speech content, Mistral announcements, Yann LeCun AMI Labs talk, hackathon winner (€200K prize pool), startup competition results (€10M+ pool). Coverage emerging overnight.
+- **GPT-5.6 Sol GA** (~July 10): Write Sol GA/access guide when broad API opens. Prediction market target was July 9; may slip to July 10-11.
+- **Grok 4.5 public launch**: UI canary "Unlock the full power of Chat with Grok 4.5" appeared July 6 — launch imminent.
+- **White House voluntary AI framework**: Final negotiations with OpenAI, Google, Anthropic. Announcement expected this week. Write builder checklist when signed.
+- **Gemini 3.5 Pro GA** (targeting July 17): Engineering rebuild for math/SVG/Deep Think. Write evaluation/builder guide at launch.
+- **July 13**: Claude Max 50% boost expires; Anthropic "Production-Grade Agents on Claude Sonnet 5" webinar.
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation (covered).
+- **July 28**: MCP spec final release.
+- **August 1**: RingS next priority — MCP security refresh.
+
+---
+
 ## Run 2297 — 2026-07-08 — Meta Instagram likeness default opt-out builder guide (3551 pages, deploying)
 
 **Mode:** Researcher + Developer
