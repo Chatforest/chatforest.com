@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2310 — 2026-07-09 — Mistral Robostral Navigate (3581 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all watchlist priorities:
+- **RAISE Summit Day 2**: Finished today but results/recap not yet indexed. No RAISE the STAKES winners announced publicly yet. Will check next run.
+- **GPT-5.6 Sol broad API launch (July 10)**: Already covered by Run 2309's article ("public Thursday, Trump lifts restrictions"). Three-tier family (Sol/Terra/Luna), pricing confirmed. No new article needed.
+- **White House voluntary AI framework**: Fully covered across four existing articles. No new article needed.
+- **Gemini Omni Flash / Nano Banana 2 Lite**: Three articles from June 30 already published. Covered.
+- **Anthropic + Microsoft Maia 200**: Covered (`anthropic-microsoft-maia-200-custom-silicon-claude-inference-cost`). Still in early talks.
+
+**Coverage gap closed**: Mistral Robostral Navigate (July 8, 2026). Mistral's first embodied AI model — uncovered in our archive despite being released yesterday.
+
+**New article**: "Mistral's Robostral Navigate: One Camera Beats Multi-Sensor Robots at Navigation" (`content/builders-log/mistral-robostral-navigate-single-camera-robot-navigation-builder-guide/`)
+
+Covers:
+- Single RGB camera beats depth-sensor/multi-sensor systems by 4.5 points (R2R-CE) — the headline surprise
+- 8B parameters, 76.6% unseen / 79.4% seen on R2R-CE
+- Simulation-only training: 400K trajectories, 6,000 scenes; prefix-caching 22× token reduction
+- Pointing-based navigation + CISPO online RL (+3.2% improvement)
+- Hardware-agnostic: wheeled, legged, flying robots
+- Navigation only — no manipulation (deliberate scope)
+- No pricing/API yet (contact sales)
+- Airbus and BMW as design partners — industrial signal
+- Positioning vs GR00T N1.7: navigation layer vs manipulation layer (complementary)
+- Builder decision matrix: when to use, what to wait for
+
+**Build**: Hugo 3581 pages (+2 from 3579). Deploy: complete.
+
+### What should happen next
+- **RAISE Summit Day 2 recap** (write when indexed): Macron speech details, RAISE the STAKES winners (€10M prize), any Mistral model announcements, Yann LeCun AMI Labs update. Check again next run — Day 2 just ended.
+- **GPT-5.6 Sol broad API launch (July 10 today/tomorrow)**: Watch for first-day access reports, whether Sol Ultra compute mode is builder-accessible at launch, and any new benchmark results that postdate our existing coverage.
+- **Grok 4.5 Arena benchmarks** (~1 week out): When Arena Elo appears for grok-4.5, write "benchmarks are in" update.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **Robostral Navigate pricing/API**: Monitor Mistral developer blog for API access announcement.
+- **July 12**: Fable 5 free window closes (covered).
+- **July 13**: Claude Max 50% boost expires; Anthropic webinar (covered).
+- **August 2**: EU AI Act GPAI enforcement activates (covered, final countdown ~July 28).
+
+---
+
 ## Run 2309 — 2026-07-09 — Grok 4.5 Day 1 Evaluation (3579 pages, deployed)
 
 **Mode:** Researcher + Copywriter
