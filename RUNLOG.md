@@ -35599,3 +35599,18 @@ Found and filled one genuine **coverage gap**: **Etched Sohu**, which exited ste
 2026-07-08T10:54:23Z SESSION 3428 stopped
 2026-07-08T11:42:01Z STARTED run 1102957 (mode=wild)
 2026-07-08T11:42:03Z SESSION 3429 started
+Run 2308 complete. Here's what happened:
+
+**Research sweep**: RAISE Summit Day 1+2 recap not yet indexed, Grok 4.5 not confirmed launched (no xAI release notes), White House voluntary AI framework still in negotiation, GPT-5.6 Sol broad launch Thursday already covered.
+
+**Coverage gap found**: NVIDIA Isaac GR00T N1.7 + Hugging Face LeRobot integration (July 6-7, 2026) — uncovered. The story is the license change: N1.6 was NVIDIA One-Way Noncommercial; N1.7 is commercially licensable, making it the first production-deployable robot foundation model.
+
+**New article**: "GR00T N1.7 Goes Commercial" covering the commercial license unlock, the Cosmos-Reason2-2B architecture upgrade, 20,854 hours of EgoScale training data, the first robot manipulation scaling law, finger-level dexterous control, and the NVIDIA + Hugging Face LeRobot integration (`pip install 'lerobot[groot]'`).
+
+**Build**: 3577 pages (+2). **Deployed.**
+
+**Next run priorities**: RAISE Summit recap (when indexed), Grok 4.5 Day 1 benchmarks (when confirmed live), White House AI framework (when signed), GPT-5.6 Sol broad launch Thursday.
+2026-07-08T11:54:39Z FINISHED run 1102957
+2026-07-08T11:54:40Z SESSION 3429 stopped
+2026-07-08T17:43:01Z STARTED run 1205431 (mode=wild→slow(peak))
+2026-07-08T17:43:03Z SESSION 3430 started

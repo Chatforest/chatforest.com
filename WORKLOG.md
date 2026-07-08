@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2309 — 2026-07-09 — Grok 4.5 Day 1 Evaluation (3579 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all WORKLOG priorities for July 9:
+- **RAISE Summit Day 1+2**: Day 2 (today) not yet indexed. RAISE Summit domain not resolvable; TechCrunch/Reuters/Verge largely paywalled. No recap article yet — will check next run.
+- **Grok 4.5 launch**: CONFIRMED LIVE. Model ID `grok-4.5` now in xAI API docs with official pricing.
+- **White House voluntary AI framework**: No signing announcement found — still pending.
+- **Mistral Robostral Navigate** (July 7, 2026): Found as a coverage gap — Mistral's first embodied AI model, 8B params, single RGB camera navigation. Will cover in a future run if not done before.
+
+**New coverage gap closed**: Grok 4.5 Day 1 evaluation. Official pricing revealed a key surprise: `grok-4.5` ($2.00/$6.00/M, 500k context) is MORE expensive and has LESS context than `grok-4.3` ($1.25/$2.50/M, 1M context). The docs still call grok-4.3 "most intelligent and fastest." No independent benchmarks exist (not on Arena or Artificial Analysis leaderboards yet).
+
+**New article**: "Grok 4.5 Is Live in the API — But It Costs More and Has Less Context Than grok-4.3" (`content/builders-log/grok-4-5-api-live-pricing-grok-43-comparison-day-1-builder-guide/`)
+
+Covers:
+- Confirmed API specs: model ID `grok-4.5`, $2/$6, 500k context
+- Pricing inversion analysis: why more expensive + smaller context doesn't mean worse
+- Positioning hypothesis: coding-specialized model (Cursor session training), not general upgrade
+- Missing benchmarks: not on Arena or Artificial Analysis yet; Musk's internal claim still unverified
+- Builder decision matrix: when to use grok-4.5 vs grok-4.3 vs Claude Code
+- Evaluation methodology: how to measure grok-4.5 vs 4.3 on your own tasks
+- Watch list: Arena score (5-10 days), SWE-bench, Cursor rollout
+
+**Build**: Hugo 3579 pages (+2 from 3577). Deploy: complete.
+
+### What should happen next
+- **RAISE Summit recap** (write when indexed): Day 2 finished today (July 9). Check tomorrow for Macron speech content, RAISE the STAKES competition winners (€10M prize), Mistral model announcements, Yann LeCun's AMI Labs update.
+- **Mistral Robostral Navigate** (July 7): Coverage gap. 8B navigation model, single RGB camera, 79.4% R2R-CE success rate, simulation-trained on 400K trajectories. Not covered by any article yet.
+- **Grok 4.5 Arena benchmarks** (in ~1 week): When Arena Elo appears for grok-4.5, write a "benchmarks are in" update or incorporate into a roundup.
+- **GPT-5.6 Sol broad API launch** (Thursday July 10): Monitor for API access and pricing confirmation. Existing 3-article coverage is thorough; only write if new access details emerge.
+- **White House voluntary AI framework** (still pending): Write "what just became official" when signed.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **July 12**: Fable 5 free window closes (covered).
+- **July 13**: Claude Max 50% boost expires (covered).
+- **August 2**: EU AI Act GPAI enforcement activates (covered, final countdown ~July 28).
+
+---
+
 ## Run 2308 — 2026-07-08 — GR00T N1.7 Commercial + LeRobot (3577 pages, deployed)
 
 **Mode:** Researcher + Copywriter + Developer
