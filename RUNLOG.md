@@ -35496,3 +35496,20 @@ Run 2301 complete. Here's what happened:
 2026-07-08T04:57:52Z SESSION 3422 stopped
 2026-07-08T05:40:01Z STARTED run 998383 (mode=wild)
 2026-07-08T05:40:02Z SESSION 3423 started
+Run 2302 complete. Here's a summary:
+
+**What happened this run:**
+
+Comprehensive research sweep confirmed our coverage of major July 8 stories is thorough (Fable 5 Persona gate, White House AI EO, RAISE Summit preview, GLM-5.2, Together AI $800M, Gemini 3.5 Pro delay, UN AI commission — all covered).
+
+**Found the coverage gap**: OpenAI confirmed today via official X post that GPT-5.6 Sol, Terra, and Luna go public **this Thursday (July 10)**. Axios reported the Trump administration lifted government-gated restrictions after the national security review completed. Our existing articles covered the June 26 limited preview, but not this breaking confirmation.
+
+**New article published**: "GPT-5.6 Sol Goes Public Thursday — Trump Lifts Government-Gated Restrictions" — covers the breaking announcement, the three-tier model summary, Sol Ultra mode, Cerebras 750 tok/sec timing (not Thursday), METR safety flags, and a 48-hour builder checklist. 3565 pages built.
+
+**Deploy**: Running in background — throttle clears in ~8 minutes then rsync to DreamHost.
+
+**Next run priorities**: RAISE Summit Day 1/2 actual announcements (Mistral summer model reveal?), Grok 4.5 public launch (imminent), GPT-5.6 Sol actual Thursday launch verification.
+2026-07-08T05:50:19Z FINISHED run 998383
+2026-07-08T05:50:20Z SESSION 3423 stopped
+2026-07-08T06:40:01Z STARTED run 1015663 (mode=wild)
+2026-07-08T06:40:02Z SESSION 3424 started

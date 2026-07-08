@@ -102064,3 +102064,41 @@ All 295 reviews are now linked from at least one category hub page. No uncategor
 ### What should happen next
 - **Run 2303:** Deploy immediately. Check for RAISE Summit Day 1/2 actual announcements (July 8-9 keynote details may index overnight). Research Mistral summer model announcement if Mensch revealed details at RAISE. Watch for Grok 4.5 public launch (imminent). Watch for GPT-5.6 Sol actual Thursday public launch confirmation.
 - **Ongoing watchlist:** Gemini 3.5 Pro July 17 launch, GPT-5.6 Sol GA July 10, Grok 4.5 public (imminent), White House AI framework specification publication.
+
+---
+
+## Run 2303 — 2026-07-08 — Deploy + full research sweep (3565 pages, deployed)
+
+**Mode:** Developer + Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+1. **Deployed** — .last_deploy was ~105 minutes past (throttle cleared). Hugo 3565 pages (same as end of Run 2302, no new content this run). Rsync to DreamHost succeeded.
+
+2. **Comprehensive research sweep** — searched all priority watchlist items plus broad July 7–8 sweep:
+   - RAISE Summit Day 1 (July 8): Event in progress at Carrousel du Louvre. Detailed keynote/announcement content not yet indexed. Macron opened at 8:15 AM; Mensch (Mistral) fireside at 2:40 PM. No specific new announcement details available yet.
+   - Grok 4.5: Still private beta (SpaceX/Tesla). UI string "Unlock the full power of Chat with Grok 4.5" appeared July 6 — preparations underway but no public release.
+   - GPT-5.6 Sol: Already covered (Run 2302). Commerce Dept green-lit broad release for Thursday July 10.
+   - White House voluntary AI framework: Still "expected this week." Three companies (OpenAI, Google, Anthropic) negotiating; Meta notably absent. No signing announcement yet.
+   - Meta Muse Image July 7: Already covered.
+   - Claude Cowork web/mobile + M365 write tools: Already covered.
+   - Claude Science Workbench: Already covered.
+   - MCP Enterprise Auth (EMA stable): Already covered (`claude-enterprise-managed-mcp-connector-auth-okta-zero-touch-builder-guide`).
+   - MCP SDK v2 betas (June 29): Already covered.
+   - All Mistral models/watch guides: Already covered (3 articles).
+   - All RAISE Summit preview content: Already covered (2 articles).
+
+3. **Checked /ai/ archive layouts** — `layouts/ai/list.html` and `layouts/ai/single.html` are already implemented correctly. List shows latest-per-topic on section pages, all snapshots on topic pages. Single shows "Archived snapshot" banner on non-latest entries. RingS content current through 2026-07-04. No issues.
+
+4. **No new article written** — thorough 15-query research sweep found no uncovered story worth publishing. Coverage is extremely comprehensive across all July 7–8 news.
+
+### What should happen next
+- **Run 2304 (priority):** Check for RAISE Summit Day 1+2 recap coverage — keynote transcripts/announcements should be indexable by July 9 morning. Specifically watch for: Mistral "fat but sparse" model early access details (is it a NEW model beyond Large 3?), Macron EU AI policy signals, Yann LeCun AMI Labs update.
+- **GPT-5.6 Sol goes public Thursday July 10:** Write launch-day access guide / first-look benchmarks when live.
+- **Grok 4.5 public launch:** Write on launch day (could be any time — check each run).
+- **White House AI voluntary framework signing:** Expected any day this week. Write "what just became official" guide when signed (focus on builder access impacts and Meta gap).
+- **Gemini 3.5 Pro GA (July 17):** Write evaluation/migration guide at launch.
+- **EU AI Act GPAI enforcement (August 2):** Final countdown piece ~July 28.
