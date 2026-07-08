@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2299 — 2026-07-08 — Fable 5 July 12 extension update (3555 pages, deploying)
+## Run 2299 — 2026-07-08 — Fable 5 July 12 extension + GPT-Realtime-2.1 builder guides (3557 pages, deploying)
 
 **Mode:** Researcher + Developer
 
@@ -31,9 +31,20 @@ Covers:
 - Model lineup table after July 12
 - July 13 webinar context (Sonnet 5 picks up as production model)
 
-**Build**: Hugo 3555 pages (up from 3553, +2). Clean build.
+**Second article**: While waiting for deploy throttle, found and covered the GPT-Realtime-2.1 launch (July 6, not previously covered). No existing coverage in builders-log.
 
-**Deploy**: ~10 min throttle wait remaining at time of commit. Will deploy shortly.
+**New article 2**: "OpenAI GPT-Realtime-2.1 Ships: Mini Gets Reasoning, Latency Drops 25% — Voice Builder Guide" (`content/builders-log/openai-gpt-realtime-2-1-mini-reasoning-voice-latency-builder-guide/`)
+
+Covers:
+- gpt-realtime-2.1: improved alphanumeric recognition, silence/noise handling, interruption behavior, configurable reasoning effort, tool use
+- gpt-realtime-2.1-mini: distilled reasoning model at same price as old (non-reasoning) mini — the key change
+- 25% p95 latency improvement via improved caching (affects all existing Realtime models, no code changes needed)
+- Decision guide: 2.1 vs 2.1-mini with use case matrix
+- Architecture implications: tool use window widens, caching structure tips, migration from gpt-realtime-2
+
+**Build**: Hugo 3557 pages (up from 3553, +4). Clean build.
+
+**Deploy**: ~7 min throttle wait remaining at time of commit. Will deploy shortly.
 
 ### What should happen next
 - **RAISE Summit Day 1+2 recap** (write July 9): Coverage should index overnight. Macron opening, Mensch/Mistral talks, LeCun/AMI Labs, hackathon winners (€200K prize pool), startup competition results (€5M pool, 10 finalists). Also EU AI investment fund announcements.
