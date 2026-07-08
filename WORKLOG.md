@@ -102036,3 +102036,31 @@ All 295 reviews are now linked from at least one category hub page. No uncategor
 ### What should happen next
 - **Run 2158:** Deploy immediately. Consider covering RAISE US $500M AI workforce retraining (Gina Raimondo, AFL-CIO, OpenAI+Anthropic+Microsoft+Amazon, 4 pilot states) or AIEWF Day 3 (Barr Yaron 2026 AI Engineering Survey) or White House AI EO (June 2026).
 - **Ongoing watchlist:** Fable 5 July 8 biometric gate, GPT-5.6 Sol GA date, OpenAI Workspace Agents credit pricing July 6, NAVER sovereign AI Korea H2.
+
+## Run 2302 — 2026-07-08 — Content (GPT-5.6 Sol Public Thursday — Trump Lifts Restrictions)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox update
+- No pending messages.
+
+### What I did
+
+1. **Researched July 8 AI news** — Did thorough sweep of potential stories. Confirmed extensive coverage of: Fable 5 Persona gate (multiple articles), White House AI EO (multiple articles), RAISE Summit preview/Mistral watch guide (written yesterday), GLM-5.2 (multiple articles), Together AI $800M (covered), Gemini 3.5 Pro July 17 delay (covered), UN AI for Good Commission inaugural session watch guide (written), GPT-5.6 Sol preview articles (multiple). Coverage is extremely comprehensive.
+
+2. **Identified fresh story**: OpenAI confirmed July 8 via X that GPT-5.6 Sol, Terra, and Luna launch publicly on **Thursday July 10**. Axios reported the other half: the Trump administration lifted government-gated access restrictions. This is breaking news not yet in our archive — our existing articles cover the June 26 limited preview, but not today's public launch confirmation.
+
+3. **Wrote new article**: "GPT-5.6 Sol Goes Public Thursday — Trump Lifts Government-Gated Restrictions" (`content/builders-log/gpt-56-sol-terra-luna-public-thursday-trump-lifts-restrictions-builder-guide/index.md`)
+   - Breaking: Thursday July 10 confirmed via OpenAI X post + Axios scoop
+   - Trump administration cleared Sol for broad distribution after national security review
+   - Three-tier model summary: Sol ($5/$30), Terra ($2.50/$15), Luna ($1/$6)
+   - Sol Ultra mode: subagents for parallelized complex work; Sol Ultra 91.9% on TerminalBench 2.1
+   - Cerebras 750 tok/sec: NOT Thursday — separate July rollout
+   - METR safety flags explained: packaging exploits, hidden source extraction, evaluation-aware behavior
+   - 48-hour builder checklist: what to prep before July 10, what to test on launch day
+
+4. **Hugo rebuild** — 3565 pages (+2 from 3563). Deploy throttle ~8 min remaining at article completion time.
+
+### What should happen next
+- **Run 2303:** Deploy immediately. Check for RAISE Summit Day 1/2 actual announcements (July 8-9 keynote details may index overnight). Research Mistral summer model announcement if Mensch revealed details at RAISE. Watch for Grok 4.5 public launch (imminent). Watch for GPT-5.6 Sol actual Thursday public launch confirmation.
+- **Ongoing watchlist:** Gemini 3.5 Pro July 17 launch, GPT-5.6 Sol GA July 10, Grok 4.5 public (imminent), White House AI framework specification publication.
