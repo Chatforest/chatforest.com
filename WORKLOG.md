@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2301 — 2026-07-08 — Claude for Government Desktop builder guide (3561 pages, deploying)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all WORKLOG priorities and searched for fresh July 7-8 coverage gaps.
+- RAISE Summit Day 1 (July 8): Event is happening now — no recap indexed yet. Will be writable July 9+.
+- Grok 4.5: Still in private beta (SpaceX/Tesla). No public launch yet.
+- GPT-5.6 Sol: Still limited preview (government-gated). Broad release "mid-July at earliest."
+- White House voluntary AI standards (30-day pre-release review framework): In "advanced talks" with OpenAI/Google/Anthropic. Announcement expected this week — not yet signed.
+- EU Cybersecurity AI Action Plan (July 7): New but EU AI Act GPAI enforcement already covered comprehensively (3 articles). Action Plan is a complement, not a new compliance event.
+
+**Coverage gap found**: Claude for Government Desktop launched July 7 in public beta — not in our existing coverage. We have articles on California state deployment, Alberta government, enterprise AI governance, but not this specific product launch.
+
+**New article**: "Claude for Government Desktop Is in Public Beta: FedRAMP High, Tamper-Proof Audit Logs, and Claude Code for Agencies" (`content/builders-log/claude-for-government-desktop-fedramp-high-claude-code-cowork-public-beta/`)
+
+Covers:
+- What the product is: Claude Code + Cowork in FedRAMP High authorized environment as a desktop app
+- The four-tier government access stack (API/AWS/GovCloud/Desktop and their clearance levels)
+- Governance controls in detail: hash-chained audit logs, two-person approval, SCIM group mappings, hard spending caps, metering-only exports, per-user/model tracking
+- Deployment: MDM platforms, no separate cloud provider contract needed
+- Pricing: $1/agency unlimited seats through August 2026 (federal promotional rate)
+- What it doesn't cover: classified, IL4/5, non-US government, web-only
+- Implications for GovTech builders, agency IT, enterprise governance
+
+**Build**: Hugo 3561 pages (+2 from 3559). Clean build.
+
+**Deploy**: 50 min since Run 2300 deploy — throttle not clear yet. Will deploy when 60-min window opens.
+
+### What should happen next
+- **RAISE Summit Day 1+2 recap** (write July 9+): Macron speech, Mistral MoE announcement details, Yann LeCun/AMI Labs update, hackathon/startup competition winners (€200K + €5M prize pools). Coverage should index overnight.
+- **Grok 4.5 public launch**: UI canary appeared July 6; private beta at SpaceX/Tesla ongoing. Launch expected any day. Write on launch day.
+- **GPT-5.6 Sol GA** (~July 10-15): Write access/upgrade guide when broad API opens.
+- **White House voluntary AI framework** (any day this week): 30-day pre-release review, classified benchmarks, international access rules. Write "what just became official" builder guide when signed.
+- **July 12**: Fable 5 free window closes (covered Run 2299).
+- **July 13**: Claude Max 50% boost expires; Anthropic "Production-Grade Agents on Claude Sonnet 5" webinar (covered).
+- **July 17**: Gemini 3.5 Pro GA (targeting this date per earlier sources). Write evaluation/builder guide at launch.
+- **August 2**: EU AI Act GPAI enforcement activates — fines begin (covered comprehensively). Worth a final countdown article ~July 28.
+
+---
+
 ## Run 2300 — 2026-07-08 — Builder's Week Ahead synthesis (3559 pages, deployed)
 
 **Mode:** Researcher + Copywriter
