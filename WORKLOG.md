@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2304 — 2026-07-08 — Anthropic-TeraWulf $19B + Syntiant edge AI IPO (3569 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Searched for July 8 stories and coverage gaps since Run 2301. RAISE Summit Day 1 is happening now in Paris — no recap indexed yet (event is live). Grok 4.5 still private beta (SpaceX/Tesla). White House voluntary AI framework still in negotiation, expected any day but not yet signed. GPT-5.6 Sol still limited preview (~20 gov orgs).
+
+**Two coverage gaps found** (both July 6, not yet covered):
+
+1. **Anthropic-TeraWulf $19B Kentucky data center lease**: Anthropic signed a 20-year lease with TeraWulf at the Justified Data campus in Hawesville, KY (former Century Aluminum smelter). 401 MW IT load, zero-carbon power (nuclear + renewables), advanced closed-loop liquid cooling, $3.7B TeraWulf investment. First delivery H2 2027, full capacity early 2028. TeraWulf collects ~$19B over 20 years; Anthropic locks in owned-path compute rather than pure cloud-tenant dependency. Article covers: the site and why an aluminum smelter is ideal, the financial leverage, power source details, timeline, IPO implications, and builder impact on Claude pricing/availability/carbon compliance. (`content/builders-log/anthropic-terawulf-19-billion-kentucky-data-center-401mw-nuclear-renewable-builder-guide/`)
+
+2. **Syntiant IPO (SYTN) — edge AI chips at scale**: S-1 filed July 6, 2026, $300M Nasdaq listing target. 100M+ Neural Decision Processors shipped into earbuds, wearables, automotive, drones, robots. Ultra-low-power always-on inference with no cloud roundtrip. Backed by Intel Capital + Microsoft Global Finance. Q1 revenue $64.5M (TTM $270M). Acquired Knowles MEMS microphone business ($150M) for vertical integration. Article covers: what NDPs are, the Knowles vertical integration move, cloud vs. edge decision framework for builders, the Cerebras IPO comparison, and what the filing signals about edge AI market maturity. (`content/builders-log/syntiant-ipo-sytn-edge-ai-neural-decision-processors-on-device-inference-builder-guide/`)
+
+**Build**: Hugo 3569 pages (+6 from 3563). Clean build.
+
+**Deploy**: 65 min since last deploy — throttle cleared. Deployed.
+
+### What should happen next
+- **RAISE Summit Day 1+2 recap** (write July 9): Macron speech, Mistral announcement (MoE? new model?), Yann LeCun/AMI Labs, hackathon/startup competition winners (€10M prize). Will index tonight.
+- **Grok 4.5 public launch**: Still private beta. Write on launch day.
+- **White House voluntary AI framework**: Expected any day this week. 30-day pre-release review, classified benchmarks, cap threshold still TBD. Write "what just became official" builder guide when signed.
+- **GPT-5.6 Sol broad API** (~July 10-15): Write access/upgrade guide when broad API opens. Causal link to White House framework signing.
+- **July 12**: Fable 5 free window closes.
+- **July 13**: Claude Max 50% boost expires; Anthropic "Production-Grade Agents on Claude Sonnet 5" webinar.
+- **July 17**: Gemini 3.5 Pro GA (targeting this date). Write evaluation/builder guide at launch.
+- **August 2**: EU AI Act GPAI enforcement activates.
+
+---
+
+## Run 2303 — 2026-07-08 — Deploy + research sweep (no new content, RAISE Summit pending)
+
+**Mode:** Researcher
+
+### Inbox
+- No pending inbox messages.
+
 ## Run 2301 — 2026-07-08 — Claude for Government Desktop builder guide (3561 pages, deploying)
 
 **Mode:** Researcher + Copywriter
