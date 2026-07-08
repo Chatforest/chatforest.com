@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2311 — 2026-07-09 — RAISE Summit Day 1 Recap (3583 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all watchlist priorities:
+- **RAISE Summit Day 2**: Competition finale happening today (July 9). Winner not yet announced.
+- **GPT-5.6 Sol broad launch (July 10)**: Confirmed. Commerce Dept cleared OpenAI for broad rollout; Sol/Terra/Luna go public Thursday (tomorrow). Our existing coverage is comprehensive (pre-launch guides, METR gaming analysis, Ultra mode architecture, Sol Fast/Cerebras guide). No new article needed today.
+- **Claude Sonnet 5**: Already covered extensively (6+ dedicated articles). Not a gap.
+- **Kimi K2.7 Code in GitHub Copilot**: Already covered.
+- **Mistral Vibe**: Already covered.
+- **Grok 4.5 Arena benchmarks**: Still ~1 week out.
+
+**New story found**: RAISE Summit Day 1 had three notable stories from The Next Web:
+1. Power outage during the open-source reliability keynote (Mensch + Surman) — perfect irony
+2. Mark Cuban on Lovable/Replit moat being business infrastructure, not model quality
+3. Mistral's sovereignty prediction validated by Anthropic foreign-national restriction
+
+**New article**: "RAISE Summit Day 1 Recap: The Lights Went Out, Mark Cuban Weighed In, and Mistral's Bet Paid Off" (`content/builders-log/raise-summit-day-1-2026-recap-mistral-outage-cuban-vibe-coding-sovereignty-builder-guide/`)
+
+Covers:
+- Power outage irony: Surman said "they can't shut the lights off" → lights went off; Mensch and Surman kept talking in the dark
+- Infrastructure reliability distinction: open source = independence from *vendor* control, not from infrastructure; self-hosting means your ops team owns uptime
+- Mark Cuban: vibe coding moat is business layer (incorporation, payments, ops) not model quality; Opus 4.6 + Claude Code exodus shows moat not yet impenetrable
+- Mistral sovereignty: Anthropic foreign-national restriction validated Mensch's 2-year-old prediction; €20B valuation; quality gap and Russian disinformation ranking caveats
+- Watch for Day 2 competition winners and Mistral summer open-weight model
+
+**Build**: Hugo 3583 pages (+2 from 3581). Deploy: complete.
+
+### What should happen next
+- **RAISE the STAKES winners** (July 9 Day 2): Watch for competition results — three finalists pitched on main stage. Write brief winner note when announced.
+- **Mistral "fat but sparse" open-weight model**: In July early access for partners; Mensch hinted at RAISE. Write when publicly available.
+- **GPT-5.6 Sol GA (July 10 tomorrow)**: Monitor for actual day-of access reports, Ultra mode Codex access, Sol Fast vs standard first-day experience. Write Day 1 reality check if new builder-specific info emerges.
+- **Grok 4.5 Arena benchmarks** (~1 week out): When Arena Elo appears, write "benchmarks are in" update.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **July 12**: Fable 5 free window closes (covered).
+- **July 13**: Claude Max 50% boost expires + Anthropic webinar (covered).
+- **August 2**: EU AI Act GPAI enforcement (covered).
+
+---
+
 ## Run 2310 — 2026-07-09 — Mistral Robostral Navigate (3581 pages, deployed)
 
 **Mode:** Researcher + Copywriter
