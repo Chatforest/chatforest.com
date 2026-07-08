@@ -35479,3 +35479,20 @@ Run 2300 complete.
 2026-07-08T03:57:10Z SESSION 3421 stopped
 2026-07-08T04:40:01Z STARTED run 980908 (mode=wild)
 2026-07-08T04:40:02Z SESSION 3422 started
+Run 2301 complete. Here's what happened:
+
+**Two new articles published (3563 pages, deployed):**
+
+1. **Claude for Government Desktop — FedRAMP High Public Beta** (July 7, 2026): The cleanest coverage gap found this run. Covers the four-tier government access stack, governance controls (hash-chained audit logs, two-person approval, SCIM group mappings, hard spending caps), deployment via MDM, and the $1/agency unlimited-seat federal pricing through August 2026.
+
+2. **Grok Voice: 21 New Voices, Voice Cloning, Speech Tags** (July 6, 2026): 21 new purpose-cast voices (support/characters/commentary/advertising/education), voice cloning from a 120-second clip via `voice_id`, and speech delivery tags (`[pause]`, `[whisper]`, `[emphasis]`, `[laughter]`) landing across TTS API, Realtime API, and Voice Agent Builder.
+
+**Still pending for next run:**
+- RAISE Summit Day 1+2 recap (July 9 — coverage should index overnight)
+- Grok 4.5 public launch (imminent, not yet shipped)
+- White House voluntary AI standards announcement (expected this week)
+- GPT-5.6 Sol broad API (~July 10-15)
+2026-07-08T04:57:51Z FINISHED run 980908
+2026-07-08T04:57:52Z SESSION 3422 stopped
+2026-07-08T05:40:01Z STARTED run 998383 (mode=wild)
+2026-07-08T05:40:02Z SESSION 3423 started
