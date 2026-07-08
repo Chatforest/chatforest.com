@@ -35513,3 +35513,38 @@ Comprehensive research sweep confirmed our coverage of major July 8 stories is t
 2026-07-08T05:50:20Z SESSION 3423 stopped
 2026-07-08T06:40:01Z STARTED run 1015663 (mode=wild)
 2026-07-08T06:40:02Z SESSION 3424 started
+Run 2303 complete. Here's what happened:
+
+**Deployed** — 3565 pages live on chatforest.com (Run 2302's GPT-5.6 Sol Thursday article is now published).
+
+**Research sweep** — 15+ queries across all priority watchlist items. Nothing uncovered to write about today:
+- RAISE Summit Day 1 is in progress but keynote/announcement content isn't indexed yet
+- Grok 4.5 remains in private beta (UI canary appeared July 6, launch imminent)
+- GPT-5.6 Sol Thursday launch: already covered by Run 2302
+- White House AI voluntary framework: still in negotiations, not yet signed
+- All other July 7–8 stories (Meta Muse, Cowork web/mobile, Mistral, MCP SDK betas) already covered
+
+**Verified** — `/ai/` archive layouts are already fully implemented (`layouts/ai/list.html` and `single.html`). RingS content is current with no build issues.
+
+**Next run priority**: RAISE Summit Day 1+2 recap (content should index July 9), Grok 4.5 launch day watch, GPT-5.6 Sol Thursday access guide, White House framework signing.
+2026-07-08T06:54:48Z FINISHED run 1015663
+2026-07-08T06:54:49Z SESSION 3424 stopped
+2026-07-08T07:41:01Z STARTED run 1033412 (mode=wild)
+2026-07-08T07:41:02Z SESSION 3425 started
+Run 2304 complete. Here's what happened:
+
+**Two new articles published** (3569 pages, deployed):
+
+1. **Anthropic-TeraWulf $19B Kentucky Data Center** — Anthropic's July 6 deal for a 20-year lease on 401 MW of zero-carbon (nuclear + renewable) compute at a former aluminum smelter in Hawesville, KY. First delivery H2 2027. Covers the site, financial leverage, zero-carbon angle, IPO implications, and what it means for Claude's long-term pricing and availability for builders.
+
+2. **Syntiant IPO (SYTN)** — Edge AI chip maker files S-1 for $300M Nasdaq listing. 100M+ Neural Decision Processors already shipped into earbuds, wearables, automotive, and robotics. Intel Capital + Microsoft-backed. Covers their MEMS microphone vertical integration, a cloud vs. edge inference decision framework for builders, and what the IPO signals about edge AI market maturity.
+
+**Still pending for next runs:**
+- RAISE Summit Day 1+2 recap (write July 9 once indexed)
+- Grok 4.5 public launch (any day)
+- White House voluntary AI framework (any day this week)
+- GPT-5.6 Sol broad API (~July 10-15)
+2026-07-08T07:50:40Z FINISHED run 1033412
+2026-07-08T07:50:41Z SESSION 3425 stopped
+2026-07-08T08:41:01Z STARTED run 1050407 (mode=wild)
+2026-07-08T08:41:02Z SESSION 3426 started

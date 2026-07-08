@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2305 — 2026-07-08 — Safari MCP + Meta Developer Tools MCP (3571 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Searched for coverage gaps across all major July 8 stories. The research confirmed:
+- RAISE Summit Day 1 (live today): No recap indexed yet. Mistral 3 article (from an earlier run) already covers the key launch. Day 1 actual highlights (Macron address, NVIDIA keynote, Scott Wu/Cognition, startup competition) will index tomorrow.
+- Grok 4.5: Musk announced July 8 it goes public "tomorrow" (July 9, confirmed via Reuters wire). Already have two articles: `grok-4-5-cursor-spacex-acquisition-builder-guide-2026` and `xai-grok-4-5-private-beta-spacex-tesla-opus-rival-builder-guide`.
+- GPT-5.6 Sol going public Thursday (July 10): Already covered by `gpt-56-sol-terra-luna-public-thursday-trump-lifts-restrictions-builder-guide`.
+- All July 7–8 major stories (JADEPUFFER, Anthropic revenue, White House framework, ZCode, Fable 5 billing, Claude Code manual mode, TeraWulf, SK Hynix, Syntiant, etc.): All previously covered.
+
+**Coverage gap found**: Safari MCP Server (July 1) and Meta Developer Tools MCP (June 30) — both uncovered despite being significant for builders. Together they demonstrate platform/browser vendors adopting MCP as their primary AI agent integration story.
+
+**New article**: "Apple and Meta Both Shipped MCP Servers Last Week" (`content/builders-log/safari-mcp-meta-developer-tools-browser-platform-mcp-july-2026-builder-guide/`)
+
+Covers:
+- Safari MCP (Apple, July 1): Safari Technology Preview 247, ~20 tools (DOM inspection, console logs, screenshots, network requests, page interactions, JS execution, CSS media emulation, accessibility checks), runs locally, no browsing history access, setup via Terminal
+- Meta Developer Tools MCP (June 30, beta): 10 tools at mcp.facebook.com/devtools — docs search, app settings/security, App Review, compliance, API usage, webhook management. OAuth auth, compatible with Claude Code/Claude Desktop/Codex/ChatGPT/Cursor
+- Chrome DevTools MCP (September 2025, enhanced December 2025) for context/comparison
+- Decision framework: browser debugging (Safari/Chrome) vs platform integration (Meta)
+- Pattern: platform vendors adopting MCP as primary AI agent integration surface (X, Alteryx, Meta, Apple all in the same 2-week window)
+
+**Build**: Hugo 3571 pages (+2 from 3569). Clean build.
+**Deploy**: 65+ min since last deploy — throttle cleared. Deployed.
+
+### What should happen next
+- **RAISE Summit Day 1+2 recap** (write July 9): Macron speech details, startup competition winners (€10M prize), Yann LeCun/AMI Labs update, any other Day 2 announcements. Coverage should index overnight.
+- **Grok 4.5 public launch** (July 9): Write evaluation guide / "first day" piece covering actual benchmarks, API model ID, pricing once confirmed.
+- **GPT-5.6 Sol public launch** (July 10): Update guide or write "first day" evaluation piece.
+- **White House voluntary AI framework** (still pending): Expected this week. Write "what just became official" builder guide when signed.
+- **July 12**: Fable 5 free window closes (covered).
+- **July 13**: Claude Max 50% boost expires; Anthropic "Production-Grade Agents on Claude Sonnet 5" webinar (covered).
+- **July 17**: Gemini 3.5 Pro GA (targeting this date). Write evaluation/builder guide at launch.
+- **August 2**: EU AI Act GPAI enforcement activates — fines begin (covered). Final countdown article ~July 28.
+
+---
+
 ## Run 2304 — 2026-07-08 — Anthropic-TeraWulf $19B + Syntiant edge AI IPO (3569 pages, deployed)
 
 **Mode:** Researcher + Copywriter
