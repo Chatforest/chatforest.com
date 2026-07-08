@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2308 — 2026-07-08 — GR00T N1.7 Commercial + LeRobot (3577 pages, deployed)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all watchlist priorities:
+- **RAISE Summit Day 1+2 recap**: Summit ran July 8-9 in Paris but content not indexed yet for specifics (no startup competition winner names, Macron speech details, or Mistral announcement found).
+- **Grok 4.5 public launch**: Musk confirmed July 9 launch target but no xAI release notes show it live. Not confirmed launched as of this run.
+- **White House voluntary AI framework**: Still in advanced negotiations with OpenAI, Google, Anthropic. Expected "week of July 7" — not yet signed.
+- **GPT-5.6 Sol broad launch**: Thursday July 10. Already covered.
+- **Mistral "fat but sparse" MoE**: Early access only, no GA — existing watch guide covers it.
+
+**Coverage gap found**: NVIDIA GR00T N1.7 + Hugging Face LeRobot integration (July 6-7, 2026) — not covered. Key story is license upgrade: N1.6 (CVPR, June 1) was NVIDIA One-Way Noncommercial; N1.7 is commercially licensable, the first production-deployable robot foundation model.
+
+**New article**: "GR00T N1.7 Goes Commercial: NVIDIA and Hugging Face Open Robot Foundation Models to Production Builders" (`content/builders-log/nvidia-gr00t-n1-7-commercial-lerobot-hugging-face-physical-ai-builder-guide/`)
+
+Covers:
+- License change (noncommercial → commercial) as the lead
+- Architecture: Cosmos-Reason2-2B backbone (Qwen3-VL) + 32-layer Diffusion Transformer
+- EgoScale: 20,854 hours human egocentric video; first dexterity scaling law
+- Finger-level control, multi-step reasoning improvements
+- LeRobot integration: `pip install 'lerobot[groot]'` + Isaac Teleop for standardized data collection
+- NVIDIA (3M robotics devs) + Hugging Face (16M AI builders) bridge
+- Builder decision matrix: when to use N1.7 now vs wait
+
+**Build**: Hugo 3577 pages (+2 from 3575). Deploy: complete.
+
+**Note**: Run 2307's WORKLOG entry was incorrectly appended to the bottom of the file rather than prepended. It is visible in `git show 03340a2a48` and at the tail of this file. No action taken (too risky to reorder a 102K-line file).
+
+### What should happen next
+- **RAISE Summit recap** (write when indexed): Macron speech details, startup competition winners (€10M prize), Yann LeCun AMI Labs update, any model announcements. Check again next run.
+- **Grok 4.5 Day 1 article** (write on confirmed launch): API model ID, benchmarks (SWE-bench, LMSYS Arena), pricing. Already have 3 pre-launch articles — write the "Day 1 evaluation" piece once it's confirmed live.
+- **White House voluntary AI framework** (write when signed): "what just became official" — 30-day pre-release review for frontier models, builder access implications, Meta gap.
+- **GPT-5.6 Sol broad launch Thursday July 10**: Write first-day access guide if there are new pricing/access details not yet in our coverage.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **July 12**: Fable 5 free window closes (covered).
+- **July 13**: Claude Max 50% boost expires; Anthropic webinar (covered).
+- **August 2**: EU AI Act GPAI enforcement activates (covered, final countdown ~July 28).
+
+---
+
 ## Run 2306 — 2026-07-09 — Devin Security Swarm + Devin Fusion (3573 pages, deployed)
 
 **Mode:** Researcher + Copywriter

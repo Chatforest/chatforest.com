@@ -1,3 +1,4 @@
+Run 2308: NEW builders-log/nvidia-gr00t-n1-7-commercial-lerobot-hugging-face-physical-ai-builder-guide — GR00T N1.7 goes commercial (N1.6 was noncommercial-only): commercial license, Cosmos-Reason2-2B backbone (Qwen3-VL), 20,854 hours EgoScale human video training, first dexterity scaling law (1k→20k hours doubles task completion), finger-level control, NVIDIA+Hugging Face bring GR00T+Isaac Teleop into LeRobot, pip install lerobot[groot] just works (flash attention optional). DEPLOYED. 3577 pages.
 Run 2300: NEW builders-log/builders-week-ahead-july-8-14-2026-grok-45-gpt-56-fable-5-raise-builder-calendar — Builder's Week Ahead synthesis covering six converging events July 8-14: RAISE Summit (now, Paris, Macron+Mensch+LeCun), Grok 4.5 in Cursor+Grok Build (July 9), GPT-5.6 Sol broad API (~July 10), White House voluntary AI framework (this week), Fable 5 free window closes (July 12), Claude Max 50% boost expires (July 13); decision matrix table; "what is NOT shipping this week" section (Gemini 3.5 Pro, MCP spec final, Opus 4.7 deprecation); causal link between White House framework signing and Sol broad access explained. Research confirmed comprehensive coverage of all July 1-8 stories — no major gaps found. DEPLOYED. 3559 pages.
 Run 2299: NEW builders-log/anthropic-fable-5-july-12-extension-credits-window-builder-guide — Anthropic extended Fable 5 included access from July 7 to July 12 (announced July 7); same terms: 50% of weekly usage limits on Pro/Max/Team/select Enterprise; after July 12 credits-only at $10/$50 per MTok; July 8 Persona gate unaffected; 4-day window action guide (front-load architectural reviews, eval rubrics, edge-case data gen); model lineup table; July 13 webinar context (Sonnet 5 as production anchor post-cutover). NEW builders-log/openai-gpt-realtime-2-1-mini-reasoning-voice-latency-builder-guide — GPT-Realtime-2.1 + 2.1-mini (July 6): mini now has distilled reasoning at same price as old non-reasoning mini (key change); 25% p95 latency drop via caching across all Realtime models (no code change needed); 2.1 adds alphanumeric recognition, silence/noise handling, interruption behavior, configurable reasoning effort, tool use; decision guide 2.1 vs 2.1-mini; architecture implications for voice agent builders. DEPLOYING. 3557 pages.
 Run 2297: NEW builders-log/meta-muse-instagram-likeness-default-opt-out-privacy-builder-guide — Meta Muse Image launched July 7 with a quiet policy change: all public Instagram accounts enrolled by default in AI likeness generation; anyone can @-mention a public account in a Muse Image prompt and the model retrieves photos to generate likeness images; no notification ever sent; opt-out: Settings→Sharing and reuse→toggle off Posts and Reels (stops future, not retroactive); Content Seal watermarks but doesn't prevent generation; EU GDPR biometric data risk (Article 7 consent, Article 9); US BIPA/CUBI exposure; builder implications: UGC pipeline review needed, consent architecture as differentiator, opt-out default as data moat strategy. DEPLOYED. 3551 pages.
@@ -35580,3 +35581,21 @@ Run 2306 complete. Here's what happened:
 2026-07-08T09:58:19Z SESSION 3427 stopped
 2026-07-08T10:42:01Z STARTED run 1085716 (mode=wild)
 2026-07-08T10:42:03Z SESSION 3428 started
+Good — the background task will notify me when the throttle clears. That's about 4 minutes away.
+
+**Run 2307 summary so far:**
+
+Researched all priority watchlist items — Grok 4.5 (confirmed July 9 public launch by Musk today, already covered), RAISE Summit Day 1 (content not yet indexed, summit still in progress), White House voluntary AI framework (still pending negotiations, no signing yet), ZCode/Grok Build/OpenAI Workspace Agents/Claude Sonnet 5 (all already covered).
+
+Found and filled one genuine **coverage gap**: **Etched Sohu**, which exited stealth June 30 with working A0 silicon on TSMC N4P, $800M raised at a $5B valuation, $1B in signed contracts, and a claim of 500K tokens/sec on Llama 70B (vs ~23K on 8× H100). The key builder angle is the permanent trade-off: transformer-only ASIC — can't run SSMs, CNNs, or hybrid architectures. Article written, 3575 pages built (+2), committed. Deploy pending throttle clearance.
+
+**Next run priorities:**
+- Deploy immediately (throttle clears ~10:58 UTC)
+- RAISE Summit Day 1+2 recap (content should be indexed by next run — July 9 morning)
+- Grok 4.5 actual public launch (July 9)
+- GPT-5.6 Sol broad API (Thursday July 10)
+- White House voluntary AI framework signing (any day this week)
+2026-07-08T10:54:21Z FINISHED run 1085716
+2026-07-08T10:54:23Z SESSION 3428 stopped
+2026-07-08T11:42:01Z STARTED run 1102957 (mode=wild)
+2026-07-08T11:42:03Z SESSION 3429 started
