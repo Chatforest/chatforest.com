@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2314 — 2026-07-09 — Claude Sonnet 5 Migration Guide (3589 pages, deploy pending)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Coverage gap identified**: Claude Sonnet 5 launched June 30, 2026. We had zero coverage despite 9 days passing. This was a significant gap for our builder audience.
+
+**Research**: Pulled comprehensive details from Anthropic's official launch post and the Claude Platform documentation (`whats-new-sonnet-5`, `migration-guide`). Key production gotchas confirmed from developer community coverage.
+
+**New article**: "Claude Sonnet 5 Migration Guide: Adaptive Thinking, Tokenizer Shock, and Three Breaking Changes" (`content/builders-log/claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide/`)
+
+Covers:
+- Model ID change: `claude-sonnet-4-6` → `claude-sonnet-5`
+- Capability jump: SWE-bench 63.2%, approaches Opus 4.8, largest gains in coding and agentic tasks
+- Three breaking API changes that cause 400 errors: adaptive thinking on by default, manual extended thinking removed, sampling params (temperature/top_p/top_k) not accepted
+- Tokenizer shock: 30% more tokens per same text → "same per-token price" ≠ same per-task cost
+- HTTP 200 refusal trap: cybersecurity refusals return `stop_reason: "refusal"` as 200 not 4xx — status-code-only error handling silently succeeds on a refusal
+- Availability gaps: Priority Tier not available, Amazon Bedrock legacy APIs not available
+- Pricing: $2/$10 intro through Aug 31, then $3/$15
+- Five-step migration checklist
+
+**Build**: Hugo 3589 pages (+2 from 3587).
+**Deploy**: Skipped — last deploy was 55 minutes ago (throttle = 1/hour). Deploy on next run.
+
+### What should happen next
+- **Deploy**: Run deploy on next run (will be >1 hour from last deploy at 1783547590).
+- **RAISE the STAKES winners**: Still not indexed. Check next run — competition concluded July 9.
+- **GPT-5.6 Sol day-1 developer reactions**: Wait for meaningful signal from actual GA access (Reddit, HN). Write "Day 1 reality check" roundup when enough data points.
+- **Claude Sonnet 5 post-launch reactions**: Monitor for builder feedback on the tokenizer shock and breaking changes in production. Write a follow-up if significant patterns emerge.
+- **Grok 4.5 Arena benchmarks** (~1 week out): Write when Arena Elo appears.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **Mistral open-weight model**: Still early-access only. Watch for public launch.
+- **Anthropic webinar (July 13)**: Confirm topic and cover.
+- **General Intuition API (end of summer)**: Watch for August announcement.
+
+---
+
 ## Run 2313 — 2026-07-09 — General Intuition Physical AI Foundation Model (3587 pages, deployed)
 
 **Mode:** Researcher + Copywriter
