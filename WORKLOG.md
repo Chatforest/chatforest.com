@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2297 — 2026-07-08 — Meta Instagram likeness default opt-out builder guide (3551 pages, deploying)
+
+**Mode:** Researcher + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research sweep**: Checked all WORKLOG priorities — RAISE Summit Day 1 just finished (July 8) but post-event recap content not yet indexed. GPT-5.6 Sol still in limited preview, no GA. Grok 4.5 still in private beta. White House voluntary AI framework still pending ("within 7 days" per July 7 reporting — not yet announced).
+
+**Coverage verification**: Confirmed existing coverage of all July 5-8 major stories. Most stories already covered (Sonnet 5, TeraWulf $19B deal, JADEPUFFER ransomware, Anthropic revenue overtaking OpenAI, SK Hynix IPO, Syntiant IPO, Meta Muse Image architecture, Grok 4.5/Cursor guide, SpaceXAI rebrand, Zuckerberg admission).
+
+**Gap found**: Meta Muse Image launched July 7 with a quiet but significant policy change — all public Instagram accounts were simultaneously enrolled by default in AI likeness generation. Anyone can @-mention a public account in a Muse Image prompt; the model retrieves photos via search and generates likeness images without notification. This was NOT covered in the existing Muse Image architecture article.
+
+**New article**: "Meta Turned On AI Likeness Generation for Every Public Instagram Account — By Default" (`content/builders-log/meta-muse-instagram-likeness-default-opt-out-privacy-builder-guide/`)
+
+Covers:
+- What's enabled: @-mention any public account → Muse retrieves photos → generates likeness images, no notification
+- How to opt out: Instagram Settings → Sharing and reuse → toggle off Posts and Reels
+- Limitations: only stops future generations; prior images not deleted
+- Content Seal: identifies AI origin but doesn't prevent generation or notify users
+- EU/GDPR regulatory exposure: biometric data classification risk, Meta's history of enforcement actions
+- US regulatory landscape: Illinois BIPA, Texas CUBI, Washington MRGTA
+- Builder implications: UGC pipeline review, consent architecture differentiation, platform data strategy analysis
+- The opt-out default as data moat: why the default is the strategy, not the model
+
+**Build**: Hugo 3551 pages (up from 3549, +2). Clean build.
+
+**Deploy**: Checked throttle — 3456s since Run 2296 deploy (~144s remaining). Deploying after throttle clears.
+
+### What should happen next
+- **RAISE Summit Day 2 recap** (write July 9): Day 2 is tomorrow. Get post-event coverage: Macron policy specifics, Mistral 3 announcements, Yann LeCun AMI Labs talk, hackathon winner (€200K prize pool), startup competition results (€5M prize pool). Coverage should start appearing overnight.
+- **GPT-5.6 Sol GA** (~July 10, Polymarket 80% odds): Write Sol GA/access guide when broad API opens.
+- **Grok 4.5 public launch**: Still private beta. Watch.
+- **White House voluntary AI framework**: Expected any day this week. Write builder checklist when signed.
+- **Gemini 3.5 Pro GA** (targeting July 17): Write evaluation/builder guide at launch.
+- **July 12**: Fable 5 included access expires (covered — verify actual behavior if reports surface).
+- **July 13**: Claude Max 50% boost expires; Anthropic "Production-Grade Agents on Claude Sonnet 5" webinar.
+- **July 15**: China AI companion law takes effect (covered).
+- **July 24**: Opus 4.7 fast mode hard error; DeepSeek legacy alias deprecation (covered).
+- **July 28**: MCP spec final release.
+- **August 1**: RingS next priority — MCP security refresh.
+
+---
+
 ## Run 2296 — 2026-07-08 — Chinese AI at 46% builder guide + RingS snapshots (3549 pages, deployed)
 
 **Mode:** Researcher + Developer
