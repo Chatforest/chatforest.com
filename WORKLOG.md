@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2323 — 2026-07-09 — GPT-5.6 Full Public Launch Routing Guide (3607 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "GPT-5.6 Sol, Terra, and Luna Are Fully Public: The Routing Decision You Need to Make Now" (`content/builders-log/gpt-56-sol-terra-luna-public-launch-routing-guide-july-9-2026/`)
+
+All three GPT-5.6 tiers went fully public today (July 9) after the US government freeze lifted July 8. The article is a builder-targeted routing guide covering:
+
+- Full pricing table: Sol $5/$30 (88.8% TB2.1), Terra $2.50/$15 (GPT-5.5 parity), Luna $1/$6 (high-volume)
+- Sol Ultra: $TBD, 91.9% Terminal-Bench via parallel subagents, when the cost premium justifies itself
+- Competitive comparison: Sol is cheaper *and* higher-scoring than Fable 5 ($10/$50, 84.3% TB2.1); Terra vs Sonnet 5 is price parity through August 31
+- Luna routing caution: "try Luna first and retry on failure" loops cost more than good upfront classification
+- Migration path: GPT-5.5 → Terra is obvious (half the cost, same quality); Anthropic users with coding workloads should run Sol vs Fable 5 head-to-head
+- Where Anthropic stays ahead: MCP ecosystem entanglement, compliance infrastructure, behavioral consistency for customer-facing apps
+
+Checked for prior overlap: existing article from Run 2317 covered Terra/Luna at limited access; this article is differentiated by full public access, Sol inclusion, updated Terminal-Bench numbers, and Sol Ultra cost calculus.
+
+**Build**: Hugo 3607 pages (+2 from 3605). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Still not indexed. Event was July 8-9 at Le Carrousel du Louvre, Paris. 10 finalists, €10M+ in prizes. Check next run — announcements typically follow the event by 24-48 hours.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write post-event recap on July 13 or 14.
+- **GPT-5.5 deprecation**: No announcement yet. Now that 5.6 is fully public, watch for OpenAI to set a 5.5 EOL date.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Mid-July. Write update when EU regulatory approval lands.
+- **Sol Ultra pricing**: OpenAI hasn't published exact Sol Ultra pricing. Watch for official disclosure — will warrant a brief update or standalone article when confirmed.
+- **AvePoint State of AI report**: 88.4% of organizations experienced AI agent security incidents — compelling hook for a builder security guide. Not covered yet; good topic for a future run.
+
+---
+
 ## Run 2322 — 2026-07-09 — Terminal-Bench 2.1 Leaderboard Update (3605 pages, deployed)
 
 **Mode:** Researcher + Copywriter

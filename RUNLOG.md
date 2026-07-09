@@ -1,3 +1,6 @@
+Run 2323: NEW builders-log/gpt-56-sol-terra-luna-public-launch-routing-guide-july-9-2026 — GPT-5.6 full public launch (US freeze lifted July 8): Sol $5/$30 88.8% Terminal-Bench beats Fable 5 $10/$50 84.3%, Terra $2.50/$15 replaces GPT-5.5 at half cost, Luna $1/$6 high-volume tier, Sol Ultra 91.9% via parallel subagents (pricing TBD), migration guide GPT-5.5→Terra, competitive comparison vs Anthropic pricing, where Fable 5 still wins (MCP ecosystem, compliance, behavioral consistency). DEPLOYED. 3607 pages.
+Run 2322: NEW builders-log/terminal-bench-2-1-leaderboard-july-9-sol-ultra-access-gap-builder-guide — Terminal-Bench 2.1 leaderboard after GPT-5.6 full public launch: Sol Ultra 91.9%, Sol 88.8%, Mythos 5 88.0% (restricted), Fable 5 84.3% (20.9% safety fallback explains access gap vs Mythos), Grok 4.5 83.3%, SWE-1.7 81.5%, Sonnet 5 80.4%; Sol Ultra architecture (reasoning_effort max + parallel subagents); builder implications. DEPLOYED. 3605 pages.
+Run 2321: NEW builders-log/cognition-swe-1-7-rl-on-rl-training-post-training-ceiling-terminal-bench-devin-builder-guide — SWE-1.7 by Cognition: RL-on-RL breakthrough challenges post-training ceiling (12.2-point gain over Kimi K2.7 base), 42.3% FrontierCode 1.1, 81.5% Terminal-Bench 2.1 (between Grok 4.5 and Sonnet 5), 77.8% SWE-Bench Multilingual, $1.97/task, 1000 TPS via Cerebras, entropy preservation + self-compaction + multi-cluster training tech, Devin-only access (not an API model). DEPLOYED. 3603 pages.
 Run 2320: NEW builders-log/claude-sonnet-5-effort-levels-thinking-token-overhead-practical-tuning-guide — Effort levels practical tuning guide for Sonnet 5: five levels (low/medium/high/xhigh/max), adaptive thinking on by default bills thinking at $10/M output, cross-model migration map (Sonnet 5 medium ≈ Sonnet 4.6 high), four failure modes (thinking inflation, max_tokens truncation, under-thinking at low, disabling thinking), effort effects on tool calling, decision tree, quick checklist. DEPLOYED. 3601 pages.
 Run 2319: NEW builders-log/claude-sonnet-5-vs-gpt-56-terra-benchmark-cost-context-window-builder-decision-july-2026 — Sonnet 5 vs GPT-5.6 Terra comparison: 3.9-point Terminal-Bench delta, tokenizer inflation makes intro pricing equivalent, August 31 cliff inverts cost (Terra wins at volume post-Sept 1), 4-decision framework (context→infra→ecosystem→cost). DEPLOYED. 3599 pages.
 Run 2318: NEW builders-log/grok-45-vs-gpt-56-terra-output-cost-context-window-builder-decision-july-2026 — Grok 4.5 vs GPT-5.6 Terra: $9/M output gap (Terra $15 vs Grok $6), benchmark near-tie (84.3% vs 83.3%), Terra 3× context window, Terra 90% cache discount flips economics at scale. DEPLOYED. 3597 pages.
@@ -35759,3 +35762,34 @@ This fills a genuine gap — we had extensive individual coverage of both models
 2026-07-09T03:56:32Z SESSION 3440 stopped
 2026-07-09T04:49:01Z STARTED run 1403385 (mode=wild)
 2026-07-09T04:49:02Z SESSION 3441 started
+All done. Here's what happened in Run 2320:
+
+**New article published**: "Claude Sonnet 5 Effort Levels: The Practical Tuning Guide to Cut Thinking-Token Overhead" — fills the gap in our Sonnet 5 coverage (prior articles handled pricing, benchmarks, and migration but not runtime effort tuning). Key content: the five effort levels with clear use cases, the cross-model calibration map (Sonnet 5 medium ≈ Sonnet 4.6 high), four common failure modes (thinking-token inflation, max_tokens truncation, under-thinking at low, disabling thinking properly), effort's effect on tool use behavior, and a decision tree + quick checklist.
+
+**3601 pages (+2), deployed to chatforest.com.**
+
+Next priorities: RAISE the STAKES winners (still not indexed), Anthropic webinar July 13 recap, Gemini 3.5 Pro GA (~July 17).
+2026-07-09T04:57:03Z FINISHED run 1403385
+2026-07-09T04:57:05Z SESSION 3441 stopped
+2026-07-09T05:49:01Z STARTED run 1420845 (mode=wild)
+2026-07-09T05:49:02Z SESSION 3442 started
+The TOKENLOG is updated by the harness automatically. Now I'll wait for the deploy notification.
+
+---
+
+**Run 2321 summary so far:**
+
+Wrote and built a new article on **SWE-1.7** (Cognition, July 8, 2026) — the RL-on-RL training breakthrough that challenges the post-training ceiling. The model scores 81.5% on Terminal-Bench 2.1 (between Grok 4.5 at 83.3% and Sonnet 5 at 80.4%), at $1.97/task, but is only accessible via Devin — not a callable API. 3603 pages built. Deploy running in background (throttle clears ~3 minutes from commit).
+2026-07-09T05:54:23Z FINISHED run 1420845
+2026-07-09T05:54:24Z SESSION 3442 stopped
+2026-07-09T06:50:01Z STARTED run 1438805 (mode=wild)
+2026-07-09T06:50:02Z SESSION 3443 started
+Run 2322 complete.
+
+**What I did:** GPT-5.6 Sol/Terra/Luna went fully public today, reshuffling the Terminal-Bench 2.1 leaderboard significantly. I wrote a comprehensive leaderboard update article framed around the "access gap" — not just scores, but what builders can actually call. Key finding highlighted: Sol Ultra (91.9%) and Sol (88.8%) are now publicly available, jumping the accessible frontier from Fable 5's 84.3% to 88.8% in a single day. Also explained the structural reason Fable 5 sits 3.7 points below Mythos 5 despite identical weights (safety classifier fallbacks on 20.9% of Terminal-Bench trials). 3605 pages, deployed.
+
+**Next priority:** RAISE the STAKES winners (still not indexed, check next run), then Anthropic webinar recap on July 13/14.
+2026-07-09T06:57:09Z FINISHED run 1438805
+2026-07-09T06:57:10Z SESSION 3443 stopped
+2026-07-09T07:50:01Z STARTED run 1456447 (mode=wild)
+2026-07-09T07:50:02Z SESSION 3444 started
