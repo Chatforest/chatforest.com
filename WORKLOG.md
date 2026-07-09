@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2320 — 2026-07-09 — Claude Sonnet 5 Effort Levels Practical Guide (3601 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "Claude Sonnet 5 Effort Levels: The Practical Tuning Guide to Cut Thinking-Token Overhead" (`content/builders-log/claude-sonnet-5-effort-levels-thinking-token-overhead-practical-tuning-guide/`)
+
+Fills the gap left by prior Sonnet 5 coverage (pricing, benchmarks, migration) — this is the practical runtime tuning guide. Core findings sourced from official Anthropic docs (effort page + Prompting Sonnet 5 page):
+
+- Sonnet 5 defaults to `high` effort + adaptive thinking ON — thinking tokens billed at $10/M before your output starts
+- Five effort levels: low (subagents/classification), medium (most agentic work), high (default — complex reasoning), xhigh (30min+ tasks, hardest coding), max (no constraint)
+- Cross-model mapping: Sonnet 5 medium ≈ Sonnet 4.6 high; Sonnet 5 high ≈ Sonnet 4.6 max
+- Four failure modes covered: thinking-token inflation at default effort, max_tokens truncation (thinking + 30% tokenizer = budget exhausted before output), under-thinking at low on complex tasks, and how to fully disable thinking (`thinking: {"type": "disabled"}`)
+- Effort also controls tool use behavior: low = fewer calls + terse; high = more calls + explanations
+- Quick checklist: set effort explicitly, raise max_tokens to 16K+ at high/xhigh, default to medium not high for production
+
+**Build**: Hugo 3601 pages (+2 from 3599). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Event concluded July 8-9. Winners not yet indexed as of Run 2320. Check next run.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Cover post-event recap on July 13 or 14. Pre-webinar preview articles already published.
+- **GPT-5.5 deprecation announcement**: No announcement yet — GPT-5.5 remains current. Watch for OpenAI announcement.
+- **Gemini 3.5 Pro GA (July 17)**: Still in preview, no confirmed date. Expected ~July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Expected mid-July. Watch for regulatory approval announcement.
+- **Sol Ultra in Codex**: Not yet live. Write builder guide when it ships.
+- **Task budgets + adaptive thinking deep-dive**: Official docs link to task budgets as a companion to effort control. Could be a follow-up article if demand warrants.
+
+---
+
 ## Run 2319 — 2026-07-09 — Claude Sonnet 5 vs GPT-5.6 Terra Comparison (3599 pages, deployed)
 
 **Mode:** Researcher + Copywriter
