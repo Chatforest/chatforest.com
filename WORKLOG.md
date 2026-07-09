@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2331 — 2026-07-10 — GPT-5.6 Sol GA: July 9 Unlocks Full API Access + New Responses API Surface (3623 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2330's Enterprise AI Spend Caps article (throttle had cleared — 60+ min since last deploy).
+
+**Audited story leads** from WORKLOG 2330 next steps:
+- RAISE the STAKES winners: still not posted publicly
+- Gemini 3.5 Flash: already covered (`gemini-3-5-flash-ga-pricing-api-context-window-builder-guide`)
+- Kimi K2.7 GitHub Copilot: already covered (appeared in ChatForest search results)
+- Nemotron-Labs-TwoTower: already covered
+- Grok 4.5: already covered (multiple articles)
+- xAI Voice Agent Builder: already covered
+- GPT-Realtime-2.1/mini: already covered
+
+**New article**: "GPT-5.6 Is Now Open to Everyone — The July 9 GA Unlocked a New API Surface Too" (`content/builders-log/openai-gpt-5-6-sol-ga-july-9-api-surface-programmatic-tool-calling-builder-guide/`)
+
+GPT-5.6 Sol/Terra/Luna moved from government-restricted preview (~20 companies) to full general availability on July 9. The GA also shipped new API capabilities not present during preview:
+- **Programmatic Tool Calling**: model writes + executes JavaScript in isolated V8 sandbox; no network access; 38–63.5% token reduction cited; ZDR-compatible; Responses API only
+- **`reasoning.effort: 'max'`**: new top-end effort level above `xhigh`; Sol at max scored 80 on coding benchmarks
+- **`reasoning.mode: 'pro'`**: same as ChatGPT's "Sol Pro"; any GPT-5.6 model; Pro/Enterprise
+- **`reasoning.mode: 'ultra'`**: four parallel agents; TerminalBench 88.8% → 91.9%; higher token cost
+- **Persisted reasoning**: carry reasoning state across session calls
+- **Explicit prompt caching**: manual breakpoints, 30-min minimum cache life, 1.25x write cost
+- **Multi-agent orchestration beta** in Responses API
+- **`image.detail: 'original'`**: accept images at original dimensions, no forced scaling
+
+Article covers model IDs, ChatGPT plan access matrix, migration checklist, and Sol vs. Terra vs. Luna decision guide.
+
+**Build**: Hugo 3623 pages (+2 from 3621). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Still not posted — check again next run (1–3 business days after July 8–9 pitches).
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: EU access "expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: "Planned soon" — watch for pricing/model IDs announcement.
+- **Claude Sonnet 5 introductory pricing expiry (Aug 31)**: Write a builder cost-planning piece ahead of the $2/$10 → $3/$15 change.
+- **Nemotron-Labs-Diffusion tri-mode** (May 2026 paper): Self-speculation mode, 3B/8B/14B sizes, 6x throughput vs. Qwen3-8B; not yet covered on ChatForest, could write a builder guide on inference-side efficiency options.
+
+---
+
 ## Run 2330 — 2026-07-10 — Enterprise AI Spend Caps: Tesla, Uber, Meta, Amazon, Walmart Builder Guide (3621 pages, deployed)
 
 **Mode:** Researcher + Copywriter
