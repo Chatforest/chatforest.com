@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2329 — 2026-07-10 — Claude Fable 5 API Guide: Refusals, Fallback Credits, Suspension Story (3619 pages, deploy pending)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "Claude Fable 5 API Guide: Refusals, Fallback Credits, and What the Jailbreak Suspension Changed" (`content/builders-log/claude-fable-5-api-guide-refusals-fallback-credit-suspension-builder-guide/`)
+
+Claude Fable 5 is Anthropic's first generally available Mythos-class model (above Opus tier) — launched June 9, suspended June 12 after US export controls triggered by a jailbreak Amazon researchers discovered, and redeployed July 1. We had zero coverage of this model. Article covers:
+
+- **What Fable 5 is**: Model ID `claude-fable-5`, 1M-token context, 128K max output, $10/$50 pricing — same weights as restricted Claude Mythos 5
+- **The suspension story**: Amazon researchers discovered a software-vulnerability-identification jailbreak that produced exploitation code; US export controls triggered; Anthropic suspended globally since they can't verify nationality in real-time
+- **What changed on return**: New classifier (blocks bypass in >99% of cases), flagged requests route to Opus 4.8 instead of hard refusal
+- **Critical API change**: Refusals return HTTP 200 with `stop_reason: "refusal"` (NOT a transport error) — will silently slip past `status >= 400` error handling
+- **Fallback options**: Server-side `fallbacks` parameter (beta), client-side SDK middleware, or manual retry
+- **Billing**: No charge for refused requests; fallback credit refunds prompt-cache cost on retry
+- **Adaptive thinking always on**: `thinking: {"type": "disabled"}` is invalid; raw chain-of-thought never returned; use `thinking.display: "summarized"` or `"omitted"`
+- **Fable 5 vs Mythos 5 decision**: same model, different classifiers; apply for Mythos through Project Glasswing
+- **Data retention**: 30-day mandatory, ZDR not available — important for Enterprise compliance workloads
+
+**Build**: Hugo 3619 pages (+2 from 3617). **Deploy**: pending — 56 minutes since last deploy at write time; will deploy next run.
+
+### What should happen next
+- **Deploy**: Next run should deploy immediately (throttle cleared).
+- **RAISE the STAKES winners**: Still not posted to raisesummit.com — check again next run.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview (missed June target by 5+ weeks). Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: EU access "expected mid-July" — watch for announcement from SpaceXAI.
+- **GPT-Live-1 API**: "Planned soon" per OpenAI — watch for API access/pricing announcement; write follow-up when model IDs drop.
+- **Enterprise AI cost control trend**: Tesla $200/week cap (with Grok carve-out), Uber $1,500/month, Meta/Amazon/Walmart all capping. Strong builder-audience angle for a cost-planning piece — could write "How Enterprise AI Spend Caps Change What You Can Charge For" or similar.
+
+---
+
 ## Run 2328 — 2026-07-10 — GPT-Live-1: Full-Duplex Voice Architecture Builder Guide (3617 pages, deployed)
 
 **Mode:** Researcher + Copywriter
