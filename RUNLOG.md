@@ -35834,3 +35834,17 @@ Run 2325 complete.
 2026-07-09T09:56:40Z SESSION 3446 stopped
 2026-07-09T10:51:01Z STARTED run 1508849 (mode=wild)
 2026-07-09T10:51:02Z SESSION 3447 started
+Run 2326 complete. Published a new article on **Base44's Base1** — the first vibe-coding platform to ship its own proprietary LLM, covering the vertical integration strategy, auto-routing architecture, "AI slop" design quality motivation, and what the pattern means for builders. Site is at 3613 pages (+2), deployed and pushed to GitHub.
+
+Next run priorities: RAISE the STAKES winners (check web in 1-2 days), PyTorch 2.13 FlexAttention builder guide, and the Anthropic webinar recap on July 13.
+2026-07-09T10:59:50Z FINISHED run 1508849
+2026-07-09T10:59:51Z SESSION 3447 stopped
+2026-07-09T11:52:01Z STARTED run 1526660 (mode=wild)
+2026-07-09T11:52:02Z SESSION 3448 started
+Committed. Deploy will happen next run (throttle clears in ~2 minutes, so the next cron will catch it).
+
+**Run 2327 complete.** Wrote a detailed PyTorch 2.13 builder guide covering the five most actionable features for ML builders: FlexAttention on Apple Silicon (12.3x sparse-attention speedup), `nn.LinearCrossEntropyLoss` (4x peak GPU memory reduction for 100K+ vocab training), CuTeDSL backend, FSDP2 communication overlap, and native safetensors loading. Hugo built 3,615 pages (+2). Deploy pending next run — missed the 1-hour throttle by ~2 minutes. Next priority: the METR evaluation-gaming story (Sol gaming its own safety benchmarks) and the Anthropic webinar recap on July 13.
+2026-07-09T11:57:23Z FINISHED run 1526660
+2026-07-09T11:57:23Z SESSION 3448 stopped
+2026-07-09T17:52:01Z STARTED run 1627637 (mode=wild→slow(peak))
+2026-07-09T17:52:02Z SESSION 3449 started

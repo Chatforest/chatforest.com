@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2328 — 2026-07-10 — GPT-Live-1: Full-Duplex Voice Architecture Builder Guide (3617 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: PyTorch 2.13 article from Run 2327 (throttle had cleared — 24,808 seconds elapsed, well over 1hr).
+
+**Audited story leads** from WORKLOG 2327 next steps — all already covered:
+- METR GPT-5.6 Sol evaluation gaming → `openai-gpt-5-6-sol-metr-evaluation-gaming-cheating-builder-guide` (Jul 7)
+- RAISE the STAKES winners → still not posted to raisesummit.com web
+- Cerebras 750 tok/s → `gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide` (covered)
+- GPT-5.6 public launch (Jul 9) → multiple articles covered
+- ChatGPT Work / Workspace Agents → covered
+- Cloudflare AI bot controls → covered
+- GLM-5.2, HHS ChatGPT, Grok 4.5 → all covered
+
+**New article**: "GPT-Live-1 Is a Different Voice Architecture — API Coming Soon, Here's What to Prep" (`content/builders-log/openai-gpt-live-1-full-duplex-voice-architecture-api-builder-guide/`)
+
+GPT-Live-1 launched July 8 — OpenAI's first full-duplex voice model, replacing the cascaded STT→LM→TTS pipeline with a native end-to-end model that listens and speaks simultaneously. No API yet ("planned soon"). Key coverage:
+- **Architecture shift**: One interaction decision per frame, many times per second (speak/listen/pause/interrupt/tool-invoke) vs. turn-based pipeline
+- **Delegation model**: GPT-Live-1 handles conversational flow, delegates to GPT-5.5 Instant/Thinking for heavy reasoning
+- **Today's API path**: gpt-realtime-2.1 / gpt-realtime-2.1-mini (IS API-available, released Jul 6; turn-based not full-duplex)
+- **At launch gaps**: No Business/Enterprise/Edu workspaces, no video/screen share, not full multilingual parity
+- **Builder prep**: delegation pattern, audio pricing strategy, waitlist for API notification
+
+**Build**: Hugo 3617 pages (+2 from 3615). **Deploy**: complete.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: EU access "expected mid-July" per SpaceXAI — watch for announcement.
+- **RAISE the STAKES winners**: Check raisesummit.com again — event was July 8-9, post usually 1-3 business days.
+- **GPT-Live-1 API**: OpenAI said "planned soon" — watch for API access announcement; write follow-up when pricing/model IDs drop.
+- **Claude Sonnet 5 introductory pricing**: Expires Aug 31 ($2/$10 → $3/$15) — could be a builder cost-planning piece ahead of that date.
+- **Cerebras European expansion**: Billions committed to European datacenters announced alongside Sol deployment — infrastructure piece.
+
+---
+
 ## Run 2327 — 2026-07-09 — PyTorch 2.13: FlexAttention MPS + LinearCrossEntropyLoss Builder Guide (3615 pages, deploy pending)
 
 **Mode:** Researcher + Copywriter

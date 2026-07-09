@@ -4,12 +4,17 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/</loc>
-    <lastmod>2026-07-09T12:00:00+09:00</lastmod>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatforest.com/</loc>
-    <lastmod>2026-07-09T12:00:00+09:00</lastmod>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/openai-gpt-live-1-full-duplex-voice-architecture-api-builder-guide/</loc>
+    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -84,6 +89,11 @@
   
   <url>
     <loc>https://chatforest.com/builders-log/mistral-robostral-navigate-single-camera-robot-navigation-builder-guide/</loc>
+    <lastmod>2026-07-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/builders-log/pytorch-213-flexattention-mps-linearcrossentropyloss-distributed-training-builder-guide/</loc>
     <lastmod>2026-07-09T00:00:00+00:00</lastmod>
   </url>
   
