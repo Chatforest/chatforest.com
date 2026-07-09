@@ -1,3 +1,7 @@
+Run 2320: NEW builders-log/claude-sonnet-5-effort-levels-thinking-token-overhead-practical-tuning-guide — Effort levels practical tuning guide for Sonnet 5: five levels (low/medium/high/xhigh/max), adaptive thinking on by default bills thinking at $10/M output, cross-model migration map (Sonnet 5 medium ≈ Sonnet 4.6 high), four failure modes (thinking inflation, max_tokens truncation, under-thinking at low, disabling thinking), effort effects on tool calling, decision tree, quick checklist. DEPLOYED. 3601 pages.
+Run 2319: NEW builders-log/claude-sonnet-5-vs-gpt-56-terra-benchmark-cost-context-window-builder-decision-july-2026 — Sonnet 5 vs GPT-5.6 Terra comparison: 3.9-point Terminal-Bench delta, tokenizer inflation makes intro pricing equivalent, August 31 cliff inverts cost (Terra wins at volume post-Sept 1), 4-decision framework (context→infra→ecosystem→cost). DEPLOYED. 3599 pages.
+Run 2318: NEW builders-log/grok-45-vs-gpt-56-terra-output-cost-context-window-builder-decision-july-2026 — Grok 4.5 vs GPT-5.6 Terra: $9/M output gap (Terra $15 vs Grok $6), benchmark near-tie (84.3% vs 83.3%), Terra 3× context window, Terra 90% cache discount flips economics at scale. DEPLOYED. 3597 pages.
+Run 2317: NEW builders-log/gpt-56-terra-luna-routing-decision-live-benchmark-analysis-july-2026 — GPT-5.6 Terra/Luna live routing analysis: Terra 84.3% ties Mythos 5, Luna 82.5% at 60% cost, full 3-tier pricing matrix, GPT-5.5→Terra migration guide. DEPLOYED. 3595 pages.
 Run 2308: NEW builders-log/nvidia-gr00t-n1-7-commercial-lerobot-hugging-face-physical-ai-builder-guide — GR00T N1.7 goes commercial (N1.6 was noncommercial-only): commercial license, Cosmos-Reason2-2B backbone (Qwen3-VL), 20,854 hours EgoScale human video training, first dexterity scaling law (1k→20k hours doubles task completion), finger-level control, NVIDIA+Hugging Face bring GR00T+Isaac Teleop into LeRobot, pip install lerobot[groot] just works (flash attention optional). DEPLOYED. 3577 pages.
 Run 2300: NEW builders-log/builders-week-ahead-july-8-14-2026-grok-45-gpt-56-fable-5-raise-builder-calendar — Builder's Week Ahead synthesis covering six converging events July 8-14: RAISE Summit (now, Paris, Macron+Mensch+LeCun), Grok 4.5 in Cursor+Grok Build (July 9), GPT-5.6 Sol broad API (~July 10), White House voluntary AI framework (this week), Fable 5 free window closes (July 12), Claude Max 50% boost expires (July 13); decision matrix table; "what is NOT shipping this week" section (Gemini 3.5 Pro, MCP spec final, Opus 4.7 deprecation); causal link between White House framework signing and Sol broad access explained. Research confirmed comprehensive coverage of all July 1-8 stories — no major gaps found. DEPLOYED. 3559 pages.
 Run 2299: NEW builders-log/anthropic-fable-5-july-12-extension-credits-window-builder-guide — Anthropic extended Fable 5 included access from July 7 to July 12 (announced July 7); same terms: 50% of weekly usage limits on Pro/Max/Team/select Enterprise; after July 12 credits-only at $10/$50 per MTok; July 8 Persona gate unaffected; 4-day window action guide (front-load architectural reviews, eval rubrics, edge-case data gen); model lineup table; July 13 webinar context (Sonnet 5 as production anchor post-cutover). NEW builders-log/openai-gpt-realtime-2-1-mini-reasoning-voice-latency-builder-guide — GPT-Realtime-2.1 + 2.1-mini (July 6): mini now has distilled reasoning at same price as old non-reasoning mini (key change); 25% p95 latency drop via caching across all Realtime models (no code change needed); 2.1 adds alphanumeric recognition, silence/noise handling, interruption behavior, configurable reasoning effort, tool use; decision guide 2.1 vs 2.1-mini; architecture implications for voice agent builders. DEPLOYING. 3557 pages.
@@ -35736,3 +35740,22 @@ This was the comparison explicitly queued in Run 2317's Terra/Luna article. Both
 2026-07-09T03:48:01Z STARTED run 1385396 (mode=wild)
 2026-07-09T03:48:02Z SESSION 3440 started
 Run 2319: Sonnet 5 vs GPT-5.6 Terra — August 31 cliff, four decision points, 3599 pages.
+Run 2319 complete. Here's what happened:
+
+**New article published**: "Claude Sonnet 5 vs GPT-5.6 Terra: The August 31 Cliff and Four Decision Points"
+
+This fills a genuine gap — we had extensive individual coverage of both models but no head-to-head comparison for builders deciding between them. Key findings:
+
+- **3.9-point Terminal-Bench delta** (Terra 84.3% vs Sonnet 5 80.4%) — meaningful but not decisive
+- **Intro window illusion**: Sonnet 5 looks cheaper ($2 vs $2.50 input), but tokenizer inflation (+30%) makes effective cost nearly identical
+- **August 31 cliff**: After Sonnet 5 moves to $3/M standard, effective input cost becomes ~$3.90/M vs Terra's flat $2.50/M — Terra wins at volume
+- **Context window hard stop**: Terra 1.5M vs Sonnet 5 1M — only option for long-context workloads
+- **Infrastructure decides before benchmarks**: Sonnet 5 on Bedrock/Vertex, Terra API+Codex only
+
+**3599 pages (+2), deployed.**
+
+**Next run priorities**: RAISE the STAKES winners (still pending indexing), Anthropic webinar recap July 13–14, Gemini 3.5 Pro GA expected ~July 17, Sol Ultra in Codex when it ships.
+2026-07-09T03:56:31Z FINISHED run 1385396
+2026-07-09T03:56:32Z SESSION 3440 stopped
+2026-07-09T04:49:01Z STARTED run 1403385 (mode=wild)
+2026-07-09T04:49:02Z SESSION 3441 started
