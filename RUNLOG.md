@@ -35793,3 +35793,44 @@ Run 2322 complete.
 2026-07-09T06:57:10Z SESSION 3443 stopped
 2026-07-09T07:50:01Z STARTED run 1456447 (mode=wild)
 2026-07-09T07:50:02Z SESSION 3444 started
+Run 2323 complete. Here's what happened:
+
+**No inbox messages** — nothing pending from Rob or other agents.
+
+**RAISE Summit winners**: Still not publicly announced (event just concluded today, typically 24-48 hours for official results to index).
+
+**New article published**: "GPT-5.6 Sol, Terra, and Luna Are Fully Public: The Routing Decision You Need to Make Now"
+
+The hook is timing — all three tiers went fully public today after the US government freeze lifted July 8. Key content:
+
+- Sol ($5/$30, 88.8% Terminal-Bench) is cheaper *and* higher-scoring than Fable 5 ($10/$50, 84.3%) — the competitive comparison builders need
+- Terra ($2.50/$15) is the obvious GPT-5.5 migration target at half the price
+- Luna ($1/$6) for high-volume preprocessing with a caution against naive "try-cheap-first-then-retry" loops
+- Sol Ultra (91.9% via parallel subagents) — when the output-token cost premium justifies it
+- Where Anthropic still wins: MCP ecosystem entanglement, compliance infrastructure, behavioral consistency
+
+**Next run priorities**: RAISE Summit winners, Anthropic webinar recap (July 13), GPT-5.5 deprecation announcement, Gemini 3.5 Pro GA (expected July 17), and the AvePoint agent security report (88.4% breach rate) is a strong unused topic.
+2026-07-09T07:57:25Z FINISHED run 1456447
+2026-07-09T07:57:26Z SESSION 3444 stopped
+2026-07-09T08:50:01Z STARTED run 1473875 (mode=wild)
+2026-07-09T08:50:03Z SESSION 3445 started
+Waiting for the throttle window to clear (~96 seconds). The article is written and committed — I'll deploy as soon as the background task notifies me.
+
+**Run 2324 summary so far:**
+- New article: "88.4% of Enterprises Hit by AI Agent Breaches" based on AvePoint's State of AI 2026 report (750 IT leaders surveyed)
+- Key data points: visibility gap tripled (6.3%→17.6%), near-equal breach types (data leakage 50.1%, prompt injection 49.6%), 86% delayed deployments 6 months, AI now generates 35.5% of org data
+- RAISE the STAKES 2026 winners still not indexed — watch next run
+- 3609 pages built; deploy pending throttle clearance
+2026-07-09T08:55:10Z FINISHED run 1473875
+2026-07-09T08:55:11Z SESSION 3445 stopped
+2026-07-09T09:51:01Z STARTED run 1491200 (mode=wild)
+2026-07-09T09:51:02Z SESSION 3446 started
+Run 2325 complete.
+
+**What I did:** Wrote and deployed "Shadow MCP Servers: If 21.1% of Enterprises Can't See Unsanctioned Agents, What Are Those Agents Connecting To?" — a direct follow-on to yesterday's AvePoint article. The piece extends the 21.1% visibility gap finding to the MCP layer specifically: with 9,400+ public MCP servers and an estimated 28,000-37,000 private servers, the connections unsanctioned agents make are a deeper and harder-to-close gap than shadow AI statistics capture. Covers detection approaches (network scanning, config analysis, SDK dependency scanning, log pattern analysis) and the three-part governance stack (central registry + allowlist gateway, identity-scoped RBAC, OpenTelemetry audit trail).
+
+**What's next:** RAISE the STAKES 2026 winners (check raisesummit.com in next 24-48 hours), NVIDIA Nemotron-Labs-TwoTower article (diffusion inference guide, uncovered from July 1), Anthropic webinar recap on July 13, Gemini 3.5 Pro GA article for July 17.
+2026-07-09T09:56:39Z FINISHED run 1491200
+2026-07-09T09:56:40Z SESSION 3446 stopped
+2026-07-09T10:51:01Z STARTED run 1508849 (mode=wild)
+2026-07-09T10:51:02Z SESSION 3447 started

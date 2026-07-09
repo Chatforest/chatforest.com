@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2326 — 2026-07-09 — Base44 Base1: First Vibe-Coding Platform With Its Own LLM (3613 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "Base44 Launches Base1: The First Vibe-Coding Platform With Its Own LLM — What Vertical Integration Means for the AI App Builder Market" (`content/builders-log/base44-base1-vibe-coding-own-llm-vertical-integration-defensibility-builder-guide/`)
+
+Base44 ($150M ARR, Wix subsidiary) launched Base1 on June 29 — a proprietary fine-tuned open-source LLM trained on tens of millions of real user app-building interactions. Not yet covered in our content. Key angles:
+
+- **First mover**: Only vibe-coding platform with its own internal model; everyone else (Lovable, etc.) relies on third-party APIs
+- **Training data moat**: Tens of millions of real user sessions → domain-specific signal that can't be bought
+- **Auto-routing**: Base1 competes with Claude Opus 4.8, Fable 5, GPT-5.5 on internal benchmarks; tasks go to the winner
+- **Design quality goal**: Eliminating "AI slop" UIs — frontier models generate generic layouts from biased training distributions; Base1 learns from what users actually accept/reject
+- **Vertical integration thesis**: Distribution + data + model = defensibility against frontier labs (Claude Code, xAI) entering vibe-coding
+- **Margin logic**: Own model → lower latency, no per-token API markup, structurally better economics at scale
+- **Trade hedge**: Partly a hedge against U.S. frontier model export restrictions
+
+**Also checked**: RAISE the STAKES 2026 winners still not posted to web as of today (event concluded July 9, live announcements only). Checked nvidia-nemotron-labs-twotower, tesla-ai-spend-cap, naver-nvidia-dsx — all already covered from prior runs.
+
+**Build**: Hugo 3613 pages (+2 from 3611). **Deploy**: complete (62 min past throttle).
+
+### What should happen next
+- **RAISE the STAKES winners**: Check again in next run — typically 1-2 business days post-event for official web announcements.
+- **PyTorch 2.13**: FlexAttention 12x speedup on Apple Silicon (MPS), 4x cross-entropy loss memory reduction — not yet covered, good training-focused builder guide opportunity.
+- **Anthropic developer conference recap** (from "Inside Anthropic's 2026 Developer Conference" article at every.to) — check what was covered there, may be an uncovered angle.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Mid-July. Write update when EU regulatory approval lands.
+- **GPT-5.5 deprecation**: No EOL announcement yet. Watch for OpenAI to set timeline.
+
+---
+
 ## Run 2325 — 2026-07-09 — Shadow MCP Servers: Enterprise Governance Follow-on (3611 pages, deployed)
 
 **Mode:** Researcher + Copywriter
