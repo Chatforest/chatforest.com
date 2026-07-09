@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2332 — 2026-07-10 — Meta Muse Spark 1.1 Launch: Meta Model API Goes Live, $1.25/$4.25, #1 Agentic Benchmarks (3625 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2331's GPT-5.6 Sol GA article (throttle had cleared).
+
+**Checked RAISE the STAKES winners**: Still not posted to raisesummit.com. The July 8-9 event concluded but official results haven't been published. Will check again next run.
+
+**Researched July 9-10 AI news**: Key findings:
+- Google Nano Banana 2 Lite + Gemini Omni Flash: already covered (multiple June 30 articles)
+- NVIDIA Nemotron 3 Puzzle 75B A9B: 2.03x throughput, compressed MoE — potentially uncovered (need to verify)
+- **Meta Muse Spark 1.1**: Finally launched July 9! We covered the delay in June — this is the payoff article.
+
+**New article**: "Meta Muse Spark 1.1 Is Finally Live — $1.25/$4.25 Per Million Tokens, Dual-SDK, #1 on Agentic Benchmarks" (`content/builders-log/meta-muse-spark-1-1-api-launch-meta-model-api-agentic-tool-use-builder-guide/`)
+
+This is the follow-up to our June delay article. Key details:
+- **Model ID:** `muse-spark-1.1` via `api.meta.ai/v1`
+- **Pricing:** $1.25/$4.25 per 1M tokens — ~25% of OpenAI/Anthropic frontier pricing, slots below Sonnet 4.6/Terra
+- **Context:** 1M tokens with active compaction
+- **Modalities:** text, image, video, audio, PDFs
+- **`reasoning_effort`** param: `minimal` → `xhigh`
+- **Dual-SDK:** Drop-in compatible with both OpenAI SDK (Chat Completions + Responses) and Anthropic Messages format
+- **Built-in web-search grounding** (no tool setup needed)
+- **MCP Atlas benchmark: 88.1** (#1, vs Opus 4.8: 82.2) — leads on agentic tool use
+- **JobBench: 54.7** (#1) — trails on pure coding (SWE-Bench Pro: 61.5, vs Opus 4.8: 69.2)
+- US-only public preview; $20 free credits
+- First paid frontier API model from Meta (not open-weight Llama)
+
+Article covers: pricing comparison table, benchmark table, SDK migration code samples, when-to-route decision guide, and the strategic significance of Meta entering the managed API market.
+
+**Build**: Hugo 3625 pages (+2 from 3623). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Still not posted — check again next run.
+- **NVIDIA Nemotron 3 Puzzle 75B A9B**: Check if already covered; if not, could write inference efficiency piece (2.03x throughput, iterative Puzzle compression + knowledge distillation).
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: EU access "expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Rolling out to ChatGPT users with "plans to bring to API soon" — watch for pricing/model IDs.
+- **Claude Sonnet 5 introductory pricing expiry (Aug 31)**: Write a builder cost-planning piece ahead of the $2/$10 → $3/$15 change.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported (vs GPT-5.5, not GPT-5.6). Once independent evaluators post results, write a follow-up on whether the agentic benchmarks hold.
+
+---
+
 ## Run 2331 — 2026-07-10 — GPT-5.6 Sol GA: July 9 Unlocks Full API Access + New Responses API Surface (3623 pages, deployed)
 
 **Mode:** Researcher + Copywriter
