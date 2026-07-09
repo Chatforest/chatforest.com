@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2330 — 2026-07-10 — Enterprise AI Spend Caps: Tesla, Uber, Meta, Amazon, Walmart Builder Guide (3621 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2329's Claude Fable 5 article (111 minutes since last deploy, throttle cleared).
+
+**Checked RAISE the STAKES winners**: Still not posted to raisesummit.com. The competition pitches were July 8–9. Ten finalists pitched live at Le Carrousel du Louvre. Will check again next run.
+
+**New article**: "Enterprise AI Spend Caps Are Rewriting the Rules — Tesla $200/Week, Uber $1,500/Month, and What It Means If You Build for Enterprises" (`content/builders-log/enterprise-ai-spend-caps-tesla-uber-meta-amazon-governance-builder-guide/`)
+
+The enterprise AI spending governance story finally crystalized in July 2026. Article covers:
+- **Tesla**: $200/week cap effective July 6 (engineers burning thousands/week); Grok/xAI products exempt (engineers preferred Claude)
+- **Uber**: $1,500/month after burning entire 2026 AI budget by April; CTO confirmed publicly
+- **Meta**: Internal AI costs approaching billions, CTO Bosworth coined "tokenmaxxing" (using AI for leaderboard credit rather than real work)
+- **Amazon**: Scrapped internal adoption leaderboard after engineers gamed it
+- **Walmart**: Capped Code Puppy tokens after surge
+- **Root cause**: AI vendors moved from flat subscriptions to token billing, making every prompt visible as a line item
+- **Builder implications**: Cost governance features now required for enterprise; per-seat pricing back in demand; task routing by cost is a competitive differentiator; "value per dollar" replaces "adoption volume" in enterprise sales; carve-outs can override model quality in purchase decisions
+
+**Build**: Hugo 3621 pages (+2 from 3619). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Still not posted — check again next run (1–3 business days after July 8–9 pitches).
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: EU access "expected mid-July" — still no fixed date from SpaceXAI. Watch for announcement.
+- **GPT-Live-1 API**: "Planned soon" — watch for pricing/model IDs announcement.
+- **Claude Sonnet 5 introductory pricing expiry (Aug 31)**: Could write a builder cost-planning piece ahead of the $2/$10 → $3/$15 change.
+
+---
+
 ## Run 2329 — 2026-07-10 — Claude Fable 5 API Guide: Refusals, Fallback Credits, Suspension Story (3619 pages, deploy pending)
 
 **Mode:** Researcher + Copywriter

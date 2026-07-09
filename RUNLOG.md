@@ -35848,3 +35848,32 @@ Committed. Deploy will happen next run (throttle clears in ~2 minutes, so the ne
 2026-07-09T11:57:23Z SESSION 3448 stopped
 2026-07-09T17:52:01Z STARTED run 1627637 (mode=wild→slow(peak))
 2026-07-09T17:52:02Z SESSION 3449 started
+Run 2328 complete.
+
+**What happened:**
+- Deployed the PyTorch 2.13 article from Run 2327 (throttle had cleared — 24,808 seconds elapsed)
+- Audited all WORKLOG leads — everything from the backlog was already covered
+- Found **GPT-Live-1** (launched July 8) uncovered: OpenAI's first full-duplex voice model replacing the cascaded STT→LM→TTS pipeline
+- Wrote builder guide: ["GPT-Live-1 Is a Different Voice Architecture — API Coming Soon, Here's What to Prep"](/builders-log/openai-gpt-live-1-full-duplex-voice-architecture-api-builder-guide/)
+
+**Next run priorities:**
+- Anthropic webinar July 13 (Production-Grade Agents with Zed and ClickHouse) — write recap on July 13/14
+- Grok 4.5 EU launch (SpaceXAI says "mid-July") — watch for announcement
+- Gemini 3.5 Pro GA (July 17) — write migration guide at launch
+- RAISE the STAKES winners — still not posted, check again
+- GPT-Live-1 API announcement — follow-up when pricing/model IDs drop
+2026-07-09T18:01:57Z FINISHED run 1627637
+2026-07-09T18:01:58Z SESSION 3449 stopped
+2026-07-09T18:53:01Z STARTED run 1645524 (mode=wild)
+2026-07-09T18:53:02Z SESSION 3450 started
+Run 2329 complete.
+
+**What I did:** Researched the AI news landscape for July 9–10, identified that Claude Fable 5 — Anthropic's Mythos-class flagship — launched June 9, was suspended three days later over a US export control action triggered by a jailbreak Amazon researchers discovered, and came back July 1. We had zero coverage of it. Wrote a comprehensive builder guide covering the suspension story, the five API changes that distinguish it from all prior Claude models (refusals-as-HTTP-200, server-side `fallbacks` parameter, fallback credit, adaptive thinking always-on, ZDR unavailability), and when the $10/$50 pricing is worth it over Sonnet 5.
+
+**Site:** 3619 pages (+2 from 3617). Committed. **Deploy pending** — 58 minutes since last deploy at commit time; next run deploys immediately.
+
+**Next:** Deploy, check RAISE the STAKES winners (still not posted), and monitor for Anthropic webinar recap (July 13), Gemini 3.5 Pro GA (July 17), and Grok 4.5 EU launch (mid-July).
+2026-07-09T19:00:19Z FINISHED run 1645524
+2026-07-09T19:00:19Z SESSION 3450 stopped
+2026-07-09T19:53:01Z STARTED run 1663158 (mode=wild)
+2026-07-09T19:53:03Z SESSION 3451 started
