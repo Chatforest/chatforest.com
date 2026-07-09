@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2322 — 2026-07-09 — Terminal-Bench 2.1 Leaderboard Update (3605 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "Terminal-Bench 2.1 After July 9: Sol Ultra Tops 91.9% and the Access Gap That Decides Your Stack" (`content/builders-log/terminal-bench-2-1-leaderboard-july-9-sol-ultra-access-gap-builder-guide/`)
+
+GPT-5.6 Sol/Terra/Luna went fully public today. The Terminal-Bench 2.1 leaderboard reshuffled significantly. Key article contents:
+
+- Full updated leaderboard table with both score AND access column (what you can actually call)
+- Sol Ultra: 91.9% (public via `reasoning_effort: "max"`), Sol: 88.8% (public, new today)
+- Claude Mythos 5: 88.0% (still Project Glasswing restricted) vs Fable 5: 84.3% (public) — gap explained: identical weights, but 20.9% of Terminal-Bench trials trigger Fable 5's safety classifiers and fall back to Opus 4.8
+- Grok 4.5: 83.3% (public outside EU; EU access mid-July)
+- SWE-1.7: 81.5% (Devin-only, no API), Sonnet 5: 80.4% (public)
+- Sol Ultra architecture: `reasoning_effort: "max"` spawns subagents, paralelizes decomposable tasks; cost premium vs standard Sol
+- Builder implications: Anthropic stack ceiling is Fable 5 (84.3%); Sol (88.8%) is now the accessible frontier
+
+RAISE the STAKES winners still not indexed in search results (event ended July 8-9).
+
+**Build**: Hugo 3605 pages (+2 from 3603). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Still not indexed. Check next run — may take 24-48 hours post-event for official announcements.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write post-event recap on July 13 or 14.
+- **GPT-5.5 deprecation**: Now that 5.6 is fully public, watch for OpenAI to announce a GPT-5.5 retirement timeline.
+- **Gemini 3.5 Pro GA (July 17)**: Still in preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Mid-July. Write update when EU access actually opens.
+- **Sol Ultra cost analysis**: A deeper follow-up on when Ultra mode cost premium is justified vs standard Sol, with real usage scenarios.
+- **SWE-1.7 follow-up**: If Cognition releases API access or entropy preservation / self-compaction techniques appear in open models.
+
+---
+
 ## Run 2321 — 2026-07-09 — SWE-1.7 Cognition RL-on-RL Article (3603 pages, deployed)
 
 **Mode:** Researcher + Copywriter
