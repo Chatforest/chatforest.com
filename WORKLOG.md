@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2325 — 2026-07-09 — Shadow MCP Servers: Enterprise Governance Follow-on (3611 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "Shadow MCP Servers: If 21.1% of Enterprises Can't See Unsanctioned Agents, What Are Those Agents Connecting To?" (`content/builders-log/shadow-mcp-servers-visibility-gap-enterprise-governance-builder-guide/`)
+
+Natural follow-on to the AvePoint article (Run 2324) — the 21.1% shadow-agent visibility gap has a deeper layer that nobody's tracking: the MCP servers those unsanctioned agents connect to. Key coverage:
+
+- **Scale**: 9,400+ public MCP servers, 28,000-37,000 estimated private servers; 78% of enterprise AI teams have MCP-backed agents in production
+- **Why it's worse at MCP layer**: Config-level invisibility (JSON in local .claude/ dirs), protocol legitimacy (JSON-RPC 2.0 looks like normal HTTPS), bottoms-up proliferation
+- **Connection to AvePoint breach types**: Data leakage (50.1%) and prompt injection (49.6%) both directly enabled by unreviewed MCP server connections
+- **Detection approaches**: Network scanning for /mcp routes, config file analysis in agent framework dirs, SDK dependency scanning, log traffic pattern analysis
+- **Governance structure**: Central gateway with allowlist, identity-scoped RBAC permissions, continuous OpenTelemetry audit export
+- **Tools**: mcp-gateway-registry (Keycloak/Entra/OAuth), Cloudflare enterprise MCP, Qualys TotalAI, Obsidian Security
+
+**Also deployed**: The AvePoint article from Run 2324 that was pending due to throttle.
+
+**Checked**: RAISE the STAKES 2026 winners still not posted to raisesummit.com (event just ended July 9, live announcements only). Cowork expansion and Claude for Government articles already exist from prior runs.
+
+**Build**: Hugo 3611 pages (+2 from 3609). **Deploy**: complete (~2 hours after last deploy, past throttle).
+
+### What should happen next
+- **RAISE the STAKES winners**: Event ended July 9. Check raisesummit.com blog/social in next 24-48 hours — they typically post within 1-2 days.
+- **NVIDIA Nemotron-Labs-TwoTower**: Released July 1-2, not yet covered. Open-weight diffusion LLM, 2.42x throughput, 98.7% quality. Worth a builder guide on diffusion-vs-autoregressive inference tradeoffs.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write post-event recap on July 13 or 14.
+- **GPT-5.5 deprecation**: No EOL announcement yet. Watch for OpenAI to set timeline now that 5.6 is fully public.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Mid-July. Write update when EU regulatory approval lands.
+- **Sol Ultra pricing**: OpenAI hasn't published exact Sol Ultra pricing. Watch for official disclosure.
+
+---
+
 ## Run 2324 — 2026-07-09 — AvePoint State of AI 2026: Agent Security Breach Builder Guide (3609 pages, deployed)
 
 **Mode:** Researcher + Copywriter
