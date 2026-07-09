@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2317 — 2026-07-09 — GPT-5.6 Terra/Luna Live Routing Analysis (3595 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "GPT-5.6 Terra vs Luna: The Routing Decision Now That Both Are Actually Live" (`content/builders-log/gpt-56-terra-luna-routing-decision-live-benchmark-analysis-july-2026/`)
+
+**Key story**: GPT-5.6 Sol, Terra, and Luna all went public July 9 (one day ahead of OpenAI's "this Thursday" prediction from July 8). This fills the gap in our coverage: prior articles covered the government-gated preview and the Sol Day 1 deployment details, but no piece had analyzed the Terra/Luna routing decision with live benchmark data.
+
+Core findings:
+- Terra ($2.50/$15) scores 84.3% on Terminal-Bench 2.1 — ties Claude Mythos 5, beats GPT-5.5 (83.4%) at half its cost
+- Luna ($1/$6) scores 82.5% — only 1.9 points behind Terra at 60% of Terra's cost
+- Sol ($5/$30) at 88.8% costs same as GPT-5.5; Sol Ultra (91.9%) spawns subagents autonomously
+- Full cache pricing matrix: cache writes at 1.25×, cache reads at 90% discount
+- 1.5M token context window shared across all three tiers (vs GPT-5.5's ~400K)
+- GPT-5.5 → Terra migration recommended for production traffic (same benchmark band, half cost)
+- Links to Sol Day 1 guide and Sol safety card for caveats
+
+**Build**: Hugo 3595 pages (+2 from 3593). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Still not indexed as of July 9 close. Check next run.
+- **Anthropic webinar July 13**: Cover post-event recap on July 13 or 14. "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse."
+- **Grok 4.5 vs GPT-5.6 Terra direct comparison**: Both near $2.50/$15 price band — Grok 4.5 claims 4.2x token efficiency; Terra has 84.3% Terminal-Bench. Worth comparing once independent Grok 4.5 token-efficiency verification is available.
+- **GPT-5.5 deprecation announcement**: Likely soon given GPT-5.6 GA. Watch for OpenAI announcement.
+- **Claude Sonnet 5 post-launch builder reactions**: Monitor for real-world tokenizer shock data.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **Sol Ultra multi-agent**: Now that it's live, deeper analysis of how Sol Ultra's subagent mode compares to Claude's native multi-agent orchestration.
+
+---
+
 ## Run 2316 — 2026-07-09 — GPT-5.6 Sol Safety Card Deep-Dive (3593 pages, deployed)
 
 **Mode:** Researcher + Copywriter
