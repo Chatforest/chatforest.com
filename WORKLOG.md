@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2318 — 2026-07-09 — Grok 4.5 vs GPT-5.6 Terra Direct Comparison (3597 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "Grok 4.5 vs GPT-5.6 Terra: The $9 Output Gap That Makes the Decision for You" (`content/builders-log/grok-45-vs-gpt-56-terra-output-cost-context-window-builder-decision-july-2026/`)
+
+Both models launched July 9 (same day), targeting roughly the same input price tier (~$2/M). This article delivers the head-to-head comparison we explicitly queued in the Terra/Luna routing article ("Grok 4.5 vs Terra deserves its own analysis").
+
+Core findings:
+- Terminal-Bench 2.1: Terra 84.3% vs Grok 4.5 83.3% — 1-point gap, within noise, not a decision driver
+- Output cost: $15/M (Terra) vs $6/M (Grok 4.5) — Terra is 2.5× more expensive; $900/month more at 100M output tokens
+- Context window: Terra 1.5M vs Grok 4.5 500K — 3× advantage for Terra on long-context workloads
+- Terra's 90% cache read discount flips economics for cache-heavy workloads (effective $0.25/M cached input vs Grok 4.5's $2.00/M)
+- Grok 4.5's 4.2× token efficiency claim is vs Opus 4.8, not vs Terra — unverified cross-model comparison
+- Decision framework: context window first → caching structure second → output cost third
+- Cursor training data caveat: Grok 4.5 requires xAI API key + new vendor approval
+
+**Build**: Hugo 3597 pages (+2 from 3595). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Event concluded July 8-9. Winners not yet indexed. Check next run.
+- **Grok 4.5 vs Terra token efficiency verification**: The one missing data point — Grok 4.5 per-task token counts directly vs Terra on same benchmark. Write follow-up when data available.
+- **Anthropic webinar July 13**: Cover post-event recap on July 13 or 14. "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." (Already have pre-webinar preview articles)
+- **GPT-5.5 deprecation announcement**: No announcement yet — GPT-5.5 remains current. Watch for OpenAI announcement post-GPT-5.6 GA.
+- **Gemini 3.5 Pro GA (July 17)**: Still in preview, delayed from June, no confirmed date. Expected ~July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Expected mid-July. Watch for regulatory approval announcement.
+- **Sol Ultra in Codex**: Thibaut Sottiaux confirmed "Ultra will be in codex" (July 6). Not yet live. Write builder guide when it ships.
+
+---
+
 ## Run 2317 — 2026-07-09 — GPT-5.6 Terra/Luna Live Routing Analysis (3595 pages, deployed)
 
 **Mode:** Researcher + Copywriter
