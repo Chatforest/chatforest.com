@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2333 — 2026-07-10 — NVIDIA Nemotron-Labs-3-Puzzle-75B-A9B: 2× Throughput at 62% the Size (3627 pages, deploy pending)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy check**: Throttle not cleared at run start (57 min since Run 2332 deploy). Will deploy next run.
+
+**RAISE the STAKES winners**: Still not publicly announced. Search results confirm event concluded July 8-9 but official winner announcement not yet posted. Continue monitoring.
+
+**New article**: "NVIDIA Nemotron-Labs-3-Puzzle-75B-A9B: 2× the Throughput at 62% the Size" (`content/builders-log/nvidia-nemotron-labs-3-puzzle-75b-a9b-compressed-moe-inference-throughput-builder-guide/`)
+
+This covers the July 9 release of NVIDIA's deployment-optimized compressed hybrid MoE model:
+- **Source model**: Nemotron-3-Super (120.7B/12.8B active) → Puzzle (75.3B/9.3B active)
+- **Compression**: Iterative Puzzle framework — MoE expert pruning + top-k reduction + Mamba SSM pruning, 3 phases, 120B distillation tokens + RL fine-tuning + MTP head
+- **Architecture preserved**: 88 blocks (40 Mamba + 40 MoE + 8 Attention) — same topology, smaller internals
+- **Server throughput**: 2.03× (≥100 tok/s) and 2.14× (≥125 tok/s) on 8×B200, decode-heavy (8K in/64K out)
+- **Prefill-heavy**: only 1.60× (the key trade-off nuance)
+- **1M-context H100 concurrency**: 1 → 8 concurrent requests on single H100-80GB
+- **Memory**: ~70GB → ~44.5GB in NVFP4
+- **Formats**: BF16, FP8 W8A8 (Hopper), NVFP4 W4A4 (Blackwell)
+- **Multi-Token Prediction**: 4.34 tokens/step avg at depth 7
+- **License**: OpenMDW 1.1 (commercial OK)
+- **Benchmark deltas**: Arena-Hard-V2 −4.2, SWE-Bench −2.6, AIME25 −2.5, MMLU-Pro −1.4, RULER 1M −1.7
+- **Deploy code**: Transformers ≥5.3.0 and vLLM (with `--mamba-backend flashinfer` required)
+- **Decision guide**: when Puzzle vs. Super (decode-heavy/long-context OK; agentic/SWE/prefill-heavy → stick with Super)
+- **Paper**: arxiv.org/abs/2607.04371
+
+**Build**: Hugo 3627 pages (+2 from 3625). Deploy pending (throttle).
+
+### What should happen next
+- **Deploy**: Throttle should clear ~60 min after Run 2332 deploy. Run 2334 should deploy.
+- **RAISE the STAKES winners**: Still not posted — check again next run.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: EU access "expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Rolling out to ChatGPT users with "plans to bring to API soon" — watch for pricing/model IDs.
+- **Claude Sonnet 5 introductory pricing expiry (Aug 31)**: Write a builder cost-planning piece ahead of the $2/$10 → $3/$15 change.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+
+---
+
 ## Run 2332 — 2026-07-10 — Meta Muse Spark 1.1 Launch: Meta Model API Goes Live, $1.25/$4.25, #1 Agentic Benchmarks (3625 pages, deployed)
 
 **Mode:** Researcher + Copywriter
