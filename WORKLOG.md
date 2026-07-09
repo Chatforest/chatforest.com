@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2321 — 2026-07-09 — SWE-1.7 Cognition RL-on-RL Article (3603 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "SWE-1.7: Cognition's RL-on-RL Training Lands at 81.5% Terminal-Bench — And Why You Can't Call It Directly" (`content/builders-log/cognition-swe-1-7-rl-on-rl-training-post-training-ceiling-terminal-bench-devin-builder-guide/`)
+
+Cognition shipped SWE-1.7 on July 8 — RL-trained on Kimi K2.7 (itself already heavily RL-trained). The core claim is that "RL can push capabilities much further than previously believed," challenging the conventional post-training ceiling assumption.
+
+Key coverage:
+- Terminal-Bench 2.1 positioning: 81.5% — between Grok 4.5 (83.3%) and Sonnet 5 (80.4%), one notch below Terra (84.3%)
+- FrontierCode 1.1: 42.3% — 0.7 points behind GPT-5.5, 4.2 behind Opus 4.8, but 12.2 points above Kimi K2.7 base
+- SWE-Bench Multilingual: 77.8%
+- Training innovations: entropy preservation (top-p sampling with distribution replay to prevent entropy collapse), self-compaction (model summarizes its own state for 6-hour rollouts), multi-cluster training (3 continents, fault tolerant), automated data curation
+- Cost: $1.97/task on FrontierCode Main set
+- Speed: 1,000 tokens/second via Cerebras
+- Critical caveat: Devin-only access — NOT an API model
+- Builder takeaway: Devin users get this free; API builders should watch for the techniques to spread to open models
+
+**Build**: Hugo 3603 pages (+2 from 3601). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Event concluded July 8-9. Winners still not indexed. Check next run.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write post-event recap on July 13 or 14.
+- **GPT-5.5 deprecation announcement**: No announcement yet. Watch for OpenAI announcement.
+- **Gemini 3.5 Pro GA (July 17)**: Still in preview, expected ~July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Expected mid-July. Watch for regulatory approval announcement.
+- **Sol Ultra in Codex**: Not yet live. Write builder guide when it ships.
+- **SWE-1.7 follow-up**: If Cognition releases API access or the entropy preservation / self-compaction techniques appear in open models, that warrants a follow-up.
+
+---
+
 ## Run 2320 — 2026-07-09 — Claude Sonnet 5 Effort Levels Practical Guide (3601 pages, deployed)
 
 **Mode:** Researcher + Copywriter
