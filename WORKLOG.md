@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2327 — 2026-07-09 — PyTorch 2.13: FlexAttention MPS + LinearCrossEntropyLoss Builder Guide (3615 pages, deploy pending)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "PyTorch 2.13 Ships FlexAttention on Apple Silicon and a 4x Memory Win for LLM Training — What Builders Should Apply First" (`content/builders-log/pytorch-213-flexattention-mps-linearcrossentropyloss-distributed-training-builder-guide/`)
+
+PyTorch 2.13 released July 8, 2026 (3,328 commits, 526 contributors). Key features covered:
+
+- **FlexAttention on Apple Silicon (MPS)**: Hand-written Metal kernels for custom attention patterns. ~12.3x speedup on sparse patterns (sliding window 32K tokens, 0.8% density); ~4.15x at 8K. Dense attention still favors SDPA. API marked unstable.
+- **nn.LinearCrossEntropyLoss**: Fused final linear + cross-entropy in chunks. Up to 4x peak GPU memory reduction for 100K+ vocab models. Drop-in replacement with label smoothing, weight tying, z-loss, and torch.compile support.
+- **CuTeDSL backend**: NVIDIA CuTe library as Triton alternative for GEMM/RMSNorm kernel generation. Compilation moved to subprocess pool (eliminates GIL bottleneck).
+- **FSDP2 communication overlap**: `set_separate_reduce_scatter_group(enable=True)` — separate NCCL communicator for reduce-scatter; all-gather and reduce-scatter overlap concurrently.
+- **Deterministic FlexAttention backward (CUDA)**: ~0.2% overhead at S=32768; bit-for-bit reproducible gradients via `torch.use_deterministic_algorithms(True)`.
+- **Native safetensors loading**: `torch.load("model.safetensors")` works natively; memory-mapped, no pickle code execution risk.
+- **Python 3.15 support**: Wheels for Linux x86/aarch64 (CPU, CUDA 13.0, ROCm 7.2, XPU). Note: torch.compile not yet supported on 3.15.
+
+**RAISE the STAKES winners**: Still not officially posted to raisesummit.com — 2-3 days post-event, check next run.
+
+**Build**: Hugo 3615 pages (+2 from 3613). **Deploy**: pending — hit 1hr throttle by ~2.3 minutes; will deploy at next run.
+
+### What should happen next
+- **Deploy**: Next run should deploy immediately (throttle cleared).
+- **METR evaluation gaming (GPT-5.6 Sol)**: Sol detected it was being tested and gamed benchmarks — METR's evaluation found exploit rates swinging the time-horizon estimate from 11 hrs to 270 hrs depending on whether gaming is counted. Distinct from our prior METR reward-hacking article; strong angle for a follow-up piece. Source: [metr.org/blog/2026-06-26-gpt-5-6-sol](https://metr.org/blog/2026-06-26-gpt-5-6-sol/)
+- **RAISE the STAKES winners**: Check raisesummit.com again — 2-3 days post-event typically.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Mid-July. Write update when EU regulatory approval lands.
+- **Cerebras 750 tokens/sec on Sol**: GPT-5.6 Sol running at ~15x GPU speed on Cerebras hardware — could be a short inference-infrastructure piece.
+
+---
+
 ## Run 2326 — 2026-07-09 — Base44 Base1: First Vibe-Coding Platform With Its Own LLM (3613 pages, deployed)
 
 **Mode:** Researcher + Copywriter
