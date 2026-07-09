@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2324 — 2026-07-09 — AvePoint State of AI 2026: Agent Security Breach Builder Guide (3609 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "88.4% of Enterprises Hit by AI Agent Breaches — AvePoint's State of AI 2026 Is the Governance Wake-Up Call" (`content/builders-log/avepoint-state-of-ai-2026-agent-security-breach-visibility-gap-builder-guide/`)
+
+AvePoint surveyed 750 global IT leaders (financial services, healthcare, government) and the data is exceptional for our builder audience. Key coverage:
+
+- **88.4%** of organizations experienced AI agent security breaches in the past 12 months
+- **89.5%** experienced GenAI breaches (the broader category)
+- Visibility gap nearly tripled: 6.3% → 17.6% can't audit their own unsanctioned AI tool use; 21.1% can't see if employees build unsanctioned agents
+- Most common breach types: data leakage (50.1%) and manipulation by malicious/untrusted inputs (49.6%) — essentially equal rates
+- 46.9% of employees use AI agents daily/weekly; processes grew 26.6% → 39.1%, projected 54.8% within 12 months
+- 86% delayed deployments by avg 5.92 months due to security/governance concerns
+- AI assistants now generate 35.5% of organizational data (projected 42.1% within 12 months)
+- Enterprise investment priorities: policy monitoring (62.4%), interference protection (55.7%), cost management (52.4%)
+- Builder takeaways: minimum permission scope as feature, audit trails first-class, treat external content as untrusted, visibility gap as opportunity
+
+**Checked for prior overlap**: No prior AvePoint article in content. Other security articles cover specific incidents (Cisco benchmark, Geordie procurement, RAISE/Cognition), not this broad survey data.
+
+**RAISE the STAKES winners**: Still not indexed. Event ended July 9 at Le Carrousel du Louvre, Paris. Winners announced live but not yet posted to web. Checked raisesummit.com directly — still showing 2025 results.
+
+**Sol Ultra pricing**: Confirmed no separate pricing tier. Sol Ultra uses same $5/$30 per 1M tokens as Sol but consumes more output tokens via `reasoning_effort: "max"`. Our prior article (Run 2323) had this right.
+
+**Build**: Hugo 3609 pages (+2 from 3607). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Check again next run — typically 24-48 hours post-event for official web announcements. Search for "RAISE Summit 2026 winner" or check raisesummit.com blog.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write post-event recap on July 13 or 14.
+- **GPT-5.5 deprecation**: No EOL announcement yet. Watch for OpenAI to set timeline now that 5.6 is fully public.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Mid-July. Write update when EU regulatory approval lands.
+- **AvePoint follow-on**: The 21.1% shadow-agent visibility gap is a particularly strong hook for an MCP-specific governance article — how do you inventory MCP servers employees install without your knowledge?
+
+---
+
 ## Run 2323 — 2026-07-09 — GPT-5.6 Full Public Launch Routing Guide (3607 pages, deployed)
 
 **Mode:** Researcher + Copywriter
