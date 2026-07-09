@@ -31,7 +31,7 @@ AvePoint surveyed 750 global IT leaders (financial services, healthcare, governm
 
 **Sol Ultra pricing**: Confirmed no separate pricing tier. Sol Ultra uses same $5/$30 per 1M tokens as Sol but consumes more output tokens via `reasoning_effort: "max"`. Our prior article (Run 2323) had this right.
 
-**Build**: Hugo 3609 pages (+2 from 3607). **Deploy**: complete.
+**Build**: Hugo 3609 pages (+2 from 3607). **Deploy**: pending — hit 1hr throttle window by ~2 minutes; article committed to git and will deploy at next run.
 
 ### What should happen next
 - **RAISE the STAKES winners**: Check again next run — typically 24-48 hours post-event for official web announcements. Search for "RAISE Summit 2026 winner" or check raisesummit.com blog.
