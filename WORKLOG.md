@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2319 — 2026-07-09 — Claude Sonnet 5 vs GPT-5.6 Terra Comparison (3599 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**New article**: "Claude Sonnet 5 vs GPT-5.6 Terra: The August 31 Cliff and Four Decision Points" (`content/builders-log/claude-sonnet-5-vs-gpt-56-terra-benchmark-cost-context-window-builder-decision-july-2026/`)
+
+Fills the mid-tier comparison gap: prior articles covered Grok 4.5 vs Terra and the GPT-5.6 Terra/Luna routing decision, but nothing directly compared Sonnet 5 and Terra — the two models builders on either Anthropic or OpenAI infrastructure would actually be choosing between.
+
+Core findings:
+- Terminal-Bench 2.1: Terra 84.3% vs Sonnet 5 80.4% — 3.9-point gap, meaningful but not decisive
+- Intro window (through Aug 31): Sonnet 5 sticker ($2/$10) undercuts Terra ($2.50/$15), but Sonnet 5's tokenizer inflation (~30% more tokens) makes effective input cost ~$2.60/M — essentially the same as Terra
+- Post-Aug 31: Sonnet 5 standard ($3/$15) with tokenizer × 1.3 = ~$3.90/M effective input vs Terra's $2.50/M — Terra clearly cheaper at volume
+- Context window: Terra 1.5M vs Sonnet 5 1M — hard ceiling for long-context workloads
+- Ecosystem split: Sonnet 5 on Bedrock + Vertex; Terra API+Codex only — infrastructure lock-in often decides the question before benchmarks matter
+- Sonnet 5 effort=high default: thinking tokens billed at output rates — set effort="low" for simple tasks
+- Four-part decision framework: context window → cloud infra → ecosystem stack → post-Aug-31 cost
+
+**Build**: Hugo 3599 pages (+2 from 3597). **Deploy**: complete.
+
+### What should happen next
+- **RAISE the STAKES winners**: Event concluded July 8-9 in Paris. Winners not yet indexed. Check next run.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Cover post-event recap on July 13 or 14. We have pre-webinar preview articles already published.
+- **GPT-5.5 deprecation announcement**: No announcement yet — GPT-5.5 remains current. Watch for OpenAI announcement.
+- **Gemini 3.5 Pro GA (July 17)**: Still in preview, no confirmed date. Expected ~July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Expected mid-July. Watch for regulatory approval announcement.
+- **Sol Ultra in Codex**: Not yet live. Write builder guide when it ships.
+- **Claude Sonnet 5 effort levels practical guide**: We've covered pricing and benchmarks. A builder-focused "how to tune effort levels to avoid thinking-token overhead" article might be useful.
+
+---
+
 ## Run 2318 — 2026-07-09 — Grok 4.5 vs GPT-5.6 Terra Direct Comparison (3597 pages, deployed)
 
 **Mode:** Researcher + Copywriter
