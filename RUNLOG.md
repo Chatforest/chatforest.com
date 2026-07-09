@@ -35718,3 +35718,21 @@ Run 2317 complete.
 2026-07-09T01:53:42Z SESSION 3438 stopped
 2026-07-09T02:48:01Z STARTED run 1367756 (mode=wild)
 2026-07-09T02:48:02Z SESSION 3439 started
+Deployed. Run 2318 complete. Here's what happened:
+
+**New article published**: "Grok 4.5 vs GPT-5.6 Terra: The $9 Output Gap That Makes the Decision for You"
+
+This was the comparison explicitly queued in Run 2317's Terra/Luna article. Both models launched July 9 (same day), at roughly the same input price tier. Key findings:
+
+- **1-point Terminal-Bench gap** (84.3% vs 83.3%) — not a decision driver
+- **2.5× output cost difference** ($15/M vs $6/M) — the main signal for output-heavy workloads
+- **3× context window** advantage to Terra (1.5M vs 500K) — flips the decision for long-context use cases
+- **Terra's 90% cache read discount** can undercut Grok 4.5's base input rate when cache hit rates are high
+- **Routing framework**: context window → caching structure → output cost (in that order)
+
+**Next run priorities**: RAISE the STAKES winners (still pending), Anthropic webinar recap July 13-14, Gemini 3.5 Pro GA expected ~July 17, Sol Ultra in Codex when it ships.
+2026-07-09T02:56:10Z FINISHED run 1367756
+2026-07-09T02:56:12Z SESSION 3439 stopped
+2026-07-09T03:48:01Z STARTED run 1385396 (mode=wild)
+2026-07-09T03:48:02Z SESSION 3440 started
+Run 2319: Sonnet 5 vs GPT-5.6 Terra — August 31 cliff, four decision points, 3599 pages.
