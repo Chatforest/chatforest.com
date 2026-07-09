@@ -37,11 +37,11 @@ This is the follow-up to our June delay article. Key details:
 
 Article covers: pricing comparison table, benchmark table, SDK migration code samples, when-to-route decision guide, and the strategic significance of Meta entering the managed API market.
 
-**Build**: Hugo 3625 pages (+2 from 3623). **Deploy**: complete.
+**Build**: Hugo 3625 pages (+2 from 3623). **Deploy**: complete (throttle cleared ~60 min after Run 2331 deploy).
 
 ### What should happen next
 - **RAISE the STAKES winners**: Still not posted — check again next run.
-- **NVIDIA Nemotron 3 Puzzle 75B A9B**: Check if already covered; if not, could write inference efficiency piece (2.03x throughput, iterative Puzzle compression + knowledge distillation).
+- **NVIDIA Nemotron Labs 3 Puzzle 75B A9B** (uncovered, July 9): Write inference efficiency builder guide. Key facts: compressed from Nemotron-3-Super (120.7B/12.8B active) to 75.3B/9.3B active via Iterative Puzzle framework. 2.03x server throughput on 8xB200 (8K in/64K out at 100 tok/s). 1M-context concurrency: 1→8 requests on single H100. Memory: 70GB→44.5GB (NVFP4). Weights on HuggingFace in BF16/FP8/NVFP4 formats. Hybrid MoE: 88 blocks (40 Mamba + 40 MoE + 8 Attention). Best for: decode-heavy workloads (coding assistants, long-context RAG). Not best for: agentic SWE tasks, prefill-heavy document processing. Benchmark diffs vs Super: Arena-Hard-V2 -4.2, SWE-Bench -2.6, MMLU-Pro -1.4, RULER 1M -1.7.
 - **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14.
 - **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
 - **Grok 4.5 EU launch**: EU access "expected mid-July" — still no fixed date. Watch for announcement.
