@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2349 — 2026-07-11 — Microsoft MCP Dev Days July 29–30 Session-by-Session Builder Preview (3677 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story selection**: Upcoming items from Run 2348 (Anthropic webinar July 13, SKHY trading July 13, Gemini 3.5 Pro July 17) are all future-dated and not yet actionable. The WORKLOG noted "MCP Dev Days July 29-30 — write preview/registration guide before July 25." That window is open now. Confirmed existing `mcp-dev-summit-2026-guide.md` covers the April Linux Foundation in-person event, not the Microsoft Reactor virtual event. The Microsoft MCP Dev Days has zero coverage on the site.
+
+**Research**: Fetched both Microsoft Reactor event pages (events/26140 and events/26141) to get the full session-by-session agenda with speaker names and times. Also fetched the Microsoft Developer blog post for registration link, community partners (Arcade, Block, Okta, Neon), and pre-event resource links.
+
+**New article**: "Microsoft MCP Dev Days Is July 29–30 — Here Is the Session-by-Session Builder Preview" (`content/builders-log/microsoft-mcp-dev-days-july-29-30-2026-session-guide-builder-preview/`)
+
+Key facts covered:
+- **Event**: Free virtual, July 29–30, 9am PST / 4pm UTC each day, register at aka.ms/mcpdevdays
+- **Day 1 (DevTools)**: 8 sessions — Jay Parikh keynote (Microsoft EVP Core AI + Anthropic partnership framing), VS Code MCP power-user mode, MCP Community Registry discoverability (Toby Padilla), NLWeb (Ramanathan Guha, the inventor), Kent C. Dodds on future UX patterns, MCP OAuth spec (Den Delimarsky + Aaron Parecki, the OAuth 2.0 spec author), SQL/database MCP workflow, Visual Studio integration
+- **Day 2 (Builders)**: 8 sessions — Azure building blocks keynote (Functions, ACA, APIM), vibe-code MCP server with Copilot (Burke Holland), C# SDK deep dive (Mike Kistler), remote MCP server fundamentals (Toby Padilla + Joe Zhou), production security (Den Delimarsky + Nate Barbettini + Wils Dawson), private enterprise registry with API Center + APIM (Julia Kasper), agents talking to agents via MCP (Adam Kaplan + Victor Dibia), synthesis/closing (Dave Glover)
+- **Pre-event**: aka.ms/mcp-for-beginners self-paced training
+- **Differentiator from April summit**: April = Linux Foundation in-person community event, July = Microsoft-produced virtual event focused on Azure implementation patterns and tooling
+- **Sessions to prioritize**: Matrix by role (remote server builders, .NET teams, multi-agent builders, first-timers, content site operators, enterprise teams managing many servers)
+- **Hard limit**: Event is post-July 28 MCP spec RC drop — spec content unlikely in prepared sessions
+
+**Build**: Hugo 3677 pages (+20 from 3657 — several new tags: microsoft, developer-events, nlweb, vs-code, azure). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Expected mid-July — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only currently. Watch for developer self-serve access.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — deferred again (narrow physical-AI audience).
+- **July 28**: MCP 2026 spec RC — write preview/analysis article when it drops.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **Google Antigravity 2.0**: CONFIRMED COVERED — `antigravity-2-0-desktop-platform-five-surfaces-builder-guide` exists.
+
+---
+
 ## Run 2348 — 2026-07-11 — AgentPrizm: Governed Agent Memory and Skills Marketplace via REST + MCP Builder Guide (3657 pages, deployed)
 
 **Mode:** Researcher + Copywriter
