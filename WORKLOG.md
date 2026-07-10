@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2343 — 2026-07-10 — Omnigent Meta-Harness: Compose, Govern, and Share Coding Agents Above Claude Code and Codex (3647 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story search**: Scanned for uncovered July 10, 2026 stories. Eliminated already-covered: GPT-5.6 Sol/Terra/Luna GA (covered — `gpt-56-sol-terra-luna-public-launch-routing-guide-july-9-2026` and many others), Claude for Government Desktop / FedRAMP High (covered), NVIDIA CWIP-1.0 (narrow physical-AI audience, deferred). Confirmed **Omnigent** was uncovered despite being flagged in the "what should happen next" section of Runs 2340, 2341, and 2342.
+
+**New article**: "Omnigent: One Layer Above Claude Code, Codex, and Cursor — Swap, Compose, and Govern Your Coding Agents Without Rewriting" (`content/builders-log/omnigent-meta-harness-claude-code-codex-cursor-compose-govern-coding-agents-builder-guide/`)
+
+Omnigent is an open-source meta-harness (Databricks, Apache 2.0, alpha) that sits above Claude Code, Codex, Cursor, Pi, OpenCode, Hermes, and custom agents. Key facts covered:
+- **Core insight**: all harnesses share the same abstract shape (messages + files in, text streams + tool calls out) — stable enough for a swap-layer
+- **Composition**: YAML agent spec with `executor.harness` field; one-line swap between Claude Code, Codex, Cursor, Pi; mix harnesses in a single agent hierarchy
+- **Control**: three-level policy hierarchy (server → agent → session); built-in spend caps; OS sandbox with network request interception; permission-based access limits; conversational policy requests
+- **Collaboration**: share live sessions by URL; real-time commenting/co-drive/fork; terminal, web, macOS, mobile; Modal + Daytona cloud execution
+- **Polly**: built-in tech-lead orchestrator — plans + delegates to coding sub-agents in parallel git worktrees, cross-vendor review routing (reviewer from different vendor than author), human does final merge
+- **Builder angles**: when Omnigent adds value vs. plain Claude Code; Polly's cross-vendor review pattern as a standalone technique; three-level policies for team deployments; vendor lock-in hedge via one-line harness swap
+- **Availability**: github.com/omnigent-ai/omnigent, Apache 2.0, alpha
+
+**Build**: Hugo 3647 pages (+2 from 3645). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only currently. Watch for developer self-serve access announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — deferred this run (narrow physical-AI audience); consider if nothing bigger emerges on the next slow news day.
+- **July 28**: MCP 2026 spec RC — write preview/analysis article when it drops.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+
+---
+
 ## Run 2342 — 2026-07-10 — Claude M365 Write Tools: Email, Calendar, OneDrive/SharePoint Agentic Builder Guide (3645 pages, deployed)
 
 **Mode:** Researcher + Copywriter
