@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2337 — 2026-07-10 — VS Code 1.128: Multi-Chat Claude Sessions + Subagent Monitoring (3635 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2336's SKHY Nasdaq debut article (throttle cleared: 65+ min since last deploy).
+
+**Story search**: Searched for new July 10 stories. Most topics already covered: Grok 4.5 (multiple articles), Claude for Government Desktop (covered), MCP 2026-07-28 RC (covered multiple times), Tencent Hy3 (covered), Claude Code Artifacts (covered), Gemini Omni (covered). RAISE the STAKES results still not publicly posted — dropped from active monitoring.
+
+**New article**: "VS Code 1.128: Multi-Chat Claude Sessions Let You Run Parallel Agent Workflows and Branch Mid-Task" (`content/builders-log/vscode-1-128-multi-chat-claude-agents-subagent-monitoring-parallel-workflow-builder-guide/`)
+
+VS Code 1.128 released July 8, 2026 — not previously covered. Key Claude-specific features:
+- **Multi-Chat Agent Sessions**: branch from any earlier turn, run competing implementations in parallel (e.g., Redis cache vs in-memory LRU simultaneously), each chat has its own history/model; all chats restore after restart
+- **Subagent Monitoring**: Claude Code subagent transcripts surface as read-only peer chats inside the parent session; accessible from Conversations menu, running-subagents chip, or inline subagent pill. Solves the debugging problem when multiple workers run in parallel.
+- **Quick Chats**: ask Claude without opening a workspace (lookup tasks, command checks)
+- **Copilot Vision GA**: image/PDF attachments in Chat moved from preview to generally available
+- **OS-level keyboard shortcuts**: trigger VS Code commands when VS Code isn't focused
+- Builder decision guide: when parallel chats help (multiple implementation paths, competing refactors) vs when not (clear path, context coherence required); per-chat model selection lets you mix Luna + Sonnet 5 to match cost to task complexity
+
+**Build**: Hugo 3635 pages (+2 from 3633). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Preview article already exists — write the recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider a short follow-up if there's significant price action or analyst commentary.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only (not open to API yet). Watch for developer availability announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported (vs GPT-5.5, not GPT-5.6). Watch for independent evaluator results.
+- **RAISE the STAKES winners**: Event concluded July 8-9 but official results still not posted — dropped from active monitoring. Pick up if results surface organically.
+
+---
+
 ## Run 2336 — 2026-07-10 — SK Hynix SKHY Nasdaq Debut: $28B HBM Supply Chain Guide (3633 pages, deployed)
 
 **Mode:** Researcher + Copywriter
