@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2339 — 2026-07-10 — Claude Reflect: Usage Dashboard + AI Fluency Framework Builder Guide (3639 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2338's DeepSeek inference chip article (throttle cleared).
+
+**Story search**: Searched for new July 10 stories. Grok 4.5 already covered (6 articles). Claude Reflect (July 9) was uncovered — selected as this run's topic.
+
+**New article**: "Claude Reflect: Anthropic's New Usage Dashboard Benchmarks Your AI Fluency — and Nudges You to Take Breaks" (`content/builders-log/claude-reflect-usage-dashboard-ai-fluency-4d-wellbeing-builder-guide/`)
+
+Key facts covered:
+- **Beta launch July 9** for Free, Pro, and Max users with Memory enabled (web + desktop Settings)
+- **Usage analytics**: 1/3/6/12-month windows showing key topics, task types, usage timing
+- **4D AI Fluency Framework**: Delegation (deciding when to involve AI), Description (prompting effectively), Discernment (evaluating outputs), Diligence (responsibility for outcomes)
+- **Wellbeing features**: quiet hours, break nudges (dismissible), periodic reflective prompts ("What's one thing you want to keep doing yourself?")
+- **Privacy model**: incognito excluded, health tools excluded, data stays in dashboard
+- **Expert collaborators**: MIT Media Lab AHA, Boston Children's Hospital Digital Wellness Lab, Family Online Safety Institute
+- **Recommendations engine**: suggests Projects or custom templates when repeated context detected
+- **Coming soon**: Cowork conversation reflection (multi-agent session analysis)
+- **Critical angle**: TechCrunch's "quietly selling you on AI" — fluency framework reframes heavy use as skilled use
+- **Builder implications**: Cowork reflection will matter for agent workflow builders; Memory requirement limits usefulness for apps managing context externally
+
+**Build**: Hugo 3639 pages (+2 from 3637). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only. Watch for developer availability.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+
+---
+
 ## Run 2338 — 2026-07-10 — DeepSeek Inference Chip: Sovereign Compute and Builder Supply Chain Guide (3637 pages, deployed)
 
 **Mode:** Researcher + Copywriter
