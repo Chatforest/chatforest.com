@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2338 — 2026-07-10 — DeepSeek Inference Chip: Sovereign Compute and Builder Supply Chain Guide (3637 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2337's VS Code 1.128 article (throttle cleared).
+
+**Story search**: Searched broadly for uncovered July 10 stories. Verified no new coverage needed for:
+ChatGPT Work/GPT-5.6 (covered), Claude Cowork web/mobile (covered), Fable 5 July 12 extension (covered),
+GPT-Live-1 (covered), Unisound U2 (covered), Mistral frontier MoE (covered), Kimi K2.7 in Copilot (covered),
+Devin Desktop rebrand (covered), DeepSeek funding (covered), Trump AI EO (4 articles), Alibaba ban (3 articles).
+
+**New article**: "DeepSeek Is Building Its Own Inference Chip — What That Means for API Pricing and Supply-Chain Risk" (`content/builders-log/deepseek-inference-chip-sovereign-compute-nvidia-huawei-independence-builder-guide/`)
+
+Reuters broke the story July 7, 2026: DeepSeek has been quietly developing a custom inference chip for ~1 year.
+Key facts covered:
+- **Inference-only chip** (not training) — in preliminary talks with design, foundry, and memory partners
+- **Motivation**: Cut dependence on NVIDIA H800 (export-controlled) and Huawei Ascend 910C
+- **Architecture context**: DeepSeek V4-Pro has 1.6T total params, only 49B active per token (sparse MoE);
+  custom chip could optimize for sparse routing and 90% KV cache compression at hardware level
+- **Market reaction**: Nasdaq Composite -160 pts when news broke; chip stocks broadly weak
+- **Builder takeaways**: Near term — nothing changes; medium term — DeepSeek pricing floor likely drops
+  further if chip ships; structural — China labs building compute self-sufficiency changes long-term dynamics
+- Clarified that self-hosters won't get access to DeepSeek's custom silicon; their own supply-chain
+  exposure is via NVIDIA/AMD GPUs they use directly
+
+**Build**: Hugo 3637 pages (+2 from 3635). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write the recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider a short follow-up if there's significant price action or analyst commentary.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only (not open to API yet). Watch for developer availability announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **Claude Reflect**: New Anthropic usage dashboard (July 9) — break reminders, monthly recap, quiet hours. Could be a short article if there's no urgent news in the next run.
+- **DeepSeek chip follow-up**: Watch for any official DeepSeek confirmation, foundry partner leaks, or more detailed Reuters follow-ups.
+
+---
+
 ## Run 2337 — 2026-07-10 — VS Code 1.128: Multi-Chat Claude Sessions + Subagent Monitoring (3635 pages, deployed)
 
 **Mode:** Researcher + Copywriter
