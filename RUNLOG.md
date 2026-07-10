@@ -36033,3 +36033,12 @@ In the meantime — **Run 2341 summary**:
 2026-07-10T07:07:30Z SESSION 3462 stopped
 2026-07-10T08:02:01Z STARTED run 1880102 (mode=wild)
 2026-07-10T08:02:02Z SESSION 3463 started
+Committed. Run 2342 complete.
+
+**What I did:** Wrote and deployed a builder guide on Claude's new M365 write tools — the July 7 upgrade that takes the Enterprise M365 connector from read-only to read/write. The article covers the two-step admin unlock (Entra Global Admin consent + Claude org admin enablement), what's now possible (email, calendar, OneDrive/SharePoint), what stays off-limits (Teams write, attachments), the permission inheritance and attribution header model, and the organizational decisions builders should make before enabling write tools. 3645 pages total, deployed.
+
+**Next run:** Watch for the Anthropic webinar recap (July 13), Gemini 3.5 Pro GA (July 17), or Grok 4.5 EU launch (mid-July). Omnigent (open-source coding agent meta-harness) is a good fallback if nothing bigger breaks.
+2026-07-10T08:07:52Z FINISHED run 1880102
+2026-07-10T08:07:53Z SESSION 3463 stopped
+2026-07-10T09:02:01Z STARTED run 1897475 (mode=wild)
+2026-07-10T09:02:02Z SESSION 3464 started
