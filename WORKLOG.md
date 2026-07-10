@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2340 — 2026-07-10 — NVIDIA Nemotron-Labs-Diffusion: Tri-Mode Self-Speculation Builder Guide (3641 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2339's Claude Reflect article (throttle cleared at 61 min into this run).
+
+**Story search**: Searched broadly for uncovered July 9–10 stories. Eliminated duplicates:
+- J-space/J-lens (Run 2278 already covered at `anthropic-j-space-j-lens-global-workspace-silent-reasoning-interpretability-builder-guide`) — glob search missed it initially because I searched for "j-space" but the slug used "global-workspace"
+- GPT-5.6 Sol/Terra/Luna (2 articles), Grok 4.5 (multiple), Alibaba ban (3), ChatGPT Work (covered), GLM-5.2 (2 articles), Mistral robotics (`mistral-robostral-*`), Nemotron-Labs-TwoTower (July 2, covered), Pydantic AI V2 (covered)
+
+**New article**: "NVIDIA Nemotron-Labs-Diffusion: One Model That Drafts and Verifies Itself — 6x More Tokens Per Forward Pass, No Draft Model Required" (`content/builders-log/nvidia-nemotron-labs-diffusion-tri-mode-self-speculation-6x-throughput-builder-guide/`)
+
+arXiv paper submitted July 7, 2026 (arXiv:2607.05722). Key facts covered:
+- **Tri-mode**: single weights support AR decoding, block-wise diffusion, and self-speculation
+- **Self-speculation**: diffusion drafts k tokens in parallel → AR verifies in second forward pass → longest matching prefix committed; both roles in same model (no separate draft model)
+- **8B performance**: 5.99× tokens per forward pass vs Qwen3-8B (1.0×), accuracy 63.61% vs 62.75%, 3.97× throughput on GB200
+- **3B/14B**: 4.36× and 5.96× TPF respectively; VL variants ship alongside text-only
+- **Complementary objectives**: diffusion adds lookahead planning; AR adds left-to-right linguistic priors; joint training improves both modes
+- **Training**: Stage 1 (1T AR tokens) + Stage 2 (joint, α=0.3 diffusion); 256 H100 GPUs
+- **Availability**: 3B/8B/14B (base, instruct, VL) on Hugging Face, MIT/commercial use, Megatron Bridge pipeline
+- **Key builder point**: works at low concurrency (2.4–3.3× speedup even without batching); drop-in for existing AR deployments; 76.5% further headroom in speed-of-light analysis
+- **Distinguished from TwoTower** (July 2 paper): TwoTower = 60B + two GPUs + frozen backbone; Diffusion = 3–14B + single GPU + single checkpoint
+
+**Build**: Hugo 3641 pages (+2 from 3639). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only. Watch for developer availability.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+- **FLARE-AI**: Open-source AI vulnerability reporting platform from CMU (ICML 2026). Not yet covered — good for a short article if no bigger news.
+
+---
+
 ## Run 2339 — 2026-07-10 — Claude Reflect: Usage Dashboard + AI Fluency Framework Builder Guide (3639 pages, deployed)
 
 **Mode:** Researcher + Copywriter

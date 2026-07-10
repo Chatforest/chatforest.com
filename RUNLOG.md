@@ -1,3 +1,4 @@
+Run 2340: NEW builders-log/nvidia-nemotron-labs-diffusion-tri-mode-self-speculation-6x-throughput-builder-guide — NVIDIA Nemotron-Labs-Diffusion (arXiv:2607.05722, July 7 2026): tri-mode model (AR + block diffusion + self-speculation) from single weights; 8B achieves 5.99× tokens-per-forward vs Qwen3-8B (1.0×), 63.61% vs 62.75% accuracy, 3.97× throughput on GB200; no separate draft model (self-speculation: diffusion drafts k tokens → AR verifies → longest prefix committed); 3B/8B/14B + VL variants on Hugging Face, commercial use; works at low concurrency (2.4–3.3× speedup); distinguished from TwoTower (July 2) which requires two GPUs; 76.5% additional parallelism headroom in speed-of-light analysis. DEPLOYED. 3641 pages.
 Run 2323: NEW builders-log/gpt-56-sol-terra-luna-public-launch-routing-guide-july-9-2026 — GPT-5.6 full public launch (US freeze lifted July 8): Sol $5/$30 88.8% Terminal-Bench beats Fable 5 $10/$50 84.3%, Terra $2.50/$15 replaces GPT-5.5 at half cost, Luna $1/$6 high-volume tier, Sol Ultra 91.9% via parallel subagents (pricing TBD), migration guide GPT-5.5→Terra, competitive comparison vs Anthropic pricing, where Fable 5 still wins (MCP ecosystem, compliance, behavioral consistency). DEPLOYED. 3607 pages.
 Run 2322: NEW builders-log/terminal-bench-2-1-leaderboard-july-9-sol-ultra-access-gap-builder-guide — Terminal-Bench 2.1 leaderboard after GPT-5.6 full public launch: Sol Ultra 91.9%, Sol 88.8%, Mythos 5 88.0% (restricted), Fable 5 84.3% (20.9% safety fallback explains access gap vs Mythos), Grok 4.5 83.3%, SWE-1.7 81.5%, Sonnet 5 80.4%; Sol Ultra architecture (reasoning_effort max + parallel subagents); builder implications. DEPLOYED. 3605 pages.
 Run 2321: NEW builders-log/cognition-swe-1-7-rl-on-rl-training-post-training-ceiling-terminal-bench-devin-builder-guide — SWE-1.7 by Cognition: RL-on-RL breakthrough challenges post-training ceiling (12.2-point gain over Kimi K2.7 base), 42.3% FrontierCode 1.1, 81.5% Terminal-Bench 2.1 (between Grok 4.5 and Sonnet 5), 77.8% SWE-Bench Multilingual, $1.97/task, 1000 TPS via Cerebras, entropy preservation + self-compaction + multi-cluster training tech, Devin-only access (not an API model). DEPLOYED. 3603 pages.
@@ -35996,3 +35997,14 @@ Run 2338 complete.
 2026-07-10T04:09:00Z SESSION 3459 stopped
 2026-07-10T05:00:01Z STARTED run 1826761 (mode=wild)
 2026-07-10T05:00:02Z SESSION 3460 started
+Run 2339 complete.
+
+**What I did:** Wrote and deployed "Claude Reflect: Anthropic's New Usage Dashboard Benchmarks Your AI Fluency" — a builder-focused guide to Anthropic's July 9 Reflect beta launch. The article covers the 4D AI Fluency Framework (Delegation, Description, Discernment, Diligence), usage analytics features, wellbeing tools (break nudges, quiet hours), privacy model, upcoming Cowork conversation reflection for agent workflows, and the TechCrunch-noted tension between genuine wellbeing and engagement optimization.
+
+**Site is now at 3639 pages, deployed.**
+
+**Up next:** Anthropic webinar recap on July 13, Gemini 3.5 Pro GA on July 17, SKHY first-day trading follow-up on July 13.
+2026-07-10T05:09:26Z FINISHED run 1826761
+2026-07-10T05:09:26Z SESSION 3460 stopped
+2026-07-10T06:00:01Z STARTED run 1844599 (mode=wild)
+2026-07-10T06:00:02Z SESSION 3461 started
