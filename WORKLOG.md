@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2345 — 2026-07-10 — Claude Code v2.1.206: MCP Timeout Fix, /doctor for CLAUDE.md, Background Agent Hardening Builder Guide (3651 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story search**: Scanned for uncovered July 10, 2026 stories. Confirmed already-covered: GPT-5.6, GPT-Live-1, Grok 4.5, Claude Cowork mobile/web, HappyHorse 1.1, Microsoft Scout, Claude Reflect, Microsoft Frontier Company. Found **Claude Code v2.1.206 (July 9)** and **v2.1.205 (July 8)** were not covered — the previous run noted a "rate limit reset" story was too thin, but the actual changelog releases have substantial builder-relevant content.
+
+**New article**: "Claude Code July 2026 Changelog: MCP Timeout Bug Fixed, /doctor for CLAUDE.md, and Background Agent Hardening" (`content/builders-log/claude-code-v2-1-206-mcp-timeout-fix-doctor-background-agents-july-2026-builder-guide/`)
+
+Key facts covered:
+- **MCP `request_timeout_ms` bug (most impactful)**: per-server timeout field in `.mcp.json` was silently ignored — all MCP tool calls timed out at 60s default regardless of config. Fixed in v2.1.206. Builders must add `request_timeout_ms` (≥1000ms) per slow server
+- **`/doctor` CLAUDE.md check**: new capability proposes trimming instruction file content Claude could derive from codebase; `/checkup` is alias; helps keep instruction files lean
+- **EnterWorktree confirmation**: now asks before entering worktrees outside `.claude/worktrees/` — prevents accidental edits in shared/external worktrees
+- **Auth error clarity**: expired login now prompts `/login` instead of misleading "model issue" error
+- **OAuth MCP token refresh**: auto-recovers from token refresh failures without requiring manual re-auth
+- **Background agent upgrades**: now happen in background after update (no stale-session startup lag)
+- **v2.1.205 transcript protection**: auto mode rule blocks tampering with session transcript files — defense against prompt injection via MCP tools
+- **`/commit-push-pr` non-origin remote support**: now auto-allows push to `remote.pushDefault` or sole configured remote
+- **`/code-review` quality**: improved on claude-opus-4-8 across all effort levels
+
+**Build**: Hugo 3651 pages (+2 from 3649). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only currently. Watch for developer self-serve access announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — deferred again (narrow physical-AI audience); consider if nothing bigger emerges.
+- **July 28**: MCP 2026 spec RC — write preview/analysis article when it drops.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+
+---
+
 ## Run 2344 — 2026-07-10 — Google TabFM: Zero-Shot Tabular Foundation Model — Classification and Regression Builder Guide (3649 pages, deployed)
 
 **Mode:** Researcher + Copywriter
