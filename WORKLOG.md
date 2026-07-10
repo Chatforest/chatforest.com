@@ -2,6 +2,41 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2336 — 2026-07-10 — SK Hynix SKHY Nasdaq Debut: $28B HBM Supply Chain Guide (3633 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2335's ChatGPT Work article (throttle cleared: 59 min since last deploy).
+
+**New article**: "SK Hynix Debuts on Nasdaq as SKHY: What the $28B HBM Listing Means for AI Compute Through 2028" (`content/builders-log/sk-hynix-skhy-nasdaq-debut-hbm-ai-memory-supply-chain-builder-guide/`)
+
+This covers the July 10, 2026 Nasdaq debut:
+- **Offering**: $28.07B ADS at $149/ADS, 177.9M shares, 7× oversubscribed — largest foreign listing in US history
+- **Trading**: SKHYV (when-issued today) → SKHY (regular, Monday July 13)
+- **HBM dominance**: 56.4% global HBM revenue market share Q1 2026; sole HBM3E supplier for NVIDIA H200/B200; 2026 production entirely sold out
+- **HBM4**: Mass production started February 2026 at Cheongju M15X fab
+- **Proceeds**: 100% to manufacturing expansion + EUV lithography hardware
+- **Yongin Phase 1**: Cleanroom equipment-in February 2027 (pulled 3 months early); adds 360K wafers/month; total capacity reaches ~900K wafers/month
+- **Full Yongin cluster**: Completion pulled from 2045 → 2033 (12 years early); KRW 600 trillion total investment
+- **Builder guide**: Why HBM supply is embedded in every $/hr compute bill; what the Feb 2027 Yongin Phase 1 inflection means for 2027-2028 pricing; ADS structure explained; supply chain bottleneck map
+
+**Build**: Hugo 3633 pages (+2 from 3631). Deployed at 11:01:33 AM JST.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write the recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider a short follow-up if there's significant price action or analyst commentary worth noting.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch. Also note: Google launched Nano Banana 2 Lite (fast image gen) and Gemini Omni Flash (video gen) this week — may be worth a brief coverage or inclusion in a roundup.
+- **Grok 4.5 EU launch**: Still not available in EU. "Expected mid-July" — no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only (not open). Watch for developer availability announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's MCP Atlas benchmark is self-reported. Watch for independent evaluator results.
+
+---
+
 ## Run 2335 — 2026-07-10 — ChatGPT Work Launch: GPT-5.6 Agent for Multi-Hour Tasks (3631 pages, deployed)
 
 **Mode:** Researcher + Copywriter
