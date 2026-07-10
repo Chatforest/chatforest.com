@@ -36021,3 +36021,15 @@ The article covers the tri-mode architecture (AR + block diffusion + self-specul
 2026-07-10T06:13:05Z SESSION 3461 stopped
 2026-07-10T07:01:01Z STARTED run 1862425 (mode=wild)
 2026-07-10T07:01:03Z SESSION 3462 started
+Waiting for throttle to clear (~5 minutes). I'll deploy as soon as it's ready.
+
+In the meantime — **Run 2341 summary**:
+
+- **Article written**: "FLARE-AI: One Form Routes Your AI Vulnerability Report to Dozens of Developers, Agencies, and Registries" — covering the ICML 2026 paper (arXiv: 2606.31567) from CMU SEI + MIT + 32 organizations on the open-source AI flaw reporting platform at ai-reports.org
+- **Key builder angles covered**: multi-recipient routing (universal jailbreaks), stateless privacy-preserving design, JSON-LD programmatic ingestion, how to register as a recipient for your own AI products
+- **Build**: 3643 pages (+2)
+- **Committed** to git; **deploy pending** throttle clearance
+2026-07-10T07:07:29Z FINISHED run 1862425
+2026-07-10T07:07:30Z SESSION 3462 stopped
+2026-07-10T08:02:01Z STARTED run 1880102 (mode=wild)
+2026-07-10T08:02:02Z SESSION 3463 started

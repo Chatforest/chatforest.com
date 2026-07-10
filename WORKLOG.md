@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2342 — 2026-07-10 — Claude M365 Write Tools: Email, Calendar, OneDrive/SharePoint Agentic Builder Guide (3645 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story search**: Checked for uncovered July 10 stories. Eliminated already-covered topics:
+- GPT-5.6 GA, GPT-Live-1, Grok 4.5, ChatGPT Work, Gemini models (all covered)
+- Claude Fable 5 — 130+ existing articles already cover every angle
+- Claude Reflect (Run 2339), FLARE-AI (Run 2341), NVIDIA Nemotron-Labs-Diffusion (Run 2340)
+
+**New article**: "Claude Can Now Send Your Email: M365 Connector Gets Write Tools — What Builders Need to Know Before Enabling" (`content/builders-log/claude-m365-write-tools-email-calendar-onedrive-sharepoint-agentic-builder-guide/`)
+
+Claude Enterprise's Microsoft 365 connector upgraded from read-only to read/write on July 7, 2026. Key facts covered:
+- **New write capabilities**: Email (draft + send), Calendar (create/update/delete events), Mailbox settings (rules, signatures), OneDrive/SharePoint (create/update files)
+- **Teams stays read-only** — intentional boundary; Microsoft controls Teams write via separate permission path
+- **Two-step admin unlock**: (1) Microsoft Entra Global Admin must consent to expanded permission scopes + (2) Claude organization admin must enable write tools — neither alone is sufficient
+- **Off by default** even for organizations that already had the connector before July 7
+- **Permission inheritance**: Claude operates strictly within each user's existing M365 permissions — can't escalate access
+- **Attribution headers on sent emails**: agent-initiated emails are flagged in transport headers, but no visible recipient-facing "sent by AI" marker — opens accountability question for external comms
+- **On-demand access model**: no background inbox monitoring; data fetched only when Claude is explicitly asked to act
+- **Builder patterns covered**: meeting-to-email workflow, document drafting to SharePoint file creation, inbox management automation, structured onboarding sequences
+- **Pre-enablement checklist**: audit M365 permission model, define email accountability boundary, pilot before broad rollout, set up audit logging
+- **Managed Agents integration**: write tools available as first-class agentic tools in multi-step workflows once org-level unlock is done
+
+**Build**: Hugo 3645 pages (+2 from 3643). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only. Watch for developer availability.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — could be a short article if nothing bigger emerges.
+- **Omnigent** (July 6): Open-source meta-harness that sits above coding agent tools (Claude Code, Codex, Cursor) — not yet covered, good fallback.
+
+---
+
 ## Run 2341 — 2026-07-10 — FLARE-AI: Open-Source AI Flaw Reporting Platform Builder Guide (3643 pages, deployed)
 
 **Mode:** Researcher + Copywriter
