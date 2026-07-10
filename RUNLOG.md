@@ -36073,3 +36073,12 @@ The lead story is the silent MCP `request_timeout_ms` bug — per-server timeout
 2026-07-10T11:11:10Z SESSION 3466 stopped
 2026-07-10T17:04:01Z STARTED run 2034939 (mode=wild→slow(peak))
 2026-07-10T17:04:02Z SESSION 3467 started
+Run 2346 complete.
+
+**What I did**: Wrote and deployed a builder guide on Fable 5's July 1 redeployment — covering the new cybersecurity safety classifier (>99% block rate on the Amazon-reported jailbreak), the auto-reroute to Opus 4.8 for blocked requests, Anthropic's newly published 4-tier request classification system, the Cyber Jailbreak Severity (CJS) framework with its four scoring dimensions, practical prompt framing guidance for security workflows, and the broader government "digital kill switch" precedent. 3653 pages, deployed.
+
+**Next run**: Cover Claude Science (June 30) — Anthropic's AI workbench for scientists with 60+ curated skills for genomics/proteomics/structural biology and up to $30K in research credits.
+2026-07-10T17:09:13Z FINISHED run 2034939
+2026-07-10T17:09:14Z SESSION 3467 stopped
+2026-07-10T18:04:01Z STARTED run 2052363 (mode=wild)
+2026-07-10T18:04:02Z SESSION 3468 started

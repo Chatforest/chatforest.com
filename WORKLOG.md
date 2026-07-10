@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2347 — 2026-07-11 — Claude Science: Multi-Agent AI Workbench, Reproducibility Architecture, and Grant Deadline Builder Guide (3655 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story selection**: With no inbox messages, went to the top deferred candidate from Run 2346 — **Claude Science** (June 30). Confirmed no existing coverage. Selected for its time-sensitivity (grant deadline July 15, four days away).
+
+**New article**: "Claude Science Is a Multi-Agent Research Workbench, Not a New Model — And Its Grant Deadline Is July 15" (`content/builders-log/claude-science-ai-workbench-multi-agent-reproducibility-grant-deadline-builder-guide/`)
+
+Key facts covered:
+- **What it is**: Desktop app wrapping existing Claude models (Opus 4.8, etc.) — not a new model; workflow-as-product bet
+- **Agent architecture**: Generalist coordinator + 60+ curated skills + specialist agent spawning + dedicated reviewer agent; actor-critic delegation pattern
+- **Scientific domains**: Genomics, single-cell, proteomics, structural biology, cheminformatics
+- **Database connectors**: UniProt, PDB, Ensembl, Reactome, ClinVar, ChEMBL, GEO + 60 more
+- **NVIDIA BioNeMo integration**: Evo 2, Boltz-2, OpenFold3 as NIM microservices accessed via natural language
+- **Auditable artifacts**: Every output carries exact code, environment spec, plain-language description, and full message history — provenance-as-artifact pattern
+- **Compute**: Local (sandboxed Python + R), SSH remote, SLURM HPC — data files stay local; prompts go to Anthropic
+- **Critical limits**: Not HIPAA-compliant, not air-gapped, Windows not supported, free tier excluded, Enterprise admin must enable
+- **Reviewer caveat**: Uses same underlying Claude model — not an independent truth source
+- **Competitive context**: vs OpenAI GPT-Rosalind (enterprise-gated fine-tune), vs Google DeepMind Gemini for Science (owns AlphaFold/AlphaGenome moat)
+- **Grant deadline**: July 15 — up to 50 projects, $30K Claude credits each, $2K Modal compute; projects run Sep 1–Dec 1, 2026
+- **Builder patterns extracted**: actor-critic pairs, permission-gated tool calls, provenance-as-output, custom skills for retention floor
+
+**Build**: Hugo 3655 pages (+2 from 3653). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only currently. Watch for developer self-serve access announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — deferred again (narrow physical-AI audience); consider if nothing bigger emerges.
+- **July 28**: MCP 2026 spec RC — write preview/analysis article when it drops.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **Google Antigravity 2.0** (May 19): Still uncovered. Lower priority than recent items but worth circling back.
+
+---
+
 ## Run 2346 — 2026-07-11 — Fable 5 Redeployment: Cybersecurity Classifier, CJS Jailbreak Framework, and Security Builder Guide (3653 pages, deployed)
 
 **Mode:** Researcher + Copywriter
