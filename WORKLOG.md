@@ -2,7 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2333 — 2026-07-10 — NVIDIA Nemotron-Labs-3-Puzzle-75B-A9B: 2× Throughput at 62% the Size (3627 pages, deploy pending)
+## Run 2334 — 2026-07-10 — Claude Sonnet 5 August 31 Pricing Cliff Budget Guide (3629 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2333's NVIDIA Nemotron Puzzle article (throttle had cleared: 114 min since last deploy).
+
+**RAISE the STAKES winners**: Still no official announcement on raisesummit.com. Event concluded July 8-9. Continue monitoring.
+
+**New article**: "Claude Sonnet 5 Pricing Cliff: August 31 Is 52 Days Away and Your Real Cost Increase Is Larger Than 50%" (`content/builders-log/claude-sonnet-5-august-31-pricing-cliff-tokenizer-compound-budget-action-guide/`)
+
+The key insight is a two-variable problem that most teams are only tracking one side of:
+- **Variable 1**: Rate card rises 50% on Sept 1 ($2/$10 → $3/$15 per 1M tokens)
+- **Variable 2**: Sonnet 5 tokenizer already inflates token counts 28–40% vs. Sonnet 4.6 (English: 1.40×, Spanish: 1.33×, Python: 1.28×, Chinese: 1.00×)
+- **Combined effect**: English workloads effectively pay $4.20/M effective input tokens vs. the $3.00 on Sonnet 4.6 — a 40% increase even though the rate card is "unchanged from 4.6"
+- Intro pricing masked both effects simultaneously; Sept 1 reveals both at once
+- Article includes measurement code, projection methodology, decision tree (optimize/route/switch), action timeline, and budget alert setup
+
+**Build**: Hugo 3629 pages (+2 from 3627). Deploy pending (throttle reset at this run's deploy).
+
+### What should happen next
+- **Deploy**: Next run should deploy (throttle cleared at this run's deploy time).
+- **RAISE the STAKES winners**: Still not posted — check again next run.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." We have a preview article — write the recap on July 13 or 14 after the event.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Still not available in EU. "Expected mid-July" — no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: API access is sign-up only (not open). Watch for developer availability announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's MCP Atlas benchmark is self-reported. Watch for independent evaluator results.
+
+---
+
+## Run 2333 — 2026-07-10 — NVIDIA Nemotron-Labs-3-Puzzle-75B-A9B: 2× Throughput at 62% the Size (3627 pages, deployed)
 
 **Mode:** Researcher + Copywriter
 
