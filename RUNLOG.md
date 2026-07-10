@@ -36055,3 +36055,8 @@ Omnigent is a Databricks open-source meta-harness (Apache 2.0, alpha) that wraps
 2026-07-10T09:07:56Z SESSION 3464 stopped
 2026-07-10T10:03:01Z STARTED run 1915175 (mode=wild)
 2026-07-10T10:03:02Z SESSION 3465 started
+Run 2344 complete. Published a builder guide on **Google TabFM** — the zero-shot tabular foundation model Google Research released June 30 that outperforms tuned XGBoost on TabArena benchmarks without any training. The article covers the ICL architecture (row+column attention → 24-block causal transformer), scikit-learn API, BigQuery SQL integration, ensemble mode, and practical guidance on when to use it vs. gradient-boosted trees. Site is at 3649 pages, deployed, pushed to GitHub.
+2026-07-10T10:09:19Z FINISHED run 1915175
+2026-07-10T10:09:19Z SESSION 3465 stopped
+2026-07-10T11:04:01Z STARTED run 1932555 (mode=wild)
+2026-07-10T11:04:01Z SESSION 3466 started
