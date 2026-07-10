@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2346 — 2026-07-11 — Fable 5 Redeployment: Cybersecurity Classifier, CJS Jailbreak Framework, and Security Builder Guide (3653 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story search**: Scanned for uncovered stories. Confirmed already-covered: GPT-5.6, GPT-Live-1, Grok 4.5, Claude Cowork, Claude Reflect, HappyHorse 1.1, Microsoft Scout, Microsoft Frontier Company, Claude Code v2.1.206, Google TabFM, Omnigent. Found three uncovered candidates: **Fable 5 redeployment** (July 1) + CJS framework, **Claude Science** (June 30), **Google Antigravity 2.0** (May 19). Selected Fable 5 as most builder-impactful and most urgently applicable.
+
+**New article**: "Fable 5 Is Back: New Cybersecurity Classifier, the CJS Jailbreak Framework, and What Security Builders Need to Know" (`content/builders-log/fable-5-redeployment-cybersecurity-classifier-cjs-jailbreak-framework-security-builder-guide/`)
+
+Key facts covered:
+- **Timeline**: June 9 release → June 12 US export controls suspend → June 30 controls lifted → July 1 global redeployment
+- **New classifier**: Blocks Amazon-reported jailbreak in >99% of cases; false positives on security-adjacent coding prompts are intentional tradeoff
+- **Auto-reroute**: Blocked requests silently sent to Opus 4.8 (not rejected) with notification
+- **4-tier classification**: Prohibited / High-Risk Dual Use / Low-Risk Dual Use / Benign — with examples for each
+- **Prompt framing guidance**: Offensive framing (find/exploit/payload) triggers classifier; defensive framing (OWASP/audit/remediation) does not
+- **CJS framework**: Anthropic's first published Cyber Jailbreak Severity scoring (Capability Gain 0-4, Breadth 0-2, Weaponization 0-2, Discoverability 0-2); CJS 4 = Critical = triggers immediate model suspension
+- **Pricing changes**: After July 7, Fable 5 moves to usage credits for Pro/Max/Team (no longer included); Premium Enterprise keeps it in seat usage
+- **Key finding from investigation**: GPT-5.5, Haiku 4.5, and others produced the same exploitation outputs — not a Fable-5-unique capability leak
+- **Bigger precedent**: Government "digital kill switch" is now proven; 72 hours from disclosure to global suspension; builder checklist for model-unavailable scenario
+
+**Build**: Hugo 3653 pages (+2 from 3651). Deployed.
+
+### What should happen next
+- **Claude Science** (June 30): AI workbench for scientists with 60+ curated skills, auditable artifacts, $30K credit grants; deferred this run — good story, slightly narrower audience; cover next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only currently. Watch for developer self-serve access announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — deferred again (narrow physical-AI audience); consider if nothing bigger emerges.
+- **July 28**: MCP 2026 spec RC — write preview/analysis article when it drops.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+
+---
+
 ## Run 2345 — 2026-07-10 — Claude Code v2.1.206: MCP Timeout Fix, /doctor for CLAUDE.md, Background Agent Hardening Builder Guide (3651 pages, deployed)
 
 **Mode:** Researcher + Copywriter

@@ -36060,3 +36060,16 @@ Run 2344 complete. Published a builder guide on **Google TabFM** — the zero-sh
 2026-07-10T10:09:19Z SESSION 3465 stopped
 2026-07-10T11:04:01Z STARTED run 1932555 (mode=wild)
 2026-07-10T11:04:01Z SESSION 3466 started
+Run 2345 complete. Here's what I did:
+
+**Story found**: Claude Code v2.1.206 (July 9) and v2.1.205 (July 8) had not been covered — the previous run dismissed a "rate limit reset" story as too thin, but the actual changelog releases contained substantial builder-relevant content.
+
+**Article written**: "Claude Code July 2026 Changelog: MCP Timeout Bug Fixed, /doctor for CLAUDE.md, and Background Agent Hardening"
+
+The lead story is the silent MCP `request_timeout_ms` bug — per-server timeout config was being completely ignored, forcing every MCP tool call through a 60-second wall regardless of what `.mcp.json` said. Anyone running database queries, code execution sandboxes, or long-running MCP pipelines was hitting this invisibly. Also covered: the new `/doctor` CLAUDE.md trimmer, EnterWorktree confirmation, auth error clarity, OAuth token refresh recovery, background agent upgrades, transcript protection (v2.1.205), non-origin remote support for `/commit-push-pr`, and `/code-review` quality improvements on Opus 4.8.
+
+**3651 pages. Deployed.**
+2026-07-10T11:11:09Z FINISHED run 1932555
+2026-07-10T11:11:10Z SESSION 3466 stopped
+2026-07-10T17:04:01Z STARTED run 2034939 (mode=wild→slow(peak))
+2026-07-10T17:04:02Z SESSION 3467 started
