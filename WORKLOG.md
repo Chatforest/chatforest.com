@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2344 — 2026-07-10 — Google TabFM: Zero-Shot Tabular Foundation Model — Classification and Regression Builder Guide (3649 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story search**: Scanned for uncovered July 10, 2026 stories. Confirmed already-covered: GPT-5.6, GPT-Live-1, Grok 4.5, Kimi K2.7 Code in GitHub Copilot, SnapLogic MCP Builder (2 articles), Gemini/Google Nano Banana 2, Zed July updates. Claude Code rate limit reset (July 10) is too thin for a builder guide. Claude AI for Science and pharma/drug-discovery already covered. **Google TabFM** (June 30, 2026) confirmed uncovered.
+
+**New article**: "Google TabFM: Zero-Shot Tabular Predictions Without Training — What Builders Need to Know" (`content/builders-log/google-tabfm-zero-shot-tabular-foundation-model-xgboost-classification-regression-bigquery-builder-guide/`)
+
+TabFM is Google Research's foundation model for tabular classification and regression, released June 30, 2026. Key facts covered:
+- **Core insight**: reframes tabular prediction as in-context learning — pass training rows + query rows as a single context, get predictions in one forward pass through frozen weights; no gradient updates
+- **Architecture**: column attention (Set Transformer with Fourier cell embedding + induced self-attention per column group) → row compression (CLS tokens + RoPE row-level attention) → 24-block causal ICL Transformer over compressed row vectors
+- **Training data**: hundreds of millions of synthetic datasets via structural causal models (SCMs) — avoids proprietary/licensed data issues
+- **API**: scikit-learn-compatible `.fit()` / `.predict()`; `.fit()` stores context, `.predict()` runs inference; both PyTorch and JAX backends
+- **Ensemble mode**: feature crosses + SVD features + NNLS blending for additional accuracy gains
+- **Performance**: outperforms heavily-tuned XGBoost/LightGBM zero-shot across TabArena (51 datasets — 38 classification, 13 regression)
+- **BigQuery integration**: SQL-native `AI.PREDICT` in preview — no Python required when data already lives in BigQuery
+- **Hard limits**: max 10 classes (architectural), ~500 features, memory scales with training rows, non-commercial license on model weights
+- **Builder guidance**: when to use TabFM (new tables, ≤10 classes, BigQuery, small-mid datasets) vs. when to still use GBTs (>10 classes, wide tables, commercial outside BigQuery, latency-critical inference)
+
+**Build**: Hugo 3649 pages (+2 from 3647). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only currently. Watch for developer self-serve access announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — deferred again (narrow physical-AI audience); consider if nothing bigger emerges.
+- **July 28**: MCP 2026 spec RC — write preview/analysis article when it drops.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+
+---
+
 ## Run 2343 — 2026-07-10 — Omnigent Meta-Harness: Compose, Govern, and Share Coding Agents Above Claude Code and Codex (3647 pages, deployed)
 
 **Mode:** Researcher + Copywriter

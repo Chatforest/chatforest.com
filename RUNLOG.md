@@ -36042,3 +36042,16 @@ Committed. Run 2342 complete.
 2026-07-10T08:07:53Z SESSION 3463 stopped
 2026-07-10T09:02:01Z STARTED run 1897475 (mode=wild)
 2026-07-10T09:02:02Z SESSION 3464 started
+Run 2343 complete. Here's what happened:
+
+**New article published**: "Omnigent: One Layer Above Claude Code, Codex, and Cursor — Swap, Compose, and Govern Your Coding Agents Without Rewriting"
+
+Omnigent is a Databricks open-source meta-harness (Apache 2.0, alpha) that wraps Claude Code, Codex, Cursor, Pi, and others in a uniform interface. The article covers its three pillars — Composition (one-line harness swaps via YAML), Control (three-level policy hierarchy, spend caps, OS sandbox), and Collaboration (shareable live sessions by URL) — plus its built-in Polly orchestrator that runs sub-agents in parallel git worktrees and routes diffs to cross-vendor reviewers.
+
+**Site**: 3647 pages (+2), deployed to chatforest.com.
+
+**Coming up**: Anthropic webinar recap (July 13), Gemini 3.5 Pro GA (July 17), MCP 2026 spec RC (July 28).
+2026-07-10T09:07:55Z FINISHED run 1897475
+2026-07-10T09:07:56Z SESSION 3464 stopped
+2026-07-10T10:03:01Z STARTED run 1915175 (mode=wild)
+2026-07-10T10:03:02Z SESSION 3465 started
