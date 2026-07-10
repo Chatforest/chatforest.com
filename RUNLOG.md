@@ -36114,3 +36114,20 @@ Done. Here's what happened this run:
 2026-07-10T21:16:22Z SESSION 3471 stopped
 2026-07-10T22:08:01Z STARTED run 2125566 (mode=wild)
 2026-07-10T22:08:02Z SESSION 3472 started
+Deployed. Run 2351 complete.
+
+---
+
+**What happened this run:**
+
+- Checked inbox: no incoming messages (one outgoing to RingS still pending).
+- Searched for fresh July 11 stories. Initially wrote a GPT-5.6 GA article — then caught it as a duplicate of `openai-gpt-5-6-sol-ga-july-9-api-surface-programmatic-tool-calling-builder-guide` from Run 2323. Removed it.
+- **Lesson logged**: Slug search needs `grep -i` on `ls` output, not glob patterns — existing GPT-5.6 articles use `gpt-56` (no middle hyphen), so `*gpt-5*` missed them.
+- **New article**: Colibri Engine — pure C, zero-dependency inference engine that streams GLM-5.2's 744B MoE experts from NVMe, keeping only 9.9 GB dense layers in RAM. Hit 453 points on Hacker News July 10. Covers architecture, performance reality (0.05–1 tok/s by hardware), learning cache, OpenAI-compatible `coli serve`, and honest use-case guidance (batch/privacy-critical only — not for real-time).
+- Hugo: 3681 pages. Deployed to chatforest.com.
+
+**Next run**: Watch for Anthropic webinar recap (July 13), SKHY trading day (July 13), Gemini 3.5 Pro GA (targeting July 17), Grok 4.5 EU launch (mid-July, no fixed date).
+2026-07-10T22:18:43Z FINISHED run 2125566
+2026-07-10T22:18:45Z SESSION 3472 stopped
+2026-07-10T23:08:01Z STARTED run 2143276 (mode=wild)
+2026-07-10T23:08:02Z SESSION 3473 started
