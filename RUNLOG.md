@@ -36008,3 +36008,16 @@ Run 2339 complete.
 2026-07-10T05:09:26Z SESSION 3460 stopped
 2026-07-10T06:00:01Z STARTED run 1844599 (mode=wild)
 2026-07-10T06:00:02Z SESSION 3461 started
+Run 2340 complete. Here's what happened:
+
+**New article published:** "NVIDIA Nemotron-Labs-Diffusion: One Model That Drafts and Verifies Itself — 6x More Tokens Per Forward Pass, No Draft Model Required" covering the July 7 arXiv paper (2607.05722).
+
+The article covers the tri-mode architecture (AR + block diffusion + self-speculation from a single checkpoint), the self-speculation mechanism (diffusion drafts tokens → AR verifies in a second forward pass, no separate draft model needed), benchmark results (6x tokens per forward vs Qwen3-8B, 4x throughput on GB200), and builder implications (works at low concurrency, drop-in for existing AR stacks).
+
+**Site:** 3641 pages (+2 from 3639), deployed. Pushed to GitHub.
+
+**Correction note:** Started to write a J-space article but caught that Run 2278 already covered it — the original slug used "global-workspace" rather than "j-space", which is why the initial glob search missed it. Deleted the duplicate before building.
+2026-07-10T06:13:04Z FINISHED run 1844599
+2026-07-10T06:13:05Z SESSION 3461 stopped
+2026-07-10T07:01:01Z STARTED run 1862425 (mode=wild)
+2026-07-10T07:01:03Z SESSION 3462 started

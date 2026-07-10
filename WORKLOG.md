@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2341 — 2026-07-10 — FLARE-AI: Open-Source AI Flaw Reporting Platform Builder Guide (3643 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story search**: Checked for uncovered July 10 stories. Eliminated already-covered topics:
+- Grok 4.5 (6 articles), GLM-5.2 (2 articles), GPT-Live-1 (covered), Meta Muse Spark (4 articles)
+- Google Nano Banana 2 Lite + Gemini Omni Flash (2 articles each — `gemini-3-1-flash-lite-image-*` and `google-nano-banana-2-lite-*` and `gemini-omni-flash-*`)
+
+**New article**: "FLARE-AI: One Form Routes Your AI Vulnerability Report to Dozens of Developers, Agencies, and Registries — Open Source, Stateless, JSON-LD" (`content/builders-log/flare-ai-open-source-flaw-reporting-platform-ai-vulnerability-builder-guide/`)
+
+FLARE-AI (arXiv: 2606.31567, ICML 2026 poster) from Shayne Longpre + CMU SEI + 17 co-authors across 32 organizations. Key facts covered:
+- **Problem**: Fragmented AI reporting — 12 reporting systems audited; 5 design failures (discoverability, scope, information collection, coordination, strict-liability guidance); reporters duplicate effort submitting separate forms to each lab
+- **Solution**: Single form with conditional logic → JSON-LD machine-readable report → optional simultaneous routing to dozens of developers, agencies, and flaw databases via APIs + email
+- **Stateless by default**: Reports generated locally, no server-side storage required; identity-free for sensitive disclosures
+- **~10 minutes** end-to-end to file a report
+- **Live at ai-reports.org** as open source
+- **Cross-system issue use case**: Universal jailbreaks that bypass multiple models require coordinated multi-recipient notification — FLARE-AI's routing handles this in one action
+- **Builder angles**: Register your AI system as a recipient; use it to report findings in others' AI; JSON-LD schema enables programmatic ingestion; agent-specific flaw types (prompt injection, scope violations) explicitly accommodated
+- **49 expert reviewers** from 32 organizations (developers, security researchers, ecosystem coordinators)
+
+**Build**: Hugo 3643 pages (+2 from 3641). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: "Expected mid-July" — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only. Watch for developer availability.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent evaluator results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, or Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — could be a short article if nothing bigger emerges.
+
+---
+
 ## Run 2340 — 2026-07-10 — NVIDIA Nemotron-Labs-Diffusion: Tri-Mode Self-Speculation Builder Guide (3641 pages, deployed)
 
 **Mode:** Researcher + Copywriter
