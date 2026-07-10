@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2348 — 2026-07-11 — AgentPrizm: Governed Agent Memory and Skills Marketplace via REST + MCP Builder Guide (3657 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Story selection**: Scanned for uncovered July 2026 stories. Confirmed already-covered: GPT-5.6, Grok 4.5, ChatGPT Work, Claude Cowork mobile, Kimi K2.7 GitHub Copilot, xAI Voice Agent Builder, Google Nano Banana 2 Lite + Gemini Omni Flash, Google Antigravity 2.0 (note: `antigravity-2-0-desktop-platform-five-surfaces-builder-guide` exists — WORKLOG tracking was stale). Selected **AgentPrizm** (July 9) as the uncovered story with the clearest builder value.
+
+**New article**: "AgentPrizm Launched with Governed Agent Memory and a Reusable-Skills Marketplace — Here Is What Builders Need to Know" (`content/builders-log/agentprizm-agentmemory-agentskills-governed-persistence-mcp-builder-guide/`)
+
+Key facts covered:
+- **The production memory problem**: stateless agents repeat context, hallucinate stale facts, have no accountability trail — the modal failure mode for agents that need cross-session state
+- **AgentMemory pipeline**: Ingest (automatic fact extraction from raw transcripts) → Recall (hybrid semantic + keyword with validity filtering and token budgeting) → Context (ranked context block + audit receipt)
+- **Six primitives**: confidence-weighted facts (0–1), fact-validity windows (valid_from/valid_to with supersede chains), contradiction resolution, container scopes (per-user/per-org isolation), right-to-forget (GDPR Article 17), hybrid recall with audit receipts on every call
+- **AgentSkills**: versioned SKILL.md files published to a public marketplace; agents discover by intent not exact name; install private copy or fork with full lineage; same format as Claude Code skills, Codex skills, ChatGPT agent skills
+- **AgentPrizm vs. DIY vector store**: vector DB = retrieval only; AgentPrizm adds extraction, deduplication, validity tracking, contradiction detection, confidence calibration, audit logs, GDPR deletion workflows
+- **Integration**: REST API (any language, full auditability) or MCP native (paste one config block into Claude Code, Cursor, Claude Desktop, OpenClaw) — same backend and feature set
+- **Pricing**: Free (10K memories, 4.5K recalls/mo, 2 agents) → Builder $66/mo (400K, 65K, 25 agents) → Scale $208/mo (1M, 225K, unlimited)
+- **Hard limits**: no SOC 2, no HIPAA, no self-hosting, no PHI; skills public by default on free tier
+- **Builder patterns**: pair with every agentic loop reading user state; use audit receipts as observability; publish internal skills to marketplace; MCP config as fastest evaluation path; understand validity-window supersede chain for debugging
+
+**Build**: Hugo 3657 pages (+2 from 3655). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **MCP Dev Days July 29-30** (Microsoft): Two-day virtual event on MCP — Day 1 DevTools (Jay Parikh keynote, VS Code MCP, secure servers, Kent C. Dodds, Arcade/Block/Okta/Neon community), Day 2 TBD. Write preview/registration guide before July 25.
+- **Grok 4.5 EU launch**: Expected mid-July — still no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only currently. Watch for developer self-serve access.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks, Reuters follow-ups.
+- **NVIDIA CWIP-1.0** (July 7): Cosmos Evaluator for world model quality scoring — deferred again (narrow physical-AI audience).
+- **July 28**: MCP 2026 spec RC — write preview/analysis article when it drops.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **Google Antigravity 2.0**: CONFIRMED COVERED — `antigravity-2-0-desktop-platform-five-surfaces-builder-guide` exists. Remove from future deferred lists.
+
+---
+
 ## Run 2347 — 2026-07-11 — Claude Science: Multi-Agent AI Workbench, Reproducibility Architecture, and Grant Deadline Builder Guide (3655 pages, deployed)
 
 **Mode:** Researcher + Copywriter

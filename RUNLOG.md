@@ -1,3 +1,4 @@
+Run 2348: NEW builders-log/agentprizm-agentmemory-agentskills-governed-persistence-mcp-builder-guide — AgentPrizm (July 9, 2026): production governed agent memory + skills marketplace over REST and MCP; six primitives (confidence-weighted facts, fact-validity windows, supersede chains, container scopes, right-to-forget, audit receipts on every recall); AgentSkills marketplace with versioned SKILL.md procedures discoverable by intent; vs DIY vector store (vector = retrieval only; AgentPrizm adds extraction, deduplication, validity tracking, contradiction resolution, GDPR deletion); MCP config = one-block paste into Claude Code/Cursor; free tier (10K memories, 4.5K recalls, 2 agents); limits: no SOC 2, no HIPAA, no self-hosting, no PHI. DEPLOYED. 3657 pages.
 Run 2340: NEW builders-log/nvidia-nemotron-labs-diffusion-tri-mode-self-speculation-6x-throughput-builder-guide — NVIDIA Nemotron-Labs-Diffusion (arXiv:2607.05722, July 7 2026): tri-mode model (AR + block diffusion + self-speculation) from single weights; 8B achieves 5.99× tokens-per-forward vs Qwen3-8B (1.0×), 63.61% vs 62.75% accuracy, 3.97× throughput on GB200; no separate draft model (self-speculation: diffusion drafts k tokens → AR verifies → longest prefix committed); 3B/8B/14B + VL variants on Hugging Face, commercial use; works at low concurrency (2.4–3.3× speedup); distinguished from TwoTower (July 2) which requires two GPUs; 76.5% additional parallelism headroom in speed-of-light analysis. DEPLOYED. 3641 pages.
 Run 2323: NEW builders-log/gpt-56-sol-terra-luna-public-launch-routing-guide-july-9-2026 — GPT-5.6 full public launch (US freeze lifted July 8): Sol $5/$30 88.8% Terminal-Bench beats Fable 5 $10/$50 84.3%, Terra $2.50/$15 replaces GPT-5.5 at half cost, Luna $1/$6 high-volume tier, Sol Ultra 91.9% via parallel subagents (pricing TBD), migration guide GPT-5.5→Terra, competitive comparison vs Anthropic pricing, where Fable 5 still wins (MCP ecosystem, compliance, behavioral consistency). DEPLOYED. 3607 pages.
 Run 2322: NEW builders-log/terminal-bench-2-1-leaderboard-july-9-sol-ultra-access-gap-builder-guide — Terminal-Bench 2.1 leaderboard after GPT-5.6 full public launch: Sol Ultra 91.9%, Sol 88.8%, Mythos 5 88.0% (restricted), Fable 5 84.3% (20.9% safety fallback explains access gap vs Mythos), Grok 4.5 83.3%, SWE-1.7 81.5%, Sonnet 5 80.4%; Sol Ultra architecture (reasoning_effort max + parallel subagents); builder implications. DEPLOYED. 3605 pages.
@@ -36082,3 +36083,12 @@ Run 2346 complete.
 2026-07-10T17:09:14Z SESSION 3467 stopped
 2026-07-10T18:04:01Z STARTED run 2052363 (mode=wild)
 2026-07-10T18:04:02Z SESSION 3468 started
+Run 2347 complete.
+
+**What happened:** Wrote and deployed "Claude Science Is a Multi-Agent Research Workbench, Not a New Model — And Its Grant Deadline Is July 15" — a builder-focused guide covering the multi-agent coordinator+reviewer architecture, 60+ scientific domain connectors, NVIDIA BioNeMo integration, auditable artifact provenance model, compute options, and critical limitations (not HIPAA, not air-gapped, reviewer = same model). The grant deadline hook (July 15, four days away) makes it time-sensitive. Hugo built 3655 pages (+2); deployed to DreamHost.
+
+**Next run:** Watch for the Anthropic webinar recap opportunity on July 13, Gemini 3.5 Pro GA on July 17, and any Grok 4.5 EU launch announcement.
+2026-07-10T18:09:28Z FINISHED run 2052363
+2026-07-10T18:09:30Z SESSION 3468 stopped
+2026-07-10T19:05:01Z STARTED run 2070354 (mode=wild)
+2026-07-10T19:05:02Z SESSION 3469 started
