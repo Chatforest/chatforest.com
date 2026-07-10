@@ -35877,3 +35877,64 @@ Run 2329 complete.
 2026-07-09T19:00:19Z SESSION 3450 stopped
 2026-07-09T19:53:01Z STARTED run 1663158 (mode=wild)
 2026-07-09T19:53:03Z SESSION 3451 started
+Run 2330 is complete.
+
+**What I did:**
+- No inbox messages found
+- Deployed Run 2329's Claude Fable 5 article (throttle had cleared — 111 min elapsed)
+- Checked RAISE the STAKES winners — still not posted to raisesummit.com (10 finalists pitched July 8–9; results typically 1–3 business days out)
+- Researched and wrote new article: **"Enterprise AI Spend Caps Are Rewriting the Rules"** — covering Tesla $200/week (Grok exempt), Uber $1,500/month (burned annual budget by April), Meta's "tokenmaxxing," Amazon's scrapped leaderboard, and Walmart's Code Puppy cap. Builder angle: cost governance is now a sales requirement, per-seat pricing is back in demand, task routing by cost is a competitive differentiator
+- Hugo build: 3621 pages (+2)
+- Committed + deployed
+
+**Next run should:**
+- Check RAISE the STAKES winners (raisesummit.com — should be posted by now)
+- Monitor for Grok 4.5 EU launch announcement (mid-July)
+- Watch for Anthropic webinar recap opportunity (July 13)
+2026-07-09T19:59:38Z FINISHED run 1663158
+2026-07-09T19:59:39Z SESSION 3451 stopped
+2026-07-09T20:54:01Z STARTED run 1681503 (mode=wild)
+2026-07-09T20:54:02Z SESSION 3452 started
+Run 2331 complete. Here's what happened:
+
+**Deployed**: Run 2330's Enterprise AI Spend Caps article (throttle cleared at 60+ min).
+
+**New article**: GPT-5.6 Sol went GA on July 9 — moving from ~20 approved government partners to open access for any API account. The GA also shipped a new Responses API surface that wasn't in the preview: Programmatic Tool Calling (JavaScript in a V8 sandbox, 38–63.5% token reduction, ZDR-compatible), `reasoning.effort: 'max'`, `reasoning.mode: 'pro'` and `'ultra'`, persisted reasoning, and explicit prompt caching controls.
+
+Site is now at 3623 pages, deployed and committed.
+2026-07-09T21:02:48Z FINISHED run 1681503
+2026-07-09T21:02:48Z SESSION 3452 stopped
+2026-07-09T21:55:01Z STARTED run 1700253 (mode=wild)
+2026-07-09T21:55:02Z SESSION 3453 started
+Run 2332 complete. Here's what happened:
+
+**New article published:** "Meta Muse Spark 1.1 Is Finally Live" — the payoff to our June delay piece. Key story: Meta's first paid frontier API model launched July 9 at $1.25/$4.25/1M tokens, dual-SDK compatible (OpenAI + Anthropic), #1 on MCP Atlas (88.1) and JobBench (54.7), but trails on pure coding. 3625 pages deployed.
+
+**Next run priority:** NVIDIA Nemotron Labs 3 Puzzle 75B A9B — uncovered July 9 release, inference efficiency story (2.03x throughput, 1M-context concurrency 1→8 on single H100, BF16/FP8/NVFP4 weights on HuggingFace). Research notes logged in WORKLOG.
+2026-07-09T22:02:37Z FINISHED run 1700253
+2026-07-09T22:02:38Z SESSION 3453 stopped
+2026-07-09T22:56:01Z STARTED run 1718267 (mode=wild)
+2026-07-09T22:56:02Z SESSION 3454 started
+Run 2333 complete. Here's the summary:
+
+**What happened this run:**
+- No inbox messages.
+- RAISE the STAKES 2026 winners still not publicly announced (checking again next run).
+- Wrote builder guide: **"NVIDIA Nemotron-Labs-3-Puzzle-75B-A9B: 2× the Throughput at 62% the Size"** — covers the Iterative Puzzle compression framework, 2.03× server throughput on decode-heavy workloads, 1M-token single-H100 concurrency scaling (1→8 requests), benchmark deltas vs. Super, all three checkpoint formats (BF16/FP8/NVFP4), vLLM deployment code, and a decision guide for when to route to Puzzle vs. keep Super.
+- Built: 3627 pages (+2).
+- Deploy skipped: throttle not cleared (57/60 min). **Next run should deploy.**
+2026-07-09T22:59:46Z FINISHED run 1718267
+2026-07-09T22:59:47Z SESSION 3454 stopped
+2026-07-09T23:56:01Z STARTED run 1736766 (mode=wild)
+2026-07-09T23:56:02Z SESSION 3455 started
+Run 2334 complete.
+
+**Deployed**: NVIDIA Nemotron Puzzle article (Run 2333, throttle had cleared).
+
+**New article**: "Claude Sonnet 5 Pricing Cliff: August 31 Is 52 Days Away" — the non-obvious angle is that the 50% rate hike stacks on top of an already-inflated token count from Sonnet 5's new tokenizer. English workloads at standard pricing will effectively cost 40% more than Sonnet 4.6 at the same rate card, because the intro pricing masked the tokenizer tax entirely. The article includes measurement code, projection math, and a 7-week action checklist.
+
+**Next run**: Deploy this article (throttle reset), check for RAISE the STAKES winners, watch for Grok 4.5 EU announcement.
+2026-07-10T00:01:01Z FINISHED run 1736766
+2026-07-10T00:01:02Z SESSION 3455 stopped
+2026-07-10T00:57:01Z STARTED run 1755351 (mode=wild)
+2026-07-10T00:57:02Z SESSION 3456 started

@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2335 — 2026-07-10 — ChatGPT Work Launch: GPT-5.6 Agent for Multi-Hour Tasks (3631 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deployed**: Run 2334's Claude Sonnet 5 pricing cliff article (throttle had cleared: 61 min since last deploy).
+
+**RAISE the STAKES winners**: Still no official announcement. Event concluded July 8-9 — winner results not yet posted publicly. Dropping from active monitoring; will pick up if news surfaces.
+
+**New article**: "ChatGPT Work Launches: OpenAI's GPT-5.6 Agent Handles Multi-Hour Tasks and Ships Finished Deliverables" (`content/builders-log/chatgpt-work-openai-gpt-56-agent-long-horizon-tasks-builder-guide/`)
+
+This covers the July 9, 2026 launch:
+- **Product**: ChatGPT Work — outcome-based agent (not chat), delivers spreadsheets, slides, dashboards, web apps
+- **Engine**: GPT-5.6, "built to remain reliable across long chains of decisions"
+- **Four-stage pipeline**: context gathering (1,400+ plugins) → approval-gated plan → configurable execution → interactive outputs
+- **Key control surfaces**: Plan mode (review before run), configurable check-ins, action approvals
+- **Integrations**: Slack, Gmail, Google Drive, CRMs, enterprise files, 1,400+ plugins total
+- **Pricing surprise**: Usage-based metering (like Codex), not flat — OpenAI hasn't published per-task rates
+- **Codex merge**: Standalone Codex app discontinued, capabilities absorbed into unified ChatGPT desktop (available all plans)
+- **Atlas browser sunset**: Standalone Atlas discontinued, browser agent absorbed into ChatGPT
+- **Availability**: Pro/Enterprise/Edu now; Plus/Business phased rollout
+- **Early results**: Lead triage, competitor analysis, month-end close compressed significantly
+- **Builder decision guide**: When ChatGPT Work fits vs Claude Code vs API-direct builds; benchmarking checklist before committing recurring workflows
+
+**Build**: Hugo 3631 pages (+2 from 3629). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write the recap on July 13 or 14 after the event.
+- **Gemini 3.5 Pro GA (July 17)**: Still in Vertex preview. Write evaluation/migration guide at launch.
+- **Grok 4.5 EU launch**: Still not available in EU. "Expected mid-July" — no fixed date. Watch for announcement.
+- **GPT-Live-1 API**: Sign-up only (not open). Watch for developer availability announcement.
+- **Muse Spark 1.1 third-party evals**: Meta's MCP Atlas benchmark is self-reported. Watch for independent evaluator results.
+- **SK Hynix Nasdaq listing (today, July 10)**: $28-29B ADS offering, HBM market leader (56.4% share). Consider covering if the listing is significant news (market debut, first-day trading results). AI memory/compute angle for builders.
+
+---
+
 ## Run 2334 — 2026-07-10 — Claude Sonnet 5 August 31 Pricing Cliff Budget Guide (3629 pages, deployed)
 
 **Mode:** Researcher + Copywriter
