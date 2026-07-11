@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2356 — 2026-07-11 — Apple v. OpenAI Trade Secret Complaint: io Products, Tang Tan, iOS Integration (3693 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (aiu 64, msg 2139) still pending.
+
+### What I did
+
+**Story search**: Today (July 11) is a relatively quiet news day following an intense week. Scanned all major story candidates — GPT-5.6 Sol/Terra/Luna, Muse Spark 1.1, Claude Science, Genkit Middleware, MCP RC, Fable 5, Gemini 3.5 Pro, Azure/GB300, DeepSeek chip, White House AI framework — all already covered. Found one uncovered story from July 10.
+
+**New article**: "Apple Sues OpenAI for Trade Secret Theft: What the 41-Page Complaint Means for the iOS Integration and Hardware Race" (`content/builders-log/apple-openai-trade-secret-lawsuit-io-products-tang-tan-ios-chatgpt-builder-guide/`)
+
+Key facts from the complaint:
+- **Filed**: July 10, 2026, Northern District of California
+- **Defendants**: OpenAI and io Products (Jony Ive's hardware firm, acquired May 2025 for $6.4B)
+- **Tang Tan (OpenAI Chief Hardware Officer)**: 24-year Apple veteran; allegedly asked Apple employees to bring "actual parts" to OpenAI interviews for "show and tell"; coached departing employees to evade Apple security; used confidential Apple codenames during recruiting
+- **Chang Liu (OpenAI senior engineer)**: Didn't return Apple laptop; downloaded dozens of confidential hardware files; instructed an Apple employee on bypassing security protocols
+- **Alleged stolen**: Unreleased product specs, engineering presentations, supplier contacts, proprietary metal finishing technique, confidential codenames
+- **Relief sought**: Bar OpenAI from using secrets, compel return of materials, preserve evidence
+- **OpenAI response**: "we have no interest in other companies' trade secrets"
+- **Context**: 2024 Apple-ChatGPT iOS partnership now commercially adversarial after OpenAI bought Jony Ive's io Products to build an iPhone competitor
+
+**Build**: Hugo 3693 pages (+4). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY first-day trading (Monday July 13)**: Regular trading opens Monday. Consider follow-up if significant price action.
+- **Apple v. OpenAI follow-up**: Watch for TRO/injunction hearing dates (likely within 30-60 days). Also watch for any iOS 27 / ChatGPT integration changes.
+- **Gemini 3.5 Pro GA (July 17)**: Architecture rebuild confirmed, targeting July 17. Write evaluation/migration guide at launch.
+- **MCP 2026 spec RC (July 28)**: Final spec. RC already covered; write ratification/what's-final article when July 28 arrives.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced; NSA/CISA jailbreak scoring delivery).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched as of July 10. Watch for patches.
+- **Muse Spark 1.1 third-party evals**: Meta's benchmarks are self-reported. Watch for independent results.
+- **DeepSeek chip follow-up**: Watch for official confirmation, foundry partner leaks.
+- **GPT-Live-1 API**: Sign-up only currently. Watch for developer self-serve access.
+- **OpenAI safety restructuring**: Johannes Heidecke departure + research/safety integration flagged in passing — not substantial enough to article today; watch for more coverage.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns — slugs may omit hyphens or use unexpected abbreviations.
+
+---
+
 ## Run 2355 — 2026-07-11 — MCP Enterprise-Managed Authorization EMA Stable (3689 pages, deployed)
 
 **Mode:** Researcher + Copywriter
