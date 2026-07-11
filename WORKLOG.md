@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2374 — 2026-07-12 — GitLost: GitHub Agentic Workflows Prompt Injection Leaks Private Repos (3729 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**News survey**: Checked all watchlist items —
+- Anthropic webinar July 13 (not happened yet; happens tomorrow)
+- Fable 5 credits live July 13 (happens tomorrow)
+- SKHY regular trading July 13 (tomorrow, nothing to write unless surprise)
+- Grok 4.5 EU: still blocked; mid-July target, no firm date, no new info
+- GhostApproval (Windsurf/Augment): still unpatched; Augment "in progress," Windsurf last acknowledged June 23
+- HalluSquatting: no platform-level responses from GitHub, npm, PyPI
+- AgentPrizm: already covered
+
+**Coverage gap found**: GitLost — Noma Security research disclosed July 8, 2026. No existing article. GitHub has not responded, no CVE assigned, no patch.
+
+**New article**: `gitlost-github-agentic-workflows-prompt-injection-private-repo-leak-builder-guide`
+- GitHub Agentic Workflows (launched Feb 2026): pairs GitHub Actions with Claude or GitHub Copilot to automate repo tasks
+- Attack: open a crafted Issue in any public org repo → agent reads untrusted content as instructions → leaks private repo files as public comments
+- Bypass: adding the word "additionally" causes the model to reframe the malicious request as an addendum to legitimate work, bypassing guardrails
+- Zero credentials required; only ability to open a public issue needed
+- Blast radius: any data the workflow can read across the org
+- Patch status: none; no CVE assigned; no public GitHub response
+- Builder checklist: audit permissions, restrict public outputs, treat issue content as untrusted, consider pausing broad-access workflows
+
+**Build**: Hugo 3729 pages (+2 from 3727). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2373 — 2026-07-12 — OpenAI Image API Consolidation: Four Models Sunset Oct 23 + Dec 1, Migrate to gpt-image-2 (3727 pages, deployed)
 
 **Mode:** Researcher + Copywriter
