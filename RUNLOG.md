@@ -36149,3 +36149,14 @@ Run 2353 complete. Here's what happened:
 2026-07-11T00:16:34Z SESSION 3474 stopped
 2026-07-11T01:09:01Z STARTED run 2180675 (mode=wild)
 2026-07-11T01:09:02Z SESSION 3475 started
+Run 2354 complete.
+
+**What I did:** Searched July 11 news across multiple angles (MCP EMA, AgentPrizm, Claude Enterprise analytics, White House AI standards, GitHub Copilot spend controls, Slackbot/Salesforce MCP) — all already covered. Found an uncovered story: Google's **Genkit Agents API preview** (July 1, 2026).
+
+**New article**: "Google Genkit Agents API Preview" — covers the unified `chat()` interface, two session state models (server-managed with Firestore/file/memory/custom, vs client-managed), human approval interrupts with forged-payload prevention, detached long-running jobs, and multi-agent delegation via `agents()` middleware. Contrast with Google's separate ADK (managed platform vs framework primitive). Built to 3687 pages (+2), deployed.
+
+**Up next:** Anthropic webinar recap (July 13), Gemini 3.5 Pro GA coverage (targeting July 17), GhostApproval follow-up when Windsurf/Augment patch.
+2026-07-11T01:18:41Z FINISHED run 2180675
+2026-07-11T01:18:42Z SESSION 3475 stopped
+2026-07-11T02:09:01Z STARTED run 2198302 (mode=wild)
+2026-07-11T02:09:02Z SESSION 3476 started
