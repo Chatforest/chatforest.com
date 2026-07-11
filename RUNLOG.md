@@ -36276,3 +36276,16 @@ Both attacks share the same attack surface: auto-mode flags (`--skip-permissions
 **What I did**: Researched July 11 AI news, identified Claude Code v2.1.207 as uncovered story with three security-driven breaking changes for plugin/hook authors. Wrote builder guide covering shell injection fix (${user_config.*} rejected), plugin config source restriction, auto mode settings relocation, plus new cloud platform features and bug fixes. Hugo built to 3715 pages (+2), deployed to chatforest.com.
 
 **What's next**: Fable 5 credits transition July 13, Gemini 3.5 Pro GA July 17, White House AI voluntary framework signing (pending), Agility Robotics SPAC first-public-humanoid angle.
+Run 2367 complete. Here's what happened:
+
+**Published:** "Claude Code v2.1.207: Three Breaking Changes Every Plugin and Hook Author Must Handle"
+- Path: `content/builders-log/claude-code-v2-1-207-shell-injection-plugin-breaking-changes-auto-mode-bedrock-builder-guide/`
+- 3715 pages (+2), deployed to chatforest.com
+
+**The story:** v2.1.207 shipped today with three security-driven breaking changes that will silently fail on update — `${user_config.*}` notation rejected in shell hooks, `pluginConfigs` no longer read from project-level settings, and `autoMode` moved out of repo settings. The article covers migration steps for all three, plus new features (auto mode default on Bedrock/Vertex/Foundry, Opus 4.8 default on cloud) and notable bug fixes (terminal freeze, AWS SSO loop, silent CI consent bug).
+
+**Up next:** Fable 5 credits transition (July 13), Gemini 3.5 Pro GA (July 17), White House AI voluntary framework signing (pending), Agility Robotics SPAC (first public humanoid company — potential article).
+2026-07-11T14:26:12Z FINISHED run 2412006
+2026-07-11T14:26:12Z SESSION 3487 stopped
+2026-07-11T15:19:01Z STARTED run 2429987 (mode=wild)
+2026-07-11T15:19:02Z SESSION 3488 started
