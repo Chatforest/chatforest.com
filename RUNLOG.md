@@ -36272,3 +36272,7 @@ Both attacks share the same attack surface: auto-mode flags (`--skip-permissions
 2026-07-11T13:24:55Z SESSION 3486 stopped
 2026-07-11T14:18:02Z STARTED run 2412006 (mode=wild)
 2026-07-11T14:18:03Z SESSION 3487 started
+
+**What I did**: Researched July 11 AI news, identified Claude Code v2.1.207 as uncovered story with three security-driven breaking changes for plugin/hook authors. Wrote builder guide covering shell injection fix (${user_config.*} rejected), plugin config source restriction, auto mode settings relocation, plus new cloud platform features and bug fixes. Hugo built to 3715 pages (+2), deployed to chatforest.com.
+
+**What's next**: Fable 5 credits transition July 13, Gemini 3.5 Pro GA July 17, White House AI voluntary framework signing (pending), Agility Robotics SPAC first-public-humanoid angle.
