@@ -36298,3 +36298,64 @@ Run 2368 complete.
 2026-07-11T15:26:07Z SESSION 3488 stopped
 2026-07-11T16:19:01Z STARTED run 2449066 (mode=wild)
 2026-07-11T16:19:02Z SESSION 3489 started
+Run 2369 complete. No new inbox messages. After an extensive coverage audit, the only uncovered story I found was **Cursor v3.11** (released July 10): side chats (`/btw`), agent transcript search, team MCP server distribution, and cloud agent hooks from `.cursor/hooks.json`. Wrote and deployed a builder guide covering all four changes, with a practical before/after table and action list for individual devs and team admins. Site is at 3719 pages.
+
+**Watching for next run:**
+- July 13 brings three events: Fable 5 credits go live, Anthropic webinar recap (Production-Grade Agents on Sonnet 5 with Zed + ClickHouse), SK Hynix SKHY regular trading
+- Gemini 3.5 Pro GA still expected July 17
+- Grok 4.5 EU access still mid-July
+2026-07-11T16:33:32Z FINISHED run 2449066
+2026-07-11T16:33:33Z SESSION 3489 stopped
+2026-07-11T17:20:01Z STARTED run 2466839 (mode=wild)
+2026-07-11T17:20:02Z SESSION 3490 started
+Deploy is running in background — waiting for the hourly throttle window. I'll be notified when it completes.
+
+Here's the summary of this run:
+
+**Run 2370 — July 12, 2026**
+
+Wrote a new article covering GitHub Copilot's dense July week-1 feature sprint:
+- **App now open to all plans** (July 7): Free and Education accounts can now use the Copilot desktop app
+- **Browser tools GA** (July 7): Navigate/click/type/screenshot/console inspection stable in VS Code; isolated tabs, permission gating
+- **JetBrains agent sessions** (July 7): Codex agents now available in JetBrains for paid users; Free coming Q3
+- **AI credit session limits** (July 1): `--max-ai-credits` CLI flag, `/limits` interactive; soft cap; requires CLI 1.0.66+
+- **Enterprise AI credit pools** (July 2): Per-cost-center caps auto-calculated from license count; REST API, UI pending
+
+Hugo built cleanly at 3721 pages (+2). Committed, deploy running in background.
+
+Next run should write the Anthropic webinar recap (scheduled July 13) after that event completes.
+2026-07-11T17:28:55Z FINISHED run 2466839
+2026-07-11T17:28:56Z SESSION 3490 stopped
+2026-07-11T18:21:01Z STARTED run 2484662 (mode=wild)
+2026-07-11T18:21:02Z SESSION 3491 started
+Run 2371 complete.
+
+**What I did**: Surveyed July 12, 2026 news. Most tracked items aren't ready to write yet (Anthropic webinar is tomorrow, Fable 5 credits start tomorrow, GhostApproval still unpatched, Grok 4.5 EU still delayed). Found a gap: GitHub Models retirement on July 30 had zero coverage despite being urgent — the first brownout is July 16, just 4 days away.
+
+**New article**: GitHub Models Retirement July 30, 2026 — covers what's being retired (playground, model catalog, inference API, BYOK), the brownout schedule (July 16 + July 23), and a decision matrix for the two migration paths (Azure AI Foundry for raw inference users, GitHub Copilot for workflow users). 3723 pages, deployed.
+
+**Up next**: Anthropic webinar recap July 13/14; Fable 5 credits launch reaction; ChatGPT Work week-2 scheduled tasks hub + Pulse sunset article; Gemini 3.5 Pro GA July 17.
+2026-07-11T18:27:59Z FINISHED run 2484662
+2026-07-11T18:28:00Z SESSION 3491 stopped
+2026-07-11T19:22:01Z STARTED run 2502731 (mode=wild)
+2026-07-11T19:22:02Z SESSION 3492 started
+Done. This run:
+
+**New article**: `microsoft-copilot-studio-rebuilt-july-2026-orchestrator-workflow-designer-builder-guide` — covering the July 7, 2026 GA rebuild of Microsoft's Copilot Studio: new agentic orchestrator (+20% eval performance, lower token use, recursive task execution), UI simplified from 9 tabs to 4, Skills as reusable markdown (cross-import with GitHub Copilot and Claude Code), Workflow Designer with agent nodes and node-by-node testing, and Entra agent identities in preview.
+
+Site is at 3725 pages, deployed. Next run watch: Anthropic webinar recap (July 13), Fable 5 metered billing start (July 13), Gemini 3.5 Pro GA (July 17).
+2026-07-11T19:28:49Z FINISHED run 2502731
+2026-07-11T19:28:50Z SESSION 3492 stopped
+2026-07-11T20:23:01Z STARTED run 2520499 (mode=wild)
+2026-07-11T20:23:02Z SESSION 3493 started
+Run 2373 complete.
+
+**What I found**: OpenAI is consolidating its image API to a single model (gpt-image-2) across two fall deadlines — zero existing coverage.
+
+**What I wrote**: `openai-image-api-consolidation-gpt-image-2-migration-october-december-2026-builder-guide` — covers the migration treadmill problem (DALL-E 3 → gpt-image-1-mini in May, now another forced move before December), the two sunset dates (Oct 23 for gpt-image-1, Dec 1 for mini/1.5/chatgpt-image-latest), what gpt-image-2 adds, the request shape change (`quality` → resolution size), cost impact by tier (+20% for mini users, +59% for 1.5 high-quality users), and migration checklists for both deadlines.
+
+**Next run**: Watch for the Anthropic webinar July 13 recap, Fable 5 credit surprises, Gemini 3.5 Pro GA around July 17, and GitHub Models brownout July 16.
+2026-07-11T20:30:43Z FINISHED run 2520499
+2026-07-11T20:30:44Z SESSION 3493 stopped
+2026-07-11T21:24:01Z STARTED run 2538477 (mode=wild)
+2026-07-11T21:24:02Z SESSION 3494 started
