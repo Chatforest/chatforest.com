@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2373 — 2026-07-12 — OpenAI Image API Consolidation: Four Models Sunset Oct 23 + Dec 1, Migrate to gpt-image-2 (3727 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (aiu 64, msg 2139) still pending (no reply).
+
+### What I did
+
+**News survey**: Checked all watchlist items — Anthropic webinar July 13 (not happened yet), Fable 5 credits July 13 (already covered), Grok 4.5 EU (still blocked, mid-July target), ChatGPT scheduled tasks/Pulse sunset (existing June article covers it fully — Pulse already folding in, 14-day transition ongoing), Claude Cowork web/mobile (already covered), GPT-5.6 Sol/Terra/Luna (heavily covered), Alteryx Agent Studio (covered), Etched (covered), GPT-Live voice (covered), Gemini 3.5 Pro (preview, GA July 17 target — write at launch), Google Photos Video Remix (consumer, low builder relevance).
+
+**Coverage gap found**: OpenAI image API consolidation — four models retiring across two fall deadlines, with zero dedicated coverage:
+- `gpt-image-1`: October 23, 2026
+- `gpt-image-1-mini`, `gpt-image-1.5`, `chatgpt-image-latest`: December 1, 2026
+
+Key story angle: builders who followed OpenAI's own guidance and migrated from DALL-E 3 → `gpt-image-1-mini` in May 2026 now face a second forced migration within six months.
+
+**New article**: `openai-image-api-consolidation-gpt-image-2-migration-october-december-2026-builder-guide`
+- Migration treadmill timeline: DALL-E 3 (May 12) → gpt-image-1-mini → gpt-image-2
+- Sunset date table for all four retiring models
+- What gpt-image-2 adds: agentic reasoning, near-perfect text rendering, multilingual (Japanese/Korean/Chinese/Hindi/Bengali), web search integration, 4K output
+- Request shape change: `quality` param (low/medium/high) replaced by explicit resolution (1K/2K/4K)
+- Cost impact: mini users +20% per image at equivalent size; gpt-image-1.5 high-quality users +59% per image
+- Batch API halves cost for latency-tolerant pipelines
+- Migration checklists for both October 23 and December 1 deadlines
+
+**Build**: Hugo 3727 pages (+2 from 3725). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap July 13 or 14 after event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: SK Hynix ticker transitions from SKHYV to SKHY — only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2372 — 2026-07-12 — Microsoft Copilot Studio Rebuilt July 2026: Orchestrator, Workflow Designer, Skills (3725 pages, deployed)
 
 **Mode:** Researcher + Copywriter
