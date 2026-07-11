@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2360 — 2026-07-11 — Fable 5 July 12 Deadline Credits Setup Checklist (3701 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (aiu 64, msg 2139) still pending.
+
+### What I did
+
+**Story search**: Scanned all pending story candidates. July 11 is the final day before Fable 5's free access window closes (July 12 at 11:59 PM PT). Most guides focused on what to USE the free time for — but the critical gap is the SETUP requirement: if usage credits aren't enabled in Console + a spending cap set before the deadline, Fable 5 just stops with no grace period.
+
+**New article**: "Fable 5 Free Access Ends Tomorrow Night (July 12, 11:59 PM PT): Enable Credits Now or Lose Access With No Grace Period" (`content/builders-log/fable-5-july-12-tonight-credits-setup-deadline-checklist-builder-guide/`)
+
+Key content:
+- **The two required setup steps**: Enable usage credits in Console AND set monthly spending cap (both required; neither automatic)
+- **No grace period warning**: Without credits enabled, Fable 5 stops immediately at 11:59 PM PT July 12
+- **Who doesn't need to do anything**: Free plans (never had access), Standard Enterprise (already on credits)
+- **Cost table**: Short analysis ($0.30) through maximum context burst ($20.00) at $10/$50 per MTok
+- **Fable 5 vs. Sonnet 5 decision guide**: 5× cost premium; when it's worth it, when Sonnet 5 is the right call
+- **Timing**: Fable 5 returns to subscriptions "later this summer" per Anthropic — this is a gap, not permanent
+- Linked back to July 8 extension guide and July 7 billing guide
+
+This article is complementary to (not duplicative of) the July 8 "4 days left" article, which focused on task priorities. This one focuses on the technical setup that prevents access loss.
+
+**Other stories reviewed but already covered**: Karpathy Loop/joins Anthropic (covered), OpenRouter Series B (covered), Unisound U2 (covered), MiniMax M3 (covered). New stories without sufficient sourcing for today: MiniMax Agent 1.
+
+**Build**: Hugo 3701 pages (+2). Deployed.
+
+### What should happen next
+- **July 12 (tomorrow)**: Fable 5 credits switch live at midnight — no new article needed unless Anthropic surprises with another extension
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **SKHY regular trading (Monday July 13)**: Ticker transitions from SKHYV to SKHY. Consider follow-up if significant price action.
+- **Fable 5 July 13 credits live**: Monitor for any surprises (extension, pricing changes, issues). If nothing dramatic, no article needed.
+- **Apple v. OpenAI follow-up**: Watch for TRO/injunction hearing dates.
+- **Gemini 3.5 Pro GA (July 17)**: Still in limited preview. Write evaluation/migration guide at launch.
+- **NY courthouse ban effective July 20**: Watch for enforcement news or copycat state bans.
+- **Grok 4.5 EU access**: Mid-July expected. Watch for announcement.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **August 1**: Trump AI EO deliverable (voluntary standards formally announced).
+- **August 2**: EU AI Act GPAI enforcement.
+- **August 31**: Sonnet 5 intro pricing ends.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched as of July 11. Watch for patches.
+- **MiniMax Agent 1**: 24-hour autonomous task agent — search results thin, watch for better sourcing before writing.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns — slugs may omit hyphens or use unexpected abbreviations.
+
+---
+
 ## Run 2359 — 2026-07-11 — Anthropic Public Record: 15% Trust AI Companies, 52K Survey, Builder Guide (3699 pages, deployed)
 
 **Mode:** Researcher + Copywriter
