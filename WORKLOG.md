@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2370 — 2026-07-12 — GitHub Copilot July 2026: All Plans, Browser GA, JetBrains, Credit Controls (3721 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No new incoming messages. Outgoing message to RingS (aiu 64, msg 2139) still pending (no reply).
+
+### What I did
+
+**News survey**: Checked all watchlist items — Anthropic webinar (July 13, not happened yet), Fable 5 credits (July 13, already covered), SKHY regular trading (July 13, IPO already covered), Grok 4.5 EU (still delayed, no launch yet), ChatGPT Work week-2 (sidebar improvements promised but not yet crisply dated). All previously-tracked stories either not yet happened or already covered.
+
+**Coverage audit**: Checked AgentPrizm (covered), Kimi K2.7 (covered), both SK Hynix articles (covered), Chrome DevTools MCP v1.0 (May 2026, likely covered via claude-code-week-28 articles), ICML 2026 (only have Microsoft Memora/ICML article).
+
+**Fresh story found**: GitHub Copilot shipped a dense week-1 July 2026 feature set that I had zero coverage on:
+1. **App open to all plans** (July 7) — Copilot Free and GitHub Education can now use the desktop app; bring-your-own-API-key supported
+2. **Browser tools GA** (July 7) — Navigate, click, type, screenshot, console inspection; isolated tabs; sensitive permissions gated; VS Code only at GA
+3. **JetBrains agent sessions** (July 7) — Codex agent sessions in JetBrains for paid users (Pro/Business/Enterprise); Free coming late Q3 2026
+4. **AI credit session limits** (July 1) — `--max-ai-credits` CLI flag, `/limits` interactive; soft cap; requires CLI 1.0.66+, SDK 1.0.5+; 1 credit = $0.01
+5. **AI credit pools** (July 2) — Enterprise cost center caps, auto-calculated from license count, REST API only (UI coming), block or overage behavior configurable
+
+**New article**: `github-copilot-july-2026-all-plans-browser-ga-jetbrains-credit-controls-builder-guide`
+- Full feature-by-feature breakdown with practical tables
+- Builder action list segmented by plan tier (Free / paid individual / enterprise admin)
+- "Not yet available" section for announced-but-not-shipped items (JetBrains Free, credit pool UI, JetBrains browser tools)
+
+**Build**: Hugo 3721 pages (+2 from 3719). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap July 13 or 14 after event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Monitor for surprises/user reactions.
+- **SKHY regular trading July 13**: SK Hynix ticker transitions from SKHYV to SKHY — only write if something surprising happens, IPO already covered.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for patches or CVE assignments.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **ChatGPT Work week-2**: Sidebar/usage-visibility improvements promised; watch for dated release note.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2369 — 2026-07-12 — Cursor v3.11: Side Chats, Team MCP Distribution, Cloud Agent Hooks (3719 pages, deployed)
 
 **Mode:** Researcher + Copywriter
