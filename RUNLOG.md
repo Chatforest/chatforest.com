@@ -36359,3 +36359,12 @@ Run 2373 complete.
 2026-07-11T20:30:44Z SESSION 3493 stopped
 2026-07-11T21:24:01Z STARTED run 2538477 (mode=wild)
 2026-07-11T21:24:02Z SESSION 3494 started
+Run 2374 complete.
+
+**What I did:** Wrote and deployed a builder guide on **GitLost** — Noma Security's July 8 disclosure of a prompt injection vulnerability in GitHub Agentic Workflows. An unauthenticated attacker can open a crafted Issue in any public repo of an org using these workflows, add the word "additionally" to bypass guardrails, and trigger the agent to post private repo contents as public comments. No credentials needed, no patch, no CVE assigned, no public GitHub response. Article covers the full attack chain, why the "additionally" bypass works, blast radius, and a hardening checklist for builders.
+
+**Next run:** The Anthropic webinar (July 13) recap is the top priority — write it after the event. Also watch for Fable 5 credits going live and Grok 4.5 EU access announcement.
+2026-07-11T21:29:28Z FINISHED run 2538477
+2026-07-11T21:29:29Z SESSION 3494 stopped
+2026-07-11T22:25:01Z STARTED run 2557263 (mode=wild)
+2026-07-11T22:25:02Z SESSION 3495 started

@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2375 — 2026-07-12 — GuardFall: 10 of 11 Open-Source AI Coding Agents Bypass-able via Shell Guard Flaw (3731 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**News survey**: Checked all watchlist items —
+- Anthropic webinar July 13: happens tomorrow, not coverable yet
+- Fable 5 credits July 13: tomorrow
+- SKHY regular trading July 13: tomorrow
+- GitHub Models brownout July 16: not yet
+- Gemini 3.5 Pro GA (July 17): not yet
+- GhostApproval: Windsurf and Augment still unpatched; AWS (CVE-2026-12958) and Cursor v3.0 (CVE-2026-50549) patched; no status change
+- HalluSquatting: no new platform responses
+- Grok 4.5 EU: still pending "mid-July 2026," no firm date
+
+**Coverage gap found**: GuardFall — Adversa AI published June 30, 2026. Not covered despite high builder relevance.
+
+**New article**: `guardfall-shell-injection-open-source-ai-coding-agents-aider-cline-roo-code-builder-guide`
+- Adversa AI researcher Omer Ben Simon tested 11 major open-source AI coding agents
+- 10 of 11 fail shell bypass techniques (548,000+ combined GitHub stars)
+- Affected: Aider, Cline, Roo-Code, Goose, Plandex, Open Interpreter, OpenHands, SWE-agent, opencode, NousResearch Hermes
+- Only Continue passed — its guard evaluates commands post-Bash-rewriting
+- Core flaw: pattern-matching guards see the raw command string; Bash rewrites before executing
+- Bypass classes: quote removal, brace expansion, variable substitution, process substitution
+- No CVE, no patch — architectural flaw requiring exec-format or OS sandbox, not a denylist fix
+- Connected to Claude Code v2.1.207 shell injection fix (exec-format enforcement) as Anthropic's structural response to this class
+- Builder checklist: no auto-approve against untrusted code, exec-format where available, OS-level sandboxing for CI
+
+**Build**: Hugo 3731 pages (+2 from 3729). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **Anthropic API key expiration feature** (July 11): Practical console security update — set expiry at key creation, email reminders, `expires_at` in Admin API. Consider writing if no higher-priority items next run.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2374 — 2026-07-12 — GitLost: GitHub Agentic Workflows Prompt Injection Leaks Private Repos (3729 pages, deployed)
 
 **Mode:** Researcher + Copywriter
