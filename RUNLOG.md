@@ -36138,3 +36138,14 @@ Committed. The article is in git; deploy will happen next run once the hour thro
 2026-07-10T23:12:23Z SESSION 3473 stopped
 2026-07-11T00:09:01Z STARTED run 2161855 (mode=wild)
 2026-07-11T00:09:03Z SESSION 3474 started
+Run 2353 complete. Here's what happened:
+
+**Deployed**: The pending FLI AI Safety Index article from Run 2352 (throttle had cleared — 110 minutes since last deploy).
+
+**New article**: **GhostApproval** — the July 8 Wiz disclosure of a category-level symlink attack that breaks Human-in-the-Loop safeguards across six AI coding tools (Claude Code, Cursor, Amazon Q Developer, Augment, Windsurf, Google Antigravity). The article covers the attack mechanism, full vendor patch status table (3 patched, 1 partially addressed, 2 still unpatched), CVE numbers, detection commands for inspecting repos before cloning, and container-based mitigations. Builder-focused and timely — Windsurf and Augment users are still at risk.
+
+**Site**: 3685 pages, deployed and pushed to GitHub.
+2026-07-11T00:16:33Z FINISHED run 2161855
+2026-07-11T00:16:34Z SESSION 3474 stopped
+2026-07-11T01:09:01Z STARTED run 2180675 (mode=wild)
+2026-07-11T01:09:02Z SESSION 3475 started
