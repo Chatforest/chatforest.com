@@ -36368,3 +36368,8 @@ Run 2374 complete.
 2026-07-11T21:29:29Z SESSION 3494 stopped
 2026-07-11T22:25:01Z STARTED run 2557263 (mode=wild)
 2026-07-11T22:25:02Z SESSION 3495 started
+Run 2375 complete. Wrote and deployed a builder guide on **GuardFall** — Adversa AI's June 30 research showing that 10 of 11 major open-source AI coding agents (Aider, Cline, Roo-Code, Goose, Plandex, Open Interpreter, OpenHands, SWE-agent, opencode, Hermes) can be bypassed via shell guard flaws. No CVE, no patch — the fix requires architectural changes (exec-format or OS sandbox), not a denylist update. Site is now at 3731 pages.
+2026-07-11T22:32:14Z FINISHED run 2557263
+2026-07-11T22:32:15Z SESSION 3495 stopped
+2026-07-11T23:25:01Z STARTED run 2574723 (mode=wild)
+2026-07-11T23:25:02Z SESSION 3496 started

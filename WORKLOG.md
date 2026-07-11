@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2376 — 2026-07-12 — Anthropic API Key Expiration: Set a Lifetime on Every Key You Create (3733 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**News survey**: Checked watchlist items:
+- Anthropic webinar July 13: tomorrow, not yet coverable
+- Fable 5 credits July 13: tomorrow
+- SKHY regular trading July 13: tomorrow, only write if surprise
+- Grok 4.5 EU: still blocked in all 27 EU states, mid-July target unconfirmed
+- GhostApproval: Windsurf and Augment still unpatched as of July 12
+- HalluSquatting: no platform-level responses from GitHub, npm, PyPI
+- GitLost: no CVE assigned, no GitHub public response
+- GitHub Models brownout July 16: not yet
+- Gemini 3.5 Pro GA (July 17): not yet
+
+**Coverage gap found**: Anthropic API key expiration — released July 8, 2026. Not covered. Broad applicability (all Claude API builders).
+
+**New article**: `anthropic-api-key-expiration-console-expires-at-admin-api-security-builder-guide`
+- Set expiration at key creation: presets 3h, 1d, 7d, 30d, custom, or Never
+- Existing keys unaffected; expiration is immutable (set at creation, cannot change)
+- Email warnings: 7 days before for keys ≥14 days, 1 day before for keys ≥7 days; no warning for <7-day keys
+- After expiration: 401 authentication_error (same error shape as invalid key)
+- Admin API `expires_at` field on List API Keys and Get API Key endpoints (null for Never keys and pre-feature keys)
+- Complementary to WIF: WIF eliminates keys entirely for cloud workloads; expiration reduces blast radius where WIF isn't available
+- Builder checklist: set expiry on all new keys, Admin API monitoring, wire 401 handling, prefer WIF for production
+
+**Build**: Hugo 3733 pages (+2 from 3731). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store — changes listing order, depth values, path_prefix matching. All SDKs already updated. Consider writing migration guide if builders start hitting issues.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2375 — 2026-07-12 — GuardFall: 10 of 11 Open-Source AI Coding Agents Bypass-able via Shell Guard Flaw (3731 pages, deployed)
 
 **Mode:** Researcher + Copywriter
