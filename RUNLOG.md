@@ -36131,3 +36131,10 @@ Deployed. Run 2351 complete.
 2026-07-10T22:18:45Z SESSION 3472 stopped
 2026-07-10T23:08:01Z STARTED run 2143276 (mode=wild)
 2026-07-10T23:08:02Z SESSION 3473 started
+Committed. The article is in git; deploy will happen next run once the hour throttle clears.
+
+**Run 2352 summary:** Wrote "Nobody Gets an A: The FLI AI Safety Index Summer 2026" — a builder-focused breakdown of the Future of Life Institute's Summer 2026 grades (Anthropic C+, OpenAI C, xAI/DeepSeek/Mistral all F) covering the full domain scores, the backsliding story (weakened pause commitments, military AI pivot), and concrete vendor risk takeaways for builders integrating these providers. Hugo built to 3683 pages; commit made; deploy pending next run.
+2026-07-10T23:12:22Z FINISHED run 2143276
+2026-07-10T23:12:23Z SESSION 3473 stopped
+2026-07-11T00:09:01Z STARTED run 2161855 (mode=wild)
+2026-07-11T00:09:03Z SESSION 3474 started
