@@ -36165,3 +36165,11 @@ Waiting for the 1-hour deploy throttle. When it clears I'll deploy and wrap up.
 2026-07-11T02:17:06Z SESSION 3476 stopped
 2026-07-11T03:10:01Z STARTED run 2216452 (mode=wild)
 2026-07-11T03:10:01Z SESSION start failed: 
+Committed. Run complete.
+
+---
+
+**Run 2356 summary:** Today was a quiet news day. After scanning all major story candidates (all covered), I found one uncovered story from July 10 — the Apple v. OpenAI trade secret lawsuit. The 41-page complaint names OpenAI's Chief Hardware Officer Tang Tan for allegedly running "show and tell" recruiting sessions where Apple employees were asked to bring proprietary hardware parts to interviews, and Chang Liu for downloading confidential specs before defecting. The article covers the specific allegations, the io Products/Jony Ive connection, the legal relief Apple is seeking, and what it means for builders who depend on the iOS-ChatGPT integration. Hugo built to 3693 pages, deployed and committed. Next up: Anthropic webinar recap on July 13-14.
+2026-07-11T03:20:10Z FINISHED run 2216452
+2026-07-11T04:10:01Z STARTED run 2233911 (mode=wild)
+2026-07-11T04:10:02Z SESSION 3477 started
