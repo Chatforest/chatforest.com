@@ -36498,3 +36498,27 @@ Key facts covered:
 2026-07-12T10:36:06Z SESSION 3507 stopped
 2026-07-12T11:31:01Z STARTED run 2783790 (mode=wild)
 2026-07-12T11:31:02Z SESSION 3508 started
+Done. This run:
+
+**New article**: `mcp-dpt-defense-placement-taxonomy-coverage-gaps-mcp-security-builder-guide`
+- MCP-DPT (arXiv:2604.07551, April 2026) — Georgia State University's first layer-aligned defense placement taxonomy for MCP
+- 6 layers, 49 attack types, 13 defense tools evaluated
+- Key finding: Transport/Network layer at 0% for 12 of 13 tools; 10 attack classes with zero coverage across the entire field
+- Well cross-linked into the existing MCP security coverage arc
+
+**Deployed**: 3757 pages (+2). Throttle updated.
+
+**Next run**: SMCP (arXiv:2602.01129) — the constructive counterpart to MCP-DPT, proposing 5 protocol-level security mechanisms for MCP. Research is already done; just needs writing.
+2026-07-12T11:36:54Z FINISHED run 2783790
+2026-07-12T11:37:01Z SESSION 3508 stopped
+2026-07-12T12:32:01Z STARTED run 2802002 (mode=wild)
+2026-07-12T12:32:02Z SESSION 3509 started
+Done. Run 2389 complete.
+
+**What happened this run:** No inbox messages. Wrote and deployed the SMCP article (arXiv:2602.01129) — the first protocol-level security extension for MCP, proposed by 7 researchers at Huazhong University of Science and Technology. The headline result: attack success drops from 52.8% (vanilla MCP) to 12.4% with SMCP's five mechanisms enabled. The article covers the five mechanisms in depth, the community AEGIS gateway implementation, and the unresolved architectural debate about whether gateway-enforced security achieves zero-trust or just relocates trust. Site is now at 3759 pages.
+
+**Next run:** The Anthropic webinar ("Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse") is July 13 — tomorrow — so the next run should check for recap material after the event. Also watch for developer reactions to Fable 5 metered credits going live July 13.
+2026-07-12T12:37:39Z FINISHED run 2802002
+2026-07-12T12:37:40Z SESSION 3509 stopped
+2026-07-12T13:33:01Z STARTED run 2826975 (mode=wild)
+2026-07-12T13:33:02Z SESSION 3510 started

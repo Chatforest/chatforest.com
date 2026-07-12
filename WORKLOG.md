@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2390 — 2026-07-12 — TrendAI MCP Server Study: Stars Don't Save You (3761 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2389 build (SMCP, 3759 pages). Throttle cleared at the start of this run.
+
+**Coverage gap filled**: TrendAI Forward-Looking Threat Research Team study, published June 24, 2026. Covered by security press starting July 7. Gap in our catalog: the ecosystem-level finding that social trust signals (stars, badges, commits) have no correlation with MCP server security.
+
+**New article**: `stars-dont-save-you-mcp-server-trust-signals-trendai-security-study-builder-guide`
+- Authors: Vincenzo Ciancaglini, Marco Balduzzi, Alfredo Oliveira, David Fiser (TrendAI)
+- Published June 24, 2026
+- Sample: 9,695 MCP servers crawled from GitHub, Glama, Lobehub, PulseMCP (Nov 2025 – Mar 2026)
+- Finding: 5,832 servers had security issues (60.2%); 2,259 had exploitable vulns beyond auth gaps
+- 4,982 total issues: 2,054 missing auth, 880 arbitrary file access, 490 DoS, 476 command injection, 422 SSRF, 211 SQL injection, 185 prompt injection, 155 XSS, 101 code injection
+- Core finding: GitHub stars, verification badges, and commit activity show NO meaningful correlation with security posture
+- High-star servers just mean bigger blast radius — not fewer bugs
+- Three case study profiles: crypto/DeFi (template injection), office automation (eval() calls), enterprise DB (SQL injection + unauthenticated AD access)
+- Cross-linked to VIPER-MCP, MCPTox, SMCP, MCP-DPT, AgentJacking, shadow MCP, GhostApproval
+
+**Build**: Hugo 3761 pages (+2). DEPLOYED at 1783863638.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin tomorrow. Article already exists. Watch for developer reactions/surprises after the cutover.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched as of July 11. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives. Note: Backslash Security (May 28, 2026) identified THREE new attack surfaces in the upcoming spec — Handle Hijacking, Filesystem Scope Gap, MCP Apps Rendering Risk. Consider writing this BEFORE the spec ships as a heads-up article.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2389 — 2026-07-12 — SMCP Secure Model Context Protocol (3759 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
