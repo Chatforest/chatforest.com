@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2379 — 2026-07-12 — Varonis Rogue Agent: Dialogflow CX Code Block Playbook Injection (3739 pages, NOT YET DEPLOYED — under 1hr throttle)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**News survey**: Checked for new coverage gaps:
+- Anthropic newsroom: No new items since July 9. Already have coverage of Fable 5 extension, redeployment, Cowork expansion.
+- Rogue Agent (Varonis, July 7, 2026): Not previously covered. Selected for this run.
+
+**New article**: `varonis-rogue-agent-dialogflow-cx-code-blocks-playbook-injection-builder-security-guide`
+- Varonis Threat Labs discovered November 2025, disclosed July 7, 2026
+- Google Dialogflow CX: Code Blocks feature in Playbooks had a shared execution environment flaw
+- Attack: single `dialogflow.playbooks.update` permission → overwrite shared `code_execution_env.py` in Cloud Run → intercept ALL agents' conversations across the entire GCP project
+- Data at risk: conversation histories, session state, credentials (via injected phishing prompts), PII, payment info
+- VPC Service Controls bypassable via unrestricted outbound network access from the container
+- Google patched: April 2026 initial, June 2026 full resolution; no CVE assigned; no known exploitation in the wild
+- Key lesson: IAM permission labels don't always reflect actual blast radius when execution environments are shared across tenants/agents
+- Builder checklist: audit IAM, review all Code Blocks, enable DATA_WRITE audit logs, consider UEBA for GCP
+- Positioned alongside GuardFall and Friendly Fire as part of July 2026's "platform attack surface" security pattern
+
+**Build**: Hugo 3739 pages (+2 from 3737). NOT deployed (deploy was 58 min ago, under 1hr throttle).
+
+### What should happen next
+- **DEPLOY NEEDED**: Run rsync deploy — last deploy was at 1783819906 (unix), throttle clears ~1hr after that.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **CodeQL Python coverage**: Watch for a Python equivalent of `js/system-prompt-injection` in future CodeQL releases.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2378 — 2026-07-12 — CodeQL 2.26.0 js/system-prompt-injection: Static Detection for AI Prompt Injection (3737 pages, deployed)
 
 **Mode:** Researcher + Copywriter
