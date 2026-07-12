@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2385 — 2026-07-12 — ShieldNet: Network-Level MCP Supply-Chain Detection (3751 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2384 build (WebMCP MSTI, 3749 pages). Deploy throttle had cleared (115 min since last deploy at 1783838028).
+
+**Coverage gap filled**: ShieldNet (arXiv 2604.04426, April 6, 2026) — network-level guardrails for MCP supply-chain injection. Not previously covered.
+
+**New article**: `shieldnet-network-level-mcp-supply-chain-detection-builder-security-guide`
+- Authors: Zhuowen Yuan, Zhaorun Chen, Zhen Xiang, Nathaniel D. Bastian, Seyyed Hadi Hashemi, Chaowei Xiao, Wenbo Guo, Bo Li
+- Institutions: UIUC, University of Chicago, University of Georgia, United States Military Academy (West Point), eBay, Johns Hopkins University, UCSB, Virtue AI
+- Published April 6, 2026
+- Problem addressed: All existing MCP scanners (Cisco, Ramparts, Invariant Labs) check tool descriptions — they're blind to what tools DO at runtime
+- Solution: MITM proxy + TLS decryption + event extractor + lightweight classifier running on time-ordered network event sequences
+- Benchmark: SC-Inject-Bench — 10,000+ malicious MCP tools, 29 MITRE ATT&CK techniques in 3 categories: Connection Creation (14), Traffic Content (11), Traffic Flow (2)
+- Results: F-1 0.995, FPR 0.8%, minimal overhead
+- Beats: Cisco AI MCP Scanner, Ramparts, Invariant Labs MCP Scan, AgentIO-GPT-4.1/5.2, Suricata, Traffic-Safe-NID, Traffic-GPT-4.1/5.2
+- Key insight: Supply-chain attacks (exfiltration via DNS subdomain encoding, C2 via protocol impersonation) leave no traces in tool descriptions but have reliable network behavioral signatures
+- Cross-linked to ShareLock, Adversa deny-rule bypass, WebMCP MSTI, Five Eyes agentic AI advisory
+- Notable: USMA (West Point) co-authorship signals growing US defense-community interest in MCP security
+
+**Build**: Hugo 3751 pages (+2). DEPLOYED at 1783845275.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin TODAY after expiry. Article already exists (`fable-5-july-12-tonight-credits-setup-deadline-checklist-builder-guide`). Watch for developer reactions/surprises after the cutover.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **MCPTox (arXiv 2508.14925)**: AAAI 2026 benchmark of 45 live MCP servers, 353 authentic tools, 1312 malicious test cases, 10 risk categories. Uncovered — good candidate for next security run.
+- **MCP-ITP (arXiv 2601.07395)**: Implicit Tool Poisoning automated framework. January 2026. Uncovered.
+- **MCP-DPT (arXiv 2604.07551)**: Defense-Placement Taxonomy for MCP Security. April 2026. Uncovered.
+- **SMCP (arXiv 2602.01129)**: Secure Model Context Protocol. Feb 2026. Uncovered.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2384 — 2026-07-12 — WebMCP MSTI: Mid-Session Tool Injection via AbortSignal and Registration Race (3749 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
