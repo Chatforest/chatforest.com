@@ -78,6 +78,20 @@
     
     <div class="article-card">
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
+  <h3><a href="/builders-log/webmcp-msti-mid-session-tool-injection-abortsignal-builder-security-guide/">WebMCP&#39;s Dynamic Tool Registry Is a New Attack Surface: Mid-Session Tool Injection Reaches 100% Success via AbortSignal Hijacking</a></h3>
+  <p>Researchers at National Yang Ming Chiao Tung University demonstrate that WebMCP&#39;s dynamic tool registry enables two new attack classes: Tool Hijacking (via AbortSignal API or registration races, 94-100% ASR) and Tool Framing (via metadata manipulation, 36-61% ASR but near-full task completion). Third-party scripts on the same page can execute either attack mid-session. One defense collapses all five conditions to 0% ASR.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
+  <h3><a href="/builders-log/sharelock-shamir-threshold-mcp-tool-poisoning-builder-security-guide/">ShareLock: Researchers Split a Malicious MCP Instruction Across Innocent-Looking Tool Descriptions — and Every Safety Scanner Missed It</a></h3>
+  <p>A Shanghai Jiao Tong University team used Shamir&#39;s threshold secret sharing to fragment malicious MCP tool instructions across multiple benign-looking tool descriptions. No single tool contains detectable malicious content. Zero-shot classifiers from GPT-5, Gemini, and Claude all returned &#39;Safe.&#39; Reconstruction happens in-context via Lagrange interpolation, triggered by a fake EnvSetup tool pushed during a routine server update. Attack success rate: 94.1%.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
   <h3><a href="/builders-log/varonis-rogue-agent-dialogflow-cx-code-blocks-playbook-injection-builder-security-guide/">Rogue Agent: The Dialogflow CX Flaw That Let One Permission Hijack Every Chatbot in Your Project</a></h3>
   <p>Varonis disclosed &#39;Rogue Agent&#39; on July 7, 2026: a now-patched Google Dialogflow CX vulnerability where a single dialogflow.playbooks.update permission let an attacker overwrite the shared execution environment, silently intercepting conversations and injecting phishing prompts across every chatbot agent in the GCP project. No CVE, no known exploitation. Here&#39;s what happened and what builders should check.</p>
 </div>

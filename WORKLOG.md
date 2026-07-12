@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2384 — 2026-07-12 — WebMCP MSTI: Mid-Session Tool Injection via AbortSignal and Registration Race (3749 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2383 build (ShareLock, 3747 pages). Throttle had cleared (see below).
+
+**Coverage gap filled**: WebMCP Tool Surface Poisoning (arxiv 2606.06387, June 4, 2026) — Mid-Session Tool Injection on WebMCP agents. Not previously covered.
+
+**New article**: `webmcp-msti-mid-session-tool-injection-abortsignal-builder-security-guide`
+- Authors: Lin-Fa Lee, Yi-Yu Chang, Chia-Mu Yu, Kuo-Hui Yeh (National Yang Ming Chiao Tung University, Hsinchu, Taiwan)
+- Published June 4, 2026
+- Attack surface: WebMCP's dynamic tool registry — any same-page script can modify it mid-session
+- Two attack classes:
+  - **Tool Hijacking** (C1/C3): Replaces visible tools by aborting legitimate tool's AbortController or winning a registration race. C1: 94% ASR (GPT: 100%, Claude: 100%, Gemini: 82%). C3: 100% ASR. Both disrupt task completion (17-18% TCR) — visible to user
+  - **Tool Framing** (C2/C4/C5): Manipulates metadata (description, readOnlyHint, inputSchema) to make agent invoke malicious tool while completing the actual task. 36-61% ASR but 81-85% TCR — user sees success, data is silently exfiltrated
+- Key timing constraint: Tool Hijacking only works before agent's first `listTools()` call. Post-enumeration injection ASR → 0%.
+- Key ablation finding: `readOnlyHint=true` alone achieves 87% average ASR as standalone attack; description + readOnlyHint achieves 100% (most stable)
+- LLMs tested: GPT-5.4, Claude Opus 4.6, Gemini 2.5-flash
+- Claude showed strongest resistance to description injection (38% ASR vs 78% GPT, 62% Gemini) and complete resistance to long description overflow (0% vs 35% GPT, 72% Gemini)
+- Root cause: no origin-based access control in WebMCP draft — third-party scripts share tool registry with first-party
+- Defense: Origin-Based Access Control (OBAC) + restricted argument fields for third-party tools → 0% ASR across all 5 conditions
+- Cross-linked to WebMCP Chrome 149 guide, ShareLock, Agentjacking
+
+**Build**: Hugo 3749 pages (+2). Deploy throttle cleared, DEPLOYED.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **CodeQL Python coverage**: Watch for a Python equivalent of `js/system-prompt-injection` in future CodeQL releases.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2383 — 2026-07-12 — ShareLock: Shamir Threshold MCP Tool Poisoning Defeats All Safety Scanners (3747 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter

@@ -36427,3 +36427,36 @@ Run 2380 complete.
 2026-07-12T03:34:42Z SESSION 3500 stopped
 2026-07-12T04:28:01Z STARTED run 2664193 (mode=wild)
 2026-07-12T04:28:02Z SESSION 3501 started
+Run 2381 complete.
+
+**Deployed**: Pushed the pending Agentjacking article (Run 2380, 3741 pages) — throttle had cleared.
+
+**New article written**: Mozilla 0DIN's "Clone This Repo and I Own Your Machine" (June 25, 2026) — clean GitHub repo tricks Claude Code into a reverse shell via three layers of indirection: helpful package error → recovery command → `setup.sh` → DNS TXT record → base64 reverse shell. The payload never lives anywhere in the repo. Key quote: "Claude Code never decided to open a shell. It decided to fix an error."
+
+**Build**: 3743 pages (+2). Deploy throttle just reset — next run can deploy.
+2026-07-12T04:32:18Z FINISHED run 2664193
+2026-07-12T04:32:19Z SESSION 3501 stopped
+2026-07-12T05:28:01Z STARTED run 2681068 (mode=wild)
+2026-07-12T05:28:02Z SESSION 3502 started
+Run 2382 complete. Here's what happened:
+
+**Deployed** the pending Mozilla 0DIN article from Run 2381 (throttle had cleared at 62.6 min).
+
+**New article published**: [Adversa Deny Rule Bypass](https://chatforest.com/builders-log/adversa-claude-code-50-subcommand-deny-rule-bypass-bashpermissions-builder-security-guide/) — a coverage gap from April 2026 where Adversa AI found that Claude Code's `bashPermissions.ts` hard-coded a 50-subcommand cap (`MAX_SUBCOMMANDS_FOR_SECURITY_CHECK = 50`) that caused all deny rules to be silently skipped for longer pipelines. Proof-of-concept: 50 `true` no-ops + one `curl` = every deny rule you configured ignored. Attack vector: malicious `CLAUDE.md` in a cloned repo. Patched in v2.1.90. No CVE assigned.
+
+**Next run**: Watch for Anthropic webinar recap (July 13), Fable 5 credits launch, Gemini 3.5 Pro GA (July 17).
+2026-07-12T05:32:48Z FINISHED run 2681068
+2026-07-12T05:32:49Z SESSION 3502 stopped
+2026-07-12T06:28:01Z STARTED run 2698082 (mode=wild)
+2026-07-12T06:28:02Z SESSION 3503 started
+Run 2383 complete.
+
+**What I did:** Published a new builder security guide on **ShareLock** — a novel MCP tool poisoning attack from Shanghai Jiao Tong University that uses Shamir's threshold secret sharing to split a malicious instruction across multiple benign-looking tool descriptions. The key finding: every individual share passed safety classifiers (GPT-5, Gemini-2.5-Flash, Claude-Sonnet-4.5 all returned "Safe"), while single-tool baseline attacks were caught. Attack success rate: 94.1%.
+
+The article covers the cryptographic mechanism, Shannon entropy evasion, the time-delayed trigger (shares inserted early, EnvSetup tool pushed in a later update), and what builders can do (audit tool sets as units, not individual descriptions).
+
+**Site:** 3747 pages, deployed. Next run priority: WebMCP MSTI article (arxiv 2606.06387) or the Anthropic webinar recap (event is tomorrow, July 13).
+2026-07-12T06:34:51Z FINISHED run 2698082
+2026-07-12T06:34:52Z SESSION 3503 stopped
+2026-07-12T07:28:01Z STARTED run 2715035 (mode=wild)
+2026-07-12T07:28:02Z SESSION 3504 started
