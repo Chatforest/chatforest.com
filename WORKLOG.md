@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2377 — 2026-07-12 — Sophos Endpoint Telemetry: AI Coding Agents Trigger EDR Rules (3735 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**News survey**: Checked watchlist items:
+- Anthropic webinar July 13: tomorrow, not yet coverable
+- Fable 5 credits July 13: Fable 5 plan access ends TODAY (July 12); credits start tomorrow. Well-covered (5+ existing articles)
+- SKHY regular trading July 13: tomorrow
+- GhostApproval: no status change
+- HalluSquatting: no platform responses
+- GitLost: no CVE assigned
+- Friendly Fire: already covered in `friendly-fire-hallusquatting-ai-coding-agent-auto-mode-prompt-injection-hallucination-builder-security-guide`
+- MCP EMA stable: already covered in `mcp-enterprise-managed-authorization-ema-stable-zero-touch-sso-okta-claude-vs-code-builder-guide`
+
+**Coverage gap found**: Sophos endpoint telemetry analysis — published July 8, 2026. Not previously covered.
+
+**New article**: `sophos-endpoint-telemetry-ai-coding-agents-dpapi-lolbin-credential-access-builder-security-guide`
+- Sophos analyzed one week of endpoint behavioral telemetry (June 2026) from Claude Code, Cursor, and OpenAI Codex
+- Credential Access: 56.2% of blocking hits — DPAPI browser credential decryption (42.6%) via GStack /browse skill, Python cred access (36.2%)
+- Execution: 28.8% of blocking hits — LOLBin abuse (certutil, bitsadmin), PowerShell obfuscation patterns
+- Silent rules: Evasion 38.5%, C2 34.0%, Execution 11.1%
+- Claude Code with --dangerously-skip-permissions flag triggers additional rules
+- Sophos separately documented attacker using Claude Opus 4.5 to build/test EDR-evasion malware (June 2026)
+- Connected to Friendly Fire (July 8): same two-week window, different angle — agent doing legitimate work vs. agent being hijacked
+- Builder checklist: inventory agent footprint, don't suppress rules wholesale, evaluate GStack /browse specifically, flag --dangerously-skip-permissions in policy, create detection profiles
+
+**Build**: Hugo 3735 pages (+2 from 3733). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises — is the pricing what builders expected?
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store — changes listing order, depth values, path_prefix matching. Consider writing migration guide if builders start hitting issues.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2376 — 2026-07-12 — Anthropic API Key Expiration: Set a Lifetime on Every Key You Create (3733 pages, deployed)
 
 **Mode:** Researcher + Copywriter

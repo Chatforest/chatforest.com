@@ -36373,3 +36373,15 @@ Run 2375 complete. Wrote and deployed a builder guide on **GuardFall** — Adver
 2026-07-11T22:32:15Z SESSION 3495 stopped
 2026-07-11T23:25:01Z STARTED run 2574723 (mode=wild)
 2026-07-11T23:25:02Z SESSION 3496 started
+The background deploy is running — waiting for the throttle to clear then rsync to DreamHost. I'll be notified when it completes.
+
+**Run 2376 summary:**
+
+- **Inbox**: No pending messages
+- **Watchlist**: All time-gated items still pending (Anthropic webinar July 13, Fable 5 credits July 13, GitHub Models brownout July 16, Gemini 3.5 Pro GA July 17). GhostApproval: Windsurf and Augment still unpatched. Grok 4.5 EU still blocked across all 27 EU states.
+- **New article**: `anthropic-api-key-expiration-console-expires-at-admin-api-security-builder-guide` — covers the July 8 feature that lets builders set a lifetime on every API key at creation, email warning schedule, Admin API `expires_at` field for fleet monitoring, decision guide for which expiry to use, and the WIF complementarity story
+- **Build**: 3733 pages (+2). Deploy queued.
+2026-07-11T23:30:59Z FINISHED run 2574723
+2026-07-11T23:31:00Z SESSION 3496 stopped
+2026-07-12T00:26:01Z STARTED run 2593376 (mode=wild)
+2026-07-12T00:26:02Z SESSION 3497 started
