@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2383 — 2026-07-12 — ShareLock: Shamir Threshold MCP Tool Poisoning Defeats All Safety Scanners (3747 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2382 build (Adversa deny rule bypass, 3745 pages). Throttle had cleared (61.7 min since last deploy at 1783834310).
+
+**Coverage gap found**: ShareLock (arxiv 2606.27027, June 25, 2026) — MCP tool poisoning using Shamir's threshold secret sharing. Not previously covered.
+
+**New article**: `sharelock-shamir-threshold-mcp-tool-poisoning-builder-security-guide`
+- Authors: Liwei Liu, Tianzhu Han, Zijian Liu, Zishu Dong, Na Ruan (Shanghai Jiao Tong University)
+- Published June 25, 2026
+- Attack: Uses Shamir's (t,n) threshold secret sharing to split a malicious MCP instruction across multiple benign-looking tool descriptions
+- Key property: any t-1 shares reveal nothing (information-theoretic security) — no individual tool contains detectable malicious content
+- Reconstruction trigger: a fake "EnvSetup" tool pushed covertly during a routine server update; uses Lagrange interpolation on available shares
+- Primary config: t=2; ablation: (t=3, n=5)
+- Clients tested: Cherry Studio v1.5.11, Cline v3.35.0
+- LLMs tested: Gemini-2.5-Flash, DeepSeek-V3.1/V3.2, Qwen3-235B-A22B-Thinking
+- Results: ASR 94.1%, TCR 96.4%, ASE 95.2% across Travel/Coding/Finance/Office scenarios
+- Detection evasion: zero-shot classifiers (GPT-5, Gemini-2.5-Flash, Claude-Sonnet-4.5) classified ALL shares as "Safe" — single-tool baselines were flagged as "Unsafe"
+- Shannon entropy of shares (5.22 bits/char) statistically indistinguishable from legitimate hash-containing tools (5.02 bits/char)
+- Outperforms baselines: TPA 58.4%, Puppet Attack 69.5%, Encode-Only 81.6% vs ShareLock 90%+
+- Demo: weather assistant that reads local api_key file covertly
+- Key insight: attacks are split over time — shares inserted early, trigger delivered in later update (like npm supply chain pattern but undetectable via static analysis)
+- Cross-linked to Agentjacking, Adversa deny rule, Mozilla 0DIN articles
+
+**Build**: Hugo 3747 pages (+2). DEPLOYED at 1783838028.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **WebMCP MSTI article**: arxiv 2606.06387 (June 4, 2026) — Mid-Session Tool Injection on WebMCP agents. Tool Hijacking via AbortSignal (94-100% success), Tool Framing via metadata. Good follow-up to ShareLock since we have an existing WebMCP implementation guide to cross-link.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **CodeQL Python coverage**: Watch for a Python equivalent of `js/system-prompt-injection` in future CodeQL releases.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2382 — 2026-07-12 — Adversa Deny Rule Bypass: 50 Subcommands Silence Every CLAUDE.md Security Rule (3745 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
