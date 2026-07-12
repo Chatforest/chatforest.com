@@ -269,6 +269,13 @@ thinking <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;
   
     <div class="article-card">
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
+  <h3><a href="/builders-log/adversa-claude-code-50-subcommand-deny-rule-bypass-bashpermissions-builder-security-guide/">Adversa Found a One-Line Trick to Silence Every Claude Code Deny Rule You&#39;ve Ever Written</a></h3>
+  <p>A hard-coded subcommand cap in bashPermissions.ts caused Claude Code to silently skip deny-rule evaluation for any pipeline longer than 50 commands. Adversa AI proved it with a proof-of-concept: 50 no-ops plus one curl command, and every &#39;never run curl&#39; rule you configured was ignored. Patched in v2.1.90.</p>
+</div>
+
+  
+    <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
   <h3><a href="/builders-log/agentjacking-sentry-mcp-injection-claude-code-cursor-codex-builder-security-guide/">Agentjacking: A Public Sentry DSN Is All It Takes to Hijack Claude Code, Cursor, and Codex — and Datadog, PagerDuty, and Jira Have the Same Flaw</a></h3>
   <p>Tenet Security demonstrated that anyone with a publicly exposed Sentry DSN can inject fake error events through the Sentry MCP server, hijack an AI coding agent with an 85% success rate, and silently steal AWS keys, GitHub tokens, and git credentials — without ever owning the victim&#39;s infrastructure.</p>
 </div>
@@ -285,13 +292,6 @@ thinking <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
   <h3><a href="/builders-log/anthropic-api-key-expiration-console-expires-at-admin-api-security-builder-guide/">Anthropic API Key Expiration Is Now Live: Set a Lifetime on Every Key You Create</a></h3>
   <p>Anthropic added API key expiration to the Claude Console on July 8. Choose a preset lifetime (3h, 1d, 7d, 30d), a custom duration, or Never. Expiration is immutable and set at creation; the Admin API exposes expires_at so you can monitor and audit your key fleet.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
-  <h3><a href="/builders-log/codeql-2260-js-system-prompt-injection-javascript-typescript-ai-sdk-builder-security-guide/">CodeQL 2.26.0 Now Flags Prompt Injection in Your AI Code: What JS/TS Builders Need to Know</a></h3>
-  <p>GitHub&#39;s CodeQL 2.26.0 (July 8, 2026) introduces the js/system-prompt-injection query for JavaScript and TypeScript — static analysis that catches untrusted user input flowing into AI model system prompts before it ships. Coverage spans OpenAI Realtime, Sora, Anthropic legacy completions, and Google GenAI. Here&#39;s what it detects, what it misses, and what to do now.</p>
 </div>
 
   

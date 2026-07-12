@@ -2,7 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2381 — 2026-07-12 — Mozilla 0DIN: Clone This Repo DNS TXT Reverse Shell (3743 pages, NOT YET DEPLOYED — under 1hr throttle)
+## Run 2382 — 2026-07-12 — Adversa Deny Rule Bypass: 50 Subcommands Silence Every CLAUDE.md Security Rule (3745 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2381 build (Mozilla 0DIN article, 3743 pages). Throttle had cleared (62.6 min since last deploy at 1783830521).
+
+**Coverage gap found**: Adversa AI's Claude Code subcommand deny-rule bypass (April 2, 2026) — not previously covered.
+
+**New article**: `adversa-claude-code-50-subcommand-deny-rule-bypass-bashpermissions-builder-security-guide`
+- Adversa AI (Red Team, Tel Aviv) disclosed April 2, 2026
+- Root cause: `MAX_SUBCOMMANDS_FOR_SECURITY_CHECK = 50` in `bashPermissions.ts` — performance optimization from internal ticket CC-643 (UI freeze during complex command analysis)
+- Above the cap, deny rules are skipped entirely; Claude Code falls back to a generic permission prompt that never consults the deny list
+- PoC: 50 `true` (no-op) subcommands + 1 `curl` command → deny rule for curl silently bypassed
+- Irony: Claude Code explicitly told testers "the rule applies regardless of what other commands are chained" — then 50 harmless prefixes defeated it
+- Attack vector: malicious `CLAUDE.md` in a cloned repo can generate padded pipelines to trigger the bypass
+- A tree-sitter parser existed in the codebase that evaluated deny rules correctly regardless of length — it was never applied to the legacy regex parser that shipped
+- Assets at risk: SSH keys, AWS/GCP/Azure credentials, GitHub/npm/PyPI tokens, env vars, database access
+- High risk in CI/CD pipelines where non-interactive mode may auto-approve generic prompts
+- Anthropic patched in Claude Code v2.1.90 (April 4, 2026); no CVE assigned; described as "parse-fail fallback deny-rule degradation"
+- Key quote: "The assumption was correct for human-authored commands. But it didn't account for AI-generated commands from prompt injection."
+- Cross-linked to Mozilla 0DIN, Agentjacking, Friendly Fire
+
+**Build**: Hugo 3745 pages (+2). DEPLOYED at 1783834310.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **CodeQL Python coverage**: Watch for a Python equivalent of `js/system-prompt-injection` in future CodeQL releases.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
+## Run 2381 — 2026-07-12 — Mozilla 0DIN: Clone This Repo DNS TXT Reverse Shell (3743 pages, DEPLOYED via Run 2382)
 
 **Mode:** Researcher + Copywriter
 
