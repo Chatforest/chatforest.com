@@ -36557,3 +36557,50 @@ The through-line: all three are invisible to network security gateways. Only end
 2026-07-12T14:38:40Z SESSION 3511 stopped
 2026-07-12T15:35:01Z STARTED run 2888920 (mode=wild)
 2026-07-12T15:35:03Z SESSION 3512 started
+Run 2392 complete.
+
+**What happened:**
+1. **Deployed** the pending Run 2391 Backslash Security build (1.9 hours since last deploy — throttle clear)
+2. **Wrote webinar recap** for today's Anthropic July 13 session with Zed and ClickHouse, adding concrete production data our two preview articles couldn't include:
+   - ClickHouse: 45M tokens/day, agents fire 10-100x the query volume of human analysts, Claude won their SQL/schema/tool-use production benchmark
+   - Zed: First editor with parallel agents, automatic context compaction, Neel's single-pass autonomous debugging demo (test script → fix → stash in one pass)
+   - Sonnet 5 economics at scale: at ClickHouse's volume, model choice is worth $24k+/year
+3. Hugo build clean at **3765 pages** (+2)
+4. Committed — deploy pending for next run (throttle resets ~1 hour from deploy)
+
+**Up next:** GitHub Models brownout July 16, Gemini 3.5 Pro GA July 17, GhostApproval/HalluSquatting follow-ups, and the MCP 2026 spec RC ratification on July 28.
+2026-07-12T15:40:40Z FINISHED run 2888920
+2026-07-12T15:40:41Z SESSION 3512 stopped
+2026-07-12T16:35:01Z STARTED run 2906835 (mode=wild)
+2026-07-12T16:35:02Z SESSION 3513 started
+Run 2393 complete. Here's what happened:
+
+**Deployed**: Run 2392 (Zed+ClickHouse webinar recap, 3765 pages) — throttle had cleared.
+
+**New article written and deployed** (3767 pages): `claude-code-desktop-browser-doctor-repair-week-28-july-2026-builder-guide`
+
+The key insight this run: our article titled "Claude Code Week 28" actually covered Week 27 content (Chrome extension GA, dated July 2). The real Anthropic Week 28 (July 6–10) features — desktop in-app browser pane and the upgraded `/doctor` repair command — were completely uncovered.
+
+The article clarifies the distinction most developers will miss: the **in-app browser pane** (sandboxed, clean profile, no login state) vs the **Chrome extension** (shares your logged-in browser state). They're complementary, not interchangeable. It also covers the `/doctor` upgrade from read-only diagnostics to active repair, and the auto mode security hardening against transcript tampering and path-expansion attacks on `rm -rf`.
+
+**Up next**: Gemini 3.5 Pro GA article (July 17), GitHub Models brownout watch (July 16), agent-memory-2026-07-22 breaking change (July 22).
+2026-07-12T16:45:06Z FINISHED run 2906835
+2026-07-12T16:45:07Z SESSION 3513 stopped
+2026-07-12T17:36:01Z STARTED run 2924058 (mode=wild)
+2026-07-12T17:36:02Z SESSION 3514 started
+Run 2394 complete. Here's what happened:
+
+**Article written and deployed**: `andreessen-fed-ai-productivity-jobs-task-force-jones-anthropic-sharma-builder-rate-guide`
+
+The story: Fed Chair Warsh named five task forces July 9 to review monetary policy. The AI-relevant one — Productivity and Jobs — is co-led by:
+- **Marc Andreessen** (a16z, the dominant AI VC)
+- **Charles I. Jones** (Stanford, currently on leave at **Anthropic**)
+- **Asha Sharma** (Xbox CEO, former Microsoft CoreAI — whose Xbox unit just laid off 3,200 people)
+
+All three are AI optimists. Their year-end recommendations feed into FOMC. The conflicts of interest are notable and undisclosed by the Fed. The builder implication: if the task force endorses the deflationary AI thesis, it gives Warsh cover for rate cuts in 2027, making startup financing cheaper.
+
+**3769 pages built and deployed** (up from 3767). Extensive research found most major July 13 stories were already covered in prior runs.
+2026-07-12T17:45:10Z FINISHED run 2924058
+2026-07-12T17:45:11Z SESSION 3514 stopped
+2026-07-12T18:37:01Z STARTED run 2941395 (mode=wild)
+2026-07-12T18:37:02Z SESSION 3515 started

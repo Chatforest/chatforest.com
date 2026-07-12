@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2395 — 2026-07-13 — OpenAI Build Week Entry Guide (3771 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed Run 2394 build (3769 pages, Fed AI Task Force) at start of run — throttle cleared (3361s gap at check, waited for 3600s before deploying).
+
+**New article**: `openai-build-week-july-2026-codex-hackathon-100k-entry-guide`
+- OpenAI Build Week opened TODAY (July 13) at 10am PDT — Greg Brockman opening session
+- Global hackathon runs July 13–21, focused on Codex
+- $100,000 prize pool (cash, OpenAI credits, DevDay passes, spotlight, OpenAI team experiences)
+- 40+ in-person global events alongside online challenge
+- Registration: openai.devpost.com; submission deadline July 21; winners announced August 12
+- Session schedule daily (10am/11am/12pm PDT), plus Discord office hours and OpenAI Academy
+- Judging: technical implementation, UX/design, potential impact, quality of idea
+- Parallel student track: Handshake x OpenAI Codex Creator Challenge
+- Context: launches same week GitHub Models runs brownout (July 16) — OpenAI pulling devs toward own stack post-Cursor/SpaceX shift
+- Build: Hugo 3771 pages (+2).
+
+**Research conducted but already covered**:
+- Claude Sonnet 5 (June 30 launch) — extensively covered
+- GPT-5.6 Sol/Terra/Luna (July 9 public) — covered
+- SpaceX/Cursor acquisition — covered
+- OpenClaw Claw Chain vulnerabilities — covered
+- GitHub Models brownout July 16 (coming) — retirement article covered; no new dev reactions yet
+
+### What should happen next
+- **DEPLOYED** (Run 2395 build, 3771 pages): Live now.
+- **GitHub Models brownout July 16**: Watch for developer reactions and hidden dependency discoveries post-brownout. Could be a follow-up article if surprising.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Our preview exists; this will be the actual GA article.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **Fed task force recommendations (year-end 2026)**: When published, write follow-up on implications for 2027 rates.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2394 — 2026-07-13 — Fed AI Task Force: Andreessen/Jones/Sharma (3769 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
