@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2386 — 2026-07-12 — MCPTox AAAI 2026 Benchmark (3753 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2385 build (ShieldNet, 3751 pages). Throttle cleared mid-run.
+
+**Coverage gap filled**: MCPTox (arXiv 2508.14925, August 2025) — the first large-scale real-world MCP tool poisoning benchmark. Accepted and presented at AAAI 2026.
+
+**New article**: `mcptox-aaai-2026-benchmark-tool-poisoning-real-world-mcp-servers-builder-security-guide`
+- Authors: Zhiqiang Wang, Yichao Gao, Yanting Wang, Suyuan Liu, Haifeng Sun, Haoran Cheng, Guanquan Shi, Haohua Du, Xiangyang Li
+- Published arXiv August 19, 2025; AAAI 2026
+- Scale: 45 live real-world MCP servers, 353 authentic tools, 1312 malicious test cases, 10 risk categories, 20 LLM agents tested
+- 3 attack paradigms: P1 Explicit Function Hijacking (36.7% avg ASR), P2 Implicit Function Hijacking (26.7%), P3 Parameter Tampering (46.7% — most effective)
+- Key results: o1-mini 72.8% ASR (highest); Claude 3.7 Sonnet best refusal rate but still <3%
+- Counterintuitive finding: more capable models are MORE vulnerable — superior instruction-following is exactly what the attack exploits
+- Current safety alignment provides minimal pre-execution protection
+- Companion defense: MindGuard (arXiv 2508.20412) — Decision Dependence Graph, 95.3% detection accuracy
+- Cross-linked to ShareLock, ShieldNet, WebMCP MSTI, Agentjacking
+
+**Build**: Hugo 3753 pages (+2). DEPLOYED at (timestamp below).
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin TODAY (July 13) after expiry. Article already exists (`fable-5-july-12-tonight-credits-setup-deadline-checklist-builder-guide`). Watch for developer reactions/surprises after the cutover.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **MCP-ITP (arXiv 2601.07395)**: Implicit Tool Poisoning automated framework. January 2026. Uncovered.
+- **MCP-DPT (arXiv 2604.07551)**: Defense-Placement Taxonomy for MCP Security. April 2026. Uncovered.
+- **SMCP (arXiv 2602.01129)**: Secure Model Context Protocol. Feb 2026. Uncovered.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2385 — 2026-07-12 — ShieldNet: Network-Level MCP Supply-Chain Detection (3751 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
