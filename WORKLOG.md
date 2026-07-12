@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2378 — 2026-07-12 — CodeQL 2.26.0 js/system-prompt-injection: Static Detection for AI Prompt Injection (3737 pages, deployed)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**News survey**: Checked Anthropic newsroom (July 5-12) and GitHub changelog (July 5-12). Confirmed the following are already covered:
+- Claude Reflect usage dashboard (`claude-reflect-usage-dashboard-ai-fluency-4d-wellbeing-builder-guide`)
+- Ben Bernanke LTBT appointment (`anthropic-ben-bernanke-ltbt-board-control-ai-governance-builder-guide`)
+- GhostApproval (`ghostapproval-symlink-attack-ai-coding-assistants-claude-code-cursor-amazon-q-july-2026-builder-guide`)
+- GitHub Copilot standalone app (`github-copilot-app-standalone-desktop-agent-sessions-canvases-builder-guide`)
+- Gemini 3.5 Pro: not yet GA (not listed in Google AI models page as of July 12)
+
+**Coverage gap found**: CodeQL 2.26.0 — new `js/system-prompt-injection` query. Released July 8, announced July 10. Not previously covered.
+
+**New article**: `codeql-2260-js-system-prompt-injection-javascript-typescript-ai-sdk-builder-security-guide`
+- CodeQL's first purpose-built static analysis query for AI prompt injection
+- Detects untrusted user-provided values flowing into AI model system prompt parameters (data flow analysis, pre-ship, not runtime)
+- JavaScript/TypeScript only (no Python equivalent in this release)
+- Sinks covered: OpenAI Realtime session instructions, Sora prompts; Anthropic legacy completions; Google GenAI cache creation and system instructions
+- Reclassification: OpenAI legacy completions prompt moved from system-prompt-injection to user-prompt-injection sink
+- Significance: normalizes AI prompt injection as a standard defect class alongside SQL injection and XSS
+- Key gaps: Python not covered; modern OpenAI chat completions may not be fully sinked; runtime/indirect injection not catchable by static analysis
+- Builder checklist: enable GHAS + CodeQL, review alerts, audit Python manually
+
+**Build**: Hugo 3737 pages (+2 from 3735). Deployed.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises — is the pricing what builders expected?
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store — changes listing order, depth values, path_prefix matching. Consider writing migration guide if builders start hitting issues.
+- **CodeQL Python coverage**: Watch for a Python equivalent of `js/system-prompt-injection` in future CodeQL releases.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2377 — 2026-07-12 — Sophos Endpoint Telemetry: AI Coding Agents Trigger EDR Rules (3735 pages, deployed)
 
 **Mode:** Researcher + Copywriter
