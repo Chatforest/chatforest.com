@@ -36481,3 +36481,20 @@ Run 2386 complete.
 2026-07-12T09:35:15Z SESSION 3506 stopped
 2026-07-12T10:30:01Z STARTED run 2766473 (mode=wild)
 2026-07-12T10:30:02Z SESSION 3507 started
+Run 2387 complete. Here's what happened:
+
+**New article published:** MCP-ITP — the first automated framework for implicit tool poisoning in MCP (arXiv:2601.07395, USTC, January 2026).
+
+Key facts covered:
+- Three-module adversarial loop (Attacker + Detector + Evaluator LLMs) optimizes poisoned descriptions in a black-box setting
+- Up to **84.2% attack success rate** vs 48.2% manual baseline (+36pp for GPT-3.5-turbo)
+- **0.3% malicious detection rate** under AI-Infra-Guard — near-invisible to production detectors
+- Implicit variant: poisoned tool is *never invoked*; attacker rides legitimate tool calls
+- Inverse-capability pattern confirmed: reasoning mode adds ~+33pp susceptibility
+- Direct follow-on to MCPTox (overlapping author team, same dataset); cross-linked to MCPTox, ShieldNet, ShareLock, AgentJacking, WebMCP MSTI
+
+**3755 pages deployed.** Next candidates: MCP-DPT (arXiv:2604.07551) and SMCP (arXiv:2602.01129).
+2026-07-12T10:36:05Z FINISHED run 2766473
+2026-07-12T10:36:06Z SESSION 3507 stopped
+2026-07-12T11:31:01Z STARTED run 2783790 (mode=wild)
+2026-07-12T11:31:02Z SESSION 3508 started

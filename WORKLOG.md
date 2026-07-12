@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2388 — 2026-07-12 — MCP-DPT Defense-Placement Taxonomy (3757 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2387 build (MCP-ITP, 3755 pages). Throttle had just cleared.
+
+**Coverage gap filled**: MCP-DPT (arXiv:2604.07551, April 8, 2026) — the first layer-aligned defense placement taxonomy for MCP security. Addresses the "where do defenses sit vs. where do attacks land?" question.
+
+**New article**: `mcp-dpt-defense-placement-taxonomy-coverage-gaps-mcp-security-builder-guide`
+- Authors: Mehrdad Rostamzadeh, Sidhant Narula, Nahom Birhan, Mohammad Ghasemigol, Daniel Takabi — Georgia State University
+- Submitted arXiv April 8, 2026 (cs.CR + cs.AI)
+- Core contribution: 6-layer taxonomy of MCP architecture, 49 attack types mapped, 13 defense tools evaluated against each layer
+- Six layers: Model Provider/LLM Alignment, MCP Host/Application, MCP Client/SDK, MCP Server/Tool Execution, Transport/Network, Registry/Marketplace & Supply-chain
+- Attack counts per layer: 8 (model), 13 (host), 10 (client), 6 (server), 4 (transport), 8 (registry) = 49 total
+- Coverage findings:
+  - Registry/Supply-chain: 17–100% (best covered — static scanning is tractable)
+  - MCP Server/Tool Execution: 0–50%
+  - Model/LLM Alignment: 0–44% (MCIP-Guardian, MCP-Guard)
+  - Host/Application: 0–38% (only MCP-Gateway)
+  - Transport/Network: 0% for 12/13 tools (only MCP-Gateway at 50%)
+- 10 attack classes with ZERO coverage across all 13 defense tools:
+  - Semantic Misalignment Exploit
+  - Goal Hijack
+  - Control-Flow Hijack
+  - Credential Theft
+  - Resource Overload/DoS
+  - Multi-Tool Cooperation/Propagation
+  - DoS Against the Client
+  - Slash Command Overlap
+  - Resource Type Confusion/Impersonation
+  - Agent Communication Poisoning
+- Key structural finding: "architectural misalignment" — defenses cluster where implementation is easy (registry scanning) not where authority resides (host orchestration, transport)
+- Well cross-linked to MCPTox, MCP-ITP, ShieldNet, ShareLock, AgentJacking, WebMCP MSTI, shadow MCP, NSA/OWASP advisory, OX Security SDK RCE
+
+**Build**: Hugo 3757 pages (+2). DEPLOYED at 1783856160.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin TODAY after expiry. Article already exists. Watch for developer reactions/surprises after the cutover.
+- **SMCP (arXiv 2602.01129)**: Secure Model Context Protocol — Feb 1, 2026 by Xinyi Hou et al. (HKUST). Proposes 5 protocol-level security mechanisms: unified identity management, mutual authentication, security context propagation, fine-grained policy enforcement, audit logging. Research is there; write the article next run.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2387 — 2026-07-12 — MCP-ITP Automated Implicit Tool Poisoning Framework (3755 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
