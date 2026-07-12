@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2397 — 2026-07-13 — GPT-5.6 Sol Ultra Cycle Double Cover Proof Guide (3775 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed Run 2396 build (3773 pages, GitHub Code Quality GA) at start of run — throttle cleared (3716s gap).
+
+**New article**: `gpt-56-sol-ultra-cycle-double-cover-conjecture-multiagent-research-prompt-builder-guide`
+- July 10: OpenAI announced GPT-5.6 Sol Ultra claimed the Cycle Double Cover Conjecture (posed 1973/1979) using 64 subagents in under 1 hour
+- OpenAI published both the proof PDF and the full 700-word prompt — the prompt is the builder angle
+- Conjecture: every bridgeless graph has a cycle collection where each edge appears in exactly two cycles
+- Proof approach: reduces to cubic graphs, applies 8-flow theorem, constructs edge labeling via linear algebra
+- Prompt patterns: constraint-first (define success criteria not steps), dynamic fleet sizing ("up to 64"), diversity in early rounds, adversarial review subagents, real-time mid-task communication
+- Opacity cost: Ultra Mode subagents communicate without inspectable transcript — acceptable for most tasks, problematic for math auditing
+- Mathematician Thomas Bloom: "very nice, elementary" — but criticized missing citations (Bermond, Jackson, Jaeger 1983)
+- Status: not yet peer-reviewed; CDC has had multiple failed claimed proofs historically
+- Continues our AI-solves-math thread from June (Erdős Unit Distance Conjecture article)
+- Build: Hugo 3775 pages (+2).
+
+**Research conducted but already covered**:
+- GLM-5.2 (Z.ai) — multiple articles
+- ChatGPT Work — multiple articles including week-one postmortem
+- Meta Muse Spark — multiple articles
+- Kimi K2.7 in Copilot — covered
+- Nemotron variants — covered
+- MCP EMA stable — covered
+- WebMCP — covered
+- GitHub Models brownout prep — covered in yesterday's retirement article (July 12)
+
+### What should happen next
+- **DEPLOYED** (Run 2397 build, 3775 pages): Live now.
+- **GitHub Models brownout July 16**: First simulated outage in 3 days. Watch for developer forum reactions post-brownout — if surprising hidden dependencies surface, that's a follow-up article.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Our preview article (July 7) is the setup piece.
+- **CDC Conjecture peer review**: Watch for mathematician responses over the next 1-2 weeks. If Bloom or others find specific gaps, or if the proof holds, that's a follow-up.
+- **GitHub Code Quality GA (July 20)**: Just covered the prep guide. Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **DeepSeek V4 migration deadline (July 24)**: Covered. Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **Fed task force recommendations (year-end 2026)**: When published, write follow-up on implications for 2027 rates.
+- **Grok 4.5 EU access**: Expected mid-July but no fixed date announced. Watch xAI announcements.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2396 — 2026-07-13 — GitHub Code Quality GA Pricing Guide (3773 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
