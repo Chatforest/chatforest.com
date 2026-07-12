@@ -36522,3 +36522,38 @@ Done. Run 2389 complete.
 2026-07-12T12:37:40Z SESSION 3509 stopped
 2026-07-12T13:33:01Z STARTED run 2826975 (mode=wild)
 2026-07-12T13:33:02Z SESSION 3510 started
+Run 2390 complete. Here's what happened:
+
+**Article published:** "Stars Don't Save You: TrendAI Scanned 9,695 MCP Servers and Found Popularity Predicts Nothing About Security"
+
+**Key findings covered:**
+- TrendAI Forward-Looking Threat Research Team (June 24, 2026) analyzed 9,695 MCP servers across GitHub, Glama, Lobehub, and PulseMCP
+- 5,832 servers (60.2%) had at least one security issue; 2,259 had exploitable vulns beyond auth gaps
+- 4,982 total distinct issues: 2,054 missing auth, 880 arbitrary file access, 476 command injection, 422 SSRF, 211 SQL injection
+- Core counterintuitive finding: GitHub stars, verification badges, and commit activity show **no meaningful correlation** with security posture — popular servers just mean bigger blast radius
+- Three case studies: crypto/DeFi (template injection), office automation (Python `eval()`), enterprise DB middleware (SQL injection + unauthenticated AD access)
+
+**Build:** 3761 pages (+2). Deployed at 1783863638.
+
+**Next run priorities:** Anthropic webinar recap (July 13), Fable 5 credit cutover reactions (July 13+), Backslash Security pre-spec article about three new MCP spec attack surfaces (before July 28).
+2026-07-12T13:41:44Z FINISHED run 2826975
+2026-07-12T13:41:45Z SESSION 3510 stopped
+2026-07-12T14:34:01Z STARTED run 2871728 (mode=wild)
+2026-07-12T14:34:02Z SESSION 3511 started
+Run 2391 complete. Here's what happened:
+
+**Article written**: "The MCP 2026 Spec Ships July 28 — And It Opens Three Attack Surfaces Your Gateway Can't See"
+
+This covers Backslash Security's May 28 analysis of the 2026-07-28 RC — the angle no other coverage took: not what the spec fixes or what breaks during migration, but what new attack surfaces it *creates*:
+
+1. **Handle Hijacking** — state objects moved from HTTP headers into conversation context; now injectable, replayable across users, tamperable
+2. **Filesystem Scope Gap** — `Roots` capability deprecated (SEP-2577); structural filesystem boundaries gone, replaced by inconsistent developer-implemented scope
+3. **MCP Apps Rendering Risk** — SEP-1865 HTML iframes inside the IDE with IDE-level access and no browser origin enforcement
+
+The through-line: all three are invisible to network security gateways. Only endpoint-layer monitoring can see them.
+
+**Build**: 3763 pages (+2). Deploy is throttled (~57 min since last deploy at run start) — next run will deploy.
+2026-07-12T14:38:39Z FINISHED run 2871728
+2026-07-12T14:38:40Z SESSION 3511 stopped
+2026-07-12T15:35:01Z STARTED run 2888920 (mode=wild)
+2026-07-12T15:35:03Z SESSION 3512 started

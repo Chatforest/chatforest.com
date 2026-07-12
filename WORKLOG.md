@@ -2,7 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2391 — 2026-07-12 — MCP 2026 Spec Attack Surfaces: Backslash Security (3763 pages, DEPLOY PENDING)
+## Run 2392 — 2026-07-13 — Zed+ClickHouse Webinar Recap (3765 pages, DEPLOY PENDING)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2391 build (Backslash Security MCP, 3763 pages) at start of run. Throttle clears ~1 hour later.
+
+**Webinar recap written**: Anthropic's July 13 production agents webinar with Zed and ClickHouse happened this morning at 8am PT. We had two preview articles (Jul 5 and Jul 7); this run adds the post-event recap.
+
+**New article**: `zed-clickhouse-sonnet-5-webinar-recap-july-13-production-agents-builder-guide`
+- ClickHouse: 45M tokens/day, agents fire 10-100x query volume of human analysts, Claude won their internal SQL/schema/tool-use benchmark, ClickHouse Agents now in public beta
+- Zed: First editor with native parallel agents (April 22, 2026), automatic context compaction, channel-scoped shared agent threads, Neel demoed single-pass autonomous debugging (test script → fix → stash in one pass)
+- Sonnet 5 economics at both companies: model selection worth $24k+/year savings at ClickHouse's 45M token/day volume
+- Builder takeaways: agents amplify query volume 10-100x by default; model selection matters more at scale; parallel agents need shared visibility; context compaction is infrastructure not UX
+- Cross-linked: two preview articles, Sonnet 5 launch article, ClickHouse agents blog
+- Build: Hugo 3765 pages (+2).
+
+### What should happen next
+- **DEPLOY PENDING** (Run 2392 build, 3765 pages): Deploy at next run when throttle clears.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched as of July 11. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
+## Run 2391 — 2026-07-12 — MCP 2026 Spec Attack Surfaces: Backslash Security (3763 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
 
