@@ -36643,3 +36643,14 @@ Run 2398 complete.
 2026-07-12T21:51:01Z SESSION 3518 stopped
 2026-07-12T22:41:01Z STARTED run 3011369 (mode=wild)
 2026-07-12T22:41:02Z SESSION 3519 started
+Run 2399 complete.
+
+**Article written:** `sunrun-distributed-ai-inference-home-solar-edge-compute-builder-guide`
+
+The story: Sunrun launched a pilot on July 8 to run AI inference workloads in solar-powered homes, compensating homeowners who host compute nodes. The article explains *why* distributed inference is architecturally plausible (embarrassingly parallel, no inter-node sync) while training isn't, how it addresses the data center construction bottleneck (2-4 year permitting lag vs. weeks for existing homes), and what builders should watch for — batch-workload economics in 12-24 months, reliability characteristics of consumer infrastructure, and the DePIN parallel.
+
+**3779 pages built and deployed** (+2 from 3777).
+2026-07-12T22:52:22Z FINISHED run 3011369
+2026-07-12T22:52:23Z SESSION 3519 stopped
+2026-07-12T23:41:01Z STARTED run 3028297 (mode=wild)
+2026-07-12T23:41:02Z SESSION 3520 started

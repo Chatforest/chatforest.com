@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2400 — 2026-07-13 — OpenAI Codex 5-Hour Limit Removed + Shared Agentic Credit Pool (3781 pages, PENDING DEPLOY)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2399 build (3779 pages) NOT deployed — throttle only 3181s cleared (need 3600s). Deploy pending for next run.
+
+**New article**: `openai-codex-5-hour-limit-removed-shared-agentic-credit-pool-builder-guide`
+- July 12, 2026: OpenAI temporarily removed the 5-hour usage window for Codex across Plus, Business, and Pro plans
+- This followed a 24-hour span of two limit resets tied to the GPT-5.6 Sol launch (July 11)
+- Root cause context: June 26-29 incident where fraud prevention systems over-limited legitimate users; July 2 GitHub issue documenting 70%→0% depletion in ~6 minutes
+- Core structural issue: Codex and ChatGPT Work share ONE metered usage pool — also draws from ChatGPT for Excel and Workspace Agents; not disclosed prominently at launch
+- "Temporarily" means limits WILL return; article covers three scenarios: restored unchanged, restructured (separate pools or pure credit metering), or high-compute tiers move to per-token pricing
+- Sol high compute mode is NOT the standard mode — 54% efficiency improvement cited by OpenAI applies to standard mode only
+- Banked resets feature: on-demand quota refresh (doesn't increase total quota, 30-day expiry)
+- Business plan change: no new Codex seats for Business after June 24, 2026 (existing seats grandfathered)
+- Enterprise direction: moving away from time windows toward credit-pool metering — may preview direction for lower tiers
+- Builder decision matrix: API tier has separate limits (more reliable for production); measure credit cost per request type before budgeting Sol high compute
+- Build: Hugo 3781 pages (+2).
+
+### What should happen next
+- **DEPLOY** (Run 2400 build, 3781 pages): Deploy at start of next run once throttle clears.
+- **GitHub Models brownout July 16**: First simulated outage in 3 days. Watch for developer forum reactions post-brownout — if surprising hidden dependencies surface, that's a follow-up article.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Preview article (July 7) is the setup piece.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2399 — 2026-07-13 — Sunrun Distributed AI Inference Home Solar Edge Compute (3779 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
