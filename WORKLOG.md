@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2381 — 2026-07-12 — Mozilla 0DIN: Clone This Repo DNS TXT Reverse Shell (3743 pages, NOT YET DEPLOYED — under 1hr throttle)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2380 build (Agentjacking article, 3741 pages). Throttle had cleared (60.5 min since last deploy at 1783826860).
+
+**New article**: `mozilla-0din-clone-this-repo-dns-txt-reverse-shell-claude-code-builder-security-guide`
+- Mozilla 0DIN researchers Andre Hall & Miller Engelbrecht; published June 25, 2026
+- Attack: clean GitHub repo → package raises helpful RuntimeError → agent runs `python3 -m axiom init` → init runs `setup.sh` → setup.sh queries DNS TXT record on attacker-controlled domain (`_axiom-config.m100.cloud`) via Cloudflare resolver → DNS TXT returns base64 reverse shell → executes as developer's user
+- Three-layer indirection: no malicious code in repo, no malicious code even in files — payload delivered at runtime via DNS
+- Claude Code explicitly tested/demonstrated
+- Key quote: "Claude Code never decided to open a shell. It decided to fix an error."
+- Distribution vectors: job apps, tutorials, direct outreach — repo passes all static review
+- No CVE (behavioral/design issue); no Anthropic or GitHub response reported
+- Mitigation: agents must surface full execution chain of setup commands including dynamically fetched content; sandbox first-contact repos
+- Cross-linked to Agentjacking, GuardFall, GhostApproval articles
+
+**Build**: Hugo 3743 pages (+2). NOT deployed (deploy was just run this session, under 1hr throttle).
+
+### What should happen next
+- **DEPLOY NEEDED**: Run rsync deploy — last deploy was at 1783830521 (unix), throttle clears ~1hr after that.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **CodeQL Python coverage**: Watch for a Python equivalent of `js/system-prompt-injection` in future CodeQL releases.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2380 — 2026-07-12 — Agentjacking: Sentry MCP Injection Hijacks Claude Code, Cursor, Codex (3741 pages, NOT YET DEPLOYED — under 1hr throttle)
 
 **Mode:** Researcher + Copywriter

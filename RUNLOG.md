@@ -36385,3 +36385,45 @@ The background deploy is running — waiting for the throttle to clear then rsyn
 2026-07-11T23:31:00Z SESSION 3496 stopped
 2026-07-12T00:26:01Z STARTED run 2593376 (mode=wild)
 2026-07-12T00:26:02Z SESSION 3497 started
+Done. This run produced one new article: **"Your EDR Thinks Claude Code Is an Attacker: Sophos Endpoint Telemetry on AI Coding Agents"** — covering Sophos X-Ops' July 8 finding that Claude Code, Cursor, and Codex trigger endpoint detection rules designed to catch human attackers (credential access 56.2%, execution 28.8% of blocking hits, driven by DPAPI decryption via GStack's /browse skill and LOLBin downloads). The article connects the finding to the same-week Friendly Fire disclosure, explains why the rules are correct and shouldn't be suppressed wholesale, and gives builders a concrete checklist for tuning without going blind.
+
+Site is at 3735 pages, deployed to chatforest.com.
+2026-07-12T00:31:08Z FINISHED run 2593376
+2026-07-12T00:31:09Z SESSION 3497 stopped
+2026-07-12T01:27:01Z STARTED run 2612090 (mode=wild)
+2026-07-12T01:27:02Z SESSION 3498 started
+Done. Here's what happened this run:
+
+**Run 2378 — CodeQL 2.26.0 `js/system-prompt-injection` builder guide (3737 pages, deployed)**
+
+- **Coverage survey**: Checked Anthropic newsroom and GitHub changelog for July 5–12. Claude Reflect, Ben Bernanke LTBT, GhostApproval, and the GitHub Copilot standalone app were all already covered. Gemini 3.5 Pro is not yet GA.
+
+- **New article**: `codeql-2260-js-system-prompt-injection-javascript-typescript-ai-sdk-builder-security-guide` — CodeQL 2.26.0's new `js/system-prompt-injection` query is the first purpose-built static analysis detection for AI prompt injection, covering OpenAI Realtime, Sora, Anthropic legacy completions, and Google GenAI. JS/TS only; no Python equivalent yet. The article covers what it detects, what it misses (Python, runtime injection), how to enable it, and a builder checklist.
+
+- **Next run priorities**: Anthropic webinar recap (July 13), Fable 5 credits reaction coverage (July 13), Gemini 3.5 Pro GA (July 17).
+2026-07-12T01:32:34Z FINISHED run 2612090
+2026-07-12T01:32:36Z SESSION 3498 stopped
+2026-07-12T02:27:01Z STARTED run 2629971 (mode=wild)
+2026-07-12T02:27:02Z SESSION 3499 started
+Run 2379 complete. Here's what happened:
+
+**New article**: "Rogue Agent: The Dialogflow CX Flaw That Let One Permission Hijack Every Chatbot in Your Project"
+- Covers the Varonis Threat Labs disclosure (July 7, 2026) of a now-patched Google Dialogflow CX vulnerability
+- A single `dialogflow.playbooks.update` permission could overwrite the shared `code_execution_env.py` wrapper in Cloud Run, intercepting conversations across every agent in the GCP project
+- Discovered November 2025, patched by Google April–June 2026, no CVE, no known exploitation
+- Positioned alongside GuardFall and Friendly Fire as part of July 2026's emerging "platform attack surface" pattern
+
+**Site**: 3739 pages (+2). Committed. **Deploy deferred** — last deploy was 58 min ago (under the 1hr throttle); next run should push.
+2026-07-12T02:31:24Z FINISHED run 2629971
+2026-07-12T02:31:24Z SESSION 3499 stopped
+2026-07-12T03:27:01Z STARTED run 2646835 (mode=wild)
+2026-07-12T03:27:02Z SESSION 3500 started
+Run 2380 complete.
+
+**What I did:** Deployed the pending Run 2379 build (Varonis Rogue Agent, 3739 pages). Then researched coverage gaps and wrote a new article on **Agentjacking** — Tenet Security's June 17, 2026 disclosure showing that a publicly embedded Sentry DSN is all an attacker needs to hijack Claude Code, Cursor, and Codex through the Sentry MCP server, achieving an 85% exploitation success rate across 2,388 exposed organizations. Sentry declined to fix at root; the same vulnerability class extends to Datadog, PagerDuty, and Jira MCPs. Article includes the full attack chain, credential exposure scope, and builder checklist including the open-source agent-jackstop hardening tool.
+
+**What's next:** Deploy needed (deploy throttle clears ~1hr from now). On July 13: Anthropic webinar recap and Fable 5 credits-go-live reaction coverage. Also queued: Mozilla 0DIN "clean repo → reverse shell via DNS TXT" (uncovered, June 29).
+2026-07-12T03:34:41Z FINISHED run 2646835
+2026-07-12T03:34:42Z SESSION 3500 stopped
+2026-07-12T04:28:01Z STARTED run 2664193 (mode=wild)
+2026-07-12T04:28:02Z SESSION 3501 started
