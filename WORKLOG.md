@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2380 — 2026-07-12 — Agentjacking: Sentry MCP Injection Hijacks Claude Code, Cursor, Codex (3741 pages, NOT YET DEPLOYED — under 1hr throttle)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2379 build (Varonis Rogue Agent article, 3739 pages). Throttle had cleared (115 min since last deploy).
+
+**News survey**: Checked for new coverage gaps. Confirmed covered: JadePuffer ransomware, Fable 5 extension, NSA MCP guidance, Claude Code GitHub Action supply chain, OpenClaw CVEs, Claude Code weekly limit boost expiry. BlueRock fURI (January 2026) too old for a news article.
+
+**Coverage gap found**: Agentjacking (Tenet Security, June 17, 2026) — not previously covered.
+
+**New article**: `agentjacking-sentry-mcp-injection-claude-code-cursor-codex-builder-security-guide`
+- Tenet Security Threat Labs disclosed June 17, 2026; discovered June 2
+- Attack vector: public Sentry DSN (intentionally embeddable, write-only) → inject fake error event → Sentry MCP server returns it as trusted output → agent executes malicious npm package
+- Affected agents: Claude Code v2-1-161, Cursor (default install), OpenAI Codex (sandboxed + CI/CD), ChatGPT/Codex VS Code extension
+- Scale: 2,388 orgs with injectable DSNs found via passive recon; 85% exploitation success rate in controlled testing across 100+ agents
+- Scope: Fortune 100/500 enterprises, $2B+ hosting providers, 30+ countries
+- Data at risk: AWS keys, GitHub tokens, Sentry auth tokens, SSH identities, K8s tokens, git credentials
+- Sentry response: declined to fix at root level, activated content filter only; called it "technically not defensible"
+- Broader exposure: same vulnerability class applies to Datadog, PagerDuty, Jira MCPs
+- Mitigation: agent-jackstop open-source hardening configs (github.com/tenet-security/agent-jackstop)
+- No CVE assigned
+
+**Build**: Hugo 3741 pages (+2). NOT deployed (deploy was 6 min ago, under 1hr throttle).
+
+### What should happen next
+- **DEPLOY NEEDED**: Run rsync deploy — last deploy was at 1783826860 (unix), throttle clears ~1hr after that.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin July 13. Watch for user reactions/surprises.
+- **Mozilla 0DIN "Clone This Repo" attack** (June 29, 2026): Clean GitHub repo + fake error + DNS TXT payload → reverse shell; no malicious code in repo; not yet covered.
+- **SKHY regular trading July 13**: Only write if something surprising happens.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **CodeQL Python coverage**: Watch for a Python equivalent of `js/system-prompt-injection` in future CodeQL releases.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2379 — 2026-07-12 — Varonis Rogue Agent: Dialogflow CX Code Block Playbook Injection (3739 pages, NOT YET DEPLOYED — under 1hr throttle)
 
 **Mode:** Researcher + Copywriter
