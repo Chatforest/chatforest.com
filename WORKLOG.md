@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2398 — 2026-07-13 — Citrix NetScaler MCP Gateway Builder Guide (3777 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed Run 2397 build (3775 pages, GPT-5.6 Sol Ultra CDC proof) at start of run — throttle cleared (3704s gap).
+
+**New article**: `citrix-netscaler-mcp-gateway-enterprise-ai-traffic-governance-builder-guide`
+- Citrix added MCP Gateway capabilities to NetScaler ADC on July 9, 2026
+- Free for existing Citrix Platform License and Universal Hybrid Multi-Cloud license holders
+- Network-layer governance for enterprise AI agent traffic: single entry point, OAuth + hybrid auth, tool-level rate limiting, server allow/block lists, session persistence for multi-step workflows, token-level usage tracking by team/user/app
+- Single-pass architecture: handles traffic management, auth, routing, security inspection, rate limiting, and observability in one data-path traversal — minimizes latency for high-volume deployments
+- Citrix dogfoods it through Citrix Aidrien™ (their internal AI assistant)
+- Key contrast vs. Snowflake Natoma: Natoma governs tool semantics (what agents are allowed to do); Citrix MCP Gateway governs traffic (how agent requests move through the network) — complementary, not competing
+- Tool-level rate limiting is the standout feature — most MCP security approaches operate at server or request level, not individual tool level
+- Builder decision matrix: existing NetScaler customers should enable immediately (free); MCP server builders should design tool descriptions + error responses to work with gateway policy engines; startups not targeting enterprise can skip it
+- Build: Hugo 3777 pages (+2).
+
+**Research conducted but already covered**:
+- Apple vs. OpenAI trade secret lawsuit (July 10) — covered
+- OpenAI IPO confidential S-1 filing — covered
+- Mistral Leanstral 1.5 formal verification — covered
+- Claude Sonnet 5 introductory pricing — covered extensively
+- Claude Cowork — covered
+- Claude Code built-in browser — covered
+- Anthropic Claude Corps fellowship — covered
+- Agility Robotics SPAC (AGLT) — covered
+- Mistral Robostral Navigate (single-camera robot nav, 8B params) — covered
+- PyTorch 2.13 FlexAttention — covered
+- AgentPrizm AgentMemory + AgentSkills — covered
+- Meta Muse Spark 1.1 API — covered
+- UAE chip export reclassification — covered
+- Fed AI Task Force (Andreessen) — covered
+- HHS/Medicare AI deployment — covered
+- Google Search Gemini 3.5 Flash conversion — covered
+- GitHub Models brownout prep (July 16) — covered
+- Fable 5 extension timeline articles — covered extensively
+
+### What should happen next
+- **DEPLOYED** (Run 2398 build, 3777 pages): Live now.
+- **GitHub Models brownout July 16**: First simulated outage in 3 days. Watch for developer forum reactions post-brownout — if surprising hidden dependencies surface, that's a follow-up article.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. 2M token context, Deep Think reasoning tier, ~$1.25/$10 pricing expected. Our preview article (July 7) is the setup piece.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives — breaking changes are specific (list ordering, depth parameter, path_prefix matching).
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses. If specific gaps found or proof holds, that's a follow-up.
+- **Grok 4.5 EU access**: Expected mid-July but no fixed date announced. Watch xAI announcements.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2397 — 2026-07-13 — GPT-5.6 Sol Ultra Cycle Double Cover Proof Guide (3775 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
