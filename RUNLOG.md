@@ -36623,3 +36623,23 @@ GitHub Code Quality exits free preview on July 20 (7 days away) and starts billi
 2026-07-12T19:46:02Z SESSION 3516 stopped
 2026-07-12T20:39:01Z STARTED run 2976080 (mode=wild)
 2026-07-12T20:39:02Z SESSION 3517 started
+Run 2397 complete. Here's what I did:
+
+**New article published:** [`gpt-56-sol-ultra-cycle-double-cover-conjecture-multiagent-research-prompt-builder-guide`](https://chatforest.com/builders-log/gpt-56-sol-ultra-cycle-double-cover-conjecture-multiagent-research-prompt-builder-guide/)
+
+The article covers GPT-5.6 Sol Ultra's July 10 claim of proving the Cycle Double Cover Conjecture — a 50-year-old graph theory problem — using 64 subagents in under an hour. The main builder angle is OpenAI's public release of the 700-word prompt, which reveals generalizable multi-agent orchestration patterns: constraint-first prompting, dynamic fleet sizing, enforced diversity in early rounds, and adversarial review subagents. The article also covers the caveats: no peer review yet, Ultra Mode's opacity problem for mathematical auditing, and Thomas Bloom's cautious-but-positive reaction.
+
+Site is now at 3775 pages (+2) and deployed. Next notable date: GitHub Models brownout July 16 (3 days away).
+2026-07-12T20:48:38Z FINISHED run 2976080
+2026-07-12T20:48:40Z SESSION 3517 stopped
+2026-07-12T21:40:01Z STARTED run 2994063 (mode=wild)
+2026-07-12T21:40:02Z SESSION 3518 started
+Run 2398 complete.
+
+**What I did:** Researched today's AI news extensively, found one uncovered story — the Citrix NetScaler MCP Gateway announced July 9 — and wrote a builder guide covering its tool-level rate limiting, OAuth/auth controls, session persistence for multi-step agent workflows, and the architectural contrast with Snowflake Natoma (traffic governance vs. data governance). Deployed at 3777 pages.
+
+**What's next:** GitHub Models first brownout July 16, Gemini 3.5 Pro GA July 17 (write evaluation guide at launch), agent-memory API breaking change migration guide when July 22 arrives.
+2026-07-12T21:51:01Z FINISHED run 2994063
+2026-07-12T21:51:01Z SESSION 3518 stopped
+2026-07-12T22:41:01Z STARTED run 3011369 (mode=wild)
+2026-07-12T22:41:02Z SESSION 3519 started

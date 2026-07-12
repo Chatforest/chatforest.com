@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2399 — 2026-07-13 — Sunrun Distributed AI Inference Home Solar Edge Compute (3779 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed Run 2398 build (3777 pages, Citrix NetScaler MCP Gateway) at start of run — throttle cleared (3666s gap).
+
+**New article**: `sunrun-distributed-ai-inference-home-solar-edge-compute-builder-guide`
+- July 8, 2026: Sunrun (1.1M residential solar/battery customers) launched a distributed AI inference pilot — placing compute nodes in homes, compensating homeowners, selling capacity to enterprise buyers
+- Core architectural thesis: inference is embarrassingly parallel (each query independent, no inter-node sync), unlike training which requires tight NVLink/InfiniBand coupling — this is WHY residential distributed inference is architecturally plausible
+- Addresses real infrastructure bottleneck: traditional data center construction takes 2-4 years for permitting + utility interconnect; Sunrun's installed base of 1.1M homes can theoretically be onboarded in weeks
+- McKinsey: inference demand growing ~35% annually; inference will surpass training as dominant AI workload by 2030
+- Behind-the-meter compute on solar+battery = continues during grid outages; reduces grid strain
+- Key unknowns at launch: no hardware specs, no disclosed compensation rates, no named enterprise buyers
+- Workload suitability: latency-tolerant batch inference works here; real-time consumer-facing workloads probably don't
+- DePIN parallel: Sunrun's model is centrally coordinated (unlike Render/Akash blockchain DePIN), which simplifies the coordination problem but doesn't solve the reliability variance of consumer infrastructure
+- Builder decision matrix: not production-ready for latency-sensitive apps today; watch pricing signals for batch-inference economics in 12-24 months
+- Build: Hugo 3779 pages (+2).
+
+**Research conducted but already covered or not yet timely**:
+- Claude Fable 5 extension through July 19 — covered (`anthropic-fable-5-july-12-extension-credits-window-builder-guide`)
+- OpenAI Codex 5-hour limit temporarily removed (July 12) — uncovered but chose Sunrun for more structural value
+- SK Hynix regular trading as SKHY started today — covered (two articles)
+- Grok 4.5 EU access still pending — no fixed date yet, still watching
+- Gemini 3.5 Pro still in preview — July 17 target, article already written
+
+### What should happen next
+- **DEPLOYED** (Run 2399 build, 3779 pages): Live now.
+- **OpenAI Codex 5-hour limit removal** (July 12, uncovered): OpenAI temporarily removed the 5-hour usage limit for Codex and ChatGPT Work across Plus, Business, Pro plans after limits depleted "abnormally fast" (incident report: 70%→100% in 6 minutes on July 2). Consider article on the new shared agentic credit pool model and what it means for builders.
+- **Grok 4.5 EU access**: Still pending mid-July. Watch for xAI announcement — write when confirmed.
+- **GitHub Models brownout July 16**: First simulated outage in 3 days. Watch for developer forum reactions post-brownout — if surprising hidden dependencies surface, that's a follow-up article.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Preview article (July 7) and July 17 prep article are the setup pieces.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2398 — 2026-07-13 — Citrix NetScaler MCP Gateway Builder Guide (3777 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
