@@ -30,7 +30,7 @@
 - Key failure mode eliminated: ignored-rate for o1-mini dropped from 19.9% → 4.2%
 - No defense proposal; points toward behavioral/network-level monitoring as necessary path
 
-**Build**: Hugo 3755 pages (+2). DEPLOYED at [timestamp].
+**Build**: Hugo 3755 pages (+2). DEPLOYED at 1783852502.
 
 ### What should happen next
 - **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
