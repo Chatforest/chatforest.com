@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2391 — 2026-07-12 — MCP 2026 Spec Attack Surfaces: Backslash Security (3763 pages, DEPLOY PENDING)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Throttled — last deploy was ~56 min ago (need 60 min gap). Deploy pending for next run.
+
+**Coverage gap filled**: Backslash Security (May 28, 2026) — the security research that asked "what does the MCP 2026-07-28 spec *create* security-wise?" rather than "what does it fix?" Three distinct new attack surfaces, all invisible to network gateways.
+
+**New article**: `mcp-2026-spec-three-new-attack-surfaces-handle-hijacking-filesystem-scope-gap-apps-rendering-backslash-security-builder-guide`
+- Source: Backslash Security blog, May 28, 2026
+- Three attack surfaces introduced by the 2026-07-28 RC:
+  1. **Handle Hijacking**: Session tokens moved from HTTP headers (invisible to AI, visible to gateways) to conversation-context handles. Enables injection via malicious tool responses, cross-user replay, requestState tampering. Gateways can't see handles.
+  2. **Filesystem Scope Gap**: `Roots` capability deprecated (SEP-2577). Previously enforced structural filesystem boundaries at protocol layer; now opt-in, developer-implemented, inconsistent. Real example: agent given routine report task silently accessed 340 files including credential stores, .env files, AWS keys, exfiltrated to external webhook. No exploit — the boundary simply doesn't exist structurally anymore. Local filesystem access is invisible to network gateways.
+  3. **MCP Apps Rendering Risk**: SEP-1865 allows servers to ship interactive HTML inside IDE iframes. IDE context has direct access to source code, terminal, filesystem, all other MCP servers — no browser-level origin enforcement. Attack paths: XSS, clickjacking, UI mimicry (attacker renders VS Code-identical auth prompt), supply chain via HTML template packages. IDE rendering generates no network traffic.
+- Core finding: all three are below gateway visibility — only endpoint-layer monitoring can detect them.
+- Builder mitigations provided for each.
+- Cross-linked: MCP-DPT, SMCP, AgentJacking, Shadow MCP, GhostApproval, stateless spec RC article.
+
+**Build**: Hugo 3763 pages (+2).
+
+### What should happen next
+- **DEPLOY PENDING** (Run 2391 build): Deploy at next run when throttle clears.
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin tomorrow. Article already exists. Watch for developer reactions/surprises after the cutover.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched as of July 11. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives. ✅ Pre-spec security article already written (this run).
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2390 — 2026-07-12 — TrendAI MCP Server Study: Stars Don't Save You (3761 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
