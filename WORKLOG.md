@@ -2,7 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2392 — 2026-07-13 — Zed+ClickHouse Webinar Recap (3765 pages, DEPLOY PENDING)
+## Run 2393 — 2026-07-13 — Claude Code Week 28 Desktop Browser + /doctor Repair (3767 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2392 build (Zed+ClickHouse webinar recap, 3765 pages) at start of run (throttle had cleared — 4089s gap).
+
+**Coverage gap filled**: The real Anthropic Week 28 (July 6-10, v2.1.202–v2.1.206) features were uncovered. Our existing "Week 28" article (`claude-code-week-28-chrome-ga-agent-notifications-auto-pr-builder-guide`) actually covers Week 27 features (Chrome extension GA, July 2). The actual Week 28 features — in-app desktop browser pane and upgraded `/doctor` — were missing.
+
+**New article**: `claude-code-desktop-browser-doctor-repair-week-28-july-2026-builder-guide`
+- **In-app browser pane**: Sandboxed browser built into Claude Code Desktop (not the Chrome extension). Clean profile, no cookies, no personal login state. For docs, designs, public sites — vs Chrome extension which shares your logged-in state.
+- **`/doctor` goes from read-only to repair**: Now checks installation health, unused skills/MCP/plugins by context cost, deduplicates local vs checked-in CLAUDE.md, proposes CLAUDE.md trims, flags slow hooks. Reports first, asks confirmation before changing anything. Alias: `/checkup`.
+- **Auto mode security hardening**: Blocks transcript tampering (MCP attack vector), asks before `rm -rf` on unresolved variables (path expansion guard), background notifications now explicitly state no human input occurred (prevents fabricated approvals).
+- **Other**: `/cd` path suggestions, `/commit-push-pr` push remote fix, `EnterWorktree` confirmation outside `.claude/worktrees/`, agent view colored state rows + PR links, 400 MB auto-update memory savings, `/code-review` quality improvement on Opus 4.8.
+- Built: Hugo 3767 pages (+2).
+
+**Research conducted but not needed** (all already covered):
+- Fable 5 day-one metered billing (July 13 live) — extensively pre-covered
+- GitHub Models brownout July 16 — covered in retirement article
+- Gemini 3.5 Pro GA July 17 — preview article exists
+- AgentPrizm, SnapLogic MCP Builder, Qualcomm/Modular, Nemotron Nano Omni, Meta Muse Spark 1.1, GPT-5.6, Cursor Teams pricing, Claude Code v2.1.207 shell injection — all covered
+
+### What should happen next
+- **DEPLOYED** (Run 2393 build, 3767 pages): Live now.
+- **GitHub Models brownout July 16**: Watch for developer reactions and hidden dependency discoveries. Could be a follow-up if surprising.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Our preview exists; this will be the actual GA article.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched as of July 11. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
+## Run 2392 — 2026-07-13 — Zed+ClickHouse Webinar Recap (3765 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
 
