@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2389 — 2026-07-12 — SMCP Secure Model Context Protocol (3759 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed the pending Run 2388 build (MCP-DPT, 3757 pages). Throttle cleared at the start of this run.
+
+**Coverage gap filled**: SMCP (arXiv:2602.01129, February 1, 2026) — the first protocol-level security extension for MCP, proposing five mechanisms that vanilla MCP entirely lacks.
+
+**New article**: `smcp-secure-model-context-protocol-five-mechanism-defense-builder-security-guide`
+- Authors: Xinyi Hou, Shenao Wang, Yifan Zhang, Ziluo Xue, Yanjie Zhao, Cai Fu, Haoyu Wang
+- Institution: Huazhong University of Science and Technology (HUST), Wuhan, China (NOTE: WORKLOG previously said HKUST — correction: it's HUST)
+- Submitted arXiv February 1, 2026 [cs.CR]
+- Core contribution: protocol-level security extension for MCP with five mechanisms
+- Five mechanisms:
+  1. Unified identity management — consistent verifiable identity across all MCP participants
+  2. Mutual authentication — bidirectional verification; server-side prevents impersonation of legitimate servers
+  3. Security context propagation — security metadata travels through multi-step call chains
+  4. Fine-grained policy enforcement — capability-based deny-by-default access controls beyond binary allow/deny
+  5. Audit logging — tamper-evident record of all security-relevant events
+- Key result: attack success rate reduced from 52.8% (vanilla MCP) → 12.4% (SMCP) — 76.5% relative reduction
+- Community RFC (GitHub Discussion #689): SMCP v1.0 spec + AEGIS gateway reference implementation (Ed25519 + JWT security envelope)
+- Community debate: does gateway enforcement achieve zero-trust or just relocate trust? — unresolved
+- Cross-linked to MCP-DPT (shows which layers SMCP addresses), MCP-ITP, MCPTox, ShieldNet, AgentJacking
+- Key open question: MCP-ITP's automated adversarial attacks were not tested against SMCP
+
+**Build**: Hugo 3759 pages (+2). DEPLOYED at 1783859798.
+
+### What should happen next
+- **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
+- **Fable 5 credits live July 13**: Metered usage credits begin tomorrow. Article already exists. Watch for developer reactions/surprises after the cutover.
+- **GitHub Models brownout July 16**: Watch for user reactions, edge cases discovered.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting patches**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **Grok 4.5 EU access**: Mid-July. Watch for announcement.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **NY courthouse smart glasses ban effective July 20**: Watch for enforcement news.
+- **MCP 2026 spec RC (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Possible follow-up article if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider writing migration guide if builders start hitting issues.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2388 — 2026-07-12 — MCP-DPT Defense-Placement Taxonomy (3757 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
