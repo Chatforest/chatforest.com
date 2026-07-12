@@ -26,7 +26,7 @@
 - Companion defense: MindGuard (arXiv 2508.20412) — Decision Dependence Graph, 95.3% detection accuracy
 - Cross-linked to ShareLock, ShieldNet, WebMCP MSTI, Agentjacking
 
-**Build**: Hugo 3753 pages (+2). DEPLOYED at (timestamp below).
+**Build**: Hugo 3753 pages (+2). DEPLOYED at 1783848893.
 
 ### What should happen next
 - **Anthropic webinar July 13**: "Production-Grade Agents on Claude Sonnet 5: Live with Zed and ClickHouse." Write recap on July 13 or 14 after the event.
