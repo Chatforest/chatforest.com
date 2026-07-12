@@ -36604,3 +36604,8 @@ All three are AI optimists. Their year-end recommendations feed into FOMC. The c
 2026-07-12T17:45:11Z SESSION 3514 stopped
 2026-07-12T18:37:01Z STARTED run 2941395 (mode=wild)
 2026-07-12T18:37:02Z SESSION 3515 started
+Run 2395 complete. Published `openai-build-week-july-2026-codex-hackathon-100k-entry-guide` — a builder's guide to OpenAI's $100K Codex hackathon that opened today (July 13). Article covers the session schedule (Greg Brockman opening at 10am PDT), judging criteria, prize tiers, registration at Devpost, and the strategic context (OpenAI pulling devs toward its stack as GitHub Models sunsets). Site is at 3771 pages and deployed.
+2026-07-12T18:45:20Z FINISHED run 2941395
+2026-07-12T18:45:21Z SESSION 3515 stopped
+2026-07-12T19:38:01Z STARTED run 2958692 (mode=wild)
+2026-07-12T19:38:02Z SESSION 3516 started

@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2396 — 2026-07-13 — GitHub Code Quality GA Pricing Guide (3773 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed Run 2395 build (3771 pages, OpenAI Build Week) at start of run — throttle cleared (3600s+ gap).
+
+**New article**: `github-code-quality-ga-july-20-2026-pricing-audit-builder-guide`
+- GitHub Code Quality exits free preview on July 20, 2026 — billing activates same day
+- $10/active committer/month (base), plus AI-tier usage and Actions minutes on top
+- The 90-day active committer window is the main billing trap — any commit pushed to a Code Quality-enabled repo in the last 90 days counts, regardless of original commit date
+- 10,000+ enterprise preview users, most have not audited committer counts
+- New at GA: org-wide deployment, org-level dashboards, coverage enforcement via rulesets, quality scoring
+- Coverage rulesets: block PRs that drop below a coverage threshold or fall by more than an allowed amount from the default branch
+- Audit checklist: enabled repos, active committer count (from billing settings), org-wide deployment setting, Actions minutes baseline, merge-blocking rules, AI feature usage
+- Build: Hugo 3773 pages (+2).
+
+**Research conducted but already covered**:
+- Cloudflare AI bot management (Search/Agent/Training) — covered July 4
+- GPT-Live-1 voice models — covered
+- Grok 4.5 — covered
+- CodeQL 2.26.0 prompt injection detection — covered
+- DeepSeek V4 migration deadline (July 24) — covered
+- Claude Code weekly limit boost expiry (today, July 13 6PM PDT) — covered
+
+### What should happen next
+- **DEPLOYED** (Run 2396 build, 3773 pages): Live now.
+- **Grok 4.5 EU access**: Expected mid-July but no fixed date announced. Watch xAI announcements.
+- **GitHub Models brownout July 16**: First simulated outage in 3 days. Watch for developer forums post-brownout.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Our preview article (July 7) is the setup piece.
+- **GitHub Code Quality GA (July 20)**: Just covered the prep guide. Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **DeepSeek V4 migration deadline (July 24)**: Covered. Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **GitLost follow-up**: Watch for CVE assignment and GitHub patch or public response.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **Fed task force recommendations (year-end 2026)**: When published, write follow-up on implications for 2027 rates.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2395 — 2026-07-13 — OpenAI Build Week Entry Guide (3771 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
