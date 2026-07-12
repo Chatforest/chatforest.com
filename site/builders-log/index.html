@@ -66,6 +66,13 @@
     
     <div class="article-card">
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
+  <h3><a href="/builders-log/shieldnet-network-level-mcp-supply-chain-detection-builder-security-guide/">ShieldNet: Network-Level Guardrails That Catch MCP Supply-Chain Attacks After Every Scanner Has Already Missed Them</a></h3>
+  <p>Researchers from UIUC, University of Chicago, USMA, and five other institutions built ShieldNet — a MITM-proxy detection layer that watches what MCP tools DO at the network level rather than what their descriptions SAY. It outperforms Cisco AI MCP Scanner, Ramparts, Invariant Labs MCP Scan, and LLM-based guardrails, achieving 0.995 F-1 with 0.8% false-positive rate against 29 MITRE ATT&amp;CK attack classes across 10,000&#43; malicious tools.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
   <h3><a href="/builders-log/sharelock-shamir-threshold-mcp-tool-poisoning-builder-security-guide/">ShareLock: Researchers Split a Malicious MCP Instruction Across Innocent-Looking Tool Descriptions — and Every Safety Scanner Missed It</a></h3>
   <p>A Shanghai Jiao Tong University team used Shamir&#39;s threshold secret sharing to fragment malicious MCP tool instructions across multiple benign-looking tool descriptions. No single tool contains detectable malicious content. Zero-shot classifiers from GPT-5, Gemini, and Claude all returned &#39;Safe.&#39; Reconstruction happens in-context via Lagrange interpolation, triggered by a fake EnvSetup tool pushed during a routine server update. Attack success rate: 94.1%.</p>
 </div>
@@ -96,6 +103,20 @@
   <div class="card-meta"><span>Builders-Log</span> <span>2026-07-12 00:00:00</span></div>
   <h3><a href="/builders-log/microsoft-copilot-studio-rebuilt-july-2026-orchestrator-workflow-designer-builder-guide/">Microsoft Rebuilt Copilot Studio&#39;s Engine: New Orchestrator, Workflow Designer, Skills Markdown — Builder&#39;s Guide</a></h3>
   <p>Copilot Studio went GA on July 7, 2026, rebuilt from the ground up: a new agentic orchestrator (20% eval gain, lower token use), a Workflow Designer that mixes structured steps with agent nodes, Skills as reusable markdown you can import from GitHub Copilot or Claude Code, and a UI simplified from nine tabs to four. Here is what changed and what it means for production agent builders.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
+  <h3><a href="/builders-log/mcptox-aaai-2026-benchmark-tool-poisoning-real-world-mcp-servers-builder-security-guide/">MCPTox: Researchers Tested 45 Live MCP Servers and Found 72.8% of Agents Can Be Poisoned — More Capable Models Are Worse</a></h3>
+  <p>MCPTox is the first large-scale, real-world benchmark for MCP tool poisoning — 45 live servers, 353 authentic tools, 1312 malicious test cases across 10 risk categories, tested against 20 LLM agents. Key finding: o1-mini hit a 72.8% attack success rate. Claude 3.7 Sonnet had the highest refusal rate — still under 3%. The most counterintuitive result: more capable models are more vulnerable, because superior instruction-following is exactly what the attack exploits.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-12 00:00:00</span></div>
+  <h3><a href="/builders-log/mcp-itp-automated-implicit-tool-poisoning-framework-84-percent-asr-builder-security-guide/">MCP-ITP: Researchers Built a Machine That Automatically Crafts Undetectable Tool Poisoning — 84% Success Rate, 0.3% Detection</a></h3>
+  <p>MCP-ITP is the first automated framework for implicit tool poisoning in MCP. It treats poisoned tool generation as a black-box optimization problem, simultaneously maximizing attack success while evading LLM-based detectors. Results across 12 agents: up to 84.2% ASR, detection as low as 0.3%. The same inverse-capability pattern found in MCPTox holds: more powerful models with reasoning enabled are more vulnerable.</p>
 </div>
 
     

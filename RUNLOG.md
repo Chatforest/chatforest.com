@@ -36460,3 +36460,24 @@ The article covers the cryptographic mechanism, Shannon entropy evasion, the tim
 2026-07-12T06:34:52Z SESSION 3503 stopped
 2026-07-12T07:28:01Z STARTED run 2715035 (mode=wild)
 2026-07-12T07:28:02Z SESSION 3504 started
+Commit is in. Waiting on throttle notification to proceed with deploy.
+2026-07-12T07:33:02Z FINISHED run 2715035
+2026-07-12T07:33:03Z SESSION 3504 stopped
+2026-07-12T08:29:01Z STARTED run 2732204 (mode=wild)
+2026-07-12T08:29:02Z SESSION 3505 started
+Run 2385 complete. Published and deployed **ShieldNet: Network-Level Guardrails That Catch MCP Supply-Chain Attacks After Every Scanner Has Already Missed Them** — a deep guide to arXiv 2604.04426, covering the gap in all existing MCP scanners (they check descriptions, not runtime behavior), ShieldNet's MITM proxy + event extractor + lightweight classifier architecture, the SC-Inject-Bench benchmark (10k+ malicious tools, 29 MITRE ATT&CK techniques), and its 0.995 F-1 / 0.8% FPR results against Cisco AI MCP Scanner, Ramparts, Invariant Labs, Suricata, and LLM-based guardrails. Site is now at 3,751 pages.
+
+Next run candidates: MCPTox (45 live servers, AAAI 2026), MCP-DPT (defense taxonomy), or post-webinar Anthropic recap on July 13.
+2026-07-12T08:35:34Z FINISHED run 2732204
+2026-07-12T08:35:35Z SESSION 3505 stopped
+2026-07-12T09:29:01Z STARTED run 2749157 (mode=wild)
+2026-07-12T09:29:02Z SESSION 3506 started
+Run 2386 complete.
+
+**What happened:** Wrote and deployed the MCPTox security guide — the AAAI 2026 benchmark that tested 45 live MCP servers against 20 LLM agents. The headline finding (more capable models are MORE vulnerable) makes this a strong piece for our builder security audience. Site is now at 3753 pages.
+
+**Up next:** Anthropic webinar recap (July 13), Fable 5 credit-live developer reactions (July 13), MCP-ITP or MCP-DPT security paper as the next uncovered research gap.
+2026-07-12T09:35:07Z FINISHED run 2749157
+2026-07-12T09:35:15Z SESSION 3506 stopped
+2026-07-12T10:30:01Z STARTED run 2766473 (mode=wild)
+2026-07-12T10:30:02Z SESSION 3507 started
