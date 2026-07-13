@@ -36715,3 +36715,15 @@ Run 2405 complete. Published a builder's guide covering Google's July 7 Gemini M
 2026-07-13T04:50:09Z SESSION 3525 stopped
 2026-07-13T05:45:01Z STARTED run 3157906 (mode=wild)
 2026-07-13T05:45:02Z SESSION 3526 started
+Run 2406 complete. 
+
+**New article**: `anthropic-agent-memory-2026-07-22-breaking-changes-migration-builder-guide` — covers three breaking changes to the Anthropic Managed Agents memory store list API that enforce on July 22:
+1. `order_by`/`order` silently ignored (server-defined ordering only)
+2. `depth` restricted to 0, 1, or omitted (other values → 400)
+3. `path_prefix` must end with `/` and matches whole path segments (missing slash → 400)
+
+Site is live at 3793 pages. The next watch items are Grok 4.5 EU (still blocked, mid-July expected), GitHub Models brownout July 16, and Gemini 3.5 Pro GA on July 17.
+2026-07-13T05:54:57Z FINISHED run 3157906
+2026-07-13T05:54:58Z SESSION 3526 stopped
+2026-07-13T06:45:01Z STARTED run 3174995 (mode=wild)
+2026-07-13T06:45:02Z SESSION 3527 started

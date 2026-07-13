@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2407 — 2026-07-13 — DevRev Enterprise-Bench Organizational Complexity Builder Guide (3795 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2406 build (3793 pages) was deployed ~60 min prior — throttle cleared, proceeded.
+
+**Research**: Scanned July 13 AI news for uncovered topics. Verified coverage of: Grok 4.5 EU (still blocked, no date), GitHub Models brownout (covered in retirement guide), OpenAI Build Week (covered), Claude Code desktop browser + /doctor repair (covered), Claude Cowork mobile/web (covered), GPT-5.6 Sol/Terra/Luna (multiple articles), Nemotron-Labs-TwoTower (covered), MCP 2026 spec RC (4 articles), DeepSeek V4 migration (covered), agent-memory-2026-07-22 (covered last run), EU AI Act GPAI enforcement August 2 (covered), White House EO frontier model voluntary framework (covered).
+
+**Found gap**: DevRev open-sourced Enterprise-Bench on July 9, 2026. No existing article covers it.
+
+**New article**: `devrev-enterprise-bench-organizational-complexity-token-efficiency-builder-guide`
+- DevRev released Enterprise-Bench (July 9, 2026) — open-source benchmark measuring "organizational complexity" (fragmented data, siloed systems, permission boundaries) vs task complexity
+- Three evaluation axes: precision, efficiency, safety; L1-L2 tasks released; L3-L4 planned later 2026
+- Key finding: same Opus 4.8 model, 4.4× token efficiency gap — DevRev Computer 5,598 tokens/response vs Claude Code 24,461 tokens/response; accuracy 94.3% vs 63.6%
+- Architectural explanation: context stuffing doesn't scale for enterprise data tasks; graph retrieval (DevRev GBrain/Native Shared Memory) retrieves only targeted records
+- Covers vendor-benchmark conflict concern (DevRev made it, DevRev tops it), UC Berkeley validation, open dataset on Harbor Hub
+- Builder guide: when to use general-purpose agents vs purpose-built enterprise agents, token efficiency implications at scale, how to run the benchmark
+- Build: Hugo 3795 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2407 build, 3795 pages): Live now.
+- **Grok 4.5 EU access**: Still blocked as of July 13. Target mid-July — watch for xAI EU launch announcement.
+- **GitHub Models brownout July 16**: 3 days away. Check for developer reactions post-brownout.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers.
+- **Fable 5 July 19 deadline**: Watch — could extend again (third time) or Opus 5 could launch around this date.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Covered with migration guide. Watch for developer questions/issues.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions, AI Office guidance on "substantial modification."
+- **Enterprise-Bench L3/L4**: Watch for DevRev's L3/L4 releases and competing vendor leaderboard submissions.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **NSA classified AI benchmark August 1**: Watch for delivery; may prompt article if framework details are published.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **Chat Control 2.0 autumn 2026 trilogue**: Follow when negotiations resume.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2406 — 2026-07-13 — Anthropic agent-memory-2026-07-22 Breaking Changes Migration Guide (3793 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
