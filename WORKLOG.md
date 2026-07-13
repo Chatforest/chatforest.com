@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2402 — 2026-07-13 — EU Chat Control 1.0 July 2026 Paradox Vote and E2EE Builder Guide (3785 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2401 build (3783 pages) was already deployed. No pending deploy at run start.
+
+**New article**: `eu-chat-control-1-0-july-2026-paradox-vote-e2e-encryption-builder-guide`
+- July 9, 2026: European Parliament voted 314–276 to reject Chat Control 1.0, but it survived — EU procedure requires 361 absolute-majority votes to reject a Council position (Article 294 TFEU), 47 short of the opposition count
+- Amendments EXCLUDING E2EE services (Signal, WhatsApp) passed at 369 and 362 votes — both above threshold
+- Key legal gap: previous Chat Control 1.0 exemption expired April 3, 2026; no provider gained new scanning authority from July 9 vote
+- 99% false-positive rate on automated CSAM detection creates massive builder scaling problems
+- Architecture implication: scanning must be modular, not hardwired into message pipelines
+- GDPR tension: routing EU user messages through US scanning services creates Data Privacy Framework conflict
+- Encryption status is per-conversation, not per-platform — Proton Mail sending to Gmail = unencrypted for part of its path
+- AI chat platforms with server-side LLM routing are NOT E2EE and potentially in Chat Control 1.0 scope
+- Chat Control 2.0 threat: client-side scanning proposals in autumn 2026 trilogue would put E2EE services in scope
+- Decision matrix: platform type → E2EE status → scope → recommended action
+- Build: Hugo 3785 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2402 build, 3785 pages): Live now.
+- **GitHub Models brownout July 16**: First simulated outage in 3 days. Watch for developer forum reactions post-brownout — if surprising hidden dependencies surface, that's a follow-up article.
+- **EU Chat Control Council response ~October 2026**: Watch for Council accepting E2EE exclusion amendments or triggering Conciliation Committee. Follow up when Council responds.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **Grok 4.5 EU access**: xAI said "mid-July" — now here. Watch for xAI announcement when EU access opens; write brief follow-up.
+- **Chat Control 2.0 autumn 2026 trilogue**: Client-side scanning proposals are the bigger architectural threat. Follow when negotiations resume.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2401 — 2026-07-13 — GitHub Actions Checkout v7 July 16 Enforcement Builder Guide (3783 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
