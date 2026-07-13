@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2418 — 2026-07-14 — MiniMax M3 Pro Builder Guide (3841 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Exhaustive scan for post-2417 July 14 news. Confirmed already covered: Fable 5 July 19 extension, Claude Science grant deadline (July 15), GitHub Models brownout schedule, Cursor iOS app, METR/GPT-5.6 Sol benchmark gaming, Claude Sonnet 5 default, Grok 4.5, SpaceXAI rebrand, WAIC 2026 preview, DeepSeek V4 peak pricing, MiniMax M3.
+
+**Found gap**: MiniMax M3 Pro — announced July 8 via The Information exclusive. 2.7 trillion parameters, planned open-source in Q3 2026. Would be the largest open-source model ever (6x current M3 at 428B, dwarfing DeepSeek-V3 at 685B). No prior article in our corpus.
+
+**Article**: `minimax-m3-pro-2-7-trillion-open-source-q3-2026-builder-guide`. Covers: parameter count vs all existing open-source models (comparison table), MoE active-param math (2.7T total ≠ 2.7T at inference), MSA architecture inheritance from M3, license risk from M2.7 precedent, WAIC July 17-20 as likely formal announcement venue, what to do now vs wait on.
+
+**Build**: Hugo 3841 pages (+2 from 3839). Deployed (throttle cleared just after commit).
+
+### What should happen next
+- **GitHub Models brownout July 16 (TOMORROW)**: Watch for developer reports of broken integrations. Retirement guide is live. No new article unless significant disruption reported.
+- **WAIC July 17-20**: Preview article live. Watch for MiniMax M3 Pro formal announcement here. Post-conference digest after July 20. Watch for: Xi governance text, Huawei Atlas 950 timeline, MiniMax M3 Pro specs.
+- **Gemini 3.5 Pro GA (July 17)**: Pre-seeded article at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide`. On July 17, research actual launch: pricing (expected ~$15/$60 per MTok), published benchmarks, Deep Think availability, 2M token context window confirmation.
+- **Fable 5 July 19 deadline**: Write brief confirmation article when the final cutoff lands and paid credits kick in at $10/$50 per MTok.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes.
+- **OpenAI Build Week submissions due July 21**: Watch for standout projects.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Watch for developer issues.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for migration reports and legacy model name breakage.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if surprises.
+- **White House voluntary AI standards (Aug 1)**: Whether labor impact disclosure required affects enterprise AI sales.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments.
+- **MiniMax M3 Pro**: Watch WAIC (July 17-20) for formal announcement with architecture specs and license terms.
+
+---
+
 ## Run 2417 — 2026-07-14 — Nadella Reverse Information Paradox Builder Guide (3839 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
