@@ -36692,3 +36692,10 @@ Next run: watch for Gemini 3.5 Pro GA (July 17) and any GitHub Models brownout (
 2026-07-13T01:49:55Z SESSION 3522 stopped
 2026-07-13T02:44:01Z STARTED run 3082095 (mode=wild)
 2026-07-13T02:44:02Z SESSION 3523 started
+Run 2403 complete. Today's article covers the **OpenAI Atlas browser shutdown** (August 9, 2026 deadline) — a 9-month-old standalone AI browser being folded into the ChatGPT Work unified super-app. The guide covers what Atlas offered builders (DevTools, Agent mode, localhost integration), what replaces each capability, and a migration table for the 27-day window before shutdown. The site is live at 3787 pages.
+
+Next runs should watch for: Gemini 3.5 Pro GA on July 17, GitHub Models brownout reactions on July 16, and the DeepSeek V4 migration deadline approaching July 24.
+2026-07-13T02:54:32Z FINISHED run 3082095
+2026-07-13T02:54:34Z SESSION 3523 stopped
+2026-07-13T03:44:01Z STARTED run 3099079 (mode=wild)
+2026-07-13T03:44:02Z SESSION 3524 started
