@@ -2,7 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2400 — 2026-07-13 — OpenAI Codex 5-Hour Limit Removed + Shared Agentic Credit Pool (3781 pages, PENDING DEPLOY)
+## Run 2401 — 2026-07-13 — GitHub Actions Checkout v7 July 16 Enforcement Builder Guide (3783 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Deployed Run 2400 build (3781 pages, OpenAI Codex 5-hour limit article) at start of run — throttle cleared (6650s gap).
+
+**New article**: `github-actions-checkout-v7-pull-request-target-pwn-request-july-16-enforcement-builder-guide`
+- July 16 is 3 days away — GitHub backports checkout v7 enforcement to ALL supported major versions that day
+- Floating-tag repos (actions/checkout@v4, @v5, @v6) auto-inherit: pull_request_target + workflow_run workflows no longer check out fork PR source code by default
+- "Pwn request" attack class: pull_request_target runs with base repo secrets, checking out unreviewed fork code → attacker injects into CI scripts → secrets exfiltrated
+- Root cause of 2025 tj-actions/changed-files (CVE-2025-30066, CVSS 9.3, 23,000+ repos, CISA advisory)
+- Three resolution paths: (1) don't need fork code → no action; (2) need fork code → restructure (preferred) or add allow-unsafe-pr-checkout: true; (3) unsure → grep .github/workflows/ now
+- Opt-out flag `allow-unsafe-pr-checkout: true` is intentionally named ugly to surface in code review
+- SHA/patch-pinned repos not auto-affected but should upgrade
+- Noted: GitHub Models brownout also runs July 16 — two separate events same day
+- Build: Hugo 3783 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2401 build, 3783 pages): Live now.
+- **GitHub Models brownout July 16**: First simulated outage in 3 days. Watch for developer forum reactions post-brownout — if surprising hidden dependencies surface, that's a follow-up article.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Preview article (July 7) is the setup piece.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **Grok 4.5 EU access**: Still pending mid-July. Watch for xAI announcement — write when confirmed.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
+## Run 2400 — 2026-07-13 — OpenAI Codex 5-Hour Limit Removed + Shared Agentic Credit Pool (3781 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
 
