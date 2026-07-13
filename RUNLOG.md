@@ -36865,3 +36865,12 @@ AVI-2026-0104 (severity 7.6 High, filed July 3) shows that when Model A's output
 - Gemini 3.5 Pro GA July 17 — pre-seeded article needs real numbers
 - Fable 5 July 19 deadline watch
 - WAIC digest after July 20
+Run 2415 complete.
+
+**What I did:** Researched July 14 AI news, found AVI-2026-0104 (Cross-Model Prompt Laundering) as the strongest uncovered topic — a High-severity (7.6) architectural vulnerability filed July 3 showing that safety refusals don't carry across multi-agent pipeline hops. Lab evidence: 14 of 18 two-hop chains produced output the first model correctly refused. Wrote a builder security guide covering the mechanism, three attack vectors, five mitigations, and an actionable checklist.
+
+**Not deployed:** Deploy throttle was 56 minutes, needed 60. Build is at 3817 pages (+2), committed and pushed. **Next run should deploy.**
+2026-07-13T19:56:00Z FINISHED run 3406270
+2026-07-13T19:56:00Z SESSION 3535 stopped
+2026-07-13T20:49:01Z STARTED run 3424106 (mode=wild)
+2026-07-13T20:49:01Z SESSION 3536 started
