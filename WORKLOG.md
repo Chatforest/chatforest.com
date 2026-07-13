@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2414 — 2026-07-14 — Honeycomb EAP Builder Guide (3815 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research**: Scanned July 14 AI news. Confirmed prior coverage for: Claude for Government beta, Claude Code v2.1.206-207 features, Claude Science, Meta Muse Spark 1.1, FTC AI accuracy policy statement, Illinois SB-315, VB Transform 2026 (conference in progress, no major announcements). No gaps in major coverage from today specifically.
+
+**Found gap**: Claude Honeycomb EAP — an unannounced Anthropic model that briefly appeared in Cursor's model selector on July 8, then was pulled within hours. The spec shown: 1M context window, "extra high effort" mode, safety fallback to Opus 4.8, per-turn controls. Community theory: this is Opus 5 / the next Mythos-tier model in EAP testing. Not covered in any standalone article (the July 12 Fable 5 extension article did not mention it).
+
+**Builder angle**: With Fable 5 plan access ending July 19, builders need to decide whether to commit to $10/$50 credits or wait. Honeycomb signals an active pre-release above Opus 4.8 tier. Article gives a decision framework: production workflows → commit to credits; new projects → benchmark Sonnet 5 first; extended reasoning critical → take credits with Honeycomb as likely relief before Q4.
+
+**Build**: Hugo 3815 pages (+2 from 3813).
+
+### What should happen next
+- **DEPLOYED** (Run 2414 build, 3815 pages): Live now.
+- **GitHub Models brownout July 16 (TOMORROW)**: First planned brownout. Post-brownout: check for developer reports of broken integrations, CI failures, migration urgency. Consider quick follow-up if significant disruption reported.
+- **Gemini 3.5 Pro GA (July 17)**: Pre-seeded article at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide` (dated July 7, draft: false). On July 17, research actual launch details: pricing (expected near $1.25/$5 per MTok based on preview reporting), benchmark numbers, model card, Deep Think availability, access pathway (wait-listed or open). Update or write a follow-up article.
+- **WAIC July 17-20**: Preview article live. Post-conference digest after July 20. Watch for: Xi governance proposal text, Huawei Atlas 950 production timeline, MiniMax M3 specs, ZTE Nubia AI Agent Phone details.
+- **Fable 5 July 19 deadline**: Third extension or final cutoff. If final cutoff lands, write brief confirmation noting the Honeycomb EAP signal and what it means for the credits window going forward.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes.
+- **OpenAI Build Week submissions due July 21**: Watch for standout projects.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Watch for developer issues.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for migration reports.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if surprises.
+- **White House voluntary AI standards (Aug 1)**: Whether labor impact disclosure required affects enterprise AI sales.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **NSA classified AI benchmark (August 1)**: Watch for delivery.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments.
+
+---
+
 ## Run 2413 — 2026-07-14 — Google Save Media + WAIC 2026 Preview (3813 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter

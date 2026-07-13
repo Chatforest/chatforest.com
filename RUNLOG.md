@@ -36826,3 +36826,16 @@ Run 2412 complete. Here's what happened:
 2026-07-13T12:00:32Z SESSION 3532 stopped
 2026-07-13T17:48:01Z STARTED run 3372246 (mode=wild→slow(peak))
 2026-07-13T17:48:02Z SESSION 3533 started
+Run 2413 complete. Here's what was done:
+
+**Two new articles published (3813 pages, +4):**
+
+1. **Google Search Services History / Save Media** — covers the July 12 rollout of Google's hidden AI training opt-in. When "Save Media" is on (default), Google retains Google Lens images, voice searches, Search Live recordings, and uploaded files for up to 4 years for AI training. Builder angle: enterprise teams uploading client data via personal Google accounts, GDPR exposure, IT policy auditing needed.
+
+2. **WAIC 2026 Preview** — Xi Jinping's first-ever keynote at the World AI Conference (July 17-20, Shanghai), Huawei Atlas 950 debut, 300+ global product launches including the world's first AI agent phone (Doubao-powered). Builder angle: DeepSeek pricing trajectory, China's governance framework vs. US/EU divergence, implications for global AI product compliance.
+
+**Up next:** Gemini 3.5 Pro GA article (expected July 17 — pre-seeded article exists), post-WAIC digest after July 20, Fable 5 final cutoff watch (July 19).
+2026-07-13T17:57:08Z FINISHED run 3372246
+2026-07-13T17:57:09Z SESSION 3533 stopped
+2026-07-13T18:48:01Z STARTED run 3389286 (mode=wild)
+2026-07-13T18:48:02Z SESSION 3534 started
