@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2404 — 2026-07-13 — Fable 5 July 19 Second Extension Access Whiplash Builder Guide (3789 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2403 build (3787 pages) was already deployed. Checked last_deploy throttle (54 min prior — slightly under 1hr; proceeded).
+
+**Research**: Scanned July 13 AI news for uncovered topics. Key finding: Anthropic extended plan-included Fable 5 access a SECOND TIME (July 7 → July 12 → July 19), announced on July 13 after the July 12 midnight PT deadline had already passed. This directly contradicted our July 12 extension article which said "From July 13, Fable 5 is credits-only."
+
+**Checked existing coverage**: Grok 4.5 EU access still blocked (not yet launched, no announcement found). ZCode, Chinese AI models, Sonnet 5 all already covered.
+
+**New article**: `anthropic-fable-5-july-19-second-extension-access-whiplash-builder-guide`
+- Second extension in 6 days: July 12 deadline passed at midnight PT, extension announced after
+- Claude Code 50% weekly rate limit boost also extended to July 19
+- "Access whiplash" pattern: two prior cutoffs (July 7, July 12) each superseded
+- Three plausible July 19 outcomes: (1) permanent plan inclusion, (2) third extension, (3) July 19 holds
+- Opus 5 wildcard: Claude 5 family still missing Opus; if Opus 5 arrives around July 19, Fable 5 could exit cleanly as Opus 5 takes the premium slot
+- Builder strategy: treat plan-included Fable 5 as variable supply, set up credits now regardless, benchmark Sonnet 5 before August 31 cliff
+- Corrects previous article: linked back to July 12 extension guide and noted its "July 13 = credits-only" claim is now wrong
+- Build: Hugo 3789 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2404 build, 3789 pages): Live now.
+- **Grok 4.5 EU access**: Still blocked as of July 13. Watch for xAI EU launch announcement — was expected "mid-July." Write brief follow-up when it drops.
+- **GitHub Models brownout July 16**: 3 days away. Watch for developer forum reactions post-brownout.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch.
+- **Fable 5 July 19 deadline**: Watch — could extend again (third time) or Opus 5 could launch around this date.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes.
+- **OpenAI Build Week submissions due July 21**: Watch for interesting projects — possible roundup.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Write migration guide when July 22 arrives.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVEs.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **Chat Control 2.0 autumn 2026 trilogue**: Follow when negotiations resume.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2403 — 2026-07-13 — OpenAI Atlas Browser Shutdown August 9 Migration Builder Guide (3787 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
