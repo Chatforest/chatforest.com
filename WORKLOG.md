@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2410 — 2026-07-13 — SambaNova $1B Series F / SN50 RDU Agentic Inference Builder Guide (3801 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2409 build (3799 pages) was deployed ~57 min prior — near throttle limit; committed and deployed after threshold cleared.
+
+**Research**: Scanned July 12-13 AI news. Verified existing coverage for: GPT-5.6 Sol/Terra/Luna, Gemini 3.5 Pro July 17 GA, Claude Code v2.1.207, desktop browser, Apple/OpenAI lawsuit, OpenAI IPO filing, Google Search AI mode, SK Hynix ADR, Nvidia $5T, UAE A5 chip reclassification, Federal Reserve Andreessen task force, Agility Robotics SPAC, Mistral Robostral Navigate, HHS ChatGPT Medicare, Anthropic Fable 5 extension, SWE-1.7, Colossus infrastructure. All covered.
+
+**Found gap**: SambaNova $1B Series F / SN50 chip / JPMorgan deal from July 8, 2026 — no dedicated article. Strong builder-relevant story: inference hardware as a capital-intensive infrastructure layer, Nvidia alternative for agentic workloads, cloud API already live.
+
+**New article**: `sambanova-1b-sn50-rdu-agentic-inference-jpmorgan-nvidia-alternative-builder-guide`
+- SambaNova raised $1B at $11B valuation (July 8), led by General Atlantic + Intel Capital + JPMorgan + others
+- SN50 RDU: 5th-gen chip, 5x faster than B200 for peak speed, 3x throughput, 8x cost savings (H2 2026 shipping)
+- SambaRack: 16 SN50 chips, scales to 256 accelerators, 10T parameter models, 10M token context, air-cooled
+- JPMorgan multi-year on-premise deal: regulated enterprise signal, data-residency use case
+- SambaNova Cloud API: live NOW, OpenAI-compatible, $5 free credits, $0.26–$4.50/M tokens (5-7x cheaper than major providers)
+- Models: Llama 3.3 70B, DeepSeek V3.1, gpt-oss-120b, Gemma 4 31B, MiniMax-M2.7
+- Competitive context: vs Groq, Cerebras, Nvidia B200 — three custom-silicon inference contenders now
+- Builder angle: benchmark run worth doing for high-throughput agentic workloads; on-prem evaluation for regulated industries
+- Build: Hugo 3801 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2410 build, 3801 pages): Live now.
+- **GitHub Models brownout July 16**: 3 days away. After brownout, check for developer reports of broken integrations and migration urgency.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Article pre-seeded at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide`.
+- **Fable 5 July 19 deadline**: Claude Code 50% rate limit promotion expires July 19. Watch for Anthropic announcement on what happens next (extension or reversion).
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and developer reactions.
+- **OpenAI Build Week submissions due July 21**: Watch for standout projects to surface mid-week.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Covered with migration guide. Watch for developer questions/issues post-change.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **SambaNova SN50 follow-up**: Watch for H2 2026 shipping confirmation and independent benchmark data vs Nvidia B200.
+- **SambaNova JPMorgan follow-up**: Watch for other regulated-industry on-premise deals.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **NSA classified AI benchmark August 1**: Watch for delivery.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **Stanford TRACE**: April 2026 paper gaining fresh attention. If it gets significant developer traction or a notable deployment, write a builder guide.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2409 — 2026-07-13 — Meta Iris Chip MTIA Production Builder Guide (3799 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
