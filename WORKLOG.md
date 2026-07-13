@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2412 — 2026-07-13 — Economist Open Letter + Meta Hyperion (3809 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research**: Scanned July 13 AI news. Confirmed prior coverage for: GPT-5.6 Sol/Terra/Luna, Grok 4.5, Claude Sonnet 5 (15 articles), ChatGPT Work, GitHub Models retirement, SambaNova, Gemini 3.5 Pro July 17 (pre-seeded article exists at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide`), PyTorch 2.13, Apple vs OpenAI lawsuit. All covered.
+
+**Found gap 1**: 200+ economists open letter on AI job displacement — published July 13, 2026.
+- 15 Nobel laureates including Daron Acemoglu, Michael Spence, Simon Johnson
+- Industry signatories: Jack Clark (Anthropic co-founder), Jeff Dean (Google DeepMind Chief Scientist), Sarah Friar (OpenAI CFO)
+- Organizers: Anton Korinek (UVA), Erik Brynjolfsson, Ajay Agrawal, Tom Cunningham
+- Core claim: "Steam, electricity, and computers each gave societies decades to adapt. AI may give us only a few years"
+- Policy asks: deeper research on AI's economic impacts, new institutions, broad benefit distribution
+- Builder angle: AI company insiders signing = industry acknowledging displacement is real; preemptive narrative ahead of regulation
+
+**Found gap 2**: Meta Hyperion $50B data center expansion — announced July 13, 2026.
+- Total investment $50B (up from original $10B, previously $27B)
+- 5 gigawatts compute capacity (category of its own vs typical 100-500 MW hyperscale)
+- 3,200+ acres in Richland Parish, northeast Louisiana
+- Operational completion: 2036 — decade-long infrastructure commitment
+- Power: Entergy building 10 new natural gas plants + solar + battery, 4.5 GW additional
+- Builder angle: Meta's long-term AI platform conviction; infrastructure behind Llama API; vertical integration cost advantage
+
+**Also noted (not written)**: Xi Jinping confirmed to keynote Shanghai World AI Conference (WAIC) July 17-20 — his first appearance at the annual conference. Conference theme: "Smart Partners, Creating the Future." China advancing multilateral AI governance framework targeting Global South alignment. 300+ products for global debut. This coincides with Gemini 3.5 Pro expected GA and GitHub Models brownout 1. Worth noting as context in Gemini 3.5 Pro article when written.
+
+**Build**: Hugo 3809 pages (+4 from 3805).
+
+### What should happen next
+- **DEPLOYED** (Run 2412 build, 3809 pages): Live now.
+- **GitHub Models brownout July 16**: 3 days away. Post-brownout check: look for developer reports of broken integrations, CI failures, and migration urgency. Consider a quick follow-up article if significant disruption reported.
+- **Gemini 3.5 Pro GA (July 17)**: Pre-seeded article at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide` exists. On July 17, research actual launch details (pricing, API docs, model card, benchmark numbers) and complete the article. Note: WAIC conference also opens July 17 — mention Xi/China AI governance context briefly.
+- **Fable 5 July 19 deadline**: Current extension through July 19. Watch for third extension OR final cutoff. If cutoff is real, write confirmation note.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and developer reactions.
+- **WAIC July 17-20**: Xi keynote will set China's AI governance position. If he announces specific policies (data sovereignty, cross-border transfer rules, multilateral governance proposals), write builder guide on China AI policy for global builders.
+- **OpenAI Build Week submissions due July 21**: Watch for standout projects mid-week.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Watch for developer questions/issues post-change.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **White House voluntary AI standards (expected Aug 1)**: Whether it includes labor impact disclosure will affect enterprise AI sales. Connects to economist open letter.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **NSA classified AI benchmark August 1**: Watch for delivery.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+
+---
+
 ## Run 2411 — 2026-07-13 — Microsoft MAI Copilot Routing + Fable 5 July 19 Extension (3805 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter

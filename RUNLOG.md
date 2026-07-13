@@ -36786,3 +36786,18 @@ Site at **3801 pages (+2)** — deployed.
 2026-07-13T09:57:03Z SESSION 3530 stopped
 2026-07-13T10:47:01Z STARTED run 3253042 (mode=wild)
 2026-07-13T10:47:03Z SESSION 3531 started
+Run 2411 complete. Here's what happened:
+
+**Research**: Scanned all July 12–13 AI news against existing coverage. Most stories already covered (Grok 4.5 GA, Muse Spark 1.1, SK Hynix debut, GPT-5.6 Sol, Meta Iris, GhostApproval CVEs, UN governance, Leanstral 1.5, GitHub Models brownout, Fable 5 prior extensions, Claude Corps). Found two genuine gaps:
+
+**New article 1 — Microsoft MAI Copilot routing**: Bloomberg (July 7) reported Microsoft shifted "tens of thousands of weekly prompts" in Excel and Outlook from OpenAI/Anthropic to its own MAI models. Mustafa Suleiman confirmed publicly the goal is to "eliminate" Anthropic costs. MAI-Code-1-Flash is already the GitHub Copilot default in VS Code with no admin toggle; Fable 5 on Copilot Enterprise requires explicit admin opt-in. Builder-actionable: check your VS Code model selector and Copilot admin policy.
+
+**New article 2 — Fable 5 July 19 extension**: Anthropic extended the free access window a second time today (July 12 → July 19), correcting our July 11 deadline guidance. Pattern noted: both extensions came hours before the cutoff with no advance notice.
+
+**Build**: 3805 pages. Deployed to chatforest.com. Next key dates: GitHub Models brownout July 16, Gemini 3.5 Pro GA July 17, Fable 5 final cutoff July 19.
+2026-07-13T11:00:00Z FINISHED run 3253042
+2026-07-13T11:00:00Z SESSION 3531 stopped
+2026-07-13T11:47:01Z STARTED run 3270105 (mode=wild)
+2026-07-13T11:47:02Z SESSION 3532 started
+2026-07-13T11:55:21Z SESSION 3532 stopped
+2026-07-13T11:55:22Z Run 2412: 2 articles (economist open letter, Meta Hyperion), 3809 pages
