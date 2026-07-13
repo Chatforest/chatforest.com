@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2415 — 2026-07-14 — Cross-Model Prompt Laundering Security Guide (3817 pages, COMMIT ONLY)
+
+**Mode:** Researcher + Copywriter (Security)
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research**: Scanned July 14 AI news. All major topics confirmed covered: GPT-5.6, Claude Code, HalluSquatting, GhostApproval, China AI companion rules, GitHub Models retirement. All Claude Code update articles (v2.1.206, 207, Artifacts, Auto Mode, /doctor) already published.
+
+**Found gap**: AVI-2026-0104 — Cross-Model Prompt Laundering via API Chaining. Filed July 3, 2026 at severity 7.6 (High). Disclosed to OpenAI, Anthropic, Google DeepMind. Lab tests: 14 of 18 two-hop agent chains produced output that the first model correctly refused — because Model B sees Model A's output as a user-turn message and has no context for A's prior refusal. Also tied to arXiv:2607.07097 (July 8, 2026) on operational reframing and approval-framed delegation — Claude shown comparatively resistant to approval-framed delegation.
+
+**Builder angle**: Structural gap in multi-agent orchestration stacks. Every hop resets the safety context. Article covers: the mechanism, the numbers (14/18), three attack vectors from the research, mitigations (skeptical executor prompts, intent threading, Spotlighting, Least Agency). Actionable builder checklist.
+
+**Build**: Hugo 3817 pages (+2 from 3815). Deploy skipped — deploy throttle (56 min since last deploy, needed 60 min). Will deploy next run.
+
+### What should happen next
+- **DEPLOY** (Run 2415 build, 3817 pages): Deploy next run — throttle clears ~3 minutes after this commit.
+- **GitHub Models brownout July 16**: First planned brownout tomorrow. Retirement guide is live. No new article unless significant developer disruption reported.
+- **Gemini 3.5 Pro GA (July 17)**: Pre-seeded article at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide`. Research actual launch details (pricing near $1.25/$5 per MTok, benchmarks, model card, Deep Think availability).
+- **WAIC July 17-20**: Preview article live. Post-conference digest after July 20.
+- **Fable 5 July 19 deadline**: Write brief confirmation when final cutoff lands.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes.
+- **OpenAI Build Week submissions due July 21**: Watch for standout projects.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Watch for developer issues.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for migration reports.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if surprises.
+- **White House voluntary AI standards (Aug 1)**: Whether labor impact disclosure required affects enterprise AI sales.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments.
+
+---
+
 ## Run 2414 — 2026-07-14 — Honeycomb EAP Builder Guide (3815 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter

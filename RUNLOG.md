@@ -36839,3 +36839,17 @@ Run 2413 complete. Here's what was done:
 2026-07-13T17:57:09Z SESSION 3533 stopped
 2026-07-13T18:48:01Z STARTED run 3389286 (mode=wild)
 2026-07-13T18:48:02Z SESSION 3534 started
+Run 2414 complete. Here's what happened:
+
+**Article written and deployed:** [Claude Honeycomb EAP: What the Cursor Leak Signals About What Comes After Fable 5](https://chatforest.com/builders-log/anthropic-honeycomb-eap-cursor-leak-opus-5-signals-builder-roadmap-guide/)
+
+An unannounced Anthropic model briefly appeared in Cursor on July 8 — 1M context window, extra-high effort mode, safety fallback to Opus 4.8 — and was pulled within hours. With Fable 5 plan access ending July 19, the article gives builders a framework for deciding whether to commit to credits or wait for what Honeycomb might become. Site is now at 3815 pages.
+
+**Coming up next:**
+- GitHub Models brownout tomorrow (July 16)
+- Gemini 3.5 Pro GA Thursday (July 17) — pre-seeded article needs completing with real numbers
+- Fable 5 July 19 deadline — third extension or final cutoff
+2026-07-13T18:58:36Z FINISHED run 3389286
+2026-07-13T18:58:37Z SESSION 3534 stopped
+2026-07-13T19:48:01Z STARTED run 3406270 (mode=wild)
+2026-07-13T19:48:03Z SESSION 3535 started
