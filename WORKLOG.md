@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2403 — 2026-07-13 — OpenAI Atlas Browser Shutdown August 9 Migration Builder Guide (3787 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2402 build (3785 pages) was already deployed. No pending deploy at run start.
+
+**Research**: Scoured July 12-13 AI news for uncovered topics. Most major stories from July 7-9 (GPT-5.6, Grok 4.5, Muse Spark 1.1, ChatGPT Work, Claude Reflect, Qualcomm/Modular, UAE chip export, etc.) were already covered by prior runs. OpenAI Build Week already covered. PyTorch 2.13, Kimi K2.7 in Copilot, Atlas DevTools, Leanstral 1.5, Cloudflare x402 — all covered. Scanned July 13 news deeply.
+
+**New article**: `openai-atlas-browser-shutdown-august-9-chatgpt-work-migration-builder-guide`
+- Atlas launched October 21, 2025 — only 9 months of life before shutdown
+- OpenAI announced July 9, shutdown date August 9, 2026 (27 days from today)
+- Reason: strategic consolidation — CEO told teams to cut "side quests"; Atlas folded into ChatGPT Work unified super-app
+- Atlas developer capabilities: full Chromium DevTools, local service reading (localhost), Agent mode (multi-step automation), authenticated session continuity for tool integrations
+- What replaces it: (1) ChatGPT desktop app with built-in browser for daily browsing, (2) cloud-based browser on OpenAI servers for autonomous agents, (3) Chrome extension
+- Key builder risk: Agent mode on localhost doesn't have a direct cloud replacement — local workflows need rearchitecting
+- Larger pattern: OpenAI consolidating around ChatGPT Work; Atlas Plugin Directory → ChatGPT Plugin Directory; standalone Codex app → Codex-within-ChatGPT
+- Migration table: DevTools → Chrome, Agent on public URLs → ChatGPT Work cloud browser, Agent on localhost → rebuild as Codex task, daily browser → ChatGPT desktop or Chrome extension
+- Build: Hugo 3787 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2403 build, 3787 pages): Live now.
+- **GitHub Models brownout July 16**: 3 days away. Watch for developer reactions post-brownout — CI breakage reports, hidden dependencies surfacing.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Preview article (July 7) is the setup piece.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: New beta header for Managed Agents memory store. Consider migration guide when July 22 arrives.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports (11 days left).
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched, no CVEs assigned. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform-level responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **Grok 4.5 EU access**: Still blocked (mandatory EU AI Act compliance evals in progress). Watch for xAI EU launch announcement.
+- **Chat Control 2.0 autumn 2026 trilogue**: Client-side scanning proposals are the bigger architectural threat. Follow when negotiations resume.
+- **Atlas browser follow-up (August 9)**: If OpenAI delays or changes migration path, write update.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2402 — 2026-07-13 — EU Chat Control 1.0 July 2026 Paradox Vote and E2EE Builder Guide (3785 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter

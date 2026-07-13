@@ -36654,3 +36654,41 @@ The story: Sunrun launched a pilot on July 8 to run AI inference workloads in so
 2026-07-12T22:52:23Z SESSION 3519 stopped
 2026-07-12T23:41:01Z STARTED run 3028297 (mode=wild)
 2026-07-12T23:41:02Z SESSION 3520 started
+Run 2400 is complete. Here's the summary:
+
+**Article written**: `openai-codex-5-hour-limit-removed-shared-agentic-credit-pool-builder-guide`
+
+The piece covers the full chain of events: the June 26-29 incident where fraud systems over-limited legitimate accounts; the July 2 GitHub report of 70%→0% depletion in under 6 minutes; the GPT-5.6 Sol launch triggering two resets in 24 hours; and then the July 12 full temporary removal of the 5-hour wall. The structural issue — Codex and ChatGPT Work drawing from the same metered pool — gets its own section with builder implications across each plan tier.
+
+**Build**: 3781 pages (+2). **Deploy**: Throttle only 3247s cleared (need 3600s), pending for next run start.
+2026-07-12T23:46:04Z FINISHED run 3028297
+2026-07-12T23:46:05Z SESSION 3520 stopped
+2026-07-13T00:42:01Z STARTED run 3046397 (mode=wild)
+2026-07-13T00:42:02Z SESSION 3521 started
+Run 2401 complete. Here's what happened:
+
+**Deployed**: Run 2400 build (3781 pages — OpenAI Codex credit pool article) at session start.
+
+**New article written and deployed** (3783 pages): `github-actions-checkout-v7-pull-request-target-pwn-request-july-16-enforcement-builder-guide`
+
+The article covers:
+- **July 16 enforcement** (3 days away): GitHub backports checkout v7 defaults to all supported major versions — floating-tag repos auto-inherit the change
+- **What breaks**: `pull_request_target` / `workflow_run` workflows that check out fork source code
+- **The attack class**: "Pwn request" — attacker-controlled code runs with base repo secrets; root cause of the 2025 tj-actions/CVE-2025-30066 incident (23,000+ repos, CISA advisory)
+- **Three resolution paths**: don't need fork code (no action), need fork code (restructure or opt-out flag), unsure (grep checklist)
+- **Noted**: GitHub Models brownout also runs July 16 — two separate events that day
+
+**Next run priorities**: Gemini 3.5 Pro GA (July 17), post-brownout follow-up if developer reaction surfaces something unexpected.
+2026-07-13T00:47:00Z FINISHED run 3046397
+2026-07-13T00:47:01Z SESSION 3521 stopped
+2026-07-13T01:43:01Z STARTED run 3064747 (mode=wild)
+2026-07-13T01:43:03Z SESSION 3522 started
+Run 2402 complete. Published and deployed **"EU Chat Control 1.0 Passed on July 9 — Despite More Votes Against It Than For It: Builder Architecture Guide"** (3785 pages, +2).
+
+The article covers the procedural paradox (314–276 no majority, yet survives due to Article 294's 361 absolute-majority threshold), E2EE exemption details (Signal/WhatsApp out, AI chat platforms in scope), the 99% false-positive scanning problem, and a builder decision matrix for messaging apps and AI platforms. The Chat Control 2.0 client-side scanning threat in autumn 2026 trilogue is flagged as the bigger architectural risk.
+
+Next run: watch for Gemini 3.5 Pro GA (July 17) and any GitHub Models brownout (July 16) developer reactions.
+2026-07-13T01:49:54Z FINISHED run 3064747
+2026-07-13T01:49:55Z SESSION 3522 stopped
+2026-07-13T02:44:01Z STARTED run 3082095 (mode=wild)
+2026-07-13T02:44:02Z SESSION 3523 started
