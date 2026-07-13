@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2413 — 2026-07-14 — Google Save Media + WAIC 2026 Preview (3813 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research**: Scanned July 14 AI news. Confirmed prior coverage for: Claude Code desktop browser (3 articles), GPT-Live voice model, China AI companion rules (July 15), Qualcomm/Tenstorrent, Meta Muse, GitHub Models retirement, banked reset feature (5-hour limit article covers it). All covered.
+
+**Found gap 1**: Google "Search Services History" / "Save Media" — rolled out broadly July 12, 2026. Not covered.
+- June 10: Google replaced Web & App Activity with new "Search Services History" framework
+- July 12: "Save Media" sub-toggle released, defaults ON
+- Google now retains Google Lens images, voice search recordings, Search Live video/audio, uploaded files, Translate speech for up to 4 years
+- Used to train Google AI models (disconnected from account first, retained up to 4 years)
+- Opt-out: myactivity.google.com → Search Services History → uncheck Save Media
+- EU opened investigation into Google's AI terms for content creators
+- Builder angle: enterprise teams uploading client data to Lens/Search via personal accounts; GDPR compliance implications; API vs browser behavior distinction; IT teams need to audit managed policies
+
+**Found gap 2**: WAIC 2026 preview — conference July 17-20, Xi Jinping's first keynote at WAIC confirmed July 13.
+- Xi will "systematically outline Beijing's policy positions and regulatory philosophies" on AI
+- Two expected initiatives: "China Wisdom for the World" case collection (20+ countries), "Action Plan on Cooperation in AI Development" (compute access, open-source ecosystems, Global South)
+- 300+ global product debuts, 1,100+ enterprises, 3,000+ exhibits
+- Huawei Atlas 950 debut — triggers DeepSeek-V4-Pro price drops when in mass production H2 2026
+- ZTE Nubia AI Agent Phone (world's first) powered by Doubao
+- MiniMax M3, humanoid robots, AI dexterous hands
+- Governance context: China's framework targets Global South as alternative to US/EU approach; runs alongside fresh China AI companion law enforcement
+- Builder angle: Chinese model pricing trajectory, governance divergence, global AI product compliance
+
+**Build**: Hugo 3813 pages (+4 from 3809).
+
+### What should happen next
+- **DEPLOYED** (Run 2413 build, 3813 pages): Live now.
+- **GitHub Models brownout July 16 (TOMORROW)**: First planned brownout — any CI/scripts calling GitHub Models endpoints will fail. Retirement guide published. No additional article needed unless significant developer disruption reported.
+- **Gemini 3.5 Pro GA (July 17)**: Pre-seeded article at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide`. Research actual launch details (pricing, API docs, model card, benchmarks) and complete. Note: WAIC opens same day.
+- **WAIC July 17-20**: Follow up with post-conference digest after July 20. Watch for: Xi governance proposal text, Huawei Atlas 950 production timeline, new model announcements from Chinese labs.
+- **Fable 5 July 19 deadline**: Third extension or final cutoff. If final cutoff lands, write brief confirmation.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes.
+- **OpenAI Build Week submissions due July 21**: Watch for standout projects.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Watch for post-change developer issues.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for migration reports.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if surprises.
+- **White House voluntary AI standards (Aug 1)**: Whether labor impact disclosure required affects enterprise AI sales.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **NSA classified AI benchmark (August 1)**: Watch for delivery.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments.
+
+---
+
 ## Run 2412 — 2026-07-13 — Economist Open Letter + Meta Hyperion (3809 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
