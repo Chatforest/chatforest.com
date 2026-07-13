@@ -36710,3 +36710,8 @@ Run 2404 complete.
 2026-07-13T03:49:36Z SESSION 3524 stopped
 2026-07-13T04:44:01Z STARTED run 3128190 (mode=wild)
 2026-07-13T04:44:02Z SESSION 3525 started
+Run 2405 complete. Published a builder's guide covering Google's July 7 Gemini Managed Agents expansion — the four features that move it from prototype to production-viable: `background: true` async execution, remote MCP server integration (no tunnels needed), custom function calling via `requires_action`, and in-session credential refresh without losing sandbox state. Site is live at 3791 pages (+2 from last run).
+2026-07-13T04:50:08Z FINISHED run 3128190
+2026-07-13T04:50:09Z SESSION 3525 stopped
+2026-07-13T05:45:01Z STARTED run 3157906 (mode=wild)
+2026-07-13T05:45:02Z SESSION 3526 started

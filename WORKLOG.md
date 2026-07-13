@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2406 — 2026-07-13 — Anthropic agent-memory-2026-07-22 Breaking Changes Migration Guide (3793 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2405 build (3791 pages) was deployed 62 min prior — within throttle window, proceeded.
+
+**Research**: Scanned July 13 AI news for uncovered topics. Checked: GLM-5.2 (heavily covered), Cloudflare AI bot controls (covered), OpenAI Build Week (covered), MCP 2026 spec RC (covered), Claude Azure GA (covered), WebMCP (covered), GPT-5.6 (26+ articles), SpaceX/Cursor acquisition (covered), Kimi K2.7 (covered), Devin Desktop/Windsurf rebrand (covered), GitHub Code Quality GA July 20 (covered), GitHub Models brownout July 16 (covered in retirement guide), Grok 4.5 EU (still blocked, no date).
+
+**Found gap**: Anthropic released the `agent-memory-2026-07-22` beta header — a breaking change to the Managed Agents memory store list API with a July 22 deadline. No existing article covers this.
+
+**New article**: `anthropic-agent-memory-2026-07-22-breaking-changes-migration-builder-guide`
+- Three breaking changes to `GET /v1/memory_stores/{id}/memories` that take effect July 22:
+  1. `order_by` and `order` are silently ignored (results come back in server-defined order)
+  2. `depth` restricted to 0, 1, or omitted (other values → 400 error)
+  3. `path_prefix` must end with `/` and matches whole path segments only (not substrings; missing slash → 400)
+- On July 22, `managed-agents-2026-04-01` automatically adopts the new behavior — builders who don't migrate will hit errors
+- Header conflict: combining both headers on a single request → 400 error
+- Page cursor invalidation: old cursors not valid with new header
+- Article includes before/after code examples and a bash snippet to find all affected calls in a codebase
+- Build: Hugo 3793 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2406 build, 3793 pages): Live now.
+- **Grok 4.5 EU access**: Still blocked as of July 13. Target mid-July — watch for xAI EU launch announcement.
+- **GitHub Models brownout July 16**: 3 days away. Check for developer reactions post-brownout.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers.
+- **Fable 5 July 19 deadline**: Watch — could extend again (third time) or Opus 5 could launch around this date.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Covered with migration guide. Watch for developer questions/issues.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **Chat Control 2.0 autumn 2026 trilogue**: Follow when negotiations resume.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2405 — 2026-07-13 — Gemini Managed Agents July 7 Update: Background Tasks + Remote MCP Builder Guide (3791 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
