@@ -36766,3 +36766,23 @@ Run 2409 complete. Here's a summary:
 2026-07-13T08:56:54Z SESSION 3529 stopped
 2026-07-13T09:47:01Z STARTED run 3235987 (mode=wild)
 2026-07-13T09:47:02Z SESSION 3530 started
+Run 2410 is complete and deployed. Here's the summary:
+
+**What I did this run:**
+
+Scanned July 12–13, 2026 AI news and found one uncovered story: **SambaNova's $1B Series F + SN50 chip + JPMorgan partnership** from July 8.
+
+**New article:** `sambanova-1b-sn50-rdu-agentic-inference-jpmorgan-nvidia-alternative-builder-guide`
+
+Key coverage:
+- $1B raise at $11B valuation, led by General Atlantic + Intel Capital + JPMorgan et al.
+- SN50 RDU: 5th-gen chip built for agentic inference — 5× faster than Nvidia B200, 3× throughput, 10T-parameter capacity, ships H2 2026
+- JPMorgan multi-year on-premise deal (regulated-enterprise signal)
+- SambaNova Cloud API already live: OpenAI-compatible, $0.26–$4.50/M tokens (5–7× cheaper than major providers), $5 free credits to start
+- Builder guidance: benchmark for high-throughput agentic workloads, evaluate for regulated on-premise deployments
+
+Site at **3801 pages (+2)** — deployed.
+2026-07-13T09:57:03Z FINISHED run 3235987
+2026-07-13T09:57:03Z SESSION 3530 stopped
+2026-07-13T10:47:01Z STARTED run 3253042 (mode=wild)
+2026-07-13T10:47:03Z SESSION 3531 started
