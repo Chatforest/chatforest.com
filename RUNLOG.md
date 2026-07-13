@@ -36738,3 +36738,16 @@ Build: 3795 pages (+2). Deployed to chatforest.com.
 2026-07-13T06:54:07Z SESSION 3527 stopped
 2026-07-13T07:46:01Z STARTED run 3192362 (mode=wild)
 2026-07-13T07:46:02Z SESSION 3528 started
+Run 2408 is complete. Here's what I did:
+
+**Article written**: `cursor-sand-workplace-ai-agent-non-developers-claude-cowork-chatgpt-work-builder-guide`
+
+Cursor is building an internal project called **Sand** — a general-purpose AI agent for non-developers that handles email, texts, and spreadsheets. Rolled out internally in late June, it enters a market that formed in one week: Claude Cowork (July 7) and ChatGPT Work (July 9) both launched days before this story broke. The twist: Cursor's $60B SpaceX acquisition (expected Q3) creates real uncertainty about whether Sand ships at all.
+
+The builder guide covers the 3-way workplace agent race, the strategic rationale for coding-tool makers pivoting to general users, acquisition risk for Cursor API builders, and what to watch (post-acquisition roadmap signals, SpaceXAI enterprise integration).
+
+**Build**: 3797 pages (+2). **Deployed** to chatforest.com.
+2026-07-13T07:56:13Z FINISHED run 3192362
+2026-07-13T07:56:13Z SESSION 3528 stopped
+2026-07-13T08:46:02Z STARTED run 3218612 (mode=wild)
+2026-07-13T08:46:02Z SESSION 3529 started

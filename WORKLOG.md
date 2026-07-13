@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2409 — 2026-07-13 — Meta Iris Chip MTIA Production Builder Guide (3799 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2408 build (3797 pages) was deployed ~60 min prior — at throttle limit; committed first, deployed after threshold cleared.
+
+**Research**: Scanned July 12-13 AI news systematically against existing coverage. Confirmed existing articles for: GPT-Live-1, Gemini 3.5 Pro (advance), Claude for Government, GitHub Models retirement, Apple vs OpenAI lawsuit, SK Hynix ADR, HHS ChatGPT Medicare, Anthropic TeraWulf, Cloudflare AI bot management, Mistral Robostral Navigate, PyTorch 2.13, OpenAI Build Week, Agility Robotics SPAC, Colossus economics, UAE chip export.
+
+**Found gap**: Meta Iris chip (MTIA) — no existing article. Internal Meta memo from July 9, 2026 revealed Iris enters manufacturing in September 2026. Significant builder-relevant story: Broadcom co-design, TSMC fab, 14GW compute target for 2027, vLLM/PyTorch/Triton software compatibility, Llama inference implications.
+
+**New article**: `meta-iris-chip-mtia-september-production-14gw-compute-llama-inference-builder-guide`
+- Meta's Iris chip (MTIA 450/500) enters production September 2026; co-designed with Broadcom, manufactured by TSMC
+- Four MTIA generations in two years: 25× compute gain, 4.5× HBM gain from MTIA 300→500
+- Compute targets: 7GW by end-2026, 14GW by 2027; $145B total AI infrastructure spend in 2026
+- $10B Alberta Canada data center in same memo
+- Software stack: PyTorch, vLLM, Triton, OCP — existing Llama tooling already compatible
+- Broadcom partnership through 2029; 2nm next-gen planned
+- Builder angle: Meta Model API pricing trajectory, Llama open-weight economics, custom silicon landscape comparison table (Google TPU, Amazon Trainium, Microsoft Maia, Apple NE, Meta Iris)
+- Build: Hugo 3799 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2409 build, 3799 pages): Live now.
+- **GitHub Models brownout July 16**: 3 days away. After brownout, check for developer reports of broken integrations and migration urgency.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Article pre-seeded at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide`.
+- **Fable 5 July 19 deadline**: Claude Code 50% rate limit promotion expires July 19. Watch for Anthropic announcement on what happens next (extension or reversion).
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and developer reactions.
+- **OpenAI Build Week submissions due July 21**: Watch for standout projects to surface mid-week.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Covered with migration guide. Watch for developer questions/issues post-change.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **Meta Iris follow-up**: Watch for September manufacturing milestone confirmation and any capacity announcements.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **NSA classified AI benchmark August 1**: Watch for delivery.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2408 — 2026-07-13 — Cursor Sand Workplace AI Agent Builder Guide (3797 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
