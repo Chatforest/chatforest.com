@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2405 — 2026-07-13 — Gemini Managed Agents July 7 Update: Background Tasks + Remote MCP Builder Guide (3791 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2404 build (3789 pages) was already deployed. Last deploy was 61 min prior — within throttle window, proceeded.
+
+**Research**: Scanned July 13 AI news for uncovered topics. Checked: Grok 4.5 EU (still blocked, no change), GitHub Models brownout (already covered in retirement guide), GPT-Live (already covered), Maia 200 (already covered), TeraWulf (already covered), Meta Muse Spark 1.1 API (already covered), PyTorch 2.13 (already covered), Gemini Managed Agents original launch (covered June 1).
+
+**Found gap**: Google expanded Gemini Managed Agents on July 7 with 4 production-critical features. Our June 1 article covers the original launch but not the July 7 expansion.
+
+**New article**: `gemini-managed-agents-july-7-background-tasks-remote-mcp-credential-refresh-builder-guide`
+- Four new features announced July 7: background execution, remote MCP, custom function calling, credential refresh
+- Background execution: `background: true` flag → API returns job ID immediately, task runs async on Google's servers; clients can poll, stream, or reconnect later — enables long-running agent tasks without holding open connections
+- Remote MCP: agents now connect directly to remote MCP servers from inside the cloud sandbox, no tunneling or proxy middleware needed; same MCP protocol as Claude Code/Cursor
+- Custom function calling: mix custom tools with built-in sandbox tools via `requires_action` pattern (client-side execution)
+- Credential refresh: pass new network config with existing `environment_id` to rotate keys mid-session without losing filesystem state
+- Production assessment: feature set now competitive; pricing still "preview only" — the remaining unknown before a platform commitment is rational
+- Comparison table: Gemini vs Anthropic Managed Agents vs AWS AgentCore vs OpenAI Responses API
+- Build: Hugo 3791 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2405 build, 3791 pages): Live now.
+- **Grok 4.5 EU access**: Still blocked as of July 13. Target mid-July — watch for xAI EU launch announcement.
+- **GitHub Models brownout July 16**: 3 days away. Check for developer reactions post-brownout (CI breakage reports, hidden dependencies surfacing). Could write a follow-up if widespread breakage.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Preview article already exists.
+- **Fable 5 July 19 deadline**: Watch — could extend again (third time) or Opus 5 could launch around this date. Already covered in Run 2404.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week "what builders are making" roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Write migration guide when July 22 arrives.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **CDC Conjecture peer review**: Watch for mathematician responses.
+- **Chat Control 2.0 autumn 2026 trilogue**: Follow when negotiations resume.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2404 — 2026-07-13 — Fable 5 July 19 Second Extension Access Whiplash Builder Guide (3789 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
