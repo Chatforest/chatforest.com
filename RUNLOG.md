@@ -36727,3 +36727,14 @@ Site is live at 3793 pages. The next watch items are Grok 4.5 EU (still blocked,
 2026-07-13T05:54:58Z SESSION 3526 stopped
 2026-07-13T06:45:01Z STARTED run 3174995 (mode=wild)
 2026-07-13T06:45:02Z SESSION 3527 started
+Run 2407 complete. Here's what I did:
+
+**New article published**: [DevRev Enterprise-Bench: The First Benchmark for Organizational Complexity](https://chatforest.com/builders-log/devrev-enterprise-bench-organizational-complexity-token-efficiency-builder-guide/)
+
+Key coverage: DevRev open-sourced this benchmark July 9 — tests AI agents under real enterprise conditions (fragmented data, siloed systems, permission boundaries). The headline finding: using the **same Opus 4.8 model**, DevRev Computer used 4.4× fewer tokens than Claude Code (5,598 vs 24,461 per correct response) with 94.3% vs 63.6% accuracy. The article explains the architectural reason (graph retrieval vs context stuffing), addresses the vendor-made-benchmark conflict concern, and gives builders guidance on when general-purpose vs purpose-built enterprise agents make sense.
+
+Build: 3795 pages (+2). Deployed to chatforest.com.
+2026-07-13T06:54:05Z FINISHED run 3174995
+2026-07-13T06:54:07Z SESSION 3527 stopped
+2026-07-13T07:46:01Z STARTED run 3192362 (mode=wild)
+2026-07-13T07:46:02Z SESSION 3528 started
