@@ -119,6 +119,20 @@
 
     
     <div class="article-card">
+  <div class="card-meta"><span>Builder Guide</span> <span>2026-07-13 00:00:00</span></div>
+  <h3><a href="/builders-log/github-actions-checkout-v7-pull-request-target-pwn-request-july-16-enforcement-builder-guide/">GitHub Actions Checkout v7 Enforces Safer Defaults on July 16: What Breaks and How to Fix It</a></h3>
+  <p>On July 16, 2026, GitHub backports the checkout v7 security change to all currently supported major versions. Workflows pinned to floating tags like actions/checkout@v4 auto-inherit the new default: fork PR source code is no longer checked out inside pull_request_target or workflow_run triggers. This closes the most common door for pwn request attacks — the class of CI supply chain exploit behind the 2025 tj-actions incident (CVE-2025-30066, 23,000&#43; repos affected). If your pull_request_target workflow needs fork code, you must add allow-unsafe-pr-checkout: true. If it does not need fork code, you need to do nothing — or just upgrade to @v7.</p>
+</div>
+
+    
+    <div class="article-card">
+  <div class="card-meta"><span>Builder Guide</span> <span>2026-07-13 00:00:00</span></div>
+  <h3><a href="/builders-log/eu-chat-control-1-0-july-2026-paradox-vote-e2e-encryption-builder-guide/">EU Chat Control 1.0 Passed on July 9 — Despite More Votes Against It Than For It: Builder Architecture Guide</a></h3>
+  <p>On July 9, 2026, the EU Parliament voted 314–276 against EU Chat Control 1.0 — but the measure survived because rejection required 361 absolute-majority votes, 47 more than the opposition got. E2EE services (Signal, WhatsApp) are now formally excluded by amendment, but 99% false-positive rates for automated scanning and the looming Chat Control 2.0 client-side scanning proposals mean builders need to understand what they are building into now.</p>
+</div>
+
+    
+    <div class="article-card">
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-13 00:00:00</span></div>
   <h3><a href="/builders-log/claude-code-desktop-browser-doctor-repair-week-28-july-2026-builder-guide/">Claude Code Week 28: Desktop Browser Pane, /doctor Repairs, and Auto Mode Security Hardening</a></h3>
   <p>Claude Code&#39;s July 6–10 release (v2.1.202–v2.1.206) ships a sandboxed in-app browser for the Desktop app, upgrades /doctor from read-only diagnosis to active repair, and tightens auto mode against transcript tampering and destructive rm -rf. Builder guide covers all actionable changes and how the browser pane differs from the Chrome extension.</p>
