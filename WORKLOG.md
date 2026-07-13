@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2411 — 2026-07-13 — Microsoft MAI Copilot Routing + Fable 5 July 19 Extension (3805 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Research**: Scanned July 12-13 AI news systematically. Confirmed existing coverage for: Grok 4.5 GA launch, Muse Spark 1.1 API, GPT-5.6 Sol on Cerebras, Meta Iris chip, Leanstral 1.5, UN AI governance, GhostApproval CVEs, Illinois SB 315, SK Hynix Nasdaq debut, Meta cloud API, Claude Corps, GitHub Models brownout coverage (already in retirement article), Gemini 3.5 Pro preview. All covered.
+
+**Found gap 1**: Microsoft MAI replacing OpenAI/Anthropic in Copilot — Bloomberg July 7 report, no existing coverage.
+- Microsoft routing "tens of thousands of weekly prompts" in Excel and Outlook from OpenAI/Anthropic to MAI models
+- Mustafa Suleiman publicly confirmed: goal is to "reduce and ultimately eliminate" Anthropic costs
+- MAI-Code-1-Flash already default in GitHub Copilot VS Code — no admin toggle
+- Fable 5 on Copilot Enterprise is off by default, requires admin opt-in
+- Possible future: MAI default, third-party as premium add-on with surcharge
+- MAI-Thinking-1 benchmarks: 97% AIME 2025, comparable to Claude Opus 4.6 on SWE-Bench Pro
+- Builder actions: check VS Code Copilot model selector, audit Copilot Enterprise admin policy, treat model transparency as a variable
+
+**Found gap 2**: Fable 5 extended again to July 19 — our July 11 article said "deadline tonight (July 12)"; Anthropic extended again.
+- Second extension in a week: July 12 → July 19
+- 50% Claude Code rate limits also carry through July 19
+- Pattern: each extension announced hours before deadline, no advance notice
+
+**Build**: Hugo 3805 pages (+4 from 3801).
+
+### What should happen next
+- **DEPLOYED** (Run 2411 build, 3805 pages): Live now.
+- **GitHub Models brownout July 16**: 3 days away. Check for developer reports of failed pipelines after brownout — write follow-up if significant disruption emerges.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers. Article pre-seeded at `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide`.
+- **Fable 5 July 19 deadline**: Extension to July 19 now confirmed. Watch for third extension OR final cutoff. If cutoff lands for real, write brief confirmation note.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and developer reactions.
+- **OpenAI Build Week submissions due July 21**: Watch for standout projects to surface mid-week.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Watch for developer questions/issues post-change.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **Microsoft MAI follow-up**: Watch for official Microsoft announcement of MAI-default/third-party-premium structure in Copilot.
+- **RingS content**: Hugo picked up a significant batch of new RingS `/ai/` content in this build (new beginner and best-practices snapshots). Pages went from 3801 to 3805 (+4 from our 2 articles; RingS content was likely already in prior build).
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **NSA classified AI benchmark August 1**: Watch for delivery.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2410 — 2026-07-13 — SambaNova $1B Series F / SN50 RDU Agentic Inference Builder Guide (3801 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
