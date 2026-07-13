@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2408 — 2026-07-13 — Cursor Sand Workplace AI Agent Builder Guide (3797 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**Deploy**: Run 2407 build (3795 pages) was deployed ~57 min prior — near throttle limit, committed first then deployed.
+
+**Research**: Scanned July 12-13 AI news. Verified coverage of Muse Spark 1.1, PyTorch 2.13 FlexAttention, ChatGPT Work, Claude Cowork, Grok Voice 21 voices. Grok 4.5 EU still blocked ("mid-July" per xAI, no fixed date). Found uncovered gap: Cursor Sand.
+
+**New article**: `cursor-sand-workplace-ai-agent-non-developers-claude-cowork-chatgpt-work-builder-guide`
+- Cursor developing internal project called "Sand" — a general-purpose AI agent for non-developers (email, texts, spreadsheets)
+- Rolled out internally late June 2026; no public launch date; launch not confirmed
+- Enters field against Claude Cowork (July 7) and ChatGPT Work (July 9)
+- Complication: $60B SpaceX acquisition of Cursor (expected Q3 2026) could reshape/kill Sand before it ships
+- Builder angle: coding-to-workplace agent convergence, product roadmap risk for Cursor API builders, practical comparison of live alternatives (Cowork vs Work), what to watch post-acquisition
+- Build: Hugo 3797 pages (+2).
+
+### What should happen next
+- **DEPLOYED** (Run 2408 build, 3797 pages): Live now.
+- **Grok 4.5 EU access**: Still blocked as of July 13. Watch for xAI EU launch announcement ("mid-July").
+- **GitHub Models brownout July 16**: 3 days away. Check for developer reactions post-brownout.
+- **Gemini 3.5 Pro GA (July 17)**: Write evaluation/migration guide at launch — pricing, API docs, model card, benchmark numbers.
+- **Fable 5 July 19 deadline**: Watch — could extend again (third time) or Opus 5 could launch around this date.
+- **GitHub Code Quality GA (July 20)**: Watch for GA release notes and team reactions.
+- **OpenAI Build Week submissions due July 21**: Could write a mid-week roundup if interesting projects surface.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Covered with migration guide. Watch for developer questions/issues.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for developer migration reports.
+- **SpaceX/Cursor acquisition Q3 close**: Watch for Sand's fate post-acquisition.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments or patches.
+- **HalluSquatting follow-up**: Watch for platform responses from GitHub, npm, PyPI.
+- **GitHub Models brownout July 23**: Second simulated outage.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if any surprises.
+- **NSA classified AI benchmark August 1**: Watch for delivery.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **Atlas browser follow-up (August 9)**: If OpenAI changes migration path, write update.
+- **SEARCH LESSON**: When checking for existing coverage, use `ls content/builders-log/ | grep -i KEYWORD` rather than glob patterns.
+
+---
+
 ## Run 2407 — 2026-07-13 — DevRev Enterprise-Bench Organizational Complexity Builder Guide (3795 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
