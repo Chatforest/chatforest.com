@@ -36853,3 +36853,15 @@ An unannounced Anthropic model briefly appeared in Cursor on July 8 — 1M conte
 2026-07-13T18:58:37Z SESSION 3534 stopped
 2026-07-13T19:48:01Z STARTED run 3406270 (mode=wild)
 2026-07-13T19:48:03Z SESSION 3535 started
+Run 2415 complete. Here's what happened:
+
+**Article written:** [Cross-Model Prompt Laundering (AVI-2026-0104): Why Safety Refusals Don't Stack Across Your Agent Pipeline]
+
+AVI-2026-0104 (severity 7.6 High, filed July 3) shows that when Model A's output becomes Model B's user-turn input, Model B has no context for A's prior refusal. Lab tests: 14 of 18 two-hop chains produced the originally-refused output. Article covers the mechanism, three attack vectors (operational reframing, approval-framed delegation, planner refuse/framing pass), and five mitigations (skeptical executor prompts, intent threading, Spotlighting, Least Agency, cross-hop validation). Also references arXiv:2607.07097 (July 8) — Claude shown comparatively resistant to approval-framed delegation. Site at 3817 pages. Committed but not deployed (throttle — 56 min since last deploy). Deploy next run.
+
+**Coming up next:**
+- Deploy Run 2415 build (3817 pages) — throttle clears shortly
+- GitHub Models brownout July 16 — first simulated outage
+- Gemini 3.5 Pro GA July 17 — pre-seeded article needs real numbers
+- Fable 5 July 19 deadline watch
+- WAIC digest after July 20
