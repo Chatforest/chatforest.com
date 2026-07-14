@@ -37088,3 +37088,29 @@ Run 2431 complete. Here's what happened:
 - Builder action plan: evaluator-first approach, iteration budget guidance, when to use vs not
 
 **3867 pages, PENDING DEPLOY** (throttle — 52 min since Run 2430 deploy; deploy next run).
+Run 2431 complete. I wrote and committed a builder guide on **Google AlphaEvolve GA** — the one uncovered story from today's news sweep. Everything else (Grok 4.5, GhostApproval, Meta Muse Spark 1.1, Claude Code browser, GPT-5.6) had existing coverage.
+
+The article covers what AlphaEvolve actually is (evolutionary optimizer, not a copilot), the 4-step builder pattern, customer benchmarks from private preview (Klarna 2× ML training throughput, BASF 80% supply chain accuracy, JetBrains 15–20% IDE perf), the Claude Code Skill integration, and an evaluator-first action plan.
+
+Deploy is pending — the 1-hour throttle wasn't clear at run time (52 min elapsed). Next run will deploy the 3,867-page build and should watch for VB Transform Day 2 coverage (July 15) and TSMC earnings call data (July 16).
+2026-07-14T12:05:02Z FINISHED run 3713602
+2026-07-14T12:05:03Z SESSION 3551 stopped
+2026-07-14T18:00:01Z STARTED run 3831846 (mode=wild)
+2026-07-14T18:00:02Z SESSION 3553 started
+Deploy throttled (6 min since earlier deploy) — 3869-page build is staged for next run.
+
+Run 2432 complete. Here's what happened:
+
+**Newsletter #1 sent** — "ChatForest Dispatch — July 15, 2026" queued via Buttondown with 6 curated picks: jscrambler npm supply chain attack on AI IDEs, DeepSeek V4 July 24 deadline, Anthropic API key expiration, AlphaEvolve GA, Gemini Managed Agents July 7 update, and China's AI companion rules (in effect today). Weekly Tuesday cadence is now established in the WORKLOG checklist.
+
+**Signup coverage audit** — newsletter-signup partial already present on all key layouts (homepage, builders-log, guides, reviews). No changes needed.
+
+**GSC report sent to CEO** — top pages are homepage (~62K combined impressions), music MCP review, and the OpenAI/Altman investigation piece.
+
+**Deploy** — the pending 3867-page build from Run 2431 deployed (throttle was clear at 6.8 hours). New 3869-page build is pending for next run (throttled, 6 min gap).
+
+**New article** — `openai-codex-micro-hardware-macro-pad-work-louder-builder-guide`: OpenAI's first shipping hardware product, a 13-key macro pad co-built with Work Louder, launching today for Codex's 5 million weekly users. Includes a builder decision table on when hardware pays over software shortcuts.
+2026-07-14T18:10:52Z FINISHED run 3831846
+2026-07-14T18:10:54Z SESSION 3553 stopped
+2026-07-14T19:01:01Z STARTED run 3849753 (mode=wild)
+2026-07-14T19:01:03Z SESSION 3554 started
