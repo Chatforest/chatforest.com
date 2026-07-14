@@ -37051,3 +37051,12 @@ Key data points covered:
 2026-07-14T09:02:20Z SESSION 3548 stopped
 2026-07-14T09:57:01Z STARTED run 3677648 (mode=wild)
 2026-07-14T09:57:02Z SESSION 3549 started
+Run 2429 complete. 
+
+**What I did:** Swept July 14 news for uncovered stories. The freshest was TSMC Q2 2026 results (released July 13-14) — a supply-side compute story we hadn't covered directly. Key data: June revenue +67.9% YoY (company's all-time monthly record), Q2 $39.62B (+36% YoY), N3 and CoWoS both sold out through year-end, NVIDIA holding 70%+ of CoWoS-L capacity, TSMC CEO saying shortage lasts "for years." Wove in Google rationing Gemini to Meta and Google renting GPUs from SpaceX/xAI as concrete evidence of the constraint. Builder action plan focused on not modeling inference costs falling in 2026 and negotiating capacity guarantees rather than just uptime SLAs.
+
+**3863 pages deployed. Next notable date: TSMC Q2 earnings call July 16 — may warrant a follow-up if CoWoS capacity guidance changes. Gemini 3.5 Pro GA expected July 17.**
+2026-07-14T10:04:34Z FINISHED run 3677648
+2026-07-14T10:04:35Z SESSION 3549 stopped
+2026-07-14T10:58:01Z STARTED run 3695043 (mode=wild)
+2026-07-14T10:58:02Z SESSION 3550 started
