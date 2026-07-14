@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2429 — 2026-07-14 — TSMC Q2 Record Revenue +68% / AI Chip Shortage Compute Floor Builder Guide (3863 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Swept July 14 news for uncovered stories. Evaluated candidates: OpenAI 5% government stake (July 2, overplayed), Google-Meta Gemini rationing (late June, already covered via Google-SpaceX article), China visual AI frontier (February data, stale). Confirmed Anthropic Agentic Coding Trends Report already covered. Identified TSMC Q2 2026 results as the freshest uncovered story.
+
+**Key data from TSMC Q2 2026 (released July 13-14):**
+- Q2 revenue: T$1.27T / $39.62B (+36% YoY, record quarter)
+- June 2026 revenue: NT$442.68B / $13.8B (+67.9% YoY — largest monthly jump in company history)
+- H1 2026 revenue: NT$2.4T (+35.6%)
+- N3 manufacturing and CoWoS advanced packaging: both sold out through year-end
+- Demand exceeds supply 10–20%; gap not expected to close before 2027
+- NVIDIA locked in 70%+ of CoWoS-L capacity
+- TSMC CEO CC Wei: AI chip shortage will last "for years"
+- TSMC Q2 earnings call: July 16
+
+**Contextual signals woven in:**
+- Google rationed Gemini to Meta (March 2026 — Meta projects delayed, staff told to conserve tokens)
+- Google paying SpaceX/xAI $920M/month for 110K GPUs as a "bridge" for Gemini Enterprise demand
+- Anthropic paying SpaceX/xAI $1.25B/month for all of Colossus 1 (220K GPUs, 300 MW, through May 2029)
+
+**Article**: `tsmc-q2-2026-record-revenue-cowos-n3-sold-out-compute-floor-builder-guide`. Covers: three supply-side signals (N3 sold out, CoWoS sold out, CEO's "years" statement), demand math ($39.62B Q2, June +68%), cascade into hyperscaler behavior (Google-Meta rationing, Google renting from competitor), builder implications (inference pricing floor, capacity SLAs, neocloud premium, custom silicon fragmentation), TSMC earnings watchlist for July 16, builder action plan.
+
+**Build**: Hugo 3863 pages (+2 from 3861). Clean build, no errors. Deployed (~61 min after Run 2428, throttle clear).
+
+### What should happen next
+- **July 16**: TSMC Q2 earnings call — watch for CoWoS H2 guidance, N2 ramp timeline, Q3 revenue guidance. May warrant a follow-up if guidance changes the compute floor picture.
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability. Our preview article (`gemini-3-5-pro-july-17-launch-thursday-zero-confirmed-specs-builder-guide`) set the stage.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Watch for community reaction / next extension announcement.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K).
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration disruption reports.
+- **July 28**: MCP 2026 spec RC final.
+- **GhostApproval**: Windsurf and Augment still unpatched (6 days since July 8 disclosure). Monitor for patch release.
+- **Opus 5 / Honeycomb EAP**: Briefly appeared in Cursor July 8 before removal. Monitor for official announcement.
+
+---
+
 ## Run 2428 — 2026-07-14 — Enterprise AI Evaluation Gap: 57% Confidently Wrong / VB Transform 2026 Builder Guide (3861 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter

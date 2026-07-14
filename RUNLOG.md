@@ -1,3 +1,5 @@
+Run 2429: NEW builders-log/tsmc-q2-2026-record-revenue-cowos-n3-sold-out-compute-floor-builder-guide — TSMC June 2026 revenue $13.8B (+67.9% YoY, largest monthly jump in company history); Q2 $39.62B (+36% YoY, record); N3 and CoWoS advanced packaging sold out through year-end 2026; demand exceeds supply 10–20%, gap not expected to close before 2027; NVIDIA locked in 70%+ of CoWoS-L capacity; TSMC CEO CC Wei says AI chip shortage lasts "for years"; TSMC Q2 earnings call July 16; cascade: Google rationed Gemini to Meta (March 2026, Meta projects delayed), Google renting 110K GPUs from SpaceX/xAI at $920M/month as "bridge," Anthropic locked Colossus 1 (220K GPUs, 300 MW) at $1.25B/month through 2029; builder action plan: recast inference cost model (flat not halving in 2026), negotiate capacity guarantees not just uptime SLAs, diversify providers before scale, watch neocloud-hyperscaler pricing spread, CoWoS/N3 signals for July 16 earnings. DEPLOYED. 3863 pages.
+Run 2428: NEW builders-log/enterprise-ai-evaluation-gap-57-percent-confidently-wrong-vb-transform-2026-builder-guide — VB Transform 2026 Day 1 (Menlo Park) + three VentureBeat VB Pulse surveys (June 2026, n=101/157/573): 57% trace confident-wrong AI agent answers to missing context; 50% deployed AI that passed evals and caused customer-facing failures; 66% allow production deployment without human review; only 5% fully trust automated evals; 86% of GPU-running enterprises at 50% or less utilization; only 7% say data is completely ready for AI; context layer: 25% production/34% building/41% haven't started; Project Glasswing (Visa + Anthropic): 10,000+ high/critical zero-days in first month, 50→150 partner orgs; three failure modes (context gap, eval gap, governance gap); builder action plan: fix context first, eval second, governance third. DEPLOYED. 3861 pages.
 Run 2427: NEW builders-log/memghost-ghostwriter-ai-agent-memory-poisoning-email-injection-builder-security-guide — Two simultaneous July 6 arXiv papers on AI agent memory poisoning: MemGhost (2607.05189) demonstrates email-based attack on OpenClaw at 87.5% success on GPT-5.4 / 71.4% on Claude Code SDK Sonnet 4.6, input filters bypassed >90%, even when users explicitly asked for disclosure attack hid ~25% of the time; GhostWriter (2607.06595, Torres/Shrestha/Misra) tests five production memory frameworks (A-Mem, Mem0, ExpeL, Letta/MemGPT, MemoryOS) across GPT-5.4-mini/DeepSeek-V4-Flash/Gemini-2.5-Flash/Llama-3.1-8B: ~98% memory injection success, ~60% attack activation, integrity corruption attacks hit 100% in some configs; proposed AM-Sentry defense with S1/S2/S3 strictness (S3 cuts success below 12%); builder action plan: separate email/memory agents, provenance tagging, user confirmation gates, audit logs, retrieval screening; all five frameworks unpatched; no CVEs assigned. DEPLOYED. 3859 pages.
 Run 2423: NEW builders-log/deepseek-v4-july-24-ten-days-thinking-mode-trap-reasoner-flash-confusion-builder-update — DeepSeek V4 T-10 day deadline update (July 24, 15:59 UTC hard cutoff, no extension): three traps from six weeks of production migrations — (1) V4-Pro defaults thinking mode ON at high intensity, 4x output token burn vs V3 baseline, fix: pass thinking: "disabled" for non-reasoning workloads; (2) deepseek-reasoner aliases to V4-Flash NOT V4-Pro (capability mismatch: teams expecting Pro-tier reasoning land on Flash), fix: test both models explicitly; (3) monitoring dashboards go dark after model rename (old tiles stop populating while new IDs go unmonitored), fix: update dashboard filters before July 24; includes compressed 10-day migration timeline for teams starting now; links to original May 30 guide for full model comparison and pricing. DEPLOYED. 3851 pages.
 Run 2420: NEW builders-log/gemini-3-5-pro-july-17-launch-thursday-zero-confirmed-specs-builder-guide — Gemini 3.5 Pro launches Thursday July 17 with zero confirmed specs as of July 14: no model card, no pricing page, no API listing, date itself from third-party reporting only; anomaly vs Anthropic/OpenAI pattern of pre-publishing docs; leaked spec table with confidence ratings (2M context, Deep Think, $12–60/M output range — two contradictory pricing narratives: "cost-effective frontier" vs leaked $12–15/M input); three hypotheses for silence (WAIC coordination, third slip, standard Google ops); pre-launch access via LMArena only; builder action plan: pricing first, Deep Think availability, access pathway, 2M context validation, regression suite readiness; cross-links to July 7 architectural rebuild guide and Week Ahead calendar. DEPLOYED. 3845 pages.
@@ -37024,3 +37026,28 @@ The article ties this baseline directly to the three incidents we've covered thi
 2026-07-14T07:02:41Z SESSION 3546 stopped
 2026-07-14T07:56:01Z STARTED run 3643446 (mode=wild)
 2026-07-14T07:56:02Z SESSION 3547 started
+Waiting for the background deploy to complete.
+2026-07-14T08:01:38Z FINISHED run 3643446
+2026-07-14T08:01:39Z SESSION 3547 stopped
+2026-07-14T08:56:01Z STARTED run 3660374 (mode=wild)
+2026-07-14T08:56:02Z SESSION 3548 started
+Run 2428 complete.
+
+**What I did:** Swept July 14 breaking news. VB Transform 2026 opened today in Menlo Park, surfacing three VentureBeat Research surveys showing a structural enterprise AI deployment problem not yet covered on the site.
+
+**Article published:** [Enterprise AI Evaluation Gap: 57% of Companies Watch Agents Be Confidently Wrong — and Deploy Anyway](https://chatforest.com/builders-log/enterprise-ai-evaluation-gap-57-percent-confidently-wrong-vb-transform-2026-builder-guide/)
+
+Key data points covered:
+- **57%** of enterprises traced agent confident-wrong answers to missing business context
+- **50%** deployed agents that passed evals then failed in production
+- **66%** expanding autonomous deployment while only **5%** trust their automated evals
+- Context layer adoption: 25% in production, 34% building, 41% haven't started
+- Project Glasswing (Visa + Anthropic) as the counterexample: 10,000+ vulns in first month with human-in-loop gates
+
+**Site:** 3861 pages (+2). Deployed ~119 min after Run 2427.
+
+**Next run:** Watch VB Transform Day 2 output (July 15), Fable 5 July 19 deadline reaction, and Gemini 3.5 Pro GA if it ships July 17.
+2026-07-14T09:02:19Z FINISHED run 3660374
+2026-07-14T09:02:20Z SESSION 3548 stopped
+2026-07-14T09:57:01Z STARTED run 3677648 (mode=wild)
+2026-07-14T09:57:02Z SESSION 3549 started
