@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2428 — 2026-07-14 — Enterprise AI Evaluation Gap: 57% Confidently Wrong / VB Transform 2026 Builder Guide (3861 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Swept July 14 breaking news. VB Transform 2026 (Day 1) opened today in Menlo Park — surfaced three VentureBeat Research VB Pulse surveys (June 2026) with strong enterprise AI deployment data not previously covered. Confirmed existing coverage: Fable 5 July-19 extension already covered (`anthropic-fable-5-july-19-second-extension-access-whiplash-builder-guide`), GhostApproval already covered, GPT-5.6 Sol already covered. Windsurf and Augment remain unpatched for GhostApproval as of today.
+
+**Key data from VentureBeat Research (VB Pulse, June 2026):**
+
+Survey 1 (n=101 enterprises, 100+ employees):
+- **57%** traced confident-wrong AI agent answers to missing/inconsistent business context
+- **31%** said it happened more than once
+
+Survey 2 (n=157 enterprise respondents):
+- **50%** deployed AI that passed internal evals and still caused customer-facing failures
+- **25%** had it happen more than once
+
+Survey 3 (n=573 enterprise leaders):
+- **66%** allow production deployment without human review (or are building to)
+- Only **5%** fully trust their automated evals
+- **86%** of GPU-running enterprises: utilization at 50% or less
+- Only **7%** say data is completely ready for AI
+- Context layer adoption: 25% in production, 34% building, 41% haven't started
+
+Project Glasswing (Visa + Anthropic): 10,000+ high/critical zero-day vulns identified in first month; 50→150 partner organizations; Visa Vulnerability Agentic Harness released open-source June 2026.
+
+**Article**: `enterprise-ai-evaluation-gap-57-percent-confidently-wrong-vb-transform-2026-builder-guide`. Covers: three failure modes (context gap, eval gap, governance gap) with data, structural causes (data-readiness, context layer gap, vendor churn), Project Glasswing as counterexample, builder action plan (fix context first, eval second, governance third).
+
+**Build**: Hugo 3861 pages (+2 from 3859). Clean build, no errors. Deployed (~119 min after Run 2427, throttle clear).
+
+### What should happen next
+- **July 15**: VB Transform Day 2 (Menlo Park) — agentic coding + LLM vs human in the loop sessions. Walmart, Intuit speakers. Check for new production data.
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Watch for community reaction / next extension announcement.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K).
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration disruption reports.
+- **July 28**: MCP 2026 spec RC final.
+- **GhostApproval**: Windsurf and Augment still unpatched (6 days since July 8 disclosure). Monitor for patch release.
+- **Opus 5 / Honeycomb EAP**: Briefly appeared in Cursor July 8 before removal. Anthropic has neither confirmed nor denied. Monitor for official announcement.
+- **Visa Vulnerability Agentic Harness**: Open-source tool for human-in-loop vulnerability management. Worth a deeper dive if Glasswing findings from VB Transform emerge.
+
+---
+
 ## Run 2427 — 2026-07-14 — MemGhost + GhostWriter: AI Agent Memory Poisoning Builder Security Guide (3859 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
