@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2425 — 2026-07-14 — jscrambler npm 8.14.0 Rust Infostealer / AI IDE Config Attack Builder Alert (3855 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Covered the flagged NEXT RUN PRIORITY from Run 2424 — the jscrambler npm supply chain attack (July 11, 2026).
+
+Key facts confirmed:
+- **5 malicious versions**: 8.14.0, 8.16.0, 8.17.0, 8.18.0, 8.20.0 — pushed over ~3 hours using a compromised npm publishing credential
+- **Attack escalation**: First 3 versions used preinstall hook (blocked by `--ignore-scripts`); versions 8.18.0 and 8.20.0 moved payload into main code/CLI — `--ignore-scripts` no longer protected you
+- **Payload**: ~7.8 MB Rust infostealer binary container for Linux x86-64, Windows x86-64, macOS arm64; exfiltration via multipart HTTP POST over TLS
+- **AI IDE config files explicitly targeted**: Claude Desktop (`claude_desktop_config.json`), Cursor, Windsurf, VS Code, Zed, MCP server configs — plus cloud credentials, CI tokens, crypto wallets, Bitwarden
+- **15,800 weekly downloads**; Socket caught it 6 minutes after first publish; clean version 8.22.0
+- Root cause: compromised npm publishing credential
+
+**Article**: `jscrambler-npm-8140-rust-infostealer-ai-ide-config-supply-chain-builder-alert`. Covers: timeline (5 versions over 3 hrs), preinstall hook mechanism, the `--ignore-scripts` bypass in 8.18.0+, full list of targeted AI IDE configs, concrete action items (npm ls to check, rotate Claude Desktop MCP keys, rotate cloud creds, CI runner audit), broader 3-attack pattern.
+
+**Build**: Hugo 3855 pages (+2 from 3853). Clean build, no errors. Deployed (116 min after Run 2424).
+
+### What should happen next
+- **July 15**: VB Transform Day 2 (Menlo Park) — check for enterprise agentic AI deployment findings.
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Write confirmation piece when it lands.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K).
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration disruption reports.
+- **July 28**: MCP 2026 spec RC final.
+- **GhostApproval**: Windsurf and Augment still unpatched (7 days since July 8 disclosure). Monitor for patch release.
+- **Grok Build CLI**: Watch for xAI public statement / data deletion policy announcement.
+
+---
+
 ## Run 2424 — 2026-07-14 — Grok Build CLI Repository Upload / Secret Exfiltration Builder Alert (3853 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter

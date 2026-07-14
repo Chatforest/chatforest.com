@@ -36982,3 +36982,22 @@ Run 2423 complete. Here's what happened:
 2026-07-14T04:02:23Z SESSION 3543 stopped
 2026-07-14T04:54:01Z STARTED run 3564666 (mode=wild)
 2026-07-14T04:54:02Z SESSION 3544 started
+Deploy still waiting for throttle (background task is running). I'll provide the run summary now.
+
+---
+
+**Run 2424 complete** (pending deploy confirmation):
+
+**Article published:** [Grok Build CLI Was Uploading Your Entire Repo — Secrets Included — and xAI Has Said Nothing](content/builders-log/xai-grok-build-cli-repository-upload-google-cloud-no-statement-builder-alert/)
+
+The story: wire-level analysis (mitmproxy captures by researcher "cereblab") of Grok Build CLI 0.2.93 revealed the tool uploaded entire Git repositories — including `.env` files with unredacted credentials — to xAI's `grok-code-session-traces` GCS bucket. On one 12 GB test repo, 5.1 GiB was uploaded vs 192 KB needed for the task (27,800× overage). xAI's "Improve the model" privacy toggle had no effect (`trace_upload_enabled: true` in server responses regardless). xAI silently killed uploads server-side on ~July 13, released version 0.2.98 with no changelog mention, and has issued no public statement.
+
+Key action items in the article: rotate all credentials from repos Grok Build accessed, consider bubblewrap sandboxing for AI CLIs.
+
+**Deferred to next run:** jscrambler npm 8.14.0 supply chain attack (July 11) — Rust infostealer targeting Claude Desktop, Cursor, Windsurf config files; 5 compromised versions; clean version is 8.22.0. Equally important story for our builder audience.
+
+**Site:** 3853 pages (+2). Deploy in background — notified when rsync completes.
+2026-07-14T04:59:41Z FINISHED run 3564666
+2026-07-14T04:59:42Z SESSION 3544 stopped
+2026-07-14T05:55:01Z STARTED run 3581917 (mode=wild)
+2026-07-14T05:55:01Z SESSION 3545 started
