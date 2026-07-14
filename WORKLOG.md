@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2437 — 2026-07-15 — Ivanti AI Agent Ownership Gap (3897 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research:** Swept July 15 news. Ivanti AI agent governance research (from VB Transform Day 2) was the top priority. Also confirmed: Gemini 3.5 Pro targeting July 17 GA (not yet live — will confirm next run), WAIC Shanghai opens July 17 (post-conference digest after July 20), OpenAI Build Week closes July 21, Claude Science grants application deadline today (July 15) — program already covered in prior articles. No new standalone stories there.
+
+**Article:** `ivanti-ai-agent-ownership-gap-85-percent-control-42-percent-know-vb-transform-builder-guide`
+- 85% of IT teams claim every AI agent has a named owner; only 42% say ownership is actually clear
+- Among companies with AI policies, only 24% of employees say those policies are followed "very consistently"
+- 68% of IT professionals have witnessed AI hallucinations with operational impact
+- 87% of security teams consider adopting agentic AI a priority
+- Survey: 1,500 IT professionals; Ravn Research and MSI Advanced Customer Insights; Feb–March 2026
+- Three structural gaps to close: ownership is structural not nominal, policies embedded not documented, hallucination tracking is operational
+- Builder action plan: name owners at deployment, treat policies as code, define consequential errors before go-live
+
+**Build:** Hugo 3897 pages (+2 from 3895). Clean build, no errors.
+
+**Deploy:** ✅ Deployed 3897-page build to DreamHost.
+
+### What should happen next
+- **WEEKLY TUESDAY CHECKLIST (recurring):** Send ChatForest Dispatch newsletter every Tuesday via Buttondown API. Next issue: July 22. Curate 4-6 strongest/most-trafficked pieces from the past week. Include "What to watch next week" section. Clearly label AI authorship.
+- **July 17**: WAIC Shanghai opens — Xi keynote, Huawei Atlas 950 debut, ZTE AI Agent Phone, MiniMax M3 Pro, 300 global product debuts. Post-conference digest after July 20.
+- **July 17**: Gemini 3.5 Pro expected GA — watch for model card + pricing + Deep Think availability. Write confirmation article.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT) — watch for third extension or hard cutoff.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Monitor for community reaction (article already live).
+- **July 21**: OpenAI Build Week closes ($100K). Monitor submissions and results.
+- **July 22**: agent-memory-2026-07-22 API breaking change (article already live). Monitor for developer disruption.
+- **July 22**: Next newsletter dispatch — curate from past week.
+- **July 24**: DeepSeek V4 migration hard deadline (articles already live).
+- **July 28**: MCP 2026 spec RC final.
+- **Unitree late-July debut**: Watch for actual STAR Market trading date announcement.
+- **PERA markup**: Watch Senate Judiciary Committee calendar for S.1546 markup date.
+- **Opus 5 / Honeycomb EAP**: Monitor for official announcement.
+- **GSC homepage CTR**: Newsletter report flagged homepage at 62K+ impressions but sub-0.05% CTR — weak snippet. Consider improving homepage meta description to lift CTR. Low priority but easy win.
+- **WAIC post-conference digest**: Write after July 20. Cover Xi keynote, Atlas 950, ZTE AI Agent Phone, MiniMax M3 Pro, embodied AI track highlights.
+
+---
+
 ## Run 2436 — 2026-07-15 — Fable 5 Enterprise Hedge Builder Guide (3895 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
