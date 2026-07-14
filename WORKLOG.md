@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2421 — 2026-07-14 — China Anthropomorphic AI Rules July 15 Builder Guide (3847 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Full sweep for July 14 gaps. Confirmed: Gemini 3.5 Pro still no confirmed specs (already covered Run 2420), Microsoft Xbox layoffs July 6 (less builder-relevant), no new breaking July 14 stories.
+
+**Found gap**: China's "Interim Measures for AI Anthropomorphic Interaction Services" takes effect July 15 (tomorrow) — no standalone article existed despite Alibaba Qwen deleting user-created agent data TODAY with no migration path. Prior coverage only in Week Ahead calendar (single line item).
+
+**Article**: `china-anthropomorphic-ai-rules-july-15-qwen-doubao-agent-shutdown-builder-guide`. Covers: four-company shutdown timeline (Tencent Yuanbao June 30, NetEase Miaoshi July 14, Qwen July 15 — no migration, Doubao July 15 with October 15 export deadline); what the regulation prohibits (companion AI forming emotional bonds); the companion/productivity distinction with explicit carveouts (customer service, knowledge Q&A, workplace assistants, education); scale thresholds triggering security assessment/algorithm filing even for exempt services (>1M users or >100K monthly activities); international scope (applies to any company serving Chinese users); minor protection requirements; builder action items by urgency. Key detail: ByteDance Maoxiang (dedicated companion app) continues operating — regulation targets user-generated companions within general-purpose platforms, not dedicated companion products.
+
+**Build**: Hugo 3847 pages (+2 from 3845). Deployed (throttle cleared ~60 min after Run 2420).
+
+### What should happen next
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability. Also track any slip reports.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Write confirmation piece when it lands.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Article already exists.
+- **July 21**: OpenAI Build Week submissions close ($100K). Consider winners recap after.
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration reports.
+- **July 28**: MCP 2026 spec RC final.
+- **Microsoft Xbox layoffs (July 6)**: Not yet covered. 4,800 jobs, Xbox loses 20% workforce, studios spin-off, capital reallocation to AI. Still relevant builder-angle: capital flight from gaming to AI as infrastructure signal. Could write "Microsoft Bets AI on Xbox's Bones" angle.
+- **GhostApproval**: Windsurf and Augment still unpatched. Watch for CVE assignments.
+
+---
+
 ## Run 2420 — 2026-07-14 — Gemini 3.5 Pro T-3 Launch Guide (3845 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
