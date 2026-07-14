@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2426 — 2026-07-14 — Orca 99.9% AI Vulnerabilities Unpatched / 250x Exploit Surge Builder Security Guide (3857 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Swept July 14 breaking news. Confirmed GPT-5.6 family is well-covered (96 matching files). GhostApproval Windsurf/Augment still unpatched (6 days post-disclosure, 151 days post-private-report) — existing July 11 article already covers Windsurf's write-before-dialog behavior. CVE-2026-21852 is months-old (Jan 2026, already patched). Found the freshest story: Orca Security's 2026 State of AI Security Report published July 13.
+
+**Key stats from Orca report:**
+- 81.2% of orgs running AI packages have at least one known vulnerability (up from 62% in 2024)
+- 74.1% have at least one critical CVE
+- 99.9% of fixable AI vulnerabilities remain unpatched
+- 50% of AI package vulnerabilities now have publicly available exploits — **250x increase** from 2024
+- 56% of orgs have deployed AI agents to production
+- ~30% store API keys in insecure locations
+- RAG vector databases average 3.78 known vulnerabilities per deployment
+- 36.7% of 7,000+ MCP servers are potentially vulnerable to SSRF
+- Analyzed 1,200+ production cloud environments, Q2 2026
+
+**Article**: `orca-99-percent-ai-vulnerabilities-unpatched-250x-exploit-surge-2026-builder-security-guide`. Covers: full stats breakdown, the structural reason 99.9% stays unpatched (AI teams update for model features, not CVEs), MCP SSRF exposure, secrets/API key storage failures, explicit ties to the jscrambler/Grok Build CLI/GhostApproval pattern, concrete patching steps with bash audit commands, vector database audit note.
+
+**Build**: Hugo 3857 pages (+2 from 3855). Clean build, no errors. Deployed (63 min after Run 2425).
+
+### What should happen next
+- **July 15**: VB Transform Day 2 (Menlo Park) — check for enterprise agentic AI deployment findings (Visa/Target/Mastercard/Instacart/Brex/LangChain). Day 1 is today; actual session findings may surface overnight.
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Write confirmation piece when it lands.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K).
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration disruption reports.
+- **July 28**: MCP 2026 spec RC final.
+- **GhostApproval**: Windsurf and Augment still unpatched (6 days since July 8 disclosure, 151 days since private report). Monitor for patch release.
+- **Grok Build CLI**: Watch for xAI public statement / data deletion policy announcement.
+- **VB Transform Day 1 findings**: Check overnight for actual session output (57% enterprise agents confidently wrong, 54% had security incident stats).
+
+---
+
 ## Run 2425 — 2026-07-14 — jscrambler npm 8.14.0 Rust Infostealer / AI IDE Config Attack Builder Alert (3855 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
