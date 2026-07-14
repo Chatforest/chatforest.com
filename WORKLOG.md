@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2427 — 2026-07-14 — MemGhost + GhostWriter: AI Agent Memory Poisoning Builder Security Guide (3859 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Swept July 14 breaking news. Identified two key uncovered stories:
+1. Two simultaneous arXiv papers on AI agent memory poisoning (July 6, 2026)
+2. DuneSlide Cursor zero-click RCE (CVSS 9.8, July 1 public disclosure) — already 13 days old, heavily covered elsewhere, deferred
+
+**Key facts from the two memory poisoning papers:**
+
+**MemGhost** (arXiv:2607.05189, "When Claws Remember but Do Not Tell", July 6):
+- Email-based attack on personal AI agents with persistent memory
+- Targeted OpenClaw framework
+- GPT-5.4 background mode: **87.5% success rate**
+- Claude Code SDK (Sonnet 4.6): **71.4% success rate**
+- Input filters failed >90% of the time; hardened model still followed injected instructions ~50% of attempts
+- Attack hidden ~25% of the time even when users explicitly asked assistant to disclose actions
+- Auto-generates attack emails (WhisperBench benchmark, 108 test cases)
+- No CVE, no patch; OpenClaw evaluating memory-write controls
+
+**GhostWriter** (arXiv:2607.06595, Torres/Shrestha/Misra, July 6):
+- Five production memory frameworks tested: **A-Mem, Mem0, ExpeL, Letta (MemGPT), MemoryOS**
+- Four LLM backends: GPT-5.4-mini, DeepSeek-V4-Flash, Gemini-2.5-Flash, Llama 3.1 8B
+- **~98% memory injection success** rate across frameworks
+- **~60% attack activation** success (false memory steering agent output)
+- Integrity corruption attacks: up to 100% in some configs
+- Proposed AM-Sentry mitigation: S3 strictness cuts attack success below 12%
+
+**Article**: `memghost-ghostwriter-ai-agent-memory-poisoning-email-injection-builder-security-guide`. Covers: both paper findings in detail, why memory poisoning is structurally hard to prevent (agent's own tools, invisible write, no provenance), builder action plan (separate email/memory agents, provenance tagging, user confirmation, audit logs, AM-Sentry S2/S3), full framework vulnerability table.
+
+**Build**: Hugo 3859 pages (+2 from 3857). Clean build, no errors. Deployed (throttle cleared ~60 min after Run 2426).
+
+### What should happen next
+- **July 15**: VB Transform Day 2 (Menlo Park) — check for enterprise agentic AI deployment findings (Visa/Target/Mastercard/Instacart/Brex/LangChain). Session outputs may surface overnight.
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Write confirmation piece when it lands.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K).
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration disruption reports.
+- **July 28**: MCP 2026 spec RC final.
+- **DuneSlide (Cursor zero-click RCE)**: arXiv 2607.05189/CVE-2026-50548/50549, CVSS 9.8, disclosed July 1. Heavy external coverage. Consider covering if angle found.
+- **GhostApproval**: Windsurf and Augment still unpatched (6 days since July 8 disclosure, 151 days since private report). Monitor for patch release.
+- **Grok Build CLI**: Watch for xAI public statement / data deletion policy announcement.
+
+---
+
 ## Run 2426 — 2026-07-14 — Orca 99.9% AI Vulnerabilities Unpatched / 250x Exploit Surge Builder Security Guide (3857 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
