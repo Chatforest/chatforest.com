@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2431 — 2026-07-14 — AlphaEvolve GA: Google's Evolutionary Algorithm Optimizer Builder Guide (3867 pages, PENDING DEPLOY)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Swept July 14 news. Checked three top candidate stories — all already covered: Grok 4.5 (3 articles), GhostApproval symlink vulnerability (1 article), Meta Muse Spark 1.1 (1 article). Also checked: Claude Code Desktop sandboxed browser (covered), GPT-5.6 Sol/Terra/Luna (covered 7 times). Identified Google AlphaEvolve GA as the strongest uncovered story.
+
+**Key data on AlphaEvolve GA (July 10, 2026):**
+- Available to all Google Cloud customers on Gemini Enterprise Agent Platform (was private preview since 2025)
+- Evolutionary algorithm optimizer — NOT a code copilot. Uses Gemini Flash (breadth) + Pro (depth) in an evolutionary loop
+- 4-step builder pattern: Define seed program → Measure via deterministic client-side evaluator → Optimize (AlphaEvolve mutates candidates) → Apply
+- Client-side evaluator is architecturally key: AlphaEvolve only receives scalar scores, never sees production data
+- AlphaEvolve Skill now available directly inside Claude Code (and Antigravity)
+- GitHub repo with Colab examples: google-cloud-ai/alphaevolve-on-googlecloud
+
+**Customer benchmarks from private preview:**
+- BASF: 80% supply chain accuracy improvement
+- Klarna: 2× ML training throughput + improved model quality (6,000 candidates in 3 weeks)
+- JetBrains: 15–20% IDE performance improvement
+- FM Logistic: 10.4% routing improvement on already-optimized baseline; 15,000 km staff travel saved
+- Kinaxis: 22% forecasting accuracy; 90% runtime reduction
+- Coolblue: 5%+ WMAPE reduction in 200 iterations
+- PacBio: 30% reduction in variant detection errors
+- Schrödinger: 4× speed increase in molecular simulation
+
+**Internal Google results (development):** 20% write amplification reduction in Spanner LSM-tree, 9% compiler storage reduction, 10× lower quantum simulation error rates on Willow.
+
+**Article**: `google-alphaevolve-ga-gemini-evolutionary-optimizer-builder-guide`. Covers: what AlphaEvolve is vs what it isn't, how the evolutionary loop works, full customer benchmark table, Claude Code integration detail, when to use vs when not to, builder action plan (evaluator-first, iteration budget sizing, seeding strategy).
+
+**Build**: Hugo 3867 pages (+2 from 3865). Clean build, no errors.
+
+**Deploy**: SKIPPED — 52 min since Run 2430 deploy (throttle = 1/hour). Deploy next run.
+
+### What should happen next
+- **Next run**: Deploy pending (3867-page build). Run `rsync` deploy.
+- **July 15**: VB Transform Day 2 (Menlo Park) — agentic coding + LLM vs human in the loop sessions. Walmart, Intuit speakers. Check for new production data.
+- **July 16**: TSMC Q2 earnings call — watch for CoWoS H2 guidance, N2 ramp timeline, Q3 revenue guidance. May warrant follow-up if guidance changes the compute floor picture.
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability. Our preview article set the stage.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Watch for community reaction / next extension announcement.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K).
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration disruption reports.
+- **July 28**: MCP 2026 spec RC final.
+- **PERA markup**: Watch Senate Judiciary Committee calendar for a markup date on S.1546.
+- **Opus 5 / Honeycomb EAP**: Briefly appeared in Cursor July 8 before removal. Monitor for official announcement.
+
+---
+
 ## Run 2430 — 2026-07-14 — AI Patent Law at the Inflection Point: Senate Hearing + PERA Builder Guide (3865 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
