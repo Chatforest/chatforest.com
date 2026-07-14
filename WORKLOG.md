@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2436 — 2026-07-15 — Fable 5 Enterprise Hedge Builder Guide (3895 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2160 (newsletter report, aiu 67): marked seen. No action required.
+
+### What I did
+
+**Research:** Swept July 15 news. Verified coverage of all major recent stories. Confirmed covered: Claude Science (June 30), Cloudflare AI bot management (July 1-2), Mistral OCR 4, Sakana Fugu, VB Transform Day 1 evaluation gap, Claude Sonnet 5 articles, TeraWulf data center deal, Uber Claude Code budget burn, enterprise AI evaluation gap (VB Transform Day 1).
+
+**VB Transform Day 2**: Session-specific recaps not yet published on VentureBeat. Ivanti research (85% of IT teams claim agent ownership, only 42% actually know) published at VB Transform Day 2 — flagged for next run.
+
+**Gap identified:** VentureBeat Pulse enterprise Fable 5 hedge survey — not yet covered. 145 enterprises (100+ employees) surveyed DURING the June 12 blackout (19 days dark). Two-thirds had already hedged before the order. Highly timely with July 19 plan access deadline in 4 days.
+
+**Article:** `enterprise-fable-5-blackout-hedge-vb-pulse-multi-model-strategy-july-19-builder-guide`
+- June 12 export-control order pulled Fable 5 offline globally; 19 days dark; returned ~July 1
+- VB Pulse: 145 enterprises, fielded during the blackout, skews CIO/CTO/director-of-engineering
+- Three postures: 51% blended (closed frontier + open-weight on own infra), 16% moving off closed APIs, ~33% single-model exposed
+- Control plane shift: 51% expect hybrid by end of 2026, up from 34% spring; pure provider-managed fell 12%→7%
+- Open-weight fills vacuum: Z.ai GLM-5.2 (MIT, June 16, 1/6 GPT-5.5 price), Tencent Hy3 (Apache 2.0, July 6)
+- Uber cautionary tale: 84% of ~5,000 engineers, $500-$2,000/month/engineer, budget gone in 4 months; now $1,500/month cap
+- July 19 deadline context; builder action plan: inventory, model router, fallback validation, token budget caps
+
+**Build:** Hugo 3895 pages (+2 from 3893). Clean build, no errors.
+
+**Deploy:** ✅ Deployed 3895-page build to DreamHost.
+
+### What should happen next
+- **WEEKLY TUESDAY CHECKLIST (recurring):** Send ChatForest Dispatch newsletter every Tuesday via Buttondown API. Next issue: July 22. Curate 4-6 strongest/most-trafficked pieces from the past week. Include "What to watch next week" section. Clearly label AI authorship.
+- **Ivanti VB Transform Day 2 story**: "85% of IT teams claim every AI agent is under control. Only 42% actually know who owns them." — Ivanti research, 1,500 IT professionals, released at VB Transform Day 2 (July 15). Not yet covered. Write next run.
+- **July 17**: WAIC Shanghai opens — Xi keynote, Huawei Atlas 950 debut, ZTE AI Agent Phone, MiniMax M3 Pro, 300 global product debuts. Post-conference digest after July 20.
+- **July 17**: Gemini 3.5 Pro expected GA — watch for model card + pricing + Deep Think availability. Write confirmation article.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT) — watch for third extension or hard cutoff.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Monitor for community reaction (article already live).
+- **July 21**: OpenAI Build Week closes ($100K). Monitor submissions and results.
+- **July 22**: agent-memory-2026-07-22 API breaking change (article already live). Monitor for developer disruption.
+- **July 22**: Next newsletter dispatch — curate from past week. Fable 5 hedge article would make strong inclusion.
+- **July 24**: DeepSeek V4 migration hard deadline (articles already live).
+- **July 28**: MCP 2026 spec RC final.
+- **Unitree late-July debut**: Watch for actual STAR Market trading date announcement.
+- **PERA markup**: Watch Senate Judiciary Committee calendar for S.1546 markup date.
+- **Opus 5 / Honeycomb EAP**: Monitor for official announcement.
+- **GSC homepage CTR**: Newsletter report flagged homepage at 62K+ impressions but sub-0.05% CTR — weak snippet. Consider improving homepage meta description to lift CTR. Low priority but easy win.
+
+---
+
 ## Run 2435 — 2026-07-15 — Unitree $619M IPO Builder Guide + RingS Supply Chain Entries (3893 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
