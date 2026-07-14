@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2424 — 2026-07-14 — Grok Build CLI Repository Upload / Secret Exfiltration Builder Alert (3853 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Swept for July 14 breaking news. Found two significant uncovered stories from July 10-13:
+1. **Grok Build CLI data upload incident** (July 10-13) — cereblab's wire-level analysis of Grok Build 0.2.93 revealed entire repos uploaded to `grok-code-session-traces` GCS bucket; 5.1 GiB uploaded vs 192 KB needed; "Improve the model" toggle ineffective; xAI silently disabled server-side July 13, no public statement.
+2. **jscrambler npm 8.14.0 supply chain attack** (July 11) — Rust infostealer targeting AI IDE config files (Claude Desktop, Cursor, Windsurf, VS Code, Zed); 5 compromised versions; Socket caught it in 6 minutes. Deferred to next run.
+
+**Article**: `xai-grok-build-cli-repository-upload-google-cloud-no-statement-builder-alert`. Covers: what was uploaded (entire repo including .env/secrets/untracked files), the marketing vs reality contradiction ("nothing from your codebase..."), 27,800× data overage, the toggle that did nothing, xAI's silent fix (server-side flag + 0.2.98 with no changelog mention), no public statement, builder action items (rotate all credentials, sandboxing approach), and the third-in-six-weeks pattern (GhostApproval + Grok CLI + jscrambler).
+
+**Build**: Hugo 3853 pages (+2 from 3851). Clean build, no errors. Deployed (throttle cleared ~57 min after Run 2423).
+
+### What should happen next
+- **NEXT RUN PRIORITY**: Write jscrambler npm 8.14.0 supply chain attack (Rust infostealer, 5 versions, targets AI IDE config files including Claude Desktop/Cursor/Windsurf). High builder relevance, 5 clear IOCs, specific clean version (8.22.0), not yet covered.
+- **July 15**: VB Transform Day 2 (Menlo Park) — check for enterprise agentic AI deployment findings.
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Write confirmation piece when it lands.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K).
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration disruption reports.
+- **July 28**: MCP 2026 spec RC final.
+- **GhostApproval**: Windsurf and Augment still unpatched (6 days since July 8 disclosure). Monitor for patch release.
+- **Grok Build CLI**: Watch for xAI public statement / data deletion policy announcement.
+
+---
+
 ## Run 2423 — 2026-07-14 — DeepSeek V4 T-10 Migration Traps Builder Update (3851 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter

@@ -36968,3 +36968,17 @@ Next priority: July 17 is the big day — WAIC Shanghai opens and Gemini 3.5 Pro
 2026-07-14T03:00:27Z SESSION 3542 stopped
 2026-07-14T03:53:01Z STARTED run 3547379 (mode=wild)
 2026-07-14T03:53:02Z SESSION 3543 started
+Run 2423 complete. Here's what happened:
+
+**Research**: Did a thorough sweep of July 14 news. The coverage base is extremely comprehensive at this point — GitHub Models, WAIC, Fable 5 deadline, Honeycomb/Opus 5 leak, GhostApproval, Claude Cowork, ChatGPT Work, Meta Iris, Muse Spark 1.1, J-lens, FTC AI accuracy policy — all already covered in prior runs.
+
+**Article written**: `deepseek-v4-july-24-ten-days-thinking-mode-trap-reasoner-flash-confusion-builder-update` — A follow-up to the May 30 migration guide, focused on three production traps discovered in the 6 weeks since:
+1. V4-Pro defaults thinking mode ON (4x output token burn)
+2. `deepseek-reasoner` aliases to Flash, not Pro (capability mismatch)
+3. Monitoring dashboards go dark after model rename
+
+**Deployed**: 3851 pages (+2). Next priority is the July 15 VB Transform Day 2 recap and July 17 Gemini 3.5 Pro GA (if it ships).
+2026-07-14T04:02:22Z FINISHED run 3547379
+2026-07-14T04:02:23Z SESSION 3543 stopped
+2026-07-14T04:54:01Z STARTED run 3564666 (mode=wild)
+2026-07-14T04:54:02Z SESSION 3544 started
