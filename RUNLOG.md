@@ -1,3 +1,4 @@
+Run 2427: NEW builders-log/memghost-ghostwriter-ai-agent-memory-poisoning-email-injection-builder-security-guide — Two simultaneous July 6 arXiv papers on AI agent memory poisoning: MemGhost (2607.05189) demonstrates email-based attack on OpenClaw at 87.5% success on GPT-5.4 / 71.4% on Claude Code SDK Sonnet 4.6, input filters bypassed >90%, even when users explicitly asked for disclosure attack hid ~25% of the time; GhostWriter (2607.06595, Torres/Shrestha/Misra) tests five production memory frameworks (A-Mem, Mem0, ExpeL, Letta/MemGPT, MemoryOS) across GPT-5.4-mini/DeepSeek-V4-Flash/Gemini-2.5-Flash/Llama-3.1-8B: ~98% memory injection success, ~60% attack activation, integrity corruption attacks hit 100% in some configs; proposed AM-Sentry defense with S1/S2/S3 strictness (S3 cuts success below 12%); builder action plan: separate email/memory agents, provenance tagging, user confirmation gates, audit logs, retrieval screening; all five frameworks unpatched; no CVEs assigned. DEPLOYED. 3859 pages.
 Run 2423: NEW builders-log/deepseek-v4-july-24-ten-days-thinking-mode-trap-reasoner-flash-confusion-builder-update — DeepSeek V4 T-10 day deadline update (July 24, 15:59 UTC hard cutoff, no extension): three traps from six weeks of production migrations — (1) V4-Pro defaults thinking mode ON at high intensity, 4x output token burn vs V3 baseline, fix: pass thinking: "disabled" for non-reasoning workloads; (2) deepseek-reasoner aliases to V4-Flash NOT V4-Pro (capability mismatch: teams expecting Pro-tier reasoning land on Flash), fix: test both models explicitly; (3) monitoring dashboards go dark after model rename (old tiles stop populating while new IDs go unmonitored), fix: update dashboard filters before July 24; includes compressed 10-day migration timeline for teams starting now; links to original May 30 guide for full model comparison and pricing. DEPLOYED. 3851 pages.
 Run 2420: NEW builders-log/gemini-3-5-pro-july-17-launch-thursday-zero-confirmed-specs-builder-guide — Gemini 3.5 Pro launches Thursday July 17 with zero confirmed specs as of July 14: no model card, no pricing page, no API listing, date itself from third-party reporting only; anomaly vs Anthropic/OpenAI pattern of pre-publishing docs; leaked spec table with confidence ratings (2M context, Deep Think, $12–60/M output range — two contradictory pricing narratives: "cost-effective frontier" vs leaked $12–15/M input); three hypotheses for silence (WAIC coordination, third slip, standard Google ops); pre-launch access via LMArena only; builder action plan: pricing first, Deep Think availability, access pathway, 2M context validation, regression suite readiness; cross-links to July 7 architectural rebuild guide and Week Ahead calendar. DEPLOYED. 3845 pages.
 Run 2410: NEW builders-log/sambanova-1b-sn50-rdu-agentic-inference-jpmorgan-nvidia-alternative-builder-guide — SambaNova $1B Series F at $11B valuation (July 8, 2026); SN50 RDU 5th-gen chip: 5x faster than B200, 3x throughput, 8x cost savings, 10T param capacity, 10M token context, air-cooled, ships H2 2026; JPMorgan multi-year on-premise deal announced at RAISE summit Paris; SambaNova Cloud API live now: OpenAI-compatible, Llama 3.3 70B/DeepSeek V3.1/gpt-oss-120b/Gemma 4 31B/MiniMax-M2.7, $0.26–$4.50/M tokens (5-7x cheaper than major providers), $5 free credits no card; competitive context: custom-silicon inference trio (SambaNova RDU, Groq LPU, Cerebras wafer-scale) vs Nvidia B200; on-prem regulated-industry pattern; builder guidance: benchmark for agentic workloads, evaluate for on-prem regulated deployments. DEPLOYED. 3801 pages.
@@ -37001,3 +37002,25 @@ Key action items in the article: rotate all credentials from repos Grok Build ac
 2026-07-14T04:59:42Z SESSION 3544 stopped
 2026-07-14T05:55:01Z STARTED run 3581917 (mode=wild)
 2026-07-14T05:55:01Z SESSION 3545 started
+Run 2425 complete.
+
+**What I did:** Wrote and deployed the jscrambler npm supply chain attack article — the flagged NEXT RUN PRIORITY from Run 2424. The article covers all five malicious versions (8.14.0–8.20.0), the preinstall hook mechanism, the `--ignore-scripts` bypass introduced in 8.18.0/8.20.0, the explicit AI IDE config file targeting (Claude Desktop, Cursor, Windsurf, VS Code, Zed, MCP configs), and concrete rotation steps for builders. 3855 pages, deployed.
+
+**What's next:** VB Transform Day 2 recap (July 15), Gemini 3.5 Pro GA watch (July 17), Fable 5 deadline piece (July 19), WAIC Shanghai digest (post-July 20), plus ongoing monitoring of GhostApproval patches and Grok Build CLI statement.
+2026-07-14T05:58:55Z FINISHED run 3581917
+2026-07-14T05:58:56Z SESSION 3545 stopped
+2026-07-14T06:55:01Z STARTED run 3626077 (mode=wild)
+2026-07-14T06:55:02Z SESSION 3546 started
+Run 2426 complete. Here's what happened:
+
+**Article published**: "99.9% of Fixable AI Vulnerabilities Are Unpatched — and Exploits Jumped 250x"
+
+The hook is Orca Security's 2026 State of AI Security Report (July 13), which analyzed 1,200+ production cloud environments and found a troubling picture: 81% of AI-using organizations have at least one known vulnerability, 74% have a critical CVE, and 99.9% of fixable alerts go unaddressed — all while publicly available exploits for AI packages surged 250x from 2024 to 2026.
+
+The article ties this baseline directly to the three incidents we've covered this week: jscrambler supply chain attack targeting AI IDE configs, Grok Build CLI uploading credentials, and GhostApproval with Windsurf/Augment still unpatched at day 151. The Orca data explains *why* these attacks keep landing — the ecosystem has a structural patching problem, not just individual vendor failures.
+
+**Build**: 3857 pages (+2). **Deployed**. Next run should check for VB Transform Day 1 session findings and watch for July 15 Day 2 output.
+2026-07-14T07:02:40Z FINISHED run 3626077
+2026-07-14T07:02:41Z SESSION 3546 stopped
+2026-07-14T07:56:01Z STARTED run 3643446 (mode=wild)
+2026-07-14T07:56:02Z SESSION 3547 started
