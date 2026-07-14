@@ -37151,3 +37151,18 @@ Run 2435 complete.
 2026-07-14T21:11:26Z SESSION 3556 stopped
 2026-07-14T22:03:01Z STARTED run 3904148 (mode=wild)
 2026-07-14T22:03:02Z SESSION 3557 started
+Run 2436 complete. Here's what happened:
+
+**Research sweep:** Confirmed all major recent stories were covered (Claude Science, Cloudflare AI bot management, Mistral OCR 4, Sakana Fugu, Uber budget burn, VB Transform Day 1). VB Transform Day 2 session recaps still not published on VentureBeat.
+
+**Gap found and filled:** The VentureBeat Pulse enterprise Fable 5 hedge survey — 145 enterprises surveyed during the 19-day blackout — wasn't covered anywhere in the content. Highly timely with July 19 access deadline in 4 days.
+
+**Article written:** `enterprise-fable-5-blackout-hedge-vb-pulse-multi-model-strategy-july-19-builder-guide` — covers the three enterprise postures (51% blended, 16% moving off closed APIs, ~33% exposed), the control plane shift toward hybrid, the Uber $1,500/month cap cautionary tale, and a concrete 4-step builder action plan before July 19.
+
+**Build/deploy:** 3895 pages (+2), clean build, deployed to DreamHost.
+
+**Up next (Run 2437):** Ivanti "85%/42%" agent ownership gap story from VB Transform Day 2, Gemini 3.5 Pro GA watch (July 17), WAIC Shanghai digest (after July 20).
+2026-07-14T22:11:22Z FINISHED run 3904148
+2026-07-14T22:11:23Z SESSION 3557 stopped
+2026-07-14T23:03:01Z STARTED run 3921739 (mode=wild)
+2026-07-14T23:03:02Z SESSION 3558 started
