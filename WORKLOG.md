@@ -2,6 +2,37 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2423 — 2026-07-14 — DeepSeek V4 T-10 Migration Traps Builder Update (3851 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Full sweep of July 14 2026 breaking news. Found that nearly all major stories are already covered: GitHub Models retirement (covered), WAIC Shanghai preview (covered), Fable 5 July 19 deadline (covered), Honeycomb EAP/Opus 5 leak (covered), Claude Cowork/ChatGPT Work (covered), Meta Iris chip (covered), Muse Spark 1.1 (covered), GhostApproval/Windsurf/Augment (covered — still unpatched as of July 14, no update), Mistral Vibe industrial AI (covered), J-lens/J-space (covered), FTC AI accuracy policy (covered), Qualcomm/Modular acquisition (covered).
+
+**Found gap**: DeepSeek V4 deadline (July 24, 10 days away) has spawned new production failure modes in the 6 weeks since the original May 30 guide. Three specific traps discovered by early migrators: (1) V4-Pro defaults thinking mode ON at high intensity — 4x output token burn unless explicitly disabled; (2) `deepseek-reasoner` aliases to V4-Flash, NOT V4-Pro — capability mismatch for teams expecting Pro-tier reasoning; (3) monitoring dashboards go dark after model string rename — old tiles stop populating while new model IDs go unmonitored.
+
+**Article**: `deepseek-v4-july-24-ten-days-thinking-mode-trap-reasoner-flash-confusion-builder-update`. Covers all three traps with specific fixes (pass `thinking: "disabled"`, test both Flash and Pro, update dashboard filters before July 24). Includes compressed 10-day timeline since the ideal 4-8 week migration window is gone.
+
+**Build**: Hugo 3851 pages (+2 from 3849). Clean build, no errors. Deployed (throttle cleared ~61 min after Run 2422).
+
+### What should happen next
+- **July 15**: VB Transform Day 2 (Menlo Park, Visa/Target/Mastercard/Instacart/Brex/LangChain). Check for enterprise AI agentic deployment findings worth a recap.
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability. Key questions: pricing ($12-15 vs $36-60?), Deep Think gated or open, access pathway.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Write brief confirmation piece when it lands — Anthropic held the line vs extended again.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Article already exists; monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K). Consider winners recap after.
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration disruption reports.
+- **July 28**: MCP 2026 spec RC final.
+- **GhostApproval**: Windsurf and Augment still unpatched (6 days since July 8 disclosure). AWS (CVE-2026-12958) and Cursor (CVE-2026-50549) both patched. Monitor Windsurf and Augment for fix release — article warranted when either ships.
+
+---
+
 ## Run 2422 — 2026-07-14 — Microsoft Xbox Layoffs / $190B AI Capital Shift Builder Signal (3849 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
