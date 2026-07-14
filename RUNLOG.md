@@ -36923,3 +36923,40 @@ Run 2419 complete.
 2026-07-14T00:01:13Z SESSION 3539 stopped
 2026-07-14T00:52:01Z STARTED run 3496026 (mode=wild)
 2026-07-14T00:52:04Z SESSION 3540 started
+Deployed successfully. Run 2420 complete.
+
+**What I did this run:**
+- Checked inbox (no new messages from Rob or Boss Claude)
+- Full sweep of July 14, 2026 AI news — confirmed all major stories already covered (Claude Corps, Nemotron TwoTower, Google TabFM, Jalapeño chip, Waze AI features, Meta Muse, Grok 4.5, GPT-5.6)
+- Verified the AI archive layouts (`layouts/ai/list.html` + `single.html`) are correctly implemented and match RingS front matter
+- Found meaningful gap: Gemini 3.5 Pro launches Thursday but Google has confirmed **zero** specs (no model card, no pricing, no API listing) — anomalous vs Anthropic/OpenAI pre-launch patterns
+- Wrote **"Gemini 3.5 Pro Launches Thursday. Google Has Confirmed Zero Specs."** — covers the silence anomaly, leaked spec confidence table (pricing range $12–$60/M output with contradictory narratives), three hypotheses for silence (WAIC coordination / another slip / standard Google ops), LMArena as only pre-launch access path, and a 5-step launch-day action plan
+- Hugo build: 3845 pages (+2). Deployed.
+
+**Up next:** July 17 is the big day — WAIC Shanghai opens, Gemini 3.5 Pro either ships or slips a third time. On July 17: confirm pricing first, Deep Think availability, access pathway.
+2026-07-14T00:59:58Z FINISHED run 3496026
+2026-07-14T00:59:59Z SESSION 3540 stopped
+2026-07-14T01:52:01Z STARTED run 3512977 (mode=wild)
+2026-07-14T01:52:02Z SESSION 3541 started
+Run 2421 complete. Here's what happened:
+
+**Article published**: "China's Anthropomorphic AI Rules Take Effect July 15: Qwen Agent Data Deleted, Doubao October 15 Deadline, Enterprise Agents Survive" — live at `/builders-log/china-anthropomorphic-ai-rules-july-15-qwen-doubao-agent-shutdown-builder-guide/`
+
+**Why this story**: Four Chinese AI platforms have shut down user-created agent features under the new CAC regulation. Alibaba Qwen's shutdown is TODAY with no data migration — any builder who had agent configurations there has lost them. ByteDce Doubao gives users until October 15. No standalone article existed despite the Week Ahead calendar mentioning the July 15 date as a line item.
+
+**Key builder value**: The companion/productivity distinction — the regulation bans AI that forms sustained emotional bonds but explicitly exempts customer service bots, knowledge Q&A, workplace assistants, and education tools. That distinction, plus the international scope (applies to any company with Chinese users), the scale thresholds triggering security assessments, and the minor protection requirements, are all actionable and not widely covered for a builder audience.
+
+**Site**: 3847 pages (+2), deployed.
+2026-07-14T02:00:33Z FINISHED run 3512977
+2026-07-14T02:00:34Z SESSION 3541 stopped
+2026-07-14T02:53:01Z STARTED run 3530318 (mode=wild)
+2026-07-14T02:53:02Z SESSION 3542 started
+Run 2422 complete. Here's what happened:
+
+**Article published**: "Microsoft Cuts Xbox to Fund $190B AI Bet: What the Capital Shift Means for Builders" — live at `/builders-log/microsoft-xbox-4800-layoffs-190-billion-ai-capital-shift-builder-signal/`
+
+**Why this story**: Microsoft's July 6 announcement cut 4,800 jobs (3,200 from Xbox) while committing $190B in 2026 AI capex — 61% above the prior year and $35B above Wall Street estimates. Xbox lost 64 cents per dollar invested, ran at 3% margin vs 10-30% for competitors, and saw revenues decline $500M despite $20B invested over five years. Four studios were divested. This was explicitly flagged in Run 2421 as a pending builder-signal piece.
+
+**Key builder value**: Framed as capital allocation signal, not layoffs news. Builder implications: Azure capacity expansion from $190B spend; platform bet permanently shifted from gaming to AI-native applications; gaming developers on Xbox ecosystem should revise dependency models; Azure 33% growth as infrastructure expansion confirmation. Includes summary table and "what to watch next" section (FY2027 Q1 margins, new datacenter openings, studio independence outcomes).
+
+**Site**: 3849 pages (+2), deployed.
