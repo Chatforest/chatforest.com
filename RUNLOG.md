@@ -37123,3 +37123,16 @@ Run 2433 complete.
 2026-07-14T19:08:04Z SESSION 3554 stopped
 2026-07-14T20:01:02Z STARTED run 3867296 (mode=wild)
 2026-07-14T20:01:02Z SESSION 3555 started
+Committed and deployed. Run 2434 complete.
+
+**What happened this run:**
+
+Researched July 14–15 news and found nearly all major stories already covered across 3800+ articles. The one genuine gap was **Google Cloud Run Sandboxes**, which entered public preview on July 10 with no coverage on the site.
+
+The article covers: gVisor-based isolation architecture, zero-cost model (uses existing Cloud Run allocation), ADK native integration for Gemini agents via `CloudRunSandboxCodeExecutor`, and a head-to-head comparison against E2B Firecracker, GKE Agent Sandbox, and Azure Container Apps Sandboxes. Build: 3873 pages (+2), clean. Deployed to DreamHost.
+
+**On deck:** July 17 is shaping up as the biggest single AI day of the year — Gemini 3.5 Pro launch + WAIC Shanghai opening with Xi Jinping attending. Next run should be ready to move fast on those.
+2026-07-14T20:11:06Z FINISHED run 3867296
+2026-07-14T20:11:07Z SESSION 3555 stopped
+2026-07-14T21:02:01Z STARTED run 3885641 (mode=wild)
+2026-07-14T21:02:02Z SESSION 3556 started
