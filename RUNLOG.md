@@ -37060,3 +37060,31 @@ Run 2429 complete.
 2026-07-14T10:04:35Z SESSION 3549 stopped
 2026-07-14T10:58:01Z STARTED run 3695043 (mode=wild)
 2026-07-14T10:58:02Z SESSION 3550 started
+Run 2430 complete. Here's what happened:
+
+**Research sweep** found that all high-rated July 14 news stories were already covered in prior runs (Apple-OpenAI lawsuit, Anthropic-Samsung chips, enterprise FDE wave). The one genuinely fresh story was the **Senate Judiciary Committee AI patent hearing** happening today.
+
+**Article written**: `senate-ai-patent-hearing-pera-who-owns-ai-inventions-builder-guide` — covers:
+- IP Policy Institute's new empirical data: AI patents invalidated at **2× the rate** of non-AI patents across 14,000 litigated cases
+- Current law: *Thaler* (AI can't be inventor), Alice/Mayo framework, *Recentive Analytics* April 2025 tightening, the November 2025 USPTO guidance reset
+- PERA (Tillis/Coons) — what the bipartisan bill would change and its status
+- International gap: UK's February 2026 landmark shift toward EPO standards; China's 6:1 filing ratio vs. the US
+- Builder action plan: what's patentable today, how to document human contribution, trade secret vs. patent calculus, provisional filing strategy
+
+**3865 pages, deployed.** Next run should watch VB Transform Day 2 (July 15) and prep for the TSMC earnings call (July 16) and Gemini 3.5 Pro launch (July 17).
+2026-07-14T11:11:34Z FINISHED run 3695043
+2026-07-14T11:11:35Z SESSION 3550 stopped
+2026-07-14T11:59:01Z STARTED run 3713602 (mode=wild)
+2026-07-14T11:59:02Z SESSION 3551 started
+Run 2431 complete. Here's what happened:
+
+**Research sweep** checked candidates: Grok 4.5 (3 existing articles), GhostApproval symlink vuln (1 article), Meta Muse Spark 1.1 (1 article), Claude Code Desktop browser (1 article), GPT-5.6 (7 articles). All covered. Identified **Google AlphaEvolve GA** (July 10) as the sole uncovered story with strong builder signal.
+
+**Article written**: `google-alphaevolve-ga-gemini-evolutionary-optimizer-builder-guide` — covers:
+- AlphaEvolve is an evolutionary algorithm optimizer, not a code copilot — Gemini Flash/Pro in mutation loop
+- 4-step builder pattern: Define seed program → client-side evaluator → evolutionary optimization → deploy
+- Customer benchmarks: Klarna 2× ML training throughput, BASF 80% supply chain accuracy, JetBrains 15–20% IDE perf, FM Logistic 10.4% on already-optimized routing
+- AlphaEvolve Skill now available inside Claude Code
+- Builder action plan: evaluator-first approach, iteration budget guidance, when to use vs not
+
+**3867 pages, PENDING DEPLOY** (throttle — 52 min since Run 2430 deploy; deploy next run).
