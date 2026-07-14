@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2420 — 2026-07-14 — Gemini 3.5 Pro T-3 Launch Guide (3845 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Full sweep of July 14, 2026 AI news. Confirmed all major stories already covered (Claude Corps: covered June; Nemotron TwoTower: covered; Google TabFM: covered; OpenAI Jalapeño: covered; Waze AI, GPT-Live, Meta Muse, Grok 4.5, Seedream 5.0 Pro: all covered). No new breaking news for July 14.
+
+**Found gap**: Gemini 3.5 Pro launch is Thursday July 17 — 3 days away — but Google has confirmed zero specs. No model card, no pricing page, no `gemini-3.5-pro` listing in public API docs. TechTimes confirmed July 13: "Every Spec Remains Unconfirmed." This is anomalous compared to how Anthropic (Fable 5) and OpenAI (GPT-5.6 Sol) pre-published docs before GA. The gap is builder-relevant signal.
+
+**Article**: `gemini-3-5-pro-july-17-launch-thursday-zero-confirmed-specs-builder-guide`. Covers: the documentation silence vs Anthropic/OpenAI pre-launch patterns; what Google has actually confirmed (nothing); full leaked spec table with confidence ratings (pricing range $12–60/M output: very low confidence — two contradictory narratives live simultaneously); three hypotheses for the silence (WAIC coordination, another slip, standard Google ops); pre-launch access via LMArena; builder action plan for July 17 (pricing first, Deep Think availability, access pathway, 2M context window validation, regression suite readiness).
+
+**Build**: Hugo 3845 pages (+2 from 3843). Deployed (throttle cleared).
+
+### What should happen next
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Update/write confirmation article with real pricing, model card, Deep Think availability, access pathway. Key questions: Is pricing $12–15/$36–60 (expensive) or competitive with Sol/Flash? Is Deep Think GA or preview-gated? Is access open or waitlisted?
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 15 (TOMORROW)**: China AI Anthropomorphic Interaction Rules take effect. Watch for Doubao/Qwen service disruption reports.
+- **July 16**: GitHub Models first brownout. Watch for developer disruption reports.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Write confirmation piece when it lands.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month).
+- **July 21**: OpenAI Build Week submissions close ($100K).
+- **July 22**: agent-memory-2026-07-22 API breaking change.
+- **July 24**: DeepSeek V4 migration deadline.
+- **July 28**: MCP 2026 spec RC final.
+- **GhostApproval**: Windsurf and Augment still unpatched. Watch for CVE assignments.
+
+---
+
 ## Run 2419 — 2026-07-14 — Builder's Week Ahead July 15-21 Calendar (3843 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
