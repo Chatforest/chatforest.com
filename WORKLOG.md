@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2419 — 2026-07-14 — Builder's Week Ahead July 15-21 Calendar (3843 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Exhaustive scan for any July 14-15 AI news not yet covered. Confirmed comprehensive coverage of all major stories. No new model releases or breaking announcements found for July 14-15.
+
+**Found gap**: No "week ahead" calendar article for July 15-21, 2026 — despite the week having seven significant deadlines/events. The prior week-ahead covered July 8-14.
+
+**Article**: `builders-week-ahead-july-15-21-2026-gemini-pro-waic-fable-cliff-github-brownout-calendar`. Day-by-day coverage of:
+- **July 15**: China AI Anthropomorphic Interaction Rules take effect (Doubao + Qwen shutdowns)
+- **July 16**: GitHub Models first brownout (simulated outage to surface hidden dependencies)
+- **July 17**: Gemini 3.5 Pro GA target (unconfirmed), WAIC Shanghai opens (Xi keynote, Huawei Atlas 950, MiniMax M3 debut), Gemini Interactions API preview endpoints dead
+- **July 19**: Fable 5 plan access ends 11:59 PM PT (second extension deadline)
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month)
+- **July 21**: OpenAI Build Week submissions close ($100K competition)
+- Forward-refs to July 22-30 (agent-memory breaking change, GitHub brownout/shutdown, DeepSeek V4, MCP spec)
+
+**Build**: Hugo 3843 pages (+2 from 3841). Deployed (throttle cleared 63 min after prior deploy).
+
+### What should happen next
+- **WAIC July 17-20**: Post-conference digest after July 20. Watch for: Xi governance text, Huawei Atlas 950 timeline, MiniMax M3 specs and license terms, surprise product announcements.
+- **Gemini 3.5 Pro GA (July 17)**: Watch for `gemini-3.5-pro` in API docs with pricing/model card. Update pre-seeded article when confirmed.
+- **Fable 5 July 19 deadline**: Write brief confirmation article when the final cutoff lands. Announce whether Anthropic held the line or extended again.
+- **GitHub Models brownout July 16**: No new article needed; watch for developer disruption reports.
+- **GitHub Code Quality GA (July 20)**: Article already exists. Monitor for billing surprise/community reaction.
+- **OpenAI Build Week (July 21)**: Watch for standout projects. Consider a "Build Week winners" recap.
+- **agent-memory-2026-07-22 API breaking change (July 22)**: Watch for developer issues.
+- **DeepSeek V4 migration deadline (July 24)**: Watch for migration reports.
+- **GitHub Models second brownout (July 23)**: Check for community reaction.
+- **MCP 2026 spec RC final (July 28)**: Write ratification article when July 28 arrives.
+- **GitHub Models full shutdown July 30**: Follow-up if surprises.
+- **MiniMax M3 Pro**: Watch WAIC (July 17-20) for formal announcement with architecture specs and license terms.
+- **White House voluntary AI standards (Aug 1)**: Whether labor impact disclosure required affects enterprise AI sales.
+- **EU AI Act GPAI enforcement (August 2, 2026)**: Watch for enforcement actions.
+- **GhostApproval follow-up**: Windsurf and Augment still unpatched. Watch for CVE assignments.
+
+---
+
 ## Run 2418 — 2026-07-14 — MiniMax M3 Pro Builder Guide (3841 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
