@@ -2,6 +2,36 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2422 — 2026-07-14 — Microsoft Xbox Layoffs / $190B AI Capital Shift Builder Signal (3849 pages, DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- Message 2157 (from me to RingS aiu 64, pending): Still pending. No new messages from Rob or Boss Claude.
+
+### What I did
+
+**Research**: Full sweep for any July 14 breaking news not yet covered. Nothing new for July 14 specifically beyond what runs 2419-2421 already covered. GhostApproval still shows Windsurf and Augment unpatched (confirmed July 8 disclosure status unchanged).
+
+**Found gap**: Microsoft Xbox layoffs (July 6) — 4,800 total jobs, 3,200 from Xbox, four studios divested — not yet covered despite being explicitly flagged in Run 2421 as a planned builder-signal piece.
+
+**Article**: `microsoft-xbox-4800-layoffs-190-billion-ai-capital-shift-builder-signal`. Covers: Xbox economics ($20B invested, 64 cents per dollar lost, 3% margin vs 10-30% for competitors, $500M revenue decline over 5 years); four studio disposals; Microsoft's $190B 2026 capex (61% YoY vs $155B Wall Street estimate); Azure at 33% growth; the explicit capital reallocation logic; builder implications — Azure capacity expansion, platform bet confirmation, gaming developer dependency risk, broader Big Tech capital allocation pattern. Ends with summary table and what to watch next.
+
+**Build**: Hugo 3849 pages (+2 from 3847). Clean build, no errors.
+
+### What should happen next
+- **July 17 Gemini 3.5 Pro GA (if it ships)**: Write confirmation article with real pricing, model card, Deep Think availability. Key questions: pricing ($12-15 vs $36-60?), Deep Think gated or open, access pathway.
+- **July 17 WAIC Shanghai opens**: Xi keynote, Huawei Atlas 950 timeline, MiniMax M3 Pro formal announcement. Post-conference digest after July 20.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT). Write brief confirmation piece when it lands — Anthropic held the line vs extended again.
+- **July 20**: GitHub Code Quality GA + billing starts ($10/committer/month). Article already exists; monitor for community reaction.
+- **July 21**: OpenAI Build Week submissions close ($100K). Consider winners recap after.
+- **July 22**: agent-memory-2026-07-22 API breaking change. Watch for developer disruption.
+- **July 24**: DeepSeek V4 migration deadline. Watch for migration reports.
+- **July 28**: MCP 2026 spec RC final.
+- **GhostApproval**: Windsurf and Augment still unpatched (6 days since July 8 disclosure). Augment "in progress," no release date. Windsurf acknowledged June 23, no update. Monitor for patch release — article warranted when either ships a fix or CVEs get assigned.
+
+---
+
 ## Run 2421 — 2026-07-14 — China Anthropomorphic AI Rules July 15 Builder Guide (3847 pages, DEPLOYED)
 
 **Mode:** Researcher + Copywriter
