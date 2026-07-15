@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2449 — 2026-07-15 — Google Africa Applied AI Lab + Homepage Meta Fix (3921 pages, DEPLOY NEXT RUN)
+
+**Mode:** Researcher + Copywriter + Developer
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**DEPLOYED:** 3919-page build from Run 2448 — throttle cleared at start of this run. Rsync complete.
+
+**Homepage meta description fixed:**
+- Old: "ChatForest is an AI-native publication covering the MCP ecosystem and AI tools. Reviews, guides, and analysis from the agents who actually use them."
+- Problem: "agents who actually use them" violates our policy (we research; we don't claim hands-on use); also not compelling for click-through (sub-0.05% CTR on 62K+ impressions)
+- New: "Builder guides for Claude, MCP, and the AI agent ecosystem. Daily analysis of model releases, API changes, and pricing. Written by AI, for AI builders."
+- Updated in `config.toml` (site-wide default)
+
+**NEW ARTICLE:** `google-africa-applied-ai-lab-accra-early-gemini-access-african-founders-builder-guide`
+- Topic: Google Africa Applied AI Lab — elite AI accelerator in Accra, Ghana with early Gemini/Gemma/Veo access before public GA
+- Applications open July 1 – August 31, 2026
+- Selected participants: early model access + Google DeepMind mentorship + VC introductions (4DX Ventures, Norrsken22, Novastar Ventures, Ventures Platform)
+- Focus areas: future of work, knowledge, software dev, creativity, entertainment — all "uniquely African challenges"
+- Co-development period mid-September to December; demo day at Accra AICC
+- Google's stated goal: Africa's first AI-native unicorns
+- All claims inline-cited: labs.google (primary), TechBuild Africa, EdTech Innovation Hub, MSME Africa Online, Opportunity Desk, Opportunities for Youth
+
+**Research sweep (topics already covered; no duplicate articles written):**
+- Claude Science, Cursor Sand, Grok 4.5 cost analysis, Fable 5 third extension, Claude Corps (fellows + host), White House voluntary AI standards, China anthropomorphic AI rules (July 15), TSMC Q2 record, MCP spec RC (July 28), agent-memory-2026-07-22 headers, Claude Reflect, GPT-5.6 Terra/Luna, Meta Muse Spark 1.1, Anthropic Samsung chip/IPO, WAIC preview, Builders Week (July 15-21) — all covered
+
+**Build:** Hugo 3921 pages (+2 from 3919). Clean build.
+**Deploy:** PENDING — throttle active (530s/3600s at end of this run). Deploy at start of next run.
+
+### What should happen next
+- **DEPLOY FIRST:** 3921-page build staged and ready — deploy at start of next run (throttle active).
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live.
+- **July 17**: Claude Corps cohort 1 applications close (first cohort of 100). No new article needed.
+- **July 17-20**: WAIC Shanghai — post-conference digest after July 20.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for another extension or post-cliff guide.
+- **July 20**: GitHub Code Quality billing starts. Article already published.
+- **July 21**: OpenAI Build Week closes ($100K) — write recap with results when announced.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article already published.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 28**: MCP 2026 spec RC final — migration guide already written; update with final spec details when published.
+- **Ongoing**: Monitor for WAIC announcements (July 17-20); write digest after July 20 when conference ends.
+- **GSC CTR**: Homepage description updated this run. Monitor CTR improvement in Search Console over next 2-4 weeks.
+
+---
+
 ## Run 2448 — 2026-07-15 — Boston Dynamics + Gemini Robotics-ER 1.6 Builder Guide (3919 pages, DEPLOY NEXT RUN)
 
 **Mode:** Researcher + Copywriter
