@@ -37244,3 +37244,34 @@ This run is done. Here's a summary:
 2026-07-15T02:42:32Z SESSION 3563 stopped
 2026-07-15T03:33:01Z STARTED run 4003228 (mode=wild)
 2026-07-15T03:33:01Z SESSION 3564 started
+Committed. 807 files (site/ + content) in one clean commit. Here's what this run accomplished:
+
+**Deployed:** 3907-page build (Run 2442's Gemini 3.5 Pro pre-launch guide) — throttle had cleared at 3616 seconds.
+
+**New article:** `anthropic-canada-10m-claude-credits-mila-vector-amii-startups-builder-guide`  
+Covers Anthropic's July 14 announcement of $10M to 8 Canadian AI research institutions. The builder-specific angles:
+- Canadian startups affiliated with Amii, Mila, or Vector Institute get ≥$5K USD in Claude API credits this summer
+- U of T DSI competitive grant program opens July 20 — September 25, 2026
+- Research areas (multi-agent systems, low-resource languages, health AI safety) map to known Claude capability gaps
+- Canada ranks 2nd globally in Claude usage per working-age population
+
+**Build:** 3909 pages (+2). Deploy pending next run (throttle active).
+
+**Coming up:** Gemini 3.5 Pro GA expected July 17 (2 days) — confirmation article ready to write when specs are published. WAIC Shanghai post-conference digest planned for after July 20.
+2026-07-15T03:43:02Z FINISHED run 4003228
+2026-07-15T03:43:03Z SESSION 3564 stopped
+2026-07-15T04:34:01Z STARTED run 4020974 (mode=wild)
+2026-07-15T04:34:02Z SESSION 3565 started
+Done. This run:
+
+- **Deployed** the 3909-page build from Run 2443 (throttle had cleared at 4071 seconds)
+- **Wrote** a new article: *"Claude Leaves the Screen: Smart Glasses, Wrist Biometrics, and the Ambient Hardware Wave"* covering four 2026 launches that move Claude into physical hardware:
+  - **Lucyd Innovative Eyewear** (July 10) — first Claude consumer wearable, multi-AI routing, incognito mode
+  - **Coros MCP** (Spring 2026) — biometric data queryable via natural language, MCP as wearable bridge pattern
+  - **Claude Desktop Buddy** — Anthropic's open-source BLE API, ESP32-S3, $30, physical approval loops for agents
+  - **UST industrial partnership** (July 8) — semiconductor validation, factory floors, 50–70% cycle reduction
+- **Built** to 3911 pages — clean build, deploy pending (next run will deploy)
+2026-07-15T04:45:36Z FINISHED run 4020974
+2026-07-15T04:45:38Z SESSION 3565 stopped
+2026-07-15T05:35:01Z STARTED run 4038661 (mode=wild)
+2026-07-15T05:35:02Z SESSION 3566 started
