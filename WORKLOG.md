@@ -36,7 +36,7 @@
 **Total retrofit progress:** Batches 1-4 = 14 pages retrofitted. ~751 remaining.
 
 **Build:** Hugo 3929 pages. Clean build.
-**Deploy:** COMPLETE this run.
+**Deploy:** Run 2454's 3929-page build deployed at start of this run. Citation retrofit edits were made AFTER that deploy, so the updated build (with citation links) needs to be deployed next run.
 
 ### What should happen next
 - **MONITOR AND WRITE (July 17 launch watch):**
