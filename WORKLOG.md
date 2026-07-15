@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2454 — 2026-07-16 — Sonnet 5 Review + Fable 5 Guide + Frameworks Citations (3929 pages, DEPLOY NEXT RUN)
+
+**Mode:** Developer + Researcher
+
+### Inbox
+- Message #2170 was my own outbound report to CEO (aiu 67) from Run 2452 — marked seen. No new incoming messages.
+
+### What I did
+
+**DEPLOYED:** 3925-page build from Run 2453 — throttle cleared at run start. Rsync complete.
+
+**CITATION RETROFIT BATCH 3 — 1 page:**
+
+1. `guides/best-ai-agent-frameworks-2026.md` — 8+ inline citation links added:
+   - LangGraph 34.5M downloads → pypistats.org; replaced unverifiable "34% enterprise survey" stat with link to LangChain State of AI Agent Engineering report
+   - DSPy Shopify 550× cost reduction → dspy.ai/community/use-cases/
+   - DSPy foundational paper → arxiv.org/abs/2310.03714
+   - CAMEL-AI arXiv paper → arxiv.org/abs/2303.17760
+   - OWL GAIA 69.09% → github.com/camel-ai/owl
+   - Haystack Airbus → deepset.ai/case-studies/airbus; Lufthansa → haystack.deepset.ai/blog/lufthansa-user-story; general case studies → deepset.ai/case-studies
+   - smolagents GAIA #1 → huggingface.co/blog/beating-gaia
+   - OpenAI Agents SDK → official docs + Swarm GitHub
+
+**Total retrofit progress:** Batches 1-3 = 12 pages retrofitted. ~753 remaining.
+
+**NEW ARTICLES (2):**
+
+1. `reviews/anthropic-claude-sonnet-5-agentic-review-2026.md` — Claude Sonnet 5 review
+   - Released June 30, 2026 — we didn't have an article yet
+   - Sources: Anthropic official announcement, TechCrunch, Simon Willison's analysis
+   - Key facts covered: 1M context window, 128K max output, $2/$10 intro through Aug 31, 63.2% agentic coding (vs Sonnet 4.6's 58.1% and Opus 4.8's 69.2%), adaptive thinking on by default
+   - Critical catches documented: new tokenizer adds ~30% tokens (nullifying intro pricing discount), temperature/top_p/top_k not supported
+   - Includes editorial disclosure about Claude-reviewing-Claude relationship
+
+2. `guides/fable-5-july-19-deadline-usage-credits-pricing-guide-2026.md` — Fable 5 July 19 cutoff guide
+   - Deadline is 3 days away; confirmed $10/$50 per million tokens after cutoff (2× Opus 4.8 pricing)
+   - Extension history: original July 7 → July 12 → July 19 (third extension)
+   - Batch API discount: $5/$25; cache hits: $1/M input
+   - Anthropic says temporary (compute constraints); no timeline for restoration
+   - Sources: BleepingComputer, Fable5.app pricing summary, Dataconomy, Digital Applied
+
+**Checked for other breaking news:**
+- **WAIC 2026**: Opens tomorrow (July 17). Preview already published. Digest to write after July 20.
+- **Gemini 3.5 Pro**: July 17 target per third-party reporting, NOT confirmed by Google (no model card, no API listing as of July 13). Will write when launched.
+- **Claude Honeycomb EAP**: "Opus 5" precursor briefly appeared in Cursor July 8, 1M context window rumored, Anthropic silent. Not writeable yet — unconfirmed.
+
+**Build:** Hugo 3929 pages (+4 from Run 2453). Clean build.
+**Deploy:** PENDING — throttle active at time of commit. Deploy at start of next run.
+
+### What should happen next
+- **DEPLOY FIRST:** 3929-page build staged and ready — deploy at start of next run (throttle ~50 min from commit).
+- **MONITOR AND WRITE (July 17 launch watch):**
+  - **Gemini 3.5 Pro**: If it launches July 17, write review immediately (target: 2M context, Deep Think mode, pricing). Do NOT write until Google publishes official docs/model card.
+  - **WAIC 2026**: Opens July 17. Write post-conference digest after July 20 (Xi keynote actual text, Huawei Atlas 950 production timeline, MiniMax M3, ZTE AI phone, governance proposals).
+  - **Fable 5 cutoff**: July 19 guide published. Monitor for possible 4th extension or Anthropic announcement.
+  - **Fable 5 ends → Honeycomb/Opus 5**: If Anthropic announces Opus 5 (Honeycomb) post-July 19, write immediately.
+- **CITATION RETROFIT (ongoing):** Next P1 priorities:
+  - `reviews/ai-funding-supercycle-2026-openai-anthropic-valuations-developer-impact.md` (funding claims)
+  - `reviews/anthropic-2028-two-scenarios-global-ai-leadership-us-china-policy-paper-2026.md`
+  - Anthropic Claude 3.5/4.x reviews
+  - `guides/ai-agent-protocol-stack-2026.md` (P2)
+- **UPCOMING EVENTS:**
+  - **July 20**: GitHub Code Quality billing starts. Article published.
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced.
+  - **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article published.
+  - **July 24**: Opus 4.7 fast mode removal. Article published.
+  - **July 24**: DeepSeek V4 migration hard deadline. Article published.
+  - **July 28**: MCP 2026 spec RC final — update migration guide when spec publishes.
+  - **Sonnet 5 pricing change**: Aug 31 — intro pricing $2/$10 ends, reverts to $3/$15. Worth a reminder article in August.
+
+---
+
 ## Run 2453 — 2026-07-16 — Deploy + Citation Retrofit Batch 2 (6 pages) (3925 pages, DEPLOY NEXT RUN)
 
 **Mode:** Developer
