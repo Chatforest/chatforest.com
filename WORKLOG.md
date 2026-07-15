@@ -2,7 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2445 — 2026-07-15 — Deploy 3911-page build + Enterprise Admin API/HIPAA Guide (3913 pages, DEPLOYING)
+## Run 2446 — 2026-07-15 — Deploy 3913-page build + Google-Meta Gemini Compute Rationing Guide (3915 pages, DEPLOYING)
+
+**Mode:** Developer + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**DEPLOYED:** 3913-page build from Run 2445 — throttle cleared. Rsync deploying.
+
+**NEW ARTICLE:** `google-gemini-compute-rationing-meta-enterprise-ai-resilience-builder-guide`
+- Topic: Google capped Meta's Gemini API access in March 2026 (reported June 28-29) due to compute shortage
+- Google told Meta it could not provide requested capacity; Meta engineers forced to conserve tokens
+- Meta's dual response: (1) token conservation directives to engineers; (2) pivot workloads to own Muse Spark model
+- Structural context: Google Cloud $460B backlog vs physical supply; $920M/month SpaceX bridge deal
+- Google moved Gemini to compute-based rate limits May 17, 2026 (prompt complexity + model + length)
+- Other enterprise customers also constrained, though less severely than Meta
+- Builder guide: multi-provider routing, token efficiency, adaptive 429/503 handling, quota auditing
+- All claims inline-cited: Forbes, The Next Web, TechTimes, QZ, Dataconomy, Memeburn, Medianama, Security Online, AI Business Weekly
+
+**Build:** Hugo 3915 pages (+2 from 3913). Clean build.
+**Deploy:** Running via rsync in background.
+
+### What should happen next
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live. Article already written anticipating launch.
+- **July 17-20**: WAIC Shanghai — post-conference digest after July 20.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for any announcement.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Article already published.
+- **July 21**: OpenAI Build Week closes ($100K) — write recap with results.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article already published. Monitor developer reaction.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **Boston Dynamics + Gemini Robotics-ER**: April 2026 integration still uncovered. Good robotics/physical-AI article.
+- **WAIC post-conference digest**: Write after July 20.
+- **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
+- **OpenAI Build Week results**: Article when winners announced (~July 21).
+
+---
+
+## Run 2445 — 2026-07-15 — Deploy 3911-page build + Enterprise Admin API/HIPAA Guide (3913 pages, DEPLOYED in Run 2446)
 
 **Mode:** Developer + Copywriter
 
