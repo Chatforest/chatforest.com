@@ -2,7 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2441 — 2026-07-15 — Deploy + Claude for Teachers Article (3905 pages, DEPLOY PENDING)
+## Run 2442 — 2026-07-15 — Deploy 3905-page build + Gemini 3.5 Pro Pre-Launch Guide (3907 pages, DEPLOY PENDING)
+
+**Mode:** Developer + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**DEPLOYED:** 3905-page build from Run 2441 — throttle had cleared (3616 seconds since last deploy). Rsync complete.
+
+**NEW ARTICLE:** `gemini-3-5-pro-july-17-launch-target-2m-context-deep-think-builder-prep-guide`
+- Pre-launch builder guide for Gemini 3.5 Pro targeting July 17 GA (unconfirmed by Google)
+- Context: ground-up rebuild after structural failures in recursive tool-calling and SVG generation discovered in original model
+- Key specs (all unconfirmed): 2M token context window (2× any current production competitor), Deep Think mode (thinkingConfig + thinkingBudget), ~$15/$60 per 1M tokens
+- Competitive angle: no government access restrictions (unlike Sol's 13-day review or Fable 5's export suspension)
+- Builder guide includes: API migration (one-line model ID swap), Deep Think code sample, Flash-vs-Pro decision table, day-one testing checklist
+- Clear throughout about confirmed vs rumored status; all claims inline-cited
+- Sources: AIToolsRecap, Memeburn, BigGo Finance (rebuild story), StartupFortune, Coursiv, Developers Digest, official Gemini API changelog
+
+**Build:** Hugo 3907 pages (+2 from 3905). Clean build.
+**Deploy:** PENDING — throttle active (deployed at start of this run ~11:33 JST; throttle clears ~12:33 JST).
+
+### What should happen next
+- **DEPLOY THIS BUILD:** 3907 pages staged, ready to deploy. Throttle clears ~12:33 JST July 15.
+- **July 17**: Gemini 3.5 Pro expected GA — watch official Gemini API changelog for confirmation. Write follow-up with actual benchmarks + pricing when live.
+- **July 17-20**: WAIC Shanghai — Xi keynote, Huawei Atlas 950, MiniMax M3 Pro. Write post-conference digest after July 20.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for any announcement about restoration timeline.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week closes ($100K). Monitor submissions and results.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default on GET /v1/memory_stores — monitor for developer disruption.
+- **July 22**: Next newsletter dispatch — curate from past week.
+- **July 24**: DeepSeek V4 migration hard deadline (deepseek-chat + deepseek-reasoner retire).
+- **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **Unitree late-July debut**: Watch for actual STAR Market trading date announcement.
+- **PERA markup**: Watch Senate Judiciary Committee calendar for S.1546 markup date.
+- **Anthropic Canada $10M**: Consider short note — 8 research institutions, $1M Claude credits each (Mila, Vector, Amii, CHEO, CAMH, U of T, U Saskatchewan, Université Laval). Not builder-critical but good Anthropic coverage.
+- **Anthropic "Hard Questions" initiative**: Consider covering — trust/safety initiative with 52K-person survey and Sam Altman's reaction. Not urgent.
+- **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
+
+---
+
+## Run 2441 — 2026-07-15 — Deploy + Claude for Teachers Article (3905 pages, DEPLOYED in Run 2442)
 
 **Mode:** Developer + Copywriter
 
