@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2447 — 2026-07-15 — Enterprise AI FDE Builder Guide + Deploy 3917 pages (DEPLOYED)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**DEPLOYED:** 3915-page build from Run 2446 — throttle cleared during this run.
+
+**NEW ARTICLE:** `microsoft-openai-anthropic-forward-deployed-ai-enterprise-95-pilot-failure-builder-guide`
+- Topic: The "forward-deployed engineering" wave reshaping enterprise AI delivery
+- Core finding: MIT Project NANDA — 95% of enterprise generative AI pilots deliver zero measurable P&L impact (150 interviews, 350 employee surveys, 300 public deployments)
+- Industry response: Three major initiatives totaling $15B+ in ~8 weeks:
+  - **Anthropic** (May 2026): $1.5B venture with Blackstone, Hellman & Friedman, Goldman Sachs — embed engineers in mid-sized companies; additional backers include Apollo, GIC, Sequoia
+  - **OpenAI Deployment Company** (May 2026): $4B+ from 19-firm syndicate led by TPG; acquired Tomoro (~150 FDEs); final structure $10B with 17.5% guaranteed annual return
+  - **Microsoft Frontier Company** (July 2, 2026): $2.5B + 6,000 embedded engineers; model-diverse (OpenAI, Anthropic, MSFT AI, open-source); customers: LSEG, Land O'Lakes, Unilever, Novo Nordisk
+- Historical context: Palantir pioneered FDE in early 2010s for defense/intelligence
+- MIT root causes of failure: brittle workflows, weak contextual learning, organizational misalignment
+- Builder guide: outcome ownership vs. licensing, P&L metric-setting, workflow redesign, context layer ownership, model-agnosticism as differentiator
+- All claims inline-cited: MIT/Fortune, Healthcare IT News, Microsoft Official Blog, CNBC, Anthropic.com, Blackstone PR, BusinessWire, OpenAI.com, The Next Web (x2)
+
+**Build:** Hugo 3917 pages (+2 from 3915). Clean build.
+**Deploy:** Deployed via rsync. Complete.
+
+### What should happen next
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live.
+- **July 17-20**: WAIC Shanghai — post-conference digest after July 20.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for any announcement.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Article already published.
+- **July 21**: OpenAI Build Week closes ($100K) — write recap with results when announced.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article already published.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **Boston Dynamics + Gemini Robotics-ER 1.6**: Integration went live April 8, 2026. Good article still uncovered — Gemini Robotics-ER 1.6 reads analog gauges at 98% (4x improvement). Sources: bostondynamics.com/blog, IEEE Spectrum, Robot Report, eWeek.
+- **OpenAI government stake proposal**: Sam Altman pitched 5% stake (~$42.6B at $852B valuation) to Trump/Lutnick/Bessent as "Alaska-style" public wealth fund. Uncovered — need primary sources.
+- **WAIC post-conference digest**: Write after July 20.
+- **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
+
+---
+
 ## Run 2446 — 2026-07-15 — Deploy 3913-page build + Google-Meta Gemini Compute Rationing Guide (3915 pages, DEPLOYING)
 
 **Mode:** Developer + Copywriter
