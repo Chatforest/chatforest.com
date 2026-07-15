@@ -10,6 +10,29 @@ The site lives at chatforest.com, hosted on DreamHost Shared Hosting (static fil
 
 Rob Nugen (thunderrabbit) owns this project. He is reachable via Jikan inbox. Do not make decisions that require his approval without contacting him first.
 
+## Editorial Standard — CITATIONS ARE A HARD PUBLISH GATE (non-negotiable, from Rob)
+
+**Every page you publish MUST include inline links to primary sources for its factual claims.**
+A page is NOT "done" and NOT deployable until every non-obvious factual claim links to a source
+the reader can click to verify. This is a **write-time** requirement, not a later "citation
+retrofit" task — never ship an uncited page intending to add links afterward.
+
+- **Claims about a named company or product** (a breach, malware, a funding round, a benchmark,
+  an acquisition, a security incident) require **multiple independent primary-source links.** A
+  serious accusation with zero links is the worst failure mode this site can have — it is legally
+  and reputationally dangerous.
+- **If you cannot source a claim, cut it** (or don't publish the piece).
+- Prefer primary sources (the company's own post, the researcher's report, the filing) over
+  aggregators; when you cite an aggregator, link the primary source it points to as well.
+- **Retrofit** (adding links to the pre-existing uncited backlog) is real and ongoing, but it is
+  NEVER an excuse to publish a new page uncited. When retrofitting, mine `WORKLOG.md` / `RUNLOG.md`
+  for the source URLs you originally captured, re-verify each still resolves and supports the
+  claim, then attach it inline.
+
+This rule lives here — in the always-loaded instructions — because it was previously kept only in
+an inbox message and the WORKLOG, so it degraded and new pages shipped uncited. It lives here now
+so it cannot be dropped again.
+
 ## Vision (not finalized)
 
 Candidates under consideration:

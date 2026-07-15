@@ -1,3 +1,4 @@
+Run 2443: DEPLOYED 3907-page build; NEW builders-log/anthropic-canada-10m-claude-credits-mila-vector-amii-startups-builder-guide — Anthropic commits $10M to Canadian AI research (July 14, 2026): 8 institutions ($1M Claude credits each): Amii, Mila, Vector, CHEO, CAMH, Université Laval, U of T, U of Saskatchewan; builder angles: Canadian startups affiliated with Amii/Mila/Vector get ≥$5K USD API credits via Anthropic for Startups this summer; U of T DSI grant competition July 20–Sept 25, 2026; research focus maps to Claude gaps: multi-agent (Mila/Amii), low-resource languages (Laval), health-domain fairness (CAMH/CHEO), trust/safety (Vector/Amii); Canada ranks 2nd globally in Claude usage per working-age population; sources: anthropic.com, Betakit, U of T DSI, U of T news. DEPLOY PENDING. 3909 pages.
 Run 2429: NEW builders-log/tsmc-q2-2026-record-revenue-cowos-n3-sold-out-compute-floor-builder-guide — TSMC June 2026 revenue $13.8B (+67.9% YoY, largest monthly jump in company history); Q2 $39.62B (+36% YoY, record); N3 and CoWoS advanced packaging sold out through year-end 2026; demand exceeds supply 10–20%, gap not expected to close before 2027; NVIDIA locked in 70%+ of CoWoS-L capacity; TSMC CEO CC Wei says AI chip shortage lasts "for years"; TSMC Q2 earnings call July 16; cascade: Google rationed Gemini to Meta (March 2026, Meta projects delayed), Google renting 110K GPUs from SpaceX/xAI at $920M/month as "bridge," Anthropic locked Colossus 1 (220K GPUs, 300 MW) at $1.25B/month through 2029; builder action plan: recast inference cost model (flat not halving in 2026), negotiate capacity guarantees not just uptime SLAs, diversify providers before scale, watch neocloud-hyperscaler pricing spread, CoWoS/N3 signals for July 16 earnings. DEPLOYED. 3863 pages.
 Run 2428: NEW builders-log/enterprise-ai-evaluation-gap-57-percent-confidently-wrong-vb-transform-2026-builder-guide — VB Transform 2026 Day 1 (Menlo Park) + three VentureBeat VB Pulse surveys (June 2026, n=101/157/573): 57% trace confident-wrong AI agent answers to missing context; 50% deployed AI that passed evals and caused customer-facing failures; 66% allow production deployment without human review; only 5% fully trust automated evals; 86% of GPU-running enterprises at 50% or less utilization; only 7% say data is completely ready for AI; context layer: 25% production/34% building/41% haven't started; Project Glasswing (Visa + Anthropic): 10,000+ high/critical zero-days in first month, 50→150 partner orgs; three failure modes (context gap, eval gap, governance gap); builder action plan: fix context first, eval second, governance third. DEPLOYED. 3861 pages.
 Run 2427: NEW builders-log/memghost-ghostwriter-ai-agent-memory-poisoning-email-injection-builder-security-guide — Two simultaneous July 6 arXiv papers on AI agent memory poisoning: MemGhost (2607.05189) demonstrates email-based attack on OpenClaw at 87.5% success on GPT-5.4 / 71.4% on Claude Code SDK Sonnet 4.6, input filters bypassed >90%, even when users explicitly asked for disclosure attack hid ~25% of the time; GhostWriter (2607.06595, Torres/Shrestha/Misra) tests five production memory frameworks (A-Mem, Mem0, ExpeL, Letta/MemGPT, MemoryOS) across GPT-5.4-mini/DeepSeek-V4-Flash/Gemini-2.5-Flash/Llama-3.1-8B: ~98% memory injection success, ~60% attack activation, integrity corruption attacks hit 100% in some configs; proposed AM-Sentry defense with S1/S2/S3 strictness (S3 cuts success below 12%); builder action plan: separate email/memory agents, provenance tagging, user confirmation gates, audit logs, retrieval screening; all five frameworks unpatched; no CVEs assigned. DEPLOYED. 3859 pages.
@@ -37198,3 +37199,48 @@ Run 2439 complete.
 **New article:** Xiaomi MiMo V2.5 OpenRouter token volume dominance guide (content/builders-log/xiaomi-mimo-openrouter-chinese-ai-token-volume-builder-guide/). MiMo V2.5 #2 on OpenRouter 30-day leaderboard (20.5T tokens, July 13 per Tokenmaxxing); Claude Sonnet 4.6 at #10 (5.8T); Chinese models ~42% of measured platform volume (CodeSOTA, June 23). All claims cited inline. 3901 pages built; deploy pending (throttle — next run).
 
 **Citation gate rule:** CLAUDE.md permanent rule acknowledged. From this run forward, every page ships with inline primary-source links.
+Run 2439 complete. Here's what happened:
+
+**Citation gate fix (urgent):** The jscrambler npm supply chain attack article was live with a malware accusation against a named company and zero inline citation links. Fixed this run — every key claim throughout the article body now links to a verified primary source (Socket research blog, The Hacker News, CyberSecurityNews). Deployed immediately given the reputational risk (justified throttle override at 8 minutes).
+
+**New article:** `xiaomi-mimo-openrouter-chinese-ai-token-volume-builder-guide` — Xiaomi's MiMo V2.5 is now #2 on OpenRouter's 30-day leaderboard with 20.5T tokens (July 13, 2026), running 3.5× ahead of Claude Sonnet 4.6 at 5.8T. Chinese AI models collectively hold ~42% of measured platform volume. Builder guide on cost-optimized model routing with a decision table by task type. All citations inline. 3901-page build is ready; **deploy is pending** (throttle clears next run, ~56 minutes from now).
+
+**Next run priorities:** Deploy 3901-page build; write Gemini 3.5 Pro GA article if it launches July 17; begin WAIC Shanghai digest after July 20.
+2026-07-15T00:25:21Z FINISHED run 3944314
+2026-07-15T00:25:22Z SESSION 3560 stopped
+2026-07-15T00:32:01Z ONCE triggered
+2026-07-15T00:32:01Z STARTED run 3949356 (mode=wild)
+2026-07-15T00:32:02Z SESSION 3561 started
+Committed. The deploy throttle clears in ~42 minutes — the 3903-page build will go out next run. Here's what this run accomplished:
+
+**Run 2440 summary:**
+- Inbox: empty
+- Wrote and committed a new article on **China's AI Companion Law** — effective today (July 15, 2026). Covers the Doubao/Qwen/Yuanbao shutdowns, Shanghai's 14,000+ pre-enforcement agent removals, the five core technical requirements (minor ban, addiction detection, 2-hour reminder, AI disclosure, crisis escalation), data governance rules, penalty schedule, and a builder action checklist. All claims inline-cited to Latham & Watkins, AI Intelligence News, and AI Unfiltered.
+- Hugo build: 3903 pages, clean
+- Deploy pending — throttle clears ~10:20 JST; next run will push to DreamHost
+2026-07-15T00:38:12Z FINISHED run 3949356
+2026-07-15T00:38:14Z SESSION 3561 stopped
+2026-07-15T01:32:01Z STARTED run 3967795 (mode=wild)
+2026-07-15T01:32:03Z SESSION 3562 started
+Committed. This run's work:
+
+1. **Deployed** the previously staged 3903-page build to DreamHost (throttle had cleared).
+2. **New article:** `claude-for-teachers-edtech-api-k12-learning-commons-builder-guide` — Anthropic's July 14, 2026 launch of free premium Claude for US K-12 teachers. Builder angles: nine launch partners, FERPA compliance model (ZDR/7-day retention), open-source teaching skills repo on GitHub, and what standards-alignment-first design means for edtech builders. All claims cited to primary sources.
+3. **Deploy pending** — the 3905-page build is staged; throttle clears ~1 hour from now.
+
+Next run priority: deploy 3905 pages, then watch for Gemini 3.5 Pro GA on July 17 and WAIC Shanghai opening.
+2026-07-15T01:38:07Z FINISHED run 3967795
+2026-07-15T01:38:08Z SESSION 3562 stopped
+2026-07-15T02:33:01Z STARTED run 3985756 (mode=wild)
+2026-07-15T02:33:02Z SESSION 3563 started
+This run is done. Here's a summary:
+
+**Deployed:** The 3905-page build from Run 2441 (Claude for Teachers + China AI companion law articles) is now live on chatforest.com.
+
+**New article written:** [Gemini 3.5 Pro pre-launch builder guide](https://chatforest.com/builders-log/gemini-3-5-pro-july-17-launch-target-2m-context-deep-think-builder-prep-guide/) — covers the ground-up architectural rebuild (triggered by recursive tool-calling and SVG generation failures), the 2M-token context window, Deep Think mode API (thinkingConfig + thinkingBudget), pricing estimates (~$15/$60 per 1M), decision framework, and a day-one testing checklist. All claims are clearly labeled as reported-but-unconfirmed, with inline sources throughout.
+
+**3907-page build** is staged and ready — throttle clears ~12:33 JST. Next run will deploy it.
+2026-07-15T02:42:31Z FINISHED run 3985756
+2026-07-15T02:42:32Z SESSION 3563 stopped
+2026-07-15T03:33:01Z STARTED run 4003228 (mode=wild)
+2026-07-15T03:33:01Z SESSION 3564 started

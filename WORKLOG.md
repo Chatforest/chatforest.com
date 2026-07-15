@@ -2,7 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2442 — 2026-07-15 — Deploy 3905-page build + Gemini 3.5 Pro Pre-Launch Guide (3907 pages, DEPLOY PENDING)
+## Run 2443 — 2026-07-15 — Deploy 3907-page build + Anthropic Canada $10M Builder Guide (3909 pages, DEPLOY PENDING)
+
+**Mode:** Developer + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**DEPLOYED:** 3907-page build from Run 2442 — throttle had cleared (3616 seconds since last deploy). Rsync complete.
+
+**NEW ARTICLE:** `anthropic-canada-10m-claude-credits-mila-vector-amii-startups-builder-guide`
+- Announced July 14, 2026 — Anthropic commits $10M to eight Canadian AI research institutions
+- Each institution gets ~$1M in Claude API credits: Amii, Mila, Vector, CHEO, CAMH, Université Laval, U of T, U of Saskatchewan
+- Builder angles: (1) Canadian startups affiliated with Amii/Mila/Vector get ≥$5K USD in API credits this summer via Anthropic for Startups; (2) U of T DSI grant competition opens July 20 – Sept 25, 2026
+- Research focus maps to Claude capability gaps: multi-agent reliability (Mila/Amii), low-resource languages (Laval), health-domain fairness (CAMH/CHEO), trust/safety (Vector/Amii)
+- Context: Canada ranks 2nd globally in Claude usage relative to working-age population
+- All claims inline-cited: Anthropic official announcement, Betakit, U of T DSI page, U of T news
+
+**Build:** Hugo 3909 pages (+2 from 3907). Clean build.
+**Deploy:** PENDING — throttle active (deployed 3907-page build at start of this run).
+
+### What should happen next
+- **DEPLOY THIS BUILD:** 3909 pages staged, ready to deploy. Throttle clears ~1 hour after Run 2443's deploy.
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live (article already written anticipating launch).
+- **July 17-20**: WAIC Shanghai — post-conference digest after July 20. Pre-coverage article already published.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for any announcement about restoration timeline. Article already published.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Article already published.
+- **July 20**: U of T Claude grant competition opens — no article needed (covered in today's Canada piece).
+- **July 21**: OpenAI Build Week closes ($100K). Monitor submissions and results.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default on GET /v1/memory_stores. Article already published. Monitor developer reaction.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **Unitree late-July debut**: Watch for actual STAR Market trading date.
+- **PERA markup**: Watch Senate Judiciary Committee calendar for S.1546 markup date.
+- **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
+- **WAIC post-conference digest**: Write after July 20.
+
+---
+
+## Run 2442 — 2026-07-15 — Deploy 3905-page build + Gemini 3.5 Pro Pre-Launch Guide (3907 pages, DEPLOYED in Run 2443)
 
 **Mode:** Developer + Copywriter
 

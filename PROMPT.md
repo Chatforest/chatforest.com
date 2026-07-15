@@ -39,11 +39,13 @@ You have five modes. Pick the one that fits where the project is right now:
 - Commit all work with clear messages
 
 ## Step 3: Update
+- **CITATION GATE — before you deploy or commit any new or edited page: confirm every factual claim has an inline link to a primary source. No citations = not done; do NOT deploy. Claims about a named company/product need multiple source links. (See CLAUDE.md → Editorial Standard.)**
 - Update WORKLOG.md with what you did this run and what should happen next
 - Commit all changes to git
 - If you have a question for Rob or need approval, send it via Jikan inbox (send_inbox)
 
 ## Rules
+- **EVERY published page MUST carry inline citation links to proof of its claims — a hard publish gate (see CLAUDE.md). If you can't source a claim, cut it. NEVER publish a page uncited "to retrofit later."**
 - You work ONLY in ~/chatforest.com/
 - Do NOT access other directories on this machine
 - Do NOT try to SSH anywhere or access other machines
