@@ -9,7 +9,7 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-**Builder alert.** Five versions of the `jscrambler` npm package published on **July 11, 2026** contained a cross-platform Rust infostealer that specifically targeted AI coding tool configuration files, including **Claude Desktop**, **Cursor**, **Windsurf**, **VS Code**, **Zed**, and **MCP server configs** — alongside cloud credentials, CI tokens, and crypto wallet secrets. The attacker pushed five malicious versions over roughly three hours using a compromised npm publishing credential. Socket's research team flagged the first version **six minutes** after it went live.
+**Builder alert.** Five versions of the `jscrambler` npm package published on **July 11, 2026** contained a [cross-platform Rust infostealer](https://socket.dev/blog/jscrambler-supply-chain-attack) that specifically targeted AI coding tool configuration files, including **Claude Desktop**, **Cursor**, **Windsurf**, **VS Code**, **Zed**, and **MCP server configs** — alongside cloud credentials, CI tokens, and crypto wallet secrets. The attacker pushed five malicious versions over roughly three hours using a [compromised npm publishing credential](https://thehackernews.com/2026/07/compromised-jscrambler-8140-npm-release.html). [Socket's research team](https://socket.dev/blog/jscrambler-supply-chain-attack) flagged the first version **six minutes** after it went live.
 
 If you installed any `jscrambler` version between **8.14.0 and 8.20.0** — directly or transitively, on a developer machine or a CI runner — rotate your credentials now and treat every affected machine as potentially compromised.
 
@@ -20,7 +20,7 @@ If you installed any `jscrambler` version between **8.14.0 and 8.20.0** — dire
 
 ## What jscrambler Is
 
-jscrambler is a JavaScript obfuscation and application protection toolkit. Developers and build pipelines use it to harden JavaScript against reverse engineering — it sits in the build process, close to source code, cloud credentials, and CI tokens. The `@jscrambler/cli` package receives roughly **15,800 weekly downloads** on npm.
+jscrambler is a JavaScript obfuscation and application protection toolkit. Developers and build pipelines use it to harden JavaScript against reverse engineering — it sits in the build process, close to source code, cloud credentials, and CI tokens. The `@jscrambler/cli` package receives roughly [**15,800 weekly downloads**](https://socket.dev/blog/jscrambler-supply-chain-attack) on npm.
 
 That build-pipeline position is precisely why it was a target. A package running at install time inside a CI/CD environment has access to environment variables, credential files, and the full source tree of whatever is being built.
 
@@ -30,14 +30,14 @@ That build-pipeline position is precisely why it was a target. A package running
 
 | Time (UTC, July 11) | Event |
 |---|---|
-| T+0 | `jscrambler@8.14.0` published to npm using compromised credential |
-| T+6 min | Socket research team flags malicious release |
+| T+0 | [`jscrambler@8.14.0` published to npm using compromised credential](https://socket.dev/blog/jscrambler-supply-chain-attack) |
+| T+6 min | [Socket research team flags malicious release](https://socket.dev/blog/jscrambler-supply-chain-attack) |
 | ~T+60 min | `jscrambler@8.16.0` published (same payload) |
 | ~T+90 min | `jscrambler@8.17.0` published |
-| ~T+120 min | `jscrambler@8.18.0` published (payload moved into main code — `--ignore-scripts` no longer protects you) |
+| ~T+120 min | `jscrambler@8.18.0` published ([payload moved into main code](https://thehackernews.com/2026/07/compromised-jscrambler-8140-npm-release.html) — `--ignore-scripts` no longer protects you) |
 | ~T+180 min | `jscrambler@8.20.0` published (same design as 8.18.0) |
-| Later July 11 | Jscrambler revokes publishing credentials; all five versions deprecated |
-| Later July 11 | `jscrambler@8.22.0` released (confirmed clean) |
+| Later July 11 | [Jscrambler revokes publishing credentials; all five versions deprecated](https://cybersecuritynews.com/hackers-compromised-jscrambler/) |
+| Later July 11 | [`jscrambler@8.22.0` released (confirmed clean)](https://socket.dev/blog/jscrambler-supply-chain-attack) |
 
 The pace — five versions over three hours — indicates the attacker anticipated rapid detection and was trying to maximize reach before their access was cut. The payload escalation between versions 8.17.0 and 8.18.0 (see below) suggests active iteration during the attack window.
 
@@ -47,7 +47,7 @@ The pace — five versions over three hours — indicates the attacker anticipat
 
 ### Versions 8.14.0, 8.16.0, 8.17.0 — Preinstall Hook
 
-The first three malicious versions added an undocumented preinstall lifecycle hook that ran `dist/setup.js` automatically during every `npm install`. The package also included `dist/intro.js` — a file with a `.js` extension that was actually a custom binary container, approximately **7.8 MB**, holding three gzip-compressed native executables:
+The first three malicious versions [added an undocumented preinstall lifecycle hook](https://socket.dev/blog/jscrambler-supply-chain-attack) that ran `dist/setup.js` automatically during every `npm install`. The package also included `dist/intro.js` — a file with a `.js` extension that was actually a custom binary container, approximately **7.8 MB**, holding three gzip-compressed native executables:
 
 - Linux x86-64
 - Windows x86-64  
@@ -59,7 +59,7 @@ At install time, `setup.js` inspected the current platform, decompressed the cor
 
 ### Versions 8.18.0, 8.20.0 — Bypass of --ignore-scripts
 
-In the final two malicious versions, the dropper was moved out of the preinstall hook and into the package's **main code and CLI**. This means the payload would execute whenever the jscrambler CLI was invoked in a build step — regardless of whether `--ignore-scripts` was passed during installation.
+In the final two malicious versions, [the dropper was moved out of the preinstall hook and into the package's **main code and CLI**](https://thehackernews.com/2026/07/compromised-jscrambler-8140-npm-release.html). This means the payload would execute whenever the jscrambler CLI was invoked in a build step — regardless of whether `--ignore-scripts` was passed during installation.
 
 If your CI pipeline installs with `--ignore-scripts` as a security measure, that protection did not apply to 8.18.0 or 8.20.0.
 
@@ -67,11 +67,11 @@ If your CI pipeline installs with `--ignore-scripts` as a security measure, that
 
 ## What It Stole: AI IDE Configs Were a Primary Target
 
-The Rust-compiled infostealer ran a credential sweep across the machine and exfiltrated results over TLS via a multipart HTTP POST to a remote drop server. Socket's analysis confirmed the exfiltration mechanism.
+The Rust-compiled infostealer ran a credential sweep across the machine and exfiltrated results over TLS via a multipart HTTP POST to a remote drop server. [Socket's analysis](https://socket.dev/blog/jscrambler-supply-chain-attack) confirmed the exfiltration mechanism, with [independent corroboration from CyberSecurityNews](https://cybersecuritynews.com/hackers-compromised-jscrambler/).
 
 The targeted categories included:
 
-**AI coding tool configuration files:**
+**[AI coding tool configuration files](https://socket.dev/blog/jscrambler-supply-chain-attack):**
 - **Claude Desktop** (`claude_desktop_config.json`) — contains MCP server definitions, API keys, and tool connection secrets
 - **Cursor** — IDE config and settings, which can store API keys and cloud integration tokens
 - **Windsurf** — IDE settings including AI service credentials
@@ -166,7 +166,7 @@ This is the third major AI developer tool security incident in six weeks:
 
 The common thread: AI developer tools now aggregate access to source code, cloud infrastructure, AI service accounts, and sensitive configuration in ways that older tooling did not. That concentration of access is what makes them targets.
 
-Socket caught this in six minutes, which is the current best-in-class response time for npm supply chain attacks. Six minutes is also enough time to install a package in an automated pipeline.
+[Socket caught this in six minutes](https://socket.dev/blog/jscrambler-supply-chain-attack), which is the current best-in-class response time for npm supply chain attacks. Six minutes is also enough time to install a package in an automated pipeline.
 
 Defense doesn't scale to the detection window alone. It requires credential hygiene that assumes compromise and rotates accordingly.
 
