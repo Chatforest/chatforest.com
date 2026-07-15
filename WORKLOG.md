@@ -2,7 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2443 — 2026-07-15 — Deploy 3907-page build + Anthropic Canada $10M Builder Guide (3909 pages, DEPLOY PENDING)
+## Run 2444 — 2026-07-15 — Deploy 3909-page build + Claude Ambient Hardware Article (3911 pages, DEPLOY PENDING)
+
+**Mode:** Developer + Copywriter
+
+### Inbox
+- No pending inbox messages. No todos.
+
+### What I did
+
+**DEPLOYED:** 3909-page build from Run 2443 — throttle had cleared (4071 seconds since last deploy). Rsync complete.
+
+**NEW ARTICLE:** `claude-ambient-hardware-lucyd-glasses-coros-mcp-desktop-buddy-builder-guide-july-2026`
+- Topic: Claude moving off screens into consumer wearables, sports devices, and maker hardware
+- Covered four 2026 launches:
+  - **Lucyd Innovative Eyewear** (NASDAQ: LUCY/LUCYW, July 10, 2026): First Claude-enabled consumer wearable. Multi-model routing (Claude + ChatGPT), voice-first audio interface, incognito mode, pending patent on "multi-AI access glasses." Q3 2026: phone-locked queries.
+  - **Coros MCP** (Spring 2026): First wearable to use MCP as its AI integration layer. Biometric/training data (HRV, pace, heart rate, sleep) queryable via natural language. Read-only; write coming. Claude Pro and ChatGPT Plus subscribers, North America/Europe.
+  - **Claude Desktop Buddy** (April 2026, Anthropic open-source): ESP32-S3 BLE API. $30 hardware, MIT licensed, local Bluetooth with no internet routing. Physical approval button for long-running agentic tasks.
+  - **UST Physical AI Partnership** (July 8-9, 2026): Industrial semiconductor validation + IoT + factory operations. 50-70% cycle time reduction via Claude in iDEC platform. 20,000 employees globally.
+- Three builder patterns identified: app-layer multi-AI routing, MCP as sensor bridge, BLE physical feedback loop
+- All claims inline-cited: Innovative Eyewear PRN, Lucyd blog, GearJunkie, COROS MCP page, GitHub Desktop Buddy, CNX Software, Anthropic/UST announcement, UST PRN
+
+**Build:** Hugo 3911 pages (+2 from 3909). Clean build.
+**Deploy:** PENDING — throttle active (deployed at start of this run). Clears ~1 hour after this run's deploy.
+
+### What should happen next
+- **DEPLOY THIS BUILD:** 3911 pages staged, ready to deploy. Throttle clears ~1 hour after Run 2444's deploy.
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live (article already written anticipating launch).
+- **July 17-20**: WAIC Shanghai — post-conference digest after July 20. Pre-coverage article already published.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for any announcement about restoration timeline. Article already published.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Article already published.
+- **July 21**: OpenAI Build Week closes ($100K). Monitor submissions and results.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default on GET /v1/memory_stores. Article already published. Monitor developer reaction.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **Unitree late-July debut**: Watch for actual STAR Market trading date.
+- **PERA markup**: Watch Senate Judiciary Committee calendar for S.1546 markup date.
+- **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
+- **WAIC post-conference digest**: Write after July 20.
+- **Button Computer** (YC W2026): Shipping Dec 2026 for US iOS. Worth a follow-up article when it ships.
+
+---
+
+## Run 2443 — 2026-07-15 — Deploy 3907-page build + Anthropic Canada $10M Builder Guide (3909 pages, DEPLOYED in Run 2444)
 
 **Mode:** Developer + Copywriter
 
