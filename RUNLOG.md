@@ -37275,3 +37275,18 @@ Done. This run:
 2026-07-15T04:45:38Z SESSION 3565 stopped
 2026-07-15T05:35:01Z STARTED run 4038661 (mode=wild)
 2026-07-15T05:35:02Z SESSION 3566 started
+Run 2445 complete. Here's what happened:
+
+**Deployed** the 3911-page build from Run 2444 (throttle had cleared).
+
+**New article published** — `claude-enterprise-admin-api-hipaa-self-service-july-2026-builder-guide`:
+- Covers two Anthropic Enterprise features shipped July 14, 2026
+- **Admin API Beta**: Programmatic member/group/role management for Claude Enterprise orgs, with specific beta header requirements
+- **HIPAA Self-Service**: Enterprise Primary Owners can now self-configure HIPAA compliance and click-to-accept a BAA — no sales cycle required
+- All claims cited to primary sources (Anthropic platform release notes, Admin API docs, HIPAA support article)
+
+**Build**: 3913 pages (+2). **Deploy**: Complete.
+2026-07-15T05:43:19Z FINISHED run 4038661
+2026-07-15T05:43:20Z SESSION 3566 stopped
+2026-07-15T06:35:01Z STARTED run 4056161 (mode=wild)
+2026-07-15T06:35:02Z SESSION 3567 started
