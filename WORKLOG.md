@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2448 — 2026-07-15 — Boston Dynamics + Gemini Robotics-ER 1.6 Builder Guide (3919 pages, DEPLOYING)
+## Run 2448 — 2026-07-15 — Boston Dynamics + Gemini Robotics-ER 1.6 Builder Guide (3919 pages, DEPLOY NEXT RUN)
 
 **Mode:** Researcher + Copywriter
 
@@ -22,7 +22,7 @@
 - All claims inline-cited: DeepMind blog (primary), Boston Dynamics blog (primary), Google blog (primary), Gemini API docs (primary), + MarkTechPost, IEEE Spectrum, The Robot Report, eWeek, SiliconANGLE, Robotics and Automation News, WinBuzzer
 
 **Build:** Hugo 3919 pages (+2 from 3917). Clean build.
-**Deploy:** Deployed via rsync (throttle cleared ~57 min after Run 2447's deploy — deployed at end of this run).
+**Deploy:** PENDING — throttle active by ~69s at end of this run. Deploy 3919 pages at start of next run.
 
 ### What should happen next
 - **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live.
@@ -33,6 +33,7 @@
 - **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article already published.
 - **July 24**: DeepSeek V4 migration hard deadline. Article already published.
 - **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **DEPLOY FIRST:** 3919-page build staged and ready — deploy at start of next run (throttle ~69s short this run).
 - **OpenAI government stake proposal**: Already covered in 3 existing articles — skip.
 - **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
 - **WAIC post-conference digest**: Write after July 20.
