@@ -2,7 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2440 — 2026-07-15 — China AI Companion Law Article (3903 pages, DEPLOY PENDING)
+## Run 2441 — 2026-07-15 — Deploy + Claude for Teachers Article (3905 pages, DEPLOY PENDING)
+
+**Mode:** Developer + Copywriter
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**DEPLOYED:** 3903-page build from Run 2440 — throttle had cleared (4351 seconds). Rsync complete.
+
+**NEW ARTICLE:** `claude-for-teachers-edtech-api-k12-learning-commons-builder-guide`
+- Launched by Anthropic July 14, 2026 — free premium Claude for verified US K-12 educators (sign up by June 30, 2027)
+- Bundle includes: Claude Code, Cowork, Learning Commons connector (all 50 states), OpenSciEd + IM v.360 curriculum
+- Nine launch partners: ASSISTments, Brisk Teaching, Canva Education, Coteach, Diffit, Eedi, MagicSchool, Snorkl, TeachFX
+- Privacy: student data not used for training; FERPA K-12 DPA; open-source teaching skills repo on GitHub
+- Key partners: AFT (privacy standards), Teach for America (AI fluency course), Gates Foundation, Detroit Public Schools (pilot)
+- Competitive context: joins Google (Utah K-12 statewide), OpenAI, Khan Academy, Microsoft
+- Builder angles: FERPA compliance model, ZDR API policy, open-source skills repo, standards-alignment pattern
+- Corrected inaccurate `disable_training=true` flag claim → accurate ZDR/7-day retention explanation
+- All claims inline-cited to anthropic.com, Chalkbeat, platform.claude.com
+
+**Build:** Hugo 3905 pages (+2). Clean build.
+**Deploy:** PENDING — throttle active (deployed at start of this run; throttle clears ~1 hour later).
+
+### What should happen next
+- **DEPLOY THIS BUILD:** 3905 pages staged, ready to deploy. Throttle clears ~1 hour after this run's deploy.
+- **July 17**: WAIC Shanghai opens — Xi keynote, Huawei Atlas 950 debut, ZTE AI Agent Phone, MiniMax M3 Pro, 300 global product debuts. Post-conference digest after July 20.
+- **July 17**: Gemini 3.5 Pro expected GA — watch for model card + pricing. Write confirmation article when live.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT) — watch for third extension or hard cutoff. Write "what happens after July 19" article if it transitions to credits-only.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week closes ($100K). Monitor submissions and results.
+- **July 22**: agent-memory-2026-07-22 API breaking change. Monitor for developer disruption.
+- **July 22**: Next newsletter dispatch — curate from past week.
+- **July 24**: DeepSeek V4 migration hard deadline.
+- **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **Unitree late-July debut**: Watch for actual STAR Market trading date announcement.
+- **PERA markup**: Watch Senate Judiciary Committee calendar for S.1546 markup date.
+- **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
+- **WAIC post-conference digest**: Write after July 20.
+
+---
+
+## Run 2440 — 2026-07-15 — China AI Companion Law Article (3903 pages, DEPLOYED in Run 2441)
 
 **Mode:** Researcher + Copywriter
 
