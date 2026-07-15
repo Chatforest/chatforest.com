@@ -3,7 +3,7 @@
 > Article 50 transparency obligations kick in August 2, 2026 — unchanged by the Digital Omnibus deal. If you run a chatbot, generate synthetic content, or use emotion recognition for EU users, here's exactly what you must do.
 
 
-**At a glance:** Article 50 enforcement date: August 2, 2026. Obligations: chatbot disclosure, synthetic content marking, emotion recognition notice, deepfake labeling. Penalty for non-compliance: up to €15M or 3% of global revenue. Enforced by: national market surveillance authorities (per member state). Not changed by: the Digital Omnibus simplification deal. Part of our **[AI builder guides](/categories/developer-tools/)**.
+**At a glance:** [Article 50](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50) enforcement date: August 2, 2026. Obligations: chatbot disclosure, synthetic content marking, emotion recognition notice, deepfake labeling. Penalty for non-compliance: up to €15M or 3% of global revenue. Enforced by: national market surveillance authorities (per member state). Not changed by: the Digital Omnibus simplification deal. Part of our **[AI builder guides](/categories/developer-tools/)**.
 
 ---
 
@@ -17,7 +17,7 @@ This guide covers what the four obligations actually require, who they apply to,
 
 ## What the Digital Omnibus Changed (and What It Didn't)
 
-The May 7, 2026 Digital Omnibus agreement:
+The [May 7, 2026 Digital Omnibus agreement](https://www.whitecase.com/insight-alert/eu-agrees-digital-omnibus-deal-simplify-ai-rules):
 
 - **Pushed Annex III high-risk AI deadlines** (employment, credit, education) from August 2, 2026 to December 2, 2027
 - **Added two new prohibited practices** (AI-generated non-consensual intimate material and CSAM), effective December 2, 2026
@@ -60,7 +60,7 @@ One partial exception: for AI systems that generate or manipulate synthetic cont
 
 **What it requires:** AI-generated outputs must be marked in a machine-readable format so they are detectable as artificially generated. For model providers (e.g., you built the underlying generation model), this means watermarking or provenance metadata must be embedded at the model output level before placing it on the market.
 
-**In plain terms:** If you offer an AI image generator, text-to-speech, video synthesis, or generative text API, your outputs must carry machine-readable markers. The European Commission has published draft guidelines and a voluntary Code of Practice on marking and labeling, developed alongside the C2PA (Coalition for Content Provenance and Authenticity) standards.
+**In plain terms:** If you offer an AI image generator, text-to-speech, video synthesis, or generative text API, your outputs must carry machine-readable markers. The European Commission has published [draft guidelines and a voluntary Code of Practice on marking and labeling](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content), developed alongside the [C2PA (Coalition for Content Provenance and Authenticity)](https://c2pa.org/) standards.
 
 **Timeline nuance from Digital Omnibus:** If your system was placed on the EU market or put into service **before** August 2, 2026, you have until December 2, 2026 to implement marking. If you launch after August 2, you must comply from day one.
 
@@ -110,7 +110,7 @@ One partial exception: for AI systems that generate or manipulate synthetic cont
 
 ## Penalties
 
-Non-compliance with Article 50 carries fines of up to **€15 million or 3% of total worldwide annual turnover**, whichever is higher. For SMEs and startups, fines are capped at whichever threshold is lower.
+Non-compliance with [Article 50](https://artificialintelligenceact.eu/article/50/) carries fines of up to **€15 million or 3% of total worldwide annual turnover**, whichever is higher. For SMEs and startups, fines are capped at whichever threshold is lower.
 
 Enforcement is decentralized: each EU member state designates its own national market surveillance authority. Germany, France, Italy, the Netherlands, and Ireland (home to many tech company EU headquarters) are all expected to be active enforcers. The European AI Office has direct authority only over GPAI model obligations (Chapter V) — Article 50 is handled nationally.
 

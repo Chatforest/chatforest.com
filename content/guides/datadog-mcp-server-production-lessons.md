@@ -7,11 +7,11 @@ card_description: "Datadog's MCP server went GA in March 2026. Their engineering
 last_refreshed: 2026-04-06
 ---
 
-Datadog's remote MCP server went generally available on March 10, 2026. It's one of the most production-ready MCP integrations in the ecosystem — a hosted server with 16+ core tools, optional specialized toolsets, and integrations with Claude Code, Cursor, OpenAI Codex CLI, GitHub Copilot, VS Code, Goose, and more.
+Datadog's remote MCP server [went generally available on March 10, 2026](https://www.globenewswire.com/news-release/2026/03/09/3251890/0/en/Datadog-Launches-MCP-Server-to-Provide-AI-Agents-with-Secure-Real-Time-Access-to-Unified-Observability-Data.html). It's one of the most production-ready MCP integrations in the ecosystem — a hosted server with 16+ core tools, optional specialized toolsets, and integrations with Claude Code, Cursor, OpenAI Codex CLI, GitHub Copilot, VS Code, Goose, and more.
 
-But the interesting story isn't what shipped. It's what Datadog learned building it — lessons that apply to anyone designing MCP tools for AI agents. Their engineering team published a detailed account of what went wrong with the first version (a thin API wrapper) and how they redesigned tools specifically for how agents consume data. This guide distills those lessons alongside Datadog's architecture and real-world enterprise use cases.
+But the interesting story isn't what shipped. It's what Datadog learned building it — lessons that apply to anyone designing MCP tools for AI agents. Their engineering team [published a detailed account](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/) of what went wrong with the first version (a thin API wrapper) and how they redesigned tools specifically for how agents consume data. This guide distills those lessons alongside Datadog's architecture and real-world enterprise use cases.
 
-Our analysis draws on Datadog's published engineering blog posts, official documentation, and press materials — we research and analyze rather than testing implementations hands-on.
+Our analysis draws on Datadog's [published engineering blog posts](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/), [official documentation](https://docs.datadoghq.com/mcp_server/), and press materials — we research and analyze rather than testing implementations hands-on.
 
 ## Why Thin API Wrappers Fail for Agents
 
@@ -175,14 +175,14 @@ When new monitoring is needed, the agent generates Terraform code via AI coding 
 
 ## AWS DevOps Agent Integration
 
-Datadog's MCP server also powers the **AWS DevOps Agent**, which went GA on March 31, 2026. AWS DevOps Agent is a "frontier agent" — an autonomous AI agent that investigates and resolves production incidents by correlating data across AWS services and Datadog telemetry.
+Datadog's MCP server also powers the **AWS DevOps Agent**, which [went GA on March 31, 2026](https://aws.amazon.com/blogs/devops/production-ready-autonomous-incident-resolution-with-aws-devops-agent-now-ga-and-datadog-mcp-server/). AWS DevOps Agent is a "frontier agent" — an autonomous AI agent that investigates and resolves production incidents by correlating data across AWS services and Datadog telemetry.
 
 The integration enables:
 - Automated incident investigation combining CloudWatch and Datadog data
 - Root cause analysis across infrastructure and application layers
 - Mitigation plan generation for on-call engineers
 
-Early results from preview customers: **up to 75% lower MTTR, 80% faster investigations, and 94% root cause accuracy**, supporting 3–5x faster incident resolution.
+Early results from preview customers: [**up to 75% lower MTTR, 80% faster investigations, and 94% root cause accuracy**](https://aws.amazon.com/blogs/devops/production-ready-autonomous-incident-resolution-with-aws-devops-agent-now-ga-and-datadog-mcp-server/), supporting 3–5x faster incident resolution.
 
 This is one of the clearest examples of MCP enabling cross-platform agent workflows in production — AWS's agent using Datadog's MCP server as its observability interface, with neither vendor needing to build a custom integration.
 

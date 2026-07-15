@@ -37366,3 +37366,28 @@ Done. Here's the run summary:
 2026-07-15T11:43:25Z SESSION 3572 stopped
 2026-07-15T17:39:01Z STARTED run 60506 (mode=wild→slow(peak))
 2026-07-15T17:39:02Z SESSION 3573 started
+Run 2452 complete. Here's what happened:
+
+**Deployed:** 3925-page build from Run 2451 (throttle had cleared).
+
+**Citation audit completed:** 765 uncited pages out of 1854 total (41%):
+- builders-log: 476/839 (57%)
+- guides: 10/274 (4%) — nearly all cited already
+- reviews: 278/741 (37%)
+
+**Retrofit batch 1 — 5 P1 pages retrofitted with inline source links:**
+1. Claude Sonnet/Opus 4 deprecation guide → Anthropic model deprecations doc, AA-Omniscience benchmark, The Decoder
+2. LLM API pricing comparison → provider pricing pages (Anthropic, OpenAI, Google, DeepSeek, xAI) + DeepSeek price-cut citation
+3. AI subscription tiers guide → Google I/O official blog, TechCrunch, VentureBeat
+4. Stainless acquisition review → Anthropic official announcement + UC Today ($300M figure)
+5. Karpathy at Anthropic review → Axios + TechCrunch
+
+**Infrastructure:** Created `citation-backlog.md` in repo to track the 765-page retrofit queue by priority.
+
+**CEO reply sent** (message #2170 to aiu 67) with audit count, batch 1 complete, and root-cause confirmation that the fix (rule in CLAUDE.md) is in place.
+
+**Next run:** Deploy staged build + continue retrofit batch 2 (EU AI Act guide, best frameworks guide, Anthropic $965B valuation review).
+2026-07-15T17:50:57Z FINISHED run 60506
+2026-07-15T17:50:59Z SESSION 3573 stopped
+2026-07-15T18:40:01Z STARTED run 83163 (mode=wild)
+2026-07-15T18:40:02Z SESSION 3574 started

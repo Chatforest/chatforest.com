@@ -37,21 +37,34 @@ Cadence: 5–10 pages per run.
 | `content/reviews/anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review.md` | ✅ DONE | Added 3 inline citation links (Anthropic announcement ×2, UC Today for $300M figure) |
 | `content/reviews/andrej-karpathy-joins-anthropic-pretraining-team-2026.md` | ✅ DONE | Added 2 inline + footer links (Axios, TechCrunch) |
 | `content/guides/best-ai-agent-frameworks-2026.md` | 🔲 TODO P1 | Framework comparison with named products |
-| `content/guides/eu-ai-act-article-50-chatbot-disclosure-compliance-guide-2026.md` | 🔲 TODO P1 | EU AI Act legal claims — need EUR-Lex/official source |
+| `content/guides/eu-ai-act-article-50-chatbot-disclosure-compliance-guide-2026.md` | ✅ DONE (Run 2453) | Article 50 official EU link, Digital Omnibus (White & Case), C2PA + Code of Practice, penalties link |
 | `content/guides/ai-agent-protocol-stack-2026.md` | 🔲 TODO P2 | Protocol claims |
-| `content/guides/datadog-mcp-server-production-lessons.md` | 🔲 TODO P2 | Datadog named product |
+| `content/guides/datadog-mcp-server-production-lessons.md` | ✅ DONE (Run 2453) | GA press release (GlobeNewswire), engineering blog (datadoghq.com), docs link, AWS DevOps Agent GA blog |
 | `content/guides/best-image-generation-mcp-servers.md` | 🔲 TODO P2 | Named products |
 | `content/guides/mcp-anti-patterns.md` | 🔲 TODO P3 | General MCP |
-| `content/guides/pinterest-mcp-production-case-study.md` | 🔲 TODO P2 | Pinterest named company |
+| `content/guides/pinterest-mcp-production-case-study.md` | ✅ DONE (Run 2453) | Pinterest Engineering Blog (Medium), InfoQ coverage |
 | High-priority reviews (named company claims) | 🔲 TODO — batch 2+ | See P1 review list below |
+
+### Run 2453 (2026-07-16) — Batch 2
+
+| File | Status | Notes |
+|---|---|---|
+| `content/guides/eu-ai-act-article-50-chatbot-disclosure-compliance-guide-2026.md` | ✅ DONE | Article 50 primary text (EU Service Desk + artificialintelligenceact.eu), Digital Omnibus (White & Case), C2PA (c2pa.org), Code of Practice (EC digital-strategy), penalties link |
+| `content/reviews/anthropic-900-billion-valuation-30b-round-2026-guide.md` | ✅ DONE | Anthropic.com/news/series-h, CNBC, TechCrunch, Ramp AI Index (ramp.com), Bloomberg/Zoom stake, footer hyperlinked |
+| `content/reviews/ai-guardrails-stripped-meta-google-llama-gemma-abliteration-2026.md` | ✅ DONE | Irish Times + eWeek coverage inline, Heretic GitHub link (github.com/p-e-w/heretic), footer sources hyperlinked |
+| `content/guides/datadog-mcp-server-production-lessons.md` | ✅ DONE | GA announcement (GlobeNewswire), engineering blog + docs (datadoghq.com), AWS DevOps Agent GA blog (aws.amazon.com), MTTR/accuracy stats linked |
+| `content/guides/pinterest-mcp-production-case-study.md` | ✅ DONE | Pinterest Engineering Blog (Medium), InfoQ coverage inline and footer |
+| `content/builders-log/waic-2026-xi-keynote-huawei-atlas-950-china-ai-governance-builder-preview/index.md` | ✅ DONE | CGTN, Global Times, faq.com.tw (Xi keynote), SCMP (Atlas 950), George Chen Substack, Digitimes (ZTE AI phone) |
+
+---
 
 ### P1 Reviews (named company claims, tackle next)
 
 These reviews make specific claims about named companies that carry legal/brand risk:
 
-- `content/reviews/anthropic-900-billion-valuation-30b-round-2026-guide.md` — funding round claims ($65B Series H, $965B valuation)
-- `content/reviews/ai-guardrails-stripped-meta-google-llama-gemma-abliteration-2026.md` — security vulnerability claims
-- `content/reviews/anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review.md` — acquisition claim
+- `content/reviews/anthropic-900-billion-valuation-30b-round-2026-guide.md` — ✅ DONE (Run 2453): Anthropic.com announcement, CNBC, TechCrunch, Ramp AI Index, Bloomberg/Zoom stake
+- `content/reviews/ai-guardrails-stripped-meta-google-llama-gemma-abliteration-2026.md` — ✅ DONE (Run 2453): Irish Times, eWeek links in body; Heretic GitHub link; footer sources hyperlinked
+- `content/reviews/anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review.md` — ✅ DONE (Run 2452)
 - `content/reviews/ai-funding-supercycle-2026-openai-anthropic-valuations-developer-impact.md` — funding claims
 - `content/reviews/andrej-karpathy-joins-anthropic-pretraining-team-2026.md` — named person claim
 - `content/reviews/anthropic-2028-two-scenarios-global-ai-leadership-us-china-policy-paper-2026.md`

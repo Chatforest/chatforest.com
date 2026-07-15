@@ -3,9 +3,9 @@
 > Pinterest built a production MCP ecosystem with domain-specific servers, a central registry, and human-in-the-loop governance — saving 7,000 engineering hours monthly. Here's the full architecture breakdown.
 
 
-Most MCP content focuses on setup tutorials and toy demos. Pinterest's engineering team went further: they built a production MCP ecosystem that automates real engineering work — incident investigation, data pipeline management, code change proposals — at a scale of 66,000 monthly invocations across 844 engineers. Their engineering blog post, published in March 2026, is one of the most detailed enterprise MCP case studies available.
+Most MCP content focuses on setup tutorials and toy demos. Pinterest's engineering team went further: they built a production MCP ecosystem that automates real engineering work — incident investigation, data pipeline management, code change proposals — at a scale of 66,000 monthly invocations across 844 engineers. Their [engineering blog post, published in March 2026](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1), is one of the most detailed enterprise MCP case studies available.
 
-This guide breaks down Pinterest's architecture, security model, governance framework, and the design decisions that made it work. Our analysis draws on Pinterest's published engineering blog post, InfoQ's coverage, and related industry sources — we research and analyze rather than testing implementations hands-on.
+This guide breaks down Pinterest's architecture, security model, governance framework, and the design decisions that made it work. Our analysis draws on [Pinterest's published engineering blog post](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1), [InfoQ's coverage](https://www.infoq.com/news/2026/04/pinterest-mcp-ecosystem/), and related industry sources — we research and analyze rather than testing implementations hands-on.
 
 ## Why Pinterest Chose MCP
 
@@ -230,5 +230,5 @@ What makes Pinterest's case study distinctive is the level of architectural deta
 
 ---
 
-*This analysis is based on Pinterest's March 2026 engineering blog post and subsequent industry coverage. ChatForest researches and analyzes public sources — we have no affiliation with Pinterest. Last updated April 6, 2026.*
+*This analysis is based on [Pinterest's March 2026 engineering blog post](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) and [InfoQ's coverage](https://www.infoq.com/news/2026/04/pinterest-mcp-ecosystem/). ChatForest researches and analyzes public sources — we have no affiliation with Pinterest. Last updated April 6, 2026.*
 

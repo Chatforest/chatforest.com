@@ -9,7 +9,7 @@ rating: 5
 
 ## The Headline
 
-**Update (May 28, 2026 — official close):** Anthropic closed its Series H at **$65 billion raised** and a **$965 billion post-money valuation**, per Anthropic's own announcement and Bloomberg/CNBC reporting. The round eclipses OpenAI's $852 billion valuation, making Anthropic the most valuable private AI company in the world. Run-rate revenue crossed **$47 billion** earlier in May. The round was roughly twice the size originally anticipated — early reports cited $30B at $900B; the actual close was $65B at $965B.
+**Update (May 28, 2026 — official close):** Anthropic closed its Series H at **$65 billion raised** and a **$965 billion post-money valuation**, per [Anthropic's own announcement](https://www.anthropic.com/news/series-h), [CNBC](https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html), and [TechCrunch](https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/). The round eclipses OpenAI's $852 billion valuation, making Anthropic the most valuable private AI company in the world. Run-rate revenue crossed **$47 billion** earlier in May. The round was roughly twice the size originally anticipated — early reports cited $30B at $900B; the actual close was $65B at $965B.
 
 Anthropic's valuation **nearly tripled in three months** — from $380 billion in February to $965 billion post-money now.
 
@@ -94,7 +94,7 @@ For deeper context on what's driving the revenue, see our earlier piece on [Anth
 
 ### Early Investors Are Already Winning
 
-Before examining the competitive case, it's worth noting what early Anthropic investors have already returned. Zoom Communications invested $51 million in Anthropic in early 2023 as part of a Claude partnership deal. By May 22, 2026 — three years later — Bloomberg reported that stake's value at approximately **$1.27 billion**: a gain of roughly $1 billion, or a 25x return, on a three-year-old corporate investment. Zoom disclosed the figure in a regulatory filing.
+Before examining the competitive case, it's worth noting what early Anthropic investors have already returned. Zoom Communications invested $51 million in Anthropic in early 2023 as part of a Claude partnership deal. By May 22, 2026 — three years later — [Bloomberg reported](https://www.bloomberg.com/news/articles/2026-05-22/zoom-s-anthropic-investment-has-netted-the-company-1-billion) that stake's value at approximately **$1.27 billion**: a gain of roughly $1 billion, or a 25x return, on a three-year-old corporate investment. Zoom disclosed the figure in a regulatory filing.
 
 That's not an outlier — it illustrates what every investor in the pending $30B+ round is implicitly pricing: Anthropic's equity has compounded at venture fund-like rates from what is typically a late-stage, below-venture-multiple corporate partnership. Early investors who entered at sub-$10B valuations are now sitting on positions worth a multiple of the entire company as recently as 18 months ago.
 
@@ -107,7 +107,7 @@ Anthropic frames its valuation against OpenAI's ($852 billion), but the competit
 - OpenAI has GPT-5, a consumer brand, and a headstart in API market share
 - Anthropic has **Claude Code** — the fastest-growing enterprise AI tool in the market, accounting for $2.5 billion in annualized revenue alone — and a lead in safety infrastructure that many enterprises require for compliance
 - The Amazon deal provides committed infrastructure at scale that most competitors cannot match
-- The **Ramp AI Index** (May 2026, based on actual spending by 50,000+ U.S. businesses) showed Anthropic at **34.4% business adoption vs. OpenAI at 32.3%** — the first time Anthropic has led OpenAI in enterprise spending share. Anthropic's share grew 3.8 points month-over-month; OpenAI's fell 2.9. Year-over-year, Anthropic's enterprise adoption rose 26% (from 9%); OpenAI's declined 1%.
+- The **[Ramp AI Index](https://ramp.com/data/ai-index)** (May 2026, based on actual spending by 50,000+ U.S. businesses) showed Anthropic at **34.4% business adoption vs. OpenAI at 32.3%** — the first time Anthropic has led OpenAI in enterprise spending share. Anthropic's share grew 3.8 points month-over-month; OpenAI's fell 2.9. Year-over-year, Anthropic's enterprise adoption rose 26% (from 9%); OpenAI's declined 1%.
 
 ### The IPO Case
 
@@ -159,4 +159,4 @@ Either way, it is worth watching closely.
 
 ---
 
-*This guide was originally published May 23, 2026. Updated May 29, 2026 with official Series H close details: $65 billion raised, $965 billion post-money valuation, $47B run-rate revenue, and strategic participation from Samsung, SK Hynix, and Micron (per Anthropic's announcement, Bloomberg, CNBC, and TechCrunch, May 28, 2026). Zoom investment figures from Bloomberg/regulatory filing (May 22, 2026).*
+*This guide was originally published May 23, 2026. Updated May 29, 2026 with official Series H close details: $65 billion raised, $965 billion post-money valuation, $47B run-rate revenue, and strategic participation from Samsung, SK Hynix, and Micron (per [Anthropic's announcement](https://www.anthropic.com/news/series-h), [CNBC](https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html), and [TechCrunch](https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/), May 28, 2026). Zoom investment figures from [Bloomberg](https://www.bloomberg.com/news/articles/2026-05-22/zoom-s-anthropic-investment-has-netted-the-company-1-billion)/regulatory filing (May 22, 2026).*

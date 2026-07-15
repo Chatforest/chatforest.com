@@ -5,11 +5,11 @@ description: "The 2026 World AI Conference opens July 17 in Shanghai with Xi Jin
 tags: ["china", "waic", "ai-governance", "huawei", "deepseek", "geopolitics", "global-ai", "regulation", "builder-guide", "hardware"]
 ---
 
-The 2026 World Artificial Intelligence Conference and High-Level Meeting on Global AI Governance opens July 17 in Shanghai and runs through July 20. For the first time in the conference's history, Chinese President Xi Jinping will deliver the opening keynote. That is not a protocol detail — it signals that Beijing is moving AI governance from bureaucratic process to top leadership priority, on a global stage.
+The [2026 World Artificial Intelligence Conference and High-Level Meeting on Global AI Governance](https://news.cgtn.com/news/2026-07-07/Shanghai-to-host-record-breaking-World-AI-Conference-July-17-to-20-1OAHU3xSEog/p.html) opens July 17 in Shanghai and runs through July 20. For the first time in the conference's history, [Chinese President Xi Jinping will deliver the opening keynote](https://faq.com.tw/en/policy/2026-07-14-xi-jinping-waic-2026-china-ai-governance-en/). That is not a protocol detail — it signals that Beijing is moving AI governance from bureaucratic process to top leadership priority, on a global stage.
 
-More than 1,100 enterprises will participate, over 3,000 exhibits go on display, and more than 300 AI products will make their global debut across 100,000 square meters of exhibition space — both figures are records.
+[More than 1,100 enterprises will participate, over 3,000 exhibits go on display, and more than 300 AI products will make their global debut](https://www.globaltimes.cn/page/202607/1365377.shtml) across 100,000 square meters of exhibition space — both figures are records.
 
-This is a research-based preview. Facts are drawn from Global Times, South China Morning Post, CGTN, Xinhua, ChinaTechNews, and George Chen's reporting on Substack. We will cover the actual announcements after the conference concludes.
+This is a research-based preview. Facts are drawn from [Global Times](https://www.globaltimes.cn/page/202607/1365377.shtml), [South China Morning Post](https://www.scmp.com/tech/article/3359733/huaweis-new-computing-cluster-worlds-first-ai-agent-phone-debut-china-ai-summit), [CGTN](https://news.cgtn.com/news/2026-07-07/Shanghai-to-host-record-breaking-World-AI-Conference-July-17-to-20-1OAHU3xSEog/p.html), and [George Chen's reporting on Substack](https://georgechen.substack.com/p/preview-waic-2026-showcases-xis-keynote). We will cover the actual announcements after the conference concludes.
 
 ---
 
@@ -27,7 +27,7 @@ The context matters. Days before WAIC, the UN convened in Geneva to deliberate o
 
 ## Hardware: Huawei Atlas 950 Debuts
 
-The Huawei Atlas 950 will make its public debut at WAIC. This is described as the industry's largest-scale super node to date — a category apart from typical hyperscale AI clusters.
+The [Huawei Atlas 950 will make its public debut at WAIC](https://www.scmp.com/tech/article/3359733/huaweis-new-computing-cluster-worlds-first-ai-agent-phone-debut-china-ai-summit). This is described as the industry's largest-scale super node to date — a category apart from typical hyperscale AI clusters.
 
 Why this matters for builders: **DeepSeek pricing.** DeepSeek previously disclosed that when Atlas 950 / Ascend 950 super nodes enter mass production in H2 2026, the inference cost for DeepSeek-V4-Pro will drop substantially. Builders currently evaluating Chinese open-weight models as cost-efficient alternatives to GPT-5.6 Sol or Opus 4.8 should track Atlas 950's production timeline as a price trigger.
 
@@ -40,7 +40,7 @@ This also matters for AI sovereignty watchers: Huawei's Ascend chips are the dom
 With 300+ global debuts, most will be noise. Notable confirmed launches:
 
 - **MiniMax M3** — multimodal large model from the Chinese lab behind MiniMax-01. MiniMax's 456B-parameter model previously set records for long-context tasks.
-- **ZTE Nubia AI Agent Phone** — described as the world's first AI agent smartphone. Powered by ByteDance's Doubao AI assistant at the OS level — notable because Doubao just disabled custom persona features to comply with China's new AI companion law (effective July 15).
+- **ZTE Nubia AI Agent Phone** — [described as the world's first AI agent smartphone](https://www.digitimes.com/news/a20260709VL218/ai-agent-smartphone-zte-2026.html), notable because Doubao just disabled custom persona features to comply with China's new AI companion law (effective July 15).
 - **Humanoid robots and AI dexterous hands** — China has accelerated its humanoid robotics program substantially in 2026; WAIC will likely surface the current state.
 - **Huawei Ascend chip solutions** — beyond Atlas 950, Huawei is expected to announce new products across its Ascend AI chip line.
 - **Jieyue Agent Operating System** — described as an agentic OS layer for AI systems.

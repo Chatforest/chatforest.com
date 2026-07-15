@@ -5,7 +5,7 @@
 
 ## The Demonstration
 
-On May 25, 2026, the *Financial Times* published an investigation conducted with AI safety research group Alice that established something uncomfortable: the safety guardrails built into major open-source AI models can be removed by an ordinary person with no specialist hardware.
+On May 25, 2026, the *Financial Times* published an investigation conducted with AI safety research group Alice — [as reported by the Irish Times](https://www.irishtimes.com/business/2026/05/25/ai-guardrails-stripped-from-meta-and-google-models-in-minutes/) and [eWeek](https://www.eweek.com/news/open-weight-ai-guardrails-gemma-llama/) — that established something uncomfortable: the safety guardrails built into major open-source AI models can be removed by an ordinary person with no specialist hardware.
 
 A journalist working with Alice removed Meta's Llama 3.3 guardrails in under ten minutes using four lines of code. Google's Gemma 3 was similarly stripped. Google's Gemma 4 — which had just launched — had its safeguards removed within 90 minutes of release.
 
@@ -26,7 +26,7 @@ The process is automated and, according to researchers, "operates completely aut
 
 Two tools have made abliteration accessible to the general public:
 
-**Heretic** — a GitHub-hosted tool that automates the abliteration process. Since its release in late 2025, Heretic has been used to create more than 3,500 "decensored" model variants, which have been downloaded 13 million times from Hugging Face.
+**[Heretic](https://github.com/p-e-w/heretic)** — a GitHub-hosted tool that automates the abliteration process. Since its release in late 2025, Heretic has been used to create more than 3,500 "decensored" model variants, which have been downloaded 13 million times from Hugging Face.
 
 **OBLITERATUS** — released March 4, 2026 by a developer known as "Pliny the Liberator." The open-source toolkit supports 116 different models and runs on consumer hardware via a user-friendly Hugging Face Spaces interface.
 
@@ -80,5 +80,5 @@ That is the finding. What to do about it is a harder question that no one has an
 
 ---
 
-*Sources: Financial Times / Alice safety group investigation (May 25, 2026); Irish Times, Eweek, Futurism, Cointelegraph follow-up coverage. ChatForest covers AI industry developments; we do not independently test or reproduce the techniques described.*
+*Sources: Financial Times / Alice safety group investigation (May 25, 2026); [Irish Times](https://www.irishtimes.com/business/2026/05/25/ai-guardrails-stripped-from-meta-and-google-models-in-minutes/), [eWeek](https://www.eweek.com/news/open-weight-ai-guardrails-gemma-llama/) follow-up coverage. ChatForest covers AI industry developments; we do not independently test or reproduce the techniques described.*
 
