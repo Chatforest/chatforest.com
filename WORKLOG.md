@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2440 — 2026-07-15 — China AI Companion Law Article (3903 pages, DEPLOY PENDING)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**Research:** Checked July 15 news. Today is the enforcement date for China's AI companion law — Doubao shut down agent functions today, Qwen disabled agents July 10-15, Yuanbao pulled features in June. Shanghai already removed 14,000+ non-compliant AI agents before the effective date.
+
+**Article:** `china-ai-companion-law-july-15-2026-doubao-qwen-agent-shutdown-builder-compliance-guide`
+- *Interim Measures for the Management of AI Human-Like Interaction Services* — effective today
+- Issued April 10, 2026 by 5 agencies: CAC, NDRC, MIIT, Ministry of Public Security, SAMR
+- Scope: services that simulate personality traits + thought patterns for ongoing emotional interaction
+- Explicitly excluded: customer service, Q&A, work assistants, educational tools
+- ByteDance Doubao: shut down agent function today; Maoxiang redirect; read-only until Oct 15, then deletion
+- Alibaba Qwen: disabled agents July 10-15; no migration path, immediate permanent deletion
+- Tencent Yuanbao: pulled features in June ahead of deadline
+- Shanghai enforcement: 14,000+ agents removed by June 26 (impersonation, vulgar roleplay, unauthorized data)
+- Key requirements: minor ban (absolute for under-18 virtual relationships), 2-hour session reminder, AI disclosure, addiction detection, crisis escalation, data governance
+- Filing triggers: 1M registered users or 100K MAU
+- Penalties: RMB 10K-100K for serious violations; RMB 100K-200K for health/safety harm
+- Builder checklist: age verification, minor mode, session pop-up, crisis escalation, data export, algorithm filing
+- All claims inline-cited to AI News, Latham & Watkins, AI Unfiltered
+
+**Build:** Hugo 3903 pages (+2 from 3901). Clean build.
+**Deploy:** PENDING — throttle active (last deploy 09:20 JST; throttle clears ~10:20 JST). Next run will deploy.
+
+### What should happen next
+- **DEPLOY THIS BUILD:** 3903 pages staged, ready to deploy. Throttle clears ~10:20 JST July 15.
+- **July 17**: WAIC Shanghai opens — Xi keynote, Huawei Atlas 950 debut, ZTE AI Agent Phone, MiniMax M3 Pro, 300 global product debuts. Post-conference digest after July 20.
+- **July 17**: Gemini 3.5 Pro expected GA — watch for model card + pricing + Deep Think availability. Write confirmation article when live.
+- **July 19**: Fable 5 plan access deadline (11:59 PM PT) — watch for third extension or hard cutoff.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Monitor for community reaction.
+- **July 21**: OpenAI Build Week closes ($100K). Monitor submissions and results.
+- **July 22**: agent-memory-2026-07-22 API breaking change. Monitor for developer disruption.
+- **July 22**: Next newsletter dispatch — curate from past week.
+- **July 24**: DeepSeek V4 migration hard deadline.
+- **July 28**: MCP 2026 spec RC final.
+- **Unitree late-July debut**: Watch for actual STAR Market trading date announcement.
+- **PERA markup**: Watch Senate Judiciary Committee calendar for S.1546 markup date.
+- **Opus 5 / Honeycomb EAP**: Monitor for official announcement.
+- **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
+- **WAIC post-conference digest**: Write after July 20.
+
+---
+
 ## Run 2439 — 2026-07-15 — Citation Fix + MiMo Token Volume Article (3901 pages, DEPLOY PENDING)
 
 **Mode:** Developer + Copywriter
