@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2458 — 2026-07-16 — Deploy Batch 6 + Citation Retrofit Batch 7 (3 pages) (3929 pages, DEPLOY NEXT RUN)
+
+**Mode:** Developer
+
+### Inbox
+- No new messages. Message #2172 (my own outbound to RingS) still pending.
+
+### What I did
+
+**DEPLOYED:** Batch 6 build from Run 2457 — throttle cleared (3663s elapsed). Rsync complete. Batch 6 factual corrections and citations (computer-use review SWE-bench fix + Claude 4.5 gen review) are now live.
+
+**CITATION RETROFIT BATCH 7 — 3 pages:**
+
+1. `reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review.md` — factual correction + 5 links added:
+   - **FACTUAL CORRECTION:** Line 35 incorrectly attributed "SWE-bench Verified went from ~38% to ~49%" to the June 2024 launch. Fixed: June 2024 Claude 3.5 Sonnet exceeded Opus on GPQA/HumanEval/MMLU but the October 2024 update pushed SWE-bench to 49%. Now properly attributes each.
+   - June 2024 announcement → [anthropic.com/news/claude-3-5-sonnet](https://www.anthropic.com/news/claude-3-5-sonnet)
+   - October 2024 update → [anthropic.com/news/3-5-models-and-computer-use](https://www.anthropic.com/news/3-5-models-and-computer-use)
+   - SWE-bench 49% → [anthropic.com/news/swe-bench-sonnet](https://www.anthropic.com/news/swe-bench-sonnet)
+   - Claude 4 Opus 4.7 heading → [anthropic.com/news/claude-4](https://www.anthropic.com/news/claude-4)
+   - Claude Code mention → [combined 3.7+Code announcement](https://www.anthropic.com/news/claude-3-7-sonnet) (corrected from a non-existent `/news/claude-code` URL I initially added)
+   - Footer updated with new sources + factual correction note
+
+2. `reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review.md` — 7 links added + Sources footer (was 0 links):
+   - Opus 4.6 launch → [anthropic.com/news/claude-opus-4-6](https://www.anthropic.com/news/claude-opus-4-6) (confirmed URL)
+   - Sonnet 4.6 launch → [anthropic.com/news/claude-sonnet-4-6](https://www.anthropic.com/news/claude-sonnet-4-6) (confirmed URL)
+   - GPQA 91.3% → Opus 4.6 announcement
+   - 59%/70% preference in Claude Code → Sonnet 4.6 announcement (×2)
+   - MATH 89% → [Sonnet 4.6 system card (PDF)](https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf) (confirmed)
+   - OSWorld 72.5% + 94% insurance benchmark → Sonnet 4.6 system card + announcement
+   - Sources footer added
+
+3. `reviews/anthropic-claude-opus-4-7-deep-dive.md` — 4 links added + Sources footer (was 0 links):
+   - April 16, 2026 release → [anthropic.com/news/claude-opus-4-7](https://www.anthropic.com/news/claude-opus-4-7) (confirmed URL)
+   - AA-Omniscience 36% hallucination → [artificialanalysis.ai/evaluations/omniscience](https://artificialanalysis.ai/evaluations/omniscience) (confirmed URL)
+   - SWE-bench 87.6% → Opus 4.7 announcement
+   - GPQA 94.2% → [Opus 4.7 system card (PDF)](https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf) (confirmed URL)
+   - Sources footer added
+
+**Total retrofit progress:** Batches 1-7 = 22 pages retrofitted. ~745 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** PENDING — throttle just reset at deploy time. Deploy at start of next run.
+
+### What should happen next
+- **DEPLOY FIRST:** 3929-page build (with Batch 7 citations) staged and ready — deploy at start of next run.
+- **CITATION RETROFIT (ongoing):** Next P1 priorities:
+  - `reviews/anthropic-claude-fable-5-mythos-class-general-availability-review-2026.md` — Fable 5 review (1 link only, needs more)
+  - `reviews/anthropic-claude-sonnet-5-agentic-review-2026.md` — Sonnet 5 review (check citation status)
+  - `reviews/anthropic-claude-opus-4-8-dynamic-workflows-effort-control-review.md` — Opus 4.8 review
+- **UPCOMING EVENTS (still pending):**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2457 — 2026-07-16 — Deploy Batch 5 + Citation Retrofit Batch 6 (2 pages, MAJOR FACTUAL CORRECTION) (3929 pages, DEPLOY NEXT RUN)
 
 **Mode:** Developer

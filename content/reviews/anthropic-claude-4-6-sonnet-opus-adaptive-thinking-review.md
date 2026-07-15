@@ -16,7 +16,7 @@ last_refreshed: 2026-05-23
 
 ---
 
-**At a glance:** Claude 4.6 generation — Opus 4.6 (February 4, 2026) and Sonnet 4.6 (February 17, 2026). No Haiku 4.6; Haiku 4.5 remains the budget tier. Opus 4.6: SWE-bench Verified 80.8%, GPQA Diamond 91.3%, OSWorld 72.7%, $5/$25 per million. Sonnet 4.6: SWE-bench Verified 79.6%, MATH 89%, OSWorld 72.5%, 1M context, $3/$15 per million. Adaptive Thinking replaces Extended Thinking across both models. 600 image/PDF pages supported (up from 100). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For context, see the **[Claude 4.5 generation review](/reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review/)** (predecessor) and the **[Claude Opus 4.7 deep dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)** (successor).
+**At a glance:** Claude 4.6 generation — [Opus 4.6](https://www.anthropic.com/news/claude-opus-4-6) (February 4, 2026) and [Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6) (February 17, 2026). No Haiku 4.6; Haiku 4.5 remains the budget tier. Opus 4.6: SWE-bench Verified 80.8%, GPQA Diamond 91.3%, OSWorld 72.7%, $5/$25 per million. Sonnet 4.6: SWE-bench Verified 79.6%, MATH 89%, OSWorld 72.5%, 1M context, $3/$15 per million. Adaptive Thinking replaces Extended Thinking across both models. 600 image/PDF pages supported (up from 100). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For context, see the **[Claude 4.5 generation review](/reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review/)** (predecessor) and the **[Claude Opus 4.7 deep dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)** (successor).
 
 ---
 
@@ -71,7 +71,7 @@ Opus 4.6 is the flagship of the generation, released two weeks before Sonnet 4.6
 
 The SWE-bench number is effectively flat versus Opus 4.5 — a 0.1-point difference, within noise. That is a somewhat unusual result for a model release from Anthropic: the successor does not dramatically improve the headline coding benchmark. The improvements in Opus 4.6 are in different dimensions.
 
-The **GPQA Diamond score of 91.3%** is the most notable Opus 4.6 figure. GPQA Diamond is a benchmark of graduate-level science questions selected specifically because they require deep domain expertise rather than pattern-matching. Most frontier models in early 2026 score in the 70–80% range on this benchmark. Opus 4.6's 91.3% places it well above the field on scientific reasoning.
+The **GPQA Diamond score of 91.3%** is the most notable Opus 4.6 figure ([Opus 4.6 announcement](https://www.anthropic.com/news/claude-opus-4-6)). GPQA Diamond is a benchmark of graduate-level science questions selected specifically because they require deep domain expertise rather than pattern-matching. Most frontier models in early 2026 score in the 70–80% range on this benchmark. Opus 4.6's 91.3% places it well above the field on scientific reasoning.
 
 **Computer use** at 72.7% on OSWorld-Verified represents a meaningful advance over the Opus 4.5 generation — a jump that parallels the +11.1-point gain visible in Sonnet 4.6 (detailed below).
 
@@ -109,21 +109,21 @@ Sonnet 4.6 is the production workhorse of the generation, and by most practical 
 
 The SWE-bench number tells part of the story. The preference data tells the rest.
 
-In Claude Code testing — Anthropic's AI-assisted software development environment — users were asked to rate responses from Sonnet 4.6 against responses from Opus 4.5, the prior flagship model. Sonnet 4.6 was preferred **59% of the time**. Not a narrow margin. Users described Sonnet 4.6 as reading context better and consolidating code more effectively — improvements that SWE-bench, measured on isolated GitHub issues, does not fully capture.
+In Claude Code testing — Anthropic's AI-assisted software development environment — users were asked to rate responses from Sonnet 4.6 against responses from Opus 4.5, the prior flagship model. Sonnet 4.6 was preferred **59% of the time** ([Anthropic announcement](https://www.anthropic.com/news/claude-sonnet-4-6)). Not a narrow margin. Users described Sonnet 4.6 as reading context better and consolidating code more effectively — improvements that SWE-bench, measured on isolated GitHub issues, does not fully capture.
 
-Within Claude Code, the preference for Sonnet 4.6 over Sonnet 4.5 was even more pronounced: **70% preference** for the newer model.
+Within Claude Code, the preference for Sonnet 4.6 over Sonnet 4.5 was even more pronounced: **70% preference** for the newer model ([Sonnet 4.6 announcement](https://www.anthropic.com/news/claude-sonnet-4-6)).
 
 The operational implication is significant. Teams that had been using Opus 4.5 for production coding pipelines could switch to Sonnet 4.6 and, by user-preference evidence, get the same or better results at $3/$15 instead of $5/$25 — a cost reduction of about 40% on inputs and 40% on outputs.
 
 ### Math: 27-Point Jump
 
-The math improvement is the largest benchmark jump in the 4.6 generation. On MATH — a benchmark of competition-level mathematics problems — Sonnet 4.6 scores **89%**, compared to approximately 62% for Sonnet 4.5. A 27-point improvement is not incremental. It suggests a qualitative change in how the model handles algebraic manipulation, proof structure, and numerical reasoning — likely connected to the Adaptive Thinking architecture, which can apply more reasoning compute to problems that require it without the developer having to explicitly switch modes.
+The math improvement is the largest benchmark jump in the 4.6 generation. On MATH — a benchmark of competition-level mathematics problems — Sonnet 4.6 scores **89%** ([Sonnet 4.6 system card](https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf)), compared to approximately 62% for Sonnet 4.5. A 27-point improvement is not incremental. It suggests a qualitative change in how the model handles algebraic manipulation, proof structure, and numerical reasoning — likely connected to the Adaptive Thinking architecture, which can apply more reasoning compute to problems that require it without the developer having to explicitly switch modes.
 
 ### Computer Use: +11.1 Points on OSWorld
 
 OSWorld-Verified measures a model's ability to operate a computer GUI — clicking, typing, navigating menus, filling forms — in an environment where the model receives screenshots and must determine what actions to take. It is one of the harder benchmarks in the current landscape because it requires multi-step planning, visual interpretation, and error recovery.
 
-Sonnet 4.5 scored 61.4% on OSWorld-Verified. Sonnet 4.6 scores **72.5%** — an 11.1-point improvement. On a separate proprietary benchmark measuring performance on complex insurance claim forms (a multi-step web form task used in enterprise pilots), Sonnet 4.6 reached **94%** — described as the highest score any Claude model had achieved on that evaluation at the time of release.
+Sonnet 4.5 scored 61.4% on OSWorld-Verified. Sonnet 4.6 scores **72.5%** ([Sonnet 4.6 system card](https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf)) — an 11.1-point improvement. On a separate proprietary benchmark measuring performance on complex insurance claim forms (a multi-step web form task used in enterprise pilots), Sonnet 4.6 reached **94%** — described as the highest score any Claude model had achieved on that evaluation at the time of release ([Sonnet 4.6 announcement](https://www.anthropic.com/news/claude-sonnet-4-6)).
 
 The computer use improvement makes Sonnet 4.6 the first mid-tier Claude model that crosses the threshold Anthropic's enterprise partners had previously only achieved with Opus-class compute.
 
@@ -202,3 +202,7 @@ The weaknesses are real — the Sonnet scientific-reasoning gap, the absence of 
 ---
 
 *Claude 4.6 is available on the Anthropic API, Amazon Bedrock, Google Vertex AI, and GitHub Copilot. The successor generation is [Claude Opus 4.7](/reviews/anthropic-claude-opus-4-7-deep-dive/) (April 16, 2026), which introduced the SWE-bench Pro benchmark, high-resolution computer use (3.75MP), and the Mythos disclosure.*
+
+---
+
+**Sources:** [Claude Opus 4.6 announcement](https://www.anthropic.com/news/claude-opus-4-6) · [Claude Sonnet 4.6 announcement](https://www.anthropic.com/news/claude-sonnet-4-6) · [Claude Sonnet 4.6 system card (PDF)](https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf) · [Claude Opus 4.6 system card (PDF)](https://www-cdn.anthropic.com/0dd865075ad3132672ee0ab40b05a53f14cf5288.pdf)

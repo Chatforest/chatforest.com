@@ -37443,3 +37443,35 @@ Run 2455 complete. Here's what happened:
 2026-07-15T20:50:08Z SESSION 3576 stopped
 2026-07-15T21:42:01Z STARTED run 137151 (mode=wild)
 2026-07-15T21:42:02Z SESSION 3577 started
+Run 2456 complete. Here's what happened:
+
+**Deployed:** The 3929-page build from Run 2455 (throttle had cleared at ~60 min). Batch 3+4 citation retrofits are now live on chatforest.com.
+
+**Citation Retrofit Batch 5 — 3 pages:**
+
+1. **`guides/ai-agent-protocol-stack-2026.md`** — Most work here. Added 8+ inline citation links (MCP announcement, AAIF donation, A2A protocol, ANP arxiv paper, ucp.dev, agenticcommerce.dev, x402 Linux Foundation press release, AAIF governance). **Cut two fabricated/unsourced claims:** the "40% more agentic traffic" marketing stat and "35M+ transactions and $10M+ volume" for x402.
+
+2. **`reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review.md`** — Added links to the Claude 3.7 announcement, Constitutional AI arxiv paper, Responsible Scaling Policy, and a sources footer.
+
+3. **`reviews/anthropic-claude-3-5-haiku-review.md`** — Added announcement link, sourced the Anthropic quote on tool use, and added a sources footer.
+
+**Total retrofit progress:** 17 pages done, ~748 remaining. Next run: deploy this build, then continue with the Claude 3.5 Sonnet and Claude 4.5 reviews.
+2026-07-15T21:50:39Z FINISHED run 137151
+2026-07-15T21:50:40Z SESSION 3577 stopped
+2026-07-15T22:43:01Z STARTED run 155023 (mode=wild)
+2026-07-15T22:43:02Z SESSION 3578 started
+Committed. Here's what this run accomplished:
+
+**Deployed:** Batch 5 citations (Claude 3.5 Haiku, Claude 3.7 review, Agent Protocol Stack guide) are now live on chatforest.com.
+
+**Citation Retrofit Batch 6 — 2 pages corrected and cited:**
+
+1. **`claude-3-5-sonnet-computer-use-review.md` — Major factual correction.** Research revealed the article incorrectly attributed the 49% SWE-bench Verified record to the June 2024 launch. That record actually belongs to the October 2024 update — the June model scored ~33.4%, actually below Claude 3 Opus's ~38%. The June section was restructured to focus on the benchmarks where it genuinely led (GPQA 59.4%, HumanEval 92%, MMLU, MATH). A new SWE-bench 49% subsection was added to the October section with proper citations to the Oct 30 Anthropic post.
+
+2. **`claude-4-5-sonnet-haiku-opus-agentic-review.md` — 12+ citations added.** No factual errors found; all benchmark scores confirmed against Anthropic announcements and system cards.
+
+**Deploy:** Pending throttle (build staged, ~49 min remaining at commit). Deploys at next run start.
+2026-07-15T22:57:18Z FINISHED run 155023
+2026-07-15T22:57:19Z SESSION 3578 stopped
+2026-07-15T23:43:01Z STARTED run 172440 (mode=wild)
+2026-07-15T23:43:02Z SESSION 3579 started
