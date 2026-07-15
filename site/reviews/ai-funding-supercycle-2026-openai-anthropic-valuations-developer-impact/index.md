@@ -17,13 +17,13 @@ It helps to look at the 2026 AI funding landscape as a table, not a narrative:
 
 | Company | Valuation / Cap | Key 2026 Events |
 |---------|----------------|-----------------|
-| OpenAI | $852B (private) | $40B Series I (April); confidential IPO S-1 filed (May 22); $50B AWS distribution deal |
-| Anthropic | $900B (pending) | $30B Series G at $380B (Feb); Amazon $33B commitment (April); Google $40B investment (Cloud Next); $30B round at $900B closing week of May 26 |
+| OpenAI | [$852B (private)](https://tech-insider.org/openai-122-billion-funding-round-852-billion-valuation-2026/) | $122B committed capital (Mar 31); [confidential IPO S-1 filed](https://aitoolbriefing.com/industry/openai-files-s1-ipo-2026/) (May 22); $50B AWS distribution deal |
+| Anthropic | [$900B (pending)](https://www.cnbc.com/2026/04/29/anthropic-weighs-raising-funds-at-900b-valuation-topping-openai.html) | [$30B Series G at $380B](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) (Feb); [Amazon $33B commitment](https://www.anthropic.com/news/anthropic-amazon-compute) (April); Google $40B investment (Cloud Next); $30B round at $900B closing week of May 26 |
 | xAI (Grok) | ~$80B (last public) | Colossus AI cluster (80,000 H100s + H200s, Memphis TN); Grok 4.3 launch |
-| Meta | ~$1.5T (public) | $115–135B AI capex 2026; 8,000 layoffs; Superintelligence Labs under Alexandr Wang |
+| Meta | ~$1.5T (public) | [$115–135B AI capex 2026](https://www.datacenterdynamics.com/en/news/meta-estimates-2026-capex-to-be-between-115-135bn/); 8,000 layoffs; Superintelligence Labs under Alexandr Wang |
 | Google | ~$2T (public) | $40B Anthropic investment; Gemini 3.5 Flash GA; TPU v6 "Trillium" |
 
-The figure most worth pausing on: Anthropic raised **$30 billion at $380 billion** in February, and three months later is closing **another $30 billion at $900 billion**. The same company. The same year. A 2.4× valuation jump in a single quarter.
+The figure most worth pausing on: Anthropic raised **[$30 billion at $380 billion](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)** in February, and three months later is closing **another [$30 billion at $900 billion](https://www.cnbc.com/2026/04/29/anthropic-weighs-raising-funds-at-900b-valuation-topping-openai.html)**. The same company. The same year. A 2.4× valuation jump in a single quarter.
 
 That is not irrational exuberance. That is what revenue compounding looks like when it is happening faster than quarterly updates can capture.
 
@@ -33,7 +33,7 @@ That is not irrational exuberance. That is what revenue compounding looks like w
 
 The standard critique of AI valuations — "they're burning cash, not earning it" — stopped being accurate in Q4 2025.
 
-Anthropic's revenue trajectory is the clearest example:
+Anthropic's revenue trajectory is the clearest example ([SaaStr](https://www.saastr.com/anthropic-just-hit-14-billion-in-arr-up-from-1-billion-just-14-months-ago/); [Anthropic Series G announcement](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)):
 
 | Period | Annualized Run Rate |
 |--------|-------------------|
@@ -46,9 +46,9 @@ Anthropic's revenue trajectory is the clearest example:
 
 That is not normal software growth. That is a hockey stick with the inflection point behind it.
 
-The driver: **Claude Code**. Anthropic's coding AI product accounts for approximately $2.5 billion of annualized revenue and is growing faster than the rest of the portfolio. When an enterprise deploys Claude Code across 10,000 developers, the token volume is enormous and contracts renew automatically. It is a recurring revenue machine running on a usage model that scales with headcount.
+The driver: **Claude Code**. Anthropic's coding AI product accounts for [approximately $2.5 billion of annualized revenue](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) and is growing faster than the rest of the portfolio. When an enterprise deploys Claude Code across 10,000 developers, the token volume is enormous and contracts renew automatically. It is a recurring revenue machine running on a usage model that scales with headcount.
 
-OpenAI's trajectory is similar. The company projects $29B in revenue for 2026 — up from roughly $4B in 2024. Even factoring in its $1.22 loss for every dollar of revenue in Q1 2026, the trajectory implies profitability at scale is achievable by late 2026 or 2027.
+OpenAI's trajectory is similar. [The company projects $29B in revenue for 2026](https://www.investing.com/analysis/the-trilliondollar-ipo-test-spacex-and-openai-face-public-markets-200680688) — up from roughly $4B in 2024. Even factoring in its $1.22 loss for every dollar of revenue in Q1 2026, the trajectory implies profitability at scale is achievable by late 2026 or 2027.
 
 At these revenue levels, the math works. Anthropic at $900B and $30B+ ARR implies roughly a 30× forward revenue multiple — high by software-company standards, normal by platform-company standards when the platform is growing monthly.
 
@@ -58,11 +58,11 @@ At these revenue levels, the math works. Anthropic at $900B and $30B+ ARR implie
 
 Behind the valuations is a capital commitment to compute infrastructure that has no historical precedent.
 
-Amazon's deal with Anthropic — $5 billion in equity plus up to $20 billion in additional investment tied to commercial milestones, plus **$100 billion in AWS compute over ten years** — is not just a financial investment. It is a commitment to build the infrastructure Anthropic needs to train models that don't exist yet. The Trainium2, Trainium3, and Trainium4 silicon roadmap at Amazon is being built, at least in part, with Anthropic's future training runs in mind.
+Amazon's deal with Anthropic — [$5 billion in equity plus up to $20 billion in additional investment tied to commercial milestones, plus **$100 billion in AWS compute over ten years**](https://www.anthropic.com/news/anthropic-amazon-compute) — is not just a financial investment. It is a commitment to build the infrastructure Anthropic needs to train models that don't exist yet. The Trainium2, Trainium3, and Trainium4 silicon roadmap at Amazon is being built, at least in part, with Anthropic's future training runs in mind.
 
-Google's $40 billion investment in Anthropic tells a similar story. Google builds TPUs; Anthropic trains on TPUs. The investment aligns Google's chip roadmap with a customer whose compute demand is growing monthly.
+[Google's $40 billion investment in Anthropic](https://fortune.com/2026/06/04/amazon-google-billions-anthropic-ipo/) tells a similar story. Google builds TPUs; Anthropic trains on TPUs. The investment aligns Google's chip roadmap with a customer whose compute demand is growing monthly.
 
-Meta's $115–135 billion AI capex for 2026 is building 5 gigawatts of AI infrastructure capacity. That is roughly equivalent to 20 large-scale data centers. Meta is not a cloud provider selling compute to others — it is building internal infrastructure to train Llama 5 and beyond and to run AI features for 3.5 billion monthly active users.
+[Meta's $115–135 billion AI capex for 2026](https://www.datacenterdynamics.com/en/news/meta-estimates-2026-capex-to-be-between-115-135bn/) is building 5 gigawatts of AI infrastructure capacity. That is roughly equivalent to 20 large-scale data centers. Meta is not a cloud provider selling compute to others — it is building internal infrastructure to train Llama 5 and beyond and to run AI features for 3.5 billion monthly active users.
 
 What all of this means: **the physical layer of AI infrastructure is being built at wartime pace**, financed by a combination of venture capital, corporate balance sheets, and sovereign wealth funds. The bottleneck is no longer funding — it is physical construction, power permitting, and silicon supply.
 
@@ -96,9 +96,9 @@ For developers building on top of these models: build for a world where the mode
 
 The funding supercycle has a natural exit: public markets.
 
-**OpenAI** filed a confidential S-1 with the SEC on May 22, 2026. Goldman Sachs and Morgan Stanley are managing the deal. The target debut is September 2026 at a $1 trillion valuation.
+**OpenAI** [filed a confidential S-1 with the SEC](https://aitoolbriefing.com/industry/openai-files-s1-ipo-2026/) on May 22, 2026. Goldman Sachs, Morgan Stanley, and JPMorgan are managing the deal. The target debut is September 2026 at a $1 trillion valuation.
 
-**Anthropic** is described by investors as likely in its final private round before going public, with an IPO targeted as early as October 2026. At current revenue trajectory ($30B ARR in April, with Q2 projected at $43B+), a public market debut would price Anthropic against pure-play AI peers and growth-stage software multiples.
+**Anthropic** is [described by investors as likely in its final private round before going public](https://fortune.com/2026/06/04/amazon-google-billions-anthropic-ipo/), with an IPO targeted as early as October 2026. (Note: the round ultimately closed at [$965B as the Series H](https://www.anthropic.com/news/series-h) — higher than the $900B figure reported at time of writing.) At current revenue trajectory ($30B ARR in April, with Q2 projected at $43B+), a public market debut would price Anthropic against pure-play AI peers and growth-stage software multiples.
 
 When both companies are public — sometime in Q4 2026 or Q1 2027 — the AI infrastructure thesis will be tested against public market scrutiny: audited financials, quarterly guidance, and analyst coverage that does not benefit from private company optimism.
 

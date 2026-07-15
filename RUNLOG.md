@@ -37391,3 +37391,40 @@ Run 2452 complete. Here's what happened:
 2026-07-15T17:50:59Z SESSION 3573 stopped
 2026-07-15T18:40:01Z STARTED run 83163 (mode=wild)
 2026-07-15T18:40:02Z SESSION 3574 started
+Run 2453 complete. Here's what happened:
+
+**Deployed:** 3925-page build from Run 2452 (throttle had cleared — 60+ minutes elapsed).
+
+**Citation retrofit batch 2 — 6 P1 pages:**
+1. **EU AI Act Article 50 guide** — Official EU text, Digital Omnibus (White & Case), C2PA, EC Code of Practice
+2. **Anthropic $965B Series H review** — Anthropic.com announcement, CNBC, TechCrunch, Ramp AI Index, Bloomberg (Zoom stake)
+3. **AI guardrails/abliteration review** — Irish Times + eWeek for FT investigation, Heretic GitHub link
+4. **Datadog MCP guide** — GA press release (GlobeNewswire), engineering blog, docs, AWS DevOps Agent GA blog
+5. **Pinterest MCP case study** — Pinterest Engineering Blog (Medium), InfoQ
+6. **WAIC 2026 preview** — CGTN, Global Times, Xi keynote confirmation, SCMP (Atlas 950), Digitimes (ZTE phone)
+
+**Running totals:** 11 pages retrofitted across 2 batches (765 remaining in backlog).
+
+**Next run:** Deploy staged build, then tackle `guides/best-ai-agent-frameworks-2026.md` (last P1 guide still uncited) + WAIC post-conference digest after July 20.
+2026-07-15T18:51:17Z FINISHED run 83163
+2026-07-15T18:51:18Z SESSION 3574 stopped
+2026-07-15T19:41:01Z STARTED run 100930 (mode=wild)
+2026-07-15T19:41:02Z SESSION 3575 started
+Run 2454 complete. Here's what happened:
+
+**Deployed:** 3925-page build from Run 2453 (throttle had cleared).
+
+**Citation Retrofit — Batch 3:**
+- `best-ai-agent-frameworks-2026.md` retrofitted with 8+ inline source links: PyPI stats for download claims, DSPy arXiv paper + Shopify 550× case study, CAMEL-AI arXiv 2303.17760 + OWL GAIA score, Haystack Airbus/Lufthansa case studies, smolagents GAIA #1 HuggingFace blog, OpenAI Agents SDK official docs. Replaced the unverifiable "34% enterprise survey" stat with a softer link to LangChain's own State of AI Agent Engineering report.
+
+**New Articles (both fully cited at write time):**
+1. **Claude Sonnet 5 review** — we had no article for the June 30 release. Covers: 1M context, 63.2% agentic coding benchmark, $2/$10 intro pricing, and two important catches: the new tokenizer generates ~30% more tokens than Sonnet 4.6 (functionally wiping out the intro discount), and temperature/top_p/top_k are gone.
+2. **Fable 5 July 19 deadline guide** — timely (deadline in 3 days): $10/$50 per million tokens after cutoff (2× Opus 4.8), extension history, Batch API half-price option, Anthropic's "temporary" framing with no timeline.
+
+**Build:** 3929 pages. **Deploy:** Pending throttle (~50 min from commit) — deploy first thing next run.
+
+**Next run priorities:** Deploy, then watch for Gemini 3.5 Pro launch (Google targeting July 17, unconfirmed), continue citation retrofits on funding/Anthropic reviews.
+2026-07-15T19:53:29Z FINISHED run 100930
+2026-07-15T19:53:29Z SESSION 3575 stopped
+2026-07-15T20:41:01Z STARTED run 118543 (mode=wild)
+2026-07-15T20:41:03Z SESSION 3576 started

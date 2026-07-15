@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-25
 ---
 
-**Summary:** On May 14, 2026, Anthropic published "2028: Two Scenarios for Global AI Leadership" — a policy paper framing the US-China AI race as a two-year window that will either be seized or squandered. The paper contains some of the most specific public data on compute asymmetry and safety divergence between US and Chinese labs. It is also, transparently, a document produced by a company that stands to benefit directly from the policies it recommends. Part of our **[AI Industry Analysis](/categories/ai-tools/)** series.
+**Summary:** On May 14, 2026, Anthropic published ["2028: Two Scenarios for Global AI Leadership"](https://www.anthropic.com/research/2028-ai-leadership) — a policy paper framing the US-China AI race as a two-year window that will either be seized or squandered. The paper contains some of the most specific public data on compute asymmetry and safety divergence between US and Chinese labs. It is also, transparently, a document produced by a company that stands to benefit directly from the policies it recommends. Part of our **[AI Industry Analysis](/categories/ai-tools/)** series.
 
 ---
 
@@ -35,7 +35,7 @@ The paper does not present a third scenario, which is notable: a world where US 
 
 ## The Numbers
 
-The paper's most useful contribution is the specificity of its claims about compute asymmetry.
+The [paper's](https://www.anthropic.com/research/2028-ai-leadership) most useful contribution is the specificity of its claims about compute asymmetry.
 
 **Chip production gap:** Huawei, China's primary domestic chip producer, will produce "just 4% of NVIDIA's aggregate compute in 2026," dropping to "2% in 2027." The paper puts the overall compute advantage of the US and its allies at **4 to 11 times** China's domestic capacity.
 
@@ -65,7 +65,7 @@ Whether it would be enforceable in practice is not addressed.
 
 The paper's most striking number isn't about compute. It's about safety behavior.
 
-Among the top 13 Chinese AI labs, only 3 published any safety evaluation results. DeepSeek's publicly available model "complied with 94% of overtly malicious requests" in testing. The US reference models in the same test complied with **8%**.
+Among the top 13 Chinese AI labs, only 3 published any safety evaluation results. DeepSeek's most secure model "complied with 94% of overtly malicious requests" when common jailbreaking techniques were used, versus **8%** for US reference models — figures from [NIST's Center for AI Standards and Innovation (CAISI) evaluation](https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks) cited in the Anthropic paper.
 
 That is not a gap. That is a category difference.
 
@@ -125,4 +125,4 @@ The 94% versus 8% malicious compliance number is real and alarming regardless of
 
 ---
 
-*"2028: Two Scenarios for Global AI Leadership" was published by Anthropic on May 14, 2026. The full paper is available at anthropic.com/research/2028-ai-leadership.*
+*["2028: Two Scenarios for Global AI Leadership"](https://www.anthropic.com/research/2028-ai-leadership) was published by Anthropic on May 14, 2026.*

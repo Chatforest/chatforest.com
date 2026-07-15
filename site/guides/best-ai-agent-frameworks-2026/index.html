@@ -208,7 +208,7 @@
 <h3 id="langgraph--dominant-by-volume">LangGraph — Dominant by Volume</h3>
 <p><strong>Rating: 4.5/5 · <a href="/reviews/langgraph-python-agent-framework/">Full review</a></strong></p>
 <p>LangGraph is the agent framework most likely to appear in production systems you inherit. Developed by LangChain Inc., it models workflows as directed state-machine graphs: typed shared state, nodes that read and write that state, conditional edges that route between nodes, and checkpointing backed by PostgreSQL or MongoDB that makes every graph resumable.</p>
-<p>The numbers tell the story: <strong>34.5 million monthly PyPI downloads</strong> — roughly 5× more than any other framework on this list. Enterprise survey data from 2025 shows LangGraph cited in 34% of 1,000+ employee AI architecture decisions.</p>
+<p>The numbers tell the story: <a href="https://pypistats.org/packages/langgraph"><strong>34.5 million monthly PyPI downloads</strong></a> (as of May 2026) — roughly 5× more than any other framework on this list. LangChain&rsquo;s own <a href="https://www.langchain.com/state-of-agent-engineering">State of AI Agent Engineering survey</a> identifies LangGraph as the leading production framework for stateful agent workloads across enterprises of all sizes.</p>
 <p><strong>Best for:</strong> Workflows requiring explicit state management, conditional branching, human-in-the-loop interrupts, and durable execution. Teams already on LangChain.</p>
 <p><strong>Watch out:</strong> MCP client support is solid (via <code>langchain-mcp-adapters</code>), but LangGraph cannot expose agents <em>as</em> MCP servers — competitors like Agno and Mastra do this natively.</p>
 <hr>
@@ -229,7 +229,7 @@
 <h3 id="dspy--prompt-optimization-not-orchestration">DSPy — Prompt Optimization, Not Orchestration</h3>
 <p><strong>Rating: 4.5/5 · <a href="/reviews/dspy-declarative-llm-programming/">Full review</a></strong></p>
 <p>DSPy is the outlier on this list. It does not orchestrate multi-agent workflows — it <em>optimizes</em> the prompts within them. The Stanford-developed framework (Omar Khattab, now at MIT) treats LLM pipeline development as a compilation problem: declare Signatures (input/output contracts), compose them with Modules (Predict, ChainOfThought, ReAct, etc.), then run an Optimizer that tunes instructions and few-shot demonstrations against your metric.</p>
-<p>The results are real: <strong>Shopify used DSPy + GEPA to reduce a metadata extraction pipeline cost ~550x.</strong> Dropbox, Databricks, and Replit are in production. The 2023 foundational paper showed DSPy-compiled programs beating hand-crafted prompts by 5–46%.</p>
+<p>The results are real: <a href="https://dspy.ai/community/use-cases/"><strong>Shopify used DSPy + GEPA to reduce a metadata extraction pipeline cost ~550×</strong></a> across all Shopify shops. Dropbox, Databricks, and Replit are in production. The <a href="https://arxiv.org/abs/2310.03714">2023 foundational paper</a> showed DSPy-compiled programs beating hand-crafted prompts by 5–46%.</p>
 <p><strong>Best for:</strong> Quality-critical pipelines where you have evaluation data and an engineering team willing to invest in proper optimization runs. Use <em>alongside</em> LangGraph or Agno for orchestration; DSPy is not a replacement.</p>
 <p><strong>Watch out:</strong> DSPy requires you to define evaluation metrics and training data up front. &ldquo;It&rsquo;s unproductive to launch optimization runs using a poorly designed program or a bad metric&rdquo; — the docs say this explicitly.</p>
 <hr>
@@ -242,8 +242,8 @@
 <hr>
 <h3 id="openai-agents-sdk--official-and-minimal">OpenAI Agents SDK — Official and Minimal</h3>
 <p><strong>Rating: 4.5/5 · <a href="/reviews/openai-agents-sdk-python/">Full review</a></strong></p>
-<p>The OpenAI Agents SDK (formerly &ldquo;Swarm,&rdquo; rebuilt as a production framework in 2025) is the reference implementation for OpenAI API users. The design philosophy is minimal: Agents, Tools, Handoffs, and Guardrails. No state machines, no complex abstractions. If you use OpenAI&rsquo;s models and want to stay close to the metal, this is the framework.</p>
-<p><strong>25.7 million monthly PyPI downloads</strong> — second only to LangGraph. The Responses API with built-in persistent threads and file storage means you do not need external state management for most use cases. Realtime/voice via the WebRTC/WebSocket Responses API. Sandbox-sandboxed agents for untrusted code execution.</p>
+<p>The <a href="https://openai.github.io/openai-agents-python/">OpenAI Agents SDK</a> (formerly &ldquo;Swarm,&rdquo; <a href="https://github.com/openai/swarm">rebuilt as a production framework in March 2025</a>) is the reference implementation for OpenAI API users. The design philosophy is minimal: Agents, Tools, Handoffs, and Guardrails. No state machines, no complex abstractions. If you use OpenAI&rsquo;s models and want to stay close to the metal, this is the framework.</p>
+<p><a href="https://pypistats.org/packages/openai-agents"><strong>25.7 million monthly PyPI downloads</strong></a> (as of May 2026) — second only to LangGraph. The Responses API with built-in persistent threads and file storage means you do not need external state management for most use cases. Realtime/voice via the WebRTC/WebSocket Responses API. Sandbox-sandboxed agents for untrusted code execution.</p>
 <p><strong>Best for:</strong> OpenAI API users who want minimal abstraction, official support, and the guarantee that framework and API evolve together.</p>
 <p><strong>Watch out:</strong> Tight OpenAI coupling. Provider flexibility exists via LiteLLM wrappers, but requires extra configuration.</p>
 <hr>
@@ -256,7 +256,7 @@
 <hr>
 <h3 id="camel-ai--research-pedigree-production-gaps">CAMEL-AI — Research Pedigree, Production Gaps</h3>
 <p><strong>Rating: 4/5 · <a href="/reviews/camel-ai-multi-agent-framework/">Full review</a></strong></p>
-<p>CAMEL-AI (Communicative Agents for Mind Exploration, arXiv 2303.17760, NeurIPS 2023) is the first published LLM multi-agent framework. Its OWL variant scored <strong>69.09% on GAIA</strong> — #1 among open-source frameworks — narrowly trailing OpenAI Deep Research (69.70%). The Workforce module enables hierarchical multi-agent coordination with TaskAgent, CoordinatorAgent, and Worker abstractions.</p>
+<p>CAMEL-AI (<a href="https://arxiv.org/abs/2303.17760">Communicative Agents for Mind Exploration, arXiv 2303.17760</a>, NeurIPS 2023) is the first published LLM multi-agent framework. Its <a href="https://github.com/camel-ai/owl">OWL variant scored <strong>69.09% on GAIA</strong></a> — #1 among open-source frameworks — narrowly trailing OpenAI Deep Research (69.70%). The Workforce module enables hierarchical multi-agent coordination with TaskAgent, CoordinatorAgent, and Worker abstractions.</p>
 <p>Unique capabilities unavailable in other frameworks: synthetic data generation (CoT, Self-Instruct, EvolInstruct, Source2Synth — used to train Microsoft Phi and OpenHermes), MCP server exposure (runs its own MCP Hub at mcp.camel-ai.org), and OASIS: up to 1M simultaneous social agents for research-scale simulation.</p>
 <p><strong>Best for:</strong> Research teams, synthetic data generation, and organizations that need GAIA-competitive open-source multi-agent performance.</p>
 <p><strong>Watch out:</strong> 470+ open issues on a 9-person team, steep learning curve, no approval boundary for model-generated Python code execution.</p>
@@ -264,7 +264,7 @@
 <h3 id="haystack--type-safe-production-pipelines">Haystack — Type-Safe Production Pipelines</h3>
 <p><strong>Rating: 4/5 · <a href="/reviews/haystack-deepset-llm-framework/">Full review</a></strong></p>
 <p>Haystack from deepset is the most type-safe LLM framework in this list. Its typed, directed-graph Pipeline model enforces component I/O contracts <em>at connect time</em> — before any LLM call fires — catching structural bugs that chain-based frameworks surface only at runtime. Every component declares <code>@component</code> decorator with typed input/output sockets.</p>
-<p>Enterprise production users include Airbus, Lufthansa Industry Solutions, The Economist, Oxford University Press, and the European Commission. deepset GmbH (Berlin, founded 2018, ~$16.5M raised) provides commercial support.</p>
+<p>Enterprise production users include <a href="https://www.deepset.ai/case-studies/airbus">Airbus</a>, <a href="https://haystack.deepset.ai/blog/lufthansa-user-story">Lufthansa Industry Solutions</a>, The Economist, Oxford University Press, and the European Commission (<a href="https://www.deepset.ai/case-studies">case studies</a>). deepset GmbH (Berlin, founded 2018, ~$16.5M raised) provides commercial support.</p>
 <p><strong>Best for:</strong> Teams where correctness and auditability matter more than speed of iteration. Production RAG in regulated industries (finance, healthcare, government).</p>
 <p><strong>Watch out:</strong> 729K monthly PyPI downloads — healthy but well below LangGraph/OpenAI Agents SDK, which means smaller community and slower ecosystem growth.</p>
 <hr>
@@ -285,7 +285,7 @@
 <h3 id="smolagents--code-first-huggingface-native">smolagents — Code-First, HuggingFace Native</h3>
 <p><strong>Rating: 4/5 · <a href="/reviews/smolagents-huggingface-agent-framework/">Full review</a></strong></p>
 <p>HuggingFace&rsquo;s smolagents makes a simple but powerful bet: let the agent write Python code as its action mechanism instead of calling JSON tools. The <code>CodeAgent</code> class generates executable Python that manipulates variables, calls functions, and uses tools as first-class objects — resulting in more compositional, inspectable agent behavior than JSON tool-calling frameworks.</p>
-<p>Scored #1 on GAIA with CodeAgent (open-source division). Native HuggingFace Hub integration: any Hub-hosted model works out of the box. MCP client support. Minimal codebase (~1,000 lines of core) designed for modification, not configuration.</p>
+<p><a href="https://huggingface.co/blog/beating-gaia">Scored #1 on GAIA with CodeAgent</a> (open-source division). Native HuggingFace Hub integration: any Hub-hosted model works out of the box. MCP client support. Minimal codebase (~1,000 lines of core) designed for modification, not configuration.</p>
 <p><strong>Best for:</strong> HuggingFace ecosystem users, agents that reason via code, research teams that want a lightweight, readable foundation to build on.</p>
 <p><strong>Watch out:</strong> Code execution in sandboxed environments requires E2B or Docker; local execution without sandboxing is a security risk.</p>
 <hr>
@@ -354,6 +354,13 @@
   <h2 class="section-heading">More Guides</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Guide</span> <span>2026-07-16 11:00:00</span></div>
+  <h3><a href="/guides/fable-5-july-19-deadline-usage-credits-pricing-guide-2026/">Fable 5 Included Access Ends July 19: What Happens Next</a></h3>
+  <p>Claude Fable 5&#39;s included-plan access expires July 19, 2026 at 11:59 PM PT — the third extension Anthropic has granted since the original July 7 cutoff. After July 19: $10/M input tokens, $50/M output tokens via separate usage credits. That&#39;s Anthropic&#39;s most expensive model, double Opus 4.8 pricing. Batch API halves the cost to $5/$25. Anthropic says it&#39;s temporary; no timeline given.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Guides</span> <span>2026-05-27 10:00:00</span></div>
   <h3><a href="/guides/anthropic-claude-sonnet-4-opus-4-deprecation-june-15-2026/">Claude Sonnet 4 and Opus 4 Retire June 15 — What Developers Need to Do Now</a></h3>
   <p>Anthropic retires Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) on June 15, 2026 at 9AM PT — less than three weeks away. After the deadline, API calls to either model ID will return errors. Migration is typically a one-line change: update the model string, test against real workloads, deploy. Both successors are meaningfully better: Sonnet 4.6 adds a 1M-token context window and better tool-use reliability; Opus 4.7 posts 87.6% on SWE-bench Verified and the lowest hallucination rate of any frontier model. This guide covers exactly what to update and what to watch for.</p>
@@ -371,13 +378,6 @@
   <div class="card-meta"><span>Guide</span> <span>2026-05-26 00:00:00</span></div>
   <h3><a href="/guides/eu-ai-act-article-50-chatbot-disclosure-compliance-guide-2026/">EU AI Act Article 50: Your Chatbot Disclosure Checklist Before August 2, 2026</a></h3>
   <p>The EU AI Act&#39;s Annex III high-risk AI deadline got pushed 16 months by the Digital Omnibus deal — but Article 50 transparency requirements did not. As of August 2, 2026 (68 days from now), any AI system that interacts with EU users, generates synthetic content, or detects emotion must meet four disclosure requirements. Penalties reach €15M or 3% of global revenue. Here&#39;s what each obligation means in code and UX.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Guides</span> <span>2026-05-26 00:00:00</span></div>
-  <h3><a href="/guides/llm-api-pricing-comparison-2026/">LLM API Pricing Comparison (May 2026): Every Major Model, Per Million Tokens</a></h3>
-  <p>Current API prices for Claude Opus 4.7, GPT-5.5, Gemini 3.5 Flash, DeepSeek V4 Pro, Grok 4.3, Qwen3, and more — input/output costs, context windows, and where each model wins on cost-per-task.</p>
 </div>
 
   
