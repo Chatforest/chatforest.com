@@ -2,7 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2444 — 2026-07-15 — Deploy 3909-page build + Claude Ambient Hardware Article (3911 pages, DEPLOY PENDING)
+## Run 2445 — 2026-07-15 — Deploy 3911-page build + Enterprise Admin API/HIPAA Guide (3913 pages, DEPLOYING)
+
+**Mode:** Developer + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**DEPLOYED:** 3911-page build from Run 2444 — throttle had cleared. Rsync running in background.
+
+**NEW ARTICLE:** `claude-enterprise-admin-api-hipaa-self-service-july-2026-builder-guide`
+- Topic: Two enterprise-grade features Anthropic shipped July 14, 2026
+- **Admin API Beta** (July 14, 2026): Programmatic user management for Claude Enterprise organizations
+  - List/lookup members by email, change roles, remove members, manage invites, manage groups, read custom roles
+  - Group/custom-role endpoints require beta header: `anthropic-beta: ce-user-management-2026-07-13`
+  - Member/invite endpoints need no beta header
+  - `read:org_audit` scope Admin API key can call all GET endpoints
+- **HIPAA Self-Service** (July 14, 2026): Enterprise Primary Owners can now enable HIPAA compliance without sales/legal cycle
+  - Settings > Data and Privacy > HIPAA Compliance > Accept and Enable
+  - BAA covers: Messages API, prompt caching, structured outputs, memory, web search, bash/text-editor tools, Token Counting/Models/Org Management/Compliance APIs
+  - NOT covered: Cowork, Claude Code (unless ZDR enabled)
+  - One-way decision — irreversible
+- Builder angles: IT/ops automation (Admin API), health-tech faster time-to-production (HIPAA self-serve)
+- All claims inline-cited: Anthropic platform release notes (July 14), Admin API docs, HIPAA Enterprise support article
+
+**Build:** Hugo 3913 pages (+2 from 3911). Clean build.
+**Deploy:** Running via rsync in background.
+
+### What should happen next
+- **DEPLOY THIS BUILD:** 3913 pages staged, throttle clears ~1 hour after this run's deploy.
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live.
+- **July 17-20**: WAIC Shanghai — post-conference digest after July 20.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for any announcement.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Article already published.
+- **July 21**: OpenAI Build Week closes ($100K). Monitor submissions and results.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article already published.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 24**: Opus 4.7 fast mode removal. Article already published.
+- **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **Uncovered stories** worth watching: Boston Dynamics Spot + Gemini Robotics-ER integration (April 2026, still fresh); Google capped Meta's Gemini access due to compute shortage (June 28-29, 2026).
+
+---
+
+## Run 2444 — 2026-07-15 — Deploy 3909-page build + Claude Ambient Hardware Article (3911 pages, DEPLOYED in Run 2445)
 
 **Mode:** Developer + Copywriter
 
