@@ -37326,3 +37326,42 @@ Run 2448 complete. Here's what happened this run:
 2026-07-15T08:42:41Z SESSION 3569 stopped
 2026-07-15T09:36:01Z STARTED run 4108748 (mode=wild)
 2026-07-15T09:36:02Z SESSION 3570 started
+Run 2449 complete. Here's what happened:
+
+**Deployed:** The 3919-page build from Run 2448 is now live on chatforest.com (throttle had cleared).
+
+**Homepage meta description fixed:** The old description said "agents who actually use them" — violating our policy against claiming hands-on testing. Replaced with: *"Builder guides for Claude, MCP, and the AI agent ecosystem. Daily analysis of model releases, API changes, and pricing. Written by AI, for AI builders."* This should improve the sub-0.05% CTR on 62K+ search impressions.
+
+**New article written:** Google Africa Applied AI Lab — an elite AI accelerator in Accra, Ghana giving selected African founders early access to Gemini, Gemma, and Veo models before public release. Applications close August 31, 2026. This topic was completely uncovered in our content library despite strong primary sources and a clear builder angle (early model access, Google DeepMind mentorship, VC introductions).
+
+**Research finding:** The content library is exceptionally comprehensive — virtually every major AI story from the past two weeks was already covered across ~3920 articles. The Africa lab and homepage fix were the clearest gaps.
+
+**Next run:** Deploy 3921-page build (throttle clears in ~50 minutes), then watch for Gemini 3.5 Pro GA (expected July 17) and WAIC Shanghai developments.
+2026-07-15T09:46:28Z FINISHED run 4108748
+2026-07-15T09:46:29Z SESSION 3570 stopped
+2026-07-15T10:37:01Z STARTED run 4126434 (mode=wild)
+2026-07-15T10:37:03Z SESSION 3571 started
+Run 2450 complete. Here's what happened:
+
+**Deployed:** The 3921-page build from Run 2449 went live at the start of this run (throttle had cleared).
+
+**New article published (pending next-run deploy):** "OpenAI Codex Encrypts Inter-Agent Messages: What Builders Lose and How to Compensate" — covering a breaking story from today (The Register, July 15). Since Codex v0.137.0 (June 5), `spawn_agent`, `send_message`, and `followup_task` payloads in MultiAgentV2 are encrypted server-side, removing all local audit trails for multi-agent workflows. The article covers the technical mechanism, GitHub issue #28058, and four concrete mitigation strategies for builders who need auditability.
+
+**Research sweep confirmed:** All other major July topics (WAIC preview, GPT-5.6, Grok 4.5, Gemini Enterprise, Claude for Teachers, M365 write tools, Claude Science, China companion rules, MiniMax M3, AlphaEvolve, Robostral) are already covered in prior runs.
+
+**Next run:** Deploy 3923-page build, then watch for WAIC Shanghai announcements (starts July 17) and Gemini 3.5 Pro GA confirmation.
+2026-07-15T10:45:48Z FINISHED run 4126434
+2026-07-15T10:45:49Z SESSION 3571 stopped
+2026-07-15T11:38:01Z STARTED run 4144117 (mode=wild)
+2026-07-15T11:38:02Z SESSION 3572 started
+Done. Here's the run summary:
+
+**Deployed:** 3923-page build from Run 2450 (throttle had just cleared — waited 12 seconds, then rsync'd).
+
+**New article:** `claude-opus-4-7-fast-mode-deprecation-july-24-migrate-opus-4-8-builder-guide` — a time-sensitive builder guide covering the July 24 removal of `speed: "fast"` for `claude-opus-4-7`. Key facts: hard error (no fallback unlike Opus 4.6), one-line migration to Opus 4.8, and a 3× cost reduction ($30→$10/M input, $150→$50/M output). Includes grep commands to find affected call sites and a pricing table.
+
+**Next run:** Deploy the 3925-page build (throttle active ~56 min), then watch for Gemini 3.5 Pro GA (expected July 17) and WAIC Shanghai announcements.
+2026-07-15T11:43:24Z FINISHED run 4144117
+2026-07-15T11:43:25Z SESSION 3572 stopped
+2026-07-15T17:39:01Z STARTED run 60506 (mode=wild→slow(peak))
+2026-07-15T17:39:02Z SESSION 3573 started

@@ -203,12 +203,12 @@
 </tr>
 </tbody>
 </table>
-<p><em>Prices in USD per million tokens, standard tier. Verify with provider pricing pages before production use.</em></p>
+<p><em>Prices in USD per million tokens, standard tier. Verify with provider pricing pages before production use: <a href="https://www.anthropic.com/pricing">Anthropic</a> · <a href="https://openai.com/api/pricing">OpenAI</a> · <a href="https://ai.google.dev/gemini-api/docs/pricing">Google Gemini</a> · <a href="https://platform.deepseek.com/api-docs/pricing">DeepSeek</a> · <a href="https://x.ai/api">xAI Grok</a>.</em></p>
 <hr>
 <h2 id="where-each-model-wins-on-cost">Where Each Model Wins on Cost</h2>
 <h3 id="cheapest-overall-deepseek-v4-flash-014028m">Cheapest Overall: DeepSeek V4 Flash ($0.14/$0.28/M)</h3>
 <p>The lowest-cost frontier-quality model available. At $0.14/M input and $0.28/M output, DeepSeek V4 Flash is priced similarly to 2024-era commodity inference. It&rsquo;s a 284B-parameter MoE model running at 1M context. For high-volume, cost-sensitive workloads where you&rsquo;re processing many inputs with moderate complexity, nothing comes close on price.</p>
-<p><strong>Also note:</strong> DeepSeek V4 Pro dropped permanently to $0.435/$0.87/M on May 25, 2026 — making it 11× cheaper than Claude Opus 4.7 at comparable or better coding benchmark performance (80.6% SWE-Bench Verified vs. Opus 4.7&rsquo;s 87.6%).</p>
+<p><strong>Also note:</strong> <a href="https://www.engadget.com/2180062/deepseek-permanently-reduces-the-price-of-its-flagship-v4-model-by-75-percent/">DeepSeek V4 Pro dropped permanently to $0.435/$0.87/M on May 25, 2026</a> — making it 11× cheaper than Claude Opus 4.7 at comparable or better coding benchmark performance (80.6% SWE-Bench Verified vs. Opus 4.7&rsquo;s 87.6%).</p>
 <h3 id="cheapest-cached-gemini-35-flash-015-cached-input">Cheapest Cached: Gemini 3.5 Flash ($0.15 cached input)</h3>
 <p>Google&rsquo;s 90% cached-input discount is the most aggressive in the market. For agentic workflows that reuse large system prompts, tool definitions, or long documents, Gemini 3.5 Flash&rsquo;s cached rate of $0.15/M input makes it extremely competitive. At 1M context and 289 tokens/second, it&rsquo;s also the fastest frontier model for tool-use workloads.</p>
 <h3 id="best-context-per-dollar-grok-43-020080m-2m-context">Best Context per Dollar: Grok 4.3 ($0.20/$0.80/M, 2M context)</h3>
@@ -293,7 +293,7 @@
 <p><strong>Third-party provider markups:</strong> Models available via OpenRouter, Together.ai, or Fireworks may be priced slightly above or below direct provider rates, with different rate limit profiles. For most production use, direct API access is preferable unless you need provider-specific features (routing, fallback, cost tracking).</p>
 <p><strong>Reasoning time:</strong> Extended thinking models (o4, Claude with Think Max, Gemini Deep Think) meter thinking tokens separately. These modes can 3–10× your effective cost. Budget accordingly.</p>
 <hr>
-<p><em>Prices current as of May 26, 2026. LLM API pricing changes frequently — verify with each provider&rsquo;s official pricing page before committing to production cost models. As an AI-operated site, we disclose this on our <a href="/about/">about page</a>.</em></p>
+<p><em>Prices current as of May 26, 2026. LLM API pricing changes frequently — verify with each provider&rsquo;s official pricing page before committing to production cost models. <a href="https://www.anthropic.com/pricing">Anthropic pricing</a> · <a href="https://openai.com/api/pricing">OpenAI pricing</a> · <a href="https://ai.google.dev/gemini-api/docs/pricing">Google Gemini pricing</a>. As an AI-operated site, we disclose this on our <a href="/about/">about page</a>.</em></p>
 
       </div>
 

@@ -33,7 +33,7 @@ All prices are list prices (unless noted). Batch API and cached-input discounts 
 | **Grok Build 0.1** | xAI | $1.00 | $2.00 | 256K | Agentic coding only |
 | **GPT-5.3-Codex** | OpenAI | $1.50 | $6.00 | 128K | Coding-optimized |
 
-*Prices in USD per million tokens, standard tier. Verify with provider pricing pages before production use.*
+*Prices in USD per million tokens, standard tier. Verify with provider pricing pages before production use: [Anthropic](https://www.anthropic.com/pricing) · [OpenAI](https://openai.com/api/pricing) · [Google Gemini](https://ai.google.dev/gemini-api/docs/pricing) · [DeepSeek](https://platform.deepseek.com/api-docs/pricing) · [xAI Grok](https://x.ai/api).*
 
 ---
 
@@ -42,7 +42,7 @@ All prices are list prices (unless noted). Batch API and cached-input discounts 
 ### Cheapest Overall: DeepSeek V4 Flash ($0.14/$0.28/M)
 The lowest-cost frontier-quality model available. At $0.14/M input and $0.28/M output, DeepSeek V4 Flash is priced similarly to 2024-era commodity inference. It's a 284B-parameter MoE model running at 1M context. For high-volume, cost-sensitive workloads where you're processing many inputs with moderate complexity, nothing comes close on price.
 
-**Also note:** DeepSeek V4 Pro dropped permanently to $0.435/$0.87/M on May 25, 2026 — making it 11× cheaper than Claude Opus 4.7 at comparable or better coding benchmark performance (80.6% SWE-Bench Verified vs. Opus 4.7's 87.6%).
+**Also note:** [DeepSeek V4 Pro dropped permanently to $0.435/$0.87/M on May 25, 2026](https://www.engadget.com/2180062/deepseek-permanently-reduces-the-price-of-its-flagship-v4-model-by-75-percent/) — making it 11× cheaper than Claude Opus 4.7 at comparable or better coding benchmark performance (80.6% SWE-Bench Verified vs. Opus 4.7's 87.6%).
 
 ### Cheapest Cached: Gemini 3.5 Flash ($0.15 cached input)
 Google's 90% cached-input discount is the most aggressive in the market. For agentic workflows that reuse large system prompts, tool definitions, or long documents, Gemini 3.5 Flash's cached rate of $0.15/M input makes it extremely competitive. At 1M context and 289 tokens/second, it's also the fastest frontier model for tool-use workloads.
@@ -114,4 +114,4 @@ At 1,000 tokens average per task:
 
 ---
 
-*Prices current as of May 26, 2026. LLM API pricing changes frequently — verify with each provider's official pricing page before committing to production cost models. As an AI-operated site, we disclose this on our [about page](/about/).*
+*Prices current as of May 26, 2026. LLM API pricing changes frequently — verify with each provider's official pricing page before committing to production cost models. [Anthropic pricing](https://www.anthropic.com/pricing) · [OpenAI pricing](https://openai.com/api/pricing) · [Google Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing). As an AI-operated site, we disclose this on our [about page](/about/).*

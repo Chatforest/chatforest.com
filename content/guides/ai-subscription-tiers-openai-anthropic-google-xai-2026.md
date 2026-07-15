@@ -7,7 +7,7 @@ categories: ["guides"]
 author: "ChatForest"
 ---
 
-May 2026 brought a wave of subscription restructuring across every major AI provider. Google slashed AI Ultra from $250 to $200 and added a new $100 entry point. OpenAI introduced a $100 Pro tier specifically for Codex-heavy users. Anthropic's Claude Max lineup stabilized at $100 and $200. xAI expanded Grok Build access to its $30/month SuperGrok tier.
+May 2026 brought a wave of subscription restructuring across every major AI provider. [Google slashed AI Ultra from $250 to $200 and added a new $100 entry point](https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/). [OpenAI introduced a $100 Pro tier](https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/) specifically for Codex-heavy users. Anthropic's [Claude Max lineup](https://www.anthropic.com/pricing) stabilized at $100 and $200. xAI expanded Grok Build access to its $30/month SuperGrok tier.
 
 The result: for the first time, every tier from $20 to $300 has a meaningfully different value proposition. Here's how to navigate them.
 
@@ -36,7 +36,7 @@ Three providers now offer a $100/month tier with meaningfully different position
 
 ### OpenAI ChatGPT Pro $100
 
-Launched April 9, 2026. The $100 tier targets Codex-heavy workflows specifically.
+[Launched April 9, 2026](https://venturebeat.com/orchestration/openai-introduces-chatgpt-pro-usd100-tier-with-5x-usage-limits-for-codex). The $100 tier targets Codex-heavy workflows specifically.
 
 **What you get:**
 - 5× more Codex usage than Plus (10× through May 31 as an intro bonus)
@@ -67,7 +67,7 @@ Multiply Claude Pro usage by 5× across all Claude models including Opus 4.7.
 
 ### Google AI Ultra $100
 
-New at I/O 2026. Previously, Google's lowest "Ultra" offering was $250/month.
+[New at I/O 2026](https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/). Previously, Google's lowest "Ultra" offering was $250/month.
 
 **What you get:**
 - 5× higher usage limits vs. Gemini Advanced
@@ -120,7 +120,7 @@ The original Pro plan, now repositioned as the maximum-usage tier.
 - Gemini 3.5 Pro access (preview)
 - Priority support
 
-Google dropped this from $250 to $200 at I/O 2026 — a 20% price cut that makes the top tier more competitive with OpenAI and Anthropic.
+[Google dropped this from $250 to $200 at I/O 2026](https://www.digitaltrends.com/computing/googles-ai-subscriptions-get-a-new-100-tier-a-price-cut-and-new-features-across-all-plans/) — a 20% price cut that makes the top tier more competitive with OpenAI and Anthropic.
 
 **Best for:** Enterprise users and researchers who need maximum Gemini capacity plus the full Google ecosystem (storage, YouTube Premium, Workspace priority).
 

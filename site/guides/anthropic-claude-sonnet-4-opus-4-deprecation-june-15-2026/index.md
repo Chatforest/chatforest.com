@@ -5,13 +5,13 @@
 
 **June 13 update: Two days remaining.** If you have not migrated yet, today is the day. The migration is a single line in most codebases — update the model string and ship. Instructions below.
 
-**The short version:** Anthropic retires `claude-sonnet-4-20250514` and `claude-opus-4-20250514` on **June 15, 2026, at 9AM PT**. Any production application still calling those model IDs will receive API errors after that point. The migration is usually a single line — update the model string, run parallel tests, ship. The successors are strictly better on every benchmark that matters.
+**The short version:** Anthropic [retires `claude-sonnet-4-20250514` and `claude-opus-4-20250514`](https://docs.anthropic.com/en/docs/about-claude/model-deprecations) on **June 15, 2026, at 9AM PT**. Any production application still calling those model IDs will receive API errors after that point. The migration is usually a single line — update the model string, run parallel tests, ship. The successors are strictly better on every benchmark that matters.
 
 ---
 
 ## What Is Being Deprecated
 
-Both models trace back to the original Claude 4 launch on May 14, 2025. They were the first Anthropic models to unify extended thinking and multi-tool use in a single generation, and for roughly a year they were the default Claude API choice for production workloads.
+Both models trace back to the [original Claude 4 launch on May 14, 2025](https://www.anthropic.com/news/claude-4). They were the first Anthropic models to unify extended thinking and multi-tool use in a single generation, and for roughly a year they were the default Claude API choice for production workloads.
 
 | Model ID | Launched | Retires |
 |---|---|---|
@@ -49,9 +49,9 @@ If your workloads are primarily agentic or involve complex multi-step reasoning,
 
 ### Opus 4.7 vs. Opus 4
 
-**SWE-bench Verified:** 87.6%, up from the ~75% range at Opus 4 launch. SWE-bench Pro (a harder held-out variant): 64.3%.
+**SWE-bench Verified:** [87.6%](https://www.anthropic.com/news/claude-opus-4-7), up from the ~75% range at Opus 4 launch. SWE-bench Pro (a harder held-out variant): 64.3%.
 
-**Hallucination rate:** 36% on Artificial Analysis's AA-Omniscience benchmark. At Opus 4 launch, the same benchmark did not exist in its current form; contemporaneous evaluations showed Opus 4 competitive but not dominant. Opus 4.7's 36% is 50 percentage points lower than GPT-5.5 (86%) on the same test — the largest factual accuracy gap between frontier labs in the first half of 2026.
+**Hallucination rate:** 36% on [Artificial Analysis's AA-Omniscience benchmark](https://artificialanalysis.ai/evaluations/omniscience). At Opus 4 launch, the same benchmark did not exist in its current form; contemporaneous evaluations showed Opus 4 competitive but not dominant. Opus 4.7's 36% is 50 percentage points lower than GPT-5.5 ([86% on the same test](https://the-decoder.com/gpt-5-5-tops-benchmarks-but-still-hallucinates-frequently-at-a-20-percent-higher-api-cost/)) — the largest factual accuracy gap between frontier labs in the first half of 2026.
 
 **Reasoning architecture:** Extended Thinking is replaced by Adaptive Thinking. Rather than requiring you to explicitly set a thinking budget, Opus 4.7 infers the right compute depth from the task. The practical difference: better results on ambiguous or underspecified prompts without needing manual budget tuning.
 

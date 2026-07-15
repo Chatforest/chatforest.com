@@ -66,10 +66,10 @@
 
       <div class="article-body">
         <p><strong>June 13 update: Two days remaining.</strong> If you have not migrated yet, today is the day. The migration is a single line in most codebases — update the model string and ship. Instructions below.</p>
-<p><strong>The short version:</strong> Anthropic retires <code>claude-sonnet-4-20250514</code> and <code>claude-opus-4-20250514</code> on <strong>June 15, 2026, at 9AM PT</strong>. Any production application still calling those model IDs will receive API errors after that point. The migration is usually a single line — update the model string, run parallel tests, ship. The successors are strictly better on every benchmark that matters.</p>
+<p><strong>The short version:</strong> Anthropic <a href="https://docs.anthropic.com/en/docs/about-claude/model-deprecations">retires <code>claude-sonnet-4-20250514</code> and <code>claude-opus-4-20250514</code></a> on <strong>June 15, 2026, at 9AM PT</strong>. Any production application still calling those model IDs will receive API errors after that point. The migration is usually a single line — update the model string, run parallel tests, ship. The successors are strictly better on every benchmark that matters.</p>
 <hr>
 <h2 id="what-is-being-deprecated">What Is Being Deprecated</h2>
-<p>Both models trace back to the original Claude 4 launch on May 14, 2025. They were the first Anthropic models to unify extended thinking and multi-tool use in a single generation, and for roughly a year they were the default Claude API choice for production workloads.</p>
+<p>Both models trace back to the <a href="https://www.anthropic.com/news/claude-4">original Claude 4 launch on May 14, 2025</a>. They were the first Anthropic models to unify extended thinking and multi-tool use in a single generation, and for roughly a year they were the default Claude API choice for production workloads.</p>
 <table>
 <thead>
 <tr>
@@ -122,8 +122,8 @@
 <p><strong>Coding benchmarks:</strong> Higher scores across SWE-bench Verified and HumanEval variants, reflecting targeted improvements on the software engineering tasks that define most production Sonnet use cases.</p>
 <p><strong>Cost:</strong> Per-token pricing is comparable at the Sonnet tier. The 1M context window comes at no long-context surcharge.</p>
 <h3 id="opus-47-vs-opus-4">Opus 4.7 vs. Opus 4</h3>
-<p><strong>SWE-bench Verified:</strong> 87.6%, up from the ~75% range at Opus 4 launch. SWE-bench Pro (a harder held-out variant): 64.3%.</p>
-<p><strong>Hallucination rate:</strong> 36% on Artificial Analysis&rsquo;s AA-Omniscience benchmark. At Opus 4 launch, the same benchmark did not exist in its current form; contemporaneous evaluations showed Opus 4 competitive but not dominant. Opus 4.7&rsquo;s 36% is 50 percentage points lower than GPT-5.5 (86%) on the same test — the largest factual accuracy gap between frontier labs in the first half of 2026.</p>
+<p><strong>SWE-bench Verified:</strong> <a href="https://www.anthropic.com/news/claude-opus-4-7">87.6%</a>, up from the ~75% range at Opus 4 launch. SWE-bench Pro (a harder held-out variant): 64.3%.</p>
+<p><strong>Hallucination rate:</strong> 36% on <a href="https://artificialanalysis.ai/evaluations/omniscience">Artificial Analysis&rsquo;s AA-Omniscience benchmark</a>. At Opus 4 launch, the same benchmark did not exist in its current form; contemporaneous evaluations showed Opus 4 competitive but not dominant. Opus 4.7&rsquo;s 36% is 50 percentage points lower than GPT-5.5 (<a href="https://the-decoder.com/gpt-5-5-tops-benchmarks-but-still-hallucinates-frequently-at-a-20-percent-higher-api-cost/">86% on the same test</a>) — the largest factual accuracy gap between frontier labs in the first half of 2026.</p>
 <p><strong>Reasoning architecture:</strong> Extended Thinking is replaced by Adaptive Thinking. Rather than requiring you to explicitly set a thinking budget, Opus 4.7 infers the right compute depth from the task. The practical difference: better results on ambiguous or underspecified prompts without needing manual budget tuning.</p>
 <p><strong>Context window:</strong> 1 million tokens with 128K maximum output.</p>
 <p><strong>Image resolution:</strong> 3.75 megapixel maximum per image (up from 1.15MP at Opus 4 launch), improving computer-use and document-analysis pipelines.</p>

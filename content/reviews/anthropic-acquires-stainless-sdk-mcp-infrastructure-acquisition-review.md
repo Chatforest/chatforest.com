@@ -8,9 +8,9 @@ rating: 4
 
 ## The Move
 
-On **May 18, 2026**, Anthropic announced it is acquiring **Stainless**, a four-year-old New York startup that built the infrastructure behind virtually every major AI lab's official SDK libraries.
+On **May 18, 2026**, [Anthropic announced it is acquiring **Stainless**](https://www.anthropic.com/news/anthropic-acquires-stainless), a four-year-old New York startup that built the infrastructure behind virtually every major AI lab's official SDK libraries.
 
-The deal is reported to be worth **more than $300 million** in cash and stock, according to The Information. Terms were not officially disclosed.
+The deal is reported to be worth **more than $300 million** in cash and stock, [according to The Information](https://www.uctoday.com/productivity-automation/anthropic-acquires-stainless-the-sdk-and-mcp-startup-behind-every-official-claude-api-library/). Terms were not officially disclosed.
 
 The same day, Anthropic announced it will wind down all hosted Stainless products — the SDK generator, the CLI tooling, the MCP server generators — immediately.
 
@@ -30,7 +30,7 @@ By 2026, Stainless had become the backend for the official developer libraries a
 - **Anthropic** — every official Claude API library, from the beginning
 - **Cloudflare**, **Replicate**, **Runway**, **Groq**, **Perplexity**, **LangChain**, **DigitalOcean**, **Meta**
 
-In MCP tooling specifically, Stainless had become the default path for generating MCP servers from existing API specs. With MCP crossing **97 million monthly SDK downloads** by March 2026 and 10,000+ public servers in the ecosystem, Stainless occupied a structural chokepoint.
+In MCP tooling specifically, Stainless had become the default path for generating MCP servers from existing API specs. With MCP crossing **97 million monthly SDK downloads** by March 2026 and 10,000+ public servers in the ecosystem ([Anthropic, March 2026](https://www.anthropic.com/news/anthropic-acquires-stainless)), Stainless occupied a structural chokepoint.
 
 This is the company Anthropic just bought — and immediately shut down as a shared resource.
 
@@ -42,7 +42,7 @@ Anthropic's stated framing: "The frontier of AI is shifting from models that ans
 
 The logic follows from there. Claude's ability to act as an agent depends on being able to call external tools, APIs, and services. The quality of that connectivity depends on SDK and MCP tooling. Stainless was building the best tooling in that layer. Acquiring it brings that capability in-house and removes it from everyone else simultaneously.
 
-Katelyn Lesse, Anthropic's head of developer platform, described it this way: "Stainless has shaped how developers experience the Claude API… We're excited to bring the Stainless team into Anthropic to advance Claude's ability to connect to data and tools."
+Katelyn Lesse, Anthropic's head of developer platform, [described it this way](https://www.anthropic.com/news/anthropic-acquires-stainless): "Stainless has shaped how developers experience the Claude API… We're excited to bring the Stainless team into Anthropic to advance Claude's ability to connect to data and tools."
 
 The strategic picture is a three-layer stack:
 1. **Model** — Claude 4.x/Opus/Sonnet family
