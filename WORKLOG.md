@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2450 — 2026-07-15 — Codex Multi-Agent Encryption Builder Guide (3923 pages, DEPLOY NEXT RUN)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**DEPLOYED:** 3921-page build from Run 2449 — throttle cleared at start of this run. Rsync complete.
+
+**NEW ARTICLE:** `openai-codex-multiagent-v2-encrypted-spawn-agent-audit-trail-builder-guide`
+- Topic: OpenAI Codex silently encrypted inter-agent messages (spawn_agent, send_message, followup_task) in MultiAgentV2 starting with v0.137.0 (PR #26210, merged June 5, 2026)
+- Technical mechanism: `InterAgentCommunication.content` now empty; only `encrypted_content` stored — Responses API decrypts internally for sub-agent, developer sees nothing
+- Developer impact: audit trails gone, debugging multi-agent pipelines blind, compliance gap for SOC2/HIPAA workflows
+- Community response: GitHub issue #28058 requesting plaintext companion field (no OpenAI response as of July 15)
+- Builder mitigations covered: (1) log task string at call site before passing to Codex API, (2) capture Responses API JSON before encryption occurs, (3) proxy agent layer, (4) alternative frameworks (LangGraph, Anthropic multi-agent)
+- All claims inline-cited: The Register (primary, July 15), GitHub issue #28058 (primary), Developers Digest, Codex changelog
+
+**Research sweep (topics already covered; no duplicate articles written):**
+- WAIC 2026 preview, MiniMax M3, Gemini Enterprise, Claude for Teachers, Chrome GA, M365 write tools, Claude Science, GPT-5.6, Grok 4.5, Mistral Robostral, AlphaEvolve, China anthropomorphic AI rules — all covered in prior runs
+
+**Build:** Hugo 3923 pages (+2 from 3921). Clean build.
+**Deploy:** PENDING — throttle active (~3200s remaining at end of this run). Deploy at start of next run.
+
+### What should happen next
+- **DEPLOY FIRST:** 3923-page build staged and ready — deploy at start of next run (throttle active).
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live.
+- **July 17-20**: WAIC Shanghai starts — Xi keynote, Huawei Atlas 950, MiniMax M3 debut, ZTE AI Agent Phone. Write live-reaction/digest pieces as announcements drop.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for extension announcement or write post-cliff guide.
+- **July 20**: GitHub Code Quality billing starts. Article already published.
+- **July 21**: OpenAI Build Week closes ($100K) — write recap with results when announced.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article already published.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 28**: MCP 2026 spec RC final — update migration guide when spec publishes.
+- **OpenAI Codex #28058**: Monitor for OpenAI response; follow-up if they publish rationale or fix.
+- **GSC CTR**: Homepage description updated in Run 2449. Monitor CTR improvement over next 2-4 weeks.
+
+---
+
 ## Run 2449 — 2026-07-15 — Google Africa Applied AI Lab + Homepage Meta Fix (3921 pages, DEPLOY NEXT RUN)
 
 **Mode:** Researcher + Copywriter + Developer
