@@ -60,7 +60,7 @@ MCP (Model Context Protocol) now runs through all generations: every top-rated f
 
 LangGraph is the agent framework most likely to appear in production systems you inherit. Developed by LangChain Inc., it models workflows as directed state-machine graphs: typed shared state, nodes that read and write that state, conditional edges that route between nodes, and checkpointing backed by PostgreSQL or MongoDB that makes every graph resumable.
 
-The numbers tell the story: **34.5 million monthly PyPI downloads** — roughly 5× more than any other framework on this list. Enterprise survey data from 2025 shows LangGraph cited in 34% of 1,000+ employee AI architecture decisions.
+The numbers tell the story: [**34.5 million monthly PyPI downloads**](https://pypistats.org/packages/langgraph) (as of May 2026) — roughly 5× more than any other framework on this list. LangChain's own [State of AI Agent Engineering survey](https://www.langchain.com/state-of-agent-engineering) identifies LangGraph as the leading production framework for stateful agent workloads across enterprises of all sizes.
 
 **Best for:** Workflows requiring explicit state management, conditional branching, human-in-the-loop interrupts, and durable execution. Teams already on LangChain.
 
@@ -102,7 +102,7 @@ At **39,800 stars** with MPL-2.0 licensing, Agno has grown faster than any other
 
 DSPy is the outlier on this list. It does not orchestrate multi-agent workflows — it *optimizes* the prompts within them. The Stanford-developed framework (Omar Khattab, now at MIT) treats LLM pipeline development as a compilation problem: declare Signatures (input/output contracts), compose them with Modules (Predict, ChainOfThought, ReAct, etc.), then run an Optimizer that tunes instructions and few-shot demonstrations against your metric.
 
-The results are real: **Shopify used DSPy + GEPA to reduce a metadata extraction pipeline cost ~550x.** Dropbox, Databricks, and Replit are in production. The 2023 foundational paper showed DSPy-compiled programs beating hand-crafted prompts by 5–46%.
+The results are real: [**Shopify used DSPy + GEPA to reduce a metadata extraction pipeline cost ~550×**](https://dspy.ai/community/use-cases/) across all Shopify shops. Dropbox, Databricks, and Replit are in production. The [2023 foundational paper](https://arxiv.org/abs/2310.03714) showed DSPy-compiled programs beating hand-crafted prompts by 5–46%.
 
 **Best for:** Quality-critical pipelines where you have evaluation data and an engineering team willing to invest in proper optimization runs. Use *alongside* LangGraph or Agno for orchestration; DSPy is not a replacement.
 
@@ -128,9 +128,9 @@ LlamaIndex started as a document indexing library and has grown into a full RAG-
 
 **Rating: 4.5/5 · [Full review](/reviews/openai-agents-sdk-python/)**
 
-The OpenAI Agents SDK (formerly "Swarm," rebuilt as a production framework in 2025) is the reference implementation for OpenAI API users. The design philosophy is minimal: Agents, Tools, Handoffs, and Guardrails. No state machines, no complex abstractions. If you use OpenAI's models and want to stay close to the metal, this is the framework.
+The [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/) (formerly "Swarm," [rebuilt as a production framework in March 2025](https://github.com/openai/swarm)) is the reference implementation for OpenAI API users. The design philosophy is minimal: Agents, Tools, Handoffs, and Guardrails. No state machines, no complex abstractions. If you use OpenAI's models and want to stay close to the metal, this is the framework.
 
-**25.7 million monthly PyPI downloads** — second only to LangGraph. The Responses API with built-in persistent threads and file storage means you do not need external state management for most use cases. Realtime/voice via the WebRTC/WebSocket Responses API. Sandbox-sandboxed agents for untrusted code execution.
+[**25.7 million monthly PyPI downloads**](https://pypistats.org/packages/openai-agents) (as of May 2026) — second only to LangGraph. The Responses API with built-in persistent threads and file storage means you do not need external state management for most use cases. Realtime/voice via the WebRTC/WebSocket Responses API. Sandbox-sandboxed agents for untrusted code execution.
 
 **Best for:** OpenAI API users who want minimal abstraction, official support, and the guarantee that framework and API evolve together.
 
@@ -156,7 +156,7 @@ If your stack is TypeScript — Next.js, Remix, Express, or edge — Mastra is t
 
 **Rating: 4/5 · [Full review](/reviews/camel-ai-multi-agent-framework/)**
 
-CAMEL-AI (Communicative Agents for Mind Exploration, arXiv 2303.17760, NeurIPS 2023) is the first published LLM multi-agent framework. Its OWL variant scored **69.09% on GAIA** — #1 among open-source frameworks — narrowly trailing OpenAI Deep Research (69.70%). The Workforce module enables hierarchical multi-agent coordination with TaskAgent, CoordinatorAgent, and Worker abstractions.
+CAMEL-AI ([Communicative Agents for Mind Exploration, arXiv 2303.17760](https://arxiv.org/abs/2303.17760), NeurIPS 2023) is the first published LLM multi-agent framework. Its [OWL variant scored **69.09% on GAIA**](https://github.com/camel-ai/owl) — #1 among open-source frameworks — narrowly trailing OpenAI Deep Research (69.70%). The Workforce module enables hierarchical multi-agent coordination with TaskAgent, CoordinatorAgent, and Worker abstractions.
 
 Unique capabilities unavailable in other frameworks: synthetic data generation (CoT, Self-Instruct, EvolInstruct, Source2Synth — used to train Microsoft Phi and OpenHermes), MCP server exposure (runs its own MCP Hub at mcp.camel-ai.org), and OASIS: up to 1M simultaneous social agents for research-scale simulation.
 
@@ -172,7 +172,7 @@ Unique capabilities unavailable in other frameworks: synthetic data generation (
 
 Haystack from deepset is the most type-safe LLM framework in this list. Its typed, directed-graph Pipeline model enforces component I/O contracts *at connect time* — before any LLM call fires — catching structural bugs that chain-based frameworks surface only at runtime. Every component declares `@component` decorator with typed input/output sockets.
 
-Enterprise production users include Airbus, Lufthansa Industry Solutions, The Economist, Oxford University Press, and the European Commission. deepset GmbH (Berlin, founded 2018, ~$16.5M raised) provides commercial support.
+Enterprise production users include [Airbus](https://www.deepset.ai/case-studies/airbus), [Lufthansa Industry Solutions](https://haystack.deepset.ai/blog/lufthansa-user-story), The Economist, Oxford University Press, and the European Commission ([case studies](https://www.deepset.ai/case-studies)). deepset GmbH (Berlin, founded 2018, ~$16.5M raised) provides commercial support.
 
 **Best for:** Teams where correctness and auditability matter more than speed of iteration. Production RAG in regulated industries (finance, healthcare, government).
 
@@ -214,7 +214,7 @@ Nine agent types including SleepTime Agent (processes new information during dow
 
 HuggingFace's smolagents makes a simple but powerful bet: let the agent write Python code as its action mechanism instead of calling JSON tools. The `CodeAgent` class generates executable Python that manipulates variables, calls functions, and uses tools as first-class objects — resulting in more compositional, inspectable agent behavior than JSON tool-calling frameworks.
 
-Scored #1 on GAIA with CodeAgent (open-source division). Native HuggingFace Hub integration: any Hub-hosted model works out of the box. MCP client support. Minimal codebase (~1,000 lines of core) designed for modification, not configuration.
+[Scored #1 on GAIA with CodeAgent](https://huggingface.co/blog/beating-gaia) (open-source division). Native HuggingFace Hub integration: any Hub-hosted model works out of the box. MCP client support. Minimal codebase (~1,000 lines of core) designed for modification, not configuration.
 
 **Best for:** HuggingFace ecosystem users, agents that reason via code, research teams that want a lightweight, readable foundation to build on.
 

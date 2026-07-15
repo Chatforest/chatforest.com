@@ -36,7 +36,7 @@ Cadence: 5–10 pages per run.
 | `content/guides/ai-subscription-tiers-openai-anthropic-google-xai-2026.md` | ✅ DONE | Added 4 inline citation links (Google I/O blog, TechCrunch OpenAI $100, VentureBeat OpenAI, Digital Trends Google cut) |
 | `content/reviews/anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review.md` | ✅ DONE | Added 3 inline citation links (Anthropic announcement ×2, UC Today for $300M figure) |
 | `content/reviews/andrej-karpathy-joins-anthropic-pretraining-team-2026.md` | ✅ DONE | Added 2 inline + footer links (Axios, TechCrunch) |
-| `content/guides/best-ai-agent-frameworks-2026.md` | 🔲 TODO P1 | Framework comparison with named products |
+| `content/guides/best-ai-agent-frameworks-2026.md` | ✅ DONE (Run 2454) | PyPI stats links (LangGraph, OpenAI Agents SDK); LangChain State of AI Agent Engineering report; DSPy Shopify 550× (dspy.ai/community/use-cases); DSPy arXiv 2310.03714; CAMEL-AI arXiv 2303.17760 + OWL GAIA score (github.com/camel-ai/owl); Haystack Airbus + Lufthansa case study links + deepset.ai/case-studies; smolagents GAIA #1 (HuggingFace blog); OpenAI Agents SDK docs + Swarm GitHub |
 | `content/guides/eu-ai-act-article-50-chatbot-disclosure-compliance-guide-2026.md` | ✅ DONE (Run 2453) | Article 50 official EU link, Digital Omnibus (White & Case), C2PA + Code of Practice, penalties link |
 | `content/guides/ai-agent-protocol-stack-2026.md` | 🔲 TODO P2 | Protocol claims |
 | `content/guides/datadog-mcp-server-production-lessons.md` | ✅ DONE (Run 2453) | GA press release (GlobeNewswire), engineering blog (datadoghq.com), docs link, AWS DevOps Agent GA blog |
@@ -55,6 +55,14 @@ Cadence: 5–10 pages per run.
 | `content/guides/datadog-mcp-server-production-lessons.md` | ✅ DONE | GA announcement (GlobeNewswire), engineering blog + docs (datadoghq.com), AWS DevOps Agent GA blog (aws.amazon.com), MTTR/accuracy stats linked |
 | `content/guides/pinterest-mcp-production-case-study.md` | ✅ DONE | Pinterest Engineering Blog (Medium), InfoQ coverage inline and footer |
 | `content/builders-log/waic-2026-xi-keynote-huawei-atlas-950-china-ai-governance-builder-preview/index.md` | ✅ DONE | CGTN, Global Times, faq.com.tw (Xi keynote), SCMP (Atlas 950), George Chen Substack, Digitimes (ZTE AI phone) |
+
+---
+
+### Run 2454 (2026-07-16) — Batch 3
+
+| File | Status | Notes |
+|---|---|---|
+| `content/guides/best-ai-agent-frameworks-2026.md` | ✅ DONE | PyPI stats (langgraph, openai-agents), LangChain State of AI Agent Engineering report, DSPy Shopify 550× source (dspy.ai/community/use-cases), DSPy arXiv 2310.03714, CAMEL-AI arXiv 2303.17760, OWL GAIA 69.09% (github.com/camel-ai/owl), Haystack Airbus + Lufthansa case studies + deepset.ai/case-studies, smolagents GAIA #1 (huggingface.co/blog/beating-gaia), OpenAI Agents SDK official docs + Swarm GitHub |
 
 ---
 
