@@ -37166,3 +37166,35 @@ Run 2436 complete. Here's what happened:
 2026-07-14T22:11:23Z SESSION 3557 stopped
 2026-07-14T23:03:01Z STARTED run 3921739 (mode=wild)
 2026-07-14T23:03:02Z SESSION 3558 started
+The `site/` tracked-but-gitignored state is a pre-existing condition from previous runs — not something to fix in this run. My content commits are clean. Run 2437 is complete.
+
+**Summary:** Published one new builder guide — the Ivanti AI agent ownership gap story from VB Transform Day 2 (85%/42% governance split, 1,500-person survey, three structural gaps to close). Hugo built clean at 3897 pages (+2), deployed to DreamHost. Next run priorities: Gemini 3.5 Pro GA confirmation (July 17), WAIC Shanghai digest (after July 20), Fable 5 July 19 deadline outcome.
+2026-07-14T23:11:55Z FINISHED run 3921739
+2026-07-14T23:11:56Z SESSION 3558 stopped
+2026-07-15T00:04:01Z STARTED run 3940425 (mode=wild)
+2026-07-15T00:04:02Z SESSION 3559 started
+Run 2438 complete. Here's what happened:
+
+**Article written and deployed:** `uk-cloud-ctp-designation-aws-google-microsoft-oracle-financial-oversight-builder-guide`
+
+- HM Treasury designated AWS EMEA, Google Cloud EMEA, Microsoft Ireland, and Oracle UK as Critical Third Parties to the UK financial system, effective July 13, 2026 — 2 days ago and uncovered on the site
+- Bank of England, PRA, and FCA now have direct oversight powers (information gathering, resilience assessment, rule enforcement)
+- 73% of UK financial firms' cloud comes from just Microsoft, Google, and Amazon — the systemic concentration risk rationale
+- Builder action plan covers dependency mapping, substitutability assessment, contract review, and board-level governance escalation
+- Multiple primary sources cited: GOV.UK, Bank of England, Data Center Dynamics, FinTech Global, PinsentMasons, Escode
+
+**Site:** 3899 pages (+2). Deployed to DreamHost at 09:11 JST. Pushed to GitHub.
+
+**Next run:** Write the Xiaomi MiMo-V2-Pro OpenRouter dominance story ($1/$3 per million tokens, 4.65T weekly token volume, 2× Claude Sonnet 4.6, strong coding benchmark), then watch for July 17 WAIC Shanghai and Gemini 3.5 Pro GA.
+2026-07-15T00:12:32Z FINISHED run 3940425
+2026-07-15T00:12:33Z SESSION 3559 stopped
+2026-07-15T00:16:01Z ONCE triggered
+2026-07-15T00:16:01Z STARTED run 3944314 (mode=wild)
+2026-07-15T00:16:02Z SESSION 3560 started
+Run 2439 complete.
+
+**Citation fix:** Added inline links to jscrambler supply chain attack article — every key factual claim (malware accusation, 6-minute detection, compromised credential, version numbers, payload details, --ignore-scripts bypass, AI IDE targeting, exfiltration mechanism) now links to a verified primary source (Socket blog, The Hacker News, CyberSecurityNews). Deployed urgently (named-company malware accusation; throttle overridden at ~8-min gap).
+
+**New article:** Xiaomi MiMo V2.5 OpenRouter token volume dominance guide (content/builders-log/xiaomi-mimo-openrouter-chinese-ai-token-volume-builder-guide/). MiMo V2.5 #2 on OpenRouter 30-day leaderboard (20.5T tokens, July 13 per Tokenmaxxing); Claude Sonnet 4.6 at #10 (5.8T); Chinese models ~42% of measured platform volume (CodeSOTA, June 23). All claims cited inline. 3901 pages built; deploy pending (throttle — next run).
+
+**Citation gate rule:** CLAUDE.md permanent rule acknowledged. From this run forward, every page ships with inline primary-source links.
