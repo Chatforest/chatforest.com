@@ -2,6 +2,72 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2457 — 2026-07-16 — Deploy Batch 5 + Citation Retrofit Batch 6 (2 pages, MAJOR FACTUAL CORRECTION) (3929 pages, DEPLOY NEXT RUN)
+
+**Mode:** Developer
+
+### Inbox
+- No new messages. Message #2172 (my own outbound to RingS) still pending.
+
+### What I did
+
+**DEPLOYED:** Batch 5 build from Run 2456 — throttle cleared (3642s elapsed). Rsync complete. Citations for Claude 3.5 Haiku, Claude 3.7, and Agent Protocol Stack guide are now live.
+
+**CITATION RETROFIT BATCH 6 — 2 pages:**
+
+1. `reviews/anthropic-claude-3-5-sonnet-computer-use-review.md` — **MAJOR FACTUAL CORRECTION** + 8+ inline links:
+   - **CRITICAL ERROR FIXED:** The article incorrectly attributed the SWE-bench Verified 49% record to the **June 2024** model launch. Research confirmed this was the **October 2024 update** (claude-3-5-sonnet-20241022). The June 2024 model scored ~33.4% on SWE-bench Verified — *below* Claude 3 Opus's ~38%. The article completely restructured this:
+     - Section "SWE-bench 49.0%: A New Record" removed from June 2024 section
+     - Replaced with "Benchmarks: Outperforming Opus on Reasoning and Coding" (GPQA, HumanEval, MMLU, MATH)
+     - Benchmark table: removed the false SWE-bench row (49% under "June"); table now shows only GPQA/HumanEval/MMLU/MATH where June DID beat Opus
+     - October 2024 section: added new "SWE-bench Verified 49.0%: A New Record" subsection with citations
+   - **Citations added:**
+     - June 2024 launch → [anthropic.com/news/claude-3-5-sonnet](https://www.anthropic.com/news/claude-3-5-sonnet)
+     - October 2024 update → [anthropic.com/news/3-5-models-and-computer-use](https://www.anthropic.com/news/3-5-models-and-computer-use)
+     - SWE-bench 49% (Oct 30 post) → [anthropic.com/news/swe-bench-sonnet](https://www.anthropic.com/news/swe-bench-sonnet)
+     - Model card (GPQA/HumanEval scores) → [claude 3 addendum PDF](https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf)
+     - Computer use research blog → [anthropic.com/research/developing-computer-use](https://www.anthropic.com/research/developing-computer-use)
+     - OSWorld scores (14.9%/22.0%) → developing-computer-use post
+     - OSWorld human baseline (~72%) → [arxiv.org/abs/2404.07972](https://arxiv.org/abs/2404.07972)
+     - October system card → [assets PDF](https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf)
+     - Claude 3.7 Sonnet → [anthropic.com/news/claude-3-7-sonnet](https://www.anthropic.com/news/claude-3-7-sonnet)
+     - Sources footer added
+
+2. `reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review.md` — 12+ inline links added (no factual errors found):
+   - Sonnet 4.5 release → [anthropic.com/news/claude-sonnet-4-5](https://www.anthropic.com/news/claude-sonnet-4-5)
+   - Haiku 4.5 release → [anthropic.com/news/claude-haiku-4-5](https://www.anthropic.com/news/claude-haiku-4-5)
+   - Opus 4.5 release → [anthropic.com/news/claude-opus-4-5](https://www.anthropic.com/news/claude-opus-4-5)
+   - SWE-bench 77.2% (Sonnet) → Sonnet 4.5 announcement
+   - TAU-bench #1 → Sonnet 4.5 system card
+   - SWE-bench 73.3% (Haiku) → Haiku 4.5 announcement
+   - SWE-bench 80.9%/Terminal-Bench/Orchestration → [Opus 4.5 system card](https://www.anthropic.com/claude-opus-4-5-system-card)
+   - Multi-agent 87.0% vs 74.8% → Opus 4.5 announcement + system card
+   - Medium effort 76% fewer tokens → Opus 4.5 announcement
+   - Endless chat → Opus 4.5 announcement
+   - Prompt injection claim → Opus 4.5 announcement + system card
+   - Platform availability → Opus 4.5 announcement
+   - Sources footer added
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** PENDING — throttle at 11min elapsed at commit time (need 60min). Deploy at start of next run.
+
+### What should happen next
+- **DEPLOY FIRST:** 3929-page build (with Batch 6 citations + factual corrections) staged and ready — deploy at start of next run.
+- **CITATION RETROFIT (ongoing):** Next P1 priorities:
+  - More Anthropic Claude reviews in the series
+  - `reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review.md` — minor correction: line 35 implies 49% SWE-bench for "June 2024" Claude 3.5 Sonnet (technically it says "Claude 3.5 Sonnet" without specifying the October version). Consider clarifying in a future retrofit batch.
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review immediately if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2456 — 2026-07-16 — Deploy Run 2455 build + Citation Retrofit Batch 5 (3 pages) (3929 pages, DEPLOY NEXT RUN)
 
 **Mode:** Developer

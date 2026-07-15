@@ -1,10 +1,10 @@
 ---
 title: "Anthropic Claude 3.5 Sonnet Review — Computer Use, SWE-bench 49%, and the Model That Redefined the Sonnet Tier"
 date: 2026-05-14
-description: "Claude 3.5 Sonnet (June and October 2024) was the first Sonnet-tier model to outperform its predecessor's Opus on benchmarks — and the first publicly available model with computer use capability. At launch it set the SWE-bench record at 49.0%, unseating GPT-4o. The October 2024 update brought computer use (GUI automation), improved coding and instruction-following, and cemented Claude 3.5 Sonnet as the dominant coding LLM for most of late 2024."
-og_description: "Claude 3.5 Sonnet: June 2024 launch (SWE-bench 49%), October 2024 update (computer use beta, claude-3-5-sonnet-20241022), outperformed Claude 3 Opus at Sonnet pricing. $3/$15 per M tokens, 200K context. Rating 5/5."
+description: "Claude 3.5 Sonnet (June and October 2024) was the first Sonnet-tier model to outperform its predecessor's Opus on benchmarks — and the first publicly available model with computer use capability. The June 2024 launch outperformed Claude 3 Opus on reasoning and coding benchmarks at one-fifth the cost. The October 2024 update set the SWE-bench Verified record at 49.0% and introduced computer use (GUI automation), cementing Claude 3.5 Sonnet as the dominant coding LLM for most of late 2024."
+og_description: "Claude 3.5 Sonnet: June 2024 launch (GPQA 59.4%, HumanEval 92%, outperforms Claude 3 Opus), October 2024 update (SWE-bench Verified 49%, computer use beta, claude-3-5-sonnet-20241022). $3/$15 per M tokens, 200K context. Rating 5/5."
 content_type: "Review"
-card_description: "Claude 3.5 Sonnet launched June 20, 2024, setting a new SWE-bench record at 49.0% and outperforming Claude 3 Opus at roughly one-fifth the cost. The October 22, 2024 update introduced computer use — a public beta allowing the model to control a computer's graphical interface. This review covers both versions, the era they defined, and why Claude 3.5 Sonnet became the default model for serious coding work."
+card_description: "Claude 3.5 Sonnet's June 2024 launch outperformed Claude 3 Opus on reasoning, coding, and mathematics benchmarks at roughly one-fifth the cost. The October 22, 2024 update set a new SWE-bench Verified record at 49.0% — the first model to break 40% on that benchmark — and introduced computer use, a public beta for GUI automation. This review covers both versions, the era they defined, and why Claude 3.5 Sonnet became the default model for serious coding work."
 last_refreshed: 2026-05-14
 tags: ["llm", "anthropic", "claude", "computer-use", "coding", "swe-bench", "api", "agentic"]
 categories: ["reviews"]
@@ -16,7 +16,7 @@ author: "ChatForest"
 
 ---
 
-**At a glance:** Claude 3.5 Sonnet — two versions, one era. The June 2024 release (`claude-3-5-sonnet-20240620`) set a new SWE-bench record and outperformed Claude 3 Opus at a fraction of the cost. The October 2024 release (`claude-3-5-sonnet-20241022`) added computer use, improved coding, and became the default model in Claude.ai. Both versions priced at $3/$15 per million tokens with 200K context windows. Part of our **[AI Companies & Models category](/categories/ai-tools/)** and our broader **[Anthropic Claude review series](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**. The November 2024 companion: **[Claude 3.5 Haiku review](/reviews/anthropic-claude-3-5-haiku-review/)** (SWE-bench 40.6%, beats Opus at Haiku pricing).
+**At a glance:** Claude 3.5 Sonnet — two versions, one era. The [June 2024 release](https://www.anthropic.com/news/claude-3-5-sonnet) (`claude-3-5-sonnet-20240620`) outperformed Claude 3 Opus on reasoning, coding, and mathematics benchmarks at a fraction of the cost. The [October 2024 release](https://www.anthropic.com/news/3-5-models-and-computer-use) (`claude-3-5-sonnet-20241022`) set the SWE-bench Verified record at 49%, added computer use, and became the default model in Claude.ai. Both versions priced at $3/$15 per million tokens with 200K context windows. Part of our **[AI Companies & Models category](/categories/ai-tools/)** and our broader **[Anthropic Claude review series](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**. The November 2024 companion: **[Claude 3.5 Haiku review](/reviews/anthropic-claude-3-5-haiku-review/)** (SWE-bench 40.6%, beats Opus at Haiku pricing).
 
 ---
 
@@ -24,7 +24,7 @@ When Anthropic launched Claude 3 in March 2024, they established a three-tier na
 
 Claude 3.5 Sonnet broke that hierarchy on the day it shipped.
 
-The June 20, 2024 release positioned a **Sonnet-tier model** above Claude 3 Opus on the benchmarks that mattered most to developers — including the coding benchmark (SWE-bench) that Anthropic had been quietly dominating. At roughly one-fifth the cost of Opus, with faster inference and the same 200K context window, Claude 3.5 Sonnet gave Anthropic a single-model argument that was extremely difficult to counter: better than our own best, at the price of our middle tier.
+The [June 2024 launch](https://www.anthropic.com/news/claude-3-5-sonnet) positioned a **Sonnet-tier model** above Claude 3 Opus on the benchmarks that mattered most to developers — reasoning (GPQA Diamond), mathematical problem-solving (MATH), and code generation (HumanEval). At roughly one-fifth the cost of Opus, with faster inference and the same 200K context window, Claude 3.5 Sonnet gave Anthropic a single-model argument that was extremely difficult to counter: better than our own best, at the price of our middle tier.
 
 By late 2024, developers running agentic coding workloads had largely moved to Claude 3.5 Sonnet. The October update deepened that lead — and added something no mainstream model had offered before.
 
@@ -32,35 +32,28 @@ By late 2024, developers running agentic coding workloads had largely moved to C
 
 ## The June 2024 Release: Tier Compression
 
-**Released: June 20, 2024. Model ID: `claude-3-5-sonnet-20240620`.**
+**Released: [June 2024](https://www.anthropic.com/news/claude-3-5-sonnet). Model ID: `claude-3-5-sonnet-20240620`.**
 
-### SWE-bench 49.0%: A New Record
+### Benchmarks: Outperforming Opus on Reasoning and Coding
 
-The benchmark that dominated the June 2024 coverage was SWE-bench Verified — the test where a model must resolve real GitHub issues from open-source Python repositories and produce a code patch that passes the associated test suite. Human software engineers resolve roughly 25-30% of the same issues.
+The benchmarks that defined the June 2024 launch were GPQA Diamond (graduate-level science reasoning), HumanEval (code generation), MMLU (general knowledge), and MATH (competition mathematics). Across all of them, the June 2024 Claude 3.5 Sonnet outperformed Claude 3 Opus, according to [Anthropic's Claude 3 model card addendum](https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf).
 
-At Claude 3.5 Sonnet's June 2024 launch: **49.0%** on SWE-bench Verified. For context:
+SWE-bench Verified — the benchmark for real GitHub issue resolution — was introduced in August 2024. When tested retroactively on SWE-bench Verified, the June 2024 Claude 3.5 Sonnet scored approximately 33%, just below Claude 3 Opus's ~38%. The SWE-bench Verified record would come with the October 2024 update; see that section below.
 
-- Claude 3 Opus: ~38%
-- GPT-4o (May 2024): ~33%
-- The previous SWE-bench leader: ~43% (various)
-
-The 49% score used Anthropic's internal scaffolding setup with tool use enabled — consistent with how SWE-bench is evaluated across the field. Raw single-pass generation scores are lower; the scaffolded scores reflect real agentic capability.
-
-For developers already using Claude for code review, refactoring, and debugging, the practical effect was immediate: tasks that previously required routing to Claude 3 Opus could now be handled by Sonnet at 20% of the price, with better results on coding tasks.
+For developers already using Claude for code review, refactoring, and debugging, the practical effect was immediate: tasks that previously required routing to Claude 3 Opus could now be handled by Sonnet at 20% of the price, with better results on most reasoning and coding tasks.
 
 ### Outperforming Opus
 
-The June 2024 Claude 3.5 Sonnet was not Opus-equivalent. It was **Opus-exceeding** on the benchmarks developers cared about:
+The June 2024 Claude 3.5 Sonnet was not Opus-equivalent. It was **Opus-exceeding** on the benchmarks developers cared about ([source: Claude 3 model card addendum](https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf)):
 
-| Benchmark | Claude 3 Opus | Claude 3.5 Sonnet (June) |
-|-----------|--------------|--------------------------|
-| SWE-bench Verified | ~38% | 49.0% |
+| Benchmark | Claude 3 Opus | Claude 3.5 Sonnet (June 2024) |
+|-----------|--------------|-------------------------------|
 | GPQA Diamond | 50.4% | 59.4% |
 | HumanEval | 84.9% | 92.0% |
 | MMLU | 86.8% | 88.7% |
 | MATH | 60.1% | 71.1% |
 
-Across reasoning (GPQA), coding (HumanEval, SWE-bench), mathematics (MATH), and general knowledge (MMLU), the Sonnet tier had passed the Opus tier. This had not happened before in Anthropic's lineup.
+Across reasoning (GPQA), code generation (HumanEval), mathematics (MATH), and general knowledge (MMLU), the Sonnet tier had passed the Opus tier. This had not happened before in Anthropic's lineup.
 
 ### What Didn't Change
 
@@ -86,16 +79,27 @@ The one consistent critique: Claude 3.5 Sonnet's **writing voice** felt more con
 
 ## The October 2024 Update: Computer Use
 
-**Released: October 22, 2024. Model ID: `claude-3-5-sonnet-20241022`.**
+**Released: [October 22, 2024](https://www.anthropic.com/news/3-5-models-and-computer-use). Model ID: `claude-3-5-sonnet-20241022`.**
 
-The October update did two things:
+The October update brought three significant changes:
 
-1. **Improved the core model** — better instruction-following, improved coding on real-world tasks, less likely to truncate outputs in agentic contexts.
-2. **Added computer use** — the capability that defined the model's historical significance.
+1. **Set the SWE-bench Verified record** — [49.0% on SWE-bench Verified](https://www.anthropic.com/news/swe-bench-sonnet), up from ~33% on the June model and above Claude 3 Opus's ~38%, making it the highest score of any model at that time.
+2. **Improved the core model** — better instruction-following, improved coding on real-world tasks, less likely to truncate outputs in agentic contexts.
+3. **Added computer use** — the capability that defined the model's historical significance.
+
+### SWE-bench Verified 49.0%: A New Record
+
+[Anthropic's October 30, 2024 post](https://www.anthropic.com/news/swe-bench-sonnet) documented the achievement: **49.0% on SWE-bench Verified**, the highest score of any model at that time. For context:
+
+- Claude 3 Opus: ~38%
+- June 2024 Claude 3.5 Sonnet: ~33%
+- GPT-4o: ~33%
+
+The score used Anthropic's internal scaffolding setup with tool use enabled — consistent with how SWE-bench Verified is evaluated across the field. Raw single-pass generation scores are lower; the scaffolded scores reflect real agentic capability.
 
 ### Computer Use: What It Actually Is
 
-Computer use is Anthropic's name for the capability that lets Claude control a computer's graphical interface — moving a mouse, clicking buttons, typing into text fields, reading what's displayed on screen, and taking sequences of actions across applications.
+[Computer use](https://www.anthropic.com/research/developing-computer-use) is Anthropic's name for the capability that lets Claude control a computer's graphical interface — moving a mouse, clicking buttons, typing into text fields, reading what's displayed on screen, and taking sequences of actions across applications.
 
 The technical mechanism: Claude receives **screenshots** of the current screen state as image inputs, then outputs structured **tool calls** specifying what action to take next:
 
@@ -130,7 +134,7 @@ In Anthropic's own demonstrations and in early user experiments, computer use ha
 
 ### What Computer Use Couldn't Do (Well)
 
-Anthropic was transparent about the October 2024 limitations. The system card and the launch blog explicitly described it as a **public beta** — usable but not production-grade for autonomous workflows:
+Anthropic was transparent about the October 2024 limitations. The [system card](https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf) and the [launch blog](https://www.anthropic.com/news/3-5-models-and-computer-use) explicitly described it as a **public beta** — usable but not production-grade for autonomous workflows:
 
 - **Scroll reliability:** Scrolling through long pages or documents was unreliable; the model would sometimes lose track of position.
 - **Precise click targets:** Small buttons, icons, and close-together controls had higher error rates. Pixel-level accuracy was not consistent.
@@ -138,7 +142,7 @@ Anthropic was transparent about the October 2024 limitations. The system card an
 - **Verification:** The model could not always confirm whether an action had the intended effect, leading to loops.
 - **Safe defaults:** Anthropic's guidelines instructed the model to pause and ask for human confirmation before irreversible actions (form submissions, file deletions, purchases). This was the right call for safety but reduced automation value.
 
-Performance on OSWorld — a benchmark for GUI agent tasks — was in the range of 14-22% depending on task category. For context, human performance on OSWorld tasks is ~70-75%. Computer use was clearly capable of useful work, but it was far from replacing a human at the keyboard.
+Performance on [OSWorld](https://arxiv.org/abs/2404.07972) — a benchmark for GUI agent tasks — was [in the range of 14–22%](https://www.anthropic.com/research/developing-computer-use) depending on task category (14.9% screenshot-only, 22.0% with additional steps). For context, [human performance on OSWorld tasks is ~72%](https://arxiv.org/abs/2404.07972). Computer use was clearly capable of useful work, but it was far from replacing a human at the keyboard.
 
 ### Why It Mattered Anyway
 
@@ -146,7 +150,7 @@ The benchmark performance gap — ~20% model vs ~72% human — understates the s
 
 Before October 22, 2024, there was no publicly accessible API from a major AI lab that let you hand control of a computer to a language model. OpenAI had not shipped it. Google had not shipped it. Various startups had built specialized GUI agents, but not with a frontier model exposed through a standard API.
 
-Anthropic shipped it — and made it available to any developer with API access on the same day it launched. The anthropological moment was: **this capability is now broadly available**. Whatever the current success rate, the trajectory from 20% to higher was only a matter of time and iteration. Developers who wanted to build computer-controlling agents could start building.
+[Anthropic shipped it](https://www.anthropic.com/news/3-5-models-and-computer-use) — and made it available to any developer with API access on the same day it launched. The anthropological moment was: **this capability is now broadly available**. Whatever the current success rate, the trajectory from 20% to higher was only a matter of time and iteration. Developers who wanted to build computer-controlling agents could start building.
 
 The second reason it mattered: it established **what computer use actually is** in technical terms. The screenshot-action loop, the structured tool calls, the agentic scaffolding — these became the reference implementation that everyone else built on or against. When OpenAI later shipped similar capabilities, the comparisons were made against Claude's design.
 
@@ -154,7 +158,7 @@ The second reason it mattered: it established **what computer use actually is** 
 
 ## Pricing and Access
 
-Both the June and October versions of Claude 3.5 Sonnet were priced identically:
+Both the June and October versions of Claude 3.5 Sonnet were [priced identically](https://www.anthropic.com/news/claude-3-5-sonnet):
 
 - **Input:** $3.00 per million tokens
 - **Output:** $15.00 per million tokens
@@ -184,13 +188,13 @@ The competitive landscape summary for fall 2024: Claude 3.5 Sonnet was the stron
 
 ## Transition to Claude 3.7 and Beyond
 
-The Claude 3.5 Sonnet era — roughly June 2024 through early 2025 — ended when Claude 3.7 Sonnet launched on February 24, 2025.
+The Claude 3.5 Sonnet era — roughly June 2024 through early 2025 — ended when [Claude 3.7 Sonnet launched on February 24, 2025](https://www.anthropic.com/news/claude-3-7-sonnet).
 
 Claude 3.7 Sonnet's SWE-bench score of **62.3%** was a substantial leap from 3.5 Sonnet's 49%. The extended thinking capability addressed a different class of problem than standard generation. For most coding use cases, 3.7 Sonnet was the right upgrade.
 
 However, Claude 3.5 Sonnet remained available via API after the 3.7 launch. The October 2024 version (`claude-3-5-sonnet-20241022`) continued to be used in production by applications that had been built and optimized around it. Anthropic's model versioning approach — keeping specific versions accessible via dated model IDs — meant teams could stay on a known model rather than being forced to upgrade.
 
-**Also in November 2024:** Anthropic released **Claude 3.5 Haiku** (`claude-3-5-haiku-20241022`), completing the 3.5 tier. Claude 3.5 Haiku was notable for matching or exceeding Claude 3 Opus performance on many tasks at Haiku pricing — another example of the tier compression pattern 3.5 Sonnet had established.
+**Also in November 2024:** Anthropic released **[Claude 3.5 Haiku](https://www.anthropic.com/news/3-5-models-and-computer-use)** (`claude-3-5-haiku-20241022`), completing the 3.5 tier. Claude 3.5 Haiku was notable for matching or exceeding Claude 3 Opus performance on many tasks at Haiku pricing — another example of the tier compression pattern 3.5 Sonnet had established.
 
 ---
 
@@ -221,6 +225,17 @@ Claude 3.5 Sonnet earns a 5/5 as a historically significant model release that p
 The limitations (computer use reliability in October 2024, writing voice compared to Opus, 200K rather than 1M context) are real but do not diminish the model's significance within its time. Measured against what it needed to be when it launched, Claude 3.5 Sonnet delivered.
 
 ---
+
+## Sources
+
+- [Anthropic: Claude 3.5 Sonnet announcement (June 2024)](https://www.anthropic.com/news/claude-3-5-sonnet) — launch post, pricing, initial benchmarks
+- [Anthropic: Claude 3.5 models and computer use (October 22, 2024)](https://www.anthropic.com/news/3-5-models-and-computer-use) — October update announcement, computer use launch
+- [Anthropic: Claude 3 model card addendum](https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf) — GPQA, HumanEval, MMLU, MATH benchmark scores
+- [Anthropic: Claude 3.5 Sonnet SWE-bench Verified 49% (October 30, 2024)](https://www.anthropic.com/news/swe-bench-sonnet) — SWE-bench Verified record, old vs new model comparison
+- [Anthropic: Developing computer use (research blog)](https://www.anthropic.com/research/developing-computer-use) — OSWorld scores (14.9% screenshot-only, 22.0% with additional steps), human baseline
+- [Anthropic: October 2024 system card addendum](https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf) — safety evaluation, computer use limitations
+- [OSWorld paper (NeurIPS 2024, arXiv:2404.07972)](https://arxiv.org/abs/2404.07972) — human performance baseline (~72.36% on GUI tasks)
+- [Anthropic: Claude 3.7 Sonnet announcement (February 24, 2025)](https://www.anthropic.com/news/claude-3-7-sonnet) — successor model, SWE-bench 62.3%
 
 ## See Also
 
