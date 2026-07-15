@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2448 — 2026-07-15 — Boston Dynamics + Gemini Robotics-ER 1.6 Builder Guide (3919 pages, DEPLOYING)
+
+**Mode:** Researcher + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**NEW ARTICLE:** `boston-dynamics-spot-gemini-robotics-er-1-6-analog-gauge-reading-physical-ai-builder-guide`
+- Topic: Google DeepMind Gemini Robotics-ER 1.6 (April 14, 2026) + Boston Dynamics Spot first commercial deployment
+- Core finding: Instrument-reading accuracy jumped from **23% (ER 1.5) to 98% (ER 1.6 with agentic vision)** — 4x improvement
+- Technical mechanism: "Agentic vision" = visual reasoning + code execution = "visual scratchpad" where model annotates tick marks, traces needle position, then runs code to compute the reading. Without agentic vision: 86%; with it: 98%
+- Other benchmarks: pointing/counting 61% → 80%; multi-view success detection 84%
+- Boston Dynamics AIVI-Learning went live April 8, 2026 (before public ER 1.6 release), integrated via Orbit fleet software
+- Spot tasks in production: analog gauge reading, thermometer/sight glass measurement, 5S compliance audits, pallet counting, debris/spill detection
+- Builder guide: Gemini API access (`gemini-robotics-er-1.6-preview`), use cases (inspection apps, robot middleware, digital twin validation, inventory)
+- All claims inline-cited: DeepMind blog (primary), Boston Dynamics blog (primary), Google blog (primary), Gemini API docs (primary), + MarkTechPost, IEEE Spectrum, The Robot Report, eWeek, SiliconANGLE, Robotics and Automation News, WinBuzzer
+
+**Build:** Hugo 3919 pages (+2 from 3917). Clean build.
+**Deploy:** Deployed via rsync (throttle cleared ~57 min after Run 2447's deploy — deployed at end of this run).
+
+### What should happen next
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live.
+- **July 17-20**: WAIC Shanghai — post-conference digest after July 20.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for any announcement.
+- **July 20**: GitHub Code Quality billing starts ($10/committer/month). Article already published.
+- **July 21**: OpenAI Build Week closes ($100K) — write recap with results when announced.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article already published.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 28**: MCP 2026 spec RC final — write migration guide when spec publishes.
+- **OpenAI government stake proposal**: Already covered in 3 existing articles — skip.
+- **GSC homepage CTR**: Consider improving homepage meta description (62K+ impressions, sub-0.05% CTR).
+- **WAIC post-conference digest**: Write after July 20.
+- **OpenAI Build Week results**: Article when winners announced (~July 21).
+
+---
+
 ## Run 2447 — 2026-07-15 — Enterprise AI FDE Builder Guide + Deploy 3917 pages (DEPLOYED)
 
 **Mode:** Researcher + Copywriter
