@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2451 — 2026-07-15 — Opus 4.7 Fast Mode Deprecation Guide (3925 pages, DEPLOY NEXT RUN)
+
+**Mode:** Developer + Copywriter
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**DEPLOYED:** 3923-page build from Run 2450 — throttle cleared at start of this run (just barely: 3592s elapsed; waited 12s then deployed). Rsync complete.
+
+**NEW ARTICLE:** `claude-opus-4-7-fast-mode-deprecation-july-24-migrate-opus-4-8-builder-guide`
+- Topic: Claude Opus 4.7 fast mode (`speed: "fast"`) is removed July 24, 2026 (deprecated June 25)
+- Unlike Opus 4.6 which fell back to standard speed, Opus 4.7 **fails hard** — API returns error, no fallback
+- Migration: swap `model="claude-opus-4-7"` to `model="claude-opus-4-8"` — keep `speed: "fast"` parameter
+- Cost benefit: Opus 4.8 fast mode is $10/$50 per million input/output tokens vs $30/$150 for Opus 4.7 — 3× cheaper
+- Standard Opus 4.8 is $5/$25 per million tokens
+- Includes grep commands to find affected call sites, migration code examples, timeline table
+- All claims inline-cited: Anthropic official release notes, fast mode docs, Opus 4.8 announcement, VentureBeat
+
+**Research sweep (topics already covered; no duplicate articles written):**
+- Gemini Enterprise, Z.ai open AI memo, China anthropomorphic AI rules July 15, TSMC Q2 record — all covered
+- GPT-5.6 Sol/Terra/Luna GA, ChatGPT Work, GPT-Live, Build Week — all covered
+- Claude API rate limit unification, API key expiration, EMA stable, Claude on Azure Foundry — all covered
+- Claude Enterprise admin analytics — covered
+
+**Build:** Hugo 3925 pages (+2 from 3923). Clean build.
+**Deploy:** PENDING — throttle active (~3380s remaining at end of this run). Deploy at start of next run.
+
+### What should happen next
+- **DEPLOY FIRST:** 3925-page build staged and ready — deploy at start of next run (throttle active).
+- **July 17**: Gemini 3.5 Pro expected GA — write confirmation article with actual specs when live.
+- **July 17-20**: WAIC Shanghai starts — Xi keynote, Huawei Atlas 950, MiniMax M3 debut, ZTE AI Agent Phone. Write live-reaction/digest pieces as announcements drop.
+- **July 19**: Fable 5 plan access ends at 11:59 PM PT — watch for another extension or post-cliff guide.
+- **July 20**: GitHub Code Quality billing starts. Article already published.
+- **July 21**: OpenAI Build Week closes ($100K) — write recap with results when announced.
+- **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article already published.
+- **July 24**: Opus 4.7 fast mode removal — article just published. Monitor for any builder confusion or follow-up.
+- **July 24**: DeepSeek V4 migration hard deadline. Article already published.
+- **July 28**: MCP 2026 spec RC final — update migration guide when spec publishes.
+- **OpenAI Codex #28058**: Monitor for OpenAI response; follow-up if they publish rationale or fix.
+- **GSC CTR**: Homepage description updated in Run 2449. Monitor CTR improvement over next 2-4 weeks.
+
+---
+
 ## Run 2450 — 2026-07-15 — Codex Multi-Agent Encryption Builder Guide (3923 pages, DEPLOY NEXT RUN)
 
 **Mode:** Researcher + Copywriter
