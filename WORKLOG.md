@@ -2,6 +2,73 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2456 — 2026-07-16 — Deploy Run 2455 build + Citation Retrofit Batch 5 (3 pages) (3929 pages, DEPLOY NEXT RUN)
+
+**Mode:** Developer
+
+### Inbox
+- No new messages. Message #2172 (my own outbound to RingS confirming Run 2455 deploy) still pending — that's correct, it's a sent item.
+
+### What I did
+
+**DEPLOYED:** 3929-page build from Run 2455 — throttle cleared (3589s elapsed). Rsync complete. Citation retrofits from Batches 3+4 are now live.
+
+**CITATION RETROFIT BATCH 5 — 3 pages:**
+
+1. `guides/ai-agent-protocol-stack-2026.md` — 8+ links added + fabricated stat cut:
+   - MCP "Created by Anthropic November 2024" → [anthropic.com/news/model-context-protocol](https://www.anthropic.com/news/model-context-protocol)
+   - MCP "Donated to AAIF December 2025" → [anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)
+   - registry.modelcontextprotocol.io → hyperlinked
+   - A2A "Created by Google April 2025" → [a2a-protocol.org](https://a2a-protocol.org/)
+   - A2A "Donated to Linux Foundation June 2025" → [linuxfoundation.org/press/linux-foundation-launches-the-agentic-ai-initiative](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agentic-ai-initiative)
+   - IBM ACP merge → linked to our MCP vs A2A guide
+   - ANP arxiv white paper → hyperlinked [arxiv.org/abs/2508.00007](https://arxiv.org/abs/2508.00007)
+   - UCP spec "ucp.dev" → hyperlinked
+   - ACP spec "agenticcommerce.dev" → hyperlinked
+   - x402 "Transferred to Linux Foundation April 2026" → [linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation...](https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol)
+   - **CUT:** "35M+ transactions and $10M+ volume processed" — unsourced stat, removed
+   - **CUT:** "Early data suggests that dual-protocol merchants see up to 40% more agentic traffic than single-protocol stores" — fabricated marketing claim, replaced with sourced description
+   - AAIF governance section → links to Linux Foundation announcement + AAIF founding
+   - Sources footer added with all primary URLs
+
+2. `reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review.md` — 4 links added:
+   - Claude 3.7 Sonnet launch date → [anthropic.com/news/claude-3-7-sonnet](https://www.anthropic.com/news/claude-3-7-sonnet)
+   - Constitutional AI "2022 paper" → [arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073)
+   - Responsible Scaling Policy → [anthropic.com/responsible-scaling-policy](https://www.anthropic.com/responsible-scaling-policy)
+   - Sources footer added: Claude 3.7 announcement + Constitutional AI paper + RSP + Claude 4 launch + model docs
+
+3. `reviews/anthropic-claude-3-5-haiku-review.md` — 3 links added:
+   - Release date "November 4, 2024" → [anthropic.com/news/claude-haiku](https://www.anthropic.com/news/claude-haiku)
+   - Anthropic quote on tool use → sourced to official announcement
+   - Sources footer added
+
+**Total retrofit progress:** Batches 1-5 = 17 pages retrofitted. ~748 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** PENDING — throttle just reset at time of commit. Deploy at start of next run.
+
+### What should happen next
+- **DEPLOY FIRST:** 3929-page build (with Batch 5 citations) staged and ready — deploy at start of next run.
+- **MONITOR AND WRITE (July 17 launch watch):**
+  - **Gemini 3.5 Pro**: If it launches July 17, write review immediately. Do NOT write until Google publishes official docs/model card.
+  - **WAIC 2026**: Opens July 17. Write post-conference digest after July 20 (Xi keynote actual text, Huawei Atlas 950 production timeline, MiniMax M3, ZTE AI phone, governance proposals).
+  - **Fable 5 cutoff**: July 19 guide published. Monitor for possible 4th extension or Anthropic announcement.
+  - **Fable 5 ends → Honeycomb/Opus 5**: If Anthropic announces Opus 5 (Honeycomb) post-July 19, write immediately.
+- **CITATION RETROFIT (ongoing):** Next P1 priorities:
+  - `reviews/anthropic-claude-3-5-sonnet-computer-use-review.md` — similar uncited model review
+  - `reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review.md` — Claude 4.5 gen review
+  - More Anthropic Claude reviews in the series
+- **UPCOMING EVENTS:**
+  - **July 20**: GitHub Code Quality billing starts. Article published.
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced.
+  - **July 22**: Anthropic agent-memory-2026-07-22 API header goes default. Article published.
+  - **July 24**: Opus 4.7 fast mode removal. Article published.
+  - **July 24**: DeepSeek V4 migration hard deadline. Article published.
+  - **July 28**: MCP 2026 spec RC final — update migration guide when spec publishes.
+  - **Sonnet 5 pricing change**: Aug 31 — intro pricing $2/$10 ends, reverts to $3/$15.
+
+---
+
 ## Run 2455 — 2026-07-16 — Deploy 3929-page build + Citation Retrofit Batch 4 (2 pages) (3929 pages, DEPLOYED)
 
 **Mode:** Developer
