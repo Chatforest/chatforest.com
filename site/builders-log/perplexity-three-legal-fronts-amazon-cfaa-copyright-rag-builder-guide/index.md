@@ -13,11 +13,11 @@ Here is what each front actually involves, what's at stake, and what builders sh
 
 This is the most consequential case for builders shipping AI agents in 2026. It goes beyond copyright into criminal and civil computer access law.
 
-**What happened:** Perplexity's Comet browser agent logs into a user's Amazon account using credentials the user provides, browses products, and completes purchases on the user's behalf. Amazon sued under the Computer Fraud and Abuse Act (CFAA), arguing this constitutes unauthorized access to Amazon's systems — even though the user gave explicit permission.
+**What happened:** Perplexity's Comet browser agent logs into a user's Amazon account using credentials the user provides, browses products, and completes purchases on the user's behalf. [Amazon sued under the Computer Fraud and Abuse Act (CFAA)](https://www.courtlistener.com/docket/71874820/amazoncom-services-llc-v-perplexity-ai-inc/), arguing this constitutes unauthorized access to Amazon's systems — even though the user gave explicit permission. ([IAPP analysis](https://iapp.org/news/a/amazon-perplexity-dispute-raises-questions-over-ai-agent-liability))
 
 **The court's initial ruling:** In March 2026, U.S. District Judge Maxine Chesney issued a preliminary injunction blocking Comet from Amazon's logged-in pages. The key language: Comet accessed Amazon accounts "with the Amazon user's permission, but without authorization by Amazon."
 
-The Ninth Circuit paused the injunction pending Perplexity's appeal. **Oral arguments are scheduled for June 11, 2026, in Seattle.**
+The Ninth Circuit paused the injunction pending Perplexity's appeal. **[Oral arguments are scheduled for June 11, 2026, in Seattle.](https://everything-pr.com/amazon-v-perplexity-ninth-circuit-oral-arguments-june-11-2026)**
 
 **The builder question this establishes:** Is user authorization sufficient for an AI agent to access a website? Or does each website independently control whether any agent — even one explicitly directed by a legitimate user — is allowed to act?
 

@@ -3,7 +3,7 @@
 > Qwen 3.7 Max launched May 20, 2026 with a 1M-token context window, native extended thinking, SWE-Pro and Terminal-Bench scores above Claude Opus 4.6, and a drop-in Anthropic-compatible API — at $2.50 per million tokens. The caveats matter too. Here is the full picture for builders.
 
 
-On May 20, 2026, Alibaba launched Qwen 3.7 Max at the Alibaba Cloud Summit — though the commercial API was already live on DashScope one day earlier. The headline: on the benchmarks that matter most for agent workloads, it outscores Claude Opus 4.6. It also supports the Anthropic API protocol natively, meaning builders using Anthropic-compatible harnesses can swap it in without rewriting client code.
+On May 20, 2026, Alibaba [launched Qwen 3.7 Max](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154) at the Alibaba Cloud Summit — though the commercial API was already live on DashScope one day earlier. The headline: on [the benchmarks that matter most for agent workloads](https://www.marktechpost.com/2026/05/21/qwen-introduces-qwen3-7-max-a-reasoning-agent-model-with-a-1m-token-context-window/), it outscores Claude Opus 4.6. It also supports the Anthropic API protocol natively, meaning builders using Anthropic-compatible harnesses can swap it in without rewriting client code.
 
 The full picture is more nuanced. Qwen 3.7 Max is proprietary and hosted only in Alibaba's cloud. There are no open weights. There are data residency considerations for enterprises. And DeepSeek V4 Pro competes on many of the same tasks at one-sixth the cost.
 

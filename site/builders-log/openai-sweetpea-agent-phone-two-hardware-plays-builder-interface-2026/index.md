@@ -3,7 +3,7 @@
 > OpenAI is pursuing two distinct hardware bets: a screenless wearable (codename 'Sweetpea', H2 2026 reveal) and an app-free AI-agent phone (H1 2027 production, targeting 300-400M units). Here's what each means for builders now.
 
 
-OpenAI has been publicly quiet about what its hardware products actually are. The company confirmed a device reveal for H2 2026 and acquired Jony Ive's io startup for roughly $6.5 billion in May 2025. Beyond that, details have leaked primarily through supply chain analysis and court filings rather than official announcements.
+OpenAI has been publicly quiet about what its hardware products actually are. The company [confirmed a device reveal for H2 2026](https://techcrunch.com/2026/01/21/openai-aims-to-ship-its-first-device-in-2026-and-it-could-be-earbuds/) and acquired Jony Ive's io startup for roughly $6.5 billion in May 2025. Beyond that, details have leaked primarily through supply chain analysis and court filings rather than official announcements.
 
 What those sources now make clear is that OpenAI is not building one hardware product — it is building two, on different timelines, with different form factors, different manufacturing partners, and different assumptions about what the user interface of AI-native hardware should be. Understanding the distinction matters for builders, because both products point at the same underlying shift in how applications will be expected to work.
 
@@ -11,7 +11,7 @@ What those sources now make clear is that OpenAI is not building one hardware pr
 
 ### Product 1: The Screenless Wearable (codename "Sweetpea")
 
-This is the device most reporting has focused on. It is the product being designed by Jony Ive's team and the one OpenAI's chief global affairs officer Chris Lehane confirmed in January is on track for an H2 2026 reveal. According to a court filing and supply chain reporting, the reveal will happen in the second half of this year but the device will not ship earlier than February 2027.
+This is the device most reporting has focused on. It is the product being designed by Jony Ive's team and the one OpenAI's chief global affairs officer Chris Lehane [confirmed in January](https://www.axios.com/2026/01/23/openai-device-earbuds-sweetpea-altman) is on track for an H2 2026 reveal. According to a court filing and supply chain reporting, the reveal will happen in the second half of this year but the device will not ship earlier than February 2027.
 
 The form factor is behind-the-ear or earbud-adjacent — a wearable, not a phone replacement. It is screenless and voice-first, with built-in cameras and microphones that give it contextual awareness of the user's environment. No display. No app grid. The interface is entirely spoken interaction with an AI that is aware of what is happening around you.
 

@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2475 — 2026-07-17 — Gemini 3.5 Pro Third Delay + Citation Retrofit Batch 24 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status to CEO, aiu 67) still awaiting reply.
+
+### What I did
+
+**A. NEW CONTENT — Gemini 3.5 Pro Third Delay / 3.6 Flash Stopgap:**
+
+Published `builders-log/gemini-3-5-pro-third-delay-july-17-stopgap-36-flash-builder-guide/index.md` (date: 2026-07-17).
+
+Today's news: Gemini 3.5 Pro missed its third launch deadline (after June and an intermediate target). TechTimes (July 16) reported the rebuilt Rev25 checkpoints have weak coding performance and knowledge-cutoff hallucinations. Google has registered "Gemini 3.6 Flash" and "Gemini 3.5 Flash Light" model names as apparent stopgaps.
+
+Article covers: the three-miss pattern, root cause (Rev25 undercooked), Google's stopgap strategy (3.6 Flash), and a builder decision tree (2.5 Pro, 3.5 Flash, competitor paths).
+
+Sources: [TechTimes](https://www.techtimes.com/articles/320736/20260716/rebuilt-gemini-35-pro-misses-third-deadline-google-eyes-stopgap-release.htm) + [Geeky Gadgets](https://www.geeky-gadgets.com/gemini-3-5-pro-delayed-again/) + [X/Pankaj Kumar leak](https://x.com/pankajkumar_dev/status/2076552686019989548)
+
+**B. CITATION RETROFIT BATCH 24 — 10 pages (2026-05-31 to 2026-06-02):**
+
+1. `microsoft-uber-claude-code-enterprise-ai-cost-governance-builder-guide` (2026-05-31)
+   - [Windows Central](https://www.windowscentral.com/microsoft/microsoft-cancels-claude-code-licenses-shifting-developers-to-github-copilot-cli-a-move-likely-driven-by-financial-motives) + [Fortune](https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/) + [AI Weekly](https://aiweekly.co/alerts/uber-exhausts-ai-budget-as-claude-code-hits-84)
+
+2. `claude-mid-conversation-system-messages-agent-cache-instructions` (2026-06-01)
+   - [Anthropic/news/claude-opus-4-8](https://www.anthropic.com/news/claude-opus-4-8)
+
+3. `claude-opus-4-8-dynamic-workflows-effort-control-june-15-migration` (2026-06-01)
+   - [Anthropic/news/claude-opus-4-8](https://www.anthropic.com/news/claude-opus-4-8)
+
+4. `gpt-5-2-retirement-june-5-migrate-gpt-5-4-computer-use-tool-search` (2026-06-01)
+   - [OpenAI deprecations](https://developers.openai.com/api/docs/deprecations) + [GPT-5.4 intro](https://openai.com/index/introducing-gpt-5-4/)
+
+5. `mistral-medium-3-5-vibe-agent-open-weight-builder-guide` (2026-06-01)
+   - [Mistral AI official](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/)
+
+6. `perplexity-three-legal-fronts-amazon-cfaa-copyright-rag-builder-guide` (2026-06-01)
+   - [CourtListener docket](https://www.courtlistener.com/docket/71874820/amazoncom-services-llc-v-perplexity-ai-inc/) + [IAPP](https://iapp.org/news/a/amazon-perplexity-dispute-raises-questions-over-ai-agent-liability) + [everything-pr](https://everything-pr.com/amazon-v-perplexity-ninth-circuit-oral-arguments-june-11-2026)
+
+7. `trump-ai-eo-federal-preemption-state-laws-compliance-builder-guide` (2026-06-01)
+   - [White House EO](https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/) + [Seyfarth Shaw](https://www.seyfarth.com/news-insights/president-trump-signs-executive-order-preempting-state-ai-laws-and-centralizing-federal-oversight.html) + [Paul Hastings](https://www.paulhastings.com/insights/client-alerts/president-trump-signs-executive-order-challenging-state-ai-laws)
+
+8. `xai-colorado-sb189-first-amendment-june-11-preliminary-injunction-builder-guide` (2026-06-01)
+   - [Norton Rose](https://www.nortonrosefulbright.com/en-us/knowledge/publications/de3ad9de/xai-sues-doj-intervenes-enforcement-of-colorado-ai-act-suspended) + [Jenner & Block](https://www.jenner.com/en/news-insights/client-alerts/doj-joins-xai-in-lawsuit-challenging-colorado-ai-act) + [Bloomberg Law](https://news.bloomberglaw.com/daily-labor-report/colorado-ai-safeguards-law-halted-as-musks-xai-seeks-injunction)
+
+9. `github-copilot-token-billing-agentic-cost-builder-guide` (2026-06-02)
+   - [GitHub Blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)
+
+10. `anthropic-s1-ipo-confidential-filing-june-2026-builder-api-implications` (2026-06-02)
+    - [Fortune](https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/) + [CNBC](https://www.cnbc.com/2026/06/01/anthropic-ipo-s1-prospectus.html)
+
+**Uncited page count:** ~614 out of ~1,854 content pages. Down from ~624 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-24 = ~138 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue from 2026-06-02. Remaining uncited articles from that date include: cognition-devin-1b, gpt-5-3-codex, hermes-agent, microsoft-build-2026 (two articles), nvidia-cosmos-3.
+- **NEW CONTENT (upcoming events):**
+  - July 20: WAIC 2026 digest (write after conference closes July 20) — Xi Jinping keynote, Huawei Atlas 950, WAICO proposal
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2474 — 2026-07-17 — RingS 6 LLM Observability Entries + Citation Retrofit Batch 23 (10 pages, DEPLOYED)
 
 **Mode:** Developer

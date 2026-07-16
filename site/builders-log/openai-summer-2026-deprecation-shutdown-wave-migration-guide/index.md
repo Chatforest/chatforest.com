@@ -3,7 +3,7 @@
 > Six OpenAI endpoints and model families are shutting down between June 27 and October 23, 2026. Assistants API dies August 26 with no simple swap — it requires a full architectural migration. Sora 2 dies September 24 with no announced replacement. Here is what builders need to do and by when.
 
 
-OpenAI has stacked six deprecations in a five-month window. Some are minor — a model alias swap. Others require full architectural rewrites. One has no announced replacement at all. The deadline pressure is real: Assistants API dies August 26, and if your product is built on it, that is less than ninety days from today.
+OpenAI has stacked six deprecations in a five-month window. Some are minor — a model alias swap. Others require full architectural rewrites. One has no announced replacement at all. The deadline pressure is real: [Assistants API dies August 26](https://developers.openai.com/api/docs/deprecations), and if your product is built on it, that is less than ninety days from today. ([OpenAI community announcement](https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666))
 
 This is the map.
 

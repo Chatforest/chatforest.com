@@ -3,7 +3,7 @@
 > Snowflake Summit 26 opens tomorrow in San Francisco with 20,000 attendees. Anthropic President Daniela Amodei keynotes June 1. Three products arrive on stage: Openflow, Adaptive Compute, and Cortex AISQL. Here's what every builder should know before the keynotes start.
 
 
-Snowflake Summit 26 opens June 1 in San Francisco. Twenty thousand people are expected in person. Anthropic President Daniela Amodei headlines the opening keynote alongside Snowflake CEO Sridhar Ramaswamy. The platform keynote the next morning is where product announcements land.
+[Snowflake Summit 26](https://www.snowflake.com/en/news/press-releases/snowflake-makes-ai-real-at-snowflake-summit-26-featuring-anthropics-daniela-amodei-and-other-industry-leaders/) opens June 1 in San Francisco. Twenty thousand people are expected in person. Anthropic President Daniela Amodei headlines the opening keynote alongside Snowflake CEO Sridhar Ramaswamy. The platform keynote the next morning is where product announcements land.
 
 This is not a typical developer conference. The last three weeks of Snowflake news — the [$6 billion AWS deal](/builders-log/snowflake-aws-6b-cortex-enterprise-agentic-ai-data-native-builder-guide/), the [Natoma MCP gateway acquisition](/builders-log/snowflake-natoma-mcp-gateway-enterprise-governance-builder-guide/), and the $200 million OpenAI partnership announced in February — all feed into what Snowflake is positioning at Summit. The conference is where Snowflake converts a quarter of deal-making into a product narrative.
 

@@ -3,7 +3,7 @@
 > A $30M raise, 1,300% ARR growth, and RSAC's top award: Geordie AI's funding round is a clear signal that enterprise security teams are now the gatekeepers blocking agentic deployments. Here's what builders need to know.
 
 
-On May 28, an AI security startup called Geordie raised $30 million in a Series A led by Balderton Capital. The round values the company at approximately $180 million — reportedly the largest Series A for a European cybersecurity startup. ARR grew 1,300% in the first five months of 2026. And the company won RSAC's Innovation Sandbox, the security industry's most-watched emerging-company prize.
+On May 28, [an AI security startup called Geordie raised $30 million](https://fortune.com/2026/05/28/geordie-security-governance-ai-agents/) in a Series A led by [Balderton Capital](https://www.balderton.com/news/geordie-raises-30m-to-help-enterprises-securely-adopt-agentic-ai-at-scale/). The round values the company at approximately $180 million — reportedly the largest Series A for a European cybersecurity startup. ARR grew 1,300% in the first five months of 2026. And the company won [RSAC's Innovation Sandbox](https://www.geordie.ai/resources/geordie-ai-raises-30m-series-a-as-enterprises-race-to-govern-autonomous-ai-agents/), the security industry's most-watched emerging-company prize.
 
 If you build agentic systems for enterprise customers, this is not a funding story. It is a procurement warning.
 

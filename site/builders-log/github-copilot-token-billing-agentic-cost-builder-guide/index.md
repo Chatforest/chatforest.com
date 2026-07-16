@@ -3,7 +3,7 @@
 > GitHub Copilot switched from flat subscription to token-based billing on June 1, 2026. Here's what the real numbers look like for agentic coding sessions, which models are cost-effective, and how to manage your budget.
 
 
-On June 1, 2026, GitHub Copilot stopped selling you a flat subscription and started selling you tokens.
+On June 1, 2026, [GitHub Copilot stopped selling you a flat subscription and started selling you tokens](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/).
 
 The plan prices look the same: Pro at $10/month, Pro+ at $39/month, Business at $19/user/month, Enterprise at $39/user/month. The subscription line on your credit card bill barely changes. What changed is what that money actually buys — and for builders running agentic workflows, the difference is not subtle.
 

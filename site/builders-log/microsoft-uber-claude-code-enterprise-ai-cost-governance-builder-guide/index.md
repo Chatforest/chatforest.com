@@ -5,9 +5,9 @@
 
 Two stories dropped this week that look like different news cycles but are the same story.
 
-**Microsoft** is canceling Claude Code licenses across its Experiences and Devices division — the team responsible for Windows, Microsoft 365, Outlook, Teams, and Surface — with a June 30, 2026 deadline. Thousands of engineers are being redirected to GitHub Copilot CLI. Reported figure: roughly 100,000 licenses.
+**Microsoft** is canceling Claude Code licenses across its Experiences and Devices division — the team responsible for Windows, Microsoft 365, Outlook, Teams, and Surface — with a June 30, 2026 deadline. Thousands of engineers are being redirected to GitHub Copilot CLI. Reported figure: roughly 100,000 licenses. ([Windows Central](https://www.windowscentral.com/microsoft/microsoft-cancels-claude-code-licenses-shifting-developers-to-github-copilot-cli-a-move-likely-driven-by-financial-motives))
 
-**Uber** burned through its entire 2026 AI coding budget in four months. Claude Code adoption at the company went from 32% to 84% of its ~5,000-engineer organization between December 2025 and April 2026. The per-engineer monthly cost at peak usage: $500 to $2,000. Uber's COO, Andrew Macdonald, told Fortune the link between AI tool use and consumer-facing innovation "is not there yet." The CTO said the company is "back to the drawing board" on AI budgeting.
+**Uber** burned through its entire 2026 AI coding budget in four months. Claude Code adoption at the company went from 32% to 84% of its ~5,000-engineer organization between December 2025 and April 2026. The per-engineer monthly cost at peak usage: $500 to $2,000. Uber's COO, Andrew Macdonald, [told Fortune](https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/) the link between AI tool use and consumer-facing innovation "is not there yet." The CTO said the company is "back to the drawing board" on AI budgeting. ([AI Weekly](https://aiweekly.co/alerts/uber-exhausts-ai-budget-as-claude-code-hits-84))
 
 These are not isolated incidents. They are two visible examples of the same structural problem that is running quietly through enterprise engineering budgets everywhere right now.
 

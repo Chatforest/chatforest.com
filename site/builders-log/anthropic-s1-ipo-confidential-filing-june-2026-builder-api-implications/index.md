@@ -3,7 +3,7 @@
 > Anthropic filed a confidential S-1 with the SEC on June 1, confirming an October 2026 IPO target at a $1.1–1.25 trillion fully-diluted valuation. The filing crystallizes four things builders need to reckon with: API pricing trajectory, vendor stability calculus, what the public S-1 will reveal in August, and why the June 15 billing split just made a lot more sense.
 
 
-On June 1, 2026, Anthropic officially confirmed what its Series H investor mix made obvious: it filed a confidential draft registration statement on Form S-1 with the U.S. Securities and Exchange Commission, beginning the formal process toward a public listing.
+On June 1, 2026, [Anthropic officially confirmed](https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/) what its Series H investor mix made obvious: it filed a confidential draft registration statement on Form S-1 with the U.S. Securities and Exchange Commission, beginning the formal process toward a public listing. ([CNBC](https://www.cnbc.com/2026/06/01/anthropic-ipo-s1-prospectus.html))
 
 The numbers attached to that filing are large. Anthropic closed its $65 billion Series H on May 28 at a **$965 billion post-money valuation**. It is targeting a primary IPO issuance of **$25–35 billion** at a **fully-diluted valuation of $1.10 to $1.25 trillion**, with IPO pricing expected between October 15 and November 15, 2026. Underwriters are Goldman Sachs, JPMorgan, and Morgan Stanley. Legal counsel is Wilson Sonsini — the firm that managed Google's 2004 IPO.
 
