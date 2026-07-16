@@ -1,6 +1,6 @@
 # Claude Code Overtakes GitHub Copilot: How a Terminal Tool Hit $2.5B Revenue in Under a Year
 
-> Claude Code launched in May 2025 and by February 2026 had captured 41% of the professional developer market, overtaking GitHub Copilot's 38% — a tool with a three-year head start and Microsoft's enterprise distribution behind it. Claude Code's run-rate revenue has doubled since January 2026, reaching $2.5 billion annually, making it the fastest enterprise software product to hit that milestone. This analysis covers the market data, Anthropic's $380B valuation, the Super Bowl ad campaign, enterprise adoption patterns, the vibe-coding phenomenon, competitive dynamics, and the honest limitations of the growth story.
+> How Claude Code captured 41% of the developer market and $2.5B annual revenue in 9 months, overtaking GitHub Copilot. Market data, enterprise adoption, competitive dynamics, and honest limitations.
 
 
 Claude Code [launched publicly in May 2025](https://github.com/anthropics/claude-code). By November 2025, it had crossed [$1 billion in annualized run-rate revenue](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone) — faster than ChatGPT, faster than any enterprise software product in history. By February 2026, it held [41% of the professional developer market](https://byteiota.com/claude-code-hits-41-share-overtakes-copilots-38/), overtaking GitHub Copilot's 38%.

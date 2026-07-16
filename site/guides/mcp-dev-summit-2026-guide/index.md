@@ -1,6 +1,6 @@
 # MCP Dev Summit 2026: Key Sessions, Themes, and What They Mean for the Ecosystem
 
-> A comprehensive guide to MCP Dev Summit North America 2026 — the first official MCP conference drew ~1,200 attendees for 95+ sessions from Anthropic, OpenAI, Microsoft, Docker, Bloomberg, Uber, Duolingo, and more.
+> MCP Dev Summit 2026 guide: 1,200 attendees, 95+ sessions with Anthropic, OpenAI, Microsoft, Docker. Key themes: security, SDK V2, and enterprise MCP adoption.
 
 
 The first MCP Dev Summit North America took place April 2–3, 2026 in New York City, drawing [approximately 1,200 attendees](https://www.infoq.com/news/2026/04/aaif-mcp-summit/) to the New York Marriott Marquis. Organized by the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (AAIF) under the Linux Foundation, the event featured [17 keynotes and over 95 sessions](https://futurumgroup.com/insights/mcp-dev-summit-2026-aaif-sets-a-clear-direction-with-disciplined-guardrails/) spanning four tracks — Protocol in Depth, Security and Operations, Apps and Agents, and MCP Best Practices. It marked MCP's transition from a fast-growing open-source project — now registering [97 million monthly SDK downloads](https://futurumgroup.com/insights/mcp-dev-summit-2026-aaif-sets-a-clear-direction-with-disciplined-guardrails/) — to a formally governed industry standard with its own conference ecosystem.

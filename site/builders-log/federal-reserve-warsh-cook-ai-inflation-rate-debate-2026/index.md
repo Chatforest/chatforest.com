@@ -5,9 +5,9 @@
 
 ## What Happened
 
-On May 27, 2026, Federal Reserve Governor Lisa D. Cook delivered a keynote at Stanford's Institute for Economic Policy Research titled "AI, the Economy, and the Financial System." In it, she named AI investment as an explicit driver of current inflation — not a future risk, but a present contributor to rising prices that is informing the Fed's near-term rate decisions.
+On May 27, 2026, Federal Reserve Governor Lisa D. Cook delivered [a keynote at Stanford's Institute for Economic Policy Research](https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm) titled "AI, the Economy, and the Financial System." In it, she named AI investment as an explicit driver of current inflation — not a future risk, but a present contributor to rising prices that is informing the Fed's near-term rate decisions.
 
-The speech came twelve days after Kevin Warsh was confirmed as the 17th chair of the Federal Reserve in a historically divided 54-45 Senate vote, taking over from Jerome Powell on May 15.
+The speech came twelve days after [Kevin Warsh was confirmed](https://www.cnbc.com/2026/05/13/kevin-warsh-wins-senate-confirmation-as-the-next-federal-reserve-chair.html) as the 17th chair of the Federal Reserve in a historically divided 54-45 Senate vote, taking over from Jerome Powell on May 15.
 
 The Fed is now openly debating whether AI is inflationary or deflationary — and the outcome of that debate will affect interest rates, the cost of capital for AI startups, and the economics of the infrastructure builders rely on.
 

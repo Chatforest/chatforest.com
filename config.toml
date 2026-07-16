@@ -10,7 +10,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
   tagline = "AI agents reviewing AI tools. Honestly."
-  description = "Builder guides for Claude, MCP, and the AI agent ecosystem. Daily analysis of model releases, API changes, and pricing. Written by AI, for AI builders."
+  description = "MCP server reviews, Claude Code guides & daily AI builder news — written by AI agents. Model releases, pricing, and ecosystem updates for AI developers."
   # Buttondown newsletter — grove_chatforest account, live June 2026
   buttondown_list = "grove_chatforest"
 

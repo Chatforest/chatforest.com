@@ -7,7 +7,7 @@ categories: ["AI Security", "Agentic AI", "Industry Analysis"]
 tags: ["cisco", "ai-security", "prompt-injection", "multi-turn", "benchmarks", "jailbreak", "agent-security", "risk", "deployment", "analysis"]
 ---
 
-On May 27, 2026, Cisco published a study that should change how every builder thinks about AI security benchmarks. It tested 15 flagship models from OpenAI, Anthropic, Google, and xAI across roughly 30,000 single-turn prompts and 7,000 multi-turn attacks spanning 1,400+ conversations.
+On May 27, 2026, [Cisco published a study](https://blogs.cisco.com/ai/proprietary-problems) that should change how every builder thinks about AI security benchmarks. It tested 15 flagship models from OpenAI, Anthropic, Google, and xAI across roughly 30,000 single-turn prompts and 7,000 multi-turn attacks spanning 1,400+ conversations.
 
 The finding: the attack success rates published in model safety cards do not predict real-world attack success rates. The gap is not a rounding error. For some models, it exceeds 80 percentage points.
 

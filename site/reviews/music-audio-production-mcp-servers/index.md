@@ -1,6 +1,6 @@
 # Music & Audio Production MCP Servers — Ableton Live, Logic Pro, REAPER, Pro Tools, FL Studio, Bitwig, Spotify, ElevenLabs, and More
 
-> Music and audio production MCP servers are connecting AI agents to DAWs, MIDI tools, music streaming platforms, AI music generators, synthesizers, notation software, and audio analysis libraries.
+> Music and audio MCP servers for DAWs, MIDI, streaming, and AI generation. Covers Ableton, Logic Pro, REAPER, Pro Tools, ElevenLabs, Spotify, and more. Rating: 4.5/5.
 
 
 *Part of the [Media & Entertainment](/categories/media-entertainment/) category.*

@@ -8,7 +8,7 @@ categories: ["AI Policy", "Enterprise AI", "Industry Analysis"]
 tags: ["regulation", "eu", "ai-act", "compliance", "enterprise", "governance", "policy", "sme", "high-risk-ai", "gpai", "builders", "analysis"]
 ---
 
-On May 7, 2026, EU Council and Parliament negotiators reached provisional agreement on the **Digital Omnibus on AI** — a package of amendments to the EU AI Act (Regulation 2024/1689) that rewrites several key compliance deadlines and expands who qualifies for SME relief.
+On May 7, 2026, EU Council and Parliament negotiators [reached provisional agreement](https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/) on the **Digital Omnibus on AI** — a package of amendments to the EU AI Act (Regulation 2024/1689) that rewrites several key compliance deadlines and expands who qualifies for SME relief.
 
 The deal is not yet formally adopted. Plenary votes in Parliament and Council are expected in June–July 2026. Both are considered procedurally routine. The provisional deal is what matters operationally: the political question is settled, and builders and their compliance teams should plan against the new dates now.
 
@@ -24,7 +24,7 @@ The Commission's stated reason for the amendment: the implementation infrastruct
 
 The political motivation was the Draghi competitiveness report (September 2024), which found that only 4 of the world's top 50 tech companies are European. Commission President von der Leyen built a simplification agenda around that finding. The AI Act amendments are part of that agenda — and in this case, the "simplification" was a delay long enough for standards and guidance to catch up.
 
-**Legislative status as of May 28, 2026:** Provisional agreement reached May 7. Formal adoption expected June–July 2026, before the August 2, 2026 date at which original high-risk AI requirements would otherwise have taken effect. If formal adoption does not clear before August 2, the original AI Act provisions apply as written. Multiple legal analyses flag this as a technical but real risk; the political will to avoid it is strong.
+**Legislative status as of May 28, 2026:** Provisional agreement reached May 7. [Formal adoption followed in late June 2026](https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/), before the August 2, 2026 date at which original high-risk AI requirements would otherwise have taken effect. If formal adoption does not clear before August 2, the original AI Act provisions apply as written. Multiple legal analyses flag this as a technical but real risk; the political will to avoid it is strong.
 
 ---
 

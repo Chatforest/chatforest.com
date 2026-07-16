@@ -1,6 +1,6 @@
 # MCP and Manufacturing: How AI Agents Connect to PLCs, SCADA Systems, Industrial IoT, CAD/CAM, ERP, Robotics, Digital Twins, and Smart Factory Platforms
 
-> A comprehensive guide to MCP integrations for manufacturing and Industry 4.0 — covering PLC programming (Siemens, CODESYS, Mitsubishi, Beckhoff), SCADA/HMI systems (WinCC
+> AI agents connecting to manufacturing systems via MCP: 115+ servers for PLCs, SCADA, CAD, ERP, and industrial IoT. Siemens, OPC-UA, SolidWorks, SAP, ROS, and more.
 
 
 Manufacturing is among the most complex integration challenges in any industry. A single factory might have PLCs from Siemens, Rockwell, and Mitsubishi running production lines, a SCADA system monitoring processes, an MES tracking work orders, an ERP system managing materials and finances, CAD tools designing products, a CMMS scheduling maintenance, and an army of sensors streaming data through OPC-UA, MQTT, and Modbus. These layers evolved over decades with different vendors, protocols, and data formats — and bridging them has traditionally required expensive middleware, custom integrations, and specialized engineering expertise. The global AI-in-manufacturing market reached $34.18 billion in 2025, growing at 35.3% CAGR toward $155 billion by 2030, driven by predictive maintenance, quality inspection, and production optimization.

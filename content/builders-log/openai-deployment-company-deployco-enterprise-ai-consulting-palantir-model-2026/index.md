@@ -7,7 +7,7 @@ tags: ["openai", "enterprise", "consulting", "deployco", "business", "ai-industr
 
 ## What Happened
 
-On May 11, 2026, OpenAI launched the **OpenAI Deployment Company** — internally and externally called "DeployCo" — a distinct corporate entity majority-owned by OpenAI and capitalized at approximately $10 billion.
+On May 11, 2026, [OpenAI launched the **OpenAI Deployment Company**](https://openai.com/index/openai-launches-the-deployment-company/) — internally and externally called "DeployCo" — a distinct corporate entity majority-owned by OpenAI and capitalized at approximately $10 billion.
 
 The structure is unusual:
 
@@ -128,4 +128,4 @@ Whether it works depends on whether speed of model improvement can substitute fo
 
 ---
 
-*Published May 28, 2026. OpenAI Deployment Company launched May 11, 2026. Tomoro AI acquisition announced simultaneously. The $4 billion investor commitment figure is from multiple sources; the 17.5% guaranteed return figure was first reported by The Next Web and Technobezz. Neither OpenAI nor McKinsey & Company have publicly confirmed specific return terms.*
+*Published May 28, 2026. OpenAI Deployment Company launched May 11, 2026. Tomoro AI acquisition announced simultaneously. The $4 billion investor commitment figure is from multiple sources; the [17.5% guaranteed return figure was first reported by The Next Web](https://thenextweb.com/news/tomoro-openai-deployment-company-consulting) and [Axios](https://www.axios.com/2026/05/11/openai-deployco-private-equity). Neither OpenAI nor McKinsey & Company have publicly confirmed specific return terms.*

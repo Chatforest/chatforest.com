@@ -6,9 +6,9 @@ tags: ["security", "compliance", "identity", "KYC", "fintech", "AI agents", "san
 category: "builders-log"
 ---
 
-A UK defense think tank published a report in late May 2026 that deserves more attention from the builder community than it's getting. RUSI (Royal United Services Institute) released **"Algorithms of Evasion: The Rise of AI-Enabled Proliferation Financing"**, and its core message is not diplomatic: AI agents have already advanced far enough to handle sanctions evasion at a scale that overwhelms current detection and enforcement capabilities.
+A UK defense think tank published a report in late May 2026 that deserves more attention from the builder community than it's getting. RUSI (Royal United Services Institute) released [**"Algorithms of Evasion: The Rise of AI-Enabled Proliferation Financing"**](https://www.rusi.org/explore-our-research/publications/research-papers/algorithms-evasion-rise-ai-enabled-proliferation-financing), and its core message is not diplomatic: AI agents have already advanced far enough to handle sanctions evasion at a scale that overwhelms current detection and enforcement capabilities.
 
-The Register covered it on May 26 under the headline "Rogue states are putting AI agents to work on sanctions evasion." Computerworld ran it as "Another IT governance headache." Both framings undersell the implications for builders specifically.
+[The Register covered it on May 26](https://www.theregister.com/ai-ml/2026/05/26/rogue-states-are-putting-ai-agents-to-work-on-sanctions-evasion/5246210) under the headline "Rogue states are putting AI agents to work on sanctions evasion." Computerworld ran it as "Another IT governance headache." Both framings undersell the implications for builders specifically.
 
 If you are building anything involving identity verification, onboarding, compliance, or financial services — or if you run cloud infrastructure that third parties could use to run AI pipelines at scale — this report is about systems your code sits inside.
 
@@ -38,7 +38,7 @@ Sumsub's 2025 Identity Fraud Report found that 2% of all detected fraudulent doc
 
 Static liveness checks are gone as a reliable control. The tools to defeat them are commodity:
 
-- **Virtual Camera (VCam) software** injects pre-recorded or AI-generated video into a phone's camera API, defeating "move your head" and "blink" liveness prompts. iProov logged a 2,665% spike in native virtual camera attacks over the past year. These tools sell for $30–$60 on Telegram.
+- **Virtual Camera (VCam) software** injects pre-recorded or AI-generated video into a phone's camera API, defeating "move your head" and "blink" liveness prompts. [iProov logged a 2,665% spike in native virtual camera attacks](https://www.iproov.com/reports/threat-intelligence-report-2025-remote-identity-attack) over the past year. These tools sell for $30–$60 on Telegram.
 - **Hooking framework exploits** for rooted Android devices intercept the camera API inside banking apps, bypassing liveness checks at the framework level.
 - **Face-swap tools** have proliferated. The World Economic Forum's January 2026 Cybercrime Atlas tested 17 face-swapping tools and 8 camera injection tools and found most could bypass standard biometric onboarding checks.
 
@@ -76,7 +76,7 @@ This is the layer the RUSI report introduces that has no clean precedent. Beyond
 | OnlyFake fake IDs generated | 10,000+ at $15 each | OECD.AI |
 | AI scam profitability vs. traditional | 4.5× more profitable, 253% higher avg. payout | Chainalysis |
 
-The A7A5 stablecoin is the starkest single example of what agentic infrastructure can accomplish at scale: a purpose-built sanctions-evasion settlement rail that processed over $93 billion in under a year before being flagged by Chainalysis.
+The A7A5 stablecoin is the starkest single example of what agentic infrastructure can accomplish at scale: a purpose-built sanctions-evasion settlement rail that processed over $93 billion in under a year before being [flagged by Chainalysis](https://www.chainalysis.com/blog/crypto-sanctions-2026/).
 
 ---
 

@@ -6,7 +6,7 @@ tags: ["anthropic", "enterprise", "pharma", "claude-enterprise", "claude-code", 
 draft: false
 ---
 
-On May 20, 2026, Bristol Myers Squibb announced a strategic agreement with Anthropic that goes well past the typical "pilot AI for one team" announcement. BMS is positioning Claude Enterprise as its **shared intelligence platform across all major functions** — research, clinical development, manufacturing, regulatory, and commercial — for more than 30,000 employees worldwide.
+On May 20, 2026, [Bristol Myers Squibb announced a strategic agreement with Anthropic](https://news.bms.com/news/details/2026/Bristol-Myers-Squibb-Announces-Strategic-Agreement-with-Anthropic-to-Position-Claude-Enterprise-as-the-Shared-Intelligence-Platform-Across-Its-Global-Operations/default.aspx) that goes well past the typical "pilot AI for one team" announcement. BMS is positioning Claude Enterprise as its **shared intelligence platform across all major functions** — research, clinical development, manufacturing, regulatory, and commercial — for more than 30,000 employees worldwide.
 
 This is the first top-5 pharmaceutical company to make a company-wide Claude commitment of this scope. For builders working in regulated industries or enterprise AI, the deployment architecture BMS chose reveals something worth studying.
 

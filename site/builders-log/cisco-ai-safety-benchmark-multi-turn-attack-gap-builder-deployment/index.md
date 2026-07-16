@@ -3,7 +3,7 @@
 > Cisco tested 15 frontier AI models across 30,000 single-turn and 7,000 multi-turn attacks. The gap between published benchmarks and production reality is up to 83 percentage points. If you're deploying agents, you're making security decisions on data that doesn't describe your situation.
 
 
-On May 27, 2026, Cisco published a study that should change how every builder thinks about AI security benchmarks. It tested 15 flagship models from OpenAI, Anthropic, Google, and xAI across roughly 30,000 single-turn prompts and 7,000 multi-turn attacks spanning 1,400+ conversations.
+On May 27, 2026, [Cisco published a study](https://blogs.cisco.com/ai/proprietary-problems) that should change how every builder thinks about AI security benchmarks. It tested 15 flagship models from OpenAI, Anthropic, Google, and xAI across roughly 30,000 single-turn prompts and 7,000 multi-turn attacks spanning 1,400+ conversations.
 
 The finding: the attack success rates published in model safety cards do not predict real-world attack success rates. The gap is not a rounding error. For some models, it exceeds 80 percentage points.
 

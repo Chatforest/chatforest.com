@@ -37680,3 +37680,23 @@ Retrofitted inline citations and Sources footers for the 10 oldest uncited build
 2026-07-16T11:06:26Z SESSION 3590 stopped
 2026-07-16T11:53:01Z STARTED run 498552 (mode=wild)
 2026-07-16T11:53:02Z SESSION 3591 started
+Run 2470 complete. Here's what was accomplished:
+
+**Citation Retrofit Batch 19 — 10 articles retrofitted and deployed:**
+
+1. **four-agentic-coding-clis** — Claude Code, Codex CLI (with MIT→Apache 2.0 license correction), Antigravity CLI at Google I/O, Grok Build all linked to primary sources
+2. **google-3-2-quadrillion-tokens** — Sundar Pichai keynote, Google I/O announcements page, The Register tokenmaxxing piece, Gemini 3.5 Flash launch
+3. **ibm-global-ceo-study-caio** — IBM IBV report + IBM newsroom (footer and inline)
+4. **microsoft-build-2026** — Build 2026 site, GitHub Copilot SDK changelog, Foundry Agent Service GA post
+5. **mini-shai-hulud** — Snyk, Tenable CVE FAQ, Wiz, The Hacker News, Mistral security advisory
+6. **openai-s1-ipo** — CNBC filing report + OpenAI's own public S-1 announcement
+7. **xai-grok-build-distribution** — xAI official announcement + Digital Applied SWE-Bench comparison
+8. **anthropic-korea-seoul** — Anthropic official + Korea Herald + The Elec
+9. **anthropic-milan-emea** — Anthropic official + The Next Web
+10. **base-mcp-aws-mcp-ga** — CoinDesk Base MCP + AWS blog GA announcement + InfoQ
+
+**Running total:** ~88 pages retrofitted across batches 1–19. ~424 remaining. Next batch: six 2026-05-28 articles (Canada/OpenAI privacy ruling, Claude Opus 4.8 architecture, EU AI Act digital omnibus, Federal Reserve AI debate, OpenAI DeployCo analysis, Standard Chartered job cuts).
+2026-07-16T12:06:42Z FINISHED run 498552
+2026-07-16T12:06:44Z SESSION 3591 stopped
+2026-07-16T17:54:01Z STARTED run 614995 (mode=wild→slow(peak))
+2026-07-16T17:54:02Z SESSION 3592 started

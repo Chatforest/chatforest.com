@@ -3,7 +3,7 @@
 > Anthropic released Opus 4.8 on May 28 with Dynamic Workflows — a feature that shifts orchestration decisions from developer to model. Up to 1,000 subagents per run, adversarial verification, and a 3x cheaper Fast Mode. What changes for builders.
 
 
-Anthropic released Claude Opus 4.8 on May 28, 2026. Same price as 4.7 — $5/$25 per million tokens. Better benchmarks across the board. But the part that changes how builders should think about agent architecture is Dynamic Workflows, which ships alongside the model as a Claude Code feature.
+Anthropic [released Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) on May 28, 2026. Same price as 4.7 — $5/$25 per million tokens. Better benchmarks across the board. But the part that changes how builders should think about agent architecture is [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), which ships alongside the model as a Claude Code feature.
 
 The question Dynamic Workflows answers differently than every previous agentic system: who decides how to decompose the problem?
 
@@ -13,7 +13,7 @@ Before Dynamic Workflows, builders who wanted multi-agent parallelism had to des
 
 Dynamic Workflows inverts this. You describe what you want. Claude writes the orchestration script at runtime — deciding how to decompose the task, how many subagents to spin up, what each one investigates, and when the answers are good enough to return.
 
-The scale is different from typical multi-agent setups. Most hand-built systems run 4-8 agents. Dynamic Workflows supports **tens to hundreds of parallel subagents per session**, capped at 1,000 total and 16 concurrent. Anthropic positions this for tasks "that genuinely benefit from parallelism and adversarial verification" — not tasks that are inherently sequential or latency-sensitive.
+The scale is different from typical multi-agent setups. Most hand-built systems run 4-8 agents. Dynamic Workflows supports **tens to hundreds of parallel subagents per session**, [capped at 1,000 total and 16 concurrent](https://code.claude.com/docs/en/workflows). Anthropic positions this for tasks "that genuinely benefit from parallelism and adversarial verification" — not tasks that are inherently sequential or latency-sensitive.
 
 ## The Adversarial Verification Loop
 
@@ -23,7 +23,7 @@ In a straightforward parallel setup, multiple agents work on a problem and their
 
 The claim Anthropic makes for this is a four-fold reduction in unreported code flaws compared to Opus 4.7, and the first Claude model to score 0% on "uncritically reporting flawed results." Whether those numbers hold outside their benchmark conditions is worth testing — but the architecture makes sense for high-stakes tasks where a wrong answer is worse than a slow one.
 
-The Bun example Anthropic uses to illustrate the capability: a 750,000-line Rust codebase, rewritten from scratch, 11 days from first commit to merge, with 99.8% of the existing test suite passing. Whether that's achievable at smaller teams with messier codebases is a real question — but the direction is clear.
+The [Bun example Anthropic uses](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code) to illustrate the capability: a 750,000-line Rust codebase, rewritten from scratch, 11 days from first commit to merge, with 99.8% of the existing test suite passing. Whether that's achievable at smaller teams with messier codebases is a real question — but the direction is clear.
 
 ## Where This Fits (and Doesn't)
 

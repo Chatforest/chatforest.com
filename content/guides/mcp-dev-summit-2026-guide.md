@@ -1,7 +1,7 @@
 ---
 title: "MCP Dev Summit 2026: Key Sessions, Themes, and What They Mean for the Ecosystem"
 date: 2026-04-03T12:00:00+09:00
-description: "A comprehensive guide to MCP Dev Summit North America 2026 — the first official MCP conference drew ~1,200 attendees for 95+ sessions from Anthropic, OpenAI, Microsoft, Docker, Bloomberg, Uber, Duolingo, and more."
+description: "MCP Dev Summit 2026 guide: 1,200 attendees, 95+ sessions with Anthropic, OpenAI, Microsoft, Docker. Key themes: security, SDK V2, and enterprise MCP adoption."
 content_type: "Guide"
 card_description: "~1,200 attendees, 97M monthly SDK downloads, 17 keynotes, 95+ sessions. The first official MCP conference covered security, enterprise adoption, SDK V2, and cross-platform interoperability. Here's what happened."
 last_refreshed: 2026-04-14

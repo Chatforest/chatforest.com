@@ -3,7 +3,7 @@
 > On May 6, four Canadian privacy regulators released findings from a three-year joint investigation into OpenAI's ChatGPT. The core ruling: scraping public internet data does not constitute valid consent for AI training. Builders deploying AI in Canada should read this carefully.
 
 
-On May 6, 2026, four Canadian privacy regulators released the results of a joint three-year investigation into OpenAI's ChatGPT. The Office of the Privacy Commissioner of Canada (OPC), plus counterparts in British Columbia, Alberta, and Quebec, concluded that **OpenAI violated Canadian privacy law** in how it collected training data and how it handled user information.
+On May 6, 2026, [four Canadian privacy regulators released the results](https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_260506/) of a joint three-year investigation into OpenAI's ChatGPT. The Office of the Privacy Commissioner of Canada (OPC), plus counterparts in British Columbia, Alberta, and Quebec, concluded that **OpenAI violated Canadian privacy law** in how it collected training data and how it handled user information.
 
 The regulatory outcome was split: the federal OPC called it "conditionally resolved," while BC and Alberta called it "well-founded but unresolved" — meaning they believe the violation cannot be fixed without retroactively obtaining consent that was never obtained.
 
@@ -31,7 +31,7 @@ The joint probe identified six categories of violation:
 
 ## The Ruling's Pivotal Legal Reasoning
 
-The most significant part of PIPEDA Findings #2026-002 is not the list of violations — it is the underlying legal reasoning about **what counts as valid consent for internet-scraped data**.
+The most significant part of [PIPEDA Findings #2026-002](https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-002/) is not the list of violations — it is the underlying legal reasoning about **what counts as valid consent for internet-scraped data**.
 
 Under PIPEDA (Canada's federal private-sector privacy law) and its provincial equivalents, organizations can rely on **implied consent** for collecting and using personal information in some circumstances. The question is whether the use falls within the reasonable expectations of the individuals whose data was collected.
 

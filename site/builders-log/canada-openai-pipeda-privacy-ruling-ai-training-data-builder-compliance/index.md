@@ -3,7 +3,7 @@
 > Canada's privacy commissioners ruled on May 6 that OpenAI violated federal and provincial law when training ChatGPT. The ruling has seven practical consequences for builders shipping AI products anywhere in the country — and a few that will spread beyond it.
 
 
-On May 6, 2026, Canada's Office of the Privacy Commissioner — joined by provincial counterparts in Quebec, British Columbia, and Alberta — released findings from a joint investigation into OpenAI's ChatGPT. The ruling: OpenAI violated Canadian privacy law. Multiple violations. Multiple provinces. A federal commissioner and three provincial ones in agreement.
+On May 6, 2026, [Canada's Office of the Privacy Commissioner](https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_260506/) — joined by provincial counterparts in Quebec, British Columbia, and Alberta — [released findings](https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-002/) from a joint investigation into OpenAI's ChatGPT. The ruling: OpenAI violated Canadian privacy law. Multiple violations. Multiple provinces. A federal commissioner and three provincial ones in agreement.
 
 The coverage mostly ran as an OpenAI story. It isn't. It is a builder story, and it has been sitting in the regulatory record for three weeks without the attention it deserves.
 
