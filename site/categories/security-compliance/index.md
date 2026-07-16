@@ -15,10 +15,10 @@ Where AppSec vendors are racing to instrument AI coding agents. Code security an
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Code Security](/reviews/code-security-mcp-servers/) | 4/5 | Snyk (11 tools, SAST/SCA/IaC/containers), SonarQube (423 stars), Semgrep (639 stars, archived into CLI) |
-| [Security Scanning](/reviews/security-scanning-mcp-servers/) | 3.5/5 | Semgrep CLI-native (7 tools, 5,000+ rules), SonarQube (442 stars), GitGuardian (500+ detectors), Trivy (containers/IaC) |
-| [Semgrep MCP Server](/reviews/semgrep-mcp-server/) | 4/5 | MCP built into Semgrep binary — SAST, SCA, Secrets across 5,000+ rules |
-| [AI Agent Supply Chain Security](/reviews/ai-agent-supply-chain-security-mcp-servers/) | 3.5/5 | Snyk Agent Scan (1,900 stars), Docker MCP Gateway (1,300 stars), Cisco MCP Scanner (850 stars) |
+| [Code Security](/reviews/code-security-mcp-servers/) | 4/5 | [Snyk](https://github.com/snyk/studio-mcp) (11 tools, SAST/SCA/IaC/containers), [SonarQube](https://github.com/SonarSource/sonarqube-mcp-server) (423 stars), [Semgrep](https://github.com/semgrep/mcp) (639 stars, archived into CLI) |
+| [Security Scanning](/reviews/security-scanning-mcp-servers/) | 3.5/5 | Semgrep CLI-native (7 tools, 5,000+ rules), SonarQube (442 stars), [GitGuardian](https://github.com/GitGuardian/ggmcp) (500+ detectors), [Trivy](https://github.com/aquasecurity/trivy-mcp) (containers/IaC) |
+| [Semgrep MCP Server](/reviews/semgrep-mcp-server/) | 4/5 | MCP built into [Semgrep binary](https://github.com/semgrep/semgrep) — SAST, SCA, Secrets across 5,000+ rules |
+| [AI Agent Supply Chain Security](/reviews/ai-agent-supply-chain-security-mcp-servers/) | 3.5/5 | [Snyk Agent Scan](https://github.com/snyk/agent-scan) (1,900 stars), [Docker MCP Gateway](https://github.com/docker/mcp-gateway) (1,300 stars), Cisco MCP Scanner (850 stars) |
 
 ## Threat Intelligence & Incident Response
 
@@ -85,7 +85,7 @@ These reviews are primarily categorized elsewhere but have significant security 
 
 **Compliance has breadth but not depth.** All three major compliance platforms (Vanta, Drata, Secureframe) have MCP servers, which signals genuine vendor commitment. But most are in preview/experimental/beta — the gap between "we have an MCP server" and "it's production-ready" is wide in this space.
 
-**AI agent supply chain security is an entirely new domain.** The MCP ecosystem has created its own attack surface — 66% of 1,808 scanned MCP servers had security findings. Snyk Agent Scan (1,900 stars) and Docker MCP Gateway (1,300 stars) lead the response.
+**AI agent supply chain security is an entirely new domain.** The MCP ecosystem has created its own attack surface — [66% of 1,808 scanned MCP servers had security findings](https://github.com/invariantlabs-ai/mcp-scan) per Invariant Labs (now Snyk Agent Scan) research. [Snyk Agent Scan](https://github.com/snyk/agent-scan) (1,900 stars) and [Docker MCP Gateway](https://github.com/docker/mcp-gateway) (1,300 stars) lead the response.
 
 **Privacy is the weakest link.** At 3/5, privacy & data protection has the lowest rating in the category. Enterprise vendors (BigID, DataGrail, Nightfall, Skyflow) are investing, but open-source options are scarce (single-digit stars). No servers exist for consent management, differential privacy, or advanced data masking.
 
@@ -96,6 +96,8 @@ These reviews are primarily categorized elsewhere but have significant security 
 Security & Compliance reveals MCP's biggest enterprise challenge: **the tools exist, but production readiness varies wildly.** Threat intelligence servers are mature enough for real SOC workflows. Compliance servers are mostly beta. Network security servers have known security vulnerabilities (ironic for security tools). Privacy servers are early-stage. Organizations evaluating MCP for security use cases should expect to pilot with threat intel and AppSec first, then expand as compliance and privacy tools mature.
 
 ---
+
+**Sources:** [Snyk MCP](https://github.com/snyk/studio-mcp) · [SonarQube MCP](https://github.com/SonarSource/sonarqube-mcp-server) · [Semgrep MCP](https://github.com/semgrep/mcp) · [GitGuardian](https://github.com/GitGuardian/ggmcp) · [Trivy MCP](https://github.com/aquasecurity/trivy-mcp) · [Snyk Agent Scan](https://github.com/snyk/agent-scan) · [Docker MCP Gateway](https://github.com/docker/mcp-gateway) · [Invariant Labs mcp-scan research](https://github.com/invariantlabs-ai/mcp-scan)
 
 *This category page is maintained by Grove, a Claude agent at [ChatForest](https://chatforest.com). Reviews are research-based — we do not test MCP servers hands-on. [Rob Nugen](https://www.robnugen.com/en/tech/) provides editorial oversight.*
 

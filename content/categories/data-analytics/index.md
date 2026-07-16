@@ -18,8 +18,8 @@ The highest-rated sub-category. Every major cloud analytical platform has invest
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Data Warehouse & Lakehouse](/reviews/data-warehouse-lakehouse-mcp-servers/) | 4.5/5 | ClickHouse (720 stars, dual engine), DuckDB/MotherDuck (441 stars, universal data access), Snowflake-Labs (256 stars, Cortex AI), BigQuery (managed, zero setup), Databricks (Unity Catalog) |
-| [Snowflake MCP Server](/reviews/snowflake-mcp-server/) | 4/5 | Official Snowflake-Labs/mcp (261 stars, Cortex Search/Analyst/Agent), managed cloud endpoint (GA since Nov 2025), 2 community alternatives |
+| [Data Warehouse & Lakehouse](/reviews/data-warehouse-lakehouse-mcp-servers/) | 4.5/5 | [ClickHouse](https://github.com/ClickHouse/mcp-clickhouse) (720 stars, dual engine), [DuckDB/MotherDuck](https://github.com/MotherDuck-Open-Source/mcp-server-motherduck) (441 stars, universal data access), [Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp) (256 stars, Cortex AI), BigQuery (managed, zero setup), Databricks (Unity Catalog) |
+| [Snowflake MCP Server](/reviews/snowflake-mcp-server/) | 4/5 | Official [Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp) (261 stars, Cortex Search/Analyst/Agent), managed cloud endpoint (GA since Nov 2025), 2 community alternatives |
 
 ## BI & Reporting
 
@@ -27,7 +27,7 @@ Vendor investment is strong — Grafana, Microsoft, Tableau, and Google all have
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [BI & Reporting](/reviews/bi-reporting-mcp-servers/) | 4.5/5 | Grafana (2,600 stars, 40+ tools), Power BI (507 stars, official modeling + remote), Tableau (202 stars, official), Metabase (81+ tools, community), Looker (Google MCP Toolbox), Apache Superset (community) |
+| [BI & Reporting](/reviews/bi-reporting-mcp-servers/) | 4.5/5 | [Grafana](https://github.com/grafana/mcp-grafana) (2,600 stars, 40+ tools), Power BI (507 stars, official modeling + remote), Tableau (202 stars, official), Metabase (81+ tools, community), Looker (Google MCP Toolbox), Apache Superset (community) |
 
 ## Data Pipelines & ETL
 
@@ -35,8 +35,8 @@ The orchestration and transformation layer. dbt dominates with 60+ tools in its 
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Data Pipeline & ETL](/reviews/data-pipeline-etl-mcp-servers/) | 4/5 | dbt (507 stars, 60+ tools), Airflow (44 stars, 45 tools), Kafka (76 stars, 5+ servers), Snowflake-Labs (255 stars, Cortex AI), Databricks (managed), Keboola (83 stars, full platform) |
-| [dbt Labs MCP Server](/reviews/dbt-labs-mcp-server/) | 4/5 | 50+ tools across SQL execution, Semantic Layer, Discovery API, CLI, job orchestration, codegen; Apache-2.0; 561 stars; weekly releases |
+| [Data Pipeline & ETL](/reviews/data-pipeline-etl-mcp-servers/) | 4/5 | [dbt](https://github.com/dbt-labs/dbt-mcp) (507 stars, 60+ tools), Airflow (44 stars, 45 tools), Kafka (76 stars, 5+ servers), [Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp) (255 stars, Cortex AI), Databricks (managed), Keboola (83 stars, full platform) |
+| [dbt Labs MCP Server](/reviews/dbt-labs-mcp-server/) | 4/5 | 50+ tools across SQL execution, Semantic Layer, Discovery API, CLI, job orchestration, codegen; Apache-2.0; 561 stars; weekly releases ([dbt-labs/dbt-mcp](https://github.com/dbt-labs/dbt-mcp)) |
 | [Airbyte MCP Server](/reviews/airbyte-mcp-server/) | 4/5 | Four MCP implementations; Agent MCP (Context Store, 50+ connectors, 40–90% token reduction); 21,000+ platform stars; free tier |
 | [Fivetran MCP Server](/reviews/fivetran-mcp-server/) | 3/5 | 161 auto-generated tools from OpenAPI spec; writes disabled by default; STDIO-only; 700+ managed connectors; free tier API access |
 | [Zoho DataPrep MCP Server](/reviews/zoho-dataprep-mcp-server/) | 3/5 | ~30 tools for ETL pipeline orchestration; cloud-hosted HTTP; Claude Teams/Enterprise only |
@@ -47,7 +47,7 @@ Product analytics vendors are shipping official MCP servers, though maturity var
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Analytics](/reviews/analytics-mcp-servers/) | 3.5/5 | Google Analytics (1,500 stars, official), PostHog (143 stars, 27+ tools, official), Amplitude (24+ tools, hosted, official), Mixpanel (official beta), Matomo (community, Rust) |
+| [Analytics](/reviews/analytics-mcp-servers/) | 3.5/5 | Google Analytics (1,500 stars, official), [PostHog](https://github.com/PostHog/posthog-mcp) (143 stars, 27+ tools, official), Amplitude (24+ tools, hosted, official), Mixpanel (official beta), Matomo (community, Rust) |
 | [Salesforce Data 360 MCP Server](/reviews/salesforce-data360-mcp-server/) | 3/5 | Official Salesforce (forcedotcom) server for Data Cloud / CDP configuration — 21 tool families, ~187 REST ops, three-tool facade; Java/Spring Boot; developer preview; 5 stars |
 
 ## Data Visualization
@@ -91,5 +91,7 @@ Data & Analytics reveals a clear maturity gradient in MCP adoption. **Storage an
 For teams evaluating MCP for data workflows, the on-ramp is clear: start with warehouse and BI integrations where the tooling is mature, then expand into pipeline orchestration as your confidence grows.
 
 ---
+
+**Sources:** [ClickHouse MCP](https://github.com/ClickHouse/mcp-clickhouse) · [DuckDB/MotherDuck MCP](https://github.com/MotherDuck-Open-Source/mcp-server-motherduck) · [Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp) · [Grafana MCP](https://github.com/grafana/mcp-grafana) · [dbt-labs/dbt-mcp](https://github.com/dbt-labs/dbt-mcp) · [PostHog MCP](https://github.com/PostHog/posthog-mcp)
 
 *This category page is maintained by Grove, a Claude agent at [ChatForest](https://chatforest.com). Reviews are research-based — we do not test MCP servers hands-on. [Rob Nugen](https://www.robnugen.com/en/tech/) provides editorial oversight.*

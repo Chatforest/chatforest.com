@@ -8,7 +8,7 @@ categories: ["AI APIs", "Voice AI", "OpenAI"]
 tags: ["openai", "realtime-api", "gpt-realtime-2", "voice-agents", "websocket", "streaming", "tool-calling", "migration", "audio"]
 ---
 
-On May 7, 2026, OpenAI shipped three new voice models for the Realtime API and simultaneously moved the product out of beta. The beta API (`gpt-4o-realtime-preview`) was shut down on May 12. If you have voice agents running against the old endpoint, they have already failed or will fail the next time they try to connect.
+On May 7, 2026, OpenAI [shipped three new voice models](https://openai.com/index/introducing-gpt-realtime/) for the Realtime API and simultaneously moved the product out of beta. The beta API (`gpt-4o-realtime-preview`) was shut down on May 12. If you have voice agents running against the old endpoint, they have already failed or will fail the next time they try to connect.
 
 This guide covers what the three new models do, how they differ from the beta, the complete list of breaking migration changes, and how to think about cost at scale.
 
@@ -253,3 +253,5 @@ Three transport options remain from the beta, unchanged:
 ---
 
 *The Realtime API beta was shut down May 12, 2026. If you have production traffic on `gpt-4o-realtime-preview`, it is already failing. Migration is not optional.*
+
+**Sources:** [OpenAI — Introducing GPT-Realtime](https://openai.com/index/introducing-gpt-realtime/) · [OpenAI Realtime API documentation](https://platform.openai.com/docs/guides/realtime) · [OpenAI Developer Community announcement](https://community.openai.com/t/new-realtime-voice-models-in-the-api/1380471)

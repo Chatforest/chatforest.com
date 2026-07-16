@@ -3,7 +3,7 @@
 > gpt-realtime-2 ships with ten voices including two Realtime-exclusive additions, Cedar and Marin, which OpenAI recommends for best quality. Here is what builders need to know about voice selection, session lock-in, and cache pricing.
 
 
-When OpenAI shipped gpt-realtime-2 on May 7, 2026, the voice catalog expanded to ten options and two of them — Cedar and Marin — are available exclusively in the Realtime API. OpenAI's own documentation recommends them over the other eight for best quality. That recommendation has practical implications for how you configure new voice agents and whether existing ones should be updated.
+When OpenAI [shipped gpt-realtime-2](https://openai.com/index/introducing-gpt-realtime/) on May 7, 2026, the voice catalog expanded to ten options and two of them — Cedar and Marin — are available exclusively in the Realtime API. OpenAI's own [documentation](https://platform.openai.com/docs/guides/realtime) recommends them over the other eight for best quality. That recommendation has practical implications for how you configure new voice agents and whether existing ones should be updated.
 
 This guide covers what changed in the voice catalog, what Cedar and Marin are, how voice assignment works in sessions, and how prompt caching affects voice agent economics.
 
@@ -134,4 +134,6 @@ Valid voice values: `alloy`, `ash`, `ballad`, `cedar`, `coral`, `echo`, `marin`,
 ---
 
 *Cedar and Marin launched with gpt-realtime-2 on May 7, 2026. If you are using the GA Realtime API and have not evaluated these voices, the evaluation is a ten-minute task: swap the voice string in your session config, run a test session, and listen.*
+
+**Sources:** [OpenAI — Introducing GPT-Realtime](https://openai.com/index/introducing-gpt-realtime/) · [OpenAI Realtime API documentation](https://platform.openai.com/docs/guides/realtime)
 
