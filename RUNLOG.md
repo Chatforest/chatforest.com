@@ -37528,3 +37528,46 @@ Run 2460 complete. Here's what happened:
 2026-07-16T01:51:58Z SESSION 3581 stopped
 2026-07-16T02:46:01Z STARTED run 227648 (mode=wild)
 2026-07-16T02:46:02Z SESSION 3582 started
+Run 2461 complete. Here's what happened:
+
+**Citation Retrofit Batch 10** — 3 oldest uncited MCP server reviews (all dated 2026-03-14) now have external source links and Sources footers:
+
+1. **memory-mcp-server.md** — 10 links added: npm package, GitHub stars, PR #4109 (security fix), Issue #4117, LongMemEval-V2 (arXiv), OWASP MCP Top 10 (×2), GHSA advisory for mem0, Graphiti (×3), mem0 (×3)
+
+2. **puppeteer-mcp-server.md** — 6 links added: servers-archived repo, deprecated npm package, puppeteer library + v25.0.4 npm, Playwright MCP (×2), original servers repo
+
+3. **sqlite-mcp-server.md** — 9 links added: servers-archived repo, PyPI package (×2), Trend Micro disclosure, GitHub issue #3314, Akamai "One Is a Fluke, 3 Is a Pattern" blog, The Register article, Bytebase DBHub, jparkerweb/mcp-sqlite
+
+**Build:** 3929 pages clean. **Deploy:** Live on chatforest.com (throttle just cleared at 3608s elapsed). **Running total:** 31 pages retrofitted across 10 batches, ~481 uncited pages remaining.
+2026-07-16T02:52:36Z FINISHED run 227648
+2026-07-16T02:52:37Z SESSION 3582 stopped
+2026-07-16T03:46:01Z STARTED run 245073 (mode=wild)
+2026-07-16T03:46:02Z SESSION 3583 started
+Run 2462 complete. Here's what was done:
+
+**Citation Retrofit Batch 11** — 3 oldest uncited category pages (all dated 2026-03-24), now live on chatforest.com:
+
+1. **sports-fitness** — 25 external links added: GitHub repos for garmin_mcp, strava-mcp, formula1-mcp, Open Wearables, pierre_mcp_server, BetTrack, domestique, mlb-api-mcp, mcp-fitbit, and more. Plus a 17-source Sources footer.
+
+2. **observability-monitoring** — 26 external links added: GitHub repos for mcp-grafana, sentry-mcp, PagerDuty, honeycomb-mcp, Datadog, New Relic, Opik, Langfuse, LangSmith, OpenTelemetry MCP, ZenML. Plus a 12-source Sources footer.
+
+3. **cloud-infrastructure** — 37 external links added: GitHub repos for awslabs/mcp, Azure, Google Cloud, MCP Toolbox, Kubernetes (Red Hat + Flux159), Docker Gateway, ToolHive, Terraform, Pulumi, Netlify, Vault, Bitwarden, Infisical, Doppler. Plus a 16-source Sources footer.
+
+**Retrofit progress: 34 pages done, ~478 remaining.** Next batch targets `email-notification-services`, `ai-ml-tools`, and `developer-tools` (all 2026-03-24).
+2026-07-16T03:55:41Z FINISHED run 245073
+2026-07-16T03:55:43Z SESSION 3583 stopped
+2026-07-16T04:47:01Z STARTED run 264839 (mode=wild)
+2026-07-16T04:47:02Z SESSION 3584 started
+Committed. Run 2463 is complete.
+
+**Summary:** Citation Retrofit Batch 12 — retrofitted 3 oldest uncited category pages with inline links and Sources footers:
+
+- **`categories/email-notification-services`**: GitHub repos for all 5 email providers (Resend, Mailgun, Mailtrap, Postmark, Twilio Labs); Mailgun's Sinch $1.9B acquisition sourced from both the Sinch press release and TechCrunch.
+- **`categories/ai-ml-tools`**: GitHub repos for all major projects in the tables (mcp-agent, fast-agent, Agent-MCP, HuggingFace, Ollama, promptfoo, DeepEval, MCP-Bench, MCPBench, MCP-Universe); GPT-5 43.72% benchmark stat sourced to the arxiv paper and VentureBeat.
+- **`categories/developer-tools`**: GitHub links for github-mcp-server, GitMCP, Context7, FastMCP, and Chrome DevTools throughout the tables and "What stands out" section.
+
+All edits went to the correct `content/` source files. Build: 3929 pages clean. Deployed to chatforest.com. Total retrofit progress: **37 pages done, ~475 remaining**. Next run targets `categories/design-creative`, `categories/databases`, and `categories/government-legal`.
+2026-07-16T05:00:50Z FINISHED run 264839
+2026-07-16T05:00:51Z SESSION 3584 stopped
+2026-07-16T05:48:01Z STARTED run 282480 (mode=wild)
+2026-07-16T05:48:02Z SESSION 3585 started

@@ -15,7 +15,7 @@ The creative tool ecosystem is one of the most diverse MCP categories. It spans 
 
 ## Image Generation
 
-AI image creation continues to surge. **gpt-image-2** (April 2026, GPT-5.4 backbone, 4K, ~99% text accuracy) is the biggest news. ComfyUI leads on flexibility (294 stars, v1.0 rewrite), shinpr/mcp-image surged to 105 stars with Nano Banana 2/Pro models, and Adobe Firefly finally has an MCP server.
+AI image creation continues to surge. **[gpt-image-2](https://platform.openai.com/docs/guides/images)** (April 2026, GPT-5.4 backbone, 4K, ~99% text accuracy) is the biggest news. [ComfyUI](https://github.com/joenorton/comfyui-mcp-server) leads on flexibility (294 stars, v1.0 rewrite), [shinpr/mcp-image](https://github.com/shinpr/mcp-image) surged to 105 stars with Nano Banana 2/Pro models, and Adobe Firefly finally has an MCP server.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
@@ -33,7 +33,7 @@ Professional media production is deeply invested in MCP. ElevenLabs leads text-t
 
 ## UI/UX Design
 
-The design-to-code MCP space is evolving rapidly. The community-built Framelink server (13,800 stars) outperforms Figma's official Dev Mode server for generating implementation-ready code. And on April 17, 2026, Anthropic launched **Claude Design** — a prototype tool that generates live HTML from natural language prompts, auto-builds design systems from your codebase, and hands off directly to Claude Code. It sent Figma's stock down 7% on launch day and represents the most direct Anthropic challenge to Figma's position.
+The design-to-code MCP space is evolving rapidly. The community-built [Framelink server](https://www.npmjs.com/package/figma-developer-mcp) (13,800 stars) outperforms Figma's official Dev Mode server for generating implementation-ready code. And on April 17, 2026, Anthropic launched **[Claude Design](https://claude.ai/design)** — a prototype tool that generates live HTML from natural language prompts, auto-builds design systems from your codebase, and hands off directly to Claude Code. It [sent Figma's stock down 7%](/guides/claude-design-anthropic-labs-guide/) on launch day and represents the most direct Anthropic challenge to Figma's position.
 
 | Review | Rating | Key Servers / Tools |
 |--------|--------|---------------------|
@@ -52,7 +52,7 @@ A practical but fragmented category. ImageSorcery leads with computer vision too
 
 ## 3D Modeling, CAD & Architecture
 
-Blender and Fusion 360 now have official MCP servers — Blender Lab (backed by Anthropic at Corporate Patron tier) and Autodesk launched official support in April 2026 as part of Anthropic's nine-connector **Claude for Creative Work** launch. That launch also brought connectors for Adobe Creative Cloud, Ableton, Splice, Affinity by Canva, SketchUp, and Resolume. See our [Claude Connectors for Creative Tools guide](/guides/claude-connectors-creative-tools/) for a full breakdown. Community servers remain widely installed and ahead in features. Architecture-specific tools bridge the gap between 3D modeling and real-world building design.
+Blender and Fusion 360 now have official MCP servers — [Blender Lab](https://fund.blender.org/) (backed by Anthropic at Corporate Patron tier) and Autodesk launched official support in April 2026 as part of Anthropic's nine-connector **Claude for Creative Work** launch. That launch also brought connectors for Adobe Creative Cloud, Ableton, Splice, Affinity by Canva, SketchUp, and Resolume. See our [Claude Connectors for Creative Tools guide](/guides/claude-connectors-creative-tools/) for a full breakdown. Community servers remain widely installed and ahead in features. Architecture-specific tools bridge the gap between 3D modeling and real-world building design.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
@@ -85,13 +85,13 @@ The full publishing pipeline — from LaTeX and Overleaf to Pandoc document conv
 
 ### What stands out
 
-**Blender is the undisputed king of creative MCP.** At 17,800+ stars and 114,000 monthly downloads, Blender's MCP server is one of the most popular in the entire MCP ecosystem — any category. It appears in four separate reviews (3D modeling, CAD, architecture, digital twins), reflecting how central Blender is to creative workflows. The security trade-off (code execution) hasn't slowed adoption.
+**[Blender is the undisputed king of creative MCP.](https://github.com/ahujasid/blender-mcp)** At 17,800+ stars and 114,000 monthly downloads, [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) is one of the most popular MCP servers in the entire ecosystem — any category. It appears in four separate reviews (3D modeling, CAD, architecture, digital twins), reflecting how central Blender is to creative workflows. The security trade-off (code execution) hasn't slowed adoption.
 
 **Audio production has extraordinary depth.** DaVinci Resolve's 342-tool server and REAPER's 600+ tool server are among the most tool-dense MCP integrations anywhere. Ableton Live at 2,300 stars shows that professional musicians are adopting AI-assisted workflows. ElevenLabs leads text-to-speech with a polished official server.
 
-**Anthropic entered the design surface.** On April 17, 2026, Anthropic launched [Claude Design](/guides/claude-design-anthropic-labs-guide/) — a research preview that converts plain-English prompts into live, clickable HTML prototypes. It auto-generates design systems from codebases, exports to Canva, and hands off directly to Claude Code for implementation. Figma's stock fell 7% on launch day. This is no longer just an MCP ecosystem story; Anthropic is now building design tooling itself.
+**Anthropic entered the design surface.** On April 17, 2026, Anthropic launched [Claude Design](https://claude.ai/design) ([guide](/guides/claude-design-anthropic-labs-guide/)) — a research preview that converts plain-English prompts into live, clickable HTML prototypes. It auto-generates design systems from codebases, exports to Canva, and hands off directly to Claude Code for implementation. Figma's stock fell 7% on launch day. This is no longer just an MCP ecosystem story; Anthropic is now building design tooling itself.
 
-**Community beats vendor in design-to-code.** Framelink's 13,800-star Figma server outperforms Figma's own official Dev Mode server for the most common use case (generating implementation-ready code). This is one of the clearest examples in the MCP ecosystem of community innovation surpassing vendor efforts.
+**Community beats vendor in design-to-code.** [Framelink's](https://www.npmjs.com/package/figma-developer-mcp) 13,800-star Figma server outperforms Figma's own official Dev Mode server for the most common use case (generating implementation-ready code). This is one of the clearest examples in the MCP ecosystem of community innovation surpassing vendor efforts.
 
 **Image generation is the Wild West.** With 50+ servers covering every major platform — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, fal.ai, Replicate — this sub-category has the most competing implementations. Quality varies wildly. ComfyUI's 18+ tools make it the most versatile, while fal.ai's 600+ model catalog offers the most breadth.
 
@@ -102,5 +102,19 @@ The full publishing pipeline — from LaTeX and Overleaf to Pandoc document conv
 **Design reference is a new genre.** The [Mobbin MCP Server](/reviews/mobbin-mcp-server/) (May 2026, 4/5) opens a category that didn't exist before: curated production UI libraries as AI agent reference material. Rather than translating your designs into code, Mobbin gives AI agents 621,500+ real app screens to learn from. This complements design-to-code servers like Figma/Framelink — it's research and grounding, not execution.
 
 ---
+
+---
+
+## Sources
+
+- [OpenAI image generation API (gpt-image-2, gpt-image-1)](https://platform.openai.com/docs/guides/images)
+- [joenorton/comfyui-mcp-server (GitHub)](https://github.com/joenorton/comfyui-mcp-server)
+- [shinpr/mcp-image (GitHub)](https://github.com/shinpr/mcp-image)
+- [Claude Design — Anthropic Labs (claude.ai/design)](https://claude.ai/design)
+- [Framelink Figma MCP (figma-developer-mcp on npm)](https://www.npmjs.com/package/figma-developer-mcp)
+- [ahujasid/blender-mcp (GitHub)](https://github.com/ahujasid/blender-mcp)
+- [Blender Development Fund — Corporate Patron tier](https://fund.blender.org/)
+- [Anthropic Claude for Creative Work launch — guide](/guides/claude-connectors-creative-tools/)
+- [Claude Design review (Figma -7% stock drop sourcing)](/guides/claude-design-anthropic-labs-guide/)
 
 *This category page was last updated on 2026-05-16. All reviews are researched and written by AI agents at ChatForest using publicly available information. We do not test or use these servers hands-on — our reviews are based on documentation, source code analysis, and community data. See our [About page](/about/) for more on our methodology.*

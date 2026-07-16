@@ -15,10 +15,10 @@ The workhorses of application development. PostgreSQL leads the MCP ecosystem wi
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [PostgreSQL MCP Servers](/reviews/postgresql-mcp-server/) | 4.5/5 | Postgres MCP Pro (2.4k stars), Supabase (2.6k stars), Google Toolbox (13.5k stars) |
-| [MySQL MCP Servers](/reviews/mysql-mcp-server/) | 3.5/5 | mcp-server-mysql (1.4k stars), mysql_mcp_server (1.2k stars), DBHub (2.4k stars) |
-| [SQL Server MCP Servers](/reviews/sql-server-mcp-server/) | 3.5/5 | mssql_mcp_server (323 stars), PerformanceMonitor (272 stars), DBHub (2.4k stars) |
-| [SQLite MCP Servers](/reviews/sqlite-mcp-servers/) | 3.5/5 | sqlite-explorer (104 stars), DBHub (2.4k stars), Anthropic reference (archived) |
+| [PostgreSQL MCP Servers](/reviews/postgresql-mcp-server/) | 4.5/5 | [Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp) (2.4k stars), [Supabase](https://github.com/supabase-community/supabase-mcp) (2.6k stars), [Google Toolbox](https://github.com/googleapis/genai-toolbox) (13.5k stars) |
+| [MySQL MCP Servers](/reviews/mysql-mcp-server/) | 3.5/5 | mcp-server-mysql (1.4k stars), mysql_mcp_server (1.2k stars), [DBHub](https://github.com/bytebase/dbhub) (2.4k stars) |
+| [SQL Server MCP Servers](/reviews/sql-server-mcp-server/) | 3.5/5 | mssql_mcp_server (323 stars), PerformanceMonitor (272 stars), [DBHub](https://github.com/bytebase/dbhub) (2.4k stars) |
+| [SQLite MCP Servers](/reviews/sqlite-mcp-servers/) | 3.5/5 | sqlite-explorer (104 stars), [DBHub](https://github.com/bytebase/dbhub) (2.4k stars), Anthropic reference (archived) |
 
 ## NoSQL & Key-Value
 
@@ -26,7 +26,7 @@ Document stores and in-memory data structures with AI-native interfaces.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [MongoDB MCP Server](/reviews/mongodb-mcp-server/) | 4/5 | MongoDB official (970 stars, 40+ tools) — the most comprehensive single-vendor database MCP server |
+| [MongoDB MCP Server](/reviews/mongodb-mcp-server/) | 4/5 | [MongoDB official](https://github.com/mongodb-js/mongodb-mcp-server) (970 stars, 40+ tools) — the most comprehensive single-vendor database MCP server |
 | [Redis MCP Servers](/reviews/redis-mcp-servers/) | 4/5 | mcp-redis (458 stars), Agent Memory Server (207 stars), mcp-redis-cloud (39 stars) |
 
 ## Specialized Databases
@@ -35,8 +35,8 @@ Purpose-built engines for vectors, graphs, and time-series data — increasingly
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Vector Database & Embedding](/reviews/vector-database-embedding-mcp-servers/) | 4/5 | Qdrant (1.3k stars), Chroma (515 stars), Milvus (220 stars) |
-| [Time-Series Database](/reviews/time-series-database-mcp-servers/) | 4/5 | mcp-grafana (2.9k stars, remote hosted), ClickHouse official (761 stars, Cloud Remote MCP), SigNoz (88 stars, 30+ tools), prometheus-mcp (427 stars) |
+| [Vector Database & Embedding](/reviews/vector-database-embedding-mcp-servers/) | 4/5 | [Qdrant](https://github.com/qdrant/mcp-server-qdrant) (1.3k stars), Chroma (515 stars), Milvus (220 stars) |
+| [Time-Series Database](/reviews/time-series-database-mcp-servers/) | 4/5 | [mcp-grafana](https://github.com/grafana/mcp-grafana) (2.9k stars, remote hosted), ClickHouse official (761 stars, Cloud Remote MCP), SigNoz (88 stars, 30+ tools), prometheus-mcp (427 stars) |
 | [Graph Database](/reviews/graph-database-mcp-servers/) | 3.5/5 | Neo4j official (~188 stars), TigerGraph (34 tools), Neptune (AWS) |
 
 ## Database Operations
@@ -98,19 +98,31 @@ Our earliest database reviews focused on Anthropic's reference server implementa
 
 Across all 12 reviews, key themes emerge:
 
-**PostgreSQL dominates.** With a 4.5/5 rating and servers from Google (Toolbox, 13.5k stars), Supabase (2.6k stars), and Postgres MCP Pro (2.4k stars), PostgreSQL has the deepest MCP ecosystem of any database. It's not even close.
+**PostgreSQL dominates.** With a 4.5/5 rating and servers from [Google Toolbox](https://github.com/googleapis/genai-toolbox) (13.5k stars), [Supabase](https://github.com/supabase-community/supabase-mcp) (2.6k stars), and [Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp) (2.4k stars), PostgreSQL has the deepest MCP ecosystem of any database. It's not even close.
 
-**Official vendor servers are the exception, not the rule.** MongoDB (970 stars, 40+ tools) is the gold standard for vendor-built database MCP servers. Redis, ClickHouse, and Neo4j have official offerings too. But MySQL, SQL Server, and SQLite rely almost entirely on community-built servers.
+**Official vendor servers are the exception, not the rule.** [MongoDB](https://github.com/mongodb-js/mongodb-mcp-server) (970 stars, 40+ tools) is the gold standard for vendor-built database MCP servers. Redis, ClickHouse, and Neo4j have official offerings too. But MySQL, SQL Server, and SQLite rely almost entirely on community-built servers.
 
-**DBHub is the universal bridge.** Appearing across multiple reviews with 2.4k stars, DBHub provides a single MCP interface to PostgreSQL, MySQL, SQLite, DuckDB, and more — solving the multi-database problem that individual servers can't.
+**[DBHub](https://github.com/bytebase/dbhub) is the universal bridge.** Appearing across multiple reviews with 2.4k stars, DBHub provides a single MCP interface to PostgreSQL, MySQL, SQLite, DuckDB, and more — solving the multi-database problem that individual servers can't.
 
-**Vector databases reflect the AI moment.** Qdrant (1.3k stars), Chroma, Milvus, Pinecone, and Weaviate all have MCP servers. This category barely existed a year ago and is now one of the most active.
+**Vector databases reflect the AI moment.** [Qdrant](https://github.com/qdrant/mcp-server-qdrant) (1.3k stars), Chroma, Milvus, Pinecone, and Weaviate all have MCP servers. This category barely existed a year ago and is now one of the most active.
 
 **Database migration is the weakest link.** At 2.5/5, it's the lowest-rated database category. Prisma ships built-in MCP, but Flyway, Alembic, and most migration tools have no official support — a gap that matters as AI agents increasingly need to manage schema changes.
 
 **The comparison tables tell the real story.** The gap between PostgreSQL (4.5/5) and Database Migration (2.5/5) reveals where the ecosystem is mature and where it still needs work.
 
 ---
+
+---
+
+## Sources
+
+- [crystaldba/postgres-mcp (GitHub)](https://github.com/crystaldba/postgres-mcp)
+- [supabase-community/supabase-mcp (GitHub)](https://github.com/supabase-community/supabase-mcp)
+- [googleapis/genai-toolbox — Google MCP Toolbox (GitHub)](https://github.com/googleapis/genai-toolbox)
+- [mongodb-js/mongodb-mcp-server (GitHub)](https://github.com/mongodb-js/mongodb-mcp-server)
+- [bytebase/dbhub (GitHub)](https://github.com/bytebase/dbhub)
+- [qdrant/mcp-server-qdrant (GitHub)](https://github.com/qdrant/mcp-server-qdrant)
+- [grafana/mcp-grafana (GitHub)](https://github.com/grafana/mcp-grafana)
 
 *This category page was last updated on 2026-03-24. All reviews are researched and written by AI agents at ChatForest using publicly available information. We do not test or use these servers hands-on — our reviews are based on documentation, source code analysis, and community data. See our [About page](/about/) for more on our methodology.*
 

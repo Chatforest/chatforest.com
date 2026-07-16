@@ -8,7 +8,7 @@ content_type: "Category"
 
 We've reviewed **4 categories** of Government & Legal MCP servers, evaluating over **115 individual servers** across open government data, legislative tracking, legal research, contract management, digital signing, and nonprofit operations. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
-Government and legal are where MCP meets the public interest. Five government agencies have released official MCP servers — GovInfo, Census Bureau, France's data.gouv.fr, India NSO, and GSA — making this one of the few domains where governments are ahead of many private-sector verticals. Legal technology spans 14+ country-specific jurisdictions, with CourtListener covering 3,352 U.S. courts. E-signatures bridge the gap with DocuSign, SignNow, and BoldSign all shipping official servers.
+Government and legal are where MCP meets the public interest. [Five government agencies have released official MCP servers](https://fedscoop.com/federal-goverment-mcp-improve-ai-access-public-data/) — [GovInfo](https://www.govinfo.gov/features/mcp-public-preview), [Census Bureau](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp), [France's data.gouv.fr](https://github.com/datagouv/datagouv-mcp), [India NSO](https://github.com/nso-india/esankhyiki-mcp), and [GSA](https://github.com/GSA-TTS/usa-spending-mcp-server-DEMO) — making this one of the few domains where governments are ahead of many private-sector verticals. Legal technology spans 14+ country-specific jurisdictions, with [CourtListener](https://www.courtlistener.com/) covering 3,352 U.S. courts. E-signatures bridge the gap with [DocuSign](https://developers.docusign.com/platform/mcp-server/), SignNow, and BoldSign all shipping official servers.
 
 ---
 
@@ -18,7 +18,7 @@ Government data portals, legislative tracking, congressional records, census dat
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Government & Public Sector](/reviews/government-public-sector-mcp-servers/) | 4/5 | datagouv/datagouv-mcp (85 stars, official French government), US Census Bureau (34 stars, official), us-gov-open-data-mcp (188+ tools across 36+ APIs), European Parliament MCP (61 tools, 1,130+ tests), legiscan-mcp (50 states + Congress) — 40+ servers |
+| [Government & Public Sector](/reviews/government-public-sector-mcp-servers/) | 4/5 | [datagouv/datagouv-mcp](https://github.com/datagouv/datagouv-mcp) (official French government), [uscensusbureau/us-census-bureau-data-api-mcp](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp) (official), [us-gov-open-data-mcp](https://github.com/lzinga/us-gov-open-data-mcp) (300+ tools across 40+ APIs), [European Parliament MCP](https://github.com/Hack23/European-Parliament-MCP-Server) (62 tools, 1,130+ tests), [legiscan-mcp](https://github.com/sh-patterson/legiscan-mcp) (50 states + Congress) — 40+ servers |
 
 ## Legal & Contract Management
 
@@ -52,12 +52,28 @@ Donor management, humanitarian data, charity verification, and volunteer impact 
 
 ### What stands out
 
-**Five government agencies have released official MCP servers.** GovInfo, the U.S. Census Bureau, France's data.gouv.fr, India's National Statistical Office, and the U.S. GSA all ship official MCP integrations. This is remarkable — government agencies rarely lead in adopting new developer protocols. The pattern suggests MCP's structured tool interface maps naturally to the way government data APIs already work.
+**[Five government agencies have released official MCP servers](https://fedscoop.com/federal-goverment-mcp-improve-ai-access-public-data/).** [GovInfo](https://www.govinfo.gov/features/mcp-public-preview) (U.S. GPO), the [U.S. Census Bureau](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp), [France's data.gouv.fr](https://github.com/datagouv/datagouv-mcp), [India's National Statistical Office](https://github.com/nso-india/esankhyiki-mcp), and the [U.S. GSA](https://github.com/GSA-TTS/usa-spending-mcp-server-DEMO) all ship official MCP integrations. This is remarkable — government agencies rarely lead in adopting new developer protocols. The pattern suggests MCP's structured tool interface maps naturally to the way government data APIs already work.
 
-**us-gov-open-data-mcp is the most comprehensive government data server.** With 188+ tools spanning 36+ federal APIs, it provides unified access to data from agencies including NOAA, EPA, USGS, FDA, and the National Park Service. The European Parliament MCP Server matches this ambition with 61 tools and an impressive 1,130+ automated tests.
+**[us-gov-open-data-mcp](https://github.com/lzinga/us-gov-open-data-mcp) is the most comprehensive government data server.** With 300+ tools spanning 40+ federal APIs, it provides unified access to data from agencies including NOAA, EPA, USGS, FDA, and the National Park Service. The [European Parliament MCP Server](https://github.com/Hack23/European-Parliament-MCP-Server) matches this ambition with 62 tools and an impressive 1,130+ automated tests.
 
 **Legal research has extraordinary geographic breadth.** Jurisdiction-specific MCP servers exist for 14+ countries — from CourtListener (covering 3,352 U.S. courts) to dedicated servers for French, German, Korean, Turkish, Japanese, Australian, Swiss, Polish, Argentine, Brazilian, and Indonesian law. The EU has dedicated servers covering 37 regulations including GDPR, the AI Act, and DORA.
 
-**DocuSign is the e-signature market leader in MCP.** Its official server launched in beta through the Claude Connectors Directory, making it one of the few legal tech vendors to ship an official MCP integration. SignNow follows with 15 tools and embedded signing. The open-source eSignatures.com server (35 stars, MIT) is the best alternative for self-hosted deployments.
+**[DocuSign](https://developers.docusign.com/platform/mcp-server/) is the e-signature market leader in MCP.** Its [official hosted MCP server](https://developers.docusign.com/platform/mcp-server/) launched in Global Open Beta (endpoint: `mcp-d.docusign.com/mcp`), making it one of the few legal tech vendors to ship an official MCP integration. SignNow follows with 18 tools and embedded signing. The open-source eSignatures.com server (36 stars, MIT) is the best alternative for self-hosted deployments.
 
 **The biggest gap: no major legal research vendor has official MCP support.** LexisNexis, Westlaw, Clio, Ironclad, and PandaDoc are all absent. Legal AI startups are filling the void with community servers, but enterprise legal workflows still lack the official integrations that would unlock production adoption. Similarly, no legislative body beyond France and the EU Parliament ships its own MCP server — congressional and parliamentary data remains community-sourced.
+
+---
+
+## Sources
+
+- [Five U.S. federal agencies with official MCP servers (FedScoop)](https://fedscoop.com/federal-goverment-mcp-improve-ai-access-public-data/)
+- [GovInfo MCP public preview (GPO)](https://www.govinfo.gov/features/mcp-public-preview)
+- [uscensusbureau/us-census-bureau-data-api-mcp (GitHub)](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp)
+- [datagouv/datagouv-mcp (GitHub)](https://github.com/datagouv/datagouv-mcp)
+- [nso-india/esankhyiki-mcp (GitHub)](https://github.com/nso-india/esankhyiki-mcp)
+- [GSA-TTS/usa-spending-mcp-server-DEMO (GitHub)](https://github.com/GSA-TTS/usa-spending-mcp-server-DEMO)
+- [lzinga/us-gov-open-data-mcp (GitHub)](https://github.com/lzinga/us-gov-open-data-mcp)
+- [Hack23/European-Parliament-MCP-Server (GitHub)](https://github.com/Hack23/European-Parliament-MCP-Server)
+- [sh-patterson/legiscan-mcp (GitHub)](https://github.com/sh-patterson/legiscan-mcp)
+- [CourtListener — Free Law Project](https://www.courtlistener.com/)
+- [DocuSign MCP Server (official)](https://developers.docusign.com/platform/mcp-server/)
