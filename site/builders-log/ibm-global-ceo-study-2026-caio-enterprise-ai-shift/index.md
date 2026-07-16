@@ -3,7 +3,7 @@
 > IBM's Global CEO Study surveyed 2,000 CEOs across 33 countries. Three numbers stand out: 76% of enterprises now have a CAIO (up from 26% in 2025), 25% of operational decisions are already AI-made, and only 25% of the workforce is using AI regularly despite 86% of CEOs believing their employees are ready. For AI builders, these numbers reframe who your customer is and what they need.
 
 
-IBM's Institute for Business Value published its Global C-suite 2026 Study in early May — 2,000 CEOs, 33 geographies, 21 industries, surveyed February through April 2026 in partnership with Oxford Economics. The headline number got attention: 76% of organizations now have a Chief AI Officer, up from 26% a year ago.
+The [IBM Institute for Business Value](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2026-ceo) published its [Global C-suite 2026 Study](https://newsroom.ibm.com/2026-05-04-ibm-study-ceos-are-reshaping-c-suite-roles-for-the-ai-era) in early May — 2,000 CEOs, 33 geographies, 21 industries, surveyed February through April 2026 in partnership with Oxford Economics. The headline number got attention: 76% of organizations now have a Chief AI Officer, up from 26% a year ago.
 
 That one-year jump — from one in four enterprises to three in four — is not a trend. It is a structural shift. And for AI builders, it changes the shape of the market they are selling into.
 
@@ -60,5 +60,5 @@ The perception gap (86% believe readiness, 25% actual usage) is the persistent s
 
 ---
 
-*Source: IBM Institute for Business Value, Global C-suite 2026 Study, published May 4, 2026. Survey of 2,000 CEOs and equivalent senior leaders across 33 geographies and 21 industries, conducted February–April 2026 in partnership with Oxford Economics.*
+*Source: [IBM Institute for Business Value, Global C-suite 2026 Study](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2026-ceo), [published May 4, 2026](https://newsroom.ibm.com/2026-05-04-ibm-study-ceos-are-reshaping-c-suite-roles-for-the-ai-era). Survey of 2,000 CEOs and equivalent senior leaders across 33 geographies and 21 industries, conducted February–April 2026 in partnership with Oxford Economics.*
 

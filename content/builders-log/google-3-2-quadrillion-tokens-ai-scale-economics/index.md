@@ -7,7 +7,7 @@ categories: ["AI Infrastructure", "Google", "Industry Analysis"]
 tags: ["google", "gemini", "token-economics", "api-pricing", "google-io-2026", "scale", "infrastructure", "tokenmaxxing", "agentic-workloads", "analysis"]
 ---
 
-At Google I/O 2026, Sundar Pichai said that Google is now processing more than **3.2 quadrillion tokens per month** across its products and APIs.
+At [Google I/O 2026](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/), Sundar Pichai said that Google is now processing more than **3.2 quadrillion tokens per month** across its products and APIs.
 
 That number is large enough to be meaningless without context. So here is the context:
 
@@ -29,7 +29,7 @@ The headline figure is a platform total — every product that runs on Gemini, i
 
 The API-specific numbers are smaller but still striking:
 
-- **19 billion tokens per minute** through the Gemini Developer API
+- **[19 billion tokens per minute](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)** through the Gemini Developer API
 - **375+ Google Cloud customers** each processed more than 1 trillion tokens over the past 12 months — roughly 85 billion tokens per customer per month
 - **8.5 million developers** building new apps and experiences with Gemini models monthly
 
@@ -45,7 +45,7 @@ A human asking a chatbot a question might consume 500–2,000 tokens per exchang
 
 When developers shift from chat interfaces to agent pipelines, their token consumption does not increase by 10×. It increases by 100–1,000×. Google's I/O 2026 numbers reflect an ecosystem in the early stages of that transition. The growth is structural, not behavioral.
 
-The phenomenon even has a name now. *The Register*'s I/O 2026 coverage flagged "tokenmaxxing" as a cultural reality in the developer community: deliberately maximizing token consumption to extract model capabilities — large context windows, chain-of-thought prompting, multi-step reasoning — because at current price points, it is often cheaper to spend more tokens than to engineer around them.
+The phenomenon even has a name now. [*The Register*'s I/O 2026 coverage](https://www.theregister.com/ai-ml/2026/05/19/google-touts-tokenmaxxing-huge-capex-and-ai-agents-at-i/o/5242983) flagged "tokenmaxxing" as a cultural reality in the developer community: deliberately maximizing token consumption to extract model capabilities — large context windows, chain-of-thought prompting, multi-step reasoning — because at current price points, it is often cheaper to spend more tokens than to engineer around them.
 
 ---
 
@@ -53,7 +53,7 @@ The phenomenon even has a name now. *The Register*'s I/O 2026 coverage flagged "
 
 High volume at the infrastructure layer creates downward pressure on per-token price. This is not speculation — it is already visible in the pricing announcements at I/O 2026.
 
-**Gemini 3.5 Flash** launched on May 19, 2026 at **$1.50 / $9.00 per million input/output tokens**. It outperforms the prior-generation Gemini 3.1 Pro ($2.00 / $12.00) on agentic benchmarks — 83.6% on MCP Atlas versus 3.1 Pro's lower score — at 25% lower cost.
+**[Gemini 3.5 Flash](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/)** launched on May 19, 2026 at **$1.50 / $9.00 per million input/output tokens**. It outperforms the prior-generation Gemini 3.1 Pro ($2.00 / $12.00) on agentic benchmarks — 83.6% on MCP Atlas versus 3.1 Pro's lower score — at 25% lower cost.
 
 This is the recurring pattern in commodity infrastructure markets: the dominant provider uses volume to fund price cuts that lock in the next generation of workloads before competitors can match on both capability and economics.
 

@@ -11,9 +11,9 @@ For most of 2025, the Model Context Protocol was a developer convenience — a c
 
 Last week changed the framing.
 
-On May 26, Coinbase's Base network launched Base MCP, enabling any MCP-compatible AI client to send ETH, swap tokens, and execute DeFi positions onchain — with a non-custodial smart wallet and human review before anything touches the blockchain.
+On May 26, Coinbase's Base network [launched Base MCP](https://www.coindesk.com/tech/2026/05/26/coinbase-s-base-launches-ai-tool-for-chatgpt-to-manage-crypto-wallets-and-defi-apps), enabling any MCP-compatible AI client to send ETH, swap tokens, and execute DeFi positions onchain — with a non-custodial smart wallet and human review before anything touches the blockchain.
 
-A few weeks earlier, on May 6, Amazon Web Services promoted its MCP server to general availability, giving AI agents standardized access to all 15,000+ AWS API operations with IAM-based governance and CloudTrail audit logging.
+A few weeks earlier, on May 6, Amazon Web Services [promoted its MCP server to general availability](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/), giving AI agents standardized access to all 15,000+ AWS API operations with IAM-based governance and CloudTrail audit logging.
 
 These are not incremental developer conveniences. One connects AI agents to global financial rails. The other connects them to the world's largest cloud platform with enterprise-grade access controls. Both chose MCP as the interface standard. That choice matters.
 
@@ -127,4 +127,4 @@ The protocol is crossing from "developer convenience" to "infrastructure standar
 
 ---
 
-*Chatforest covers AI infrastructure, model releases, and builder tooling. This article is based on public launch announcements, documentation, and coverage from CoinDesk, The Block, InfoQ, Fortune, and the AWS blog. We research rather than hands-on test the tools we cover.*
+*Chatforest covers AI infrastructure, model releases, and builder tooling. This article is based on public launch announcements including [CoinDesk's Base MCP coverage](https://www.coindesk.com/tech/2026/05/26/coinbase-s-base-launches-ai-tool-for-chatgpt-to-manage-crypto-wallets-and-defi-apps), the [AWS official GA announcement](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/), and [InfoQ's AWS MCP analysis](https://www.infoq.com/news/2026/05/aws-mcp-ga/). We research rather than hands-on test the tools we cover.*

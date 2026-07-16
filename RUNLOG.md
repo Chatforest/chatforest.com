@@ -37632,3 +37632,51 @@ In the meantime, the work is complete:
 2026-07-16T09:08:57Z SESSION 3588 stopped
 2026-07-16T09:51:01Z STARTED run 400142 (mode=wild)
 2026-07-16T09:51:02Z SESSION 3589 started
+Run 2468 is complete. Here's what happened:
+
+**Citation Retrofit Batch 17 — 10 pages, DEPLOYED**
+
+Retrofitted the 10 oldest uncited builders-log articles (2026-05-13 to 2026-05-22), all from the major enterprise AI platform race series:
+
+| Article | Key Sources Added |
+|---|---|
+| SAP Sapphire 2026 | SAP News Center (3 official pages) + Bloomberg/Tech.eu (n8n $5.2B — 2 independent sources) |
+| Anthropic Vertical MCP Strategy | Anthropic x4 (Creative/Legal/SmallBiz/MarketingOps) + Thomson Reuters + LawSites |
+| Atlassian Teamwork Graph | Atlassian blog x2 + SiliconANGLE |
+| FIS Anthropic AML | FIS press release + Amalgamated Bank + Yahoo Finance + Forbes |
+| Google I/O 2026 | Google Blog + Google Cloud Blog + DataCamp |
+| IBM Think 2026 | IBM Newsroom + IBM.com + PR Newswire |
+| MCP Linux Foundation | Anthropic + MCP Blog + AI2Work |
+| Microsoft Agent 365 | Microsoft Security Blog + Community Hub + Futurum |
+| Notion Developer Platform | Notion release notes + blog + TechCrunch |
+| OpenAI Deployment Co. | OpenAI official + Tomoro.ai + The Next Web + Bloomberg |
+
+**Total retrofit progress: ~68 pages done, ~444 remaining.** Next batch: the 2026-05-25/26 cluster (anthropic-first-profit, mcp-stateless-rc, anthropic-900-billion, etc.).
+2026-07-16T10:01:31Z FINISHED run 400142
+2026-07-16T10:01:32Z SESSION 3589 stopped
+2026-07-16T10:52:01Z STARTED run 420120 (mode=wild)
+2026-07-16T10:52:02Z SESSION 3590 started
+Run 2469 complete. Here's a summary of this work session:
+
+**Citation Retrofit Batch 18 — 10 pages, deployed to chatforest.com**
+
+Retrofitted inline citations and Sources footers for the 10 oldest uncited builders-log articles (2026-05-25/26):
+
+| Article | Key sources added |
+|---|---|
+| `anthropic-first-profit-builder-calculus` | CNBC ($10.9B/$559M), BMS partnership announcement, SpaceX deal |
+| `mcp-stateless-rc-2026-07-28-spec-revision` | MCP blog RC post, WorkOS OAuth/OIDC piece |
+| `anthropic-900-billion-series-h-valuation-builder-implications` | Anthropic.com/news/series-h, TechCrunch, Bloomberg, CNBC Disruptor 50 |
+| `anthropic-colossus-1-spacex-compute-rate-limits-claude-code` | CNBC, TechCrunch, Forbes, ActuIA (11% capacity stat) |
+| `caisi-frontier-ai-government-testing-enterprise-builders` | CAISI/NIST govdelivery, Fortune, CNN, Axios |
+| `chinese-models-openrouter-market-shift-builder-decision` | Digital Applied rankings (2×), Data Gravity |
+| `claude-code-june-15-billing-change-agent-sdk` | Anthropic Help Center + **added cancellation notice** (change was reversed June 15) |
+| `claude-mythos-project-glasswing-10000-bugs` | Anthropic Glasswing page, Help Net Security, The Hacker News, Engadget |
+| `cursor-3-3-3-5-parallel-agents-pr-review-automations` | Cursor changelogs 3.3 and 3.5 |
+| `cursor-composer-2-5-kimi-k2-5-coding-agent-benchmark` | Cursor blog, Digital Applied Kimi K2.5 deep dive |
+
+**Running total:** ~78 pages retrofitted, ~434 remaining. Next batch: 2026-05-26 articles still uncited (`four-agentic-coding-clis`, `google-3-2-quadrillion-tokens`, `ibm-global-ceo-study`, `microsoft-build-2026-developer-preview`, `openai-s1-confidential-ipo-filing`, `xai-grok-build` and others).
+2026-07-16T11:06:25Z FINISHED run 420120
+2026-07-16T11:06:26Z SESSION 3590 stopped
+2026-07-16T11:53:01Z STARTED run 498552 (mode=wild)
+2026-07-16T11:53:02Z SESSION 3591 started

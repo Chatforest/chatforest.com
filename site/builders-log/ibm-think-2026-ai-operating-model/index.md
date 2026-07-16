@@ -3,7 +3,7 @@
 > At Think 2026, IBM announced watsonx Orchestrate as an 'agentic control plane,' IBM Sovereign Core for governed AI on customer-controlled infrastructure, and IBM Bob — its agentic coding partner running on Anthropic Claude. IBM isn't betting on having the best model. It's betting that enterprises will pay a premium for the system that keeps thousands of agents governable.
 
 
-At its Think 2026 conference on May 5, IBM announced what it is calling the "AI Operating Model" — a blueprint for how enterprises move from fragmented AI pilots to production-scale agentic systems. The announcement included a next-generation watsonx Orchestrate (agentic control plane, private preview), IBM Sovereign Core (generally available sovereign AI infrastructure), IBM Bob (generally available agentic development partner running on Anthropic Claude and Mistral), and a real-time data foundation built in partnership with Confluent.
+At its Think 2026 conference on May 5, [IBM announced what it is calling the "AI Operating Model"](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) — a blueprint for how enterprises move from fragmented AI pilots to production-scale agentic systems. The announcement included a next-generation watsonx Orchestrate (agentic control plane, private preview), IBM Sovereign Core (generally available sovereign AI infrastructure), IBM Bob (generally available agentic development partner running on Anthropic Claude and Mistral), and a real-time data foundation built in partnership with Confluent.
 
 IBM's framing: most enterprises have invested in AI, but only a fraction believe it is paying off. The company is calling this gap the "AI divide" — and positioning its stack as the bridge across it.
 
@@ -13,7 +13,7 @@ This is not a model company making a model bet. IBM is making an *operating mode
 
 **watsonx Orchestrate (next generation, private preview).** IBM described the updated Orchestrate as an "agentic control plane for the multi-agent era." The specific capabilities: enterprises can register and deploy agents built on any framework — not just IBM's — with consistent policy enforcement and full audit logging across all agent decisions and data access. The emphasis on "any source" is deliberate. IBM is not asking enterprises to replace the agents they have already built. It is asking to be the layer above them.
 
-**IBM Bob (generally available).** IBM Bob is IBM's agentic coding partner for enterprise development. It is generally available now, and IBM reported 45% average productivity gains across 80,000 internal users before the external launch. Bob orchestrates across Anthropic Claude, Mistral, and IBM's own Granite models. The product is designed to understand legacy codebases — not just greenfield development — which is the actual composition of most enterprise software portfolios.
+**IBM Bob (generally available).** IBM Bob is IBM's agentic coding partner for enterprise development. It is generally available now, and IBM [reported 45% average productivity gains across 80,000 internal users](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) before the external launch. Bob orchestrates across Anthropic Claude, Mistral, and IBM's own Granite models. The product is designed to understand legacy codebases — not just greenfield development — which is the actual composition of most enterprise software portfolios.
 
 **IBM Sovereign Core (generally available).** Sovereign Core is customer-controlled AI infrastructure: a sovereignty software stack that gives enterprises, governments, and regulated-industry service providers full control over their data, operations, and governance. The stack includes a customer-operated AI control plane, continuous compliance evidence generation, and governed agentic workflows across hybrid environments. Mistral AI is named as the first certified model partner.
 
@@ -88,4 +88,8 @@ For builders targeting regulated enterprise accounts, IBM's Think 2026 announcem
 ---
 
 *This piece is part of an ongoing series on infrastructure bets in the agentic platform race. Related: [Anthropic's Managed Agents and the Lock-In Question](/builders-log/anthropic-managed-agents-lock-in/), [Microsoft Agent 365: Your Agent Is Shadow AI Until Microsoft Says Otherwise](/builders-log/microsoft-agent-365-enterprise-governance-layer/), [Atlassian's Bet: Be the Context Layer Every AI Agent Needs](/builders-log/atlassian-teamwork-graph-context-layer/), [Notion's Bet: The Workspace Is the Coordination Layer](/builders-log/notion-developer-platform-workspace-hub/).*
+
+---
+
+**Sources:** [Think 2026: IBM Delivers the Blueprint for the AI Operating Model (IBM Newsroom)](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) · [IBM announcements at Think 2026 (IBM)](https://www.ibm.com/new/announcements/ibm-announcements-at-think-2026) · [Think 2026: IBM Delivers the Blueprint for the AI Operating Model (PR Newswire)](https://www.prnewswire.com/news-releases/think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens-302762136.html)
 

@@ -3,7 +3,7 @@
 > At Team '26, Atlassian opened its 150-billion-connection Teamwork Graph to any MCP-compatible AI agent. This isn't a product feature — it's a platform strategy. Atlassian wants to own the organizational truth that every enterprise agent has to ask for.
 
 
-On May 6, 2026 — the same day Anthropic shipped Dreaming, Outcomes, and Multiagent Orchestration — Atlassian announced something quieter but strategically significant: they opened the Teamwork Graph to external AI agents.
+On May 6, 2026 — the same day Anthropic shipped Dreaming, Outcomes, and Multiagent Orchestration — [Atlassian announced](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26) something quieter but strategically significant: they opened the Teamwork Graph to external AI agents.
 
 Two different companies. Two different answers to the same question: where does an AI agent get the context it needs to do real work?
 
@@ -17,7 +17,7 @@ Both strategies are coherent. Both have lock-in implications. The difference is 
 
 Atlassian has been building the Teamwork Graph for years as the internal engine behind Rovo. It's not a database in the traditional sense — it's a live, indexed graph of relationships: who is working on what, how this sprint connects to that OKR, which Confluence page is referenced in which Jira ticket, who reviewed which PR, which incident touched which service.
 
-At Team '26, that graph crossed 150 billion connections. The nature of the asset is important: this isn't data an enterprise can easily recreate or migrate. It's accumulated from years of teams doing actual work inside Atlassian products. The graph gets richer the longer you use it.
+At Team '26, that [graph crossed 150 billion connections](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26). The nature of the asset is important: this isn't data an enterprise can easily recreate or migrate. It's accumulated from years of teams doing actual work inside Atlassian products. The graph gets richer the longer you use it.
 
 Atlassian's announcement is that they are now letting external agents query this graph directly — via two interfaces in open beta:
 
@@ -29,7 +29,7 @@ Atlassian's own guidance: within a single agent session, pick one interface. Usi
 
 ## The Numbers That Matter
 
-Atlassian reported that responses grounded in Teamwork Graph data delivered 44% more accurate results while using 48% fewer tokens, compared to ungrounded queries.
+Atlassian [reported](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26) that responses grounded in Teamwork Graph data delivered 44% more accurate results while using 48% fewer tokens, compared to ungrounded queries.
 
 The accuracy number is expected — you're replacing hallucination with real org context. The token number is the interesting one. Fewer tokens means lower cost per query and faster responses. Grounding isn't just a quality improvement; it's an economics improvement.
 
@@ -39,7 +39,7 @@ This is why context matters more than model quality for enterprise deployments. 
 
 The Teamwork Graph opening is the headline, but Atlassian also shipped several significant GA announcements at Team '26:
 
-**Rovo Studio is now generally available.** The no-code environment for building agents and automations. It includes built-in roles, approvals, versioning, and audit controls. Non-technical teams can build agents grounded in the Teamwork Graph without engineering involvement.
+**[Rovo Studio is now generally available.](https://www.atlassian.com/blog/company-news/rovo-team-26)** The no-code environment for building agents and automations. It includes built-in roles, approvals, versioning, and audit controls. Non-technical teams can build agents grounded in the Teamwork Graph without engineering involvement.
 
 **Jira agents are now generally available.** Agents can be assigned Jira work items directly, with full audit logging. The line between "assigned to a human" and "assigned to an agent" in Jira is now officially erased.
 
@@ -82,4 +82,8 @@ It's a reasonable bet. The graph is real, the adoption is real, and the MCP inte
 *The Rovo MCP Server and Teamwork Graph CLI are in open beta as of May 2026. Both are available through Atlassian's developer documentation. Rovo Studio and Jira agents are generally available.*
 
 *This analysis is based on public announcements from Atlassian Team '26 (May 6, 2026). ChatForest has no commercial relationship with Atlassian.*
+
+---
+
+**Sources:** [Atlassian Teamwork Graph: The context engine behind your AI — everywhere (Atlassian Blog)](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26) · [Rovo makes AI-native teamwork real for the enterprise (Atlassian Blog)](https://www.atlassian.com/blog/company-news/rovo-team-26) · [Atlassian opens Teamwork Graph and pushes Rovo into agentic execution at Team '26 (SiliconANGLE)](https://siliconangle.com/2026/05/06/atlassian-opens-teamwork-graph-pushes-rovo-agentic-execution-team-26/)
 

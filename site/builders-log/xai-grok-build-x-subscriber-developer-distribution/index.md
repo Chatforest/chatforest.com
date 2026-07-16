@@ -3,7 +3,7 @@
 > On May 24, xAI expanded Grok Build access from SuperGrok Heavy ($99–$299/mo) to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers. This is not a pricing adjustment. It is a distribution bet — and it changes how builders should think about the coding agent market.
 
 
-On May 24, 2026, xAI quietly expanded access to Grok Build — its terminal-native agentic coding tool — from SuperGrok Heavy subscribers ($99/mo intro, $299/mo full) to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers.
+On May 24, 2026, [xAI quietly expanded access to Grok Build](https://x.ai/news/grok-build-cli) — its terminal-native agentic coding tool — from SuperGrok Heavy subscribers ($99/mo intro, $299/mo full) to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers.
 
 That is a roughly 70–90% reduction in the entry price for Grok Build access.
 
@@ -36,7 +36,7 @@ xAI is running a version of that playbook through X.
 
 At $30/mo via SuperGrok, Grok Build is now the lowest-cost full-featured terminal coding agent in the market. If you are already an X Premium+ subscriber, the marginal cost is zero.
 
-That does not make Grok Build the best tool for most workflows. The SWE-Bench Verified gap is real: 70.8% vs. Claude Code's 87.6% and Codex CLI's 88.7%. A 17-point gap in benchmark accuracy is a meaningful difference in how often tasks complete without intervention.
+That does not make Grok Build the best tool for most workflows. The SWE-Bench Verified gap is real: [70.8% vs. Claude Code's 87.6% and Codex CLI's 88.7%](https://www.digitalapplied.com/blog/xai-grok-build-cli-parallel-coding-agents). A 17-point gap in benchmark accuracy is a meaningful difference in how often tasks complete without intervention.
 
 But the pricing structure changes the adoption calculus for a specific segment: developers who use X, were not planning to pay for a separate coding agent, and are willing to experiment with an early-access tool that has genuine architectural advantages (worktree isolation, ACP support, prompt transparency).
 

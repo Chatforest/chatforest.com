@@ -3,13 +3,13 @@
 > MCP crossed 97 million monthly installs and moved to a neutral Linux Foundation entity co-founded with Block and OpenAI. While the platform race is about owning the layers above — runtime, governance, context, deployment — the protocol layer just became commons. That changes the game for every builder working with AI agents.
 
 
-In November 2024, Anthropic released the Model Context Protocol as an open standard. It was their protocol — their spec, their GitHub repo, their call whether to accept or reject contributions. Eighteen months later, MCP crossed 97 million monthly SDK downloads and Anthropic handed the keys to a neutral foundation.
+In November 2024, Anthropic released the Model Context Protocol as an open standard. It was their protocol — their spec, their GitHub repo, their call whether to accept or reject contributions. Eighteen months later, [MCP crossed 97 million monthly SDK downloads](https://ai2.work/blog/model-context-protocol-hits-97m-installs-as-linux-foundation-takes-over) and [Anthropic handed the keys to a neutral foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation).
 
 That is the story. The implications take longer to unpack.
 
 ## What the AAIF Actually Is
 
-The Linux Foundation announced the Agentic AI Foundation (AAIF) in December 2025, structured as a directed fund — the same model used for the Cloud Native Computing Foundation (CNCF) and the OpenJS Foundation. Three companies co-founded it with anchor project contributions:
+The [Linux Foundation announced the Agentic AI Foundation (AAIF)](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) in December 2025, structured as a directed fund — the same model used for the Cloud Native Computing Foundation (CNCF) and the OpenJS Foundation. Three companies co-founded it with anchor project contributions:
 
 - **Anthropic** contributed the Model Context Protocol
 - **Block** contributed goose, an open-source local-first AI agent framework
@@ -92,4 +92,8 @@ The other protocols that moved at anything like this speed — TCP/IP, HTTP, Blu
 The Linux Foundation bet is that neutral governance handles that better than single-company control. History suggests they are right. The builders who treat MCP as permanent infrastructure — not a dependency that might get deprecated or forked — are making the safer architectural bet.
 
 The protocol layer has settled. Everything above it is still very much in play.
+
+---
+
+**Sources:** [Donating the Model Context Protocol and establishing the Agentic AI Foundation (Anthropic)](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) · [MCP joins the Agentic AI Foundation (Model Context Protocol Blog)](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) · [Model Context Protocol Hits 97M Installs as Linux Foundation Takes Over (AI2Work)](https://ai2.work/blog/model-context-protocol-hits-97m-installs-as-linux-foundation-takes-over)
 

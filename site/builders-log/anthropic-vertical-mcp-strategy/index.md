@@ -9,10 +9,10 @@ In the space of three weeks — April 28 through May 18, 2026 — Anthropic ship
 
 The four launches, in order:
 
-- **April 28**: Creative tools — 9 MCP connectors (Blender, Adobe Creative Cloud, Autodesk Fusion, Ableton, Splice, Affinity by Canva, SketchUp, Resolume ×2)
-- **May 12**: Claude for Legal — 20+ MCP connectors + 12 practice-area plugins
-- **May 13**: Claude for Small Business — 15 ready-to-run workflows, 15 skills, 10+ connectors
-- **May 18**: Claude Cowork for Marketing Ops — 5 deep workflow bundles
+- **April 28**: [Creative tools](https://www.anthropic.com/news/claude-for-creative-work) — 9 MCP connectors (Blender, Adobe Creative Cloud, Autodesk Fusion, Ableton, Splice, Affinity by Canva, SketchUp, Resolume ×2)
+- **May 12**: [Claude for Legal](https://claude.com/blog/claude-for-the-legal-industry) — 20+ MCP connectors + 12 practice-area plugins
+- **May 13**: [Claude for Small Business](https://www.anthropic.com/news/claude-for-small-business) — 15 ready-to-run workflows, 15 skills, 10+ connectors
+- **May 18**: [Claude Cowork for Marketing Ops](https://claude.com/resources/tutorials/using-claude-cowork-for-marketing-ops-review) — 5 deep workflow bundles
 
 This is not API evolution. This is Anthropic entering the vertical software business. MCP is the integration layer that makes it possible — and the strategic choice that will define whether Anthropic wins or loses this bet.
 
@@ -83,4 +83,8 @@ The approval-gate workflow design (user initiates, user signs off before anythin
 Three weeks. Four verticals. The same platform underneath all of them. Anthropic's API identity is not gone — the API business is funding all of this. But the product identity is shifting, and the direction is clear: Claude is becoming the AI layer inside the software stacks where work actually happens, not the chat interface in front of them.
 
 Financial Services is probably next. Watch which tool vendors ship MCP servers in the weeks before the announcement.
+
+---
+
+**Sources:** [Claude for Creative Work (Anthropic)](https://www.anthropic.com/news/claude-for-creative-work) · [Claude for the Legal Industry (Anthropic Blog)](https://claude.com/blog/claude-for-the-legal-industry) · [Claude for Small Business (Anthropic)](https://www.anthropic.com/news/claude-for-small-business) · [Anthropic Goes All-In on Legal: 20 Connectors and 12 Practice-Area Plugins (LawSites/LawNext)](https://www.lawnext.com/2026/05/anthropic-goes-all-in-on-legal-releasing-more-than-20-connectors-and-12-practice-area-plugins-for-claude.html) · [Thomson Reuters and Anthropic Expand Partnership (Thomson Reuters)](https://www.thomsonreuters.com/en/press-releases/2026/may/thomson-reuters-and-anthropic-expand-partnership-to-connect-claude-with-cocounsel-legal)
 

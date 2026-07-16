@@ -3,7 +3,7 @@
 > Microsoft Build 2026 runs June 2-3 in San Francisco. Here's what matters for AI builders: GitHub Copilot SDK in public preview, Foundry Agent Service GA, memory billing starting June 1, and a full MCP push across the stack.
 
 
-Microsoft Build 2026 runs **June 2–3** at Fort Mason Center in San Francisco — and this year the developer conference is arriving with a fully assembled agent platform underneath it. Not a roadmap. Not a preview. A GA platform with memory, MCP integration, private networking, and billing that starts the day before the conference doors open.
+[Microsoft Build 2026](https://build.microsoft.com/en-US/home) runs **June 2–3** at Fort Mason Center in San Francisco — and this year the developer conference is arriving with a fully assembled agent platform underneath it. Not a roadmap. Not a preview. A GA platform with memory, MCP integration, private networking, and billing that starts the day before the conference doors open.
 
 If you're building with AI agents, here's what you need to know before June 2.
 
@@ -19,7 +19,7 @@ That's a different kind of Build than the last few years.
 
 ### 1. GitHub Copilot SDK
 
-The Copilot SDK shipped in public preview on April 2, 2026. It gives builders a way to **embed GitHub Copilot's agentic capabilities directly into their own applications, workflows, and platform services** — not just use Copilot as a developer tool, but deploy Copilot-style AI as an infrastructure layer inside whatever you're building.
+The [Copilot SDK shipped in public preview on April 2, 2026](https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview/). It gives builders a way to **embed GitHub Copilot's agentic capabilities directly into their own applications, workflows, and platform services** — not just use Copilot as a developer tool, but deploy Copilot-style AI as an infrastructure layer inside whatever you're building.
 
 The session catalog includes "GitHub Copilot in Visual Studio: Agents That Debug, Profile, and Test," which previews both `/fleet` mode and `autopilot` mode — where the Copilot CLI can operate autonomously on narrow, bounded tasks without developer intervention per step.
 
@@ -27,7 +27,7 @@ For builders, the question the SDK raises is interesting: if you can embed Copil
 
 ### 2. Foundry Agent Service: The Platform Is Now GA
 
-Foundry Agent Service is the managed platform for deploying, hosting, and scaling agents. The GA release (February 2026) shipped with:
+[Foundry Agent Service](https://devblogs.microsoft.com/foundry/foundry-agent-service-ga/) is the managed platform for deploying, hosting, and scaling agents. The GA release (February 2026) shipped with:
 
 - **Responses API-based architecture** replacing the older Assistants API surface
 - **End-to-end private networking** — MCP servers, AI Search indexes, and data agents all route over private network paths; no public MCP endpoints required
