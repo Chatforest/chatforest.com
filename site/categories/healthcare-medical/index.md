@@ -5,7 +5,7 @@
 
 We've reviewed **3 categories** of Healthcare & Medical MCP servers, evaluating over **85 individual servers** across electronic health records, drug discovery, medical research, imaging, genomics, mental health, and wellness tracking. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
-Healthcare is the deepest and most mature vertical MCP category. FHIR proved to be the perfect complement to MCP — healthcare already had a standardized data format, so MCP servers could focus on the AI integration layer rather than data normalization. WSO2's FHIR server (98 stars) leads EHR integration with SMART-on-FHIR auth, while healthcare-mcp-public (101 stars) bundles FDA, PubMed, clinical trials, ICD-10, and DICOM into a single gateway. The OpenPharma initiative maintains 45 coordinated repositories — the largest organized MCP server collection for any industry. ChEMBL's 22-tool drug discovery server and multiple PubMed implementations show genuine demand from biomedical researchers. Innovaccer's HMCP extends the MCP protocol itself for HIPAA compliance — a signal that healthcare takes this technology seriously.
+Healthcare is the deepest and most mature vertical MCP category. FHIR proved to be the perfect complement to MCP — healthcare already had a standardized data format, so MCP servers could focus on the AI integration layer rather than data normalization. [WSO2's FHIR server](https://github.com/wso2/fhir-mcp-server) (98 stars) leads EHR integration with SMART-on-FHIR auth, while [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) (101 stars) bundles FDA, PubMed, clinical trials, ICD-10, and DICOM into a single gateway. The [OpenPharma initiative](https://github.com/OpenPharma) maintains 45 coordinated repositories — the largest organized MCP server collection for any industry. [ChEMBL's 22-tool drug discovery server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) and multiple PubMed implementations show genuine demand from biomedical researchers. Innovaccer's HMCP extends the MCP protocol itself for HIPAA compliance — a signal that healthcare takes this technology seriously.
 
 ---
 
@@ -15,7 +15,7 @@ The clinical data landscape spans FHIR/EHR integration (6+ competing implementat
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/) | 4.0/5 | Cicatriiz/healthcare-mcp-public (101 stars, 9 tools — FDA/PubMed/clinical trials/ICD-10/DICOM), wso2/fhir-mcp-server (98 stars, SMART-on-FHIR auth), JackKuo666/PubMed-MCP-Server (104 stars, deep paper analysis), ChristianHinge/dicom-mcp (86 stars, 11 DICOM/PACS tools), JamesANZ/medical-mcp (75 stars, 15 tools, zero API keys), cyanheads/clinicaltrialsgov-mcp-server (58 stars, patient-to-trial matching) — 30+ servers |
+| [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/) | 4.0/5 | [Cicatriiz/healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) (101 stars, 9 tools — FDA/PubMed/clinical trials/ICD-10/DICOM), [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) (98 stars, SMART-on-FHIR auth), JackKuo666/PubMed-MCP-Server (104 stars, deep paper analysis), ChristianHinge/dicom-mcp (86 stars, 11 DICOM/PACS tools), JamesANZ/medical-mcp (75 stars, 15 tools, zero API keys), cyanheads/clinicaltrialsgov-mcp-server (58 stars, patient-to-trial matching) — 30+ servers |
 
 ## Pharmaceutical & Drug Discovery
 
@@ -23,7 +23,7 @@ The deepest vertical MCP category we have reviewed — 40+ servers with institut
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Pharmaceutical & Healthcare](/reviews/pharmaceutical-healthcare-mcp-servers/) | 4.5/5 | Augmented-Nature/ChEMBL-MCP-Server (77 stars, 22 drug discovery tools), healthcare-mcp-public (102 stars, 9 tools), wso2/fhir-mcp-server (98 stars, FHIR CRUD), ChristianHinge/dicom-mcp (86 stars, PACS imaging), cyanheads/pubmed-mcp-server (66 stars, 7 tools + citation formatting), OpenPharma initiative (45 repos), Innovaccer HMCP (28 stars, protocol extension) — 40+ servers |
+| [Pharmaceutical & Healthcare](/reviews/pharmaceutical-healthcare-mcp-servers/) | 4.5/5 | [Augmented-Nature/ChEMBL-MCP-Server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) (77 stars, 22 drug discovery tools), [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) (102 stars, 9 tools), [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) (98 stars, FHIR CRUD), ChristianHinge/dicom-mcp (86 stars, PACS imaging), cyanheads/pubmed-mcp-server (66 stars, 7 tools + citation formatting), [OpenPharma initiative](https://github.com/OpenPharma) (45 repos), Innovaccer HMCP (28 stars, protocol extension) — 40+ servers |
 
 ## Mental Health & Wellness
 
@@ -44,4 +44,13 @@ Despite being the most mature vertical MCP category, healthcare has significant 
 - **No clinical documentation** — no nursing notes, physician documentation, or medical transcription MCP servers
 - **No medical device integration** — beyond DICOM, no IoMT (vital signs monitors, infusion pumps, wearables)
 - **No crisis hotline integration** — no server connecting to 988 Suicide & Crisis Lifeline or equivalent services
+
+---
+
+## Sources
+
+- [healthcare-mcp-public — Cicatriiz/healthcare-mcp-public on GitHub](https://github.com/Cicatriiz/healthcare-mcp-public)
+- [fhir-mcp-server — wso2/fhir-mcp-server on GitHub](https://github.com/wso2/fhir-mcp-server)
+- [ChEMBL-MCP-Server — Augmented-Nature/ChEMBL-MCP-Server on GitHub](https://github.com/Augmented-Nature/ChEMBL-MCP-Server)
+- [OpenPharma initiative on GitHub](https://github.com/OpenPharma)
 

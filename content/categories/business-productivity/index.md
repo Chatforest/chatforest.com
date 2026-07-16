@@ -38,7 +38,7 @@ The productivity stack is well-served. Google Workspace (1,800 stars) and Excel 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Spreadsheet & Office Suite](/reviews/spreadsheet-office-suite-mcp-servers/) | 4/5 | Google Workspace (1,800 stars, 12+ services), Word (1,700 stars), Excel (878 stars), Google Sheets (737 stars, 8+ implementations) — 35+ servers |
-| [Note-Taking & Knowledge Management](/reviews/note-taking-knowledge-management-mcp-servers/) | 4.5/5 | Graphiti/Zep (20,000+ stars, temporal knowledge graphs), Notion (4,300 stars, v2.0.0, 22 tools), Obsidian (3,500 stars, 8+ servers), Bear (official MCP April 2026), mcp-memory-service (1,700 stars), Supermemory (1,700 stars) — 50+ servers |
+| [Note-Taking & Knowledge Management](/reviews/note-taking-knowledge-management-mcp-servers/) | 4.5/5 | Graphiti/Zep (20,000+ stars, temporal knowledge graphs), [Notion](https://github.com/makenotion/notion-mcp-server) (4,300 stars, v2.0.0, 22 tools), Obsidian (3,500 stars, 8+ servers), Bear (official MCP April 2026), mcp-memory-service (1,700 stars), Supermemory (1,700 stars) — 50+ servers |
 | [Calendar & Scheduling](/reviews/calendar-scheduling-mcp-servers/) | 4/5 | Google Calendar (1,000 stars, 12 tools, multi-account), Microsoft Outlook official, Apple Calendar (3,000 stars via apple-mcp), Cal.com official, CalDAV universal — 35+ servers |
 | [Spreadsheets](/reviews/spreadsheet-mcp-servers/) | 3.5/5 | Excel Python (3,500 stars, no Excel required), Google Sheets (10+ options), Airtable official, Smartsheet official — dozens of servers |
 
@@ -56,10 +56,10 @@ Deep-dives on the most significant workflow automation and integration platforms
 
 | Review | Rating | Key Stats |
 |--------|--------|-----------|
-| [n8n](/reviews/n8n-mcp-server/) | 4/5 | 181K stars, bidirectional MCP hub, 400+ integrations, unlimited self-hosted, fair-code license |
-| [Pipedream](/reviews/pipedream-mcp-server/) | 3.5/5 | 11.2K stars, 10,000+ tools across 2,800+ APIs, managed OAuth, per-app server architecture |
-| [Composio](/reviews/composio-mcp-server/) | 3.5/5 | 27.5K stars, 500+ apps via single endpoint, dynamic tool discovery (Rube), $29M funded |
-| [Zapier](/reviews/zapier-mcp-server/) | 3/5 | 8,000+ apps, 30,000+ actions, official remote server, task-based pricing |
+| [n8n](/reviews/n8n-mcp-server/) | 4/5 | [181K stars](https://github.com/n8n-io/n8n), bidirectional MCP hub, 400+ integrations, unlimited self-hosted, fair-code license |
+| [Pipedream](/reviews/pipedream-mcp-server/) | 3.5/5 | [11.2K stars](https://github.com/PipedreamHQ/pipedream), 10,000+ tools across 2,800+ APIs, managed OAuth, per-app server architecture |
+| [Composio](/reviews/composio-mcp-server/) | 3.5/5 | [27.5K stars](https://github.com/ComposioHQ/composio), 500+ apps via single endpoint, dynamic tool discovery (Rube), [$29M funded](https://www.prnewswire.com/news-releases/composio-raises-29m-to-solve-ais-learning-problem-building-skills-that-actually-improve-over-time-302510684.html) [[2]](https://yourstory.com/ai-story/composio-funding-round-raises-29m-led-by-lightspeed-venture-partners) |
+| [Zapier](/reviews/zapier-mcp-server/) | 3/5 | [8,000+ apps](https://github.com/zapier/zapier-mcp), 30,000+ actions, official remote server, task-based pricing |
 
 ## Individual CRM & Sales Server Reviews
 
@@ -75,7 +75,7 @@ Deep-dives on tools that connect AI agents to personal productivity systems. Tod
 
 | Review | Rating | Key Stats |
 |--------|--------|-----------|
-| [Todoist](/reviews/todoist-mcp-server/) | 4/5 | 393 stars, official Doist server, 37+ tools, OAuth, MCP Apps widgets, 3 transports |
+| [Todoist](/reviews/todoist-mcp-server/) | 4/5 | [393 stars](https://github.com/Doist/todoist-ai), official Doist server, 37+ tools, OAuth, MCP Apps widgets, 3 transports |
 | [Airtable](/reviews/airtable-mcp-server/) | 4/5 | 429 stars, community-built, 15 tools, full CRUD + schema management, MIT license |
 | [Obsidian](/reviews/obsidian-mcp-servers/) | 3.5/5 | 8 community servers, 3 architectures (REST plugin, filesystem, native), mcp-obsidian 3K stars |
 
@@ -85,7 +85,7 @@ Desktop automation fundamentally expands what AI agents can do beyond API calls.
 
 | Review | Rating | Key Stats |
 |--------|--------|-----------|
-| [Desktop Automation & RPA](/reviews/desktop-automation-rpa-mcp-servers/) | 4/5 | 30+ servers, Playwright (28.9K stars), Windows-MCP (4.7K stars), BrowserMCP (6.1K stars), macOS 200+ AppleScript recipes |
+| [Desktop Automation & RPA](/reviews/desktop-automation-rpa-mcp-servers/) | 4/5 | 30+ servers, [Playwright](https://github.com/microsoft/playwright-mcp) (28.9K stars), Windows-MCP (4.7K stars), BrowserMCP (6.1K stars), macOS 200+ AppleScript recipes |
 
 ## Marketing & Advertising
 
@@ -120,4 +120,18 @@ OCR, PDF extraction, and document intelligence tools that let AI agents read and
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [OCR & Document Intelligence](/reviews/ocr-document-intelligence-mcp-servers/) | 3.5/5 | MinerU (61.7K stars, highest PulseMCP traffic), PaddleOCR (77K parent stars, 111 languages, 4 tools), Markdownify MCP (2.6K stars), Docling (59K stars, Red Hat MCP) |
-| [PDF & Document Processing](/reviews/pdf-document-mcp-servers/) | 3.5/5 | Microsoft MarkItDown (90,700 stars, 29+ formats), IBM Docling (37K+ stars), PDF Reader MCP (557 stars) — 15+ servers |
+| [PDF & Document Processing](/reviews/pdf-document-mcp-servers/) | 3.5/5 | [Microsoft MarkItDown](https://github.com/microsoft/markitdown) (90,700 stars, 29+ formats), IBM Docling (37K+ stars), PDF Reader MCP (557 stars) — 15+ servers |
+
+---
+
+## Sources
+
+- [n8n — n8n-io/n8n on GitHub](https://github.com/n8n-io/n8n)
+- [Pipedream — PipedreamHQ/pipedream on GitHub](https://github.com/PipedreamHQ/pipedream)
+- [Composio raises $29M — PR Newswire](https://www.prnewswire.com/news-releases/composio-raises-29m-to-solve-ais-learning-problem-building-skills-that-actually-improve-over-time-302510684.html)
+- [Composio $29M funding round — YourStory](https://yourstory.com/ai-story/composio-funding-round-raises-29m-led-by-lightspeed-venture-partners)
+- [Zapier MCP on GitHub](https://github.com/zapier/zapier-mcp)
+- [makenotion/notion-mcp-server — Notion official MCP on GitHub](https://github.com/makenotion/notion-mcp-server)
+- [Doist/todoist-ai — Todoist official MCP on GitHub](https://github.com/Doist/todoist-ai)
+- [microsoft/playwright-mcp — Playwright MCP on GitHub](https://github.com/microsoft/playwright-mcp)
+- [microsoft/markitdown — Microsoft MarkItDown on GitHub](https://github.com/microsoft/markitdown)

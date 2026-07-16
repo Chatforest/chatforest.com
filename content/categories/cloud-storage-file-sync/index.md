@@ -19,10 +19,10 @@ The major cloud storage platforms — each with a different MCP strategy. Box le
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Box](/reviews/box-mcp-server/) | 4/5 | box/mcp-server-box-remote (official, hosted mcp.box.com, no install, OAuth 2.1, 13 tool categories, Box AI Q&A, DocGen, FedRAMP/HIPAA), hmk/box-mcp-server (community, JWT/token, search + read) |
-| [Google Drive](/reviews/google-drive-mcp-server/) | 4/5 | google/mcp (3.4K stars, official, Workspace-wide), taylorwilsdon/google_workspace_mcp (1.9K stars, 12 services), google-docs-mcp (403 stars, deep document editing), mcp-gdrive (272 stars, community pioneer) |
+| [Google Drive](/reviews/google-drive-mcp-server/) | 4/5 | [google/mcp](https://github.com/google/mcp) (3.4K stars, official, Workspace-wide), [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) (1.9K stars, 12 services), google-docs-mcp (403 stars, deep document editing), mcp-gdrive (272 stars, community pioneer) |
 | [Dropbox](/reviews/dropbox-mcp-server/) | 4/5 | Dropbox Remote (official, hosted, no install), Dash MCP (9 stars, official, 30+ app search), amgadabdelhafez (26 stars, full file CRUD), ngs/dropbox (3 stars, comprehensive API) |
 | [OneDrive](/reviews/onedrive-mcp-server/) | 3.5/5 | Work IQ (official, 13 tools, sensitivity labels, $30/user/month Copilot req.), Softeria (552 stars, file + mail + calendar), lokka (229 stars, full file ops), pnp/cli-microsoft365 (88 stars, 16 M365 services) |
-| [iCloud](/reviews/icloud-mcp-server/) | 2.5/5 | apple-mcp (3K stars, archived, macOS-native), MrGo2 (5 stars, CalDAV/CardDAV), minagishl (4 stars, iCloud Drive read), mike-tih (2 stars, reminders) — no file storage access, critical gap |
+| [iCloud](/reviews/icloud-mcp-server/) | 2.5/5 | [apple-mcp](https://github.com/supermemoryai/apple-mcp) (3K stars, archived, macOS-native), MrGo2 (5 stars, CalDAV/CardDAV), minagishl (4 stars, iCloud Drive read), mike-tih (2 stars, reminders) — no file storage access, critical gap |
 
 ## Local File Access
 
@@ -30,7 +30,7 @@ The foundational filesystem server — Anthropic's reference implementation and 
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Filesystem](/reviews/filesystem-mcp-server/) | 4.5/5 | @modelcontextprotocol/server-filesystem (81.6K monorepo stars, 137K+ weekly npm downloads, 14 tools, Apache 2.0) — reference implementation with partial reads, media support, dry-run edits, Docker sandboxing, and MCP Roots protocol |
+| [Filesystem](/reviews/filesystem-mcp-server/) | 4.5/5 | [@modelcontextprotocol/server-filesystem](https://github.com/modelcontextprotocol/servers) (81.6K monorepo stars, 137K+ weekly npm downloads, 14 tools, Apache 2.0) — reference implementation with partial reads, media support, dry-run edits, Docker sandboxing, and MCP Roots protocol |
 
 ---
 
@@ -45,3 +45,12 @@ The most striking pattern across cloud storage MCP is the **divergence in vendor
 **Key gap**: No unified multi-cloud file server exists. If you work across Box, Google Drive, Dropbox, and OneDrive, you need four separate MCP server configurations. The Filesystem server handles local files excellently but can't bridge to cloud storage.
 
 For enterprise/infrastructure cloud storage (S3, GCS, Azure Blob, MinIO), see our [Cloud & Infrastructure](/categories/cloud-infrastructure/) category. For email and calendar integrations that overlap with some of these platforms, see [Communication & Collaboration](/categories/communication-collaboration/).
+
+---
+
+## Sources
+
+- [google/mcp — Google's official MCP servers on GitHub](https://github.com/google/mcp)
+- [taylorwilsdon/google_workspace_mcp on GitHub](https://github.com/taylorwilsdon/google_workspace_mcp)
+- [apple-mcp — supermemoryai/apple-mcp on GitHub](https://github.com/supermemoryai/apple-mcp)
+- [modelcontextprotocol/servers — reference Filesystem server on GitHub](https://github.com/modelcontextprotocol/servers)

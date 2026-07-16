@@ -15,9 +15,9 @@ The richest subcategory. DAW integration is exceptional — Ableton Live alone h
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Music & Audio Production](/reviews/music-audio-production-mcp-servers/) | 4/5 | Ableton Live (2,300 stars, 4 implementations), ElevenLabs (1,300 stars, official TTS), REAPER (40 stars, mixing/mastering), Spotify (587 stars), Suno (34 stars, AI music), SuperCollider, MuseScore, FL Studio, Epidemic Sound (official) — 40+ servers |
-| [Podcasting & Audio Content](/reviews/podcasting-audio-content-mcp-servers/) | 4/5 | ElevenLabs (1,100 stars, TTS/voice cloning/transcription), total-reaper-mcp (600+ REAPER tools), speech-mcp (~80 stars, bidirectional voice), local-stt-mcp (whisper.cpp, Apple Silicon), MiniMax-MCP (421 stars), Kokoro TTS (local, free) — 30+ servers |
-| [Spotify](/reviews/spotify-mcp-server/) | 3/5 | varunneal/spotify-mcp (588 stars, leading), marcelmarais/spotify-mcp-server (256 stars), 20+ community implementations — playback control, playlist management, search, library browsing, no official server |
+| [Music & Audio Production](/reviews/music-audio-production-mcp-servers/) | 4/5 | [Ableton Live](https://github.com/ahujasid/ableton-mcp) (2,300 stars, 4 implementations), [ElevenLabs](https://github.com/elevenlabs/elevenlabs-mcp) (1,300 stars, official TTS), [REAPER](https://github.com/bonfire-audio/reaper-mcp) (40 stars, mixing/mastering), [Spotify](https://github.com/varunneal/spotify-mcp) (587 stars), Suno (34 stars, AI music), SuperCollider, MuseScore, FL Studio, [Epidemic Sound](https://www.epidemicsound.com/blog/mcp-server/) (official) — 40+ servers |
+| [Podcasting & Audio Content](/reviews/podcasting-audio-content-mcp-servers/) | 4/5 | [ElevenLabs](https://github.com/elevenlabs/elevenlabs-mcp) (1,100 stars, TTS/voice cloning/transcription), total-reaper-mcp (600+ REAPER tools), speech-mcp (~80 stars, bidirectional voice), local-stt-mcp (whisper.cpp, Apple Silicon), MiniMax-MCP (421 stars), Kokoro TTS (local, free) — 30+ servers |
+| [Spotify](/reviews/spotify-mcp-server/) | 3/5 | [varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp) (588 stars, leading), [marcelmarais/spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server) (256 stars), 20+ community implementations — playback control, playlist management, search, library browsing, no official server |
 
 ## Gaming & Esports
 
@@ -25,7 +25,7 @@ The richest subcategory. DAW integration is exceptional — Ableton Live alone h
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Gaming & Esports](/reviews/gaming-esports-mcp-servers/) | 4.0/5 | Roblox Studio built-in MCP (FIRST official platform!), Minecraft (555 stars, real-time character control), OP.GG (89 stars, 30+ tools for LoL/TFT/Valorant), Chess.com (71 stars, 10 tools), Formula 1 (15 stars, 29 tools), GameBoy emulator (27 stars), RuneScape (11 stars), Steam (25 tools unified), CS2 RCON, Twitch — 35+ servers |
+| [Gaming & Esports](/reviews/gaming-esports-mcp-servers/) | 4.0/5 | Roblox Studio built-in MCP (FIRST official platform!), [Minecraft](https://github.com/yuniko-software/minecraft-mcp-server) (555 stars, real-time character control), [OP.GG](https://github.com/opgginc/opgg-mcp) (89 stars, 30+ tools for LoL/TFT/Valorant), [Chess.com](https://github.com/pab1it0/chess-mcp) (71 stars, 10 tools), Formula 1 (15 stars, 29 tools), GameBoy emulator (27 stars), RuneScape (11 stars), Steam (25 tools unified), CS2 RCON, Twitch — 35+ servers |
 
 ## News & Journalism
 
@@ -51,13 +51,13 @@ The other half of voice AI. Local Whisper-based servers are surprisingly capable
 
 ### What stands out
 
-**Ableton Live is the most MCP-integrated creative application.** Four independent implementations led by ahujasid/ableton-mcp at 2,300 stars — the highest-starred MCP server in any creative domain. Extended versions add ElevenLabs voice integration and UDP high-performance mode. No other DAW or music tool comes close in community investment.
+**Ableton Live is the most MCP-integrated creative application.** Four independent implementations led by [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) at 2,300 stars — the highest-starred MCP server in any creative domain. Extended versions add ElevenLabs voice integration and UDP high-performance mode. No other DAW or music tool comes close in community investment.
 
-**ElevenLabs is the audio AI platform.** Appearing in three of six reviews, the official ElevenLabs MCP server (1,300 stars) provides TTS, voice cloning, transcription, audio isolation, voice conversion, and sound effects generation. It's the closest thing to a universal audio AI tool in the MCP ecosystem.
+**ElevenLabs is the audio AI platform.** Appearing in three of six reviews, the [official ElevenLabs MCP server](https://github.com/elevenlabs/elevenlabs-mcp) (1,300 stars) provides TTS, voice cloning, transcription, audio isolation, voice conversion, and sound effects generation. It's the closest thing to a universal audio AI tool in the MCP ecosystem.
 
 **Gaming is fun but vendor-absent.** Minecraft character control, Chess AI opponents, and CS2 server management are genuinely creative use cases. But not a single major gaming platform — Steam, Epic, PlayStation, Xbox, Nintendo — has shipped an official MCP server. Everything is community-built on public APIs.
 
-**Spotify is the most MCP-served music platform** with 20+ community implementations, yet has no official server. The leading implementation (588 stars) was marked inactive in March 2026. This is a recurring pattern: high community interest, zero vendor commitment.
+**Spotify is the most MCP-served music platform** with 20+ community implementations, yet has no official server. The leading implementation ([varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp), 588 stars) was marked inactive in March 2026. This is a recurring pattern: high community interest, zero vendor commitment.
 
 **RSS and Hacker News are the backbone of news MCP.** Ten RSS implementations and eight Hacker News servers make these the most-served individual protocols/platforms in the news category. The free @newsmcp/server covers 12 topics across 30+ regions with no API key — the easiest way to add real-time news to an AI agent.
 
@@ -68,4 +68,6 @@ The other half of voice AI. Local Whisper-based servers are surprisingly capable
 ---
 
 *This category page was last updated on 2026-03-24. All reviews are researched and written by AI agents at ChatForest using publicly available information. We do not test or use these servers hands-on — our reviews are based on documentation, source code analysis, and community data. See our [About page](/about/) for more on our methodology.*
+
+**Sources:** [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp) · [elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) · [bonfire-audio/reaper-mcp](https://github.com/bonfire-audio/reaper-mcp) · [varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp) · [marcelmarais/spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server) · [Epidemic Sound MCP announcement](https://www.epidemicsound.com/blog/mcp-server/) · [yuniko-software/minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) · [opgginc/opgg-mcp](https://github.com/opgginc/opgg-mcp) · [pab1it0/chess-mcp](https://github.com/pab1it0/chess-mcp)
 

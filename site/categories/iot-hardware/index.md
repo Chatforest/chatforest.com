@@ -5,7 +5,7 @@
 
 We've reviewed **5 categories** of IoT & Hardware MCP servers, evaluating over **150 individual servers** across robotics, smart home automation, IoT platforms, embedded systems, 3D printing, industrial controllers, and manufacturing. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
-IoT & Hardware is where MCP meets the physical world. This is arguably the most exciting frontier in the MCP ecosystem — AI agents that can control robots, manage smart homes, program microcontrollers, and monitor industrial equipment. The breakout story is xiaozhi-esp32 (24,900 stars), an MCP-based voice AI platform running on ESP32 hardware. Home Assistant dominates smart home with 1,600 stars and 96 tools on its leading server. Robotics has matured fast — ROS/ROS2 integration crossed 1,100 stars and DimOS (1,700 stars) emerged as the first agentic robotics operating system.
+IoT & Hardware is where MCP meets the physical world. This is arguably the most exciting frontier in the MCP ecosystem — AI agents that can control robots, manage smart homes, program microcontrollers, and monitor industrial equipment. The breakout story is [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) (24,900 stars), an MCP-based voice AI platform running on ESP32 hardware. Home Assistant dominates smart home with 1,600 stars and 96 tools on its leading server. Robotics has matured fast — ROS/ROS2 integration crossed 1,100 stars and [DimOS](https://github.com/dimensionalOS/dimos) (1,700 stars) emerged as the first agentic robotics operating system.
 
 ---
 
@@ -15,8 +15,8 @@ The most technically ambitious MCP category. Robotics ranges from ROS/ROS2 integ
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Robotics](/reviews/robotics-mcp-servers/) | 4.5/5 | DimOS (3,100 stars, +82%, agentic robotics OS), xiaozhi-esp32 (26,100 stars, voice AI on ESP32), ha-mcp (1,600+ stars, 86 tools) + HA official MCP, robotmcp/ros-mcp-server (1,200 stars, ROS/ROS2), phosphobot MCP NEW (VLA robot arms), Isaac Sim v0.3.0 — 55+ servers |
-| [Robotics & IoT](/reviews/robotics-iot-mcp-servers/) | 3.5/5 | ROS MCP (969 stars, bidirectional ROS/ROS2), ha-mcp (1.1K stars, 80+ tools), homeassistant-mcp (500+ stars, SSE), Isaac Sim MCP (NVIDIA simulation), mcp2serial (35 stars, hardware bridge) — 15+ servers |
+| [Robotics](/reviews/robotics-mcp-servers/) | 4.5/5 | [DimOS](https://github.com/dimensionalOS/dimos) (3,100 stars, +82%, agentic robotics OS), [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) (26,100 stars, voice AI on ESP32), [ha-mcp](https://github.com/homeassistant-ai/ha-mcp) (1,600+ stars, 86 tools) + HA official MCP, [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) (1,200 stars, ROS/ROS2), phosphobot MCP NEW (VLA robot arms), Isaac Sim v0.3.0 — 55+ servers |
+| [Robotics & IoT](/reviews/robotics-iot-mcp-servers/) | 3.5/5 | [ROS MCP](https://github.com/robotmcp/ros-mcp-server) (969 stars, bidirectional ROS/ROS2), [ha-mcp](https://github.com/homeassistant-ai/ha-mcp) (1.1K stars, 80+ tools), homeassistant-mcp (500+ stars, SSE), Isaac Sim MCP (NVIDIA simulation), mcp2serial (35 stars, hardware bridge) — 15+ servers |
 
 ## Smart Home Automation
 
@@ -24,7 +24,7 @@ Home Assistant dominates with 8+ MCP server implementations — the most MCP-ser
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Smart Home & Home Automation](/reviews/smart-home-automation-mcp-servers/) | 4.5/5 | ha-mcp (2,600+ stars, 86+ tools, MIT), homeassistant-mcp (569 stars, SSE real-time), HomeClaw (99 stars, Apple HomeKit NEW), Tuya official SDK (16 stars NEW), Samsung SmartThings NEW, Amazon Alexa NEW, Google Home NEW, Philips Hue 5+ servers NEW, Zigbee2MQTT bridge NEW, Ring security NEW, Roborock vacuum NEW — 30+ servers |
+| [Smart Home & Home Automation](/reviews/smart-home-automation-mcp-servers/) | 4.5/5 | [ha-mcp](https://github.com/homeassistant-ai/ha-mcp) (2,600+ stars, 86+ tools, MIT), homeassistant-mcp (569 stars, SSE real-time), HomeClaw (99 stars, Apple HomeKit NEW), Tuya official SDK (16 stars NEW), Samsung SmartThings NEW, Amazon Alexa NEW, Google Home NEW, Philips Hue 5+ servers NEW, Zigbee2MQTT bridge NEW, Ring security NEW, Roborock vacuum NEW — 30+ servers |
 
 ## IoT Platforms & Industrial
 
@@ -32,7 +32,7 @@ The broadest hardware category — spanning smart home platforms, MQTT brokers, 
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [IoT & Embedded](/reviews/iot-embedded-mcp-servers/) | 4/5 | robotmcp/ros-mcp-server (873 stars, ROS/ROS2), homeassistant-mcp (500 stars), thingsboard-mcp (120+ tools, official), horw/esp-mcp (135 stars, ESP-IDF), AWS IoT SiteWise MCP — 45+ servers |
+| [IoT & Embedded](/reviews/iot-embedded-mcp-servers/) | 4/5 | [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server) (873 stars, ROS/ROS2), homeassistant-mcp (500 stars), thingsboard-mcp (120+ tools, official), horw/esp-mcp (135 stars, ESP-IDF), [AWS IoT SiteWise MCP](https://github.com/awslabs/mcp/tree/main/src/aws-iot-sitewise-mcp-server) — 45+ servers |
 
 ## 3D Printing & Fabrication
 
@@ -40,5 +40,17 @@ The broadest hardware category — spanning smart home platforms, MQTT brokers, 
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Printing & 3D Printing](/reviews/printing-3d-printing-mcp-servers/) | 4/5 | mcp-3D-printer-server (161 stars, OctoPrint/Klipper/Bambu Lab), FreeCAD MCP (605 stars), CUPS printing, Printify (AI design generation) — 23+ servers |
+| [Printing & 3D Printing](/reviews/printing-3d-printing-mcp-servers/) | 4/5 | [mcp-3D-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server) (161 stars, OctoPrint/Klipper/Bambu Lab), [FreeCAD MCP](https://github.com/bonninr/freecad_mcp) (605 stars), CUPS printing, Printify (AI design generation) — 23+ servers |
+
+---
+
+## Sources
+
+- [xiaozhi-esp32 — 78/xiaozhi-esp32 on GitHub](https://github.com/78/xiaozhi-esp32)
+- [DimOS — dimensionalOS/dimos on GitHub](https://github.com/dimensionalOS/dimos)
+- [ha-mcp — homeassistant-ai/ha-mcp on GitHub](https://github.com/homeassistant-ai/ha-mcp)
+- [ros-mcp-server — robotmcp/ros-mcp-server on GitHub](https://github.com/robotmcp/ros-mcp-server)
+- [mcp-3D-printer-server — DMontgomery40/mcp-3D-printer-server on GitHub](https://github.com/DMontgomery40/mcp-3D-printer-server)
+- [FreeCAD MCP — bonninr/freecad_mcp on GitHub](https://github.com/bonninr/freecad_mcp)
+- [AWS IoT SiteWise MCP — awslabs/mcp on GitHub](https://github.com/awslabs/mcp/tree/main/src/aws-iot-sitewise-mcp-server)
 

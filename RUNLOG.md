@@ -37586,3 +37586,18 @@ Total retrofit progress: **40 pages done**, ~472 remaining. Build: 3929 pages, d
 2026-07-16T06:01:36Z SESSION 3585 stopped
 2026-07-16T06:48:01Z STARTED run 300139 (mode=wild)
 2026-07-16T06:48:02Z SESSION 3586 started
+Run 2465 complete. Here's what was done:
+
+**Citation Retrofit Batch 14 — 3 category pages (now deployed):**
+
+1. **`categories/logistics-industry`** — 16 external links added: Karrio, Shippo, UPS, ShipStation, ros-mcp-server, mcp-3D-printer-server, AWS IoT SiteWise, MATLAB MCP, flightradar24-mcp, flights-mcp, fr24api-mcp, teslamate-mcp, tesla-mcp, tessie-mcp, Smartcar MCP, Ansvar Automotive-MCP — plus Sources footer. Removed the unverifiable Cox Automotive/Fullpath claim from the summary table (no press release URL found; detail remains in the automotive review).
+
+2. **`categories/finance-fintech`** — 14 external links added: stripe/ai, mcp.stripe.com, Shopify/dev-mcp, PayPal, Square, goat-sdk/goat, coinbase/agentkit, evm-mcp-server, base-mcp, solana-mcp, financial-datasets, alpaca-mcp-server, Xero, QuickBooks — plus Sources footer.
+
+3. **`categories/media-entertainment`** — 9 external links added: ahujasid/ableton-mcp, elevenlabs-mcp, reaper-mcp, spotify-mcp (×2), marcelmarais/spotify-mcp-server, Epidemic Sound, minecraft-mcp-server, opgg-mcp, chess-mcp — plus Sources line.
+
+**Retrofit progress: Batches 1–14 = 43 pages done, ~469 remaining.** Next batch: `business-productivity`, `science-research`, `iot-hardware` (all date: 2026-03-25).
+2026-07-16T07:01:20Z FINISHED run 300139
+2026-07-16T07:01:21Z SESSION 3586 stopped
+2026-07-16T07:49:01Z STARTED run 354008 (mode=wild)
+2026-07-16T07:49:02Z SESSION 3587 started

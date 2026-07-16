@@ -8,7 +8,7 @@ content_type: "Category"
 
 We've reviewed **6 categories** of Science & Research MCP servers, evaluating over **170 individual servers** across academic literature search, scientific computing, bioinformatics, chemistry, astronomy, and geospatial mapping. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
-Science & Research is where MCP meets the lab bench. The pattern here differs from enterprise categories — instead of vendor-backed official servers, most science MCP servers come from individual researchers and academic groups. The exceptions matter: MathWorks ships an official MATLAB server, Mapbox ships 2 official geospatial servers, and Anthropic maintains a life-sciences marketplace. Community projects like mcp.science (12+ bundled servers) and the Augmented-Nature organization (10+ biology database servers) show that researchers are building their own AI infrastructure.
+Science & Research is where MCP meets the lab bench. The pattern here differs from enterprise categories — instead of vendor-backed official servers, most science MCP servers come from individual researchers and academic groups. The exceptions matter: MathWorks ships an official MATLAB server, Mapbox ships 2 official geospatial servers, and Anthropic maintains a life-sciences marketplace. Community projects like [mcp.science](https://mcp.science) (12+ bundled servers) and the [Augmented-Nature](https://github.com/Augmented-Nature) organization (10+ biology database servers) show that researchers are building their own AI infrastructure.
 
 ---
 
@@ -27,7 +27,7 @@ The computational backbone. MATLAB's official MCP server tripled to 483 stars (v
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Scientific Computing & Mathematics](/reviews/scientific-computing-mathematics-mcp-servers/) | 4.0/5 | MATLAB official (483 stars, MathWorks, v0.9.0), RMCP (201 stars, 52 R tools), Kaimon.jl (62 stars, Julia), mcp.science (131 stars), mma-mcp (24 stars, Wolfram), COMSOL ecosystem (3 servers) — 40+ servers |
+| [Scientific Computing & Mathematics](/reviews/scientific-computing-mathematics-mcp-servers/) | 4.0/5 | [MATLAB official](https://github.com/matlab/matlab-mcp-core-server) (483 stars, MathWorks, v0.9.0), RMCP (201 stars, 52 R tools), Kaimon.jl (62 stars, Julia), [mcp.science](https://mcp.science) (131 stars), mma-mcp (24 stars, Wolfram), COMSOL ecosystem (3 servers) — 40+ servers |
 
 ## Life Sciences & Chemistry
 
@@ -35,7 +35,7 @@ The deepest science MCP ecosystem. Bioinformatics leads with 40+ servers — gen
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Bioinformatics & Life Sciences](/reviews/bioinformatics-life-sciences-mcp-servers/) | 4.5/5 | biomcp (497 stars, +106%), Anthropic life-sciences (321 stars, Coefficient Bio $400M acquisition), AlphaFold MCP (33 stars, 25+ tools — NEW, fills gap), KEGG MCP (9 stars, 30 tools — NEW, fills gap), LangCare FHIR (31 stars, enterprise-grade — NEW) — 55+ servers |
+| [Bioinformatics & Life Sciences](/reviews/bioinformatics-life-sciences-mcp-servers/) | 4.5/5 | [biomcp](https://github.com/genomoncology/biomcp) (497 stars, +106%), Anthropic life-sciences (321 stars, [Coefficient Bio $400M acquisition](https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/) [[2]](https://thenextweb.com/news/anthropic-just-paid-400-million-for-a-startup-with-fewer-than-10-people)), AlphaFold MCP (33 stars, 25+ tools — NEW, fills gap), KEGG MCP (9 stars, 30 tools — NEW, fills gap), LangCare FHIR (31 stars, enterprise-grade — NEW) — 55+ servers |
 | [Chemistry & Molecular Modeling](/reviews/chemistry-molecular-modeling-mcp-servers/) | 3.5/5 | ChatMol molecule-mcp (~89 stars, PyMOL/ChimeraX), RDKit MCP (cheminformatics), PubChem (110M+ compounds), DrugBank (17,430+ drugs), Vina docking — 25+ servers |
 
 ## Geospatial & Mapping
@@ -44,4 +44,16 @@ The highest-rated science subcategory. GIS platforms, satellite imagery, and map
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Geospatial & Mapping](/reviews/geospatial-mapping-mcp-servers/) | 4.5/5 | Mapbox (2 official servers), Google Earth Engine, NASA Earthdata, QGIS, OpenStreetMap, GIS libraries — 30+ servers |
+| [Geospatial & Mapping](/reviews/geospatial-mapping-mcp-servers/) | 4.5/5 | [Mapbox](https://github.com/mapbox/mapbox-mcp-server) (2 official servers), Google Earth Engine, NASA Earthdata, QGIS, OpenStreetMap, GIS libraries — 30+ servers |
+
+---
+
+## Sources
+
+- [matlab-mcp-core-server — MATLAB official MCP server on GitHub](https://github.com/matlab/matlab-mcp-core-server)
+- [mcp.science — multi-server science toolkit](https://mcp.science)
+- [Augmented-Nature organization on GitHub](https://github.com/Augmented-Nature)
+- [genomoncology/biomcp — biomedical querying MCP server on GitHub](https://github.com/genomoncology/biomcp)
+- [Anthropic acquires Coefficient Bio for $400M — TechCrunch](https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/)
+- [Anthropic paid $400M for a startup with fewer than 10 people — The Next Web](https://thenextweb.com/news/anthropic-just-paid-400-million-for-a-startup-with-fewer-than-10-people)
+- [Mapbox MCP server on GitHub](https://github.com/mapbox/mapbox-mcp-server)
