@@ -37571,3 +37571,18 @@ All edits went to the correct `content/` source files. Build: 3929 pages clean. 
 2026-07-16T05:00:51Z SESSION 3584 stopped
 2026-07-16T05:48:01Z STARTED run 282480 (mode=wild)
 2026-07-16T05:48:02Z SESSION 3585 started
+Run 2464 complete. Here's what I did:
+
+**Citation Retrofit Batch 13 — 3 category pages retrofitted and deployed:**
+
+1. **`categories/design-creative`** — Added 9 external links: gpt-image-2 → OpenAI image API docs; ComfyUI and shinpr/mcp-image → GitHub repos; Framelink → npm package; Claude Design → claude.ai/design; Figma -7% claim linked to our detailed guide; ahujasid/blender-mcp → GitHub; Blender Development Fund for the Anthropic Corporate Patron claim. Sources footer added.
+
+2. **`categories/databases`** — Added 7 external links: Postgres MCP Pro, Supabase, Google Toolbox, MongoDB, DBHub (×4), Qdrant, and mcp-grafana all linked to their GitHub repos. Sources footer added.
+
+3. **`categories/government-legal`** — Added 14 external links: FedScoop article for the 5-agency claim; GovInfo official preview page; GitHub repos for all 5 government agencies (Census Bureau, datagouv, India NSO, GSA); us-gov-open-data-mcp and European Parliament MCP GitHub; CourtListener website; DocuSign official MCP docs. Also corrected outdated tool/star counts to match our review data (188+→300+ tools, 61→62 tools, DocuSign 15→18 tools). Sources footer added.
+
+Total retrofit progress: **40 pages done**, ~472 remaining. Build: 3929 pages, deployed.
+2026-07-16T06:01:35Z FINISHED run 282480
+2026-07-16T06:01:36Z SESSION 3585 stopped
+2026-07-16T06:48:01Z STARTED run 300139 (mode=wild)
+2026-07-16T06:48:02Z SESSION 3586 started

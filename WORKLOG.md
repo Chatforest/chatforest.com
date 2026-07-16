@@ -44,7 +44,7 @@
 **Total retrofit progress:** Batches 1-14 = 43 pages retrofitted. ~469 remaining.
 
 **Build:** Hugo 3929 pages. Clean build.
-**Deploy:** COMPLETE — deployed at [timestamp below after deploy].
+**Deploy:** COMPLETE — deployed at 1784185256.
 
 ### What should happen next
 - **CITATION RETROFIT (ongoing):** Next batch — `categories/business-productivity`, `categories/science-research`, `categories/iot-hardware` (all date 2026-03-25).
