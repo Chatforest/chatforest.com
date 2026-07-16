@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2459 — 2026-07-16 — Deploy Batch 7 + Citation Retrofit Batch 8 (3 category pages) (3929 pages, DEPLOY NEXT RUN)
+
+**Mode:** Developer
+
+### Inbox
+- Message #2173 (Rob standing retrofit duty) — marked seen. Already incorporated into CLAUDE.md.
+- Message #2172 (my outbound to RingS) — still pending (expected).
+
+### What I did
+
+**DEPLOYED:** 3929-page build from Run 2458 (Batch 7 citations) — throttle cleared (3730s elapsed). Rsync complete. Citation retrofits for 3 Anthropic Claude reviews now live.
+
+**CITATION RETROFIT BATCH 8 — 3 category pages (oldest uncited by date: all 2026-03-24):**
+
+1. `categories/web-search-scraping/index.md` — 37 external links added + Sources footer:
+   - Brave Search GitHub → [brave/brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server)
+   - "Free tier eliminated Feb 2026" → [brave.com/search/api/](https://brave.com/search/api/)
+   - Exa GitHub → [exa-labs/exa-mcp-server](https://github.com/exa-labs/exa-mcp-server)
+   - Firecrawl GitHub → [firecrawl/firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server)
+   - Crawl4AI GitHub → [unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) (×2)
+   - Bright Data GitHub → [brightdata/brightdata-mcp](https://github.com/brightdata/brightdata-mcp)
+   - Apify GitHub → [apify/apify-mcp-server](https://github.com/apify/apify-mcp-server)
+   - Chrome DevTools MCP → [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+   - WebMCP W3C → [webmachinelearning/webmcp](https://github.com/webmachinelearning/webmcp)
+   - Fetch MCP → [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+   - CVE-2025-65513 → [cve.org CVE record](https://www.cve.org/CVERecord?id=CVE-2025-65513) (CVSS 9.3)
+   - DuckDuckGo → [nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)
+   - Nimble $47M Series B → [TechCrunch Feb 2026](https://techcrunch.com/2026/02/24/nimble-way-raises-47m-to-give-ai-agents-better-cleaner-data/)
+   - Sources footer added (13 sources)
+
+2. `categories/ai-providers/index.md` — 26 external links added + Sources footer:
+   - modelcontextprotocol/servers → [GitHub](https://github.com/modelcontextprotocol/servers) (×2)
+   - Python SDK → [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) (×2)
+   - TypeScript SDK → [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) (×2)
+   - MCP spec repo → [modelcontextprotocol/modelcontextprotocol](https://github.com/modelcontextprotocol/modelcontextprotocol)
+   - awslabs/mcp → [GitHub](https://github.com/awslabs/mcp) (×2)
+   - google/mcp → [GitHub](https://github.com/google/mcp) (×2)
+   - Gemini CLI → [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) (×2)
+   - Llama Stack → [meta-llama/llama-stack](https://github.com/meta-llama/llama-stack) (×2)
+   - ollama-mcp-bridge → [patruff/ollama-mcp-bridge](https://github.com/patruff/ollama-mcp-bridge) (×2)
+   - MCP announcement → [anthropic.com/news/model-context-protocol](https://www.anthropic.com/news/model-context-protocol)
+   - Sources footer added (9 sources)
+
+3. `categories/lifestyle-personal/index.md` — 15 external links added + Sources footer:
+   - HowToCook-mcp → [worryzyy/HowToCook-mcp](https://github.com/worryzyy/HowToCook-mcp) (×2)
+   - OpenNutrition → [deadletterq/mcp-opennutrition](https://github.com/deadletterq/mcp-opennutrition) (×2)
+   - Fli → [punitarani/fli](https://github.com/punitarani/fli) (×2)
+   - stickerdaniel/linkedin-mcp-server → [GitHub](https://github.com/stickerdaniel/linkedin-mcp-server)
+   - Himalayas-App/himalayas-mcp → [GitHub](https://github.com/Himalayas-App/himalayas-mcp)
+   - jinzcdev/leetcode-mcp-server → [GitHub](https://github.com/jinzcdev/leetcode-mcp-server)
+   - Sources footer added (6 sources)
+
+**Total retrofit progress:** Batches 1-8 = 25 pages retrofitted. ~487 remaining (490 found this run, minus 3 = 487).
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** PENDING — throttle just reset (deployed Run 2458 build at start of this run). Deploy at start of next run.
+
+### What should happen next
+- **DEPLOY FIRST:** 3929-page build (with Batch 8 citations) staged and ready — deploy at start of next run.
+- **CITATION RETROFIT (ongoing):** Next batch will be more 2026-03-24 category pages (design-creative, developer-tools, databases, government-legal, etc.)
+- **UPCOMING EVENTS (still pending):**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2458 — 2026-07-16 — Deploy Batch 6 + Citation Retrofit Batch 7 (3 pages) (3929 pages, DEPLOY NEXT RUN)
 
 **Mode:** Developer

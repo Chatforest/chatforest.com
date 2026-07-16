@@ -18,7 +18,7 @@ The companies that define and drive the MCP standard.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Anthropic MCP Servers](/reviews/anthropic-mcp-server/) | 4.5/5 | modelcontextprotocol/servers (81.8k stars), Python SDK (22.3k stars), TypeScript SDK (11.9k stars) |
+| [Anthropic MCP Servers](/reviews/anthropic-mcp-server/) | 4.5/5 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) (81.8k stars), [Python SDK](https://github.com/modelcontextprotocol/python-sdk) (22.3k stars), [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) (11.9k stars) |
 
 ## Cloud & Enterprise Platforms
 
@@ -26,8 +26,8 @@ Enterprise-grade MCP ecosystems with broad service coverage.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [AWS Bedrock MCP Servers](/reviews/aws-bedrock-mcp-server/) | 4.5/5 | awslabs/mcp (8,540 stars, 68 official servers), Amazon Q Developer, Bedrock AgentCore |
-| [Google Gemini MCP Servers](/reviews/gemini-mcp-server/) | 4/5 | google/mcp (3.4k stars, 24+ official servers), Gemini CLI (98.7k stars) |
+| [AWS Bedrock MCP Servers](/reviews/aws-bedrock-mcp-server/) | 4.5/5 | [awslabs/mcp](https://github.com/awslabs/mcp) (8,540 stars, 68 official servers), Amazon Q Developer, Bedrock AgentCore |
+| [Google Gemini MCP Servers](/reviews/gemini-mcp-server/) | 4/5 | [google/mcp](https://github.com/google/mcp) (3.4k stars, 24+ official servers), [Gemini CLI](https://github.com/google-gemini/gemini-cli) (98.7k stars) |
 
 ## API-First Providers
 
@@ -45,7 +45,7 @@ Open-weight model providers where community servers bridge the gap.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Meta Llama MCP Servers](/reviews/meta-llama-mcp-server/) | 3/5 | Llama Stack (8,300 stars), ollama-mcp-bridge (972 stars) |
+| [Meta Llama MCP Servers](/reviews/meta-llama-mcp-server/) | 3/5 | [Llama Stack](https://github.com/meta-llama/llama-stack) (8,300 stars), [ollama-mcp-bridge](https://github.com/patruff/ollama-mcp-bridge) (972 stars) |
 | [Mistral AI MCP Server](/reviews/mistral-mcp-server/) | 3/5 | Le Chat (20+ MCP connectors), everaldo/mcp-mistral-ocr (37 stars) |
 
 ---
@@ -54,14 +54,28 @@ Open-weight model providers where community servers bridge the gap.
 
 Across all 8 reviews, clear patterns emerge:
 
-**Anthropic created the protocol — and it shows.** With the specification itself, 81.8k-star reference servers, both official SDKs, and MCP Inspector (9.2k stars), Anthropic doesn't just participate in the MCP ecosystem — it *is* the ecosystem's foundation. The 4.5/5 rating reflects depth no other provider matches at the protocol level.
+**Anthropic created the protocol — and it shows.** With the [specification itself](https://github.com/modelcontextprotocol/modelcontextprotocol), [81.8k-star reference servers](https://github.com/modelcontextprotocol/servers), [Python SDK](https://github.com/modelcontextprotocol/python-sdk) (22.3k stars), [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) (11.9k stars), and MCP Inspector (9.2k stars), Anthropic doesn't just participate in the MCP ecosystem — it *is* the ecosystem's foundation. The 4.5/5 rating reflects depth no other provider matches at the protocol level.
 
-**AWS treats MCP as infrastructure.** 68 official servers covering S3, Lambda, DynamoDB, CDK, Bedrock, and dozens more AWS services. At 8,540 stars and counting, awslabs/mcp is the largest single-vendor MCP repository by server count. The 4.5/5 rating ties Anthropic — but for breadth rather than depth.
+**AWS treats MCP as infrastructure.** 68 official servers covering S3, Lambda, DynamoDB, CDK, Bedrock, and dozens more AWS services. At 8,540 stars and counting, [awslabs/mcp](https://github.com/awslabs/mcp) is the largest single-vendor MCP repository by server count. The 4.5/5 rating ties Anthropic — but for breadth rather than depth.
 
-**Google goes wide, OpenAI goes narrow.** Google ships 24+ official MCP servers through google/mcp and has Gemini CLI at 98.7k stars. OpenAI has no official MCP server at all — community bridges fill the gap, but at 197 stars for the leading one, the ecosystem is thin. The difference? Google sees MCP as a way to connect its service portfolio; OpenAI sees its Agents SDK as the primary integration path.
+**Google goes wide, OpenAI goes narrow.** Google ships 24+ official MCP servers through [google/mcp](https://github.com/google/mcp) and has [Gemini CLI](https://github.com/google-gemini/gemini-cli) at 98.7k stars. OpenAI has no official MCP server at all — community bridges fill the gap, but at 197 stars for the leading one, the ecosystem is thin. The difference? Google sees MCP as a way to connect its service portfolio; OpenAI sees its Agents SDK as the primary integration path.
 
-**Open-weight providers rely on community.** Meta's Llama Stack (8,300 stars) supports MCP tool calling, and ollama-mcp-bridge (972 stars) connects local models to MCP servers. But neither Meta nor Mistral ships a dedicated MCP server. The community fills gaps, but adoption stays modest compared to cloud providers.
+**Open-weight providers rely on community.** Meta's [Llama Stack](https://github.com/meta-llama/llama-stack) (8,300 stars) supports MCP tool calling, and [ollama-mcp-bridge](https://github.com/patruff/ollama-mcp-bridge) (972 stars) connects local models to MCP servers. But neither Meta nor Mistral ships a dedicated MCP server. The community fills gaps, but adoption stays modest compared to cloud providers.
 
 **Enterprise AI lags behind.** Cohere's North MCP SDK has just 11 stars — the lowest of any official provider server in our reviews. Enterprise AI companies see MCP as one integration among many, not a strategic priority. This may change as agentic workflows mature.
 
 **The real story is convergence.** Every major AI provider now either ships MCP servers, supports MCP in their client tools, or both. The question is no longer *if* a provider will support MCP, but *how deeply*. The 4.5/5-to-2.5/5 rating spread shows where that depth currently lives.
+
+---
+
+## Primary Sources
+
+- [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) — Anthropic reference MCP servers (81.8k stars as of March 2026)
+- [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) — Official Python SDK (22.3k stars)
+- [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) — Official TypeScript SDK (11.9k stars)
+- [awslabs/mcp](https://github.com/awslabs/mcp) — AWS official MCP server repository (8,540 stars, 68+ servers)
+- [google/mcp](https://github.com/google/mcp) — Google official MCP server catalog (3.4k stars, 24+ servers)
+- [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) — Gemini CLI with native MCP client (98.7k stars)
+- [meta-llama/llama-stack](https://github.com/meta-llama/llama-stack) — Meta Llama Stack with MCP tool support (8,300 stars)
+- [patruff/ollama-mcp-bridge](https://github.com/patruff/ollama-mcp-bridge) — Community Ollama MCP bridge (972 stars)
+- [Anthropic MCP announcement](https://www.anthropic.com/news/model-context-protocol) — November 2024 MCP launch announcement

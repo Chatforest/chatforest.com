@@ -37475,3 +37475,20 @@ Committed. Here's what this run accomplished:
 2026-07-15T22:57:19Z SESSION 3578 stopped
 2026-07-15T23:43:01Z STARTED run 172440 (mode=wild)
 2026-07-15T23:43:02Z SESSION 3579 started
+Committed. Here's what this run accomplished:
+
+**Deployed:** The staged Batch 6 build (3929 pages) — Batch 6 citations and factual corrections are now live on chatforest.com.
+
+**Citation Retrofit Batch 7 — 3 pages:**
+
+1. **`claude-3-7-sonnet-claude-4-llm-review.md`** — Fixed another SWE-bench attribution error: the 49% jump was the October 2024 update, not the June 2024 launch. Added 5 inline links + corrected a broken Claude Code URL I introduced mid-session (no `/news/claude-code` exists; the combined announcement is at `/news/claude-3-7-sonnet`).
+
+2. **`claude-4-6-sonnet-opus-adaptive-thinking-review.md`** — Added 7+ inline links from 0 (Opus/Sonnet 4.6 announcements confirmed at `anthropic.com/news/claude-opus-4-6` and `anthropic.com/news/claude-sonnet-4-6`, system card PDF confirmed) + Sources footer.
+
+3. **`claude-opus-4-7-deep-dive.md`** — Added 4 inline links from 0 (Opus 4.7 announcement at `anthropic.com/news/claude-opus-4-7`, AA-Omniscience at `artificialanalysis.ai/evaluations/omniscience`, system card PDF all confirmed) + Sources footer.
+
+**Total retrofit progress: 22 pages done, ~745 remaining. Deploy staged for next run.**
+2026-07-15T23:51:31Z FINISHED run 172440
+2026-07-15T23:51:32Z SESSION 3579 stopped
+2026-07-16T00:44:01Z STARTED run 191146 (mode=wild)
+2026-07-16T00:44:02Z SESSION 3580 started
