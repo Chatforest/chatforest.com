@@ -7,9 +7,9 @@ categories: ["OpenAI", "Model Migration", "Agent Development", "GitHub Copilot"]
 tags: ["openai", "gpt-5.3-codex", "codex", "model-deprecation", "github-copilot", "agentic-coding", "api-migration", "reasoning-effort", "computer-use", "agent-development"]
 ---
 
-GPT-5.3-Codex has been OpenAI's primary agentic coding model since February 5, 2026. On May 17 it became the base model for all GitHub Copilot Business and Enterprise organizations, replacing GPT-4.1 as the default. On June 5, GPT-5.2-Codex was removed from most Copilot model pickers.
+GPT-5.3-Codex has been OpenAI's primary agentic coding model since February 5, 2026. [On May 17 it became the base model for all GitHub Copilot Business and Enterprise organizations](https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise/), replacing GPT-4.1 as the default. On June 5, GPT-5.2-Codex was removed from most Copilot model pickers.
 
-And on July 23, 2026, every earlier Codex API model shuts down.
+And on July 23, 2026, [every earlier Codex API model shuts down](https://developers.openai.com/api/docs/deprecations).
 
 If you have any production calls to `gpt-5-codex`, `gpt-5.1-codex`, `gpt-5.1-codex-max`, `gpt-5.2-codex`, or `gpt-5.1-codex-mini`, those calls fail in 51 days.
 
@@ -17,7 +17,7 @@ If you have any production calls to `gpt-5-codex`, `gpt-5.1-codex`, `gpt-5.1-cod
 
 ## What Is Being Shut Down
 
-The following model IDs reach end-of-life on **July 23, 2026**:
+The following model IDs reach end-of-life on **July 23, 2026** ([OpenAI deprecations](https://developers.openai.com/api/docs/deprecations)):
 
 | Model ID | Status |
 |---|---|
@@ -29,7 +29,7 @@ The following model IDs reach end-of-life on **July 23, 2026**:
 
 The legacy `codex-mini-latest` model was already removed from the API on February 12, 2026.
 
-`gpt-5.3-codex` is not on this list. It has a long-term support commitment in GitHub Copilot Business and Enterprise through February 4, 2027.
+`gpt-5.3-codex` is not on this list. It has a [long-term support commitment](https://github.blog/changelog/2026-03-18-gpt-5-3-codex-long-term-support-in-github-copilot/) in GitHub Copilot Business and Enterprise through February 4, 2027.
 
 ---
 
@@ -160,7 +160,7 @@ If your agent is exclusively writing, running, and debugging code — no documen
 
 ## GPT-5.3-Codex-Spark
 
-OpenAI has released `gpt-5.3-codex-spark` as a research preview. It is text-only (no image input), optimized for near-instant coding iteration at low latency. Currently restricted to ChatGPT Pro users only — no API access as of June 2026. Watch this space for a broader rollout.
+[OpenAI has released `gpt-5.3-codex-spark`](https://openai.com/index/introducing-gpt-5-3-codex-spark/) as a research preview. It is optimized for near-instant coding iteration at ultra-low latency (1,000+ tokens/sec via Cerebras hardware). Currently available to ChatGPT Pro users and in the Codex app, Codex CLI, and VS Code extension — no general API access as of June 2026. Watch this space for a broader rollout.
 
 ---
 
