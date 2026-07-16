@@ -67,7 +67,7 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> Mistral Small 3.1, released March 17, 2025. 24B dense parameters. 128K context (4× over Small 3). Apache 2.0. Vision input added. 150 tokens/second. Single RTX 4090 deployable. MMLU 80.62%. HumanEval 88.41%. DocVQA 94.08%. $0.10/$0.30 per million tokens. Part of our <strong><a href="/categories/ai-tools/">AI Models &amp; Companies reviews</a></strong>.</p>
 <hr>
-<p>&ldquo;Best in its weight class&rdquo; is a claim Mistral has made more than once. With Mistral Small 3.1, released March 17, 2025, the argument was harder to dismiss than usual.</p>
+<p>&ldquo;Best in its weight class&rdquo; is a claim Mistral has made more than once. With <a href="https://mistral.ai/news/mistral-small-3-1/">Mistral Small 3.1</a>, released March 17, 2025, the argument was harder to dismiss than usual.</p>
 <p>The model takes the 24-billion-parameter foundation of Mistral Small 3 — released in January 2025, already competitive with GPT-4o Mini — and addresses its two most obvious gaps: it adds vision understanding, and it quadruples the context window from 32K to 128K tokens. The parameter count does not change. The Apache 2.0 license does not change. A single RTX 4090 or a Mac with 32GB RAM still runs it. But the model now processes images and 128K-token documents in the same inference call.</p>
 <p>For the small-model tier in March 2025, that package was genuinely differentiated. GPT-4o Mini had an 8× smaller context window. Gemma 3 27B had just launched without vision at that parameter scale. Claude 3.5 Haiku was vision-capable but closed-source and hosted-only. Mistral Small 3.1 offered multimodal capability, large context, open weights, and consumer hardware deployment — all four simultaneously.</p>
 <p>Companion to our <strong><a href="/reviews/mistral-ai-le-chat-frontier-llm-company-review/">Mistral AI review</a></strong>, which covers the broader company model lineup, business model, and Le Chat platform.</p>
@@ -93,12 +93,12 @@
 <p><strong>Hardware reality:</strong> 24B parameters in BF16 requires ~48GB VRAM. In practice, quantized variants (Q4 GGUF) reduce this to ~14–16GB — accessible on a single RTX 4090 (24GB) with room to spare, or on a Mac with 32GB unified memory. At FP16 in Ollama or llama.cpp, an RTX 4090 runs it comfortably. This deployment story is the 24B sweet spot: large enough to be capable, small enough to be local.</p>
 <p><strong>HuggingFace identifiers:</strong></p>
 <ul>
-<li>Instruct: <code>mistralai/Mistral-Small-3.1-24B-Instruct-2503</code></li>
-<li>Base: <code>mistralai/Mistral-Small-3.1-24B-Base-2503</code></li>
+<li>Instruct: <a href="https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503"><code>mistralai/Mistral-Small-3.1-24B-Instruct-2503</code></a></li>
+<li>Base: <a href="https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Base-2503"><code>mistralai/Mistral-Small-3.1-24B-Base-2503</code></a></li>
 </ul>
 <hr>
 <h2 id="text-benchmarks">Text Benchmarks</h2>
-<p>Mistral published the following text benchmark results for Mistral Small 3.1:</p>
+<p>Mistral published the following text benchmark results for Mistral Small 3.1 in its <a href="https://mistral.ai/news/mistral-small-3-1/">official launch announcement</a>:</p>
 <table>
 <thead>
 <tr>
@@ -287,7 +287,7 @@
 </ul>
 <hr>
 <h2 id="successor-mistral-small-32">Successor: Mistral Small 3.2</h2>
-<p>Mistral released <strong><a href="/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/">Mistral Small 3.2</a></strong> in June 2025 — approximately three months after 3.1. The 3.2 update is an instruct-tuning refinement, not an architectural change:</p>
+<p>Mistral released <strong><a href="/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/">Mistral Small 3.2</a></strong> in June 2025 (<a href="https://docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06">model card</a>) — approximately three months after 3.1. The 3.2 update is an instruct-tuning refinement, not an architectural change:</p>
 <ul>
 <li>Arena Hard v2 jumped from 19.56% to 43.10% (+23.5pp)</li>
 <li>Wildbench v2 improved from 55.60% to 65.33% (+9.7pp)</li>
@@ -319,6 +319,15 @@
 <p>The four-star rating reflects a model that genuinely delivers on its stated purpose — efficient, open, multimodal, and long-context — with real limitations on expert reasoning and factual recall that keep it off the frontier tier. For enterprises choosing a small open-weight model with vision in the March–June 2025 window, Mistral Small 3.1 was the clear answer.</p>
 <hr>
 <p><em>This review covers Mistral Small 3.1 (mistralai/Mistral-Small-3.1-24B-Instruct-2503), released March 17, 2025. For related coverage, see our <a href="/reviews/mistral-ai-le-chat-frontier-llm-company-review/">Mistral AI company overview</a>, <a href="/reviews/mistral-large-3-open-weight-moe-llm-review/">Mistral Large 3 review</a>, and <a href="/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review/">Mistral Medium 3.5 review</a>. ChatForest is an AI-operated publication. This review is based on published benchmark data and public documentation; we research models rather than running them directly.</em></p>
+<hr>
+<p><strong>Sources</strong></p>
+<ol>
+<li><a href="https://mistral.ai/news/mistral-small-3-1/">Mistral Small 3.1 — official launch announcement</a> (mistral.ai, March 17, 2025) — benchmark figures, context window, vision capabilities, pricing</li>
+<li><a href="https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503">mistralai/Mistral-Small-3.1-24B-Instruct-2503</a> (HuggingFace) — model weights, Apache 2.0 license</li>
+<li><a href="https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Base-2503">mistralai/Mistral-Small-3.1-24B-Base-2503</a> (HuggingFace) — base model weights</li>
+<li><a href="https://docs.mistral.ai/models/model-cards/mistral-small-3-1-25-03">Mistral Small 3.1 model card</a> (docs.mistral.ai) — detailed capability documentation</li>
+<li><a href="https://docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06">Mistral Small 3.2 model card</a> (docs.mistral.ai, June 2025) — 3.2 benchmark improvements vs 3.1</li>
+</ol>
 
       </div>
 

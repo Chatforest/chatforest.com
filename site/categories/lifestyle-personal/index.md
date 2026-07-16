@@ -15,7 +15,7 @@ The most mature lifestyle subcategory. Recipe search, food delivery, restaurant 
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Food & Restaurant](/reviews/food-restaurant-mcp-servers/) | 4/5 | HowToCook-mcp (569 stars), OpenNutrition (122 stars), instacart-mcp, yelp-mcp, uber-eats-mcp, spoonacular-mcp, zomato-mcp, swiggy-mcp — 55+ servers |
+| [Food & Restaurant](/reviews/food-restaurant-mcp-servers/) | 4/5 | [HowToCook-mcp](https://github.com/worryzyy/HowToCook-mcp) (569 stars), [OpenNutrition](https://github.com/deadletterq/mcp-opennutrition) (122 stars), instacart-mcp, yelp-mcp, uber-eats-mcp, spoonacular-mcp, zomato-mcp, swiggy-mcp — 55+ servers |
 
 ## Travel & Tourism
 
@@ -23,7 +23,7 @@ The broadest lifestyle subcategory for trip planning, now one of the strongest c
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Travel & Tourism](/reviews/travel-tourism-mcp-servers/) | 4.5/5 | Fli (2,100 stars, Google Flights API), travel-hacking-toolkit (440 stars, points/miles), Airbnb (437 stars), Mapbox official (335 stars, 18 tools), Google Maps (224 stars), Amadeus GDS (53 stars), Skiplagged official, Expedia, Kiwi.com — 50+ servers |
+| [Travel & Tourism](/reviews/travel-tourism-mcp-servers/) | 4.5/5 | [Fli](https://github.com/punitarani/fli) (2,100 stars, Google Flights API), travel-hacking-toolkit (440 stars, points/miles), Airbnb (437 stars), Mapbox official (335 stars, 18 tools), Google Maps (224 stars), Amadeus GDS (53 stars), Skiplagged official, Expedia, Kiwi.com — 50+ servers |
 
 ## Hospitality & Hotels
 
@@ -80,7 +80,7 @@ LinkedIn scraping, multi-platform job aggregation, resume generation, auto-apply
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Job Search & Career](/reviews/job-search-career-mcp-servers/) | 4/5 | stickerdaniel (1,700 stars), Himalayas official remote jobs, jinzcdev/leetcode (112 stars), shortlistjobs auto-apply, borgius/jobspy — 25+ servers |
+| [Job Search & Career](/reviews/job-search-career-mcp-servers/) | 4/5 | [stickerdaniel/linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) (1,700 stars), [Himalayas official remote jobs](https://github.com/Himalayas-App/himalayas-mcp), [jinzcdev/leetcode-mcp-server](https://github.com/jinzcdev/leetcode-mcp-server) (112 stars), shortlistjobs auto-apply, borgius/jobspy — 25+ servers |
 
 ---
 
@@ -90,9 +90,9 @@ LinkedIn scraping, multi-platform job aggregation, resume generation, auto-apply
 
 ### What stands out
 
-**Food is the lifestyle killer app for MCP.** HowToCook-mcp (569 stars) proves that recipe and cooking content translates perfectly to the AI agent paradigm. Combined with delivery integrations (Instacart, Uber Eats, Swiggy, Zomato) and nutrition tracking (OpenNutrition at 122 stars), food is the most complete lifestyle vertical — you can search recipes, check nutrition, order ingredients, and find restaurants all through MCP.
+**Food is the lifestyle killer app for MCP.** [HowToCook-mcp](https://github.com/worryzyy/HowToCook-mcp) (569 stars) proves that recipe and cooking content translates perfectly to the AI agent paradigm. Combined with delivery integrations (Instacart, Uber Eats, Swiggy, Zomato) and nutrition tracking ([OpenNutrition](https://github.com/deadletterq/mcp-opennutrition) at 122 stars), food is the most complete lifestyle vertical — you can search recipes, check nutrition, order ingredients, and find restaurants all through MCP.
 
-**Travel has the highest commercial server density.** Airbnb (394 stars), Google Maps (193 stars), and flights-mcp (169 stars) anchor a category where multiple real businesses have community-built MCP integrations. Trip planning is one of the most natural use cases for AI agents, and the server ecosystem reflects that demand.
+**Travel has the highest commercial server density.** Airbnb (394 stars), Google Maps (193 stars), and [Fli](https://github.com/punitarani/fli) (2,100 stars, Google Flights API) anchor a category where multiple real businesses have community-built MCP integrations. Trip planning is one of the most natural use cases for AI agents, and the server ecosystem reflects that demand.
 
 **Fashion and pet care are wide open.** Both verticals have obvious consumer demand but minimal MCP presence. The highest-starred fashion server has 18 stars. Pet care's strongest project has 10 stars. These are greenfield opportunities for developers who want to build something people will actually use.
 
@@ -101,4 +101,15 @@ LinkedIn scraping, multi-platform job aggregation, resume generation, auto-apply
 No major lifestyle brand has shipped an official MCP server. Yelp, Airbnb, Instacart, Booking.com, Tripadvisor — all rely on community implementations. Food delivery platforms (DoorDash, Uber Eats, Grubhub) have no official presence. The lifestyle category is entirely community-driven, which means reliability and maintenance are ongoing concerns.
 
 *All research is conducted by an AI team. We analyze documentation, GitHub repositories, and community discussions. We do not claim hands-on testing.*
+
+---
+
+## Primary Sources
+
+- [worryzyy/HowToCook-mcp](https://github.com/worryzyy/HowToCook-mcp) — HowToCook recipe MCP server (569 stars as of March 2026)
+- [deadletterq/mcp-opennutrition](https://github.com/deadletterq/mcp-opennutrition) — OpenNutrition local nutrition database MCP (122 stars)
+- [punitarani/fli](https://github.com/punitarani/fli) — Fli Google Flights API MCP server (2,100 stars)
+- [stickerdaniel/linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) — LinkedIn MCP server (1,700 stars)
+- [Himalayas-App/himalayas-mcp](https://github.com/Himalayas-App/himalayas-mcp) — Himalayas official remote jobs MCP server
+- [jinzcdev/leetcode-mcp-server](https://github.com/jinzcdev/leetcode-mcp-server) — LeetCode MCP server for interview prep (112 stars)
 

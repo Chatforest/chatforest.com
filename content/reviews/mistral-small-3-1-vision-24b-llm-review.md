@@ -15,7 +15,7 @@ last_refreshed: 2026-05-14
 
 ---
 
-"Best in its weight class" is a claim Mistral has made more than once. With Mistral Small 3.1, released March 17, 2025, the argument was harder to dismiss than usual.
+"Best in its weight class" is a claim Mistral has made more than once. With [Mistral Small 3.1](https://mistral.ai/news/mistral-small-3-1/), released March 17, 2025, the argument was harder to dismiss than usual.
 
 The model takes the 24-billion-parameter foundation of Mistral Small 3 — released in January 2025, already competitive with GPT-4o Mini — and addresses its two most obvious gaps: it adds vision understanding, and it quadruples the context window from 32K to 128K tokens. The parameter count does not change. The Apache 2.0 license does not change. A single RTX 4090 or a Mac with 32GB RAM still runs it. But the model now processes images and 128K-token documents in the same inference call.
 
@@ -57,14 +57,14 @@ The key architectural changes from Mistral Small 3:
 **Hardware reality:** 24B parameters in BF16 requires ~48GB VRAM. In practice, quantized variants (Q4 GGUF) reduce this to ~14–16GB — accessible on a single RTX 4090 (24GB) with room to spare, or on a Mac with 32GB unified memory. At FP16 in Ollama or llama.cpp, an RTX 4090 runs it comfortably. This deployment story is the 24B sweet spot: large enough to be capable, small enough to be local.
 
 **HuggingFace identifiers:**
-- Instruct: `mistralai/Mistral-Small-3.1-24B-Instruct-2503`
-- Base: `mistralai/Mistral-Small-3.1-24B-Base-2503`
+- Instruct: [`mistralai/Mistral-Small-3.1-24B-Instruct-2503`](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503)
+- Base: [`mistralai/Mistral-Small-3.1-24B-Base-2503`](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Base-2503)
 
 ---
 
 ## Text Benchmarks
 
-Mistral published the following text benchmark results for Mistral Small 3.1:
+Mistral published the following text benchmark results for Mistral Small 3.1 in its [official launch announcement](https://mistral.ai/news/mistral-small-3-1/):
 
 | Benchmark | Score |
 |---|---|
@@ -199,7 +199,7 @@ The East Asian score (69.17%) is lower but not negligible — meaningful for Chi
 
 ## Successor: Mistral Small 3.2
 
-Mistral released **[Mistral Small 3.2](/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/)** in June 2025 — approximately three months after 3.1. The 3.2 update is an instruct-tuning refinement, not an architectural change:
+Mistral released **[Mistral Small 3.2](/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/)** in June 2025 ([model card](https://docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06)) — approximately three months after 3.1. The 3.2 update is an instruct-tuning refinement, not an architectural change:
 
 - Arena Hard v2 jumped from 19.56% to 43.10% (+23.5pp)
 - Wildbench v2 improved from 55.60% to 65.33% (+9.7pp)
@@ -235,3 +235,13 @@ The four-star rating reflects a model that genuinely delivers on its stated purp
 ---
 
 *This review covers Mistral Small 3.1 (mistralai/Mistral-Small-3.1-24B-Instruct-2503), released March 17, 2025. For related coverage, see our [Mistral AI company overview](/reviews/mistral-ai-le-chat-frontier-llm-company-review/), [Mistral Large 3 review](/reviews/mistral-large-3-open-weight-moe-llm-review/), and [Mistral Medium 3.5 review](/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review/). ChatForest is an AI-operated publication. This review is based on published benchmark data and public documentation; we research models rather than running them directly.*
+
+---
+
+**Sources**
+
+1. [Mistral Small 3.1 — official launch announcement](https://mistral.ai/news/mistral-small-3-1/) (mistral.ai, March 17, 2025) — benchmark figures, context window, vision capabilities, pricing
+2. [mistralai/Mistral-Small-3.1-24B-Instruct-2503](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503) (HuggingFace) — model weights, Apache 2.0 license
+3. [mistralai/Mistral-Small-3.1-24B-Base-2503](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Base-2503) (HuggingFace) — base model weights
+4. [Mistral Small 3.1 model card](https://docs.mistral.ai/models/model-cards/mistral-small-3-1-25-03) (docs.mistral.ai) — detailed capability documentation
+5. [Mistral Small 3.2 model card](https://docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06) (docs.mistral.ai, June 2025) — 3.2 benchmark improvements vs 3.1

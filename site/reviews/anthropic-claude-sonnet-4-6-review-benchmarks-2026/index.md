@@ -7,7 +7,7 @@
 
 ---
 
-**At a glance:** Claude Sonnet 4.6 — released February 17, 2026. SWE-bench Verified: 79.6%. ARC-AGI-2: 58.3%. OSWorld-Verified (computer use): 72.5%. Context window: 1 million tokens (beta). Pricing: $3.00/$15.00 per million tokens. Available on Anthropic API, Amazon Bedrock, Google Vertex AI. Model ID: `claude-sonnet-4-6-20260217`. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Claude Sonnet 4.6 — [released February 17, 2026](https://www.anthropic.com/news/claude-sonnet-4-6). SWE-bench Verified: 79.6%. ARC-AGI-2: 58.3%. OSWorld-Verified (computer use): 72.5%. Context window: 1 million tokens (beta). Pricing: $3.00/$15.00 per million tokens. Available on Anthropic API, Amazon Bedrock, Google Vertex AI. Model ID: `claude-sonnet-4-6-20260217`. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -17,7 +17,7 @@ The model earns that status through a combination of factors that do not often a
 
 Three numbers stand out.
 
-First: **58.3% on ARC-AGI-2**, up from 13.6% on Sonnet 4.5. That is a 4.3x improvement — the largest single-generation gain on this benchmark recorded by any AI model. ARC-AGI-2 was designed by François Chollet to require genuine novel reasoning rather than pattern-matching against training data. A 4.3x jump does not happen through scaling alone.
+First: [**58.3% on ARC-AGI-2**](https://www.anthropic.com/news/claude-sonnet-4-6), up from 13.6% on Sonnet 4.5. That is a 4.3x improvement — the largest single-generation gain on this benchmark recorded by any AI model. ARC-AGI-2 was designed by François Chollet to require genuine novel reasoning rather than pattern-matching against training data. A 4.3x jump does not happen through scaling alone.
 
 Second: **72.5% on OSWorld-Verified** for computer use. OSWorld tests whether a model can operate real desktop interfaces — software the model has never had an API for, navigated through screenshots and mouse clicks. Sonnet 4.6 scores within 0.2 percentage points of Opus 4.6 on this benchmark, which costs $12 more per million output tokens.
 
@@ -27,7 +27,7 @@ Third: **79.6% on SWE-bench Verified** — the coding benchmark that tracks how 
 
 ## The Model and the Migration
 
-Sonnet 4.6 is also the official migration target for the roughly 85,000 developers and teams currently using `claude-sonnet-4-20250514` (Claude Sonnet 4), which Anthropic has scheduled for deprecation on **June 15, 2026, at 9 AM Pacific**. After that date, calls to that model ID will be routed to `claude-sonnet-4-6-20260217`.
+Sonnet 4.6 is also the official migration target for the roughly 85,000 developers and teams currently using `claude-sonnet-4-20250514` (Claude Sonnet 4), which Anthropic has scheduled for [deprecation on **June 15, 2026, at 9 AM Pacific**](https://endoflife.date/claude). After that date, calls to that model ID will be routed to `claude-sonnet-4-6-20260217`.
 
 If you have active production workloads on Sonnet 4, this is a forced migration whether you plan it or not. The practical difference between involuntary cutover and a planned migration is testing. See our **[Claude Sonnet 4 and Opus 4 Deprecation Guide](/guides/anthropic-claude-sonnet-4-opus-4-deprecation-june-15-2026/)** for the specific steps.
 
@@ -49,7 +49,7 @@ Sonnet 4.6 sits in the middle by design: enough capability for the majority of r
 
 SWE-bench Verified presents a model with real, open GitHub issues and asks it to patch the code correctly. No scaffolding, no hints — just the model, the repo, and the task. At 79.6%, Sonnet 4.6 resolves approximately four out of every five benchmark tasks.
 
-For context: GPT-5.5, released April 23, 2026, now leads this benchmark at 88.7% — a meaningful gap. If SWE-bench is the primary criterion for your selection, GPT-5.5 has an 9-point advantage on this specific evaluation. It also costs roughly 65% more per input token and substantially more per output token.
+For context: [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/), released April 23, 2026, now leads this benchmark at 88.7% — a meaningful gap. If SWE-bench is the primary criterion for your selection, GPT-5.5 has an 9-point advantage on this specific evaluation. It also costs roughly 65% more per input token and substantially more per output token.
 
 Sonnet 4.6's 79.6% represents a real jump over prior-generation Sonnet variants and confirms the model as a capable baseline for agentic software engineering pipelines.
 
@@ -168,4 +168,13 @@ For the majority of production workloads — mixed coding, writing, analysis, ag
 *Research-based review. Grove does not independently test the models reviewed on this site. All benchmark figures cited from official Anthropic announcements, third-party evaluation platforms (Artificial Analysis, ARC Prize), and published developer comparisons.*
 
 *Related: [Claude Opus 4.7 Deep Dive](/reviews/anthropic-claude-opus-4-7-deep-dive/) · [Claude Sonnet 4 and Opus 4 Deprecation Guide](/guides/anthropic-claude-sonnet-4-opus-4-deprecation-june-15-2026/) · [Claude Mythos Preview and Project Glasswing](/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/)*
+
+---
+
+**Sources**
+
+1. [Introducing Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6) (anthropic.com, February 17, 2026) — SWE-bench 79.6%, ARC-AGI-2 58.3%, OSWorld 72.5%, pricing, model details
+2. [Introducing GPT-5.5](https://openai.com/index/introducing-gpt-5-5/) (openai.com, April 23, 2026) — GPT-5.5 SWE-bench and Terminal-Bench figures cited for comparison
+3. [Claude model end-of-life dates](https://endoflife.date/claude) (endoflife.date) — claude-sonnet-4-20250514 deprecation June 15, 2026
+4. [Claude Sonnet 4.6 product page](https://www.anthropic.com/claude/sonnet) (anthropic.com) — availability and default model status
 

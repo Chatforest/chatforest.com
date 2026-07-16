@@ -18,9 +18,9 @@ author: "ChatForest"
 
 ## The Headline
 
-On January 12, 2026, Apple and Google published a joint statement announcing a multi-year partnership: Google Gemini will power the next generation of Apple Foundation Models, a rebuilt Siri, and future Apple Intelligence features across the entire iOS/macOS ecosystem.
+On January 12, 2026, Apple and Google [announced a multi-year partnership](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html): Google Gemini will power the next generation of Apple Foundation Models, a rebuilt Siri, and future Apple Intelligence features across the entire iOS/macOS ecosystem.
 
-Apple is reportedly paying **$1 billion per year** for access to a custom-built Gemini model with approximately 1.2 trillion parameters — eight times larger than Apple's existing cloud inference models and hundreds of times larger than its on-device models. That model will run on Apple's Private Cloud Compute infrastructure, meaning Gemini handles the intelligence layer while Apple retains control of the data pipeline.
+Apple is reportedly paying [**$1 billion per year**](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/) for access to a custom-built Gemini model with approximately 1.2 trillion parameters — eight times larger than Apple's existing cloud inference models and hundreds of times larger than its on-device models. That model will run on Apple's Private Cloud Compute infrastructure, meaning Gemini handles the intelligence layer while Apple retains control of the data pipeline.
 
 The deal does not replace OpenAI's existing arrangement — Apple's "Ask ChatGPT" integration in iOS 18/19 remains in place. But the Google partnership is structurally different. This isn't a user-facing option you choose from a menu. Gemini becomes the backbone of Siri itself.
 
@@ -66,11 +66,11 @@ There's also a prior relationship: Google has paid Apple approximately $20 billi
 
 The deal landed in a legally complicated moment.
 
-Google was found liable in August 2024 for monopolizing the general search market. The DOJ's remedies hearing ran through early 2025, with proposals including forcing Google to divest Chrome and end payments to device makers for default placement. The Apple default search payments — that $20 billion/year arrangement — were exhibit A in the government's case.
+Google was [found liable in August 2024](https://en.wikipedia.org/wiki/United_States_v._Google_LLC_(2023)) for monopolizing the general search market. The DOJ's remedies hearing ran through early 2025, with proposals including forcing Google to divest Chrome and end payments to device makers for default placement. The Apple default search payments — that $20 billion/year arrangement — were exhibit A in the government's case.
 
 Now there's a second billion-dollar payment from Apple to Google for a second category of default placement: AI.
 
-Bloomberg Law's legal analysis called it "the next Microsoft antitrust case." The argument: Google now occupies both the search bar and the AI assistant on every iPhone, making it structurally impossible for rival AI companies to reach iPhone users at the default layer. An independent AI startup can build a better product than Gemini, but it will never be the thing that answers when someone says "Hey Siri."
+Legal analysts have compared it to the Microsoft antitrust case. The argument: Google now occupies both the search bar and the AI assistant on every iPhone, making it structurally impossible for rival AI companies to reach iPhone users at the default layer. An independent AI startup can build a better product than Gemini, but it will never be the thing that answers when someone says "Hey Siri."
 
 The DOJ has not yet opened a formal investigation into the AI deal specifically, but regulatory observers expect it to surface in the ongoing Google remedies proceedings. EU regulators under the Digital Markets Act are also reviewing whether the dual default arrangement creates a foreclosure effect in the AI assistant market.
 
@@ -127,3 +127,12 @@ Google gets two billion distribution touchpoints. Apple gets a Siri that might f
 ---
 
 *This article covers the January 12, 2026 Apple-Google Gemini announcement and the subsequent rollout. For WWDC 2026 details, see our [WWDC 2026 preview](/reviews/apple-wwdc-2026-siri-overhaul-ios-27-apple-intelligence-preview/).*
+
+---
+
+**Sources**
+
+1. [Apple picks Google's Gemini to run AI-powered Siri](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html) (CNBC, January 12, 2026) — deal announcement, partnership terms, rollout timeline
+2. [Google's Gemini to power Apple's AI features like Siri](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/) (TechCrunch, January 12, 2026) — $1 billion reported figure, 1.2T parameter model details
+3. [Apple taps Google Gemini to power AI features in multiyear deal](https://www.marketingdive.com/news/apple-taps-google-gemini-to-power-ai-features-in-multiyear-deal/809697/) (Marketing Dive, January 2026) — deal structure and industry context
+4. [United States v. Google LLC (2023)](https://en.wikipedia.org/wiki/United_States_v._Google_LLC_(2023)) (Wikipedia) — August 2024 antitrust ruling background

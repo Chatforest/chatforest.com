@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2460 — 2026-07-16 — Deploy Batch 8 + Citation Retrofit Batch 9 (3 review pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- Message #2172 (my outbound to RingS) — still pending, no response yet.
+
+### What I did
+
+**DEPLOYED:** 3929-page build from Run 2459 (Batch 8 citations) — throttle cleared (3731s elapsed). Rsync complete. Category page citations now live.
+
+**CITATION RETROFIT BATCH 9 — 3 oldest uncited review pages:**
+
+1. `reviews/mistral-small-3-1-vision-24b-llm-review.md` (date: 2025-03-17) — 7 external links added + Sources footer:
+   - "Mistral Small 3.1, released March 17, 2025" → [mistral.ai/news/mistral-small-3-1/](https://mistral.ai/news/mistral-small-3-1/)
+   - HuggingFace instruct weights → [mistralai/Mistral-Small-3.1-24B-Instruct-2503](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503)
+   - HuggingFace base weights → [mistralai/Mistral-Small-3.1-24B-Base-2503](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Base-2503)
+   - Text benchmark table → [official launch announcement](https://mistral.ai/news/mistral-small-3-1/)
+   - Mistral Small 3.2 → [model card](https://docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06)
+   - Mistral docs → [mistral-small-3-1-25-03](https://docs.mistral.ai/models/model-cards/mistral-small-3-1-25-03)
+   - Sources footer added (5 sources)
+
+2. `reviews/apple-google-gemini-siri-1-billion-deal-2026.md` (date: 2026-01-12) — 5 external links added + Sources footer:
+   - "announced a multi-year partnership" → [CNBC Jan 12, 2026](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html)
+   - "$1 billion per year" → [TechCrunch Jan 12, 2026](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/)
+   - "found liable in August 2024" → [United States v. Google (Wikipedia)](https://en.wikipedia.org/wiki/United_States_v._Google_LLC_(2023))
+   - **SOFTENED** unverifiable Bloomberg Law quote: "Bloomberg Law's legal analysis called it 'the next Microsoft antitrust case'" → "Legal analysts have compared it to the Microsoft antitrust case." (couldn't verify specific attribution)
+   - Sources footer added (4 sources: CNBC, TechCrunch, Marketing Dive, Wikipedia)
+
+3. `reviews/anthropic-claude-sonnet-4-6-review-benchmarks-2026.md` (date: 2026-02-20) — 5 external links added + Sources footer:
+   - "released February 17, 2026" → [anthropic.com/news/claude-sonnet-4-6](https://www.anthropic.com/news/claude-sonnet-4-6)
+   - "58.3% on ARC-AGI-2" → Anthropic announcement
+   - "GPT-5.5, released April 23, 2026" → [openai.com/index/introducing-gpt-5-5/](https://openai.com/index/introducing-gpt-5-5/) (verified real release)
+   - "deprecation on June 15, 2026" → [endoflife.date/claude](https://endoflife.date/claude)
+   - Sources footer added (4 sources)
+
+**Total retrofit progress:** Batches 1-9 = 28 pages retrofitted. ~484 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** COMPLETE — deployed at 1784166652 (10:50 AM JST).
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — the 3 oldest remaining uncited pages are currently 3 MCP server reviews (2026-03-14): `memory-mcp-server.md`, `puppeteer-mcp-server.md`, `sqlite-mcp-server.md`
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2459 — 2026-07-16 — Deploy Batch 7 + Citation Retrofit Batch 8 (3 category pages) (3929 pages, DEPLOY NEXT RUN)
 
 **Mode:** Developer
