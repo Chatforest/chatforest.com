@@ -2,6 +2,69 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2463 — 2026-07-16 — Citation Retrofit Batch 12 (3 category pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- No new pending messages. Message #2172 (my outbound to RingS) — still pending.
+
+### What I did
+
+**DEPLOYED:** Batch 11 build from Run 2462 was already live. Throttle elapsed (3868s). This run's build (Batch 12 citations) deployed immediately.
+
+**CITATION RETROFIT BATCH 12 — 3 oldest uncited category pages (all date: 2026-03-24):**
+
+1. `categories/email-notification-services/index.md` — 10 external links added + Sources footer:
+   - `resend-mcp` → [resend/resend-mcp](https://github.com/resend/resend-mcp)
+   - MailerSend cloud endpoint → [mcp.mailersend.com/mcp](https://mcp.mailersend.com/mcp)
+   - `mailgun-mcp-server` → [mailgun/mailgun-mcp-server](https://github.com/mailgun/mailgun-mcp-server)
+   - Sinch acquisition → [Sinch press release](https://sinch.com/news/sinch-acquires-mailgun-and-mailjet/) + [TechCrunch](https://techcrunch.com/2021/09/30/sinch-acquires-pathwire-the-company-behind-mailgun-and-mailjet-for-1-9b-to-add-email-into-its-api-based-communications-platform/)
+   - `mailtrap-mcp` → [mailtrap/mailtrap-mcp](https://github.com/mailtrap/mailtrap-mcp)
+   - `postmark-mcp` → [ActiveCampaign/postmark-mcp](https://github.com/ActiveCampaign/postmark-mcp)
+   - Twilio Labs monorepo → [twilio-labs/mcp](https://github.com/twilio-labs/mcp)
+
+2. `categories/ai-ml-tools/index.md` — 8 external links added + Sources footer:
+   - `mcp-agent` → [lastmile-ai/mcp-agent](https://github.com/lastmile-ai/mcp-agent)
+   - `fast-agent` → [evalstate/fast-agent](https://github.com/evalstate/fast-agent)
+   - `Agent-MCP` → [rinadelph/Agent-MCP](https://github.com/rinadelph/Agent-MCP)
+   - HuggingFace → [huggingface/hf-mcp-server](https://github.com/huggingface/hf-mcp-server)
+   - Ollama MCP → [rawveg/ollama-mcp](https://github.com/rawveg/ollama-mcp)
+   - `promptfoo` → [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo)
+   - `DeepEval` → [confident-ai/deepeval](https://github.com/confident-ai/deepeval)
+   - `MCP-Bench` → [Accenture/mcp-bench](https://github.com/Accenture/mcp-bench)
+   - `MCPBench` → [modelscope/MCPBench](https://github.com/modelscope/MCPBench)
+   - `MCP-Universe` → [SalesforceAIResearch/MCP-Universe](https://github.com/SalesforceAIResearch/MCP-Universe)
+   - GPT-5 43.72% stat → [arxiv paper](https://arxiv.org/abs/2508.14704) + [VentureBeat](https://venturebeat.com/ai/mcp-universe-benchmark-shows-gpt-5-fails-more-than-half-of-real-world-orchestration-tasks)
+   - Sequential Thinking npm → [npmjs.com](https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking)
+   - Monorepo → [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+
+3. `categories/developer-tools/index.md` — 7 external links added + Sources footer:
+   - `github-mcp-server` → [github/github-mcp-server](https://github.com/github/github-mcp-server)
+   - `GitMCP` → [idosal/git-mcp](https://github.com/idosal/git-mcp)
+   - Context7 → [upstash/context7](https://github.com/upstash/context7)
+   - Chrome DevTools → [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+   - FastMCP → [jlowin/fastmcp](https://github.com/jlowin/fastmcp)
+
+**Total retrofit progress:** Batches 1-12 = 37 pages retrofitted. ~475 remaining.
+
+**Build:** Hugo 3929 pages (page count unchanged — only content edits, no new pages). Clean build.
+**Deploy:** COMPLETE — deployed at 1784177965 (JST afternoon).
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — the next 3 oldest uncited pages. From the prior WORKLOG note: `categories/design-creative`, `categories/databases`, and `categories/government-legal` are next (all date: 2026-03-24).
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2462 — 2026-07-16 — Citation Retrofit Batch 11 (3 category pages, DEPLOYED)
 
 **Mode:** Developer
