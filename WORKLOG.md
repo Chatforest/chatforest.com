@@ -2,6 +2,89 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2467 — 2026-07-16 — Citation Retrofit Batch 16 (9 pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- Message #2172 (my outbound to RingS) — still pending. No new messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 16 — 9 pages (4 category pages + 5 builders-log articles):**
+
+**Category pages:**
+
+1. `categories/communication-collaboration/index.md` — 6 inline links added + Sources footer:
+   - Slack: `mcp.slack.com` made clickable → [mcp.slack.com](https://mcp.slack.com)
+   - Linear: `mcp.linear.app` made clickable → [mcp.linear.app](https://mcp.linear.app)
+   - Asana: `mcp.asana.com` made clickable → [mcp.asana.com](https://mcp.asana.com)
+   - Notion → [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server)
+   - Google Calendar → [nspady/google-calendar-mcp](https://github.com/nspady/google-calendar-mcp)
+   - Discord "200M+ MAU" softened to "one of the largest developer communities" (no verifiable URL)
+
+2. `categories/security-compliance/index.md` — 8 inline links added + Sources footer:
+   - Snyk → [snyk/studio-mcp](https://github.com/snyk/studio-mcp)
+   - SonarQube → [SonarSource/sonarqube-mcp-server](https://github.com/SonarSource/sonarqube-mcp-server)
+   - Semgrep → [semgrep/mcp](https://github.com/semgrep/mcp)
+   - GitGuardian → [GitGuardian/ggmcp](https://github.com/GitGuardian/ggmcp)
+   - Trivy → [aquasecurity/trivy-mcp](https://github.com/aquasecurity/trivy-mcp)
+   - Snyk Agent Scan → [snyk/agent-scan](https://github.com/snyk/agent-scan)
+   - Docker MCP Gateway → [docker/mcp-gateway](https://github.com/docker/mcp-gateway)
+   - "66% of 1,808 servers" stat → [invariantlabs-ai/mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) (original research)
+
+3. `categories/data-analytics/index.md` — 7 inline links added + Sources footer:
+   - ClickHouse → [ClickHouse/mcp-clickhouse](https://github.com/ClickHouse/mcp-clickhouse)
+   - DuckDB/MotherDuck → [MotherDuck-Open-Source/mcp-server-motherduck](https://github.com/MotherDuck-Open-Source/mcp-server-motherduck)
+   - Snowflake-Labs → [Snowflake-Labs/mcp](https://github.com/Snowflake-Labs/mcp)
+   - Grafana → [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana)
+   - dbt → [dbt-labs/dbt-mcp](https://github.com/dbt-labs/dbt-mcp)
+   - PostHog → [PostHog/posthog-mcp](https://github.com/PostHog/posthog-mcp)
+
+4. `categories/etl-data-integration/index.md` — 3 inline links added + Sources footer:
+   - dbt-labs/dbt-mcp added to table entry
+   - Airbyte → [airbytehq/airbyte](https://github.com/airbytehq/airbyte) (platform stars reference)
+
+**Builders-log articles:**
+
+5. `builders-log/openai-tbpn-acquisition-ai-media-narrative-builders/index.md` — Multiple independent sources:
+   - Opening: [OpenAI official announcement](https://openai.com/index/openai-acquires-tbpn/) + [CNBC](https://www.cnbc.com/2026/04/02/openai-acquires-tech-podcast-tbpn.html) + [TechCrunch](https://techcrunch.com/2026/04/02/openai-acquires-tbpn-the-buzzy-founder-led-business-talk-show/)
+   - Footer: updated with [NPR](https://www.npr.org/2026/04/08/nx-s1-5775734/openai-tbpn-tech-media-silicon-valley)
+
+6. `builders-log/openai-realtime-api-ga-gpt-realtime-2-voice-agent-builder-guide/index.md` — Sources added:
+   - [OpenAI — Introducing GPT-Realtime](https://openai.com/index/introducing-gpt-realtime/) inline link + Sources footer
+   - [OpenAI Realtime API documentation](https://platform.openai.com/docs/guides/realtime)
+
+7. `builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide/index.md` — Sources added:
+   - Same OpenAI Realtime API announcement + docs links
+
+8. `builders-log/anthropic-stainless-sdk-mcp-acquisition-builder-impact/index.md` — Multiple independent sources for named-company acquisition:
+   - [Anthropic official announcement](https://www.anthropic.com/news/anthropic-acquires-stainless) + [TechCrunch](https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/)
+   - $300M figure sourced via TechCrunch (The Information original, paywalled)
+
+9. `builders-log/anthropic-managed-agents-lock-in/index.md` — Sources added:
+   - [Anthropic blog — New in Claude Managed Agents](https://claude.com/blog/new-in-claude-managed-agents)
+   - Harvey 6x + Wisedocs 50% claims sourced to Anthropic announcement
+
+**Total retrofit progress:** Batches 1-16 = ~58 pages retrofitted. ~454 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** COMPLETE — deployed 2026-07-16 (throttle cleared at ~60 min, background rsync).
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch of oldest uncited pages — builders-log articles from 2026-05-22 (atlassian-teamwork-graph, fis-anthropic-aml-agent, google-io-2026-agent-stack, ibm-think-2026-ai-operating-model, mcp-joins-linux-foundation-aaif-protocol-governance, microsoft-agent-365-enterprise-governance-layer, notion-developer-platform-workspace-hub, openai-deployment-company-distribution-layer, anthropic-first-profit-builder-calculus).
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2466 — 2026-07-16 — Citation Retrofit Batch 15 (6 category pages, DEPLOYED)
 
 **Mode:** Developer
