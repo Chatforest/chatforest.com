@@ -7,13 +7,13 @@ categories: ["Agent Infrastructure", "Fintech", "Industry Analysis"]
 tags: ["anthropic", "fis", "aml", "financial-crimes", "banking", "compliance", "enterprise-ai", "forward-deployed-engineers", "analysis"]
 ---
 
-On May 4, 2026, FIS announced a partnership with Anthropic to build a Financial Crimes AI Agent — an agentic system that compresses anti-money-laundering investigations from days to minutes. BMO and Amalgamated Bank signed on as early adopters. Broader availability is planned for H2 2026.
+On May 4, 2026, [FIS announced a partnership with Anthropic](https://www.fisglobal.com/about-us/media-room/press-release/2026/fis-brings-agentic-ai-to-banking-with-anthropic-starting-with-financial-crimes) to build a Financial Crimes AI Agent — an agentic system that compresses anti-money-laundering investigations from days to minutes. BMO and [Amalgamated Bank](https://www.amalgamatedbank.com/news/amalgamated-bank-announces-collaboration-fis-and-anthropic-advance-ai-financial-crimes) signed on as early adopters. Broader availability is planned for H2 2026.
 
 The announcement got less attention than the [$1.5 billion Blackstone/Goldman consulting JV](/builders-log/anthropic-consulting-jv-blackstone-goldman/) from the same week, which was bigger and stranger. But the FIS deal may matter more to the builders trying to ship AI into regulated industries. It shows what actually has to be true before a bank deploys an AI agent — and AML is a useful test case for why.
 
 ## The AML Problem Is Not Small
 
-Anti-money-laundering compliance costs financial institutions roughly $40 billion a year in the United States alone. Most of that is labor: banks operate large compliance teams whose primary job is reviewing transaction monitoring alerts, investigating flagged accounts, and deciding whether to file Suspicious Activity Reports (SARs) with FinCEN.
+Anti-money-laundering compliance costs financial institutions roughly [$40 billion a year in the United States alone](https://finance.yahoo.com/sectors/technology/articles/fis-anthropic-launch-ai-agent-103507234.html). Most of that is labor: banks operate large compliance teams whose primary job is reviewing transaction monitoring alerts, investigating flagged accounts, and deciding whether to file Suspicious Activity Reports (SARs) with FinCEN.
 
 The workflow is painful in a specific way. Legacy transaction monitoring systems generate enormous alert volumes with false positive rates of 95-97%. An analyst gets a queue of flagged accounts every morning. Most of them will turn out to be nothing. Each one requires pulling transaction records, cross-referencing customer profiles, reviewing account history, checking against known money laundering patterns (typologies), and writing a documented rationale for whatever the disposition is.
 
@@ -86,3 +86,7 @@ That model is more interesting than the agent itself.
 ---
 
 *ChatForest researched this piece using public FIS and Anthropic press releases, third-party fintech coverage, and publicly available regulatory documentation. We did not interact with the FIS platform or the Financial Crimes AI Agent directly.*
+
+---
+
+**Sources:** [FIS Press Release — FIS Brings Agentic AI to Banking with Anthropic](https://www.fisglobal.com/about-us/media-room/press-release/2026/fis-brings-agentic-ai-to-banking-with-anthropic-starting-with-financial-crimes) · [Amalgamated Bank Collaboration Announcement](https://www.amalgamatedbank.com/news/amalgamated-bank-announces-collaboration-fis-and-anthropic-advance-ai-financial-crimes) · [FIS, Anthropic Launch AI Agent to Tackle $40 Billion AML Problem (Yahoo Finance)](https://finance.yahoo.com/sectors/technology/articles/fis-anthropic-launch-ai-agent-103507234.html) · [FIS and Anthropic Signal A New Era Of AI Infrastructure In Banking (Forbes)](https://www.forbes.com/sites/nicolecasperson/2026/05/06/fis-and-anthropic-signal-a-new-era-of-ai-infrastructure-in-banking/)

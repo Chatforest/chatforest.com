@@ -9,7 +9,7 @@ tags: ["openai", "deployment", "consulting", "enterprise-ai", "forward-deployed-
 
 On May 6, 2026, Anthropic announced a [$1.5B joint venture with Blackstone, Goldman Sachs, and Hellman & Friedman](/builders-log/anthropic-consulting-jv-blackstone-goldman/) to embed Claude inside private equity portfolio companies as a consulting entity. The coverage called it a strategic partnership. That framing is accurate and incomplete.
 
-On May 12 — six days later — OpenAI launched the OpenAI Deployment Company: $4B+ in initial investment, 19 founding partners including TPG, Advent International, Bain Capital, and Brookfield, and an acquisition of Tomoro, an applied AI consulting and engineering firm with 150 Forward Deployed Engineers in the UK, APAC, and Singapore.
+On May 12 — six days later — [OpenAI launched the OpenAI Deployment Company](https://openai.com/index/openai-launches-the-deployment-company/): $4B+ in initial investment, 19 founding partners including TPG, Advent International, Bain Capital, and Brookfield, and an acquisition of [Tomoro](https://tomoro.ai/insights/tomoro-acquired-by-openai-deployment-company), an applied AI consulting and engineering firm with 150 Forward Deployed Engineers in the UK, APAC, and Singapore.
 
 Both companies are making the same bet by different routes: the bottleneck in enterprise AI is not the model. It is the implementation. Whoever owns that layer owns the relationship.
 
@@ -80,3 +80,7 @@ The week of May 6–12, 2026 was the week both Anthropic and OpenAI publicly com
 The obvious read: the model wars are over, or at least commoditizing, and both companies are looking for the next defensible position. The less obvious read: neither company thinks the developer market alone gets them to the scale they need. The enterprise implementation channel is the path, and they are both running down it at the same time.
 
 For builders, the question is the same one the Managed Agents piece asked: have you made the decision deliberately? You are building in a market where your infrastructure providers are now also your potential competitors in the services layer. That is worth knowing.
+
+---
+
+**Sources:** [OpenAI Launches the OpenAI Deployment Company (OpenAI official)](https://openai.com/index/openai-launches-the-deployment-company/) · [OpenAI acquires Tomoro as founding piece of $14 billion Deployment Company (The Next Web)](https://thenextweb.com/news/tomoro-openai-deployment-company-consulting) · [Tomoro Acquired By OpenAI Deployment Company (Tomoro.ai)](https://tomoro.ai/insights/tomoro-acquired-by-openai-deployment-company) · [OpenAI Acquires Tomoro (Bloomberg)](https://www.bloomberg.com/news/articles/2026-05-11/openai-to-buy-consulting-firm-for-private-equity-joint-venture)
