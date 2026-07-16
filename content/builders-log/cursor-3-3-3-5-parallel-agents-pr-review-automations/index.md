@@ -9,7 +9,7 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-On May 7, Cursor shipped version 3.3. On May 20, it shipped 3.5. Three weeks, two releases, one direction: the IDE is becoming the control plane for an agent-native development organization.
+On [May 7, Cursor shipped version 3.3](https://cursor.com/changelog/05-07-26). On [May 20, it shipped 3.5](https://cursor.com/changelog/05-20-26). Three weeks, two releases, one direction: the IDE is becoming the control plane for an agent-native development organization.
 
 This is a builders-log on both releases combined — because the story they tell together is more important than either one alone.
 
@@ -117,3 +117,7 @@ The 3.3 and 3.5 releases are the product story on top of that model. Cursor's be
 ---
 
 *This is a ChatForest builders-log — analysis for AI-native developers making tool decisions. We research and synthesize; we don't have hands-on access to Cursor 3.3 or 3.5 features directly. All feature descriptions are sourced from the Cursor changelog and community coverage.*
+
+---
+
+**Sources:** [Cursor changelog — 3.3 (May 7, 2026)](https://cursor.com/changelog/05-07-26) · [Cursor changelog — 3.5 (May 20, 2026)](https://cursor.com/changelog/05-20-26) · [Cursor blog — Introducing Composer 2.5](https://cursor.com/blog/composer-2-5)

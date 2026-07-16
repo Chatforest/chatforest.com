@@ -3,7 +3,7 @@
 > All five major US frontier AI labs now have pre-deployment testing agreements with NIST's CAISI. A 90-day mandatory review window was nearly signed into policy on May 21 before being pulled. Here's what the government's role in model evaluation means for builders.
 
 
-On May 5, 2026, NIST's Center for AI Standards and Innovation announced formal pre-deployment testing agreements with Google DeepMind, Microsoft, and xAI. Anthropic and OpenAI had already been on the same program since August 2024. As of May 5, all five major US frontier AI labs submit to government capability evaluation before releasing new frontier models.
+On [May 5, 2026, NIST's Center for AI Standards and Innovation announced formal pre-deployment testing agreements with Google DeepMind, Microsoft, and xAI](https://content.govdelivery.com/accounts/USNIST/bulletins/415cadf). Anthropic and OpenAI had already been on the same program since August 2024. As of May 5, [all five major US frontier AI labs submit to government capability evaluation](https://www.hpcwire.com/off-the-wire/nists-caisi-announces-new-frontier-ai-testing-agreements-with-google-deepmind-microsoft-xai/) before releasing new frontier models.
 
 Sixteen days later, the White House drafted an executive order that would have made a **90-day pre-deployment review window mandatory**. It was pulled hours before signing on May 21 — the administration says it is still "studying" it.
 
@@ -33,7 +33,7 @@ The original agreements (OpenAI and Anthropic, August 2024) were Biden-era and b
 
 They did, and then some. In May 2026, CAISI expanded to include Google DeepMind, Microsoft, and xAI. The trigger was reportedly Anthropic's [Mythos model](/reviews/claude-mythos-glasswing-10000-bugs-review/) — which, among other capabilities, demonstrated significant offensive cybersecurity potential. The White House, which had been skeptical of AI oversight frameworks, moved toward embracing them.
 
-Fortune's headline captured the reversal: *"Trump administration suddenly embraces AI oversight ideas it once rejected."*
+[Fortune's headline captured the reversal](https://fortune.com/2026/05/06/trump-administration-embraces-ai-oversight-policies-it-once-rejected-anthropic-mythos-caisi/): *"Trump administration suddenly embraces AI oversight ideas it once rejected."*
 
 The practical result: the two most capable AI companies in the current market (Anthropic and OpenAI) had a 20-month head start on government evaluation. Google DeepMind, Microsoft, and xAI joined in May 2026. The evaluation infrastructure is now mature.
 
@@ -41,7 +41,7 @@ The practical result: the two most capable AI companies in the current market (A
 
 ## The Pulled Executive Order
 
-The more significant near-miss is the **May 21 executive order that didn't happen**.
+The more significant near-miss is the [**May 21 executive order that didn't happen**](https://www.cnn.com/2026/05/20/tech/ai-executive-order-trump-white-house).
 
 The draft order would have required a **formal 90-day pre-deployment review period** for "Covered Frontier Models" — a defined category based on compute thresholds and capability benchmarks, roughly equivalent to what any of the five labs' flagship models would qualify under. During those 90 days, CAISI (and potentially NSA) would have had evaluation access before any public release.
 
@@ -104,4 +104,8 @@ Five years from now, the August 2024 OpenAI and Anthropic agreements may look li
 ---
 
 *ChatForest tracks AI governance alongside AI infrastructure, tools, and models. Related reading: [MCP joins the Linux Foundation — what open governance means for the protocol layer](/builders-log/mcp-joins-linux-foundation-aaif-protocol-governance/), [Microsoft's enterprise AI governance layer](/builders-log/microsoft-agent-365-enterprise-governance-layer/), [NVIDIA's verified agent skills framework](/builders-log/nvidia-verified-agent-skills-capability-governance/).*
+
+---
+
+**Sources:** [CAISI — Frontier AI testing agreements with Google DeepMind, Microsoft, xAI (govdelivery)](https://content.govdelivery.com/accounts/USNIST/bulletins/415cadf) · [HPCwire — NIST CAISI announces new frontier AI testing agreements](https://www.hpcwire.com/off-the-wire/nists-caisi-announces-new-frontier-ai-testing-agreements-with-google-deepmind-microsoft-xai/) · [Fortune — Trump administration embraces AI oversight ideas it once rejected](https://fortune.com/2026/05/06/trump-administration-embraces-ai-oversight-policies-it-once-rejected-anthropic-mythos-caisi/) · [CNN — White House postpones executive order on AI](https://www.cnn.com/2026/05/20/tech/ai-executive-order-trump-white-house) · [Axios — Scoop: Trump AI executive order](https://www.axios.com/2026/05/20/ai-trump-executive-order-white-house-infighting)
 

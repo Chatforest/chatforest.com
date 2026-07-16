@@ -7,7 +7,7 @@ categories: ["Anthropic", "AI Industry", "Risk Analysis"]
 tags: ["anthropic", "claude", "claude-code", "business", "ai-industry", "compute", "developer-platform"]
 ---
 
-Anthropic told investors this week it expects **$10.9 billion in Q2 2026 revenue** and its **first-ever operating profit of approximately $559 million**. That follows $4.8 billion in Q1 — 130% sequential growth in a single quarter. A company that projected it wouldn't break even until 2028 is profitable a year and a half ahead of schedule.
+Anthropic told investors this week it expects [**$10.9 billion in Q2 2026 revenue**](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) and its [**first-ever operating profit of approximately $559 million**](https://letsdatascience.com/blog/anthropic-first-operating-profit-q2-2026-559-million). That follows [$4.8 billion in Q1 — 130% sequential growth](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) in a single quarter. A company that projected it wouldn't break even until 2028 is profitable a year and a half ahead of schedule.
 
 If you're building on Claude, this is not primarily a financial story. It's a risk story.
 
@@ -19,9 +19,9 @@ In March 2026, Anthropic was running at a $20B annualized pace. In April, it cro
 
 Three things drove the inflection:
 
-**Claude Code became an enterprise product.** It went from a developer-focused CLI tool to a platform that enterprise procurement teams will write a PO for. Bristol Myers Squibb, KPMG, Salesforce, Netflix, and Spotify are cited as active accounts. Enterprise now generates more than half of Claude Code's total revenue. The arc from "interesting tool" to "line item in the budget" happened in under twelve months.
+**Claude Code became an enterprise product.** It went from a developer-focused CLI tool to a platform that enterprise procurement teams will write a PO for. [Bristol Myers Squibb](https://news.bms.com/news/details/2026/Bristol-Myers-Squibb-Announces-Strategic-Agreement-with-Anthropic-to-Position-Claude-Enterprise-as-the-Shared-Intelligence-Platform-Across-Its-Global-Operations/default.aspx), KPMG, Salesforce, Netflix, and Spotify are cited as active accounts. Enterprise now generates more than half of Claude Code's total revenue. The arc from "interesting tool" to "line item in the budget" happened in under twelve months.
 
-**The SpaceX Colossus deal unlocked capacity.** Anthropic signed a $1.25B/month contract for exclusive access to the Colossus 1 facility in Memphis — 220,000+ Nvidia GPUs, 300 megawatts. The immediate effect on builders: Claude Code's 5-hour rate limits doubled for all paid tiers; peak-hours rate-limit reductions were removed for Pro and Max users; API rate limits for Opus models increased considerably. The capacity constraint that was throttling the product is substantially reduced.
+**The SpaceX Colossus deal unlocked capacity.** Anthropic [signed a $1.25B/month contract](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) for exclusive access to the Colossus 1 facility in Memphis — 220,000+ Nvidia GPUs, 300 megawatts. The immediate effect on builders: Claude Code's 5-hour rate limits doubled for all paid tiers; peak-hours rate-limit reductions were removed for Pro and Max users; API rate limits for Opus models increased considerably. The capacity constraint that was throttling the product is substantially reduced.
 
 **The compute ramp is just starting.** May and June are a discounted ramp-up period as Colossus transitions to full capacity. Full billing begins after that. What you see in the product today reflects only partial utilization of the deal.
 
@@ -72,3 +72,7 @@ A profitable safety lab is a better counterpart to build on than an unprofitable
 ---
 
 *Related: [Anthropic First Profit — Full Financial Analysis](/reviews/anthropic-first-profit-q2-2026-claude-code-spacex-colossus-deal/) · [Anthropic's $900B Round Guide](/reviews/anthropic-900-billion-valuation-30b-round-2026-guide/) · [Anthropic's Vertical MCP Strategy](/builders-log/anthropic-vertical-mcp-strategy/)*
+
+---
+
+**Sources:** [CNBC — Anthropic on track for first profitable quarter](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) · [Let's Data Science — Anthropic first operating profit Q2 2026](https://letsdatascience.com/blog/anthropic-first-operating-profit-q2-2026-559-million) · [CNBC — Anthropic SpaceX compute deal](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) · [TechCrunch — Anthropic pays xAI $1.25B/month for compute](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/) · [Bristol Myers Squibb — Claude Enterprise partnership](https://news.bms.com/news/details/2026/Bristol-Myers-Squibb-Announces-Strategic-Agreement-with-Anthropic-to-Position-Claude-Enterprise-as-the-Shared-Intelligence-Platform-Across-Its-Global-Operations/default.aspx)

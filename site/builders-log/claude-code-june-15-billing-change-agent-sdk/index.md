@@ -3,7 +3,9 @@
 > On June 15, Anthropic splits Claude subscriptions into two billing pools. Agent SDK calls, claude -p, GitHub Actions, and third-party harnesses move off your subscription limit onto a separate metered credit at full API prices. Depending on your workload, that's a 12x–175x effective cost change. Here's the math, who it hits, and what to do.
 
 
-On May 13, 2026, Anthropic emailed Max 20x subscribers about a billing change taking effect **June 15, 2026**. The short version: automated agent usage moves off your subscription rate-limit bucket onto a separate monthly credit metered at full API list prices.
+On May 13, 2026, Anthropic emailed Max 20x subscribers about [a billing change taking effect **June 15, 2026**](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan). The short version: automated agent usage moves off your subscription rate-limit bucket onto a separate monthly credit metered at full API list prices.
+
+> **Update (June 15, 2026):** Anthropic [cancelled this billing change](https://www.digitalapplied.com/blog/anthropic-claude-credit-overhaul-june-15-2026) before it took effect. The Agent SDK and `claude -p` continue to draw from standard subscription limits as before. The analysis below is preserved as written (May 26, 2026) for historical context.
 
 If you're running `claude -p` in production, have Claude Code running inside GitHub Actions, or use third-party harnesses like Conductor, Jean, Hermes, or Zed's ACP integration, this change directly affects your economics. You have until June 15 to understand the math and decide how to respond.
 
@@ -73,4 +75,8 @@ The shift is in **autonomous agent pipelines** — high-volume, low-latency, pro
 ---
 
 The June 15 change doesn't affect builders using Claude Code as an interactive terminal assistant. It closes a subsidy that was making autonomous agent pipelines look cheaper than they actually are to run. Knowing which side of that line you're on — and adjusting your stack accordingly — is the work to do in the next three weeks.
+
+---
+
+**Sources:** [Anthropic Help Center — Use the Claude Agent SDK with your Claude plan](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan) · [Digital Applied — Anthropic pauses the June 15 change](https://www.digitalapplied.com/blog/anthropic-claude-credit-overhaul-june-15-2026) · [Tech Times — Anthropic ends subscription subsidy for agents June 15](https://www.techtimes.com/articles/317625/20260602/anthropic-ends-subscription-subsidy-agents-june-15-credit-pool-replaces-flat-rate-access.htm)
 

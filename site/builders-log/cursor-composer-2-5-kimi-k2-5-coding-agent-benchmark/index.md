@@ -3,7 +3,7 @@
 > Cursor's new coding agent matches Claude Opus 4.7 on most benchmarks at a fraction of the cost — built on an open-source Chinese model the company originally forgot to mention.
 
 
-On May 18, 2026, Cursor released Composer 2.5 — an agentic coding model purpose-built for long, tool-heavy IDE sessions. It reads files, runs terminal commands, edits across multiple files, executes tests, and iterates. The headline: it posts near-frontier coding benchmark scores at roughly one-tenth the API cost of Claude Opus 4.7 or GPT-5.5, depending on which pricing tier you use.
+On [May 18, 2026, Cursor released Composer 2.5](https://cursor.com/blog/composer-2-5) — an agentic coding model purpose-built for long, tool-heavy IDE sessions. It reads files, runs terminal commands, edits across multiple files, executes tests, and iterates. The headline: it posts near-frontier coding benchmark scores at roughly one-tenth the API cost of Claude Opus 4.7 or GPT-5.5, depending on which pricing tier you use.
 
 That is useful. The backstory is more interesting.
 
@@ -52,7 +52,7 @@ Here is the part Cursor initially did not tell you.
 
 When Cursor launched Composer 2 on March 19, 2026, they described their training improvements — continued pretraining, reinforcement learning, new task sets — without mentioning the base model. Developer @fynnso intercepted an API request shortly after launch and found the internal model ID: `kimi-k2p5-rl-0317-s515-fast`.
 
-Kimi K2.5 is a coding and reasoning model released by Moonshot AI, a Beijing-based lab. It is open-source, released under a license that permits commercial use with attribution requirements for products exceeding 100M MAU or $20M/month revenue. Cursor had used it as the base model, accessed via Fireworks AI under a valid commercial license — the usage was authorized. The attribution was not included.
+[Kimi K2.5](https://www.digitalapplied.com/blog/kimi-k2-5-open-weight-moe-composer-2-5) is a coding and reasoning model released by Moonshot AI, a Beijing-based lab. It is open-source, released under a license that permits commercial use with attribution requirements for products exceeding 100M MAU or $20M/month revenue. Cursor had used it as the base model, accessed via Fireworks AI under a valid commercial license — the usage was authorized. The attribution was not included.
 
 Cursor's VP of Developer Experience eventually acknowledged on X: "Not mentioning Kimi as the base in the blog post from the start was a mistake."
 
@@ -86,5 +86,9 @@ Composer 2.5 is a good coding model for Cursor users. The more durable story is 
 
 ---
 
-*ChatForest tracks AI tools and infrastructure for builders. This analysis is based on published benchmarks, Cursor's official blog post, and community sources. We research these tools; we don't test them directly.*
+*ChatForest tracks AI tools and infrastructure for builders. This analysis is based on [published benchmarks](https://cursor.com/blog/composer-2-5), Cursor's official blog post, and community sources. We research these tools; we don't test them directly.*
+
+---
+
+**Sources:** [Cursor blog — Introducing Composer 2.5](https://cursor.com/blog/composer-2-5) · [Cursor changelog — Composer 2.5](https://cursor.com/changelog/composer-2-5) · [Digital Applied — Kimi K2.5 deep dive](https://www.digitalapplied.com/blog/kimi-k2-5-open-weight-moe-composer-2-5)
 

@@ -9,15 +9,15 @@ tags: ["anthropic", "claude", "claude-code", "rate-limits", "spacex", "colossus"
 
 Anthropic had a problem that builders kept noticing: Claude Code would grind into its limits at the worst possible time — mid-refactor, mid-pipeline run, mid-agentic loop. The frustration was real enough that "Claude rate limit" was becoming a deciding factor in evaluations against OpenAI Codex.
 
-On May 6, 2026, Anthropic announced a compute deal with SpaceX that changed the underlying math. Seven days later came a second capacity expansion. Between the two announcements, Anthropic pushed through three distinct rate limit improvements in five weeks. Here is what happened, what it costs Anthropic, and what builders need to know before July 13.
+On [May 6, 2026, Anthropic announced a compute deal with SpaceX](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) that changed the underlying math. Seven days later came a second capacity expansion. Between the two announcements, Anthropic pushed through three distinct rate limit improvements in five weeks. Here is what happened, what it costs Anthropic, and what builders need to know before July 13.
 
 ## The Compute: Colossus 1 in Memphis
 
 Colossus 1 is a 300-megawatt data center in Memphis, Tennessee, built by SpaceX and initially operated as xAI's training facility for the Grok model family. It houses more than 220,000 NVIDIA GPUs — H100s, H200s, and GB200s — across a single site.
 
-By early 2026, xAI had shifted most of its active training to Colossus 2, leaving Colossus 1 running at roughly 11% of capacity. SpaceX, which operated the physical facility, had a very large, very expensive building sitting mostly idle.
+By early 2026, [xAI had shifted most of its active training to Colossus 2, leaving Colossus 1 running at roughly 11% of capacity](https://www.actuia.com/en/news/anthropic-rents-colossus-1-for-125-billionmonth-on-an-xai-park-capped-at-11-capacity/). SpaceX, which operated the physical facility, had a very large, very expensive building sitting mostly idle.
 
-Anthropic signed an agreement for exclusive access to the entire facility: all 220,000-plus GPUs, all 300 megawatts, at a reported cost of $1.25 billion per month through May 2029. Over the contract term, that totals more than $40 billion — one of the largest compute commitments in AI history.
+Anthropic signed an agreement for exclusive access to the entire facility: all 220,000-plus GPUs, all 300 megawatts, at a reported cost of [$1.25 billion per month through May 2029](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/). Over the contract term, that totals more than $40 billion — one of the largest compute commitments in AI history.
 
 Anthropic also disclosed it has "expressed interest in partnering with SpaceX to develop multiple gigawatts of orbital AI compute capacity." That is a longer-horizon bet that is not yet real infrastructure, but it signals the scale Anthropic believes it needs.
 
@@ -69,6 +69,10 @@ For builders, the competitive dynamic translates simply: both Claude Code and Co
 **Longer term:**
 - The $40 billion compute commitment is a statement about Anthropic's ambitions. A company that spends $1.25B/month on inference capacity is not planning to be capacity-constrained at current growth rates.
 - The orbital compute interest is speculative but directionally meaningful: Anthropic is thinking about the infrastructure problem at scales well beyond what any existing data center can provide.
+
+---
+
+**Sources:** [CNBC — Anthropic, SpaceX announce compute deal](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) · [TechCrunch — Anthropic will pay xAI $1.25B per month](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/) · [Forbes — Anthropic signs compute deal with SpaceX](https://www.forbes.com/sites/jonmarkman/2026/05/06/anthropic-just-signed-a-compute-deal-with-elon-musks-spacex/) · [ActuIA — Colossus 1 capacity details](https://www.actuia.com/en/news/anthropic-rents-colossus-1-for-125-billionmonth-on-an-xai-park-capped-at-11-capacity/)
 
 ## Bottom Line
 

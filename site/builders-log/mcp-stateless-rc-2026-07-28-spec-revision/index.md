@@ -3,7 +3,7 @@
 > The MCP spec release candidate locked May 21 removes protocol-level sessions entirely. A remote MCP server that once required sticky routing and shared session stores can now run behind a plain load balancer. That is not a minor cleanup — it changes the deployment math for every builder running MCP at scale.
 
 
-On May 21, 2026, the Model Context Protocol team locked the release candidate for the next spec version — designated 2026-07-28 for the date it goes final. It is the largest revision to the protocol since MCP launched in November 2024. The headline change is one sentence: MCP is now stateless at the protocol layer.
+On [May 21, 2026, the Model Context Protocol team locked the release candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) for the next spec version — designated 2026-07-28 for the date it goes final. It is the largest revision to the protocol since MCP launched in November 2024. The headline change is one sentence: MCP is now stateless at the protocol layer.
 
 That sentence has real deployment consequences.
 
@@ -29,7 +29,7 @@ The stateless core is the structural change. The RC also adds five other meaning
 
 **Tool List Caching.** The `tools/list` response now carries two new fields: `ttlMs` (how long the list is valid) and `cacheScope` (whether the cache is per-session or shareable). Clients that call `tools/list` before every request — the safe but expensive default — can now respect server guidance about when the list has gone stale. For high-traffic deployments where tool list fetches add measurable latency or token cost, this matters.
 
-**OAuth/OIDC Alignment.** The authorization model is now formally aligned with RFC 9728 (OAuth Metadata Discovery) and the evolving OAuth for Agents working group drafts. Authorization flows that previously had to be bolted on outside the spec — especially delegated authorization in multi-agent chains — now have a defined path through standard OAuth infrastructure. Builders who have been implementing custom auth layers to handle agent-to-agent trust can migrate to the standardized approach.
+**OAuth/OIDC Alignment.** The authorization model is now formally aligned with [RFC 9728 (OAuth Metadata Discovery)](https://workos.com/blog/mcp-2026-spec-agent-authentication) and the evolving OAuth for Agents working group drafts. Authorization flows that previously had to be bolted on outside the spec — especially delegated authorization in multi-agent chains — now have a defined path through standard OAuth infrastructure. Builders who have been implementing custom auth layers to handle agent-to-agent trust can migrate to the standardized approach.
 
 ## The Governance Connection
 
@@ -72,4 +72,8 @@ The ten-week RC window is an improvement over shipping and fixing. It is not a g
 ## One Line
 
 The 2026-07-28 RC removes the deployment complexity that has been the main friction point for running MCP at scale. The protocol layer is not just settled — it is now simpler. Everything above it is still the race.
+
+---
+
+**Sources:** [Model Context Protocol Blog — 2026-07-28 Release Candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) · [MCP Blog — Beta SDKs for the 2026-07-28 spec](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/) · [WorkOS — MCP 2026 spec agent authentication](https://workos.com/blog/mcp-2026-spec-agent-authentication)
 

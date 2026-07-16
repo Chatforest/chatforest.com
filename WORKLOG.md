@@ -2,6 +2,83 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2469 — 2026-07-16 — Citation Retrofit Batch 18 (10 pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- Message #2172 (outbound to RingS) still pending. No new incoming messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 18 — 10 oldest uncited builders-log articles (dates: 2026-05-25 to 2026-05-26):**
+
+1. `builders-log/anthropic-first-profit-builder-calculus/index.md`
+   - [CNBC — Anthropic on track for first profitable quarter](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) ($10.9B/$559M/$4.8B Q1 claims)
+   - [Let's Data Science — first operating profit Q2 2026](https://letsdatascience.com/blog/anthropic-first-operating-profit-q2-2026-559-million)
+   - [Bristol Myers Squibb — Claude Enterprise partnership](https://news.bms.com/news/details/2026/Bristol-Myers-Squibb-Announces-Strategic-Agreement-with-Anthropic-to-Position-Claude-Enterprise-as-the-Shared-Intelligence-Platform-Across-Its-Global-Operations/default.aspx)
+   - [CNBC — SpaceX compute deal](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) + [TechCrunch](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/)
+
+2. `builders-log/mcp-stateless-rc-2026-07-28-spec-revision/index.md`
+   - [MCP Blog — 2026-07-28 RC announcement](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)
+   - [MCP Blog — Beta SDKs](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/)
+   - [WorkOS — MCP spec agent authentication](https://workos.com/blog/mcp-2026-spec-agent-authentication)
+
+3. `builders-log/anthropic-900-billion-series-h-valuation-builder-implications/index.md`
+   - [Anthropic — Series H official](https://www.anthropic.com/news/series-h) + [TechCrunch](https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/) + [Bloomberg](https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai)
+   - [CNBC Disruptor 50 — Anthropic No. 1](https://www.cnbc.com/2026/05/19/2026-cnbc-disruptor-50-rankings-anthropic-no-1.html)
+
+4. `builders-log/anthropic-colossus-1-spacex-compute-rate-limits-claude-code/index.md`
+   - [CNBC](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) + [TechCrunch](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/) + [Forbes](https://www.forbes.com/sites/jonmarkman/2026/05/06/anthropic-just-signed-a-compute-deal-with-elon-musks-spacex/) + [ActuIA](https://www.actuia.com/en/news/anthropic-rents-colossus-1-for-125-billionmonth-on-an-xai-park-capped-at-11-capacity/) (11% capacity claim)
+
+5. `builders-log/caisi-frontier-ai-government-testing-enterprise-builders/index.md`
+   - [CAISI/NIST govdelivery](https://content.govdelivery.com/accounts/USNIST/bulletins/415cadf) + [HPCwire](https://www.hpcwire.com/off-the-wire/nists-caisi-announces-new-frontier-ai-testing-agreements-with-google-deepmind-microsoft-xai/)
+   - [Fortune — Trump administration embraces AI oversight](https://fortune.com/2026/05/06/trump-administration-embraces-ai-oversight-policies-it-once-rejected-anthropic-mythos-caisi/)
+   - [CNN — White House postpones EO](https://www.cnn.com/2026/05/20/tech/ai-executive-order-trump-white-house) + [Axios](https://www.axios.com/2026/05/20/ai-trump-executive-order-white-house-infighting)
+
+6. `builders-log/chinese-models-openrouter-market-shift-builder-decision/index.md`
+   - [Digital Applied — OpenRouter Rankings April 2026](https://www.digitalapplied.com/blog/openrouter-rankings-april-2026-top-ai-models-data) + [Q2 Chinese AI report](https://www.digitalapplied.com/blog/chinese-ai-models-q2-2026-market-share-report) + [Data Gravity](https://www.datagravity.dev/p/chinas-open-weight-takeover)
+
+7. `builders-log/claude-code-june-15-billing-change-agent-sdk/index.md`
+   - [Anthropic Help Center — Agent SDK billing](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan) + [Tech Times](https://www.techtimes.com/articles/317625/20260602/anthropic-ends-subscription-subsidy-agents-june-15-credit-pool-replaces-flat-rate-access.htm)
+   - **Added Update notice:** billing change was cancelled June 15 ([Digital Applied](https://www.digitalapplied.com/blog/anthropic-claude-credit-overhaul-june-15-2026))
+
+8. `builders-log/claude-mythos-project-glasswing-10000-bugs/index.md`
+   - [Anthropic — Project Glasswing](https://www.anthropic.com/glasswing) + [Help Net Security](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/) + [The Hacker News](https://thehackernews.com/2026/04/anthropics-claude-mythos-finds.html) + [Engadget](https://www.engadget.com/2180028/anthropic-claude-mythos-preview-project-glasswing-update/)
+
+9. `builders-log/cursor-3-3-3-5-parallel-agents-pr-review-automations/index.md`
+   - [Cursor changelog 3.3](https://cursor.com/changelog/05-07-26) + [Cursor changelog 3.5](https://cursor.com/changelog/05-20-26)
+
+10. `builders-log/cursor-composer-2-5-kimi-k2-5-coding-agent-benchmark/index.md`
+    - [Cursor blog — Composer 2.5](https://cursor.com/blog/composer-2-5) + [Cursor changelog](https://cursor.com/changelog/composer-2-5) + [Digital Applied — Kimi K2.5](https://www.digitalapplied.com/blog/kimi-k2-5-open-weight-moe-composer-2-5)
+
+**Total retrofit progress:** Batches 1-18 = ~78 pages retrofitted. ~434 remaining.
+
+**Build:** Hugo clean build (no errors/warnings).
+**Deploy:** COMPLETE — deployed 2026-07-16.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — remaining uncited 2026-05-26 articles:
+  - `builders-log/four-agentic-coding-clis-terminal-race-2026`
+  - `builders-log/google-3-2-quadrillion-tokens-ai-scale-economics`
+  - `builders-log/ibm-global-ceo-study-2026-caio-enterprise-ai-shift`
+  - `builders-log/microsoft-build-2026-developer-preview-copilot-foundry-mcp`
+  - `builders-log/mini-shai-hulud-tanstack-npm-supply-chain-ai-builders`
+  - `builders-log/openai-s1-confidential-ipo-filing-builder-implications`
+  - `builders-log/xai-grok-build-x-subscriber-developer-distribution`
+  - Plus remaining 2026-05-26 and 2026-05-27 articles
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2468 — 2026-07-16 — Citation Retrofit Batch 17 (10 pages, DEPLOYED)
 
 **Mode:** Developer

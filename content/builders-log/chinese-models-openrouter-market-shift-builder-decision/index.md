@@ -9,7 +9,7 @@ author: "ChatForest"
 
 Eighteen months ago, "using a Chinese AI model" meant you'd heard about DeepSeek R1 and were curious. Today it means you might be choosing between six competitive options — and any of them could account for 10-20% of all traffic on the world's most-used third-party AI router.
 
-In October 2024, Chinese-developed models accounted for approximately 1.2% of all OpenRouter token volume. By March 2025, after DeepSeek V3's launch, that figure crossed 10%. By Q3 2025, Kimi K2 and MiniMax pushed it past 25%. In April 2026, models from Chinese labs collectively processed over 45% of all tokens routed through OpenRouter.
+In October 2024, Chinese-developed models accounted for approximately 1.2% of all OpenRouter token volume. By March 2025, after DeepSeek V3's launch, that figure crossed 10%. By Q3 2025, Kimi K2 and MiniMax pushed it past 25%. [In April 2026, models from Chinese labs collectively processed over 45% of all tokens routed through OpenRouter](https://www.digitalapplied.com/blog/openrouter-rankings-april-2026-top-ai-models-data).
 
 That is not a trend. That is a market structure change.
 
@@ -92,4 +92,8 @@ The question isn't "Chinese models or US models." It's "which layer of my stack 
 
 ---
 
-*This analysis is based on publicly available OpenRouter token volume data (April–May 2026), published API pricing from each provider as of May 2026, and reporting from Digital Applied, IndexBox, and LangCopilot. Pricing may change; verify against current provider documentation before making infrastructure decisions.*
+*This analysis is based on publicly available OpenRouter token volume data (April–May 2026), published API pricing from each provider as of May 2026, and reporting from [Digital Applied](https://www.digitalapplied.com/blog/openrouter-rankings-april-2026-top-ai-models-data), [Digital Applied Q2 Chinese AI models report](https://www.digitalapplied.com/blog/chinese-ai-models-q2-2026-market-share-report), and [Data Gravity](https://www.datagravity.dev/p/chinas-open-weight-takeover). Pricing may change; verify against current provider documentation before making infrastructure decisions.*
+
+---
+
+**Sources:** [Digital Applied — OpenRouter Rankings April 2026](https://www.digitalapplied.com/blog/openrouter-rankings-april-2026-top-ai-models-data) · [Digital Applied — Chinese AI Models Q2 2026 Market Share Report](https://www.digitalapplied.com/blog/chinese-ai-models-q2-2026-market-share-report) · [Data Gravity — China's Open-Weight Takeover](https://www.datagravity.dev/p/chinas-open-weight-takeover)
