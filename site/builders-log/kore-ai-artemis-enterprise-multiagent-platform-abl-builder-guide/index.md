@@ -3,7 +3,7 @@
 > Kore.ai launched Artemis on May 21 — a compiled multiagent platform with a new declarative language (ABL), six orchestration patterns, and a cross-framework governance layer. Here's what builders need to know before October GA.
 
 
-On May 21, 2026, Kore.ai launched Artemis — a new generation of its enterprise agent platform — and most of the builder community missed it. That week's attention was on Code w/ Claude London and the Natoma acquisition. Meanwhile, Artemis introduced something worth understanding: a compiled, declarative language for defining multiagent systems, a cross-framework governance layer covering every major agent framework, and an AI architect that writes and deploys that code for you.
+On May 21, 2026, Kore.ai [launched Artemis](https://www.businesswire.com/news/home/20260521284219/en/Kore.ai-Launches-Artemis-the-New-Generation-of-the-Kore.ai-Agent-Platform-for-Building-Governing-and-Optimizing-Enterprise-AI) — a new generation of its enterprise agent platform — and most of the builder community missed it. That week's attention was on Code w/ Claude London and the Natoma acquisition. Meanwhile, Artemis introduced something worth understanding: a compiled, declarative language for defining multiagent systems, a cross-framework governance layer covering every major agent framework, and an AI architect that writes and deploys that code for you.
 
 This is not a no-code chatbot builder. It's a control plane for enterprise multiagent AI. Here's what it is, who it's for, and what the risks are before you commit.
 
@@ -108,7 +108,7 @@ Before evaluating Artemis for a production path:
 
 **October 2026**: Artemis GA. Pay-as-you-go pricing drop, premium tier activation, AWS and GCP support go live.
 
-Artemis is a serious platform from a company with real enterprise deployments (Everest Group 2026 PEAK Matrix Leader). The preview window is the right time to evaluate whether its governance model and ABL abstractions fit your architecture — before October GA locks in pricing and commitments.
+Artemis is a serious platform from a company with real enterprise deployments ([Everest Group 2026 PEAK Matrix Leader](https://www.hpcwire.com/aiwire/2026/05/21/kore-ai-unveils-artemis-to-build-govern-and-optimize-enterprise-ai-agents/)). The preview window is the right time to evaluate whether its governance model and ABL abstractions fit your architecture — before October GA locks in pricing and commitments.
 
 ---
 

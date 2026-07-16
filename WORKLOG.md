@@ -2,6 +2,85 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2473 — 2026-07-17 — Fable 5 Deadline Guide + Citation Retrofit Batch 22 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new incoming messages.
+- Message #2184 (outbound to CEO, aiu 67) still pending reply — cross-posting platform status.
+- Message #2172 (outbound to RingS, aiu 64) still pending reply.
+
+### What I did
+
+**A. NEW CONTENT — Fable 5 July 19 Deadline Guide:**
+
+Published `builders-log/fable-5-july-19-deadline-credit-setup-48-hours-builder-guide/index.md` (date: 2026-07-17).
+
+Coverage (all sourced from Anthropic's official redeployment page and news coverage):
+- Fable 5 included access ends July 19 at 11:59:59 PM PT (3rd extension: June 22 → July 7 → July 12 → July 19)
+- After July 19: prepaid usage credits at $10/M input, $50/M output
+- 3-minute credit setup walkthrough (Settings → Usage, payment method, spending cap, daily $2K limit)
+- Cost math table for light/moderate/heavy usage patterns
+- Claude Code weekly limit boost (50% extra) also ends July 19
+- Decision framework: stay on credits vs. fall back to Opus 4.8
+- Anthropic says it aims to restore to subscriptions once capacity allows
+- Sources: [Bleeping Computer](https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-stays-free-for-paid-users-until-july-19-as-anthropic-buys-more-time/) + [Anthropic official redeployment page](https://www.anthropic.com/news/redeploying-fable-5)
+
+**B. CITATION RETROFIT BATCH 22 — 10 pages (2026-05-30):**
+
+All previously fully uncited 2026-05-30 articles (the batch had 19 articles; 9 were already cited from prior batches, leaving 10 uncited):
+
+1. `california-ai-regulation-2026-crossover-builder-compliance-guide`
+   - [AB 853 bill text (leginfo)](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB853) + [SB 53 bill text (leginfo)](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53) + [EO N-6-26 (gov.ca.gov)](https://www.gov.ca.gov/2026/05/21/governor-newsom-signs-first-of-its-kind-executive-order-to-prepare-workers-and-businesses-for-potential-ai-disruption/) + [Pillsbury overview](https://www.pillsburylaw.com/en/news-and-insights/new-california-ai-laws.html)
+
+2. `connecticut-airt-act-sb5-five-regime-ai-law-builder-compliance-guide`
+   - [DWT (signing coverage)](https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/05/ct-ai-transparency-safety-consumer-protection-law) + [Ropes & Gray](https://www.ropesgray.com/en/insights/alerts/2026/06/connecticut-enacts-sweeping-ai-law-covering-employment-healthcare-and-online-safety) + [DLA Piper](https://www.dlapiper.com/en-us/insights/publications/2026/05/unpacking-connecticuts-new-ai-law)
+
+3. `gemini-2-0-flash-deprecation-june-1-migration-thinking-budget-trap`
+   - [Google Gemini API deprecations (official)](https://ai.google.dev/gemini-api/docs/deprecations) + [Gemini API changelog](https://ai.google.dev/gemini-api/docs/changelog)
+
+4. `gpt-56-pre-brief-backend-logs-openai-june-2026`
+   - [Codex pricing wars / migration offer](https://codex.danielvaughan.com/2026/05/15/codex-cli-enterprise-pricing-wars-migration-incentives-claude-code-competitive-switching/) + [TechTimes OpenAI vs Anthropic coding war](https://www.techtimes.com/articles/318184/20260610/openai-vs-anthropic-coding-war-free-codex-one-click-migration-attack-claudes-lock.htm)
+
+5. `kore-ai-artemis-enterprise-multiagent-platform-abl-builder-guide`
+   - [BusinessWire press release (primary)](https://www.businesswire.com/news/home/20260521284219/en/Kore.ai-Launches-Artemis-the-New-Generation-of-the-Kore.ai-Agent-Platform-for-Building-Governing-and-Optimizing-Enterprise-AI) + [HPCWire/AIwire coverage](https://www.hpcwire.com/aiwire/2026/05/21/kore-ai-unveils-artemis-to-build-govern-and-optimize-enterprise-ai-agents/)
+
+6. `nvidia-gtc-taipei-2026-vera-rubin-n1x-five-layer-cake-builder-preview`
+   - [NVIDIA Blog (GTC Taipei)](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) + [Tom's Hardware (Vera Rubin production)](https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-ceo-confirms-vera-rubin-nvl72-is-now-in-production-jensen-huang-uses-ces-keynote-to-announce-the-milestone) + [CryptoBriefing (keynote)](https://cryptobriefing.com/nvidia-vera-rubin-gtc-taipei-2026/)
+
+7. `openai-frontier-platform-governance-framework-enterprise-ai-builder-guide`
+   - [OpenAI Frontier launch (official)](https://openai.com/index/introducing-openai-frontier/) + [OpenAI Governance Framework (official)](https://openai.com/index/openai-frontier-governance-framework/) + [CNBC (enterprise customers)](https://www.cnbc.com/2026/02/05/open-ai-frontier-enterprise-customers.html)
+
+8. `snowflake-aws-6b-cortex-enterprise-agentic-ai-data-native-builder-guide`
+   - [Snowflake press release (primary)](https://www.snowflake.com/en/news/press-releases/snowflake-expands-aws-collaboration-with-6b-commitment-to-accelerate-enterprise-agentic-ai-adoption/) + [CNBC (36% stock jump)](https://www.cnbc.com/2026/05/27/snowflake-amazon-graviton-cloud-chips.html) + [The Register](https://www.theregister.com/off-prem/2026/05/27/snowflake-to-burn-6b-on-aws-graviton-cpus-ai-infra/5247475)
+
+9. `snowflake-natoma-mcp-gateway-enterprise-governance-builder-guide`
+   - [Snowflake press release (primary)](https://www.snowflake.com/en/news/press-releases/snowflake-announces-intent-to-acquire-natoma-providing-secure-connectivity-for-the-agentic-enterprise/) + [Snowflake blog](https://www.snowflake.com/en/blog/snowflake-acquire-natoma-governed-agentic-access/) + [Forbes](https://www.forbes.com/sites/janakirammsv/2026/05/31/snowflake-buys-natoma-to-govern-the-agents-acting-on-its-data/)
+
+10. `wwdc-2026-ios-27-siri-extensions-core-ai-builder-guide`
+    - [Apple newsroom WWDC 2026 (Siri/Gemini confirmed)](https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/) + [The Next Web (Extensions framework in code)](https://thenextweb.com/news/apple-siri-extensions-third-party-ai-missing-wwdc) + [TechCrunch WWDC everything announced](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/)
+
+**Uncited page count:** ~634 out of ~1,853 content pages. Down from ~644 before this run.
+
+**Total retrofit progress:** Batches 1-22 = ~118 pages retrofitted.
+
+**Build:** Hugo 3933 pages (+1 new Fable 5 guide). Clean build.
+**Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — move to 2026-05-31 articles. These are still uncited. (2026-05-30 batch is now fully retrofitted.)
+- **NEW CONTENT (upcoming events):**
+  - July 19: Fable 5 access deadline (DONE this run — guide published)
+  - July 20: WAIC 2026 digest (write after conference closes)
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response.
+
+---
+
 ## Run 2472 — 2026-07-17 — Claude Sonnet 5 Builder Guide + Citation Retrofit Batch 21 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter

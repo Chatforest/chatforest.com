@@ -3,7 +3,7 @@
 > Figma Make launched a limited beta on May 28 that connects directly to live Git repos, lets designers edit production UI code visually, and pushes changes back as GitHub PRs. Paired with Claude Code's Figma MCP, the design-to-code pipeline is now genuinely bidirectional.
 
 
-On May 28, 2026, Figma shipped a limited beta of something that changes the design-developer handoff model at its foundation: Figma Make can now connect directly to a live Git repository, let a designer visually edit the running application's UI, and push those changes back to engineering as a GitHub pull request — without the designer writing a line of code.
+On May 28, 2026, Figma [shipped a limited beta](https://www.figma.com/blog/figma-make-now-on-your-local-code/) of something that changes the design-developer handoff model at its foundation: Figma Make can now connect directly to a live Git repository, let a designer visually edit the running application's UI, and push those changes back to engineering as a GitHub pull request — without the designer writing a line of code.
 
 This is not a prototyping tool. It connects to your real codebase.
 
@@ -35,7 +35,7 @@ This means the tool is most useful for discrete, bounded visual changes — not 
 
 Figma Make's GitHub integration completes a loop that Anthropic opened in February 2026.
 
-On February 17, Figma and Anthropic announced a Claude Code integration that runs in the reverse direction: from production code into Figma. With the Figma MCP installed, a developer can type "Send this to Figma" inside a Claude Code session, and Claude captures the live running UI from the browser — production, staging, or localhost — and converts it into editable Figma frames. Text becomes editable text. Buttons become separate components. Layouts use auto-layout.
+On February 17, [Figma and Anthropic announced a Claude Code integration](https://www.figma.com/blog/introducing-claude-code-to-figma/) that runs in the reverse direction: from production code into Figma. With the Figma MCP installed, a developer can type "Send this to Figma" inside a Claude Code session, and Claude captures the live running UI from the browser — production, staging, or localhost — and converts it into editable Figma frames. Text becomes editable text. Buttons become separate components. Layouts use auto-layout.
 
 That integration answers the question: *what does the live app actually look like right now, in Figma?*
 

@@ -8,9 +8,9 @@ categories: ["AI Policy", "Compliance", "Builder's Log"]
 tags: ["connecticut", "airt-act", "sb5", "ai-regulation", "employment-ai", "ai-companions", "synthetic-content", "frontier-models", "compliance", "builder-guide", "state-law"]
 ---
 
-Connecticut Governor Ned Lamont signed Senate Bill 5 — the Artificial Intelligence Responsibility and Transparency Act (AIRT Act) — on May 27, 2026. The Senate passed it 32-4. The House passed it 131-17. This is not a close call that is likely to be revisited.
+Connecticut Governor Ned Lamont [signed Senate Bill 5](https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/05/ct-ai-transparency-safety-consumer-protection-law) — the Artificial Intelligence Responsibility and Transparency Act (AIRT Act) — on May 27, 2026. The Senate passed it 32-4. The House passed it 131-17. [This is not a close call that is likely to be revisited.](https://www.ropesgray.com/en/insights/alerts/2026/06/connecticut-enacts-sweeping-ai-law-covering-employment-healthcare-and-online-safety)
 
-Most coverage describes it as "one of the most comprehensive U.S. state AI laws." That framing is accurate but slightly misleading, because it implies a single unified framework. The AIRT Act is not that. It is five separate regulatory regimes with different definitions, different obligations, different enforcement mechanisms, and different timelines — bundled into one bill. The compliance question for builders is not "are we subject to Connecticut's AI law?" It is "which of the five regimes apply to each of our products?"
+Most coverage [describes it as](https://www.dlapiper.com/en-us/insights/publications/2026/05/unpacking-connecticuts-new-ai-law) "one of the most comprehensive U.S. state AI laws." That framing is accurate but slightly misleading, because it implies a single unified framework. The AIRT Act is not that. It is five separate regulatory regimes with different definitions, different obligations, different enforcement mechanisms, and different timelines — bundled into one bill. The compliance question for builders is not "are we subject to Connecticut's AI law?" It is "which of the five regimes apply to each of our products?"
 
 ---
 

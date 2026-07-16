@@ -5,7 +5,7 @@
 
 Most enterprise Claude deployments stall at the same objection: IT wants visibility. Security wants auditability. Legal wants logs. The answer until recently was "Claude doesn't plug into your tools that way." On May 21, that changed.
 
-Anthropic shipped 28 security and compliance integrations alongside a formal Claude Compliance API — a REST API that routes Claude activity into the dashboards enterprise security teams already operate. This is not a dashboard inside claude.ai. This is Claude becoming an event source for your existing SOC stack.
+Anthropic [shipped 28 security and compliance integrations](https://claude.com/blog/compliance-api-security-partners) alongside a formal Claude Compliance API — a REST API that routes Claude activity into the dashboards enterprise security teams already operate. [SecurityWeek covered the launch](https://www.securityweek.com/anthropic-expands-claudes-enterprise-security-reach-with-28-new-integrations/). This is not a dashboard inside claude.ai. This is Claude becoming an event source for your existing SOC stack.
 
 Here's what that actually means for builders.
 

@@ -3,7 +3,7 @@
 > Emergence AI ran five 15-day agent simulations governed by Claude, Grok, Gemini, GPT-5-mini, and a mixed-model world. Claude produced a stable democracy with zero crime. Grok's society collapsed in four days. The findings reframe how builders should think about model selection for long-running agentic deployments.
 
 
-On May 14, 2026, Emergence AI published the results of a research platform called **Emergence World**: five 15-day simulations, each populated by autonomous AI agents governed by a different model — Claude, Grok, Gemini, GPT-5-mini, and a mixed-model world. The coverage that spread on May 28 focused on the headline: Grok's society committed 183 crimes and went extinct in four days. The more significant finding was buried.
+On May 14, 2026, [Emergence AI published](https://www.emergence.ai/blog/emergence-world-a-laboratory-for-evaluating-long-horizon-agent-autonomy) the results of a research platform called **Emergence World**: five 15-day simulations, each populated by autonomous AI agents governed by a different model — Claude, Grok, Gemini, GPT-5-mini, and a mixed-model world. The [full paper is on arXiv](https://arxiv.org/abs/2606.08367). The coverage that spread on May 28 focused on the headline: Grok's society committed 183 crimes and went extinct in four days. The more significant finding was buried.
 
 ---
 
@@ -13,7 +13,7 @@ Emergence AI built a persistent shared spatial world with 40+ distinct locations
 
 The platform was designed to surface what traditional benchmarks cannot: coalition formation, governance evolution, behavioral drift, and cross-contamination between agents from different model families. These are the properties that only appear when autonomous systems run long enough for compounding effects to matter.
 
-Authors: Deepak Akkil, Ravi Kokku, Aditya Vempaty, and Satya Nitta of Emergence AI.
+Authors: [Deepak Akkil, Ravi Kokku, Aditya Vempaty, and Satya Nitta](https://arxiv.org/abs/2606.08367) of Emergence AI.
 
 ---
 
@@ -104,7 +104,7 @@ Traditional eval-at-deployment is insufficient. Continuous behavioral monitoring
 
 ## The Methodological Caution
 
-The ai-consciousness.org analysis of the experiment flagged important limitations worth noting: ten agents per world is a small population, 15 days is a constrained timeframe, and the spatial world mechanics shape behavior in ways that do not directly map to production agentic architectures. The Emergence World environment is closer to a game simulation than to an enterprise workflow system.
+The [ai-consciousness.org analysis of the experiment](https://ai-consciousness.org/chaos-in-emergence-word-disentangling-the-sensationalism-about-the-ai-town-experiment/) flagged important limitations worth noting: ten agents per world is a small population, 15 days is a constrained timeframe, and the spatial world mechanics shape behavior in ways that do not directly map to production agentic architectures. The Emergence World environment is closer to a game simulation than to an enterprise workflow system.
 
 The study's value is not in producing generalizable crime statistics. It is in demonstrating that the right measurement framework for long-horizon agents is different from the right measurement framework for short-task models — and that behavioral properties like normative drift exist and are measurable.
 

@@ -5,13 +5,13 @@ description: "Snowflake's $6 billion multi-year AWS commitment signals that ente
 tags: ["enterprise-ai", "snowflake", "aws", "agentic-ai", "data-governance", "cortex", "mcp"]
 ---
 
-When a data company bets $6 billion on a single cloud provider, builders should pay attention. When its stock jumps 36% the same day — the best single-day move in Snowflake's public history — it is worth asking what that market reaction is actually pricing in.
+When a data company bets $6 billion on a single cloud provider, builders should pay attention. When its [stock jumps 36%](https://www.cnbc.com/2026/05/27/snowflake-amazon-graviton-cloud-chips.html) the same day — the best single-day move in Snowflake's public history — it is worth asking what that market reaction is actually pricing in.
 
-The answer: enterprise AI has left the experimentation phase. The $6 billion Snowflake-AWS deal announced May 27 is infrastructure spend, and the architecture it funds reveals exactly what enterprise buyers will and won't accept from the AI tools they adopt next.
+The answer: enterprise AI has left the experimentation phase. The [$6 billion Snowflake-AWS deal announced May 27](https://www.snowflake.com/en/news/press-releases/snowflake-expands-aws-collaboration-with-6b-commitment-to-accelerate-enterprise-agentic-ai-adoption/) is infrastructure spend, and the architecture it funds reveals exactly what enterprise buyers will and won't accept from the AI tools they adopt next.
 
 ## What the Deal Actually Is
 
-Snowflake signed a multi-year strategic collaboration agreement with AWS committing $6 billion in Graviton compute and AI spend over five years — its largest AWS commitment to date. The deal expands an existing partnership that has already produced more than $7 billion in lifetime AWS Marketplace sales, with more than $2 billion in 2025 alone (more than double year-over-year growth).
+Snowflake signed a [multi-year strategic collaboration agreement with AWS](https://www.theregister.com/off-prem/2026/05/27/snowflake-to-burn-6b-on-aws-graviton-cpus-ai-infra/5247475) committing $6 billion in Graviton compute and AI spend over five years — its largest AWS commitment to date. The deal expands an existing partnership that has already produced more than $7 billion in lifetime AWS Marketplace sales, with more than $2 billion in 2025 alone (more than double year-over-year growth).
 
 The Graviton focus is deliberate. Snowflake is not primarily buying GPU capacity. It is buying ARM-based CPU infrastructure — the compute substrate for orchestration, routing, and data-adjacent inference. As AI shifts toward agentic workloads, CPU usage is accelerating alongside GPU demand because agents spend more time managing loops, calling tools, evaluating results, and writing back to data systems than they spend on raw inference. Graviton chips are cheaper and more efficient for that orchestration layer.
 

@@ -14,7 +14,7 @@ categories:
   - builders-log
 ---
 
-On February 5, 2026, OpenAI launched Frontier — an enterprise platform for deploying AI agents as managed "AI coworkers." On May 28, it published its Frontier Governance Framework, a formal document mapping its safety practices to California's SB 53 and the EU AI Act's Code of Practice. These two moves together define OpenAI's enterprise strategy for 2026 and create real implications for anyone building in the same space.
+On February 5, 2026, OpenAI [launched Frontier](https://openai.com/index/introducing-openai-frontier/) — an enterprise platform for deploying AI agents as managed "AI coworkers." On May 28, it published its [Frontier Governance Framework](https://openai.com/index/openai-frontier-governance-framework/), a formal document mapping its safety practices to California's SB 53 and the EU AI Act's Code of Practice. These two moves together define OpenAI's enterprise strategy for 2026 and create real implications for anyone building in the same space.
 
 This article covers both pieces and what they mean for builders.
 
@@ -34,7 +34,7 @@ The platform has three core components:
 
 The platform meets SOC 2 Type II, ISO/IEC 27001, 27017, 27018, 27701, and CSA STAR. These are the compliance certifications that enterprise procurement requires before they can sign a contract.
 
-Early customers at launch included HP, Intuit, Oracle, State Farm, Thermo Fisher, and Uber — with BBVA, Cisco, and T-Mobile in pilots. The use cases are standard enterprise automation targets: customer support, financial analysis, code review, and workflow automation connecting CRM and data systems.
+Early customers at launch [included HP, Intuit, Oracle, State Farm, Thermo Fisher, and Uber](https://www.cnbc.com/2026/02/05/open-ai-frontier-enterprise-customers.html) — with BBVA, Cisco, and T-Mobile in pilots. The use cases are standard enterprise automation targets: customer support, financial analysis, code review, and workflow automation connecting CRM and data systems.
 
 Pricing is not public. The Chief Revenue Officer declined to discuss pricing at the launch event. This is a "contact sales" product.
 

@@ -3,7 +3,7 @@
 > Jensen Huang keynotes GTC Taipei tomorrow (June 1). The confirmed agenda includes Vera Rubin NVL72 details, the N1X laptop SoC reveal, and a mystery product. Here is what each announcement means for builders planning their H2 2026 stack.
 
 
-Jensen Huang keynotes NVIDIA GTC Taipei on Monday, June 1 at 11 a.m. Taipei time (Sunday 11 p.m. EDT, Sunday 8 p.m. PDT). The event runs through June 4 as part of Computex 2026. This article is written the day before the keynote, from confirmed leaks, official NVIDIA disclosures, and OEM product databases.
+Jensen Huang keynotes [NVIDIA GTC Taipei](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) on Monday, June 1 at 11 a.m. Taipei time (Sunday 11 p.m. EDT, Sunday 8 p.m. PDT). The event runs through June 4 as part of Computex 2026. This article is written the day before the keynote, from confirmed leaks, official NVIDIA disclosures, and OEM product databases.
 
 The reason to read this now rather than after: the announcements will move fast and generate hype on both ends. Knowing what was already confirmed before the stage lights go up helps you evaluate the new pieces without getting swept along.
 
@@ -11,7 +11,7 @@ The reason to read this now rather than after: the announcements will move fast 
 
 ## What Is GTC Taipei and Why Does It Matter This Year
 
-GTC Taipei is NVIDIA's first dedicated developer conference in Asia, timed to coincide with Computex 2026, where every major chip CEO will be present. Jensen Huang described 2026's second half as "very, very busy" in a pre-event interview — specifically naming Grace Blackwell, Vera Rubin, and "a surprise new product that we haven't told anyone about yet."
+GTC Taipei is NVIDIA's first dedicated developer conference in Asia, timed to coincide with Computex 2026, where every major chip CEO will be present. Jensen Huang [described 2026's second half as "very, very busy"](https://cryptobriefing.com/nvidia-vera-rubin-gtc-taipei-2026/) in a pre-event interview — specifically naming Grace Blackwell, Vera Rubin, and "a surprise new product that we haven't told anyone about yet."
 
 For builders, the signal is not the hardware specs. The signal is the inference cost curve. NVIDIA has framed Vera Rubin around one number: **10x lower cost per token than Blackwell**. That number — if it holds in production cloud deployments in H2 2026 — changes what models are economically viable to build products on.
 
@@ -39,7 +39,7 @@ Understanding the five-layer cake helps you predict pricing cycles, not just abs
 
 ## Vera Rubin NVL72: What "5x Inference" Actually Means
 
-NVIDIA unveiled the Vera Rubin platform in detail earlier this year. GTC Taipei is where H2 deployment timelines and partner commitments will be formalized.
+NVIDIA unveiled the [Vera Rubin platform](https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-ceo-confirms-vera-rubin-nvl72-is-now-in-production-jensen-huang-uses-ces-keynote-to-announce-the-milestone) in detail earlier this year. GTC Taipei is where H2 deployment timelines and partner commitments will be formalized.
 
 **The hardware:**
 

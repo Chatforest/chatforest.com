@@ -3,7 +3,7 @@
 > Gemini 2.0 Flash and 2.0 Flash-Lite shut down in two days. Most migration guides say 'just swap the model string.' That's wrong — swapping without disabling thinking in 2.5 Flash can silently inflate your output costs by 5× or more.
 
 
-On **June 1, 2026**, four Gemini model IDs stop accepting API calls. They were announced for deprecation on February 18, which means Google gave builders over three months of warning. That window closes in two days.
+On **June 1, 2026**, [four Gemini model IDs stop accepting API calls](https://ai.google.dev/gemini-api/docs/deprecations). They were announced for deprecation on February 18, which means Google gave builders over three months of warning. That window closes in two days.
 
 This is not a soft deprecation. After June 1, calls to these model IDs return errors.
 
@@ -88,7 +88,7 @@ Best for: builders who have already identified tasks where reasoning models outp
 
 ## What the Vertex AI SDK Removal Means for This Migration
 
-If you're running Gemini via Vertex AI, you have a second deadline to keep in mind: **June 24, 2026**. That's when Google removes the legacy Vertex AI SDK's generative AI modules as part of the rebrand to Gemini Enterprise Agent Platform.
+If you're running Gemini via Vertex AI, you have a second deadline to keep in mind: **June 24, 2026**. Check the [Gemini API release notes](https://ai.google.dev/gemini-api/docs/changelog) for the latest model status. That's when Google removes the legacy Vertex AI SDK's generative AI modules as part of the rebrand to Gemini Enterprise Agent Platform.
 
 The two deadlines are separate:
 - **June 1**: Model IDs `gemini-2.0-flash` and variants stop working everywhere

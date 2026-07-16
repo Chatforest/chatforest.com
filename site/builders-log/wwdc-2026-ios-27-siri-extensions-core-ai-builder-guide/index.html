@@ -68,9 +68,9 @@
         <p>Apple&rsquo;s WWDC keynote is June 8 at 10am PT. The conference runs June 8–12. If you build on iOS, ship an AI product, or want access to two billion active Apple devices, three things announced or confirmed this week should be on your radar before the keynote drops.</p>
 <h2 id="whats-confirmed-before-the-keynote">What&rsquo;s Confirmed Before the Keynote</h2>
 <p>These are not rumors. They are confirmed announcements, code found in developer betas, or official joint statements:</p>
-<p><strong>Siri runs on Google Gemini.</strong> Apple and Google published a joint statement in January 2026 confirming a multi-year deal. Apple pays roughly $1B per year for access to a custom 1.2 trillion parameter Gemini model. The model runs through Apple&rsquo;s Private Cloud Compute infrastructure — end-to-end encrypted, hardware-isolated, no data stored by Google after processing. Siri 2.0 in iOS 27 is a full chatbot with web search, image generation, coding assistance, file analysis, and multi-step execution. It is not a wrapper on the existing Siri. The old Siri is gone.</p>
-<p><strong>iOS 27 has an Extensions framework for third-party AI providers.</strong> Code found in iOS 27 test builds on May 5, 2026 — with Apple&rsquo;s own description language — shows a framework that lets users route Apple Intelligence requests to Claude, Gemini (the standalone app, separate from the Siri backend), or ChatGPT. Extensions live in App Store apps. A provider adds Extensions support to their existing app; users pick one in Settings; the choice routes Siri, Writing Tools, and Image Playground requests to that model system-wide. The framework spans iOS 27, iPadOS 27, and macOS 27.</p>
-<p><strong>Core ML is being replaced by Core AI.</strong> Apple will announce Core AI at WWDC. It replaces Core ML, which has powered on-device ML since 2017. Core AI is built for LLMs and generative AI rather than traditional ML pipelines. It still runs locally on the Neural Engine, GPU, and CPU without a network connection. New capability: apps can connect to both on-device and cloud models, with the system choosing where to run tasks based on performance and privacy requirements.</p>
+<p><strong>Siri runs on Google Gemini.</strong> Apple and Google published a joint statement in January 2026 confirming a multi-year deal — <a href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/">confirmed at WWDC 2026</a>. Apple pays roughly $1B per year for access to a custom 1.2 trillion parameter Gemini model. The model runs through Apple&rsquo;s Private Cloud Compute infrastructure — end-to-end encrypted, hardware-isolated, no data stored by Google after processing. Siri 2.0 in iOS 27 is a full chatbot with web search, image generation, coding assistance, file analysis, and multi-step execution. It is not a wrapper on the existing Siri. The old Siri is gone.</p>
+<p><strong>iOS 27 has an Extensions framework for third-party AI providers.</strong> <a href="https://thenextweb.com/news/apple-siri-extensions-third-party-ai-missing-wwdc">Code found in iOS 27 test builds on May 5, 2026</a> — with Apple&rsquo;s own description language — shows a framework that lets users route Apple Intelligence requests to Claude, Gemini (the standalone app, separate from the Siri backend), or ChatGPT. Extensions live in App Store apps. A provider adds Extensions support to their existing app; users pick one in Settings; the choice routes Siri, Writing Tools, and Image Playground requests to that model system-wide. The framework spans iOS 27, iPadOS 27, and macOS 27.</p>
+<p><strong>Core ML is being replaced by Core AI.</strong> Apple will <a href="https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/">announce Core AI at WWDC</a>. It replaces Core ML, which has powered on-device ML since 2017. Core AI is built for LLMs and generative AI rather than traditional ML pipelines. It still runs locally on the Neural Engine, GPU, and CPU without a network connection. New capability: apps can connect to both on-device and cloud models, with the system choosing where to run tasks based on performance and privacy requirements.</p>
 <h2 id="the-three-builder-decisions">The Three Builder Decisions</h2>
 <h3 id="decision-1-should-you-build-a-siri-extension">Decision 1: Should you build a Siri Extension?</h3>
 <p>The distribution math is the argument for: Extensions reach iOS 27, iPadOS 27, and macOS 27 on every Apple device that runs the OS — over two billion active devices. For AI providers, being listed as an Extensions-supported model is a distribution event comparable to shipping on Android.</p>
@@ -177,6 +177,13 @@
   <h2 class="section-heading">More Guides</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Builders-Log</span> <span>2026-07-17 00:00:00</span></div>
+  <h3><a href="/builders-log/fable-5-july-19-deadline-credit-setup-48-hours-builder-guide/">Fable 5 Free Access Ends Sunday: Credit Setup, Cost Math, and the One Decision You Have to Make Before Midnight</a></h3>
+  <p>Fable 5 included access ends July 19 at 11:59 PM PT. After that, the model runs on prepaid usage credits at $10/M input and $50/M output. The three-minute setup, the cost math for different usage levels, and whether you should stay on the model.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Builders-Log</span> <span>2026-07-15 12:00:00</span></div>
   <h3><a href="/builders-log/xiaomi-mimo-openrouter-chinese-ai-token-volume-builder-guide/">Xiaomi MiMo V2.5 Is Now OpenRouter&#39;s #2 Model by Token Volume — Chinese AI Holds 42% of the Platform</a></h3>
   <p>Xiaomi&#39;s MiMo V2.5 logged 20.5 trillion tokens on OpenRouter in the 30 days ending July 13, 2026, ranking #2 overall and running 3.5× ahead of Claude Sonnet 4.6 (5.8T, #10). Chinese AI models collectively account for roughly 42% of OpenRouter&#39;s measured token volume. The driver is price: MiMo-V2.5 costs $0.105/$0.28 per million tokens (input/output), making it cheaper than almost every comparable model. Builders routing high-volume agentic tasks are choosing cost over brand — and Chinese models are winning that race.</p>
@@ -194,13 +201,6 @@
   <div class="card-meta"><span>Builders-Log</span> <span>2026-07-15 00:00:00</span></div>
   <h3><a href="/builders-log/anthropic-canada-10m-claude-credits-mila-vector-amii-startups-builder-guide/">Anthropic Commits $10M to Canadian AI Research — and Canadian Builders Can Get Credits Too</a></h3>
   <p>Anthropic&#39;s July 14 announcement funds eight Canadian institutions with Claude API credits. If you&#39;re a builder affiliated with Amii, Mila, or Vector, you can access at least $5K USD in credits this summer. The U of T grant window opens July 20.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Builders-Log</span> <span>2026-07-15 00:00:00</span></div>
-  <h3><a href="/builders-log/china-ai-companion-law-july-15-2026-doubao-qwen-agent-shutdown-builder-compliance-guide/">China&#39;s AI Companion Law Takes Effect Today: Doubao Shuts Down, Qwen Disables Agents, Data Deleted</a></h3>
-  <p>China&#39;s Interim Measures for AI Human-Like Interaction Services are live as of July 15, 2026. ByteDance&#39;s Doubao has shut down its agent function, Alibaba&#39;s Qwen has disabled user-created humanlike agents, and Tencent&#39;s Yuanbao pulled features weeks ago. If you build emotional AI, companion agents, or persona-persistent products for Chinese users, here&#39;s exactly what the law requires.</p>
 </div>
 
   

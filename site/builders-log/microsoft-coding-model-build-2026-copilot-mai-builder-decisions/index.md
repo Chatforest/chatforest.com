@@ -9,7 +9,7 @@ Then it fumbled.
 
 By 2025, Anthropic's Claude Code, OpenAI's Codex CLI, and Cursor had captured the developer mindshare that Copilot should have owned by default. Copilot became the incumbent developers tolerate while trying something better in another tab.
 
-That may be about to change. On May 28, 2026, *The Information* reported that Microsoft will unveil a suite of homegrown AI models at Build 2026 — June 2–3 in San Francisco — including a **coding model specifically designed to boost GitHub Copilot**. The report says Microsoft shares rose roughly 3% on the news.
+That may be about to change. On May 28, 2026, [*The Information* reported](https://www.theinformation.com/newsletters/ai-agenda/microsoft-release-new-coding-model-next-week-comeback-attempt) that Microsoft will unveil a suite of homegrown AI models at Build 2026 — June 2–3 in San Francisco — including a **coding model specifically designed to boost GitHub Copilot**. [Seeking Alpha corroborated the report](https://seekingalpha.com/news/4598018-microsoft-plans-to-showcase-new-coding-model-at-next-weeks-build-conference-report) and noted Microsoft shares rose roughly 3% on the news.
 
 Here is what builders need to understand before next Tuesday.
 

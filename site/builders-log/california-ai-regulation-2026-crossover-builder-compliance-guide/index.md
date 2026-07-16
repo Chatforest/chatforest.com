@@ -5,7 +5,7 @@
 
 On May 29, 2026, approximately 30 California AI-related bills passed their crossover deadline — the last day a bill can clear its original chamber and move to the other side of the legislature. The action now compresses into four weeks before the July 2 summer adjournment. Most of these bills will be on Governor Newsom's desk by September.
 
-This is the wrong moment to start paying attention to California AI regulation. The right moment was January 1, 2026, when seven already-signed laws took effect. If you build AI products used in California — which, given 39 million residents, includes nearly every consumer AI product — here is where you actually stand.
+This is the wrong moment to start paying attention to California AI regulation. The right moment was January 1, 2026, when [seven already-signed laws took effect](https://www.pillsburylaw.com/en/news-and-insights/new-california-ai-laws.html). If you build AI products used in California — which, given 39 million residents, includes nearly every consumer AI product — here is where you actually stand.
 
 ---
 
@@ -13,7 +13,7 @@ This is the wrong moment to start paying attention to California AI regulation. 
 
 These laws are **in effect now**. No pending votes, no governor's signature required. Builders who haven't complied are already in violation.
 
-### AB 853 — California AI Transparency Act
+### [AB 853](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB853) — California AI Transparency Act
 
 Any person who creates or provides a system that generates synthetic content — text, images, video, audio — must:
 
@@ -23,7 +23,7 @@ Any person who creates or provides a system that generates synthetic content —
 
 **Who this hits**: Every consumer AI product generating content for California users. The detection-tool requirement is operationally demanding. This isn't a "put a watermark on it and call it done" rule — the detection tool must remain available years out.
 
-### SB 53 — Transparency in Frontier Artificial Intelligence Act
+### [SB 53](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53) — Transparency in Frontier Artificial Intelligence Act
 
 Companies that develop frontier AI models *and* have annual gross revenues (including affiliates) exceeding **$500 million** must:
 
@@ -76,7 +76,7 @@ Restrictions on AI use in healthcare advertising and clinical decision-making. A
 
 ## Layer 2: May 21, 2026 — Newsom's Workforce Disruption Executive Order
 
-Governor Newsom signed Executive Order N-6-26 on May 21, directing state agencies to study and prepare for AI-driven workforce displacement.
+Governor Newsom signed [Executive Order N-6-26](https://www.gov.ca.gov/2026/05/21/governor-newsom-signs-first-of-its-kind-executive-order-to-prepare-workers-and-businesses-for-potential-ai-disruption/) on May 21, directing state agencies to study and prepare for AI-driven workforce displacement.
 
 **What it does**: Tasked the Labor and Workforce Development Agency (LWDA) with reviewing and recommending policy changes within 180 days, covering:
 - WARN Act modernization (earlier notice requirements before mass layoffs)
