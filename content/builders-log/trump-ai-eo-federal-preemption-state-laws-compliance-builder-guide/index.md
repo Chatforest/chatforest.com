@@ -18,7 +18,7 @@ The short answer: **state AI laws still apply.** Do not slow your compliance wor
 
 ## What the Executive Order Actually Says
 
-**EO 14365**, titled "Ensuring a National Policy Framework for Artificial Intelligence," was signed by President Trump on **December 11, 2025**.
+**[EO 14365](https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/)**, titled "Ensuring a National Policy Framework for Artificial Intelligence," was signed by President Trump on **December 11, 2025**. ([Seyfarth Shaw analysis](https://www.seyfarth.com/news-insights/president-trump-signs-executive-order-preempting-state-ai-laws-and-centralizing-federal-oversight.html) · [Paul Hastings analysis](https://www.paulhastings.com/insights/client-alerts/president-trump-signs-executive-order-challenging-state-ai-laws))
 
 The core theory is that fragmented state AI regulation threatens U.S. innovation and competitiveness. But the EO does not itself preempt state laws — it is not a self-executing preemption instrument. Instead, it directed three federal agencies to take specific actions by **March 11, 2026**:
 

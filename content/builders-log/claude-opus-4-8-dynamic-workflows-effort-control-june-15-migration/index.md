@@ -8,7 +8,7 @@ categories: ["Anthropic", "Claude", "Developer Tools"]
 tags: ["anthropic", "claude", "claude-opus", "opus-4-8", "dynamic-workflows", "effort-control", "model-deprecation", "june-2026", "api", "agentic", "migration"]
 ---
 
-Anthropic released Claude Opus 4.8 on May 28, 2026. The short description is: a meaningfully better agentic coding model at the same price as Opus 4.7, with two new features that change how you structure multi-step work.
+[Anthropic released Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) on May 28, 2026. The short description is: a meaningfully better agentic coding model at the same price as Opus 4.7, with two new features that change how you structure multi-step work.
 
 There is also a deadline attached to this launch. The predecessor model IDs — `claude-sonnet-4-20250514` and `claude-opus-4-20250514` — retire on **June 15, 2026**. If you have either string hardcoded anywhere in production, you have 14 days to update it. API calls using those IDs will fail after the deadline.
 

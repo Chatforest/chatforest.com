@@ -7,7 +7,7 @@ categories: ["Mistral", "AI Models", "Developer Tools"]
 tags: ["mistral", "mistral-medium-3-5", "vibe", "open-weight", "coding-agent", "swegbench", "function-calling", "self-hosting", "european-ai", "gdpr", "agentic"]
 ---
 
-On April 29, 2026, Mistral released **Medium 3.5** — a 128B dense open-weight model that consolidates three separate Mistral endpoints into one. On May 22, they launched **Vibe Remote Agents** and a VS Code extension. On May 28, they rebranded Le Chat to **Vibe** at the AI NOW Summit in Paris, announcing industrial AI deployments at Airbus, BMW, ASML, and EDF.
+On April 29, 2026, Mistral released **Medium 3.5** — a 128B dense open-weight model that consolidates three separate Mistral endpoints into one. On May 22, they [launched **Vibe Remote Agents**](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/) and a VS Code extension. On May 28, they rebranded Le Chat to **Vibe** at the AI NOW Summit in Paris, announcing industrial AI deployments at Airbus, BMW, ASML, and EDF.
 
 The story hasn't gotten the attention it deserves. Medium 3.5 reaches **77.6% on SWE-Bench Verified** — two points below Claude Sonnet 4.6 — at **$1.50/M input tokens** (vs. Sonnet's $3.00). The weights are open. It self-hosts on four H100s. And Vibe adds something no other major coding agent has: async cloud execution with session teleportation, so you can start a task locally and beam it mid-run to Mistral's servers.
 

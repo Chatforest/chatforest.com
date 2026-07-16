@@ -8,7 +8,7 @@ categories: ["Anthropic", "Claude", "Developer Tools"]
 tags: ["anthropic", "claude", "opus-4-8", "messages-api", "prompt-caching", "agents", "api", "agentic", "architecture", "mid-conversation"]
 ---
 
-Anthropic shipped a quiet but useful API change alongside Opus 4.8: you can now inject a `{"role": "system"}` message anywhere in the `messages` array, not just at the top-level `system` field. The instruction applies from that point in the conversation forward, with system-level priority over user turns, and without invalidating the prompt cache for everything that came before.
+Anthropic shipped a quiet but useful API change alongside [Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8): you can now inject a `{"role": "system"}` message anywhere in the `messages` array, not just at the top-level `system` field. The instruction applies from that point in the conversation forward, with system-level priority over user turns, and without invalidating the prompt cache for everything that came before.
 
 The feature is called mid-conversation system messages. It is available on Claude API and AWS Claude Platform with Opus 4.8 — no beta header required.
 

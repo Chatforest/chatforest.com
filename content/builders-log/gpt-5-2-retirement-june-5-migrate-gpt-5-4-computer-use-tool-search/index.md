@@ -7,7 +7,7 @@ categories: ["OpenAI", "Model Migration", "Agent Development", "MCP"]
 tags: ["openai", "gpt-5.4", "gpt-5.2", "model-deprecation", "computer-use", "tool-search", "mcp", "context-window", "api-migration", "agent-development"]
 ---
 
-GPT-5.2 Thinking retires on June 5, 2026. If you have production code that calls `gpt-5.2` or `gpt-5.2-thinking`, you have four days to update the model name before your requests start failing.
+GPT-5.2 Thinking [retires on June 5, 2026](https://developers.openai.com/api/docs/deprecations). If you have production code that calls `gpt-5.2` or `gpt-5.2-thinking`, you have four days to update the model name before your requests start failing.
 
 The migration is a single-line change. But this is a good time to understand what GPT-5.4 actually offers that GPT-5.2 did not — because three of those features directly affect how builders structure agent pipelines.
 
@@ -39,7 +39,7 @@ If you are still on the older Chat Completions API format, GPT-5.4 also supports
 
 ## What GPT-5.4 Adds
 
-GPT-5.4 was released on March 5, 2026, as OpenAI's first general-purpose model with three capabilities that did not exist in GPT-5.2:
+[GPT-5.4 was released on March 5, 2026](https://openai.com/index/introducing-gpt-5-4/), as OpenAI's first general-purpose model with three capabilities that did not exist in GPT-5.2:
 
 - **Native computer-use** — the model can interact with a desktop through screenshots, control the mouse and keyboard, and generate Playwright scripts for browser automation
 - **1M-token context** — standard context is 272K tokens; API and Codex users can configure up to 1M tokens

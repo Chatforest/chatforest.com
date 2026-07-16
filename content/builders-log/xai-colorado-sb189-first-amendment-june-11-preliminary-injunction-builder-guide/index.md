@@ -8,9 +8,9 @@ categories: ["AI Policy", "Regulation", "Legal"]
 tags: ["xai", "colorado", "ai-policy", "regulation", "first-amendment", "sb-189", "litigation", "compliance", "admt", "builder-guide"]
 ---
 
-On April 27, 2026, a federal magistrate judge issued a court order that had never been issued before: a stay of enforcement of a U.S. state AI law, at the joint request of a private company and the U.S. Department of Justice.
+On April 27, 2026, a federal magistrate judge issued a court order that had never been issued before: a stay of enforcement of a U.S. state AI law, at the joint request of a private company and the U.S. Department of Justice. ([Norton Rose Fulbright](https://www.nortonrosefulbright.com/en-us/knowledge/publications/de3ad9de/xai-sues-doj-intervenes-enforcement-of-colorado-ai-act-suspended) · [Jenner & Block](https://www.jenner.com/en/news-insights/client-alerts/doj-joins-xai-in-lawsuit-challenging-colorado-ai-act))
 
-That stay covered Colorado's original AI Act (SB 24-205), which was subsequently repealed and replaced by a narrower disclosure law, SB 189, on May 14. The stay order included a condition: xAI must file a new preliminary injunction motion against any replacement legislation within 28 days. That deadline falls on or around June 11, 2026.
+That stay covered Colorado's original AI Act (SB 24-205), which was subsequently repealed and replaced by a narrower disclosure law, SB 189, on May 14. The stay order included a condition: xAI must file a new preliminary injunction motion against any replacement legislation within 28 days. That deadline falls on or around June 11, 2026. ([Bloomberg Law](https://news.bloomberglaw.com/daily-labor-report/colorado-ai-safeguards-law-halted-as-musks-xai-seeks-injunction))
 
 xAI has given no indication it intends to drop the lawsuit.
 

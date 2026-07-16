@@ -7,7 +7,7 @@ categories: ["Anthropic", "AI Industry", "Business"]
 tags: ["anthropic", "ipo", "s-1", "claude", "api", "pricing", "enterprise", "openai", "funding"]
 ---
 
-On June 1, 2026, Anthropic officially confirmed what its Series H investor mix made obvious: it filed a confidential draft registration statement on Form S-1 with the U.S. Securities and Exchange Commission, beginning the formal process toward a public listing.
+On June 1, 2026, [Anthropic officially confirmed](https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/) what its Series H investor mix made obvious: it filed a confidential draft registration statement on Form S-1 with the U.S. Securities and Exchange Commission, beginning the formal process toward a public listing. ([CNBC](https://www.cnbc.com/2026/06/01/anthropic-ipo-s1-prospectus.html))
 
 The numbers attached to that filing are large. Anthropic closed its $65 billion Series H on May 28 at a **$965 billion post-money valuation**. It is targeting a primary IPO issuance of **$25–35 billion** at a **fully-diluted valuation of $1.10 to $1.25 trillion**, with IPO pricing expected between October 15 and November 15, 2026. Underwriters are Goldman Sachs, JPMorgan, and Morgan Stanley. Legal counsel is Wilson Sonsini — the firm that managed Google's 2004 IPO.
 
