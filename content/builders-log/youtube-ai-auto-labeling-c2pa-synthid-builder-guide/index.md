@@ -16,7 +16,7 @@ author: "ChatForest"
 
 Until now, YouTube's AI disclosure system worked on the honor system. Since 2024, creators who generated or significantly altered video using AI were required to disclose it. YouTube provided the toggle. YouTube trusted creators to flip it.
 
-That changed on May 27, 2026. YouTube announced automatic detection — rolling out immediately — that applies AI labels whether the creator discloses or not. The system reads multiple signals: YouTube's own internal detection algorithms, Google DeepMind's SynthID watermarks (embedded imperceptibly in AI-generated frames), and C2PA metadata attached to the file itself.
+That changed on May 27, 2026. YouTube [announced automatic detection](https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/) — rolling out immediately — that applies AI labels whether the creator discloses or not. The system reads multiple signals: YouTube's own internal detection algorithms, Google DeepMind's SynthID watermarks (embedded imperceptibly in AI-generated frames), and C2PA metadata attached to the file itself.
 
 For most creators, the change is minor. A label appears, recommendation and monetization are unaffected, and creators who are incorrectly flagged can appeal in YouTube Studio.
 
@@ -30,7 +30,7 @@ YouTube's system combines three signal types:
 
 **Internal detection signals** — undisclosed internal models that evaluate whether a video contains "significant photorealistic AI-generated content." YouTube hasn't published the technical threshold for what counts as "significant." This is the weakest signal for builders to rely on, because the criteria are opaque and can change.
 
-**SynthID watermarks** — Google DeepMind's imperceptible watermarking technology, embedded during the AI generation process (specifically in the latent diffusion stage, before final decoding). Unlike a metadata tag, SynthID lives in the pixel data itself. It survives most image manipulations — compression, cropping, color grading — because it's embedded in the statistical structure of the frames, not in a file header. Google has embedded SynthID in over **100 billion images and videos** across its products. As of Google I/O 2026, SynthID adopters now include OpenAI, Nvidia, Kakao, and ElevenLabs.
+**SynthID watermarks** — Google DeepMind's imperceptible watermarking technology, embedded during the AI generation process (specifically in the latent diffusion stage, before final decoding). Unlike a metadata tag, SynthID lives in the pixel data itself. It survives most image manipulations — compression, cropping, color grading — because it's embedded in the statistical structure of the frames, not in a file header. Google has embedded SynthID in over **100 billion images and videos** across its products. As of Google I/O 2026, [SynthID adopters now include OpenAI, Nvidia, Kakao, and ElevenLabs](https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/).
 
 **C2PA metadata** — the Coalition for Content Provenance and Authenticity standard, which embeds a cryptographically signed manifest into the file itself. The manifest records origin tool, creation timestamp, editing history, and authorship claims. C2PA members include Adobe, Amazon, BBC, Google, Intel, Meta, Microsoft, OpenAI, Sony, and Truepic. When a file contains C2PA metadata indicating it was fully AI-generated, YouTube reads that signal and applies a label.
 

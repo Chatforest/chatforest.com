@@ -5,7 +5,7 @@ description: "Anthropic is in early talks to run Claude inference on Microsoft's
 tags: ["anthropic", "microsoft", "maia", "compute", "inference", "claude-api", "silicon", "azure"]
 ---
 
-Anthropic is in early-stage talks with Microsoft to run Claude inference workloads on Microsoft's custom Maia 200 AI accelerators via Azure — a move reported by CNBC on May 21, 2026 and confirmed by multiple outlets in the days since.
+Anthropic is in early-stage talks with Microsoft to run Claude inference workloads on Microsoft's custom Maia 200 AI accelerators via Azure — [a move reported by CNBC on May 21, 2026](https://www.cnbc.com/2026/05/21/anthropic-microsoft-maia-200-ai-chip.html) and confirmed by multiple outlets in the days since, including [TechTimes](https://www.techtimes.com/articles/317072/20260524/anthropic-microsoft-negotiate-maia-200-chip-deal-claude-could-become-custom-silicons-first.htm).
 
 Nothing is signed. But if the deal happens, it would be the first time a major external AI lab puts a frontier model on Maia 200 at production scale — and the first real test of whether Microsoft's in-house silicon can handle inference requirements set by someone else.
 

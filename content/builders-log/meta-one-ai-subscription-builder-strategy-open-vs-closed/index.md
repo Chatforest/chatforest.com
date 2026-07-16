@@ -8,7 +8,7 @@ categories: ["AI Industry", "Meta", "Industry Analysis"]
 tags: ["meta", "meta-one", "llama", "whatsapp", "subscription", "monetization", "open-source", "ai-strategy", "distribution"]
 ---
 
-On May 27, 2026, Meta launched paid subscription tiers across Instagram, Facebook, and WhatsApp under a new umbrella brand: **Meta One**. For builders, the launch isn't primarily a product story — it's a market signal. Meta is the last major consumer AI company to charge for AI. With this launch, the industry's pricing experiment is over.
+On May 27, 2026, Meta [launched paid subscription tiers](https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/) across Instagram, Facebook, and WhatsApp under a new umbrella brand: **Meta One**. [CNBC confirmed](https://www.cnbc.com/2026/05/27/meta-testing-ai-subscription-services-cheapest-plan-at-7point99-a-month.html) the AI tier pricing at $7.99 and $19.99/month. For builders, the launch isn't primarily a product story — it's a market signal. Meta is the last major consumer AI company to charge for AI. With this launch, the industry's pricing experiment is over.
 
 ---
 

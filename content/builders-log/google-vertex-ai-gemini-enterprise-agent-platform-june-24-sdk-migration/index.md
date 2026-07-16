@@ -5,7 +5,7 @@ description: "Google's Vertex AI SDK modules are removed June 24, 2026. Here's e
 tags: ["google-cloud", "vertex-ai", "gemini", "sdk-migration", "agent-platform", "builders-log"]
 ---
 
-Google Cloud completed its most significant developer-facing reorganization since the original Vertex AI launch. The product is now called **Gemini Enterprise Agent Platform**. The Vertex AI SDK's generative AI modules are gone on **June 24, 2026** — 26 days from this writing. This is not a deprecation warning. It is a hard removal date that will break production code if you ignore it.
+Google Cloud completed its most significant developer-facing reorganization since the original Vertex AI launch. The product is now called [**Gemini Enterprise Agent Platform**](https://cloud.google.com/products/gemini-enterprise-agent-platform). The Vertex AI SDK's generative AI modules are gone on **June 24, 2026** — 26 days from this writing, per [Google's official deprecation guide](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/genai-vertexai-sdk). This is not a deprecation warning. It is a hard removal date that will break production code if you ignore it.
 
 Here is what you need to know.
 

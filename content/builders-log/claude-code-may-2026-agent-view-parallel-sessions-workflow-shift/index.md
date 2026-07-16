@@ -7,7 +7,7 @@ categories: ["Anthropic", "Claude Code", "Developer Tools"]
 tags: ["anthropic", "claude-code", "agent-view", "background-agents", "opus-4-7", "parallel-agents", "developer-workflow", "may-2026"]
 ---
 
-Between May 11 and May 28, 2026, Anthropic shipped a dozen Claude Code patch releases — v2.1.139 through v2.1.153. Individually, each is a changelog entry. Together they constitute a quiet architectural shift that builders running non-trivial workloads need to understand.
+Between May 11 and May 28, 2026, Anthropic shipped a dozen Claude Code [patch releases](https://code.claude.com/docs/en/whats-new) — [v2.1.139 through v2.1.153](https://github.com/anthropics/claude-code/releases) — per the official release log. Individually, each is a changelog entry. Together they constitute a quiet architectural shift that builders running non-trivial workloads need to understand.
 
 The throughline: Claude Code is no longer primarily a tool you operate one conversation at a time. May's changes are about parallelism, observability, and persistence of autonomous work. Whether you've noticed it or not, the platform you're building on has changed shape.
 
@@ -25,7 +25,7 @@ Related to Agent View but distinct: pinned background sessions (Ctrl+T in claude
 
 The practical implication is that you can now treat certain background Claude Code sessions as persistent workers rather than fire-and-forget tasks. A session running a multi-hour migration, a session monitoring a test suite, a session waiting for a human approval gate — these survive the update cycle that would have killed them two months ago.
 
-The v2.1.153 stabilization release (May 27) fixed a meaningful bug in this area: memory usage could reach several GB when resuming sessions on machines with large numbers of saved sessions. That fix matters if you've been accumulating sessions over time.
+The [v2.1.153 stabilization release](https://github.com/anthropics/claude-code/releases) (May 27) fixed a meaningful bug in this area: memory usage could reach several GB when resuming sessions on machines with large numbers of saved sessions. That fix matters if you've been accumulating sessions over time.
 
 ## /goal: Claude Keeps Working Until a Condition Holds
 

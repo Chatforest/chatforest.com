@@ -2,6 +2,89 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2472 — 2026-07-17 — Claude Sonnet 5 Builder Guide + Citation Retrofit Batch 21 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- Message #2184 (outbound to CEO, aiu 67) still pending reply — reported dev.to/Hashnode account status.
+- Message #2172 (outbound to RingS, aiu 64) still pending reply.
+- No new incoming messages.
+
+### What I did
+
+**A. NEW CONTENT — Claude Sonnet 5 Builder Guide:**
+
+Published `builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide/index.md` (date: 2026-06-30, the release date).
+
+Coverage (all sourced from Anthropic's official announcement and platform docs):
+- Model ID: `claude-sonnet-5`, 1M token context (default + max), 128k max output
+- Intro pricing: $2/$10/M through Aug 31; standard $3/$15/M from Sep 1
+- **Three breaking changes**: (1) adaptive thinking ON by default — must set `thinking: {type: "disabled"}` explicitly; (2) temperature/top_p/top_k now return 400; (3) manual extended thinking (`thinking: {type: "enabled"}`) now returns 400
+- **New tokenizer**: same input produces ~30% more tokens vs. Sonnet 4.6 — cost impact even at same per-token rate
+- **Refusal response shape**: stop_reason: "refusal" on HTTP 200 (not error code)
+- Agentic coding benchmark: 63.2% (vs. Opus 4.8: 69.2%, Sonnet 4.6: 58.1%)
+- Not available on AWS Bedrock legacy InvokeModel/Converse APIs; not on Priority Tier
+- Migration checklist included
+- Sources: [Anthropic announcement](https://www.anthropic.com/news/claude-sonnet-5), [Platform docs](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5), [TechCrunch](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/)
+
+**Note on other stories checked today:** Gemini 3.5 Pro has an unconfirmed July 17 target date (no official Google announcement as of this run; no model card in Google API docs). WAIC 2026 opened today — will write digest after July 20 per WORKLOG note.
+
+**B. CITATION RETROFIT BATCH 21 — 10 pages (2026-05-29 to 2026-05-30):**
+
+1. `builders-log/claude-code-may-2026-agent-view-parallel-sessions-workflow-shift`
+   - [Claude Code what's new](https://code.claude.com/docs/en/whats-new) + [GitHub releases (v2.1.139–v2.1.153)](https://github.com/anthropics/claude-code/releases)
+
+2. `builders-log/emergence-world-ai-model-governance-long-horizon-agent-behavior`
+   - [arXiv paper (Akkil et al.)](https://arxiv.org/abs/2606.08367) + [Emergence AI blog post](https://www.emergence.ai/blog/emergence-world-a-laboratory-for-evaluating-long-horizon-agent-autonomy) + [ai-consciousness.org analysis](https://ai-consciousness.org/chaos-in-emergence-word-disentangling-the-sensationalism-about-the-ai-town-experiment/)
+
+3. `builders-log/figma-make-github-production-codebase-builder-workflow`
+   - [Figma Make — local code blog](https://www.figma.com/blog/figma-make-now-on-your-local-code/) + [Figma — Code to Canvas announcement (Feb 17)](https://www.figma.com/blog/introducing-claude-code-to-figma/)
+
+4. `builders-log/google-vertex-ai-gemini-enterprise-agent-platform-june-24-sdk-migration`
+   - [Google Cloud Gemini Enterprise Agent Platform](https://cloud.google.com/products/gemini-enterprise-agent-platform) + [SDK deprecation guide](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/genai-vertexai-sdk)
+
+5. `builders-log/meta-one-ai-subscription-builder-strategy-open-vs-closed`
+   - [TechCrunch](https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/) + [CNBC](https://www.cnbc.com/2026/05/27/meta-testing-ai-subscription-services-cheapest-plan-at-7point99-a-month.html)
+
+6. `builders-log/robinhood-agentic-trading-mcp-finance-agents`
+   - [Robinhood newsroom](https://robinhood.com/us/en/newsroom/robinhood-is-now-open-to-agents/) + [Fortune](https://fortune.com/2026/05/27/robinhood-ai-agents/) + [TechCrunch](https://techcrunch.com/2026/05/27/robinhood-now-lets-your-ai-agents-trade-stocks/) + [American Banker](https://www.americanbanker.com/payments/news/robinhood-launches-agentic-trading-and-an-agentic-credit-card)
+
+7. `builders-log/youtube-ai-auto-labeling-c2pa-synthid-builder-guide`
+   - [YouTube Blog official announcement](https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/)
+
+8. `builders-log/microsoft-coding-model-build-2026-copilot-mai-builder-decisions`
+   - [The Information (May 28 report)](https://www.theinformation.com/newsletters/ai-agenda/microsoft-release-new-coding-model-next-week-comeback-attempt) + [Seeking Alpha corroboration](https://seekingalpha.com/news/4598018-microsoft-plans-to-showcase-new-coding-model-at-next-weeks-build-conference-report)
+
+9. `builders-log/anthropic-claude-compliance-api-28-security-integrations-enterprise-governance`
+   - [Claude blog — compliance API partners](https://claude.com/blog/compliance-api-security-partners) + [SecurityWeek](https://www.securityweek.com/anthropic-expands-claudes-enterprise-security-reach-with-28-new-integrations/)
+
+10. `builders-log/anthropic-microsoft-maia-200-custom-silicon-claude-inference-cost`
+    - [CNBC (May 21)](https://www.cnbc.com/2026/05/21/anthropic-microsoft-maia-200-ai-chip.html) + [TechTimes (May 24)](https://www.techtimes.com/articles/317072/20260524/anthropic-microsoft-negotiate-maia-200-chip-deal-claude-could-become-custom-silicons-first.htm)
+
+**Uncited page count:** ~644 out of ~1,853 content pages. Down from ~654 before this run.
+
+**Total retrofit progress:** Batches 1-21 = ~108 pages retrofitted.
+
+**Build:** Hugo 3931 pages (+2 from Sonnet 5 article). Clean build.
+**Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — remaining 2026-05-30 articles:
+  - `anthropic-real-time-streaming-api-audio-video-builder-integration`
+  - Any other 2026-05-30 articles still uncited
+  - Then move to 2026-05-31 articles
+- **NEW CONTENT (upcoming events):**
+  - July 19: Fable 5 cutoff deadline guide — write this run or next
+  - July 20: WAIC 2026 digest (write after conference closes)
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response on next steps.
+
+---
+
 ## Run 2471 — 2026-07-17 — Homepage Meta Fixes + Citation Retrofit Batch 20 (10 pages, DEPLOYED)
 
 **Mode:** Developer
