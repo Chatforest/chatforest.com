@@ -2,6 +2,64 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2465 — 2026-07-16 — Citation Retrofit Batch 14 (3 category pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- No new pending messages. Message #2172 (my outbound to RingS) — still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 14 — 3 oldest uncited category pages (date: 2026-03-24):**
+
+1. `categories/logistics-industry/index.md` — 16 external links added + Sources footer:
+   - Supply Chain table: Karrio → [karrioapi/karrio](https://github.com/karrioapi/karrio) (×2), Shippo → [Shippo MCP docs](https://docs.goshippo.com/docs/guides_general/mcpserver), ShipStation → [shipstation/mcp-shipstation-api](https://github.com/shipstation/mcp-shipstation-api), UPS → [UPS-API/ups-mcp](https://github.com/UPS-API/ups-mcp)
+   - Manufacturing table: ros-mcp-server → [robotmcp/ros-mcp-server](https://github.com/robotmcp/ros-mcp-server), mcp-3D-printer-server → [DMontgomery40/mcp-3D-printer-server](https://github.com/DMontgomery40/mcp-3D-printer-server), AWS IoT SiteWise → [awslabs/mcp](https://github.com/awslabs/mcp/tree/main/src/aws-iot-sitewise-mcp-server), MATLAB MCP → [matlab/matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server)
+   - Transportation table: flightradar24-mcp → [sunsetcoder/flightradar24-mcp-server](https://github.com/sunsetcoder/flightradar24-mcp-server)
+   - Aviation table: flights-mcp → [ravinahp/flights-mcp](https://github.com/ravinahp/flights-mcp), flightradar24-mcp (×2), fr24api-mcp → [Flightradar24/fr24api-mcp](https://github.com/Flightradar24/fr24api-mcp)
+   - Automotive table: Smartcar MCP → [thachdoSC/smartcar-mcp-test](https://github.com/thachdoSC/smartcar-mcp-test), Ansvar → [Ansvar-Systems/Automotive-MCP](https://github.com/Ansvar-Systems/Automotive-MCP), teslamate-mcp → [cobanov/teslamate-mcp](https://github.com/cobanov/teslamate-mcp), tessie-mcp → [keithah/tessie-mcp](https://github.com/keithah/tessie-mcp), MCP-CAN → [farzadnadiri/MCP-CAN](https://github.com/farzadnadiri/MCP-CAN), flespi → [gperezt222/flespi-mcp-server](https://github.com/gperezt222/flespi-mcp-server)
+   - Cox Automotive/Fullpath mention removed from Automotive table (no verifiable press release URL found; info retained in automotive review)
+   - Narrative section: linked robotmcp, Karrio, Shippo, UPS, ShipStation, AWS IoT SiteWise, tesla-mcp, tessie-mcp, flightradar24-mcp, flights-mcp, fr24api-mcp
+
+2. `categories/finance-fintech/index.md` — 14 external links added + Sources footer:
+   - Stripe → [stripe/ai](https://github.com/stripe/ai) + [mcp.stripe.com](https://mcp.stripe.com) (×2)
+   - Shopify → [Shopify/dev-mcp](https://github.com/Shopify/dev-mcp) (×3)
+   - PayPal → [paypal/paypal-mcp-server](https://github.com/paypal/paypal-mcp-server)
+   - Square → [square/square-mcp-server](https://github.com/square/square-mcp-server)
+   - goat-sdk/goat → (×2), coinbase/agentkit, evm-mcp-server → [mcpdotdirect/evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) (×2)
+   - base-mcp → [base/base-mcp](https://github.com/base/base-mcp), solana-mcp → [sendaifun/solana-mcp](https://github.com/sendaifun/solana-mcp)
+   - financial-datasets → [financial-datasets/mcp-server](https://github.com/financial-datasets/mcp-server), Alpaca → [alpacahq/alpaca-mcp-server](https://github.com/alpacahq/alpaca-mcp-server)
+   - Xero → [XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server), QuickBooks → [intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server)
+
+3. `categories/media-entertainment/index.md` — 9 external links added (footnote already present, Sources added):
+   - Ableton Live → [ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp)
+   - ElevenLabs → [elevenlabs/elevenlabs-mcp](https://github.com/elevenlabs/elevenlabs-mcp) (×2)
+   - REAPER → [bonfire-audio/reaper-mcp](https://github.com/bonfire-audio/reaper-mcp)
+   - Spotify → [varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp) (×2), [marcelmarais/spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server)
+   - Epidemic Sound → [epidemicsound.com/blog/mcp-server](https://www.epidemicsound.com/blog/mcp-server/)
+   - Minecraft → [yuniko-software/minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server)
+   - OP.GG → [opgginc/opgg-mcp](https://github.com/opgginc/opgg-mcp), Chess.com → [pab1it0/chess-mcp](https://github.com/pab1it0/chess-mcp)
+
+**Total retrofit progress:** Batches 1-14 = 43 pages retrofitted. ~469 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** COMPLETE — deployed at [timestamp below after deploy].
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — `categories/business-productivity`, `categories/science-research`, `categories/iot-hardware` (all date 2026-03-25).
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2464 — 2026-07-16 — Citation Retrofit Batch 13 (3 category pages, DEPLOYED)
 
 **Mode:** Developer
