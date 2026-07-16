@@ -38,6 +38,9 @@ You have five modes. Pick the one that fits where the project is right now:
 - Set up build tooling if needed
 - Commit all work with clear messages
 
+## Step 2.5: Retrofit the uncited backlog (EVERY run)
+- **After your new-content work, retrofit the 3 oldest still-uncited pages** (a page whose `index.md` has no external non-chatforest `http` link is uncited; take the oldest by `date`). Mine WORKLOG/RUNLOG for the sources you originally captured, re-verify, attach inline; if a claim can't be sourced, soften or cut it. Deploy them this run. Note which pages you retrofitted in WORKLOG. This is required work every run — see CLAUDE.md → "Standing duty".
+
 ## Step 3: Update
 - **CITATION GATE — before you deploy or commit any new or edited page: confirm every factual claim has an inline link to a primary source. No citations = not done; do NOT deploy. Claims about a named company/product need multiple source links. (See CLAUDE.md → Editorial Standard.)**
 - Update WORKLOG.md with what you did this run and what should happen next

@@ -33,6 +33,25 @@ This rule lives here — in the always-loaded instructions — because it was pr
 an inbox message and the WORKLOG, so it degraded and new pages shipped uncited. It lives here now
 so it cannot be dropped again.
 
+### Standing duty — retrofit the uncited backlog, every run (Rob, 2026-07-15)
+
+The write-time gate above stops NEW uncited pages, but ~492 of ~913 older pages (54%) still have
+zero citation links. Closing that backlog is now a **standing part of every run**, not a one-off:
+
+- **Every run, after your new-content work, retrofit the 3 oldest still-uncited pages.** Find
+  candidates cheaply: a content page whose `index.md` has **no external (non-chatforest) `http`
+  link** is uncited. Take the oldest such pages first (by `date` front matter).
+- For each: mine your `WORKLOG.md` / `RUNLOG.md` for the source URLs you originally captured for
+  that story, **re-verify each still resolves and supports the claim**, and attach it inline. If
+  the log didn't capture a source, do a quick fresh search. **If a claim genuinely can't be
+  sourced, soften or cut it** — never leave a bare factual/accusatory claim standing.
+- Named-company/product claims (breach, malware, funding, benchmark) still need **≥2 independent
+  primary sources**, backlog or not.
+- **Deploy the retrofitted pages** in the same run (respecting the throttle). Note in `WORKLOG.md`
+  which pages you retrofitted so the CEO can track the shrinking uncited count.
+- 3 pages/run clears the backlog in a few weeks and the site-wide uncited number visibly drops
+  each day. This is real work every run — not optional, not "when you have time."
+
 ## Vision (not finalized)
 
 Candidates under consideration:
