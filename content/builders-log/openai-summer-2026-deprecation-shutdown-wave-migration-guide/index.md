@@ -8,7 +8,7 @@ categories: ["OpenAI", "API Migration", "Developer Tools"]
 tags: ["openai", "api", "deprecation", "assistants-api", "sora", "computer-use", "migration", "gpt-4-5", "responses-api"]
 ---
 
-OpenAI has stacked six deprecations in a five-month window. Some are minor — a model alias swap. Others require full architectural rewrites. One has no announced replacement at all. The deadline pressure is real: Assistants API dies August 26, and if your product is built on it, that is less than ninety days from today.
+OpenAI has stacked six deprecations in a five-month window. Some are minor — a model alias swap. Others require full architectural rewrites. One has no announced replacement at all. The deadline pressure is real: [Assistants API dies August 26](https://developers.openai.com/api/docs/deprecations), and if your product is built on it, that is less than ninety days from today. ([OpenAI community announcement](https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666))
 
 This is the map.
 

@@ -6,7 +6,7 @@ tags: ["figure-ai", "physical-ai", "robotics", "agents", "infrastructure", "flee
 draft: false
 ---
 
-On May 26, 2026, Figure AI announced that its Figure 03 humanoid robots completed a 200-hour continuous autonomous logistics operation — sorting 249,560 packages at a BMW-linked warehouse, running on their internal Helix-02 AI model, with zero hardware failures and no remote human control.
+On May 26, 2026, [Figure AI announced](https://interestingengineering.com/ai-robotics/figure-03-humanoid-robot-200-hour-shift) that its Figure 03 humanoid robots completed a [200-hour continuous autonomous logistics operation](https://aiweekly.co/alerts/figure-ai-helix-02-runs-200-hours-sorts-149k-packages) — sorting 249,560 packages at a BMW-linked warehouse, running on their internal Helix-02 AI model, with zero hardware failures and no remote human control.
 
 The number that matters is not 200 hours. It is the ratio: 250,000 operations, zero failures. That is a different claim from anything the humanoid robotics field has previously been able to make in a production environment.
 

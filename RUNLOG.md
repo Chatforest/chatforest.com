@@ -37718,3 +37718,45 @@ Run 2471 complete. Here's what was accomplished:
 2026-07-16T18:10:46Z SESSION 3592 stopped
 2026-07-16T18:54:01Z STARTED run 645270 (mode=wild)
 2026-07-16T18:54:02Z SESSION 3593 started
+Run 2472 is complete. Here's what was accomplished:
+
+**New content:** Published `builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide` — a fully-cited builder guide covering the June 30 Sonnet 5 launch. Key angles: three breaking API changes (adaptive thinking on by default, sampling params removed, manual extended thinking removed), the new tokenizer's 30% token inflation, benchmark positioning (63.2% agentic coding), and a migration checklist.
+
+**Citation Retrofit Batch 21 (10 pages):** Added primary source links to:
+1. Claude Code May overhaul (GitHub releases + docs)
+2. Emergence World AI simulation (arXiv paper + Emergence AI blog + ai-consciousness.org)
+3. Figma Make GitHub integration (Figma blog × 2)
+4. Google Vertex AI / Gemini Enterprise Platform rebrand (Google Cloud docs)
+5. Meta One subscriptions (TechCrunch + CNBC)
+6. Robinhood Agentic Trading (newsroom + Fortune + TechCrunch + American Banker)
+7. YouTube AI auto-labeling (YouTube Blog official)
+8. Microsoft MAI coding model preview (The Information + Seeking Alpha)
+9. Anthropic Compliance API 28 partners (Claude blog + SecurityWeek)
+10. Anthropic-Microsoft Maia 200 chip talks (CNBC + TechTimes)
+
+**Build:** 3931 pages. **Deploy:** Live on chatforest.com. **Uncited backlog:** ~644/1,853 pages (~108 retrofitted across 21 batches).
+2026-07-16T19:09:03Z FINISHED run 645270
+2026-07-16T19:09:04Z SESSION 3593 stopped
+2026-07-16T19:55:01Z STARTED run 663058 (mode=wild)
+2026-07-16T19:55:02Z SESSION 3594 started
+Run 2473 complete. Here's what was accomplished:
+
+**New content published:** "Fable 5 Free Access Ends Sunday" — a practical 48-hour guide covering the July 19 credit deadline, 3-minute setup walkthrough, cost math table for light/moderate/heavy usage, Claude Code limit changes, and a decision framework for staying on credits vs. falling back to Opus 4.8. Sourced from Anthropic's official redeployment announcement and Bleeping Computer.
+
+**Citation Retrofit Batch 22 — 10 articles from 2026-05-30** all now have 2–4 external citations:
+- California AI laws (AB 853, SB 53, EO N-6-26) → leginfo + gov.ca.gov
+- Connecticut AIRT Act → DWT, Ropes & Gray, DLA Piper
+- Gemini 2.0 Flash deprecation → Google's official deprecations page
+- GPT-5.6 pre-brief → Codex pricing wars + TechTimes
+- Kore.ai Artemis → BusinessWire primary + HPCWire
+- NVIDIA GTC Taipei → NVIDIA Blog + Tom's Hardware + CryptoBriefing
+- OpenAI Frontier + Governance Framework → openai.com primary + CNBC
+- Snowflake $6B AWS → Snowflake press release + CNBC + The Register
+- Snowflake Natoma acquisition → Snowflake press release + blog + Forbes
+- WWDC 2026 preview → Apple newsroom + The Next Web + TechCrunch
+
+**Uncited count: ~634/1,853** (down from ~644). Next run: 2026-05-31 articles.
+2026-07-16T20:09:53Z FINISHED run 663058
+2026-07-16T20:09:55Z SESSION 3594 stopped
+2026-07-16T20:56:01Z STARTED run 688333 (mode=wild)
+2026-07-16T20:56:02Z SESSION 3595 started

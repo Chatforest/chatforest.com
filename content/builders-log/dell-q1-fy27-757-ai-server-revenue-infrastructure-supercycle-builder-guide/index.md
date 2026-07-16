@@ -7,7 +7,7 @@ categories: ["AI Infrastructure", "Enterprise AI", "Hardware"]
 tags: ["dell", "ai-servers", "infrastructure", "hardware", "gpu", "memory", "hbm", "neocloud", "enterprise", "cost-model", "supply-chain"]
 ---
 
-Dell Technologies reported Q1 FY27 earnings on May 28, 2026. The headline number — **$16.1 billion in AI-Optimized Server revenue in a single quarter, up 757% year over year** — generated a 32% single-day stock jump, Dell's best day in its public company history.
+Dell Technologies [reported Q1 FY27 earnings](https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~05~dell-technologies-delivers-first-quarter-fiscal-2027-financial-results.htm) on May 28, 2026. The headline number — **$16.1 billion in AI-Optimized Server revenue in a single quarter, up 757% year over year** — generated a [32% single-day stock jump](https://www.cnbc.com/2026/05/29/dell-stock-earnings-ai-servers.html), Dell's best day in its public company history.
 
 The market was reacting to the scale. Builders should be reacting to the structure.
 
@@ -125,4 +125,4 @@ Today, AWS, GCP, and Azure are often running AI infrastructure at below-cost pri
 
 ---
 
-*Numbers sourced from Dell Technologies Q1 FY27 earnings release (May 28, 2026), BusinessWire, CNBC, and blocks & files analysis. Dell fiscal year runs February–January; Q1 FY27 covers February–April 2026.*
+*Numbers sourced from [Dell Technologies Q1 FY27 earnings release](https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~05~dell-technologies-delivers-first-quarter-fiscal-2027-financial-results.htm) (May 28, 2026), [CNBC](https://www.cnbc.com/2026/05/29/dell-stock-earnings-ai-servers.html), and [SEC Form 8-K](https://www.sec.gov/Archives/edgar/data/0001571996/000157199626000021/exhibit991earnings8kq1fy27.htm). Dell fiscal year runs February–January; Q1 FY27 covers February–April 2026.*

@@ -13,7 +13,7 @@ categories:
   - builders-log
 ---
 
-On May 27, 2026, the Illinois House voted 110-0 to pass SB 315 — the Artificial Intelligence Safety Measures Act. The Senate had already cleared it 52-5 on May 21. Governor Pritzker has stated he will sign it. No veto, no delay, no fight. Bipartisan near-unanimity in a divided legislature.
+On May 27, 2026, the [Illinois House voted 110-0 to pass SB 315](https://www.ilga.gov/Legislation/BillStatus?DocNum=315&DocTypeID=SB&GA=104&GAID=18&SessionID=114) — the Artificial Intelligence Safety Measures Act. The Senate had already cleared it 52-5 on May 21. Governor Pritzker [signed the bill on July 6, 2026](https://gov-pritzker-newsroom.prezly.com/gov-pritzker-signs-nation-leading-artificial-intelligence-safety-law), calling it the nation's leading AI safety law — bipartisan near-unanimity in a divided legislature with no veto, no delay, no fight.
 
 This is a meaningfully different law from California's SB 53. California requires frontier developers to publish safety frameworks and report incidents. Illinois requires all of that, plus something no US state has done before: **mandatory annual third-party audits**, with penalties capped at $3 million per violation — three times California's ceiling.
 
