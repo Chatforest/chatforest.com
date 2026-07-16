@@ -19,10 +19,10 @@ The major cloud providers and their MCP ecosystems. All three have invested heav
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [AWS MCP Servers](/reviews/aws-mcp-servers/) | 4/5 | awslabs/mcp (8,900 stars, 54 active servers) — most ambitious MCP project in the ecosystem |
+| [AWS MCP Servers](/reviews/aws-mcp-servers/) | 4/5 | [awslabs/mcp](https://github.com/awslabs/mcp) (8,900 stars, 54 active servers) — most ambitious MCP project in the ecosystem |
 | [AWS MCP Server (GA)](/reviews/aws-mcp-server-ga/) | 4/5 | Managed remote endpoint — 11 tools, 15,000+ AWS APIs, IAM SigV4 auth, CloudTrail logging, sandboxed Python. No local install. GA May 2026. |
-| [Azure & Microsoft MCP Servers](/reviews/azure-mcp-servers/) | 4/5 | Azure MCP Server (47+ services), built into Visual Studio 2026, 16+ specialized servers |
-| [Google Cloud MCP Servers](/reviews/google-cloud-mcp-servers/) | 4.5/5 | 50+ managed remote servers (22+ GA) via googleapis.com endpoints — BigQuery, GKE, Cloud Run, Workspace, and more. MCP Toolbox v1.1.0 (14.9K stars). |
+| [Azure & Microsoft MCP Servers](/reviews/azure-mcp-servers/) | 4/5 | [Azure MCP Server](https://github.com/microsoft/mcp) (47+ services), built into Visual Studio 2026, 16+ specialized servers |
+| [Google Cloud MCP Servers](/reviews/google-cloud-mcp-servers/) | 4.5/5 | [50+ managed remote servers](https://github.com/google/mcp) (22+ GA) via googleapis.com endpoints — BigQuery, GKE, Cloud Run, Workspace, and more. [MCP Toolbox](https://github.com/googleapis/mcp-toolbox) v1.1.0 (14.9K stars). |
 
 ## Containers & Orchestration
 
@@ -31,10 +31,10 @@ Container management and Kubernetes orchestration — from individual Docker ser
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Container, Docker & Kubernetes MCP Servers](/reviews/container-docker-kubernetes-mcp-servers/) | 4/5 | 20+ servers across Docker, Kubernetes, Helm, Podman, Portainer — comprehensive ecosystem overview |
-| [Kubernetes MCP Servers](/reviews/kubernetes-mcp-servers/) | 4/5 | Two 1,000+ star servers (Flux159 at 1,400, Red Hat at 1,300), multi-cluster management |
-| [Kubernetes MCP Server](/reviews/kubernetes-mcp-server/) | 4/5 | Red Hat's containers/kubernetes-mcp-server (1,300 stars) — Go-native API access, 6 modular toolsets |
-| [Docker MCP Servers](/reviews/docker-mcp-servers/) | 4/5 | Docker MCP Gateway (1.3k stars), MCP Catalog (300+ verified servers), ToolHive (1.7k stars) |
-| [Docker MCP Server](/reviews/docker-mcp-server/) | 3.5/5 | ckreiling/mcp-server-docker (690 stars, 19 tools) — container lifecycle, image management |
+| [Kubernetes MCP Servers](/reviews/kubernetes-mcp-servers/) | 4/5 | Two 1,000+ star servers ([Flux159](https://github.com/Flux159/mcp-server-kubernetes) at 1,400, [Red Hat](https://github.com/containers/kubernetes-mcp-server) at 1,300), multi-cluster management |
+| [Kubernetes MCP Server](/reviews/kubernetes-mcp-server/) | 4/5 | Red Hat's [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) (1,300 stars) — Go-native API access, 6 modular toolsets |
+| [Docker MCP Servers](/reviews/docker-mcp-servers/) | 4/5 | [Docker MCP Gateway](https://github.com/docker/mcp-gateway) (1.3k stars), MCP Catalog (300+ verified servers), [ToolHive](https://github.com/stacklok/toolhive) (1.7k stars) |
+| [Docker MCP Server](/reviews/docker-mcp-server/) | 3.5/5 | [ckreiling/mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) (690 stars, 19 tools) — container lifecycle, image management |
 
 ## Infrastructure as Code & Automation
 
@@ -42,10 +42,10 @@ IaC tools and configuration automation — Terraform leads, but Ansible, Pulumi,
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Infrastructure as Code MCP Servers](/reviews/infrastructure-as-code-mcp-servers/) | 4/5 | Terraform (1.4k stars v0.5.2), Bicep MCP (Microsoft, 10 tools), Red Hat Ansible AAP (official), Pulumi Neo, AWS IaC, StackGen (25+ tools) |
-| [Infrastructure Automation MCP Servers](/reviews/infrastructure-automation-mcp-servers/) | 4/5 | Terraform (35+ tools), Ansible (official AAP tech preview), tfmcp (357 stars, full execution) |
-| [Terraform MCP Server](/reviews/terraform-mcp-server/) | 4/5 | HashiCorp's terraform-mcp-server (1,300 stars) — registry docs, HCP workspace management, dual transport |
-| [Pulumi MCP Server](/reviews/pulumi-mcp-server/) | 3.5/5 | Pulumi MCP (188 stars) — registry docs, stack management, Neo delegation for autonomous provisioning |
+| [Infrastructure as Code MCP Servers](/reviews/infrastructure-as-code-mcp-servers/) | 4/5 | [Terraform](https://github.com/hashicorp/terraform-mcp-server) (1.4k stars v0.5.2), Bicep MCP (Microsoft, 10 tools), Red Hat Ansible AAP (official), Pulumi Neo, AWS IaC, StackGen (25+ tools) |
+| [Infrastructure Automation MCP Servers](/reviews/infrastructure-automation-mcp-servers/) | 4/5 | [Terraform](https://github.com/hashicorp/terraform-mcp-server) (35+ tools), Ansible (official AAP tech preview), tfmcp (357 stars, full execution) |
+| [Terraform MCP Server](/reviews/terraform-mcp-server/) | 4/5 | HashiCorp's [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) (1,300 stars) — registry docs, HCP workspace management, dual transport |
+| [Pulumi MCP Server](/reviews/pulumi-mcp-server/) | 3.5/5 | [Pulumi MCP](https://github.com/pulumi/mcp-server) (188 stars) — registry docs, stack management, Neo delegation for autonomous provisioning |
 
 ## Hosting, CDN & Serverless
 
@@ -53,10 +53,10 @@ Edge computing, serverless functions, and deployment platforms — where code me
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Cloudflare MCP Server](/reviews/cloudflare-mcp-server/) | 4.5/5 | 2,500+ API endpoints via Code Mode (novel token-efficient approach), 16 specialized servers, 3,500+ stars |
-| [Serverless & FaaS MCP Servers](/reviews/serverless-faas-mcp-servers/) | 4/5 | 25+ servers — Lambda, Workers, Azure Functions, Cloud Run, Vercel. AWS leads (8,500 stars) |
-| [Netlify MCP Server](/reviews/netlify-mcp-server/) | 4/5 | Official first-party (38 stars) — create sites, deploy projects, manage env vars, prompt to production |
-| [Vercel MCP Server](/reviews/vercel-mcp-server/) | 3.5/5 | Remote server at mcp.vercel.com (OAuth, 13 tools) — reference implementation for remote MCP servers |
+| [Cloudflare MCP Server](/reviews/cloudflare-mcp-server/) | 4.5/5 | 2,500+ API endpoints via Code Mode (novel token-efficient approach), 16 specialized servers at [mcp.cloudflare.com](https://mcp.cloudflare.com), 3,500+ stars |
+| [Serverless & FaaS MCP Servers](/reviews/serverless-faas-mcp-servers/) | 4/5 | 25+ servers — Lambda, Workers, Azure Functions, Cloud Run, Vercel. [AWS leads](https://github.com/awslabs/mcp) (8,500 stars) |
+| [Netlify MCP Server](/reviews/netlify-mcp-server/) | 4/5 | [Official first-party](https://github.com/netlify/netlify-mcp) (38 stars) — create sites, deploy projects, manage env vars, prompt to production |
+| [Vercel MCP Server](/reviews/vercel-mcp-server/) | 3.5/5 | Remote server at [mcp.vercel.com](https://mcp.vercel.com) (OAuth, 13 tools) — reference implementation for remote MCP servers |
 | [CDN & Edge Computing MCP Servers](/reviews/cdn-edge-computing-mcp-servers/) | 3.5/5 | 10+ servers — Cloudflare dominates (Code Mode), Fastly official (Go-based), Akamai community (191 tools) |
 
 ## Networking & DNS
@@ -82,7 +82,7 @@ Cloud storage, secret management, backup, and configuration — the operational 
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Secret Management MCP Servers](/reviews/secret-management-mcp-servers/) | 4/5 | HashiCorp Vault official (16 tools), Bitwarden (129 stars, 30+ tools), 1Password, Infisical, Doppler |
+| [Secret Management MCP Servers](/reviews/secret-management-mcp-servers/) | 4/5 | [HashiCorp Vault official](https://github.com/hashicorp/vault-mcp-server) (16 tools), [Bitwarden](https://github.com/bitwarden/mcp-server) (129 stars, 30+ tools), 1Password, [Infisical](https://github.com/Infisical/infisical-mcp-server), [Doppler](https://github.com/DopplerHQ/mcp-server) |
 | [Cloud Storage MCP Servers](/reviews/cloud-storage-mcp-servers/) | 3.5/5 | 20+ servers — Google Cloud Storage (21 tools, best-designed), MinIO (26 tools, most feature-rich) |
 | [Backup & Disaster Recovery MCP Servers](/reviews/backup-disaster-recovery-mcp-servers/) | 3/5 | 15+ servers — Commvault official (20+ tools), Veeam community. Major gaps: no Rubrik, Cohesity, Acronis |
 | [Configuration Management MCP Servers](/reviews/configuration-management-mcp-servers/) | 3.5/5 | 20+ servers — mcp-nixos surged to 606 stars, Chef gap closing (3 servers), Ansible maturing (AAP 2.7, CI tests). No Puppet |
@@ -93,14 +93,35 @@ Cloud storage, secret management, backup, and configuration — the operational 
 
 Across all 25 reviews, clear patterns emerge:
 
-**The big three are all-in — with different strategies.** AWS leads on sheer server count (54 active servers in awslabs/mcp, 8,900 stars) and now ships a managed remote endpoint (AWS MCP Server GA) covering 15,000+ APIs through a single IAM-authenticated URL. Azure bets on enterprise integration, embedding MCP directly into Visual Studio 2026. Google has pulled ahead on the managed architecture bet: 50+ remote MCP servers (22+ GA) at googleapis.com endpoints, enabled by default when you enable a supported product — earning a 4.5/5 for clean cloud-native design. AWS's managed server also scores 4/5 as it matures past its two-region limitation.
+**The big three are all-in — with different strategies.** AWS leads on sheer server count (54 active servers in [awslabs/mcp](https://github.com/awslabs/mcp), 8,900 stars) and now ships a managed remote endpoint (AWS MCP Server GA) covering 15,000+ APIs through a single IAM-authenticated URL. [Azure](https://github.com/microsoft/mcp) bets on enterprise integration, embedding MCP directly into Visual Studio 2026. [Google](https://github.com/google/mcp) has pulled ahead on the managed architecture bet: 50+ remote MCP servers (22+ GA) at googleapis.com endpoints, enabled by default when you enable a supported product — earning a 4.5/5 for clean cloud-native design. [MCP Toolbox](https://github.com/googleapis/mcp-toolbox) (14.9K stars) underpins the ecosystem. AWS's managed server also scores 4/5 as it matures past its two-region limitation.
 
-**Cloudflare is the standout.** At 4.5/5, Cloudflare's MCP server earns the highest rating in this category thanks to its novel Code Mode architecture — exposing 2,500+ API endpoints in just 1,000 tokens. While the big three optimize for breadth, Cloudflare optimizes for token efficiency. That's a bet on how AI agents actually work.
+**Cloudflare is the standout.** At 4.5/5, Cloudflare's MCP server earns the highest rating in this category thanks to its novel Code Mode architecture — exposing 2,500+ API endpoints in just 1,000 tokens at [mcp.cloudflare.com](https://mcp.cloudflare.com). While the big three optimize for breadth, Cloudflare optimizes for token efficiency. That's a bet on how AI agents actually work.
 
-**Containers and Kubernetes have the deepest community.** Five reviews cover the container ecosystem, with multiple servers exceeding 1,000 stars. Red Hat and Flux159 lead Kubernetes; Docker ships both infrastructure (MCP Gateway, Catalog) and management tools. No single server dominates — the ecosystem is healthy and competitive.
+**Containers and Kubernetes have the deepest community.** Five reviews cover the container ecosystem, with multiple servers exceeding 1,000 stars. [Red Hat](https://github.com/containers/kubernetes-mcp-server) and [Flux159](https://github.com/Flux159/mcp-server-kubernetes) lead Kubernetes; Docker ships both [infrastructure (MCP Gateway)](https://github.com/docker/mcp-gateway) and management tools. [ToolHive](https://github.com/stacklok/toolhive) (1.7k stars) adds security-focused container sandboxing. No single server dominates — the ecosystem is healthy and competitive.
 
-**Infrastructure as Code is documentation-first.** HashiCorp's Terraform MCP server deliberately focuses on registry documentation, not execution. This philosophy — teach the AI to write correct IaC rather than letting it run `terraform apply` — shapes the entire IaC MCP space. Pulumi's Neo goes further with autonomous provisioning, but it's the exception.
+**Infrastructure as Code is documentation-first.** HashiCorp's [Terraform MCP server](https://github.com/hashicorp/terraform-mcp-server) deliberately focuses on registry documentation, not execution. This philosophy — teach the AI to write correct IaC rather than letting it run `terraform apply` — shapes the entire IaC MCP space. [Pulumi's Neo](https://github.com/pulumi/mcp-server) goes further with autonomous provisioning, but it's the exception.
 
 **Operational tooling has the biggest gaps.** Backup & Disaster Recovery (3/5) is the weakest sub-category. No Rubrik, Cohesity, or Acronis. Configuration Management improved to 3.5/5 — Chef now has three servers (migration-focused) but Puppet still has zero MCP presence. These enterprise-heavy domains are slowly catching up.
 
-**Secret management is surprisingly strong.** Five vendors ship official MCP servers (HashiCorp Vault, Bitwarden, 1Password, Infisical, Doppler). Security tooling vendors understand that AI agents need secure credential access — and they're building for it.
+**Secret management is surprisingly strong.** Five vendors ship official MCP servers ([HashiCorp Vault](https://github.com/hashicorp/vault-mcp-server), [Bitwarden](https://github.com/bitwarden/mcp-server), 1Password, [Infisical](https://github.com/Infisical/infisical-mcp-server), [Doppler](https://github.com/DopplerHQ/mcp-server)). Security tooling vendors understand that AI agents need secure credential access — and they're building for it.
+
+---
+
+## Sources
+
+- [awslabs/mcp](https://github.com/awslabs/mcp) — AWS MCP monorepo (8,900 stars, 54 active servers)
+- [microsoft/mcp](https://github.com/microsoft/mcp) — Azure MCP Server (47+ services)
+- [google/mcp](https://github.com/google/mcp) — Google Cloud MCP servers (50+ managed remote, 22+ GA)
+- [googleapis/mcp-toolbox](https://github.com/googleapis/mcp-toolbox) — MCP Toolbox for Databases (14.9K stars)
+- [Flux159/mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) — Community Kubernetes MCP (1,400 stars)
+- [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) — Red Hat Kubernetes MCP (1,300 stars, Go-native)
+- [docker/mcp-gateway](https://github.com/docker/mcp-gateway) — Docker MCP Gateway (1.3k stars)
+- [stacklok/toolhive](https://github.com/stacklok/toolhive) — ToolHive security sandbox for MCP servers (1.7k stars)
+- [ckreiling/mcp-server-docker](https://github.com/ckreiling/mcp-server-docker) — Community Docker MCP server (690 stars)
+- [hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) — HashiCorp Terraform MCP server (1,300 stars)
+- [pulumi/mcp-server](https://github.com/pulumi/mcp-server) — Pulumi MCP server (188 stars)
+- [netlify/netlify-mcp](https://github.com/netlify/netlify-mcp) — Netlify official MCP server
+- [hashicorp/vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) — HashiCorp Vault MCP server
+- [bitwarden/mcp-server](https://github.com/bitwarden/mcp-server) — Bitwarden MCP server (129 stars)
+- [Infisical/infisical-mcp-server](https://github.com/Infisical/infisical-mcp-server) — Infisical secrets MCP server
+- [DopplerHQ/mcp-server](https://github.com/DopplerHQ/mcp-server) — Doppler secrets MCP server
