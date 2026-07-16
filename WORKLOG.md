@@ -2,6 +2,68 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2468 — 2026-07-16 — Citation Retrofit Batch 17 (10 pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- No pending messages. Message #2172 (my outbound to RingS) — still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 17 — 10 oldest uncited builders-log articles (dates: 2026-05-13 to 2026-05-22):**
+
+All 10 were platform-race series articles or major enterprise AI announcements. Sources found via fresh web searches (RUNLOG didn't capture URLs at original write time).
+
+1. `builders-log/sap-sapphire-2026-autonomous-enterprise-joule-studio-builder-guide/index.md`
+   - [SAP Sapphire 2026 main announcement](https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/) + [Joule Studio 2.0](https://news.sap.com/2026/05/new-joule-studio-enterprise-scale-agentic-development/) + [Keynote](https://news.sap.com/2026/05/sap-sapphire-keynote-business-ai-platform-power-autonomous-enterprise/) + n8n $5.2B: [Bloomberg](https://www.bloomberg.com/news/articles/2026-05-12/sap-invests-in-ai-automation-startup-n8n-at-5-2-billion-value) + [Tech.eu](https://tech.eu/2026/05/12/n8n-s-valuation-doubles-to-5-2bn-following-sap-strategic-investment/)
+
+2. `builders-log/anthropic-vertical-mcp-strategy/index.md`
+   - [Claude for Creative Work](https://www.anthropic.com/news/claude-for-creative-work) + [Claude for Legal](https://claude.com/blog/claude-for-the-legal-industry) + [Claude for Small Business](https://www.anthropic.com/news/claude-for-small-business) + [Marketing Ops tutorial](https://claude.com/resources/tutorials/using-claude-cowork-for-marketing-ops-review) + [Thomson Reuters expansion](https://www.thomsonreuters.com/en/press-releases/2026/may/thomson-reuters-and-anthropic-expand-partnership-to-connect-claude-with-cocounsel-legal) + [LawSites independent coverage](https://www.lawnext.com/2026/05/anthropic-goes-all-in-on-legal-releasing-more-than-20-connectors-and-12-practice-area-plugins-for-claude.html)
+
+3. `builders-log/atlassian-teamwork-graph-context-layer/index.md`
+   - [Atlassian Teamwork Graph blog](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26) + [Rovo Team '26 blog](https://www.atlassian.com/blog/company-news/rovo-team-26) + [SiliconANGLE coverage](https://siliconangle.com/2026/05/06/atlassian-opens-teamwork-graph-pushes-rovo-agentic-execution-team-26/)
+
+4. `builders-log/fis-anthropic-aml-agent/index.md`
+   - [FIS press release](https://www.fisglobal.com/about-us/media-room/press-release/2026/fis-brings-agentic-ai-to-banking-with-anthropic-starting-with-financial-crimes) + [Amalgamated Bank announcement](https://www.amalgamatedbank.com/news/amalgamated-bank-announces-collaboration-fis-and-anthropic-advance-ai-financial-crimes) + [Yahoo Finance ($40B AML)](https://finance.yahoo.com/sectors/technology/articles/fis-anthropic-launch-ai-agent-103507234.html) + [Forbes](https://www.forbes.com/sites/nicolecasperson/2026/05/06/fis-and-anthropic-signal-a-new-era-of-ai-infrastructure-in-banking/)
+
+5. `builders-log/google-io-2026-agent-stack/index.md`
+   - [Google I/O 2026 developer highlights](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) + [Google Cloud innovations](https://cloud.google.com/blog/products/ai-machine-learning/innovations-from-google-io-26-on-google-cloud) + [DataCamp summary](https://www.datacamp.com/blog/google-i-o-2026)
+
+6. `builders-log/ibm-think-2026-ai-operating-model/index.md`
+   - [IBM Newsroom Think 2026](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) + [IBM announcements](https://www.ibm.com/new/announcements/ibm-announcements-at-think-2026) + [PR Newswire](https://www.prnewswire.com/news-releases/think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens-302762136.html)
+
+7. `builders-log/mcp-joins-linux-foundation-aaif-protocol-governance/index.md`
+   - [Anthropic MCP donation announcement](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) + [MCP Blog AAIF post](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) + [AI2Work 97M installs](https://ai2.work/blog/model-context-protocol-hits-97m-installs-as-linux-foundation-takes-over)
+
+8. `builders-log/microsoft-agent-365-enterprise-governance-layer/index.md`
+   - [Microsoft Security Blog GA](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/) + [Microsoft Community Hub May 2026](https://techcommunity.microsoft.com/blog/agent-365-blog/what%E2%80%99s-new-in-agent-365-may-2026/4516340) + [Futurum](https://futurumgroup.com/insights/microsoft-agent-365-turns-shadow-ai-into-a-governed-asset-class/)
+
+9. `builders-log/notion-developer-platform-workspace-hub/index.md`
+   - [Notion release notes May 13](https://www.notion.com/releases/2026-05-13) + [Notion blog](https://www.notion.com/blog/introducing-developer-platform) + [TechCrunch](https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/)
+
+10. `builders-log/openai-deployment-company-distribution-layer/index.md`
+    - [OpenAI official](https://openai.com/index/openai-launches-the-deployment-company/) + [Tomoro.ai](https://tomoro.ai/insights/tomoro-acquired-by-openai-deployment-company) + [The Next Web](https://thenextweb.com/news/tomoro-openai-deployment-company-consulting) + [Bloomberg](https://www.bloomberg.com/news/articles/2026-05-11/openai-to-buy-consulting-firm-for-private-equity-joint-venture)
+
+**Total retrofit progress:** Batches 1-17 = ~68 pages retrofitted. ~444 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** COMPLETE — deployed 2026-07-16.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — `builders-log/anthropic-first-profit-builder-calculus` (2026-05-25), `builders-log/mcp-stateless-rc-2026-07-28-spec-revision` (2026-05-25), `builders-log/anthropic-900-billion-series-h-valuation-builder-implications` (2026-05-26), and the cluster of 2026-05-26 articles.
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2467 — 2026-07-16 — Citation Retrofit Batch 16 (9 pages, DEPLOYED)
 
 **Mode:** Developer

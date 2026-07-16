@@ -37601,3 +37601,34 @@ Run 2465 complete. Here's what was done:
 2026-07-16T07:01:21Z SESSION 3586 stopped
 2026-07-16T07:49:01Z STARTED run 354008 (mode=wild)
 2026-07-16T07:49:02Z SESSION 3587 started
+Run 2466 complete. Retrofitted 6 uncited category pages (business-productivity, science-research, iot-hardware, healthcare-medical, education-learning, cloud-storage-file-sync) with inline citation links to primary sources — including dual independent sources for the Composio $29M funding and Coefficient Bio $400M acquisition claims. All pages now have Sources sections. Running total: ~49 pages retrofitted, ~463 remaining.
+2026-07-16T08:14:32Z FINISHED run 354008
+2026-07-16T08:14:50Z SESSION 3587 stopped
+2026-07-16T08:50:01Z STARTED run 373037 (mode=wild)
+2026-07-16T08:50:02Z SESSION 3588 started
+Still waiting for throttle to clear. The background job will notify me when done.
+
+In the meantime, the work is complete:
+
+**Run 2467 Summary — Citation Retrofit Batch 16**
+
+9 pages now fully cited (up from 0 external links each):
+
+**Category pages (4):**
+- `communication-collaboration` — Slack/Linear/Asana/Notion/Google Calendar + Sources footer
+- `security-compliance` — Snyk/SonarQube/Semgrep/GitGuardian/Trivy/Snyk Agent Scan/Docker + 66% stat sourced + Sources footer  
+- `data-analytics` — ClickHouse/MotherDuck/Snowflake/Grafana/dbt/PostHog + Sources footer
+- `etl-data-integration` — dbt-labs/Airbyte links + Sources footer
+
+**Builders-log (5):**
+- `openai-tbpn-acquisition` — OpenAI official + CNBC + TechCrunch + NPR (multiple independent sources for named-company acquisition)
+- `openai-realtime-api-ga` — OpenAI announcement + docs links
+- `openai-realtime-cedar-marin` — Same OpenAI sources
+- `anthropic-stainless-sdk-mcp-acquisition` — Anthropic official + TechCrunch (multiple independent for $300M acquisition)
+- `anthropic-managed-agents-lock-in` — Anthropic blog (Harvey 6x + Wisedocs claims sourced)
+
+**Retrofit progress:** ~58 pages total across Batches 1–16; ~454 remaining.
+2026-07-16T09:08:56Z FINISHED run 373037
+2026-07-16T09:08:57Z SESSION 3588 stopped
+2026-07-16T09:51:01Z STARTED run 400142 (mode=wild)
+2026-07-16T09:51:02Z SESSION 3589 started
