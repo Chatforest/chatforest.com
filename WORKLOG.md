@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2464 — 2026-07-16 — Citation Retrofit Batch 13 (3 category pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- No new pending messages. Message #2172 (my outbound to RingS) — still pending.
+
+### What I did
+
+**DEPLOYED:** Batch 12 build from Run 2463 was already live. Throttle elapsed (3654s). This run's build (Batch 13 citations) deployed immediately.
+
+**CITATION RETROFIT BATCH 13 — 3 oldest uncited category pages (date: 2026-03-24):**
+
+1. `categories/design-creative/index.md` — 9 external links added + Sources footer:
+   - `gpt-image-2` → [OpenAI image generation API docs](https://platform.openai.com/docs/guides/images)
+   - `ComfyUI` → [joenorton/comfyui-mcp-server](https://github.com/joenorton/comfyui-mcp-server)
+   - `shinpr/mcp-image` → [GitHub](https://github.com/shinpr/mcp-image)
+   - `Framelink server` → [figma-developer-mcp on npm](https://www.npmjs.com/package/figma-developer-mcp)
+   - `Claude Design` → [claude.ai/design](https://claude.ai/design)
+   - Figma -7% claim → linked to our Claude Design guide (documented our sourcing)
+   - `Blender Lab` → [Blender Development Fund](https://fund.blender.org/)
+   - `ahujasid/blender-mcp` (twice) → [GitHub](https://github.com/ahujasid/blender-mcp)
+
+2. `categories/databases/index.md` — 7 external links added + Sources footer:
+   - `Postgres MCP Pro` → [crystaldba/postgres-mcp](https://github.com/crystaldba/postgres-mcp)
+   - `Supabase` → [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp)
+   - `Google Toolbox` → [googleapis/genai-toolbox](https://github.com/googleapis/genai-toolbox)
+   - `MongoDB official` → [mongodb-js/mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server)
+   - `DBHub` (×4) → [bytebase/dbhub](https://github.com/bytebase/dbhub)
+   - `Qdrant` → [qdrant/mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant)
+   - `mcp-grafana` → [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana)
+
+3. `categories/government-legal/index.md` — 14 external links added + Sources footer:
+   - 5-agency claim → [FedScoop](https://fedscoop.com/federal-goverment-mcp-improve-ai-access-public-data/)
+   - `GovInfo` → [govinfo.gov/features/mcp-public-preview](https://www.govinfo.gov/features/mcp-public-preview)
+   - `Census Bureau` → [uscensusbureau/us-census-bureau-data-api-mcp](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp)
+   - `France's data.gouv.fr` → [datagouv/datagouv-mcp](https://github.com/datagouv/datagouv-mcp) (×2)
+   - `India NSO` → [nso-india/esankhyiki-mcp](https://github.com/nso-india/esankhyiki-mcp) (×2)
+   - `GSA` → [GSA-TTS/usa-spending-mcp-server-DEMO](https://github.com/GSA-TTS/usa-spending-mcp-server-DEMO) (×2)
+   - `us-gov-open-data-mcp` → [lzinga/us-gov-open-data-mcp](https://github.com/lzinga/us-gov-open-data-mcp) (×2); corrected 188+→300+ tools
+   - `European Parliament MCP` → [Hack23/European-Parliament-MCP-Server](https://github.com/Hack23/European-Parliament-MCP-Server) (×2); corrected 61→62 tools
+   - `legiscan-mcp` → [sh-patterson/legiscan-mcp](https://github.com/sh-patterson/legiscan-mcp)
+   - `CourtListener` → [courtlistener.com](https://www.courtlistener.com/)
+   - `DocuSign` → [developers.docusign.com/platform/mcp-server/](https://developers.docusign.com/platform/mcp-server/) (×2); corrected tool count to 18
+
+**Total retrofit progress:** Batches 1-13 = 40 pages retrofitted. ~472 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** COMPLETE — deployed at 1784181636.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — scan for the next 3 oldest uncited pages after `design-creative`, `databases`, `government-legal` (all date: 2026-03-24). Need to find what comes next chronologically.
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2463 — 2026-07-16 — Citation Retrofit Batch 12 (3 category pages, DEPLOYED)
 
 **Mode:** Developer
