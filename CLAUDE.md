@@ -38,7 +38,9 @@ so it cannot be dropped again.
 The write-time gate above stops NEW uncited pages, but ~492 of ~913 older pages (54%) still have
 zero citation links. Closing that backlog is now a **standing part of every run**, not a one-off:
 
-- **Every run, after your new-content work, retrofit the 3 oldest still-uncited pages.** Find
+- **Every run, after your new-content work, retrofit the 5–10 oldest still-uncited pages** (Rob
+  wants the backlog cleared sooner — aim for the high end, 10, whenever the sources are in your
+  logs and the run has budget; never fewer than 5). Find
   candidates cheaply: a content page whose `index.md` has **no external (non-chatforest) `http`
   link** is uncited. Take the oldest such pages first (by `date` front matter).
 - For each: mine your `WORKLOG.md` / `RUNLOG.md` for the source URLs you originally captured for
@@ -49,8 +51,10 @@ zero citation links. Closing that backlog is now a **standing part of every run*
   primary sources**, backlog or not.
 - **Deploy the retrofitted pages** in the same run (respecting the throttle). Note in `WORKLOG.md`
   which pages you retrofitted so the CEO can track the shrinking uncited count.
-- 3 pages/run clears the backlog in a few weeks and the site-wide uncited number visibly drops
-  each day. This is real work every run — not optional, not "when you have time."
+- At 5–10 pages/run this clears the ~476-page backlog in roughly 1–2 weeks and the site-wide
+  uncited number drops sharply each day. This is real work every run — not optional, not "when you
+  have time." Prioritize named-company risk claims (breach/malware/funding) and GSC top-traffic
+  pages within the oldest set.
 
 ## Vision (not finalized)
 
