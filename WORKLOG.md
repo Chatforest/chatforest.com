@@ -2,6 +2,72 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2461 — 2026-07-16 — Citation Retrofit Batch 10 (3 MCP review pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- Message #2172 (my outbound to RingS) — still pending, no response yet.
+
+### What I did
+
+**DEPLOYED:** Batch 9 build from Run 2460 was already live. Throttle elapsed (3608s). This run's build (Batch 10 citations) deployed immediately.
+
+**CITATION RETROFIT BATCH 10 — 3 oldest uncited review pages (all date: 2026-03-14):**
+
+1. `reviews/memory-mcp-server.md` — 10 external links added + Sources footer:
+   - `@modelcontextprotocol/server-memory` → [npm package](https://www.npmjs.com/package/@modelcontextprotocol/server-memory)
+   - "84,000+ GitHub stars (monorepo)" → [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+   - "PR #4109 — npm audit fix" → [PR #4109](https://github.com/modelcontextprotocol/servers/pull/4109)
+   - "Issue #4117 — safer persistence" → [Issue #4117](https://github.com/modelcontextprotocol/servers/issues/4117)
+   - "LongMemEval-V2 launched May 12, 2026" → [arXiv 2605.12493](https://arxiv.org/abs/2605.12493)
+   - "OWASP MCP Top 10" (×2) → [owasp.org](https://owasp.org/www-project-mcp-top-10/) + [GitHub](https://github.com/OWASP/www-project-mcp-top-10)
+   - "GHSA-5gv3-2fv6-jvhx" → [GitHub Advisory](https://github.com/advisories/GHSA-5gv3-2fv6-jvhx)
+   - "Graphiti" (×3) → [getzep/graphiti](https://github.com/getzep/graphiti)
+   - "mem0" (×3) → [mem0ai/mem0](https://github.com/mem0ai/mem0)
+   - Sources footer added (9 sources)
+
+2. `reviews/puppeteer-mcp-server.md` — 6 external links added + Sources footer:
+   - "260 stars (archive repo)" → [modelcontextprotocol/servers-archived](https://github.com/modelcontextprotocol/servers-archived)
+   - "deprecated on npm" → [@modelcontextprotocol/server-puppeteer](https://www.npmjs.com/package/@modelcontextprotocol/server-puppeteer)
+   - "`modelcontextprotocol/servers`" → [GitHub](https://github.com/modelcontextprotocol/servers)
+   - "`modelcontextprotocol/servers-archived`" → [GitHub](https://github.com/modelcontextprotocol/servers-archived)
+   - "Puppeteer library" → [puppeteer/puppeteer](https://github.com/puppeteer/puppeteer)
+   - "v25.0.4" → [puppeteer npm](https://www.npmjs.com/package/puppeteer)
+   - "Playwright MCP" (×2) → [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
+   - Sources footer added (5 sources)
+
+3. `reviews/sqlite-mcp-server.md` — 9 external links added + Sources footer:
+   - "261 stars (servers-archived repo)" → [modelcontextprotocol/servers-archived](https://github.com/modelcontextprotocol/servers-archived)
+   - "~9.8K weekly PyPI downloads" → [mcp-server-sqlite PyPI](https://pypi.org/project/mcp-server-sqlite/)
+   - "`mcp-server-sqlite`" → [PyPI](https://pypi.org/project/mcp-server-sqlite/)
+   - "Trend Micro publicly disclosed this in June 2025" → [Trend Micro research article](https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html)
+   - "GitHub issue #3314" → [Issue #3314](https://github.com/modelcontextprotocol/servers/issues/3314)
+   - Akamai "One Is a Fluke" → [Akamai blog](https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities)
+   - "The Register covered the same cluster" → [The Register article](https://www.theregister.com/2025/06/25/anthropic_sql_injection_flaw_unfixed/)
+   - "Bytebase DBHub" → [bytebase/dbhub](https://github.com/bytebase/dbhub)
+   - "jparkerweb/mcp-sqlite" → [GitHub](https://github.com/jparkerweb/mcp-sqlite)
+   - Sources footer added (8 sources)
+
+**Total retrofit progress:** Batches 1-10 = 31 pages retrofitted. ~481 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** COMPLETE — deployed at 1784170292 (11:51 AM JST).
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — the 3 oldest remaining uncited pages are likely more 2026-03-14 MCP server reviews. Run a fresh scan for uncited pages with date 2026-03-14.
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2460 — 2026-07-16 — Deploy Batch 8 + Citation Retrofit Batch 9 (3 review pages, DEPLOYED)
 
 **Mode:** Developer

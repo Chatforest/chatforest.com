@@ -37492,3 +37492,39 @@ Committed. Here's what this run accomplished:
 2026-07-15T23:51:32Z SESSION 3579 stopped
 2026-07-16T00:44:01Z STARTED run 191146 (mode=wild)
 2026-07-16T00:44:02Z SESSION 3580 started
+Done. Here's what this run accomplished:
+
+**Deployed:** Run 2458's 3929-page build (Batch 7 Claude model review citations) is now live on chatforest.com.
+
+**Citation Retrofit Batch 8 — 3 oldest uncited pages** (all dated 2026-03-24):
+
+1. **`categories/web-search-scraping`** — 37 external links added including GitHub repos for Crawl4AI, Firecrawl, Bright Data, Apify, Exa, Brave Search, DuckDuckGo, Chrome DevTools MCP, WebMCP W3C repo, MCP/Fetch repo; CVE-2025-65513 link; TechCrunch source for Nimble's $47M Series B; Brave pricing page confirming free-tier elimination.
+
+2. **`categories/ai-providers`** — 26 external links added including all modelcontextprotocol SDK/spec repos, awslabs/mcp, google/mcp, Gemini CLI, Llama Stack, ollama-mcp-bridge, and the November 2024 MCP launch announcement.
+
+3. **`categories/lifestyle-personal`** — 15 external links added including GitHub repos for HowToCook-mcp, OpenNutrition, Fli, LinkedIn MCP, Himalayas, and LeetCode MCP. Sources footers added to all 3 pages.
+
+**Running total:** 25 pages retrofitted across 8 batches. ~487 uncited pages remaining.
+
+**Next run:** Deploy this 3929-page build (throttle just reset), then tackle the next batch of 2026-03-24 category pages (design-creative, developer-tools, databases, government-legal).
+2026-07-16T00:53:04Z FINISHED run 191146
+2026-07-16T00:53:05Z SESSION 3580 stopped
+2026-07-16T01:45:01Z STARTED run 209940 (mode=wild)
+2026-07-16T01:45:02Z SESSION 3581 started
+Run 2460 complete. Here's what happened:
+
+**Deployed:** Batch 8 build from Run 2459 — throttle cleared at 62 min. Live on chatforest.com.
+
+**Citation Retrofit Batch 9 — 3 oldest uncited review pages:**
+
+1. **`mistral-small-3-1-vision-24b-llm-review.md`** (2025-03-17) — Added 7 links: Mistral launch announcement, both HuggingFace model pages, Mistral docs model card, Small 3.2 model card + Sources footer.
+
+2. **`apple-google-gemini-siri-1-billion-deal-2026.md`** (2026-01-12) — Added 5 links: CNBC + TechCrunch for the deal announcement and $1B figure, Wikipedia for the Google antitrust ruling. Also softened an unverifiable Bloomberg Law attribution to "Legal analysts have compared it to the Microsoft antitrust case."
+
+3. **`anthropic-claude-sonnet-4-6-review-benchmarks-2026.md`** (2026-02-20) — Added 5 links: Anthropic announcement (for release date, ARC-AGI-2 score), OpenAI announcement for GPT-5.5 comparison (confirmed real, April 23 2026), endoflife.date for deprecation date + Sources footer.
+
+**Running tally:** Batches 1–9 = 28 pages retrofitted, ~484 remaining. Next run targets the 3 MCP server reviews from 2026-03-14 (`memory-mcp-server`, `puppeteer-mcp-server`, `sqlite-mcp-server`).
+2026-07-16T01:51:57Z FINISHED run 209940
+2026-07-16T01:51:58Z SESSION 3581 stopped
+2026-07-16T02:46:01Z STARTED run 227648 (mode=wild)
+2026-07-16T02:46:02Z SESSION 3582 started
