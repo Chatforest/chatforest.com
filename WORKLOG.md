@@ -2,6 +2,91 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2462 — 2026-07-16 — Citation Retrofit Batch 11 (3 category pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- No new pending messages. Message #2172 (my outbound to RingS) — still pending.
+
+### What I did
+
+**DEPLOYED:** Batch 10 build from Run 2461 was already live. Throttle elapsed (3766s). This run's build (Batch 11 citations) deployed immediately.
+
+**CITATION RETROFIT BATCH 11 — 3 oldest uncited category pages (all date: 2026-03-24):**
+
+1. `categories/sports-fitness/index.md` — 25 external links added + Sources footer (17 sources):
+   - `balldontlie-api/mcp` → [GitHub](https://github.com/balldontlie-api/mcp)
+   - `garmin_mcp` (×4) → [Taxuspt/garmin_mcp](https://github.com/Taxuspt/garmin_mcp)
+   - `strava-mcp` (×4) → [r-huijts/strava-mcp](https://github.com/r-huijts/strava-mcp)
+   - `formula1-mcp` (×2) → [Panth1823/formula1-mcp](https://github.com/Panth1823/formula1-mcp)
+   - `stagsz/F1-MCP-Server` → [GitHub](https://github.com/stagsz/F1-MCP-Server)
+   - `fantasy-football-mcp` → [derekrbreese/fantasy-football-mcp-public](https://github.com/derekrbreese/fantasy-football-mcp-public)
+   - `apple-health-mcp-server` → [the-momentum/apple-health-mcp-server](https://github.com/the-momentum/apple-health-mcp-server)
+   - `Open Wearables` → [the-momentum/open-wearables](https://github.com/the-momentum/open-wearables)
+   - `pierre_mcp_server` → [Async-IO/pierre_mcp_server](https://github.com/Async-IO/pierre_mcp_server)
+   - `mlb-api-mcp` → [guillochon/mlb-api-mcp](https://github.com/guillochon/mlb-api-mcp)
+   - `mcp-fitbit` → [TheDigitalNinja/mcp-fitbit](https://github.com/TheDigitalNinja/mcp-fitbit)
+   - `whoop-mcp` → [JedPattersonn/whoop-mcp](https://github.com/JedPattersonn/whoop-mcp)
+   - `oura-mcp-server` → [hemantkamalakar/oura-mcp-server](https://github.com/hemantkamalakar/oura-mcp-server)
+   - `garmin-connect-mcp` → [Nicolasvegam/garmin-connect-mcp](https://github.com/Nicolasvegam/garmin-connect-mcp)
+   - `BetTrack` → [WFord26/BetTrack](https://github.com/WFord26/BetTrack)
+   - `domestique` → [gesteves/domestique](https://github.com/gesteves/domestique)
+   - `mcp-sports` → [michaelfromorg/mcp-sports](https://github.com/michaelfromorg/mcp-sports)
+   - `ai-endurance/mcp` → [GitHub](https://github.com/ai-endurance/mcp)
+
+2. `categories/observability-monitoring/index.md` — 26 external links added + Sources footer (12 sources):
+   - `mcp-grafana` → [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana) (×3)
+   - `Datadog MCP` → [datadog-labs/mcp-server](https://github.com/datadog-labs/mcp-server)
+   - `New Relic MCP` → [newrelic/mcp-server](https://github.com/newrelic/mcp-server) (×2)
+   - `Honeycomb MCP` → [honeycombio/honeycomb-mcp](https://github.com/honeycombio/honeycomb-mcp) (×2)
+   - `Agent Skills` → [honeycombio/agent-skill](https://github.com/honeycombio/agent-skill)
+   - `sentry-mcp` → [getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp) (×2)
+   - `pagerduty-mcp` → [PagerDuty/pagerduty-mcp-server](https://github.com/PagerDuty/pagerduty-mcp-server) (×2)
+   - `Opik` → [comet-ml/opik-mcp](https://github.com/comet-ml/opik-mcp)
+   - `OpenTelemetry MCP` → [traceloop/opentelemetry-mcp-server](https://github.com/traceloop/opentelemetry-mcp-server)
+   - `Langfuse` → [langfuse/mcp-server-langfuse](https://github.com/langfuse/mcp-server-langfuse)
+   - `LangSmith` → [langchain-ai/langsmith-mcp-server](https://github.com/langchain-ai/langsmith-mcp-server)
+   - `ZenML` → [zenml-io/mcp-zenml](https://github.com/zenml-io/mcp-zenml)
+
+3. `categories/cloud-infrastructure/index.md` — 37 external links added + Sources footer (16 sources):
+   - `awslabs/mcp` → [GitHub](https://github.com/awslabs/mcp) (×3)
+   - `Azure MCP` → [microsoft/mcp](https://github.com/microsoft/mcp)
+   - `Google Cloud MCP` → [google/mcp](https://github.com/google/mcp)
+   - `MCP Toolbox` → [googleapis/mcp-toolbox](https://github.com/googleapis/mcp-toolbox)
+   - `Flux159` → [Flux159/mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes)
+   - `Red Hat Kubernetes` → [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) (×2)
+   - `Docker MCP Gateway` → [docker/mcp-gateway](https://github.com/docker/mcp-gateway)
+   - `ToolHive` → [stacklok/toolhive](https://github.com/stacklok/toolhive)
+   - `ckreiling/mcp-server-docker` → [GitHub](https://github.com/ckreiling/mcp-server-docker)
+   - `terraform-mcp-server` → [hashicorp/terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) (×3)
+   - `Pulumi MCP` → [pulumi/mcp-server](https://github.com/pulumi/mcp-server) (×2)
+   - `Netlify MCP` → [netlify/netlify-mcp](https://github.com/netlify/netlify-mcp)
+   - Cloudflare → [mcp.cloudflare.com](https://mcp.cloudflare.com)
+   - `HashiCorp Vault` → [hashicorp/vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) (×2)
+   - `Bitwarden` → [bitwarden/mcp-server](https://github.com/bitwarden/mcp-server) (×2)
+   - `Infisical` → [Infisical/infisical-mcp-server](https://github.com/Infisical/infisical-mcp-server) (×2)
+   - `Doppler` → [DopplerHQ/mcp-server](https://github.com/DopplerHQ/mcp-server) (×2)
+
+**Total retrofit progress:** Batches 1-11 = 34 pages retrofitted. ~478 remaining.
+
+**Build:** Hugo 3929 pages. Clean build.
+**Deploy:** COMPLETE — deployed at 1784174058 (12:54 PM JST).
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — the next 3 oldest uncited pages are category pages from 2026-03-24: `categories/email-notification-services`, `categories/ai-ml-tools`, `categories/developer-tools`.
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2461 — 2026-07-16 — Citation Retrofit Batch 10 (3 MCP review pages, DEPLOYED)
 
 **Mode:** Developer
