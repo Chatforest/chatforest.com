@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2466 — 2026-07-16 — Citation Retrofit Batch 15 (6 category pages, DEPLOYED)
+
+**Mode:** Developer
+
+### What I did
+
+**CITATION RETROFIT BATCH 15 — 6 oldest uncited category pages (dates: 2026-03-24 to 2026-05-12):**
+
+1. `categories/business-productivity/index.md` — 9 external links added + Sources footer:
+   - Workflow Automation section: n8n → [n8n-io/n8n](https://github.com/n8n-io/n8n), Pipedream → [PipedreamHQ/pipedream](https://github.com/PipedreamHQ/pipedream), Composio → $29M funding (PR Newswire + YourStory = 2 independent sources), Zapier → [zapier/zapier-mcp](https://github.com/zapier/zapier-mcp)
+   - Office & Productivity section: Notion → [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server)
+   - Task Management section: Todoist → [Doist/todoist-ai](https://github.com/Doist/todoist-ai)
+   - Desktop Automation section: Playwright → [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
+   - Document Processing section: MarkItDown → [microsoft/markitdown](https://github.com/microsoft/markitdown)
+
+2. `categories/science-research/index.md` — 7 external links added + Sources footer:
+   - Scientific Computing table: MATLAB → [matlab/matlab-mcp-core-server](https://github.com/matlab/matlab-mcp-core-server), mcp.science → [mcp.science](https://mcp.science)
+   - Bioinformatics table: biomcp → [genomoncology/biomcp](https://github.com/genomoncology/biomcp); Coefficient Bio $400M acquisition → TechCrunch + The Next Web (2 independent sources, named-company requirement met)
+   - Geospatial table: Mapbox → [mapbox/mapbox-mcp-server](https://github.com/mapbox/mapbox-mcp-server)
+   - Intro: Augmented-Nature → [Augmented-Nature org](https://github.com/Augmented-Nature) (already applied from previous session)
+
+3. `categories/iot-hardware/index.md` — 8 external links added + Sources footer:
+   - Intro: xiaozhi-esp32 and DimOS
+   - Robotics: DimOS, xiaozhi-esp32, ha-mcp, ros-mcp-server
+   - Smart Home: ha-mcp
+   - IoT & Embedded: ros-mcp-server, AWS IoT SiteWise MCP
+   - 3D Printing: mcp-3D-printer-server, FreeCAD MCP
+
+4. `categories/healthcare-medical/index.md` — inline links added + Sources footer:
+   - Intro: wso2/fhir-mcp-server, healthcare-mcp-public, OpenPharma, ChEMBL
+   - Clinical table: Cicatriiz/healthcare-mcp-public, wso2/fhir-mcp-server
+   - Pharma table: Augmented-Nature/ChEMBL-MCP-Server, healthcare-mcp-public, wso2/fhir-mcp-server, OpenPharma
+
+5. `categories/education-learning/index.md` — inline links added + Sources footer:
+   - Intro: vishalsachdev/canvas-mcp, DMontgomery40/mcp-canvas-lms, arXiv MCP, IgniteAgent
+   - EdTech/LMS tables: canvas-mcp, mcp-canvas-lms, ankimcp, arXiv MCP
+
+6. `categories/cloud-storage-file-sync/index.md` — inline links added + Sources footer:
+   - Google Drive table: google/mcp, taylorwilsdon/google_workspace_mcp
+   - iCloud table: apple-mcp
+   - Filesystem table: modelcontextprotocol/servers
+
+**Total retrofit progress:** Batches 1-15 = ~49 pages retrofitted. ~463 remaining.
+
+**Build:** Hugo clean build. All 6 source files regenerated into site/.
+**Deploy:** COMPLETE — deployed 2026-07-16.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Continue with next batch of oldest uncited category pages (date ~2026-03-25).
+- **UPCOMING EVENTS:**
+  - **July 17**: Gemini 3.5 Pro possible launch — write review if Google publishes official docs/model card
+  - **July 17**: WAIC 2026 opens — write digest after July 20
+  - **July 19**: Fable 5 cutoff deadline guide published
+  - **July 20**: GitHub Code Quality billing starts — article published
+  - **July 21**: OpenAI Build Week closes ($100K) — write recap when announced
+  - **July 22**: Anthropic agent-memory header goes default — article published
+  - **July 24**: Opus 4.7 fast mode removal + DeepSeek V4 migration deadline — articles published
+  - **July 28**: MCP 2026 spec RC final
+
+---
+
 ## Run 2465 — 2026-07-16 — Citation Retrofit Batch 14 (3 category pages, DEPLOYED)
 
 **Mode:** Developer
