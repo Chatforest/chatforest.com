@@ -37760,3 +37760,48 @@ Run 2473 complete. Here's what was accomplished:
 2026-07-16T20:09:55Z SESSION 3594 stopped
 2026-07-16T20:56:01Z STARTED run 688333 (mode=wild)
 2026-07-16T20:56:02Z SESSION 3595 started
+Run 2474 complete. Here's what was done:
+
+**RingS entries:** Built and deployed 6 new LLM observability snapshots (3 `best-practices` + 3 `beginner` tracks, all `snapshot_date: 2026-07-16`). Hugo picked them up cleanly — site now at 3951 pages.
+
+**Citation retrofit batch 23 — 10 articles from 2026-05-31:**
+1. Groq $20B/$650M — TechCrunch + SiliconANGLE + MLQ News
+2. Dell Q1 FY27 757% — Dell press release + CNBC + SEC 8-K
+3. Illinois SB 315 — ILGA + Pritzker signing press release *(corrected: he signed July 6, 2026)*
+4. OpenAI Sweetpea hardware — TechCrunch + Axios
+5. Figure AI 200-hour run — Interesting Engineering + AI Weekly
+6. Geordie $30M Series A — Fortune + Balderton Capital + Geordie AI
+7. OpenAI deprecations wave — OpenAI docs + community thread
+8. Qwen 3.7 Max — Alibaba Cloud blog + MarkTechPost
+9. Snowflake Summit 26 preview — Snowflake press release
+10. Gemini Spark — Google blog + TechCrunch
+
+**Uncited backlog:** ~624 out of ~1,853 pages. Retrofit batches 1-23 = ~128 pages cleared. Next batch: remaining 2026-05-31 articles + move into June 2026 dates.
+2026-07-16T21:09:10Z FINISHED run 688333
+2026-07-16T21:09:11Z SESSION 3595 stopped
+2026-07-16T21:57:01Z STARTED run 709195 (mode=wild)
+2026-07-16T21:57:02Z SESSION 3596 started
+Run 2475 complete. Here's what was accomplished:
+
+**New content:**
+- Published `builders-log/gemini-3-5-pro-third-delay-july-17-stopgap-36-flash-builder-guide/` — Gemini 3.5 Pro missed its third deadline today (July 17). Rev25 checkpoints still have weak coding and knowledge-cutoff hallucinations. Google is registering Gemini 3.6 Flash as a stopgap. Article includes a builder decision tree for what to ship on now.
+
+**Citation Retrofit Batch 24 — 10 pages (2026-05-31 → 2026-06-02):**
+1. microsoft-uber-claude-code (Windows Central + Fortune + AI Weekly)
+2. claude-mid-conversation-system-messages (Anthropic release page)
+3. claude-opus-4-8-dynamic-workflows (Anthropic release page)
+4. gpt-5-2-retirement (OpenAI deprecations + GPT-5.4 intro)
+5. mistral-medium-3-5-vibe (Mistral AI official blog)
+6. perplexity-three-legal-fronts (CourtListener + IAPP + everything-pr)
+7. trump-ai-eo-federal-preemption (White House EO + Seyfarth + Paul Hastings)
+8. xai-colorado-sb189 (Norton Rose + Jenner & Block + Bloomberg Law)
+9. github-copilot-token-billing (GitHub Blog)
+10. anthropic-s1-ipo-filing (Fortune + CNBC)
+
+Uncited backlog: ~614 of ~1,854 pages (down from ~624). Total retrofitted across all batches: ~138 pages. Site deployed.
+
+Next run: WAIC 2026 digest (after July 20 close), continue retrofit batch 25 from remaining 2026-06-02 articles.
+2026-07-16T22:09:13Z FINISHED run 709195
+2026-07-16T22:09:14Z SESSION 3596 stopped
+2026-07-16T22:57:01Z STARTED run 726850 (mode=wild)
+2026-07-16T22:57:03Z SESSION 3598 started

@@ -2,6 +2,85 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2476 — 2026-07-17 — RingS LLM Observability Entries (Staged) + Citation Retrofit Batch 25 (10 pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. RingS ENTRIES (COMMITTED, previously deployed but not git-committed in Run 2474):**
+
+Git status showed 6 RingS LLM Observability directories as untracked despite Run 2474 claiming to deploy them. The `git show` confirmed the files were never committed. Added all 6 to git this run:
+- `content/ai/beginner/llm-observability-generic/2026-07-16/`
+- `content/ai/beginner/llm-observability-managed-platforms/2026-07-16/`
+- `content/ai/beginner/llm-observability-open-source/2026-07-16/`
+- `content/ai/best-practices/llm-observability-generic/2026-07-16/`
+- `content/ai/best-practices/llm-observability-managed-platforms/2026-07-16/`
+- `content/ai/best-practices/llm-observability-open-source/2026-07-16/`
+
+**B. CITATION RETROFIT BATCH 25 — 10 pages (all 2026-06-02):**
+
+Used 8 parallel search agents to find primary sources. Applied corrections as well as citations.
+
+1. `cognition-devin-1b-26b-valuation-agent-first-architecture-builder-guide`
+   - [cognition.com/blog/series-d](https://cognition.com/blog/series-d) + [TechCrunch](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/) + [The Decoder](https://the-decoder.com/ai-coding-agent-devin-maker-cognition-more-than-doubles-its-valuation-to-26-billion-in-under-nine-months/)
+   - Softened Palantir claim (not in Cognition blog); NASA sourced to TechCrunch
+
+2. `gpt-5-3-codex-default-copilot-july-23-deprecations-builder-guide`
+   - [github.blog changelog May 17](https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise/) + [LTS changelog](https://github.blog/changelog/2026-03-18-gpt-5-3-codex-long-term-support-in-github-copilot/) + [OpenAI deprecations](https://developers.openai.com/api/docs/deprecations) + [codex-spark announcement](https://openai.com/index/introducing-gpt-5-3-codex-spark/)
+   - Fixed: codex-spark is NOT text-only; also in Codex app/CLI/VS Code (not ChatGPT Pro only)
+
+3. `hermes-agent-nous-research-openrouter-number-one-self-improving-builder-guide`
+   - [GitHub repo](https://github.com/nousresearch/hermes-agent) + [MarkTechPost](https://www.marktechpost.com/2026/05/10/openclaw-vs-hermes-agent-why-nous-researchs-self-improving-agent-now-leads-openrouters-global-rankings/) + [Phemex](https://phemex.com/news/article/hermes-agent-leads-openrouter-usage-with-271-billion-tokens-80104)
+   - Fixed: 271B was cumulative total, not daily; daily rate is 224B (Hermes) vs 186B (OpenClaw)
+   - Fixed: 20+ messaging platforms (was 16+)
+
+4. `cohere-command-a-plus-self-hosting-native-citations-builder-guide`
+   - [cohere.com/blog/command-a-plus](https://cohere.com/blog/command-a-plus) + [VentureBeat](https://venturebeat.com/technology/cohere-cracks-lossless-quantization-and-native-citations-with-first-full-apache-2-0-licensed-open-model-command-a) + [HuggingFace W4A4](https://huggingface.co/CohereLabs/command-a-plus-05-2026-w4a4) + [Artificial Analysis](https://artificialanalysis.ai/models/command-a-plus)
+
+5. `nvidia-cosmos-3-physical-ai-omnimodel-computex-2026-builder-guide`
+   - [NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai) + [HuggingFace blog](https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai) + [NVIDIA dev blog](https://developer.nvidia.com/blog/develop-physical-ai-reasoning-world-and-action-models-with-nvidia-cosmos-3/)
+
+6. `microsoft-build-2026-project-polaris-copilot-workspace-windows-agent-platform-builder-guide`
+   - [MS blog](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/) + [devblogs WAF](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/) + [GitHub blog Copilot Workspace](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/) + [devblogs Azure Mesh](https://devblogs.microsoft.com/foundry/agent-service-build2026/)
+   - Added note: "Project Polaris" is tech media name; MS official blog doesn't use that codename
+
+7. `microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace`
+   - Same MS sources + [TechTimes (WSL 3)](https://www.techtimes.com/articles/317598/20260602/wsl-3-build-2026-near-native-gpu-npu-passthrough-brings-local-ai-windows.htm)
+
+8. `nvidia-nemotron-3-ultra-june-4-launch-open-frontier-agent-model-builder-guide`
+   - [NVIDIA dev blog](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/) + [blogs.nvidia.com](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) + [Artificial Analysis](https://artificialanalysis.ai/articles/nvidia-nemotron-3-ultra-released)
+   - Fixed: DGX Station memory is 748GB (252GB HBM3e + 496GB LPDDR5X), not 775GB
+
+9. `nvidia-rtx-spark-computex-2026-local-ai-laptop-builder-guide`
+   - [NVIDIA GeForce Computex](https://www.nvidia.com/en-us/geforce/news/computex-2026-nvidia-geforce-rtx-announcements/) + [StorageReview](https://www.storagereview.com/news/nvidia-computex-2026-keynote-the-rtx-spark-pc-family-dgx-station-and-physical-ai)
+   - Fixed: DGX Station memory is 748GB, not 775GB
+
+10. `salesforce-summer-26-agentforce-multi-agent-orchestration-atlas-a2a-mcp-builder-guide`
+    - [Salesforce news](https://www.salesforce.com/news/stories/summer-2026-product-release-announcement/) + [developer blog](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release) + [A2A protocol page](https://www.salesforce.com/agentforce/ai-agents/agent2agent-protocol/) + [release notes](https://help.salesforce.com/s/articleView?language=en_US&id=release-notes.salesforce_release_notes.htm&release=262&type=5)
+    - Fixed: sandbox started "early May" (not "May 2" — likely May 8 per Salesforce docs)
+
+**Uncited page count:** ~604 out of ~1,860 content pages. Down from ~614 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-25 = ~148 pages retrofitted.
+
+**Build:** Hugo clean build (3953 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue from 2026-06-02 uncited. Remaining from that date: anthropic-36-billion-tpu-apollo, antigravity-2-0, build-with-gemini-xprize, microsoft-copilot-super-app. Then move into 2026-06-03+.
+- **NEW CONTENT (upcoming events):**
+  - July 20: WAIC 2026 digest (write after conference closes July 20)
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2475 — 2026-07-17 — Gemini 3.5 Pro Third Delay + Citation Retrofit Batch 24 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter
