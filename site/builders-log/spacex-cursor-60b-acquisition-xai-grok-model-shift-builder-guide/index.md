@@ -3,9 +3,11 @@
 > SpaceX's option to acquire Cursor for $60B is expected to close ~30 days after the June 12 Nasdaq IPO. Here's what that means for builders who rely on Cursor's Claude and GPT integrations.
 
 
+> **UPDATE — June 16, 2026:** SpaceX exercised its acquisition option on June 16, 2026 — four days after its SPCX Nasdaq IPO — and [signed a $60 billion all-stock merger agreement with Cursor](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/), per [CNBC](https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html). The option exercise happened faster than the "30-day" scenario below anticipated. Deal closing is expected in Q3 2026.
+
 On April 21, 2026, SpaceX disclosed it had secured an option to acquire Cursor — the AI-native code editor used by more than half the Fortune 500 — for **$60 billion**. The alternative: pay $10 billion for a continuing joint development partnership using xAI's Colossus 2 supercomputer.
 
-The expected timeline: SpaceX lists on Nasdaq under **SPCX on June 12**. The Cursor acquisition closes roughly 30 days later — around **mid-July 2026**.
+The expected timeline at time of writing: SpaceX lists on Nasdaq under **SPCX on June 12**. The Cursor acquisition closes roughly 30 days later — around **mid-July 2026**.
 
 If that timeline holds, the IDE that currently routes your team's coding through Claude and GPT will, within six weeks, be owned by xAI.
 

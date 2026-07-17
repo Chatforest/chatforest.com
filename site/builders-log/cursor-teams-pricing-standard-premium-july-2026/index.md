@@ -3,7 +3,7 @@
 > Cursor restructures Teams pricing into Standard ($32/seat/month annual) and Premium ($96/seat/month annual) tiers effective July 1 for renewals. The change also separates first-party and third-party usage into two distinct pools per seat.
 
 
-On June 5, 2026, Cursor announced a restructure of its Teams pricing tier. What was previously a single Teams seat price point is now two: **Standard** and **Premium**. New customers see the new tiers immediately. Renewing customers transition on billing cycles starting **July 1, 2026**.
+On June 5, 2026, Cursor [announced a restructure of its Teams pricing tier](https://cursor.com/blog/teams-pricing-june-2026). What was previously a single Teams seat price point is now two: **Standard** and **Premium**. New customers see the new tiers immediately. Renewing customers transition on billing cycles starting **July 1, 2026**.
 
 If you run a Cursor Teams org of any size, you have a decision to make before your next renewal.
 

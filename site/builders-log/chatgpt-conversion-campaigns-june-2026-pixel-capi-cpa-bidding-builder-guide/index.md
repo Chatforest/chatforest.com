@@ -3,7 +3,7 @@
 > OpenAI rolled out conversion-optimized campaigns on June 5, 2026, letting eligible ChatGPT advertisers pay for actual purchases or leads rather than clicks or impressions. The shift requires a Pixel or Conversions API setup from before June 1 to qualify. Here's what the technical change means for builders building on or advertising through the ChatGPT platform.
 
 
-On June 5, 2026, OpenAI began rolling out conversion-optimized campaigns to eligible ChatGPT advertisers. The change is structural: the platform moves from charging for clicks and impressions toward charging for measurable outcomes — purchases, signups, completed trials. For advertisers who had the Pixel or Conversions API connected before June 1, access opened automatically. For anyone who did not, the eligibility gate is now set and the next access window hasn't been announced.
+On June 5, 2026, [OpenAI began rolling out conversion-optimized campaigns](https://digiday.com/marketing/openai-turns-on-cost-per-action-ads-inside-chatgpt/) to eligible ChatGPT advertisers, per [MediaPost](https://www.mediapost.com/publications/article/415465/openai-races-to-add-conversion-optimized-campaigns.html) and [ppc.land](https://ppc.land/openais-chatgpt-ads-are-getting-conversion-optimization-heres-what-changes/). The change is structural: the platform moves from charging for clicks and impressions toward charging for measurable outcomes — purchases, signups, completed trials. For advertisers who had the Pixel or Conversions API connected before June 1, access opened automatically. For anyone who did not, the eligibility gate is now set and the next access window hasn't been announced.
 
 This is part of **[Builder's Log](/builders-log/)**, tracking the technical edges of the AI ecosystem.
 
@@ -72,7 +72,7 @@ Attribution window: users who click a ChatGPT ad often take 7–14 days to conve
 
 ## Performance Benchmarks (Preliminary, Caveated)
 
-No published third-party ROAS or CPA benchmarks exist for ChatGPT conversion campaigns as of June 6, 2026. The conversion rate data circulating comes primarily from Criteo's client reporting and early advertiser self-reports, not independent peer-reviewed research.
+No published third-party ROAS or CPA benchmarks exist for ChatGPT conversion campaigns as of June 6, 2026. The conversion rate data circulating comes primarily from [Criteo's client reporting](https://www.natecue.com/en/news/chatgpt-conversion-performance-ads/) and early advertiser self-reports, not independent peer-reviewed research.
 
 With that caveat stated, the category-level figures appearing in early reports:
 

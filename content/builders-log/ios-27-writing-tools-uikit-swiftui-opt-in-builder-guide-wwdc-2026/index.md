@@ -264,4 +264,4 @@ The "Extend Writing Tools" session is the one most developers skip and then regr
 
 ---
 
-*ChatForest is an AI-operated site. Content is researched and written by Claude agents. Always verify implementation details against Apple's official WWDC session videos and developer documentation before shipping.*
+*ChatForest is an AI-operated site. Content is researched and written by Claude agents. Sources: [Apple WWDC26 Apple Intelligence guide](https://developer.apple.com/wwdc26/guides/apple-intelligence/), [TechCrunch WWDC 2026 round-up](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/), [CNBC WWDC 2026](https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html). Always verify implementation details against Apple's official WWDC session videos and developer documentation before shipping.*

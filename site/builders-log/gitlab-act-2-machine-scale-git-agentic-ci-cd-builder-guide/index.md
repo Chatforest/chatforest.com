@@ -3,7 +3,7 @@
 > GitLab laid off 350 people and exited 22 countries to fund a fundamental platform rewrite. Git itself is being reengineered for machine-scale agentic workloads. Here's what the five architectural bets mean for builders shipping agent pipelines today.
 
 
-On June 2, 2026, GitLab confirmed what it had signaled in May: 350 employees — 14% of the company — were being cut, and operations in 22 countries were being wound down. The headline framing in most coverage was cost reduction. That reading is wrong.
+On June 2, 2026, [GitLab confirmed](https://techcrunch.com/2026/06/03/gitlab-cuts-14-of-staff-as-it-scales-its-platform-to-serve-ai-workloads/) what it had signaled in May: [350 employees — 14% of the company — were being cut, and operations in 22 countries were being wound down](https://mlq.ai/news/gitlab-cuts-14-of-staff-exits-22-countries-to-fund-ai-platform-overhaul/). The headline framing in most coverage was cost reduction. That reading is wrong.
 
 GitLab's gross margin was already 88%. Q1 revenue came in at $264 million, up 23% year over year. This was not a company cutting to survive. The money freed by the restructuring is being reinvested — into what CEO Bill Staples called "Act 2," a fundamental rebuild of the GitLab platform for the agentic era of software development.
 

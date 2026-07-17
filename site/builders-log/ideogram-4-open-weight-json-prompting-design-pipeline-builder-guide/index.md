@@ -3,9 +3,9 @@
 > Ideogram 4.0 launched June 3, 2026 as a 9.3B-parameter open-weight Diffusion Transformer with a structured JSON prompting interface, bounding-box layout control, and best-in-class in-image text rendering. Weights are free for non-commercial use; commercial pipelines need a license. Here's the complete builder decision guide.
 
 
-On June 3, 2026, Ideogram shipped 4.0 — the company's first open-weight model and the most capable image generation model available for local inference. For builders, the headline is not the benchmark ranking. It is the JSON prompting interface: a structured way to describe layouts, palettes, and typography that turns one-off image generation into a templated design pipeline.
+On June 3, 2026, Ideogram [shipped 4.0](https://huggingface.co/ideogram-ai/ideogram-4-nf4) — the company's first open-weight model and the most capable image generation model available for local inference. For builders, the headline is not the benchmark ranking. It is the JSON prompting interface: a structured way to describe layouts, palettes, and typography that turns one-off image generation into a templated design pipeline.
 
-**At a glance:** Ideogram 4 is a 9.3 billion-parameter single-stream Diffusion Transformer trained from scratch. Inference code is Apache 2.0. Weights are under Ideogram's Non-Commercial Model Agreement — free for research, evaluation, and local experimentation; commercial production deployment requires a separate paid license. ComfyUI supports it natively on day one. The JSON interface supports up to six text bounding boxes, sixteen hex color palette slots, and explicit object positioning. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** Ideogram 4 is a 9.3 billion-parameter single-stream Diffusion Transformer trained from scratch. Weights are also available in [fp8 format on Hugging Face](https://huggingface.co/ideogram-ai/ideogram-4-fp8). Inference code is Apache 2.0. Weights are under Ideogram's Non-Commercial Model Agreement — free for research, evaluation, and local experimentation; commercial production deployment requires a separate paid license. ComfyUI supports it natively on day one. The JSON interface supports up to six text bounding boxes, sixteen hex color palette slots, and explicit object positioning. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 

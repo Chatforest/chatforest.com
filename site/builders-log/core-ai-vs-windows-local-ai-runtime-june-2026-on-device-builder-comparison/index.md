@@ -17,7 +17,7 @@ This guide explains what each platform actually is, where they differ on the dim
 
 ### Core AI — Apple's Replacement for Core ML
 
-Core AI is a new Apple framework announced at WWDC on June 8 that replaces Core ML as the primary framework for on-device machine learning on Apple platforms. Core ML has existed since 2017; it was built around frozen models and batch inference for traditional ML tasks. Core AI is built from scratch for LLMs and generative AI.
+Core AI is [a new Apple framework announced at WWDC on June 8](https://9to5mac.com/2026/03/01/apple-replacing-core-ml-with-modernized-core-ai-framework-for-ios-27-at-wwdc/) that replaces Core ML as the primary framework for on-device machine learning on Apple platforms, per [InfoQ](https://www.infoq.com/news/2026/06/apple-core-ai-wwdc/). Core ML has existed since 2017; it was built around frozen models and batch inference for traditional ML tasks. Core AI is built from scratch for LLMs and generative AI.
 
 **What it runs on:** Neural Engine, GPU, and CPU — the full Apple Silicon stack on every device that runs iOS 27, iPadOS 27, or macOS 27. That is over two billion active devices reaching production in September 2026, when iOS 27 ships publicly.
 
@@ -37,7 +37,7 @@ See our full pre-keynote breakdown: [WWDC 2026 Builder Preview: Siri Gets Gemini
 
 ### Windows Local AI Runtime — Microsoft's Modular On-Device Stack
 
-The Windows Local AI Runtime is not a single framework but a set of components that Microsoft is shipping incrementally as part of a new AI-specific update cadence, decoupled from the monthly security patch cycle. The June 9 update is the first significant delivery.
+The [Windows Local AI Runtime](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/) is not a single framework but a set of components that Microsoft is shipping incrementally as part of a new AI-specific update cadence, decoupled from the monthly security patch cycle. The June 9 update is the first significant delivery.
 
 **What ships June 9:**
 - **HAIEnv** (Host AI Environment) — a model-sharing service that lets multiple applications share a single Phi Silica inference instance. Solves the per-app model-loading problem. GA.

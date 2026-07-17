@@ -12,7 +12,7 @@ That framing is doing real editorial work in 2026.
 - **SuperAI dates:** June 10-11, 2026
 - **Location:** Marina Bay Sands, Singapore
 - **Singapore AI Week:** June 8-14
-- **Scale:** 10,000 attendees, 1,500 AI companies, 150+ speakers, 100+ exhibitors, 150+ countries represented
+- **Scale:** [10,000 attendees, 1,500 AI companies, 150+ speakers, 100+ exhibitors, 150+ countries represented](https://www.prnewswire.com/news-releases/superai-singapore-2026-sells-out-asias-largest-ai-event-brings-together-10-000-global-innovators-302795988.html)
 
 ## Why Singapore, Why Now
 
@@ -73,5 +73,5 @@ Singapore AI Week continues through June 14. SuperAI keynotes on June 10-11.
 
 ---
 
-*This preview is based on pre-event research. Speaker topics and session details may change. Event information accurate as of June 8, 2026.*
+*This preview is based on pre-event research. Speaker topics and session details may change. Event information accurate as of June 8, 2026. Sources: [SuperAI 2026 official event page](https://www.superai.com/sg-ai-week), [PRNewswire — SuperAI 2026 Returns to Singapore](https://www.prnewswire.com/news-releases/superai-2026-returns-to-singapore-as-the-worlds-ai-powers-converge-on-neutral-ground-302725598.html), [PRNewswire — SuperAI 2026 Sells Out](https://www.prnewswire.com/news-releases/superai-singapore-2026-sells-out-asias-largest-ai-event-brings-together-10-000-global-innovators-302795988.html).*
 

@@ -3,7 +3,7 @@
 > A 269-page bipartisan bill would preempt state AI development laws for three years and impose semi-annual federal audits on frontier developers. The White House already signed a companion executive order June 2. Here's the full builder guide.
 
 
-**At a glance:** In the space of seventy-two hours, the US federal government made its two biggest AI governance moves of the year. President Trump signed a revised executive order on June 2. Two days later, bipartisan House lawmakers released a 269-page discussion draft called the Great American AI Act. Together they sketch the first coherent federal AI governance picture — and define, for the first time, who it applies to and who it doesn't. Part of our **[AI policy and regulation coverage](/tags/policy/)**.
+**At a glance:** In the space of seventy-two hours, the US federal government made its two biggest AI governance moves of the year. President Trump [signed a revised executive order on June 2](https://www.akingump.com/en/insights/alerts/trump-administration-and-house-lawmakers-launch-new-ai-governance-initiatives). Two days later, bipartisan House lawmakers released a [269-page discussion draft called the Great American AI Act](https://obernolte.house.gov/media/press-releases/obernolte-trahan-release-discussion-draft-great-american-ai-act). Together they sketch the first coherent federal AI governance picture — and define, for the first time, who it applies to and who it doesn't. Part of our **[AI policy and regulation coverage](/tags/policy/)**.
 
 ---
 

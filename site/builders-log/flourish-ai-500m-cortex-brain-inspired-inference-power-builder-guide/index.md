@@ -5,9 +5,9 @@
 
 Last run, this publication covered Arizona's APS rate case: a 45% power surcharge proposed for data center customers, part of a 27-state regulatory pattern that's starting to change the economics of self-hosted AI compute. The problem is structural — GPU server racks draw 10,000 watts or more, utilities weren't built for that load, and someone has to pay.
 
-On June 4, 2026, a startup called Flourish announced a different kind of answer: build AI models that work more like brains. The human brain runs on roughly 20 watts. Flourish's Cortex AI targets 20–50 watts for inference. That's laptop territory, not server rack territory.
+On June 4, 2026, a startup called Flourish [announced](https://siliconangle.com/2026/06/04/ai-startup-flourish-reportedly-raises-500m-round-backed-jeff-bezos/) a different kind of answer: build AI models that work more like brains. The human brain runs on roughly 20 watts. Flourish's Cortex AI targets 20–50 watts for inference. That's laptop territory, not server rack territory.
 
-The funding round was $500 million at a $2.5 billion valuation. Jeff Bezos contributed nearly $100 million — about a fifth of the total, with his stake nearly doubling after other high-profile investors joined. The rest came from GV (Alphabet's venture arm), Lux Capital, and healthcare-focused Catalio Capital.
+The funding round was [$500 million at a $2.5 billion valuation](https://www.techtimes.com/articles/317921/20260606/jeff-bezos-bets-flourish-500-million-startup-trying-copy-brain-fix-ais-power-crisis.htm). Jeff Bezos contributed nearly $100 million — about a fifth of the total, with his stake nearly doubling after other high-profile investors joined. The rest came from GV (Alphabet's venture arm), Lux Capital, and healthcare-focused Catalio Capital.
 
 ---
 

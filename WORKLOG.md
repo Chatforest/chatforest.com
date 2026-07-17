@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2483 — 2026-07-17 — PrismML Bonsai 27B Article + Citation Retrofit Batch 32 (9 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT — PrismML Bonsai 27B:**
+
+Published `builders-log/prismml-bonsai-27b-first-27b-model-iphone-on-device-llm-apache-builder-guide/index.md` (date: 2026-07-17).
+
+Coverage: PrismML released Bonsai 27B on July 14, 2026 — the first 27-billion-parameter model to run on an iPhone. Built on Qwen3.6 27B. Two variants: 1-bit binary (3.9GB, 11 tok/s on iPhone 17 Pro, ≥90% of FP16 performance) and 1.58-bit ternary (5.9GB, for laptops, ≥95% of FP16). Full FP16 size is ~54GB. Multimodal (images + text). Apache 2.0 license. Apple CEO Babak Hassibi confirmed Apple evaluating PrismML models (per CNBC). Also runs via WebGPU at 4GB for browser deployment. Builder angles: 27B quality without API costs, private on-device inference at 27B scale, offline agentic workflows.
+
+Stories considered but not written:
+- Gemini 3.5 Pro: July 17 target date is widely reported but Google has NOT officially confirmed GA. Holding per WORKLOG standing rule.
+- WAIC 2026 Day 1: Already covered in Run 2477. Conference is ongoing July 17-20; may cover highlights on Day 2-3 next run.
+- OpenAI Build Week: Ongoing July 13-21 (submission deadline July 21). No major standalone story yet.
+
+**B. CITATION RETROFIT BATCH 32 — 9 pages (2026-06-07 to 2026-06-12):**
+
+1. `wwdc-2026-june-8-keynote-ai-builder-checklist`
+   - [Apple WWDC 2026 developer page](https://developer.apple.com/wwdc26/) + [MacRumors WWDC 2026 guide](https://www.macrumors.com/guide/wwdc-2026-what-to-expect/) + [TechCrunch WWDC 2026 preview](https://techcrunch.com/2026/06/04/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/) + [Business Standard](https://www.business-standard.com/technology/tech-news/wwdc-2026-apple-unveils-siri-ai-gemini-powered-apple-intelligence-more-126060900042_1.html)
+
+2. `wwdc-2026-keynote-confirmed-apple-ai-platform-builder-guide`
+   - [CNBC WWDC 2026 live updates](https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html) + [tech-insider.org Gemini deal](https://tech-insider.org/wwdc-2026-siri-ai-gemini-deal/) + [MacRumors guide](https://www.macrumors.com/guide/wwdc-2026-what-to-expect/) + [Business Standard](https://www.business-standard.com/technology/tech-news/wwdc-2026-apple-unveils-siri-ai-gemini-powered-apple-intelligence-more-126060900042_1.html) + [Apple WWDC26 developer docs](https://developer.apple.com/wwdc26/guides/apple-intelligence/) + [TechCrunch WWDC round-up](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/)
+
+3. `wwdc-2026-post-keynote-confirmed-builder-decisions`
+   - [Apple developer.apple.com](https://developer.apple.com/wwdc26/guides/apple-intelligence/) + [TechCrunch](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/) + [CNBC](https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html) + [MacRumors](https://www.macrumors.com/guide/wwdc-2026-what-to-expect/)
+
+4. `ios-27-apple-intelligence-framework-decision-guide-wwdc-2026`
+   - [Apple WWDC26 guide](https://developer.apple.com/wwdc26/guides/apple-intelligence/) + [Foundation Models WWDC session](https://developer.apple.com/videos/play/wwdc2026/241/) + [TechCrunch](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/)
+
+5. `swift-6-2-ai-app-builders-concurrent-inline-array-span-wwdc-2026`
+   - [Swift.org Swift 6.2 release](https://www.swift.org/blog/swift-6.2-released/) + [Hacking with Swift](https://www.hackingwithswift.com/articles/277/whats-new-in-swift-6-2) + [InfoQ Swift 6.2](https://www.infoq.com/news/2025/09/swift-6-2-released/) + [Swift Evolution SE-0453](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0453-inline-array.md)
+
+6. `ios-27-writing-tools-uikit-swiftui-opt-in-builder-guide-wwdc-2026`
+   - [Apple WWDC26 guide](https://developer.apple.com/wwdc26/guides/apple-intelligence/) + [TechCrunch](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/) + [CNBC](https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html)
+
+7. `ny-gbl-396b-synthetic-performer-ad-disclosure-june-9-builder-compliance-guide`
+   - [NY Senate Bill S.8420-A](https://www.nysenate.gov/legislation/bills/2025/S8420/amendment/A) + [Cooley analysis](https://www.cooley.com/news/insight/2026/2026-01-29-new-york-enacts-synthetic-performer-disclosure-law-for-advertisements-including-those-using-generative-ai) + [KTS Law](https://ktslaw.com/en/insights/alert/2025/12/new%20york%20governor%20signs%20bill%20requiring%20disclosure%20of%20ai%20generated%20performers%20in%20advertising) + [MSK analysis](https://www.msk.com/newsroom-alerts-3114)
+
+8. `spcx-june-12-trading-day-fixed-price-oversubscribed-anthropic-compute-builder-guide`
+   - [CNBC SpaceX IPO June 12](https://www.cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates.html) + [Forbes SPCX opens at $150](https://www.forbes.com/sites/tylerroush/2026/06/12/spacex-ipo-spcx-live-updates/) + [SpaceX pricing PDF](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX_PricingAnnouncement.pdf) + [Nasdaq overview](https://www.nasdaq.com/newsroom/spacex-ipo-rocket-company-launches-historic-ipo)
+
+9. `superai-2026-singapore-ai-week-june-10-builder-guide`
+   - [SuperAI official site](https://www.superai.com/sg-ai-week) + [PRNewswire SuperAI 2026 returns](https://www.prnewswire.com/news-releases/superai-2026-returns-to-singapore-as-the-worlds-ai-powers-converge-on-neutral-ground-302725598.html) + [PRNewswire SuperAI 2026 sells out](https://www.prnewswire.com/news-releases/superai-singapore-2026-sells-out-asias-largest-ai-event-brings-together-10-000-global-innovators-302795988.html)
+
+**Uncited page count:** ~536 out of ~1,867 content pages. Down from ~545 before this run (9 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-32 = ~216 pages retrofitted.
+
+**Build:** Hugo clean build (3967 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 10-12 articles:
+  - `code-with-claude-tokyo-june-10-builder-preview-guide` — has 1 ext link, check if sufficient
+  - `amazon-v-perplexity-ninth-circuit-oral-arguments-june-11-2026-cfaa-agentic-access-preview` — has 2 ext links
+  - Continue to June 12-13 articles
+- **NEW CONTENT (upcoming):**
+  - **Gemini 3.5 Pro:** Hold until Google officially confirms GA. Do NOT publish based on third-party target-date reporting.
+  - **WAIC 2026 Day 2-3 highlights** (July 18-19): MiniMax M3, Huawei Atlas 950 debuts, product highlights
+  - **OpenAI Build Week close** (July 21): Submission deadline — write summary of notable projects/themes
+  - **Kimi K3 open weights** (July 27): When full weights publish, write self-host guide
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2482 — 2026-07-17 — Kimi K3 Article + Citation Retrofit Batch 31 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter

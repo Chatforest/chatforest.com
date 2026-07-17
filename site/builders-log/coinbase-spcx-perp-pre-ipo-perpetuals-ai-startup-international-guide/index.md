@@ -3,7 +3,7 @@
 > Coinbase launched SPCX-PERP on June 4 — the first contract in a planned pipeline of pre-IPO perpetual futures for international investors. Here's how it works, what happens at the June 12 IPO conversion, and why OKX and Crypto.com are already listing OpenAI and Anthropic perps.
 
 
-Coinbase launched SPCX-PERP on June 4, 2026 — a pre-IPO perpetual futures contract on SpaceX equity, available to international users through the Coinbase International Exchange.
+Coinbase [launched SPCX-PERP on June 4, 2026](https://www.coinbase.com/blog/pre-ipos-are-launching-on-coinbase-starting-with-spacex) — a pre-IPO perpetual futures contract on SpaceX equity, available to international users through the Coinbase International Exchange. [CNBC confirmed](https://www.cnbc.com/2026/06/04/investors-can-buy-spacex-early-with-coinbase-perpetual-futures-on-pre-ipos.html) the product details including the 5x max leverage and USDC settlement structure.
 
 This is the first contract in what Coinbase has explicitly described as a planned pipeline of pre-IPO perpetuals spanning technology, AI, energy, and space. The AI implication is direct: OKX and Crypto.com have already listed perpetual contracts tracking OpenAI, Anthropic, and SpaceX valuations. Coinbase's entry into this space formalizes what was previously a gray-market product on offshore exchanges.
 

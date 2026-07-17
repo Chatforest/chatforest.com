@@ -3,7 +3,7 @@
 > Gemini 3.5 Flash is now generally available. $1.50/$9 per million tokens, 1M context window, 4x speed over comparable models. This guide covers the model ID, endpoint access, cost math, 1M-context patterns, and the Flash vs. Omni Flash vs. 3.5 Pro decision matrix.
 
 
-Gemini 3.5 Flash is now generally available. The preview and limited-access period is over — the model is stable, documented, and priced for production.
+Gemini 3.5 Flash is [now generally available](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/). The preview and limited-access period is over — the model is stable, documented, and priced for production. Pricing and specs are confirmed in the [Gemini API changelog](https://ai.google.dev/gemini-api/docs/changelog).
 
 Three numbers define what this GA means for builders:
 

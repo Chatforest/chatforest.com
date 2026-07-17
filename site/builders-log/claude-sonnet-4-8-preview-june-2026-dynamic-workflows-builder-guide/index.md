@@ -9,7 +9,7 @@
 
 ---
 
-Claude Opus 4.8 landed May 28. If history holds, Claude Sonnet 4.8 is three weeks behind it.
+Claude Opus 4.8 [landed May 28](https://www.anthropic.com/news/claude-opus-4-8) ([TechCrunch coverage](https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/)). If history holds, Claude Sonnet 4.8 is three weeks behind it.
 
 That puts the expected arrival window at **June 16–18, 2026** — which happens to be three days after the June 15 deadline when `claude-sonnet-4-20250514` and `claude-opus-4-20250514` stop accepting requests.
 
