@@ -7,7 +7,7 @@ categories: ["AI Infrastructure", "Google", "Industry Analysis"]
 tags: ["google", "alphabet", "gemini", "vertex-ai", "ai-infrastructure", "capital-markets", "compute", "tpu", "pricing", "berkshire", "industry-analysis"]
 ---
 
-Alphabet announced on June 1 and priced on June 2 the largest equity raise in its 22-year history as a public company: **$84.75 billion** in stock sold to fund AI compute infrastructure.
+Alphabet [announced on June 1](https://www.cnbc.com/2026/06/01/alphabet-to-raise-80-billion-from-stock-sales-to-fund-ai-buildout.html) and [priced on June 2](https://www.sec.gov/Archives/edgar/data/0001652044/000119312526257724/d83560dex991.htm) the largest equity raise in its 22-year history as a public company: **$84.75 billion** in stock sold to fund AI compute infrastructure.
 
 The Class A and Class C common stock offering closed today, June 4. The depositary share/preferred offering closes June 5. The at-the-market program — another $40 billion on top — begins in Q3 2026.
 

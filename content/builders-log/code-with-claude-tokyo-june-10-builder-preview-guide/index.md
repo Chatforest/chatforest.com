@@ -8,7 +8,7 @@ categories: ["Claude", "Developer Events", "Agent Infrastructure"]
 tags: ["code-with-claude", "tokyo", "anthropic", "claude-code", "agents", "japan", "nec", "hitachi", "mythos", "sakana-ai", "developer-conference", "builder-guide", "livestream"]
 ---
 
-Anthropic's Code with Claude series closes out in Tokyo on June 10 — the third and final stop after San Francisco (May 6) and London (May 19). The in-person slots are full, but the global livestream is free. If you shipped anything on Claude in the last six months and haven't tuned into the earlier events, Tokyo is worth four hours on a Wednesday.
+Anthropic's [Code with Claude series closes out in Tokyo on June 10](https://claude.com/code-with-claude/tokyo) — the third and final stop after San Francisco (May 6) and London (May 19). The in-person slots are full, but the [global livestream is free](https://relvehq.com/events/code-with-claude-tokyo). If you shipped anything on Claude in the last six months and haven't tuned into the earlier events, Tokyo is worth four hours on a Wednesday.
 
 The short version of why: this is not a marketing event. The San Francisco and London editions ran live demos of real production agent architectures, with Anthropic engineers acknowledging failure modes and edge cases rather than showcasing clean demos. The Tokyo edition is expected to follow the same format. Boris Cherny (Claude Code lead), Ami Vora (Anthropic CPO), and Angela Jiang (Claude API and SDK product lead) are all presenting.
 

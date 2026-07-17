@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2478 — 2026-07-17 — OpenAI Safety Head Departure Article + Citation Retrofit Batch 27 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT — OpenAI Safety Restructuring:**
+
+Published `builders-log/openai-heidecke-sixth-safety-leader-research-merger-builder-vendor-risk-guide/index.md` (date: 2026-07-17).
+
+Coverage: Johannes Heidecke, OpenAI's head of safety systems, announced his exit by July 24 — the sixth safety leadership departure in two years. Chief Research Officer Mark Chen announced the safety systems group will be merged into the research organization, with Mia Glaese becoming VP of Research and Safety. Builder vendor-risk analysis: what changes (governance structure), what doesn't (models, API), and how to evaluate the risk for production workloads. FLI Safety Index context (OpenAI received C grade, all labs "entirely inadequate" at existential risk).
+
+Sources: TechTimes (July 11), Bloomberg (July 11), The Next Web, CryptoBriefing (restructuring + departure), FLI Safety Index Summer 2026.
+
+**B. CITATION RETROFIT BATCH 27 — 10 pages:**
+
+**2026-06-03 pages (7):**
+1. `azure-api-management-unified-model-api-anthropic-vertex-a2a-build-2026-builder-guide`
+   - [MSFT Community Hub (Build 2026 APIM)](https://techcommunity.microsoft.com/blog/integrationsonazureblog/whats-new-in-azure-api-management-at-microsoft-build-2026/4524683) + [AI gateway capabilities](https://techcommunity.microsoft.com/blog/integrationsonazureblog/new-ai-gateway-capabilities-in-azure-api-management/4524604)
+
+2. `claude-microsoft-foundry-enterprise-billing-macc-entra-two-tier-guide`
+   - [Azure blog (GA announcement)](https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/) + [InfoQ (EU data residency not available)](https://www.infoq.com/news/2026/07/claude-foundry-ga-europe/)
+
+3. `microsoft-build-2026-windows-ai-models-aion-local-inference-builder-guide`
+   - [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/) + [AI Weekly (Aion 1.0)](https://aiweekly.co/alerts/microsoft-unveils-aion-10-on-device-ai-at-build-2026)
+
+4. `microsoft-iq-work-foundry-fabric-web-context-layer-build-2026-builder-guide`
+   - [Microsoft Foundry Blog (Build)](https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-build-2026/) + [CryptoBriefing](https://cryptobriefing.com/microsoft-iq-platform-build-2026/)
+
+5. `microsoft-project-solara-agent-first-os-badge-hub-builder-guide`
+   - [commandline.microsoft.com](https://commandline.microsoft.com/project-solara-build-2026/) + [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/microsoft-unveils-project-solara-ai-a-chip-to-cloud-platform-built-to-power-a-new-generation-of-agent-first-enterprise-devices-hardware-designed-to-run-ai-agents-instead-of-traditional-apps)
+
+6. `surface-rtx-spark-dev-box-local-ai-workstation-build-2026-builder-guide`
+   - [Microsoft Devices Blog](https://blogs.windows.com/devices/2026/06/02/building-the-next-generation-of-devices-for-developers-surface-rtx-spark-dev-box/) + [Microsoft Surface product page](https://www.microsoft.com/en-us/surface/devices/surface-rtx-spark-dev-box)
+
+7. `trump-ai-eo-june-2026-frontier-model-review-builder-guide`
+   - [White House EO](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/) + [L&W analysis](https://www.lw.com/en/insights/president-trump-signs-executive-order-establishing-ai-cybersecurity-and-frontier-model-framework) + [Skadden analysis](https://www.skadden.com/insights/publications/2026/06/new-ai-executive-order)
+
+**2026-06-04 pages (3):**
+8. `alphabet-85-billion-stock-sale-ai-compute-race-builder-implications`
+   - [CNBC announcement](https://www.cnbc.com/2026/06/01/alphabet-to-raise-80-billion-from-stock-sales-to-fund-ai-buildout.html) + [SEC 8-K filing](https://www.sec.gov/Archives/edgar/data/0001652044/000119312526257724/d83560dex991.htm)
+
+9. `anthropic-claude-partner-network-services-track-partner-hub-builder-guide`
+   - [Anthropic official](https://www.anthropic.com/news/services-track-partner-hub) + [Quartz](https://qz.com/anthropic-claude-partner-network-services-track-hub-enterprise-060326)
+
+10. `code-with-claude-tokyo-june-10-builder-preview-guide`
+    - [Anthropic official event page](https://claude.com/code-with-claude/tokyo) + [Relve events](https://relvehq.com/events/code-with-claude-tokyo)
+
+**Uncited page count:** ~584 out of ~1,862 content pages. Down from ~594 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-27 = ~168 pages retrofitted.
+
+**Build:** Hugo clean build (3957 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue from 2026-06-04. Remaining uncited from that date (check): look for pages dated 2026-06-04 without http links beyond the 3 just done. Then move to 2026-06-05.
+- **NEW CONTENT (upcoming events):**
+  - July 20: WAIC 2026 closes — write digest of full conference (keynote details, key demos, WAICO outcomes)
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2477 — 2026-07-17 — WAIC 2026 Opening Day Article + Citation Retrofit Batch 26 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter

@@ -7,7 +7,7 @@ categories: ["AI Infrastructure", "Hardware", "Local AI", "Developer Tools"]
 tags: ["microsoft", "surface", "rtx-spark", "dev-box", "nvidia", "blackwell", "local-ai", "build-2026", "agentic-windows", "hardware", "ai-workstation", "builders-log"]
 ---
 
-Microsoft announced the **Surface RTX Spark Dev Box** at Build 2026 on June 2. It is a compact mini-PC designed specifically for AI developers — not a consumer product, not a laptop, not an Xbox. It is a dedicated local AI workstation powered by NVIDIA's RTX Spark superchip, and it competes directly with the Mac Studio and NVIDIA's DGX Spark in the emerging category of developer-grade local inference machines.
+Microsoft [announced the **Surface RTX Spark Dev Box** at Build 2026 on June 2](https://blogs.windows.com/devices/2026/06/02/building-the-next-generation-of-devices-for-developers-surface-rtx-spark-dev-box/). It is a compact mini-PC designed specifically for AI developers — not a consumer product, not a laptop, not an Xbox. It is a [dedicated local AI workstation powered by NVIDIA's RTX Spark superchip](https://www.microsoft.com/en-us/surface/devices/surface-rtx-spark-dev-box), and it competes directly with the Mac Studio and NVIDIA's DGX Spark in the emerging category of developer-grade local inference machines.
 
 If you read our [RTX Spark laptop chip article](/builders-log/nvidia-rtx-spark-computex-2026-local-ai-laptop-builder-guide/), the underlying silicon is the same. But the use case, thermal envelope, and out-of-box software stack are different enough to warrant a separate analysis. This article covers what was announced, what it can actually do, how it compares to alternatives, and how to decide whether it belongs in your stack.
 

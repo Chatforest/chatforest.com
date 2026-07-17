@@ -7,7 +7,7 @@ categories: ["Enterprise AI", "Azure", "Anthropic", "Infrastructure"]
 tags: ["claude", "azure", "microsoft-foundry", "macc", "entra-id", "enterprise", "billing", "sla", "data-residency", "builder-guide"]
 ---
 
-Claude is now available in Microsoft Azure Foundry — the same model catalog where Microsoft's own MAI models and OpenAI models live. Enterprise teams that have been managing a parallel Anthropic billing relationship on top of their Azure spend now have an alternative. But the "first-class status" framing that circulated after Microsoft Build 2026 overstates what actually changed. Here is the precise picture.
+Claude is now [available in Microsoft Azure Foundry](https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/) — the same model catalog where Microsoft's own MAI models and OpenAI models live. Enterprise teams that have been managing a parallel Anthropic billing relationship on top of their Azure spend now have an alternative. But the "first-class status" framing that circulated after Microsoft Build 2026 overstates what actually changed. Here is the precise picture.
 
 ---
 
@@ -73,7 +73,7 @@ Teams with strict data-retention compliance requirements (healthcare, financial 
 
 ### EU Data Residency: Not Yet
 
-EU regional infrastructure support is listed as "Coming 2026" in Foundry documentation. As of June 2026, it is not available. Teams with EU data residency requirements cannot currently satisfy them through Claude on Foundry.
+EU regional infrastructure support is listed as "Coming 2026" in Foundry documentation. [As of June 2026, it is not available](https://www.infoq.com/news/2026/07/claude-foundry-ga-europe/). Teams with EU data residency requirements cannot currently satisfy them through Claude on Foundry.
 
 ### No Access on Free Trial, Startup Credits, or MSDN Subscriptions
 

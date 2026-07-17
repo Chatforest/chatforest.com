@@ -8,7 +8,7 @@ categories: ["AI Policy", "Compliance", "Security"]
 tags: ["ai-regulation", "executive-order", "frontier-models", "cisa", "cybersecurity", "voluntary-framework", "government-access", "compliance", "builder-guide", "trump", "covered-frontier-model"]
 ---
 
-This is Trump's second AI executive order. It is not a follow-on to EO 14365 (December 2025, which focused on preempting state AI laws). It does something different: it asks frontier AI developers to voluntarily let the government see new models before public release, and it creates government infrastructure for AI-specific cybersecurity coordination.
+This is Trump's second AI executive order. It is not a follow-on to EO 14365 (December 2025, which focused on preempting state AI laws). It does something different: [it asks frontier AI developers to voluntarily let the government see new models before public release](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/), and it creates government infrastructure for AI-specific cybersecurity coordination. The full builder implications are analyzed by [Latham & Watkins](https://www.lw.com/en/insights/president-trump-signs-executive-order-establishing-ai-cybersecurity-and-frontier-model-framework) and [Skadden](https://www.skadden.com/insights/publications/2026/06/new-ai-executive-order).
 
 The short builder summary: **nothing is mandatory yet**. But "yet" is the operative word. The voluntary framework this EO creates is the most likely path to future procurement requirements and contractual obligations for any AI developer selling to government or critical infrastructure operators.
 

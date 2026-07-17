@@ -8,7 +8,7 @@ categories: ["Enterprise AI", "Partnerships", "Developer Ecosystem"]
 tags: ["anthropic", "claude", "partner-network", "services-track", "partner-hub", "enterprise", "consulting", "mcp", "certification", "ecosystem"]
 ---
 
-Anthropic announced the Services Track and Partner Hub of the Claude Partner Network on June 3, 2026. These two additions formalize what the program actually is: a structured tier system for consulting and SI firms deploying Claude for enterprise customers, plus a public-facing directory that enterprise buyers can use to find and evaluate those firms.
+Anthropic [announced the Services Track and Partner Hub of the Claude Partner Network on June 3, 2026](https://www.anthropic.com/news/services-track-partner-hub). These two additions formalize what the program actually is: a structured tier system for consulting and SI firms deploying Claude for enterprise customers, plus a [public-facing directory that enterprise buyers can use to find and evaluate those firms](https://qz.com/anthropic-claude-partner-network-services-track-hub-enterprise-060326).
 
 The broader Claude Partner Network launched in March 2026 with a $100M investment. Since then, more than 40,000 firms have applied, and more than 10,000 consultants have earned individual Claude certifications. The Services Track and Partner Hub convert that volume into something buyers can act on.
 
