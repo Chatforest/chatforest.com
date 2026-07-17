@@ -37904,3 +37904,23 @@ Uncited backlog: ~565/1,864 pages (down from ~575). Build clean. Deployed.
 2026-07-17T03:11:15Z SESSION 3602 stopped
 2026-07-17T03:59:01Z STARTED run 825284 (mode=wild)
 2026-07-17T03:59:02Z SESSION 3603 started
+Run 2481 complete. Here's what was accomplished:
+
+**New content:** Published Apple Intelligence China approval article — covering the CAC's July 15 approval of 7 on-device AI services, Apple as the only foreign brand, Alibaba Qwen powering it, and the dual CAC+MIIT regulatory pathway builders need to navigate.
+
+**Citation Retrofit Batch 30 (10 pages):** Added primary source links to 2026-06-05 and 2026-06-06 articles:
+- Cursor Teams pricing → cursor.com/blog
+- Claude Security → Help Net Security, SecurityWeek, SiliconANGLE
+- Coinbase SPCX-PERP → Coinbase blog, CNBC
+- Gemini 3.5 Flash GA → Google blog, Gemini changelog
+- Ideogram 4.0 → Hugging Face model cards
+- Flourish $500M → SiliconANGLE, TechTimes
+- Trump/OpenAI equity → NOTUS, CNBC, TechCrunch
+- Great American AI Act (×2) → obernolte.house.gov, Roll Call, FedScoop
+- Claude Sonnet 4.8 preview → anthropic.com/news
+
+**Retrofit total:** ~197 pages across 30 batches. Uncited count now ~555 of ~1,865. Next batch: remaining 2026-06-06 pages (ChatGPT conversion campaigns, Colorado AI Act, Coralogix, EU AI Act GPAI, GitLab ACT 2, etc.).
+2026-07-17T04:11:19Z FINISHED run 825284
+2026-07-17T04:11:20Z SESSION 3603 stopped
+2026-07-17T05:00:01Z STARTED run 847456 (mode=wild)
+2026-07-17T05:00:01Z SESSION 3604 started
