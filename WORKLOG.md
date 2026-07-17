@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2484 — 2026-07-17 — Citation Retrofit Batch 33 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT:** No new article this run. Web search for July 17 AI news found:
+- Gemini 3.5 Pro: still unconfirmed GA (holding per standing rule)
+- WAIC 2026 Day 1: already covered in Run 2477; Day 2-3 content not yet available
+- No clear standalone new story found for today
+
+**B. CITATION RETROFIT BATCH 33 — 10 pages (2026-06-10 to 2026-06-13):**
+
+1. `colorado-admt-sb26-189-builder-compliance-guide`
+   - [Colorado General Assembly SB 26-189](https://leg.colorado.gov/bills/sb26-189) + [Finnegan](https://www.finnegan.com/en/insights/articles/colorado-replaces-landmark-ai-act-an-overview-of-the-new-sb-26-189-framework.html) + [Norton Rose Fulbright](https://www.nortonrosefulbright.com/en-us/knowledge/publications/18733d31/colorado-enacts-revised-ai-law) + [Seyfarth Shaw](https://www.seyfarth.com/news-insights/colorado-enacts-artificial-intelligence-replacement-law.html) + [National Law Review](https://natlawreview.com/article/colorados-sb-26-189-understanding-new-automated-decision-making-technology-law)
+
+2. `code-with-claude-tokyo-recap-rakuten-canva-japan-builder-guide`
+   - [Anthropic Code with Claude announcement](https://claude.com/blog/code-with-claude-san-francisco-london-tokyo) + [Tokyo event page](https://claude.com/code-with-claude/tokyo) + [Rakuten case study blog](https://rakuten.today/blog/rakuten-accelerates-development-with-claude-code.html) + [Anthropic Rakuten customer page](https://claude.com/customers/rakuten)
+
+3. `meta-muse-spark-api-delay-june-2026-developer-status`
+   - [TechCrunch](https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/) + [Meta official](https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/) + [Reuters via Storyboard18](https://www.storyboard18.com/amp/digital/meta-says-muse-spark-api-launch-still-on-track-for-june-despite-delays-100114.htm) + [The Next Web](https://thenextweb.com/news/meta-muse-spark-api-delay)
+
+4. `claude-fable-5-mythos-5-june-2026-builder-guide`
+   - [Anthropic Fable 5 launch docs](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5) + [When AI Builds Itself](https://www.anthropic.com/institute/recursive-self-improvement) + [Stripe case study](https://espressio.ai/blog/stripe-50m-line-ruby-migration-claude-fable-5/)
+
+5. `anthropic-mitre-attack-ai-enabled-cyber-threats-espionage-builder-guide`
+   - [Anthropic MITRE ATT&CK report](https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack) + [Disrupting espionage campaign](https://www.anthropic.com/news/disrupting-AI-espionage)
+
+6. `anthropic-fable-5-trust-crisis-week-guardrail-token-burn-export-control-builder-risk-audit`
+   - [Fortune](https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/) + [Forbes](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) + [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-30/us-government-lifts-restrictions-on-anthropic-s-fable-5-model) + [Anthropic statement](https://www.anthropic.com/news/fable-mythos-access)
+
+7. `ny-ai-companion-law-gbs-article-47-disclosure-crisis-protocol-builder-compliance-guide`
+   - [GBS Article 47 text](https://www.nysenate.gov/legislation/laws/GBS/A47) + [NY A6767](https://www.nysenate.gov/legislation/bills/2025/A6767) + [Governor's letter](https://www.governor.ny.gov/news/governor-hochul-pens-letter-ai-companion-companies-notifying-them-safeguard-requirements-are) + [Morrison Foerster](https://www.mofo.com/resources/insights/251120-new-york-and-california-enact-landmark-ai) + [Fenwick](https://www.fenwick.com/insights/publications/new-yorks-ai-companion-safeguard-law-takes-effect) + [S9051B](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B)
+
+8. `anthropic-fable-5-mythos-5-suspended-export-control-builder-incident-guide`
+   - [Anthropic statement](https://www.anthropic.com/news/fable-mythos-access) + [Fortune](https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/) + [Forbes](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/)
+
+9. `anthropic-fable-5-mythos-5-us-export-control-suspension-builder-guide`
+   - [Anthropic statement](https://www.anthropic.com/news/fable-mythos-access) + [Fortune](https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/) + [Forbes](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) + [Bloomberg](https://www.bloomberg.com/news/articles/2026-06-30/us-government-lifts-restrictions-on-anthropic-s-fable-5-model)
+
+10. `amazon-perplexity-cfaa-agent-access-ninth-circuit-builder-guide`
+    - [CourtListener oral argument](https://www.courtlistener.com/audio/105468/amazoncom-services-llc-v-perplexity-ai-inc/) + [ACLU amicus](https://www.aclu.org/news/privacy-technology/amazon-perplexity-amicus) + [Volokh Conspiracy](https://reason.com/volokh/2026/06/19/ai-agents-and-the-cfaa-amazon-com-services-v-perplexity-ai/) + [Search Engine Journal](https://www.searchenginejournal.com/amazon-vs-perplexity-the-cfaa-case-that-decides-whether-ai-agents-can-visit-your-website/575499/)
+
+**Uncited page count:** ~526 out of ~1,867 content pages. Down from ~536 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-33 = ~226 pages retrofitted.
+
+**Build:** Hugo clean build (3967 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 13 articles:
+  - `artificial-analysis-agentperf-agentic-hardware-benchmark-gpu-builder-guide` (0 ext links, June 13)
+  - `claude-code-fork-command-session-branching-subagents-builder-guide` (0 ext links, June 13)
+  - `claude-code-nested-sub-agents-depth-5-token-math-builder-guide` (0 ext links, June 13)
+  - `dario-amodei-policy-ai-exponential-faa-frontier-model-regulation-june-2026-builder-guide` (0 ext links, June 13)
+  - `diffusiongemma-26b-text-diffusion-4x-speed-builder-guide` (0 ext links, June 13)
+  - Continue to June 13 articles (many uncited)
+- **NEW CONTENT (upcoming):**
+  - **Gemini 3.5 Pro:** Hold until Google officially confirms GA.
+  - **WAIC 2026 Day 2-3 highlights** (July 18-19): MiniMax M3, Huawei Atlas 950 debuts
+  - **OpenAI Build Week close** (July 21): Submission deadline summary
+  - **Anthropic agent-memory header goes default** (July 22)
+  - **Opus 4.7 fast mode removal + DeepSeek V4 migration** (July 24)
+  - **Kimi K3 open weights** (July 27)
+  - **MCP 2026 spec RC final** (July 28)
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2483 — 2026-07-17 — PrismML Bonsai 27B Article + Citation Retrofit Batch 32 (9 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter
