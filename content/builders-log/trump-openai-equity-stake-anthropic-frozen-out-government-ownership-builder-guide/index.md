@@ -8,7 +8,7 @@ categories: ["AI Policy", "Industry Analysis", "Infrastructure"]
 tags: ["openai", "anthropic", "trump", "government-equity", "public-wealth-fund", "api-risk", "federal-market", "geopolitics", "sam-altman", "ipo", "regulation", "builder-strategy"]
 ---
 
-On June 4–6, 2026, NOTUS, CNBC, and TechCrunch reported that the Trump administration is actively negotiating an equity stake in OpenAI. The structure being discussed: OpenAI would voluntarily donate shares to the US federal government, seeding a "Public Wealth Fund" that could distribute AI-era returns directly to American households.
+On June 4–6, 2026, [NOTUS](https://www.notus.org/technology/trump-ai-stake-openai), [CNBC](https://www.cnbc.com/2026/06/05/trump-open-ai-altman-stake.html), and [TechCrunch](https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/) reported that the Trump administration is actively negotiating an equity stake in OpenAI. The structure being discussed: OpenAI would voluntarily donate shares to the US federal government, seeding a "Public Wealth Fund" that could distribute AI-era returns directly to American households.
 
 Anthropic is not in these negotiations. The company explicitly confirmed it "is not having conversations with the administration about providing equity to the government." That's not neutrality — it is a direct consequence of a February 2026 confrontation in which Trump ordered all federal agencies to immediately cease using Anthropic's technology after Anthropic refused to allow the Pentagon to deploy Claude without safety guardrails.
 

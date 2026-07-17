@@ -9,7 +9,7 @@ tags: ["google", "gemini", "gemini-3.5-flash", "api-integration", "cost-analysis
 draft: false
 ---
 
-Gemini 3.5 Flash is now generally available. The preview and limited-access period is over — the model is stable, documented, and priced for production.
+Gemini 3.5 Flash is [now generally available](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/). The preview and limited-access period is over — the model is stable, documented, and priced for production. Pricing and specs are confirmed in the [Gemini API changelog](https://ai.google.dev/gemini-api/docs/changelog).
 
 Three numbers define what this GA means for builders:
 
