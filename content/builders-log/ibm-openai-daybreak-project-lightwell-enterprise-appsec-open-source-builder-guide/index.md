@@ -7,7 +7,7 @@ categories: ["OpenAI", "Security", "Enterprise AI", "Open Source"]
 tags: ["openai", "daybreak", "ibm", "red-hat", "project-lightwell", "appsec", "supply-chain-security", "open-source", "enterprise-ai", "vulnerability-management", "managed-security", "gpt-5-5-cyber"]
 ---
 
-On June 22, 2026, IBM joined OpenAI's Daybreak Cyber Partner Program and simultaneously launched a managed application security service that connects two of the largest AI-driven security commitments of the year: OpenAI's Daybreak and IBM's own Project Lightwell.
+On June 22, 2026, [IBM joined OpenAI's Daybreak Cyber Partner Program](https://newsroom.ibm.com/2026-06-22-ibm-and-openai-bring-frontier-ai-to-cyber-defense-helping-enterprises-keep-pace-with-machine-speed-threats) and simultaneously launched a managed application security service that connects two of the largest AI-driven security commitments of the year: OpenAI's Daybreak and IBM's own Project Lightwell.
 
 The convergence matters for builders because it describes what enterprise-scale AI security actually looks like when a frontier lab's specialized model meets a global professional services organization with 20,000 engineers deployed to the problem.
 
@@ -15,7 +15,7 @@ The convergence matters for builders because it describes what enterprise-scale 
 
 ## What Project Lightwell Is
 
-IBM and Red Hat announced Project Lightwell on May 28, 2026: a $5 billion commitment backed by more than 20,000 engineers to secure open source software. The framing was explicit — open source is the foundational layer of modern enterprise and AI systems, and that layer has a chronic vulnerability backlog that human teams alone cannot triage at the speed it accumulates.
+[IBM and Red Hat announced Project Lightwell on May 28, 2026](https://newsroom.ibm.com/2026-06-22-ibm-and-openai-bring-frontier-ai-to-cyber-defense-helping-enterprises-keep-pace-with-machine-speed-threats): a $5 billion commitment backed by more than 20,000 engineers to secure open source software. The framing was explicit — open source is the foundational layer of modern enterprise and AI systems, and that layer has a chronic vulnerability backlog that human teams alone cannot triage at the speed it accumulates.
 
 Lightwell establishes a trusted enterprise clearinghouse that operates across both upstream open source communities and enterprise environments. The operational model: AI assists with triage and prioritization of the vulnerability queue, engineers validate exploitability and develop patches, and the clearinghouse coordinates release engineering across dependencies.
 
@@ -25,7 +25,7 @@ IBM cited Anthropic's Project Glasswing (which targeted 10,000 open source bug f
 
 ## What OpenAI Daybreak Adds
 
-OpenAI's Daybreak program, launched May 11, 2026, is a specialized cybersecurity initiative around Codex Security and a restricted model tier — GPT-5.5-Cyber — designed for security workflows that the standard GPT-5.5 is not permitted to perform. Daybreak partner program membership gives enterprise security vendors access to these capabilities under a governance framework.
+OpenAI's [Daybreak program, launched May 11, 2026](https://www.prnewswire.com/news-releases/ibm-and-openai-bring-frontier-ai-to-cyber-defensehelping-enterprises-keep-pace-with-machine-speed-threats-302806843.html), is a specialized cybersecurity initiative around Codex Security and a restricted model tier — GPT-5.5-Cyber — designed for security workflows that the standard GPT-5.5 is not permitted to perform. Daybreak partner program membership gives enterprise security vendors access to these capabilities under a governance framework.
 
 When IBM joined Daybreak on June 22, it plugged those frontier AI capabilities directly into Project Lightwell's delivery infrastructure. The new managed application security service operates as follows:
 

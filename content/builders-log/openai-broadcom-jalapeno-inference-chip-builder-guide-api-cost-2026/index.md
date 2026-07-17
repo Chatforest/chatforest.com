@@ -5,7 +5,7 @@ description: "OpenAI and Broadcom unveiled Jalapeño on June 24, 2026 — a purp
 tags: ["openai", "inference", "hardware", "api-costs", "builder-guide"]
 ---
 
-OpenAI and Broadcom unveiled **Jalapeño** on June 24, 2026 — OpenAI's first custom AI chip, an inference-only ASIC built specifically for transformer workloads. The claim: 50% lower cost per inference token than current Nvidia GPUs. The caveat: full production ramp is 2027–2028. Nothing changes in your API bill today.
+OpenAI and Broadcom [unveiled **Jalapeño** on June 24, 2026](https://openai.com/index/openai-broadcom-jalapeno-inference-chip/) — OpenAI's first custom AI chip, an inference-only ASIC built specifically for transformer workloads. The claim: [50% lower cost per inference token than current Nvidia GPUs](https://www.tomshardware.com/tech-industry/artificial-intelligence/broadcom-and-openai-unveil-custom-built-jalapeno-inference-processor-openais-first-chip-is-a-massive-reticle-sized-asic-built-in-an-ultra-fast-nine-month-development-cycle). The caveat: full production ramp is 2027–2028. Nothing changes in your API bill today.
 
 Here is what the announcement actually contains, why it matters technically, and how to think about it for your roadmap.
 
@@ -15,9 +15,9 @@ Here is what the announcement actually contains, why it matters technically, and
 
 - **What**: OpenAI + Broadcom co-designed an LLM inference ASIC called Jalapeño. Manufactured by TSMC at 3nm. Reticle-sized die with 8 HBM modules.
 - **Performance claim**: ~50% lower inference cost per token vs. state-of-the-art Nvidia GPUs.
-- **Development**: Tape-out in 9 months (the fastest known ASIC development cycle for a high-performance chip). OpenAI used its own LLMs to accelerate hardware design.
+- **Development**: [Tape-out in 9 months (the fastest known ASIC development cycle for a high-performance chip)](https://www.tomshardware.com/tech-industry/artificial-intelligence/broadcom-and-openai-unveil-custom-built-jalapeno-inference-processor-openais-first-chip-is-a-massive-reticle-sized-asic-built-in-an-ultra-fast-nine-month-development-cycle). OpenAI used its own LLMs to accelerate hardware design.
 - **Deployment**: Small prototype deployments by end of 2026. Full production ramp across Microsoft and partner data centers in 2027–2028.
-- **Scale**: 10-gigawatt commitment through 2029.
+- **Scale**: [10-gigawatt commitment through 2029](https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/).
 - **Impact on your API calls today**: Zero. Backend infrastructure change only.
 
 ---

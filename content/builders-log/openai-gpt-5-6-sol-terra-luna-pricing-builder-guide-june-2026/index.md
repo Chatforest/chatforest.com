@@ -8,7 +8,7 @@ categories: ["OpenAI", "AI Models", "Developer Tools"]
 tags: ["openai", "gpt-5.6", "sol", "terra", "luna", "pricing", "model-selection", "agentic", "june-2026", "builders-log"]
 ---
 
-On June 26, 2026, OpenAI ended the pre-brief era. GPT-5.6 Sol, Terra, and Luna are real, launched, and priced. The catch: it is a government-gated limited preview. You may not be able to use it yet. You should be planning for it now.
+On June 26, 2026, [OpenAI ended the pre-brief era](https://openai.com/index/previewing-gpt-5-6-sol/). GPT-5.6 Sol, Terra, and Luna are real, launched, and priced. The catch: it is a government-gated limited preview. You may not be able to use it yet. You should be planning for it now.
 
 This is the builder guide for the actual launch, not the speculation. If you read the [pre-brief from May 30](/builders-log/gpt-56-pre-brief-backend-logs-openai-june-2026/), here is the update: the codenames were wrong (iris, ember, beacon never shipped publicly — OpenAI rebranded to Sol, Terra, Luna), the context window claim remains unconfirmed, and the three-tier structure turned out to be accurate.
 
@@ -35,9 +35,9 @@ Terra is the headline pricing story: OpenAI is offering GPT-5.5-class performanc
 
 GPT-5.5 shipped at $5 input / $30 output. Sol matches that price. So Sol is not a pricing play — it is a capability upgrade at the same cost:
 
-- **TerminalBench 2.1**: Sol (max mode) 88.76% vs. GPT-5.5 83.4%. Sol Ultra 91.91%.
-- **Agent's Last Exam**: Sol at 50.9% in code mode — described as the first model to pass the halfway mark on this benchmark.
-- **SecureBio biology**: approximately 9 points above GPT-5.5.
+- **TerminalBench 2.1**: [Sol (max mode) 88.76% vs. GPT-5.5 83.4%. Sol Ultra 91.91%.](https://openai.com/index/previewing-gpt-5-6-sol/)
+- **Agent's Last Exam**: [Sol at 50.9% in code mode](https://openai.com/index/previewing-gpt-5-6-sol/) — described as the first model to pass the halfway mark on this benchmark.
+- **SecureBio biology**: [approximately 9 points above GPT-5.5](https://openai.com/index/previewing-gpt-5-6-sol/).
 - **Token efficiency**: directionally 10–15% better, pending independent confirmation.
 
 If you are already paying $5/$30 for GPT-5.5, Sol is a free capability upgrade once access opens. No repricing required.
@@ -97,7 +97,7 @@ This is not production yet. But if you are architecting around latency constrain
 
 ## Google DeepMind Context
 
-The launch landed the same week that four senior Google DeepMind researchers resigned — Noam Shazeer (Transformer co-author) to OpenAI, John Jumper (Nobel laureate, AlphaFold) to Anthropic, Jonas Adler and Alexander Pritzel to Anthropic. Alphabet lost roughly $270B in market cap over three days.
+The launch landed the same week that [four senior Google DeepMind researchers resigned](https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/) — Noam Shazeer (Transformer co-author) [to OpenAI](https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html), John Jumper (Nobel laureate, AlphaFold) [to Anthropic](https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/), Jonas Adler and Alexander Pritzel to Anthropic. [Alphabet lost roughly $270B in market cap over three days](https://www.cnbc.com/2026/06/22/alphabet-goog-stock-ai-departures.html).
 
 This is not just industry gossip. Gemini 3.5 Pro's GA has slipped to July 2026, and Google is operating with a thinner research bench than it had six weeks ago. For builders currently evaluating GPT-5.6 Sol vs. Gemini 3.5 Pro: Gemini 3.5 Pro is not in the race yet. The comparison is Sol/Terra vs. GPT-5.5 vs. Gemini 3.5 Flash.
 

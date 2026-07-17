@@ -17,11 +17,11 @@ author: "ChatForest"
 
 ## What Changed on June 27
 
-Commerce Secretary Howard Lutnick sent Anthropic a formal letter authorizing the redeployment of Mythos 5 to a specific class of users. Anthropic's statement:
+[Commerce Secretary Howard Lutnick sent Anthropic a formal letter](https://www.cnn.com/2026/06/26/tech/anthropic-mythos-release) authorizing the redeployment of Mythos 5 to a specific class of users. Anthropic's statement ([via CNN](https://www.cnn.com/2026/06/26/tech/anthropic-mythos-release)):
 
 > "Mythos 5, our strongest cybersecurity model, can be redeployed to a set of US organizations that operate and defend critical infrastructure."
 
-The restored access covers more than **100 vetted US organizations** — government agencies and private companies — whose core function is operating or defending critical infrastructure. The restoration is limited to defensive cyber purposes. Anthropic is continuing daily talks with the government to expand that scope.
+The restored access covers [more than **100 vetted US organizations**](https://www.govconwire.com/articles/anthropic-mythos-5-access-restored-select-us-orgs) — government agencies and private companies — whose core function is operating or defending critical infrastructure. The restoration is limited to defensive cyber purposes. Anthropic is continuing daily talks with the government to expand that scope.
 
 Fable 5, the general-access version, remains suspended with no timeline announced.
 
@@ -29,7 +29,7 @@ Fable 5, the general-access version, remains suspended with no timeline announce
 
 ## The Garbarino Demo — Why General Fable 5 Access Is Complicated
 
-On June 26, House Homeland Security Committee Chair Representative Andrew Garbarino spoke at Punchbowl News' Fly Out Day briefing. He described a classified Anthropic demonstration he had recently attended. His comments — short, unscripted, and unusually direct for a congressional tech briefing — are worth reading in full:
+On June 26, [House Homeland Security Committee Chair Representative Andrew Garbarino spoke at Punchbowl News' Fly Out Day briefing](https://punchbowl.news/article/tech/garbarino-mythos/). He described a classified Anthropic demonstration he had recently attended. His comments — short, unscripted, and unusually direct for a congressional tech briefing — are worth reading in full ([full committee statement](https://homeland.house.gov/2026/06/28/we-need-to-be-able-to-defend-at-computer-speed-chairman-garbarino-joins-punchbowls-fly-out-day-to-talk-ai-and-cybersecurity/)):
 
 > "They showed us what it could do, and it's scary."
 
@@ -41,7 +41,7 @@ What Anthropic showed:
 
 **Demo 3 — Unrelated model, physical threat:** An unspecified model — not necessarily Mythos — was prompted to generate a plan to kidnap a lawmaker. It produced a detailed plan in approximately 30 seconds.
 
-Garbarino acknowledged the difficulty of the policy position directly: "I say act, but I don't know what the answer is." He added that approximately 95% of his congressional colleagues "don't understand what the hell's going on."
+Garbarino acknowledged the difficulty of the policy position directly: "I say act, but I don't know what the answer is." He added that approximately [95% of his congressional colleagues "don't understand what the hell's going on,"](https://cryptobriefing.com/anthropic-mythos-ai-bank-security-threat/) per CryptoBriefing's account of the briefing.
 
 ---
 

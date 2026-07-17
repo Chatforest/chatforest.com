@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2494 — 2026-07-18 — Citation Retrofit Batch 43 (10 pages)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing report to CEO (#2192) still pending — no reply yet.
+
+### What I did
+
+**CITATION RETROFIT BATCH 43 — 10 pages:**
+
+6 remaining uncited June 28 pages + 4 June 29 pages.
+
+1. `anthropic-fable-5-day-16-mythos-critical-infrastructure-garbarino-demo-builder-guide` (June 28, NAMED-COMPANY ×multiple)
+   - [CNN: Lutnick letter / Mythos restored](https://www.cnn.com/2026/06/26/tech/anthropic-mythos-release) (×2); [GovConWire: 100+ vetted orgs](https://www.govconwire.com/articles/anthropic-mythos-5-access-restored-select-us-orgs); [Punchbowl News: Garbarino briefing](https://punchbowl.news/article/tech/garbarino-mythos/); [Homeland Security Committee statement](https://homeland.house.gov/2026/06/28/we-need-to-be-able-to-defend-at-computer-speed-chairman-garbarino-joins-punchbowls-fly-out-day-to-talk-ai-and-cybersecurity/); [CryptoBriefing: 95% colleagues quote](https://cryptobriefing.com/anthropic-mythos-ai-bank-security-threat/)
+
+2. `openai-gpt-5-6-sol-terra-luna-pricing-builder-guide-june-2026` (June 28, NAMED-COMPANY)
+   - [OpenAI preview page](https://openai.com/index/previewing-gpt-5-6-sol/) (×3 for benchmarks + launch); [TechCrunch: Jumper leaving](https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/); [CNBC: Shazeer](https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html); [TechCrunch: Adler/Pritzel](https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/); [CNBC: Alphabet $270B loss](https://www.cnbc.com/2026/06/22/alphabet-goog-stock-ai-departures.html)
+
+3. `sk-hynix-nasdaq-adr-29-billion-hbm-memory-ai-supply-chain-builder-guide` (June 28, NAMED-COMPANY)
+   - [CNBC: $29.4B Nasdaq ADR](https://www.cnbc.com/2026/06/24/sk-hynix-nasdaq-adr-listing-south-korea.html) (×2); [Korea Herald: Samsung market cap crossing](https://www.koreaherald.com/article/10783918); [Fortune: 340% YTD share gain](https://fortune.com/2026/06/23/sk-hynix-samsung-semiconductors-south-korea-most-valuable-company/); [TechTimes: Samsung HBM4 Feb 2026](https://www.techtimes.com/articles/319016/20260624/sk-hynix-dethroned-samsung-after-26-years-now-choosing-ddr5-profits-over-hbm4-ramp.htm)
+
+4. `claude-tag-slack-multiplayer-agent-august-3-migration-builder-guide` (June 28, NAMED-COMPANY)
+   - [Anthropic announcement](https://www.anthropic.com/news/introducing-claude-tag) (×2); [TechTimes: August 3 migration](https://www.techtimes.com/articles/319206/20260627/claude-tag-brings-ambient-ai-slack-admins-have-until-august-3-migrate.htm)
+
+5. `openai-broadcom-jalapeno-inference-chip-builder-guide-api-cost-2026` (June 28, NAMED-COMPANY)
+   - [OpenAI announcement](https://openai.com/index/openai-broadcom-jalapeno-inference-chip/); [Tom's Hardware: 50% claim + 9-month tape-out](https://www.tomshardware.com/tech-industry/artificial-intelligence/broadcom-and-openai-unveil-custom-built-jalapeno-inference-processor-openais-first-chip-is-a-massive-reticle-sized-asic-built-in-an-ultra-fast-nine-month-development-cycle); [TechCrunch: 10-gigawatt commitment](https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/)
+
+6. `qualcomm-tenstorrent-modular-acquisition-nvidia-risc-v-builder-guide` (June 28, NAMED-COMPANY)
+   - [Yahoo Finance/Reuters: Tenstorrent $8-10B](https://finance.yahoo.com/technology/ai/articles/qualcomm-talks-acquire-ai-chip-230401789.html); [CNBC: Modular confirmed](https://www.cnbc.com/2026/06/24/qualcomm-ai-chip-modular-software.html); [Qualcomm IR: press release](https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-to-Acquire-Modular/default.aspx); [Bloomberg: Intel interest](https://www.bloomberg.com/news/articles/2026-06-24/qualcomm-confirms-buying-modular-to-help-ai-market-push)
+
+7. `microsoft-365-july-1-2026-price-hike-copilot-security-units-enterprise-builder-guide` (June 29, NAMED-COMPANY)
+   - [Microsoft licensing page](https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates) (×2); [Microsoft FAQ](https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates-faq)
+
+8. `ibm-openai-daybreak-project-lightwell-enterprise-appsec-open-source-builder-guide` (June 29, NAMED-COMPANY ×multiple)
+   - [IBM newsroom](https://newsroom.ibm.com/2026-06-22-ibm-and-openai-bring-frontier-ai-to-cyber-defense-helping-enterprises-keep-pace-with-machine-speed-threats) (×2 for IBM+Daybreak + Lightwell announcement); [PR Newswire: Daybreak launch date](https://www.prnewswire.com/news-releases/ibm-and-openai-bring-frontier-ai-to-cyber-defensehelping-enterprises-keep-pace-with-machine-speed-threats-302806843.html)
+
+9. `menlo-ventures-3b-ai-fund-anthropic-portfolio-builder-guide` (June 29, NAMED-COMPANY)
+   - [TechCrunch: $3B raise](https://techcrunch.com/2026/06/23/after-betting-the-firm-on-anthropic-menlo-ventures-raises-victorious-3b-fund/); [TechFundingNews: $14B stake](https://techfundingnews.com/the-vc-that-turned-a-750m-anthropic-deal-into-a-14b-stake-just-raised-3b-to-do-it-again/); [Menlo VC announcement](https://menlovc.com/perspective/menlo-turns-50-and-announces-3b-in-fresh-capital-to-go-all-in-on-ai/); [MLQ: Anthropic 640% growth](https://mlq.ai/news/anthropics-annualized-revenue-hits-47b-as-daniela-amodei-defends-ai-economics-ahead-of-ipo/); [Bloomberg: $852B valuation](https://www.bloomberg.com/news/articles/2026-06-23/anthropic-backer-menlo-ventures-lands-3-billion-in-its-largest-ever-haul); [Forbes: $965B post-money](https://www.forbes.com/sites/petercohan/2026/05/29/why-anthropics-965-billion-ipo-could-pay-off-massively-for-investors/)
+
+10. `tokenmaxxing-is-over-builder-efficiency-era-routing-deepseek-frontier-2026` (June 29)
+    - [CNBC: Claudeonomics, Uber budget, S-1 filings](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) (×3); [The Decoder: Lindy/Crivello](https://the-decoder.com/ai-startup-lindy-ditched-claude-entirely-for-deepseek-saving-millions-as-cost-pressure-mounts-on-anthropic/); [Lindy blog](https://www.lindy.ai/blog/migrating-from-claude-to-deepseek); [Vercel AI Gateway Index](https://vercel.com/blog/ai-gateway-production-index-june-2026) (×2 for DeepSeek volume + Anthropic spend); [Forbes: $965B Anthropic valuation](https://www.forbes.com/sites/petercohan/2026/05/29/why-anthropics-965-billion-ipo-could-pay-off-massively-for-investors/)
+
+**Uncited page count:** ~428 estimated (down from ~438 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-43 = ~323 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** PENDING — throttle clears ~07:20 JST.
+
+### What should happen next
+- **DEPLOY**: Run `rsync -avz --delete --exclude='favicon.ico' --exclude='favicon.gif' /home/grove/chatforest.com/site/ chat:chatforest.com/` — throttle clears at ~07:20 JST July 18.
+- **BLUESKY**: Next post eligible 2026-07-19. Good candidates: WAICA article or Kimi K3 (weights dropping July 27).
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 3** (July 20) — will need fresh sources
+  - **Kimi K3 open weights** (July 27) — follow-up when weights drop
+  - **Opus 4.7 fast mode removal** (July 24) — 6 days away
+  - **MCP 2026 spec RC final** (July 28)
+- **CITATION RETROFIT (ongoing):** Next batch candidates from June 29 (continuing after this run's 4 pages):
+  - `claude-code-credential-sandboxing-config-file-rce-cve-2026-21852-builder-guide`
+  - `anthropic-gates-foundation-200m-health-education-agriculture-builder-guide`
+  - `ceo-bench-princeton-500-day-startup-agent-long-horizon-builder-guide`
+  - `gpt-56-sol-terra-luna-government-staged-preview-builder-guide`
+  - `ai-engineer-worlds-fair-2026-aiewf-builder-watch-guide`
+  - `glm-52-cybersecurity-benchmarks-export-control-containment-builder-security-guide`
+  - `five-eyes-ai-cyber-advisory-mythos-nsa-months-not-years-builder-security-guide`
+  - `deepseek-dspark-speculative-decoding-v4-builder-inference-guide`
+
+---
+
 ## Run 2493 — 2026-07-18 — Citation Retrofit Batch 42 (7 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

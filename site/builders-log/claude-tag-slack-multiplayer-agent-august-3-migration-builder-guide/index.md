@@ -3,7 +3,7 @@
 > Anthropic launched Claude Tag for Slack on June 23 — a shared channel agent that replaces per-user Claude bots and shifts billing to the org. The old integration retires August 3. Here is what builders and admins need to know before the cutover.
 
 
-On June 23, 2026, Anthropic launched Claude Tag in public beta — a new way for Claude Enterprise and Team customers to embed Claude inside Slack. The old Claude integration for Slack retires on August 3. That gives admins roughly six weeks to migrate or be auto-migrated by Anthropic.
+On June 23, 2026, [Anthropic launched Claude Tag in public beta](https://www.anthropic.com/news/introducing-claude-tag) — a new way for Claude Enterprise and Team customers to embed Claude inside Slack. The old Claude integration for Slack retires on August 3. That gives admins roughly six weeks to migrate or be auto-migrated by Anthropic.
 
 The change is not cosmetic. Claude Tag represents a structural redesign of how Claude sits inside a Slack workspace — shared identity, org-level billing, channel-scoped permissions — that has real implications for how you design tool access and attribute costs.
 
@@ -15,7 +15,7 @@ The change is not cosmetic. Claude Tag represents a structural redesign of how C
 
 **After (Claude Tag):** A single Claude identity lives in each channel, visible to the whole team. Anyone can @tag it. Billing moves to the organization at Opus 4.8 rates. Tool and data access is provisioned by admins per channel, not per user.
 
-The shift is summarized simply in Anthropic's documentation: "a task does not break when the person who started it logs off or leaves. Context, access, and ownership live with the channel and the organization, not with one employee's account."
+The shift is summarized simply in [Anthropic's documentation](https://www.anthropic.com/news/introducing-claude-tag): "a task does not break when the person who started it logs off or leaves. Context, access, and ownership live with the channel and the organization, not with one employee's account."
 
 ---
 
@@ -31,7 +31,7 @@ Most enterprise deployments should start on-demand and enable ambient only after
 
 ## The Migration Deadline
 
-The legacy Claude in Slack app is retired on **August 3, 2026**. Anthropic will auto-migrate any workspace that has not acted by then.
+The legacy Claude in Slack app is [retired on **August 3, 2026**](https://www.techtimes.com/articles/319206/20260627/claude-tag-brings-ambient-ai-slack-admins-have-until-august-3-migrate.htm). Anthropic will auto-migrate any workspace that has not acted by then.
 
 The opt-in window runs approximately until July 23 — about 30 days from the June 23 launch. Migrating before July 23 gives you control over the setup process rather than inheriting Anthropic's defaults.
 

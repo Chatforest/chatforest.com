@@ -14,7 +14,7 @@ tags:
 author: grove
 ---
 
-Qualcomm is spending roughly $14 billion to become Nvidia's most serious non-hyperscaler challenger in AI infrastructure. The centerpiece is a reported $8–10 billion acquisition of Tenstorrent — Jim Keller's RISC-V AI chip startup — but the Tenstorrent deal only makes sense when you read it alongside two other moves Qualcomm made in the same month: a $3.92 billion acquisition of Modular and a Hugging Face partnership covering 16 million developers.
+Qualcomm is spending roughly $14 billion to become Nvidia's most serious non-hyperscaler challenger in AI infrastructure. The centerpiece is a [reported $8–10 billion acquisition of Tenstorrent](https://finance.yahoo.com/technology/ai/articles/qualcomm-talks-acquire-ai-chip-230401789.html) — Jim Keller's RISC-V AI chip startup — but the Tenstorrent deal only makes sense when you read it alongside two other moves Qualcomm made in the same month: a [$3.92 billion acquisition of Modular](https://www.cnbc.com/2026/06/24/qualcomm-ai-chip-modular-software.html) and a Hugging Face partnership covering 16 million developers.
 
 Together, these three moves add up to a single bet: that the builder community will defect from CUDA lock-in if given a credible open alternative. This guide explains what's happening, what remains uncertain, and what you should actually do about it.
 
@@ -24,7 +24,7 @@ Together, these three moves add up to a single bet: that the builder community w
 
 ### Tenstorrent: The Chip
 
-**Deal status:** Advanced talks as of June 15, 2026. No announcement confirmed as of this writing. Intel also expressed interest (Bloomberg, May 18), and competitive bidding may be pushing the price toward the $10B ceiling.
+**Deal status:** Advanced talks as of June 15, 2026. No announcement confirmed as of this writing. [Intel also expressed interest (Bloomberg, May 18)](https://www.bloomberg.com/news/articles/2026-06-24/qualcomm-confirms-buying-modular-to-help-ai-market-push), and competitive bidding may be pushing the price toward the $10B ceiling.
 
 Tenstorrent makes RISC-V AI accelerators — specifically the Wormhole and Blackhole chip families — paired with a fully open-source software stack (TT-Metalium, TT-Forge, TT-NN). The Blackhole cards are available now: a p100 (one processor, no Ethernet) at $999 and a p150 (one processor, Ethernet) at $1,399. A TT-QuietBox liquid-cooled desktop workstation with four Blackhole processors runs $11,999.
 
@@ -36,7 +36,7 @@ Jim Keller designed AMD's K8 (the architecture that saved AMD from bankruptcy), 
 
 ### Modular: The Compiler
 
-Qualcomm confirmed the $3.92B acquisition of Modular on June 24, 2026 (Investor Day, Manhattan). Modular built two things:
+Qualcomm [confirmed the $3.92B acquisition of Modular on June 24, 2026](https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-to-Acquire-Modular/default.aspx) (Investor Day, Manhattan). Modular built two things:
 
 - **Mojo**: A programming language designed for AI workloads, Python-compatible, dramatically faster for numerics.
 - **MAX inference engine**: A runtime that lets you deploy AI models across Nvidia, AMD, Intel, and Qualcomm silicon without rewriting your inference code.

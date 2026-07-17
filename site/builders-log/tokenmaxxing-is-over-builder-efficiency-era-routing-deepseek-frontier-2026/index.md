@@ -3,9 +3,9 @@
 > Enterprise AI spending culture has inverted. Companies that once ranked employees by token consumption are now capping budgets and switching to DeepSeek. Vercel's production data shows DeepSeek jumped from under 1% to 17% of tokens in a single month. Here is what builders need to change now.
 
 
-Sometime in April 2026, Meta circulated an internal leaderboard called "Claudeonomics." It ranked 85,000 employees by AI token consumption, with top performers averaging 281 billion tokens per month. Burning more tokens was treated as a proxy for productivity. The name was not ironic.
+Sometime in April 2026, [Meta circulated an internal leaderboard called "Claudeonomics,"](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) ranking 85,000 employees by AI token consumption, with top performers averaging 281 billion tokens per month. Burning more tokens was treated as a proxy for productivity. The name was not ironic.
 
-By late June 2026, Lindy CEO Flo Crivello had switched 100% of his company's API traffic from Claude to DeepSeek. His reported explanation: the cost curve "crashed to the ground." Vercel's AI Gateway Production Index confirmed the pattern at scale — DeepSeek's token share jumped from under 1% in April to 17% in May. Its spend share stayed near 1%.
+By late June 2026, [Lindy CEO Flo Crivello had switched 100% of his company's API traffic from Claude to DeepSeek](https://the-decoder.com/ai-startup-lindy-ditched-claude-entirely-for-deepseek-saving-millions-as-cost-pressure-mounts-on-anthropic/). His reported explanation: [the cost curve "crashed to the ground,"](https://www.lindy.ai/blog/migrating-from-claude-to-deepseek) saving millions. [Vercel's AI Gateway Production Index](https://vercel.com/blog/ai-gateway-production-index-june-2026) confirmed the pattern at scale — DeepSeek's token share jumped from under 1% in April to 17% in May. Its spend share stayed near 1%.
 
 Something inverted. Understanding what — and what it means for your stack — is the point of this article.
 
@@ -19,7 +19,7 @@ The problems were predictable in retrospect.
 
 **Amazon's case** is the clearest failure mode. Once token usage became a performance signal, Amazon developers ran meaningless tasks to inflate their numbers. Goodhart's Law, applied to LLMs: when a measure becomes a target, it stops being a measure.
 
-**Uber** is the cost version. The company exhausted its entire 2026 AI coding budget within four months and was forced to impose $1,500-per-employee-per-month caps. The metric it had optimized — tokens consumed — had no connection to the budget it forgot to protect.
+**Uber** is the cost version. [The company exhausted its entire 2026 AI coding budget within four months](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) and was forced to impose $1,500-per-employee-per-month caps. The metric it had optimized — tokens consumed — had no connection to the budget it forgot to protect.
 
 **The Jellyfish study** is the productivity version. Heavy AI users in that research were approximately 2× more productive than non-users. They also consumed 10× the tokens. The return on additional spend above a baseline was nearly zero. Separately, high-AI-adoption engineering environments showed bugs up 54% and code churn up 861% — unconstrained generation created review debt that erased the apparent speedups.
 
@@ -31,11 +31,11 @@ Vercel publishes a monthly AI Gateway Production Index tracking real API traffic
 
 **DeepSeek's emergence**
 
-DeepSeek V4 Flash launched at $0.14 input / $0.28 output per million tokens — roughly 20–50× cheaper than comparable Anthropic models. The market responded immediately: token share went from under 1% to 17% in a single month. Spend share stayed near 1% because the price differential is that large.
+[DeepSeek V4 Flash launched at $0.14 input / $0.28 output per million tokens](https://vercel.com/blog/ai-gateway-production-index-june-2026) — roughly 20–50× cheaper than comparable Anthropic models. The market responded immediately: token share went from under 1% to 17% in a single month. Spend share stayed near 1% because the price differential is that large.
 
 **Anthropic held its premium position — in spending, not volume**
 
-Anthropic's token share rose from 26% to 32%. Its spend share rose from 61% to 65%. This divergence — tokens growing slower than spend — means Anthropic is concentrating into higher-value, higher-cost use cases while lower-stakes workloads route elsewhere. Its strongest position is in high-stakes back-office and coding agent work, where it holds 70–80% spend share.
+[Anthropic's token share rose from 26% to 32%. Its spend share rose from 61% to 65%.](https://vercel.com/blog/ai-gateway-production-index-june-2026) This divergence — tokens growing slower than spend — means Anthropic is concentrating into higher-value, higher-cost use cases while lower-stakes workloads route elsewhere. Its strongest position is in high-stakes back-office and coding agent work, where it holds 70–80% spend share.
 
 **Price sensitivity exposed Gemini's miscalculation**
 
@@ -53,7 +53,7 @@ The June 26 CNBC report captured the inflection point. Companies that pushed dev
 
 The Lindy switch crystallizes this. Flo Crivello did not switch because Claude is worse — his team built on Claude because it was the best model for their use case. He switched because DeepSeek V4 Flash was good enough for enough of those use cases that the cost gap became indefensible to a board. A 20–50× price difference is not a line item negotiation. It is a rearchitecting decision.
 
-This dynamic is playing out across enterprise contracts. Both OpenAI and Anthropic filed confidential S-1s with the SEC in early June (OpenAI on June 8, Anthropic on June 1), with Anthropic at a $965 billion post-money valuation. Their investors need growth rates that justify these valuations. But the customers most likely to drive that growth are now the ones most focused on cost discipline. The tension is not going away.
+This dynamic is playing out across enterprise contracts. Both OpenAI and Anthropic [filed confidential S-1s with the SEC in early June](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) (OpenAI on June 8, Anthropic on June 1), with Anthropic at a [$965 billion post-money valuation](https://www.forbes.com/sites/petercohan/2026/05/29/why-anthropics-965-billion-ipo-could-pay-off-massively-for-investors/). Their investors need growth rates that justify these valuations. But the customers most likely to drive that growth are now the ones most focused on cost discipline. The tension is not going away.
 
 ---
 

@@ -3,7 +3,7 @@
 > SK Hynix filed a $29.4 billion Nasdaq ADR offering targeting July 10 — potentially the largest ADR in history. For AI builders, this is not a finance story. It is a supply-chain story: the company that controls 58% of all high-bandwidth memory is now publicly investable in the US, and it is using the proceeds to expand the one component that every GPU in the world depends on.
 
 
-On June 24, 2026, SK Hynix announced a $29.4 billion Nasdaq ADR offering targeting a July 10 debut — which would make it the largest American depositary receipt offering in history, surpassing Alibaba's $21.8 billion New York listing in 2014. Two days earlier, SK Hynix had briefly surpassed Samsung Electronics as South Korea's most valuable company for the first time in 26 years.
+On June 24, 2026, [SK Hynix announced a $29.4 billion Nasdaq ADR offering](https://www.cnbc.com/2026/06/24/sk-hynix-nasdaq-adr-listing-south-korea.html) targeting a July 10 debut — which would make it the largest American depositary receipt offering in history, surpassing Alibaba's $21.8 billion New York listing in 2014. Two days earlier, SK Hynix had briefly surpassed Samsung Electronics as South Korea's most valuable company for the first time in 26 years.
 
 This is not a finance story with an AI footnote. It is a supply-chain story with a finance mechanism attached. SK Hynix controls 58% of the global market for high-bandwidth memory — the component stacked on every Nvidia GPU, every TPU, every accelerator used for AI training and inference. When builders talk about "GPU availability," they are, ultimately, talking about HBM availability. And the company that sets the pace of that availability just filed to list on Nasdaq.
 
@@ -11,9 +11,9 @@ This is not a finance story with an AI footnote. It is a supply-chain story with
 
 ## The Brief Market Cap Crown
 
-On June 22, 2026, at 12:42 PM local time in Seoul, SK Hynix's market capitalization crossed Samsung Electronics' for the first time since 2000, reaching approximately ₩2,091 trillion against Samsung's ₩2,090 trillion. Samsung shares recovered the next day in a broad KOSPI selloff that pulled both stocks down over 12%, reclaiming the lead briefly — but the symbolic weight of the crossing did not diminish.
+On June 22, 2026, at 12:42 PM local time in Seoul, [SK Hynix's market capitalization crossed Samsung Electronics' for the first time since 2000](https://www.koreaherald.com/article/10783918), reaching approximately ₩2,091 trillion against Samsung's ₩2,090 trillion. Samsung shares recovered the next day in a broad KOSPI selloff that pulled both stocks down over 12%, reclaiming the lead briefly — but the symbolic weight of the crossing did not diminish.
 
-SK Hynix shares are up more than 340% year-to-date as of the crossing. Samsung, which has held South Korea's largest market cap continuously since November 2000, has been structurally disadvantaged by the AI memory transition: it diversified across smartphones, displays, and consumer electronics while SK Hynix concentrated on DRAM and HBM.
+[SK Hynix shares are up more than 340% year-to-date](https://fortune.com/2026/06/23/sk-hynix-samsung-semiconductors-south-korea-most-valuable-company/) as of the crossing. Samsung, which has held South Korea's largest market cap continuously since November 2000, has been structurally disadvantaged by the AI memory transition: it diversified across smartphones, displays, and consumer electronics while SK Hynix concentrated on DRAM and HBM.
 
 In the current AI cycle, that concentration paid off. Samsung's broad portfolio buffered losses elsewhere; SK Hynix rode a single wave of structural demand all the way to a historic inversion.
 
@@ -21,7 +21,7 @@ In the current AI cycle, that concentration paid off. Samsung's broad portfolio 
 
 ## The Offering
 
-The ADR plan, approved by SK Hynix's board on June 24, targets issuance of 17.79 million new depositary receipts at approximately ₩255,000 per share ($166), raising up to ₩45.45 trillion (~$29.4 billion). HSBC has set a target of $200 per ADR share — roughly 20% above the filing price — citing HBM4 ramp expectations and the Yongin cluster timeline.
+The ADR plan, [approved by SK Hynix's board on June 24](https://www.cnbc.com/2026/06/24/sk-hynix-nasdaq-adr-listing-south-korea.html), targets issuance of 17.79 million new depositary receipts at approximately ₩255,000 per share ($166), raising up to ₩45.45 trillion (~$29.4 billion). HSBC has set a target of $200 per ADR share — roughly 20% above the filing price — citing HBM4 ramp expectations and the Yongin cluster timeline.
 
 The underwriting syndicate includes Bank of America Securities, Citigroup Global Markets, Goldman Sachs, and JP Morgan Securities. The Nasdaq debut is targeted for July 10, subject to SEC approval and market conditions.
 
@@ -51,7 +51,7 @@ You cannot train large models without it. You cannot run cost-effective inferenc
 
 SK Hynix has held approximately 57–58% of the global HBM market through 2025–2026, with its HBM capacity "essentially sold out for 2026" as of last quarter. The company posted Q1 2026 revenue of 52.58 trillion won ($35.6 billion), nearly tripling year-over-year, with operating margins of 72% — a figure unheard of in traditional memory cycles, where 15–20% margins were considered healthy.
 
-Micron holds roughly 25% of the HBM market. Samsung holds the rest. Samsung achieved a technical lead in HBM4 mass production in February 2026, which is why SK Hynix's strategy of prioritizing DDR5 profits over an aggressive HBM4 ramp in H1 2026 raised questions — though the company has maintained that its HBM4 yields are competitive and that the DDR5 margin profile makes the tradeoff rational while it completes P&T7.
+Micron holds roughly 25% of the HBM market. Samsung holds the rest. [Samsung achieved a technical lead in HBM4 mass production in February 2026](https://www.techtimes.com/articles/319016/20260624/sk-hynix-dethroned-samsung-after-26-years-now-choosing-ddr5-profits-over-hbm4-ramp.htm), which is why SK Hynix's strategy of prioritizing DDR5 profits over an aggressive HBM4 ramp in H1 2026 raised questions — though the company has maintained that its HBM4 yields are competitive and that the DDR5 margin profile makes the tradeoff rational while it completes P&T7.
 
 ---
 

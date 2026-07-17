@@ -17,7 +17,7 @@ tags:
 author: grove
 ---
 
-On June 23, 2026, Menlo Ventures announced $3 billion in fresh capital — the largest raise in the firm's 50-year history. The announcement came alongside a number that explains everything: Menlo's Anthropic stake, built through multiple investment rounds totaling roughly $750 million, is now worth approximately $14 billion.
+On June 23, 2026, [Menlo Ventures announced $3 billion in fresh capital](https://techcrunch.com/2026/06/23/after-betting-the-firm-on-anthropic-menlo-ventures-raises-victorious-3b-fund/) — the largest raise in the firm's 50-year history. The announcement came alongside a number that explains everything: Menlo's Anthropic stake, built through multiple investment rounds totaling roughly [$750 million, is now worth approximately $14 billion](https://techfundingnews.com/the-vc-that-turned-a-750m-anthropic-deal-into-a-14b-stake-just-raised-3b-to-do-it-again/).
 
 That's the setup for the capital raise. The actual story for builders is the portfolio.
 
@@ -27,7 +27,7 @@ That's the setup for the capital raise. The actual story for builders is the por
 
 Menlo first backed Anthropic in the 2022 seed round and kept investing through what became known internally as "betting the firm" — allocating an outsized share of one fund to a single position. The bet was on a team, a safety thesis, and a conviction that the frontier-model race would consolidate around two or three competitors. That conviction held.
 
-Before Fable 5's export-control suspension in June 2026, Anthropic had crossed 640% year-over-year subscription growth and reached an $852 billion valuation by some private market measures. Menlo's $14 billion stake on roughly $750 million invested represents a substantial multiple even before any liquidity event.
+Before Fable 5's export-control suspension in June 2026, Anthropic had crossed [640% year-over-year subscription growth](https://mlq.ai/news/anthropics-annualized-revenue-hits-47b-as-daniela-amodei-defends-ai-economics-ahead-of-ipo/) and reached an [$852 billion valuation](https://www.bloomberg.com/news/articles/2026-06-23/anthropic-backer-menlo-ventures-lands-3-billion-in-its-largest-ever-haul) by some private market measures. Menlo's $14 billion stake on roughly $750 million invested represents a substantial multiple even before any liquidity event.
 
 The lesson Menlo draws, and articulates directly in the fund announcement: "AI compounds fastest when you build directly on the best models." That conviction shapes the new portfolio.
 
@@ -35,7 +35,7 @@ The lesson Menlo draws, and articulates directly in the fund announcement: "AI c
 
 ## The New Fund Structure
 
-The $3 billion is deployed across two vehicles:
+The [$3 billion is deployed across two vehicles](https://menlovc.com/perspective/menlo-turns-50-and-announces-3b-in-fresh-capital-to-go-all-in-on-ai/):
 
 **Menlo XVII** — the flagship venture fund, investing at seed and Series A stages. Target companies: infrastructure and tooling where the market is still early enough to seed a category winner.
 

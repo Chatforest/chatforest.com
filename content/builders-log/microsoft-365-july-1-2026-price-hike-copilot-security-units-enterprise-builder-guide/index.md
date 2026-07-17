@@ -8,7 +8,7 @@ categories: ["AI Tools", "Cost & Efficiency", "Enterprise"]
 tags: ["microsoft", "m365", "copilot", "security-copilot", "copilot-studio", "enterprise", "pricing", "june-2026", "builders-log"]
 ---
 
-Microsoft 365 pricing increases of 5–33% take effect July 1, 2026. Volume discounts on the Copilot enterprise add-on expire today — June 30 is the last day to lock the current rate. Security Copilot moves from a standalone purchase to a bundled allocation inside E5, with a metered overage model that has caught enterprise teams off guard.
+[Microsoft 365 pricing increases of 5–33% take effect July 1, 2026](https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates). Volume discounts on the Copilot enterprise add-on expire today — June 30 is the last day to lock the current rate. Security Copilot moves from a standalone purchase to a bundled allocation inside E5, with a metered overage model that has caught enterprise teams off guard.
 
 Here is the complete picture for builders who ship on or integrate with Microsoft's AI stack.
 
@@ -34,7 +34,7 @@ These are monthly per-user prices, billed annually, in USD:
 
 **M365 Copilot enterprise add-on**: stays at $30/user/month. Volume discounts that many customers negotiated expire June 30, 2026. Renewals signed from July 1 onward lose those discounts.
 
-Microsoft cites new capabilities rolling out in June 2026 as justification: the increases are framed as value additions, not pure price hikes. The table above lets you decide whether the addition matches the increase for your team's use patterns.
+Microsoft [cites new capabilities rolling out in June 2026 as justification](https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates-faq): the increases are framed as value additions, not pure price hikes. The table above lets you decide whether the addition matches the increase for your team's use patterns.
 
 ---
 
@@ -42,7 +42,7 @@ Microsoft cites new capabilities rolling out in June 2026 as justification: the 
 
 The most consequential change for enterprise builders is how Security Copilot is now handled inside E5.
 
-**What changed:** Security Copilot is now bundled into Microsoft 365 E5 (and E7) instead of requiring a separate SKU. Every E5 tenant gets an allocation of 400 Security Compute Units (SCUs) per 1,000 user licenses per month. This is not optional — it is allocated whether you use it or not.
+**What changed:** [Security Copilot is now bundled into Microsoft 365 E5](https://www.microsoft.com/en-us/licensing/news/2026-m365-packaging-pricing-updates) (and E7) instead of requiring a separate SKU. Every E5 tenant gets an allocation of 400 Security Compute Units (SCUs) per 1,000 user licenses per month. This is not optional — it is allocated whether you use it or not.
 
 **The overage trap:** Once your tenant exhausts its monthly SCU allocation, usage does not stop. Additional SCUs cost $6 each. For a large enterprise running threat hunting or automated incident response workloads, this can accumulate quickly. A single complex investigation that runs the Security Copilot summarization + enrichment + hunting chain can consume dozens of SCUs.
 
