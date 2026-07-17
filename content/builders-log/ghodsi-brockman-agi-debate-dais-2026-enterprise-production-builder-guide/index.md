@@ -8,7 +8,7 @@ categories: ["Databricks", "Agents", "Enterprise AI", "Strategy"]
 tags: ["databricks", "dais-2026", "agi", "ghodsi", "brockman", "enterprise-ai", "agents", "production", "lakebase", "builder-guide", "2026"]
 ---
 
-At the close of the Databricks Data + AI Summit on June 18, 2026, the conference's two most prominent outside keynote voices offered sharply different answers to the same question: has AI caught up to humans?
+At the close of the [Databricks Data + AI Summit 2026](https://www.databricks.com/dataaisummit), the conference's two most prominent outside keynote voices offered sharply different answers to the same question: has AI caught up to humans? [Databricks' recap](https://www.databricks.com/blog/openai-and-databricks-dais-2026-making-enterprise-ai-real) and [HPC Wire's analysis](https://www.hpcwire.com/bigdatawire/2026/06/16/ali-ghodsis-keynote-ai-doesnt-have-an-intelligence-problem-it-has-a-context-problem/) provide full context.
 
 Databricks CEO **Ali Ghodsi** said yes. "AGI has already arrived. It's smart enough and doesn't need to be smarter. AI no longer has an intelligence problem."
 

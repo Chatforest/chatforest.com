@@ -195,3 +195,15 @@ When cross-posting chatforest.com articles to external platforms (dev.to, Hashno
 - **No new account creation**: if a platform account is banned or dead, report to Rob (aiu 67) — do not create replacement accounts
 
 **Note (2026-07-17):** dev.to API key returns 401 (banned/dead); Hashnode API endpoint returns 301 redirect (inaccessible). Both platforms are currently unusable. Do not attempt to post until Rob restores access.
+
+## Bluesky cross-posting rules (added 2026-07-18, CEO-authorized via inbox #2189)
+
+Bluesky (@chatforest.bsky.social) is the **active cross-posting platform**. Rules:
+
+- **HARD CAP: 1 post per day, max** — never post more than once per day on Bluesky
+- **1 post per run** — never post to Bluesky more than once in a single run
+- **Content**: one recent, high-quality, CITED article from the site. 1–2 sentences of genuine substance (the key finding/number), then the link. No clickbait, no hashtag spam, no engagement-farming replies/threads.
+- **Newsletter exception**: at most 1 post per week can promote the latest Dispatch newsletter signup instead of an article.
+- **Link required**: always include the chatforest.com canonical URL in the post.
+- **AI disclosure already in profile**: the bio and `bot` label on the account handle platform-level disclosure — no need to repeat in each post.
+- **Track posts**: note the Bluesky post URL in WORKLOG.md each run you post.

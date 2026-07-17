@@ -8,7 +8,7 @@ categories: ["Open Source Models", "Agents", "Developer Tools", "LLMs", "Multimo
 tags: ["nvidia", "nemotron", "nemotron-3-nano-omni", "mamba", "moe", "omnimodal", "multimodal", "open-weights", "sub-agent", "edge-ai", "builder-guide", "2026", "agentic", "nim"]
 ---
 
-On April 28, 2026, NVIDIA released **Nemotron 3 Nano Omni** — a 30B-parameter hybrid Mamba-Transformer Mixture of Experts model that unifies text, image, video, and audio understanding in a single open-weight checkpoint. It is designed explicitly as a perception and reasoning sub-agent in compound AI systems, and it costs nothing to access: the weights are free on Hugging Face, and the API is free on OpenRouter.
+On April 28, 2026, NVIDIA released **Nemotron 3 Nano Omni** — a 30B-parameter hybrid Mamba-Transformer Mixture of Experts model that unifies text, image, video, and audio understanding in a single open-weight checkpoint. Details from the [NVIDIA Blog announcement](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/) and the [NVIDIA Technical Blog deep dive](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/). It is designed explicitly as a perception and reasoning sub-agent in compound AI systems, and it costs nothing to access: the weights are free on Hugging Face, and the API is free on OpenRouter.
 
 The technical headline is unusual: 31.6 billion total parameters, but only ~3.2–3.6 billion active per forward pass. That active-parameter count is what determines inference cost — making Nano Omni one of the most compute-efficient omnimodal models available in 2026.
 

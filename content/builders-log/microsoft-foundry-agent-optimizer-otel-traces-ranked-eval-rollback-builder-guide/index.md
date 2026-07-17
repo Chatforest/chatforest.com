@@ -8,7 +8,7 @@ categories: ["AI Frameworks", "Developer Tools", "Enterprise AI"]
 tags: ["microsoft", "foundry", "agent-optimizer", "opentelemetry", "otel", "hosted-agents", "evaluation", "a2a", "production-ai", "builders-log"]
 ---
 
-Microsoft's **Foundry Agent Optimizer** entered public preview on June 18, 2026 — approximately 30 days after its announcement at Build 2026 on June 4. It is a production improvement loop built directly into the Foundry Control Plane: ingest your agent's live traces, generate ranked improvement candidates, validate them against your evaluations, and deploy with full audit lineage and rollback.
+Microsoft's **Foundry Agent Optimizer** entered public preview on June 18, 2026 — approximately 30 days after its [announcement at Build 2026 on June 4](https://devblogs.microsoft.com/foundry/agent-optimizer-build2026/). It is a production improvement loop built directly into the Foundry Control Plane: ingest your agent's live traces, generate ranked improvement candidates, validate them against your evaluations, and deploy with full audit lineage and rollback. Full details in the [Microsoft Foundry June 2026 release notes](https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-june-2026/).
 
 This is not a debugging tool. It is a production improvement workflow that treats trace data as training signal.
 

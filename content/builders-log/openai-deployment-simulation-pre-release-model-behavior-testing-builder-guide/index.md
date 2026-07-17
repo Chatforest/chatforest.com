@@ -8,7 +8,7 @@ categories: ["OpenAI", "AI Safety", "Developer Tools"]
 tags: ["openai", "deployment-simulation", "model-safety", "pre-deployment-testing", "agentic-ai", "gpt-5", "evaluation", "misalignment", "june-2026", "builders-log"]
 ---
 
-OpenAI published details of its **Deployment Simulation** method on June 16, 2026 — a pre-release testing technique that replays anonymized past user conversations through a candidate model before it goes live. The result: 92% directional accuracy at predicting which behavior patterns will increase or decrease after a model update, at a median multiplicative error of 1.5×. Part of our **[Builder's Log](/builders-log/)**.
+OpenAI published details of its **Deployment Simulation** method on June 16, 2026 — a pre-release testing technique that replays anonymized past user conversations through a candidate model before it goes live. The result: 92% directional accuracy at predicting which behavior patterns will increase or decrease after a model update, at a median multiplicative error of 1.5×. Based on the [official OpenAI post](https://openai.com/index/deployment-simulation/) and the [accompanying arXiv paper](https://arxiv.org/abs/2607.07184). Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 

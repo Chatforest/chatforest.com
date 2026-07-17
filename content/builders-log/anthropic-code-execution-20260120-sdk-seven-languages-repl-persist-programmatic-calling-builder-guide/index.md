@@ -9,7 +9,7 @@ tags: ["anthropic", "claude", "code-execution", "sdk", "go", "java", "ruby", "ph
 draft: false
 ---
 
-On June 18, 2026, Anthropic shipped typed SDK support for `code_execution_20260120` across all seven official client libraries: Python, TypeScript, Go, Java, Ruby, PHP, and C#. No beta header is required.
+On June 18, 2026, Anthropic shipped typed SDK support for `code_execution_20260120` across all seven official client libraries: Python, TypeScript, Go, Java, Ruby, PHP, and C#. No beta header is required. Sourced from the [Claude platform release notes](https://platform.claude.com/docs/en/release-notes/overview).
 
 The version number matters. `code_execution_20260120` is not a minor alias — it's the version that enables two significant capabilities:
 

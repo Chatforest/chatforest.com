@@ -8,7 +8,7 @@ categories: ["Open Source Models", "Agents", "Developer Tools", "LLMs", "Multimo
 tags: ["microsoft", "phi-4", "phi-4-reasoning-vision", "vision-language", "multimodal", "gui-agent", "computer-use", "dynamic-reasoning", "siglip2", "open-weights", "edge-ai", "builder-guide", "2026", "agentic", "azure-ai-foundry"]
 ---
 
-On March 4, 2026, Microsoft Research published **Phi-4-reasoning-vision-15B** — a 15-billion-parameter open-weight vision-language model trained to decide, at inference time, whether a given task actually requires reasoning. Most multimodal models either always think (slow, expensive) or never think (fast, weak on hard problems). This one reads the task and chooses.
+On March 4, 2026, Microsoft Research published **Phi-4-reasoning-vision-15B** — a 15-billion-parameter open-weight vision-language model trained to decide, at inference time, whether a given task actually requires reasoning. Details from the [Microsoft Research blog](https://www.microsoft.com/en-us/research/blog/phi-4-reasoning-vision-and-the-lessons-of-training-a-multimodal-reasoning-model/) and the [Azure AI Foundry announcement](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-phi-4-reasoning-vision-to-microsoft-foundry/4499154). Most multimodal models either always think (slow, expensive) or never think (fast, weak on hard problems). This one reads the task and chooses.
 
 The technical name for this capability is **dynamic reasoning activation**. The model generates a `<think>` block only when the problem calls for it — math, science diagrams, complex chart analysis — and returns a direct answer for perception tasks like OCR, object grounding, and image captioning. The result is a model that runs at perception-layer speed on easy inputs while retaining chain-of-thought depth for hard ones.
 
@@ -287,7 +287,7 @@ The model's ability to process documents at native aspect ratio (no distortion f
 
 **License:** MIT — full commercial use, no restrictions on modification or distribution.
 
-**Weights:** Available on Hugging Face at `microsoft/Phi-4-reasoning-vision-15B`.
+**Weights:** Available on [Hugging Face at `microsoft/Phi-4-reasoning-vision-15B`](https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B).
 
 **Enterprise:** Azure AI Foundry with managed inference, logging, and SLA.
 

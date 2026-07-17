@@ -3,7 +3,7 @@
 > StepFun released Step 3.7 Flash on May 29, 2026: a 198B sparse MoE open-weight model with 11B active parameters, 256K context, and SWE-bench PRO score of 56.3 — second only to Claude Opus 4.6. Pricing starts at $0.20/$1.15 per million tokens. Here is what builders need to know.
 
 
-On May 29, 2026, StepFun released Step 3.7 Flash under Apache 2.0 — a 198B sparse Mixture-of-Experts vision-language model that places second on SWE-Bench PRO behind only Claude Opus 4.6. The headline number: with Advisor Mode on SWE-bench Verified tasks, it delivers 97% of Claude Opus 4.6's coding performance at approximately one-ninth the per-task cost ($0.19 vs $1.76).
+On May 29, 2026, StepFun released Step 3.7 Flash under Apache 2.0 — a 198B sparse Mixture-of-Experts vision-language model that places second on SWE-Bench PRO behind only Claude Opus 4.6. The headline number: with Advisor Mode on SWE-bench Verified tasks, it delivers 97% of Claude Opus 4.6's coding performance at approximately one-ninth the per-task cost ($0.19 vs $1.76). Details from [StepFun's official announcement](https://static.stepfun.com/blog/step-3.7-flash/) and the [model card on Hugging Face](https://huggingface.co/stepfun-ai/Step-3.7-Flash).
 
 If you are building coding agents and weighing cost against capability, Step 3.7 Flash is now a legitimate contender to evaluate.
 

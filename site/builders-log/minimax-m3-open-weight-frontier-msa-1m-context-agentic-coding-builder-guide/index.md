@@ -3,7 +3,7 @@
 > MiniMax M3 is the first open-weight model to combine frontier-level coding, a 1M-token context window, and native multimodality in one checkpoint. Here is everything builders need to know about its MSA architecture, benchmarks, pricing, and agentic use cases.
 
 
-On June 1, 2026, MiniMax released **M3** — and made a claim that deserves scrutiny: this is the first open-weight model to simultaneously offer frontier-level coding performance, a 1-million-token context window, and native multimodal input in a single checkpoint.
+On June 1, 2026, MiniMax released **M3** — and made a claim that deserves scrutiny: this is the first open-weight model to simultaneously offer frontier-level coding performance, a 1-million-token context window, and native multimodal input in a single checkpoint. The [model card on Hugging Face](https://huggingface.co/MiniMaxAI/MiniMax-M3) is the primary source for architecture and benchmark details.
 
 After reviewing published benchmarks, the technical report, and API provider documentation, the claim holds up. M3 is the most capable open-weight coding model available today, and it closes a gap that has existed since LLM-powered software agents became practical: the best coding models have all been proprietary.
 

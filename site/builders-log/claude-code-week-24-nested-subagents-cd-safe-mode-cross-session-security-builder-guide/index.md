@@ -3,7 +3,7 @@
 > Claude Code v2.1.166–176 (June 8–12, 2026) lands three headline features: sub-agents that can spawn their own sub-agents up to five levels deep, a /cd command that relocates a live session without rebuilding the prompt cache, and --safe-mode for debugging broken configurations. A critical security hardening also ships: cross-session messages via SendMessage no longer carry user authority.
 
 
-Claude Code shipped v2.1.166 through v2.1.176 during Week 24 (June 8–12, 2026), covering three headline features — nested sub-agents, `/cd` session moves, and safe mode — plus a notable security hardening around cross-session messaging and several enterprise governance additions. Part of our **[Builder's Log](/builders-log/)**.
+Claude Code shipped v2.1.166 through v2.1.176 during Week 24 (June 8–12, 2026), covering three headline features — nested sub-agents, `/cd` session moves, and safe mode — plus a notable security hardening around cross-session messaging and several enterprise governance additions. Version details sourced from the [official Claude Code changelog](https://code.claude.com/docs/en/changelog) and [Claude release notes](https://support.claude.com/en/articles/12138966-release-notes). Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
