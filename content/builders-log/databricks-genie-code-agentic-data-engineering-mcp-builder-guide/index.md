@@ -12,9 +12,9 @@ Databricks launched two things called "Genie" and managed to confuse most of the
 
 **AI/BI Genie** is the conversational SQL tool for business users. You ask a natural language question, it writes and runs SQL, you get a chart. Single-turn. Non-technical audience. That shipped earlier and got most of the press coverage.
 
-**Genie Code** is a different product entirely. It launched March 11, 2026, and it is aimed at data engineers, data scientists, and analysts who write code. It lives inside the Databricks workspace — embedded in notebooks, the SQL editor, Lakeflow Pipelines, and AI/BI Dashboards — and operates as a multi-step agentic assistant that plans, executes, reads outputs, and iterates, not just a code autocomplete.
+**Genie Code** is a different product entirely. It [launched March 11, 2026](https://www.databricks.com/blog/introducing-genie-code), and it is aimed at data engineers, data scientists, and analysts who write code. It lives inside the Databricks workspace — embedded in notebooks, the SQL editor, Lakeflow Pipelines, and AI/BI Dashboards — and operates as a multi-step agentic assistant that plans, executes, reads outputs, and iterates, not just a code autocomplete.
 
-DAIS 2026 (June 16–18, San Francisco) introduced auto-approve mode — the feature that turns Genie Code from a supervised assistant into a genuinely autonomous agent. It also added OpenAI model support and previewed a pricing change that takes effect July 6. If you're building on Databricks, this is worth understanding now.
+[DAIS 2026](https://www.databricks.com/blog/whats-new-genie-code-data-ai-summit-2026) (June 16–18, San Francisco) introduced auto-approve mode — the feature that turns Genie Code from a supervised assistant into a genuinely autonomous agent. It also added OpenAI model support and previewed a pricing change that takes effect July 6. If you're building on Databricks, this is worth understanding now.
 
 ---
 
@@ -55,7 +55,7 @@ This is where Genie Code is most differentiated from general-purpose coding agen
 
 In practice: prompt it to build a bronze-to-gold pipeline reading from a source URI. It plans the full pipeline structure, generates the declarative code, runs it, reads the error logs when it fails (because pipelines always fail the first time), adjusts, and reruns. You can reference existing tables and files using `@resource_name` syntax to give it context from your Unity Catalog.
 
-Databricks benchmarks this at higher accuracy than general-purpose coding agents on pipeline tasks — specifically because it has Unity Catalog context. It knows your schema, your lineage, and your column semantics if you've maintained your UC metadata. That's the critical dependency (see Limitations).
+[Databricks benchmarks this](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-code-bringing-agentic-engineering-data) at higher accuracy than general-purpose coding agents on pipeline tasks — specifically because it has Unity Catalog context. It knows your schema, your lineage, and your column semantics if you've maintained your UC metadata. That's the critical dependency (see Limitations).
 
 ### Notebooks
 

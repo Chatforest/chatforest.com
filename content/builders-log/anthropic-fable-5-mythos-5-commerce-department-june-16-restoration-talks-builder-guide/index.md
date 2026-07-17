@@ -13,9 +13,9 @@ tags: ["claude-fable-5", "claude-mythos-5", "anthropic", "export-control", "us-g
 
 ## What Is Happening Today
 
-Reuters and Bloomberg confirmed that Anthropic's senior technical staff traveled to Washington on June 16 to meet directly with Commerce Department officials — the first face-to-face attempt to resolve the Fable 5 / Mythos 5 suspension since the June 12 directive.
+[Forbes](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) confirmed that Anthropic's senior technical staff traveled to Washington on June 16 to meet directly with Commerce Department officials — the first face-to-face attempt to resolve the Fable 5 / Mythos 5 suspension since the June 12 directive.
 
-This meeting did not happen quietly. Over 100 cybersecurity professionals — including Alex Stamos, former Facebook CSO and current Stanford Internet Observatory director — signed an open letter to Commerce Secretary Howard Lutnick and National Cyber Director Sean Cairncross demanding the restriction be lifted. Their argument: removing Fable 5 and Mythos 5 from defenders without sufficient public justification weakens U.S. cyber defense capabilities at exactly the wrong moment.
+This meeting did not happen quietly. [Over 100 cybersecurity professionals](https://www.techpolicy.press/alex-stamos-on-why-the-us-should-lift-its-fable-and-mythos-export-ban/) — including Alex Stamos, former Facebook CSO and current Stanford Internet Observatory director — signed an open letter to Commerce Secretary Howard Lutnick and National Cyber Director Sean Cairncross demanding the restriction be lifted. Their argument: removing Fable 5 and Mythos 5 from defenders without sufficient public justification weakens U.S. cyber defense capabilities at exactly the wrong moment.
 
 That same week, Zhipu AI's stock surged 33% on the news of the ban. Whether intentional or not, the suspension handed a visible win to a Chinese AI competitor.
 
@@ -25,7 +25,7 @@ That same week, Zhipu AI's stock surged 33% on the news of the ban. Whether inte
 
 There are now two competing accounts of how the directive came to be issued, and they matter for understanding what restoration negotiations look like.
 
-**The administration's framing:** Trump adviser David Sacks said Anthropic was given a choice — fix the jailbreak or suspend the models. The administration characterizes Anthropic's handling of a known vulnerability as "recklessness," and at least one official said privately: "They screwed us." Officials described the communication between Anthropic and the government as broken: "It's like they just speak in different languages."
+**The administration's framing:** [Trump adviser David Sacks said](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) Anthropic was given a choice — fix the jailbreak or suspend the models. The administration characterizes Anthropic's handling of a known vulnerability as "recklessness," and at least one official said privately: "They screwed us." Officials described the communication between Anthropic and the government as broken: "It's like they just speak in different languages."
 
 **Anthropic's framing:** Anthropic disputes that it was offered a fix-or-suspend choice. Its public statement characterizes the directive as a "misunderstanding" triggered by a narrow, non-universal jailbreak demonstration. Anthropic's position: the "jailbreak" is better described as running a capable AI on a vulnerable codebase — asking the model to audit and flag security flaws in code it's given — not a method for bypassing safety classifiers across general query types.
 
@@ -53,7 +53,7 @@ No agreement today, negotiations extend. Fable 5 remains offline through the end
 
 ## The Amazon Factor
 
-Fortune reporting (confirmed, not disputed) establishes that the trigger for the directive was a warning from Amazon. Amazon researchers discovered the "fix this code" jailbreak technique. Amazon CEO Andy Jassy escalated directly to Treasury Secretary Scott Bessent, Commerce Secretary Howard Lutnick, and National Cyber Director Harry Coker Jr. That same evening — Friday, June 12 — Lutnick issued the directive to Dario Amodei.
+[CNBC reporting](https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html) (confirmed, not disputed) establishes that the trigger for the directive was a warning from Amazon. Amazon researchers discovered the "fix this code" jailbreak technique. Amazon CEO Andy Jassy escalated directly to Treasury Secretary Scott Bessent, Commerce Secretary Howard Lutnick, and National Cyber Director Harry Coker Jr. That same evening — Friday, June 12 — Lutnick issued the directive to Dario Amodei.
 
 The speed of the escalation and the absence of an Anthropic-Commerce dialogue before the directive was issued is the core of Anthropic's "misunderstanding" framing. Anthropic learned about the government's concerns and received the directive at nearly the same moment.
 

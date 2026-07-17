@@ -7,7 +7,7 @@ content_type: "Builder's Log"
 tags: ["grok", "grok-build", "xai", "multi-agent", "coding-agents", "cli", "developer-tools", "agentic-coding"]
 ---
 
-xAI shipped the **Agent Dashboard** for Grok Build on June 15, 2026. It's a terminal-based control plane that lets a single developer manage up to eight parallel Grok Build coding sessions from one screen — without bouncing between terminal tabs or losing track of which agent is blocked.
+xAI shipped the **Agent Dashboard** for Grok Build on June 15, 2026 ([official announcement](https://x.ai/news/agent-dashboard)). It's a terminal-based control plane that lets a single developer manage up to eight parallel Grok Build coding sessions from one screen — without bouncing between terminal tabs or losing track of which agent is blocked.
 
 This is not a model upgrade. It's a workflow layer on top of the existing Grok Build CLI. But it addresses the actual bottleneck in parallel agentic coding: not the agents working, but the developer knowing where to look.
 
@@ -53,7 +53,7 @@ To group sessions by working directory (useful when you're running separate agen
 Ctrl+S
 ```
 
-Minimum version: **Grok Build v0.2.20** or higher. Update with `grok update`.
+Minimum version: **Grok Build v0.2.20** or higher ([changelog](https://x.ai/build/changelog)). Update with `grok update`.
 
 ## What It Doesn't Change
 
@@ -63,7 +63,7 @@ This matters because the failure modes stay the same. An agent that misunderstan
 
 ## Availability
 
-The Agent Dashboard ships with Grok Build v0.2.20. Access requires a **SuperGrok** ($30/month) or **X Premium+** ($16/month) subscription — the same tiers that unlock Grok Build access.
+The Agent Dashboard ships with Grok Build v0.2.20. Access requires a [**SuperGrok** ($30/month) or **X Premium+** ($16/month) subscription](https://x.ai/grok) — the same tiers that unlock Grok Build access.
 
 There's no separate API for the dashboard; it's a built-in CLI feature with no additional configuration.
 

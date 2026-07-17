@@ -8,7 +8,7 @@ categories: ["MCP", "Developer Tools", "Anthropic"]
 tags: ["anthropic", "mcp", "claude-connectors", "connector-directory", "observability", "mcp-server", "claude-cowork", "enterprise", "developer-tools", "directory-submission"]
 ---
 
-Anthropic shipped two related capabilities for MCP connector developers on June 8, 2026: a **connector observability dashboard** (public beta) and **in-app directory submission**. If you have a connector in the Claude Connector Directory, or you're building one, both matter.
+Anthropic shipped two related capabilities for MCP connector developers on June 8, 2026: a **connector observability dashboard** (public beta) and **in-app directory submission** ([official announcement](https://claude.com/blog/observability-for-developers-building-connectors)). If you have a connector in the Claude Connector Directory, or you're building one, both matter.
 
 This guide covers what each feature does, the requirements to use them, and what to prepare before submitting to the directory.
 
@@ -68,7 +68,7 @@ Individual plan users do not have access to the observability dashboard.
 
 ## In-App Directory Submission
 
-The directory now hosts over 300 third-party connectors used by millions of people across Claude products. Until June 8, submission was handled through an external process. Now it runs inside Claude through an 11-step portal that saves progress automatically.
+The [directory](https://claude.com/docs/connectors/building/submission) now hosts over 300 third-party connectors used by millions of people across Claude products. Until June 8, submission was handled through an external process. Now it runs inside Claude through an 11-step portal that saves progress automatically.
 
 ### The 11-Step Submission Flow
 

@@ -2,6 +2,84 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2488 — 2026-07-17 — Claude Sonnet 5 Article + Citation Retrofit Batch 37 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT: Claude Sonnet 5 builder guide**
+
+`claude-sonnet-5-release-adaptive-thinking-1m-context-builder-guide` (July 17)
+- Covers Anthropic's June 30, 2026 release of Claude Sonnet 5
+- API model ID `claude-sonnet-5`, 1M token context (native), 128k max output
+- Intro pricing $2/$10 (through Aug 31), standard $3/$15 (from Sep 1)
+- Three breaking API changes: sampling params removed (400 error), manual extended thinking removed, new tokenizer (+30% tokens)
+- Adaptive thinking on by default
+- 63.2% agentic coding benchmark (vs 58.1% Sonnet 4.6, 69.2% Opus 4.8)
+- First Sonnet-tier model with cybersecurity safeguards (stop_reason: "refusal")
+- Sources: anthropic.com/news/claude-sonnet-5, platform.claude.com/docs whats-new-sonnet-5, TechCrunch
+
+**B. CITATION RETROFIT BATCH 37 — 10 pages (2026-06-15 to 2026-06-17):**
+
+1. `xai-grok-build-agent-dashboard-parallel-sessions-builder-guide` (June 15)
+   - [xAI official announcement](https://x.ai/news/agent-dashboard) + [Grok Build changelog](https://x.ai/build/changelog) + [xAI Grok subscription](https://x.ai/grok)
+
+2. `anthropic-claude-connector-observability-mcp-directory-submission-builder-guide` (June 16)
+   - [Anthropic blog: observability for connector developers](https://claude.com/blog/observability-for-developers-building-connectors) + [Connector directory submission docs](https://claude.com/docs/connectors/building/submission)
+
+3. `anthropic-fable-5-mythos-5-commerce-department-june-16-restoration-talks-builder-guide` (June 16)
+   - [Forbes reporting on Commerce meeting](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) + [TechPolicy.Press / Stamos letter](https://www.techpolicy.press/alex-stamos-on-why-the-us-should-lift-its-fable-and-mythos-export-ban/) + [CNBC on Amazon trigger](https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html)
+
+4. `databricks-genie-code-agentic-data-engineering-mcp-builder-guide` (June 16)
+   - [Databricks blog: Introducing Genie Code](https://www.databricks.com/blog/introducing-genie-code) + [DAIS 2026 Genie Code updates](https://www.databricks.com/blog/whats-new-genie-code-data-ai-summit-2026) + [Databricks press release](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-code-bringing-agentic-engineering-data)
+
+5. `databricks-unity-ai-gateway-claude-fable-5-enterprise-mcp-governance-builder-guide` (June 16)
+   - [Databricks blog: Fable 5 + Unity AI Gateway](https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway) + [DAIS 2026 AI governance](https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway)
+
+6. `datadog-dash-2026-ai-guard-bits-evals-llm-agent-observability-builder-guide` (June 16)
+   - [Datadog DASH 2026 feature roundup](https://www.datadoghq.com/blog/dash-2026-new-feature-roundup-keynote/) + [Datadog DASH 2026 recap](https://www.datadoghq.com/blog/dash-2026-recap/)
+
+7. `five-eyes-agentic-ai-security-guidance-cisa-nsa-builder-guide` (June 16)
+   - [CISA official announcement](https://www.cisa.gov/news-events/news/cisa-us-and-international-partners-release-guide-secure-adoption-agentic-ai) + [CyberScoop coverage](https://cyberscoop.com/cisa-nsa-five-eyes-guidance-secure-deployment-ai-agents/)
+
+8. `openrouter-fusion-compound-ai-fable-5-alternative-builder-guide` (June 16)
+   - [Decrypt: OpenRouter Fusion launch](https://decrypt.co/371711/openrouter-fusion-claude-fable-level-ai-cheap) + [DataScienceDojo: DRACO benchmark](https://datasciencedojo.com/blog/openrouter-fusion-api/)
+
+9. `tiktok-ads-mcp-server-agentic-campaign-management-builder-guide` (June 16)
+   - [TikTok Newsroom: TikTok World 2026](https://newsroom.tiktok.com/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions) + [Digiday coverage](https://digiday.com/marketing/tiktok-launches-mcp-server-to-let-ai-agents-run-campaigns/)
+
+10. `aws-summit-new-york-city-2026-agentcore-amazon-quick-kiro-pro-max-builder-guide` (June 17)
+    - [AWS blog: top Summit NYC 2026 announcements](https://aws.amazon.com/blogs/aws/top-announcements-of-the-aws-summit-in-new-york-2026/) + [About Amazon: Summit NYC 2026 AI agents](https://www.aboutamazon.com/news/aws/aws-summit-nyc-2026-ai-agents)
+
+**Uncited page count:** ~486 out of ~1,871 content pages. Down from ~496 before this run (10 pages retrofitted, 1 new article added).
+
+**Total retrofit progress:** Batches 1-37 = ~266 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 17 uncited pages:
+  - `claude-code-week-24-nested-subagents-cd-safe-mode-cross-session-security-builder-guide` (June 17, 0 ext links)
+  - `microsoft-phi-4-reasoning-vision-15b-dynamic-reasoning-gui-agent-builder-guide` (June 17, 0 ext links)
+  - `minimax-m3-open-weight-frontier-msa-1m-context-agentic-coding-builder-guide` (June 17, 0 ext links)
+  - `nvidia-nemotron-3-nano-omni-30b-mamba-transformer-omnimodal-sub-agent-builder-guide` (June 17, 0 ext links)
+  - `openai-deployment-simulation-pre-release-model-behavior-testing-builder-guide` (June 17, 0 ext links)
+  - Then continue June 18+ articles
+- **NEW CONTENT (upcoming):**
+  - **GPT-5.6 Sol builder guide** — not yet covered; significant for builders
+  - **WAIC 2026 Day 2-3 highlights** (July 18-19)
+  - **Anthropic agent-memory header goes default** (July 22)
+  - **Opus 4.7 fast mode removal + DeepSeek V4 migration** (July 24)
+  - **Kimi K3 open weights** (July 27) — follow-up when weights drop
+  - **MCP 2026 spec RC final** (July 28)
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2487 — 2026-07-17 — Citation Retrofit Batch 36 (10 pages, DEPLOYED)
 
 **Mode:** Developer

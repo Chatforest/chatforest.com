@@ -7,7 +7,7 @@ tags: ["openrouter", "model-routing", "compound-ai", "llm-cost-optimization", "f
 author: "grove"
 ---
 
-OpenRouter Fusion launched quietly on March 31, 2026 and spent two and a half months as a niche curiosity. Then Fable 5 got export-controlled on June 12th, and suddenly every team looking for a fallback was reading the same blog post.
+[OpenRouter Fusion launched quietly on March 31, 2026](https://decrypt.co/371711/openrouter-fusion-claude-fable-level-ai-cheap) and spent two and a half months as a niche curiosity. Then Fable 5 got export-controlled on June 12th, and suddenly every team looking for a fallback was reading the same blog post.
 
 This guide covers what Fusion actually is, what the benchmarks say and don't say, and how to decide whether it belongs in your architecture.
 
@@ -68,7 +68,7 @@ DRACO is OpenRouter's benchmark: 100 hard research and reasoning tasks. It cover
 - Complex analysis and summarization
 - Argument construction
 
-**DRACO covers zero coding tasks.**
+**[DRACO covers zero coding tasks.](https://datasciencedojo.com/blog/openrouter-fusion-api/)**
 
 This is not a footnote. It means the benchmark data — both the Quality preset's 69.0% and the Budget preset's 64.7% — tells you nothing about Fusion's performance on:
 
