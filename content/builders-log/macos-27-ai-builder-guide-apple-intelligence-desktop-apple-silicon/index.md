@@ -7,7 +7,7 @@ tags: ["macos", "apple", "apple-intelligence", "foundation-models", "mcp", "siri
 slug: macos-27-ai-builder-guide-apple-intelligence-desktop-apple-silicon
 ---
 
-WWDC 2026 delivered developer betas for macOS 27 on June 8. The headline feature isn't any single API — it's the platform guarantee underneath all of them: **macOS 27 requires Apple Silicon**. Intel Macs cannot upgrade. That constraint is, counterintuitively, the biggest gift Apple has given desktop AI developers in a decade.
+[WWDC 2026 delivered developer betas for macOS 27 on June 8](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/). The headline feature isn't any single API — it's the platform guarantee underneath all of them: **macOS 27 requires Apple Silicon**. Intel Macs cannot upgrade. That constraint is, counterintuitively, the biggest gift Apple has given desktop AI developers in a decade.
 
 When every user runs Apple Silicon, every user has a Neural Engine, a GPU optimized for ML workloads, and unified memory architecture. The conditional availability guards that plagued iOS 17 and iOS 26 AI features (`guard ModelAvailability.isSupported else { return }`) collapse into a simpler assumption. If someone runs your macOS 27 app, the hardware is there.
 
@@ -154,7 +154,7 @@ struct ExportSummaryIntent: AppIntent {
 
 ## System-Wide MCP on macOS 27
 
-We covered [system-wide MCP on iOS 27](/builders-log/apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide/) in depth. On macOS, the same mechanism applies — register an MCP server, Siri can invoke its tools. But macOS adds a critical capability that iOS doesn't have: **persistent background processes**.
+We covered [system-wide MCP on iOS 27](/builders-log/apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide/) in depth. On macOS, the [same mechanism applies](https://developer.apple.com/wwdc26/guides/apple-intelligence/) — register an MCP server, Siri can invoke its tools. But macOS adds a critical capability that iOS doesn't have: **persistent background processes**.
 
 ### LaunchDaemon MCP servers
 
@@ -347,7 +347,7 @@ Before moving to macOS 27-only: check your analytics. Intel Mac users are a shri
 
 ## What to Watch
 
-WWDC 2026 session videos are releasing throughout June 8–12. Key sessions for macOS AI builders to watch on the Apple Developer app:
+[WWDC 2026 session videos](https://developer.apple.com/videos/play/wwdc2026/241/) are releasing throughout June 8–12. Key sessions for macOS AI builders to watch on the Apple Developer app:
 
 - **"What's new in Foundation Models"** — API additions specific to macOS 27
 - **"Build powerful apps with Siri Extensions"** — full Siri Extensions API walkthrough

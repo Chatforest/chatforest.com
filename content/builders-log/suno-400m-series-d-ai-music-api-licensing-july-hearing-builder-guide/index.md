@@ -8,7 +8,7 @@ categories: ["AI Tools", "Industry Analysis", "API Integration"]
 tags: ["suno", "ai-music", "copyright", "licensing", "series-d", "generative-audio", "api", "fair-use", "riaa", "warner-music", "migration"]
 ---
 
-Suno raised $400 million in a Series D round led by Bond Capital on June 3, 2026. The round values the company at $5.4 billion — more than double the $2.45 billion valuation from its November 2025 round. The company has reached $300 million in annual recurring revenue.
+Suno [raised $400 million in a Series D round](https://techcrunch.com/2026/06/03/still-facing-copyright-lawsuits-ai-music-generator-suno-raises-another-400m/) led by Bond Capital on June 3, 2026. The round values the company at [$5.4 billion](https://www.musicbusinessworldwide.com/suno-raises-over-400-million-pushing-valuation-to-5-4-billion/) — more than double the $2.45 billion valuation from its November 2025 round. The company has reached $300 million in annual recurring revenue.
 
 Those are the business headlines. The builder headlines are more complicated.
 
@@ -22,7 +22,7 @@ If you are building on AI-generated audio — background music, sonic branding, 
 
 ## The Funding Round
 
-The $400M Series D closed June 3, 2026. Investors include Bond Capital (lead), IVP, Forerunner Ventures, Union Square Ventures, Alkeon Capital, and Quiet Capital.
+The [$400M Series D closed June 3, 2026](https://techcrunch.com/2026/06/03/still-facing-copyright-lawsuits-ai-music-generator-suno-raises-another-400m/). Investors include Bond Capital (lead), IVP, Forerunner Ventures, Union Square Ventures, Alkeon Capital, and Quiet Capital.
 
 Suno's ARR trajectory:
 - October 2024: funding announced, company valued at ~$500M
@@ -35,9 +35,9 @@ The revenue growth is real. Suno's consumer subscription products — starting a
 
 ## The Lawsuit
 
-The Recording Industry Association of America (RIAA), Sony Music, Universal Music Group, and GEMA filed suit against Suno in 2024 alleging that training the AI on copyrighted recordings without licenses violated copyright law. The plaintiffs have identified over 61,000 allegedly unlicensed songs used in training.
+The Recording Industry Association of America (RIAA), Sony Music, Universal Music Group, and GEMA [filed suit against Suno in 2024](https://legalclarity.org/suno-lawsuit-explained-from-filing-to-warner-settlement/) alleging that training the AI on copyrighted recordings without licenses violated copyright law. The plaintiffs have identified over 61,000 allegedly unlicensed songs used in training.
 
-Warner Music Group settled with Suno in November 2025 — terms undisclosed. The remaining plaintiffs have continued the suit through the courts.
+[Warner Music Group settled with Suno in November 2025](https://www.techtimes.com/articles/317917/20260606/suno-raises-400-million-54-billion-valuation-while-record-labels-sue-over-61000-songs.htm) — terms undisclosed. The remaining plaintiffs have continued the suit through the courts.
 
 **The July 2026 hearing** is a summary judgment motion. Summary judgment is where a party argues that the factual record is clear enough that a jury does not need to weigh in — the judge can rule as a matter of law. For Suno, the argument is that training an AI on copyrighted recordings constitutes fair use and is not infringement. For the RIAA, the argument is the opposite.
 

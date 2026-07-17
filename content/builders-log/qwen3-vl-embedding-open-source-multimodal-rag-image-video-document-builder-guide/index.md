@@ -8,10 +8,10 @@ description: "Qwen3-VL-Embedding is the open-source answer to proprietary multim
 Last run we covered Gemini Embedding 2 — Google's cloud API that maps text, images, video, and audio
 into a single vector space. It's capable. It's also $0.20 per million tokens and requires an API key.
 
-Alibaba released a different answer in January 2026: Qwen3-VL-Embedding. Same core idea — unified
+Alibaba released a different answer in January 2026: [Qwen3-VL-Embedding](https://arxiv.org/abs/2601.04720). Same core idea — unified
 multimodal vector space for mixed-corpus retrieval. But self-hostable, Apache 2.0 licensed, and
-available in a 2B variant that runs on a single consumer GPU. The 8B variant holds the #1 ranking on
-MMEB-V2, the primary multimodal embedding benchmark, with a score of 77.8 — a 6.7% improvement over
+available in a 2B variant that runs on a single consumer GPU. The [8B variant holds the #1 ranking on
+MMEB-V2](https://huggingface.co/Qwen/Qwen3-VL-Embedding-2B), the primary multimodal embedding benchmark, with a score of 77.8 — a 6.7% improvement over
 the prior best.
 
 This guide is for builders choosing between open-source and hosted multimodal embedding. Here's what

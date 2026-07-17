@@ -8,7 +8,7 @@ categories: ["AI Infrastructure", "Sovereign AI", "AI Models"]
 tags: ["nvidia", "naver", "dsx", "hyperclovax", "nemotron", "sovereign-ai", "korea", "apac", "ai-factory", "open-weights", "builders-log"]
 ---
 
-On June 8, NAVER and NVIDIA formalized a roadmap to scale Korea's AI infrastructure to gigawatt capacity using NVIDIA's newly announced DSX platform. The deal is notable for three reasons: it introduces DSX as an infrastructure standard that builders and cloud providers worldwide will encounter; it brings HyperCLOVA X into the Nemotron ecosystem; and it signals that sovereign AI hosting is moving from political talking point to production infrastructure with concrete specs.
+On June 8, [NAVER and NVIDIA formalized a roadmap](https://nvidianews.nvidia.com/news/naver-ai-infrastructure) to scale Korea's AI infrastructure to gigawatt capacity using NVIDIA's newly announced DSX platform. The deal is notable for three reasons: it introduces DSX as an infrastructure standard that builders and cloud providers worldwide will encounter; it brings HyperCLOVA X into the Nemotron ecosystem; and it signals that sovereign AI hosting is moving from political talking point to production infrastructure with concrete specs.
 
 This is a builder guide to what actually changed, what DSX is, and who should care.
 
@@ -16,7 +16,7 @@ This is a builder guide to what actually changed, what DSX is, and who should ca
 
 ## What Happened
 
-NVIDIA announced the **DSX platform** on June 1 at GTC Taipei. On June 8, NAVER became one of the first major production deployments.
+NVIDIA announced the **DSX platform** on June 1 at GTC Taipei. On June 8, [NAVER became one of the first major production deployments](https://www.globenewswire.com/news-release/2026/06/07/3307753/0/en/NAVER-Expands-AI-Infrastructure-With-NVIDIA-to-Serve-Surging-Global-AI-Demand.html).
 
 NAVER's GAK Sejong hyperscale data center — already running **4,000 NVIDIA B200 GPUs** — will expand on the DSX architecture:
 

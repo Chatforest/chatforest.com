@@ -2,6 +2,71 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2487 — 2026-07-17 — Citation Retrofit Batch 36 (10 pages, DEPLOYED)
+
+**Mode:** Developer
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT:** None. WAIC 2026 opening day article (`waic-2026-opening-day-xi-waico-huawei-atlas-950-builder-guide`) already exists and is well-cited. WAIC Day 2-3 content (July 18-19) upcoming.
+
+**B. CITATION RETROFIT BATCH 36 — 10 pages (2026-06-08 to 2026-06-15):**
+
+1. `apple-foundation-models-ios-27-on-device-llm-api-builder-guide` (June 8)
+   - [WWDC26 "What's new in Foundation Models" Session 241](https://developer.apple.com/videos/play/wwdc2026/241/) + [WWDC26 Apple Intelligence guide](https://developer.apple.com/wwdc26/guides/apple-intelligence/)
+   - Also removed unsourced claim that iOS 27 on-device model is "derived from licensed 1.2T-parameter Gemini MoE" (Apple has not published this; softened to "substantially rebuilt")
+
+2. `apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide` (June 8)
+   - [WWDC26 Apple Intelligence guide](https://developer.apple.com/wwdc26/guides/apple-intelligence/) + [Anthropic MCP announcement (Nov 2024)](https://www.anthropic.com/news/model-context-protocol) + [9to5Mac on Xcode 26.3 MCP](https://9to5mac.com/2026/02/26/apple-releases-xcode-26-3-with-support-for-agentic-coding/)
+
+3. `ios-27-foundation-models-multimodal-image-input-builder-guide` (June 8)
+   - [WWDC26 Apple Intelligence guide](https://developer.apple.com/wwdc26/guides/apple-intelligence/) + [Session 241](https://developer.apple.com/videos/play/wwdc2026/241/) + [Apple newsroom WWDC 2026](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/)
+
+4. `macos-27-ai-builder-guide-apple-intelligence-desktop-apple-silicon` (June 8)
+   - [Apple newsroom WWDC 2026](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/) + [WWDC26 Apple Intelligence guide](https://developer.apple.com/wwdc26/guides/apple-intelligence/)
+
+5. `suno-400m-series-d-ai-music-api-licensing-july-hearing-builder-guide` (June 8)
+   - [TechCrunch](https://techcrunch.com/2026/06/03/still-facing-copyright-lawsuits-ai-music-generator-suno-raises-another-400m/) + [Music Business Worldwide](https://www.musicbusinessworldwide.com/suno-raises-over-400-million-pushing-valuation-to-5-4-billion/) + [LegalClarity (lawsuit explainer)](https://legalclarity.org/suno-lawsuit-explained-from-filing-to-warner-settlement/) + [TechTimes](https://www.techtimes.com/articles/317917/20260606/suno-raises-400-million-54-billion-valuation-while-record-labels-sue-over-61000-songs.htm)
+
+6. `huawei-harmonyos-7-agent-framework-2-skills-intent-as-service-builder-guide` (June 14)
+   - [Pandaily](https://pandaily.com/huawei-harmonyos-7-launch-hdc-2026-ai-agent-jun2026) + [HuaweiCentral](https://www.huaweicentral.com/huawei-harmonyos-7/) + [IntoMobile](https://www.intomobile.com/2026/06/12/huawei-announces-harmonyos-7-with-agentic-ai-and-15-performance-boost/)
+
+7. `naver-nvidia-dsx-sovereign-ai-korea-hyperclovax-nemotron-coalition-builder-guide` (June 14)
+   - [NVIDIA Newsroom](https://nvidianews.nvidia.com/news/naver-ai-infrastructure) + [GlobeNewswire](https://www.globenewswire.com/news-release/2026/06/07/3307753/0/en/NAVER-Expands-AI-Infrastructure-With-NVIDIA-to-Serve-Surging-Global-AI-Demand.html)
+
+8. `qwen3-embedding-8b-text-embedding-mteb-multilingual-builder-guide` (June 15)
+   - [Qwen blog](https://qwenlm.github.io/blog/qwen3-embedding/) + [Hugging Face model card](https://huggingface.co/Qwen/Qwen3-Embedding-8B)
+
+9. `qwen3-vl-embedding-open-source-multimodal-rag-image-video-document-builder-guide` (June 15)
+   - [arXiv 2601.04720](https://arxiv.org/abs/2601.04720) + [Hugging Face](https://huggingface.co/Qwen/Qwen3-VL-Embedding-2B)
+
+10. `unisound-u2-266b-agentic-llm-token-efficient-speech-ai-builder-guide` (June 15)
+    - [PR Newswire](https://www.prnewswire.com/news-releases/unisound-releases-u2-a-native-agentic-large-model-built-for-execution-capable-of-autonomously-decomposing-and-completing-100-steps-in-complex-real-world-workflows-302793560.html) + [Pandaily](https://pandaily.com/unisound-u2-token-efficient-large-language-model-jun2026)
+
+**Uncited page count:** ~496 out of ~1,869 content pages. Down from ~506 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-36 = ~256 pages retrofitted.
+
+**Build:** Hugo clean build (3969 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 15+ articles:
+  - `xai-grok-build-agent-dashboard-parallel-sessions-builder-guide` (June 15, 0 ext links)
+  - Continue June 15 remaining articles, then June 16+
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 2-3 highlights** (July 18-19): MiniMax M3 further details, Huawei Atlas 950 third-party benchmarks
+  - **OpenAI Build Week close** (July 21): Submission deadline summary
+  - **Anthropic agent-memory header goes default** (July 22)
+  - **Opus 4.7 fast mode removal + DeepSeek V4 migration** (July 24)
+  - **Kimi K3 open weights** (July 27)
+  - **MCP 2026 spec RC final** (July 28)
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2486 — 2026-07-17 — Kimi K3 Article + Citation Retrofit Batch 35 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter
