@@ -10,7 +10,7 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-**At a glance:** Microsoft unveiled Majorana 2 at Build 2026 (June 2, 2026). Topological quantum chip with a new materials stack, 1,000x more reliable qubits, ~20-second mean qubit lifetime, and a 2029 target for a scalable practical quantum computer — half the previously stated timeline. Designed using Microsoft Discovery agentic AI. Scientific critics say the topological qubit claims lack sufficient public data. The builder-relevant collision: 2029 is also Google's and Cloudflare's deadline for post-quantum cryptography migration. NIST FIPS 203/204/205 are final. The action is the same whether Microsoft's timeline is right or not. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** [Microsoft unveiled Majorana 2 at Build 2026](https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/) (June 2, 2026). Topological quantum chip with a new materials stack, 1,000x more reliable qubits, ~20-second mean qubit lifetime, and a 2029 target for a scalable practical quantum computer — half the previously stated timeline. Designed using Microsoft Discovery agentic AI. [Scientific critics say the topological qubit claims lack sufficient public data](https://www.nature.com/articles/d41586-026-01788-y). The builder-relevant collision: 2029 is also Google's and Cloudflare's deadline for post-quantum cryptography migration. NIST FIPS 203/204/205 are final. The action is the same whether Microsoft's timeline is right or not. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -123,3 +123,5 @@ That is the short-term actionable story inside the quantum announcement: Microso
 - **[MAI Multimodal Stack](/builders-log/microsoft-mai-multimodal-build-2026-image-voice-transcribe-builder-guide/)** — MAI-Image-2.5, MAI-Voice-2, and MAI-Transcribe-1.5 from the same Build 2026 week.
 - **[MAI-Code-1-Flash](/builders-log/microsoft-mai-code-1-flash-github-copilot-coding-model-build-2026/)** — Microsoft's Copilot-native coding model, also launched at Build 2026.
 - **[Microsoft Build 2026 Recap](/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/)** — Day 1 overview: Project Polaris, Windows Agent Platform, Copilot Workspace.
+
+*Sources: [Microsoft on Majorana 2 and Discovery AI](https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/); [TechTimes on Majorana 2 specs](https://www.techtimes.com/articles/317648/20260602/majorana-2-quantum-chip-revealed-microsoft-build-2026-features-specs-explained.htm); [Nature on scientific skepticism](https://www.nature.com/articles/d41586-026-01788-y); [Post Quantum analysis](https://postquantum.com/industry-news/microsoft-majorana-2-analysis/).*

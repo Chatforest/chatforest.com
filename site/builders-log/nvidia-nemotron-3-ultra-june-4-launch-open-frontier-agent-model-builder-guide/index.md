@@ -3,7 +3,7 @@
 > Nvidia's Nemotron 3 Ultra — 550B parameters, 55B active, 300+ tokens/second — goes live on Hugging Face, OpenRouter, and build.nvidia.com on June 4. Here is what builders need to know about deploying it, what the open-weights model means for API economics, and why the DGX Station and RTX Spark hardware roadmap matters.
 
 
-At GTC Taipei on June 1, Jensen Huang announced a 550-billion-parameter open model that runs at 300 tokens per second, costs 30% less to operate than comparable frontier models, and is specifically designed for multi-step agent workflows. It launches publicly on June 4.
+At GTC Taipei on June 1, [Jensen Huang announced a 550-billion-parameter open model](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) that runs at 300+ tokens per second, [costs 30% less to operate than comparable frontier models](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/), and is specifically designed for multi-step agent workflows. It launches publicly on June 4.
 
 **Nemotron 3 Ultra** is not NVIDIA's first open model — the Nemotron line goes back to 2024. But it is the first to land squarely in the territory that closed-API providers like OpenAI and Anthropic have owned: frontier-scale, production-grade intelligence with native agent reasoning. If you have been waiting for open weights to reach the quality tier where they are viable for production agent pipelines, June 4 is the inflection point worth paying attention to.
 
@@ -22,7 +22,7 @@ Key published numbers from the June 1 keynote:
 | Total parameters | 550B |
 | Active parameters per token | ~55B |
 | Context window | 1M tokens |
-| Intelligence Index | 48 |
+| [Intelligence Index](https://artificialanalysis.ai/articles/nvidia-nemotron-3-ultra-released) | 48 |
 | Output throughput | 300+ tokens/second |
 | Claimed cost vs. comparable frontier | ~30% lower |
 | Claimed speed vs. comparable frontier | ~5x faster |
@@ -38,7 +38,7 @@ The **1M token context** is meaningful for agent pipelines — it means you can 
 
 Frontier language models have generally been trained for human conversation: a user sends a prompt, the model responds, the user reads. Agent workflows are structurally different: the model receives a task, calls tools, evaluates results, decides next steps, and loops — sometimes for hundreds of turns across many minutes.
 
-NVIDIA designed Nemotron 3 Ultra's training data and fine-tuning process around this loop structure, not around single-turn conversation quality. The specific improvements they cite:
+NVIDIA designed Nemotron 3 Ultra's training data and fine-tuning process around this loop structure, not around single-turn conversation quality. [The specific improvements they cite](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/):
 
 - **91% agent productivity** on their internal benchmark — the model successfully completes assigned multi-step tasks without human re-intervention
 - Trained on **ReAct patterns** and **tool-invocation sequences** at scale
@@ -100,7 +100,7 @@ The short version: NemoClaw + Nemotron 3 Ultra is NVIDIA's answer to "how do you
 
 Right now, self-hosting a 550B parameter MoE model requires meaningful GPU infrastructure — this is not a laptop experiment. But NVIDIA's hardware announcements at GTC Taipei/Computex change the mid-term trajectory for local inference:
 
-**DGX Station for Windows** — NVIDIA's new deskside workstation runs the GB300 Grace Blackwell Ultra superchip with 775GB of coherent unified memory. That is enough headroom to run Nemotron 3 Ultra at production-grade throughput, locally, without cloud dependency. Partners including HP, Dell, Asus, Supermicro, and MSI are bringing DGX Station systems to market in Q4 2026; HP has confirmed August availability for their unit.
+**DGX Station for Windows** — [NVIDIA's new deskside workstation](https://nvidianews.nvidia.com/news/nvidia-dgx-station-for-windows-puts-a-trillion-parameter-ai-supercomputer-on-every-enterprise-desk) runs the GB300 Grace Blackwell Ultra superchip with 748GB of coherent unified memory (252GB HBM3e + 496GB LPDDR5X). That is enough headroom to run Nemotron 3 Ultra at production-grade throughput, locally, without cloud dependency. Partners including HP, Dell, Asus, Supermicro, and MSI are bringing DGX Station systems to market in Q4 2026; HP has confirmed August availability for their unit.
 
 **RTX Spark** (formerly codenamed N1X) — the consumer/developer play: a laptop superchip with an Arm-based Grace CPU and Blackwell GPU sharing 128GB of unified LPDDR5X memory. RTX Spark won't run a full 550B model, but NVIDIA has Nemotron 3 Nano and Nemotron 3 Super (120B) in the same family for local inference on smaller hardware. RTX Spark systems from Dell, HP, Lenovo, Asus, and MSI arrive in fall 2026.
 

@@ -5,7 +5,7 @@
 
 Most hackathons ask for demos. Build with Gemini XPRIZE asks for a business.
 
-That distinction matters more than any other detail in the competition brief. Google and XPRIZE launched this competition at Google I/O on May 19, 2026, with $2 million in prizes and a single constraint that filters out most hackathon entrants before registration even closes: judges require real users, real revenue, and AI in production — not a prototype, not a slide deck.
+That distinction matters more than any other detail in the competition brief. [Google and XPRIZE launched this competition at Google I/O on May 19, 2026](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google), with $2 million in prizes and a single constraint that filters out most hackathon entrants before registration even closes: judges require real users, real revenue, and AI in production — not a prototype, not a slide deck.
 
 If you have a builder project that could become a business, the window is open until August 17. Here is everything you need to decide whether to enter.
 

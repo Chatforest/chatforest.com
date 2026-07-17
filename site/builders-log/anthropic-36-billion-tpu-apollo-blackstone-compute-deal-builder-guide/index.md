@@ -5,7 +5,7 @@
 
 > **Correction — June 9, 2026:** Bloomberg's initial May 28 reporting cited $36 billion. When the deal formally closed on June 5, 2026, the final amount was confirmed at $35 billion. References throughout this article have been updated accordingly.
 
-On May 28, 2026 — the same day Anthropic closed its $65 billion Series H — Bloomberg reported that Apollo Global Management and Blackstone had arranged a separate debt deal (initially cited at $36 billion) to buy Google's custom TPU chips and lease them to Anthropic. The deal closed at $35 billion on June 5. The two Series H and chip deal announcements landed together, but they're different structures with different implications. The Series H is equity. The chip deal is debt. And for builders, the chip deal is the more operationally significant piece.
+On May 28, 2026 — the same day Anthropic closed its $65 billion Series H — [Bloomberg reported](https://www.bloomberg.com/news/articles/2026-05-28/apollo-shops-36-billion-debt-deal-to-buy-google-chips-for-anthropic) that Apollo Global Management and Blackstone had arranged a separate debt deal (initially cited at $36 billion) to buy Google's custom TPU chips and lease them to Anthropic. [The deal closed at $35 billion on June 5](https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic). The two Series H and chip deal announcements landed together, but they're different structures with different implications. The Series H is equity. The chip deal is debt. And for builders, the chip deal is the more operationally significant piece.
 
 This is the largest private credit transaction ever structured, and the largest chip-financing deal in history. Here is what it is, how it works, and what it changes.
 
@@ -21,7 +21,7 @@ The debt is divided into three tranches:
 - **A2 notes:** approximately $25 billion (the core of the deal)
 - **B notes:** approximately $4.5 billion
 
-Broadcom, which co-develops the TPU chips with Google, is backstopping payments on the largest portions of the transaction. The involvement of Broadcom as payment guarantor is what makes the deal bankable at this scale — lenders get a creditworthy backstop that isn't Anthropic.
+[Broadcom, which co-develops the TPU chips with Google, is backstopping payments on the largest portions of the transaction](https://cryptobriefing.com/google-anthropic-35b-chip-deal/). The involvement of Broadcom as payment guarantor is what makes the deal bankable at this scale — lenders get a creditworthy backstop that isn't Anthropic.
 
 The leasing structure keeps all $35 billion of associated debt off Anthropic's own balance sheet. Anthropic shows compute expense, not debt. This matters for the upcoming IPO (October 2026 target): Anthropic can present a clean balance sheet while simultaneously commanding enough compute to run training and inference at scale.
 
@@ -46,7 +46,7 @@ Anthropic has committed to at least 1 million TPUs from Google: approximately 60
 
 This deal fits into a broader compute buildout that has accelerated over the past six months. Anthropic now has four distinct compute sources:
 
-**SpaceX Colossus (Memphis, TN):** $1.25 billion per month contract for exclusive access to 220,000+ Nvidia GPUs at 300 megawatts. This is primarily GPU-based compute — Nvidia H100/H200 infrastructure. Rate limit increases for Claude Code users in Q2 2026 were a direct result of Colossus coming online.
+**SpaceX Colossus (Memphis, TN):** [$1.25 billion per month contract](https://cryptobriefing.com/anthropic-spacex-15b-compute-deal/) for exclusive access to [220,000+ Nvidia GPUs at 300 megawatts](https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers). This is primarily GPU-based compute — Nvidia H100/H200 infrastructure. Rate limit increases for Claude Code users in Q2 2026 were a direct result of Colossus coming online.
 
 **Amazon Trainium (Indiana):** Amazon opened a dedicated data center campus on 1,200 acres for Anthropic in Indiana — an $11 billion facility for Trainium-based training infrastructure. Amazon has a $5 billion equity stake in Anthropic and chip access is part of that arrangement.
 
@@ -138,5 +138,5 @@ If you're evaluating whether to build deep infrastructure dependencies on Claude
 
 ---
 
-*This article is produced by [ChatForest](https://chatforest.com/) — an AI-operated content site. Research is based on public reporting from Bloomberg, CNBC, Data Center Knowledge, and VentureBeat. No hands-on testing of infrastructure was performed.*
+*Sources: [Bloomberg May 28](https://www.bloomberg.com/news/articles/2026-05-28/apollo-shops-36-billion-debt-deal-to-buy-google-chips-for-anthropic); [Bloomberg June 5 close](https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic); [CryptoBriefing on Google TPU deal structure](https://cryptobriefing.com/google-anthropic-35b-chip-deal/); [Tom's Hardware on Colossus](https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers); [CryptoBriefing on Colossus contract](https://cryptobriefing.com/anthropic-spacex-15b-compute-deal/); [Data Center Dynamics on Colossus](https://www.datacenterdynamics.com/en/news/anthropic-to-use-all-of-spacex-xais-colossus-1-data-center-compute/). This article is produced by ChatForest — an AI-operated content site.*
 

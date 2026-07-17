@@ -3,7 +3,7 @@
 > Microsoft launched MAI-Code-1-Flash at Build 2026 — a coding model trained inside GitHub Copilot's production harness, not just evaluated against it. It uses 60% fewer tokens than comparable models on hard tasks and is already live in the Copilot model picker. Here's what builders should actually measure.
 
 
-**At a glance:** MAI-Code-1-Flash, announced June 2, 2026 at Microsoft Build. First Microsoft-trained model built using GitHub Copilot's production tool harnesses. 85.8% on Microsoft adversarial coding benchmark, ~51% SWE-Bench Pro. 60% fewer tokens on complex tasks vs. comparable models. Live now in the Copilot model picker — Free, Pro, Pro+, and Max tiers. Third-party access via Fireworks AI, Baseten, OpenRouter. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** [MAI-Code-1-Flash, announced June 2, 2026 at Microsoft Build](https://microsoft.ai/news/introducingmai-code-1-flash/). First Microsoft-trained model built using GitHub Copilot's production tool harnesses. 85.8% on Microsoft adversarial coding benchmark, ~51% SWE-Bench Pro. 60% fewer tokens on complex tasks vs. comparable models. Live now in the Copilot model picker — Free, Pro, Pro+, and Max tiers. Third-party access via Fireworks AI, Baseten, OpenRouter. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -114,4 +114,6 @@ The pattern is visible: Microsoft is building a parallel model stack that does n
 - **[GitHub Copilot AI Credits Billing](/builders-log/github-copilot-june-1-token-billing-ai-credits-agentic-cost-guide/)** — The usage-based billing change that took effect June 1 makes MAI-Code-1-Flash's token efficiency directly relevant to cost.
 - **[Microsoft Is Building Its Own Coding Model](/builders-log/microsoft-coding-model-build-2026-copilot-mai-builder-decisions/)** — Our pre-Build preview, written May 29, of what to expect at Build 2026.
 - **[Windows AI Models: Aion 1.0](/builders-log/microsoft-build-2026-windows-ai-models-aion-local-inference-builder-guide/)** — The on-device AI story from the same Build 2026 week.
+
+*Sources: [Microsoft AI on MAI-Code-1-Flash](https://microsoft.ai/news/introducingmai-code-1-flash/); [MAI-Code-1-Flash model page](https://microsoft.ai/models/mai-code-1-flash/); [The Robotics Media on the launch](https://theroboticsmedia.com/article/microsoft-mai-code-1-flash-github-copilot-launch).*
 

@@ -3,9 +3,9 @@
 > Cognition raised $1B at a $26B post-money valuation with $492M ARR and Devin writing 89% of their own codebase. Here's what the agent-first vs. IDE copilot architectural fork means for builders.
 
 
-On May 27, 2026, Cognition announced a $1B+ funding round at a $26B post-money valuation. That headline number will dominate the coverage. But the stat that matters for builders is buried in the middle: 89% of the code committed at Cognition is now written by Devin.
+On May 27, 2026, [Cognition announced a $1B+ funding round at a $26B post-money valuation](https://cognition.com/blog/series-d). That headline number will dominate the coverage. But the stat that matters for builders is buried in the middle: 89% of the code committed at Cognition is now written by Devin.
 
-That figure grew from 13% in December 2025. Five months. 13% to 89%.
+[That figure grew from 13% in December 2025](https://the-decoder.com/ai-coding-agent-devin-maker-cognition-more-than-doubles-its-valuation-to-26-billion-in-under-nine-months/). Five months. 13% to 89%.
 
 If you're building AI-assisted software workflows and you read nothing else from this round, read that trajectory. Because it tells you something about where the architectural leverage actually lives — and it's not where most teams are currently investing.
 
@@ -13,7 +13,7 @@ If you're building AI-assisted software workflows and you read nothing else from
 
 ## The Numbers in Context
 
-Cognition's revenue trajectory is unusual even for a well-funded AI company:
+Cognition's revenue trajectory is unusual even for a well-funded AI company ([TechCrunch](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/)):
 
 - May 2025: ~$37M ARR
 - May 2026: $492M ARR
@@ -34,11 +34,11 @@ These are not buyers speculating on AI hype. General Catalyst and Founders Fund 
 
 The enterprise case studies published alongside the announcement clarify what Devin is being used for in production. These are the examples builders should study, because they reveal what "agent-first" means in practice rather than in demo.
 
-**Mercedes-Benz:** A legacy modernization project that engineering estimated at eight months was completed in eight days with Devin. The task was code migration — systematically transforming patterns across a large, unfamiliar codebase. This is exactly the kind of work where agent-first architecture excels: well-defined goal, high repetition, large surface area, low per-decision stakes.
+**Mercedes-Benz:** [A legacy modernization project that engineering estimated at eight months was completed in eight days with Devin](https://cognition.com/blog/series-d). The task was code migration — systematically transforming patterns across a large, unfamiliar codebase. This is exactly the kind of work where agent-first architecture excels: well-defined goal, high repetition, large surface area, low per-decision stakes.
 
-**Itau (Brazilian banking):** Itau deployed Devin for security vulnerability remediation. Devin now automatically resolves approximately 70% of security vulnerabilities without human intervention. The remaining 30% get flagged for human review. This is a triage + execution workflow — the agent handles the routine cases, humans handle the edge cases.
+**Itau (Brazilian banking):** [Itau deployed Devin for security vulnerability remediation. Devin now automatically resolves approximately 70% of security vulnerabilities without human intervention](https://cognition.com/blog/series-d). The remaining 30% get flagged for human review. This is a triage + execution workflow — the agent handles the routine cases, humans handle the edge cases.
 
-**Goldman Sachs, Citi, Santander, Dell, Palantir, NASA, U.S. Army and Navy:** All listed as enterprise customers. The breadth of this list — from investment banking to defense to aerospace — signals that the blocking objections (security, compliance, auditability) have been answered well enough to close contracts, even if not perfectly solved.
+**Goldman Sachs, Citi, Santander, Dell, [U.S. Army and Navy](https://cognition.com/blog/series-d), and [NASA](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/):** All listed as enterprise customers by Cognition or in launch coverage. The breadth of this list — from investment banking to defense to aerospace — signals that the blocking objections (security, compliance, auditability) have been answered well enough to close contracts, even if not perfectly solved.
 
 The pattern across these case studies: large-surface-area, high-repetition tasks with clear success criteria and bounded scope. Not "figure out the architecture." Not "decide what to build." Execute against a specification across a lot of code.
 
@@ -109,5 +109,5 @@ The question for your team is not whether agent-first architecture will matter. 
 
 ---
 
-*Cognition's $1B round was announced May 27, 2026. The $26B figure is post-money; TechCrunch reports $25B pre-money. The 89% codebase share is the company-stated figure; some secondary sources round to 90%. Customers named above appeared in multiple outlets at announcement.*
+*Cognition's $1B round was [announced May 27, 2026](https://cognition.com/blog/series-d). The $26B figure is post-money; [TechCrunch reports $25B pre-money](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/). The 89% codebase share is the company-stated figure; some secondary sources round to 90%. Customers named above appeared in the [Cognition announcement](https://cognition.com/blog/series-d) and [multiple outlets at announcement](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/).*
 

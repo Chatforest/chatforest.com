@@ -3,7 +3,7 @@
 > Jensen Huang's COMPUTEX keynote confirmed RTX Spark: Blackwell GPU + Grace CPU + 128GB unified RAM in a laptop, launching fall 2026. Here's what this changes for builders deploying local AI.
 
 
-Jensen Huang keynoted COMPUTEX 2026 in Taipei on June 1. The "surprise product" he had teased for months has a name: **RTX Spark**. This article covers what was confirmed at the keynote and what it means for builders planning local AI deployments in 2026 and beyond.
+[Jensen Huang keynoted COMPUTEX 2026](https://www.nvidia.com/en-us/geforce/news/computex-2026-nvidia-geforce-rtx-announcements/) in Taipei on June 1. The "surprise product" he had teased for months has a name: **RTX Spark**. This article covers what was confirmed at the keynote and what it means for builders planning local AI deployments in 2026 and beyond.
 
 If you read our [pre-keynote preview from May 30](/builders-log/nvidia-gtc-taipei-2026-vera-rubin-n1x-five-layer-cake-builder-preview/), the hardware specs match what was expected. The significant update is the official branding, the OEM lineup, and the explicit positioning: NVIDIA is reinventing the PC as an agentic AI platform.
 
@@ -11,7 +11,7 @@ If you read our [pre-keynote preview from May 30](/builders-log/nvidia-gtc-taipe
 
 ## What RTX Spark Is
 
-RTX Spark is NVIDIA's first laptop superchip — a single die integrating:
+[RTX Spark](https://www.nvidia.com/en-us/geforce/news/computex-2026-nvidia-geforce-rtx-announcements/) is NVIDIA's first laptop superchip — a single die integrating:
 
 - **GPU**: Blackwell architecture, 6,144 CUDA cores
 - **CPU**: Grace — 20-core Arm-based design
@@ -42,7 +42,7 @@ The keynote confirmed:
 
 **New from the keynote:**
 
-- **DGX Station gets Windows support.** Jensen announced that NVIDIA's personal AI supercomputer — 775GB HBM3e, designed to run 1-trillion-parameter models locally — will now ship with Windows in addition to Linux. This is significant for enterprise teams who need local sovereign AI without managing Linux infrastructure.
+- **DGX Station gets Windows support.** [Jensen announced that NVIDIA's personal AI supercomputer](https://nvidianews.nvidia.com/news/nvidia-dgx-station-for-windows-puts-a-trillion-parameter-ai-supercomputer-on-every-enterprise-desk) — 748GB coherent memory (252GB HBM3e + 496GB LPDDR5X), designed to run 1-trillion-parameter models locally — will now ship with Windows in addition to Linux. This is significant for enterprise teams who need local sovereign AI without managing Linux infrastructure.
 
 - **Windows repositioned as "the agentic AI OS."** This is marketing language, but it has structural implications: Microsoft and NVIDIA are jointly pushing a narrative that Windows 11 + RTX Spark = a platform purpose-built for autonomous agents running locally. Expect OS-level hooks for local model inference to follow.
 
@@ -81,7 +81,7 @@ That matters for:
 
 At 128GB, RTX Spark comfortably handles any model up to ~105B parameters at 4-bit quantization, plus system memory overhead. For practical agentic pipelines, that covers the full range of "fast tier" models you'd want to run locally.
 
-The 1 petaFLOP AI throughput figure positions RTX Spark above current high-end NPUs (Apple M4 Pro: ~38 TOPS; Snapdragon X Elite: ~45 TOPS; RTX Spark: ~1,000 TOPS equivalent). Practical inference benchmarks will matter more than peak figures, but the gap is substantial.
+The 1 petaFLOP AI throughput figure positions RTX Spark above current high-end NPUs ([Apple M4 Pro: ~38 TOPS; Snapdragon X Elite: ~45 TOPS; RTX Spark: ~1,000 TOPS equivalent](https://www.storagereview.com/news/nvidia-computex-2026-keynote-the-rtx-spark-pc-family-dgx-station-and-physical-ai)). Practical inference benchmarks will matter more than peak figures, but the gap is substantial.
 
 ---
 

@@ -3,7 +3,7 @@
 > Microsoft Build 2026 shipped the full agent stack: Windows Agent Framework open-sourced, Azure Agent Mesh announced, Copilot Workspace out of beta, and Project Polaris — Microsoft's own AI model — replacing GPT-4 in GitHub Copilot by August. Here's what every builder needs to know.
 
 
-Microsoft Build 2026 ran June 2–3 at Fort Mason Center in San Francisco with roughly 2,500 developers on-site. Satya Nadella opened the keynote on June 2 with a clear thesis: Windows is no longer a platform for human users only. Agents are now first-class citizens in the runtime, the tooling, and the distribution model.
+[Microsoft Build 2026](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/) ran June 2–3 at Fort Mason Center in San Francisco with roughly 2,500 developers on-site. Satya Nadella opened the keynote on June 2 with a clear thesis: Windows is no longer a platform for human users only. Agents are now first-class citizens in the runtime, the tooling, and the distribution model.
 
 We published a [pre-event builder preview](/builders-log/microsoft-build-2026-developer-preview-copilot-foundry-mcp/) before the conference opened. This is the recap — what actually shipped, what it means, and what builders should act on.
 
@@ -13,7 +13,7 @@ We published a [pre-event builder preview](/builders-log/microsoft-build-2026-de
 
 The most significant announcement at Build 2026 had nothing to do with Windows.
 
-Microsoft unveiled **Project Polaris** — its own in-house AI coding model — as the future reasoning engine for GitHub Copilot. Polaris will replace GPT-4 Turbo as the default model for Copilot subscribers starting August 2026, with automatic migration and an optional three-month fallback period for teams that want to stay on GPT-4.
+Microsoft unveiled **Project Polaris** — its own in-house AI coding model — as the future reasoning engine for GitHub Copilot. ([devblogs.microsoft.com](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/)) Polaris will replace GPT-4 Turbo as the default model for Copilot subscribers starting August 2026, with automatic migration and an optional three-month fallback period for teams that want to stay on GPT-4.
 
 Polaris is a mixture-of-experts architecture with specialized sub-modules tuned for different programming languages and frameworks. According to Microsoft, it outperforms GPT-4 Turbo on HumanEval and MBPP benchmarks — with particular gains in low-resource languages like Rust and Haskell. Pro tier subscribers get multi-file context up to 100,000 lines and autonomous test generation. The model runs on custom Maia AI accelerators inside Azure, which Microsoft says reduces per-inference latency and lowers cost.
 
@@ -23,7 +23,7 @@ Polaris is a mixture-of-experts architecture with specialized sub-modules tuned 
 
 ## Windows Agent Framework, Agent Runtime, and Agent Store
 
-**Windows Agent Framework (WAF)** v1.0 shipped April 2 and was MIT-licensed at Build. It is Microsoft's library for building agents that run across local Windows machines, Windows 365 Cloud PCs, and Azure Arc-enabled edge devices.
+[**Windows Agent Framework (WAF)**](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/) v1.0 shipped April 2 and was [MIT-licensed at Build](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/). It is Microsoft's library for building agents that run across local Windows machines, Windows 365 Cloud PCs, and Azure Arc-enabled edge devices.
 
 The key design principle: agents are defined in YAML, not tied to a runtime. An agent can start as a local process on a developer's laptop, escalate to a Windows 365 GPU node when the task requires it, and publish to Azure as a service — all using the same manifest definition. No re-architecture required when workloads grow.
 
@@ -41,7 +41,7 @@ The open-source MIT license is meaningful. Unlike Azure-specific SDKs, WAF can b
 
 ## Azure Agent Mesh: Federated Execution at Scale
 
-**Azure Agent Mesh** was announced at Build as a control plane that federates agent execution across three deployment targets:
+[**Azure Agent Mesh**](https://devblogs.microsoft.com/foundry/agent-service-build2026/) was announced at Build as a control plane that federates agent execution across three deployment targets:
 - On-premises Windows servers
 - Windows 365 Cloud PCs
 - Azure Arc-enabled edge devices
@@ -56,7 +56,7 @@ Pricing is consumption-based with a new dedicated SKU for agent compute. GA is t
 
 ## Copilot Workspace: Beta Graduates
 
-**Copilot Workspace** exited beta and went generally available at Build. Workspace is GitHub's agentic programming environment — a context-aware space where Copilot can reason across a full repository, propose multi-file edits, run tests, interpret results, and iterate autonomously on scoped tasks.
+[**Copilot Workspace**](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/) exited beta and went generally available at Build. Workspace is GitHub's agentic programming environment — a context-aware space where Copilot can reason across a full repository, propose multi-file edits, run tests, interpret results, and iterate autonomously on scoped tasks.
 
 The Workspace GA ships with:
 - **Copilot Extensions**: Ecosystem integrations for Jira, Datadog, and ServiceNow — third-party tools callable from within an active workspace session
@@ -103,7 +103,7 @@ Two infrastructure announcements shift what's possible for developers building o
 
 **DirectML 2.0** abstracts silicon differences across Intel, AMD, and Qualcomm NPUs — the three processors that ship in modern Windows hardware. With DirectML 2.0, a Windows app can run Whisper-level transcription, Stable Diffusion-class image generation, and lightweight LLM inference entirely on-device without cloud round-trips, without conditional code paths per chip vendor, and without special driver configuration.
 
-**WSL 3** (Windows Subsystem for Linux 3) completely re-architects the Linux kernel integration. The kernel now runs in a lightweight VM with paravirtualized access to the Windows GPU and NPU. The practical result: AI and ML workloads inside WSL run at near-native speed. Teams that use Linux toolchains (PyTorch, JAX, CUDA) on Windows development hardware no longer pay a significant performance penalty for the virtualization layer.
+[**WSL 3**](https://www.techtimes.com/articles/317598/20260602/wsl-3-build-2026-near-native-gpu-npu-passthrough-brings-local-ai-windows.htm) (Windows Subsystem for Linux 3) completely re-architects the Linux kernel integration. The kernel now runs in a lightweight VM with paravirtualized access to the Windows GPU and NPU. The practical result: AI and ML workloads inside WSL run at near-native speed. Teams that use Linux toolchains (PyTorch, JAX, CUDA) on Windows development hardware no longer pay a significant performance penalty for the virtualization layer.
 
 **What this means for builders**: DirectML 2.0 + WSL 3 together make Windows a viable on-device AI development environment for the first time at production quality. Developers who dual-boot or use separate Linux machines for ML workloads can consolidate. For consumer app builders, DirectML 2.0 means shipping local inference features that work across the Windows hardware base without maintaining three NPU-specific code paths.
 

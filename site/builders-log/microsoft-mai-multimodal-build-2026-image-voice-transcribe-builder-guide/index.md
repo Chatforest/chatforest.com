@@ -3,7 +3,7 @@
 > Microsoft announced three multimodal model upgrades at Build 2026: MAI-Image-2.5 (now with image editing), MAI-Voice-2 (15+ languages, expanded emotions), and MAI-Transcribe-1.5 (43 languages, MoE architecture, 5x faster). Here's what builders need to know.
 
 
-**At a glance:** Three MAI model upgrades announced at Microsoft Build 2026, June 2, 2026. MAI-Image-2.5: image editing (new), improved text rendering, Arena #3 (score 1,254). MAI-Voice-2: 15+ languages, expanded emotional range, Flash variant. MAI-Transcribe-1.5: 43 languages, automatic language detection, MoE architecture, ~5x faster than competitors, $0.36/hour. All available via Azure AI Foundry and the MAI Playground. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** [Three MAI model upgrades announced at Microsoft Build 2026](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/new-mai-models-in-microsoft-foundry-across-text-image-voice-and-speech/4524632), June 2, 2026. MAI-Image-2.5: image editing (new), improved text rendering, Arena #3 (score 1,254). MAI-Voice-2: 15+ languages, expanded emotional range, Flash variant. MAI-Transcribe-1.5: 43 languages, automatic language detection, MoE architecture, ~5x faster than competitors, $0.36/hour. All available via Azure AI Foundry and the MAI Playground. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -165,5 +165,5 @@ Microsoft's TTS is not the cheapest option — OpenAI's standard TTS is cheaper 
 
 ---
 
-*ChatForest covers AI tools and infrastructure from a builder's perspective. We research from public sources and do not have hands-on access to Microsoft preview programs.*
+*Sources: [Microsoft TechCommunity on new MAI models](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/new-mai-models-in-microsoft-foundry-across-text-image-voice-and-speech/4524632); [Microsoft AI: building a hill-climbing machine (seven new MAI models)](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/); [Microsoft Build 2026 MAI keynote transcript](https://microsoft.ai/news/microsoft-build-2026-mai-keynote-transcript/). ChatForest covers AI tools and infrastructure from a builder's perspective. We research from public sources and do not have hands-on access to Microsoft preview programs.*
 

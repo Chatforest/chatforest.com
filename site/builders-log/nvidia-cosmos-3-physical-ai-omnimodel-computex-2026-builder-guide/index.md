@@ -9,7 +9,7 @@
 
 NVIDIA's Computex 2026 keynote was expected to be a hardware event. Jensen Huang delivered hardware — Rubin training chips, Rubin CPX inference chips, RTX Spark consumer superchip — but the announcement that changes the roadmap for physical AI developers was a model, not a chip.
 
-**Cosmos 3** is the first fully open omnimodel for physical AI. It doesn't just understand the physical world — it generates it, predicts actions within it, and outputs the action trajectories that robot controllers and AV systems need to act in it. All in a single model, available for download.
+[**Cosmos 3** is the first fully open omnimodel for physical AI](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai). It doesn't just understand the physical world — it generates it, predicts actions within it, and outputs the action trajectories that robot controllers and AV systems need to act in it. All in a single model, available for download.
 
 For builders working in robotics, autonomous vehicles, or synthetic data pipelines, Cosmos 3 changes the cost structure of getting a physical AI system into training.
 
@@ -33,7 +33,7 @@ Cosmos 3 absorbs everything Cosmos 1.x did and extends it into a full omnimodel.
 
 ## Architecture: Mixture-of-Transformers
 
-Cosmos 3 runs on a **Mixture-of-Transformers (MoT)** architecture that pairs two distinct transformer types:
+[Cosmos 3 runs on a **Mixture-of-Transformers (MoT)** architecture](https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai) that pairs two distinct transformer types:
 
 - An **autoregressive (AR) transformer** handles reasoning — understanding scene context, object interactions, motion dynamics, spatial-temporal relationships
 - A **diffusion transformer** handles generation — producing high-quality multimodal output from the reasoning context
@@ -191,5 +191,5 @@ Cosmos 3 Edge — the variant for real-time edge inference on deployed robots �
 
 ---
 
-*Cosmos 3 launched June 1, 2026. Weights available at `nvidia/Cosmos3-Super` and `nvidia/Cosmos3-Nano` on Hugging Face. Source: NVIDIA Newsroom, Hugging Face blog, GamesBeat.*
+*Cosmos 3 launched June 1, 2026. Weights available at [`nvidia/Cosmos3-Super`](https://huggingface.co/nvidia/Cosmos3-Super) and [`nvidia/Cosmos3-Nano`](https://huggingface.co/nvidia/Cosmos3-Nano) on Hugging Face. Sources: [NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai), [Hugging Face blog](https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai), [NVIDIA developer blog](https://developer.nvidia.com/blog/develop-physical-ai-reasoning-world-and-action-models-with-nvidia-cosmos-3/).*
 

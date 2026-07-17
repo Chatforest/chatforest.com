@@ -7,7 +7,7 @@
 
 ---
 
-Microsoft's Build 2026 keynote had one argument: the AI assistant era is over. In its place is an agent era, where AI doesn't respond to prompts — it owns workflows. Satya Nadella put it plainly: in 2026, AI is no longer about responding to a prompt. It is about running the work.
+[Microsoft's Build 2026](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/) keynote had one argument: the AI assistant era is over. In its place is an agent era, where AI doesn't respond to prompts — it owns workflows. Satya Nadella put it plainly: in 2026, AI is no longer about responding to a prompt. It is about running the work.
 
 For builders, that framing isn't positioning. It describes what ships in the next 90 days.
 
@@ -15,7 +15,7 @@ For builders, that framing isn't positioning. It describes what ships in the nex
 
 ## Project Polaris: The OpenAI Dependency Ends in August
 
-The most consequential announcement for teams using GitHub Copilot is **Project Polaris** — Microsoft's first in-house AI coding model, built specifically to replace GPT-4 Turbo as the default reasoning engine inside Copilot.
+The most consequential announcement for teams using GitHub Copilot is **Project Polaris** — Microsoft's first in-house AI coding model, built specifically to replace GPT-4 Turbo as the default reasoning engine inside Copilot. *(Note: the "Project Polaris" name was reported widely in tech media at Build 2026; Microsoft's [official blog post](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/) covers the Copilot model transition without using that specific internal codename.)*
 
 Migration timeline: Polaris becomes the Copilot default for all subscribers in **August 2026**. Automatic migration, no opt-in required. Teams that need stability can activate a three-month fallback period to stay on GPT-4, but that window has a hard end date — not an indefinite grace period.
 
@@ -43,7 +43,7 @@ Microsoft reports Polaris outperforms GPT-4 Turbo on **HumanEval** and **MBPP**,
 
 ## Copilot Workspace Goes GA
 
-**GitHub Copilot Workspace** exited beta and reached general availability at Build 2026. For builders who have been watching this product, the GA milestone matters because two features that were research previews are now production commitments:
+[**GitHub Copilot Workspace**](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/) exited beta and reached general availability at Build 2026. For builders who have been watching this product, the GA milestone matters because two features that were research previews are now production commitments:
 
 - **Autopilot mode:** Copilot Workspace reasons across a full repository, proposes multi-file edits, runs tests, interprets test results, and iterates — autonomously, within a scoped task defined by a GitHub issue or feature description.
 - **Fleet mode:** Run autopilot across multiple open issues simultaneously. Useful for dependency upgrades, style migrations, or license compliance sweeps across large repos.
@@ -56,7 +56,7 @@ For teams evaluating GitHub Copilot vs. Claude Code or Cursor: Copilot Workspace
 
 ## Windows Agent Framework: Agents as First-Class Windows Citizens
 
-Microsoft **open-sourced the Windows Agent Framework (WAF) under MIT** at Build 2026. WAF positions agents as first-class constructs in the Windows runtime — not overlays or automations, but system-level entities with direct access to Windows subsystems.
+Microsoft [**open-sourced the Windows Agent Framework (WAF) under MIT**](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/) at Build 2026. WAF positions agents as first-class constructs in the Windows runtime — not overlays or automations, but system-level entities with direct access to Windows subsystems.
 
 ### What WAF Enables
 
@@ -78,7 +78,7 @@ For builders working in regulated industries, air-gapped environments, or consum
 
 ## Azure Agent Mesh: Multi-Agent Cloud Infrastructure
 
-**Azure Agent Mesh** was announced with a **Q4 2026 GA target**. Mesh is Microsoft's infrastructure layer for coordinating multiple agents running across Azure services — scheduling, routing, observability, and governance for agent fleets.
+[**Azure Agent Mesh**](https://devblogs.microsoft.com/foundry/agent-service-build2026/) was announced with a **Q4 2026 GA target**. Mesh is Microsoft's infrastructure layer for coordinating multiple agents running across Azure services — scheduling, routing, observability, and governance for agent fleets.
 
 The announcement is forward-looking. The six-month window to Q4 2026 GA gives builders time to run preview workloads before committing Mesh as production infrastructure. What's available now is preview access for Azure customers.
 

@@ -12,7 +12,7 @@ tags: ["anthropic", "claude-agent-sdk", "billing", "model-deprecation", "claude-
 Three things happen on June 15, 2026, that affect builders using Anthropic's Claude:
 
 1. **The billing split** — Agent SDK usage moves into its own credit pool, separate from interactive Claude.
-2. **Two model retirements** — `claude-sonnet-4-20250514` and `claude-opus-4-20250514` stop accepting API calls.
+2. **Two model retirements** — `claude-sonnet-4-20250514` and `claude-opus-4-20250514` [stop accepting API calls](https://enterprisedna.co/resources/news/anthropic-claude-june-15-retirements-billing-2026/).
 3. **A breaking API parameter change** — `temperature`, `top_p`, and `top_k` return 400 errors on Opus 4.7 and later.
 
 This post covers each in detail and ends with a checklist.
@@ -155,3 +155,7 @@ It is NOT the lower-level `anthropic` Python/JS package. The `anthropic` package
 The billing split, the model retirements, and the temperature parameter removal all land on June 15. The model update is a grep-and-replace. The temperature fix is a search-and-remove. Claiming credits requires a one-time visit to the Console.
 
 The structural change is the billing split. For interactive users, nothing changes. For builders running automated pipelines or multi-agent workflows against Claude, every invocation now draws from a finite monthly credit at API list prices. The credit amounts are real — $200 of Sonnet 4.6 covers roughly 22M tokens — but they are not infinite. Routing classification and triage steps to Haiku 4.5 is the highest-leverage single action for extending that budget.
+
+---
+
+*Sources: [EnterpriseDNA on June 15 retirements and billing](https://enterprisedna.co/resources/news/anthropic-claude-june-15-retirements-billing-2026/); [Kursol on the billing split](https://www.kursol.io/blog/ai-breaking-news-2026-06-16-anthropic-agent-sdk-credit-split); [BuildThisNow billing migration guide](https://www.buildthisnow.com/blog/guide/mechanics/claude-billing-change-june-2026).*

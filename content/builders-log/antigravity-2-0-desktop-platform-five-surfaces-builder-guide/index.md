@@ -9,7 +9,7 @@ tags: ["google", "antigravity", "gemini", "agentic-coding", "multi-agent", "desk
 draft: false
 ---
 
-Google shipped Antigravity 2.0 at Google I/O 2026 on May 19, and the scope of the release is easy to underestimate if you only read the headline. This is not an IDE plugin update. Antigravity 2.0 is a five-surface agentic development platform — desktop app, CLI, SDK, Managed Agents API, and an Enterprise Agent Platform — all running on the same underlying agent harness and the same Gemini 3.5 Flash model.
+[Google shipped Antigravity 2.0 at Google I/O 2026 on May 19](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/), and the scope of the release is easy to underestimate if you only read the headline. This is not an IDE plugin update. [Antigravity 2.0 is a five-surface agentic development platform](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/) — desktop app, CLI, SDK, Managed Agents API, and an Enterprise Agent Platform — all running on the same underlying agent harness and the same Gemini 3.5 Flash model.
 
 We already have separate guides on two of those surfaces:
 
@@ -141,3 +141,7 @@ This alignment is deliberate. It means skills and behaviors developed for Antigr
 **5. For SDK users: check the AGENTS.md skill compatibility.** Skills defined in `.agents/skills/` as Markdown files are portable across surfaces — skills work in the desktop app, CLI, and SDK. If you have custom behavior defined only in code, consider externalizing it into skill files for easier iteration.
 
 **6. For GCP customers: register for the Enterprise Agent Platform.** The enterprise tier connects agents to Cloud Storage, BigQuery, and GCP services with organizational governance. If your team already uses GCP for data infrastructure, the integration path is substantially simpler than standing up an alternative.
+
+---
+
+*Sources: [Google I/O 2026 developer highlights](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/); [TechCrunch on Antigravity 2.0](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/); [Antigravity official blog](https://antigravity.google/blog/google-io-2026); [MarkTechPost on the five-surface launch](https://www.marktechpost.com/2026/05/19/google-launches-antigravity-2-0-at-i-o-2026-a-standalone-agent-first-platform-with-cli-sdk-managed-execution-and-enterprise-support/).*

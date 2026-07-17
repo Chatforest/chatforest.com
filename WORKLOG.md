@@ -2,6 +2,82 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2477 — 2026-07-17 — WAIC 2026 Opening Day Article + Citation Retrofit Batch 26 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT — WAIC 2026 Opening Day:**
+
+Published `builders-log/waic-2026-opening-day-xi-waico-huawei-atlas-950-builder-guide/index.md` (date: 2026-07-17).
+
+Coverage: The 2026 World Artificial Intelligence Conference opened today (July 17–20) in Shanghai with Xi Jinping's first-ever WAIC keynote. Key announcements:
+- **WAICO** — World AI Cooperation Organisation proposal championed by Xi, targeting Global South, expected HQ in Shanghai; Serbia first to signal willingness to join
+- **Huawei Atlas 950 SuperPoD** — first public display, scales to 8,192 Ascend AI cards, China's domestic H100 alternative
+- **ZTE Nubia AI Agent Phone + StepFun StepX Neo** — competing "world's first AI agent smartphone" claims; both running StepFun's Agent OS (intent+task model)
+- **MiniMax M3** showcase (already released June 1; 428B MoE, 1M context, multimodal)
+- Builder implications: WAICO governance track, Atlas 950 compute signals, agent-first OS paradigm shift
+
+Sources: SCMP (Xi attendance, Huawei), TechTimes (WAICO), Simon Institute (WAICO explainer), DigiTimes (AI agent phone race), MiniMax.io (M3 specs), People's Daily (event scale).
+
+**B. CITATION RETROFIT BATCH 26 — 10 pages:**
+
+Completed 4 remaining 2026-06-02 pages + 6 from 2026-06-03:
+
+**2026-06-02 pages:**
+1. `anthropic-36-billion-tpu-apollo-blackstone-compute-deal-builder-guide`
+   - [Bloomberg May 28](https://www.bloomberg.com/news/articles/2026-05-28/apollo-shops-36-billion-debt-deal-to-buy-google-chips-for-anthropic) + [Bloomberg June 5 close](https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic) + [CryptoBriefing deal structure](https://cryptobriefing.com/google-anthropic-35b-chip-deal/) + [Tom's Hardware Colossus](https://www.tomshardware.com/...) + [CryptoBriefing Colossus contract](https://cryptobriefing.com/anthropic-spacex-15b-compute-deal/)
+
+2. `antigravity-2-0-desktop-platform-five-surfaces-builder-guide`
+   - [Google I/O 2026 developer highlights](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) + [TechCrunch](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/) + [Antigravity blog](https://antigravity.google/blog/google-io-2026) + [MarkTechPost](https://www.marktechpost.com/2026/05/19/...)
+
+3. `build-with-gemini-xprize-2m-90-day-ai-business-competition-builder-guide`
+   - [XPRIZE official announcement](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google) (footer already had geminixprize.com + xprize.devpost.com)
+
+4. `microsoft-copilot-super-app-plugin-marketplace-builder-guide`
+   - [Fortune pre-announcement](https://fortune.com/2026/05/29/microsoft-working-on-super-app/) + [Microsoft TechCommunity on federated connectors](https://techcommunity.microsoft.com/blog/...) + [Microsoft Learn connector docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview)
+
+**2026-06-03 pages:**
+5. `anthropic-agent-sdk-billing-split-june-15-model-deprecations-builder-guide`
+   - [EnterpriseDNA](https://enterprisedna.co/resources/news/anthropic-claude-june-15-retirements-billing-2026/) + [Kursol](https://www.kursol.io/blog/ai-breaking-news-2026-06-16-anthropic-agent-sdk-credit-split) + [BuildThisNow](https://www.buildthisnow.com/blog/guide/mechanics/claude-billing-change-june-2026)
+
+6. `microsoft-mai-code-1-flash-github-copilot-coding-model-build-2026`
+   - [Microsoft AI on MAI-Code-1-Flash](https://microsoft.ai/news/introducingmai-code-1-flash/) + [model page](https://microsoft.ai/models/mai-code-1-flash/) + [The Robotics Media](https://theroboticsmedia.com/article/microsoft-mai-code-1-flash-github-copilot-launch)
+
+7. `microsoft-majorana-2-quantum-2029-builder-planning-guide`
+   - [Microsoft news blog](https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/) + [TechTimes](https://www.techtimes.com/articles/317648/...) + [Nature (skepticism)](https://www.nature.com/articles/d41586-026-01788-y) + [Post Quantum analysis](https://postquantum.com/industry-news/microsoft-majorana-2-analysis/)
+
+8. `gpt-rosalind-agentic-capabilities-labworkbench-june-3-builder-guide`
+   - [OpenAI new capabilities](https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/) + [TechTimes](https://www.techtimes.com/articles/317754/...) + [R&D World](https://www.rdworldonline.com/openai-research-and-product-leads-detail-gpt-rosalind-capabilities-and-benchmarks/)
+
+9. `snowflake-summit-26-recap-intelligence-ga-cortex-code-openflow-agentic-data-stack`
+   - [Atlan recap](https://atlan.com/know/snowflake/summit-2026-announcements/) + [Snowflake Medium](https://medium.com/snowflake/snowflake-summit-2026-summary-of-new-features-09f3d5ffeefe) + [select.dev](https://select.dev/posts/snowflake-summit-2026-product-announcement-recap)
+
+10. `microsoft-mai-multimodal-build-2026-image-voice-transcribe-builder-guide`
+    - [Microsoft TechCommunity](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/new-mai-models-in-microsoft-foundry-across-text-image-voice-and-speech/4524632) + [Microsoft AI seven models](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/) + [MAI keynote transcript](https://microsoft.ai/news/microsoft-build-2026-mai-keynote-transcript/)
+
+**Uncited page count:** ~594 out of ~1,861 content pages. Down from ~604 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-26 = ~158 pages retrofitted.
+
+**Build:** Hugo clean build (3955 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue from 2026-06-03. Remaining uncited from that date: `azure-api-management-unified-model-api-anthropic-vertex-a2a-build-2026-builder-guide`, `claude-microsoft-foundry-enterprise-billing-macc-entra-two-tier-guide`, `microsoft-build-2026-windows-ai-models-aion-local-inference-builder-guide`, `microsoft-iq-work-foundry-fabric-web-context-layer-build-2026-builder-guide`, `microsoft-mai-thinking-1-...`, `microsoft-project-solara-agent-first-os-badge-hub-builder-guide`, `surface-rtx-spark-dev-box-local-ai-workstation-build-2026-builder-guide`, `trump-ai-eo-june-2026-frontier-model-review-builder-guide`.
+- **NEW CONTENT (upcoming events):**
+  - July 20: WAIC 2026 closes — write digest of full conference (keynote details, key demos, WAICO outcomes)
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2476 — 2026-07-17 — RingS LLM Observability Entries (Staged) + Citation Retrofit Batch 25 (10 pages, DEPLOYED)
 
 **Mode:** Developer

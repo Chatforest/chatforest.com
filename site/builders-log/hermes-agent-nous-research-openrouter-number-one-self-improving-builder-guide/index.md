@@ -3,7 +3,7 @@
 > Nous Research's open-source Hermes Agent hit 140,000 GitHub stars in under three months and now processes more tokens on OpenRouter than any other app in the world — 271 billion per day. Here's the architecture behind it, and how builders should think about where it fits.
 
 
-On May 6, 2026, Nous Research announced that Hermes Agent had reached #1 on OpenRouter's global token rankings — 271 billion tokens processed across all users, surpassing OpenClaw's 186 billion daily. Not the top coding agent. Not the top open-source tool. The top app on the entire platform, across every category.
+On May 6, 2026, [Nous Research announced that Hermes Agent had reached #1 on OpenRouter's global token rankings](https://www.marktechpost.com/2026/05/10/openclaw-vs-hermes-agent-why-nous-researchs-self-improving-agent-now-leads-openrouters-global-rankings/) — processing more daily tokens than any other app on the platform, surpassing OpenClaw's 186 billion daily at 224 billion tokens per day ([cumulative total for Hermes exceeded 271 billion](https://phemex.com/news/article/hermes-agent-leads-openrouter-usage-with-271-billion-tokens-80104)). Not the top coding agent. Not the top open-source tool. The top app on the entire platform, across every category.
 
 That kind of adoption, for a tool that launched February 25, deserves a close read.
 
@@ -13,7 +13,7 @@ This is a builder guide: what Hermes Agent actually is, what it does differently
 
 ## What Hermes Agent Is
 
-Hermes Agent is an open-source, self-hosted AI agent built by Nous Research. MIT license. Python. It reached 140,000 GitHub stars in under three months — faster than any prior open-source agent framework reached that milestone.
+[Hermes Agent](https://github.com/nousresearch/hermes-agent) is an open-source, self-hosted AI agent built by Nous Research. MIT license. Python. It reached 140,000 GitHub stars in under three months — faster than any prior open-source agent framework reached that milestone.
 
 The core premise differs from session-based coding tools. Where Claude Code runs in your terminal while you're at your desk and forgets everything when the session ends, Hermes runs *continuously* — on a VPS, a home server, or serverless infrastructure — and builds compounding knowledge over time.
 
@@ -73,7 +73,7 @@ Setup is a single command: `hermes setup --portal`. The wizard handles LLM provi
 
 ## Platform Support
 
-Hermes connects to 16+ messaging platforms out of the box:
+Hermes connects to 20+ messaging platforms out of the box:
 
 CLI, Telegram, Discord, Slack, WhatsApp, Signal, Matrix, Mattermost, Email, SMS, DingTalk, Feishu (Lark), WeCom (Enterprise WeChat), BlueBubbles (iMessage bridge), and Home Assistant.
 
@@ -114,7 +114,7 @@ A common pattern: Claude Code for interactive development, Hermes for background
 
 The OpenRouter usage numbers deserve context. Platform-level token volume reflects *real usage at scale*, not benchmarks or developer previews. OpenRouter processes traffic across hundreds of apps — Hermes passing OpenClaw's daily token count means Hermes users are running substantial workloads, not just experimenting.
 
-The 140,000 GitHub stars in under three months is partially viral growth. The sustained token volume is not. You don't maintain 271 billion tokens/day through hype — that's a user base running Hermes for actual recurring work.
+The 140,000 GitHub stars in under three months is partially viral growth. The sustained token volume is not. You don't reach 224 billion daily tokens on OpenRouter through hype — that's a user base running Hermes for actual recurring work.
 
 For builders evaluating whether to adopt the framework: the network effect is already real. There's a growing library of community skills, a growing base of Hermes-integrated services, and a maintainer team (Nous Research) with a track record shipping Hermes model releases. The framework is not at risk of abandonment.
 

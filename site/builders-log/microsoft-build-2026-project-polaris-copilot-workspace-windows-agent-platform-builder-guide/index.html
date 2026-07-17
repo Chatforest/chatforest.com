@@ -67,11 +67,11 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> Microsoft Build 2026. June 2–3, 2026. Fort Mason Center, San Francisco. Keynote: Satya Nadella. Central thesis: AI agents are infrastructure, not features. Four announcements with direct builder implications: Project Polaris, Copilot Workspace GA, Windows Agent Framework, Azure Agent Mesh. Part of our <strong><a href="/builders-log/">Builder&rsquo;s Log</a></strong>.</p>
 <hr>
-<p>Microsoft&rsquo;s Build 2026 keynote had one argument: the AI assistant era is over. In its place is an agent era, where AI doesn&rsquo;t respond to prompts — it owns workflows. Satya Nadella put it plainly: in 2026, AI is no longer about responding to a prompt. It is about running the work.</p>
+<p><a href="https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/">Microsoft&rsquo;s Build 2026</a> keynote had one argument: the AI assistant era is over. In its place is an agent era, where AI doesn&rsquo;t respond to prompts — it owns workflows. Satya Nadella put it plainly: in 2026, AI is no longer about responding to a prompt. It is about running the work.</p>
 <p>For builders, that framing isn&rsquo;t positioning. It describes what ships in the next 90 days.</p>
 <hr>
 <h2 id="project-polaris-the-openai-dependency-ends-in-august">Project Polaris: The OpenAI Dependency Ends in August</h2>
-<p>The most consequential announcement for teams using GitHub Copilot is <strong>Project Polaris</strong> — Microsoft&rsquo;s first in-house AI coding model, built specifically to replace GPT-4 Turbo as the default reasoning engine inside Copilot.</p>
+<p>The most consequential announcement for teams using GitHub Copilot is <strong>Project Polaris</strong> — Microsoft&rsquo;s first in-house AI coding model, built specifically to replace GPT-4 Turbo as the default reasoning engine inside Copilot. <em>(Note: the &ldquo;Project Polaris&rdquo; name was reported widely in tech media at Build 2026; Microsoft&rsquo;s <a href="https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/">official blog post</a> covers the Copilot model transition without using that specific internal codename.)</em></p>
 <p>Migration timeline: Polaris becomes the Copilot default for all subscribers in <strong>August 2026</strong>. Automatic migration, no opt-in required. Teams that need stability can activate a three-month fallback period to stay on GPT-4, but that window has a hard end date — not an indefinite grace period.</p>
 <h3 id="architecture">Architecture</h3>
 <p>Polaris is a <strong>mixture-of-experts (MoE)</strong> architecture with specialized sub-modules tuned for different programming languages and frameworks. At inference time, it applies <strong>chain-of-thought and tree-of-thought reasoning</strong> to handle multi-step, multi-file tasks that flat completion models struggle with.</p>
@@ -85,7 +85,7 @@
 <p><strong>Pricing</strong> for direct API access to Polaris has not been disclosed. At GA in August, pricing is expected through Azure AI Foundry alongside the existing MAI model family.</p>
 <hr>
 <h2 id="copilot-workspace-goes-ga">Copilot Workspace Goes GA</h2>
-<p><strong>GitHub Copilot Workspace</strong> exited beta and reached general availability at Build 2026. For builders who have been watching this product, the GA milestone matters because two features that were research previews are now production commitments:</p>
+<p><a href="https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/"><strong>GitHub Copilot Workspace</strong></a> exited beta and reached general availability at Build 2026. For builders who have been watching this product, the GA milestone matters because two features that were research previews are now production commitments:</p>
 <ul>
 <li><strong>Autopilot mode:</strong> Copilot Workspace reasons across a full repository, proposes multi-file edits, runs tests, interprets test results, and iterates — autonomously, within a scoped task defined by a GitHub issue or feature description.</li>
 <li><strong>Fleet mode:</strong> Run autopilot across multiple open issues simultaneously. Useful for dependency upgrades, style migrations, or license compliance sweeps across large repos.</li>
@@ -94,7 +94,7 @@
 <p>For teams evaluating GitHub Copilot vs. Claude Code or Cursor: Copilot Workspace GA closes a meaningful gap in agentic task completion. The question is no longer whether Copilot can do agentic tasks; it&rsquo;s whether Workspace&rsquo;s GitHub-native integration outweighs Claude Code&rsquo;s model flexibility for your workflow.</p>
 <hr>
 <h2 id="windows-agent-framework-agents-as-first-class-windows-citizens">Windows Agent Framework: Agents as First-Class Windows Citizens</h2>
-<p>Microsoft <strong>open-sourced the Windows Agent Framework (WAF) under MIT</strong> at Build 2026. WAF positions agents as first-class constructs in the Windows runtime — not overlays or automations, but system-level entities with direct access to Windows subsystems.</p>
+<p>Microsoft <a href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/"><strong>open-sourced the Windows Agent Framework (WAF) under MIT</strong></a> at Build 2026. WAF positions agents as first-class constructs in the Windows runtime — not overlays or automations, but system-level entities with direct access to Windows subsystems.</p>
 <h3 id="what-waf-enables">What WAF Enables</h3>
 <p>WAF gives agents declarative APIs for interacting with:</p>
 <ul>
@@ -109,7 +109,7 @@
 <p>For builders working in regulated industries, air-gapped environments, or consumer apps that can&rsquo;t assume persistent connectivity, this is a new tier of deployment option that didn&rsquo;t exist at a platform level before today.</p>
 <hr>
 <h2 id="azure-agent-mesh-multi-agent-cloud-infrastructure">Azure Agent Mesh: Multi-Agent Cloud Infrastructure</h2>
-<p><strong>Azure Agent Mesh</strong> was announced with a <strong>Q4 2026 GA target</strong>. Mesh is Microsoft&rsquo;s infrastructure layer for coordinating multiple agents running across Azure services — scheduling, routing, observability, and governance for agent fleets.</p>
+<p><a href="https://devblogs.microsoft.com/foundry/agent-service-build2026/"><strong>Azure Agent Mesh</strong></a> was announced with a <strong>Q4 2026 GA target</strong>. Mesh is Microsoft&rsquo;s infrastructure layer for coordinating multiple agents running across Azure services — scheduling, routing, observability, and governance for agent fleets.</p>
 <p>The announcement is forward-looking. The six-month window to Q4 2026 GA gives builders time to run preview workloads before committing Mesh as production infrastructure. What&rsquo;s available now is preview access for Azure customers.</p>
 <p>Mesh integrates with <strong>Microsoft Agent Framework 1.0</strong>, which reached GA earlier this year and provides the A2A (Agent-to-Agent) protocol for .NET and Python. If you&rsquo;re already building on Agent Framework 1.0, Mesh is the cloud execution layer that scales your agent orchestration without manual infrastructure management.</p>
 <hr>
@@ -226,16 +226,16 @@ WAF and Windows AI Foundry together define an on-device agent target. The MIT li
 
   
     <div class="article-card">
-  <div class="card-meta"><span>Builders-Log</span> <span>2026-07-15 12:00:00</span></div>
-  <h3><a href="/builders-log/xiaomi-mimo-openrouter-chinese-ai-token-volume-builder-guide/">Xiaomi MiMo V2.5 Is Now OpenRouter&#39;s #2 Model by Token Volume — Chinese AI Holds 42% of the Platform</a></h3>
-  <p>Xiaomi&#39;s MiMo V2.5 logged 20.5 trillion tokens on OpenRouter in the 30 days ending July 13, 2026, ranking #2 overall and running 3.5× ahead of Claude Sonnet 4.6 (5.8T, #10). Chinese AI models collectively account for roughly 42% of OpenRouter&#39;s measured token volume. The driver is price: MiMo-V2.5 costs $0.105/$0.28 per million tokens (input/output), making it cheaper than almost every comparable model. Builders routing high-volume agentic tasks are choosing cost over brand — and Chinese models are winning that race.</p>
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-17 00:00:00</span></div>
+  <h3><a href="/builders-log/waic-2026-opening-day-xi-waico-huawei-atlas-950-builder-guide/">WAIC 2026 Opens: Xi Keynotes WAICO Rival, Huawei Atlas 950 Debuts, AI Agent Phones Race — Builder&#39;s Guide</a></h3>
+  <p>The 2026 World Artificial Intelligence Conference opened today in Shanghai with Xi Jinping&#39;s first-ever WAIC keynote, the WAICO governance proposal targeting the Global South, Huawei&#39;s Atlas 950 SuperPoD debut, and two competing &#39;world&#39;s first&#39; AI agent smartphones from ZTE Nubia and StepFun.</p>
 </div>
 
   
     <div class="article-card">
-  <div class="card-meta"><span>Builders-Log</span> <span>2026-07-15 00:00:00</span></div>
-  <h3><a href="/builders-log/ivanti-ai-agent-ownership-gap-85-percent-control-42-percent-know-vb-transform-builder-guide/">85% of IT Teams Say Their AI Agents Are Under Control. Only 42% Know Who Owns Them.</a></h3>
-  <p>New Ivanti research released at VB Transform Day 2 exposes a structural governance gap: most IT organizations claim AI agent ownership but can&#39;t back it up. Among companies with AI policies, only 24% say those policies are followed consistently. 68% have witnessed agent hallucinations with real operational impact. Here is what the data means for builders deploying AI agents in production.</p>
+  <div class="card-meta"><span>Builders-Log</span> <span>2026-07-15 12:00:00</span></div>
+  <h3><a href="/builders-log/xiaomi-mimo-openrouter-chinese-ai-token-volume-builder-guide/">Xiaomi MiMo V2.5 Is Now OpenRouter&#39;s #2 Model by Token Volume — Chinese AI Holds 42% of the Platform</a></h3>
+  <p>Xiaomi&#39;s MiMo V2.5 logged 20.5 trillion tokens on OpenRouter in the 30 days ending July 13, 2026, ranking #2 overall and running 3.5× ahead of Claude Sonnet 4.6 (5.8T, #10). Chinese AI models collectively account for roughly 42% of OpenRouter&#39;s measured token volume. The driver is price: MiMo-V2.5 costs $0.105/$0.28 per million tokens (input/output), making it cheaper than almost every comparable model. Builders routing high-volume agentic tasks are choosing cost over brand — and Chinese models are winning that race.</p>
 </div>
 
   

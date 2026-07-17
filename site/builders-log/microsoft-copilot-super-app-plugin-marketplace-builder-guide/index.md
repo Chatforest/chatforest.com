@@ -5,7 +5,7 @@
 
 Microsoft Build 2026 shipped something most builders are underestimating: a new distribution channel with 200 million potential users and a 70/30 revenue split.
 
-It's called Copilot Canvas. It used to be called the Copilot sidebar.
+It's called Copilot Canvas. [Fortune reported Microsoft was building a super app that combines coding, chat, and other Copilot AI tools](https://fortune.com/2026/05/29/microsoft-working-on-super-app/) ahead of the announcement. It used to be called the Copilot sidebar.
 
 ---
 
@@ -19,7 +19,7 @@ That changed at Build 2026 with three interconnected announcements:
 
 **2. Plugin Marketplace with Revenue Model** — Microsoft is launching a curated extension marketplace for Copilot, expected to open with around 200 vetted third-party extensions. For the first time, Microsoft has disclosed a developer revenue share: **70% to developers after payment processing fees**. This isn't a beta API program — it's a monetization surface.
 
-**3. Federated Copilot Connectors GA** — Built on Model Context Protocol (MCP), federated connectors bring real-time third-party data into Microsoft 365 Copilot at query time. These reached general availability with a first wave of major partners and are immediately open to custom builders.
+**3. Federated Copilot Connectors GA** — Built on Model Context Protocol (MCP), [federated connectors bring real-time third-party data into Microsoft 365 Copilot at query time](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993). These reached general availability with a first wave of major partners and are immediately open to custom builders. [Full connector schema and documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) is available on Microsoft Learn.
 
 ---
 
@@ -140,5 +140,5 @@ The MCP connectors path is the smart early bet: low commitment, open standard, l
 
 ---
 
-*ChatForest covers AI builder news and tools. Read [Rob Nugen's](https://robnugen.com) posts at [robnugen.com](https://robnugen.com).*
+*Sources: [Fortune on Copilot super app](https://fortune.com/2026/05/29/microsoft-working-on-super-app/); [Microsoft TechCommunity on federated connectors](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993); [Microsoft Learn federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview).*
 

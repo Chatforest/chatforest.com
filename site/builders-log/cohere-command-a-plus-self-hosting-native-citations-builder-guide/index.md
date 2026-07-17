@@ -3,7 +3,7 @@
 > Command A+ is the first major open-weight model with architecture-level citation generation, Apache 2.0 licensing, and a confirmed 2×H100 footprint for W4A4 inference. Here's how to self-host it and replace your post-processing citation layer.
 
 
-Cohere released Command A+ on May 20, 2026 — 218 billion parameters, 25 billion active per token, Apache 2.0, with something no other major open-weight model ships: citation generation trained into the architecture itself.
+[Cohere released Command A+ on May 20, 2026](https://cohere.com/blog/command-a-plus) — 218 billion parameters, 25 billion active per token, Apache 2.0, with something no other major open-weight model ships: citation generation trained into the architecture itself.
 
 Most builders will encounter this model for the first time through a headline about "runs on 2×H100." That's true and it matters, but the headline buries the lead. The real shift is licensing combined with citations combined with the deployment footprint: you can now self-host a frontier-adjacent model on two commodity datacenter GPUs, with no Cohere vendor agreement, with machine-readable citation attribution on every factual claim — in a regulated industry where the previous options were "pay for enterprise API access" or "build a fragile post-processing citation layer on top of a model that wasn't trained to do this."
 
@@ -15,9 +15,9 @@ This guide covers the three decisions Command A+ changes: where to run it, how t
 
 Two properties of Command A+ are genuinely novel in combination:
 
-**Apache 2.0.** Cohere's predecessor (Command A) shipped under CC-BY-NC 4.0 — meaning commercial deployment required a separate enterprise license. Apache 2.0 means you take the weights, you run them, you ship a product. No Cohere agreement required. No revenue caps. No non-compete clauses. This matters most in regulated industries (healthcare, finance, government) where procurement teams read license files.
+**Apache 2.0.** [Cohere's predecessor (Command A) shipped under CC-BY-NC 4.0](https://venturebeat.com/technology/cohere-cracks-lossless-quantization-and-native-citations-with-first-full-apache-2-0-licensed-open-model-command-a) — meaning commercial deployment required a separate enterprise license. Apache 2.0 means you take the weights, you run them, you ship a product. No Cohere agreement required. No revenue caps. No non-compete clauses. This matters most in regulated industries (healthcare, finance, government) where procurement teams read license files.
 
-**Quantization-Aware Distillation (QAD).** Cohere built QAD to preserve attention pathway precision while quantizing only the MoE expert layers, producing near-lossless W4A4 quantization. The result: 375 tokens/second output throughput on 2×H100 80GB. The same model in BF16 needs 8×H100. At W4A4, the H100 requirement drops to two — a cost difference of roughly 4× on GPU allocation.
+**Quantization-Aware Distillation (QAD).** Cohere built QAD to preserve attention pathway precision while quantizing only the MoE expert layers, producing near-lossless W4A4 quantization. [The result: 375 tokens/second output throughput on 2×H100 80GB](https://huggingface.co/CohereLabs/command-a-plus-05-2026-w4a4). The same model in BF16 needs 8×H100. At W4A4, the H100 requirement drops to two — a cost difference of roughly 4× on GPU allocation.
 
 For builders running their own inference infrastructure, the combination of Apache 2.0 and 2×H100 W4A4 makes Command A+ a plausible self-host where Command A was not.
 
@@ -266,7 +266,7 @@ The `uncited_claims` check is useful in compliance contexts: any factual-soundin
 
 ## When to Use Command A+ vs. Alternatives
 
-The Intelligence Index score of 37 (Artificial Analysis composite) places Command A+ below the 57-60 frontier tier. This is not a general-purpose frontier model. The choice of when to use it versus alternatives is specific.
+The [Intelligence Index score of 37](https://artificialanalysis.ai/models/command-a-plus) (Artificial Analysis composite) places Command A+ below the 57-60 frontier tier. This is not a general-purpose frontier model. The choice of when to use it versus alternatives is specific.
 
 **Use Command A+ when:**
 

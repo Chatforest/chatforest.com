@@ -10,7 +10,7 @@ tags: ["openai", "gpt-rosalind", "life-sciences", "biotech", "drug-discovery", "
 
 When OpenAI launched GPT-Rosalind in April 2026, the headline was domain specificity: a frontier model purpose-built for drug discovery, genomics, and protein reasoning. The [May 29 Rosalind Biodefense program announcement](/builders-log/openai-gpt-rosalind-biodefense-domain-gated-frontier-ai-builder-guide/) layered on an access architecture story — gated tiers for national labs and vetted institutions.
 
-On June 3, OpenAI added a third chapter: agentic capabilities. GPT-Rosalind can now plan multi-step experiments, write and execute the required code, use laboratory tools, and present step-by-step reasoning for expert review. Three new benchmarks document where it beats GPT-5.5. Access expanded from limited invite to global research preview.
+On June 3, [OpenAI added a third chapter: agentic capabilities](https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/). GPT-Rosalind can now plan multi-step experiments, write and execute the required code, use laboratory tools, and present step-by-step reasoning for expert review. Three new benchmarks document where it beats GPT-5.5. Access expanded from limited invite to global research preview.
 
 Here is what that means for builders in life sciences.
 
@@ -160,3 +160,7 @@ The GPT-Rosalind arc across three months:
 The pattern is methodical: establish domain capability, establish institutional access architecture, add agentic action layer, open access to a broader qualified pool. This is not a consumer product launch cadence. It is a regulated-technology deployment cadence.
 
 Builders who understand that cadence will be better positioned for what comes next: commercial access terms, API endpoint availability (when it happens), and the integration work required to connect GPT-Rosalind to laboratory data systems.
+
+---
+
+*Sources: [OpenAI on new GPT-Rosalind capabilities](https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/); [TechTimes on drug discovery update](https://www.techtimes.com/articles/317754/20260604/gpt-rosalind-drug-discovery-update-openai-cuts-genomics-compute-expands-global-access.htm); [R&D World on benchmarks](https://www.rdworldonline.com/openai-research-and-product-leads-detail-gpt-rosalind-capabilities-and-benchmarks/).*
