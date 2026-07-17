@@ -55,9 +55,9 @@ Also committed Run 2490's uncommitted changes (10 retrofitted pages + RUNLOG + T
 
 **Total retrofit progress:** Batches 1-40 = ~296 pages retrofitted.
 
-**Build:** Hugo clean build (3970+ pages). **Deploy:** COMPLETE — deployed 2026-07-18.
+**Build:** Hugo clean build (3970+ pages). **Deploy:** PARTIAL — first deploy (timestamp ~1784315934) pushed Batch 39 retrofits but NOT Batch 40 (content/ edits happened after). Second Hugo build with Batch 40 correct edits was NOT deployed due to 1-hour throttle. **NEXT RUN MUST DEPLOY IMMEDIATELY** (run rsync before anything else).
 
-**BLUESKY NOTE:** Did NOT post to Bluesky today — already posted once on July 18 (Run 2489). HARD CAP: 1 post/day. Next eligible: July 19. Good candidate: Kimi K3 open weights article (weights dropping July 27).
+**BLUESKY NOTE:** Did NOT post to Bluesky today — already posted once on July 18 (Run 2489). HARD CAP: 1 post/day. Next eligible: July 19. Good candidate: Kimi K3 open weights article (weights dropping July 27) or the new WAIC Day 2 article.
 
 ### What should happen next
 - **BLUESKY**: Next post eligible 2026-07-19. Good candidates: WAICA article (just published) or Kimi K3 article.
