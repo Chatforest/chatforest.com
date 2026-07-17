@@ -3,11 +3,11 @@
 > ByteDance released Doubao Seed 2.1 Pro and Turbo on June 24, 2026, targeting coding engineering delivery and long-chain agent execution. Pro scores 1539 on Code Arena Frontend (#8 globally, ~Opus 4.6 level). Turbo halves the price. Here's what builders need to evaluate it.
 
 
-ByteDance released **Doubao Seed 2.1 Pro** and **Seed 2.1 Turbo** on June 24, 2026, at the Volcano Engine Force Conference. The headline claim: three core capabilities — coding engineering delivery, agent long-chain task execution, and multimodal understanding — now comparable to GPT-5.5.
+[ByteDance released **Doubao Seed 2.1 Pro** and **Seed 2.1 Turbo** on June 24, 2026](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity), at the Volcano Engine Force Conference. The headline claim: three core capabilities — coding engineering delivery, agent long-chain task execution, and multimodal understanding — now comparable to GPT-5.5.
 
-The verifiable number: Seed 2.1 Pro scores **1539 on Code Arena: Frontend**, placing it **#8 globally** and described by independent reviewers as "on par with Claude Opus 4.6." That is a meaningful step up from Seed 2.0's position and puts ByteDance's flagship in the same conversation as the Western frontier — at a price point that still undercuts the comparable tier.
+The verifiable number: [Seed 2.1 Pro scores **1539 on Code Arena: Frontend**, placing it **#8 globally**](https://seed.bytedance.com/en/blog/seed-2-1-preview-model-release-on-arena) and described by independent reviewers as "on par with Claude Opus 4.6." That is a meaningful step up from Seed 2.0's position and puts ByteDance's flagship in the same conversation as the Western frontier — at a price point that still undercuts the comparable tier.
 
-What builders actually need to decide: whether the pricing advantage justifies the integration friction for Chinese-origin APIs. The same international access challenge that applied to Seed 2.0 applies here, with the same workaround landscape.
+What builders actually need to decide: whether the pricing advantage justifies the integration friction for Chinese-origin APIs. The same [international access challenge](https://dataconomy.com/2026/06/24/bytedance-launches-doubao-2-1-pro-language-model/) that applied to Seed 2.0 applies here, with the same workaround landscape.
 
 ---
 

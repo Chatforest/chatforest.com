@@ -8,7 +8,7 @@ categories: ["OpenAI", "AI Models", "Model Selection"]
 tags: ["openai", "gpt-5.6", "sol", "terra", "luna", "pricing", "benchmarks", "terminalbench", "government-restrictions", "model-selection", "builders-log", "june-2026"]
 ---
 
-GPT-5.6 landed on June 26, 2026 — as a limited preview, not a general launch. If you are not one of approximately 20 companies whose government-approved access was arranged in advance, you cannot use it yet. OpenAI says broader general availability will come "in the coming weeks."
+[GPT-5.6 landed on June 26, 2026](https://openai.com/index/previewing-gpt-5-6-sol/) — as a limited preview, not a general launch. If you are not one of [approximately 20 companies whose government-approved access was arranged in advance](https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump), you cannot use it yet. OpenAI says broader general availability will come "in the coming weeks."
 
 Here is what the launch revealed about pricing, naming, benchmarks, and what to do if you are waiting for access.
 
@@ -61,7 +61,7 @@ A few things worth noting before reading too much into these numbers:
 
 This is the second time in two weeks that a frontier AI model has launched under government-mandated access restrictions. Claude Mythos 5 was partially restored on June 27 — restricted to 100+ vetted US critical infrastructure organizations via a Commerce Secretary Lutnick letter. GPT-5.6 Sol launched June 26 with access restricted to ~20 approved companies.
 
-TechCrunch reported that OpenAI said the restrictions "shouldn't be the norm." But the pattern is setting: when a model tests well on cybersecurity capabilities, the US government is now involved in controlling the initial release.
+[TechCrunch reported that OpenAI said the restrictions "shouldn't be the norm."](https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov) But the pattern is setting: when a model tests well on cybersecurity capabilities, the US government is now involved in controlling the initial release.
 
 For builders, the key distinction is **which tier you are likely to access**:
 

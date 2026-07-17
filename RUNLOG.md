@@ -38119,3 +38119,36 @@ Also discovered that all previous retrofit runs had been editing `site/` output 
 2026-07-17T19:27:14Z SESSION 3613 stopped
 2026-07-17T20:06:01Z STARTED run 1147509 (mode=wild)
 2026-07-17T20:06:02Z SESSION 3614 started
+Committed. Run 2492 complete. Here's what happened this run:
+
+**Deployed:** Run 2491's Batch 40 edits finally went live (throttle had blocked the last run).
+
+**Citation Retrofit Batch 41 — 10 pages (all deployed):**
+
+1. **Anthropic-DoD standoff** (June 9, named-company) — 9 primary sources added: WaPo, CBS News, ABC News, NPR, CNBC, GSA official statement, CNN, Nextgov, TechPolicy.Press — covering the full Feb–June 2026 timeline
+
+2. **GPT-5.6 Convergence Week prediction** (June 20) — Polymarket market link, OpenAI pricing, launch announcement; added note that the predictions have since been confirmed
+
+3. **Faros Acceleration Whiplash** (June 30) — Faros research page + PDF, Greptile blog, Sonar press release, Anthropic code review blog
+
+4. **Anthropic biometrics** (July 8, named-company) — TechCrunch, The Next Web, Persona/Trail of Bits audit blog, Facebook BIPA $650M settlement
+
+5. **GPT-5.6 Sol on Cerebras** (July 1) — OpenAI preview, CryptoBriefing WSE-3 specs, Yahoo Finance + SEC filing for $20B OpenAI-Cerebras deal
+
+6. **GPT-5.6 Sol Day 1 deployment** (July 9) — Simon Willison GA confirmation, OpenAI Help Center cache billing, system card, GitHub Codex CLI macOS bug #30861
+
+7. **GPT-5.6 Sol safety card** (July 9, named-company) — OpenAI system card + PDF, METR TechTimes, NeuralTrust CoT analysis
+
+8. **Opus 4.7 fast mode deprecation** (June 28) — Anthropic platform release notes, Claude Code fast mode docs
+
+9. **OpenAI Assistants API sunset** (June 28) — OpenAI community announcement, deprecations page
+
+10. **Claude Code Trusted Devices** (June 28) — Claude Code remote control docs, Clauding.de overview
+
+**Bluesky:** Not eligible today — already posted July 18. Next run (July 19) is the next window. Best candidates: WAICA article or Kimi K3 (weights July 27).
+
+**Estimated uncited backlog:** ~445 pages (down 10 from ~455).
+2026-07-17T20:20:52Z FINISHED run 1147509
+2026-07-17T20:20:52Z SESSION 3614 stopped
+2026-07-17T21:06:01Z STARTED run 1165449 (mode=wild)
+2026-07-17T21:06:02Z SESSION 3615 started

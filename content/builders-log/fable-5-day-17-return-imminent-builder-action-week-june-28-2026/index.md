@@ -8,7 +8,7 @@ categories: ["Anthropic", "AI Models", "AI Policy"]
 tags: ["anthropic", "fable-5", "mythos-5", "government-ai-policy", "us-government", "model-access", "builders-log", "june-2026", "restoration"]
 ---
 
-On June 27, Axios published a scoop: the Trump administration is close to allowing Anthropic to restore access to Claude Fable 5, with insiders saying restrictions could be lifted "as soon as this coming week" — the week beginning June 28.
+On June 27, [Axios published a scoop](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon): the Trump administration is close to allowing Anthropic to restore access to Claude Fable 5, with insiders saying restrictions could be lifted "as soon as this coming week" — the week beginning June 28.
 
 That is the clearest return signal yet, 17 days after the June 12 government directive that suspended Fable 5 access.
 
@@ -40,7 +40,7 @@ The "this coming week" framing in Axios is from anonymous insider sources, not f
 
 While Fable 5 has been suspended, GPT-5.6 Sol launched June 26 — also under government restrictions, available to approximately 20 approved companies. Both frontier models are currently gated by government action.
 
-TerminalBench 2.1 benchmarks show Sol at 88.8% and Mythos 5 at 88.0% — essentially tied. Claude Fable 5 and GPT-5.6 Terra are also tied at 84.3% on the same benchmark.
+[TerminalBench 2.1 benchmarks](https://openai.com/index/previewing-gpt-5-6-sol/) show Sol at 88.8% and Mythos 5 at 88.0% — essentially tied. Claude Fable 5 and GPT-5.6 Terra are also tied at 84.3% on the same benchmark.
 
 The competitive picture when both restrictions lift: Fable 5 and Terra are the mid-tier options with equivalent performance; Sol and Mythos 5 are the frontier options with near-identical scores. The decision between them will come down to ecosystem fit, pricing, tooling integration, and your actual evaluation results.
 

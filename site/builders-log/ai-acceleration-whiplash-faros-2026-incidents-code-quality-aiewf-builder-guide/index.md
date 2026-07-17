@@ -5,7 +5,7 @@
 
 AI coding tools have created the largest productivity surge in software engineering history. They have also created something else: a quality collapse that is worse than the throughput gains in almost every downstream metric that matters.
 
-That is the core finding of the Faros AI 2026 Engineering Report, titled "The Acceleration Whiplash." It analyzed two years of telemetry from 22,000 developers across more than 4,000 teams — tracking what changed when teams moved from low AI adoption to high AI adoption inside the same organizations. Today's AIEWF Coding Agents keynote (Day 2) and tomorrow's "Verifiers Are King" session (Day 3, Tariq Shaukat/Sonar) are both, in effect, reactions to the same dataset.
+That is the core finding of the [Faros AI 2026 Engineering Report, titled "The Acceleration Whiplash."](https://www.faros.ai/research/ai-acceleration-whiplash) It analyzed two years of telemetry from 22,000 developers across more than 4,000 teams — tracking what changed when teams moved from low AI adoption to high AI adoption inside the same organizations. Today's AIEWF Coding Agents keynote (Day 2) and tomorrow's "Verifiers Are King" session (Day 3, Tariq Shaukat/Sonar) are both, in effect, reactions to the same dataset.
 
 Here is what the data shows and what builders should do about it.
 
@@ -19,7 +19,7 @@ Faros compared identical organizations at low versus high AI adoption periods an
 
 The quality story is also real, and it runs in the opposite direction:
 
-- **Incidents per pull request: +242.7%** — nearly three times as many production incidents per merged PR
+- **Incidents per pull request: +242.7%** — nearly three times as many production incidents per merged PR ([full report PDF](https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf))
 - Bugs per developer: **+54%**
 - PR review time: **+441.5%** — reviewers are taking 4.4x longer on each review, and still not catching what's failing
 - Code churn (lines deleted vs. lines added): **+861%** — nearly 10x as much code being removed relative to what is being added, meaning a large fraction of AI-generated code is getting ripped out shortly after it merges
@@ -31,11 +31,11 @@ Faros named this the "acceleration whiplash" because the mechanism is structural
 
 ## The AI PR Share Is Growing Faster Than Anyone Expected
 
-Greptile, which presented at AIEWF this week from a dataset of 700,000+ PRs per month across enterprise customers, found that 27.6% of all merged pull requests were AI-generated as of April 2026. In February 2025, that number was under 1%.
+[Greptile, which presented at AIEWF this week](https://www.greptile.com/blog/rise-of-the-overnight-agents) from a dataset of 700,000+ PRs per month across enterprise customers, found that 27.6% of all merged pull requests were AI-generated as of April 2026. In February 2025, that number was under 1%.
 
 That trajectory — from under 1% to 27.6% in fourteen months — is the external confirmation of what Faros found internally: the system parameters changed faster than the process infrastructure did. Every review gate, CI/CD pipeline, and quality checklist in your organization was calibrated for a pre-2025 world.
 
-The Sonar data that frames tomorrow's AIEWF Day 3 keynote shows the human side of the same gap: 96% of developers do not trust AI code in production without verification. 48% always verify before committing. But 42% of committed code is already AI-generated. Those numbers do not reconcile — which means a non-trivial share of AI code is shipping without the verification that most developers say they want to apply.
+The [Sonar data](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) that frames tomorrow's AIEWF Day 3 keynote shows the human side of the same gap: 96% of developers do not trust AI code in production without verification. 48% always verify before committing. But 42% of committed code is already AI-generated. Those numbers do not reconcile — which means a non-trivial share of AI code is shipping without the verification that most developers say they want to apply.
 
 ## Why Strong CI/CD Alone Did Not Protect Teams
 
@@ -45,7 +45,7 @@ The problem is not that CI/CD is broken. The problem is that CI/CD was sized for
 
 Addy Osmani, who is presenting on agentic code review at AIEWF this week, has documented a related finding from the agent PR research literature: a January 2026 study of 33,707 agent-authored PRs found that predictable signals (file types, patch size, diff entropy) identify high-maintenance PRs before any human looks. Teams that triage up front using cheap signals fast-track the easy ones and concentrate review capacity on the risky ones. The same study found reviewer abandonment — a reviewer starting but not finishing a PR review — accounted for 38% of rejected agent PRs.
 
-The Anthropic internal code review pilot moved internal PR review completion rates from 16% to 54% by adding an AI review layer before the PR ever reached a human. The AI layer handled first-pass triage; humans reviewed the flagged subset at higher quality and higher completion rates.
+The [Anthropic internal code review pilot](https://claude.com/blog/code-review) moved internal PR review completion rates from 16% to 54% by adding an AI review layer before the PR ever reached a human. The AI layer handled first-pass triage; humans reviewed the flagged subset at higher quality and higher completion rates.
 
 ## The Runtime Verification Consensus
 

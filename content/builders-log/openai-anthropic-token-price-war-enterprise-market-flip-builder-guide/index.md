@@ -18,21 +18,21 @@ Here is what the market shift means, what price cuts are likely to look like, an
 
 The clearest read on where enterprise money is flowing comes from Ramp's AI spending index, which tracks actual software purchasing across its business-card customer base.
 
-**May 2026 Ramp AI Index:** Anthropic 34.4%, OpenAI 32.3% — the first time Anthropic has led.
+**[May 2026 Ramp AI Index](https://ramp.com/data/ai-index):** Anthropic 34.4%, OpenAI 32.3% — the first time Anthropic has led.
 
-A March 2026 Ramp figure drove the point harder: Anthropic captured **73% of all enterprise spending among companies buying AI tools for the first time**. That is the new-customer pipeline, the leading indicator for where total market share goes next.
+A March 2026 Ramp figure drove the point harder: [Anthropic captured **73% of all enterprise spending among companies buying AI tools for the first time**](https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead/). That is the new-customer pipeline, the leading indicator for where total market share goes next.
 
-Revenue followed the same direction. Anthropic went from roughly $1 billion annualized in January 2025 to **$47 billion annualized by May 2026** — a 47x increase in sixteen months. OpenAI grew in the same period from $13 billion to approximately **$25 billion** annualized — still large, but roughly 2x growth while Anthropic posted 47x.
+Revenue followed the same direction. [Anthropic went from roughly $1 billion annualized in January 2025 to **$47 billion annualized by May 2026**](https://mlq.ai/news/anthropics-annualized-revenue-hits-47b-as-daniela-amodei-defends-ai-economics-ahead-of-ipo/) — a 47x increase in sixteen months. OpenAI grew in the same period from $13 billion to approximately **$25 billion** annualized — still large, but roughly 2x growth while Anthropic posted 47x.
 
-The valuation gap inverted on a similar timeline. Anthropic's valuation surpassed OpenAI's in May 2026 — **$965 billion versus $852 billion** — ending a streak of OpenAI valuation leadership that dated to the company's founding.
+The valuation gap inverted on a similar timeline. [Anthropic's valuation surpassed OpenAI's in May 2026 — **$965 billion versus $852 billion**](https://www.forbes.com/sites/petercohan/2026/05/29/why-anthropics-965-billion-ipo-could-pay-off-massively-for-investors/) — ending a streak of OpenAI valuation leadership that dated to the company's founding.
 
-The mechanism behind Anthropic's growth is not complicated: Claude Code drove "mind-blowing growth" among developers and pushed Anthropic into its **first profitable quarter** since founding in 2021. The $200/month Max plan converted a large base of individual developers into recurring revenue, and enterprise Claude Code licenses added API token billing on top of seat fees.
+The mechanism behind Anthropic's growth is not complicated: [Claude Code drove "mind-blowing growth" among developers and pushed Anthropic into its **first profitable quarter**](https://mlq.ai/news/anthropics-annualized-revenue-hits-47b-as-daniela-amodei-defends-ai-economics-ahead-of-ipo/) since founding in 2021. The $200/month Max plan converted a large base of individual developers into recurring revenue, and enterprise Claude Code licenses added API token billing on top of seat fees.
 
 ---
 
 ## OpenAI's Response
 
-The Wall Street Journal reported on June 11 that OpenAI is "preparing to slash the prices it charges for AI tokens" with cuts aimed explicitly at winning customers from Anthropic. Sam Altman acknowledged that "costs had become a huge issue" for enterprise customers. No specific cut amounts, model targets, or timing were announced at time of reporting — discussions were "still in flux."
+[The Wall Street Journal reported on June 11 that OpenAI is "preparing to slash the prices it charges for AI tokens"](https://www.cnbc.com/2026/06/11/openai-mulls-slashing-prices-ahead-of-competition-from-anthropic-wsj.html) with cuts aimed explicitly at winning customers from Anthropic. Sam Altman acknowledged that "costs had become a huge issue" for enterprise customers. No specific cut amounts, model targets, or timing were announced at time of reporting — discussions were "still in flux."
 
 GPT-5.6, which launched on June 26 as a limited preview for approximately 20 government-approved organizations, provides the first concrete pricing signal:
 

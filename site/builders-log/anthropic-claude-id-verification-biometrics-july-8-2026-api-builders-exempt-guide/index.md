@@ -3,7 +3,7 @@
 > Anthropic's updated privacy policy, effective July 8, 2026, lets Claude ask flagged consumer users for a government ID, a selfie, and a facial geometry scan. API, Team, and Enterprise accounts are fully exempt. Here's what changed, what data Persona collects, and why this sets an industry first.
 
 
-Starting today, July 8, 2026, Anthropic can legally require some Claude users to hand over a government-issued photo ID, a live selfie, and a facial geometry scan before restoring their account access. No other major AI company has done this. If you build on Claude's API, you are exempt. If you are a consumer Free, Pro, or Max subscriber who gets flagged, you are not.
+Starting today, July 8, 2026, [Anthropic can legally require some Claude users to hand over a government-issued photo ID, a live selfie, and a facial geometry scan](https://techcrunch.com/2026/06/22/anthropic-says-claude-may-want-to-see-your-id/) before restoring their account access. No other major AI company has done this. If you build on Claude's API, you are exempt. If you are a consumer Free, Pro, or Max subscriber who gets flagged, you are not.
 
 This is not a routine update. Biometric identity verification from an AI chatbot provider — backed by a third-party processor with connections to the US intelligence community's investment network — is a meaningful shift in what "using Claude" requires.
 
@@ -38,9 +38,9 @@ The practical framing is: verification is offered as an alternative to account s
 
 ## Who Handles the Verification: Persona
 
-Anthropic is not processing biometric data in-house. The verification is outsourced to **Persona**, a San Francisco-based identity-checking company. Persona is backed by **Founders Fund**, Peter Thiel's investment vehicle — the same fund that holds a stake in Anthropic itself. The dual-investment relationship is worth noting but does not by itself constitute a data-sharing concern.
+Anthropic is not processing biometric data in-house. [The verification is outsourced to **Persona**](https://thenextweb.com/news/anthropic-claude-id-verification-privacy-policy-persona-biometric), a San Francisco-based identity-checking company. Persona is backed by **Founders Fund**, Peter Thiel's investment vehicle — the same fund that holds a stake in Anthropic itself. The dual-investment relationship is worth noting but does not by itself constitute a data-sharing concern.
 
-Persona has passed an independent code review by security firm **Trail of Bits**, which found no contradictions to Persona's stated data practices. That review covers technical implementation, not retention policy.
+[Persona has passed an independent code review by security firm **Trail of Bits**](https://withpersona.com/blog/independent-code-review-persona-data-practices), which found no contradictions to Persona's stated data practices. That review covers technical implementation, not retention policy.
 
 **One significant gap:** Anthropic's policy does not specify retention periods for ID images, selfie videos, or facial geometry templates. Persona's practices vary by customer contract. For comparison, Roblox — another Persona customer — deletes biometric images "immediately after processing." Whether Anthropic has negotiated similar terms is not disclosed.
 
@@ -48,7 +48,7 @@ Persona has passed an independent code review by security firm **Trail of Bits**
 
 ## The Regulatory Exposure: BIPA
 
-In Illinois, facial geometry templates are classified as **biometric data** under the Biometric Information Privacy Act (BIPA). BIPA imposes strict consent and handling requirements, with statutory damages of **$1,000 to $5,000 per violation**. Facebook's 2021 settlement of a BIPA class-action over facial recognition reached **$650 million** — establishing the scale of exposure when biometric data is handled without adequate consent or retention policies.
+In Illinois, facial geometry templates are classified as **biometric data** under the Biometric Information Privacy Act (BIPA). BIPA imposes strict consent and handling requirements, with statutory damages of **$1,000 to $5,000 per violation**. [Facebook's 2021 settlement of a BIPA class-action over facial recognition reached **$650 million**](https://techcrunch.com/2021/03/01/facebook-illinois-class-action-bipa/) — establishing the scale of exposure when biometric data is handled without adequate consent or retention policies.
 
 Anthropic's policy acknowledges that facial geometry templates "may be considered biometric data in some jurisdictions." That hedge may not be sufficient in Illinois, Texas, or Washington state, where biometric privacy laws carry private rights of action. The absence of a disclosed retention period for biometric data is the clearest litigation surface in the current policy.
 

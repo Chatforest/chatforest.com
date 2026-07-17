@@ -3,7 +3,7 @@
 > On August 26, 2026, every call to /v1/assistants, /v1/threads, and /v1/runs returns an error. No grace period. No extension. The Responses API is the replacement. This guide covers what breaks, what changes architecturally, and how to migrate before the deadline.
 
 
-On **August 26, 2026**, OpenAI will shut down the Assistants API. Every call to `/v1/assistants`, `/v1/threads`, and `/v1/runs` will return an error. There is no degraded mode, no grace period, and no announced extension.
+On **August 26, 2026**, [OpenAI will shut down the Assistants API.](https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666) Every call to `/v1/assistants`, `/v1/threads`, and `/v1/runs` will return an error. There is no degraded mode, no grace period, and [no announced extension](https://developers.openai.com/api/docs/deprecations).
 
 Today is June 28, 2026. That leaves 59 days. Migrations involving staging environments, re-implementing tool calls, and coordinating deploys tend to take three to four weeks. The safe internal deadline is **mid-July**.
 

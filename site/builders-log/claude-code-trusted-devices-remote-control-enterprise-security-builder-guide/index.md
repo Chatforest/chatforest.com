@@ -3,7 +3,7 @@
 > Anthropic shipped Trusted Devices for Claude Code Remote Control on June 25, 2026 — Team and Enterprise admins can now require biometric device verification before anyone views or steers a local session remotely. Here is what it does, how it works, and whether your team should enable it.
 
 
-On June 25, 2026, Anthropic shipped Trusted Devices for Claude Code Remote Control — a beta feature for Team and Enterprise plans that requires device verification before any member can view or steer a local session from a browser, phone, or desktop app.
+On June 25, 2026, [Anthropic shipped Trusted Devices for Claude Code Remote Control](https://code.claude.com/docs/en/remote-control) — a beta feature for Team and Enterprise plans that requires device verification before any member can view or steer a local session from a browser, phone, or desktop app.
 
 This is a meaningful security addition. Remote Control is useful — it lets developers continue a local session from their phone or a browser without moving any code to the cloud. But "your local filesystem, MCP servers, and tools, accessible from any signed-in device" is also a wide attack surface. Trusted Devices tightens that surface.
 
@@ -15,7 +15,7 @@ Claude Code Remote Control runs on your machine. Your local environment — file
 
 The threat model for a signed-in-account-only system is account compromise. If an attacker phishes a developer's claude.ai credentials, or if a developer logs in on a shared machine and walks away, the attacker has full access to steer whatever Claude Code session is open — including running arbitrary Bash commands on the developer's local filesystem.
 
-Trusted Devices adds a second factor that's tied to a specific physical device, not just credentials:
+Trusted Devices adds a second factor that's tied to a specific physical device, not just credentials ([feature overview](https://clauding.de/en/posts/claude-code-trusted-devices-remote-control)):
 
 - **Enrolled device**: each browser, phone, or desktop app registers its own credential during a deliberate enrollment step linked to a real sign-in
 - **Recent authentication**: the member's session must be less than 18 hours old, confirmed via biometric step-up (Face ID, Touch ID, Windows Hello, or a passkey)

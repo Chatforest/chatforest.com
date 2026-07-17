@@ -7,13 +7,13 @@ tags: ["benchmarks", "coding-agents", "claude", "code-quality", "developer-tools
 
 If your AI coding agent passes all the tests, is the code actually good? According to Cognition, the answer is frequently no — and the existing benchmark ecosystem has been hiding it.
 
-On June 8, 2026, Cognition released **FrontierCode**, a coding benchmark that evaluates AI agents on a question closer to what OSS maintainers actually care about: *would you merge this PR?*
+On June 8, 2026, Cognition released [**FrontierCode**](https://cognition.com/blog/frontier-code), a coding benchmark that evaluates AI agents on a question closer to what OSS maintainers actually care about: *would you merge this PR?*
 
 ## The Problem FrontierCode Solves
 
 The dominant coding benchmark, SWE-bench (and its Pro variant), measures whether a code change makes the test suite pass. That sounds reasonable until you look at what slips through: according to evaluations cited by METR Evals, **more than half of SWE-bench "passing" outputs produce code that's actually unmergeable** — wrong scope, style violations, hidden side effects, missing test coverage, or regressions in adjacent behavior that the narrow test suite didn't catch.
 
-FrontierCode was built to address this directly. Cognition reports an **81% lower false positive rate than SWE-bench Pro**. The difference isn't about harder tasks — it's about richer evaluation criteria.
+FrontierCode was built to address this directly. [Cognition reports an **81% lower false positive rate than SWE-bench Pro**](https://cognition.com/blog/frontier-code). The difference isn't about harder tasks — it's about richer evaluation criteria.
 
 ## What FrontierCode Actually Measures
 
@@ -37,7 +37,7 @@ FrontierCode has three nested difficulty tiers:
 | Main | 100 | Hardest 100 tasks (subset of Extended) |
 | Diamond | 50 | Hardest 50 tasks (subset of Main) |
 
-**Construction**: Cognition partnered with 20+ leading open-source maintainers across **36 flagship repositories**. Each task required 40+ hours of expert contribution to construct, including the rubric, verifiers, and baseline solution. The total scope is substantially more expensive to produce than automated benchmark pipelines.
+**Construction**: [Cognition partnered with 20+ leading open-source maintainers across **36 flagship repositories**](https://cryptobriefing.com/cognition-frontiercode-benchmark-ai-coding/). Each task required 40+ hours of expert contribution to construct, including the rubric, verifiers, and baseline solution. The total scope is substantially more expensive to produce than automated benchmark pipelines.
 
 **Scoring**: Each model runs 5 trials per reasoning effort level; its score at each effort level is the average across the 5 trials. The reported score is the best-performing effort level per model. This is honest — you get the model's ceiling, not a single noisy sample.
 

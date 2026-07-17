@@ -15,25 +15,25 @@ This article explains who left, what they built, where they went, and what it me
 
 **Noam Shazeer → OpenAI** (announced June 18)
 
-Shazeer is the researcher most associated with the internal machinery of modern transformers. He co-authored "Attention Is All You Need" (2017), the paper that introduced the transformer architecture — the foundational design of every large language model in production today, including Gemini, GPT, and Claude.
+Shazeer is the researcher most associated with the internal machinery of modern transformers. He co-authored ["Attention Is All You Need" (2017)](https://en.wikipedia.org/wiki/Attention_Is_All_You_Need), the paper that introduced the transformer architecture — the foundational design of every large language model in production today, including Gemini, GPT, and Claude.
 
-He did not write that paper at OpenAI. He wrote it at Google, then left in 2021 in frustration, co-founded Character.AI, and watched Google acquire his company back in August 2024 for a $2.7 billion licensing deal. His role on return: VP of Engineering and co-lead of Gemini.
+He did not write that paper at OpenAI. He wrote it at Google, then left in 2021 in frustration, co-founded Character.AI, and watched Google acquire his company back in August 2024 for a [$2.7 billion licensing deal](https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html). His role on return: VP of Engineering and co-lead of Gemini.
 
-Less than two years later, he announced he was joining OpenAI. Sam Altman publicly noted he had wanted to work with Shazeer since OpenAI's founding and called it "worth the wait."
+Less than two years later, he [announced he was joining OpenAI](https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html). Sam Altman publicly noted he had wanted to work with Shazeer since OpenAI's founding and [called it "worth the wait."](https://www.benzinga.com/markets/tech/26/06/53269428/google-gemini-co-lead-noam-shazeer-joins-openai-sam-altman-says-its-10-years-in-the-making)
 
 **John Jumper → Anthropic** (announced ~June 20)
 
-Jumper won the 2024 Nobel Prize in Chemistry for AlphaFold2 — Google DeepMind's protein structure prediction system that reshaped biology and drug discovery. He held a VP role at DeepMind. He stayed through the Nobel announcement; within two years, he is now at Anthropic.
+[Jumper won the 2024 Nobel Prize in Chemistry for AlphaFold2](https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/) — Google DeepMind's protein structure prediction system that reshaped biology and drug discovery. He held a VP role at DeepMind. He stayed through the Nobel announcement; within two years, he is now at Anthropic.
 
 His work at Anthropic is not yet specified publicly, but his background in applying deep learning to scientific domains gives Anthropic a credible path into biology, chemistry, and scientific AI — an area where Google had a substantial lead.
 
 **Jonas Adler → Anthropic** (reported June 24)
 
-Adler led Gemini's AI coding capabilities and contributed to AlphaFold. His departure to Anthropic is relevant to any builder using Gemini for code generation workloads — the person responsible for the coding head of the model is now working at a competitor.
+[Adler led Gemini's AI coding capabilities and contributed to AlphaFold](https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/). His departure to Anthropic is relevant to any builder using Gemini for code generation workloads — the person responsible for the coding head of the model is now working at a competitor.
 
 **Alexander Pritzel → Anthropic** (reported June 24)
 
-Pritzel was a Gemini pretraining specialist and AlphaFold contributor. Pretraining expertise is the scarce resource in foundation model development. He is now at Anthropic.
+[Pritzel was a Gemini pretraining specialist and AlphaFold contributor](https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic). Pretraining expertise is the scarce resource in foundation model development. He is now at Anthropic.
 
 ---
 
@@ -43,7 +43,7 @@ The public statements have been polite. The underlying signals are less so.
 
 **Compute politics.** Shortly before Shazeer announced his move to OpenAI, Google reassigned computing capacity from one of his projects to a DeepMind team in London. The stated rationale was pretraining consolidation and improved collaboration. The effect was resource deprioritization for the person nominally co-leading Gemini. That kind of internal reallocation, at a company of Alphabet's size, is difficult to reverse and harder to discuss publicly.
 
-**IPO upside.** Alphabet is already a public company with a $1.5 trillion market cap. Anthropic is targeting a September 2026 IPO at $730B–$850B. OpenAI is confidentially filed with the SEC (S-1 submitted June 8) and targeting a similar window. For a senior researcher who holds equity, moving from a mature public company to a pre-IPO startup in the same field is a straightforward financial calculation.
+**IPO upside.** Alphabet is already a public company with a $1.5 trillion market cap. [Anthropic is targeting a 2026 IPO at a valuation exceeding $900B](https://www.forbes.com/sites/petercohan/2026/05/29/why-anthropics-965-billion-ipo-could-pay-off-massively-for-investors/). [OpenAI is confidentially filed with the SEC](https://www.forbes.com/sites/siladityaray/2026/06/11/openai-wants-to-slash-prices-after-altman-said-steep-costs-were-huge-issue-report-says/) (S-1 submitted June 8) and targeting a similar window. For a senior researcher who holds equity, moving from a mature public company to a pre-IPO startup in the same field is a straightforward financial calculation.
 
 **Bureaucratic ceiling.** At a company the size of Google, transformative AI research competes with advertising revenue priorities, legal review, and multi-team consensus processes. OpenAI and Anthropic are smaller, faster, and explicitly organized around the pursuit of frontier models. Several departing researchers have cited the ability to move more directly toward their goals.
 
@@ -51,7 +51,7 @@ The public statements have been polite. The underlying signals are less so.
 
 ## Market Reaction
 
-Alphabet shares fell approximately 6–7% on June 22, 2026 — the company's worst single-day decline in over a year. The drop came as the Shazeer and Jumper departures were confirmed in quick succession, before the Adler and Pritzel moves were reported.
+[Alphabet shares fell approximately 6–7% on June 22, 2026](https://www.cnbc.com/2026/06/22/alphabet-goog-stock-ai-departures.html) — the company's worst single-day decline in over a year. The drop came as the Shazeer and Jumper departures were confirmed in quick succession, before the Adler and Pritzel moves were reported.
 
 The market reaction reflects investor concern about a specific narrative: Google invented the Transformer in 2017, built AlphaFold, published foundational papers that OpenAI and Anthropic commercialized, and now the people who built those things are leaving for OpenAI and Anthropic. That sequence is visible and difficult to explain away.
 
