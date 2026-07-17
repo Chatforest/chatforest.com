@@ -13,7 +13,7 @@ If either moves forward, it changes the API risk calculation for every builder w
 
 ### The Trump Approach: Voluntary, Small, Government-Aligned
 
-Since late May 2026, the Trump administration has been in active discussions with OpenAI about a voluntary equity arrangement. Under the structure being discussed, OpenAI would donate shares to the US government — no taxpayer cash changes hands — to seed a "Public Wealth Fund" that could eventually distribute AI-era returns to American households.
+Since late May 2026, [the Trump administration has been in active discussions with OpenAI about a voluntary equity arrangement](https://fortune.com/2026/06/05/trump-partnership-openai-anthropic-xai-nationalization-bernie-sanders-altman/). Under the structure being discussed, OpenAI would donate shares to the US government — no taxpayer cash changes hands — to seed a "Public Wealth Fund" that could eventually distribute AI-era returns to American households.
 
 Key parameters as reported through June 6, 2026:
 
@@ -23,11 +23,11 @@ Key parameters as reported through June 6, 2026:
 - **Timing**: Pre-IPO. OpenAI is preparing to go public; a government equity position negotiated now would convert at whatever valuation the market assigns at IPO
 - **Status**: No deal signed. Trump confirmed on Air Force One: "There are concepts where pieces could be given to the American public, where the American public essentially becomes a partner." No White House comment beyond that
 
-On June 7, 2026, reports emerged that the talks are expanding: administration officials are now discussing potential equity arrangements with AI companies beyond OpenAI. Which companies are in scope has not been confirmed. Anthropic, which was explicitly frozen out of federal markets in February 2026 after refusing Pentagon deployment without safety guardrails, confirmed it "is not having conversations with the administration about providing equity to the government."
+On June 7, 2026, [reports emerged that the talks are expanding](https://www.axios.com/2026/06/08/trump-bernie-sanders-ai): administration officials are now discussing potential equity arrangements with AI companies beyond OpenAI. Which companies are in scope has not been confirmed. Anthropic, which was explicitly frozen out of federal markets in February 2026 after refusing Pentagon deployment without safety guardrails, confirmed it "is not having conversations with the administration about providing equity to the government."
 
 ### The Sanders Approach: Compulsory, Massive, Worker-Aligned
 
-On June 1, 2026, Senator Bernie Sanders published a New York Times op-ed and announced plans to introduce the American AI Sovereign Wealth Fund Act. The proposal is structurally different from the Trump approach in every dimension:
+On June 1, 2026, Senator Bernie Sanders published a New York Times op-ed and [announced plans to introduce the American AI Sovereign Wealth Fund Act](https://www.semafor.com/article/06/03/2026/sanders-follows-trump-toward-government-stakes-in-private-business). The proposal is structurally different from the Trump approach in every dimension:
 
 - **Stake size**: 50% — majority ownership
 - **Mechanism**: A one-time 50% tax on company stock, paid in shares rather than cash

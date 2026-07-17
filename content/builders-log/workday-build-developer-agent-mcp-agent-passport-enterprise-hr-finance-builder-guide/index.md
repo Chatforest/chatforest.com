@@ -8,7 +8,7 @@ categories: ["Enterprise AI", "Developer Tools", "Agent Infrastructure"]
 tags: ["workday", "enterprise", "mcp", "hr-ai", "finance-ai", "agent-passport", "developer-agent", "agent-ready-tools", "cisco", "agent-security", "owasp-llm", "nist-ai-rmf", "mitre-atlas", "claude-code", "pipedream"]
 ---
 
-Workday launched Workday Build on June 2, 2026 at its DevCon event. It is a developer platform for building, connecting, and verifying AI agents that run inside Workday — covering HR, finance, and IT.
+[Workday launched Workday Build on June 2, 2026](https://newsroom.workday.com/2026-06-02-Workday-Launches-New-Tools-for-Developers-to-Build,-Connect,-and-Verify-AI-Agents-For-HR,-Finance,-and-IT) at its DevCon event. It is a developer platform for building, connecting, and verifying AI agents that run inside Workday — covering HR, finance, and IT.
 
 For builders outside the Workday ecosystem, this matters for two reasons: the Agent-Ready Tools architecture is a concrete implementation of MCP at enterprise scale, and Agent Passport is the first commercially-available example of what enterprise security teams will require from every AI agent you want to sell them.
 
@@ -60,7 +60,7 @@ The test suite covers: prompt injection, jailbreak and goal hijacking, system pr
 
 **Runtime enforcement.** Agent Passport continues after deployment. When an agent attempts an action, Agent Passport can allow, block, or route it based on company policy. Agents that start behaving outside their verified parameters can be stopped or restricted without manual intervention.
 
-**Cisco as launch partner.** Cisco AI Defense provides the independent testing component — a third-party attestation that the agent has been verified against the relevant standards. This is significant because it separates the builder's self-attestation from an external audit trail, which is what enterprise procurement teams and legal departments will require.
+**Cisco as launch partner.** [Cisco AI Defense provides the independent testing component](https://www.prnewswire.com/news-releases/workday-launches-new-tools-for-developers-to-build-connect-and-verify-ai-agents-for-hr-finance-and-it-302787997.html) — a third-party attestation that the agent has been verified against the relevant standards. This is significant because it separates the builder's self-attestation from an external audit trail, which is what enterprise procurement teams and legal departments will require.
 
 **Availability:** Early access H2 2026. GA before end of 2026.
 

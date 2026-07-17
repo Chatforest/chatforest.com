@@ -8,7 +8,7 @@ categories: ["Apple", "Developer Tools", "On-Device AI", "Mobile AI"]
 tags: ["apple", "app-intents", "assistant-schemas", "ios-27", "wwdc-2026", "siri", "apple-intelligence", "foundation-models", "core-ai", "swift", "builder-guide", "on-device-ai", "mobile-ai"]
 ---
 
-The most important thing to understand about App Intents in iOS 27 is that there are now two distinct paths for making your app work with AI — and they solve different problems.
+The most important thing to understand about App Intents in iOS 27 is that there are now two distinct paths for making your app work with AI — and they solve different problems. This guide covers the updates [announced at WWDC 2026](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/), with code that reflects [the session "Explore advanced App Intents features for Siri and Apple Intelligence"](https://developer.apple.com/videos/play/wwdc2026/343/).
 
 **AssistantSchemas** is the path for exposing your app's features to Apple Intelligence, Siri, and the system-level routing that decides which app to invoke when a user says "open my receipt in the photos app" or "create a new entry in my journal app." It is a semantic contract between your app and Apple's AI layer.
 

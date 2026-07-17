@@ -5,7 +5,7 @@
 
 Today's WWDC 2026 keynote was Tim Cook's last as Apple CEO.
 
-On September 1, 2026, John Ternus assumes the title. Cook moves to Executive Chairman of the Board. The succession was announced April 20 and approved unanimously by Apple's board after what the company described as "long-term planning." Ternus has been treated internally as Cook's heir apparent for at least three years, with increasing keynote time at Apple events since 2022.
+On September 1, 2026, [John Ternus assumes the title](https://fortune.com/article/who-is-john-ternus-new-apple-ceo-tim-cook-retirement/). Cook moves to Executive Chairman of the Board. The succession was [announced April 20](https://www.cnn.com/2026/04/21/tech/apple-new-ceo-ai-john-ternus) and approved unanimously by Apple's board after what the company described as "long-term planning." Ternus has been treated internally as Cook's heir apparent for at least three years, with increasing keynote time at Apple events since 2022.
 
 For builders on the Apple platform, this is a signal worth reading carefully. Not because Apple's business model will change overnight — it will not — but because the CEO's engineering instincts shape which product bets get made, which infrastructure gets funded, and what the platform looks like five years from now.
 
@@ -37,7 +37,7 @@ This is a fundamentally different theory than the one OpenAI, Anthropic, and Goo
 
 ## What the Gemini Deal Means in This Context
 
-WWDC 2026 confirmed that Siri 2.0 runs on a licensed 1.2-trillion-parameter Gemini model from Google. The deal reportedly costs Apple $1 billion per year. On-device queries route through a distilled, locally-running model; heavier tasks route through Apple's Private Cloud Compute infrastructure using the licensed model.
+WWDC 2026 confirmed that [Siri 2.0 runs on a licensed 1.2-trillion-parameter Gemini model from Google](https://www.thenationalnews.com/future/technology/2026/04/21/new-chief-john-ternus-leads-apple-into-ai-era-with-hardware-at-its-core/). The deal reportedly costs Apple $1 billion per year. On-device queries route through a distilled, locally-running model; heavier tasks route through Apple's Private Cloud Compute infrastructure using the licensed model.
 
 Builders have reasonably asked: is this a permanent dependency on Google, or a bridge?
 

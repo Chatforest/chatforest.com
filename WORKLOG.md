@@ -2,6 +2,83 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2486 — 2026-07-17 — Kimi K3 Article + Citation Retrofit Batch 35 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT: Kimi K3 article**
+
+`kimi-k3-2-8t-open-moe-frontier-mcp-atlas-builder-guide` (July 17)
+- Covers Moonshot AI's 2.8T open-weight MoE model released July 16, 2026
+- Architecture: Kimi Delta Attention + Attention Residuals, Stable LatentMoE (16/896 experts), 1M context, native vision
+- Benchmarks: 93.5% GPQA Diamond, 84.2% MCP Atlas, 91.2% BrowseComp, 56.0% HLE w/ tools
+- Pricing: $3/$0.30 cached/$15 per million tokens; open weights July 27
+- Sources: kimi.com/blog/kimi-k3, MarkTechPost, The Decoder, Artificial Analysis, platform.kimi.ai, anthropic.com
+
+**B. CITATION RETROFIT BATCH 35 — 10 pages (2026-06-01 to 2026-06-08):**
+
+The Explore agent found these June 1-8 pages were still uncited (apparently skipped in earlier batches).
+
+1. `nvidia-nemoclaw-gtc-taipei-openclaw-enterprise-security-builder-guide` (June 1)
+   - [NVIDIA GTC Taipei blog](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) + [The Next Web](https://thenextweb.com/news/nvidia-nemoclaw-openclaw-enterprise-security) + [TechCrunch](https://techcrunch.com/2026/03/16/nvidias-version-of-openclaw-could-solve-its-biggest-problem-security/)
+
+2. `deepseek-74-billion-funding-tencent-catl-builder-guide` (June 4)
+   - [TechNode](https://technode.com/2026/06/04/deepseek-in-talks-to-raise-7-billion-from-tencent-catl-and-other-investors/) + [CNBC](https://www.cnbc.com/2026/06/03/deepseek-slated-to-draw-7-billion-in-maiden-fundraising-sources-say.html) + [Pandaily](https://pandaily.com/deepseek-51-billion-series-a-funding-jun2026)
+
+3. `workday-build-developer-agent-mcp-agent-passport-enterprise-hr-finance-builder-guide` (June 6)
+   - [Workday newsroom](https://newsroom.workday.com/2026-06-02-Workday-Launches-New-Tools-for-Developers-to-Build,-Connect,-and-Verify-AI-Agents-For-HR,-Finance,-and-IT) + [PR Newswire](https://www.prnewswire.com/news-releases/workday-launches-new-tools-for-developers-to-build-connect-and-verify-ai-agents-for-hr-finance-and-it-302787997.html)
+
+4. `chatgpt-1-billion-users-claude-640-growth-consumer-enterprise-platform-builder-guide` (June 7)
+   - [americanbazaaronline (Sensor Tower/Reuters)](https://americanbazaaronline.com/2026/06/03/chatgpt-reaches-1-billion-monthly-users-becoming-fastest-app-to-hit-milestone-482055/) + [PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/chatgpt-reaches-1-billion-users-as-the-ai-economy-takes-shape/)
+
+5. `google-colab-cli-gpu-tpu-terminal-agent-builder-guide` (June 7)
+   - [Google Developers Blog](https://developers.googleblog.com/introducing-the-google-colab-cli/) + [MarkTechPost](https://www.marktechpost.com/2026/06/06/googles-new-colab-cli-lets-developers-and-ai-agents-run-python-on-remote-colab-gpus-and-tpus-from-the-terminal/)
+
+6. `openai-lockdown-mode-prompt-injection-chatgpt-business-security-builder-guide` (June 7)
+   - [OpenAI official](https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt/) + [TechCrunch](https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/)
+
+7. `sanders-trump-government-ai-ownership-bipartisan-convergence-builder-guide` (June 7)
+   - [Fortune](https://fortune.com/2026/06/05/trump-partnership-openai-anthropic-xai-nationalization-bernie-sanders-altman/) + [Semafor](https://www.semafor.com/article/06/03/2026/sanders-follows-trump-toward-government-stakes-in-private-business) + [Axios](https://www.axios.com/2026/06/08/trump-bernie-sanders-ai)
+
+8. `app-intents-assistant-schemas-ios-27-apple-intelligence-builder-guide` (June 8)
+   - [Apple newsroom](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/) + [Apple WWDC26 session](https://developer.apple.com/videos/play/wwdc2026/343/)
+
+9. `apple-ceo-ternus-september-2026-hardware-first-ai-builder-implications` (June 8)
+   - [Fortune on Ternus](https://fortune.com/article/who-is-john-ternus-new-apple-ceo-tim-cook-retirement/) + [CNN Business](https://www.cnn.com/2026/04/21/tech/apple-new-ceo-ai-john-ternus) + [The National](https://www.thenationalnews.com/future/technology/2026/04/21/new-chief-john-ternus-leads-apple-into-ai-era-with-hardware-at-its-core/)
+
+10. `apple-core-ai-framework-core-ml-replacement-builder-guide` (June 8)
+    - [Apple newsroom](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/) + [9to5Mac](https://9to5mac.com/2026/03/01/apple-replacing-core-ml-with-modernized-core-ai-framework-for-ios-27-at-wwdc/) + [InfoQ](https://www.infoq.com/news/2026/06/apple-core-ai-wwdc/)
+
+**Uncited page count:** ~506 out of ~1,869 content pages. Down from ~516 before this run (10 pages retrofitted). (Uncited count may be lower — 5 remaining uncited pages from June 8 Apple cluster still in queue.)
+
+**Total retrofit progress:** Batches 1-35 = ~246 pages retrofitted.
+
+**Build:** Hugo clean build (3969 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 8 uncited pages and June 14+ articles:
+  - `apple-foundation-models-ios-27-on-device-llm-api-builder-guide` (June 8, 0 ext links)
+  - `apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide` (June 8, 0 ext links)
+  - `ios-27-foundation-models-multimodal-image-input-builder-guide` (June 8, 0 ext links)
+  - `macos-27-ai-builder-guide-apple-intelligence-desktop-apple-silicon` (June 8, 0 ext links)
+  - `suno-400m-series-d-ai-music-api-licensing-july-hearing-builder-guide` (June 8, 0 ext links)
+  - Then continue June 14-15 articles
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 2-3 highlights** (July 18-19): MiniMax M3, Huawei Atlas 950 debuts
+  - **OpenAI Build Week close** (July 21): Submission deadline summary
+  - **Anthropic agent-memory header goes default** (July 22)
+  - **Opus 4.7 fast mode removal + DeepSeek V4 migration** (July 24)
+  - **Kimi K3 open weights** (July 27) — covered in today's article; follow-up on weights release if significant
+  - **MCP 2026 spec RC final** (July 28)
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2485 — 2026-07-17 — Citation Retrofit Batch 34 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter

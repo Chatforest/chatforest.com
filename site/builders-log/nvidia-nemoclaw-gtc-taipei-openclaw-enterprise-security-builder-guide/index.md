@@ -3,7 +3,7 @@
 > At GTC Taipei, NVIDIA answered the enterprise OpenClaw security problem with NemoClaw — an open-source stack that sandboxes each agent, routes sensitive data locally, and lets IT write policy in YAML. Here is what it is, how it works, and what builders need to do now.
 
 
-At GTC Taipei on June 1, Jensen Huang called OpenClaw "the new Linux" and said every company needs a strategy for it. Three days earlier, [we documented](https://chatforest.com/builders-log/openclaw-454-cve-clawhub-malicious-skills-builder-security-guide/) that OpenClaw has 454 documented CVEs, a marketplace poisoned with 1,184 malicious skills, and a Gartner enterprise block advisory.
+At GTC Taipei on June 1, [Jensen Huang called OpenClaw "the new Linux"](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) and said every company needs a strategy for it. Three days earlier, [we documented](https://chatforest.com/builders-log/openclaw-454-cve-clawhub-malicious-skills-builder-security-guide/) that OpenClaw has 454 documented CVEs, a marketplace poisoned with 1,184 malicious skills, and a Gartner enterprise block advisory.
 
 Both things are true simultaneously, and the tension between them is exactly where NVIDIA is positioning NemoClaw.
 
@@ -22,7 +22,7 @@ The difference matters for builders. A heartbeat agent can:
 - Coordinate with other claws running in parallel on the same or different machines
 - Recover from interruption and resume exactly where it left off
 
-This is meaningfully closer to how an employee works than how a chatbot works. It is also why OpenClaw crossed 250,000 GitHub stars in 60 days, overtaking React to become the most-starred software project in GitHub history. Jensen Huang's "new Linux" framing is hyperbole, but it captures something real: this is infrastructure-level software, not an application.
+This is meaningfully closer to how an employee works than how a chatbot works. It is also why OpenClaw crossed 250,000 GitHub stars in 60 days, [overtaking React to become the most-starred software project in GitHub history](https://thenextweb.com/news/nvidia-nemoclaw-openclaw-enterprise-security). Jensen Huang's "new Linux" framing is hyperbole, but it captures something real: this is infrastructure-level software, not an application.
 
 ---
 
@@ -36,7 +36,7 @@ The 454 CVEs and 1,184 malicious ClawHub packages we documented are a real probl
 - **Audit trail**: What did this agent do, when, and why?
 - **Policy enforcement**: Who defines the rules, and how are they applied consistently across hundreds of agents?
 
-OpenClaw has no built-in answers to these questions. NemoClaw is NVIDIA's attempt to provide them.
+OpenClaw has no built-in answers to these questions. NemoClaw is [NVIDIA's attempt to provide them](https://techcrunch.com/2026/03/16/nvidias-version-of-openclaw-could-solve-its-biggest-problem-security/).
 
 ---
 

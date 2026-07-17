@@ -8,7 +8,7 @@ categories: ["Google", "Infrastructure", "AI Agents", "Developer Tools"]
 tags: ["google-colab", "colab-cli", "gpu", "tpu", "terminal", "ai-agents", "claude-code", "antigravity", "codex", "ml-infrastructure", "builder-guide", "open-source", "h100", "a100"]
 ---
 
-Google shipped the Colab CLI on June 5, 2026. It is an open source command-line tool that gives you — and your agents — direct access to Colab GPU and TPU runtimes from any terminal, with no browser, no Jupyter notebook, and no kernel management required.
+Google shipped [the Colab CLI on June 5, 2026](https://developers.googleblog.com/introducing-the-google-colab-cli/). It is an open source command-line tool that gives you — and your agents — direct access to Colab GPU and TPU runtimes from any terminal, with no browser, no Jupyter notebook, and no kernel management required.
 
 This is a meaningful change for builders running ML workloads on Colab. It is also the first time Colab has shipped a first-party interface designed explicitly for agent use.
 
@@ -78,7 +78,7 @@ This is the part that distinguishes the Colab CLI from a standard developer tool
 
 The CLI repository ships with a file called `COLAB_SKILL.md`. This is a prepackaged context document written specifically for AI agents. When an agent (Claude Code, Antigravity, Codex, or any other agent with file and terminal access) reads this file, it gets structured guidance on how to use the CLI — what commands are available, what the outputs look like, and how to handle common workflows.
 
-Google explicitly tested the CLI with Antigravity (their own agentic platform) and Claude Code. An agent can:
+Google explicitly tested the CLI with Antigravity (their own agentic platform) and Claude Code, [as described in the launch coverage by MarkTechPost](https://www.marktechpost.com/2026/06/06/googles-new-colab-cli-lets-developers-and-ai-agents-run-python-on-remote-colab-gpus-and-tpus-from-the-terminal/). An agent can:
 
 1. Read `COLAB_SKILL.md` once as context
 2. Provision a GPU runtime (`colab new --gpu A100`)

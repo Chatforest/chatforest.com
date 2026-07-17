@@ -3,7 +3,7 @@
 > OpenAI's ChatGPT crossed 1 billion monthly active users in May 2026 — the fastest any app has ever reached that scale. Anthropic's Claude has 56 million, but is growing 640% year-over-year. The two metrics describe different markets, and they have concrete implications for which platform to build on.
 
 
-In May 2026, ChatGPT crossed 1 billion monthly active app users, according to market intelligence firm Sensor Tower — the fastest any app in history has reached that scale. It took ChatGPT roughly three years. Google Maps, TikTok, Instagram, and YouTube each took between five and eight.
+In May 2026, [ChatGPT crossed 1 billion monthly active app users](https://americanbazaaronline.com/2026/06/03/chatgpt-reaches-1-billion-monthly-users-becoming-fastest-app-to-hit-milestone-482055/), according to market intelligence firm Sensor Tower — the fastest any app in history has reached that scale. It took ChatGPT roughly three years. Google Maps, TikTok, Instagram, and YouTube each took between five and eight.
 
 Anthropic's Claude app had, by the same data source, approximately 56 million monthly active users. About 5.6% of ChatGPT's mobile audience.
 
@@ -41,7 +41,7 @@ For builders, this is useful context: the two products are partially substitutab
 
 Raw user count and revenue quality are not the same metric.
 
-In April 2026, Anthropic became the **top vendor by US business AI payments**, according to the same Sensor Tower data. This happened while ChatGPT had 18x the user base.
+In April 2026, [Anthropic became the **top vendor by US business AI payments**](https://www.pymnts.com/news/artificial-intelligence/2026/chatgpt-reaches-1-billion-users-as-the-ai-economy-takes-shape/), according to the same Sensor Tower data. This happened while ChatGPT had 18x the user base.
 
 This is the clearest statement of what the split actually looks like in 2026:
 

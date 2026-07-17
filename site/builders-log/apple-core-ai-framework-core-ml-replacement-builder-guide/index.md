@@ -3,9 +3,9 @@
 > WWDC 2026 confirmed Core AI, Apple's replacement for Core ML. The new framework unifies on-device Foundation Models, third-party LLM integration, and MCP routing under one Swift API. Here is what builders need to know about the shift, the migration path, and what Core AI enables that Core ML never could.
 
 
-Apple introduced Core AI at WWDC 2026. It replaces Core ML — the machine learning framework that has shipped with iOS and macOS since 2017 — as the primary on-device AI integration layer for developers.
+[Apple introduced Core AI at WWDC 2026](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/). It replaces Core ML — [the machine learning framework that has shipped with iOS and macOS since 2017](https://9to5mac.com/2026/03/01/apple-replacing-core-ml-with-modernized-core-ai-framework-for-ios-27-at-wwdc/) — as the primary on-device AI integration layer for developers.
 
-Core AI is not a rename. It is a rearchitected framework designed for generative AI workloads, with a different model hierarchy, a new approach to third-party LLM integration, and MCP as a first-class routing target. Core ML was built for traditional inference: CNNs, image classifiers, regressors, structured tabular models. Core AI is built for the kind of AI developers are actually shipping in 2026.
+Core AI is not a rename. It is a [rearchitected framework designed for generative AI workloads](https://www.infoq.com/news/2026/06/apple-core-ai-wwdc/), with a different model hierarchy, a new approach to third-party LLM integration, and MCP as a first-class routing target. Core ML was built for traditional inference: CNNs, image classifiers, regressors, structured tabular models. Core AI is built for the kind of AI developers are actually shipping in 2026.
 
 Both frameworks coexist in the SDK for now. Core ML is not deprecated. But the signal from Apple is clear: new generative AI integrations belong in Core AI. Part of our **[Builder's Log](/builders-log/)**.
 

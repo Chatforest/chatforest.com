@@ -8,7 +8,7 @@ categories: ["OpenAI", "Security", "ChatGPT", "Enterprise AI"]
 tags: ["openai", "chatgpt", "lockdown-mode", "prompt-injection", "security", "data-exfiltration", "chatgpt-business", "enterprise", "ai-security", "builder-guide"]
 ---
 
-OpenAI shipped Lockdown Mode on June 6, 2026, rolling it out across all ChatGPT personal accounts (Free, Go, Plus, Pro) and self-serve ChatGPT Business accounts.
+[OpenAI shipped Lockdown Mode on June 6, 2026](https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt/), rolling it out across all ChatGPT personal accounts (Free, Go, Plus, Pro) and self-serve ChatGPT Business accounts.
 
 The feature is optional, off by default, and designed for a specific threat: data exfiltration via prompt injection. When enabled, it disables several major ChatGPT capabilities in exchange for a narrower attack surface.
 
@@ -37,7 +37,7 @@ Lockdown Mode addresses this by disabling the outbound pathways an attacker woul
 - Whether conversations may be used to improve models
 - Image generation
 
-OpenAI describes the controls as "deterministic" — they are not evaluated by the AI model and cannot be overridden by prompt instructions. An injected command cannot instruct ChatGPT to re-enable web access because the toggle is enforced at the infrastructure layer, not the model layer.
+OpenAI describes the controls as "deterministic" — [they are not evaluated by the AI model and cannot be overridden by prompt instructions](https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/). An injected command cannot instruct ChatGPT to re-enable web access because the toggle is enforced at the infrastructure layer, not the model layer.
 
 ---
 

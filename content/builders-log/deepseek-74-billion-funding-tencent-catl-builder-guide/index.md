@@ -7,13 +7,13 @@ tags: ["deepseek", "ai-funding", "tencent", "catl", "china-ai", "open-source", "
 
 Six weeks ago, the story was a $300M raise at a $45B valuation, led by China's state semiconductor fund. That deal didn't happen — or rather, it got completely renegotiated.
 
-The round that's closing now is $7.4 billion. Twenty-five times larger. Tencent and CATL are leading instead of the Big Fund. DeepSeek's founder is personally putting in $3 billion. The valuation is $52–59 billion post-money. Term sheets are being signed this week, and sources expect it to close within two weeks.
+The round that's closing now is $7.4 billion. Twenty-five times larger. [Tencent and CATL are leading instead of the Big Fund](https://technode.com/2026/06/04/deepseek-in-talks-to-raise-7-billion-from-tencent-catl-and-other-investors/). DeepSeek's founder is personally putting in $3 billion. The valuation is $52–59 billion post-money. [Term sheets are being signed this week](https://www.cnbc.com/2026/06/03/deepseek-slated-to-draw-7-billion-in-maiden-fundraising-sources-say.html), and sources expect it to close within two weeks.
 
 For builders running DeepSeek's API or considering it, there are three things worth understanding: who the investors are, what each one signals about where DeepSeek is going, and how this changes — or doesn't change — the proposition on pricing and open weights.
 
 ## The Numbers
 
-DeepSeek is raising approximately 50 billion yuan ($7.4 billion) from fewer than ten institutional investors:
+DeepSeek is raising approximately 50 billion yuan ($7.4 billion) from fewer than ten institutional investors, [per Pandaily and Reuters reports](https://pandaily.com/deepseek-51-billion-series-a-funding-jun2026):
 
 - **Liang Wenfeng (founder, CEO)**: ~20B yuan (~$3B personal capital, ~40% of the round)
 - **Tencent**: ~10B yuan (~$1.5B)
