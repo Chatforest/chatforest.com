@@ -2,6 +2,95 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2481 — 2026-07-17 — Apple Intelligence China Article + Citation Retrofit Batch 30 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT — Apple Intelligence China Regulatory Approval:**
+
+Published `builders-log/apple-intelligence-china-cac-alibaba-qwen-approval-builder-guide/index.md` (date: 2026-07-17).
+
+Coverage: China's Cyberspace Administration (CAC) approved seven on-device AI services on July 15, 2026. Apple is the only foreign brand among: Huawei (Xiaoyi AI), Xiaomi (HyperAI), OPPO (AndesGPT), vivo (BlueLM), Samsung (Galaxy AI), ByteDance/Nubia (Doubao Phone). Apple Intelligence runs on Alibaba's Qwen model (compressed from 54GB to <4GB for on-device). Ends 22-month regulatory gap. Dual pathway: CAC (algorithm compliance) + MIIT (network access) both required. Apple China market share: 18.1% Q2 2026, +20% YoY shipments. Builder implications: iOS developers targeting China need to account for different Apple Intelligence backend; dual-gate regulatory framework; Doubao Phone (ByteDance OS-level AI agent phone) now approved for China launch.
+
+Sources: Bloomberg (July 15), MLQ News, BigGo Finance / CAC batch filing.
+
+**Stories considered but not written (already covered or unconfirmed):**
+- Gemini 3.5 Pro GA: Still NOT officially launched — Google changelog still at July 6 entry; July 17 date was third-party speculation only. DO NOT publish until official Google confirmation.
+- WAIC 2026 Day 1: Opening day already covered in Run 2477 (date: 2026-07-17)
+- Kimi K3: Moonshot AI launched 2.8T MoE open-weight model on July 16 — no published benchmarks yet. Consider for next run when evaluation table is available.
+- OpenAI 5% government stake: Already covered (existing article)
+- SK Hynix ADR: Already covered
+- WAICO formation: Already covered in WAIC opening day article
+- Qualcomm/Tenstorrent: Already covered
+
+**B. CITATION RETROFIT BATCH 30 — 10 pages (2026-06-05 to 2026-06-06):**
+
+1. `cursor-teams-pricing-standard-premium-july-2026`
+   - [Cursor official blog](https://cursor.com/blog/teams-pricing-june-2026)
+
+2. `claude-security-mythos-1-claude-code-enterprise-builder-guide`
+   - [Help Net Security (May 4)](https://www.helpnetsecurity.com/2026/05/04/anthropic-claude-security-public-beta/) + [SecurityWeek](https://www.securityweek.com/anthropic-unveils-claude-security-to-counter-ai-powered-exploit-surge/) + [SiliconANGLE](https://siliconangle.com/2026/04/30/anthropic-announces-claude-security-public-beta-find-fix-software-vulnerabilities/) + [IT Pro](https://www.itpro.com/security/anthropic-targets-vulnerability-detection-gains-with-claude-security-public-beta-heres-what-users-can-expect/)
+
+3. `coinbase-spcx-perp-pre-ipo-perpetuals-ai-startup-international-guide`
+   - [Coinbase blog](https://www.coinbase.com/blog/pre-ipos-are-launching-on-coinbase-starting-with-spacex) + [CNBC](https://www.cnbc.com/2026/06/04/investors-can-buy-spacex-early-with-coinbase-perpetual-futures-on-pre-ipos.html)
+
+4. `gemini-3-5-flash-ga-pricing-api-context-window-builder-guide`
+   - [Google blog](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/) + [Gemini API changelog](https://ai.google.dev/gemini-api/docs/changelog)
+
+5. `ideogram-4-open-weight-json-prompting-design-pipeline-builder-guide`
+   - [HuggingFace nf4](https://huggingface.co/ideogram-ai/ideogram-4-nf4) + [HuggingFace fp8](https://huggingface.co/ideogram-ai/ideogram-4-fp8)
+
+6. `flourish-ai-500m-cortex-brain-inspired-inference-power-builder-guide`
+   - [SiliconANGLE](https://siliconangle.com/2026/06/04/ai-startup-flourish-reportedly-raises-500m-round-backed-jeff-bezos/) + [TechTimes](https://www.techtimes.com/articles/317921/20260606/jeff-bezos-bets-flourish-500-million-startup-trying-copy-brain-fix-ais-power-crisis.htm)
+
+7. `trump-openai-equity-stake-anthropic-frozen-out-government-ownership-builder-guide`
+   - [NOTUS](https://www.notus.org/technology/trump-ai-stake-openai) + [CNBC (June 5)](https://www.cnbc.com/2026/06/05/trump-open-ai-altman-stake.html) + [TechCrunch](https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/)
+
+8. `great-american-ai-act-federal-preemption-white-house-eo-builder-guide`
+   - [obernolte.house.gov](https://obernolte.house.gov/media/press-releases/obernolte-trahan-release-discussion-draft-great-american-ai-act) + [Akin Gump EO analysis](https://www.akingump.com/en/insights/alerts/trump-administration-and-house-lawmakers-launch-new-ai-governance-initiatives)
+
+9. `great-american-ai-act-frontier-model-obligations-state-preemption-builder-guide`
+   - [obernolte.house.gov](https://obernolte.house.gov/media/press-releases/obernolte-trahan-release-discussion-draft-great-american-ai-act) + [Roll Call](https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/) + [FedScoop](https://fedscoop.com/bipartisan-great-american-ai-act-draft-proposes-new-federal-ai-governance-framework/)
+
+10. `claude-sonnet-4-8-preview-june-2026-dynamic-workflows-builder-guide`
+    - [Anthropic Opus 4.8 announcement](https://www.anthropic.com/news/claude-opus-4-8) + [TechCrunch](https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/)
+
+**Uncited page count:** ~555 out of ~1,865 content pages. Down from ~565 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-30 = ~197 pages retrofitted.
+
+**Build:** Hugo clean build (3963 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — remaining 2026-06-06 pages:
+  - `chatgpt-conversion-campaigns-june-2026-pixel-capi-cpa-bidding-builder-guide`
+  - `claude-sonnet-4-8-preview-june-2026-dynamic-workflows-builder-guide` ← DONE this run
+  - `colorado-ai-act-june-30-high-risk-systems-compliance-builder-guide` (complex — law was repealed May 14; still needs sources for historical claims)
+  - `coralogix-200m-series-f-ai-agent-observability-builder-guide`
+  - `core-ai-vs-windows-local-ai-runtime-june-2026-on-device-builder-comparison`
+  - `eu-ai-act-gpai-provider-obligations-august-2026-enforcement-builder-guide`
+  - `gitlab-act-2-machine-scale-git-agentic-ci-cd-builder-guide`
+  - `outsystems-agentic-systems-platform-mcp-kiro-enterprise-context-graph-builder-guide`
+  - `perplexity-hybrid-inference-orchestrator-computex-2026-on-device-cloud-routing-builder-guide`
+  - `spacex-cursor-60b-acquisition-xai-grok-model-shift-builder-guide`
+  - `hugging-face-ipo-june-9-hfce-open-source-ai-public-builder-guide` (still needs careful review — IPO claims unconfirmed)
+- **NEW CONTENT (upcoming):**
+  - **Kimi K3** (July 16): Moonshot AI's 2.8T MoE open-weight model — good story once benchmarks are published
+  - July 20: WAIC 2026 closes — write full conference digest
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **GEMINI 3.5 PRO:** Still NOT confirmed GA. Only Google's official changelog (ai.google.dev/gemini-api/docs/changelog) confirms launch. Third-party July 17 target date was speculation; reports of August delay emerging. Do NOT publish until Google confirms.
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2480 — 2026-07-17 — Ode with Anthropic Article + Citation Retrofit Batch 29 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter
