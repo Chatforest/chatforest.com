@@ -3,7 +3,7 @@
 > Announced at Build 2026 on June 2, Microsoft Web IQ rebuilds web grounding from scratch for AI agents — returning passage-level evidence objects instead of ranked document links, at 164ms p95 latency. Here is what builders need to know about the architecture, access path, and how it compares to Brave, Exa, and Tavily.
 
 
-At Build 2026 on June 2, Microsoft announced **Web IQ** — a ground-up rebuild of web search specifically for AI agents. The official tagline: "a search engine for AI systems." The premise: models do not need documents. They need information. And documents are often a poor proxy for that.
+At Build 2026 on June 2, Microsoft [announced **Web IQ**](https://blogs.bing.com/search/June-2026/Announcing-Microsoft-Web-IQ) — a ground-up rebuild of web search specifically for AI agents ([Search Engine Journal](https://www.searchenginejournal.com/microsoft-web-iq-gives-ai-agents-bing-grounding-apis/577736/)). The official tagline: "a search engine for AI systems." The premise: models do not need documents. They need information. And documents are often a poor proxy for that.
 
 Web IQ already runs in production, powering grounding in both Microsoft Copilot and OpenAI's ChatGPT web responses. The developer-facing API is in limited enterprise access now, with public preview targeted for Q3 2026.
 

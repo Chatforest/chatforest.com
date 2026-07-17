@@ -8,9 +8,9 @@ categories: ["Enterprise AI", "Partnerships", "Developer Ecosystem"]
 tags: ["openai", "partner-network", "enterprise", "consulting", "certification", "ecosystem", "codex", "forward-deployed", "gpt-5"]
 ---
 
-OpenAI launched the OpenAI Partner Network on June 14, 2026 — its first formal, tiered partner ecosystem. The announcement comes three months after Anthropic launched the Claude Partner Network in March, and follows the same basic structural playbook: a three-tier program, an investment fund, and a certification track, all aimed at closing the implementation gap between AI capability and enterprise deployment.
+[OpenAI launched the OpenAI Partner Network](https://openai.com/index/introducing-openai-partner-network/) on June 14, 2026 — its first formal, tiered partner ecosystem. The announcement comes three months after Anthropic launched the Claude Partner Network in March, and follows the same basic structural playbook: a three-tier program, an investment fund, and a certification track, all aimed at closing the implementation gap between AI capability and enterprise deployment.
 
-The fund is $150M. The certification target is 300,000 consultants by end of 2026. The program covers system integrators, management consultants, ISVs, managed service providers, and infrastructure companies.
+The fund is $150M. The certification target is 300,000 consultants by end of 2026 ([TechTimes](https://www.techtimes.com/articles/318436/20260615/openai-launches-partner-network-150m-bet-that-implementation-beats-model-power.htm)). The program covers system integrators, management consultants, ISVs, managed service providers, and infrastructure companies.
 
 ---
 

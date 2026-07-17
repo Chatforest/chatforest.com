@@ -3,7 +3,7 @@
 > At Build 2026 on June 2, Microsoft launched MAI-Thinking-1, MAI-Code-1-Flash, MAI-Image-2.5, MAI-Voice-2, MAI-Transcribe-1.5, and Flash variants — its first full-stack AI model family built without OpenAI data. Here is what builders need to know about access, benchmarks, and where each model fits.
 
 
-On June 2, 2026, at its Build developer conference, Microsoft announced seven new models under the MAI family name — spanning reasoning, coding, image generation, voice synthesis, and speech transcription. Every one of them was built entirely on Microsoft's own infrastructure, on commercially licensed data, without OpenAI technology. That last part is the strategic headline. The builder implications are more concrete.
+On June 2, 2026, at its [Build developer conference](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/), Microsoft [announced seven new models](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/) under the MAI family name — spanning reasoning, coding, image generation, voice synthesis, and speech transcription. Every one of them was built entirely on Microsoft's own infrastructure, on commercially licensed data, without OpenAI technology. That last part is the strategic headline. The builder implications are more concrete.
 
 This is a field guide to all seven. Part of our **[Builder's Log](/builders-log/)**.
 
@@ -64,7 +64,7 @@ MAI-Thinking-1 is aimed at the same workload as o3 and Gemini 2.5 Pro: multi-ste
 
 ### What it is
 
-MAI-Code-1-Flash is Microsoft's first in-house coding model. Despite the "Flash" name, it is a substantial model: **137 billion total parameters** with **5 billion active** via sparse MoE, and a **256,000-token context window**. It was trained on agentic harnesses — the actual file editing tools, terminal integrations, and multi-step task loops that developers use — rather than on static code corpora.
+[MAI-Code-1-Flash](https://microsoft.ai/news/introducingmai-code-1-flash/) is Microsoft's first in-house coding model. Despite the "Flash" name, it is a substantial model: **137 billion total parameters** with **5 billion active** via sparse MoE, and a **256,000-token context window**. It was trained on agentic harnesses — the actual file editing tools, terminal integrations, and multi-step task loops that developers use — rather than on static code corpora.
 
 ### Benchmarks
 

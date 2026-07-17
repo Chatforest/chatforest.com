@@ -3,7 +3,7 @@
 > Claude Code v2.1.172 (June 10) lifts the sub-agent spawn ban and caps nesting at 5 levels deep. Here's the token math, the practical depth ceiling, and the three pitfalls to avoid before you wire up your first recursive agent chain.
 
 
-On June 10, 2026, Boris Cherny shipped Claude Code v2.1.172 with a short announcement: "Just landed nested subagent support in Claude Code. Capped at depth=5 to start. Lmk what you think!"
+On June 10, 2026, [Boris Cherny shipped Claude Code v2.1.172](https://github.com/anthropics/claude-code/releases) with a short announcement: "Just landed nested subagent support in Claude Code. Capped at depth=5 to start. Lmk what you think!" ([byteiota coverage](https://byteiota.com/claude-code-v2-1-172-sub-agents-can-now-spawn-sub-agents/))
 
 That's a quiet message for a meaningful change. For most of 2026, the Claude Code docs explicitly stated that sub-agents cannot spawn other sub-agents — a deliberate guardrail against infinite recursion. That restriction is now gone. Sub-agents can now launch their own sub-agents, up to 5 frames deep.
 

@@ -3,7 +3,7 @@
 > Moonshot AI released Kimi K2.7-Code on June 12 — a 1-trillion-parameter MoE model under Modified MIT that scores 81.1% on MCPMark Verified, outpacing Claude Opus 4.8. Here is what builders need to know about access, benchmarks, and how to wire it into MCP workflows.
 
 
-On June 12, 2026, Moonshot AI published the full weights for Kimi K2.7-Code on Hugging Face. Two days later, it is already the highest-scoring open-source model on MCPMark Verified — the benchmark most directly relevant to builders wiring models into MCP tool-call workflows. It beats Claude Opus 4.8 there by more than four points.
+On June 12, 2026, Moonshot AI [published the full weights for Kimi K2.7-Code on Hugging Face](https://huggingface.co/moonshotai/Kimi-K2.7-Code). Two days later, it is already the [highest-scoring open-source model on MCPMark Verified](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/) — the benchmark most directly relevant to builders wiring models into MCP tool-call workflows. It beats Claude Opus 4.8 there by more than four points.
 
 That is a remarkable sentence. An open-weight model under a Modified MIT license, deployable for free on your own hardware, is leading the field on the metric that matters most for agentic development work. Part of our **[Builder's Log](/builders-log/)**.
 

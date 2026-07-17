@@ -3,7 +3,7 @@
 > Anthropic added /fork to Claude Code on June 13, 2026, giving builders a way to branch the current session and run parallel approaches from the same starting point — with prompt-cache cost sharing. Here is how it works and when to use it over regular subagents.
 
 
-Anthropic shipped `/fork` in Claude Code on June 13, 2026, alongside nested sub-agent support and a plugin search interface. The feature is conceptually simple — it clones your current session into a new one — but the implications for multi-agent workflows are significant.
+Anthropic shipped `/fork` in Claude Code on June 13, 2026, alongside nested sub-agent support and a plugin search interface ([Claude Code CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)). The feature is conceptually simple — it clones your current session into a new one — but the implications for multi-agent workflows are significant.
 
 ---
 

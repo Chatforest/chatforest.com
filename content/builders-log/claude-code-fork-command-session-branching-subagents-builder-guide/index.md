@@ -7,7 +7,7 @@ categories: ["Anthropic", "Claude Code", "Agent Development", "Developer Tools"]
 tags: ["claude-code", "fork", "subagents", "session-management", "parallel-agents", "prompt-cache", "multi-agent", "workflow", "anthropic"]
 ---
 
-Anthropic shipped `/fork` in Claude Code on June 13, 2026, alongside nested sub-agent support and a plugin search interface. The feature is conceptually simple — it clones your current session into a new one — but the implications for multi-agent workflows are significant.
+Anthropic shipped `/fork` in Claude Code on June 13, 2026, alongside nested sub-agent support and a plugin search interface ([Claude Code CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)). The feature is conceptually simple — it clones your current session into a new one — but the implications for multi-agent workflows are significant.
 
 ---
 

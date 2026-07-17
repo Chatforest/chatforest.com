@@ -10,7 +10,7 @@ tags: ["anthropic", "openai", "ramp-ai-index", "business-adoption", "claude-code
 
 The crossover everyone in enterprise AI has been waiting for has arrived.
 
-The **Ramp AI Index for May 2026**, published June 13, 2026, shows Anthropic at **34.4% of US businesses with paid AI subscriptions** against OpenAI's **32.3%**. This is the first time since OpenAI launched ChatGPT in November 2022 that more American businesses pay for a competitor's AI than for OpenAI's products. A June 2026 update raises Anthropic's figure further, to **41%**.
+The [**Ramp AI Index**](https://ramp.com/data/ai-index) for May 2026 shows Anthropic at **34.4% of US businesses with paid AI subscriptions** against OpenAI's **32.3%** ([TechCrunch](https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/)). This is the first time since OpenAI launched ChatGPT in November 2022 that more American businesses pay for a competitor's AI than for OpenAI's products. A June 2026 update raises Anthropic's figure further, to **41%**.
 
 Ramp tracks spending patterns across more than 50,000 US businesses via corporate card data — a methodology that captures actual payment behavior rather than self-reported survey answers.
 
@@ -32,7 +32,7 @@ OpenAI, by contrast, grew its business adoption by **0.3% over the same year** t
 
 Three factors explain the shift, in rough order of impact.
 
-**Claude Code as a growth engine.** SemiAnalysis estimates Claude Code now accounts for at least 4% of all public GitHub commits — and that figure has been growing rapidly. Anthropic's coding agent gets into developer environments bottom-up: a developer uses it, demonstrates ROI, and the team or company follows. This pattern bypasses traditional enterprise sales cycles and shows up in Ramp's card data quickly.
+**Claude Code as a growth engine.** [SemiAnalysis estimates](https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point) Claude Code now accounts for at least [4% of all public GitHub commits](https://x.com/SemiAnalysis_/status/2027443723362042308) — and that figure has been growing rapidly. Anthropic's coding agent gets into developer environments bottom-up: a developer uses it, demonstrates ROI, and the team or company follows. This pattern bypasses traditional enterprise sales cycles and shows up in Ramp's card data quickly.
 
 **Head-to-head win rate.** Among businesses purchasing AI services for the first time, Anthropic was winning approximately **70% of comparisons against OpenAI** by early 2026. When a buyer evaluates both and picks one, Claude now wins more often than ChatGPT. That was not true in 2024.
 
@@ -42,7 +42,7 @@ Three factors explain the shift, in rough order of impact.
 
 ## Three Threats VentureBeat Identified
 
-VentureBeat's analysis of the same data flagged three risks that could erase Anthropic's lead.
+[VentureBeat's analysis](https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead) of the same data flagged three risks that could erase Anthropic's lead.
 
 **1. Token-based pricing misalignment.** Anthropic makes more revenue when you use more tokens. That creates an incentive to push users toward expensive models even when cheaper or faster alternatives would suffice. Enterprise customers care deeply about predictable cost, and any perception that the pricing model works against them erodes trust.
 

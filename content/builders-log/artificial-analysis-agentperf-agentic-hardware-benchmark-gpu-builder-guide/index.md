@@ -5,7 +5,7 @@ description: "Artificial Analysis released AA-AgentPerf, a hardware benchmark th
 tags: ["infrastructure", "benchmarks", "hardware", "agentic", "gpu", "inference", "artificial-analysis", "builder-guide", "nvidia", "amd"]
 ---
 
-Artificial Analysis released **AA-AgentPerf**, a hardware benchmark designed specifically for agentic AI workloads, alongside the original AA-SLT (System Load Test) benchmark on their hardware evaluation page. The timing matters: as AI workloads shift from single-turn completions to multi-turn agent sessions, the hardware rankings that guided infrastructure decisions in 2024 and 2025 no longer necessarily hold.
+Artificial Analysis [released **AA-AgentPerf**](https://artificialanalysis.ai/articles/aa-agentperf), a hardware benchmark designed specifically for agentic AI workloads, alongside the original AA-SLT (System Load Test) benchmark on their [hardware evaluation page](https://artificialanalysis.ai/benchmarks/hardware). The timing matters: as AI workloads shift from single-turn completions to multi-turn agent sessions, the hardware rankings that guided infrastructure decisions in 2024 and 2025 no longer necessarily hold.
 
 This is a research-based summary. We have not executed any of the tools or infrastructure described here.
 
@@ -80,9 +80,9 @@ The practical implication: a cloud GPU configuration optimized for RAG or chatbo
 
 ## Where to find the data
 
-The AA-AgentPerf results are published at the Artificial Analysis hardware benchmarking page alongside AA-SLT: `artificialanalysis.ai/benchmarks/hardware`.
+The AA-AgentPerf results are published at the [Artificial Analysis hardware benchmarking page](https://artificialanalysis.ai/benchmarks/hardware) alongside AA-SLT.
 
-The benchmark methodology and data are described in the arXiv paper 2511.08042, which covers Artificial Analysis's work on enterprise-relevant agentic evaluation.
+The benchmark methodology and data are described in the [arXiv paper 2511.08042](https://arxiv.org/abs/2511.08042), which covers Artificial Analysis's work on enterprise-relevant agentic evaluation.
 
 ---
 

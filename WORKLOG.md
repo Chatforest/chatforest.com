@@ -2,6 +2,73 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2485 — 2026-07-17 — Citation Retrofit Batch 34 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT:** No new article this run. Focused on retrofit batch.
+
+**B. CITATION RETROFIT BATCH 34 — 10 pages (2026-06-13 to 2026-06-14):**
+
+1. `artificial-analysis-agentperf-agentic-hardware-benchmark-gpu-builder-guide` (June 13)
+   - [AA-AgentPerf announcement](https://artificialanalysis.ai/articles/aa-agentperf) + [hardware page](https://artificialanalysis.ai/benchmarks/hardware) + [arXiv 2511.08042](https://arxiv.org/abs/2511.08042)
+
+2. `claude-code-fork-command-session-branching-subagents-builder-guide` (June 13)
+   - [Claude Code CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
+
+3. `claude-code-nested-sub-agents-depth-5-token-math-builder-guide` (June 13)
+   - [Claude Code releases](https://github.com/anthropics/claude-code/releases) + [byteiota coverage](https://byteiota.com/claude-code-v2-1-172-sub-agents-can-now-spawn-sub-agents/)
+
+4. `langflow-cve-2026-5027-rce-patch-builder-security-guide` (June 13)
+   - [The Hacker News](https://thehackernews.com/2026/06/unpatched-langflow-flaw-cve-2026-5027.html) + [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) + [BleepingComputer](https://www.bleepingcomputer.com/news/security/path-traversal-flaw-in-ai-dev-platform-langflow-exploited-in-attacks/) + [Langflow v1.9.0](https://github.com/langflow-ai/langflow/releases/tag/v1.9.0) + [SecurityWeek](https://www.securityweek.com/hackers-exploit-langflow-vulnerability-for-remote-code-execution/)
+
+5. `anthropic-passes-openai-business-adoption-ramp-ai-index-claude-code-builder-guide` (June 14)
+   - [Ramp AI Index](https://ramp.com/data/ai-index) + [TechCrunch](https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/) + [SemiAnalysis](https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point) + [VentureBeat](https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead)
+
+6. `decart-oasis-3-world-model-av-simulation-api-builder-guide` (June 14)
+   - [TechCrunch launch](https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/) + [Decart Oasis](https://decart.ai/oasis) + [SiliconAngle funding](https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/)
+
+7. `microsoft-mai-7-models-build-2026-thinking-code-image-voice-transcribe-builder-guide` (June 14)
+   - [Microsoft AI announcement](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/) + [Build 2026 blog](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/) + [MAI-Code-1-Flash](https://microsoft.ai/news/introducingmai-code-1-flash/)
+
+8. `kimi-k2-7-code-moonshot-open-source-coding-agent-mcp-hermes-builder-guide` (June 14)
+   - [HuggingFace model card](https://huggingface.co/moonshotai/Kimi-K2.7-Code) + [MarkTechPost](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/)
+
+9. `openai-partner-network-150m-select-advanced-elite-enterprise-builder-guide` (June 14)
+   - [OpenAI official](https://openai.com/index/introducing-openai-partner-network/) + [TechTimes](https://www.techtimes.com/articles/318436/20260615/openai-launches-partner-network-150m-bet-that-implementation-beats-model-power.htm)
+
+10. `microsoft-web-iq-bing-agent-grounding-api-passages-evidence-builder-guide` (June 14)
+    - [Bing Search Blog](https://blogs.bing.com/search/June-2026/Announcing-Microsoft-Web-IQ) + [Search Engine Journal](https://www.searchenginejournal.com/microsoft-web-iq-gives-ai-agents-bing-grounding-apis/577736/)
+
+**Uncited page count:** ~516 out of ~1,867 content pages. Down from ~526 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-34 = ~236 pages retrofitted.
+
+**Build:** Hugo clean build (3967 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 14 articles (many uncited):
+  - `huawei-harmonyos-7-agent-framework-2-skills-intent-as-service-builder-guide` (0 ext links, June 14)
+  - `microsoft-web-iq-bing-agent-grounding-api-passages-evidence-builder-guide` — done this run
+  - `naver-nvidia-dsx-sovereign-ai-korea-hyperclovax-nemotron-coalition-builder-guide` (0 ext links, June 14)
+  - Continue June 15+ articles
+- **NEW CONTENT (upcoming):**
+  - **Gemini 3.5 Pro:** Hold until Google officially confirms GA.
+  - **WAIC 2026 Day 2-3 highlights** (July 18-19): MiniMax M3, Huawei Atlas 950 debuts
+  - **OpenAI Build Week close** (July 21): Submission deadline summary
+  - **Anthropic agent-memory header goes default** (July 22)
+  - **Opus 4.7 fast mode removal + DeepSeek V4 migration** (July 24)
+  - **Kimi K3 open weights** (July 27)
+  - **MCP 2026 spec RC final** (July 28)
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2484 — 2026-07-17 — Citation Retrofit Batch 33 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter

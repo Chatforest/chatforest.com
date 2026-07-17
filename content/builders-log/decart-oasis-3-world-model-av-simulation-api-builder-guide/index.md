@@ -5,8 +5,8 @@ description: "Decart's Oasis 3 generates photorealistic, action-conditioned driv
 tags: ["physical-ai", "autonomous-vehicles", "simulation", "world-model", "robotics", "api", "developer-tools"]
 ---
 
-Decart launched **Oasis 3** on June 10, 2026 — a real-time world model that generates photorealistic
-driving environments on demand via API. You describe a scenario in natural language, connect a robot
+Decart [launched **Oasis 3**](https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/) on June 10, 2026 — a real-time world model that generates photorealistic
+driving environments on demand via API ([official product page](https://decart.ai/oasis)). You describe a scenario in natural language, connect a robot
 policy or AV agent, and Oasis 3 streams back a synchronized three-camera view of the world as it
 responds to your agent's actions. No pre-built maps. No hand-authored assets. $0.02 per second of
 simulation.
@@ -168,7 +168,7 @@ accurate physics.
 
 ## Business context
 
-Decart was founded in 2023 and raised $300M in May 2026 at approximately $4B valuation. Total funding
+Decart was founded in 2023 and [raised $300M in May 2026](https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/) at approximately $4B valuation. Total funding
 exceeds $450M. The round was led by Radical Ventures with participation from NVIDIA, Adobe Ventures,
 Toyota Ventures, Sequoia, and Benchmark — a signal that the strategic investors see Oasis 3 as
 infrastructure for the physical AI stack, not a vertical product.
