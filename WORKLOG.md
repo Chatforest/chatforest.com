@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2492 — 2026-07-18 — Citation Retrofit Batch 41 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Only outgoing report to CEO (#2192) still pending — no action needed.
+
+### What I did
+
+**DEPLOY FIRST:** Deployed Run 2491's Batch 40 edits (which were built but not deployed last run due to 1-hour throttle). Deploy succeeded at 05:19:06 JST.
+
+**CITATION RETROFIT BATCH 41 — 10 pages (DEPLOYED):**
+
+All 7 WORKLOG-listed candidates + 3 additional pages from June 28 backlog.
+
+1. `anthropic-dod-standoff-federal-freeze-thaw-builder-enterprise-guide` (June 9, NAMED-COMPANY ×multiple)
+   - [WaPo Feb 27 ban](https://www.washingtonpost.com/technology/2026/02/27/trump-anthropic-claude-drop/) + [CBS News Hegseth designation](https://www.cbsnews.com/news/hegseth-declares-anthropic-supply-chain-risk/) + [ABC News OpenAI replacement deal](https://abcnews.com/Politics/anthropic-latest-pentagon-contract-bar-ai-autonomous-weapons/story?id=130558898) + [NPR lawsuit](https://www.npr.org/2026/03/09/nx-s1-5742548/anthropic-pentagon-lawsuit-amodai-hegseth) + [CNBC March 26 injunction](https://www.cnbc.com/2026/03/26/anthropic-pentagon-dod-claude-court-ruling.html) + [GSA official statement April](https://www.gsa.gov/about-gsa/newsroom/news-releases/gsa-issues-statement-on-anthropic-preliminary-injunction-04032026) + [CNN May 1 eight companies](https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic) + [Nextgov Pentagon AI contracts](https://www.nextgov.com/artificial-intelligence/2026/05/pentagon-makes-agreements-7-companies-add-ai-classified-networks/413264/) + [TechPolicy.Press June 8 testing](https://www.techpolicy.press/a-timeline-of-the-anthropic-pentagon-dispute/)
+
+2. `gpt-56-gemini-35-pro-convergence-week-june-22-28-dual-model-evaluation-builder-guide` (June 20, prediction article)
+   - [Polymarket GPT-5.6 market](https://polymarket.com/event/gpt-5pt6-released-by) + [OpenAI pricing GPT-5.5](https://openai.com/api/pricing) + [OpenAI preview announcement](https://openai.com/index/previewing-gpt-5-6-sol/) + added note that models have since launched
+
+3. `ai-acceleration-whiplash-faros-2026-incidents-code-quality-aiewf-builder-guide` (June 30)
+   - [Faros research page](https://www.faros.ai/research/ai-acceleration-whiplash) + [Faros PDF report](https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf) + [Greptile blog](https://www.greptile.com/blog/rise-of-the-overnight-agents) + [Sonar press release](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) + [Anthropic code review blog](https://claude.com/blog/code-review)
+
+4. `anthropic-claude-id-verification-biometrics-july-8-2026-api-builders-exempt-guide` (July 8, NAMED-COMPANY ×multiple)
+   - [TechCrunch privacy policy update](https://techcrunch.com/2026/06/22/anthropic-says-claude-may-want-to-see-your-id/) + [The Next Web Persona outsourcing](https://thenextweb.com/news/anthropic-claude-id-verification-privacy-policy-persona-biometric) + [Persona Trail of Bits audit](https://withpersona.com/blog/independent-code-review-persona-data-practices) + [Facebook BIPA $650M settlement](https://techcrunch.com/2021/03/01/facebook-illinois-class-action-bipa/)
+
+5. `gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide` (July 1)
+   - [OpenAI official preview](https://openai.com/index/previewing-gpt-5-6-sol/) + [CryptoBriefing WSE-3 architecture](https://cryptobriefing.com/openai-gpt-56-cerebras-inference-breakthrough/) + [Yahoo Finance $20B deal](https://finance.yahoo.com/technology/ai/articles/openai-cerebras-deal-supposed-good-200700053.html) + [Cerebras SEC filing](https://www.sec.gov/Archives/edgar/data/0002021728/000162828026035214/cerebras-424b4.htm) + internal link to Jalapeño article
+
+6. `gpt-56-sol-day-1-production-deployment-guide-july-2026` (July 9)
+   - [Simon Willison GA confirmation](https://simonwillison.net/2026/Jul/9/gpt-5-6/) + [OpenAI preview](https://openai.com/index/previewing-gpt-5-6-sol/) + [OpenAI Help Center cache billing](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna) + [System card Terminal-Bench](https://deploymentsafety.openai.com/gpt-5-6-preview) + [GitHub Codex CLI macOS bug #30861](https://github.com/openai/codex/issues/30861)
+
+7. `gpt-56-sol-safety-card-unauthorized-actions-lying-credential-movement-production-risk-july-2026` (July 9, NAMED-COMPANY)
+   - [OpenAI system card](https://deploymentsafety.openai.com/gpt-5-6-preview) + [System card PDF](https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf) + [TechTimes METR cheating](https://www.techtimes.com/articles/319662/20260703/ai-benchmark-cheating-sets-record-gpt-56-sol-gamed-its-own-safety-tests.htm) + [NeuralTrust CoT analysis](https://neuraltrust.ai/blog/gpt-5-6-system-card-security-analysis)
+
+8. `anthropic-opus-4-7-fast-mode-deprecated-july-24-migrate-opus-4-8-builder-guide` (June 28)
+   - [Anthropic platform release notes](https://platform.claude.com/docs/en/release-notes/overview) + [Claude Code fast mode docs](https://code.claude.com/docs/en/fast-mode)
+
+9. `openai-assistants-api-sunset-august-26-2026-migrate-responses-api-builder-guide` (June 28)
+   - [OpenAI community announcement](https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666) + [OpenAI deprecations page](https://developers.openai.com/api/docs/deprecations)
+
+10. `claude-code-trusted-devices-remote-control-enterprise-security-builder-guide` (June 28)
+    - [Claude Code remote control docs](https://code.claude.com/docs/en/remote-control) + [Clauding.de feature overview](https://clauding.de/en/posts/claude-code-trusted-devices-remote-control)
+
+**Uncited page count:** ~445 estimated (down from ~455 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-41 = ~306 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-18 at 05:19 JST.
+
+**BLUESKY NOTE:** Did NOT post to Bluesky today — already posted once on July 18 (Run 2489). HARD CAP: 1 post/day. Next eligible: July 19. Good candidates: WAICA article (just published) or Kimi K3 article.
+
+### What should happen next
+- **BLUESKY**: Next post eligible 2026-07-19. Good candidates: WAICA article or Kimi K3 (weights dropping July 27).
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 3-4** (July 19-20) — wrap-up coverage
+  - **Kimi K3 open weights** (July 27) — follow-up when weights drop
+  - **Opus 4.7 fast mode removal** (July 24) — happening in 6 days
+  - **MCP 2026 spec RC final** (July 28)
+  - **Anthropic agent-memory header goes default** (July 22 — article already published)
+- **CITATION RETROFIT (ongoing):** Next batch candidates from June 28:
+  - `google-deepmind-shazeer-jumper-talent-exodus-builder-impact-june-2026`
+  - `bytedance-doubao-seed-2-1-pro-turbo-agent-coding-builder-guide`
+  - `cognition-frontiercode-mergeability-benchmark-claude-opus-leads-builder-guide`
+  - `fable-5-day-17-return-imminent-builder-action-week-june-28-2026`
+  - `gpt-5-6-sol-terra-luna-launch-builder-guide-june-2026`
+  - `gpt-56-sol-terra-luna-government-gated-preview-three-tier-family-builder-guide`
+  - `openai-anthropic-token-price-war-enterprise-market-flip-builder-guide`
+
+---
+
 ## Run 2491 — 2026-07-18 — WAIC Day 2 Article + Citation Retrofit Batch 40 (8 pages, DEPLOYED)
 
 **Mode:** Copywriter / Developer / Citation Retrofit

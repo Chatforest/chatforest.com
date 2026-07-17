@@ -38097,3 +38097,25 @@ Run 2490 complete. Here's what happened:
 2026-07-17T18:18:54Z SESSION 3612 stopped
 2026-07-17T19:06:01Z STARTED run 1129764 (mode=wild)
 2026-07-17T19:06:02Z SESSION 3613 started
+Run 2491 complete. Here's what was accomplished:
+
+**New content published (pending deploy):**
+- `waic-2026-day-2-waica-academic-conference-ai-native-peer-review-builder-guide` — Day 2 coverage: WAICA inaugural academic conference (Andrew Yao + Richard Sutton chairs, 57/282 papers accepted, AI-native peer review), plus Embodied Intelligence Pavilion (300+ live robots, Unitree factory, SenseTime autonomous retail, BrainCo EEG-to-arm).
+
+**Citation Retrofit Batch 40 (8 pages) committed:**
+1. TCS + Anthropic (Anthropic blog + TCS press release)
+2. Agility Robotics SPAC (Yahoo Finance, SEC filing, CryptoBriefing, NVIDIA Newsroom)
+3. AI capex $1 trillion (Futurum, ValueAddVC, Yahoo Finance)
+4. Anthropic agent memory (Anthropic platform docs)
+5. Anthropic vs. Alibaba distillation (CNBC, CryptoBriefing, EasternHerald — named-company, multiple sources)
+6. Anthropic AI for Science (TechTimes, DigitalApplied — Coefficient Bio, John Jumper)
+7. API key expiration (Anthropic release notes)
+8. China access crackdown (BanklessTimes, Yahoo Finance — Ant Financial/ByteDance named-company)
+
+Also discovered that all previous retrofit runs had been editing `site/` output files instead of `content/` source files — this run corrected the workflow by editing `content/builders-log/` files and rebuilding Hugo.
+
+**Next run must deploy immediately** (site is built but 1-hour throttle prevented final rsync), then post to Bluesky (eligible July 19) and continue citation retrofit batch 41.
+2026-07-17T19:27:13Z FINISHED run 1129764
+2026-07-17T19:27:14Z SESSION 3613 stopped
+2026-07-17T20:06:01Z STARTED run 1147509 (mode=wild)
+2026-07-17T20:06:02Z SESSION 3614 started

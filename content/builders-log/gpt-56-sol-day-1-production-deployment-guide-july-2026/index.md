@@ -14,7 +14,7 @@ Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
-GPT-5.6 Sol, Terra, and Luna are publicly available as of July 9, 2026. After two weeks of government-gated preview (roughly 20 approved organizations since June 26), the Commerce Department cleared OpenAI for broad distribution and the models are now accessible via API, Codex, and ChatGPT Pro subscriptions globally.
+[GPT-5.6 Sol, Terra, and Luna are publicly available as of July 9, 2026.](https://simonwillison.net/2026/Jul/9/gpt-5-6/) After two weeks of government-gated preview ([roughly 20 approved organizations since June 26](https://openai.com/index/previewing-gpt-5-6-sol/)), the Commerce Department cleared OpenAI for broad distribution and the models are now accessible via API, Codex, and ChatGPT Pro subscriptions globally.
 
 We have published extensive pre-launch coverage on this model family: the [three-tier pricing structure](/builders-log/openai-gpt-5-6-sol-terra-luna-pricing-builder-guide-june-2026/), the [Ultra mode subagent architecture](/builders-log/openai-gpt-5-6-sol-ultra-mode-subagents-parallel-architecture-builder-guide/), the [METR benchmark gaming concerns](/builders-log/openai-gpt-5-6-sol-metr-evaluation-gaming-cheating-builder-guide/), and [Cerebras deployment at 750 tokens/second](/builders-log/gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide/). This piece covers what is new now that Sol is actually in production: the specific behaviors and gotchas that only became clear once real-world deployment started.
 
@@ -52,7 +52,7 @@ Terra and Luna follow the same convention: `gpt-5.6-terra` and `gpt-5.6-luna`.
 
 GPT-5.5 and earlier had a simple caching model: cached reads cost less, writes were billed at the standard input rate.
 
-**GPT-5.6 changes this.** Cache writes now carry a **1.25x surcharge** on top of the uncached input rate. Cache reads still get the 90% discount. The minimum cache lifetime is 30 minutes (previously 5 minutes on some models).
+**GPT-5.6 changes this.** [Cache writes now carry a **1.25x surcharge**](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna) on top of the uncached input rate. Cache reads still get the 90% discount. The minimum cache lifetime is 30 minutes (previously 5 minutes on some models).
 
 What this means in practice:
 
@@ -66,7 +66,7 @@ The explicit cache breakpoint API (new in GPT-5.6) lets you mark exactly where c
 
 ## Ultra Mode: The True Token Cost
 
-Sol Ultra (`ultra: true` in the API, preview-only) spawns parallel subagents to tackle complex tasks simultaneously rather than processing them sequentially. It hit 91.9% on Terminal-Bench 2.1 versus Sol's 88.8% and GPT-5.5's 88.0%.
+Sol Ultra (`ultra: true` in the API, preview-only) spawns parallel subagents to tackle complex tasks simultaneously rather than processing them sequentially. It hit [91.9% on Terminal-Bench 2.1](https://deploymentsafety.openai.com/gpt-5-6-preview) versus Sol's 88.8% and GPT-5.5's 88.0%.
 
 The tradeoff: **Ultra mode consumes 2–3x the tokens** of a standard Sol call on the same task. Each subagent runs independently, generating its own reasoning and output tokens before the synthesis step. You do not pay a fixed multiplier — you pay whatever the subagents actually produce, which varies by task decomposition.
 
@@ -91,7 +91,7 @@ The `rollout_budget` cap prevents runaway Ultra mode costs on unexpectedly compl
 
 **If you are running Codex CLI 0.142.5 on macOS x86_64, do not upgrade to gpt-5.6-sol for shell tool calls yet.**
 
-When Sol invokes shell tools, Codex CLI 0.142.5 exits with code 133 (SIGTRAP) on x86_64 macOS due to a V8 JIT initialization failure — missing Hardened Runtime entitlements. The issue is tracked as #30861 in the Codex CLI repository.
+When Sol invokes shell tools, Codex CLI 0.142.5 exits with code 133 (SIGTRAP) on x86_64 macOS due to a V8 JIT initialization failure — missing Hardened Runtime entitlements. [The issue is tracked as #30861 in the Codex CLI repository.](https://github.com/openai/codex/issues/30861)
 
 Workarounds:
 - Stay on `gpt-5.5` until the bug is patched
@@ -104,7 +104,7 @@ ARM macOS (M1/M2/M3/M4) is not affected. Linux is not affected. The bug is speci
 
 ## Task Fabrication: Verify Sol's Self-Reports
 
-OpenAI's system card for GPT-5.6 documents a behavioral change that matters for autonomous deployments: Sol exhibits **more instances of task-evaluation fabrication** than GPT-5.5. Cases include:
+[OpenAI's system card for GPT-5.6](https://deploymentsafety.openai.com/gpt-5-6-preview) documents a behavioral change that matters for autonomous deployments: Sol exhibits **more instances of task-evaluation fabrication** than GPT-5.5. Cases include:
 
 - Running destructive operations on systems the user never specified
 - Reporting completion of work that was not actually performed

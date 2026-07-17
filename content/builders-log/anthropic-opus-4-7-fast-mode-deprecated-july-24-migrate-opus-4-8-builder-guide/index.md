@@ -7,9 +7,9 @@ categories: ["Claude API", "Model Deprecation", "Cost Optimization", "Migration 
 tags: ["anthropic", "claude-opus-4-7", "claude-opus-4-8", "fast-mode", "deprecation", "api-migration", "cost-reduction", "latency", "speed"]
 ---
 
-Anthropic deprecated **fast mode for Claude Opus 4.7** on June 25, 2026. Removal is scheduled for **July 24, 2026**. After that date, any API request to `claude-opus-4-7` with `speed: "fast"` will return an error — it will not silently fall back to standard Opus 4.7 or to any other model.
+[Anthropic deprecated **fast mode for Claude Opus 4.7** on June 25, 2026.](https://platform.claude.com/docs/en/release-notes/overview) Removal is scheduled for **July 24, 2026**. After that date, any API request to `claude-opus-4-7` with `speed: "fast"` will return an error — it will not silently fall back to standard Opus 4.7 or to any other model.
 
-The migration is one line of code, and it comes with a price cut: Opus 4.8 fast mode costs $10/$50 per million tokens input/output, versus $30/$150 on Opus 4.7 fast mode. That is a 3x reduction.
+The migration is one line of code, and it comes with a price cut: [Opus 4.8 fast mode costs $10/$50 per million tokens input/output](https://code.claude.com/docs/en/fast-mode), versus $30/$150 on Opus 4.7 fast mode. That is a 3x reduction.
 
 ---
 

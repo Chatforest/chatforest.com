@@ -22,17 +22,17 @@ Here is the full picture, including the June 8 update.
 
 **Early 2026**: Pentagon legal teams insert a "any lawful use" clause into contract renewal language. In Anthropic's legal reading, that umbrella language would authorize Claude for domestic mass surveillance of Americans and for lethal targeting in fully autonomous weapons with no meaningful human oversight — two hard limits Anthropic has held since its founding. Anthropic refuses to sign the revised terms.
 
-**February 27, 2026**: Trump issues a directive ordering all federal agencies to stop using Anthropic products. Hegseth designates Anthropic a "supply chain risk to national security" — the first such designation ever applied to an American company. Hours later, OpenAI signs a Pentagon deal as a replacement.
+**February 27, 2026**: [Trump issues a directive ordering all federal agencies to stop using Anthropic products](https://www.washingtonpost.com/technology/2026/02/27/trump-anthropic-claude-drop/). [Hegseth designates Anthropic a "supply chain risk to national security"](https://www.cbsnews.com/news/hegseth-declares-anthropic-supply-chain-risk/) — the first such designation ever applied to an American company. Hours later, [OpenAI signs a Pentagon deal as a replacement](https://abcnews.com/Politics/anthropic-latest-pentagon-contract-bar-ai-autonomous-weapons/story?id=130558898).
 
-**Early March 2026**: Anthropic files suit in federal court citing First Amendment retaliation. The Pentagon begins evaluating OpenAI, Google Gemini, xAI Grok, and Reflection AI as substitutes for classified network deployments. 25 Pentagon "power users" begin testing the alternatives.
+**Early March 2026**: [Anthropic files suit in federal court citing First Amendment retaliation](https://www.npr.org/2026/03/09/nx-s1-5742548/anthropic-pentagon-lawsuit-amodai-hegseth). The Pentagon begins evaluating OpenAI, Google Gemini, xAI Grok, and Reflection AI as substitutes for classified network deployments. 25 Pentagon "power users" begin testing the alternatives.
 
-**March 26, 2026**: Judge Lin issues a preliminary injunction blocking the Trump administration from enforcing the ban on doing business with Anthropic, finding the government "likely violated the law" through retaliatory action. The injunction is explicitly preliminary — the underlying case continues.
+**March 26, 2026**: [Judge Lin issues a preliminary injunction](https://www.cnbc.com/2026/03/26/anthropic-pentagon-dod-claude-court-ruling.html) blocking the Trump administration from enforcing the ban on doing business with Anthropic, finding the government "likely violated the law" through retaliatory action. The injunction is explicitly preliminary — the underlying case continues.
 
-**April 2026**: GSA formally complies with the injunction: withdraws its announcement removing Anthropic, restores Anthropic products to civilian agency systems, reinstates Anthropic in the Multiple Award Schedule, and directs contractors to reinstate Claude services. Anthropic models return to GSA Chat and federal civilian tooling.
+**April 2026**: [GSA formally complies with the injunction](https://www.gsa.gov/about-gsa/newsroom/news-releases/gsa-issues-statement-on-anthropic-preliminary-injunction-04032026): withdraws its announcement removing Anthropic, restores Anthropic products to civilian agency systems, reinstates Anthropic in the Multiple Award Schedule, and directs contractors to reinstate Claude services. Anthropic models return to GSA Chat and federal civilian tooling.
 
-**May 1, 2026**: The Pentagon finalizes new classified AI contracts with eight companies — OpenAI, Google, Microsoft, Amazon Web Services, Nvidia, SpaceX, Oracle, and Reflection AI. Anthropic is deliberately excluded. The injunction covers the original ban, but it does not compel the DoD to award new classified contracts to a vendor it didn't invite to bid.
+**May 1, 2026**: [The Pentagon finalizes new classified AI contracts with eight companies — OpenAI, Google, Microsoft, Amazon Web Services, Nvidia, SpaceX, Oracle, and Reflection AI](https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic). Anthropic is [deliberately excluded](https://www.nextgov.com/artificial-intelligence/2026/05/pentagon-makes-agreements-7-companies-add-ai-classified-networks/413264/). The injunction covers the original ban, but it does not compel the DoD to award new classified contracts to a vendor it didn't invite to bid.
 
-**June 8, 2026**: The Pentagon confirms it is actively using those 25 power users to test OpenAI and Google models for permanent replacement of Claude in classified environments. The DoD's posture: the preliminary injunction restored what Anthropic had; it does not create an affirmative right to Secret or Top Secret network access.
+**June 8, 2026**: [The Pentagon confirms it is actively using those 25 power users to test OpenAI and Google models](https://www.techpolicy.press/a-timeline-of-the-anthropic-pentagon-dispute/) for permanent replacement of Claude in classified environments. The DoD's posture: the preliminary injunction restored what Anthropic had; it does not create an affirmative right to Secret or Top Secret network access.
 
 ---
 
@@ -60,7 +60,7 @@ Anthropic's two hard limits are not new. They are baked into Claude's constituti
 
 2. **No domestic mass surveillance**: Claude will not power systems designed to monitor Americans at scale based on protected characteristics, regardless of whether a specific application is technically authorized.
 
-These aren't negotiating positions. Dario Amodei's public statement was unambiguous: Anthropic could not "in good conscience" accept contract language that would enable either application.
+These aren't negotiating positions. [Dario Amodei's public statement](https://www.npr.org/2026/03/09/nx-s1-5742548/anthropic-pentagon-lawsuit-amodai-hegseth) was unambiguous: Anthropic could not "in good conscience" accept contract language that would enable either application.
 
 The consequence is real. DoD contracts with $300–500 million in potential value went to competitors. The Pentagon is now replacing Claude in classified environments.
 
