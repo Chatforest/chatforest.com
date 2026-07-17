@@ -8,7 +8,7 @@ categories: ["Developer Tools", "Agentic AI", "Industry Analysis"]
 tags: ["windsurf", "devin", "cognition", "devin-desktop", "devin-local", "cascade", "acp", "agent-client-protocol", "ide", "coding-agent", "mcp", "cursor", "agentic-coding", "builders-log"]
 ---
 
-On June 2, 2026, Cognition shipped a standard over-the-air update to Windsurf. When users restarted their editor, it opened as Devin Desktop.
+On June 2, 2026, Cognition [shipped a standard over-the-air update to Windsurf](https://devin.ai/blog/windsurf-is-now-devin-desktop/). When users restarted their editor, it opened as Devin Desktop.
 
 The name change is the obvious part of the story. The less obvious parts — a new local agent rewritten in Rust, a deprecated agent with a hard July 1 deadline, and an open protocol for connecting any AI coding agent to any compatible editor — are what matter for builders.
 

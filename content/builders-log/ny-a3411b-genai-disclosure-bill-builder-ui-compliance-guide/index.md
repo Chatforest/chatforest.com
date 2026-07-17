@@ -19,7 +19,7 @@ New York's RAISE Act gets all the press. It's a serious law — 72-hour incident
 
 **A3411B covers everyone else.**
 
-On March 9, 2026, the New York legislature passed the Artificial Intelligence Disclosure Act — Assembly Bill A3411B — with broad bipartisan support. It is waiting on Governor Hochul's desk. She signed the RAISE Act. There is no public indication she will veto this one.
+On March 9, 2026, the New York legislature [passed the Artificial Intelligence Disclosure Act — Assembly Bill A3411B](https://www.nysenate.gov/legislation/bills/2025/A3411/amendment/B) — with broad bipartisan support. ([Legal analysis: Alston & Bird](https://www.alstonprivacy.com/new-york-ai-disclosure-bill-passes-state-legislature/) · [Troutman Pepper](https://www.troutmanprivacy.com/2026/03/new-york-legislature-passes-genai-warning-bill/)) It is waiting on Governor Hochul's desk. She signed the RAISE Act. There is no public indication she will veto this one.
 
 When she signs it, a 90-day clock starts. At the end of that clock, if you operate any generative AI system accessed by users in New York, you need a disclosure notice in your UI. One line. Mandatory.
 

@@ -8,7 +8,7 @@ categories: ["AI Infrastructure", "AI Models", "Enterprise AI"]
 tags: ["openai", "gpt-5-5", "aws", "bedrock", "azure", "foundry", "multi-cloud", "enterprise", "deployment", "builders-log"]
 ---
 
-Two platform GAs in four days. On June 1, 2026, OpenAI's GPT-5.5, GPT-5.4, and Codex became generally available on Amazon Bedrock. On June 3, GPT-5.5 reached GA in Microsoft Azure Foundry with confirmed production pricing. Both platforms price GPT-5.5 at the same rate as the direct OpenAI API: $5 per million input tokens, $30 per million output tokens.
+Two platform GAs in four days. On June 1, 2026, OpenAI's GPT-5.5, GPT-5.4, and Codex [became generally available on Amazon Bedrock](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/). On June 3, [GPT-5.5 reached GA in Microsoft Azure Foundry](https://azure.microsoft.com/en-us/blog/openais-gpt-5-5-in-microsoft-foundry-frontier-intelligence-on-an-enterprise-ready-platform/) with confirmed production pricing. Both platforms price GPT-5.5 at the same rate as the direct OpenAI API: $5 per million input tokens, $30 per million output tokens.
 
 If you are running GPT-5.5 workloads or planning to, you now have three production paths. This guide covers what each one gives you, where costs actually diverge, and how to pick without overthinking it.
 

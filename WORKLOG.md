@@ -2,6 +2,77 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2479 — 2026-07-17 — Gemini 3.5 Pro Launch Article + Citation Retrofit Batch 28 (9 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT — Gemini 3.5 Pro Launch Day:**
+
+Published `builders-log/gemini-3-5-pro-2m-context-deep-think-july-17-launch-builder-guide/index.md` (date: 2026-07-17).
+
+Coverage: Google targeting July 17, 2026 as GA day for Gemini 3.5 Pro after full architectural rebuild (original base model scrapped due to recursive tool-calling failures). Key reported specs: 2M token context window (double Flash's 1M, largest of any production frontier model), Deep Think reasoning mode gated to Ultra ($250/month), autonomous workflow capabilities. **Important caveat: all specs come from third-party/unnamed sources** — no official model card, no API changelog entry confirmed as of article publish time. Article includes watch-the-changelog action item so builders can verify GA when it hits.
+
+Sources: TechTimes (July 13 + July 8), Startup Fortune, Memeburn, Coursiv, CometAPI, AIToolsRecap, byteiota developer guide, Developers Digest guide, official Gemini API changelog.
+
+**B. CITATION RETROFIT BATCH 28 — 9 pages (all 2026-06-04):**
+
+1. `gpt-5-5-aws-bedrock-azure-foundry-ga-multi-cloud-deployment-guide`
+   - [AWS GA announcement](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/) + [Azure Foundry GA blog](https://azure.microsoft.com/en-us/blog/openais-gpt-5-5-in-microsoft-foundry-frontier-intelligence-on-an-enterprise-ready-platform/)
+
+2. `ny-a3411b-genai-disclosure-bill-builder-ui-compliance-guide`
+   - [NY Senate bill text](https://www.nysenate.gov/legislation/bills/2025/A3411/amendment/B) + [Alston & Bird](https://www.alstonprivacy.com/new-york-ai-disclosure-bill-passes-state-legislature/) + [Troutman](https://www.troutmanprivacy.com/2026/03/new-york-legislature-passes-genai-warning-bill/)
+
+3. `openai-codex-sites-role-plugins-annotations-knowledge-work-builder-guide`
+   - [OpenAI Intelligence at Work](https://openai.com/business/intelligence-at-work/) + [Codex for knowledge work](https://openai.com/index/codex-for-knowledge-work/) + [TechCrunch](https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/)
+
+4. `openai-june-3-gpt-5-5-instant-behavior-change-o3-gpt-4-5-retirement-builder-guide`
+   - [OpenAI GPT-5.5 Instant announcement](https://openai.com/index/gpt-5-5-instant/) + [Model release notes](https://help.openai.com/en/articles/9624314-model-release-notes)
+
+5. `snowflake-summit-26-cowork-coco-cortex-training-sense-datastream-builder-guide`
+   - [Snowflake CoWork press release](https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/) + [Atlan recap](https://atlan.com/know/snowflake/summit-2026-announcements/) + [Constellation Research](https://www.constellationr.com/insights/news/snowflake-summit-2026-context-custom-model-training-iceberg-v3)
+
+6. `supabase-series-f-500m-multigres-claude-code-agent-infrastructure-builder-guide`
+   - [Supabase blog](https://supabase.com/blog/supabase-series-f) + [CNBC](https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html) + [TechCrunch](https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/)
+
+7. `windsurf-devin-desktop-rebrand-devin-local-acp-builder-guide`
+   - [Devin official blog](https://devin.ai/blog/windsurf-is-now-devin-desktop/)
+
+8. `xpeng-iron-byd-yao-shun-yu-chinese-ev-humanoid-robot-builder-guide-2026`
+   - [XPeng IRON official](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7) + [BYD Pandaily](https://pandaily.com/byd-secretly-develops-humanoid-robot-codename-yao-shun--jun2026)
+
+9. `spacex-spcx-ipo-roadshow-week-june-4-12-what-to-watch`
+   - [CNBC roadshow](https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html) + [SpaceX pricing PDF](https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX_PricingAnnouncement.pdf)
+
+**Uncited page count:** ~575 out of ~1,863 content pages. Down from ~584 before this run (9 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-28 = ~177 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — 2026-06-05 pages. First uncited:
+  - `claude-code-dynamic-workflows-ultracode-implementation-guide`
+  - `claude-security-mythos-1-claude-code-enterprise-builder-guide`
+  - `coinbase-spcx-perp-pre-ipo-perpetuals-ai-startup-international-guide`
+  - `github-copilot-cli-rubber-duck-voice-scheduling-june-2-builder-guide`
+  - `hugging-face-ipo-june-9-hfce-open-source-ai-public-builder-guide`
+  - And more from 2026-06-05
+- **NEW CONTENT (upcoming events):**
+  - July 20: WAIC 2026 closes — write full conference digest
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **GEMINI FOLLOW-UP:** When Gemini 3.5 Pro officially confirms GA (watch ai.google.dev/gemini-api/docs/changelog), publish confirmed-specs update or follow-up builder guide
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2478 — 2026-07-17 — OpenAI Safety Head Departure Article + Citation Retrofit Batch 27 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter

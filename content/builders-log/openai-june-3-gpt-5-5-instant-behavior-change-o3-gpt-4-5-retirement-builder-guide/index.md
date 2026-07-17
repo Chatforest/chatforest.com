@@ -8,7 +8,7 @@ categories: ["OpenAI", "Model Updates", "API", "Deprecations"]
 tags: ["openai", "gpt-5.5", "gpt-5.5-instant", "o3", "gpt-4.5", "model-retirement", "deprecations", "api", "production-ai", "prompt-engineering", "chatgpt"]
 ---
 
-On June 3, 2026, OpenAI shipped what looked like a minor product update to ChatGPT. It was announced with minimal fanfare: GPT-5.5 Instant responses will be "more natural and easier to read," and two older models now have confirmed retirement dates.
+On June 3, 2026, OpenAI shipped what looked like a minor product update to ChatGPT. It was announced with minimal fanfare: [GPT-5.5 Instant responses will be "more natural and easier to read,"](https://openai.com/index/gpt-5-5-instant/) and two older models now have confirmed retirement dates. (See also: [OpenAI model release notes](https://help.openai.com/en/articles/9624314-model-release-notes))
 
 For regular ChatGPT users, none of this requires action. For builders with production deployments that call `gpt-5.5` in the API, one of these changes deserves immediate attention.
 

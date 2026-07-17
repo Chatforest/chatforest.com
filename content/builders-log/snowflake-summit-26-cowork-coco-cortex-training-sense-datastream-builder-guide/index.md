@@ -8,7 +8,7 @@ categories: ["Enterprise AI", "AI Infrastructure", "Developer Tools"]
 tags: ["snowflake", "cowork", "coco", "cortex-training", "cortex-sense", "datastream", "openflow", "anthropic", "claude", "enterprise-ai", "data-cloud", "agentic-platform", "fine-tuning", "streaming", "builders-log"]
 ---
 
-Snowflake Summit 26 ran June 1–4 in San Francisco with 20,000 attendees. The opening keynote featured Anthropic President Daniela Amodei alongside Snowflake CEO Sridhar Ramaswamy. The builder keynote landed June 3.
+Snowflake Summit 26 ran June 1–4 in San Francisco with 20,000 attendees. The opening keynote featured Anthropic President Daniela Amodei alongside Snowflake CEO Sridhar Ramaswamy. The builder keynote landed June 3. ([Official CoWork announcement](https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/) · [Full Summit recap](https://atlan.com/know/snowflake/summit-2026-announcements/) · [Constellation Research analysis](https://www.constellationr.com/insights/news/snowflake-summit-2026-context-custom-model-training-iceberg-v3))
 
 The headline outcome: Snowflake shipped five significant new capabilities and renamed both of its primary AI products. If you track Snowflake and built your understanding before this summit, some product names have changed and some capabilities are materially different.
 
