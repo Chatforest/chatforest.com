@@ -3,7 +3,7 @@
 > Foundation Models is Apple's on-device LLM API for iOS and macOS. iOS 27 brings a larger model, on-device fine-tuning, expanded context, and full tool calling. No API key. No network. No cost. Here is how to build with it.
 
 
-Apple's Foundation Models framework is the most underused capability in the iOS 27 SDK.
+Apple's [Foundation Models framework](https://developer.apple.com/wwdc26/guides/apple-intelligence/) is the most underused capability in the iOS 27 SDK.
 
 Every developer with an Xcode license already has access to a locally running LLM with structured outputs, tool calling, multi-turn sessions, and — new in iOS 27 — on-device fine-tuning. No API key. No network request. No cost per inference. The model runs on the Neural Engine of every iPhone 15 Pro or later, every M-series Mac, and every current iPad Pro.
 
@@ -15,9 +15,9 @@ If you have shipped an AI feature in your iOS or macOS app using an external API
 
 Foundation Models was introduced at WWDC 2025 as Apple's first developer-facing on-device LLM API. Before 2025, building with language models on Apple platforms required Core ML (import your own weights) or an external API call. Foundation Models provides a system LLM — maintained, updated, and optimized by Apple — that any app can call without managing model files or API credentials.
 
-iOS 27 is the second major release of Foundation Models. The headline updates:
+[iOS 27 is the second major release of Foundation Models](https://developer.apple.com/videos/play/wwdc2026/241/). The headline updates:
 
-- **Larger base model:** Apple has not published parameters, but the iOS 27 on-device model is derived from the licensed 1.2T-parameter Gemini mixture-of-experts model. The on-device variant is a distilled version — substantially more capable than the iOS 18 Foundation Models model.
+- **Larger base model:** Apple has not published parameters for the iOS 27 on-device model, but the system model was substantially rebuilt for iOS 27 — substantially more capable than the iOS 26 Foundation Models model.
 - **Expanded context window:** The iOS 18 model supported a limited context. iOS 27 expands this significantly (exact length in the beta release notes; expected to be 32k+ tokens in production builds).
 - **On-device fine-tuning:** New in iOS 27. Apps can train LoRA adapters on local data that never leaves the device. The base model updates via OS updates; adapters persist in the app sandbox.
 - **Improved structured outputs:** The `@Generable` macro has been expanded to support nested types, enums, optional fields, and arrays.
@@ -322,7 +322,7 @@ Think of it as layers: Core AI (infrastructure) → Foundation Models (developer
 3. Create a session and make your first call — the API requires no configuration beyond this
 4. Explore WWDC 2026 sessions: "What's new in Foundation Models" and "Build intelligent apps with Foundation Models"
 
-**WWDC session catalog:** developer.apple.com/wwdc26 — the sessions are free with an Apple ID.
+**WWDC session catalog:** [developer.apple.com/wwdc26](https://developer.apple.com/wwdc26/guides/apple-intelligence/) — the sessions are free with an Apple ID.
 
 The framework is available in Xcode 26.3 beta today. The public release of iOS 27 is expected in September 2026. Developer and public betas run through the summer.
 

@@ -5,7 +5,7 @@
 
 Three weeks after Apple announced iOS 27's Siri Extensions and Core AI at WWDC, Huawei responded at its own developer conference with a more aggressive bet: the entire operating system redesigned for agents, not apps.
 
-HarmonyOS 7 was announced at HDC 2026 on June 12, 2026. The developer beta is live. The headline is not a new AI assistant feature — it's a new architectural paradigm, what Huawei calls "intent-as-service," in which the AI agent layer becomes the primary interface to the OS and to third-party apps. Part of our **[Builder's Log](/builders-log/)**.
+[HarmonyOS 7 was announced at HDC 2026 on June 12, 2026](https://pandaily.com/huawei-harmonyos-7-launch-hdc-2026-ai-agent-jun2026). The developer beta is live. The headline is not a new AI assistant feature — it's a new architectural paradigm, what Huawei calls "intent-as-service," in which the AI agent layer becomes the primary interface to the OS and to third-party apps. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -15,7 +15,7 @@ Previous HarmonyOS versions added Xiaoyi (the AI assistant) as a layer on top of
 
 HarmonyOS 7 inverts this. The core architectural shift is that system capabilities are now fully "Skill-ified" — every meaningful thing the OS can do has been wrapped into a standardized capability module called a Skill. Xiaoyi's intelligence engine (the "Smart Brain") can invoke any Skill, chain Skills together for multi-step tasks, and coordinate with third-party AI agents to do things the OS itself doesn't own.
 
-The scale: **2,100 system-level Skills** (covering things like contacts, calendar, payments, device settings, media controls), access to **200+ system data categories**, and a registered catalog of **2,000+ third-party AI agents** that Xiaoyi can hand tasks off to.
+The scale: [**2,100 system-level Skills**](https://www.huaweicentral.com/huawei-harmonyos-7/) (covering things like contacts, calendar, payments, device settings, media controls), access to **200+ system data categories**, and a registered catalog of **2,000+ third-party AI agents** that Xiaoyi can hand tasks off to.
 
 A user who says "book me a ride to the airport, same driver as last time" no longer touches the ride app at all. Xiaoyi decomposes the intent, retrieves the driver preference from the personal data layer, calls the ride app's registered agent, and confirms the booking — all without the user navigating a UI.
 
@@ -31,7 +31,7 @@ The technical backbone is Agent Framework 2.0, which adds three capabilities Hua
 
 **Autonomous learning.** The system observes which Skills and agent chains succeed or fail for a given user and adjusts routing accordingly. Huawei describes this as "self-evolving architecture" — the routing improves without requiring a model update.
 
-Announced success rate: **complex task completion above 90%** on internal benchmarks. No independent verification yet — treat this as a marketing anchor, not a deployment target.
+Announced success rate: [**complex task completion above 90%**](https://www.intomobile.com/2026/06/12/huawei-announces-harmonyos-7-with-agentic-ai-and-15-performance-boost/) on internal benchmarks. No independent verification yet — treat this as a marketing anchor, not a deployment target.
 
 ---
 

@@ -3,7 +3,7 @@
 > Databricks added Claude Fable 5 on June 9 and featured it at the Data+AI Summit. Unity AI Gateway brings centralized governance, MCP server control, spend controls, and guardrails — here's the full builder reference, including what to do while Fable 5 is suspended.
 
 
-Databricks added Claude Fable 5 as a hosted model option on June 9, 2026, and featured the integration prominently at the Data+AI Summit keynote (June 15). The vehicle for this integration — **Unity AI Gateway** — is the more durable builder story. Fable 5 has been offline since June 12 due to US export control directives, but the gateway itself is live and governs every model on the platform, not just Claude.
+Databricks [added Claude Fable 5 as a hosted model option on June 9, 2026](https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway), and featured the integration prominently at the Data+AI Summit keynote (June 15). The vehicle for this integration — **Unity AI Gateway** — is the more durable builder story. Fable 5 has been offline since June 12 due to US export control directives, but the gateway itself is live and governs every model on the platform, not just Claude.
 
 This guide covers what Unity AI Gateway actually does, how the Fable 5 integration works, where to find the operational complication, and what builders should be doing right now while the suspension plays out.
 
@@ -25,7 +25,7 @@ Every request and response is logged to Unity Catalog system tables with actual 
 
 **2. Fine-grained access control**
 
-Foundation model Unity Catalog permissions went GA on June 9 alongside the Fable 5 launch. Account admins can now control which users and service principals have access to which models, across all workload types. You can restrict Fable 5 access to production service accounts while allowing developers to use Opus 4.8 without budget guardrails.
+[Foundation model Unity Catalog permissions](https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway) went GA on June 9 alongside the Fable 5 launch. Account admins can now control which users and service principals have access to which models, across all workload types. You can restrict Fable 5 access to production service accounts while allowing developers to use Opus 4.8 without budget guardrails.
 
 **3. Spend controls**
 

@@ -5,7 +5,7 @@
 
 The Foundation Models framework in iOS 27 now accepts image input.
 
-WWDC 2026 confirmed what had been anticipated since the framework shipped in iOS 26: Apple's on-device language model is no longer text-only. Apps can now pass images — photos, screenshots, documents, camera frames, UI captures — alongside text prompts, and the model processes both together, on-device, without sending data to any network.
+[WWDC 2026 confirmed](https://developer.apple.com/wwdc26/guides/apple-intelligence/) what had been anticipated since the framework shipped in iOS 26: Apple's on-device language model is no longer text-only. Apps can now pass images — photos, screenshots, documents, camera frames, UI captures — alongside text prompts, and the model processes both together, on-device, without sending data to any network.
 
 This matters in ways that go beyond convenience. For apps that process user photos, medical images, receipts, identity documents, or proprietary business data, "on-device" is not a marketing claim — it is the only viable architecture. Foundation Models multimodal makes that architecture available in Swift with a handful of API calls.
 
@@ -27,7 +27,7 @@ WWDC 2026 adds image input as a first-class capability. Key announcements:
 
 **Privacy-appropriate disclosure.** Apple updated the Apple Intelligence disclosure UI to distinguish between text-only and multimodal interactions. Apps using image input surface a separate disclosure point in Apple's system-level Privacy Nutrition Labels for AI features.
 
-**New WWDC session:** "Multimodal experiences with Foundation Models" in the WWDC26 session catalog covers the API, model capabilities, performance characteristics, and testing workflows.
+**New WWDC session:** ["Multimodal experiences with Foundation Models" in the WWDC26 session catalog](https://developer.apple.com/videos/play/wwdc2026/241/) covers the API, model capabilities, performance characteristics, and testing workflows.
 
 ---
 
@@ -252,5 +252,5 @@ Foundation Models started as a text API. As of iOS 27, it is a multimodal platfo
 
 ---
 
-*ChatForest covers AI tools and platforms for builders. This article reflects WWDC 2026 announcements and the iOS 27 developer beta. The Foundation Models framework is evolving — check developer.apple.com/wwdc26 for the authoritative session content and API documentation.*
+*ChatForest covers AI tools and platforms for builders. This article reflects [WWDC 2026 announcements](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/) and the iOS 27 developer beta. The Foundation Models framework is evolving — check [developer.apple.com/wwdc26](https://developer.apple.com/wwdc26/guides/apple-intelligence/) for the authoritative session content and API documentation.*
 

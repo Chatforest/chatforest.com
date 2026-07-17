@@ -3,7 +3,7 @@
 > WWDC 2026 confirmed: iOS 27 and macOS 27 ship system-wide MCP support. Siri 2.0 can now invoke registered MCP servers. Core AI routes to MCP as a first-class target. The protocol you may already be running just reached a deployment surface of over one billion active Apple devices.
 
 
-WWDC 2026 confirmed system-wide MCP support in iOS 27 and macOS 27. Siri 2.0 — the rebuilt, Gemini-backed assistant shipping in September — can invoke MCP servers registered on a device. Core AI, the framework replacing Core ML for generative inference, treats MCP as a first-class routing target.
+[WWDC 2026 confirmed system-wide MCP support](https://developer.apple.com/wwdc26/guides/apple-intelligence/) in iOS 27 and macOS 27. Siri 2.0 — the rebuilt assistant shipping in September — can invoke MCP servers registered on a device. Core AI, the framework replacing Core ML for generative inference, treats MCP as a first-class routing target.
 
 MCP went from an IDE protocol (Xcode 26.3, February 2026) to an OS-level primitive in four months.
 
@@ -21,7 +21,7 @@ The system-wide MCP extension ships as part of the iOS 27 and macOS 27 SDK. Key 
 
 **MCP clients in the system framework.** Before WWDC 2026, MCP on Apple devices required third-party frameworks or custom client implementations. iOS 27 ships an MCP client in the system SDK. Any app can connect to an MCP server using Apple's own client, handling transport, authentication, and session management.
 
-**A dedicated WWDC session:** "MCP in Apple platforms" is listed in the WWDC26 session catalog at developer.apple.com/wwdc26. The session covers server registration, capability declarations, and security requirements.
+**A dedicated WWDC session:** ["MCP in Apple platforms" is listed in the WWDC26 session catalog](https://developer.apple.com/wwdc26/guides/apple-intelligence/). The session covers server registration, capability declarations, and security requirements.
 
 ---
 
@@ -29,11 +29,11 @@ The system-wide MCP extension ships as part of the iOS 27 and macOS 27 SDK. Key 
 
 To understand why this matters, the timeline:
 
-**November 2024:** Anthropic publishes the MCP specification. MCP defines a standardized client-server protocol for AI systems to call external tools, read resources, and use prompt templates.
+**November 2024:** Anthropic [publishes the MCP specification](https://www.anthropic.com/news/model-context-protocol). MCP defines a standardized client-server protocol for AI systems to call external tools, read resources, and use prompt templates.
 
 **Early 2025:** Major platforms adopt the protocol. Claude, ChatGPT, Gemini, and most agentic frameworks begin shipping MCP clients. The server ecosystem grows rapidly — today, MCP servers exist for GitHub, Stripe, Figma, PostgreSQL, Slack, Kubernetes, and hundreds of other tools.
 
-**February 2026 (Xcode 26.3):** Apple ships MCP support in Xcode. The IDE exposes 20 built-in tools via an MCP server — file system operations, build and test controls, diagnostics, and Apple documentation search. Claude Code and OpenAI Codex both connect via this MCP surface. This is the first MCP support in any Apple product.
+**February 2026 (Xcode 26.3):** Apple [ships MCP support in Xcode](https://9to5mac.com/2026/02/26/apple-releases-xcode-26-3-with-support-for-agentic-coding/). The IDE exposes 20 built-in tools via an MCP server — file system operations, build and test controls, diagnostics, and Apple documentation search. Claude Code and OpenAI Codex both connect via this MCP surface. This is the first MCP support in any Apple product.
 
 **June 2026 (WWDC 2026 / iOS 27 / macOS 27):** MCP moves from the IDE to the operating system. The protocol is now a system-level API, accessible to any app on a compatible Apple device.
 

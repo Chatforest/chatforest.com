@@ -3,7 +3,7 @@
 > DASH 2026 shipped 100+ capabilities for AI builders: AI Guard blocks prompt injection at runtime, Bits Evals automates agent quality iteration, and Agent Console unifies Claude Code/Cursor/Copilot spend. Here's what matters and what to do with it.
 
 
-Datadog's annual developer conference DASH ran June 9–10, 2026 at the North Javits Center in New York City. The company shipped over 100 new capabilities, with a heavy tilt toward AI agent operations. If you're building with Claude, GPT-5.5, or any LLM in 2026, several of these features belong in your stack or at minimum on your radar.
+Datadog's annual developer conference DASH ran June 9–10, 2026 at the North Javits Center in New York City. [The company shipped over 100 new capabilities](https://www.datadoghq.com/blog/dash-2026-new-feature-roundup-keynote/), with a heavy tilt toward AI agent operations. If you're building with Claude, GPT-5.5, or any LLM in 2026, several of these features belong in your stack or at minimum on your radar.
 
 This guide covers the features that matter most for builders of AI agents and LLM-backed applications — not the full product announcement list.
 
@@ -31,7 +31,7 @@ AI Guard is the most security-relevant announcement from DASH 2026. It sits inli
 
 The system discovers unprotected agents automatically, then analyzes behavioral context and historical traces to baseline normal behavior. Anomalies trigger blocks, not just alerts.
 
-AI Guard is in limited availability. You can sign up for early access at the Datadog product preview program.
+AI Guard is in limited availability. You can [sign up for early access](https://www.datadoghq.com/blog/dash-2026-recap/) at the Datadog product preview program.
 
 **Who needs this now:** Teams running agents with access to databases, APIs, or internal tools in production. The attack surface for a Claude agent that can execute code or write files is different from a chatbot that can only read.
 

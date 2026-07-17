@@ -3,7 +3,7 @@
 > AWS Summit New York City 2026 happened June 17 at the Javits Center. The headline: AWS is positioning agentic AI as the organizing layer for its entire platform. Here's every announcement that matters to builders — AgentCore's seven-service suite, Amazon Quick replacing Q Business, Kiro Pro Max, S3 Vectors, Nova Act, and a new AI Agents Marketplace.
 
 
-AWS Summit New York City 2026 ran June 17 at the Javits Center. VP of Agentic AI Swami Sivasubramanian led the keynote at 11 AM ET, with AWS at a $142 billion annualized run rate and agentic AI as the organizing theme for virtually every service announcement.
+AWS Summit New York City 2026 ran June 17 at the Javits Center ([top announcements](https://aws.amazon.com/blogs/aws/top-announcements-of-the-aws-summit-in-new-york-2026/)). VP of Agentic AI Swami Sivasubramanian led the keynote at 11 AM ET, with [AWS at a $142 billion annualized run rate](https://www.aboutamazon.com/news/aws/aws-summit-nyc-2026-ai-agents) and agentic AI as the organizing theme for virtually every service announcement.
 
 The throughline: AWS is no longer treating agents as an experimental feature. The entire platform — storage, compute, identity, observability — is being reoriented around them.
 

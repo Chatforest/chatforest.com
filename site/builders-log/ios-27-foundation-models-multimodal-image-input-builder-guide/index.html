@@ -66,7 +66,7 @@
 
       <div class="article-body">
         <p>The Foundation Models framework in iOS 27 now accepts image input.</p>
-<p>WWDC 2026 confirmed what had been anticipated since the framework shipped in iOS 26: Apple&rsquo;s on-device language model is no longer text-only. Apps can now pass images — photos, screenshots, documents, camera frames, UI captures — alongside text prompts, and the model processes both together, on-device, without sending data to any network.</p>
+<p><a href="https://developer.apple.com/wwdc26/guides/apple-intelligence/">WWDC 2026 confirmed</a> what had been anticipated since the framework shipped in iOS 26: Apple&rsquo;s on-device language model is no longer text-only. Apps can now pass images — photos, screenshots, documents, camera frames, UI captures — alongside text prompts, and the model processes both together, on-device, without sending data to any network.</p>
 <p>This matters in ways that go beyond convenience. For apps that process user photos, medical images, receipts, identity documents, or proprietary business data, &ldquo;on-device&rdquo; is not a marketing claim — it is the only viable architecture. Foundation Models multimodal makes that architecture available in Swift with a handful of API calls.</p>
 <p>This guide covers what was announced at WWDC 2026, the API surface, the use cases it actually enables, the ones it doesn&rsquo;t, and how to choose between Foundation Models vision and Apple&rsquo;s existing vision frameworks.</p>
 <hr>
@@ -77,7 +77,7 @@
 <p><strong>Camera, photo library, and file input.</strong> <code>ImageContent</code> can be initialized from a <code>UIImage</code>, a <code>CGImage</code>, a <code>CVPixelBuffer</code> (for live camera frames), or a file URL. Apps working with AVFoundation or PhotosKit can pass frames or assets directly without format conversion steps.</p>
 <p><strong>On-device processing only.</strong> Image analysis in Foundation Models does not route to Private Cloud Compute. The on-device model handles it entirely. Unlike text requests that may route to PCC for larger context or reasoning tasks, image input is explicitly processed locally in iOS 27.</p>
 <p><strong>Privacy-appropriate disclosure.</strong> Apple updated the Apple Intelligence disclosure UI to distinguish between text-only and multimodal interactions. Apps using image input surface a separate disclosure point in Apple&rsquo;s system-level Privacy Nutrition Labels for AI features.</p>
-<p><strong>New WWDC session:</strong> &ldquo;Multimodal experiences with Foundation Models&rdquo; in the WWDC26 session catalog covers the API, model capabilities, performance characteristics, and testing workflows.</p>
+<p><strong>New WWDC session:</strong> <a href="https://developer.apple.com/videos/play/wwdc2026/241/">&ldquo;Multimodal experiences with Foundation Models&rdquo; in the WWDC26 session catalog</a> covers the API, model capabilities, performance characteristics, and testing workflows.</p>
 <hr>
 <h2 id="the-api-surface">The API Surface</h2>
 <p>Foundation Models multimodal builds on the same session-based API introduced in iOS 26. Existing text-only integrations require minimal changes.</p>
@@ -280,7 +280,7 @@ print(response.content)
 <hr>
 <p>Foundation Models started as a text API. As of iOS 27, it is a multimodal platform — and one that processes images entirely on-device. For builders whose apps work with documents, photos, forms, or camera input, the use cases are immediate. The privacy model is the strongest available on any mobile platform. And it runs in Swift, without a network request, on hardware your users already own.</p>
 <hr>
-<p><em>ChatForest covers AI tools and platforms for builders. This article reflects WWDC 2026 announcements and the iOS 27 developer beta. The Foundation Models framework is evolving — check developer.apple.com/wwdc26 for the authoritative session content and API documentation.</em></p>
+<p><em>ChatForest covers AI tools and platforms for builders. This article reflects <a href="https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/">WWDC 2026 announcements</a> and the iOS 27 developer beta. The Foundation Models framework is evolving — check <a href="https://developer.apple.com/wwdc26/guides/apple-intelligence/">developer.apple.com/wwdc26</a> for the authoritative session content and API documentation.</em></p>
 
       </div>
 

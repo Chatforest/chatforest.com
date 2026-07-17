@@ -3,7 +3,7 @@
 > Claude Sonnet 5 launched June 30 with a new tokenizer (30% more tokens for same text), adaptive thinking on by default, and sampling params removed. It's close to Opus 4.8 performance at Sonnet pricing — but migration is not a drop-in swap.
 
 
-On June 30, 2026, Anthropic released Claude Sonnet 5 (`claude-sonnet-5`). It is now the default model for Free and Pro plans, with API availability for all customers immediately.
+On June 30, 2026, [Anthropic released Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5) (`claude-sonnet-5`). It is now the default model for Free and Pro plans, with API availability for all customers immediately.
 
 Sonnet 5 is the most capable Sonnet yet, approaching Opus 4.8 quality on agentic tasks at a fraction of the price. But it is not a zero-effort drop-in: three breaking changes affect existing Sonnet 4.6 integrations, and a new tokenizer silently changes your token counts and effective costs. Part of our **[Builder's Log](/builders-log/)**.
 
@@ -26,7 +26,7 @@ The introductory pricing of $2/$10 runs through **August 31, 2026**, after which
 
 ## The Tokenizer Change: Your Hidden Cost Variable
 
-Claude Sonnet 5 uses a new tokenizer. The same input text produces approximately **30% more tokens** than on Sonnet 4.6.
+[Claude Sonnet 5 uses a new tokenizer](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5). The same input text produces approximately **30% more tokens** than on Sonnet 4.6.
 
 This is the most consequential change that doesn't cause an error. Your API calls won't fail — they'll just count more tokens and cost more than you expect:
 
@@ -166,7 +166,7 @@ One caveat for AWS: Sonnet 5 is **not available** on legacy Amazon Bedrock (the 
 
 ## Bottom Line
 
-Claude Sonnet 5 represents a meaningful capability step for agentic workloads — 5 percentage points above Sonnet 4.6 on agentic coding, with qualitative gains in multi-step planning and tool use that early testers describe as "finishing tasks that used to stall." At $2/$10 introductory pricing, it's actually cheaper than Sonnet 4.6 was on a per-token basis until August 31.
+[Claude Sonnet 5 represents a meaningful capability step](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/) for agentic workloads — 5 percentage points above Sonnet 4.6 on agentic coding, with qualitative gains in multi-step planning and tool use that early testers describe as "finishing tasks that used to stall." At $2/$10 introductory pricing, it's actually cheaper than Sonnet 4.6 was on a per-token basis until August 31.
 
 The migration cost is real but bounded: three code changes (thinking, sampling params, extended thinking), one budget recalibration (the tokenizer), and one platform check (Bedrock users on legacy API). For most agentic use cases, the capability gain is worth it.
 

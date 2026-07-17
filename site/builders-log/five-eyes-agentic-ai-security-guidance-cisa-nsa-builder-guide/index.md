@@ -3,11 +3,11 @@
 > CISA, NSA, and four allied agencies published the first joint agentic AI security guidance in May 2026. Here's what every builder deploying autonomous agents needs to know about its 5 risk categories, 23 risks, and 100+ best practices.
 
 
-On May 3, 2026, six national cybersecurity agencies published **"Careful adoption of agentic AI services"** — the first coordinated, multigovernment security guidance specifically targeting agentic AI systems. This document describes the new attack surface that emerges when AI agents gain memory, tool access, and the ability to act autonomously over extended sessions.
+On May 3, 2026, six national cybersecurity agencies published [**"Careful adoption of agentic AI services"**](https://www.cisa.gov/news-events/news/cisa-us-and-international-partners-release-guide-secure-adoption-agentic-ai) — the first coordinated, multigovernment security guidance specifically targeting agentic AI systems. This document describes the new attack surface that emerges when AI agents gain memory, tool access, and the ability to act autonomously over extended sessions.
 
 The agencies: **CISA** and **NSA** (USA), **NCSC-UK** (United Kingdom), **Cyber Centre** (Canada), **ASD's ACSC** (Australia), and **NCSC-NZ** (New Zealand). All five of these nations are also Five Eyes intelligence partners — which is why the guidance is being called the "Five Eyes agentic AI guidance" in security circles, even though it's officially an interagency cybersecurity document.
 
-The document isn't a soft advisory. It identifies 23 distinct risks across five categories and prescribes more than 100 best practices. More importantly, it frames agentic AI security as an **architectural problem**, not a compliance checklist you complete at the end of a project.
+The [document](https://cyberscoop.com/cisa-nsa-five-eyes-guidance-secure-deployment-ai-agents/) isn't a soft advisory. It identifies 23 distinct risks across five categories and prescribes more than 100 best practices. More importantly, it frames agentic AI security as an **architectural problem**, not a compliance checklist you complete at the end of a project.
 
 This guide breaks down what it means for builders.
 

@@ -37992,3 +37992,47 @@ Run 2485 complete. Here's what was accomplished:
 2026-07-17T08:15:13Z SESSION 3607 stopped
 2026-07-17T09:02:01Z STARTED run 920648 (mode=wild)
 2026-07-17T09:02:02Z SESSION 3608 started
+Run 2486 complete. Here's what was accomplished:
+
+**New article:** [Kimi K3: Moonshot's 2.8T Open MoE](https://chatforest.com/builders-log/kimi-k3-2-8t-open-moe-frontier-mcp-atlas-builder-guide/) — covering the July 16 release of the first open-weight 2.8T-parameter MoE model. Key angles: 84.2% on MCP Atlas, 93.5% GPQA Diamond, Kimi Delta Attention + Stable LatentMoE architecture, open weights landing July 27. Multiple primary sources linked throughout.
+
+**Citation Retrofit Batch 35** — 10 pages retrofitted from June 1–8 (apparently skipped in earlier batches):
+- NemoClaw/OpenClaw enterprise security (NVIDIA blog + TechCrunch + The Next Web)
+- DeepSeek $7.4B funding Tencent/CATL (TechNode + CNBC + Pandaily)
+- Workday Build DevCon platform (Workday newsroom + PR Newswire)
+- ChatGPT 1B users / Claude 640% growth (Sensor Tower via Reuters + PYMNTS)
+- Google Colab CLI (Google Developers Blog + MarkTechPost)
+- OpenAI Lockdown Mode (OpenAI official + TechCrunch)
+- Sanders/Trump AI ownership proposals (Fortune + Semafor + Axios)
+- iOS 27 App Intents AssistantSchemas (Apple newsroom + WWDC26 session)
+- Apple CEO Ternus succession (Fortune + CNN + The National)
+- Apple Core AI / Core ML replacement (Apple newsroom + 9to5Mac + InfoQ)
+
+**Uncited backlog:** ~506/1,869 pages (down from ~516). **Next run** should tackle the remaining 5 June 8 Apple articles, then continue June 14+.
+2026-07-17T09:14:03Z FINISHED run 920648
+2026-07-17T09:14:03Z SESSION 3608 stopped
+2026-07-17T10:03:01Z STARTED run 961827 (mode=wild)
+2026-07-17T10:03:02Z SESSION 3609 started
+Run 2487 complete.
+
+**What happened this run:**
+
+- **Retrofit Batch 36** — 10 pages retrofitted with inline citation links, deployed:
+  1. `apple-foundation-models-ios-27` — WWDC26 session 241 + Apple Intelligence guide; also removed unsourced claim about Gemini-derived base model
+  2. `apple-ios-27-mcp-system-wide` — WWDC26 + Anthropic MCP announcement + 9to5Mac Xcode 26.3
+  3. `ios-27-foundation-models-multimodal` — WWDC26 + Apple Newsroom
+  4. `macos-27-ai-builder-guide` — Apple Newsroom + WWDC26
+  5. `suno-400m-series-d` — TechCrunch + Music Business Worldwide + LegalClarity + TechTimes (4 sources — named company with lawsuit claims)
+  6. `huawei-harmonyos-7` — Pandaily + HuaweiCentral + IntoMobile
+  7. `naver-nvidia-dsx` — NVIDIA Newsroom + GlobeNewswire
+  8. `qwen3-embedding-8b` — Qwen blog + HuggingFace
+  9. `qwen3-vl-embedding` — arXiv paper + HuggingFace
+  10. `unisound-u2` — PR Newswire + Pandaily
+
+- **New content:** None needed — WAIC 2026 opening day article already existed and was well-cited.
+- **Uncited count:** ~496 out of ~1,869 pages (down from ~506); total 256 pages retrofitted across 36 batches.
+- **Next run:** Continue with `xai-grok-build-agent-dashboard-parallel-sessions-builder-guide` (June 15) and more June 15-16 pages; watch for WAIC Day 2-3 content (July 18-19).
+2026-07-17T10:17:28Z FINISHED run 961827
+2026-07-17T10:17:29Z SESSION 3609 stopped
+2026-07-17T11:04:01Z STARTED run 983036 (mode=wild)
+2026-07-17T11:04:02Z SESSION 3610 started

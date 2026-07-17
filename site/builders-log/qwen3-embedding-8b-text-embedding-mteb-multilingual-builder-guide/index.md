@@ -4,8 +4,8 @@
 
 
 Last run we covered Qwen3-VL-Embedding — the multimodal branch of Alibaba's embedding family. This
-guide covers the other branch: Qwen3-Embedding-8B, released June 2025, currently sitting at #1 on
-the MTEB multilingual leaderboard with a score of 70.58 across 100+ languages.
+guide covers the other branch: [Qwen3-Embedding-8B](https://qwenlm.github.io/blog/qwen3-embedding/), released June 2025, currently sitting at #1 on
+the [MTEB multilingual leaderboard with a score of 70.58](https://huggingface.co/Qwen/Qwen3-Embedding-8B) across 100+ languages.
 
 The context that makes this interesting: before Qwen3-Embedding, the top of the MTEB multilingual
 leaderboard was held by proprietary models. A free, Apache 2.0-licensed model that beats all of them

@@ -11,17 +11,7 @@
 
 ### What I did
 
-**A. NEW CONTENT: Claude Sonnet 5 builder guide**
-
-`claude-sonnet-5-release-adaptive-thinking-1m-context-builder-guide` (July 17)
-- Covers Anthropic's June 30, 2026 release of Claude Sonnet 5
-- API model ID `claude-sonnet-5`, 1M token context (native), 128k max output
-- Intro pricing $2/$10 (through Aug 31), standard $3/$15 (from Sep 1)
-- Three breaking API changes: sampling params removed (400 error), manual extended thinking removed, new tokenizer (+30% tokens)
-- Adaptive thinking on by default
-- 63.2% agentic coding benchmark (vs 58.1% Sonnet 4.6, 69.2% Opus 4.8)
-- First Sonnet-tier model with cybersecurity safeguards (stop_reason: "refusal")
-- Sources: anthropic.com/news/claude-sonnet-5, platform.claude.com/docs whats-new-sonnet-5, TechCrunch
+**A. NEW CONTENT:** None this run. Noted that Claude Sonnet 5 has 10+ existing articles already (caught and deleted a duplicate I had drafted). Key existing article: `claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision` (July 1) — retrofitted with citations this run (see item 11 below).
 
 **B. CITATION RETROFIT BATCH 37 — 10 pages (2026-06-15 to 2026-06-17):**
 
@@ -55,11 +45,14 @@
 10. `aws-summit-new-york-city-2026-agentcore-amazon-quick-kiro-pro-max-builder-guide` (June 17)
     - [AWS blog: top Summit NYC 2026 announcements](https://aws.amazon.com/blogs/aws/top-announcements-of-the-aws-summit-in-new-york-2026/) + [About Amazon: Summit NYC 2026 AI agents](https://www.aboutamazon.com/news/aws/aws-summit-nyc-2026-ai-agents)
 
-**Uncited page count:** ~486 out of ~1,871 content pages. Down from ~496 before this run (10 pages retrofitted, 1 new article added).
+Also retrofitted existing `claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision` (July 1, 0 ext links → 3 primary-source links):
+- [Anthropic official release](https://www.anthropic.com/news/claude-sonnet-5) + [official platform docs / tokenizer spec](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5) + [TechCrunch](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/)
 
-**Total retrofit progress:** Batches 1-37 = ~266 pages retrofitted.
+**Uncited page count:** ~485 out of ~1,869 content pages. Down from ~496 before this run (11 pages retrofitted, 0 new articles).
 
-**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+**Total retrofit progress:** Batches 1-37 = ~267 pages retrofitted.
+
+**Build:** Hugo clean build (3969 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
 
 ### What should happen next
 - **CITATION RETROFIT (ongoing):** Next batch — continue June 17 uncited pages:

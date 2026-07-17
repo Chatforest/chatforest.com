@@ -3,9 +3,9 @@
 > TikTok's official Ads MCP Server gives AI agents full read-write access to the TikTok ad platform — campaigns, creatives, audiences, catalogs, and reporting. Here is what builders need to know to connect Claude or any agent to TikTok advertising.
 
 
-TikTok announced its official **Ads Model Context Protocol (MCP) Server** at TikTok World 2026 on May 13, alongside a companion developer layer called **TikTok Ads Skills**. Together they open TikTok's full advertising stack to AI agents — not just for reporting queries, but for creating campaigns, uploading creatives, adjusting bids, shifting budgets, and managing dynamic product catalogs without a human touching the ads manager.
+TikTok [announced its official **Ads Model Context Protocol (MCP) Server**](https://newsroom.tiktok.com/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions) at TikTok World 2026 on May 13, alongside a companion developer layer called **TikTok Ads Skills**. Together they open TikTok's full advertising stack to AI agents — not just for reporting queries, but for creating campaigns, uploading creatives, adjusting bids, shifting budgets, and managing dynamic product catalogs without a human touching the ads manager.
 
-This puts TikTok ahead of Google on capability (Google's Ads MCP is read-only) and on par with Meta (read-write), though with a different tool design philosophy.
+This puts TikTok ahead of Google on capability ([Google's Ads MCP is read-only](https://digiday.com/marketing/tiktok-launches-mcp-server-to-let-ai-agents-run-campaigns/)) and on par with Meta (read-write), though with a different tool design philosophy.
 
 ---
 

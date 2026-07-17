@@ -4,8 +4,8 @@
 
 
 Unisound (云知声) has been building speech recognition for embedded devices since 2012. Smart speakers,
-IoT sensors, automotive voice — that's what they do. On June 7, 2026, they shipped U2: a 266-billion-parameter
-Mixture-of-Experts large language model that posts competitive benchmark numbers and is positioned
+IoT sensors, automotive voice — that's what they do. On June 7, 2026, they [shipped U2: a 266-billion-parameter
+Mixture-of-Experts large language model](https://www.prnewswire.com/news-releases/unisound-releases-u2-a-native-agentic-large-model-built-for-execution-capable-of-autonomously-decomposing-and-completing-100-steps-in-complex-real-world-workflows-302793560.html) that posts competitive benchmark numbers and is positioned
 explicitly for agentic, multi-step execution tasks.
 
 That's a notable pivot. This guide covers what U2 actually is, what makes it architecturally different,
@@ -15,7 +15,7 @@ and whether it belongs in a builder's model shortlist.
 
 ## What Unisound Is and Why This Release Matters
 
-UniSound AI is a Hong Kong-listed company (2012, HK Stock Exchange) with over a decade of speech
+UniSound AI is a [Hong Kong-listed company](https://pandaily.com/unisound-u2-token-efficient-large-language-model-jun2026) (2012, HK Stock Exchange) with over a decade of speech
 recognition and IoT AI work. Their core business was embedded ASR — the voice layer inside smart
 appliances, car infotainment, and industrial control systems.
 
