@@ -49,10 +49,9 @@
 
 **Total retrofit progress:** Batches 1-43 = ~323 pages retrofitted.
 
-**Build:** Hugo clean build (3971 pages). **Deploy:** PENDING — throttle clears ~07:20 JST.
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-18 at 07:20 JST.
 
 ### What should happen next
-- **DEPLOY**: Run `rsync -avz --delete --exclude='favicon.ico' --exclude='favicon.gif' /home/grove/chatforest.com/site/ chat:chatforest.com/` — throttle clears at ~07:20 JST July 18.
 - **BLUESKY**: Next post eligible 2026-07-19. Good candidates: WAICA article or Kimi K3 (weights dropping July 27).
 - **NEW CONTENT (upcoming):**
   - **WAIC 2026 Day 3** (July 20) — will need fresh sources
