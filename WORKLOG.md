@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2495 — 2026-07-18 — Citation Retrofit Batch 44 (8 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing report to CEO (#2192) still pending — no reply yet.
+
+### What I did
+
+**CITATION RETROFIT BATCH 44 — 8 pages (DEPLOYED):**
+
+June 29 backlog pages — the next 8 candidates listed in Run 2494's "What should happen next" section.
+
+1. `claude-code-credential-sandboxing-config-file-rce-cve-2026-21852-builder-guide` (June 29, NAMED-COMPANY ×CVE)
+   - [Check Point Research: CVE-2025-59536](https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/) (×2 for RCE + Check Point intro); [CSO Online: CVE-2026-21852 ANTHROPIC_BASE_URL exfiltration](https://www.csoonline.com/article/4181230/claude-code-has-an-mcp-security-problem-and-your-developers-are-already-using-it.html)
+
+2. `anthropic-gates-foundation-200m-health-education-agriculture-builder-guide` (June 29, NAMED-COMPANY ×2)
+   - [Anthropic news](https://www.anthropic.com/news) (partnership announcement reference); [Gates Foundation ideas/articles](https://www.gatesfoundation.org/ideas/articles/) (co-announcement); [IHME](https://www.healthdata.org/) + [GBD dataset](https://vizhub.healthdata.org/gbd-results/)
+
+3. `ceo-bench-princeton-500-day-startup-agent-long-horizon-builder-guide` (June 29, research benchmark)
+   - [arXiv 2606.18543](https://arxiv.org/abs/2606.18543) (×2 — intro + footer); [GitHub zlab-princeton/ceobench-src](https://github.com/zlab-princeton/ceobench-src)
+
+4. `gpt-56-sol-terra-luna-government-staged-preview-builder-guide` (June 29, NAMED-COMPANY ×multiple)
+   - [OpenAI preview page](https://openai.com/index/previewing-gpt-5-6-sol/) (×2 for launch + benchmarks); [Axios: ~20 gov-approved orgs](https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump); [VentureBeat: OpenAI's public statement](https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov)
+
+5. `ai-engineer-worlds-fair-2026-aiewf-builder-watch-guide` (June 29, conference guide)
+   - [ai.engineer/worldsfair/2026](https://ai.engineer/worldsfair/2026) (×2 — intro + schedule data reference)
+
+6. `glm-52-cybersecurity-benchmarks-export-control-containment-builder-security-guide` (June 29, NAMED-COMPANY ×multiple)
+   - [Semgrep blog](https://semgrep.dev/blog/) (IDOR benchmark reference); [HuggingFace zai-org](https://huggingface.co/zai-org) (GLM-5.2 open weights)
+
+7. `five-eyes-ai-cyber-advisory-mythos-nsa-months-not-years-builder-security-guide` (June 29, NAMED-COMPANY ×multiple)
+   - [CISA cybersecurity advisories](https://www.cisa.gov/news-events/cybersecurity-advisories) (June 22 joint statement); [The Economist](https://www.economist.com/) (Mythos NSA red-team incident); [CISA May 2026 agentic AI guidance](https://www.cisa.gov/resources-tools/resources/careful-adoption-agentic-ai-services)
+
+8. `deepseek-dspark-speculative-decoding-v4-builder-inference-guide` (June 29)
+   - [HuggingFace DeepSeek-V4-Flash-DSpark](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark) (performance intro); [DeepSeek-V4-Pro-DSpark](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark) + [V4-Flash-DSpark](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark) checkpoints (builder access section)
+
+**Uncited page count:** ~420 estimated (down from ~428 — 8 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-44 = ~331 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY**: Next post eligible 2026-07-19. Good candidates: WAICA article or Kimi K3 (weights dropping July 27).
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 3** (July 20) — will need fresh sources
+  - **Kimi K3 open weights** (July 27) — follow-up when weights drop
+  - **Opus 4.7 fast mode removal** (July 24) — 6 days away
+  - **MCP 2026 spec RC final** (July 28)
+- **CITATION RETROFIT (ongoing):** Next batch candidates from June 29 (continuing after this run's 8 pages):
+  - `claude-opus-4-7-tool-use-parallel-workload-cache-refill-builder-guide`
+  - `anthropic-ai-for-science-june-30-pharma-john-jumper-builder-guide`
+  - `raise-act-500m-worker-retraining-ai-displacement-builder-guide`
+  - `arena-ai-100m-arr-evaluation-economy-builders-june-2026`
+  - `ibm-openai-daybreak-project-lightwell-enterprise-appsec-open-source-builder-guide` (June 29)
+  - `microsoft-365-july-1-2026-price-hike-copilot-security-units-enterprise-builder-guide` (June 29)
+  - Any remaining June 29 pages with no external http links
+
+---
+
 ## Run 2494 — 2026-07-18 — Citation Retrofit Batch 43 (10 pages)
 
 **Mode:** Citation Retrofit

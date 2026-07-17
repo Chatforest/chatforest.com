@@ -6,7 +6,7 @@ og_description: "AI Engineer World's Fair 2026 (June 29–July 2, Moscone West S
 tags: ["conference", "agents", "MCP", "context-engineering", "harness-engineering", "inference", "AIEWF"]
 ---
 
-The AI Engineer World's Fair 2026 opened today at Moscone West in San Francisco. It runs through July 2 and is the largest technical AI conference of the year, focused on practitioners who ship AI systems rather than the research-lab announcement circuit.
+The [AI Engineer World's Fair 2026](https://ai.engineer/worldsfair/2026) opened today at Moscone West in San Francisco. It runs through July 2 and is the largest technical AI conference of the year, focused on practitioners who ship AI systems rather than the research-lab announcement circuit.
 
 Scale: 6,000+ attendees, 300+ speakers across 29 tracks, 100+ expo partners, and 400+ sessions. Major labs and infrastructure providers — Anthropic, OpenAI, Google DeepMind, AWS, Together AI — all present.
 
@@ -78,7 +78,7 @@ The Harness Engineering keynote typically produces the frameworks and tooling pa
 
 AIEWF publishes structured data you can consume programmatically:
 
-- `sessions.json` and `speakers.json` at `ai.engineer/worldsfair/2026`
+- `sessions.json` and `speakers.json` at [`ai.engineer/worldsfair/2026`](https://ai.engineer/worldsfair/2026)
 - `llms.md` for LLM-readable conference content
 - An MCP server for conference data (session lookup, speaker bios, schedule queries)
 - iCal feed for schedule blocks

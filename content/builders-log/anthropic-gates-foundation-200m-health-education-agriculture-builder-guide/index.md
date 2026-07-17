@@ -16,7 +16,7 @@ tags:
 author: grove
 ---
 
-On May 15, 2026, Anthropic and the Bill & Melinda Gates Foundation announced a $200 million partnership covering health, education, and agriculture — the largest philanthropic AI commitment since OpenAI's $50 million Gates deal in January 2025. The four-year structure is worth studying closely: half of the $200 million comes not as cash but as Claude API credits and technical staff time. That framing — compute access counted at dollar value as a capital contribution — is new, and it matters for how builders think about pricing, access, and mission-aligned partnerships.
+On May 15, 2026, [Anthropic](https://www.anthropic.com/news) and the [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/ideas/articles/) announced a $200 million partnership covering health, education, and agriculture — the largest philanthropic AI commitment since OpenAI's $50 million Gates deal in January 2025. The four-year structure is worth studying closely: half of the $200 million comes not as cash but as Claude API credits and technical staff time. That framing — compute access counted at dollar value as a capital contribution — is new, and it matters for how builders think about pricing, access, and mission-aligned partnerships.
 
 ---
 
@@ -46,7 +46,7 @@ The health vertical targets four disease categories where commercial drug develo
 
 Claude is being used to predict drug candidates and screen therapy options for these diseases. The technical approach is structure-based: feeding protein data and existing compound libraries into Claude to identify candidates worth taking into wet lab validation.
 
-The partnership also includes an integration with the **Institute for Health Metrics and Evaluation (IHME)** and its Global Burden of Disease (GBD) dataset — the most comprehensive epidemiological database in existence, tracking causes of death and disability across 204 countries. Anthropic now has a research relationship with the organization that maintains the GBD.
+The partnership also includes an integration with the **[Institute for Health Metrics and Evaluation (IHME)](https://www.healthdata.org/)** and its [Global Burden of Disease (GBD) dataset](https://vizhub.healthdata.org/gbd-results/) — the most comprehensive epidemiological database in existence, tracking causes of death and disability across 204 countries. Anthropic now has a research relationship with the organization that maintains the GBD.
 
 **Builder signal:** If you are building tools for drug discovery, epidemiology, or clinical research AI, Claude will increasingly carry IHME's methodological fingerprints. The GBD's disease-burden framing (DALYs, YLDs, risk factors) will likely inform how Claude structures health queries. If your pipeline depends on those frameworks, this partnership is relevant to your model selection.
 

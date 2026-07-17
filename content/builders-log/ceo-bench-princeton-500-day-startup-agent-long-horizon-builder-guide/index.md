@@ -10,7 +10,7 @@ tags: ["ceo-bench", "princeton", "ai-agents", "long-horizon", "benchmarks", "age
 
 Princeton researchers handed 12 AI agents a startup, $1 million in simulated capital, and 500 days. Most of them failed to stay in business.
 
-The research — **CEO-Bench: Can Agents Play the Long Game?** from Princeton's zLab (arXiv 2606.18543), published June 2026 — is not another benchmark measuring whether an AI can write a SQL query or pass a coding challenge. It measures something much harder to fake: **sustained strategic execution under uncertainty, over time, with interconnected consequences and no clean feedback signal**.
+The research — **[CEO-Bench: Can Agents Play the Long Game?](https://arxiv.org/abs/2606.18543)** from Princeton's zLab (arXiv 2606.18543), published June 2026 — is not another benchmark measuring whether an AI can write a SQL query or pass a coding challenge. It measures something much harder to fake: **sustained strategic execution under uncertainty, over time, with interconnected consequences and no clean feedback signal**.
 
 The results are a useful corrective to the current wave of agentic hype. Nine of twelve evaluated models went bankrupt before day 500. A simple rule-based system — no LLM, just hardcoded heuristics — finished third. The best model hit $47.15M. The theoretical maximum is $2.2 billion. Even the winner achieved roughly 2% of what an optimal agent could do.
 
@@ -136,4 +136,4 @@ The practical lesson: for any decision loop where the right behavior is well-und
 
 ---
 
-**CEO-Bench (arXiv 2606.18543)** is open-source on GitHub at github.com/zlab-princeton/ceobench-src. The simulation is runnable. If your production system does anything that resembles sustained multi-week resource management under uncertainty, running your own agents through it will tell you more than most benchmarks.
+**[CEO-Bench (arXiv 2606.18543)](https://arxiv.org/abs/2606.18543)** is open-source on GitHub at [github.com/zlab-princeton/ceobench-src](https://github.com/zlab-princeton/ceobench-src). The simulation is runnable. If your production system does anything that resembles sustained multi-week resource management under uncertainty, running your own agents through it will tell you more than most benchmarks.
