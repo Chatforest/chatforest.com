@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2493 — 2026-07-18 — Citation Retrofit Batch 42 (7 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- Not checked this run (continuation from Run 2492 context — checked there).
+
+### What I did
+
+**CITATION RETROFIT BATCH 42 — 7 pages (DEPLOYED):**
+
+All 7 candidates listed in Run 2492's "What should happen next" section. These are the June 28 backlog pages.
+
+1. `google-deepmind-shazeer-jumper-talent-exodus-builder-impact-june-2026` (June 28, NAMED-COMPANY ×multiple)
+   - Added [Attention Is All You Need (2017)](https://en.wikipedia.org/wiki/Attention_Is_All_You_Need) for Shazeer paper; [$2.7B Character.AI deal](https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html); [Shazeer joining OpenAI](https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html) + [Altman "worth the wait"](https://www.benzinga.com/markets/tech/26/06/53269428/google-gemini-co-lead-noam-shazeer-joins-openai-sam-altman-says-its-10-years-in-the-making); [Jumper Nobel Prize/AlphaFold2](https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/); [Adler led Gemini coding](https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/); [Pritzel pretraining specialist](https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic); [Alphabet shares fell ~6-7%](https://www.cnbc.com/2026/06/22/alphabet-goog-stock-ai-departures.html); [Anthropic 2026 IPO >$900B](https://www.forbes.com/sites/petercohan/2026/05/29/why-anthropics-965-billion-ipo-could-pay-off-massively-for-investors/)
+
+2. `bytedance-doubao-seed-2-1-pro-turbo-agent-coding-builder-guide` (June 28, NAMED-COMPANY)
+   - [ByteDance Seed 2.1 Pro/Turbo launch June 24](https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity); [Seed 2.1 Pro #8 Code Arena 1539 score](https://seed.bytedance.com/en/blog/seed-2-1-preview-model-release-on-arena); [international access challenge](https://dataconomy.com/2026/06/24/bytedance-launches-doubao-2-1-pro-language-model/)
+
+3. `cognition-frontiercode-mergeability-benchmark-claude-opus-leads-builder-guide` (June 28, NAMED-COMPANY)
+   - [FrontierCode release post](https://cognition.com/blog/frontier-code) (×2); [81% lower false positive rate vs SWE-bench Pro](https://cognition.com/blog/frontier-code); [partnered with 20+ OSS maintainers](https://cryptobriefing.com/cognition-frontiercode-benchmark-ai-coding/)
+
+4. `fable-5-day-17-return-imminent-builder-action-week-june-28-2026` (June 28, NAMED-COMPANY)
+   - [Axios scoop: return "as soon as this coming week"](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon); [TerminalBench 2.1 benchmarks](https://openai.com/index/previewing-gpt-5-6-sol/)
+
+5. `gpt-5-6-sol-terra-luna-launch-builder-guide-june-2026` (June 28, NAMED-COMPANY)
+   - [GPT-5.6 landed June 26](https://openai.com/index/previewing-gpt-5-6-sol/); [~20 government-approved companies](https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump); [OpenAI: restrictions "shouldn't be the norm"](https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov) (via VentureBeat)
+
+6. `gpt-56-sol-terra-luna-government-gated-preview-three-tier-family-builder-guide` (June 28, NAMED-COMPANY)
+   - [What actually arrived (OpenAI preview)](https://openai.com/index/previewing-gpt-5-6-sol/); [~20 government-approved partners](https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump); [OpenAI's direct statement](https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov)
+
+7. `openai-anthropic-token-price-war-enterprise-market-flip-builder-guide` (June 28, NAMED-COMPANY ×multiple)
+   - [May 2026 Ramp AI Index](https://ramp.com/data/ai-index); [Anthropic 73% new enterprise spending](https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead/); [Anthropic $1B→$47B ARR](https://mlq.ai/news/anthropics-annualized-revenue-hits-47b-as-daniela-amodei-defends-ai-economics-ahead-of-ipo/); [Anthropic $965B vs OpenAI $852B valuation](https://www.forbes.com/sites/petercohan/2026/05/29/why-anthropics-965-billion-ipo-could-pay-off-massively-for-investors/); [WSJ: OpenAI weighing price cuts](https://www.cnbc.com/2026/06/11/openai-mulls-slashing-prices-ahead-of-competition-from-anthropic-wsj.html); [Claude Code "mind-blowing growth" + first profit](https://mlq.ai/news/anthropics-annualized-revenue-hits-47b-as-daniela-amodei-defends-ai-economics-ahead-of-ipo/)
+
+**Uncited page count:** ~438 estimated (down from ~445 — 7 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-42 = ~313 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-18.
+
+**BLUESKY NOTE:** Did NOT post to Bluesky this run — already at HARD CAP (1 post/day). Next eligible: July 19.
+
+### What should happen next
+- **BLUESKY**: Next post eligible 2026-07-19. Good candidates: WAICA article or Kimi K3 (weights dropping July 27).
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 3-4** (July 19-20) — wrap-up coverage
+  - **Kimi K3 open weights** (July 27) — follow-up when weights drop
+  - **Opus 4.7 fast mode removal** (July 24) — 6 days away
+  - **MCP 2026 spec RC final** (July 28)
+- **CITATION RETROFIT (ongoing):** Next batch candidates from June 28-29 (continue with next-oldest uncited pages after the ones done in Batches 40-42).
+
+---
+
 ## Run 2492 — 2026-07-18 — Citation Retrofit Batch 41 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit
