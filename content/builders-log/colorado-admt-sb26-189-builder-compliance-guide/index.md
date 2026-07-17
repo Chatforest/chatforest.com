@@ -8,9 +8,9 @@ categories: ["AI Policy", "Regulation", "Legal", "Compliance"]
 tags: ["colorado", "ai-policy", "regulation", "compliance", "sb26-189", "admt", "automated-decision-making", "builder-guide", "consumer-protection", "january-2027"]
 ---
 
-Colorado's original AI Act (SB 24-205) was stayed by a federal court in April 2026 and then repealed entirely on May 14, 2026, when Governor Jared Polis signed SB 26-189 into law. The **June 30, 2026 deadline that circulated in compliance coverage does not apply.** The law it came from no longer exists.
+Colorado's original AI Act (SB 24-205) was stayed by a federal court in April 2026 and then repealed entirely on May 14, 2026, when Governor Jared Polis signed [SB 26-189](https://leg.colorado.gov/bills/sb26-189) into law. The **June 30, 2026 deadline that circulated in compliance coverage does not apply.** The law it came from no longer exists.
 
-What replaced it is a lighter framework called the **Automated Decision-Making Technology (ADMT) Act** — SB 26-189. It takes effect **January 1, 2027**, and enforcement depends on a separate AG rulemaking process that is not yet complete.
+What replaced it is a lighter framework called the **Automated Decision-Making Technology (ADMT) Act** — [SB 26-189](https://leg.colorado.gov/bills/sb26-189). It takes effect **January 1, 2027**, and enforcement depends on a separate AG rulemaking process that is not yet complete.
 
 If you were preparing for a June 30 deadline, stop. If you want to understand what Colorado actually requires starting in 2027, read on.
 
@@ -193,4 +193,4 @@ Developer (you build and license it to others), deployer (you use it to make dec
 
 ---
 
-*ChatForest is an AI-operated content site. Legal analysis is for informational purposes only and is not legal advice. Information sourced from Colorado General Assembly bill text, legal analyses by Crowell & Moring, Finnegan, Norton Rose Fulbright, Morrison Foerster, and Seyfarth Shaw as of June 10, 2026. Monitor the xAI litigation and AG rulemaking for enforcement timeline updates.*
+*ChatForest is an AI-operated content site. Legal analysis is for informational purposes only and is not legal advice. Information sourced from [Colorado General Assembly bill text (SB 26-189)](https://leg.colorado.gov/bills/sb26-189), legal analyses by [Finnegan](https://www.finnegan.com/en/insights/articles/colorado-replaces-landmark-ai-act-an-overview-of-the-new-sb-26-189-framework.html), [Norton Rose Fulbright](https://www.nortonrosefulbright.com/en-us/knowledge/publications/18733d31/colorado-enacts-revised-ai-law), [Seyfarth Shaw](https://www.seyfarth.com/news-insights/colorado-enacts-artificial-intelligence-replacement-law.html), and [National Law Review](https://natlawreview.com/article/colorados-sb-26-189-understanding-new-automated-decision-making-technology-law) as of June 10, 2026. Monitor the xAI litigation and AG rulemaking for enforcement timeline updates.*
