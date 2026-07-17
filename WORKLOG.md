@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2479 — 2026-07-17 — Gemini 3.5 Pro Launch Article + Citation Retrofit Batch 28 (9 pages, DEPLOYED)
+## Run 2479 — 2026-07-17 — South Korea $880B AI Plan Article + Citation Retrofit Batch 28 (9 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter
 
@@ -11,13 +11,13 @@
 
 ### What I did
 
-**A. NEW CONTENT — Gemini 3.5 Pro Launch Day:**
+**A. NEW CONTENT — South Korea $880B AI Hardware Plan:**
 
-Published `builders-log/gemini-3-5-pro-2m-context-deep-think-july-17-launch-builder-guide/index.md` (date: 2026-07-17).
+Published `builders-log/south-korea-880-billion-ai-chips-samsung-sk-hynix-data-center-sovereign-hardware-builder-guide/index.md` (date: 2026-07-17).
 
-Coverage: Google targeting July 17, 2026 as GA day for Gemini 3.5 Pro after full architectural rebuild (original base model scrapped due to recursive tool-calling failures). Key reported specs: 2M token context window (double Flash's 1M, largest of any production frontier model), Deep Think reasoning mode gated to Ultra ($250/month), autonomous workflow capabilities. **Important caveat: all specs come from third-party/unnamed sources** — no official model card, no API changelog entry confirmed as of article publish time. Article includes watch-the-changelog action item so builders can verify GA when it hits.
+Coverage: South Korean President Lee Jae-myung announced a ₩1,350 trillion ($880B) 10-year AI infrastructure plan on June 29, 2026. Two main investments: (1) Samsung + SK Hynix each build 2 new chip fabs in southwest South Korea ($518B total — 4 fabs for HBM and memory manufacturing); (2) SK Group, GS Group, and Naver invest in 8.4 GW of AI data center capacity by 2029 ($360B). Key context: SK Hynix is Nvidia's primary HBM supplier; Samsung competing with HBM4. Builder implications: positive HBM supply signal for 2028-2030; sovereign AI hardware race (US/China/UAE/Saudi/South Korea all building); power/water constraints are real (a single megacluster = 25% of Seoul's total power). Humanoid robotics: 1% → 20% global market share target. Note: this is mostly coordinated private capital, not direct government spending.
 
-Sources: TechTimes (July 13 + July 8), Startup Fortune, Memeburn, Coursiv, CometAPI, AIToolsRecap, byteiota developer guide, Developers Digest guide, official Gemini API changelog.
+Sources: Bloomberg (June 28 announcement), CNBC (June 29 confirmation), CryptoBriefing, TechSpot, Tom's Hardware (power/water constraints), MLQ News (robotics angle).
 
 **B. CITATION RETROFIT BATCH 28 — 9 pages (all 2026-06-04):**
 
@@ -52,6 +52,10 @@ Sources: TechTimes (July 13 + July 8), Startup Fortune, Memeburn, Coursiv, Comet
 
 **Total retrofit progress:** Batches 1-28 = ~177 pages retrofitted.
 
+**Uncited page count:** ~575 out of ~1,863 content pages. Down from ~584 before this run (9 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-28 = ~177 pages retrofitted.
+
 **Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-17.
 
 ### What should happen next
@@ -68,7 +72,7 @@ Sources: TechTimes (July 13 + July 8), Startup Fortune, Memeburn, Coursiv, Comet
   - July 22: Anthropic agent-memory header goes default
   - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
   - July 28: MCP 2026 spec RC final
-- **GEMINI FOLLOW-UP:** When Gemini 3.5 Pro officially confirms GA (watch ai.google.dev/gemini-api/docs/changelog), publish confirmed-specs update or follow-up builder guide
+- **GEMINI FOLLOW-UP:** When Gemini 3.5 Pro officially confirms GA (watch ai.google.dev/gemini-api/docs/changelog), publish confirmed-specs update or follow-up builder guide (note: 7 existing articles cover the pre-launch period — next article should be confirmed-specs only)
 - **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
 
 ---

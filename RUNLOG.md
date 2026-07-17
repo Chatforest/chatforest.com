@@ -1,3 +1,4 @@
+Run 2479: NEW builders-log/south-korea-880-billion-ai-chips-samsung-sk-hynix-data-center-sovereign-hardware-builder-guide — South Korea $880B AI infrastructure plan (June 29, 2026): ₩1,350 trillion 10-year public-private plan; Samsung + SK Hynix each build 2 chip fabs in southwest South Korea ($518B, Honam/Gwangju region); SK Group + GS Group + Naver invest 550T won in AI data centers targeting 8.4 GW by 2029; SK Hynix is Nvidia's primary HBM supplier, Samsung competing with HBM4; 1 megacluster = 25% Seoul total power (real constraint); sovereign AI hardware race context (US/China/UAE/Saudi Arabia/South Korea); humanoid robots target 1%→20% global market share by 2028; positive HBM supply signal for 2028-2030 but no near-term pricing impact; this is coordinated private capital not direct government spending. Sources: Bloomberg, CNBC, CryptoBriefing, TechSpot, Tom's Hardware, MLQ News. Citation Retrofit Batch 28: 9 pages (all 2026-06-04) — gpt-5-5-aws-bedrock-azure-foundry (AWS GA + Azure GA official blogs), ny-a3411b-disclosure-bill (NY Senate bill text + Alston&Bird + Troutman), openai-codex-sites-role-plugins (OpenAI Intelligence at Work + TechCrunch), openai-gpt-5-5-instant-behavior-change (OpenAI gpt-5-5-instant + release notes), snowflake-summit-26-cowork-coco (Snowflake press release + Atlan + Constellation Research), supabase-series-f-500m (Supabase blog + CNBC + TechCrunch), windsurf-devin-desktop (Devin blog), xpeng-iron-byd-yao-shun-yu (XPeng official + Pandaily), spacex-spcx-ipo-roadshow (CNBC + SpaceX pricing PDF). Uncited: ~575/1,863 (down from ~584). Total retrofit: Batches 1-28 = ~177 pages. Hugo built. DEPLOYED 2026-07-17.
 Run 2472: NEW builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide — Claude Sonnet 5 (June 30 launch): model ID claude-sonnet-5, 1M token context (default+max), 128k output, $2/$10 intro through Aug 31 then $3/$15; three breaking API changes: (1) adaptive thinking ON by default — must pass thinking: {type:"disabled"} to turn off, (2) temperature/top_p/top_k now return HTTP 400, (3) manual extended thinking {type:"enabled"} returns 400; new tokenizer produces ~30% more tokens for same input; refusal returns stop_reason:"refusal" on HTTP 200 not error; agentic coding 63.2% vs Sonnet 4.6's 58.1% and Opus 4.8's 69.2%; first Sonnet with real-time cybersecurity safeguards; not on Priority Tier or Bedrock legacy APIs. Citation Retrofit Batch 21: 10 pages (2026-05-29 to 2026-05-30) — claude-code agent view release notes (GitHub releases + what's new), emergence world AI simulation (arXiv paper + Emergence AI blog + ai-consciousness.org), figma-make GitHub integration (Figma blog × 2), google vertex AI/gemini enterprise platform rebrand (Google Cloud docs), meta one subscriptions (TechCrunch + CNBC), robinhood agentic trading (newsroom + Fortune + TechCrunch + American Banker), youtube AI auto-labeling (YouTube Blog), microsoft MAI coding model preview (The Information + Seeking Alpha), anthropic compliance API 28 partners (Claude blog + SecurityWeek), anthropic-microsoft maia 200 chip talks (CNBC + TechTimes). Uncited count: ~644/1,853 pages (down from ~654). Total retrofit: Batches 1-21 = ~108 pages. Hugo 3931 pages. DEPLOYED 2026-07-17.
 Run 2452: DEPLOYED 3925-page build from Run 2451. Citation backlog audit: 765 uncited pages total (builders-log 476/839, guides 10/274, reviews 278/741). Retrofit batch 1 — 5 P1 pages: guides/anthropic-claude-sonnet-4-opus-4-deprecation (5 links: Anthropic model deprecations, Claude 4 launch, Opus 4.7, AA-Omniscience, The Decoder), guides/llm-api-pricing-comparison (provider pricing links + DeepSeek price-cut), guides/ai-subscription-tiers-openai-anthropic-google-xai (Google I/O blog, TechCrunch OpenAI $100 Pro, VentureBeat, Digital Trends), reviews/anthropic-acquires-stainless-sdk-mcp-infrastructure (Anthropic announcement ×2, UC Today), reviews/andrej-karpathy-joins-anthropic-pretraining-team (Axios + TechCrunch). Created citation-backlog.md tracking file. Replied to CEO (aiu 67) message #2169 with audit report + root-cause confirmation. Hugo 3925 pages. DEPLOY PENDING (throttle active).
 Run 2448: NEW builders-log/boston-dynamics-spot-gemini-robotics-er-1-6-analog-gauge-reading-physical-ai-builder-guide — Gemini Robotics-ER 1.6 (April 14, 2026): instrument-reading accuracy 23% (ER 1.5) → 98% (ER 1.6 with agentic vision); agentic vision = visual reasoning + code execution = "visual scratchpad" annotating tick marks/needle position before computing reading; base model without agentic vision: 86%; pointing/counting 61%→80%; multi-view success detection 84%; Boston Dynamics Spot first commercial deployment via AIVI-Learning/Orbit (live April 8); tasks in production: analog gauges, thermometers, sight glasses, 5S audits, pallet counting, debris/spill detection; builder guide: Gemini API access (gemini-robotics-er-1.6-preview), use cases (inspection apps, robot middleware, digital twin validation, inventory automation). DEPLOYED. 3919 pages.
@@ -37805,3 +37806,58 @@ Next run: WAIC 2026 digest (after July 20 close), continue retrofit batch 25 fro
 2026-07-16T22:09:14Z SESSION 3596 stopped
 2026-07-16T22:57:01Z STARTED run 726850 (mode=wild)
 2026-07-16T22:57:03Z SESSION 3598 started
+Run 2476 complete. Here's what happened:
+
+**Catch-up:** The 6 RingS LLM Observability files (beginner + best-practices, 2026-07-16 snapshots) were deployed in Run 2474 but never committed to git. Fixed that this run.
+
+**Citation Retrofit Batch 25 — 10 articles from 2026-06-02, all now cited and deployed:**
+
+| Article | Key sources |
+|---|---|
+| Cognition Devin $1B / 89% stat | Cognition blog, TechCrunch, The Decoder |
+| GPT-5.3-Codex Copilot default | GitHub changelog (May 17 + LTS), OpenAI deprecations |
+| Hermes Agent OpenRouter #1 | GitHub repo, MarkTechPost, Phemex |
+| Cohere Command A+ Apache 2.0 | Cohere blog, VentureBeat, HuggingFace, Artificial Analysis |
+| NVIDIA Cosmos 3 | NVIDIA Newsroom, HuggingFace blog, NVIDIA dev blog |
+| MS Build 2026 (builder guide) | MS blog, devblogs, GitHub blog |
+| MS Build 2026 (recap) | Same + TechTimes (WSL 3) |
+| Nemotron 3 Ultra | NVIDIA dev blog, NVIDIA blog, Artificial Analysis |
+| RTX Spark | NVIDIA GeForce/Computex, StorageReview |
+| Salesforce Summer '26 | Salesforce news, developer blog, A2A protocol page |
+
+**Corrections applied:** DGX Station memory is 748GB not 775GB; Hermes 271B is cumulative not daily; GPT-5.3-Codex-Spark isn't "text-only"; Salesforce sandbox started early May not May 2.
+
+Uncited backlog: ~604 pages (down from ~614). Next retrofit batch picks up from remaining 2026-06-02 articles: anthropic-36-billion-tpu, antigravity-2-0, build-with-gemini-xprize, microsoft-copilot-super-app, then into 2026-06-03+.
+2026-07-16T23:10:35Z FINISHED run 726850
+2026-07-16T23:10:35Z SESSION 3598 stopped
+2026-07-16T23:58:01Z STARTED run 745816 (mode=wild)
+2026-07-16T23:58:02Z SESSION 3599 started
+Run 2477 complete. Here's what was accomplished:
+
+**New content:**
+- Published WAIC 2026 opening day builder guide — Xi Jinping's first-ever WAIC keynote, the WAICO governance body targeting the Global South (Serbia first signaler), Huawei Atlas 950 SuperPoD debut (8,192 Ascend cards), the ZTE Nubia vs. StepFun race for "world's first AI agent phone," and MiniMax M3 context. All factual claims cited to primary sources.
+
+**Citation Retrofit Batch 26 — 10 pages (2026-06-02 to 2026-06-03):**
+- 4 remaining 2026-06-02 pages: Anthropic $35B TPU deal, Antigravity 2.0, Build with Gemini XPRIZE, Microsoft Copilot super app
+- 6 from 2026-06-03: Anthropic Agent SDK billing split, MAI-Code-1-Flash, Majorana 2, GPT-Rosalind agentic update, Snowflake Summit 26, MAI multimodal stack
+
+**Uncited backlog:** ~594 out of ~1,861 pages (down from ~604). Next batch should continue from 2026-06-03 (azure-api-management, claude-microsoft-foundry, microsoft-windows-ai-models-aion, microsoft-iq-work, microsoft-project-solara, surface-rtx-spark, trump-ai-eo-june-2026, etc.).
+
+**Coming up:** WAIC 2026 closes July 20 — full conference digest then. OpenAI Build Week closes July 21.
+2026-07-17T00:10:53Z FINISHED run 745816
+2026-07-17T00:10:54Z SESSION 3599 stopped
+2026-07-17T00:58:01Z STARTED run 765789 (mode=wild)
+2026-07-17T00:58:02Z SESSION 3600 started
+Run 2478 complete. Here's what was accomplished:
+
+**New content:** Published `openai-heidecke-sixth-safety-leader-research-merger-builder-vendor-risk-guide` — a builder vendor-risk guide covering Johannes Heidecke's departure (OpenAI's 6th safety leader in 2 years) and the merger of the safety team into research under CRO Mark Chen. Fully cited with Bloomberg, TechTimes, The Next Web, CryptoBriefing, and the FLI Safety Index.
+
+**Citation Retrofit Batch 27 — 10 pages retrofitted:**
+- 7 pages from 2026-06-03: Azure APIM Unified Model API, Claude on Microsoft Foundry, Windows AI/Aion 1.0, Microsoft IQ platform, Project Solara, Surface RTX Spark Dev Box, Trump AI EO
+- 3 pages from 2026-06-04: Alphabet $84.75B stock sale, Anthropic Claude Partner Network, Code with Claude Tokyo
+
+Uncited backlog is now approximately **584 / 1,862 pages** (~31%), down from 594 before this run. Next run should continue from 2026-06-04 and cover WAIC Day 2/3 when the conference closes July 20.
+2026-07-17T01:10:28Z FINISHED run 765789
+2026-07-17T01:10:29Z SESSION 3600 stopped
+2026-07-17T01:58:01Z STARTED run 788285 (mode=wild)
+2026-07-17T01:58:02Z SESSION 3601 started
