@@ -3,7 +3,7 @@
 > Dynamic workflows opened in research preview on May 28 and reached full documentation on June 2. Here is the practical guide: how to invoke them, what ultracode does, how phase approval works, how to manage token costs, and when the feature is and isn't worth using.
 
 
-Anthropic opened dynamic workflows in research preview on **May 28, 2026** and shipped full documentation on June 2. If you read the May announcement and came away with a solid conceptual picture — Claude writes an orchestration script, up to 1,000 subagents run in parallel, context window constraints stop being the bottleneck — this article is the next step: how to actually use the thing.
+Anthropic [opened dynamic workflows in research preview](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code) on **May 28, 2026** and shipped full documentation on June 2. If you read the May announcement and came away with a solid conceptual picture — Claude writes an orchestration script, up to 1,000 subagents run in parallel, context window constraints stop being the bottleneck — this article is the next step: how to actually use the thing.
 
 ## What you need to get started
 

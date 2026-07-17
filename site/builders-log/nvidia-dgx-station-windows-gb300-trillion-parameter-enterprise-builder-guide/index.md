@@ -3,7 +3,7 @@
 > NVIDIA announced DGX Station for Windows at COMPUTEX 2026 — a GB300 Grace Blackwell deskside supercomputer that runs 1-trillion-parameter AI models locally on Windows. Q4 2026 availability. Here's what enterprise builders need to know about the hardware, software stack, and when to choose it over cloud.
 
 
-NVIDIA announced DGX Station for Windows on June 1, 2026, at COMPUTEX in Taipei. It is a deskside AI supercomputer powered by the GB300 Grace Blackwell Ultra Desktop Superchip, capable of running AI models up to one trillion parameters locally on Windows. Q4 2026 availability from six OEM partners.
+[NVIDIA announced DGX Station for Windows](https://nvidianews.nvidia.com/news/nvidia-dgx-station-for-windows-puts-a-trillion-parameter-ai-supercomputer-on-every-enterprise-desk) on June 1, 2026, at COMPUTEX in Taipei. It is a deskside AI supercomputer powered by the GB300 Grace Blackwell Ultra Desktop Superchip, capable of running AI models up to one trillion parameters locally on Windows. [Q4 2026 availability from six OEM partners](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-DGX-Station-for-Windows-Puts-a-Trillion-Parameter-AI-Supercomputer-on-Every-Enterprise-Desk/default.aspx).
 
 The premise is straightforward: enterprise AI workloads have historically required Linux datacenter hardware. Most Fortune 500 companies run Windows. DGX Station closes that gap.
 

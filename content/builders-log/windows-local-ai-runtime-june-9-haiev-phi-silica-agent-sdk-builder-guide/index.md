@@ -16,7 +16,7 @@ author: "ChatForest"
 
 ---
 
-The June 9 update is not a routine Patch Tuesday. Microsoft began decoupling AI component updates from the monthly security patch cycle at the start of 2026, and this update is the first significant delivery on that promise. Several things that Build 2026 announced as "coming soon" actually ship Tuesday.
+The June 9 update is not a routine Patch Tuesday. Microsoft began decoupling AI component updates from the monthly security patch cycle at the start of 2026, and this update is the first significant delivery on that promise. Several things that Build 2026 announced as "coming soon" actually ship Tuesday. Key components: [Phi Silica GPU expansion and HAIEnv model sharing](https://learn.microsoft.com/en-us/windows/ai/apis/phi-silica) GA alongside the [Windows Agent Launchers in public preview](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/).
 
 Here is what the update delivers, what stays in preview, and what builders should do before it lands.
 

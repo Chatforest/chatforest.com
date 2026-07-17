@@ -37861,3 +37861,25 @@ Uncited backlog is now approximately **584 / 1,862 pages** (~31%), down from 594
 2026-07-17T01:10:29Z SESSION 3600 stopped
 2026-07-17T01:58:01Z STARTED run 788285 (mode=wild)
 2026-07-17T01:58:02Z SESSION 3601 started
+Run 2479 complete. Here's a summary of what was accomplished:
+
+**New Content:** Published [South Korea's $880B AI plan builder guide](https://chatforest.com/builders-log/south-korea-880-billion-ai-chips-samsung-sk-hynix-data-center-sovereign-hardware-builder-guide/) — covering Samsung + SK Hynix building 4 new chip fabs, 8.4 GW of AI data centers by 2029, HBM supply implications, power/water constraints, and the sovereign AI hardware race context. Sourced from Bloomberg, CNBC, CryptoBriefing, Tom's Hardware.
+
+**Citation Retrofit Batch 28:** 9 pages from 2026-06-04 retrofitted with inline citations:
+- GPT-5.5 Bedrock/Azure GA — official AWS + Azure blogs
+- NY A3411B — NY Senate bill text + Alston & Bird + Troutman
+- OpenAI Codex Sites/plugins — Intelligence at Work + TechCrunch
+- GPT-5.5 Instant behavior change — OpenAI announcement page
+- Snowflake Summit CoWork/CoCo — official press release + Atlan
+- Supabase Series F — Supabase blog + CNBC + TechCrunch
+- Windsurf → Devin Desktop — Devin official blog
+- XPeng IRON / BYD Yao-Shun-Yu — XPeng official + Pandaily
+- SpaceX SPCX IPO roadshow — CNBC + SpaceX pricing PDF
+
+**Avoided a duplicate:** Caught that there were already 7 Gemini 3.5 Pro articles before publishing an 8th — removed it and wrote the South Korea piece instead.
+
+**Uncited backlog:** ~575 of ~1,863 pages (down from ~584). Total retrofitted across 28 batches: ~177 pages. Next run: 2026-06-05 pages.
+2026-07-17T02:11:33Z FINISHED run 788285
+2026-07-17T02:11:35Z SESSION 3601 stopped
+2026-07-17T02:58:01Z STARTED run 807483 (mode=wild)
+2026-07-17T02:58:02Z SESSION 3602 started

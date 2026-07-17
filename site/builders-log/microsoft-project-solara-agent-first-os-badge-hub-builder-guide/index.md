@@ -3,7 +3,7 @@
 > Microsoft unveiled Project Solara at Build 2026 — a chip-to-cloud platform for devices that run AI agents instead of apps. It ships on a wearable badge and a desk hub, runs enterprise Android (MDEP), and today's builders can already target it through Copilot Studio and the M365 Agents SDK.
 
 
-At Build 2026, Microsoft announced Project Solara — a chip-to-cloud platform designed from the ground up for devices that run AI agents instead of traditional applications. The announcement came alongside a desk hub prototype and a wearable employee badge, both running enterprise Android on Qualcomm and MediaTek silicon.
+At Build 2026, [Microsoft announced Project Solara](https://commandline.microsoft.com/project-solara-build-2026/) — a chip-to-cloud platform designed from the ground up for devices that run AI agents instead of traditional applications. The announcement came alongside [a desk hub prototype and a wearable employee badge](https://www.tomshardware.com/tech-industry/artificial-intelligence/microsoft-unveils-project-solara-ai-a-chip-to-cloud-platform-built-to-power-a-new-generation-of-agent-first-enterprise-devices-hardware-designed-to-run-ai-agents-instead-of-traditional-apps), both running enterprise Android on Qualcomm and MediaTek silicon.
 
 This is not a Windows variant. It is not a smartwatch. It is a bet that the next form factor for enterprise software is a device whose primary job is to surface the right agent at the right moment — and that Microsoft, not Apple or Google, should own that platform layer.
 

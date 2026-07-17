@@ -3,7 +3,7 @@
 > XPeng's IRON humanoid robot — 82 DOF, 3,000 TOPS, open SDK — targets mass production by end of 2026. BYD confirmed its Yao-Shun-Yu project with an open platform strategy and 150 prototypes running 24/7. This guide covers what builders need to know about China's EV-to-robot wave.
 
 
-Two of the world's largest electric vehicle manufacturers — XPeng and BYD — confirmed humanoid robot programs within days of each other in early June 2026. Both are building open platforms. Both are leveraging automotive supply chains to cut costs that pure-play robotics startups can't match. And both are targeting the same sequence: factory floors first, then retail showrooms, then homes.
+Two of the world's largest electric vehicle manufacturers — [XPeng](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7) and [BYD](https://pandaily.com/byd-secretly-develops-humanoid-robot-codename-yao-shun--jun2026) — confirmed humanoid robot programs within days of each other in early June 2026. Both are building open platforms. Both are leveraging automotive supply chains to cut costs that pure-play robotics startups can't match. And both are targeting the same sequence: factory floors first, then retail showrooms, then homes.
 
 This isn't a side project. XPeng has a full-chain humanoid factory under construction, mass production targeted for end of 2026, and a developer SDK already announced. BYD has 150 prototypes running 24/7 in Shenzhen and Changsha, a dedicated Future Lab, and a recruitment drive across 10 engineering disciplines.
 

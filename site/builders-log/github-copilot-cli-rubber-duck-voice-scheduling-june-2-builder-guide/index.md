@@ -3,7 +3,7 @@
 > On June 2, GitHub shipped a major Copilot CLI refresh: rubber duck mode for plan critique, on-device voice input, /chronicle for session history, and experimental prompt scheduling. Here is what each feature does and when to use it.
 
 
-GitHub shipped a significant Copilot CLI update on June 2, 2026 — the same week the flat billing model ended. The two changes together reshape what the CLI is: it now has a second-opinion agent, hands-free voice input, a cross-platform session aggregator, and an experimental scheduler that can run prompts on a timer. None of this was in the CLI a week ago.
+GitHub [shipped a significant Copilot CLI update on June 2, 2026](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/) — the same week the flat billing model ended. The two changes together reshape what the CLI is: it now has a second-opinion agent, hands-free voice input, a cross-platform session aggregator, and an experimental scheduler that can run prompts on a timer. None of this was in the CLI a week ago.
 
 This article covers what each feature does, how to invoke it, and which ones are GA versus still experimental.
 

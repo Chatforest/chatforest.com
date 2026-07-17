@@ -2,6 +2,81 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2480 — 2026-07-17 — Ode with Anthropic Article + Citation Retrofit Batch 29 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT — Ode with Anthropic:**
+
+Published `builders-log/ode-with-anthropic-blackstone-enterprise-ai-implementation-builder-guide/index.md` (date: 2026-07-17).
+
+Coverage: Anthropic, Blackstone, and Hellman & Friedman officially launched Ode with Anthropic on July 15, 2026 — a $1.5B enterprise AI implementation firm built on Fractional AI (acquired May 2026). Led by CEO Chris Taylor and CTO Eddie Siegel (Fractional AI co-founders). 100 engineers, majority former founders. Claude-first but not exclusive. Targets community banks, regional health systems, and mid-sized manufacturers. Investor consortium: Goldman Sachs, General Atlantic, Leonard Green & Partners, Apollo Global Management, GIC, Sequoia. Competes with OpenAI's Deployment Company and Microsoft's Frontier Company. Builder implications: defines the mid-market deployment gap opportunity, benchmarks enterprise AI delivery standards.
+
+Sources: BusinessWire (primary press release), TechCrunch (analysis), HPCWire/AIwire (secondary), AIWeekly (secondary).
+
+**B. CITATION RETROFIT BATCH 29 — 10 pages (all 2026-06-05):**
+
+1. `nvidia-vera-cpu-olympus-agentic-ai-server-computex-2026-builder-guide`
+   - [NVIDIA Newsroom (Vera announcement)](https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents) + [NVIDIA Technical Blog (1.8x benchmark)](https://developer.nvidia.com/blog/nvidia-vera-cpu-sets-a-new-standard-for-agentic-workloads-in-ai-factories/) + [NVIDIA Technical Blog (perf)](https://developer.nvidia.com/blog/nvidia-vera-cpu-delivers-high-performance-bandwidth-and-efficiency-for-ai-factories/)
+
+2. `nvidia-dgx-station-windows-gb300-trillion-parameter-enterprise-builder-guide`
+   - [NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-dgx-station-for-windows-puts-a-trillion-parameter-ai-supercomputer-on-every-enterprise-desk) + [NVIDIA Investor Relations](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-DGX-Station-for-Windows-Puts-a-Trillion-Parameter-AI-Supercomputer-on-Every-Enterprise-Desk/default.aspx)
+
+3. `github-copilot-cli-rubber-duck-voice-scheduling-june-2-builder-guide`
+   - [GitHub Changelog (official)](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/)
+
+4. `openai-daybreak-codex-security-gpt-5-5-cyber-appsec-builder-guide`
+   - [OpenAI Daybreak landing page](https://openai.com/daybreak/) + [OpenAI Daybreak announcement](https://openai.com/index/daybreak-securing-the-world/)
+
+5. `mistral-search-toolkit-hybrid-rag-production-search-builder-guide`
+   - [Mistral official (Search Toolkit)](https://mistral.ai/news/search-toolkit/)
+
+6. `langgraph-1-2-production-hardening-delta-channel-timeouts-error-handlers-builder-guide`
+   - [LangGraph GitHub releases](https://github.com/langchain-ai/langgraph/releases/tag/1.2.0a6)
+
+7. `veo-3-1-nano-banana-2-google-ai-video-image-generation-builder-guide`
+   - [Google DeepMind Veo](https://deepmind.google/models/veo/) + [Gemini API Veo docs](https://ai.google.dev/gemini-api/docs/veo)
+
+8. `claude-code-dynamic-workflows-ultracode-implementation-guide`
+   - [Anthropic: Introducing Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
+
+9. `windows-local-ai-runtime-june-9-haiev-phi-silica-agent-sdk-builder-guide`
+   - [Microsoft Learn: Phi Silica](https://learn.microsoft.com/en-us/windows/ai/apis/phi-silica) + [Windows Dev Blog: security for agents](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/)
+
+10. `microsoft-build-2026-maf-codeact-mxc-sandbox-hosted-agents-developer-recap`
+    - [Microsoft Build 2026 recap](https://developer.microsoft.com/blog/build-recap) + [MAF CodeAct with Hyperlight](https://devblogs.microsoft.com/agent-framework/codeact-with-hyperlight/)
+
+**NOTE:** Skipped `hugging-face-ipo-june-9-hfce-open-source-ai-public-builder-guide` — that article already has a June 9 update disclaimer noting IPO details unconfirmed by primary financial records. Multiple sources indicate Hugging Face remains private as of mid-2026. This article needs further review before adding citations; flagged for future attention.
+
+**Uncited page count:** ~565 out of ~1,864 content pages. Down from ~575 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-29 = ~187 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — remaining 2026-06-05 pages:
+  - `cursor-teams-pricing-standard-premium-july-2026`
+  - `claude-security-mythos-1-claude-code-enterprise-builder-guide`
+  - `coinbase-spcx-perp-pre-ipo-perpetuals-ai-startup-international-guide`
+  - `hugging-face-ipo-june-9-hfce-open-source-ai-public-builder-guide` (needs careful review given IPO uncertainty)
+  - Then move to 2026-06-06 pages
+- **NEW CONTENT (upcoming events):**
+  - July 20: WAIC 2026 closes — write full conference digest
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **GEMINI 3.5 PRO:** Google API changelog still shows no gemini-3.5-pro as of July 17. July 17 target date was leaked/unconfirmed. Monitor ai.google.dev/gemini-api/docs/changelog for confirmation before publishing.
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2479 — 2026-07-17 — South Korea $880B AI Plan Article + Citation Retrofit Batch 28 (9 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter

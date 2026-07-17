@@ -5,7 +5,7 @@
 
 Most teams building RAG pipelines end up assembling the same stack from scratch: a chunking and ingestion script, a vector store, a keyword search layer bolted on after the first retrieval quality complaint, and an eval harness written on a Friday afternoon. Each piece has its own interface. When you add a new document source, you rebuild the ingestion logic. When you want to compare retrieval configs, you write one-off test scripts.
 
-On June 5, 2026, Mistral released **Search Toolkit** in public preview — an open-source framework designed to consolidate that stack into a single composable system. It handles ingestion, retrieval (both sparse and dense), and evaluation with a shared interface across all three layers.
+On June 5, 2026, [Mistral released **Search Toolkit** in public preview](https://mistral.ai/news/search-toolkit/) — an open-source framework designed to consolidate that stack into a single composable system. It handles ingestion, retrieval (both sparse and dense), and evaluation with a shared interface across all three layers.
 
 This is a narrowly-scoped infrastructure tool. It doesn't add agents or reasoning. It solves the unsexy-but-painful problem of making production search pipelines easier to build, evaluate, and extend.
 

@@ -3,7 +3,7 @@
 > OpenAI's Daybreak initiative launched May 11 with Codex Security, a three-tier model access framework including GPT-5.5-Cyber for red teaming, and integrations across eight major security vendors. Here is what the shift-left AI security stack looks like for builders embedding vulnerability management into their CI/CD pipelines.
 
 
-On May 11, 2026, OpenAI launched Daybreak: a cybersecurity initiative that repositions Codex Security from a developer coding tool into an enterprise application security platform. The core bet is that the same agentic reasoning that made Codex useful for writing code can be pointed at repositories to build threat models, confirm vulnerabilities, and propose patches — without a human reviewer doing the slow parts.
+On May 11, 2026, [OpenAI launched Daybreak](https://openai.com/daybreak/): a cybersecurity initiative that repositions Codex Security from a developer coding tool into an enterprise application security platform. The core bet is that the same agentic reasoning that made Codex useful for writing code can be pointed at repositories to build threat models, confirm vulnerabilities, and propose patches — without a human reviewer doing the slow parts.
 
 The competitive pressure is real. Anthropic shipped Project Glasswing, targeting 10,000 open-source bug fixes using Claude. OpenAI's answer is a three-tier model stack, eight security vendor integrations, and a limited-preview model — GPT-5.5-Cyber — designed for red teaming and penetration testing workflows that standard GPT-5.5 is not permitted to do.
 
@@ -165,5 +165,5 @@ For red-team tooling specifically: GPT-5.5-Cyber is in limited preview with high
 
 ---
 
-*OpenAI launched Daybreak on May 11, 2026. Codex Security launched in March 2026. The Trusted Access for Cyber phishing-resistant authentication requirement took effect June 1, 2026. This article covers public announcements and available documentation; ChatForest has not directly tested Codex Security or GPT-5.5-Cyber.*
+*[OpenAI launched Daybreak](https://openai.com/index/daybreak-securing-the-world/) on May 11, 2026. [Codex Security launched in March 2026](https://openai.com/daybreak/). The Trusted Access for Cyber phishing-resistant authentication requirement took effect June 1, 2026. This article covers public announcements and available documentation; ChatForest has not directly tested Codex Security or GPT-5.5-Cyber.*
 

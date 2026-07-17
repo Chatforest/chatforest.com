@@ -3,7 +3,7 @@
 > Build 2026 wrapped June 4. The real story for AI developers: Microsoft Agent Framework's CodeAct cuts agent latency 50% via Hyperlight micro-VMs, the MXC kernel sandbox ships with OpenAI and NVIDIA already on board, and Foundry Hosted Agents reach preview at $0.0994/vCPU-hour with GA by end of June.
 
 
-Microsoft Build 2026 wrapped June 4 at Fort Mason in San Francisco. The theme was declared in advance: AI is no longer a feature — it is infrastructure. The announcements made that concrete. This is a post-event summary of what actually shipped, what is in preview, and what the timeline looks like for developers building agents.
+Microsoft Build 2026 wrapped June 4 at Fort Mason in San Francisco. The theme was declared in advance: AI is no longer a feature — it is infrastructure. The announcements made that concrete. This is a post-event summary of what actually shipped, what is in preview, and what the timeline looks like for developers building agents. [Full Microsoft Build 2026 developer recap](https://developer.microsoft.com/blog/build-recap).
 
 ---
 
@@ -19,7 +19,7 @@ Microsoft Agent Framework 1.0 reached GA in April 2026. Build 2026 added three d
 
 ### CodeAct with Hyperlight
 
-The standard tool-call loop has agents picking one tool, waiting for a result, picking another tool, and so on. Each round trip costs a model call and adds latency. CodeAct collapses that loop.
+The standard tool-call loop has agents picking one tool, waiting for a result, picking another tool, and so on. Each round trip costs a model call and adds latency. [CodeAct collapses that loop](https://devblogs.microsoft.com/agent-framework/codeact-with-hyperlight/).
 
 With CodeAct, the model writes a short Python program that calls your tools via `call_tool(…)`, runs it once in a sandbox, and returns a consolidated result. The performance numbers from Microsoft's representative workloads:
 

@@ -8,7 +8,7 @@ categories: ["Claude Code", "Anthropic", "Developer Experience", "Agent Architec
 draft: false
 ---
 
-Anthropic opened dynamic workflows in research preview on **May 28, 2026** and shipped full documentation on June 2. If you read the May announcement and came away with a solid conceptual picture — Claude writes an orchestration script, up to 1,000 subagents run in parallel, context window constraints stop being the bottleneck — this article is the next step: how to actually use the thing.
+Anthropic [opened dynamic workflows in research preview](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code) on **May 28, 2026** and shipped full documentation on June 2. If you read the May announcement and came away with a solid conceptual picture — Claude writes an orchestration script, up to 1,000 subagents run in parallel, context window constraints stop being the bottleneck — this article is the next step: how to actually use the thing.
 
 ## What you need to get started
 

@@ -3,7 +3,7 @@
 > Snowflake Summit 26 (June 1-4, San Francisco) ended with Snowflake renaming its two flagship AI products and shipping five new capabilities. Here's what every builder needs to know: what CoWork and CoCo actually are, what Cortex Training unlocks, and how Datastream + OpenFlow change real-time AI pipelines.
 
 
-Snowflake Summit 26 ran June 1–4 in San Francisco with 20,000 attendees. The opening keynote featured Anthropic President Daniela Amodei alongside Snowflake CEO Sridhar Ramaswamy. The builder keynote landed June 3.
+Snowflake Summit 26 ran June 1–4 in San Francisco with 20,000 attendees. The opening keynote featured Anthropic President Daniela Amodei alongside Snowflake CEO Sridhar Ramaswamy. The builder keynote landed June 3. ([Official CoWork announcement](https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/) · [Full Summit recap](https://atlan.com/know/snowflake/summit-2026-announcements/) · [Constellation Research analysis](https://www.constellationr.com/insights/news/snowflake-summit-2026-context-custom-model-training-iceberg-v3))
 
 The headline outcome: Snowflake shipped five significant new capabilities and renamed both of its primary AI products. If you track Snowflake and built your understanding before this summit, some product names have changed and some capabilities are materially different.
 

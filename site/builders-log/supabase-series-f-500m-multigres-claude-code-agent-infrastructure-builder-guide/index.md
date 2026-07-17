@@ -3,7 +3,7 @@
 > Supabase closed a $500M Series F at a $10.5B valuation on June 4, 2026, with Claude Code named as the largest contributor to their 600% year-over-year database growth. They also launched Multigres, an open-source horizontal scaling layer for Postgres, and a bundled MCP connector for AI coding tools.
 
 
-On June 4, 2026, Supabase announced a $500 million Series F at a $10.5 billion post-money valuation — doubling their valuation from approximately $5 billion in roughly eight months. The round was led by GIC, Singapore's sovereign wealth fund, with participation from Stripe (their second investment in Supabase), Salesforce Ventures, Accel, Y Combinator, Craft, Felicis, Peak XV, and Coatue. Total capital raised now exceeds $1 billion.
+On June 4, 2026, Supabase [announced a $500 million Series F](https://supabase.com/blog/supabase-series-f) at a $10.5 billion post-money valuation — doubling their valuation from approximately $5 billion in roughly eight months. ([CNBC](https://www.cnbc.com/2026/06/04/database-startup-supabase-raises-500-million-10point5-billion-valuation.html) · [TechCrunch](https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/)) The round was led by GIC, Singapore's sovereign wealth fund, with participation from Stripe (their second investment in Supabase), Salesforce Ventures, Accel, Y Combinator, Craft, Felicis, Peak XV, and Coatue. Total capital raised now exceeds $1 billion.
 
 The headline number is notable. The driver behind it is more notable: Claude Code.
 

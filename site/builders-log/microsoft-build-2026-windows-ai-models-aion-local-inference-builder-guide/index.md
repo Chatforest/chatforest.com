@@ -3,7 +3,7 @@
 > Microsoft announced Aion 1.0 (a new on-device SLM family), expanded Windows AI APIs, WSL 3 NPU passthrough, and a Speech Recognition API at Build 2026. Free local inference on Copilot+ PCs is now a first-class Windows development target — no cloud dependency required.
 
 
-**At a glance:** Announced June 2–3, 2026 at Microsoft Build. Aion 1.0 Instruct in preview now (open weights on Hugging Face July 2026). Aion 1.0 Plan: 14B parameters, 32K context, tool-calling, ships in-box on capable devices (coming months). Speech Recognition API: public preview this week, on-device, English, hardware-accelerated on NPUs and CPUs. WSL 3 NPU/GPU passthrough: live on Qualcomm Snapdragon X Elite and Intel Meteor Lake/Lunar Lake; AMD coming later. Minimum hardware requirement: 40 TOPS NPU. Windows Local AI Runtime update: KB5039239, shipping June 9. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** [Announced June 2–3, 2026 at Microsoft Build](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/). Aion 1.0 Instruct in preview now (open weights on Hugging Face July 2026). Aion 1.0 Plan: 14B parameters, 32K context, tool-calling, ships in-box on capable devices (coming months). Speech Recognition API: public preview this week, on-device, English, hardware-accelerated on NPUs and CPUs. WSL 3 NPU/GPU passthrough: live on Qualcomm Snapdragon X Elite and Intel Meteor Lake/Lunar Lake; AMD coming later. Minimum hardware requirement: 40 TOPS NPU. Windows Local AI Runtime update: KB5039239, shipping June 9. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -17,7 +17,7 @@ This isn't a minor API update. It's a change in what a Windows application can b
 
 ### Aion 1.0 Instruct — Preview Now
 
-Aion 1.0 Instruct is Microsoft's next-generation on-device small language model, replacing the existing Windows OS SLM. It's designed for text intelligence tasks: summarization, rewriting, intent classification, accessibility features. Microsoft describes it as smaller, faster, and more efficient than its predecessor while being more capable on those specific workloads.
+[Aion 1.0 Instruct is Microsoft's next-generation on-device small language model](https://aiweekly.co/alerts/microsoft-unveils-aion-10-on-device-ai-at-build-2026), replacing the existing Windows OS SLM. It's designed for text intelligence tasks: summarization, rewriting, intent classification, accessibility features. Microsoft describes it as smaller, faster, and more efficient than its predecessor while being more capable on those specific workloads.
 
 Two distribution paths:
 

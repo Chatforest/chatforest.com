@@ -8,7 +8,7 @@ categories: ["AI Frameworks", "Developer Tools", "Multi-Agent Systems"]
 tags: ["langgraph", "langchain", "multi-agent", "production", "checkpointing", "agent-orchestration", "builders-log", "langsmith", "python", "observability"]
 ---
 
-LangGraph 1.2 shipped May 12, 2026. The headline features — DeltaChannel, per-node timeouts, node-level error handlers, and graceful shutdown — are production reliability primitives that were missing in earlier releases. If you are running LangGraph agents in production or are planning to, this is the version that makes the upgrade argument easier.
+[LangGraph 1.2 shipped May 12, 2026](https://github.com/langchain-ai/langgraph/releases/tag/1.2.0a6). The headline features — DeltaChannel, per-node timeouts, node-level error handlers, and graceful shutdown — are production reliability primitives that were missing in earlier releases. If you are running LangGraph agents in production or are planning to, this is the version that makes the upgrade argument easier.
 
 This guide covers each feature: what problem it solves, the API signatures, code patterns, and where the limits are.
 

@@ -3,7 +3,7 @@
 > Veo 3.1 generates 4–8 second videos with native audio. Nano Banana 2 (gemini-3.1-flash-image) handles image generation and keyframes. Here is the full builder guide: model IDs, API structure, pricing, variant tradeoffs, and the image-to-video pipeline.
 
 
-Veo 3.1 is Google's current video generation model in the Gemini API. Nano Banana 2 is Google's name for `gemini-3.1-flash-image`, the high-efficiency image generation model in the same stack. The two connect: generate a keyframe image with Nano Banana 2, feed it as the start frame to Veo 3.1, and the video inherits the visual composition you designed.
+[Veo 3.1](https://deepmind.google/models/veo/) is Google's current video generation model in the Gemini API. Nano Banana 2 is Google's name for [`gemini-3.1-flash-image`](https://ai.google.dev/gemini-api/docs/veo), the high-efficiency image generation model in the same stack. The two connect: generate a keyframe image with Nano Banana 2, feed it as the start frame to Veo 3.1, and the video inherits the visual composition you designed.
 
 This guide covers both models, the API structure, the three Veo 3.1 tiers, the cost math, and what builders should actually care about.
 

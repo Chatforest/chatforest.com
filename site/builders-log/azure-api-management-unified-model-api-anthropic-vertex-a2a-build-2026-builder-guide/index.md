@@ -3,9 +3,9 @@
 > Azure API Management now routes to Anthropic and Google Vertex AI through a single OpenAI-compatible endpoint. A2A APIs are GA with full governance. Content safety now covers MCP and agent-to-agent payloads. Here's what changed and what it means for your architecture.
 
 
-At Microsoft Build 2026, Azure API Management shipped a set of changes that are easy to miss in the noise of MAI model announcements and Windows agent previews. They are worth slowing down on if you are running AI workloads on Azure — or are about to.
+At Microsoft Build 2026, [Azure API Management shipped a set of changes](https://techcommunity.microsoft.com/blog/integrationsonazureblog/whats-new-in-azure-api-management-at-microsoft-build-2026/4524683) that are easy to miss in the noise of MAI model announcements and Windows agent previews. They are worth slowing down on if you are running AI workloads on Azure — or are about to.
 
-The short version: Azure API Management can now act as a unified gateway for OpenAI, Anthropic, and Google Vertex AI models, presenting all three through a single OpenAI Chat Completions–compatible endpoint. Agent-to-Agent (A2A) API governance is generally available. The content safety policy that previously applied only to LLM calls now covers MCP tool-call arguments and A2A payloads. Part of our **[Builder's Log](/builders-log/)**.
+The short version: Azure API Management can now act as a unified gateway for OpenAI, Anthropic, and Google Vertex AI models, presenting all three through a single OpenAI Chat Completions–compatible endpoint. [Agent-to-Agent (A2A) API governance is generally available](https://techcommunity.microsoft.com/blog/integrationsonazureblog/new-ai-gateway-capabilities-in-azure-api-management/4524604). The content safety policy that previously applied only to LLM calls now covers MCP tool-call arguments and A2A payloads. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 

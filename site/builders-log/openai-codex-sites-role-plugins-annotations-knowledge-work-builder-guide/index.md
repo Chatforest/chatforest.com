@@ -3,7 +3,7 @@
 > OpenAI's June 3 'Intelligence at Work' update turns Codex into an enterprise workspace platform with hosted Sites, six role-specific plugins covering data analytics through investment banking, and scoped Annotations editing. If you're building vertical AI for any of those six domains, your competitive landscape just changed.
 
 
-On June 3, 2026, OpenAI held an "Intelligence at Work" event and shipped a Codex update that reframes what the platform is. Codex started as a coding agent for developers. After this update, it is also a configurable enterprise workspace for data analysts, marketers, salespeople, product designers, and investment bankers.
+On June 3, 2026, OpenAI held an ["Intelligence at Work"](https://openai.com/business/intelligence-at-work/) event and [shipped a Codex update](https://openai.com/index/codex-for-knowledge-work/) that reframes what the platform is. ([TechCrunch coverage](https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/)) Codex started as a coding agent for developers. After this update, it is also a configurable enterprise workspace for data analysts, marketers, salespeople, product designers, and investment bankers.
 
 Three things shipped at once: Sites (OpenAI-hosted internal tools), six role-specific plugins, and Annotations (scoped in-place editing). None of them require coding knowledge.
 
