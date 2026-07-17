@@ -8,7 +8,7 @@ categories: ["Anthropic", "Security", "Infrastructure", "Developer Tools"]
 tags: ["anthropic", "wif", "workload-identity-federation", "api-keys", "oidc", "aws-iam", "github-actions", "kubernetes", "security", "service-accounts", "june-2026", "builders-log"]
 ---
 
-Anthropic has made Workload Identity Federation (WIF) generally available on the Claude Platform. The short version: your production Claude agents no longer need a long-lived `sk-ant-` API key sitting in an environment variable or a secrets manager. Instead, they authenticate with a short-lived token issued by an identity provider you already operate. Part of our **[Builder's Log](/builders-log/)**.
+[Anthropic has made Workload Identity Federation (WIF) generally available on the Claude Platform.](https://claude.com/blog/workload-identity-federation) The short version: your production Claude agents no longer need a long-lived `sk-ant-` API key sitting in an environment variable or a secrets manager. Instead, they authenticate with a short-lived token issued by an identity provider you already operate. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -24,7 +24,7 @@ The token is short-lived (minutes, not months). It carries claims about the work
 
 ## Supported Identity Providers
 
-WIF works with any OIDC-compliant identity provider. Anthropic officially supports and tests against:
+WIF works with any OIDC-compliant identity provider. [Anthropic officially supports and tests against](https://platform.claude.com/docs/en/manage-claude/workload-identity-federation):
 
 | Provider | Workload type |
 |---|---|

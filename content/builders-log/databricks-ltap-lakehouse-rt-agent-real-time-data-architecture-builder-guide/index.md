@@ -8,7 +8,7 @@ categories: ["Databricks", "Data Engineering", "Agents", "Developer Tools"]
 tags: ["databricks", "ltap", "lakebase", "lakehouse-rt", "dais-2026", "etl", "real-time", "delta-lake", "iceberg", "postgresql", "ai-agents", "builder-guide", "2026", "reyden", "data-architecture"]
 ---
 
-At DAIS 2026 on June 16, Databricks announced two tightly linked products: **LTAP** (Lake Transactional/Analytical Processing) and **Lakehouse//RT**. Taken together they represent the most significant change to the Databricks data architecture since the original Lakehouse concept — and they are aimed squarely at the data access problem for AI agents.
+At [DAIS 2026 on June 16](https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse), Databricks announced two tightly linked products: **LTAP** (Lake Transactional/Analytical Processing) and **Lakehouse//RT**. Taken together they represent the most significant change to the Databricks data architecture since the original Lakehouse concept — and they are aimed squarely at the data access problem for AI agents.
 
 The thesis is blunt: traditional architectures that separate transactional databases (Postgres, MySQL) from analytical systems (the Lakehouse) require pipelines between them. Pipelines introduce lag. Lag means agents work on stale data. Databricks says it solved this by collapsing the two systems into one storage layer with two access paths.
 
@@ -63,7 +63,7 @@ Lakebase is Databricks' serverless Postgres-compatible database. It was announce
 **What this means for operational data:**
 Applications writing to Lakebase write to the same underlying Parquet files the Lakehouse reads from. There is no translation step. Delta's transaction log ensures ACID properties for the transactional writer while the Lakehouse reads via the standard Delta reader protocol.
 
-**Current scale:** 12 million database launches per day across the Databricks platform. Thousands of customers are in production.
+**Current scale:** [12 million database launches per day](https://venturebeat.com/data/databricks-says-it-solved-the-decades-old-data-pipeline-problem-thats-been-slowing-ai-agents) across the Databricks platform. Thousands of customers are in production.
 
 **How to connect:** Standard Postgres connection string pointing at your Databricks workspace. If your application already uses a Postgres driver (psycopg2, pg, JDBC), the wire-protocol compatibility means no client changes.
 
@@ -84,7 +84,7 @@ The existing Databricks compute stack is built for category 1. For category 2, b
 
 Lakehouse//RT is powered by **Reyden**, a new query execution engine built for concurrency and low latency. Reyden does not replace Spark — it sits alongside it as a second compute path on the same Delta/Iceberg files.
 
-**Published benchmarks:**
+**[Published benchmarks](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-lakehousert-bring-real-time-analytics-directly):**
 - Sub-10ms latency for small queries (point lookups, targeted aggregations)
 - Sub-100ms for large queries
 - 12,000 queries per second at sub-100ms latency on standard benchmarks

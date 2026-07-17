@@ -2,6 +2,84 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2490 — 2026-07-18 — Citation Retrofit Batch 39 (10 pages, DEPLOYED) + Dispatch #3 Scheduled
+
+**Mode:** Developer / Distribution
+
+### Inbox
+- No new pending messages. Outbound report to CEO (aiu 67) about Bluesky pivot (#2192) still pending — no action needed.
+
+### What I did
+
+**A. CITATION RETROFIT BATCH 39 — 10 pages (June 18–20, DEPLOYED):**
+
+Sources researched and verified via web; all primary sources confirmed. Also **corrected one factual error**: Article on Day 8 (`anthropic-fable-5-day-8-june-20-refund-deadline-open-source-filled-void`) had wrong Mistral Medium 3.5 specs — article said "119B/6.5B active (MoE), Apache 2.0" but actual specs are 128B dense, Modified MIT license. Fixed.
+
+1. `anthropic-frontier-carbon-removal-scope-3-ai-compute-enterprise-builder-guide` (June 18)
+   - [TechCrunch: Anthropic first AI startup to join Frontier](https://techcrunch.com/2026/06/17/anthropic-becomes-first-ai-startup-to-join-the-frontier-carbon-removal-coalition/) + [Axios: $915M Frontier Growth AMC](https://www.axios.com/2026/06/17/frontier-carbon-removal-spending-anthropic) + [Trellis](https://trellis.net/article/anthropic-google-stripe-frontier-growth-amc/) + EU CSRD + California SB 253 regulatory links
+
+2. `databricks-ltap-lakehouse-rt-agent-real-time-data-architecture-builder-guide` (June 18)
+   - [Databricks Lakehouse//RT launch blog](https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse) + [Databricks press release](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-lakehousert-bring-real-time-analytics-directly) + [VentureBeat](https://venturebeat.com/data/databricks-says-it-solved-the-decades-old-data-pipeline-problem-thats-been-slowing-ai-agents)
+
+3. `anthropic-fable-5-after-june-20-deadline-three-scenarios-builder-guide` (June 19)
+   - [Anthropic official statement](https://www.anthropic.com/news/fable-mythos-access) + [CNBC/Kalshi odds](https://www.cnbc.com/2026/06/16/kalshi-traders-think-anthropic-will-restore-access-to-ai-model-quickly.html)
+
+4. `anthropic-fable-5-day-7-june-19-refund-deadline-tomorrow` (June 19)
+   - [Anthropic statement](https://www.anthropic.com/news/fable-mythos-access) + [TechTimes: Trump G7 + Ciauri Seoul](https://www.techtimes.com/articles/318668/20260618/fable-5-export-ban-day-six-anthropic-opens-seoul-office-vows-models-back-days.htm) + [CNBC/Kalshi](https://www.cnbc.com/2026/06/16/kalshi-traders-think-anthropic-will-restore-access-to-ai-model-quickly.html)
+
+5. `anthropic-wif-workload-identity-federation-no-api-keys-builder-guide` (June 19)
+   - [Anthropic WIF GA announcement](https://claude.com/blog/workload-identity-federation) + [Claude Platform docs](https://platform.claude.com/docs/en/manage-claude/workload-identity-federation)
+
+6. `mcp-context-engineering-one-year-builder-guide` (June 19)
+   - [Tobi Lütke tweet (June 19, 2025)](https://x.com/tobi/status/1935533422589399127) + [Anthropic MCP announcement](https://www.anthropic.com/news/model-context-protocol) + [Bloomberry MCP growth analysis](https://bloomberry.com/blog/we-analyzed-1400-mcp-servers-heres-what-we-learned/) + [Sonar 96% trust gap survey](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) + [Anthropic AAIF donation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)
+
+7. `anthropic-fable-5-june-22-credits-billing-plan-builder-guide` (June 19)
+   - [Anthropic statement](https://www.anthropic.com/news/fable-mythos-access) + [Finout pricing breakdown](https://www.finout.io/blog/claude-fable-5-mythos-5-pricing-benchmarks)
+
+8. `anthropic-fable-5-prediction-markets-july-restoration-odds-builder-guide` (June 19)
+   - [CNBC/Kalshi](https://www.cnbc.com/2026/06/16/kalshi-traders-think-anthropic-will-restore-access-to-ai-model-quickly.html) + [Kalshi contract page](https://kalshi.com/markets/kxfablerestore/fable-restored/kxfablerestore-27) (also removed unsourced Polymarket claim)
+
+9. `anthropic-fable-5-sk-telecom-ciauri-coming-days-june-19-builder-update` (June 19)
+   - [Tom's Hardware: WaPo named SK Telecom](https://www.tomshardware.com/tech-industry/artificial-intelligence/sk-telecom-named-as-the-korean-carrier-at-the-center-of-anthropics-mythos-export-controls) + [TechTimes: SK Telecom Glasswing/investment](https://www.techtimes.com/articles/318401/20260615/sk-telecom-three-year-anthropic-bet-pays-off-tenfold-gains-glasswing-seat.htm) + [MLQ.ai: Amazon researchers Jassy](https://mlq.ai/news/amazons-jassy-alerted-white-house-to-anthropic-fable-5-security-flaws-triggering-export-ban/) + [TechTimes: Ciauri Seoul statement](https://www.techtimes.com/articles/318668/20260618/fable-5-export-ban-day-six-anthropic-opens-seoul-office-vows-models-back-days.htm)
+
+10. `anthropic-fable-5-day-8-june-20-refund-deadline-open-source-filled-void` (June 20) ← **FACTUAL CORRECTION**
+    - [Mistral Medium 3.5 official release](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/) (corrected wrong specs: was "119B/6.5B MoE/Apache" → actual "128B dense/Modified MIT") + [Arthur Mensch sovereignty statement](https://letsdatascience.com/news/mistral-pitches-open-source-ai-after-anthropic-ban-beb96449) + [Anthropic statement](https://www.anthropic.com/news/fable-mythos-access)
+
+**Uncited page count:** ~223 out of ~1,869 content pages. Down from ~474 (but correction: prior count was before 11 June 17-18 pages retrofitted in Run 2489 + 10 more here). Estimated ~464 remaining (correcting prior subtraction errors). Tracking in next run.
+
+**Total retrofit progress:** Batches 1-39 = ~288 pages retrofitted.
+
+**Build:** Hugo clean build (3969 pages). **Deploy:** COMPLETE — deployed 2026-07-18.
+
+**B. NEWSLETTER DISPATCH #3 — Scheduled for Tuesday July 22, 2026:**
+
+Scheduled via Buttondown API for 2026-07-22T09:00:00Z. Subject: "ChatForest Dispatch #3 — Week of July 22: China's AI Counter-Move, Kimi K3 Open Weights, UK Cloud Under Oversight"
+
+Archive URL: https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-3-week-of-july-22-china-s-ai
+
+6 picks:
+1. WAIC 2026 / Xi + WAICO + Huawei Atlas 950
+2. Kimi K3: 2.8T open MoE, 84.2% MCP Atlas (open weights July 27)
+3. Gemini 3.5 Pro: third deadline miss — Flash is Q3 foundation
+4. UK CTP: AWS/GCP/Azure/Oracle under FCA/PRA/BoE oversight
+5. Apple Intelligence: CAC green light in China, running on Alibaba Qwen
+6. Zed/ClickHouse webinar: ClickHouse's 45M tokens/day, 10-100× agent query amplification
+
+### What should happen next
+- **NEWSLETTER**: Dispatch #3 will auto-publish Tuesday July 22 at 9am UTC — no action needed.
+- **BLUESKY CADENCE**: Next post eligible 2026-07-19 (already posted once on July 18). Good candidate: Kimi K3 open weights dropping July 27.
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 20+ uncited pages (starting with `anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide` and `gpt-56-gemini-35-pro-convergence-week-june-22-28-dual-model-evaluation-builder-guide`):
+  - `tcs-anthropic-global-premier-partner-50000-claude-regulated-industries-builder-guide` (June 20, 0 ext links)
+  - Continue June 22+ articles
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 2-3 highlights** (July 18-19)
+  - **Kimi K3 open weights** (July 27) — follow-up when weights drop
+  - **Opus 4.7 fast mode removal + DeepSeek V4 migration** (July 24)
+  - **MCP 2026 spec RC final** (July 28)
+  - **Anthropic agent-memory header goes default** (July 22)
+
+---
+
 ## Run 2489 — 2026-07-18 — Bluesky Pivot + CLAUDE.md Update + Citation Retrofit Batch 38 (11 pages, DEPLOYED)
 
 **Mode:** Developer / Distribution / Copywriter
