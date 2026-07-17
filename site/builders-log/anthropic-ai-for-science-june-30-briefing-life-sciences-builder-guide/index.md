@@ -3,7 +3,7 @@
 > Anthropic is running five converging moves in life sciences at once. Before the June 30 Science Briefing, here's what the VirBench accuracy crisis finding, the Coefficient Bio acquisition, and John Jumper's hire mean for builders in pharma, biotech, and research.
 
 
-Tomorrow morning (June 30, 10:00 AM PST), Anthropic is hosting "The Briefing: AI for Science" — a live virtual event with the CEOs of Novartis and Bristol Myers Squibb, the head of research at Genentech, and a lineup of Anthropic's own life sciences team. It's the company's highest-profile public moment yet in the life sciences space.
+Tomorrow morning (June 30, 10:00 AM PST), [Anthropic is hosting "The Briefing: AI for Science"](https://www.techtimes.com/articles/319348/20260630/anthropic-livestreams-ai-science-pitch-no-ai-drug-has-won-fda-approval.htm) — a live virtual event with the CEOs of Novartis and Bristol Myers Squibb, the head of research at Genentech, and a lineup of Anthropic's own life sciences team. It's the company's highest-profile public moment yet in the life sciences space.
 
 The event itself isn't the story. What the event reveals is: **Anthropic has been running a coordinated life sciences offensive for the past ninety days**, and most builders haven't been tracking all five threads at once.
 
@@ -11,13 +11,13 @@ Here's what converged, and what it means if you're building for pharma, biotech,
 
 ## Five Moves in 90 Days
 
-**April 2 — Coefficient Bio acquisition.** Anthropic paid approximately $400 million (all-stock) for a nine-person stealth biotech startup with alumni from Genentech, Roivant, and Evozyne. Coefficient Bio's platform handled target identification, drug R&D planning, and regulatory strategy — the operational backbone of running a drug program, not just analyzing data. Anthropic's first major acquisition. The expertise went directly into Claude's life sciences capabilities.
+**April 2 — Coefficient Bio acquisition.** [Anthropic paid approximately $400 million (all-stock) for a nine-person stealth biotech startup](https://www.digitalapplied.com/blog/john-jumper-joins-anthropic-ai-for-science-2026) with alumni from Genentech, Roivant, and Evozyne. Coefficient Bio's platform handled target identification, drug R&D planning, and regulatory strategy — the operational backbone of running a drug program, not just analyzing data. Anthropic's first major acquisition. The expertise went directly into Claude's life sciences capabilities.
 
 **April–June — Wet labs and biologist hiring.** Anthropic opened its own wet labs to run basic research in-house — an unusual move for an AI lab. The goal is to generate biological training data that doesn't exist in any public corpus, and to close the feedback loop between model predictions and real experimental outcomes. They're hiring bench scientists alongside ML researchers.
 
 **June 8 — BioMysteryBench and VirBench published.** Anthropic released two benchmark studies evaluating Claude on real scientific tasks. The findings are nuanced (more on this below).
 
-**June 19 — John Jumper joins Anthropic.** Nobel Prize in Chemistry laureate and co-creator of AlphaFold2 — the model that solved the protein folding problem — left Google DeepMind after nine years to join Anthropic. Jumper's hire is a scientific credibility signal: Anthropic is not just deploying models into biology, it's building the team to advance the underlying science.
+**June 19 — John Jumper joins Anthropic.** [Nobel Prize in Chemistry laureate and co-creator of AlphaFold2](https://www.techtimes.com/articles/318754/20260620/alphafold-nobel-laureate-john-jumper-joins-anthropic-after-nine-years-deepmind.htm) — the model that solved the protein folding problem — left Google DeepMind after nine years to join Anthropic. Jumper's hire is a scientific credibility signal: Anthropic is not just deploying models into biology, it's building the team to advance the underlying science.
 
 **June 30 — "The Briefing: AI for Science."** The event features Vas Narasimhan (Novartis CEO), Chris Boerner (BMS Chair and CEO), Aviv Regev (Head of Research at Genentech), and Anthropic's Eric Kauderer-Abrams. BMS separately committed to Claude Enterprise for 30,000+ employees in May — the first top-5 pharma to make that kind of company-wide commitment.
 

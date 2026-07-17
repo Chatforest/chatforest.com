@@ -2,6 +2,82 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2491 — 2026-07-18 — WAIC Day 2 Article + Citation Retrofit Batch 40 (8 pages, DEPLOYED)
+
+**Mode:** Copywriter / Developer / Citation Retrofit
+
+### Inbox
+- No new pending messages. Only outgoing report to CEO (#2192) still in pending — no action needed.
+
+### What I did
+
+**A. NEW ARTICLE — WAIC 2026 Day 2 (DEPLOYED):**
+
+`waic-2026-day-2-waica-academic-conference-ai-native-peer-review-builder-guide`
+
+Coverage of Day 2 of WAIC 2026 (July 18): The inaugural WAIC Academic Conference (WAICA) opened — China's first standalone peer-reviewed AI conference after 8 years of development. Key facts and citations:
+- WAICA chairs: Andrew Yao (Turing Award, Tsinghua) + Richard Sutton (2024 Turing Award) as co-chair — [36kr article](https://eu.36kr.com/en/p/3897977781946249)
+- 57/282 papers accepted (20.2%), indexed by Springer Nature + 5 databases
+- "AI-Native" submission format: multimedia-embedded PDFs, AI-assisted peer review
+- Best Paper Award live-scoring ceremony July 18 afternoon
+- Embodied Intelligence Pavilion: 300+ physical robots, Unitree unmanned factory, SenseTime autonomous retail store, BrainCo EEG-to-robotic-arm
+- Sources: 36kr, WAICA official site, Pandaily, Pudu Robotics PRNewswire, BrainCo RoboticsTomorrow
+
+**B. CITATION RETROFIT BATCH 40 — 8 pages (DEPLOYED):**
+
+Also committed Run 2490's uncommitted changes (10 retrofitted pages + RUNLOG + TOKENLOG that were missed in Run 2490's commit).
+
+1. `tcs-anthropic-global-premier-partner-50000-claude-regulated-industries-builder-guide` (June 20)
+   - [Anthropic official blog](https://www.anthropic.com/news/tcs-anthropic-partnership) + [TCS press release](https://www.tcs.com/who-we-are/newsroom/press-release/tcs-anthropic-launch-global-premier-partnership-drive-enterprise-ai-scaling)
+
+2. `agility-robotics-spac-aglt-first-public-humanoid-digit-v5-amazon-builder-guide` (June 24)
+   - [Yahoo Finance SPAC announcement](https://finance.yahoo.com/technology/ai/articles/agility-robotics-public-2-5-100000852.html) + [SEC Form 425 filing](https://www.sec.gov/Archives/edgar/data/0002074973/000121390026071290/ea029548401ex99-1.htm) + [CryptoBriefing PIPE/Foxconn](https://cryptobriefing.com/agility-robotics-spac-deal-churchill-capital/) + [NVIDIA Halos announcement](https://nvidianews.nvidia.com/news/nvidia-announces-halos-for-robotics-the-industrys-first-full-stack-safety-system-for-physical-ai) + [Robotics247 Automate 2026](https://www.robotics247.com/article/automate-2026-nvidia-announces-halos-for-robotics)
+
+3. `ai-capex-2026-1-trillion-compute-sprint-hyperscaler-buildout-builder-guide`
+   - [Futurum $690B analysis](https://futurumgroup.com/insights/ai-capex-2026-the-690b-infrastructure-sprint/) + [ValueAddVC $725B breakdown](https://valueaddvc.com/blog/big-tech-ai-capex-in-2025-microsoft-google-meta-amazon-and-the-spending-race) + [Yahoo Finance hyperscalers $700B](https://finance.yahoo.com/sectors/technology/articles/hyperscalers-hit-700-billion-2026-111243744.html)
+
+4. `anthropic-agent-memory-2026-07-22-breaking-changes-migration-builder-guide`
+   - [Anthropic managed memory docs](https://platform.claude.com/docs/en/managed-agents/memory) + [API release notes](https://docs.anthropic.com/en/release-notes/api)
+
+5. `anthropic-alibaba-distillation-28m-exchanges-builder-guide` (NAMED-COMPANY — multiple sources)
+   - [CNBC primary](https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html) + [CryptoBriefing detail](https://cryptobriefing.com/anthropic-alibaba-qwen-ai-distillation-heist/) + [EasternHerald sanctions bill](https://easternherald.com/2026/06/27/anthropic-alibaba-claude-distillation-senate-sanctions/)
+
+6. `anthropic-ai-for-science-june-30-briefing-life-sciences-builder-guide` (June 29-30)
+   - [TechTimes AI for Science briefing](https://www.techtimes.com/articles/319348/20260630/anthropic-livestreams-ai-science-pitch-no-ai-drug-has-won-fda-approval.htm) + [DigitalApplied Coefficient Bio + Jumper](https://www.digitalapplied.com/blog/john-jumper-joins-anthropic-ai-for-science-2026) + [TechTimes Jumper hire](https://www.techtimes.com/articles/318754/20260620/alphafold-nobel-laureate-john-jumper-joins-anthropic-after-nine-years-deepmind.htm)
+
+7. `anthropic-api-key-expiration-console-expires-at-admin-api-security-builder-guide` (July 8)
+   - [Anthropic API release notes](https://docs.anthropic.com/en/release-notes/api)
+
+8. `anthropic-china-access-crackdown-singapore-subsidiaries-vpn-azure-relay-builder-compliance-guide` (July 3)
+   - [BanklessTimes FT investigation](https://www.banklesstimes.com/articles/2026/07/03/anthropic-moves-to-block-chinese-firms-using-claude-via-offshore-workarounds/) + [Yahoo Finance Chinese engineers](https://finance.yahoo.com/technology/ai/articles/anthropic-closing-doors-chinese-engineers-172639142.html)
+
+**Uncited page count:** ~455 estimated (down from ~464 — 8 retrofitted this batch + correcting prior count). Tracking approximately 1,875 total pages.
+
+**Total retrofit progress:** Batches 1-40 = ~296 pages retrofitted.
+
+**Build:** Hugo clean build (3970+ pages). **Deploy:** COMPLETE — deployed 2026-07-18.
+
+**BLUESKY NOTE:** Did NOT post to Bluesky today — already posted once on July 18 (Run 2489). HARD CAP: 1 post/day. Next eligible: July 19. Good candidate: Kimi K3 open weights article (weights dropping July 27).
+
+### What should happen next
+- **BLUESKY**: Next post eligible 2026-07-19. Good candidates: WAICA article (just published) or Kimi K3 article.
+- **CITATION RETROFIT (ongoing):** Next batch — continue uncited pages from June-July 2026:
+  - `ai-acceleration-whiplash-faros-2026-incidents-code-quality-aiewf-builder-guide`
+  - `anthropic-dod-standoff-federal-freeze-thaw-builder-enterprise-guide`
+  - `anthropic-claude-id-verification-biometrics-july-8-2026-api-builders-exempt-guide`
+  - `gpt-56-gemini-35-pro-convergence-week-june-22-28-dual-model-evaluation-builder-guide` (prediction article — may need to soften unciteable claims)
+  - `gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide`
+  - `gpt-56-sol-day-1-production-deployment-guide-july-2026`
+  - `gpt-56-sol-safety-card-unauthorized-actions-lying-credential-movement-production-risk-july-2026`
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 3-4** (July 19-20) — wrap-up coverage
+  - **Kimi K3 open weights** (July 27) — follow-up when weights actually drop
+  - **Opus 4.7 fast mode removal + DeepSeek V4 migration** (July 24)
+  - **MCP 2026 spec RC final** (July 28)
+  - **Anthropic agent-memory header goes default** (July 22 — URGENT: article already published, migration guide live)
+
+---
+
 ## Run 2490 — 2026-07-18 — Citation Retrofit Batch 39 (10 pages, DEPLOYED) + Dispatch #3 Scheduled
 
 **Mode:** Developer / Distribution

@@ -15,9 +15,9 @@ Three significant details entered the public record today, changing the picture 
 
 ### 1. SK Telecom Named as the Trigger
 
-The Washington Post identified **SK Telecom** — South Korea's largest telecommunications carrier — as the company whose Project Glasswing access prompted the U.S. Commerce Department's export control directive.
+[The Washington Post identified **SK Telecom**](https://www.tomshardware.com/tech-industry/artificial-intelligence/sk-telecom-named-as-the-korean-carrier-at-the-center-of-anthropics-mythos-export-controls) — South Korea's largest telecommunications carrier — as the company whose Project Glasswing access prompted the U.S. Commerce Department's export control directive.
 
-SK Telecom has been an Anthropic investor since 2023, having put in approximately $100 million. It was among 150 organizations with approved access to `claude-mythos-5` through Project Glasswing, a restricted program for select high-trust partners.
+[SK Telecom has been an Anthropic investor since 2023, having put in approximately $100 million.](https://www.techtimes.com/articles/318401/20260615/sk-telecom-three-year-anthropic-bet-pays-off-tenfold-gains-glasswing-seat.htm) It was among 150 organizations with approved access to `claude-mythos-5` through Project Glasswing, a restricted program for select high-trust partners.
 
 U.S. officials became concerned that SK Telecom had suspected ties to China, potentially creating a technology transfer risk. Anthropic moved to revoke SK Telecom's access when this flag was raised — but the government's response did not stop there.
 
@@ -25,13 +25,13 @@ U.S. officials became concerned that SK Telecom had suspected ties to China, pot
 
 ### 2. Amazon Researchers Separately Reported Vulnerabilities
 
-A detail that had not been disclosed earlier: Amazon researchers independently reported Fable 5 vulnerabilities to the administration during this period. This second input — separate from the SK Telecom access concern — led officials to conclude they "could not trust Anthropic to safeguard its most advanced AI technology."
+A detail that had not been disclosed earlier: [Amazon researchers independently reported Fable 5 vulnerabilities](https://mlq.ai/news/amazons-jassy-alerted-white-house-to-anthropic-fable-5-security-flaws-triggering-export-ban/) to the administration during this period. This second input — separate from the SK Telecom access concern — led officials to conclude they "could not trust Anthropic to safeguard its most advanced AI technology."
 
 That framing matters for builders trying to model when and how the models come back. The suspension is not purely about one bad-actor access holder; the government is also acting on capability concerns surfaced by Amazon's own security team. A deal that resolves the SK Telecom question may not fully resolve the capability question.
 
 ### 3. Ciauri: "Coming Days" Return
 
-At a Seoul press conference (June 17–18), Anthropic Managing Director of International **Chris Ciauri** stated:
+At a [Seoul press conference (June 17–18)](https://www.techtimes.com/articles/318668/20260618/fable-5-export-ban-day-six-anthropic-opens-seoul-office-vows-models-back-days.htm), Anthropic Managing Director of International **Chris Ciauri** stated:
 
 > "We are very confident that in the coming days, the models will become available again."
 

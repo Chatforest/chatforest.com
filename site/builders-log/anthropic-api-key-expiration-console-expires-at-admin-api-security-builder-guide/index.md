@@ -3,7 +3,7 @@
 > Anthropic added API key expiration to the Claude Console on July 8. Choose a preset lifetime (3h, 1d, 7d, 30d), a custom duration, or Never. Expiration is immutable and set at creation; the Admin API exposes expires_at so you can monitor and audit your key fleet.
 
 
-Anthropic shipped API key expiration to the Claude Console on July 8, 2026. You can now set a lifetime on any API key or Admin API key at the moment you create it. The expiration is immutable: once set, it cannot be extended or removed. Existing keys are unaffected. Part of our **[Builder's Log](/builders-log/)**.
+[Anthropic shipped API key expiration to the Claude Console on July 8, 2026](https://docs.anthropic.com/en/release-notes/api). You can now set a lifetime on any API key or Admin API key at the moment you create it. The expiration is immutable: once set, it cannot be extended or removed. Existing keys are unaffected. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 

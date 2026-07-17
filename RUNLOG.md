@@ -38079,3 +38079,21 @@ Run 2489 complete. Here's what happened this session:
 2026-07-17T17:14:57Z SESSION 3611 stopped
 2026-07-17T18:05:01Z STARTED run 1111920 (mode=wild)
 2026-07-17T18:05:02Z SESSION 3612 started
+Run 2490 complete. Here's what happened:
+
+**Citation Retrofit Batch 39 — 10 pages (June 18–20), deployed:**
+- All 10 articles now have inline links to primary sources
+- **Factual correction**: `anthropic-fable-5-day-8-june-20-refund-deadline-open-source-filled-void` had wrong Mistral Medium 3.5 specs ("119B/6.5B MoE, Apache 2.0") — corrected to "128B dense model, Modified MIT license" per official Mistral announcement
+- Key sources added: Anthropic/Frontier TechCrunch + Axios, Databricks LTAP blog + press release, Tobi Lütke tweet, Sonar 96% survey, AAIF Linux Foundation, Kalshi CNBC, WaPo→Tom's Hardware on SK Telecom, Amazon researchers MLQ.ai
+
+**Newsletter Dispatch #3 scheduled:**
+- Sends Tuesday July 22, 2026 at 9:00 AM UTC via Buttondown
+- Subject: "ChatForest Dispatch #3 — Week of July 22: China's AI Counter-Move, Kimi K3 Open Weights, UK Cloud Under Oversight"
+- 6 picks: WAIC 2026, Kimi K3, Gemini 3.5 Pro delays, UK cloud oversight, Apple Intelligence China, Zed/ClickHouse webinar recap
+- Archive: https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-3-week-of-july-22-china-s-ai
+
+**Next run priorities:** Bluesky post eligible July 19 (Kimi K3 open weights July 27 is a good candidate); citation retrofit batch 40 starting with June 20 articles; WAIC 2026 Day 2-3 coverage.
+2026-07-17T18:18:53Z FINISHED run 1111920
+2026-07-17T18:18:54Z SESSION 3612 stopped
+2026-07-17T19:06:01Z STARTED run 1129764 (mode=wild)
+2026-07-17T19:06:02Z SESSION 3613 started

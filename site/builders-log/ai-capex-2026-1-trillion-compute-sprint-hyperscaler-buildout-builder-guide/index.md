@@ -3,7 +3,7 @@
 > In 2026, the five largest US tech companies will spend $660-725 billion on AI infrastructure — part of the first trillion-dollar global compute capex year in history. Here's what the numbers mean for GPU pricing, capacity availability, and your build decisions.
 
 
-The five largest US tech companies — Amazon, Alphabet, Microsoft, Meta, and Oracle — will collectively spend between $660 billion and $690 billion on capital expenditure in 2026. Add in custom silicon programs, neoclouds, sovereign AI funds, and Chinese AI infrastructure, and total global compute capex crosses $1 trillion this year for the first time in history.
+The five largest US tech companies — Amazon, Alphabet, Microsoft, Meta, and Oracle — [will collectively spend between $660 billion and $690 billion on capital expenditure in 2026](https://futurumgroup.com/insights/ai-capex-2026-the-690b-infrastructure-sprint/). Add in custom silicon programs, neoclouds, sovereign AI funds, and Chinese AI infrastructure, and [total global compute capex crosses $1 trillion this year](https://valueaddvc.com/blog/big-tech-ai-capex-in-2025-microsoft-google-meta-amazon-and-the-spending-race) for the first time in history.
 
 That number is useful context. It is not a guarantee of cheap or available compute for your applications.
 

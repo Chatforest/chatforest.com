@@ -3,7 +3,7 @@
 > On June 17, Anthropic became the first AI-native company to join Frontier, the Stripe-founded coalition that has now pledged $1.8 billion to carbon removal. It's the right headline — but the builder implications run deeper than sustainability optics. Here's what Scope 3 compliance, energy constraints, and enterprise procurement mean for teams building on Claude APIs.
 
 
-On June 17, 2026, Anthropic became the first AI-native company to join Frontier — the carbon removal coalition co-founded by Stripe in 2022 that counts Google, Shopify, Salesforce, and JPMorgan Chase among its members. The announcement came alongside a new $915 million funding tranche that nearly doubles the coalition's total commitments to $1.8 billion.
+On June 17, 2026, [Anthropic became the first AI-native company to join Frontier](https://techcrunch.com/2026/06/17/anthropic-becomes-first-ai-startup-to-join-the-frontier-carbon-removal-coalition/) — the carbon removal coalition co-founded by Stripe in 2022 that counts Google, Shopify, Salesforce, and JPMorgan Chase among its members. The announcement came alongside a [new $915 million funding tranche](https://www.axios.com/2026/06/17/frontier-carbon-removal-spending-anthropic) that nearly doubles the coalition's total commitments to $1.8 billion.
 
 The press release reads like a sustainability milestone. The builder implications are more operational than they appear.
 
@@ -11,7 +11,7 @@ The press release reads like a sustainability milestone. The builder implication
 
 Frontier is not a carbon offset marketplace. It functions as an advance market commitment (AMC): member companies agree to purchase carbon removal at predetermined prices when the technology becomes available at scale. The idea is to de-risk the supply side — giving early-stage carbon removal startups a guaranteed buyer so they can actually build the capacity that eventually brings costs down.
 
-The June 17 tranche, called the Frontier Growth AMC, commits $915 million from members including Stripe, Google, Shopify, Salesforce, H&M, and now Anthropic. The purchases extend as far as 2040 through 8 to 10 year offtake contracts. Frontier has already contracted nearly $700 million across 50+ projects targeting 1.8 million tons of CO₂ removal.
+The June 17 tranche, called the [Frontier Growth AMC](https://trellis.net/article/anthropic-google-stripe-frontier-growth-amc/), commits $915 million from members including Stripe, Google, Shopify, Salesforce, H&M, and now Anthropic. The purchases extend as far as 2040 through 8 to 10 year offtake contracts. Frontier has already contracted nearly $700 million across 50+ projects targeting 1.8 million tons of CO₂ removal.
 
 Going forward, Frontier will concentrate on 10 to 15 "focused bets" in technologies where they have high conviction on gigaton-scale potential. These are serious decarbonization bets, not feel-good credits from existing forest projects.
 
@@ -19,14 +19,14 @@ Anthropic's individual commitment amount was not disclosed.
 
 ## Why Anthropic Joined Now
 
-The timing is not accidental. Anthropic cited a concrete figure: the US AI sector could need **at least 50 gigawatts of new electricity capacity by 2028**. That is not a speculative estimate — it is a planning number that major cloud providers, grid operators, and data center developers are already using to model buildout timelines.
+The timing is not accidental. Anthropic cited a concrete figure: the US AI sector could need [**at least 50 gigawatts of new electricity capacity by 2028**](https://techcrunch.com/2026/06/17/anthropic-becomes-first-ai-startup-to-join-the-frontier-carbon-removal-coalition/). That is not a speculative estimate — it is a planning number that major cloud providers, grid operators, and data center developers are already using to model buildout timelines.
 
 Fifty gigawatts represents a structural constraint on AI infrastructure, not just an environmental concern. At current US grid expansion rates, that capacity does not materialize on schedule without deliberate policy and investment action. Anthropic's Frontier commitment is partly a hedge against regulatory scrutiny of AI's energy footprint at the moment that footprint becomes politically visible.
 
 The company has also hired a head of non-financial reporting and strategy, specifically to build out its sustainability reporting capabilities. That role exists because two disclosure regimes are now live or incoming:
 
-- **EU CSRD (Corporate Sustainability Reporting Directive)** — Required large EU-listed companies to begin disclosing climate data in 2024, with Scope 3 (indirect emissions from supply chain) requirements phasing in.
-- **California SB 253 (Climate Corporate Data Accountability Act)** — Requires companies with $1 billion+ in California revenues to disclose Scope 1, 2, and 3 emissions starting with fiscal year 2026 data.
+- **[EU CSRD (Corporate Sustainability Reporting Directive)](https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en)** — Required large EU-listed companies to begin disclosing climate data in 2024, with Scope 3 (indirect emissions from supply chain) requirements phasing in.
+- **[California SB 253 (Climate Corporate Data Accountability Act)](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB253)** — Requires companies with $1 billion+ in California revenues to disclose Scope 1, 2, and 3 emissions starting with fiscal year 2026 data.
 
 Scope 3 emissions include emissions from purchased services — including API calls to AI providers. If you are a large enterprise using Claude APIs, Anthropic's carbon footprint will eventually appear on your sustainability reports.
 

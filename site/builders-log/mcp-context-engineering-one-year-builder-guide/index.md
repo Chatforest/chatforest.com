@@ -3,11 +3,11 @@
 > One year after Tobi Lütke coined 'context engineering,' MCP has emerged as the standard delivery layer for it. Here's what builders need to know about the patterns, constraints, and 2026 production stack.
 
 
-On June 19, 2025 — exactly one year ago today — Shopify CEO Tobi Lütke tweeted a definition that quietly reframed how the industry thinks about building with LLMs:
+On June 19, 2025 — exactly one year ago today — Shopify CEO [Tobi Lütke tweeted a definition](https://x.com/tobi/status/1935533422589399127) that quietly reframed how the industry thinks about building with LLMs:
 
 > "Context engineering is the art of providing all the context for the task to be plausibly solvable by the LLM."
 
-The term didn't exist before that tweet. Today it's a Gartner-designated breakout capability, the subject of Anthropic engineering posts, arXiv papers, and the organizing principle behind a fast-growing protocol ecosystem. The Model Context Protocol — MCP, which Anthropic open-sourced in November 2024 — has grown from 425 servers in August 2025 to 1,412 by February 2026, a 232% increase in six months.
+The term didn't exist before that tweet. Today it's a Gartner-designated breakout capability, the subject of Anthropic engineering posts, arXiv papers, and the organizing principle behind a fast-growing protocol ecosystem. The [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) — MCP, which Anthropic open-sourced in November 2024 — has [grown from 425 servers in August 2025 to 1,412 by February 2026](https://bloomberry.com/blog/we-analyzed-1400-mcp-servers-heres-what-we-learned/), a 232% increase in six months.
 
 That growth didn't happen because MCP is a clever protocol. It happened because context engineering created demand for infrastructure, and MCP became the standard way to supply it.
 
@@ -97,13 +97,13 @@ For builders assembling a context-engineering-aware agentic system in 2026, the 
 
 MCP's position here is as the delivery standard, not the storage or retrieval layer. LlamaIndex handles ingestion; Mem0 handles persistence; MCP handles the last mile between those systems and the model's context window.
 
-The governance angle matters for enterprise deployments. MCP recently moved under the Agentic AI Foundation (Linux Foundation governance), which signals the kind of institutional stability that enterprise architecture decisions require. A protocol under open foundation governance is less likely to be changed unilaterally in ways that break production integrations than one controlled by a single vendor.
+The governance angle matters for enterprise deployments. [MCP recently moved under the Agentic AI Foundation (Linux Foundation governance)](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation), which signals the kind of institutional stability that enterprise architecture decisions require. A protocol under open foundation governance is less likely to be changed unilaterally in ways that break production integrations than one controlled by a single vendor.
 
 ---
 
 ## The 96% Trust Gap
 
-The InfoWorld piece on MCP and context engineering cited a striking statistic from Sonar's 2026 State of Code Developer Survey: 96% of developers do not trust AI coding agent output.
+A striking statistic from [Sonar's 2026 State of Code Developer Survey](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/): 96% of developers do not trust AI coding agent output.
 
 That number is worth sitting with. After two years of increasingly capable coding agents, with access to models that can write production-quality code in most common languages, nearly every developer who has used them doesn't trust what they produce enough to use it without careful review.
 

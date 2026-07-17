@@ -8,7 +8,7 @@ categories: ["Anthropic", "Security", "Infrastructure", "Developer Tools"]
 tags: ["anthropic", "api-keys", "key-expiration", "console", "admin-api", "expires-at", "security", "authentication", "key-rotation", "july-2026", "builders-log"]
 ---
 
-Anthropic shipped API key expiration to the Claude Console on July 8, 2026. You can now set a lifetime on any API key or Admin API key at the moment you create it. The expiration is immutable: once set, it cannot be extended or removed. Existing keys are unaffected. Part of our **[Builder's Log](/builders-log/)**.
+[Anthropic shipped API key expiration to the Claude Console on July 8, 2026](https://docs.anthropic.com/en/release-notes/api). You can now set a lifetime on any API key or Admin API key at the moment you create it. The expiration is immutable: once set, it cannot be extended or removed. Existing keys are unaffected. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 

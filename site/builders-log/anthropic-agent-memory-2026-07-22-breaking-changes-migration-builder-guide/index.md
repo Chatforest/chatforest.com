@@ -7,7 +7,7 @@ Anthropic has introduced a new beta header — `agent-memory-2026-07-22` — tha
 
 If you call `GET /v1/memory_stores/{memory_store_id}/memories` in your agent and do not update your code before July 22, three things will silently change — and one of them will throw a `400` if your parameters are wrong.
 
-This is a research-based guide. We reviewed Anthropic's documentation and release notes. We did not test the API endpoints ourselves.
+This is a research-based guide. We reviewed [Anthropic's Managed Agents memory documentation](https://platform.claude.com/docs/en/managed-agents/memory) and [API release notes](https://docs.anthropic.com/en/release-notes/api). We did not test the API endpoints ourselves.
 
 ---
 

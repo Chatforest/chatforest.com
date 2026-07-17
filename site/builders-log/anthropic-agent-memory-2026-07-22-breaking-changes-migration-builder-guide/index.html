@@ -67,7 +67,7 @@
       <div class="article-body">
         <p>Anthropic has introduced a new beta header — <code>agent-memory-2026-07-22</code> — that changes how memory listing works for Managed Agents memory stores. The new behavior is available now as an opt-in. On <strong>July 22, 2026</strong>, the older <code>managed-agents-2026-04-01</code> header automatically adopts the same behavior for memory store list calls.</p>
 <p>If you call <code>GET /v1/memory_stores/{memory_store_id}/memories</code> in your agent and do not update your code before July 22, three things will silently change — and one of them will throw a <code>400</code> if your parameters are wrong.</p>
-<p>This is a research-based guide. We reviewed Anthropic&rsquo;s documentation and release notes. We did not test the API endpoints ourselves.</p>
+<p>This is a research-based guide. We reviewed <a href="https://platform.claude.com/docs/en/managed-agents/memory">Anthropic&rsquo;s Managed Agents memory documentation</a> and <a href="https://docs.anthropic.com/en/release-notes/api">API release notes</a>. We did not test the API endpoints ourselves.</p>
 <hr>
 <h2 id="context-what-is-the-managed-agents-memory-store">Context: What Is the Managed Agents Memory Store?</h2>
 <p>Anthropic added persistent memory to Managed Agents in a public beta in mid-2026. Agents can write facts, preferences, or session state to a memory store, then retrieve them in future sessions. Each memory has a path (like a filesystem) — for example, <code>user/profile</code>, <code>project/123/context</code>.</p>
@@ -219,6 +219,13 @@ memories_sorted <span style="color:#f92672">=</span> sorted(memories, key<span s
   <h2 class="section-heading">More Guides</h2>
   
     <div class="article-card">
+  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-18 12:00:00</span></div>
+  <h3><a href="/builders-log/waic-2026-day-2-waica-academic-conference-ai-native-peer-review-builder-guide/">WAIC 2026 Day 2: China Launches Its First AI Academic Conference with AI-Native Review — Builder&#39;s Guide</a></h3>
+  <p>Day 2 of WAIC 2026 (July 18): the inaugural WAIC Academic Conference (WAICA) opened with Turing Award winners Andrew Yao and Richard Sutton at the helm, an AI-native submission and review system, 20.2% acceptance rate, and 300&#43; physical robots in the Embodied Intelligence Hall. What it signals for builders.</p>
+</div>
+
+  
+    <div class="article-card">
   <div class="card-meta"><span>Builders-Log</span> <span>2026-07-17 00:00:00</span></div>
   <h3><a href="/builders-log/apple-intelligence-china-cac-alibaba-qwen-approval-builder-guide/">Apple Intelligence Gets China Green Light: CAC Clears 7 On-Device AI Services, Apple the Only Foreign Brand</a></h3>
   <p>China&#39;s CAC approved Apple Intelligence on July 15, 2026 — ending a 22-month wait. Apple runs on Alibaba Qwen, compressed to under 4GB. Seven companies cleared simultaneously. Builder guide: the dual CAC&#43;MIIT pathway every developer targeting China must navigate.</p>
@@ -236,13 +243,6 @@ memories_sorted <span style="color:#f92672">=</span> sorted(memories, key<span s
   <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-17 00:00:00</span></div>
   <h3><a href="/builders-log/gemini-3-5-pro-third-delay-july-17-stopgap-36-flash-builder-guide/">Gemini 3.5 Pro Missed Its Third Deadline Today. What Google Is Doing Instead.</a></h3>
   <p>Gemini 3.5 Pro did not launch on July 17. The rebuilt model&#39;s Rev25 checkpoints are reportedly still undercooked — weak coding, knowledge-cutoff hallucinations. Google is registering Gemini 3.6 Flash as a stopgap. Here&#39;s what builders should do.</p>
-</div>
-
-  
-    <div class="article-card">
-  <div class="card-meta"><span>Builder&#39;s Log</span> <span>2026-07-17 00:00:00</span></div>
-  <h3><a href="/builders-log/kimi-k3-moonshot-ai-2-8t-moe-open-weights-builder-guide/">Kimi K3: Moonshot&#39;s 2.8T MoE Benchmarks, Open Weights, and Builder Implications</a></h3>
-  <p>Moonshot AI released Kimi K3 on July 16 — a 2.8-trillion-parameter sparse MoE with 1M-token context, 93.5% on GPQA Diamond, and #1 on LMSYS Frontend Code Arena. Open weights ship July 27. Here&#39;s what builders need to know.</p>
 </div>
 
   

@@ -7,7 +7,7 @@ categories: ["Infrastructure", "AI Industry", "Compute"]
 tags: ["infrastructure", "compute", "gpu", "hyperscaler", "amazon", "google", "microsoft", "meta", "oracle", "capex", "pricing", "capacity"]
 ---
 
-The five largest US tech companies — Amazon, Alphabet, Microsoft, Meta, and Oracle — will collectively spend between $660 billion and $690 billion on capital expenditure in 2026. Add in custom silicon programs, neoclouds, sovereign AI funds, and Chinese AI infrastructure, and total global compute capex crosses $1 trillion this year for the first time in history.
+The five largest US tech companies — Amazon, Alphabet, Microsoft, Meta, and Oracle — [will collectively spend between $660 billion and $690 billion on capital expenditure in 2026](https://futurumgroup.com/insights/ai-capex-2026-the-690b-infrastructure-sprint/). Add in custom silicon programs, neoclouds, sovereign AI funds, and Chinese AI infrastructure, and [total global compute capex crosses $1 trillion this year](https://valueaddvc.com/blog/big-tech-ai-capex-in-2025-microsoft-google-meta-amazon-and-the-spending-race) for the first time in history.
 
 That number is useful context. It is not a guarantee of cheap or available compute for your applications.
 
