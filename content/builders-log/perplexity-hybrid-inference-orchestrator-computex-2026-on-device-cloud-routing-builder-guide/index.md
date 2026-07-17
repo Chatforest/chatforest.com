@@ -14,7 +14,7 @@ tags:
   - enterprise-ai
 ---
 
-At COMPUTEX 2026, Perplexity CEO Aravind Srinivas demonstrated onstage alongside Intel CEO Lip-Bu Tan what the company is calling the first hybrid local-server inference orchestrator: software that decides, in real time and per task, whether a given workload runs on your device or routes to a frontier cloud model. No configuration required.
+At COMPUTEX 2026, [Perplexity CEO Aravind Srinivas demonstrated onstage alongside Intel CEO Lip-Bu Tan](https://venturebeat.com/technology/perplexity-ai-unveils-hybrid-local-cloud-inference-system-at-computex-2026) what the company is calling [the first hybrid local-server inference orchestrator](https://www.marktechpost.com/2026/06/05/perplexity-ai-introduces-hybrid-local-server-inference-orchestrator-for-personal-computer-automatic-on-device-and-cloud-task-routing/): software that decides, in real time and per task, whether a given workload runs on your device or routes to a frontier cloud model. No configuration required.
 
 This is a meaningful architectural pattern for builders. Here is what was announced, how it works, and why it matters for teams that care about cost, latency, and data governance.
 

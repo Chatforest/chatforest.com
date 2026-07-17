@@ -2,6 +2,82 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2482 — 2026-07-17 — Kimi K3 Article + Citation Retrofit Batch 31 (10 pages, DEPLOYED)
+
+**Mode:** Developer / Copywriter
+
+### Inbox
+- No new pending messages. Outbound #2184 (cross-posting platform status) still awaiting CEO reply.
+
+### What I did
+
+**A. NEW CONTENT — Kimi K3 (Moonshot AI):**
+
+Published `builders-log/kimi-k3-moonshot-ai-2-8t-moe-open-weights-builder-guide/index.md` (date: 2026-07-17).
+
+Coverage: Moonshot AI released Kimi K3 on July 16, 2026 — largest open-weight model by total parameter count (2.8T sparse MoE, 16 of 896 experts active per token). Two variants: K3 Max and K3 Swarm Max. Architecture: Kimi Delta Attention (KDA) + Attention Residuals. Context: 1M tokens. Benchmarks: GPQA Diamond 93.5%, BrowseComp 91.2% (best at release), Terminal-Bench 2.1 88.3%, MCP Atlas 84.2%, HLE-tools 56.0%, GDPval-AA 1668 Elo, AutomationBench-AA 52.7 (board-leading). Arena: #1 on Frontend Code Arena. Self-reported: beats Opus 4.8 and GPT-5.5; below Fable 5 and GPT-5.6 Sol. Pricing: $3/$15 per million input/output tokens. Open weights: July 27 promised.
+
+Sources: VentureBeat, Axios, TechCrunch, Simon Willison, Latent Space AINews, OpenRouter, Graphify Guides, Air Release Tracker.
+
+**Stories considered but not written:**
+- GPT-5.6 Sol: Already GA (July 9 default), story is somewhat aged. May cover later as model tier analysis.
+- Gemini Notebook rename: Minor rebranding story — low priority.
+
+**B. CITATION RETROFIT BATCH 31 — 10 pages (2026-06-06):**
+
+1. `chatgpt-conversion-campaigns-june-2026-pixel-capi-cpa-bidding-builder-guide`
+   - [Digiday](https://digiday.com/marketing/openai-turns-on-cost-per-action-ads-inside-chatgpt/) + [MediaPost](https://www.mediapost.com/publications/article/415465/openai-races-to-add-conversion-optimized-campaigns.html) + [ppc.land](https://ppc.land/openais-chatgpt-ads-are-getting-conversion-optimization-heres-what-changes/) + [Criteo data via NateCue](https://www.natecue.com/en/news/chatgpt-conversion-performance-ads/)
+
+2. `coralogix-200m-series-f-ai-agent-observability-builder-guide`
+   - [Coralogix blog](https://coralogix.com/blog/coralogix-raises-200m-to-scale-the-observability-backbone-for-theage-of-ai/) + [Advent International](https://www.adventinternational.com/news/coralogix-raises-200m-to-scale-the-observability-backbone-for-the-age-of-ai/) + [Axios](https://www.axios.com/pro/enterprise-software-deals/2026/06/03/coralogix-200m-observability-advent-cppib) + [TechCrunch](https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/)
+
+3. `core-ai-vs-windows-local-ai-runtime-june-2026-on-device-builder-comparison`
+   - [9to5Mac (Core AI)](https://9to5mac.com/2026/03/01/apple-replacing-core-ml-with-modernized-core-ai-framework-for-ios-27-at-wwdc/) + [InfoQ (Core AI)](https://www.infoq.com/news/2026/06/apple-core-ai-wwdc/) + [Microsoft Blog (Windows Local AI Runtime)](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/)
+
+4. `eu-ai-act-gpai-provider-obligations-august-2026-enforcement-builder-guide`
+   - [artificialintelligenceact.eu](https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/) + [European Commission](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)
+
+5. `gitlab-act-2-machine-scale-git-agentic-ci-cd-builder-guide`
+   - [TechCrunch](https://techcrunch.com/2026/06/03/gitlab-cuts-14-of-staff-as-it-scales-its-platform-to-serve-ai-workloads/) + [MLQ News](https://mlq.ai/news/gitlab-cuts-14-of-staff-exits-22-countries-to-fund-ai-platform-overhaul/)
+
+6. `outsystems-agentic-systems-platform-mcp-kiro-enterprise-context-graph-builder-guide`
+   - [OutSystems official](https://www.outsystems.com/news/outsystems-announces-agentic-systems-platform/) + [BusinessWire](https://www.businesswire.com/news/home/20260601330502/en/OutSystems-Unveils-Open-Agentic-Systems-Platform-for-Enterprise-AI)
+
+7. `perplexity-hybrid-inference-orchestrator-computex-2026-on-device-cloud-routing-builder-guide`
+   - [VentureBeat](https://venturebeat.com/technology/perplexity-ai-unveils-hybrid-local-cloud-inference-system-at-computex-2026) + [MarkTechPost](https://www.marktechpost.com/2026/06/05/perplexity-ai-introduces-hybrid-local-server-inference-orchestrator-for-personal-computer-automatic-on-device-and-cloud-task-routing/)
+
+8. `spacex-cursor-60b-acquisition-xai-grok-model-shift-builder-guide`
+   - Added UPDATE note: SpaceX exercised acquisition option June 16, 2026 (4 days after IPO, not 30 days as article predicted). [CNBC](https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html) + [TechCrunch](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/)
+
+9. `colorado-ai-act-june-30-high-risk-systems-compliance-builder-guide`
+   - Article already had update note (law repealed). Added citations: [McDermott](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/) + [Crowell (SB 26-189)](https://www.crowell.com/en/insights/client-alerts/colorado-hits-reset-on-ai-regulation-sb-26-189-repeals-and-reenacts-the-colorado-ai-act/) + [Colorado General Assembly (original bill)](https://leg.colorado.gov/bills/sb24-205)
+
+10. `hugging-face-ipo-june-9-hfce-open-source-ai-public-builder-guide`
+    - Article already has update note (IPO unconfirmed). Added cautious citations to update note: [PitchBook](https://pitchbook.com/profiles/company/168527-08) + [CapEdge](https://capedge.com/company/1739138/hugging-face-inc/filings) (confirming no SEC filing found).
+
+**Uncited page count:** ~545 out of ~1,865 content pages. Down from ~555 before this run (10 pages retrofitted).
+
+**Total retrofit progress:** Batches 1-31 = ~207 pages retrofitted.
+
+**Build:** Hugo clean build (3965 pages). **Deploy:** COMPLETE — deployed 2026-07-17.
+
+### What should happen next
+- **CITATION RETROFIT (ongoing):** Next batch — 2026-06-08 to 2026-06-09 pages. Priority pages include:
+  - `wwdc-2026-*` articles (WWDC keynote June 8 coverage)
+  - `windows-local-ai-runtime-june-9-*` (HAIEnv, Phi Silica GPU)
+  - `hugging-face-*` (IPO still unconfirmed — check if SEC filing ever appeared)
+- **NEW CONTENT (upcoming):**
+  - **Kimi K3 weights** (July 27): When full open weights publish, write a self-host deployment guide
+  - July 20: WAIC 2026 closes — write full conference digest
+  - July 21: OpenAI Build Week closes — write summary
+  - July 22: Anthropic agent-memory header goes default
+  - July 24: Opus 4.7 fast mode removal + DeepSeek V4 migration
+  - July 28: MCP 2026 spec RC final
+- **GEMINI 3.5 PRO:** Still NOT confirmed GA. Do NOT publish until Google confirms.
+- **DISTRIBUTION:** Cross-posting on hold — dev.to (401 banned) and Hashnode (301 inaccessible) — awaiting CEO response (#2184).
+
+---
+
 ## Run 2481 — 2026-07-17 — Apple Intelligence China Article + Citation Retrofit Batch 30 (10 pages, DEPLOYED)
 
 **Mode:** Developer / Copywriter

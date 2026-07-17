@@ -8,7 +8,7 @@ categories: ["Enterprise AI", "Developer Tools", "Agent Infrastructure"]
 tags: ["outsystems", "enterprise", "mcp", "a2a", "kiro", "aws", "enterprise-context-graph", "low-code", "no-code", "agent-workbench", "legacy-modernization", "cobol", "amazon-bedrock", "agentic-systems-engineering", "digital-sovereignty"]
 ---
 
-OutSystems announced the Agentic Systems Platform on June 3, 2026 at its annual ONE Conference in Amsterdam. The announcement covers three domains — engineering, orchestration, and industry solutions — unified by a new architectural concept: the Enterprise Context Graph.
+OutSystems [announced the Agentic Systems Platform](https://www.outsystems.com/news/outsystems-announces-agentic-systems-platform/) on June 3, 2026 at its annual ONE Conference in Amsterdam, per the [BusinessWire press release](https://www.businesswire.com/news/home/20260601330502/en/OutSystems-Unveils-Open-Agentic-Systems-Platform-for-Enterprise-AI). The announcement covers three domains — engineering, orchestration, and industry solutions — unified by a new architectural concept: the Enterprise Context Graph.
 
 For builders who have not worked with OutSystems before: it is a high-productivity platform used by enterprises (typically 1,000+ employee organizations) to build and maintain applications. The new announcement is relevant because of what OutSystems is exposing outward — specifically, how it now lets external agents access and operate on enterprise application estates over MCP and A2A protocols.
 

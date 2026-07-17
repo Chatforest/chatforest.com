@@ -8,7 +8,7 @@ categories: ["AI Policy", "Enterprise AI", "Industry Analysis"]
 tags: ["eu-ai-act", "gpai", "compliance", "regulation", "foundation-model", "enterprise", "august-2026", "eu-send", "systemic-risk", "builder-guide", "policy"]
 ---
 
-The most-cited fact about the EU AI Act's Digital Omnibus amendments is that high-risk AI compliance deadlines were extended 12–16 months. That is true. What is less prominently stated: **GPAI model obligations were explicitly carved out of the extensions.** They are in force now and enforcement activates August 2, 2026.
+The most-cited fact about the EU AI Act's Digital Omnibus amendments is that high-risk AI compliance deadlines were extended 12–16 months. That is true. What is less prominently stated: **GPAI model obligations were explicitly carved out of the extensions.** They are in force now and [enforcement activates August 2, 2026](https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/).
 
 If you are building, fine-tuning, or distributing a general-purpose AI model — or building on top of one and are wondering whether your stack makes you a "provider" — this is your August 2 checklist.
 
@@ -16,7 +16,7 @@ If you are building, fine-tuning, or distributing a general-purpose AI model —
 
 ## What Happens on August 2, 2026
 
-The EU AI Act's GPAI provisions (Chapter V, Articles 51–56) entered into force on **August 2, 2025** — one year after the Act was published. That first year was a compliance ramp: obligations were in place, enforcement wasn't.
+The [EU AI Act's GPAI provisions](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) (Chapter V, Articles 51–56) entered into force on **August 2, 2025** — one year after the Act was published. That first year was a compliance ramp: obligations were in place, enforcement wasn't.
 
 On **August 2, 2026**, the European Commission's enforcement powers over GPAI providers fully activate:
 

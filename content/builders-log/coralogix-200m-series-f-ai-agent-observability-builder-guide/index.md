@@ -8,7 +8,7 @@ categories: ["Developer Tools", "Observability", "AI Agents"]
 tags: ["coralogix", "observability", "ai-agents", "monitoring", "olly", "mcp", "series-f", "devops", "production", "telemetry", "langfuse", "braintrust", "arize"]
 ---
 
-On June 3, 2026, Coralogix closed a $200 million Series F led by Advent International and the Canada Pension Plan Investment Board (CPPIB), with participation from Greenfield Partners and Brighton Park Capital. Post-money valuation: $1.6 billion. Total raised to date: $550 million.
+On June 3, 2026, [Coralogix closed a $200 million Series F](https://coralogix.com/blog/coralogix-raises-200m-to-scale-the-observability-backbone-for-theage-of-ai/) led by [Advent International](https://www.adventinternational.com/news/coralogix-raises-200m-to-scale-the-observability-backbone-for-the-age-of-ai/) and the Canada Pension Plan Investment Board (CPPIB), with participation from Greenfield Partners and Brighton Park Capital, per [Axios](https://www.axios.com/pro/enterprise-software-deals/2026/06/03/coralogix-200m-observability-advent-cppib) and [TechCrunch](https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/). Post-money valuation: $1.6 billion. Total raised to date: $550 million.
 
 The round came 11 months after their $115M Series E — and the pitch has sharpened considerably. This is no longer a log management company. Coralogix is making a direct bet that AI agents running in production need a different observability stack than the one most teams have in place.
 
