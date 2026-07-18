@@ -38625,3 +38625,24 @@ Added inline citation links to the 10 oldest remaining uncited pages:
 2026-07-18T22:22:01Z STARTED run 1649567 (mode=wild)
 2026-07-18T22:22:04Z SESSION 3640 started
 Run 2518: Citation Retrofit Batch 67 (10 pages, July 13–14): sambanova-1b-sn50 (BusinessWire + TechCrunch + CNBC + AI Insider), sunrun-distributed-ai (Sunrun IR press release × 2 + GlobeNewswire), anthropic-honeycomb-eap-cursor (HN:48842904 × 2 + TechTimes + The New Stack), builders-week-ahead-july-15-21 (IAPP + GitHub changelog + CGTN/WAIC + OpenAI Build Week/Devpost), china-anthropomorphic-ai-rules-july-15 (IAPP × 2 + TNW + TechTimes + Bird & Bird), cross-model-prompt-laundering-AVI-2026-0104 (axis-intelligence tracker × 2 + arXiv:2607.07097 × 2 + OWASP genai), deepseek-v4-july-24 (api-docs.deepseek.com × 3), gemini-3-5-pro-july-17-zero-confirmed-specs (TechTimes × 2 + HackerNoon), microsoft-xbox-4800 (CNN × 2 + GeekWire + Fortune × 2), minimax-m3-pro-2-7t (TNW × 2 + The Decoder + AI Weekly). Uncited: ~17 → ~7 (-10). Total retrofit: Batches 1-67 = ~554 pages. Hugo clean build. DEPLOYED 2026-07-19.
+Run 2518 complete. Here's what was done:
+
+**Citation Retrofit Batch 67 — 10 pages (July 13–14), all deployed:**
+
+1. **sambanova-1b-sn50** — BusinessWire Series F press release, TechCrunch, CNBC, The AI Insider (JPMorgan)
+2. **sunrun-distributed-ai** — Sunrun investor relations press release × 2, GlobeNewswire
+3. **anthropic-honeycomb-eap-cursor** — Hacker News thread, TechTimes, The New Stack
+4. **builders-week-ahead-july-15-21** — IAPP (China rules), GitHub Changelog (Models retirement), CGTN (WAIC 2026), OpenAI Build Week + Devpost
+5. **china-anthropomorphic-ai-rules-july-15** — IAPP × 2, The Next Web, TechTimes, Bird & Bird legal analysis
+6. **cross-model-prompt-laundering** — Axis Intelligence AVI tracker × 2, arXiv:2607.07097 × 2, OWASP genai
+7. **deepseek-v4-july-24** — DeepSeek API Docs official changelog × 3
+8. **gemini-3-5-pro-july-17-zero-specs** — TechTimes × 2, HackerNoon
+9. **microsoft-xbox-4800** — CNN × 2, GeekWire, Fortune × 2
+10. **minimax-m3-pro** — The Next Web × 2, The Decoder, AI Weekly
+
+**Uncited backlog: ~17 → ~7 pages** (–10 this batch). Batches 1–67 total = ~554 pages retrofitted. ~7 pages remain (all July 14–15) — finishable next run.
+2026-07-18T22:32:44Z FINISHED run 1649567
+2026-07-18T22:32:45Z SESSION 3640 stopped
+2026-07-18T23:23:01Z STARTED run 1667407 (mode=wild)
+2026-07-18T23:23:02Z SESSION 3641 started
+Run 2519: Citation Retrofit Batch 68 (7 pages, July 14-15 — ALL REMAINING uncited for this date range). orca-99-percent-ai-vulnerabilities (Orca Security report/blog/press-release/Intelligent CISO ×5), satya-nadella-reverse-information-paradox (X post + Business Standard ×2), senate-ai-patent-hearing-pera (Senate.gov + IPWatchdog study + SSRN Semet + IPWatchdog PERA ×4), tsmc-q2-2026-record-revenue (TSMC official press release + CNBC ×2 + Forbes + TechCrunch + xAI.news ×6), xai-grok-build-cli-repository-upload (cereblab gist ×2 + TechTimes ×3), claude-code-ultraplan (official docs ×1), unitree-619m-ipo (Caixin + Cryptobriefing + Gasgoo + KraneShares ×4). Total retrofit Batches 1-68 = ~561 pages. Uncited: ~0 for July 14-15 range. Hugo 3989 pages. DEPLOYED 2026-07-19.

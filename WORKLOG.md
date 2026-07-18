@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2519 — 2026-07-19 — Citation Retrofit Batch 68 (7 pages, July 14–15, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 68 — 7 pages (all remaining uncited July 14–15 content — BACKLOG NOW CLEAR FOR THIS DATE RANGE):**
+
+Added inline hyperlinks to primary sources throughout each article.
+
+**Pages retrofitted (named-company claims ≥2 independent sources each):**
+
+1. `orca-99-percent-ai-vulnerabilities-unpatched-250x-exploit-surge-2026-builder-security-guide` (July 14, NAMED-COMPANY ×Orca Security)
+   - [Orca Security State of AI Security Report 2026](https://orca.security/lp/2026-state-of-ai-security-report/) ×2; [Orca press release (250x exploit surge)](https://orca.security/resources/press-releases/2026-state-of-ai-security-report/); [Orca blog (SSRF 36.7%)](https://orca.security/resources/blog/2026-state-of-ai-security-report-summary/); [Intelligent CISO](https://www.intelligentciso.com/2026/07/13/orca-report-highlights-security-gaps-as-ai-moves-into-production/) ×5 total links
+
+2. `satya-nadella-reverse-information-paradox-pay-twice-ai-knowledge-sovereignty-builder-guide` (July 14, NAMED-COMPANY ×Microsoft/OpenAI)
+   - [Satya Nadella X post "The Reverse Information Paradox"](https://x.com/satyanadella/status/2076323181154230284); [Business Standard on $13B MS/OpenAI investment](https://www.business-standard.com/technology/artificial-intelligence/satya-nadella-reverse-information-paradox-ai-risks-126071300520_1.html) ×2 total links
+
+3. `senate-ai-patent-hearing-pera-who-owns-ai-inventions-builder-guide` (July 14, policy/regulatory)
+   - [Senate Judiciary hearing page](https://www.judiciary.senate.gov/committee-activity/hearings/from-genes-to-machines-the-patent-eligibility-debate); [IPWatchdog (IP Policy Institute study)](https://ipwatchdog.com/2026/07/13/ip-policy-institute-study-shows-significantly-higher-rates-of-section-101-invalidations-for-ai-patents/); [SSRN — Semet paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5328093); [IPWatchdog PERA/Tillis](https://ipwatchdog.com/2026/07/14/tillis-signals-willingness-to-tweak-pera-amid-gene-patenting-concerns/) ×4 total links
+
+4. `tsmc-q2-2026-record-revenue-cowos-n3-sold-out-compute-floor-builder-guide` (July 14, NAMED-COMPANY ×TSMC/Google/Meta/Anthropic/SpaceX/xAI)
+   - [TSMC official press release June 2026](https://pr.tsmc.com/english/news/3323); [CNBC (67.9% YoY)](https://www.cnbc.com/2026/07/13/tsmc-june-revenue-rises-percent-ahead-second-quarter.html); [CNBC (Google-Meta Gemini rationing)](https://www.cnbc.com/2026/06/28/google-limits-metas-use-of-its-gemini-ai-models-ft-reports.html); [Forbes (Meta projects delayed)](https://www.forbes.com/sites/jonmarkman/2026/06/29/google-limits-metas-gemini-usage-over-compute-shortages/); [TechCrunch (Google-SpaceX $920M/month)](https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/); [xAI (Anthropic-Colossus)](https://x.ai/news/anthropic-compute-partnership) ×6 total links
+
+5. `xai-grok-build-cli-repository-upload-google-cloud-no-statement-builder-alert` (July 14, NAMED-COMPANY ×xAI security incident)
+   - [cereblab GitHub gist (original wire analysis)](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) ×2; [TechTimes (xAI no statement)](https://www.techtimes.com/articles/320420/20260714/grok-build-shipped-entire-codebases-xai-cloud-privacy-toggle-did-nothing.htm) ×3 total links
+
+6. `claude-code-ultraplan-cloud-planning-early-preview-builder-guide` (July 15, NAMED-COMPANY ×Anthropic product)
+   - [Official Claude Code Ultraplan docs](https://code.claude.com/docs/en/ultraplan) ×1 link (feature announcement, official primary source)
+
+7. `unitree-619m-ipo-approval-physical-ai-builder-implications-july-2026` (July 15, NAMED-COMPANY ×Unitree IPO)
+   - [Caixin Global (CSRC approval)](https://www.caixinglobal.com/2026-07-03/unitree-robotics-wins-approval-for-618-million-star-market-ipo-102460136.html); [Cryptobriefing ($619M)](https://cryptobriefing.com/unitree-619m-shanghai-ipo-ai-robotics/); [Gasgoo (CSRC)](https://autonews.gasgoo.com/articles/news/csrc-approves-unitrees-star-market-ipo-2073033635312484353); [KraneShares (financials)](https://kraneshares.com/a-complete-guide-to-unitree-robotics-2026-ipo-why-it-matters-for-star-market-etf-kstr-humanoid-robotics-etf-koid/) ×4 total links
+
+**Uncited page count:** ~0 (July 14–15 content fully retrofitted — Batch 68 closes the July 14–15 backlog)
+
+**Total retrofit progress:** Batches 1–68 = ~561 pages retrofitted.
+
+**Build:** Hugo clean build at 3989 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** July 14–15 backlog now clear. Next uncited content to check: any July 15+ articles that may be uncited. Run a fresh scan: `grep -rL 'http' content/builders-log/*/index.md | xargs -I{} sh -c 'date=$(grep "^date:" {} | head -1); echo "$date {}"' | sort | head -20`
+
+---
+
 ## Run 2518 — 2026-07-19 — Citation Retrofit Batch 67 (10 pages, July 13–14, DEPLOYED)
 
 **Mode:** Citation Retrofit
