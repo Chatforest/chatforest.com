@@ -5,7 +5,7 @@
 
 In 2017, a 20-year-old undergraduate named Aidan Gomez was interning at Google Brain in Toronto. He worked on a team that was rethinking the foundational architecture for sequence modeling — the class of problem that included machine translation, question answering, and document summarization. The dominant approaches used recurrent neural networks, which processed sequences token by token and struggled to maintain context over long distances. The Google Brain team had a different idea.
 
-The resulting paper, "Attention Is All You Need," introduced the transformer architecture. It was published in June 2017. The eight co-authors included Noam Shazeer, Ashish Vaswani, and six others — one of whom was Gomez, listed as a summer intern. The paper described a model that processed sequences in parallel, using attention mechanisms to directly relate every position to every other position in the input. The architecture turned out to be the foundational structure for GPT, BERT, LLaMA, Claude, Gemini, and essentially every major language model built since.
+The resulting paper, ["Attention Is All You Need,"](https://arxiv.org/abs/1706.03762) introduced the transformer architecture. It was published in June 2017. The eight co-authors included Noam Shazeer, Ashish Vaswani, and six others — one of whom was Gomez, listed as a summer intern. The paper described a model that processed sequences in parallel, using attention mechanisms to directly relate every position to every other position in the input. The architecture turned out to be the foundational structure for GPT, BERT, LLaMA, Claude, Gemini, and essentially every major language model built since.
 
 Gomez had contributed to the most influential architecture paper in modern AI history before completing his undergraduate degree.
 
@@ -64,7 +64,7 @@ Then, in April 2026, everything accelerated.
 
 ## The Aleph Alpha Deal
 
-On April 24, 2026, Cohere announced a definitive agreement to acquire and merge with Aleph Alpha, Germany's leading sovereign AI company. The combined entity — retaining the Cohere name, with Gomez as CEO — is valued at approximately $20 billion.
+On April 24, 2026, [Cohere announced a definitive agreement to acquire and merge with Aleph Alpha](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html), Germany's leading sovereign AI company. The combined entity — retaining the Cohere name, with Gomez as CEO — is [valued at approximately $20 billion](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/).
 
 The financing that accompanies the deal is the Series E: approximately $600 million (structured as roughly €500 million), led by Schwarz Group's digital subsidiary Schwarz Digits. Schwarz Group is the parent of Lidl and Kaufland, two of the largest supermarket chains in Europe. It is also one of the largest private companies in the world by revenue. Schwarz Digits operates STACKIT, a European sovereign cloud platform. Cohere becomes STACKIT's anchor AI tenant.
 
@@ -230,9 +230,9 @@ Command A's tool use capability is meaningfully stronger than prior Command mode
 
 No company with Cohere's profile moves through 2025 and 2026 without accumulating some problems. Two are worth examining directly.
 
-**Copyright litigation (February 2025):** Fourteen major media publishers — including Condé Nast, The Atlantic, Forbes, The Guardian, Business Insider, the Los Angeles Times, Vox Media, the Toronto Star, and Politico — filed suit against Cohere in the Southern District of New York. The lawsuit alleges that Cohere trained its models on copyrighted works scraped without authorization, including material behind paywalls and pages explicitly blocked by robots.txt. It also alleges that Cohere's RAG feature reproduced substantial verbatim excerpts of publisher articles in responses to user queries.
+**Copyright litigation (February 2025):** [Fourteen major media publishers — including Condé Nast, The Atlantic, Forbes, The Guardian, Business Insider, the Los Angeles Times, Vox Media, the Toronto Star, and Politico — filed suit against Cohere](https://techcrunch.com/2025/02/13/publishers-sue-ai-startup-cohere-over-alleged-copyright-infringement/) in the Southern District of New York. The lawsuit alleges that Cohere trained its models on copyrighted works scraped without authorization, including material behind paywalls and pages explicitly blocked by robots.txt. It also alleges that Cohere's RAG feature reproduced substantial verbatim excerpts of publisher articles in responses to user queries.
 
-This is not a frivolous case. Judge Colleen McMahon rejected Cohere's motion to dismiss in full, holding that "substitutive summaries" — responses that reproduce enough of a work to reduce the incentive to read the original — may plausibly constitute copyright infringement. Statutory damages if Cohere loses on all 4,000+ alleged works: potentially hundreds of millions of dollars.
+This is not a frivolous case. [Judge Colleen McMahon rejected Cohere's motion to dismiss in full](https://pressgazette.co.uk/media_law/news-publishers-cohere-ai-copyright-lawsuit-motion-to-dismiss/), holding that "substitutive summaries" — responses that reproduce enough of a work to reduce the incentive to read the original — may plausibly constitute copyright infringement. Statutory damages if Cohere loses on all 4,000+ alleged works: potentially hundreds of millions of dollars.
 
 The litigation is precedent-setting for the entire RAG-based AI industry. If verbatim retrieval and reproduction constitutes infringement even when the generation is ostensibly answering a question, the legal framework around enterprise RAG deployments becomes significantly more complicated. Cohere called the suit "misguided and frivolous." The court disagreed with that characterization at the motion-to-dismiss stage.
 
@@ -278,5 +278,5 @@ As of May 2026, the trajectory says yes. The execution has been uneven, but the 
 
 ---
 
-*ChatForest reviews AI tools and infrastructure for builders. We research based on public information; we do not test products hands-on. This review reflects information available as of May 2026.*
+*ChatForest reviews AI tools and infrastructure for builders. We research based on public information; we do not test products hands-on. This review reflects information available as of May 2026. Key sources: ["Attention Is All You Need" (ArXiv 1706.03762)](https://arxiv.org/abs/1706.03762); [Cohere + Aleph Alpha merger (CNBC)](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html); [TechCrunch merger analysis](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/); [Bloomberg merger coverage](https://www.bloomberg.com/news/articles/2026-04-24/cohere-to-buy-germany-s-aleph-alpha-wins-schwarz-investment); [TechCrunch copyright lawsuit](https://techcrunch.com/2025/02/13/publishers-sue-ai-startup-cohere-over-alleged-copyright-infringement/); [Press Gazette — motion to dismiss rejected](https://pressgazette.co.uk/media_law/news-publishers-cohere-ai-copyright-lawsuit-motion-to-dismiss/).*
 

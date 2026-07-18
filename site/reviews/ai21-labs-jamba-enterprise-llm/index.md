@@ -11,7 +11,7 @@ AI21 Labs doesn't make as much noise as OpenAI or Anthropic. It doesn't have Mis
 
 AI21 Labs was founded in **November 2017** in Tel Aviv by three people with unusually different but complementary profiles.
 
-**Amnon Shashua** (Chairman and Co-Founder) is the heavyweight. A computer science professor at Hebrew University of Jerusalem with 160+ papers and 94+ patents, Shashua co-founded Mobileye in 1999 and built it into the world's dominant automotive vision chip company. When Intel acquired Mobileye in 2017 for **$15.3 billion**, it was the largest Israeli tech exit in history at that time. Shashua didn't stop there — he also founded OrCam (AI for the visually impaired), OneZero (a digital bank), and Mentee Robotics (AI bipedal robots). AI21 Labs is his AI frontier play. The man does not appear to believe in narrowing his ambitions.
+**Amnon Shashua** (Chairman and Co-Founder) is the heavyweight. A computer science professor at Hebrew University of Jerusalem with 160+ papers and 94+ patents, Shashua co-founded Mobileye in 1999 and built it into the world's dominant automotive vision chip company. When [Intel acquired Mobileye in 2017 for **$15.3 billion**](https://techcrunch.com/2017/03/13/intel-is-buying-mobileye/), it was the largest Israeli tech exit in history at that time. Shashua didn't stop there — he also founded OrCam (AI for the visually impaired), OneZero (a digital bank), and Mentee Robotics (AI bipedal robots). AI21 Labs is his AI frontier play. The man does not appear to believe in narrowing his ambitions.
 
 **Yoav Shoham** (Co-CEO) brings academic depth that few startup founders can match. Professor Emeritus at Stanford, former Google principal scientist, PhD from Yale. His research shaped the fields of agent-oriented programming, game theory, and multi-agent systems. The "AI for the 21st century" framing of the company name is his kind of long-arc thinking.
 
@@ -42,9 +42,9 @@ The pivot toward enterprise accelerated in 2022. By 2023, AI21 was building API 
 
 The **Series C in 2023 valued AI21 at $1.4 billion**, achieving unicorn status. The investor list is a signal: Google and Nvidia investing in the same company is rare, and it reflects genuine conviction in AI21's technical approach — both hyperscalers had strategic reasons to want Jamba-style efficiency innovations to succeed.
 
-The **$300M Series D in May 2025** added more complexity. Israeli tech publication Ctech reported that AI21 never officially confirmed the round and may not have fully closed it at the reported terms — unusual opacity for a company of this stage. AI21's revenue reached **$57.8M in 2024** (up from ~$50M in 2023), a solid trajectory for a 242-278 person team but not the breakout numbers that would justify a headline $2B+ valuation on fundamentals alone.
+The **$300M Series D in May 2025** added more complexity. [Israeli tech publication Ctech reported that AI21 never officially confirmed the round](https://www.calcalistech.com/ctechnews/article/rjswz37eze) and may not have fully closed it at the reported terms — unusual opacity for a company of this stage. AI21's revenue reached **$57.8M in 2024** (up from ~$50M in 2023), a solid trajectory for a 242-278 person team but not the breakout numbers that would justify a headline $2B+ valuation on fundamentals alone.
 
-The acquisition story is more dramatic. In **late 2025, Nvidia reportedly entered advanced acquisition talks** targeting a **$2–3 billion valuation** — attracted primarily by AI21's ~200-person workforce of AI researchers (implying $10–15M per researcher). That deal fell through. Shortly after, **Nebius** (the AI infrastructure company that acquired Tavily for up to $400M) was reportedly in talks to acquire AI21 as part of a unified AI agent platform strategy. Whether either deal closes remains unresolved as of this writing.
+The acquisition story is more dramatic. In **late 2025, [Nvidia reportedly entered advanced acquisition talks](https://siliconangle.com/2025/05/11/ai21-labs-raises-300m-google-nvidia-expand-enterprise-ai-offerings/)** targeting a **$2–3 billion valuation** — attracted primarily by AI21's ~200-person workforce of AI researchers (implying $10–15M per researcher). That deal fell through. Shortly after, **Nebius** (the AI infrastructure company that acquired Tavily for up to $400M) was reportedly in talks to acquire AI21 as part of a unified AI agent platform strategy. Whether either deal closes remains unresolved as of this writing.
 
 The back-to-back acquisition conversations are a double-edged signal: they confirm that AI21's talent and IP are genuinely valued by large players, but they also raise the question every enterprise customer must ask — **is this vendor building for independence, or are they in exit mode?**
 
@@ -52,7 +52,7 @@ The back-to-back acquisition conversations are a double-edged signal: they confi
 
 ## Jamba: The Architecture That Changed the Conversation
 
-The most important thing AI21 has done technically is invent **Jamba** — the first hybrid Mamba/Transformer model to reach production scale.
+The most important thing AI21 has done technically is invent **Jamba** — [the first hybrid Mamba/Transformer model to reach production scale](https://www.ai21.com/blog/announcing-jamba/).
 
 To understand why this matters, a brief architecture lesson is necessary.
 
@@ -165,5 +165,5 @@ If you're building long-context document processing, enterprise RAG, or regulate
 
 ---
 
-*Disclosure: This review is based on publicly available sources. ChatForest researched but did not test AI21 Labs' API or products directly.*
+*Disclosure: This review is based on publicly available sources. ChatForest researched but did not test AI21 Labs' API or products directly. Key sources: [AI21 Jamba announcement](https://www.ai21.com/blog/announcing-jamba/); [SiliconAngle Series D coverage](https://siliconangle.com/2025/05/11/ai21-labs-raises-300m-google-nvidia-expand-enterprise-ai-offerings/); [Ctech — Series D never confirmed](https://www.calcalistech.com/ctechnews/article/rjswz37eze); [Yahoo Finance — Nvidia/Google backing](https://finance.yahoo.com/news/nvidia-google-back-ai21-labs-140222256.html).*
 

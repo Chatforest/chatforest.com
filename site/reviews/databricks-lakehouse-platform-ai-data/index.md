@@ -78,7 +78,7 @@ The core platform has expanded into a full product family:
 
 Databricks has made 17 acquisitions in twelve years. The most significant:
 
-**MosaicML** ($1.3–1.4 billion, June 2023) was the pivotal deal. MosaicML had built infrastructure for training large foundation models efficiently — their MPT (MosaicML Pre-trained Transformer) series had demonstrated that high-quality models could be trained at a fraction of what OpenAI spent. The acquisition gave Databricks enterprise-grade model training capabilities and rebranded as Mosaic AI. It is the core of the company's generative AI product line.
+**[MosaicML](https://techcrunch.com/2023/06/26/databricks-picks-up-mosaicml-an-openai-competitor-for-1-3b/)** ($1.3–1.4 billion, June 2023) was the pivotal deal. MosaicML had built infrastructure for training large foundation models efficiently — their MPT (MosaicML Pre-trained Transformer) series had demonstrated that high-quality models could be trained at a fraction of what OpenAI spent. The acquisition gave Databricks enterprise-grade model training capabilities and rebranded as Mosaic AI. It is the core of the company's generative AI product line.
 
 **Tabular** (>$1 billion, June 2024) was founded by the original creators of Apache Iceberg — the competing open table format to Delta Lake. Rather than fighting a format war, Databricks acquired the competition. The result was Delta Lake's UniForm layer, which lets Delta tables be read as Iceberg tables by any Iceberg-compatible system. Snowflake's embrace of Iceberg was partly a defensive move against Delta Lake; Databricks responded by buying the people who invented Iceberg.
 
@@ -134,10 +134,10 @@ The Series J in late 2024 ($10 billion at a $62 billion valuation) was one of th
 
 The Series K (August 2025, $1 billion) was reported to be 20x oversubscribed — indicating substantial institutional demand that the company chose not to fully satisfy.
 
-The Series L (December 2025, $4 billion at a $134 billion valuation) set the current benchmark. A subsequent $2 billion debt round in January 2026 brings total recent capital to approximately $7 billion across equity and debt.
+The [Series L (December 2025, $4 billion at a $134 billion valuation)](https://techcrunch.com/2025/12/16/databricks-raises-4b-at-134b-valuation-as-its-ai-business-heats-up/) set the current benchmark. A subsequent $2 billion debt round in January 2026 brings total recent capital to approximately $7 billion across equity and debt.
 
-On financial fundamentals:
-- $5.4 billion ARR as of early 2026
+On financial fundamentals (per [Databricks press release, December 2025](https://www.databricks.com/company/newsroom/press-releases/databricks-surpasses-4-8b-revenue-run-rate-growing-55-year-over-year)):
+- $4.8B+ ARR run-rate as of December 2025, growing to $5.4 billion ARR by early 2026
 - 65%+ year-over-year growth at that scale
 - AI product line alone exceeds $1.4 billion ARR run-rate (~26% of total)
 - Databricks SQL line exceeds $1 billion ARR separately
@@ -224,5 +224,5 @@ The rating reflects a platform that is the clear enterprise choice for data-inte
 
 ---
 
-*ChatForest covers AI companies, tools, and ecosystems. Our reviews are based on public information, technical documentation, and independent research. We have no commercial relationship with Databricks.*
+*ChatForest covers AI companies, tools, and ecosystems. Our reviews are based on public information, technical documentation, and independent research. We have no commercial relationship with Databricks. Key sources: [MosaicML acquisition (TechCrunch)](https://techcrunch.com/2023/06/26/databricks-picks-up-mosaicml-an-openai-competitor-for-1-3b/); [MosaicML acquisition (Databricks press release)](https://www.databricks.com/company/newsroom/press-releases/databricks-signs-definitive-agreement-acquire-mosaicml-leading-generative-ai-platform); [Series L $134B valuation (TechCrunch)](https://techcrunch.com/2025/12/16/databricks-raises-4b-at-134b-valuation-as-its-ai-business-heats-up/); [Databricks $4.8B ARR press release](https://www.databricks.com/company/newsroom/press-releases/databricks-surpasses-4-8b-revenue-run-rate-growing-55-year-over-year); [Databricks + PRNewswire](https://www.prnewswire.com/news-releases/databricks-grows-55-yoy-surpasses-4-8b-revenue-run-rate-and-is-raising-4b-series-l-at-134b-valuation-302643445.html).*
 

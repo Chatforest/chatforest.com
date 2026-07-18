@@ -26,7 +26,7 @@ One naming note worth flagging: Vast.ai (vast.ai, the GPU marketplace) is a comp
 
 Vast.ai has raised approximately **$4 million** in early-stage funding from DRW Holdings and Nazare. That is an extraordinarily small war chest for a company of its standing in the GPU cloud market. The company has grown primarily on organic momentum, founder conviction, and a pricing model that makes marketing largely unnecessary — when your H100 prices are 2–3× cheaper than the next option, word spreads fast.
 
-By early 2026, Vast.ai served **120,000+ developers** and **14,000+ monthly paying customers**. Monthly active paying customers grew 16× year-over-year from early 2025 to early 2026; new signups grew 27× in the same period. In 2025, the company was ranked **#11 on Ramp and Brex's fastest-growing software vendors** list — ahead of Groq (#12) and Supabase (#23) — based on spending growth across their business card portfolios.
+By early 2026, Vast.ai served **120,000+ developers** and **14,000+ monthly paying customers**, per the company's [2025 Year in Review](https://vast.ai/article/vast-ai-2025-year-in-review). Monthly active paying customers grew 16× year-over-year from early 2025 to early 2026; new signups grew 27× in the same period. In 2025, the company was ranked [**#11 on Ramp and Brex's fastest-growing software vendors**](https://vast.ai/article/ramp-brex-fastest-growing-vendor) list — ahead of Groq (#12) and Supabase (#23) — based on spending growth across their business card portfolios.
 
 ---
 
@@ -157,7 +157,7 @@ If your job cannot tolerate interruption, use on-demand instances, not interrupt
 
 Your workloads run on third-party hardware. Model weights, training data, and intermediate outputs are physically resident on machines operated by unknown hosts. For workloads involving sensitive data — healthcare, finance, proprietary model weights, personal data — this is a material security concern.
 
-Vast.ai achieved **SOC 2 Type I certification in April 2025** and **SOC 2 Type II certification later in 2025**. This is a meaningful step and signals a deliberate push toward enterprise readiness. But it does not change the physical reality that your data is on someone else's machine.
+Vast.ai achieved [**SOC 2 Type I certification in April 2025**](https://vast.ai/press-release/vast-ai-soc-2-type-1-certification) and **SOC 2 Type II certification later in 2025**. This is a meaningful step and signals a deliberate push toward enterprise readiness. But it does not change the physical reality that your data is on someone else's machine.
 
 For HIPAA, FedRAMP, or sensitive IP workloads, RunPod Secure Cloud, Lambda Labs, or CoreWeave provide stronger isolation guarantees.
 
@@ -173,13 +173,13 @@ Vast.ai's security model covers the platform itself — the API, the control pla
 
 ## Scale and Platform Status (2026)
 
-- **17,000+ GPUs** from **1,400+ providers** in **500+ locations** worldwide
+- **17,000+ GPUs** from **1,400+ providers** in **500+ locations** worldwide ([2025 Year in Review](https://vast.ai/article/vast-ai-2025-year-in-review))
 - **68+ GPU types** supported
 - **120,000+ registered developers**
 - **14,000+ monthly paying customers**
 - Monthly paying customer growth: **16× year-over-year**
 - New signup growth: **27× year-over-year**
-- Named **#11 fastest-growing software vendor** by Ramp and Brex (2025)
+- Named [**#11 fastest-growing software vendor** by Ramp and Brex](https://vast.ai/article/ramp-brex-fastest-growing-vendor) (2025)
 
 For a bootstrapped company that launched via a Reddit post, these numbers are extraordinary. Vast.ai grew faster in 2025 than most VC-backed GPU cloud competitors.
 
@@ -256,4 +256,4 @@ The reliability and security limitations are real and documented. For workloads 
 
 ---
 
-*ChatForest reviews AI infrastructure based on publicly available information, documentation, and pricing data. We do not receive compensation from reviewed companies.*
+*ChatForest reviews AI infrastructure based on publicly available information, documentation, and pricing data. We do not receive compensation from reviewed companies. Key sources: [Vast.ai 2025 Year in Review](https://vast.ai/article/vast-ai-2025-year-in-review); [Ramp/Brex fastest-growing vendor ranking](https://vast.ai/article/ramp-brex-fastest-growing-vendor); [SOC 2 Type I press release](https://vast.ai/press-release/vast-ai-soc-2-type-1-certification); [Vast.ai Serverless announcement](https://vast.ai/article/vast-ai-serverless-automated-gpu-scaling).*

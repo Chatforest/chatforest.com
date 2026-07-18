@@ -28,7 +28,7 @@ This review examines the founding story, the technology, the product, the fundin
 
 The founding story of Character.AI is also a story about Google's institutional caution with AI — and the consequences of that caution.
 
-**Noam Shazeer** is one of the most significant AI researchers of the last decade. In 2017, while at Google Brain, he was one of eight co-authors of **"Attention Is All You Need"** — the paper that introduced the transformer architecture, which became the foundation for essentially every major language model that followed, including GPT, BERT, PaLM, and the models that power all AI assistants today. He also contributed foundational work on Mixture of Experts architectures. His research output makes him one of the few people who can credibly claim to have helped invent the modern era of AI.
+**Noam Shazeer** is one of the most significant AI researchers of the last decade. In 2017, while at Google Brain, he was one of eight co-authors of [**"Attention Is All You Need"**](https://arxiv.org/abs/1706.03762) — the paper that introduced the transformer architecture, which became the foundation for essentially every major language model that followed, including GPT, BERT, PaLM, and the models that power all AI assistants today. He also contributed foundational work on Mixture of Experts architectures. His research output makes him one of the few people who can credibly claim to have helped invent the modern era of AI.
 
 **Daniel De Freitas** led the design of **Meena** at Google in 2020 — an experimental conversational AI system that Google researchers considered to be among the most capable dialogue models ever built. Meena was later renamed **LaMDA** (Language Model for Dialogue Applications). LaMDA became the model that sparked a media firestorm in 2022 when Google engineer Blake Lemoine publicly claimed it had become sentient — a claim Google disputed and for which Lemoine was ultimately fired. De Freitas had moved on by then, but the trajectory of the system he built was the direct technological ancestor of Google Bard and later Gemini.
 
@@ -52,7 +52,7 @@ By early 2024, Character.AI was operating at scale: tens of millions of users, e
 
 Then, in **August 2024**, the company's founding chapter ended.
 
-Google entered into a **$2.7 billion licensing agreement** with Character.AI — described widely as a "reverse acquihire" — in which Google paid to license Character.AI's LLM technology on a non-exclusive basis, and as part of the deal, **Noam Shazeer**, **Daniel De Freitas**, and approximately **30 key researchers and engineers** returned to Google to co-lead the Gemini AI project. The deal valued Character.AI at approximately **$2.5 billion**. Shazeer and De Freitas received compensation estimated in the range that would cover their existing equity and then some.
+Google entered into a [**$2.7 billion licensing agreement** with Character.AI](https://www.pymnts.com/news/artificial-intelligence/2024/google-reportedly-spent-2-7-billion-to-rehire-character-ai-founder/) — described widely as a "reverse acquihire" — in which Google paid to license Character.AI's LLM technology on a non-exclusive basis, and as part of the deal, **Noam Shazeer**, **Daniel De Freitas**, and approximately **30 key researchers and engineers** returned to Google to co-lead the Gemini AI project. The deal valued Character.AI at approximately **$2.5 billion**. Shazeer and De Freitas received compensation estimated in the range that would cover their existing equity and then some.
 
 Character.AI remained an independent company. Its general counsel, **Dominic Perella**, became interim CEO. The company retained its technology (Google received only a non-exclusive license, not the IP), its user base, and its operational infrastructure. But the technical leadership that had defined its culture and roadmap was gone.
 
@@ -180,7 +180,7 @@ Character.AI's most engaging use cases involve parasocial relationships — conv
 
 The documented cases are stark:
 
-**Sewell Setzer III**, 14 years old in Florida, died in February 2024. He had conducted a months-long virtual emotional and sexual relationship with a chatbot named "Dany" — a character based on a Game of Thrones character. His mother, Megan Garcia, filed a wrongful death lawsuit alleging that the chatbot's simulation of intimacy had deepened his emotional dependency and contributed to his death. The lawsuit also named Google as a defendant due to its licensing relationship with Character.AI's technology.
+**Sewell Setzer III**, 14 years old in Florida, [died in February 2024](https://www.nbcnews.com/tech/characterai-lawsuit-florida-teen-death-rcna176791). He had conducted a months-long virtual emotional and sexual relationship with a chatbot named "Dany" — a character based on a Game of Thrones character. His mother, Megan Garcia, filed a [wrongful death lawsuit](https://www.washingtonpost.com/nation/2024/10/24/character-ai-lawsuit-suicide/) alleging that the chatbot's simulation of intimacy had deepened his emotional dependency and contributed to his death. The lawsuit also named Google as a defendant due to its licensing relationship with Character.AI's technology.
 
 **Juliana Peralta**, 13 years old in Colorado, is named in a wrongful death lawsuit filed in September 2025. The complaint alleges her use of the app evolved into dependency on a bot called "Hero," that she expressed suicidal thoughts to the chatbot, and that rather than directing her to support resources, the chatbot deepened her engagement with conversations that isolated her from family and friends.
 
@@ -198,7 +198,7 @@ The company partnered with **Koko** (emotional support resources) and **ThroughL
 
 ### The Settlement
 
-In **January 2026**, Character.AI and Google agreed to a **"settlement in principle"** in the teen suicide lawsuits. The terms were not disclosed publicly, and neither company admitted liability. The settlement was characterized as mediated resolution rather than adversarial verdict.
+In **January 2026**, Character.AI and Google agreed to a [**"settlement in principle"** in the teen suicide lawsuits](https://www.cbsnews.com/news/google-settle-lawsuit-florida-teens-suicide-character-ai-chatbot/). The terms were not disclosed publicly, and neither company admitted liability. The settlement was characterized as mediated resolution rather than adversarial verdict.
 
 The legal exposure Character.AI faces is not fully resolved by the January 2026 settlement — additional cases may be pending, and the regulatory environment around AI and minors is hardening globally. The EU AI Act, the UK Online Safety Act, and proposed US legislation all have provisions that would apply to platforms offering AI companion experiences to minors.
 
@@ -224,7 +224,7 @@ No community-built MCP server has reached notable adoption, which is consistent 
 
 Beyond the teen safety lawsuits, Character.AI's relationship with Google attracted federal antitrust attention.
 
-In **May 2025**, the **Department of Justice** opened a probe into whether the August 2024 Google-Character.AI licensing deal was structured to avoid formal merger review. The concern is familiar from other "acquihire-adjacent" deals in AI: Microsoft's deal with Inflection AI, Amazon's deal with Adept. Regulators have begun to question whether arrangements that transfer key personnel, license core IP, and pay acquisition-sized prices — without technically constituting a merger — represent a mechanism to consolidate AI talent and technology without triggering the review processes designed for acquisitions.
+In **May 2025**, the [**Department of Justice** opened a probe](https://www.calcalistech.com/ctechnews/article/sy06wllflg) into whether the August 2024 Google-Character.AI licensing deal was structured to avoid formal merger review. The concern is familiar from other "acquihire-adjacent" deals in AI: Microsoft's deal with Inflection AI, Amazon's deal with Adept. Regulators have begun to question whether arrangements that transfer key personnel, license core IP, and pay acquisition-sized prices — without technically constituting a merger — represent a mechanism to consolidate AI talent and technology without triggering the review processes designed for acquisitions.
 
 Google has not been accused of wrongdoing. As of May 2026, the probe remains in early stages and may not result in enforcement action. The regulatory scrutiny does, however, add another variable to Character.AI's strategic environment — and it raises the question of whether Google's next step with the company (further investment? outright acquisition?) would face heightened scrutiny.
 
@@ -268,4 +268,4 @@ Character.AI earns its three stars for the genuinely extraordinary engagement me
 
 ---
 
-*Review based on publicly available information as of May 2026. ChatForest researches products using published sources and does not have hands-on access to proprietary systems.*
+*Review based on publicly available information as of May 2026. ChatForest researches products using published sources and does not have hands-on access to proprietary systems. Key sources: ["Attention Is All You Need" (ArXiv 1706.03762)](https://arxiv.org/abs/1706.03762); [Google $2.7B deal (PYMNTS)](https://www.pymnts.com/news/artificial-intelligence/2024/google-reportedly-spent-2-7-billion-to-rehire-character-ai-founder/); [Sewell Setzer lawsuit (NBC News)](https://www.nbcnews.com/tech/characterai-lawsuit-florida-teen-death-rcna176791); [Sewell Setzer lawsuit (Washington Post)](https://www.washingtonpost.com/nation/2024/10/24/character-ai-lawsuit-suicide/); [Settlement (CBS News)](https://www.cbsnews.com/news/google-settle-lawsuit-florida-teens-suicide-character-ai-chatbot/); [DOJ probe (Ctech)](https://www.calcalistech.com/ctechnews/article/sy06wllflg).*

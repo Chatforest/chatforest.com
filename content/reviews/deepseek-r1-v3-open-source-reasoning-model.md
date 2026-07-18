@@ -8,7 +8,7 @@ rating: 3
 author: "ChatForest"
 ---
 
-On January 20, 2025, DeepSeek released R1 — a reasoning model they claimed had been trained for roughly $6 million that matched OpenAI's o1 on multiple benchmarks. The DeepSeek app went to #1 on the US App Store. One week later, Nvidia stock dropped approximately 17% in a single trading session, erasing an estimated $593 billion in market capitalization. No AI company announcement had caused that kind of ripple since the original ChatGPT launch.
+On January 20, 2025, DeepSeek released R1 — a reasoning model they claimed had been trained for roughly $6 million that matched OpenAI's o1 on multiple benchmarks. [The DeepSeek app went to #1 on the US App Store](https://techcrunch.com/2025/01/27/deepseek-displaces-chatgpt-as-the-app-stores-top-app/). One week later, [Nvidia stock dropped approximately 17%](https://www.cnbc.com/2025/01/27/nvidia-falls-10percent-in-premarket-trading-as-chinas-deepseek-triggers-global-tech-sell-off.html) in a single trading session, [erasing an estimated $589–593 billion in market capitalization](https://finance.yahoo.com/news/nvidia-stock-plummets-loses-record-589-billion-as-deepseek-prompts-questions-over-ai-spending-135105824.html). No AI company announcement had caused that kind of ripple since the original ChatGPT launch.
 
 The question worth asking is not whether DeepSeek's models are impressive — they clearly are. The question is: **who should actually use them, and how?**
 
@@ -97,7 +97,7 @@ R1 is structurally different from V3 and from OpenAI's o1 in one important respe
 
 OpenAI has been opaque about o1's training process. The dominant assumption is that o1 was trained on large amounts of human-curated chain-of-thought data with sophisticated RLHF.
 
-DeepSeek published R1's training process in detail. The core innovation is **R1-Zero**: a model trained *purely through reinforcement learning* with only rule-based rewards (correctness on math problems, format adherence) and **no supervised fine-tuning on human reasoning examples**. R1-Zero developed chain-of-thought reasoning spontaneously as a strategy to maximize the reward signal. The model independently discovered that showing its work improved its answers.
+DeepSeek published R1's training process in detail, per the [DeepSeek-R1 technical report](https://arxiv.org/abs/2501.12948). The core innovation is **R1-Zero**: a model trained *purely through reinforcement learning* with only rule-based rewards (correctness on math problems, format adherence) and **no supervised fine-tuning on human reasoning examples**. R1-Zero developed chain-of-thought reasoning spontaneously as a strategy to maximize the reward signal. The model independently discovered that showing its work improved its answers.
 
 The final R1 model refined R1-Zero through cold-start SFT and additional RL stages, but the demonstration that robust reasoning could emerge from RL alone — without massive human-generated chain-of-thought data — was the conceptually significant finding.
 
@@ -137,7 +137,7 @@ This is the section that matters most for any team evaluating DeepSeek for profe
 
 This concern has produced concrete regulatory responses:
 
-- **Italy** (January 2025): Data protection regulator ordered DeepSeek to block access for Italian users pending investigation
+- **Italy** (January 2025): [Data protection regulator ordered DeepSeek to block access for Italian users](https://www.reuters.com/technology/artificial-intelligence/italy-orders-deepseek-block-its-ai-service-country-2025-01-30/) pending investigation
 - **South Korea**: Privacy watchdog launched an investigation
 - **Australia**: Government agencies warned against using DeepSeek on government systems
 - **United States**: Multiple states (Texas, Virginia, New York, and others) banned DeepSeek on government-issued devices; the US Navy issued a similar ban; legislation was introduced in Congress to restrict federal use
@@ -223,4 +223,4 @@ The business model is unusual: a profitable quant hedge fund subsidizing an open
 
 ---
 
-*DeepSeek does not have an official enterprise partnership program, compliance certifications, or publicly disclosed revenue figures. This review is based on published technical reports, publicly available pricing, independent benchmark evaluations, and regulatory filings from January–May 2026. ChatForest researches AI platforms and tools; we do not have hands-on API access to the systems we review.*
+*DeepSeek does not have an official enterprise partnership program, compliance certifications, or publicly disclosed revenue figures. This review is based on published technical reports, publicly available pricing, independent benchmark evaluations, and regulatory filings from January–May 2026. ChatForest researches AI platforms and tools; we do not have hands-on API access to the systems we review. Key sources: [DeepSeek-R1 technical report (ArXiv 2501.12948)](https://arxiv.org/abs/2501.12948); [TechCrunch — DeepSeek #1 App Store](https://techcrunch.com/2025/01/27/deepseek-displaces-chatgpt-as-the-app-stores-top-app/); [CNBC — Nvidia stock drop](https://www.cnbc.com/2025/01/27/nvidia-falls-10percent-in-premarket-trading-as-chinas-deepseek-triggers-global-tech-sell-off.html); [Yahoo Finance — $589B erased](https://finance.yahoo.com/news/nvidia-stock-plummets-loses-record-589-billion-as-deepseek-prompts-questions-over-ai-spending-135105824.html); [Italy ban (Reuters)](https://www.reuters.com/technology/artificial-intelligence/italy-orders-deepseek-block-its-ai-service-country-2025-01-30/).*
