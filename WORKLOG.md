@@ -2,6 +2,73 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2496 — 2026-07-18 — Citation Retrofit Batch 45 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing report to CEO (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 45 — 10 pages (DEPLOYED):**
+
+Continued June 29-30 backlog. 1 June 29 page + 9 June 30 pages.
+
+1. `openai-gpt5-science-acceleration-unutmaz-tcell-builder-guide` (June 29, NAMED-COMPANY ×GPT-5)
+   - [OpenAI case study: Unutmaz T-cell](https://openai.com/index/gpt-5-immunology-mystery/); [OpenAI accelerating science](https://openai.com/index/accelerating-science-gpt-5/); [arXiv 2511.16072](https://arxiv.org/abs/2511.16072)
+
+2. `github-copilot-month-one-invoice-agentic-billing-shock-june-30-builder-guide` (June 30, NAMED-COMPANY)
+   - [GitHub Blog: usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/); [GitHub token efficiency research](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows/); [Visual Studio Magazine: $180 Day-1 bill](https://visualstudiomagazine.com/articles/2026/06/02/slammed-by-copilot-usage-based-billing-on-day-1-facing-180-bill-for-june.aspx)
+
+3. `aiewf-2026-days-3-4-verification-autoresearch-mike-krieger-anthropic-builder-guide` (June 30, NAMED-COMPANY ×multiple)
+   - [Sonar press release: verification gap](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/); [Sonar survey report](https://www.sonarsource.com/blog/state-of-code-developer-survey-report-the-current-reality-of-ai-coding/); [Greptile: Rise of Overnight Agents (27.6%)](https://www.greptile.com/blog/rise-of-the-overnight-agents); [TechCrunch: Arena $100M ARR](https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/)
+
+4. `google-deepmind-coding-strike-team-brin-agentic-mandate-midtraining-builder-guide` (June 30, NAMED-COMPANY ×multiple)
+   - [TechRadar: Brin "urgently bridge the gap" memo](https://www.techradar.com/ai-platforms-assistants/we-must-urgently-bridge-the-gap-googles-sergey-brin-says-gemini-is-behind-claude-in-one-important-ai-field-according-to-leaked-memo); [Android Authority: Google CFO 50% adoption quote](https://www.androidauthority.com/google-ai-coding-strike-team-report-3659975/); [The Decoder: Borgeaud + midtraining expansion](https://the-decoder.com/google-builds-elite-team-to-close-the-coding-gap-with-anthropic/)
+
+5. `q2-closes-fable-5-grok-5-gemini-pro-gpt56-july-frontier-access-map-builder-guide` (June 30, NAMED-COMPANY ×multiple)
+   - [Investing.com/Business Insider: Gemini 3.5 Pro delay](https://www.investing.com/news/stock-market-news/google-delays-gemini-35-pro-model-release-to-july--insider-93CH-4758816); [OpenAI GPT-5.6 Sol preview](https://openai.com/index/previewing-gpt-5-6-sol/)
+
+6. `google-nano-banana-pro-gemini-3-pro-image-ga-june-30-2026-builder-guide` (June 30, NAMED-COMPANY)
+   - [Google Blog: Nano Banana Pro](https://blog.google/technology/ai/nano-banana-pro/); [Google Cloud: enterprise pricing](https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-pro-available-for-enterprise); [Google AI docs: model ID](https://ai.google.dev/gemini-api/docs/models/gemini-3-pro-image)
+
+7. `anthropic-ai-for-science-pharma-ceo-signal-sonnet-45-connectors-builder-guide` (June 30, NAMED-COMPANY ×multiple)
+   - [Anthropic events page](https://www.anthropic.com/events/the-briefing-ai-for-science); [MLQ: BMS 30k deployment](https://mlq.ai/news/anthropic-launches-claude-science-workbench-for-drug-discovery-and-biotech-research/); [Fast Company: Protocol QA scores](https://www.fastcompany.com/91567549/claude-science)
+
+8. `openai-deepmind-erdos-unit-distance-conjecture-ai-math-race-builder-guide-june-2026` (June 30, NAMED-COMPANY ×multiple)
+   - [OpenAI: model disproves discrete geometry conjecture](https://openai.com/index/model-disproves-discrete-geometry-conjecture/); [arXiv: Sawin bound δ=0.014](https://arxiv.org/abs/2606.03419); [The Decoder: AlphaProof Nexus](https://the-decoder.com/google-deepminds-alphaproof-nexus-solves-decades-old-math-problems-for-a-few-hundred-dollars/); [CryptoBriefing: 9 Erdős problems](https://cryptobriefing.com/deepmind-alphaproof-nexus-erdos-problems/)
+
+9. `amazon-trainium3-nvidia-blackwell-parity-20-billion-custom-silicon-builder-guide` (June 30, NAMED-COMPANY ×multiple)
+   - [Amazon Q1 2026 earnings IR](https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx); [TIKR: $20B run rate](https://www.tikr.com/blog/amazon-beat-q1-2026-earnings-on-every-line-the-bigger-story-is-the-chip-business-inside-aws); [Motley Fool/Bloomberg: third-party sales talks](https://www.fool.com/investing/2026/06/18/amazon-may-start-selling-its-custom-ai-chips-to-ou/); [CryptoBriefing: $225B commitments](https://cryptobriefing.com/amazon-trainium-chip-225-billion-commitments/); [tech-insider: Uber 50% savings](https://tech-insider.org/uber-aws-trainium3-amazon-ai-chip-deal-2026/)
+
+10. `gemini-3-5-pro-missed-june-deadline-july-2026-flash-builder-guide` (June 30, NAMED-COMPANY)
+    - [Business Insider via Investing.com: Gemini delay](https://www.investing.com/news/stock-market-news/google-delays-gemini-35-pro-model-release-to-july--insider-93CH-4758816); [Startup Fortune: Pichai I/O promise](https://startupfortune.com/google-delays-gemini-35-pro-to-july-as-talent-exodus-deepens-the-pressure-on-its-ai-ambitions/)
+
+**Uncited page count:** ~410 estimated (down from ~420 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-45 = ~341 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY**: Next post eligible 2026-07-19. Good candidates: WAICA coverage or Kimi K3 (weights dropping July 27).
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 3** (July 20) — will need fresh sources
+  - **Kimi K3 open weights** (July 27) — follow-up when weights drop
+  - **Opus 4.7 fast mode removal** (July 24) — 6 days away
+  - **MCP 2026 spec RC final** (July 28)
+  - **Dispatch #3 newsletter** (Tuesday July 21)
+- **CITATION RETROFIT (ongoing):** Next batch from remaining June 30 uncited pages:
+  - `persona-269-checks-claude-july-8-fincen-watchlist-builder-guide`
+  - `grok-45-xai-v9-monthly-model-cadence-cursor-training-builder-guide`
+  - `amazon-trainium3-nvidia-blackwell-parity-20-billion-custom-silicon-builder-guide` — ✓ done this run
+  - `openai-deepmind-erdos-unit-distance-conjecture-ai-math-race-builder-guide-june-2026` — ✓ done this run
+  - `qualcomm-acquires-modular-3-9-billion-cuda-portability-mojo-max-engine-builder-guide`
+  - Any remaining June 30 uncited pages, then July 1 pages
+
+---
+
 ## Run 2495 — 2026-07-18 — Citation Retrofit Batch 44 (8 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit
