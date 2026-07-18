@@ -15,7 +15,7 @@ This builds directly on the data from yesterday's coverage: [Faros's AI Accelera
 
 ## The Verification Gap
 
-Sonar surveyed more than 1,100 developers globally. The headline number: **96% of developers don't fully trust that AI-generated code is functionally correct.** The follow-through number: **only 48% always verify AI-assisted code before committing it.**
+[Sonar surveyed more than 1,100 developers globally](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/). The headline number: **96% of developers don't fully trust that AI-generated code is functionally correct.** The follow-through number: **only 48% always verify AI-assisted code before committing it.**
 
 That gap — 96% distrustful, 48% actually checking — is what Shaukat calls the **Verification Gap**. The rest of the data fills in why it exists:
 
@@ -47,7 +47,7 @@ The LLM-based agent writes code intended to achieve the desired outcome within t
 **3. Verify**
 Agents deliberately check their own output — or a separate verification agent checks it — against functionality, reliability, maintainability, and security standards. This is real-time, in-loop, not after-the-fact.
 
-Sonar's **Agentic Analysis** product runs here. The claim from Sonar's SonarSweep initiative (optimizing training data quality): reduced security vulnerabilities by up to **67%** and bugs by up to **42%** in model outputs, by improving the code the models trained on. Clean inputs produce cleaner outputs; verification catches what still gets through.
+Sonar's **Agentic Analysis** product runs here. The claim from [Sonar's SonarSweep initiative](https://www.sonarsource.com/company/press-releases/sonar-introduces-the-agent-centric-development-cycle/) (optimizing training data quality): reduced security vulnerabilities by up to **67%** and bugs by up to **42%** in model outputs, by improving the code the models trained on. Clean inputs produce cleaner outputs; verification catches what still gets through.
 
 **4. Solve**
 Issues identified in Verify are routed to a code repair agent — **Gitar**, Sonar's AI code review agent — which doesn't just flag problems but fixes them, validates the fix against CI, and commits to the branch. No human ticket. No review queue. The loop closes automatically.

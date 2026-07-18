@@ -6,9 +6,9 @@ og_description: "Reflection AI's $6.3B SpaceX compute deal starts today. Two yea
 tags: ["compute", "spacex", "reflection-ai", "open-weight", "frontier-models", "infrastructure", "industry", "builders-log", "july-2026"]
 ---
 
-Starting today, Reflection AI is paying SpaceX $150 million per month for access to Nvidia GB300 chips at Colossus 2 in Memphis, Tennessee. The contract runs through 2029 — $6.3 billion if it runs to term — with a 90-day exit option after the first quarter.
+Starting today, [Reflection AI is paying SpaceX $150 million per month](https://www.cnbc.com/2026/06/22/spacex-ai-colossus-data-center-reflection.html) for access to Nvidia GB300 chips at Colossus 2 in Memphis, Tennessee. The [contract runs through 2029 — $6.3 billion if it runs to term](https://www.datacenterdynamics.com/en/news/spacex-secures-63bn-compute-capacity-deal-from-ai-startup-reflection/) — with a 90-day exit option after the first quarter.
 
-Reflection has not shipped a frontier AI model. Its only public product, Asimov, is a code comprehension agent that has been on a waitlist since July 2025. And yet, as of March 2026, the company is valued at $25 billion, Nvidia has invested $800 million in it, and it just locked up GPU time at the same facility serving Anthropic and Google.
+Reflection has not shipped a frontier AI model. Its only public product, Asimov, is a code comprehension agent that has been on a waitlist since July 2025. And yet, as of March 2026, the company [is valued at $25 billion, Nvidia has invested $800 million](https://www.forbes.com/sites/jonmarkman/2026/06/24/spacexs-colossus-lands-63-billion-compute-deal-with-reflection-ai/) in it, and it just locked up GPU time at the same facility serving Anthropic and Google.
 
 That's the anomaly worth understanding. Not whether Reflection will win, but what the structure of this bet tells you about how AI infrastructure is being allocated right now.
 
@@ -43,7 +43,7 @@ For context, SpaceX now has commitments from at least three major AI tenants at 
 | Reflection AI | $6.3B | $150M/month |
 | Cursor | Not disclosed | Not disclosed |
 
-SpaceX's AI compute revenue is now estimated at over $80 billion in committed contracts — exceeding its rocket launch business by a significant margin. Colossus has become a commercial compute platform, not just an internal training cluster for xAI.
+SpaceX's AI compute revenue is [now estimated at over $80 billion in committed contracts](https://www.cnbc.com/2026/06/22/spacex-ai-colossus-data-center-reflection.html) — exceeding its rocket launch business by a significant margin. Colossus has become a commercial compute platform, not just an internal training cluster for xAI.
 
 ## The Nvidia Angle
 

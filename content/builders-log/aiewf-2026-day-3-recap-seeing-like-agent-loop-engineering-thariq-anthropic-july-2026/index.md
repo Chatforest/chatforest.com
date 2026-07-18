@@ -6,7 +6,7 @@ og_description: "AIEWF 2026 Day 3 recap: Barr Yaron's 2026 AI Engineering Survey
 tags: ["conference", "agents", "AIEWF", "Anthropic", "claude-code", "context-engineering", "loop-engineering", "tool-design", "evals"]
 ---
 
-The AI Engineer World's Fair 2026 designated July 1 as its "Autoresearch" day — parallel tracks on robotics, memory, context engineering, evals, computer use, and design engineering. The main stage opened at 9:00 AM PT with a data-heavy survey keynote and closed with a concept that's been quietly reshaping how senior engineers think about their jobs.
+The [AI Engineer World's Fair 2026](https://www.ai.engineer/worldsfair/schedule) designated July 1 as its "Autoresearch" day — parallel tracks on robotics, memory, context engineering, evals, computer use, and design engineering. The main stage opened at 9:00 AM PT with a data-heavy survey keynote and closed with a concept that's been quietly reshaping how senior engineers think about their jobs.
 
 Three talks in particular carried weight beyond their session slots. Taken together, they describe the same shift from three different angles: the engineer's role is changing from someone who uses AI tools to someone who designs systems that run AI work.
 
@@ -20,7 +20,7 @@ The 2025 version established the baseline. Evals ranked as the single most painf
 
 The 2026 survey reflects a materially different moment. The signals are in the complementary data released this week from other research arms:
 
-**Datadog's 2026 State of AI Engineering** (telemetry from 1,000+ customers) shows:
+**[Datadog's 2026 State of AI Engineering](https://www.datadoghq.com/state-of-ai-engineering/)** ([press release](https://www.datadoghq.com/about/latest-news/press-releases/datadog-state-of-ai-engineering-report-2026/)) (telemetry from 1,000+ customers) shows:
 - OpenAI's model share dropped from 75% to 63%; Claude and Gemini each gained significantly
 - 70%+ of organizations now use three or more models — portfolio diversification, not winner-take-all
 - Agent framework adoption nearly doubled year-over-year (9% → 18%)
@@ -28,7 +28,7 @@ The 2026 survey reflects a materially different moment. The signals are in the c
 - Context window usage quadrupled for power users; the constraint is now context *quality*, not size
 - Rate limit errors account for nearly one-third of all LLM call failures
 
-**LangChain's State of Agent Engineering** (1,340 respondents) shows:
+**[LangChain's State of Agent Engineering](https://www.langchain.com/state-of-agent-engineering)** (1,340 respondents) shows:
 - 57% of respondents have agents in production — up sharply from 2025's sub-20%
 - 89% have some form of agent observability; 62% have detailed step-level tracing
 - Most teams start with offline evals, but a quarter are combining offline and online
