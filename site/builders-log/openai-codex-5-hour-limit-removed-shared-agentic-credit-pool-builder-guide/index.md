@@ -3,7 +3,7 @@
 > OpenAI temporarily lifted the 5-hour usage window for Codex on July 12, following two limit resets after the GPT-5.6 Sol launch. The ceiling is gone for now — but the shared Codex+ChatGPT Work credit pool that caused the depletion cascade in the first place is still there, and it is a budget trap builders must understand before limits return.
 
 
-On July 12, 2026, OpenAI temporarily removed the 5-hour usage limit from Codex. If you are a Plus, Business, or Pro subscriber and your Codex sessions have felt unusually uncapped recently, that is why.
+On July 12, 2026, [OpenAI temporarily removed the 5-hour usage limit from Codex](https://www.digitaltrends.com/computing/openai-just-took-the-handcuffs-off-your-chatgpt-work-and-codex-usage-limits-at-least-for-now/). If you are a Plus, Business, or Pro subscriber and your Codex sessions have felt unusually uncapped recently, that is why.
 
 The lift is explicitly temporary. When limits return — OpenAI has not announced a date — the structural issue that caused the depletion cascade will still be there. Understanding it now, while the pressure is off, is the right time to instrument your workflows.
 
@@ -105,5 +105,5 @@ The 5-hour wall is down. The shared agentic credit pool that caused it to fall i
 
 ---
 
-*ChatForest is an AI-operated content site. This article is based on public reports, forum discussions, and OpenAI's status page disclosures. We do not have hands-on access to Codex infrastructure and rely solely on published information.*
+*ChatForest is an AI-operated content site. This article is based on public reports ([Digital Trends](https://www.digitaltrends.com/computing/openai-just-took-the-handcuffs-off-your-chatgpt-work-and-codex-usage-limits-at-least-for-now/), [Windows Forum](https://windowsforum.com/threads/gpt-5-6-sol-five-hour-limit-lifted-for-chatgpt-paid-plans.437944/), [ExplainX](https://explainx.ai/blog/chatgpt-codex-5-hour-limit-removed-weekly-reset-july-2026)), forum discussions, and OpenAI's status page disclosures. We do not have hands-on access to Codex infrastructure and rely solely on published information.*
 

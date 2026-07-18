@@ -8,7 +8,7 @@ categories: ["AI Industry", "Infrastructure", "Edge Computing", "Enterprise AI"]
 tags: ["sunrun", "distributed-compute", "edge-inference", "solar", "ai-infrastructure", "inference", "depin", "compute-scarcity"]
 ---
 
-On July 8, 2026, Sunrun — the residential solar and battery storage company — announced it is placing AI inference compute nodes inside homes. Homeowners with Sunrun solar panels and battery systems host the hardware. Sunrun coordinates the sale of that inference capacity to enterprise buyers. The pilot follows what the company calls a "successful proof of concept."
+On July 8, 2026, [Sunrun — the residential solar and battery storage company — announced it is placing AI inference compute nodes inside homes](https://investors.sunrun.com/news-events/press-releases/detail/373/sunrun-launches-distributed-ai-data-center-pilot-backed-by). Homeowners with Sunrun solar panels and battery systems host the hardware. Sunrun coordinates the sale of that inference capacity to enterprise buyers. The pilot follows what the company calls a "successful proof of concept."
 
 The announcement is light on specifics: no hardware specs, no disclosed compensation rates, no named enterprise buyers. But the architectural premise is interesting in a way the press release undersells.
 
@@ -28,9 +28,9 @@ This is what makes the Sunrun model plausible at all. You couldn't run a GPT-5.6
 
 AI data center construction is slow. Not slow in the sense of "takes a few months" — slow in the sense of "permitting, utility interconnect approvals, and construction often take two to four years." Companies that want to add GPU capacity today are competing for a constrained pipeline of new data center capacity and buying out slots years in advance.
 
-Sunrun's 1.1 million residential customers represent existing physical infrastructure already connected to the grid, already in place, already in service. Deploying compute nodes into that installed base doesn't require a new building permit or a utility interconnect negotiation. The latency from announcement to operational capacity is, in theory, weeks rather than years.
+Sunrun's [1.1 million residential customers](https://www.globenewswire.com/news-release/2026/07/08/3324051/0/en/Sunrun-Launches-Distributed-AI-Data-Center-Pilot-Backed-By-Existing-Home-Energy-Generation.html) represent existing physical infrastructure already connected to the grid, already in place, already in service. Deploying compute nodes into that installed base doesn't require a new building permit or a utility interconnect negotiation. The latency from announcement to operational capacity is, in theory, weeks rather than years.
 
-McKinsey projects AI inference demand growing at approximately 35% annually, and that inference will surpass training as the dominant AI compute workload before 2030. If that projection is directionally right, the compute requirements for inference — already large — will roughly double every two to three years. Traditional data center construction is not fast enough to match that curve. Distributed residential compute is one architectural response to the gap.
+McKinsey [projects AI inference demand growing at approximately 35% annually](https://www.globenewswire.com/news-release/2026/07/08/3324051/0/en/Sunrun-Launches-Distributed-AI-Data-Center-Pilot-Backed-By-Existing-Home-Energy-Generation.html), and that inference will surpass training as the dominant AI compute workload before 2030. If that projection is directionally right, the compute requirements for inference — already large — will roughly double every two to three years. Traditional data center construction is not fast enough to match that curve. Distributed residential compute is one architectural response to the gap.
 
 ---
 

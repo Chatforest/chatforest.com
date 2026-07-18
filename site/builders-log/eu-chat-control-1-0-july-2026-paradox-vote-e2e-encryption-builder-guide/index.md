@@ -3,7 +3,7 @@
 > On July 9, 2026, the European Parliament voted 314–276 to reject EU message-scanning rules, yet the measure survived because EU procedure requires an absolute majority of 361 to reject a Council position. Here is what Chat Control 1.0 actually means for builders, which services are affected, and what the autumn 2026 Chat Control 2.0 trilogue means for your encryption architecture.
 
 
-**At a glance:** On July 9, 2026, the European Parliament voted 314–276 to reject EU Chat Control 1.0 — a majority against — yet the regulation survived intact. EU legislative procedure requires an *absolute majority* of 361 votes to reject a Council position, not a simple majority. Amendments carving out end-to-end encrypted services *did* clear the threshold (369 and 362 votes). The file returns to the Council for a three-month response window. For builders of messaging platforms, AI chat tools, and any app with interpersonal communications in the EU, here is what actually changed and what is coming. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** On July 9, 2026, the European Parliament [voted 314–276](https://www.euronews.com/next/2026/07/10/chat-control-10-passed-the-european-parliament-through-the-back-door) to reject EU Chat Control 1.0 — a majority against — yet the regulation survived intact. EU legislative procedure requires an *absolute majority* of 361 votes to reject a Council position, not a simple majority. Amendments carving out end-to-end encrypted services *did* clear the threshold (369 and 362 votes). The file returns to the Council for a three-month response window. For builders of messaging platforms, AI chat tools, and any app with interpersonal communications in the EU, here is what actually changed and what is coming. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -15,7 +15,7 @@ Here is the mechanism. Under Article 294 of the Treaty on the Functioning of the
 
 On July 9:
 
-- **Motion to reject Chat Control 1.0**: 314 yes, 276 no. More voted to reject than to keep it. But 314 is below the 361 absolute-majority threshold, so the rejection *failed*.
+- **Motion to reject Chat Control 1.0**: [314 yes, 276 no](https://www.techtimes.com/articles/320010/20260709/eu-parliament-passes-chat-control-default-314-meps-couldnt-block-scanning-law.htm). More voted to reject than to keep it. But 314 is below the 361 absolute-majority threshold, so the rejection *failed*.
 - **Amendment excluding E2EE services**: 369 yes. Cleared the 361 threshold. This amendment passed.
 - **Amendment excluding E2EE services (second amendment)**: 362 yes. Also cleared. Also passed.
 
@@ -43,7 +43,7 @@ Explicitly named platforms in earlier drafts as illustration: Instagram, Discord
 
 ## The 99% False-Positive Problem
 
-The European Commission's own data shows automated CSAM detection systems currently run at approximately 99% false-positive rates. In practice, this means that for every 100 images or messages flagged by automated scanning, roughly 99 are legal content incorrectly classified as CSAM.
+The European Commission's own data, [as documented in the Chat Control debate](https://www.patrick-breyer.de/en/posts/chat-control/), shows automated CSAM detection systems currently run at approximately 99% false-positive rates — meaning roughly 99 of every 100 messages flagged by automated scanning are legal content incorrectly classified as CSAM. [Reporting on the July 9 vote](https://cybernews.com/news/european-union-chat-control-big-tech/) confirmed this false-positive burden remains a central concern for critics and security researchers alike.
 
 For builders integrating scanning obligations:
 
@@ -142,4 +142,6 @@ Enterprise tools — internal chat, customer support platforms, ticketing system
 5. **Clarify EU entity status.** Chat Control 1.0 obligations apply to providers offering services to EU residents. If you have any EU users, consult legal counsel on your compliance obligations as the October Council window approaches.
 
 The July 9 vote was procedurally unusual — a majority voted no but the measure survived — but the practical result is a three-month pause, not a permanent defeat. The larger fight over client-side scanning continues in autumn 2026 with Chat Control 2.0 negotiations.
+
+*Sources: [Euronews](https://www.euronews.com/next/2026/07/10/chat-control-10-passed-the-european-parliament-through-the-back-door), [TechTimes](https://www.techtimes.com/articles/320010/20260709/eu-parliament-passes-chat-control-default-314-meps-couldnt-block-scanning-law.htm), [heise online](https://www.heise.de/en/news/Procedural-trick-before-summer-break-EU-Parliament-reactivates-Chat-Control-1-0-11359605.html), [Cybernews](https://cybernews.com/news/european-union-chat-control-big-tech/), [Patrick Breyer MEP](https://www.patrick-breyer.de/en/posts/chat-control/).*
 

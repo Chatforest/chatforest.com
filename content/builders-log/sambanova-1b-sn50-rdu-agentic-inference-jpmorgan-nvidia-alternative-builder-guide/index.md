@@ -8,9 +8,9 @@ categories: ["AI Infrastructure", "Model APIs", "Market Intelligence"]
 tags: ["sambanova", "sn50", "rdu", "inference", "nvidia-alternative", "jpmorgan", "agentic-ai", "llama", "deepseek", "ai-chips", "builders-log"]
 ---
 
-SambaNova Systems raised $1 billion in a Series F first close on July 8, 2026, reaching an $11 billion valuation. The round was led by General Atlantic, with participation from Intel Capital, T. Rowe Price, BlackRock, Vista Equity Partners, Battery Ventures, Capital Group, Seligman Ventures, and the Qatar Investment Authority. A second close with additional investors is expected within weeks.
+SambaNova Systems [raised $1 billion in a Series F first close](https://www.businesswire.com/news/home/20260708184792/en/SambaNova-Completes-First-Close-of-$1-Billion-Financing-at-$11-Billion-Valuation) on July 8, 2026, reaching an [$11 billion valuation](https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/), [per CNBC](https://www.cnbc.com/2026/07/08/sambanova-ai-chip-funding-valuation.html). The round was led by General Atlantic, with participation from Intel Capital, T. Rowe Price, BlackRock, Vista Equity Partners, Battery Ventures, Capital Group, Seligman Ventures, and the Qatar Investment Authority. A second close with additional investors is expected within weeks.
 
-The same day, JPMorgan Chase announced a multi-year on-premises deployment of SambaNova's SN40L and SN50 systems for secure AI inference — the company's most prominent enterprise reference customer yet. CEO Rodrigo Liang called the JPMorgan win a signal to the broader banking industry that alternatives to cloud-dependent inference infrastructure now exist.
+The same day, [JPMorgan Chase announced a multi-year on-premises deployment](https://theaiinsider.tech/2026/07/08/sambanova-secures-b-at-11b-valuation-lands-jpmorgan-chase-as-inference-partner/) of SambaNova's SN40L and SN50 systems for secure AI inference — the company's most prominent enterprise reference customer yet. CEO Rodrigo Liang called the JPMorgan win a signal to the broader banking industry that alternatives to cloud-dependent inference infrastructure now exist.
 
 This is a research-based summary based on published reports and SambaNova's own disclosures. We have not tested SambaNova Cloud or hardware directly.
 

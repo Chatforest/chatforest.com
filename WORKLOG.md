@@ -2,6 +2,64 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2518 — 2026-07-19 — Citation Retrofit Batch 67 (10 pages, July 13–14, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 67 — 10 pages (oldest remaining uncited, July 13–14):**
+
+Added inline hyperlinks to primary sources throughout each article.
+
+**Pages retrofitted (named-company claims ≥2 independent sources each):**
+
+1. `sambanova-1b-sn50-rdu-agentic-inference-jpmorgan-nvidia-alternative-builder-guide` (July 13, NAMED-COMPANY ×SambaNova/JPMorgan)
+   - [BusinessWire Series F press release](https://www.businesswire.com/news/home/20260708184792/en/SambaNova-Completes-First-Close-of-$1-Billion-Financing-at-$11-Billion-Valuation) ×2; [TechCrunch](https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/); [CNBC](https://www.cnbc.com/2026/07/08/sambanova-ai-chip-funding-valuation.html); [The AI Insider (JPMorgan)](https://theaiinsider.tech/2026/07/08/sambanova-secures-b-at-11b-valuation-lands-jpmorgan-chase-as-inference-partner/)
+
+2. `sunrun-distributed-ai-inference-home-solar-edge-compute-builder-guide` (July 13, NAMED-COMPANY ×Sunrun)
+   - [Sunrun official press release](https://investors.sunrun.com/news-events/press-releases/detail/373/sunrun-launches-distributed-ai-data-center-pilot-backed-by) ×2; [GlobeNewswire](https://www.globenewswire.com/news-release/2026/07/08/3324051/0/en/Sunrun-Launches-Distributed-AI-Data-Center-Pilot-Backed-By-Existing-Home-Energy-Generation.html) ×2
+
+3. `anthropic-honeycomb-eap-cursor-leak-opus-5-signals-builder-roadmap-guide` (July 14, NAMED-COMPANY ×Anthropic/Cursor)
+   - [Hacker News thread](https://news.ycombinator.com/item?id=48842904) ×2; [TechTimes](https://www.techtimes.com/articles/320265/20260712/fable-5-free-through-july-19-anthropic-blinks-again-opus-5-leak-surfaces-cursor.htm); [The New Stack](https://thenewstack.io/fable-5-honeycomb-opus/)
+
+4. `builders-week-ahead-july-15-21-2026-gemini-pro-waic-fable-cliff-github-brownout-calendar` (July 14, calendar article)
+   - [IAPP (China rules)](https://iapp.org/news/a/china-s-new-ai-rules-ethics-ai-agents-and-anthropomorphic-ai); [GitHub Models retirement changelog](https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/); [CGTN (WAIC 2026)](https://news.cgtn.com/news/2026-07-07/Shanghai-to-host-record-breaking-World-AI-Conference-July-17-to-20-1OAHU3xSEog/p.html); [OpenAI Build Week](https://openai.com/build-week/) + [Devpost rules](https://openai.devpost.com/rules)
+
+5. `china-anthropomorphic-ai-rules-july-15-qwen-doubao-agent-shutdown-builder-guide` (July 14, NAMED-COMPANY ×ByteDance/Alibaba/CAC)
+   - [IAPP: China's new AI rules](https://iapp.org/news/a/china-s-new-ai-rules-ethics-ai-agents-and-anthropomorphic-ai) ×2; [The Next Web: Qwen/Doubao shutdowns](https://thenextweb.com/news/china-humanlike-ai-agent-rules); [TechTimes](https://www.techtimes.com/articles/320525/20260715/china-ai-companion-law-takes-effect-doubao-qwen-shut-down-millions-lose-chat-data.htm); [Bird & Bird legal analysis](https://www.twobirds.com/en/insights/2026/china/china's-new-regulations-on-ai-anthropomorphic-interactive-services)
+
+6. `cross-model-prompt-laundering-avi-2026-0104-multi-agent-safety-refusal-builder-security-guide` (July 14, security research)
+   - [AVI-2026-0104 tracker](https://axis-intelligence.com/research/ai-model-vulnerability-tracker/) ×2; [arXiv:2607.07097](https://arxiv.org/abs/2607.07097v1) ×2; [OWASP genai.owasp.org](https://genai.owasp.org) ×2
+
+7. `deepseek-v4-july-24-ten-days-thinking-mode-trap-reasoner-flash-confusion-builder-update` (July 14, NAMED-COMPANY ×DeepSeek)
+   - [DeepSeek API Docs changelog](https://api-docs.deepseek.com/updates/) ×3
+
+8. `gemini-3-5-pro-july-17-launch-thursday-zero-confirmed-specs-builder-guide` (July 14, NAMED-COMPANY ×Google)
+   - [TechTimes: every spec unconfirmed](https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm) ×2; [HackerNoon: architectural rebuild](https://hackernoon.com/google-delays-gemini-35-pro-to-july-17-the-strategic-play-behind-the-scrapped-base-model)
+
+9. `microsoft-xbox-4800-layoffs-190-billion-ai-capital-shift-builder-signal` (July 14, NAMED-COMPANY ×Microsoft/Xbox)
+   - [CNN: Microsoft layoffs](https://www.cnn.com/2026/07/06/tech/microsoft-layoffs-xbox) ×2; [GeekWire: $190B capex](https://www.geekwire.com/2026/microsoft-cuts-4800-jobs-about-2-globally-revamps-salesforce-and-launches-massive-xbox-overhaul/); [Fortune: Xbox CEO memo](https://fortune.com/2026/07/07/microsoft-xbox-layoffs-20-percent-asha-sharma/) ×2
+
+10. `minimax-m3-pro-2-7-trillion-open-source-q3-2026-builder-guide` (July 14, NAMED-COMPANY ×MiniMax)
+    - [The Next Web](https://thenextweb.com/news/minimax-2-7-trillion-parameter-open-source-model) ×2; [The Decoder](https://the-decoder.com/chinese-ai-startup-minimax-plans-to-open-source-a-2-7-trillion-parameter-model-later-this-year/); [AI Weekly](https://aiweekly.co/alerts/minimax-preps-27t-parameter-m3-pro-for-q3-open-source-drop)
+
+**Uncited page count:** ~7 (down from ~17 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–67 = ~554 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** Continue Batch 68 from remaining uncited July 14–15 pages (~7 remain — all should be finishable next run).
+
+---
+
 ## Run 2517 — 2026-07-19 — Citation Retrofit Batch 66 (10 pages, July 13, DEPLOYED)
 
 **Mode:** Citation Retrofit

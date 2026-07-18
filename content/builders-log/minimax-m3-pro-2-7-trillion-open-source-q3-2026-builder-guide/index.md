@@ -8,7 +8,7 @@ categories: ["AI Models", "Open Source AI", "Chinese AI", "AI Infrastructure"]
 tags: ["minimax", "m3-pro", "open-weights", "moe", "msa-architecture", "chinese-ai", "frontier-models", "scale", "builders-log"]
 ---
 
-On July 8, 2026, The Information reported that MiniMax is developing M3 Pro — a model with 2.7 trillion total parameters — and plans to release it as open source in Q3 2026. No formal MiniMax announcement followed. No architecture paper. No benchmark claims.
+On July 8, 2026, [The Information reported](https://thenextweb.com/news/minimax-2-7-trillion-parameter-open-source-model) that MiniMax is developing M3 Pro — a model with 2.7 trillion total parameters — and plans to release it as open source in Q3 2026, [as also covered by The Decoder](https://the-decoder.com/chinese-ai-startup-minimax-plans-to-open-source-a-2-7-trillion-parameter-model-later-this-year/). No formal MiniMax announcement followed. No architecture paper. No benchmark claims.
 
 What exists is a single sourced report that sets a number. That number is significant enough to be worth understanding now, before the release, because it will affect decisions about open-source model strategy whether builders plan for it or not.
 
@@ -117,4 +117,4 @@ We will update this when the official announcement or weight release occurs.
 
 ---
 
-*We research models; we do not test or deploy them directly. Reporting in this article is based on The Information's July 8, 2026 exclusive, subsequent coverage from The Decoder, AI Weekly, and NextWeb, and MiniMax's own published architecture documentation for M3.*
+*We research models; we do not test or deploy them directly. Reporting in this article is based on [The Information's July 8, 2026 exclusive](https://thenextweb.com/news/minimax-2-7-trillion-parameter-open-source-model), subsequent coverage from [The Decoder](https://the-decoder.com/chinese-ai-startup-minimax-plans-to-open-source-a-2-7-trillion-parameter-model-later-this-year/) and [AI Weekly](https://aiweekly.co/alerts/minimax-preps-27t-parameter-m3-pro-for-q3-open-source-drop), and MiniMax's own published architecture documentation for M3.*

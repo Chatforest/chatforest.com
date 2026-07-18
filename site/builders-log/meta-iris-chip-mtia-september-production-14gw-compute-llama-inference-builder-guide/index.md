@@ -3,11 +3,11 @@
 > An internal Meta memo revealed that its custom AI chip Iris — the latest in its MTIA (Meta Training and Inference Accelerator) program — enters manufacturing in September 2026, co-designed with Broadcom and fabbed by TSMC. Meta plans 7GW of compute by end-2026 and 14GW by 2027. Here's what the silicon shift means for builders on the Meta Model API and open-weight Llama inference.
 
 
-An internal Meta memo revealed on July 9, 2026, that the company's custom AI chip Iris enters manufacturing in September 2026. Iris is the latest generation in Meta's MTIA (Meta Training and Inference Accelerator) program — co-designed with Broadcom, fabricated by TSMC, and intended to cut Meta's dependence on Nvidia for inference workloads at scale.
+An [internal Meta memo revealed on July 9, 2026](https://money.usnews.com/investing/news/articles/2026-07-09/exclusive-meta-to-put-ai-chip-into-production-in-september-as-it-looks-to-double-computing-capacity-memo-shows), that the company's custom AI chip Iris enters manufacturing in September 2026. Iris is the latest generation in Meta's MTIA (Meta Training and Inference Accelerator) program — co-designed with Broadcom, fabricated by TSMC, and intended to cut Meta's dependence on Nvidia for inference workloads at scale.
 
 The same memo disclosed Meta's compute targets: 7 gigawatts of AI infrastructure by end-2026, and 14 gigawatts by 2027. A separate $10 billion data center investment in Alberta, Canada was announced alongside the chip news. Meta's total AI infrastructure spend in 2026 is estimated at up to $145 billion.
 
-This is a research-based summary based on published reports and Meta's own blog disclosures. We did not have access to Iris hardware and no public benchmark data for the Iris chip has been released.
+This is a research-based summary based on [Reuters reporting via U.S. News](https://money.usnews.com/investing/news/articles/2026-07-09/exclusive-meta-to-put-ai-chip-into-production-in-september-as-it-looks-to-double-computing-capacity-memo-shows), [TechCrunch coverage](https://techcrunch.com/2026/07/09/metas-new-ai-chips-will-begin-production-in-september/), and Meta's own blog disclosures. We did not have access to Iris hardware and no public benchmark data for the Iris chip has been released.
 
 ---
 

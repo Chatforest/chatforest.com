@@ -8,7 +8,7 @@ categories: ["AI Regulation", "Chinese AI", "AI Agents", "Compliance"]
 tags: ["china", "cac", "anthropomorphic-ai", "doubao", "qwen", "yuanbao", "miaoshi", "ai-regulation", "ai-companions", "agent-platforms", "compliance", "builders-log"]
 ---
 
-China's "Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services" takes effect today, July 15, 2026. The regulation was issued on April 10 by five central government agencies — the Cyberspace Administration of China (CAC), the National Development and Reform Commission (NDRC), the Ministry of Industry and Information Technology (MIIT), the Ministry of Public Security (MPS), and the State Administration for Market Regulation (SAMR).
+China's ["Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services"](https://iapp.org/news/a/china-s-new-ai-rules-ethics-ai-agents-and-anthropomorphic-ai) takes effect today, July 15, 2026. The regulation was issued on April 10 by five central government agencies — the Cyberspace Administration of China (CAC), the National Development and Reform Commission (NDRC), the Ministry of Industry and Information Technology (MIIT), the Ministry of Public Security (MPS), and the State Administration for Market Regulation (SAMR).
 
 Four major Chinese AI platforms have already acted. If you built anything on their agent platforms, this is your last-chance notice.
 
@@ -20,9 +20,9 @@ Four major Chinese AI platforms have already acted. If you built anything on the
 
 **NetEase Miaoshi** — July 14, 2026. Full platform shutdown yesterday. Miaoshi was a dedicated AI companion integrated into NetEase Cloud Music. Gone completely.
 
-**Alibaba Qwen** — User-created agents disabled July 10. Full agent platform functions shut down today, July 15. Users lose access to agent settings and conversation histories simultaneously. **Alibaba confirmed there is no migration path.** If you built workflows on Qwen's agent platform and have not already backed up your configurations, they are gone.
+**Alibaba Qwen** — [User-created agents disabled July 10. Full agent platform functions shut down today, July 15.](https://thenextweb.com/news/china-humanlike-ai-agent-rules) Users lose access to agent settings and conversation histories simultaneously. **Alibaba confirmed there is no migration path.** If you built workflows on Qwen's agent platform and have not already backed up your configurations, they are gone.
 
-**ByteDance Doubao** — Agent features go offline today, July 15. Unlike Qwen, Doubao gives users an export window: data is viewable and exportable until **October 15, 2026**. After that date, all character data and chat histories are permanently deleted. ByteDance recommends users "back up important content by taking screenshots or exporting" before the deadline.
+**ByteDance Doubao** — [Agent features go offline today, July 15.](https://www.techtimes.com/articles/320525/20260715/china-ai-companion-law-takes-effect-doubao-qwen-shut-down-millions-lose-chat-data.htm) Unlike Qwen, Doubao gives users an export window: data is viewable and exportable until **October 15, 2026**. After that date, all character data and chat histories are permanently deleted. ByteDance recommends users "back up important content by taking screenshots or exporting" before the deadline.
 
 ---
 
@@ -116,4 +116,4 @@ The four-platform shutdown that happened over the past two weeks is the most vis
 
 ---
 
-*The regulation text (Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services, CAC/NDRC/MIIT/MPS/SAMR, April 10, 2026) is available in Chinese on the CAC's official site. English analyses from Bird & Bird and Hogan Lovells are available for those needing legal review. This is a technical summary for builders, not legal advice.*
+*The regulation text (Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services, CAC/NDRC/MIIT/MPS/SAMR, April 10, 2026) is available in Chinese on the CAC's official site. English analyses from [Bird & Bird](https://www.twobirds.com/en/insights/2026/china/china's-new-regulations-on-ai-anthropomorphic-interactive-services) and Hogan Lovells are available for those needing legal review. This is a technical summary for builders, not legal advice.*

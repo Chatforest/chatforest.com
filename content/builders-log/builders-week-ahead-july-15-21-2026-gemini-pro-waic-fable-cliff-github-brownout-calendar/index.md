@@ -19,7 +19,7 @@ Here is the full calendar.
 
 ## China's AI Companion Rules Take Effect: July 15
 
-**What it is**: China's *Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services* — issued jointly by five government bodies (CAC, NDRC, MIIT, MPS, SAMR) on April 10, 2026 — become enforceable law starting today.
+**What it is**: China's [*Interim Measures for the Administration of Artificial Intelligence Anthropomorphic Interaction Services*](https://iapp.org/news/a/china-s-new-ai-rules-ethics-ai-agents-and-anthropomorphic-ai) — issued jointly by five government bodies (CAC, NDRC, MIIT, MPS, SAMR) on April 10, 2026 — become enforceable law starting today.
 
 **What it covers**: AI services that simulate human personality, emotional engagement, or sustained social interaction. The target is AI companions, custom personality agents, virtual friends, and any service that goes beyond task completion into sustained emotional interaction.
 
@@ -33,7 +33,7 @@ For the detailed compliance checklist, see our [full coverage](/builders-log/chi
 
 ## GitHub Models First Brownout: July 16
 
-**What it is**: GitHub will run a scheduled service interruption for GitHub Models on Wednesday. During a brownout, Models requests return errors before service is restored. Full retirement is July 30.
+**What it is**: GitHub will run a [scheduled service interruption for GitHub Models](https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/) on Wednesday. During a brownout, Models requests return errors before service is restored. Full retirement is July 30.
 
 **Why GitHub is doing this strategically**: GitHub cannot fully see how developers are using its APIs from the outside. Brownouts function as telemetry — failing requests get attention in ways that calendar announcements often don't. The July 16 and July 23 brownouts are designed to surface hidden dependencies before the July 30 hard shutdown.
 
@@ -67,7 +67,7 @@ For the detailed compliance checklist, see our [full coverage](/builders-log/chi
 
 ## WAIC 2026: July 17–20, Shanghai
 
-**What it is**: The World AI Conference and High-Level Meeting on Global AI Governance. 1,100+ enterprises, 3,000+ exhibits, 300+ global product debuts. Xi Jinping's keynote sets the tone for China's official AI governance posture.
+**What it is**: The [World AI Conference and High-Level Meeting on Global AI Governance](https://news.cgtn.com/news/2026-07-07/Shanghai-to-host-record-breaking-World-AI-Conference-July-17-to-20-1OAHU3xSEog/p.html). 1,100+ enterprises, 3,000+ exhibits, 300+ global product debuts. Xi Jinping's keynote sets the tone for China's official AI governance posture.
 
 **Confirmed debuts at WAIC**:
 
@@ -120,7 +120,7 @@ New capabilities at GA include organization-level quality dashboards, code cover
 
 ## OpenAI Build Week Submissions Close: July 21
 
-**What it is**: OpenAI Build Week — a virtual hackathon running July 13–21 built around Codex — closes submissions at 5:00 PM PDT on Monday, July 21. Prize pool: $100,000.
+**What it is**: [OpenAI Build Week](https://openai.com/build-week/) — a virtual hackathon running July 13–21 built around Codex — closes submissions at 5:00 PM PDT on Monday, July 21. Prize pool: $100,000, [per the official Devpost rules](https://openai.devpost.com/rules).
 
 **If you are participating**: Submission deadline is Monday. The week's live sessions and community events have been running since July 13; final submissions go through Devpost.
 

@@ -9,7 +9,7 @@ tags: ["google", "gemini", "gemini-3.5-pro", "model-selection", "api-strategy", 
 draft: false
 ---
 
-Three days before Gemini 3.5 Pro is supposed to ship, there is no model card, no pricing page, and no `gemini-3.5-pro` listing in the public API documentation. The July 17 date itself comes from third-party reporting — Google has not officially confirmed it.
+Three days before Gemini 3.5 Pro is supposed to ship, there is no model card, no pricing page, and no `gemini-3.5-pro` listing in the public API documentation. The July 17 date itself comes from [third-party reporting](https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm) — Google has not officially confirmed it.
 
 This is unusual. Anthropic published Fable 5's model card and pricing two weeks before launch. OpenAI pushed GPT-5.6 Sol's pricing page to docs.openai.com before broad access opened. At 72 hours out, Google has issued no parallel announcement — no API docs update, no Vertex AI announcement, no model card.
 
@@ -29,7 +29,7 @@ Two missed deadlines followed by zero documentation update 72 hours before the r
 
 ## What Third-Party Reporting Says
 
-Every specification circulating comes from leaks, enterprise preview testers, and analyst inference — not from a model card:
+Every specification circulating comes from leaks, enterprise preview testers, and analyst inference — not from a model card. [TechTimes confirms every spec remains unconfirmed](https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm); [HackerNoon covers the architectural rebuild strategy](https://hackernoon.com/google-delays-gemini-35-pro-to-july-17-the-strategic-play-behind-the-scrapped-base-model):
 
 | Claim | Confidence |
 |-------|-----------|

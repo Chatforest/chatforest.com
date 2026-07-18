@@ -9,7 +9,7 @@ tags: ["deepseek", "deepseek-v4", "migration", "llm-api", "thinking-mode", "cost
 draft: false
 ---
 
-July 24 at 15:59 UTC: `deepseek-chat` and `deepseek-reasoner` stop resolving. No warnings, no grace period, no extension announced. The [original migration guide](/builders-log/deepseek-v4-flash-migration-deadline-builder-guide/) from May covers what changed and how to update your model strings. This is what builders discovered in the six weeks since.
+[July 24 at 15:59 UTC](https://api-docs.deepseek.com/updates/): `deepseek-chat` and `deepseek-reasoner` stop resolving. No warnings, no grace period, no extension announced. The [original migration guide](/builders-log/deepseek-v4-flash-migration-deadline-builder-guide/) from May covers what changed and how to update your model strings. This is what builders discovered in the six weeks since.
 
 ## Trap 1: Thinking Mode Defaults On in V4-Pro
 
@@ -23,7 +23,7 @@ V4-Pro defaults to extended thinking mode at high intensity. It runs longer inte
 
 This is the most dangerous migration assumption: the legacy `deepseek-reasoner` alias resolves to **V4-Flash**, not V4-Pro.
 
-From DeepSeek's migration table:
+From [DeepSeek's migration table](https://api-docs.deepseek.com/updates/):
 
 | Legacy alias | Resolves to |
 |---|---|
@@ -67,6 +67,6 @@ The traps above are specific to: users with implicit assumptions about what `dee
 
 ---
 
-**Deadline**: July 24, 2026 at 15:59 UTC. No extension announced.
+**Deadline**: [July 24, 2026 at 15:59 UTC](https://api-docs.deepseek.com/updates/). No extension announced.
 
 **Migration reference**: The [original V4 guide](/builders-log/deepseek-v4-flash-migration-deadline-builder-guide/) covers the full model comparison, context window specs, and pricing table.
