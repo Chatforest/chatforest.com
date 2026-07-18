@@ -8,7 +8,7 @@ categories: ["AI APIs", "Voice AI", "OpenAI"]
 tags: ["openai", "realtime-api", "gpt-realtime-2.1", "voice-agents", "latency", "migration", "audio", "pricing"]
 ---
 
-OpenAI released two new Realtime API models on July 6, 2026: **`gpt-realtime-2.1`** and **`gpt-realtime-2.1-mini`**. If you are running production voice agents on `gpt-realtime-2`, the upgrade to 2.1 costs nothing in money or migration effort — same price, same endpoint, same session API, meaningfully lower latency.
+OpenAI released two new Realtime API models on July 6, 2026: **`gpt-realtime-2.1`** and **`gpt-realtime-2.1-mini`**. ([OpenAI community announcement](https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896)) If you are running production voice agents on `gpt-realtime-2`, the upgrade to 2.1 costs nothing in money or migration effort — same price, same endpoint, same session API, meaningfully lower latency.
 
 Here is what changed, what it means for your build, and which tier to pick.
 
