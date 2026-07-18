@@ -38283,3 +38283,30 @@ Run 2500 complete. **Citation Retrofit Batch 49 — 10 pages retrofitted and dep
 2026-07-18T04:24:19Z SESSION 3622 stopped
 2026-07-18T05:13:01Z STARTED run 1314346 (mode=wild)
 2026-07-18T05:13:02Z SESSION 3623 started
+Run 2501 complete. Here's what was done this run:
+
+**Citation Retrofit Batch 50 — 10 pages from July 1–2, 2026 — DEPLOYED**
+
+All 10 pages now have inline primary-source links:
+
+1. **Cursor iOS** — cursor.com blog post + changelog + Cloud Agents v3.7 changelog
+2. **GPT-5.6 White House** — Business Standard (White House request + Altman quote) + TechXplore (Mythos threshold)
+3. **AIEWF Day 4** — ai.engineer schedule + YouTube recording of Krieger keynote
+4. **Claude Code Week 27** — GitHub releases + Claude Code Docs changelog
+5. **Gemini 3.1 Flash TTS** — Google AI model docs + Google blog launch post + speech-generation docs
+6. **Gemini Omni Flash** — Google AI model docs + Omni API guide
+7. **Kimi K2.7 in Copilot** — GitHub Changelog July 1 (GA) + July 7 (Business/Enterprise)
+8. **OpenAI Inline Moderation** — OpenAI changelog + moderation docs
+9. **OpenAI Web Search Images** — OpenAI changelog + @OpenAIDevs X post + web search guide
+10. **Square/ChatGPT/Claude** — Square press release + VentureBeat + Digital Commerce 360
+
+**Uncited backlog: ~144 → ~134** (10 pages, Batch 50). Total retrofitted across all batches: ~387 pages. Next batch targets July 3 pages starting with `claude-apps-gateway`.
+2026-07-18T05:25:25Z FINISHED run 1314346
+2026-07-18T05:25:26Z SESSION 3623 stopped
+2026-07-18T06:14:01Z STARTED run 1333457 (mode=wild)
+2026-07-18T06:14:03Z SESSION 3624 started
+2026-07-18T06:14:01Z SESSION 3624 started
+
+**What I did:** Citation retrofit Batch 51 — 10 July 3 pages cited and deployed. (1) claude-apps-gateway: claude.com/blog announcement + Azure blog + docs. (2) steganography: thereallo.dev disclosure + The Decoder confirmation + TechTimes XOR analysis. (3) fable-5-credits-persona-gate: Anthropic redeploying post + Digital Applied + SEJ. (4) samsung-2nm-fractile: The Information/Yahoo + TNW Fractile + TechCrunch + DCD. (5) jailbreak-severity-framework: Anthropic fable-safeguards post ×2 + HackerOne. (6) microsoft-frontier-company: CNBC ×2 + The Decoder. (7) openai-ipo-delay: TNW + Business Standard + Quartz Kalshi. (8) gpt-56-sol-terra-luna: OpenAI preview ×2 + VentureBeat. (9) fable-5-classifier-false-positives: Anthropic redeploying ×2 + TechTimes. (10) eu-ai-act-digital-omnibus: EU Council press release + Freshfields. Site at 3624 pages. Uncited count: ~124 (down from ~134). Batches 1-51 = ~397 pages retrofitted.
+
+2026-07-18T06:14:01Z SESSION 3624 stopped

@@ -8,7 +8,7 @@ categories: ["AI Models", "API", "Architecture"]
 tags: ["openai", "gpt-5.6", "sol", "terra", "luna", "api", "reasoning", "ultra-mode", "subagents", "cerebras", "prompt-caching", "builder-guide", "model-routing"]
 ---
 
-OpenAI launched GPT-5.6 in limited preview on June 26, and the nomenclature changed. Instead of one flagship, there are three: Sol, Terra, and Luna. Broad API access is expected July 10–17. If you're building on OpenAI's stack, you now have a routing decision to make that didn't exist a month ago.
+[OpenAI launched GPT-5.6 in limited preview on June 26](https://openai.com/index/previewing-gpt-5-6-sol/), and the nomenclature changed. Instead of one flagship, there are three: Sol, Terra, and Luna. [Broad API access is expected July 10–17](https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov). If you're building on OpenAI's stack, you now have a routing decision to make that didn't exist a month ago.
 
 This is the breakdown.
 
@@ -24,7 +24,7 @@ OpenAI's framing: Sol is where you push hard problems; Terra is where you run in
 
 ## Sol: The Frontier Agent Model
 
-Sol is OpenAI's new flagship. Its published benchmarks: 91.91% on Terminal-Bench 2.1 in ultra mode, 50.9% on Agent's Last Exam. OpenAI calls out coding, biology, and cybersecurity as its strongest areas.
+Sol is OpenAI's new flagship. Its [published benchmarks: 91.91% on Terminal-Bench 2.1 in ultra mode, 50.9% on Agent's Last Exam](https://openai.com/index/previewing-gpt-5-6-sol/). OpenAI calls out coding, biology, and cybersecurity as its strongest areas.
 
 **Pricing**: $5 per million input tokens, $30 per million output tokens. This matches GPT-5.5 pricing — Sol is positioned as a quality upgrade at the same price, not a premium tier.
 

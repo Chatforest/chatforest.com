@@ -2,6 +2,68 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2502 — 2026-07-18 — Citation Retrofit Batch 51 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 51 — 10 pages (DEPLOYED):**
+
+All 10 pages are from July 3, 2026 — the oldest uncited date in the backlog after Batches 49–50 cleared July 1–2.
+
+1. `claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry-builder-guide` (July 3, NAMED-COMPANY ×Anthropic ×Microsoft ×AWS ×Google)
+   - [Anthropic: Introducing the Claude apps gateway](https://claude.com/blog/introducing-the-claude-apps-gateway) (opening launch claim + "Claude apps gateway" text); [Microsoft Azure Blog: Claude GA on Foundry](https://azure.microsoft.com/en-us/blog/introducing-anthropics-claude-models-in-microsoft-foundry-bringing-frontier-intelligence-to-azure/) (Foundry GA claim); [Claude Code gateway docs](https://code.claude.com/docs/en/claude-apps-gateway) (architecture details)
+
+2. `anthropic-claude-code-steganography-covert-detection-system-prompt-trust-builder-guide` (July 3, NAMED-COMPANY ×Anthropic)
+   - [ThereAllo.dev: original steganography disclosure](https://thereallo.dev/blog/claude-code-prompt-steganography) (Reddit discovery + mechanism); [The Decoder: Anthropic confirmation](https://the-decoder.com/hidden-code-in-claude-code-secretly-flagged-chinese-users/) (company confirmed code + removal promise); [TechTimes: XOR analysis](https://www.techtimes.com/articles/319415/20260701/claude-code-hid-proxy-fingerprints-system-prompts-anthropic-promises-fix.htm) (XOR-obfuscation technical claim)
+
+3. `anthropic-fable-5-july-7-credits-july-8-persona-gate-builder-action-guide` (July 3, NAMED-COMPANY ×Anthropic ×Persona)
+   - [Anthropic: Redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5) (50% weekly cap through July 7 claim); [Digital Applied: July 7 pricing switch](https://www.digitalapplied.com/blog/claude-fable-5-usage-credits-july-7-pricing-guide-2026) (metered credits structure); [Search Engine Journal: Persona privacy policy](https://www.searchenginejournal.com/anthropics-claude-fable-5-is-back-with-new-usage-limits-and-safeguards/581231/) (revised privacy policy July 8)
+
+4. `anthropic-samsung-2nm-fractile-custom-silicon-inference-builder-guide` (July 3, NAMED-COMPANY ×Anthropic ×Samsung ×Fractile)
+   - [The Information via Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/anthropic-explores-samsung-2nm-chip-144844786.html) (Samsung 2nm talks); [The Next Web: Fractile talks](https://thenextweb.com/news/fractile-220m-inference-chip) (Anthropic/Fractile early talks); [TechCrunch](https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/) (Anthropic "will remain central" quote); [Data Center Dynamics: Fractile $220M](https://www.datacenterdynamics.com/en/news/fractile-raises-220m-to-accelerate-development-of-ai-inference-chips/) (Fractile Series B)
+
+5. `jailbreak-severity-framework-cvss-ai-anthropic-amazon-microsoft-google-builder-guide` (July 3, NAMED-COMPANY ×Anthropic ×Amazon ×Microsoft ×Google)
+   - [Anthropic: Fable safeguards & jailbreak framework](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) (×2 — opening framework reference + named July 2 post); [HackerOne Anthropic program](https://hackerone.com/anthropic) (bug bounty reference)
+
+6. `microsoft-frontier-company-aws-fde-enterprise-ai-deployment-wave-builder-guide` (July 3, NAMED-COMPANY ×Microsoft ×AWS ×OpenAI ×Anthropic)
+   - [CNBC: Microsoft Frontier Company](https://www.cnbc.com/2026/07/02/microsoft-commits-2point5-billion-6000-employees-ai-implementation-unit.html) (opening $2.5B announcement); [CNBC: AWS FDE](https://www.cnbc.com/2026/06/30/aws-amazon-ai-forward-deployed-engineers.html) ($1B FDE claim); [The Decoder](https://the-decoder.com/microsoft-launches-2-5-billion-frontier-company-to-embed-6000-ai-engineers-inside-enterprise-clients/) (early customers list)
+
+7. `openai-ipo-delay-2027-altman-1-trillion-floor-builder-api-guide` (July 3, NAMED-COMPANY ×OpenAI ×SoftBank)
+   - [The Next Web](https://thenextweb.com/news/openai-ipo-delay-2027-altman-1-trillion) (Bloomberg report cite + $1T floor claim); [Business Standard](https://www.business-standard.com/world-news/openai-may-delay-ipo-until-2027-targets-1-trillion-valuation-report-126062600115_1.html) (SoftBank $38B drop); [Quartz: Kalshi odds](https://qz.com/openai-ipo-delay-2027-valuation-062626) (59% / 73% Kalshi probability)
+
+8. `gpt-56-sol-terra-luna-tiered-reasoning-openai-builder-guide` (July 3, NAMED-COMPANY ×OpenAI)
+   - [OpenAI: Previewing GPT-5.6 Sol](https://openai.com/index/previewing-gpt-5-6-sol/) (×2 — opening launch + benchmark numbers); [VentureBeat](https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov) (broad access timeline)
+
+9. `fable-5-classifier-false-positives-opus-fallback-detect-builder-guide` (July 3, NAMED-COMPANY ×Anthropic)
+   - [Anthropic: Redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5) (×2 — opening 99% claim + Anthropic apology quote); [TechTimes: false positive reports](https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm) (developer reports)
+
+10. `eu-ai-act-digital-omnibus-now-law-gpai-30-day-enforcement-sprint-builder-guide` (July 3, EU governance)
+    - [EU Council press release](https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/) (Council June 29 vote claim); [Freshfields legal analysis](https://www.freshfields.com/en/our-thinking/blogs/technology-quotient/eu-ai-act-unpacked-34-the-final-digital-omnibus-on-ai-key-amendments-to-the-a-102nber) (fine scale section)
+
+**Uncited page count:** ~124 (down from ~134 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–51 = ~397 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **NEWSLETTER:** Dispatch #3 scheduled for 2026-07-22T09:00:00Z — no action needed.
+- **CITATION RETROFIT (ongoing):** Continue from remaining uncited July 3 pages (5 still uncited):
+  - `bls-june-2026-57k-jobs-miss-ai-displacement-tech-builder-labor-market` (July 3) — BLS June jobs report
+  - `google-search-gemini-3-5-flash-ai-mode-organic-traffic-geo-builder-guide` (July 3) — Google Search AI Mode
+  - `hhs-aero-chatgpt-medicaid-audit-enforcement-healthcare-builder-compliance-guide` (July 3) — HHS AERO
+  - `un-global-ai-governance-dialogue-july-6-geneva-scientific-panel-builder-guide` (July 3) — UN AI governance
+  - `zcode-z-ai-agentic-coding-ide-glm-5-2-byok-builder-guide` (July 3) — Zcode IDE
+  - Then continue into July 4+ pages
+
+---
+
 ## Run 2501 — 2026-07-18 — Citation Retrofit Batch 50 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

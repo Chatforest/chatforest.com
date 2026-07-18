@@ -8,13 +8,13 @@ categories: ["Enterprise AI", "Infrastructure", "Claude Code"]
 tags: ["claude", "anthropic", "enterprise", "claude-code", "amazon-bedrock", "google-cloud", "microsoft-foundry", "azure", "sso", "spend-caps", "gateway", "oidc", "builder-guide"]
 ---
 
-A quiet announcement buried under the Fable 5 news cycle: Anthropic shipped the Claude apps gateway for Amazon Bedrock, Google Cloud, and Microsoft Foundry. At the same time, Claude models — including Sonnet 5 — went generally available in Microsoft Foundry on Azure.
+A quiet announcement buried under the Fable 5 news cycle: Anthropic shipped [the Claude apps gateway](https://claude.com/blog/introducing-the-claude-apps-gateway) for Amazon Bedrock, Google Cloud, and Microsoft Foundry. At the same time, Claude models — including Sonnet 5 — [went generally available in Microsoft Foundry on Azure](https://azure.microsoft.com/en-us/blog/introducing-anthropics-claude-models-in-microsoft-foundry-bringing-frontier-intelligence-to-azure/).
 
 These two things together close most of the gap that has kept enterprise IT teams from approving Claude Code deployments. If your company has been stuck on "we need SSO," "we need spend caps," or "we need data residency," this is the unblock.
 
 ## What the Gateway Actually Is
 
-The Claude apps gateway is a single stateless container that runs on your infrastructure. It sits between your developers' Claude Code clients and your model provider (Bedrock, Google Cloud, Foundry, or the Anthropic API directly). You back it with a PostgreSQL database and run it on Linux.
+The [Claude apps gateway](https://code.claude.com/docs/en/claude-apps-gateway) is a single stateless container that runs on your infrastructure. It sits between your developers' Claude Code clients and your model provider (Bedrock, Google Cloud, Foundry, or the Anthropic API directly). You back it with a PostgreSQL database and run it on Linux.
 
 That's it on the deployment side. What it does is more interesting:
 
