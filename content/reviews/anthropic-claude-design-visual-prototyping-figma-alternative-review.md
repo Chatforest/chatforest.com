@@ -16,11 +16,11 @@ last_refreshed: 2026-04-17
 
 ---
 
-**At a glance:** Claude Design launched April 17, 2026 under Anthropic Labs. The tool lives inside Claude.ai — accessible from a Design tab — and generates live, interactive HTML prototypes from text prompts. It reads your codebase and Figma files during onboarding to extract your design system, then applies that system to every generation. Powered by Claude Opus 4.7. Available on free tier with limits; full access via Claude Pro at $20/month. On launch day, Figma's stock fell 7%. For context on the underlying model, see our **[Claude Opus 4.7 review](/reviews/anthropic-claude-opus-4-7-deep-dive/)**.
+**At a glance:** [Claude Design launched April 17, 2026](https://gizmodo.com/anthropic-launches-claude-design-figma-stock-immediately-nosedives-2000748071) under Anthropic Labs. The tool lives inside Claude.ai — accessible from a Design tab — and generates live, interactive HTML prototypes from text prompts. It reads your codebase and Figma files during onboarding to extract your design system, then applies that system to every generation. Powered by Claude Opus 4.7. Available on free tier with limits; full access via Claude Pro at $20/month. On launch day, Figma's stock fell 7%. For context on the underlying model, see our **[Claude Opus 4.7 review](/reviews/anthropic-claude-opus-4-7-deep-dive/)**.
 
 ---
 
-Figma's stock moved 7% in a single day. That is unusual for a design tool launch. It signals that the market read Claude Design not as a novelty product, but as a structural threat to the existing design platform stack.
+[Figma's stock moved 7% in a single day](https://gizmodo.com/anthropic-launches-claude-design-figma-stock-immediately-nosedives-2000748071). That is unusual for a design tool launch. It signals that the market read Claude Design not as a novelty product, but as a structural threat to the existing design platform stack.
 
 To understand why, you have to understand what Claude Design is *not*. It is not a prompt-to-image generator that produces a screenshot you paste into a slide. It is not a static wireframe you hand to a designer for cleanup. Claude Design produces live HTML — clickable, testable, scrollable — and the output is aware of your specific design system because it read your codebase and your Figma files to find out what that system is.
 
@@ -32,7 +32,7 @@ That combination — native output, system-aware generation — is why the react
 
 The timing of the launch was not incidental.
 
-April 14, 2026: Anthropic CPO Mike Krieger resigned from Figma's board of directors. Krieger co-founded Instagram, joined Anthropic in 2023, and had held a board seat at Figma — a company he had a long personal relationship with — since before that acquisition attempt.
+April 14, 2026: [Anthropic CPO Mike Krieger resigned from Figma's board of directors](https://news.designrush.com/anthropic-claude-design-launch-figma). Krieger co-founded Instagram, joined Anthropic in 2023, and had held a board seat at Figma — a company he had a long personal relationship with — since before that acquisition attempt.
 
 April 17, 2026: Claude Design launched.
 

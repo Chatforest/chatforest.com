@@ -10,7 +10,7 @@ last_refreshed: 2026-05-19
 
 Part of our **[Web Scraping & Search MCP category](/categories/web-search-scraping/)**.
 
-*At a glance: 6,524 GitHub stars, 503 forks, Apache-2.0, TypeScript, v0.1.3 on npm (no release in 13+ months), Chrome extension required. Created by Namu Kang (Princeton grad, ex-Google PM, Browserflow founder). npm: ~6,377 downloads/week (~25K monthly, 388K+ all-time). 121 open issues.*
+*At a glance: [6,524 GitHub stars](https://github.com/browsermcp/mcp), 503 forks, Apache-2.0, TypeScript, [v0.1.3 on npm](https://www.npmjs.com/package/@browsermcp/mcp) (no release in 13+ months), Chrome extension required. Created by Namu Kang (Princeton grad, ex-Google PM, Browserflow founder). npm: ~6,377 downloads/week (~25K monthly, 388K+ all-time). 121 open issues.*
 
 BrowserMCP solves a specific problem that Playwright MCP doesn't: letting AI agents work in your *actual* browser session. While Playwright MCP spawns a fresh Chromium instance (no cookies, no logged-in accounts, no extensions), BrowserMCP connects to the Chrome browser you already have open. You stay logged into Gmail, GitHub, Jira, Slack — whatever you're currently authenticated to — and the AI agent can interact with those services without re-authenticating.
 

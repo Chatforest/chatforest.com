@@ -10,7 +10,7 @@ last_refreshed: 2026-05-19
 
 Part of our **[Communication MCP category](/categories/communication/)**.
 
-*At a glance: 10,717 GitHub stars, 1,329 forks, actively maintained (daily commits as of May 2026), v2.30.0 (May 18, 2026), TypeScript/Next.js, 15K+ signups, hosted version at getinboxzero.com. Now supports Gmail and Microsoft Outlook. Founded by Elie Steinbock. Not listed on PulseMCP.*
+*At a glance: [10,717 GitHub stars](https://github.com/elie222/inbox-zero), 1,329 forks, actively maintained (daily commits as of May 2026), v2.30.0 (May 18, 2026), TypeScript/Next.js, 15K+ signups, hosted version at [getinboxzero.com](https://getinboxzero.com). Now supports Gmail and Microsoft Outlook. Founded by Elie Steinbock. Not listed on PulseMCP.*
 
 Inbox Zero is a full-featured AI email assistant that happens to also be an MCP server. Unlike most MCP servers that are purpose-built protocol adapters, Inbox Zero is a standalone web application — a Next.js app with a PostgreSQL backend, Redis caching, and its own web UI — that exposes MCP tools as one of several integration surfaces.
 

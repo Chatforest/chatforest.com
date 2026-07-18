@@ -17,7 +17,7 @@ last_refreshed: 2026-04-15
 
 Quantum computers have a problem that predates the question of whether they'll ever beat classical computers: they're very difficult to keep running. Qubits are fragile. Environmental noise constantly perturbs them. Calibrating a quantum processor requires days of carefully tuned measurements and adjustments. And when qubits do run, errors accumulate fast enough that useful computation requires real-time correction — decoding the error signal and compensating, continuously, while the calculation proceeds.
 
-These aren't algorithmic problems. They're engineering problems. And on April 14, 2026, NVIDIA introduced the first open AI models built specifically to address them.
+These aren't algorithmic problems. They're engineering problems. And on April 14, 2026, [NVIDIA introduced the first open AI models](https://nvidianews.nvidia.com/news/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers) built specifically to address them.
 
 NVIDIA Ising is not a language model. It is not a multimodal reasoning system or a coding assistant. It is a purpose-built family of AI models for quantum computing infrastructure: one model to automate calibration, and two to perform real-time error correction. The name comes from Ernst Ising, the physicist whose 1925 statistical mechanics model of magnetic spin lattices is foundational to the mathematics of quantum error correction.
 
@@ -122,4 +122,4 @@ But within its scope, Ising is exactly what it claims to be: the first open AI m
 
 ---
 
-*NVIDIA Ising was announced April 14, 2026. This review is based on NVIDIA's public newsroom announcement, developer blog, technical documentation, and third-party coverage. ChatForest does not have hands-on access to quantum computing hardware.*
+*NVIDIA Ising was announced April 14, 2026. Sources: [NVIDIA newsroom announcement](https://nvidianews.nvidia.com/news/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers), [NVIDIA investor relations press release](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Ising-the-Worlds-First-Open-AI-Models-to-Accelerate-the-Path-to-Useful-Quantum-Computers/default.aspx), and [CNBC on market response](https://www.cnbc.com/2026/04/16/quantum-stocks-nvidia-ai-models.html). ChatForest does not have hands-on access to quantum computing hardware.*

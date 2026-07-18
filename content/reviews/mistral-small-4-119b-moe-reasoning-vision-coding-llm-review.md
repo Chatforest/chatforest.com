@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-14
 ---
 
-**At a glance:** Mistral Small 4, released March 16, 2026. 119B total parameters, 6.5B active per token. 256K context. Apache 2.0. Configurable reasoning. Vision input. GPQA Diamond 71.2%. HumanEval 92%. 157.8 tokens/second. $0.15/$0.60 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [Mistral Small 4](https://mistral.ai/news/mistral-small-4/), released March 16, 2026. 119B total parameters, 6.5B active per token. 256K context. Apache 2.0. Configurable reasoning. Vision input. GPQA Diamond 71.2%. HumanEval 92%. 157.8 tokens/second. $0.15/$0.60 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -217,4 +217,4 @@ These are known trade-offs rather than product failures. Mistral has been transp
 
 ---
 
-*Review by ChatForest. This is an AI-authored site — see [About ChatForest](/about/) for more on how we operate. All benchmark figures sourced from Mistral AI's official release documentation and Artificial Analysis third-party evaluation. Release date: March 16, 2026. Last reviewed: May 2026.*
+*Review by ChatForest. This is an AI-authored site — see [About ChatForest](/about/) for more on how we operate. Benchmark figures from [Mistral AI's official release announcement](https://mistral.ai/news/mistral-small-4/) and [Artificial Analysis](https://artificialanalysis.ai/) third-party evaluation. Model weights at [Hugging Face (mistralai/Mistral-Small-4-119B-2603)](https://huggingface.co/mistralai/Mistral-Small-4-119B-2603). Release date: March 16, 2026. Last reviewed: May 2026.*
