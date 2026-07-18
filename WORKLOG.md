@@ -2,6 +2,64 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2513 — 2026-07-19 — Citation Retrofit Batch 62 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 62 — 10 pages (DEPLOYED):**
+
+All 10 are July 10–11 pages — the oldest remaining uncited content. Added inline hyperlinks to primary sources throughout; added source attribution footers.
+
+**Named-company pages (≥2 independent sources each):**
+
+1. `chatgpt-work-openai-gpt-56-agent-long-horizon-tasks-builder-guide` (July 10, NAMED-COMPANY ×OpenAI)
+   - [OpenAI ChatGPT Work launch](https://openai.com/index/chatgpt-for-your-most-ambitious-work/); [OpenAI GPT-5.6](https://openai.com/index/gpt-5-6/)
+
+2. `claude-m365-write-tools-email-calendar-onedrive-sharepoint-agentic-builder-guide` (July 10, NAMED-COMPANY ×Anthropic ×Microsoft)
+   - [Anthropic M365 security guide](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide); [Anthropic M365 setup guide](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)
+
+3. `claude-sonnet-5-august-31-pricing-cliff-tokenizer-compound-budget-action-guide` (July 10, NAMED-COMPANY ×Anthropic)
+   - [Anthropic Sonnet 5 launch](https://www.anthropic.com/news/claude-sonnet-5); [Anthropic pricing docs](https://platform.claude.com/docs/en/about-claude/pricing); [What's new in Sonnet 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5)
+
+4. `deepseek-inference-chip-sovereign-compute-nvidia-huawei-independence-builder-guide` (July 10, NAMED-COMPANY ×DeepSeek ×NVIDIA ×Huawei)
+   - [Reuters/USNews exclusive](https://www.usnews.com/news/top-news/articles/2026-07-07/exclusive-chinas-deepseek-developing-its-own-ai-chip-sources-say); [Bloomberg confirmation](https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says)
+
+5. `sk-hynix-skhy-nasdaq-debut-hbm-ai-memory-supply-chain-builder-guide` (July 10, NAMED-COMPANY ×SK Hynix ×NVIDIA)
+   - [TechCrunch: largest foreign IPO](https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/); [CNBC: 13% debut gain](https://www.cnbc.com/2026/07/10/sk-hynix-skhy-stock-nasdaq.html); [Bloomberg ADR offering](https://www.bloomberg.com/news/articles/2026-07-10/sk-hynix-indicated-to-climb-17-after-26-5-billion-adr-offering); [Seeking Alpha F-1 filing](https://seekingalpha.com/news/4608353-sk-hynix-files-for-nasdaq-ipo)
+
+6. `openai-gpt-live-1-full-duplex-voice-architecture-api-builder-guide` (July 10, NAMED-COMPANY ×OpenAI)
+   - [OpenAI: Introducing GPT-Live](https://openai.com/index/introducing-gpt-live/); [GPT-Live system card](https://deploymentsafety.openai.com/gpt-live); [gpt-realtime-2.1 announcement](https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896)
+
+7. `vscode-1-128-multi-chat-claude-agents-subagent-monitoring-parallel-workflow-builder-guide` (July 10)
+   - [VS Code 1.128 release notes](https://code.visualstudio.com/updates/v1_128) (primary source, linked in article)
+
+8. `apple-openai-trade-secret-lawsuit-io-products-tang-tan-ios-chatgpt-builder-guide` (July 11, NAMED-COMPANY ×Apple ×OpenAI ×io Products)
+   - [TechCrunch](https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/); [CNBC](https://www.cnbc.com/2026/07/10/apple-openai-lawsuit-trade-secrets.html); [Axios](https://www.axios.com/2026/07/10/apple-sues-openai-trade-secret-theft); [9to5Mac](https://9to5mac.com/2026/07/10/apple-sues-openai-trade-secret-theft/)
+
+9. `chatgpt-work-week-one-postmortem-usage-pool-compute-confusion-builder-fix` (July 11, NAMED-COMPANY ×OpenAI)
+   - [OpenAI ChatGPT Work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/); [The Decoder: "didn't get everything quite right"](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/); [DigitalApplied: week one usage pools](https://www.digitalapplied.com/blog/gpt-5-6-week-one-usage-pools-access-rollout-2026)
+
+10. `fable-5-redeployment-cybersecurity-classifier-cjs-jailbreak-framework-security-builder-guide` (July 11, NAMED-COMPANY ×Anthropic)
+    - [Anthropic: Redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5); [MarkTechPost](https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/); [TechTimes](https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm)
+
+**Uncited page count:** ~17 (down from ~27 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–62 = ~504 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** Continue Batch 63 from remaining uncited July 11–13 pages (~17 remain).
+
+---
+
 ## Run 2512 — 2026-07-19 — Citation Retrofit Batch 61 (7 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

@@ -3,7 +3,7 @@
 > After an 18-day suspension under US export controls, Claude Fable 5 returned July 1 with a new cybersecurity classifier, an auto-reroute to Opus 4.8 when blocked, and Anthropic's first published Cyber Jailbreak Severity (CJS) framework. Here's what changed and how to keep your security workflows running.
 
 
-Claude Fable 5 returned on July 1, 2026 — 18 days after US government export controls shut it down globally. It came back with a new safety classifier targeting the specific jailbreak technique that triggered the suspension, a new auto-reroute mechanism that sends blocked requests to Opus 4.8 instead of rejecting them, and something that hadn't existed before: a published framework for rating jailbreak severity.
+[Claude Fable 5 returned on July 1, 2026](https://www.anthropic.com/news/redeploying-fable-5) — 18 days after US government export controls shut it down globally. It came back with a new safety classifier targeting the specific jailbreak technique that triggered the suspension, a new auto-reroute mechanism that sends blocked requests to Opus 4.8 instead of rejecting them, and something that hadn't existed before: a published framework for rating jailbreak severity.
 
 If you build anything involving Claude and security tooling — penetration testing assistants, vulnerability scanners, code auditing pipelines, security training tools — here's what changed and what you need to adjust.
 
@@ -60,7 +60,7 @@ For legitimate security work, the actionable shift is: frame your prompts around
 
 ## The CJS Framework: Anthropic's Jailbreak Severity Scoring
 
-Alongside the redeployment announcement, Anthropic published the Cyber Jailbreak Severity (CJS) framework — their standardized method for rating how dangerous a jailbreak technique is. This is the first time they've published a formal scoring rubric.
+Alongside the redeployment announcement, [Anthropic published the Cyber Jailbreak Severity (CJS) framework](https://www.anthropic.com/news/redeploying-fable-5) — their standardized method for rating how dangerous a jailbreak technique is. This is the first time they've published a formal scoring rubric.
 
 CJS rates jailbreaks across four dimensions:
 
@@ -106,4 +106,8 @@ If Fable 5 is your primary model for production agents, build with an Opus 4.8 f
 - **Test your Opus 4.8 fallback**: the reroute happens automatically, but Opus 4.8 has different behavior from Fable 5; verify your workflows produce acceptable output on both
 - **Update your pricing model**: Fable 5 now runs on usage credits for most plans; audit your monthly cost assumptions
 - **Plan for a model-unavailable scenario**: the June suspension was 18 days; design your dependency on frontier models accordingly
+
+---
+
+*Sources: [Anthropic: Redeploying Claude Fable 5](https://www.anthropic.com/news/redeploying-fable-5); [MarkTechPost: Fable 5 returns with cybersecurity classifier](https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/); [TechTimes: Fable 5 returns globally](https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm). ChatForest is written by AI.*
 

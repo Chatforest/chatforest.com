@@ -3,7 +3,7 @@
 > Claude Sonnet 5's introductory pricing ends August 31. The rate card rises 50% — but the new tokenizer means your actual bill could rise 80–95% compared to what you'd have paid on Sonnet 4.6 standard. Here is how to measure, project, and plan now.
 
 
-Claude Sonnet 5 launched June 30 with introductory pricing: $2 per million input tokens and $10 per million output tokens through August 31, 2026. After that, it moves to standard pricing: $3 per million input tokens and $15 per million output tokens.
+[Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5) launched June 30 with introductory pricing: $2 per million input tokens and $10 per million output tokens through August 31, 2026. After that, it moves to [standard pricing](https://platform.claude.com/docs/en/about-claude/pricing): $3 per million input tokens and $15 per million output tokens.
 
 If you moved from Sonnet 4.6 to Sonnet 5 expecting "cost neutrality," you got it — barely, and temporarily. After August 31, the math changes in two places at once, and most teams are only watching one of them.
 
@@ -173,5 +173,5 @@ Measure your inflation now. Project your bill now. Plan now — 52 days is enoug
 
 ---
 
-*ChatForest covers AI infrastructure decisions for builders. This analysis is based on Anthropic's published tokenizer documentation, platform pricing pages, and independent token count comparisons across content types. We do not receive compensation from Anthropic or any model provider. See also: [Claude Sonnet 5 Migration Guide](/builders-log/claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide/), [Sonnet 5 Effort Levels and Token Overhead](/builders-log/claude-sonnet-5-effort-levels-thinking-token-overhead-practical-tuning-guide/).*
+*ChatForest covers AI infrastructure decisions for builders. This analysis is based on [Anthropic's Claude Sonnet 5 launch announcement](https://www.anthropic.com/news/claude-sonnet-5), the [platform pricing page](https://platform.claude.com/docs/en/about-claude/pricing), and the [What's new in Sonnet 5 documentation](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5). We do not receive compensation from Anthropic or any model provider. See also: [Claude Sonnet 5 Migration Guide](/builders-log/claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide/), [Sonnet 5 Effort Levels and Token Overhead](/builders-log/claude-sonnet-5-effort-levels-thinking-token-overhead-practical-tuning-guide/).*
 

@@ -9,7 +9,7 @@ Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
-On July 8, 2026, OpenAI replaced ChatGPT's Advanced Voice Mode with GPT-Live-1 — a full-duplex voice model that listens and speaks simultaneously. For most users, it just sounds better. For builders, it signals a fundamental architectural shift in how voice agents will work when the API opens.
+On July 8, 2026, [OpenAI replaced ChatGPT's Advanced Voice Mode with GPT-Live-1](https://openai.com/index/introducing-gpt-live/) — a full-duplex voice model that listens and speaks simultaneously. For most users, it just sounds better. For builders, it signals a fundamental architectural shift in how voice agents will work when the API opens.
 
 The API is not open yet. But when it drops, the gap between what's available today (gpt-realtime-2.1) and where OpenAI is clearly heading will affect how you design your voice agent architecture. That's what this guide is about.
 
@@ -60,7 +60,7 @@ At launch, GPT-Live-1 is:
 
 ## The API Landscape Today: gpt-realtime-2.1
 
-If you're building voice agents right now, the API path is gpt-realtime-2.1 and gpt-realtime-2.1-mini, released July 6. These are the production voice API models:
+If you're building voice agents right now, the API path is [gpt-realtime-2.1 and gpt-realtime-2.1-mini, released July 6](https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896). These are the production voice API models:
 
 - **gpt-realtime-2.1**: $32 audio input / $64 audio output per million tokens. Full reasoning, tool use, alphanumeric recognition improvements, better silence and noise handling.
 - **gpt-realtime-2.1-mini**: $10 audio input / $20 audio output per million tokens. Lower cost, faster, some reasoning trade-offs.
@@ -107,5 +107,5 @@ The time to develop that mental model is now, before the API opens and it become
 
 ---
 
-*Related: [gpt-realtime-2.1: 25% Latency Cut and a New Mini Reasoning Model for Voice Agents](/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/)*
+*Sources: [OpenAI: Introducing GPT-Live](https://openai.com/index/introducing-gpt-live/); [OpenAI GPT-Live system card](https://deploymentsafety.openai.com/gpt-live); [OpenAI developer community: new realtime-2.1 models](https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896). Related: [gpt-realtime-2.1: 25% Latency Cut and a New Mini Reasoning Model for Voice Agents](/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/)*
 

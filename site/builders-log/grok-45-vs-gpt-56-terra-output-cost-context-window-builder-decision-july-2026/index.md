@@ -9,7 +9,7 @@ Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
-Grok 4.5 and GPT-5.6 Terra launched on the same day — July 9, 2026. Both sit at roughly $2 per million input tokens. On Terminal-Bench 2.1, the main agentic coding baseline, they are separated by exactly one point: Terra 84.3%, Grok 4.5 83.3%.
+[Grok 4.5](https://x.ai/news/grok-4-5) and [GPT-5.6 Terra](https://openai.com/index/gpt-5-6/) launched on the same day — July 9, 2026. Both sit at roughly $2 per million input tokens. On [Terminal-Bench 2.1](https://www.tbench.ai/leaderboard/terminal-bench/2.1), the main agentic coding baseline, they are separated by exactly one point: Terra 84.3%, Grok 4.5 83.3%.
 
 That benchmark gap is noise. The output pricing gap is not.
 
@@ -91,7 +91,7 @@ The math favors Terra caching when your cache hit rate exceeds roughly 80% on la
 
 ## The Token Efficiency Caveat
 
-xAI claims Grok 4.5 uses 4.2× fewer tokens than Opus 4.8 on SWE-bench Pro tasks. This is a real data point — 15,954 average output tokens per Grok 4.5 task versus 67,020 for Opus 4.8 on the same benchmark.
+[xAI claims Grok 4.5 uses 4.2× fewer tokens than Opus 4.8](https://x.ai/news/grok-4-5) on SWE-bench Pro tasks. This is a real data point — 15,954 average output tokens per Grok 4.5 task versus 67,020 for Opus 4.8 on the same benchmark.
 
 **However**: this comparison is against Opus 4.8, not against Terra. Terra's per-task token counts on SWE-bench Pro are not yet published. Until we have Grok 4.5 vs Terra token efficiency data on the same benchmark, the "4.2x efficiency" claim cannot be used to directly calculate Grok 4.5's effective cost advantage over Terra.
 
@@ -140,4 +140,8 @@ That data does not exist yet as of July 9. When it does, the output cost vs effi
 ---
 
 *Related: [GPT-5.6 Terra vs Luna: The Routing Decision Now That Both Are Actually Live](/builders-log/gpt-56-terra-luna-routing-decision-live-benchmark-analysis-july-2026/) — the within-GPT-5.6-family routing analysis that prompted this piece. [Grok 4.5 Builder Evaluation](/builders-log/grok-45-launch-pricing-benchmarks-cursor-training-builder-evaluation-july-2026/) — Grok 4.5 launch overview with SWE-bench Pro context.*
+
+---
+
+*Sources: [xAI Grok 4.5 official announcement](https://x.ai/news/grok-4-5) · [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [OpenAI API pricing](https://developers.openai.com/api/docs/pricing) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) · [Artificial Analysis: Grok 4.5](https://artificialanalysis.ai/models/grok-4-5)*
 

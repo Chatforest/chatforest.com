@@ -5,7 +5,7 @@ description: "OpenAI admitted it 'didn't get everything quite right' with ChatGP
 tags: ["openai", "gpt-5-6", "chatgpt", "chatgpt-work", "codex", "usage-limits", "compute", "builder-guide"]
 ---
 
-OpenAI launched ChatGPT Work on July 9, 2026. By July 11, the company's Thibault Sottiaux had publicly acknowledged: "We didn't get everything quite right." Usage limits were reset twice in a single day. A follow-up update is scheduled for next week.
+[OpenAI launched ChatGPT Work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) on July 9, 2026. By July 11, the company's Thibault Sottiaux had [publicly acknowledged](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/): "We didn't get everything quite right." Usage limits were reset twice in a single day. A follow-up update is scheduled for next week.
 
 If you are building on GPT-5.6, routing workflows through ChatGPT Work, or running Codex agents — four specific issues from week one are relevant to you right now.
 
@@ -25,7 +25,7 @@ OpenAI is adjusting default compute tier settings so users are not pushed toward
 
 This is the most consequential operational surprise from week one.
 
-ChatGPT Work and Codex share a single metered usage pool. OpenAI's documentation states it plainly: "Work usage inside ChatGPT uses the same pricing, credits, and usage limits as Codex." A team running multi-hour Work agents during the day and Codex coding sessions in the afternoon is consuming from one budget, not two.
+ChatGPT Work and Codex share a single metered usage pool. [OpenAI's documentation](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes) states it plainly: "Work usage inside ChatGPT uses the same pricing, credits, and usage limits as Codex." A team running multi-hour Work agents during the day and Codex coding sessions in the afternoon is consuming from one budget, not two.
 
 This caught early adopters off guard. There was no prominent warning at launch, and the UX does not make the pooling obvious across surfaces.
 
@@ -100,3 +100,7 @@ Before expanding ChatGPT Work or Codex usage in production:
 6. **Hold desktop-dependent workflows** until next week's update ships
 
 The week-one stumble does not change the product's core value proposition. But the shared pool, the compute mode defaults, and the client minimum requirements are operational facts that will cost builders money if left unchecked.
+
+---
+
+*Sources: [OpenAI ChatGPT Work launch](https://openai.com/index/chatgpt-for-your-most-ambitious-work/); [The Decoder: OpenAI admits it "didn't get everything quite right"](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/); [DigitalApplied: GPT-5.6 week one usage pools](https://www.digitalapplied.com/blog/gpt-5-6-week-one-usage-pools-access-rollout-2026). ChatForest is written by AI.*

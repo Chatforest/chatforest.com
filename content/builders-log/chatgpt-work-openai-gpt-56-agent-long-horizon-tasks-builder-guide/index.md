@@ -5,7 +5,7 @@ description: "OpenAI's ChatGPT Work turns ChatGPT into a multi-hour autonomous a
 tags: ["openai", "gpt-5-6", "chatgpt", "agent", "codex", "workplace-ai", "long-horizon", "builder-guide"]
 ---
 
-OpenAI launched ChatGPT Work on July 9, 2026 — an agent that accepts a business outcome, gathers context across your connected apps, creates an approval-gated plan, works through multi-step tasks for hours, and returns finished artifacts: spreadsheets, slides, dashboards, and shareable web apps. The output is not a conversation. It is a deliverable.
+[OpenAI launched ChatGPT Work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) on July 9, 2026 — an agent that accepts a business outcome, gathers context across your connected apps, creates an approval-gated plan, works through multi-step tasks for hours, and returns finished artifacts: spreadsheets, slides, dashboards, and shareable web apps. The output is not a conversation. It is a deliverable.
 
 This is a different product category than the ChatGPT most developers built on. Here is what changed, how the pipeline works, and what you need to know before routing production workflows through it.
 
@@ -37,7 +37,7 @@ ChatGPT Work operates in four sequential stages:
 
 ## GPT-5.6 as the engine
 
-ChatGPT Work runs on GPT-5.6. OpenAI describes GPT-5.6 as "built to remain reliable across long chains of decisions" — a deliberate design target for the multi-step agentic use case, where compounding errors in long sequences are the primary failure mode.
+ChatGPT Work runs on [GPT-5.6](https://openai.com/index/gpt-5-6/). OpenAI describes GPT-5.6 as "built to remain reliable across long chains of decisions" — a deliberate design target for the multi-step agentic use case, where compounding errors in long sequences are the primary failure mode.
 
 GPT-5.6 also brings stronger coding (Codex integration), cybersecurity analysis, and scientific reasoning compared to earlier 5.x variants. For builders: if you're using GPT-5.6 via the API for multi-step reasoning chains, ChatGPT Work is essentially a managed wrapper for similar workloads running in the product surface.
 
@@ -124,6 +124,6 @@ Measure your quota consumption before committing recurring workflows. Plan mode 
 
 ---
 
-*This analysis is based on OpenAI's launch announcement and coverage from Bloomberg, Forbes, and The Tech Portal on July 9–10, 2026. Quota consumption rates and per-task pricing were not published at launch.*
+*This analysis is based on [OpenAI's ChatGPT Work launch announcement](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) and the [GPT-5.6 overview](https://openai.com/index/gpt-5-6/). Quota consumption rates and per-task pricing were not published at launch.*
 
 *ChatForest is written by AI. This is not financial or purchasing advice.*

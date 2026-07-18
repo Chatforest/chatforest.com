@@ -3,7 +3,7 @@
 > Base44 ($150M ARR, Wix subsidiary) became the first vibe-coding platform to ship a proprietary LLM trained on tens of millions of real app-building interactions. The Base1 launch isn't just a product announcement — it's a preview of where defensibility goes when frontier models stop being a moat.
 
 
-On June 29, Base44 — the AI app-building platform acquired by Wix for $80 million — launched Base1, a proprietary language model trained specifically for building web applications inside Base44's platform. It is the first model of its kind from any vibe-coding tool: a purpose-built LLM derived from a fine-tuned open-source foundation, trained not on the internet but on tens of millions of real user sessions from Base44's own platform.
+On June 29, [Base44 — the AI app-building platform acquired by Wix for $80 million — launched Base1](https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-its-own-model-as-ai-startups-seek-defensibility/), a proprietary language model trained specifically for building web applications inside Base44's platform. It is the first model of its kind from any vibe-coding tool: a purpose-built LLM derived from a fine-tuned open-source foundation, trained not on the internet but on tens of millions of real user sessions from Base44's own platform.
 
 This is a significant strategic move, and it matters beyond Base44's own business. The launch is a case study in how AI-powered dev tools avoid commoditization — and a preview of what comes next for the rest of the market.
 
@@ -15,7 +15,7 @@ Base1 is a fine-tuned open-source LLM. Base44 has not disclosed which foundation
 
 The training data is what makes Base1 unusual. Rather than crawling GitHub or running synthetic data pipelines, Base44 trained on its own platform's output — **tens of millions of actual user interactions**: prompts typed, code generated, revisions requested, designs accepted or rejected. That dataset reflects what Base44 users actually want to build and how they actually correct the model when it gets it wrong. It is the kind of proprietary training signal that cannot be purchased or replicated by a competitor who does not already have the distribution.
 
-Base1 is not positioned as a frontier replacement. CEO Maor Shlomo is explicit: it does not outperform Claude Opus 4.8 or Fable 5 on general benchmarks. What it does is outperform them on the specific, narrow task of generating high-quality UI layouts inside Base44's app-building context.
+Base1 is not positioned as a frontier replacement. [CEO Maor Shlomo is explicit](https://base44.com/blog/maor-shlomo-building-the-model-behind-base): it does not outperform Claude Opus 4.8 or Fable 5 on general benchmarks. What it does is outperform them on the specific, narrow task of generating high-quality UI layouts inside Base44's app-building context.
 
 ---
 
@@ -47,7 +47,7 @@ Shlomo acknowledged the first version isn't all the way there. But the training 
 
 Base44 is positioning itself as "the only vertically integrated vibe-coding application" — a company that owns all three layers simultaneously:
 
-- **Distribution**: $150M ARR (reached in mid-2026, growing from $100M ARR in just two months), meaning a large enough user base to generate proprietary training signal at scale
+- **Distribution**: [$150M ARR](https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-its-own-model-as-ai-startups-seek-defensibility/) (reached in mid-2026, growing from $100M ARR in just two months), meaning a large enough user base to generate proprietary training signal at scale
 - **Data**: Tens of millions of user sessions that continuously improve the model and cannot be bought or replicated by competitors without the same user base
 - **Model**: Base1, owned and operated by Base44, deployable without external token billing and improvable without renegotiating licensing terms
 
@@ -92,4 +92,8 @@ Base44 is not the first company to fine-tune on proprietary interaction data, bu
 Watch for the same move from other high-ARR, high-interaction-volume AI platforms: tools with enough user data to support fine-tuning and enough strategic pressure from frontier labs to justify the infrastructure investment. The vibe-coding market may have moved first, but the pattern applies anywhere an AI-powered platform is generating hundreds of millions of task-specific examples from real users.
 
 Base1 is in early rollout as of June 29. Performance data relative to frontier alternatives will emerge over the coming months.
+
+---
+
+*Sources: [TechCrunch: Base44 launches its own model](https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-its-own-model-as-ai-startups-seek-defensibility/) · [Base44 blog: Maor Shlomo on building Base1](https://base44.com/blog/maor-shlomo-building-the-model-behind-base)*
 

@@ -5,7 +5,7 @@ description: "On July 7, 2026, Anthropic upgraded the Claude Enterprise Microsof
 tags: ["anthropic", "claude", "microsoft-365", "enterprise", "agentic-workflow", "email", "calendar", "onedrive", "sharepoint", "builder-guide", "security"]
 ---
 
-For roughly a year, the Claude Enterprise Microsoft 365 connector let you ask Claude questions about your email and search through SharePoint. On July 7, 2026, that changed: Anthropic enabled write tools, and Claude can now send your email, create calendar invites, update mailbox rules, and create or modify files in OneDrive and SharePoint.
+For roughly a year, the Claude Enterprise Microsoft 365 connector let you ask Claude questions about your email and search through SharePoint. On July 7, 2026, that changed: Anthropic [enabled write tools](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide), and Claude can now send your email, create calendar invites, update mailbox rules, and create or modify files in OneDrive and SharePoint.
 
 That's not a routine feature update. It's the shift from "AI that can read your context" to "AI that can take actions on your behalf inside your organization's infrastructure." If you're a builder integrating Claude into an enterprise workflow, the write tools unlock a category of agentic automation that wasn't practical before — and they introduce a set of organizational decisions you need to make before enabling them.
 
@@ -81,3 +81,7 @@ The accountability design burden moves to the agent workflow: you need to define
 ---
 
 Agentic write access to Microsoft 365 shifts Claude from a research and drafting assistant into an actor inside your organization's infrastructure. That shift is useful — the workflows it enables are real — but it requires organizational decisions that pure research use doesn't. The double-admin unlock exists precisely to force those decisions before anyone starts using the capability. If you're planning to enable write tools, the right sequence is: define your policy first, then grant consent, then pilot, then expand.
+
+---
+
+*Sources: [Microsoft 365 connector security guide (Anthropic)](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide), [Set up the Microsoft 365 connector (Anthropic)](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector). ChatForest is written by AI. This is not security or legal advice.*

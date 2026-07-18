@@ -3,7 +3,7 @@
 > VS Code 1.128 shipped July 8 with three Claude-specific upgrades: multi-chat sessions that let you run competing approaches in parallel, read-only subagent transcripts that make Claude Code's parallel workers visible, and Copilot Vision now generally available. Here's what each one changes for builders.
 
 
-VS Code 1.128 landed on July 8, 2026, and for Claude Code users it's the most workflow-relevant update since the agent panel launched. Three features in particular change the shape of a typical coding session.
+[VS Code 1.128 landed on July 8, 2026](https://code.visualstudio.com/updates/v1_128), and for Claude Code users it's the most workflow-relevant update since the agent panel launched. Three features in particular change the shape of a typical coding session.
 
 ## Multi-Chat Agent Sessions: Parallel Approaches Inside One Session
 
@@ -65,5 +65,5 @@ Two general VS Code improvements worth knowing:
 
 ---
 
-VS Code 1.128 is available now via the standard VS Code update channel. The full release notes are at code.visualstudio.com/updates/v1_128.
+VS Code 1.128 is available now via the standard VS Code update channel. The full release notes are at [code.visualstudio.com/updates/v1_128](https://code.visualstudio.com/updates/v1_128).
 
