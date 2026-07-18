@@ -7,13 +7,13 @@ categories: ["AI Models", "Developer Tools", "Model APIs"]
 tags: ["xai", "grok", "grok-4-5", "v9", "model-roadmap", "cursor", "rl", "grok-5", "colossus", "spacex", "tesla", "model-api", "builder-guide", "monthly-cadence", "private-beta"]
 ---
 
-On June 28, 2026, xAI launched Grok 4.5 into private beta at SpaceX and Tesla. The model runs on V9, xAI's ninth-generation foundation architecture, at 1.5 trillion parameters. No independent benchmarks exist yet. No public API date has been confirmed. And xAI plans to release entirely new, ground-up-trained models every month through the end of 2026.
+On June 28, 2026, [xAI launched Grok 4.5 into private beta at SpaceX and Tesla](https://www.techtimes.com/articles/319314/20260629/grok-45-enters-private-beta-spacex-tesla-no-public-access-no-independent-benchmark.htm). The model runs on V9, xAI's ninth-generation foundation architecture, at [1.5 trillion parameters](https://cryptobriefing.com/xai-grok-4-5-v9-model-upgrade/). No independent benchmarks exist yet. No public API date has been confirmed. And xAI plans to release entirely new, ground-up-trained models every month through the end of 2026.
 
 If you are building on or evaluating the xAI API, this week changes what you should be watching.
 
 ## What Grok 4.5 Actually Is
 
-Grok 4.5 is built on the V9 foundation — a ground-up redesign, not a fine-tune or variant of the previous v8-small. V9 completed pre-training on May 26, 2026, at 1.5 trillion parameters, which is three times larger than v8-small's 500 billion.
+Grok 4.5 is built on the [V9 foundation](https://www.techtimes.com/articles/319314/20260629/grok-45-enters-private-beta-spacex-tesla-no-public-access-no-independent-benchmark.htm) — a ground-up redesign, not a fine-tune or variant of the previous v8-small. V9 completed pre-training on May 26, 2026, at 1.5 trillion parameters, which is three times larger than v8-small's 500 billion.
 
 The most technically interesting element is the training data. xAI incorporated supplemental training on Cursor development sessions — not code repositories, but actual iterative developer-AI dialogue: real bugs, real debugging patterns, real architecture decisions, real refactoring passes. The distinction matters. Code repository training teaches a model what correct code looks like. Cursor session training teaches a model what the sequence of moves from a broken state to a working state looks like.
 
@@ -23,7 +23,7 @@ xAI also used the **Grok Build harness** during training — a reinforcement lea
 
 ## The Performance Claim — and Why It Doesn't Settle Anything
 
-Musk stated in public posts that internal evaluations show Grok 4.5 performance "close to, perhaps exceeding, Claude Opus 4.8." The hedged language suggests competitive performance rather than a clean win. No public benchmark data supports or contradicts this claim.
+[Musk stated in public posts that internal evaluations show Grok 4.5 performance "close to, perhaps exceeding, Claude Opus 4.8."](https://letsdatascience.com/news/musk-says-grok-45-enters-private-beta-at-spacex-tesla-1840769e) The hedged language suggests competitive performance rather than a clean win. No public benchmark data supports or contradicts this claim.
 
 What builders need to hold onto: SpaceX and Tesla are not independent evaluators. They are Musk-owned companies that provided real engineering environments for xAI's live RL training. Their technical environments — rocket trajectories, manufacturing workflows, production-scale software systems — are also the domains V9 was optimized for during the SpaceX/Tesla beta. Any performance delta that shows up in those environments is partially explained by training domain alignment, not general capability.
 

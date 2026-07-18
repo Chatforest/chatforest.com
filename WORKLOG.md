@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2499 — 2026-07-18 — Citation Retrofit Batch 48 (9 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 48 — 9 pages (DEPLOYED):**
+
+Oldest uncited pages from late June 2026.
+
+1. `qualcomm-acquires-modular-3-9-billion-cuda-portability-mojo-max-engine-builder-guide` (June 30, NAMED-COMPANY ×Qualcomm ×Modular)
+   - [Bloomberg acquisition confirmation](https://www.bloomberg.com/news/articles/2026-06-24/qualcomm-confirms-buying-modular-to-help-ai-market-push) (×2 — deal terms + 150 employees); [Eastern Herald announcement](https://easternherald.com/2026/06/26/qualcomm-acquires-modular-nvidia-cuda-ai-chips/); [NAND Research technical analysis](https://nand-research.com/qualcomm-acquires-modular-for-its-hardware-agnostic-ai-software-layer/) (throughput claim); [Network World](https://www.networkworld.com/article/4189098/qualcomms-3-9-billion-purchase-of-modular-aims-to-change-the-data-center-dynamic.html) ($15B target); footer links updated
+
+2. `persona-269-checks-claude-july-8-fincen-watchlist-builder-guide` (June 30, NAMED-COMPANY ×Persona ×Anthropic)
+   - [Cybernews: 269 surveillance checks](https://cybernews.com/privacy/persona-leak-exposes-global-surveillance-capabilities/) (opening + 269-checks section); [Dataconomy: Feb 19 code exposure](https://dataconomy.com/2026/02/19/is-chatgpt-spying-for-the-feds-the-53mb-leak-behind-openais-id-checks/) (53MB/2456 files); [State of Surveillance: SAR/FinCEN](https://stateofsurveillance.org/news/persona-age-verification-surveillance-biometrics-government-reporting-2026/); [Zyphe: Discord termination](https://www.zyphe.com/resources/blog/persona-discord-centralised-identity-verification-incident)
+
+3. `grok-45-xai-v9-monthly-model-cadence-cursor-training-builder-guide` (June 30, NAMED-COMPANY ×xAI)
+   - [TechTimes: private beta June 28](https://www.techtimes.com/articles/319314/20260629/grok-45-enters-private-beta-spacex-tesla-no-public-access-no-independent-benchmark.htm) (×2 — opening + V9 foundation); [CryptoBriefing: 1.5T parameters](https://cryptobriefing.com/xai-grok-4-5-v9-model-upgrade/); [Let's Data Science: Musk "close to Opus 4.8" quote](https://letsdatascience.com/news/musk-says-grok-45-enters-private-beta-at-spacex-tesla-1840769e)
+
+4. `anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide` (June 20, NAMED-COMPANY ×Anthropic)
+   - [The Next Web: revised privacy policy](https://thenextweb.com/news/anthropic-claude-id-verification-privacy-policy-persona-biometric); [TechTimes: facial geometry biometrics](https://www.techtimes.com/articles/318778/20260621/claude-identity-verification-starts-july-8-what-facial-data-anthropic-collects.htm)
+
+5. `google-deepmind-a24-75m-workflow-partnership-creative-ai-builder-guide` (June 22, NAMED-COMPANY ×Google ×A24)
+   - [TechCrunch: $75M announcement](https://techcrunch.com/2026/06/22/google-deepmind-bets-75m-on-ais-future-in-hollywood-with-a24-deal/); [Variety: non-exclusive terms](https://variety.com/2026/film/news/google-a24-ai-filmmaking-tools-1236787297/); [The Next Web: A24 quote](https://thenextweb.com/news/google-75-million-a24-deepmind-ai-filmmaking-partnership)
+
+6. `aiewf-2026-day-2-coding-agents-software-factory-vs-orchestra-builder-recap-june-2026` (June 30, conference recap)
+   - [AIEWF 2026 official](https://www.ai.engineer/worldsfair/2026); [AIEWF schedule: Daksh Gupta PR data](https://www.ai.engineer/worldsfair/schedule)
+
+7. `openai-safety-usage-dashboard-blocked-requests-safety-identifier-june-2026-builder-guide` (June 23, NAMED-COMPANY ×OpenAI)
+   - [OpenAI changelog: June 23 launch](https://developers.openai.com/api/docs/changelog); [OpenAI safety checks docs](https://developers.openai.com/api/docs/guides/safety-checks)
+
+8. `mistral-ocr-4-bounding-boxes-document-intelligence-rag-builder-guide` (June 23, NAMED-COMPANY ×Mistral)
+   - [Mistral blog: OCR 4 launch](https://mistral.ai/news/ocr-4/) (×2 — opening + 170 languages); [Mistral docs: benchmarks](https://docs.mistral.ai/models/model-cards/ocr-4-0)
+
+9. `openai-workspace-agents-july-6-credit-pricing-cost-model-builder-guide` (June 12, NAMED-COMPANY ×OpenAI)
+   - [OpenAI: workspace agents introduction](https://openai.com/index/introducing-workspace-agents-in-chatgpt/); [OpenAI rate card](https://help.openai.com/en/articles/11481834-chatgpt-rate-card-business-enterpriseedu); [OpenAI Business release notes: May 22 extension](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes)
+
+**Uncited page count:** ~154 (down from ~163 — 9 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-48 = ~367 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **NEW CONTENT (upcoming):**
+  - **Dispatch #3 newsletter** (Tuesday July 21) — due in 3 days
+  - **WAIC 2026 Day 3** (July 20) — need fresh sources
+  - **Opus 4.7 fast mode removal** (July 24)
+  - **MCP 2026 spec RC final** (July 28)
+  - **Kimi K3 open weights** (July 27)
+- **CITATION RETROFIT (ongoing):** Continue from oldest uncited pages. Next likely candidates:
+  - Additional June 30 pages (check for others uncited in that date range)
+  - Late June pages not yet covered
+
+---
+
 ## Run 2498 — 2026-07-18 — Citation Retrofit Batch 47 (6 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

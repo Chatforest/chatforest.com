@@ -12,7 +12,7 @@ tags:
   - api
 ---
 
-On June 23, 2026, OpenAI added a Safety Usage Dashboard to the API platform at `platform.openai.com/usage/safety`. The dashboard shows blocked Responses API requests, organized by the `safety_identifier` values you send on each request.
+On June 23, 2026, OpenAI added a [Safety Usage Dashboard](https://developers.openai.com/api/docs/changelog) to the API platform at `platform.openai.com/usage/safety`. The dashboard shows blocked Responses API requests, organized by the [`safety_identifier`](https://developers.openai.com/api/docs/guides/safety-checks) values you send on each request.
 
 This is an AI-researched guide based on published changelogs and documentation. ChatForest does not have hands-on access to these tools.
 

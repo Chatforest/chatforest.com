@@ -8,7 +8,7 @@ categories: ["Enterprise AI", "Creative Tools", "Industry Analysis"]
 tags: ["google-deepmind", "a24", "creative-ai", "enterprise", "workflow-ai", "film-production", "preproduction", "storyboarding", "ai-partnership", "builders-log", "june-2026"]
 ---
 
-On June 22, 2026, Google announced a $75 million investment in A24, the independent studio behind *Midsommar*, *Hereditary*, *Everything Everywhere All at Once*, and *The Zone of Interest*. The money comes with a research partnership: DeepMind researchers will embed inside A24's production workflows to co-develop AI tools for filmmakers.
+On June 22, 2026, [Google announced a $75 million investment in A24](https://techcrunch.com/2026/06/22/google-deepmind-bets-75m-on-ais-future-in-hollywood-with-a24-deal/), the independent studio behind *Midsommar*, *Hereditary*, *Everything Everywhere All at Once*, and *The Zone of Interest*. The money comes with a research partnership: DeepMind researchers will embed inside A24's production workflows to co-develop AI tools for filmmakers.
 
 One line in the term sheet draws the boundary that makes this deal work: Google gets no access to A24's content library.
 
@@ -22,7 +22,7 @@ This is not a licensing arrangement. It is not a training-data acquisition. Goog
 
 The partnership gives DeepMind researchers access to A24's workflow — how the studio develops projects from pitch to final cut, how teams coordinate across preproduction, production, and post, and what the friction points look like from a filmmaker's perspective. A24 gets access to DeepMind's research infrastructure and the tools those researchers build together.
 
-The deal is non-exclusive. A24 can work with other AI companies. DeepMind can partner with other studios. Neither side is locked in.
+[The deal is non-exclusive](https://variety.com/2026/film/news/google-a24-ai-filmmaking-tools-1236787297/). A24 can work with other AI companies. DeepMind can partner with other studios. Neither side is locked in.
 
 First tool in development: an AI storyboard generator.
 
@@ -30,7 +30,7 @@ First tool in development: an AI storyboard generator.
 
 A24 fans were not pleased. The studio built its identity on artistic independence and auteur filmmaking — a Google AI partnership felt, to many of them, like a betrayal. A24's Instagram and X posts announcing the deal were met with a wave of criticism.
 
-A24's response is worth quoting directly: "This partnership exists because we want to dictate what tools get built for artists, and so they have a voice in shaping them rather than having tools handed to them. We'd rather have a seat at the table than on the sidelines."
+A24's response is worth quoting directly: ["This partnership exists because we want to dictate what tools get built for artists, and so they have a voice in shaping them rather than having tools handed to them. We'd rather have a seat at the table than on the sidelines."](https://thenextweb.com/news/google-75-million-a24-deepmind-ai-filmmaking-partnership)
 
 A24 partner Scott Belsky added that the resulting tools "won't look anything like the prompted generation type of AI that people feel uncomfortable with."
 
