@@ -14,7 +14,7 @@ Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
-On July 10, 2026, OpenAI's Ethan Knight posted to X with an unusual announcement: GPT-5.6 Sol Ultra had produced a proof of the **Cycle Double Cover Conjecture**—a problem that has resisted mathematicians since 1973—using 64 parallel subagents in just under one hour.
+On July 10, 2026, [OpenAI announced](https://mlq.ai/news/openai-claims-gpt-56-sol-ultra-solved-50-year-old-math-conjecture-in-under-an-hour/) that GPT-5.6 Sol Ultra had produced a proof of the **Cycle Double Cover Conjecture**—a problem that has resisted mathematicians since 1973—using 64 parallel subagents in just under one hour.
 
 OpenAI published two documents: the proof itself as a PDF, and the complete 700-word prompt that drove the session. That second document is the reason this matters to builders.
 
@@ -134,4 +134,4 @@ The math community will answer the first question over the coming weeks. The oth
 
 ---
 
-*This is a research-based summary. We did not run the prompt or examine the proof directly. Sources include OpenAI's announcement, Thomas Bloom's public review thread, and reporting from Developers Digest, AI Weekly, and The Decoder.*
+*This is a research-based summary. We did not run the prompt or examine the proof directly. Sources include [OpenAI's announcement (via MLQ)](https://mlq.ai/news/openai-claims-gpt-56-sol-ultra-solved-50-year-old-math-conjecture-in-under-an-hour/), the [Hacker News discussion thread](https://news.ycombinator.com/item?id=48863490), Thomas Bloom's public review thread, and reporting from [Developers Digest](https://www.developersdigest.tech/blog/gpt-56-sol-ultra-cycle-double-cover-proof) and [The Decoder](https://the-decoder.com/openais-gpt-5-6-sol-ultra-reportedly-solves-a-50-year-old-math-problem-in-under-an-hour/).*

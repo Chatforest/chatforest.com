@@ -2,6 +2,64 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2517 — 2026-07-19 — Citation Retrofit Batch 66 (10 pages, July 13, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 66 — 10 pages (oldest remaining uncited, July 13):**
+
+Added inline hyperlinks to primary sources throughout each article.
+
+**Pages with named-company claims (≥2 independent sources each):**
+
+1. `eu-chat-control-1-0-july-2026-paradox-vote-e2e-encryption-builder-guide` (July 13, EU regulatory)
+   - [Euronews](https://www.euronews.com/next/2026/07/10/chat-control-10-passed-the-european-parliament-through-the-back-door) ×2; [TechTimes](https://www.techtimes.com/articles/320010/20260709/eu-parliament-passes-chat-control-default-314-meps-couldnt-block-scanning-law.htm); [heise](https://www.heise.de/en/news/Procedural-trick-before-summer-break-EU-Parliament-reactivates-Chat-Control-1-0-11359605.html); [Cybernews](https://cybernews.com/news/european-union-chat-control-big-tech/); [Patrick Breyer MEP](https://www.patrick-breyer.de/en/posts/chat-control/)
+
+2. `fable-5-extended-july-19-second-extension-builder-update` (July 13, NAMED-COMPANY ×Anthropic)
+   - [BleepingComputer](https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-stays-free-for-paid-users-until-july-19-as-anthropic-buys-more-time/) ×2; [AI Weekly](https://aiweekly.co/alerts/anthropic-pushes-free-claude-fable-5-for-paid-plans-to-july-19); [Forbes](https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release/)
+
+3. `gemini-managed-agents-july-7-background-tasks-remote-mcp-credential-refresh-builder-guide` (July 13, NAMED-COMPANY ×Google)
+   - [Google Blog](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/) ×2; [The Decoder](https://the-decoder.com/google-deepmind-adds-background-execution-and-mcp-support-to-gemini-api-managed-agents/) ×2
+
+4. `github-actions-checkout-v7-pull-request-target-pwn-request-july-16-enforcement-builder-guide` (July 13, NAMED-COMPANY ×GitHub)
+   - [GitHub Changelog](https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/) ×2; [CISA CVE-2025-30066](https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-tj-actionschanged-files-cve-2025-30066-and-reviewdogaction) ×2; [Infosecurity Magazine](https://www.infosecurity-magazine.com/news/tjactions-supply-chain-attack/); [THN](https://thehackernews.com/2026/06/github-updates-actionscheckout-to-block.html)
+
+5. `github-code-quality-ga-july-20-2026-pricing-audit-builder-guide` (July 13, NAMED-COMPANY ×GitHub)
+   - [GitHub Changelog](https://github.blog/changelog/2026-06-16-github-code-quality-generally-available-july-20-2026/) ×2; [GitHub billing docs](https://docs.github.com/en/billing/concepts/product-billing/github-code-quality) ×2; [license estimate preview](https://github.blog/changelog/2026-07-13-github-code-quality-license-estimate-in-public-preview/)
+
+6. `gpt-56-sol-ultra-cycle-double-cover-conjecture-multiagent-research-prompt-builder-guide` (July 13, NAMED-COMPANY ×OpenAI)
+   - [MLQ](https://mlq.ai/news/openai-claims-gpt-56-sol-ultra-solved-50-year-old-math-conjecture-in-under-an-hour/) ×2; [HN](https://news.ycombinator.com/item?id=48863490); [Developers Digest](https://www.developersdigest.tech/blog/gpt-56-sol-ultra-cycle-double-cover-proof); [The Decoder](https://the-decoder.com/openais-gpt-5-6-sol-ultra-reportedly-solves-a-50-year-old-math-problem-in-under-an-hour/)
+
+7. `meta-hyperion-50-billion-5-gigawatt-louisiana-ai-infrastructure-builder-guide` (July 13, NAMED-COMPANY ×Meta)
+   - [CNBC](https://www.cnbc.com/2026/07/13/meta-louisiana-data-center-investment-reaches-50-billion-amid-ai-push.html) ×2; [Tom's Hardware](https://www.tomshardware.com/tech-industry/data-centers/meta-expands-colossal-hyperion-ai-supercluster-plans-to-5gw-pushes-louisiana-investment-past-usd50-billion-as-ai-race-accelerates-says-it-plans-to-invest-over-usd1-billion-in-local-infrastructure-improvements); [The Hill](https://thehill.com/policy/technology/5965840-meta-louisiana-datacenter-expansion/); [Fortune](https://fortune.com/2026/07/13/meta-hyperion-louisiana-50-billion-tax-breaks-locals/)
+
+8. `meta-iris-chip-mtia-september-production-14gw-compute-llama-inference-builder-guide` (July 13, NAMED-COMPANY ×Meta/Broadcom/TSMC)
+   - [Reuters/USNews exclusive](https://money.usnews.com/investing/news/articles/2026-07-09/exclusive-meta-to-put-ai-chip-into-production-in-september-as-it-looks-to-double-computing-capacity-memo-shows) ×2; [TechCrunch](https://techcrunch.com/2026/07/09/metas-new-ai-chips-will-begin-production-in-september/)
+
+9. `microsoft-mai-replace-openai-anthropic-copilot-excel-outlook-routing-builder-guide` (July 13, NAMED-COMPANY ×Microsoft/OpenAI/Anthropic)
+   - [Bloomberg](https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps) ×3; [The Decoder](https://the-decoder.com/copilot-goes-cheap-as-microsoft-phases-out-openai-and-anthropic-models-to-cut-costs/) ×2
+
+10. `openai-codex-5-hour-limit-removed-shared-agentic-credit-pool-builder-guide` (July 13, NAMED-COMPANY ×OpenAI)
+    - [Digital Trends](https://www.digitaltrends.com/computing/openai-just-took-the-handcuffs-off-your-chatgpt-work-and-codex-usage-limits-at-least-for-now/) ×2; [Windows Forum](https://windowsforum.com/threads/gpt-5-6-sol-five-hour-limit-lifted-for-chatgpt-paid-plans.437944/); [ExplainX](https://explainx.ai/blog/chatgpt-codex-5-hour-limit-removed-weekly-reset-july-2026)
+
+**Uncited page count:** ~17 (down from ~27 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–66 = ~544 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** Continue Batch 67 from remaining uncited July 13–15 pages (~17 remain).
+
+---
+
 ## Run 2516 — 2026-07-19 — RingS Deploy + Citation Retrofit Batch 65 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit + RingS Deploy

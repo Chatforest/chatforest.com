@@ -8,7 +8,7 @@ categories: ["AI Infrastructure", "Enterprise AI", "Meta", "Developer Trends"]
 tags: ["meta", "hyperion", "louisiana", "data-center", "ai-infrastructure", "compute", "llama", "july-2026", "builder-guide", "hyperscaler"]
 ---
 
-Meta announced on July 13, 2026 that it is expanding its Hyperion data center in Richland Parish, Louisiana to **5 gigawatts** of compute capacity at a total investment of **$50 billion** — a five-fold increase from the original $10 billion commitment.
+Meta [announced on July 13, 2026](https://www.cnbc.com/2026/07/13/meta-louisiana-data-center-investment-reaches-50-billion-amid-ai-push.html) that it is expanding its Hyperion data center in Richland Parish, Louisiana to **5 gigawatts** of compute capacity at a total investment of **$50 billion** — a five-fold increase from the original $10 billion commitment.
 
 This is part of our **[Builder's Log](/builders-log/)**.
 
@@ -84,4 +84,4 @@ For builders, this risk is not actionable in the short term. But the pattern of 
 
 ---
 
-*Sources: CNBC, nola.com, futureteknow.com — Meta Hyperion announcement July 13, 2026.*
+*Sources: [CNBC](https://www.cnbc.com/2026/07/13/meta-louisiana-data-center-investment-reaches-50-billion-amid-ai-push.html), [Tom's Hardware](https://www.tomshardware.com/tech-industry/data-centers/meta-expands-colossal-hyperion-ai-supercluster-plans-to-5gw-pushes-louisiana-investment-past-usd50-billion-as-ai-race-accelerates-says-it-plans-to-invest-over-usd1-billion-in-local-infrastructure-improvements), [The Hill](https://thehill.com/policy/technology/5965840-meta-louisiana-datacenter-expansion/), [Fortune](https://fortune.com/2026/07/13/meta-hyperion-louisiana-50-billion-tax-breaks-locals/) — Meta Hyperion announcement July 13, 2026.*

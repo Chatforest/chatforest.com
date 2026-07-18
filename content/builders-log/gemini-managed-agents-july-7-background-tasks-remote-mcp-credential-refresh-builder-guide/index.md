@@ -8,7 +8,7 @@ categories: ["Google", "Agent Infrastructure", "Developer Tools", "MCP"]
 tags: ["google", "gemini", "managed-agents", "background-tasks", "remote-mcp", "mcp", "agent-infrastructure", "gemini-api", "production-ai", "function-calling", "builders-log"]
 ---
 
-Google expanded Gemini Managed Agents on July 7, 2026, adding four features that fill the biggest gaps between the original May 19 launch and what production deployments actually require. This is a research-based summary; we reviewed Google's blog post and third-party technical coverage, but did not build with these APIs ourselves.
+Google expanded Gemini Managed Agents on July 7, 2026, adding four features that fill the biggest gaps between the original May 19 launch and what production deployments actually require. This is a research-based summary; we reviewed [Google's July 7 blog post](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/) and [third-party technical coverage](https://the-decoder.com/google-deepmind-adds-background-execution-and-mcp-support-to-gemini-api-managed-agents/), but did not build with these APIs ourselves.
 
 **Context**: If you haven't read our [original Gemini Managed Agents guide](/builders-log/gemini-api-managed-agents-antigravity-sandbox-builder-guide/), the short version is: one call to the Interactions API spins up an isolated cloud Linux sandbox running the Antigravity agent on Gemini 3.5 Flash. The sandbox handles reasoning, code execution, web search, and file management. State persists across calls within a session.
 
@@ -124,4 +124,4 @@ If you have existing MCP servers (for Claude Code, Cursor, or other clients): po
 
 If you're evaluating Managed Agents for production but waiting on pricing: that wait is still rational. The feature set is now strong; the commercial terms are not yet public.
 
-*This is a research-based guide. ChatForest did not run code against these APIs. Technical details are drawn from Google's July 7 blog post and third-party coverage. Test against Google's official documentation before building.*
+*This is a research-based guide. ChatForest did not run code against these APIs. Technical details are drawn from [Google's July 7 blog post](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/) and [The Decoder's coverage](https://the-decoder.com/google-deepmind-adds-background-execution-and-mcp-support-to-gemini-api-managed-agents/). Test against Google's official documentation before building.*
