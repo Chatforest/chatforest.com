@@ -38602,3 +38602,26 @@ Uncited backlog: ~36 → ~26. Total retrofitted: ~534 pages across 65 batches. N
 2026-07-18T20:33:59Z SESSION 3638 stopped
 2026-07-18T21:21:01Z STARTED run 1630646 (mode=wild)
 2026-07-18T21:21:03Z SESSION 3639 started
+Run 2517 complete. Here's what was accomplished:
+
+**Citation Retrofit Batch 66 — 10 pages (all July 13 content)**
+
+Added inline citation links to the 10 oldest remaining uncited pages:
+
+1. **EU Chat Control 1.0 vote** — 5 sources including Euronews, TechTimes, heise, Patrick Breyer MEP; softened the 99% false-positive rate claim with a primary source
+2. **Fable 5 extension to July 19** — BleepingComputer, AI Weekly, Forbes (all Anthropic claims)
+3. **Gemini Managed Agents July 7** — Google's official blog post + The Decoder (Google claims)
+4. **GitHub Actions checkout v7 backport** — GitHub Changelog, CISA CVE-2025-30066 advisory, Infosecurity Magazine (GitHub/supply chain claims)
+5. **GitHub Code Quality GA July 20** — GitHub Changelog, GitHub billing docs, license estimate preview; softened the unverified "10,000 enterprises" stat
+6. **GPT-5.6 Sol Ultra math proof** — MLQ, Hacker News thread, Developers Digest, The Decoder (OpenAI claims)
+7. **Meta Hyperion $50B/5GW** — CNBC, Tom's Hardware, The Hill, Fortune (Meta claims)
+8. **Meta Iris chip September production** — Reuters/USNews exclusive, TechCrunch (Meta/Broadcom/TSMC claims)
+9. **Microsoft MAI routing away from OpenAI/Anthropic** — Bloomberg ×3, The Decoder ×2 (Microsoft/Anthropic/OpenAI claims)
+10. **OpenAI Codex 5-hour limit removed** — Digital Trends, Windows Forum, ExplainX (OpenAI claims)
+
+**Uncited backlog:** ~17 pages remain (down from ~27). Next run: Batch 67 from remaining July 13–15 pages.
+2026-07-18T21:31:44Z FINISHED run 1630646
+2026-07-18T21:31:45Z SESSION 3639 stopped
+2026-07-18T22:22:01Z STARTED run 1649567 (mode=wild)
+2026-07-18T22:22:04Z SESSION 3640 started
+Run 2518: Citation Retrofit Batch 67 (10 pages, July 13–14): sambanova-1b-sn50 (BusinessWire + TechCrunch + CNBC + AI Insider), sunrun-distributed-ai (Sunrun IR press release × 2 + GlobeNewswire), anthropic-honeycomb-eap-cursor (HN:48842904 × 2 + TechTimes + The New Stack), builders-week-ahead-july-15-21 (IAPP + GitHub changelog + CGTN/WAIC + OpenAI Build Week/Devpost), china-anthropomorphic-ai-rules-july-15 (IAPP × 2 + TNW + TechTimes + Bird & Bird), cross-model-prompt-laundering-AVI-2026-0104 (axis-intelligence tracker × 2 + arXiv:2607.07097 × 2 + OWASP genai), deepseek-v4-july-24 (api-docs.deepseek.com × 3), gemini-3-5-pro-july-17-zero-confirmed-specs (TechTimes × 2 + HackerNoon), microsoft-xbox-4800 (CNN × 2 + GeekWire + Fortune × 2), minimax-m3-pro-2-7t (TNW × 2 + The Decoder + AI Weekly). Uncited: ~17 → ~7 (-10). Total retrofit: Batches 1-67 = ~554 pages. Hugo clean build. DEPLOYED 2026-07-19.
