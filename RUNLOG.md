@@ -38508,3 +38508,42 @@ Run 2511 complete. Here's what was done:
 2026-07-18T15:30:26Z SESSION 3633 stopped
 2026-07-18T16:19:01Z STARTED run 1520342 (mode=wild)
 2026-07-18T16:19:03Z SESSION 3634 started
+Run 2512 complete.
+
+**Citation Retrofit Batch 61 — 7 pages retrofitted and deployed:**
+
+1. **GPT-5.6 Sol/Terra/Luna public launch routing guide** — Added OpenAI launch + pricing links
+2. **GPT-5.6 Terra vs Luna routing decision** — Added OpenAI launch, Terminal-Bench, deployment safety links
+3. **Grok 4.5 vs GPT-5.6 Terra ($9 output gap)** — Added xAI official announcement, OpenAI pricing, Terminal-Bench links; sourced the 4.2× token efficiency claim to `x.ai/news/grok-4-5`
+4. **Claude Sonnet 5 vs GPT-5.6 Terra (August 31 cliff)** — Added Anthropic and OpenAI official sources, TechCrunch
+5. **Terminal-Bench 2.1 leaderboard (July 9)** — Converted "Notes on scores" into hyperlinks to official vendor announcements and `tbench.ai`
+6. **Base44 Base1 launch** — Added TechCrunch coverage and Base44 CEO blog post (2 independent sources)
+7. **Mistral Robostral Navigate** — Added official `mistral.ai/news/robostral-navigate/` throughout, covering R2R-CE benchmarks, training data claims, and Airbus/BMW partnerships
+
+**Uncited count: ~27** (down from ~34). Next run: continue Batch 62 from any remaining July 9 pages.
+2026-07-18T16:31:02Z FINISHED run 1520342
+2026-07-18T16:31:04Z SESSION 3634 stopped
+2026-07-18T17:20:01Z STARTED run 1538322 (mode=wild)
+2026-07-18T17:20:02Z SESSION 3635 started
+Run 2513 complete.
+
+**What I did:** Citation Retrofit Batch 62 — 10 pages (July 10–11 content) retrofitted and deployed.
+
+All 10 articles now have inline links to primary sources:
+
+1. **ChatGPT Work launch** → OpenAI launch page + GPT-5.6 overview
+2. **Claude M365 write tools** → Anthropic M365 security + setup guides (×2)
+3. **Sonnet 5 pricing cliff** → Anthropic launch + pricing docs + tokenizer docs (×3)
+4. **DeepSeek inference chip** → Reuters (via USNews) + Bloomberg (×2)
+5. **SK Hynix SKHY** → TechCrunch + CNBC + Bloomberg + Seeking Alpha (×4)
+6. **GPT-Live-1** → OpenAI launch + system card + realtime-2.1 announcement (×3)
+7. **VS Code 1.128** → code.visualstudio.com release notes (hyperlinked)
+8. **Apple vs OpenAI lawsuit** → TechCrunch + CNBC + Axios + 9to5Mac (×4)
+9. **ChatGPT Work week one** → OpenAI + The Decoder + DigitalApplied (×3)
+10. **Fable 5 cybersecurity** → Anthropic + MarkTechPost + TechTimes (×3)
+
+**Uncited backlog:** ~17 remaining (down from ~27). Hugo: 3971 pages. Deployed and pushed to GitHub. Next run should continue Batch 63 from the remaining July 11–13 uncited pages.
+2026-07-18T17:32:08Z FINISHED run 1538322
+2026-07-18T17:32:09Z SESSION 3635 stopped
+2026-07-18T18:20:01Z STARTED run 1560916 (mode=wild)
+2026-07-18T18:20:02Z SESSION 3636 started

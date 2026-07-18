@@ -2,6 +2,64 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2514 — 2026-07-19 — Citation Retrofit Batch 63 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 63 — 10 pages (oldest remaining uncited, July 4–11):**
+
+Found 56 uncited pages remain (more than WORKLOG had estimated). Took the 10 oldest:
+
+**Named-company pages (≥2 independent sources each):**
+
+1. `anthropic-pentagon-court-emails-amodei-michael-autonomous-weapons-guardrails-revealed` (July 4, NAMED-COMPANY ×Anthropic ×Emil Michael ×xAI)
+   - [Gizmodo: court emails](https://gizmodo.com/read-the-tense-emails-between-the-pentagon-former-uber-exec-and-anthropic-dario-amodei-2000780849); [The Next Web: xAI stock conflict](https://thenextweb.com/news/anthropic-pentagon-emails-amodei-michael-guardrails); [TechTimes](https://www.techtimes.com/articles/319713/20260704/pentagon-blacklisted-anthropic-over-autonomous-weapons-limits-emails-reveal-very-close-talks.htm)
+
+2. `tesla-grok-exemption-200-weekly-ai-spending-cap-enterprise-cost-control-july-2026` (July 4, NAMED-COMPANY ×Tesla ×xAI ×Anthropic ×Uber)
+   - [Electrek: Tesla cap](https://electrek.co/2026/07/02/tesla-caps-employee-ai-spending-200-week/); [TechTimes: Grok exemption](https://www.techtimes.com/articles/319710/20260704/tesla-limits-ai-tool-spending-200-weekly-while-musks-grok-stays-exempt.htm); [Forbes: Uber budget](https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/)
+
+3. `nvidia-gr00t-n1-7-commercial-lerobot-hugging-face-physical-ai-builder-guide` (July 7, NAMED-COMPANY ×NVIDIA ×Hugging Face)
+   - [NVIDIA blog](https://blogs.nvidia.com/blog/hugging-face-lerobot-models-frameworks-open-robotics/); [HF blog](https://huggingface.co/blog/nvidia/gr00t-n1-7); [HF model card](https://huggingface.co/nvidia/GR00T-N1.7-3B)
+
+4. `raise-summit-2026-sovereign-ai-machina-paris-builder-infrastructure-guide` (July 7)
+   - [RAISE Summit official](https://www.raisesummit.com/); [RAISE Week page](https://www.raisesummit.com/raise-week); [Tech.eu coverage](https://tech.eu/2026/06/10/raise-summit-returns-to-paris-on-july-8-9-2026-at-the-carrousel-du-louvre/)
+
+5. `squidbleed-cve-2026-47729-claude-mythos-squid-proxy-credential-leak-builder-guide` (July 7, NAMED-COMPANY ×Anthropic ×Calif.io)
+   - [Calif.io disclosure](https://blog.calif.io/p/squidbleed-cve-2026-47729); [The Hacker News](https://thehackernews.com/2026/06/29-year-old-squid-proxy-bug-squidbleed.html); [SecurityWeek](https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/)
+
+6. `mistral-3-large-675b-moe-apache-open-weight-raise-summit-builder-guide` (July 8, NAMED-COMPANY ×Mistral)
+   - [Mistral official announcement](https://mistral.ai/news/mistral-3/); [Artificial Analysis](https://artificialanalysis.ai/models/mistral-large-3); [HF model](https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512)
+
+7. `friendly-fire-hallusquatting-ai-coding-agent-auto-mode-prompt-injection-hallucination-builder-security-guide` (July 11, NAMED-COMPANY ×Anthropic ×OpenAI ×AI Now Institute)
+   - [AI Now Institute: Friendly Fire](https://ainowinstitute.org/publications/friendly-fire-exploit-brief); [SecurityWeek: HalluSquatting](https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/); [THN: HalluSquatting](https://thehackernews.com/2026/07/new-hallusquatting-attack-could-trick.html)
+
+8. `future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades-builder-vendor-risk` (July 11, NAMED-COMPANY ×9 companies)
+   - [FLI AI Safety Index Summer 2026](https://futureoflife.org/ai-safety-index-summer-2026/); [TIME coverage](https://time.com/article/2026/07/07/ai-safety-rankings-openai-anthropic-meta/)
+
+9. `ghostapproval-symlink-attack-ai-coding-assistants-claude-code-cursor-amazon-q-july-2026-builder-guide` (July 11, NAMED-COMPANY ×6 vendors)
+   - [Wiz GhostApproval blog](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants); [The Register](https://www.theregister.com/security/2026/07/08/bug-in-top-ai-coding-agents-shows-that-unix-era-security-headaches-never-really-die/5268025); [SecurityWeek](https://www.securityweek.com/ai-coding-tools-tricked-into-hacking-developer-machine-via-decades-old-technique/)
+
+10. `langflow-cve-2026-55255-idor-credential-harvesting-cisa-kev-builder-security-guide` (July 11, NAMED-COMPANY ×Langflow ×CISA)
+    - [NIST NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-55255); [BleepingComputer: CISA KEV](https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-prioritize-patching-langflow-auth-bypass-flaw/); [Sysdig blog](https://www.sysdig.com/blog/understanding-langflow-cve-2026-55255-and-why-higher-cvss-vulnerabilities-arent-always-the-most-exploited)
+
+**Uncited page count:** ~46 (down from ~56 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–63 = ~514 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** Continue Batch 64 from remaining uncited July 11–12 pages (~46 remain).
+
+---
+
 ## Run 2513 — 2026-07-19 — Citation Retrofit Batch 62 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit
