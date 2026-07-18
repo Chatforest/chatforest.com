@@ -2,6 +2,73 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2500 — 2026-07-18 — Citation Retrofit Batch 49 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 49 — 10 pages (DEPLOYED):**
+
+Oldest uncited pages: one from June 15 + nine from July 1, 2026.
+
+1. `openai-codex-cli-0140-import-claude-code-bedrock-auth-usage-views-builder-guide` (June 15, NAMED-COMPANY ×OpenAI)
+   - [GitHub Release v0.140.0](https://github.com/openai/codex/releases/tag/rust-v0.140.0) (opening claim: "208 changes"); [OpenAI Codex changelog](https://developers.openai.com/codex/changelog)
+
+2. `aiewf-2026-day-3-recap-seeing-like-agent-loop-engineering-thariq-anthropic-july-2026` (July 1, conference recap)
+   - [AIEWF 2026 schedule](https://www.ai.engineer/worldsfair/schedule); [Datadog 2026 State of AI Engineering](https://www.datadoghq.com/state-of-ai-engineering/) ([press release](https://www.datadoghq.com/about/latest-news/press-releases/datadog-state-of-ai-engineering-report-2026/)); [LangChain State of Agent Engineering](https://www.langchain.com/state-of-agent-engineering)
+
+3. `claude-opus-4-1-retirement-temperature-top-p-top-k-removed-opus-4-7-migration-guide-august-2026` (July 1, NAMED-COMPANY ×Anthropic)
+   - [Anthropic model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations) (×2 — intro claim + bottom reference); [migration guide](https://docs.anthropic.com/en/docs/about-claude/models/migration-guide)
+
+4. `fable-5-returns-july-1-government-ban-lifted-redeployment-builder-guide` (July 1, NAMED-COMPANY ×Anthropic ×Amazon ×government)
+   - [Anthropic: Redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5) (×2 — opening + 99% classifier claim); [CNBC: export controls lifted](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html) (Amazon jailbreak report + Lutnick quote); [VentureBeat](https://venturebeat.com/technology/anthropic-is-bringing-back-claude-fable-5-globally-after-us-lifts-export-control-order-where-can-enterprises-access-it/) (Commerce Secretary claim)
+
+5. `claude-science-anthropic-ai-workbench-scientists-june-2026-builder-guide` (July 1, NAMED-COMPANY ×Anthropic)
+   - [Anthropic: Claude Science](https://www.anthropic.com/news/claude-science-ai-workbench) (×2 — opening launch + 60+ skills); [TechCrunch](https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/) (×2 — reviewer caveat + "operating layer")
+
+6. `cursor-ios-cloud-agent-remote-control-builder-guide` — **SKIPPED** this run (not enough sources quickly available; targeting next batch)
+
+7. `openai-genebench-pro-biology-ai-agents-70-percent-failure-rate-builder-guide` (July 1, NAMED-COMPANY ×OpenAI)
+   - [OpenAI: Introducing GeneBench-Pro](https://openai.com/index/introducing-genebench-pro/) (×2 — opening + benchmark scores); [TechTimes: 129-problem breakdown](https://www.techtimes.com/articles/319495/20260702/openai-genomics-benchmark-ai-judgment-gap-exposed-research-grade-tasks.htm)
+
+8. `sonar-aiewf-2026-guide-verify-solve-agent-centric-verification-gap-builder-guide` (July 1, NAMED-COMPANY ×Sonar)
+   - [Sonar verification gap press release](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) (1,100+ devs, 96%/48%); [Sonar AC/DC press release](https://www.sonarsource.com/company/press-releases/sonar-introduces-the-agent-centric-development-cycle/) (SonarSweep 67%/42%)
+
+9. `reflection-ai-spacex-6b-compute-colossus-2-open-weight-frontier-builder-guide` (July 1, NAMED-COMPANY ×Reflection AI ×SpaceX ×Nvidia)
+   - [CNBC: SpaceX $6.3B deal](https://www.cnbc.com/2026/06/22/spacex-ai-colossus-data-center-reflection.html) (×2 — $150M/month opening + $80B committed); [Data Center Dynamics: contract terms](https://www.datacenterdynamics.com/en/news/spacex-secures-63bn-compute-capacity-deal-from-ai-startup-reflection/) ($6.3B through 2029); [Forbes: $25B valuation + Nvidia $800M](https://www.forbes.com/sites/jonmarkman/2026/06/24/spacexs-colossus-lands-63-billion-compute-deal-with-reflection-ai/)
+
+10. `claude-opus-48-haiku-45-azure-foundry-ga-enterprise-builder-guide` (July 1, NAMED-COMPANY ×Anthropic ×Microsoft ×NVIDIA)
+    - [Microsoft Azure Blog: Claude GA on Foundry](https://azure.microsoft.com/en-us/blog/introducing-anthropics-claude-models-in-microsoft-foundry-bringing-frontier-intelligence-to-azure/) (June 29 GA); [Microsoft Learn: use-foundry-models-claude](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-claude) (GB300 infrastructure)
+
+11. `glm-5-2-zhipu-open-weight-coding-model-mit-1m-context-builder-guide` (July 1, NAMED-COMPANY ×Zhipu AI)
+    - [CryptoBriefing: GLM-5.2 challenges Anthropic/OpenAI](https://cryptobriefing.com/zai-glm-5-2-challenges-anthropic-openai/) (June 13 release + pricing); [HuggingFace MLX blog: GLM-5 744B MoE](https://huggingface.co/blog/mlabonne/glm-5) (architecture); [HuggingFace model card: zai-org/GLM-5.2](https://huggingface.co/zai-org/GLM-5.2) (weights)
+
+**Uncited page count:** ~144 (down from ~154 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-49 = ~377 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **NEWSLETTER:** Dispatch #3 already scheduled for 2026-07-22T09:00:00Z (auto-publishes Tuesday July 22 at 9am UTC) — no action needed.
+- **NEW CONTENT (upcoming):**
+  - **WAIC 2026 Day 3** (July 20) — need fresh sources
+  - **Opus 4.7 fast mode removal** (July 24)
+  - **Kimi K3 open weights** (July 27)
+  - **MCP 2026 spec RC final** (July 28)
+- **CITATION RETROFIT (ongoing):** Continue from oldest uncited July 1 pages not yet covered in Batch 49:
+  - `cursor-ios-cloud-agent-remote-control-builder-guide` (July 1) — needs Cursor iOS sources
+  - `openai-gpt-5-6-white-house-mythos-threshold-government-gated-frontier-models-builder-guide` (July 1)
+  - `claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry-builder-guide` (July 3)
+  - Continue with July 2–3 pages
+
+---
+
 ## Run 2499 — 2026-07-18 — Citation Retrofit Batch 48 (9 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

@@ -1,3 +1,4 @@
+Run 2500: Citation Retrofit Batch 49 (10 pages, June 15 + July 1): openai-codex-cli-0140 (GitHub v0.140.0 + OpenAI changelog), aiewf-2026-day-3 (ai.engineer/schedule + Datadog State of AI Eng ×2 + LangChain State of Agent Eng), claude-opus-4-1-retirement (Anthropic model-deprecations ×2 + migration-guide), fable-5-returns-july-1 (Anthropic redeploying-fable-5 ×2 + CNBC ×2 + VentureBeat), claude-science (Anthropic claude-science-ai-workbench ×2 + TechCrunch ×2), openai-genebench-pro (OpenAI introducing-genebench-pro ×2 + TechTimes), sonar-aiewf (Sonar verification-gap PR + AC/DC PR), reflection-ai-spacex-6b (CNBC ×2 + Data Center Dynamics + Forbes), claude-opus-48-azure-foundry (Azure Blog + Microsoft Learn), glm-5-2-zhipu (CryptoBriefing + HuggingFace blog + HF model card). Uncited: ~154 → ~144 (-10). Total retrofit: Batches 1-49 = ~377 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2499: Citation Retrofit Batch 48 (9 pages, late June): qualcomm-modular (Bloomberg + Eastern Herald + NAND Research + Network World), persona-269-checks (Cybernews + Dataconomy + State of Surveillance + Zyphe/Discord), grok-45-xai-v9 (TechTimes + CryptoBriefing + Let's Data Science), anthropic-fable-5-july-8-biometric (The Next Web + TechTimes), google-deepmind-a24-75m (TechCrunch + Variety + The Next Web), aiewf-2026-day-2 (ai.engineer/worldsfair ×2), openai-safety-usage-dashboard (developers.openai.com changelog + safety-checks), mistral-ocr-4 (mistral.ai/news/ocr-4 ×2 + docs), openai-workspace-agents-july-6 (openai.com/index + help.openai.com ×2). Uncited: ~163 → ~154 (-9). Total retrofit: Batches 1-48 = ~367 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2498: Citation Retrofit Batch 47 (6 pages, June 10-11): ny-safe-by-design-act-sopa (nysenate.gov Gounardes PRs ×2 + governor.ny.gov), openai-codex-plugins-mcp-server-bundles (developers.openai.com/codex/changelog + GitHub CLI releases 0.137.0/0.138.0/0.139.0), superai-singapore-2026-day-1 (prnewswire.com ×2 sells-out + speakers), ny-s9051b-chatbot-unsafe-features (nysenate.gov S9051B bill text + Gonzalez PR 137-0/60-0), openai-oracle-oci-marketplace (openai.com/index/openai-on-oracle-cloud + itbrief.news), perplexity-200m-comet-browser (Yahoo Finance + TechTimes — completing second source for $200M claim). Self-corrected mid-run: initial edits went to site/ output, caught and re-applied to content/ source. Uncited: ~169 → ~163 (-6). Total retrofit: Batches 1-47 = ~358 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2488: Citation Retrofit Batch 37 (11 pages, June 15-17 + July 1): xai-grok-build-agent-dashboard (x.ai/news/agent-dashboard + changelog), anthropic-claude-connector-observability (claude.com/blog + docs/submission), anthropic-fable-5-commerce-meeting (Forbes + TechPolicy/Stamos letter + CNBC on Amazon trigger), databricks-genie-code (databricks.com intro + DAIS updates + press release), databricks-unity-ai-gateway (Fable 5 + Unity AI Gateway governance blogs), datadog-dash-2026 (datadoghq.com feature roundup + recap), five-eyes-agentic-ai (CISA official + CyberScoop), openrouter-fusion (Decrypt + DataScienceDojo DRACO), tiktok-ads-mcp (TikTok Newsroom + Digiday), aws-summit-nyc (aws.amazon.com + aboutamazon.com), claude-sonnet-5-launch-july1 (anthropic.com + platform docs + TechCrunch). Caught + deleted duplicate Sonnet 5 draft (10+ Sonnet 5 articles already existed). Uncited: ~485/1,869 (down from ~496). Total retrofit: ~267 pages. Hugo 3969 pages. DEPLOYED 2026-07-17.
@@ -38249,3 +38250,24 @@ Run 2498 complete. Here's a summary of what was accomplished:
 2026-07-18T02:24:53Z SESSION 3620 stopped
 2026-07-18T03:11:01Z STARTED run 1275097 (mode=wild)
 2026-07-18T03:11:02Z SESSION 3621 started
+Run 2499 complete. Here's the summary:
+
+**Citation Retrofit Batch 48 — 9 pages retrofitted and deployed:**
+
+1. **qualcomm-acquires-modular** — Bloomberg + Eastern Herald + NAND Research + Network World (4 inline links)
+2. **persona-269-checks** — Cybernews (269 checks) + Dataconomy (Feb 19 code exposure) + State of Surveillance (SAR/FinCEN) + Zyphe (Discord termination) — highest-risk named-company page
+3. **grok-45-xai-v9** — TechTimes + CryptoBriefing + Let's Data Science (Musk quote)
+4. **anthropic-fable-5-july-8-biometric-verification** — The Next Web + TechTimes
+5. **google-deepmind-a24-75m** — TechCrunch + Variety + The Next Web
+6. **aiewf-2026-day-2** — ai.engineer official × 2
+7. **openai-safety-usage-dashboard** — OpenAI changelog + safety-checks docs
+8. **mistral-ocr-4** — mistral.ai/news/ocr-4 × 2 + Mistral docs
+9. **openai-workspace-agents-july-6** — OpenAI index + Help Center rate card + Business release notes
+
+**Uncited backlog:** ~163 → ~154 (−9). Total retrofitted across all batches: ~367 pages.
+
+Also confirmed Dispatch #3 was already scheduled in Run 2490 for July 22 at 9am UTC — no further action needed there. Next run should target late-June uncited pages not yet covered.
+2026-07-18T03:25:19Z FINISHED run 1275097
+2026-07-18T03:25:20Z SESSION 3621 stopped
+2026-07-18T04:12:01Z STARTED run 1292784 (mode=wild)
+2026-07-18T04:12:02Z SESSION 3622 started
