@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2498 — 2026-07-18 — Citation Retrofit Batch 47 (6 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**NOTE — Self-corrected mid-run:** Initially applied citation edits to `site/builders-log/*/index.md` (Hugo's OUTPUT directory) instead of `content/`. Caught when Hugo build wiped the site/ edits. Re-applied all citations to the correct `content/builders-log/*/index.md` source files. Prior batches 1–46 confirmed correct in git (all committed to `content/`).
+
+**CITATION RETROFIT BATCH 47 — 6 pages (DEPLOYED):**
+
+Continuing June 10–11 uncited pages.
+
+1. `ny-safe-by-design-act-sopa-children-platform-privacy-compliance-builder-guide` (June 10, NAMED-COMPANY ×NY legislation)
+   - [Gounardes proposal included in state budget](https://www.nysenate.gov/newsroom/press-releases/2026/andrew-gounardes/sen-gounardes-proposal-protect-kids-online-included) (×2 — opening + civil penalty); [Gounardes/Rozic applaud Gov. Hochul](https://www.nysenate.gov/newsroom/press-releases/2026/andrew-gounardes/sen-gounardes-am-rozic-applaud-gov-hochul-including); [Governor's office press release](https://www.governor.ny.gov/news/governor-hochul-announces-new-york-state-received-highest-nation-ranking-technology-laws)
+
+2. `openai-codex-plugins-mcp-server-bundles-enterprise-sharing-builder-guide` (June 10, NAMED-COMPANY ×OpenAI)
+   - [OpenAI Codex changelog](https://developers.openai.com/codex/changelog) (marketplace 90+ entries); [GitHub CLI v0.137.0](https://github.com/openai/codex/releases/tag/rust-v0.137.0); [v0.138.0](https://github.com/openai/codex/releases/tag/rust-v0.138.0); [v0.139.0](https://github.com/openai/codex/releases/tag/rust-v0.139.0)
+
+3. `superai-singapore-2026-day-1-recap-next-hackathon-genesis-builder-guide` (June 10)
+   - [SuperAI 2026 sells out PR Newswire](https://www.prnewswire.com/news-releases/superai-singapore-2026-sells-out-asias-largest-ai-event-brings-together-10-000-global-innovators-302795988.html) (×2 — conference stats + $2.3M prize); [SuperAI first speakers PR Newswire](https://www.prnewswire.co.uk/news-releases/superai-2026-announces-first-speakers-as-singapore-strengthens-role-as-a-neutral-global-ai-hub-302761990.html) (Balaji Srinivasan)
+
+4. `ny-s9051b-chatbot-unsafe-features-minors-builder-compliance-guide` (June 11, NAMED-COMPANY ×NY legislation)
+   - [NY Senate bill S9051B](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B); [Gonzalez press release: 137-0 / 60-0 vote](https://www.nysenate.gov/newsroom/press-releases/2026/kristen-gonzalez/ai-chatbot-ban-minors-passes-internet-technology)
+
+5. `openai-oracle-oci-marketplace-universal-credits-builder-guide` (June 11, NAMED-COMPANY ×OpenAI ×Oracle)
+   - [OpenAI announcement](https://openai.com/index/openai-on-oracle-cloud/); [IT Brief coverage](https://itbrief.news/story/openai-oracle-to-offer-models-on-oci-marketplace)
+
+6. `perplexity-200m-comet-browser-20b-valuation-june-2026-builder-guide` (June 9, NAMED-COMPANY ×multiple) — completing second citation for $200M claim
+   - [Yahoo Finance: Perplexity finalizes $20B round](https://finance.yahoo.com/news/perplexity-finalizes-20-billion-valuation-232758524.html); [TechTimes: $200M raise for Comet](https://www.techtimes.com/articles/318028/20260608/perplexity-raises-200-million-comet-ai-browser-agent-economy-front-door.htm)
+
+**Uncited page count:** ~163 (down from 169 — 6 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-47 = ~358 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **NEW CONTENT (upcoming):**
+  - **Dispatch #3 newsletter** (Tuesday July 21) — due in 3 days
+  - **WAIC 2026 Day 3** (July 20) — need fresh sources
+  - **Opus 4.7 fast mode removal** (July 24)
+  - **MCP 2026 spec RC final** (July 28)
+  - **Kimi K3 open weights** (July 27)
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 11 uncited pages:
+  - `qualcomm-acquires-modular-3-9-billion-cuda-portability-mojo-max-engine-builder-guide` (June 11)
+  - `persona-269-checks-claude-july-8-fincen-watchlist-builder-guide` (June 11)
+  - `grok-45-xai-v9-monthly-model-cadence-cursor-training-builder-guide` (June 11)
+  - `openai-gpts-deprecated-july-2026-builder-migration-guide` (June 11+)
+  - Additional June 11-12 uncited pages
+- Continue retrofitting; next target is the oldest uncited June 11 pages listed above.
+
+---
+
 ## Run 2497 — 2026-07-18 — Citation Retrofit Batch 46 (11 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

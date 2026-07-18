@@ -22,9 +22,9 @@ The companion chatbot regulation stacking in New York is now three layers deep. 
 
 **Layer 2 — A3411B (awaiting Hochul signature):** Requires all generative AI operators to display a clear and conspicuous UI notice that AI outputs may be inaccurate. Covers every GenAI product shipped to New York users — not just companion chatbots. 90 days after signing.
 
-**Layer 3 — S9051B (awaiting Hochul signature):** Creates GBL Article 48, the "Prohibition on Unsafe Chatbot Features for Minors." This is the one that will require the most engineering work. It does not merely require a disclosure or a safety protocol. It prohibits operating specific features when minors are — or might be — on the other end of the chat.
+**Layer 3 — [S9051B](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B) (awaiting Hochul signature):** Creates GBL Article 48, the "Prohibition on Unsafe Chatbot Features for Minors." This is the one that will require the most engineering work. It does not merely require a disclosure or a safety protocol. It prohibits operating specific features when minors are — or might be — on the other end of the chat.
 
-Governor Hochul has until December 31, 2026 to sign or veto S9051B. The bill passed 137-0 in the Assembly and 60-0 in the Senate. Unanimous passage of consumer protection legislation does not typically get vetoed.
+Governor Hochul has until December 31, 2026 to sign or veto S9051B. The bill [passed 137-0 in the Assembly and 60-0 in the Senate](https://www.nysenate.gov/newsroom/press-releases/2026/kristen-gonzalez/ai-chatbot-ban-minors-passes-internet-technology). Unanimous passage of consumer protection legislation does not typically get vetoed.
 
 ---
 

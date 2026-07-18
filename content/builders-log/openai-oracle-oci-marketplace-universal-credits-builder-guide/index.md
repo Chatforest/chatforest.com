@@ -8,7 +8,7 @@ categories: ["Models", "OpenAI", "Cloud Platforms"]
 tags: ["openai", "oracle", "oci", "cloud", "enterprise", "codex", "gpt-5-5", "stargate", "billing", "builder-guide", "june-2026"]
 ---
 
-OpenAI announced on June 11, 2026 that its frontier models and Codex will be available through the Oracle Cloud Infrastructure Marketplace. The key detail: Oracle customers can apply **existing Universal Credits** toward OpenAI API usage — no separate OpenAI billing account or purchasing agreement required.
+[OpenAI announced](https://openai.com/index/openai-on-oracle-cloud/) on June 11, 2026 that its frontier models and Codex will be available through the Oracle Cloud Infrastructure Marketplace. The key detail: Oracle customers can apply [**existing Universal Credits**](https://itbrief.news/story/openai-oracle-to-offer-models-on-oci-marketplace) toward OpenAI API usage — no separate OpenAI billing account or purchasing agreement required.
 
 This follows the AWS Bedrock launch by ten days. The pattern is now clear: OpenAI is distributing through every major cloud hyperscaler simultaneously. For builders already inside Oracle's ecosystem, this changes the procurement equation significantly.
 

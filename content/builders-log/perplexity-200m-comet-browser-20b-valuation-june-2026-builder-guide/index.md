@@ -8,7 +8,7 @@ categories: ["Agents", "AI Business", "Legal"]
 tags: ["perplexity", "comet", "ai-browser", "cfaa", "amazon", "agentic-ai", "funding", "builder-guide", "june-2026", "ipo", "ninth-circuit", "valuation"]
 ---
 
-On June 5, 2026, Perplexity closed a $200 million round at a $20 billion valuation. Two months earlier, they had raised $100 million at $18 billion. On June 11 — this Thursday — a three-judge Ninth Circuit panel hears oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.*
+On June 5, 2026, [Perplexity closed a $200 million round at a $20 billion valuation](https://finance.yahoo.com/news/perplexity-finalizes-20-billion-valuation-232758524.html). Two months earlier, they had raised $100 million at $18 billion. On June 11 — this Thursday — a three-judge Ninth Circuit panel hears oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.*
 
 The thing Amazon is suing Perplexity over is Comet — the same product the $200 million is meant to fund and scale.
 
@@ -35,7 +35,7 @@ The Ninth Circuit's questions on June 11 will reveal which theory they find plau
 Perplexity's valuation history in 2026 alone:
 
 - **April 2026**: $18 billion (+$100M raise)
-- **June 5, 2026**: $20 billion (+$200M raise)
+- **June 5, 2026**: [$20 billion (+$200M raise)](https://www.techtimes.com/articles/318028/20260608/perplexity-raises-200-million-comet-ai-browser-agent-economy-front-door.htm)
 - **Total funding raised**: ~$1.72 billion
 
 Investors pricing Comet into a $20 billion valuation are making a forward-looking bet: that the AI browser surface — the interface where agents act on behalf of users — is worth owning, and that the legal theory permitting it holds.

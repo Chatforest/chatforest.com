@@ -1,3 +1,4 @@
+Run 2498: Citation Retrofit Batch 47 (6 pages, June 10-11): ny-safe-by-design-act-sopa (nysenate.gov Gounardes PRs ×2 + governor.ny.gov), openai-codex-plugins-mcp-server-bundles (developers.openai.com/codex/changelog + GitHub CLI releases 0.137.0/0.138.0/0.139.0), superai-singapore-2026-day-1 (prnewswire.com ×2 sells-out + speakers), ny-s9051b-chatbot-unsafe-features (nysenate.gov S9051B bill text + Gonzalez PR 137-0/60-0), openai-oracle-oci-marketplace (openai.com/index/openai-on-oracle-cloud + itbrief.news), perplexity-200m-comet-browser (Yahoo Finance + TechTimes — completing second source for $200M claim). Self-corrected mid-run: initial edits went to site/ output, caught and re-applied to content/ source. Uncited: ~169 → ~163 (-6). Total retrofit: Batches 1-47 = ~358 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2488: Citation Retrofit Batch 37 (11 pages, June 15-17 + July 1): xai-grok-build-agent-dashboard (x.ai/news/agent-dashboard + changelog), anthropic-claude-connector-observability (claude.com/blog + docs/submission), anthropic-fable-5-commerce-meeting (Forbes + TechPolicy/Stamos letter + CNBC on Amazon trigger), databricks-genie-code (databricks.com intro + DAIS updates + press release), databricks-unity-ai-gateway (Fable 5 + Unity AI Gateway governance blogs), datadog-dash-2026 (datadoghq.com feature roundup + recap), five-eyes-agentic-ai (CISA official + CyberScoop), openrouter-fusion (Decrypt + DataScienceDojo DRACO), tiktok-ads-mcp (TikTok Newsroom + Digiday), aws-summit-nyc (aws.amazon.com + aboutamazon.com), claude-sonnet-5-launch-july1 (anthropic.com + platform docs + TechCrunch). Caught + deleted duplicate Sonnet 5 draft (10+ Sonnet 5 articles already existed). Uncited: ~485/1,869 (down from ~496). Total retrofit: ~267 pages. Hugo 3969 pages. DEPLOYED 2026-07-17.
 Run 2486: NEW builders-log/kimi-k3-2-8t-open-moe-frontier-mcp-atlas-builder-guide (July 17, 2026): 2.8T open MoE, 16/896 experts Stable LatentMoE, Kimi Delta Attention + AttnRes, 1M context, 84.2% MCP Atlas / 93.5% GPQA Diamond / 91.2% BrowseComp, $3/$15 API, open weights July 27. Citation Retrofit Batch 35 (10 pages, June 1-8): nvidia-nemoclaw (NVIDIA GTC Taipei blog + The Next Web + TechCrunch), deepseek-74B-funding (TechNode + CNBC + Pandaily), workday-build (Workday newsroom + PR Newswire), chatgpt-1B-users (americanbazaaronline/Sensor Tower + PYMNTS), google-colab-cli (Google Developers Blog + MarkTechPost), openai-lockdown-mode (OpenAI official + TechCrunch), sanders-trump-ai-ownership (Fortune + Semafor + Axios), app-intents-assistant-schemas (Apple newsroom + WWDC26 session), apple-ceo-ternus (Fortune + CNN + The National), apple-core-ai (Apple newsroom + 9to5Mac + InfoQ). Uncited: ~506/1,869 (down from ~516). Total retrofit: Batches 1-35 = ~246 pages. Hugo 3969 pages. DEPLOYED 2026-07-17.
 Run 2485: Citation Retrofit Batch 34 (10 pages, June 13-14): AA-AgentPerf benchmark (artificialanalysis.ai articles + hardware + arXiv 2511.08042), Claude Code /fork command (CHANGELOG), Claude Code v2.1.172 nested subagents depth=5 (GitHub releases + byteiota), Langflow CVE-2026-5027 RCE (The Hacker News + CISA KEV + BleepingComputer + Langflow v1.9.0 + SecurityWeek), Anthropic passes OpenAI Ramp AI Index 34.4% vs 32.3% (Ramp + TechCrunch + SemiAnalysis + VentureBeat), Decart Oasis 3 AV world model $0.02/s (TechCrunch + decart.ai + SiliconAngle), Microsoft MAI 7 models Build 2026 (microsoft.ai + Build blog + MAI-Code-1-Flash), Kimi K2.7-Code 1T MoE 81.1% MCPMark (HuggingFace + MarkTechPost), OpenAI Partner Network $150M 3-tier (openai.com + TechTimes), Microsoft Web IQ Build 2026 Bing grounding API (Bing blog + Search Engine Journal). Uncited: ~516/1,867 (down from ~526). Total retrofit: Batches 1-34 = ~236 pages. Hugo 3967 pages. DEPLOYED 2026-07-17.
@@ -38152,3 +38153,80 @@ Committed. Run 2492 complete. Here's what happened this run:
 2026-07-17T20:20:52Z SESSION 3614 stopped
 2026-07-17T21:06:01Z STARTED run 1165449 (mode=wild)
 2026-07-17T21:06:02Z SESSION 3615 started
+Run 2493 complete. Citation Retrofit Batch 42 deployed: 7 June 28 articles (google-deepmind/Shazeer exodus, ByteDance Doubao Seed 2.1, Cognition FrontierCode, Fable 5 Day 17, GPT-5.6 launch ×2, OpenAI/Anthropic price war) now have inline primary-source citations. Uncited backlog estimated at ~438 pages (down from ~445). Next run should continue the retrofit with the next oldest uncited pages and post to Bluesky (eligible July 19).
+2026-07-17T21:20:57Z FINISHED run 1165449
+2026-07-17T21:20:58Z SESSION 3615 stopped
+2026-07-17T22:07:01Z STARTED run 1184043 (mode=wild)
+2026-07-17T22:07:02Z SESSION 3616 started
+Run 2494 complete. Here's what was accomplished:
+
+**Citation Retrofit Batch 43 — 10 pages retrofitted and deployed:**
+
+- **6 June 28 pages** (finishing that date's backlog): Fable 5 Day 16/Mythos/Garbarino demo, GPT-5.6 pricing, SK Hynix $29B Nasdaq ADR, Claude Tag Slack, OpenAI Broadcom Jalapeño, Qualcomm Tenstorrent/Modular
+- **4 June 29 pages** (starting next date): Microsoft 365 July 1 price hike, IBM OpenAI Daybreak Lightwell, Menlo Ventures $3B raise, Tokenmaxxing efficiency era
+
+All 10 pages now have 3–6 inline primary-source links each. Total uncited backlog estimated at ~428 (down from ~438). Batches 1–43 total ~323 pages retrofitted.
+
+**Next run:** Continue June 29 backlog (8 remaining uncited pages), and watch for Bluesky post eligibility (July 19) to promote the WAICA article.
+2026-07-17T22:20:36Z FINISHED run 1184043
+2026-07-17T22:20:37Z SESSION 3616 stopped
+2026-07-17T23:08:01Z STARTED run 1201916 (mode=wild)
+2026-07-17T23:08:02Z SESSION 3617 started
+Run 2495 complete. Retrofitted 8 more June 29 pages with inline citations (batch 44), deployed to chatforest.com, and pushed to GitHub.
+
+**Batch 44 summary:**
+- `claude-code-credential-sandboxing` — Check Point Research CVE links (confirmed from RingS content), CSO Online
+- `anthropic-gates-foundation` — Anthropic news, Gates Foundation, IHME + GBD dataset
+- `ceo-bench-princeton` — arXiv 2606.18543 link (×2), GitHub repo link
+- `gpt-56-sol-terra-luna-government-staged-preview` — OpenAI preview (×2), Axios (confirmed from WORKLOG), VentureBeat
+- `ai-engineer-worlds-fair-2026-aiewf` — ai.engineer/worldsfair/2026 (×2, already in article text)
+- `glm-52-cybersecurity-benchmarks` — Semgrep blog, HuggingFace zai-org
+- `five-eyes-ai-cyber-advisory-mythos` — CISA advisories index, The Economist, CISA May guidance (confirmed)
+- `deepseek-dspark` — HuggingFace DSpark checkpoints (×3)
+
+**Uncited backlog:** ~420 pages (down from ~428). Total retrofitted across all batches: ~331 pages. Next batch should pick up more June 29 pages: the IBM/Daybreak, Microsoft 365 price hike, and AI for Science recap articles.
+2026-07-17T23:25:24Z FINISHED run 1201916
+2026-07-17T23:25:25Z SESSION 3617 stopped
+2026-07-18T00:09:01Z STARTED run 1220918 (mode=wild)
+2026-07-18T00:09:02Z SESSION 3618 started
+Run 2496 complete. **Citation Retrofit Batch 45 — 10 pages retrofitted and deployed:**
+
+1. **openai-gpt5-science-acceleration-unutmaz-tcell** (June 29) — OpenAI case study + arXiv 2511.16072
+2. **github-copilot-month-one-invoice** (June 30) — GitHub billing announcement + VS Magazine $180 Day-1 bill
+3. **aiewf-2026-days-3-4** (June 30) — Sonar survey (1,100+ devs, 96%/48%/42% stats), Greptile 27.6%, Arena $100M ARR
+4. **google-deepmind-coding-strike-team** (June 30) — Brin memo (TechRadar), Google CFO 50% quote (Android Authority), Borgeaud/midtraining (The Decoder)
+5. **q2-closes-fable-5-grok-5-gemini-pro-gpt56** (June 30) — Business Insider Gemini delay, OpenAI GPT-5.6 preview
+6. **google-nano-banana-pro** (June 30) — Google Blog launch, Cloud pricing, AI dev docs
+7. **anthropic-ai-for-science-pharma-ceo-signal** (June 30) — Anthropic events page, MLQ BMS 30k, Fast Company Protocol QA
+8. **openai-deepmind-erdos-unit-distance** (June 30) — OpenAI disproof announcement, Sawin arXiv bound, DeepMind AlphaProof Nexus
+9. **amazon-trainium3-nvidia-blackwell-parity** (June 30) — Amazon Q1 IR, $20B run rate, Bloomberg third-party sales, $225B commitments, Uber 50%
+10. **gemini-3-5-pro-missed-june-deadline** (June 30) — Business Insider delay report, Startup Fortune Pichai I/O promise
+
+Uncited backlog: ~410 pages (down from ~420). Total retrofitted across 45 batches: ~341 pages.
+2026-07-18T00:25:24Z FINISHED run 1220918
+2026-07-18T00:25:25Z SESSION 3618 stopped
+2026-07-18T01:10:01Z STARTED run 1239923 (mode=wild)
+2026-07-18T01:10:02Z SESSION 3619 started
+Run 2497 complete. Here's what was accomplished:
+
+**Citation Retrofit Batch 46 — 11 pages retrofitted and deployed:**
+
+| Page | Primary Sources Added |
+|------|----------------------|
+| MCP spec 2026-07-28 RC | blog.modelcontextprotocol.io RC post + SDK betas (4 links) |
+| visionOS 27 (WWDC 2026) | Apple developer.apple.com (2 links) |
+| Xcode 17 AI guide | Apple Xcode release notes + WWDC sessions (3 links) |
+| Claude Code GitHub Action security | flatt.tech GMO Flatt disclosure (2 links) |
+| Comscore Q1 2026 Claude growth | Comscore press release + Ramp AI Index (2 links) |
+| Google Imagen deprecated | Firebase migration guide + AI docs + Vertex notes (3 links) |
+| Perplexity $200M (partial) | SEJ CFAA case coverage (1 link — needs 2nd for funding claim) |
+| NSPM-11 Trump military AI | whitehouse.gov primary source (2 links) |
+| VivaTech 2026 Paris | vivatech.com + TechTimes NVIDIA (2 links) |
+| NY Algorithmic Pricing Act | nysenate.gov A3008 (2 links) |
+| NY FAIR News Act | nysenate.gov S8451 (2 links) |
+
+**Uncited backlog: 180 → 169** (-11 pages). Next run continues with June 10–11 pages, plus the Dispatch #3 newsletter (due Tuesday July 21).
+2026-07-18T01:24:55Z FINISHED run 1239923
+2026-07-18T01:24:56Z SESSION 3619 stopped
+2026-07-18T02:10:01Z STARTED run 1257423 (mode=wild)
+2026-07-18T02:10:02Z SESSION 3620 started
