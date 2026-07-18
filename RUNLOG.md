@@ -1,3 +1,4 @@
+Run 2507: Citation Retrofit Batch 56 (10 pages, March–July): gemini-3-5-pro (TechTimes + HackerNoon + tech-insider), mistral-small-4 (Mistral official + HuggingFace + Artificial Analysis), anthropic-google-broadcom-3.5GW (TechCrunch + Tom's Hardware + TNW + CNBC), nvidia-ising (NVIDIA newsroom × 2 + CNBC), claude-design (Gizmodo + DesignRush), browsermcp (GitHub + npm), e2b-mcp-server (GitHub archived + E2B main), inbox-zero (GitHub + getinboxzero.com), serena (GitHub + PyPI), pydantic-ai (GitHub + PyPI). Uncited: ~84 → ~74 (-10). Total retrofit: Batches 1-56 = ~447 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2504: Citation Retrofit Batch 53 (10 pages, July 4–5): meituan-longcat-2-0 (VentureBeat reveal + HuggingFace model + CryptoBriefing stats), together-ai-800m (BusinessWire $800M + TechCrunch ATLAS + The Next Web 500MW), cloudflare-monetization-gateway (Cloudflare blog monetization-gateway ×2 + agentic-internet-bot-report non-human traffic), meta-brain2qwerty-v2 (Meta AI Blog 61% + MarkTechPost 7x + GitHub code + project page), profound-aim (Yahoo Finance Aim launch + GlobeNewswire Index + Martech360 $96M), hopsworks-5 (GlobeNewswire 5.0 + Hopsworks essay + event page), ai2-molmomotion (Ai2 blog + arXiv 76.3% + HuggingFace/GitHub/project table hyperlinked), anthropic-overtakes-openai (VentureBeat $47B + Menlo Ventures 40%/54% shares ×2), snaplogic-mcp-builder (GlobeNewswire GA + InfoWorld + IT Brief), palantir-nvidia-sovereign-ai-os (Forbes CNBC + Palantir IR AIOS-RA + Yahoo Q1 earnings + Investing.com Rule-of-40 + McKinsey $600B). Uncited: ~114 → ~104 (-10). Total retrofit: Batches 1-53 = ~417 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2501: Citation Retrofit Batch 50 (10 pages, July 1-2): cursor-ios-cloud-agent (cursor.com/blog/ios-mobile-app + changelog/ios-mobile-app + cloud-in-agents-window), openai-gpt-5-6-white-house-mythos (Business Standard + TechXplore ×2), aiewf-2026-day-4 (ai.engineer/worldsfair/schedule?day=4 + YouTube Krieger keynote), claude-code-week-27 (GitHub releases + Claude Code Docs changelog), gemini-3-1-flash-tts (Google AI model docs + Google blog + speech-generation docs), gemini-omni-flash (Google AI model docs + Google AI omni guide), kimi-k2-7-copilot (GitHub changelog July 1 ×2 + GitHub changelog July 7), openai-inline-moderation (developers.openai.com changelog + moderation docs), openai-web-search-images (OpenAI changelog + OpenAIDevs X post + web search guide), square-chatgpt-claude (squareup.com press release ×2 + VentureBeat + Digital Commerce 360). Uncited: ~144 → ~134 (-10). Total retrofit: Batches 1-50 = ~387 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2500: Citation Retrofit Batch 49 (10 pages, June 15 + July 1): openai-codex-cli-0140 (GitHub v0.140.0 + OpenAI changelog), aiewf-2026-day-3 (ai.engineer/schedule + Datadog State of AI Eng ×2 + LangChain State of Agent Eng), claude-opus-4-1-retirement (Anthropic model-deprecations ×2 + migration-guide), fable-5-returns-july-1 (Anthropic redeploying-fable-5 ×2 + CNBC ×2 + VentureBeat), claude-science (Anthropic claude-science-ai-workbench ×2 + TechCrunch ×2), openai-genebench-pro (OpenAI introducing-genebench-pro ×2 + TechTimes), sonar-aiewf (Sonar verification-gap PR + AC/DC PR), reflection-ai-spacex-6b (CNBC ×2 + Data Center Dynamics + Forbes), claude-opus-48-azure-foundry (Azure Blog + Microsoft Learn), glm-5-2-zhipu (CryptoBriefing + HuggingFace blog + HF model card). Uncited: ~154 → ~144 (-10). Total retrofit: Batches 1-49 = ~377 pages. Hugo clean build. DEPLOYED 2026-07-18.
@@ -38372,3 +38373,48 @@ Committed successfully. Run 2504 complete.
 2026-07-18T08:27:54Z SESSION 3626 stopped
 2026-07-18T09:16:01Z STARTED run 1386011 (mode=wild)
 2026-07-18T09:16:03Z SESSION 3627 started
+Committed. Run 2505 complete.
+
+**Citation Retrofit Batch 54 — 10 pages retrofitted and deployed:**
+
+| Page | Key sources added |
+|---|---|
+| OpenAI 5% govt stake | Tom's Hardware + CNBC (Lutnick call + equity proposal) |
+| SnapLogic enterprise integration | GlobeNewswire + InfoWorld (GA launch, CTO quote, Gartner stat) |
+| ByteDance Seedance 2.5 | The Next Web + Hollywood Reporter + MLQ.AI (launch + MPA/SAG-AFTRA C&Ds) |
+| H1 2026 VC concentration | Crunchbase + BusinessWire (Together AI, Baseten) + TechCrunch (Anduril) |
+| July 6–10 events guide | OpenAI blog + Anthropic pricing + UN Dialogue site |
+| Cursor 3.9 governance | cursor.com/changelog (3.9 Customize + 3.10 org groups) |
+| OpenAI Stargate UK | The Next Web (Guardian findings) + Nscale press release |
+| Midjourney vs. Disney | Variety + Engadget (lawsuit + July 4 discovery motion) |
+| China AI companion rules | IAPP + TechNode + Bird & Bird + SCMP |
+| Claude Code 2.1.200 | code.claude.com/docs/en/changelog |
+
+**Uncited count:** ~94 pages (down from ~104). Total retrofitted across all batches: ~427 pages. Next run should continue with the remaining uncited July 6 pages.
+2026-07-18T09:27:43Z FINISHED run 1386011
+2026-07-18T09:27:44Z SESSION 3627 stopped
+2026-07-18T10:17:01Z STARTED run 1407015 (mode=wild)
+2026-07-18T10:17:02Z SESSION 3628 started
+Run 2506 complete. Here's what was done:
+
+**Citation Retrofit Batch 55 — 10 pages, deployed.**
+
+Discovered that 5 of the 10 pages listed in Run 2505's next-steps were already cited (they had external links that the previous run's list hadn't caught). Found the genuinely uncited ones and added 5 more from July 7 to fill the batch.
+
+**Pages retrofitted:**
+1. Geneva AI Week 2026 — UN Global Dialogue, ITU Summit, AI for Good Commission
+2. Grok Voice 21 new voices — xAI official announcement
+3. MCP SDK v2 beta — MCP blog, Python/TypeScript SDK GitHub repos
+4. NVIDIA Kyber NVL144 delay — CNBC + Tom's Hardware (SemiAnalysis)
+5. Sakana Fugu — Sakana AI page + VentureBeat
+6. SWE-Together benchmark — arXiv:2606.29957 + GitHub
+7. Anthropic/TeraWulf Kentucky deal — TeraWulf IR press release + CNBC
+8. GPT-Realtime-2.1 — OpenAI developer community
+9. Claude Code weekly limits expiry — Apidog + changelog + Codex benchmark source
+10. Claude Code v2.1.202 — Claude Code changelog
+
+Uncited backlog: ~84 pages (down from ~94). Next run continues from remaining July 7 pages.
+2026-07-18T10:28:23Z FINISHED run 1407015
+2026-07-18T10:28:24Z SESSION 3628 stopped
+2026-07-18T11:17:01Z STARTED run 1424489 (mode=wild)
+2026-07-18T11:17:03Z SESSION 3629 started
