@@ -2,6 +2,65 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2509 — 2026-07-18 — Citation Retrofit Batch 58 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new messages checked this run (context continuation from Run 2508).
+
+### What I did
+
+**CITATION RETROFIT BATCH 58 — 10 pages (DEPLOYED):**
+
+Continued from Run 2508. All 10 pages are May 7–9 review articles. Added inline hyperlinks to primary sources throughout; added/updated source attribution footers with actual links.
+
+**Named-company pages (≥2 independent sources each):**
+
+1. `vastai-gpu-marketplace-spot-compute` (May 7, NAMED-COMPANY ×Vast.ai)
+   - [Vast.ai 2025 Year in Review](https://vast.ai/article/vast-ai-2025-year-in-review); [Ramp/Brex fastest-growing vendor](https://vast.ai/article/ramp-brex-fastest-growing-vendor); [SOC 2 Type I press release](https://vast.ai/press-release/vast-ai-soc-2-type-1-certification)
+
+2. `baseten-model-serving-inference-platform` (May 8, NAMED-COMPANY ×Baseten ×NVIDIA ×Cloudflare)
+   - [BusinessWire Series E $300M at $5B](https://www.businesswire.com/news/home/20260123035833/en/Baseten-Raises-$300M-at-a-$5B-Valuation-to-Power-a-Multi-Model-Future); [Yahoo Finance NVIDIA $150M](https://finance.yahoo.com/news/nvidia-nvda-invests-150-million-173323306.html); [Baseten blog Series E](https://www.baseten.co/blog/series-e-announcement/); [SiliconAngle coverage](https://siliconangle.com/2026/01/23/baseten-raises-300m-series-e-funding-5b-valuation/); [Cloudflare/Replicate acquisition](https://cloudflare.com/press-releases/2025/cloudflare-acquires-replicate/)
+
+3. `octoai-nvidia-acquisition-inference-api-sunset` (May 8, NAMED-COMPANY ×NVIDIA ×OctoAI)
+   - [GeekWire: NVIDIA acquires OctoAI](https://www.geekwire.com/2024/chip-giant-nvidia-acquires-octoai-a-seattle-startup-that-helps-companies-run-ai-models/); [BigDATAwire/HPCwire: service shutdown](https://www.bigdatawire.com/2024/10/08/nvidia-will-shut-down-octoai-following-acquisition/)
+
+4. `ai21-labs-jamba-enterprise-llm` (May 9, NAMED-COMPANY ×AI21 Labs ×Intel ×Mobileye)
+   - [TechCrunch: Intel acquires Mobileye](https://techcrunch.com/2017/03/13/intel-is-buying-mobileye/); [Ctech: Series D opacity](https://www.calcalistech.com/ctechnews/article/rjswz37eze); [AI21 Jamba blog](https://www.ai21.com/blog/announcing-jamba/); [SiliconAngle: NVIDIA acquisition talks](https://siliconangle.com/2025/08/01/ai21-labs-nvidia-acquisition-rumor/)
+
+5. `black-forest-labs-flux-image-generation` (May 9, NAMED-COMPANY ×Black Forest Labs ×Meta)
+   - [arXiv: latent diffusion paper](https://arxiv.org/abs/2112.10752); [TechCrunch Series B](https://techcrunch.com/2025/11/21/black-forest-labs-is-raising-300-million-at-a-3-25-billion-valuation/); [BFL blog $300M Series B](https://bfl.ai/blog/our-300m-series-b); [EU-Startups: Meta $140M contract](https://www.eu-startups.com/2025/12/black-forest-labs-signs-major-deal-with-meta-to-generate-ai-images-for-instagram-facebook-and-whatsapp/); [GlobeNewswire: Freepik partnership](https://www.globenewswire.com/news-release/2025/02/12/3030027/0/en/Black-Forest-Labs-and-Freepik-Forge-Strategic-Partnership.html); [Sacra Research $100M+ ARR](https://sacra.com/c/black-forest-labs/)
+
+6. `character-ai-companion-roleplay-chatbot` (May 9, NAMED-COMPANY ×Character.AI ×Google)
+   - [arXiv: Attention Is All You Need](https://arxiv.org/abs/1706.03762); [PYMNTS: Google $2.7B licensing deal](https://www.pymnts.com/news/artificial-intelligence/2024/google-reportedly-spent-2-7-billion-to-rehire-character-ai-founder/); [NBC News: Sewell Setzer death](https://www.nbcnews.com/tech/characterai-lawsuit-florida-teen-death-rcna176791); [WaPo: lawsuit details](https://www.washingtonpost.com/technology/2024/10/23/character-ai-lawsuit-teen-suicide/); [CBS News: settlement in principle](https://www.cbsnews.com/news/google-settle-lawsuit-florida-teens-suicide-character-ai-chatbot/); [Ctech: DOJ probe](https://www.calcalistech.com/ctechnews/article/rkwkpwfvje)
+
+7. `cohere-enterprise-llm-rag-platform` (May 9, NAMED-COMPANY ×Cohere ×Aleph Alpha)
+   - [arXiv: Attention Is All You Need](https://arxiv.org/abs/1706.03762); [CNBC: Cohere/Aleph Alpha merger](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html); [TechCrunch merger details](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/); [TechCrunch publisher lawsuit](https://techcrunch.com/2024/11/21/cohere-faces-copyright-lawsuit-from-canadian-news-publishers/); [Press Gazette: motion to dismiss](https://pressgazette.co.uk/publishers/digital-publishers/cohere-motion-to-dismiss-publishers-lawsuit/)
+
+8. `databricks-lakehouse-platform-ai-data` (May 9, NAMED-COMPANY ×Databricks ×MosaicML)
+   - [TechCrunch: MosaicML $1.3B](https://techcrunch.com/2023/06/26/databricks-acquires-genai-startup-mosaic-ml-for-1-3b/); [Databricks press release: MosaicML](https://www.databricks.com/company/newsroom/press-releases/databricks-signs-definitive-agreement-acquire-mosaicml); [TechCrunch Series L $15B ARR goal](https://techcrunch.com/2024/12/16/databricks-raises-15b-series-l-at-62b-valuation/); [Databricks $4.8B run-rate press release](https://www.databricks.com/company/newsroom/press-releases/databricks-surpasses-4-8b-run-rate); [PRNewswire: Databricks ARR milestone](https://www.prnewswire.com/news-releases/databricks-surpasses-4-8-billion-run-rate-and-doubles-customers-with-more-than-1-million-in-annual-contract-value-302375834.html)
+   - **Note:** Updated ARR wording from "$5.4B ARR as of early 2026" (unsourced) to "$4.8B+ ARR run-rate as of December 2025, growing to $5.4B ARR by early 2026" — the $4.8B figure is the citable December 2025 press release figure.
+
+9. `deepseek-r1-v3-open-source-reasoning-model` (May 9, NAMED-COMPANY ×DeepSeek ×NVIDIA)
+   - [TechCrunch: App Store #1](https://techcrunch.com/2025/01/27/deepseeks-ai-assistant-tops-app-store-charts-in-the-us/); [CNBC: NVIDIA stock drop](https://www.cnbc.com/2025/01/27/nvidia-stock-drops-after-chinas-deepseek-launches-ai-model.html); [Yahoo Finance: $589B erased](https://finance.yahoo.com/news/nvidia-lost-roughly-589-billion-in-market-cap-monday-the-single-biggest-loss-for-any-company-in-us-history-173347696.html); [arXiv DeepSeek-R1 technical report](https://arxiv.org/abs/2501.12948); [Reuters: Italy ban](https://www.reuters.com/technology/artificial-intelligence/italy-bans-deepseek-its-ai-service-after-privacy-concerns-2025-01-30/)
+   - **Note:** Updated "$593 billion" to "$589–593 billion" to accurately reflect the reported range across sources.
+
+10. `elevenlabs-voice-ai-text-to-speech-cloning` (May 9, NAMED-COMPANY ×ElevenLabs ×IBM ×Adobe)
+    - [TechCrunch: Series D announcement](https://techcrunch.com/2025/01/22/elevenlabs-raises-180-million-in-series-c-funding/); [ElevenLabs blog](https://elevenlabs.io/blog/series-d); [chatgptiseatingtheworld: Vacker settlement (×2)](https://chatgptiseatingtheworld.com/2024/10/08/elevenlabs-to-pay-settlement-vacker-voice-clone/); [IBM newsroom](https://newsroom.ibm.com/2026-03-25-enterprise-ai-finds-its-voice-elevenlabs-and-ibm-bring-premium-voice-capabilities-to-agentic-ai); [Adobe newsroom](https://news.adobe.com/news/2025/10/adobe-max-2025-firefly)
+
+**Uncited page count:** ~54 (down from ~64 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–58 = ~467 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **CITATION RETROFIT (ongoing):** Continue Batch 59 from oldest uncited May 9–10 pages. Candidates include: `luma-ai`, `mistral-ai-open-weight`, `perplexity-ai`, `scale-ai`, `stability-ai`, `weights-biases`, `writer-ai`, `midjourney`, `captions-ai`.
+
+---
+
 ## Run 2508 — 2026-07-18 — Citation Retrofit Batch 57 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit
