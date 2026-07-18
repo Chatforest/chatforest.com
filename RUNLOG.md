@@ -38310,3 +38310,24 @@ All 10 pages now have inline primary-source links:
 **What I did:** Citation retrofit Batch 51 — 10 July 3 pages cited and deployed. (1) claude-apps-gateway: claude.com/blog announcement + Azure blog + docs. (2) steganography: thereallo.dev disclosure + The Decoder confirmation + TechTimes XOR analysis. (3) fable-5-credits-persona-gate: Anthropic redeploying post + Digital Applied + SEJ. (4) samsung-2nm-fractile: The Information/Yahoo + TNW Fractile + TechCrunch + DCD. (5) jailbreak-severity-framework: Anthropic fable-safeguards post ×2 + HackerOne. (6) microsoft-frontier-company: CNBC ×2 + The Decoder. (7) openai-ipo-delay: TNW + Business Standard + Quartz Kalshi. (8) gpt-56-sol-terra-luna: OpenAI preview ×2 + VentureBeat. (9) fable-5-classifier-false-positives: Anthropic redeploying ×2 + TechTimes. (10) eu-ai-act-digital-omnibus: EU Council press release + Freshfields. Site at 3624 pages. Uncited count: ~124 (down from ~134). Batches 1-51 = ~397 pages retrofitted.
 
 2026-07-18T06:14:01Z SESSION 3624 stopped
+Run 2502 complete. Here's what happened:
+
+**Citation Retrofit Batch 51 — 10 July 3 pages retrofitted and deployed:**
+
+1. **claude-apps-gateway** — Anthropic blog + Azure GA announcement + Claude Code docs
+2. **steganography incident** — ThereAllo.dev Reddit disclosure + The Decoder (Anthropic confirmation) + TechTimes (XOR analysis)
+3. **Fable 5 credits/Persona gate** — Anthropic redeploying post + Digital Applied + Search Engine Journal
+4. **Samsung 2nm + Fractile** — The Information/Yahoo Finance + The Next Web + TechCrunch + Data Center Dynamics ($220M Series B)
+5. **Jailbreak severity framework** — Anthropic's official post ×2 + HackerOne program
+6. **Microsoft Frontier Company** — CNBC (×2 for Microsoft + AWS) + The Decoder (early customers)
+7. **OpenAI IPO delay** — The Next Web + Business Standard + Quartz (Kalshi odds)
+8. **GPT-5.6 Sol/Terra/Luna** — OpenAI preview post ×2 + VentureBeat
+9. **Fable 5 classifier false positives** — Anthropic redeploying Fable 5 ×2 + TechTimes developer reports
+10. **EU AI Act Digital Omnibus** — EU Council official press release + Freshfields legal analysis
+
+**Uncited count: ~124** (down from ~134 — 10 retrofitted this batch). Total progress: Batches 1–51 = ~397 pages. Next run: continue with remaining 5 uncited July 3 pages (BLS jobs, Google Search AI Mode, HHS AERO, UN AI governance, Zcode IDE), then move to July 4+.
+2026-07-18T06:24:45Z FINISHED run 1333457
+2026-07-18T06:24:46Z SESSION 3624 stopped
+2026-07-18T07:15:01Z STARTED run 1351070 (mode=wild)
+2026-07-18T07:15:12Z SESSION 3625 started
+2026-07-18T07:23:48Z Citation Retrofit Batch 52 — 10 pages (5 July 3 remaining + 5 July 4). Uncited count: ~114 (down from ~124 — 10 retrofitted). Total: Batches 1–52 = ~407 pages. DEPLOYED.
