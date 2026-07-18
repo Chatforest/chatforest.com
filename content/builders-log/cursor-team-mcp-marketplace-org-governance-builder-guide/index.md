@@ -8,7 +8,7 @@ categories: ["Developer Tools", "Cursor", "AI Tools"]
 tags: ["cursor", "mcp", "developer-tools", "teams", "enterprise", "ai-governance", "builders-log", "june-2026", "july-2026"]
 ---
 
-Cursor shipped two related updates in the last two weeks of June 2026 — version 3.9 on June 22 and a team marketplace expansion on June 30 — that together replace what was previously a patchwork of individual JSON config files with a proper admin-controlled governance layer for AI tools across an engineering org.
+Cursor shipped two related updates in the last two weeks of June 2026 — [version 3.9 on June 22](https://cursor.com/changelog/customize) and a [team marketplace expansion on June 30](https://cursor.com/changelog) — that together replace what was previously a patchwork of individual JSON config files with a proper admin-controlled governance layer for AI tools across an engineering org.
 
 If you run Cursor at a company with more than a handful of developers, both changes are immediately relevant.
 

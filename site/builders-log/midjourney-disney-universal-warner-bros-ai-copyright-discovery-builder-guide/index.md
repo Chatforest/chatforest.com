@@ -11,7 +11,7 @@
 
 ## The Background: How This Lawsuit Started
 
-In June 2025, Disney and Universal filed a copyright infringement lawsuit against Midjourney in the Central District of California. Warner Bros. Discovery joined the lawsuit a few months later.
+In June 2025, [Disney and Universal filed a copyright infringement lawsuit](https://variety.com/2026/film/news/midjourney-studios-ai-copyright-discovery-1236800902/) against Midjourney in the Central District of California. Warner Bros. Discovery joined the lawsuit a few months later.
 
 The core charge: Midjourney's image generation tool allows paying subscribers to generate lifelike images of copyrighted characters — Darth Vader, Bart Simpson, characters from Warner Bros. properties — at scale. The studios claim Midjourney trained its models on their copyrighted visual IP without permission and enabled systematic infringement through its product.
 
@@ -45,7 +45,7 @@ Midjourney's lawyers called this ruling too narrow and immediately signaled they
 
 ## The July 4 Motion
 
-On July 4, 2026, Midjourney filed a motion before Judge John Kronstadt asking him to overturn the magistrate's ruling.
+On July 4, 2026, [Midjourney filed a motion](https://www.engadget.com/2207936/midjourney-wants-studios-that-sued-show-court-ai-use/) before Judge John Kronstadt asking him to overturn the magistrate's ruling.
 
 What Midjourney is now asking the court to compel:
 - **Internal AI business plans** — how the studios plan to use AI in production
@@ -139,5 +139,5 @@ For builders: watch this case. The copyright law being made in this courtroom wi
 
 ---
 
-*Sources: TechCrunch, Variety, Engadget, AV Club, Forensis Group analysis of Disney and Universal v. Midjourney. Filed July 4, 2026, Central District of California, Judge John Kronstadt presiding.*
+*Sources: TechCrunch, [Variety](https://variety.com/2026/film/news/midjourney-studios-ai-copyright-discovery-1236800902/), [Engadget](https://www.engadget.com/2207936/midjourney-wants-studios-that-sued-show-court-ai-use/), AV Club, Forensis Group analysis of Disney and Universal v. Midjourney. Filed July 4, 2026, Central District of California, Judge John Kronstadt presiding.*
 

@@ -6,7 +6,7 @@ tags: ["claude-code", "permissions", "breaking-change", "background-agents", "au
 categories: ["builders-log"]
 ---
 
-Three Claude Code releases landed between July 2 and July 4, 2026. Two are incremental. One — **2.1.200** — contains a breaking change that will silently stall any unattended pipeline running on the old defaults. Here is what happened and how to adapt.
+Three [Claude Code](https://code.claude.com/docs/en/changelog) releases landed between July 2 and July 4, 2026. Two are incremental. One — **2.1.200** — contains a breaking change that will silently stall any unattended pipeline running on the old defaults. Here is what happened and how to adapt.
 
 ---
 
@@ -122,4 +122,4 @@ The 2.1.199 stability improvements (streaming, Linux daemon, SSL) apply automati
 
 ---
 
-*Claude Code 2.1.199 shipped July 2–3, 2026. Claude Code 2.1.200 shipped July 3, 2026. Claude Code 2.1.201 shipped July 4, 2026. Version numbers are visible via `claude --version`.*
+*[Claude Code 2.1.199 shipped July 2–3, 2026. Claude Code 2.1.200 shipped July 3, 2026. Claude Code 2.1.201 shipped July 4, 2026.](https://code.claude.com/docs/en/changelog) Version numbers are visible via `claude --version`.*

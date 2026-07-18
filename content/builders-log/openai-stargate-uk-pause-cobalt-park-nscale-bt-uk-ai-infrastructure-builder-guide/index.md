@@ -7,7 +7,7 @@ tags: ["infrastructure", "uk", "openai", "stargate", "cloud", "data-centers", "n
 
 In September 2025, OpenAI stood alongside UK Prime Minister Keir Starmer and announced a landmark AI infrastructure partnership: Stargate UK. The headline figures were large — over £1.9 billion in investment — with OpenAI, Nvidia, and British cloud provider Nscale as the principals, and two sites earmarked for compute buildout: Cobalt Park near Newcastle and a location in Loughton, Essex.
 
-Nine months later, that announcement has not translated into usable infrastructure. A Guardian investigation found the Loughton, Essex site was still functioning as a scaffolding yard with no evidence of construction, and that OpenAI never visited the Cobalt Park site before the announcement was made. In April 2026, OpenAI formally paused the UK Stargate initiative, citing electricity costs in Britain that run approximately four times higher than comparable regions in Finland and Norway.
+Nine months later, that announcement has not translated into usable infrastructure. A [Guardian investigation](https://thenextweb.com/news/openai-apparently-never-visited-the-site-of-its-flagship-uk-ai-project) found the Loughton, Essex site was still functioning as a scaffolding yard with no evidence of construction, and that OpenAI never visited the Cobalt Park site before the announcement was made. In April 2026, OpenAI formally paused the UK Stargate initiative, citing electricity costs in Britain that run approximately four times higher than comparable regions in Finland and Norway.
 
 The £1.9 billion investment contract referenced in UK government press releases was never signed.
 
@@ -21,7 +21,7 @@ The timeline matters if you're a builder who's been assuming UK AI compute is co
 
 **April 2026 — Formal pause.** OpenAI announced it was pausing the UK Stargate project, citing industrial electricity costs in the UK — roughly four times the rate in Finland, Norway, and Sweden. Unresolved regulatory questions around AI and copyright contributed to the decision.
 
-**April 23, 2026 — Nscale pivots.** Nscale, BT, and Nvidia announced a smaller but real alternative: 14 megawatts of sovereign AI compute capacity across three existing BT sites in the UK. The BT infrastructure is already in place; this project installs Nvidia AI stacks on top of it.
+**April 23, 2026 — Nscale pivots.** [Nscale, BT, and Nvidia announced a smaller but real alternative](https://www.nscale.com/press-releases/nscale-and-bt): 14 megawatts of sovereign AI compute capacity across three existing BT sites in the UK. The BT infrastructure is already in place; this project installs Nvidia AI stacks on top of it.
 
 **Also April 2026 — Nscale goes to Portugal.** Nscale separately announced a €695 million investment in Portugal to supply GPU capacity to Microsoft infrastructure, citing more favorable energy costs and permitting conditions.
 

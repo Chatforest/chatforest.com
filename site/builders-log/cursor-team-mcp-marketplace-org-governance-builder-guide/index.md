@@ -3,7 +3,7 @@
 > Cursor shipped two related updates — 3.9 on June 22 and a marketplace expansion on June 30 — that together give engineering teams admin-controlled MCP distribution, usage leaderboards, prebuilt plugin canvases, and org-group access gates. Here's what changed and what it means for teams managing AI tools at scale.
 
 
-Cursor shipped two related updates in the last two weeks of June 2026 — version 3.9 on June 22 and a team marketplace expansion on June 30 — that together replace what was previously a patchwork of individual JSON config files with a proper admin-controlled governance layer for AI tools across an engineering org.
+Cursor shipped two related updates in the last two weeks of June 2026 — [version 3.9 on June 22](https://cursor.com/changelog/customize) and a [team marketplace expansion on June 30](https://cursor.com/changelog) — that together replace what was previously a patchwork of individual JSON config files with a proper admin-controlled governance layer for AI tools across an engineering org.
 
 If you run Cursor at a company with more than a handful of developers, both changes are immediately relevant.
 

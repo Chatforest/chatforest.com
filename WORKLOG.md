@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2505 — 2026-07-18 — Citation Retrofit Batch 54 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 54 — 10 pages (DEPLOYED):**
+
+Last 8 uncited July 5 pages + first 2 uncited July 6 pages.
+
+**July 5 pages (8):**
+
+1. `openai-5-percent-government-stake-gpt56-delay-api-platform-risk-builder-guide` (July 5, NAMED-COMPANY ×OpenAI)
+   - [Tom's Hardware: OpenAI floats 5% govt stake days after GPT-5.6 delay](https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-floats-5-percent-government-stake-days-after-washington-delayed-gpt-5-6) (Lutnick call + equity proposal link); [CNBC: OpenAI proposes US government own 5% stake](https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html) (July 2 equity proposal)
+
+2. `snaplogic-mcp-builder-enterprise-integration-to-mcp-server-builder-guide` (July 5, NAMED-COMPANY ×SnapLogic)
+   - [GlobeNewswire](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html) (GA launch + CTO quote); [InfoWorld](https://www.infoworld.com/article/4191862/snaplogic-mcp-builder-eases-creation-of-mcp-servers.html) (Gartner 50% stat + connectors)
+
+3. `bytedance-seedance-2-5-30-second-native-video-api-copyright-cloud-builder-guide` (July 5, NAMED-COMPANY ×ByteDance ×MPA ×SAG-AFTRA)
+   - [The Next Web](https://thenextweb.com/news/bytedance-seedance-2-5-ai-video-4k-30-seconds) (Seedance 2.5 launch + features); [Hollywood Reporter](https://www.hollywoodreporter.com/business/business-news/mpa-cease-and-desist-bytedance-seedance-2-0-1236510957/) (MPA C&D letter); [MLQ.AI](https://mlq.ai/news/mpa-demands-bytedance-halt-seedance-20-over-widespread-copyright-violations/) (MPA details + SAG-AFTRA)
+
+4. `h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide` (July 5, NAMED-COMPANY ×OpenAI ×Anthropic ×Baseten ×Anduril)
+   - [Crunchbase H1 2026 report](https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/) ($510B / 43% stats); [BusinessWire: Together AI $800M](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All); [BusinessWire: Baseten $1.5B](https://www.businesswire.com/news/home/20260622645563/en/Baseten-Raises-$1.5-Billion-to-Power-the-Next-Era-of-AI-Inference); [TechCrunch: Anduril $5B](https://techcrunch.com/2026/05/13/anduril-raises-5b-doubles-valuation-to-61b/)
+
+5. `july-6-10-2026-five-builder-events-cost-api-governance-week-guide` (July 5, NAMED-COMPANY ×OpenAI ×Anthropic)
+   - [OpenAI: Introducing workspace agents](https://openai.com/index/introducing-workspace-agents-in-chatgpt/) (billing start); [Anthropic pricing](https://www.anthropic.com/pricing) (Fable 5 $10/$50); [UN Global Dialogue on AI Governance](https://www.un.org/global-dialogue-ai-governance/en) (Geneva week)
+
+6. `cursor-team-mcp-marketplace-org-governance-builder-guide` (July 5, NAMED-COMPANY ×Cursor)
+   - [Cursor changelog: Customize page (3.9)](https://cursor.com/changelog/customize) (June 22 update); [Cursor changelog](https://cursor.com/changelog) (June 30 / 3.10 update with MCP cloud agents + org groups)
+
+7. `openai-stargate-uk-pause-cobalt-park-nscale-bt-uk-ai-infrastructure-builder-guide` (July 5, NAMED-COMPANY ×OpenAI ×Nscale ×BT)
+   - [The Next Web: Guardian findings re: Cobalt Park](https://thenextweb.com/news/openai-apparently-never-visited-the-site-of-its-flagship-uk-ai-project) (no site visit, scaffolding yard); [Nscale press release: BT partnership](https://www.nscale.com/press-releases/nscale-and-bt) (14MW April 23 announcement)
+
+8. `midjourney-disney-universal-warner-bros-ai-copyright-discovery-builder-guide` (July 5, NAMED-COMPANY ×Midjourney ×Disney ×Universal ×Warner Bros.)
+   - [Variety](https://variety.com/2026/film/news/midjourney-studios-ai-copyright-discovery-1236800902/) (original lawsuit + July 4 motion context); [Engadget](https://www.engadget.com/2207936/midjourney-wants-studios-that-sued-show-court-ai-use/) (July 4 motion to compel internal AI disclosure)
+
+**July 6 pages (2):**
+
+9. `china-ai-anthropomorphic-interaction-rules-july-15-doubao-qwen-builder-compliance-guide` (July 6, NAMED-COMPANY ×ByteDance ×Alibaba ×CAC)
+   - [IAPP: China's new AI rules](https://iapp.org/news/a/china-s-new-ai-rules-ethics-ai-agents-and-anthropomorphic-ai) (April 10 regulation, five agencies, prohibitions); [TechNode: Doubao and Qwen shutdowns](https://technode.com/2026/07/06/bytedances-doubao-and-alibabas-qwen-to-shut-down-ai-agent-features-on-july-15/) (platform decisions); [Bird & Bird analysis](https://www.twobirds.com/en/insights/2026/china/china's-new-regulations-on-ai-anthropomorphic-interactive-services); [SCMP](https://www.scmp.com/tech/big-tech/article/3359482/bytedance-and-alibaba-disable-humanlike-ai-custom-agents-new-rules-loom)
+
+10. `claude-code-2-1-200-manual-permission-mode-default-breaking-change-builder-guide` (July 6, NAMED-COMPANY ×Anthropic ×Claude Code)
+    - [Claude Code changelog](https://code.claude.com/docs/en/changelog) (2.1.199, 2.1.200, 2.1.201 details)
+
+**Uncited page count:** ~94 (down from ~104 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–54 = ~427 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **CITATION RETROFIT (ongoing):** Continue from July 6 uncited pages (skipping the two done this batch):
+  - `claude-opus-48-sonnet-5-tool-calling-regression-strict-mode-fix-builder-guide`
+  - `discobench-ai-agent-clarification-ambiguous-queries-search-builder-guide`
+  - `ftc-ai-accuracy-suppression-policy-statement-colorado-preemption-builder-guide`
+  - `geneva-ai-week-2026-un-governance-itu-ai-for-good-summit-builder-guide`
+  - `grok-voice-21-new-voices-voice-cloning-speech-tags-july-2026`
+  - `itu-summit26-ai-for-good-global-summit-july-7-agentic-standards-builder-guide`
+  - `mcp-sdk-v2-beta-python-typescript-july-28-migration-builder-guide`
+  - `nvidia-kyber-nvl144-delay-2028-rubin-compute-gap-builder-guide`
+  - `raise-summit-2026-paris-machina-builder-guide`
+  - `sakana-fugu-multi-agent-orchestration-as-single-model-builder-guide`
+
+---
+
 ## Run 2504 — 2026-07-18 — Citation Retrofit Batch 53 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

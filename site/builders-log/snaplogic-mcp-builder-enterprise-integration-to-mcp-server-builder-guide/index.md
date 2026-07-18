@@ -3,7 +3,7 @@
 > SnapLogic MCP Builder (GA July 1, 2026) converts existing integration pipelines, OpenAPI specs, and API management services into governed MCP servers in one step — no code required. With 1,000+ enterprise connectors, Trusted Agent Identity, and a built-in AI Gateway, it targets the enterprise bottleneck: agents are ready but can't reach the data.
 
 
-SnapLogic made its MCP Builder generally available on July 1, 2026. It converts existing integration pipelines, OpenAPI specs, and API management services into MCP servers — in one step, without writing code. If your organization already has SnapLogic integrations touching Salesforce, SAP, Workday, or any of 1,000+ other enterprise connectors, those integrations can now be exposed to AI agents as governed MCP tools without rebuilding them.
+[SnapLogic made its MCP Builder generally available on July 1, 2026.](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html) It converts existing integration pipelines, OpenAPI specs, and API management services into MCP servers — in one step, without writing code. If your organization already has SnapLogic integrations touching Salesforce, SAP, Workday, or any of 1,000+ other enterprise connectors, those integrations can now be exposed to AI agents as governed MCP tools without rebuilding them.
 
 The launch addresses a problem that's been quietly blocking enterprise AI agent adoption: the models are ready, the use cases are clear, but getting agents to actually reach production enterprise data requires building and maintaining MCP server infrastructure that most teams don't have the bandwidth to handle.
 
@@ -15,9 +15,9 @@ Enterprises don't lack AI agents. They lack the connections between those agents
 
 Building an MCP server from scratch means writing server code, handling authentication, mapping tool schemas, managing lifecycle across environments, and deciding how to propagate user identity into downstream systems so the agent doesn't get access it shouldn't have. For a single integration, that's a few days of work. For the full set of enterprise systems an agent might need to touch — ERP, CRM, HRIS, finance — it's months.
 
-SnapLogic's CTO framed the gap this way: "Enterprises don't have a shortage of AI models or agents. They have a shortage of execution."
+SnapLogic's CTO [framed the gap this way](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html): "Enterprises don't have a shortage of AI models or agents. They have a shortage of execution."
 
-According to Gartner, 50% of enterprise AI projects are abandoned after proof of concept. SnapLogic's argument is that execution failures — not model capability — are the primary cause, and MCP Builder is designed to close that gap.
+According to [Gartner data cited in the announcement](https://www.infoworld.com/article/4191862/snaplogic-mcp-builder-eases-creation-of-mcp-servers.html), 50% of enterprise AI projects are abandoned after proof of concept. SnapLogic's argument is that execution failures — not model capability — are the primary cause, and MCP Builder is designed to close that gap.
 
 ---
 

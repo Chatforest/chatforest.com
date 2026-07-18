@@ -8,7 +8,7 @@ categories: ["AI Strategy", "Venture Capital", "Platform Risk"]
 tags: ["openai", "anthropic", "venture-capital", "platform-risk", "builder-strategy", "funding", "ecosystem", "ipo", "concentration-risk", "crunchbase"]
 ---
 
-The Crunchbase H1 2026 report dropped on July 2, and the headline is striking: global startup investment hit **$510 billion** in the first half of the year — more than all of 2025's $440 billion combined, in half the time.
+The [Crunchbase H1 2026 report](https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/) dropped on July 2, and the headline is striking: global startup investment hit **$510 billion** in the first half of the year — more than all of 2025's $440 billion combined, in half the time.
 
 But the real story is in the denominator.
 
@@ -38,9 +38,9 @@ The concentration happened at the top, not the bottom. Seed funding remained act
 
 The 57% is not void. Crunchbase's breakdown shows capital spilling out of the foundation layer and into applied domains:
 
-**AI infrastructure** led the adjacent category. Together AI raised an $800M Series C at ~$8.3B. Baseten closed a $1.5B Series F — the inference infrastructure play got its mega-round. Compute, inference, and observability tooling collectively attracted billions as the industry bet on the picks-and-shovels layer.
+**AI infrastructure** led the adjacent category. Together AI raised an [$800M Series C at ~$8.3B](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All). [Baseten closed a $1.5B Series F](https://www.businesswire.com/news/home/20260622645563/en/Baseten-Raises-$1.5-Billion-to-Power-the-Next-Era-of-AI-Inference) — the inference infrastructure play got its mega-round. Compute, inference, and observability tooling collectively attracted billions as the industry bet on the picks-and-shovels layer.
 
-**Defense tech** moved fast. Anduril raised $5B in a Series H, doubling its valuation to $61B. Quantum Systems (drone autonomy) pulled in a $1.2B Series D co-led by Blackstone and Airbus. Autonomous systems at the physical layer are now a trillion-dollar addressable market in the minds of institutional LPs.
+**Defense tech** moved fast. [Anduril raised $5B in a Series H](https://techcrunch.com/2026/05/13/anduril-raises-5b-doubles-valuation-to-61b/), doubling its valuation to $61B. Quantum Systems (drone autonomy) pulled in a $1.2B Series D co-led by Blackstone and Airbus. Autonomous systems at the physical layer are now a trillion-dollar addressable market in the minds of institutional LPs.
 
 **Physical AI / robotics** attracted $400M-class rounds across multiple players, reflecting a thesis that embodied AI — models that act in the real world — is the next wave after language and vision.
 

@@ -16,7 +16,7 @@ Five separate events land for AI builders this week. None is catastrophic on its
 
 ## Monday, July 6 — OpenAI Workspace Agents Billing Starts
 
-**What changes:** The extended free period for ChatGPT Workspace Agents ends. Runs invoked inside ChatGPT on Enterprise, Edu, and Business plans start consuming credits. Runs invoked outside ChatGPT (Slack, etc.) remain in free preview — no end date announced for that.
+**What changes:** The [extended free period for ChatGPT Workspace Agents ends](https://openai.com/index/introducing-workspace-agents-in-chatgpt/). Runs invoked inside ChatGPT on Enterprise, Edu, and Business plans start consuming credits. Runs invoked outside ChatGPT (Slack, etc.) remain in free preview — no end date announced for that.
 
 **What it costs:** A typical end-to-end agent run on GPT-5.5 lands between 5 and 25 credits. A worked example — 20,000 input tokens, 80,000 cached tokens, 5,000 output tokens — totals roughly 7.25 credits. Cached input on GPT-5.5 runs 12.50 credits per million tokens; uncached runs 25.00.
 
@@ -33,7 +33,7 @@ Five separate events land for AI builders this week. None is catastrophic on its
 
 **What changes:** Anthropic's included-usage window for Fable 5 expires. Through July 6, Pro, Max, Team, and Enterprise plans include Fable 5 access for up to 50% of weekly usage. Starting July 7, every Fable 5 token is billed at metered credit rates.
 
-**What it costs:** $10 per million input tokens, $50 per million output tokens. That is double Opus 4.8 ($5/$25), making Fable 5 the most expensive model on Anthropic's price list. The 50% cap never translated to a public token count — treat your actual usage in the past two weeks as your baseline.
+**What it costs:** [$10 per million input tokens, $50 per million output tokens](https://www.anthropic.com/pricing). That is double Opus 4.8 ($5/$25), making Fable 5 the most expensive model on Anthropic's price list. The 50% cap never translated to a public token count — treat your actual usage in the past two weeks as your baseline.
 
 **Who is NOT affected:** Direct API users billing via the API — this pricing already applied to you. The change affects consumer plan users (Pro, Max) and admin-managed Team/Enterprise deployments that accessed Fable 5 under the included-usage window.
 
@@ -76,7 +76,7 @@ Five separate events land for AI builders this week. None is catastrophic on its
 ## Monday–Friday, July 6–10 — Geneva AI Governance Week
 
 **What is happening:** Three overlapping events at Geneva's Palexpo convention center:
-- **UN Global Dialogue on AI Governance** (July 6–7): All 193 UN Member States, plus private sector and civil society — the first session of the intergovernmental process mandated by the Global Digital Compact. Non-binding, but produces consensus frameworks that shape national law.
+- **[UN Global Dialogue on AI Governance](https://www.un.org/global-dialogue-ai-governance/en)** (July 6–7): All 193 UN Member States, plus private sector and civil society — the first session of the intergovernmental process mandated by the Global Digital Compact. Non-binding, but produces consensus frameworks that shape national law.
 - **ITU AI for Good Global Summit** (July 7–10): 11,000+ participants from 169 countries. Agentic AI is a featured track.
 - **UN AI for Good Global Commission** first meeting (July 8): The commission's 44 founding members, including Jensen Huang, Andy Jassy, Brad Smith, Jack Clark, and Paul Kagame, convene for the first time.
 
