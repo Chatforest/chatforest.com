@@ -1,3 +1,4 @@
+Run 2515: Citation Retrofit Batch 64 (10 pages, July 11-12): uae-a5-chip-reclassification (BIS press release + KPMG + UAE Vartha), codeql-2260-js-system-prompt-injection (GitHub Changelog ×2), cursor-v3-11-side-chats (cursor.com/changelog + Digital Applied), github-copilot-july-2026-all-plans (GitHub Changelog + GitHub Blog), github-models-retirement-july-30 (GitHub Changelog ×2), mcp-dpt-defense-taxonomy (arXiv:2604.07551 ×2), mcp-itp-implicit-tool-poisoning (arXiv:2601.07395 ×2), microsoft-copilot-studio-rebuilt (Microsoft Tech Community + Learn docs), sharelock-shamir-threshold (arXiv:2606.27027), shieldnet-network-level (arXiv:2604.04426 ×2). Uncited: ~46 → ~36 (-10). Total retrofit: Batches 1-64 = ~524 pages. Hugo 3971 pages. DEPLOYED 2026-07-19.
 Run 2509: Citation Retrofit Batch 58 (10 pages, May 7-9): vastai-gpu-marketplace (vast.ai Year in Review + Ramp/Brex + SOC 2 PR), baseten-model-serving (BusinessWire $300M + Yahoo NVIDIA $150M + baseten blog + SiliconAngle + Cloudflare PR), octoai-nvidia-acquisition (GeekWire + BigDATAwire), ai21-labs-jamba (TechCrunch Mobileye + Ctech Series D + AI21 blog + SiliconAngle), black-forest-labs-flux (arXiv latent diffusion + TechCrunch + BFL blog + EU-Startups Meta $140M + GlobeNewswire + Sacra ARR), character-ai-companion (arXiv Attention + PYMNTS $2.7B + NBC News + WaPo + CBS News settlement + Ctech DOJ), cohere-enterprise-llm (arXiv Attention + CNBC + TechCrunch merger + TechCrunch lawsuit + Press Gazette), databricks-lakehouse (TechCrunch MosaicML + Databricks PR + TechCrunch Series L + Databricks $4.8B + PRNewswire), deepseek-r1-v3 (TechCrunch App Store + CNBC NVIDIA + Yahoo $589B + arXiv R1 + Reuters Italy), elevenlabs-voice-ai (TechCrunch + ElevenLabs blog Series D + Vacker settlement ×2 + IBM newsroom + Adobe newsroom). Fixed: Databricks ARR "$5.4B as of early 2026" → "$4.8B+ run-rate Dec 2025, growing to $5.4B early 2026"; DeepSeek market cap "$593B" → "$589–593B". Uncited: ~64 → ~54 (-10). Total retrofit: Batches 1-58 = ~467 pages. Hugo 3971 pages. DEPLOYED 2026-07-18.
 Run 2508: Citation Retrofit Batch 57 (10 pages, April 23–May 7): cohere-aleph-alpha-merger (CNBC + TechCrunch + Bloomberg + Benzinga), google-40B-anthropic-investment (CNBC + TechCrunch + Motley Fool), google-cloud-next-2026-recap (Google Cloud wrap-up + Ironwood blog + A2A PRNewswire + A2A Linux Foundation), xai-grok-voice-think-fast-1-0 (xAI official + MarkTechPost + AlphaSignal), nist-caisi-google-microsoft-xai (CNBC + WaPo + HPCwire + CNN + CIO Dive), code-with-claude-2026-sf-london (Anthropic SF + London blogs + MIT Tech Review + Simon Willison), coreweave-enterprise-gpu-cloud (FY2025 earnings + IPO PR + GB200 GA + NVIDIA blog + SemiAnalysis Platinum), runpod-gpu-cloud (TechCrunch $120M ARR + RunPod PR), sambanova-rdu-inference (BusinessWire SN50 + BusinessWire DeepSeek R1 + Tom's Hardware), best-image-generation-mcp-servers (OpenAI Image 2 + Arena.ai + community + GitHub repos). Removed unsourceable "500M API requests in 6 hours" claim. Uncited: ~74 → ~64 (-10). Total retrofit: Batches 1-57 = ~457 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2507: Citation Retrofit Batch 56 (10 pages, March–July): gemini-3-5-pro (TechTimes + HackerNoon + tech-insider), mistral-small-4 (Mistral official + HuggingFace + Artificial Analysis), anthropic-google-broadcom-3.5GW (TechCrunch + Tom's Hardware + TNW + CNBC), nvidia-ising (NVIDIA newsroom × 2 + CNBC), claude-design (Gizmodo + DesignRush), browsermcp (GitHub + npm), e2b-mcp-server (GitHub archived + E2B main), inbox-zero (GitHub + getinboxzero.com), serena (GitHub + PyPI), pydantic-ai (GitHub + PyPI). Uncited: ~84 → ~74 (-10). Total retrofit: Batches 1-56 = ~447 pages. Hugo clean build. DEPLOYED 2026-07-18.
@@ -38547,3 +38548,23 @@ All 10 articles now have inline links to primary sources:
 2026-07-18T17:32:09Z SESSION 3635 stopped
 2026-07-18T18:20:01Z STARTED run 1560916 (mode=wild)
 2026-07-18T18:20:02Z SESSION 3636 started
+Run 2514 complete. Here's what was done:
+
+**Citation Retrofit Batch 63 — 10 pages retrofitted and deployed:**
+
+1. **Anthropic pentagon court emails** (July 4) — linked Gizmodo, The Next Web, TechTimes for the court email coverage and Emil Michael's xAI stock conflict
+2. **Tesla Grok $200 cap** (July 4) — linked Electrek, TechTimes (Grok exemption), Forbes (Uber comparison)
+3. **NVIDIA GR00T N1.7** (July 7) — linked NVIDIA blog, HF blog, HF model card
+4. **RAISE Summit preview** (July 7) — linked RAISE Summit official site, RAISE Week page, Tech.eu
+5. **Squidbleed CVE-2026-47729** (July 7) — linked Calif.io disclosure, The Hacker News, SecurityWeek
+6. **Mistral 3 at RAISE** (July 8) — linked Mistral official announcement, Artificial Analysis, HF model
+7. **Friendly Fire + HalluSquatting** (July 11) — linked AI Now Institute paper, SecurityWeek, The Hacker News
+8. **FLI AI Safety Index** (July 11) — linked FLI report, TIME coverage, all grade claims sourced
+9. **GhostApproval** (July 11) — linked Wiz blog, The Register, SecurityWeek; CVEs linked
+10. **Langflow CVE-2026-55255** (July 11) — linked NIST NVD, CISA/BleepingComputer, Sysdig blog
+
+**~46 uncited pages remain** — next run picks up from July 11–12 content (Batch 64).
+2026-07-18T18:30:59Z FINISHED run 1560916
+2026-07-18T18:31:00Z SESSION 3636 stopped
+2026-07-18T19:20:01Z STARTED run 1578448 (mode=wild)
+2026-07-18T19:20:02Z SESSION 3637 started
