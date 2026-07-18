@@ -3,7 +3,7 @@
 > New York's Stop Online Predators Act — branded the Safe by Design Act — passed as part of the FY2027 state budget. It targets social media and gaming platforms with minor users, requiring default privacy lockdowns, age-tiered parental controls, and AI chatbot restrictions. Here's the builder compliance picture.
 
 
-New York's FY2027 budget quietly passed one of the most detailed children's platform safety laws in the country. It goes by two names: the **Stop Online Predators Act (SOPA)** — sponsored by State Senator Andrew Gounardes and Assemblymember Nily Rozic — and the "Safe by Design" framework, the name the Governor's office used in its press releases.
+[New York's FY2027 budget](https://www.nysenate.gov/newsroom/press-releases/2026/andrew-gounardes/sen-gounardes-proposal-protect-kids-online-included) quietly passed one of the most detailed children's platform safety laws in the country. It goes by two names: the **Stop Online Predators Act (SOPA)** — sponsored by [State Senator Andrew Gounardes and Assemblymember Nily Rozic](https://www.nysenate.gov/newsroom/press-releases/2026/andrew-gounardes/sen-gounardes-am-rozic-applaud-gov-hochul-including) — and the "Safe by Design" framework, the name the [Governor's office used in its press releases](https://www.governor.ny.gov/news/governor-hochul-announces-new-york-state-received-highest-nation-ranking-technology-laws).
 
 The law is not a general automated-decision consumer protection statute. It does not create opt-out rights from algorithmic recommendations for adult users, nor does it impose audit requirements on AI systems used in hiring or lending. That is a different category of law.
 
@@ -111,7 +111,7 @@ Builders should monitor the NY AG's rulemaking docket. Implementation work takes
 
 The AG is the sole enforcer. There is no private right of action — individual users cannot sue platforms directly under SOPA.
 
-Civil penalty: **$5,000 per violation.** The AG may also seek injunctive relief.
+Civil penalty: [**$5,000 per violation.**](https://www.nysenate.gov/newsroom/press-releases/2026/andrew-gounardes/sen-gounardes-proposal-protect-kids-online-included) The AG may also seek injunctive relief.
 
 At volume — millions of minor accounts, each with a misconfigured default — per-violation exposure adds up. The likelier enforcement path is an AG investigation targeting a pattern of non-compliance, not per-account calculations.
 

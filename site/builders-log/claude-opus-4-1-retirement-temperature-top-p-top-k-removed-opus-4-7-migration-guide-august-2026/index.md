@@ -3,7 +3,7 @@
 > Anthropic retired temperature, top_p, and top_k on Opus 4.7+ and Sonnet 5. If you set any of them to a non-default value, you'll get a 400 error today. Here's the full migration checklist for Opus 4.1 → Opus 4.8.
 
 
-Anthropic has deprecated `temperature`, `top_p`, and `top_k` on Claude Opus 4.7 and later. If you call those models with any of those parameters set to a **non-default value**, the API returns a `400` error immediately — no fallback, no warning, just a hard failure. This applies to Opus 4.7, Opus 4.8, Sonnet 5, Fable 5, and Mythos 5.
+Anthropic has [deprecated `temperature`, `top_p`, and `top_k`](https://docs.anthropic.com/en/docs/about-claude/model-deprecations) on Claude Opus 4.7 and later. If you call those models with any of those parameters set to a **non-default value**, the API returns a `400` error immediately — no fallback, no warning, just a hard failure. This applies to Opus 4.7, Opus 4.8, Sonnet 5, Fable 5, and Mythos 5.
 
 Separately, Claude Opus 4.1 (`claude-opus-4-1-20250805`) was deprecated June 5, 2026 and **retires August 5, 2026**. After that date, requests to that model ID return errors. If you haven't migrated yet, you have five weeks. The migration path from Opus 4.1 to Opus 4.8 spans ten breaking changes, some of which restructure your API call significantly.
 
@@ -203,5 +203,5 @@ If you're on Opus 4.1: the retirement date is August 5. Start with the `temperat
 
 If you're already on Opus 4.6 and planning to upgrade to Opus 4.7+: only the temperature change and the extended thinking syntax change apply to you — the others were introduced in the 4.1 → 4.6 window.
 
-Anthropic's official model deprecation list and migration guide are at `platform.claude.com/docs/en/about-claude/model-deprecations` and `platform.claude.com/docs/en/about-claude/models/migration-guide`.
+Anthropic's official [model deprecation list](https://docs.anthropic.com/en/docs/about-claude/model-deprecations) and [migration guide](https://docs.anthropic.com/en/docs/about-claude/models/migration-guide) document all breaking changes.
 

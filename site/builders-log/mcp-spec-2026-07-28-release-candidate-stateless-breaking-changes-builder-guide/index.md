@@ -3,7 +3,7 @@
 > The MCP 2026-07-28 Release Candidate, locked May 21, is the largest protocol revision since launch. Sessions are gone, two new HTTP headers are mandatory, error codes changed, and Roots/Sampling/Logging are deprecated. Every production MCP server has until July 28 to comply.
 
 
-On May 21, 2026, the MCP team locked the 2026-07-28 Release Candidate — the largest revision to the Model Context Protocol since its initial release. The final specification publishes July 28. SDK maintainers have ten weeks to ship support. Production MCP servers have until the same date to comply.
+On May 21, 2026, the MCP team locked the [2026-07-28 Release Candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) — the largest revision to the Model Context Protocol since its initial release. The final specification publishes July 28. SDK maintainers have ten weeks to ship support. Production MCP servers have until the same date to comply.
 
 This is not a minor version bump. Six material changes arrive simultaneously. If you run a production MCP server, you need a migration plan.
 
@@ -46,7 +46,7 @@ If you run an MCP gateway or proxy layer, this change is a capability gain. If y
 
 ## Breaking Change 3 — Error Code Changed
 
-The RC changes at least one error code that client code almost certainly pattern-matches against. The specific code is documented in the RC release notes on `blog.modelcontextprotocol.io`.
+The RC changes at least one error code that client code almost certainly pattern-matches against. The specific code is documented in the [RC release notes](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) on blog.modelcontextprotocol.io.
 
 Audit your error handling code for hardcoded numeric error codes from the MCP spec. String-based matching on error messages is similarly fragile. The right fix is to update to named constants from an RC-compatible SDK version once your Tier 1 SDK ships support.
 
@@ -112,7 +112,7 @@ The RC aligns MCP authorization more closely with OAuth 2.1 and OpenID Connect d
 
 ## SDK Tier System and Timeline
 
-The RC uses a tiered SDK system to manage the rollout:
+The RC uses a [tiered SDK system](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/) to manage the rollout:
 
 | Tier | Description | Expected Timeline |
 |---|---|---|
@@ -149,7 +149,7 @@ For a local STDIO server, the migration is smaller: error code updates and optio
 The RC is locked. The spec is not going to change before July 28. This is the migration target.
 
 **This week:**
-- Read the official RC post at `blog.modelcontextprotocol.io`
+- Read the [official RC post](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) at blog.modelcontextprotocol.io
 - Identify which Tier 1 SDK you depend on and subscribe to its release notifications
 - Audit your server and client for session handling, hardcoded error codes, and use of deprecated primitives
 

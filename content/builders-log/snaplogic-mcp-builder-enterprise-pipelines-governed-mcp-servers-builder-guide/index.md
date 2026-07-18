@@ -5,7 +5,7 @@ description: "SnapLogic's MCP Builder GA (July 1) auto-generates production MCP 
 tags: ["mcp", "enterprise", "integration", "ai-agents", "iPaaS", "governance", "identity", "snaplogic"]
 ---
 
-On July 1, 2026, SnapLogic made its MCP Builder generally available — a template-based capability embedded in the SnapLogic platform that converts existing enterprise integration pipelines into production-ready MCP servers without writing code. For enterprise IT architects already running SnapLogic pipelines, this changes the calculus on how quickly they can expose internal systems to AI agents.
+On July 1, 2026, [SnapLogic made its MCP Builder generally available](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html) — a template-based capability embedded in the SnapLogic platform that converts existing enterprise integration pipelines into production-ready MCP servers without writing code. For enterprise IT architects already running SnapLogic pipelines, this changes the calculus on how quickly they can expose internal systems to AI agents.
 
 ## What It Does
 
@@ -31,7 +31,7 @@ If you're building a DIY MCP server, you implement all of this yourself. It's no
 
 ## The 1,000+ Connectors Argument
 
-SnapLogic's integration library covers enterprise systems that most startups never touch: Workday (HR), SAP (ERP), Coupa (procurement), ServiceNow (ITSM), Oracle Fusion, Veeva (life sciences), and hundreds more. An enterprise that has already spent years building deterministic pipelines on top of these connectors can expose all of them as MCP tools in a single platform pass — rather than rebuilding each integration from scratch in a new server.
+SnapLogic's integration library covers enterprise systems that most startups never touch: Workday (HR), SAP (ERP), Coupa (procurement), ServiceNow (ITSM), Oracle Fusion, Veeva (life sciences), and hundreds more. An enterprise that has already spent years building deterministic pipelines on top of these connectors can [expose all of them as MCP tools](https://www.infoworld.com/article/4191862/snaplogic-mcp-builder-eases-creation-of-mcp-servers.html) in a single platform pass — rather than rebuilding each integration from scratch in a new server.
 
 This is the real pitch: the pipeline work is done. MCP Builder wraps it.
 
@@ -63,4 +63,4 @@ The July 28 MCP 2026 spec RC (which introduces breaking authentication changes) 
 
 ---
 
-*ChatForest covers MCP tooling and AI agent infrastructure for builders. This article is based on SnapLogic's press release, InfoWorld's technical coverage, and SD Times reporting. We have no commercial relationship with SnapLogic.*
+*ChatForest covers MCP tooling and AI agent infrastructure for builders. This article is based on [SnapLogic's press release](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html), [InfoWorld's technical coverage](https://www.infoworld.com/article/4191862/snaplogic-mcp-builder-eases-creation-of-mcp-servers.html), and [IT Brief reporting](https://itbrief.co.uk/story/snaplogic-launches-mcp-builder-for-ai-agent-integration). We have no commercial relationship with SnapLogic.*

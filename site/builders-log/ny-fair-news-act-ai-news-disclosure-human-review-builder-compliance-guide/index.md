@@ -7,7 +7,7 @@ New York has two AI disclosure bills heading to Governor Hochul's desk right now
 
 [A3411B](/builders-log/ny-a3411b-genai-disclosure-bill-builder-ui-compliance-guide/) — the Artificial Intelligence Disclosure Act — requires any operator of a generative AI system to display a notice that outputs may be inaccurate. One UI element, 90 days after signing, applies to everyone building AI products.
 
-The **NY FAIR News Act** (S.8451B / A.8962A) is different in scope, different in mechanism, and considerably more demanding. It passed both chambers on June 8, 2026. It applies specifically to news publishers, but its requirements flow directly upstream to the AI content tools, writing assistants, CMS pipelines, and newsroom automation that builders sell to those publishers.
+The **[NY FAIR News Act](https://nysenate.gov/legislation/bills/2025/S8451)** (S.8451B / A.8962A) is different in scope, different in mechanism, and considerably more demanding. It passed both chambers on June 8, 2026. It applies specifically to news publishers, but its requirements flow directly upstream to the AI content tools, writing assistants, CMS pipelines, and newsroom automation that builders sell to those publishers.
 
 If you build anything that touches AI-generated news content, this law shapes your product.
 
@@ -74,7 +74,7 @@ If you build general-purpose AI products, A3411B is the primary concern. If you 
 
 ## Status and Timeline
 
-**Passed:** Both chambers of the New York State Legislature on June 8, 2026, with bipartisan support.
+**Passed:** Both chambers of the New York State Legislature on June 8, 2026, with bipartisan support. ([S.8451B full text](https://nysenate.gov/legislation/bills/2025/S8451))
 
 **Sponsors:** State Sen. Patricia Fahy (D-Albany) and Assemblymember Nily Rozic (D-NYC).
 

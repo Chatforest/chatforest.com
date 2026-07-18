@@ -3,9 +3,9 @@
 > Sam Altman won't list below $1 trillion. CFO Sarah Friar says wait until 2027. SoftBank is down $38B. Anthropic may IPO first. Here's what this power struggle means for developers locked into either API.
 
 
-Late June 2026 brought a sharp rewrite of Wall Street's AI IPO narrative. Bloomberg reported that OpenAI is
-leaning toward delaying its public listing into 2027 rather than accepting a valuation below $1 trillion —
-and the fallout landed immediately on SoftBank, which shed $38 billion in market cap in a single day.
+Late June 2026 brought a sharp rewrite of Wall Street's AI IPO narrative. [Bloomberg reported that OpenAI is
+leaning toward delaying its public listing into 2027](https://thenextweb.com/news/openai-ipo-delay-2027-altman-1-trillion) rather than accepting a valuation below $1 trillion —
+and the fallout landed immediately on SoftBank, [which shed $38 billion in market cap in a single day](https://www.business-standard.com/world-news/openai-may-delay-ipo-until-2027-targets-1-trillion-valuation-report-126062600115_1.html).
 
 For API builders, the story matters less for the stock market drama and more for what it signals about pricing
 pressure, vendor stability, and which platform you're betting on.
@@ -23,7 +23,7 @@ recent private mark of $852 billion (set March 2026). He's rejected the "take a 
 $600 billion in infrastructure spending commitments already on the books, and the difficulty of hitting
 public-company reporting cadence on Altman's aggressive timeline.
 
-**Where it stands:** Kalshi traders now put 59% odds on OpenAI officially announcing an IPO by March 2027,
+**Where it stands:** [Kalshi traders now put 59% odds on OpenAI officially announcing an IPO by March 2027](https://qz.com/openai-ipo-delay-2027-valuation-062626),
 and 73% probability by June 2027. The window has shifted from "late this year" to "sometime next year."
 
 ## Anthropic may cross the finish line first

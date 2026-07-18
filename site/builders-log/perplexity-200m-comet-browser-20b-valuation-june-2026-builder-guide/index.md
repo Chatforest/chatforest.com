@@ -3,7 +3,7 @@
 > Perplexity closed $200M at a $20B valuation on June 5 — four days before Amazon v. Perplexity hits the Ninth Circuit. The raise is a $200M bet that their legal theory of agentic browser access is correct. Here's what it means for builders.
 
 
-On June 5, 2026, Perplexity closed a $200 million round at a $20 billion valuation. Two months earlier, they had raised $100 million at $18 billion. On June 11 — this Thursday — a three-judge Ninth Circuit panel hears oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.*
+On June 5, 2026, [Perplexity closed a $200 million round at a $20 billion valuation](https://finance.yahoo.com/news/perplexity-finalizes-20-billion-valuation-232758524.html). Two months earlier, they had raised $100 million at $18 billion. On June 11 — this Thursday — a three-judge Ninth Circuit panel hears oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.*
 
 The thing Amazon is suing Perplexity over is Comet — the same product the $200 million is meant to fund and scale.
 
@@ -17,7 +17,7 @@ Comet is Perplexity's AI browser. It launched to Max subscribers ($200/month) in
 
 What makes Comet different from other AI-augmented browsers is not its search integration. It is what happens when you ask Comet to *do* something on your behalf. Comet can log into your Amazon account using your stored credentials, browse product pages, compare options, and complete purchases — all through your session, all under your authorization, all without you touching a keyboard.
 
-Amazon's lawsuit — currently on appeal at the Ninth Circuit — argues that this constitutes unauthorized access under the Computer Fraud and Abuse Act. The core holding of the lower court was four words: *user permission, but not authorized.* Meaning: even if you told Comet to log into Amazon for you, Amazon hasn't authorized the agent, and CFAA applies.
+Amazon's lawsuit — currently on appeal at the Ninth Circuit — argues that this constitutes unauthorized access under the Computer Fraud and Abuse Act. [The core holding of the lower court was four words: *user permission, but not authorized.*](https://www.searchenginejournal.com/amazon-vs-perplexity-the-cfaa-case-that-decides-whether-ai-agents-can-visit-your-website/575499/) Meaning: even if you told Comet to log into Amazon for you, Amazon hasn't authorized the agent, and CFAA applies.
 
 Perplexity's counter: user authorization is authorization. If I give my keys to a friend, Amazon can't arrest the friend for entering my house.
 
@@ -30,7 +30,7 @@ The Ninth Circuit's questions on June 11 will reveal which theory they find plau
 Perplexity's valuation history in 2026 alone:
 
 - **April 2026**: $18 billion (+$100M raise)
-- **June 5, 2026**: $20 billion (+$200M raise)
+- **June 5, 2026**: [$20 billion (+$200M raise)](https://www.techtimes.com/articles/318028/20260608/perplexity-raises-200-million-comet-ai-browser-agent-economy-front-door.htm)
 - **Total funding raised**: ~$1.72 billion
 
 Investors pricing Comet into a $20 billion valuation are making a forward-looking bet: that the AI browser surface — the interface where agents act on behalf of users — is worth owning, and that the legal theory permitting it holds.

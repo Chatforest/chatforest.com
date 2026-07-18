@@ -3,7 +3,7 @@
 > The Bureau of Labor Statistics reported 57,000 jobs added in June — the weakest monthly gain since 2024, and roughly half the 113K consensus. Meanwhile, 88,000 AI-attributed job cuts have been logged in 2026. These two numbers tell the same story. Here is what it means if you build AI tools for a living.
 
 
-The Bureau of Labor Statistics released the June 2026 Employment Situation on July 3. Total nonfarm payrolls increased by 57,000 — roughly half the 113K consensus forecast, and the weakest monthly addition since early 2024.
+The [Bureau of Labor Statistics released the June 2026 Employment Situation](https://www.bls.gov/news.release/empsit.nr0.htm) on July 3. Total nonfarm payrolls increased by 57,000 — roughly half the 113K consensus forecast, and the weakest monthly addition since early 2024.
 
 That number is the headline. But the builder-relevant story is in what's underneath it. Part of our **[Builder's Log](/builders-log/)**.
 
@@ -35,7 +35,7 @@ The downward revisions matter more than the June miss alone. They mean the trend
 
 The Bureau's sector data and independent layoff tracking converge on the same pattern.
 
-**88,000 AI-attributed job cuts** have been logged in 2026 to date, out of 185,894 total workers affected by 267 layoff events tracked by independent monitoring. Fifty-six percent of layoff announcements explicitly cite AI, automation, or machine learning as a driving reason.
+**[88,000 AI-attributed job cuts](https://www.challengergray.com/wp-content/uploads/2026/06/Challenger-Report-May-2026.pdf)** have been logged in 2026 to date, out of 185,894 total workers affected by 267 layoff events tracked by Challenger, Gray & Christmas. Fifty-six percent of layoff announcements explicitly cite AI, automation, or machine learning as a driving reason.
 
 The information and financial-activities sectors — where AI adoption has been fastest — are shedding approximately **28,000 positions per month** in 2026, based on Bureau of Labor Statistics data analyzed by the Insurance Information Institute. That rate is accelerating compared to 2025.
 
@@ -52,7 +52,7 @@ The roles expanding are different. AI-adjacent positions — prompt engineers, a
 
 ## The Tech Job Posting Split
 
-The Dice June 2026 Tech Job Report found:
+The [Dice June 2026 Tech Job Report](https://www.dice.com/hiring/recruitment/reports/dice-tech-job-report) found:
 
 - Tech job postings **+23% year-over-year** (strongest YoY comparison of 2026)
 - AI skills appeared in **73% of U.S. tech job postings** in May

@@ -3,7 +3,7 @@
 > Hopsworks 5.0 (GA June 30) embeds Claude Code and Codex directly inside an ML lakehouse platform—no context switching, CLI-first agent tooling, and air-gapped sovereign deployments for enterprises that need data to stay put.
 
 
-On June 30, 2026, Hopsworks released version 5.0 — a unified ML lakehouse platform that embeds Claude Code and Codex directly inside the development environment. The core shift: instead of an AI coding assistant you context-switch to when you need help, the agent lives inside the same terminal that has access to your feature store, your pipelines, your GPU compute, and your data.
+On June 30, 2026, [Hopsworks released version 5.0](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html) — a unified ML lakehouse platform that embeds Claude Code and Codex directly inside the development environment. The core shift: instead of an AI coding assistant you context-switch to when you need help, the agent lives inside the same terminal that has access to your feature store, your pipelines, your GPU compute, and your data.
 
 The CEO's framing is deliberately aggressive: "The low-code and no-code tooling that dominates other Lakehouses is obsolete."
 
@@ -29,7 +29,7 @@ Hopsworks 5.0's thesis is that the right fix is not a better clipboard — it's 
 
 ## Container vs. Wrapper: The Technical Argument
 
-Hopsworks published a companion essay titled "Don't Be a Wrapper, Be a Container" that explains the architectural decision. The distinction matters:
+Hopsworks published a companion essay titled ["Don't Be a Wrapper, Be a Container"](https://www.hopsworks.ai/post/coding-agents-inside-data-platforms) that explains the architectural decision. The distinction matters:
 
 **A wrapper** puts an agent around a platform — the agent calls your platform's API the same way any external client would. It's clean but limited: the agent gets only what the API exposes, has to authenticate like any external caller, and can't access the filesystem, environment, or compute resources directly.
 
@@ -77,5 +77,5 @@ Watch for other ML and data platforms to announce similar embedded agent capabil
 
 ---
 
-*ChatForest covers AI developer tooling and ML infrastructure for builders. This article is based on Hopsworks's press release, their published technical essay "Don't Be a Wrapper, Be a Container," and event registration pages. We have no commercial relationship with Hopsworks.*
+*ChatForest covers AI developer tooling and ML infrastructure for builders. This article is based on [Hopsworks's press release](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html), their published technical essay ["Don't Be a Wrapper, Be a Container"](https://www.hopsworks.ai/post/coding-agents-inside-data-platforms), and the [Claude Code event page](https://www.hopsworks.ai/events/build-ml-pipelines-with-claude-code-inside-hopsworks). We have no commercial relationship with Hopsworks.*
 

@@ -3,7 +3,7 @@
 > OpenAI's free period for ChatGPT Workspace Agents ends July 6, 2026. Credit-based pricing kicks in for agents run inside ChatGPT. Here is what the rate card says, how to translate credits to dollars, and what to do in the next 24 days.
 
 
-OpenAI's free period for ChatGPT Workspace Agents ends on July 6, 2026. That is 24 days from today. After that, credit-based metering begins for agents run inside ChatGPT.
+[OpenAI's free period for ChatGPT Workspace Agents ends on July 6, 2026.](https://openai.com/index/introducing-workspace-agents-in-chatgpt/) That is 24 days from today. After that, credit-based metering begins for agents run inside ChatGPT.
 
 If your team is using workspace agents and hasn't modeled the cost, now is the time.
 
@@ -25,7 +25,7 @@ Available on ChatGPT Business ($20/user/month), Enterprise, Edu, and Teachers pl
 |---|---|
 | Early 2026 | Workspace Agents launch in preview for Business/Enterprise |
 | May 6, 2026 | Original end of free preview period |
-| May 22, 2026 | OpenAI extends free period — new cutover: July 6 |
+| [May 22, 2026](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes) | OpenAI extends free period — new cutover: July 6 |
 | **July 6, 2026** | **Credit-based pricing begins for ChatGPT-invoked agents** |
 
 The extension was not announced with fanfare. It appeared in ChatGPT Business release notes on May 22. If you missed it, you got an extra 61 days of free usage you may not have known about.
@@ -34,7 +34,7 @@ The extension was not announced with fanfare. It appeared in ChatGPT Business re
 
 ## The Rate Card
 
-OpenAI published a credit-based rate card for Workspace Agent runs. Billing is per-token, not per-run:
+[OpenAI published a credit-based rate card](https://help.openai.com/en/articles/11481834-chatgpt-rate-card-business-enterpriseedu) for Workspace Agent runs. Billing is per-token, not per-run:
 
 | Token type | GPT-5.5 rate | GPT-5.4 rate | GPT-5.3 rate |
 |---|---|---|---|

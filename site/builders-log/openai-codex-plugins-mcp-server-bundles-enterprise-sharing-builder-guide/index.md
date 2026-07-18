@@ -3,7 +3,7 @@
 > OpenAI shipped 90+ plugins for Codex that bundle skills, app integrations, and MCP servers into a single installable unit. For builders who maintain MCP servers, packaging as a Codex plugin is now the cleanest path to enterprise team distribution.
 
 
-OpenAI has quietly changed how MCP servers reach developer teams. Codex plugins — bundles that can include skills, app integrations, and MCP server configurations — are now available in a marketplace with 90+ entries, and enterprise workspaces can share them with one click. For anyone who builds and maintains an MCP server, this changes the distribution question.
+OpenAI has quietly changed how MCP servers reach developer teams. Codex plugins — bundles that can include skills, app integrations, and MCP server configurations — are now available in a [marketplace with 90+ entries](https://developers.openai.com/codex/changelog), and enterprise workspaces can share them with one click. For anyone who builds and maintains an MCP server, this changes the distribution question.
 
 ---
 
@@ -70,11 +70,11 @@ Plugins appear in three tiers in the directory: OpenAI-curated, workspace-shared
 
 Three recent CLI releases tightened plugin automation:
 
-**CLI 0.137.0 (June 4):** Added `codex plugin list --json` for machine-readable plugin inventory. Useful for CI pipelines that need to verify plugin state before running agent tasks.
+**[CLI 0.137.0](https://github.com/openai/codex/releases/tag/rust-v0.137.0) (June 4):** Added `codex plugin list --json` for machine-readable plugin inventory. Useful for CI pipelines that need to verify plugin state before running agent tasks.
 
-**CLI 0.138.0 (June 8):** Plugin `add/remove` and `marketplace` commands gained `--json` output. Plugin detail data now exposes default prompts, remote MCP server configurations, and unavailable app templates — the last item matters for teams auditing what a plugin would do before deploying it to a workspace.
+**[CLI 0.138.0](https://github.com/openai/codex/releases/tag/rust-v0.138.0) (June 8):** Plugin `add/remove` and `marketplace` commands gained `--json` output. Plugin detail data now exposes default prompts, remote MCP server configurations, and unavailable app templates — the last item matters for teams auditing what a plugin would do before deploying it to a workspace.
 
-**CLI 0.139.0 (June 9):** MCP tool compatibility fix — `oneOf` and `allOf` structures in tool input schemas now pass through correctly instead of being flattened. If you had MCP tools with complex union schemas that weren't parsing right in Codex, this is the fix.
+**[CLI 0.139.0](https://github.com/openai/codex/releases/tag/rust-v0.139.0) (June 9):** MCP tool compatibility fix — `oneOf` and `allOf` structures in tool input schemas now pass through correctly instead of being flattened. If you had MCP tools with complex union schemas that weren't parsing right in Codex, this is the fix.
 
 ---
 

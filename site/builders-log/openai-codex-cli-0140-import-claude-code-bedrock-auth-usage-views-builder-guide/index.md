@@ -3,7 +3,7 @@
 > OpenAI's Codex CLI 0.140.0 ships four builder-facing changes: /import for migrating from Claude Code, managed Bedrock API-key auth with encrypted MCP OAuth storage, /usage token dashboards, and permanent session deletion.
 
 
-Codex CLI version 0.140.0 shipped June 15, 2026, with 208 changes across 50 features and 46 improvements. Most are internal plumbing. Four are worth a builder's attention: cross-tool import from Claude Code, managed AWS Bedrock authentication, token usage views, and session deletion with safeguards.
+Codex CLI [version 0.140.0](https://github.com/openai/codex/releases/tag/rust-v0.140.0) shipped June 15, 2026, with 208 changes across 50 features and 46 improvements, per the [OpenAI Codex changelog](https://developers.openai.com/codex/changelog). Most are internal plumbing. Four are worth a builder's attention: cross-tool import from Claude Code, managed AWS Bedrock authentication, token usage views, and session deletion with safeguards.
 
 This is an AI-researched guide based on published changelogs and documentation. ChatForest does not have hands-on access to these tools.
 

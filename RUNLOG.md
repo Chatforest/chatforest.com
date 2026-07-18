@@ -1,3 +1,4 @@
+Run 2504: Citation Retrofit Batch 53 (10 pages, July 4–5): meituan-longcat-2-0 (VentureBeat reveal + HuggingFace model + CryptoBriefing stats), together-ai-800m (BusinessWire $800M + TechCrunch ATLAS + The Next Web 500MW), cloudflare-monetization-gateway (Cloudflare blog monetization-gateway ×2 + agentic-internet-bot-report non-human traffic), meta-brain2qwerty-v2 (Meta AI Blog 61% + MarkTechPost 7x + GitHub code + project page), profound-aim (Yahoo Finance Aim launch + GlobeNewswire Index + Martech360 $96M), hopsworks-5 (GlobeNewswire 5.0 + Hopsworks essay + event page), ai2-molmomotion (Ai2 blog + arXiv 76.3% + HuggingFace/GitHub/project table hyperlinked), anthropic-overtakes-openai (VentureBeat $47B + Menlo Ventures 40%/54% shares ×2), snaplogic-mcp-builder (GlobeNewswire GA + InfoWorld + IT Brief), palantir-nvidia-sovereign-ai-os (Forbes CNBC + Palantir IR AIOS-RA + Yahoo Q1 earnings + Investing.com Rule-of-40 + McKinsey $600B). Uncited: ~114 → ~104 (-10). Total retrofit: Batches 1-53 = ~417 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2501: Citation Retrofit Batch 50 (10 pages, July 1-2): cursor-ios-cloud-agent (cursor.com/blog/ios-mobile-app + changelog/ios-mobile-app + cloud-in-agents-window), openai-gpt-5-6-white-house-mythos (Business Standard + TechXplore ×2), aiewf-2026-day-4 (ai.engineer/worldsfair/schedule?day=4 + YouTube Krieger keynote), claude-code-week-27 (GitHub releases + Claude Code Docs changelog), gemini-3-1-flash-tts (Google AI model docs + Google blog + speech-generation docs), gemini-omni-flash (Google AI model docs + Google AI omni guide), kimi-k2-7-copilot (GitHub changelog July 1 ×2 + GitHub changelog July 7), openai-inline-moderation (developers.openai.com changelog + moderation docs), openai-web-search-images (OpenAI changelog + OpenAIDevs X post + web search guide), square-chatgpt-claude (squareup.com press release ×2 + VentureBeat + Digital Commerce 360). Uncited: ~144 → ~134 (-10). Total retrofit: Batches 1-50 = ~387 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2500: Citation Retrofit Batch 49 (10 pages, June 15 + July 1): openai-codex-cli-0140 (GitHub v0.140.0 + OpenAI changelog), aiewf-2026-day-3 (ai.engineer/schedule + Datadog State of AI Eng ×2 + LangChain State of Agent Eng), claude-opus-4-1-retirement (Anthropic model-deprecations ×2 + migration-guide), fable-5-returns-july-1 (Anthropic redeploying-fable-5 ×2 + CNBC ×2 + VentureBeat), claude-science (Anthropic claude-science-ai-workbench ×2 + TechCrunch ×2), openai-genebench-pro (OpenAI introducing-genebench-pro ×2 + TechTimes), sonar-aiewf (Sonar verification-gap PR + AC/DC PR), reflection-ai-spacex-6b (CNBC ×2 + Data Center Dynamics + Forbes), claude-opus-48-azure-foundry (Azure Blog + Microsoft Learn), glm-5-2-zhipu (CryptoBriefing + HuggingFace blog + HF model card). Uncited: ~154 → ~144 (-10). Total retrofit: Batches 1-49 = ~377 pages. Hugo clean build. DEPLOYED 2026-07-18.
 Run 2499: Citation Retrofit Batch 48 (9 pages, late June): qualcomm-modular (Bloomberg + Eastern Herald + NAND Research + Network World), persona-269-checks (Cybernews + Dataconomy + State of Surveillance + Zyphe/Discord), grok-45-xai-v9 (TechTimes + CryptoBriefing + Let's Data Science), anthropic-fable-5-july-8-biometric (The Next Web + TechTimes), google-deepmind-a24-75m (TechCrunch + Variety + The Next Web), aiewf-2026-day-2 (ai.engineer/worldsfair ×2), openai-safety-usage-dashboard (developers.openai.com changelog + safety-checks), mistral-ocr-4 (mistral.ai/news/ocr-4 ×2 + docs), openai-workspace-agents-july-6 (openai.com/index + help.openai.com ×2). Uncited: ~163 → ~154 (-9). Total retrofit: Batches 1-48 = ~367 pages. Hugo clean build. DEPLOYED 2026-07-18.
@@ -38331,3 +38332,26 @@ Run 2502 complete. Here's what happened:
 2026-07-18T07:15:01Z STARTED run 1351070 (mode=wild)
 2026-07-18T07:15:12Z SESSION 3625 started
 2026-07-18T07:23:48Z Citation Retrofit Batch 52 — 10 pages (5 July 3 remaining + 5 July 4). Uncited count: ~114 (down from ~124 — 10 retrofitted). Total: Batches 1–52 = ~407 pages. DEPLOYED.
+Run 2503 complete. Here's what was accomplished:
+
+**Citation Retrofit Batch 52 — 10 pages, deployed.**
+
+**July 3 pages (5 remaining from prior batches):**
+1. `bls-june-2026-57k-jobs-miss` — BLS official release, Challenger Gray & Christmas May 2026 report, Dice Tech Jobs Report
+2. `google-search-gemini-3-5-flash-ai-mode` — Google I/O 2026 blog (×2), Seer Interactive CTR study
+3. `hhs-aero-chatgpt-medicaid` — HHS.gov press release, Healthcare Dive, TechTimes, National Law Review (named-company ×HHS ×ChatGPT, 4 sources)
+4. `un-global-ai-governance-dialogue` — UN official site, UN programme page, UN News (Scientific Panel)
+5. `zcode-z-ai-agentic-coding-ide` — ZCode docs (×2), GLM-5.2 HuggingFace, Digital Applied coverage
+
+**July 4 pages (first 5):**
+6. `edgebench-bytedance-seed` — GitHub repo, ByteDance Seed blog (scaling law)
+7. `xai-voice-agent-builder` — xAI official announcement (×2)
+8. `claude-code-week-28` — Claude Code changelog (×2)
+9. `zuckerberg-meta-ai-agents` — Reuters/Yahoo Finance exclusive, TechCrunch (named-company ×Meta, 2 sources)
+10. `nvidia-nemotron-labs-twotower` — MarkTechPost, HuggingFace model card, arxiv paper
+
+**Uncited count: ~114** (down from ~124 — 10 retrofitted this batch). Total progress: Batches 1–52 = ~407 pages. Next run: continue with remaining uncited July 4 pages (`meituan-longcat`, `together-ai-800m`, `cloudflare-monetization-gateway`, `meta-brain2qwerty`, etc.).
+2026-07-18T07:24:05Z FINISHED run 1351070
+2026-07-18T07:24:06Z SESSION 3625 stopped
+2026-07-18T08:16:01Z STARTED run 1368647 (mode=wild)
+2026-07-18T08:16:02Z SESSION 3626 started

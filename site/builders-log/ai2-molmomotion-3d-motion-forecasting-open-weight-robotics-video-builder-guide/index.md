@@ -3,7 +3,7 @@
 > Allen AI released MolmoMotion on June 17, 2026 — an open 4B vision-language model that predicts how objects will move in 3D space given video frames, marked points, and natural-language action instructions. Robot pick-and-place success improved from 56% to 76.3%. Full stack: model weights, 1.16M-video dataset, and benchmark are all open.
 
 
-The Allen Institute for AI (Ai2) released **MolmoMotion** on June 17, 2026 — an open-weight vision-language model that predicts where objects will move in 3D space before they move, given a short video clip, marked points on the target object, and a plain-language action instruction like "Put the bowl on the table."
+The Allen Institute for AI (Ai2) [released **MolmoMotion** on June 17, 2026](https://allenai.org/blog/molmo-motion) — an open-weight vision-language model that predicts where objects will move in 3D space before they move, given a short video clip, marked points on the target object, and a plain-language action instruction like "Put the bowl on the table."
 
 This is not a new chatbot or coding assistant. It is a 3D motion forecasting tool, and it ships as a complete open stack: model weights, a 1.16-million-video training dataset (MolmoMotion-1M), and a new evaluation benchmark (PointMotionBench). Builders working on robotics, video generation, or any system that needs to reason about what happens *next* in physical space now have an open foundation to build on.
 
@@ -50,7 +50,7 @@ For robot control tasks with known manipulation goals, AR is typically the right
 
 MolmoMotion-AR achieved **0.109 meters average displacement error** on PointMotionBench, outperforming all prior 3D motion forecasting methods in the comparison.
 
-**Robot manipulation (simulation):** Using MolmoMotion trajectories for planning on pick-and-place tasks improved success rate from **56.0% to 76.3%** — a 20+ percentage point jump. That number is from a simulation environment, not production hardware, but it is a large enough gap to be meaningful as a capability signal.
+**Robot manipulation (simulation):** Using MolmoMotion trajectories for planning on pick-and-place tasks [improved success rate from **56.0% to 76.3%**](https://arxiv.org/abs/2606.18558) — a 20+ percentage point jump. That number is from a simulation environment, not production hardware, but it is a large enough gap to be meaningful as a capability signal.
 
 **Video generation:** Substituting MolmoMotion-guided trajectories for the baseline improved all five motion quality metrics tested.
 
@@ -62,11 +62,11 @@ Everything is on HuggingFace under open licenses:
 
 | Resource | URL |
 |---|---|
-| **Models** | huggingface.co/collections/allenai/molmomotion |
-| **Dataset (1.16M videos)** | huggingface.co/datasets/allenai/molmo-motion-1m |
-| **Benchmark** | huggingface.co/datasets/allenai/PointMotionBench |
-| **Code** | github.com/allenai/molmo-motion |
-| **Project page** | molmomotion.github.io |
+| **Models** | [huggingface.co/collections/allenai/molmomotion](https://huggingface.co/collections/allenai/molmomotion) |
+| **Dataset (1.16M videos)** | [huggingface.co/datasets/allenai/molmo-motion-1m](https://huggingface.co/datasets/allenai/molmo-motion-1m) |
+| **Benchmark** | [huggingface.co/datasets/allenai/PointMotionBench](https://huggingface.co/datasets/allenai/PointMotionBench) |
+| **Code** | [github.com/allenai/molmo-motion](https://github.com/allenai/molmo-motion) |
+| **Project page** | [molmomotion.github.io](https://molmomotion.github.io/) |
 
 The training pipeline is also open: Ai2 released the automated annotation method that extracts 3D point trajectories from unconstrained video. If you have proprietary video data relevant to your domain (warehouse picking, surgical robotics, sports), you can apply the same pipeline to build a domain-adapted version.
 

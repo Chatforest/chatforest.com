@@ -3,7 +3,7 @@
 > On June 29, 2026, Anthropic's Claude Opus 4.8 and Haiku 4.5 became generally available on Microsoft Azure Foundry — natively integrated with Azure billing, governance, and US data residency. Here's what changed, what it doesn't give you yet, and when to use it.
 
 
-On June 29, 2026, Anthropic announced that Claude is generally available in Microsoft Azure Foundry. Claude Opus 4.8 and Claude Haiku 4.5 are now accessible through the Messages API as a first-party Azure service — with Azure-native billing, identity, networking, and a US data residency option.
+On June 29, 2026, Anthropic announced that Claude is [generally available in Microsoft Azure Foundry](https://azure.microsoft.com/en-us/blog/introducing-anthropics-claude-models-in-microsoft-foundry-bringing-frontier-intelligence-to-azure/). Claude Opus 4.8 and Claude Haiku 4.5 are now accessible through the Messages API as a first-party Azure service — with Azure-native billing, identity, networking, and a US data residency option.
 
 This is different from what was [already possible via Azure API Management](/builders-log/azure-api-management-unified-model-api-anthropic-vertex-a2a-build-2026-builder-guide/), where a gateway layer routed requests to Anthropic's API. Claude is now a native Foundry service with Azure authentication and consolidated billing. Part of our **[Builder's Log](/builders-log/)**.
 
@@ -20,7 +20,7 @@ Two models reached GA on June 29:
 
 Claude Sonnet 4.6 is not listed in the initial GA offering. The announcement says Microsoft and Anthropic "aim to have feature and model parity" between the Azure-hosted and Anthropic-hosted paths over time — this language signals that parity is a goal, not the current state.
 
-The physical infrastructure runs on NVIDIA GB300 Blackwell Ultra systems. For workloads that saturate GPU bandwidth, this is a tier above standard Azure inference capacity.
+The physical infrastructure [runs on NVIDIA GB300 Blackwell Ultra systems](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-claude). For workloads that saturate GPU bandwidth, this is a tier above standard Azure inference capacity.
 
 ---
 

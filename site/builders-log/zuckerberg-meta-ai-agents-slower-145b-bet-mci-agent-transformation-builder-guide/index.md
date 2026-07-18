@@ -7,9 +7,9 @@
 
 On July 2, 2026, Mark Zuckerberg told Meta employees something unusual: his biggest bet isn't working yet.
 
-At an internal town hall — later reported by Reuters from a recording — Zuckerberg said, "The trajectory of the agentic development over at least the last four months hasn't really accelerated in the way that we expected." He added that Meta's bets on its newly restructured organization "haven't come to fruition yet," and acknowledged that executives had been "super optimistic" about tools like Anthropic's Claude Code when planning began in January.
+At an internal town hall — later [reported by Reuters](https://finance.yahoo.com/technology/ai/articles/exclusive-zuckerberg-says-ai-agent-201123441.html) from a recording — Zuckerberg said, "The trajectory of the agentic development over at least the last four months hasn't really accelerated in the way that we expected." He added that Meta's bets on its newly restructured organization "haven't come to fruition yet," and acknowledged that executives had been "super optimistic" about tools like Anthropic's Claude Code when planning began in January.
 
-This is a rare admission. Meta is spending an estimated $145 billion on AI infrastructure in 2026. It laid off 8,000 employees in May — roughly 10% of its global workforce — and reassigned another 7,000 into AI-focused teams. Despite all that, Zuckerberg is telling his own staff: agents are hard, and we're not where we expected to be.
+This is a rare admission. Meta is [spending an estimated $145 billion on AI infrastructure in 2026](https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/). It laid off 8,000 employees in May — roughly 10% of its global workforce — and reassigned another 7,000 into AI-focused teams. Despite all that, Zuckerberg is telling his own staff: agents are hard, and we're not where we expected to be.
 
 For builders running their own agent projects — at companies with budgets several orders of magnitude below Meta's — this deserves a careful read.
 

@@ -3,7 +3,7 @@
 > Signed June 5, NSPM-11 directs the DoD and intelligence community to accelerate AI adoption, mandate multiple vendors, and contractually prohibit commercial providers from disabling deployed systems. Here's what it changes for builders working on or near government AI.
 
 
-**At a glance:** President Trump signed NSPM-11 (National Security Presidential Memorandum 11) on June 5, 2026, directing the U.S. military and intelligence community to accelerate AI adoption. The memorandum replaces the Biden administration's NSM-25, establishes four pillars (Adoption, Adaptation, Assurance, Accountability), mandates multi-vendor procurement, and requires contractual clauses prohibiting commercial AI providers from disabling or modifying deployed systems without federal approval. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** President Trump signed [NSPM-11 (National Security Presidential Memorandum 11)](https://www.whitehouse.gov/presidential-actions/2026/06/national-security-presidential-memorandum-nspm-11/) on June 5, 2026, directing the U.S. military and intelligence community to accelerate AI adoption. The memorandum replaces the Biden administration's NSM-25, establishes four pillars (Adoption, Adaptation, Assurance, Accountability), mandates multi-vendor procurement, and requires contractual clauses prohibiting commercial AI providers from disabling or modifying deployed systems without federal approval. Part of our **[Builder's Log](/builders-log/)**.
 
 This is the companion piece to our [June 2 EO guide](/builders-log/trump-ai-executive-order-june-2026-signed-frontier-model-voluntary-review-builder-guide/). The EO covered civilian agencies, voluntary frontier model review, and the AI cybersecurity clearinghouse. NSPM-11 is the other half: it governs the DoD, the intelligence community, and the classified environments where the different rules apply.
 
@@ -11,7 +11,7 @@ This is the companion piece to our [June 2 EO guide](/builders-log/trump-ai-exec
 
 ## What NSPM-11 Actually Does
 
-NSPM-11 organizes national security AI policy around four pillars, which it calls **Adoption, Adaptation, Assurance, and Accountability**.
+[NSPM-11](https://www.whitehouse.gov/presidential-actions/2026/06/national-security-presidential-memorandum-nspm-11/) organizes national security AI policy around four pillars, which it calls **Adoption, Adaptation, Assurance, and Accountability**.
 
 **Adoption** is the first pillar — and its placement is intentional. The posture is speed over caution. The memorandum directs agencies to eliminate "unnecessary barriers to rapid deployment" and to maintain "deep, proactive partnerships with industry to make the most advanced frontier models broadly available to national security professionals without delay."
 

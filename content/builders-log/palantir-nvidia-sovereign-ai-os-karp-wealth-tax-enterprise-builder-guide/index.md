@@ -10,7 +10,7 @@ author: "Grove"
 draft: false
 ---
 
-On July 1, 2026, Palantir CEO Alex Karp appeared on CNBC's *Squawk Box* ostensibly to discuss a new partnership with NVIDIA. What followed was four minutes of live television that spawned a thousand hot takes, a "televised nervous breakdown" headline from Futurism, and a 9%+ jump in PLTR stock by midday.
+On July 1, 2026, [Palantir CEO Alex Karp appeared on CNBC's *Squawk Box*](https://www.forbes.com/sites/tylerroush/2026/07/01/palantir-billionaire-alex-karp-calls-ai-industry-effing-insane-in-heated-interview/) ostensibly to discuss a new partnership with NVIDIA. What followed was four minutes of live television that spawned a thousand hot takes, a "televised nervous breakdown" headline from Futurism, and a 9%+ jump in PLTR stock by midday.
 
 The rant is worth setting aside. The argument underneath it is not.
 
@@ -36,7 +36,7 @@ None of this means frontier APIs are wrong for your use case. For most builders,
 
 ## The Palantir-NVIDIA Sovereign AI OS: What's in the Stack
 
-Announced June 29, 2026 — two days before the rant — the Palantir-NVIDIA Sovereign AI OS Reference Architecture (AIOS-RA) is a full-stack design for enterprises that need AI to never leave the building.
+[Announced June 29, 2026](https://investors.palantir.com/news-details/2026/Palantir-and-NVIDIA-Team-to-Deliver-Sovereign-AI-Operating-System-Reference-Architecture/) — two days before the rant — the Palantir-NVIDIA Sovereign AI OS Reference Architecture (AIOS-RA) is a full-stack design for enterprises that need AI to never leave the building.
 
 **Hardware layer**: NVIDIA Blackwell Ultra systems — eight Blackwell Ultra GPUs per node, with NVIDIA Spectrum-X Ethernet networking for AI training and inference. This is current-generation hardware; Blackwell Ultra launched H1 2026 and is what the largest cloud providers are deploying.
 
@@ -73,15 +73,15 @@ For startups, developer tools companies, or any team shipping products where the
 
 ## The Business Performance Context
 
-Karp's argument benefits from Palantir actually selling well. Q1 2026 numbers:
+Karp's argument benefits from [Palantir actually selling well](https://finance.yahoo.com/markets/stocks/articles/palantir-reports-q1-2026-u-200500041.html). Q1 2026 numbers:
 - **84.7% revenue growth year-over-year**
 - **206 deals** totaling **$2.41 billion** closed in the quarter
-- **Rule of 40 score of 145%** (combined growth rate + profit margin, where 40 is considered excellent)
+- [**Rule of 40 score of 145%**](https://www.investing.com/news/company-news/palantir-q1-2026-slides-us-revenue-tops-100-growth-rule-of-40-hits-145-93CH-4657648) (combined growth rate + profit margin, where 40 is considered excellent)
 - Full-year guidance raised to **71% growth**
 
 NVIDIA posted parallel 85.2% revenue growth in the same period. Both companies benefit from the same thesis: enterprises want AI capabilities they control, and they're willing to pay for infrastructure that provides it.
 
-The sovereign AI market — AI infrastructure owned and operated by governments and regulated enterprises, independent of cloud providers — is projected by McKinsey to reach $600 billion by 2030. That's the total addressable market Palantir and NVIDIA are building toward together.
+The sovereign AI market — AI infrastructure owned and operated by governments and regulated enterprises, independent of cloud providers — is [projected by McKinsey to reach $600 billion by 2030](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/sovereign-ai-building-ecosystems-for-strategic-resilience-and-impact). That's the total addressable market Palantir and NVIDIA are building toward together.
 
 ---
 

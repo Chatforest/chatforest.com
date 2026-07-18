@@ -6,7 +6,7 @@ description: "Meituan's LongCat-2.0 — a 1.6T MoE trained entirely on Chinese c
 ---
 
 If you used Owl Alpha on OpenRouter in May or June and liked what you got, congratulations: you've already
-shipped with LongCat-2.0. On June 30, 2026, Meituan confirmed that **Owl Alpha** — the anonymous model
+shipped with LongCat-2.0. On June 30, 2026, [Meituan confirmed](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips) that **Owl Alpha** — the anonymous model
 that quietly topped OpenRouter's agent workspace rankings for two months — was a preview of their
 1.6-trillion-parameter coding model, now open-sourced under the MIT license.
 
@@ -22,7 +22,7 @@ paper, and no company name attached. It grew fast:
 
 - **10.1 trillion monthly tokens** by the time of the reveal — roughly 559 billion tokens per day
 - **242% month-over-month growth** in call volume
-- **#1 on the Hermes Agent workspace** by monthly call volume
+- [**#1 on the Hermes Agent workspace**](https://cryptobriefing.com/openrouter-owl-alpha-model-global-ranking/) by monthly call volume
 - **#2 on Claude Code** integrations by call volume
 - **#3 across OpenClaw deployments**
 
@@ -35,7 +35,7 @@ legitimately surprising benchmark position before the geopolitics attached to th
 
 ## The Model
 
-LongCat-2.0 is a Mixture-of-Experts model with:
+[LongCat-2.0](https://huggingface.co/meituan-longcat/LongCat-2.0) is a Mixture-of-Experts model with:
 
 - **1.6 trillion total parameters**
 - **33B–56B active parameters per token** (dynamically allocated; query complexity determines which range)
@@ -70,8 +70,8 @@ leaderboard.
 
 Previous Chinese frontier models — including DeepSeek V4 — trained primarily on domestic chips for
 inference but relied on restricted hardware (older Nvidia A100s or smuggled H100s) for at least part of
-the pre-training run. Meituan is claiming something different: **both pre-training and inference ran
-end-to-end on a 50,000-card cluster of domestic Chinese ASICs**.
+the pre-training run. Meituan is claiming something different: [**both pre-training and inference ran
+end-to-end on a 50,000-card cluster of domestic Chinese ASICs**](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips).
 
 The chips in question share architectural similarities with Huawei's Ascend 910C series, though Meituan
 has not publicly named the exact vendor. The coordination layer runs on Huawei's HCCL (their NCCL

@@ -3,7 +3,7 @@
 > SuperAI 2026 is live at Marina Bay Sands — 10,000 attendees, 150+ speakers, a 36-hour AI build sprint, and $2.3M in startup prizes. Here's what builders need to know from Day 1, and what to watch on Day 2.
 
 
-SuperAI 2026 opened this morning at Marina Bay Sands, Singapore. It is, by most measures, Asia's largest AI conference: 10,000 attendees, 1,500 AI companies, 150 speakers, and 150 countries represented — all sold out weeks in advance.
+[SuperAI 2026](https://www.prnewswire.com/news-releases/superai-singapore-2026-sells-out-asias-largest-ai-event-brings-together-10-000-global-innovators-302795988.html) opened this morning at Marina Bay Sands, Singapore. It is, by most measures, Asia's largest AI conference: 10,000 attendees, 1,500 AI companies, 150 speakers, and 150 countries represented — all sold out weeks in advance.
 
 The conference runs June 10–11 and sits inside Singapore AI Week (June 8–14), a city-wide series of 100+ satellite events that turns the island into a two-week staging ground for global AI deal-making, hiring, and demos.
 
@@ -23,7 +23,7 @@ That framing matters for builders targeting international markets. A product tha
 
 The Plaud Main Stage opened at 9am with two keynoters who have been tracking AI longer than most companies have existed.
 
-**Balaji Srinivasan** — "Personal, Private, Programmable." Srinivasan's talk framed the near future around three properties: AI that is personal (your data, your model, your preferences), private (runs locally or on sovereign infrastructure), and programmable (composable agents you control). His core argument is that the current era of centralized AI APIs is a waystation, not an endpoint — the terminal state is personal AI with verifiable behavior. Whether or not that timeline is right, the architectural implications are real now: local inference, privacy-preserving computation, and agent identity are all active builder problems.
+[**Balaji Srinivasan**](https://www.prnewswire.co.uk/news-releases/superai-2026-announces-first-speakers-as-singapore-strengthens-role-as-a-neutral-global-ai-hub-302761990.html) — "Personal, Private, Programmable." Srinivasan's talk framed the near future around three properties: AI that is personal (your data, your model, your preferences), private (runs locally or on sovereign infrastructure), and programmable (composable agents you control). His core argument is that the current era of centralized AI APIs is a waystation, not an endpoint — the terminal state is personal AI with verifiable behavior. Whether or not that timeline is right, the architectural implications are real now: local inference, privacy-preserving computation, and agent identity are all active builder problems.
 
 **Benedict Evans** — "AI Eats the World." Evans' annual industry read-out. His consistent frame: AI is not a product category, it is infrastructure. The question is not "which AI company wins" but "which industries are restructured by AI, and how fast." His past calls on mobile and e-commerce proved accurate over decade-long timescales. He and Srinivasan share a fireside chat closing Day 1 at 5:10pm.
 
@@ -77,7 +77,7 @@ What this means for builders outside the hackathon: if you're not using Exa for 
 
 Separately from the hackathon, the Genesis Startup Competition selected 10 finalists from hundreds of global applications across 40+ countries. They pitch live on Day 2 (June 11).
 
-The prize pool is US$2.3 million in non-dilutive prize capital, powered by Microsoft for Startups and OpenAI. The judging panel includes Indranil Sarkar from OpenAI's startups team.
+The [prize pool is US$2.3 million in non-dilutive prize capital](https://www.prnewswire.com/news-releases/superai-singapore-2026-sells-out-asias-largest-ai-event-brings-together-10-000-global-innovators-302795988.html), powered by Microsoft for Startups and OpenAI. The judging panel includes Indranil Sarkar from OpenAI's startups team.
 
 Note: Earlier Genesis materials cited $850K — the $2.3M figure appears in the most recent official press releases. The gap likely reflects additional sponsor contributions added after the initial announcement.
 

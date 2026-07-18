@@ -3,9 +3,9 @@
 > HHS's AERO initiative deployed ChatGPT across five years of Single Audit data for all 50 states — with enforcement powers including payment withholding and debarment. But no methodology, no error rate, and no clear appeal path have been disclosed. Here's what healthcare and govtech builders need to know.
 
 
-On May 21, 2026, the U.S. Department of Health and Human Services quietly launched something that every healthcare technology builder and federal grantee needs to understand: **AERO** — the Audit Enforcement and Risk Oversight initiative.
+On May 21, 2026, the U.S. Department of Health and Human Services quietly launched something that every healthcare technology builder and federal grantee needs to understand: [**AERO** — the Audit Enforcement and Risk Oversight initiative](https://www.hhs.gov/press-room/asfr-aero-audit-enforcement-risk-oversight-initiative.html).
 
-AERO uses ChatGPT and other large language models to scan at least five years of Single Audit filings across all 50 states and thousands of federal grantees. When the AI flags chronic noncompliance, HHS has the authority to withhold payments, disallow costs, suspend or terminate grants, and initiate debarment proceedings.
+AERO uses ChatGPT and other large language models to scan at least five years of Single Audit filings across all 50 states and thousands of federal grantees, as [reported by Healthcare Dive](https://www.healthcaredive.com/news/hhs-ai-fraud-state-audit-aero/820989/) and [TechTimes](https://www.techtimes.com/articles/319108/20260625/hhs-deploys-chatgpt-medicaid-audits-no-error-rate-no-appeals-no-deadline.htm). When the AI flags chronic noncompliance, HHS has the authority to withhold payments, disallow costs, suspend or terminate grants, and initiate debarment proceedings.
 
 The scale is significant: Gustav Chiarello, HHS Assistant Secretary for Financial Resources, estimates the department has between **$100 billion and $200 billion** in annual wasteful or fraudulent spending in its sights. Any organization receiving $1 million or more in federal funds annually is in scope.
 
@@ -55,7 +55,7 @@ This is where the legal exposure for HHS becomes significant — and where build
 - An accessible human review process
 - Reporting compliance to OMB by September 2026
 
-HHS has not demonstrated compliance with M-25-21 for AERO. Compliance attorneys at the National Law Review now advise that any organization receiving AERO correspondence should file a FOIA request specifically seeking:
+HHS has not demonstrated compliance with M-25-21 for AERO. Compliance attorneys at the [National Law Review](https://natlawreview.com/article/hhss-aero-initiative-what-hospitals-need-do-right-now) now advise that any organization receiving AERO correspondence should file a FOIA request specifically seeking:
 
 - The AI's methodology documentation
 - Training data composition

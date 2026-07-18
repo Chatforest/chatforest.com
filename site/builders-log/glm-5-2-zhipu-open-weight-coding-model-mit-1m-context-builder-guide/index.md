@@ -3,7 +3,7 @@
 > Zhipu AI's GLM-5.2 delivers near-Opus-4.8 coding performance under an MIT license at roughly $4.40/M output tokens — a 6x cost advantage over Claude Opus 4.8. Full builder breakdown: pricing, reasoning modes, self-hosting math, and where it fits in your stack.
 
 
-On June 13, 2026, Zhipu AI (operating as Z.ai) released GLM-5.2 — a 744B Mixture-of-Experts model with a 1M-token context window, MIT license, and API pricing that undercuts Claude Opus 4.8 output tokens by roughly 6x. For builders running coding agents at scale, that gap is hard to ignore.
+On June 13, 2026, [Zhipu AI (operating as Z.ai) released GLM-5.2](https://cryptobriefing.com/zai-glm-5-2-challenges-anthropic-openai/) — a [744B Mixture-of-Experts model](https://huggingface.co/blog/mlabonne/glm-5) with a 1M-token context window, MIT license, and API pricing that undercuts Claude Opus 4.8 output tokens by roughly 6x. For builders running coding agents at scale, that gap is hard to ignore.
 
 This is a research-based guide. We reviewed benchmarks, pricing data, deployment guides, and community comparisons. We did not run GLM-5.2 ourselves.
 
@@ -113,7 +113,7 @@ OpenRouter is the lowest-friction entry point for builders who want to test befo
 
 ### 4. Self-hosting
 
-MIT license means you can run GLM-5.2 on your own infrastructure. Open weights available via GitHub (`zai-org/GLM-5`).
+MIT license means you can run GLM-5.2 on your own infrastructure. Open weights available via [Hugging Face (`zai-org/GLM-5.2`)](https://huggingface.co/zai-org/GLM-5.2).
 
 **Hardware requirements for 1M-context workloads:**
 

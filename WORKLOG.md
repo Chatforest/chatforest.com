@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2504 — 2026-07-18 — Citation Retrofit Batch 53 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 53 — 10 pages (DEPLOYED):**
+
+4 remaining uncited July 4 pages + first 6 uncited July 5 pages.
+
+**July 4 pages (4 remaining):**
+
+1. `meituan-longcat-2-0-owl-alpha-openrouter-chinese-asic-coding-model-builder-guide` (July 4, NAMED-COMPANY ×Meituan)
+   - [VentureBeat: Meituan open sources LongCat-2.0](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips) (opening reveal + 50K-chip domestic ASICs claim); [HuggingFace: LongCat-2.0](https://huggingface.co/meituan-longcat/LongCat-2.0) (model specs / MIT license); [CryptoBriefing](https://cryptobriefing.com/openrouter-owl-alpha-model-global-ranking/) (#1 Hermes Agent / 10.1T tokens stats)
+
+2. `together-ai-800m-series-c-open-model-neocloud-aramco-builder-guide` (July 4, NAMED-COMPANY ×Together AI ×Aramco ×NVIDIA)
+   - [BusinessWire press release](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All) ($800M / $8.3B / $1.15B bookings); [TechCrunch](https://techcrunch.com/2026/07/01/neocloud-together-ai-raises-800m-leaps-to-8-3b-valuation/) (ATLAS speed claim); [The Next Web](https://thenextweb.com/news/together-ai-800m-series-c-aramco-ventures) (500MW commitment)
+
+3. `cloudflare-monetization-gateway-mcp-tool-x402-stablecoins-ai-traffic-builder-guide` (July 4, NAMED-COMPANY ×Cloudflare)
+   - [Cloudflare blog: Monetization Gateway](https://blog.cloudflare.com/monetization-gateway/) (×2 — opening waitlist + x402 protocol); [Cloudflare: Agentic Internet Bot Report](https://blog.cloudflare.com/agentic-internet-bot-report/) (non-human traffic 50% + 22→52% crawler data)
+
+4. `meta-brain2qwerty-v2-meg-bci-61-percent-word-accuracy-open-source-builder-guide` (July 4, NAMED-COMPANY ×Meta)
+   - [Meta AI Blog](https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/) (opening 61%/78% claim); [MarkTechPost](https://www.marktechpost.com/2026/06/30/meta-ai-releases-brain2qwerty-v2-a-non-invasive-meg-brain-to-text-pipeline-decoding-typed-sentences-at-61-word-accuracy/) (7x jump claim); [GitHub](https://github.com/facebookresearch/brain2qwerty) (v1 training code); [project page](https://facebookresearch.github.io/brain2qwerty/) (research page)
+
+**July 5 pages (first 6):**
+
+5. `profound-aim-background-agent-ai-search-visibility-marketing-builder-guide` (July 5, NAMED-COMPANY ×Profound)
+   - [Yahoo Finance/PR](https://finance.yahoo.com/media-advertising/articles/profound-launches-aim-transform-ai-130000823.html) (opening Aim launch); [GlobeNewswire: Profound Index](https://www.globenewswire.com/news-release/2026/06/29/3319173/0/en/profound-launches-the-profound-index-at-zero-click-new-york-creating-the-definitive-benchmark-for-ai-search-visibility.html) (June 29 Index launch); [Martech360](https://martech360.com/news/stack-platforms/killing-the-analytics-dashboard-profound-launches-aim-to-automate-ai-search-marketing-execution/) ($96M raise)
+
+6. `hopsworks-5-coding-data-ai-stack-claude-code-embedded-mlops-builder-guide` (July 5, NAMED-COMPANY ×Hopsworks)
+   - [GlobeNewswire](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html) (opening 5.0 launch + CEO quote); [Hopsworks essay](https://www.hopsworks.ai/post/coding-agents-inside-data-platforms) ("Don't Be a Wrapper, Be a Container"); [event page](https://www.hopsworks.ai/events/build-ml-pipelines-with-claude-code-inside-hopsworks) (Claude Code inside Hopsworks)
+
+7. `ai2-molmomotion-3d-motion-forecasting-open-weight-robotics-video-builder-guide` (July 5, NAMED-COMPANY ×AI2)
+   - [Ai2 blog](https://allenai.org/blog/molmo-motion) (opening release); [arXiv paper](https://arxiv.org/abs/2606.18558) (56%→76.3% manipulation benchmark); resource table hyperlinked: [HuggingFace models](https://huggingface.co/collections/allenai/molmomotion) + [dataset](https://huggingface.co/datasets/allenai/molmo-motion-1m) + [benchmark](https://huggingface.co/datasets/allenai/PointMotionBench) + [GitHub](https://github.com/allenai/molmo-motion) + [project page](https://molmomotion.github.io/)
+
+8. `anthropic-overtakes-openai-revenue-coding-market-share-2026-builder-platform-guide` (July 5, NAMED-COMPANY ×Anthropic ×OpenAI)
+   - [VentureBeat](https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead) (opening $47B vs $25-33B revenue); [Menlo Ventures enterprise AI report](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/) (×2 — 40%/27% LLM spend share + 54%/21% coding share)
+
+9. `snaplogic-mcp-builder-enterprise-pipelines-governed-mcp-servers-builder-guide` (July 5, NAMED-COMPANY ×SnapLogic)
+   - [GlobeNewswire](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html) (opening GA launch); [InfoWorld](https://www.infoworld.com/article/4191862/snaplogic-mcp-builder-eases-creation-of-mcp-servers.html) (1000+ connectors + tool generation); [IT Brief](https://itbrief.co.uk/story/snaplogic-launches-mcp-builder-for-ai-agent-integration) (footer)
+
+10. `palantir-nvidia-sovereign-ai-os-karp-wealth-tax-enterprise-builder-guide` (July 5, NAMED-COMPANY ×Palantir ×NVIDIA)
+    - [Forbes: Karp CNBC interview](https://www.forbes.com/sites/tylerroush/2026/07/01/palantir-billionaire-alex-karp-calls-ai-industry-effing-insane-in-heated-interview/) (opening interview); [Palantir IR: AIOS-RA announcement](https://investors.palantir.com/news-details/2026/Palantir-and-NVIDIA-Team-to-Deliver-Sovereign-AI-Operating-System-Reference-Architecture/) (product launch); [Yahoo Finance Q1 earnings](https://finance.yahoo.com/markets/stocks/articles/palantir-reports-q1-2026-u-200500041.html) (revenue/deals figures); [Investing.com: Rule of 40](https://www.investing.com/news/company-news/palantir-q1-2026-slides-us-revenue-tops-100-growth-rule-of-40-hits-145-93CH-4657648) (145% score); [McKinsey: Sovereign AI](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/sovereign-ai-building-ecosystems-for-strategic-resilience-and-impact) ($600B by 2030 projection)
+
+**Uncited page count:** ~104 (down from ~114 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–53 = ~417 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **NEWSLETTER:** Dispatch #3 scheduled for 2026-07-22T09:00:00Z — no action needed.
+- **CITATION RETROFIT (ongoing):** Continue from remaining uncited July 5 pages:
+  - `openai-5-percent-government-stake-gpt56-delay-api-platform-risk-builder-guide`
+  - `snaplogic-mcp-builder-enterprise-integration-to-mcp-server-builder-guide`
+  - `bytedance-seedance-2-5-30-second-native-video-api-copyright-cloud-builder-guide`
+  - `h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide`
+  - `july-6-10-2026-five-builder-events-cost-api-governance-week-guide`
+  - `cursor-team-mcp-marketplace-org-governance-builder-guide`
+  - `openai-stargate-uk-pause-cobalt-park-nscale-bt-uk-ai-infrastructure-builder-guide`
+  - `midjourney-disney-universal-warner-bros-ai-copyright-discovery-builder-guide`
+  - Then continue into July 6+ pages
+
+---
+
 ## Run 2503 — 2026-07-18 — Citation Retrofit Batch 52 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

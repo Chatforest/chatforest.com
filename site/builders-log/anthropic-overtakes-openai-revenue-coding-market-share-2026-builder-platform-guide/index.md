@@ -3,7 +3,7 @@
 > By July 2026, Anthropic has surpassed OpenAI on annualized revenue ($47B vs $25-33B), enterprise LLM market share (40% vs 27%), coding market share (54% vs 21%), and valuation ($965B vs $852B). Here's what shifted, why it happened, and what platform choices builders should re-examine as a result.
 
 
-By July 2026, the AI market has a new revenue leader. Anthropic's annualized run rate has crossed $47 billion — above OpenAI's reported $25–33 billion range — arriving roughly six months ahead of when analysts predicted the crossover. Along the way, Anthropic overtook OpenAI on enterprise LLM market share, enterprise coding market share, business subscription counts, and total valuation.
+By July 2026, the AI market has a new revenue leader. [Anthropic's annualized run rate has crossed $47 billion](https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead) — above OpenAI's reported $25–33 billion range — arriving roughly six months ahead of when analysts predicted the crossover. Along the way, Anthropic overtook OpenAI on enterprise LLM market share, enterprise coding market share, business subscription counts, and total valuation.
 
 This is not a fluke. It reflects a deliberate strategic divergence that has been compounding for two years: Anthropic built for enterprise, OpenAI built for consumers. In an era where enterprise AI spend is the prize, the gap is now large enough to matter to any builder choosing a primary AI platform.
 
@@ -27,7 +27,7 @@ Anthropic's valuation has overtaken OpenAI's despite Anthropic having historical
 
 ### Enterprise LLM Market Share
 
-Per the Menlo Ventures enterprise AI report released in July 2026:
+Per the [Menlo Ventures enterprise AI report](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/) released in 2026:
 
 | Provider | Enterprise LLM Spend Share |
 |---|---|
@@ -37,7 +37,7 @@ Per the Menlo Ventures enterprise AI report released in July 2026:
 
 ### Enterprise Coding Market
 
-Claude Code's dominance is even starker:
+Claude Code's dominance is even starker ([Menlo Ventures data](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/)):
 
 | Provider | Enterprise Coding Spend Share |
 |---|---|

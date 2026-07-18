@@ -3,7 +3,7 @@
 > Together AI closed an $800M Series C at $8.3B valuation on July 1, with Aramco leading and NVIDIA participating. Annual bookings hit $1.15B. Here's what the funding signals and how it should shape your inference stack decisions.
 
 
-Together AI raised an $800 million Series C on July 1, 2026, valuing the company at $8.3 billion. Aramco Ventures led the round; NVIDIA, Vista Equity Partners, General Catalyst, Emergence Capital, Pegatron, and others participated. The company disclosed that annual bookings surpassed $1.15 billion in Q2 2026 — roughly 3.6× the revenue run-rate typically associated with their $3.3B Series B valuation from 16 months prior.
+Together AI raised an [$800 million Series C](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All) on July 1, 2026, valuing the company at $8.3 billion. Aramco Ventures led the round; NVIDIA, Vista Equity Partners, General Catalyst, Emergence Capital, Pegatron, and others participated. The company disclosed that annual bookings surpassed $1.15 billion in Q2 2026 — roughly 3.6× the revenue run-rate typically associated with their $3.3B Series B valuation from 16 months prior.
 
 This round matters to builders beyond the headline number. Together AI is, in practice, the largest dedicated inference platform for open-weight models — Llama, DeepSeek, Qwen, Kimi, Nemotron. If you route traffic through open models at meaningful scale, you are likely already using it or have it on your shortlist. Understanding what this funding enables and what it signals about the market helps you plan your infrastructure bets.
 
@@ -19,7 +19,7 @@ Three core products:
 
 The company also sells GPU Clusters for training and fine-tuning at $3.99–$5.49/hr per H100 depending on commitment length.
 
-Underlying everything is ATLAS, Together's proprietary inference engine. It uses speculative decoding and other optimization techniques to push throughput — the company now claims #1 output speed among GPU-based providers for DeepSeek-R1, DeepSeek-V3.1, Kimi-K2, Qwen-3-Coder-480B, and GPT-OSS-120B. In internal benchmarks, ATLAS delivers up to 400% acceleration over baseline serving on select models, and up to 2× faster serverless inference versus the prior generation of their stack.
+Underlying everything is ATLAS, Together's proprietary inference engine. It uses speculative decoding and other optimization techniques to push throughput — [the company now claims #1 output speed](https://techcrunch.com/2026/07/01/neocloud-together-ai-raises-800m-leaps-to-8-3b-valuation/) among GPU-based providers for DeepSeek-R1, DeepSeek-V3.1, Kimi-K2, Qwen-3-Coder-480B, and GPT-OSS-120B. In internal benchmarks, ATLAS delivers up to 400% acceleration over baseline serving on select models, and up to 2× faster serverless inference versus the prior generation of their stack.
 
 ## The Funding Math
 
@@ -33,7 +33,7 @@ NVIDIA's continued participation matters for a different reason: it confirms tha
 
 ## Use of Funds: 50× Capacity
 
-The company disclosed commitments for more than 500 megawatts of compute as part of the fundraise. That maps to a plan to grow capacity roughly 50 times over five years.
+The company [disclosed commitments for more than 500 megawatts of compute](https://thenextweb.com/news/together-ai-800m-series-c-aramco-ventures) as part of the fundraise. That maps to a plan to grow capacity roughly 50 times over five years.
 
 To put 500 MW in context: a hyperscale data center is typically 50–200 MW. Together AI is committing to the equivalent of multiple hyperscale builds, dedicated to open-model inference. The capital structure from this round likely supports long-term power purchase agreements and hardware procurement at a scale that drives their per-GPU cost down, which gets passed to builders through lower token pricing.
 

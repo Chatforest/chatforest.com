@@ -3,7 +3,7 @@
 > In 60 days, Anthropic, OpenAI, AWS, and Microsoft committed more than $10 billion to embedding engineers inside enterprise customers. Here is what the FDE wave means for AI builders, what each platform bets on, and how to position in the gap.
 
 
-On July 2, 2026, Microsoft announced **Microsoft Frontier Company** — a new operating business backed by $2.5 billion and 6,000 embedded engineers. It followed AWS's $1 billion Forward Deployed Engineering (FDE) unit by exactly 48 hours. Zoom out 60 days and the pattern is unmistakable: every major AI platform is now copying Palantir's decade-old playbook, all at once.
+On July 2, 2026, [Microsoft announced **Microsoft Frontier Company**](https://www.cnbc.com/2026/07/02/microsoft-commits-2point5-billion-6000-employees-ai-implementation-unit.html) — a new operating business backed by $2.5 billion and 6,000 embedded engineers. It followed [AWS's $1 billion Forward Deployed Engineering (FDE) unit](https://www.cnbc.com/2026/06/30/aws-amazon-ai-forward-deployed-engineers.html) by exactly 48 hours. Zoom out 60 days and the pattern is unmistakable: every major AI platform is now copying Palantir's decade-old playbook, all at once.
 
 Here is the full timeline, what it means technically, and how builders should respond.
 
@@ -87,7 +87,7 @@ These six surfaces are consistent across all four platforms. They differ in whic
 - **Model diversity:** Deliberately model-agnostic — can deploy OpenAI, Anthropic Claude, MAI models, and open-source models. This is a direct counter to OpenAI Deployment Co's obvious preference for GPT.  
 - **IP protection principle:** Customer data and IP are never used to train models. Microsoft has codified this as a product guarantee, not just a policy statement.  
 - **Technical emphasis:** Azure AI Foundry as orchestration layer, GitHub Copilot for developer workflows, model-diverse "heterogeneous AI platform"  
-- **Early customers:** LSEG (London Stock Exchange Group), Land O'Lakes, Unilever, Novo Nordisk
+- **Early customers:** [LSEG (London Stock Exchange Group), Land O'Lakes, Unilever, and Novo Nordisk](https://the-decoder.com/microsoft-launches-2-5-billion-frontier-company-to-embed-6000-ai-engineers-inside-enterprise-clients/)
 
 ---
 

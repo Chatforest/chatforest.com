@@ -3,7 +3,7 @@
 > Profound launched Aim on July 2, 2026 — an always-on background agent that monitors your brand's AI search visibility, identifies high-impact opportunities, and routes execution to specialized sub-agents. Here's what builders need to know.
 
 
-On July 2, 2026, Profound launched Aim — an always-on background agent for marketing teams. Where Profound's previous product gave teams a dashboard of AI search visibility data, Aim watches that data continuously, decides what matters, and starts the work. The CEO's framing: "Marketing teams don't need another dashboard. They need to know what to do next."
+On July 2, 2026, [Profound launched Aim](https://finance.yahoo.com/media-advertising/articles/profound-launches-aim-transform-ai-130000823.html) — an always-on background agent for marketing teams. Where Profound's previous product gave teams a dashboard of AI search visibility data, Aim watches that data continuously, decides what matters, and starts the work. The CEO's framing: "Marketing teams don't need another dashboard. They need to know what to do next."
 
 The underlying shift Aim addresses is real: AI search (Perplexity, ChatGPT, Google AI Overviews, and similar) is now a primary discovery channel for many products, and how your brand appears in AI-generated answers is increasingly different from how it ranks in traditional search. Profound monitors those AI responses, and Aim is their bet that most teams don't have bandwidth to act on the signals themselves.
 
@@ -17,7 +17,7 @@ Profound's tracking measures citation frequency, sentiment, accuracy (whether AI
 
 ## What Profound Launched the Week Before Aim
 
-On June 29, Profound launched the Profound Index — described as the "definitive benchmark for AI search visibility" — at the Zero Click New York conference. This is their attempt to establish a standardized measurement of brand presence across AI search platforms, analogous to what domain authority was for traditional SEO.
+On June 29, [Profound launched the Profound Index](https://www.globenewswire.com/news-release/2026/06/29/3319173/0/en/profound-launches-the-profound-index-at-zero-click-new-york-creating-the-definitive-benchmark-for-ai-search-visibility.html) — described as the "definitive benchmark for AI search visibility" — at the Zero Click New York conference. This is their attempt to establish a standardized measurement of brand presence across AI search platforms, analogous to what domain authority was for traditional SEO.
 
 Aim is built on top of this Index: the benchmark data feeds the opportunity detection that Aim acts on.
 
@@ -61,11 +61,11 @@ Profound's platform is trusted by Figma, Walmart, Ramp, MongoDB, Chime, and U.S.
 
 ## The Broader Signal
 
-Profound raised $96 million to build this business. The bet is that "AI search visibility" becomes as established a marketing discipline as SEO — with its own tools, benchmarks, practitioners, and agency services. Aim is their move from analytics platform to active agent, which is both the obvious evolution and the risky one: analytics tools measure, agents fail.
+[Profound raised $96 million](https://martech360.com/news/stack-platforms/killing-the-analytics-dashboard-profound-launches-aim-to-automate-ai-search-marketing-execution/) to build this business. The bet is that "AI search visibility" becomes as established a marketing discipline as SEO — with its own tools, benchmarks, practitioners, and agency services. Aim is their move from analytics platform to active agent, which is both the obvious evolution and the risky one: analytics tools measure, agents fail.
 
 For builders shipping AI-native products, the strategic implication is simpler: you need to know how AI models describe your product, and you need a content strategy for the cases where they describe it wrong. Whether you use Profound or not, that's the problem Aim is solving.
 
 ---
 
-*ChatForest covers AI search, agent infrastructure, and developer marketing for builders. This article is based on Profound's July 2 press release, MartechSeries reporting, and Adweek's coverage. We have no commercial relationship with Profound.*
+*ChatForest covers AI search, agent infrastructure, and developer marketing for builders. This article is based on [Profound's July 2 press release](https://finance.yahoo.com/media-advertising/articles/profound-launches-aim-transform-ai-130000823.html), [Martech360 reporting](https://martech360.com/news/stack-platforms/killing-the-analytics-dashboard-profound-launches-aim-to-automate-ai-search-marketing-execution/), and the [Profound Index announcement](https://www.globenewswire.com/news-release/2026/06/29/3319173/0/en/profound-launches-the-profound-index-at-zero-click-new-york-creating-the-definitive-benchmark-for-ai-search-visibility.html). We have no commercial relationship with Profound.*
 

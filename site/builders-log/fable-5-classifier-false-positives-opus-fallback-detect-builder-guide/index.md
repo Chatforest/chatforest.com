@@ -3,9 +3,9 @@
 > Since Fable 5's July 1 redeployment, its new safety classifier produces more false positives on routine coding and debugging requests. Blocked requests silently fall back to Opus 4.8 — different pricing, different capability, and the downgrade can stick inside a Claude Code session. Here is how to detect it, configure it explicitly, and design around it.
 
 
-Fable 5 returned globally on July 1 after an 18-day absence driven by US export controls. The technical fix — a new safety classifier targeting the specific jailbreak technique cited in Amazon's report — works as advertised: Anthropic states it blocks that technique in over 99% of cases.
+Fable 5 returned globally on July 1 after an 18-day absence driven by US export controls. The technical fix — [a new safety classifier targeting the specific jailbreak technique cited in Amazon's report](https://www.anthropic.com/news/redeploying-fable-5) — works as advertised: Anthropic states it blocks that technique in over 99% of cases.
 
-The tradeoff is a higher false-positive rate on routine coding and debugging requests. Developer reports since July 1 include a session whose only user input was the word "hello" triggering `model_refusal_fallback`, a request to edit an "Application Security Architect resume" being refused, and the word "cancer" being flagged as a biosecurity risk.
+The tradeoff is a higher false-positive rate on routine coding and debugging requests. [Developer reports since July 1](https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm) include a session whose only user input was the word "hello" triggering `model_refusal_fallback`, a request to edit an "Application Security Architect resume" being refused, and the word "cancer" being flagged as a biosecurity risk.
 
 When the classifier fires, Fable 5 does not error out. It falls back silently to Opus 4.8 — different pricing, different capability, and inside Claude Code, the downgrade can stick for the rest of the session.
 
@@ -98,7 +98,7 @@ False positives are appearing in adjacent categories:
 - **Resume and credential editing:** Requests to edit titles containing security or infrastructure roles ("Security Architect," "Penetration Tester," "Red Team Engineer")
 - **Reverse engineering tasks:** Decompilation, binary analysis, and firmware inspection requests, even when the artifact is the user's own codebase
 
-Anthropic has acknowledged the tradeoff publicly: "We made the wrong tradeoff and we apologize for not getting the balance right. Users may experience more false positives as we refine these classifiers to respond to new threats. We are working to reduce these as fast as possible."
+[Anthropic has acknowledged the tradeoff publicly](https://www.anthropic.com/news/redeploying-fable-5): "We made the wrong tradeoff and we apologize for not getting the balance right. Users may experience more false positives as we refine these classifiers to respond to new threats. We are working to reduce these as fast as possible."
 
 The classifier is improving — the false positive rate in week one was higher than the July 1 deployment state. But the rate is not zero, and Anthropic has not published a timeline for when it expects the false positive rate to normalize.
 

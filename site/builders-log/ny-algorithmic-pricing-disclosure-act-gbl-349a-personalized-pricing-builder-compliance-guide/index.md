@@ -3,9 +3,9 @@
 > New York's Algorithmic Pricing Disclosure Act has been in enforcement since November 10, 2025. If your pricing engine uses personal data to set a per-user price, you must display 'THIS PRICE WAS SET BY AN ALGORITHM USING YOUR PERSONAL DATA' at or near every such price. Here's exactly what triggers the requirement, what doesn't, and how builders should implement it.
 
 
-New York's **Algorithmic Pricing Disclosure Act** — General Business Law § 349-a, enacted as Part X of the FY2026 budget bill (A3008) and signed by Governor Hochul on May 9, 2025 — requires a specific one-sentence disclosure label whenever a business uses personal data to algorithmically set a consumer-facing price.
+New York's **Algorithmic Pricing Disclosure Act** — General Business Law § 349-a, enacted as Part X of the [FY2026 budget bill (A3008)](https://nysenate.gov/legislation/bills/2025/A3008) and signed by Governor Hochul on May 9, 2025 — requires a specific one-sentence disclosure label whenever a business uses personal data to algorithmically set a consumer-facing price.
 
-The law became enforceable on **November 10, 2025**, after the National Retail Federation's First Amendment challenge was dismissed by a federal court on October 8, 2025. The Attorney General's first major enforcement action — a formal demand to Instacart over buried disclosures — was announced in January 2026.
+The law became enforceable on **November 10, 2025**, after the National Retail Federation's First Amendment challenge was dismissed by a federal court on October 8, 2025. The Attorney General's first major enforcement action — a formal demand to Instacart over buried disclosures — was announced in January 2026. (See [bill text: A3008](https://nysenate.gov/legislation/bills/2025/A3008).)
 
 The rule is straightforward in concept: if you personalize prices using data about the individual consumer, you must say so, right next to the price. The complexity is in the boundary cases — what data use triggers the requirement, and what doesn't.
 
