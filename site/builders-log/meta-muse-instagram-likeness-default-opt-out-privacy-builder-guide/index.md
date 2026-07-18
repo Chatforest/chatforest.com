@@ -7,7 +7,7 @@
 
 When Meta launched Muse Image on July 7, 2026, most of the coverage focused on what the model can do: agentic tool use, Arena #2 rankings, no API yet. What didn't get as much attention is what got turned on at the same time.
 
-Every public Instagram account — meaning any account not manually set to private — is now available by default as a reference for Muse Image generation. Anyone can @-mention a public account in a Muse Image prompt and the model will use that account's public photos to generate images of that person's likeness. Meta's own documentation is explicit: "You will not be notified about content created using AI features at Meta."
+Every public Instagram account — meaning any account not manually set to private — [is now available by default as a reference for Muse Image generation](https://www.malwarebytes.com/blog/ai/2026/07/turn-off-this-meta-setting-before-someone-generates-ai-images-of-you). Anyone can @-mention a public account in a Muse Image prompt and the model will use that account's public photos to generate images of that person's likeness. [Meta's own documentation is explicit](https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/): "You will not be notified about content created using AI features at Meta."
 
 That's a significant change to the baseline assumption of what a public Instagram post means.
 
@@ -45,7 +45,7 @@ Going private has the same limitations. Images generated before a profile become
 
 ## The Regulatory Situation
 
-Meta has navigated similar defaults in Europe before — and lost. The company's history with GDPR consent requirements, particularly around targeted advertising and AI training data, includes multiple enforcement actions from Ireland's Data Protection Commission (Meta's EU lead regulator) and ongoing proceedings from noyb and other advocacy groups.
+Meta has navigated similar defaults in Europe before — and lost. The company's history with GDPR consent requirements, particularly around targeted advertising and AI training data, [includes multiple enforcement actions](https://variety.com/2026/digital/news/caa-slams-meta-opt-out-ai-muse-image-1236805387/) from Ireland's Data Protection Commission (Meta's EU lead regulator) and ongoing proceedings from noyb and other advocacy groups.
 
 The opt-out default for Muse Image will almost certainly face EU scrutiny under GDPR Article 7 (consent must be freely given, specific, informed, and unambiguous) and Article 9 (additional protections for biometric data). Likeness generation from photos is a strong candidate for biometric data classification — several EU national DPAs have taken positions on face recognition training data that would apply here.
 
@@ -82,4 +82,8 @@ The platforms that move fastest to establish opt-out-as-default for AI feature e
 ---
 
 *Related: "[Meta Muse Image Is Live But API-Locked](/builders-log/meta-muse-image-muse-video-msl-launch-agentic-image-gen-builder-guide/)" covers the model architecture and agentic capabilities. "[Chinese AI at 46%](/builders-log/chinese-ai-models-us-enterprise-adoption-deepseek-glm-cost-risk-builder-guide-2026/)" covers the data sovereignty context for builders evaluating non-US AI platforms.*
+
+---
+
+*Sources: [Meta AI blog: Introducing Muse Image and Muse Video](https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/) · [Malwarebytes: Turn off this Meta setting](https://www.malwarebytes.com/blog/ai/2026/07/turn-off-this-meta-setting-before-someone-generates-ai-images-of-you) · [Variety: CAA slams Meta opt-out policy](https://variety.com/2026/digital/news/caa-slams-meta-opt-out-ai-muse-image-1236805387/) · [NewsNation: How to stop Meta AI from using your Instagram pics](https://www.newsnationnow.com/business/tech/ai/meta-ai-feature-uses-your-instagram-pics/)*
 

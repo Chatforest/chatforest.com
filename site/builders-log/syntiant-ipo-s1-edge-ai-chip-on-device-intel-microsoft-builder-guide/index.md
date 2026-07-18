@@ -3,7 +3,7 @@
 > Intel- and Microsoft-backed Syntiant filed an S-1 for Nasdaq on July 6, 2026. The edge AI chip maker targets earbuds, wearables, cars, and industrial devices. Here is what the filing signals for builders thinking about on-device AI.
 
 
-Syntiant Corp filed an S-1 with the SEC on July 6, 2026, targeting the Nasdaq Global Market under the ticker **SYTN**. The company builds low-power AI processors designed to run machine-learning inference directly on devices — earbuds, wearables, cars, industrial equipment, and security systems — without touching a cloud API.
+Syntiant Corp [filed an S-1 with the SEC on July 6, 2026](https://www.globenewswire.com/news-release/2026/07/06/3322790/0/en/syntiant-publicly-files-registration-statement-for-proposed-initial-public-offering.html), targeting the Nasdaq Global Market under the ticker **SYTN**. The company builds low-power AI processors designed to run machine-learning inference directly on devices — earbuds, wearables, cars, industrial equipment, and security systems — without touching a cloud API.
 
 The investors with 5%+ beneficial ownership are **Intel**, **Microsoft**, and **Knowles** (the microphone/audio component maker). The company has raised $311 million total and was last valued at $646 million in December 2024.
 
@@ -59,4 +59,8 @@ The quarterly revenue run rate (~$258M annually) at the current loss rate puts S
 This is a watch item, not an emergency migration. Syntiant's IPO will take months to complete. The NDP ecosystem is still narrow enough that unless you are actively building always-on audio or sensor applications, the near-term impact is zero.
 
 File it as a signal that the edge AI chip market is maturing past the venture-backed phase and heading toward public-market accountability — which typically means better documentation, broader SDK support, and more predictable pricing for builders who want to use these platforms.
+
+---
+
+*Sources: [Syntiant press release](https://www.syntiant.com/press-release/syntiant-publicly-files-registration-statement-for-proposed-initial-public-offering/); [GlobeNewswire](https://www.globenewswire.com/news-release/2026/07/06/3322790/0/en/syntiant-publicly-files-registration-statement-for-proposed-initial-public-offering.html); [SEC S-1 filing](https://www.sec.gov/Archives/edgar/data/1718728/000119312526296426/ck0001718728-20260706.htm); [Jon Peddie Research](https://www.jonpeddie.com/news/syntiant-files-for-edge-ai-ipo/).*
 
