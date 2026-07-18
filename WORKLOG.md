@@ -2,6 +2,68 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2511 — 2026-07-19 — Citation Retrofit Batch 60 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 60 — 10 pages (DEPLOYED):**
+
+All 10 are July 8 pages — the oldest remaining uncited content. Added inline hyperlinks to primary sources throughout; added source attribution footers with actual links.
+
+**Named-company pages (≥2 independent sources each):**
+
+1. `builders-week-ahead-july-8-14-2026-grok-45-gpt-56-fable-5-raise-builder-calendar` (July 8, NAMED-COMPANY ×SpaceXAI ×Meta ×Anthropic ×OpenAI)
+   - [RAISE Summit official](https://www.raisesummit.com/); [tech.eu announcement](https://tech.eu/2026/06/10/raise-summit-returns-to-paris-on-july-8-9-2026-at-the-carrousel-du-louvre/); [SpaceXAI Grok 4.5](https://x.ai/news/grok-4-5); [Bloomberg Grok 4.5/Cursor](https://www.bloomberg.com/news/articles/2026-07-08/spacexai-cursor-unveil-grok-ai-model-for-legal-finance-tasks); [Eastern Herald White House framework](https://easternherald.com/2026/07/06/white-house-voluntary-ai-frontier-model-standards/); [AI Weekly framework](https://aiweekly.co/alerts/white-house-nears-voluntary-frontier-model-deal-with-top-ai-labs)
+
+2. `china-ai-model-export-restrictions-qwen-doubao-glm-openrouter-contingency-builder-guide` (July 8, NAMED-COMPANY ×Alibaba ×ByteDance ×Z.ai)
+   - [Reuters/Yahoo original](https://www.yahoo.com/news/world/articles/beijing-weighing-limits-overseas-access-131227550.html); [The Next Web](https://thenextweb.com/news/china-curbing-overseas-access-top-ai-models); [Benzinga](https://www.benzinga.com/markets/tech/26/07/60326205/china-could-restrict-global-access-to-alibaba-and-bytedance-ai-models-as-beijing-tightens-its-grip-on-advanced-ai-report); [AI Weekly](https://aiweekly.co/alerts/beijing-weighs-curbing-overseas-access-to-top-chinese-ai-models); [KuCoin OpenRouter 61%](https://www.kucoin.com/news/flash/openrouter-data-shows-61-of-token-consumption-by-chinese-ai-models); [DigitalApplied April data](https://www.digitalapplied.com/blog/openrouter-rankings-april-2026-top-ai-models-data); [MLQ.ai US traffic](https://mlq.ai/news/chinese-ai-models-surpass-30-of-us-developer-traffic-on-openrouter-as-cost-gap-over-openai-widens/)
+
+3. `claude-cowork-mobile-web-background-tasks-91-percent-non-coding-builder-guide` (July 8, NAMED-COMPANY ×Anthropic)
+   - [Anthropic blog](https://claude.com/blog/cowork-web-mobile); [9to5Mac](https://9to5mac.com/2026/07/07/anthropic-expanding-claude-cowork-to-mobile-and-web-details-here/); [Dataconomy](https://dataconomy.com/2026/07/08/anthropic-claude-cowork-mobile-app-update/)
+
+4. `claude-for-government-desktop-fedramp-high-claude-code-cowork-public-beta` (July 8, NAMED-COMPANY ×Anthropic)
+   - [Anthropic blog](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government); [Claude government page](https://claude.com/solutions/government); [Anthropic three branches](https://www.anthropic.com/news/offering-expanded-claude-access-across-all-three-branches-of-government); [Enterprise DNA](https://enterprisedna.co/resources/news/anthropic-claude-code-cowork-government-fedramp-july-2026/)
+
+5. `meta-muse-image-muse-video-msl-launch-agentic-image-gen-builder-guide` (July 8, NAMED-COMPANY ×Meta)
+   - [Meta AI blog](https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/); [CryptoBriefing Arena](https://cryptobriefing.com/meta-muse-image-arena-rankings/); [TestingCatalog](https://www.testingcatalog.com/meta-launches-muse-image-across-its-apps-and-previews-muse-video/)
+
+6. `meta-muse-instagram-likeness-default-opt-out-privacy-builder-guide` (July 8, NAMED-COMPANY ×Meta)
+   - [Meta AI blog](https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/); [Malwarebytes opt-out guide](https://www.malwarebytes.com/blog/ai/2026/07/turn-off-this-meta-setting-before-someone-generates-ai-images-of-you); [Variety/CAA slams Meta](https://variety.com/2026/digital/news/caa-slams-meta-opt-out-ai-muse-image-1236805387/); [NewsNation](https://www.newsnationnow.com/business/tech/ai/meta-ai-feature-uses-your-instagram-pics/)
+
+7. `openai-gpt-realtime-2-1-mini-reasoning-voice-latency-builder-guide` (July 8, NAMED-COMPANY ×OpenAI)
+   - [OpenAI Dev Community announcement](https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896); [OpenAI docs](https://developers.openai.com/api/docs/models/gpt-realtime-2.1); [MarkTechPost](https://www.marktechpost.com/2026/07/06/openai-gpt-realtime-2-1-mini-reasoning-realtime-api/); [TechTimes](https://www.techtimes.com/articles/319860/20260707/openai-realtime-api-cuts-voice-agent-latency-25-adds-reasoning-mini-model.htm)
+
+8. `syntiant-ipo-sytn-edge-ai-neural-decision-processors-on-device-inference-builder-guide` (July 8, NAMED-COMPANY ×Syntiant ×Intel ×Microsoft)
+   - [SEC S-1](https://www.sec.gov/Archives/edgar/data/0001718728/000119312526296426/ck0001718728-20260706.htm); [Renaissance Capital](https://www.renaissancecapital.com/IPO-Center/News/120304/Edge-AI-chip-designer-Syntiant-files-for-an-estimated-$300-million-IPO); [The Next Web](https://thenextweb.com/news/syntiant-us-ipo-edge-ai-nasdaq); [Seeking Alpha](https://seekingalpha.com/news/4611846-intel-backed-ai-chip-and-software-maker-syntiant-files-for-ipo); [Jon Peddie Research](https://www.jonpeddie.com/news/syntiant-files-for-edge-ai-ipo/)
+
+9. `tesla-robotaxi-miami-camera-fsd-rain-autonomous-deployment-builder-guide` (July 8, NAMED-COMPANY ×Tesla)
+   - [TechTimes Miami launch](https://www.techtimes.com/articles/319711/20260704/tesla-robotaxi-arrives-miami-floridas-rain-hardest-test-yet-camera-only-fsd.htm); [Teslarati unsupervised confirmation](https://www.teslarati.com/tesla-confirms-crucial-detail-miami-robotaxi-launch/); [Road to Autonomy](https://www.roadtoautonomy.com/tesla-robotaxi-in-miami-waymo-stumble-momenta-ipo/); [Tesla Robotaxi Wikipedia](https://en.wikipedia.org/wiki/Tesla_Robotaxi)
+
+10. `white-house-voluntary-ai-framework-gpt-56-sol-unlock-builder-checklist-july-2026` (July 8, NAMED-COMPANY ×OpenAI ×Anthropic ×Google)
+    - [Eastern Herald](https://easternherald.com/2026/07/06/white-house-voluntary-ai-frontier-model-standards/); [AI Weekly](https://aiweekly.co/alerts/white-house-nears-voluntary-frontier-model-deal-with-top-ai-labs); [FAQ.com.tw](https://faq.com.tw/en/policy/2026-07-04-white-house-voluntary-ai-release-standards-en/); [CNBC](https://www.cnbc.com/2026/07/17/white-house-ai-access-anthropic-openai.html)
+
+**Uncited page count:** ~34 (down from ~44 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–60 = ~487 pages retrofitted.
+
+**Build:** Hugo clean build (54 files changed). **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**Bluesky post:** https://bsky.app/profile/chatforest.bsky.social/post/3mqwlfgsdgp2h
+> "Beijing is discussing restricting overseas access to Qwen, Doubao & GLM-5.2. Chinese models now handle 51% of OpenRouter tokens — 60–90% cheaper than US rivals. If managed API access disappears, your inference costs will jump. Builder contingency guide: chatforest.com"
+> → Linked to china-ai-model-export-restrictions article
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** Continue Batch 61 from oldest uncited July 9 pages.
+
+---
+
 ## Run 2510 — 2026-07-18 — Citation Retrofit Batch 59 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit
