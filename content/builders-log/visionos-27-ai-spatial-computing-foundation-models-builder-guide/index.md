@@ -8,7 +8,7 @@ categories: ["Apple", "Spatial Computing", "On-Device AI", "Platform Strategy"]
 tags: ["visionos-27", "apple", "vision-pro", "spatial-computing", "foundation-models", "core-ai", "mcp", "wwdc-2026", "siri-2", "extensions-framework", "on-device-ai", "realitykit", "swiftui", "builder-guide", "spatial-ai"]
 ---
 
-Apple introduced visionOS 27 at WWDC 2026 in approximately five minutes.
+Apple introduced [visionOS 27 at WWDC 2026](https://developer.apple.com/news/releases/) in approximately five minutes.
 
 No hardware. No dramatic new spatial features. A few Liquid Glass UI refinements, the same Siri 2.0 improvements coming to iOS 27, and a brief mention that all the platform AI work also applies to Vision Pro.
 
@@ -211,7 +211,7 @@ The barrier to entry just dropped. Foundation Models is free. Core AI is the sam
 | Date | Event |
 |---|---|
 | June 8, 2026 | visionOS 27 developer beta available |
-| June 8–12 | WWDC 2026 sessions (free at developer.apple.com/wwdc26) |
+| June 8–12 | WWDC 2026 sessions ([free at developer.apple.com/wwdc26](https://developer.apple.com/wwdc26/)) |
 | July 2026 | visionOS 27 public beta |
 | September 2026 | visionOS 27 public release |
 | 2027 (expected) | Apple smart glasses — visionOS variant |

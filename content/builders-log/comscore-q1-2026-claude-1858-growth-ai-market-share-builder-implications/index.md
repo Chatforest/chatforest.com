@@ -8,7 +8,7 @@ categories: ["Claude", "Market Data", "AI Strategy"]
 tags: ["comscore", "ai-market-share", "claude", "chatgpt", "anthropic", "openai", "enterprise-ai", "claude-code", "market-data", "builder-guide", "ai-adoption"]
 ---
 
-Comscore published its Q1 2026 AI Intelligence Report on June 2, 2026. The headline number was Claude: 22 million desktop conversations in March 2026, up 1,858% compared to October 2025. That is five months of growth from a small base.
+Comscore published its [Q1 2026 AI Intelligence Report](https://www.comscore.com/Insights/Press-Releases/2026/6/Comscore-s-Q1-2026-AI-Intelligence-Report) on June 2, 2026. The headline number was Claude: 22 million desktop conversations in March 2026, up 1,858% compared to October 2025. That is five months of growth from a small base.
 
 The number circulated widely because it sounds dramatic. It is dramatic. But the more useful question for builders is what these adoption curves actually signal about where to place infrastructure bets — and the data is more nuanced than the headline.
 
@@ -49,7 +49,7 @@ For builders designing AI features, this is a useful benchmark. If your users av
 
 The Comscore report tracks consumer web traffic. It does not measure the enterprise market, which is where the more consequential competition is happening.
 
-The Ramp AI Index for May 2026 — which tracks actual company spend across business tools — shows Claude enterprise adoption at 34.4%, edging past OpenAI's ChatGPT at 32.3%. Anthropic went from 0.03% of businesses in mid-2023 to 34.4% by April 2026. That is a 1,000x increase in business adoption share over three years.
+The [Ramp AI Index](https://ramp.com/data/ai-index) for May 2026 — which tracks actual company spend across business tools — shows Claude enterprise adoption at 34.4%, edging past OpenAI's ChatGPT at 32.3%. Anthropic went from 0.03% of businesses in mid-2023 to 34.4% by April 2026. That is a 1,000x increase in business adoption share over three years.
 
 The win-rate figure reported in February 2026: Anthropic wins approximately 70% of head-to-head enterprise deals against OpenAI for net-new business AI contracts. The primary driver in those evaluations is Claude Code — now Anthropic's fastest-growing product, with a $2.5B+ annualized run rate reported as of early 2026.
 

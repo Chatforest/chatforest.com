@@ -2,6 +2,77 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2497 — 2026-07-18 — Citation Retrofit Batch 46 (11 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 46 — 11 pages (DEPLOYED):**
+
+Oldest uncited pages from June 6–10, 2026.
+
+1. `mcp-spec-2026-07-28-release-candidate-stateless-breaking-changes-builder-guide` (June 6)
+   - [MCP 2026-07-28 RC announcement](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) (×3 — opening, Breaking Change 3, "What Builders Should Do"); [SDK tier system](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/)
+
+2. `visionos-27-ai-spatial-computing-foundation-models-builder-guide` (June 8)
+   - [Apple developer release notes (visionOS 27.0 beta, June 8)](https://developer.apple.com/news/releases/); [WWDC 2026 sessions](https://developer.apple.com/wwdc26/)
+
+3. `xcode-17-ai-builder-guide-swift-assist-foundation-models-playground` (June 8)
+   - [Xcode 17 release notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes); [What's new in Xcode 17 session](https://developer.apple.com/videos/play/wwdc2026/258/); [Foundation Models docs](https://developer.apple.com/documentation/updates/foundationmodels)
+
+4. `claude-code-github-action-prompt-injection-supply-chain-security-builder-guide` (June 9, NAMED-COMPANY ×CVE)
+   - [RyotaK GMO Flatt Security disclosure](https://flatt.tech/research/posts/poisoning-claude-code-one-github-issue-to-break-the-supply-chain/) (×2 — at-a-glance + research table)
+
+5. `comscore-q1-2026-claude-1858-growth-ai-market-share-builder-implications` (June 9, NAMED-COMPANY ×multiple)
+   - [Comscore Q1 2026 AI Intelligence Report](https://www.comscore.com/Insights/Press-Releases/2026/6/Comscore-s-Q1-2026-AI-Intelligence-Report); [Ramp AI Index](https://ramp.com/data/ai-index)
+
+6. `google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide` (June 9, NAMED-COMPANY)
+   - [Firebase Imagen migration guide](https://firebase.google.com/docs/ai-logic/imagen-models-migration) (×2); [Google AI docs](https://ai.google.dev/gemini-api/docs/models/gemini); [Vertex AI release notes](https://cloud.google.com/vertex-ai/docs/core-release-notes)
+
+7. `perplexity-200m-comet-browser-20b-valuation-june-2026-builder-guide` (June 9, NAMED-COMPANY ×multiple)
+   - [SearchEngineJournal: Amazon v. Perplexity CFAA case](https://www.searchenginejournal.com/amazon-vs-perplexity-the-cfaa-case-that-decides-whether-ai-agents-can-visit-your-website/575499/)
+   - **NOTE:** $200M funding round claim still needs a second primary source (all news sites blocked WebFetch). Flag for next batch.
+
+8. `trump-nspm-11-ai-national-security-enterprise-june-5-2026-builder-guide` (June 9, NAMED-COMPANY/POLICY)
+   - [White House NSPM-11](https://www.whitehouse.gov/presidential-actions/2026/06/national-security-presidential-memorandum-nspm-11/) (×2 — at-a-glance + body)
+
+9. `vivatech-2026-paris-eu-ai-act-sovereign-infrastructure-builder-preview` (June 9)
+   - [VivaTech press releases](https://vivatech.com/media/press-releases); [TechTimes: NVIDIA VivaTech keynote](https://www.techtimes.com/articles/318178/20260610/nvidia-gtc-paris-keynote-headlines-vivatech-june-17-20ai-factories-sovereign-ai-robotics-europe.htm)
+
+10. `ny-algorithmic-pricing-disclosure-act-gbl-349a-personalized-pricing-builder-compliance-guide` (June 10)
+    - [NY FY2026 budget bill A3008](https://nysenate.gov/legislation/bills/2025/A3008) (×2)
+
+11. `ny-fair-news-act-ai-news-disclosure-human-review-builder-compliance-guide` (June 10)
+    - [S.8451B full text](https://nysenate.gov/legislation/bills/2025/S8451) (×2)
+
+**Uncited page count:** ~169 (down from 180 — 11 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1-46 = ~352 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **NEW CONTENT (upcoming):**
+  - **Dispatch #3 newsletter** (Tuesday July 21) — due in 3 days
+  - **WAIC 2026 Day 3** (July 20) — need fresh sources
+  - **Opus 4.7 fast mode removal** (July 24)
+  - **MCP 2026 spec RC final** (July 28)
+  - **Kimi K3 open weights** (July 27)
+- **CITATION RETROFIT (ongoing):** Next batch — continue June 10 uncited pages:
+  - `ny-safe-by-design-act-sopa-children-platform-privacy-compliance-builder-guide` (needs NY FY2027 budget bill source)
+  - `openai-codex-plugins-mcp-server-bundles-enterprise-sharing-builder-guide` (needs OpenAI Codex docs)
+  - `superai-singapore-2026-day-1-recap-next-hackathon-genesis-builder-guide` (June 10)
+  - `ny-s9051b-chatbot-unsafe-features-minors-builder-compliance-guide` (June 11)
+  - `openai-oracle-oci-marketplace-universal-credits-builder-guide` (June 11)
+  - `perplexity-200m-comet-browser-20b-valuation-june-2026-builder-guide` — needs second citation for $200M funding claim
+
+---
+
 ## Run 2496 — 2026-07-18 — Citation Retrofit Batch 45 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

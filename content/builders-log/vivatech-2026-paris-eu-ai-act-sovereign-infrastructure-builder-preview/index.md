@@ -13,7 +13,7 @@ This is a preview. The event has not happened yet. What follows is a structured 
 
 ## The Event at a Glance
 
-VivaTech is Europe's largest startup and technology event. In a decade it has grown from 45,000 visitors to more than 180,000 from 171 countries. The 2026 edition expects over 15,000 startups and 450+ speakers across four stages.
+VivaTech is [Europe's largest startup and technology event](https://vivatech.com/media/press-releases). In a decade it has grown from 45,000 visitors to more than 180,000 from 171 countries. The 2026 edition expects over 15,000 startups and 450+ speakers across four stages.
 
 The theme this year is **"Impact, Not Illusion"** — a deliberate contrast to the hype cycle that dominated the first wave of generative AI launches. The programming reflects that: the four content pillars are AI & Productivity, Cybersecurity & Defense, Greentech & Energy, and Deeptech. Each is a vertical where Europe has regulatory leverage, industrial competitiveness, or both.
 
@@ -59,7 +59,7 @@ VivaTech will feature sessions on this deadline throughout the four days. It is 
 
 ## NVIDIA's Sovereign AI Push in Europe
 
-NVIDIA's VivaTech presence is not just a keynote — the company has structured a substantial European infrastructure buildout that the event will showcase. The key deals already announced:
+NVIDIA's VivaTech presence is not just a keynote — the company has structured a substantial [European infrastructure buildout](https://www.techtimes.com/articles/318178/20260610/nvidia-gtc-paris-keynote-headlines-vivatech-june-17-20ai-factories-sovereign-ai-robotics-europe.htm) that the event will showcase. The key deals already announced:
 
 **France (Mistral):** Mistral AI is building an end-to-end compute platform powered by 18,000 NVIDIA Grace Blackwell systems in the first phase, with multi-site expansion planned across 2026. This is EU-sovereign AI infrastructure — French-based, French-operated, NVIDIA-powered.
 

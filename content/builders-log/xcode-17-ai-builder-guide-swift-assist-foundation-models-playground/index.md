@@ -7,7 +7,7 @@ tags: ["xcode", "swift", "swift-assist", "foundation-models", "apple", "wwdc26",
 slug: xcode-17-ai-builder-guide-swift-assist-foundation-models-playground
 ---
 
-WWDC 2026 brought Xcode 17 with three distinct AI-related upgrades: **Swift Assist** (a cloud-backed chat assistant for coding), **on-device predictive code completion** (local ML, no server), and the **Foundation Models Playground** (an interactive REPL for testing your on-device AI code). They're separate features with different privacy models, use cases, and limitations — this guide covers each and shows how they fit together in practice when building Foundation Models, MCP, and Siri Extensions apps.
+WWDC 2026 brought [Xcode 17](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes) with three distinct AI-related upgrades: **Swift Assist** (a cloud-backed chat assistant for coding), **on-device predictive code completion** (local ML, no server), and the **Foundation Models Playground** (an interactive REPL for testing your on-device AI code). They're separate features with different privacy models, use cases, and limitations — this guide covers each and shows how they fit together in practice when building Foundation Models, MCP, and Siri Extensions apps.
 
 ---
 
@@ -396,8 +396,8 @@ For a new Foundation Models feature, the recommended workflow:
 
 WWDC 2026 session videos for Xcode 17 are releasing on the Apple Developer app during June 8–12:
 
-- **"What's new in Xcode 17"** — Full overview of Swift Assist, predictive completion, Foundation Models Playground
-- **"Develop advanced Foundation Models apps"** — Session memory, tool calling, adapter training
+- **["What's new in Xcode 17"](https://developer.apple.com/videos/play/wwdc2026/258/)** — Full overview of Swift Assist, predictive completion, Foundation Models Playground
+- **["Develop advanced Foundation Models apps"](https://developer.apple.com/documentation/updates/foundationmodels)** — Session memory, tool calling, adapter training
 - **"Testing your AI-powered apps"** — XCTest patterns for non-deterministic model output
 
 Xcode 17 is available now as a developer beta alongside the iOS 27 / macOS 27 betas through the Apple Developer program. The GM releases alongside iOS 27 and macOS 27 in October 2026.

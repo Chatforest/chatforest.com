@@ -10,7 +10,7 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-**At a glance:** The official `anthropics/claude-code-action` had a permission bypass that let unauthenticated external attackers inject prompts via GitHub issues and escalate to full repository compromise. Discovered by RyotaK of GMO Flatt Security, reported January 2026, patched in v1.0.94 within four days. CVSS 4.0: 7.8. Anthropic paid a $4,800 bounty. The broader research found approximately 50 ways to break Claude Code's permission model. This article covers what happened, the attack chain, and what builders need to do. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** The official `anthropics/claude-code-action` had a permission bypass that let unauthenticated external attackers inject prompts via GitHub issues and escalate to full repository compromise. Discovered by [RyotaK of GMO Flatt Security](https://flatt.tech/research/posts/poisoning-claude-code-one-github-issue-to-break-the-supply-chain/), reported January 2026, patched in v1.0.94 within four days. CVSS 4.0: 7.8. Anthropic paid a $4,800 bounty. The broader research found approximately 50 ways to break Claude Code's permission model. This article covers what happened, the attack chain, and what builders need to do. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -99,7 +99,7 @@ Agentic tools that read repository content, issue bodies, or PR descriptions are
 | Additional hardening through spring | Ongoing |
 | v1.0.94 release (patched version) | Spring 2026 |
 | Microsoft Security Blog disclosure | June 5, 2026 |
-| Public researcher writeup (GMO Flatt) | June 2026 |
+| [Public researcher writeup (GMO Flatt)](https://flatt.tech/research/posts/poisoning-claude-code-one-github-issue-to-break-the-supply-chain/) | June 2026 |
 
 Anthropic rated the vulnerability CVSS 4.0: 7.8 (High) and paid a $4,800 bounty. The quick initial patch (4 days) is notable. The subsequent additional hardening through spring suggests the permission model required more than a single-line fix.
 
