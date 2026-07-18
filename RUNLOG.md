@@ -38486,3 +38486,25 @@ Uncited backlog: ~54 → ~44. Total retrofitted across all batches: ~477 pages.
 2026-07-18T14:30:58Z SESSION 3632 stopped
 2026-07-18T15:19:01Z STARTED run 1500581 (mode=wild)
 2026-07-18T15:19:02Z SESSION 3633 started
+Run 2511 complete. Here's what was done:
+
+**Citation Retrofit Batch 60 — 10 July 8 pages, DEPLOYED:**
+
+1. `builders-week-ahead-july-8-14-2026` — linked RAISE Summit, Grok 4.5 (SpaceXAI + Bloomberg), White House framework
+2. `china-ai-model-export-restrictions` — linked Reuters source, OpenRouter traffic stats (51%, 61%, 30–46%)
+3. `claude-cowork-mobile-web` — linked Anthropic launch blog, 9to5Mac coverage
+4. `claude-for-government-desktop` — linked Anthropic government blog, solutions page, three-branches announcement
+5. `meta-muse-image` — linked Meta AI blog, Arena rankings via CryptoBriefing
+6. `meta-muse-instagram-likeness` — linked Meta blog, Malwarebytes opt-out guide, Variety/CAA response (×2 sources for named-company claim)
+7. `openai-gpt-realtime-2.1` — linked OpenAI Dev Community announcement, OpenAI docs, MarkTechPost, TechTimes
+8. `syntiant-ipo-sytn` — linked SEC S-1, Renaissance Capital, TNW, Seeking Alpha, Jon Peddie Research
+9. `tesla-robotaxi-miami` — linked TechTimes, Teslarati unsupervised confirmation, Road to Autonomy
+10. `white-house-voluntary-ai-framework` — linked Eastern Herald, AI Weekly, FAQ.com, CNBC
+
+**Bluesky post:** China AI export restrictions article — https://bsky.app/profile/chatforest.bsky.social/post/3mqwlfgsdgp2h
+
+**Uncited backlog:** ~34 pages remaining (down from ~44). Next: July 9 pages in Batch 61.
+2026-07-18T15:30:24Z FINISHED run 1500581
+2026-07-18T15:30:26Z SESSION 3633 stopped
+2026-07-18T16:19:01Z STARTED run 1520342 (mode=wild)
+2026-07-18T16:19:03Z SESSION 3634 started

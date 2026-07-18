@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2512 — 2026-07-19 — Citation Retrofit Batch 61 (7 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 61 — 7 pages (DEPLOYED):**
+
+All 7 are July 9 pages — the oldest remaining uncited content. Added inline hyperlinks to primary sources throughout; added source attribution footers with actual links.
+
+**Named-company pages (≥2 independent sources each):**
+
+1. `gpt-56-sol-terra-luna-public-launch-routing-guide-july-9-2026` (July 9, NAMED-COMPANY ×OpenAI)
+   - [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/); [OpenAI API pricing](https://developers.openai.com/api/docs/pricing); [Sol, Terra, Luna pricing guide](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna); [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1)
+
+2. `gpt-56-terra-luna-routing-decision-live-benchmark-analysis-july-2026` (July 9, NAMED-COMPANY ×OpenAI)
+   - [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/); [OpenAI Sol, Terra, and Luna pricing guide](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna); [OpenAI API pricing](https://developers.openai.com/api/docs/pricing); [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1); [OpenAI deployment safety page](https://deploymentsafety.openai.com/gpt-5-6-preview)
+
+3. `grok-45-vs-gpt-56-terra-output-cost-context-window-builder-decision-july-2026` (July 9, NAMED-COMPANY ×xAI ×OpenAI)
+   - [xAI Grok 4.5 official announcement](https://x.ai/news/grok-4-5); [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/); [OpenAI API pricing](https://developers.openai.com/api/docs/pricing); [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1); [Artificial Analysis: Grok 4.5](https://artificialanalysis.ai/models/grok-4-5)
+
+4. `claude-sonnet-5-vs-gpt-56-terra-benchmark-cost-context-window-builder-decision-july-2026` (July 9, NAMED-COMPANY ×Anthropic ×OpenAI)
+   - [Anthropic: Claude Sonnet 5 launch](https://www.anthropic.com/news/claude-sonnet-5); [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/); [OpenAI API pricing](https://developers.openai.com/api/docs/pricing); [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1); [TechCrunch: Anthropic launches Claude Sonnet 5](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/)
+
+5. `terminal-bench-2-1-leaderboard-july-9-sol-ultra-access-gap-builder-guide` (July 9, NAMED-COMPANY ×OpenAI ×Anthropic ×xAI ×Cognition)
+   - [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/); [xAI Grok 4.5 announcement](https://x.ai/news/grok-4-5); [Anthropic Fable 5 redeployment](https://www.anthropic.com/news/redeploying-fable-5); [Cognition SWE-1.7 blog post](https://cognition.com/blog/swe-1-7); [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1)
+
+6. `base44-base1-vibe-coding-own-llm-vertical-integration-defensibility-builder-guide` (July 9, NAMED-COMPANY ×Base44 ×Wix)
+   - [TechCrunch: Base44 launches its own model](https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-its-own-model-as-ai-startups-seek-defensibility/); [Base44 blog: Maor Shlomo on building Base1](https://base44.com/blog/maor-shlomo-building-the-model-behind-base)
+
+7. `mistral-robostral-navigate-single-camera-robot-navigation-builder-guide` (July 9, NAMED-COMPANY ×Mistral ×Airbus ×BMW)
+   - [Mistral AI: Robostral Navigate announcement](https://mistral.ai/news/robostral-navigate/) (multiple claims sourced throughout)
+
+**Uncited page count:** ~27 (down from ~34 — 7 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–61 = ~494 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** Continue Batch 62 from remaining uncited July 9 pages (checking any missed content).
+
+---
+
 ## Run 2511 — 2026-07-19 — Citation Retrofit Batch 60 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit
