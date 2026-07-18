@@ -5,9 +5,9 @@ description: "Copilot Studio went GA on July 7, 2026, rebuilt from the ground up
 tags: ["microsoft", "copilot-studio", "agentic-ai", "workflow-automation", "enterprise-ai", "orchestration", "power-platform", "multi-agent", "skills", "entra"]
 ---
 
-On July 7, 2026, Microsoft shipped a rebuilt Copilot Studio to general availability worldwide. This is not a feature update — it is a ground-up replacement of the platform's orchestration engine, UI, and authoring model. Existing agents keep working, but the path for new and complex agents has changed substantially.
+On July 7, 2026, Microsoft [shipped a rebuilt Copilot Studio to general availability](https://techcommunity.microsoft.com/blog/copilot-studio-blog/meet-the-new-copilot-studio-rebuilt-for-more-complex-multi-step-work/4526488) worldwide. This is not a feature update — it is a ground-up replacement of the platform's orchestration engine, UI, and authoring model. Existing agents keep working, but the path for new and complex agents has changed substantially.
 
-This is a research-based guide. We reviewed Microsoft's official blog post, Learn documentation, and community coverage. We did not build agents in the rebuilt platform ourselves.
+This is a research-based guide. We reviewed [Microsoft's official blog post](https://techcommunity.microsoft.com/blog/copilot-studio-blog/meet-the-new-copilot-studio-rebuilt-for-more-complex-multi-step-work/4526488), [Learn documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new), and community coverage. We did not build agents in the rebuilt platform ourselves.
 
 ---
 

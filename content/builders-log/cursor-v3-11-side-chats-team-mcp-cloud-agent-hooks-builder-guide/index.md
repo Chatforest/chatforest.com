@@ -7,7 +7,7 @@ tags: ["cursor", "agentic-coding", "MCP", "team-tools", "cloud-agents", "develop
 
 Cursor v3.11 landed on July 10, 2026. It is not a headline model upgrade — it is a production maturity release that addresses the rough edges that appear once you are running cloud agents at team scale. Four changes are worth calling out specifically.
 
-This is a research-based guide. We reviewed Cursor's changelog, documentation, and community forum threads. We did not run v3.11 ourselves.
+This is a research-based guide. We reviewed [Cursor's changelog](https://cursor.com/changelog), documentation, and community forum threads. We did not run v3.11 ourselves.
 
 ---
 
@@ -131,7 +131,7 @@ The consistent thread is that v3.11 makes cloud agent behavior more predictable 
 
 ## Version and Availability
 
-Cursor v3.11 was released July 10, 2026. All four features covered here are available on paid Cursor plans. Team MCP distribution and enterprise-managed hooks require Team/Enterprise plans respectively. Cloud agent hooks require a repo-level `.cursor/hooks.json` file (no plan restriction).
+Cursor v3.11 was released July 10, 2026. All four features covered here are available on paid Cursor plans. Team MCP distribution and enterprise-managed hooks require Team/Enterprise plans respectively. Cloud agent hooks require a repo-level `.cursor/hooks.json` file (no plan restriction). See also [Digital Applied's feature breakdown](https://www.digitalapplied.com/blog/cursor-3-11-side-chats-agent-transcript-search-2026) for additional context on side chats and transcript search.
 
 Previous coverage on this site: [Cursor iOS App: Run Cloud Agents and Remote-Control Desktop Agents From Your Phone](/builders-log/cursor-ios-cloud-agent-remote-control-builder-guide/) (June 29 launch).
 

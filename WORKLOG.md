@@ -2,6 +2,64 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2515 — 2026-07-19 — Citation Retrofit Batch 64 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION RETROFIT BATCH 64 — 10 pages (oldest remaining uncited, July 11–12):**
+
+Added inline hyperlinks to primary sources throughout each article.
+
+**Named-company pages (≥2 independent sources each):**
+
+1. `uae-a5-chip-export-reclassification-g42-core42-nvidia-license-free-gulf-builder-guide` (July 11, NAMED-COMPANY ×UAE/G42/Core42/NVIDIA/US tech giants)
+   - [BIS official press release](https://www.bis.gov/press-release/department-commerce-eases-export-controls-uae); [KPMG Federal Register analysis](https://kpmg.com/us/en/taxnewsflash/news/2026/07/tnf-us-bis-amends-ear-to-provide-enhanced-favorable-treatment-for-uae.html); [UAE Vartha/AGBI coverage](https://english.uaevartha.com/us-eases-export-controls-on-uae-granting-trusted-a5-status-for-advanced-ai-chips-and-defense-technology/)
+
+2. `codeql-2260-js-system-prompt-injection-javascript-typescript-ai-sdk-builder-security-guide` (July 12, NAMED-COMPANY ×GitHub)
+   - [GitHub Changelog: CodeQL 2.26.0](https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection/) ×2 inline links
+
+3. `cursor-v3-11-side-chats-team-mcp-cloud-agent-hooks-builder-guide` (July 12, NAMED-COMPANY ×Cursor)
+   - [Cursor changelog](https://cursor.com/changelog); [Digital Applied breakdown](https://www.digitalapplied.com/blog/cursor-3-11-side-chats-agent-transcript-search-2026)
+
+4. `github-copilot-july-2026-all-plans-browser-ga-jetbrains-credit-controls-builder-guide` (July 12, NAMED-COMPANY ×GitHub/Microsoft)
+   - [GitHub Changelog: app available to all](https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all/); [GitHub Blog: agent-native desktop](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)
+
+5. `github-models-retirement-july-30-2026-azure-foundry-copilot-migration-builder-guide` (July 12, NAMED-COMPANY ×GitHub/Microsoft)
+   - [GitHub Changelog: Models retirement](https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/); [GitHub Changelog: no new customers](https://github.blog/changelog/2026-06-16-github-models-is-no-longer-available-to-new-customers/)
+
+6. `mcp-dpt-defense-placement-taxonomy-coverage-gaps-mcp-security-builder-guide` (July 12, research paper)
+   - [arXiv:2604.07551](https://arxiv.org/abs/2604.07551) ×2 inline links
+
+7. `mcp-itp-automated-implicit-tool-poisoning-framework-84-percent-asr-builder-security-guide` (July 12, research paper)
+   - [arXiv:2601.07395](https://arxiv.org/abs/2601.07395) ×2 inline links
+
+8. `microsoft-copilot-studio-rebuilt-july-2026-orchestrator-workflow-designer-builder-guide` (July 12, NAMED-COMPANY ×Microsoft)
+   - [Microsoft Tech Community blog](https://techcommunity.microsoft.com/blog/copilot-studio-blog/meet-the-new-copilot-studio-rebuilt-for-more-complex-multi-step-work/4526488); [Microsoft Learn docs](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new)
+
+9. `sharelock-shamir-threshold-mcp-tool-poisoning-builder-security-guide` (July 12, research paper)
+   - [arXiv:2606.27027](https://arxiv.org/abs/2606.27027)
+
+10. `shieldnet-network-level-mcp-supply-chain-detection-builder-security-guide` (July 12, research paper)
+    - [arXiv:2604.04426](https://arxiv.org/abs/2604.04426) ×2 inline links
+
+**Uncited page count:** ~36 (down from ~46 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–64 = ~524 pages retrofitted.
+
+**Build:** Hugo clean build (3971 pages). **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** Continue Batch 65 from remaining uncited July 12–13 pages (~36 remain).
+
+---
+
 ## Run 2514 — 2026-07-19 — Citation Retrofit Batch 63 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

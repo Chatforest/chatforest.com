@@ -5,11 +5,11 @@ description: "GitHub Models—the free AI playground, model catalog, inference A
 tags: ["github-models", "github-copilot", "azure-ai-foundry", "model-retirement", "migration", "inference-api", "developer-tools", "cost-management", "ai-platform"]
 ---
 
-GitHub Models, GitHub's free AI playground and inference API, retires permanently on **July 30, 2026**. The shutdown applies to every customer — free, Team, and Enterprise GitHub plans alike. No grandfathering, no extended deprecation period. The playground UI disappears, the model catalog goes offline, all inference API endpoints stop responding, and bring-your-own-key (BYOK) access ends simultaneously.
+GitHub Models, GitHub's free AI playground and inference API, [retires permanently on **July 30, 2026**](https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/). The shutdown applies to every customer — free, Team, and Enterprise GitHub plans alike. No grandfathering, no extended deprecation period. The playground UI disappears, the model catalog goes offline, all inference API endpoints stop responding, and bring-your-own-key (BYOK) access ends simultaneously.
 
 Brownouts on **July 16 and July 23** will cause temporary outages in advance of full shutdown. If you have any code calling GitHub Models endpoints, you need to migrate before July 16 to avoid disruption.
 
-This is a research-based guide. We reviewed GitHub's changelog, official migration documentation, and third-party coverage. We did not test the services ourselves.
+This is a research-based guide. We reviewed [GitHub's changelog](https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/), official migration documentation, and third-party coverage. We did not test the services ourselves.
 
 ---
 
@@ -30,7 +30,7 @@ All four components shut down on July 30. There is no successor service within G
 
 | Date | Event |
 |------|--------|
-| June 16, 2026 | New customers blocked from signing up |
+| [June 16, 2026](https://github.blog/changelog/2026-06-16-github-models-is-no-longer-available-to-new-customers/) | New customers blocked from signing up |
 | **July 16, 2026** | Brownout #1 — temporary errors on all GitHub Models requests |
 | **July 23, 2026** | Brownout #2 — temporary errors again, one week before shutdown |
 | **July 30, 2026** | Full retirement — all services and UI removed permanently |

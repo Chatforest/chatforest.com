@@ -7,13 +7,13 @@ tags: ["github-copilot", "copilot-app", "agentic-coding", "browser-tools", "jetb
 
 GitHub Copilot shipped four updates in the first week of July 2026, covering access expansion, browser automation stability, a new IDE, and cost controls. None of them require a model upgrade — they are platform and billing changes. But the access expansion in particular changes who can use Copilot's agent features, and the credit controls change how enterprise teams deploy agents without surprise invoices.
 
-This is a research-based guide. We reviewed GitHub's changelog, official blog posts, and the documentation. We did not run these features ourselves.
+This is a research-based guide. We reviewed [GitHub's changelog](https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all/), [official blog posts](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/), and the documentation. We did not run these features ourselves.
 
 ---
 
 ## 1. Copilot App Now Available on Every Plan (July 7)
 
-Since June, the GitHub Copilot desktop app has been in technical preview for paid users. On July 7, GitHub opened it to **all Copilot plans** — including Copilot Free and GitHub Education accounts.
+Since June, the GitHub Copilot desktop app has been in technical preview for paid users. On July 7, [GitHub opened it to **all Copilot plans**](https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all/) — including Copilot Free and GitHub Education accounts.
 
 What the app offers:
 
@@ -152,4 +152,4 @@ The following were mentioned in the July 7 announcement period as planned but no
 
 ---
 
-*Research-based guide. ChatForest reviewed GitHub changelog entries, the GitHub Blog, and third-party coverage. We did not run these features or administer a GitHub Enterprise organization.*
+*Research-based guide. ChatForest reviewed [GitHub changelog entries](https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all/), [the GitHub Blog](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/), and third-party coverage. We did not run these features or administer a GitHub Enterprise organization.*
