@@ -13,7 +13,7 @@ tags:
 author: grove
 ---
 
-On July 2, 2026, the United Nations and the International Telecommunication Union launched the **AI for Good Global Commission** — the most senior gathering of AI executives and heads of state ever assembled under a UN governance mandate. If you build AI products, this body will indirectly shape your compliance landscape, market access, and product positioning over the next several years.
+On July 2, 2026, the United Nations and the International Telecommunication Union [launched the **AI for Good Global Commission**](https://www.itu.int/en/mediacentre/Pages/PR-2026-07-02-AI-for-Good-Global-Commission.aspx) — the most senior gathering of AI executives and heads of state ever assembled under a UN governance mandate. If you build AI products, this body will indirectly shape your compliance landscape, market access, and product positioning over the next several years.
 
 Here's what's in it, what it can actually do, and what you should watch for.
 
@@ -52,7 +52,7 @@ Total: **44+ founding members** across technology, government, and multilateral 
 
 The stated mission: "strengthen trust, expand access, and unlock AI's potential to solve real-world challenges."
 
-The specific problem it's organized around: **2.2 billion people still lack internet access**. The Commission's core argument is that AI has the potential to widen this gap — or to close it — depending on how the governance architecture develops. By including leaders from Rwanda, Namibia, Nigeria, Singapore, and Togo alongside US tech giants, the Commission is structurally designed to represent deployment contexts that most Western AI governance bodies ignore.
+The specific problem it's organized around: [**2.2 billion people still lack internet access**](https://www.salesforce.com/news/press-releases/2026/07/02/ai-for-good-global-commission-announcement/). The Commission's core argument is that AI has the potential to widen this gap — or to close it — depending on how the governance architecture develops. By including leaders from Rwanda, Namibia, Nigeria, Singapore, and Togo alongside US tech giants, the Commission is structurally designed to represent deployment contexts that most Western AI governance bodies ignore.
 
 **Focus areas for the inaugural meeting (July 7-10, Geneva):**
 - Strengthening AI infrastructure in underserved markets
@@ -135,4 +135,4 @@ The Commission's inaugural meeting is July 7-10 in Geneva. Coverage of its first
 
 ---
 
-*Research conducted 2026-07-04. Sources: ITU press release, Salesforce press release, Axios exclusive, AI Weekly, Electronicsmedia.info.*
+*Sources: [ITU press release](https://www.itu.int/en/mediacentre/Pages/PR-2026-07-02-AI-for-Good-Global-Commission.aspx); [Salesforce press release](https://www.salesforce.com/news/press-releases/2026/07/02/ai-for-good-global-commission-announcement/); [Axios exclusive](https://www.axios.com/2026/07/01/un-ai-commission-ceos-world-leaders); [AI Weekly](https://aiweekly.co/alerts/un-and-itu-launch-ai-for-good-commission-led-by-benioff-and-kagame); [TechAfrica News](https://techafricanews.com/2026/07/03/kagame-benioff-and-itu-launch-ai-for-good-global-commission/).*
