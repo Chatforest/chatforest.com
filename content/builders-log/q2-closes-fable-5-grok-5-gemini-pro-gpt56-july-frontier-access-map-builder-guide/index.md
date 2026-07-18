@@ -69,7 +69,7 @@ Grok 5 has now missed two consecutive quarterly deadlines. xAI targeted Q1 2026 
 
 ## Gemini 3.5 Pro (Google) — June Window Closed, July Confirmed
 
-Gemini 3.5 Pro's missed June window is the most predictable miss on this list. Sundar Pichai said at Google I/O (May 19): "give us until next month to get it to you." That was a June commitment. Business Insider reported on June 27 that the target has slipped to July — Google declined to comment officially.
+Gemini 3.5 Pro's missed June window is the most predictable miss on this list. Sundar Pichai said at Google I/O (May 19): "give us until next month to get it to you." That was a June commitment. [Business Insider reported on June 27](https://www.investing.com/news/stock-market-news/google-delays-gemini-35-pro-model-release-to-july--insider-93CH-4758816) that the target has slipped to July — Google declined to comment officially.
 
 **What happened:** Token efficiency issues surfaced during Flash early testing. Gemini 3.5 Pro prioritizes long-context coding tasks and "Deep Think" reasoning at scale; those require more refinement time than Flash's consumer-optimized profile. The departure of Noam Shazeer, John Jumper, and two additional Gemini researchers in the same week the delay was reported added noise to the signal, though the departure timeline appears to predate the efficiency issues.
 
@@ -87,7 +87,7 @@ GPT-5.6 is technically not a miss — OpenAI launched it on June 26, on schedule
 
 **What launched:**
 
-- **Sol**: Flagship tier. Terminal-Bench 2.1 score of 91.9% in ultra mode (new SOTA). Multi-subagent ultra reasoning.
+- **Sol**: Flagship tier. [Terminal-Bench 2.1 score of 91.9%](https://openai.com/index/previewing-gpt-5-6-sol/) in ultra mode (new SOTA). Multi-subagent ultra reasoning.
 - **Terra**: Balanced everyday model. The likely default once GA.
 - **Luna**: Fast, high-volume tier. The cost-optimized option.
 

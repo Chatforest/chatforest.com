@@ -8,13 +8,13 @@ categories: ["AI Models", "Developer Tools", "Multimodal AI"]
 tags: ["google", "gemini", "nano-banana", "image-generation", "multimodal", "builders-log", "google-ai-studio", "vertex-ai", "june-2026"]
 ---
 
-Google shipped three Nano Banana image models to general availability on June 30, 2026. The Lite variant (`gemini-3.1-flash-lite-image`) covers high-speed, low-cost generation. The standard Nano Banana 2 (`gemini-3.1-flash-image`) handles the volume middle tier. Nano Banana Pro (`gemini-3-pro-image-preview`) is the top tier: a dedicated editing endpoint, 4K output, Search-grounded generation, and the strongest in-image text rendering of any model in the Gemini stack.
+[Google shipped three Nano Banana image models to general availability](https://blog.google/technology/ai/nano-banana-pro/) on June 30, 2026. The Lite variant (`gemini-3.1-flash-lite-image`) covers high-speed, low-cost generation. The standard Nano Banana 2 (`gemini-3.1-flash-image`) handles the volume middle tier. Nano Banana Pro (`gemini-3-pro-image-preview`) is the top tier: a dedicated editing endpoint, 4K output, Search-grounded generation, and the strongest in-image text rendering of any model in the Gemini stack.
 
 This guide covers what Nano Banana Pro adds over its siblings, when the cost difference is justified, and how to integrate both the generation and editing endpoints.
 
 ## Model IDs
 
-Nano Banana Pro ships with two distinct endpoints:
+Nano Banana Pro ships with [two distinct endpoints](https://ai.google.dev/gemini-api/docs/models/gemini-3-pro-image):
 
 | Mode | Model ID |
 |------|----------|
@@ -109,7 +109,7 @@ SDK minimums: Python v1.52+, JavaScript/TypeScript v1.30+.
 
 | Resolution | Per-image | Batch/Flex |
 |------------|-----------|------------|
-| 1K or 2K | $0.134 | $0.067 |
+| 1K or 2K | [$0.134](https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-pro-available-for-enterprise) | $0.067 |
 | 4K | $0.24 | $0.12 |
 
 Input tokens (prompts, reference images): $2.00/M. Output tokens: $12.00/M. At 1K/2K, each image consumes approximately 1,120 output tokens; 4K images consume approximately 2,000 output tokens.

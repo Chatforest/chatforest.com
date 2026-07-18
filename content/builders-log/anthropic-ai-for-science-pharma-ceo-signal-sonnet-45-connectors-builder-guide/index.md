@@ -6,7 +6,7 @@ tags: ["anthropic", "life-sciences", "drug-discovery", "pharma", "biotech", "cla
 draft: false
 ---
 
-Today Anthropic ran "The Briefing: AI for Science" — a virtual event that ran from 10:00 AM to 12:20 PM PST. The headline presenters were Vas Narasimhan (CEO of Novartis and Anthropic board member), Chris Boerner (Chair and CEO of Bristol Myers Squibb), and Aviv Regev (EVP and Head of Research at Genentech, part of Roche). Anthropic's life sciences team — Eric Kauderer-Abrams and Jonah Cool — hosted.
+Today Anthropic ran ["The Briefing: AI for Science"](https://www.anthropic.com/events/the-briefing-ai-for-science) — a virtual event that ran from 10:00 AM to 12:20 PM PST. The headline presenters were Vas Narasimhan (CEO of Novartis and Anthropic board member), Chris Boerner (Chair and CEO of Bristol Myers Squibb), and Aviv Regev (EVP and Head of Research at Genentech, part of Roche). Anthropic's life sciences team — Eric Kauderer-Abrams and Jonah Cool — hosted.
 
 This was not primarily a product launch. It was a public display of who is in the room.
 
@@ -16,7 +16,7 @@ When you see three top-five pharma executives showing up to a vendor's virtual b
 
 C-suite attendance at vendor events doesn't happen early. It happens after the pilot phase, after internal stakeholders have validated the tool, after someone's research team has presented results, and after the executive team has made an internal commitment. You don't get the CEO of BMS on a livestream if BMS is still running a proof-of-concept.
 
-BMS specifically committed Claude Enterprise to 30,000+ employees — its largest enterprise AI deployment to date — before this event. Novartis's CEO sits on Anthropic's board. Genentech's research head is Aviv Regev, one of the founding scientists of the single-cell RNA analysis field, who has been publicly tracking AI's role in biology for years.
+[BMS specifically committed Claude Enterprise to 30,000+ employees](https://mlq.ai/news/anthropic-launches-claude-science-workbench-for-drug-discovery-and-biotech-research/) — its largest enterprise AI deployment to date — before this event. Novartis's CEO sits on Anthropic's board. Genentech's research head is Aviv Regev, one of the founding scientists of the single-cell RNA analysis field, who has been publicly tracking AI's role in biology for years.
 
 This is what post-pilot looks like in enterprise pharma. If you're building tools for this market, the question has shifted from "will they adopt AI" to "what infrastructure do they need to run it at scale."
 
@@ -30,7 +30,7 @@ One concrete benchmark from the June 30 announcement is worth isolating:
 |-------|-------------------|
 | Claude Sonnet 4 | 0.74 |
 | Human experts | 0.79 |
-| Claude Sonnet 4.5 | **0.83** |
+| [Claude Sonnet 4.5](https://www.fastcompany.com/91567549/claude-science) | **0.83** |
 
 Sonnet 4.5 now scores above the human expert baseline on this benchmark. That's not a marginal improvement — it's Anthropic's first model to cross that threshold on this task.
 

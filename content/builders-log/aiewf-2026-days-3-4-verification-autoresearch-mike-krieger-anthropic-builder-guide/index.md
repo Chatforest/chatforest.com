@@ -14,7 +14,7 @@ Here's what matters for builders who can't be in San Francisco.
 
 Day 2's Coding Agents keynote established the baseline. The headline speakers — swyx on "Three Years of AI Engineering," Idan Gazit on GitHub Copilot agents, Daksh Gupta on Greptile's dataset of 1M+ AI-reviewed pull requests — collectively described a field that has crossed a threshold.
 
-Greptile's data point summarized where we are: AI-generated code now accounts for 27.6% of all merged PRs reviewed by Greptile as of April 2026, up from under 1% in February 2025. That is a roughly 28× increase in 14 months. The Uber session (uReview, a multi-agent code review system built internally) described what happens when you point AI at that volume of AI-generated code — you need an agent to review what an agent wrote.
+Greptile's data point summarized where we are: AI-generated code now accounts for [27.6% of all merged PRs reviewed by Greptile](https://www.greptile.com/blog/rise-of-the-overnight-agents) as of April 2026, up from under 1% in February 2025. That is a roughly 28× increase in 14 months. The Uber session (uReview, a multi-agent code review system built internally) described what happens when you point AI at that volume of AI-generated code — you need an agent to review what an agent wrote.
 
 The hard question that Day 2 raised but didn't fully answer: if AI writes 28% of code and growing, who — or what — is responsible for whether that code works?
 
@@ -26,11 +26,11 @@ Days 3 and 4 are where AIEWF 2026 tries to answer that.
 
 Tariq Shaukat, CEO of Sonar, closes the Day 3 opening keynote block with "In the Land of AI Agents, the Verifiers Are King." The title is a direct stake in the ground about where value migrates in an AI-augmented development cycle.
 
-Sonar's own survey data gives the keynote its empirical spine. Their 2026 State of Code Developer Survey (1,100+ developers globally) found:
+Sonar's own survey data gives the keynote its empirical spine. Their [2026 State of Code Developer Survey](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) (1,100+ developers globally) found:
 
 - **96%** of developers do not fully trust AI-generated code to be functionally correct
 - **Only 48%** say they always verify AI-assisted code before committing it
-- **42%** of all committed code is now AI-generated — expected to reach 65% by 2027
+- [**42%**](https://www.sonarsource.com/blog/state-of-code-developer-survey-report-the-current-reality-of-ai-coding/) of all committed code is now AI-generated — expected to reach 65% by 2027
 
 The arithmetic is the problem: AI is generating a rising share of code, the vast majority of developers are skeptical of its output, and yet fewer than half are consistently reviewing it. Sonar calls this the "Verification Gap."
 
@@ -60,7 +60,7 @@ The results won't be fully available until the session, but expect the evals pai
 
 **Addy Osmani** (formerly Google Chrome Director, now independent) closes the Day 3 afternoon with "Director of Engineering." Osmani has spent 2026 writing extensively about what senior engineering judgment looks like in a world where agents handle the implementation. His thesis: the value of a senior engineer doesn't diminish when AI handles coding — it concentrates in the decisions AI can't make yet. The title likely refers to directing AI-assisted engineering teams rather than replacing them.
 
-**Wei-Lin Chiang** (CTO, Arena.ai) presents "Trends in AI" as the Day 3 closing keynote. Arena.ai — the spinout from the UC Berkeley LMSYS Chatbot Arena team — announced $100 million in annualized run-rate revenue on June 29, the same day AIEWF opened. In eight months as a commercial entity, the platform reached that milestone on a $1.7 billion valuation from its January 2026 Series A. Chiang's talk will likely describe where Arena's data says AI capability is actually heading — from its uniquely grounded position of having processed the world's largest volume of blind head-to-head model comparisons.
+**Wei-Lin Chiang** (CTO, Arena.ai) presents "Trends in AI" as the Day 3 closing keynote. Arena.ai — the spinout from the UC Berkeley LMSYS Chatbot Arena team — [announced $100 million in annualized run-rate revenue](https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/) on June 29, the same day AIEWF opened. In eight months as a commercial entity, the platform reached that milestone on a $1.7 billion valuation from its January 2026 Series A. Chiang's talk will likely describe where Arena's data says AI capability is actually heading — from its uniquely grounded position of having processed the world's largest volume of blind head-to-head model comparisons.
 
 ## Day 4 — July 2: Harness Engineering
 

@@ -3,9 +3,9 @@
 > Google promised Gemini 3.5 Pro in June at I/O 2026. June is over and the model is still in limited Vertex AI enterprise preview. The slip changes your build-now-or-wait calculation: Flash is your Q3 foundation.
 
 
-On May 19 at Google I/O 2026, Sundar Pichai told a packed audience that Gemini 3.5 Pro would ship "next month." June is now over. Pro has not shipped.
+On May 19 at Google I/O 2026, [Sundar Pichai told a packed audience that Gemini 3.5 Pro would ship "next month."](https://startupfortune.com/google-delays-gemini-35-pro-to-july-as-talent-exodus-deepens-the-pressure-on-its-ai-ambitions/) June is now over. Pro has not shipped.
 
-In late June, Business Insider reported that Google has pushed general availability to July. Google spokesperson declined to comment. The model remains in limited Vertex AI enterprise preview with no public API endpoint, no official pricing, and no model card.
+In late June, [Business Insider reported](https://www.investing.com/news/stock-market-news/google-delays-gemini-35-pro-model-release-to-july--insider-93CH-4758816) that Google has pushed general availability to July. Google spokesperson declined to comment. The model remains in limited Vertex AI enterprise preview with no public API endpoint, no official pricing, and no model card.
 
 The June slip changes the build-now-or-wait decision we covered [in May](/builders-log/gemini-3-5-pro-june-2026-wait-or-ship-flash-now/). At that point, the answer was uncertain. Now it is not.
 

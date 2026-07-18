@@ -3,7 +3,7 @@
 > DeepSeek open-sourced DSpark on June 27, 2026 — a semi-autoregressive speculative decoding framework that accelerates DeepSeek-V4 per-user generation 60–85%, plus DeepSpec for training custom drafters on Qwen3 and Gemma.
 
 
-On June 27, 2026, DeepSeek released **DSpark** — not a new model, but an inference module that makes DeepSeek-V4 substantially faster. In production, it runs 60–85% faster per-user generation on DeepSeek-V4-Flash and 57–78% faster on V4-Pro. The company open-sourced both DSpark and a companion training framework, DeepSpec, under the MIT license.
+On June 27, 2026, DeepSeek released **DSpark** — not a new model, but an inference module that makes DeepSeek-V4 substantially faster. In production, it [runs 60–85% faster per-user generation](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark) on DeepSeek-V4-Flash and 57–78% faster on V4-Pro. The company open-sourced both DSpark and a companion training framework, DeepSpec, under the MIT license.
 
 Here is what the release means for builders and why speculative decoding is becoming the default expectation for production inference.
 
@@ -84,7 +84,7 @@ One practical constraint: the target model cache for the Qwen3-4B setup requires
 
 **DeepSeek API users** — the speedup is already running in DeepSeek's production infrastructure. No action required. If you are calling `deepseek-chat` or `deepseek-coder` endpoints, you are getting the benefit.
 
-**Self-hosted DeepSeek-V4** — apply DSpark using the open-sourced checkpoints (`DeepSeek-V4-Pro-DSpark`, `DeepSeek-V4-Flash-DSpark`) published on Hugging Face. Installation uses standard Python dependencies. The default setup assumes 8 GPUs per node.
+**Self-hosted DeepSeek-V4** — apply DSpark using the open-sourced checkpoints ([`DeepSeek-V4-Pro-DSpark`](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark), [`DeepSeek-V4-Flash-DSpark`](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark)) published on Hugging Face. Installation uses standard Python dependencies. The default setup assumes 8 GPUs per node.
 
 **Qwen3 or Gemma deployments** — use DeepSpec to train a custom draft model on your target. This is the path for teams that want DSpark-style gains on non-DeepSeek models.
 

@@ -11,7 +11,7 @@ Developers running autonomous coding sessions report costs estimated at **10x to
 
 ## What Changed on June 1
 
-When GitHub moved all Copilot plans to usage-based billing on June 1, the plan prices stayed the same. Copilot Pro: $10/month. Pro+: $39/month. Business: $19/user/month. Enterprise: $39/user/month. The headline numbers looked identical.
+When [GitHub moved all Copilot plans to usage-based billing on June 1](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), the plan prices stayed the same. Copilot Pro: $10/month. Pro+: $39/month. Business: $19/user/month. Enterprise: $39/user/month. The headline numbers looked identical.
 
 What changed was the unit. Your monthly subscription now purchases a matching credit budget (1 credit = $0.01), and every chat message, agentic session, agent mode task, and code review draws from that balance at per-model token rates. When your balance runs out, GitHub bills the overage automatically.
 
@@ -21,7 +21,7 @@ Code completions and Next Edit Suggestions remain free under all plans — that 
 
 ## Why Agentic Workflows Got Hit Hardest
 
-GitHub's own research, published in May 2026, quantified the core problem: **agentic coding tasks consume roughly 1,000 times more tokens than standard single-turn queries**.
+[GitHub's own research, published in May 2026](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows/), quantified the core problem: **agentic coding tasks consume roughly 1,000 times more tokens than standard single-turn queries**.
 
 A single-turn query — ask a question, get a reply — is cheap. The problem is that autonomous coding agents don't do single-turn queries. They iterate. They read files, write code, re-read the result, check for errors, adjust, re-run, and feed the entire prior context into every subsequent call. A single agent session that runs for a few hours can process tens of millions of tokens.
 
@@ -31,7 +31,7 @@ Under the old flat-rate model, all of that was included. Under token billing, ea
 
 ## The Month-One Numbers
 
-Visual Studio Magazine documented a developer who faced a **$180 bill on Day 1 of the new billing cycle** — June 1, 2026. That was June 1. By the end of June, cumulative agentic usage across a full month amplified the problem.
+[Visual Studio Magazine documented a developer who faced a **$180 bill on Day 1 of the new billing cycle**](https://visualstudiomagazine.com/articles/2026/06/02/slammed-by-copilot-usage-based-billing-on-day-1-facing-180-bill-for-june.aspx) — June 1, 2026. That was June 1. By the end of June, cumulative agentic usage across a full month amplified the problem.
 
 The reported cost patterns from developer communities on Reddit, GitHub Discussions, and X:
 

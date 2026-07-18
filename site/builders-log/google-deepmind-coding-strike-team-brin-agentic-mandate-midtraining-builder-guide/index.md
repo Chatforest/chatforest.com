@@ -5,7 +5,7 @@
 
 Sergey Brin does not typically write internal memos about competitive gaps. When he does, and when the subject is a single rival company, builders should read it as a signal — not about Google's trajectory, but about who currently holds the lead.
 
-The memo that surfaced in late June 2026 said Google must "urgently bridge the gap in agentic execution and turn our models into primary developers of final code." The rival named, implicitly but clearly, was Anthropic.
+[The memo that surfaced in late June 2026](https://www.techradar.com/ai-platforms-assistants/we-must-urgently-bridge-the-gap-googles-sergey-brin-says-gemini-is-behind-claude-in-one-important-ai-field-according-to-leaked-memo) said Google must "urgently bridge the gap in agentic execution and turn our models into primary developers of final code." The rival named, implicitly but clearly, was Anthropic.
 
 This article is not about the talent departures — we covered that [separately](/builders-log/google-deepmind-shazeer-jumper-talent-exodus-builder-impact-june-2026/). This is about Google's response: a dedicated strike team, a new training methodology, an internal adoption mandate, and what all of it reveals about where AI coding capability actually sits in mid-2026.
 
@@ -13,7 +13,7 @@ This article is not about the talent departures — we covered that [separately]
 
 ## The Gap Is Quantified
 
-The Brin memo is not the only data point. Google's own CFO has stated publicly that Anthropic writes close to 100% of its code with AI assistance, while Google operates at approximately 50%.
+The Brin memo is not the only data point. [Google's own CFO has stated publicly](https://www.androidauthority.com/google-ai-coding-strike-team-report-3659975/) that Anthropic writes close to 100% of its code with AI assistance, while Google operates at approximately 50%.
 
 That is a striking admission from a company whose engineers *build* the AI tools in question. The people developing Gemini are using Gemini for roughly half their coding work. The people developing Claude are using Claude for nearly all of theirs.
 
@@ -25,7 +25,7 @@ The productivity signal here is not merely about adoption culture. If an AI codi
 
 Google assembled an AI Coding Strike Team in April 2026. The mandate: close Gemini's gap against Anthropic's Claude Code and OpenAI's coding tools in agentic programming tasks — specifically the long-horizon tasks that matter most, like building software from scratch and interpreting developer intent across multiple files.
 
-Sebastian Borgeaud leads the team. He previously ran Gemini's pretraining operation — which means Google moved one of its most senior model builders from foundational training work to the specific problem of coding capability. That is the organizational equivalent of reassigning your offensive coordinator to fix the passing game with eight weeks left in the season.
+[Sebastian Borgeaud leads the team](https://the-decoder.com/google-builds-elite-team-to-close-the-coding-gap-with-anthropic/). He previously ran Gemini's pretraining operation — which means Google moved one of its most senior model builders from foundational training work to the specific problem of coding capability. That is the organizational equivalent of reassigning your offensive coordinator to fix the passing game with eight weeks left in the season.
 
 Brin is directly involved alongside Google DeepMind CTO Koray Kavukcuoglu.
 
@@ -33,7 +33,7 @@ Brin is directly involved alongside Google DeepMind CTO Koray Kavukcuoglu.
 
 ## Midtraining: The Strategic Expansion
 
-In late June 2026, Google expanded the strike team's scope to include **midtraining** — a phase between broad initial pretraining and instruction tuning.
+In [late June 2026, Google expanded the strike team's scope](https://the-decoder.com/google-builds-elite-team-to-close-the-coding-gap-with-anthropic/) to include **midtraining** — a phase between broad initial pretraining and instruction tuning.
 
 The conventional model development pipeline looks roughly like: pretraining → midtraining → fine-tuning/RLHF → deployment. Midtraining is the least publicly discussed of these stages. It is where a team can expose a model to high-quality, carefully selected domain data after the base capabilities are set but before the model is shaped for instruction following.
 

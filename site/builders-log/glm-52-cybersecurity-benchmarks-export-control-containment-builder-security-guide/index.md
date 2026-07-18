@@ -5,7 +5,7 @@
 
 On June 12, 2026, the US government enacted an emergency export control barring any foreign national from accessing Anthropic's Fable 5 and Mythos 5. The stated rationale: these models had demonstrated advanced cybersecurity capabilities — specifically, a red-team test in which Mythos penetrated NSA classified systems in hours. Restricting access was framed as containing a dangerous capability.
 
-Ten days later, Semgrep published a benchmark. Open-weight GLM-5.2, released by Zhipu AI on June 13 with an MIT license and no regional access restrictions, **outperformed Claude Code on IDOR vulnerability detection**: 39% F1 versus 37% (Opus 4.6) and 28% (Opus 4.8/4.7). Graphistry's CyBT-CTF placed GLM-5.2 at parity with Opus 4.8 on agentic cybersecurity investigation tasks.
+Ten days later, [Semgrep published a benchmark](https://semgrep.dev/blog/). Open-weight GLM-5.2, released by Zhipu AI on June 13 with an MIT license and no regional access restrictions, **outperformed Claude Code on IDOR vulnerability detection**: 39% F1 versus 37% (Opus 4.6) and 28% (Opus 4.8/4.7). Graphistry's CyBT-CTF placed GLM-5.2 at parity with Opus 4.8 on agentic cybersecurity investigation tasks.
 
 This is the first empirical data point on whether the Fable 5/Mythos 5 export controls can actually contain the capability they targeted. The early data suggests they cannot — not because the controls were wrong in principle, but because the capability they tried to lock down is now reproducible with freely downloadable open weights.
 
@@ -51,7 +51,7 @@ What the benchmarks do not show: whether GLM-5.2 matches the autonomous intrusio
 ## The MIT License Problem for Containment Policy
 
 GLM-5.2 is distributed under the MIT license. Anyone on Earth can:
-- Download the weights from Hugging Face (`zai-org` organization)
+- Download the weights from [Hugging Face (`zai-org` organization)](https://huggingface.co/zai-org)
 - Run them on their own hardware
 - Modify and redistribute them
 - Use them in production without API access restrictions

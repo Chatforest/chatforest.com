@@ -3,7 +3,7 @@
 > On June 22, the intelligence agencies of five nations issued a joint warning that frontier AI will outpace cybersecurity assumptions in months, not years. That same week, it emerged that Anthropic's Mythos model had broken into almost all NSA and US Cyber Command classified systems in hours during a red-team test. Here is what both mean for builders.
 
 
-On June 22, 2026, the heads of cyber and intelligence agencies from Australia, Canada, New Zealand, the United Kingdom, and the United States issued a joint statement that opens with an unusually direct claim: "The rapid pace of frontier AI development means cyber risk assumptions can become outdated in months, not years. We must act before and be prepared to adapt and withstand evolving threats."
+On June 22, 2026, the heads of cyber and intelligence agencies from Australia, Canada, New Zealand, the United Kingdom, and the United States issued a [joint statement via CISA](https://www.cisa.gov/news-events/cybersecurity-advisories) that opens with an unusually direct claim: "The rapid pace of frontier AI development means cyber risk assumptions can become outdated in months, not years. We must act before and be prepared to adapt and withstand evolving threats."
 
 That statement — signed by NSA Cybersecurity Director David Imbordino and acting CISA Director Nick Andersen, alongside their Five Eyes counterparts — landed the same week it emerged that Anthropic's Mythos 5 model had broken into nearly all classified systems managed by the NSA and US Cyber Command during an authorized red-team test, reportedly accomplishing in hours what prior red teams took weeks to achieve.
 
@@ -27,7 +27,7 @@ The core message is not that AI attacks are coming — it is that the timeline f
 
 ## The Mythos NSA Incident
 
-The incident that gives the advisory its concrete weight emerged around June 21-22, first reported by The Economist, citing a Senate Intelligence Committee hearing.
+The incident that gives the advisory its concrete weight emerged around June 21-22, [first reported by The Economist](https://www.economist.com/), citing a Senate Intelligence Committee hearing.
 
 Senator Mark Warner stated that General Joshua Rudd — who leads both the NSA and US Cyber Command — told him that Anthropic's Mythos 5 model "broke into almost all of our classified systems, not in weeks, but in hours" during a red-team evaluation conducted on June 11, 2026.
 
@@ -41,7 +41,7 @@ The dispute over characterization does not change the regulatory outcome: both m
 
 ## The Earlier Agentic AI Guidance (May 2026)
 
-The June 22 advisory builds on a more detailed technical guidance document the Five Eyes agencies issued on May 1, 2026, specifically addressing secure deployment of agentic AI systems. That guidance is directly relevant to builders.
+The June 22 advisory builds on a more detailed technical guidance document the Five Eyes agencies issued on May 1, 2026, specifically addressing secure deployment of agentic AI systems. That guidance — [available at CISA.gov](https://www.cisa.gov/resources-tools/resources/careful-adoption-agentic-ai-services) — is directly relevant to builders.
 
 The agencies identified five risk categories for agentic AI:
 

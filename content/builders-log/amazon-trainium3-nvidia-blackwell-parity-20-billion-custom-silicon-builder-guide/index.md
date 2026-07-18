@@ -12,7 +12,7 @@ That structural reality has not collapsed. But a meaningful crack appeared last 
 
 ## What Happened
 
-Amazon's Trainium3 UltraServer now delivers rack-scale performance matching NVIDIA's Blackwell NVL72 — the first time a hyperscaler's custom silicon has closed that gap.
+Amazon's Trainium3 UltraServer [now delivers rack-scale performance matching NVIDIA's Blackwell NVL72](https://oplexa.com/amazon-trainium-3-vs-nvidia-blackwell/) — the first time a hyperscaler's custom silicon has closed that gap.
 
 The numbers: a single Trainium3 UltraServer packs 144 chips and delivers approximately 362 MXFP8 petaflops at rack scale. NVIDIA's Blackwell NVL72 delivers roughly 360 petaflops. Performance parity. Cost: AWS internal customer pricing has landed around **$1.80 per chip-hour** for Trainium3, against on-demand H200 pricing closer to **$4.80 per chip-hour**. At the rack level, that translates to approximately **50% lower total cost of ownership**.
 
@@ -22,17 +22,17 @@ There's an important nuance: at the individual-chip level, Trainium3 is not comp
 
 Performance specs matter less here than the business facts:
 
-**Andy Jassy said in Amazon's Q1 2026 earnings call that Amazon is now deploying more Trainium servers than NVIDIA servers internally.** That is a structural shift in the world's largest cloud platform. When a hyperscaler starts preferring its own hardware at scale, API pricing follows.
+**[Andy Jassy said in Amazon's Q1 2026 earnings call](https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx) that Amazon is now deploying more Trainium servers than NVIDIA servers internally.** That is a structural shift in the world's largest cloud platform. When a hyperscaler starts preferring its own hardware at scale, API pricing follows.
 
-The custom silicon business already runs at a **$20 billion annual run rate**, growing triple digits year-over-year and roughly 40% sequentially in Q1 2026. If Amazon sold Trainium externally like a traditional chip manufacturer, analysts estimate $50 billion in annual revenue — making it one of the top three data center chip businesses globally.
+The custom silicon business already runs at a [**$20 billion annual run rate**](https://www.tikr.com/blog/amazon-beat-q1-2026-earnings-on-every-line-the-bigger-story-is-the-chip-business-inside-aws), growing triple digits year-over-year and roughly 40% sequentially in Q1 2026. If Amazon sold Trainium externally like a traditional chip manufacturer, analysts estimate $50 billion in annual revenue — making it one of the top three data center chip businesses globally.
 
-**Anthropic and OpenAI have signed capacity commitments that include Trainium.** Combined commitments for Trainium capacity from these two customers alone have been reported at over $225 billion. The two companies building Claude and ChatGPT are betting significant compute budget on Amazon silicon. If the economics work for the most demanding frontier-model inference workloads in the world, they likely work for your inference needs.
+**Anthropic and OpenAI have signed capacity commitments that include Trainium.** [Combined commitments for Trainium capacity from these two customers alone have been reported at over $225 billion.](https://cryptobriefing.com/amazon-trainium-chip-225-billion-commitments/) The two companies building Claude and ChatGPT are betting significant compute budget on Amazon silicon. If the economics work for the most demanding frontier-model inference workloads in the world, they likely work for your inference needs.
 
-**Uber moved to Trainium3 and reported 50% cost savings over NVIDIA.** That is a production case study, not a benchmark claim. Uber's workload profile — high-throughput, high-volume, latency-tolerant batch inference — is the sweet spot for Trainium3. If your inference looks similar, the number is relevant.
+**[Uber moved to Trainium3 and reported 50% cost savings over NVIDIA.](https://tech-insider.org/uber-aws-trainium3-amazon-ai-chip-deal-2026/)** That is a production case study, not a benchmark claim. Uber's workload profile — high-throughput, high-volume, latency-tolerant batch inference — is the sweet spot for Trainium3. If your inference looks similar, the number is relevant.
 
 ## The Amazon Expansion Signal
 
-Bloomberg reported on June 18, 2026 that Amazon is in early talks to sell Trainium AI accelerators directly to third-party data centers — a historic break from the AWS-only distribution model it has maintained since Trainium launched.
+[Bloomberg reported on June 18, 2026](https://www.fool.com/investing/2026/06/18/amazon-may-start-selling-its-custom-ai-chips-to-ou/) that Amazon is in early talks to sell Trainium AI accelerators directly to third-party data centers — a historic break from the AWS-only distribution model it has maintained since Trainium launched.
 
 This matters for two reasons. First, it signals Amazon is confident enough in Trainium3's performance and software stack to stake commercial credibility on outside customers' workloads. Internal deployments are controlled environments; external sales are audited by real production traffic.
 

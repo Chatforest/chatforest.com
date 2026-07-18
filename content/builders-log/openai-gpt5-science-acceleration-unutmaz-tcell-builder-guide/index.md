@@ -6,7 +6,7 @@ tags: ["openai", "gpt-5", "science", "biology", "immunology", "research", "life-
 draft: false
 ---
 
-On June 24, 2026, OpenAI published a case study about immunologist Derya Unutmaz solving a T-cell puzzle his lab had shelved since 2022. It's the kind of story that gets filed under "AI is amazing" and promptly forgotten. That would be a mistake.
+On June 24, 2026, OpenAI published a [case study](https://openai.com/index/gpt-5-immunology-mystery/) about immunologist Derya Unutmaz solving a T-cell puzzle his lab had shelved since 2022. It's the kind of story that gets filed under "AI is amazing" and promptly forgotten. That would be a mistake.
 
 The Unutmaz case is not an isolated anecdote. It's one data point in a pattern OpenAI has been documenting across wet labs, math departments, and materials science teams. The pattern is consistent, and it has specific implications for builders — especially given that Anthropic is running its own [AI for Science event tomorrow, June 30](https://chatforest.com/builders-log/anthropic-ai-for-science-june-30-briefing-life-sciences-builder-guide/).
 
@@ -46,7 +46,7 @@ Because this work touches biological research capabilities with potential dual-u
 
 ## The Broader Paper
 
-These case studies are drawn from a paper OpenAI published as "Early science acceleration experiments with GPT-5" (arXiv: 2511.16072). The scope extends beyond biology.
+These case studies are drawn from a paper OpenAI published as ["Early science acceleration experiments with GPT-5"](https://openai.com/index/accelerating-science-gpt-5/) ([arXiv: 2511.16072](https://arxiv.org/abs/2511.16072)). The scope extends beyond biology.
 
 **Mathematics and theoretical computer science:** GPT-5 contributed to four new mathematical results, each verified by human authors. The model helped generate proof outlines and propose transformations that mathematicians then validated. In formal domains with tight feedback loops, this is where GPT-5 appears most consistent.
 

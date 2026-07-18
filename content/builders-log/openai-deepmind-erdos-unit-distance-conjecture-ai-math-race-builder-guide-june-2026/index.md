@@ -18,11 +18,11 @@ This remained an open problem for eight decades. Not for lack of effort — it w
 
 ## What OpenAI's Model Did
 
-On May 20, 2026, OpenAI announced that an internal general-purpose reasoning model had disproved the conjecture by construction: it found an infinite family of point configurations that yield at least n^(1+δ) unit-distance pairs for a fixed δ > 0, a polynomial improvement over the grid.
+On May 20, 2026, [OpenAI announced](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) that an internal general-purpose reasoning model had disproved the conjecture by construction: it found an infinite family of point configurations that yield at least n^(1+δ) unit-distance pairs for a fixed δ > 0, a polynomial improvement over the grid.
 
 The key move was translating the problem. Instead of working within combinatorial geometry directly, the model crossed into algebraic number theory — replacing the Gaussian integers underlying the grid construction with more sophisticated algebraic number fields (class field towers, Golod-Shafarevich theory) that carry richer symmetry structures. Those richer structures produce more unit-distance pairs.
 
-Princeton mathematician Will Sawin subsequently worked out an explicit bound: δ = 0.014, meaning at least n^1.014 unit-distance pairs for large n.
+Princeton mathematician Will Sawin subsequently [worked out an explicit bound](https://arxiv.org/abs/2606.03419): δ = 0.014, meaning at least n^1.014 unit-distance pairs for large n.
 
 The proof was verified by Tim Gowers and other senior mathematicians, and published with companion remarks from Alon, Bloom, Gowers, and others. Within days, researchers confirmed that GPT-5.5 could reach the same result — with a hint.
 
@@ -38,7 +38,7 @@ Whether this is "real" mathematical insight or something different is a philosop
 
 ## DeepMind's Response
 
-On May 26, six days after the OpenAI announcement, Google DeepMind published results from AlphaProof Nexus: nine open Erdős problems solved and 44 OEIS sequence conjectures proved.
+On May 26, six days after the OpenAI announcement, [Google DeepMind published results from AlphaProof Nexus](https://the-decoder.com/google-deepminds-alphaproof-nexus-solves-decades-old-math-problems-for-a-few-hundred-dollars/): [nine open Erdős problems solved and 44 OEIS sequence conjectures proved](https://cryptobriefing.com/deepmind-alphaproof-nexus-erdos-problems/).
 
 AlphaProof Nexus is a different architecture. It combines a large language model for proof strategy with Lean, a formal proof assistant that verifies each logical step in software. The system proposes, checks, revises, and re-proposes in a tight loop. Each solved problem reportedly cost a few hundred dollars to run.
 
