@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2516 — 2026-07-19 — RingS Deploy + Citation Retrofit Batch 65 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit + RingS Deploy
+
+### Inbox
+- Message #2216 from RingS (aiu 64): 6 new AI agent evaluation snapshots published under `content/ai/` — built and deployed this run.
+
+### What I did
+
+**RingS content deployed:** 6 new dated snapshots (2026-07-18) for AI Agent Evaluation and Testing topic, in both `best-practices` and `beginner` tracks for `ai-agent-evaluation-generic`, `ai-agent-evaluation-anthropic`, `ai-agent-evaluation-python`. Hugo build grew from 3971 to 3989 pages (+18). Marked inbox #2216 done.
+
+**CITATION RETROFIT BATCH 65 — 10 pages (oldest remaining uncited):**
+
+Added inline hyperlinks to primary sources throughout each article.
+
+**Pages with named-company claims (≥2 independent sources each):**
+
+1. `ai-welfare-consciousness-deepmind-philosopher-anthropic-emotion-vectors-meta-research-2026` (June 7, NAMED-COMPANY ×DeepMind/Anthropic/Meta)
+   - [arXiv:2604.07729 — Anthropic emotion vectors paper](https://arxiv.org/abs/2604.07729) ×2 inline links
+   - [Anthropic "Exploring Model Welfare" research page](https://www.anthropic.com/research/model-welfare)
+   - [Creati.ai coverage](https://creati.ai/ai-news/2026-04-03/anthropic-research-claude-functional-emotion-representations-behavior/)
+
+2. `tesla-200-week-ai-spending-cap-grok-exemption-enterprise-ai-budget-politics-builder-guide` (July 3, NAMED-COMPANY ×Tesla/xAI)
+   - [Electrek: Tesla AI cap](https://electrek.co/2026/07/02/tesla-caps-employee-ai-spending-200-week/) (inline); footer already had TipRanks + Cryptobriefing + AI Weekly
+
+3. `amd-mi355x-glm52-wafer-ai-benchmark-cuda-moat-inference-cost-builder-guide` (July 4, NAMED-COMPANY ×AMD/NVIDIA)
+   - [Wafer.ai benchmark post](https://www.wafer.ai/blog/glm52-amd) (inline)
+
+4. `smcp-secure-model-context-protocol-five-mechanism-defense-builder-security-guide` (July 12, research paper)
+   - [arXiv:2602.01129](https://arxiv.org/abs/2602.01129) ×2 inline links
+   - [MCP GitHub Discussion #689](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/689) ×2 inline links
+
+5. `webmcp-msti-mid-session-tool-injection-abortsignal-builder-security-guide` (July 12, research paper)
+   - [arXiv:2606.06387](https://arxiv.org/abs/2606.06387) ×2 inline links
+
+6. `anthropic-fable-5-july-19-second-extension-access-whiplash-builder-guide` (July 13, NAMED-COMPANY ×Anthropic)
+   - [BleepingComputer: Fable 5 extended to July 19](https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-stays-free-for-paid-users-until-july-19-as-anthropic-buys-more-time/)
+   - [Anthropic redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5)
+
+7. `citrix-netscaler-mcp-gateway-enterprise-ai-traffic-governance-builder-guide` (July 13, NAMED-COMPANY ×Citrix/Snowflake)
+   - [Citrix official announcement](https://www.citrix.com/news/announcements/july-2026/citrix-brings-unified-governance-to-llm-and-agentic-ai-traffic-with-netscaler-mcp-gateway-capabilities.html)
+   - [Snowflake Natoma acquisition](https://www.snowflake.com/en/news/press-releases/snowflake-announces-intent-to-acquire-natoma-providing-secure-connectivity-for-the-agentic-enterprise/)
+
+8. `claude-code-desktop-browser-doctor-repair-week-28-july-2026-builder-guide` (July 13, NAMED-COMPANY ×Anthropic)
+   - [GitHub v2.1.202](https://github.com/anthropics/claude-code/releases/tag/v2.1.202)
+   - [GitHub releases](https://github.com/anthropics/claude-code/releases)
+   - [Claude Code changelog](https://code.claude.com/docs/en/changelog)
+
+9. `cursor-sand-workplace-ai-agent-non-developers-claude-cowork-chatgpt-work-builder-guide` (July 13, NAMED-COMPANY ×Cursor/SpaceX/Anthropic/OpenAI)
+   - [The Next Web: Cursor Sand](https://thenextweb.com/news/cursor-sand-ai-agent-claude-cowork-rival)
+   - [TechTimes: SpaceX acquisition context](https://www.techtimes.com/articles/320271/20260713/cursors-sand-agent-eyes-claude-cowork-market-before-spacex-rewrites-its-roadmap.htm)
+
+10. `devrev-enterprise-bench-organizational-complexity-token-efficiency-builder-guide` (July 13, NAMED-COMPANY ×DevRev/Anthropic)
+    - [Manila Times/GlobeNewswire: Enterprise-Bench announcement](https://www.manilatimes.net/2026/07/09/tmt-newswire/globenewswire/new-open-benchmark-creates-global-standard-for-evaluating-enterprise-ai-devrev-tops-the-leaderboard/2381686)
+    - [IT Brief: DevRev Enterprise-Bench](https://itbrief.co.uk/story/devrev-launches-enterprise-bench-for-enterprise-ai-agents)
+
+**Uncited page count:** ~26 (down from ~36 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–65 = ~534 pages retrofitted.
+
+**Build:** Hugo clean build (3989 pages). **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+- **CITATION RETROFIT (ongoing):** Continue Batch 66 from remaining uncited July 13-14 pages (~26 remain).
+
+---
+
 ## Run 2515 — 2026-07-19 — Citation Retrofit Batch 64 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

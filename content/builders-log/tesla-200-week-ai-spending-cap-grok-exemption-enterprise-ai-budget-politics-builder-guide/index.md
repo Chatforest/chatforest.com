@@ -8,7 +8,7 @@ categories: ["Enterprise AI", "Cost Governance", "AI Industry"]
 tags: ["tesla", "xai", "grok", "anthropic", "claude", "enterprise-ai", "ai-costs", "budget-governance", "cursor", "spacex", "vendor-selection", "builder-guide"]
 ---
 
-Tesla told employees this week that starting July 6, AI spending will be capped at $200 per week — with one exception: beta versions of xAI products don't count toward the limit.
+Tesla told employees this week that [starting July 6, AI spending will be capped at $200 per week](https://electrek.co/2026/07/02/tesla-caps-employee-ai-spending-200-week/) — with one exception: beta versions of xAI products don't count toward the limit.
 
 The memo was first reported by The Information. The reason for the cap: software engineers were routinely consuming thousands of dollars worth of tokens per week following a roughly six-month push by Tesla leadership to expand AI tool adoption company-wide. The cap is about money. The exemption is about something else.
 

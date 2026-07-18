@@ -3,7 +3,7 @@
 > On July 10, 2026, the US Bureau of Industry and Security reclassified the UAE from restricted Country Group D:3/D:4 to trusted A:5 — the first Arab country to receive that designation. G42, Core42, and seven US tech giants (Amazon, Apple, Google, Meta, Microsoft, OpenAI, Oracle, xAI) can now receive advanced Nvidia AI chips and HPC servers without individual export licenses. Here is what actually changed, who qualifies, what remains restricted, and what it means if you are building AI products for the Middle East and North Africa market.
 
 
-On July 10, 2026, the US Commerce Department's Bureau of Industry and Security (BIS) announced a significant change to how American technology companies can move AI hardware into the United Arab Emirates. The UAE was removed from Export Administration Regulations (EAR) Country Groups D:3 and D:4 — groups associated with restricted dual-use and munitions concerns — and added to Country Group A:5, which places it alongside NATO allies, Japan, Australia, and South Korea as trusted strategic technology partners. It is the first Arab country to receive that designation.
+On July 10, 2026, the US Commerce Department's [Bureau of Industry and Security (BIS) announced](https://www.bis.gov/press-release/department-commerce-eases-export-controls-uae) a significant change to how American technology companies can move AI hardware into the United Arab Emirates. The UAE was removed from Export Administration Regulations (EAR) Country Groups D:3 and D:4 — groups associated with restricted dual-use and munitions concerns — and added to Country Group A:5, which places it alongside NATO allies, Japan, Australia, and South Korea as trusted strategic technology partners. It is the first Arab country to receive that designation.
 
 For AI builders with customers, partners, or infrastructure in the Gulf, the practical effect is considerable: approved entities can now receive advanced Nvidia chips, high-performance computing servers, commercial satellites, and specified dual-use technology without applying for individual export licenses. The licensing drag that previously measured in months for some shipments is largely gone for the approved set of companies.
 
@@ -37,7 +37,7 @@ The reclassification is not UAE-wide. Access to advanced AI computing items unde
 - Oracle (Oracle Cloud UAE)
 - xAI
 
-This is a whitelist, not an open market. A UAE-based startup or regional enterprise that wants to buy a rack of H100s through a local distributor does not automatically benefit from this reclassification. Those transactions still require separate export licenses. The AGBI analysis noted that despite the headline liberalization, many UAE businesses will remain in a "slow lane" — real access belongs to sovereign AI vehicles and US tech giants with approved UAE presences.
+This is a whitelist, not an open market. A UAE-based startup or regional enterprise that wants to buy a rack of H100s through a local distributor does not automatically benefit from this reclassification. Those transactions still require separate export licenses. The [AGBI analysis](https://english.uaevartha.com/us-eases-export-controls-on-uae-granting-trusted-a5-status-for-advanced-ai-chips-and-defense-technology/) noted that despite the headline liberalization, many UAE businesses will remain in a "slow lane" — real access belongs to sovereign AI vehicles and US tech giants with approved UAE presences.
 
 If you are partnering with a UAE company that is not on this list, your supply chain has not changed.
 
@@ -84,7 +84,7 @@ In that framing, the A:5 elevation is a technology reward for strategic cooperat
 
 This context matters for builders because it creates a durable logic for the partnership but also a fragile one. The UAE's treatment as a trusted partner is conditioned on continued strategic alignment. Any significant shift in UAE foreign policy — toward China, toward Iran, or in the form of a high-profile technology diversion incident — could trigger rapid reconsideration.
 
-The BIS press release made the strategic linkage explicit: the reclassification reflects the UAE's "role in U.S. national security interests" and its status as a Major Defense Partner. That is different from saying the technology relationship is purely commercial and therefore stable.
+The [BIS press release](https://www.bis.gov/press-release/department-commerce-eases-export-controls-uae) made the strategic linkage explicit: the reclassification reflects the UAE's "role in U.S. national security interests" and its status as a Major Defense Partner. [KPMG's analysis of the final rule](https://kpmg.com/us/en/taxnewsflash/news/2026/07/tnf-us-bis-amends-ear-to-provide-enhanced-favorable-treatment-for-uae.html) notes the rule was published in the Federal Register on July 14, 2026, effective July 10. That is different from saying the technology relationship is purely commercial and therefore stable.
 
 ---
 

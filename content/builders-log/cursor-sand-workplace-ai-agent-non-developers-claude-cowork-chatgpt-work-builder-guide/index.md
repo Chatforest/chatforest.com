@@ -8,9 +8,9 @@ categories: ["AI Agents", "Developer Tools", "Market Intelligence", "Workplace A
 tags: ["cursor", "sand", "workplace-ai", "claude-cowork", "chatgpt-work", "spacexai", "acquisition", "non-developers", "agent-convergence", "builders-log"]
 ---
 
-Cursor is developing a general-purpose AI agent internally called Sand, designed to handle email, texts, and spreadsheets for non-developer business users. Reported on July 12, 2026, the project rolled out internally in late June and represents Cursor's first product aimed outside its core developer audience.
+Cursor is developing a general-purpose AI agent internally called Sand, designed to handle email, texts, and spreadsheets for non-developer business users. [Reported on July 12, 2026](https://thenextweb.com/news/cursor-sand-ai-agent-claude-cowork-rival), the project rolled out internally in late June and represents Cursor's first product aimed outside its core developer audience.
 
-Whether Sand ever ships is an open question. The pending SpaceX $60 billion acquisition of Cursor — expected to close in Q3 2026 — could reshape the company's product roadmap before Sand reaches public availability.
+Whether Sand ever ships is an open question. [The pending SpaceX $60 billion acquisition of Cursor](https://www.techtimes.com/articles/320271/20260713/cursors-sand-agent-eyes-claude-cowork-market-before-spacex-rewrites-its-roadmap.htm) — expected to close in Q3 2026 — could reshape the company's product roadmap before Sand reaches public availability.
 
 This is a research-based summary based on published reports. We did not have access to Sand and no pricing or technical architecture has been disclosed.
 

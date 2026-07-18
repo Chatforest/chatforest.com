@@ -8,9 +8,9 @@ categories: ["AI Industry", "Developer Tools", "Enterprise AI", "Security"]
 tags: ["citrix", "netscaler", "mcp", "enterprise", "governance", "ai-agents", "mcp-gateway", "security", "rate-limiting", "authentication"]
 ---
 
-On July 9, 2026, Citrix added MCP Gateway capabilities to NetScaler — the application delivery controller that already sits in front of most large enterprise web infrastructure. Existing Citrix Platform License and Universal Hybrid Multi-Cloud customers get it at no additional cost.
+On July 9, 2026, [Citrix added MCP Gateway capabilities to NetScaler](https://www.citrix.com/news/announcements/july-2026/citrix-brings-unified-governance-to-llm-and-agentic-ai-traffic-with-netscaler-mcp-gateway-capabilities.html) — the application delivery controller that already sits in front of most large enterprise web infrastructure. Existing Citrix Platform License and Universal Hybrid Multi-Cloud customers get it at no additional cost.
 
-The move is quietly significant. Snowflake bought Natoma to govern what data agents can access. Citrix is governing how agent traffic moves — at the network layer, where the enterprise has always applied its controls.
+The move is quietly significant. [Snowflake bought Natoma](https://www.snowflake.com/en/news/press-releases/snowflake-announces-intent-to-acquire-natoma-providing-secure-connectivity-for-the-agentic-enterprise/) to govern what data agents can access. Citrix is governing how agent traffic moves — at the network layer, where the enterprise has always applied its controls.
 
 ---
 

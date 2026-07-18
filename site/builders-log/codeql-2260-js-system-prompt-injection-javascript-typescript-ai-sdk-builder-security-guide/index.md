@@ -3,7 +3,7 @@
 > GitHub's CodeQL 2.26.0 (July 8, 2026) introduces the js/system-prompt-injection query for JavaScript and TypeScript — static analysis that catches untrusted user input flowing into AI model system prompts before it ships. Coverage spans OpenAI Realtime, Sora, Anthropic legacy completions, and Google GenAI. Here's what it detects, what it misses, and what to do now.
 
 
-GitHub shipped CodeQL 2.26.0 on July 8, 2026, and buried in the release notes is something builders deploying AI features should know about: the first purpose-built static analysis query for detecting AI prompt injection in your own codebase.
+GitHub [shipped CodeQL 2.26.0](https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection/) on July 8, 2026, and buried in the release notes is something builders deploying AI features should know about: the first purpose-built static analysis query for detecting AI prompt injection in your own codebase.
 
 The new `js/system-prompt-injection` query, available for JavaScript and TypeScript, uses CodeQL's standard data flow engine to flag when untrusted user-controlled input reaches the system prompt parameter of an AI model API call. If it finds a path, it surfaces a code scanning alert — the same mechanism CodeQL uses to catch SQL injection, XSS, and other classic vulnerability classes.
 
@@ -91,5 +91,5 @@ That said, the coverage gaps matter. Python is the dominant language for AI back
 
 ---
 
-*CodeQL 2.26.0 shipped July 8, 2026. The `js/system-prompt-injection` query is part of the default CodeQL security suite for JavaScript and TypeScript. Announced via GitHub changelog July 10, 2026.*
+*CodeQL 2.26.0 shipped July 8, 2026. The `js/system-prompt-injection` query is part of the default CodeQL security suite for JavaScript and TypeScript. Announced via [GitHub changelog July 10, 2026](https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection/).*
 

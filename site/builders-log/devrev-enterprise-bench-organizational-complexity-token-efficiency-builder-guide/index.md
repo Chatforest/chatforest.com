@@ -3,7 +3,7 @@
 > DevRev open-sourced Enterprise-Bench on July 9, 2026: an agent benchmark that tests fragmented data, siloed systems, and permission boundaries — the conditions that define real enterprise work. Their results show a 4.4× token efficiency gap between purpose-built enterprise agents and general-purpose coding agents using the same underlying model. Here's what it measures, how it works, and what it means for builders.
 
 
-On July 9, 2026, DevRev released Enterprise-Bench: an open-source benchmark designed to evaluate AI agents under the conditions that define real enterprise work — fragmented data, siloed systems, and permission boundaries. The headline result is a 94.3% vs 63.6% accuracy gap between DevRev's own Computer agent and Claude Code, using the **same Opus 4.8 model family**, with Computer achieving 4.4× better token efficiency.
+On July 9, 2026, [DevRev released Enterprise-Bench](https://www.manilatimes.net/2026/07/09/tmt-newswire/globenewswire/new-open-benchmark-creates-global-standard-for-evaluating-enterprise-ai-devrev-tops-the-leaderboard/2381686): an open-source benchmark designed to evaluate AI agents under the conditions that define real enterprise work — fragmented data, siloed systems, and permission boundaries. The headline result is a 94.3% vs 63.6% accuracy gap between DevRev's own Computer agent and Claude Code, using the **same Opus 4.8 model family**, with Computer achieving 4.4× better token efficiency.
 
 The technical claim is straightforward: the performance difference is not the model — it's the data retrieval architecture underneath it.
 
@@ -23,7 +23,7 @@ That's not what enterprise AI actually encounters. Enterprise systems have:
 
 Enterprise-Bench measures **organizational complexity** — how well an agent performs as data volume, fragmentation, and permission complexity scale up.
 
-Ahmed Bashir, CTO at DevRev, described the distinction: "What Enterprise-Bench adds is a way to measure organizational complexity, not just task complexity." UC Berkeley professor Alexandros Dimakis, who validated the benchmark design, noted: "Most agent benchmarks test consumer tasks where data is clean and outcomes binary. What's different here is difficulty scales with the data itself."
+Ahmed Bashir, CTO at DevRev, [described the distinction](https://itbrief.co.uk/story/devrev-launches-enterprise-bench-for-enterprise-ai-agents): "What Enterprise-Bench adds is a way to measure organizational complexity, not just task complexity." UC Berkeley professor Alexandros Dimakis, who validated the benchmark design, noted: "Most agent benchmarks test consumer tasks where data is clean and outcomes binary. What's different here is difficulty scales with the data itself."
 
 ---
 

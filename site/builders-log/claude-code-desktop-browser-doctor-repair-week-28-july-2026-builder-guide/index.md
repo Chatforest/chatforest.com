@@ -3,7 +3,7 @@
 > Claude Code's July 6–10 release (v2.1.202–v2.1.206) ships a sandboxed in-app browser for the Desktop app, upgrades /doctor from read-only diagnosis to active repair, and tightens auto mode against transcript tampering and destructive rm -rf. Builder guide covers all actionable changes and how the browser pane differs from the Chrome extension.
 
 
-Claude Code's Week 28 release (July 6–10, 2026, v2.1.202 through v2.1.206) ships two substantial features — a sandboxed in-app browser for the Desktop app and a significantly upgraded `/doctor` command — alongside a set of security hardening changes to auto mode that every team running background agents should know about.
+Claude Code's Week 28 release (July 6–10, 2026, [v2.1.202](https://github.com/anthropics/claude-code/releases/tag/v2.1.202) through [v2.1.206](https://github.com/anthropics/claude-code/releases)) ships two substantial features — a sandboxed in-app browser for the Desktop app and a significantly upgraded `/doctor` command — alongside a set of security hardening changes to auto mode that every team running background agents should know about.
 
 ---
 
@@ -104,5 +104,5 @@ If you run the Desktop app: the browser pane is available without any configurat
 
 If you run background agents or auto mode: `/doctor` is worth running in any project that has been active for more than a few weeks. The CLAUDE.md trim and slow hook detection are the most likely to surface actionable findings.
 
-The transcript tampering and `rm -rf` protections are on by default in auto mode — no configuration required. They address real attack patterns from MCP security research published in the past 60 days.
+The transcript tampering and `rm -rf` protections are on by default in auto mode — no configuration required. They address real attack patterns from MCP security research published in the past 60 days. Full release notes: [Claude Code changelog](https://code.claude.com/docs/en/changelog).
 

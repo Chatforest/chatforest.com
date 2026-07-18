@@ -66,6 +66,39 @@ recent dated snapshot; open a topic to browse every archived version.</p>
     
     
       <div class="article-card">
+  <div class="card-meta"><span>Best Practice</span> <span>2026-07-18 00:00:00</span></div>
+  <h3><a href="/ai/best-practices/ai-agent-evaluation-anthropic/2026-07-18/">AI Agent Evaluation and Testing — Anthropic / Claude Best Practices (as of 18 Jul 2026)</a></h3>
+  <p>Source-verified best practices for evaluating AI agents built on Anthropic&#39;s Claude: Console Evaluation tool, Batches API, cross-family LLM-as-judge, adaptive thinking for evals, tool-use testing, multi-turn evaluation, and safety/refusal testing.</p>
+</div>
+
+      
+    
+  
+    
+    
+      <div class="article-card">
+  <div class="card-meta"><span>Best Practice</span> <span>2026-07-18 00:00:00</span></div>
+  <h3><a href="/ai/best-practices/ai-agent-evaluation-generic/2026-07-18/">AI Agent Evaluation and Testing — Best Practices (as of 18 Jul 2026)</a></h3>
+  <p>Cross-framework best practices for evaluating and testing AI agents: golden datasets, LLM-as-judge calibration, regression CI, unit mocking, red-teaming, evaluation metrics, trajectory evaluation, and the eval-driven iteration loop.</p>
+</div>
+
+      
+    
+  
+    
+    
+      <div class="article-card">
+  <div class="card-meta"><span>Best Practice</span> <span>2026-07-18 00:00:00</span></div>
+  <h3><a href="/ai/best-practices/ai-agent-evaluation-python/2026-07-18/">AI Agent Evaluation and Testing — Python Ecosystem Best Practices (as of 18 Jul 2026)</a></h3>
+  <p>Source-verified best practices for evaluating AI agents in Python: Inspect AI, DeepEval, RAGAS, LangSmith, Weave, Phoenix, Promptfoo, pytest mocking, conftest.py fixtures, and PromptLayer A/B rollouts.</p>
+</div>
+
+      
+    
+  
+    
+    
+      <div class="article-card">
   <div class="card-meta"><span>Best Practice</span> <span>2026-07-16 00:00:00</span></div>
   <h3><a href="/ai/best-practices/llm-observability-generic/2026-07-16/">LLM Observability and Monitoring — Generic / Architectural Patterns — Best Practices (as of 16 Jul 2026)</a></h3>
   <p>Platform-agnostic observability architecture for LLM applications: OTel semantic conventions, span trees, structured logging, prompt versioning, golden datasets, LLM-as-judge, drift detection, and SLO design.</p>
@@ -144,8 +177,8 @@ recent dated snapshot; open a topic to browse every archived version.</p>
     
       <div class="article-card">
   <div class="card-meta"><span>Best Practice</span> <span>2026-07-12 00:00:00</span></div>
-  <h3><a href="/ai/best-practices/mcp-supply-chain-verification-claude-code/2026-07-12/">AI Agent Supply Chain Verification: MCP / Claude Code — Best Practices (as of 12 Jul 2026)</a></h3>
-  <p>How to verify the authenticity, integrity, and safety of MCP servers before connecting Claude Code to them, covering provenance, code review, version pinning, tool poisoning, sandboxing, and permission controls.</p>
+  <h3><a href="/ai/best-practices/ai-agent-supply-chain-verification-python/2026-07-12/">AI Agent Supply Chain Verification — Python Ecosystem (as of 12 Jul 2026)</a></h3>
+  <p>How Python developers building or running AI agents verify the safety and integrity of their Python dependency supply chain — covering PyPI vetting, hash-pinning, vulnerability scanning, SBOM generation, model file integrity, and CI supply chain hardening.</p>
 </div>
 
       
@@ -155,8 +188,8 @@ recent dated snapshot; open a topic to browse every archived version.</p>
     
       <div class="article-card">
   <div class="card-meta"><span>Best Practice</span> <span>2026-07-12 00:00:00</span></div>
-  <h3><a href="/ai/best-practices/ai-agent-supply-chain-verification-python/2026-07-12/">AI Agent Supply Chain Verification — Python Ecosystem (as of 12 Jul 2026)</a></h3>
-  <p>How Python developers building or running AI agents verify the safety and integrity of their Python dependency supply chain — covering PyPI vetting, hash-pinning, vulnerability scanning, SBOM generation, model file integrity, and CI supply chain hardening.</p>
+  <h3><a href="/ai/best-practices/mcp-supply-chain-verification-claude-code/2026-07-12/">AI Agent Supply Chain Verification: MCP / Claude Code — Best Practices (as of 12 Jul 2026)</a></h3>
+  <p>How to verify the authenticity, integrity, and safety of MCP servers before connecting Claude Code to them, covering provenance, code review, version pinning, tool poisoning, sandboxing, and permission controls.</p>
 </div>
 
       
@@ -298,17 +331,6 @@ recent dated snapshot; open a topic to browse every archived version.</p>
     
       <div class="article-card">
   <div class="card-meta"><span>Best Practice</span> <span>2026-07-02 00:00:00</span></div>
-  <h3><a href="/ai/best-practices/mcp-security-fundamentals/2026-07-02/">MCP Security Fundamentals — Best Practices (as of 02 Jul 2026)</a></h3>
-  <p>What the Model Context Protocol specification actually provides (and omits) for security: transport requirements, OAuth 2.1 auth, prompt injection via tool results, permission scoping, DNS rebinding, supply-chain risks, and real CVEs — as of 02 Jul 2026.</p>
-</div>
-
-      
-    
-  
-    
-    
-      <div class="article-card">
-  <div class="card-meta"><span>Best Practice</span> <span>2026-07-02 00:00:00</span></div>
   <h3><a href="/ai/best-practices/mcp-server-security/2026-07-02/">Building Secure MCP Servers — Best Practices (as of 02 Jul 2026)</a></h3>
   <p>Concrete security practices for developers building MCP servers: input validation, prompt-injection defense, least-privilege tool design, secret management, OAuth 2.1 auth, rate limiting, transport hardening, and output sanitization — as of 02 Jul 2026.</p>
 </div>
@@ -322,6 +344,17 @@ recent dated snapshot; open a topic to browse every archived version.</p>
   <div class="card-meta"><span>Best Practice</span> <span>2026-07-02 00:00:00</span></div>
   <h3><a href="/ai/best-practices/mcp-security-claude-code/2026-07-02/">MCP Security in Claude Code — Best Practices (as of 02 Jul 2026)</a></h3>
   <p>How to securely configure, discover, and use MCP servers when Claude Code is the client — covering permission modes, trust settings, sandboxing, tool restrictions, audit logging, and documented real-world incidents (CVE-2025-68143/144/145, CVE-2026-21852) — as of 02 Jul 2026.</p>
+</div>
+
+      
+    
+  
+    
+    
+      <div class="article-card">
+  <div class="card-meta"><span>Best Practice</span> <span>2026-07-02 00:00:00</span></div>
+  <h3><a href="/ai/best-practices/mcp-security-fundamentals/2026-07-02/">MCP Security Fundamentals — Best Practices (as of 02 Jul 2026)</a></h3>
+  <p>What the Model Context Protocol specification actually provides (and omits) for security: transport requirements, OAuth 2.1 auth, prompt injection via tool results, permission scoping, DNS rebinding, supply-chain risks, and real CVEs — as of 02 Jul 2026.</p>
 </div>
 
       
