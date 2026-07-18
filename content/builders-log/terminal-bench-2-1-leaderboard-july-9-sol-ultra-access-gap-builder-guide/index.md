@@ -35,7 +35,7 @@ But the score column alone doesn't tell the right story. The more useful column 
 | 7 | **Cognition SWE-1.7** | 81.5% | Devin product only — no API |
 | 8 | **Claude Sonnet 5** | 80.4% | Public (Anthropic API) |
 
-Notes on scores: Sol Ultra and Sol are from OpenAI's own launch benchmarks. Mythos 5 and Fable 5 are from Anthropic's published evals. Grok 4.5 score is from SpaceXAI's July 8 announcement. SWE-1.7 is from Cognition's July 8 post. GPT-5.5 figures are from third-party tracking (tbench.ai); GPT-5.6 Terra and Luna Terminal-Bench scores are not yet officially reported. Scores for identical models vary by configuration — this table reflects each model's best documented result on Terminal-Bench 2.1.
+Notes on scores: Sol Ultra and Sol are from [OpenAI's own launch benchmarks](https://openai.com/index/gpt-5-6/). Mythos 5 and Fable 5 are from [Anthropic's published evals](https://www.anthropic.com/news/redeploying-fable-5). Grok 4.5 score is from [SpaceXAI's July 8 announcement](https://x.ai/news/grok-4-5). SWE-1.7 is from [Cognition's July 8 post](https://cognition.com/blog/swe-1-7). GPT-5.5 figures are from third-party tracking ([tbench.ai](https://www.tbench.ai/leaderboard/terminal-bench/2.1)); GPT-5.6 Terra and Luna Terminal-Bench scores are not yet officially reported. Scores for identical models vary by configuration — this table reflects each model's best documented result on [Terminal-Bench 2.1](https://www.tbench.ai/leaderboard/terminal-bench/2.1).
 
 ---
 
@@ -118,3 +118,7 @@ The leaderboard will shift again when Gemini 3.5 Pro reaches GA (expected ~July 
 - *[Claude Sonnet 5 vs GPT-5.6 Terra: The August 31 Cliff](/builders-log/claude-sonnet-5-vs-gpt-56-terra-benchmark-cost-context-window-builder-decision-july-2026/)*
 - *[SWE-1.7: Cognition's RL-on-RL Training Lands at 81.5%](/builders-log/cognition-swe-1-7-rl-on-rl-training-post-training-ceiling-terminal-bench-devin-builder-guide/)*
 - *[Claude Fable 5 Is Out: The Mythos Model Is Now General API](/builders-log/claude-fable-5-mythos-5-june-2026-builder-guide/)*
+
+---
+
+*Sources: [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [xAI Grok 4.5 announcement](https://x.ai/news/grok-4-5) · [Anthropic Fable 5 redeployment](https://www.anthropic.com/news/redeploying-fable-5) · [Cognition SWE-1.7 blog post](https://cognition.com/blog/swe-1-7) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1)*

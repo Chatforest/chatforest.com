@@ -7,7 +7,7 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-As of July 9, 2026, GPT-5.6 Sol, Terra, and Luna are publicly available via the OpenAI API — no waitlist, no preview partner requirement. The US government freeze that blocked general access to the GPT-5.6 family lifted yesterday, and OpenAI opened the floodgates overnight.
+As of July 9, 2026, [GPT-5.6 Sol, Terra, and Luna are publicly available via the OpenAI API](https://openai.com/index/gpt-5-6/) — no waitlist, no preview partner requirement. The US government freeze that blocked general access to the GPT-5.6 family lifted yesterday, and OpenAI opened the floodgates overnight.
 
 This is not a soft launch. If you're using GPT-5.5 in production today, you have a migration decision in front of you. If you're on Anthropic and evaluating alternatives, you have a competitive comparison to run. Here's the map.
 
@@ -117,4 +117,8 @@ The public launch today removes the remaining reason to defer evaluation. The mo
 
 ---
 
-*Pricing as of July 9, 2026, sourced from OpenAI's published API pricing page and OpenRouter. Terminal-Bench 2.1 scores from the official leaderboard. Sol Ultra pricing not yet published; cost premium is estimated based on increased output-token generation via subagent parallelization. Verify all pricing against current documentation before making infrastructure decisions.*
+*Pricing as of July 9, 2026, sourced from [OpenAI's published API pricing page](https://developers.openai.com/api/docs/pricing) and [Sol, Terra, and Luna preview help article](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna). [Terminal-Bench 2.1 scores from the official leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1). Sol Ultra pricing not yet published; cost premium is estimated based on increased output-token generation via subagent parallelization. Verify all pricing against current documentation before making infrastructure decisions.*
+
+---
+
+*Sources: [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [OpenAI API pricing](https://developers.openai.com/api/docs/pricing) · [Sol, Terra, and Luna pricing guide](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1)*
