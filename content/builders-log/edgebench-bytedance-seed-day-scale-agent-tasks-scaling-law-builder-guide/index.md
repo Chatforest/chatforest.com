@@ -13,9 +13,9 @@ tags: ["edgebench", "bytedance", "agent-benchmarks", "agentic-ai", "scaling-laws
 
 Most AI benchmarks measure what a model knows. EdgeBench measures how well an agent learns from an environment when given time to do so.
 
-ByteDance Seed released EdgeBench on July 2, 2026: 134 real-world tasks across six domains, each running 12 to 72+ hours continuously with iterative environment feedback. The benchmark measures not a model's initial answer quality but its ability to improve its approach across hundreds of attempts within a sustained session.
+[ByteDance Seed released EdgeBench](https://github.com/ByteDance-Seed/EdgeBench) on July 2, 2026: 134 real-world tasks across six domains, each running 12 to 72+ hours continuously with iterative environment feedback. The benchmark measures not a model's initial answer quality but its ability to improve its approach across hundreds of attempts within a sustained session.
 
-The researchers analyzed 38,000 hours of recorded agent interactions and found a scaling law.
+The researchers analyzed 38,000 hours of recorded agent interactions and found [a scaling law](https://seed.bytedance.com/en/blog/edgebench-measuring-real-world-environment-learning-and-discovering-a-new-scaling-law).
 
 ---
 

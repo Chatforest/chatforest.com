@@ -16,7 +16,7 @@ tags: ["un-ai-governance", "geneva-dialogue", "ai-governance", "export-controls"
 
 ## What Is the UN Global AI Governance Dialogue?
 
-The Global Dialogue on AI Governance is the United Nations' primary platform for coordinating international approaches to AI regulation. It was established through UN General Assembly Resolution A/RES/79/325, which emerged from the Global Digital Compact adopted at the 2024 Summit of the Future.
+[The Global Dialogue on AI Governance](https://www.un.org/global-dialogue-ai-governance/en) is the United Nations' primary platform for coordinating international approaches to AI regulation. It was established through [UN General Assembly Resolution A/RES/79/325](https://www.un.org/global-dialogue-ai-governance/en/programme), which emerged from the Global Digital Compact adopted at the 2024 Summit of the Future.
 
 Its mandate: ensure "governance reflects the priorities of all nations, not just the most technologically advanced," and that AI benefits are "shared by all."
 
@@ -37,7 +37,7 @@ The dialogue is not a treaty body. It cannot pass binding law. What it can do is
 
 ## The Scientific Panel's Findings: What Just Dropped
 
-Three days before the dialogue, the UN Independent International Scientific Panel on AI released its preliminary report. This is not a think-tank opinion paper. The panel is 40 experts drawn from around the world, established by the General Assembly in 2025, co-chaired by Yoshua Bengio (one of the founders of modern deep learning) and Maria Ressa (Nobel Prize-winning journalist and press freedom advocate).
+Three days before the dialogue, the [UN Independent International Scientific Panel on AI](https://news.un.org/en/story/2026/07/1167862) released its preliminary report. This is not a think-tank opinion paper. The panel is 40 experts drawn from around the world, established by the General Assembly in 2025, co-chaired by Yoshua Bengio (one of the founders of modern deep learning) and Maria Ressa (Nobel Prize-winning journalist and press freedom advocate).
 
 Their July 1-2 findings frame what the Geneva dialogue is trying to address:
 

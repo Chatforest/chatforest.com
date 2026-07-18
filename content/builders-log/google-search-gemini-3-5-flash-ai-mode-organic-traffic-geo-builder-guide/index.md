@@ -9,7 +9,7 @@ tags: ["google", "gemini", "gemini-3.5-flash", "search", "ai-mode", "seo", "geo"
 draft: false
 ---
 
-On May 19 at Google I/O 2026, Google announced that Gemini 3.5 Flash would power its AI Mode in Search. Within 24 hours it was live. By July 2026, AI Mode has surpassed **1 billion monthly users** across nearly 200 countries in 98 languages, and Google has called this the **most significant Search update in 25 years**.
+On May 19 at [Google I/O 2026](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/), Google announced that Gemini 3.5 Flash would power its AI Mode in Search. Within 24 hours it was live. By July 2026, AI Mode has surpassed **1 billion monthly users** across nearly 200 countries in 98 languages, and Google has called this the **most significant Search update in 25 years**.
 
 The practical effect: Google no longer primarily returns a ranked list of links. It generates a custom answer page — and the links, if they appear at all, are citations, not the destination.
 
@@ -40,7 +40,7 @@ Two independent studies quantify what AI Mode is doing to traffic:
 
 Source: Pew Research Center, July 2025 — before Flash became the backbone. The effect is larger now.
 
-A Seer Interactive study of 3,119 informational queries found **organic CTR fell 61%** when an AI Overview was present: from 1.76% to 0.61%. Those are informational queries — exactly the category where AI Mode coverage is highest.
+A [Seer Interactive study](https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-2026-update) of 3,119 informational queries found **organic CTR fell 61%** when an AI Overview was present: from 1.76% to 0.61%. Those are informational queries — exactly the category where AI Mode coverage is highest.
 
 The citation picture is equally stark: **only 38% of pages cited in AI Overviews now rank in Google's top 10**, down from 76% in mid-2025. The model is pulling from a different source distribution than the ranking algorithm.
 

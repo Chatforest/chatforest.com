@@ -5,7 +5,7 @@ description: "Three Claude Code versions shipped July 1–3. Background agents n
 tags: ["claude-code", "developer-tools", "anthropic", "ai-agents", "browser-automation"]
 ---
 
-Three Claude Code releases landed between July 1 and July 3, 2026 — v2.1.198, v2.1.199, and v2.1.200. They cover a lot of ground: a workflow-changing upgrade to background agents, a milestone for browser automation, a behavior change that will break some CI setups, and a long list of daemon and streaming reliability fixes.
+Three [Claude Code](https://code.claude.com/docs/en/changelog) releases landed between July 1 and July 3, 2026 — v2.1.198, v2.1.199, and v2.1.200. They cover a lot of ground: a workflow-changing upgrade to background agents, a milestone for browser automation, a behavior change that will break some CI setups, and a long list of daemon and streaming reliability fixes.
 
 Here is what matters for builders.
 
@@ -51,7 +51,7 @@ Before v2.1.200, Claude Code's permission mode defaulted to `"default"`. As of J
 - JetBrains extension
 - Any `"defaultMode"` value in `.claude.json` that was previously relying on the implicit `"default"` behavior
 
-**Why this matters:** The old `"default"` mode auto-allowed many tool calls without asking. The new `"manual"` mode requires explicit approval for state-changing operations. If you have scripts, CI jobs, or automation that invoke Claude Code and expected it to proceed without prompts, those sessions will now pause and wait for input that never comes.
+**Why this matters:** The old `"default"` mode auto-allowed many tool calls without asking. The new `"manual"` mode requires explicit approval for state-changing operations. Per [the official Claude Code changelog](https://code.claude.com/docs/en/changelog), this affects all extension surfaces. If you have scripts, CI jobs, or automation that invoke Claude Code and expected it to proceed without prompts, those sessions will now pause and wait for input that never comes.
 
 **The fix is explicit:** set `"defaultMode": "auto"` in your `.claude.json` (or pass `--permission-mode auto` on the CLI) to restore the previous behavior. Do not rely on the implicit default going forward — it has now changed once and could change again.
 
