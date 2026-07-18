@@ -9,7 +9,7 @@ The watch guide we published yesterday asked three questions: What would Mensch 
 
 [All three answered](https://chatforest.com/builders-log/mistral-summer-model-raise-summit-open-weight-july-2026-builder-watch-guide/).
 
-At RAISE Summit in Paris on July 8, Mistral formally announced **Mistral 3**: a new model family spanning a 675B sparse Mixture-of-Experts flagship and three small dense models. Every model ships under Apache 2.0. This is the most permissive license Mistral has ever shipped for a general-purpose model.
+At RAISE Summit in Paris on July 8, [Mistral formally announced **Mistral 3**](https://mistral.ai/news/mistral-3/): a new model family spanning a 675B sparse Mixture-of-Experts flagship and three small dense models. Every model ships under Apache 2.0. This is the most permissive license Mistral has ever shipped for a general-purpose model.
 
 Here is what builders need to know.
 
@@ -69,7 +69,7 @@ For EU-based teams with GDPR requirements: Apache 2.0 plus Mistral's France and 
 
 ## Benchmark Reality Check
 
-Independent evaluations on the Artificial Analysis Intelligence Index place Large 3 **below the median for comparable open-weight non-reasoning models**. Proprietary models from Anthropic, Google, and OpenAI hold clear leads on the hardest reasoning benchmarks.
+Independent evaluations on the [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/models/mistral-large-3) place Large 3 **below the median for comparable open-weight non-reasoning models**. Proprietary models from Anthropic, Google, and OpenAI hold clear leads on the hardest reasoning benchmarks.
 
 Specific numbers:
 - **MMLU-Pro**: ~73%
@@ -166,7 +166,7 @@ The meme was not leaked information. But it correctly intuited what Mistral woul
 - The pricing step-down ($0.50/$1.50 vs Medium 3.5's $1.50/$4.50) is significant — if quality holds for your use case, this is a cost reduction, not a trade-off
 
 **If you self-host:**
-- Download the Ministral 3 weights from HuggingFace now (Apache 2.0 — no form to fill, no access request)
+- Download the [Ministral 3 weights from HuggingFace](https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512) now (Apache 2.0 — no form to fill, no access request)
 - For Large 3 self-hosting, wait for community vLLM benchmarks and GGUF quantizations to settle over the next two weeks
 - The `mistral-inference` repo is the authoritative source for Mistral-optimized inference
 

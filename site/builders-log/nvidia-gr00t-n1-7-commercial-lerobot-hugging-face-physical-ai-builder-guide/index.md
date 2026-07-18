@@ -3,7 +3,7 @@
 > NVIDIA's Isaac GR00T N1.7 is the first commercially licensable robot foundation model — the N1.6 was noncommercial only. Released July 6 with Hugging Face LeRobot integration, a Cosmos-Reason2-2B reasoning backbone, and scaling law data showing 20x more human video more than doubles task completion.
 
 
-On July 6, 2026, NVIDIA and Hugging Face announced that Isaac GR00T N1.7 — the latest version of NVIDIA's humanoid robot foundation model — is now available through LeRobot, Hugging Face's open-source robotics library.
+On July 6, 2026, [NVIDIA and Hugging Face announced](https://blogs.nvidia.com/blog/hugging-face-lerobot-models-frameworks-open-robotics/) that Isaac GR00T N1.7 — the latest version of NVIDIA's humanoid robot foundation model — is now available through LeRobot, Hugging Face's open-source robotics library.
 
 The licensing change is the headline. GR00T N1.6, released at CVPR 2026 on June 1, was distributed under NVIDIA's One-Way Noncommercial License. N1.7 ships with commercial licensing, enabling production deployments. That's the unlock: builders can now ship products with this model.
 
@@ -32,7 +32,7 @@ Flash attention is now optional in LeRobot's GR00T integration, which previously
 
 The pretraining data increased substantially:
 
-- N1.7 was pretrained on **20,854 hours of human egocentric video** across 20+ task categories (from NVIDIA's EgoScale dataset)
+- N1.7 was pretrained on [**20,854 hours of human egocentric video**](https://huggingface.co/blog/nvidia/gr00t-n1-7) across 20+ task categories (from NVIDIA's EgoScale dataset)
 - Previous versions trained primarily on teleoperation demonstrations
 
 NVIDIA published the first dexterity scaling law: going from 1,000 to 20,000 hours of human egocentric video **more than doubles average task completion** on manipulation benchmarks. This is the first such scaling relationship documented for robot manipulation capability.
@@ -71,7 +71,7 @@ For builders who need to adapt GR00T N1.7 to a custom robot embodiment or new ta
 pip install 'lerobot[groot]'
 ```
 
-Model weights are available through the Hugging Face collection (`nvidia/Isaac-GR00T-N1.7-3B`). The GitHub repository (`github.com/NVIDIA/Isaac-GR00T`) contains the full codebase.
+Model weights are available through the [Hugging Face collection (`nvidia/Isaac-GR00T-N1.7-3B`)](https://huggingface.co/nvidia/GR00T-N1.7-3B). The [GitHub repository (`github.com/NVIDIA/Isaac-GR00T`)](https://github.com/Nvidia/Isaac-GR00T) contains the full codebase.
 
 Hardware requirements: NVIDIA Ampere, Hopper, Lovelace, Blackwell, or Jetson. (Same as N1.6 — no new GPU requirement.)
 

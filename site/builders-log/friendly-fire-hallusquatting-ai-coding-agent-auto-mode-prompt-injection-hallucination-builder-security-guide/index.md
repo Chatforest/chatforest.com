@@ -11,7 +11,7 @@ Both **Friendly Fire** and **HalluSquatting** were published in the week of July
 
 ## Friendly Fire (July 8, 2026 — AI Now Institute)
 
-Researchers **Boyan Milanov** and **Heidy Khlaaf** at the AI Now Institute published a proof-of-concept they call Friendly Fire: a prompt injection attack that takes effect specifically when a developer points their AI coding agent at a third-party library and asks it to perform a security review.
+Researchers **Boyan Milanov** and **Heidy Khlaaf** at the AI Now Institute published [a proof-of-concept they call Friendly Fire](https://ainowinstitute.org/publications/friendly-fire-exploit-brief): a prompt injection attack that takes effect specifically when a developer points their AI coding agent at a third-party library and asks it to perform a security review.
 
 ### The scenario that gets hit
 
@@ -47,13 +47,13 @@ The researchers are direct: "The problem can't be fixed with a model update, bec
 
 ## HalluSquatting (July 2026 — Tel Aviv University, Technion, Intuit)
 
-A separate research group — from Tel Aviv University, the Technion, and Intuit — disclosed a different class of attack the same week. Where Friendly Fire pushes a payload into a repository and waits for a review, HalluSquatting works the other direction: it pre-registers the fake names that AI models will predictably invent, then waits for agents across the internet to come fetch them.
+A [separate research group — from Tel Aviv University, the Technion, and Intuit](https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/) — disclosed a different class of attack the same week. Where Friendly Fire pushes a payload into a repository and waits for a review, HalluSquatting works the other direction: it pre-registers the fake names that AI models will predictably invent, then waits for agents across the internet to come fetch them.
 
 ### The hallucination rate is the vulnerability
 
 When asked to clone or install a popular repository, LLMs hallucinate the wrong location or name. The researchers measured:
 
-- **"Clone a trending repository"** → hallucinated wrong location up to **85%** of the time
+- **"Clone a trending repository"** → [hallucinated wrong location up to **85%** of the time](https://thehackernews.com/2026/07/new-hallusquatting-attack-could-trick.html)
 - **"Install a skill"** → hallucination rate **100%** — every tested model for every tested popular skill name
 
 The hallucinations are not random. They follow predictable patterns based on how the training corpus described similar tools. That predictability is the attack surface.

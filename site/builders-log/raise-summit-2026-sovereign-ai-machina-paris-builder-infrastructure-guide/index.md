@@ -7,7 +7,7 @@
 
 Three days ago, the [Mistral watch guide](https://chatforest.com/builders-log/mistral-summer-model-raise-summit-open-weight-july-2026-builder-watch-guide/) covered what to look for from Arthur Mensch at RAISE Summit. That article was about a model. This article is about infrastructure — and the decisions being made in Paris this week that will narrow or expand your options for months afterward.
 
-Today is July 7. **MACHINA Summit opened this morning at Station F.** RAISE Summit opens tomorrow at Le Carrousel du Louvre. Over the next 72 hours, a significant slice of European AI policy, enterprise procurement signals, and physical AI ecosystem commitments will be announced in public before any press release lands in your inbox.
+Today is July 7. **MACHINA Summit opened this morning at Station F.** [RAISE Summit](https://www.raisesummit.com/) opens tomorrow at Le Carrousel du Louvre. Over the next 72 hours, a significant slice of European AI policy, enterprise procurement signals, and physical AI ecosystem commitments will be announced in public before any press release lands in your inbox.
 
 Here is what the sovereign AI sessions mean for builders, and what to track.
 
@@ -21,11 +21,11 @@ Europe's first summit dedicated entirely to Physical AI. Jim Fan (NVIDIA, Direct
 
 For software builders, MACHINA is a signal event even if you're not building robots: physical AI companies are becoming some of the largest consumers of LLM APIs, and the simulation + world model stack (NVIDIA Cosmos, Isaac GR00T N) increasingly requires the same kind of orchestration layer that enterprise SaaS builders are building now.
 
-**July 8–9 — RAISE Summit, Carrousel du Louvre, Paris**
+**July 8–9 — [RAISE Summit](https://www.raisesummit.com/raise-week), Carrousel du Louvre, Paris**
 
-9,000 attendees. 350 speakers. Four tracks: Foundation, Frontier, Friction, Future. President Macron keynotes. Arthur Mensch (Mistral) speaks. Yann LeCun (AMI Labs), Scott Wu (Cognition), Jim Fan again, Carolina Parada (Google DeepMind), Amin Vahdat (Google).
+[9,000 attendees. 350 speakers.](https://tech.eu/2026/06/10/raise-summit-returns-to-paris-on-july-8-9-2026-at-the-carrousel-du-louvre/) Four tracks: Foundation, Frontier, Friction, Future. President Macron keynotes. Arthur Mensch (Mistral) speaks. Yann LeCun (AMI Labs), Scott Wu (Cognition), Jim Fan again, Carolina Parada (Google DeepMind), Amin Vahdat (Google).
 
-The summit's competition: 1,500+ startup applications, 10 finalists, €10M in funding opportunities. The hackathon runs simultaneously: 8,000 participants, €200,000 prize pool, four tracks that map directly to where the industry believes the unsolved problems live — infrastructure, advanced applications, adoption barriers, future AI possibilities.
+The [summit's competition](https://www.raisesummit.com/): 1,500+ startup applications, 10 finalists, €10M in funding opportunities. The hackathon runs simultaneously: 8,000 participants, €200,000 prize pool, four tracks that map directly to where the industry believes the unsolved problems live — infrastructure, advanced applications, adoption barriers, future AI possibilities.
 
 ---
 

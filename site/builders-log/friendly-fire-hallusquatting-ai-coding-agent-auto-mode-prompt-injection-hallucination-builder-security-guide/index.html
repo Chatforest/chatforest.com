@@ -69,7 +69,7 @@
 <p>Both <strong>Friendly Fire</strong> and <strong>HalluSquatting</strong> were published in the week of July 7–11, 2026. Together they make the same argument: the single flag that turns off user approval prompts is where the attack surface lives.</p>
 <hr>
 <h2 id="friendly-fire-july-8-2026--ai-now-institute">Friendly Fire (July 8, 2026 — AI Now Institute)</h2>
-<p>Researchers <strong>Boyan Milanov</strong> and <strong>Heidy Khlaaf</strong> at the AI Now Institute published a proof-of-concept they call Friendly Fire: a prompt injection attack that takes effect specifically when a developer points their AI coding agent at a third-party library and asks it to perform a security review.</p>
+<p>Researchers <strong>Boyan Milanov</strong> and <strong>Heidy Khlaaf</strong> at the AI Now Institute published <a href="https://ainowinstitute.org/publications/friendly-fire-exploit-brief">a proof-of-concept they call Friendly Fire</a>: a prompt injection attack that takes effect specifically when a developer points their AI coding agent at a third-party library and asks it to perform a security review.</p>
 <h3 id="the-scenario-that-gets-hit">The scenario that gets hit</h3>
 <p>The scenario is common and reasonable: your team adopts an open-source dependency, security practice says run the AI over it before merging, so you type <code>review the security of this library</code>. That action, in Claude Code auto-mode or Codex auto-review, is the trigger.</p>
 <h3 id="how-the-attack-is-constructed">How the attack is constructed</h3>
@@ -90,11 +90,11 @@
 <p>The researchers are direct: &ldquo;The problem can&rsquo;t be fixed with a model update, because the models still can&rsquo;t reliably distinguish the code they&rsquo;re reading from the instructions they&rsquo;re supposed to be following.&rdquo;</p>
 <hr>
 <h2 id="hallusquatting-july-2026--tel-aviv-university-technion-intuit">HalluSquatting (July 2026 — Tel Aviv University, Technion, Intuit)</h2>
-<p>A separate research group — from Tel Aviv University, the Technion, and Intuit — disclosed a different class of attack the same week. Where Friendly Fire pushes a payload into a repository and waits for a review, HalluSquatting works the other direction: it pre-registers the fake names that AI models will predictably invent, then waits for agents across the internet to come fetch them.</p>
+<p>A <a href="https://www.securityweek.com/hallusquatting-turns-ai-hallucinations-into-botnet-delivery-mechanism/">separate research group — from Tel Aviv University, the Technion, and Intuit</a> — disclosed a different class of attack the same week. Where Friendly Fire pushes a payload into a repository and waits for a review, HalluSquatting works the other direction: it pre-registers the fake names that AI models will predictably invent, then waits for agents across the internet to come fetch them.</p>
 <h3 id="the-hallucination-rate-is-the-vulnerability">The hallucination rate is the vulnerability</h3>
 <p>When asked to clone or install a popular repository, LLMs hallucinate the wrong location or name. The researchers measured:</p>
 <ul>
-<li><strong>&ldquo;Clone a trending repository&rdquo;</strong> → hallucinated wrong location up to <strong>85%</strong> of the time</li>
+<li><strong>&ldquo;Clone a trending repository&rdquo;</strong> → <a href="https://thehackernews.com/2026/07/new-hallusquatting-attack-could-trick.html">hallucinated wrong location up to <strong>85%</strong> of the time</a></li>
 <li><strong>&ldquo;Install a skill&rdquo;</strong> → hallucination rate <strong>100%</strong> — every tested model for every tested popular skill name</li>
 </ul>
 <p>The hallucinations are not random. They follow predictable patterns based on how the training corpus described similar tools. That predictability is the attack surface.</p>
