@@ -9,13 +9,13 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-**Builder alert.** If you ran **Grok Build CLI** version **0.2.93** (or nearby versions) in a repository that contained `.env` files, API keys, database passwords, or cloud tokens — rotate those credentials now. Wire-level analysis published in July 2026 showed the tool was silently uploading entire Git repositories to a Google Cloud Storage bucket owned by xAI, regardless of the "Improve the model" privacy toggle. xAI disabled the uploads server-side on approximately July 13, 2026, released a new version with no mention of the issue, and has still issued no public statement.
+**Builder alert.** If you ran **Grok Build CLI** version **0.2.93** (or nearby versions) in a repository that contained `.env` files, API keys, database passwords, or cloud tokens — rotate those credentials now. [Wire-level analysis published in July 2026](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) showed the tool was silently uploading entire Git repositories to a Google Cloud Storage bucket owned by xAI, regardless of the "Improve the model" privacy toggle. [xAI disabled the uploads server-side on approximately July 13, 2026, released a new version with no mention of the issue, and has still issued no public statement.](https://www.techtimes.com/articles/320420/20260714/grok-build-shipped-entire-codebases-xai-cloud-privacy-toggle-did-nothing.htm)
 
 ---
 
 ## What the Wire Said
 
-Security researcher **cereblab** published mitmproxy captures from Grok Build CLI version 0.2.93 to a public GitHub gist in early July 2026. The finding was stark:
+Security researcher **cereblab** published [mitmproxy captures from Grok Build CLI version 0.2.93 to a public GitHub gist](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) in early July 2026. The finding was stark:
 
 On a 12 GB test repository, Grok Build uploaded approximately **5.1 gigabytes** of data in 73 chunks. The actual task being performed required roughly **192 KB** — a **27,800× disparity** between what was transmitted and what the model needed to do its job.
 

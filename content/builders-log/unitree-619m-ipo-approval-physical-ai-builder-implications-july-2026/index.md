@@ -5,7 +5,7 @@ description: "On July 3, 2026, China's CSRC approved Unitree Robotics' $619M STA
 tags: ["robotics", "physical-ai", "unitree", "ipo", "humanoid-robots", "china", "embodied-ai", "builder-guide", "lerobot", "sdk"]
 ---
 
-On July 3, 2026, China's securities regulator approved Unitree Robotics for a listing on the Shanghai STAR Market. The company plans to raise approximately 4.2 billion yuan — roughly $619 million — with a debut expected before the end of July. The review cleared in 73 days, one of the fastest on record for a STAR Market listing of this size.
+On July 3, 2026, [China's securities regulator approved Unitree Robotics](https://www.caixinglobal.com/2026-07-03/unitree-robotics-wins-approval-for-618-million-star-market-ipo-102460136.html) for a listing on the Shanghai STAR Market. The company plans to raise approximately [4.2 billion yuan — roughly $619 million](https://cryptobriefing.com/unitree-619m-shanghai-ipo-ai-robotics/) — with a debut expected before the end of July. The review cleared in 73 days, [one of the fastest on record for a STAR Market listing of this size](https://autonews.gasgoo.com/articles/news/csrc-approves-unitrees-star-market-ipo-2073033635312484353).
 
 Unitree builds quadruped robots (Go2, B2) and humanoid robots (H1, G1, H2). You may have seen the videos: robots doing backflips, climbing stairs, doing push-ups alongside humans. What the IPO filing reveals is that behind the demos is a company that is profitable, growing fast, and earning hardware-company margins that most software businesses would envy.
 
@@ -15,7 +15,7 @@ This article is research-based. We are reading the IPO filings, analyst coverage
 
 ## The Numbers That Signal Physical AI Is Real
 
-Unitree reported 1.699 billion yuan ($250 million) in revenue for fiscal year 2025, with net profit of 278 million yuan ($41 million). This is a profitable hardware company. In robotics, that is unusual.
+[Unitree reported 1.699 billion yuan ($250 million) in revenue for fiscal year 2025, with net profit of 278 million yuan ($41 million).](https://kraneshares.com/a-complete-guide-to-unitree-robotics-2026-ipo-why-it-matters-for-star-market-etf-kstr-humanoid-robotics-etf-koid/) This is a profitable hardware company. In robotics, that is unusual.
 
 More striking is the revenue mix shift:
 

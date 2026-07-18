@@ -10,7 +10,7 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-TSMC just posted June 2026 consolidated net revenue of NT$442.68 billion — approximately $13.8 billion. That is a 67.9% jump from June 2025. The company's own press office described it as the largest year-over-year monthly increase in TSMC's nearly four-decade history.
+TSMC just posted [June 2026 consolidated net revenue of NT$442.68 billion](https://pr.tsmc.com/english/news/3323) — approximately $13.8 billion. That is a [67.9% jump from June 2025](https://www.cnbc.com/2026/07/13/tsmc-june-revenue-rises-percent-ahead-second-quarter.html). The company's own press office described it as the largest year-over-year monthly increase in TSMC's nearly four-decade history.
 
 For the full second quarter, revenue reached T$1.27 trillion ($39.62 billion), up 36% year-over-year and a new quarterly record. The company's Q2 earnings call is on July 16 — tomorrow. Analysts are watching three signals in particular. So are we.
 
@@ -40,11 +40,11 @@ CC Wei, TSMC's chief executive, has said publicly that AI chip demand will outpa
 
 The chip shortage is not abstract. It is showing up in concrete ways even for the largest buyers:
 
-**Google rationed Gemini capacity to Meta.** Starting in March 2026, Google told Meta it could not supply the full Gemini AI computing capacity Meta had requested. Meta — which had come to rely on Gemini for content moderation tasks (flagging harmful posts, routing scams) because it outperformed Llama for those use cases — had to tell staff to use AI tokens more conservatively. Multiple Meta internal AI projects were delayed as a result.
+**Google rationed Gemini capacity to Meta.** Starting in March 2026, [Google told Meta it could not supply the full Gemini AI computing capacity Meta had requested](https://www.cnbc.com/2026/06/28/google-limits-metas-use-of-its-gemini-ai-models-ft-reports.html). Meta — which had come to rely on Gemini for content moderation tasks (flagging harmful posts, routing scams) because it outperformed Llama for those use cases — had to tell staff to use AI tokens more conservatively. [Multiple Meta internal AI projects were delayed as a result.](https://www.forbes.com/sites/jonmarkman/2026/06/29/google-limits-metas-gemini-usage-over-compute-shortages/)
 
-**Google then rented compute from a competitor.** In June 2026, Google signed a 32-month agreement with SpaceX/xAI to access approximately 110,000 Nvidia GPUs housed in xAI's Colossus data center near Memphis, at a rate of $920 million per month. Google called it a "bridge" to meet demand for Gemini Enterprise that "has been even higher than we expected." When the company whose TPUs run Google Search cannot fulfill internal demand and has to rent from Elon Musk's AI company, the constraint is structural.
+**Google then rented compute from a competitor.** In June 2026, [Google signed a 32-month agreement with SpaceX/xAI to access approximately 110,000 Nvidia GPUs housed in xAI's Colossus data center near Memphis, at a rate of $920 million per month.](https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/) Google called it a "bridge" to meet demand for Gemini Enterprise that "has been even higher than we expected." When the company whose TPUs run Google Search cannot fulfill internal demand and has to rent from Elon Musk's AI company, the constraint is structural.
 
-**Anthropic locked up the rest of Colossus.** Anthropic signed a separate agreement — also through SpaceX — for all of Colossus 1's output at $1.25 billion per month through May 2029. The 220,000-GPU, 300-megawatt facility is now fully committed. The full financial scope of that deal only became public through SpaceX's S-1 filing with the SEC.
+**Anthropic locked up the rest of Colossus.** [Anthropic signed a separate agreement — also through SpaceX — for all of Colossus 1's output at $1.25 billion per month through May 2029.](https://x.ai/news/anthropic-compute-partnership) The 220,000-GPU, 300-megawatt facility is now fully committed. The full financial scope of that deal only became public through SpaceX's S-1 filing with the SEC.
 
 **What this means:** The compute you think exists, in the volumes you think it exists, may not be available when you need to scale.
 
