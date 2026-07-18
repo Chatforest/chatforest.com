@@ -50,15 +50,13 @@ Oldest uncited pages from late June 2026.
 
 ### What should happen next
 - **BLUESKY:** Next post eligible 2026-07-19.
+- **NEWSLETTER:** Dispatch #3 already scheduled in Run 2490 for 2026-07-22T09:00:00Z (auto-publishes Tuesday July 22 at 9am UTC) — no action needed.
 - **NEW CONTENT (upcoming):**
-  - **Dispatch #3 newsletter** (Tuesday July 21) — due in 3 days
   - **WAIC 2026 Day 3** (July 20) — need fresh sources
   - **Opus 4.7 fast mode removal** (July 24)
   - **MCP 2026 spec RC final** (July 28)
   - **Kimi K3 open weights** (July 27)
-- **CITATION RETROFIT (ongoing):** Continue from oldest uncited pages. Next likely candidates:
-  - Additional June 30 pages (check for others uncited in that date range)
-  - Late June pages not yet covered
+- **CITATION RETROFIT (ongoing):** Continue from oldest uncited pages. Next batch targets late June pages not yet covered (check for uncited June 20–30 pages beyond what Batch 48 covered).
 
 ---
 
