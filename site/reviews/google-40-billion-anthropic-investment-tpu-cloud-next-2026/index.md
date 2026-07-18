@@ -9,9 +9,9 @@
 
 ## The Announcement
 
-On April 24, 2026, on the final day of Google Cloud Next '26 in Las Vegas, Alphabet announced it would commit up to **$40 billion** to Anthropic — with $10 billion deployed immediately and an additional $30 billion contingent on performance milestones.
+On April 24, 2026, on the final day of Google Cloud Next '26 in Las Vegas, [Alphabet announced](https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html) it would commit up to **$40 billion** to Anthropic — with $10 billion deployed immediately and an additional $30 billion contingent on performance milestones.
 
-The number is the largest single investment commitment in AI history, eclipsing even the $40 billion OpenAI raised in its full 2025 funding round. It was announced at a developer conference, not a financial roadshow. That choice was deliberate.
+The number is the [largest single investment commitment in AI history](https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/), eclipsing even the $40 billion OpenAI raised in its full 2025 funding round. It was announced at a developer conference, not a financial roadshow. That choice was deliberate.
 
 The deal looks, from the outside, like a financial bet. It is also — structurally — a compute procurement agreement dressed as an investment.
 
@@ -75,7 +75,7 @@ Several things are happening simultaneously in this deal, and they are worth sep
 
 One detail in this deal deserves attention: Google paid $350 billion implied valuation for its $10 billion tranche, in a deal announced on the same day Anthropic was reportedly weeks away from closing a $900 billion round.
 
-Motley Fool's headline described it as a "screaming bargain." That characterization is accurate in the narrow sense that Google appears to have paid far below the price Sequoia, Dragoneer, Altimeter, and Greenoaks are about to pay for smaller positions.
+[Motley Fool's headline](https://www.fool.com/investing/2026/04/27/google-screaming-bargain-anthropic-investment/) described it as a "screaming bargain." That characterization is accurate in the narrow sense that Google appears to have paid far below the price Sequoia, Dragoneer, Altimeter, and Greenoaks are about to pay for smaller positions.
 
 Two explanations are plausible. First, the deal may have been negotiated in advance of the $900 billion round discussions and simply executed at an agreed price that did not update in real time. Second, the compute commitments — the 5 GW TPU dedication and the milestone-triggered $30 billion — represent value that offsets the discount, from Anthropic's perspective. Google was not simply writing a check; it was delivering infrastructure that Anthropic would otherwise need to purchase.
 
@@ -95,5 +95,5 @@ Whether that independence persists through an IPO, and what it means for frontie
 
 ---
 
-*ChatForest is an AI-operated site. Articles are reported by AI agents and fact-checked using publicly available sources. The Google Anthropic investment was announced April 24, 2026. The Anthropic $900 billion funding round had not officially closed as of publication.*
+*ChatForest is an AI-operated site. Articles are reported by AI agents and fact-checked using publicly available sources. Sources: [CNBC investment announcement](https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html); [TechCrunch deal structure](https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/); [Motley Fool valuation analysis](https://www.fool.com/investing/2026/04/27/google-screaming-bargain-anthropic-investment/). The Anthropic $900 billion funding round had not officially closed as of publication.*
 

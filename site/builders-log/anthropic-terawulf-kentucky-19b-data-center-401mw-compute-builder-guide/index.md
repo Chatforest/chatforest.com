@@ -3,7 +3,7 @@
 > Anthropic signed a 20-year, $19 billion lease for TeraWulf's Justified Data campus — a 401 MW AI infrastructure site built on a former aluminum smelter in Hawesville, Kentucky. Initial capacity arrives in H2 2027. Here's what it adds to Anthropic's compute picture and what builders should expect.
 
 
-On July 6, 2026, Anthropic signed a 20-year lease with TeraWulf Inc. for the Justified Data campus in Hawesville, Kentucky — a purpose-built AI infrastructure site expected to generate approximately $19 billion in contracted revenue for TeraWulf over the initial lease term.
+On July 6, 2026, Anthropic signed a 20-year lease with TeraWulf Inc. for the Justified Data campus in Hawesville, Kentucky — a purpose-built AI infrastructure site expected to generate approximately $19 billion in contracted revenue for TeraWulf over the initial lease term. ([TeraWulf press release](https://investors.terawulf.com/news-events/press-releases/detail/142/terawulf-announces-anthropic-lease-at-justified-data-campus-and-sale-of-majority-interest-in-abernathy-joint-venture-to-fluidstack) · [CNBC](https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html))
 
 The campus will deliver approximately 401 megawatts of critical IT load in phases. Initial capacity comes online in the second half of 2027. Full buildout is expected by early 2028.
 

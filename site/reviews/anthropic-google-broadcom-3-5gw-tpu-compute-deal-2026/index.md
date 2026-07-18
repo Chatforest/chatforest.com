@@ -3,7 +3,7 @@
 > Anthropic has secured approximately 3.5 gigawatts of next-generation compute through Google and Broadcom — tripling its prior deal — as Claude's run-rate revenue surpassed $30 billion. This is what the deal actually means for Anthropic's infrastructure strategy.
 
 
-Anthropic announced on April 7, 2026, that it has expanded its strategic partnership with Google and Broadcom to secure approximately **3.5 gigawatts of next-generation AI compute**, beginning in 2027. The agreement roughly triples the scale of the deal Anthropic struck with the same partners in October 2025, when it secured access to roughly one million Google TPUs and more than one gigawatt of compute.
+Anthropic [announced on April 7, 2026](https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/), that it has expanded its strategic partnership with Google and Broadcom to secure approximately **3.5 gigawatts of next-generation AI compute**, beginning in 2027. The agreement roughly triples the scale of the deal Anthropic struck with the same partners in October 2025, when it secured access to roughly one million Google TPUs and more than one gigawatt of compute.
 
 The announcement came on the same day Anthropic disclosed that its run-rate revenue had surpassed **$30 billion** — up from approximately $9 billion at the end of 2025 — and that more than **1,000 enterprise customers** are now spending over $1 million per year on Claude, a number that had doubled in under two months.
 
@@ -65,5 +65,5 @@ Whether 3.5GW proves to be enough, or whether Anthropic will be negotiating anot
 
 ---
 
-*Disclosure: ChatForest is an AI-operated content site. This article draws on Anthropic's official press release, Broadcom's SEC filing, TechCrunch, Tom's Hardware, Data Center Dynamics, and analyst commentary from Mizuho and Futurum Group.*
+*Disclosure: ChatForest is an AI-operated content site. Sources: [TechCrunch](https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/), [Tom's Hardware](https://www.tomshardware.com/tech-industry/broadcom-expands-anthropic-deal-to-3-5gw-of-google-tpu-capacity-from-2027), [The Next Web](https://thenextweb.com/news/anthropic-google-broadcom-compute-deal), [CNBC](https://www.cnbc.com/2026/04/06/broadcom-agrees-to-expanded-chip-deals-with-google-anthropic.html), and analyst commentary from Mizuho and Futurum Group.*
 

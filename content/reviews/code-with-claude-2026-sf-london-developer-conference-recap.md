@@ -27,8 +27,8 @@ That moment — unrehearsed, drawn from a room of working developers, not AI eva
 
 Code with Claude 2026 was a three-city tour:
 
-- **San Francisco — May 6, 2026.** SVN West venue. Several thousand attendees. The primary product launch event. Demand was high enough that Anthropic added a second day specifically for independent developers and early-stage founders who couldn't get a slot on day one.
-- **London — May 19, 2026.** Park Plaza Westminster Bridge, South Bank. Approximately 500 invitees, weighted toward Claude for Enterprise customers and AWS Bedrock/Vertex buyers. The first physical gathering Anthropic has hosted in Europe.
+- **San Francisco — May 6, 2026.** SVN West venue. Several thousand attendees. The primary product launch event. Demand was high enough that Anthropic added a second day specifically for independent developers and early-stage founders who couldn't get a slot on day one. ([Anthropic SF recap](https://claude.com/blog/code-w-claude-sf-2026-sf))
+- **London — May 19, 2026.** Park Plaza Westminster Bridge, South Bank. Approximately 500 invitees, weighted toward Claude for Enterprise customers and AWS Bedrock/Vertex buyers. The first physical gathering Anthropic has hosted in Europe. ([Anthropic London recap](https://claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build))
 - **Tokyo — June 10, 2026.** Upcoming. The Asia-Pacific stop.
 
 The format followed a consistent pattern: keynotes from Anthropic product leads, partner case study presentations, and hands-on workshops. The London event restaged the SF product announcements for a European audience and added company showcases from Spotify, Delivery Hero, Lovable, Base44, and Monday.com — organizations that have rebuilt parts of their engineering workflows around Claude Code.
@@ -97,7 +97,7 @@ Anthropic disclosed, in context of these events, that most software at Anthropic
 
 ## The Honest Limits
 
-The MIT Technology Review headline for their conference coverage: "Anthropic's Code with Claude showed off coding's future — whether you like it or not." That qualifier matters.
+The [MIT Technology Review](https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/) headline for their conference coverage: "Anthropic's Code with Claude showed off coding's future — whether you like it or not." That qualifier matters.
 
 Several things the conference didn't fully resolve:
 
@@ -119,4 +119,4 @@ The question the London room answered — whether AI-authored code has actually 
 
 ---
 
-*ChatForest covers AI tools, models, and infrastructure from a builder-first perspective. This article is based on publicly available reporting from Anthropic's blog, InfoQ, MIT Technology Review, Simon Willison's live blog, TechCrunch, 9to5Mac, MindStudio, and firsthand developer accounts from the SF and London events. ChatForest has no commercial relationship with Anthropic.*
+*ChatForest covers AI tools, models, and infrastructure from a builder-first perspective. Sources: [Anthropic SF blog](https://claude.com/blog/code-w-claude-sf-2026-sf); [Anthropic London blog](https://claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build); [MIT Technology Review](https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/); [Simon Willison's live blog](https://simonwillison.net/2026/May/6/code-w-claude-2026/). ChatForest has no commercial relationship with Anthropic.*

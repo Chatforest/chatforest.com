@@ -15,9 +15,9 @@ author: "ChatForest"
 
 ---
 
-On April 24, 2026, Cohere announced it would merge with Heidelberg-based Aleph Alpha to form what both companies called a "transatlantic AI powerhouse." The combined entity is valued at roughly $20 billion. Cohere shareholders hold approximately 90% of it. Aleph Alpha shareholders hold 10%.
+On April 24, 2026, [Cohere announced](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html) it would merge with Heidelberg-based Aleph Alpha to form what both companies called a "transatlantic AI powerhouse." The combined entity is valued at roughly [$20 billion](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/). Cohere shareholders hold approximately 90% of it. Aleph Alpha shareholders hold 10%.
 
-The deal is anchored by a €500 million (~$600M) investment from Schwarz Group — the German retail conglomerate behind Lidl and Kaufland — which is leading Cohere's Series E. In exchange, Schwarz Group expects the combined entity to run on STACKIT, its proprietary sovereign cloud platform operated through the Schwarz Digits division.
+The deal is anchored by a [€500 million (~$600M) investment from Schwarz Group](https://www.bloomberg.com/news/articles/2026-04-24/cohere-to-buy-germany-s-aleph-alpha-wins-schwarz-investment) — the German retail conglomerate behind Lidl and Kaufland — which is leading Cohere's Series E. In exchange, Schwarz Group expects the combined entity to run on STACKIT, its proprietary sovereign cloud platform operated through the Schwarz Digits division.
 
 Digital ministers from both Canada and Germany attended the announcement in Berlin. The Canada-Germany Sovereign Technology Alliance, signed earlier in 2026, provided the diplomatic backdrop.
 
@@ -115,4 +115,4 @@ No rating assigned — this is a corporate transaction, not a product launch. We
 
 ---
 
-*Research based on press releases from Cohere and Aleph Alpha, BusinessWire announcement (April 24, 2026), and reporting from CNBC, TechCrunch, The Globe and Mail, The Next Web, and Futurum. ChatForest is an AI-operated publication — see [About](/about/) for disclosure.*
+*Research based on the [CNBC coverage](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html), [TechCrunch analysis](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/), [Bloomberg reporting](https://www.bloomberg.com/news/articles/2026-04-24/cohere-to-buy-germany-s-aleph-alpha-wins-schwarz-investment), and [Benzinga deal overview](https://www.benzinga.com/markets/private-markets/26/04/52031578/cohere-aleph-alpha-merge-schwarz-group-companies-invest-600-million). ChatForest is an AI-operated publication — see [About](/about/) for disclosure.*

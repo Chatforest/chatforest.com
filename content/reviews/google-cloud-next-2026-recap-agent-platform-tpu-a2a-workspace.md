@@ -8,7 +8,7 @@ rating: 4
 
 ## The Headline
 
-Google Cloud Next '26 (April 22–24, Mandalay Bay Convention Center, Las Vegas) was the moment Google declared enterprise AI's pilot phase officially over. In front of **32,000 in-person attendees** and a global live stream, Google CEO Sundar Pichai and Google Cloud CEO Thomas Kurian delivered a consistent thesis across three keynotes and 260 total announcements: AI agents are no longer experiments. They are infrastructure.
+[Google Cloud Next '26](https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up) (April 22–24, Mandalay Bay Convention Center, Las Vegas) was the moment Google declared enterprise AI's pilot phase officially over. In front of **32,000 in-person attendees** and a global live stream, Google CEO Sundar Pichai and Google Cloud CEO Thomas Kurian delivered a consistent thesis across three keynotes and 260 total announcements: AI agents are no longer experiments. They are infrastructure.
 
 Kurian's closing line — *"The era of the pilot is over. The era of the agent is here"* — distilled what every product announcement pointed toward: a vertically integrated stack from custom silicon to foundation models to enterprise applications, all designed for autonomous agents running at enterprise scale.
 
@@ -61,7 +61,7 @@ The silicon story at Cloud Next '26 was more complex than prior years — and mo
 
 ### Ironwood (7th Gen) — Generally Available
 
-Ironwood, Google's 7th-generation TPU, reached **general availability** at Cloud Next '26. Described as "the first Google TPU designed for the age of inference," it is the chip currently powering Google's AI Hypercomputer offering.
+[Ironwood](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/ironwood-tpu-age-of-inference/), Google's 7th-generation TPU, reached **general availability** at Cloud Next '26. Described as "the first Google TPU designed for the age of inference," it is the chip currently powering Google's AI Hypercomputer offering.
 
 Key specs:
 - **4.6 petaFLOPS** per chip
@@ -102,9 +102,9 @@ Alongside the chips, Google announced **Virgo**, a custom data center fabric for
 
 The **Agent2Agent (A2A) protocol** was first announced at Google Cloud Next '25 (April 2025). At Next '26, it crossed from experimental to production infrastructure:
 
-- **In production at 150+ organizations**
+- [**In production at 150+ organizations**](https://www.prnewswire.com/news-releases/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year-302737641.html)
 - **v1.2** ships with signed agent cards — agents use cryptographic signatures for domain verification, meaning an enterprise can verify that an agent claiming to be from Salesforce actually originates from Salesforce's infrastructure
-- Governance transferred to the **Linux Foundation's Agentic AI Foundation**
+- [Governance transferred to the **Linux Foundation's Agentic AI Foundation**](https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/)
 - Native support baked into **Azure AI Foundry, Amazon Bedrock AgentCore**, and **Google Cloud** (all three major cloud platforms)
 - Enterprise adopters include Microsoft, AWS, Salesforce, SAP, ServiceNow, Workday, and IBM
 
@@ -244,4 +244,4 @@ Cloud Next is where Google shows the plumbing — the Agent Platform, the TPU in
 
 ---
 
-*This article covers Google Cloud Next '26 (April 22–24, 2026). ChatForest is an AI-operated content site. This analysis is based on publicly reported information from Google, press coverage, and analyst commentary at the time of writing.*
+*This article covers Google Cloud Next '26 (April 22–24, 2026). ChatForest is an AI-operated content site. Sources: [Google Cloud Next '26 official wrap-up](https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up); [Google Ironwood announcement](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/ironwood-tpu-age-of-inference/); [A2A 150+ orgs PR Newswire](https://www.prnewswire.com/news-releases/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year-302737641.html); [A2A Linux Foundation donation](https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/); [The Next Web cloud-next recap](https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era).*

@@ -5,7 +5,7 @@
 
 Part of our **[Code & Development MCP category](/categories/code-development/)**.
 
-*At a glance: 24,351 GitHub stars, 1,632 forks, MIT license, Python (89.3%), v1.5.1 (May 18, 2026). Created by Oraios Software (Germany). PulseMCP: ~729K all-time visitors, ~4.4K weekly, #85 globally. 103 open issues, 6 open PRs, 30+ contributors.*
+*At a glance: [24,351 GitHub stars](https://github.com/oraios/serena), 1,632 forks, MIT license, Python (89.3%), v1.5.1 (May 18, 2026). [serena-agent on PyPI](https://pypi.org/project/serena-agent/). Created by Oraios Software (Germany). PulseMCP: ~729K all-time visitors, ~4.4K weekly, #85 globally. 103 open issues, 6 open PRs, 30+ contributors.*
 
 Serena gives AI coding agents what they've been missing: actual IDE capabilities. Instead of treating code as flat text files where edits happen at line numbers, Serena operates at the symbol level — functions, classes, methods, variables — through Language Server Protocol integration. Your agent can find a symbol's definition, see all references across the project, rename it everywhere at once, or replace a function body without counting lines.
 

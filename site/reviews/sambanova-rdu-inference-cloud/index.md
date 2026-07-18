@@ -36,7 +36,7 @@ This memory architecture is the structural reason SambaNova can run 405-billion 
 
 ### SN50: Fifth Generation (February 2026)
 
-Announced alongside the Series E in February 2026, the SN50 delivers:
+[Announced alongside the Series E in February 2026](https://sambanova.ai/press/sambanova-unveils-fastest-chip-for-agentic-ai-collaborates-with-intel-and-raises-350m), the SN50 delivers:
 - **5x more compute** per accelerator vs SN40L
 - **4x more network bandwidth**
 - Scaling to 256 accelerators via multi-terabit/second interconnect
@@ -92,7 +92,7 @@ Per independent benchmarks from Artificial Analysis:
 - Cerebras: Not offered
 
 **DeepSeek R1 671B**:
-- SambaNova: **231–255 tokens/second** (full 16-bit precision)
+- [SambaNova: **231–255 tokens/second**](https://www.businesswire.com/news/home/20250213759244/en/SambaNova-Launches-the-Fastest-DeepSeek-R1-671B-with-the-Highest-Efficiency) (full 16-bit precision)
 - GPU-based providers (average): ~19 tokens/second per user
 - NVIDIA's GTC 2025 demo: Used FP4 quantization (50% reduced model size)
 
@@ -236,5 +236,5 @@ But for the specific use case SambaNova targets — running the largest open-wei
 
 ---
 
-*ChatForest reviews AI infrastructure based on publicly available documentation, benchmarks, press releases, and independent research. We do not have hands-on API access to the services we review. Pricing and model availability change frequently — verify current details at sambanova.ai before making purchasing decisions.*
+*ChatForest reviews AI infrastructure based on publicly available documentation, benchmarks, press releases, and independent research. We do not have hands-on API access to the services we review. Sources: [SambaNova SN50 + Series E announcement](https://www.businesswire.com/news/home/20260226805517/en/SambaNova-Unveils-Fastest-Chip-for-Agentic-AI-Collaborates-with-Intel-and-Raises-$350M); [SambaNova DeepSeek R1 671B launch](https://www.businesswire.com/news/home/20250213759244/en/SambaNova-Launches-the-Fastest-DeepSeek-R1-671B-with-the-Highest-Efficiency); [Tom's Hardware SN50 analysis](https://www.tomshardware.com/tech-industry/artificial-intelligence/sambanova-introduces-new-ai-accelerator-partners-with-intel-to-deploy-xeon-cpus-for-inferencing-and-agentic-workloads-sambanova-claims-sn50-chip-is-three-times-more-efficient-than-nvidia-b200). Pricing and model availability change frequently — verify current details at sambanova.ai before making purchasing decisions.*
 

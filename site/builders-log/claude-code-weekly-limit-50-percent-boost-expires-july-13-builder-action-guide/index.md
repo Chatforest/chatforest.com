@@ -11,7 +11,7 @@
 
 ## What Is Expiring and When
 
-On May 13, 2026, Anthropic raised Claude Code weekly limits by 50% across all Pro, Max, Team, and seat-based Enterprise plans. The announcement called it out explicitly: effective immediately through July 13 at 6PM PDT. No extension has been announced as of July 7.
+On May 13, 2026, Anthropic raised Claude Code weekly limits by 50% across all Pro, Max, Team, and seat-based Enterprise plans. The announcement called it out explicitly: effective immediately through July 13 at 6PM PDT. No extension has been announced as of July 7. ([Coverage: Apidog](https://apidog.com/blog/claude-code-weekly-limits-50-percent-increase-july-2026/) · [Claude Code changelog](https://code.claude.com/docs/en/changelog))
 
 This is a temporary capacity boost, not a permanent limit change.
 
@@ -48,7 +48,7 @@ The 5-hour session limits doubled in May 6 remain in place. You will hit the wee
 
 ## Why Anthropic Added the Temporary Boost
 
-The competitive context: OpenAI launched Codex in mid-May 2026. Codex consumes significantly fewer tokens for equivalent coding tasks — one benchmark put it at roughly 4.2x more token-efficient than Claude Code on comparable workloads. Engineering teams were starting to split workflows across vendors or evaluate switching.
+The competitive context: OpenAI launched Codex in mid-May 2026. Codex consumes significantly fewer tokens for equivalent coding tasks — [independent benchmarks put it at roughly 4x more token-efficient than Claude Code](https://spectrumailab.com/blog/claude-code-vs-openai-codex-comparison-2026) on comparable workloads. Engineering teams were starting to split workflows across vendors or evaluate switching.
 
 The 50% weekly lift was a direct response — a capacity signal to teams considering moving pipelines, buying time for Anthropic to close the token-efficiency gap through model improvements. Claude Sonnet 5 (launched June 30) represents that effort on the model side; the limits boost was the infrastructure-side holding action.
 

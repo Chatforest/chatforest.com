@@ -3,7 +3,7 @@
 > OpenAI shipped gpt-realtime-2.1 and gpt-realtime-2.1-mini on July 6, 2026. The full model is a same-price drop-in with 25% lower p95 latency and better noise handling. The mini is a new mid-tier. Here is exactly what to change.
 
 
-OpenAI released two new Realtime API models on July 6, 2026: **`gpt-realtime-2.1`** and **`gpt-realtime-2.1-mini`**. If you are running production voice agents on `gpt-realtime-2`, the upgrade to 2.1 costs nothing in money or migration effort — same price, same endpoint, same session API, meaningfully lower latency.
+OpenAI released two new Realtime API models on July 6, 2026: **`gpt-realtime-2.1`** and **`gpt-realtime-2.1-mini`**. ([OpenAI community announcement](https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896)) If you are running production voice agents on `gpt-realtime-2`, the upgrade to 2.1 costs nothing in money or migration effort — same price, same endpoint, same session API, meaningfully lower latency.
 
 Here is what changed, what it means for your build, and which tier to pick.
 

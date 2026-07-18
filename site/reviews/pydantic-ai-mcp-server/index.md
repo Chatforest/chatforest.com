@@ -5,7 +5,7 @@
 
 Part of our **[Agent Orchestration MCP category](/categories/agent-orchestration/)**.
 
-*At a glance: 17,100 GitHub stars, 2,000+ forks, MIT license, Python (99.7%), v1.98.0 (May 18, 2026). Created by Pydantic Inc. (Samuel Colvin, David Montague). 382 open issues, 185 open PRs. PyPI: 208M+ monthly downloads (pydantic-ai-slim, May 2026). Python >=3.10. v2 targeted for June 2026.*
+*At a glance: [17,100 GitHub stars](https://github.com/pydantic/pydantic-ai), 2,000+ forks, MIT license, Python (99.7%), v1.98.0 (May 18, 2026). Created by Pydantic Inc. (Samuel Colvin, David Montague). 382 open issues, 185 open PRs. [pydantic-ai on PyPI](https://pypi.org/project/pydantic-ai/): 208M+ monthly downloads (pydantic-ai-slim, May 2026). Python >=3.10. v2 targeted for June 2026.*
 
 PydanticAI is the agent framework from the team that built Pydantic — the validation library that powers virtually every major AI company's Python stack. If you've used FastAPI, OpenAI's SDK, Anthropic's SDK, or LangChain, you've already used Pydantic underneath. PydanticAI applies that same philosophy — type safety, validation, developer ergonomics — to building AI agents.
 

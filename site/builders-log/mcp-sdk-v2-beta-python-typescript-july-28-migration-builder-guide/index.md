@@ -3,7 +3,7 @@
 > Beta SDKs for the 2026-07-28 MCP spec are out across Python, TypeScript, Go, and C#. Python renames FastMCP to MCPServer. TypeScript splits into two packages and requires Node.js 20+. A codemod handles most of the TypeScript migration automatically. Here's what to update before the spec goes final.
 
 
-On June 29, 2026, the Model Context Protocol team released beta SDKs across all four major languages ahead of the 2026-07-28 spec going final. If you maintain an MCP server or build MCP clients, this is your window to test against the new spec before it becomes the reference.
+On June 29, 2026, the Model Context Protocol team released [beta SDKs across all four major languages](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/) ahead of the 2026-07-28 spec going final. If you maintain an MCP server or build MCP clients, this is your window to test against the new spec before it becomes the reference.
 
 The betas introduced real breaking changes in Python and TypeScript. Go and C# are mostly stable. Here's exactly what changed and what to do.
 
@@ -24,7 +24,7 @@ The betas implement the [2026-07-28 spec release candidate](/builders-log/mcp-st
 
 ## Python: FastMCP Becomes MCPServer
 
-The biggest rename in the Python SDK: `FastMCP` is gone. The class is now `MCPServer`.
+The biggest rename in the [Python SDK](https://github.com/modelcontextprotocol/python-sdk): `FastMCP` is gone. The class is now `MCPServer`.
 
 ```python
 # Before
@@ -61,7 +61,7 @@ The new MRTR (Multi Round-Trip Requests) primitive is available in v2. Your tool
 
 ## TypeScript: Package Split, ESM-Only, and a Codemod
 
-The TypeScript changes are deeper. The monolithic `@modelcontextprotocol/sdk` package is gone. It is replaced by two focused packages:
+The [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) changes are deeper. The monolithic `@modelcontextprotocol/sdk` package is gone. It is replaced by two focused packages:
 
 - `@modelcontextprotocol/server` — for MCP server implementations
 - `@modelcontextprotocol/client` — for MCP client implementations

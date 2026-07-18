@@ -8,7 +8,7 @@ rating: 4
 author: "ChatForest"
 ---
 
-CoreWeave reached $5.13 billion in revenue in 2025. In 2023, that number was $229 million. The trajectory is extraordinary: 730% growth from 2023 to 2024, then another 170% in 2025. No other cloud platform has crossed $5 billion annual revenue as fast. The company went public on Nasdaq in March 2025, carries a $66.8 billion contracted backlog, and is building toward $12 billion in 2026 guidance while simultaneously deploying $30–35 billion in new infrastructure capital.
+CoreWeave [reached $5.13 billion in revenue in 2025](https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Fourth-Quarter-and-Fiscal-Year-2025-Results/). In 2023, that number was $229 million. The trajectory is extraordinary: 730% growth from 2023 to 2024, then another 170% in 2025. No other cloud platform has crossed $5 billion annual revenue as fast. The company [went public on Nasdaq in March 2025](https://www.coreweave.com/news/coreweave-announces-pricing-of-initial-public-offering), carries a $66.8 billion contracted backlog, and is building toward $12 billion in 2026 guidance while simultaneously deploying $30–35 billion in new infrastructure capital.
 
 That is not a startup story. That is a company that became critical infrastructure for the most compute-intensive AI labs on earth — OpenAI, Meta, Anthropic, Microsoft — before most of the industry understood what was happening.
 
@@ -101,7 +101,7 @@ CoreWeave's fleet spans multiple generations of NVIDIA hardware:
 - **NVIDIA A100** (40GB, 80GB) — legacy workloads, still widely deployed
 - **NVIDIA H100 PCIe** — available on-demand
 - **NVIDIA H100 HGX/SXM** — 8-GPU NVLink nodes for high-bandwidth training
-- **NVIDIA GB200 NVL72** — CoreWeave was the **first cloud provider to offer GB200 NVL72 instances in general availability** (announced March 2025). Each NVL72 rack contains 36 Grace CPUs and 72 Blackwell GPUs in a liquid-cooled rack-scale design. Access is via bare-metal Kubernetes (CKS).
+- **NVIDIA GB200 NVL72** — CoreWeave was the [**first cloud provider to offer GB200 NVL72 instances in general availability**](https://www.coreweave.com/news/coreweave-first-cloud-provider-to-announce-general-availability-of-nvidia-gb200-nvl72-instances) (announced March 2025). Each NVL72 rack contains 36 Grace CPUs and 72 Blackwell GPUs in a liquid-cooled rack-scale design. Access is via bare-metal Kubernetes (CKS).
 - **NVIDIA GB300 NVL72** — next-generation Blackwell also referenced in CoreWeave documentation
 
 CoreWeave's early GB200 GA availability was a strategic milestone: frontier labs that needed Blackwell-generation hardware had limited alternatives. This first-mover advantage reinforces the NVIDIA relationship and customer lock-in.
@@ -205,7 +205,7 @@ CoreWeave's core thesis is that hyperscalers were engineered for general-purpose
 
 CoreWeave made none of those trade-offs. The CUDA Cloud design means every component — power infrastructure, cooling, networking, software platform — is optimized for one workload type. The result is higher GPU density per rack, faster cluster provisioning, and consistently lower inter-GPU communication latency.
 
-The hyperscalers are responding with custom AI silicon (AWS Trainium, Google TPU, Azure Maia) to reduce NVIDIA dependence. CoreWeave benefits here: NVIDIA's preferred distribution strategy for GPU compute is CoreWeave, and NVIDIA's strategic investment and priority GPU supply agreement reflect this alignment. SemiAnalysis's ClusterMAX benchmark rates CoreWeave "Platinum" tier — the highest rating — for proven ability to operate and deliver 10,000+ GPU clusters reliably.
+The hyperscalers are responding with custom AI silicon (AWS Trainium, Google TPU, Azure Maia) to reduce NVIDIA dependence. CoreWeave benefits here: NVIDIA's preferred distribution strategy for GPU compute is CoreWeave, and NVIDIA's strategic investment and priority GPU supply agreement reflect this alignment. [SemiAnalysis's ClusterMAX benchmark rates CoreWeave "Platinum" tier](https://www.coreweave.com/news/coreweave-achieves-semianalysis-platinum-clustermax-tm-rating-for-the-second-consecutive-ranking-remaining-the-industrys-sole-platinum-provider) — the highest rating — for proven ability to operate and deliver 10,000+ GPU clusters reliably.
 
 ### vs. Lambda Labs
 
@@ -294,4 +294,4 @@ For organizations whose AI infrastructure is strategic — where the quality of 
 
 ---
 
-*CoreWeave trades on Nasdaq under the ticker CRWV. This review is based on publicly available information as of May 2026.*
+*CoreWeave trades on Nasdaq under the ticker CRWV. Sources: [CoreWeave FY2025 earnings](https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Fourth-Quarter-and-Fiscal-Year-2025-Results/); [IPO pricing announcement](https://www.coreweave.com/news/coreweave-announces-pricing-of-initial-public-offering); [GB200 NVL72 GA announcement](https://www.coreweave.com/news/coreweave-first-cloud-provider-to-announce-general-availability-of-nvidia-gb200-nvl72-instances); [NVIDIA GB200 deployment blog](https://blogs.nvidia.com/blog/coreweave-grace-blackwell-gb200-nvl72/); [SemiAnalysis ClusterMAX Platinum rating](https://www.coreweave.com/news/coreweave-achieves-semianalysis-platinum-clustermax-tm-rating-for-the-second-consecutive-ranking-remaining-the-industrys-sole-platinum-provider). This review is based on publicly available information as of May 2026.*

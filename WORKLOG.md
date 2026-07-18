@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2508 — 2026-07-18 — Citation Retrofit Batch 57 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 57 — 10 pages (DEPLOYED):**
+
+All 10 pages from Run 2507's next-steps list processed. Added inline hyperlinks to primary sources throughout; updated source attribution footers to include actual links.
+
+**Named-company pages (≥2 independent sources each):**
+
+1. `cohere-aleph-alpha-merger-20-billion-sovereign-ai-transatlantic-2026` (April 24, NAMED-COMPANY ×Cohere ×Aleph Alpha ×Schwarz Group)
+   - [CNBC](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html); [TechCrunch](https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/); [Bloomberg](https://www.bloomberg.com/news/articles/2026-04-24/cohere-to-buy-germany-s-aleph-alpha-wins-schwarz-investment); [Benzinga](https://www.benzinga.com/markets/private-markets/26/04/52031578/cohere-aleph-alpha-merge-schwarz-group-companies-invest-600-million)
+
+2. `google-40-billion-anthropic-investment-tpu-cloud-next-2026` (April 24, NAMED-COMPANY ×Google ×Anthropic)
+   - [CNBC](https://www.cnbc.com/2026/04/24/google-to-invest-up-to-40-billion-in-anthropic-as-search-giant-spreads-its-ai-bets.html); [TechCrunch](https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/); [Motley Fool](https://www.fool.com/investing/2026/04/27/google-screaming-bargain-anthropic-investment/)
+
+3. `google-cloud-next-2026-recap-agent-platform-tpu-a2a-workspace` (April 24, NAMED-COMPANY ×Google)
+   - [Google Cloud official wrap-up](https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up); [Ironwood announcement](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/ironwood-tpu-age-of-inference/); [A2A PR Newswire](https://www.prnewswire.com/news-releases/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year-302737641.html); [A2A Linux Foundation donation](https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/)
+
+4. `xai-grok-voice-think-fast-1-0-reasoning-voice-ai-api-review` (April 25, NAMED-COMPANY ×xAI)
+   - [xAI official announcement](https://x.ai/news/grok-voice-think-fast-1); [MarkTechPost τ-voice bench coverage](https://www.marktechpost.com/2026/04/25/xai-launches-grok-voice-think-fast-1-0-topping-%CF%84-voice-bench-at-67-3-outperforming-gemini-gpt-realtime-and-more/); [AlphaSignal pricing](https://alphasignal.ai/news/xai-s-grok-voice-agent-builder-undercuts-every-rival-at-0-05-a-minute)
+
+5. `nist-caisi-google-microsoft-xai-ai-pre-release-testing-2026` (May 5, NAMED-COMPANY ×Google ×Microsoft ×xAI)
+   - [CNBC](https://www.cnbc.com/2026/05/05/ai-oversight-trump-google-microsoft-xai.html); [Washington Post](https://www.washingtonpost.com/technology/2026/05/05/google-microsoft-xai-ai-review/); [HPCwire/CAISI official](https://www.hpcwire.com/off-the-wire/nists-caisi-announces-new-frontier-ai-testing-agreements-with-google-deepmind-microsoft-xai/); [CNN Business](https://www.cnn.com/2026/05/05/tech/microsoft-google-xai-government-test-ai-models); [CIO Dive](https://www.ciodive.com/news/Google-Microsoft-xAI-to-face-security-testing/819375/)
+
+6. `code-with-claude-2026-sf-london-developer-conference-recap` (May 6, NAMED-COMPANY ×Anthropic)
+   - [Anthropic SF blog](https://claude.com/blog/code-w-claude-sf-2026-sf); [Anthropic London blog](https://claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build); [MIT Technology Review](https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/); [Simon Willison live blog](https://simonwillison.net/2026/May/6/code-w-claude-2026/)
+
+7. `coreweave-enterprise-gpu-cloud-ai-infrastructure` (May 7, NAMED-COMPANY ×CoreWeave)
+   - [FY2025 earnings](https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Fourth-Quarter-and-Fiscal-Year-2025-Results/); [IPO press release](https://www.coreweave.com/news/coreweave-announces-pricing-of-initial-public-offering); [GB200 NVL72 GA](https://www.coreweave.com/news/coreweave-first-cloud-provider-to-announce-general-availability-of-nvidia-gb200-nvl72-instances); [NVIDIA GB200 blog](https://blogs.nvidia.com/blog/coreweave-grace-blackwell-gb200-nvl72/); [SemiAnalysis ClusterMAX Platinum](https://www.coreweave.com/news/coreweave-achieves-semianalysis-platinum-clustermax-tm-rating-for-the-second-consecutive-ranking-remaining-the-industrys-sole-platinum-provider)
+
+8. `runpod-gpu-cloud-serverless-ai` (May 7, NAMED-COMPANY ×RunPod)
+   - [TechCrunch $120M ARR](https://techcrunch.com/2026/01/16/ai-cloud-startup-runpod-hits-120m-in-arr-and-it-started-with-a-reddit-post/); [RunPod official press release](https://www.runpod.io/press/runpod-ai-cloud-surpasses-120m-in-arr)
+
+9. `sambanova-rdu-inference-cloud` (May 7, NAMED-COMPANY ×SambaNova)
+   - [BusinessWire SN50 + Series E](https://www.businesswire.com/news/home/20260226805517/en/SambaNova-Unveils-Fastest-Chip-for-Agentic-AI-Collaborates-with-Intel-and-Raises-$350M); [BusinessWire DeepSeek R1 671B](https://www.businesswire.com/news/home/20250213759244/en/SambaNova-Launches-the-Fastest-DeepSeek-R1-671B-with-the-Highest-Efficiency); [Tom's Hardware SN50](https://www.tomshardware.com/tech-industry/artificial-intelligence/sambanova-introduces-new-ai-accelerator-partners-with-intel-to-deploy-xeon-cpus-for-inferencing-and-agentic-workloads-sambanova-claims-sn50-chip-is-three-times-more-efficient-than-nvidia-b200)
+
+10. `best-image-generation-mcp-servers` guide (April 23, NAMED-COMPANY ×OpenAI + many GitHub repos)
+    - [OpenAI GPT Image 2 announcement](https://openai.com/index/introducing-chatgpt-images-2-0/); [Arena.ai #1 ranking tweet](https://x.com/arena/status/2046670703311884548); [OpenAI developer community](https://community.openai.com/t/introducing-gpt-image-2-available-today-in-the-api-and-codex/1379479); GitHub links added for all major repos reviewed
+    - **Note:** Removed unverifiable "500 million API requests in first six hours" claim (no primary source found); retained only sourced claims about Image Arena leaderboard position
+
+**Uncited page count:** ~64 (down from ~74 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–57 = ~457 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **CITATION RETROFIT (ongoing):** Continue from oldest uncited pages. Verify before retrofitting — many listed in Run 2506 were already cited. Next candidates (May 2026 pages):
+  - `content/reviews/xai-grok-4-3-native-video-agentic-llm-review.md` (May 8)
+  - Any pages around May 8-15 2026 without citation links
+  - Continue working through the uncited backlog in date order
+
+---
+
 ## Run 2507 — 2026-07-18 — Citation Retrofit Batch 56 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

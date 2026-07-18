@@ -66,7 +66,7 @@
 
       <div class="article-body">
         <p>Part of our <strong><a href="/categories/web-search-scraping/">Web Scraping &amp; Search MCP category</a></strong>.</p>
-<p><em>At a glance: 6,524 GitHub stars, 503 forks, Apache-2.0, TypeScript, v0.1.3 on npm (no release in 13+ months), Chrome extension required. Created by Namu Kang (Princeton grad, ex-Google PM, Browserflow founder). npm: ~6,377 downloads/week (~25K monthly, 388K+ all-time). 121 open issues.</em></p>
+<p><em>At a glance: <a href="https://github.com/browsermcp/mcp">6,524 GitHub stars</a>, 503 forks, Apache-2.0, TypeScript, <a href="https://www.npmjs.com/package/@browsermcp/mcp">v0.1.3 on npm</a> (no release in 13+ months), Chrome extension required. Created by Namu Kang (Princeton grad, ex-Google PM, Browserflow founder). npm: ~6,377 downloads/week (~25K monthly, 388K+ all-time). 121 open issues.</em></p>
 <p>BrowserMCP solves a specific problem that Playwright MCP doesn&rsquo;t: letting AI agents work in your <em>actual</em> browser session. While Playwright MCP spawns a fresh Chromium instance (no cookies, no logged-in accounts, no extensions), BrowserMCP connects to the Chrome browser you already have open. You stay logged into Gmail, GitHub, Jira, Slack — whatever you&rsquo;re currently authenticated to — and the AI agent can interact with those services without re-authenticating.</p>
 <p>The architecture is straightforward: a Chrome extension runs in your browser and exposes a local WebSocket server. The MCP server (installed via <code>npx @browsermcp/mcp@0.1.3</code>) connects to that WebSocket. The AI client (Claude Desktop, Cursor, VS Code, Windsurf) talks to the MCP server. Your browser becomes the AI&rsquo;s interface to the web.</p>
 <h2 id="what-it-does">What It Does</h2>

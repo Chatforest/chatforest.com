@@ -5,8 +5,8 @@
 
 Geneva is the world's AI governance capital this week. Three major international events are running in parallel at Palexpo from July 6–10, 2026:
 
-- **UN Global Dialogue on AI Governance** — the inaugural session, mandated by the UN General Assembly (July 6–7)
-- **ITU AI for Good Global Summit** — the 7th annual, plus the new AI for Good Global Commission launch (July 7–10)
+- **[UN Global Dialogue on AI Governance](https://www.un.org/global-dialogue-ai-governance/en)** — the inaugural session, mandated by the UN General Assembly (July 6–7)
+- **[ITU AI for Good Global Summit](https://aiforgood.itu.int/summit26/)** — the 7th annual, plus the new AI for Good Global Commission launch (July 7–10)
 - **WSIS Forum 2026** — the World Summit on the Information Society (July 6–10)
 
 If you're building AI products that will operate internationally, or that touch regulated industries, this week's outputs matter. Here's what's happening and why builders should pay attention.
@@ -19,7 +19,7 @@ The UN General Assembly mandated this Dialogue as the global platform for coordi
 
 ### The key warning from opening day
 
-Yoshua Bengio — co-chair of the UN's Independent International Scientific Panel on Artificial Intelligence — delivered the sharpest statement of the week:
+Yoshua Bengio — co-chair of the UN's [Independent International Scientific Panel on Artificial Intelligence](https://news.un.org/en/story/2026/07/1167862) — delivered the sharpest statement of the week:
 
 > "With growing evidence of deceptive AI behaviour, science currently cannot guarantee that as capabilities continue to increase, AI will not cause catastrophic harm, either on its own or due to malicious users."
 
@@ -43,7 +43,7 @@ The Dialogue runs through July 7. A co-chairs' summary is expected shortly after
 
 ## ITU AI for Good Global Summit (July 7–10) and the New Global Commission
 
-The 7th annual AI for Good Global Summit runs July 7–10 at the same Palexpo venue. The headline announcement came July 2, just before the summit: the launch of the **AI for Good Global Commission**, co-announced by Rwanda's President Paul Kagame, Salesforce CEO Marc Benioff, and ITU Secretary-General Doreen Bogdan-Martin.
+The 7th annual AI for Good Global Summit runs July 7–10 at the same Palexpo venue. The headline announcement came July 2, just before the summit: the launch of the **[AI for Good Global Commission](https://www.itu.int/en/mediacentre/Pages/PR-2026-07-02-AI-for-Good-Global-Commission.aspx)**, co-announced by Rwanda's President Paul Kagame, Salesforce CEO Marc Benioff, and ITU Secretary-General Doreen Bogdan-Martin.
 
 The Commission's 40+ founding members span heads of state, major tech CEOs, and UN agency heads. Its mandate: define practical pathways to strengthen trust in AI, expand access, and unlock AI's potential for real-world challenges in health, climate, and education.
 

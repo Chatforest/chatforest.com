@@ -8,7 +8,7 @@ rating: 4
 author: "ChatForest"
 ---
 
-RunPod reached $120 million in annual recurring revenue in January 2026, having raised only $20 million in venture funding to get there. That 6× funding-to-ARR ratio is unusual in any sector; in GPU cloud, where infrastructure costs are enormous, it is almost improbable. The company built from a Reddit post in late 2022 to one of the most-used GPU platforms among independent AI developers — without the enterprise contracts, massive datacenter deals, or press releases that drive most competitors.
+RunPod [reached $120 million in annual recurring revenue in January 2026](https://techcrunch.com/2026/01/16/ai-cloud-startup-runpod-hits-120m-in-arr-and-it-started-with-a-reddit-post/), having raised only $20 million in venture funding to get there. That 6× funding-to-ARR ratio is unusual in any sector; in GPU cloud, where infrastructure costs are enormous, it is almost improbable. The company built from a Reddit post in late 2022 to one of the most-used GPU platforms among independent AI developers — without the enterprise contracts, massive datacenter deals, or press releases that drive most competitors.
 
 What RunPod sells is broad. Developers come for cheap GPU pods. They stay for the Serverless product. Teams scale up with Instant Clusters. And as of April 2026, an SDK called Flash aims to make RunPod the default destination for Python-native GPU functions. This review covers all four product lines, explains how the two-tier cloud model (Secure Cloud and Community Cloud) works, looks at pricing, and places RunPod in context against Vast.ai, Lambda Labs, Modal, and CoreWeave.
 
@@ -18,7 +18,7 @@ What RunPod sells is broad. Developers come for cheap GPU pods. They stay for th
 
 RunPod was founded on October 31, 2022 by Zhen Lu (CEO) and Pardeep Singh (CTO). The company is incorporated in New Jersey (Moorestown, NJ) and operates as a remote-first team distributed across the U.S., Canada, Europe, and India. By early 2026 the company had approximately 98 employees — extremely lean for a platform serving 750,000+ developers across 183 countries.
 
-The origin story is genuinely unusual. Zhen Lu posted about the product on Reddit, got organic traction, and built from there. No big launch event, no press tour. TechCrunch covered the $120M ARR milestone in January 2026 and led with this detail because it encapsulates how RunPod operates: ship something useful, let developers find it, grow on word of mouth.
+The origin story is genuinely unusual. Zhen Lu posted about the product on Reddit, got organic traction, and built from there. No big launch event, no press tour. [TechCrunch covered the $120M ARR milestone in January 2026](https://techcrunch.com/2026/01/16/ai-cloud-startup-runpod-hits-120m-in-arr-and-it-started-with-a-reddit-post/) and led with this detail because it encapsulates how RunPod operates: ship something useful, let developers find it, grow on word of mouth.
 
 ### Funding
 
@@ -268,4 +268,4 @@ For AI developers who want a broad, developer-first GPU platform with flexible p
 
 ---
 
-*ChatForest researches and reviews AI infrastructure products. We do not have commercial relationships with reviewed platforms. All pricing figures reflect publicly available data and published benchmarks as of May 2026. GPU pricing is dynamic — verify current rates at runpod.io.*
+*ChatForest researches and reviews AI infrastructure products. We do not have commercial relationships with reviewed platforms. Sources: [TechCrunch $120M ARR milestone](https://techcrunch.com/2026/01/16/ai-cloud-startup-runpod-hits-120m-in-arr-and-it-started-with-a-reddit-post/); [RunPod official press release](https://www.runpod.io/press/runpod-ai-cloud-surpasses-120m-in-arr). All pricing figures reflect publicly available data and published benchmarks as of May 2026. GPU pricing is dynamic — verify current rates at runpod.io.*

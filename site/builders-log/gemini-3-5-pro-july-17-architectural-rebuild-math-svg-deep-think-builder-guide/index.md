@@ -3,9 +3,9 @@
 > Google confirmed Gemini 3.5 Pro for July 17, but the path there required abandoning the 2.5 Pro base model entirely. Here is what the rebuild targets, what it signals, and how to decide whether to wait.
 
 
-Gemini 3.5 Pro now has a confirmed launch date: **July 17, 2026**. That is ten days from now.
+Gemini 3.5 Pro [now has a confirmed launch date: **July 17, 2026**](https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm). That is ten days from now.
 
-The date is not the only new information. The reason for the delay from the original June window is now clearer: Google did not simply slip a deadline. It scrapped its 2.5 Pro base model and ran a new pre-training cycle. The model shipping on July 17 is architecturally different from what was in enterprise preview.
+The date is not the only new information. The reason for the delay from the original June window is now clearer: [Google did not simply slip a deadline. It scrapped its 2.5 Pro base model and ran a new pre-training cycle](https://hackernoon.com/google-delays-gemini-35-pro-to-july-17-the-strategic-play-behind-the-scrapped-base-model). The model shipping on July 17 is architecturally different from what was in enterprise preview.
 
 This matters for how you interpret the incoming benchmark numbers and whether the wait is worth it.
 
@@ -13,7 +13,7 @@ This matters for how you interpret the incoming benchmark numbers and whether th
 
 Context helps here. This is Google's second major AI delivery miss in 2026. Gemini Ultra 1.5 slipped three months. Then at Google I/O on May 19, Sundar Pichai told a packed audience to "give us until next month" for 3.5 Pro. June ended without a GA release.
 
-Between June 21 and 27, four senior Gemini researchers announced departures to Anthropic. The timing does not prove a causal link, but repeated delivery pressure and visible talent movement are worth tracking together.
+Between June 21 and 27, [four senior Gemini researchers announced departures to Anthropic](https://tech-insider.org/au/gemini-3-5-pro-july-17-launch-2026/). The timing does not prove a causal link, but repeated delivery pressure and visible talent movement are worth tracking together.
 
 ## What the Rebuild Targets
 

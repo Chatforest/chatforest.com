@@ -5,7 +5,7 @@
 
 Part of our **[Code Execution & Sandbox MCP category](/categories/code-execution-sandbox/)**.
 
-*At a glance: 390 GitHub stars, 67 forks, 67 commits, Apache-2.0 license, JavaScript (52.8%) + Python (41.5%). **Archived April 16, 2026.** npm package `@e2b/mcp-server`. Parent company E2B raised $43.8M ($21M Series A from Insight Partners). PulseMCP: 38.4K all-time visitors (#691 globally), 193 weekly. Last refreshed May 19, 2026.*
+*At a glance: [390 GitHub stars (archived)](https://github.com/e2b-dev/e2b-mcp-server), 67 forks, Apache-2.0 license. **Archived April 16, 2026.** npm package `@e2b/mcp-server`. Parent platform: [E2B (12.2K stars)](https://github.com/e2b-dev/E2B) raised $43.8M ($21M Series A from Insight Partners). PulseMCP: 38.4K all-time visitors (#691 globally), 193 weekly. Last refreshed May 19, 2026.*
 
 E2B's MCP server was a straightforward tool: it let Claude Desktop (and other MCP clients) execute code inside E2B's cloud sandboxes. The pitch was security — instead of running AI-generated code on your local machine, it ran inside Firecracker microVMs with hardware-level isolation. Each sandbox got its own dedicated kernel, started in ~150ms, and was destroyed after use.
 
