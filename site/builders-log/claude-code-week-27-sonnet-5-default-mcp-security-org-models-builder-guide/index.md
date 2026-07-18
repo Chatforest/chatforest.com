@@ -3,7 +3,7 @@
 > Two versions of Claude Code landed June 29–30. Sonnet 5 is now the default model with a 1M token context window, a MCP self-approval security fix changes how untrusted workspaces behave, and enterprise teams get organization-level model defaults.
 
 
-Claude Code shipped two versions between June 29 and June 30, 2026 — v2.1.196 and v2.1.197. These are not maintenance releases. One changes the model every Claude Code session uses by default. Another closes a meaningful security gap in how MCP servers are authorized. And a third addition gives enterprise admins model governance they did not have before.
+[Claude Code shipped two versions between June 29 and June 30, 2026 — v2.1.196 and v2.1.197](https://github.com/anthropics/claude-code/releases). These are not maintenance releases. One changes the model every Claude Code session uses by default. Another closes a meaningful security gap in how MCP servers are authorized. And a third addition gives enterprise admins model governance they did not have before.
 
 Here is what matters for builders.
 
@@ -28,7 +28,7 @@ Three API behavior changes come with Sonnet 5 that affect anyone who has tuned C
 
 ## MCP Self-Approval Security Fix
 
-**Version:** 2.1.196 · **Released:** June 29
+**Version:** 2.1.196 · **Released:** June 29 · [Changelog](https://code.claude.com/docs/en/changelog)
 
 Before this release, a committed `.claude/settings.json` that listed MCP servers would cause Claude Code to auto-spawn those servers in any workspace where the file existed — including workspaces not explicitly trusted by the user. This created a vector for repository-level prompt injection: a malicious `.claude/settings.json` checked into a repository could provision MCP servers without user confirmation.
 

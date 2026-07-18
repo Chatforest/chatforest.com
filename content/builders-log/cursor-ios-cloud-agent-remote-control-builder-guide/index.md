@@ -5,11 +5,11 @@ description: "Cursor's iOS app (public beta, June 29) lets you launch cloud agen
 tags: ["cursor", "agentic-coding", "mobile", "cloud-agents", "developer-tools", "AI-workflow"]
 ---
 
-On June 29, 2026, Cursor shipped a native iOS app in public beta. The headline capability is two-fold: launch **cloud agents** that run in isolated virtual machines on Cursor's infrastructure, or use **Remote Control** to direct an agent already running on your local machine — all from your phone.
+On June 29, 2026, [Cursor shipped a native iOS app in public beta](https://cursor.com/blog/ios-mobile-app). The headline capability is two-fold: launch **cloud agents** that run in isolated virtual machines on Cursor's infrastructure, or use **Remote Control** to direct an agent already running on your local machine — all from your phone.
 
 For builders who run long-horizon coding agents, this changes the workflow model. You no longer need to be at your desk to start, monitor, redirect, or merge work from a Cursor agent.
 
-This is a research-based guide. We reviewed Cursor's blog post, changelog, and third-party coverage. We did not run the iOS app ourselves.
+This is a research-based guide. We reviewed [Cursor's blog post and changelog](https://cursor.com/changelog/ios-mobile-app), and third-party coverage. We did not run the iOS app ourselves.
 
 ---
 
@@ -86,7 +86,7 @@ The iOS app did not ship in isolation. Several June 2026 Cursor updates set the 
 
 | Feature | Shipped | What it enables |
 |---------|---------|-----------------|
-| Cloud Agents v3.7 | Jun 17–18 | <10 min environment setup, reusable snapshots |
+| [Cloud Agents v3.7](https://cursor.com/changelog/cloud-in-agents-window) | Jun 17–18 | <10 min environment setup, reusable snapshots |
 | `/in-cloud` command | Jun 17 | Spawn isolated cloud subagents on separate VMs |
 | `/babysit` | Jun 17 | Cloud agents iterate toward PR-ready independently |
 | `/automate` | Jun 18 | Create recurring workflows in plain language |

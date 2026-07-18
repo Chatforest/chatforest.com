@@ -8,7 +8,7 @@ categories: ["OpenAI", "Safety", "Developer Tools"]
 tags: ["openai", "moderation", "responses-api", "chat-completions", "safety", "guardrails", "builder-guide", "june-2026", "api"]
 ---
 
-OpenAI shipped inline moderation to the Responses API and Chat Completions API on June 4, 2026. You can now receive safety scores for both your input and generated output in a single API call, without routing content through the standalone moderation endpoint separately. Part of our **[Builder's Log](/builders-log/)**.
+[OpenAI shipped inline moderation to the Responses API and Chat Completions API on June 4, 2026](https://developers.openai.com/api/docs/changelog). You can now receive safety scores for both your input and generated output in a single API call, without routing content through the standalone [moderation endpoint](https://developers.openai.com/api/docs/guides/moderation) separately. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 

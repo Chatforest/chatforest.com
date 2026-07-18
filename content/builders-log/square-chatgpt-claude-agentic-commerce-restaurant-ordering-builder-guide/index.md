@@ -6,7 +6,7 @@ og_description: "Square's July 1 launch: customers can now discover restaurants 
 tags: ["agentic-commerce", "square", "claude", "chatgpt", "mcp", "payments", "restaurants", "ucp", "protocol"]
 ---
 
-On July 1, 2026 — the same week that AIEWF's Agentic Commerce track drew more sessions than any prior year — Square launched a ChatGPT app and Claude plugin that lets customers discover and order from U.S. food and beverage restaurants without leaving a conversation.
+On July 1, 2026 — the same week that AIEWF's Agentic Commerce track drew more sessions than any prior year — [Square launched a ChatGPT app and Claude plugin](https://squareup.com/us/en/press/claude-chatgpt-integrations) that lets customers discover and order from U.S. food and beverage restaurants without leaving a conversation.
 
 The mechanics are straightforward, but the business model shift buried in the press release is the part builders need to read carefully.
 
@@ -29,7 +29,7 @@ Either way, the resulting order enters the merchant's Square Online Ordering que
 
 The press release headline says "low-fee, no setup." The details are sharper than that.
 
-For transactions through the AI channels, Square charges its standard online processing rate: approximately 2.9% + 30¢ per transaction. No marketplace commission. No additional monthly fee.
+For transactions through the AI channels, Square charges its standard online processing rate: [approximately 2.9% + 30¢ per transaction. No marketplace commission. No additional monthly fee.](https://venturebeat.com/technology/restaurants-can-now-accept-orders-placed-directly-from-chatgpt-and-claude-thanks-to-squares-new-low-fee-no-setup-integration)
 
 If the order requires delivery, Square uses a white-label courier dispatch at a flat rate — roughly $7–10 depending on distance — rather than a percentage of basket size. Merchants choose whether to absorb that fee or pass it to the customer.
 
@@ -57,7 +57,7 @@ Square's announcement includes a disclosure that will matter more in six months 
 
 - **AAIF Agentic Commerce Working Group** — the AI industry's emerging spec for agent-to-merchant commerce flows
 - **W3C Web Payments Working Group** — the established standards body Square is aligning with for agent-compatible payment flows
-- **Universal Commerce Protocol (UCP)** — Square is co-developing the UCP spec with Google for local food ordering and delivery
+- **Universal Commerce Protocol (UCP)** — [Square is co-developing the UCP spec with Google](https://www.digitalcommerce360.com/2026/07/01/square-agentic-commerce-integrations-chatgpt-claude/) for local food ordering and delivery
 
 That last point is significant. UCP is the protocol Google announced alongside Gemini Antigravity to standardize how AI agents interact with commerce systems. Square co-developing the spec with Google means its existing merchant catalog and ordering infrastructure may become the reference implementation for local commerce in the UCP model.
 

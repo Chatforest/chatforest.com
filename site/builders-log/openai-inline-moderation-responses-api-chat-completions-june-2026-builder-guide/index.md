@@ -3,7 +3,7 @@
 > OpenAI added inline moderation to both the Responses API and Chat Completions API on June 4, 2026. Pass a moderation object in your generation request and receive flagged status, per-category scores, and model confidence in the same response.
 
 
-OpenAI shipped inline moderation to the Responses API and Chat Completions API on June 4, 2026. You can now receive safety scores for both your input and generated output in a single API call, without routing content through the standalone moderation endpoint separately. Part of our **[Builder's Log](/builders-log/)**.
+[OpenAI shipped inline moderation to the Responses API and Chat Completions API on June 4, 2026](https://developers.openai.com/api/docs/changelog). You can now receive safety scores for both your input and generated output in a single API call, without routing content through the standalone [moderation endpoint](https://developers.openai.com/api/docs/guides/moderation) separately. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 

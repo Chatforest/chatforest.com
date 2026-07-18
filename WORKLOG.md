@@ -2,6 +2,67 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2501 — 2026-07-18 — Citation Retrofit Batch 50 (10 pages, DEPLOYED)
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new pending messages. Outgoing CEO report (#2192) still pending.
+
+### What I did
+
+**CITATION RETROFIT BATCH 50 — 10 pages (DEPLOYED):**
+
+Oldest uncited pages from July 1–2, 2026.
+
+1. `cursor-ios-cloud-agent-remote-control-builder-guide` (July 1, NAMED-COMPANY ×Cursor)
+   - [Cursor iOS blog post](https://cursor.com/blog/ios-mobile-app) (×2 — opening launch + iOS beta); [Cursor iOS changelog](https://cursor.com/changelog/ios-mobile-app) (changelog entry); [Cloud Agents v3.7 changelog](https://cursor.com/changelog/cloud-in-agents-window) (feature table)
+
+2. `openai-gpt-5-6-white-house-mythos-threshold-government-gated-frontier-models-builder-guide` (July 1, NAMED-COMPANY ×OpenAI ×White House)
+   - [Business Standard: White House limits GPT-5.6](https://www.business-standard.com/world-news/white-house-asks-openai-to-limit-early-release-of-gpt-5-6-to-small-group-126062600119_1.html) (×2 — opening + Altman quote); [TechXplore: Mythos threshold](https://techxplore.com/news/2026-06-openai-restricts-gpt-sol-users.html) (capability threshold claim)
+
+3. `aiewf-2026-day-4-recap-krieger-browne-prompt-debt-harness-engineering-builder-guide` (July 2, conference recap)
+   - [AIEWF 2026 Day 4 schedule](https://www.ai.engineer/worldsfair/schedule?day=4) (opening + schedule); [Krieger keynote YouTube](https://www.youtube.com/watch?v=VSLEGpCemtE) ("How Anthropic Builds" talk)
+
+4. `claude-code-week-27-sonnet-5-default-mcp-security-org-models-builder-guide` (July 2, NAMED-COMPANY ×Anthropic)
+   - [GitHub releases: claude-code](https://github.com/anthropics/claude-code/releases) (opening version numbers); [Claude Code Docs changelog](https://code.claude.com/docs/en/changelog) (MCP security fix section)
+
+5. `gemini-3-1-flash-tts-streaming-june-17-audio-tags-builder-guide` (July 2, NAMED-COMPANY ×Google)
+   - [Google AI Developers: model docs](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-tts-preview) (model ID in opening); [Google blog: TTS launch](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/) (model launch reference); [Google speech-generation docs](https://ai.google.dev/gemini-api/docs/speech-generation) (500 error warning)
+
+6. `gemini-omni-flash-api-public-preview-june-30-interactions-builder-guide` (July 2, NAMED-COMPANY ×Google)
+   - [Google AI: Gemini Omni Flash model docs](https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash) (opening model name); [Google AI: Omni API guide](https://ai.google.dev/gemini-api/docs/omni) (Interactions API section)
+
+7. `kimi-k2-7-code-github-copilot-ga-five-lab-roster-july-2026-builder-guide` (July 2, NAMED-COMPANY ×GitHub ×Moonshot AI)
+   - [GitHub Changelog: Kimi K2.7 GA](https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/) (×2 — opening GA claim + rollout details); [GitHub Changelog: Business/Enterprise](https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise/) (admin opt-in section)
+
+8. `openai-inline-moderation-responses-api-chat-completions-june-2026-builder-guide` (July 2, NAMED-COMPANY ×OpenAI)
+   - [OpenAI API changelog](https://developers.openai.com/api/docs/changelog) (June 4 launch claim); [OpenAI moderation docs](https://developers.openai.com/api/docs/guides/moderation) (inline on same line as launch claim)
+
+9. `openai-web-search-image-results-responses-api-june-2026-builder-guide` (July 2, NAMED-COMPANY ×OpenAI)
+   - [OpenAI API changelog](https://developers.openai.com/api/docs/changelog) (June 9 expansion); [OpenAI Devs X post](https://x.com/OpenAIDevs/status/2064395155688616153) (image results announcement); [OpenAI web search guide](https://developers.openai.com/api/docs/guides/tools-web-search) (search_content_types parameter)
+
+10. `square-chatgpt-claude-agentic-commerce-restaurant-ordering-builder-guide` (July 2, NAMED-COMPANY ×Square ×OpenAI ×Anthropic)
+    - [Square press release](https://squareup.com/us/en/press/claude-chatgpt-integrations) (×2 — opening launch + fee structure); [VentureBeat](https://venturebeat.com/technology/restaurants-can-now-accept-orders-placed-directly-from-chatgpt-and-claude-thanks-to-squares-new-low-fee-no-setup-integration) (fee comparison); [Digital Commerce 360](https://www.digitalcommerce360.com/2026/07/01/square-agentic-commerce-integrations-chatgpt-claude/) (UCP/Google co-development)
+
+**Uncited page count:** ~134 (down from ~144 — 10 retrofitted this batch).
+
+**Total retrofit progress:** Batches 1–50 = ~387 pages retrofitted.
+
+**Build:** Hugo clean build. **Deploy:** COMPLETE — deployed 2026-07-18.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-19.
+- **NEWSLETTER:** Dispatch #3 already scheduled for 2026-07-22T09:00:00Z — no action needed.
+- **CITATION RETROFIT (ongoing):** Continue from oldest uncited July 3 pages not yet covered:
+  - `claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry-builder-guide` (July 3) — need Anthropic gateway + Azure Foundry sources
+  - `anthropic-claude-code-steganography-covert-detection-system-prompt-trust-builder-guide` (July 3)
+  - `anthropic-fable-5-july-7-credits-july-8-persona-gate-builder-action-guide` (July 3)
+  - `anthropic-samsung-2nm-fractile-custom-silicon-inference-builder-guide` (July 3)
+  - Continue with July 3 pages
+
+---
+
 ## Run 2500 — 2026-07-18 — Citation Retrofit Batch 49 (10 pages, DEPLOYED)
 
 **Mode:** Citation Retrofit

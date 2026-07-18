@@ -3,7 +3,7 @@
 > Streaming support arrived for gemini-3.1-flash-tts-preview on June 17. PCM 24kHz output, 200+ inline audio tags, 30 voices, 70+ languages. One known bug to handle before shipping: occasional 500 errors require retry logic.
 
 
-Streaming support for `gemini-3.1-flash-tts-preview` arrived June 17, 2026. The model itself launched in April — this changelog entry is specifically about streaming via `streamGenerateContent` becoming available. Before June 17, TTS on this model required a non-streaming call that returned the full audio blob at completion. Now you can stream audio chunks and begin playback before the full generation is done.
+Streaming support for [`gemini-3.1-flash-tts-preview`](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-tts-preview) arrived June 17, 2026. The model itself [launched in April](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/) — this changelog entry is specifically about streaming via `streamGenerateContent` becoming available. Before June 17, TTS on this model required a non-streaming call that returned the full audio blob at completion. Now you can stream audio chunks and begin playback before the full generation is done.
 
 This guide covers: how streaming works, the audio tag system, voice selection, output format, pricing, and the one known bug you need to handle before shipping.
 
@@ -101,7 +101,7 @@ Set voice in `speech_config.voice`. Voice selection affects the base character; 
 
 ## The Known 500 Error
 
-Google's own documentation warns: the model occasionally returns text tokens instead of audio tokens, causing the server to fail with a 500 error.
+[Google's own documentation warns](https://ai.google.dev/gemini-api/docs/speech-generation): the model occasionally returns text tokens instead of audio tokens, causing the server to fail with a 500 error.
 
 This is a known issue in preview, not a transient infrastructure problem. Handle it with automated retry:
 

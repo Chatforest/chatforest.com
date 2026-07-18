@@ -3,7 +3,7 @@
 > OpenAI's web search tool in the Responses API now returns image results alongside text results as of June 9, 2026. Set search_content_types to include image and receive image_url, thumbnail_url, source page, and caption fields per result.
 
 
-OpenAI expanded the web search tool in the Responses API on June 9, 2026. In addition to text results, web search can now return image results — enabling agents to ground responses in current web visuals without requiring a separate image search integration. Part of our **[Builder's Log](/builders-log/)**.
+[OpenAI expanded the web search tool in the Responses API](https://developers.openai.com/api/docs/changelog) on June 9, 2026. In addition to text results, [web search can now return image results](https://x.com/OpenAIDevs/status/2064395155688616153) — enabling agents to ground responses in current web visuals without requiring a separate image search integration. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -17,7 +17,7 @@ This matters for use cases where the answer is visual: product photos, event ima
 
 ## Enabling Image Results
 
-Add `search_content_types` to the web search tool definition:
+Add `search_content_types` to the [web search tool definition](https://developers.openai.com/api/docs/guides/tools-web-search):
 
 ```python
 from openai import OpenAI

@@ -8,7 +8,7 @@ categories: ["Google", "Multimodal AI", "Developer Tools", "Video Generation"]
 tags: ["google", "gemini", "gemini-omni", "gemini-omni-flash", "video-generation", "interactions-api", "multimodal", "public-preview", "builders-log"]
 ---
 
-Gemini Omni Flash entered public preview on June 30, 2026. The API is live via the Gemini API, Google AI Studio, and the Gemini Enterprise Agent Platform. In April and May, we published a [pre-launch planning guide](/builders-log/gemini-omni-flash-builder-guide-pipeline-architecture-api-rollout/) for when the API opened. This is the update: what is actually available, what the model ID is, and what you need to change in your integration plan.
+[Gemini Omni Flash](https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash) entered public preview on June 30, 2026. The API is live via the Gemini API, Google AI Studio, and the Gemini Enterprise Agent Platform. In April and May, we published a [pre-launch planning guide](/builders-log/gemini-omni-flash-builder-guide-pipeline-architecture-api-rollout/) for when the API opened. This is the update: what is actually available, what the model ID is, and what you need to change in your integration plan.
 
 ---
 
@@ -42,7 +42,7 @@ The 1M token context window means you can pass large documents, long video descr
 
 ## Which API to Use
 
-Google recommends the **Interactions API** for Gemini Omni Flash. The Interactions API was purpose-built for stateful multi-turn interactions and is where new Omni features will land first. The legacy `generateContent` endpoint works but may not surface all preview capabilities.
+Google recommends the [**Interactions API**](https://ai.google.dev/gemini-api/docs/omni) for Gemini Omni Flash. The Interactions API was purpose-built for stateful multi-turn interactions and is where new Omni features will land first. The legacy `generateContent` endpoint works but may not surface all preview capabilities.
 
 If your existing infrastructure is built on `generateContent`, it will still function. But for new Omni Flash integrations, start with the Interactions API so you are on the forward path before GA.
 

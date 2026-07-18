@@ -3,7 +3,7 @@
 > The final day of AI Engineer World's Fair 2026 delivered two Anthropic talks and a closing keynote block that put two competing builder philosophies on the same stage. Mike Krieger says build frontier-far. Theo Browne says delete your AGENT.md. Both are right.
 
 
-The AI Engineer World's Fair 2026 closed Thursday with its Harness Engineering day — the final act of a four-day arc that moved from coding agents (Day 2) through autoresearch and verification (Day 3) to the question of how you actually run AI systems reliably at scale. Day 4 delivered more Anthropic representation than any prior day, a closing keynote block that put two very different builder philosophies on the same stage, and the conference's first-ever Startup Battlefield.
+The [AI Engineer World's Fair 2026](https://www.ai.engineer/worldsfair/schedule?day=4) closed Thursday with its Harness Engineering day — the final act of a four-day arc that moved from coding agents (Day 2) through autoresearch and verification (Day 3) to the question of how you actually run AI systems reliably at scale. Day 4 delivered more Anthropic representation than any prior day, a closing keynote block that put two very different builder philosophies on the same stage, and the conference's first-ever Startup Battlefield.
 
 Here's what happened and what builders need to take from it.
 
@@ -30,7 +30,7 @@ Pocock's `mattpocock/skills` repository on GitHub demonstrates the framework in 
 
 Mike Krieger co-founded Instagram, served as Anthropic's CPO, and moved in January 2026 to co-lead Anthropic Labs alongside Ben Mann (Anthropic co-founder). Labs is where Anthropic runs internal experiments before promoting capabilities to products — which means Krieger's team has more genuine production experience with Claude's failure modes than almost anyone outside the company.
 
-His 10:00 AM keynote, "How Anthropic Builds: Lessons from Labs," was the practitioner version of a talk labs rarely give: here is what we actually do when we build with our own model.
+His 10:00 AM keynote, ["How Anthropic Builds: Lessons from Labs"](https://www.youtube.com/watch?v=VSLEGpCemtE), was the practitioner version of a talk labs rarely give: here is what we actually do when we build with our own model.
 
 Three core lessons:
 

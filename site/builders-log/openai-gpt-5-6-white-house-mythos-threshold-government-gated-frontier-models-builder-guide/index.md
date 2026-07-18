@@ -3,15 +3,15 @@
 > The White House placed GPT-5.6 behind the same capability-review gate that blocked Fable 5 for nearly three weeks. A pattern is forming — and builders who ship on frontier models need a plan.
 
 
-On June 30, 2026 — the same day Anthropic's Fable 5 returned from its own government-ordered review — the White House applied the same treatment to OpenAI's GPT-5.6. The pattern is now clear enough to plan around.
+On June 30, 2026 — the same day Anthropic's Fable 5 returned from its own government-ordered review — [the White House applied the same treatment to OpenAI's GPT-5.6](https://www.business-standard.com/world-news/white-house-asks-openai-to-limit-early-release-of-gpt-5-6-to-small-group-126062600119_1.html). The pattern is now clear enough to plan around.
 
 ---
 
 ## What Happened
 
-The Trump administration asked OpenAI to limit GPT-5.6 to a small group of government-approved partners before any wider launch. The reason: capability evaluators determined GPT-5.6 had crossed "the same capability threshold as Mythos" — the shorthand for the level at which models get routed through federal security review.
+The Trump administration asked OpenAI to limit GPT-5.6 to a small group of government-approved partners before any wider launch. The reason: [capability evaluators determined GPT-5.6 had crossed "the same capability threshold as Mythos"](https://techxplore.com/news/2026-06-openai-restricts-gpt-sol-users.html) — the shorthand for the level at which models get routed through federal security review.
 
-Sam Altman acknowledged the situation publicly, telling reporters access would likely broaden within "a couple of weeks" pending the review process completing.
+Sam Altman acknowledged the situation publicly, [telling reporters access would likely broaden within "a couple of weeks"](https://www.business-standard.com/world-news/white-house-asks-openai-to-limit-early-release-of-gpt-5-6-to-small-group-126062600119_1.html) pending the review process completing.
 
 As of July 1, GPT-5.6 is available to select government-approved partners only. The general API is not yet open.
 

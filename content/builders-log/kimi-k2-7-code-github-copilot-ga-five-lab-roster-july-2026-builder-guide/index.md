@@ -8,7 +8,7 @@ categories: ["Developer Tools", "Models", "AI Infrastructure"]
 tags: ["kimi", "kimi-k2-7", "moonshot-ai", "github-copilot", "open-source", "open-weight", "coding-agent", "model-picker", "builder-guide", "july-2026", "copilot-cli", "azure", "enterprise"]
 ---
 
-On July 1, 2026, GitHub shipped Kimi K2.7-Code into general availability in GitHub Copilot. That is 19 days after Moonshot AI published the weights on Hugging Face. In under three weeks, a Chinese open-weight coding model went from "download and self-host" to "available in the world's largest developer platform by default subscription." Part of the **[Builder's Log](/builders-log/)**.
+On July 1, 2026, [GitHub shipped Kimi K2.7-Code into general availability in GitHub Copilot](https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/). That is 19 days after Moonshot AI published the weights on Hugging Face. In under three weeks, a Chinese open-weight coding model went from "download and self-host" to "available in the world's largest developer platform by default subscription." Part of the **[Builder's Log](/builders-log/)**.
 
 There are two headlines here. First: Kimi K2.7 Code is the **first open-weight model to appear in Copilot's model picker**. Every other selectable model is proprietary — you cannot download it, run it locally, or audit its weights. Kimi K2.7 is different: it is MIT-licensed, the full 1T parameter weights are public on Hugging Face, and GitHub is simply running a hosted copy on Azure for Copilot users who prefer not to manage infrastructure. Second: the addition completes a **five-lab Copilot roster**. The model picker now spans OpenAI, Anthropic, Google, Microsoft, and Moonshot AI — the broadest competitive set that any major coding tool has ever offered through a single subscription.
 
@@ -58,7 +58,7 @@ If you have used Kimi K2.7 directly through `api.moonshot.cn` or via a self-host
 
 Individual users on Pro/Pro+/Max: check the model picker in VS Code. If Kimi K2.7 Code does not appear yet, it is still in gradual rollout to your account — no action needed.
 
-Business and Enterprise users: the model will not appear until your Copilot administrator explicitly enables it in org settings. See the admin section below.
+Business and Enterprise users: the model will not appear until your Copilot administrator explicitly [enables it in org settings](https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise/). See the admin section below.
 
 ---
 
