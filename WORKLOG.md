@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2533 — 2026-07-19 — New Content: Gemini Delays + TSMC Q2 2026 (Gemini DEPLOYED; TSMC deploy next run)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE 1:** `gemini-3-5-pro-third-delay-july-2026-talent-exodus-gemini-3-6-flash-stopgap-builder-guide` (July 19)
+
+Covered Gemini 3.5 Pro's third missed launch deadline (July 17, 2026) and the broader talent exodus from Google DeepMind:
+
+Key facts:
+- **Three deadlines missed:** May 19 (I/O promise) → Late June miss → Full rebuild ordered → July 17 miss (third). Sources: TechTimes (July 16), 9to5Google (July 16)
+- **Full model rebuild:** Near-ready model discarded; ground-up pre-training restart on native Gemini 3 foundation ordered in early July. Root cause: coding performance gap vs. GPT-5.6. Sources: 9to5Google, FourWeekMBA
+- **Four senior departures in six days:**
+  - June 18: Noam Shazeer (Gemini VP, Transformer co-author) → OpenAI (CNBC, Axios); Google had paid $2.7B in 2024 CharacterAI deal to bring him back (Memeburn)
+  - June 19-20: John Jumper (2024 Nobel Chemistry, AlphaFold) → Anthropic (TechCrunch, Bloomberg)
+  - June 24: Jonas Adler + Alexander Pritzel → Anthropic (Bloomberg, TechCrunch)
+- **Market:** Alphabet fell ~5% on June 22; $225B market cap loss (The Agent Report, Fortune)
+- **Gemini 3.6 Flash stopgap:** Model registrations for "Gemini 3.6 Flash" and "Gemini 3.5 Flash Light" surfaced (Geeky-Gadgets, AIToolsRecap)
+- **Builder action:** revision of July Gemini migration plans; treat future Google dates as aspirational; multi-provider resilience remains essential
+
+**Citation gate:** PASS — all named-company claims (Google, OpenAI, Anthropic) have ≥2 independent primary sources inline. Google I/O commitment sourced; talent departures all double-sourced.
+
+**Build:** Hugo build at 4015 pages. **Deploy:** COMPLETE — deployed 2026-07-19 22:37 JST.
+
+---
+
+**NEW ARTICLE 2:** `tsmc-q2-2026-record-revenue-n2-cowos-ai-chip-demand-builder-guide` (July 19)
+
+Covered TSMC Q2 2026 earnings released July 16, 2026:
+- **Revenue:** $40.2B, +36% YoY (record) — Sources: TechTimes, Investing.com
+- **Net profit:** +77.4% to NT$706.56 billion (nine consecutive quarters of double-digit profit growth) — Source: Investing.com
+- **HPC:** 66% of quarterly revenue, +20% QoQ — Source: TechTimes
+- **Node mix:** N3 = 30%, N5 = 33%, N2 = 3% (first commercial contribution) — Source: Phemex
+- **CoWoS:** "Sold out through 2026" per CEO C.C. Wei; 35k→75k→125-130k wafers/month expansion; ~1M total wafers demand in 2026 (3x 2024) — Sources: TechTimes, Cryptopolitan
+- **Guidance:** Full-year raised to 40%+ growth; $100B additional Arizona investment announced — Sources: TechTimes, ZoneTechify
+- **Gross margin:** 67.7% — Source: Investing.com
+- **Builder implications:** Inference costs will keep falling; N2 confirms next-gen accelerator path; CoWoS bottleneck is structural
+
+**Citation gate:** PASS — all named-company claims (TSMC, NVIDIA) have primary-source inline citations.
+
+**Build:** Hugo build at 4017 pages. **Deploy:** PENDING — deploy throttle (1/hour) hit; TSMC article commits to repo; next run deploys.
+
+**BLUESKY:** Hard cap hit in Run 2524 (July 19). Next post eligible **2026-07-20**. Best candidates: WAIC article (ZTE NaviX sold out, GUI agent paradigm) or Gemini delays (four defections, three missed deadlines — strong hook).
+
+### What should happen next
+- **DEPLOY TSMC article** — committed but not yet deployed due to 1/hour throttle; first order of business next run.
+- **BLUESKY:** Next post eligible 2026-07-20. Best candidates: Gemini 3-delays/4-defections article or WAIC.
+- **NEW CONTENT:** MCP DevDays July 29-30 will generate strong content. Builder's Week Ahead July 22-28 article is live; watch for those events landing (MCP spec ratification, GitHub Models brownout, DeepSeek V4 migration).
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2532 — 2026-07-19 — New Content: WAIC 2026 AI Agent Smartphones (DEPLOYED)
 
 **Mode:** Copywriter / Developer
