@@ -22,11 +22,11 @@ author: "ChatForest"
 
 ## September 2024: Meta Goes Multimodal
 
-Meta's Connect 2024 keynote on September 25, 2024 was primarily a hardware event — Quest 3S, Ray-Ban AI glasses, and mixed reality demonstrations. Tucked into the software announcements was something more consequential for the AI research community: Llama 3.2, the first release in the Llama lineage to include vision capability.
+[Meta's Connect 2024 keynote](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/) on September 25, 2024 was primarily a hardware event — Quest 3S, Ray-Ban AI glasses, and mixed reality demonstrations. Tucked into the software announcements was something more consequential for the AI research community: Llama 3.2, the first release in the Llama lineage to include vision capability.
 
 The timing mattered. **Llama 3.1** (July 2024, reviewed separately: **[Llama 3.1 405B](/reviews/meta-llama-3-1-405b-frontier-open-weight-llm-review/)**) had proven that open-weight models could match closed frontier models on text benchmarks. But it was entirely text-only — no images, no documents, no charts. Meanwhile, OpenAI's GPT-4o had shipped with native multimodal input in May 2024, and Claude 3.5 Sonnet followed in June. Vision was rapidly becoming table stakes for frontier models.
 
-Llama 3.2 filled the gap on two fronts simultaneously. The 11B and 90B vision models brought image understanding to the open-weight ecosystem. The 1B and 3B text models — derived from the Llama 3.1 8B via pruning and distillation — brought capable, 128K-context language models to smartphones and embedded devices for the first time. These were distinct product lines within a single release, unified by the Llama 3.2 name.
+Llama 3.2 filled the gap on two fronts simultaneously. The [11B and 90B vision models](https://huggingface.co/blog/llama32) brought image understanding to the open-weight ecosystem. The 1B and 3B text models — derived from the Llama 3.1 8B via pruning and distillation — brought capable, 128K-context language models to smartphones and embedded devices for the first time. These were distinct product lines within a single release, unified by the Llama 3.2 name.
 
 The result was the broadest single Llama release to that point: four models, two modalities, covering hardware from a mid-range Android phone to a multi-GPU server cluster.
 
@@ -135,7 +135,7 @@ Llama 3.2 ships under the **Llama 3.2 Community License** — a custom commercia
 
 The major new restriction: **the 11B and 90B multimodal model weights may not be used by individuals domiciled in the EU or companies with their principal place of business in the EU**. The 1B and 3B text-only models are not subject to this geographic restriction.
 
-Meta has not formally explained the legal basis for this restriction. The leading interpretation is that the vision models were trained on image-text data whose compliance with GDPR or the EU AI Act's provisions on training data sourcing was uncertain enough that Meta chose geographic exclusion rather than risk enforcement action. This is the first time any Llama release has included a geographic restriction, and it generated significant commentary in the European AI research community.
+Meta has not formally explained the legal basis for this restriction. The leading interpretation is that the [vision models were trained on image-text data](https://www.deeplearning.ai/the-batch/meta-restricts-multimodal-models-in-the-european-union-due-to-privacy-concerns/) whose compliance with GDPR or the EU AI Act's provisions on training data sourcing was uncertain enough that Meta chose geographic exclusion rather than risk enforcement action. This is the first time any Llama release has included a geographic restriction, and it generated significant commentary in the European AI research community.
 
 For EU-based developers: the 1B and 3B text models are fully available. The vision models require a different deployment strategy — either using an API provider based outside the EU, or waiting for subsequent Llama releases (Llama 3.3 and Llama 4 did not carry this restriction).
 

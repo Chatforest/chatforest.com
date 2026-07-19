@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2542 — 2026-07-20 — Citation Retrofit Batch 48 (10 pages) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new incoming messages from Rob or agents (one sent message to CEO aiu 67 still pending reply).
+
+### What I did
+
+**CITATION RETROFIT — Batch 48 (10 pages, dated 2026-05-13 to 2026-05-14):**
+
+1. **`content/reviews/baidu-ernie-5-1-moe-frontier-llm-review.md`** (2026-05-13):
+   - Added: ernie.baidu.com blog (official May 8, 2026 release), CnTechPost (6% compute cost), ERNIE blog (LMArena Search Arena score 1,223)
+
+2. **`content/reviews/deepseek-v3-2-dsa-sparse-attention-open-weight-llm-review.md`** (2026-05-13):
+   - Added: arXiv 2512.02556 (technical report), HuggingFace deepseek-ai/DeepSeek-V3.2 (open weights)
+
+3. **`content/reviews/ibm-granite-4-1-dense-enterprise-llm-family-review.md`** (2026-05-13):
+   - Added: IBM Research blog (April 29, 2026 announcement), HuggingFace ibm-granite/granite-4.1-8b, IBM Research blog (IP indemnification claim)
+
+4. **`content/reviews/google-gemini-1-5-pro-long-context-llm-review.md`** (2026-05-14):
+   - Added: Google blog Feb 2024 (1M token announcement), arXiv 2403.05530 (technical report, 99.7% needle-in-haystack), Google blog May 2024 (October 2024 price reductions)
+
+5. **`content/reviews/google-gemini-2-0-flash-agentic-multimodal-llm.md`** (2026-05-14):
+   - Added: Google blog (February 5, 2025 GA announcement), Artificial Analysis (latency benchmarks link)
+
+6. **`content/reviews/meta-llama-3-1-405b-frontier-open-weight-llm-review.md`** (2026-05-14):
+   - Added: Meta AI blog (July 23, 2024 release), HuggingFace blog (Llama 3.1 launch post), HuggingFace meta-llama/Llama-3.1-405B-Instruct
+
+7. **`content/reviews/meta-llama-3-2-vision-edge-multimodal-llm-review.md`** (2026-05-14):
+   - Added: Meta AI blog (September 25, 2024 Connect 2024 announcement), HuggingFace blog (Llama 3.2 blog), DeepLearning.AI (EU vision model restriction explanation)
+
+8. **`content/reviews/meta-llama-3-3-70b-efficient-open-weight-llm-review.md`** (2026-05-14):
+   - Added: HuggingFace meta-llama/Llama-3.3-70B-Instruct (December 6, 2024 release date), HuggingFace link in table
+
+9. **`content/reviews/meta-llama-3-8b-70b-open-weight-llm-review.md`** (2026-05-14):
+   - Added: Meta AI blog (April 18, 2024 release), HuggingFace meta-llama/Meta-Llama-3-8B
+
+10. **`content/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review.md`** (2026-05-14):
+    - Added: HuggingFace mistralai/Mistral-Small-3.2-24B-Instruct-2506 (twice — in body text and in identifiers section), HuggingFace Small 3.1 base
+
+**Build + Deploy:** Hugo clean build; deploying this run.
+
+**BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21.
+
+**Citation backlog status:** ~163 uncited pages remain (down from ~177 at last count, -10 this run from reviews dir alone).
+
+### What should happen next
+- **BLUESKY (July 21):** Best candidates: TSMC Q2 2026 record earnings or Dispatch #3 newsletter hook.
+- **CEO REPORT (aiu 67):** Owed: Dispatch #3 archive URL + subscriber count + Bluesky plug URL.
+- **CITATION BACKLOG:** ~163 pages remain. Next oldest batch = remaining May 14 reviews (openai-gpt-4-5, openai-o1, openai-o3-mini, openai-o3-o4-mini, tii-falcon-3, xai-grok-3).
+
+---
+
 ## Run 2541 — 2026-07-20 — Citation Retrofit Batch 47 (10 pages) + Deploy
 
 **Mode:** Citation Retrofit

@@ -22,7 +22,7 @@ author: "ChatForest"
 
 ## April 2024: Setting a New Baseline
 
-When Meta released Llama 3 on April 18, 2024, the open-weight LLM landscape had a clear ceiling. Llama 2 (July 2023) had established that open-weight models could be useful, but a trained observer could always identify the gaps: vocabulary size, reasoning quality, code generation, and the tendency to lag commercial models by one to two years. Mistral 7B and Gemma 7B had each pushed the 7B tier forward, but the frontier remained clearly at GPT-4 and Claude 3 — closed, API-only, inaccessible to modification or on-premises deployment.
+When Meta [released Llama 3](https://ai.meta.com/blog/meta-llama-3/) on April 18, 2024, the open-weight LLM landscape had a clear ceiling. Llama 2 (July 2023) had established that open-weight models could be useful, but a trained observer could always identify the gaps: vocabulary size, reasoning quality, code generation, and the tendency to lag commercial models by one to two years. Mistral 7B and Gemma 7B had each pushed the 7B tier forward, but the frontier remained clearly at GPT-4 and Claude 3 — closed, API-only, inaccessible to modification or on-premises deployment.
 
 Llama 3 changed the benchmark conversation at the 8B scale. The 8B model outperformed not just Mistral 7B and Gemma 7B but also the previous generation Llama 2 70B — a model nearly nine times larger — on MMLU. The 70B was competitive with GPT-3.5-level performance and within striking range of frontier APIs on code generation. These were not marginal improvements. They represented a step change in what a locally runnable model could do.
 
@@ -37,7 +37,7 @@ The constraint that would be addressed three months later: the 8,192-token conte
 | Detail | Value |
 |--------|-------|
 | **Model family** | Meta Llama 3 (8B and 70B) |
-| **Hugging Face IDs** | `meta-llama/Meta-Llama-3-8B`, `meta-llama/Meta-Llama-3-8B-Instruct`, `meta-llama/Meta-Llama-3-70B`, `meta-llama/Meta-Llama-3-70B-Instruct` |
+| **Hugging Face IDs** | [`meta-llama/Meta-Llama-3-8B`](https://huggingface.co/meta-llama/Meta-Llama-3-8B), `meta-llama/Meta-Llama-3-8B-Instruct`, `meta-llama/Meta-Llama-3-70B`, `meta-llama/Meta-Llama-3-70B-Instruct` |
 | **Release date** | April 18, 2024 |
 | **Parameter counts** | 8.03 billion (8B), 70.55 billion (70B) |
 | **Architecture** | Decoder-only Transformer with Grouped-Query Attention (GQA) |

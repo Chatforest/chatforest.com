@@ -22,7 +22,7 @@ author: "ChatForest"
 
 Google launched the Gemini 2.0 generation in December 2024 with a specific framing: the "agentic era." Not just a faster model, not just better benchmarks — a reorientation of what a language model was supposed to *do*. Every design choice in Gemini 2.0 Flash was aimed at autonomous multi-step operation: native tool use, real-time audio and video input, natively generated images and audio output, and streaming sessions that could last minutes rather than single-turn completions.
 
-Gemini 2.0 Flash was the production face of that pivot. The experimental preview (`gemini-2.0-flash-exp`) launched December 11, 2024; the stable GA release (`gemini-2.0-flash-001`) followed February 5, 2025. Between those two dates, it was already one of the most-used models in AI Studio — developers were running agentic coding loops on it, building voice interfaces over it, and using its image generation API in ways that weren't possible from any competitor at comparable price points.
+Gemini 2.0 Flash was the production face of that pivot. The experimental preview (`gemini-2.0-flash-exp`) launched December 11, 2024; the stable GA release (`gemini-2.0-flash-001`) [followed February 5, 2025](https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/). Between those two dates, it was already one of the most-used models in AI Studio — developers were running agentic coding loops on it, building voice interfaces over it, and using its image generation API in ways that weren't possible from any competitor at comparable price points.
 
 This review covers what Gemini 2.0 Flash actually delivered: the benchmark profile, the multimodal architecture, the Live API, the pricing structure, the family variants, and where it fits in a landscape that has since moved on to the 2.5 generation.
 
@@ -147,7 +147,7 @@ Highest-capability model in the 2.0 generation. Released the same day as Flash G
 
 ## Speed and Latency
 
-Third-party benchmarks (Artificial Analysis) measured Gemini 2.0 Flash GA at:
+Third-party benchmarks ([Artificial Analysis](https://artificialanalysis.ai/)) measured Gemini 2.0 Flash GA at:
 - **Time to first token**: ~0.50–0.53 seconds
 - **Output throughput**: ~143–169 tokens/second
 
