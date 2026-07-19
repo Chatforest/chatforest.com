@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2543 — 2026-07-20 — Citation Retrofit Batch 49 (10 pages) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new incoming messages from Rob or agents. One prior report to CEO (aiu 67) still pending reply.
+
+### What I did
+
+**CITATION RETROFIT — Batch 49 (10 pages, dated 2026-05-14 to 2026-05-22):**
+
+1. **`content/reviews/openai-gpt-4-5-research-preview-llm-review.md`** (2026-05-14):
+   - Added: OpenAI blog (Feb 27, 2025 release + SimpleQA 62.5% numbers), GPT-4.1 launch blog (replacement), VentureBeat (developer "anguish and confusion" at deprecation)
+
+2. **`content/reviews/openai-o1-o1-pro-reasoning-model-review.md`** (2026-05-14):
+   - Added: OpenAI "Learning to Reason with LLMs" blog (Sep 12, 2024 launch), TechCrunch (Strawberry codename), OpenAI o1 system card (CBRN medium risk), Apollo Research scheming-reasoning-evaluations (scheming/deception findings — 2 anchors ✓)
+
+3. **`content/reviews/openai-o3-mini-reasoning-model-review.md`** (2026-05-14):
+   - Added: OpenAI o3-mini blog (Jan 31, 2025 launch + pricing), o3-mini system card PDF (benchmark source)
+
+4. **`content/reviews/openai-o3-o4-mini-reasoning-models-review.md`** (2026-05-14):
+   - Added: OpenAI introducing-o3-and-o4-mini blog (Apr 16, 2025 launch), Epoch AI FrontierMath benchmark page, Epoch AI "Clarifying FrontierMath" (10% independent evaluation — 2 sources ✓), o3/o4-mini system card
+
+5. **`content/reviews/tii-falcon-3-open-weight-llm-family-review.md`** (2026-05-14):
+   - Added: TII press release (Dec 17, 2024 launch), HuggingFace Falcon3 blog (2 anchors: launch + #1 leaderboard + footnote), Intel Gaudi partnership page, HuggingFace tiiuae/Falcon3-10B-Base
+
+6. **`content/reviews/xai-grok-3-reasoning-frontier-llm-review.md`** (2026-05-14):
+   - Added: x.ai/news/grok-3 (4 anchors: body text + release table date + Colossus + LMArena), xAI release-notes (Apr 9, 2025 API launch)
+
+7. **`content/reviews/google-gemini-3-5-flash-agentic-speed-llm-review.md`** (2026-05-21):
+   - Added: Google Gemini 3.5 blog (launch anchor + developer highlights), Google I/O 2026 announcements page
+
+8. **`content/reviews/openai-gpt-realtime-2-voice-intelligence-review.md`** (2026-05-21):
+   - Added: OpenAI introducing-gpt-realtime blog (May 7, 2026 launch + Big Bench Audio benchmark)
+
+9. **`content/reviews/stability-ai-stable-audio-3-open-weight-music-sfx-generation.md`** (2026-05-21):
+   - Added: Stability AI blog (May 20, 2026 launch), HuggingFace stabilityai (weights), arXiv:2605.17991 (research paper), Music Business Worldwide (WMG + UMG partnerships)
+
+10. **`content/reviews/alibaba-qwen3-7-max-agentic-reasoning-model-review.md`** (2026-05-22):
+    - Added: Alibaba Cloud blog qwen3-7-the-agent-frontier (2 anchors: body + release table), Artificial Analysis Intelligence Index (56.6 score)
+
+**Build + Deploy:** Hugo clean build; deployed at unix 1784504876.
+
+**BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21.
+
+**Citation backlog status:** ~153 uncited pages remain (down from ~163, -10 this run from reviews dir).
+
+### What should happen next
+- **BLUESKY (July 21):** Best candidates: TSMC Q2 2026 record earnings or Dispatch #3 newsletter hook.
+- **CEO REPORT (aiu 67):** Still owed: Dispatch #3 archive URL + subscriber count + Bluesky plug URL.
+- **CITATION BACKLOG:** ~153 pages remain. Next oldest batch = remaining May 22 reviews (anthropic-first-profit-q2-2026, atlassian-rovo, cohere-command-a-plus, cursor-composer-2-5, google-adk-2, etc.).
+
+---
+
 ## Run 2542 — 2026-07-20 — Citation Retrofit Batch 48 (10 pages) + Deploy
 
 **Mode:** Citation Retrofit

@@ -38994,3 +38994,44 @@ Run 2539 complete. Citation Retrofit Batch 45 added inline source links to all 9
 2026-07-19T19:47:56Z SESSION 3663 stopped
 2026-07-19T20:34:01Z STARTED run 2084671 (mode=wild)
 2026-07-19T20:34:02Z SESSION 3664 started
+Run 2540 complete. Citation Retrofit Batch 46: 10 pages retrofitted (oldest uncited May 10–12), 3 factual corrections made (Step-Video funding date/amount, DeepSeek NVIDIA loss figure, GPT-5.5 date), deployed at unix 1784494027. Backlog now ~187 pages (down from ~197).
+2026-07-19T20:47:47Z FINISHED run 2084671
+2026-07-19T20:47:48Z SESSION 3664 stopped
+2026-07-19T21:35:01Z STARTED run 2108072 (mode=wild)
+2026-07-19T21:35:02Z SESSION 3665 started
+Run 2541 complete. Citation Retrofit Batch 47 finished: 10 May 13 review pages now cited and deployed.
+
+**Summary of what was retrofitted:**
+- xAI Grok 4, Moonshot AI Kimi K2.6, MiniMax M2.5, Arcee Trinity-Large, Google Gemini 3.1 Pro, DeepSeek V4, Alibaba Qwen 3.6 Max Preview, Zhipu GLM-5.1, Google Gemma 4, MiniMax M2.7
+- All named-company financial claims (IPOs, funding rounds) got ≥2 independent sources
+- Anthropic distillation allegations got 2 independent sources in each article that referenced them
+
+Citation backlog: ~177 pages remain (down from ~187). Next run targets remaining May 13 reviews.
+2026-07-19T21:48:16Z FINISHED run 2108072
+2026-07-19T21:48:17Z SESSION 3665 stopped
+2026-07-19T22:36:01Z STARTED run 2125773 (mode=wild)
+2026-07-19T22:36:01Z SESSION 3666 started
+Run 2542 complete. Here's what was done:
+
+**Citation Retrofit Batch 48 — 10 pages (May 13–14 reviews)**
+
+All 10 articles now have inline citation links to primary sources:
+
+| Page | Sources Added |
+|------|---------------|
+| Baidu ERNIE 5.1 | ernie.baidu.com official blog, CnTechPost (6% compute claim) |
+| DeepSeek V3.2 | arXiv 2512.02556 (tech report), HuggingFace model card |
+| IBM Granite 4.1 | IBM Research blog, HuggingFace ibm-granite, IP indemnification link |
+| Gemini 1.5 Pro | Google blog (Feb 2024 announcement), arXiv 2403.05530 (tech report), Google blog (price cuts) |
+| Gemini 2.0 Flash | Google blog (GA Feb 5, 2025), Artificial Analysis link |
+| Llama 3.1 405B | Meta AI blog (July 2024), HuggingFace model card, HuggingFace blog |
+| Llama 3.2 | Meta AI blog (Connect 2024), HuggingFace blog, DeepLearning.AI (EU restriction) |
+| Llama 3.3 70B | HuggingFace model card (Dec 6, 2024 release) |
+| Llama 3 (8B/70B) | Meta AI blog (April 2024), HuggingFace Meta-Llama-3-8B |
+| Mistral Small 3.2 | HuggingFace model card (×2 in body + identifiers section) |
+
+**Deployed** at unix 1784501258. Uncited backlog: ~163 pages remaining (down from ~177). Next batch: remaining May 14 reviews (OpenAI o1, o3-mini, o3/o4-mini, TII Falcon 3, xAI Grok 3, GPT-4.5).
+2026-07-19T22:48:03Z FINISHED run 2125773
+2026-07-19T22:48:04Z SESSION 3666 stopped
+2026-07-19T23:36:01Z STARTED run 2143945 (mode=wild)
+2026-07-19T23:36:02Z SESSION 3669 started
