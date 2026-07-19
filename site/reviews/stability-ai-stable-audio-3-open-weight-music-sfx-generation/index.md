@@ -3,7 +3,7 @@
 > Stability AI released Stable Audio 3 on May 20, 2026 — a family of open-weight audio generation models trained entirely on licensed data. The family includes four variants from 433M to 2.7B parameters, runs on consumer hardware including CPU-only inference, generates up to 380 seconds of audio, and ships with LoRA fine-tuning and inpainting support. We cover the model family, technical architecture, training data, licensing, hardware requirements, and how it compares to Suno v5.5 and other audio generation tools.
 
 
-Stability AI released **Stable Audio 3** on May 20, 2026 — a family of open-weight audio generation models that covers music composition, sound effects, and audio editing in a single unified architecture. The release is positioned explicitly for "artistic experimentation," trained entirely on fully licensed data, and ships with weights for the small and medium variants available for download today.
+Stability AI released **[Stable Audio 3](https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models)** on May 20, 2026 — a family of open-weight audio generation models that covers music composition, sound effects, and audio editing in a single unified architecture. The release is positioned explicitly for "artistic experimentation," trained entirely on fully licensed data, and ships with weights for the small and medium variants available for download today.
 
 The core technical claim is efficiency without quality sacrifice: the medium model generates audio in under two seconds on an H200 GPU and in a few seconds on a MacBook Pro M4. The small models run on CPU only, requiring no GPU at all. The large model (2.7B parameters) is API-only and not yet publicly available for self-hosting.
 
@@ -15,7 +15,7 @@ For context on Stability AI's image generation lineage, see our [Stable Diffusio
 
 ## The Launch
 
-Stability AI published Stable Audio 3 on **May 20, 2026**, with weights immediately available on Hugging Face for the small and medium variants. The accompanying research paper (arXiv:2605.17991) was released simultaneously. A GitHub repository with training and inference code shipped alongside the weights.
+Stability AI published Stable Audio 3 on **May 20, 2026**, with weights immediately available on [Hugging Face](https://huggingface.co/stabilityai) for the small and medium variants. The accompanying [research paper (arXiv:2605.17991)](https://arxiv.org/abs/2605.17991) was released simultaneously. A GitHub repository with training and inference code shipped alongside the weights.
 
 The release continues a progression:
 - **Stable Audio 2.5** (September 2025): enterprise-focused audio model, proprietary
@@ -99,7 +99,7 @@ Music recordings were screened using PANNs audio tagging to remove copyrighted m
 
 This level of data transparency is not the norm in audio AI. Suno and Udio have both faced litigation over training data claims. Stable Audio 3's position — built for enterprise use cases, documented training sources, existing partnership agreements with Warner Music Group and Universal Music Group — is a deliberate differentiator for commercial teams that cannot absorb legal exposure.
 
-The Warner Music Group and Universal Music Group partnerships (announced in 2025) are explicitly framed as "responsible AI in music creation" — suggesting the training data relationship may extend beyond the publicly documented sources for future model versions.
+The [Warner Music Group and Universal Music Group partnerships](https://www.musicbusinessworldwide.com/stability-ai-launches-new-audio-models-that-can-generate-6-minute-music-tracks/) (announced in 2025) are explicitly framed as "responsible AI in music creation" — suggesting the training data relationship may extend beyond the publicly documented sources for future model versions.
 
 ---
 

@@ -15,7 +15,7 @@
 
 In early 2024, the frontier model context window landscape looked like this: GPT-4 Turbo offered 128,000 tokens. Claude 2 offered 200,000 tokens. Both of those were already significantly larger than GPT-4's original 8K window, and practitioners were still figuring out what to do with them.
 
-Then Google announced Gemini 1.5 Pro with a **1-million-token context window** — roughly 750,000 words, or approximately 30 full novels in a single prompt. One million tokens was 5× larger than GPT-4 Turbo and nearly 5× larger than Claude 2. Later in 2024 it was extended to **2 million tokens**, doubling again.
+Then Google [announced Gemini 1.5 Pro](https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/) with a **1-million-token context window** — roughly 750,000 words, or approximately 30 full novels in a single prompt. One million tokens was 5× larger than GPT-4 Turbo and nearly 5× larger than Claude 2. Later in 2024 it was extended to **2 million tokens**, doubling again.
 
 The effect was not incremental. A 1M-token context window doesn't just let you ask longer questions — it changes what kinds of questions are askable. Instead of chunking a large document and retrieving relevant pieces, you can pass the whole thing. Instead of summarizing a codebase before analysis, you can feed the entire codebase. Instead of asking a model what it remembers from previous conversation turns, you can include the entire conversation. The 2024 long-context era — the wave of applications built on direct whole-document processing — traces its origin to this model.
 
@@ -54,7 +54,7 @@ The headline number was 1 million tokens. The question was whether it was real �
 
 Google's technical validation relied heavily on the **"needle in a haystack"** test — a method where a specific piece of information (the "needle") is embedded at a random position within a long, noisy document (the "haystack"), and the model is asked to retrieve it. This tests whether attention mechanisms are actually attending to distant context or whether the model is effectively ignoring it.
 
-Results from Google's technical report and independent validation:
+Results from [Google's technical report](https://arxiv.org/abs/2403.05530) and independent validation:
 
 - **99.7%+ recall** across text, audio, and video inputs at the full 1-million-token context window
 - Performance held across the full context length — the model did not exhibit the "lost in the middle" degradation that earlier long-context models showed, where information in the middle of very long contexts was more likely to be missed than information at the beginning or end
@@ -129,7 +129,7 @@ All four modalities could be **interleaved in a single context** — a request m
 
 The tiered input pricing reflected the compute cost of longer contexts — processing a 500K-token document costs more than processing a 50K-token document, and Google passed part of that cost through to the user.
 
-**October 2024 price reductions** brought the input prices down approximately 64% and output prices down approximately 52%, responding to competitive pressure from models like Claude 3.5 Sonnet and GPT-4o Mini.
+**October 2024 price reductions** brought the [input prices down approximately 64% and output prices down approximately 52%](https://blog.google/products/gemini/google-gemini-update-may-2024/), responding to competitive pressure from models like Claude 3.5 Sonnet and GPT-4o Mini.
 
 ### Platforms
 

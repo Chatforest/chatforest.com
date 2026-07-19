@@ -72,7 +72,7 @@
 <hr>
 <h2 id="why-gemini-15-pro-mattered">Why Gemini 1.5 Pro Mattered</h2>
 <p>In early 2024, the frontier model context window landscape looked like this: GPT-4 Turbo offered 128,000 tokens. Claude 2 offered 200,000 tokens. Both of those were already significantly larger than GPT-4&rsquo;s original 8K window, and practitioners were still figuring out what to do with them.</p>
-<p>Then Google announced Gemini 1.5 Pro with a <strong>1-million-token context window</strong> — roughly 750,000 words, or approximately 30 full novels in a single prompt. One million tokens was 5× larger than GPT-4 Turbo and nearly 5× larger than Claude 2. Later in 2024 it was extended to <strong>2 million tokens</strong>, doubling again.</p>
+<p>Then Google <a href="https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/">announced Gemini 1.5 Pro</a> with a <strong>1-million-token context window</strong> — roughly 750,000 words, or approximately 30 full novels in a single prompt. One million tokens was 5× larger than GPT-4 Turbo and nearly 5× larger than Claude 2. Later in 2024 it was extended to <strong>2 million tokens</strong>, doubling again.</p>
 <p>The effect was not incremental. A 1M-token context window doesn&rsquo;t just let you ask longer questions — it changes what kinds of questions are askable. Instead of chunking a large document and retrieving relevant pieces, you can pass the whole thing. Instead of summarizing a codebase before analysis, you can feed the entire codebase. Instead of asking a model what it remembers from previous conversation turns, you can include the entire conversation. The 2024 long-context era — the wave of applications built on direct whole-document processing — traces its origin to this model.</p>
 <p>This review covers the technical architecture that made it possible, what the benchmarks showed, where the model&rsquo;s limitations were, the pricing evolution, and why it rated as one of 2024&rsquo;s most consequential model releases despite being superseded within a year.</p>
 <hr>
@@ -95,7 +95,7 @@
 <h2 id="the-1-million-token-context-what-the-tests-showed">The 1-Million-Token Context: What the Tests Showed</h2>
 <p>The headline number was 1 million tokens. The question was whether it was real — whether the model could actually use information from any point in a 1M-token context, or whether performance degraded severely as documents got longer.</p>
 <p>Google&rsquo;s technical validation relied heavily on the <strong>&ldquo;needle in a haystack&rdquo;</strong> test — a method where a specific piece of information (the &ldquo;needle&rdquo;) is embedded at a random position within a long, noisy document (the &ldquo;haystack&rdquo;), and the model is asked to retrieve it. This tests whether attention mechanisms are actually attending to distant context or whether the model is effectively ignoring it.</p>
-<p>Results from Google&rsquo;s technical report and independent validation:</p>
+<p>Results from <a href="https://arxiv.org/abs/2403.05530">Google&rsquo;s technical report</a> and independent validation:</p>
 <ul>
 <li><strong>99.7%+ recall</strong> across text, audio, and video inputs at the full 1-million-token context window</li>
 <li>Performance held across the full context length — the model did not exhibit the &ldquo;lost in the middle&rdquo; degradation that earlier long-context models showed, where information in the middle of very long contexts was more likely to be missed than information at the beginning or end</li>
@@ -213,7 +213,7 @@
 <li>Output: $5.00/M tokens</li>
 </ul>
 <p>The tiered input pricing reflected the compute cost of longer contexts — processing a 500K-token document costs more than processing a 50K-token document, and Google passed part of that cost through to the user.</p>
-<p><strong>October 2024 price reductions</strong> brought the input prices down approximately 64% and output prices down approximately 52%, responding to competitive pressure from models like Claude 3.5 Sonnet and GPT-4o Mini.</p>
+<p><strong>October 2024 price reductions</strong> brought the <a href="https://blog.google/products/gemini/google-gemini-update-may-2024/">input prices down approximately 64% and output prices down approximately 52%</a>, responding to competitive pressure from models like Claude 3.5 Sonnet and GPT-4o Mini.</p>
 <h3 id="platforms">Platforms</h3>
 <p><strong>Gemini API</strong> (via Google AI Studio, aistudio.google.com): Developer access with free-tier rate limits for prototyping. Paid tiers for production workloads.</p>
 <p><strong>Google Cloud Vertex AI</strong>: Enterprise deployment with additional controls — VPC isolation, data residency options, SLA commitments, compliance certifications (SOC 2, ISO 27001, HIPAA-eligible configurations). Typically preferred by regulated industries and larger organizations.</p>

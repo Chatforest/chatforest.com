@@ -21,11 +21,11 @@ That arc — brief, verifiable, then surpassed — is essentially the story of f
 
 GLM-5.1 comes from an organization with an unusual origin story, even by AI lab standards.
 
-Z.ai traces its roots to a Tsinghua University research group founded in 2019. As Zhipu AI, it was among the earliest Chinese labs to release a large language model competitive with Western offerings — the GLM series dates to 2022. By 2025, the company had rebranded as Z.ai to signal broader ambitions and completed a Hong Kong Stock Exchange listing on January 8, 2026 (stock code: 02513.HK), raising approximately HK$4.3 billion (~US$558M).
+Z.ai traces its roots to a Tsinghua University research group founded in 2019. As Zhipu AI, it was among the earliest Chinese labs to release a large language model competitive with Western offerings — the GLM series dates to 2022. By 2025, the company had rebranded as Z.ai to signal broader ambitions and completed a [Hong Kong Stock Exchange listing on January 8, 2026](https://www.cnbc.com/2026/01/08/china-ai-tiger-goes-ipo-zhipu-hong-kong-debut-openai-knowledge-atlas-hsi-hang-seng-listing.html) (stock code: 02513.HK), [raising approximately HK$4.3 billion (~US$558M)](https://www.prnewswire.com/news-releases/chinas-agi-pioneer-and-leader-zai-listed-on-hong-kong-stock-exchange-302656265.html).
 
 That listing made Z.ai the world's first publicly listed large language model company. The IPO added a financial accountability layer unusual in AI: Z.ai now reports to shareholders, discloses financials, and operates under Hong Kong securities law. When GLM-5.1 launched on April 7, 2026, Z.ai's share price surged 11.5% intraday.
 
-The accompanying technical paper — "GLM-5: from Vibe Coding to Agentic Engineering" (arXiv:2602.15763) — framed the model's design philosophy explicitly: this is not a general-purpose assistant optimized for chat leaderboards. It is built for long-horizon agentic tasks, specifically software engineering.
+The accompanying technical paper — ["GLM-5: from Vibe Coding to Agentic Engineering" (arXiv:2602.15763)](https://arxiv.org/abs/2602.15763) — framed the model's design philosophy explicitly: this is not a general-purpose assistant optimized for chat leaderboards. It is built for long-horizon agentic tasks, specifically software engineering.
 
 ---
 
@@ -96,7 +96,7 @@ Z.ai's most striking marketing claim for GLM-5.1 is that it can "work autonomous
 
 The technical demonstration involved building a complete Linux desktop environment. The model ran **655 autonomous iterations** and made **6,000+ tool calls** without requesting human input. In a separate test, it optimized a vector database, achieving a **6.9x throughput improvement** on a task where Claude Opus 4.6 hit a ceiling at 3,547 QPS — GLM-5.1 exceeded that ceiling.
 
-The VentureBeat headline framing this as "AI joins the 8-hour work day" captures the significance: this is a model designed for tasks that last hours, not minutes.
+The [VentureBeat headline framing this as "AI joins the 8-hour work day"](https://venturebeat.com/technology/ai-joins-the-8-hour-work-day-as-glm-ships-5-1-open-source-llm-beating-opus-4/) captures the significance: this is a model designed for tasks that last hours, not minutes.
 
 This aligns with the benchmark profile. The **Terminal-Bench 2.0** score of 63.5% (or 66.5% when scaffolded with Claude Code tools) reflects autonomous terminal task execution — not chatting, not answering questions, but operating in a shell environment across extended sessions. The **NL2Repo** score of 42.7% (vs. GPT-5.4's 41.3% and Claude Opus 4.6's 33.4%) measures generating a complete code repository from a natural-language description — a task that rewards long-horizon consistency.
 
@@ -137,7 +137,7 @@ For researchers who want to fine-tune, study internals, or build products withou
 
 ## Access and Deployment
 
-**Full weights** are available at `zai-org/GLM-5.1` on HuggingFace. As of release week, the community had already created:
+**Full weights** are available at [`zai-org/GLM-5.1`](https://huggingface.co/zai-org/GLM-5.1) on HuggingFace. As of release week, the community had already created:
 - Multiple quantized GGUF variants (ubergarm/GLM-5.1-GGUF, batiai/GLM-5.1-GGUF)
 - An MLX community port (mlx-community/GLM-5.1) with 7,500+ monthly downloads
 - Ollama support: `ollama run glm-5.1`

@@ -76,7 +76,7 @@
 <p>ERNIE 5.1 is a genuine engineering achievement with a complicated practical story.</p>
 <hr>
 <h2 id="release-context">Release Context</h2>
-<p>ERNIE 5.1&rsquo;s full release landed <strong>May 8, 2026</strong>, via the ERNIE blog (&ldquo;ERNIE 5.1 Officially Released! Topping Multiple Leaderboards — A Model That Writes Better and Understands You More&rdquo;).</p>
+<p>ERNIE 5.1&rsquo;s full release landed <strong>May 8, 2026</strong>, via <a href="https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/">the ERNIE blog</a> (&ldquo;ERNIE 5.1 Officially Released! Topping Multiple Leaderboards — A Model That Writes Better and Understands You More&rdquo;).</p>
 <p>The release itself was a rollout over two stages. On <strong>April 29, 2026</strong>, Baidu quietly dropped <strong>ERNIE 5.1-Preview</strong> on the LMArena text leaderboard, where it immediately ranked #13 globally (score: 1,476 points). The full model release on May 8 followed with the Qianfan API and consumer app access.</p>
 <p>The predecessor context matters for understanding the efficiency claim. <strong>ERNIE 5.0</strong>, released in early 2026, was a massive model: a Mixture-of-Experts architecture with approximately <strong>2.4 trillion total parameters</strong>. Building that model at frontier scale required frontier-scale compute. ERNIE 5.1 was not trained independently. It was extracted from ERNIE 5.0&rsquo;s training process using a technique Baidu calls the &ldquo;Once-For-All elastic training framework.&rdquo;</p>
 <p>The prior public ERNIE milestone was ERNIE 4.5, which competed on price rather than capability. ERNIE 5.1 represents Baidu&rsquo;s first serious push to compete at the top of global capability leaderboards in 2026.</p>
@@ -95,7 +95,7 @@
 <ul>
 <li><strong>Total parameters</strong>: approximately <strong>800 billion</strong> (~one-third of ERNIE 5.0&rsquo;s 2.4T)</li>
 <li><strong>Active parameters at inference</strong>: approximately half of ERNIE 5.0&rsquo;s active count</li>
-<li><strong>Pre-training compute</strong>: approximately <strong>6% of comparable frontier-scale models</strong></li>
+<li><strong>Pre-training compute</strong>: approximately <a href="https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/"><strong>6% of comparable frontier-scale models</strong></a></li>
 </ul>
 <p>The 94% compute reduction claim is the headline of the release. Baidu cannot be independently verified on this — no weights are released, and &ldquo;comparable models at similar scale&rdquo; is undefined. But the benchmark results show genuine frontier-competitive performance on several dimensions, which means the efficiency claim is at least plausible as a relative measure.</p>
 <h3 id="training-infrastructure-and-post-training-pipeline">Training Infrastructure and Post-Training Pipeline</h3>
@@ -133,7 +133,7 @@
 <p>These rankings — consistently second globally on math, instruction following, and tool use — form the strong core of the ERNIE 5.1 story.</p>
 <p><strong>Search:</strong></p>
 <ul>
-<li><strong>LMArena Search Arena</strong>: score <strong>1,223</strong>, ranked <strong>#4 globally</strong>, <strong>#1 among all Chinese models</strong></li>
+<li><a href="https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/"><strong>LMArena Search Arena</strong></a>: score <strong>1,223</strong>, ranked <strong>#4 globally</strong>, <strong>#1 among all Chinese models</strong></li>
 <li>Behind: Claude Opus 4.6 Search, GPT-5.5 Search, Claude Opus 4.7</li>
 <li>First Chinese model in the global top 10 for search</li>
 </ul>

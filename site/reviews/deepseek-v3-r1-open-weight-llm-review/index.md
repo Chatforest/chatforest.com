@@ -3,7 +3,7 @@
 > DeepSeek V3 (December 2024) and R1 (January 2025) shook the AI industry: frontier-class performance, MIT license, $5.57M training cost disclosure, and an RL-only reasoning methodology that rivaled OpenAI o1. We review the architecture, benchmarks, the NVIDIA stock crash, and what it means for the open-weight AI landscape.
 
 
-On the morning of January 27, 2025, DeepSeek's iOS and Android apps climbed to the top of the US App Store. By the close of trading that day, NVIDIA's stock had fallen 17%. At that point, it was the largest single-day market cap loss for any company in US stock market history — roughly $600 billion erased. The trigger was not a product failure or an earnings miss. It was a research paper and a cost disclosure: DeepSeek had trained a frontier-class language model for approximately $5.57 million.
+On the morning of January 27, 2025, DeepSeek's iOS and Android apps climbed to the top of the US App Store. By the close of trading that day, NVIDIA's stock had fallen 17%. At that point, it was the largest single-day market cap loss for any company in US stock market history — [approximately $589 billion erased](https://www.cnbc.com/2025/01/27/nvidia-sheds-almost-600-billion-in-market-cap-biggest-drop-ever.html) ([Forbes also confirmed the historic loss](https://www.forbes.com/sites/dereksaul/2025/01/27/biggest-market-loss-in-history-nvidia-stock-sheds-nearly-600-billion-as-deepseek-shakes-ai-darling/)). The trigger was not a product failure or an earnings miss. It was a research paper and a cost disclosure: DeepSeek had trained a frontier-class language model for approximately $5.57 million.
 
 The AI industry had been operating on an implicit assumption: that frontier performance required frontier capital. OpenAI had raised billions. Anthropic had raised billions. Google had spent billions on Gemini. The "Stargate" initiative, announced earlier that month by SoftBank and OpenAI, proposed $500 billion in US AI infrastructure. Into that environment, a Chinese AI research lab published a 60-page technical report detailing exactly how they'd trained a model competitive with GPT-4o for the cost of a small Manhattan apartment renovation.
 
@@ -25,7 +25,7 @@ DeepSeek's operating philosophy is openly research-first. The company publishes 
 
 ## DeepSeek V3: The Efficiency Story
 
-**DeepSeek V3** was released on December 26, 2024, alongside a full technical report. The model has **671 billion total parameters** and **37 billion active parameters per token** — a Mixture-of-Experts architecture that activates only a fraction of the model on each forward pass.
+**DeepSeek V3** was released on December 26, 2024, alongside [a full technical report (arXiv:2412.19437)](https://arxiv.org/abs/2412.19437). The model has **671 billion total parameters** and **37 billion active parameters per token** — a Mixture-of-Experts architecture that activates only a fraction of the model on each forward pass.
 
 ### Architecture
 
@@ -53,7 +53,7 @@ Still: the disclosure changed the conversation. The argument that frontier AI wa
 
 ### Context Window and Availability
 
-DeepSeek V3 supports a **128K token context window**. Weights are available on Hugging Face under MIT license. The DeepSeek API prices V3 at approximately $0.27/$1.10 per million input/output tokens — substantially below GPT-4o pricing at $2.50/$10.00 or Claude 3.5 Sonnet at $3/$15.
+DeepSeek V3 supports a **128K token context window**. Weights are available on [Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V3) and [GitHub](https://github.com/deepseek-ai/DeepSeek-V3) under MIT license. The DeepSeek API prices V3 at approximately $0.27/$1.10 per million input/output tokens — substantially below GPT-4o pricing at $2.50/$10.00 or Claude 3.5 Sonnet at $3/$15.
 
 ### V3 Benchmarks
 
@@ -72,7 +72,7 @@ The benchmark positioning is honest: V3 is not clearly better than GPT-4o or Cla
 
 ## DeepSeek R1: The Reinforcement Learning Reasoning Breakthrough
 
-**DeepSeek R1** was released January 20, 2025, with an academic paper: *"DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning."* The paper represents a landmark research contribution independent of the model's benchmark performance.
+**DeepSeek R1** was released January 20, 2025, with an academic paper: [*"DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"* (arXiv:2501.12948)](https://arxiv.org/abs/2501.12948). The paper represents a landmark research contribution independent of the model's benchmark performance.
 
 ### The Core Claim
 
@@ -150,7 +150,7 @@ All distilled models are MIT-licensed and available on Hugging Face.
 
 DeepSeek released its iOS and Android apps on January 27, 2025. By that evening, the DeepSeek app had reached #1 on the US App Store — above ChatGPT, above Perplexity, above every established competitor.
 
-That day, NVIDIA's stock fell 17%, closing at $116.78 from an opening near $140. The single-day loss was approximately $593 billion in market capitalization — at the time, the largest single-day loss in US stock market history for any company.
+That day, NVIDIA's stock fell 17%, closing at $116.78 from an opening near $140. The single-day loss was approximately $589 billion in market capitalization — at the time, the [largest single-day loss in US stock market history for any company](https://www.cnbc.com/2025/01/27/nvidia-sheds-almost-600-billion-in-market-cap-biggest-drop-ever.html).
 
 The investor logic: NVIDIA's valuation was built on the assumption that frontier AI training required ever-larger clusters of expensive GPUs. DeepSeek's disclosed $5.57M training cost challenged that assumption. If competitive frontier models could be trained with far less compute, the sustained demand for $30,000–$40,000 H100 GPUs might be smaller than the market had priced in.
 

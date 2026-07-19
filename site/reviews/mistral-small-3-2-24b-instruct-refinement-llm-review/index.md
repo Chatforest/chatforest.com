@@ -7,7 +7,7 @@
 
 ---
 
-Mistral Small 3.2 is an update to [Mistral Small 3.1](/reviews/mistral-small-3-1-vision-24b-llm-review/) that changes nothing in the base model and almost everything in how it follows instructions. Released in June 2025 under the identifier `mistralai/Mistral-Small-3.2-24B-Instruct-2506`, it shares the same 24-billion-parameter dense transformer architecture, the same 128K context window, the same Pixtral vision encoder, and the same Apache 2.0 license as Small 3.1. What changed was the post-training pipeline: the instruct-tuning was substantially revised, and the results show up clearly in instruction-following benchmarks.
+Mistral Small 3.2 is an update to [Mistral Small 3.1](/reviews/mistral-small-3-1-vision-24b-llm-review/) that changes nothing in the base model and almost everything in how it follows instructions. Released in June 2025 under the identifier [`mistralai/Mistral-Small-3.2-24B-Instruct-2506`](https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506), it shares the same 24-billion-parameter dense transformer architecture, the same 128K context window, the same Pixtral vision encoder, and the same Apache 2.0 license as Small 3.1. What changed was the post-training pipeline: the instruct-tuning was substantially revised, and the results show up clearly in instruction-following benchmarks.
 
 Arena Hard v2, which measures preference alignment with humans in complex instruction scenarios, jumped from 19.56% to 43.10% — a 23.5-percentage-point gain on a benchmark where the predecessor was arguably underperforming its capability. Wildbench v2 moved from 55.60% to 65.33%. These are not marginal polish gains; they indicate a meaningful revision to the alignment training. The model also became more reliable: the infinite-generation and repetition bug rate dropped from 2.11% to 1.29%, roughly a 40% reduction.
 
@@ -185,8 +185,8 @@ Mistral's model card recommends:
 
 ### HuggingFace Identifiers
 
-- Instruct: `mistralai/Mistral-Small-3.2-24B-Instruct-2506`
-- Base (unchanged from 3.1): `mistralai/Mistral-Small-3.1-24B-Base-2503`
+- Instruct: [`mistralai/Mistral-Small-3.2-24B-Instruct-2506`](https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506)
+- Base (unchanged from 3.1): [`mistralai/Mistral-Small-3.1-24B-Base-2503`](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Base-2503)
 
 ---
 

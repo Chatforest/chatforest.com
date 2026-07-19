@@ -5,7 +5,7 @@
 
 Amazon's AI strategy has long looked like a distribution play more than a research bet. AWS hosts Claude via Anthropic's partnership, GPT-4o through Azure's equivalent arrangement, and Llama 4 through Meta's open-weight releases. For years, the implicit message was that AWS customers could access any frontier model — as long as they stayed in the cloud. Amazon was the platform, not the lab.
 
-That posture shifted at AWS re:Invent 2024, when Amazon launched **Amazon Nova**: four in-house language models trained on infrastructure that powers Alexa, Amazon.com search, Amazon Ads, and AWS Marketplace catalog systems. Nova was not a research announcement. It was a product launch backed by years of internal deployment and accompanied by pricing that undercut every comparable model at the time.
+That posture shifted at [AWS re:Invent 2024](https://aws.amazon.com/blogs/aws/top-announcements-of-aws-reinvent-2024/), when Amazon launched **Amazon Nova**: four in-house language models trained on infrastructure that powers Alexa, Amazon.com search, Amazon Ads, and AWS Marketplace catalog systems. Nova was not a research announcement. It was [a product launch](https://techcrunch.com/2024/12/03/amazon-announces-nova-a-new-family-of-multimodal-ai-models/) backed by years of internal deployment and accompanied by pricing that undercut every comparable model at the time.
 
 The question Nova raises is not whether Amazon can build competitive models. The question is whether Nova's integration depth with AWS compensates for intelligence benchmarks that trail the frontier. This review examines both sides.
 
@@ -101,7 +101,7 @@ The honest picture of Nova's intelligence benchmarks is less flattering than AWS
 
 Amazon's official documentation claims "state-of-the-art performance on key benchmarks including TextVQA (visual question answering) and VATEX (video understanding)" for Nova Pro. Specific numbers for MMLU, MATH, HumanEval, GPQA Diamond, and similar standard benchmarks are not published in AWS's externally accessible documentation.
 
-Third-party evaluation data from Artificial Analysis, which tracks 130+ models across intelligence, speed, and price, places Nova v1 models:
+Third-party evaluation data from [Artificial Analysis](https://artificialanalysis.ai/models), which tracks 130+ models across intelligence, speed, and price, places Nova v1 models:
 
 | Model | Intelligence Score (/130 scale) | Rank | vs. Price-Tier Median |
 |-------|--------------------------------|------|----------------------|

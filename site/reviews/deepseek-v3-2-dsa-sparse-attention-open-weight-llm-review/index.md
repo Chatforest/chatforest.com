@@ -114,7 +114,7 @@ This matters most in agentic scenarios where:
 
 ## Benchmarks
 
-DeepSeek publishes V3.2 benchmark comparisons in the technical report (arXiv 2512.02556). Independent evaluations have corroborated the core numbers.
+DeepSeek publishes V3.2 benchmark comparisons in the [technical report (arXiv 2512.02556)](https://arxiv.org/abs/2512.02556). Independent evaluations have corroborated the core numbers.
 
 **Standard benchmarks:**
 
@@ -162,7 +162,7 @@ V4 represents a substantial step up on coding benchmarks specifically — SWE-be
 - **Cline** (coding assistant): V3.2 and V3.2-Speciale integrated as supported models at launch
 
 **Self-hosting:**
-- Full weights available on HuggingFace: `deepseek-ai/DeepSeek-V3.2` and `deepseek-ai/DeepSeek-V3.2-Speciale`
+- Full weights available on HuggingFace: [`deepseek-ai/DeepSeek-V3.2`](https://huggingface.co/deepseek-ai/DeepSeek-V3.2) and `deepseek-ai/DeepSeek-V3.2-Speciale`
 - MIT license — unrestricted commercial and research use
 - Requires significant GPU infrastructure: 671B parameters at BF16 needs ~1.3TB VRAM minimum; FP8 variants reduce this substantially
 - Supported inference frameworks: vLLM, SGLang (both support V3.2's MoE routing and DSA)

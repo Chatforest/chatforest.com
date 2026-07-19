@@ -7,9 +7,9 @@
 
 ---
 
-Alibaba titled the blog post "Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving." That word — *Evolving* — is worth pausing on. This is not a finished product. It is the first Qwen flagship you cannot download, and it arrives with explicit acknowledgment that there are gaps left to close.
+Alibaba titled the blog post ["Qwen3.6-Max-Preview: Smarter, Sharper, Still Evolving."](https://www.alibabacloud.com/blog/qwen3-6-max-preview-smarter-sharper-still-evolving_603055) That word — *Evolving* — is worth pausing on. This is not a finished product. It is the first Qwen flagship you cannot download, and it arrives with explicit acknowledgment that there are gaps left to close.
 
-Three years of open releases — Qwen, Qwen1.5, Qwen2, Qwen2.5, Qwen 3, Qwen 3.5 — all shipped weights on Hugging Face on day one. Qwen3.6-Max-Preview does not. The same announcement week brought two fully open models (Qwen3.6-27B and Qwen3.6-35B-A3B, both Apache 2.0), making the split intentional and legible: the open models are the ones you can run; the one that tops the leaderboards is the one you cannot.
+Three years of open releases — Qwen, Qwen1.5, Qwen2, Qwen2.5, Qwen 3, Qwen 3.5 — all shipped weights on [Hugging Face](https://huggingface.co/Qwen) on day one. Qwen3.6-Max-Preview does not. The same announcement week brought two fully open models (Qwen3.6-27B and Qwen3.6-35B-A3B, both Apache 2.0), making the split intentional and legible: the open models are the ones you can run; the one that tops the leaderboards is the one you cannot.
 
 This is the review of the closed one. That choice — what it means, what it changes, and whether the model earns it — is as much the story as the benchmarks.
 
@@ -113,7 +113,7 @@ The pattern: Qwen3.6-Max-Preview is genuinely strong at agentic coding tasks (SW
 
 ### AA Intelligence Index
 
-Artificial Analysis ranks Qwen3.6-Max-Preview **#3 globally** on their Intelligence Index (score: 52, out of 203 tracked models), behind GPT-5.4 (#1) and Claude Opus 4.7 (#2).
+[Artificial Analysis](https://artificialanalysis.ai/) ranks Qwen3.6-Max-Preview **#3 globally** on their Intelligence Index (score: 52, out of 203 tracked models), behind GPT-5.4 (#1) and Claude Opus 4.7 (#2).
 
 A score of 52 is well above the median of 35 for reasoning models at a comparable price tier. This is a meaningful independent validation of the model's overall capability, and it should be taken seriously as a data point even amid the benchmark controversy.
 

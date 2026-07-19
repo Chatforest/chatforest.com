@@ -9,7 +9,7 @@
 
 One week after Claude Opus 4.6 shipped, a Chinese AI company that most Western developers had never heard of released an open-weight model that tied it on SWE-Bench Verified, beat it on Multi-SWE-Bench, led every frontier model on BFCL multi-turn function calling — and charged approximately $1 per continuous hour of operation.
 
-VentureBeat's headline was: "MiniMax's new open M2.5 and M2.5 Lightning near state-of-the-art while costing 1/20th of Claude Opus 4.6."
+[VentureBeat's headline](https://venturebeat.com/technology/minimaxs-new-open-m2-5-and-m2-5-lightning-near-state-of-the-art-while) was: "MiniMax's new open M2.5 and M2.5 Lightning near state-of-the-art while costing 1/20th of Claude Opus 4.6."
 
 The OpenHands blog was blunter: "Open Weights Models Catch Up to Claude Sonnet."
 
@@ -25,7 +25,7 @@ This review covers architecture, the Forge RL training system, benchmarks, prici
 
 MiniMax M2.5 was released on **February 12, 2026** — six weeks after the company's IPO on the Hong Kong Stock Exchange (January 9, 2026). The timing was not coincidental. The IPO raised approximately HK$5.54 billion ($710 million), debuted at HK$345 per share against an IPO price of HK$165 (a 109% Day 1 gain), and left the company with a debut market cap of approximately US$13.7 billion. M2.5 shipped into a company with public-market visibility, fresh capital, and a stated intent to scale its Forge reinforcement learning framework to a new tier.
 
-The M2.5 release came alongside a companion technical blog post on **Forge** — MiniMax's in-house RL training framework — positioning the launch as a systems story, not just a model capability announcement. The narrative: the architecture had not changed since M2 (October 2025), but the training methodology had. Three months of Forge evolution, 200,000+ real-world agent environments, and millions of daily training samples had moved the benchmarks meaningfully without touching the underlying architecture.
+The M2.5 release came alongside a [companion technical blog post on **Forge**](https://huggingface.co/blog/MiniMax-AI/forge-scalable-agent-rl-framework-and-algorithm) — MiniMax's in-house RL training framework — positioning the launch as a systems story, not just a model capability announcement. The narrative: the architecture had not changed since M2 (October 2025), but the training methodology had. Three months of Forge evolution, 200,000+ real-world agent environments, and millions of daily training samples had moved the benchmarks meaningfully without touching the underlying architecture.
 
 Two variants launched simultaneously:
 - **MiniMax M2.5**: Standard variant, ~50 tokens/second throughput
@@ -193,7 +193,7 @@ The company's consumer products have real scale. **Talkie** — MiniMax's AI cha
 **Funding trajectory:**
 - March 2024: $600M Series B at $2.5B valuation (led by Alibaba)
 - July 2025: $300M Series B extension at $4B valuation (led by Shanghai state capital)
-- January 9, 2026: **IPO on Hong Kong Stock Exchange** — debut day close of HK$345 (109% gain vs. HK$165 IPO price), HK$106.7B (~$13.7B) debut market cap. The IPO was 1,837x oversubscribed on the Hong Kong retail tranche. Jensen Huang (NVIDIA CEO) publicly praised the company in proximity to the listing.
+- January 9, 2026: **[IPO on Hong Kong Stock Exchange](https://www.cnbc.com/2026/01/09/minimax-hong-kong-ipo-ai-tigers-zhipu.html)** — debut day close of HK$345 (109% gain vs. HK$165 IPO price), HK$106.7B (~$13.7B) debut market cap ([Bloomberg](https://www.bloomberg.com/news/articles/2026-01-08/ai-firm-minimax-set-for-hong-kong-debut-after-619-million-ipo)). The IPO was 1,837x oversubscribed on the Hong Kong retail tranche. Jensen Huang (NVIDIA CEO) publicly praised the company in proximity to the listing.
 
 **Revenue:** MiniMax reported approximately $79M in revenue in 2025 — significant for an AI company at this stage, though the net loss for the first three quarters of 2025 was $512M. Projections from analysts estimate $183.9M in 2026 revenue, growing to $356.2M in 2027.
 
@@ -213,7 +213,7 @@ This is a genuine concern, not a dismissal. MiniMax's benchmark credibility is l
 
 ### Political Censorship
 
-MiniMax M2.5, as a model trained in China, is subject to politically mandated censorship. Research published in *PNAS Nexus* documents that Chinese LLMs including MiniMax models are trained to suppress politically sensitive content: the Tiananmen Square protests, treatment of Uyghurs, Falun Gong, and other topics that conflict with Chinese Communist Party positions. The same research notes that the models "sometimes answer correctly, which means they have the knowledge that they are trained to suppress" — indicating the censorship is behavioral, not informational.
+MiniMax M2.5, as a model trained in China, is subject to politically mandated censorship. [Research published in *PNAS Nexus*](https://academic.oup.com/pnasnexus/article/5/2/pgag013/8487339) documents that Chinese LLMs including MiniMax models are trained to suppress politically sensitive content: the Tiananmen Square protests, treatment of Uyghurs, Falun Gong, and other topics that conflict with Chinese Communist Party positions. The same research notes that the models "sometimes answer correctly, which means they have the knowledge that they are trained to suppress" — indicating the censorship is behavioral, not informational.
 
 Community-created "uncensored" variants have appeared on Hugging Face (e.g., `mlx-community/MiniMax-M2.5-Uncensored-4bit`), which suggests that fine-tuning can mitigate some of the censorship behavior.
 
@@ -225,13 +225,13 @@ The political censorship is still worth naming explicitly. It is a constraint th
 
 In March 2026 — one month after M2.5's Modified MIT release — MiniMax released [M2.7](/reviews/minimax-m2-7-self-evolving-agentic-llm-review/) under a fundamentally different license that requires **commercial authorization** from MiniMax for any commercial use. This license shift generated significant backlash in the open-source AI community, with Decrypt covering it under the headline "MiniMax's M2.7 is 'faux open-source'" and developers on Hacker News labeling it a bait-and-switch.
 
-M2.5 itself remains under its original Modified MIT license. But the M2.7 shift raises a legitimate concern about trajectory: MiniMax demonstrated that it would restrict future models when commercial dynamics made that decision attractive. Organizations building long-term infrastructure on MiniMax open-weight models should account for the possibility that future successors may not be accessible under comparable terms.
+M2.5 itself remains under its original Modified MIT license. But the M2.7 shift raises a legitimate concern about trajectory: MiniMax demonstrated that it would restrict future models when commercial dynamics made that decision attractive. [Decrypt covered M2.7's launch under: "MiniMax's M2.7 is 'faux open-source.'"](https://decrypt.co/364225/minimax-m27-agent-model-license-change) Organizations building long-term infrastructure on MiniMax open-weight models should account for the possibility that future successors may not be accessible under comparable terms.
 
 This does not retroactively change M2.5's license. It changes the risk profile of betting heavily on the MiniMax model line for future-facing decisions.
 
 ### Anthropic Distillation Accusation
 
-Separately: Anthropic's February 2026 legal filing in the Claude model distillation case named MiniMax as running an "industrial-scale distillation attack" — 13 million exchanges used to train a model on Claude's outputs. MiniMax has not publicly confirmed or denied the allegation. This does not directly affect M2.5's evaluation as a model, but it is part of the full picture of MiniMax as a company operating in the international AI ecosystem.
+Separately: Anthropic's February 2026 [formal complaint about the Claude model distillation case](https://techcrunch.com/2026/02/23/anthropic-accuses-chinese-ai-labs-of-mining-claude-as-us-debates-ai-chip-exports/) named MiniMax as running an "industrial-scale distillation attack" — [13 million exchanges](https://www.cnbc.com/2026/02/24/anthropic-openai-china-firms-distillation-deepseek.html) used to train a model on Claude's outputs. MiniMax has not publicly confirmed or denied the allegation. This does not directly affect M2.5's evaluation as a model, but it is part of the full picture of MiniMax as a company operating in the international AI ecosystem.
 
 ---
 

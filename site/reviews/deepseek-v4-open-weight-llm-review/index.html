@@ -69,7 +69,7 @@
         <p><strong>At a glance:</strong> DeepSeek V4 Pro — released April 24, 2026. 1.6T total parameters / 49B active. SWE-bench Verified: 80.6%. LiveCodeBench: 93.5%. GPQA Diamond: 90.1%. Codeforces: 3,206 Elo. Context window: 1 million tokens. <strong>Pricing: $0.435/$0.87/M (permanent — 75% discount made permanent on May 25, 2026; original $1.74/$3.48 rate no longer applies).</strong> V4 Flash: $0.14/$0.28/M. Open weights, MIT license. Part of our <strong><a href="/categories/ai-tools/">AI Models &amp; Companies reviews</a></strong>.</p>
 <hr>
 <p>DeepSeek did it again.</p>
-<p>In December 2024, the Shenzhen AI lab released V3 alongside a detailed cost disclosure: a frontier-class language model for approximately $5.57 million in disclosed compute. The iOS app launch in January 2025 erased $600 billion from NVIDIA&rsquo;s market cap in a single session. In December 2025, V3.2 extended the lead on open-weight coding benchmarks with DeepSeek Sparse Attention and reasoning-in-tool-use. On April 24, 2026, DeepSeek released V4 — a step-change in scale and a more controversial release than any of its predecessors.</p>
+<p>In December 2024, the Shenzhen AI lab released V3 alongside a detailed cost disclosure: a frontier-class language model for approximately $5.57 million in disclosed compute. The iOS app launch in January 2025 erased $600 billion from NVIDIA&rsquo;s market cap in a single session. In December 2025, V3.2 extended the lead on open-weight coding benchmarks with DeepSeek Sparse Attention and reasoning-in-tool-use. On April 24, 2026, DeepSeek <a href="https://api-docs.deepseek.com/news/news260424/">released V4</a> — a step-change in scale and a more controversial release than any of its predecessors.</p>
 <p>The benchmark numbers are strong. The architecture is genuinely novel. The pricing is competitive. And surrounding it all is a US Congressional investigation alleging the model was trained on export-controlled American semiconductors.</p>
 <p>This is a review of what DeepSeek V4 actually does, what the architecture actually is, what independent evaluators actually found, and what the political controversy actually alleges. Companion to our earlier <strong><a href="/reviews/deepseek-v3-r1-open-weight-llm-review/">DeepSeek V3 and R1 review</a></strong>.</p>
 <hr>
@@ -77,7 +77,7 @@
 <p>DeepSeek V4 ships as two variants:</p>
 <p><strong>V4 Pro</strong>: 1.6 trillion total parameters, 49 billion active per token. MoE architecture. 1 million token context. Supports images. Three-tier reasoning. Pricing: <strong>$0.435 input / $0.87 output per million tokens</strong> (permanent rate as of May 25, 2026 — see Pricing section below).</p>
 <p><strong>V4 Flash</strong>: 284 billion total parameters, 13 billion active per token. 1 million token context. Designed for high-throughput, cost-sensitive workloads. Pricing: $0.14 input / $0.28 output per million tokens.</p>
-<p>Both are open weights under the MIT license. Both support the three-tier reasoning system. This review focuses on V4 Pro, which is the model in benchmark evaluations and independent assessments.</p>
+<p>Both are open weights under the MIT license. Both support the three-tier reasoning system. The weights are available at <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"><code>deepseek-ai/DeepSeek-V4-Pro</code></a> on Hugging Face. This review focuses on V4 Pro, which is the model in benchmark evaluations and independent assessments.</p>
 <p>For reference: DeepSeek V3 had 671 billion total parameters and 37 billion active. V4 Pro doubles the total parameter count while keeping active parameters in a similar range — the per-token inference cost does not scale with total model size in an MoE.</p>
 <hr>
 <h2 id="architecture-what-changed">Architecture: What Changed</h2>
@@ -150,7 +150,7 @@
 <hr>
 <h2 id="independent-evaluations">Independent Evaluations</h2>
 <h3 id="nist-caisi-may-2026">NIST CAISI (May 2026)</h3>
-<p>The US National Institute of Standards and Technology&rsquo;s CAISI (Center for AI Safety and Infrastructure) published an independent evaluation of V4 Pro in May 2026. Key findings:</p>
+<p>The US National Institute of Standards and Technology&rsquo;s <a href="https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro">CAISI evaluation of V4 Pro</a>, published in May 2026, found:</p>
 <ul>
 <li>V4 Pro is <strong>the most capable Chinese AI model evaluated to date</strong></li>
 <li>On CAISI&rsquo;s non-public internal benchmarks (including a private variant of ARC-AGI-2 and the PortBench agentic evaluation), V4 Pro is approximately <strong>8 months behind leading US frontier models</strong></li>
@@ -161,7 +161,7 @@
 <hr>
 <h2 id="the-export-control-controversy">The Export Control Controversy</h2>
 <p>DeepSeek V4 landed in a politically sensitive moment.</p>
-<p>The US House Select Committee on the Chinese Communist Party alleged in a May 2026 report that DeepSeek used <strong>tens of thousands of export-controlled US semiconductors</strong> — likely NVIDIA H100s or equivalent — to train V4, and possibly incorporated technology obtained through unauthorized means.</p>
+<p>The US House Select Committee on the Chinese Communist Party <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/deepseek-launches-1-6-trillion-parameter-v4-on-huawei-chips-as-us-escalates-ai-theft-accusations">alleged in a May 2026 report</a> that DeepSeek used <strong>tens of thousands of export-controlled US semiconductors</strong> — likely NVIDIA H100s or equivalent — to train V4, and possibly incorporated technology obtained through unauthorized means.</p>
 <p><strong>What is established</strong>: DeepSeek V4 was explicitly co-designed for Huawei Ascend hardware. The technical report and architecture documentation describe Ascend 910B optimization as a primary design constraint. What hardware was used for training (as opposed to inference and fine-tuning) has not been independently verified.</p>
 <p><strong>What is alleged but contested</strong>: The Congressional report cites circumstantial indicators — model capability levels, training efficiency signals, and intelligence assessments — as evidence of restricted hardware use. DeepSeek has not publicly responded in detail.</p>
 <p><strong>What this means for users</strong>: The allegations do not change the model&rsquo;s technical capabilities or benchmark scores. They create legal and reputational uncertainty for enterprise deployments in the US, particularly in regulated industries or government-adjacent contexts. Some organizations that moved quickly to deploy V3 on their infrastructure have added a review gate for V4 pending the investigation&rsquo;s outcome.</p>

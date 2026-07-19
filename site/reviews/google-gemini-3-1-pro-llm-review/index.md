@@ -15,7 +15,7 @@ For the full history of Google's AI organization, Bard's troubled debut, and the
 
 ## The Launch
 
-Google announced Gemini 3.1 Pro on **February 19, 2026**, via the Google blog and Google DeepMind simultaneously. The model launched directly into **preview** — not general availability — available through:
+Google [announced Gemini 3.1 Pro on **February 19, 2026**](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/), via the Google blog and Google DeepMind simultaneously. The model launched directly into **preview** — not general availability — available through:
 
 - **Gemini app** (Google AI Pro and Ultra subscribers)
 - **Google AI Studio** (developer access, no free tier)
@@ -52,7 +52,7 @@ The headline numbers are strong. Across the major benchmarks, Gemini 3.1 Pro eit
 
 The number that drew the most attention at launch was **ARC-AGI-2: 77.1%**.
 
-Gemini 3 Pro had scored 31.1% on ARC-AGI-2 — already a respectable result on a benchmark designed to test abstract reasoning rather than pattern recall. Gemini 3.1 Pro more than doubled it. The DataCamp analysis called this the "largest single-generation ARC-AGI leap ever recorded." For context, the benchmark's authors designed it to remain challenging as models scale; a 46-point jump in a single point release is not what the progression curve suggested was possible.
+Gemini 3 Pro had scored 31.1% on ARC-AGI-2 — already a respectable result on a benchmark designed to test abstract reasoning rather than pattern recall. Gemini 3.1 Pro more than doubled it. The DataCamp analysis called this the ["largest single-generation ARC-AGI leap ever recorded."](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/) For context, the benchmark's authors designed it to remain challenging as models scale; a 46-point jump in a single point release is not what the progression curve suggested was possible.
 
 GPT-5.5 leads ARC-AGI-2 at 85.0%, and Claude Opus 4.7 scores 75.8%. But the trajectory matters as much as the snapshot: Gemini 3.1 Pro's improvement rate on abstract reasoning is the steepest of the three.
 
@@ -157,7 +157,7 @@ Gemini 3.1 Pro is **60–80% more expensive than Gemini 2.5 Pro** ($2.00 vs. $1.
 
 ## Safety and the Frontier Safety Framework
 
-Google's **Frontier Safety Framework (FSF)** is their equivalent of Anthropic's Responsible Scaling Policy. Like the RSP, it defines Critical Capability Levels (CCLs) — thresholds that would require a deployment pause. Gemini 3.1 Pro did not trigger any CCLs.
+Google's **Frontier Safety Framework (FSF)** is their equivalent of Anthropic's Responsible Scaling Policy. (See the [Gemini 3.1 Pro model card](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/) for safety details.) Like the RSP, it defines Critical Capability Levels (CCLs) — thresholds that would require a deployment pause. Gemini 3.1 Pro did not trigger any CCLs.
 
 The domain-by-domain results from the model card:
 

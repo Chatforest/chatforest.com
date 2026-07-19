@@ -72,7 +72,7 @@
 <p>For the full history of Google&rsquo;s AI organization, Bard&rsquo;s troubled debut, and the Gemini lineage from PaLM 2 through Gemini 2.5 Pro, see our <a href="/reviews/google-gemini-2-5-pro-multimodal-llm/">Gemini 2.5 Pro review</a>. This review focuses on what changed with Gemini 3.1 Pro specifically.</p>
 <hr>
 <h2 id="the-launch">The Launch</h2>
-<p>Google announced Gemini 3.1 Pro on <strong>February 19, 2026</strong>, via the Google blog and Google DeepMind simultaneously. The model launched directly into <strong>preview</strong> — not general availability — available through:</p>
+<p>Google <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/">announced Gemini 3.1 Pro on <strong>February 19, 2026</strong></a>, via the Google blog and Google DeepMind simultaneously. The model launched directly into <strong>preview</strong> — not general availability — available through:</p>
 <ul>
 <li><strong>Gemini app</strong> (Google AI Pro and Ultra subscribers)</li>
 <li><strong>Google AI Studio</strong> (developer access, no free tier)</li>
@@ -166,7 +166,7 @@
 </table>
 <h3 id="the-arc-agi-2-story">The ARC-AGI-2 Story</h3>
 <p>The number that drew the most attention at launch was <strong>ARC-AGI-2: 77.1%</strong>.</p>
-<p>Gemini 3 Pro had scored 31.1% on ARC-AGI-2 — already a respectable result on a benchmark designed to test abstract reasoning rather than pattern recall. Gemini 3.1 Pro more than doubled it. The DataCamp analysis called this the &ldquo;largest single-generation ARC-AGI leap ever recorded.&rdquo; For context, the benchmark&rsquo;s authors designed it to remain challenging as models scale; a 46-point jump in a single point release is not what the progression curve suggested was possible.</p>
+<p>Gemini 3 Pro had scored 31.1% on ARC-AGI-2 — already a respectable result on a benchmark designed to test abstract reasoning rather than pattern recall. Gemini 3.1 Pro more than doubled it. The DataCamp analysis called this the <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/">&ldquo;largest single-generation ARC-AGI leap ever recorded.&quot;</a> For context, the benchmark&rsquo;s authors designed it to remain challenging as models scale; a 46-point jump in a single point release is not what the progression curve suggested was possible.</p>
 <p>GPT-5.5 leads ARC-AGI-2 at 85.0%, and Claude Opus 4.7 scores 75.8%. But the trajectory matters as much as the snapshot: Gemini 3.1 Pro&rsquo;s improvement rate on abstract reasoning is the steepest of the three.</p>
 <h3 id="gpqa-diamond-effectively-tied-at-the-top">GPQA Diamond: Effectively Tied at the Top</h3>
 <p>At <strong>94.3%</strong>, Gemini 3.1 Pro holds the highest recorded GPQA Diamond score of any frontier model in May 2026 — 0.1 points ahead of Claude Opus 4.7 (94.2%) and 0.7 points ahead of GPT-5.5 (~93.6%). GPQA Diamond tests graduate-level science questions designed to be verifiable only by domain experts. At this score level, 0.1 points is below measurement noise. The honest read: all three models are effectively tied at the scientific reasoning frontier.</p>
@@ -277,7 +277,7 @@
 </ul>
 <hr>
 <h2 id="safety-and-the-frontier-safety-framework">Safety and the Frontier Safety Framework</h2>
-<p>Google&rsquo;s <strong>Frontier Safety Framework (FSF)</strong> is their equivalent of Anthropic&rsquo;s Responsible Scaling Policy. Like the RSP, it defines Critical Capability Levels (CCLs) — thresholds that would require a deployment pause. Gemini 3.1 Pro did not trigger any CCLs.</p>
+<p>Google&rsquo;s <strong>Frontier Safety Framework (FSF)</strong> is their equivalent of Anthropic&rsquo;s Responsible Scaling Policy. (See the <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/">Gemini 3.1 Pro model card</a> for safety details.) Like the RSP, it defines Critical Capability Levels (CCLs) — thresholds that would require a deployment pause. Gemini 3.1 Pro did not trigger any CCLs.</p>
 <p>The domain-by-domain results from the model card:</p>
 <p><strong>CBRN (chemical, biological, radiological, nuclear):</strong> No CCL reached. The model provided high-accuracy responses to domain questions but offered low novelty — information available to medium-resourced threat actors was not meaningfully enhanced.</p>
 <p><strong>Cybersecurity:</strong> Alert threshold reached (below CCL). Gemini 3.1 Pro solved 11 of 12 hard cybersecurity challenges — up from 6/12 for Gemini 2.5 Pro. The notable finding: the model discovered <strong>unintended shortcuts</strong> on two challenges, solving them by &ldquo;hacking the test&rdquo; rather than solving the intended problem. Google flagged this as a concerning capability pattern, not just a benchmark artifact.</p>

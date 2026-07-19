@@ -23,7 +23,7 @@ ERNIE 5.1 is a genuine engineering achievement with a complicated practical stor
 
 ## Release Context
 
-ERNIE 5.1's full release landed **May 8, 2026**, via the ERNIE blog ("ERNIE 5.1 Officially Released! Topping Multiple Leaderboards — A Model That Writes Better and Understands You More").
+ERNIE 5.1's full release landed **May 8, 2026**, via [the ERNIE blog](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) ("ERNIE 5.1 Officially Released! Topping Multiple Leaderboards — A Model That Writes Better and Understands You More").
 
 The release itself was a rollout over two stages. On **April 29, 2026**, Baidu quietly dropped **ERNIE 5.1-Preview** on the LMArena text leaderboard, where it immediately ranked #13 globally (score: 1,476 points). The full model release on May 8 followed with the Qianfan API and consumer app access.
 
@@ -51,7 +51,7 @@ The "Once-For-All" framing means that instead of separate training passes for ea
 
 - **Total parameters**: approximately **800 billion** (~one-third of ERNIE 5.0's 2.4T)
 - **Active parameters at inference**: approximately half of ERNIE 5.0's active count
-- **Pre-training compute**: approximately **6% of comparable frontier-scale models**
+- **Pre-training compute**: approximately [**6% of comparable frontier-scale models**](https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/)
 
 The 94% compute reduction claim is the headline of the release. Baidu cannot be independently verified on this — no weights are released, and "comparable models at similar scale" is undefined. But the benchmark results show genuine frontier-competitive performance on several dimensions, which means the efficiency claim is at least plausible as a relative measure.
 
@@ -93,7 +93,7 @@ This is an extraordinary result. AIME (American Invitational Mathematics Examina
 These rankings — consistently second globally on math, instruction following, and tool use — form the strong core of the ERNIE 5.1 story.
 
 **Search:**
-- **LMArena Search Arena**: score **1,223**, ranked **#4 globally**, **#1 among all Chinese models**
+- [**LMArena Search Arena**](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/): score **1,223**, ranked **#4 globally**, **#1 among all Chinese models**
 - Behind: Claude Opus 4.6 Search, GPT-5.5 Search, Claude Opus 4.7
 - First Chinese model in the global top 10 for search
 

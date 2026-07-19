@@ -7,11 +7,11 @@
 
 ---
 
-On January 31, 2025, OpenAI released **o3-mini** — and made it available to ChatGPT's free tier. That last detail was the most consequential part of the announcement.
+On January 31, 2025, OpenAI released **[o3-mini](https://openai.com/index/openai-o3-mini/)** — and made it available to ChatGPT's free tier. That last detail was the most consequential part of the announcement.
 
 The o1 family, released three months earlier, had proven that inference-time reasoning could produce benchmark results well beyond what any standard language model achieved. But o1's costs and rate limits kept it out of reach for casual users. o1-pro cost $200 per month. Even standard o1 was restricted to ChatGPT Plus and Team subscribers, with limits that made it feel like a premium utility rather than a daily tool.
 
-o3-mini changed that calculation. At $1.10 per million input tokens — 93% cheaper than o1 — it offered comparable reasoning performance on the tasks where inference-time compute matters most: mathematics, science, and code. And it did something o1 had never done: it let developers and users explicitly choose how much the model should think. Low effort for speed; high effort when accuracy is everything; medium as the default balance. This **reasoning effort control** was new in the industry and would become a design pattern that every subsequent reasoning model would adopt.
+o3-mini changed that calculation. At [$1.10 per million input tokens](https://openai.com/index/openai-o3-mini/) — 93% cheaper than o1 — it offered comparable reasoning performance on the tasks where inference-time compute matters most: mathematics, science, and code. And it did something o1 had never done: it let developers and users explicitly choose how much the model should think. Low effort for speed; high effort when accuracy is everything; medium as the default balance. This **reasoning effort control** was new in the industry and would become a design pattern that every subsequent reasoning model would adopt.
 
 ---
 
@@ -51,7 +51,7 @@ The reasoning effort setting is passed as a parameter via API (`reasoning_effort
 
 ## Benchmark Performance
 
-All scores below are from OpenAI's official launch materials and system card unless otherwise noted.
+All scores below are from [OpenAI's official launch materials and system card](https://cdn.openai.com/o3-mini-system-card-feb10.pdf) unless otherwise noted.
 
 ### AIME 2024
 
@@ -126,7 +126,7 @@ Responses were also 24% faster than o1-mini on comparable tasks.
 
 ### Preparedness Framework Classification
 
-Under OpenAI's Preparedness Framework, o3-mini (pre-mitigation) was classified as **Medium risk overall**, with the following component assessments:
+Under OpenAI's [Preparedness Framework](https://openai.com/index/openai-o3-mini/), o3-mini (pre-mitigation) was classified as **Medium risk overall**, with the following component assessments:
 
 | Category | Risk Level |
 |---|---|

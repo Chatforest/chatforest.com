@@ -3,7 +3,7 @@
 > Alibaba's Qwen 3 (April 28, 2025) redefined what open-weight AI can do: frontier-class performance, switchable 'thinking' mode, 100+ language support, Apache 2.0 license, and eight model sizes from 0.6B to 235B. We review the architecture, benchmarks, the Alibaba context, and how Qwen 3 stacks up against DeepSeek R1, GPT-4.1, and Claude 3.7.
 
 
-On April 28, 2025, the Alibaba Qwen Team dropped eight model weights simultaneously on Hugging Face, all under Apache 2.0. No press embargo. No staged rollout. Just a technical blog post, a paper, and download links ranging from a 0.6-billion-parameter model that runs on a smartphone to a 235-billion-parameter Mixture-of-Experts model that outperforms DeepSeek R1 on reasoning benchmarks.
+On April 28, 2025, the Alibaba Qwen Team dropped eight model weights simultaneously on Hugging Face, all under Apache 2.0. No press embargo. No staged rollout. Just a [technical blog post](https://www.alibabacloud.com/blog/alibaba-introduces-qwen3-setting-new-benchmark-in-open-source-ai-with-hybrid-reasoning_602192), a paper, and download links ranging from a 0.6-billion-parameter model that runs on a smartphone to a 235-billion-parameter Mixture-of-Experts model that outperforms DeepSeek R1 on reasoning benchmarks. ([TechCrunch coverage](https://techcrunch.com/2025/04/28/alibaba-unveils-qwen-3-a-family-of-hybrid-ai-reasoning-models/).)
 
 The release had been building for two years. The Qwen team at Alibaba's DAMO Academy had been shipping model generations with unusual regularity — Qwen 1.0 in September 2023, Qwen 1.5 in February 2024, Qwen 2.0 in June 2024, Qwen 2.5 in September 2024, Qwen 2.5-Max (MoE) in January 2025 — each a meaningful step forward. Qwen 3 was not an incremental update. It brought a new architecture feature — **hybrid thinking mode** — to all eight sizes simultaneously, while also pushing the top-of-range MoE to genuine frontier performance on public benchmarks.
 
@@ -111,7 +111,7 @@ The MoE architecture follows the pattern established by DeepSeek's work, though 
 
 ### Training Data and Scale
 
-Qwen 3's largest models were pretrained on approximately **36 trillion tokens** — more than double the Qwen 2.5 series and nearly 2.5x DeepSeek V3's 14.8 trillion tokens.
+Qwen 3's largest models were pretrained on approximately **[36 trillion tokens](https://www.alibabacloud.com/en/press-room/alibaba-introduces-qwen3-setting-new-benchmark)** — more than double the Qwen 2.5 series and nearly 2.5x DeepSeek V3's 14.8 trillion tokens.
 
 The training data spans **100+ languages**, with a deliberate emphasis on STEM content, code, and multilingual coverage. Alibaba disclosed that the data pipeline included extensive deduplication, quality filtering, and synthetic data generation for underrepresented domains. The multilingual depth is reflected in the benchmark results: Qwen 3 models perform strongly on Chinese, Japanese, Korean, Arabic, and other non-English evaluations where many Western labs have thinner coverage.
 
@@ -349,7 +349,7 @@ Qwen3-235B-A22B requires multi-GPU infrastructure even with quantization. Organi
 
 Qwen 3 models are available through:
 
-**Hugging Face**: All 8 models, Apache 2.0, direct weight download. The standard path for self-hosting and fine-tuning.
+**[Hugging Face](https://huggingface.co/Qwen)**: All 8 models, Apache 2.0, direct weight download. The standard path for self-hosting and fine-tuning.
 
 **Alibaba Cloud Qwen AI Platform** (qwen.aliyun.com): API access with pay-per-token pricing. No weights needed — managed service option for organizations that don't need on-premises deployment.
 

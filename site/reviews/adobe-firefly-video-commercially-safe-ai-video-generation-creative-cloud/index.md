@@ -5,11 +5,11 @@
 
 # Adobe Firefly Video — Commercially Safe AI Video in Creative Cloud, With Caveats
 
-Adobe's entry into AI video generation is unlike every other tool in this space. It doesn't compete primarily on benchmark scores, generation speed, or model parameter counts. It competes on legal safety, ecosystem integration, and the institutional trust of a $17 billion annual revenue company that has been selling professional creative tools since 1982.
+Adobe's entry into AI video generation is unlike every other tool in this space. It doesn't compete primarily on benchmark scores, generation speed, or model parameter counts. It competes on legal safety, ecosystem integration, and the institutional trust of a [$17 billion annual revenue company](https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm) that has been selling professional creative tools since 1982.
 
 The result is a product that professional creative teams inside enterprises find genuinely useful — while independent creators frequently find it underwhelming compared to Runway, Kling, or Google Veo.
 
-**Adobe Firefly Video Model** launched in public beta in October 2024, the same week as Adobe MAX. By February 2025, it was globally available. By mid-2025, Adobe had generated 24 billion Firefly assets across all modalities (image, vector, design, video), captured a reported 29% market share of generative AI creative tools, and turned Firefly into an 11% contributor to Creative Cloud new ARR. The native video model powers **Generative Extend** in Premiere Pro — an AI feature that extends footage at the beginning or end of clips, one of the few AI video capabilities that has earned consistent praise from working video editors.
+**Adobe Firefly Video Model** [launched in public beta in October 2024](https://news.adobe.com/news/2024/10/101424-adobe-launches-firefly-video-model), the same week as Adobe MAX. By February 2025, it was globally available. By mid-2025, Adobe had generated [24 billion Firefly assets](https://www.digitalcameraworld.com/tech/artificial-intelligence/adobes-firefly-ai-has-generated-24-billion-images-make-that-24-billion-and-one) across all modalities (image, vector, design, video), captured a reported 29% market share of generative AI creative tools, and turned Firefly into an 11% contributor to Creative Cloud new ARR. The native video model powers **Generative Extend** in Premiere Pro — an AI feature that extends footage at the beginning or end of clips, one of the few AI video capabilities that has earned consistent praise from working video editors.
 
 Around the same time, a class-action lawsuit alleged Adobe used pirated books to train Firefly. Critics pointed out that Adobe Stock had been accepting AI-generated images — including outputs from Midjourney — which then entered Firefly's supposedly "commercially safe" training pipeline. The "commercially safe" framing remains Adobe's central marketing claim, but it now requires significant qualification.
 
@@ -23,7 +23,7 @@ This review is researched from public sources, official documentation, analyst r
 
 Adobe doesn't need an introduction, but the context of *why* Adobe built a video generation model — and why it matters for the broader AI video ecosystem — is worth establishing.
 
-Adobe's Digital Media segment generated **$17.65 billion in revenue in FY2025**, up 11% year-over-year. Creative Cloud — the subscription bundle that includes Photoshop, Premiere Pro, After Effects, Illustrator, and roughly 25 other applications — is the core of that segment, with approximately **30–41 million paid subscribers** depending on the counting methodology and time period.
+Adobe's Digital Media segment generated **[$17.65 billion in revenue in FY2025](https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm)**, up 11% year-over-year. Creative Cloud — the subscription bundle that includes Photoshop, Premiere Pro, After Effects, Illustrator, and roughly 25 other applications — is the core of that segment, with approximately **30–41 million paid subscribers** depending on the counting methodology and time period.
 
 For Adobe, AI video generation is not a standalone product bet. It is a **retention and upgrade lever** inside an existing subscription business. Creative Cloud subscribers who use Firefly features have meaningfully higher renewal rates and upgrade rates to higher-tier plans. By the end of 2025, Firefly was contributing an estimated **$400 million in direct revenue** — mostly through generative credit upsells and plan upgrades driven by AI feature usage.
 
@@ -188,7 +188,7 @@ The commercially safe claim is Adobe's strongest marketing differentiator. It is
 
 ### Books3 Class-Action Lawsuit (December 2025)
 
-Authors Douglas Preston, Abdi Nazemian, and others filed a proposed class-action lawsuit in December 2025 alleging Adobe used the **Books3 dataset** — a collection of approximately 191,000 pirated books assembled without rights clearances — to train Firefly AI systems including the Firefly Video Model's text-encoding components. A separate filing by author Elizabeth Lyon alleges Adobe's SlimLM model (used for prompt understanding) was trained on Books3 materials.
+Authors Douglas Preston, Abdi Nazemian, and others filed a proposed class-action lawsuit in December 2025 alleging Adobe used the **Books3 dataset** — a collection of approximately 191,000 pirated books assembled without rights clearances — to train Firefly AI systems including the Firefly Video Model's text-encoding components. A separate filing by author Elizabeth Lyon alleges Adobe's SlimLM model (used for prompt understanding) was trained on Books3 materials. ([TechCrunch coverage](https://techcrunch.com/2025/12/17/adobe-hit-with-proposed-class-action-accused-of-misusing-authors-work-in-ai-training/); [Bloomberg Law](https://news.bloomberglaw.com/ip-law/adobe-hit-with-copyright-suit-over-training-ai-on-pirated-books).)
 
 Adobe has dismissed the suits as meritless. The cases were still active as of early 2026. If the training data allegations are substantiated, they would directly contradict Adobe's foundational commercial safety claims — not merely add uncertainty, but eliminate the core legal differentiator.
 
@@ -278,8 +278,8 @@ Enterprise pricing for video API access is not publicly listed and requires Adob
 | Metric | Figure | Context |
 |--------|--------|---------|
 | Creative Cloud subscribers | ~30–41M | Various analyst estimates, mid-2025 to year-end 2025 |
-| Digital Media segment revenue FY2025 | $17.65B | +11% YoY |
-| Digital Media ARR (FY2025 exit) | $19.20B | +11.5% YoY |
+| Digital Media segment revenue FY2025 | [$17.65B](https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm) | +11% YoY |
+| Digital Media ARR (FY2025 exit) | [$19.20B](https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm) | +11.5% YoY |
 | Firefly assets generated | 24B+ (Jun 2025) | Across all modalities (image, vector, design, video) |
 | Firefly direct revenue estimate | ~$400M (2024–2025) | Analyst estimates |
 | Firefly share of CC new ARR (2024) | ~11% | Adobe reporting |

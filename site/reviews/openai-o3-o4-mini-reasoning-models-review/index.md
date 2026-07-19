@@ -7,7 +7,7 @@
 
 ---
 
-On April 16, 2025, OpenAI released two models simultaneously: **o3** and **o4-mini**. The releases came together because they represent complementary positions in the same architectural family — one optimized for maximum reasoning depth, the other for cost-efficient deployment at scale. They share a 200,000-token context window, full tool integration, and a capability that had not existed in any prior reasoning model: the ability to incorporate images directly into the thinking process.
+On April 16, 2025, OpenAI released two models simultaneously: **[o3](https://openai.com/index/introducing-o3-and-o4-mini/)** and **[o4-mini](https://openai.com/index/introducing-o3-and-o4-mini/)**. The releases came together because they represent complementary positions in the same architectural family — one optimized for maximum reasoning depth, the other for cost-efficient deployment at scale. They share a 200,000-token context window, full tool integration, and a capability that had not existed in any prior reasoning model: the ability to incorporate images directly into the thinking process.
 
 The announcement made news for several reasons. o3 scored 87.5% on ARC-AGI — a benchmark designed by François Chollet to test genuine novel task adaptation, which prior models had largely failed at. o4-mini hit 99.5% pass@1 on AIME 2025 when given a Python interpreter — essentially perfect performance on elite high school mathematics. And together, they introduced **agentic tool use to the o-series** for the first time: not just answering questions, but autonomously searching the web, running code, and generating images while reasoning about a problem.
 
@@ -112,9 +112,9 @@ On **MMMU** (Massive Multi-discipline Multimodal Understanding), o3 scores **86.
 
 One benchmark result requires careful handling. FrontierMath, developed by Epoch AI, tests AI on novel research-level mathematical problems designed to be unsolvable by memorization. Prior to o3, no model had exceeded 2% on this benchmark.
 
-OpenAI's Chief Research Officer Mark Chen claimed o3 achieved **25.2%** on FrontierMath at high-compute settings — approximately 12x the previous best. This was reported widely and contributed to the narrative of o3 as a major capability leap.
+OpenAI's Chief Research Officer Mark Chen claimed o3 achieved **25.2%** on [FrontierMath](https://epoch.ai/frontiermath/the-benchmark) at high-compute settings — approximately 12x the previous best. This was reported widely and contributed to the narrative of o3 as a major capability leap.
 
-Subsequently, Epoch AI conducted independent evaluation and found that the publicly released o3 scored approximately **10%** — still historic, still 5x previous best, but well below the claimed 25.2%. OpenAI's response was that the evaluated model was a different, smaller configuration than the one benchmarked during development. The ARC Prize Foundation made a similar observation about ARC-AGI scores.
+[Epoch AI conducted independent evaluation](https://epoch.ai/latest/openai-and-frontiermath) and found that the publicly released o3 scored approximately **10%** — still historic, still 5x previous best, but well below the claimed 25.2%. OpenAI's response was that the evaluated model was a different, smaller configuration than the one benchmarked during development. The ARC Prize Foundation made a similar observation about ARC-AGI scores.
 
 The practical lesson: benchmark numbers should be read alongside the specific compute configuration and model version. The *public* o3 is a different (smaller) model than the *development* o3 that set benchmark records. Both are real; they are not the same thing.
 
@@ -124,7 +124,7 @@ Even the confirmed 10% on FrontierMath and 87.5% on ARC-AGI (whichever version) 
 
 ## Safety: New Biosecurity Monitoring
 
-The o3/o4-mini system card, published the same day as the models, disclosed a new safety measure: a real-time **biosecurity monitoring system** applied specifically to these models. During inference, prompts are screened for biological and chemical threat indicators. When the system activates, the model declined to respond to risky prompts **98.7% of the time** in OpenAI's internal testing.
+The [o3/o4-mini system card](https://openai.com/index/o3-o4-mini-system-card/), published the same day as the models, disclosed a new safety measure: a real-time **biosecurity monitoring system** applied specifically to these models. During inference, prompts are screened for biological and chemical threat indicators. When the system activates, the model declined to respond to risky prompts **98.7% of the time** in OpenAI's internal testing.
 
 OpenAI's Safety Advisory Group determined that neither o3 nor o4-mini reached the "High" threshold across three tracked safety categories: Biological and Chemical Capability, Cybersecurity, and AI Self-improvement. Notably, o3 was found to be "more skilled at answering questions around creating certain types of biological threats" than prior models — still below the high-risk threshold, but closer than o1 or GPT-4o.
 

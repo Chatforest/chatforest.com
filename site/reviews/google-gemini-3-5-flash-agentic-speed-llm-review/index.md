@@ -3,7 +3,7 @@
 > Google Gemini 3.5 Flash launched at Google I/O 2026 on May 19 as the first Flash-tier model to lead Pro-tier models on agentic benchmarks. It tops MCP Atlas (83.6%), MMMU-Pro, CharXiv Reasoning, and Finance Agent v2 while running at 289 tok/s — four times the speed of competing frontier models. We cover the launch, benchmarks, pricing, hallucination rate, limitations, and where Gemini 3.5 Flash fits against GPT-5.5 and Claude Opus 4.7.
 
 
-Google launched **Gemini 3.5 Flash** at Google I/O 2026 on May 19, 2026, and the positioning is direct: this is not a Pro model with Flash's name on it, and it is not a Flash model trimmed for price. It is an argument that the Flash tier has grown up.
+Google launched **[Gemini 3.5 Flash](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/)** at [Google I/O 2026](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/) on May 19, 2026, and the positioning is direct: this is not a Pro model with Flash's name on it, and it is not a Flash model trimmed for price. It is an argument that the Flash tier has grown up.
 
 The specific claim is that Gemini 3.5 Flash — a Flash-tier model — now leads Pro-tier competitors from OpenAI and Anthropic on multiple agentic benchmarks. It tops MCP Atlas at 83.6%, outperforms Claude Opus 4.7 by 4.5 points and GPT-5.5 by 8.3 points on that benchmark. It leads Finance Agent v2, Toolathlon, MMMU-Pro, and CharXiv Reasoning. It does this at 289 tokens per second — four times faster than competing frontier models — and at $1.50/$9.00 per million input/output tokens, substantially below Pro-tier pricing from either competitor.
 
@@ -17,7 +17,7 @@ For context on earlier models in this lineage, see our [Gemini 3 Flash review](/
 
 ## The Launch
 
-Google announced Gemini 3.5 Flash on **May 19, 2026**, at the Google I/O 2026 keynote. Unlike Gemini 3.1 Pro — which launched in preview and remained there through May 2026 — Gemini 3.5 Flash launched directly to **general availability**.
+Google [announced Gemini 3.5 Flash](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) on **May 19, 2026**, at the Google I/O 2026 keynote. Unlike Gemini 3.1 Pro — which launched in preview and remained there through May 2026 — Gemini 3.5 Flash launched directly to **general availability**.
 
 Availability at launch:
 

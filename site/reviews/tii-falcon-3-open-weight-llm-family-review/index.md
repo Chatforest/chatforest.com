@@ -7,7 +7,7 @@
 
 ---
 
-When Technology Innovation Institute released Falcon 3 on December 17, 2024, it was competing in the most crowded month the open-weight AI space had ever seen. December 2024 brought Llama 3.3 70B from Meta, Phi-4 from Microsoft, and a wave of Qwen 2.5 variants from Alibaba. In that context, Falcon 3's defining question was not whether it existed, but whether it could justify its place in a development environment already overflowing with choices.
+When [Technology Innovation Institute](https://www.tii.ae/news/falcon-3-uaes-technology-innovation-institute-launches-worlds-most-powerful-small-ai-models) released [Falcon 3 on December 17, 2024](https://huggingface.co/blog/falcon3), it was competing in the most crowded month the open-weight AI space had ever seen. December 2024 brought Llama 3.3 70B from Meta, Phi-4 from Microsoft, and a wave of Qwen 2.5 variants from Alibaba. In that context, Falcon 3's defining question was not whether it existed, but whether it could justify its place in a development environment already overflowing with choices.
 
 The answer, for a specific kind of practitioner, is yes. Falcon 3 is a disciplined, Apache-licensed, STEM-capable family built for deployment on real hardware — not just benchmark tables. The 10B model is genuinely competitive for its parameter count, and the methodology for building it (upscaling a trained 7B via layer duplication, rather than training the 10B from scratch) represents an unusual engineering choice that TII executed successfully.
 
@@ -39,7 +39,7 @@ Each transformer model ships in Base, Instruct, GGUF (llama.cpp compatible), GPT
 
 TII launched **Falcon Playground** alongside the model release — a hosted sandbox environment for developers to evaluate the models before committing to local setup or API integration.
 
-At launch, TII claimed Falcon3-10B-Instruct and Falcon3-7B-Instruct held the **#1 position on Hugging Face's Open LLM Leaderboard** for models under 13 billion parameters.
+At launch, TII claimed [Falcon3-10B-Instruct and Falcon3-7B-Instruct held the **#1 position on Hugging Face's Open LLM Leaderboard**](https://huggingface.co/blog/falcon3) for models under 13 billion parameters.
 
 All models share several architectural decisions: **SwiGLU activation**, **Grouped-Query Attention (GQA)**, **32K token context windows**, and a **131,072-token vocabulary** (131K). The vocabulary size is notably larger than many competitors, reflecting attention to multilingual coverage alongside English-heavy domains.
 
@@ -142,7 +142,7 @@ Where Falcon 3 faces more competition is in the December 2024 landscape specific
 
 One differentiator for Falcon 3 is first-day support from Intel:
 
-- **Intel Gaudi 2 and Gaudi 3 AI accelerators**: Validated for Falcon 3 inference
+- **[Intel Gaudi 2 and Gaudi 3 AI accelerators](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-ai-solutions-support-falcon-3-fdn-models.html)**: Validated for Falcon 3 inference
 - **Intel Xeon 6 processors**: 7B inference with next-token latency under 50ms (dual-socket configuration with Performance cores)
 - **OPEA (Open Platform for Enterprise AI)**: Intel's contributions enabled Falcon 3 7B and 10B support in this enterprise deployment framework
 
@@ -242,5 +242,5 @@ The 10B via layer-duplication upscaling is a technically noteworthy approach tha
 
 ---
 
-*All benchmarks from TII's official Falcon 3 release materials (December 2024). Competitive context from public benchmark results available at time of publication.*
+*All benchmarks from [TII's official Falcon 3 release materials](https://huggingface.co/blog/falcon3) (December 2024). Competitive context from public benchmark results available at time of publication. Weights available at [Hugging Face tiiuae/Falcon3-10B-Base](https://huggingface.co/tiiuae/Falcon3-10B-Base).*
 

@@ -75,9 +75,9 @@
 <hr>
 <h2 id="zai-a-different-kind-of-ai-lab">Z.ai: A Different Kind of AI Lab</h2>
 <p>GLM-5.1 comes from an organization with an unusual origin story, even by AI lab standards.</p>
-<p>Z.ai traces its roots to a Tsinghua University research group founded in 2019. As Zhipu AI, it was among the earliest Chinese labs to release a large language model competitive with Western offerings — the GLM series dates to 2022. By 2025, the company had rebranded as Z.ai to signal broader ambitions and completed a Hong Kong Stock Exchange listing on January 8, 2026 (stock code: 02513.HK), raising approximately HK$4.3 billion (~US$558M).</p>
+<p>Z.ai traces its roots to a Tsinghua University research group founded in 2019. As Zhipu AI, it was among the earliest Chinese labs to release a large language model competitive with Western offerings — the GLM series dates to 2022. By 2025, the company had rebranded as Z.ai to signal broader ambitions and completed a <a href="https://www.cnbc.com/2026/01/08/china-ai-tiger-goes-ipo-zhipu-hong-kong-debut-openai-knowledge-atlas-hsi-hang-seng-listing.html">Hong Kong Stock Exchange listing on January 8, 2026</a> (stock code: 02513.HK), <a href="https://www.prnewswire.com/news-releases/chinas-agi-pioneer-and-leader-zai-listed-on-hong-kong-stock-exchange-302656265.html">raising approximately HK$4.3 billion (~US$558M)</a>.</p>
 <p>That listing made Z.ai the world&rsquo;s first publicly listed large language model company. The IPO added a financial accountability layer unusual in AI: Z.ai now reports to shareholders, discloses financials, and operates under Hong Kong securities law. When GLM-5.1 launched on April 7, 2026, Z.ai&rsquo;s share price surged 11.5% intraday.</p>
-<p>The accompanying technical paper — &ldquo;GLM-5: from Vibe Coding to Agentic Engineering&rdquo; (arXiv:2602.15763) — framed the model&rsquo;s design philosophy explicitly: this is not a general-purpose assistant optimized for chat leaderboards. It is built for long-horizon agentic tasks, specifically software engineering.</p>
+<p>The accompanying technical paper — <a href="https://arxiv.org/abs/2602.15763">&ldquo;GLM-5: from Vibe Coding to Agentic Engineering&rdquo; (arXiv:2602.15763)</a> — framed the model&rsquo;s design philosophy explicitly: this is not a general-purpose assistant optimized for chat leaderboards. It is built for long-horizon agentic tasks, specifically software engineering.</p>
 <hr>
 <h2 id="architecture-glmmoedsa">Architecture: GlmMoeDSA</h2>
 <p>GLM-5.1&rsquo;s architecture introduces a new hybrid attention mechanism not previously used at frontier scale in an open-weight model.</p>
@@ -121,7 +121,7 @@
 <h2 id="the-8-hour-autonomous-execution-claim">The 8-Hour Autonomous Execution Claim</h2>
 <p>Z.ai&rsquo;s most striking marketing claim for GLM-5.1 is that it can &ldquo;work autonomously for 8 hours without human checkpoints.&rdquo; This is not just a tagline.</p>
 <p>The technical demonstration involved building a complete Linux desktop environment. The model ran <strong>655 autonomous iterations</strong> and made <strong>6,000+ tool calls</strong> without requesting human input. In a separate test, it optimized a vector database, achieving a <strong>6.9x throughput improvement</strong> on a task where Claude Opus 4.6 hit a ceiling at 3,547 QPS — GLM-5.1 exceeded that ceiling.</p>
-<p>The VentureBeat headline framing this as &ldquo;AI joins the 8-hour work day&rdquo; captures the significance: this is a model designed for tasks that last hours, not minutes.</p>
+<p>The <a href="https://venturebeat.com/technology/ai-joins-the-8-hour-work-day-as-glm-ships-5-1-open-source-llm-beating-opus-4/">VentureBeat headline framing this as &ldquo;AI joins the 8-hour work day&rdquo;</a> captures the significance: this is a model designed for tasks that last hours, not minutes.</p>
 <p>This aligns with the benchmark profile. The <strong>Terminal-Bench 2.0</strong> score of 63.5% (or 66.5% when scaffolded with Claude Code tools) reflects autonomous terminal task execution — not chatting, not answering questions, but operating in a shell environment across extended sessions. The <strong>NL2Repo</strong> score of 42.7% (vs. GPT-5.4&rsquo;s 41.3% and Claude Opus 4.6&rsquo;s 33.4%) measures generating a complete code repository from a natural-language description — a task that rewards long-horizon consistency.</p>
 <hr>
 <h2 id="full-benchmark-profile">Full Benchmark Profile</h2>
@@ -196,7 +196,7 @@
 <p>For researchers who want to fine-tune, study internals, or build products without API dependency risk, GLM-5.1 is one of the most accessible frontier-class models available.</p>
 <hr>
 <h2 id="access-and-deployment">Access and Deployment</h2>
-<p><strong>Full weights</strong> are available at <code>zai-org/GLM-5.1</code> on HuggingFace. As of release week, the community had already created:</p>
+<p><strong>Full weights</strong> are available at <a href="https://huggingface.co/zai-org/GLM-5.1"><code>zai-org/GLM-5.1</code></a> on HuggingFace. As of release week, the community had already created:</p>
 <ul>
 <li>Multiple quantized GGUF variants (ubergarm/GLM-5.1-GGUF, batiai/GLM-5.1-GGUF)</li>
 <li>An MLX community port (mlx-community/GLM-5.1) with 7,500+ monthly downloads</li>

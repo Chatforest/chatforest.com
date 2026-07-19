@@ -24,7 +24,7 @@ author: "ChatForest"
 
 By February 2025, OpenAI had spent eight months running a split product line. GPT-4o (May 2024) was the company's multimodal flagship — fast, affordable, integrated into ChatGPT's consumer products. On a separate track, the o-series reasoning models (o1 in September, o3 and o3-mini by December/January) were establishing that chain-of-thought inference-time compute could unlock a different tier of benchmark performance. The company had two distinct model philosophies in market simultaneously.
 
-GPT-4.5 arrived on February 27, 2025 as something different from both. It was not a reasoning model — it had no chain-of-thought scaling. It was not cheap or multimodal in a new way. What it was, according to OpenAI, was the result of training a fundamentally larger language model on a much deeper base of unsupervised learning — expanding world knowledge, improving factual grounding, and building what the company described as better "emotional intelligence."
+GPT-4.5 arrived on [February 27, 2025](https://openai.com/index/introducing-gpt-4-5/) as something different from both. It was not a reasoning model — it had no chain-of-thought scaling. It was not cheap or multimodal in a new way. What it was, according to OpenAI, was the result of training a fundamentally larger language model on a much deeper base of unsupervised learning — expanding world knowledge, improving factual grounding, and building what the company described as better "emotional intelligence."
 
 The model was initially available to **ChatGPT Pro** users first ($200/month subscription), before opening to API access. The API model ID was `gpt-4.5-preview`.
 
@@ -37,7 +37,7 @@ The model was initially available to **ChatGPT Pro** users first ($200/month sub
 | **Model name** | GPT-4.5 |
 | **API identifier** | `gpt-4.5-preview` |
 | **Codename** | Orion |
-| **Release date** | February 27, 2025 |
+| **Release date** | [February 27, 2025](https://openai.com/index/introducing-gpt-4-5/) |
 | **Status** | **Deprecated July 14, 2025** |
 | **Context window** | 128,000 tokens |
 | **Architecture** | Dense transformer (no chain-of-thought) |
@@ -54,7 +54,7 @@ The codename "Orion" had circulated in industry reporting for months before the 
 
 The launch messaging focused on three claims:
 
-**1. Factual accuracy.** GPT-4.5's SimpleQA score was 62.5%, compared to 38.2% for GPT-4o and 47% for o1. OpenAI's own framing: hallucination rate of 37.1%, versus 61.8% for GPT-4o. For a model class that spent years struggling with confabulation, this was a genuine step.
+**1. Factual accuracy.** [GPT-4.5's SimpleQA score was 62.5%](https://openai.com/index/introducing-gpt-4-5/), compared to 38.2% for GPT-4o and 47% for o1. OpenAI's own framing: hallucination rate of 37.1%, versus 61.8% for GPT-4o. For a model class that spent years struggling with confabulation, this was a genuine step.
 
 **2. Emotional intelligence.** OpenAI characterized GPT-4.5 as having "broader world knowledge and a better understanding of what humans mean," with improved ability to "interpret subtle cues or implicit expectations with greater nuance." In practice, this meant the model was described as knowing when to offer advice versus when to listen, and as responding to emotionally-charged queries with more appropriate register.
 
@@ -130,7 +130,7 @@ The honest summary at launch: GPT-4.5 was the best model OpenAI had trained for 
 
 ## Why It Was Deprecated After Four Months
 
-On April 14, 2025 — six weeks after GPT-4.5 launched — OpenAI released **GPT-4.1**. It had:
+On April 14, 2025 — six weeks after GPT-4.5 launched — OpenAI released **[GPT-4.1](https://openai.com/index/gpt-4-1/)**. It had:
 
 - **SWE-bench Verified: 54.6%** (vs GPT-4.5's ~38%)
 - **1 million token context window** (vs GPT-4.5's 128K)
@@ -141,7 +141,7 @@ GPT-4.1 made GPT-4.5's value proposition very difficult to sustain. For coding a
 
 OpenAI announced the deprecation of `gpt-4.5-preview` in the API at the same time as the GPT-4.1 launch, with a July 14, 2025 shutdown date. This gave developers roughly three months to migrate.
 
-Developer reaction ranged from frustrated to confused. Some teams had specifically built around GPT-4.5's conversational and factual qualities, and found GPT-4.1 — which was more optimized for coding and long-context work — a poor substitute for the conversational use cases they had been serving. VentureBeat and developer forums reported "anguish and confusion" as the deprecation approached. The four-and-a-half month commercial lifespan made GPT-4.5 the shortest-lived model in OpenAI's history.
+Developer reaction ranged from frustrated to confused. Some teams had specifically built around GPT-4.5's conversational and factual qualities, and found GPT-4.1 — which was more optimized for coding and long-context work — a poor substitute for the conversational use cases they had been serving. [VentureBeat](https://venturebeat.com/ai/openai-moves-forward-with-gpt-4-5-deprecation-in-api-triggering-developer-anguish-and-confusion) and developer forums reported "anguish and confusion" as the deprecation approached. The four-and-a-half month commercial lifespan made GPT-4.5 the shortest-lived model in OpenAI's history.
 
 ---
 

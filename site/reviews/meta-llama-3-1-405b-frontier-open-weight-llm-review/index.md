@@ -13,13 +13,13 @@
 
 ## July 2024: The Open-Weight Threshold
 
-When Meta released Llama 3.1 on July 23, 2024, the announcement came with an unusual degree of public attention — not just from the developer community, but from the broader AI industry. The reason was simple: the 405B variant crossed a threshold that most observers had placed somewhere in the future. Open-weight models were supposed to lag closed frontier models by 12 to 18 months. Llama 3.1 405B erased most of that gap in a single release.
+When Meta [released Llama 3.1](https://ai.meta.com/blog/meta-llama-3-1/) on July 23, 2024, the announcement came with an unusual degree of public attention — not just from the developer community, but from the broader AI industry. The reason was simple: the 405B variant crossed a threshold that most observers had placed somewhere in the future. Open-weight models were supposed to lag closed frontier models by 12 to 18 months. Llama 3.1 405B erased most of that gap in a single release.
 
 The competitive context at the time: OpenAI's **GPT-4o** had launched in May 2024 with MMLU around 88.7%. Anthropic's **Claude 3.5 Sonnet** had launched in June 2024 with GPQA Diamond at 59.4% and strong coding results. Google's **Gemini 1.5 Pro** (reviewed separately: **[Gemini 1.5 Pro](/reviews/google-gemini-1-5-pro-long-context-llm-review/)**) had defined the long-context era with 1M+ token windows. Each of these was a closed model, accessible only through APIs with per-token billing and provider-controlled terms.
 
 Llama 3.1 405B arrived as a fully downloadable open-weight alternative — weights on Hugging Face, runnable on your own infrastructure, inspectable, fine-tunable, deployable with no per-token fee after the hardware cost. On MMLU, the 405B posted 88.6%: within 0.1 percentage points of GPT-4o. That number set the tone for everything that followed.
 
-Mark Zuckerberg accompanied the launch with a public statement framing open-source AI as a strategic commitment, not just a research release. Meta was betting that open weights would become the foundation of the AI ecosystem — and that Llama becoming the default open alternative was worth the compute investment required to build it.
+Mark Zuckerberg accompanied the launch with [a public statement](https://huggingface.co/blog/llama31) framing open-source AI as a strategic commitment, not just a research release. Meta was betting that open weights would become the foundation of the AI ecosystem — and that Llama becoming the default open alternative was worth the compute investment required to build it.
 
 ---
 
@@ -151,7 +151,7 @@ Over the following months, competition drove prices down substantially. By late 
 ### Self-Hosted Deployment
 
 For organizations with GPU infrastructure, the model is available at:
-- **Hugging Face**: `meta-llama/Meta-Llama-3.1-405B` (base) and `meta-llama/Meta-Llama-3.1-405B-Instruct` (instruction-tuned)
+- **Hugging Face**: [`meta-llama/Meta-Llama-3.1-405B-Instruct`](https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct) (instruct) and `meta-llama/Meta-Llama-3.1-405B` (base)
 - **Llama.cpp**: GGUF quantized versions for CPU+GPU inference
 - **vLLM**: Production-grade throughput serving with PagedAttention
 - **TensorRT-LLM**: NVIDIA-optimized inference with FP8 support

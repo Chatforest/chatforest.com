@@ -18,7 +18,7 @@ last_refreshed: 2026-05-22
 
 The gap between Chinese frontier AI and Western frontier AI just got harder to measure.
 
-Qwen3.7-Max, announced at the 2026 Alibaba Cloud Summit on May 20, edges Claude Opus-4.6 on GPQA Diamond (92.4 vs 91.3), edges it on Humanity's Last Exam (41.4 vs 40.0), and is statistically tied on SWE-Verified (80.4 vs 80.8). It beats Opus-4.6 Max on Apex Math Reasoning by 29%. On the Artificial Analysis Intelligence Index — the aggregate benchmark that tracks overall model capability — Qwen3.7-Max scores 56.6, placing fifth globally and becoming the highest-ranked Chinese model, surpassing Gemini 3.5 Flash (55.3) in the process.
+Qwen3.7-Max, [announced at the 2026 Alibaba Cloud Summit on May 20](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154), edges Claude Opus-4.6 on GPQA Diamond (92.4 vs 91.3), edges it on Humanity's Last Exam (41.4 vs 40.0), and is statistically tied on SWE-Verified (80.4 vs 80.8). It beats Opus-4.6 Max on Apex Math Reasoning by 29%. On the Artificial Analysis Intelligence Index — the aggregate benchmark that tracks overall model capability — Qwen3.7-Max scores 56.6, placing fifth globally and becoming the highest-ranked Chinese model, surpassing Gemini 3.5 Flash (55.3) in the process.
 
 It also costs $2.50/$7.50 per million tokens and plugs directly into existing Claude Code deployments without an SDK change.
 
@@ -28,7 +28,7 @@ Whether those benchmark margins hold under independent evaluation, and whether "
 
 ## Release Context
 
-Qwen3.7-Max is the flagship in Alibaba's Qwen3.7 generation. The model first appeared on the LM Arena text leaderboard around May 14, 2026, with API access opening May 19 through Alibaba Cloud and third-party API aggregators. The formal announcement came at the 2026 Alibaba Cloud Summit on May 20.
+Qwen3.7-Max is the flagship in Alibaba's Qwen3.7 generation. The model first appeared on the LM Arena text leaderboard around May 14, 2026, with API access opening May 19 through Alibaba Cloud and third-party API aggregators. The formal announcement came at the [2026 Alibaba Cloud Summit on May 20](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154).
 
 **Qwen generation comparison:**
 
@@ -70,7 +70,7 @@ This is not a wrapper or compatibility shim — Alibaba has implemented the prot
 
 ### Aggregate: Artificial Analysis Intelligence Index
 
-Qwen3.7-Max scores **56.6** on the Artificial Analysis Intelligence Index (as of May 2026), placing it:
+Qwen3.7-Max scores **[56.6](https://artificialanalysis.ai/models/qwen3-7-max)** on the [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/) (as of May 2026), placing it:
 
 - **5th globally** across all models
 - **1st among Chinese models** (DeepSeek V4-Pro Max trails)

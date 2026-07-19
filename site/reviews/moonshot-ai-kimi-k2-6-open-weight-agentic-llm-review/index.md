@@ -23,9 +23,9 @@ This review covers architecture, the Agent Swarm system, benchmarks, community r
 
 Kimi K2.6 was released on April 20, 2026 by Moonshot AI (Beijing), the company behind the Kimi chatbot and the broader K2 model series. The release date was not a surprise: a late-March leak on r/LocalLLaMA had predicted the release within two weeks, and on April 13, Moonshot AI sent confirmation emails to beta testers. By the time weights appeared on Hugging Face on April 20, developer anticipation was already substantial.
 
-The model ID on the official Kimi API platform is `kimi-k2.6-20260420`. The Hugging Face repository is `moonshotai/Kimi-K2.6`. A GitHub repository (`MoonshotAI/Kimi-K2`) covers the broader K2 series, including technical documentation.
+The model ID on the official Kimi API platform is `kimi-k2.6-20260420`. The Hugging Face repository is [`moonshotai/Kimi-K2.6`](https://huggingface.co/moonshotai/Kimi-K2.6). A [GitHub repository (`MoonshotAI/Kimi-K2`)](https://github.com/MoonshotAI/Kimi-K2) covers the broader K2 series, including technical documentation.
 
-The release coincided with a fundraising milestone: on May 7, 2026 — seventeen days after the model launch — Moonshot AI raised $2 billion at a $20 billion valuation in a round led by Meituan's Long-Z Investments, with participation from Tsinghua Capital, China Mobile, and CPE Yuanfeng. The company's valuation grew approximately 5x in six months ($4.3B → $20B). Reported annual recurring revenue exceeded $200 million as of April 2026.
+The release coincided with a fundraising milestone: on May 7, 2026 — seventeen days after the model launch — Moonshot AI [raised $2 billion at a $20 billion valuation](https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/) in a round led by Meituan's Long-Z Investments, with participation from Tsinghua Capital, China Mobile, and CPE Yuanfeng ([Bloomberg coverage](https://www.bloomberg.com/news/articles/2026-05-07/kimi-chatbot-maker-moonshot-ai-valued-at-20-billion-in-meituan-led-round)). The company's valuation grew approximately 5x in six months ($4.3B → $20B). Reported annual recurring revenue exceeded $200 million as of April 2026.
 
 For context: Moonshot AI was founded in March 2023 by Yang Zhilin — a Tsinghua computer science graduate (ranked #1 in class), Carnegie Mellon Ph.D., and former Google Brain researcher — alongside Tsinghua University alumni who are also his former bandmates in the group "Splay." The company name is a nod to the 50th anniversary of Pink Floyd's *The Dark Side of the Moon*, Yang's stated favorite album.
 
@@ -213,7 +213,7 @@ Developer reception was strongly positive on the agentic and coding capabilities
 
 **Latent Space newsletter**: Described K2.6's reasoning style as "Opus-flavored" — verbose internal chain-of-thought with "Let me..." prefixes, similar to how Claude Opus 4.6 reasons. Multiple testers noted this independently.
 
-**Second-most used model on OpenRouter** (as of early May 2026, per TechCrunch).
+**[Second-most used model on OpenRouter](https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/)** (as of early May 2026, per TechCrunch).
 
 ---
 
@@ -303,7 +303,7 @@ For teams doing open-ended agentic coding, long-horizon software engineering, or
 
 ---
 
-**May 2026 update:** Following Cerebras Systems' IPO on May 14, 2026 (largest tech IPO of 2026 at ~$70B market cap), Cerebras announced enterprise trials running Kimi K2.6 at **~981 tokens/second** — measured independently by Artificial Analysis. That figure is 6.7× faster than the next-fastest GPU cloud and 23× faster than the median inference provider. For a standard agentic coding request (10K input tokens, 500 output tokens), Cerebras delivers the full response in **5.6 seconds** versus 163.7 seconds on the official Kimi API endpoint. At this speed, K2.6's Agent Swarm architecture becomes qualitatively more practical for interactive agentic loops — the latency tax that limits multi-agent pipelines largely disappears. Cerebras Kimi K2.6 access is in enterprise trials as of late May 2026; general availability timeline not confirmed.
+**May 2026 update:** Following [Cerebras Systems' IPO on May 14, 2026](https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/) (largest tech IPO of 2026), Cerebras announced enterprise trials running Kimi K2.6 at **~981 tokens/second** — measured independently by Artificial Analysis. That figure is 6.7× faster than the next-fastest GPU cloud and 23× faster than the median inference provider. For a standard agentic coding request (10K input tokens, 500 output tokens), Cerebras delivers the full response in **5.6 seconds** versus 163.7 seconds on the official Kimi API endpoint. At this speed, K2.6's Agent Swarm architecture becomes qualitatively more practical for interactive agentic loops — the latency tax that limits multi-agent pipelines largely disappears. Cerebras Kimi K2.6 access is in enterprise trials as of late May 2026; general availability timeline not confirmed.
 
 ---
 

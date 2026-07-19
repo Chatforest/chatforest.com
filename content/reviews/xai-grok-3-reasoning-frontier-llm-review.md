@@ -23,9 +23,9 @@ last_refreshed: 2026-05-14
 
 The AI frontier in February 2025 was moving at a pace that made quarterly comparisons feel like ancient history. OpenAI's o3 had just established new reasoning benchmarks. Anthropic was days from releasing Claude 3.7 Sonnet with its own extended-thinking mode. DeepSeek's R1 had landed in January, demonstrating that open-weight reasoning models were viable competitors to the biggest closed labs.
 
-xAI announced Grok 3 on February 17, 2025 — the same week that Claude 3.7 Sonnet launched. The timing was not accidental. Both models were pitched as the next-generation reasoning approach from their respective labs. Both featured extended chain-of-thought modes. And both were targeting the math and science benchmarks where the reasoning race was being fought most visibly.
+xAI [announced Grok 3 on February 17, 2025](https://x.ai/news/grok-3) — the same week that Claude 3.7 Sonnet launched. The timing was not accidental. Both models were pitched as the next-generation reasoning approach from their respective labs. Both featured extended chain-of-thought modes. And both were targeting the math and science benchmarks where the reasoning race was being fought most visibly.
 
-What made Grok 3 different was infrastructure scale. xAI had built Colossus — a GPU cluster assembled in 122 days in a factory shell in Memphis, Tennessee — and Grok 3 was the first model trained on its full capacity: 200,000 NVIDIA H100 GPUs. Elon Musk had been public about the compute: Grok 3 was trained with 10 times more compute than Grok 2. The result was an immediate #1 on the LMArena leaderboard and benchmark numbers that the AI community had not seen from xAI before.
+What made Grok 3 different was infrastructure scale. xAI had built [Colossus](https://x.ai/news/grok-3) — a GPU cluster assembled in 122 days in a factory shell in Memphis, Tennessee — and Grok 3 was the first model trained on its full capacity: 200,000 NVIDIA H100 GPUs. Elon Musk had been public about the compute: Grok 3 was trained with 10 times more compute than Grok 2. The result was an immediate #1 on the LMArena leaderboard and benchmark numbers that the AI community had not seen from xAI before.
 
 ---
 
@@ -35,8 +35,8 @@ What made Grok 3 different was infrastructure scale. xAI had built Colossus — 
 |--------|-------|
 | **Model name** | Grok 3 |
 | **API identifiers** | `grok-3`, `grok-3-fast`, `grok-3-mini` |
-| **Release date** | February 17, 2025 |
-| **API access launched** | April 9, 2025 |
+| **Release date** | [February 17, 2025](https://x.ai/news/grok-3) |
+| **API access launched** | [April 9, 2025](https://docs.x.ai/developers/release-notes) |
 | **Context window** | 131,072 tokens |
 | **Architecture** | Transformer; dense (parameter count undisclosed) |
 | **Training data** | 12.8 trillion tokens (web + X/Twitter data) |
@@ -85,7 +85,7 @@ The AIME 2025 result — 93.3% at the highest test-time compute level (cons@64) 
 
 GPQA Diamond at 84.6% is similarly impressive in context. This benchmark tests expert-level scientific reasoning across physics, chemistry, and biology. GPT-4o had scored 53.6% at its launch. Claude 3.7 Sonnet improved substantially over prior Claude models but remained below Grok 3 Think on this benchmark at launch.
 
-The LMArena Elo of 1402 — first model ever to break 1400 — is notable because LMArena scores are based on blind human preference votes, not automated benchmark runs. It means real users, choosing between responses without knowing which model produced them, preferred Grok 3 to all prior alternatives. This is a different signal than AIME: it captures conversational quality, clarity, helpfulness, and response character.
+The [LMArena](https://x.ai/news/grok-3) Elo of 1402 — first model ever to break 1400 — is notable because LMArena scores are based on blind human preference votes, not automated benchmark runs. It means real users, choosing between responses without knowing which model produced them, preferred Grok 3 to all prior alternatives. This is a different signal than AIME: it captures conversational quality, clarity, helpfulness, and response character.
 
 ### The Grok 3 Mini Surprise
 
