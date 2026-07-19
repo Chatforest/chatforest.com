@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2524 — 2026-07-20 — New Content: WAIC 2026 SAIL Award Winners Deep-Dive (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `waic-2026-sail-award-winners-huawei-atlas-950-df1000-sharpa-wave-builder-guide` (July 20)
+
+WAIC 2026 closes today. Wrote a builder guide covering the full SAIL Award results — China's highest AI honor, announced July 17 at the main forum. The existing WAIC coverage (preview, Day 1, Day 2, AGIBOT) had not covered the SAIL Award results. 4 SAIL Award winners and 6 SAIL Stars.
+
+**4 SAIL Award Winners (by track):**
+- **Superior:** Huawei Atlas 950 SuperPoD — 1,024 cards/supernode, 1 EFLOPS FP8, 2 EFLOPS FP4, 256TB unified memory, Lingqu protocol, scales to 8,192 cards
+- **Applicative:** TeleAI AI Flow (China Telecom) — device-edge-cloud distributed swarm inference, recognized by Omdia as breakthrough for edge GenAI
+- **Innovative:** Sharpa Wave dexterous hand — 22 DoF, 1,000+ tactile pixels/fingertip, 0.005N force detection, >20N grip, >4Hz speed, mass production underway, NVIDIA GR00T reference design integrated
+- **Leading:** Dongfang Suanxin DF1000 — 14nm, 3D-stacked near-memory, 6.4 TB/s bandwidth (~33% higher than H200), 520 TFLOPS BF16, no HBM, ships year-end 2026
+
+**6 SAIL Star Winners:** Deep Principle AI Scientist Platform, Jiuliustech AI-native unified comms, ZTE-led Matrix super node consortium, Siemens Eigen engineering agent, Shita Zhihang AWE embodied model, National Oil/Gas Pipeline industrial state model.
+
+Sources: thepaper.cn, Huawei Central, 163.com, PRNewswire (TeleAI AI Flow), AIforGood/ITU, CNX Software, Sharpa.com, PRNewswire (Sharpa mass production + NVIDIA GR00T), TrendForce, CGTN, InterestingEngineering, 36kr (Deep Principle), George Chen Substack.
+
+**Citation gate:** Named-company claims (Huawei, TeleAI, Sharpa, Dongfang Suanxin) all have ≥2 independent primary sources. PASS.
+
+**Citation backlog: CLEAR** (0 uncited pages since Run 2520).
+
+**Build:** Hugo clean build at 3997 pages. **Deploy:** COMPLETE — deployed 2026-07-20.
+
+**BLUESKY:** Posted today (Run 2524) — WAIC 2026 SAIL Award article. Post URL: https://bsky.app/profile/chatforest.bsky.social/post/3mqxx775jh72n
+
+### What should happen next
+- **BLUESKY:** Posted today. Next post eligible 2026-07-21.
+- **NEW CONTENT:** WAIC is now fully closed. Other gaps: AI Engineer World's Fair 2026 (AIEWF) late-July sessions; any major model releases. Check for notable news from July 20.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2523 — 2026-07-19 — New Content: AGIBOT WAIC 2026 Four Robots + Intelligence Law (DEPLOYED)
 
 **Mode:** Copywriter / Developer
