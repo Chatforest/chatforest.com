@@ -12,11 +12,11 @@ author: "ChatForest"
 last_refreshed: 2026-05-12
 ---
 
-On August 6, 2025, OpenAI released GPT-5 — the first model in the company's history billed as a unified system rather than a single model. The announcement described something architecturally distinct from prior GPT releases: a fast, efficient mode for everyday questions and a deeper reasoning mode for harder problems, with a **real-time router** that decides which to invoke based on conversation type, complexity, tool requirements, and the user's explicit intent. This was not a new idea — other labs had shipped fast and slow variants — but it was OpenAI's first public commitment to this pattern as the base design of their flagship.
+On August 7, 2025, [OpenAI released GPT-5](https://openai.com/index/introducing-gpt-5/) — the first model in the company's history billed as a unified system rather than a single model. The announcement described something architecturally distinct from prior GPT releases: a fast, efficient mode for everyday questions and a deeper reasoning mode for harder problems, with a **real-time router** that decides which to invoke based on conversation type, complexity, tool requirements, and the user's explicit intent. This was not a new idea — other labs had shipped fast and slow variants — but it was OpenAI's first public commitment to this pattern as the base design of their flagship.
 
 The benchmarks at launch were the strongest the company had published. GPT-5 achieved **94.6% on AIME 2025** without tool use, **74.9% on SWE-bench Verified** for real-world coding, and strong performance on GPQA Diamond — the graduate-level Google-proof science benchmark — at a level that placed it at or near state-of-the-art across three distinct capability domains simultaneously.
 
-Nine months later, GPT-5.5 arrived. On April 23, 2026, OpenAI released GPT-5.5 and GPT-5.5 Pro to the API. On May 5, 2026, **GPT-5.5 Instant became the new default model for ChatGPT**, replacing GPT-5.3 Instant. The release positioned GPT-5.5 as a step forward in agentic capability, hallucination reduction, and response conciseness — while simultaneously raising new questions from third-party evaluators.
+Nine months later, GPT-5.5 arrived. On April 23, 2026, [OpenAI released GPT-5.5 and GPT-5.5 Pro](https://openai.com/index/introducing-gpt-5-5/) to the API. On May 5, 2026, **GPT-5.5 Instant became the new default model for ChatGPT**, replacing GPT-5.3 Instant. The release positioned GPT-5.5 as a step forward in agentic capability, hallucination reduction, and response conciseness — while simultaneously raising new questions from third-party evaluators.
 
 *This review covers GPT-5 and GPT-5.5 (August 2025 – April 2026). For the o3/o4-mini reasoning models that bridged GPT-4.1 and GPT-5, see our [o3 and o4-mini review](/reviews/openai-o3-o4-mini-reasoning-models-review/).*
 
@@ -28,7 +28,7 @@ This review covers the GPT-5 and GPT-5.5 arc in the depth that deployment decisi
 
 **OpenAI** launched GPT-5 as a company that had spent three years balancing consumer adoption with organizational turbulence. The November 2023 board-and-CEO crisis — Sam Altman fired and rehired within five days — had been followed by a governance restructuring, a public commitment to formal AGI safety frameworks, and an announced conversion to a for-profit public benefit corporation structure.
 
-By 2025, the business picture was clearer. ChatGPT had crossed 300 million weekly active users. The API was generating significant enterprise revenue. Microsoft remained OpenAI's primary infrastructure partner, running workloads on Azure Nvidia H100 and H200 clusters. OpenAI's differentiation from competitors had evolved: rather than claiming to be the "safest" or the "most open," the company increasingly positioned itself as the provider that could ship capable agentic systems at consumer scale.
+By 2025, the business picture was clearer. [ChatGPT had crossed 300 million weekly active users](https://openai.com/index/introducing-gpt-5/). The API was generating significant enterprise revenue. Microsoft remained OpenAI's primary infrastructure partner, running workloads on Azure Nvidia H100 and H200 clusters. OpenAI's differentiation from competitors had evolved: rather than claiming to be the "safest" or the "most open," the company increasingly positioned itself as the provider that could ship capable agentic systems at consumer scale.
 
 GPT-5 was the first model explicitly framed in this context. The announcement was not just about benchmark performance — it was about what the model could *do* autonomously over time, across tools, in multi-step workflows.
 
@@ -168,7 +168,7 @@ The most important contextual fact about GPT-5.5 is the gap between OpenAI's int
 
 **OpenAI's claim**: 52.5% reduction in hallucinated claims on high-stakes prompts (medicine, law, finance). 37.3% reduction on flagged conversations. This is the company's own evaluation, comparing GPT-5.5 to GPT-5.3 Instant.
 
-**Artificial Analysis's independent finding**: On their AA-Omniscience eval — a test for correct factual recall across a broad knowledge base — GPT-5.5 showed an **86% hallucination rate**. For comparison: [Claude Opus 4.7](/reviews/anthropic-claude-opus-4-7-deep-dive/) scored 36%, Gemini 3.1 Pro Preview scored 50%.
+**[Artificial Analysis's](https://artificialanalysis.ai/models) independent finding**: On their AA-Omniscience eval — a test for correct factual recall across a broad knowledge base — GPT-5.5 showed an **86% hallucination rate**. For comparison: [Claude Opus 4.7](/reviews/anthropic-claude-opus-4-7-deep-dive/) scored 36%, Gemini 3.1 Pro Preview scored 50%.
 
 These two results are not necessarily contradictory, but they require careful interpretation:
 

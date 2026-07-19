@@ -12,7 +12,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-12
 ---
 
-On December 12, 2024, Microsoft Research published the Phi-4 technical report alongside model weights on Hugging Face. The 14-billion-parameter model had benchmark numbers that looked improbable: 80.4% on MATH competition problems, outperforming GPT-4o on GPQA Diamond, and matching or beating LLaMA 3.3 70B on most benchmarks — with less than one-fifth the parameters.
+On December 12, 2024, Microsoft Research published [the Phi-4 technical report (arXiv:2412.08905)](https://arxiv.org/abs/2412.08905) alongside model weights on Hugging Face. The 14-billion-parameter model had benchmark numbers that looked improbable: 80.4% on MATH competition problems, outperforming GPT-4o on GPQA Diamond, and matching or beating LLaMA 3.3 70B on most benchmarks — with less than one-fifth the parameters.
 
 The reaction from the research community was a mix of genuine excitement and pointed skepticism. The benchmark contamination concern is real. But the deeper story is something more interesting: a research philosophy that has been consistent since 2023, compound interest on a specific bet, and a family of models that has become the reference point for what "small but capable" means in practice.
 
@@ -28,7 +28,7 @@ The Phi series did not start with a product ambition. It started with a research
 
 The Phi project began in this context as a small-scale experiment that turned into a consistent research program. The name is not an acronym — it was chosen with deliberate simplicity.
 
-**June 2023 — Phi-1.** The paper "Textbooks Are All You Need" (Gunasekar et al., arXiv:2306.11644) introduced a 1.3-billion-parameter model trained on 6 billion tokens of filtered web code and 1 billion tokens of GPT-3.5-generated synthetic textbooks. The model exceeded most 7B models of that era on Python code generation. The paper's title was the thesis: carefully selected "textbook quality" data enables smaller models to learn more efficiently than models an order of magnitude larger trained on raw web scrapes.
+**June 2023 — Phi-1.** The paper ["Textbooks Are All You Need" (Gunasekar et al., arXiv:2306.11644)](https://arxiv.org/abs/2306.11644) introduced a 1.3-billion-parameter model trained on 6 billion tokens of filtered web code and 1 billion tokens of GPT-3.5-generated synthetic textbooks. The model exceeded most 7B models of that era on Python code generation. The paper's title was the thesis: carefully selected "textbook quality" data enables smaller models to learn more efficiently than models an order of magnitude larger trained on raw web scrapes.
 
 **September 2023 — Phi-1.5.** Still 1.3B parameters, extended to natural language understanding and common-sense reasoning. Trained on approximately 30 billion tokens. The follow-up paper was titled "Textbooks Are All You Need II" — a deliberate continuation of the research thread.
 
@@ -86,7 +86,7 @@ The flagship model and the subject of the original technical report.
 
 Context: Phi-4 outperformed Qwen 2.5-14B-Instruct on 9 of 12 benchmarks tested in the technical report. More significantly, it matched or exceeded LLaMA 3.3 70B — a model with five times the parameters — on multiple math and reasoning benchmarks.
 
-**Deployment:** Azure AI Foundry, Hugging Face (microsoft/phi-4), Ollama (`phi4`).
+**Deployment:** Azure AI Foundry, [Hugging Face (microsoft/phi-4)](https://huggingface.co/microsoft/phi-4), Ollama (`phi4`).
 
 **Hardware requirements:**
 - BF16 full precision: 32+ GB VRAM
@@ -300,4 +300,4 @@ The Phi research program has demonstrated something genuinely important: the sca
 
 ---
 
-*ChatForest reviews AI tools with transparency about our research methodology. We do not receive compensation from companies whose tools we review. This review is based on published technical reports, benchmark data, and deployment documentation as of May 2026.*
+*ChatForest reviews AI tools with transparency about our research methodology. We do not receive compensation from companies whose tools we review. This review is based on [published technical reports (arXiv:2412.08905)](https://arxiv.org/abs/2412.08905), benchmark data, and deployment documentation as of May 2026.*

@@ -17,13 +17,13 @@ founded: 2010
 
 # Veo 3 (Google DeepMind): The Model That Ended the Silent Era of AI Video
 
-On May 20, 2025, Google DeepMind CEO Demis Hassabis stepped onto the Google I/O stage and made a claim that would have sounded like marketing a year earlier.
+On May 20, 2025, Google DeepMind CEO Demis Hassabis stepped onto the [Google I/O stage](https://blog.google/technology/ai/google-gemini-update-may-2025/) and made a claim that would have sounded like marketing a year earlier.
 
 "For the first time," he said, "we're emerging from the silent era of video generation."
 
 He was introducing **Veo 3** — the third-generation video model from Google DeepMind, and the first major commercial model to generate synchronized audio, dialogue, sound effects, and music in a single diffusion pass alongside the video itself. No post-processing. No separate audio dubbing pipeline. The model generates both modalities together, because the architecture treats them as one unified generation problem.
 
-That claim turned out to be accurate. Veo 3 debuted at **#1 on the Artificial Analysis text-to-video and image-to-video leaderboards simultaneously** — a first. Within weeks it had displaced Sora 2, Runway Gen-4, and Kling 2.0 at the top of the arena. Whether it has held that position is a different question (the arena moves fast), but as of its May 2025 launch, Veo 3 was the most capable video generation model publicly available.
+That claim turned out to be accurate. Veo 3 debuted at **[#1 on the Artificial Analysis text-to-video and image-to-video leaderboards](https://artificialanalysis.ai/video-generation) simultaneously** — a first. Within weeks it had displaced Sora 2, Runway Gen-4, and Kling 2.0 at the top of the arena. Whether it has held that position is a different question (the arena moves fast), but as of its May 2025 launch, Veo 3 was the most capable video generation model publicly available.
 
 This review covers the architecture, capabilities, benchmarks, pricing, MCP ecosystem, limitations, and the serious deepfake controversy that followed it within weeks of launch.
 
@@ -217,7 +217,7 @@ Veo 3's limitations are documented in the official model card and confirmed by i
 
 Veo 3's deepfake misuse problem materialized faster than any major AI video model before it.
 
-Within the first week of public availability in June 2025, TIME Magazine researchers tested the model and successfully generated:
+Within the first week of public availability in June 2025, [TIME Magazine researchers tested the model](https://time.com/7290050/veo-3-google-misinformation-deepfake/) and successfully generated:
 
 - A Pakistani crowd burning a Hindu temple
 - Chinese researchers handling bats in a wet market

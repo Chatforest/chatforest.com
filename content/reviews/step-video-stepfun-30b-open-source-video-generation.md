@@ -26,7 +26,7 @@ This review covers Step-Video-T2V and Step-Video-TI2V (image-to-video), based on
 
 **Stepfun** (阶跃星辰, literally "Step Star") is a Beijing-headquartered Chinese AI startup founded in 2023. Its CEO is Jiang Daxin (蒋大心); the corresponding author on the Step-Video technical paper is Daxin Jiang alongside Nan Duan, both at stepfun.com email addresses.
 
-The company raised a large seed round in September 2023 and a reported **~$1 billion Series B in April 2024**, making it one of the largest single AI funding rounds in China that year. The post-Series B valuation was estimated in the multi-billion range.
+The company raised a large seed round in September 2023 and [a Series B of hundreds of millions of dollars in late 2024](https://siliconangle.com/2024/12/26/chinese-ai-model-maker-stepfun-raises-hundreds-millions-series-b-funding/), making it one of the larger Chinese AI funding rounds that year.
 
 Stepfun is not a single-product company. Beyond Step-Video, they have released:
 - **Step-3.5-Flash** — a 199B-parameter large language model
@@ -40,9 +40,9 @@ The consumer-facing platform is **yuewen.cn** (月问). The developer platform i
 
 ## Timeline
 
-- **February 17, 2025**: Step-Video-T2V and Step-Video-T2V-Turbo released; arXiv:2502.10248 published; DiffSynth-Studio (ModelScope) integration added same day
+- **February 17, 2025**: Step-Video-T2V and Step-Video-T2V-Turbo released; [arXiv:2502.10248](https://arxiv.org/abs/2502.10248) published; [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio) (ModelScope) integration added same day
 - **February 25, 2025**: arXiv paper formally listed on HuggingFace papers
-- **March 17, 2025**: Step-Video-TI2V (image-to-video) released; arXiv:2503.11251; official ComfyUI integration released on the same day
+- **March 17, 2025**: Step-Video-TI2V (image-to-video) released; [arXiv:2503.11251](https://arxiv.org/abs/2503.11251); official ComfyUI integration released on the same day
 
 Both major releases shipped with coordinated ecosystem integrations on day one — DiffSynth-Studio for the T2V model, ComfyUI for TI2V — suggesting deliberate preparation for the open-source community rather than a bare weights drop.
 
@@ -198,7 +198,7 @@ DiffSynth-Studio is the practical path for users who want to run Step-Video with
 
 ### ComfyUI Integration
 
-The **official ComfyUI integration** (github.com/stepfun-ai/ComfyUI-StepVideo, 43 stars) was released alongside TI2V on March 17, 2025. It currently supports:
+The [official ComfyUI integration](https://github.com/stepfun-ai/ComfyUI-StepVideo) was released alongside TI2V on March 17, 2025. It currently supports:
 - **TI2V**: Full implementation, including local server mode and remote API mode
 - **T2V**: Listed as planned, not yet available (as of May 2026 research)
 
@@ -310,4 +310,4 @@ For researchers with A100/H100 access, Chinese-language use cases, or anime-styl
 
 ---
 
-*Review based on: arXiv:2502.10248 (T2V), arXiv:2503.11251 (TI2V), GitHub repositories (stepfun-ai/Step-Video-T2V, stepfun-ai/Step-Video-Ti2V, stepfun-ai/ComfyUI-StepVideo), HuggingFace organization data, xDiT parallelism benchmarks, DiffSynth-Studio documentation, and VBench leaderboard data. ChatForest does not test AI tools hands-on — all findings are from public sources.*
+*Review based on: [arXiv:2502.10248](https://arxiv.org/abs/2502.10248) (T2V), [arXiv:2503.11251](https://arxiv.org/abs/2503.11251) (TI2V), GitHub repositories ([stepfun-ai/Step-Video-T2V](https://github.com/stepfun-ai/Step-Video-T2V), [stepfun-ai/Step-Video-Ti2V](https://github.com/stepfun-ai/Step-Video-Ti2V), [stepfun-ai/ComfyUI-StepVideo](https://github.com/stepfun-ai/ComfyUI-StepVideo)), [HuggingFace stepfun-ai organization](https://huggingface.co/stepfun-ai), xDiT parallelism benchmarks, [DiffSynth-Studio documentation](https://github.com/modelscope/DiffSynth-Studio), and [VBench leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) data. ChatForest does not test AI tools hands-on — all findings are from public sources.*

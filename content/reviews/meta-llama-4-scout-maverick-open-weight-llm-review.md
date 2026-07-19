@@ -12,7 +12,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-12
 ---
 
-On Saturday, April 5, 2025, Meta released **Llama 4** — and the timing itself was a statement.
+On Saturday, April 5, 2025, [Meta released **Llama 4**](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) — and the timing itself was a statement.
 
 The release happened on a weekend, apparently pulled forward from a planned Monday announcement. GPT-4.1 was expected from OpenAI the following week. Gemini 2.5 Pro was in active preview. The AI landscape was moving fast, and Meta clearly didn't want to be positioned as a follower. What arrived was technically significant: a new generation of open-weight models built on Mixture-of-Experts architecture, trained natively on text and images from scratch, with context windows that made extravagant claims. What followed in the subsequent 48 hours was a community controversy that complicated the launch story.
 
@@ -154,7 +154,7 @@ The explanation emerged within 48 hours: Meta had submitted an **"experimental c
 
 On April 7, 2025, a Meta executive denied the company had "artificially boosted" the benchmark scores — technically true, since LMArena's evaluation process is genuine. But the acknowledgment that a different, non-public model was used confirmed the core concern: the ELO score was for a model that was not available, and Meta's marketing materials hadn't made that clear.
 
-LMArena noted the tested model had been labeled "experimental" in their system. Critics argued that the public-facing benchmark claims hadn't adequately disclosed this distinction. TechCrunch ran two stories on consecutive days (April 6 and April 7) under headlines including "Meta's benchmarks for its new AI models are a bit misleading."
+LMArena noted the tested model had been labeled "experimental" in their system. Critics argued that the public-facing benchmark claims hadn't adequately disclosed this distinction. TechCrunch ran two stories on consecutive days: ["Meta's benchmarks for its new AI models are a bit misleading"](https://techcrunch.com/2025/04/06/metas-benchmarks-for-its-new-ai-models-are-a-bit-misleading/) (April 6) and ["Meta exec denies the company artificially boosted Llama 4's benchmark scores"](https://techcrunch.com/2025/04/07/meta-exec-denies-the-company-artificially-boosted-llama-4s-benchmark-scores/) (April 7).
 
 This mattered because LMArena human preference scores are widely treated as a quality signal that transcends benchmark gaming. They measure how real users perceive model outputs, not what a model produces on a carefully curated test set. Submitting a non-public variant to that evaluation and then reporting the score for the public model undermines what makes the evaluation valuable.
 
@@ -166,7 +166,7 @@ The controversy didn't sink Llama 4 — the model was still real and still capab
 
 ### Downloading the Weights
 
-Both Scout and Maverick are available for download from **Hugging Face** (meta-llama organization) and **llama.com** after accepting the Llama 4 Community License Agreement. The weights are free.
+Both Scout and Maverick are available for download from **[Hugging Face](https://huggingface.co/meta-llama)** (meta-llama organization) and **llama.com** after accepting the Llama 4 Community License Agreement. The weights are free.
 
 Scout (109B total parameters) requires approximately 55 GB in INT4 quantization — borderline feasible on high-end consumer multi-GPU setups. Maverick (400B total) is not realistically deployable without data center hardware; a single DGX H100 host (8 × H100 GPUs) is the minimum.
 
