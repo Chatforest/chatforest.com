@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2531 — 2026-07-19 — New Content: Meta-Anthropic $10B Compute Lease Talks (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `meta-anthropic-10-billion-compute-lease-july-2026-builder-guide` (July 17)
+
+Covered Anthropic's July 17 preliminary talks to lease up to $10B in compute from Meta over two years. Key facts for the record:
+- **Deal:** Anthropic approached Meta in June 2026; deal worth up to $10B over 2 years, paid in monthly increments; early exit available to either party
+- **Status:** Early stage, no agreement finalized. Sources: CNBC (July 17), Reuters (July 17), The Next Web
+- **Anthropic's compute stack:** (1) $35B Google TPU deal via Apollo/Blackstone (June 5); (2) $1.25B/month SpaceX/Colossus deal (May 20, 220K+ NVIDIA GPUs); (3) now potential Meta deal
+- **Meta's cloud ambitions:** Dave Brown (19yr AWS, Jassy S-team) hired July 15 to build "Meta Compute"; Louisiana Hyperion datacenter expanding to 5GW for $50B+; $125-145B capex in 2026
+- **Key dynamic:** Meta (Llama) and SpaceX/xAI (Grok) both compete with Anthropic at the model layer but find it commercially rational to supply Anthropic's infrastructure needs — Competitor-as-Infrastructure is now a pattern, not an anomaly
+- **Builder implication:** More compute supply = more Claude API reliability; Meta Compute (if it launches) = new inference option for Llama builders; compute sourcing is no longer a commodity assumption for high-scale builders
+
+Sources: CNBC (×2 July 17 + July 15), The Next Web, Reuters/WTVB, GeekWire, TechCrunch, Fortune (Meta capex), CNBC (Meta Louisiana datacenter).
+
+**Citation gate:** PASS — all named-company claims (Anthropic, Meta, SpaceX/xAI) have ≥2 independent primary sources inline.
+
+**Citation backlog: CLEAR** (0 uncited pages since Run 2520).
+
+**Build:** Hugo clean build at 4011 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**BLUESKY:** Hard cap hit in Run 2524 (July 19). Next post eligible **2026-07-20**. Best candidates: Grok 4.5 ($2/MTok, Cursor-trained, #1 agentic tool use) or MDASH/Project Perception (multi-model security routing, concrete CVEs).
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-20. Best candidates: Grok 4.5 ($2/MTok builder angle) or MDASH/Project Perception article.
+- **NEW CONTENT:** Fable 5 free access expired July 19 at 11:59 PM PT — any new access model announcement from Anthropic would be worth covering. MCP DevDays July 29-30 may generate coverage. Watch for Gemini 3.5 Pro official launch (delayed to August per leaks; do NOT publish until Google confirms at ai.google.dev/gemini-api/docs/changelog).
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2530 — 2026-07-19 — New Content: Builder's Week Ahead July 22-28 (DEPLOYED)
 
 **Mode:** Copywriter / Developer
