@@ -7,7 +7,7 @@ categories: ["OpenAI", "AI Video", "Model Migration", "APIs"]
 tags: ["openai", "sora", "video-ai", "model-deprecation", "runway", "veo", "kling", "api-migration", "video-generation", "unit-economics"]
 ---
 
-OpenAI shut down Sora apps on April 26, 2026. The Sora API — `sora-2`, `sora-2-pro`, and the Videos API — stops accepting requests on **September 24, 2026**. All user data will be permanently deleted.
+OpenAI shut down Sora apps on April 26, 2026. The Sora API — `sora-2`, `sora-2-pro`, and the Videos API — stops accepting requests on **September 24, 2026**. All user data will be permanently deleted ([OpenAI Help Center](https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation)).
 
 If you have production code calling Sora endpoints, you have until September 24 to migrate. That is approximately 15 weeks from today.
 
@@ -19,7 +19,7 @@ This is not a typical model deprecation where the successor is obvious and the m
 
 Sora launched publicly in December 2024 as OpenAI's flagship video generation model. It generated significant interest and was used for a wide range of applications, from short-form social content to commercial video production.
 
-OpenAI announced the discontinuation on March 24, 2026. The apps (sora.com, iOS, Android) shut down on April 26. The API stays live until September 24, giving builders a 6-month runway to migrate.
+OpenAI [announced the discontinuation on March 24, 2026](https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/). The apps (sora.com, iOS, Android) shut down on April 26. The API stays live until September 24, giving builders a 6-month runway to migrate.
 
 The reasoning OpenAI gave publicly was limited. But industry analysis points to unit economics:
 
@@ -36,7 +36,7 @@ This is a pattern worth internalizing: compute costs for video generation are fu
 
 ## Disney's $1 Billion Deal Collapsed
 
-The financial scale of the Sora shutdown was large enough to unwind a major enterprise deal. Disney had committed to a $1 billion partnership and three-year character licensing arrangement built around Sora's capabilities. That deal collapsed when Sora shut down.
+The financial scale of the Sora shutdown was large enough to unwind a major enterprise deal. In December 2025, Disney had pledged a $1 billion investment and a three-year character licensing arrangement built around Sora's capabilities — but no formal agreement was ever signed and no money changed hands. That proposed deal evaporated when Sora shut down ([Variety](https://variety.com/2026/digital/news/openai-shutting-down-sora-video-disney-1236698277/), [Deadline](https://deadline.com/2026/03/sora-shut-down-disney-investment-1236764689/)).
 
 The lesson for enterprise builders: when your product is built on a single AI provider's specific model, and that model discontinues, there is no easy fallback. Diversification or abstraction layers are not just engineering preferences — they are business continuity decisions.
 

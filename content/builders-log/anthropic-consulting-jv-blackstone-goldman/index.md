@@ -11,7 +11,7 @@ For the past three years, the dominant framing for AI labs has been: research or
 
 That framing is no longer accurate for Anthropic.
 
-On May 4, 2026 — the day before it unveiled Claude for Financial Services — Anthropic announced a $1.5 billion joint venture with Blackstone, Goldman Sachs, Hellman & Friedman, General Atlantic, Apollo Global Management, GIC, Sequoia Capital, and Leonard Green & Partners. The venture is a new operating entity. Its business is embedding Claude inside companies these investors own and turning AI adoption into an implementation service.
+On May 4, 2026 — the day before it unveiled Claude for Financial Services — Anthropic announced a $1.5 billion joint venture with Blackstone, Goldman Sachs, Hellman & Friedman, General Atlantic, Apollo Global Management, GIC, Sequoia Capital, and Leonard Green & Partners ([CNBC](https://www.cnbc.com/2026/05/04/anthropic-goldman-blackstone-ai-venture.html), [Fortune](https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/), [Blackstone press release](https://www.blackstone.com/news/press/anthropic-partners-with-blackstone-hellman-friedman-and-goldman-sachs-to-launch-enterprise-ai-services-firm/)). The venture is a new operating entity. Its business is embedding Claude inside companies these investors own and turning AI adoption into an implementation service.
 
 Anthropic, the research lab, is now also Anthropic, the consultant.
 
@@ -19,7 +19,7 @@ Anthropic, the research lab, is now also Anthropic, the consultant.
 
 The $1.5B is committed capital, split among the partners — approximately $300M each from Anthropic, Blackstone, and H&F; roughly $150M from Goldman; smaller contributions from the remaining partners. The structure creates a shared operational entity rather than a pure financial investment.
 
-The entity's mandate, as described in reporting at the time: deploy Claude across the portfolio companies of participating PE firms, handling both the strategy work (what AI should these companies adopt) and the implementation work (actually building and running the deployments). Fortune described it as Anthropic "taking a shot at the consulting industry."
+The entity's mandate, as described in reporting at the time: deploy Claude across the portfolio companies of participating PE firms, handling both the strategy work (what AI should these companies adopt) and the implementation work (actually building and running the deployments). [Fortune described it](https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/) as Anthropic "taking a shot at the consulting industry."
 
 That framing is accurate. McKinsey, BCG, and Accenture have all built AI practices. This is Anthropic building a consulting practice that competes with theirs — with the advantage of owning the underlying model.
 

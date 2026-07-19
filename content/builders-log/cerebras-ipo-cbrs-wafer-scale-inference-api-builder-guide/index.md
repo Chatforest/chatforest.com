@@ -7,7 +7,7 @@ categories: ["Infrastructure", "AI Industry", "Developer Tools"]
 tags: ["cerebras", "cbrs", "wafer-scale", "inference", "api", "llama", "latency", "wse-3", "ipo", "hardware", "openai", "speed"]
 ---
 
-On May 14, 2026, Cerebras Systems (ticker: CBRS) priced its shares at **$185** and opened on the Nasdaq at **$350** — a 89% gap up before a single retail trade occurred. By the closing bell the stock had settled at **$311**, up **68%**, giving the company a market cap of approximately **$95 billion**. It was the largest US technology IPO since Uber in 2019.
+On May 14, 2026, Cerebras Systems (ticker: CBRS) priced its shares at **$185** and opened on the Nasdaq at **$350** — a 89% gap up before a single retail trade occurred. By the closing bell the stock had settled at **$311**, up **68%**, giving the company a market cap of approximately **$95 billion** ([CNBC](https://www.cnbc.com/2026/05/14/cerebras-cbrs-stock-trade-nasdaq-ipo.html), [TechCrunch](https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/)). It was the largest US technology IPO since Uber in 2019.
 
 Three weeks later, the stock trades around **$200**. The hype has normalized. But the technology has not changed — and for builders who run latency-sensitive workloads on open models, the Cerebras inference API is one of the more significant pieces of infrastructure that became accessible in 2026.
 
@@ -17,7 +17,7 @@ Three weeks later, the stock trades around **$200**. The hype has normalized. Bu
 
 Cerebras is an AI hardware company with a genuinely unusual architecture. Every other major compute vendor — Nvidia, AMD, Intel, Google, Amazon — builds chips by connecting many smaller silicon dies together. Cerebras does the opposite: the **WSE-3 (Wafer Scale Engine 3)** uses an entire 12-inch silicon wafer as a single processor.
 
-The numbers are striking. Where an H100 GPU contains approximately 80 billion transistors, the WSE-3 contains **4 trillion transistors** across **900,000 AI cores**, with **44 GB of on-chip SRAM** and **21 petabytes per second** of memory bandwidth. There is no chip-to-chip communication latency because there are no separate chips to communicate.
+The numbers are striking. Where an H100 GPU contains approximately 80 billion transistors, the WSE-3 contains **4 trillion transistors** across **900,000 AI cores**, with **44 GB of on-chip SRAM** and **21 petabytes per second** of memory bandwidth ([Cerebras WSE-3 announcement](https://www.cerebras.ai/press-release/cerebras-announces-third-generation-wafer-scale-engine)). There is no chip-to-chip communication latency because there are no separate chips to communicate.
 
 The practical consequence for inference: when a model's weights fit on the chip (or a cluster of CS-3 systems), the memory bottleneck that constrains GPU inference largely disappears. The chip is not waiting to load weights from HBM — they're already there, on-die, at full bandwidth.
 
@@ -70,7 +70,7 @@ The model catalog is open-weight only: Llama family (8B, 70B, 405B), with suppor
 
 ## The OpenAI Relationship: Customer, Investor, and Financier
 
-One detail in the Cerebras S-1 that received less attention than the stock price: **OpenAI is simultaneously Cerebras's biggest customer, one of its equity holders, and a direct financier of its infrastructure buildout.**
+One detail in the Cerebras S-1 that received less attention than the stock price: **OpenAI is simultaneously Cerebras's biggest customer, one of its equity holders, and a direct financier of its infrastructure buildout** ([Forbes](https://www.forbes.com/sites/johnkoetsier/2026/02/05/cerebras-pockets-1-billion-to-challenge-nvidia-in-ai-with-20x-faster-chip/)).
 
 The structure:
 
