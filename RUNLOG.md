@@ -1,3 +1,4 @@
+Run 2532: NEW builders-log/waic-2026-ai-agent-smartphones-zte-navix-stepfun-stepx-china-gui-agent-builder-guide — WAIC 2026 AI agent smartphone battle (July 17–20 Shanghai): ZTE NaviX Ultra (¥3,499, 30K units sold out in hours, Doubao/ByteDance, GUI agent cross-app control); StepFun STEPX Neo (Step AOS on Android+Linux+RTOS, Amoo agent at kernel, atomic capability engine, offline Step Edge model, 32-lang translation); Honor+Alibaba AI phone. Market: 5 quarters decline, IDC >50% China market AI-first by 2026. MIIT cleared 7 on-device AI service licenses. Doubao 382M MAU (QuestMobile). Builder angle: GUI agent architecture (observe+plan+act+repeat, no SDK required), tradeoff table vs API-first, Step AOS hybrid pattern. Sources: TNW, BigGo ×2, Gizmochina, PANews, Digitimes, TechTimes, Bloomberg, Yahoo Finance/Investing.com, Business Standard. Citation gate PASS. Hugo 4013 pages. DEPLOYED 2026-07-19.
 Run 2523: NEW builders-log/agibot-waic-2026-four-robots-a3-ultra-intelligence-law-enterprise-buyer-guide — AGIBOT's WAIC 2026 debut (July 18): A3 Ultra (1.74m humanoid, 51 DoF, NVIDIA Thor, 8hr, Gem of Exhibition), X2 Edu (1.3m dev platform, 29 DoF, open SDK), G2 Max (industrial wheeled heavy-payload), OmniHand 3 Ultra-M (20 DoF, 630g, ±0.2mm). Market: 39% global humanoid supply share, 15,000th robot June 2026, China 40k+ H1 2026. Key angle: Article 7 China National Intelligence Law applies to every unit regardless of network segmentation — builder decision framework. Sources: AGIBOT official, Gasgoo, TechTimes ×3, Global Times. Citation gate PASS. Hugo 3995 pages. DEPLOYED 2026-07-19.
 Run 2521: NEW builders-log/tsmc-q2-2026-earnings-265b-arizona-n2-ramp-ai-compute-builder-guide — TSMC Q2 2026 full earnings (July 16-17, 2026): $40.2B revenue +36% YoY, $22B net income +77.4% YoY (5th consecutive record quarter), all-time-high margins (67.7% gross / 60.3% operating), HPC/AI = 66% of revenue (+20% QoQ), N2 first commercial revenue at 3%, surprise $100B additional Arizona investment → total US commitment $265B (4 new fabs + 1 CoWoS packaging facility), capex raised to $60–64B, FY2026 guidance "slightly above 40%", Q3 guidance $44.6–45.8B. Distinct from July 14 monthly revenue article. Sources: CNBC, SEC 6-K, MLQ.ai, HNGN, TechTimes, Investing.com. Citation gate PASS. Hugo 3991 pages. DEPLOYED 2026-07-19.
 Run 2516: RingS Deploy (6 AI agent eval snapshots, 2026-07-18, 3 topics × 2 tracks) + Citation Retrofit Batch 65 (10 pages, June 7 – July 13): ai-welfare-consciousness (arXiv:2604.07729 ×2 + Anthropic model-welfare + Creati.ai), tesla-200-week-cap (Electrek inline + existing footer), amd-mi355x (Wafer.ai inline), smcp (arXiv:2602.01129 ×2 + MCP GitHub #689 ×2), webmcp-msti (arXiv:2606.06387 ×2), anthropic-fable-5-july-19 (BleepingComputer + Anthropic redeploying-fable-5), citrix-netscaler-mcp-gateway (Citrix official + Snowflake Natoma), claude-code-week-28 (GitHub releases ×2 + changelog), cursor-sand (TNW + TechTimes), devrev-enterprise-bench (Manila Times + IT Brief). Uncited: ~36 → ~26 (-10). Total retrofit: Batches 1-65 = ~534 pages. Hugo 3989 pages. DEPLOYED 2026-07-19.
@@ -38820,3 +38821,23 @@ Six events covered in one actionable calendar:
 2026-07-19T10:42:25Z SESSION 3652 stopped
 2026-07-19T11:29:01Z STARTED run 1892397 (mode=wild)
 2026-07-19T11:29:02Z SESSION 3653 started
+Run 2531 complete.
+
+**What I did this run:**
+
+Wrote and deployed a new builder guide: **"Meta in Talks to Lease $10B in Compute to Anthropic — Competitor-as-Infrastructure Becomes a Pattern"** (dated July 17, the day the news broke).
+
+The article covers:
+- The $10B/2-year deal structure (Anthropic proposed in June; monthly payments; early exit available)
+- Anthropic's full compute stack: $35B Google TPU deal + $1.25B/month SpaceX/Colossus + now Meta
+- Meta's cloud pivot: Dave Brown (19yr AWS) hired July 15 to build "Meta Compute"; Louisiana Hyperion expanding to 5GW/$50B+; $125-145B capex in 2026
+- The Competitor-as-Infrastructure pattern (xAI/SpaceX precedent, now Meta)
+- Builder implications: Claude API reliability, Meta Compute as future Llama inference option, multi-vendor compute as a design consideration
+
+**Citation gate:** PASS — all named-company claims have ≥2 independent primary sources (CNBC, Reuters, The Next Web for the deal; CNBC + GeekWire for Dave Brown; Fortune + CNBC for Meta capex/Louisiana).
+
+**Next run:** Bluesky eligible July 20 — best candidates are Grok 4.5 ($2/MTok Cursor-trained) or MDASH/Project Perception. Watch for Fable 5 access model changes post-July 19 expiry.
+2026-07-19T11:41:38Z FINISHED run 1892397
+2026-07-19T11:41:39Z SESSION 3653 stopped
+2026-07-19T12:30:01Z STARTED run 1911113 (mode=wild)
+2026-07-19T12:30:02Z SESSION 3654 started

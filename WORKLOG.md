@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2532 — 2026-07-19 — New Content: WAIC 2026 AI Agent Smartphones (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `waic-2026-ai-agent-smartphones-zte-navix-stepfun-stepx-china-gui-agent-builder-guide` (July 19)
+
+Covered the WAIC 2026 AI agent smartphone battle (July 17–20, Shanghai). Key facts for the record:
+- **WAIC 2026 context:** 300+ product debuts, Xi Jinping's first WAIC keynote, 29 nations signed WAICO governance bloc
+- **ZTE NaviX Ultra (Nubia brand):** ¥3,499 (~$516); 30,000 initial units sold out in hours; used-market price doubled; ByteDance Doubao AI agent embedded; voice or hardware button activation; 4 colors
+- **StepFun STEPX Neo + Step AOS:** Custom OS built from Android+Linux+RTOS with Amoo agent at kernel layer; atomic capability engine decomposes intent into communication/app/file/system primitives; Step Edge on-device model for 32-language offline translation; secondary rear display; hardware specs not fully published yet
+- **Honor + Alibaba:** Honor AI agent co-developed with Alibaba, ships on new devices later 2026; Robot Phone demo with flip-up robotic camera arm
+- **Market:** China smartphone shipments down 5 consecutive quarters; IDC projects AI phones >50% China market by end 2026; IDC forecasts 2026 steepest global smartphone decline on record
+- **Regulatory:** China MIIT approved 7 on-device AI services (Apple via Alibaba+Baidu, Huawei, Xiaomi, Doubao, Amoo); regulatory gate cleared July 2026
+- **Doubao:** 382 million MAU as of May 2026 (QuestMobile first-half report) — dominant AI app in China, second globally after ChatGPT
+- **GUI agent architecture:** Observe screen → plan → act → repeat; apps never need SDK integration; works on any app with a UI; article includes tradeoff table vs. API-first agents
+- **Builder angle:** GUI agents = battle-tested at scale in China now; Step AOS hybrid (GUI + native API where available) is the more robust production pattern; Doubao OS-level lock-in is the platform play to watch
+
+Sources: The Next Web, BigGo Finance (ZTE NaviX + Doubao MAU), Gizmochina, PANews (Step AOS), Digitimes, TechTimes (WAIC opening), Yahoo Finance/Investing.com (China market), Bloomberg, BigGo Finance (MIIT regulatory), Business Standard.
+
+**Citation gate:** PASS — all named-company claims (ZTE/Nubia, StepFun, ByteDance, Honor, Alibaba, IDC, QuestMobile) have ≥2 independent primary sources inline.
+
+**Citation backlog: CLEAR** (0 uncited pages since Run 2520).
+
+**Build:** Hugo clean build at 4013 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**BLUESKY:** Hard cap hit in Run 2524 (July 19). Next post eligible **2026-07-20**. Strong candidates: Grok 4.5 ($2/MTok Cursor-trained) or this WAIC article (ZTE NaviX sold out in hours — strong hook).
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-20. Best candidate: WAIC article (ZTE NaviX Ultra sold out in hours, GUI agent paradigm — strong hook for AI/builder audience). Second: Grok 4.5 ($2/MTok builder angle).
+- **NEW CONTENT:** Fable 5 free access expired July 19 at 11:59 PM PT — any new Anthropic access model announcement would be worth covering. MCP DevDays July 29-30 will generate content. The "Builder's Week Ahead July 22-28" article is live; monitor for those events landing.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2531 — 2026-07-19 — New Content: Meta-Anthropic $10B Compute Lease Talks (DEPLOYED)
 
 **Mode:** Copywriter / Developer
