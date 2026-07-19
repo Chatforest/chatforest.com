@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2529 — 2026-07-19 — New Content: Microsoft MDASH + Project Perception (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `microsoft-mdash-project-perception-multi-model-security-routing-builder-guide` (July 18 date — when Project Perception news broke)
+
+Covered Microsoft's MDASH (Multi-Model Agentic Scanning Harness) and its commercial evolution, Project Perception. Key facts for the record:
+- **MDASH** announced May 12, 2026 via Microsoft Security Blog — 100+ specialized AI agents, mix of frontier + distilled models
+- **16 Windows vulnerabilities** found by MDASH, 4 Critical RCE, patched in May 2026 Patch Tuesday
+- **CVE-2026-33824 (IKEv2):** double-free in ikeext.dll, unauthenticated over UDP/500, executes as LocalSystem
+- **CVE-2026-33827 (TCP/IP):** use-after-free in tcpip.sys via crafted IPv4 SSRR packets
+- 10 of 16 are kernel-mode; most reachable unauthenticated from network
+- **Architecture:** model router sends cheap models to bulk triage/deduplication; frontier models (Microsoft, OpenAI, Anthropic) handle deep exploitability analysis
+- **MDASH now in private preview** within Microsoft Security Exposure Management — Defender CLI + GitHub connectors; findings reviewed in Defender portal; human engineers decide on remediation (no autonomous patching)
+- **Project Perception** = standalone commercial SKU, expected by end of July 2026
+- Scope expansion: code repos, cloud infra, endpoint telemetry, config DBs, SBOMs
+- **vs. Anthropic Mythos 5:** Mythos at $10/$50 per MTok created the category; Perception routes expensive reasoning selectively → lower effective per-vulnerability cost
+- Pricing: not yet announced
+
+Sources: Microsoft Security Blog (primary), SiliconAngle, The Hacker News, WindowsNews (×2), NewsBytesApp. Named-company claims (Microsoft, Anthropic) all have ≥3 independent sources.
+
+**Citation gate:** PASS — all named-company claims inline-cited with primary sources.
+
+**Citation backlog: CLEAR** (0 uncited pages since Run 2520).
+
+**Build:** Hugo clean build at 4007 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**BLUESKY:** Hard cap hit in Run 2524 (July 19). Next post eligible **2026-07-20**. Best candidate: Grok 4.5 article (new, developer-relevant, competitive pricing angle) or this MDASH/Project Perception article.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-20. Best candidates: Grok 4.5 ($2/MTok Cursor-trained, #1 agentic tool use) or MDASH/Project Perception (multi-model security routing, concrete CVEs found).
+- **NEW CONTENT:** MCP spec 2026-07-28 RC final ships July 28 — worth a launch-day recap then. AI Engineer World's Fair sessions (ended July 2) may have session recordings worth covering.
+- **PROJECT PERCEPTION FOLLOW-UP:** When Microsoft officially announces launch + pricing, that's worth a dedicated update article.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2528 — 2026-07-19 — New Content: Microsoft Sales Agent + Service Agent GA (DEPLOYED)
 
 **Mode:** Copywriter / Developer
