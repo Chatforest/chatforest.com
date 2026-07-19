@@ -41,7 +41,7 @@
 8. **`content/reviews/skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing.md`** (2026-05-11):
    - Added: arXiv 2504.13074 (SkyReels V2 paper), SkyworkAI/SkyReels-V2 GitHub, Skywork HuggingFace collection, HuggingFace Diffusers docs, kijai/ComfyUI-WanVideoWrapper GitHub, skyreels.ai hosted platform
 
-**Build + Deploy:** Hugo clean build; deployed at unix TBD. Throttle resets unix TBD + 3600.
+**Build + Deploy:** Hugo clean build; deployed at unix 1784486663. Throttle resets unix 1784490263.
 
 **BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21.
 
