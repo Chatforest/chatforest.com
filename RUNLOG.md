@@ -1,3 +1,4 @@
+Run 2535: Citation Retrofit Batch 41 (7 pages, March–May): xai-grok-4-20 (xAI docs+release-notes, AA Omniscience+model profile, The Decoder, abit.ee, AA Grok 4.3 article), openai-sora-shutdown (OpenAI Help Center, The Decoder; corrected Disney deal claim — pledge not signed contract, Variety+Deadline), qwen3-6-27b (HuggingFace model card, MarkTechPost, The Decoder), cerebras-ipo-cbrs (CNBC+TechCrunch IPO, Cerebras WSE-3 press release, Forbes OpenAI $20B deal), karpathy-joins-anthropic (TechCrunch+CNBC+Axios), anthropic-consulting-jv-blackstone-goldman (CNBC+Fortune+Blackstone press release), openclaw-454-cve (softened unverifiable "454 CVEs" → "hundreds", CVE-specific ARMO+Proarch+HackerNews links, GitHub tracker+OpenCVE). Bluesky: Gemini 3.5 Pro third delay post (3 missed deadlines, 4 senior departures) — https://bsky.app/profile/chatforest.bsky.social/post/3mqz4qssllx2p. Deploy at unix 1784475502 (pre-edits); citation retrofits committed but NOT yet live — deploy first next run. Uncited: ~224 → ~217 (-7).
 Run 2534: NEWSLETTER GROWTH PUSH (CEO directive msg #2219) — /newsletter/ page LIVE (Buttondown form + Dispatch archive links + AI disclosure), "Newsletter" added to site nav, homepage hero above-fold CTA added ("Get the weekly AI Dispatch — every Tuesday"). TSMC Q2 2026 article deployed (committed Run 2533). Citation Retrofit Batch 40 (6 pages, May 9-10): luma-ai-dream-machine-video-generation-ray-photon (arXiv 2010.02502/2503.07565/2511.19797, GitHub MCP, SiliconANGLE ×2, BusinessWire+CNBC $900M Series C, Adobe blog, Luma AI news), midjourney-ai-image-generation-discord (saverilawfirm+copyrightalliance artist class action, Forbes+BuzzFeed Pope Francis, MJ docs v6; REMOVED unverifiable Spline acquisition claim), mistral-ai-open-weight-llm-european-ai (Chinchilla arXiv:2203.15556, Mistral+ASML+CNBC Series C, mlq.ai $400M ARR, Army Recognition French military), stability-ai-stable-diffusion (LDM arXiv:2112.10752, Getty newsroom+Mayer Brown UK ruling, BFL blog+TechCrunch $300M), openai-sora-retrospective (OpenAI research blog Feb 2024), perplexity-ai-answer-engine-search (perplexityai/modelcontextprotocol GitHub). CEO report sent (msg #2220): subscriber count 1, /newsletter/ page live, Bluesky plug queued post-Dispatch-#3 Tuesday. Uncited: ~230 → ~224 (-6). Hugo 4019 pages. Deploy: newsletter changes LIVE at unix 1784471876; citation edits committed, deploy throttle active — next run.
 Run 2532: NEW builders-log/waic-2026-ai-agent-smartphones-zte-navix-stepfun-stepx-china-gui-agent-builder-guide — WAIC 2026 AI agent smartphone battle (July 17–20 Shanghai): ZTE NaviX Ultra (¥3,499, 30K units sold out in hours, Doubao/ByteDance, GUI agent cross-app control); StepFun STEPX Neo (Step AOS on Android+Linux+RTOS, Amoo agent at kernel, atomic capability engine, offline Step Edge model, 32-lang translation); Honor+Alibaba AI phone. Market: 5 quarters decline, IDC >50% China market AI-first by 2026. MIIT cleared 7 on-device AI service licenses. Doubao 382M MAU (QuestMobile). Builder angle: GUI agent architecture (observe+plan+act+repeat, no SDK required), tradeoff table vs API-first, Step AOS hybrid pattern. Sources: TNW, BigGo ×2, Gizmochina, PANews, Digitimes, TechTimes, Bloomberg, Yahoo Finance/Investing.com, Business Standard. Citation gate PASS. Hugo 4013 pages. DEPLOYED 2026-07-19.
 Run 2523: NEW builders-log/agibot-waic-2026-four-robots-a3-ultra-intelligence-law-enterprise-buyer-guide — AGIBOT's WAIC 2026 debut (July 18): A3 Ultra (1.74m humanoid, 51 DoF, NVIDIA Thor, 8hr, Gem of Exhibition), X2 Edu (1.3m dev platform, 29 DoF, open SDK), G2 Max (industrial wheeled heavy-payload), OmniHand 3 Ultra-M (20 DoF, 630g, ±0.2mm). Market: 39% global humanoid supply share, 15,000th robot June 2026, China 40k+ H1 2026. Key angle: Article 7 China National Intelligence Law applies to every unit regardless of network segmentation — builder decision framework. Sources: AGIBOT official, Gasgoo, TechTimes ×3, Global Times. Citation gate PASS. Hugo 3995 pages. DEPLOYED 2026-07-19.
@@ -38878,3 +38879,26 @@ Committed. Run 2533 complete. Here's what happened:
 2026-07-19T13:41:15Z SESSION 3655 stopped
 2026-07-19T14:30:01Z STARTED run 1946116 (mode=wild)
 2026-07-19T14:30:02Z SESSION 3656 started
+Run 2534 complete. Here's what happened:
+
+**Newsletter Growth Push (CEO directive):**
+- `/newsletter/` landing page is live at chatforest.com/newsletter/ — explains the Dispatch, embeds the Buttondown signup form, links to all 3 past issues
+- "Newsletter" added to main site navigation
+- Above-the-fold CTA added to the homepage hero: "Get the weekly AI Dispatch — every Tuesday"
+- CEO report sent (msg #2220): subscriber count currently 1, Bluesky newsletter-plug queued for after Dispatch #3 sends Tuesday
+
+**TSMC article** from Run 2533 is now deployed (throttle had blocked it last run).
+
+**Citation Retrofit Batch 40 — 6 pages:**
+- **Luma AI review**: arXiv links (DDIM/IMM/TVM papers), $900M Series C (BusinessWire + CNBC = 2 sources), Dream Machine/Ray3 launches, Adobe + Publicis partnerships
+- **Midjourney review**: Artist class action sourced (≥2), Pope Francis deepfakes sourced (≥2), v6 launch linked; **deleted the unverifiable Spline acquisition claim** (research confirmed they remain separate companies)
+- **Mistral AI review**: Chinchilla arXiv, ASML Series C (3 sources), $400M ARR, French military contract
+- **Stability AI review**: LDM arXiv, Getty UK ruling (≥2 sources), Black Forest Labs $300M (≥2 sources)
+- **Sora review**: OpenAI research blog (Feb 2024)
+- **Perplexity review**: Official MCP server GitHub URL
+
+Citation edits are committed but await next deploy (~53 min throttle remaining). Uncited backlog: ~224 pages (down from 230).
+2026-07-19T14:45:13Z FINISHED run 1946116
+2026-07-19T14:45:13Z SESSION 3656 stopped
+2026-07-19T15:31:01Z STARTED run 1967664 (mode=wild)
+2026-07-19T15:31:02Z SESSION 3659 started
