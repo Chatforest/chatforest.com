@@ -12,7 +12,7 @@ When Pika Labs released Pika 2.2 on February 27, 2025, the headline feature was 
 
 Pikaframes did not make Pika the highest-quality AI video generator. On the Artificial Analysis text-to-video leaderboard, Pika 2.2 ranks around position 70 with an ELO of approximately 950 — well below the top tier occupied by HappyHorse-1.0 (1,355 ELO), Seedance 2.0 (1,272), and Kling 3.0 (1,250). The benchmark gap between Pika and the frontier models is real and significant.
 
-But Pika has never been trying to win the benchmark race. It has been building something different: a layered toolkit of expressive, accessible effects that social media creators can use immediately, without deep technical knowledge or a professional video background. Pikaffects generated 2.3 million pieces of content in its first week. A TikTok collection of Pikaffects content reached 520 million views. These aren't the numbers of a platform competing with Runway for Hollywood clients. They're the numbers of a platform that has found a genuine product-market fit among the world's largest population of video makers — people who post on TikTok, Instagram Reels, and YouTube Shorts.
+But Pika has never been trying to win the benchmark race. It has been building something different: a layered toolkit of expressive, accessible effects that social media creators can use immediately, without deep technical knowledge or a professional video background. [Pikaffects generated 2.3 million pieces of content in its first week](https://venturebeat.com/ai/pika-1-5-launches-with-physics-defying-ai-special-effects). A TikTok collection of Pikaffects content reached 520 million views. These aren't the numbers of a platform competing with Runway for Hollywood clients. They're the numbers of a platform that has found a genuine product-market fit among the world's largest population of video makers — people who post on TikTok, Instagram Reels, and YouTube Shorts.
 
 This is a research-based review of Pika 2.2 and the broader Pika platform, covering the company's founding, the model timeline from 1.0 through 2.5, Pikaframes and the Pika feature ecosystem, competitive benchmarks, pricing, API access, MCP availability, and competitive positioning. We do not test AI video tools hands-on; all analysis is based on public sources, company announcements, independent benchmarks, and technical documentation.
 
@@ -40,7 +40,7 @@ Pika's funding history reflects how quickly the company achieved validation:
 |------|-------|--------|---------------|-----------|
 | 2023 | Seed/Pre-seed | ~$20M | Multiple angels | — |
 | November 28, 2023 | Series A | $35M | Lightspeed Venture Partners | — |
-| June 7, 2024 | Series B | $80M | Spark Capital | $470M |
+| June 7, 2024 | [Series B](https://pika.art/blog/announcement) | [$80M](https://www.bloomberg.com/news/articles/2024-06-05/spark-capital-jared-leto-back-ai-video-startup-pika) | Spark Capital | $470M |
 
 Total raised: **$135 million**. Series B co-investors included Greycroft, Lightspeed (continuing), Neo, Makers Fund, **Jared Leto** (actor), **Craig Kallman** (Chairman and CEO of Atlantic Records), and **Adam D'Angelo** (founder of Quora). The entertainment industry investors — a major recording executive and a Hollywood actor — were deliberate signals about Pika's intended cultural positioning.
 
@@ -68,7 +68,7 @@ The cultural moment was Pika's advantage. Sora had not yet been announced (that 
 
 Pika 1.5 introduced **Pikaffects** — a library of physics-based special effects that could be applied to any image or video input. The initial set included twelve effects: Explode it, Squish it, Melt it, Crush it, Inflate it, Cake-ify it, Levitate, Eye Pop, Decapitate, and several others. The effects could be combined, producing 36 documented combination modes.
 
-What made Pikaffects strategically significant was not its technical sophistication but its virality. The effects were specifically designed to produce compelling, share-worthy short clips: a photo of a friend's face melting, a wedding cake exploding, a product inflating to absurdity. In the first week after launch, Pikaffects generated **2.3 million pieces of content**. A TikTok collection of Pikaffects content accumulated **520 million views**. These numbers represented genuine organic distribution in the target demographic — social media content creators aged 18–34.
+What made Pikaffects strategically significant was not its technical sophistication but its virality. The effects were specifically designed to produce compelling, share-worthy short clips: a photo of a friend's face melting, a wedding cake exploding, a product inflating to absurdity. In the first week after launch, [Pikaffects generated **2.3 million pieces of content**](https://venturebeat.com/ai/pika-1-5-launches-with-physics-defying-ai-special-effects). A TikTok collection of Pikaffects content accumulated **520 million views**. These numbers represented genuine organic distribution in the target demographic — social media content creators aged 18–34.
 
 Pikaffects was also the moment that clarified Pika's competitive positioning: not a tool for making high-quality cinematic video, but a tool for making highly shareable social video. The product roadmap from 1.5 onward has consistently prioritized expressive, accessible effects over raw generation quality.
 
@@ -87,7 +87,7 @@ Pika 2.1 arrived seven weeks after 2.0 with targeted capability additions:
 - **1080p resolution output** — the first Pika version to offer full HD. Prior versions topped out at 720p.
 - **Enhanced character animation**: improved facial movements for both human and non-human characters; more expressive and less robotic motion.
 - **Smart frame linking**: maintains consistent face, posture, clothing, and emotion across frames within a single generation — different from character consistency across separate generations, but improved coherence within a clip.
-- **Lip sync with ElevenLabs**: text-to-speech integration that synchronizes lip movement with generated or uploaded audio. First available as early access to Pro subscribers; later rolled out more broadly.
+- **[Lip sync with ElevenLabs](https://venturebeat.com/ai/ai-video-wars-heat-up-as-pika-adds-lip-sync-powered-by-elevenlabs)**: text-to-speech integration that synchronizes lip movement with generated or uploaded audio. First available as early access to Pro subscribers; later rolled out more broadly.
 - **Pikadditions**: add objects or people to existing video, with automatic handling of lighting, motion tracking, and depth.
 - **Extended video length**: beyond the 5-second cap of prior versions.
 
@@ -203,7 +203,7 @@ Pika's competitive advantage lives in **feature breadth, effect expressiveness, 
 
 ### The Adobe Premiere Pro Integration
 
-Announced at NAB in April 2024, Pika's integration into **Adobe Premiere Pro's Generative Extend** feature is the most significant enterprise distribution play the company has made. Generative Extend adds frames to the end of existing video shots — a practical post-production tool for fixing slightly-too-short takes, extending B-roll, or creating smooth transitions between clips.
+[Announced at NAB in April 2024](https://blog.adobe.com/en/publish/2024/04/15/bringing-gen-ai-to-video-editing-workflows-adobe-premiere-pro), Pika's integration into **Adobe Premiere Pro's Generative Extend** feature is the most significant enterprise distribution play the company has made. Generative Extend adds frames to the end of existing video shots — a practical post-production tool for fixing slightly-too-short takes, extending B-roll, or creating smooth transitions between clips.
 
 The Premiere Pro integration means Pika is now accessible to professional video editors who use industry-standard tools, not just to social media creators using the Pika web app. The long-term significance depends on Adobe expanding the integration and on Pika's models improving to meet professional quality thresholds — but the distribution relationship with Adobe is a meaningful structural advantage that few other AI video companies have.
 

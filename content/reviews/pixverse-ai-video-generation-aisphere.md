@@ -10,7 +10,7 @@ rating: 4
 
 PixVerse launched publicly in January 2024 and spent its first year quietly accumulating a user base and compounding model iterations while larger names like Runway, Sora, and Kling captured most of the headlines. That changed in early 2026.
 
-In March 2026, AIsphere — the Beijing-based company behind PixVerse — closed a $300 million Series C led by CDH Investments, with participation from Ant Group, Alibaba Capital Partners, and seven other investors. The round pushed the company to unicorn valuation at a moment when its flagship model, PixVerse V6, had just been released and was ranking #2 on the Artificial Analysis video generation leaderboard (the V5.6 reading; V6 landed at #4 on image-to-video at time of publication). Monthly active users had reached 16 million across a 100-million-registered base in 175 countries. Annual recurring revenue was above $40 million, growing more than 10x year-over-year.
+In March 2026, AIsphere — the Beijing-based company behind PixVerse — [closed a $300 million Series C led by CDH Investments](https://ventureburn.com/pixverse-raises-300m-becomes-ai-video-unicorn-startup/), with participation from Ant Group, Alibaba Capital Partners, and seven other investors. The round pushed the company to [unicorn valuation](https://theaiinsider.tech/2026/03/17/aisphere-raises-300m-to-scale-pixverse-ai-video-platform-and-global-expansion/) at a moment when its flagship model, PixVerse V6, had just been released and was ranking #2 on the Artificial Analysis video generation leaderboard (the V5.6 reading; V6 landed at #4 on image-to-video at time of publication). Monthly active users had reached 16 million across a 100-million-registered base in 175 countries. Annual recurring revenue was above $40 million, growing more than 10x year-over-year.
 
 The company operates this with 57 employees.
 
@@ -184,7 +184,7 @@ Third-party platform availability:
 
 ## MCP Server
 
-PixVerse has an official MCP server: **PixVerse-MCP**, published at github.com/PixVerseAI/PixVerse-MCP and documented at docs.platform.pixverse.ai/pixverse-mcp-972890m0.
+PixVerse has an official MCP server: **[PixVerse-MCP](https://github.com/PixVerseAI/PixVerse-MCP)**, published at github.com/PixVerseAI/PixVerse-MCP and documented at docs.platform.pixverse.ai/pixverse-mcp-972890m0.
 
 The server enables MCP-compatible AI clients (Claude Desktop, Cursor, and similar tools) to call PixVerse's video generation APIs directly within agentic workflows. Capabilities include:
 
@@ -221,7 +221,7 @@ Enterprise pricing is negotiated directly. PixVerse does not publish a public en
 
 ### Artificial Analysis
 
-PixVerse V5.6 ranked **#2 globally** on the Artificial Analysis video generation leaderboard at the time of its January 2026 launch. This is the highest confirmed third-party benchmark position in PixVerse's history.
+PixVerse V5.6 ranked **#2 globally** on the [Artificial Analysis video generation leaderboard](https://artificialanalysis.ai/text-to-video) at the time of its January 2026 launch. This is the highest confirmed third-party benchmark position in PixVerse's history.
 
 PixVerse V6, released March 30, 2026, ranked **#4 in image-to-video** on Artificial Analysis with an ELO score of approximately **1,314–1,323**. The slight drop from #2 (V5.6) to #4 (V6) likely reflects both the volatile nature of ELO leaderboards — new models from Seedance, HappyHorse, and others were shipping in parallel — and may not represent a meaningful quality regression. PixVerse V6 does not appear prominently in the text-to-video top tier on Artificial Analysis; the platform's strongest measured performance is on image-to-video tasks.
 

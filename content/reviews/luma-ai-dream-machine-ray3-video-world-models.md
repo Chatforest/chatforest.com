@@ -34,7 +34,7 @@ Luma's fundraising history reflects the acceleration of the AI video market:
 
 - **Seed / Series A** (2021–2023): Early backing from Andreessen Horowitz, Amplify Partners, and Matrix Partners as the company developed 3D capture technology.
 - **Series B** (2024): $57M round bringing total to ~$157M. Amazon and AMD participated alongside existing investors.
-- **Series C** (November 2025): **$900M** led by **Humain** (Saudi AI firm), with participation from AMD Ventures, a16z, Amplify, and Matrix. Post-money valuation: **$4B+**. The round was announced alongside **Project Halo** — a 2-gigawatt AI supercluster to be built in Saudi Arabia under the Humain partnership.
+- **Series C** (November 2025): [**$900M**](https://www.cnbc.com/2025/11/19/luma-ai-raises-900-million-in-funding-led-by-saudi-ai-firm-humain.html) led by [**Humain**](https://www.businesswire.com/news/home/20251119678010/en/Luma-AI-Raises-%24900-Million-Series-C-Led-by-HUMAIN-And-Partners-on-2-Gigawatt-AI-Supercluster-in-Saudi-Arabia) (Saudi AI firm), with participation from AMD Ventures, a16z, Amplify, and Matrix. Post-money valuation: [**$4B+**](https://www.bloomberg.com/news/articles/2025-11-19/saudi-s-humain-backs-ai-video-startup-luma-at-4-billion-value). The round was announced alongside **Project Halo** — a 2-gigawatt AI supercluster to be built in Saudi Arabia under the Humain partnership.
 
 Total funding: **$1.06B+**. The Series C nearly quadrupled Luma's prior funding level in a single round, a signal of how dramatically the market repriced AI video infrastructure between 2024 and 2025.
 
@@ -84,7 +84,7 @@ The **Ray** series is Luma's core video generation model line:
 
 **Ray 2 (early 2025)**: 10x the computational scale of Ray 1.6. Up to 1080p with optional 4K upscaling. 5–10 second clips. Key additions: Keyframes, Extend (up to 1 minute), Loop. Strong motion coherence with reduced artifacts. **Ray Flash 2** (March 2025): budget-friendly variant at 720p, 30–53 second generation time.
 
-**Ray3 (September 2025)**: Luma calls Ray3 "the world's first reasoning video model." The claim requires unpacking. Ray3 is not an LLM that generates video — it is a video model with reasoning-driven generation, meaning its latent process models physical plausibility and causal consistency more explicitly than prior architectures. Key features:
+**[Ray3 (September 2025)](https://lumalabs.ai/news/ray3)**: Luma calls Ray3 "the world's first reasoning video model." The claim requires unpacking. Ray3 is not an LLM that generates video — it is a video model with reasoning-driven generation, meaning its latent process models physical plausibility and causal consistency more explicitly than prior architectures. Key features:
 - **HDR pipeline**: First video model to offer native HDR output. Generates in high dynamic range color natively, exportable as 16-bit EXR for professional VFX compositing pipelines.
 - **Video-to-video (Modify Video)**: Character reference, keyframe control, motion transfer. Called the best-in-class video-to-video at launch.
 - **Draft Mode**: Rapid iteration at lower quality before committing to full generation.

@@ -45,12 +45,12 @@ Tavus has raised approximately $58M across confirmed rounds:
 | Round | Date | Amount | Notes |
 |---|---|---|---|
 | Seed | 2021–2022 | Undisclosed | Sequoia Capital confirmed as early investor |
-| Series A | March 2024 | $18M | Reported by TechCrunch; platform opened to developers with face/voice cloning API |
+| Series A | March 2024 | [$18M](https://techcrunch.com/2024/03/12/generative-ai-video-startup-tavus-raises-18m-to-bring-face-and-voice-cloning-to-any-app/) | [Reported by TechCrunch](https://www.businesswire.com/news/home/20240311638385/en/Generative-AI-Video-Pioneer-Tavus-Raises-%2418-Million-to-Introduce-the-Future-of-Personalized-Digital-Engagement); platform opened to developers with face/voice cloning API |
 | Series B | November 2025 | ~$40M | Reported by Axios via YC company profile; no direct press release confirmed |
 
 **Total raised:** approximately $58M (USD). Valuation has not been publicly disclosed.
 
-The Series A timing is significant. March 2024 is when Tavus moved from closed beta to open developer access with a face and voice cloning API. That was also the period when real-time AI video was transitioning from a demo category into a deployable one — latency numbers were dropping, model quality was improving, and developers were beginning to ask whether conversational video could replace text chat in specific contexts.
+The [Series A timing](https://techcrunch.com/2024/03/12/generative-ai-video-startup-tavus-raises-18m-to-bring-face-and-voice-cloning-to-any-app/) is significant. March 2024 is when Tavus moved from closed beta to open developer access with a face and voice cloning API. That was also the period when real-time AI video was transitioning from a demo category into a deployable one — latency numbers were dropping, model quality was improving, and developers were beginning to ask whether conversational video could replace text chat in specific contexts.
 
 Sequoia's presence as an early investor adds credibility. The firm has a track record of backing infrastructure plays early. The Series B of approximately $40M, if confirmed at its reported size, suggests the market has validated Tavus's real-time thesis with enough capital to build a durable engineering team.
 
