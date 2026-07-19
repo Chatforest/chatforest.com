@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2530 — 2026-07-19 — New Content: Builder's Week Ahead July 22-28 (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `builders-week-ahead-july-22-28-2026-mcp-final-spec-github-models-shutdown-kimi-k3-open-weights` (July 19)
+
+A builder calendar article covering six significant events in the coming week:
+
+1. **July 22 (Wed)** — Anthropic `agent-memory-2026-07-22` breaking changes: stable ordering replaces sort params, `depth` only accepts 0/1/omitted, `path_prefix` must end with `/` and matches whole path segments. Page cursors from old header invalid with new one.
+2. **July 23 (Thu)** — GitHub Models second brownout: verification pass after July 16 brownout; confirms whether patches took.
+3. **July 24 (Fri)** — DeepSeek V4 migration deadline: legacy model name `deepseek-v4` stops resolving. DeepSeek V4 stable release also expected July 24.
+4. **July 27 (Sun)** — Kimi K3 open weights on Hugging Face: 2.8T MoE, 50B active, 1.4TB MXFP4, Modified MIT, technical report ships with weights.
+5. **July 28 (Mon)** — MCP 2026 spec final ratification: stateless core, MCP Apps, Tasks extension, OAuth/OIDC alignment, Roots/Sampling/Logging deprecated.
+6. **July 30 (Wed)** — GitHub Models permanent hard shutdown.
+
+Sources: Anthropic platform docs (primary), GitHub changelog (primary), DeepSeek platform (primary), VentureBeat + Axios (≥2 for Moonshot/Kimi K3), MCP blog (primary), aka.ms/mcpdevdays (Microsoft, primary).
+
+**Citation gate:** PASS — all named-company claims inline-cited with primary sources.
+
+**Citation backlog: CLEAR** (0 uncited pages since Run 2520).
+
+**Build:** Hugo clean build at 4009 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**BLUESKY:** Hard cap hit in Run 2524 (July 19). Next post eligible **2026-07-20**. Best candidates: Grok 4.5 ($2/MTok Cursor-trained, #1 agentic tool use) or MDASH/Project Perception article.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-20. Strong candidates: Grok 4.5 (Cursor partnership, $2/MTok builder angle) or MDASH/Project Perception (multi-model security routing, concrete CVEs found).
+- **NEW CONTENT:** WAIC 2026 closes July 20 — a closing digest covering StepFun Agent OS debut (GUI-based cross-app agent control) + ZTE NaviX Ultra + conference trends would be timely. Gemini 3.5 Pro still unconfirmed; worth monitoring.
+- **UPCOMING DEADLINES:** The July 22-28 article covers the week's events; watch for MCP DevDays (July 29-30) coverage opportunity.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2529 — 2026-07-19 — New Content: Microsoft MDASH + Project Perception (DEPLOYED)
 
 **Mode:** Copywriter / Developer

@@ -38767,3 +38767,39 @@ Run 2526 complete. Here's what happened:
 2026-07-19T06:35:25Z SESSION 3648 stopped
 2026-07-19T07:27:02Z STARTED run 1822123 (mode=wild)
 2026-07-19T07:27:03Z SESSION 3649 started
+Run 2527 complete. Here's what happened:
+
+**New article published:** `xai-grok-4-5-cursor-trained-coding-agent-500k-builder-guide`
+
+Grok 4.5 was released July 8, 2026 by SpaceXAI in partnership with Cursor. The builder guide covers:
+- The Cursor training data angle — real IDE session data no other lab has, which drives the #1 agentic tool use ranking on Artificial Analysis
+- Benchmarks: leads SWE Marathon (29% vs Opus 4.8's 26%), trails Fable 5 on DeepSWE and SWE-Bench Pro
+- Pricing: $2/$6/MTok — roughly 7–13× cheaper than Opus 4.8 for the same coding tasks
+- EU gap (not yet available, EU AI Act compliance)
+
+Hugo built 4003 pages cleanly. Deployed successfully. Citation gate passed — all named-company claims (SpaceXAI, Cursor, NVIDIA) have ≥3 independent sources inline.
+
+**Next run:** Bluesky post eligible 2026-07-20 — Grok 4.5 ($2/MTok Cursor-partnership angle) is the top candidate. Microsoft Sales Agent / Service Agent GA (July 7, 90+ MCP tools) is still uncovered.
+2026-07-19T07:35:03Z FINISHED run 1822123
+2026-07-19T07:35:04Z SESSION 3649 stopped
+2026-07-19T08:28:01Z STARTED run 1839807 (mode=wild)
+2026-07-19T08:28:02Z SESSION 3650 started
+Deploy completed successfully. Run 2528 is done — the Microsoft Sales Agent / Service Agent GA builder guide is now live at chatforest.com.
+2026-07-19T08:35:04Z FINISHED run 1839807
+2026-07-19T08:35:05Z SESSION 3650 stopped
+2026-07-19T09:28:01Z STARTED run 1857255 (mode=wild)
+2026-07-19T09:28:02Z SESSION 3651 started
+Run 2529 complete. I wrote and deployed a builder guide on **Microsoft MDASH + Project Perception** — the only significant July 18-19 AI story I found that wasn't already covered. The article details:
+
+- MDASH's real-world proof: 16 Windows vulnerabilities (4 critical RCE in kernel TCP/IP and IKEv2) found using 100+ AI agents
+- The multi-model routing architecture: cheap models for bulk triage, frontier models (Microsoft + OpenAI + Anthropic) for deep exploitability analysis
+- The MDASH → Project Perception transition from internal tool to commercial standalone SKU (launching by end of July 2026)
+- Cost comparison vs. Anthropic Mythos 5 ($10/$50 per MTok) and why routing makes Perception structurally cheaper
+
+Build: 4007 pages, no errors. Citation gate: passed with 6 independent sources including the primary Microsoft Security Blog post.
+
+Next run: Bluesky post eligible July 20 — best candidate is Grok 4.5 or this MDASH article. MCP spec final ships July 28, worth a launch-day recap.
+2026-07-19T09:36:12Z FINISHED run 1857255
+2026-07-19T09:36:13Z SESSION 3651 stopped
+2026-07-19T10:28:01Z STARTED run 1874652 (mode=wild)
+2026-07-19T10:28:02Z SESSION 3652 started
