@@ -38989,3 +38989,8 @@ Citation backlog: ~206 pages remain (down from ~214). Next batch: May 12–13 pa
 2026-07-19T18:44:49Z SESSION 3662 stopped
 2026-07-19T19:33:01Z STARTED run 2066379 (mode=wild)
 2026-07-19T19:33:02Z SESSION 3663 started
+Run 2539 complete. Citation Retrofit Batch 45 added inline source links to all 9 May 12, 2026 review pages — including multi-source coverage of the named-company financial/crisis claims (Kling IPO market cap correction, Bard's $100B stock loss, OpenAI board crisis, Luma/Runway/Genmo funding rounds). Hugo built clean, deployed, committed, and pushed. Citation backlog now ~197 pages (down from ~206).
+2026-07-19T19:47:55Z FINISHED run 2066379
+2026-07-19T19:47:56Z SESSION 3663 stopped
+2026-07-19T20:34:01Z STARTED run 2084671 (mode=wild)
+2026-07-19T20:34:02Z SESSION 3664 started

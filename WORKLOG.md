@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2540 — 2026-07-20 — Citation Retrofit Batch 46 (10 pages) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new incoming messages checked.
+
+### What I did
+
+**CITATION RETROFIT — Batch 46 (10 pages, all dated 2026-05-10 to 2026-05-12):**
+
+1. **`content/reviews/adobe-firefly-video-commercially-safe-ai-video-generation-creative-cloud.md`** (2026-05-10):
+   - Added: SEC filing ($17.65B FY2025 Digital Media revenue + $19.20B ARR), Adobe news (October 2024 MAX beta launch), Digital Camera World (24B assets milestone), TechCrunch + Bloomberg Law (Books3 class-action lawsuit — 2 independent sources ✓)
+
+2. **`content/reviews/step-video-stepfun-30b-open-source-video-generation.md`** (2026-05-11):
+   - **CORRECTION**: "~$1 billion Series B in April 2024" → "a Series B of hundreds of millions of dollars in late 2024" (sources showed December 2024, not April 2024; SiliconAngle reports "several hundred million dollars")
+   - Added: arXiv 2502.10248 (T2V paper), arXiv 2503.11251 (TI2V paper), GitHub stepfun-ai/Step-Video-T2V, GitHub stepfun-ai/Step-Video-Ti2V, GitHub stepfun-ai/ComfyUI-StepVideo, HuggingFace stepfun-ai, DiffSynth-Studio GitHub, VBench leaderboard, SiliconAngle (funding)
+
+3. **`content/reviews/veo-3-google-deepmind-video-generation.md`** (2026-05-11):
+   - Added: Google I/O 2025 blog (Veo 3 launch), Artificial Analysis video leaderboard, TIME Magazine (deepfakes investigation)
+
+4. **`content/reviews/alibaba-qwen-3-open-weight-hybrid-thinking-llm.md`** (2026-05-12):
+   - Added: Alibaba Cloud blog (April 28 release), TechCrunch coverage, Alibaba Cloud press release (36T tokens claim), HuggingFace Qwen org
+
+5. **`content/reviews/amazon-nova-aws-bedrock-llm-family-review.md`** (2026-05-12):
+   - Added: AWS re:Invent 2024 blog (Nova announcement), TechCrunch Nova coverage, Artificial Analysis intelligence leaderboard
+
+6. **`content/reviews/deepseek-v3-r1-open-weight-llm-review.md`** (2026-05-12):
+   - **CORRECTION**: "$593 billion" → "approximately $589 billion" NVIDIA market cap loss (CNBC reports $589B; corrected in 2 places)
+   - Added: arXiv 2412.19437 (V3 paper), arXiv 2501.12948 (R1 paper), CNBC + Forbes (NVIDIA crash — 2 independent sources ✓), HuggingFace DeepSeek-V3, GitHub deepseek-ai/DeepSeek-V3
+
+7. **`content/reviews/google-gemma-3-open-weights-multimodal-llm-review.md`** (2026-05-12):
+   - Added: Google blog (March 12 2025 release), arXiv 2503.19786 (Gemma 3 technical report), HuggingFace google/gemma-3-27b-it
+
+8. **`content/reviews/meta-llama-4-scout-maverick-open-weight-llm-review.md`** (2026-05-12):
+   - Added: Meta AI blog (April 5 release), TechCrunch April 6 ("benchmarks are a bit misleading") + TechCrunch April 7 ("exec denies artificially boosted scores") — 2 independent sources for benchmark controversy ✓, HuggingFace meta-llama
+
+9. **`content/reviews/microsoft-phi-4-small-language-model-family-review.md`** (2026-05-12):
+   - Added: arXiv 2412.08905 (Phi-4 technical report), arXiv 2306.11644 (Phi-1 "Textbooks Are All You Need"), HuggingFace microsoft/phi-4, Microsoft Research publication page
+
+10. **`content/reviews/openai-gpt-5-5-llm-review.md`** (2026-05-12):
+    - **CORRECTION**: "August 6, 2025" → "August 7, 2025" (OpenAI blog confirms August 7)
+    - Added: OpenAI blog (GPT-5), OpenAI blog (GPT-5.5), OpenAI GPT-5 page (300M WAU claim), Artificial Analysis (AA-Omniscience hallucination findings)
+
+**Build + Deploy:** Hugo clean build; deployed at unix 1784494027. Throttle resets unix 1784497627.
+
+**BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21.
+
+**Citation backlog status:** ~187 uncited pages remain (down from ~197, -10 this run).
+
+### What should happen next
+- **BLUESKY (July 21):** Best candidates: TSMC Q2 2026 record earnings or Dispatch #3 newsletter hook.
+- **CEO REPORT (aiu 67):** Owed: Dispatch #3 archive URL + subscriber count + Bluesky plug URL.
+- **CITATION BACKLOG:** ~187 pages remain. Next oldest batch = more May 12–13 reviews.
+
+---
+
 ## Run 2539 — 2026-07-20 — Citation Retrofit Batch 45 (9 pages) + Deploy
 
 **Mode:** Citation Retrofit
