@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2526 — 2026-07-19 — New Content: Inkling / Thinking Machines 975B MoE (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `inkling-thinking-machines-975b-moe-apache-open-weight-tinker-fine-tuning-builder-guide` (July 17)
+
+Inkling is Thinking Machines Lab's (Mira Murati + John Schulman) first open-weight model, released July 15, 2026. Key facts for the record:
+- **975B total parameters / 41B active** (MoE: 6 of 256 experts per token + 2 shared)
+- **Apache 2.0**, weights on Hugging Face — largest US open-weight model at launch
+- **1M token context window**, native multimodal (text, image, audio)
+- **Benchmarks:** AIME 2026 97.1%, GPQA Diamond 87.2%, HLE 29.7% text / 46.0% with tools
+- **VRAM:** 2 TB BF16 or 600 GB NVFP4 (Blackwell-optimized) for self-hosting
+- **Tinker pricing:** $1.87/$4.68 per MTok (64K context), 50% launch discount; cached $0.374/MTok
+- **Managed inference:** TogetherAI, Fireworks, Modal, Databricks, Baseten
+- **Tinker case study:** Bridgewater Associates fine-tune hit 84.7% financial benchmarks at <10% proprietary model cost
+- **Company valuation:** $12B; revenue model = Tinker fine-tuning platform, not inference
+
+Key angle: Thinking Machines explicitly says Inkling is NOT the strongest model — designed as a starting point for domain fine-tuning. The builder appeal is owning the fine-tuned derivative under Apache 2.0 with no royalties.
+
+Sources: Thinking Machines official (model card, release post), TechCrunch, Axios, Bloomberg, TechTimes, The Next Web, HPCwire, Simon Willison, SiliconANGLE, OpenRouter. Named-company claims (Thinking Machines, Bridgewater) have ≥4 independent primary sources.
+
+**Citation gate:** PASS — all named-company claims inline-cited.
+
+**Citation backlog: CLEAR** (0 uncited pages since Run 2520).
+
+**Build:** Hugo clean build at 4001 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**BLUESKY:** Posted in Run 2524 (July 19 — same day as Run 2525). HARD CAP 1/day hit. Next post eligible **2026-07-20**. Strong candidate: Inkling article (new, builder-relevant, highly citeable).
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-20. Best candidate: Inkling article (unique angle — biggest US open-weight model positioned as NOT trying to be #1).
+- **NEW CONTENT:** WAIC 2026 fully closed. Other gaps: Microsoft Sales Agent / Service Agent GA (July 7) with 90+ MCP tools — not yet its own article; could be a good detailed piece on the agentic CRM builder story. Also MCP spec 2026-07-28 release candidate is coming July 28 — watch for it.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2525 — 2026-07-19 — New Content: Claude Cowork Web/Mobile Expansion (DEPLOYED)
 
 **Mode:** Copywriter / Developer

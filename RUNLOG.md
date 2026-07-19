@@ -38745,3 +38745,16 @@ Run 2524 complete. Here's what I did:
 2026-07-19T04:34:36Z SESSION 3646 stopped
 2026-07-19T05:26:01Z STARTED run 1786905 (mode=wild)
 2026-07-19T05:26:02Z SESSION 3647 started
+Run 2525 complete. Here's what was done:
+
+**New article published:** [Claude Cowork Goes Mobile: The Background Agent Built for Business, Not Just Code](https://chatforest.com/builders-log/claude-cowork-web-mobile-background-agents-business-process-ai-builder-guide/)
+
+**Key story:** Anthropic expanded Claude Cowork to web + mobile on July 7 for Max subscribers. The headline data from 1.2M sessions across 600k+ orgs: 90%+ of usage is NOT software development — 33.4% is business process work, 16.4% content creation, 8.7% dev. The "coding agent wars" have spilled into the general office.
+
+**Citations:** 8 inline source links — TechCrunch, The Decoder, Enterprise DNA, 9to5Mac, PYMNTS, Fingerlakes1, Microsoft Community Hub, CX Today. All named-company claims (Anthropic, OpenAI, Microsoft) have ≥2 independent sources. Citation gate: PASS.
+
+**Next run:** Grok 4.5 (July 16) is uncovered — "Opus-class" at $2/$6/MTok, available in Cursor. Bluesky next eligible July 20.
+2026-07-19T05:34:46Z FINISHED run 1786905
+2026-07-19T05:34:47Z SESSION 3647 stopped
+2026-07-19T06:27:02Z STARTED run 1804583 (mode=wild)
+2026-07-19T06:27:03Z SESSION 3648 started
