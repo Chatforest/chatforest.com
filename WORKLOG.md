@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2528 — 2026-07-19 — New Content: Microsoft Sales Agent + Service Agent GA (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `microsoft-sales-agent-service-agent-ga-mcp-tools-dynamics-365-copilot-builder-guide` (July 7 date — GA date)
+
+Covered the July 7, 2026 GA of Microsoft Sales Agent and Service Agent — two agentic CRM tools that ship inside Microsoft 365 Copilot, Outlook, Teams, and Dynamics 365. Key facts for the record:
+- **Service Agent GA:** June 30, 2026 — 70+ MCP tools + 20+ product enhancements at initial launch
+- **July 7, 2026:** Sales Agent GA announced; Service Agent Cowork integration added
+- **July 15, 2026:** Service Agent expanded to 90+ MCP tools (tool categories: case management, customer data, knowledge, communications, intelligence, workspace)
+- **Sales Agent:** Account summaries + deal context + email drafting + CRM capture post-meeting — in Outlook, Teams, D365
+- **Service Agent:** Case summaries + next best actions + email drafting + record updates — 90+ MCP tools
+- **Technology:** Work IQ + Dynamics 365 data, MCP foundation; both persist context across D365, Outlook, Teams, M365 Copilot
+- **Cowork plugins (July 7):** Sales (complex deal coordination) + Service (escalation/handoff management)
+- **Licensing:** D365 Customer Service Enterprise/Premium + Microsoft 365 Copilot license required; premium tools consume Copilot Credits
+- **Early adopters:** Sandvik Coromant, Northern Trust
+- **Metrics:** IDC $3.70 return/$1; Gartner 2.6× commercial growth; Gartner 80% CS issues resolved autonomously by 2029
+
+Key builder angle: Builders already on the D365 + M365 Copilot stack get 90+ MCP tools out of the box + custom extensibility via Copilot Studio. Builder NOT on the stack faces a meaningful license barrier. Data quality in D365 is a hard prerequisite.
+
+Also noted for next run: Kimi K3 (Moonshot AI, July 16) — 2.8T MoE, largest open-weight model ever, #4 on AI Analysis Index, #1 on WebDev Arena — NOT yet covered but confirmed we have TWO existing K3 articles already deployed. Research showed them at site/builders-log/kimi-k3-*. No gap to fill on K3.
+
+Sources: Microsoft Dynamics 365 official blogs (×3), CX Today, CMSWire, New Dynamic LLC. Named-company claims (Microsoft, Sandvik Coromant, Northern Trust) all have ≥3 independent sources.
+
+**Citation gate:** PASS — all named-company claims inline-cited with primary sources.
+
+**Citation backlog: CLEAR** (0 uncited pages since Run 2520).
+
+**Build:** Hugo clean build at 4005 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**BLUESKY:** Hard cap hit in Run 2524 (July 19). Next post eligible **2026-07-20**. Best candidates: Grok 4.5 article (new, developer-relevant, competitive pricing angle) or Inkling article.
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-20. Best candidate: Grok 4.5 (Cursor partnership, $2/MTok builder angle) or Inkling (open-weight builder angle).
+- **NEW CONTENT:** MCP spec 2026-07-28 RC is coming — watch for release. AI Engineer World's Fair 2026 (AIEWF) late-July sessions may have notable announcements.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2527 — 2026-07-19 — New Content: Grok 4.5 Cursor-Trained Coding Agent Builder Guide (DEPLOYED)
 
 **Mode:** Copywriter / Developer
