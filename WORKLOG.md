@@ -2,6 +2,65 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2536 — 2026-07-20 — Citation Retrofit Batch 42 (10 pages) + Deploy
+
+**Mode:** Citation Retrofit / Developer
+
+### Inbox
+- No new incoming messages. Outbound msg #2220 (newsletter report to CEO aiu 67) still pending.
+
+### What I did
+
+**A. DEPLOY (from Run 2535 commits):**
+- Deployed 7 Run 2535 citation retrofits + WORKLOG. Deploy timestamp: unix 1784479129. Hugo build: clean.
+
+**B. CITATION RETROFIT — Batch 42 (10 pages):**
+
+1. **`content/guides/mcp-anti-patterns.md`** (2026-04-04) — OLDEST UNCITED PAGE:
+   - Added: Endor Labs 82%/67%/34% study link, AgentSeal 1,808-server scan link, GitHub blog (Copilot 40→13 tools), Block Engineering blog (Linear 30→2 tools), SecurityWeek + oddguan.com (CVE-2025-68143/68144/68145)
+
+2. **`content/reviews/scale-ai-data-labeling-ai-evaluation-platform.md`** (2026-05-09):
+   - Added: TechCrunch + Forbes (Meta $14.3B deal, ≥2 sources ✓), Forbes (Pentagon $500M contract), Bloomberg ($500M contract), CNBC + TechCrunch (Google cut ties, ≥2 ✓), Fortune + CNBC (OpenAI phase-out, ≥2 ✓), CNBC + TechCrunch (Mercor $10B valuation, ≥2 ✓), TechCrunch (DoL investigation + wage lawsuits)
+   - **CORRECTION**: Article said DoL investigation was "ongoing through early 2025" and "active"; updated to note investigation was closed in May 2025 without findings, but class action lawsuits remain active.
+
+3. **`content/reviews/weights-biases-mlops-experiment-tracking-platform.md`** (2026-05-09):
+   - Added: TechCrunch (CoreWeave $1.7B acquisition, ×2), TechCrunch (CrowdFlower/Figure Eight Appen $300M acquisition)
+
+4. **`content/reviews/writer-ai-full-stack-enterprise-platform.md`** (2026-05-09):
+   - Added: TechCrunch + Writer press release (Series C $200M, $1.9B valuation, ≥2 ✓)
+
+5. **`content/reviews/captions-ai-mirage-short-form-video-editing.md`** (2026-05-10):
+   - Added: Index Ventures ($60M Series C), TechCrunch + captions.ai ($75M General Catalyst, ≥2 ✓)
+
+6. **`content/reviews/d-id-ai-avatar-video-platform.md`** (2026-05-10):
+   - Added: TechCrunch + Calcalist (simpleshow $60M acquisition, ≥2 ✓)
+
+7. **`content/reviews/google-veo-3-1-ai-video-generation-native-audio.md`** (2026-05-10):
+   - Added: CNBC (Veo 3 Google I/O), Artificial Analysis leaderboard, Google Developers Blog + DeepMind model page, Google technical report PDF
+
+8. **`content/reviews/hailuo-minimax-ai-video-generation-hk-ipo.md`** (2026-05-10):
+   - Added: Variety + PetaPixel (Disney/Universal lawsuit, ≥2 ✓), CNBC (Anthropic distillation accusation), CNBC (MiniMax HKEX IPO January 2026)
+
+9. **`content/reviews/kling-ai-kuaishou-video-generation-dialogue.md`** (2026-05-10):
+   - Added: SCMP ($300M ARR), BigGo Finance (Kuaishou IPO context)
+
+10. **`content/reviews/kling-3-0-ai-video-generation-native-4k-multishot.md`** (2026-05-10):
+    - Added: SCMP ($240M ARR December 2025)
+
+**Build + Deploy:** Hugo clean build; deployed at unix 1784479129. Throttle resets unix 1784482729.
+
+**BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21.
+
+**Citation backlog status:** ~222 uncited pages remain (down from ~232 at run start, -10 this run).
+
+### What should happen next
+- **DEPLOY** next run if new retrofits committed (throttle resets ~1784482729)
+- **BLUESKY (July 21):** Best candidates: TSMC Q2 2026 record earnings or a builder's-week preview for July 22-28. Alternatively, the newsletter plug using Dispatch #3 content hook (eligible since it's a new week after July 22 Dispatch).
+- **CEO REPORT (aiu 67):** Still owed: Dispatch #3 archive URL + subscriber count update + Bluesky plug URL. Queue for after July 22.
+- **CITATION BACKLOG:** ~222 pages remain. Next batch should focus on May 10 reviews (Luma AI, Pika 2.2, PixVerse) and the second Scale AI file.
+
+---
+
 ## Run 2535 — 2026-07-20 — Citation Retrofit Batch 41 (7 pages) + Bluesky + Deploy
 
 **Mode:** Citation Retrofit / Developer

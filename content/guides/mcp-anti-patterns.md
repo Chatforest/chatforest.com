@@ -7,7 +7,7 @@ card_description: "82% of MCP servers have filesystem vulnerabilities. Tool bloa
 last_refreshed: 2026-04-04
 ---
 
-MCP servers are everywhere. Every week, new ones launch for databases, cloud platforms, SaaS tools, and developer infrastructure. But quantity doesn't mean quality. An Endor Labs study of 2,614 MCP implementations found that 82% use filesystem operations vulnerable to path traversal, 67% are susceptible to code injection, and 34% are prone to command injection. AgentSeal's scan of 1,808 servers found 66% had at least one security finding.
+MCP servers are everywhere. Every week, new ones launch for databases, cloud platforms, SaaS tools, and developer infrastructure. But quantity doesn't mean quality. An [Endor Labs study of 2,614 MCP implementations](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) found that 82% use filesystem operations vulnerable to path traversal, 67% are susceptible to code injection, and 34% are prone to command injection. [AgentSeal's scan of 1,808 servers](https://agentseal.org/blog/mcp-server-security-findings) found 66% had at least one security finding.
 
 Many of these problems come from the same recurring mistakes. This guide covers the 12 anti-patterns we see most often — in tool design, security, architecture, and operations — with concrete fixes for each.
 
@@ -18,8 +18,8 @@ This is the single most common MCP design mistake. Developers take an existing R
 **Why it's a problem:**
 
 - Benchmarks show tool selection accuracy drops logarithmically as tool count increases
-- GitHub Copilot cut from 40 tools to 13 and saw measurable improvement
-- Block rebuilt its Linear MCP server three times, ultimately going from 30+ tools to just 2
+- [GitHub Copilot cut from 40 tools to 13](https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/) and saw 2–5 percentage point benchmark improvement plus 400ms latency reduction
+- [Block rebuilt its Linear MCP server three times](https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers), ultimately going from 30+ tools to just 2
 - Every additional tool description competes for space in the context window
 
 **What to do instead:**
@@ -43,7 +43,7 @@ When tools have vague descriptions, agents skip them entirely and attempt workar
 
 ## Anti-Pattern 3: No Input Validation
 
-The Anthropic Git MCP server — the official reference implementation — had three CVEs (CVE-2025-68143, CVE-2025-68144, CVE-2025-68145) from constructing shell commands with unsanitized user input. If the official implementation gets this wrong, your server probably does too.
+The Anthropic Git MCP server — the official reference implementation — had [three CVEs (CVE-2025-68143, CVE-2025-68144, CVE-2025-68145)](https://www.securityweek.com/anthropic-mcp-server-flaws-lead-to-code-execution-data-exposure/) from constructing shell commands with unsanitized user input ([detailed analysis](https://oddguan.com/blog/anthropic-mcp-server-git-credential-exfiltration-capability-laundering-cve-2025-68143/)). If the official implementation gets this wrong, your server probably does too.
 
 **The pattern that causes this:**
 
@@ -66,7 +66,7 @@ result = subprocess.run(["git", "log", "--oneline", branch_name])
 
 Teams frequently grant MCP servers broad filesystem access during development — "let me just point it at `/` so I can test" — and then ship that configuration to production. This turns every prompt injection vulnerability into a full filesystem traversal.
 
-**The numbers:** 82% of MCP implementations use filesystem operations vulnerable to path traversal (Endor Labs, 2026).
+**The numbers:** [82% of MCP implementations use filesystem operations vulnerable to path traversal](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) (Endor Labs, 2026).
 
 **What to do instead:**
 

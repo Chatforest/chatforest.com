@@ -33,10 +33,10 @@ They launched Captions as an iOS app focused on one problem: auto-captioning sho
 - **2021**: Seed funding — initial product development
 - **2022**: Series A — Index Ventures led; product-market fit confirmed
 - **2023**: Series B — expanded editing feature set
-- **July 2024**: **$60M Series C** at a **$500M valuation**, led by Index Ventures; users generating 3M+ videos/month
+- **July 2024**: [**$60M Series C** at a **$500M valuation**](https://www.indexventures.com/perspectives/captions-raises-60m-in-series-c-funding-to-invest-in-generative-video-research/), led by Index Ventures; users generating 3M+ videos/month
 - **September 2025**: Company rebrands from Captions Inc. to **Mirage**, signaling expanded AI research mission
 - **January 2025**: Switch to freemium model to compete directly with CapCut and Meta's Edits
-- **March 2026**: **$75M growth financing** from General Catalyst's Customer Value Fund, bringing total raised to **$175M**
+- **March 2026**: [**$75M growth financing** from General Catalyst's Customer Value Fund](https://techcrunch.com/2026/03/24/mirage-raises-75m-to-continue-building-models-for-its-ai-video-editing-app-captions/), bringing total raised to **$175M** ([official announcement](https://captions.ai/blog/announcing-mirages-usd75m-growth-financing-with-general-catalyst))
 
 CEO Gaurav Misra described the rebrand rationale to TechCrunch in September 2025: "The new identity, Mirage, reflects our expanded vision and commitment to redefining the video category, starting with short-form video, through frontier AI research and models."
 

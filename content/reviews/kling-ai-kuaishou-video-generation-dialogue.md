@@ -12,7 +12,7 @@ In the spring of 2024, the global AI video conversation was almost entirely Amer
 
 Then, on June 6, 2024, a Beijing-based company called **Kuaishou Technology** launched something nobody outside China had expected: a video generation model that could produce **1080p clips up to two minutes long**, running from natural language prompts, available to the public on day one of its global beta. The model was called **Kling**.
 
-Within 10 months of launch, Kling had reached **$100 million in annualized revenue run rate**. By December 2025 — 19 months in — that figure had reached **$240 million**. By early 2026, it had surpassed **$300 million**. No AI video platform had commercialized this fast.
+Within 10 months of launch, Kling had reached **$100 million in annualized revenue run rate**. By December 2025 — 19 months in — that figure had reached **$240 million**. By early 2026, it had [surpassed **$300 million**](https://www.scmp.com/tech/article/3355027/kuaishou-beats-estimates-kling-ai-video-generators-revenue-jumps-300). No AI video platform had commercialized this fast.
 
 The February 2026 release of **Kling 3.0 Omni** raised the stakes further: native audio synthesis in six languages with regional accents, phoneme-level lip-sync for multi-character dialogue, 4K output, up to 15-second clips, and Chain-of-Thought reasoning for scene coherence. Independent benchmarks briefly ranked it #1 among all AI video models by ELO score.
 
@@ -26,7 +26,7 @@ This is a research-based review of what Kling AI has built, where it leads the f
 
 Kling is not a standalone startup. Understanding it requires understanding **Kuaishou Technology** (快手科技), the publicly traded company that built it.
 
-Kuaishou was founded in 2011 by **Su Hua** and **Cheng Yixiao** as a GIF-sharing app, before pivoting to short-form video in 2013. It became China's second-largest short-video platform behind ByteDance's Douyin (TikTok). Kuaishou went public on the Hong Kong Stock Exchange in February 2021 in one of the largest tech IPOs of that year, raising roughly **$6.2 billion**.
+Kuaishou was founded in 2011 by **Su Hua** and **Cheng Yixiao** as a GIF-sharing app, before pivoting to short-form video in 2013. It became China's second-largest short-video platform behind ByteDance's Douyin (TikTok). [Kuaishou went public on the Hong Kong Stock Exchange in February 2021](https://finance.biggo.com/news/-QUtKJ0BvbjfYyetfKnT) in one of the largest tech IPOs of that year, raising roughly **$6.2 billion**.
 
 The company has over **400 million monthly active users** on its core platform in China, with an additional footprint through international apps including Kwai. Revenue comes primarily from advertising and e-commerce on the social platform, supplemented by live-streaming and virtual gifts. This existing infrastructure gives Kling something few AI video startups have: an immediate distribution channel into hundreds of millions of users, plus the on-platform video generation data from years of creator activity.
 

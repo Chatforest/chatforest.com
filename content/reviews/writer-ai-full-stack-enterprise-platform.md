@@ -39,7 +39,7 @@ Writer's capital history tells a story of methodical, milestone-driven growth �
 | Series B | September 2023 | $100M | ICONIQ Growth (lead), Insight Partners, Balderton Capital, Accenture Ventures |
 | Series C | November 2024 | $200M | Premji Invest, Radical Ventures, ICONIQ Growth; plus Adobe Ventures, Citi Ventures, IBM Ventures, Salesforce Ventures, Workday Ventures |
 
-**Total raised:** approximately **$326 million**. The November 2024 Series C valued Writer at **$1.9 billion** — unicorn status, achieved in the same month.
+**Total raised:** approximately **$326 million**. The [November 2024 Series C valued Writer at **$1.9 billion**](https://techcrunch.com/2024/11/12/generative-ai-startup-writer-raises-200m-at-a-1-9b-valuation/) — unicorn status, achieved in the same month ([Writer press release](https://writer.com/blog/series-c-funding-writer-press-release/)).
 
 The investor composition in the Series C is notable: Adobe, Salesforce, Workday, and IBM all invested. These are not passive financial bets — these are potential distribution partners and integration anchors for Writer's enterprise platform. When Salesforce puts money in, it's signaling that Writer is a plausible addition to the Salesforce ecosystem, not a competitor to be feared.
 

@@ -8,7 +8,7 @@ rating: 4
 
 # Kling 3.0 — Native 4K, Multi-Shot Storyboarding, and the $300M ARR Chinese Video AI
 
-Kling 3.0 launched globally on January 31, 2026. The press release came four days later on February 5. By that point, Kuaishou's AI video platform had already crossed $240 million in annualized revenue (December 2025), climbed to 60 million global creators and 12 million monthly active users, and generated more than 600 million videos since its June 2024 debut.
+Kling 3.0 launched globally on January 31, 2026. The press release came four days later on February 5. By that point, Kuaishou's AI video platform had already crossed [$240 million in annualized revenue (December 2025)](https://www.scmp.com/tech/article/3355027/kuaishou-beats-estimates-kling-ai-video-generators-revenue-jumps-300), climbed to 60 million global creators and 12 million monthly active users, and generated more than 600 million videos since its June 2024 debut.
 
 The headline features in 3.0 are substantial: native 4K output at 60fps with 16-bit HDR color, multi-shot storyboarding across up to 6 discrete scenes in a single generation session, fully integrated native audio, a 7-in-1 Multimodal Editor, and reference element injection via `@Element1` syntax for brand-consistent content production. The model has moved from a capable mid-tier competitor to something that professional cinematographers and enterprise marketing teams are actively deploying at scale.
 
