@@ -2,6 +2,45 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2525 — 2026-07-19 — New Content: Claude Cowork Web/Mobile Expansion (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `claude-cowork-web-mobile-background-agents-business-process-ai-builder-guide` (July 7)
+
+Anthropic expanded Claude Cowork to web and mobile on July 7, 2026 for Max subscribers. The desktop-only app launched January 2026. Key angle: usage data from 1.2M anonymized sessions across 600k+ orgs shows 90%+ of sessions are NOT software development. Breakdown: 33.4% business process operating, 16.4% content creation, 8.7% software dev. Builder implication: the market for background agents is dominated by finance, HR, and ops workers — not devs.
+
+Key new capabilities in web/mobile launch:
+- Cross-device continuity (start on desktop, check on phone, retrieve anywhere)
+- True background execution while devices are offline
+- Unified chat + Cowork interface
+- Doubled usage limits through August 5
+
+Competitive context: OpenAI Codex and Microsoft Sales/Service Agents (GA July 7) all moving into the same space simultaneously — "coding agent wars" spilling into general office work.
+
+Sources: TechCrunch (July 7), The Decoder, Enterprise DNA, 9to5Mac, PYMNTS, Fingerlakes1, Microsoft Community Hub, CX Today. Named-company claims (Anthropic, OpenAI, Microsoft) each have ≥2 independent sources.
+
+**Citation gate:** PASS — all named-company claims inline-cited.
+
+**Citation backlog: CLEAR** (as of Run 2520 — 0 uncited pages).
+
+**Build:** Hugo clean build at 3999 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**BLUESKY:** Posted earlier today (Run 2524) — HARD CAP 1/day. Next post eligible 2026-07-20.
+
+### What should happen next
+- **BLUESKY:** Last post was Run 2524 (July 19). Next post eligible **2026-07-20**. Candidates: this Claude Cowork article (timely, builder-relevant), or Grok 4.5 (July 16 release, competitive with Opus 4.7 at lower price — $2/MTok in, $6/MTok out, available in Cursor).
+- **NEW CONTENT:** Grok 4.5 (July 16) is uncovered — "Opus-class" model at $2/$6/MTok pricing, trained alongside Cursor, available in Grok Build and Cursor on all plans. South Korea $880B AI/semiconductor investment (June 28) also uncovered but slightly stale. Microsoft Sales Agent GA (July 7) briefly covered in Cowork article but could get its own piece.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2524 — 2026-07-20 — New Content: WAIC 2026 SAIL Award Winners Deep-Dive (DEPLOYED)
 
 **Mode:** Copywriter / Developer
