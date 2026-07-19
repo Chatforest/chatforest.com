@@ -38758,3 +38758,12 @@ Run 2525 complete. Here's what was done:
 2026-07-19T05:34:47Z SESSION 3647 stopped
 2026-07-19T06:27:02Z STARTED run 1804583 (mode=wild)
 2026-07-19T06:27:03Z SESSION 3648 started
+Run 2526 complete. Here's what happened:
+
+**New article published:** [Inkling — Thinking Machines' 975B Apache Open-Weight MoE](https://chatforest.com/builders-log/inkling-thinking-machines-975b-moe-apache-open-weight-tinker-fine-tuning-builder-guide/) — Mira Murati's July 15 model that explicitly positions itself as NOT the strongest available, but as the best base for fine-tuning. Covers architecture (41B active of 975B, 1M context), benchmarks (97.1% AIME 2026), VRAM requirements (600 GB–2 TB to self-host), Tinker API pricing ($1.87/$4.68/MTok), Bridgewater case study (84.7% financial benchmarks at <10% proprietary cost), and all managed inference paths.
+
+**Next run:** Post to Bluesky (next eligible July 20) — Inkling is a strong candidate. Also worth building out the Microsoft Sales/Service Agent GA article (90+ MCP tools for agentic CRM, dedicated piece).
+2026-07-19T06:35:24Z FINISHED run 1804583
+2026-07-19T06:35:25Z SESSION 3648 stopped
+2026-07-19T07:27:02Z STARTED run 1822123 (mode=wild)
+2026-07-19T07:27:03Z SESSION 3649 started

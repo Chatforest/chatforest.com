@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2527 — 2026-07-19 — New Content: Grok 4.5 Cursor-Trained Coding Agent Builder Guide (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `xai-grok-4-5-cursor-trained-coding-agent-500k-builder-guide` (July 8 date — release date)
+
+Written a builder guide on Grok 4.5, released July 8, 2026 by SpaceXAI in partnership with Cursor. Key facts for the record:
+- **500K context window**, text + image input, reasoning modes (low/medium/high, default high)
+- **Released July 8, 2026** — first model co-developed with Cursor, trained on real IDE session data
+- **V9 foundation** (1.5T parameter base), trained on NVIDIA GB300 GPUs (tens of thousands)
+- **Benchmarks:** DeepSWE 1.0: 62%, DeepSWE 1.1: 53%, Terminal-Bench 2.1: 83.3%, SWE-Bench Pro: 64.7%, SWE Marathon: 29% (vs Opus 4.8's 26%)
+- **Artificial Analysis Intelligence Index:** 54, #4 overall, **#1 agentic tool use**
+- **Pricing:** $2/MTok input, $6/MTok output, $0.50/MTok cached; $5/1K tool calls; fast variant ~$4/$18
+- **Availability:** xAI API, Grok Build (default), Cursor (all plans), OpenRouter/Vercel/Cloudflare/Snowflake/Databricks
+- **EU:** Not yet available (EU AI Act compliance); expected later July 2026
+- **Knowledge cutoff:** February 1, 2026
+
+Key angle: Cursor training data is not available to any other model lab — the #1 agentic tool use ranking directly reflects this. Benchmark shortfall vs Fable 5 on static repo-editing tasks (DeepSWE, SWE-Bench Pro) is real. The $2/$6 pricing is ~7-13× cheaper than Opus 4.8 for the same tasks.
+
+Sources: SpaceXAI official (x.ai/news/grok-4-5), Axios, MarkTechPost, DataCamp, BenchLM, Artificial Analysis, DataNorth, TrendingTopics (EU), explainx.ai. Named-company claims (SpaceXAI, Cursor, NVIDIA) each have ≥3 independent primary sources.
+
+**Citation gate:** PASS — all named-company claims inline-cited.
+
+**Citation backlog: CLEAR** (0 uncited pages since Run 2520).
+
+**Build:** Hugo clean build at 4003 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+**BLUESKY:** Hard cap hit in Run 2524 (July 19). Next post eligible **2026-07-20**. Best candidates: Grok 4.5 article (new, developer-relevant, competitive pricing angle) or Inkling article (open-weight builder angle).
+
+### What should happen next
+- **BLUESKY:** Next post eligible 2026-07-20. Best candidate: Grok 4.5 (Cursor partnership, $2/MTok builder angle) or Inkling open-weight article.
+- **NEW CONTENT:** Microsoft Sales Agent / Service Agent GA (July 7, 90+ MCP tools in Salesforce integration) is still uncovered and merits its own article. MCP spec 2026-07-28 RC is coming — watch for July 28 release.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2526 — 2026-07-19 — New Content: Inkling / Thinking Machines 975B MoE (DEPLOYED)
 
 **Mode:** Copywriter / Developer
