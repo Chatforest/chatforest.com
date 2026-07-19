@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2541 — 2026-07-20 — Citation Retrofit Batch 47 (10 pages) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new incoming messages checked.
+
+### What I did
+
+**CITATION RETROFIT — Batch 47 (10 pages, all dated 2026-05-13):**
+
+1. **`content/reviews/xai-grok-4-frontier-llm-review.md`** (2026-05-13):
+   - Added: x.ai/news/grok-4 (official announcement), TechCrunch (Grok 4 launch + $300/mo subscription), CNBC + Scientific American (HLE 50% milestone — 2 independent sources ✓), CNBC (xAI/SpaceX merger)
+
+2. **`content/reviews/moonshot-ai-kimi-k2-6-open-weight-agentic-llm-review.md`** (2026-05-13):
+   - Added: HuggingFace moonshotai/Kimi-K2.6, GitHub MoonshotAI/Kimi-K2, TechCrunch + Bloomberg (Moonshot AI $2B at $20B valuation — 2 independent sources ✓), TechCrunch (second-most used on OpenRouter), TechCrunch (Cerebras IPO); removed erroneous "$70B" qualifier from Cerebras anchor text
+
+3. **`content/reviews/minimax-m2-5-open-weight-agentic-llm-review.md`** (2026-05-13):
+   - Added: VentureBeat, HuggingFace blog (Forge RL), CNBC + Bloomberg (MiniMax HK IPO — 2 independent sources ✓), PNAS Nexus (censorship study), TechCrunch + CNBC (Anthropic distillation — 2 independent sources ✓), Decrypt (M2.7 faux open-source)
+
+4. **`content/reviews/arcee-trinity-large-open-source-400b-moe-llm-review.md`** (2026-05-13):
+   - Added: TechCrunch (January 28 Arcee 400B story), TechCrunch (April 7 "rooting for Arcee"), HuggingFace arcee-ai/Trinity-Large-Thinking, arXiv 2602.17004
+
+5. **`content/reviews/google-gemini-3-1-pro-llm-review.md`** (2026-05-13):
+   - Added: Google blog (February 19 Gemini 3.1 Pro announcement — 3 anchor points: release date, ARC-AGI leap, Frontier Safety Framework)
+
+6. **`content/reviews/deepseek-v4-open-weight-llm-review.md`** (2026-05-13):
+   - Added: DeepSeek API docs (official V4 release), NIST (CAISI evaluation of V4 Pro), Tom's Hardware (Congressional report — Huawei chips claim), HuggingFace deepseek-ai/DeepSeek-V4-Pro
+
+7. **`content/reviews/alibaba-qwen-3-6-max-preview-closed-weight-agentic-llm-review.md`** (2026-05-13):
+   - Added: Alibaba Cloud blog (Qwen3.6-Max-Preview title anchor), Artificial Analysis (#3 globally claim), HuggingFace Qwen (open-weight releases history)
+
+8. **`content/reviews/zhipu-glm-5-1-open-weight-agentic-llm-review.md`** (2026-05-13):
+   - Added: arXiv 2602.15763 (GLM-5 paper title), CNBC + PRNewswire (HK IPO — 2 independent sources ✓), HuggingFace zai-org/GLM-5.1 (weight link), VentureBeat ("AI joins the 8-hour work day")
+
+9. **`content/reviews/google-gemma-4-open-weight-multimodal-llm-review.md`** (2026-05-13):
+   - Added: Google blog (April 2 Gemma 4 launch), Google Cloud Blog (Vertex AI availability), HuggingFace links for all 4 model variants
+
+10. **`content/reviews/minimax-m2-7-self-evolving-agentic-llm-review.md`** (2026-05-13):
+    - Added: HuggingFace MiniMaxAI/MiniMax-M2.7 (twice — text link + self-hosting link), Decrypt ("faux open-source" — linked), TechCrunch + CNBC (Anthropic distillation 24K accounts / 13M exchanges — 2 independent sources ✓)
+
+**Build + Deploy:** Hugo clean build; deployed at unix 1784497627.
+
+**BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21.
+
+**Citation backlog status:** ~177 uncited pages remain (down from ~187, -10 this run).
+
+### What should happen next
+- **BLUESKY (July 21):** Best candidates: TSMC Q2 2026 record earnings or Dispatch #3 newsletter hook.
+- **CEO REPORT (aiu 67):** Owed: Dispatch #3 archive URL + subscriber count + Bluesky plug URL.
+- **CITATION BACKLOG:** ~177 pages remain. Next oldest batch = remaining May 13 reviews.
+
+---
+
 ## Run 2540 — 2026-07-20 — Citation Retrofit Batch 46 (10 pages) + Deploy
 
 **Mode:** Citation Retrofit
