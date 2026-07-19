@@ -10,7 +10,7 @@ rating: 4
 
 On December 3, 2024, Tencent released the weights of HunyuanVideo to the public. Not a demo. Not a Gradio space. The weights — all 13 billion parameters of them — downloadable, running locally on anyone's hardware who could fit them.
 
-The benchmarks were immediate validation. HunyuanVideo topped VBench 1.0 at launch, outperforming every prior open-source video model and matching or exceeding Runway Gen-3, Luma 1.6, and contemporaneous Chinese commercial systems. Within weeks, 12,000 GitHub stars. ComfyUI integrations emerged from the community in days. LoRA training pipelines arrived within months.
+The benchmarks were immediate validation. [HunyuanVideo topped VBench 1.0 at launch](https://github.com/Tencent-Hunyuan/HunyuanVideo), outperforming every prior open-source video model and matching or exceeding Runway Gen-3, Luma 1.6, and contemporaneous Chinese commercial systems. Within weeks, 12,000 GitHub stars. ComfyUI integrations emerged from the community in days. LoRA training pipelines arrived within months.
 
 Eleven months later, in November 2025, Tencent released HunyuanVideo-1.5 — a rearchitected 8.3B-parameter model with SSTA (Selective and Sliding Tile Attention), 1080p super-resolution output, and a 14GB VRAM requirement that put it within reach of consumer RTX 4090 hardware. The 1.5 model generates up to 10 seconds of video at 24fps. The step-distilled variant produces 480p I2V content in approximately 75 seconds on a single 4090.
 
@@ -44,7 +44,7 @@ Eight major releases in seventeen months:
 
 ## Architecture: Dual-Stream to Single-Stream Full Attention
 
-The HunyuanVideo architecture paper ("A Systematic Framework for Large Video Generation Models," arXiv 2412.03603) describes a novel hybrid that Tencent calls "dual-stream to single-stream."
+The [HunyuanVideo architecture paper ("A Systematic Framework for Large Video Generation Models," arXiv 2412.03603)](https://arxiv.org/abs/2412.03603) describes a novel hybrid that Tencent calls "dual-stream to single-stream."
 
 **Phase 1 — Dual-Stream:**
 Video tokens and text tokens are processed independently through a series of Transformer blocks. Each modality develops its own representations without direct cross-attention interference.
@@ -75,7 +75,7 @@ HunyuanVideo encodes video using a 3D Causal VAE with CausalConv3D layers. Compr
 
 ## HunyuanVideo-1.5: Democratizing the Architecture
 
-November 21, 2025. HunyuanVideo-1.5 drops to **8.3 billion parameters** and introduces **SSTA (Selective and Sliding Tile Attention)**, a new attention mechanism that makes consumer GPU deployment feasible.
+November 21, 2025. [HunyuanVideo-1.5](https://arxiv.org/abs/2511.18870) drops to **8.3 billion parameters** and introduces **SSTA (Selective and Sliding Tile Attention)**, a new attention mechanism that makes consumer GPU deployment feasible.
 
 **SSTA:**
 SSTA prunes redundant spatiotemporal key/value blocks from the full attention computation. The insight: not every spatial and temporal position pair contributes meaningfully to the output. SSTA selectively prunes low-contribution pairs while preserving the highest-impact attention relationships. Result: **1.87× speedup** vs. FlashAttention-3 for 10-second 720p synthesis, with no perceptible quality loss in Tencent's evaluations.
@@ -146,7 +146,7 @@ HunyuanVideo is definitively mid-tier on human preference rankings as of May 202
 
 ## License: The EU/UK/South Korea Exclusion
 
-The **Tencent Hunyuan Community License Agreement** (custom, released December 3, 2024) governs both the original model and HunyuanVideo-1.5. Key terms:
+The **[Tencent Hunyuan Community License Agreement](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/main/LICENSE.txt)** (custom, released December 3, 2024) governs both the original model and HunyuanVideo-1.5. Key terms:
 
 **Commercial use permitted** — for most applications and jurisdictions.
 
@@ -198,8 +198,8 @@ The dominant use case for community power users. fal.ai is priced appropriately 
 ## Community Ecosystem
 
 **GitHub:**
-- `Tencent-Hunyuan/HunyuanVideo`: **12,100+ stars**, ~1,200 forks, 158+ open issues
-- `Tencent-Hunyuan/HunyuanVideo-1.5`: **4,500+ stars**, ~229 forks
+- [`Tencent-Hunyuan/HunyuanVideo`](https://github.com/Tencent-Hunyuan/HunyuanVideo): **12,100+ stars**, ~1,200 forks, 158+ open issues
+- [`Tencent-Hunyuan/HunyuanVideo-1.5`](https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5): **4,500+ stars**, ~229 forks
 
 **Hugging Face:**
 - `hunyuanvideo-community/HunyuanVideo` — Diffusers-format weights (official since Dec 17, 2024)
@@ -312,4 +312,4 @@ The four reflects the December 2024 benchmark leadership, the architecturally no
 
 ---
 
-*This review is based on public documentation, the HunyuanVideo GitHub repository (`Tencent-Hunyuan/HunyuanVideo`), the HunyuanVideo-1.5 GitHub repository (`Tencent-Hunyuan/HunyuanVideo-1.5`), the HunyuanVideo technical report (arXiv 2412.03603), the HunyuanVideo-1.5 technical report (arXiv 2511.18870), VBench and Artificial Analysis benchmark data, community reports from ComfyUI, Civitai, and Hugging Face, and API documentation from fal.ai and Replicate. We do not test AI video tools hands-on.*
+*This review is based on public documentation, the [HunyuanVideo GitHub repository](https://github.com/Tencent-Hunyuan/HunyuanVideo), the [HunyuanVideo-1.5 GitHub repository](https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5), the [HunyuanVideo technical report (arXiv 2412.03603)](https://arxiv.org/abs/2412.03603), the [HunyuanVideo-1.5 technical report (arXiv 2511.18870)](https://arxiv.org/abs/2511.18870), VBench and [Artificial Analysis](https://artificialanalysis.ai/video) benchmark data, community reports from ComfyUI, Civitai, and Hugging Face, and API documentation from fal.ai and Replicate. We do not test AI video tools hands-on.*

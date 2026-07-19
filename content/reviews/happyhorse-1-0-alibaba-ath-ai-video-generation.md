@@ -12,7 +12,7 @@ On April 7, 2026, a new entry appeared on Artificial Analysis's video arena. No 
 
 Within 48 hours it had climbed to first place across all four video arena categories — text-to-video, image-to-video, and the paired audio variants of both. Observers on X noticed: who made this? Nothing in the outputs revealed an answer. The watermarks were absent. The style was controlled, cinematic, eerily coherent across shots. Benchmark hunters started calling it "the horse model" after the anonymous placeholder name appeared in arena metadata.
 
-On April 10, 2026, the X account @HappyHorseAI posted a single message confirming affiliation with **Alibaba Token Hub (ATH)** — a newly reorganized Alibaba AI business group announced just weeks earlier. CNBC ran a piece within hours. Bloomberg followed. The horse had a name, and it belonged to one of the most resourced AI companies on earth.
+On April 10, 2026, the X account @HappyHorseAI posted a single message confirming affiliation with **Alibaba Token Hub (ATH)** — a newly reorganized Alibaba AI business group announced just weeks earlier. [CNBC ran a piece within hours](https://www.cnbc.com/2026/04/10/alibaba-happyhorse-ai-video-model-benchmark-reveal.html). [Bloomberg followed](https://www.bloomberg.com/news/articles/2026-04-10/stealth-alibaba-video-ai-model-tops-global-ranking-on-debut). The horse had a name, and it belonged to one of the most resourced AI companies on earth.
 
 The story of HappyHorse-1.0 is a story about a specific kind of ambition: not the startup press release, not the gradual leak-and-hype cycle, but a deliberate proof-by-performance. Let the outputs speak first. The technology behind the debut is real, distinctive, and worth understanding in detail.
 
@@ -77,7 +77,7 @@ The result is a model that processes the relationships between video content, au
 
 ## Benchmark Performance: All Four Categories, First Place
 
-As of May 2026, HappyHorse-1.0 holds the top position in all four video arena categories on **Artificial Analysis**:
+As of May 2026, HappyHorse-1.0 holds the top position in all four video arena categories on **[Artificial Analysis](https://artificialanalysis.ai/video)**:
 
 | Category | Elo Score |
 |---|---|
@@ -140,7 +140,7 @@ HappyHorse-1.0 is an API-first product. There is no standalone Alibaba consumer 
 
 ### fal.ai (Official Partner)
 
-**fal.ai** is the official international API partner, with the partnership announced in conjunction with the model going live on April 26–27, 2026. fal.ai provides:
+**[fal.ai](https://fal.ai/models/fal-ai/happy-horse/text-to-video)** is the official international API partner, with the partnership announced in conjunction with the model going live on April 26–27, 2026. fal.ai provides:
 
 - `fal-ai/happy-horse/text-to-video` — T2V endpoint
 - `fal-ai/happy-horse/image-to-video` — I2V endpoint
