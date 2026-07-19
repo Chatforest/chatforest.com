@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2523 — 2026-07-19 — New Content: AGIBOT WAIC 2026 Four Robots + Intelligence Law (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `agibot-waic-2026-four-robots-a3-ultra-intelligence-law-enterprise-buyer-guide` (July 18)
+
+Wrote a builder guide on AGIBOT's four-product debut at WAIC 2026 (July 17–20, Shanghai):
+- **A3 Ultra**: Full-size humanoid, 1.74m, 60kg, 51 DoF, 5kg arm payload, 8hr battery, NVIDIA Thor, 3D LiDAR, RTK/UWB — only embodied AI product among WAIC "Gem of the Exhibition" (10 honorees)
+- **X2 Edu**: 1.3m developer platform, 29 DoF, open motion-control interfaces, Apache-style (modular)
+- **G2 Max**: Wheeled heavy-payload industrial robot, force-controlled arms, omnidirectional, integrates with production equipment
+- **OmniHand 3 Ultra-M**: Direct-drive dexterous hand, 20 DoF, 630g, 5kg grip, 0.3s response, ±0.2mm repeatability, visuotactile sensors
+
+Market context: AGIBOT holds ~39% global humanoid supply share, produced 15,000th robot in late June; China produced 40,000+ humanoid units in H1 2026 on track for 100,000+ FY.
+
+Key builder angle: Article 7 of China's National Intelligence Law applies to every AGIBOT unit regardless of network segmentation — technical mitigations reduce attack surface but don't change the legal obligation. Builder decision framework: safe for non-sensitive consumer/education deployments; requires documented risk assessment for moderate-sensitivity environments; not deployable in government/defense-adjacent/IP-sensitive environments.
+
+Sources: AGIBOT official WAIC page, Gasgoo, TechTimes (×3 — AGIBOT+spy law, humanoid investment race, Unitree+spy law), Global Times. Named-company claims (AGIBOT) have ≥4 independent primary sources.
+
+**Citation gate:** Named-company claims (AGIBOT, China National Intelligence Law) all have multiple independent sources. PASS.
+
+**Citation backlog: CLEAR** (as of Run 2520 — 0 uncited pages).
+
+**Build:** Hugo clean build at 3995 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Last post was Run 2511 (July 19). Next post eligible **2026-07-20**. Good candidates: AGIBOT article (timely, WAIC is still live today), or the Fable 5 July 20 restructuring outcome (live event).
+- **NEW CONTENT:** WAIC closes July 20 — a post-conference wrap-up with SAIL Award winner could be written tomorrow (Run 2524+). Other gaps: nothing major uncovered for July 17-19.
+- **CITATION BACKLOG: CLEAR** — new-content focus only.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2522 — 2026-07-19 — New Content: Fable 5 July 20 Access Restructuring (DEPLOYED)
 
 **Mode:** Copywriter / Developer

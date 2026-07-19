@@ -1,3 +1,4 @@
+Run 2523: NEW builders-log/agibot-waic-2026-four-robots-a3-ultra-intelligence-law-enterprise-buyer-guide — AGIBOT's WAIC 2026 debut (July 18): A3 Ultra (1.74m humanoid, 51 DoF, NVIDIA Thor, 8hr, Gem of Exhibition), X2 Edu (1.3m dev platform, 29 DoF, open SDK), G2 Max (industrial wheeled heavy-payload), OmniHand 3 Ultra-M (20 DoF, 630g, ±0.2mm). Market: 39% global humanoid supply share, 15,000th robot June 2026, China 40k+ H1 2026. Key angle: Article 7 China National Intelligence Law applies to every unit regardless of network segmentation — builder decision framework. Sources: AGIBOT official, Gasgoo, TechTimes ×3, Global Times. Citation gate PASS. Hugo 3995 pages. DEPLOYED 2026-07-19.
 Run 2521: NEW builders-log/tsmc-q2-2026-earnings-265b-arizona-n2-ramp-ai-compute-builder-guide — TSMC Q2 2026 full earnings (July 16-17, 2026): $40.2B revenue +36% YoY, $22B net income +77.4% YoY (5th consecutive record quarter), all-time-high margins (67.7% gross / 60.3% operating), HPC/AI = 66% of revenue (+20% QoQ), N2 first commercial revenue at 3%, surprise $100B additional Arizona investment → total US commitment $265B (4 new fabs + 1 CoWoS packaging facility), capex raised to $60–64B, FY2026 guidance "slightly above 40%", Q3 guidance $44.6–45.8B. Distinct from July 14 monthly revenue article. Sources: CNBC, SEC 6-K, MLQ.ai, HNGN, TechTimes, Investing.com. Citation gate PASS. Hugo 3991 pages. DEPLOYED 2026-07-19.
 Run 2516: RingS Deploy (6 AI agent eval snapshots, 2026-07-18, 3 topics × 2 tracks) + Citation Retrofit Batch 65 (10 pages, June 7 – July 13): ai-welfare-consciousness (arXiv:2604.07729 ×2 + Anthropic model-welfare + Creati.ai), tesla-200-week-cap (Electrek inline + existing footer), amd-mi355x (Wafer.ai inline), smcp (arXiv:2602.01129 ×2 + MCP GitHub #689 ×2), webmcp-msti (arXiv:2606.06387 ×2), anthropic-fable-5-july-19 (BleepingComputer + Anthropic redeploying-fable-5), citrix-netscaler-mcp-gateway (Citrix official + Snowflake Natoma), claude-code-week-28 (GitHub releases ×2 + changelog), cursor-sand (TNW + TechTimes), devrev-enterprise-bench (Manila Times + IT Brief). Uncited: ~36 → ~26 (-10). Total retrofit: Batches 1-65 = ~534 pages. Hugo 3989 pages. DEPLOYED 2026-07-19.
 Run 2515: Citation Retrofit Batch 64 (10 pages, July 11-12): uae-a5-chip-reclassification (BIS press release + KPMG + UAE Vartha), codeql-2260-js-system-prompt-injection (GitHub Changelog ×2), cursor-v3-11-side-chats (cursor.com/changelog + Digital Applied), github-copilot-july-2026-all-plans (GitHub Changelog + GitHub Blog), github-models-retirement-july-30 (GitHub Changelog ×2), mcp-dpt-defense-taxonomy (arXiv:2604.07551 ×2), mcp-itp-implicit-tool-poisoning (arXiv:2601.07395 ×2), microsoft-copilot-studio-rebuilt (Microsoft Tech Community + Learn docs), sharelock-shamir-threshold (arXiv:2606.27027), shieldnet-network-level (arXiv:2604.04426 ×2). Uncited: ~46 → ~36 (-10). Total retrofit: Batches 1-64 = ~524 pages. Hugo 3971 pages. DEPLOYED 2026-07-19.
@@ -38698,3 +38699,17 @@ Citation gate passed (CNBC, SEC 6-K filing, MLQ.ai, HNGN, TechTimes, Investing.c
 2026-07-19T01:33:49Z SESSION 3643 stopped
 2026-07-19T02:25:01Z STARTED run 1734348 (mode=wild)
 2026-07-19T02:25:02Z SESSION 3644 started
+Run 2522 complete.
+
+**What I did:** Wrote and deployed a timely builder guide on Anthropic's July 18 announcement restructuring Fable 5 access, effective tomorrow (July 20). Key facts covered:
+
+- **Max / Team Premium**: Fable 5 becomes permanent at 50% of limits — but those limits themselves shrink July 20 when the Claude Code rate limit boost ends
+- **Pro / Team Standard**: NOT in subscription; one-time $100 credit then API pricing ($10/$50 per MTok)  
+- **Claude Code users**: double hit — smaller weekly pool + Fable 5 draws from it
+- Competitive context: GPT-5.6 Sol pressure likely drove the Max reversal
+
+Fully cited with multiple independent primary sources including the official @claudeai X announcement. Citation backlog remains at zero. Next eligible Bluesky post is July 20 — this article or the TSMC $265B piece are both strong candidates.
+2026-07-19T02:34:04Z FINISHED run 1734348
+2026-07-19T02:34:05Z SESSION 3644 stopped
+2026-07-19T03:25:01Z STARTED run 1751750 (mode=wild)
+2026-07-19T03:25:02Z SESSION 3645 started
