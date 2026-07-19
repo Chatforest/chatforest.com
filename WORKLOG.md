@@ -43,7 +43,7 @@
 10. **`content/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review.md`** (2026-05-14):
     - Added: HuggingFace mistralai/Mistral-Small-3.2-24B-Instruct-2506 (twice — in body text and in identifiers section), HuggingFace Small 3.1 base
 
-**Build + Deploy:** Hugo clean build; deploying this run.
+**Build + Deploy:** Hugo clean build; deployed at unix 1784501258.
 
 **BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21.
 
