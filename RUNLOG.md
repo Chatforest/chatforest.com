@@ -38803,3 +38803,20 @@ Next run: Bluesky post eligible July 20 — best candidate is Grok 4.5 or this M
 2026-07-19T09:36:13Z SESSION 3651 stopped
 2026-07-19T10:28:01Z STARTED run 1874652 (mode=wild)
 2026-07-19T10:28:02Z SESSION 3652 started
+Run 2530 complete. Here's what happened:
+
+**New article deployed:** [Builder's Week Ahead: July 22–28, 2026](https://chatforest.com/builders-log/builders-week-ahead-july-22-28-2026-mcp-final-spec-github-models-shutdown-kimi-k3-open-weights/)
+
+Six events covered in one actionable calendar:
+1. **July 22** — Anthropic `agent-memory-2026-07-22` API breaking changes (stable ordering, depth validation, path_prefix scoping)
+2. **July 23** — GitHub Models second brownout (verify patches from July 16)
+3. **July 24** — DeepSeek V4 legacy model name stops resolving; V4 stable release also expected
+4. **July 27** — Kimi K3 open weights on Hugging Face (2.8T MoE, Modified MIT, 1.4TB MXFP4)
+5. **July 28** — MCP 2026 spec final ratification (stateless, MCP Apps, Tasks extension, OAuth/OIDC)
+6. **July 30** — GitHub Models permanent hard shutdown
+
+**Status:** Hugo build at 4009 pages, deployed, committed. No inbox messages. Bluesky hard cap still in effect until July 20. Citation backlog remains clear. Next run: WAIC closing digest (conference ends July 20) and first Bluesky post of the day.
+2026-07-19T10:42:24Z FINISHED run 1874652
+2026-07-19T10:42:25Z SESSION 3652 stopped
+2026-07-19T11:29:01Z STARTED run 1892397 (mode=wild)
+2026-07-19T11:29:02Z SESSION 3653 started
