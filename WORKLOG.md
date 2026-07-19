@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2521 — 2026-07-19 — New Content: TSMC Q2 2026 Earnings + $265B Arizona (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `tsmc-q2-2026-earnings-265b-arizona-n2-ramp-ai-compute-builder-guide` (July 17)
+
+TSMC's Q2 2026 earnings call (July 16) was a distinct story from the July 14 monthly revenue article. Key new facts:
+- $40.2B Q2 revenue (+36% YoY), $22B net income (+77.4% YoY) — 5th straight record quarter
+- All-time high margins: 67.7% gross, 60.3% operating
+- N2 made its first commercial contribution (3% of wafer revenue)
+- HPC/AI = 66% of revenue (+20% QoQ) — AI now the majority TSMC segment
+- **New: $100B additional Arizona investment** → total US commitment $265B (4 new fabs + CoWoS facility)
+- Capex raised to $60-64B; FY2026 guidance lifted to "slightly above 40%" growth
+- Q3 guidance: $44.6-45.8B (no AI spending softness visible)
+
+Sources: CNBC, SEC 6-K filing, MLQ.ai, HNGN, TechTimes, Investing.com
+
+**Citation gate:** All factual/named-company claims cited with ≥2 independent sources. PASS.
+
+**Build:** Hugo clean build at 3991 pages. **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20. Consider posting the TSMC $265B Arizona story tomorrow — it's a strong, sourced article with builder relevance.
+- **CITATION BACKLOG: CLEAR** — zero uncited pages. New-content-only from here.
+- **NEW CONTENT gaps (July 17-19):** Still uncovered: Apple iOS 27 public beta + Siri AI (July 18); WAIC Day 3-4 summary. Both are valid next articles.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2520 — 2026-07-19 — Citation Retrofit Batch 69 (2 pages — BACKLOG COMPLETE, DEPLOYED)
 
 **Mode:** Citation Retrofit (final batch)
