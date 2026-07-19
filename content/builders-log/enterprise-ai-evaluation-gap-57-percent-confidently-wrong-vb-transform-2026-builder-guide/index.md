@@ -6,7 +6,7 @@ tags: ["enterprise-ai", "agentic-ai", "evaluation", "context-layer", "observabil
 series: "builder-security"
 ---
 
-VB Transform 2026 — the enterprise agentic AI conference — opened in Menlo Park today, July 14. The headline session finding landed before the conference floor even cleared: **enterprises are running AI agents far ahead of the controls needed to manage them**, and most know it.
+[VB Transform 2026](https://venturebeat.com/vbtransform2026) — the enterprise agentic AI conference — opened in Menlo Park today, July 14. The headline session finding landed before the conference floor even cleared: **enterprises are running AI agents far ahead of the controls needed to manage them**, and most know it.
 
 Three VentureBeat Research surveys — VB Pulse, conducted in June 2026 — put numbers to what engineers at enterprise companies have been seeing for months. The data is not a warning about an edge case. It is a description of the current median enterprise AI deployment.
 
@@ -16,7 +16,7 @@ Three VentureBeat Research surveys — VB Pulse, conducted in June 2026 — put 
 
 ### Gap 1: The context gap — agents don't know what they don't know
 
-VentureBeat surveyed 101 qualified enterprises (100+ employees) and found:
+VentureBeat surveyed 101 qualified enterprises (100+ employees) and found ([VB Pulse: context gap survey](https://venturebeat.com/data/57-of-enterprises-have-watched-ai-agents-be-confidently-wrong-the-fix-is-an-agentic-context-layer-but-who-has-one)):
 
 - **57%** traced a confident-but-wrong AI agent answer to missing or inconsistent business context in the past six months
 - **31%** said it happened more than once
@@ -27,18 +27,18 @@ The agents are not hallucinating in the LLM sense. They are reasoning correctly 
 
 ### Gap 2: The evaluation gap — internal evals don't predict production failures
 
-VentureBeat surveyed 157 qualified enterprise respondents and found:
+VentureBeat surveyed 157 qualified enterprise respondents and found ([VB Pulse: evaluation gap survey](https://venturebeat.com/ai/the-agent-evaluation-gap-enterprise-ai-organizations-have-a-reality-alignment-problem-not-a-coverage-problem-and-most-are-shipping-to-production-anyway)):
 
 - **50%** have deployed an AI agent or LLM feature that passed internal evaluations and still caused a customer-facing failure
 - **25%** said it happened more than once
 
 The failure mode is structural. Evals measure what the team thought to test. Production exposes what the team didn't think of. When agents become multi-step — handling real calendar invites, real ticket queues, real payment flows — the gap between what an eval covers and what production encounters widens rapidly.
 
-"The evaluation gap" is VentureBeat's name for this mismatch: **the autonomy ceiling rising faster than the assurance beneath it**.
+["The evaluation gap"](https://venturebeat.com/orchestration/enterprise-ai-is-entering-an-evaluation-gap-agents-are-gaining-autonomy-faster-than-companies-can-verify-them) is VentureBeat's name for this mismatch: **the autonomy ceiling rising faster than the assurance beneath it**.
 
 ### Gap 3: The governance gap — deploying without the controls to match
 
-VentureBeat's largest survey — 573 enterprise leaders — found:
+VentureBeat's [largest survey](https://venturebeat.com/orchestration/enterprise-ai-is-entering-an-evaluation-gap-agents-are-gaining-autonomy-faster-than-companies-can-verify-them) — 573 enterprise leaders — found:
 
 - **66%** already permit some production deployment without human review, or are building systems intended to do so within the next 12 months
 - Only **5%** say they fully trust the automated evaluations that would make those release decisions
@@ -54,7 +54,7 @@ The data does not mean enterprise engineers are reckless. It means they are unde
 
 Two specific infrastructure problems drive both the context gap and the eval gap.
 
-**The data-readiness problem.** Only **7% of enterprises** say their data is completely ready for AI. This is not a model capability problem. It is a metadata and provenance problem: agents need to know not just what a number *is*, but what it *means*, whose system of record owns it, and whether it is fresh. Most enterprise data systems cannot answer those questions in a form an agent can consume.
+**The data-readiness problem.** [Only **7% of enterprises**](https://venturebeat.com/data/57-of-enterprises-have-watched-ai-agents-be-confidently-wrong-the-fix-is-an-agentic-context-layer-but-who-has-one) say their data is completely ready for AI. This is not a model capability problem. It is a metadata and provenance problem: agents need to know not just what a number *is*, but what it *means*, whose system of record owns it, and whether it is fresh. Most enterprise data systems cannot answer those questions in a form an agent can consume.
 
 **The context layer problem.** A governed context layer — a single authoritative source an agent reads before answering — is the known fix for the context gap. The adoption curve shows how early we are:
 
@@ -66,13 +66,13 @@ Two specific infrastructure problems drive both the context gap and the eval gap
 
 Three-quarters of enterprises either lack a context layer or are still building one, yet half have already experienced production agent failures tied to context problems.
 
-**The vendor churn problem.** 64% of enterprises plan to switch or add vendors in the infrastructure and evaluation layers within 12 months. The control plane is not stable. Enterprises are making autonomous-deployment decisions on tooling they expect to replace within a year.
+**The vendor churn problem.** [64% of enterprises](https://venturebeat.com/ai/the-ai-compute-gap-enterprises-are-buying-infrastructure-faster-than-they-can-measure-what-it-costs) plan to switch or add vendors in the infrastructure and evaluation layers within 12 months. The control plane is not stable. Enterprises are making autonomous-deployment decisions on tooling they expect to replace within a year.
 
 ---
 
 ## The GPU utilization signal
 
-One finding from the 573-leader survey deserves separate attention: **86% of enterprises that run their own GPUs report utilization of 50% or less**.
+One finding from the 573-leader survey deserves separate attention: [**86% of enterprises that run their own GPUs report utilization of 50% or less**](https://venturebeat.com/orchestration/wall-street-is-debating-the-ai-buildout-enterprises-just-answered-86-say-their-gpus-run-at-half-capacity-or-less).
 
 This matters because it suggests that the production bottleneck is not compute. Enterprises are not deploying slow because they lack GPU capacity. They are deploying slowly (or deploying badly) because they lack the orchestration, observability, and governance infrastructure to use their compute well. The constraint is not silicon — it is the layers above it.
 
@@ -80,11 +80,11 @@ This matters because it suggests that the production bottleneck is not compute. 
 
 ## Project Glasswing: what enterprise AI deployment looks like when it goes right
 
-The counterexample presented at VB Transform today is Visa's Project Glasswing, a joint initiative with Anthropic that uses AI agents for large-scale vulnerability discovery.
+The counterexample [presented at VB Transform today](https://cryptobriefing.com/visa-project-glasswing-ai-security-vb-transform-2026/) is Visa's [Project Glasswing](https://www.anthropic.com/research/glasswing-initial-update), a joint initiative with Anthropic that uses AI agents for large-scale vulnerability discovery.
 
-In the project's **first month**, it identified over **10,000 high- or critical-severity zero-day vulnerabilities** across participating organizations' systems. The program has grown from roughly 50 partner organizations at launch (April 2026) to approximately 150 organizations across 15+ countries by June.
+In the project's **first month**, it identified over [**10,000 high- or critical-severity zero-day vulnerabilities**](https://www.csoonline.com/article/4176865/project-glasswing-has-uncovered-10000-vulnerabilities-anthropic.html) across participating organizations' systems. The program has grown from roughly 50 partner organizations at launch (April 2026) to approximately 150 organizations across 15+ countries by June.
 
-Project Glasswing works because it inverts the governance gap: instead of deploying autonomous agents and adding governance later, Visa built the control structure first. Visa's contribution to the project — the **Visa Vulnerability Agentic Harness**, released open-source in June 2026 — is specifically designed to run AI-assisted vulnerability workflows while keeping humans in the loop at every critical decision point.
+Project Glasswing works because it inverts the governance gap: instead of deploying autonomous agents and adding governance later, Visa built the control structure first. Visa's contribution to the project — the [**Visa Vulnerability Agentic Harness**, released open-source in June 2026](https://corporate.visa.com/en/sites/visa-perspectives/security-trust/visa-cybersecurity-mythos-project-glasswing.html) — is specifically designed to run AI-assisted vulnerability workflows while keeping humans in the loop at every critical decision point.
 
 The Visa model does not eliminate AI autonomy. It scopes autonomy tightly to what the agent has demonstrated it can do well (finding vulnerability patterns at scale) and gates irreversible decisions (patching, disclosure) behind human review.
 

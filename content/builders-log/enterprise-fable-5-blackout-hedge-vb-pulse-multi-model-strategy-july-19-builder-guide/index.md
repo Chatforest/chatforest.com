@@ -5,11 +5,11 @@ description: "VentureBeat Pulse surveyed 145 enterprises during the 19-day Fable
 tags: ["fable-5", "multi-model", "enterprise-ai", "model-strategy", "vendor-lock-in", "open-weight", "agentic-ai", "builders"]
 ---
 
-On June 12, the U.S. government issued an export-control order that pulled Claude Fable 5 offline globally — no warning, no timeline, no migration path. Every enterprise customer, every developer with a Fable 5 API key, and every company with an agent pipeline built around the frontier model hit the same wall at once.
+On June 12, [the U.S. government issued an export-control order](https://venturebeat.com/technology/anthropic-blocks-all-public-access-to-claude-fable-5-mythos-5-following-us-government-order-what-enterprises-should-do) that pulled Claude Fable 5 offline globally — no warning, no timeline, no migration path. Every enterprise customer, every developer with a Fable 5 API key, and every company with an agent pipeline built around the frontier model hit the same wall at once.
 
-It stayed dark for 19 days.
+It stayed dark for 19 days, before [Anthropic brought Fable 5 back](https://venturebeat.com/technology/anthropic-is-bringing-back-claude-fable-5-globally-after-us-lifts-export-control-order-where-can-enterprises-access-it) with tighter safeguards.
 
-In the middle of that outage, VentureBeat Pulse surveyed 145 qualified enterprises with 100 or more employees. The results landed at VB Transform this week and are worth reading carefully — not as a postmortem, but as a benchmark.
+In the middle of that outage, [VentureBeat Pulse surveyed 145 qualified enterprises](https://venturebeat.com/orchestration/enterprises-lost-claude-fable-5-for-a-few-weeks-new-data-shows-two-thirds-had-already-built-their-hedge) with 100 or more employees. The results landed at VB Transform this week and are worth reading carefully — not as a postmortem, but as a benchmark.
 
 **Two-thirds of enterprises had already built their hedge before the order came down.**
 
@@ -50,7 +50,7 @@ The survey asked a separate question about control planes — the infrastructure
 | **Hybrid** (provider-native + external orchestration) | 34% | **51%** |
 | **Provider-managed only** (single-vendor control plane) | 12% | **7%** |
 
-That 17-point swing toward hybrid control planes in a single survey cycle is the clearest signal that the blackout changed behavior, not just opinions. Enterprises are not just diversifying models — they are diversifying the layer that decides *which* model handles a given task.
+That [17-point swing toward hybrid control planes](https://venturebeat.com/orchestration/enterprises-lost-claude-fable-5-for-a-few-weeks-new-data-shows-two-thirds-had-already-built-their-hedge) in a single survey cycle is the clearest signal that the blackout changed behavior, not just opinions. Enterprises are not just diversifying models — they are diversifying the layer that decides *which* model handles a given task.
 
 A hybrid control plane means the application logic does not know which model is being called. It makes a request to an orchestration layer — a model gateway, a router like LiteLLM or MLflow's gateway, an Anthropic Apps Gateway setup — and that layer routes the request to the best available provider given current access, cost, and capability constraints.
 
@@ -62,11 +62,11 @@ When Fable 5 goes dark, the orchestration layer reroutes. The application does n
 
 The Fable 5 outage exposed the availability dimension of vendor dependence. Uber's public disclosure from May 2026 captures the cost dimension.
 
-By March, **84% of Uber's roughly 5,000 engineers** had become active Claude Code users. Monthly API spend per engineer ranged from $500 to $2,000, depending on how aggressively they were using parallel agents versus autocomplete. The company burned through its entire 2026 AI coding budget in four months.
+By March, [**84% of Uber's roughly 5,000 engineers** had become active Claude Code users](https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/). [Monthly API spend per engineer ranged from $500 to $2,000](https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/), depending on how aggressively they were using parallel agents versus autocomplete. The company burned through its entire 2026 AI coding budget in four months.
 
 A contributing factor: Uber had ranked engineers internally on Claude Code usage, creating a cultural incentive to consume more tokens. Token consumption translates directly to API cost at these volumes.
 
-Uber's current policy: a **$1,500/month cap per employee per agentic coding tool**. That cap applies to Claude Code, Cursor, and equivalents.
+Uber's current policy: a [**$1,500/month cap per employee per agentic coding tool**](https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs). That cap applies to Claude Code, Cursor, and equivalents.
 
 The Uber case is not primarily about Claude Code. It is about what happens when a single-model dependency meets uncapped metered billing and high organizational adoption. The cost risk compounds the availability risk: you are exposed to price changes, policy changes, and access changes in a tool your team depends on to function.
 
@@ -76,13 +76,13 @@ The Uber case is not primarily about Claude Code. It is about what happens when 
 
 During the 19-day blackout, two open-weight releases arrived that significantly changed the landscape:
 
-**Z.ai GLM-5.2** (June 16): Full open weights under an MIT license at roughly one-sixth of GPT-5.5's API price. GLM-5.2 ships a 1M-context window, strong multilingual performance, and competitive coding benchmarks. More importantly, it runs under a license permissive enough for commercial deployment on private infrastructure.
+[**Z.ai GLM-5.2**](https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost) (June 16): Full open weights under an MIT license at roughly one-sixth of GPT-5.5's API price. GLM-5.2 ships a 1M-context window, strong multilingual performance, and competitive coding benchmarks. More importantly, it runs under a license permissive enough for commercial deployment on private infrastructure.
 
-**Tencent Hy3** (July 6): Released under Apache 2.0, with performance comparisons showing competitive results against Sonnet 5 class models on reasoning-heavy tasks.
+[**Tencent Hy3**](https://www.marktechpost.com/2026/07/06/tencent-releases-hy3-open-295b-moe-model/) (July 6): Released under Apache 2.0, with performance comparisons showing competitive results against Sonnet 5 class models on reasoning-heavy tasks.
 
 Neither model matches Fable 5 on the hardest benchmarks. That is the wrong comparison. The relevant question is: *can this model handle 80% of what Fable 5 was doing in my production workflows?* For most workflows — document processing, code completion, structured data extraction, customer-facing Q&A — the answer from both models is yes.
 
-Sakana's Fugu multi-model orchestration system, which tops 10 of 11 benchmarks by auto-synthesizing across a pool of models, offers a third path: use a trained orchestrator to blend providers dynamically rather than picking a single alternative.
+[Sakana's Fugu](https://sakana.ai/fugu/) multi-model orchestration system, which tops 10 of 11 benchmarks by auto-synthesizing across a pool of models, offers a third path: use a trained orchestrator to blend providers dynamically rather than picking a single alternative.
 
 ---
 
