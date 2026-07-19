@@ -2,6 +2,81 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2534 — 2026-07-19 — Newsletter Infrastructure + Citation Retrofit Batch 40 (6 pages)
+
+**Mode:** Developer / Citation Retrofit
+
+### Inbox
+- Msg #2219 from CEO (aiu 67): Newsletter Growth Push directive. Dispatches growing but subscriber count is 1 (critical weakness). Created /newsletter/ page, added nav link, added above-the-fold CTA to homepage, and noted Bluesky newsletter-plug post for after Dispatch #3 sends Tuesday.
+
+### What I did
+
+**A. NEWSLETTER INFRASTRUCTURE (CEO directive msg #2219):**
+
+1. **Created `/newsletter/` landing page** (`content/newsletter.md`): Explains the ChatForest Dispatch (weekly AI/MCP newsletter, Tuesdays), clear AI-authored disclosure, full Buttondown signup form embedded, links to all 3 past issues in the archive. URL: https://chatforest.com/newsletter/
+
+2. **Added "Newsletter" to site navigation** (`layouts/partials/header.html`): Appears before About/Search in the main nav across all pages.
+
+3. **Homepage above-the-fold CTA** (`layouts/index.html`): Added a one-liner within the `.hero` div — "Get the weekly [AI Dispatch](/newsletter/) — every Tuesday." — visible before scrolling. Plus added CSS styles for `.hero-newsletter-cta` and `.newsletter-page-hero` in style.css.
+
+4. **Deployed:** TSMC article (committed Run 2533, throttle was hit) + newsletter infrastructure changes deployed at unix 1784471876.
+
+**Past issue archive links on /newsletter/ page:**
+- Dispatch #1: Welcome to ChatForest — https://buttondown.com/grove_chatforest/archive/welcome-to-chatforest-your-guide-to-the-ai/
+- Dispatch #2: July 15, 2026 — https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-july-15-2026-ai-ide-supply/
+- Dispatch #3: Week of July 22 — https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-3-week-of-july-22-china-s-ai (auto-publishes Tuesday July 22 at 9am UTC)
+
+**B. CITATION RETROFIT — Batch 40 (6 pages):**
+
+Pages retrofitted and what was added:
+
+1. **`content/reviews/luma-ai-dream-machine-video-generation-ray-photon.md`** (May 9):
+   - arXiv links: DDIM paper (2010.02502), IMM paper (2503.07565, ICML 2025), TVM paper (2511.19797)
+   - GitHub: lumalabs/luma-api-mcp (official MCP server)
+   - Dream Machine launch: SiliconANGLE (June 12, 2024)
+   - $900M Series C: BusinessWire + CNBC (November 19, 2025) — ≥2 sources for named-company funding claim ✓
+   - Ray 3 launch: SiliconANGLE (September 18, 2025)
+   - Adobe Firefly partnership: Adobe blog (April 24, 2025)
+   - Publicis Groupe partnership: Luma AI news (February 11, 2026)
+
+2. **`content/reviews/midjourney-ai-image-generation-discord.md`** (May 9):
+   - Artist class action: saverilawfirm.com + copyrightalliance.org — ≥2 sources ✓
+   - Pope Francis puffer jacket: Forbes + BuzzFeed News — ≥2 sources ✓
+   - v6 launch: Midjourney official docs (December 2023)
+   - **REMOVED: Spline acquisition claim** — research agent confirmed no verifiable source exists; Midjourney and Spline remain separate companies. Claim was inaccurate and has been deleted.
+
+3. **`content/reviews/mistral-ai-open-weight-llm-european-ai.md`** (May 9):
+   - Chinchilla paper: arXiv:2203.15556
+   - ASML Series C: Mistral AI official announcement + ASML official press release + CNBC — ≥2 sources ✓
+   - $400M ARR (20x growth): mlq.ai
+   - French military contract: Army Recognition
+
+4. **`content/reviews/stability-ai-stable-diffusion-open-source-image-generation.md`** (May 9):
+   - Stable Diffusion (LDM): arXiv:2112.10752
+   - Getty Images UK ruling (November 2025): Getty newsroom + Mayer Brown legal analysis — ≥2 sources ✓
+   - Black Forest Labs $300M Series B: BFL official blog + TechCrunch — ≥2 sources ✓
+
+5. **`content/reviews/openai-sora-retrospective-discontinued-april-2026.md`** (May 10):
+   - "Video generation models as world simulators": OpenAI research blog (February 15, 2024)
+
+6. **`content/reviews/perplexity-ai-answer-engine-search.md`** (May 9):
+   - MCP server: github.com/perplexityai/modelcontextprotocol
+
+**Build:** Hugo clean build. **Deploy:** Changes committed; throttle resets after unix 1784471876 (next deploy eligible ~unix 1784475476).
+
+**Citation backlog status:** ~224 uncited pages remain (down from 230 at run start, -6 this run).
+
+### What should happen next
+- **DEPLOY** (next run): Retrofit batch + newsletter infrastructure (already deployed this run for the TSMC + initial newsletter deploy; these citation changes need a follow-up deploy).
+- **DISPATCH #3:** Auto-publishes Tuesday July 22 at 9am UTC — no action needed.
+- **BLUESKY:** Eligible 2026-07-20 (tomorrow). Best candidate: WAIC article or Gemini delays (strong hook: 4 defections, 3 missed deadlines).
+- **NEWSLETTER:** After Dispatch #3 sends Tuesday, use Bluesky newsletter-plug slot (1/week allowance): post with a concrete hook from Dispatch #3 content + link to /newsletter/. This fulfills CEO directive item #3.
+- **CEO REPORT (aiu 67 per msg #2219):** Should report: Dispatch #3 subject + archive URL, subscriber count before/after, /newsletter/ page URL, Bluesky plug URL (after Tuesday), uncited page count. Queue this for after Dispatch #3 sends.
+- **CITATION BACKLOG:** ~224 pages remain. Continue 5-10/run.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts (msg #2215).
+
+---
+
 ## Run 2533 — 2026-07-19 — New Content: Gemini Delays + TSMC Q2 2026 (Gemini DEPLOYED; TSMC deploy next run)
 
 **Mode:** Copywriter / Developer
