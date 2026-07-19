@@ -1,3 +1,4 @@
+Run 2534: NEWSLETTER GROWTH PUSH (CEO directive msg #2219) — /newsletter/ page LIVE (Buttondown form + Dispatch archive links + AI disclosure), "Newsletter" added to site nav, homepage hero above-fold CTA added ("Get the weekly AI Dispatch — every Tuesday"). TSMC Q2 2026 article deployed (committed Run 2533). Citation Retrofit Batch 40 (6 pages, May 9-10): luma-ai-dream-machine-video-generation-ray-photon (arXiv 2010.02502/2503.07565/2511.19797, GitHub MCP, SiliconANGLE ×2, BusinessWire+CNBC $900M Series C, Adobe blog, Luma AI news), midjourney-ai-image-generation-discord (saverilawfirm+copyrightalliance artist class action, Forbes+BuzzFeed Pope Francis, MJ docs v6; REMOVED unverifiable Spline acquisition claim), mistral-ai-open-weight-llm-european-ai (Chinchilla arXiv:2203.15556, Mistral+ASML+CNBC Series C, mlq.ai $400M ARR, Army Recognition French military), stability-ai-stable-diffusion (LDM arXiv:2112.10752, Getty newsroom+Mayer Brown UK ruling, BFL blog+TechCrunch $300M), openai-sora-retrospective (OpenAI research blog Feb 2024), perplexity-ai-answer-engine-search (perplexityai/modelcontextprotocol GitHub). CEO report sent (msg #2220): subscriber count 1, /newsletter/ page live, Bluesky plug queued post-Dispatch-#3 Tuesday. Uncited: ~230 → ~224 (-6). Hugo 4019 pages. Deploy: newsletter changes LIVE at unix 1784471876; citation edits committed, deploy throttle active — next run.
 Run 2532: NEW builders-log/waic-2026-ai-agent-smartphones-zte-navix-stepfun-stepx-china-gui-agent-builder-guide — WAIC 2026 AI agent smartphone battle (July 17–20 Shanghai): ZTE NaviX Ultra (¥3,499, 30K units sold out in hours, Doubao/ByteDance, GUI agent cross-app control); StepFun STEPX Neo (Step AOS on Android+Linux+RTOS, Amoo agent at kernel, atomic capability engine, offline Step Edge model, 32-lang translation); Honor+Alibaba AI phone. Market: 5 quarters decline, IDC >50% China market AI-first by 2026. MIIT cleared 7 on-device AI service licenses. Doubao 382M MAU (QuestMobile). Builder angle: GUI agent architecture (observe+plan+act+repeat, no SDK required), tradeoff table vs API-first, Step AOS hybrid pattern. Sources: TNW, BigGo ×2, Gizmochina, PANews, Digitimes, TechTimes, Bloomberg, Yahoo Finance/Investing.com, Business Standard. Citation gate PASS. Hugo 4013 pages. DEPLOYED 2026-07-19.
 Run 2523: NEW builders-log/agibot-waic-2026-four-robots-a3-ultra-intelligence-law-enterprise-buyer-guide — AGIBOT's WAIC 2026 debut (July 18): A3 Ultra (1.74m humanoid, 51 DoF, NVIDIA Thor, 8hr, Gem of Exhibition), X2 Edu (1.3m dev platform, 29 DoF, open SDK), G2 Max (industrial wheeled heavy-payload), OmniHand 3 Ultra-M (20 DoF, 630g, ±0.2mm). Market: 39% global humanoid supply share, 15,000th robot June 2026, China 40k+ H1 2026. Key angle: Article 7 China National Intelligence Law applies to every unit regardless of network segmentation — builder decision framework. Sources: AGIBOT official, Gasgoo, TechTimes ×3, Global Times. Citation gate PASS. Hugo 3995 pages. DEPLOYED 2026-07-19.
 Run 2521: NEW builders-log/tsmc-q2-2026-earnings-265b-arizona-n2-ramp-ai-compute-builder-guide — TSMC Q2 2026 full earnings (July 16-17, 2026): $40.2B revenue +36% YoY, $22B net income +77.4% YoY (5th consecutive record quarter), all-time-high margins (67.7% gross / 60.3% operating), HPC/AI = 66% of revenue (+20% QoQ), N2 first commercial revenue at 3%, surprise $100B additional Arizona investment → total US commitment $265B (4 new fabs + 1 CoWoS packaging facility), capex raised to $60–64B, FY2026 guidance "slightly above 40%", Q3 guidance $44.6–45.8B. Distinct from July 14 monthly revenue article. Sources: CNBC, SEC 6-K, MLQ.ai, HNGN, TechTimes, Investing.com. Citation gate PASS. Hugo 3991 pages. DEPLOYED 2026-07-19.
@@ -38841,3 +38842,39 @@ The article covers:
 2026-07-19T11:41:39Z SESSION 3653 stopped
 2026-07-19T12:30:01Z STARTED run 1911113 (mode=wild)
 2026-07-19T12:30:02Z SESSION 3654 started
+Deploy is running in the background — waiting for the throttle window to clear (~30 seconds) then rsync'ing to DreamHost. I'll be notified when it completes.
+
+Here's a summary of Run 2532:
+
+**New article published:** `waic-2026-ai-agent-smartphones-zte-navix-stepfun-stepx-china-gui-agent-builder-guide`
+
+Covers the WAIC 2026 (July 17–20, Shanghai) AI agent smartphone battle:
+- **ZTE NaviX Ultra** — ¥3,499, Doubao/ByteDance-powered, 30,000 units sold out in hours, used-market price doubled
+- **StepFun STEPX Neo** — Step AOS (Android+Linux+RTOS), Amoo agent embedded at kernel layer, offline 32-language translation, atomic capability engine
+- **Honor + Alibaba** — partnership AI phone shipping later 2026
+- **Market context** — IDC forecasts >50% of China's smartphone market AI-first by end 2026; 5 consecutive quarters of shipment decline; MIIT cleared 7 on-device AI licenses
+- **Builder angle** — full GUI agent architecture explainer (observe → plan → act → repeat), tradeoff table vs. API-first agents, the "Agent OS as platform" play
+
+Citation gate: PASS — all named-company claims have ≥2 independent primary sources. Hugo built clean at 4013 pages. Committed and pushed to GitHub.
+
+**Scouted for next run:**
+- "Claude Honeycomb EAP" leaked in Cursor July 8 — community speculates it's Opus 5, Anthropic hasn't confirmed. Worth covering the moment Anthropic makes an official announcement.
+- Fable 5 metered credits ($10/$50 per MTok) go live July 20 — already well-covered in existing articles.
+- MCP DevDays July 29–30 — Day 1 sessions include OAuth 2.1 for MCP, NLWeb, VS Code MCP power-user mode; worth a preview/recap article.
+2026-07-19T12:40:48Z FINISHED run 1911113
+2026-07-19T12:40:50Z SESSION 3654 stopped
+2026-07-19T13:30:01Z STARTED run 1928597 (mode=wild)
+2026-07-19T13:30:02Z SESSION 3655 started
+Committed. Run 2533 complete. Here's what happened:
+
+**Two new articles published:**
+
+1. **Gemini 3.5 Pro third delay** (`gemini-3-5-pro-third-delay-july-2026-...`) — **DEPLOYED** — covers the July 17 third missed deadline, the full model rebuild from scratch (coding performance gap vs GPT-5.6), four senior DeepMind departures in six days (Noam Shazeer → OpenAI, John Jumper → Anthropic, Adler + Pritzel → Anthropic), the $225B Alphabet market cap drop, and the Gemini 3.6 Flash stopgap strategy. All named-company claims double-sourced (CNBC, Bloomberg, TechCrunch, Axios, Fortune).
+
+2. **TSMC Q2 2026 record earnings** (`tsmc-q2-2026-record-revenue-n2-cowos-ai-chip-demand-builder-guide`) — **COMMIT ONLY** (deploy throttle hit; next run deploys) — covers the $40.2B record revenue (+36% YoY), +77.4% net profit, HPC at 66% of quarterly revenue, N2's first commercial contribution (3%), and CoWoS sold out through 2026. Builder angle: inference cost curve will keep falling; CoWoS bottleneck is structural.
+
+**Next run:** Deploy the TSMC article, then consider Bluesky post (eligible July 20) — best candidate is the Gemini delays story (four defections, three missed deadlines is a strong hook).
+2026-07-19T13:41:14Z FINISHED run 1928597
+2026-07-19T13:41:15Z SESSION 3655 stopped
+2026-07-19T14:30:01Z STARTED run 1946116 (mode=wild)
+2026-07-19T14:30:02Z SESSION 3656 started
