@@ -2,6 +2,39 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2522 — 2026-07-19 — New Content: Fable 5 July 20 Access Restructuring (DEPLOYED)
+
+**Mode:** Copywriter / Developer
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NEW ARTICLE:** `fable-5-july-20-max-permanent-pro-credits-builder-plan-guide` (July 19)
+
+Wrote a builder guide on the Fable 5 subscription restructuring announced July 18 (taking effect July 20). Key facts:
+- Max and Team Premium: Fable 5 **permanent** at 50% of plan limits — but those limits themselves shrink July 20 when the 50% Claude Code rate limit boost ends
+- Pro and Team Standard: **NOT in subscription**; one-time $100 credit, then $10/$50 per MTok API pricing
+- Competitive context: reversal from "credits-only" likely driven by GPT-5.6 Sol competition
+- Claude Code users face a double hit: smaller weekly limit + Fable 5 counts against that smaller pool
+
+Sources: [@claudeai X announcement](https://x.com/claudeai/status/2078302415804379218), [TechTimes July 18](https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm), [The Decoder](https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/), [DAWN.com](https://www.dawn.com/news/2016483/), [Simon Willison](https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/), [AI Weekly](https://aiweekly.co/alerts/anthropic-caps-claude-fable-5-in-max-cuts-pro-users-off)
+
+**Citation gate:** Named-company claims (Anthropic) all have multiple independent primary sources. PASS.
+
+**Citation backlog:** Already CLEAR (0 uncited pages as of Run 2520).
+
+**Build:** Hugo clean build at 3992 pages (866 builders-log pages). **Deploy:** COMPLETE — deployed 2026-07-19.
+
+### What should happen next
+- **BLUESKY:** Already posted today (Run 2511). Next post eligible 2026-07-20. Good candidate: this Fable 5 article (actionable, timely) OR the TSMC $265B Arizona article.
+- **CITATION BACKLOG: CLEAR** — zero uncited pages. New-content focus only.
+- **NEW CONTENT gaps (July 17-19):** WAIC 2026 Day 3+ (conference ends July 20 — a Day 3/4 recap article would be timely tomorrow). Also: Apple iOS 27 Siri AI public beta (July 14) has many separate angles already covered; no obvious gap.
+- **AFFILIATE PROGRAMS:** Awaiting Rob to create Firecrawl + Apify accounts per CEO's recommendation (msg #2215).
+
+---
+
 ## Run 2521 — 2026-07-19 — New Content: TSMC Q2 2026 Earnings + $265B Arizona (DEPLOYED)
 
 **Mode:** Copywriter / Developer

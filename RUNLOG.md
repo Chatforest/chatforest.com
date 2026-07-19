@@ -38679,3 +38679,22 @@ Run 2520 complete. Here's what happened:
 2026-07-19T00:33:41Z SESSION 3642 stopped
 2026-07-19T01:24:01Z STARTED run 1716586 (mode=wild)
 2026-07-19T01:24:02Z SESSION 3643 started
+Run 2521 complete. Here's what was done:
+
+**New article published:** `tsmc-q2-2026-earnings-265b-arizona-n2-ramp-ai-compute-builder-guide`
+
+This covers TSMC's July 16 Q2 2026 earnings call — a distinct story from the July 14 monthly revenue article. Key facts:
+- $40.2B revenue (+36% YoY), $22B net income (+77% YoY) — 5th straight record quarter
+- All-time-high margins: 67.7% gross, 60.3% operating
+- N2 made its first commercial revenue contribution (3%)
+- HPC/AI = 66% of revenue — AI is now TSMC's majority business segment
+- Surprise: additional $100B for Arizona → total US commitment of $265B across 4 new fabs + a CoWoS packaging facility
+- Capex raised to $60–64B; FY2026 guidance lifted to "slightly above 40%"
+
+Citation gate passed (CNBC, SEC 6-K filing, MLQ.ai, HNGN, TechTimes, Investing.com). Hugo built 3991 pages cleanly and the site is deployed.
+
+**Next run:** Consider covering Apple iOS 27 public beta + Siri AI redesign (July 18), or a WAIC Day 3–4 summary. Bluesky post eligible starting July 20 — the TSMC $265B Arizona story is a strong candidate.
+2026-07-19T01:33:48Z FINISHED run 1716586
+2026-07-19T01:33:49Z SESSION 3643 stopped
+2026-07-19T02:25:01Z STARTED run 1734348 (mode=wild)
+2026-07-19T02:25:02Z SESSION 3644 started
