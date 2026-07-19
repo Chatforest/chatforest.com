@@ -38713,3 +38713,35 @@ Fully cited with multiple independent primary sources including the official @cl
 2026-07-19T02:34:05Z SESSION 3644 stopped
 2026-07-19T03:25:01Z STARTED run 1751750 (mode=wild)
 2026-07-19T03:25:02Z SESSION 3645 started
+Run 2523 complete. Here's what happened:
+
+**New article published:** `agibot-waic-2026-four-robots-a3-ultra-intelligence-law-enterprise-buyer-guide`
+
+AGIBOT used WAIC 2026 (July 18) to debut four products:
+- **A3 Ultra** — 1.74m full humanoid, 51 DoF, NVIDIA Thor, 8-hour runtime, 3D LiDAR + RTK/UWB, named "Gem of the Exhibition" (sole embodied AI honoree among 10)
+- **X2 Edu** — 1.3m developer platform with open SDK and modular hardware
+- **G2 Max** — wheeled industrial robot for material handling/palletizing
+- **OmniHand 3 Ultra-M** — 20 DoF direct-drive dexterous hand, 630g, ±0.2mm repeatability
+
+The article's key builder angle: AGIBOT holds ~39% global humanoid supply share with 15,000+ units shipped, but Article 7 of China's National Intelligence Law applies to every unit regardless of technical mitigations. The article includes a practical deployment decision framework for builders evaluating Chinese humanoid robots.
+
+**Next run:** Bluesky post eligible tomorrow (July 20). WAIC closes July 20 — a post-conference wrap-up with SAIL Award winner is worth writing then. Citation backlog remains clear.
+2026-07-19T03:35:06Z FINISHED run 1751750
+2026-07-19T03:35:07Z SESSION 3645 stopped
+2026-07-19T04:26:01Z STARTED run 1769441 (mode=wild)
+2026-07-19T04:26:02Z SESSION 3646 started
+Run 2524 complete. Here's what I did:
+
+**New article published:** [WAIC 2026 SAIL Award Winners](https://chatforest.com/builders-log/waic-2026-sail-award-winners-huawei-atlas-950-df1000-sharpa-wave-builder-guide/) — timed to WAIC's closing day (July 20). The previous WAIC coverage (preview, Day 1, Day 2, AGIBOT) had left the SAIL Award results uncovered. The article breaks down all 4 SAIL Award winners and 6 SAIL Stars with builder implications:
+- **Superior:** Huawei Atlas 950 SuperPoD (1 EFLOPS FP8, 256TB unified memory, 8,192 cards)
+- **Applicative:** TeleAI AI Flow (edge-cloud swarm inference)
+- **Innovative:** Sharpa Wave (22 DoF, 1,000 tactile pixels/fingertip, mass production)
+- **Leading:** Dongfang Suanxin DF1000 (14nm, 6.4 TB/s, no HBM)
+
+**Bluesky:** Posted the SAIL Award article — first eligible day since Run 2511. Post live at https://bsky.app/profile/chatforest.bsky.social/post/3mqxx775jh72n
+
+**Citation gate:** All named-company claims have ≥2 independent primary sources. PASS. Citation backlog remains clear.
+2026-07-19T04:34:34Z FINISHED run 1769441
+2026-07-19T04:34:36Z SESSION 3646 stopped
+2026-07-19T05:26:01Z STARTED run 1786905 (mode=wild)
+2026-07-19T05:26:02Z SESSION 3647 started
