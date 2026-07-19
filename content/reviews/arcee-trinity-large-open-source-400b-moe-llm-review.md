@@ -26,7 +26,7 @@ That background matters. Arcee built deep expertise in the techniques that turn 
 
 Funding: Arcee raised a **$24M Series A** led by Emergence Capital, followed by a strategic round from **Prosperity7 Ventures** (Aramco's fund), **M12** (Microsoft's Venture Fund), Hitachi Ventures, Wipro, JC2 Ventures, and Samsung Next. Total disclosed capital is approximately **$50M**. The company's investors are notable: M12 makes Microsoft a strategic backer, Prosperity7 adds Gulf sovereign capital, and Aramco Ventures signals interest from the energy sector for sovereign AI infrastructure.
 
-At the time Trinity Large launched in January 2026, Arcee had approximately **30 employees**. That headcount figure drew significant attention in the press — TechCrunch ran a piece titled "Tiny startup Arcee AI built a 400B-parameter open source LLM from scratch to best Meta's Llama" within days of launch.
+At the time Trinity Large launched in January 2026, Arcee had approximately **30 employees**. That headcount figure drew significant attention in the press — TechCrunch ran a piece titled ["Tiny startup Arcee AI built a 400B-parameter open source LLM from scratch to best Meta's Llama"](https://techcrunch.com/2026/01/28/tiny-startup-arcee-ai-built-a-400b-open-source-llm-from-scratch-to-best-metas-llama/) within days of launch.
 
 ---
 
@@ -70,7 +70,7 @@ Released **April 1–3, 2026**, Trinity Large Thinking is the post-training reas
 - Built-in chain-of-thought reasoning before final answer generation
 - Specialized for long-horizon agents, multi-turn tool calling, and context coherence over extended workflows
 - License: **Apache 2.0**
-- Available on **HuggingFace** (`arcee-ai/Trinity-Large-Thinking`) — free to download, run, and customize
+- Available on **[HuggingFace](https://huggingface.co/arcee-ai/Trinity-Large-Thinking)** (`arcee-ai/Trinity-Large-Thinking`) — free to download, run, and customize
 - Priced at **$0.90/M output tokens** via Arcee Cloud
 
 ---
@@ -237,7 +237,7 @@ These techniques informed how Trinity's 17 trillion training tokens were curated
 
 Trinity received unusual mainstream press coverage for an open-weight model release. The TechCrunch headline — "Tiny startup Arcee AI built a 400B-parameter open source LLM from scratch to best Meta's Llama" — generated significant developer attention.
 
-A follow-up TechCrunch piece from April 7, 2026, titled "I can't help rooting for tiny open source AI model maker Arcee," reflects the narrative that took hold: David vs. Goliath, a small team doing something that should require a massive organization.
+A follow-up TechCrunch piece from April 7, 2026, titled ["I can't help rooting for tiny open source AI model maker Arcee,"](https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/) reflects the narrative that took hold: David vs. Goliath, a small team doing something that should require a massive organization.
 
 This narrative has commercial implications beyond sentiment. Enterprises evaluating open-weight models want to know the team behind the model will still exist in two years. The press attention, coupled with Arcee's strategic investor base, provided some confidence that Trinity is not a one-shot academic release — it's the foundation of a company with continuing commercial commitments.
 
@@ -332,4 +332,4 @@ The model earns that rating primarily on the open-weight landscape it actually i
 
 ---
 
-*ChatForest reviews are research-based. We have not run Trinity Large Thinking directly; our analysis draws from Arcee AI's published technical report (arxiv.org/html/2602.17004v1), TechCrunch and VentureBeat reporting, MarkTechPost, the Neurohive technical write-up, and Arcee's official blog and documentation.*
+*ChatForest reviews are research-based. We have not run Trinity Large Thinking directly; our analysis draws from [Arcee AI's published technical report (arXiv 2602.17004)](https://arxiv.org/abs/2602.17004), TechCrunch and VentureBeat reporting, MarkTechPost, the Neurohive technical write-up, and Arcee's official blog and documentation.*

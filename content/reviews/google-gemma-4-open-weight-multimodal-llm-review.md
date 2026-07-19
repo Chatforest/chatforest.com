@@ -18,7 +18,7 @@ last_refreshed: 2026-05-13
 
 "Drop everything and run `ollama run gemma4`."
 
-That was the reaction of a developer with 2,400+ likes when Google released Gemma 4 on April 2, 2026. Within days, the family had crossed 80,000 downloads on Hugging Face. Within weeks, that number crossed 2 million — and the 26B MoE variant had become, for many developers, the first local model they stopped reaching for API keys during.
+That was the reaction of a developer with 2,400+ likes when Google [released Gemma 4](https://blog.google/technology/developers/gemma-4/) on April 2, 2026. Within days, the family had crossed 80,000 downloads on Hugging Face. Within weeks, that number crossed 2 million — and the 26B MoE variant had become, for many developers, the first local model they stopped reaching for API keys during.
 
 The hyperbole has a real basis. Gemma 4 represents the most complete architectural overhaul the Gemma program has attempted. New attention patterns. A Per-Layer Embeddings pathway that lets small models reason better than their parameter count implies. A 26-billion-parameter MoE that loads 14GB of VRAM but only activates 4 billion parameters per token. Audio input on the smaller models. A 256K context window on the larger ones. And — for the first time in the Gemma family — a true Apache 2.0 license with no Gemma Terms overlay.
 
@@ -168,11 +168,11 @@ The license applies to all four model variants and includes both the base pretra
 
 ## Availability and Infrastructure
 
-**Hugging Face**: All four variants and their instruction-tuned counterparts are available at `google/gemma-4-E2B`, `google/gemma-4-E4B`, `google/gemma-4-26B-A4B`, and `google/gemma-4-31B` (plus `-it` suffixed instruction-tuned versions). The family crossed 2 million total downloads within weeks of release, with the 26B A4B and 31B leading.
+**Hugging Face**: All four variants and their instruction-tuned counterparts are available at [`google/gemma-4-E2B`](https://huggingface.co/google/gemma-4-E2B-it), [`google/gemma-4-E4B`](https://huggingface.co/google/gemma-4-E4B-it), [`google/gemma-4-26B-A4B`](https://huggingface.co/google/gemma-4-26B-A4B-it), and [`google/gemma-4-31B`](https://huggingface.co/google/gemma-4-31B-it) (plus `-it` suffixed instruction-tuned versions). The family crossed 2 million total downloads within weeks of release, with the 26B A4B and 31B leading.
 
 **Google AI Studio**: Free tier access — 15 requests per minute, daily token cap, no subscription fees required. The fastest path from "I want to try Gemma 4" to running a query.
 
-**Vertex AI**: Enterprise deployment via Model Garden. The 26B A4B is available as a managed serverless endpoint. Provisioned throughput and SLA guarantees available for production workloads. Google Cloud Run and GKE are also supported.
+**Vertex AI**: [Enterprise deployment via Model Garden](https://cloud.google.com/blog/products/ai-machine-learning/gemma-4-available-on-google-cloud). The 26B A4B is available as a managed serverless endpoint. Provisioned throughput and SLA guarantees available for production workloads. Google Cloud Run and GKE are also supported.
 
 **Ollama**: Day-one support via `ollama run gemma4`. This is the primary reason for the "drop everything" community reaction — local deployment with no configuration beyond the pull command.
 

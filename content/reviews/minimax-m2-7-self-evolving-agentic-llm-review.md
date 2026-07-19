@@ -32,7 +32,7 @@ This review covers the self-evolution story, architecture, benchmarks, pricing, 
 
 MiniMax M2.7 was announced on **March 18, 2026** as an API-only model — no weights, no HuggingFace release. This was the first time MiniMax had launched a major M2.x series model without simultaneous open-weight availability. VentureBeat covered the initial launch as a "proprietary AI model," which was technically accurate at that moment.
 
-On **April 12, 2026**, MiniMax released weights to HuggingFace. The 25-day gap between API launch and weight release turned out to be the first signal of a larger shift: M2.7's license is not MIT.
+On **April 12, 2026**, MiniMax released weights to [HuggingFace](https://huggingface.co/MiniMaxAI/MiniMax-M2.7). The 25-day gap between API launch and weight release turned out to be the first signal of a larger shift: M2.7's license is not MIT.
 
 The M2.x release cadence:
 - **M2**: October 27, 2025 (MIT license)
@@ -263,7 +263,7 @@ The backlash was swift and focused on a specific point: **calling this license "
 
 From Hacker News: "This MiniMax license violates at least two of those OSI freedoms from the start. This is a proprietary model with viewable weights."
 
-Decrypt covered the launch under: "MiniMax's M2.7 is 'faux open-source.'"
+[Decrypt covered the launch under: "MiniMax's M2.7 is 'faux open-source.'"](https://decrypt.co/364225/minimax-m27-agent-model-license-change)
 
 The distinction matters for infrastructure decisions. **Open-weight** (weights are downloadable) is not the same as **open-source** (free to use commercially without permission). M2.7 is open-weight but not open-source. If your use case is personal experimentation, academic research, or contributing to non-commercial projects, M2.7 is accessible under its license. If you are building a product — even a small one — you need written authorization from MiniMax before deploying M2.7 commercially.
 
@@ -281,7 +281,7 @@ This does not retroactively affect M2.5, which remains under its original Modifi
 
 ### Anthropic Distillation Allegation
 
-In February 2026 — the month before M2.7's API launch — Anthropic publicly named MiniMax in legal filings related to model distillation. The allegation: MiniMax operated approximately **24,000 fraudulent accounts** to generate **13+ million illicit exchanges** with Claude, specifically targeting agentic coding, tool use, and multi-turn orchestration — the exact capabilities emphasized in M2.7.
+In February 2026 — the month before M2.7's API launch — [Anthropic publicly named MiniMax in legal filings related to model distillation](https://techcrunch.com/2026/02/23/anthropic-accuses-chinese-ai-labs-of-mining-claude-as-us-debates-ai-chip-exports/). The allegation: MiniMax operated approximately **24,000 fraudulent accounts** to generate [**13+ million illicit exchanges**](https://www.cnbc.com/2026/02/24/anthropic-openai-china-firms-distillation-deepseek.html) with Claude, specifically targeting agentic coding, tool use, and multi-turn orchestration — the exact capabilities emphasized in M2.7.
 
 MiniMax has not publicly confirmed or denied the allegation. Anthropic's accusations remain public claims without a disclosed legal resolution as of May 2026. The allegation, if accurate, would mean M2.7's agentic capabilities were partly bootstrapped from Claude's outputs in violation of Anthropic's terms of service.
 
@@ -327,7 +327,7 @@ For developers who require commercial use of open-weight MiniMax models, M2.5 is
 
 ## Self-Hosting
 
-Weights are on HuggingFace at `MiniMaxAI/MiniMax-M2.7`. At 229B parameters in BF16, the full weights require approximately 457 GB. Unsloth's GGUF quantizations cover the practical range:
+Weights are on HuggingFace at [`MiniMaxAI/MiniMax-M2.7`](https://huggingface.co/MiniMaxAI/MiniMax-M2.7). At 229B parameters in BF16, the full weights require approximately 457 GB. Unsloth's GGUF quantizations cover the practical range:
 
 | Quantization | Size |
 |---|---|

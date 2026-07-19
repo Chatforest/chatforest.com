@@ -11,13 +11,13 @@ author: "ChatForest"
 last_refreshed: 2026-05-13
 ---
 
-**At a glance:** Grok 4, released July 9, 2025. ~1.7T total parameters (MoE). Proprietary closed weights. 256K context standard; 2M tokens on Fast variant. Real-time X (Twitter) data. 100% AIME 2025. 50% Humanity's Last Exam (first model to reach this). 79.4% LiveCodeBench (#1 at release). API at $1.25/$2.50 per million tokens (Grok 4.3). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For the predecessor model this superseded, see our **[Grok 3 review](/reviews/xai-grok-3-reasoning-frontier-llm-review/)**. For the November 2025 post-training update, see our **[Grok 4.1 review](/reviews/xai-grok-4-1-post-training-llm-review/)**.
+**At a glance:** Grok 4, [released July 9, 2025](https://x.ai/news/grok-4). ~1.7T total parameters (MoE). Proprietary closed weights. 256K context standard; 2M tokens on Fast variant. Real-time X (Twitter) data. 100% AIME 2025. 50% Humanity's Last Exam (first model to reach this). 79.4% LiveCodeBench (#1 at release). API at $1.25/$2.50 per million tokens (Grok 4.3). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For the predecessor model this superseded, see our **[Grok 3 review](/reviews/xai-grok-3-reasoning-frontier-llm-review/)**. For the November 2025 post-training update, see our **[Grok 4.1 review](/reviews/xai-grok-4-1-post-training-llm-review/)**.
 
 ---
 
 "The first AI model to pass 50% on Humanity's Last Exam."
 
-That claim — real, verified, and initially startling — is how Grok 4 announced itself to the broader AI community on July 9, 2025. Humanity's Last Exam (HLE) is a benchmark assembled from the hardest questions graduate researchers could construct across mathematics, physics, chemistry, biology, history, and law. The name is somewhat theatrical, but the questions are not. Grok 4 Heavy, the multi-agent variant of the model, cleared the 50% threshold when every prior model had plateaued below 40%.
+That claim — real, verified, and initially startling — is how [Grok 4 announced itself](https://techcrunch.com/2025/07/09/elon-musks-xai-launches-grok-4-alongside-a-300-monthly-subscription/) to the broader AI community on July 9, 2025. Humanity's Last Exam (HLE) is a benchmark assembled from the hardest questions graduate researchers could construct across mathematics, physics, chemistry, biology, history, and law. The name is somewhat theatrical, but the questions are not. Grok 4 Heavy, the multi-agent variant of the model, cleared the 50% threshold when every prior model had plateaued below 40%.
 
 The result mattered for two reasons. First, it was a genuine capability milestone — the kind of benchmark where performance had been stuck for months and suddenly wasn't. Second, it was a statement from xAI: Elon Musk's AI company, born in 2023, had trained a model competitive with — or ahead of — OpenAI, Anthropic, and Google at the very frontier of measured AI capability.
 
@@ -33,7 +33,7 @@ Grok 4 is the third major model generation from xAI. Grok 1 launched in November
 
 The acceleration was intentional and public. xAI's stated goal has been to build AGI, and the Colossus cluster — assembled in 122 days in Memphis, Tennessee, and since expanded — represents the infrastructure bet behind that claim. By the time Grok 4 launched, Colossus had grown to accommodate the training run needed to produce benchmark results that placed Grok at or above every competitor on multiple leaderboards simultaneously.
 
-The company context matters: xAI became a wholly owned subsidiary of SpaceX in a stock transaction announced in early 2026, valuing xAI at $250 billion. The combined entity brings Starlink infrastructure into the picture for eventual orbital inference. For the immediate use case — API access to a capable frontier model — none of this is directly relevant. It is worth knowing because it explains the pace of iteration.
+The company context matters: [xAI became a wholly owned subsidiary of SpaceX](https://www.cnbc.com/2026/02/03/musk-xai-spacex-biggest-merger-ever.html) in a stock transaction announced in early 2026, valuing xAI at $250 billion. The combined entity brings Starlink infrastructure into the picture for eventual orbital inference. For the immediate use case — API access to a capable frontier model — none of this is directly relevant. It is worth knowing because it explains the pace of iteration.
 
 ---
 
@@ -100,7 +100,7 @@ LiveCodeBench tests models on recently-published competitive programming problem
 | ARC-AGI V2 | **15.9%** | SOTA for closed models; nearly double prior best |
 | ARC-AGI V1 | 66.6% | Competitive |
 
-**Humanity's Last Exam deserves its own paragraph.** HLE was assembled specifically because existing benchmarks were being saturated by frontier models. Its questions were contributed by researchers who each selected the hardest question in their domain — questions that required genuine expert reasoning, not pattern matching or memorization. Grok 4 Heavy's 50% was the first meaningful crossing of this benchmark's midpoint, and it demonstrated that RL-trained multi-agent reasoning at heavy test-time compute could tackle a category of problems that had been AI-resistant for months.
+**Humanity's Last Exam deserves its own paragraph.** HLE was assembled specifically because existing benchmarks were being saturated by frontier models. Its questions were contributed by researchers who each selected the hardest question in their domain — questions that required genuine expert reasoning, not pattern matching or memorization. Grok 4 Heavy's 50% was the first meaningful crossing of this benchmark's midpoint, and it demonstrated that RL-trained multi-agent reasoning at heavy test-time compute could tackle a category of problems that had been AI-resistant for months. [Scientific American covered this milestone.](https://www.scientificamerican.com/article/elon-musks-new-grok-4-takes-on-humanitys-last-exam-as-the-ai-race-heats-up/)
 
 The GPQA Diamond score (~87-88%) is strong in absolute terms and reflects the RL reasoning training. Compare this to Mistral Large 3's ~43.9% GPQA Diamond (no reasoning mode): the gap is not model knowledge, it is inference-time reasoning architecture.
 

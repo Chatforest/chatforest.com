@@ -18,7 +18,7 @@ last_refreshed: 2026-05-26
 
 DeepSeek did it again.
 
-In December 2024, the Shenzhen AI lab released V3 alongside a detailed cost disclosure: a frontier-class language model for approximately $5.57 million in disclosed compute. The iOS app launch in January 2025 erased $600 billion from NVIDIA's market cap in a single session. In December 2025, V3.2 extended the lead on open-weight coding benchmarks with DeepSeek Sparse Attention and reasoning-in-tool-use. On April 24, 2026, DeepSeek released V4 — a step-change in scale and a more controversial release than any of its predecessors.
+In December 2024, the Shenzhen AI lab released V3 alongside a detailed cost disclosure: a frontier-class language model for approximately $5.57 million in disclosed compute. The iOS app launch in January 2025 erased $600 billion from NVIDIA's market cap in a single session. In December 2025, V3.2 extended the lead on open-weight coding benchmarks with DeepSeek Sparse Attention and reasoning-in-tool-use. On April 24, 2026, DeepSeek [released V4](https://api-docs.deepseek.com/news/news260424/) — a step-change in scale and a more controversial release than any of its predecessors.
 
 The benchmark numbers are strong. The architecture is genuinely novel. The pricing is competitive. And surrounding it all is a US Congressional investigation alleging the model was trained on export-controlled American semiconductors.
 
@@ -34,7 +34,7 @@ DeepSeek V4 ships as two variants:
 
 **V4 Flash**: 284 billion total parameters, 13 billion active per token. 1 million token context. Designed for high-throughput, cost-sensitive workloads. Pricing: $0.14 input / $0.28 output per million tokens.
 
-Both are open weights under the MIT license. Both support the three-tier reasoning system. This review focuses on V4 Pro, which is the model in benchmark evaluations and independent assessments.
+Both are open weights under the MIT license. Both support the three-tier reasoning system. The weights are available at [`deepseek-ai/DeepSeek-V4-Pro`](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) on Hugging Face. This review focuses on V4 Pro, which is the model in benchmark evaluations and independent assessments.
 
 For reference: DeepSeek V3 had 671 billion total parameters and 37 billion active. V4 Pro doubles the total parameter count while keeping active parameters in a similar range — the per-token inference cost does not scale with total model size in an MoE.
 
@@ -115,7 +115,7 @@ V4 Pro is the strongest open-weight model for competitive coding. It trails US c
 
 ### NIST CAISI (May 2026)
 
-The US National Institute of Standards and Technology's CAISI (Center for AI Safety and Infrastructure) published an independent evaluation of V4 Pro in May 2026. Key findings:
+The US National Institute of Standards and Technology's [CAISI evaluation of V4 Pro](https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro), published in May 2026, found:
 
 - V4 Pro is **the most capable Chinese AI model evaluated to date**
 - On CAISI's non-public internal benchmarks (including a private variant of ARC-AGI-2 and the PortBench agentic evaluation), V4 Pro is approximately **8 months behind leading US frontier models**
@@ -130,7 +130,7 @@ The "8 months behind" framing is worth unpacking. This is not a catastrophic gap
 
 DeepSeek V4 landed in a politically sensitive moment.
 
-The US House Select Committee on the Chinese Communist Party alleged in a May 2026 report that DeepSeek used **tens of thousands of export-controlled US semiconductors** — likely NVIDIA H100s or equivalent — to train V4, and possibly incorporated technology obtained through unauthorized means.
+The US House Select Committee on the Chinese Communist Party [alleged in a May 2026 report](https://www.tomshardware.com/tech-industry/artificial-intelligence/deepseek-launches-1-6-trillion-parameter-v4-on-huawei-chips-as-us-escalates-ai-theft-accusations) that DeepSeek used **tens of thousands of export-controlled US semiconductors** — likely NVIDIA H100s or equivalent — to train V4, and possibly incorporated technology obtained through unauthorized means.
 
 **What is established**: DeepSeek V4 was explicitly co-designed for Huawei Ascend hardware. The technical report and architecture documentation describe Ascend 910B optimization as a primary design constraint. What hardware was used for training (as opposed to inference and fine-tuning) has not been independently verified.
 
