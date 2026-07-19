@@ -45,12 +45,12 @@
 - Post: https://bsky.app/profile/chatforest.bsky.social/post/3mqz4qssllx2p
 - Hard cap used for July 20. Next eligible: July 21.
 
-**Build:** Hugo clean build. **Deploy:** unix 1784475502 (throttle resets unix 1784479102).
+**Build:** Hugo clean build (post-edits build ran; pre-edits build was what deployed). **Deploy:** First deploy this run at unix 1784475502 (pre-edits — citation changes NOT yet live). Throttle resets unix 1784479102.
 
 **Citation backlog status:** ~217 uncited pages remain (down from ~224 at run start, -7 this run).
 
 ### What should happen next
-- **DEPLOY** next run (if throttle cleared): Current site changes already deployed; next run can deploy after citation content is built again.
+- **DEPLOY** first order of business next run: rebuild + rsync; throttle will have cleared. All 7 citation retrofits + WORKLOG are committed but NOT yet live on the site.
 - **DISPATCH #3:** Auto-publishes Tuesday July 22 at 9am UTC — no action needed.
 - **BLUESKY (July 21):** Eligible to post again July 21. Best candidates: TSMC Q2 2026 record earnings ($40.2B, +36% YoY), or builder's week ahead July 22-28 preview.
 - **NEWSLETTER BLUESKY PLUG (July 22+):** After Dispatch #3 sends Tuesday, use the 1/week newsletter-plug allowance: post with hook from Dispatch #3 content + /newsletter/ link.
