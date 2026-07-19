@@ -19,7 +19,7 @@ That lineage mattered. When Haiper raised its pre-seed in April 2022, two of its
 
 The technical pedigree was real. Miao and Wang published at CVPR, ICCV, ICLR, and EMNLP across their academic careers — not AI video specifically, but in visual systems, machine translation, and probabilistic models. They understood the research landscape before any video foundation model existed commercially.
 
-Haiper was founded in late 2021 but operated in stealth for over two years, initially exploring 3D modeling AI before pivoting to video generation in 2023. The stealth exit came in March 2024, coinciding with a $13.8M seed round.
+Haiper was founded in late 2021 but operated in stealth for over two years, initially exploring 3D modeling AI before pivoting to video generation in 2023. The stealth exit came in March 2024, coinciding with a [$13.8M seed round](https://tech.eu/2024/03/06/haiper-emerges-from-stealth-with-138m-seed-for-video-generative-ai/).
 
 ## The Technology
 
@@ -51,8 +51,8 @@ By December 2024: **6.5 million total users, 52 million videos and images genera
 ## The Business
 
 **Funding summary:**
-- Pre-seed (April 2022): $5.4M — angels including Blunsom and de Freitas
-- Seed (March 2024): $13.8M — led by Octopus Ventures, with 5Y Capital
+- [Pre-seed (April 2022): $5.4M](https://techcrunch.com/2024/03/05/competition-in-ai-video-generation-heats-up-as-deepmind-alums-unveil-haiper/) — angels including Blunsom and de Freitas
+- [Seed (March 2024): $13.8M](https://www.finsmes.com/2024/03/haiper-raises-13-8m-in-seed-funding.html) — led by Octopus Ventures, with 5Y Capital
 - Total raised: ~$19.2M
 
 Revenue hit approximately **$2M ARR** by early 2025 with an 18-person team. That's a legitimate milestone for a startup of that size, but a fraction of what would be needed to sustain continued model training at the scale they were pursuing.
@@ -73,11 +73,11 @@ The VEED deal was significant — distributing Haiper's models through an establ
 
 In **February 2025**, Haiper's consumer platform went offline with minimal public notice. Users found they could no longer access their saved projects. There was no farewell blog post at launch — just access cut off.
 
-In **March 2025**, Dr. Miao and Dr. Wang joined **Microsoft AI**. Their reporting line: **Nando de Freitas** — by then Vice President of AI at Microsoft, the same researcher who had written one of their earliest angel investment checks. Edward Hayes, a senior ML researcher, followed.
+In **March 2025**, Dr. Miao and Dr. Wang [joined **Microsoft AI**](https://sifted.eu/articles/microsoft-haiper-ai-hires-video-sora-inflection). Their reporting line: **Nando de Freitas** — by then Vice President of AI at Microsoft, the same researcher who had written one of their earliest angel investment checks. Edward Hayes, a senior ML researcher, followed.
 
-In **June 2025**, **NetMind.AI** acquired Haiper's video generation models. NetMind, which operates a decentralized GPU compute network, now hosts the Haiper Text2Video 2.0 model through their API infrastructure. The models live on; the company does not.
+In **June 2025**, **NetMind.AI** [acquired Haiper's video generation models](https://netmind.ai/blogDetail/Forging-the-Future-of-AI-NetMind-ai-Pioneering-Collaboration-with-Haiper-AI). NetMind, which operates a decentralized GPU compute network, now hosts the [Haiper Text2Video 2.0 model](https://blog.netmind.ai/article/haiper-text2video-launch) through their API infrastructure. The models live on; the company does not.
 
-Sifted's headline characterized it accurately: *"Haiper AI sold for parts after Microsoft poaches cofounders."*
+[Sifted's headline](https://sifted.eu/articles/haiper-ai-sold-for-parts) characterized it accurately: *"Haiper AI sold for parts after Microsoft poaches cofounders."*
 
 The parallel with **Inflection AI** (where Microsoft hired most of the team in March 2024, including Mustafa Suleiman, leaving behind a shell company) was noted immediately. In both cases, Microsoft acquired the intellectual capital of a competitor without a formal acquisition — no disclosed acquisition price, no press release from Microsoft, the startup's brand extinguished but the talent and models absorbed.
 
@@ -121,7 +121,7 @@ It is, however, a template. Expect to see this pattern again.
 **Total raised:** ~$19.2M  
 **Peak users:** 6.5M (December 2024)  
 **Founders:** Dr. Yishu Miao, Dr. Ziyu Wang (now at Microsoft AI)  
-**Models:** Available via NetMind.AI API  
+**Models:** Available via [NetMind.AI API](https://blog.netmind.ai/article/haiper-text2video-launch)  
 **MCP server:** None (API offline)  
 **Verdict:** Not ratable as a product — it no longer exists. As a story: a cautionary and instructive tale about the structural economics of frontier AI video.
 

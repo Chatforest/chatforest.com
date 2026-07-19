@@ -22,9 +22,9 @@ This was a credible but niche product line. The pivot to video generation in mid
 Two hires are worth noting for what they signal about the technical direction. **Jiaming Song**, who joined as Chief Scientist, is the inventor of DDIM — Denoising Diffusion Implicit Models — the algorithm that underlies efficient inference in virtually every modern diffusion model. **Matthew Tancik**, who joined in June 2023, is co-author of the original NeRF paper and co-founder of the nerfstudio framework. The architecture that would become Dream Machine drew from both lines of work.
 
 **Funding timeline:**
-- January 2024: $43M Series B, a16z leading
+- January 2024: [$43M Series B](https://techcrunch.com/2024/01/09/luma-raises-43m-to-build-ai-that-crafts-3d-models/), [a16z leading](https://a16z.com/announcement/investing-in-luma-ai/)
 - December 2024: $90M Series C, with Amazon and AMD as strategic participants
-- November 2025: $900M Series C extension, led by HUMAIN (Saudi Arabia's Public Investment Fund), valuing the company at over $4 billion
+- November 2025: [$900M Series C extension](https://www.cnbc.com/2025/11/19/luma-ai-raises-900-million-in-funding-led-by-saudi-ai-firm-humain.html), led by HUMAIN (Saudi Arabia's Public Investment Fund), [valuing the company at over $4 billion](https://www.businesswire.com/news/home/20251119678010/en/Luma-AI-Raises-%24900-Million-Series-C-Led-by-HUMAIN-And-Partners-on-2-Gigawatt-AI-Supercluster-in-Saudi-Arabia)
 - Total raised: approximately $1.07 billion across six rounds; investors include Amazon, AMD, General Catalyst, NVentures, Amplify Partners, a16z, and HUMAIN
 
 The HUMAIN investment brought Dream Machine into the infrastructure of Saudi Arabia's national AI agenda. Amazon's participation brought it into the AWS Bedrock enterprise offering. These are not developer-tool partnerships — they are enterprise distribution channels.

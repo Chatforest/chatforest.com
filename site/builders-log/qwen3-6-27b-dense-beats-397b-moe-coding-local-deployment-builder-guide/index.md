@@ -3,7 +3,7 @@
 > Alibaba's Qwen3.6-27B is a dense 27-billion-parameter model that outperforms Qwen3.5-397B-A17B across SWE-bench Verified, SWE-bench Pro, Terminal-Bench 2.0, and SkillsBench. Apache 2.0, 262K context, runs at Q4_K_M on a single 16 GB GPU.
 
 
-Alibaba's Qwen team released Qwen3.6-27B on April 22, 2026. The headline result: a dense 27-billion-parameter model outperforms the previous Qwen flagship — Qwen3.5-397B-A17B, a 397-billion-parameter mixture-of-experts — on every major coding benchmark it was tested against.
+Alibaba's Qwen team released Qwen3.6-27B on April 22, 2026 ([HuggingFace model card](https://huggingface.co/Qwen/Qwen3.6-27B)). The headline result: a dense 27-billion-parameter model outperforms the previous Qwen flagship — Qwen3.5-397B-A17B, a 397-billion-parameter mixture-of-experts — on every major coding benchmark it was tested against ([MarkTechPost](https://www.marktechpost.com/2026/04/22/alibaba-qwen-team-releases-qwen3-6-27b-a-dense-open-weight-model-outperforming-397b-moe-on-agentic-coding-benchmarks/), [The Decoder](https://the-decoder.com/qwen3-6-27b-beats-much-larger-predecessor-on-most-coding-benchmarks/)).
 
 The efficiency gap here is worth pausing on. The 397B MoE model activates 17B parameters per token. Qwen3.6-27B activates all 27B parameters per token — it is larger at inference time than the "397B" MoE, but far smaller in total storage and in the hardware overhead of loading and routing a massive sparse model. And it wins across the board.
 

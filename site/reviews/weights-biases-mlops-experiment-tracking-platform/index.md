@@ -7,7 +7,7 @@
 
 Weights & Biases built the experiment tracking platform that OpenAI uses to train its models. When OpenAI says "you simply can't do ambitious, expansive projects without best-in-class tools," they're talking about W&B. That quote alone tells you something about the product's standing in the ML community.
 
-W&B was founded in 2017 by Lukas Biewald, Chris Van Pelt, and Shawn Lewis — working, by company lore, behind a karate studio in San Francisco. After seven years building the dominant MLOps platform with over one million users, CoreWeave acquired W&B for $1.7 billion in May 2025. The GPU cloud company wanted W&B's developer tooling layer to complete a vertical integration play: you run your training jobs on CoreWeave's H100s, and you track, visualize, and analyze them with W&B.
+W&B was founded in 2017 by Lukas Biewald, Chris Van Pelt, and Shawn Lewis — working, by company lore, behind a karate studio in San Francisco. After seven years building the dominant MLOps platform with over one million users, [CoreWeave acquired W&B for $1.7 billion in May 2025](https://techcrunch.com/2025/03/04/coreweave-acquires-ai-developer-platform-weights-biases/). The GPU cloud company wanted W&B's developer tooling layer to complete a vertical integration play: you run your training jobs on CoreWeave's H100s, and you track, visualize, and analyze them with W&B.
 
 This review covers the W&B platform, what the CoreWeave acquisition means, the official MCP server, and how it compares to MLflow and TensorBoard.
 
@@ -15,7 +15,7 @@ This review covers the W&B platform, what the CoreWeave acquisition means, the o
 
 ## The Founders: CrowdFlower's Second Act
 
-Lukas Biewald (CEO) is a serial AI infrastructure founder. In 2007, he and Chris Van Pelt co-founded CrowdFlower — a data labeling and crowdsourcing platform that connected ML teams with human annotators worldwide. Both appeared on Inc.'s "30 Under 30" in 2010. CrowdFlower rebranded as Figure Eight and was acquired by Appen for $300 million in March 2019.
+Lukas Biewald (CEO) is a serial AI infrastructure founder. In 2007, he and Chris Van Pelt co-founded CrowdFlower — a data labeling and crowdsourcing platform that connected ML teams with human annotators worldwide. Both appeared on Inc.'s "30 Under 30" in 2010. CrowdFlower rebranded as Figure Eight and was [acquired by Appen for up to $300 million in March 2019](https://techcrunch.com/2019/03/10/appen-acquires-figure-eight/).
 
 By then, Biewald and Van Pelt were already two years into their second company. Their CrowdFlower experience gave them front-row exposure to ML practitioners struggling to reproduce experiments, compare results, and understand why one model outperformed another. The existing tools — TensorBoard, scattered CSVs, manual print statements — were clearly insufficient.
 
@@ -137,7 +137,7 @@ The free tier's 5-seat limit is a real friction point for small teams. MLflow re
 
 ## The CoreWeave Acquisition
 
-CoreWeave (Nasdaq: CRWV) completed its acquisition of W&B for **$1.7 billion** on May 5, 2025. CoreWeave is one of the largest specialized GPU cloud providers, running roughly 250,000 NVIDIA H100s across dozens of data centers. It went public on Nasdaq in March 2025 — days before announcing the W&B acquisition.
+CoreWeave (Nasdaq: CRWV) [completed its acquisition of W&B for **$1.7 billion** on May 5, 2025](https://techcrunch.com/2025/03/04/coreweave-acquires-ai-developer-platform-weights-biases/). CoreWeave is one of the largest specialized GPU cloud providers, running roughly 250,000 NVIDIA H100s across dozens of data centers. It went public on Nasdaq in March 2025 — days before announcing the W&B acquisition.
 
 The strategic rationale is vertical integration. CoreWeave sells compute to AI teams building and training models. W&B sells tooling to those same teams for tracking, analyzing, and improving models. Together, the pitch is: run your training on CoreWeave GPUs, observe and analyze everything in W&B, iterate and redeploy on CoreWeave — all within a single integrated experience.
 

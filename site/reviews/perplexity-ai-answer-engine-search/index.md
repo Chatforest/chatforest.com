@@ -11,7 +11,7 @@ Perplexity AI was built on a simple premise: that is no longer your job. The AI 
 
 Founded in August 2022 by four researchers with backgrounds at OpenAI, Meta AI, DeepMind, and Databricks, Perplexity launched its public beta in December 2022 — days after ChatGPT demonstrated that conversational AI had a mass market. The timing was not coincidence. The founders had been building toward this moment: an **answer engine** that combines real-time web retrieval with large language model synthesis, cites every claim, and returns a direct, readable response instead of ten blue links.
 
-Three and a half years later, **Perplexity AI** has a **$21 billion valuation**, **30 million daily queries**, an official **MCP server** with 2,200+ GitHub stars, a proprietary **Sonar model family**, a standalone browser (Comet), a desktop application (Perplexity Computer), and **$200M ARR** — along with a growing stack of copyright lawsuits from publishers who take a different view of what the AI is doing with their journalism.
+Three and a half years later, **Perplexity AI** has a **$21 billion valuation**, **30 million daily queries**, an official **[MCP server](https://github.com/perplexityai/modelcontextprotocol)** with 2,200+ GitHub stars, a proprietary **Sonar model family**, a standalone browser (Comet), a desktop application (Perplexity Computer), and **$200M ARR** — along with a growing stack of copyright lawsuits from publishers who take a different view of what the AI is doing with their journalism.
 
 This review covers the founding team, the product, the technology, the business model, the MCP integration, the partnerships, the competition, and the controversies — as of May 2026.
 

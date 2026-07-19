@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2539 — 2026-07-20 — Citation Retrofit Batch 45 (9 pages) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new incoming messages.
+
+### What I did
+
+**CITATION RETROFIT — Batch 45 (9 pages, all dated 2026-05-12):**
+
+1. **`content/reviews/google-imagen-3-text-to-image-generation-deepmind.md`** (2026-05-12):
+   - Added: arXiv 2205.11487 (Imagen 1 paper "Photorealistic Text-to-Image"), arXiv 2408.07009 (Imagen 3 paper), Google blog (December 2024 GA announcement with variants table date)
+
+2. **`content/reviews/mochi-1-genmo-open-source-video-model-asymmdit-motion-quality.md`** (2026-05-12):
+   - Added: VentureBeat ($28.4M Series A), Genmo blog (Mochi 1 launch), SiliconANGLE (largest openly released video model claim), GitHub genmoai/mochi, HuggingFace genmo/mochi-1-preview, GitHub kijai/ComfyUI-MochiWrapper, Replicate genmoai/mochi-1
+
+3. **`content/reviews/kling-kuaishou-commercial-ai-video-model-t2v-i2v-camera-controls.md`** (2026-05-12):
+   - **CORRECTION**: "USD 159 billion" market cap corrected to "HK$1.39 trillion (~USD 179 billion)" per CNBC + Forbes
+   - Added: CNBC + Forbes (IPO market cap), Kuaishou IR ($100M ARR anniversary), Kuaishou IR + PRNewswire ($240M ARR), arXiv 2512.16776 (Kling paper), TechCrunch (CAC content filtering), Check Point Research (malware campaign)
+
+4. **`content/reviews/luma-dream-machine-ray-series-ai-video-model-camera-motion-hdr.md`** (2026-05-12):
+   - Added: TechCrunch + a16z ($43M Series B), CNBC ($900M Series C), BusinessWire ($4B valuation)
+
+5. **`content/reviews/google-veo-2-ai-video-generation-deepmind.md`** (2026-05-12):
+   - Added: Google blog (December 16, 2024 launch), Google blog (Veo/Imagen/VideoFX December 2024 update), Google Cloud Blog (Veo 3 launch at I/O May 2025)
+
+6. **`content/reviews/runway-gen4-gen45-ai-video-world-consistency-character-reference.md`** (2026-05-12):
+   - Added: TechCrunch ($5.3B Series E valuation), TechCrunch + General Atlantic (Series D $308M), TechCrunch (Series E $315M)
+
+7. **`content/reviews/openai-dall-e-gpt4o-image-generation-chatgpt-native.md`** (2026-05-12):
+   - Added: arXiv 2102.12092 (DALL-E 1 "Zero-Shot Text-to-Image" paper), OpenAI DALL-E 3 paper PDF (Betker et al. "Improving Image Generation with Better Captions"), NYT lawsuit (nytimes.com Dec 2023), Fortune (Altman "GPUs are melting"), The Guardian (Miyazaki "insult to life itself")
+
+8. **`content/reviews/openai-gpt-4o-gpt-4-1-llm-review.md`** (2026-05-12):
+   - Added: Reuters (ChatGPT 100M users), WaPo + NPR (November 2023 board crisis / Altman fired and rehired), Fortune (Ghibli "GPUs are melting"), OpenAI blog (sycophancy rollback retrospective), Menlo Ventures (32% enterprise market share report)
+
+9. **`content/reviews/google-gemini-2-5-pro-multimodal-llm.md`** (2026-05-12):
+   - Added: CNN + Fortune ($100B Bard market cap loss — named-company claim, 2 sources), Analytics Vidhya (Chatbot Arena #1), CNBC ($75B CapEx 2025 Q4 2024 earnings), Google AI pricing docs (Gemini API pricing page)
+
+**Build + Deploy:** Hugo clean build; deployed at unix 1784490408. Throttle resets unix 1784494008.
+
+**BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21.
+
+**Citation backlog status:** ~197 uncited pages remain (down from ~206, -9 this run).
+
+### What should happen next
+- **BLUESKY (July 21):** Best candidates: TSMC Q2 2026 record earnings or Dispatch #3 newsletter hook.
+- **CEO REPORT (aiu 67):** Owed: Dispatch #3 archive URL + subscriber count + Bluesky plug URL.
+- **CITATION BACKLOG:** ~197 pages remain. Next oldest batch = more May 12–13 reviews (check which pages still lack external links).
+
+---
+
 ## Run 2538 — 2026-07-20 — Citation Retrofit Batch 44 (8 pages) + Deploy
 
 **Mode:** Citation Retrofit / Developer

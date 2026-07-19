@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -66,14 +67,14 @@
 
       <div class="article-body">
         <h1 id="wan21--alibabas-apache-20-open-source-video-model-that-beat-sora-on-vbench">Wan2.1 — Alibaba&rsquo;s Apache 2.0 Open-Source Video Model That Beat Sora on VBench</h1>
-<p>In February 2025, Alibaba released the weights to a video generation model under the Apache 2.0 license with no commercial restrictions. Within a month, the technical report showed it had achieved <strong>#1 on VBench</strong>, the industry-standard video quality benchmark, with an 86.22% total score — outperforming OpenAI&rsquo;s Sora (84.28%), Runway Gen-3 (82.32%), and Tencent&rsquo;s HunyuanVideo (83.24%).</p>
+<p>In February 2025, Alibaba released the weights to a video generation model under the Apache 2.0 license with no commercial restrictions. Within a month, <a href="https://arxiv.org/abs/2503.20314">the technical report</a> showed it had achieved <strong>#1 on VBench</strong>, the industry-standard video quality benchmark, with an 86.22% total score — outperforming OpenAI&rsquo;s Sora (84.28%), Runway Gen-3 (82.32%), and Tencent&rsquo;s HunyuanVideo (83.24%).</p>
 <p>The model was called <strong>Wan2.1</strong>. The name is the international shorthand for Tongyi Wanxiang (通义万相), Alibaba&rsquo;s creative AI platform that also produces image generation tools under the Tongyi brand umbrella alongside Qwen LLMs. The &ldquo;Wan&rdquo; brand was adopted for international markets — it&rsquo;s cleaner, shorter, and avoids the transliteration issues that plague Chinese AI product names abroad.</p>
-<p>By mid-2025, Wan had released three more numbered versions, adding Mixture-of-Experts architecture, native audio, 1080P support, and eventually 4K image generation. Replicate hosts over 22 variants; <code>wan-2.2-i2v-fast</code> alone has accumulated <strong>10.9 million API runs</strong> — a scale that most commercial AI video APIs never reach. The GitHub repos have accumulated over 15,000 stars each.</p>
+<p>By mid-2025, Wan had released three more numbered versions, adding Mixture-of-Experts architecture, native audio, 1080P support, and eventually 4K image generation. <a href="https://replicate.com/wan-video">Replicate hosts over 22 variants</a>; <code>wan-2.2-i2v-fast</code> alone has accumulated <strong>10.9 million API runs</strong> — a scale that most commercial AI video APIs never reach. The <a href="https://github.com/Wan-Video/Wan2.1">GitHub repos</a> have accumulated over 15,000 stars each.</p>
 <p>This is a research-based review of Wan2.1&rsquo;s architecture, open-source status, capabilities, deployment, community ecosystem, and positioning relative to commercial competitors. We analyze from public sources, technical documentation, and independent benchmarks. We do not test AI tools hands-on.</p>
 <hr>
 <h2 id="the-parent-organization-team-wan-at-alibaba-cloud">The Parent Organization: Team Wan at Alibaba Cloud</h2>
 <p><strong>Alibaba Group</strong> (阿里巴巴集团) is one of the world&rsquo;s largest technology companies, founded in 1999 and headquartered in Hangzhou, China. It operates across e-commerce (Taobao, Tmall, Lazada), cloud computing (Alibaba Cloud / Aliyun), logistics (Cainiao), digital media (Youku), and AI research.</p>
-<p>Wan is built by <strong>&ldquo;Team Wan&rdquo;</strong> — a dedicated group within Alibaba Cloud whose contact address is <code>wan.ai@alibabacloud.com</code>. The team falls under the Tongyi AI umbrella, the same brand family that produces the Qwen large language models. The technical report for Wan2.1 (arXiv:2503.20314) lists 62+ contributors from across Alibaba&rsquo;s AI organization, indicating significant resource commitment. The GitHub organization is <code>Wan-Video</code>; the consumer product lives at <code>wan.video</code> (previously <code>wanxai.com</code>) and is mirrored at <code>tongyi.aliyun.com/wanxiang/</code> for Chinese users.</p>
+<p>Wan is built by <strong>&ldquo;Team Wan&rdquo;</strong> — a dedicated group within Alibaba Cloud whose contact address is <code>wan.ai@alibabacloud.com</code>. The team falls under the Tongyi AI umbrella, the same brand family that produces the Qwen large language models. The <a href="https://arxiv.org/abs/2503.20314">technical report for Wan2.1</a> (arXiv:2503.20314) lists 62+ contributors from across Alibaba&rsquo;s AI organization, indicating significant resource commitment. The GitHub organization is <code>Wan-Video</code>; the consumer product lives at <code>wan.video</code> (previously <code>wanxai.com</code>) and is mirrored at <code>tongyi.aliyun.com/wanxiang/</code> for Chinese users.</p>
 <p>It&rsquo;s worth distinguishing Wan from Alibaba&rsquo;s other AI video work. <strong>HappyHorse-1.0</strong> — Alibaba&rsquo;s #1-ranked anonymous launch model from April 2026 — was built by the <strong>Future Life Lab inside the Taotian Group</strong> (ATH AI Innovation Unit), not by Team Wan. Both sit within the broader Alibaba AI ecosystem, but they are organizationally and architecturally distinct. Wan is an open-source platform model; HappyHorse is a closed-weight benchmark contender with a very different architecture. The two share a corporate parent, not a development team.</p>
 <p>The Wan2.1 technical report identifies <strong>Shiwei Zhang</strong> as the primary contact author, with the full team attributed collectively as &ldquo;Team Wan, Alibaba Group.&rdquo;</p>
 <hr>
@@ -175,7 +176,7 @@
 <h2 id="performance-benchmarks">Performance Benchmarks</h2>
 <h3 id="vbench-1-at-launch">VBench: #1 at Launch</h3>
 <p>VBench is the most widely cited academic benchmark for AI video generation, evaluating multiple dimensions of video quality including subject consistency, motion smoothness, aesthetic quality, and semantic alignment with the input text.</p>
-<p>From the Wan2.1 technical report (arXiv:2503.20314):</p>
+<p>From the <a href="https://arxiv.org/abs/2503.20314">Wan2.1 technical report</a> (arXiv:2503.20314):</p>
 <table>
 <thead>
 <tr>
@@ -356,7 +357,7 @@
 <hr>
 <h2 id="open-source-the-apache-20-advantage">Open Source: The Apache 2.0 Advantage</h2>
 <p>Wan&rsquo;s open-source model is the most commercially permissive available in AI video generation.</p>
-<p><strong>License</strong>: Apache 2.0 — attribution required, no restrictions on commercial use, no royalties, no restrictions on creating derivative works. This is the same license as most major open-source software projects and permits use in commercial products, APIs, fine-tuned derivatives, and integrated applications without needing to negotiate with Alibaba.</p>
+<p><strong>License</strong>: <a href="https://github.com/Wan-Video/Wan2.1/blob/main/LICENSE">Apache 2.0</a> — attribution required, no restrictions on commercial use, no royalties, no restrictions on creating derivative works. This is the same license as most major open-source software projects and permits use in commercial products, APIs, fine-tuned derivatives, and integrated applications without needing to negotiate with Alibaba.</p>
 <p>For comparison: HunyuanVideo (Tencent) uses a custom license that permits commercial use only below 100M monthly active users. CogVideoX uses a modified Apache 2.0 with additional restrictions. Mochi-1 (Genmo) uses Apache 2.0 but has a smaller model with lower quality. <strong>Wan is the most capable open-source video generation model available under a fully permissive commercial license.</strong></p>
 <h3 id="github-activity">GitHub Activity</h3>
 <table>

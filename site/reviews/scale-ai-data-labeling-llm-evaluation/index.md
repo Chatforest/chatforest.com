@@ -7,7 +7,7 @@ Every large language model you've used was trained on human-annotated data. Some
 
 Alexandr Wang founded Scale at nineteen. He was a freshman at MIT. He dropped out.
 
-By 2021, he was on the Forbes 400 — the youngest self-made billionaire in American history at the time.
+By 2021, he was on the Forbes 400 — [the youngest self-made billionaire in American history](https://www.forbes.com/profile/alexandr-wang/) at the time.
 
 The question worth asking about Scale AI is not whether it occupies an important position in the AI stack. It clearly does. The question is: **what kind of company is it, what does it actually sell, and does its model hold up as AI gets better at labeling itself?**
 
@@ -55,7 +55,7 @@ Scale's position is unusual: because it has run annotation and evaluation work f
 
 The defense product. Scale Donovan is an AI-powered intelligence analysis platform designed for military and government use. It enables analysts to query and reason over multi-source intelligence data — imagery, signals intelligence, documents, sensor feeds — using an LLM-backed interface. It is, essentially, an AI analyst co-pilot trained on defense-relevant workflows.
 
-Scale Federal, the subsidiary managing government contracts, had secured a reported $249 million contract with the Pentagon's Chief Digital and AI Office (CDAO) as of 2024, plus additional contracts with branches of the US Army, Air Force, and other defense agencies. Wang has been openly vocal about positioning Scale as infrastructure for US AI competitiveness against China — a posture that has made Scale a favored vendor in defense circles and prompted Congressional invitations for Wang to testify on national security and AI.
+Scale Federal, the subsidiary managing government contracts, has secured [a growing series of contracts with the Pentagon's Chief Digital and AI Office (CDAO)](https://scale.com/blog/Scale-ai-pentagon-cdao-500-million-agreement) plus additional contracts with branches of the US Army, Air Force, and other defense agencies — with the CDAO production agreement reaching a $500M ceiling by 2026. Wang has been openly vocal about positioning Scale as infrastructure for US AI competitiveness against China — a posture that has made Scale a favored vendor in defense circles and prompted Congressional invitations for Wang to testify on national security and AI.
 
 ---
 
@@ -69,11 +69,11 @@ Scale's funding rounds track the AI investment cycle almost exactly:
 | Series B | 2019 | $18M | Accel, Tiger Global | — |
 | Series C | 2020 | $100M | Index Ventures, Accel, Tiger Global | ~$1B |
 | Series D | 2021 | $325M | Tiger Global, Dragoneer, Coatue | $7.3B |
-| Series E | 2024 | $1B | (institutional + strategic) | ~$13.8B |
+| Series E/F | 2024 | [$1B](https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b/) | Accel (lead), Nvidia, Meta, Amazon + others | ~$13.8B |
 
 The Series E round in 2024 raised $1 billion at a valuation reported between $13.8B and $14B. Revenue for fiscal 2023 was reported at approximately $675 million, with significant year-over-year growth driven by the generative AI wave. Scale is not yet public as of early 2026.
 
-Wang became the youngest self-made billionaire on the Forbes 400 in 2021, at age 24. The distinction attracted significant attention and some skepticism — the valuation underpinning that net worth was based on a Series D that priced the company at $7.3B, which is a paper figure, not a liquid one. The status was accurate; its permanence depended on Scale sustaining its market position.
+Wang became [the youngest self-made billionaire](https://www.forbes.com/sites/mattdurot/2024/05/21/scale-ai-cofounder-alex-wang-regains-worlds-youngest-self-made-billionaire-title/) on the Forbes 400 in 2021, at age 24. The distinction attracted significant attention and some skepticism — the valuation underpinning that net worth was based on a Series D that priced the company at $7.3B, which is a paper figure, not a liquid one. The status was accurate; its permanence depended on Scale sustaining its market position.
 
 ---
 
@@ -101,7 +101,7 @@ Scale sources annotators primarily through its Remotasks platform, which operate
 
 Published rate data suggests pay ranges from approximately $1 to $5 per hour for most annotation tasks, with higher rates for specialized tasks requiring domain expertise (legal, medical, scientific). In the relevant labor markets, these rates are above median wages in many cases but below what would constitute a living wage in higher-cost urban areas.
 
-Time Magazine's 2023 investigation into the human cost of AI training focused partly on Scale's contractors in Kenya, with attention to tasks that required reviewing violent, sexually explicit, or otherwise psychologically harmful content. Annotators described reviewing graphic material — detailed torture, child sexual abuse material, violent extremism — with minimal psychological support, for wages that did not reflect the burden of that work. Scale has contested elements of these characterizations and updated its wellness protocols in response to some criticisms.
+[Time Magazine's 2023 investigation](https://time.com/6247678/openai-chatgpt-kenya-workers/) into the human cost of AI training focused partly on Scale's contractors in Kenya (through its Remotasks platform), with attention to tasks that required reviewing violent, sexually explicit, or otherwise psychologically harmful content. Annotators described reviewing graphic material — detailed torture, child sexual abuse material, violent extremism — with minimal psychological support, for wages that did not reflect the burden of that work. Scale has contested elements of these characterizations and updated its wellness protocols in response to some criticisms.
 
 The structural tension is genuine: Scale's business model requires low annotation costs to remain price-competitive, but the work is not uniformly low-cognitive-burden. Safety annotation, red-teaming, and RLHF preference ranking on sensitive content expose workers to material that carries psychological risk. How that risk is priced and managed is not fully transparent from Scale's public disclosures.
 

@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -72,7 +73,7 @@
 <p>This is the full story: three model generations, one major architectural shift, and a deployment strategy that built around user surfaces rather than benchmark comparisons. We research from public sources — papers, company announcements, developer documentation, and independent evaluations. We do not test AI image tools hands-on.</p>
 <hr>
 <h2 id="imagen-1-may-2022-the-t5-insight-that-reframed-the-field">Imagen 1 (May 2022): The T5 Insight That Reframed the Field</h2>
-<p>The Imagen 1 paper — &ldquo;Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding&rdquo; (Saharia et al., arXiv:2205.11487, May 2022) — opened with a claim that ran against the prevailing wisdom of the moment. The dominant assumption in text-to-image research was that CLIP, trained jointly on images and text with contrastive objectives, was the optimal text encoder for image generation. Imagen 1 showed that wasn&rsquo;t true.</p>
+<p>The Imagen 1 paper — <a href="https://arxiv.org/abs/2205.11487">&ldquo;Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding&rdquo;</a> (Saharia et al., arXiv:2205.11487, May 2022) — opened with a claim that ran against the prevailing wisdom of the moment. The dominant assumption in text-to-image research was that CLIP, trained jointly on images and text with contrastive objectives, was the optimal text encoder for image generation. Imagen 1 showed that wasn&rsquo;t true.</p>
 <p><strong>The T5 insight</strong>: The Imagen team found that replacing CLIP with T5-XXL — an 11-billion-parameter encoder trained exclusively on text, specifically on C4&rsquo;s language modeling tasks, with no image exposure — produced better image generation. T5-XXL understood language more deeply than CLIP&rsquo;s joint-training allowed, and that language understanding transferred directly to image quality: more accurate attribute binding, better handling of spatial relationships, more faithful interpretation of complex multi-element prompts.</p>
 <p>The implication was architectural: the text encoder was the critical component, not the image diffusion model. You could improve image generation substantially by improving language understanding, without changing any of the image-generation mechanisms.</p>
 <p><strong>Architecture</strong>: Imagen 1 used a cascaded diffusion pipeline:</p>
@@ -121,7 +122,7 @@
 <p>The cost of this strategy was visibility. Imagen 2 was widely used but rarely discussed by name. Users generated images in Slides and Docs without knowing they were using Imagen. The benchmark and community conversation remained centered on competitors.</p>
 <hr>
 <h2 id="imagen-3-december-2024-latent-diffusion-and-enterprise-ga">Imagen 3 (December 2024): Latent Diffusion and Enterprise GA</h2>
-<p>Imagen 3 is the first public confirmation that Google moved its primary image generation architecture from cascaded pixel-space diffusion (Imagen 1&rsquo;s approach) to latent diffusion — the architectural family popularized by Stable Diffusion and SDXL. The paper (arXiv:2408.07009, submitted August 2024, revised December 2024) describes Imagen 3 as &ldquo;a latent diffusion model that generates high quality images from text prompts,&rdquo; an explicit departure from the original cascaded design.</p>
+<p>Imagen 3 is the first public confirmation that Google moved its primary image generation architecture from cascaded pixel-space diffusion (Imagen 1&rsquo;s approach) to latent diffusion — the architectural family popularized by Stable Diffusion and SDXL. The <a href="https://arxiv.org/abs/2408.07009">paper (arXiv:2408.07009)</a>, submitted August 2024, revised December 2024, describes Imagen 3 as &ldquo;a latent diffusion model that generates high quality images from text prompts,&rdquo; an explicit departure from the original cascaded design.</p>
 <p><strong>Why latent diffusion</strong>: Cascaded pixel-space diffusion operates on raw pixel values at each resolution stage. It&rsquo;s computationally expensive and memory-intensive, particularly at high resolutions, because the diffusion process must manage the full dimensional complexity of the image at every step. Latent diffusion compresses the image into a lower-dimensional latent space using a variational autoencoder, runs the diffusion process in that compressed representation, then decodes back to full resolution. The latent representation is substantially smaller than the pixel representation, making each diffusion step faster and less memory-intensive, and enabling higher effective resolution for equivalent compute.</p>
 <p>The architectural shift allowed Imagen 3 to produce higher-quality outputs — improved texture, lighting, fine detail — without proportionally increased compute. The specific architecture of Imagen 3&rsquo;s variational autoencoder, the diffusion backbone design, and the text encoder changes are not publicly disclosed in the same detail as Imagen 1&rsquo;s paper, which provided extensive architectural specifics.</p>
 <p><strong>Model variants (Vertex AI)</strong>:</p>
@@ -137,7 +138,7 @@
 <tr>
 <td><code>imagen-3.0-generate-001</code></td>
 <td>Standard generation</td>
-<td>December 10, 2024</td>
+<td><a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/video-image-generation-update-december-2024/">December 10, 2024</a></td>
 </tr>
 <tr>
 <td><code>imagen-3.0-generate-002</code></td>

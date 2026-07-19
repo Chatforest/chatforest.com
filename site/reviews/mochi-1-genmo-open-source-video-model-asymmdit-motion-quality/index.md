@@ -7,7 +7,7 @@
 
 By October 2024, the open-source AI video generation space had developed a credibility problem around motion. Most models could generate visually plausible frames, but temporal coherence — the sense that objects in a scene actually exist in a physical world and move consistently through time — remained elusive. Water looked like a texture applied to a surface rather than a fluid. Hair moved in ways that were statistically reasonable frame-to-frame but physically nonsensical over a full clip. Human figures drifted between poses rather than actually walking. The difference between "a sequence of frames that looks like motion" and "a video of something actually moving" was still the gap between open-source and the commercial leaders.
 
-**Mochi 1**, released by Genmo on October 22, 2024, was the open-source model that most directly attacked that gap. Not through better resolution or faster inference or more features, but by training a 10-billion-parameter model specifically oriented toward the physics of motion — and then releasing it under Apache 2.0, making it freely usable by anyone with sufficient hardware.
+**[Mochi 1](https://www.genmo.ai/blog/mochi-1-a-new-sota-in-open-text-to-video)**, released by Genmo on October 22, 2024, was the open-source model that most directly attacked that gap. Not through better resolution or faster inference or more features, but by training a 10-billion-parameter model specifically oriented toward the physics of motion — and then releasing it under Apache 2.0, making it freely usable by anyone with sufficient hardware.
 
 It did not surpass every commercial model on every metric. It was never fast. The 480p resolution ceiling was a real limitation from day one. It lacked image-to-video support and never published a formal technical paper. But for smooth, temporally coherent motion in fluids, cloth, and human movement, Mochi 1 was — for a brief window — the best open-source option in existence, and its AsymmDiT architecture introduced ideas that subsequent models built upon.
 
@@ -19,7 +19,7 @@ This review covers Mochi 1 (preview release) as it stood at launch and in the mo
 
 Genmo was founded in 2022 in San Francisco by **Paras Jain** and **Ajay Jain** — brothers who both hold PhDs from UC Berkeley. Their doctoral work was conducted alongside researchers including Ion Stoica, Joey Gonzalez, and Pieter Abbeel, all of whom became Genmo advisors. Ajay Jain co-authored a 2020 foundational paper on diffusion models while at Google Brain; Paras Jain specialized in scalable systems for creative AI tools.
 
-The company raised approximately $28–30 million in a Series A led by New Enterprise Associates (NEA), with participation from The House Fund, Gold House Ventures, WndrCo, and others, announced in early 2024.
+The company [raised $28.4 million in a Series A](https://venturebeat.com/ai/video-ai-startup-genmo-launches-mochi-1-an-open-source-model-to-rival-runway-kling-and-others) led by New Enterprise Associates (NEA), with participation from The House Fund, Gold House Ventures, WndrCo, and others, announced in early 2024.
 
 Genmo's stated mission is to "put a tiny filmmaker in the pockets of a billion people" — placing them squarely in the consumer-accessibility camp rather than the enterprise API camp. Before Mochi 1, they operated a creative platform offering image animation, video generation, and 3D generation from text prompts. Mochi 1 was their pivot to foundational model development: a research lab bet that releasing a frontier-scale model as open weights would build the credibility and community that a proprietary API could not.
 
@@ -31,7 +31,7 @@ The timing mattered. October 2024 was a dense month for open-source video releas
 
 Genmo's blog post accompanying the Mochi 1 release made two headline claims.
 
-First: Mochi 1 was, at release, "the largest video generative model ever openly released" — 10 billion parameters in the transformer backbone alone, trained from scratch (not fine-tuned from an image foundation model). For context, CogVideoX was approximately 5B parameters; the open-source video landscape before late 2024 had not seen a 10B model released under a permissive license.
+First: Mochi 1 was, at release, ["the largest video generative model ever openly released"](https://siliconangle.com/2024/10/22/genmo-introduces-mochi-1-open-source-text-video-generation-model/) — 10 billion parameters in the transformer backbone alone, trained from scratch (not fine-tuned from an image foundation model). For context, CogVideoX was approximately 5B parameters; the open-source video landscape before late 2024 had not seen a 10B model released under a permissive license.
 
 Second: Mochi 1 achieved the highest motion quality scores in their internal Elo-style benchmark, including a **motion quality Elo of 1147.51** and **prompt adherence score of 79.38**, outscoring Luma Dream Machine and Runway Gen-3 on those internal metrics. These are Genmo's own benchmarks, not independent evaluations — but the community largely confirmed the motion quality assessment in practice. The prompt adherence score was independently notable: Mochi 1's long-context T5-XXL text encoder and 256-token limit gave it genuine capacity to follow complex, multi-clause prompts.
 
@@ -179,19 +179,19 @@ Mochi 1 is a model for users who prioritize motion quality over iteration speed.
 
 ### GitHub and License
 
-**`github.com/genmoai/mochi`** — Apache 2.0. Fully permissive license covering both the code and the model weights. Personal and commercial use are permitted without restriction.
+**[`github.com/genmoai/mochi`](https://github.com/genmoai/mochi)** — Apache 2.0. Fully permissive license covering both the code and the model weights. Personal and commercial use are permitted without restriction.
 
 ### HuggingFace
 
-**`genmo/mochi-1-preview`** — weights in SafeTensors format. Available via the repo's download script or direct magnet link (Genmo publishes the magnet link alongside HuggingFace to reduce central download dependency). The T5-XXL text encoder is downloaded separately.
+**[`genmo/mochi-1-preview`](https://huggingface.co/genmo/mochi-1-preview)** — weights in SafeTensors format. Available via the repo's download script or direct magnet link (Genmo publishes the magnet link alongside HuggingFace to reduce central download dependency). The T5-XXL text encoder is downloaded separately.
 
 ### ComfyUI
 
-**`github.com/kijai/ComfyUI-MochiWrapper`** — the primary community integration. Supports multiple attention backends, VRAM optimization, and community-shared workflow files. Tutorials and example outputs are documented on Civitai, Stable Diffusion Art, and comfy.org. ComfyUI was the main access path for users without H100-class hardware.
+**[`github.com/kijai/ComfyUI-MochiWrapper`](https://github.com/kijai/ComfyUI-MochiWrapper)** — the primary community integration. Supports multiple attention backends, VRAM optimization, and community-shared workflow files. Tutorials and example outputs are documented on Civitai, Stable Diffusion Art, and comfy.org. ComfyUI was the main access path for users without H100-class hardware.
 
 ### Replicate
 
-Available at `replicate.com/genmoai/mochi-1` — approximately $0.42 per run. For users who want cloud inference without managing weights, Replicate provides a cost-effective option for occasional generation without provisioning GPU infrastructure.
+Available at [`replicate.com/genmoai/mochi-1`](https://replicate.com/genmoai/mochi-1) — approximately $0.42 per run. For users who want cloud inference without managing weights, Replicate provides a cost-effective option for occasional generation without provisioning GPU infrastructure.
 
 ### Hosted Demo
 

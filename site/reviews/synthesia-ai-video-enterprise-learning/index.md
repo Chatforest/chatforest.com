@@ -13,7 +13,7 @@ The Heineken case study is not exceptional. It is representative. That is the po
 
 SAP reported **70% faster video asset creation**. Moody's reported **87% reduction in video production time**. Five Below reported a **97% reduction in production costs**. The pattern holds across industries, company sizes, and use cases: organizations that previously needed studios, on-camera presenters, voice actors, translators, and post-production workflows discovered that they could replace much of that stack with a SaaS product that costs less per year than a single day of traditional video production.
 
-By October 2025, Synthesia had crossed **$100M ARR**, raised **$200M in a Series E** led by Google Ventures with Nvidia's NVentures participating, and achieved a **$4 billion valuation**. The company had **50,000+ customers** and counted **90%+ of Fortune 100 companies** and **70% of FTSE 100 companies** among them. It had also, at some point before accepting Adobe's £10M strategic investment, rejected an acquisition offer from Adobe reported at **$3 billion** — choosing to remain independent at a moment when its own trajectory suggested the $4B valuation it would achieve months later was not ceiling but floor.
+By October 2025, Synthesia had crossed **$100M ARR**, [raised **$200M in a Series E**](https://www.synthesia.io/post/series-e-200-million-4-billion-valuation-future-work) led by Google Ventures with Nvidia's NVentures participating, and achieved a [**$4 billion valuation**](https://www.forbes.com/sites/rashishrivastava/2025/10/29/ai-video-startup-synthesia-valued-at-4-billion-in-new-200-million-raise/). The company had **50,000+ customers** and counted **90%+ of Fortune 100 companies** and **70% of FTSE 100 companies** among them. It had also, at some point before accepting Adobe's £10M strategic investment, [rejected an acquisition offer from Adobe reported at **$3 billion**](https://sifted.eu/articles/synthesia-acquisition-offer) — choosing to remain independent at a moment when its own trajectory suggested the $4B valuation it would achieve months later was not ceiling but floor.
 
 This review covers what Synthesia actually is, how the technology works, what its enterprise governance apparatus looks like, how it compares to HeyGen and Colossyan, and what its real limitations are. It is written from public sources, research, and available documentation. We do not test AI video tools hands-on.
 
@@ -268,7 +268,7 @@ This governance apparatus is not window dressing. It is the reason Fortune 100 I
 
 ## Deepfake Misuse: The 2023 Incident and the Response
 
-In October 2023, Freedom House's "Freedom on the Net 2023" report documented that Synthesia's platform had been used to create AI-generated fake news anchors used for government propaganda by actors in Venezuela, China, Burkina Faso, and Russia.
+In October 2023, [Freedom House's "Freedom on the Net 2023" report](https://freedomhouse.org/report/freedom-net/2023/repressive-power-artificial-intelligence) documented that Synthesia's platform had been used to create AI-generated fake news anchors used for government propaganda by actors in Venezuela, China, Burkina Faso, and Russia.
 
 This was a significant incident. The platform's ease of use and quality — the very things that made it commercially successful for enterprise L&D — were the same things that made it attractive to state-level disinformation operations.
 

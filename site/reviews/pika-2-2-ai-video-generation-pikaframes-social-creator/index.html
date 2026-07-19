@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -68,7 +69,7 @@
         <h1 id="pika-22--pikaframes-creator-first-toolkit-and-the-case-for-social-video-ai">Pika 2.2 — Pikaframes, Creator-First Toolkit, and the Case for Social Video AI</h1>
 <p>When Pika Labs released Pika 2.2 on February 27, 2025, the headline feature was <strong>Pikaframes</strong>: upload a start image and an end image, set a duration between one and ten seconds, and the model generates a smooth animated transition between them. The idea sounds straightforward — keyframe interpolation has existed in traditional animation software for decades — but what Pika built wasn&rsquo;t just motion tweening. It was an AI that could infer what happens in between two states: a room before a storm and after it, a face at rest and mid-laugh, a car parked and in motion. The frames defined the endpoints; the model invented the journey.</p>
 <p>Pikaframes did not make Pika the highest-quality AI video generator. On the Artificial Analysis text-to-video leaderboard, Pika 2.2 ranks around position 70 with an ELO of approximately 950 — well below the top tier occupied by HappyHorse-1.0 (1,355 ELO), Seedance 2.0 (1,272), and Kling 3.0 (1,250). The benchmark gap between Pika and the frontier models is real and significant.</p>
-<p>But Pika has never been trying to win the benchmark race. It has been building something different: a layered toolkit of expressive, accessible effects that social media creators can use immediately, without deep technical knowledge or a professional video background. Pikaffects generated 2.3 million pieces of content in its first week. A TikTok collection of Pikaffects content reached 520 million views. These aren&rsquo;t the numbers of a platform competing with Runway for Hollywood clients. They&rsquo;re the numbers of a platform that has found a genuine product-market fit among the world&rsquo;s largest population of video makers — people who post on TikTok, Instagram Reels, and YouTube Shorts.</p>
+<p>But Pika has never been trying to win the benchmark race. It has been building something different: a layered toolkit of expressive, accessible effects that social media creators can use immediately, without deep technical knowledge or a professional video background. <a href="https://venturebeat.com/ai/pika-1-5-launches-with-physics-defying-ai-special-effects">Pikaffects generated 2.3 million pieces of content in its first week</a>. A TikTok collection of Pikaffects content reached 520 million views. These aren&rsquo;t the numbers of a platform competing with Runway for Hollywood clients. They&rsquo;re the numbers of a platform that has found a genuine product-market fit among the world&rsquo;s largest population of video makers — people who post on TikTok, Instagram Reels, and YouTube Shorts.</p>
 <p>This is a research-based review of Pika 2.2 and the broader Pika platform, covering the company&rsquo;s founding, the model timeline from 1.0 through 2.5, Pikaframes and the Pika feature ecosystem, competitive benchmarks, pricing, API access, MCP availability, and competitive positioning. We do not test AI video tools hands-on; all analysis is based on public sources, company announcements, independent benchmarks, and technical documentation.</p>
 <hr>
 <h2 id="the-company-pika-labs">The Company: Pika Labs</h2>
@@ -107,8 +108,8 @@
 </tr>
 <tr>
 <td>June 7, 2024</td>
-<td>Series B</td>
-<td>$80M</td>
+<td><a href="https://pika.art/blog/announcement">Series B</a></td>
+<td><a href="https://www.bloomberg.com/news/articles/2024-06-05/spark-capital-jared-leto-back-ai-video-startup-pika">$80M</a></td>
 <td>Spark Capital</td>
 <td>$470M</td>
 </tr>
@@ -127,7 +128,7 @@
 <p>The cultural moment was Pika&rsquo;s advantage. Sora had not yet been announced (that came in February 2024). Runway Gen-2 existed but was not creator-optimized. Pika 1.0 was the first AI video product that genuinely felt like a social media tool rather than an AI research demo.</p>
 <h3 id="pika-15--october-2024-the-pikaffects-moment">Pika 1.5 — October 2024: The Pikaffects Moment</h3>
 <p>Pika 1.5 introduced <strong>Pikaffects</strong> — a library of physics-based special effects that could be applied to any image or video input. The initial set included twelve effects: Explode it, Squish it, Melt it, Crush it, Inflate it, Cake-ify it, Levitate, Eye Pop, Decapitate, and several others. The effects could be combined, producing 36 documented combination modes.</p>
-<p>What made Pikaffects strategically significant was not its technical sophistication but its virality. The effects were specifically designed to produce compelling, share-worthy short clips: a photo of a friend&rsquo;s face melting, a wedding cake exploding, a product inflating to absurdity. In the first week after launch, Pikaffects generated <strong>2.3 million pieces of content</strong>. A TikTok collection of Pikaffects content accumulated <strong>520 million views</strong>. These numbers represented genuine organic distribution in the target demographic — social media content creators aged 18–34.</p>
+<p>What made Pikaffects strategically significant was not its technical sophistication but its virality. The effects were specifically designed to produce compelling, share-worthy short clips: a photo of a friend&rsquo;s face melting, a wedding cake exploding, a product inflating to absurdity. In the first week after launch, <a href="https://venturebeat.com/ai/pika-1-5-launches-with-physics-defying-ai-special-effects">Pikaffects generated <strong>2.3 million pieces of content</strong></a>. A TikTok collection of Pikaffects content accumulated <strong>520 million views</strong>. These numbers represented genuine organic distribution in the target demographic — social media content creators aged 18–34.</p>
 <p>Pikaffects was also the moment that clarified Pika&rsquo;s competitive positioning: not a tool for making high-quality cinematic video, but a tool for making highly shareable social video. The product roadmap from 1.5 onward has consistently prioritized expressive, accessible effects over raw generation quality.</p>
 <h3 id="pika-20--december-13-2024-scene-ingredients">Pika 2.0 — December 13, 2024: Scene Ingredients</h3>
 <p>Pika 2.0 was released on December 13, 2024 — approximately the same time as OpenAI&rsquo;s Sora launch — and positioned as a direct response to the competitive landscape reset that Sora represented.</p>
@@ -139,7 +140,7 @@
 <li><strong>1080p resolution output</strong> — the first Pika version to offer full HD. Prior versions topped out at 720p.</li>
 <li><strong>Enhanced character animation</strong>: improved facial movements for both human and non-human characters; more expressive and less robotic motion.</li>
 <li><strong>Smart frame linking</strong>: maintains consistent face, posture, clothing, and emotion across frames within a single generation — different from character consistency across separate generations, but improved coherence within a clip.</li>
-<li><strong>Lip sync with ElevenLabs</strong>: text-to-speech integration that synchronizes lip movement with generated or uploaded audio. First available as early access to Pro subscribers; later rolled out more broadly.</li>
+<li><strong><a href="https://venturebeat.com/ai/ai-video-wars-heat-up-as-pika-adds-lip-sync-powered-by-elevenlabs">Lip sync with ElevenLabs</a></strong>: text-to-speech integration that synchronizes lip movement with generated or uploaded audio. First available as early access to Pro subscribers; later rolled out more broadly.</li>
 <li><strong>Pikadditions</strong>: add objects or people to existing video, with automatic handling of lighting, motion tracking, and depth.</li>
 <li><strong>Extended video length</strong>: beyond the 5-second cap of prior versions.</li>
 </ul>
@@ -244,7 +245,7 @@
 <p>Neither platform is wrong for its audience. For a content creator whose output is 30-second TikTok videos featuring melting, exploding, or morphing objects, Pika&rsquo;s toolkit is more directly relevant. For a filmmaker producing a narrative short with consistent characters and ambient sound design, Runway&rsquo;s capabilities are the correct choice.</p>
 <p>Pika&rsquo;s competitive advantage lives in <strong>feature breadth, effect expressiveness, and price accessibility</strong> — not in raw output quality on benchmark comparisons.</p>
 <h3 id="the-adobe-premiere-pro-integration">The Adobe Premiere Pro Integration</h3>
-<p>Announced at NAB in April 2024, Pika&rsquo;s integration into <strong>Adobe Premiere Pro&rsquo;s Generative Extend</strong> feature is the most significant enterprise distribution play the company has made. Generative Extend adds frames to the end of existing video shots — a practical post-production tool for fixing slightly-too-short takes, extending B-roll, or creating smooth transitions between clips.</p>
+<p><a href="https://blog.adobe.com/en/publish/2024/04/15/bringing-gen-ai-to-video-editing-workflows-adobe-premiere-pro">Announced at NAB in April 2024</a>, Pika&rsquo;s integration into <strong>Adobe Premiere Pro&rsquo;s Generative Extend</strong> feature is the most significant enterprise distribution play the company has made. Generative Extend adds frames to the end of existing video shots — a practical post-production tool for fixing slightly-too-short takes, extending B-roll, or creating smooth transitions between clips.</p>
 <p>The Premiere Pro integration means Pika is now accessible to professional video editors who use industry-standard tools, not just to social media creators using the Pika web app. The long-term significance depends on Adobe expanding the integration and on Pika&rsquo;s models improving to meet professional quality thresholds — but the distribution relationship with Adobe is a meaningful structural advantage that few other AI video companies have.</p>
 <p>The integration also included a <strong>Content Credentials</strong> commitment — automatic metadata labeling that marks AI-generated content as such. Adobe has made Content Credentials a condition for third-party AI model integrations in its products, and Pika&rsquo;s compliance is notable given the broader debates about AI-generated content transparency.</p>
 <hr>

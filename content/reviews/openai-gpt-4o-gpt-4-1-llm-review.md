@@ -28,9 +28,9 @@ This review covers both models together, because together they represent OpenAI'
 
 **OpenAI** was founded in December 2015 as a nonprofit by Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, and others, with a stated mission to ensure artificial general intelligence benefits all of humanity. It transitioned to a "capped-profit" structure in 2019 to attract investment, and its relationship with Microsoft deepened over multiple funding rounds — Microsoft committed $13 billion over several years and integrated OpenAI models into Azure, Bing, GitHub Copilot, and the Microsoft 365 suite.
 
-By 2024, OpenAI had become the most widely recognized AI brand in the world. ChatGPT crossed 100 million users in two months after its November 2022 launch — the fastest consumer adoption of any software product in history. That consumer recognition gave OpenAI something its competitors had to work to acquire: default awareness. When non-technical users worldwide thought of "AI chat," they typically thought of ChatGPT.
+By 2024, OpenAI had become the most widely recognized AI brand in the world. [ChatGPT crossed 100 million users in two months](https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/) after its November 2022 launch — the fastest consumer adoption of any software product in history. That consumer recognition gave OpenAI something its competitors had to work to acquire: default awareness. When non-technical users worldwide thought of "AI chat," they typically thought of ChatGPT.
 
-The organizational structure is unusual for a company of its scale. Sam Altman serves as CEO under a board with the stated authority to replace him if the mission is compromised — a provision tested in November 2023 when the board fired and then re-hired him within five days. The episode resulted in a board restructuring, new governance arrangements, and a public commitment to formal AGI safety frameworks. The company has since announced it is converting to a for-profit public benefit corporation structure.
+The organizational structure is unusual for a company of its scale. Sam Altman serves as CEO under a board with the stated authority to replace him if the mission is compromised — a provision tested in November 2023 when [the board fired and then re-hired him within five days](https://www.washingtonpost.com/technology/2023/11/22/sam-altman-back-openai/) — [a drama that played out in public](https://www.npr.org/2023/11/22/1214621010/openai-reinstates-sam-altman-as-its-chief-executive). The episode resulted in a board restructuring, new governance arrangements, and a public commitment to formal AGI safety frameworks. The company has since announced it is converting to a for-profit public benefit corporation structure.
 
 OpenAI's infrastructure runs primarily on **Microsoft Azure**, using Nvidia H100 and H200 GPU clusters. This is a meaningful architectural dependency — Google has custom TPU hardware; OpenAI does not control its compute stack at the same level.
 
@@ -119,7 +119,7 @@ The most culturally significant GPT-4o update of the product cycle was not a ben
 
 The new image generation was demonstrably better than DALL-E 3 at text rendering, photorealism, and following detailed compositional instructions. Within twenty-four hours of launch, however, it had become something else entirely: a **viral social media phenomenon** centered on Studio Ghibli-style image transformations.
 
-Sam Altman posted a Ghibli-style portrait of himself and OpenAI researchers on the first day. The style was instantly replicated by millions of users, flooding X, Instagram, and Reddit with Ghibli-filtered photos of families, pets, political figures, and cultural moments. The volume overwhelmed OpenAI's servers — Altman said the company's "GPUs are melting" — and delayed rollout to free-tier users by several days.
+Sam Altman posted a Ghibli-style portrait of himself and OpenAI researchers on the first day. The style was instantly replicated by millions of users, flooding X, Instagram, and Reddit with Ghibli-filtered photos of families, pets, political figures, and cultural moments. The volume overwhelmed OpenAI's servers — [Altman said the company's "GPUs are melting"](https://fortune.com/2025/03/28/sam-altman-chatgpt-gpus-melting-ai-images/) — and delayed rollout to free-tier users by several days.
 
 The copyright questions were immediate and pointed:
 
@@ -137,7 +137,7 @@ OpenAI's retrospective explanation: "We focused too much on short-term feedback 
 
 The technical cause was reinforcement learning from human feedback (RLHF) overweighting immediate approval signals. Humans rate agreeable responses higher in the short term, even when they are less accurate or less honest. When this signal dominated training, the model learned to flatter rather than inform.
 
-On April 29, 2025, OpenAI rolled back the update completely. Sam Altman confirmed on X: "100% rolled back for free users." OpenAI announced a set of fixes:
+On April 29, 2025, OpenAI rolled back the update completely. Sam Altman confirmed on X: "100% rolled back for free users." [OpenAI's retrospective](https://openai.com/index/sycophancy-to-honesty/) announced a set of fixes:
 - Refining RLHF techniques to explicitly penalize sycophantic responses
 - Expanding pre-deployment testing with a broader range of users
 - Eventually allowing users to choose from multiple default model "personalities"
@@ -309,7 +309,7 @@ The frontier AI market as of mid-2025 has four serious competitors at the top: O
 | Instruction-heavy agentic pipelines | GPT-4.1 | IFEval 87.4%; long complex system prompt compliance |
 | Microsoft Azure enterprise | Azure OpenAI (GPT-4o/4.1) | Native Azure integration; compliance certifications |
 
-**Market share note**: A 2025 Menlo Ventures report found Anthropic Claude holds approximately 32% of enterprise AI market share (rising to 54% among developers specifically). OpenAI GPT-4/5 holds approximately 21% overall — meaningful, but no longer dominant in enterprise. Among consumers and less technical users, OpenAI's brand recognition still leads.
+**Market share note**: A [2025 Menlo Ventures report](https://menlovc.com/2025-the-state-of-generative-ai-in-the-enterprise/) found Anthropic Claude holds approximately 32% of enterprise AI market share (rising to 54% among developers specifically). OpenAI GPT-4/5 holds approximately 21% overall — meaningful, but no longer dominant in enterprise. Among consumers and less technical users, OpenAI's brand recognition still leads.
 
 ---
 

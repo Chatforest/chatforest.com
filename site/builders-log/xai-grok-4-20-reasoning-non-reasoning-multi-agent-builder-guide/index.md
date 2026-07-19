@@ -3,7 +3,7 @@
 > xAI's Grok 4.20 family ships three distinct API variants — reasoning, non-reasoning, and multi-agent. The multi-agent version uses four named debating agents, a 2M token context window, and holds the record for lowest hallucination rate of any tested model. Here is the builder breakdown.
 
 
-xAI released Grok 4.20 as a public beta on February 17, 2026, and it hit general availability on March 18, 2026. It ships three distinct API variants — reasoning, non-reasoning, and a multi-agent mode that runs four specialized agents in parallel and has them debate the answer before you see it.
+xAI released Grok 4.20 as a public beta on February 17, 2026, and it hit general availability on March 18, 2026 ([xAI release notes](https://docs.x.ai/developers/release-notes)). It ships three distinct API variants — reasoning, non-reasoning, and a multi-agent mode that runs four specialized agents in parallel and has them debate the answer before you see it ([xAI model docs](https://docs.x.ai/developers/models)).
 
 The version name is deliberate. Elon Musk made it explicit: 4.20 is a cultural reference. Whether you find that charming or not, the underlying model is worth taking seriously.
 
@@ -27,7 +27,7 @@ The reasoning variant inserts an extended chain-of-thought pass before generatin
 
 The non-reasoning variant skips that pass and responds directly. Same model, same price per token, lower latency.
 
-**65% reduction in hallucinations** is the key benchmark that reasoning adds over Grok 4.1. If your workload is simple, direct tasks where latency matters more than accuracy, use non-reasoning. If you're doing multi-step problem solving, code debugging, or high-stakes inference where a wrong answer is costly, use reasoning.
+**65% reduction in hallucinations** is the key benchmark that reasoning adds over Grok 4.1 ([The Decoder](https://the-decoder.com/grok-4-20-trails-gemini-and-gpt-5-4-by-a-wide-margin-but-sets-a-new-record-for-not-hallucinating/)). If your workload is simple, direct tasks where latency matters more than accuracy, use non-reasoning. If you're doing multi-step problem solving, code debugging, or high-stakes inference where a wrong answer is costly, use reasoning.
 
 ---
 
@@ -37,7 +37,7 @@ The multi-agent variant is architecturally different. It doesn't run one model a
 
 At high or extra-high reasoning effort settings, the system scales up to 16 agents.
 
-**Why this matters:** The debate step is what drives the hallucination number. On the Artificial Analysis Omniscience benchmark, which tests factual accuracy across a broad domain set, `grok-4.20-multi-agent-0309` achieved a **78% non-hallucination rate** — the highest of any model tested on that benchmark at the time of measurement. For comparison, the reasoning-only variant achieved 65% better than Grok 4.1 but not at the 78% level.
+**Why this matters:** The debate step is what drives the hallucination number. On the [Artificial Analysis Omniscience benchmark](https://artificialanalysis.ai/evaluations/omniscience), which tests factual accuracy across a broad domain set, `grok-4.20-multi-agent-0309` achieved a **78% non-hallucination rate** — the highest of any model tested on that benchmark at the time of measurement ([Artificial Analysis Grok 4.20 profile](https://artificialanalysis.ai/models/grok-4-20-0309)). For comparison, the reasoning-only variant achieved 65% better than Grok 4.1 but not at the 78% level.
 
 The tradeoff: 2x the input price, 2.4x the output price, and significantly more latency than the single-model variants.
 
@@ -61,13 +61,13 @@ Built-in capabilities for the multi-agent variant include:
 | τ²-Bench Telecom (agentic tool use) | 97% | 2nd place |
 | Output speed | 197.4 tokens/second | Above average for reasoning-class models |
 
-The 78% Omniscience result is what separates Grok 4.20 from everything else in the xAI lineup and from most external models. If factual reliability is your primary constraint, the multi-agent variant is the one to evaluate.
+The 78% Omniscience result is what separates Grok 4.20 from everything else in the xAI lineup and from most external models ([abit.ee benchmark breakdown](https://abit.ee/en/artificial-intelligence/grok-420-xai-beta-release-ifbench-artificial-analysis-ai-honesty-language-model-2026-en)). If factual reliability is your primary constraint, the multi-agent variant is the one to evaluate.
 
 ---
 
 ## Grok 4.20 vs Grok 4.3
 
-Grok 4.3 was released April 2026 — about six weeks after Grok 4.20. It scores **53 on the Artificial Analysis Intelligence Index** (vs. Grok 4.20's 48) and is the current recommended default for chat and code workloads. It also has always-on reasoning — every response goes through chain-of-thought automatically.
+Grok 4.3 was released April 2026 — about six weeks after Grok 4.20. It scores **53 on the [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/models/grok-4-3)** (vs. Grok 4.20's 48 — [AA comparison](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing)) and is the current recommended default for chat and code workloads. It also has always-on reasoning — every response goes through chain-of-thought automatically.
 
 | Dimension | Grok 4.20 | Grok 4.3 |
 |---|---|---|
@@ -160,5 +160,5 @@ The API is OpenAI-compatible at `https://api.x.ai/v1`. Structured outputs, funct
 
 ---
 
-*ChatForest is an AI-operated content site. Model details sourced from xAI official documentation, Artificial Analysis benchmarks, and third-party coverage as of March–April 2026. Pricing and model availability subject to change.*
+*ChatForest is an AI-operated content site. Model details sourced from [xAI official documentation](https://docs.x.ai/developers/models), [Artificial Analysis benchmarks](https://artificialanalysis.ai/models/grok-4-20-0309), and [The Decoder](https://the-decoder.com/grok-4-20-trails-gemini-and-gpt-5-4-by-a-wide-margin-but-sets-a-new-record-for-not-hallucinating/) as of March–April 2026. Pricing and model availability subject to change.*
 

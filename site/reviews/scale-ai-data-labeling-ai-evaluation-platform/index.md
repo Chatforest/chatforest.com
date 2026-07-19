@@ -9,7 +9,7 @@ Wang and his co-founder Lucy Guo built Scale AI to fix that. The premise was a m
 
 That bet looks obvious in retrospect. It was not obvious in 2016. The autonomous vehicle boom was early. Deep learning was ascending but had not yet exploded into the generative AI era. And a teenage MIT dropout with no enterprise track record had to convince serious research teams to outsource a foundational part of their ML pipeline to a startup.
 
-Ten years later, Scale AI has $2 billion in annual revenue growing at 130% year-over-year, a $29 billion valuation, and a $500 million Pentagon contract awarded in May 2026. Wang himself left the company in June 2025 to become Meta's Chief AI Officer. The data labeling startup he built is now, quietly, one of the most consequential pieces of AI infrastructure in the United States.
+Ten years later, Scale AI has $2 billion in annual revenue growing at 130% year-over-year, a $29 billion valuation, and a [$500 million Pentagon contract awarded in May 2026](https://www.forbes.com/sites/aliciapark/2026/05/06/pentagon-hands-meta-backed-scale-ai-500-million-contract-5-times-last-years-deal-report-says/). Wang himself [left the company in June 2025 to become Meta's Chief AI Officer](https://techcrunch.com/2025/06/13/scale-ai-confirms-significant-investment-from-meta-says-ceo-alexandr-wang-is-leaving/). The data labeling startup he built is now, quietly, one of the most consequential pieces of AI infrastructure in the United States.
 
 ---
 
@@ -59,7 +59,7 @@ The company was seed-funded by Y Combinator in 2016, Series A by Accel in 2018 (
 
 In May 2024, Accel led a roughly $1 billion round at $13.8 billion, with Amazon, Meta, Cisco, and ServiceNow participating. Total raised before the Meta deal: approximately $1.6 billion in equity.
 
-Then, in June 2025, Meta announced a $14.3 billion strategic investment for a **49% non-voting stake** in Scale, at a post-money valuation of $29 billion. This was not an acquisition — Scale remained an independent company with its own board and management. Meta got a large economic interest without control. The deal provided substantial liquidity to existing shareholders and funded Scale's defense expansion.
+Then, in June 2025, Meta announced a [$14.3 billion strategic investment](https://techcrunch.com/2025/06/13/scale-ai-confirms-significant-investment-from-meta-says-ceo-alexandr-wang-is-leaving/) for a **49% non-voting stake** in Scale, at a post-money valuation of $29 billion ([Forbes coverage](https://www.forbes.com/sites/janakirammsv/2025/06/23/meta-invests-14-billion-in-scale-ai-to-strengthen-model-training/)). This was not an acquisition — Scale remained an independent company with its own board and management. Meta got a large economic interest without control. The deal provided substantial liquidity to existing shareholders and funded Scale's defense expansion.
 
 The non-voting structure was deliberate. Scale's government contracts — particularly the classified work with DoD — require that the company maintain independence and US control. A voting stake would have complicated that.
 
@@ -71,15 +71,15 @@ The deal was transformative. It was also immediately damaging to Scale's commerc
 
 Within weeks of the Meta deal's announcement, Scale's other major AI lab clients began severing or winding down their relationships. The logic was straightforward: those companies — Google, OpenAI, Microsoft, xAI — are Meta's direct competitors. Training data strategy and model development direction are competitive secrets. Having Meta hold a 49% stake in the company that handles your RLHF pipeline is a material risk.
 
-**Google**, which had been spending approximately $150 million annually with Scale and had planned to increase to $200 million in 2025, announced plans to cut ties. It is the most dramatic loss — Google was Scale's largest commercial customer.
+**Google**, which had been [spending approximately $150 million annually with Scale](https://www.cnbc.com/2025/06/14/google-scale-ais-largest-customer-plans-split-after-meta-deal.html) and had planned to increase to $200 million in 2025, announced plans to cut ties ([TechCrunch](https://techcrunch.com/2025/06/14/google-reportedly-plans-to-cut-ties-with-scale-ai/)). It is the most dramatic loss — Google was Scale's largest commercial customer.
 
-**OpenAI** began phasing out Scale AI work after the Meta deal, shifting volume toward other vendors. This was a significant relationship: Scale had been a major RLHF partner for OpenAI since the early ChatGPT training efforts.
+**OpenAI** [began phasing out Scale AI work](https://fortune.com/2025/06/19/openai-is-phasing-out-scale-ai-work-following-startups-meta-deal/) after the Meta deal, shifting volume toward other vendors ([CNBC](https://www.cnbc.com/2025/06/18/openai-is-winding-down-its-work-with-scale-ai-founder-is-joining-meta.html)). This was a significant relationship: Scale had been a major RLHF partner for OpenAI since the early ChatGPT training efforts.
 
 **Microsoft** and **xAI** also began winding down their Scale relationships.
 
 The Meta deal replaced all of this revenue with a single large strategic relationship — plus the defense expansion. But the trade-off fundamentally changed Scale's competitive position in the commercial AI training market. Scale went from being the neutral infrastructure layer that every lab used to being, effectively, Meta's data operation with a government contracts business attached.
 
-Surge AI — rebranded Mercor — is the primary beneficiary. Its valuation jumped from $2 billion in February 2025 to $10 billion by October 2025, a five-fold increase in eight months driven directly by the clients Scale lost.
+Surge AI — rebranded Mercor — is the primary beneficiary. Its valuation jumped from $2 billion in February 2025 to [$10 billion by October 2025](https://www.cnbc.com/2025/10/27/ai-hiring-startup-mercor-funding.html), a five-fold increase in eight months driven directly by the clients Scale lost ([TechCrunch](https://techcrunch.com/2025/09/09/sources-ai-training-startup-mercor-eyes-10b-valuation-on-450m-run-rate/)).
 
 ---
 
@@ -95,7 +95,7 @@ The contract progression tells the story:
 - **2024**: $99M Army contract (Army Contracting Command, Aberdeen Proving Ground)
 - **March 2025**: Thunderforge prototype; DoD describes it as the flagship AI agent program
 - **September 2025**: $100M five-year Pentagon agreement
-- **May 2026**: Pentagon expands that contract to a **$500M ceiling**, five times the original cap, citing demand that exceeded projections
+- **May 2026**: Pentagon expands that contract to a [**$500M ceiling**](https://www.bloomberg.com/news/articles/2026-05-06/meta-backed-scale-ai-wins-500-million-defense-department-deal), five times the original cap, citing demand that exceeded projections
 
 The $500M expansion is the headline that Scale will use to define this era. It is the largest AI data contract the DoD has awarded, and it covers a service — AI data processing, evaluation, and decision support — that the military now treats as operational infrastructure.
 
@@ -143,9 +143,9 @@ In early 2024, Remotasks abruptly terminated operations in Kenya, Nigeria, and P
 
 The Oxford Internet Institute's 2023 evaluation of crowdwork platforms gave Remotasks 1 out of 10 on worker protections. AI data workers wrote to President Biden in 2024 calling conditions "modern day slavery," citing pay of approximately one cent per task for work that could take hours.
 
-In December 2024 and January 2025, two separate lawsuits were filed: one alleging wage theft and worker misclassification, the second alleging that contractors were exposed to violent, sexual, and otherwise disturbing content during model training tasks with no adequate psychological support or disclosure.
+In [December 2024 and January 2025, two separate lawsuits were filed](https://techcrunch.com/2025/01/09/scale-ai-hit-by-its-second-employee-wage-lawsuit-in-less-than-a-month/): one alleging wage theft and worker misclassification, the second alleging that contractors were exposed to violent, sexual, and otherwise disturbing content during model training tasks with no adequate psychological support or disclosure.
 
-The US Department of Labor opened an investigation into Scale AI, confirmed as active in August 2024 and ongoing through early 2025.
+The US Department of Labor [opened an investigation into Scale AI](https://techcrunch.com/2025/03/06/scale-ai-is-being-investigated-by-the-us-department-of-labor/), confirmed as active in August 2024 and running through early 2025, before being closed in May 2025 without public findings.
 
 The House Judiciary Committee sent Wang a letter in March 2025 requesting information about AI censorship practices related to how Scale's data labeling might influence political outputs from AI models.
 
@@ -193,7 +193,7 @@ The labor practices issues are serious and unresolved. Paying annotators fractio
 
 And the company is now being run by a CEO who was not the founder, reporting to a board that includes a 49% stakeholder who is also the largest customer. The alignment pressures on Droege are complex.
 
-Scale at its best is genuinely important infrastructure — the company that built the RLHF pipelines and evaluation frameworks that made modern AI work. At its current stage, it is a defense-oriented AI services company with a complicated ownership structure, documented labor controversies, and strong but concentrated revenue.
+Scale at its best is genuinely important infrastructure — the company that built the RLHF pipelines and evaluation frameworks that made modern AI work. At its current stage, it is a defense-oriented AI services company with a complicated ownership structure, [documented labor controversies](https://techcrunch.com/2025/01/09/scale-ai-hit-by-its-second-employee-wage-lawsuit-in-less-than-a-month/), and strong but concentrated revenue.
 
 For enterprises building AI systems that need third-party evaluation or specialized training data, Scale Evaluation (SEAL) is the strongest independent offering in the market. For government and defense contexts, Scale Donovan and the Pentagon contracting relationship are without peer. For straightforward annotation and labeling at volume, the competitive landscape has diversified enough that Scale is no longer the only credible option.
 

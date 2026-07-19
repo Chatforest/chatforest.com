@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -68,13 +69,13 @@
         <h1 id="amazon-nova-reel--aws-bedrocks-video-generation-model-multi-shot-c2pa-credentials-and-the-enterprise-pipeline-play">Amazon Nova Reel — AWS Bedrock&rsquo;s Video Generation Model: Multi-Shot, C2PA Credentials, and the Enterprise Pipeline Play</h1>
 <p>Amazon&rsquo;s entry into the AI video generation market arrived on December 3, 2024, when the company unveiled the Nova foundation model family at AWS re:Invent in Las Vegas. Among the models in the launch — Nova Micro, Lite, Pro for text; Nova Canvas for images — was <strong>Nova Reel</strong>, a cloud-based video generation model embedded directly into the Amazon Bedrock managed AI infrastructure.</p>
 <p>The positioning was unambiguous: this is not a consumer tool. Nova Reel is an API-first, enterprise-grade video generation service. It outputs to S3 buckets, integrates with Lambda, works with IAM roles, and generates asynchronously — the workflow of a production backend, not a creative sandbox. The model&rsquo;s responsible AI story centers on invisible watermarking and, as of version 1.1 in April 2025, full <strong>C2PA Content Credentials</strong> — the first major video generation model to embed standardized content provenance metadata into every output by default.</p>
-<p>This review draws on AWS documentation, official blog posts, the Amazon Nova technical report (arXiv 2506.12103), and public community benchmarks. We do not test AI tools hands-on.</p>
+<p>This review draws on <a href="https://docs.aws.amazon.com/ai/responsible-ai/nova-reel/overview.html">AWS documentation</a>, official blog posts, the <a href="https://arxiv.org/abs/2506.12103">Amazon Nova technical report (arXiv 2506.12103)</a>, and public community benchmarks. We do not test AI tools hands-on.</p>
 <hr>
 <h2 id="timeline">Timeline</h2>
 <ul>
-<li><strong>December 3, 2024</strong>: Amazon Nova family announced at AWS re:Invent. Nova Reel 1.0 launches on Amazon Bedrock. Initial capability: 6-second videos, 1280×720, 24fps. Text-to-video and image+text-to-video supported.</li>
+<li><strong>December 3, 2024</strong>: <a href="https://aws.amazon.com/blogs/aws/introducing-amazon-nova-frontier-intelligence-and-industry-leading-price-performance/">Amazon Nova family announced at AWS re:Invent</a>. Nova Reel 1.0 <a href="https://techcrunch.com/2024/12/03/amazon-announces-nova-a-new-family-of-multimodal-ai-models/">launches on Amazon Bedrock</a>. Initial capability: 6-second videos, 1280×720, 24fps. Text-to-video and image+text-to-video supported.</li>
 <li><strong>December 2024 – March 2025</strong>: Developer community explores the Bedrock SDK path. Python/Java/CLI workflows emerge; Lambda+S3 pipeline patterns documented by AWS.</li>
-<li><strong>April 7, 2025</strong>: <strong>Nova Reel 1.1</strong> launches. New features: multi-shot automated mode (2-minute videos from a single prompt), multi-shot manual mode (storyboard: up to 20 shots, each with custom prompt + optional image), improved 6-second single-shot quality, reduced latency. C2PA Content Credentials added to all outputs.</li>
+<li><strong>April 7, 2025</strong>: <a href="https://aws.amazon.com/blogs/aws/amazon-nova-reel-1-1-featuring-up-to-2-minutes-multi-shot-videos/"><strong>Nova Reel 1.1</strong> launches</a>. New features: multi-shot automated mode (2-minute videos from a single prompt), multi-shot manual mode (storyboard: up to 20 shots, each with custom prompt + optional image), improved 6-second single-shot quality, reduced latency. <a href="https://aws.amazon.com/about-aws/whats-new/2025/04/amazon-nova-reel-1-1/">C2PA Content Credentials</a> added to all outputs. (<a href="https://techcrunch.com/2025/04/07/amazon-says-its-ai-video-model-can-now-generate-minutes-long-clips/">TechCrunch</a>)</li>
 <li><strong>Ongoing</strong>: MCP server community implementations appear (<code>mirecekd/novareel-mcp</code>); ComfyUI-AmazonBedrock nodes add Nova Reel support; AWS publishes RAG-for-video-generation patterns.</li>
 </ul>
 <hr>
@@ -112,12 +113,12 @@
 <p>The responsible AI posture stands out against the broader video generation market. Open-source models — Wan2.1, HunyuanVideo, FramePack — ship no watermarking by default. Commercial models like Runway and Pika do include watermarking, but C2PA Content Credentials at launch as a standard feature is not universal.</p>
 <hr>
 <h2 id="mcp-server-and-ecosystem-integrations">MCP Server and Ecosystem Integrations</h2>
-<p>An MCP (Model Context Protocol) server exists for Nova Reel: <strong><code>mirecekd/novareel-mcp</code></strong> on GitHub, described as an MCP server for asynchronous video generation through Amazon Bedrock. It exposes stdio, SSE, and HTTP Streaming transports and wraps the Bedrock async invocation pattern behind an MCP interface.</p>
+<p>An MCP (Model Context Protocol) server exists for Nova Reel: <a href="https://github.com/mirecekd/novareel-mcp"><strong><code>mirecekd/novareel-mcp</code></strong></a> on GitHub, described as an MCP server for asynchronous video generation through Amazon Bedrock. It exposes stdio, SSE, and HTTP Streaming transports and wraps the Bedrock async invocation pattern behind an MCP interface.</p>
 <p>Community MCP aggregators (LobeHub, mcp.aibase.com) list the server as a usable integration. This is a third-party community implementation, not an official AWS MCP server — but it provides a path for AI agent workflows (including Claude-based agents) to invoke Nova Reel as a tool.</p>
 <p><strong>ComfyUI</strong>: ComfyUI-AmazonBedrock provides nodes for Nova Reel video generation within the ComfyUI workflow environment. This is a partial bridge to the open-source creative community, though the AWS credential requirement limits accessibility compared to locally-runnable models.</p>
 <hr>
 <h2 id="benchmark-position">Benchmark Position</h2>
-<p>Amazon&rsquo;s December 2024 launch materials cited third-party A/B testing results showing Nova Reel outperforming <strong>Runway Gen-3 Alpha</strong> with:</p>
+<p><a href="https://aws.amazon.com/blogs/aws/introducing-amazon-nova-frontier-intelligence-and-industry-leading-price-performance/">Amazon&rsquo;s December 2024 launch materials</a> cited third-party A/B testing results showing Nova Reel outperforming <strong>Runway Gen-3 Alpha</strong> with:</p>
 <ul>
 <li><strong>61.4% win rate</strong> for video quality</li>
 <li><strong>71.6% win rate</strong> for video consistency</li>
@@ -127,7 +128,7 @@
 <p>Nova Reel&rsquo;s quality positioning is best understood contextually: it is priced and designed for production automation workflows, not for film-quality creative output. For enterprise teams generating thousands of short product videos at scale, &ldquo;solid and consistent&rdquo; at $0.08/second is a different value proposition than &ldquo;cinematic best&rdquo; at a manual per-clip rate.</p>
 <hr>
 <h2 id="pricing-and-cost-model">Pricing and Cost Model</h2>
-<p>Nova Reel is priced at <strong>$0.08 per second of generated video</strong>, on a pay-as-you-go basis through Amazon Bedrock.</p>
+<p>Nova Reel is <a href="https://aws.amazon.com/nova/pricing/">priced at <strong>$0.08 per second of generated video</strong></a>, on a pay-as-you-go basis through Amazon Bedrock.</p>
 <table>
 <thead>
 <tr>

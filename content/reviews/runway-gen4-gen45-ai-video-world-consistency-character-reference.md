@@ -16,7 +16,7 @@ Runway's cultural positioning has always been different from pure-engineering sh
 
 **Gen-4** (March 2025) marked a decisive capability jump. The central innovation was character and world consistency — the ability to generate multiple clips featuring the same characters, locations, and objects in different scenes without per-generation fine-tuning, using only a single reference image. **Gen-4.5** (December 2025) extended this with improved physics realism, motion coherence, and prompt adherence, holding the top position on the independent Video Arena Elo leaderboard at launch.
 
-Total funding: $860 million. Valuation at the February 2026 Series E: $5.3 billion.
+Total funding: $860 million. Valuation at the February 2026 Series E: [$5.3 billion](https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/).
 
 We write from public sources — press coverage, company announcements, developer documentation, community evaluations, and pricing pages. We do not test AI video tools hands-on.
 
@@ -30,8 +30,8 @@ The company's early public presence was as a Stable Diffusion integration layer:
 
 **Funding timeline:**
 - **2023**: Series C funding in the $100M range, bringing the company to prominence alongside the broader AI investment surge
-- **April 2025**: Series D, approximately $308 million, at a $3.3 billion valuation, led by General Atlantic
-- **February 2026**: Series E, $315 million, at a $5.3 billion valuation, led by General Atlantic again. Participating investors include Nvidia, Adobe Ventures, AMD Ventures, Fidelity Management & Research Co., and Felicis Ventures
+- **April 2025**: [Series D, approximately $308 million](https://techcrunch.com/2025/04/03/runway-best-known-for-its-video-generating-models-raises-308m/), at a $3.3 billion valuation, led by [General Atlantic](https://www.generalatlantic.com/media-article/runway-series-d-funding-towards-a-new-media-ecosystem-with-world-simulators/)
+- **February 2026**: [Series E, $315 million](https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/), at a $5.3 billion valuation, led by General Atlantic again. Participating investors include Nvidia, Adobe Ventures, AMD Ventures, Fidelity Management & Research Co., and Felicis Ventures
 
 The February 2026 round language is notable: Runway announced intent to use the funds to "pre-train the next generation of world models" — marking an explicit strategic expansion from AI video into broader world modeling. This is a significant pivot in articulated ambition, placing Runway in the same conceptual space as Google DeepMind's world-modeling research programs.
 

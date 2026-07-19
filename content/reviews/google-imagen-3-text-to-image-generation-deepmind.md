@@ -20,7 +20,7 @@ This is the full story: three model generations, one major architectural shift, 
 
 ## Imagen 1 (May 2022): The T5 Insight That Reframed the Field
 
-The Imagen 1 paper — "Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding" (Saharia et al., arXiv:2205.11487, May 2022) — opened with a claim that ran against the prevailing wisdom of the moment. The dominant assumption in text-to-image research was that CLIP, trained jointly on images and text with contrastive objectives, was the optimal text encoder for image generation. Imagen 1 showed that wasn't true.
+The Imagen 1 paper — ["Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding"](https://arxiv.org/abs/2205.11487) (Saharia et al., arXiv:2205.11487, May 2022) — opened with a claim that ran against the prevailing wisdom of the moment. The dominant assumption in text-to-image research was that CLIP, trained jointly on images and text with contrastive objectives, was the optimal text encoder for image generation. Imagen 1 showed that wasn't true.
 
 **The T5 insight**: The Imagen team found that replacing CLIP with T5-XXL — an 11-billion-parameter encoder trained exclusively on text, specifically on C4's language modeling tasks, with no image exposure — produced better image generation. T5-XXL understood language more deeply than CLIP's joint-training allowed, and that language understanding transferred directly to image quality: more accurate attribute binding, better handling of spatial relationships, more faithful interpretation of complex multi-element prompts.
 
@@ -87,7 +87,7 @@ The cost of this strategy was visibility. Imagen 2 was widely used but rarely di
 
 ## Imagen 3 (December 2024): Latent Diffusion and Enterprise GA
 
-Imagen 3 is the first public confirmation that Google moved its primary image generation architecture from cascaded pixel-space diffusion (Imagen 1's approach) to latent diffusion — the architectural family popularized by Stable Diffusion and SDXL. The paper (arXiv:2408.07009, submitted August 2024, revised December 2024) describes Imagen 3 as "a latent diffusion model that generates high quality images from text prompts," an explicit departure from the original cascaded design.
+Imagen 3 is the first public confirmation that Google moved its primary image generation architecture from cascaded pixel-space diffusion (Imagen 1's approach) to latent diffusion — the architectural family popularized by Stable Diffusion and SDXL. The [paper (arXiv:2408.07009)](https://arxiv.org/abs/2408.07009), submitted August 2024, revised December 2024, describes Imagen 3 as "a latent diffusion model that generates high quality images from text prompts," an explicit departure from the original cascaded design.
 
 **Why latent diffusion**: Cascaded pixel-space diffusion operates on raw pixel values at each resolution stage. It's computationally expensive and memory-intensive, particularly at high resolutions, because the diffusion process must manage the full dimensional complexity of the image at every step. Latent diffusion compresses the image into a lower-dimensional latent space using a variational autoencoder, runs the diffusion process in that compressed representation, then decodes back to full resolution. The latent representation is substantially smaller than the pixel representation, making each diffusion step faster and less memory-intensive, and enabling higher effective resolution for equivalent compute.
 
@@ -97,7 +97,7 @@ The architectural shift allowed Imagen 3 to produce higher-quality outputs — i
 
 | Model ID | Description | GA Date |
 |---|---|---|
-| `imagen-3.0-generate-001` | Standard generation | December 10, 2024 |
+| `imagen-3.0-generate-001` | Standard generation | [December 10, 2024](https://blog.google/innovation-and-ai/models-and-research/google-labs/video-image-generation-update-december-2024/) |
 | `imagen-3.0-generate-002` | Improved; adds LLM-based prompt enhancement | January 29, 2025 |
 | `imagen-3.0-fast-generate-001` | Lower latency; reduced quality on complex prompts | December 10, 2024 |
 | `imagen-3.0-capability-001` | Full editing: inpainting, outpainting, customization | December 10, 2024 |

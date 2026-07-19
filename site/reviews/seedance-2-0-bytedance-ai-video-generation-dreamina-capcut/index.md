@@ -7,9 +7,9 @@
 
 Seedance 2.0 launched on February 12, 2026. Within 48 hours, it had produced more copyright enforcement notices, congressional letters, and studio legal filings than any AI video model before it.
 
-Disney called it "a pirated library." Paramount accused ByteDance of "blatant infringement." Warner Bros. cited Harry Potter, The Lord of the Rings, and Batman. Netflix flagged Squid Game, Bridgerton, and KPop Demon Hunters. The Motion Picture Association sent a collective cease-and-desist. U.S. Senators Marsha Blackburn and Peter Welch wrote jointly to ByteDance's CEO demanding immediate shutdown — calling Seedance 2.0 "the most glaring example of copyright infringement from a ByteDance product to date."
+Disney called it "a pirated library." Paramount accused ByteDance of "blatant infringement." Warner Bros. cited Harry Potter, The Lord of the Rings, and Batman. Netflix flagged Squid Game, Bridgerton, and KPop Demon Hunters. The [Motion Picture Association sent a collective cease-and-desist](https://www.hollywoodreporter.com/business/business-news/mpa-cease-and-desist-bytedance-seedance-2-0-1236510957/). U.S. [Senators Marsha Blackburn and Peter Welch wrote jointly to ByteDance's CEO](https://www.cnbc.com/2026/03/17/bytedance-seedance-shut-down-tiktok-marsha-blackburn-peter-welch.html) demanding immediate shutdown — calling Seedance 2.0 "the most glaring example of copyright infringement from a ByteDance product to date."
 
-ByteDance paused the global rollout in mid-March. By March 26, it resumed via CapCut with "built-in protections for making video from real faces or unauthorized IP."
+ByteDance [paused the global rollout in mid-March](https://deadline.com/2026/02/bytedance-halt-seedance-legal-threats-disney-paramount-1236725770/). By March 26, it resumed via CapCut with "built-in protections for making video from real faces or unauthorized IP."
 
 None of this changed the quality of the model. On Artificial Analysis' benchmark leaderboard, Seedance 2.0 currently ranks #2 in text-to-video (ELO 1,272) and #2 in image-to-video (ELO 1,347) — trailing only HappyHorse-1.0, a model Alibaba's ATH team released on April 10, 2026. From launch through April, Seedance 2.0 held the #1 position on both leaderboards.
 
@@ -49,7 +49,7 @@ ByteDance moved from a research baseline to a commercially deployed and globally
 
 **Seaweed-7B (April 2025):** The published research ancestor. A 7-billion-parameter DiT (Diffusion Transformer) model trained on compute equivalent to 1,000 H100 GPUs, with 48-channel temporal-causal VAE. Published as open research via the seaweed.video project. Architecturally related to Seedance but not the same model.
 
-**Seedance 1.0 (June 2025):** First commercial release. Launched via Doubao and Jimeng in China. Supported text-to-video and image-to-video at up to 1080p via a cascaded DiT refiner (480p base model upscaled to 720p or 1080p). Topped the Artificial Analysis benchmark at launch. The architecture paper (arXiv 2506.09113) details a full training pipeline: pre-training, continued training, supervised fine-tuning with model merging, and RLHF with three reward models covering foundational quality, motion, and aesthetics. A 10x distillation speedup enabled a 5-second 1080p clip in 41.4 seconds on an NVIDIA L20.
+**Seedance 1.0 (June 2025):** First commercial release. Launched via Doubao and Jimeng in China. Supported text-to-video and image-to-video at up to 1080p via a cascaded DiT refiner (480p base model upscaled to 720p or 1080p). Topped the Artificial Analysis benchmark at launch. The [architecture paper (arXiv 2506.09113)](https://arxiv.org/abs/2506.09113) details a full training pipeline: pre-training, continued training, supervised fine-tuning with model merging, and RLHF with three reward models covering foundational quality, motion, and aesthetics. A 10x distillation speedup enabled a 5-second 1080p clip in 41.4 seconds on an NVIDIA L20.
 
 **Seedance 1.5 Pro (December 2025):** The first major AI video model to natively generate audio and video in a single unified pass — not post-processing. A dual-branch architecture where visual and audio branches communicate at the foundational level for frame-level temporal alignment. Multilingual lip-sync in Chinese, English, Japanese, Korean, Spanish, and Indonesian. Full production API. This was the technical breakthrough that defined Seedance's market position going into 2026.
 
@@ -59,7 +59,7 @@ ByteDance moved from a research baseline to a commercially deployed and globally
 
 ## Architecture
 
-Seedance 2.0 is documented in the technical report at arXiv 2604.14148.
+Seedance 2.0 is documented in the [technical report at arXiv 2604.14148](https://arxiv.org/abs/2604.14148).
 
 The core architecture is a **Dual-branch DiT + RayFlow** system:
 
@@ -241,15 +241,15 @@ The industry response was rapid and collective:
 
 **Paramount Skydance**: Accused ByteDance of "blatant infringement" regarding Star Trek, South Park, and Dora the Explorer.
 
-**Warner Bros. Discovery**: Called the conduct "blatant infringement" citing Harry Potter, The Lord of the Rings, and the Batman character.
+**Warner Bros. Discovery**: Called the conduct "blatant infringement" citing Harry Potter, The Lord of the Rings, and the Batman character. ([Variety](https://variety.com/2026/film/news/paramount-disney-bytedance-cease-and-desist-seedance-ai-infringement-ip-1236663663/))
 
 **Netflix**: Cited Squid Game, Bridgerton, and KPop Demon Hunters.
 
-**Motion Picture Association (MPA)**: Sent a collective cease-and-desist on behalf of the member studios.
+**Motion Picture Association (MPA)**: [Sent a collective cease-and-desist](https://www.hollywoodreporter.com/business/business-news/mpa-cease-and-desist-bytedance-seedance-2-0-1236510957/) on behalf of the member studios.
 
-**U.S. Senators Marsha Blackburn (R-TN) and Peter Welch (D-VT)**: Sent a joint letter to ByteDance CEO Liang Rubo demanding immediate shutdown, calling it "the most glaring example of copyright infringement from a ByteDance product to date" and noting that Senators had already introduced legislation targeting AI-generated likenesses.
+**U.S. Senators Marsha Blackburn (R-TN) and Peter Welch (D-VT)**: [Sent a joint letter to ByteDance CEO Liang Rubo](https://www.welch.senate.gov/welch-blackburn-urge-bytedance-to-immediately-shut-down-seedance-2-0-ai-video-model-following-copyright-infringement/) demanding immediate shutdown, calling it "the most glaring example of copyright infringement from a ByteDance product to date" and noting that Senators had already introduced legislation targeting AI-generated likenesses. ([CNBC](https://www.cnbc.com/2026/03/17/bytedance-seedance-shut-down-tiktok-marsha-blackburn-peter-welch.html))
 
-**ByteDance's public response**: Pledged to "strengthen current safeguards" and "take steps to prevent unauthorized use of IP and personal likenesses." In mid-March, ByteDance paused the global launch while implementing additional filters.
+**ByteDance's public response**: [Pledged to "strengthen current safeguards"](https://variety.com/2026/film/news/bytedance-safeguards-seedance-disney-legal-threat-ip-violations-1236664395/) and "take steps to prevent unauthorized use of IP and personal likenesses." In mid-March, ByteDance paused the global launch while implementing additional filters. ([CNBC](https://www.cnbc.com/2026/02/16/bytedance-safegaurds-seedance-ai-copyright-disney-mpa-netflix-paramount-sony-universal.html))
 
 **March 26, 2026**: ByteDance resumed Seedance 2.0 rollout via CapCut in Brazil, Indonesia, Malaysia, Mexico, the Philippines, Thailand, Vietnam, and Africa, Middle East, and Southeast Asian markets, with "built-in protections for making video from real faces or unauthorized IP."
 
@@ -293,7 +293,7 @@ HappyHorse-1.0 now leads both leaderboards but is an extremely recent release (A
 
 ## Distribution Leverage: The CapCut Advantage
 
-ByteDance's structural advantage in AI video generation is not model quality — it is distribution. CapCut has approximately 200 million monthly active users. Jimeng and Dreamina extend the Chinese and international consumer reach. Doubao adds the AI assistant channel. Pippit covers the marketing automation segment.
+ByteDance's structural advantage in AI video generation is not model quality — it is distribution. [CapCut has approximately 200 million monthly active users](https://restofworld.org/stat-of-the-day/capcut-bytedance/). Jimeng and Dreamina extend the Chinese and international consumer reach. Doubao adds the AI assistant channel. Pippit covers the marketing automation segment.
 
 Seedance 2.0 is not just an API for developers — it is the AI video generation backend for a consumer ecosystem that is already embedded in short-form video creation workflows globally. This matters for market reach even when the model is accessible through third-party API providers: ByteDance can push Seedance 2.0 to hundreds of millions of existing users through a CapCut update notification.
 

@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -67,7 +68,7 @@
       <div class="article-body">
         <h1 id="pixverse-review--the-40m-arr-unicorn-with-an-official-mcp-server-and-the-most-generous-free-tier-in-ai-video">PixVerse Review — The $40M ARR Unicorn With an Official MCP Server and the Most Generous Free Tier in AI Video</h1>
 <p>PixVerse launched publicly in January 2024 and spent its first year quietly accumulating a user base and compounding model iterations while larger names like Runway, Sora, and Kling captured most of the headlines. That changed in early 2026.</p>
-<p>In March 2026, AIsphere — the Beijing-based company behind PixVerse — closed a $300 million Series C led by CDH Investments, with participation from Ant Group, Alibaba Capital Partners, and seven other investors. The round pushed the company to unicorn valuation at a moment when its flagship model, PixVerse V6, had just been released and was ranking #2 on the Artificial Analysis video generation leaderboard (the V5.6 reading; V6 landed at #4 on image-to-video at time of publication). Monthly active users had reached 16 million across a 100-million-registered base in 175 countries. Annual recurring revenue was above $40 million, growing more than 10x year-over-year.</p>
+<p>In March 2026, AIsphere — the Beijing-based company behind PixVerse — <a href="https://ventureburn.com/pixverse-raises-300m-becomes-ai-video-unicorn-startup/">closed a $300 million Series C led by CDH Investments</a>, with participation from Ant Group, Alibaba Capital Partners, and seven other investors. The round pushed the company to <a href="https://theaiinsider.tech/2026/03/17/aisphere-raises-300m-to-scale-pixverse-ai-video-platform-and-global-expansion/">unicorn valuation</a> at a moment when its flagship model, PixVerse V6, had just been released and was ranking #2 on the Artificial Analysis video generation leaderboard (the V5.6 reading; V6 landed at #4 on image-to-video at time of publication). Monthly active users had reached 16 million across a 100-million-registered base in 175 countries. Annual recurring revenue was above $40 million, growing more than 10x year-over-year.</p>
 <p>The company operates this with 57 employees.</p>
 <p>For AI developers and teams building agentic video workflows, the headline differentiator is less about raw generation quality than about infrastructure access: PixVerse has an official MCP server — github.com/PixVerseAI/PixVerse-MCP — documented at docs.platform.pixverse.ai. Among AI video generation platforms, this is uncommon. Hailuo/MiniMax has one. Most platforms do not.</p>
 <p>This review covers what PixVerse is, how the product has evolved, what the current generation is capable of, where it sits against competitors, and what a realistic assessment of its strengths and limitations looks like.</p>
@@ -315,7 +316,7 @@
 </ul>
 <hr>
 <h2 id="mcp-server">MCP Server</h2>
-<p>PixVerse has an official MCP server: <strong>PixVerse-MCP</strong>, published at github.com/PixVerseAI/PixVerse-MCP and documented at docs.platform.pixverse.ai/pixverse-mcp-972890m0.</p>
+<p>PixVerse has an official MCP server: <strong><a href="https://github.com/PixVerseAI/PixVerse-MCP">PixVerse-MCP</a></strong>, published at github.com/PixVerseAI/PixVerse-MCP and documented at docs.platform.pixverse.ai/pixverse-mcp-972890m0.</p>
 <p>The server enables MCP-compatible AI clients (Claude Desktop, Cursor, and similar tools) to call PixVerse&rsquo;s video generation APIs directly within agentic workflows. Capabilities include:</p>
 <ul>
 <li>Text-to-video generation</li>
@@ -341,7 +342,7 @@
 <hr>
 <h2 id="quality-benchmarks-and-practitioner-assessments">Quality: Benchmarks and Practitioner Assessments</h2>
 <h3 id="artificial-analysis">Artificial Analysis</h3>
-<p>PixVerse V5.6 ranked <strong>#2 globally</strong> on the Artificial Analysis video generation leaderboard at the time of its January 2026 launch. This is the highest confirmed third-party benchmark position in PixVerse&rsquo;s history.</p>
+<p>PixVerse V5.6 ranked <strong>#2 globally</strong> on the <a href="https://artificialanalysis.ai/text-to-video">Artificial Analysis video generation leaderboard</a> at the time of its January 2026 launch. This is the highest confirmed third-party benchmark position in PixVerse&rsquo;s history.</p>
 <p>PixVerse V6, released March 30, 2026, ranked <strong>#4 in image-to-video</strong> on Artificial Analysis with an ELO score of approximately <strong>1,314–1,323</strong>. The slight drop from #2 (V5.6) to #4 (V6) likely reflects both the volatile nature of ELO leaderboards — new models from Seedance, HappyHorse, and others were shipping in parallel — and may not represent a meaningful quality regression. PixVerse V6 does not appear prominently in the text-to-video top tier on Artificial Analysis; the platform&rsquo;s strongest measured performance is on image-to-video tasks.</p>
 <p>For reference, the approximate ELO of competing models around the same period: HappyHorse-1.0 (~1,357), Seedance 2.0 (~1,340+), Kling 3.0 (~1,300–1,330), Hailuo/MiniMax (~1,178). The I2V ELO of ~1,314–1,323 for V6 places it in the upper tier but not at the summit of the current generation.</p>
 <p>No VBench scores have been published for PixVerse. VBench measurements are primarily cited for open-source models (Wan2.1 at 86.22%, HunyuanVideo at 83.24%); PixVerse, as a closed commercial model, has not released VBench benchmarking data.</p>

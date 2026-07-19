@@ -5,7 +5,7 @@
 
 # OpenAI Sora — The AI Video Pioneer That OpenAI Discontinued in April 2026
 
-On February 15, 2024, OpenAI published a blog post titled "Video generation models as world simulators." Attached to it were sixty video clips. A woolly mammoth walking through a snowy field. A woman walking in Tokyo rain-slicked streets, her reflection in the puddles. A movie trailer for a film about a golden retriever space adventurer. A time-lapse of a coral reef. A camera tracking through a New York City apartment, out the window, and across the Manhattan skyline without a single cut.
+On February 15, 2024, OpenAI published a blog post titled ["Video generation models as world simulators."](https://openai.com/research/video-generation-models-as-world-simulators) Attached to it were sixty video clips. A woolly mammoth walking through a snowy field. A woman walking in Tokyo rain-slicked streets, her reflection in the puddles. A movie trailer for a film about a golden retriever space adventurer. A time-lapse of a coral reef. A camera tracking through a New York City apartment, out the window, and across the Manhattan skyline without a single cut.
 
 None of them had been assembled from footage. All of them had been generated from text prompts by a single AI model named **Sora**.
 

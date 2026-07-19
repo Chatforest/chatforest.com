@@ -3,7 +3,7 @@
 > Andrej Karpathy joined Anthropic's pre-training team on May 19 to run the loop he proved in March: AI agents designing, running, and evaluating training experiments, compressing the research cycle on future Claude models. Here's what the Karpathy Loop is, how it works, and what it signals for builders building on Claude.
 
 
-On May 19, 2026, Andrej Karpathy posted a short announcement: "Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&D."
+On May 19, 2026, Andrej Karpathy posted a short announcement: "Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&D." ([TechCrunch](https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/), [CNBC](https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html), [Axios](https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude))
 
 Two months earlier, he had released a 630-line Python script that ran 700 experiments without human involvement, found 20 stacking optimizations, and dropped training time for a GPT-2-sized model from 2.02 hours to 1.80 hours — an 11% speedup — in two days.
 

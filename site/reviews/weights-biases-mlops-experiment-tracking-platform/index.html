@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -67,11 +68,11 @@
       <div class="article-body">
         <h1 id="weights--biases-wb--mlops-experiment-tracking-acquired-by-coreweave">Weights &amp; Biases (W&amp;B) — MLOps Experiment Tracking, Acquired by CoreWeave</h1>
 <p>Weights &amp; Biases built the experiment tracking platform that OpenAI uses to train its models. When OpenAI says &ldquo;you simply can&rsquo;t do ambitious, expansive projects without best-in-class tools,&rdquo; they&rsquo;re talking about W&amp;B. That quote alone tells you something about the product&rsquo;s standing in the ML community.</p>
-<p>W&amp;B was founded in 2017 by Lukas Biewald, Chris Van Pelt, and Shawn Lewis — working, by company lore, behind a karate studio in San Francisco. After seven years building the dominant MLOps platform with over one million users, CoreWeave acquired W&amp;B for $1.7 billion in May 2025. The GPU cloud company wanted W&amp;B&rsquo;s developer tooling layer to complete a vertical integration play: you run your training jobs on CoreWeave&rsquo;s H100s, and you track, visualize, and analyze them with W&amp;B.</p>
+<p>W&amp;B was founded in 2017 by Lukas Biewald, Chris Van Pelt, and Shawn Lewis — working, by company lore, behind a karate studio in San Francisco. After seven years building the dominant MLOps platform with over one million users, <a href="https://techcrunch.com/2025/03/04/coreweave-acquires-ai-developer-platform-weights-biases/">CoreWeave acquired W&amp;B for $1.7 billion in May 2025</a>. The GPU cloud company wanted W&amp;B&rsquo;s developer tooling layer to complete a vertical integration play: you run your training jobs on CoreWeave&rsquo;s H100s, and you track, visualize, and analyze them with W&amp;B.</p>
 <p>This review covers the W&amp;B platform, what the CoreWeave acquisition means, the official MCP server, and how it compares to MLflow and TensorBoard.</p>
 <hr>
 <h2 id="the-founders-crowdflowers-second-act">The Founders: CrowdFlower&rsquo;s Second Act</h2>
-<p>Lukas Biewald (CEO) is a serial AI infrastructure founder. In 2007, he and Chris Van Pelt co-founded CrowdFlower — a data labeling and crowdsourcing platform that connected ML teams with human annotators worldwide. Both appeared on Inc.&lsquo;s &ldquo;30 Under 30&rdquo; in 2010. CrowdFlower rebranded as Figure Eight and was acquired by Appen for $300 million in March 2019.</p>
+<p>Lukas Biewald (CEO) is a serial AI infrastructure founder. In 2007, he and Chris Van Pelt co-founded CrowdFlower — a data labeling and crowdsourcing platform that connected ML teams with human annotators worldwide. Both appeared on Inc.&lsquo;s &ldquo;30 Under 30&rdquo; in 2010. CrowdFlower rebranded as Figure Eight and was <a href="https://techcrunch.com/2019/03/10/appen-acquires-figure-eight/">acquired by Appen for up to $300 million in March 2019</a>.</p>
 <p>By then, Biewald and Van Pelt were already two years into their second company. Their CrowdFlower experience gave them front-row exposure to ML practitioners struggling to reproduce experiments, compare results, and understand why one model outperformed another. The existing tools — TensorBoard, scattered CSVs, manual print statements — were clearly insufficient.</p>
 <p>Shawn Lewis, the third co-founder, came from Google engineering. The team&rsquo;s collective background gave W&amp;B credibility with the research community from day one.</p>
 <p>Biewald has described W&amp;B as &ldquo;a second machine learning tools company, ten years later&rdquo; — a deliberate reflection on how the infrastructure landscape had matured, and how the problems worth solving had shifted from data collection to model understanding.</p>
@@ -173,7 +174,7 @@
 <p>The free tier&rsquo;s 5-seat limit is a real friction point for small teams. MLflow remains free and self-hostable at any scale, which is a meaningful competitive consideration for cost-sensitive organizations.</p>
 <hr>
 <h2 id="the-coreweave-acquisition">The CoreWeave Acquisition</h2>
-<p>CoreWeave (Nasdaq: CRWV) completed its acquisition of W&amp;B for <strong>$1.7 billion</strong> on May 5, 2025. CoreWeave is one of the largest specialized GPU cloud providers, running roughly 250,000 NVIDIA H100s across dozens of data centers. It went public on Nasdaq in March 2025 — days before announcing the W&amp;B acquisition.</p>
+<p>CoreWeave (Nasdaq: CRWV) <a href="https://techcrunch.com/2025/03/04/coreweave-acquires-ai-developer-platform-weights-biases/">completed its acquisition of W&amp;B for <strong>$1.7 billion</strong> on May 5, 2025</a>. CoreWeave is one of the largest specialized GPU cloud providers, running roughly 250,000 NVIDIA H100s across dozens of data centers. It went public on Nasdaq in March 2025 — days before announcing the W&amp;B acquisition.</p>
 <p>The strategic rationale is vertical integration. CoreWeave sells compute to AI teams building and training models. W&amp;B sells tooling to those same teams for tracking, analyzing, and improving models. Together, the pitch is: run your training on CoreWeave GPUs, observe and analyze everything in W&amp;B, iterate and redeploy on CoreWeave — all within a single integrated experience.</p>
 <p>The Mission Control Integration and W&amp;B Inference announcements in June 2025 are early evidence of this integration becoming concrete, though the full vertical story will take time to build out.</p>
 <p>The acquisition price of $1.7 billion at roughly $100 million ARR implies a ~17x revenue multiple — reasonable for a high-growth developer platform, but below the $3 billion secondary market valuations that had circulated in 2024. For context, the Gross/Friedman 2023 round valued W&amp;B at $1.25 billion — so the $1.7 billion exit represents a modest premium above the last institutional round.</p>

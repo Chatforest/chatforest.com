@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -66,16 +67,16 @@
 
       <div class="article-body">
         <h1 id="google-veo-31--native-audio-youtube-integration-and-the-ai-video-model-with-a-platform-advantage">Google Veo 3.1 — Native Audio, YouTube Integration, and the AI Video Model With a Platform Advantage</h1>
-<p>On May 20, 2025, at Google I/O, Google DeepMind presented the first public demonstration of a video generation model with joint native audio. A single prompt — no post-production, no separate audio track layered in — produced video with ambient environmental sound, synchronized sound effects, and in some demonstrations, dialogue with lip-sync. The model was called <strong>Veo 3</strong>.</p>
+<p>On May 20, 2025, <a href="https://www.cnbc.com/2025/05/20/google-ai-video-generator-audio-veo-3.html">at Google I/O, Google DeepMind presented the first public demonstration of a video generation model with joint native audio</a>. A single prompt — no post-production, no separate audio track layered in — produced video with ambient environmental sound, synchronized sound effects, and in some demonstrations, dialogue with lip-sync. The model was called <strong>Veo 3</strong>.</p>
 <p>The competitors had already been building for a year. Kling (Kuaishou) had launched in June 2024. Runway had an API. Pika had a consumer app. What none of them had in May 2025 was native audio in a publicly available model, and none of them had what Veo had underneath it: a direct pipeline into YouTube, Google Workspace, and the Gemini API ecosystem — the largest developer and consumer platform in the world.</p>
-<p>By January 2026, Google had shipped Veo 3.1 with 4K output, native vertical video, reference image consistency across scenes, and expanded access across 150+ countries. Veo 3.1 currently ranks approximately 5th on the Artificial Analysis audio text-to-video leaderboard (ELO ~1103), behind Dreamina Seedance 2.0 and Kling 3.0 Omni, but ahead of Pika, Runway, and the discontinued Sora.</p>
+<p>By January 2026, Google had shipped Veo 3.1 with 4K output, native vertical video, reference image consistency across scenes, and expanded access across 150+ countries. Veo 3.1 currently <a href="https://artificialanalysis.ai/text-to-video">ranks approximately 5th on the Artificial Analysis audio text-to-video leaderboard</a> (ELO ~1103), behind Dreamina Seedance 2.0 and Kling 3.0 Omni, but ahead of Pika, Runway, and the discontinued Sora.</p>
 <p>This review covers what Veo 3.1 is, how it works, how to access and price it, where it stands competitively, and why the platform advantage it carries is as important as the model itself. We research from public sources, documentation, and technical reports; we do not test AI video tools hands-on.</p>
 <hr>
 <h2 id="the-model-architecture-and-lineage">The Model: Architecture and Lineage</h2>
 <p>Veo 3.1 is developed by <strong>Google DeepMind</strong>, the research division formed in 2023 from the merger of Google Brain and DeepMind. It is the latest iteration in a lineage that includes Generative Query Network (GQN), DVD-GAN, Imagen Video, Phenaki, WALT, VideoPoet, and Lumiere — an internal progression spanning roughly a decade of Google video AI research.</p>
 <p>The architecture is a <strong>latent diffusion transformer</strong> that operates on a 3D latent block of dimensions (Channels × Time × Height × Width). Unlike earlier video diffusion models that processed visual frames independently or in limited temporal windows, Veo 3&rsquo;s architecture processes video and audio together in a joint unified token sequence. Visual spacetime patches and audio temporal information are both tokenized and attend to one another through a unified attention mechanism — meaning the model learns the spatial, temporal, and acoustic dimensions of a scene simultaneously rather than generating audio as a post-processing step.</p>
 <p>This joint architecture is the technical foundation for Veo 3&rsquo;s most significant capability: native audio generation that is phase-coherent with visual events, not temporally aligned in post-production.</p>
-<p>Google published a Veo 3 Technical Report in May 2025, available at <code>storage.googleapis.com/deepmind-media/veo/Veo-3-Tech-Report.pdf</code>.</p>
+<p>Google published a <a href="https://storage.googleapis.com/deepmind-media/veo/Veo-3-Tech-Report.pdf">Veo 3 Technical Report in May 2025</a>. Veo 3.1 details and API access are documented on the <a href="https://developers.googleblog.com/introducing-veo-3-1-and-new-creative-capabilities-in-the-gemini-api/">Google Developers Blog</a> and the <a href="https://deepmind.google/models/veo/">Google DeepMind model page</a>.</p>
 <hr>
 <h2 id="version-history">Version History</h2>
 <h3 id="veo-1--may-14-2024-google-io-2024">Veo 1 — May 14, 2024 (Google I/O 2024)</h3>

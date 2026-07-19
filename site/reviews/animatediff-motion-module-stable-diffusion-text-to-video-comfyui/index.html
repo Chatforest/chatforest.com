@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -74,7 +75,7 @@
 <h2 id="background-the-personalized-image-generation-problem">Background: The Personalized Image Generation Problem</h2>
 <p>By mid-2023, the most practically useful Stable Diffusion models were not the base SD 1.5 weights — they were the thousands of community fine-tunes. Realistic character models (RealisticVision, ChilloutMix), anime styles (Anything V3, DreamShaper), photorealistic landscapes, painterly styles. All of these had been trained by the community using DreamBooth, LoRA, or full fine-tuning on SD 1.5. Each had its own aesthetic identity.</p>
 <p>The standard approach to adding video capability was to train a new video model from scratch, or to adapt a specific base model. But this meant abandoning the community&rsquo;s work. A video model trained on SD 1.5 base weights would generate video in SD 1.5&rsquo;s aesthetic, not in RealisticVision&rsquo;s. Every community checkpoint needed its own video variant, which was computationally infeasible.</p>
-<p>The AnimateDiff paper — <em>&ldquo;AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning&rdquo;</em> (arXiv: 2307.04725, submitted July 10, 2023) — posed the problem precisely: how do you enable video generation across <em>all existing</em> personalized image models without fine-tuning each one? Their solution was architectural separation: train the motion module on video from the perspective of the domain-agnostic base model, then inject it into any downstream checkpoint at inference time.</p>
+<p>The <a href="https://arxiv.org/abs/2307.04725">AnimateDiff paper — <em>&ldquo;AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning&rdquo;</em> (arXiv: 2307.04725, submitted July 10, 2023)</a> — posed the problem precisely: how do you enable video generation across <em>all existing</em> personalized image models without fine-tuning each one? Their solution was architectural separation: train the motion module on video from the perspective of the domain-agnostic base model, then inject it into any downstream checkpoint at inference time.</p>
 <p>The lead authors — Yuwei Guo, Ceyuan Yang, Anyi Rao, and colleagues — were affiliated with <strong>Shanghai AI Laboratory</strong> (Shanghai, China), a research institute backed by Chinese government funding and major technology companies. The lab also produced AnimateDiff&rsquo;s successor work and several other influential computer vision papers.</p>
 <hr>
 <h2 id="the-core-architecture-motion-module-as-plugin">The Core Architecture: Motion Module as Plugin</h2>
@@ -109,13 +110,13 @@
 <h3 id="animatediff-lightning-2024-bytedance-research">AnimateDiff-Lightning (2024, ByteDance Research)</h3>
 <p>A collaboration between AnimateDiff researchers and ByteDance produced <strong>AnimateDiff-Lightning</strong> — a distilled variant using <strong>Progressive Adversarial Diffusion Distillation (PADD)</strong> that reduces inference from the standard 20–40 DDIM steps to as few as <strong>1–4 steps</strong> while maintaining acceptable quality.</p>
 <p>AnimateDiff-Lightning is particularly significant for real-time or near-real-time workflows in ComfyUI, where generation speed matters more than maximum quality. Step-4 Lightning produces noticeably lower quality than 20-step standard AnimateDiff but generates in roughly 1/5 the time.</p>
-<p>HuggingFace hosts Lightning variants: <code>ByteDance/AnimateDiff-Lightning</code> — available as separate LoRA-style adapter files for different step counts (1-step through 8-step).</p>
+<p>HuggingFace hosts Lightning variants: <a href="https://huggingface.co/ByteDance/AnimateDiff-Lightning"><code>ByteDance/AnimateDiff-Lightning</code></a> — available as separate LoRA-style adapter files for different step counts (1-step through 8-step).</p>
 <h3 id="animatediff-for-sdxl-animatediff-xl">AnimateDiff for SDXL (AnimateDiff-XL)</h3>
 <p>A separate motion module trained on SDXL (Stable Diffusion XL) architecture. SDXL&rsquo;s larger UNet requires a correspondingly larger motion module, and its higher native resolution (1024×1024) demands significantly more VRAM for video generation.</p>
-<p>AnimateDiff-XL is available via HuggingFace (<code>guoyww/animatediff-motion-adapter-sdxl-beta</code>) but saw less community adoption than SD1.5 variants, partly because SDXL itself was overshadowed by Flux and SD3 in 2024–2025.</p>
+<p>AnimateDiff-XL is available via HuggingFace (<a href="https://huggingface.co/guoyww/animatediff-motion-adapter-sdxl-beta"><code>guoyww/animatediff-motion-adapter-sdxl-beta</code></a>) but saw less community adoption than SD1.5 variants, partly because SDXL itself was overshadowed by Flux and SD3 in 2024–2025.</p>
 <hr>
 <h2 id="sparsectrl-adding-control-signals-to-animatediff">SparseCtrl: Adding Control Signals to AnimateDiff</h2>
-<p>The AnimateDiff ecosystem&rsquo;s second major research paper — <em>&ldquo;SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models&rdquo;</em> (arXiv: 2311.16933, November 2023) — introduced a method for controlling AnimateDiff generation using <strong>sparse conditioning signals</strong>.</p>
+<p>The AnimateDiff ecosystem&rsquo;s second major research paper — <a href="https://arxiv.org/abs/2311.16933"><em>&ldquo;SparseCtrl: Adding Sparse Controls to Text-to-Video Diffusion Models&rdquo;</em> (arXiv: 2311.16933, November 2023)</a> — introduced a method for controlling AnimateDiff generation using <strong>sparse conditioning signals</strong>.</p>
 <p>Where standard AnimateDiff uses only a text prompt to guide generation, SparseCtrl allows users to provide:</p>
 <ul>
 <li><strong>Edge maps</strong> (from Canny edge detection) for specific frames — typically the first and/or last frame</li>
@@ -126,7 +127,7 @@
 <p>SparseCtrl adds a separate conditioning encoder (similar to ControlNet architecture) rather than modifying the motion module or base model. HuggingFace: <code>guoyww/animatediff-sparsectrl-scribble</code> and <code>guoyww/animatediff-sparsectrl-rgb</code>.</p>
 <hr>
 <h2 id="comfyui-integration-comfyui-animatediff-evolved">ComfyUI Integration: ComfyUI-AnimateDiff-Evolved</h2>
-<p>AnimateDiff&rsquo;s adoption exploded through ComfyUI, and the primary node pack is <strong>ComfyUI-AnimateDiff-Evolved</strong> by Kosinkadink (GitHub: <code>Kosinkadink/ComfyUI-AnimateDiff-Evolved</code>). This is one of the most comprehensive and actively maintained community ComfyUI extensions in existence.</p>
+<p>AnimateDiff&rsquo;s adoption exploded through ComfyUI, and the primary node pack is <strong><a href="https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved">ComfyUI-AnimateDiff-Evolved</a></strong> by Kosinkadink. This is one of the most comprehensive and actively maintained community ComfyUI extensions in existence.</p>
 <p>Features of ComfyUI-AnimateDiff-Evolved:</p>
 <ul>
 <li>Full AnimateDiff v1/v2/v3 support with clean node interface</li>
@@ -183,10 +184,10 @@
 <hr>
 <h2 id="github-and-community-stats">GitHub and Community Stats</h2>
 <ul>
-<li><strong>Repository</strong>: <code>guoyww/animatediff</code> (original research repo)</li>
-<li><strong>Stars</strong>: ~10,000 on the research repo (as of late 2025); ComfyUI-AnimateDiff-Evolved (<code>Kosinkadink/ComfyUI-AnimateDiff-Evolved</code>) has ~3,500+ stars</li>
+<li><strong>Repository</strong>: <a href="https://github.com/guoyww/animatediff"><code>guoyww/animatediff</code></a> (original research repo)</li>
+<li><strong>Stars</strong>: ~10,000 on the research repo (as of late 2025); <a href="https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved">ComfyUI-AnimateDiff-Evolved (<code>Kosinkadink/ComfyUI-AnimateDiff-Evolved</code>)</a> has ~3,500+ stars</li>
 <li><strong>License</strong>: Apache 2.0 — fully permissive for commercial and research use</li>
-<li><strong>HuggingFace</strong>: <code>guoyww</code> organization hosts motion adapters, MotionLoRA files, SparseCtrl encoders, and Lightning variants</li>
+<li><strong>HuggingFace</strong>: <a href="https://huggingface.co/guoyww"><code>guoyww</code> organization</a> hosts motion adapters, MotionLoRA files, SparseCtrl encoders, and Lightning variants</li>
 <li><strong>Last major paper update</strong>: SparseCtrl (November 2023); AnimateDiff-Lightning (collaboration, 2024)</li>
 <li><strong>Active maintenance</strong>: ComfyUI-AnimateDiff-Evolved remains actively maintained; the core research repo updates are infrequent since late 2024</li>
 </ul>

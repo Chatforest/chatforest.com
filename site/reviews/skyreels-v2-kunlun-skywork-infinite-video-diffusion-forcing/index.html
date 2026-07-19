@@ -33,6 +33,7 @@
       <a href="/categories/">Categories</a>
       <a href="/guides/">Guides</a>
       <a href="/builders-log/">Builder's Log</a>
+      <a href="/newsletter/">Newsletter</a>
       <a href="/about/">About</a>
       <a href="/search/">Search</a>
     </nav>
@@ -67,7 +68,7 @@
       <div class="article-body">
         <h1 id="skyreels-v2--kunluns-open-source-video-model-diffusion-forcing-infinite-length-generation-and-the-highest-open-source-i2v-score">SkyReels V2 — Kunlun&rsquo;s Open-Source Video Model: Diffusion Forcing, Infinite-Length Generation, and the Highest Open-Source I2V Score</h1>
 <p>There is a persistent and widespread misconception worth correcting immediately: <strong>SkyReels is not made by Kuaishou.</strong> Kuaishou makes Kling. SkyReels V2 is the product of <strong>Skywork AI</strong>, the research division of <strong>Kunlun Wanwei</strong> (昆仑万维, Shenzhen: 300418) — a completely separate Chinese technology company with 400 million monthly active users, a listed Shenzhen subsidiary, and a research division focused on open foundation models. The two companies compete in the AI video generation space, which likely explains the confusion, but they have no corporate relationship.</p>
-<p>SkyReels V2 launched on arXiv April 17, 2025 (paper 2504.13074) and released weights and inference code on April 21–24, 2025. Its headline claim: the first open-source video model to achieve genuinely unlimited-length video generation through a framework called <strong>Diffusion Forcing</strong>, while simultaneously scoring higher than any prior open-source image-to-video model on human evaluation.</p>
+<p>SkyReels V2 launched on arXiv April 17, 2025 (<a href="https://arxiv.org/abs/2504.13074">paper 2504.13074</a>) and released weights and inference code on April 21–24, 2025. Its headline claim: the first open-source video model to achieve genuinely unlimited-length video generation through a framework called <strong>Diffusion Forcing</strong>, while simultaneously scoring higher than any prior open-source image-to-video model on human evaluation.</p>
 <p>This review is based on the published arXiv paper, GitHub repository, HuggingFace model cards, Diffusers documentation, and community reports. We do not test AI tools hands-on.</p>
 <hr>
 <h2 id="timeline">Timeline</h2>
@@ -323,10 +324,10 @@
 <p>The code repository also cites <strong>Creative Commons BY-4.0</strong> for the paper documentation. For production commercial use, consulting the full Skywork License text is advised.</p>
 <hr>
 <h2 id="ecosystem">Ecosystem</h2>
-<p><strong>GitHub</strong>: github.com/SkyworkAI/SkyReels-V2 — approximately 6,900 stars at time of writing, with ~1,500 forks. Strong early traction for an open-source video model.</p>
-<p><strong>HuggingFace</strong>: Full model collection at <code>Skywork/skyreels-v2-6801b1b93df627d441d0d0d9</code>. Individual models: <code>Skywork/SkyReels-V2-I2V-1.3B-540P</code>, <code>Skywork/SkyReels-V2-DF-1.3B-540P</code>, and 14B equivalents. Also mirrored on ModelScope.</p>
-<p><strong>HuggingFace Diffusers</strong>: Official SkyReels V2 pipeline integrated into the Diffusers library, documented at <code>huggingface.co/docs/diffusers/api/pipelines/skyreels_v2</code>. This is one of the clearest signals of ecosystem legitimacy — Diffusers pipelines have a review bar and are maintained alongside the library.</p>
-<p><strong>ComfyUI</strong>: Available through <strong>ComfyUI-WanVideoWrapper</strong> by kijai (the same wrapper used for Wan2.1). SkyReels V2 model weights ship in kijai&rsquo;s HuggingFace repository alongside WanVideo weights (<code>Wan2_1-SkyReels-V2-DF-1_3B-540P_fp32.safetensors</code>). GitHub issue #481 tracks SkyReels V2 workflow changes. Community workflows exist on OpenArt, Civitai, and RunningHub. GGUF quantized variants further reduce VRAM requirements for ComfyUI users.</p>
+<p><strong>GitHub</strong>: <a href="https://github.com/SkyworkAI/SkyReels-V2">github.com/SkyworkAI/SkyReels-V2</a> — approximately 6,900 stars at time of writing, with ~1,500 forks. Strong early traction for an open-source video model.</p>
+<p><strong>HuggingFace</strong>: <a href="https://huggingface.co/collections/Skywork/skyreels-v2-6801b1b93df627d441d0d0d9">Full model collection at <code>Skywork/skyreels-v2</code></a>. Individual models: <code>Skywork/SkyReels-V2-I2V-1.3B-540P</code>, <code>Skywork/SkyReels-V2-DF-1.3B-540P</code>, and 14B equivalents. Also mirrored on ModelScope.</p>
+<p><strong>HuggingFace Diffusers</strong>: <a href="https://huggingface.co/docs/diffusers/api/pipelines/skyreels_v2">Official SkyReels V2 pipeline</a> integrated into the Diffusers library. This is one of the clearest signals of ecosystem legitimacy — Diffusers pipelines have a review bar and are maintained alongside the library.</p>
+<p><strong>ComfyUI</strong>: Available through <a href="https://github.com/kijai/ComfyUI-WanVideoWrapper"><strong>ComfyUI-WanVideoWrapper</strong> by kijai</a> (the same wrapper used for Wan2.1). SkyReels V2 model weights ship in kijai&rsquo;s HuggingFace repository alongside WanVideo weights (<code>Wan2_1-SkyReels-V2-DF-1_3B-540P_fp32.safetensors</code>). GitHub issue #481 tracks SkyReels V2 workflow changes. Community workflows exist on OpenArt, Civitai, and RunningHub. GGUF quantized variants further reduce VRAM requirements for ComfyUI users.</p>
 <p><strong>SwarmUI</strong>: Also documented as supporting SkyReels V2.</p>
 <p><strong>HuggingFace Spaces</strong>: Multiple community demonstration spaces launched immediately after release (fffiloni, bekimoon, svjack, Kingrane).</p>
 <p><strong>MCP server</strong>: No MCP server wrapping SkyReels V2 has been published in any MCP registry or on GitHub as of this writing. This is an unfilled gap — PiAPI offers a third-party API for SkyReels (V1/V2) but no MCP wrapper has been built on top of it.</p>
@@ -426,7 +427,7 @@
 <p>The rating stops short of 5 because of concrete friction points: the 14B model&rsquo;s 51GB VRAM requirement excludes most users from the full-quality tier; the missing 5B left a hardware gap at launch; motion artifacts in Diffusion Forcing async mode are documented; audio requires the hosted platform; and the custom Skywork License — while commercial-friendly — isn&rsquo;t the MIT or Apache 2.0 that developers recognize on sight.</p>
 <p>For an open-source developer or researcher who wants the best available image-to-video model they can actually modify and deploy: SkyReels V2 is the current answer.</p>
 <hr>
-<p><em>SkyReels V2 paper: arXiv 2504.13074. GitHub: github.com/SkyworkAI/SkyReels-V2. HuggingFace collection: Skywork/skyreels-v2-6801b1b93df627d441d0d0d9. Hosted platform: skyreels.ai. This review is research-based. We do not test AI tools hands-on.</em></p>
+<p><em>SkyReels V2 paper: <a href="https://arxiv.org/abs/2504.13074">arXiv 2504.13074</a>. GitHub: <a href="https://github.com/SkyworkAI/SkyReels-V2">github.com/SkyworkAI/SkyReels-V2</a>. HuggingFace collection: <a href="https://huggingface.co/collections/Skywork/skyreels-v2-6801b1b93df627d441d0d0d9">Skywork/skyreels-v2</a>. Hosted platform: <a href="https://skyreels.ai">skyreels.ai</a>. This review is research-based. We do not test AI tools hands-on.</em></p>
 
       </div>
 

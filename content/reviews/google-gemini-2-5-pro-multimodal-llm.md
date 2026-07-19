@@ -12,7 +12,7 @@ On February 6, 2023, Google CEO Sundar Pichai posted a message to the Google blo
 
 It did not go well.
 
-In a promotional video posted the same day, Bard hallucinated a factual error about the James Webb Space Telescope. The mistake was caught by astronomers within hours, went viral, and erased approximately **$100 billion in Alphabet market capitalization** in a single trading session. It was a demonstration, at scale, of what happens when you rush an AI product for competitive reasons rather than readiness.
+In a promotional video posted the same day, Bard hallucinated a factual error about the James Webb Space Telescope. The mistake was caught by astronomers within hours, went viral, and erased approximately [**$100 billion in Alphabet market capitalization**](https://www.cnn.com/2023/02/08/tech/google-ai-bard-demo-error/index.html) in a single trading session — [a historic loss](https://fortune.com/2023/02/08/google-bard-ai-mistake-ad-stock-price-market-cap/) attributed directly to the AI product misstep. It was a demonstration, at scale, of what happens when you rush an AI product for competitive reasons rather than readiness.
 
 Two years later, that same product lineage produced **Gemini 2.5 Pro** — a model that topped Chatbot Arena in early 2025, outperformed competitors on code and math benchmarks, and introduced genuine "thinking" capability (extended internal reasoning before responding) to Google's flagship model. The distance from Bard's embarrassing debut to 2.5 Pro's benchmark leadership is the story of what Google's AI organization learned, rebuilt, and got right.
 
@@ -28,7 +28,7 @@ The merger was a structural response to competitive pressure. Google had the res
 
 **Demis Hassabis** is an unusual figure in AI — a Chess master who played at grandmaster level by age 13, a game designer who shipped Theme Park at age 17, a neuroscientist who completed his PhD at University College London, and the AI researcher who led AlphaGo, AlphaFold, and the foundational work that became Gemini. His background in neuroscience shaped DeepMind's longstanding interest in memory, reasoning, and multimodal cognition — intellectual threads that run directly through the Gemini design philosophy.
 
-Alphabet's AI investment as of 2025 is staggering: **$75 billion in capital expenditure** announced for 2025 alone (up from $52 billion in 2024), the majority directed at AI infrastructure — TPUs, data centers, and the model training pipeline. Google's custom **TPU v5e** and **TPU v6 Trillium** chips underpin Gemini training and inference, giving Google hardware independence that OpenAI (dependent on Microsoft Azure's Nvidia H100 fleet) does not have.
+Alphabet's AI investment as of 2025 is staggering: [**$75 billion in capital expenditure** announced for 2025](https://www.cnbc.com/2025/02/04/alphabet-expects-to-invest-about-75-billion-in-capex-in-2025.html) alone (up from $52 billion in 2024), the majority directed at AI infrastructure — TPUs, data centers, and the model training pipeline. Google's custom **TPU v5e** and **TPU v6 Trillium** chips underpin Gemini training and inference, giving Google hardware independence that OpenAI (dependent on Microsoft Azure's Nvidia H100 fleet) does not have.
 
 ---
 
@@ -135,7 +135,7 @@ AI Studio also provides a free **Gemini API key** that can be used in code at no
 
 ### Gemini API (Paid)
 
-The production Gemini API via Google AI Studio or Google Cloud:
+The production [Gemini API](https://ai.google.dev/gemini-api/docs/pricing) via Google AI Studio or Google Cloud:
 
 | Model | Input | Output | Context Cache (per hour) |
 |-------|-------|--------|--------------------------|
@@ -177,7 +177,7 @@ Gemini 2.5 Pro's launch was accompanied by benchmark results that, unlike many m
 
 **Chatbot Arena** (lmarena.ai, operated by LMSYS at UC Berkeley) is the most credible large-scale human preference benchmark in AI: anonymous head-to-head model comparisons where crowd-sourced human raters choose the better response. Arena Elo scores reflect real human preference, not just optimized test performance.
 
-Gemini 2.5 Pro reached **#1 on Chatbot Arena** in early April 2025, shortly after its public preview release, with an Elo score that placed it above GPT-4o, Claude 3.7 Sonnet, and Grok-3. This was not a benchmark curated by Google — it was a live competition against all submitted models judged by anonymous human raters. The result was widely covered and cited as meaningful evidence of genuine capability, not benchmark overfitting.
+Gemini 2.5 Pro [reached **#1 on Chatbot Arena**](https://www.analyticsvidhya.com/blog/2025/03/gemini-2-5-pro-is-now-1-on-chatbot-arena/) in early April 2025, shortly after its public preview release, with an Elo score that placed it above GPT-4o, Claude 3.7 Sonnet, and Grok-3. This was not a benchmark curated by Google — it was a live competition against all submitted models judged by anonymous human raters. The result was widely covered and cited as meaningful evidence of genuine capability, not benchmark overfitting.
 
 ### Code Performance
 

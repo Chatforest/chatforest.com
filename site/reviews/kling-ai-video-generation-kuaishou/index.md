@@ -9,7 +9,7 @@ The AI video generation market was simpler in early 2024. Runway dominated the p
 
 Then, in June 2024, Kuaishou Technology — one of China's largest publicly-traded technology companies, with over $17 billion in annual revenue and roots in short-form video — launched Kling. The name comes from "快" (kuài, "fast") rearranged, though most Western users would encounter it simply as a capable competitor that appeared in benchmark comparisons and promptly started outperforming expectations.
 
-By November 2025, Kling had 45 million global users. Multiple academic papers had adopted it as the commercial baseline to beat on motion quality. The model had moved through eight major versions in twenty months, reaching native 4K output and multi-shot narrative generation with Kling 3.0 in February 2026.
+By 2025, [Kling had 45 million global users](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/). Multiple academic papers had adopted it as the commercial baseline to beat on motion quality. The model had moved through eight major versions in twenty months, reaching native 4K output and multi-shot narrative generation with [Kling 3.0 in February 2026](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/).
 
 The question this review addresses is straightforward: Is Kling a genuinely serious video generation platform, or a feature-count exercise from a company with the infrastructure to ship fast but limited incentive to serve international users well? The answer is more nuanced than either optimistic or skeptical framings suggest.
 
@@ -23,7 +23,7 @@ Understanding Kling requires understanding where it comes from, because the pare
 
 **Kuaishou Technology** (快手科技) was founded in March 2011 by Su Hua and Cheng Yixiao in Beijing. It began as "GIF Kuaishou," a simple GIF creation and sharing app, and pivoted to short-form video in 2013 — predating TikTok's global expansion by several years. By 2019 it had over 200 million daily active users. By mid-2021, it had crossed 1 billion monthly active users globally.
 
-The company went public on the Hong Kong Stock Exchange in February 2021, debuting at over $159 billion market capitalization. By FY2024, it reported revenue of approximately CN¥127 billion (roughly $17.4 billion USD) with 24,718 employees.
+The company [went public on the Hong Kong Stock Exchange](https://techcrunch.com/2021/02/04/kuaishou-ipo/) in February 2021, [debuting at approximately $160 billion market capitalization](https://www.cnbc.com/2021/02/05/kuaishou-ipo-hong-kong-shares-rise-on-debut.html). By FY2024, it reported revenue of approximately CN¥127 billion (roughly $17.4 billion USD) with 24,718 employees.
 
 Kuaishou is **not** ByteDance. It is not the parent of TikTok or Douyin. Kuaishou and ByteDance are direct competitors — Kuaishou's app competes with ByteDance's Douyin for short-video market share inside China. Western observers sometimes conflate the two because both are large Chinese short-video platforms; they are independent, competing companies.
 
@@ -55,7 +55,7 @@ The core is a **Diffusion Transformer (DiT) model** — the same architectural c
 
 **Physics simulation elements:** Kuaishou researchers have described the system as incorporating physics-informed constraints on object motion, which contributes to the reputation for "organic" motion that appears in user and benchmark comparisons. Objects fall, fabric ripples, and liquid pours in ways that are physically plausible rather than interpolated smoothly but incorrectly.
 
-The published research tells a consistent story. The *Kling-MotionControl Technical Report* (arXiv 2603.03160, March 2026) documents a DiT-based holistic character animation system achieving a 10x inference speedup via distillation — evidence of an active engineering team optimizing inference cost alongside quality. *KlingAvatar 2.0* (arXiv 2512.13313, December 2025) documents a spatio-temporal cascade pipeline for avatar synthesis at 1080p and 48fps for sustained durations. *Kling-Foley* (arXiv 2506.19774, June 2025) describes the multimodal diffusion transformer behind Kling's video-to-audio generation, supporting sound effects, speech, singing, and music with stereo rendering.
+The published research tells a consistent story. The [*Kling-MotionControl Technical Report*](https://arxiv.org/abs/2603.03160) (arXiv 2603.03160, March 2026) documents a DiT-based holistic character animation system achieving a 10x inference speedup via distillation — evidence of an active engineering team optimizing inference cost alongside quality. [*KlingAvatar 2.0*](https://arxiv.org/abs/2512.13313) (arXiv 2512.13313, December 2025) documents a spatio-temporal cascade pipeline for avatar synthesis at 1080p and 48fps for sustained durations. *Kling-Foley* (arXiv 2506.19774, June 2025) describes the multimodal diffusion transformer behind Kling's video-to-audio generation, supporting sound effects, speech, singing, and music with stereo rendering.
 
 This is not a company releasing benchmark scores without publishing technical details. The research output is substantive, peer-reviewed (or preprint on arXiv, which is the field standard), and consistent with the performance claims.
 

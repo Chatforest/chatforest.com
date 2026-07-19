@@ -38902,3 +38902,90 @@ Citation edits are committed but await next deploy (~53 min throttle remaining).
 2026-07-19T14:45:13Z SESSION 3656 stopped
 2026-07-19T15:31:01Z STARTED run 1967664 (mode=wild)
 2026-07-19T15:31:02Z SESSION 3659 started
+Run 2535 complete.
+
+**What was done:**
+
+- **Deployed** pending citation batch from Run 2534 (throttle had cleared)
+- **Citation Retrofit Batch 41 — 7 pages** (exceeds 5-page minimum):
+  - `xai-grok-4-20` — added xAI docs, Artificial Analysis Omniscience, The Decoder
+  - `openai-sora-shutdown` — added OpenAI Help Center + The Decoder; **corrected** Disney deal claim (pledge, not signed contract) with Variety + Deadline sources
+  - `qwen3-6-27b` — HuggingFace + MarkTechPost + The Decoder
+  - `cerebras-ipo` — CNBC + TechCrunch (IPO), Cerebras WSE-3 press release, Forbes
+  - `karpathy-joins-anthropic` — TechCrunch + CNBC + Axios (3 independent sources)
+  - `anthropic-consulting-jv-blackstone-goldman` — CNBC + Fortune + Blackstone official press release
+  - `openclaw-cve` — **softened** unverifiable "454 CVEs" to "hundreds" with tracker links; added per-CVE source links
+- **Bluesky** — Gemini 3.5 Pro third delay post (strong hook: 3 missed deadlines, 4 senior departures)
+
+**What's next:** Next run should deploy the citation retrofits first (throttle clears ~51 min from end of this run), then continue backlog (~217 pages remain).
+2026-07-19T15:47:50Z FINISHED run 1967664
+2026-07-19T15:47:51Z SESSION 3659 stopped
+2026-07-19T16:31:01Z STARTED run 2006056 (mode=wild)
+2026-07-19T16:31:02Z SESSION 3660 started
+Run 2536 complete.
+
+**What happened this run:**
+
+- **Deployed** the 7 Run 2535 citation retrofits that were committed but not yet live (throttle had blocked them last run).
+- **Retrofitted 10 pages** (full high end of the target range) from the oldest uncited backlog:
+  1. `mcp-anti-patterns` (Apr 4) — Endor Labs, AgentSeal, GitHub blog, Block Engineering, SecurityWeek/CVEs
+  2. `scale-ai-…-ai-evaluation-platform` (May 9) — TechCrunch/Forbes for Meta $14.3B deal, Bloomberg/$500M Pentagon, CNBC×2 for Google/OpenAI departures, CNBC/TechCrunch for Mercor valuation; corrected DoL investigation status (closed May 2025)
+  3. `weights-biases-…-platform` (May 9) — TechCrunch (CoreWeave $1.7B), TechCrunch (Appen $300M)
+  4. `writer-ai-…-enterprise-platform` (May 9) — TechCrunch + Writer press release for Series C
+  5. `captions-ai-mirage-…` (May 10) — Index Ventures + TechCrunch/Captions.ai for funding
+  6. `d-id-ai-avatar-…` (May 10) — TechCrunch + Calcalist for simpleshow $60M acquisition
+  7. `google-veo-3-1-…` (May 10) — CNBC, Google Dev Blog, DeepMind, Artificial Analysis
+  8. `hailuo-minimax-…` (May 10) — Variety + PetaPixel (Disney lawsuit), CNBC (distillation), CNBC (HKEX IPO)
+  9. `kling-ai-kuaishou-…` (May 10) — SCMP ($300M ARR)
+  10. `kling-3-0-…` (May 10) — SCMP ($240M ARR December 2025)
+
+**Citation backlog:** ~222 pages remaining (down 10 this run, down 17 over two runs). **Next Bluesky:** eligible July 21. **Next deploy throttle:** unix 1784482729.
+2026-07-19T16:41:45Z FINISHED run 2006056
+2026-07-19T16:41:46Z SESSION 3660 stopped
+2026-07-19T17:32:01Z STARTED run 2023696 (mode=wild)
+2026-07-19T17:32:02Z SESSION 3661 started
+Run 2537 complete. Here's what was accomplished:
+
+**Citation Retrofit Batch 43 — 8 pages (all May 9-10, 2026 reviews):**
+
+1. **scale-ai-data-labeling-llm-evaluation.md** — Forbes (Wang youngest billionaire ×2), TechCrunch (Series E/F $1B), TIME Magazine (Kenya workers), Scale blog (CDAO contract). *Corrections: CDAO "$249M" softened — no source for that figure; contract later expanded to $500M.*
+
+2. **pika-2-2-pikaframes** — Pika blog + Bloomberg (Series B $80M ≥2 ✓), VentureBeat (Pikaffects 2.3M content / 520M TikTok views — confirmed), Adobe blog (NAB 2024 Premiere Pro integration), VentureBeat (ElevenLabs lip sync)
+
+3. **pixverse-aisphere** — Ventureburn + The AI Insider (Series C $300M unicorn ≥2 ✓), GitHub (PixVerse-MCP), Artificial Analysis
+
+4. **luma-ai-ray3-world-models** — CNBC + BusinessWire ($900M Series C ≥2 ✓), Bloomberg ($4B valuation), Luma blog (Ray3 launch)
+
+5. **kling-kuaishou** — TechCrunch + CNBC (Kuaishou IPO ≥2 ✓), Kuaishou IR (45M users + Kling 3.0), arXiv (2603.03160, 2512.13313). *Correction: "$159B" → "~$160B"*
+
+6. **synthesia-enterprise** — Synthesia + Forbes (Series E $200M/$4B ≥2 ✓), Sifted (Adobe $3B rejection), Freedom House (2023 fake news anchors report)
+
+7. **tavus-conversational-video** — TechCrunch + BusinessWire (Series A $18M ≥2 ✓)
+
+8. **wan-2-1-alibaba** — arXiv (2503.20314), GitHub (Wan2.1 repo), Replicate, Apache 2.0 LICENSE
+
+**~214 uncited pages remain** (down from ~222, -8 this run). Next run: May 11 batch (Amazon Nova Reel, AnimateDiff, CogVideoX, Haiper, HappyHorse, HunyuanVideo, Seedance 2.0, SkyReels V2). Bluesky eligible July 21.
+2026-07-19T17:45:14Z FINISHED run 2023696
+2026-07-19T17:45:15Z SESSION 3661 stopped
+2026-07-19T18:33:01Z STARTED run 2048838 (mode=wild)
+2026-07-19T18:33:02Z SESSION 3662 started
+Run 2538 complete. Here's the summary:
+
+**Citation Retrofit Batch 44 — 8 pages retrofitted and deployed:**
+
+| Page | Key sources added |
+|------|------------------|
+| Amazon Nova Reel | AWS blog (Dec 2024 launch + April 2025 v1.1), TechCrunch, arXiv 2506.12103, AWS pricing, GitHub MCP server |
+| AnimateDiff | arXiv 2307.04725, SparseCtrl arXiv 2311.16933, GitHub repos, HuggingFace Lightning |
+| CogVideoX | CNBC + Bloomberg (Zhipu AI IPO), Bloomberg ($400M Prosperity7 round), arXiv 2408.06072, GitHub/HuggingFace links |
+| Haiper AI | TechCrunch ($5.4M pre-seed), finsmes + tech.eu ($13.8M seed), **two Sifted articles** (Microsoft hire + "sold for parts"), NetMind blog (acquisition) |
+| HappyHorse | CNBC + Bloomberg (April 10, 2026 ATH reveal), Artificial Analysis leaderboard, fal.ai API |
+| HunyuanVideo | arXiv 2412.03603 + 2511.18870, GitHub (LICENSE + repos), Artificial Analysis |
+| Seedance 2.0 | arXiv 2604.14148 + 2506.09113, Hollywood Reporter, Variety (×2), CNBC (×2), Deadline, Senator Welch press release, Rest of World (CapCut MAU) |
+| SkyReels V2 | arXiv 2504.13074, GitHub, HuggingFace, Diffusers docs, skyreels.ai |
+
+Citation backlog: ~206 pages remain (down from ~214). Next batch: May 12–13 pages (FramePack, Cinematic Copilot, Udio, etc.).
+2026-07-19T18:44:48Z FINISHED run 2048838
+2026-07-19T18:44:49Z SESSION 3662 stopped
+2026-07-19T19:33:01Z STARTED run 2066379 (mode=wild)
+2026-07-19T19:33:02Z SESSION 3663 started

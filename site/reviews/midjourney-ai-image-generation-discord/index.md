@@ -35,7 +35,7 @@ The output quality has been the defining characteristic. At its launch, Midjourn
 
 **v5.1 / v5.2 (May–July 2023):** Refinements to v5. v5.2 introduced zoom-out (outpainting from the edges of an existing image) and made shorten (prompt analysis and simplification) available.
 
-**v6 (December 2023):** The second major generational leap. v6 improved prompt adherence substantially — a recurring criticism of earlier versions was that Midjourney would produce beautiful images that ignored significant portions of the prompt. v6 follows detailed, complex prompts more faithfully. Text rendering in images improved meaningfully, though it remains imperfect. Longer prompts became more effective. The model handles multi-element compositions with more specificity.
+**[v6](https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version) (December 2023):** The second major generational leap. v6 improved prompt adherence substantially — a recurring criticism of earlier versions was that Midjourney would produce beautiful images that ignored significant portions of the prompt. v6 follows detailed, complex prompts more faithfully. Text rendering in images improved meaningfully, though it remains imperfect. Longer prompts became more effective. The model handles multi-element compositions with more specificity.
 
 **v6.1 (July 2024):** A refinement cycle improving image coherence, texture quality, and consistency. The "Consistent Characters" feature — the ability to maintain a character's appearance across multiple generated images — became available, addressing a long-standing limitation for creators who needed character continuity.
 
@@ -98,7 +98,7 @@ Midjourney has not publicly disclosed the composition of its training dataset. T
 
 This opacity is at the center of the principal legal challenge Midjourney faces.
 
-**The Artist Class Action:** In January 2023, artists Sarah Andersen, Kelly McKernan, and Karla Ortiz filed a copyright infringement class action in the Northern District of California against Midjourney, Stable Diffusion (Stability AI), and DeviantArt. The complaint alleges that the defendants trained their models on copyrighted artwork without authorization, that the models effectively memorize and reproduce artistic styles in ways that infringe the original works, and that outputs constitute derivative works requiring permission.
+**The Artist Class Action:** In January 2023, artists [Sarah Andersen, Kelly McKernan, and Karla Ortiz filed a copyright infringement class action](https://www.saverilawfirm.com/our-cases/ai-artgenerators-copyright-litigation) in the Northern District of California against Midjourney, Stable Diffusion (Stability AI), and DeviantArt ([Copyright Alliance analysis](https://copyrightalliance.org/andersen-v-stability-ai-copyright-case/)). The complaint alleges that the defendants trained their models on copyrighted artwork without authorization, that the models effectively memorize and reproduce artistic styles in ways that infringe the original works, and that outputs constitute derivative works requiring permission.
 
 In October 2023, the court dismissed most of the claims with leave to amend — finding that the plaintiffs had not adequately alleged specific instances of protected expression being reproduced in outputs. The plaintiffs filed amended complaints. As of 2025, the litigation is ongoing and has not been resolved. Other copyright cases in the AI training space have set mixed precedents, making the outcome genuinely uncertain.
 
@@ -106,7 +106,7 @@ Midjourney has not publicly settled with any artists or established an artist co
 
 **Deepfakes and Misuse (2023):** Shortly after removing the free trial in mid-2023, Midjourney acknowledged that the decision was driven in part by abuse of trial accounts to generate deepfakes and explicit content. Notable examples in early 2023 included:
 
-- The viral image of Pope Francis in a white puffer jacket (March 2023) — widely shared and initially mistaken as real by many viewers. Generated using Midjourney v5 and shared on Reddit.
+- The [viral image of Pope Francis in a white puffer jacket](https://www.forbes.com/sites/mattnovak/2023/03/26/that-viral-image-of-pope-francis-wearing-a-white-puffer-coat-is-totally-fake/) (March 2023) — widely shared and initially mistaken as real by many viewers. Generated using Midjourney v5; the creator [later described the process to BuzzFeed News](https://www.buzzfeednews.com/article/chrisstokelwalker/pope-puffy-jacket-ai-midjourney-image-creator-interview).
 - Fake images of Donald Trump being arrested (March 2023) — generated with Midjourney and spread across social media before being identified as fabricated.
 
 Both incidents sparked widespread media coverage and congressional interest in AI image regulation. Midjourney implemented additional content policies and moderation as a result, though enforcement consistency has been questioned by researchers.
@@ -168,12 +168,6 @@ Beyond the API and MCP gaps, Midjourney has notable limitations:
 **3D and structured outputs:** Midjourney does not generate 3D assets, vector graphics, or structured design files. Outputs are raster images (PNG/JPG). Designers who need SVG, 3D, or print-ready files must work with outputs as references rather than final assets.
 
 **Image upload as reference beyond specific tools:** While features like Describe and reference images exist, Midjourney's support for grounding generation in uploaded images is more limited than some competitors.
-
-## The Spline Acquisition
-
-In 2024, Midjourney acquired Spline — a browser-based 3D design tool with a significant user base among UI/UX designers and web developers. Spline allows creation of interactive 3D scenes, animations, and design elements that can be embedded in websites without traditional 3D software expertise.
-
-The acquisition hints at Midjourney's longer-term ambitions: moving beyond 2D image generation toward a broader creative design platform. Whether 3D generation capabilities will be integrated into Midjourney's core offering, or whether Spline will remain a separate product, has not been publicly detailed. The combination of 2D image quality leadership with Spline's 3D interactive design capabilities suggests a potential platform for the visual creative workflow broadly — not just image generation as a feature.
 
 ## David Holz's Philosophy
 

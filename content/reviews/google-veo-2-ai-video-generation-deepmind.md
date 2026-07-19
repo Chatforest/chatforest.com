@@ -21,7 +21,7 @@ On December 9, 2024, OpenAI launched Sora publicly after ten months of hype. The
 
 Seven days later, Google DeepMind responded.
 
-**Veo 2** launched on December 16, 2024, claiming a spec sheet that made Sora's look modest: 4K resolution versus Sora's 1080p maximum; multi-minute video generation versus Sora's 20-second cap. In Google DeepMind's own MovieGen Bench evaluation — using Meta's benchmark, at least, even if conducted internally — human raters preferred Veo 2 over Sora Turbo at a 59% vs 27% margin. Independent reviewers from Axios, Fortune, and Engadget who tested both models through early 2025 generally agreed: Veo 2 produced better physics simulation, more photorealistic output, and more consistent anatomy.
+**Veo 2** [launched on December 16, 2024](https://blog.google/innovation-and-ai/models-and-research/google-labs/video-image-generation-update-december-2024/), claiming a spec sheet that made Sora's look modest: 4K resolution versus Sora's 1080p maximum; multi-minute video generation versus Sora's 20-second cap. In Google DeepMind's own MovieGen Bench evaluation — using Meta's benchmark, at least, even if conducted internally — human raters preferred Veo 2 over Sora Turbo at a 59% vs 27% margin. Independent reviewers from Axios, Fortune, and Engadget who tested both models through early 2025 generally agreed: Veo 2 produced better physics simulation, more photorealistic output, and more consistent anatomy.
 
 Whether Veo 2 was objectively "better than Sora" is a product-and-benchmark question that depends on which dimensions you measure. What it unambiguously accomplished: it ended the narrative of Sora as an unchallenged frontier. The AI video space had its second credible flagship model, and the race had truly begun.
 
@@ -57,7 +57,7 @@ Understanding Veo 2 requires understanding the moment it entered.
 
 Sora's public product had real limitations: 1080p maximum, 20-second clips, a dedicated web interface separate from ChatGPT, and quality that didn't always match the February demo clips. OpenAI's "Storyboard" UI was genuinely novel, and the output was impressive — but the gap between the February hype and the December product was measurable.
 
-**Google's response timing was not accidental.** The announcement blog post for Veo 2 — "Updates to Veo, Imagen and VideoFX, plus introducing Whisk" — landed December 16, 2024, exactly one week after Sora. The competitive framing was explicit: Veo 2's spec sheet was designed to address Sora's technical ceiling point by point. Where Sora was 1080p / 20 seconds, Veo 2 was 4K / minutes in length. The resolution war had started.
+**Google's response timing was not accidental.** The announcement blog post for Veo 2 — ["Updates to Veo, Imagen and VideoFX, plus introducing Whisk"](https://blog.google/innovation-and-ai/models-and-research/google-labs/video-image-generation-update-december-2024/) — landed December 16, 2024, exactly one week after Sora. The competitive framing was explicit: Veo 2's spec sheet was designed to address Sora's technical ceiling point by point. Where Sora was 1080p / 20 seconds, Veo 2 was 4K / minutes in length. The resolution war had started.
 
 Google also released the MovieGen Bench comparison in the same announcement window. This was Google's own evaluation, not an independent study, but it used Meta's publicly released MovieGen Bench dataset (1,003 prompts, standardized evaluation protocol). The 59%-vs-27% human preference result for Veo 2 over Sora Turbo immediately circulated in AI media and complicated the "Sora is the best" narrative before it had time to solidify.
 
@@ -296,7 +296,7 @@ The December 2024 moment matters primarily because it reset expectations: AI vid
 
 ## Transition to Veo 3
 
-**Veo 3 launched at Google I/O on May 20, 2025** — five months after Veo 2.
+**[Veo 3 launched at Google I/O on May 20, 2025](https://cloud.google.com/blog/products/ai-machine-learning/announcing-veo-3-imagen-4-and-lyria-2-on-vertex-ai)** — five months after Veo 2.
 
 The defining capability of Veo 3 was what Veo 2 lacked: **native, synchronized audio generation**. Veo 3 generates dialogue, sound effects, and ambient audio in a single diffusion pass alongside the video — no post-production audio pipeline required. Demis Hassabis introduced it as "emerging from the silent era of video generation," a phrase that implicitly acknowledged the audio gap in every model that came before, including Veo 2.
 

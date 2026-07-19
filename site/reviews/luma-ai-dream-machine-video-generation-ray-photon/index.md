@@ -23,7 +23,7 @@ What is documented is the technical foundation.
 
 **Amit Jain** is the CEO. His public profile is notably sparse relative to other AI company founders — a deliberate choice that Luma seems to make as an organization, preferring the work to be the story.
 
-The research team that has driven Luma's technical breakthroughs is its most credible public asset. **Jiaming Song** is a Luma AI researcher who co-authored the **DDIM paper** (Denoising Diffusion Implicit Models, arXiv:2010.02502 with Chenlin Meng and Stefano Ermon) — one of the foundational papers in the diffusion model lineage that underlies essentially all modern AI image and video generation. Song is the lead researcher on Luma's published work in **Inductive Moment Matching (IMM)** and co-author on **Terminal Velocity Matching (TVM)** — both of which are described in more detail in the technology section. The presence of a DDIM co-author doing active research at Luma is not a marketing claim; it is a credential.
+The research team that has driven Luma's technical breakthroughs is its most credible public asset. **Jiaming Song** is a Luma AI researcher who co-authored the **DDIM paper** ([Denoising Diffusion Implicit Models, arXiv:2010.02502](https://arxiv.org/abs/2010.02502) with Chenlin Meng and Stefano Ermon) — one of the foundational papers in the diffusion model lineage that underlies essentially all modern AI image and video generation. Song is the lead researcher on Luma's published work in **Inductive Moment Matching (IMM)** and co-author on **Terminal Velocity Matching (TVM)** — both of which are described in more detail in the technology section. The presence of a DDIM co-author doing active research at Luma is not a marketing claim; it is a credential.
 
 **Linqi Zhou** leads the TVM work and co-authored IMM alongside Song. **Stefano Ermon** — the Stanford professor who supervised the original DDIM work — appears as a co-author on the IMM paper, indicating an ongoing research relationship between Luma and academic computer science rather than a clean commercial separation.
 
@@ -43,7 +43,7 @@ From this foundation, Luma built **Genie** — a text-to-3D foundation model tha
 
 ### June 2024: Dream Machine Launches
 
-The launch of **Dream Machine** on June 12, 2024 was both a product release and a market positioning event. Luma went from "that 3D capture startup" to "one of the major AI video companies" in a single day.
+The launch of **[Dream Machine](https://siliconangle.com/2024/06/12/luma-ais-dream-machine-expands-access-generative-ai-video-creation/)** on June 12, 2024 was both a product release and a market positioning event. Luma went from "that 3D capture startup" to "one of the major AI video companies" in a single day.
 
 The initial Dream Machine was powered by what would later be called **Ray 1** (or Ray-1-6 in the API). It produced 5-second videos at 1360×752 from text or image prompts. At the time, the competition was thinner: Runway's Gen-2 existed but was expensive and limited; Sora had been demonstrated but was not publicly available; Kling, Hailuo, and the Chinese model wave had not yet arrived. Dream Machine's quality was genuinely competitive and its accessibility — ten free videos per day without a lengthy waitlist — drove viral adoption.
 
@@ -55,7 +55,7 @@ Luma's video generation models carry the **Ray** brand name. The progression fro
 
 **Ray 2** was a significant capability jump — Luma describes it as "trained on 10x the computational power of Ray1." It introduced support for multiple resolutions (540p through 4K), extended duration options (5 or 9 seconds), and improved keyframe control for image-to-video workflows. Ray 2 became the model that integrated into Adobe Firefly, giving it its first major enterprise deployment.
 
-**Ray 3** launched September 18, 2025, and is the most technically distinctive model in the family. Its headline feature is **native HDR generation** — the first commercial video model capable of outputting 10-bit, 12-bit, or 16-bit footage in ACES2065-1 EXR format. This is professional cinema colorspace territory. Most video generation models output in standard dynamic range because HDR generation is technically harder; Luma's decision to prioritize this differentiates Ray3 for high-end commercial production and visual effects workflows where colorgrade headroom matters.
+**[Ray 3](https://siliconangle.com/2025/09/18/luma-ai-launches-ray3-next-gen-cinematic-video-generation-model-built-reasoning/)** launched September 18, 2025, and is the most technically distinctive model in the family. Its headline feature is **native HDR generation** — the first commercial video model capable of outputting 10-bit, 12-bit, or 16-bit footage in ACES2065-1 EXR format. This is professional cinema colorspace territory. Most video generation models output in standard dynamic range because HDR generation is technically harder; Luma's decision to prioritize this differentiates Ray3 for high-end commercial production and visual effects workflows where colorgrade headroom matters.
 
 Ray3 also introduced a **reasoning layer** that processes both text and visual tokens simultaneously before generation begins. Rather than immediately synthesizing pixels from a prompt, Ray3 is designed to "think through what a user is asking, plan complex scenes, and judge whether its own output makes sense." This is analogous to the chain-of-thought reasoning that distinguishes frontier language models from simpler pattern-matchers, applied to the video generation domain.
 
@@ -91,15 +91,15 @@ Luma's willingness to publish research papers is unusual for a commercial AI vid
 
 ### Inductive Moment Matching (IMM)
 
-Published March 11, 2025 (arXiv:2503.07565) by Jiaming Song, Linqi Zhou, and Stefano Ermon, **Inductive Moment Matching** is a new generative modeling framework that addresses the core tradeoff in diffusion models between sample quality and inference speed. Standard diffusion models require many sampling steps (50–1000) to generate high-quality samples; faster methods (like DDIM, flow matching) sacrifice quality to get the step count down.
+Published March 11, 2025 ([arXiv:2503.07565](https://arxiv.org/abs/2503.07565)) by Jiaming Song, Linqi Zhou, and Stefano Ermon, **Inductive Moment Matching** is a new generative modeling framework that addresses the core tradeoff in diffusion models between sample quality and inference speed. Standard diffusion models require many sampling steps (50–1000) to generate high-quality samples; faster methods (like DDIM, flow matching) sacrifice quality to get the step count down.
 
-IMM achieves **1.99 FID on ImageNet 256×256** — state-of-the-art at publication — with approximately **30 times fewer sampling steps** than standard diffusion. For context: DDIM achieves 2.27 FID; flow matching achieves 2.15. Getting below 2.0 FID with 30x fewer steps is a meaningful result. The paper was accepted at ICML 2025.
+IMM achieves **1.99 FID on ImageNet 256×256** — state-of-the-art at publication — with approximately **30 times fewer sampling steps** than standard diffusion. For context: DDIM achieves 2.27 FID; flow matching achieves 2.15. Getting below 2.0 FID with 30x fewer steps is a meaningful result. The paper was [accepted at ICML 2025](https://arxiv.org/abs/2503.07565).
 
 The practical implication: if Luma integrates IMM-class techniques into its video generation pipeline, it can generate higher quality output faster and cheaper than approaches based on standard diffusion. This is a durable research advantage, not a one-time benchmark score.
 
 ### Terminal Velocity Matching (TVM)
 
-Published November 26, 2025 (arXiv:2511.19797) by Linqi Zhou, Mathias Parger, Ayaan Haque, and Jiaming Song, **Terminal Velocity Matching** is a training framework that achieves a **25x speedup** over standard diffusion while generating high-quality images in **4 inference steps**. TVM scales to models with 10 billion+ parameters and enables training text-to-image models from scratch using its paradigm — meaning it is not a fine-tuning or distillation approach applied to an existing diffusion model, but a foundational training methodology.
+Published November 26, 2025 ([arXiv:2511.19797](https://arxiv.org/abs/2511.19797)) by Linqi Zhou, Mathias Parger, Ayaan Haque, and Jiaming Song, **Terminal Velocity Matching** is a training framework that achieves a **25x speedup** over standard diffusion while generating high-quality images in **4 inference steps**. TVM scales to models with 10 billion+ parameters and enables training text-to-image models from scratch using its paradigm — meaning it is not a fine-tuning or distillation approach applied to an existing diffusion model, but a foundational training methodology.
 
 Four inference steps for billion-parameter model output is the kind of efficiency that changes what is economically practical at scale. If TVM underpins Luma's next generation of models, the cost and speed trajectory of Ray and Photon becomes significantly more favorable.
 
@@ -115,7 +115,7 @@ Luma AI's funding history reflects the broader pattern of AI infrastructure inve
 
 The company raised from 2021 through early 2024 through a Seed, Series A (March 2023), and Series B (January 2024) — none of which had publicly disclosed amounts. CB Insights records a **$43 million** figure associated with the Series B period, and the valuation at that stage was in the $200–300 million range. The investor names from this period include **Andreessen Horowitz**, **Matrix Partners**, **Amplify Partners**, and **NVIDIA** — a technical and financial validator set that established Luma as a serious company before Dream Machine launched.
 
-The **$900 million Series C**, announced November 19, 2025, changes the scale of the conversation entirely. The round was led by **Humain** — a Saudi Arabia-linked AI infrastructure company — with participation from **AMD Ventures**, **a16z** (returning), **Omniva**, **Amplify Partners** (returning), and **Matrix Partners** (returning). The total raised across all rounds is approximately **$1.057 billion** per CB Insights.
+The **[$900 million Series C](https://www.businesswire.com/news/home/20251119678010/en/Luma-AI-Raises-%24900-Million-Series-C-Led-by-HUMAIN-And-Partners-on-2-Gigawatt-AI-Supercluster-in-Saudi-Arabia)**, announced November 19, 2025, changes the scale of the conversation entirely. The round was led by **Humain** — a Saudi Arabia-linked AI infrastructure company — with participation from **AMD Ventures**, **a16z** (returning), **Omniva**, **Amplify Partners** (returning), and **Matrix Partners** (returning) ([CNBC](https://www.cnbc.com/2025/11/19/luma-ai-raises-900-million-in-funding-led-by-saudi-ai-firm-humain.html)). The total raised across all rounds is approximately **$1.057 billion** per CB Insights.
 
 The $900M Series C is not primarily a product investment. It is tied to **Project Halo** — a planned 2 GW compute supercluster that Luma and Humain are co-building, with deployment beginning Q1 2026 and full completion in 2028–2029. For context: 2 GW is roughly the power consumption of a medium-sized city and represents a scale of AI compute infrastructure that only a handful of organizations are attempting. Microsoft's major Azure expansion, Google's TPU clusters, and Amazon's Trainium investments are in the same order of magnitude.
 
@@ -127,7 +127,7 @@ The strategic logic is that as AI video generation scales to higher resolution, 
 
 ## MCP Server: Official and Available
 
-Luma AI has an **official MCP server**: `lumalabs/luma-api-mcp` on GitHub, created **April 15, 2025**.
+Luma AI has an **official MCP server**: [`lumalabs/luma-api-mcp`](https://github.com/lumalabs/luma-api-mcp) on GitHub, created **April 15, 2025**.
 
 The server is described as "Powered by Ray (video) and Photon (image) models by Luma AI" and exposes text-to-image, text-to-video, and image-to-video generation capabilities to any MCP-compatible client. Supported models include Photon-1, Photon-Flash-1, Ray-2, Ray-Flash-2, and Ray-1-6. Resolution options run from 540p to 4K; video durations are 5 or 9 seconds. Generation times are 5–15 seconds for images and 15–60 seconds for video.
 
@@ -174,9 +174,9 @@ Luma provides **official ComfyUI nodes** (`lumalabs/ComfyUI-LumaAI-API`) for int
 
 Luma AI's partnership story has moved from consumer product to enterprise creative infrastructure with notable speed.
 
-**Adobe Firefly** (April 24, 2025): Ray2 integrated into Adobe Firefly and Firefly Boards as a selectable video generation model. Users can generate Luma AI video within Adobe's interface without visiting Dream Machine. Adobe was also the first external partner to launch Ray3 outside of Dream Machine (September 2025). Being embedded in Adobe's creative suite gives Luma access to Adobe's professional user base — a distribution channel that consumer-facing AI video companies cannot easily replicate.
+**Adobe Firefly** ([April 24, 2025](https://blog.adobe.com/en/publish/2025/04/24/adobe-firefly-next-evolution-creative-ai-is-here)): Ray2 integrated into Adobe Firefly and Firefly Boards as a selectable video generation model. Users can generate Luma AI video within Adobe's interface without visiting Dream Machine. Adobe was also the first external partner to launch Ray3 outside of Dream Machine (September 2025). Being embedded in Adobe's creative suite gives Luma access to Adobe's professional user base — a distribution channel that consumer-facing AI video companies cannot easily replicate.
 
-**Publicis Groupe** (February 11, 2026): Partnership announcement coinciding with the opening of a Riyadh office. Publicis is one of the world's largest advertising holding companies, with agencies including Leo Burnett, Saatchi & Saatchi, and BBDO operating under its umbrella.
+**Publicis Groupe** ([February 11, 2026](https://lumalabs.ai/news/luma-ai-to-open-riyadh-office-to-accelerate-humain-create-and-partner-with-publicis-groupe)): Partnership announcement coinciding with the opening of a Riyadh office. Publicis is one of the world's largest advertising holding companies, with agencies including Leo Burnett, Saatchi & Saatchi, and BBDO operating under its umbrella.
 
 **Serviceplan Group** (February 19, 2026): Global deployment of Luma AI across Serviceplan's international operations. Serviceplan is Europe's largest owner-managed advertising agency network.
 

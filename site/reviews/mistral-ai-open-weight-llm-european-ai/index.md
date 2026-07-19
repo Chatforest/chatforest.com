@@ -19,7 +19,7 @@ This review covers Mistral's founding team, model lineup, products, funding, bus
 
 Mistral AI was founded in May 2023 by three researchers who had known each other since their undergraduate years at **École Polytechnique**, France's most selective engineering institution.
 
-**Arthur Mensch** (CEO) is the quiet engine of the company. He was born in 1992 in Sèvres, a Paris suburb, earned his degree at Polytechnique, then studied mathematics, vision, and machine learning at Université Paris-Saclay. He joined **Google DeepMind** where he worked on retrieval-augmented language models and co-authored the **Chinchilla paper** — the 2022 work that established the now-standard compute-optimal scaling laws for large language models. The Chinchilla findings fundamentally reshaped how the industry thought about model training efficiency: smaller models trained on more tokens could outperform larger models trained on fewer. When Mistral AI released its efficient models later that year, it was not luck — Mensch had co-authored the theory behind why those models should work.
+**Arthur Mensch** (CEO) is the quiet engine of the company. He was born in 1992 in Sèvres, a Paris suburb, earned his degree at Polytechnique, then studied mathematics, vision, and machine learning at Université Paris-Saclay. He joined **Google DeepMind** where he worked on retrieval-augmented language models and co-authored the **[Chinchilla paper](https://arxiv.org/abs/2203.15556)** — the 2022 work that established the now-standard compute-optimal scaling laws for large language models. The Chinchilla findings fundamentally reshaped how the industry thought about model training efficiency: smaller models trained on more tokens could outperform larger models trained on fewer. When Mistral AI released its efficient models later that year, it was not luck — Mensch had co-authored the theory behind why those models should work.
 
 **Guillaume Lample** (Chief Scientist) came to Mistral from **Meta AI Research**, where he was a lead researcher specializing in NLP and large-scale training. At Meta, Lample was one of the principal researchers behind **LLaMA** — Meta's open-weight model family that became the foundation for the open-source AI ecosystem. He holds a degree from Polytechnique and a PhD from Carnegie Mellon University. His contribution at Mistral is architectural: he brought deep expertise in efficient transformer training, and the Mixtral MoE design bears his fingerprints.
 
@@ -116,10 +116,10 @@ Mistral has raised approximately **$3.05 billion** across 8 rounds from 48 inves
 | Seed | June 2023 | €105M ($113M) | — | a16z, Lightspeed, GC, Index |
 | Series A | December 2023 | €385M ($415M) | ~$2B | a16z, General Catalyst, Salesforce |
 | Series B | June 2024 | €600M ($645M) | **$6B** | Lightspeed, a16z, NVIDIA, Bpifrance, + Microsoft (strategic, ~$16M) |
-| Series C | September 2025 | €1.7B ($2B) | **€11.7B ($14B)** | **ASML** (€1.3B, 76.5% of round) |
+| [Series C](https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai/) | September 2025 | €1.7B ($2B) | **€11.7B ($14B)** | **ASML** (€1.3B, 76.5% of round) |
 | Debt | March 2026 | $830M | — | Debt financing for Paris/Sweden data centers |
 
-The ASML Series C is the headline event. **ASML** is the Dutch company that builds the extreme ultraviolet lithography machines that make modern semiconductor manufacturing possible — every advanced chip fabricated by TSMC, Samsung, or Intel runs through ASML equipment. ASML investing €1.3 billion in Mistral is not a passive financial bet; it is a **strategic partnership** that includes a long-term collaboration agreement to apply Mistral's AI models across ASML's product portfolio. ASML took **11% of Mistral on a fully diluted basis** — its largest investment in any external company.
+The ASML Series C is the headline event. **ASML** is the Dutch company that builds the extreme ultraviolet lithography machines that make modern semiconductor manufacturing possible — every advanced chip fabricated by TSMC, Samsung, or Intel runs through ASML equipment. [ASML investing €1.3 billion in Mistral](https://www.asml.com/en/news/press-releases/2025/asml-mistral-ai-enter-strategic-partnership) is not a passive financial bet; it is a **strategic partnership** that includes a long-term collaboration agreement to apply Mistral's AI models across ASML's product portfolio. ASML took **11% of Mistral on a fully diluted basis** — its largest investment in any external company ([CNBC](https://www.cnbc.com/2025/09/09/ai-firm-mistral-valued-at-14-billion-as-asml-takes-major-stake.html)).
 
 The March 2026 debt financing of $830 million funds the purchase of 13,800 NVIDIA chips for a new data center near Paris, plus a Sweden facility. Mistral is building infrastructure, not just models — a significant capital commitment that implies confidence in sustained revenue growth.
 
@@ -133,7 +133,7 @@ Mistral's revenue trajectory is the clearest signal of real enterprise traction:
 
 - **January 2025**: ~$20M ARR
 - **December 2025**: ~$312M ARR
-- **January 2026**: **~$400M ARR** — approximately **20x growth in 12 months**
+- **January 2026**: **~$400M ARR** — approximately **[20x growth in 12 months](https://mlq.ai/news/mistral-ai-surges-revenue-20-fold-to-over-400-million-arr-amid-europes-ai-push/)**
 - **Target**: >$1 billion in revenue by end of 2026
 
 Revenue sources:
@@ -157,7 +157,7 @@ Mistral's positioning as Europe's AI champion is not marketing — it is a struc
 
 **Data sovereignty**: Forge's on-premises deployment and the Paris/Sweden data center build directly address the data residency requirements that prevent European governments and enterprises from using US cloud-hosted AI. Mistral is building the infrastructure necessary for "sovereign AI" in the technical, not rhetorical, sense.
 
-**French military contract**: The French Ministry of the Armed Forces awarded Mistral a framework agreement to deploy AI models across all branches of the military on French-controlled infrastructure. This is a validated proof point for the sovereign AI thesis, not a hypothetical.
+**French military contract**: [The French Ministry of the Armed Forces awarded Mistral a framework agreement](https://www.armyrecognition.com/news/army-news/2026/france-deploys-mistral-ai-across-military-to-accelerate-operational-decision-making) to deploy AI models across all branches of the military on French-controlled infrastructure. This is a validated proof point for the sovereign AI thesis, not a hypothetical.
 
 **Bpifrance backing**: France's sovereign investment bank is a direct investor. This is institutional alignment with the French government's strategic interest in maintaining a domestic AI champion.
 
