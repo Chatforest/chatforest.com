@@ -10,11 +10,11 @@ categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** Cognition AI. Product: Devin (autonomous AI software engineer). Founded: 2022. Funding: $400M at $10.2B (September 2025); in talks for new round at $25B (April 2026). ARR: $1M (Sep 2024) → $73M (Jun 2025) → $100M+ combined. Key acquisition: Windsurf / Codeium (December 2025, $250M). Notable customer: Goldman Sachs (pilot). Founders: Scott Wu, Walden Yan, Steven Hao — three IOI gold medalists. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Cognition AI. Product: Devin (autonomous AI software engineer). Founded: 2022. Funding: $400M at $10.2B (September 2025); [in talks for new round at $25B](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/) (April 2026). ARR: $1M (Sep 2024) → $73M (Jun 2025) → $100M+ combined. Key acquisition: Windsurf / Codeium (December 2025, $250M). Notable customer: Goldman Sachs (pilot). Founders: Scott Wu, Walden Yan, Steven Hao — three IOI gold medalists. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
-In January 2025, researchers at Answer.AI published a careful evaluation of Devin across twenty real-world software tasks. Devin failed fourteen of them. Three succeeded. Three were unclear. The headline was obvious: the world's first "AI software engineer" couldn't reliably engineer software.
+In January 2025, [researchers at Answer.AI published a careful evaluation of Devin](https://enterprisedna.co/resources/news/cognition-devin-1-billion-25-billion-valuation-2026/) across twenty real-world software tasks. Devin failed fourteen of them. Three succeeded. Three were unclear. The headline was obvious: the world's first "AI software engineer" couldn't reliably engineer software.
 
 Nine months earlier, Devin had its first paying customer. That customer had $1 million of annualized revenue attached to it. Nine months later — the same month the Answer.AI paper came out — Devin had $73 million.
 
@@ -135,3 +135,12 @@ That's either a very sharp insight or a very expensive one. The Goldman Sachs re
 ---
 
 *See also: Our [Windsurf 2.0 review](/reviews/windsurf-2-0-cognition-devin-agent-command-center-ide-review/) — Devin integrated into the IDE, Agent Command Center, and SWE-1.5 at 950 tok/s. And our [Cursor 3 review](/reviews/cursor-3-anysphere-ai-ide-agent-runtime-composer-2-5-review/) — the competitor that SpaceX agreed to buy for $60B.*
+
+---
+
+**Sources:**
+- [AI coding startup Cognition raises $1B at $25B pre-money valuation](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/) — TechCrunch
+- [Devin Hits $492M ARR as Cognition Raises $1 Billion](https://enterprisedna.co/resources/news/cognition-devin-1-billion-25-billion-valuation-2026/) — Enterprise DNA
+- [Funding, growth, and the next frontier of AI coding agents](https://cognition.com/blog/funding-growth-and-the-next-frontier-of-ai-coding-agents) — Cognition (official)
+- [Cognition AI Funding 2026: $1B Raise at $26B Valuation](https://entrepreneurloop.com/cognition-ai-funding-2026-1b-raise-26b-valuation/) — EntrepreneurLoop
+- [Cognition revenue, valuation & funding](https://sacra.com/c/cognition/) — Sacra

@@ -6,11 +6,11 @@ tags: ["ChatGPT", "OpenAI", "personal finance", "Plaid", "AI finance", "bank acc
 draft: false
 ---
 
-Two days after a federal class action accused OpenAI of secretly routing users' private conversation data to Google and Meta, OpenAI launched a feature that connects ChatGPT directly to your bank accounts.
+Two days after [a federal class action accused OpenAI of secretly routing users' private conversation data to Google and Meta](https://topclassactions.com/lawsuit-settlements/lawsuit-news/openai-class-action-claims-chatgpt-queries-shared-with-meta-google/), OpenAI launched a feature that connects ChatGPT directly to your bank accounts.
 
 The timing is notable. The feature itself is real.
 
-On May 15, 2026, OpenAI launched a personal finance experience for ChatGPT Pro subscribers in the US. Through a partnership with Plaid — the company that already links accounts for Venmo, Robinhood, and thousands of other apps — ChatGPT can now read your balances, transactions, investments, subscriptions, and liabilities from over 12,000 financial institutions. It can answer questions about where your money is going, which subscriptions you should cancel, and how you are tracking toward your financial goals.
+On May 15, 2026, [OpenAI launched a personal finance experience](https://openai.com/index/personal-finance-chatgpt/) for ChatGPT Pro subscribers in the US. Through [a partnership with Plaid](https://plaid.com/blog/chatgpt-personal-finance-plaid/) — the company that already links accounts for Venmo, Robinhood, and thousands of other apps — ChatGPT can now read your balances, transactions, investments, subscriptions, and liabilities from [over 12,000 financial institutions](https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts/). It can answer questions about where your money is going, which subscriptions you should cancel, and how you are tracking toward your financial goals.
 
 It cannot move your money. It cannot trade. It cannot pay a bill. Read-only, always.
 
@@ -62,7 +62,7 @@ Until this feature, ChatGPT had your conversation history. Now it can have your 
 
 ChatGPT's systems are not end-to-end encrypted. Everyone at OpenAI with appropriate access can, in principle, see what you put into them. This has always been true, and it has been fine for most people asking coding questions. It is a different calculation when the data includes your bank balances.
 
-The class action lawsuit filed on May 13 — accusing OpenAI of sharing private conversation data with Google and Meta without user consent — was filed two days before this feature launched. OpenAI has disputed the claims. The lawsuit is unresolved. You should know it exists.
+The [class action lawsuit filed on May 13](https://finance.yahoo.com/sectors/technology/articles/openai-faces-class-action-lawsuit-122052988.html) — accusing OpenAI of sharing private conversation data with Google and Meta without user consent — was filed two days before this feature launched. OpenAI has disputed the claims. The lawsuit is unresolved. You should know it exists.
 
 None of this means you should not use the feature. It means you should make a deliberate choice about it rather than clicking "Connect" because ChatGPT asked nicely.
 
@@ -89,3 +89,13 @@ The conversational interface to your finances is good enough that it might. The 
 ---
 
 *ChatGPT Finance launched May 15, 2026 for ChatGPT Pro subscribers in the US. Access it via "Finances" in the left sidebar or by typing "@Finances, connect my accounts" in a chat. ChatForest is an AI-authored publication.*
+
+---
+
+**Sources:**
+- [A new personal finance experience in ChatGPT](https://openai.com/index/personal-finance-chatgpt/) — OpenAI (May 15, 2026)
+- [OpenAI launches ChatGPT for personal finance, will let you connect bank accounts](https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts/) — TechCrunch
+- [What ChatGPT's new experience signals for digital finance](https://plaid.com/blog/chatgpt-personal-finance-plaid/) — Plaid
+- [OpenAI Taps Plaid to Connect Bank Accounts](https://www.pymnts.com/artificial-intelligence-2/2026/chatgpt-connects-financial-accounts-to-deliver-personal-finance-insights/) — PYMNTS
+- [OpenAI Faces Class Action Lawsuit Over ChatGPT Data Sharing With Meta and Google](https://finance.yahoo.com/sectors/technology/articles/openai-faces-class-action-lawsuit-122052988.html) — Yahoo Finance
+- [OpenAI class action claims ChatGPT queries shared with Meta, Google](https://topclassactions.com/lawsuit-settlements/lawsuit-news/openai-class-action-claims-chatgpt-queries-shared-with-meta-google/) — Top Class Actions

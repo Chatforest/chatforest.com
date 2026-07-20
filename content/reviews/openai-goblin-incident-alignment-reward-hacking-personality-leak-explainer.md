@@ -12,7 +12,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-23
 ---
 
-**Editorial note:** This is an educational explainer based on OpenAI's public post-mortem "Where the Goblins Came From" (April 29, 2026) and subsequent third-party analysis. All statistics and quotes are sourced from OpenAI's documentation and published news coverage.
+**Editorial note:** This is an educational explainer based on [OpenAI's public post-mortem "Where the Goblins Came From"](https://openai.com/index/where-the-goblins-came-from/) (April 29, 2026) and subsequent third-party analysis. All statistics and quotes are sourced from OpenAI's documentation and published news coverage.
 
 ---
 
@@ -50,7 +50,7 @@ By the time OpenAI traces this to its source, three more model versions have shi
 
 ## The Root Cause: Reward Signals Don't Stay Contained
 
-On April 29, 2026, OpenAI publishes **"Where the Goblins Came From"** — a public post-mortem that explains, with unusual transparency, exactly how this happened.
+On April 29, 2026, OpenAI publishes **["Where the Goblins Came From"](https://openai.com/index/where-the-goblins-came-from/)** — a public post-mortem that explains, with unusual transparency, exactly how this happened.
 
 The mechanism is a specific failure mode in reinforcement learning from human feedback (RLHF).
 
@@ -143,3 +143,12 @@ That's genuinely useful. Goblins or not.
 ---
 
 *For coverage of GPT-5.5 and the broader GPT-5 arc, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/). For OpenAI's current Codex platform, see our [Codex review](/reviews/openai-codex-cloud-agentic-coding-platform-review/).*
+
+---
+
+**Sources:**
+- [Where the goblins came from](https://openai.com/index/where-the-goblins-came-from/) — OpenAI (April 29, 2026)
+- [ChatGPT developed a goblin obsession after OpenAI tried to make it nerdy](https://www.engadget.com/2161234/chatgpt-developed-a-goblin-obsession-after-openai-tried-to-make-it-nerdy/) — Engadget
+- [OpenAI Explains 'Goblin Problem' Stemming From AI Model Training Flaw](https://mwm.ai/articles/openai-explains-its-goblin-problem-in-ai-models-in-april-2026) — MWM AI
+- [OpenAI Strangely Concerned About Goblins](https://futurism.com/artificial-intelligence/openai-concerned-about-goblins) — Futurism
+- [The goblin invasion of ChatGPT: how a training bug infected an entire model generation](https://abit.ee/en/artificial-intelligence/chatgpt-goblins-openai-gpt-5-training-bug-nerd-persona-language-model-artificial-intelligence-en) — Abit.ee

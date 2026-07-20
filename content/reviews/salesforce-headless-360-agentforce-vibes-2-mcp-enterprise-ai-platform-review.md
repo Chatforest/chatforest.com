@@ -18,7 +18,7 @@ author: "ChatForest"
 
 Every major software platform eventually faces the same pressure: the interfaces that worked for humans need to be rebuilt for the things replacing human workflows. Salesforce just made its call.
 
-On April 15, 2026, at its annual TDX developer conference in San Francisco, Salesforce unveiled Headless 360 — an initiative the company calls the most significant platform shift in its 27-year history. The premise is blunt: every Salesforce capability, across all of its clouds, is now an API endpoint, a Model Context Protocol (MCP) tool, or a CLI command. AI agents can operate the full Salesforce platform without a browser, without a user interface, and — depending on how you configure it — without human intervention.
+On April 15, 2026, [at its annual TDX developer conference in San Francisco](https://www.salesforce.com/news/stories/salesforce-headless-360-announcement/), Salesforce unveiled Headless 360 — an initiative the company calls the most significant platform shift in its 27-year history. The premise is blunt: every Salesforce capability, across all of its clouds, is now an API endpoint, a Model Context Protocol (MCP) tool, or a CLI command. AI agents can operate the full Salesforce platform without a browser, without a user interface, and — depending on how you configure it — without human intervention.
 
 This is not a feature update. It is an architectural reclassification of what Salesforce is.
 
@@ -42,7 +42,7 @@ Headless 360 reorganizes the Salesforce stack into four programmable layers:
 
 ## 60+ New MCP Tools
 
-The headline developer number is the MCP toolset: more than **60 new MCP tools and 30+ preconfigured coding skills** shipped immediately at launch.
+The headline developer number is the MCP toolset: [more than **60 new MCP tools and 30+ preconfigured coding skills**](https://venturebeat.com/technology/salesforce-launches-headless-360-to-turn-its-entire-platform-into-infrastructure-for-ai-agents) shipped immediately at launch.
 
 The tools span six categories:
 
@@ -183,3 +183,12 @@ The rating below reflects a platform in the right direction that is not yet full
 ---
 
 *ChatForest covers AI tools, platforms, and infrastructure from a developer and practitioner perspective. All research is based on publicly available announcements, developer documentation, and third-party coverage. We do not conduct hands-on testing of enterprise platforms.*
+
+---
+
+**Sources:**
+- [Introducing Salesforce Headless 360. No Browser Required.](https://www.salesforce.com/news/stories/salesforce-headless-360-announcement/) — Salesforce (April 15, 2026)
+- [Salesforce launches Headless 360 to turn its entire platform into infrastructure for AI agents](https://venturebeat.com/technology/salesforce-launches-headless-360-to-turn-its-entire-platform-into-infrastructure-for-ai-agents) — VentureBeat
+- [Salesforce Headless 360 and Agentforce Vibes 2.0 Revealed at TDX 2026](https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/) — Salesforce Ben
+- [TDX 2026 Reporter's Notebook: Salesforce Goes Headless](https://salesforcedevops.net/index.php/2026/04/15/tdx-2026-reporters-notebook-salesforce-goes-headless-and-widens-the-builder-gap/) — SalesforceDevops.net
+- [Salesforce Introduces Headless 360, Agentforce Vibes 2.0, And AgentExchange At TDX 2026](https://salesforcetrail.com/salesforce-introduces-headless-360-at-tdx-2026/) — Salesforce Trail
