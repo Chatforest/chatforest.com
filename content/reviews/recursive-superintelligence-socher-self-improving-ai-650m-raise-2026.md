@@ -10,7 +10,7 @@ categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** Recursive Superintelligence. Stealth exit: May 13, 2026. Funding: $650 million. Valuation: $4.65 billion. Investors: GV and Greycroft (co-leads), NVIDIA, AMD Ventures, and others. Employees: fewer than 30. Product: none released. Goal: build AI systems that autonomously identify weaknesses, redesign their own architectures, and improve themselves in a closed loop. Offices in San Francisco and London. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Recursive Superintelligence. [Stealth exit: May 13, 2026](https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/). [Funding: $650 million at a $4.65 billion valuation](https://tech.eu/2026/05/13/recursive-superintelligence-emerges-from-stealth-with-650m-raise/). [Investors: GV and Greycroft (co-leads), NVIDIA, AMD Ventures, and others](https://techfundingnews.com/uk-ai-startup-recursive-hits-4-65b-valuation-with-650m-raise-from-nvidia-and-gv/). Employees: fewer than 30. Product: none released. Goal: build AI systems that autonomously identify weaknesses, redesign their own architectures, and improve themselves in a closed loop. Offices in San Francisco and London. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -72,7 +72,7 @@ The company has said it expects to launch a "Level 1" autonomous training system
 
 ## The Funding
 
-The round structure is notable beyond the headline number.
+[The round structure is notable beyond the headline number.](https://siliconangle.com/2026/05/13/recursive-superintelligence-raises-650m-build-self-improving-ai-models/)
 
 **GV** (formerly Google Ventures) and **Greycroft** co-led the round. GV's participation is particularly striking given that Google operates one of the largest AI research programs in the world — it suggests the firm sees an orthogonal enough approach that internal competition is not a barrier to investment.
 
@@ -108,3 +108,13 @@ Whether that sequencing is responsible is a question the company has not yet had
 ---
 
 **ChatForest take:** The founding team alone would justify attention. The fact that they have specific architectural roots (open-endedness + RL + vision transformers), a coherent roadmap (not just "we will build AGI"), and hardware-company backing signals this is a serious technical attempt rather than a fundraising narrative. The Eureka Machine framing is vivid enough to be either prescient or embarrassing in 18 months. Watch the mid-2026 Level 1 launch for evidence of which.
+
+---
+
+## Sources
+
+- [Recursive Superintelligence emerges from stealth with $650M raise](https://tech.eu/2026/05/13/recursive-superintelligence-emerges-from-stealth-with-650m-raise/) — Tech.eu
+- [What happens when AI starts building itself?](https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/) — TechCrunch
+- [Recursive Superintelligence raises $650M to build self-improving AI models](https://siliconangle.com/2026/05/13/recursive-superintelligence-raises-650m-build-self-improving-ai-models/) — SiliconAngle
+- [UK AI startup Recursive hits $4.65B valuation with $650M raise from Nvidia and GV](https://techfundingnews.com/uk-ai-startup-recursive-hits-4-65b-valuation-with-650m-raise-from-nvidia-and-gv/) — TechFundingNews
+- [Recursive Superintelligence raises $650m at $4.65bn valuation](https://thenextweb.com/news/recursive-superintelligence-self-improving-ai-funding) — The Next Web

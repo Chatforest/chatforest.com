@@ -10,7 +10,7 @@ categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** Sierra. Founded February 2024 by Bret Taylor (former Salesforce co-CEO, former Twitter board chair, current OpenAI board chair) and Clay Baird. Product: enterprise AI agent platform ("Agent OS") for customer experience across chat, voice, email, SMS, and WhatsApp. Funding: $950 million Series E at $15.8 billion valuation (May 4, 2026), led by Tiger Global and GV (Google Ventures). Prior investors include Benchmark, Sequoia, and Greenoaks. Total capital available: $1 billion+. ARR: $150 million+. Key customers: 40%+ of the Fortune 50, half of customers have $1B+ revenue. Pricing: outcome-based, sales-led, approximately $150K–$350K+ per year. Latest product: Ghostwriter (March 25, 2026) — an AI that builds AI agents through conversation. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Sierra. Founded February 2024 by Bret Taylor (former Salesforce co-CEO, former Twitter board chair, current OpenAI board chair) and Clay Baird. Product: enterprise AI agent platform ("Agent OS") for customer experience across chat, voice, email, SMS, and WhatsApp. [Funding: $950 million Series E at $15.8 billion valuation (May 4, 2026)](https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/), led by Tiger Global and GV (Google Ventures). Prior investors include Benchmark, Sequoia, and Greenoaks. Total capital available: $1 billion+. ARR: $150 million+. Key customers: 40%+ of the Fortune 50, half of customers have $1B+ revenue. Pricing: outcome-based, sales-led, approximately $150K–$350K+ per year. Latest product: Ghostwriter (March 25, 2026) — an AI that builds AI agents through conversation. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -70,9 +70,9 @@ There is an honest caveat here: as of this writing, Ghostwriter is new. Real-wor
 
 ## The $950 Million Series E
 
-Sierra announced its Series E on May 4, 2026. The round was led by Tiger Global and GV (Google Ventures), with additional participation from Benchmark, Sequoia, Greenoaks, and others. The post-money valuation was $15.8 billion, up from $10 billion in the fall of 2025.
+[Sierra announced its Series E on May 4, 2026.](https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/) The round was led by Tiger Global and GV (Google Ventures), with additional participation from Benchmark, Sequoia, Greenoaks, and others. The post-money valuation was $15.8 billion, up from $10 billion in the fall of 2025.
 
-Taylor's announcement on X framed the raise explicitly in terms of category ambition: "We now have more than $1 billion to invest in becoming the global standard for companies wanting to transform their customer experiences with AI."
+[Taylor's announcement on X](https://x.com/btaylor/status/2051313954312331411) framed the raise explicitly in terms of category ambition: "We now have more than $1 billion to invest in becoming the global standard for companies wanting to transform their customer experiences with AI."
 
 The GV participation is worth noting. Google Ventures leading a round in an AI company that integrates with multiple LLMs — including OpenAI's — is a signal of confidence in Sierra's platform-layer positioning rather than model-specific bets. Sierra's value is not tied to any single AI provider. That is a deliberate hedge, and it is one of the things that makes it a plausible long-term infrastructure play rather than a model-dependent feature.
 
@@ -118,3 +118,13 @@ Sierra is not a story about AI hype. It is a story about a company that built a 
 ---
 
 *We did not test Sierra's platform directly. This review is based on public company announcements, press coverage, and third-party analyses of Sierra's product and financials. No hands-on access was obtained.*
+
+---
+
+## Sources
+
+- [Sierra raises $950M as the race to own enterprise AI gets serious](https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/) — TechCrunch
+- [Bret Taylor's Sierra raises nearly $1B in latest AI capital push](https://www.cnbc.com/2026/05/04/bret-taylor-sierra-fundraise-openai.html) — CNBC
+- [Sierra raises $950M at $15.8B valuation](https://letsdatascience.com/news/sierra-raises-950m-series-e-at-158b-valuation-823fdd5c) — Let's Data Science
+- [Bret Taylor on X: announcing the Series E](https://x.com/btaylor/status/2051313954312331411) — X
+- [Sierra Raises $950M at $15B Valuation, Eyes Transformation Beyond Customer Support](https://www.cmswire.com/customer-experience/sierra-raises-950m-at-15b-valuation-eyes-transformation-beyond-customer-support/) — CMSWire

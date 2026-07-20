@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-24
 ---
 
-**Summary:** On May 7, 2026, Telegram shipped its largest bot-related update in years under the headline "Bot Revolution." The update introduced 11 new features, but four of them together mark a structural shift: bot-to-bot direct messaging, guest AI bots, per-user chat automation, and full streaming support across all bot types via Bot API 9.5. Telegram — with over 1.1 billion registered users — became the first messaging platform at that scale to enable native, autonomous communication between AI agents without any human relay point.
+**Summary:** On May 7, 2026, [Telegram shipped its largest bot-related update in years under the headline "Bot Revolution."](https://telegram.org/blog/ai-bot-revolution-11-new-features) The update introduced 11 new features, but four of them together mark a structural shift: bot-to-bot direct messaging, guest AI bots, per-user chat automation, and full streaming support across all bot types via [Bot API 9.5](https://core.telegram.org/bots/api-changelog). Telegram — with over 1.1 billion registered users — became the first messaging platform at that scale to enable native, autonomous communication between AI agents without any human relay point.
 
 ---
 
@@ -57,7 +57,7 @@ For AI-powered bots, streaming is a UX baseline. Without it, an LLM-backed bot t
 
 ## The Security Gap
 
-Telegram launched these features on May 7, 2026. The same week, a study from researchers at Georgia Institute of Technology, Kennesaw State University, and the OWASP Foundation published an assessment of seventeen existing security frameworks against multi-agent system cybersecurity risks. Their conclusion: the best-covered framework — the OWASP Agentic Security Initiative — addressed only 65.3% of identified threat categories.
+Telegram launched these features on May 7, 2026. The same week, [a study from researchers at Georgia Institute of Technology, Kennesaw State University, and the OWASP Foundation](https://arxiv.org/pdf/2603.09002) published an assessment of seventeen existing security frameworks against multi-agent system cybersecurity risks. Their conclusion: the best-covered framework — the [OWASP Agentic Security Initiative](https://genai.owasp.org/initiatives/agentic-security-initiative/) — addressed only 65.3% of identified threat categories.
 
 The specific gaps are relevant to what Telegram just shipped. Prompt injection across agent boundaries — where a malicious instruction embedded in a message propagates from one bot to another in a chain — is a known threat category that most frameworks do not adequately address. Bot-to-bot communication is exactly the architecture where that propagation becomes possible at scale.
 
@@ -109,3 +109,13 @@ The platform's scale matters. Developers building multi-agent systems on Telegra
 The gap between capability and security standards is real and worth watching. The OWASP study's finding that even the best frameworks cover only 65% of threat categories is not a reason to halt development, but it is a reason to be deliberate about which bots opt into bot-to-bot mode, what inputs those bots accept, and how prompt injection is mitigated at each handoff point.
 
 **Verdict:** A meaningful infrastructure upgrade for developers building AI-native applications on messaging platforms. The bot-to-bot feature in particular is architecturally significant — it turns Telegram into a coordination layer for distributed agent workflows, not just a user-facing chat interface.
+
+---
+
+## Sources
+
+- [Guest AI Bots, Bot-to-Bot Chats, Chat Automation and Much More](https://telegram.org/blog/ai-bot-revolution-11-new-features) — Telegram official blog
+- [Bot API changelog](https://core.telegram.org/bots/api-changelog) — Telegram
+- [Telegram's Bot API Now Lets Autonomous AI Agents Coordinate Directly](https://www.techtimes.com/articles/316790/20260518/telegrams-bot-api-now-lets-autonomous-ai-agents-coordinate-directly-no-federal-multi-agent.htm) — TechTimes
+- [Security Considerations for Multi-agent Systems](https://arxiv.org/pdf/2603.09002) — arXiv (Georgia Tech / KSU / OWASP study)
+- [OWASP Agentic Security Initiative](https://genai.owasp.org/initiatives/agentic-security-initiative/) — OWASP Gen AI Security Project

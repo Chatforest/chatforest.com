@@ -10,7 +10,7 @@ categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** Project Prometheus. Founded November 2025 by Jeff Bezos and Vik Bajaj (former Google X executive). Focus: "Artificial general engineer" — AI tools for designing physical objects, targeting aerospace, automotive, advanced manufacturing, and drug discovery. Total funding: $16.2 billion ($6.2B at launch, $10B in April 2026). Valuation: $38 billion. Employees: ~120, drawn from OpenAI, DeepMind, Meta, and xAI. Offices: San Francisco, London, Zurich. First public Bezos interview: CNBC Squawk Box, May 20, 2026. Separate initiative: a $100B fund to acquire and transform legacy manufacturing firms. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Project Prometheus. Founded November 2025 by Jeff Bezos and Vik Bajaj (former Google X executive). Focus: "Artificial general engineer" — AI tools for designing physical objects, targeting aerospace, automotive, advanced manufacturing, and drug discovery. [Total funding: $16.2 billion ($6.2B at launch, $10B in April 2026). Valuation: $38 billion.](https://www.bloomberg.com/news/articles/2026-04-23/bezos-s-physical-ai-lab-has-closed-round-at-38-billion-value) Employees: ~120, drawn from OpenAI, DeepMind, Meta, and xAI. Offices: San Francisco, London, Zurich. First public Bezos interview: CNBC Squawk Box, May 20, 2026. Separate initiative: a $100B fund to acquire and transform legacy manufacturing firms. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -52,7 +52,7 @@ The company's target domains are:
 
 ## The Money: $16.2 Billion and a Separate $100 Billion Fund
 
-Prometheus launched in November 2025 with $6.2 billion in initial funding. In April 2026, the company closed an additional $10 billion round at a $38 billion valuation. JPMorgan and BlackRock participated as investors — an unusual roster for a 6-month-old AI startup, and a signal that Prometheus is being positioned as an industrial infrastructure play, not a consumer product company.
+[Prometheus launched in November 2025 with $6.2 billion in initial funding. In April 2026, the company closed an additional $10 billion round at a $38 billion valuation.](https://www.bloomberg.com/news/articles/2026-04-23/bezos-s-physical-ai-lab-has-closed-round-at-38-billion-value) JPMorgan and BlackRock participated as investors — an unusual roster for a 6-month-old AI startup, and a signal that Prometheus is being positioned as an industrial infrastructure play, not a consumer product company.
 
 Separately from the company itself, Bezos has been reported to be raising a $100 billion "manufacturing transformation vehicle" — essentially a private equity fund that would acquire underperforming legacy industrial companies and rebuild them from the inside using Prometheus technology. The TechCrunch and Axios reporting from March 2026 describes the fund as targeting factories, not AI labs: acquiring manufacturers in aerospace, semiconductors, and automotive, then deploying Prometheus AI tools to modernize them.
 
@@ -110,3 +110,13 @@ The chatbot era is not over. But Bezos, at least, appears to be building for wha
 ---
 
 *Research note: All information sourced from public reporting as of May 24, 2026. Project Prometheus has not published technical benchmarks, customer lists, or product documentation. Financial figures are from Bloomberg, CNBC, TechCrunch, and GeekWire reporting. We have not tested any Prometheus product.*
+
+---
+
+## Sources
+
+- [Bezos's Project Prometheus AI Lab Hits $38 Billion Valuation After Funding Round](https://www.bloomberg.com/news/articles/2026-04-23/bezos-s-physical-ai-lab-has-closed-round-at-38-billion-value) — Bloomberg
+- [Bezos's $10B Project Prometheus at $38B valuation](https://tech-insider.org/project-prometheus-bezos-10-billion-38-billion-valuation-2026/) — Tech Insider
+- [Jeff Bezos's Prometheus raises $12B to build an 'artificial general engineer'](https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/) — TechCrunch (June 2026 follow-up round)
+- [Bezos' AI startup Prometheus raises $12B at $41B valuation](https://www.geekwire.com/2026/bezos-ai-startup-prometheus-raises-12b-at-41b-valuation-and-the-ceos-explain-what-theyre-doing/) — GeekWire
+- [Prometheus, the industrial AI startup from Jeff Bezos, is now worth $41 billion](https://www.axios.com/2026/06/11/prometheus-bezos-industrial-ai) — Axios
