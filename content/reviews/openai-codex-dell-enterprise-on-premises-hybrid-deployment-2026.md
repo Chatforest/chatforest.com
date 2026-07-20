@@ -10,7 +10,7 @@ rating: 3.5
 
 ---
 
-Codex now reaches 4 million weekly active developers. That is a large number, but it is also a ceiling: a significant segment of enterprise engineering has been watching from the sidelines, unwilling to route internal code, business data, or regulated customer records through OpenAI's cloud. The OpenAI-Dell partnership, announced May 18, 2026, is the most direct answer to that holdout so far.
+Codex now reaches 4 million weekly active developers. That is a large number, but it is also a ceiling: a significant segment of enterprise engineering has been watching from the sidelines, unwilling to route internal code, business data, or regulated customer records through OpenAI's cloud. The [OpenAI-Dell partnership, announced May 18, 2026](https://openai.com/index/dell-codex-enterprise-partnership/), is the most direct answer to that holdout so far.
 
 ---
 
@@ -79,5 +79,9 @@ For the 4 million developers already using Codex Cloud, this announcement change
 The Dell AI Data Platform integration is the piece that will actually ship near-term. The AI Factory integration is real but longer-dated. If your organization has been waiting for Codex to have an on-premises story before engaging, the story now exists — though the details of pricing and compute-side deployment will require a direct conversation with Dell and OpenAI enterprise sales.
 
 ---
+
+---
+
+**Sources:** [OpenAI — Dell Codex enterprise partnership announcement](https://openai.com/index/dell-codex-enterprise-partnership/) · [Forbes — Dell becomes OpenAI's on-prem channel for frontier models](https://www.forbes.com/sites/janakirammsv/2026/05/18/dell-becomes-openais-on-prem-channel-for-frontier-models/) · [WinBuzzer — OpenAI and Dell bring Codex to enterprise data](https://winbuzzer.com/2026/05/19/openai-and-dell-bring-codex-closer-to-enterprise-data-xcxwbn/) · [Pulse2 — full partnership announcement coverage](https://pulse2.com/openai-and-dell-technologies-announce-codex-partnership-to-bring-ai-agents-to-hybrid-and-on-premises-enterprise-environments/)
 
 *OpenAI/Dell partnership announced May 18, 2026. Codex Cloud review updated May 24, 2026 — see our [full Codex Cloud platform review](/reviews/openai-codex-cloud-agentic-coding-platform-review/) for the product-level breakdown.*

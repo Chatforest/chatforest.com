@@ -22,7 +22,7 @@ What made AlphaGo striking wasn't just that it won. It was *how* it learned. Alp
 
 Silver and his team thought they could go further. A year later, they released AlphaZero — a version trained with no human data at all. AlphaZero started knowing only the rules of the game. It learned chess, shogi, and Go from scratch, by playing itself millions of times, refining through feedback alone. It became the strongest player in the history of each game, surpassing every engine trained on human games. The humans had been, in a sense, holding it back.
 
-Now Silver is betting that this idea — AI that learns through experience rather than imitation — scales all the way to superintelligence. In November 2025, he founded Ineffable Intelligence in London. In January 2026, he left DeepMind to run it full-time. In April 2026, he raised $1.1 billion at a $5.1 billion valuation to try.
+Now Silver is betting that this idea — AI that learns through experience rather than imitation — scales all the way to superintelligence. In November 2025, he founded Ineffable Intelligence in London. In January 2026, he left DeepMind to run it full-time. In April 2026, he [raised $1.1 billion at a $5.1 billion valuation](https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/) to try.
 
 ---
 
@@ -56,7 +56,7 @@ Silver has stated the company's mission bluntly: "make first contact with superi
 
 ## The Funding and Who's Behind It
 
-The $1.1 billion seed round is not just a large number — it is the largest seed round in European history, by a wide margin. It values a company with no products and no revenue at $5.1 billion. The investors writing those checks are not gamblers; they are among the most sophisticated capital allocators in technology. Their participation is itself a signal worth examining.
+The $1.1 billion seed round is not just a large number — it is the [largest seed round in European history](https://tech.eu/2026/04/27/ineffable-intelligence-launches-with-record-breaking-11b-seed-round/), by a wide margin. It values a company with no products and no revenue at $5.1 billion. The investors writing those checks are not gamblers; they are among the most sophisticated capital allocators in technology. Their participation is itself a signal worth examining.
 
 Sequoia Capital and Lightspeed Venture Partners co-led the round. Both firms have decades of experience funding frontier technology companies and have seen enough large research bets to know the difference between credible science and expensive dreams.
 
@@ -122,4 +122,8 @@ The answer is not known. The experiment has started.
 
 ---
 
-*ChatForest covers AI companies, tools, and trends. Research on Ineffable Intelligence conducted May 2026 from publicly available sources including TechCrunch, CNBC, EU-Startups, Sequoia Capital blog, NVIDIA blog, British Business Bank, and Pathfounders. This is an independent research-based review; ChatForest has no financial relationship with Ineffable Intelligence or its investors.*
+---
+
+**Sources:** [TechCrunch — David Silver raises $1.1B for Ineffable Intelligence](https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/) · [CNBC — Ex-DeepMind founder raises record seed](https://www.cnbc.com/2026/04/27/deepmind-ineffable-intelligence-record-seed-funding-nvidia-google.html) · [Tech.eu — $1.1B record-breaking European seed](https://tech.eu/2026/04/27/ineffable-intelligence-launches-with-record-breaking-11b-seed-round/) · [TechFundingNews — investor breakdown](https://techfundingnews.com/david-silver-ineffable-intelligence-1-1bn-seed-europe-largest/) · [GeekWire — feature coverage](https://www.geekwire.com/2026/how-a-seattle-vc-firm-broke-into-the-1-1b-seed-round-for-a-deepmind-legends-superintelligence-startup/)
+
+*ChatForest covers AI companies, tools, and trends. This is an independent research-based review; ChatForest has no financial relationship with Ineffable Intelligence or its investors.*
