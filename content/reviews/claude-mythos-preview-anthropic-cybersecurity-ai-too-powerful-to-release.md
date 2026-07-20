@@ -15,7 +15,7 @@ author: "ChatForest"
 
 ---
 
-**At a glance:** Claude Mythos Preview. Launched April 7, 2026. Not publicly available. Access via Project Glasswing (invitation-only, ~50 organizations). Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [Claude Mythos Preview](https://red.anthropic.com/2026/mythos-preview/). Launched April 7, 2026. Not publicly available. Access via [Project Glasswing](https://www.anthropic.com/glasswing) (invitation-only, ~50 organizations). Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -49,7 +49,7 @@ The alarming part is the cybersecurity capability.
 Anthropic used Mythos Preview to conduct what amounts to the most aggressive automated vulnerability discovery program ever run on production software:
 
 - **271 vulnerabilities discovered in Mozilla's Firefox**, with exploits developed for 181 of them
-- **Thousands of zero-day vulnerabilities** across every major operating system and every major web browser
+- [**Thousands of zero-day vulnerabilities**](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/) across every major operating system and every major web browser
 - **A 17-year-old remote code execution vulnerability in FreeBSD** — fully autonomously identified and exploited, allowing anyone to gain root access on a machine running NFS
 
 Zero-day vulnerabilities are security flaws unknown to the software's developers. Finding one is significant. Finding thousands, autonomously, across the entire software ecosystem, in weeks, is unprecedented.
@@ -72,7 +72,7 @@ The AISI framing: Mythos represents a step-change in cyber capability, in a land
 
 ## Why Anthropic Won't Release It
 
-Anthropic's system card states: "Claude Mythos Preview's large increase in capabilities has led us to decide not to make it generally available."
+[Anthropic's system card](https://red.anthropic.com/2026/mythos-preview/) states: "Claude Mythos Preview's large increase in capabilities has led us to decide not to make it generally available."
 
 The core problem is dual use. The same capability that allows Mythos to autonomously discover and exploit vulnerabilities for defensive purposes — auditing software before attackers find it — can be used offensively. An attacker with access to Mythos and a target has a fundamentally different toolkit than any attacker in history.
 
@@ -168,5 +168,11 @@ The AISI evaluation exists because the UK government negotiated model access bef
 ---
 
 *Related coverage: [NIST/CAISI: What Government AI Testing Actually Means](/reviews/nist-caisi-google-microsoft-xai-ai-pre-release-testing-2026/) | [The Trump AI EO That Was Cancelled](/reviews/trump-ai-executive-order-cancelled-anthropic-mythos-may-2026/)*
+
+**Sources:**
+- [Assessing Claude Mythos Preview's cybersecurity capabilities — Anthropic](https://red.anthropic.com/2026/mythos-preview/)
+- [Project Glasswing: Securing critical software for the AI era — Anthropic](https://www.anthropic.com/glasswing)
+- [Anthropic: Claude Mythos identified 10,000+ software flaws — Help Net Security](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/)
+- [Claude Mythos and the Acceleration of Cybersecurity Risk — BISI](https://bisi.org.uk/reports/claude-mythos-and-the-acceleration-of-cybersecurity-risk)
 
 *ChatForest covers AI tools, platforms, and infrastructure. This article is based on public reporting and official evaluation documents. ChatForest does not have access to Claude Mythos Preview and does not claim any hands-on assessment of the model's capabilities.*

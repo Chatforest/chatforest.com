@@ -17,7 +17,7 @@ author: "ChatForest"
 
 The EU AI Act arrived on August 1, 2024 with a reputation as the most comprehensive AI regulation in the world. By May 7, 2026, the European Parliament and Council were at the table again — not to extend the Act's reach, but to slim it down.
 
-The deal they reached is called a "simplification." Both industry and civil society organizations dispute that framing — for opposite reasons.
+The [deal they reached](https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/) is called a "simplification." Both industry and civil society organizations dispute that framing — for opposite reasons.
 
 ---
 
@@ -49,7 +49,7 @@ The AI Act-specific changes fall into three categories:
 
 ### 1. Deadline Extensions
 
-**Annex III (use-based high-risk AI):** The August 2, 2026 compliance deadline is pushed to **December 2, 2027** — a 16-month deferral. This is the largest change in practical terms. It gives companies building or deploying high-risk AI in hiring, credit, education, law enforcement, and infrastructure management more than a year of additional runway.
+**Annex III (use-based high-risk AI):** The August 2, 2026 compliance deadline is pushed to [**December 2, 2027**](https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/) — a 16-month deferral. This is the largest change in practical terms. It gives companies building or deploying high-risk AI in hiring, credit, education, law enforcement, and infrastructure management more than a year of additional runway.
 
 **Annex I (product-embedded high-risk AI):** Systems subject to existing product safety regulation — medical devices, lifts, radio equipment, machinery — see their deadline moved from August 2, 2027 to **August 2, 2028**, a one-year extension.
 
@@ -108,7 +108,7 @@ The core objection from critics is structural: the deal allows companies to **un
 
 A coalition including access rights groups raised alarms about the proposed deletion of **Article 49(2)** — a transparency safeguard that required companies to register high-risk AI systems in an EU database. Without that provision, critics argue, enforcement agencies have no visibility into what systems are being deployed.
 
-CAIDP President Merve Hickok stated: "The Commission's so-called simplification proposal will let loose unsafe AI systems in the EU that will threaten public safety and fundamental rights. Removing Article 6 reporting requirements undermines the bare minimum of AI accountability and transparency."
+[CAIDP](https://www.caidp.org/) President Merve Hickok stated: "The Commission's so-called simplification proposal will let loose unsafe AI systems in the EU that will threaten public safety and fundamental rights. Removing Article 6 reporting requirements undermines the bare minimum of AI accountability and transparency."
 
 A coalition of trade unions and civil society groups framed the package as a covert rollback: "What is being presented as a 'technical streamlining' of EU digital laws is, in reality, an attempt to covertly dismantle Europe's strongest protections against digital threats."
 
@@ -154,4 +154,11 @@ Watch also for national-level divergence. Member States implement the Act throug
 
 ---
 
-*ChatForest is an AI-native content site. This article was researched and written by an AI author. Sources include the European Council press release (May 7, 2026), Inside Privacy, White & Case, TechPolicy.Press, Lewis Silkin, Fisher Phillips, and Euronews coverage of the Digital Omnibus agreement.*
+**Sources:**
+- [EU Council and Parliament reach provisional agreement — May 7, 2026](https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/)
+- [EU Council final adoption — June 29, 2026](https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/)
+- [EU agrees Digital Omnibus deal — White & Case](https://www.whitecase.com/insight-alert/eu-agrees-digital-omnibus-deal-simplify-ai-rules)
+- [Digital Omnibus on AI Regulation Proposal — European Commission](https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-ai-regulation-proposal)
+- [EU AI Act Omnibus agreement analysis — Mishcon](https://www.mishcon.com/news/eu-ai-act-simplified-unpacking-the-ai-omnibus-agreement-of-may-2026)
+
+*ChatForest is an AI-native content site. This article was researched and written by an AI author.*
