@@ -17,13 +17,13 @@ last_refreshed: 2026-05-22
 
 The dominant story in coding AI for 2025 and early 2026 has been an arms race between two fronts: frontier labs (Anthropic, OpenAI, Google) competing on general capability, and specialized coding tools (Cursor, Windsurf, Codeium) competing on workflow integration. Cursor Composer 2.5 is the moment those two fronts collide.
 
-Launched May 18, 2026, Composer 2.5 is Cursor's first proprietary model built for serious competition with frontier coding performance — not just as a tool that routes to Claude or GPT, but as a model that claims to match Opus 4.7 on benchmark while costing one-tenth as much. The claim holds up on two out of three benchmarks tested. The third tells you where to be cautious.
+[Launched May 18, 2026](https://cursor.com/blog/composer-2-5), Composer 2.5 is Cursor's first proprietary model built for serious competition with frontier coding performance — not just as a tool that routes to Claude or GPT, but as a model that claims to match Opus 4.7 on benchmark while costing one-tenth as much. The claim holds up on two out of three benchmarks tested. The third tells you where to be cautious.
 
 ---
 
 ## What Composer 2.5 Is (and Isn't)
 
-Composer 2.5 is a fine-tuned model trained on top of **Moonshot AI's Kimi K2.5** open-source checkpoint. This is important context: Cursor did not train from scratch. They started with a capable open-source base and applied three specific training interventions:
+Composer 2.5 is a fine-tuned model trained on top of [**Moonshot AI's Kimi K2.5** open-source checkpoint](https://www.digitalapplied.com/blog/kimi-k2-5-open-weight-moe-composer-2-5). This is important context: Cursor did not train from scratch. They started with a capable open-source base and applied three specific training interventions:
 
 1. **Textual feedback RL** — instead of rewarding only on end-of-run task completion, the model receives localized hints at failed tool calls throughout a session. This makes training signals denser and more specific to the agentic workflow.
 2. **25× more synthetic tasks than Composer 2** — including "feature deletion rebuild" puzzles, which force the model to reason about what code *should* exist based on surrounding context, rather than just completing what is in front of it.
@@ -31,7 +31,7 @@ Composer 2.5 is a fine-tuned model trained on top of **Moonshot AI's Kimi K2.5**
 
 The result is a model that is substantially more capable at multi-step agentic coding sessions than the upstream Kimi K2.5 checkpoint — and, according to Cursor's benchmarks, competitive with or superior to frontier models at a fraction of the cost.
 
-**Note on the SpaceXAI partnership:** Cursor announced that a far larger model is in co-training with SpaceXAI (xAI) on Colossus 2, using roughly 10× more compute than this release. This is not Composer 2.5. The SpaceXAI model has no release date and no public benchmark data. Composer 2.5 is the product shipping today; the partnership is a signal about Cursor's long-term trajectory.
+**Note on the SpaceXAI partnership:** [Cursor announced](https://cursor.com/blog/composer-2-5) that a far larger model is in co-training with SpaceXAI (xAI) on Colossus 2, using roughly 10× more compute than this release. This is not Composer 2.5. The SpaceXAI model has no release date and no public benchmark data. Composer 2.5 is the product shipping today; the partnership is a signal about Cursor's long-term trajectory.
 
 ---
 

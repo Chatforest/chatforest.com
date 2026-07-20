@@ -12,7 +12,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-22
 ---
 
-In February 2026, OpenAI quietly began testing ads inside ChatGPT with a small group of enterprise advertisers who had to commit a minimum of $50,000 to participate. By May 5, 2026, that floor was gone. OpenAI launched **ChatGPT Ads Manager** — a self-serve platform that lets any US advertiser create, manage, and measure conversational ad campaigns without a sales rep or a six-figure budget.
+In February 2026, [OpenAI quietly began testing ads inside ChatGPT](https://openai.com/index/our-approach-to-advertising-and-expanding-access/) with a small group of enterprise advertisers who had to commit a minimum of $50,000 to participate. By May 5, 2026, that floor was gone. OpenAI launched **ChatGPT Ads Manager** — a self-serve platform that lets any US advertiser create, manage, and measure conversational ad campaigns without a sales rep or a six-figure budget.
 
 The announcement is significant beyond the platform itself. ChatGPT is the first AI assistant at serious scale to build a native advertising layer, and the model it chooses will influence how AI advertising works across the industry.
 
@@ -73,7 +73,7 @@ The previous $50,000 pilot threshold was removed with the self-serve launch. The
 
 OpenAI's advertising ambitions are large. The company is targeting:
 
-- **$2.5 billion in ad revenue in 2026**
+- [**$2.5 billion in ad revenue in 2026**](https://openai.com/index/our-approach-to-advertising-and-expanding-access/)
 - **$100 billion in ad revenue by 2030**
 
 The $100 billion figure would make OpenAI's ad business comparable in scale to Meta's current advertising operation. That projection depends heavily on ChatGPT maintaining and growing its user base, expanding internationally, and proving that conversational ad formats can generate conversion rates that justify the current CPC and CPM pricing.
@@ -126,7 +126,7 @@ OpenAI has a window to define what AI-native advertising looks like before the m
 
 ## Rating: 3.5 / 5
 
-ChatGPT Ads Manager is an honest first version. The ad unit is clean, the no-influence policy is credible, and removing the $50K entry barrier opens the platform to the long tail of advertisers who will actually build the case studies needed to prove conversational AI advertising works.
+ChatGPT Ads Manager is an honest first version. The ad unit is clean, [the no-influence policy is credible](https://openai.com/index/our-approach-to-advertising-and-expanding-access/), and removing the $50K entry barrier opens the platform to the long tail of advertisers who will actually build the case studies needed to prove conversational AI advertising works.
 
 The limitations are real: targeting transparency is thin, conversion benchmarks don't exist yet, and the $2.5B revenue target implies a pace of development that will require both the ad product and the user base to scale simultaneously.
 

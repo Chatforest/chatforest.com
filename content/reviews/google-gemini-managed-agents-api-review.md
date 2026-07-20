@@ -8,7 +8,7 @@ rating: 3
 author: "ChatForest"
 ---
 
-Google shipped **Managed Agents** in the Gemini API at Google I/O 2026 on May 19, 2026. The proposition is direct: one API call, and Google provisions a full agent — with an ephemeral Linux sandbox, live web access, Python execution, file system operations, and MCP server support — without the developer building any orchestration layer.
+Google shipped [**Managed Agents** in the Gemini API at Google I/O 2026 on May 19, 2026](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/). The proposition is direct: one API call, and Google provisions a full agent — with an ephemeral Linux sandbox, live web access, Python execution, file system operations, and MCP server support — without the developer building any orchestration layer.
 
 This is Google's answer to a specific and real problem in agent deployment. Building an agent that reasons, plans, executes code, browses the web, and calls external tools requires substantial infrastructure: sandboxing the execution environment, managing state across turns, provisioning tool access, handling scaling, and containing failures. Managed Agents abstracts all of that. You send a task description. Google handles everything underneath.
 
@@ -101,7 +101,7 @@ The two approaches are not mutually exclusive. Managed Agents is explicitly inte
 
 ## Pricing: Free Now, Unknown Later
 
-During the preview period, **compute is free**. CPU time, memory allocation, and sandbox execution do not add charges. Billing applies only to token usage and tool calls, at standard Gemini 3.5 Flash rates: **$1.50 per million input tokens, $9.00 per million output tokens**.
+During the preview period, **compute is free**. CPU time, memory allocation, and sandbox execution do not add charges. Billing applies only to token usage and tool calls, at [standard Gemini 3.5 Flash rates](https://cloud.google.com/blog/products/ai-machine-learning/innovations-from-google-io-26-on-google-cloud): **$1.50 per million input tokens, $9.00 per million output tokens**.
 
 The critical cost consideration for agentic workloads: Managed Agents run through multiple autonomous reasoning loops. A single interaction can generate thousands of tokens internally as the agent plans, executes, checks results, and iterates. This is not unique to Managed Agents — it is true of any agentic system — but it is worth calibrating in testing before production deployment. A task that looks like a small request at the input level can consume substantial tokens across the full reasoning trace.
 

@@ -10,9 +10,9 @@ categories: ["/categories/ai-assistants/"]
 tags: ["atlassian", "rovo", "jira", "confluence", "enterprise-ai", "ai-assistant", "agents", "review"]
 ---
 
-Atlassian has been quietly running the same play since 2023: instead of selling AI as an add-on, embed it so deeply into Jira and Confluence that it becomes invisible infrastructure. Rovo is that infrastructure — and after Team '26 in May 2026, it's no longer accurate to call it an AI assistant. It's an agentic platform.
+Atlassian has been quietly running the same play since 2023: instead of selling AI as an add-on, embed it so deeply into Jira and Confluence that it becomes invisible infrastructure. Rovo is that infrastructure — and after [Team '26 in May 2026](https://www.atlassian.com/blog/company-news/rovo-team-26), it's no longer accurate to call it an AI assistant. It's an agentic platform.
 
-More than 90% of Atlassian's enterprise cloud customers are now using Rovo. That number matters less as a testimonial and more as a signal: Rovo is not optional for teams in the Atlassian ecosystem. It's already there. The question is whether teams are using it well.
+[More than 90% of Atlassian's enterprise cloud customers are now using Rovo.](https://www.atlassian.com/blog/company-news/rovo-team-26) That number matters less as a testimonial and more as a signal: Rovo is not optional for teams in the Atlassian ecosystem. It's already there. The question is whether teams are using it well.
 
 **Category:** [AI Assistants](/categories/ai-assistants/)
 
@@ -37,7 +37,7 @@ More than 90% of Atlassian's enterprise cloud customers are now using Rovo. That
 
 Rovo is the product umbrella for all AI features across Atlassian's cloud products. It has six components, each solving a different layer of the "teams don't have time to do everything" problem.
 
-The underlying engine is the **Teamwork Graph** — Atlassian's internal knowledge graph with over 150 billion connections: people, projects, Jira tickets, Confluence pages, Bitbucket PRs, OKRs, incidents, and decisions. The graph is what makes Rovo contextually useful in ways a generic AI assistant can't replicate. A question like "what's blocking the payments redesign?" isn't answerable from a document — it requires traversing relationships across teams, sprints, and dependencies. The Teamwork Graph is how Rovo answers it.
+The underlying engine is the [**Teamwork Graph**](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26) — Atlassian's internal knowledge graph with [over 150 billion connections](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26): people, projects, Jira tickets, Confluence pages, Bitbucket PRs, OKRs, incidents, and decisions. The graph is what makes Rovo contextually useful in ways a generic AI assistant can't replicate. A question like "what's blocking the payments redesign?" isn't answerable from a document — it requires traversing relationships across teams, sprints, and dependencies. The Teamwork Graph is how Rovo answers it.
 
 ---
 
@@ -82,7 +82,7 @@ Rovo Dev is the developer-facing surface of Rovo. It is sold separately ($20/dev
 
 **Code generation from Jira context**: Rovo Dev reads the issue, creates a code plan, generates code, and can open a Bitbucket PR automatically. The loop from ticket to PR runs without context-switching.
 
-**AI code review**: Available in both Bitbucket and GitHub. Rovo Dev reviews PRs against the acceptance criteria in the linked Jira ticket — not just syntactic review, but semantic validation against the original requirement. Atlassian measured a 30.8% reduction in PR cycle time in their internal rollout across 80,000 developers.
+**AI code review**: Available in both Bitbucket and GitHub. Rovo Dev reviews PRs against the acceptance criteria in the linked Jira ticket — not just syntactic review, but semantic validation against the original requirement. [Atlassian measured a 30.8% reduction in PR cycle time](https://www.atlassian.com/blog/company-news/rovo-team-26) in their internal rollout across 80,000 developers.
 
 **VS Code integration**: Rovo Dev is GA in VS Code (and compatible with Cursor, Windsurf, and other VS Code-based editors). It provides IDE-native search, chat, code editing, test running, and commit preparation, with Jira and Confluence context visible in the sidebar.
 
@@ -119,7 +119,7 @@ As of May 2026, Atlassian is not billing for overages — and has committed to a
 
 ## After Team '26: The Strategic Shift
 
-The most important thing to understand about Rovo is the framing shift from Team '26. Atlassian is no longer positioning Rovo as "AI features in your tools." The new framing is: **Atlassian products are the execution layer for enterprise AI agents**.
+The most important thing to understand about Rovo is the [framing shift from Team '26](https://www.atlassian.com/blog/company-news/rovo-team-26). Atlassian is no longer positioning Rovo as "AI features in your tools." The new framing is: **Atlassian products are the execution layer for enterprise AI agents**.
 
 This has two implications:
 

@@ -8,7 +8,7 @@ rating: 3
 author: "ChatForest"
 ---
 
-Google shipped **Agent Development Kit 2.0** at Google I/O 2026 on May 19, 2026. ADK is Google's open-source, code-first framework for building, evaluating, and deploying multi-agent AI systems. Version 2.0 is a significant expansion from the original release: a new graph-based Workflow Runtime, formal collaborative agent modes, five language SDKs, and a genuinely novel addition — **ADK for Android**, which brings agent orchestration directly onto mobile devices with on-device Gemini Nano.
+Google shipped [**Agent Development Kit 2.0** at Google I/O 2026 on May 19, 2026](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/). ADK is Google's open-source, code-first framework for building, evaluating, and deploying multi-agent AI systems. Version 2.0 is a significant expansion from the original release: a new graph-based Workflow Runtime, formal collaborative agent modes, five language SDKs, and a genuinely novel addition — **ADK for Android**, which brings agent orchestration directly onto mobile devices with on-device Gemini Nano.
 
 ADK is not a managed service. It is a framework — the thing developers use to build agents, in contrast to Managed Agents API (also announced at I/O 2026), which abstracts the infrastructure entirely. Understanding the difference matters before choosing a path.
 
@@ -58,7 +58,7 @@ These three modes map directly to real production patterns. A coordinator that o
 
 This is where ADK 2.0 diverges from the rest of the agent framework space in a way that matters.
 
-At I/O 2026, Google announced:
+[At I/O 2026, Google announced:](https://cloud.google.com/blog/products/ai-machine-learning/innovations-from-google-io-26-on-google-cloud)
 
 - **ADK for Python 2.0** — beta release, includes full Workflow Runtime and collaborative agent support
 - **ADK for Java 1.0.0** — stable release
@@ -66,7 +66,7 @@ At I/O 2026, Google announced:
 - **ADK for TypeScript** — available
 - **ADK for Kotlin 0.1.0** — beta release, with a specialized companion: **ADK for Android**
 
-ADK for Android is the meaningful differentiation. No other major agent framework has made a deliberate move into mobile agent orchestration at this level. The library allows developers to build AI agents that run directly on-device within Android apps, using local on-device language models — primarily **Gemini Nano**, which is now available on over 140 million Android devices.
+ADK for Android is the meaningful differentiation. No other major agent framework has made a deliberate move into mobile agent orchestration at this level. The library allows developers to build AI agents that run directly on-device within Android apps, using local on-device language models — primarily **Gemini Nano**, which is now available on [over 140 million Android devices](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/).
 
 The privacy case is real: on-device agents do not send data to external servers. The performance case is also real for latency-sensitive tasks. The architectural case is more subtle — ADK for Android is designed so that on-device agents and cloud agents share the same framework, enabling hybrid architectures where on-device agents handle local operations while handing off to cloud agents for tasks that require more compute or real-time data.
 

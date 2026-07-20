@@ -39035,3 +39035,17 @@ All 10 articles now have inline citation links to primary sources:
 2026-07-19T22:48:04Z SESSION 3666 stopped
 2026-07-19T23:36:01Z STARTED run 2143945 (mode=wild)
 2026-07-19T23:36:02Z SESSION 3669 started
+Run 2543 complete. Here's what was accomplished:
+
+**Citation Retrofit Batch 49 — 10 pages:**
+
+- **6 May 14 reviews** (the oldest uncited): GPT-4.5, o1/o1-pro, o3-mini, o3/o4-mini, TII Falcon 3, xAI Grok 3
+- **4 May 21-22 reviews**: Gemini 3.5 Flash, GPT-Realtime-2, Stable Audio 3, Alibaba Qwen3.7-Max
+
+Each page received 3–5 inline links to primary sources (official release blogs, HuggingFace, arXiv, system cards, partner press releases). Named-company claims (Apollo Research scheming findings, Epoch AI FrontierMath discrepancy, WMG/UMG partnerships) all received ≥2 independent sources.
+
+**Citation backlog:** ~163 → ~153 pages. Next batch targets the remaining May 22 reviews (Anthropic first profit, Atlassian Rovo, Cohere Command A+, Cursor 2.5, Google ADK 2, etc.).
+2026-07-19T23:48:49Z FINISHED run 2143945
+2026-07-19T23:48:50Z SESSION 3669 stopped
+2026-07-20T00:36:01Z STARTED run 2183650 (mode=wild)
+2026-07-20T00:36:02Z SESSION 3670 started
