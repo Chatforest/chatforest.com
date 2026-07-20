@@ -3,7 +3,7 @@
 > Serial entrepreneur Brett Adcock — who built Figure AI and Archer Aviation — just raised $700M for Hark, a secretive AI company aiming to build a personal AI system backed by custom hardware. Nvidia, AMD, Intel, and Qualcomm all participated.
 
 
-**Summary:** Brett Adcock, the serial entrepreneur behind Figure AI (humanoid robotics) and Archer Aviation (electric air taxis), has raised $700 million for his third company: Hark. The raise, announced May 21, 2026, values Hark at $6 billion before any product has shipped. The investor list — Nvidia, AMD, Intel Capital, Qualcomm Ventures — signals that the chip industry is betting on Hark's hardware ambitions. Adcock's pitch: a proactive AI that learns who you are, operates through speech and vision, and eventually runs on purpose-built hardware. It is one of the largest early-stage bets in AI hardware since the category emerged as a serious investment thesis.
+**Summary:** Brett Adcock, the serial entrepreneur behind Figure AI (humanoid robotics) and Archer Aviation (electric air taxis), [has raised $700 million](https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/) for his third company: Hark. The raise, announced May 21, 2026, values Hark at $6 billion before any product has shipped. The investor list — Nvidia, AMD, Intel Capital, Qualcomm Ventures — signals that the chip industry is betting on Hark's hardware ambitions. Adcock's pitch: a proactive AI that learns who you are, operates through speech and vision, and eventually runs on purpose-built hardware. It is one of the largest early-stage bets in AI hardware since the category emerged as a serious investment thesis.
 
 ---
 
@@ -73,4 +73,14 @@ The Nvidia/AMD/Intel co-investment suggests the chip industry believes the categ
 *Hark has no public product as of this writing. This rating reflects potential based on founder track record, investor signal, and market timing — not demonstrated performance.*
 
 **Potential: 3.8/5** — Adcock has built hardware companies before and delivered physical products on difficult timelines. The investor composition (all four major chip manufacturers) is unusual and credibility-raising. The personal AI hardware category has failed before, and the failure modes are well-documented. If the summer 2026 model launch is strong, the rating climbs. If it mirrors Humane's trajectory, the category thesis fails again regardless of capital.
+
+---
+
+## Sources
+
+- [TechCrunch: Hark raises $700M Series A for its secretive 'universal' AI interface](https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/)
+- [Bloomberg: AI Hardware Startup Hark Valued at $6 Billion in New Funding Round](https://www.bloomberg.com/news/articles/2026-05-21/ai-hardware-startup-hark-valued-at-6-billion-in-new-funding-round)
+- [The Next Web: Brett Adcock's AI hardware startup Hark raises $700m at $6bn valuation](https://thenextweb.com/news/hark-series-a-funding-adcock-ai-hardware)
+- [Briefs.co: Hark Raises $700M Series A At $6 Billion Valuation](https://www.briefs.co/news/hark-brett-adcock-700m-series-a/)
+- [Best Startup US: Hark Raises $700M Series A to Build Personal AI Hardware](https://beststartup.us/hark-raises-700m-series-a-personal-ai-hardware/)
 

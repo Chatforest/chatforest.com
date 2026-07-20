@@ -3,7 +3,7 @@
 > Google Marketing Live 2026 introduced four new Gemini-powered ad formats for AI Mode and Search, a unified cross-platform agent called Ask Advisor, and agentic commerce protocols — here is what changed and what it means for advertisers.
 
 
-Google Marketing Live 2026 happened on May 20, one day after Google I/O. If I/O was about what Gemini can do, GML 2026 was about how Google plans to make money from it.
+[Google Marketing Live 2026](https://blog.google/products/ads-commerce/google-marketing-live-2026-collection/) happened on May 20, one day after Google I/O. If I/O was about what Gemini can do, GML 2026 was about how Google plans to make money from it.
 
 The answer: rebuild every layer of the advertising stack around AI.
 
@@ -130,6 +130,16 @@ What is not experimental is the trajectory. Ads now appear in a quarter of all A
 Google is not asking advertisers whether AI advertising is coming. It is asking them how quickly they want to catch up.
 
 ---
+
+---
+
+## Sources
+
+- [Google Blog: New ad formats built with Gemini coming to Google Search](https://blog.google/products/ads-commerce/google-marketing-live-search-ads/)
+- [Google Blog: Google Marketing Live 2026 collection](https://blog.google/products/ads-commerce/google-marketing-live-2026-collection/)
+- [Search Engine Land: Google Marketing Live 2026 — Everything you need to know](https://searchengineland.com/google-marketing-live-2026-everything-you-need-to-know-478167)
+- [CMSWire: Google Marketing Live 2026 — Gemini Takes the Wheel Across Ads, Commerce and Measurement](https://www.cmswire.com/digital-marketing/google-marketing-live-how-google-is-building-an-ai-native-marketing-ecosystem/)
+- [Browser Media: Ads in AI Mode and GML 2026 highlights](https://browsermedia.agency/blog/ads-in-ai-mode-and-gml-2026-highlights/)
 
 *ChatForest covers AI tools for professionals and developers. This review is based on publicly available announcements, Google's own blog posts, trade reporting from Search Engine Land, WordStream, and CMSWire, and Google's published Marketing Live documentation — not direct advertiser access to the new formats.*
 

@@ -3,7 +3,7 @@
 > AWS launched AgentCore Payments in preview in May 2026, built with Coinbase and Stripe, giving AI agents managed wallets and the ability to autonomously pay for APIs, MCP servers, and other agents using USDC via the x402 protocol. Here's what it does, how spending governance works, and why this matters beyond the hype.
 
 
-**At a glance:** AWS launched Amazon Bedrock AgentCore Payments in preview in May 2026, co-built with Coinbase and Stripe. The feature gives AI agents built on Bedrock a managed wallet, the ability to autonomously pay for resources using USDC stablecoin via the x402 HTTP protocol, and per-session spending limits so finance teams can define budgets without interrupting the agent's reasoning loop. It is the first managed payment infrastructure purpose-built for autonomous AI agents at enterprise scale. Part of our **[Amazon/AWS coverage](/tags/amazon/)**.
+**At a glance:** AWS [launched Amazon Bedrock AgentCore Payments](https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe/) in preview in May 2026, co-built with [Coinbase](https://www.coinbase.com/blog/introducing-amazon-bedrock-agentcore-payments-powered-by-x402-and-coinbase) and [Stripe](https://www.pymnts.com/amazon-payments/2026/amazon-bedrock-launches-ai-agent-payment-capabilities-with-coinbase-stripe/). The feature gives AI agents built on Bedrock a managed wallet, the ability to autonomously pay for resources using USDC stablecoin via the x402 HTTP protocol, and per-session spending limits so finance teams can define budgets without interrupting the agent's reasoning loop. It is the first managed payment infrastructure purpose-built for autonomous AI agents at enterprise scale. Part of our **[Amazon/AWS coverage](/tags/amazon/)**.
 
 ---
 
@@ -86,4 +86,14 @@ That said: the alternative — workflow interruptions for every paid resource, o
 ## What Comes Next
 
 The x402 ecosystem is early. If AgentCore Payments lands with enterprise customers, expect the protocol and the Bazaar to expand quickly — more endpoints, more specialized agent-to-agent services, more data providers building x402 revenue models for their APIs. The HTTP 402 status code has been waiting 35 years to do something useful. It may finally have its moment.
+
+---
+
+## Sources
+
+- [AWS Blog: Agents that transact — Introducing Amazon Bedrock AgentCore Payments, built with Coinbase and Stripe](https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe/)
+- [AWS What's New: Amazon Bedrock AgentCore Payments (preview)](https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-agentcore-payments-preview/)
+- [Coinbase Blog: Introducing Amazon Bedrock AgentCore Payments, Powered by x402](https://www.coinbase.com/blog/introducing-amazon-bedrock-agentcore-payments-powered-by-x402-and-coinbase)
+- [PYMNTS: Amazon Bedrock Launches AI Agent Payment Capabilities With Coinbase, Stripe](https://www.pymnts.com/amazon-payments/2026/amazon-bedrock-launches-ai-agent-payment-capabilities-with-coinbase-stripe/)
+- [CoinDesk: Amazon's new AI wallet — AWS, Coinbase, and Stripe build payment rails for bots](https://www.coindesk.com/business/2026/05/07/amazon-rolls-out-ai-agent-stablecoin-payments-platform-with-coinbase-and-stripe)
 

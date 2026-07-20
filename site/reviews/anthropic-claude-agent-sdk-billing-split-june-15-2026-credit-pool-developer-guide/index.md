@@ -7,7 +7,11 @@
 
 ---
 
-**At a glance:** On May 13, 2026, Anthropic announced a billing restructuring effective June 15. Programmatic Claude usage — Agent SDK, `claude -p`, Claude Code GitHub Actions, third-party agent apps — moves off subscription rate limits and onto a new, separate monthly credit pool billed at standard API rates. Interactive usage is unaffected. Claim credits after a June 8 email. For heavy agentic workloads, the effective price increase is significant.
+**Update (2026-07-20):** Anthropic [paused the June 15 billing change before it took effect](https://www.digitalapplied.com/blog/anthropic-claude-credit-overhaul-june-15-2026). The planned move of Agent SDK, `claude -p`, and third-party app usage to a separate credit pool was indefinitely postponed. Anthropic said it will announce any revised version with advance notice. The analysis below describes what was announced in May 2026 — it remains useful context for understanding the direction of Anthropic's pricing strategy, even though the specific deadline passed without the change being implemented.
+
+---
+
+**At a glance:** On May 13, 2026, [Anthropic announced a billing restructuring](https://thenewstack.io/anthropic-agent-sdk-credits/) effective June 15. Programmatic Claude usage — Agent SDK, `claude -p`, Claude Code GitHub Actions, third-party agent apps — moves off subscription rate limits and onto a new, separate monthly credit pool billed at standard API rates. Interactive usage is unaffected. Claim credits after a June 8 email. For heavy agentic workloads, the effective price increase is significant.
 
 ---
 
@@ -132,4 +136,14 @@ The June 15 billing change is significant for developers who run automated or ag
 The change is structurally sensible from Anthropic's perspective and follows the industry logic that automated AI workloads should be priced as compute, not as subscriptions. The lack of rollover, the manual credit claim requirement, and the open-ended overage pricing are the specific pain points worth resolving before June 15.
 
 Claim your credits on June 8. Audit your automated workloads now.
+
+---
+
+## Sources
+
+- [The New Stack: Anthropic splits billing — Agent SDK gets separate credit pools](https://thenewstack.io/anthropic-agent-sdk-credits/)
+- [TechTimes: Anthropic Ends Subscription Subsidy for Agents June 15](https://www.techtimes.com/articles/317625/20260602/anthropic-ends-subscription-subsidy-agents-june-15-credit-pool-replaces-flat-rate-access.htm)
+- [Digital Applied: Claude Credit Overhaul 2026 — Anthropic Pauses the June 15 Change](https://www.digitalapplied.com/blog/anthropic-claude-credit-overhaul-june-15-2026)
+- [CodersEra: Anthropic June 2026 Update — Billing Change Cancelled](https://codersera.com/blog/anthropic-june-2026-billing-change-claude-code/)
+- [Apiyi: Anthropic Claude Subscription Agent SDK Billing Split June 2026](https://help.apiyi.com/en/anthropic-claude-subscription-agent-sdk-billing-split-june-2026-en.html)
 

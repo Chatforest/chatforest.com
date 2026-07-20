@@ -3,7 +3,7 @@
 > DeepSeek — the Chinese AI lab that wiped $589B off Nvidia's market cap in a single day — has never taken outside capital. Now it's seeking its first VC round at $45B, led by China's state semiconductor fund. Here's what changed, why it matters, and what it signals about the China-US AI race.
 
 
-**At a glance:** DeepSeek. Founded July 2023 by Liang Wenfeng (also co-founder of quantitative hedge fund Zhejiang High-Flyer Asset Management). Headquarters: Hangzhou, China. Funding history: zero outside capital until 2026 — entirely self-funded from High-Flyer's investment returns. Current raise: first-ever VC round, targeting $300M+, at a valuation reported near $45 billion. Lead investor: China Integrated Circuit Industry Investment Fund ("Big Fund"), China's state-backed semiconductor investment vehicle. Other parties in talks: Tencent, Alibaba. Status as of May 2026: not formally closed, still in negotiations. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** DeepSeek. Founded July 2023 by Liang Wenfeng (also co-founder of quantitative hedge fund Zhejiang High-Flyer Asset Management). Headquarters: Hangzhou, China. Funding history: zero outside capital until 2026 — entirely self-funded from High-Flyer's investment returns. [Current raise: first-ever VC round, targeting $300M+, at a valuation reported near $45 billion](https://thenextweb.com/news/china-big-fund-deepseek-45-billion-funding-round). Lead investor: China Integrated Circuit Industry Investment Fund ("Big Fund"), China's state-backed semiconductor investment vehicle. Other parties in talks: Tencent, Alibaba. Status as of May 2026: not formally closed, still in negotiations. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -11,7 +11,7 @@ On January 27, 2025, Nvidia lost $589 billion in market value in a single tradin
 
 It remains the largest single-day market cap loss for any company in the history of the stock market.
 
-The proximate cause was a Chinese AI lab called DeepSeek, which had released a model — R1 — that appeared to match OpenAI's best reasoning model at a fraction of the cost, trained on chips that were hobbled by US export restrictions. The original claim was $6 million in training costs. More careful analyses later put the true figure higher — Semianalysis estimated $500 million or more when all development costs are counted — but the signal was impossible to dismiss: the efficiency gap between American and Chinese AI was narrower than the market had assumed.
+The proximate cause was [a Chinese AI lab called DeepSeek](https://techcrunch.com/2026/05/06/deepseek-could-hit-45b-valuation-from-its-first-investment-round/), which had released a model — R1 — that appeared to match OpenAI's best reasoning model at a fraction of the cost, trained on chips that were hobbled by US export restrictions. The original claim was $6 million in training costs. More careful analyses later put the true figure higher — Semianalysis estimated $500 million or more when all development costs are counted — but the signal was impossible to dismiss: the efficiency gap between American and Chinese AI was narrower than the market had assumed.
 
 What almost no one mentioned in the coverage that week: the company behind R1 had never taken a dollar of outside investment.
 
@@ -98,4 +98,13 @@ For anyone trying to understand the long-term shape of the China-US AI competiti
 ---
 
 *This analysis is based on reporting from the Financial Times, Bloomberg, TechCrunch, and The Information. The funding round described has not been formally announced, and figures may change as negotiations continue. We did not interview company representatives or obtain information beyond public reporting.*
+
+---
+
+**Sources:**
+- [DeepSeek could hit $45B valuation from its first investment round](https://techcrunch.com/2026/05/06/deepseek-could-hit-45b-valuation-from-its-first-investment-round/) — TechCrunch
+- [DeepSeek's $45bn valuation is also Beijing's strategic statement](https://thenextweb.com/news/china-big-fund-deepseek-45-billion-funding-round) — The Next Web
+- [DeepSeek reportedly seeks first funding round at $45 billion valuation](https://technode.com/2026/05/07/deepseek-reportedly-seeks-first-funding-round-at-45-billion-valuation/) — TechNode
+- [DeepSeek may be valued at $45B as China's Big Fund eyes investment](https://seekingalpha.com/news/4586644-deepseek-fundraising-round-talks-china-big-fund) — Seeking Alpha
+- [DeepSeek Seeks First Outside Funding at $45B Valuation as China Backs Homegrown AI Rival](https://theaiinsider.tech/2026/05/08/deepseek-seeks-first-outside-funding-at-45b-valuation-as-china-backs-homegrown-ai-rival/) — The AI Insider
 

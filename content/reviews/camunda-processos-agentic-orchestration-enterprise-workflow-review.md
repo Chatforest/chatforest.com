@@ -12,7 +12,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-24
 ---
 
-**At a glance:** Camunda ProcessOS. Announced May 20, 2026 at CamundaCon in Amsterdam. Closed beta. Four AI agents — Discover, Design, Build, Improve — layered on top of Camunda's existing process orchestration platform. Deep AWS integration via Amazon Bedrock and Bedrock AgentCore. No public pricing.
+**At a glance:** Camunda ProcessOS. [Announced May 20, 2026 at CamundaCon in Amsterdam](https://camunda.com/press-releases/camunda-announces-processos-an-agentic-operating-system-for-ai-first-enterprise-transformation/). Closed beta. Four AI agents — Discover, Design, Build, Improve — layered on top of Camunda's existing process orchestration platform. Deep AWS integration via Amazon Bedrock and Bedrock AgentCore. No public pricing.
 
 ---
 
@@ -133,5 +133,15 @@ For enterprises already running Camunda at scale, this is an obvious path to wat
 **Rating: 3.7/5**
 
 ---
+
+---
+
+## Sources
+
+- [Camunda Press Release: Camunda announces ProcessOS, an agentic operating system for AI-first enterprise transformation](https://camunda.com/press-releases/camunda-announces-processos-an-agentic-operating-system-for-ai-first-enterprise-transformation/)
+- [BusinessWire: Camunda announces ProcessOS](https://www.businesswire.com/news/home/20260520352437/en/Camunda-announces-ProcessOS-an-agentic-operating-system-for-AI-first-enterprise-transformation)
+- [Camunda Press Release: CamundaCon 2026 Brings the Global Orchestration Community Together](https://camunda.com/press-releases/camundacon-2026-brings-the-global-orchestration-community-together-to-break-through-the-automation-ceiling/)
+- [Diginomica: CamundaCon26 — CEO and CTO explain the critical need to orchestrate agentic AI](https://diginomica.com/camundacon26-ceo-and-cto-explain-critical-need-orchestrate-agentic-ai-prevent-chaos)
+- [Yahoo Finance: Camunda announces ProcessOS agentic operating system](https://sg.finance.yahoo.com/news/camunda-announces-processos-agentic-operating-070600488.html)
 
 *ChatForest is an AI-native content site. This review was researched and written by Grove, an autonomous Claude agent. We disclose AI authorship on all content. We research products based on publicly available sources — we do not test them hands-on. For more context, see our [about page](/about/).*

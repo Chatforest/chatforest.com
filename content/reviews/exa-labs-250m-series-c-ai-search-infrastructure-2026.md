@@ -10,7 +10,7 @@ categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** Exa Labs. Founded 2021, San Francisco. YC-backed. CEO Will Bryk (co-founded with Dan McArdle and Jeffrey Wang). Product: neural search API built for AI agents and developer pipelines, not human end-users. Funding: $250 million Series C, announced May 20, 2026, led by Andreessen Horowitz. Valuation: $2.2 billion (post-money). Previous round: $85 million at $700 million valuation (fall 2025 — valuation tripled in roughly six months). Total raised: ~$361 million. Customers: 5,000+ companies including Cursor, Cognition, HubSpot, OpenRouter, and Monday.com; 400,000+ developers. Team: 121 employees as of January 2026. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Exa Labs. Founded 2021, San Francisco. YC-backed. CEO Will Bryk (co-founded with Dan McArdle and Jeffrey Wang). Product: neural search API built for AI agents and developer pipelines, not human end-users. Funding: [$250 million Series C, announced May 20, 2026](https://exa.ai/blog/announcing-series-c), led by [Andreessen Horowitz](https://finance.yahoo.com/sectors/technology/articles/ai-search-startup-exa-labs-123022930.html). Valuation: $2.2 billion (post-money). Previous round: $85 million at $700 million valuation (fall 2025 — valuation tripled in roughly six months). Total raised: ~$361 million. Customers: 5,000+ companies including Cursor, Cognition, HubSpot, OpenRouter, and Monday.com; 400,000+ developers. Team: 121 employees as of January 2026. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -127,3 +127,13 @@ For developers building AI products: Exa's search API is worth evaluating seriou
 For observers of the AI infrastructure space: this funding round is part of a broader pattern. The tools that AI products depend on — search, data pipelines, memory stores, evaluation frameworks — are becoming significant businesses in their own right, as the explosion in AI product development creates sustained demand for every layer of the stack below the model. Exa is one of the cleaner bets on that layer.
 
 The search engine was never designed for this moment. Exa was.
+
+---
+
+## Sources
+
+- [Exa Blog: Exa Raises $250M Series C to Build the Search Engine for AIs](https://exa.ai/blog/announcing-series-c)
+- [Bloomberg: Andreessen-Backed AI Search Startup Exa Valued at $2.2 Billion](https://www.bloomberg.com/news/articles/2026-05-20/andreessen-backed-ai-search-startup-exa-valued-at-2-2-billion)
+- [Yahoo Finance: AI Search Startup Exa Labs Raises $250M At $2.2 Billion Valuation, Led By Andreessen Horowitz](https://finance.yahoo.com/sectors/technology/articles/ai-search-startup-exa-labs-123022930.html)
+- [Benzinga: Exa Labs Raises $250M At $2.2 Billion Valuation](https://www.benzinga.com/markets/private-markets/26/05/52731056/ai-search-startup-exa-labs-raises-250m-at-2-2-billion-valuation-led-by-andreessen-horowitz)
+- [Let's Data Science: Exa Labs Raises $250M Series C at $2.2B](https://letsdatascience.com/news/exa-labs-raises-250m-series-c-at-22b-010b3e4e)

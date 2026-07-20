@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-24
 ---
 
-**Summary:** On May 21, 2026, Anthropic's $1.5 billion enterprise AI services joint venture made its first acquisition: Fractional AI, a San Francisco firm that had spent the previous 11 months in a documented partnership with OpenAI. That partnership is now over. The acquisition is the opening move in a high-stakes race between Anthropic and OpenAI to control how AI gets deployed inside large organizations — a market that may matter as much as the model race itself. Background on the JV's launch: **[Anthropic's Enterprise AI Services Firm — Blackstone, Goldman Sachs, and $1.5B to Disrupt Consulting](/reviews/anthropic-enterprise-ai-services-company-blackstone-goldman-sachs-review/)**.
+**Summary:** On May 21, 2026, [Anthropic's $1.5 billion enterprise AI services joint venture](https://www.blackstone.com/news/press/the-ai-native-enterprise-services-firm-backed-by-anthropic-blackstone-and-hellman-friedman-announces-acquisition-of-fractional-ai/) made its first acquisition: [Fractional AI](https://www.fractional.ai/press-releases/the-ai-native-enterprise-services-firm-announces-acquisition-of-fractional-ai), a San Francisco firm that had spent the previous 11 months in a documented partnership with OpenAI. That partnership is now over. The acquisition is the opening move in a high-stakes race between Anthropic and OpenAI to control how AI gets deployed inside large organizations — a market that may matter as much as the model race itself. Background on the JV's launch: **[Anthropic's Enterprise AI Services Firm — Blackstone, Goldman Sachs, and $1.5B to Disrupt Consulting](/reviews/anthropic-enterprise-ai-services-company-blackstone-goldman-sachs-review/)**.
 
 ---
 
@@ -114,3 +114,13 @@ Seventeen days to first acquisition. A firm previously partnered with the compet
 The model capabilities gap between Claude and GPT has narrowed considerably through 2025 and 2026. What has not narrowed is the distribution gap — the ability to actually get AI into real operational workflows inside real companies at scale. Anthropic and OpenAI are both concluding that winning that challenge requires owning the implementation layer, not just licensing it to partners.
 
 Fractional AI's 11-month OpenAI relationship being ended by this deal is the clearest possible statement of that intent.
+
+---
+
+## Sources
+
+- [Bloomberg: Anthropic-Backed AI Services Firm Acquires Fractional AI in First Deal](https://www.bloomberg.com/news/articles/2026-05-21/anthropic-s-new-consulting-venture-makes-its-first-acquisition)
+- [Blackstone Press Release: The AI-Native Enterprise Services Firm Announces Acquisition of Fractional AI](https://www.blackstone.com/news/press/the-ai-native-enterprise-services-firm-backed-by-anthropic-blackstone-and-hellman-friedman-announces-acquisition-of-fractional-ai/)
+- [Fractional AI Press Release: Acquisition Announcement](https://www.fractional.ai/press-releases/the-ai-native-enterprise-services-firm-announces-acquisition-of-fractional-ai)
+- [PYMNTS: Anthropic Makes First Acquisition for Enterprise AI Push](https://www.pymnts.com/artificial-intelligence-2/2026/anthropic-makes-first-acquisition-for-enterprise-ai-push/)
+- [CryptoBriefing: Anthropic's enterprise joint venture acquires Fractional AI, pulling it away from OpenAI](https://cryptobriefing.com/anthropic-acquires-fractional-ai-openai/)

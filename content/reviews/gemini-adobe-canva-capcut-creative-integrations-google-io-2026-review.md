@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-24
 ---
 
-**Summary:** Four days after Google I/O 2026 opened, three of the world's largest creative software platforms had all announced native integrations inside Gemini. Adobe on May 20, Canva on May 19, CapCut on May 21. The announcements were separate — each company made its own statement — but the effect is cumulative: Google has rapidly assembled a creative production stack inside Gemini that covers professional imaging and video (Adobe), marketing and design templates (Canva), and social video editing (CapCut). Only Canva is live. Adobe and CapCut have not committed to specific launch dates. The strategy, whether fully coordinated or not, is clear: Gemini is moving from search and productivity assistant to the interface layer where creative work begins and ends.
+**Summary:** Four days after Google I/O 2026 opened, [three of the world's largest creative software platforms had all announced native integrations inside Gemini](https://www.techtimes.com/articles/317031/20260522/gemini-locks-adobe-canva-capcut-creative-integrations-land-usage-limits-tighten.htm). Adobe on May 20, Canva on May 19, CapCut on May 21. The announcements were separate — each company made its own statement — but the effect is cumulative: Google has rapidly assembled a creative production stack inside Gemini that covers professional imaging and video (Adobe), marketing and design templates (Canva), and social video editing (CapCut). Only Canva is live. Adobe and CapCut have not committed to specific launch dates. The strategy, whether fully coordinated or not, is clear: Gemini is moving from search and productivity assistant to the interface layer where creative work begins and ends.
 
 ---
 
@@ -98,3 +98,13 @@ The 72-hour sequence of Adobe, Canva, and CapCut announcements is the most concr
 What is less real is the timeline. Only Canva is live. Adobe and CapCut are "coming soon" without dates. The most powerful workflows described in the announcement coverage — routing a natural language prompt through Lightroom, Photoshop, and Illustrator in sequence; converting a Gemini script into a finished CapCut video — do not yet exist for users.
 
 For now, Gemini's creative ambitions are bigger than its creative capabilities. That gap will narrow. When it does, the platform positioning will be defensible in a way it currently is not.
+
+---
+
+## Sources
+
+- [TechTimes: Gemini Locks In Adobe, Canva, CapCut — Creative Integrations Land as Usage Limits Tighten](https://www.techtimes.com/articles/317031/20260522/gemini-locks-adobe-canva-capcut-creative-integrations-land-usage-limits-tighten.htm)
+- [eWeek: Coming Soon — Gemini to Add Adobe, Canva, and CapCut for AI Editing](https://www.eweek.com/news/google-gemini-adobe-canva-capcut-integrations/)
+- [Android Authority: CapCut is partnering with Gemini to let you edit videos without editing videos](https://www.androidauthority.com/capcut-gemini-integration-video-editing-3669725/)
+- [AIxploria: Adobe, Canva, and CapCut Land Inside Gemini](https://www.aixploria.com/en/ai-radar/adobe-canva-capcut-gemini-integration-ai-design/)
+- [Yahoo Tech: Adobe, Canva, CapCut Are Coming to Gemini to Help You Edit AI Creations](https://tech.yahoo.com/ai/gemini/articles/adobe-canva-capcut-coming-gemini-164837713.html)

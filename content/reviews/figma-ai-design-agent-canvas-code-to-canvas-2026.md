@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-24
 ---
 
-**Summary:** Figma has been building toward a fully AI-native design environment for months. On May 20, 2026, that strategy became visible: the company launched a native AI design agent embedded directly inside its collaborative canvas. Unlike the MCP server integrations it announced in February — which plugged Claude Code and OpenAI Codex into the Figma pipeline — this is Figma's own agent, running on models specifically fine-tuned for design work. It understands layouts, components, and visual hierarchy at a level that generic large language models typically do not. The business context is equally notable: Figma reported Q1 2026 revenue of $333.4 million, up 46% year-on-year, and raised its full-year guidance.
+**Summary:** Figma has been building toward a fully AI-native design environment for months. On May 20, 2026, that strategy became visible: the company [launched a native AI design agent](https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/) embedded directly inside its collaborative canvas. Unlike the MCP server integrations it announced in February — which plugged Claude Code and OpenAI Codex into the Figma pipeline — this is Figma's own agent, running on models specifically fine-tuned for design work. It understands layouts, components, and visual hierarchy at a level that generic large language models typically do not. The business context is equally notable: Figma reported Q1 2026 revenue of $333.4 million, up 46% year-on-year, and raised its full-year guidance.
 
 ---
 
@@ -99,3 +99,13 @@ Figma's AI agent launch is strategically coherent. The company has assembled a f
 The real question is execution depth. Building an agent that "understands components" well enough to be genuinely useful — rather than impressive in demos and frustrating in practice — is hard. The beta period will determine whether the fine-tuning advantage over generic models is real or marketing. If it holds, Figma has a meaningful moat. If it does not, the competitive pressure from Canva's larger user base and Adobe's enterprise relationships will matter more.
 
 **Verdict:** A significant launch that completes a coherent AI strategy. Worth watching closely as it moves from beta to general availability.
+
+---
+
+## Sources
+
+- [TechCrunch: Figma adds an AI assistant to its collaborative canvas](https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/)
+- [Figma Help Center: How do I access the AI agent beta in Figma Design?](https://help.figma.com/hc/en-us/articles/34932042346775-How-do-I-access-the-AI-agent-beta-in-Figma-Design)
+- [Figma Investor Relations: Figma Announces First Quarter 2026 Financial Results](https://investor.figma.com/news-events/news/news-details/2026/Figma-Announces-First-Quarter-2026-Financial-Results/default.aspx)
+- [BusinessWire: Figma Announces First Quarter 2026 Financial Results](https://www.businesswire.com/news/home/20260514730702/en/Figma-Announces-First-Quarter-2026-Financial-Results)
+- [SEC Filing: Figma Q1 2026 Press Release](https://www.sec.gov/Archives/edgar/data/0001579878/000162828026035087/q126pressrelease.htm)
