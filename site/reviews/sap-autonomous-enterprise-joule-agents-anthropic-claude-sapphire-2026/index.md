@@ -3,13 +3,13 @@
 > At SAP Sapphire 2026, SAP unveiled its Autonomous Enterprise vision: 50+ Joule Assistants, 200+ specialized agents, and Anthropic's Claude as the primary reasoning engine embedded across SAP's entire portfolio.
 
 
-**At a glance:** SAP Autonomous Enterprise. Announced: May 12–13, 2026, SAP Sapphire. Vendor: SAP SE. AI partner: Anthropic (Claude as primary reasoning engine). Key components: 50+ Joule Assistants, 200+ specialized agents, SAP Business AI Platform, SAP Knowledge Graph, Joule Studio, Joule Work. Protocols: MCP and A2A (Agent-to-Agent). Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [SAP Autonomous Enterprise](https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/). Announced: May 12–13, 2026, SAP Sapphire. Vendor: SAP SE. [AI partner: Anthropic (Claude as primary reasoning engine)](https://news.sap.com/2026/05/sap-anthropic-to-bring-claude-sap-business-ai-platform/). Key components: 50+ Joule Assistants, 200+ specialized agents, SAP Business AI Platform, SAP Knowledge Graph, Joule Studio, Joule Work. Protocols: MCP and A2A (Agent-to-Agent). Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
 SAP runs the business software that most of the world's economy depends on. Finance departments close their books in SAP. Supply chains route through SAP. HR onboards in SAP. Procurement contracts live in SAP. By most estimates, SAP systems touch roughly 77% of the world's transactions.
 
-At SAP Sapphire 2026, the company announced it is putting AI agents — with Claude as the underlying reasoning engine — inside all of it.
+At [SAP Sapphire 2026](https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/), the company announced it is putting AI agents — with Claude as the underlying reasoning engine — inside all of it.
 
 The announcement is called the **Autonomous Enterprise**. It is not a product. It is SAP's new description of what enterprise software becomes when agents can execute decisions, not just make recommendations.
 
@@ -121,4 +121,14 @@ For enterprise technology buyers: this announcement signals where SAP is going, 
 ---
 
 *ChatForest covers AI tools, platforms, and industry developments. This article is based on publicly available announcements from SAP Sapphire 2026, SAP press releases, and third-party reporting. ChatForest has no commercial relationship with SAP or Anthropic.*
+
+---
+
+## Sources
+
+- [SAP Unveils the Autonomous Enterprise](https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/) — SAP News Center
+- [SAP and Anthropic: Claude on SAP Business AI Platform](https://news.sap.com/2026/05/sap-anthropic-to-bring-claude-sap-business-ai-platform/) — SAP News Center
+- [SAP Sapphire Innovation News Guide 2026](https://www.sap.com/topics/events/sapphire/innovation-news-guide-2026) — SAP
+- [SAP Bets the Company on AI Agents at Sapphire 2026](https://enterprisedna.co/resources/news/sap-sapphire-2026-autonomous-enterprise-joule-agents/) — Enterprise DNA
+- [SAP Sapphire 2026: The Autonomous Enterprise Is Credible, But It Comes With Concentration Risk](https://www.forrester.com/blogs/sap-sapphire-2026-the-autonomous-enterprise-is-credible-but-it-comes-with-concentration-risk/) — Forrester
 

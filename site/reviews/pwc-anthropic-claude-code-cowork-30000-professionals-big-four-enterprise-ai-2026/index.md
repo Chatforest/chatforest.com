@@ -9,7 +9,7 @@
 
 ## What Was Announced
 
-On May 14, 2026, PwC and Anthropic announced an expansion of their strategic alliance, deepening how PwC uses Claude to build technology, execute deals, and reinvent enterprise functions for clients across its service lines.
+On May 14, 2026, [PwC and Anthropic announced](https://www.anthropic.com/news/pwc-expanded-partnership) an expansion of their strategic alliance, deepening how PwC uses Claude to build technology, execute deals, and reinvent enterprise functions for clients across its service lines.
 
 The core commitments:
 - Claude Code and Cowork rolling out to U.S. teams, expanding toward PwC's global workforce of hundreds of thousands of professionals
@@ -117,6 +117,10 @@ Second, the dual-partnership model (Anthropic + OpenAI at the same firm) suggest
 For PwC, the 10-week-to-10-day insurance underwriting result is the kind of number that becomes a case study clients ask about. If that result generalizes across the insurance underwriting engagements PwC runs globally, the economic case for the Anthropic alliance pays for itself many times over.
 
 ---
+
+---
+
+**Sources:** [Anthropic — PwC expanded partnership announcement](https://www.anthropic.com/news/pwc-expanded-partnership) · [PwC — official press release](https://www.pwc.com/us/en/about-us/newsroom/press-releases/anthropic-pwc-expand-alliance-agentic-enterprise.html) · [PRNewswire — official press release](https://www.prnewswire.com/news-releases/anthropic-and-pwc-expand-alliance-driving-impact-across-client-work-and-the-firm-302772321.html) · [SiliconANGLE — PwC expands Anthropic alliance, will train 30,000 staff on Claude](https://siliconangle.com/2026/05/14/pwc-expands-anthropic-alliance-will-train-30000-staff-claude/)
 
 *ChatForest covers AI tools, platforms, and enterprise AI deployments. For related coverage, see our analysis of the [KPMG–Anthropic global alliance](/reviews/kpmg-anthropic-claude-alliance-digital-gateway-276000-employees-big-four-enterprise-ai-2026/) and our review of [Intuit's five financial apps via MCP](/reviews/intuit-turbotax-quickbooks-claude-mcp-financial-intelligence-review/).*
 

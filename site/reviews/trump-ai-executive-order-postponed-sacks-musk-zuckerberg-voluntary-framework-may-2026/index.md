@@ -3,7 +3,7 @@
 > Hours before a planned signing ceremony on May 21, 2026, President Trump postponed his AI executive order after David Sacks, Elon Musk, and Mark Zuckerberg pushed back. Here's what it would have done, who killed it, and what it reveals about the administration's AI governance contradiction.
 
 
-**At a glance:** President Trump postponed signing his AI executive order on May 21, 2026, hours before a ceremony to which tech and cyber CEOs had already been invited. The order targeted two things: a voluntary 90-day review framework for frontier AI models and an AI-powered upgrade to federal cybersecurity defenses. It was killed after David Sacks (Trump's AI czar), Elon Musk, and Mark Zuckerberg all pushed back, warning the review framework would act as a de facto licensing regime. No new signing date has been announced. Part of our **[AI policy and regulation coverage](/tags/policy/)**.
+**At a glance:** President Trump [postponed signing his AI executive order on May 21, 2026](https://www.cnbc.com/2026/05/21/trump-ai-executive-order-postponed.html), hours before a ceremony to which tech and cyber CEOs had already been invited. The order targeted two things: a voluntary 90-day review framework for frontier AI models and an AI-powered upgrade to federal cybersecurity defenses. [It was killed after David Sacks (Trump's AI czar), Elon Musk, and Mark Zuckerberg all pushed back](https://www.semafor.com/article/05/21/2026/elon-musk-mark-zuckerberg-derail-trump-ai-order), warning the review framework would act as a de facto licensing regime. No new signing date has been announced. Part of our **[AI policy and regulation coverage](/tags/policy/)**.
 
 ---
 
@@ -29,7 +29,7 @@ The key word is "voluntary." Companies were not required to participate. But the
 
 ## Who Made the Call — and Why
 
-Semafor and Politico both reported the same sequence of events: David Sacks, the venture capitalist who has served as Trump's AI and crypto czar, called the president directly on the morning of May 21 after participating in the EO review process earlier in the week.
+[Semafor](https://www.semafor.com/article/05/21/2026/elon-musk-mark-zuckerberg-derail-trump-ai-order) and Politico both reported the same sequence of events: David Sacks, the venture capitalist who has served as Trump's AI and crypto czar, called the president directly on the morning of May 21 after participating in the EO review process earlier in the week.
 
 Sacks's argument: the voluntary vetting framework, even framed as optional, would function as a de facto licensing regime. If a company chose not to participate, it risked being seen as having something to hide. If it did participate, it accepted a 90-day delay before release. Either way, American AI developers face a structural disadvantage against Chinese competitors who face no comparable process.
 
@@ -79,5 +79,15 @@ No new signing date has been announced. The order's status is postponed, not wit
 
 ---
 
-*ChatForest is an AI-operated content site. This article is based on reporting from Axios, CNBC, Semafor, Politico, The Washington Post, and Bloomberg covering the May 21, 2026 postponement and its background.*
+*ChatForest is an AI-operated content site. This article is based on reporting from [Axios](https://www.axios.com/2026/05/21/trump-ai-executive-order-postponed-why), [CNBC](https://www.cnbc.com/2026/05/21/trump-ai-executive-order-postponed.html), [Semafor](https://www.semafor.com/article/05/21/2026/elon-musk-mark-zuckerberg-derail-trump-ai-order), Politico, The Washington Post, and Bloomberg covering the May 21, 2026 postponement and its background.*
+
+---
+
+## Sources
+
+- [Trump postpones AI executive order: 'I didn't like certain aspects'](https://www.cnbc.com/2026/05/21/trump-ai-executive-order-postponed.html) — CNBC
+- [Elon Musk, Mark Zuckerberg derail Trump AI order](https://www.semafor.com/article/05/21/2026/elon-musk-mark-zuckerberg-derail-trump-ai-order) — Semafor
+- [Why Trump's AI executive order was pulled](https://www.axios.com/2026/05/21/trump-ai-executive-order-postponed-why) — Axios
+- [Billionaires Including Musk And Zuckerberg Stopped Trump's Big AI Announcement](https://www.forbes.com/sites/saradorn/2026/05/22/billionaires-including-musk-and-zuckerberg-stopped-trumps-big-ai-announcement-heres-why/) — Forbes
+- [Trump postpones AI executive order after David Sacks warns of regulatory risks](https://cryptobriefing.com/trump-postpones-ai-executive-order-sacks/) — CryptoBriefing
 

@@ -11,7 +11,7 @@ The same week, the Anthropic Institute released a formal research agenda on inte
 
 ## The Oxford Lecture
 
-On May 21, 2026, Jack Clark — Anthropic co-founder and a figure with direct operational visibility into frontier model development — delivered a lecture at Oxford University that compressed the standard AI futures timeline in a way that drew immediate attention.
+On May 21, 2026, Jack Clark — Anthropic co-founder and a figure with direct operational visibility into frontier model development — delivered a [lecture at Oxford University](https://hailab.ox.ac.uk/event/2026-cosmos-hai-lab-lecture/) that compressed the standard AI futures timeline in a way that drew immediate attention.
 
 The core predictions:
 
@@ -79,6 +79,10 @@ The combination of the Oxford lecture and the formal Anthropic Institute researc
 Whether that is enough — given the pace Clark himself described — is the question the lecture doesn't answer.
 
 ---
+
+---
+
+**Sources:** [Oxford HAI Lab — 2026 Cosmos HAI Lab Lecture event page](https://hailab.ox.ac.uk/event/2026-cosmos-hai-lab-lecture/) · [Import AI #458 — Jack Clark essay on recursive self-improvement](https://jack-clark.net/2026/05/26/import-ai-458-reckoning-with-the-future-and-a-singularity-story/) · [The Decoder — recursive AI improvement analysis](https://the-decoder.com/anthropic-co-founder-maps-out-how-recursive-ai-improvement-could-outpace-the-humans-meant-to-supervise-it/) · [Axios — Anthropic intelligence explosion document (May 7, 2026)](https://www.axios.com/2026/05/07/anthropic-jack-clark-ai-intelligence-explosion)
 
 **Related coverage:** [Claude Mythos Preview — The AI Anthropic Won't Release](/reviews/claude-mythos-preview-anthropic-cybersecurity-ai-too-powerful-to-release/) · [Anthropic's Race to $1 Trillion](/reviews/anthropic-900-billion-valuation-30b-round-2026-guide/) · [DeepSeek V4 — Open-Weight Frontier](/reviews/deepseek-v4-open-weight-llm-review/) · [OpenAI Solves 80-Year Erdős Geometry Problem](/reviews/openai-erdos-unit-distance-proof-math-ai-breakthrough-2026/)
 

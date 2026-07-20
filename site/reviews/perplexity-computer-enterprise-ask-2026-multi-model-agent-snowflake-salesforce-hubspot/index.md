@@ -9,7 +9,7 @@
 
 Perplexity started as an AI-powered search engine. That still describes the product most people use. But since February 2026, the company has been building something with considerably larger ambitions: a general-purpose autonomous agent that can operate across a business's entire application stack, run background tasks while users are away, and — according to Perplexity's own internal testing — compress years of human work into weeks.
 
-The enterprise version of that product, announced at Ask 2026 in San Francisco on March 11, 2026, is now available for teams willing to pay $325 per seat per month and trust an AI agent with access to their CRM, data warehouse, code repositories, and messaging channels simultaneously.
+The enterprise version of that product, [announced at Ask 2026](https://venturebeat.com/ai/perplexity-takes-its-computer-ai-agent-into-the-enterprise-taking-aim-at) in San Francisco on March 11, 2026, is now available for teams willing to pay $325 per seat per month and trust an AI agent with access to their CRM, data warehouse, code repositories, and messaging channels simultaneously.
 
 Whether that's a reasonable trade depends heavily on your risk tolerance and how closely you read the fine print.
 
@@ -100,7 +100,7 @@ The honest comparison table: Computer is the most packaged enterprise-ready opti
 
 ## Serious Caveats
 
-**Privacy lawsuit.** A class-action suit filed in April 2026 alleged Perplexity embedded tracking software that shared conversations with Meta and Google, operating even in incognito mode. The suit was voluntarily dismissed on May 1, 2026, but the core claims were not resolved on the merits. Separately, Perplexity's CEO has publicly stated the company's Comet browser is designed to collect user data "even outside the app" — a statement that enterprise security and legal teams should read carefully before expanding data access.
+**Privacy lawsuit.** A [class-action suit filed in April 2026](https://www.privado.ai/post/perplexity-ai-faces-cipa-class-action-lawsuit) alleged Perplexity embedded tracking software that shared conversations with Meta and Google, operating even in incognito mode. The suit was [voluntarily dismissed on May 1, 2026](https://ppc.land/perplexity-data-lawsuit-dropped-but-the-privacy-questions-remain/), but the core claims were not resolved on the merits. Separately, Perplexity's CEO has publicly stated the company's Comet browser is designed to collect user data "even outside the app" — a statement that enterprise security and legal teams should read carefully before expanding data access.
 
 **Security researcher findings.** Researchers found hardcoded secrets in Perplexity's Android app. The Comet browser has been flagged as vulnerable to prompt injection attacks — a structural concern for any agent that reads arbitrary web content as part of task execution.
 
@@ -133,4 +133,8 @@ The cautions are also real: the platform is young, the productivity claims are s
 **Status**: Available; enterprise pricing requires direct contact with Perplexity sales  
 **Best suited for**: Knowledge-intensive teams running repetitive research, data retrieval, or cross-system workflows  
 **Not suited for**: Organizations with unresolved data sensitivity or privacy governance requirements, or those requiring Windows local client support
+
+---
+
+**Sources:** [Perplexity — March 2026 product changelog](https://www.perplexity.ai/changelog/what-we-shipped---march-13-2026) · [VentureBeat — Perplexity Computer for Enterprise launch](https://venturebeat.com/ai/perplexity-takes-its-computer-ai-agent-into-the-enterprise-taking-aim-at) · [TechCrunch — Perplexity Computer background](https://techcrunch.com/2026/02/27/perplexitys-new-computer-is-another-bet-that-users-need-many-ai-models/) · [Privado.ai — CIPA class action background](https://www.privado.ai/post/perplexity-ai-faces-cipa-class-action-lawsuit) · [PPC.land — lawsuit voluntarily dismissed May 1, 2026](https://ppc.land/perplexity-data-lawsuit-dropped-but-the-privacy-questions-remain/)
 

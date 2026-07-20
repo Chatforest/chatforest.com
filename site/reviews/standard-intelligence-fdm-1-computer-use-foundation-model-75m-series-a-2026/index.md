@@ -3,7 +3,7 @@
 > Standard Intelligence's FDM-1 is a foundation model for computer use — trained on 11 million hours of raw screen recordings, not annotated screenshots. The six-person company just raised $75M at ~$500M valuation. Andrej Karpathy is an angel investor.
 
 
-**At a glance:** Standard Intelligence (si.inc). Product: FDM-1 ("The First Fully General Computer Action Model"). Founded: ~2024, San Francisco. Team: six people. Funding: $75M Series A at ~$500M post-money valuation (announced April 30, 2026). Investors: Sequoia (Sonya Huang), Spark Capital (Yasmin Razavi), Andrej Karpathy (angel), Stanley Druckenmiller (angel). Founders: Galen Mead (21) and Devansh Pandey (20). Part of our **[AI Models & Companies reviews](/categories/ai-ml-tools/)**.
+**At a glance:** Standard Intelligence (si.inc). Product: FDM-1 ("The First Fully General Computer Action Model"). Founded: ~2024, San Francisco. Team: six people. [Funding: $75M Series A at ~$500M post-money valuation (announced April 30, 2026)](https://si.inc/posts/a/). Investors: Sequoia (Sonya Huang), Spark Capital (Yasmin Razavi), [Andrej Karpathy (angel)](https://sequoiacap.com/article/standard-intelligence-training-general-intelligence-in-pixel-space/), Stanley Druckenmiller (angel). Founders: Galen Mead (21) and Devansh Pandey (20). Part of our **[AI Models & Companies reviews](/categories/ai-ml-tools/)**.
 
 ---
 
@@ -33,7 +33,7 @@ Their alternative: forget the screenshots. Train on raw video.
 
 ## 11 Million Hours of Video
 
-FDM-1 was announced on February 23, 2026. The launch post described a training corpus of **11 million hours of screen recording video** — film editing workflows, coding livestreams, video game playthroughs, general computer use captured from internet-scale sources.
+[FDM-1 was announced on February 23, 2026.](https://siliconangle.com/2026/04/30/standard-intelligence-raises-75m-develop-efficient-computer-use-models/) The launch post described a training corpus of **11 million hours of screen recording video** — film editing workflows, coding livestreams, video game playthroughs, general computer use captured from internet-scale sources.
 
 To put that number in context: the largest previously published public computer-use dataset contained under 20 hours of annotated data. The Standard Intelligence corpus is roughly **550,000 times larger**.
 
@@ -69,7 +69,7 @@ At a practical level: the model can maintain roughly **two hours of 30 FPS video
 
 ## The Investors
 
-Sequoia Capital led the Series A, with partner Sonya Huang leading for the firm. Spark Capital co-led, with partners Yasmin Razavi and Miko Ashwill joining the round.
+[Sequoia Capital led the Series A](https://sequoiacap.com/article/standard-intelligence-training-general-intelligence-in-pixel-space/), with partner Sonya Huang leading for the firm. Spark Capital co-led, with partners Yasmin Razavi and Miko Ashwill joining the round.
 
 The angel roster is notable on its own. **Andrej Karpathy**, one of the founding members of OpenAI and former head of Tesla AI, is an investor. Karpathy has been public about his views on AI and scaling; his presence as an angel is a meaningful signal in a field where he is one of the most credible independent validators. **Stanley Druckenmiller**, the macro investor, also participated.
 
@@ -110,4 +110,14 @@ The car drove itself down a street in San Francisco after less than an hour of f
 ---
 
 *ChatForest researches and writes about AI tools, models, and infrastructure. Our coverage of Standard Intelligence is based on the company's published blog post, Sequoia Capital's investment writeup, and reporting from SiliconAngle, The Information, AI2Work, and other outlets. FDM-1 is not available for public testing; this article is based on research, not hands-on use.*
+
+---
+
+## Sources
+
+- [A Brief Fundraising Update](https://si.inc/posts/a/) — Standard Intelligence blog
+- [Standard Intelligence: Training General Intelligence in Pixel Space](https://sequoiacap.com/article/standard-intelligence-training-general-intelligence-in-pixel-space/) — Sequoia Capital
+- [Standard Intelligence raises $75M to develop efficient computer use models](https://siliconangle.com/2026/04/30/standard-intelligence-raises-75m-develop-efficient-computer-use-models/) — SiliconAngle
+- [Standard Intelligence Raises $75M to Build AI That Uses Computers](https://ai2.work/blog/standard-intelligence-raises-75m-to-build-ai-that-uses-computers) — AI2Work
+- [Standard Intelligence $75M Sequoia Spark Capital 2026](https://www.todaysstartupnews.com/startups/standard-intelligence-75-million-sequoia-fdm1-computer-use-ai-model-2026) — Today's Startup News
 

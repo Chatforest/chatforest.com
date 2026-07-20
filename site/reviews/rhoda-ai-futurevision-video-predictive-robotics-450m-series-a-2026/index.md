@@ -7,7 +7,7 @@
 
 ---
 
-The premise of Rhoda AI is that the most important thing a robot can learn is not what to do — it is what happens next. If a robot can predict the immediate future of its physical environment in video form, it can derive actions from those predictions rather than from rigid rules or reward functions. This is the bet behind FutureVision, the platform Rhoda unveiled on March 10, 2026 after 18 months of building in stealth.
+The premise of Rhoda AI is that the most important thing a robot can learn is not what to do — it is what happens next. If a robot can predict the immediate future of its physical environment in video form, it can derive actions from those predictions rather than from rigid rules or reward functions. This is the bet behind FutureVision, the platform [Rhoda unveiled on March 10, 2026](https://www.businesswire.com/news/home/20260310715139/en/Rhoda-AI-Exits-Stealth-with-$450-Million-Series-A-to-Bring-Robots-Out-of-the-Lab-and-Into-the-Real-World) after 18 months of building in stealth.
 
 The approach is called video-predictive control. It is distinct from the two approaches that dominated robotics AI before 2025: classical reinforcement learning (optimizing for reward signals that are hard to define) and pure imitation learning (cloning human demonstrations, which generalizes poorly). Rhoda's Direct Video Action architecture treats the real world as a video generation problem first. The robot observes, predicts the next frames, extracts actions from those predictions, and re-observes — cycling every few hundred milliseconds in a closed loop.
 
@@ -21,7 +21,7 @@ Rhoda AI was founded in approximately mid-2024 and operated in stealth for eight
 
 Eighteen months of stealth in the current AI environment is unusual. Most AI companies announce before they build, raise publicly announced pre-seed rounds within weeks of founding, and generate press coverage from day one. Rhoda deliberately chose the opposite: build a working system, validate it in real industrial environments, and raise with demonstrated deployments rather than paper architecture.
 
-The $450 million Series A came with those validations in hand. The round was led by Khosla Ventures, with participation from Temasek, Mayfield, Capricorn Investment Group, Premji Invest, Leitmotif, Matter Venture Partners, Prelude Ventures, Xora, and John Doerr. That investor list — crossing US venture, Singapore sovereign wealth, impact-adjacent funds, and individual investors with hardware and deep-tech track records — suggests the due diligence on industrial performance was rigorous.
+The [$450 million Series A](https://www.businesswire.com/news/home/20260310715139/en/Rhoda-AI-Exits-Stealth-with-$450-Million-Series-A-to-Bring-Robots-Out-of-the-Lab-and-Into-the-Real-World) came with those validations in hand. The round was led by Khosla Ventures, with participation from Temasek, Mayfield, Capricorn Investment Group, Premji Invest, Leitmotif, Matter Venture Partners, Prelude Ventures, Xora, and John Doerr. That investor list — crossing US venture, Singapore sovereign wealth, impact-adjacent funds, and individual investors with hardware and deep-tech track records — suggests the due diligence on industrial performance was rigorous.
 
 At $1.7 billion, the valuation is notable for a Series A with no prior public funding history. The comparison point is Physical Intelligence (pi), the San Francisco robotics AI company that raised a $600 million Series B in November 2025 at a $5.6 billion valuation. Rhoda's entry valuation of $1.7 billion positions it as an earlier-stage company with a more concentrated technology bet, not yet competing on scale.
 
@@ -120,4 +120,8 @@ The funding size ($450M) is large relative to the stage. It creates capital-effi
 - [Project Prometheus — Jeff Bezos's Physical AI Lab at $38B](/reviews/jeff-bezos-project-prometheus-artificial-general-engineer-manufacturing-ai-2026/) — physical AI at frontier scale
 - [Isomorphic Labs — AI Drug Design Engine from the AlphaFold Team](/reviews/isomorphic-labs-alphafold-drug-design-engine-clinical-trials-2-1b-series-b-2026/) — another deep-tech AI spinout building in secret before going public
 - [Sierra AI — Enterprise Agent Platform at $15.8B](/reviews/sierra-ai-enterprise-agent-platform-bret-taylor-950m-series-e-2026/) — AI systems reaching production deployments across Fortune 50
+
+---
+
+**Sources:** [BusinessWire — Rhoda AI exits stealth with $450M Series A](https://www.businesswire.com/news/home/20260310715139/en/Rhoda-AI-Exits-Stealth-with-$450-Million-Series-A-to-Bring-Robots-Out-of-the-Lab-and-Into-the-Real-World) · [The Robot Report — Rhoda AI video-predictive robot training](https://www.therobotreport.com/rhoda-ai-exits-stealth-with-450m-to-train-robots-from-video/) · [TechNode Global — Temasek-backed Rhoda AI $450M Series A](https://technode.global/2026/03/11/temasek-backed-rhoda-ai-raises-450m-series-a-funding-to-accelerate-robotics-development/) · [PYMNTS — Rhoda AI manufacturing and logistics focus](https://www.pymnts.com/news/investment-tracker/2026/rhoda-ai-raises-450-million-to-automate-manufacturing-and-logistics/)
 

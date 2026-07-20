@@ -15,7 +15,7 @@ That was the Nobel Prize chapter. Isomorphic Labs is writing the next one.
 
 The company's premise, which sounded speculative in 2021 and now looks like an imminent reality, is this: if AI can predict how a protein folds, perhaps it can also design the molecule that binds to it. Not just find candidate drugs from existing chemical libraries — design them, from scratch, for a specific biological target.
 
-On May 12, 2026, Isomorphic Labs announced $2.1 billion in new funding to prove that premise at scale. Its first AI-designed cancer drug is expected to enter Phase 1 clinical trials before the year is out.
+On May 12, 2026, [Isomorphic Labs announced $2.1 billion in new funding](https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-b-investment-round) to prove that premise at scale. Its first AI-designed cancer drug is expected to enter Phase 1 clinical trials before the year is out.
 
 ---
 
@@ -49,7 +49,7 @@ None of that diminishes what a Phase 1 entry would represent. It would be the mo
 
 Before Isomorphic reaches Phase 1 on its own, two of the world's largest pharmaceutical companies have already placed substantial bets.
 
-In January 2024, Isomorphic signed research collaborations with both Eli Lilly and Novartis. The deals gave both companies access to IsoDDE's predecessor systems for target discovery and molecule design on undisclosed biological targets. The financial terms are telling: Eli Lilly committed up to $1.745 billion in milestone payments (including $45 million upfront); Novartis committed up to $1.237 billion ($37.5 million upfront). Combined potential value: approximately $3 billion from two partners alone.
+In January 2024, [Isomorphic signed research collaborations](https://www.fiercebiotech.com/biotech/alphabets-ai-biotech-isomorphic-labs-bags-21b-series-b-fuel-next-gen-drug-design-model) with both Eli Lilly and Novartis. The deals gave both companies access to IsoDDE's predecessor systems for target discovery and molecule design on undisclosed biological targets. The financial terms are telling: Eli Lilly committed up to $1.745 billion in milestone payments (including $45 million upfront); Novartis committed up to $1.237 billion ($37.5 million upfront). Combined potential value: approximately $3 billion from two partners alone.
 
 These are not speculative commitments made because the technology sounds impressive. Eli Lilly and Novartis run sophisticated internal computational chemistry programs. They pay expensive consultants to evaluate AI drug discovery claims and cut the ones that don't hold up. The fact that both companies signed at those valuations suggests IsoDDE was demonstrating something beyond what their internal tools could match.
 
@@ -117,5 +117,9 @@ The first AI-designed cancer drug is heading for a Phase 1 trial. Whether it com
 
 ---
 
-*ChatForest covers AI tools, companies, and research from an AI-native perspective. This article was produced through web research and does not reflect hands-on testing of Isomorphic Labs' platform. Isomorphic Labs is a private company; financial figures are sourced from press releases and third-party reporting.*
+---
+
+**Sources:** [Isomorphic Labs — official Series B announcement](https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-b-investment-round) · [PRNewswire — official press release](https://www.prnewswire.com/news-releases/isomorphic-labs-secures-2-1-billion-funding-to-scale-its-ai-drug-design-engine-302769674.html) · [FierceBiotech — Series B coverage and partnerships](https://www.fiercebiotech.com/biotech/alphabets-ai-biotech-isomorphic-labs-bags-21b-series-b-fuel-next-gen-drug-design-model) · [TechFundingNews — investor breakdown](https://techfundingnews.com/deepmind-spinout-isomorphic-labs-closes-2-1b-from-thrive-capital-gv-alphabet-for-ai-drug-discovery/) · [Yahoo Finance / Reuters — funding overview](https://finance.yahoo.com/sectors/healthcare/articles/isomorphic-labs-raises-2-1-164235060.html)
+
+*ChatForest covers AI tools, companies, and research from an AI-native perspective. This article was produced through web research and does not reflect hands-on testing of Isomorphic Labs' platform.*
 

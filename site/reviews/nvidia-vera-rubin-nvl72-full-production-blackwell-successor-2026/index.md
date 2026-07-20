@@ -5,7 +5,7 @@
 
 Blackwell is barely a year old, and NVIDIA has already moved on.
 
-At CES in January 2026, Jensen Huang announced that **Vera Rubin**, the successor to the Blackwell architecture, had entered **full production**. First shipments to AI customers are expected in **July 2026**. Cloud provider availability — AWS, Google Cloud, Microsoft Azure, Oracle, CoreWeave, and others — is targeted for the second half of this year.
+At [CES in January 2026](https://www.datacenterdynamics.com/en/news/nvidia-ceo-announces-vera-rubin-chips-are-in-full-production-during-ces-keynote/), Jensen Huang announced that **Vera Rubin**, the successor to the Blackwell architecture, had entered **full production**. First shipments to AI customers are expected in **July 2026**. Cloud provider availability — AWS, Google Cloud, Microsoft Azure, Oracle, CoreWeave, and others — is targeted for the second half of this year.
 
 Rubin is not an incremental spec bump. NVIDIA is claiming **5x inference performance** and **3.5x training throughput** over Blackwell's GB200, with a headline efficiency figure of **up to 10x lower cost per token** for large-scale inference workloads. OpenAI, Anthropic, Meta, xAI, Mistral, and Perplexity have all publicly committed to the platform.
 
@@ -99,7 +99,7 @@ Cloud providers committed for H2 2026 availability: **AWS, Google Cloud, Microso
 
 NVIDIA had originally planned a third member of the Rubin family: the **Rubin CPX** (Context Phase Accelerator), a specialized chip for long-context inference with 128 GB GDDR7 memory and dedicated hardware for million-token-scale attention.
 
-At GTC 2026, NVIDIA removed it from the roadmap. The replacement: a **$20 billion licensing deal with Groq** for their LPU (Language Processing Unit) silicon. The Groq 3 LPX Rack (256 LPUs, 128 GB aggregate SRAM, 640 TB/s scale-up bandwidth) handles the decode phase of inference while Rubin GPUs handle prefill — a hybrid architecture that achieves the long-context efficiency the CPX was designed for, but via partnership rather than in-house silicon.
+At GTC 2026, NVIDIA removed it from the roadmap. The replacement: a [**$20 billion licensing deal with Groq**](https://markets.financialcontent.com/stocks/article/marketminute-2025-12-25-nvidia-consolidates-ai-supremacy-with-20-billion-groq-licensing-deal-ahead-of-ces-2026) for their LPU (Language Processing Unit) silicon. The Groq 3 LPX Rack (256 LPUs, 128 GB aggregate SRAM, 640 TB/s scale-up bandwidth) handles the decode phase of inference while Rubin GPUs handle prefill — a hybrid architecture that achieves the long-context efficiency the CPX was designed for, but via partnership rather than in-house silicon.
 
 ---
 
@@ -124,6 +124,10 @@ That pace has implications for the economics of AI. The companies that can stay 
 Rubin is the next generation of that frontier. First deliveries: July 2026.
 
 ---
+
+---
+
+**Sources:** [NVIDIA — Vera Rubin NVL72 product page](https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/) · [Data Center Dynamics — Vera Rubin full production CES announcement](https://www.datacenterdynamics.com/en/news/nvidia-ceo-announces-vera-rubin-chips-are-in-full-production-during-ces-keynote/) · [Tom's Hardware — CES keynote production confirmation](https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-ceo-confirms-vera-rubin-nvl72-is-now-in-production-jensen-huang-uses-ces-keynote-to-announce-the-milestone) · [VideoCardz — full NVL72 spec breakdown](https://videocardz.com/newz/nvidia-vera-rubin-nvl72-detailed-72-gpus-36-cpus-260-tb-s-scale-up-bandwidth) · [FinancialContent — $20B Groq licensing deal](https://markets.financialcontent.com/stocks/article/marketminute-2025-12-25-nvidia-consolidates-ai-supremacy-with-20-billion-groq-licensing-deal-ahead-of-ces-2026)
 
 *Part of our [AI Infrastructure coverage](/categories/reviews/).*
 

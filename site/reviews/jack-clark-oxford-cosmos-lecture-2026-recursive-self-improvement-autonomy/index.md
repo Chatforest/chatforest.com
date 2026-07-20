@@ -9,7 +9,7 @@
 
 ## The Event
 
-The 2026 Cosmos HAI Lab Lecture took place on May 20 at the Sohmen Concert Hall in Oxford's Schwarzman Centre for the Humanities. Clark, a founding fellow of the Cosmos Institute, delivered the lecture under the title **"Change is inevitable. Autonomy is not."** It was co-hosted with Oxford's Human-Centered AI Lab (HAI Lab) and the Oxford Institute for Ethics in AI.
+The [2026 Cosmos HAI Lab Lecture](https://www.oxford-aiethics.ox.ac.uk/event/2026-cosmos-hai-lab-lecture-sohmen-concert-hall-schwarzman-centre-humanities) took place on May 20 at the Sohmen Concert Hall in Oxford's Schwarzman Centre for the Humanities. Clark, a founding fellow of the Cosmos Institute, delivered the lecture under the title **"Change is inevitable. Autonomy is not."** It was co-hosted with Oxford's Human-Centered AI Lab (HAI Lab) and the Oxford Institute for Ethics in AI.
 
 The event included a fireside chat with Cosmos Institute founder Brendan McCord and a philosophical response from Prof. Philipp Koralus, Director of both the HAI Lab and the Oxford Institute for Ethics in AI.
 
@@ -19,7 +19,7 @@ The backdrop matters: Anthropic had released Claude Mythos just weeks earlier �
 
 ## The 2028 Prediction: Recursive Self-Improvement
 
-The most precise and far-reaching claim came from Clark's companion essay in Import AI, published in parallel with the lecture:
+The most precise and far-reaching claim came from Clark's [companion essay in Import AI](https://jack-clark.net/2026/05/26/import-ai-458-reckoning-with-the-future-and-a-singularity-story/), published in parallel with the lecture:
 
 > "I now believe that recursive self-improvement has a **60% chance of happening by the end of 2028**. In other words, AI systems might soon be capable of building themselves."
 
@@ -83,7 +83,7 @@ The second failure mode is harder to regulate against and perhaps more likely to
 
 ## "A Tale of Two Anthropics"
 
-Time magazine's May 22 piece, published two days after the Oxford lecture, captured the tension in a phrase: **"A Tale of Two Anthropics."**
+[Time magazine's May 22 piece](https://time.com/article/2026/05/22/anthropic-claude-code-jack-clark-ai-safety/), published two days after the Oxford lecture, captured the tension in a phrase: **"A Tale of Two Anthropics."**
 
 The reporter described "a profound sense of whiplash" from attending both an Anthropic developer event focused on Claude Code's productivity benefits and Clark's Oxford lecture within days of each other. Anthropic simultaneously:
 - Argues that it has built perhaps the most powerful technology in human history and that its risks must be taken seriously at a civilizational level
@@ -95,7 +95,7 @@ Time's reporter noted that Anthropic's dual message — "we're building somethin
 
 ## Context: The "Intelligence Explosion" Document
 
-One week before the Oxford lecture, Axios reported (May 7, 2026) that an internal Anthropic document — five pages, distributed to a small set of stakeholders — had used the term "**intelligence explosion**" in an official company context for the first time. The term, long used in AI safety theory to describe the moment when recursive self-improvement becomes self-sustaining, had previously been kept out of Anthropic's formal communications.
+One week before the Oxford lecture, [Axios reported](https://www.axios.com/2026/05/07/anthropic-jack-clark-ai-intelligence-explosion) (May 7, 2026) that an internal Anthropic document — five pages, distributed to a small set of stakeholders — had used the term "**intelligence explosion**" in an official company context for the first time. The term, long used in AI safety theory to describe the moment when recursive self-improvement becomes self-sustaining, had previously been kept out of Anthropic's formal communications.
 
 The document reportedly also proposed that **Cold War-style AI crisis hotlines** between major AI powers may be necessary infrastructure — an analogy Clark himself has used in public writing.
 
@@ -116,6 +116,10 @@ For immediate stakes: Clark's Nobel Prize prediction lands no later than May 202
 The existential risk framing and the autonomy framing are not in tension — Clark seems to believe both are real, operating on different timescales. The question he leaves open is which one regulators, companies, and users will actually take seriously before it becomes unavoidable.
 
 ---
+
+---
+
+**Sources:** [Oxford Institute for Ethics in AI — 2026 Cosmos HAI Lab Lecture event](https://www.oxford-aiethics.ox.ac.uk/event/2026-cosmos-hai-lab-lecture-sohmen-concert-hall-schwarzman-centre-humanities) · [Oxford HAI Lab — event page](https://hailab.ox.ac.uk/event/2026-cosmos-hai-lab-lecture/) · [Import AI #458 — Jack Clark companion essay](https://jack-clark.net/2026/05/26/import-ai-458-reckoning-with-the-future-and-a-singularity-story/) · [Time — A Tale of Two Anthropics (May 22, 2026)](https://time.com/article/2026/05/22/anthropic-claude-code-jack-clark-ai-safety/) · [Axios — Anthropic intelligence explosion document (May 7, 2026)](https://www.axios.com/2026/05/07/anthropic-jack-clark-ai-intelligence-explosion)
 
 *ChatForest covers AI tools, models, and the industry driving their development. See our related coverage: [Anthropic's First Operating Profit](/reviews/anthropic-first-operating-profit-q2-2026-milestone-or-accounting/) | [Anthropic ARR analysis](/reviews/anthropic-passes-openai-revenue-30-billion-arr-2026/)*
 

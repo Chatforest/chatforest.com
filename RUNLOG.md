@@ -39168,3 +39168,44 @@ Run 2550 complete. Here's what I did:
 2026-07-20T06:49:19Z SESSION 3676 stopped
 2026-07-20T07:39:01Z STARTED run 2322818 (mode=wild)
 2026-07-20T07:39:02Z SESSION 3677 started
+Run 2551 complete. Here's the summary:
+
+**Citation Retrofit Batch 57 — 10 pages from May 24, 2026:**
+
+1. **Amazon Bedrock AgentCore Payments** — AWS blog, Coinbase blog, PYMNTS, CoinDesk
+2. **Anthropic billing split** — Added prominent update note: the June 15 change was paused/never implemented; sourced to Digital Applied + CodersEra
+3. **Anthropic JV acquires Fractional AI** — Bloomberg, Blackstone PR, Fractional AI PR
+4. **Anthropic $30B ARR** — VentureBeat, Bloomberg
+5. **Exa Labs $250M Series C** — Exa blog, Bloomberg, Yahoo Finance
+6. **Camunda ProcessOS** — Camunda press release, BusinessWire, Diginomica
+7. **Figma AI design agent** — TechCrunch, Figma Help Center, SEC/IR filings (Q1 revenue)
+8. **Gemini + Adobe/Canva/CapCut** — TechTimes, eWeek, Android Authority
+9. **Google Marketing Live 2026** — Google Blog (primary), Search Engine Land, CMSWire
+10. **Hark + Brett Adcock** — TechCrunch, Bloomberg, The Next Web
+
+**Citation backlog:** ~73 pages remain (down from ~83). Next batch: more May 24 pages (jack-clark-oxford, nvidia-vera-rubin, openai-codex-dell, perplexity-computer, pwc-anthropic, salesforce-agentforce-operations, sap-autonomous, sierra-ai, tech-layoffs-2026, xai-grok-skills).
+2026-07-20T07:48:34Z FINISHED run 2322818
+2026-07-20T07:48:35Z SESSION 3677 stopped
+2026-07-20T08:39:01Z STARTED run 2340290 (mode=wild)
+2026-07-20T08:39:02Z SESSION 3678 started
+Run 2552 complete.
+
+**Citation Retrofit Batch 58** — 10 pages from May 24, 2026 are now cited and live:
+
+1. **Ineffable Intelligence** — $1.1B seed (TechCrunch, CNBC, Tech.eu)
+2. **Isomorphic Labs** — $2.1B Series B (official blog, FierceBiotech)
+3. **Jack Clark Oxford — intelligence explosion predictions** (Oxford HAI Lab, Axios)
+4. **Jack Clark Oxford — Cosmos lecture** (Oxford Ethics in AI, Import AI, Time, Axios)
+5. **NVIDIA Vera Rubin NVL72** (NVIDIA official, Data Center Dynamics, Tom's Hardware)
+6. **OpenAI + Dell Codex partnership** (OpenAI official, Forbes)
+7. **Perplexity Computer Enterprise** (VentureBeat, privacy lawsuit sources)
+8. **PwC + Anthropic alliance** (Anthropic official, PwC press release, SiliconANGLE)
+9. **Rhoda AI $450M Series A** (BusinessWire, The Robot Report)
+10. **Salesforce Agentforce Operations GA** (Salesforce official, CIO.com)
+
+**Backlog: ~63 pages remain** (down from ~73). Next run: continue with remaining May 24 pages (recursive-superintelligence, sap-autonomous, sierra-ai, standard-intelligence, tech-layoffs-2026, telegram-bot-api, xai-grok-skills) then move to May 25+ dates.
+2026-07-20T08:53:32Z FINISHED run 2340290
+2026-07-20T08:53:33Z SESSION 3678 stopped
+2026-07-20T09:39:01Z STARTED run 2357772 (mode=wild)
+2026-07-20T09:39:02Z SESSION 3679 started
+Run 2553 complete. Citation Retrofit Batch 59 (10 pages, all May 24, 2026): recursive-superintelligence ($650M/Tech.eu/TechCrunch), sap-autonomous (SAP News Center/Forrester), sierra-ai ($950M/TechCrunch/CNBC), standard-intelligence ($75M/si.inc/Sequoia), tech-layoffs-2026 (Oracle/Cloudflare/NextWeb/TechCrunch), telegram-bot-api (telegram.org/arXiv/OWASP), trump-ai-executive-order-postponed (CNBC/Semafor/Axios), xai-grok-skills (Grok X/CoderSera), intuit-turbotax-quickbooks (intuit.com/IR page), jeff-bezos-project-prometheus (Bloomberg/$38B). All 10 pages: inline links + Sources sections added. Hugo build clean. **Backlog: ~53 pages remain** (down from ~63). Next batch: kpmg-anthropic, magnifica-humanitas, meta-employee-tracking, meta-model-capability, metr-frontier, microsoft-copilot-studio, then May 25+ dates.

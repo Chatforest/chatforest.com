@@ -5,7 +5,7 @@
 
 # Intuit's Five Financial Apps Are Now Live in Claude via MCP
 
-On April 23, 2026, Intuit flipped the switch on five of its flagship financial products inside Claude. TurboTax, Credit Karma, QuickBooks, Mailchimp, and the Intuit Enterprise Suite are now available as MCP tools — meaning Claude users can pull live tax estimates, check their credit score, analyze business cash flow, and build marketing campaigns without leaving the conversation.
+On April 23, 2026, [Intuit flipped the switch on five of its flagship financial products inside Claude](https://www.intuit.com/blog/news-social/intuit-apps-now-available-in-claude/). TurboTax, Credit Karma, QuickBooks, Mailchimp, and the Intuit Enterprise Suite are now available as MCP tools — meaning Claude users can pull live tax estimates, check their credit score, analyze business cash flow, and build marketing campaigns without leaving the conversation.
 
 It's one of the larger fintech MCP deployments to date, and it arrives with significant context: the same week Intuit cut 3,000 employees while deepening AI commitments to both Anthropic and OpenAI.
 
@@ -29,7 +29,7 @@ The five tools each serve distinct user types:
 
 ## The Partnership Behind the Integration
 
-The MCP deployment is the consumer-facing half of a broader multi-year deal Intuit announced with Anthropic in February 2026. The B2B side is equally significant: Intuit opened its platform to Claude Agent SDK, allowing mid-market businesses to build custom AI agents on top of Intuit's compliance infrastructure without requiring engineering teams.
+The MCP deployment is the consumer-facing half of a [broader multi-year deal Intuit announced with Anthropic in February 2026](https://investors.intuit.com/news-events/press-releases/detail/1305/intuit-and-anthropic-partner-to-bring-trusted-financial-intelligence-and-custom-ai-agents-to-consumers-and-businesses). The B2B side is equally significant: Intuit opened its platform to Claude Agent SDK, allowing mid-market businesses to build custom AI agents on top of Intuit's compliance infrastructure without requiring engineering teams.
 
 Anthropic gave some illustrative examples — a restaurant group using an agent to analyze margin variances across multiple locations, or a construction firm running automated billing compliance checks wired into project workflows. These use cases aren't hypothetical product demos; Intuit is positioning its platform as the compliance and financial data layer, with Claude as the reasoning engine on top.
 
@@ -84,4 +84,14 @@ Five tools available. Forty million Intuit customers potentially in scope. The r
 **Rating: 3.5 / 5**
 
 The integration is live, useful, and the first major fintech MCP deployment inside Claude. The consumer-facing tools handle personal finance queries cleanly; the QuickBooks business analytics is the most substantive offering. Deducting for v1 limitations (connectors, not agents), the compliance-driven conservatism on tax execution, and the unresolved question of what "spring 2026" rollout means for enterprise features still in staging. Worth tracking closely — the precedent it sets for regulated-industry MCP deployment is more important than the current feature set.
+
+---
+
+## Sources
+
+- [Intuit apps now available in Claude](https://www.intuit.com/blog/news-social/intuit-apps-now-available-in-claude/) — Intuit blog
+- [Intuit and Anthropic partner to bring trusted financial intelligence to consumers and businesses](https://investors.intuit.com/news-events/press-releases/detail/1305/intuit-and-anthropic-partner-to-bring-trusted-financial-intelligence-and-custom-ai-agents-to-consumers-and-businesses) — Intuit investor relations
+- [Intuit Financial Intelligence comes to Claude via Anthropic](https://www.intuit.com/anthropic/) — Intuit
+- [Intuit and Anthropic to Launch Customizable AI Agents](https://www.pymnts.com/partnerships/2026/intuit-and-anthropic-to-launch-customizable-ai-agents/) — PYMNTS
+- [Intuit Financial Intelligence Apps Now Available in Claude](https://www.cpapracticeadvisor.com/2026/04/29/intuit-financial-intelligence-apps-now-available-in-claude/182465/) — CPA Practice Advisor
 

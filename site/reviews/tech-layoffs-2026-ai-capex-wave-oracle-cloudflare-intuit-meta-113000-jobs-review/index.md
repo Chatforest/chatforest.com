@@ -3,7 +3,7 @@
 > More than 113,000 tech workers have been laid off in 2026 — not because the companies are losing money, but because they're making record profits and redirecting them to AI. Here's what's actually happening.
 
 
-**At a glance:** Industry-wide analysis. 2026 year-to-date (through May 24). Scale: 142,000+ tech workers laid off across 179 companies. Major events: Oracle (~30,000, March 31), Cloudflare (1,100, May 7), Meta (8,000, May 20), Intuit (3,000, May 20). Collective AI capex from Meta, Amazon, Microsoft, Alphabet: $725 billion, +75% year-over-year. TrueUp projection: 370,000 total tech layoffs by year-end. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Industry-wide analysis. 2026 year-to-date (through May 24). Scale: 142,000+ tech workers laid off across 179 companies. Major events: [Oracle (~30,000, March 31)](https://thenextweb.com/news/oracle-layoffs-march-2026), [Cloudflare (1,100, May 7)](https://www.cnbc.com/2026/05/07/cloudflare-net-q1-2026-stock-earnings-layoffs.html), Meta (8,000, May 20), Intuit (3,000, May 20). Collective AI capex from Meta, Amazon, Microsoft, Alphabet: $725 billion, +75% year-over-year. TrueUp projection: 370,000 total tech layoffs by year-end. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -37,7 +37,7 @@ These are not companies that could not afford their payrolls. They are companies
 
 ## Oracle: The Biggest Single Event
 
-On March 31, 2026, Oracle sent termination emails to an estimated 20,000 to 30,000 employees — in many cases with no prior warning from HR or direct managers. The emails arrived at approximately 6 a.m. local time across the United States, India, Canada, Mexico, and other countries. Same-day termination.
+On March 31, 2026, [Oracle sent termination emails to an estimated 20,000 to 30,000 employees](https://thenextweb.com/news/oracle-layoffs-march-2026) — in many cases with no prior warning from HR or direct managers. The emails arrived at approximately 6 a.m. local time across the United States, India, Canada, Mexico, and other countries. Same-day termination.
 
 TD Cowen estimated the cuts at 18% of Oracle's 162,000-person global workforce. The divisions hit hardest were Cerner (Oracle's health IT unit, acquired in 2022), Oracle Cloud Infrastructure, and ERP consulting — all areas where AI is either already replacing functions or where the business case has weakened. The teams Oracle pointedly spared were those running its AI data center buildout and Stargate infrastructure contracts.
 
@@ -49,7 +49,7 @@ Oracle is not shrinking. It is changing the ratio of human labor to AI infrastru
 
 ## Cloudflare: "AI Made These Jobs Obsolete"
 
-CEO Matthew Prince was unusually direct when Cloudflare announced 1,100 layoffs on May 7, 2026. He did not say market conditions required it. He said artificial intelligence had made those jobs obsolete.
+CEO Matthew Prince was unusually direct when [Cloudflare announced 1,100 layoffs on May 7, 2026](https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/). He did not say market conditions required it. He said artificial intelligence had made those jobs obsolete.
 
 The cuts represent 20% of Cloudflare's workforce — the company's first mass layoff in its 16-year history. They were announced the same day Cloudflare reported Q1 revenue of $639.8 million, up 34% year-over-year, beating Wall Street expectations. The company's stock fell 24% anyway, likely on the scale of the restructuring charge ($140–150 million).
 
@@ -110,4 +110,15 @@ The next set of earnings calls will tell us whether the bet is paying off.
 ---
 
 *ChatForest covers AI tools, models, and companies. This analysis is based on public filings, earnings reports, and press coverage. No hands-on testing of AI infrastructure was conducted.*
+
+---
+
+## Sources
+
+- [Oracle is cutting up to 30,000 employees to pay for AI data centers](https://thenextweb.com/news/oracle-layoffs-march-2026) — The Next Web
+- [Oracle's Massive 30,000 Layoff as AI Spending Surges](https://www.forbes.com/sites/jonmarkman/2026/04/06/oracles-massive-30000-layoff-as-ai-spending-surges/) — Forbes
+- [Cloudflare says AI made 1,100 jobs obsolete, even as revenue hit a record high](https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/) — TechCrunch
+- [Cloudflare stock sinks 24% after earnings as company cuts 1,100 employees due to AI changes](https://www.cnbc.com/2026/05/07/cloudflare-net-q1-2026-stock-earnings-layoffs.html) — CNBC
+- [Cloudflare posted record revenue, then cut 20% of its workforce](https://fortune.com/2026/05/21/cloudflare-ceo-matthew-prince-layoffs-ai-automation-measurers/) — Fortune
+- [Oracle Layoffs 2026: 30,000 Jobs Cut to Fund AI Data Centers](https://www.cxtoday.com/workforce-engagement-management/oracle-layoffs-2026-ai-cx-impact/) — CX Today
 
