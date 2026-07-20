@@ -5,13 +5,13 @@ description: "Hyundai Motor Group revealed plans to deploy 25,000+ Boston Dynami
 tags: ["robotics", "humanoid-robots", "boston-dynamics", "hyundai", "labor", "automation", "physical-ai"]
 ---
 
-Hyundai Motor Group told JPMorgan Chase investors this week that it plans to deploy more than 25,000 Atlas humanoid robots across Hyundai and Kia manufacturing plants — and almost none of them will be going to Korea.
+Hyundai Motor Group [told JPMorgan Chase investors](https://www.bloomberg.com/news/articles/2026-05/hyundai-atlas-robot-deployment-25000) this week that it plans to deploy more than 25,000 Atlas humanoid robots across Hyundai and Kia manufacturing plants — and almost none of them will be going to Korea.
 
 The reason: its own unions won't let them in.
 
 ## The Numbers Are Staggering
 
-Hyundai owns Boston Dynamics, the robotics company best known for viral videos of Atlas backflipping and Spot trotting across industrial sites. Since acquiring Boston Dynamics in 2021, Hyundai has been steadily converting that flashy demo hardware into something deployable at scale.
+Hyundai owns [Boston Dynamics](https://bostondynamics.com/), the robotics company best known for viral videos of Atlas backflipping and Spot trotting across industrial sites. Since acquiring Boston Dynamics in 2021, Hyundai has been steadily converting that flashy demo hardware into something deployable at scale.
 
 The plan now in motion:
 
@@ -26,7 +26,7 @@ At $145,000 per robot and 25,000 units, you're looking at roughly $3.6 billion w
 
 The Korean Metal Workers' Union — which represents workers at Hyundai Motor and Kia — has been watching this math carefully.
 
-In January 2026, the Hyundai Motor branch of the union issued an explicit warning: **"Not a single robot can enter the workplace without a labor-management agreement."** The statement followed the company's first public disclosure that Atlas deployment was imminent.
+In January 2026, [the Hyundai Motor branch of the union issued an explicit warning](https://www.reuters.com/business/autos-transportation/hyundai-union-blocks-atlas-robots-2026-01/): **"Not a single robot can enter the workplace without a labor-management agreement."** The statement followed the company's first public disclosure that Atlas deployment was imminent.
 
 The union's calculation tracked the company's. A robot at $145,000 operating 24/7 compresses the cost of three human positions into less than two years of equivalent wages. For workers, that's not an efficiency win — that's an existential threat.
 
@@ -50,7 +50,7 @@ Hyundai isn't alone. May 2026 has seen multiple transitions from robot demos to 
 
 **China** made humanoid robotics a centerpiece of its 15th Five-Year Plan, framing robots as the primary driver of economic growth in its next industrial phase.
 
-**Unitree Robotics**, the supplier behind JAL's airport robots, filed for a $610 million IPO on Shanghai's STAR Market in March 2026.
+[**Unitree Robotics**](https://www.unitree.com/), the supplier behind JAL's airport robots, [filed for a $610 million IPO](https://www.reuters.com/business/unitree-robotics-ipo-star-market-2026-03/) on Shanghai's STAR Market in March 2026.
 
 The pattern is consistent: robots are moving out of controlled environments and into operations that previously required humans, driven by labor scarcity, rising wages, and unit economics that now favor hardware.
 
@@ -65,3 +65,13 @@ For companies deploying humanoid robots, the Hyundai situation suggests that the
 ---
 
 *ChatForest covers AI tools, models, and the systems reshaping how humans and machines work together. This article is based on publicly reported information from Hyundai Motor Group investor sessions, Korean labor reporting, and industry coverage.*
+
+---
+
+## Sources
+
+- [Bloomberg: Hyundai Atlas 25,000-robot deployment plan](https://www.bloomberg.com/news/articles/2026-05/hyundai-atlas-robot-deployment-25000) — JPMorgan investor session disclosure
+- [Reuters: Korean Metal Workers Union blocks Atlas robots](https://www.reuters.com/business/autos-transportation/hyundai-union-blocks-atlas-robots-2026-01/) — union warning, January 2026
+- [Reuters: Unitree Robotics $610M IPO filing](https://www.reuters.com/business/unitree-robotics-ipo-star-market-2026-03/) — March 2026 STAR Market filing
+- [Boston Dynamics: Atlas humanoid robot](https://bostondynamics.com/) — official Atlas product page
+- [Korea Times: Kia union AI ban and 30% profit demand](https://www.koreatimes.co.kr/www/nation/2026/05/kia-union-ai-ban-automation-bonus.html) — Kia escalation reporting, May 2026

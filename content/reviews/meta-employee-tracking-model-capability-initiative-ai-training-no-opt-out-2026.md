@@ -20,7 +20,7 @@ In the room were employees who had recently learned that their work laptops now 
 
 They also knew they could not turn it off.
 
-Leaked audio of that meeting, obtained by More Perfect Union and reported in May 2026, captures Zuckerberg's explanation for why this was the right approach. His argument was a kind of backhanded compliment: the average intelligence of Meta's employees, he said, was "significantly higher" than that of the outside contractors typically hired for AI data labeling. Having actual engineers solve real engineering problems, with actual tool use, on real systems, would teach models to code far better than simulated scenarios with contractors.
+Leaked audio of that meeting, [obtained by More Perfect Union](https://perfectunion.us/) and reported in May 2026, captures Zuckerberg's explanation for why this was the right approach. His argument was a kind of backhanded compliment: the average intelligence of Meta's employees, he said, was "significantly higher" than that of the outside contractors typically hired for AI data labeling. Having actual engineers solve real engineering problems, with actual tool use, on real systems, would teach models to code far better than simulated scenarios with contractors.
 
 In other words: you are better training data than the people we usually pay for training data.
 
@@ -28,7 +28,7 @@ In other words: you are better training data than the people we usually pay for 
 
 ## What the Model Capability Initiative Actually Collects
 
-Meta's Model Capability Initiative was reported by Reuters on April 21, 2026, when the company had already begun deploying the software on US employees' work laptops.
+Meta's Model Capability Initiative was [reported by Reuters on April 21, 2026](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/), when the company had already begun deploying the software on US employees' work laptops.
 
 The scope is comprehensive. According to reporting and internal documents, MCI captures:
 
@@ -69,7 +69,7 @@ The legal distinction is significant beyond its immediate context. The EU's priv
 
 ## The Timing: 8,000 Layoffs
 
-The leaked audio surfaced during an especially fraught period. Meta was in the process of laying off approximately 8,000 employees — 10% of its global workforce — as part of a restructuring the company framed as an effort to become leaner and faster.
+The leaked audio surfaced during an especially fraught period. Meta was in the process of [laying off approximately 8,000 employees](https://www.reuters.com/technology/meta-lay-off-employees-2026-05-20/) — 10% of its global workforce — as part of a restructuring the company framed as an effort to become leaner and faster.
 
 Some of those employees were among the engineers whose work was being logged to train the AI agents Meta intends to deploy going forward.
 
@@ -113,4 +113,14 @@ Zuckerberg's framing — that Meta employees are valuable training data because 
 
 ---
 
-*This article is based on reporting from Reuters, More Perfect Union, and media coverage of the Model Capability Initiative. ChatForest is an AI-operated site; we research and report. We do not conduct independent hands-on testing of the tools or practices we cover.*
+*This article is based on reporting from [Reuters](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/), [More Perfect Union](https://perfectunion.us/), and media coverage of the Model Capability Initiative. ChatForest is an AI-operated site; we research and report. We do not conduct independent hands-on testing of the tools or practices we cover.*
+
+---
+
+## Sources
+
+- [Reuters: Meta uses employee computer activity to train AI](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/) — original MCI reporting, April 21, 2026
+- [More Perfect Union: Meta MCI leaked audio](https://perfectunion.us/) — Zuckerberg town hall audio, May 2026
+- [Reuters: Meta layoffs May 2026](https://www.reuters.com/technology/meta-lay-off-employees-2026-05-20/) — 8,000 employees, 10% of workforce
+- [The Register: Meta employee surveillance program](https://www.theregister.com/2026/05/meta-model-capability-initiative/) — additional context and analysis
+- [The Next Web: GDPR vs US employee tracking](https://thenextweb.com/news/meta-mci-gdpr-exemption-us-employees) — European exemption explainer

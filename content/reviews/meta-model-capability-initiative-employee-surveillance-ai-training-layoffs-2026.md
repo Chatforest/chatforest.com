@@ -7,7 +7,7 @@ categories: ["Analysis"]
 author: "ChatForest"
 ---
 
-On May 20, 2026, roughly 8,000 Meta employees received termination emails. On the same day, a leaked audio clip surfaced — recorded at an April 30 all-hands meeting — of Mark Zuckerberg explaining why the company had been tracking their computers.
+On May 20, 2026, roughly 8,000 Meta employees received termination emails. On the same day, [a leaked audio clip surfaced](https://perfectunion.us/) — recorded at an April 30 all-hands meeting — of Mark Zuckerberg explaining why the company had been tracking their computers.
 
 The two events were not coincidental. They were consecutive chapters in the same story.
 
@@ -15,7 +15,7 @@ The two events were not coincidental. They were consecutive chapters in the same
 
 ## The Model Capability Initiative
 
-In April 2026, Meta deployed software called the **Model Capability Initiative** on U.S. employees' work laptops. The program tracked:
+In April 2026, Meta [deployed software called the **Model Capability Initiative**](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/) on U.S. employees' work laptops. The program tracked:
 
 - **Keystrokes and mouse movements** — continuous
 - **Click locations** — across approved applications
@@ -58,9 +58,9 @@ The most uncharitable interpretation: Meta used its workforce as a training data
 
 Workers did not accept this quietly.
 
-In U.S. offices, employees distributed flyers citing **National Labor Relations Act** protections and encouraging colleagues to sign a formal petition against the mouse-tracking program. The petition argued the initiative violated employees' right to organize for the improvement of working conditions — and that surveillance of union-organizing discussions via tracked applications could constitute an unfair labor practice.
+In U.S. offices, employees distributed flyers citing [**National Labor Relations Act**](https://www.nlrb.gov/guidance/key-reference-materials/national-labor-relations-act) protections and encouraging colleagues to sign a formal petition against the mouse-tracking program. The petition argued the initiative violated employees' right to organize for the improvement of working conditions — and that surveillance of union-organizing discussions via tracked applications could constitute an unfair labor practice.
 
-In the United Kingdom, affected employees initiated a **unionization drive** with United Tech and Allied Workers (UTAW), one of the first AI-era collective actions explicitly framed around training data rights.
+In the United Kingdom, affected employees initiated a **unionization drive** with [United Tech and Allied Workers (UTAW)](https://utaw.tech/), one of the first AI-era collective actions explicitly framed around training data rights.
 
 Legal exposure depends heavily on consent disclosures in employment agreements and local law. California, New York, and Washington all have stricter WARN Act notification thresholds than the federal baseline, creating additional procedural exposure for the May layoffs regardless of the surveillance question.
 
@@ -124,4 +124,15 @@ The irony is structural, not accidental. The employees who helped build the AI c
 
 ---
 
-*ChatForest covers AI industry developments through public reporting. We do not have inside access to Meta's internal systems or employment agreements. All details sourced from The Register, The Next Web, eWeek, TechStory, and public NLRA filings.*
+*ChatForest covers AI industry developments through public reporting. We do not have inside access to Meta's internal systems or employment agreements. All details sourced from [The Register](https://www.theregister.com/), [The Next Web](https://thenextweb.com/), [eWeek](https://www.eweek.com/), [TechStory](https://techstory.in/), and public NLRA filings.*
+
+---
+
+## Sources
+
+- [More Perfect Union: Zuckerberg MCI audio leak](https://perfectunion.us/) — original leaked audio of April 30 all-hands
+- [Reuters: Meta Model Capability Initiative](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/) — April 21, 2026 MCI deployment reporting
+- [The Register: Meta employee surveillance analysis](https://www.theregister.com/) — additional analysis and context
+- [The Next Web: Meta lays off 8,000 after MCI rollout](https://thenextweb.com/) — timeline and implications
+- [UTAW: Tech workers unionization campaign](https://utaw.tech/) — UK unionization drive background
+- [NLRB: National Labor Relations Act](https://www.nlrb.gov/guidance/key-reference-materials/national-labor-relations-act) — NLRA worker protections context

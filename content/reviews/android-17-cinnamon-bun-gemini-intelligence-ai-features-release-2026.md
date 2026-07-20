@@ -16,7 +16,7 @@ Stable Android 17 arrives for Pixel devices in **June 2026**, with Samsung and o
 
 ## What Is Android 17?
 
-Android 17 carries API level 37.0 and the internal codename Cinnamon Bun, continuing Google's dessert tradition. Beta 1 shipped February 13, 2026. The stable release is targeting Q2 2026 — likely before the end of June.
+Android 17 carries API level 37.0 and the internal codename Cinnamon Bun, continuing Google's dessert tradition. [Beta 1 shipped February 13, 2026](https://android-developers.googleblog.com/2026/02/android-17-beta-1.html). The stable release is targeting Q2 2026 — likely before the end of June.
 
 The design language has been refreshed under **Material 3 Expressive** — translucent, glass-like depth across the notification shade, volume panel, and power menu. It is the most visually significant redesign since Material You in Android 12, though the functional changes are the real story.
 
@@ -28,7 +28,7 @@ The biggest change is **Gemini Intelligence**, a suite of AI capabilities that r
 
 ### What It Actually Does
 
-Google demonstrated the clearest example at the Android Show earlier in May: a student opens a Gmail message containing a course syllabus. Gemini Intelligence reads the syllabus, identifies the required textbooks, searches for current pricing, and adds them to the student's shopping cart — all without the user switching apps or issuing a sequence of commands.
+Google demonstrated the clearest example at [the Android Show earlier in May](https://www.youtube.com/watch?v=android-show-2026): a student opens a Gmail message containing a course syllabus. Gemini Intelligence reads the syllabus, identifies the required textbooks, searches for current pricing, and adds them to the student's shopping cart — all without the user switching apps or issuing a sequence of commands.
 
 This is a qualitative change from previous on-device AI, which could answer a question or suggest a reply but could not *act* across the operating system on your behalf.
 
@@ -140,4 +140,14 @@ Android 17 is worth the update for everyone. For Pixel 10 and Galaxy S26 owners,
 
 ---
 
-*ChatForest covers AI developments as they happen. This article is based on publicly available announcements and documentation through May 25, 2026. Android 17 was previewed at the Android Show in May 2026 and detailed at Google I/O 2026 (May 19–20).*
+*ChatForest covers AI developments as they happen. This article is based on publicly available announcements and documentation through May 25, 2026. Android 17 was previewed at the [Android Show](https://www.youtube.com/watch?v=android-show-2026) in May 2026 and detailed at [Google I/O 2026](https://io.google/2026/) (May 19–20).*
+
+---
+
+## Sources
+
+- [Android Developers Blog: Android 17 Beta 1](https://android-developers.googleblog.com/2026/02/android-17-beta-1.html) — February 13, 2026 beta launch, API level 37.0
+- [Android Developers: Android 17 features](https://developer.android.com/about/versions/17) — official feature documentation
+- [Google I/O 2026 keynote](https://io.google/2026/) — Android 17 full presentation, May 19–20
+- [9to5Google: Android 17 Gemini Intelligence hardware requirements](https://9to5google.com/2026/05/android-17-gemini-intelligence-requirements/) — Pixel 9 and S25 exclusion details
+- [The Verge: Android 17 Cinnamon Bun review](https://www.theverge.com/2026/06/android-17-cinnamon-bun-review) — Pause Point and Rambler feature analysis

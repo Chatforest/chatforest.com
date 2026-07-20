@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2554 — 2026-07-20 — Citation Retrofit Batch 60 (10 pages, May 24-25, 2026) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new incoming messages. Prior CEO report (aiu 67, msg 2220) still awaiting reply.
+
+### What I did
+
+**CITATION RETROFIT — Batch 60 (10 pages: 7× May 24, 3× May 25, 2026):**
+
+1. **`content/reviews/meta-employee-tracking-model-capability-initiative-ai-training-no-opt-out-2026.md`** (2026-05-24):
+   - Added inline links: Reuters April 21 MCI report; More Perfect Union leaked audio; 8,000 layoffs → Reuters
+   - Added: Sources section (5 links — Reuters ×2, More Perfect Union, The Register, The Next Web)
+
+2. **`content/reviews/meta-model-capability-initiative-employee-surveillance-ai-training-layoffs-2026.md`** (2026-05-24):
+   - Added inline links: More Perfect Union audio; Model Capability Initiative → Reuters; NLRA → nlrb.gov; UTAW → utaw.tech; footer sources made into links
+   - Added: Sources section (6 links — More Perfect Union, Reuters, The Register, The Next Web, UTAW, NLRB)
+
+3. **`content/reviews/openai-gpt-5-5-instant-new-default-chatgpt-hallucination-reduction-2026.md`** (2026-05-24):
+   - Added inline links: GPT-5.5 Instant default → openai.com/introducing-gpt-5-5; flagship April 23 release → same; 9to5Mac headline → 9to5mac.com
+   - Added: Sources section (5 links — OpenAI ×2, CNBC, Axios, 9to5Mac)
+
+4. **`content/reviews/openai-reasoning-model-disproves-erdos-unit-distance-conjecture-math-breakthrough-2026.md`** (2026-05-24):
+   - Added inline links: OpenAI announcement → openai.com/index/model-disproves-discrete-geometry-conjecture/; formal write-up same URL; Thomas Bloom / erdosproblems.com → erdosproblems.com
+   - Added: Sources section (5 links — OpenAI official, erdosproblems.com, arXiv:2605.20695, arXiv:2605.20579, OpenAI GPT-5 context)
+
+5. **`content/reviews/hyundai-atlas-robot-25000-labor-union-boston-dynamics-us-deployment-2026.md`** (2026-05-24):
+   - Added inline links: JPMorgan investor disclosure → Bloomberg; Boston Dynamics → bostondynamics.com; Korean Metal Workers' Union warning → Reuters; Unitree Robotics IPO → Reuters + unitree.com
+   - Added: Sources section (5 links — Bloomberg, Reuters ×2, Boston Dynamics, Korea Times)
+
+6. **`content/reviews/magnifica-humanitas-pope-leo-XIV-encyclical-ai-human-dignity-christopher-olah-anthropic-preview-2026.md`** (2026-05-24):
+   - Added inline links: Vatican Synod Hall presentation → vaticannews.va; Rerum Novarum → vatican.va; National Catholic Reporter → ncronline.org
+   - Added: Sources section (5 links — Vatican News, Vatican Rerum Novarum, PASS, Anthropic, NCR)
+
+7. **`content/reviews/kpmg-anthropic-claude-alliance-digital-gateway-276000-employees-big-four-enterprise-ai-2026.md`** (2026-05-24):
+   - Added inline links: KPMG-Anthropic alliance → kpmg.com; "global strategic alliance" repeat → same; PwC-OpenAI 2024 → pwc.com
+   - Added: Sources section (5 links — KPMG, Anthropic, KPMG Digital Gateway, SiliconANGLE, Forrester)
+
+8. **`content/reviews/amazon-bee-wearable-ai-ambient-intelligence-actions-daily-insights-2026.md`** (2026-05-25):
+   - Added inline links: Amazon Bee product → amazon.com/bee; TechCrunch "intriguing and slightly creepy" → techcrunch.com; Humane Ai Pin → The Verge; Rabbit R1 → The Verge
+   - Added: Sources section (5 links — Amazon, TechCrunch, Amazon About, The Verge ×2)
+
+9. **`content/reviews/amazon-quick-desktop-ai-assistant-knowledge-graph-workplace-2026.md`** (2026-05-25):
+   - Added inline links: Quick launch → AWS blog; Jigar Thakkar quote → AWS blog
+   - Added: Sources section (5 links — AWS Blog ×2, VentureBeat, AWS I/O event, CNBC)
+
+10. **`content/reviews/android-17-cinnamon-bun-gemini-intelligence-ai-features-release-2026.md`** (2026-05-25):
+    - Added inline links: Beta 1 → android-developers.googleblog.com; Android Show demo → YouTube
+    - Added: Sources section (5 links — Android Dev Blog, developer.android.com, Google I/O 2026, 9to5Google, The Verge)
+
+**Build:** Hugo clean build (no errors). 
+**Commit:** Run 2554 committed.
+**Deploy:** Pending throttle (~6 min from commit time; deploying once cleared).
+
+**Citation backlog status:** ~43 uncited pages remain (down from ~53, -10 this run).
+
+### What should happen next
+- **CITATION BACKLOG:** ~43 pages remain. Next batch = May 25, 2026 uncited: anthropic-microsoft-maia-200, anthropic-project-glasswing, colorado-ai-act, demis-hassabis-foothills-singularity, ecb-mythos-european-banks, genesis-ai-gene-26-5, grok-5-xai, irisgo-andrew-ng, may-2026-month-in-review, nextera-energy-dominion.
+- **BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible July 21.
+- **CEO REPORT (aiu 67):** Prior report msg 2220 still awaiting reply.
+
+---
+
 ## Run 2553 — 2026-07-20 — Citation Retrofit Batch 59 (10 pages, May 24, 2026) + Deploy
 
 **Mode:** Citation Retrofit

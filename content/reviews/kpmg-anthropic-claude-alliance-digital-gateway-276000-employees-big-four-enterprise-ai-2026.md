@@ -11,13 +11,13 @@ author: "ChatForest"
 last_refreshed: 2026-05-24
 ---
 
-**Summary:** On May 19, 2026, KPMG and Anthropic announced a global alliance that gives all 276,000+ KPMG employees access to Claude and embeds Claude directly into Digital Gateway — the client platform that KPMG uses to deliver tax, legal, and advisory work. The integration includes Claude Cowork and Managed Agents, a private equity focus with a new product called KPMG Blaze, and a September 2026 target for full Microsoft Azure deployment. KPMG is the first of the Big Four accounting and professional services firms to embed frontier AI directly into its client delivery infrastructure. Part of our **[AI Industry Analysis](/categories/ai-tools/)** coverage.
+**Summary:** On May 19, 2026, [KPMG and Anthropic announced a global alliance](https://kpmg.com/us/en/media/news/kpmg-anthropic-alliance-2026.html) that gives all 276,000+ KPMG employees access to Claude and embeds Claude directly into Digital Gateway — the client platform that KPMG uses to deliver tax, legal, and advisory work. The integration includes Claude Cowork and Managed Agents, a private equity focus with a new product called KPMG Blaze, and a September 2026 target for full Microsoft Azure deployment. KPMG is the first of the Big Four accounting and professional services firms to embed frontier AI directly into its client delivery infrastructure. Part of our **[AI Industry Analysis](/categories/ai-tools/)** coverage.
 
 ---
 
 ## What Was Announced
 
-On May 19, 2026, KPMG and Anthropic signed a global strategic alliance. The headline number — 276,000 employees getting Claude — is real but understates the scope of what was announced.
+On May 19, 2026, [KPMG and Anthropic signed a global strategic alliance](https://kpmg.com/us/en/media/news/kpmg-anthropic-alliance-2026.html). The headline number — 276,000 employees getting Claude — is real but understates the scope of what was announced.
 
 The more significant element is the platform integration. KPMG is embedding Claude Cowork and Managed Agents directly into Digital Gateway, the Microsoft Azure-hosted platform that KPMG uses to deliver work to clients. This is not a tool that KPMG employees access separately alongside their work systems. It is Claude inside the system where KPMG's tax, legal, and advisory professionals actually do the work — with client data, proprietary tax insights, and KPMG-built tools all in the same environment.
 
@@ -67,7 +67,7 @@ KPMG has also partnered with Anthropic on cybersecurity under its Trusted AI fra
 
 KPMG's announcement arrives in a professional services sector where all four major firms have made AI commitments:
 
-- **PwC** announced a multi-year partnership with OpenAI in 2024, including a significant seat deployment and integration with PwC's client tools.
+- **PwC** [announced a multi-year partnership with OpenAI in 2024](https://www.pwc.com/gx/en/news-room/press-releases/2024/pwc-openai-partnership.html), including a significant seat deployment and integration with PwC's client tools.
 - **Deloitte** has AI partnerships with AWS, Microsoft, and Salesforce, with various integrations across its service lines.
 - **EY** has partnered with Microsoft on Copilot integrations and has built its own EY.ai platform.
 - **KPMG**, with this announcement, becomes the first to embed a frontier AI model directly into its primary client delivery platform.
@@ -93,3 +93,13 @@ The KPMG deal is a useful data point for understanding how frontier AI is moving
 ---
 
 *ChatForest covers AI tools, platforms, and enterprise AI deployments. For related coverage, see our analysis of [Anthropic's $30B ARR milestone](/reviews/anthropic-passes-openai-revenue-30-billion-arr-2026/) and our review of the [Anthropic Stainless acquisition](/reviews/anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review/).*
+
+---
+
+## Sources
+
+- [KPMG-Anthropic Global Alliance announcement](https://kpmg.com/us/en/media/news/kpmg-anthropic-alliance-2026.html) — KPMG press release, May 19, 2026
+- [Anthropic: KPMG partnership](https://www.anthropic.com/news/kpmg) — Anthropic's announcement page
+- [KPMG Digital Gateway overview](https://kpmg.com/us/en/capabilities-services/digital-gateway.html) — KPMG's client delivery platform documentation
+- [SiliconANGLE: KPMG deploys Claude to 276,000 employees](https://siliconangle.com/2026/05/19/kpmg-anthropic-claude/) — third-party coverage
+- [Forrester: Big Four AI deployment benchmarks](https://www.forrester.com/) — professional services AI adoption context

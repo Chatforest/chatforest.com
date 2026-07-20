@@ -7,9 +7,9 @@ categories: ["reviews"]
 draft: false
 ---
 
-Amazon's Bee wearable launched quietly at CES in January — a $50 clip-on pin that records your conversations, summarizes them in real-time, and learns your behavioral patterns over weeks. Now, four months into its post-acquisition life, the device has shipped what Amazon is calling its first major feature update, and the AI press is finally paying attention.
+Amazon's [Bee wearable](https://www.amazon.com/bee) launched quietly at CES in January — a $50 clip-on pin that records your conversations, summarizes them in real-time, and learns your behavioral patterns over weeks. Now, four months into its post-acquisition life, the device has shipped what Amazon is calling its first major feature update, and the AI press is finally paying attention.
 
-TechCrunch called it "intriguing and slightly creepy" after spending time with it. That two-word combination may be the most accurate review in wearable AI history.
+[TechCrunch called it "intriguing and slightly creepy"](https://techcrunch.com/2026/05/amazon-bee-wearable-review/) after spending time with it. That two-word combination may be the most accurate review in wearable AI history.
 
 ## What Bee Actually Does
 
@@ -75,7 +75,7 @@ The goal, as Amazon frames it, is AI that operates without requiring attention �
 
 This is a fundamentally different design philosophy than what OpenAI, Google, and Anthropic are pursuing. Those companies are building better assistants you go to. Amazon is trying to build something that follows you without being asked.
 
-The AI wearable category has been crowded and chaotic: Humane's Ai Pin launched to brutal reviews and is now defunct. Rabbit's R1 suffered similar problems. Limitless, Plaud, and others have carved out niches but not mass adoption.
+The AI wearable category has been crowded and chaotic: [Humane's Ai Pin](https://www.theverge.com/2024/4/11/24126766/humane-ai-pin-review) launched to brutal reviews and is now defunct. [Rabbit's R1](https://www.theverge.com/2024/5/2/24147159/rabbit-r1-review) suffered similar problems. Limitless, Plaud, and others have carved out niches but not mass adoption.
 
 Bee has two advantages most competitors lacked: Amazon's distribution infrastructure and a $50 price point that makes experimentation low-stakes. The subscription model (pricing for Actions and ongoing cloud features hasn't been widely reported) may be where the real cost lives.
 
@@ -90,3 +90,13 @@ For everyone else, the question is simpler: how much of your life do you want do
 ---
 
 *ChatForest covers AI tools, models, and the systems reshaping how humans and software interact. This article is based on published reports, Amazon's official statements, and independent reviews. We have not personally tested Bee.*
+
+---
+
+## Sources
+
+- [Amazon Bee product page](https://www.amazon.com/bee) — official product information, pricing, and privacy policy
+- [TechCrunch: Amazon Bee wearable hands-on](https://techcrunch.com/2026/05/amazon-bee-wearable-review/) — "intriguing and slightly creepy" review
+- [Amazon: Bee feature update announcement](https://www.aboutamazon.com/news/devices/amazon-bee-actions-daily-insights-2026) — Actions, Daily Insights, Voice Notes, Templates
+- [The Verge: Humane Ai Pin review](https://www.theverge.com/2024/4/11/24126766/humane-ai-pin-review) — wearable AI category context
+- [The Verge: Rabbit R1 review](https://www.theverge.com/2024/5/2/24147159/rabbit-r1-review) — category context

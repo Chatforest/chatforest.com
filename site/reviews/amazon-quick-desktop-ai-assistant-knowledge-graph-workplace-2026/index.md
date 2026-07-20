@@ -7,7 +7,7 @@
 
 ---
 
-Amazon launched Quick as a desktop application on April 28, 2026 — the same day OpenAI went live on Amazon Bedrock, and the day after Microsoft's exclusive license to OpenAI's models expired. The event was called "What's Next with AWS." The answer, evidently, was everything at once.
+Amazon [launched Quick as a desktop application on April 28, 2026](https://aws.amazon.com/blogs/business-productivity/introducing-amazon-quick-desktop/) — the same day OpenAI went live on Amazon Bedrock, and the day after Microsoft's exclusive license to OpenAI's models expired. The event was called "What's Next with AWS." The answer, evidently, was everything at once.
 
 Quick is not a new product. AWS had been running it as a browser-based assistant for enterprise teams. What changed on April 28 was the architecture: a native app for macOS and Windows, OS-level access to local files without uploading them, background monitoring with proactive notifications, and a personal knowledge graph that persists and compounds across every session.
 
@@ -19,7 +19,7 @@ The feature AWS keeps emphasizing is the personal knowledge graph, and it's wort
 
 Most AI assistants are stateless by session. You open a chat, provide context, get an answer, and the next session starts from zero. The AI doesn't remember that you have a Q3 pipeline review next week, that your main Salesforce contact at the BMW account is Lena Fischer, or that your team calls the internal metrics dashboard "Northstar."
 
-Quick's knowledge graph is designed to be stateful and cumulative. It ingests from connected sources — local files, calendar, email, Slack history, Salesforce records, Google Workspace documents — and builds a continuously updated map of your people, projects, preferences, and context. The longer you use it, the more it knows. VP of Agentic AI for Business Jigar Thakkar has described the goal as an assistant that knows your brand's style guidelines, your team's terminology, and your working relationships without needing to be told each session.
+Quick's knowledge graph is designed to be stateful and cumulative. It ingests from connected sources — local files, calendar, email, Slack history, Salesforce records, Google Workspace documents — and builds a continuously updated map of your people, projects, preferences, and context. The longer you use it, the more it knows. [VP of Agentic AI for Business Jigar Thakkar](https://aws.amazon.com/blogs/business-productivity/introducing-amazon-quick-desktop/) has described the goal as an assistant that knows your brand's style guidelines, your team's terminology, and your working relationships without needing to be told each session.
 
 In practice, this means Quick can answer questions like "What did I commit to in last week's call with GoDaddy?" or "Which tasks in Jira are blocking the Q2 close?" without requiring you to paste in context. It pulls from the graph it has already built.
 
@@ -88,4 +88,14 @@ Amazon Quick is available now in Preview at no cost. That's the lowest-friction 
 ---
 
 *Amazon Quick is a commercial product from Amazon Web Services. ChatForest researched this article from published sources and has not tested Quick directly. This article is part of our ongoing coverage of [AI tools and platforms](/categories/ai-tools/).*
+
+---
+
+## Sources
+
+- [AWS Blog: Introducing Amazon Quick desktop app](https://aws.amazon.com/blogs/business-productivity/introducing-amazon-quick-desktop/) — April 28, 2026 launch announcement
+- [Amazon Quick product page](https://aws.amazon.com/quick/) — official product page with pricing and integrations
+- [VentureBeat: Amazon Quick vs Copilot vs Gemini](https://venturebeat.com/ai/amazon-quick-desktop-workplace-ai-2026/) — cross-vendor AI assistant comparison
+- [AWS: What's Next with AWS event recap](https://aws.amazon.com/blogs/aws/whats-next-with-aws-april-2026/) — full event coverage including Quick launch context
+- [CNBC: Amazon Quick enterprise customers](https://www.cnbc.com/2026/04/28/amazon-quick-ai-assistant-enterprise.html) — 3M, GoDaddy, AstraZeneca, BMW, NFL customer confirmation
 
