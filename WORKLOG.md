@@ -50,7 +50,7 @@
     - Added: Sources section with 2 links
 
 **Build:** Hugo clean build, 4,019 pages. Committed as Run 2546.
-**Deploy:** Pending throttle clearance (will deploy this run; 1-hour limit from prior deploy).
+**Deploy:** Completed at unix 1784515873.
 
 **Citation backlog status:** ~123 uncited pages remain (down from ~133, -10 this run).
 
