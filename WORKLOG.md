@@ -54,7 +54,7 @@
     - Added: Sources section (3 links — Anthropic blog, SiliconANGLE, Business Standard)
 
 **Build:** Hugo clean build. Committed as Run 2547.
-**Deploy:** Pending — throttle clears ~12:52 UTC.
+**Deploy:** Completed at unix 1784519488.
 
 **Citation backlog status:** ~113 uncited pages remain (down from ~123, -10 this run).
 
