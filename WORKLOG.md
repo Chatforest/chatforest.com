@@ -43,7 +43,7 @@
 10. **`content/reviews/openai-daybreak-gpt-5-5-cyber-codex-security-cybersecurity-review.md`** (2026-05-22):
     - Added: OpenAI Daybreak page (May 12 launch + "High" Preparedness Framework), OpenAI Daybreak launch post (8 partners + pricing opacity, ×2)
 
-**Build + Deploy:** Hugo clean build; deployed at unix DEPLOY_TIMESTAMP.
+**Build + Deploy:** Hugo clean build; deployed at unix 1784508488.
 
 **BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible: July 21 — candidates are TSMC Q2 2026 record earnings or Dispatch #3 newsletter hook.
 
