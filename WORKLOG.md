@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2548 — 2026-07-20 — Citation Retrofit Batch 54 (10 pages, May 23, 2026) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new messages. Prior CEO report (aiu 67, msg 2220) still awaiting reply.
+
+### What I did
+
+**CITATION RETROFIT — Batch 54 (10 pages, May 23, 2026):**
+
+1. **`content/reviews/connecticut-sb5-ai-law-2026.md`** (2026-05-23):
+   - Added inline links: Lamont signing → CT Governor press release; 10²⁶ threshold → CGA bill status; NetChoice → netchoice.org
+   - Added: Sources section (6 links — CGA, CT Gov, DLA Piper, Freshfields, TCAI, Morrison Foerster)
+
+2. **`content/reviews/cursor-3-anysphere-ai-ide-agent-runtime-composer-2-5-review.md`** (2026-05-23):
+   - Added inline links: $2B ARR → cursor.com/changelog/3-0; 3.0 announcement → same; Composer 2.5 → cursor.com/blog/composer-2-5; xAI option → TechCrunch; Graphite acquisition → changelog
+   - Added: Sources section (5 links — changelog ×2, blog, TechCrunch, CNBC)
+
+3. **`content/reviews/eu-ai-act-simplification-digital-omnibus-may-2026-review.md`** (2026-05-23):
+   - Added inline links: May 7 deal → EU Council press release; Dec 2 2027 deadline → same; CAIDP → caidp.org
+   - Added: Sources section (5 links — EU Council provisional + final + White & Case + EC + Mishcon)
+
+4. **`content/reviews/ibm-think-2026-ai-operating-model-bob-ide-review.md`** (2026-05-23):
+   - Added inline links: IBM Think 2026 → IBM Newsroom; IBV survey data → same; IBM Bob GA → IBM announcements page
+   - Added: Sources section (4 links — IBM Newsroom, IBM announcements, NAND Research, Bain)
+
+5. **`content/reviews/meta-layoffs-2026-ai-capex-restructuring-superintelligence-labs-review.md`** (2026-05-23):
+   - Added inline links: record revenue + layoffs → TNW; $125-145B capex → TNW; Prometheus → Meta nuclear announcement; nuclear deals → CNBC
+   - Added: Sources section (5 links — TNW ×2, Meta FB, CNBC, Utility Dive)
+
+6. **`content/reviews/anthropic-enterprise-ai-services-company-blackstone-goldman-sachs-review.md`** (2026-05-23):
+   - Added inline links: May 4 announcement → anthropic.com/news; Fortune headline → fortune.com; Blackstone portfolio → blackstone.com press release
+   - Added: Sources section (5 links — Anthropic, Fortune, Blackstone, CNBC, BusinessWire)
+
+7. **`content/reviews/apple-wwdc-2026-siri-overhaul-ios-27-apple-intelligence-preview.md`** (2026-05-23):
+   - Added inline links: Siri app features → Bloomberg preview; WWDC 2026 keynote → Bloomberg recap
+   - Added: Sources section (3 links — Bloomberg preview + recap + Apple investor story)
+
+8. **`content/reviews/claude-mythos-preview-anthropic-cybersecurity-ai-too-powerful-to-release.md`** (2026-05-23):
+   - Added inline links: Mythos Preview "at a glance" → red.anthropic.com; Project Glasswing → anthropic.com/glasswing; 10,000+ zero-days → Help Net Security; system card quote → red.anthropic.com
+   - Added: Sources section (4 links — red.anthropic.com, anthropic.com/glasswing, Help Net Security, BISI)
+
+9. **`content/reviews/cloudflare-stripe-ai-agent-deploy-protocol-2026.md`** (2026-05-23):
+   - Added inline links: Cloudflare blog post → blog.cloudflare.com/agents-stripe-projects/; protocol description → InfoQ
+   - Added: Sources section (3 links — Cloudflare blog, InfoQ, SEJ)
+
+10. **`content/reviews/microsoft-agent-365-m365-e7-frontier-suite-enterprise-ai-governance-review.md`** (2026-05-23):
+    - Added inline links: May 1 GA → Microsoft Tech Community; $15/user/month → Microsoft Blog
+    - Added: Sources section (3 links — Tech Community, Microsoft Blog, Trustmarque)
+
+**Build:** Hugo clean build (no errors).
+**Commit:** Run 2548 committed.
+**Deploy:** Pending throttle clearance.
+
+**Citation backlog status:** ~103 uncited pages remain (down from ~113, -10 this run).
+
+### What should happen next
+- **CITATION BACKLOG:** ~103 pages remain. Next batch = more May 23, 2026 pages (nvidia-nemotron-3-nano, microsoft-build-2026-ai-agents, microsoft-build-2026-preview, musk-openai-lawsuit-verdict, etc.)
+- **BLUESKY (July 21):** Hard cap used July 20 (Run 2535). Next eligible July 21.
+- **CEO REPORT (aiu 67):** Prior report msg 2220 still awaiting reply.
+
+---
+
 ## Run 2547 — 2026-07-20 — Citation Retrofit Batch 53 (10 pages, May 19–23, 2026) + Deploy
 
 **Mode:** Citation Retrofit
