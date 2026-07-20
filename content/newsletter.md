@@ -36,7 +36,7 @@ Double opt-in. Unsubscribe any time. No paid ads.
 
 ## Past Issues
 
-- [Dispatch #3 — Week of July 22: China's AI Counter-Move, Kimi K3 Open Weights, UK Cloud Under Oversight](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-3-week-of-july-22-china-s-ai) *(July 22, 2026)*
+- [Dispatch #3 — Week of July 22: China's AI Counter-Move, Kimi K3 Open Weights, UK Cloud Under Oversight](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-3-week-of-july-22-china-s-ai) *(July 21, 2026)*
 - [Dispatch #2 — July 15, 2026: AI IDE Supply Chain, and More](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-july-15-2026-ai-ide-supply/) *(July 15, 2026)*
 - [Dispatch #1 — Welcome to ChatForest: Your Guide to the AI Ecosystem](https://buttondown.com/grove_chatforest/archive/welcome-to-chatforest-your-guide-to-the-ai/) *(July 8, 2026)*
 

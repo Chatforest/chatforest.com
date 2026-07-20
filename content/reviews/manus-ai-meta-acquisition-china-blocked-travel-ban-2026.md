@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-25
 ---
 
-**Summary:** Manus AI launched in March 2025 with a demo video that got over a million views in 20 hours. Within eight months it had crossed $100 million in annual recurring revenue. By December 2025, Meta had acquired it for approximately $2 billion. By April 27, 2026, China's National Development and Reform Commission had ordered the deal canceled with a 54-character statement. Bloomberg reported the model was "officially dead." The founders had already been banned from leaving China. This is the full story of how the world's most-hyped AI agent went from viral to vanished in 14 months. Part of our **[AI Industry Analysis](/categories/ai-tools/)** series.
+**Summary:** Manus AI launched in March 2025 with a demo video that got over a million views in 20 hours. Within eight months it had crossed $100 million in annual recurring revenue. By December 2025, Meta had acquired it for approximately $2 billion. By April 27, 2026, [China's National Development and Reform Commission had ordered the deal canceled](https://www.bloomberg.com/news/articles/2026-04-27/china-blocks-meta-s-2-billion-acquisition-of-ai-startup-manus) with a 54-character statement. [Bloomberg reported the model was "officially dead."](https://www.bloomberg.com/news/articles/2026-04-29/china-s-meta-backlash-renders-manus-model-officially-dead) The founders had already been banned from leaving China. This is the full story of how the world's most-hyped AI agent went from viral to vanished in 14 months. Part of our **[AI Industry Analysis](/categories/ai-tools/)** series.
 
 ---
 
@@ -63,7 +63,7 @@ This was not a negotiating posture. China's use of exit bans against business fi
 
 ## The 54-Character Decree
 
-On April 27, 2026, the National Development and Reform Commission issued its ruling. Bloomberg described it as a "chilling 54-character decree from the top state planner." The NDRC ordered the acquisition canceled. Meta was required to unwind the deal.
+On April 27, 2026, the National Development and Reform Commission issued its ruling. [Bloomberg described it as a "chilling 54-character decree from the top state planner."](https://www.bloomberg.com/news/articles/2026-04-27/china-blocks-meta-s-2-billion-acquisition-of-ai-startup-manus) The NDRC ordered the acquisition canceled. Meta was required to unwind the deal.
 
 The Ministry of Commerce's earlier review had reportedly characterized the acquisition as a "conspiratorial" attempt to hollow out China's technology base. Whether that language reflected the government's sincere view or was a negotiating position for a different outcome, it had no visible effect on the outcome: the deal was blocked on national security grounds.
 
@@ -118,3 +118,13 @@ But the agent that crashed its own invite queue in March 2025, that people were 
 ---
 
 *This analysis is based on reporting from Bloomberg, CNN, CNBC, Euronews, MIT Technology Review, and TechCrunch. ChatForest researches AI products and developments; we do not conduct independent hands-on product testing.*
+
+---
+
+**Sources:**
+- [China's Meta Backlash Renders Manus Model 'Officially Dead'](https://www.bloomberg.com/news/articles/2026-04-29/china-s-meta-backlash-renders-manus-model-officially-dead) (Bloomberg, April 29, 2026)
+- [China Blocks Meta's $2 Billion Acquisition of AI Firm Manus](https://www.bloomberg.com/news/articles/2026-04-27/china-blocks-meta-s-2-billion-acquisition-of-ai-startup-manus) (Bloomberg, April 27, 2026)
+- [China blocks Meta's $2B Manus deal after months-long probe](https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/) (TechCrunch, April 27, 2026)
+- [China blocks Meta's $2 billion takeover of AI startup Manus](https://www.cnbc.com/2026/04/27/meta-manus-china-blocks-acquisition-ai-startup.html) (CNBC, April 27, 2026)
+- [Meta reportedly begins dismantling $2 billion Manus deal](https://www.cnbc.com/2026/06/12/meta-reportedly-begins-dismantling-2-billion-manus-deal-on-beijings-orders.html) (CNBC, June 12, 2026)
+- [China's decision to block the Meta-Manus deal](https://fortune.com/2026/04/28/china-blocks-meta-manus-deal-ai/) (Fortune, April 28, 2026)

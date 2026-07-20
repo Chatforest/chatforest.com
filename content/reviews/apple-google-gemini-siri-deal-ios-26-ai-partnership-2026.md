@@ -10,13 +10,13 @@ rating: 0
 author: "ChatForest"
 ---
 
-**At a glance:** On January 12, 2026, Apple announced a multi-year deal — reported at approximately $1 billion per year — giving Siri access to a custom 1.2-trillion-parameter Google Gemini model. Phase 1 is rolling out now in iOS 26.4. Phase 2 arrives with iOS 27 this fall. The deal puts Gemini on 1.5 billion Apple devices. It also landed squarely in the middle of an active DOJ antitrust case against Google — and a April 14 remedies order that explicitly bans exclusive AI distribution agreements.
+**At a glance:** On January 12, 2026, Apple [announced a multi-year deal](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html) — reported at approximately [$1 billion per year](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/) — giving Siri access to a custom 1.2-trillion-parameter Google Gemini model. Phase 1 is rolling out now in iOS 26.4. Phase 2 arrives with iOS 27 this fall. The deal puts Gemini on 1.5 billion Apple devices. It also landed squarely in the middle of an [active DOJ antitrust case against Google](https://en.wikipedia.org/wiki/United_States_v._Google_LLC_(2023)) — and a April 14 remedies order that explicitly bans exclusive AI distribution agreements.
 
 ---
 
 Apple has spent years insisting that Siri's limitations were a feature, not a bug — that on-device processing and privacy-first design were worth the trade-off in capability. In January 2026, Apple quietly abandoned that position.
 
-The announcement was framed as a partnership. In practice, it is an admission: Google builds better AI, Apple builds better hardware and distribution, and the two companies have agreed to split the value that results. The deal is reportedly worth approximately $1 billion per year to Google — making it the largest AI distribution contract ever signed.
+The announcement was framed as a partnership. In practice, it is an admission: Google builds better AI, Apple builds better hardware and distribution, and the two companies have agreed to split the value that results. The deal is reportedly worth approximately [$1 billion per year to Google](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/) — making it the largest AI distribution contract ever signed.
 
 But the timing is extraordinary. The deal was announced while Google is under an active Department of Justice antitrust suit. And on April 14, 2026, the U.S. District Court for the District of Columbia issued a formal remedies order that explicitly prohibits Google from entering exclusive contracts for Gemini distribution. Whether the Apple deal complies — or whether it becomes the next legal battlefield — is an open question.
 
@@ -70,7 +70,7 @@ The deal's legal situation is complicated in ways neither company has fully addr
 
 Google is currently under active antitrust remedies following a 2024 federal court ruling that its search distribution deals — including the $38 billion it paid Apple to remain the default search engine on iOS — constituted illegal maintenance of a search monopoly.
 
-On April 14, 2026, Judge Amit Mehta issued his formal remedies order. It prohibits Google from entering exclusive distribution contracts for Google Search, Chrome, Google Assistant, and Gemini. It also mandates data-sharing with rivals. The DOJ has pushed for these remedies specifically to prevent Google from replicating its search monopoly playbook in AI.
+On April 14, 2026, Judge Amit Mehta issued his formal remedies order. It [prohibits Google from entering exclusive distribution contracts](https://www.theantitrustattorney.com/apples-gemini-siri-deal-is-the-next-microsoft-antitrust-case-not-the-next-app-store-fight/) for Google Search, Chrome, Google Assistant, and Gemini. It also mandates data-sharing with rivals. The DOJ has pushed for these remedies specifically to prevent Google from replicating its search monopoly playbook in AI.
 
 The Apple Gemini deal was announced January 12 — three months before the remedies order. Whether it was structured to comply, whether it will be challenged under the new order, or whether it will need to be renegotiated is not yet clear. Bloomberg Law described it as "Antitrust Catch-22" — a deal that makes competitive sense for both parties but creates exactly the kind of market concentration regulators are trying to prevent.
 
@@ -101,3 +101,13 @@ Whether regulators treat that as the natural evolution of a partnership or as th
 ---
 
 *ChatForest covers AI tools, platforms, and industry developments. This article is based on published reporting and public disclosures as of May 2026.*
+
+---
+
+**Sources:**
+- [Apple picks Google's Gemini to run AI-powered Siri](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html) (CNBC, January 12, 2026)
+- [Google's Gemini to power Apple's AI features like Siri](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/) (TechCrunch, January 12, 2026)
+- [Apple taps Google Gemini to power AI features in multiyear deal](https://www.marketingdive.com/news/apple-taps-google-gemini-to-power-ai-features-in-multiyear-deal/809697/) (Marketing Dive, January 2026)
+- [United States v. Google LLC (2023)](https://en.wikipedia.org/wiki/United_States_v._Google_LLC_(2023)) (Wikipedia — August 2024 antitrust ruling)
+- [Apple's Gemini-Siri Deal Is the Next Microsoft Antitrust Case](https://www.theantitrustattorney.com/apples-gemini-siri-deal-is-the-next-microsoft-antitrust-case-not-the-next-app-store-fight/) (The Antitrust Attorney Blog, May 2026)
+- [Hey, Siri. Isn't the Apple-Google Deal Exactly What Judge Mehta's Opinion Was About?](https://www.lexology.com/library/detail.aspx?g=b6a7cf2c-9664-43a6-b9a1-b28d0c1efe4f) (Lexology / Mogin Law, 2026)

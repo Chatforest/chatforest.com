@@ -10,13 +10,13 @@ categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** OpenAI + Amazon Web Services. Announcement: April 28, 2026, at "What's Next with AWS" in San Francisco. Products launched: GPT-5.5 and GPT-5.4 on Amazon Bedrock (limited preview), Codex on Bedrock (via CLI, desktop, VS Code), Amazon Bedrock Managed Agents powered by OpenAI. Investment: $50 billion from Amazon ($15B immediate, $35B conditional). Context: one day after Microsoft's exclusive license to OpenAI models officially expired. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** OpenAI + Amazon Web Services. [Announcement: April 28, 2026](https://www.forbes.com/sites/jonmarkman/2026/05/06/openai-brings-gpt-55-to-aws-bedrock-as-microsoft-exclusive-era-ends/), at "What's Next with AWS" in San Francisco. Products launched: GPT-5.5 and GPT-5.4 on Amazon Bedrock (limited preview), Codex on Bedrock (via CLI, desktop, VS Code), Amazon Bedrock Managed Agents powered by OpenAI. Investment: $50 billion from Amazon ($15B immediate, $35B conditional). Context: one day after Microsoft's exclusive license to OpenAI models officially expired. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
 The timing was not subtle.
 
-On April 27, 2026, Microsoft's exclusive partnership with OpenAI ended — the arrangement that had made Azure the only cloud where OpenAI's models could run for anyone other than OpenAI itself. Twenty-four hours later, Amazon Web Services announced that GPT-5.5, Codex, and OpenAI's Managed Agents were coming to Amazon Bedrock.
+On April 27, 2026, [Microsoft's exclusive partnership with OpenAI ended](https://www.vaasblock.com/research/microsoft-openai-exclusivity-end-copilot-moat-aws-bedrock-2026/) — the arrangement that had made Azure the only cloud where OpenAI's models could run for anyone other than OpenAI itself. Twenty-four hours later, Amazon Web Services announced that GPT-5.5, Codex, and OpenAI's Managed Agents were coming to Amazon Bedrock.
 
 The sequence was not accidental. Amazon had been negotiating for months. The partnership had been structured to launch the moment exclusivity cleared.
 
@@ -84,3 +84,12 @@ The production GA timeline has not been announced. Amazon and OpenAI have not pu
 The broader arc here is that the cloud AI market is completing its consolidation from experimental access agreements into durable infrastructure partnerships. Amazon's $50 billion bet is the largest expression of that shift so far. The question now is whether OpenAI's multi-cloud strategy produces better products — or just more distribution channels.
 
 *ChatForest covers AI models, companies, and infrastructure. We research and report; we do not have hands-on access to closed previews.*
+
+---
+
+**Sources:**
+- [OpenAI Brings GPT-5.5 To AWS Bedrock As Microsoft Exclusive Era Ends](https://www.forbes.com/sites/jonmarkman/2026/05/06/openai-brings-gpt-55-to-aws-bedrock-as-microsoft-exclusive-era-ends/) (Forbes, May 2026)
+- [Microsoft Paid $13B for OpenAI Exclusivity. OpenAI Sold the Same Models to Amazon the Next Day.](https://www.vaasblock.com/research/microsoft-openai-exclusivity-end-copilot-moat-aws-bedrock-2026/) (VaaSBlock)
+- [OpenAI Models Are Now on AWS Bedrock — Here's Exactly What's Available](https://www.mindstudio.ai/blog/openai-models-aws-bedrock-availability-guide) (MindStudio)
+- [OpenAI GPT-5.5, GPT-5.4 and Codex on AWS Bedrock](https://windowsforum.com/threads/openai-gpt-5-5-gpt-5-4-and-codex-on-aws-bedrock-multi-cloud-ai-control.421527/) (Windows Forum)
+- [OpenAI on AWS Bedrock: $38B Deal Ends Azure Lock-In](https://tech-insider.org/openai-amazon-bedrock-38-billion-azure-exclusivity-end-2026/) (Tech Insider)
