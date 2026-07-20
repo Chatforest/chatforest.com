@@ -7,7 +7,7 @@ tags: ["grok", "xai", "spacexai", "llm-review", "frontier-models", "ai-industry"
 
 Grok 5 was supposed to arrive in Q1 2026. Then Q2. As of late May, it is still training.
 
-That is not, on its face, unusual. Frontier AI labs routinely miss internal timelines. What makes the Grok 5 situation notable is the infrastructure behind the delay: xAI is training Grok 5 on Colossus 2, the world's first gigawatt-scale AI training supercluster, a facility in Memphis, Tennessee that crossed the 1 gigawatt threshold in January 2026 and is targeting 1.5 gigawatts of continuous power draw by mid-year.
+That is not, on its face, unusual. Frontier AI labs routinely miss internal timelines. What makes the Grok 5 situation notable is the infrastructure behind the delay: [xAI is training Grok 5 on Colossus 2](https://www.ainewslab.org/en/article/grok-5-6t-parameters), the world's first gigawatt-scale AI training supercluster, a facility in Memphis, Tennessee that crossed the 1 gigawatt threshold in January 2026 and is targeting 1.5 gigawatts of continuous power draw by mid-year.
 
 To put that in context: a gigawatt is roughly the output of a commercial nuclear reactor. Most data centers run on tens or hundreds of megawatts. The Colossus 2 facility is operating at a scale that has never been attempted before. Whatever Grok 5 turns out to be, its origin story starts with the largest, most power-intensive AI training infrastructure ever built.
 
@@ -82,3 +82,13 @@ This information vacuum is notable for a company with Musk's profile — he typi
 ---
 
 *This article will be updated when Grok 5 officially launches. ChatForest researches AI models through public sources, reporting, and benchmark results — we do not have API access to pre-release models.*
+
+---
+
+## Sources
+
+- [xAI Teases Grok 5 With 6 Trillion Parameters — Trained on the World's First Gigawatt AI Cluster — AI News Lab](https://www.ainewslab.org/en/article/grok-5-6t-parameters)
+- [Grok 5 Is Still Being Trained on Colossus 2, and the Wait May Reshape Frontier AI — Adwait X](https://www.adwaitx.com/grok-5-release-date-colossus-2-training/)
+- [Grok 5 Complete Guide: Release Date, 6T Parameters, Colossus 2 & xAI's AGI Ambitions — ZBuild](https://www.zbuild.io/resources/news/grok-5-release-date-6t-parameters-agi-xai-complete-guide-2026)
+- [DeepSeek V4, GPT-5.5, Grok 5: Q2 2026 AI Preview — Digital Applied](https://www.digitalapplied.com/blog/deepseek-v4-gpt-5-5-grok-5-ai-models-q2-2026)
+- [SpaceX SPCX IPO S-1 Full Teardown: $1.75 Trillion Valuation, Starlink, xAI, and the Anthropic Deal — The VC Corner](https://www.thevccorner.com/p/spacex-spcx-ipo-s1-teardown-valuation-2026)

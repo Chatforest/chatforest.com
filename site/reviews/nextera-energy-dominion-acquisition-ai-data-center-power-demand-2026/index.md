@@ -17,7 +17,7 @@ He is describing AI.
 
 Training a frontier AI model — the kind OpenAI, Anthropic, Google, and Meta are building — requires more electricity than most mid-sized cities consume in a day. Running that model at inference scale, serving millions of queries per second, requires sustained power at a scale utilities have never been designed to handle. Data centers are no longer edge cases in the power grid. They are becoming its primary load.
 
-The $66.8 billion deal NextEra announced on May 18, 2026, is the financial expression of that fact.
+The [$66.8 billion deal NextEra announced on May 18, 2026](https://www.forbes.com/sites/tylerroush/2026/05/18/nextera-will-buy-dominion-energy-for-67-billion-as-ai-spending-accelerates/), is the financial expression of that fact.
 
 ---
 
@@ -120,4 +120,14 @@ The largest utility merger in US history was not triggered by population growth,
 ---
 
 *The acquisition was announced May 18, 2026. The deal is expected to close in 2027 pending regulatory approvals. NextEra's ticker: NEE. Dominion's ticker: D.*
+
+---
+
+## Sources
+
+- [NextEra Will Buy Dominion Energy For $67 Billion As AI Spending Accelerates — Forbes](https://www.forbes.com/sites/tylerroush/2026/05/18/nextera-will-buy-dominion-energy-for-67-billion-as-ai-spending-accelerates/)
+- [NextEra's $67 billion Dominion takeover creates world's largest utility — Fortune](https://fortune.com/2026/05/18/nextera-dominion-67-billion-acquisition-ai-data-centers-largest-utility/)
+- [Florida-based NextEra agrees to $67B Dominion Energy acquisition — VPM News](https://www.vpm.org/news/2026-05-18/dominion-energy-nextera-merger-electric-utility-virginia-florida-67b)
+- [NextEra Energy to acquire Dominion Energy in $67 billion all-stock transaction — ECIKS](https://eciks.org/8282-85162-dominion-energy-nextera-67-billion-merger)
+- [NextEra Energy's $67 Billion Dominion Acquisition Will Make It the Dominant Power Player in the AI Era — The Motley Fool](https://www.fool.com/investing/2026/05/19/nextera-energys-67-billion-dominion-energy-acquisi/)
 

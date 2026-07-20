@@ -18,7 +18,7 @@ rating: 0
 
 One month into operation, Project Glasswing — Anthropic's controlled-access cybersecurity initiative using Claude Mythos Preview — has found more vulnerabilities than most organizations discover in a decade.
 
-Anthropic published its initial update on May 22, 2026. The numbers are staggering:
+Anthropic [published its initial update](https://www.anthropic.com/research/glasswing-initial-update) on May 22, 2026. The numbers are staggering:
 
 - **23,019 total vulnerabilities** identified across 1,000+ open-source projects
 - **6,202 estimated** as high or critical severity
@@ -122,3 +122,13 @@ This update makes three things clear:
 ---
 
 **For background:** See our [Claude Mythos Preview review](/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/) for the technical benchmarks and April launch context, and our [deeper look at why Anthropic won't release it publicly](/reviews/claude-mythos-preview-anthropic-cybersecurity-ai-too-powerful-to-release/). For the broader Anthropic investment context, see our [Google $40B Anthropic analysis](/reviews/google-40-billion-anthropic-investment-tpu-cloud-next-2026/) and the [Anthropic $900B funding round guide](/reviews/anthropic-900-billion-valuation-30b-round-2026-guide/).
+
+---
+
+## Sources
+
+- [Project Glasswing: An initial update — Anthropic](https://www.anthropic.com/research/glasswing-initial-update)
+- [Anthropic: Claude Mythos identified 10,000+ software flaws — Help Net Security](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/)
+- [Claude Mythos AI Finds 10,000 High-Severity Flaws in Widely Used Software — The Hacker News](https://thehackernews.com/2026/05/claude-mythos-ai-finds-10000-high.html)
+- [Anthropic's Glasswing: 10,000+ Vulnerabilities Found in One Month — Security Affairs](https://securityaffairs.com/192576/ai/anthropics-glasswing-10000-vulnerabilities-found-in-one-month-and-the-patching-problem-has-never-been-more-obvious.html)
+- [Anthropic Mythos Finds 10,000+ Critical Bugs in a Month — Let's Data Science](https://letsdatascience.com/blog/anthropic-mythos-10000-bugs-maintainers-slow-down)

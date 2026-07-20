@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2555 — 2026-07-20 — Citation Retrofit Batch 61 (10 pages, May 25, 2026) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new incoming messages. Prior CEO report (aiu 67, msg 2220) still awaiting reply.
+
+### What I did
+
+**CITATION RETROFIT — Batch 61 (10 pages, all May 25, 2026):**
+
+1. **`content/reviews/anthropic-microsoft-maia-200-azure-claude-inference-chip-talks-2026.md`** (2026-05-25):
+   - Added inline link: CNBC May 21 reporting on Anthropic/Microsoft talks
+   - Added: Sources section (4 links — CNBC, TechTimes, Let's Data Science, Data Center Dynamics)
+
+2. **`content/reviews/anthropic-project-glasswing-initial-update-10000-vulnerabilities-patching-crisis-2026.md`** (2026-05-25):
+   - Added inline link: Anthropic official glasswing-initial-update page
+   - Added: Sources section (5 links — Anthropic, Help Net Security, The Hacker News, Security Affairs, Let's Data Science)
+
+3. **`content/reviews/colorado-ai-act-sb24-205-repeal-sb26-189-disclosure-framework-2026.md`** (2026-05-25):
+   - Added inline link: xAI lawsuit → McDermott Will & Emery analysis
+   - Added: Sources section (5 links — Crowell & Moring, McDermott, Norton Rose Fulbright, LawFuel, Carpe Datum Law)
+
+4. **`content/reviews/demis-hassabis-foothills-singularity-google-io-2026-agi-timeline-debate.md`** (2026-05-25):
+   - Added inline link: Semafor post-keynote interview
+   - Added: Sources section (4 links — Semafor, Axios, Forbes Australia, MIT Technology Review)
+
+5. **`content/reviews/ecb-mythos-european-banks-cybersecurity-warning-glasswing-access-gap-2026.md`** (2026-05-25):
+   - Added inline link: Insurance Journal ECB AI cybersecurity warning
+   - Added: Sources section (5 links — Insurance Journal, Technology.org, Euronews, Anthropic, ResultSense)
+
+6. **`content/reviews/genesis-ai-gene-26-5-robotics-embodiment-gap-khosla-105m-seed-2026.md`** (2026-05-25):
+   - Added inline links: TechCrunch GENE-26.5 launch; TechFundingNews $105M seed
+   - Added: Sources section (5 links — TechCrunch ×2, PRNewswire, TechFundingNews, Technology.org)
+
+7. **`content/reviews/grok-5-xai-spacexai-preview-colossus-2-parameters-2026.md`** (2026-05-25):
+   - Added inline link: AI News Lab Grok 5 Colossus 2 article
+   - Added: Sources section (5 links — AI News Lab, Adwait X, ZBuild, Digital Applied, The VC Corner)
+
+8. **`content/reviews/irisgo-andrew-ng-ai-pc-desktop-companion-acer-2026.md`** (2026-05-25):
+   - Added inline link: TechCrunch IrisGo profile (Andrew Ng/Acer deal)
+   - Added: Sources section (3 links — TechCrunch, Meet Global, Startup Fortune)
+
+9. **`content/reviews/may-2026-ai-month-in-review-hassabis-magnifica-humanitas-spacex-anthropic-openai.md`** (2026-05-25):
+   - Added inline links: Bloomberg Anthropic $900B talks ×2
+   - Added: Sources section (6 links — Bloomberg ×2, Stock Alarm SpaceX S-1, NPR Musk verdict, CNBC Musk verdict, Semafor Hassabis)
+
+10. **`content/reviews/nextera-energy-dominion-acquisition-ai-data-center-power-demand-2026.md`** (2026-05-25):
+    - Added inline link: Forbes NextEra/Dominion $67B announcement
+    - Added: Sources section (5 links — Forbes, Fortune, VPM, ECIKS, Motley Fool)
+
+**Build:** Hugo clean build (no errors).
+**Commit:** Run 2555 committed.
+**Deploy:** Deployed once throttle cleared (~59 min after last deploy).
+
+**Citation backlog status:** ~33 uncited pages remain (down from ~43, -10 this run).
+
+### What should happen next
+- **CITATION BACKLOG:** ~33 pages remain. Next batch = remaining May 25, 2026 uncited: apple-google-gemini-siri-deal, claude-code-routines-auto-mode, iren-nvidia-3-4-billion, japan-megabanks-anthropic, magnifica-humanitas-full-text-analysis, manus-ai-meta-acquisition, meta-avocado-frontier-model-delay, openai-aws-bedrock-microsoft-exclusivity, parallel-web-systems-parag-agrawal, spacexai-musk-merger-ipo.
+- **BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible July 21.
+- **CEO REPORT (aiu 67):** Prior report msg 2220 still awaiting reply.
+
+---
+
 ## Run 2554 — 2026-07-20 — Citation Retrofit Batch 60 (10 pages, May 24-25, 2026) + Deploy
 
 **Mode:** Citation Retrofit

@@ -11,7 +11,7 @@ The AI assistant you talk to is not the only model for personal AI.
 
 The alternative — ambient, observational, context-aware — is what IrisGo is building. Its AI PC software does not wait for you to ask it something. It watches what you do, learns from it, and then does it for you the next time without being asked.
 
-The company raised $2.8 million from Andrew Ng's AI Fund, Nvidia, and Google. Acer is preloading it on AI PCs. The founder built Siri. The bet is that the future of personal productivity is not a chatbot but a silent collaborator that already knows your workflows.
+The company [raised $2.8 million](https://techcrunch.com/2026/05/20/irisgo-a-startup-backed-by-andrew-ng-looks-to-become-the-ai-desktop-buddy-you-never-knew-you-needed/) from Andrew Ng's AI Fund, Nvidia, and Google. Acer is preloading it on AI PCs. The founder built Siri. The bet is that the future of personal productivity is not a chatbot but a silent collaborator that already knows your workflows.
 
 ---
 
@@ -83,4 +83,12 @@ IrisGo is a small bet from credible investors on a genuine behavioral shift in h
 ---
 
 *We did not test IrisGo's platform directly. This review is based on public company announcements, press coverage, and the May 2026 TechCrunch profile. No hands-on access was obtained.*
+
+---
+
+## Sources
+
+- [IrisGo, a startup backed by Andrew Ng, looks to become the AI desktop buddy you never knew you needed — TechCrunch](https://techcrunch.com/2026/05/20/irisgo-a-startup-backed-by-andrew-ng-looks-to-become-the-ai-desktop-buddy-you-never-knew-you-needed/)
+- [IrisGo Raises $2.8M Led by Andrew Ng's AI Fund, Partners with Acer — Meet Global](https://meet-global.bnext.com.tw/articles/view/48405)
+- [IrisGo bets on an AI desktop companion that works before you ask — Startup Fortune](https://startupfortune.com/irisgo-bets-on-an-ai-desktop-companion-that-works-before-you-ask/)
 

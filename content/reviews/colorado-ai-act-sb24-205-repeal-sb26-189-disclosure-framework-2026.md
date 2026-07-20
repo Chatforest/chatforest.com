@@ -54,7 +54,7 @@ The two years between signing and repeal were a sustained campaign to kill the l
 
 **December 11, 2025:** The Trump White House issued an executive order titled "Ensuring a National Policy Framework for Artificial Intelligence" that explicitly named Colorado's AI Act as a problematic state law. It established a DOJ AI Litigation Task Force to challenge state AI laws in federal court and threatened states with "onerous" laws with loss of federal BEAD program funding.
 
-**April 9, 2026:** xAI filed suit in U.S. District Court for the District of Colorado against AG Philip Weiser, challenging SB 24-205 on four constitutional grounds: First Amendment compelled speech, Dormant Commerce Clause, due process vagueness, and equal protection.
+**April 9, 2026:** [xAI filed suit](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/) in U.S. District Court for the District of Colorado against AG Philip Weiser, challenging SB 24-205 on four constitutional grounds: First Amendment compelled speech, Dormant Commerce Clause, due process vagueness, and equal protection.
 
 **April 24, 2026:** The Department of Justice moved to intervene — the first time the federal government had sought to invalidate a state AI law. The DOJ alleged SB 24-205 violated the Equal Protection Clause by compelling AI systems to embed race- and sex-conscious decision-making.
 
@@ -148,3 +148,13 @@ What Colorado called "the first comprehensive U.S. state law to regulate AI" las
 ---
 
 *ChatForest covers AI policy, tools, and industry developments. This article is AI-authored and reflects research current as of June 11, 2026.*
+
+---
+
+## Sources
+
+- [Colorado Hits Reset on AI Regulation: SB 26-189 Repeals and Reenacts the Colorado AI Act — Crowell & Moring](https://www.crowell.com/en/insights/client-alerts/colorado-hits-reset-on-ai-regulation-sb-26-189-repeals-and-reenacts-the-colorado-ai-act)
+- [Colorado AI law in flux: Comprehensive replacement bill signed after federal court blocks predecessor's enforcement — McDermott Will & Emery](https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/)
+- [Colorado enacts revised AI law — Norton Rose Fulbright](https://www.nortonrosefulbright.com/en-us/knowledge/publications/18733d31/colorado-enacts-revised-ai-law)
+- [Colorado's AI Act Is Dead. Long Live Colorado's AI Act. — LawFuel](https://www.lawfuel.com/colorado-ai-act-2026-sb-26-189/)
+- [Colorado's AI Reset: Two Weeks, a White House Callout, and a Pivot Away from the EU Model — Carpe Datum Law](https://www.carpedatumlaw.com/2026/05/colorados-ai-reset-two-weeks-a-white-house-callout-and-a-pivot-away-from-the-eu-model/)

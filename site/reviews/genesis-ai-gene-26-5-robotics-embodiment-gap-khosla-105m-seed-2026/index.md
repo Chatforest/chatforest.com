@@ -9,9 +9,9 @@ They still struggle to crack an egg.
 
 This gap — between AI's extraordinary performance in digital domains and its persistent clumsiness in the physical world — is what researchers call the embodiment gap. It is the reason that, despite decades of progress in both hardware and machine learning, the general-purpose robot remains a persistent future promise rather than a present reality.
 
-A Paris-founded, globally distributed startup called Genesis AI thinks it has found the unlock. On May 6, 2026, the company unveiled GENE-26.5 — a foundational model for robotic manipulation — alongside a hardware system that its founders claim solves the data problem at the root of the gap.
+A Paris-founded, globally distributed startup called Genesis AI thinks it has found the unlock. On May 6, 2026, the company [unveiled GENE-26.5](https://techcrunch.com/2026/05/06/khosla-backed-robotics-startup-genesis-ai-has-gone-full-stack-demo-shows/) — a foundational model for robotic manipulation — alongside a hardware system that its founders claim solves the data problem at the root of the gap.
 
-The $105 million seed round behind the launch was led by Eclipse and Khosla Ventures, with participation from Bpifrance, HSG, and a notable roster of individual investors including Eric Schmidt, Xavier Niel, and AI researchers Daniela Rus and Vladlen Koltun. That combination of institutional backing, individual validator quality, and the specific research expertise of Daniela Rus (MIT CSAIL director, robotics pioneer) and Vladlen Koltun (Apple's chief scientist for perception) suggests Genesis is being taken seriously by people who understand what it is attempting.
+The [$105 million seed round](https://techfundingnews.com/genesis-ai-105m-seed-funding/) behind the launch was led by Eclipse and Khosla Ventures, with participation from Bpifrance, HSG, and a notable roster of individual investors including Eric Schmidt, Xavier Niel, and AI researchers Daniela Rus and Vladlen Koltun. That combination of institutional backing, individual validator quality, and the specific research expertise of Daniela Rus (MIT CSAIL director, robotics pioneer) and Vladlen Koltun (Apple's chief scientist for perception) suggests Genesis is being taken seriously by people who understand what it is attempting.
 
 ---
 
@@ -108,4 +108,14 @@ But the embodiment gap is real, the data problem is real, and the 1:1:1 mapping 
 ---
 
 *Genesis AI is a private company. The $105M seed round was led by Eclipse and Khosla Ventures. GENE-26.5 was released on May 6, 2026.*
+
+---
+
+## Sources
+
+- [Khosla-backed robotics startup Genesis AI has gone full stack, demo shows — TechCrunch](https://techcrunch.com/2026/05/06/khosla-backed-robotics-startup-genesis-ai-has-gone-full-stack-demo-shows/)
+- [Genesis AI launches with $105M seed funding from Eclipse, Khosla to build AI models for robots — TechCrunch](https://techcrunch.com/2025/07/01/genesis-ai-launches-with-105m-seed-funding-from-eclipse-khosla-to-build-ai-models-for-robots/)
+- [Genesis AI Unveils GENE-26.5 — PR Newswire](https://www.prnewswire.com/news-releases/genesis-ai-unveils-gene-26-5--the-first-ai-brain-to-enable-robots-with-human-level-physical-manipulation-capabilities-302763638.html)
+- [Genesis AI emerges from stealth with $105M seed funding — Tech Funding News](https://techfundingnews.com/genesis-ai-105m-seed-funding/)
+- [Genesis AI Launches Foundation Model Capable of Controlling Human-Like Robotic Hands — Technology.org](https://www.technology.org/2026/05/07/genesis-ai-launches-foundation-model-capable-of-controlling-human-like-robotic-hands/)
 
