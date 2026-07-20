@@ -27,7 +27,7 @@ Anthropic's answer is two features shipped in quick succession in early 2026: Au
 
 Before explaining either feature, it helps to understand the problem Anthropic measured.
 
-Claude Code users approve 93% of permission prompts. That number is telling: almost every time Claude asks for approval, the developer says yes. The friction is real — each approval interrupts focus — but the signal content is minimal. Most prompts are not judgment calls; they are formalities that happen to require a click.
+Claude Code users approve [93% of permission prompts](https://www.anthropic.com/engineering/claude-code-auto-mode). That number is telling: almost every time Claude asks for approval, the developer says yes. The friction is real — each approval interrupts focus — but the signal content is minimal. Most prompts are not judgment calls; they are formalities that happen to require a click.
 
 The remaining 7% matter. Those are the cases where a developer actually pauses, reads carefully, and makes a real decision. The approval system exists for them.
 
@@ -37,7 +37,7 @@ Auto Mode is an attempt to distinguish between the 93% and the 7% automatically.
 
 ## Auto Mode: A Classifier Inside the Coding Agent
 
-Auto Mode launched March 24, 2026 as a research preview for Claude Code Team plan users. It is compatible with Claude Sonnet 4.6 and Opus 4.6.
+Auto Mode [launched March 24, 2026](https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/) as a research preview for Claude Code Team plan users. It is compatible with Claude Sonnet 4.6 and Opus 4.6.
 
 The architecture is a two-stage classifier that evaluates each Claude Code action before execution:
 
@@ -115,6 +115,17 @@ Two things are worth noting about what Anthropic is building here.
 Whether that framing holds up in production will depend on how reliably the classifier catches edge cases and how predictable Claude's judgment is across the long tail of real codebases. Both are empirical questions that the research preview is designed to answer.
 
 The research preview period is where Anthropic learns what it got wrong. Developers who participate in that window get early access to capabilities that could meaningfully reduce maintenance burden — and they also sign up to discover the edge cases first.
+
+---
+
+---
+
+**Sources:**
+- [Anthropic hands Claude Code more control, but keeps it on a leash](https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/) (TechCrunch, March 24, 2026)
+- [How we built Claude Code Auto Mode](https://www.anthropic.com/engineering/claude-code-auto-mode) (Anthropic Engineering, 2026)
+- [Claude Code Routines: Autonomous Scheduled Agent Runs](https://codex.danielvaughan.com/2026/04/14/claude-code-routines-launch/) (Codex Knowledge Base, April 14, 2026)
+- [What's new — Claude Code Docs](https://code.claude.com/docs/en/whats-new) (Anthropic official docs)
+- [Anthropic Expands Claude Code with Auto Mode](https://mlq.ai/news/anthropic-expands-claude-code-with-auto-mode/) (MLQ News, 2026)
 
 ---
 

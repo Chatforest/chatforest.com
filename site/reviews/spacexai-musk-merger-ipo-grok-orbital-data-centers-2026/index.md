@@ -3,7 +3,7 @@
 > SpaceX absorbed xAI in February 2026 in the largest merger ever at $1.25 trillion. Now SpaceX is targeting a $1.75 trillion IPO — the largest in history. The new SpaceXAI division runs Grok and X, and has plans for orbital supercomputers. The financials tell a more complicated story.
 
 
-**At a glance:** In February 2026, SpaceX acquired xAI — the company behind Grok — in an all-stock transaction valuing the combined entity at $1.25 trillion, the largest merger in history. On May 6, xAI was formally dissolved and its assets folded into a new internal SpaceX division called SpaceXAI. Three weeks later, SpaceX filed its S-1 targeting a $1.75 trillion valuation and $75 billion raise — which would be the largest initial public offering in capital markets history. The roadshow begins June 4. Pricing is June 11. The numbers behind the vision are complicated.
+**At a glance:** In February 2026, [SpaceX acquired xAI](https://www.bloomberg.com/news/articles/2026-02-02/elon-musk-s-spacex-said-to-combine-with-xai-ahead-of-mega-ipo) — the company behind Grok — in an [all-stock transaction valuing the combined entity at $1.25 trillion](https://www.cnbc.com/2026/02/03/musk-xai-spacex-biggest-merger-ever.html), the largest merger in history. On May 6, xAI was formally dissolved and its assets folded into a new internal SpaceX division called SpaceXAI. Three weeks later, [SpaceX filed its S-1](https://www.cnbc.com/2026/05/20/spacex-ipo-live-updates.html) targeting a $1.75 trillion valuation and $75 billion raise — which would be the largest initial public offering in capital markets history. The roadshow begins June 4. Pricing is June 11. The numbers behind the vision are complicated.
 
 ---
 
@@ -39,7 +39,7 @@ The immediate revenue picture, however, is more grounded. The AI unit — combin
 
 There is one significant offset: Anthropic has signed a compute agreement with SpaceX worth $1.25 billion per month, drawing on SpaceX's Colossus and Colossus II GPU clusters in Memphis, Tennessee, through May 2029. That contract — which, pointedly, predates the Anthropic $900 billion funding round expected to close this week — provides a revenue floor that has nothing to do with Grok or X's organic performance.
 
-The S-1 SpaceX filed on May 20 disclosed a $4.94 billion loss absorbed from the xAI merger — a writedown of goodwill and integration costs that reflects the gap between what was paid and what was received. That number is embedded in the prospectus investors will read before deciding whether to participate in the June IPO.
+The S-1 SpaceX filed on May 20 [disclosed a $4.94 billion loss absorbed from the xAI merger](https://www.techtimes.com/articles/316724/20260516/spacex-files-largest-ipo-ever-while-absorbing-494-billion-loss-its-xai-merger.htm) — a writedown of goodwill and integration costs that reflects the gap between what was paid and what was received. That number is embedded in the prospectus investors will read before deciding whether to participate in the June IPO.
 
 ---
 
@@ -78,4 +78,13 @@ SpaceXAI is a real entity now, with real employees, real revenue, and a real IPO
 ---
 
 *ChatForest covers AI tools, platforms, and industry developments. This article is based on published reporting and public disclosures as of May 2026.*
+
+---
+
+**Sources:**
+- [Musk's SpaceX Combines With xAI at $1.25 Trillion Valuation](https://www.bloomberg.com/news/articles/2026-02-02/elon-musk-s-spacex-said-to-combine-with-xai-ahead-of-mega-ipo) (Bloomberg, February 2, 2026)
+- [Musk's xAI, SpaceX combo is the biggest merger of all time](https://www.cnbc.com/2026/02/03/musk-xai-spacex-biggest-merger-ever.html) (CNBC, February 3, 2026)
+- [SpaceX IPO — S-1 live updates](https://www.cnbc.com/2026/05/20/spacex-ipo-live-updates.html) (CNBC, May 20, 2026)
+- [SpaceX Files for the Largest IPO Ever While Absorbing a $4.94 Billion Loss From Its xAI Merger](https://www.techtimes.com/articles/316724/20260516/spacex-files-largest-ipo-ever-while-absorbing-494-billion-loss-its-xai-merger.htm) (TechTimes)
+- [SpaceX Absorbed xAI at a Combined $1.25 Trillion Valuation](https://www.fool.com/investing/2026/03/31/spacex-absorbed-xai-at-a-combined-125-trillion-val/) (Motley Fool, March 2026)
 

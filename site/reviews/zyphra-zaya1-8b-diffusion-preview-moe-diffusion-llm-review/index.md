@@ -3,7 +3,7 @@
 > Zyphra ZAYA1-8B-Diffusion-Preview (May 14, 2026) converts the ZAYA1-8B autoregressive reasoning model into a discrete diffusion LM using the TiDAR recipe. First MoE diffusion model in the field. Generates 16 tokens per forward pass. Claims 4.6x (lossless) to 7.7x (logit-mixing) inference speedup. Trained on AMD Instinct MI300X. Preview-stage: no RL training applied, pass@ evals only, weights not yet publicly confirmed. Rating: 3/5.
 
 
-**At a glance:** ZAYA1-8B-Diffusion-Preview, released May 14, 2026. Discrete diffusion conversion of the [ZAYA1-8B MoE++ reasoning model](/reviews/zyphra-zaya1-8b-moe-reasoning-llm-review/). 8.4B total parameters, 760M active per token. Claims 4.6x–7.7x inference speedup via parallel token generation. Trained on AMD Instinct MI300X. Preview stage — no RL training, no confirmed public weights. Part of our **[AI Models & LLM reviews](/categories/ai-providers/)**.
+**At a glance:** [ZAYA1-8B-Diffusion-Preview, released May 14, 2026](https://zyphra.com/post/zaya1-8b-diffusion-preview). Discrete diffusion conversion of the [ZAYA1-8B MoE++ reasoning model](/reviews/zyphra-zaya1-8b-moe-reasoning-llm-review/). 8.4B total parameters, 760M active per token. Claims 4.6x–7.7x inference speedup via parallel token generation. Trained on AMD Instinct MI300X. Preview stage — no RL training, no confirmed public weights. Part of our **[AI Models & LLM reviews](/categories/ai-providers/)**.
 
 ---
 
@@ -19,7 +19,7 @@ For background on the base model and Zyphra as a company, see the [ZAYA1-8B revi
 
 ## The Conversion: TiDAR Recipe
 
-The technical route Zyphra took is the **TiDAR recipe** (Think in Diffusion, Talk in Autoregression, arXiv:2511.08923). The approach treats diffusion conversion as a mid-training phase rather than a full retrain.
+The technical route Zyphra took is the **TiDAR recipe** (Think in Diffusion, Talk in Autoregression, [arXiv:2511.08923](https://arxiv.org/abs/2511.08923)). The approach treats diffusion conversion as a mid-training phase rather than a full retrain.
 
 Starting from the ZAYA1-8B base checkpoint — already trained on 12 trillion tokens — Zyphra ran:
 
@@ -135,4 +135,11 @@ The caveats are real. Preview stage, no RL training, no confirmed public weights
 | License | Apache 2.0 (base model; Diffusion-Preview TBC) |
 | Public weights | Not confirmed at time of writing |
 | Release date | May 14, 2026 |
+
+## Sources
+
+- [Zyphra ZAYA1-8B-Diffusion-Preview Official Post — Zyphra](https://zyphra.com/post/zaya1-8b-diffusion-preview)
+- [Zyphra Releases ZAYA1-8B-Diffusion-Preview: First MoE Diffusion Model, Up to 7.7x Speedup — MarkTechPost](https://www.marktechpost.com/2026/05/15/zyphra-releases-zaya1-8b-diffusion-preview-the-first-moe-diffusion-model-converted-from-an-autoregressive-llm-with-up-to-7-7x-speedup/)
+- [ZAYA1-8B-Diffusion-Preview: Technical Details — Zyphra](https://www.zyphra.com/our-work/zaya1-8b-diffusion-preview)
+- [TiDAR Recipe — arXiv:2511.08923](https://arxiv.org/abs/2511.08923)
 

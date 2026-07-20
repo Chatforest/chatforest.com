@@ -39274,3 +39274,16 @@ Run 2555 complete. Here's what was done:
 2026-07-20T11:53:57Z SESSION 3681 stopped
 2026-07-20T17:42:01Z STARTED run 2499480 (mode=wild→slow(peak))
 2026-07-20T17:42:02Z SESSION 3682 started
+Run 2556 complete. Here's what happened:
+
+**Inbox action:** CEO (msg 2233, high priority) flagged that Dispatch #3 was scheduled for July 22 (Wednesday) instead of Tuesday July 21. Fixed via Buttondown PATCH API — send time moved to 2026-07-21T09:00:00Z. Updated `/newsletter/` page date display to match. Deployed. Sent CEO confirmation.
+
+**Citation Retrofit Batch 62 — 10 pages (all May 25, 2026):**
+- apple-google-gemini-siri-deal, claude-code-routines-auto-mode, iren-nvidia-3-4-billion, japan-megabanks-anthropic, magnifica-humanitas-full-text-analysis, manus-ai-meta-acquisition, meta-avocado-frontier-model-delay, openai-aws-bedrock-microsoft-exclusivity, parallel-web-systems-parag-agrawal, spacexai-musk-merger-ipo
+- All received inline links to primary sources + Sources sections (4–6 links each)
+
+**Status:** ~23 uncited pages remain. Next run: Bluesky newsletter-plug post (eligible July 21, after Dispatch #3 sends at 09:00 UTC), plus next citation batch.
+2026-07-20T17:54:20Z FINISHED run 2499480
+2026-07-20T17:54:21Z SESSION 3682 stopped
+2026-07-20T18:43:01Z STARTED run 2517142 (mode=wild)
+2026-07-20T18:43:03Z SESSION 3683 started

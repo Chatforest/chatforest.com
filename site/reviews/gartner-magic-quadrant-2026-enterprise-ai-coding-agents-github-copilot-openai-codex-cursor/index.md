@@ -3,7 +3,7 @@
 > Gartner's first Enterprise AI Coding Agents Magic Quadrant (May 2026) names GitHub Copilot, OpenAI Codex, and Cursor as Leaders. Cursor places furthest on Completeness of Vision. 70%+ of Fortune 500 now uses at least one. Market: $9.8–11B annualized.
 
 
-**At a glance:** Gartner published its 2026 Magic Quadrant for Enterprise AI Coding Agents on May 20, 2026. Three Leaders — GitHub Copilot, OpenAI Codex, Cursor — each holding a distinct position. Tabnine named Visionary. 12 vendors evaluated across a market Gartner estimates at $9.8–11.0B annualized as of April 2026.
+**At a glance:** [Gartner published its 2026 Magic Quadrant for Enterprise AI Coding Agents on May 20, 2026](https://www.gartner.com/en/documents/7879277). Three Leaders — GitHub Copilot, OpenAI Codex, Cursor — each holding a distinct position. Tabnine named Visionary. 12 vendors evaluated across a market Gartner estimates at $9.8–11.0B annualized as of April 2026.
 
 ---
 
@@ -19,7 +19,7 @@ Gartner's May 20 report evaluated 12 vendors across Ability to Execute and Compl
 
 ### GitHub Copilot — Third Year Running
 
-GitHub Copilot enters 2026 as the category's incumbent. This is its third consecutive year as a Leader, and by raw scale it is the dominant platform: 140,000 organizations, up nearly 3× in 12 months, with overall growth topping 100% year over year.
+[GitHub Copilot enters 2026 as the category's incumbent](https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/). This is its third consecutive year as a Leader, and by raw scale it is the dominant platform: 140,000 organizations, up nearly 3× in 12 months, with overall growth topping 100% year over year.
 
 Gartner's evaluation highlighted Copilot's integration depth — threading AI assistance through the full GitHub workflow: issues, code reviews, pull requests, and Actions automation. The multi-model architecture is a deliberate enterprise play: organizations can bring GPT-5.5, Claude, Gemini, or their own fine-tunes into Copilot's surface without migrating workflows.
 
@@ -88,6 +88,15 @@ If you are evaluating AI coding agent platforms in Q2 2026, the Gartner MQ gives
 The variables to watch: Cursor's model training partnership with SpaceXAI (first results likely late 2026), OpenAI's post-IPO product prioritization, and whether GitHub's multi-model architecture or its Microsoft distribution advantage drives growth in year four.
 
 The 30–50% productivity projection is not a marketing claim — Gartner's methodology for that number is grounded in observed productivity data across early enterprise deployments. The category has crossed the threshold from "interesting experiment" to "infrastructure decision." Treat the Magic Quadrant accordingly.
+
+---
+
+## Sources
+
+- [Gartner 2026 Magic Quadrant for Enterprise AI Coding Agents — Gartner](https://www.gartner.com/en/documents/7879277)
+- [GitHub Copilot Named Leader Third Year Running — GitHub Blog](https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/)
+- [GitHub: Gartner MQ Whitepaper](https://github.com/resources/whitepapers/gartner-magic-quadrant-for-enterprise-ai-coding-agents)
+- [Gartner 2026 MQ Leaders and New Criteria — Creeta News](https://news.creeta.com/en/gartner-enterprise-ai-coding-agents-2026/)
 
 ---
 

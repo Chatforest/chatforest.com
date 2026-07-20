@@ -3,11 +3,11 @@
 > Qualcomm hit record highs on May 22 after a Stellantis deal and its OpenAI partnership confirmation. CEO Cristiano Amon says he's working with 'pretty much all' major AI players on top-secret hardware — and the edge AI race is just getting started.
 
 
-On May 22, 2026, Qualcomm shares jumped 12% in a single session — hitting a record high after news broke that Stellantis had expanded its Snapdragon partnership across its entire vehicle lineup. But the single-day pop was a footnote. The real story: Qualcomm stock had already surged 75% over the prior month as investors finally started connecting the dots on what the company actually is — the unchosen, invisible backbone of nearly every AI device anyone's building.
+On May 22, 2026, Qualcomm shares jumped 12% in a single session — hitting a record high after [news broke that Stellantis had expanded its Snapdragon partnership](https://www.globenewswire.com/news-release/2026/05/21/3299417/0/en/stellantis-and-qualcomm-expand-partnership-to-adopt-snapdragon-digital-chassis-driver-assistance-cockpit-and-connectivity-platforms-across-next-generation-vehicle-architectures.html) across its entire vehicle lineup. But the single-day pop was a footnote. The real story: Qualcomm stock had already surged 75% over the prior month as investors finally started connecting the dots on what the company actually is — the unchosen, invisible backbone of nearly every AI device anyone's building.
 
 ## What Triggered the Pop
 
-The immediate catalyst was a multi-year deal with Stellantis, announced May 21. Under the expanded agreement:
+The immediate catalyst was a [multi-year deal with Stellantis, announced May 21](https://www.qualcomm.com/news/releases/2026/05/stellantis-and-qualcomm-expand-partnership-to-adopt----snapdrago). Under the expanded agreement:
 
 - **Snapdragon Digital Chassis** SoCs will power cockpit, connectivity, and ADAS across Stellantis' global vehicle portfolio
 - **Snapdragon Ride Pilot** — Qualcomm's Level 2+ hands-free automated driving platform — is included
@@ -19,7 +19,7 @@ The deal pushed Qualcomm's automotive segment past $5 billion in annualized reve
 
 ## The Earnings Were Already Strong
 
-Before the Stellantis news, Qualcomm had already posted a clean Q2 FY2026 beat on April 29. Revenue came in at **$10.6 billion**, EPS at **$2.65**, both above consensus. The segment numbers:
+Before the Stellantis news, [Qualcomm had already posted a clean Q2 FY2026 beat on April 29](https://www.tikr.com/blog/qualcomm-reports-10-6b-in-q2-revenue-with-eps-at-high-end-of-guidance). Revenue came in at **$10.6 billion**, EPS at **$2.65**, both above consensus. The segment numbers:
 
 - **Automotive**: +38% year-over-year to a record **$1.33 billion**
 - **IoT**: +9% to **$1.73 billion**
@@ -29,7 +29,7 @@ Gross margin: 55.1%. The company flagged it expects meaningful acceleration in t
 
 ## The OpenAI Angle
 
-On April 27, Qualcomm shares had already jumped roughly 7% on a separate headline: OpenAI was partnering with Qualcomm and MediaTek to develop the chip for its AI-native smartphone. That device — reported to be designed with Jony Ive's io company and manufactured by Luxshare — replaces the traditional app grid with an AI agent layer. Mass production is currently targeting 2028.
+On April 27, [Qualcomm shares had already jumped roughly 7%](https://www.cnbc.com/2026/04/27/qualcomm-qcom-openai-smartphone-chip-partnership-stock.html) on a separate headline: [OpenAI was partnering with Qualcomm and MediaTek](https://thenextweb.com/news/openai-qualcomm-ai-phone-agents-replace-apps) to develop the chip for its AI-native smartphone. That device — reported to be designed with Jony Ive's io company and manufactured by Luxshare — replaces the traditional app grid with an AI agent layer. Mass production is currently targeting 2028.
 
 Qualcomm being selected as a silicon partner (alongside MediaTek as primary chip supplier) confirmed what its CEO had been hinting at for months.
 
@@ -72,6 +72,17 @@ That stack now has a new job: running AI models locally, at scale, without a dat
 Nvidia dominates the data center. Apple dominates its own ecosystem. Qualcomm is quietly becoming the infrastructure layer for everything in between — the edge AI devices that will be the surface area through which most people experience AI agents in daily life.
 
 The market is starting to notice.
+
+---
+
+## Sources
+
+- [Stellantis and Qualcomm Expand Partnership — GlobeNewswire (May 21, 2026)](https://www.globenewswire.com/news-release/2026/05/21/3299417/0/en/stellantis-and-qualcomm-expand-partnership-to-adopt-snapdragon-digital-chassis-driver-assistance-cockpit-and-connectivity-platforms-across-next-generation-vehicle-architectures.html)
+- [Stellantis-Qualcomm Partnership Official Press Release — Qualcomm.com](https://www.qualcomm.com/news/releases/2026/05/stellantis-and-qualcomm-expand-partnership-to-adopt----snapdrago)
+- [Qualcomm Q2 FY2026: $10.6B Revenue, EPS at High End — TIKR](https://www.tikr.com/blog/qualcomm-reports-10-6b-in-q2-revenue-with-eps-at-high-end-of-guidance)
+- [Q2 2026 Earnings Call Highlights: Record Automotive Revenues — GuruFocus](https://www.gurufocus.com/news/8831042/qualcomm-inc-qcom-q2-2026-earnings-call-highlights-record-automotive-revenues-and-strategic-ai-engagements)
+- [Qualcomm Up 7% on OpenAI Smartphone Chip Partnership — CNBC](https://www.cnbc.com/2026/04/27/qualcomm-qcom-openai-smartphone-chip-partnership-stock.html)
+- [OpenAI, Qualcomm and MediaTek Building AI Phone to Replace Apps — The Next Web](https://thenextweb.com/news/openai-qualcomm-ai-phone-agents-replace-apps)
 
 ---
 

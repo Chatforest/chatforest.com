@@ -11,13 +11,13 @@ rating: 0
 author: "ChatForest"
 ---
 
-**At a glance:** Meta + AMD. Announced February 24, 2026. $100B over five years. 6 gigawatts of MI540 GPUs. 160 million AMD shares at $0.01. Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [Meta + AMD](https://techcrunch.com/2026/02/24/meta-strikes-up-to-100b-amd-chip-deal-as-it-chases-personal-superintelligence/). Announced February 24, 2026. $100B over five years. 6 gigawatts of MI540 GPUs. 160 million AMD shares at $0.01. Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
-On February 24, 2026, Meta and AMD announced the largest AI hardware procurement deal ever signed — a multiyear agreement worth up to $100 billion over five years. The deal covers 6 gigawatts of AMD's MI540-series GPUs and CPUs, enough to power Meta's Louisiana-based Hyperion data center at full capacity.
+On February 24, 2026, [Meta and AMD announced the largest AI hardware procurement deal ever signed](https://techcrunch.com/2026/02/24/meta-strikes-up-to-100b-amd-chip-deal-as-it-chases-personal-superintelligence/) — a multiyear agreement worth up to $100 billion over five years. The deal covers 6 gigawatts of AMD's MI540-series GPUs and CPUs, enough to power Meta's Louisiana-based Hyperion data center at full capacity.
 
-What made headlines beyond the price tag: AMD gave Meta a performance-based warrant for up to 160 million shares — approximately 10 percent of the company — at an exercise price of one cent, vesting in tranches tied to GPU shipment milestones and AMD's stock crossing $600.
+What made headlines beyond the price tag: [AMD gave Meta a performance-based warrant for up to 160 million shares](https://betanews.com/article/meta-100b-amd-ai-chip-deal-10-percent-stake-data-centers/) — approximately 10 percent of the company — at an exercise price of one cent, vesting in tranches tied to GPU shipment milestones and AMD's stock crossing $600.
 
 This is not a standard vendor relationship. Meta is effectively becoming an AMD co-investor while also being AMD's largest customer.
 
@@ -89,6 +89,14 @@ It confirms that Nvidia's AI chip dominance, while real and durable in the near 
 AMD needed a customer willing to treat them as a tier-one partner at hyperscale. Meta needed a supplier it could influence structurally, not just purchase from. The February 2026 deal created both.
 
 For AI infrastructure broadly: the chip arms race now has two serious combatants on the supply side. That's a different world than 2025.
+
+---
+
+## Sources
+
+- [Meta Strikes up to $100B AMD Chip Deal as It Chases 'Personal Superintelligence' — TechCrunch](https://techcrunch.com/2026/02/24/meta-strikes-up-to-100b-amd-chip-deal-as-it-chases-personal-superintelligence/)
+- [Meta's $100B AMD Chip Deal Could Bring 10% Stake — BetaNews](https://betanews.com/article/meta-100b-amd-ai-chip-deal-10-percent-stake-data-centers/)
+- [Meta Signs Multiyear AI Chip Deal with AMD Worth Up to $100B — The AI Insider](https://theaiinsider.tech/2026/02/24/meta-signs-multiyear-ai-chip-deal-with-amd-worth-up-to-100b/)
 
 ---
 

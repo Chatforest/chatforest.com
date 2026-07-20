@@ -3,9 +3,9 @@
 > OpenRouter raised a $113 million Series B led by CapitalG on May 26, 2026, as weekly token volume surged 5x to 25 trillion in six months. The AI model exchange now connects 8 million users to 400+ models from Anthropic, Google, OpenAI, xAI, and DeepSeek through a single API.
 
 
-OpenRouter raised **$113 million in a Series B** on May 26, 2026, as the AI model exchange reported weekly token volume of 25 trillion — a fivefold increase from five trillion tokens per week six months earlier.
+OpenRouter [raised **$113 million in a Series B** on May 26, 2026](https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/), as the AI model exchange reported weekly token volume of 25 trillion — a fivefold increase from five trillion tokens per week six months earlier.
 
-CapitalG, Alphabet's independent growth fund, led the round. NVIDIA Ventures (NVentures), ServiceNow Ventures, MongoDB Ventures, Snowflake Ventures, and Databricks Ventures joined as new investors, alongside existing backers Andreessen Horowitz and Menlo Ventures. The post-money valuation landed at approximately $1.3 billion, more than double the $547 million valuation from the company's $40 million Series A in June 2025.
+[CapitalG, Alphabet's independent growth fund, led the round](https://www.businesswire.com/news/home/20260526953416/en/OpenRouter-Raises-$113-Million-CapitalG-led-Series-B-as-Weekly-Volume-Explodes-to-25T-Tokens). NVIDIA Ventures (NVentures), ServiceNow Ventures, MongoDB Ventures, Snowflake Ventures, and Databricks Ventures joined as new investors, alongside existing backers Andreessen Horowitz and Menlo Ventures. The post-money valuation landed at approximately $1.3 billion, more than double the $547 million valuation from the company's $40 million Series A in June 2025.
 
 The company says it now serves more than **8 million users globally**, spanning individual developers and large enterprise organizations.
 
@@ -59,6 +59,14 @@ OpenRouter is one of several companies this investment cycle collecting large ch
 The broader AI funding pattern supports this. Global startup funding hit approximately $300 billion in the first quarter of 2026, with a significant share flowing to companies one layer below the models themselves: inference routers, agent orchestrators, data pipelines, and evaluation platforms.
 
 For developers evaluating multi-model infrastructure in mid-2026, OpenRouter remains the most direct path to access 400+ models behind a single API, with the operational controls that enterprise deployments require.
+
+---
+
+## Sources
+
+- [OpenRouter More Than Doubles Valuation to $1.3B — TechCrunch](https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/)
+- [OpenRouter Raises $113M Series B — Official Announcement](https://openrouter.ai/announcements/series-b)
+- [OpenRouter Raises $113M CapitalG-led Series B as Weekly Volume Explodes to 25T Tokens — BusinessWire](https://www.businesswire.com/news/home/20260526953416/en/OpenRouter-Raises-$113-Million-CapitalG-led-Series-B-as-Weekly-Volume-Explodes-to-25T-Tokens)
 
 ---
 

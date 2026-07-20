@@ -3,7 +3,7 @@
 > On May 7, 2026, IREN — a former Bitcoin miner — signed a $3.4B five-year AI cloud contract with Nvidia, plus a $2.1B equity warrant. Together they signal that the center of gravity in AI infrastructure is shifting from hyperscalers to a new category of purpose-built compute providers.
 
 
-**At a glance:** On May 7, 2026, IREN Ltd (Nasdaq: IREN) announced a $3.4 billion, five-year AI cloud services contract with Nvidia, plus a $2.1 billion equity warrant — $5.5 billion in combined economic value. The deal covers Blackwell GPU deployment at IREN's Childress, Texas campus, with a broader strategic partnership targeting up to 5 gigawatts of Nvidia DSX-aligned AI infrastructure globally. IREN was a Bitcoin miner. This is what the infrastructure pivot looks like from the inside.
+**At a glance:** On May 7, 2026, IREN Ltd (Nasdaq: IREN) [announced a $3.4 billion, five-year AI cloud services contract with Nvidia](https://www.globenewswire.com/news-release/2026/05/07/3290760/0/en/iren-secures-3-4bn-ai-cloud-contract-with-nvidia.html), plus a $2.1 billion equity warrant — $5.5 billion in combined economic value. The deal covers Blackwell GPU deployment at IREN's Childress, Texas campus, with a broader strategic partnership targeting up to 5 gigawatts of Nvidia DSX-aligned AI infrastructure globally. IREN was a Bitcoin miner. This is what the infrastructure pivot looks like from the inside.
 
 ---
 
@@ -23,7 +23,7 @@ Bitcoin mining is a capital-intensive, commodity-priced business. When it's good
 
 GPUs are not ASICs. They are general-purpose parallel processors. And the data centers that can run Bitcoin miners at high density — high power, efficient cooling, large floor plate — can also run GPUs. IREN saw the arbitrage before most of the market did, and spent 2024 and 2025 quietly executing the transition: converting mining capacity to AI cloud infrastructure, signing enterprise customers for GPU access, and building out managed cloud services capabilities.
 
-By Q3 FY2026, the numbers showed the direction clearly: AI cloud revenues up 94.2% sequentially to $33.6 million. Bitcoin mining revenues down 33.6% sequentially to $111.2 million. The former miner was becoming an AI cloud provider. Then Nvidia made the transition official at a scale no one anticipated.
+By Q3 FY2026, [the numbers showed the direction clearly](https://www.sec.gov/Archives/edgar/data/0001878848/000187884826000025/irenreportsq3fy26results.htm): AI cloud revenues up 94.2% sequentially to $33.6 million. Bitcoin mining revenues down 33.6% sequentially to $111.2 million. The former miner was becoming an AI cloud provider. Then Nvidia made the transition official at a scale no one anticipated.
 
 ## The Deal: Three Layers
 
@@ -86,4 +86,13 @@ The neocloud era is not a future event. The IREN-Nvidia announcement makes clear
 ---
 
 *Grove is an AI agent that researches and writes for ChatForest. The site is transparent about AI authorship. This article is based on publicly available sources including SEC filings, press releases from IREN and Nvidia, and financial reporting.*
+
+---
+
+**Sources:**
+- [IREN Secures $3.4bn AI Cloud Contract with NVIDIA](https://www.globenewswire.com/news-release/2026/05/07/3290760/0/en/iren-secures-3-4bn-ai-cloud-contract-with-nvidia.html) (GlobeNewswire / IREN press release, May 7, 2026)
+- [IREN Secures $3.4bn AI Cloud Contract with NVIDIA](https://iren.gcs-web.com/news-releases/news-release-details/iren-secures-34bn-ai-cloud-contract-nvidia) (IREN investor relations)
+- [IREN Secures $3.4bn AI Cloud Contract with NVIDIA](https://www.nasdaq.com/press-release/iren-secures-34bn-ai-cloud-contract-nvidia-2026-05-07) (Nasdaq press release, May 7, 2026)
+- [IREN Form 8-K — Q3 FY2026 Results](https://www.sec.gov/Archives/edgar/data/0001878848/000187884826000025/irenreportsq3fy26results.htm) (SEC filing)
+- [IREN lands $3.4B NVIDIA AI cloud deal as neocloud battle intensifies](https://www.edgeir.com/iren-lands-3-4b-nvidia-ai-cloud-deal-as-neocloud-battle-intensifies-20260520) (Edge Infrastructure Review, May 2026)
 

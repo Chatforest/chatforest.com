@@ -74,7 +74,7 @@ Anthropic responded with a legal strategy that split across two federal courts s
 
 In early March, Anthropic filed suit in the U.S. District Court for the Northern District of California, arguing the supply chain risk designation constituted unlawful First Amendment retaliation. The government had punished Anthropic, the filing argued, not for what Claude does, but for what Anthropic said publicly about the DoD's position.
 
-On March 26, Judge Rita F. Lin granted a sweeping preliminary injunction in Anthropic's favor. Her order barred all 17 named federal agencies from implementing the supply chain risk designation while the lawsuit proceeded.
+On March 26, [Judge Rita F. Lin granted a sweeping preliminary injunction](https://www.cnbc.com/2026/03/26/anthropic-pentagon-dod-claude-court-ruling.html) in Anthropic's favor. Her order barred all 17 named federal agencies from implementing the supply chain risk designation while the lawsuit proceeded.
 
 Her language was pointed:
 
@@ -88,7 +88,7 @@ The government's immediate response: the Pentagon's CTO said the ban was still o
 
 Because one of the statutes invoked — the supply chain risk authority under 10 U.S.C. § 3252 — is a provision that can only be challenged in the D.C. Circuit directly, Anthropic simultaneously filed a shorter lawsuit in the U.S. Court of Appeals for the District of Columbia Circuit.
 
-On April 8, the D.C. Circuit denied Anthropic's emergency motion to temporarily block the designation while that case proceeded. The appeals court acknowledged Anthropic "will likely suffer some irreparable harm" during the litigation — but held the harm did not meet the threshold for emergency relief.
+On April 8, [the D.C. Circuit denied Anthropic's emergency motion](https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html) to temporarily block the designation while that case proceeded. The appeals court acknowledged Anthropic "will likely suffer some irreparable harm" during the litigation — but held the harm did not meet the threshold for emergency relief.
 
 The court did, however, agree to expedite the case.
 
@@ -172,6 +172,17 @@ If the panel upholds the government's authority, the designation stands, the dis
 Oral arguments ended. Both sides acknowledged they were in uncharted territory. No American company had ever fought a supply chain risk designation in federal court before.
 
 The answer, when it comes, will define how much room AI companies have to mean what they say.
+
+---
+
+## Sources
+
+- [Anthropic Wins Preliminary Injunction — CNBC (March 26, 2026)](https://www.cnbc.com/2026/03/26/anthropic-pentagon-dod-claude-court-ruling.html)
+- [Judge Blocks Pentagon's Supply Chain Risk Designation — The Hill](https://thehill.com/policy/technology/5803486-anthropic-lawsuit-pentagon-claude/)
+- [Judge Grants Injunction but Pentagon CTO Says Ban Still Stands — Breaking Defense](https://breakingdefense.com/2026/03/judge-grants-anthropic-preliminary-injunction-but-pentagon-cto-says-ban-still-stands/)
+- [Anthropic Loses Appeals Court Bid to Temporarily Block Pentagon Blacklisting — CNBC (April 8, 2026)](https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html)
+- [Judge Temporarily Blocks Trump Administration's Anthropic Ban — NPR](https://www.npr.org/2026/03/26/nx-s1-5762971/judge-temporarily-blocks-anthropic-ban)
+- [Judge Presses DOD on Why Anthropic's Claude Was Blacklisted — CNBC](https://www.cnbc.com/2026/03/24/anthropic-lawsuit-pentagon-supply-chain-risk-claude.html)
 
 ---
 

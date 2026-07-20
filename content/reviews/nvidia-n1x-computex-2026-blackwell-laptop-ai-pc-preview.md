@@ -6,7 +6,7 @@ tags: ["nvidia", "ai-hardware", "local-ai", "computex", "ai-pc", "blackwell", "e
 categories: ["reviews"]
 ---
 
-Jensen Huang takes the Computex stage on **June 1, 2026** at GTC Taipei — and for the first time, an NVIDIA chip is expected to live inside a *laptop* rather than a data center rack. The N1X is an ARM-based SoC co-developed with MediaTek, packing a Blackwell-architecture GPU with 6,144 CUDA cores alongside a 20-core ARM CPU. This is a preview based on pre-announcement leaks and confirmed specifications.
+Jensen Huang takes the Computex stage on **June 1, 2026** at GTC Taipei — and for the first time, an NVIDIA chip is expected to live inside a *laptop* rather than a data center rack. The [N1X is an ARM-based SoC co-developed with MediaTek](https://www.techtimes.com/articles/317428/20260530/nvidia-arm-laptop-chip-n1x-confirmed-computex-cuda-rtx-5070-gpu-onboard.htm), packing a Blackwell-architecture GPU with 6,144 CUDA cores alongside a 20-core ARM CPU. This is a preview based on [pre-announcement leaks and confirmed specifications](https://www.tomshardware.com/pc-components/cpus/nvidias-long-awaited-n1-n1x-soc-specs-leak-ahead-of-computex-launch-n1-to-feature-up-to-20-arm-based-cores-standard-n1-equipped-with-12-and-10-core-configs).
 
 ## What Is the N1X?
 
@@ -91,6 +91,16 @@ The N1X is the most significant PC hardware announcement for local AI developmen
 The June 1 keynote will answer the key questions: real performance numbers, confirmed pricing, and which developer frameworks are ready at launch.
 
 *This is a pre-announcement preview based on confirmed leaks and pre-release information. We will update this article following the GTC Taipei keynote on June 1, 2026.*
+
+---
+
+## Sources
+
+- [NVIDIA ARM Laptop Chip N1X Confirmed for Computex: CUDA and RTX 5070 GPU Onboard — TechTimes](https://www.techtimes.com/articles/317428/20260530/nvidia-arm-laptop-chip-n1x-confirmed-computex-cuda-rtx-5070-gpu-onboard.htm)
+- [NVIDIA N1/N1X SoC Specs Leak Ahead of Computex — Tom's Hardware](https://www.tomshardware.com/pc-components/cpus/nvidias-long-awaited-n1-n1x-soc-specs-leak-ahead-of-computex-launch-n1-to-feature-up-to-20-arm-based-cores-standard-n1-equipped-with-12-and-10-core-configs)
+- [NVIDIA N1 and N1X Laptop Chips Leaked: Computex Announcement Teased — TBreak](https://tbreak.com/nvidia-n1-n1x-laptop-chips-computex/)
+- [Nvidia's N1X Specs Leak in Full — XDA Developers](https://www.xda-developers.com/mere-days-before-computex-2026-information-on-the-nvidia-n1-chip-leaked-online/)
+- [Nvidia's N1X: The Jolt Windows Laptops Need — PCWorld](https://www.pcworld.com/article/3151058/nvidias-n1x-could-be-the-jolt-windows-laptops-need-with-one-big-catch.html)
 
 ---
 

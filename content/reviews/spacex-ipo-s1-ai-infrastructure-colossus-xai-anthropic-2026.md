@@ -8,7 +8,7 @@ rating: 4
 
 ## The Headline
 
-SpaceX filed its S-1 with the SEC on May 20, 2026, targeting a **June 12 Nasdaq debut under ticker SPCX** at a **$1.75 trillion valuation** with a **$75 billion raise** — the largest IPO in history by a wide margin. (Saudi Aramco's 2019 listing held the record at $35.4 billion raised.)
+SpaceX [filed its S-1 with the SEC on May 20, 2026](https://vestedfinance.com/blog/us-stocks/inside-spacexs-s-1-decoding-the-three-engine-bet-going-public-as-spcx/), targeting a **June 12 Nasdaq debut under ticker SPCX** at a **$1.75 trillion valuation** with a **[$75 billion raise](https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html)** — the largest IPO in history by a wide margin. (Saudi Aramco's 2019 listing held the record at $35.4 billion raised.)
 
 The headline numbers are staggering. But buried inside the filing is a detailed window into SpaceX's AI infrastructure bet — one that rewrites how you should think about the Colossus supercomputer, the Anthropic deal, and the future of orbital computing.
 
@@ -67,7 +67,7 @@ Together, SpaceX claims they form **"the first coherent gigawatt-scale AI traini
 
 The S-1's most surprising disclosure is the Anthropic compute contract.
 
-> "SpaceX entered into Cloud Services Agreements with Anthropic for access to compute capacity across COLOSSUS and COLOSSUS II, with the customer agreeing to pay **$1.25 billion per month through May 2029**, with capacity ramping in May and June 2026 at a reduced fee."
+> "SpaceX entered into Cloud Services Agreements with Anthropic for access to compute capacity across COLOSSUS and COLOSSUS II, with the customer agreeing to pay **[$1.25 billion per month through May 2029](https://www.thevccorner.com/p/spacex-spcx-ipo-s1-teardown-valuation-2026)**, with capacity ramping in May and June 2026 at a reduced fee."
 
 That's approximately **$45 billion over three years** — one of the largest compute contracts ever disclosed publicly. Anthropic gets:
 - Access to the full capacity of Colossus I (220,000+ GPUs)
@@ -146,6 +146,15 @@ The SpaceX S-1 is one of the most information-dense IPO filings in years for AI 
 The risks are also real: the AI segment is losing $6.4 billion annually, ARPU compression is pressuring Starlink, and Musk's 85.1% voting control means investors are buying belief in one person's execution, not governance. The $1.75T valuation requires Colossus to succeed, Starship to bring down orbital launch costs, and orbital computing to materialize — in roughly that order.
 
 **IPO date: June 12, 2026. Ticker: SPCX.**
+
+---
+
+## Sources
+
+- [SpaceX S-1 Deep Dive: Decoding the $1.75T IPO — Vested Finance](https://vestedfinance.com/blog/us-stocks/inside-spacexs-s-1-decoding-the-three-engine-bet-going-public-as-spcx/)
+- [SpaceX SPCX S-1 Teardown: Valuation, Starlink, xAI, Anthropic Deal — The VC Corner](https://www.thevccorner.com/p/spacex-spcx-ipo-s1-teardown-valuation-2026)
+- [SpaceX Targets $135 IPO Price at $1.77 Trillion Valuation — CNBC](https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html)
+- [SpaceX IPO: 8 Things to Know Before It Goes Public — Forbes](https://www.forbes.com/sites/investor-hub/article/spacex-ipo-things-to-know/)
 
 ---
 

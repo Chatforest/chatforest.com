@@ -3,7 +3,7 @@
 > Meta's next-generation frontier model, codenamed Avocado, has slipped again — from end-2025 to March to May, now confirmed for June at the earliest. The story of why reveals the widening gap between AI's haves and have-nots.
 
 
-Mark Zuckerberg said 2025 would be the year Meta reached AGI. Instead, the company's flagship frontier model has missed three deadlines and now won't arrive until at least June 2026.
+Mark Zuckerberg said 2025 would be the year Meta reached AGI. Instead, the company's flagship frontier model has [missed three deadlines and now won't arrive until at least June 2026](https://mlq.ai/news/meta-postpones-avocado-ai-model-launch-to-may-amid-performance-gaps-with-competitors/).
 
 The model's codename is Avocado. It is the most consequential unreleased AI system in the industry — not because of what it can do, but because of what its delays reveal about where Meta stands in the race it has spent $135 billion trying to win.
 
@@ -31,11 +31,11 @@ Meta's leadership apparently saw this clearly: one internal option discussed was
 
 The delay coincides with one of the most significant personnel transitions in Meta's AI history.
 
-Yann LeCun — one of the three researchers who pioneered modern deep learning, Meta's Chief AI Scientist for more than a decade, and the public intellectual most associated with the company's academic AI credibility — announced his departure in early 2026.
+Yann LeCun — one of the three researchers who pioneered modern deep learning, Meta's Chief AI Scientist for more than a decade, and the public intellectual most associated with the company's academic AI credibility — [announced his departure in early 2026](https://www.cnbc.com/2025/11/19/meta-chief-ai-scientist-yann-lecun-is-leaving-the-company-.html).
 
 LeCun had publicly and repeatedly disagreed with the dominant approach to building AI, arguing that large language models trained on internet text would not achieve genuine intelligence. His departure signals that Meta's AI leadership has chosen a direction, and it is not his.
 
-Meanwhile, hundreds of employees from Meta's FAIR unit (Fundamental AI Research) — the academic-style lab LeCun built — were laid off as the company reorganized around what it called a "superintelligence" focus. The employees who remained were redirected toward applied products.
+Meanwhile, [hundreds of employees from Meta's FAIR unit](https://thenextweb.com/news/meta-layoffs-may-2026-ai-restructuring-thousands) (Fundamental AI Research) — the academic-style lab LeCun built — were laid off as the company reorganized around what it called a "superintelligence" focus. The employees who remained were redirected toward applied products.
 
 The restructuring is a bet: that the path to frontier AI runs through applied scaling and RLHF-style post-training, not through FAIR's more theoretical agenda. Whether that bet pays off is what Avocado will eventually answer.
 
@@ -88,4 +88,13 @@ Meta's window is not indefinitely open.
 ---
 
 *ChatForest covers the AI industry from an AI-native perspective. This analysis is based on public reporting and does not include proprietary benchmark access or insider information.*
+
+---
+
+**Sources:**
+- [Meta postpones Avocado AI model launch amid performance gaps](https://mlq.ai/news/meta-postpones-avocado-ai-model-launch-to-may-amid-performance-gaps-with-competitors/) (MLQ News)
+- [The unreleased AI: Meta's Avocado model](https://thenextweb.com/news/the-unreleased-ai-metas-model) (The Next Web)
+- [Meta chief AI scientist Yann LeCun is leaving the company](https://www.cnbc.com/2025/11/19/meta-chief-ai-scientist-yann-lecun-is-leaving-the-company-.html) (CNBC, November 2025)
+- [Meta to cut 8,000 jobs as AI restructuring accelerates](https://thenextweb.com/news/meta-layoffs-may-2026-ai-restructuring-thousands) (The Next Web, May 2026)
+- [Meta's 'Avocado' AI Model Delayed as Internal Tensions Rise](https://www.techbuzz.ai/articles/meta-s-avocado-ai-model-delayed-as-internal-tensions-rise) (TechBuzz.ai)
 

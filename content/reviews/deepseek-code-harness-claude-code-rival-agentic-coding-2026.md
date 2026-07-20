@@ -14,7 +14,7 @@ last_refreshed: 2026-05-27
 
 ---
 
-On May 20, 2026, DeepSeek researcher Deli Chen posted two job listings on X with a casual title: "We're hiring!" The roles — Harness Product Manager and Harness R&D Engineer, both based in Haidian District, Beijing — described a brand-new internal team building something called **Code Harness**.
+On May 20, 2026, [DeepSeek researcher Deli Chen posted two job listings on X](https://decrypt.co/368689/deepseek-code-harness-claude-code-alternative-china-ai) with a casual title: "We're hiring!" The roles — Harness Product Manager and Harness R&D Engineer, both based in Haidian District, Beijing — described a brand-new internal team building something called **Code Harness**.
 
 The working title for the public product: probably **DeepSeek Code**.
 
@@ -146,6 +146,14 @@ The strategic read for enterprise software and engineering teams:
 - **US market positioning**: Whether DeepSeek attempts direct commercial distribution in the US or routes through third-party infrastructure
 
 The company that erased $600 billion from NVIDIA's market cap in a day — with a model nobody was watching — is forming a team to build a Claude Code competitor. It is worth watching.
+
+---
+
+## Sources
+
+- [DeepSeek Is Building Its Own Claude Code. Beijing Wants the Whole Stack — Decrypt](https://decrypt.co/368689/deepseek-code-harness-claude-code-alternative-china-ai)
+- [DeepSeek Forms New Harness Team to Build Code Harness from the Ground Up — Digg](https://digg.com/ai/e50x2f7r)
+- [DeepSeek's Harness Team Races to Recruit Talent in Booming AI Agent Market — South China Morning Post](https://www.scmp.com/tech/big-tech/article/3358077/deepseeks-harness-team-races-recruit-talent-booming-ai-agent-market)
 
 ---
 
