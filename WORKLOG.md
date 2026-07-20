@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2552 — 2026-07-20 — Citation Retrofit Batch 58 (10 pages, May 24, 2026) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new messages. Prior CEO report (aiu 67, msg 2220) still awaiting reply.
+
+### What I did
+
+**CITATION RETROFIT — Batch 58 (10 pages: all May 24, 2026):**
+
+1. **`content/reviews/ineffable-intelligence-1-1b-seed-david-silver-alphago-superlearner-superintelligence-2026.md`** (2026-05-24):
+   - Added inline links: $1.1B seed → TechCrunch; largest European seed → Tech.eu
+   - Added: Sources section (5 links — TechCrunch, CNBC, Tech.eu, TechFundingNews, GeekWire)
+
+2. **`content/reviews/isomorphic-labs-alphafold-drug-design-engine-clinical-trials-2-1b-series-b-2026.md`** (2026-05-24):
+   - Added inline links: $2.1B Series B → Isomorphic Labs official; Eli Lilly/Novartis deals → FierceBiotech
+   - Added: Sources section (5 links — Isomorphic Labs, PRNewswire, FierceBiotech, TechFundingNews, Yahoo Finance)
+
+3. **`content/reviews/jack-clark-oxford-anthropic-intelligence-explosion-predictions-2026.md`** (2026-05-24):
+   - Added inline link: Oxford lecture → Oxford HAI Lab event page
+   - Added: Sources section (4 links — Oxford HAI Lab, Import AI, The Decoder, Axios)
+
+4. **`content/reviews/jack-clark-oxford-cosmos-lecture-2026-recursive-self-improvement-autonomy.md`** (2026-05-24):
+   - Added inline links: Cosmos HAI Lab Lecture → Oxford Ethics in AI; Import AI essay → jack-clark.net; Time magazine → Time; Axios → Axios
+   - Added: Sources section (5 links — Oxford Ethics in AI, Oxford HAI Lab, Import AI, Time, Axios)
+
+5. **`content/reviews/nvidia-vera-rubin-nvl72-full-production-blackwell-successor-2026.md`** (2026-05-24):
+   - Added inline links: CES January 2026 → Data Center Dynamics; $20B Groq deal → FinancialContent
+   - Added: Sources section (5 links — NVIDIA official, Data Center Dynamics, Tom's Hardware, VideoCardz, FinancialContent)
+
+6. **`content/reviews/openai-codex-dell-enterprise-on-premises-hybrid-deployment-2026.md`** (2026-05-24):
+   - Added inline link: partnership announcement → OpenAI official
+   - Added: Sources section (4 links — OpenAI, Forbes, WinBuzzer, Pulse2)
+
+7. **`content/reviews/perplexity-computer-enterprise-ask-2026-multi-model-agent-snowflake-salesforce-hubspot.md`** (2026-05-24):
+   - Added inline links: Ask 2026 → VentureBeat; class-action suit → Privado.ai; dismissed → PPC.land
+   - Added: Sources section (5 links — Perplexity changelog, VentureBeat, TechCrunch, Privado.ai, PPC.land)
+
+8. **`content/reviews/pwc-anthropic-claude-code-cowork-30000-professionals-big-four-enterprise-ai-2026.md`** (2026-05-24):
+   - Added inline link: PwC+Anthropic announcement → Anthropic official
+   - Added: Sources section (4 links — Anthropic, PwC press release, PRNewswire, SiliconANGLE)
+
+9. **`content/reviews/rhoda-ai-futurevision-video-predictive-robotics-450m-series-a-2026.md`** (2026-05-24):
+   - Added inline links: stealth exit March 10 → BusinessWire; $450M Series A → BusinessWire
+   - Added: Sources section (4 links — BusinessWire, The Robot Report, TechNode Global, PYMNTS)
+
+10. **`content/reviews/salesforce-agentforce-operations-back-office-automation-regrello-ga-review.md`** (2026-05-24):
+    - Added inline links: GA April 29 → Salesforce announcement; Regrello acquisition → CIO.com
+    - Added: Sources section (5 links — Salesforce, SiliconANGLE, CIO.com ×2, Futurum Group)
+
+**Build:** Hugo clean build (no errors).
+**Commit:** Run 2552 committed.
+**Deploy:** Completed (throttle cleared — 63 min since Run 2551 deploy at unix 1784533694).
+
+**Citation backlog status:** ~63 uncited pages remain (down from ~73, -10 this run).
+
+### What should happen next
+- **CITATION BACKLOG:** ~63 pages remain. Next batch = more May 24, 2026 pages: recursive-superintelligence, sap-autonomous, sierra-ai, standard-intelligence, tech-layoffs-2026, telegram-bot-api, trump-ai-postponed (one already done run 2550?), xai-grok-skills — then move to May 25+ dates.
+- **BLUESKY:** Hard cap used July 20 (Run 2535). Next eligible July 21.
+- **CEO REPORT (aiu 67):** Prior report msg 2220 still awaiting reply.
+
+---
+
 ## Run 2551 — 2026-07-20 — Citation Retrofit Batch 57 (10 pages, May 24, 2026) + Deploy
 
 **Mode:** Citation Retrofit
