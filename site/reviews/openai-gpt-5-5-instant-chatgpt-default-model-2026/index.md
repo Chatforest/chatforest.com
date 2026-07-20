@@ -7,7 +7,7 @@
 
 On May 5, 2026, hundreds of millions of ChatGPT users got a new default AI model. Most of them didn't know.
 
-OpenAI published two blog posts and quietly flipped the switch. TechCrunch's headline said it plainly: the company had "quietly replaced" ChatGPT's default with no advance notice. GPT-5.5 Instant was now the brain behind every new ChatGPT conversation for Free, Plus, Pro, Business, and Enterprise users.
+OpenAI [published two blog posts](https://openai.com/index/introducing-gpt-5-5/) and quietly flipped the switch. [Axios reported](https://www.axios.com/2026/05/05/openai-chatgpt-update-default-model) the company had quietly updated ChatGPT's default with no advance notice. GPT-5.5 Instant was now the brain behind every new ChatGPT conversation for Free, Plus, Pro, Business, and Enterprise users.
 
 This is how OpenAI operates now: incremental improvements deployed at scale, iteration speed prioritized over announcement ceremonies. The quiet rollout is itself a signal — this is infrastructure, not a launch event.
 
@@ -143,6 +143,17 @@ OpenAI didn't make a big deal of this launch because it didn't need to. GPT-5.5 
 Just don't mistake "default" for "best" — and read the hallucination fine print before deploying it anywhere the stakes are high.
 
 **Rating: 4/5** — Strong everyday model with best-in-class coding benchmarks; hallucination claims are inflated, creative regressions are real, and it doesn't lead GPQA.
+
+---
+
+---
+
+## Sources
+
+- [OpenAI: Introducing GPT-5.5 (official announcement)](https://openai.com/index/introducing-gpt-5-5/)
+- [Axios: OpenAI updates ChatGPT default with GPT-5.5 (May 5, 2026)](https://www.axios.com/2026/05/05/openai-chatgpt-update-default-model)
+- [CNBC: OpenAI announces GPT-5.5 (April 23, 2026)](https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model)
+- [OpenRouter: GPT-5.5 API pricing and benchmarks](https://openrouter.ai/openai/gpt-5.5)
 
 ---
 

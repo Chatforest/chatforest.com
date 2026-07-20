@@ -1,6 +1,6 @@
 # Anthropic's Enterprise AI Services Firm — Blackstone, Goldman Sachs, and $1.5B to Disrupt Consulting
 
-> On May 4, 2026, Anthropic announced a new standalone enterprise AI services firm backed by Blackstone, Hellman & Friedman, Goldman Sachs, and others with $1.5 billion in committed capital. The thesis: embed Anthropic engineers and Claude directly inside mid-sized businesses. The tension: Anthropic is now competing with its own consulting partners.
+> On May 4, 2026, [Anthropic announced a new standalone enterprise AI services firm](https://www.anthropic.com/news/enterprise-ai-services-company) backed by Blackstone, Hellman & Friedman, Goldman Sachs, and others with $1.5 billion in committed capital. The thesis: embed Anthropic engineers and Claude directly inside mid-sized businesses. The tension: Anthropic is now competing with its own consulting partners.
 
 
 **At a glance:** New enterprise AI services firm. Announced May 4, 2026. Founded by Anthropic, Blackstone, Hellman & Friedman, and Goldman Sachs. Backed by General Atlantic, Leonard Green, Apollo, GIC, Sequoia. Committed capital: ~$1.5B. Target: mid-sized businesses. Model: embed Anthropic Applied AI engineers + Claude directly into client operations. No company name disclosed. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -29,7 +29,7 @@ The firm becomes a member of Anthropic's Claude Partner Network, which already i
 
 ## The Consulting Industry Tension
 
-Fortune's headline on the announcement was direct: **"Anthropic takes shot at consulting industry."**
+[Fortune's headline](https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/) on the announcement was direct: **"Anthropic takes shot at consulting industry."**
 
 That framing is accurate, and the tension is real. Anthropic is simultaneously:
 
@@ -48,7 +48,7 @@ But the signal is unmistakable: Anthropic wants a direct relationship with enter
 
 The choice of founding partners — Blackstone, H&F, Goldman — is not accidental.
 
-Private equity firms own large portfolios of mid-sized companies. Blackstone alone manages over 200 portfolio companies across real estate, infrastructure, credit, and buyouts. H&F has a concentrated portfolio of technology and services businesses. Goldman Sachs manages capital across hundreds of corporate clients.
+Private equity firms own large portfolios of mid-sized companies. [Blackstone alone manages over 200 portfolio companies](https://www.blackstone.com/news/press/anthropic-partners-with-blackstone-hellman-friedman-and-goldman-sachs-to-launch-enterprise-ai-services-firm/) across real estate, infrastructure, credit, and buyouts. H&F has a concentrated portfolio of technology and services businesses. Goldman Sachs manages capital across hundreds of corporate clients.
 
 Each founding partner brings a pre-existing customer relationship network — mid-size businesses that are already under pressure to demonstrate AI productivity gains to their own investors. The new firm's initial customer base is, in effect, the portfolio companies of its founding investors.
 
@@ -91,4 +91,11 @@ For mid-sized businesses evaluating Claude deployment options, this firm is wort
 ---
 
 **What to read next:** For Claude's technical capabilities, see our **[Claude 4.5/4.6 review](/reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review/)**. For the competing approach from OpenAI, see our **[OpenAI Deployment Company review](/reviews/openai-deployment-company-tomoro-acquisition-enterprise-ai-2026/)**.
+
+**Sources:**
+- [Building a new enterprise AI services company — Anthropic](https://www.anthropic.com/news/enterprise-ai-services-company)
+- [Anthropic takes shot at consulting industry — Fortune](https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/)
+- [Anthropic partners with Blackstone, H&F, Goldman Sachs — Blackstone press release](https://www.blackstone.com/news/press/anthropic-partners-with-blackstone-hellman-friedman-and-goldman-sachs-to-launch-enterprise-ai-services-firm/)
+- [Anthropic teams with Goldman, Blackstone on $1.5B AI venture — CNBC](https://www.cnbc.com/2026/05/04/anthropic-goldman-blackstone-ai-venture.html)
+- [Anthropic, Blackstone, H&F Introduce Ode with Anthropic — BusinessWire](https://www.businesswire.com/news/home/20260715205134/en/Anthropic-Blackstone-and-Hellman-Friedman-Introduce-Ode-with-Anthropic-an-Enterprise-AI-Services-Firm)
 

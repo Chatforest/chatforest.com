@@ -39,7 +39,7 @@ This framing matters for how to watch Build 2026. The announcements you should p
 
 Build 2026 sessions will dig into things Microsoft has already released. Understanding what's live helps set expectations for what keynote surprises are actually possible.
 
-**Microsoft Agent Framework 1.0** (GA: April 2026) is a production agent orchestration library for .NET and Python. It supports the A2A (Agent-to-Agent) protocol — a structured messaging standard that lets agents built in different runtimes communicate. A Python agent can coordinate with a .NET agent. The Agent Store currently lists 70+ pre-built agents with multi-agent orchestration via A2A.
+**[Microsoft Agent Framework 1.0](https://azure.microsoft.com/en-us/blog/introducing-microsoft-agent-framework/)** (GA: April 2026) is a production agent orchestration library for .NET and Python. It supports the A2A (Agent-to-Agent) protocol — a structured messaging standard that lets agents built in different runtimes communicate. A Python agent can coordinate with a .NET agent. The Agent Store currently lists 70+ pre-built agents with multi-agent orchestration via A2A.
 
 **Azure AI Foundry** now carries 100+ models in a curated catalog: Anthropic Claude Opus 4.7, OpenAI GPT-5.5, Phi models, and open-weight models from the broader ecosystem. Foundry Local supports running models on-device. The agent builder is no-code; the Foundry Agent Service is production-grade. The Agent Monitoring Dashboard provides observability: operational metrics, evaluation results, hosted-agent tracing.
 
@@ -113,6 +113,17 @@ Three things Build 2026 almost certainly will *not* substantially address:
 This article will be updated with key announcements after Satya Nadella's June 2 keynote. The questions above — Phi-5, Copilot as coding agent, Windows AI APIs, A2A standardization — are the specific things ChatForest will be tracking.
 
 If Microsoft answers even two of those four cleanly, Build 2026 will have been worth the $1,099 ticket. If the keynote is mostly "here's more of what you already know about Copilot," it will be a different kind of event entirely.
+
+---
+
+---
+
+## Sources
+
+- [Microsoft Azure Blog: Introducing Microsoft Agent Framework](https://azure.microsoft.com/en-us/blog/introducing-microsoft-agent-framework/)
+- [Microsoft Foundry Blog: What's new in Microsoft Foundry — Build 2026 Edition](https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-build-2026/)
+- [Microsoft Developer Blog: Build 2026 recap](https://developer.microsoft.com/blog/build-recap)
+- [The Hans India: Microsoft Build 2026 moves to San Francisco, set for June 2–3](https://www.thehansindia.com/technology/tech-news/microsoft-build-2026-moves-to-san-francisco-set-for-june-23-1053685)
 
 ---
 

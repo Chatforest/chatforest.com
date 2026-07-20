@@ -3,7 +3,7 @@
 > On May 19, 2026, OpenAI joined the C2PA steering committee and began embedding Google DeepMind's SynthID watermark in all images generated via ChatGPT, the API, and Codex. The Verify research preview tool lets anyone check whether an image carries these signals. We explain what it does, how C2PA and SynthID differ, and what the initiative actually accomplishes — and what it doesn't.
 
 
-On May 19, 2026, OpenAI announced three simultaneous moves: joining the C2PA standards steering committee, embedding Google DeepMind's SynthID watermark in all images from ChatGPT, the API, and Codex, and releasing a public research preview tool called **Verify** that lets anyone upload an image and check whether it carries either signal.
+On May 19, 2026, OpenAI [announced three simultaneous moves](https://help.openai.com/en/articles/8912793-c2pa-and-synthid-in-openai-generated-images): joining the C2PA standards steering committee, embedding Google DeepMind's SynthID watermark in all images from ChatGPT, the API, and Codex, and releasing a public research preview tool called **Verify** that lets anyone upload an image and check whether it carries either signal.
 
 This is infrastructure-level work, not a product launch. No new model capability, no feature announcement. What OpenAI is doing is joining a cross-industry effort to make AI-generated images detectable — and doing it by adopting a watermarking standard built by its main rival.
 
@@ -25,7 +25,7 @@ As of May 2026, the C2PA steering committee includes Adobe, Amazon, BBC, Google,
 
 ## What SynthID Is
 
-SynthID was developed by Google DeepMind and first publicly demonstrated in 2023. It takes a fundamentally different approach to provenance: rather than embedding metadata in a file header, it embeds an invisible signal directly into the image pixels during the generation process.
+[SynthID was developed by Google DeepMind](https://c2paviewer.com/articles/openai-google-c2pa-synthid-2026) and first publicly demonstrated in 2023. It takes a fundamentally different approach to provenance: rather than embedding metadata in a file header, it embeds an invisible signal directly into the image pixels during the generation process.
 
 In latent diffusion models — the architecture underlying most modern image generators — SynthID embeds the watermark during the diffusion process itself, before the final decoding step. The signal lives in the latent representation, not as a post-processing overlay. Detection uses a neural network trained to recognize the statistical pattern of that embedding.
 
@@ -103,6 +103,17 @@ OpenAI's content provenance initiative is genuinely useful infrastructure — no
 The 3/5 reflects the gap between what this accomplishes and what would actually solve the problem. Coverage is limited to one generator among many. Bypasses exist for both layers. The Verify tool's most honest output is "we found a signal" or "we didn't look for anything outside our scope." The EU AI Act deadline is the forcing function here — this is compliance infrastructure in progress, not a solved problem.
 
 The initiative is worth watching. When SynthID detection reaches Google Search and Chrome at scale, and if C2PA adoption expands across more generators, the detection coverage picture will look different. For now: useful, limited, and the right direction.
+
+---
+
+---
+
+## Sources
+
+- [OpenAI Help Center: C2PA and SynthID in OpenAI-generated images](https://help.openai.com/en/articles/8912793-c2pa-and-synthid-in-openai-generated-images)
+- [C2PA Viewer: OpenAI and Google align on C2PA and SynthID](https://c2paviewer.com/articles/openai-google-c2pa-synthid-2026)
+- [ResultSense: OpenAI joins C2PA and adds Google SynthID watermarks (May 20, 2026)](https://www.resultsense.com/news/2026-05-20-openai-c2pa-synthid-content-provenance/)
+- [Enterprise DNA: OpenAI content provenance — C2PA and SynthID watermarking](https://enterprisedna.co/resources/news/openai-content-provenance-c2pa-synthid-watermarking-2026/)
 
 ---
 

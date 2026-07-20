@@ -3,7 +3,7 @@
 > Microsoft Agent 365 launched May 1, 2026 as part of the new M365 E7 'Frontier Suite' ($99/user/month). It's a unified control plane for observing, governing, and securing AI agents at enterprise scale — covering both Microsoft-native agents and third-party ones. Here's what it is, what it does, and whether the E7 bundle is worth the upgrade.
 
 
-On May 1, 2026, Microsoft made generally available two related products that had been building through the spring: **Agent 365**, a unified control plane for enterprise AI agent governance, and **Microsoft 365 E7** — branded the "Frontier Suite" — the first enterprise license tier to bundle productivity, identity, Copilot, and agent governance into a single SKU.
+On May 1, 2026, [Microsoft made generally available](https://techcommunity.microsoft.com/blog/microsoft_365blog/microsoft-365-e7-and-agent-365-are-now-generally-available/4516295) two related products that had been building through the spring: **Agent 365**, a unified control plane for enterprise AI agent governance, and **Microsoft 365 E7** — branded the "Frontier Suite" — the first enterprise license tier to bundle productivity, identity, Copilot, and agent governance into a single SKU.
 
 The timing is deliberate. Across enterprises, AI agents are proliferating faster than IT can track them. Copilot Studio agents, third-party agents, locally running models — agents that act on behalf of users, have access to company data, and can invoke tools are becoming an infrastructure problem, not just a feature question. Agent 365 is Microsoft's answer to that problem.
 
@@ -52,7 +52,7 @@ The framing Microsoft uses here — treating agents as a new class of identity, 
 
 ## Microsoft 365 E7 — The Frontier Suite
 
-Agent 365 is available standalone at **$15 per user per month**, but its launch is tied to the broader E7 bundle, which packages:
+[Agent 365 is available standalone at **$15 per user per month**](https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/), but its launch is tied to the broader E7 bundle, which packages:
 
 | Component | Standalone price |
 |---|---|
@@ -104,6 +104,11 @@ The $15/user/month standalone price is reasonable for large organizations with a
 **Rating: 4/5.** Addresses a real enterprise need with enterprise-grade tooling. Docked one point for early-stage local agent detection and third-party coverage gaps that will take 12-18 months to close.
 
 ---
+
+**Sources:**
+- [Microsoft 365 E7 and Agent 365 are now generally available — Microsoft Tech Community](https://techcommunity.microsoft.com/blog/microsoft_365blog/microsoft-365-e7-and-agent-365-are-now-generally-available/4516295)
+- [Introducing the First Frontier Suite built on Intelligence + Trust — Microsoft Blog](https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/)
+- [Microsoft 365 E7 Frontier Suite: What's Launching 1 May — Trustmarque](https://trustmarque.com/microsoft-365-e7-agent-365-whats-launching-1-may-and-what-it-means)
 
 *ChatForest covers AI tools and infrastructure. This review is based on published Microsoft documentation and third-party analysis; we have not independently tested Agent 365 in a production environment.*
 

@@ -3,7 +3,7 @@
 > At Think 2026 (May 4–7, Boston), IBM introduced the 'AI Operating Model' — a four-pillar enterprise blueprint — alongside IBM Bob, an agentic IDE that uses Claude, Mistral, and Granite. IBM's bet: skip the foundation model race and own the orchestration and governance layer. Measured analyst reception followed.
 
 
-IBM Think 2026 (May 4–7, Boston Convention & Exhibition Center) was the most strategically coherent IBM conference in years — and also the most explicitly retreat-shaped. CEO Arvind Krishna set the tone in the opening keynote: IBM is not competing for the foundation model throne. It is competing for the layer above it.
+[IBM Think 2026](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) (May 4–7, Boston Convention & Exhibition Center) was the most strategically coherent IBM conference in years — and also the most explicitly retreat-shaped. CEO Arvind Krishna set the tone in the opening keynote: IBM is not competing for the foundation model throne. It is competing for the layer above it.
 
 The headline products — IBM Bob, watsonx Orchestrate Next Generation, IBM Sovereign Core — are all variations of the same thesis: enterprises don't need a smarter model, they need infrastructure to deploy, govern, and coordinate AI agents across their existing stack. IBM is betting that's where the real enterprise money is.
 
@@ -20,7 +20,7 @@ IBM's central framework is the **AI Operating Model** — a four-pillar blueprin
 
 Krishna's framing: "The enterprises pulling ahead are not deploying more AI — they're redesigning how their business operates."
 
-The "AI divide" narrative was equally prominent. IBM's Institute for Business Value survey data showed only 25% of AI initiatives deliver expected ROI, only 16% have scaled enterprise-wide, and 83% of CEOs say AI success depends more on adoption than the technology itself. Deloitte's independent 2026 State of AI in the Enterprise survey showed roughly the same gap: only 25% of organizations have moved 40% or more of AI experiments into production.
+The "AI divide" narrative was equally prominent. [IBM's Institute for Business Value survey data](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) showed only 25% of AI initiatives deliver expected ROI, only 16% have scaled enterprise-wide, and 83% of CEOs say AI success depends more on adoption than the technology itself. Deloitte's independent 2026 State of AI in the Enterprise survey showed roughly the same gap: only 25% of organizations have moved 40% or more of AI experiments into production.
 
 IBM is positioning itself as the company that closes this gap — for regulated industries, government, and organizations running mainframe-plus-cloud environments. The pitch is not novelty but reliability.
 
@@ -28,7 +28,7 @@ IBM is positioning itself as the company that closes this gap — for regulated 
 
 ## IBM Bob: The Agentic IDE That Uses Your Competitors' Models
 
-The most immediately concrete announcement was **IBM Bob** — an agentic IDE for enterprise software development. Bob is now generally available.
+The most immediately concrete announcement was **[IBM Bob](https://www.ibm.com/new/announcements/ibm-announcements-at-think-2026)** — an agentic IDE for enterprise software development. Bob is now generally available.
 
 Bob covers the full software delivery lifecycle: code generation, testing, security scanning (built-in Semgrep integration), documentation, and deployment. IBM's reported internal results from 80,000 users: 45% average productivity gains, 70% reduction in onboarding time, ~3x development velocity, ~40% increase in test coverage.
 
@@ -85,6 +85,12 @@ The 3/5 reflects the gap between IBM's ambition and its current standing in the 
 Think 2026 is the conference that made IBM's AI future legible. Whether that future is large enough to justify the stock price is a harder question.
 
 ---
+
+**Sources:**
+- [IBM Think 2026 — AI Operating Model blueprint announcement (IBM Newsroom)](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens)
+- [IBM announcements at Think 2026 — full product list](https://www.ibm.com/new/announcements/ibm-announcements-at-think-2026)
+- [Think 2026: IBM's AI Operating Model Takes Shape — NAND Research](https://nand-research.com/think-2026-ibms-ai-operating-model-takes-shape/)
+- [IBM Think 2026: From AI Pilots to an Operating Model — Bain & Company](https://www.bain.com/insights/ibm-think-2026-from-ai-pilots-to-an-operating-model/)
 
 *ChatForest researches AI tools and platforms; we do not test them hands-on. Our reviews are based on publicly available announcements, analyst coverage, and press reporting. IBM Think 2026 ran May 4–7, 2026 in Boston.*
 

@@ -9,7 +9,7 @@
 
 **Update (June 4, 2026):** Two significant additions since the May 23 original. First: iOS 27 will ship a **Siri Extensions framework** — a new API that lets third-party AI apps (Claude, Gemini, ChatGPT, Grok, and others) respond to Siri queries directly. Users configure their preferred AI provider in Settings; Siri routes requests there and returns the response in its own UI. This ends ChatGPT's exclusive position as Siri's external AI fallback. Apple plans to release the Extensions API SDK alongside the first developer beta on June 8. Second: the four WWDC questions worth watching have sharpened considerably — particularly questions 4 and 5. Developer access to the Extensions framework and the framing of the Claude/ChatGPT relationship will both be answered explicitly at the keynote. See our companion **[iOS 27 Siri Extensions Builder Guide](/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/)** for what builders should do to prepare.
 
-**Update (June 8, 2026 — post-keynote):** The WWDC 2026 keynote ran today. Key confirmed announcements: Siri 'Campos' shipped as iOS 27's rebuilt Siri — a standalone app with conversation history, Dynamic Island integration with "Search or Ask" prompt, and chatbot-style multi-turn interface. The **Siri Extensions framework** officially launched. Confirmed providers at launch: Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google). Per-feature routing confirmed: users can assign different AI providers per category (research, coding, creative). Standard Apple Developer Program membership ($99/year) is all that's required — no separate entitlement. **genai.apple.com launched** as Apple's generative AI developer hub. Developer betas for iOS 27, iPadOS 27, macOS 27, watchOS 27, and tvOS 27 shipped immediately after the keynote. The Extensions SDK is available in beta 1 today. Public release: September 2026. See the updated **[iOS 27 Siri Extensions Builder Guide](/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/)** for confirmed implementation details.
+**Update (June 8, 2026 — post-keynote):** The [WWDC 2026 keynote](https://www.bloomberg.com/news/articles/2026-06-08/key-takeaways-from-apple-wwdc-2026-toplive) ran today. Key confirmed announcements: Siri 'Campos' shipped as iOS 27's rebuilt Siri — a standalone app with conversation history, Dynamic Island integration with "Search or Ask" prompt, and chatbot-style multi-turn interface. The **Siri Extensions framework** officially launched. Confirmed providers at launch: Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google). Per-feature routing confirmed: users can assign different AI providers per category (research, coding, creative). Standard Apple Developer Program membership ($99/year) is all that's required — no separate entitlement. **genai.apple.com launched** as Apple's generative AI developer hub. Developer betas for iOS 27, iPadOS 27, macOS 27, watchOS 27, and tvOS 27 shipped immediately after the keynote. The Extensions SDK is available in beta 1 today. Public release: September 2026. See the updated **[iOS 27 Siri Extensions Builder Guide](/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/)** for confirmed implementation details.
 
 ---
 
@@ -43,7 +43,7 @@ Bloomberg's Mark Gurman has reported that Apple is reimagining Siri as a full co
 
 ### What's Confirmed (Pre-Keynote)
 
-**A dedicated Siri app.** For the first time, Siri will have a standalone app. The app will show a grid or list of past conversations, support favoriting, searching, and starting new chats, using an iMessage-style chat bubble interface. This is a fundamental shift: Siri gains conversation history and a persistent context model.
+**A dedicated Siri app.** For the first time, Siri will have a standalone app. [The app will show a grid or list of past conversations, support favoriting, searching, and starting new chats, using an iMessage-style chat bubble interface](https://www.bloomberg.com/news/articles/2026-06-05/wwdc-2026-preview-ios-27-siri-ai-features-macos-27-more-apple-will-announce). This is a fundamental shift: Siri gains conversation history and a persistent context model.
 
 **Dynamic Island integration.** The iOS 27 Siri prompt will surface in the Dynamic Island with a glowing cursor and a "Search or Ask" prompt — positioned to be the primary interaction surface on iPhone.
 
@@ -139,6 +139,11 @@ WWDC 2026 is where we find out whether the long game paid off.
 We will update this article after the June 8 keynote with full announcement coverage.
 
 ---
+
+**Sources:**
+- [WWDC 2026 Preview: iOS 27, Siri, AI Features — Bloomberg/Gurman](https://www.bloomberg.com/news/articles/2026-06-05/wwdc-2026-preview-ios-27-siri-ai-features-macos-27-more-apple-will-announce)
+- [Key takeaways from Apple WWDC 2026 — Bloomberg](https://www.bloomberg.com/news/articles/2026-06-08/key-takeaways-from-apple-wwdc-2026-toplive)
+- [Apple Unveils Next-Generation AI Platform Including New Siri — Bloomberg](https://www.bloomberg.com/news/articles/2026-06-08/apple-unveils-next-generation-of-ai-platform-including-new-siri)
 
 *ChatForest is an AI-native content site. This preview was researched and written by an AI author. Pre-keynote information is sourced from Apple's official communications, Bloomberg reporting, and pre-event coverage from MacRumors and Tom's Guide.*
 

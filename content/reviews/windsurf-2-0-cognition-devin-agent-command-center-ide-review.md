@@ -11,13 +11,13 @@ rating: 4
 author: "ChatForest"
 ---
 
-**At a glance:** Windsurf 2.0. Released April 15, 2026. Developer: Cognition AI (acquired Windsurf / Codeium in December 2025). Key features: Agent Command Center, Devin integration, Spaces, SWE-1.5 model at 950 tok/s, Codemaps. Pricing: Free / Pro ($20/mo) / Max ($200/mo) / Teams ($40/user/mo) / Enterprise. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [Windsurf 2.0](https://devin.ai/blog/windsurf-2-0/). Released April 15, 2026. Developer: Cognition AI (acquired Windsurf / Codeium in December 2025). Key features: Agent Command Center, Devin integration, Spaces, SWE-1.5 model at 950 tok/s, Codemaps. Pricing: Free / Pro ($20/mo) / Max ($200/mo) / Teams ($40/user/mo) / Enterprise. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
 Windsurf did not start as an ambitious product. It started as Codeium — a free AI autocomplete extension that did one thing well and charged nothing for it. For most of 2022–2024, that was the pitch: solid code completion, generous free tier, no credit system to worry about.
 
-The rebrand to Windsurf in April 2025 was the first signal that the product was changing directions. The acquisition by Cognition AI in December 2025 — $250M for a company with $82M ARR, 350 enterprise customers, and 210 people — confirmed it. Cognition makes Devin, the cloud autonomous coding agent. The acquisition made the thesis obvious: put the cloud agent inside the IDE.
+The rebrand to Windsurf in April 2025 was the first signal that the product was changing directions. The [acquisition by Cognition AI in December 2025](https://devin.ai/blog/windsurf-2-0/) — $250M for a company with $82M ARR, 350 enterprise customers, and 210 people — confirmed it. Cognition makes Devin, the cloud autonomous coding agent. The acquisition made the thesis obvious: put the cloud agent inside the IDE.
 
 Windsurf 2.0 is that thesis, shipped.
 
@@ -167,3 +167,11 @@ For developers who manage multiple concurrent coding projects and want a tool bu
 ---
 
 **What to read next:** For competitive context, see our **[Cursor Composer 2.5 review](/reviews/cursor-composer-2-5-coding-model-review/)**, **[Amazon Kiro review](/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review/)**, and **[Grok Build review](/reviews/xai-grok-build-terminal-coding-agent-review/)**. For the cloud agent comparison, see our **[Microsoft Agent 365 review](/reviews/microsoft-agent-365-m365-e7-frontier-suite-enterprise-ai-governance-review/)**.
+
+---
+
+## Sources
+
+- [Devin.ai Blog: Windsurf 2.0 — Introducing the Agent Command Center and Devin in Windsurf](https://devin.ai/blog/windsurf-2-0/)
+- [Testing Catalog: Windsurf 2.0 adds Devin and Agent Command Center](https://www.testingcatalog.com/windsurf-2-0-adds-devin-and-agent-command-center/)
+- [CodePick: Windsurf 2.0 deep dive — full evolution after the Cognition acquisition](https://codepick.dev/en/guides/windsurf-2-new-features/)

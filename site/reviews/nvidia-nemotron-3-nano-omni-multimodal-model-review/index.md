@@ -13,9 +13,9 @@ That number deserves a pause. Nemotron 3 Nano Omni is a model that can look at a
 
 Most dedicated vision-language models activate their full parameter count to do two things: see and read. Nemotron 3 Nano Omni activates 10% of its weight budget to do six.
 
-The architecture that makes this possible is a hybrid Mixture-of-Experts design. The MoE router selects which 3B-parameter slice of the 30B total is most relevant for a given input — then only that slice runs. The result, NVIDIA claims, is **9x higher throughput** than comparable open omni models at equivalent interactivity levels, and **2.9x the single-stream reasoning speed** on multimodal tasks.
+The architecture that makes this possible is a hybrid Mixture-of-Experts design. The MoE router selects which 3B-parameter slice of the 30B total is most relevant for a given input — then only that slice runs. The result, [NVIDIA claims](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/), is **9x higher throughput** than comparable open omni models at equivalent interactivity levels, and **2.9x the single-stream reasoning speed** on multimodal tasks.
 
-NVIDIA released Nemotron 3 Nano Omni on April 29, 2026. Free weights. NVIDIA NIM microservice. Runs from a Jetson edge device to a DGX data center cluster.
+NVIDIA [released Nemotron 3 Nano Omni on April 29, 2026](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/). Free weights. NVIDIA NIM microservice. Runs from a Jetson edge device to a DGX data center cluster.
 
 ---
 
@@ -126,7 +126,7 @@ The NVIDIA NIM packaging means developers who prefer managed API access can use 
 
 ## Technical Report
 
-NVIDIA published the Nemotron 3 Nano Omni technical report on April 27, 2026 (two days before the public release), available as a research PDF from nvidia.com. The report covers architecture, training methodology, and benchmark results in detail. The Hugging Face model page includes the architecture documentation alongside the weights.
+NVIDIA published the [Nemotron 3 Nano Omni technical report on April 27, 2026](https://arxiv.org/abs/2604.24954) (two days before the public release), available as a research PDF from nvidia.com. The report covers architecture, training methodology, and benchmark results in detail. The [Hugging Face model page](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16) includes the architecture documentation alongside the weights.
 
 ---
 
@@ -167,6 +167,18 @@ The caveats are the same ones that apply to any newly released model: NVIDIA-rep
 For teams building multimodal agents — document processing, video analysis, voice interfaces, or mixed-modality workflows — Nemotron 3 Nano Omni is a serious candidate to evaluate. The architecture is genuinely novel, the deployment range is genuinely broad, and the active-parameter efficiency story has real operational implications.
 
 **Rating: 4/5** — strong multimodal capability breadth with an efficient MoE compute profile and wide deployment range; held back by NVIDIA-only benchmark reporting, text-only output limiting voice generation, and MoE overhead questions at edge batch sizes.
+
+---
+
+---
+
+## Sources
+
+- [NVIDIA Blog: Nemotron 3 Nano Omni launch announcement](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/)
+- [NVIDIA Developer Technical Blog: architecture and benchmark details](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/)
+- [HuggingFace Blog: NVIDIA Nemotron 3 Nano Omni multimodal intelligence](https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence)
+- [HuggingFace: Nemotron-3-Nano-Omni-30B-A3B model weights](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16)
+- [arXiv 2604.24954: Nemotron 3 Nano Omni technical report (April 27, 2026)](https://arxiv.org/abs/2604.24954)
 
 ---
 

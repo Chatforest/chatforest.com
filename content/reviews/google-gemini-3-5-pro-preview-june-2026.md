@@ -21,7 +21,7 @@ author: "ChatForest"
 
 Google I/O 2026 had a conspicuous absence. Between Gemini 3.5 Flash, Gemini Spark, Google Antigravity 2.0, AI Glasses, and the announcement of Google Search Agents, one model wasn't on stage: **Gemini 3.5 Pro**.
 
-Sundar Pichai's explanation was five words: "Give us until next month."
+[Sundar Pichai's explanation](https://findskill.ai/blog/gemini-3-5-pro-release-date/) was five words: "Give us until next month."
 
 That framing tells you more than a benchmark table would. Google shipped Flash at I/O because Flash was ready. Pro isn't ready yet — and the fact that Google said so plainly, rather than delaying I/O or shipping a half-baked model, is worth noting.
 
@@ -135,3 +135,11 @@ We'll update this article with full benchmarks and a final rating when Pro launc
 ---
 
 **What to read next:** Our full **[Gemini 3.5 Flash review](/reviews/gemini-3-5-flash-google-io-2026-review/)** covers the launch model in detail — benchmarks, pricing, Google Antigravity 2.0, Gemini Spark, and the AI glasses partnerships. For the competitive context, see our **[Claude Opus 4.7 review](/reviews/anthropic-claude-opus-4-7-deep-dive/)** and **[GPT-5.5 Instant review](/reviews/openai-gpt-5-5-instant-chatgpt-default-model-2026/)**.
+
+---
+
+## Sources
+
+- [FindSkill.ai: Gemini 3.5 Pro release date — Sundar Pichai statement at Google I/O 2026](https://findskill.ai/blog/gemini-3-5-pro-release-date/)
+- [MarketScale: Gemini 3.5 Pro still in preview — July 2026 status](https://www.marketscale.com/industries/software-and-technology/gemini-3-5-pro-still-in-preview-what-enterprise-teams-evaluating-a-model-should-do-now)
+- [TechJournal: Gemini 3.5 Pro — Cappuccino codename, release timeline](https://techjournal.org/gemini-3-5-pro-release-date)

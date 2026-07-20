@@ -7,7 +7,7 @@
 
 ---
 
-On May 20, 2026, the same week Meta posted the highest quarterly revenue in its history, the company sent layoff notifications to 8,000 employees.
+On May 20, 2026, [the same week Meta posted the highest quarterly revenue in its history](https://thenextweb.com/news/meta-layoffs-8000-zuckerberg-ai-reality-may-2026), the company sent layoff notifications to 8,000 employees.
 
 That tension — record profits, mass reductions — is not a contradiction. It is the point.
 
@@ -23,7 +23,7 @@ Zuckerberg has been telegraphing this trade since early 2025: use Meta's profita
 
 **Savings.** Bank of America estimates the reductions generate $7–8 billion in annualized savings. That figure covers roughly 5–6% of the 2026 capex plan.
 
-**Capital expenditure.** Meta raised its 2026 capex guidance to $125–145 billion — up from $72.2 billion in 2025 and $39.2 billion in 2024. In a single quarter, Meta added $107 billion in new contractual commitments for cloud and infrastructure deals. The capex plan is not being funded by the layoffs; it is being funded by the advertising revenue. The layoffs are about organizational composition, not financial necessity.
+**Capital expenditure.** [Meta raised its 2026 capex guidance to $125–145 billion](https://thenextweb.com/news/meta-layoffs-8000-zuckerberg-ai-reality-may-2026) — up from $72.2 billion in 2025 and $39.2 billion in 2024. In a single quarter, Meta added $107 billion in new contractual commitments for cloud and infrastructure deals. The capex plan is not being funded by the layoffs; it is being funded by the advertising revenue. The layoffs are about organizational composition, not financial necessity.
 
 ---
 
@@ -47,11 +47,11 @@ The people being cut, by most accounts, are from roles that AI is expected to ab
 
 ## Prometheus: The Infrastructure Bet
 
-The $145B capex is not abstract. The largest single piece is **Prometheus** — a 1-gigawatt AI supercluster under construction in New Albany, Ohio.
+The $145B capex is not abstract. The largest single piece is **[Prometheus](https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/)** — a 1-gigawatt AI supercluster under construction in New Albany, Ohio.
 
 Prometheus will be the world's first gigawatt-capable data center when it comes online in 2026. The facility is being built at 1500 Beech Road; Zuckerberg announced in July 2025 that it would be the centerpiece of Meta's advanced AI infrastructure.
 
-**Power.** Meta has signed nuclear energy deals with Vistra, TerraPower, and Oklo to power Prometheus. A 200-megawatt natural gas facility (from Will-Power OH) is also approved exclusively for the site, with a second 200 MW facility in the permitting process. Nuclear is the only power source capable of delivering baseload power at this density reliably enough for 24/7 AI training workloads.
+**Power.** Meta has [signed nuclear energy deals](https://www.cnbc.com/2026/01/09/meta-signs-nuclear-energy-deals-to-power-prometheus-ai-supercluster.html) with Vistra, TerraPower, and Oklo to power Prometheus. A 200-megawatt natural gas facility (from Will-Power OH) is also approved exclusively for the site, with a second 200 MW facility in the permitting process. Nuclear is the only power source capable of delivering baseload power at this density reliably enough for 24/7 AI training workloads.
 
 **Hardware.** Prometheus will be GPU-dense from the ground up: custom AMD Instinct MI450-based chips, 6th Gen AMD EPYC CPUs, ROCm software, and AMD's Helios rack-scale architecture. First shipments are scheduled for the second half of 2026.
 
@@ -94,4 +94,11 @@ Whether the bet pays off depends on whether raw compute advantage still compound
 - **Muse Spark benchmarks** — MSL's first major public model; performance data against Claude, GPT, and Gemini at the frontier will be the first signal of whether Wang's team is producing at the level Zuckerberg hired him for.
 - **Agent deployment metrics** — The ATA team is meant to measure agent productivity replacing human work. If Meta publishes this data (or if it leaks), it will be the most concrete evidence yet of whether internal AI agents at scale are delivering.
 - **Wang vs. Bosworth** — The dual-track AI leadership structure is inherently unstable over a 12–18 month horizon. One track will likely absorb the other. Which one determines Meta's AI identity for the next phase.
+
+**Sources:**
+- [Meta cuts 8,000 jobs at record $56B quarterly revenue — The Next Web](https://thenextweb.com/news/meta-layoffs-8000-zuckerberg-ai-reality-may-2026)
+- [Meta to cut 8,000 jobs on 20 May — The Next Web](https://thenextweb.com/news/meta-layoffs-may-2026-ai-restructuring-thousands)
+- [Meta nuclear energy projects announcement — Meta/Facebook](https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/)
+- [Meta signs nuclear energy deals for Prometheus — CNBC](https://www.cnbc.com/2026/01/09/meta-signs-nuclear-energy-deals-to-power-prometheus-ai-supercluster.html)
+- [Meta inks nuclear deals up to 6.6 GW — Utility Dive](https://www.utilitydive.com/news/meta-nuclear-deal-oklo-vistra-terrapower-ai-data-centers/809215/)
 

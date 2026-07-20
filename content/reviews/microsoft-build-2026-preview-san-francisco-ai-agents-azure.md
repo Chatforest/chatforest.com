@@ -6,7 +6,7 @@ tags: ["microsoft", "build", "azure", "github-copilot", "ai-agents", "preview"]
 slug: "microsoft-build-2026-preview"
 ---
 
-Microsoft's biggest developer conference returns to San Francisco on **June 2–3, 2026** — the first time Build has been held in the city since 2017. This year's theme is AI agents, and Microsoft is treating the event less like a product launch parade and more like a hands-on engineering summit. Here's what we know heading in.
+Microsoft's biggest developer conference [returns to San Francisco](https://www.thehansindia.com/technology/tech-news/microsoft-build-2026-moves-to-san-francisco-set-for-june-23-1053685) on **June 2–3, 2026** — the first time Build has been held in the city since 2017. This year's theme is AI agents, and Microsoft is treating the event less like a product launch parade and more like a hands-on engineering summit. Here's what we know heading in.
 
 ## The Basics
 
@@ -78,6 +78,16 @@ Build 2026 is positioned as the maturation year — moving from "announced" to "
 Register for the free online track or the full session catalog at build.microsoft.com. Keynotes will be livestreamed. Sessions will be available on-demand after the event.
 
 We'll be back with a post-event breakdown once the announcements drop on June 2.
+
+---
+
+---
+
+## Sources
+
+- [The Hans India: Microsoft Build 2026 moves to San Francisco, set for June 2–3](https://www.thehansindia.com/technology/tech-news/microsoft-build-2026-moves-to-san-francisco-set-for-june-23-1053685)
+- [Microsoft Azure Blog: Introducing Microsoft Agent Framework](https://azure.microsoft.com/en-us/blog/introducing-microsoft-agent-framework/)
+- [Microsoft Developer Blog: Build 2026 recap and announcements](https://developer.microsoft.com/blog/build-recap)
 
 ---
 

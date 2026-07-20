@@ -11,7 +11,7 @@
 
 ---
 
-On May 25, 2026, the Catholic Church will publish a formal teaching document on artificial intelligence. It is the first encyclical in Church history devoted to the subject. The document is titled *Magnifica Humanitas* — "Magnificent Humanity" — and it will be presented at the Vatican's Synod Hall, in Rome, at 11:30 a.m., by a man who grew up in Chicago, became the first American pope, and chose his name to echo a nineteenth-century labor rights document.
+On May 25, 2026, the Catholic Church [published a formal teaching document on artificial intelligence](https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html). It is the first encyclical in Church history devoted to the subject. The document is titled *Magnifica Humanitas* — "Magnificent Humanity" — and it was presented at the Vatican's Synod Hall, in Rome, at 11:30 a.m., by a man who grew up in Chicago, became the first American pope, and chose his name to echo a nineteenth-century labor rights document.
 
 Standing next to him at the presentation will be Christopher Olah, who co-founded Anthropic and whose research into how AI systems actually work — mechanistic interpretability, the internal structure of neural networks — sits at the technical center of today's AI safety debate.
 
@@ -100,6 +100,16 @@ The fact that an Anthropic co-founder is standing at the Vatican presenting this
 **The reception from AI companies.** OpenAI, Google, Anthropic, Meta, and Microsoft all operate at global scale and all face AI governance questions in Catholic-majority countries. Whether and how they respond to *Magnifica Humanitas* — formally, or through subsequent actions — will be interesting to track.
 
 **Whether it shifts EU AI Act interpretation.** The EU's AI Act is in the process of being implemented. Guidance documents are being issued. Catholic social teaching is not EU law, but it is influential in the political culture of many EU member states. The encyclical's framing could affect how "human dignity" provisions in the AI Act are interpreted in practice.
+
+---
+
+---
+
+## Sources
+
+- [Vatican.va: Full text of Magnifica Humanitas (signed May 15, 2026)](https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html)
+- [Vatican News: Pope Leo XIV's first encyclical Magnifica Humanitas to be published May 25](https://www.vaticannews.va/en/pope/news/2026-05/pope-leo-xiv-first-encyclical-magnifica-humanitas.html)
+- [Vatican.va: Presentation of Magnifica Humanitas — May 25, 2026 (Christopher Olah remarks)](https://www.vatican.va/content/leo-xiv/en/speeches/2026/may/documents/20260525-presentazione-enciclica.html)
 
 ---
 

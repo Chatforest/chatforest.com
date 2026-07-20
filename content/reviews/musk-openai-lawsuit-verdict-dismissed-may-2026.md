@@ -7,7 +7,7 @@ tags: ["openai", "elon-musk", "ai-industry", "legal", "xai"]
 
 ## The Verdict
 
-On May 18, 2026, a nine-member jury in U.S. District Court in Oakland returned a verdict in *Musk v. OpenAI* after roughly 90 minutes of deliberation.
+On May 18, 2026, a nine-member jury in U.S. District Court in Oakland [returned a verdict in *Musk v. OpenAI*](https://www.npr.org/2026/05/18/nx-s1-5822366/musk-altman-openai-jury-verdict-claims-dismissed) after roughly 90 minutes of deliberation.
 
 All claims dismissed. Every single one.
 
@@ -54,7 +54,7 @@ OpenAI's lead attorney William Savitt was direct:
 
 > "What this lawsuit was was a hypocritical attempt to sabotage a competitor."
 
-Musk, posting on X:
+Musk, [posting on X](https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html):
 
 > "Calendar technicality."
 
@@ -95,6 +95,17 @@ The founding question — whether you can promise to build AI for humanity, take
 The appeal will proceed. The Ninth Circuit will hear arguments, probably in 2027. The continuing violation theory Musk's team plans to raise is a narrow legal argument that courts have applied inconsistently. Most observers expect the dismissal to stand.
 
 What it means for xAI, for the IPO, and for the "stole a charity" argument as a cultural narrative: less than Musk hoped, more than OpenAI wanted to deal with during an IPO preparation.
+
+---
+
+---
+
+## Sources
+
+- [NPR: Jury dismisses all claims in Elon Musk's lawsuit against OpenAI CEO Sam Altman (May 18, 2026)](https://www.npr.org/2026/05/18/nx-s1-5822366/musk-altman-openai-jury-verdict-claims-dismissed)
+- [CNBC: Musk slams Altman trial verdict as a 'technicality,' vows to appeal](https://www.cnbc.com/2026/05/18/musk-altman-openai-trial-verdict.html)
+- [CNN Business: Musk loses case against OpenAI](https://www.cnn.com/2026/05/18/tech/openai-musk-lawsuit-verdict)
+- [Fortune: Jury rules against Elon Musk in lawsuit against OpenAI](https://fortune.com/2026/05/18/jury-rules-against-elon-musk-in-suit-against-openai/)
 
 ---
 

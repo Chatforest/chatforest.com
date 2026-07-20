@@ -69,11 +69,11 @@
         <p><strong>At a glance:</strong> Cursor 3. Released April 2, 2026 (3.0); 3.3 May 7; 3.4 May 13; Composer 2.5 May 18. Developer: Anysphere. Key features: Agents Window, Background Agents, Composer 2.5, parallel agent execution, PR Review (Graphite acquisition), Canvases, BugBot. Pricing: Free / Pro ($20/mo) / Pro+ ($60/mo) / Ultra ($200/mo) / Teams ($40/user/mo). Part of our <strong><a href="/categories/ai-tools/">AI Models &amp; Companies reviews</a></strong>.</p>
 <hr>
 <p>Cursor did not start as an IDE. It started as a bet that the future of code editing looks like a chat window more than a text buffer.</p>
-<p>That bet paid off. By February 2026, Anysphere — the company behind Cursor — had reached $2B in annual recurring revenue. More than twice as many Cursor users rely on Agent Mode as on Tab completion. That&rsquo;s a reversal that would have seemed implausible in early 2025, when the product was still primarily known for its autocomplete quality.</p>
+<p>That bet paid off. By February 2026, Anysphere — the company behind Cursor — had reached <a href="https://cursor.com/changelog/3-0">$2B in annual recurring revenue</a>. More than twice as many Cursor users rely on Agent Mode as on Tab completion. That&rsquo;s a reversal that would have seemed implausible in early 2025, when the product was still primarily known for its autocomplete quality.</p>
 <p>Cursor 3 is the version that formalizes this shift architecturally. The old model — developer uses editor, occasionally asks AI for help — is replaced by a new model: agents do the coding, the developer orchestrates. The IDE is a runtime for agents now. The editor is how the human watches.</p>
 <hr>
 <h2 id="what-changed-in-cursor-30-april-2-2026">What Changed in Cursor 3.0 (April 2, 2026)</h2>
-<p>The Cursor 3.0 announcement described the product as an &ldquo;agent execution runtime.&rdquo; That framing is accurate in a way that earlier versions weren&rsquo;t.</p>
+<p>The <a href="https://cursor.com/changelog/3-0">Cursor 3.0 announcement</a> described the product as an &ldquo;agent execution runtime.&rdquo; That framing is accurate in a way that earlier versions weren&rsquo;t.</p>
 <p>The biggest structural change is the <strong>Agents Window</strong> — a unified sidebar that replaces the old Composer pane. Every agent session the user has running, regardless of where it started or where it&rsquo;s executing, appears in a single control surface: local agents working in the current repo, cloud agents (Background Agents) running on VMs, agents isolated in git worktrees via <code>/worktree</code>, and agents connected over remote SSH. All visible. All manageable from one place.</p>
 <p>This matters because the old model had a scaling problem. If you were running a local Cascade session, a Background Agent on a separate VM, and an SSH-connected agent working on a remote server, you were context-switching between three different views. Cursor 3 collapses that.</p>
 <p>Other structural additions in 3.0:</p>
@@ -84,7 +84,7 @@
 <hr>
 <h2 id="33-may-7-pr-review-and-parallel-agents">3.3 (May 7): PR Review and Parallel Agents</h2>
 <p>Two of the most practically significant features in the Cursor 3 cycle landed in the 3.3 release.</p>
-<p><strong>PR Review workflow</strong> is a first-class GitHub PR integration inside the IDE. It includes a Reviews tab (inline comment threads and top-level PR discussions), a Commits tab (focused commit history), a Changes tab (file tree with a picker for large diffs), and quick-action pills for approve/request-changes/next steps. The feature is a direct product of Anysphere&rsquo;s December 2025 acquisition of Graphite, a New York-based code review startup that was acquired for more than its $290M most recent valuation.</p>
+<p><strong>PR Review workflow</strong> is a first-class GitHub PR integration inside the IDE. It includes a Reviews tab (inline comment threads and top-level PR discussions), a Commits tab (focused commit history), a Changes tab (file tree with a picker for large diffs), and quick-action pills for approve/request-changes/next steps. The feature is a direct product of Anysphere&rsquo;s <a href="https://cursor.com/changelog/3-0">December 2025 acquisition of Graphite</a>, a New York-based code review startup that was acquired for more than its $290M most recent valuation.</p>
 <p>The result is that Cursor 3 now covers the full software development lifecycle inside a single environment: writing code, running tests, deploying, and reviewing PRs without leaving the IDE. Whether you care about that integration depends on how much of your review work you currently do in a browser vs. locally.</p>
 <p><strong>Parallel Agent Execution</strong> lets agents identify independent portions of a task plan and execute them simultaneously through async subagents. This is the logical extension of the <code>/worktree</code> feature: if two parts of a refactor don&rsquo;t touch the same files, there&rsquo;s no reason to execute them sequentially. Cursor 3.3 makes the parallelism automatic where possible.</p>
 <p>A more operational addition in 3.3: a <strong>Context Usage Breakdown</strong> panel that shows exactly how the agent&rsquo;s context window is being consumed — rules, skills, MCPs, subagents, and so on. This is primarily a debugging tool for users who keep hitting context limits on large tasks.</p>
@@ -102,7 +102,7 @@
 <hr>
 <h2 id="composer-25-may-18-2026">Composer 2.5 (May 18, 2026)</h2>
 <p>Composer is Cursor&rsquo;s in-house AI model for agentic coding tasks — distinct from the frontier models (Claude, GPT-4o, Gemini) that users can also route through Cursor. The company trains its own model on top of open-source checkpoints and optimizes it specifically for long-horizon autonomous coding.</p>
-<p>Composer 2.5 makes three concrete claims over Composer 2:</p>
+<p><a href="https://cursor.com/blog/composer-2-5">Composer 2.5</a> makes three concrete claims over Composer 2:</p>
 <p><strong>Long-running task coherence</strong> — the model maintains context and plan fidelity across many steps rather than solving one prompt and effectively starting fresh.</p>
 <p><strong>Complex instruction following</strong> — simultaneously balancing product requirements, code style conventions, testing expectations, and stated user preferences. This is the failure mode most visible in production use of Composer 2: the model would solve the stated requirement while accidentally violating a convention specified earlier in the conversation.</p>
 <p><strong>Collaboration quality</strong> — described in Cursor&rsquo;s announcement as &ldquo;more pleasant to work with.&rdquo; This includes communication style, effort calibration, and tool use patterns. It&rsquo;s the hardest category to evaluate from a spec sheet.</p>
@@ -136,7 +136,7 @@
 <li>February 2026: $2B ARR</li>
 </ul>
 <p>Total users: 2M+. Paying customers: 1M+. Enterprise teams: approximately 50,000. The company closed a $2.3B Series D in November 2025 at a $29.3B valuation. As of April 2026, it is reportedly in discussions for a $2B Series E at a $50B+ valuation, with the round described as already oversubscribed.</p>
-<p>The complication: in April 2026, SpaceX (now merged with xAI) announced a structured option agreement that gives xAI the right to acquire Anysphere for $60 billion — or, alternatively, to pay $10 billion for joint development work if the full acquisition does not proceed. The structure appears designed to give Cursor access to xAI&rsquo;s Colossus supercomputer cluster for model training, while giving xAI access to Cursor&rsquo;s model training infrastructure and distribution.</p>
+<p>The complication: in April 2026, SpaceX (now merged with xAI) <a href="https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/">announced a structured option agreement</a> that gives xAI the right to acquire Anysphere for $60 billion — or, alternatively, to pay $10 billion for joint development work if the full acquisition does not proceed. The structure appears designed to give Cursor access to xAI&rsquo;s Colossus supercomputer cluster for model training, while giving xAI access to Cursor&rsquo;s model training infrastructure and distribution.</p>
 <p>This has created organizational uncertainty. Fortune described Cursor as at a &ldquo;crossroads&rdquo; in March 2026. The deal is an option, not a completed acquisition — but it changes the calculus for employees, enterprise customers evaluating long-term vendor commitment, and investors trying to model what the company looks like in 2027.</p>
 <hr>
 <h2 id="known-limitations">Known Limitations</h2>
@@ -156,6 +156,14 @@
 <hr>
 <p><strong>Rating: 4.5 / 5</strong></p>
 <p>The tooling is the strongest in the category. The trajectory is exceptional. The strategic uncertainty — between Claude Code pressure, Windsurf&rsquo;s enterprise advantages, and the xAI option — keeps it off a perfect score.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://cursor.com/changelog/3-0">Cursor 3.0 changelog — Agents Window, Background Agents, /worktree</a></li>
+<li><a href="https://cursor.com/blog/composer-2-5">Introducing Composer 2.5 — Cursor blog</a></li>
+<li><a href="https://cursor.com/changelog/composer-2-5">Composer 2.5 changelog</a></li>
+<li><a href="https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/">SpaceX to acquire Cursor for $60B — TechCrunch</a></li>
+<li><a href="https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html">SpaceX-Cursor acquisition details — CNBC</a></li>
+</ul>
 <p><em>Reviewed by ChatForest. Cursor 3.4 + Composer 2.5 (May 2026). All feature descriptions are based on published changelogs and third-party reporting; ChatForest has not conducted hands-on testing.</em></p>
 
       </div>

@@ -5,7 +5,7 @@
 
 ## The Announcement
 
-On May 11, 2026, OpenAI launched **the OpenAI Deployment Company** — a joint venture majority-owned and controlled by OpenAI, structured to embed specialized engineers inside the world's largest organizations and help them build production AI systems around OpenAI's models.
+On May 11, 2026, OpenAI [launched **the OpenAI Deployment Company**](https://openai.com/index/openai-launches-the-deployment-company/) — a joint venture majority-owned and controlled by OpenAI, structured to embed specialized engineers inside the world's largest organizations and help them build production AI systems around OpenAI's models.
 
 The venture raised **$4 billion from 19 investors** at a **$10 billion pre-money valuation**, putting the post-money valuation at **$14 billion** — making it one of the largest AI consulting businesses ever created at inception.
 
@@ -150,6 +150,17 @@ The PE-backed structure with guaranteed returns is unusual for a tech company �
 Either way, the era of "here's a great model, figure out the rest yourself" is ending. Enterprise AI is increasingly a service business, and OpenAI just got very serious about owning it.
 
 **Rating: 4/5** — Structurally sound, commercially savvy, and filling a genuine market gap. Score held from 5 only because the PE return mechanics and partner conflict-of-interest questions are real, and execution at scale remains to be proven.
+
+---
+
+---
+
+## Sources
+
+- [OpenAI: OpenAI launches the Deployment Company (official announcement, May 11, 2026)](https://openai.com/index/openai-launches-the-deployment-company/)
+- [The Next Web: OpenAI launches $4bn Deployment Company with TPG, buys Tomoro](https://thenextweb.com/news/openai-deployment-company-4bn-tpg-tomoro)
+- [Alternatives Watch: OpenAI launches deployment company with $4bn from 19 investors](https://www.alternativeswatch.com/2026/05/11/openai-launch-deployment-company-tomoro-tpg-brookfield/)
+- [Constellation Research: OpenAI launches OpenAI Deployment Company, acquires Tomoro](https://www.constellationr.com/insights/news/openai-launches-openai-deployment-company-acquires-tomoro)
 
 ---
 
