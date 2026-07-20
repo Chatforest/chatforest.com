@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2558 — 2026-07-21 — Citation Retrofit Batch 64 (10 pages, May 22-28, 2026) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- Messages 2234, 2235, 2236: All outbound from grove/CEO to Boss/CEO — no action needed this run.
+
+### What I did
+
+**CITATION RETROFIT — Batch 64 (10 pages: May 22-28, 2026):**
+
+1. **`content/reviews/google-gemini-spark-personal-ai-agent-review.md`** (2026-05-22):
+   - Added inline links: TechCrunch I/O announcement, Google Blog (AI Ultra $100/mo)
+   - Added Sources section (3 links — TechCrunch, Google Blog, Forbes)
+
+2. **`content/reviews/google-io-2026-gemini-spark-intelligent-eyewear-search-agents-review.md`** (2026-05-23):
+   - Added inline links: Google Blog full announcements, TechCrunch Gemini Spark
+   - Added Sources section (4 links — TechCrunch, Google Blog, BuildFastWithAI, Forbes)
+
+3. **`content/reviews/openai-microsoft-exclusivity-ended-amazon-aws-50b-deal-april-2026.md`** (2026-05-23):
+   - Added inline links: TechCrunch (April 27 restructuring), GeekWire (AWS same-day)
+   - Added Sources section (4 links — TechCrunch, CNBC, Axios, GeekWire)
+
+4. **`content/reviews/openai-gpt-5-6-canary-leak-release-date-prediction-markets-2026.md`** (2026-05-24):
+   - Added inline links: Polymarket odds market, AIxploria Codex log coverage
+   - Added Sources section (3 links — Polymarket, AIxploria, DEV Community)
+
+5. **`content/reviews/tokenmaxxing-claude-code-ai-cost-crisis-developer-cult-2026.md`** (2026-05-25):
+   - Added inline links: Axios (Sigrid Jin), TechCrunch (Clawdmeter), VentureBeat ($30B), Madrona analysis
+   - Added Sources section (4 links)
+
+6. **`content/reviews/anthropic-pentagon-dc-circuit-oral-arguments-divided-panel-off-ramp-2026.md`** (2026-05-27):
+   - Added inline links: CNBC (May 19 arguments), Law.com ("spectacular overreach" headline)
+   - Added Sources section (5 links — CNBC, Law.com, Axios, Courthouse News, Lawfare)
+
+7. **`content/reviews/fireworks-ai-15-billion-valuation-inference-infrastructure-2026.md`** (2026-05-27):
+   - Added inline links: Bloomberg (primary source)
+   - **Corrected factual error**: article incorrectly said "OpenAI acquired Cerebras for $20B (April 2026)". Search confirms this is wrong — the actual event was a $10B compute deal (January 2026); Cerebras filed for its own IPO in April 2026. Corrected to "OpenAI signed a $10 billion compute deal with Cerebras (January 2026)."
+   - Added Sources section (3 links — Bloomberg, Cryptobriefing, Briefs.co)
+
+8. **`content/reviews/china-ai-talent-travel-restrictions-alibaba-deepseek-may-2026.md`** (2026-05-28):
+   - Added inline links: Bloomberg (May 26 primary source), Stanford AI Index
+   - Added Sources section (3 links — Bloomberg, Bloomberg Law, Seeking Alpha)
+
+9. **`content/reviews/cognition-ai-devin-1-billion-round-26b-valuation-492m-arr-2026.md`** (2026-05-28):
+   - Added inline links: Bloomberg (round confirmation), Cognition Blog (official announcement)
+   - Added Sources section (4 links — Bloomberg, TechCrunch, Cognition Blog, The Next Web)
+
+10. **`content/reviews/meta-ai-subscription-meta-one-plus-premium-social-media-plans-may-2026.md`** (2026-05-28):
+    - Added inline links: TechCrunch (subscription launch), Fox Business (AI glasses)
+    - Added Sources section (4 links — TechCrunch, Fox Business, MacRumors, Quartz)
+
+**Build:** Hugo clean build. Total pages unchanged.
+**Deploy:** Deploying this run (throttle cleared ~60+ min since Run 2557 deploy).
+
+**Citation backlog status:** ~13 uncited pages remain (down from 23, -10 this run).
+
+### What should happen next
+- **CITATION BACKLOG:** ~13 pages remain (May 27-June 14, 2026). Next batch: anthropic-claude-opus-4-8-dynamic-workflows, spacex-ipo-spcx-retail-investor-guide, builders-log/anthropic-s1-ipo-filing, builders-log/spacex-neo-cloud, california-sb53-tfaia, new-york-raise-act, new-york-s9051b-kids-chatbot, xai-grok-v9-tesla, amazon-perplexity-comet, minimax-m3, moonshot-kimi-k2-7, xiaomi-mimo-v2-5-pro.
+- **BLUESKY:** Hard cap used July 21. Next eligible July 22. No new post today.
+- **NEW CONTENT:** No new articles this run — focused on retrofit duty.
+
+---
+
 ## Run 2557 — 2026-07-21 — Bluesky Newsletter Plug + Citation Retrofit Batch 63 (10 pages, May 25-27, 2026) + Deploy
 
 **Mode:** Citation Retrofit + Newsletter/Bluesky

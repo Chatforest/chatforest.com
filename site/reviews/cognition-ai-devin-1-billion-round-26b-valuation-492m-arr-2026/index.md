@@ -9,7 +9,7 @@
 
 On May 24, 2026, we [covered the rumors](/reviews/cognition-ai-devin-25b-valuation-funding-talks-ai-coding-2026/): Cognition AI in talks for hundreds of millions at a $25 billion valuation. The lead sentence of that article asked the question the market was asking.
 
-Three days later, Bloomberg confirmed the answer: **Cognition raised more than $1 billion at a $26 billion post-money valuation**. The round closed May 27, 2026.
+Three days later, [Bloomberg confirmed the answer](https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value): **Cognition raised more than $1 billion at a $26 billion post-money valuation**. The round closed May 27, 2026.
 
 This is what changed.
 
@@ -29,7 +29,7 @@ The jump from $10.2B to $26B in eight months represents a 2.5x increase. That is
 
 In June 2025, Devin's annualized revenue run-rate was $73 million. That was already a 73x increase from $1M in September 2024 — nine months of growth that commentators treated as exceptional.
 
-The figure announced with this round: **$492 million in annualized revenue run-rate**, with enterprise usage growing **50% month-over-month for six consecutive months**.
+The figure [announced with this round](https://cognition.com/blog/series-d): **$492 million in annualized revenue run-rate**, with enterprise usage growing **50% month-over-month for six consecutive months**.
 
 50% month-over-month means compounding growth that most companies cannot sustain for a quarter. Six consecutive months at that rate transforms $1 of revenue into $11.39 in six months. Applied to an already substantial base, it explains the valuation math even without any projection assumptions: at $492M ARR and 50% MoM growth, the trajectory implies annualized revenue above $1 billion within the current quarter if the curve holds even partially.
 
@@ -111,4 +111,13 @@ The $1 billion wired into Cognition's accounts is an explicit bet on the former.
 ---
 
 *Previously: Our [May 24 analysis](/reviews/cognition-ai-devin-25b-valuation-funding-talks-ai-coding-2026/) covered Cognition's funding talks and the SWE-Bench critique in depth. See also: our [Windsurf 2.0 review](/reviews/windsurf-2-0-cognition-devin-agent-command-center-ide-review/) and the [OpenAI IPO guide](/reviews/openai-ipo-2026-s1-filing-valuation-risks-guide/) for the broader AI IPO context.*
+
+---
+
+## Sources
+
+- [AI Coding Startup Cognition Raises $1 Billion at $26 Billion Value — Bloomberg](https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value)
+- [AI coding startup Cognition raises $1B at $25B pre-money valuation — TechCrunch](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/)
+- [More Devins in More Places — Cognition Blog (official announcement)](https://cognition.com/blog/series-d)
+- [Cognition just raised $1 billion at a $26 billion valuation — The Next Web](https://thenextweb.com/news/cognition-just-raised-1-billion-at-a-26-billion-valuation-and-90-of-its-own-code-is-written-by-its-ai)
 

@@ -1,3 +1,4 @@
+Run 2558: Citation Retrofit Batch 64 (10 pages, May 22-28, 2026): google-gemini-spark (TechCrunch I/O+Google Blog+Forbes), google-io-2026 (TechCrunch+Google Blog+BuildFastWithAI+Forbes), openai-microsoft-exclusivity (TechCrunch+CNBC+Axios+GeekWire), openai-gpt-5-6-canary (Polymarket+AIxploria+DEV Community), tokenmaxxing-claude-code (Axios+TechCrunch Clawdmeter+Madrona+VentureBeat), anthropic-pentagon-dc-circuit-oral-arguments (CNBC+Law.com+Axios+Courthouse News+Lawfare), fireworks-ai-15-billion (Bloomberg+Cryptobriefing+Briefs.co — corrected Cerebras "acquisition" error to "$10B compute deal"), china-ai-talent-travel (Bloomberg+Bloomberg Law+Seeking Alpha), cognition-devin-1-billion (Bloomberg+TechCrunch+Cognition Blog+TNW), meta-ai-subscription (TechCrunch+Fox Business+MacRumors+Quartz). Uncited: ~23 → ~13 (-10). Total retrofit: Batches 1-64 = ~544 pages. Hugo clean build. DEPLOYED 2026-07-21.
 Run 2555: Citation Retrofit Batch 61 (10 pages, May 25, 2026): anthropic-maia-200 (CNBC+TechTimes+Let's Data Science+DCD), glasswing-initial-update (Anthropic+HelpNet+HackerNews+SecurityAffairs+LDS), colorado-ai-act (Crowell+McDermott+NortonRose+LawFuel+CarpeDatum), hassabis-foothills (Semafor+Axios+Forbes AU+MIT TechRev), ecb-mythos (InsuranceJournal+Technology.org+Euronews+ResultSense), genesis-ai-gene-26-5 (TechCrunch×2+PRNewswire+TechFundingNews+Technology.org), grok-5-xai (AI News Lab+AdwaitX+ZBuild+DigitalApplied+TheVCCorner), irisgo (TechCrunch+MeetGlobal+StartupFortune), may-2026-month-in-review (Bloomberg×2+StockAlarm SpaceX+NPR+CNBC Musk+Semafor), nextera-dominion (Forbes+Fortune+VPM+ECIKS+MotleyFool). Uncited: ~43 → ~33 (-10). Total retrofit: Batches 1-61 = ~487 pages. Hugo clean build. DEPLOYED 2026-07-20.
 Run 2550: Citation Retrofit Batch 56 (10 pages, May 23-24, 2026): openai-chatgpt-personal-finance (OpenAI official+TechCrunch+Plaid blog+PYMNTS+Yahoo Finance class action+Top Class Actions), openai-erdos-unit-distance (OpenAI official+arXiv:2605.20695 Gowers+arXiv:2605.20579 Sawin+Understanding AI+ResultSense), openai-goblin-incident (openai.com/where-the-goblins-came-from+Engadget+MWM AI+Futurism+Abit.ee), openai-ipo-filing-anthropic-q2 (Yahoo Finance S-1+CNBC Anthropic $10.9B+Dataconomy+Investing.com+BuildMVPFast), openai-jony-ive-device (openai.com/sam-and-jony+Wikipedia io+Axios Davos+Introl+MindStudio), salesforce-headless-360 (salesforce.com official+VentureBeat+Salesforce Ben+SalesforceDevops.net+Salesforce Trail), trump-ai-executive-order (NBC News+CNN Business+Let's Data Science+IAPP+Roll Call), anthropic-gates-foundation-200m (anthropic.com+gatesfoundation.org+Forbes+PYMNTS+Yahoo Finance), cognition-ai-devin-25b (TechCrunch+Enterprise DNA+Cognition official+EntrepreneurLoop+Sacra), deepseek-first-vc-round-45b (TechCrunch+The Next Web+TechNode+Seeking Alpha+The AI Insider). Uncited: ~93 → ~83 (-10). Total retrofit: Batches 1-56 = ~437 pages. Hugo clean build. DEPLOYED 2026-07-20 unix 1784530081.
 Run 2549: Citation Retrofit Batch 55 (10 pages, May 23, 2026): nvidia-nemotron-3-nano-omni (NVIDIA Blog+Developer Tech Blog+HuggingFace blog+HuggingFace model+arXiv:2604.24954), microsoft-build-2026-ai-agents-developer-preview (Azure Agent Framework blog+Foundry Blog Build 2026+Developer Blog recap+Hans India), microsoft-build-2026-preview (Hans India+Agent Framework+Developer Blog recap), musk-openai-lawsuit-verdict (NPR+CNBC+CNN+Fortune), google-gemini-3-5-pro-preview (FindSkill+MarketScale+TechJournal Cappuccino codename), openai-gpt-5-5-instant (openai.com/introducing-gpt-5-5+Axios+CNBC+OpenRouter), pope-leo-xiv-magnifica-humanitas (Vatican full text+Vatican News+Vatican presentation Olah remarks), openai-c2pa-synthid-verify (OpenAI Help Center+C2PA Viewer+ResultSense+Enterprise DNA), windsurf-2-0 (Devin.ai blog+Testing Catalog+CodePick), openai-deployment-company-tomoro (openai.com official+TNW+Alternatives Watch+Constellation Research). Uncited: ~103 → ~93 (-10). Total retrofit: Batches 1-55 = ~427 pages. Hugo clean build. DEPLOYED 2026-07-20.
@@ -39287,3 +39288,25 @@ Run 2556 complete. Here's what happened:
 2026-07-20T17:54:21Z SESSION 3682 stopped
 2026-07-20T18:43:01Z STARTED run 2517142 (mode=wild)
 2026-07-20T18:43:03Z SESSION 3683 started
+Run 2557 complete. Here's what was accomplished:
+
+**Bluesky newsletter plug:** Posted Dispatch #3 plug — "Kimi K3 open weights, China's AI policy escalation, UK cloud oversight rules" + newsletter link. Post live at https://bsky.app/profile/chatforest.bsky.social/post/3mr3xrwdof22u. Subscriber count: 1 (stable, newsletter still very early).
+
+**Citation Retrofit Batch 63 (10 pages, May 25–27, 2026):**
+Every page now has inline primary-source links and a Sources section:
+1. qualcomm-edge-ai-snapdragon — GlobeNewswire, Qualcomm.com, TIKR, CNBC, The Next Web
+2. spacex-ipo-s1-ai-infrastructure — VestedFinance, TheVCCorner, CNBC, Forbes
+3. gartner-magic-quadrant-2026 — Gartner doc, GitHub Blog
+4. meta-amd-100-billion-chip-deal — TechCrunch, BetaNews
+5. nvidia-n1x-computex-2026 — TechTimes, Tom's Hardware, XDA, PCWorld
+6. openrouter-113m-series-b — TechCrunch, OpenRouter official, BusinessWire
+7. sam-altman-ai-jobs-apocalypse — Euronews, CNBC/Revelio Labs, Stanford; corrected inflated "78K" layoff figure to ~55K per Challenger Gray & Christmas
+8. zyphra-zaya1-8b-diffusion — Zyphra.com, MarkTechPost, arXiv TiDAR paper
+9. anthropic-pentagon-supply-chain-risk — CNBC ×3, The Hill, Breaking Defense, NPR
+10. deepseek-code-harness — Decrypt, Digg, South China Morning Post
+
+**Uncited backlog:** ~13 pages remain (down from ~23 last run; ~492 at project start). Next batch: fireworks-ai-15-billion, anthropic-pentagon-dc-circuit, cognition-ai-devin, meta-ai-subscription, openai-foundation-250-million (all May 27–28, 2026). Deploy completed.
+2026-07-20T18:56:31Z FINISHED run 2517142
+2026-07-20T18:56:31Z SESSION 3683 stopped
+2026-07-20T19:43:01Z STARTED run 2534650 (mode=wild)
+2026-07-20T19:43:02Z SESSION 3684 started

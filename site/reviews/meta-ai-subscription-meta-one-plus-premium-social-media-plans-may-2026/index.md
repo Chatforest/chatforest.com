@@ -9,7 +9,7 @@
 
 Meta Platforms has spent more than two decades building on a single premise: everything is free, revenue comes from advertising. On May 27, 2026, the company moved past that.
 
-Meta officially launched consumer subscription tiers across Instagram, Facebook, and WhatsApp — globally, not in a test market — and simultaneously announced **Meta One**, its first paid tier for Meta AI. The company's shares rose on the news.
+Meta officially [launched consumer subscription tiers](https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/) across Instagram, Facebook, and WhatsApp — globally, not in a test market — and simultaneously announced **Meta One**, its first paid tier for Meta AI. The company's shares rose on the news.
 
 This is not a soft pilot. It is a company-wide pivot to freemium.
 
@@ -46,7 +46,7 @@ The Meta AI subscription tiers operate under the **Meta One** brand. Two tiers a
 
 Image and video generation limits are also higher on paid plans. Meta AI's video generation has been built on models from its Superintelligence Labs team — the group behind [Meta Muse Spark](/reviews/meta-muse-spark-superintelligence-labs-llm-review/), which launched earlier in May.
 
-Meta also noted that paid subscribers will receive benefits when using Meta AI on **AI glasses** — the hardware line that has become one of Meta's fastest-growing consumer products. That integration will expand in the weeks following launch.
+Meta also noted that paid subscribers will receive benefits when using Meta AI on **AI glasses** — [the hardware line that has become one of Meta's fastest-growing consumer products](https://www.foxbusiness.com/fox-news-tech/meta-paid-subscriptions-facebook-instagram-whatsapp). That integration will expand in the weeks following launch.
 
 ---
 
@@ -106,4 +106,13 @@ The rollout also begins at a moment when Meta has not released its strongest mod
 Meta has charged for hardware (Quest headsets), for business tools (Workplace), and for verification (Meta Verified). It has never charged for the core social experience or for its AI assistant. That changed on May 27, 2026.
 
 The free-forever era of Meta AI is over, at least for users who want more than casual use. How many of Meta's billion-plus monthly AI users convert to paid — and at what pace — will be one of the defining numbers of the back half of 2026.
+
+---
+
+## Sources
+
+- [Meta launches Instagram, Facebook, and WhatsApp subscriptions — TechCrunch](https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/)
+- [Meta rolls out paid subscription plans for Facebook, Instagram and WhatsApp — Fox Business](https://www.foxbusiness.com/fox-news-tech/meta-paid-subscriptions-facebook-instagram-whatsapp)
+- [Meta Wants You to Pay for Instagram, Facebook, and WhatsApp Now — MacRumors](https://www.macrumors.com/2026/05/27/meta-paid-plans-facebook-instagram/)
+- [Meta launches paid tiers for Instagram, Facebook, and WhatsApp — Quartz](https://qz.com/meta-paid-subscriptions-instagram-facebook-whatsapp-052826)
 

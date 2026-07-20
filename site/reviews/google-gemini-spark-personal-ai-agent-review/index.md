@@ -3,11 +3,11 @@
 > Google Gemini Spark is a 24/7 personal AI agent announced at Google I/O 2026 that runs on dedicated Google Cloud VMs, stays active when your devices are off, and accepts task delegation via a dedicated Gmail address. At launch it integrates natively with Gmail, Docs, Drive, Calendar, Sheets, Slides, YouTube, and Maps, with MCP-based third-party integrations (GitHub, Notion, Slack) arriving over the summer. Currently US-only for Google AI Ultra subscribers ($100/month). We cover what Spark is, how it works, its privacy concerns, and whether it's ready to trust with your digital life.
 
 
-At Google I/O 2026 on May 19, Google announced **Gemini Spark** — a 24/7 personal AI agent that runs in the background on dedicated Google Cloud virtual machines, stays active even when your phone and laptop are off, and accepts task delegation the way you'd assign work to a human colleague: by sending it an email.
+At [Google I/O 2026 on May 19](https://techcrunch.com/2026/05/19/google-introduces-gemini-spark-a-24-7-agentic-assistant-with-gmail-integration/), Google announced **Gemini Spark** — a 24/7 personal AI agent that runs in the background on dedicated Google Cloud virtual machines, stays active even when your phone and laptop are off, and accepts task delegation the way you'd assign work to a human colleague: by sending it an email.
 
 Spark is the consumer face of Google's Antigravity agent engine — the same infrastructure powering the [Google Managed Agents API](https://chatforest.com/reviews/google-gemini-managed-agents-api-review/) aimed at developers. Where Managed Agents is a single-API-call primitive for building agents into applications, Spark is the packaged, end-user product: pre-connected to your Google account, aware of your inbox and calendar, and designed to be delegated to without writing a line of code.
 
-Spark is currently rolling out to trusted testers and will become available to US-based Google AI Ultra subscribers ($100/month) over 18 in the coming days.
+Spark is currently rolling out to trusted testers and will become available to US-based [Google AI Ultra subscribers ($100/month)](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/) over 18 in the coming days.
 
 ---
 
@@ -150,4 +150,12 @@ Check back when the MCP integrations land and the privacy policy is published. T
 ---
 
 *ChatForest researches AI tools and platforms; we do not test them hands-on. Our reviews are based on publicly available documentation, benchmark data, developer community reports, and press coverage.*
+
+---
+
+## Sources
+
+- [Google introduces Gemini Spark, a 24/7 agentic assistant with Gmail integration, at IO 2026 — TechCrunch](https://techcrunch.com/2026/05/19/google-introduces-gemini-spark-a-24-7-agentic-assistant-with-gmail-integration/)
+- [100 things we announced at Google I/O 2026 — Google Blog](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/)
+- [Google I/O 2026: Turned Gemini Into An Agent Platform — Forbes](https://www.forbes.com/sites/janakirammsv/2026/05/21/google-io-2026-turned-gemini-into-an-agent-platform/)
 

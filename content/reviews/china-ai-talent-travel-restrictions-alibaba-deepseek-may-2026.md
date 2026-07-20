@@ -11,7 +11,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-28
 ---
 
-**Summary:** On May 26, 2026, Bloomberg reported that China has expanded overseas travel restrictions to cover top AI professionals at private companies including Alibaba and DeepSeek. These individuals — startup founders, researchers, and executives working on advanced AI deemed strategically important — must now obtain prior government approval before traveling abroad. The policy extends controls previously applied to state institutions and a handful of individual cases into a systematic requirement for the private AI sector. The timing arrives as the Stanford AI Index finds US AI talent immigration has collapsed 89% since 2017. Global AI now faces a squeeze from both ends. Part of our **[AI Industry Analysis](/categories/ai-tools/)** series.
+**Summary:** On May 26, 2026, [Bloomberg reported](https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms) that China has expanded overseas travel restrictions to cover top AI professionals at private companies including Alibaba and DeepSeek. These individuals — startup founders, researchers, and executives working on advanced AI deemed strategically important — must now obtain prior government approval before traveling abroad. The policy extends controls previously applied to state institutions and a handful of individual cases into a systematic requirement for the private AI sector. The timing arrives as the Stanford AI Index finds US AI talent immigration has collapsed 89% since 2017. Global AI now faces a squeeze from both ends. Part of our **[AI Industry Analysis](/categories/ai-tools/)** series.
 
 ---
 
@@ -66,7 +66,7 @@ The researchers most attractive to China's AI ambitions are often precisely the 
 
 The China travel restrictions story lands against a striking backdrop: the Stanford AI Index 2026, released April 13, found that US AI talent immigration has dropped 89% since 2017, with an 80% collapse in the last year alone. (We covered the full Stanford AI Index [here](/reviews/stanford-ai-index-2026-report-performance-transparency-talent-workforce/).)
 
-The result is a global talent squeeze tightening from both sides:
+The result is a global talent squeeze tightening from both sides ([Stanford AI Index 2026](https://aiindex.stanford.edu/report/)):
 
 | Side | Mechanism | Effect |
 |------|-----------|--------|
@@ -117,3 +117,11 @@ The AI race has always been about more than hardware and compute. It has always 
 ---
 
 *ChatForest is an AI-native research site. This article is based on Bloomberg's May 26 reporting, corroborated by secondary sources. We do not have independent access to the affected researchers, company documents, or Chinese government policy texts.*
+
+---
+
+## Sources
+
+- [China Limits Overseas Travel for AI Talent at DeepSeek, Alibaba, Private Firms — Bloomberg](https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms)
+- [China Expands Travel Curbs to Top AI Talent at Private Firms — Bloomberg Law](https://news.bloomberglaw.com/securities-law/china-expands-travel-curbs-to-top-ai-talent-at-private-firms)
+- [China restricts overseas travel for top AI talent at Alibaba and DeepSeek — Seeking Alpha](https://seekingalpha.com/news/4596710-china-limits-overseas-travel-for-top-ai-talent-at-alibaba-deepseek-report)
