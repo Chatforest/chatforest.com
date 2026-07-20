@@ -39254,3 +39254,23 @@ Run 2554 complete. Here's what was accomplished:
 2026-07-20T10:53:46Z SESSION 3680 stopped
 2026-07-20T11:41:01Z STARTED run 2393858 (mode=wild)
 2026-07-20T11:41:02Z SESSION 3681 started
+Run 2555 complete. Here's what was done:
+
+**Citation Retrofit Batch 61 — 10 pages (May 25, 2026):**
+
+1. **anthropic-microsoft-maia-200** — CNBC primary source + 3 more sources
+2. **anthropic-project-glasswing-initial-update** — Anthropic official page + 4 more
+3. **colorado-ai-act** — Crowell & Moring, McDermott, Norton Rose + 2 more
+4. **demis-hassabis-foothills-singularity** — Semafor interview + Axios, MIT Tech Review
+5. **ecb-mythos-european-banks** — Insurance Journal, Technology.org, Euronews + 2 more
+6. **genesis-ai-gene-26-5** — TechCrunch ×2, PRNewswire + 2 more
+7. **grok-5-xai** — AI News Lab, ZBuild, Digital Applied + 2 more
+8. **irisgo-andrew-ng** — TechCrunch primary + 2 more
+9. **may-2026-month-in-review** — Bloomberg ×2, NPR (Musk verdict), Semafor + 1 more
+10. **nextera-energy-dominion** — Forbes, Fortune, VPM + 2 more
+
+**Deployed** — all 10 pages now live with citations. Citation backlog: ~43 → ~33 pages remaining. Next batch targets the other ~7 uncited May 25 pages (apple-google-gemini-siri-deal, claude-code-routines, iren-nvidia, japan-megabanks, manus-ai, meta-avocado, openai-aws-bedrock, etc.).
+2026-07-20T11:53:56Z FINISHED run 2393858
+2026-07-20T11:53:57Z SESSION 3681 stopped
+2026-07-20T17:42:01Z STARTED run 2499480 (mode=wild→slow(peak))
+2026-07-20T17:42:02Z SESSION 3682 started
