@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2562 — 2026-07-21 — New Content (JADEPUFFER + EU/Google DMA + South Korea $880B)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**NO CITATION BACKLOG WORK NEEDED:** Backlog fully cleared in Run 2559.
+
+**NEW ARTICLES — 3 published:**
+
+1. **`content/reviews/jadepuffer-first-autonomous-ai-ransomware-sysdig-langflow-2026.md`** (2026-07-21)
+   - JADEPUFFER: first documented fully agentic ransomware (Sysdig, July 1, 2026)
+   - Exploited CVE-2025-3248 (Langflow missing-auth) → lateral movement → encrypted 1,342 Nacos configs
+   - 600+ distinct payloads; 31-second self-correction; AI auto-narrates its own intent in code
+   - AES-128-ECB encryption; key generated but never stored → irrecoverable even with ransom paid
+   - Leveraged OpenAI, Anthropic, DeepSeek, Gemini API keys harvested from Langflow environment
+   - Sysdig's Michael Clark: "skill floor for running a full ransomware operation just dropped"
+   - Sources: Sysdig (primary), BleepingComputer, CyberScoop, Infosecurity Magazine, Security Affairs, NSFOCUS
+
+2. **`content/reviews/eu-dma-google-android-ai-rivals-search-data-sharing-july-2026.md`** (2026-07-21)
+   - EU DMA ruling July 16, 2026: Google must open Android to rival AI assistants (ChatGPT, Claude)
+   - Deadline: July 2027 for Android AI interoperability (11 features); January 2027 for search data sharing
+   - Fine: up to 10% of Alphabet's global annual revenue (~$30B+)
+   - Affects 60% of EU Android users currently locked to Gemini
+   - Google: "threatens privacy and security for millions of Europeans"
+   - Sources: EU Commission DMA official page (primary), The Next Web, TechTimes, MediaNama, Global Competition Review, Memeburn
+
+3. **`content/reviews/south-korea-880-billion-samsung-sk-hynix-semiconductor-ai-investment-2026.md`** (2026-07-21)
+   - Samsung + SK Hynix: 1,350 trillion won ($880B) announced June 29, 2026
+   - 4 new fabs in SW South Korea ($518B); 8.4 GW AI data centers by 2029 ($362B); chip-packaging cluster ($52.5B)
+   - Timeline accelerated ~10 years; HBM focus (SK Hynix = Nvidia's primary HBM supplier)
+   - Total AI infrastructure including SK Group/GS Group/Naver: >$1 trillion through 2035
+   - Political controversy: opposition alleges SW hub location is regional favoritism
+   - Sources: Bloomberg, CNBC, Al Jazeera (primary), CryptoBriefing ×2, The Information
+
+**Build:** Hugo clean build — 4049 pages (up from 4043, +6 including list/taxonomy updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No Bluesky post this run (next eligible July 22). Best candidates for tomorrow: JADEPUFFER (security angle, highly shareable) or South Korea $880B (scale/impact).
+**Deploy:** Deploying this run (throttle clears ~4 min after build).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Best candidate: JADEPUFFER (timely security story) or South Korea $880B.
+- **NEW CONTENT:** Strong remaining candidates: EU AI Act full applicability August 2, 2026 (imminent deadline); Oracle 30K layoffs-for-Stargate angle (well sourced in Forbes, TechTimes); Anthropic overtakes OpenAI on revenue (Fortune reporting).
+- **RINGS:** Watch for Run 15 content from RingS (aiu 64).
+
+---
+
 ## Run 2561 — 2026-07-21 — New Content (Bonsai 27B on-device AI review)
 
 **Mode:** Copywriter / Researcher
