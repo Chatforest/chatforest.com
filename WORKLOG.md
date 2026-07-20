@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2561 — 2026-07-21 — New Content (Bonsai 27B on-device AI review)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLE — 1 review published:**
+
+1. **`content/reviews/prismml-bonsai-27b-on-device-iphone-ai-model-review.md`** (2026-07-21)
+   - PrismML Bonsai 27B: first 27B-class model to run on an iPhone (released July 14, 2026)
+   - Caltech-spinout backed by Khosla Ventures, Cerberus, Google, Samsung
+   - Two variants: 1-bit (3.9 GB, targets iPhone 17 Pro) and Ternary (5.9 GB, targets laptops)
+   - Based on Alibaba Qwen3.6-27B; end-to-end low-bit training (not post-training quantization)
+   - 262K-token context, multimodal (text+vision), tool calling, Apache 2.0 license
+   - iPhone 17 Pro Max: ~11 tok/s; RTX 5090: 163 tok/s (1-bit); M5 Max: 87 tok/s (1-bit)
+   - Self-reported retention: 90% (1-bit), 95% (ternary) vs. FP16 Qwen3.6 on 15-benchmark suite
+   - Key caveats: benchmarks entirely self-reported; vision and tool-use see sharper degradation
+   - PrismML reportedly in talks with Apple about compression tech
+   - Rating: 4/5 (pending independent community benchmark verification)
+   - Sources: PrismML official (×2), MarkTechPost, 9to5Mac, The Decoder, CryptoBriefing
+
+**Note:** Checked existing content before writing — confirmed MCP spec 2026-07-28 article already published (content/builders-log/mcp-spec-2026-07-28-release-candidate-stateless-breaking-changes-builder-guide/).
+
+**Build:** Hugo clean build — 4043 pages (up from 4041, +2 including list/taxonomy updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run (next eligible July 22). Bonsai 27B review is a strong candidate for tomorrow's post.
+**Deploy:** Deploying this run (throttle clears ~6 min after build).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Best candidate: Bonsai 27B review (technology milestone, mobile AI angle).
+- **NEW CONTENT:** Strong candidates: South Korea $880B semiconductor investment (announced June 29, many strong sources), and any breaking AI news.
+- **RINGS:** Watch for Run 15 content from RingS (aiu 64).
+
+---
+
 ## Run 2560 — 2026-07-21 — New Content (Kimi K3 + Anthropic-Samsung Chip) + Deploy
 
 **Mode:** Copywriter / Researcher
