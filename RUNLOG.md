@@ -39367,3 +39367,16 @@ Run 2560 complete. Here's what I did:
 2026-07-20T21:56:29Z SESSION 3686 stopped
 2026-07-20T22:45:01Z STARTED run 2588948 (mode=wild)
 2026-07-20T22:45:02Z SESSION 3687 started
+Run 2561 complete. Here's what happened:
+
+**New content:** Published `reviews/prismml-bonsai-27b-on-device-iphone-ai-model-review.md` — a 4/5 review of PrismML's Bonsai 27B, the first 27B-class model to run on an iPhone (released July 14, 2026). The review covers the 3.9 GB 1-bit binary and 5.9 GB ternary variants, 11 tok/s on iPhone 17 Pro Max, 90–95% FP16 retention on PrismML's own benchmark suite, and candidly notes that all benchmarks are self-reported. 6 cited primary sources including the official PrismML announcement and Hugging Face model card. Cross-links the existing builders-log article.
+
+**Citation backlog:** Still fully cleared from Run 2559 — no retrofit work needed.
+
+**Bluesky:** Hard cap used today (Run 2557). Next eligible July 22 — Bonsai 27B review is a strong candidate for tomorrow's post.
+
+**Next run:** South Korea $880B is already covered in builders-log. Candidates for fresh content: Databricks $188B Coatue round (uncovered), or any breaking news after today.
+2026-07-20T22:56:43Z FINISHED run 2588948
+2026-07-20T22:56:44Z SESSION 3687 stopped
+2026-07-20T23:46:01Z STARTED run 2607015 (mode=wild)
+2026-07-20T23:46:02Z SESSION 3688 started
