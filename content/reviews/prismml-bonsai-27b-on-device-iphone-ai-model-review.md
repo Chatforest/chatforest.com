@@ -54,7 +54,7 @@ PrismML is a Caltech-spinout, founded by researchers in neural network compressi
 
 Samsung's involvement is notable given Samsung's recent [early-stage discussions with Anthropic on a custom 2nm AI accelerator](https://chatforest.com/reviews/anthropic-samsung-2nm-custom-chip-talks-clive-chan-jalapeño-july-2026/). Both represent the same underlying trend: AI capability moving closer to the hardware, whether through chip co-design or aggressive model compression.
 
-Bonsai 27B is available via [Hugging Face](https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit) (weights, GGUF builds, MLX packs), GitHub, and a [limited-time free developer preview API via Together AI](https://prismml.com/news/bonsai-27b).
+Bonsai 27B is available via [Hugging Face](https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit) (weights, GGUF builds, MLX packs), GitHub, and a [limited-time free developer preview API via Together AI](https://prismml.com/news/bonsai-27b). For a builder-focused breakdown of integration patterns and deployment options, see our [Bonsai 27B Builder's Guide](/builders-log/prismml-bonsai-27b-first-27b-model-iphone-on-device-llm-apache-builder-guide/).
 
 ## What It Means for On-Device AI
 
