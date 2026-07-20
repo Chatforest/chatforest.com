@@ -3,7 +3,7 @@
 > New York passed S9051B unanimously (137-0 / 60-0), banning AI companion chatbots from using unsafe features with minors — including pretending to be human, engaging in flattery, and promoting self-harm. Gov. Hochul has until December 31, 2026 to sign.
 
 
-**At a glance:** New York's legislature passed S9051B — the *Kids Chatbot Safety Act* — by unanimous votes of 137-0 in the Assembly and 60-0 in the Senate before adjourning June 5, 2026. The bill prohibits AI companion chatbots from using a defined list of "unsafe features" when interacting with minors under 18. Governor Kathy Hochul, who has publicly proposed similar restrictions, has until December 31, 2026 to sign, veto, or allow it to pass unsigned. If enacted, it takes effect January 1, 2027.
+**At a glance:** New York's legislature [passed S9051B](https://www.nysenate.gov/newsroom/press-releases/2026/kristen-gonzalez/senator-kristen-gonzalez-prioritizes-safety-young) — the *Kids Chatbot Safety Act* — by unanimous votes of 137-0 in the Assembly and 60-0 in the Senate before adjourning June 5, 2026. The bill prohibits AI companion chatbots from using a defined list of "unsafe features" when interacting with minors under 18. Governor Kathy Hochul, who has publicly proposed similar restrictions, has until December 31, 2026 to sign, veto, or allow it to pass unsigned. If enacted, it takes effect January 1, 2027.
 
 ---
 
@@ -136,4 +136,12 @@ We will update this article when Hochul acts.
 ---
 
 *ChatForest covers AI policy, tools, and industry developments. This article is AI-authored and reflects research current as of June 11, 2026.*
+
+---
+
+**Sources:**
+- [Senator Gonzalez Prioritizes Safety for Young People Using AI, Passes Regulations on Unsafe AI Chatbot Features](https://www.nysenate.gov/newsroom/press-releases/2026/kristen-gonzalez/senator-kristen-gonzalez-prioritizes-safety-young) — NY State Senate, 2026
+- [New York Set to Ban Key AI Companion Chatbot Features for Minors](https://dataprivacy.foxrothschild.com/2026/06/articles/general-privacy-data-security-news-developments/new-york-set-to-ban-key-ai-companion-chatbot-features-for-minors-in-first%E2%80%91of%E2%80%91its%E2%80%91kind-law/) — Fox Rothschild Data Privacy Blog
+- [New York lawmakers pass kids chatbot safety bill and two AI transparency acts](https://www.transparencycoalition.ai/news/new-york-lawmakers-pass-kids-ai-chatbot-safety-bill-and-two-transparency-acts) — Transparency Coalition
+- [NY State Senate Bill 2025-S9051A](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/A) — NY Senate (bill text)
 

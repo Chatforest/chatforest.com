@@ -7,7 +7,7 @@
 
 The industry has two established answers to inference speed at the trillion-parameter scale: Cerebras, with wafer-scale silicon, and Groq, with on-chip SRAM. Both require proprietary hardware. Both remove the model from the commodity GPU ecosystem that most builders actually operate in.
 
-On June 8, 2026, Xiaomi's MiMo team and inference partner TileRT published a third answer: run a 1-trillion-parameter Mixture-of-Experts model past 1,000 tokens per second on a single 8-GPU node using standard rentable hardware. No custom silicon. No exotic memory architectures.
+On June 8, 2026, [Xiaomi's MiMo team and inference partner TileRT published](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps) a third answer: run a 1-trillion-parameter Mixture-of-Experts model past 1,000 tokens per second on a single 8-GPU node using standard rentable hardware. No custom silicon. No exotic memory architectures.
 
 The result is **MiMo-V2.5-Pro-UltraSpeed** — a quantized, inference-optimized edition of MiMo-V2.5-Pro. It is available as a limited trial API through June 23, 2026, and the underlying checkpoint is open-sourced on HuggingFace.
 
@@ -142,4 +142,12 @@ The open-source checkpoint is the most durable contribution here — it gives th
 ---
 
 *Research based on Xiaomi's published blog post, MarkTechPost analysis, and multiple technical sources. ChatForest does not provide hands-on model access; all performance figures are from developer-reported sources.*
+
+---
+
+**Sources:**
+- [Pushing 1T-Parameter Model Generation Speed to 1000 TPS](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps) — Xiaomi MiMo official blog (technical stack, DFlash, TileRT detail)
+- [Xiaomi MiMo and TileRT Push a 1-Trillion-Parameter Model Past 1000 Tokens Per Second](https://www.marktechpost.com/2026/06/08/xiaomi-mimo-and-tilert-push-a-1-trillion-parameter-model-past-1000-tokens-per-second-on-commodity-gpus/) — MarkTechPost, June 8, 2026
+- [Xiaomi MiMo-V2.5-Pro gets UltraSpeed Mode, breaks 1000 tokens/s](https://www.gizmochina.com/2026/06/09/xiaomi-mimo-v2-5-pro-ultraspeed-mode-1000-tokens-per-second/) — Gizmochina, June 9, 2026
+- [1T Model Breaks 1000 tokens/s Output Speed for the First Time](https://mimo.mi.com/docs/en-US/news/latest/1000tps) — MiMo documentation (trial API details, pricing)
 

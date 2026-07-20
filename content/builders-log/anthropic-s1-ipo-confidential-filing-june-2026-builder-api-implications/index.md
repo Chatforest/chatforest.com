@@ -88,3 +88,9 @@ The OpenAI S-1 is relevant for pricing anchors: once OpenAI's gross margins are 
 If you are building on Claude right now, the S-1 filing does not change your immediate technical choices — the models are the same, the API is the same. What it changes is the planning horizon for your infrastructure costs. The current API pricing is pre-IPO pricing, set by a company that needs developer adoption more than it needs margin. That calculus begins to shift on October 15.
 
 *This article is based on Anthropic's public announcement of its confidential S-1 filing, prior investor disclosures, Bloomberg, CNBC, and Yahoo Finance coverage from June 1–2, 2026. Anthropic has not disclosed share count, price range, or complete financials. ChatForest does not provide investment advice.*
+
+---
+
+**Sources:**
+- [Anthropic confidentially files IPO at $965 billion valuation](https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/) — Fortune, June 1, 2026
+- [Anthropic confidentially files for IPO](https://www.cnbc.com/2026/06/01/anthropic-ipo-s1-prospectus.html) — CNBC, June 1, 2026

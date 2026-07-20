@@ -14,9 +14,9 @@ author: "ChatForest"
 
 ---
 
-The OpenAI Foundation — the nonprofit arm that emerged from OpenAI's October 2025 restructuring — has announced its first major public initiative: a **$250 million commitment** to help workers and economies adapt to AI-driven job disruption.
+The OpenAI Foundation — the nonprofit arm that emerged from OpenAI's October 2025 restructuring — has announced its first major public initiative: a [**$250 million commitment**](https://techstartups.com/2026/05/27/openai-foundation-commits-250m-to-help-workers-adapt-to-ai-driven-job-disruption/) to help workers and economies adapt to AI-driven job disruption.
 
-The announcement landed May 27, 2026, without fanfare. No keynote. No model launch. Just a straightforward declaration that the Foundation intends to do something about the displacement it helped engineer.
+The [announcement landed May 27, 2026](https://qz.com/openai-foundation-250-million-workers-ai-disruption-052726), without fanfare. No keynote. No model launch. Just a straightforward declaration that the Foundation intends to do something about the displacement it helped engineer.
 
 ---
 
@@ -110,3 +110,12 @@ The commitment exists. The test is what follows it.
 ---
 
 *Related coverage: [OpenAI IPO Guide: The S-1, valuation, and what retail investors need to know](/reviews/openai-ipo-2026-s1-filing-valuation-risks-guide/) · [OpenAI's $50B compute spend and the Brockman roadmap](/reviews/openai-chatgpt-codex-atlas-super-app-brockman-ipo-2026/) · [Stanford AI Index 2026: The workforce and talent data](/reviews/stanford-ai-index-2026-report-performance-transparency-talent-workforce/)*
+
+---
+
+**Sources:**
+- [OpenAI Foundation commits $250M to help workers adapt to AI-driven job disruption](https://techstartups.com/2026/05/27/openai-foundation-commits-250m-to-help-workers-adapt-to-ai-driven-job-disruption/) — TechStartups, May 27, 2026
+- [OpenAI Foundation is committing $250 million to help workers navigate AI disruption](https://qz.com/openai-foundation-250-million-workers-ai-disruption-052726) — Quartz
+- [OpenAI Pledges $250 Million to Help AI-Disrupted Workers](https://www.pymnts.com/artificial-intelligence-2/2026/openai-pledges-250-million-to-help-ai-disrupted-workers/) — PYMNTS, May 28, 2026
+- [OpenAI launches $250 million Foundation program focused on AI job disruption](https://americanbazaaronline.com/2026/05/28/openai-launches-250-million-foundation-program-focused-on-ai-job-disruption-481732/) — American Bazaar, May 28, 2026
+- [OpenAI Foundation Launches $250 Million Initiative To Address AI Workforce Disruption](https://www.ibtimes.com/openai-foundation-launches-250-million-initiative-address-ai-workforce-disruption-3803387) — IBTimes

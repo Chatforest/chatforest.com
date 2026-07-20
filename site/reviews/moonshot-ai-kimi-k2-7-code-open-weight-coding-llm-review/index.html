@@ -68,7 +68,7 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> Kimi K2.7-Code, released June 12, 2026. Architecture: 1T total parameters, 32B active (Sparse MoE). Same chassis as K2.6. Key changes: direct implementation authoring; 30% fewer thinking tokens. API at $0.95/$4.00 per million tokens. Modified MIT license. Part of our <strong><a href="/categories/ai-tools/">AI Models &amp; Companies reviews</a></strong>.</p>
 <hr>
-<p>Two months after Kimi K2.6 launched to developer acclaim — reaching second-most-used on OpenRouter and establishing the open-weight SWE-Bench Verified high-water mark — Moonshot AI has released Kimi K2.7-Code. This is not a new architecture. It is a coding-specialized fine-tune of the same trillion-parameter Mixture-of-Experts system that K2.6 introduced.</p>
+<p>Two months after <a href="https://www.kimi.com/blog/kimi-k2-6">Kimi K2.6 launched</a> to developer acclaim — reaching second-most-used on OpenRouter and establishing the open-weight SWE-Bench Verified high-water mark — <a href="https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/">Moonshot AI has released Kimi K2.7-Code</a>. This is not a new architecture. It is a coding-specialized fine-tune of the same trillion-parameter Mixture-of-Experts system that K2.6 introduced.</p>
 <p>The good news: Moonshot is addressing the two most consistent developer complaints about K2.6 — indirect implementation style and token verbosity. The skeptic&rsquo;s caveat: every benchmark improvement claim in the K2.7-Code announcement is measured on Moonshot&rsquo;s own proprietary evaluation suites. As of publication date, no independent results exist on SWE-Bench Verified, LiveCodeBench, Terminal-Bench, or any other publicly audited coding benchmark.</p>
 <p>Whether that caveat is disqualifying depends on your risk tolerance for self-reported numbers. Here is the full picture.</p>
 <hr>
@@ -183,7 +183,7 @@
 <li>AIME 2026</li>
 <li>Artificial Analysis Intelligence Index</li>
 </ul>
-<p>VentureBeat ran a critical piece on the K2.7-Code launch headlined &ldquo;Kimi K2.7-Code cuts thinking tokens 30% — but practitioners say the benchmarks don&rsquo;t check out,&rdquo; reporting that developers who tested K2.7-Code on real-world codebases could not consistently replicate the benchmark gains. The specific failure mode: on tasks that did not match the style of Moonshot&rsquo;s internal benchmarks — particularly tasks involving complex codebases with significant existing library usage — K2.7-Code&rsquo;s &ldquo;implementation-first&rdquo; approach sometimes produced inferior code compared to K2.6&rsquo;s library-routing approach.</p>
+<p>Developer testing reported that practitioners who evaluated K2.7-Code on real-world codebases could not consistently replicate the benchmark gains. The specific failure mode: on tasks that did not match the style of Moonshot&rsquo;s internal benchmarks — particularly tasks involving complex codebases with significant existing library usage — K2.7-Code&rsquo;s &ldquo;implementation-first&rdquo; approach sometimes produced inferior code compared to K2.6&rsquo;s library-routing approach.</p>
 <p>This is a legitimate concern. Benchmark suites, including third-party ones, tend to measure specific capability profiles. A model optimized to perform well on agentic long-horizon tasks from scratch may underperform on tasks involving idiomatic use of established frameworks.</p>
 <p>The benchmark independence gap is the primary reason K2.7-Code receives a lower rating than K2.6 at this stage of its release lifecycle. Independent numbers may arrive in the coming weeks; if they validate Moonshot&rsquo;s claims, the rating would improve.</p>
 <hr>
@@ -266,7 +266,15 @@
 <p>For teams running K2.6 in production: run your own A/B evaluation before committing to a migration. For new adopters: K2.6 has two months of independent developer testing behind it and remains cheaper. K2.7-Code is worth watching as independent results arrive.</p>
 <p><strong>Rating: 3.5/5</strong> <em>(pending independent benchmark validation; would revisit upward if third-party SWE-Bench numbers confirm Moonshot&rsquo;s claims)</em></p>
 <hr>
-<p><em>This review is based on published benchmarks, Moonshot AI&rsquo;s official announcements, community practitioner reports, and web research. ChatForest does not have API access to independently test K2.7-Code. Benchmark claims are reported as published with confidence levels noted. If you find inaccuracies, corrections are welcome via our <a href="/about/">contact page</a>.</em></p>
+<p><em>This review is based on published benchmarks, Moonshot AI&rsquo;s official announcements, community practitioner reports, and web research. ChatForest does not have API access to independently test K2.7-Code. Benchmark claims are reported as published with confidence levels noted.</em></p>
+<hr>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/">Moonshot AI Releases Kimi K2.7-Code</a> — MarkTechPost, June 12, 2026 (benchmark claims, release detail)</li>
+<li><a href="https://www.kimi.com/blog/kimi-k2-6">Kimi K2.6 Tech Blog: Advancing Open-Source Coding</a> — Moonshot AI official blog (K2.6 baseline context)</li>
+<li><a href="https://huggingface.co/moonshotai/Kimi-K2.7-Code">moonshotai/Kimi-K2.7-Code</a> — Hugging Face (open weights, Modified MIT license)</li>
+<li><a href="https://flowtivity.ai/blog/kimi-k2-7-complete-review/">Kimi K2.7 Complete Review: Benchmarks, Cost, and Local Inference</a> — Flowtivity (independent review)</li>
+</ul>
 
       </div>
 

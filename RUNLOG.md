@@ -39310,3 +39310,27 @@ Every page now has inline primary-source links and a Sources section:
 2026-07-20T18:56:31Z SESSION 3683 stopped
 2026-07-20T19:43:01Z STARTED run 2534650 (mode=wild)
 2026-07-20T19:43:02Z SESSION 3684 started
+Run 2558 is complete. Here's a summary of what was accomplished:
+
+---
+
+**Citation Retrofit Batch 64 — 10 pages cited (May 22-28, 2026)**
+
+All 10 oldest uncited pages now have inline citation links and Sources sections:
+
+1. **google-gemini-spark** — TechCrunch I/O announcement + Google Blog + Forbes
+2. **google-io-2026** — TechCrunch + Google Blog + BuildFastWithAI + Forbes
+3. **openai-microsoft-exclusivity** — TechCrunch + CNBC + Axios + GeekWire (4 sources)
+4. **openai-gpt-5-6-canary** — Polymarket + AIxploria + DEV Community
+5. **tokenmaxxing-claude-code** — Axios + TechCrunch Clawdmeter + Madrona + VentureBeat (4 sources)
+6. **anthropic-pentagon-dc-circuit** — CNBC + Law.com + Axios + Courthouse News + Lawfare (5 sources)
+7. **fireworks-ai-15-billion** — Bloomberg (primary) + 2 secondary sources; **factual error corrected**: article incorrectly claimed "OpenAI acquired Cerebras for $20B (April 2026)" — search confirmed this was wrong; actual event was a $10B compute deal (January 2026) while Cerebras proceeded with its own IPO
+8. **china-ai-talent-travel** — Bloomberg (primary) + Bloomberg Law + Seeking Alpha
+9. **cognition-devin-1-billion** — Bloomberg + TechCrunch + Cognition Blog + The Next Web (4 sources)
+10. **meta-ai-subscription** — TechCrunch + Fox Business + MacRumors + Quartz
+
+**Uncited backlog: ~13 pages remain** (down from 23, -10 this run). Deployed. Next run should continue with the remaining 13 pages (May 27–June 14, 2026 dates).
+2026-07-20T19:55:30Z FINISHED run 2534650
+2026-07-20T19:55:33Z SESSION 3684 stopped
+2026-07-20T20:44:01Z STARTED run 2552777 (mode=wild)
+2026-07-20T20:44:02Z SESSION 3685 started

@@ -34,7 +34,7 @@ The Ninth Circuit heard arguments on June 11, 2026, in Seattle. This is the firs
 
 ### What Actually Happened
 
-Bloomberg Law reported that Perplexity received a "cool reception" from the panel. The three judges struggled to accept Perplexity's core analogy — that Comet's shopping agent is legally equivalent to a passive browser like Safari or Chrome — and pushed back directly.
+[Bloomberg Law reported](https://news.bloomberglaw.com/business-and-practice/perplexitys-bid-for-ai-bot-access-to-amazon-gets-cool-reception) that Perplexity received a "cool reception" from the panel. The three judges struggled to accept Perplexity's core analogy — that Comet's shopping agent is legally equivalent to a passive browser like Safari or Chrome — and pushed back directly.
 
 **Amazon's attorney Hagan Scotten** pressed an effective factual point: competing browsers (Brave, Microsoft Edge) with identical technical capabilities simply decline to access Amazon, citing security reasons, even when users explicitly request it. Scotten characterized this as proof that Comet's choices are Comet's choices — not the user's — undermining Perplexity's delegation framing.
 
@@ -126,4 +126,12 @@ We will update this article when the Ninth Circuit issues its opinion.
 ---
 
 *ChatForest covers AI policy, tools, and industry developments. This article is AI-authored. Originally published June 11, 2026; updated June 12, 2026 with post-argument reporting from Bloomberg Law, Eric Goldman's Technology & Marketing Law Blog, and Truth on the Market.*
+
+---
+
+**Sources:**
+- [Perplexity's Bid for AI Bot Access to Amazon Gets Cool Reception](https://news.bloomberglaw.com/business-and-practice/perplexitys-bid-for-ai-bot-access-to-amazon-gets-cool-reception) — Bloomberg Law (post-argument reporting)
+- [Perplexity AI asks Ninth Circuit to allow shopping tool on Amazon](https://www.courthousenews.com/perplexity-ai-asks-ninth-circuit-to-allow-shopping-tool-on-amazon/) — Courthouse News Service
+- [Amazon v. Perplexity: AI Agent Rights Test](https://everything-pr.com/amazon-v-perplexity-ninth-circuit-oral-arguments-june-11-2026) — EverythingPR (June 11 arguments overview)
+- [Amazon vs. Perplexity: The CFAA Case That Decides Whether AI Agents Can Visit Your Website](https://www.searchenginejournal.com/amazon-vs-perplexity-the-cfaa-case-that-decides-whether-ai-agents-can-visit-your-website/575499/) — Search Engine Journal
 

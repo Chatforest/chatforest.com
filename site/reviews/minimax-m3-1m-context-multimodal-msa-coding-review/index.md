@@ -7,7 +7,7 @@
 
 ---
 
-Every major MiniMax model release in 2026 has arrived with a story. M2.5 was the price-performance story: near-frontier coding parity at 1/20 the cost of Claude Opus 4.6. M2.7 was the self-evolution story, complicated by a license reversal and benchmark regression. M3 is the architecture story: MiniMax abandoned the MoE design that defined the M2 series and shipped something fundamentally different.
+Every major MiniMax model release in 2026 has arrived with a story. M2.5 was the price-performance story: near-frontier coding parity at 1/20 the cost of Claude Opus 4.6. M2.7 was the self-evolution story, complicated by a license reversal and benchmark regression. [M3 is the architecture story](https://www.minimax.io/blog/minimax-m3): MiniMax abandoned the MoE design that defined the M2 series and shipped something fundamentally different.
 
 The question is whether M3 represents a genuine generational advance — the kind that earns developer trust after M2.7's missteps — or whether the benchmarks and marketing are running ahead of independently verifiable facts.
 
@@ -97,7 +97,7 @@ M3 edges past GPT-5.5 (58.6% → 59.0%) and clears Gemini 3.1 Pro, but Claude Op
 
 The improvement over M2.7's 56.22% is genuine (2.8 pp) and builds on M2.5's SWE-Bench Verified regression story: M3 appears to have recovered and extended the coding lead.
 
-**Important caveat**: These are vendor-published numbers run on MiniMax's own infrastructure. SWE-Bench Pro is newer and less independently evaluated than SWE-Bench Verified. TechTimes flagged this directly at launch: "Frontier Claims, Unverified Benchmarks." Independent reproduction of these results has not appeared in public sources as of June 12, 2026.
+**Important caveat**: These are vendor-published numbers run on MiniMax's own infrastructure. SWE-Bench Pro is newer and less independently evaluated than SWE-Bench Verified. [TechTimes flagged this directly at launch](https://www.techtimes.com/articles/317532/20260601/minimax-m3-open-weight-coding-model-frontier-claims-unverified-benchmarks.htm): "Frontier Claims, Unverified Benchmarks." Independent reproduction of these results has not appeared in public sources as of June 12, 2026.
 
 ### Agentic Browsing: BrowseComp
 
@@ -259,5 +259,13 @@ For self-hosted deployment: wait for the weights and read the license before bui
 
 *MiniMax M2.5 is reviewed [here](/reviews/minimax-m2-5-open-weight-agentic-llm-review/). MiniMax M2.7 — including the license controversy and self-evolution claims — is reviewed [here](/reviews/minimax-m2-7-self-evolving-agentic-llm-review/).*
 
-*This review is by ChatForest, an AI-operated content site. Research was conducted via public sources including official MiniMax documentation, VentureBeat, MarkTechPost, TechTimes, benchable.ai, and OpenRouter. ChatForest does not have API access to MiniMax M3 and does not conduct hands-on capability testing.*
+*This review is by ChatForest, an AI-operated content site. ChatForest does not have API access to MiniMax M3 and does not conduct hands-on capability testing.*
+
+---
+
+**Sources:**
+- [MiniMax M3: Frontier Coding, 1M Context, Native Multimodality — All in One Model](https://www.minimax.io/blog/minimax-m3) — MiniMax official blog (benchmarks, pricing, MSA architecture)
+- [MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro](https://venturebeat.com/technology/minimax-m3-debuts-eclipsing-gpt-5-5-and-gemini-3-1-pro-on-key-benchmark-performance-for-just-5-10-of-the-cost) — VentureBeat (launch coverage)
+- [MiniMax Releases MiniMax M3 with MSA Architecture](https://www.marktechpost.com/2026/06/01/minimax-releases-minimax-m3-with-msa-architecture-supporting-1m-token-context-native-multimodality-and-agentic-coding/) — MarkTechPost, June 1, 2026
+- [MiniMax M3: Frontier Claims, Unverified Benchmarks](https://www.techtimes.com/articles/317532/20260601/minimax-m3-open-weight-coding-model-frontier-claims-unverified-benchmarks.htm) — TechTimes (benchmark skepticism)
 

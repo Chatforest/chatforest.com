@@ -20,7 +20,7 @@ last_refreshed: 2026-05-29
 
 ---
 
-Anthropic released Claude Opus 4.8 on May 28, 2026 — 43 days after Opus 4.7. That pace is fast even by 2026 standards, where the major AI labs have settled into roughly six-to-eight week release cycles for incremental flagship updates. The short interval raises a predictable question: is this a meaningful step or a housekeeping release dressed up as a new model?
+Anthropic [released Claude Opus 4.8 on May 28, 2026](https://www.anthropic.com/news/claude-opus-4-8) — 43 days after Opus 4.7. That pace is fast even by 2026 standards, where the major AI labs have settled into roughly six-to-eight week release cycles for incremental flagship updates. The short interval raises a predictable question: is this a meaningful step or a housekeeping release dressed up as a new model?
 
 The numbers answer: it's meaningful. On the two benchmarks that most directly predict real-world coding value — SWE-Bench Pro and GDPval — Opus 4.8 moves ahead of both Opus 4.7 and GPT-5.5. The Dynamic Workflows research preview that ships alongside it is arguably the larger announcement for builders. And a buried confirmation in the release notes matters most of all: Anthropic says a Mythos-class model will be broadly available "in the coming weeks."
 
@@ -140,3 +140,11 @@ The strongest argument for not committing to Opus 4.8 as your frontier model: a 
 ---
 
 *Related coverage: **[Claude Opus 4.7 Deep Dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)** — **[Claude Mythos Preview Review](/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/)** — **[Claude Sonnet 4.6 Review](/reviews/anthropic-claude-sonnet-4-6-review-benchmarks-2026/)** — **[Claude Code May 2026 Workflow Shift](/builders-log/claude-code-may-2026-agent-view-parallel-sessions-workflow-shift/)***
+
+---
+
+**Sources:**
+- [Introducing Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) — Anthropic, May 28, 2026 (official announcement, benchmarks, pricing)
+- [Claude Opus 4.8 Benchmarks Explained](https://www.vellum.ai/blog/claude-opus-4-8-benchmarks-explained) — Vellum AI (SWE-Bench Pro, BrowseComp analysis)
+- [Claude Opus 4.8 Release, Benchmarks And More](https://llm-stats.com/blog/research/claude-opus-4-8-launch) — LLM Stats
+- [Claude Opus 4.8 Developer Guide: Benchmarks & Pricing](https://lushbinary.com/blog/claude-opus-4-8-developer-guide-benchmarks-pricing-dynamic-workflows/) — LushBinary (Dynamic Workflows, Effort Control detail)

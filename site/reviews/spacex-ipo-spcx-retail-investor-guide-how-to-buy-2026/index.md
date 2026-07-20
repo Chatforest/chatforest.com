@@ -11,7 +11,7 @@ The standard playbook for a large IPO reserves roughly **10% of shares for retai
 
 SpaceX is doing something different.
 
-According to reporting from Reuters and CNBC, SpaceX is targeting a **30% retail allocation** — triple the historical norm. Elon Musk has reportedly pushed for this structure explicitly, wanting everyday investors to participate at the same price and at the same time as institutional buyers. SpaceX CFO Bret Johnsen confirmed the intent: retail will be a bigger piece of this IPO than any offering before it.
+According to [reporting from Reuters and CNBC](https://www.cnbc.com/2026/06/09/spacex-ipo-explained-stock-price-date.html), SpaceX is targeting a **30% retail allocation** — triple the historical norm. Elon Musk has reportedly pushed for this structure explicitly, wanting everyday investors to participate at the same price and at the same time as institutional buyers. SpaceX CFO Bret Johnsen confirmed the intent: retail will be a bigger piece of this IPO than any offering before it.
 
 One of SpaceX's lead underwriters told Reuters they had "never seen anything like" the expected retail demand for this deal.
 
@@ -31,7 +31,7 @@ What that means practically: **you can request shares. You are unlikely to get a
 | June 11, 2026 | Pricing (IPO price set) |
 | June 12, 2026 | Trading opens on Nasdaq (ticker: **SPCX**) |
 
-**Update (June 11, 2026 — pricing day):** SPCX priced at **$135 per share** tonight, locking in the $1.75 trillion valuation and a **$75 billion raise** — confirmed as the largest IPO in US history, more than triple the size of Alibaba's 2014 US listing. Goldman Sachs led the book; Morgan Stanley, Bank of America, Citigroup, and JPMorgan are co-underwriters. The retail tranche closed at pricing. Retail allocations have been distributed (or are being distributed tonight) to the five platforms. **Trading opens on Nasdaq under SPCX at 9:30 AM ET on June 12.** This article will be updated after the first trading day with open price, close price, and volume.
+**Update (June 11, 2026 — pricing day):** [SPCX priced at **$135 per share** tonight](https://www.cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates.html), locking in the $1.75 trillion valuation and a **$75 billion raise** — confirmed as the largest IPO in US history, more than triple the size of Alibaba's 2014 US listing. Goldman Sachs led the book; Morgan Stanley, Bank of America, Citigroup, and JPMorgan are co-underwriters. The retail tranche closed at pricing. Retail allocations have been distributed (or are being distributed tonight) to the five platforms. **Trading opens on Nasdaq under SPCX at 9:30 AM ET on June 12.** This article will be updated after the first trading day with open price, close price, and volume.
 
 **Update (May 28, 2026):** Reuters and CNBC confirmed SpaceX accelerated its IPO roadshow to begin June 4 — roughly one week earlier than earlier estimates of the week of June 8. The June 11 pricing and June 12 trading debut remain unchanged. The retail request windows on the brokerage platforms are expected to open during the roadshow week. Check your platform for specific availability dates.
 
@@ -164,4 +164,12 @@ What is not in question: the 30% retail structure is the most significant shift 
 ---
 
 *Dates and allocation figures based on reporting from CNBC, Reuters, and Bloomberg through May 2026. Platform-specific requirements are subject to change; confirm with your brokerage before the roadshow. This is not financial advice.*
+
+---
+
+**Sources:**
+- [SpaceX IPO explained: The price is set, but retail allocation still up in the air](https://www.cnbc.com/2026/06/09/spacex-ipo-explained-stock-price-date.html) — CNBC (30% retail allocation, roadshow detail)
+- [SpaceX IPO takeaways: SPCX closes at $161, jumping 19% after record debut](https://www.cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates.html) — CNBC (June 12 trading debut, pricing confirmation)
+- [SpaceX IPO 2026 (SPCX): Date, Price & How to Invest](https://purepowerpicks.com/spacex-ipo-spcx-everything-you-need-to-know/) — PurePowerPicks (platform-by-platform breakdown)
+- [SpaceX IPO targets June 2026 after SEC filing](https://capital.com/en-int/learn/ipo/spacex-ipo) — Capital.com
 

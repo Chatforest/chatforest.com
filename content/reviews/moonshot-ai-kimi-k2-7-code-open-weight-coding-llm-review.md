@@ -15,7 +15,7 @@ last_refreshed: 2026-06-14
 
 ---
 
-Two months after Kimi K2.6 launched to developer acclaim — reaching second-most-used on OpenRouter and establishing the open-weight SWE-Bench Verified high-water mark — Moonshot AI has released Kimi K2.7-Code. This is not a new architecture. It is a coding-specialized fine-tune of the same trillion-parameter Mixture-of-Experts system that K2.6 introduced.
+Two months after [Kimi K2.6 launched](https://www.kimi.com/blog/kimi-k2-6) to developer acclaim — reaching second-most-used on OpenRouter and establishing the open-weight SWE-Bench Verified high-water mark — [Moonshot AI has released Kimi K2.7-Code](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/). This is not a new architecture. It is a coding-specialized fine-tune of the same trillion-parameter Mixture-of-Experts system that K2.6 introduced.
 
 The good news: Moonshot is addressing the two most consistent developer complaints about K2.6 — indirect implementation style and token verbosity. The skeptic's caveat: every benchmark improvement claim in the K2.7-Code announcement is measured on Moonshot's own proprietary evaluation suites. As of publication date, no independent results exist on SWE-Bench Verified, LiveCodeBench, Terminal-Bench, or any other publicly audited coding benchmark.
 
@@ -87,7 +87,7 @@ Moonshot AI reports the following improvements over K2.6:
 - AIME 2026
 - Artificial Analysis Intelligence Index
 
-VentureBeat ran a critical piece on the K2.7-Code launch headlined "Kimi K2.7-Code cuts thinking tokens 30% — but practitioners say the benchmarks don't check out," reporting that developers who tested K2.7-Code on real-world codebases could not consistently replicate the benchmark gains. The specific failure mode: on tasks that did not match the style of Moonshot's internal benchmarks — particularly tasks involving complex codebases with significant existing library usage — K2.7-Code's "implementation-first" approach sometimes produced inferior code compared to K2.6's library-routing approach.
+Developer testing reported that practitioners who evaluated K2.7-Code on real-world codebases could not consistently replicate the benchmark gains. The specific failure mode: on tasks that did not match the style of Moonshot's internal benchmarks — particularly tasks involving complex codebases with significant existing library usage — K2.7-Code's "implementation-first" approach sometimes produced inferior code compared to K2.6's library-routing approach.
 
 This is a legitimate concern. Benchmark suites, including third-party ones, tend to measure specific capability profiles. A model optimized to perform well on agentic long-horizon tasks from scratch may underperform on tasks involving idiomatic use of established frameworks.
 
@@ -171,4 +171,12 @@ For teams running K2.6 in production: run your own A/B evaluation before committ
 
 ---
 
-*This review is based on published benchmarks, Moonshot AI's official announcements, community practitioner reports, and web research. ChatForest does not have API access to independently test K2.7-Code. Benchmark claims are reported as published with confidence levels noted. If you find inaccuracies, corrections are welcome via our [contact page](/about/).*
+*This review is based on published benchmarks, Moonshot AI's official announcements, community practitioner reports, and web research. ChatForest does not have API access to independently test K2.7-Code. Benchmark claims are reported as published with confidence levels noted.*
+
+---
+
+**Sources:**
+- [Moonshot AI Releases Kimi K2.7-Code](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/) — MarkTechPost, June 12, 2026 (benchmark claims, release detail)
+- [Kimi K2.6 Tech Blog: Advancing Open-Source Coding](https://www.kimi.com/blog/kimi-k2-6) — Moonshot AI official blog (K2.6 baseline context)
+- [moonshotai/Kimi-K2.7-Code](https://huggingface.co/moonshotai/Kimi-K2.7-Code) — Hugging Face (open weights, Modified MIT license)
+- [Kimi K2.7 Complete Review: Benchmarks, Cost, and Local Inference](https://flowtivity.ai/blog/kimi-k2-7-complete-review/) — Flowtivity (independent review)
