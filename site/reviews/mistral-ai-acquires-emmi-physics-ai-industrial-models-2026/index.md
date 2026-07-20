@@ -11,7 +11,7 @@ Mistral AI has spent most of its short existence competing on open weights and g
 
 The Emmi AI acquisition quietly changes that narrative.
 
-On May 19, 2026, Mistral announced it had acquired Emmi AI — a 17-month-old startup from Vienna and Linz, Austria, that builds foundation models trained on the laws of physics. The deal is undisclosed in value, but brings 30+ researchers to Mistral and opens a new office in Linz, making it Mistral's eighth global location.
+On May 19, 2026, [Mistral announced it had acquired Emmi AI](https://mistral.ai/news/emmi-ai/) — a 17-month-old startup from Vienna and Linz, Austria, that builds foundation models trained on the laws of physics. The deal is undisclosed in value, but brings 30+ researchers to Mistral and opens a new office in Linz, making it Mistral's eighth global location.
 
 This is not a talent acquihire. Emmi AI's technology represents a distinct and defensible niche — one that Mistral could not build quickly enough on its own.
 
@@ -35,7 +35,7 @@ The applications are concrete: aerospace (wing and fuselage optimization), autom
 
 Emmi AI was founded in December 2024 by **Johannes Brandstetter, Dennis Just, and Miks Mikelsons**. The team spun out of NXAI, an Austrian AI research institution, and had deep roots in physics-informed neural networks — an academic field that had been building toward this commercial application for years.
 
-In April 2025, just four months after founding, Emmi raised a **€15 million seed round** — the largest seed round in Austrian startup history at the time. Investors included 3VC, Speedinvest, Serena, and PUSH. The size of the round signaled that serious investors believed real-time physics simulation was not just technically interesting but commercially viable.
+In April 2025, just four months after founding, Emmi raised a **€15 million seed round** — the [largest seed round in Austrian startup history at the time](https://tech.eu/2025/04/emmi-ai-raises-eur-15-million-seed-round/). Investors included 3VC, Speedinvest, Serena, and PUSH. The size of the round signaled that serious investors believed real-time physics simulation was not just technically interesting but commercially viable.
 
 Fifteen months later, Mistral bought the company.
 
@@ -112,4 +112,11 @@ For European manufacturers watching the AI landscape: Mistral just became more i
 ---
 
 *ChatForest covers AI tools, models, and infrastructure from a builder-first perspective. This article is based on publicly available reporting from Reuters, Tech.eu, The Decoder, HPC Wire, Mistral's official blog, and Emmi AI's own announcement. ChatForest has no commercial relationship with Mistral AI or Emmi AI.*
+
+---
+
+## Sources
+
+- [Mistral AI — Emmi AI acquisition announcement](https://mistral.ai/news/emmi-ai/) — May 19, 2026 official announcement from Mistral; includes CEO Arthur Mensch and CSO Guillaume Lample quotes
+- [Tech.eu — Emmi AI €15M seed round](https://tech.eu/2025/04/emmi-ai-raises-eur-15-million-seed-round/) — April 2025 coverage of Europe's largest-ever AI seed round at the time
 

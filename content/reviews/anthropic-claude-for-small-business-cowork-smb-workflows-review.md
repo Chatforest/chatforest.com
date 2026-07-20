@@ -19,7 +19,7 @@ author: "ChatForest"
 
 Anthropic's enterprise play has always been clear: sell Claude directly to large organizations that can absorb per-seat pricing. The SMB play has been murkier. Small businesses don't have IT procurement. They don't have a Chief AI Officer. They have a founder running payroll at 11 p.m. and a bookkeeper who handles everything else.
 
-Claude for Small Business, launched May 13, 2026, is Anthropic's answer to that market. It isn't a new product in the traditional sense. It is a package — 15 agentic workflows, 15 underlying skills, 7 software connectors — bundled as a toggle install inside Claude Cowork, Anthropic's multi-step agent hub. The framing is distribution: embed Claude into tools that small businesses already pay for, rather than asking them to buy something new.
+[Claude for Small Business, launched May 13, 2026](https://www.anthropic.com/news/claude-for-small-business), is Anthropic's answer to that market. It isn't a new product in the traditional sense. It is a package — 15 agentic workflows, 15 underlying skills, 7 software connectors — bundled as a toggle install inside Claude Cowork, Anthropic's multi-step agent hub. The framing is distribution: embed Claude into tools that small businesses already pay for, rather than asking them to buy something new.
 
 ---
 
@@ -110,3 +110,9 @@ The product is strongest for businesses already running on QuickBooks and PayPal
 The strategic question isn't whether Claude for Small Business is a good product. It is. The question is whether Anthropic can build the connector ecosystem fast enough to stay relevant as Microsoft Copilot, QuickBooks' own AI features, and HubSpot's Breeze AI all compete for the same operational layer.
 
 **Rating: 4/5** — Well-executed distribution play into the SMB market. Strong connector choices, fair pricing, real workflows. Connector roster is the current ceiling.
+
+## Sources
+
+- [Introducing Claude for Small Business — Anthropic](https://www.anthropic.com/news/claude-for-small-business) — launch announcement, workflows, connector list, PayPal partnership, workshop tour
+- [Anthropic launches Claude for Small Business — CryptoBriefing](https://cryptobriefing.com/claude-for-small-business-ai-integration/) — independent launch coverage
+- [Anthropic launches Claude for Small Business with 15 agentic workflows — AIDB](https://aidb.digital/blog/2026-05-17-anthropic-launches-claude-for-small-business-with-15-agentic-workflow) — workflow details

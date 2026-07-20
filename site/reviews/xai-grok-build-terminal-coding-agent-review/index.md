@@ -3,7 +3,7 @@
 > Grok Build (May 2026) is xAI's terminal-native coding agent with up to 8 parallel subagents, isolated Git worktrees per agent, and 256K token context. Powered by Grok Build 0.1. SWE-Bench: 70.8%. Now available to SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers. Rating: 3.5/5.
 
 
-**At a glance:** Grok Build launched in May 2026 as an early access release — xAI's entry into the terminal-native agentic coding market. Powered by Grok Build 0.1 (a purpose-built agentic coding model) with 256K token context. Up to 8 parallel subagents, each isolated in its own Git worktree. **Access expanded May 24, 2026 to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers** — a significant drop from the original SuperGrok Heavy-only requirement. SWE-Bench Verified: 70.8%. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
+**At a glance:** [Grok Build launched in May 2026](https://x.ai/news/grok-build-cli) as an early access release — xAI's entry into the terminal-native agentic coding market. Powered by [Grok Build 0.1](https://x.ai/news/grok-build-0-1) (a purpose-built agentic coding model) with 256K token context. Up to 8 parallel subagents, each isolated in its own Git worktree. **Access expanded May 24, 2026 to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers** — a significant drop from the original SuperGrok Heavy-only requirement. SWE-Bench Verified: 70.8%. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
 
 ---
 
@@ -148,6 +148,15 @@ Today, it is an early beta with a meaningful benchmark deficit. The pricing barr
 The benchmark picture will change. Grok 5 — xAI's next flagship model — is expected to ship in the near term. Once Grok 5 powers Grok Build, the SWE-Bench gap is likely to close substantially; the architecture would remain the same while the underlying model capability increases significantly. Evaluate Grok Build again after that upgrade.
 
 **Rating: 3.5/5** — Novel worktree architecture, now accessible at $30/mo via SuperGrok, but a 17-point SWE-Bench gap and early-access rough edges limit production use today.
+
+---
+
+## Sources
+
+- [Introducing Grok Build — xAI](https://x.ai/news/grok-build-cli) — official launch announcement, feature overview
+- [Grok Build 0.1 on API — xAI](https://x.ai/news/grok-build-0-1) — model details, API pricing
+- [Grok Build documentation — xAI Docs](https://docs.x.ai/build/overview) — architecture, worktree isolation, plan mode
+- [xAI Grok Build CLI Launch — DigitalApplied](https://www.digitalapplied.com/blog/xai-grok-build-cli-parallel-coding-agents) — benchmark comparisons and parallel agent architecture analysis
 
 ---
 

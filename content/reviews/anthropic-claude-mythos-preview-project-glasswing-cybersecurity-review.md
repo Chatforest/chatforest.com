@@ -16,7 +16,7 @@ last_refreshed: 2026-05-22
 
 ---
 
-**At a glance:** Claude Mythos Preview — announced April 7, 2026. CyberGym benchmark: 83.1% (vs. 66.6% for Opus 4.6). Firefox vulnerability exploitation: 181 working exploits (vs. 2 for Opus 4.6). OSS-Fuzz: 595 crashes at tiers 1–2 (vs. 150–175 for prior models). Autonomously discovered CVE-2026-4747 (17-year-old FreeBSD unauthenticated root RCE). Pricing: $25/$125 per million input/output tokens. Access: invite-only via Project Glasswing. Not publicly available. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For background, see our **[Claude Opus 4.7 deep dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)** and **[Claude 4.6 review](/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review/)**. For the direct competitor, see our **[OpenAI Daybreak review](/reviews/openai-daybreak-gpt-5-5-cyber-codex-security-cybersecurity-review/)**.
+**At a glance:** Claude Mythos Preview — [announced April 7, 2026](https://fortune.com/2026/04/07/anthropic-claude-mythos-model-project-glasswing-cybersecurity/). CyberGym benchmark: 83.1% (vs. 66.6% for Opus 4.6). Firefox vulnerability exploitation: 181 working exploits (vs. 2 for Opus 4.6). OSS-Fuzz: 595 crashes at tiers 1–2 (vs. 150–175 for prior models). Autonomously discovered CVE-2026-4747 (17-year-old FreeBSD unauthenticated root RCE). Pricing: $25/$125 per million input/output tokens. Access: invite-only via [Project Glasswing](https://www.anthropic.com/glasswing). Not publicly available. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For background, see our **[Claude Opus 4.7 deep dive](/reviews/anthropic-claude-opus-4-7-deep-dive/)** and **[Claude 4.6 review](/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review/)**. For the direct competitor, see our **[OpenAI Daybreak review](/reviews/openai-daybreak-gpt-5-5-cyber-codex-security-cybersecurity-review/)**.
 
 ---
 
@@ -153,6 +153,17 @@ The rating reflects the real constraint: **access**. For 99.9% of builders readi
 For Project Glasswing participants, the capability rating would be 5/5. For everyone else, the relevant rating is closer to 2/5 (for "available to me as a builder"). The 3.5 is the midpoint, weighted toward the importance of the technology to the ecosystem as a whole.
 
 What Anthropic demonstrated with Mythos Preview is that autonomous cybersecurity AI is not a distant forecast. It exists, it finds things human researchers miss, and the question of how to deploy it responsibly is already being answered — imperfectly, but actively. Every security team, every open-source maintainer, and every builder who ships software into production should understand what this model's existence means for the threat landscape, even if they never interact with it directly.
+
+---
+
+## Sources
+
+- [Project Glasswing overview — Anthropic](https://www.anthropic.com/glasswing) — structure, partners, financial commitments
+- [Assessing Claude Mythos Preview's cybersecurity capabilities — Anthropic](https://red.anthropic.com/2026/mythos-preview/) — technical benchmarks (CyberGym, Firefox exploits, OSS-Fuzz, CVEs)
+- [Project Glasswing initial update — Anthropic](https://www.anthropic.com/research/glasswing-initial-update) — vulnerability count and disclosure timeline
+- [Expanding Project Glasswing — Anthropic](https://www.anthropic.com/news/expanding-project-glasswing) — expansion to 150+ organizations
+- [Anthropic is giving some firms early access to Claude Mythos — Fortune, April 7, 2026](https://fortune.com/2026/04/07/anthropic-claude-mythos-model-project-glasswing-cybersecurity/) — initial launch coverage
+- [Anthropic: Claude Mythos identified 10,000+ software flaws — Help Net Security](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/) — findings count
 
 ---
 

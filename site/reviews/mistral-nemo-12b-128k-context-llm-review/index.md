@@ -7,7 +7,7 @@
 
 ---
 
-Mistral NeMo is an unusual release in the 2024 open-weight model landscape: a formal collaboration between [Mistral AI](/reviews/mistral-ai-open-weight-llm-european-ai/) and NVIDIA, announced together on July 18, 2024 — two weeks before Meta's Llama 3.1 would redefine the open-weight frontier. The NeMo name reflects NVIDIA's NeMo framework for model training and the NIM microservice ecosystem for enterprise deployment. The Mistral contribution is the training methodology, the architecture, and the new Tekken tokenizer.
+Mistral NeMo is an unusual release in the 2024 open-weight model landscape: a formal collaboration between [Mistral AI](/reviews/mistral-ai-open-weight-llm-european-ai/) and NVIDIA, [announced together on July 18, 2024](https://mistral.ai/news/mistral-nemo/) — two weeks before Meta's Llama 3.1 would redefine the open-weight frontier. The NeMo name reflects NVIDIA's NeMo framework for model training and the NIM microservice ecosystem for enterprise deployment. The Mistral contribution is the training methodology, the architecture, and the new Tekken tokenizer.
 
 The central claim at launch: **128,000 tokens of context at 12B scale**, with an Apache 2.0 license and Ollama-ready weights that run on consumer GPUs. At the time, Llama 3 8B and Gemma 2 9B both offered 8K context windows. NeMo's 16× advantage on context was not incremental — it represented a different capability class at similar hardware requirements.
 
@@ -126,7 +126,7 @@ nvidia/Mistral-NeMo-12B-Base
 nvidia/Mistral-NeMo-12B-Instruct
 ```
 
-Both Mistral AI and NVIDIA host the weights, with the NVIDIA variants optimized for their NIM deployment stack.
+Both [Mistral AI](https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407) and [NVIDIA](https://huggingface.co/nvidia/Mistral-NeMo-12B-Instruct) host the weights, with the NVIDIA variants optimized for their NIM deployment stack.
 
 ---
 
@@ -194,6 +194,15 @@ The model's limitations are honest rather than surprising. MMLU lags Gemma 2 9B.
 What keeps NeMo at four stars rather than three is the combination of constraints it resolved simultaneously: Apache 2.0, 128K context, 12B scale, 7 GB at Q4 — no other model has covered all four of those at once, before or after NeMo's release.
 
 **Rating: 4/5** — A purpose-built solution that delivered on its stated constraints. Architecturally transitional, but still the most accessible 128K Apache 2.0 model for 8 GB GPU users in mid-2026.
+
+---
+
+## Sources
+
+- [Mistral NeMo announcement](https://mistral.ai/news/mistral-nemo/) — July 18, 2024 joint launch announcement from Mistral AI and NVIDIA
+- [HuggingFace — mistralai/Mistral-Nemo-Instruct-2407](https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407) — instruction-tuned weights and model card
+- [HuggingFace — mistralai/Mistral-Nemo-Base-2407](https://huggingface.co/mistralai/Mistral-Nemo-Base-2407) — base model weights
+- [NVIDIA NIM — Mistral NeMo](https://build.nvidia.com/mistralai/mistral-nemo) — enterprise NIM microservice with TensorRT-LLM optimization
 
 ---
 

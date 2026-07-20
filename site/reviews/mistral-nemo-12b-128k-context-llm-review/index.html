@@ -68,7 +68,7 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> Mistral NeMo, released July 18, 2024. 12.2B parameters. 128K context. Apache 2.0. New Tekken tokenizer. MMLU: 68.0%. FP8-ready. Ollama: <code>mistral-nemo</code>. Part of our <strong><a href="/categories/ai-tools/">AI Models &amp; Companies reviews</a></strong>.</p>
 <hr>
-<p>Mistral NeMo is an unusual release in the 2024 open-weight model landscape: a formal collaboration between <a href="/reviews/mistral-ai-open-weight-llm-european-ai/">Mistral AI</a> and NVIDIA, announced together on July 18, 2024 — two weeks before Meta&rsquo;s Llama 3.1 would redefine the open-weight frontier. The NeMo name reflects NVIDIA&rsquo;s NeMo framework for model training and the NIM microservice ecosystem for enterprise deployment. The Mistral contribution is the training methodology, the architecture, and the new Tekken tokenizer.</p>
+<p>Mistral NeMo is an unusual release in the 2024 open-weight model landscape: a formal collaboration between <a href="/reviews/mistral-ai-open-weight-llm-european-ai/">Mistral AI</a> and NVIDIA, <a href="https://mistral.ai/news/mistral-nemo/">announced together on July 18, 2024</a> — two weeks before Meta&rsquo;s Llama 3.1 would redefine the open-weight frontier. The NeMo name reflects NVIDIA&rsquo;s NeMo framework for model training and the NIM microservice ecosystem for enterprise deployment. The Mistral contribution is the training methodology, the architecture, and the new Tekken tokenizer.</p>
 <p>The central claim at launch: <strong>128,000 tokens of context at 12B scale</strong>, with an Apache 2.0 license and Ollama-ready weights that run on consumer GPUs. At the time, Llama 3 8B and Gemma 2 9B both offered 8K context windows. NeMo&rsquo;s 16× advantage on context was not incremental — it represented a different capability class at similar hardware requirements.</p>
 <p>Two years later, Mistral Small 3.1 (March 2025) has formally superseded NeMo for new deployments with its 24B dense architecture, multimodal vision, and improved benchmarks at similar hardware costs. But NeMo retains one meaningful distinction: it runs cleanly at <strong>Q4 quantization in roughly 7 GB of VRAM</strong>, making it accessible on 8 GB consumer GPUs where Small 3.1 cannot fit. For long-document tasks where context matters more than peak accuracy, it remains a practical choice.</p>
 <hr>
@@ -242,7 +242,7 @@ ollama run mistral-nemo
 mistralai/Mistral-Nemo-Instruct-2407   (instruction-tuned)
 nvidia/Mistral-NeMo-12B-Base
 nvidia/Mistral-NeMo-12B-Instruct
-</code></pre><p>Both Mistral AI and NVIDIA host the weights, with the NVIDIA variants optimized for their NIM deployment stack.</p>
+</code></pre><p>Both <a href="https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407">Mistral AI</a> and <a href="https://huggingface.co/nvidia/Mistral-NeMo-12B-Instruct">NVIDIA</a> host the weights, with the NVIDIA variants optimized for their NIM deployment stack.</p>
 <hr>
 <h2 id="nemo-vs-the-competition-at-launch-july-2024">NeMo vs. The Competition at Launch (July 2024)</h2>
 <table>
@@ -324,6 +324,14 @@ nvidia/Mistral-NeMo-12B-Instruct
 <p>The model&rsquo;s limitations are honest rather than surprising. MMLU lags Gemma 2 9B. HumanEval was never officially published. It has no vision capability. And Mistral Small 3.1 (March 2025) formally superseded it for any deployment where VRAM is not the hard constraint.</p>
 <p>What keeps NeMo at four stars rather than three is the combination of constraints it resolved simultaneously: Apache 2.0, 128K context, 12B scale, 7 GB at Q4 — no other model has covered all four of those at once, before or after NeMo&rsquo;s release.</p>
 <p><strong>Rating: 4/5</strong> — A purpose-built solution that delivered on its stated constraints. Architecturally transitional, but still the most accessible 128K Apache 2.0 model for 8 GB GPU users in mid-2026.</p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://mistral.ai/news/mistral-nemo/">Mistral NeMo announcement</a> — July 18, 2024 joint launch announcement from Mistral AI and NVIDIA</li>
+<li><a href="https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407">HuggingFace — mistralai/Mistral-Nemo-Instruct-2407</a> — instruction-tuned weights and model card</li>
+<li><a href="https://huggingface.co/mistralai/Mistral-Nemo-Base-2407">HuggingFace — mistralai/Mistral-Nemo-Base-2407</a> — base model weights</li>
+<li><a href="https://build.nvidia.com/mistralai/mistral-nemo">NVIDIA NIM — Mistral NeMo</a> — enterprise NIM microservice with TensorRT-LLM optimization</li>
+</ul>
 <hr>
 <h2 id="companion-reviews">Companion Reviews</h2>
 <ul>

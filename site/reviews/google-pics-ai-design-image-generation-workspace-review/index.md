@@ -3,7 +3,7 @@
 > Google announced Pics at I/O 2026: a Canva-competing AI design app baked into Google Workspace, powered by the Nano Banana 2 image model. We cover what it does, what makes it different, and what the subscription gate means for potential users.
 
 
-At Google I/O on May 19, 2026, Google announced **Pics** — a new AI-powered design and image-generation app built directly into Google Workspace. The pitch is clear: text-to-design workflows for users who are not graphic designers, integrated into the tools those users already open every day.
+At [Google I/O on May 19, 2026](https://techcrunch.com/2026/05/19/ai-design-tools-are-the-next-big-battleground-and-google-is-going-all-in-at-io-2026/), Google announced **Pics** — a new AI-powered design and image-generation app built directly into Google Workspace. The pitch is clear: text-to-design workflows for users who are not graphic designers, integrated into the tools those users already open every day.
 
 Google positioned Pics as a direct competitor to Canva. That is a significant claim. Canva built a dominant position in accessible design precisely because it required no technical skill, offered a large template library, and worked in a browser without software installation. Google is betting that generative AI — specifically its own Nano Banana 2 model — can undercut that advantage by eliminating templates entirely and replacing them with a prompt box.
 
@@ -116,6 +116,14 @@ The product Google noted as a comparison point — Anthropic's Claude Design —
 **Weaknesses**: No free tier limits discovery and casual adoption. Brand kit and asset input capabilities unconfirmed. Currently limited to Trusted Testers with no independent benchmark data. The template-free, prompt-first design philosophy will not work for users who think in layouts rather than descriptions.
 
 Google Pics is a credible Canva competitor on paper — the combination of a capable image model, element-level editing, and Workspace integration is a coherent product strategy. Whether it translates to actual usage depends on two things Google hasn't yet demonstrated: reliable text rendering in practice, and some mechanism for brand consistency. Both will become clearer when the summer rollout begins.
+
+---
+
+## Sources
+
+- [Google announces Pics, a Workspace-native AI image generator — The Next Web](https://thenextweb.com/news/google-pics-workspace-ai-image-generator-nano-banana-2) — product overview, Nano Banana 2 specs, element-level editing
+- [AI design tools are the next big battleground — TechCrunch, May 19, 2026](https://techcrunch.com/2026/05/19/ai-design-tools-are-the-next-big-battleground-and-google-is-going-all-in-at-io-2026/) — Google I/O 2026 context
+- [Google launches AI design app 'Pics' to challenge Canva — NewsBytesApp](https://www.newsbytesapp.com/news/science/meet-pics-google-s-ai-powered-rival-to-canva/story) — pricing and availability details
 
 ---
 

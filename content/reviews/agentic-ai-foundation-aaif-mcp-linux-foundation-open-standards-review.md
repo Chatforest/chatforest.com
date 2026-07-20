@@ -11,13 +11,13 @@ rating: 5
 author: "ChatForest"
 ---
 
-**At a glance:** Agentic AI Foundation (AAIF). Founded December 9, 2025. Under the Linux Foundation. Governs MCP, AGENTS.md, goose. 170 member organizations in under 4 months. 110M+ monthly MCP SDK downloads. Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [Agentic AI Foundation (AAIF)](https://aaif.io/). [Founded December 9, 2025](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation). Under the Linux Foundation. Governs [MCP](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/), AGENTS.md, goose. 170 member organizations in under 4 months. 110M+ monthly MCP SDK downloads. Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
 Something significant happened in the AI world in December 2025, and most coverage missed it.
 
-OpenAI launched GPT-5 in early December. Anthropic was shipping Claude 4. Google was preparing Gemini 3. Every headline tracked model benchmarks. Meanwhile, on December 9, Anthropic quietly donated the Model Context Protocol to a newly formed foundation under the Linux Foundation — and in doing so, set the terms for how AI agents will interoperate for the next decade.
+OpenAI launched GPT-5 in early December. Anthropic was shipping Claude 4. Google was preparing Gemini 3. Every headline tracked model benchmarks. Meanwhile, on December 9, [Anthropic quietly donated the Model Context Protocol](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) to a newly formed foundation under the Linux Foundation — and in doing so, set the terms for how AI agents will interoperate for the next decade.
 
 The Agentic AI Foundation (AAIF) is not a product. It is not a startup. It is the institutional structure that will govern how AI agents talk to tools, to each other, and to the humans who deploy them. That is a different kind of story — slower, less flashy, and almost certainly more consequential.
 
@@ -146,6 +146,17 @@ The 170-member growth rate, 110M monthly SDK downloads, and MCP Dev Summit atten
 For AI builders: the agent protocol stack is settling. MCP + A2A + AGENTS.md is the open layer. Governance tooling is coming. Observability is coming. Authentication is coming. Build to the open stack, and your integrations will stay current. Build to proprietary alternatives, and you are betting on a single vendor's continued relevance.
 
 The AAIF is not exciting. It is necessary. Those are the best kind of institutions.
+
+---
+
+## Sources
+
+- [Linux Foundation announcement — Agentic AI Foundation formation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) — December 9, 2025 founding, platinum members, project list
+- [MCP joins the Agentic AI Foundation — MCP Blog](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) — MCP donation announcement
+- [Anthropic donating MCP and establishing AAIF — Anthropic](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) — Anthropic's announcement
+- [OpenAI co-founds the Agentic AI Foundation — OpenAI](https://openai.com/index/agentic-ai-foundation/) — OpenAI's announcement
+- [OpenAI, Anthropic, and Block join new Linux Foundation effort — TechCrunch, December 9, 2025](https://techcrunch.com/2025/12/09/openai-anthropic-and-block-join-new-linux-foundation-effort-to-standardize-the-ai-agent-era/) — independent launch coverage
+- [Agentic AI Foundation — AAIF.io](https://aaif.io/) — membership roster and news
 
 ---
 

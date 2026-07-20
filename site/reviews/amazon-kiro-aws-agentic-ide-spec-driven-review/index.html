@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>Most AI coding tools start with code. Amazon Kiro starts with a plan.</p>
-<p><strong>Kiro</strong> is an agentic IDE from AWS that inverts the standard AI coding workflow. Where Cursor and GitHub Copilot take a prompt and immediately generate code, Kiro takes a prompt, generates a formal requirements document with structured acceptance criteria, waits for your review and approval, and <em>then</em> writes code. The spec is the unit of work. Code is what happens after you sign off on the spec.</p>
+<p><strong><a href="https://aws.amazon.com/documentation-overview/kiro/">Kiro</a></strong> is an agentic IDE from AWS that inverts the standard AI coding workflow. Where Cursor and GitHub Copilot take a prompt and immediately generate code, Kiro takes a prompt, generates a formal requirements document with structured acceptance criteria, waits for your review and approval, and <em>then</em> writes code. The spec is the unit of work. Code is what happens after you sign off on the spec.</p>
 <p>This is a deliberate response to what AWS calls &ldquo;vibe coding&rdquo; — the pattern of prompting an AI, accepting whatever it generates, and iterating through bugs until something resembling the intended behavior emerges. Kiro&rsquo;s thesis is that the vibe coding loop is a symptom of skipping the requirements phase, not a feature.</p>
 <p>Whether that thesis is right for your workflow is the central question in this review.</p>
 <hr>
@@ -282,6 +282,13 @@
 <p>Kiro represents a coherent and defensible thesis about what agentic coding tools should do: encode intent explicitly, generate artifacts that outlive the chat session, and automate the downstream maintenance work that AI-generated code creates.</p>
 <p>The spec-driven model is not hype. Teams that adopt it report meaningfully less rework on complex features, because the acceptance criteria surface misunderstandings between developer intent and agent interpretation before code is written rather than after.</p>
 <p>The 4/5 reflects the coherence of that thesis, strong execution on the core workflow, and competitive pricing. The deductions come from the AWS lock-in (a real constraint outside that ecosystem) and the learning curve relative to more permissive tools like Cursor. Kiro is not for every developer — but for teams shipping production software on AWS who have felt the consequences of vibe coding, it&rsquo;s the most serious engineering-discipline tool in the AI IDE market.</p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://aws.amazon.com/documentation-overview/kiro/">Kiro documentation — AWS</a> — official feature documentation, pricing, integrations</li>
+<li><a href="https://www.devoteam.com/expert-view/aws-kiro-beyond-vibe-coding/">AWS Kiro: Why Amazon&rsquo;s Agentic IDE Goes Beyond Vibe Coding — Devoteam</a> — spec-driven development analysis</li>
+<li><a href="https://www.softwareseni.com/aws-kiro-amazons-spec-first-bet-on-agentic-development/">AWS Kiro: Amazon&rsquo;s Spec-First Bet on Agentic Development — SoftwareSeni</a> — EARS notation and Hooks feature overview</li>
+</ul>
 <hr>
 <p><em>ChatForest researches AI tools and platforms; we do not test them hands-on. Our reviews are based on publicly available documentation, developer community reports, benchmark data, and press coverage.</em></p>
 

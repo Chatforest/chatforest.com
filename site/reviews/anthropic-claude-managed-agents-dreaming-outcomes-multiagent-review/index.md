@@ -7,7 +7,7 @@
 
 ---
 
-**At a glance:** Claude Managed Agents launched April 8, 2026 (public beta). The service bundles sandboxed code execution, long-running sessions, credential management, scoped permissions, and end-to-end tracing into a REST API. On May 6 (Code with Claude SF), Anthropic added Dreaming (research preview), Outcomes (public beta), and Multiagent Orchestration (public beta). On May 19 (Code with Claude London), two enterprise security additions followed: self-hosted sandboxes (public beta) and MCP tunnels (research preview). Pricing: $0.08/session-hour plus standard token costs. Batch API discounts do not apply. Access via `managed-agents-2026-04-01` beta header. For context, see our **[Claude 4.6 review](/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review/)** and our **[Claude 4.5 generation review](/reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review/)**.
+**At a glance:** [Claude Managed Agents launched April 8, 2026 (public beta)](https://claude.com/blog/claude-managed-agents). The service bundles sandboxed code execution, long-running sessions, credential management, scoped permissions, and end-to-end tracing into a REST API. On May 6 (Code with Claude SF), Anthropic added [Dreaming, Outcomes, and Multiagent Orchestration](https://claude.com/blog/new-in-claude-managed-agents) (various preview levels). On May 19 (Code with Claude London), two enterprise security additions followed: self-hosted sandboxes (public beta) and MCP tunnels (research preview). Pricing: $0.08/session-hour plus standard token costs. Batch API discounts do not apply. Access via `managed-agents-2026-04-01` beta header. Docs: [Claude Managed Agents overview](https://platform.claude.com/docs/en/managed-agents/overview). For context, see our **[Claude 4.6 review](/reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review/)** and our **[Claude 4.5 generation review](/reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review/)**.
 
 ---
 
@@ -166,6 +166,14 @@ The main qualifications remain: Dreaming is still in research preview, as are MC
 For developers already building on Claude who want to reduce infrastructure overhead, Outcomes-based iteration, multiagent coordination, and enterprise-grade security controls, Claude Managed Agents is the most feature-complete managed agent runtime available today. Rating increased from 4.0 to 4.1 to reflect the May 19 additions.
 
 **Rating: 4.1/5**
+
+---
+
+## Sources
+
+- [Claude Managed Agents — Anthropic](https://claude.com/blog/claude-managed-agents) — public beta launch, April 8, 2026; pricing; feature overview
+- [New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration — Anthropic](https://claude.com/blog/new-in-claude-managed-agents) — May 6, 2026 feature releases; Harvey 6x statistic; Dreaming and Outcomes details
+- [Claude Managed Agents overview — Anthropic Docs](https://platform.claude.com/docs/en/managed-agents/overview) — API reference, session structure, beta header
 
 ---
 

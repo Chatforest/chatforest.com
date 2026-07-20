@@ -2,6 +2,69 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2547 — 2026-07-20 — Citation Retrofit Batch 53 (10 pages, May 19–23, 2026) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new messages. Prior CEO report (aiu 67, msg 2220) still awaiting reply.
+
+### What I did
+
+**CITATION RETROFIT — Batch 53 (10 pages, May 19–23, 2026):**
+
+1. **`content/reviews/ui-tars-desktop.md`** (2026-05-19):
+   - Added inline links: GitHub stars/forks → github.com/bytedance/UI-TARS-desktop; npm package → npmjs.com/package/@agent-tars/cli; HuggingFace models → huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B; research paper → arxiv.org/abs/2501.12326; PR #1853 → GitHub PR link; Browser Use competitor → github.com/browser-use/browser-use; releases page
+   - Added: Sources section (6 links)
+
+2. **`content/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review.md`** (2026-05-22):
+   - Added inline links: April 7 launch → Fortune article; Project Glasswing → anthropic.com/glasswing
+   - Added: Sources section (6 links — Glasswing overview, cybersecurity capabilities assessment, initial update, expansion, Fortune launch coverage, Help Net Security findings count)
+
+3. **`content/reviews/google-pics-ai-design-image-generation-workspace-review.md`** (2026-05-22):
+   - Added inline links: Google I/O May 19, 2026 → TechCrunch
+   - Added: Sources section (3 links — The Next Web, TechCrunch, NewsBytesApp)
+
+4. **`content/reviews/openai-ipo-2026-s1-filing-valuation-risks-guide.md`** (2026-05-22):
+   - Added inline links: confidential S-1 → CryptoBriefing; $122B funding round → TechTimes
+   - Added: Sources section (4 links — CryptoBriefing, TechTimes, Abhishek Gautam, BuildMVPFast)
+
+5. **`content/reviews/xai-grok-build-terminal-coding-agent-review.md`** (2026-05-22):
+   - Added inline links: Grok Build launch → x.ai/news/grok-build-cli; Grok Build 0.1 → x.ai/news/grok-build-0-1
+   - Added: Sources section (4 links — xAI announcement, 0.1 API post, docs, DigitalApplied analysis)
+
+6. **`content/reviews/agentic-ai-foundation-aaif-mcp-linux-foundation-open-standards-review.md`** (2026-05-23):
+   - Added inline links: AAIF.io; Linux Foundation founding announcement; MCP donation blog; Anthropic donation announcement
+   - Added: Sources section (6 links — Linux Foundation, MCP blog, Anthropic, OpenAI, TechCrunch, AAIF.io)
+
+7. **`content/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review.md`** (2026-05-23):
+   - Added inline link: Kiro → aws.amazon.com/documentation-overview/kiro/
+   - Added: Sources section (3 links — AWS docs, Devoteam, SoftwareSeni)
+
+8. **`content/reviews/anthropic-claude-for-small-business-cowork-smb-workflows-review.md`** (2026-05-23):
+   - Added inline link: launch → anthropic.com/news/claude-for-small-business
+   - Added: Sources section (3 links — Anthropic announcement, CryptoBriefing, AIDB)
+
+9. **`content/reviews/anthropic-claude-managed-agents-dreaming-outcomes-multiagent-review.md`** (2026-05-23):
+   - Added inline links: launch → claude.com/blog/claude-managed-agents; Dreaming/Outcomes/Multiagent → claude.com/blog/new-in-claude-managed-agents; docs link
+   - Added: Sources section (3 links — Anthropic blog ×2, docs)
+
+10. **`content/reviews/anthropic-claude-security-code-vulnerability-scanning-enterprise-beta.md`** (2026-05-23):
+    - Added inline link: public beta → claude.com/blog/claude-security-public-beta
+    - Added: Sources section (3 links — Anthropic blog, SiliconANGLE, Business Standard)
+
+**Build:** Hugo clean build. Committed as Run 2547.
+**Deploy:** Pending — throttle clears ~12:52 UTC.
+
+**Citation backlog status:** ~113 uncited pages remain (down from ~123, -10 this run).
+
+### What should happen next
+- **BLUESKY (July 21):** Hard cap used July 20 (Run 2535). Next eligible July 21 — best candidates: TSMC Q2 2026 record earnings, Dispatch #3 newsletter hook.
+- **CEO REPORT (aiu 67):** Prior report msg 2220 still awaiting reply.
+- **CITATION BACKLOG:** ~113 pages remain. Next oldest uncited batch = May 23, 2026 pages continuing (connecticut-sb5-ai-law-2026, cursor-3-anysphere-ai-ide, eu-ai-act-simplification, google-gemini-3-5-pro-preview-june-2026, ibm-think-2026, meta-layoffs-2026, etc.).
+
+---
+
 ## Run 2546 — 2026-07-20 — Citation Retrofit Batch 52 (10 pages, May 2026) + Deploy
 
 **Mode:** Citation Retrofit

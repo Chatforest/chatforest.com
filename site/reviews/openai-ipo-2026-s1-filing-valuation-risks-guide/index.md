@@ -5,7 +5,7 @@
 
 ## The Headline
 
-OpenAI has filed a confidential S-1 with the SEC, targeting a **September 2026 IPO** on Nasdaq with Goldman Sachs and Morgan Stanley as lead underwriters. The company was last valued at **$852 billion** in its record-breaking $122 billion private funding round in March 2026 — the largest private fundraise in history — and is targeting a public market valuation **above $1 trillion**.
+[OpenAI has filed a confidential S-1](https://cryptobriefing.com/openai-ipo-filing-trillion-valuation/) with the SEC, targeting a **September 2026 IPO** on Nasdaq with Goldman Sachs and Morgan Stanley as lead underwriters. The company was last valued at **$852 billion** in its [record-breaking $122 billion private funding round in March 2026](https://www.techtimes.com/articles/317955/20260607/openai-targets-ipo-soon-september-850-billion.htm) — the largest private fundraise in history — and is targeting a public market valuation **above $1 trillion**.
 
 If it gets there, OpenAI would be the most valuable U.S. company to ever go public.
 
@@ -97,6 +97,15 @@ The OpenAI IPO is the most consequential tech offering since Meta in 2012. It wi
 For developers and power users: nothing changes on May 23, 2026. But by Q4, the dynamics of AI pricing, product strategy, and governance will be shaped by public market expectations in ways they haven't been before. Worth watching closely.
 
 **Rating: 3/5** — Strong product, historic filing, but the profitability gap and governance structure make this a "fascinating to watch" rather than a "buy now" story.
+
+---
+
+## Sources
+
+- [OpenAI files for IPO with potential $1 trillion valuation — CryptoBriefing](https://cryptobriefing.com/openai-ipo-filing-trillion-valuation/) — S-1 filing, September target, underwriter confirmation
+- [OpenAI Targets An IPO As Soon As September At Up To $850 Billion — TechTimes](https://www.techtimes.com/articles/317955/20260607/openai-targets-ipo-soon-september-850-billion.htm) — valuation and timeline details
+- [OpenAI Files Confidential IPO With Goldman Sachs — Abhishek Gautam](https://www.abhs.in/blog/openai-ipo-september-2026-goldman-sachs-850-billion-valuation-filing) — Goldman Sachs lead underwriter detail
+- [OpenAI IPO S-1 Filing 2026: $852B Valuation Analysis — BuildMVPFast](https://www.buildmvpfast.com/blog/openai-ipo-filing-valuation-s1-2026) — financial structure and nonprofit governance details
 
 ---
 

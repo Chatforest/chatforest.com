@@ -69,7 +69,7 @@
         <p><strong>At a glance:</strong> SubQ 1M-Preview, released May 5, 2026. Subquadratic Sparse Attention (SSA) — linear O(n) compute scaling. 1M token production context; 12M research context. 81.8% SWE-Bench Verified. ~$0.50/$1.50 per million tokens input/output. OpenAI-compatible API. No technical report released. Weights closed. $29M seed. Part of our <strong><a href="/categories/ai-providers/">AI Models &amp; LLM reviews</a></strong>.</p>
 <hr>
 <p>&ldquo;Not a transformer.&rdquo;</p>
-<p>That is the core claim from Subquadratic, the Miami-based startup that launched on May 5, 2026, with $29 million in seed funding and a single mission: build the first commercial frontier LLM that does not rely on quadratic attention.</p>
+<p>That is the core claim from <a href="https://subq.ai/">Subquadratic</a>, the Miami-based startup that launched on May 5, 2026, with $29 million in seed funding and a single mission: build the first commercial frontier LLM that does not rely on quadratic attention.</p>
 <p>The headline number is the context window — 12 million tokens in the research configuration, and 1 million tokens in production availability. But the number is almost a distraction. The real story is about scaling law. If you can make attention compute grow linearly with context length instead of quadratically, then long-context AI becomes fundamentally different: cheaper, faster, and accessible at scales that are economically impossible with transformer architecture. That is the bet Subquadratic is making.</p>
 <p>Whether they have actually pulled it off is, as of today, an open question. If those claims hold under independent scrutiny, SubQ is architecturally significant. If they don&rsquo;t, one community commenter called it perfectly: &ldquo;AI Theranos.&rdquo; We&rsquo;re currently somewhere between those two poles.</p>
 <hr>
@@ -121,7 +121,7 @@
 <p><strong>What is missing</strong>: Standard reasoning benchmarks (GPQA Diamond, MATH, MMLU), knowledge benchmarks, and multimodal evaluations are not included in the public technical materials. The benchmarks Subquadratic released are well-suited to showing their architecture&rsquo;s strengths — long-context and coding. The absence of broader evals makes it hard to assess whether SSA generalizes or excels only in the specific regimes it was optimized for.</p>
 <hr>
 <h2 id="the-researcher-skepticism-case">The Researcher Skepticism Case</h2>
-<p>The VentureBeat headline upon launch was blunt: <em>&ldquo;Miami startup Subquadratic claims 1,000x AI efficiency gain with SubQ model; researchers demand independent proof.&quot;</em></p>
+<p>The <a href="https://venturebeat.com/ai/miami-startup-subquadratic-claims-1000x-ai-efficiency-gain-with-subq-model-researchers-demand-independent-proof/">VentureBeat headline upon launch</a> was blunt: <em>&ldquo;Miami startup Subquadratic claims 1,000x AI efficiency gain with SubQ model; researchers demand independent proof.&quot;</em></p>
 <p>Reaction from the AI research community split almost immediately. The <strong>skeptical case</strong>, articulated most sharply by AI engineer Will Depue: SubQ is &ldquo;almost surely a sparse attention finetune of Kimi or DeepSeek&rdquo; — meaning the architecture may not be novel, and the model may be a fine-tuned adaptation of an existing open-source model rather than a from-scratch subquadratic training. If true, the efficiency gains would be much less than advertised, since the base model still encodes quadratic training costs. No rebuttal from Subquadratic has been published.</p>
 <p>The <strong>supportive case</strong>, from AI researcher John Rysana: &ldquo;The work is just subquadratic attention done well which is very meaningful for long context workloads — odds of it being BS are extremely low.&rdquo;</p>
 <p>The legitimacy of the research direction is not in dispute. The question is whether this specific implementation achieves the scale and quality claimed. The third-party MRCR verification sits in the middle — it validates one performance claim on one benchmark, which is evidence but not proof.</p>
@@ -135,7 +135,7 @@
 <p>None of this matters if the model can&rsquo;t reason well at general tasks, which is exactly what the missing benchmarks would show.</p>
 <hr>
 <h2 id="api-and-pricing">API and Pricing</h2>
-<p>The SubQ API is live and available at subq.ai. It is OpenAI-compatible — you can use it as a drop-in replacement in any system that uses the OpenAI client library, by changing the base URL.</p>
+<p>The SubQ API is live and available at <a href="https://subq.ai/">subq.ai</a>. It is OpenAI-compatible — you can use it as a drop-in replacement in any system that uses the OpenAI client library, by changing the base URL.</p>
 <p><strong>Reported pricing</strong>: ~$0.50 per million input tokens, ~$1.50 per million output tokens. These figures circulate in independent coverage but are not currently listed in a clear public pricing page, which is worth noting for planning purposes.</p>
 <p><strong>Inference speed</strong>: 150+ tokens per second reported.</p>
 <p>If the cost claims hold, the value proposition for long-context workloads is dramatic: tasks that reportedly cost $2,600 on Claude at 128K context reportedly cost $8 on SubQ at comparable context lengths. Whether this holds as the product scales out of private beta is unknown. There is no free tier currently listed in public materials.</p>
@@ -211,6 +211,12 @@
 <p><strong>Rating: 3/5</strong> — Architecturally novel and commercially significant, with competitive long-context benchmarks and attractive pricing. Held back by the absence of a technical report, no open weights, limited benchmark breadth, and the historical track record of subquadratic architectures at frontier scale. Revisit when the technical report lands and independent evaluations are available.</p>
 <hr>
 <p><em>Subquadratic launched May 5, 2026. This review is based on public announcements, the SubQ API documentation, third-party coverage, and available benchmark data. ChatForest does not have hands-on API access and has not run independent evaluations.</em></p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://subq.ai/">Subquadratic — SubQ API</a> — official product site; API access, waitlist, and pricing information</li>
+<li><a href="https://venturebeat.com/ai/miami-startup-subquadratic-claims-1000x-ai-efficiency-gain-with-subq-model-researchers-demand-independent-proof/">VentureBeat — &ldquo;Miami startup Subquadratic claims 1,000x AI efficiency gain&rdquo;</a> — May 2026 launch coverage including researcher skepticism and independent commentary</li>
+</ul>
 
       </div>
 

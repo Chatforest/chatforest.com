@@ -10,7 +10,7 @@ last_refreshed: 2026-05-19
 
 Part of our **[AI & ML Tools MCP category](/categories/ai-ml-tools/)**.
 
-*At a glance: 34,700 GitHub stars, 3,500 forks, Apache-2.0 license, TypeScript + Python, v0.3.0 (November 2025). Created by ByteDance. 317 open issues, multiple beta releases. MCP client with bundled MCP servers.*
+*At a glance: [34,700 GitHub stars](https://github.com/bytedance/UI-TARS-desktop), 3,500 forks, Apache-2.0 license, TypeScript + Python, [v0.3.0](https://github.com/bytedance/UI-TARS-desktop/releases) (November 2025). Created by ByteDance. 317 open issues, multiple beta releases. MCP client with bundled MCP servers.*
 
 UI-TARS Desktop is ByteDance's answer to the question: what if an AI agent could literally see your screen and operate your computer? Built on ByteDance's UI-TARS vision-language models, this platform takes screenshots, understands what's on screen, and executes mouse/keyboard actions to accomplish tasks you describe in natural language.
 
@@ -45,7 +45,7 @@ UI-TARS Desktop isn't locked to ByteDance's models. It supports:
 - **Third-party:** Anthropic Claude, OpenAI GPT-4o, and other multimodal LLMs
 - **Local models:** Via compatible inference servers
 
-The UI-TARS model family is specifically trained for GUI understanding — detecting screen elements, predicting next actions, and reasoning about visual interfaces. Available on Hugging Face in three sizes so you can match your hardware.
+The UI-TARS model family is specifically trained for GUI understanding — detecting screen elements, predicting next actions, and reasoning about visual interfaces. Available on [Hugging Face](https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B) in three sizes so you can match your hardware.
 
 ## Platform Support
 
@@ -58,11 +58,11 @@ The UI-TARS model family is specifically trained for GUI understanding — detec
 
 ByteDance — the company behind TikTok, Douyin, and Lark. The project lives under the `bytedance` GitHub org with core contributions from engineers including @cjraft, @ZhaoHeh, @ycjcl868, @skychx, @ulivz, and @helio9cn. This is a corporate-backed open-source project, not a side project.
 
-UI-TARS (the underlying model) was developed by ByteDance's Seed team. The research paper claims state-of-the-art performance on 10+ GUI benchmarks, outperforming GPT-4o and Claude on GUI interaction tasks.
+UI-TARS (the underlying model) was developed by ByteDance's Seed team. The [research paper (arXiv:2501.12326)](https://arxiv.org/abs/2501.12326) claims state-of-the-art performance on 10+ GUI benchmarks, outperforming GPT-4o and Claude on GUI interaction tasks.
 
 ## Setup
 
-**Agent TARS (CLI):**
+**Agent TARS (CLI):** ([npm package](https://www.npmjs.com/package/@agent-tars/cli))
 ```
 npm install @agent-tars/cli@latest -g
 agent-tars
@@ -70,7 +70,7 @@ agent-tars
 Requires Node.js >= 22.
 
 **UI-TARS Desktop:**
-Download the Electron app from GitHub releases. Configure your preferred model provider (Volcengine, Anthropic, OpenAI, etc.) through the settings interface.
+Download the Electron app from [GitHub releases](https://github.com/bytedance/UI-TARS-desktop/releases). Configure your preferred model provider (Volcengine, Anthropic, OpenAI, etc.) through the settings interface.
 
 Both components require API keys for whichever model provider you choose to use.
 
@@ -88,7 +88,7 @@ Both components require API keys for whichever model provider you choose to use.
 
 **Model flexibility.** Not locked to ByteDance infrastructure. You can use Anthropic, OpenAI, or local models, which mitigates vendor lock-in concerns.
 
-**Security issues were actually fixed.** PR #1853 (merged March 27, 2026) addressed three real vulnerabilities: CORS was wide-open (`origin: '*'`), CSRF protection was absent on mutation endpoints, and key security headers were missing. The fact that fixes shipped — rather than the issues being ignored — is a positive signal, even if the exposure window was too long.
+**Security issues were actually fixed.** [PR #1853](https://github.com/bytedance/UI-TARS-desktop/pull/1853) (merged March 27, 2026) addressed three real vulnerabilities: CORS was wide-open (`origin: '*'`), CSRF protection was absent on mutation endpoints, and key security headers were missing. The fact that fixes shipped — rather than the issues being ignored — is a positive signal, even if the exposure window was too long.
 
 ## What's Not
 
@@ -106,7 +106,7 @@ Both components require API keys for whichever model provider you choose to use.
 
 **Windows and Linux are second-class.** Windows build failures are documented. Linux isn't officially supported. If you're not on macOS, expect friction.
 
-**npm downloads tell the real adoption story.** @agent-tars/cli peaked at ~12K downloads in January 2026 around launch buzz, dropped to ~1,800/month by April, and sits at roughly 1,300/week in May. The gap between 34.7K GitHub stars and ~1,800 monthly active downloads is stark. People are starring, not installing.
+**npm downloads tell the real adoption story.** [@agent-tars/cli](https://www.npmjs.com/package/@agent-tars/cli) peaked at ~12K downloads in January 2026 around launch buzz, dropped to ~1,800/month by April, and sits at roughly 1,300/week in May. The gap between 34.7K GitHub stars and ~1,800 monthly active downloads is stark. People are starring, not installing.
 
 **Volcengine dependency for best experience.** While the platform supports multiple model providers, ByteDance's own models (UI-TARS, Seed-1.5-VL) are optimized for the platform. Using them requires a Volcengine account, which routes through ByteDance's cloud infrastructure.
 
@@ -116,7 +116,7 @@ The computer-use agent space is rapidly evolving — and the gap between UI-TARS
 
 **Claude Computer Use** (Anthropic) — the most polished commercial offering. Integrated into Claude's API, no setup required, but closed-source and usage-priced. UI-TARS aims to be the open-source alternative.
 
-**Browser Use** — now at **94,600 GitHub stars** (was ~52K a month ago, +82% growth). Focused specifically on browser automation with DOM-aware targeting. Actively releasing — v0.12.7 shipped May 19, 2026 with security patches, per-session auth tokens, and video recording. v0.12.3 added CLI 2.0 with ~50ms daemon latency. Far more actively maintained than UI-TARS and now nearly triple the star count. More reliable for browser tasks but doesn't handle desktop applications.
+**[Browser Use](https://github.com/browser-use/browser-use)** — now at **94,600 GitHub stars** (was ~52K a month ago, +82% growth). Focused specifically on browser automation with DOM-aware targeting. Actively releasing — v0.12.7 shipped May 19, 2026 with security patches, per-session auth tokens, and video recording. v0.12.3 added CLI 2.0 with ~50ms daemon latency. Far more actively maintained than UI-TARS and now nearly triple the star count. More reliable for browser tasks but doesn't handle desktop applications.
 
 **Open Interpreter** — terminal-based agent that can execute code and interact with the OS. Different approach (code execution vs. visual control) but overlapping use cases.
 
@@ -143,6 +143,17 @@ This is still a project worth watching, not one to depend on for production work
 **ChatForest Rating: 3 out of 5**
 
 Impressive technical ambition and strong research backing, but 6.5 months without a release, real security issues that shipped for four months before being fixed, platform compatibility breakage, and a widening gap versus more actively maintained competitors keep this at 3. The open-source nature remains a genuine positive — but it hasn't translated into a reliable tool.
+
+---
+
+## Sources
+
+- [UI-TARS Desktop GitHub repository](https://github.com/bytedance/UI-TARS-desktop) — star/fork counts, release history, issue tracker, PR #1853
+- [Agent TARS CLI on npm (@agent-tars/cli)](https://www.npmjs.com/package/@agent-tars/cli) — download statistics
+- [UI-TARS-1.5-7B on Hugging Face](https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B) — model weights and documentation
+- [UI-TARS research paper (arXiv:2501.12326)](https://arxiv.org/abs/2501.12326) — GUI benchmark performance claims
+- [Browser Use GitHub repository](https://github.com/browser-use/browser-use) — competitor star count and release cadence
+- [UI-TARS Desktop releases](https://github.com/bytedance/UI-TARS-desktop/releases) — v0.3.0 release date (November 2025)
 
 ---
 
