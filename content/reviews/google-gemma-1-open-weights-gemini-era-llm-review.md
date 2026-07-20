@@ -12,7 +12,7 @@ author: "ChatForest"
 last_refreshed: 2026-05-14
 ---
 
-On February 21, 2024, Google released Gemma — not at Google I/O, not bundled into a product announcement, but via a standalone developer blog post titled "Gemma: Google introduces new state-of-the-art open models." The accompanying paper arrived on arXiv the same day.
+On February 21, 2024, Google released Gemma — not at Google I/O, not bundled into a product announcement, but via a [standalone developer blog post](https://blog.google/technology/developers/gemma-open-models/) titled "Gemma: Google introduces new state-of-the-art open models." The accompanying paper arrived on arXiv the same day.
 
 The claim was precise and unusual: Gemma was "built from the same research and technology used to create the Gemini models." Prior open-weight models — Llama 2, Mistral 7B, Phi-2 — were developed and trained independently of any closed frontier system. Gemma was different: it shared Gemini's vocabulary, tokenizer, and architectural innovations, distilled down to weights that could run on a single GPU.
 
@@ -52,7 +52,7 @@ All four variants — `gemma-2b`, `gemma-2b-it`, `gemma-7b`, `gemma-7b-it` — l
 
 ## Architecture
 
-Both models use a **decoder-only Transformer** architecture. The technical report (arXiv:2403.08295) documents four architecture choices that distinguish Gemma from standard transformer implementations:
+Both models use a **decoder-only Transformer** architecture. The technical report ([arXiv:2403.08295](https://arxiv.org/abs/2403.08295)) documents four architecture choices that distinguish Gemma from standard transformer implementations:
 
 ### Specifications
 
@@ -131,7 +131,7 @@ The IT models were trained through **Supervised Fine-Tuning (SFT)** on curated E
 | BIG-Bench Hard | 3-shot CoT | 35.2% | 55.1% | 56.7% | 38.2% | 45.6% |
 | AGIEval | 3-5-shot | 24.2% | 42.1% | — | — | — |
 
-**Hugging Face Open LLM Leaderboard composite:**
+**[Hugging Face Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) composite:**
 - Gemma 7B: **63.75**
 - Mistral 7B v0.1: 60.97
 - Llama 2 7B: 54.32
@@ -172,7 +172,7 @@ For practical deployments, Gemma 1.1 IT is the version that matters; the 1.0 IT 
 
 ## License
 
-Gemma 1 was released under the **Gemma Terms of Use** — a custom proprietary license, not Apache 2.0, MIT, or any OSI-recognized open-source license.
+Gemma 1 was released under the **[Gemma Terms of Use](https://ai.google.dev/gemma/terms)** — a custom proprietary license, not Apache 2.0, MIT, or any OSI-recognized open-source license.
 
 **What the license permits:**
 - Commercial use (explicitly allowed with no user-count restriction)
@@ -212,7 +212,7 @@ This remained the state of Gemma licensing through the Gemma 1 and Gemma 2 gener
 
 Gemma 2B can run in full BF16 on consumer GPUs with 6GB+ VRAM. Gemma 7B at Q4 quantization fits on a 6GB GPU; at full BF16 it requires 16GB+.
 
-**Ollama:**
+**[Ollama](https://ollama.com/library/gemma):**
 - `ollama run gemma:2b` — Q4_K_M default, ~1.7 GB download
 - `ollama run gemma:7b` — Q4_K_M default, ~4.5 GB download
 - `ollama run gemma:7b-q8_0` — Q8 variant
@@ -266,3 +266,15 @@ Gemma 1 delivered on its core promise: an open-weight model with Gemini-derived 
 Demerits: the 8K context window was a step behind Mistral's 32K from the start; the training data remains undocumented in detail; the Gemma Terms of Use falls short of true open source; and the 1.0 instruction-tuned models shipped with a known multi-turn bug. The 1.1 update resolved the behavioral issues, but the licensing gap and context window limitation remained for the full Gemma 1 generation.
 
 For the right use case — a single-GPU-deployable 7B model with strong math and code performance and enterprise legitimacy — Gemma 1 was the best option in its class when it launched, and remains well-supported in the inference ecosystem today.
+
+---
+
+## Sources
+
+- [Google Gemma launch blog post](https://blog.google/technology/developers/gemma-open-models/) — "Gemma: Google introduces new state-of-the-art open models," February 21, 2024
+- [Gemma technical report](https://arxiv.org/abs/2403.08295) — arXiv:2403.08295, Google DeepMind
+- [HuggingFace — google/gemma-7b-it](https://huggingface.co/google/gemma-7b-it) — instruction-tuned model weights and model card
+- [HuggingFace — google/gemma-7b](https://huggingface.co/google/gemma-7b) — base model
+- [HuggingFace — google/gemma-2b-it](https://huggingface.co/google/gemma-2b-it) — 2B instruction-tuned model
+- [Gemma Terms of Use](https://ai.google.dev/gemma/terms) — licensing terms for all Gemma models
+- [HuggingFace Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) — benchmark composite scores

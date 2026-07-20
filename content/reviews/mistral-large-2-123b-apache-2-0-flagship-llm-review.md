@@ -15,7 +15,7 @@ rating: 4
 
 Mistral Large 2 is the first time Mistral AI released a flagship-scale model under Apache 2.0. Every major Mistral release before it — Mistral Large 1, Mistral Medium — was accessible only via the La Plateforme API, with no downloadable weights and no open-source license. Mistral Large 2 changed that: 123 billion parameters, Apache 2.0, weights on HuggingFace.
 
-The timing was deliberate. Meta released [Llama 3.1 70B and 405B](/reviews/meta-llama-3-1-405b-open-weights-llm-review/) on July 23, 2024 — one day before Mistral Large 2's announcement on July 24. Mistral's blog post, titled "Large Enough," made the positioning explicit: the 123B model does not need to beat 405B on every benchmark — it needs to deliver near-frontier performance on a single enterprise node, where the 405B cannot run without multi-node orchestration. That is the thesis Mistral Large 2 is built around.
+The timing was deliberate. Meta released [Llama 3.1 70B and 405B](/reviews/meta-llama-3-1-405b-open-weights-llm-review/) on July 23, 2024 — one day before Mistral Large 2's announcement on July 24. [Mistral's blog post, titled "Large Enough,"](https://mistral.ai/news/mistral-large-2/) made the positioning explicit: the 123B model does not need to beat 405B on every benchmark — it needs to deliver near-frontier performance on a single enterprise node, where the 405B cannot run without multi-node orchestration. That is the thesis Mistral Large 2 is built around.
 
 On that specific claim, it mostly holds. HumanEval at 92.0% matched Claude 3.5 Sonnet at release — a genuine achievement for any open-weight model in July 2024. MMLU at 84.0% trails Claude 3.5 Sonnet (88.3%) and GPT-4o (88.7%) by a meaningful gap, but beats Llama 3.1 70B (79.3%) by nearly 5 points. The 123B parameter count enables single-node Q4 deployment at 73 GB — achievable on a 4× 24 GB GPU node, which is expensive but not exotic for enterprise workloads.
 
@@ -49,7 +49,7 @@ Mistral Large 2 is a dense decoder-only Transformer. No mixture-of-experts routi
 | Normalization | RMS Normalization |
 | Context window | 128,000 tokens (128K) |
 | Tokenizer | Mistral V3 (byte-fallback BPE, 131K vocabulary) |
-| HuggingFace ID | `mistralai/Mistral-Large-Instruct-2407` |
+| HuggingFace ID | [`mistralai/Mistral-Large-Instruct-2407`](https://huggingface.co/mistralai/Mistral-Large-Instruct-2407) |
 
 The Mistral V3 tokenizer is shared with Mixtral 8x22B, [Mistral Codestral](/reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review/), and Mathstral 7B. It uses byte-fallback BPE, which means the tokenizer never produces unknown tokens — any byte sequence can be encoded, which improves robustness on non-Latin scripts and source code. Vocabulary size of 131K is substantially larger than the 32K used in earlier Mistral models (7B, Mixtral 8x7B), which improves tokenization efficiency across languages.
 
@@ -185,6 +185,14 @@ Mistral Large 2 was a significant release in July 2024. The Apache 2.0 license a
 The case for 5/5 fails on the gaps: MMLU trails frontier models by 4–5 percentage points, hardware requirements exclude everyone without four high-end GPUs, inference throughput is below the open-weight median, and the text-only architecture was already one cycle behind multimodal competitors at launch. For a model positioned as a flagship, those limitations matter.
 
 At 4/5, Mistral Large 2 earns its rating as a capable, honestly licensed model that solved a specific real problem — open-weight, single-node, near-frontier — for the teams with hardware to run it. Its 2025 and 2026 successors addressed most of the weaknesses. The original release holds up as the model that changed Mistral's open-weight strategy at scale.
+
+---
+
+## Sources
+
+- [Mistral AI — "Large Enough" announcement](https://mistral.ai/news/mistral-large-2/) — July 24, 2024 official blog post announcing Mistral Large 2 and its Apache 2.0 license
+- [HuggingFace — mistralai/Mistral-Large-Instruct-2407](https://huggingface.co/mistralai/Mistral-Large-Instruct-2407) — model weights and model card; requires license acceptance
+- [La Plateforme API](https://console.mistral.ai/) — official API access; model ID: `mistral-large-2407`
 
 ---
 

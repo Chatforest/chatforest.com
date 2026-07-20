@@ -12,9 +12,9 @@ author: "ChatForest"
 last_refreshed: 2026-05-14
 ---
 
-On June 27, 2024, Google released Gemma 2 — not at Google I/O, not as part of a major product event, but via a developer blog post titled "Gemma 2 is now available to researchers and developers." The 9B and 27B launched first; the 2B followed on July 31, 2024, alongside ShieldGemma and Gemma Scope.
+On June 27, 2024, Google released Gemma 2 — not at Google I/O, not as part of a major product event, but via a [developer blog post](https://developers.googleblog.com/en/gemma-2-is-now-available-to-researchers-and-developers/) titled "Gemma 2 is now available to researchers and developers." The 9B and 27B launched first; the 2B followed on July 31, 2024, alongside ShieldGemma and Gemma Scope.
 
-The leading result: the Gemma 2 27B instruction-tuned model reached an ELO of 1218 on the LMSYS Chatbot Arena, placing it above the Llama 3 70B (ELO 1206) despite having 2.5× fewer parameters. The Gemma 2 9B instruction-tuned model matched GPT-4-0314's ELO (approximately 1187 vs 1186). The 2B instruction-tuned model surpassed GPT-3.5-Turbo-0613 (approximately 1126 vs 1116).
+The leading result: the Gemma 2 27B instruction-tuned model reached an ELO of 1218 on the [LMSYS Chatbot Arena](https://chat.lmsys.org/), placing it above the Llama 3 70B (ELO 1206) despite having 2.5× fewer parameters. The Gemma 2 9B instruction-tuned model matched GPT-4-0314's ELO (approximately 1187 vs 1186). The 2B instruction-tuned model surpassed GPT-3.5-Turbo-0613 (approximately 1126 vs 1116).
 
 These were not narrow benchmark wins from a hand-tuned evaluation suite — Chatbot Arena is a blind human-preference evaluation where users choose between model outputs without knowing the source. That Gemma 2 27B outranked a 70B model on this metric is meaningful.
 
@@ -195,9 +195,9 @@ For the 27B model: IQ2_XS (~8.4 GB) through Q8_0 (~28.9 GB). Recommended: Q4_K_M
 ## Where to Run It
 
 **HuggingFace** (primary distribution, login + license acceptance required):
-- `google/gemma-2-2b` and `google/gemma-2-2b-it`
-- `google/gemma-2-9b` and `google/gemma-2-9b-it`
-- `google/gemma-2-27b` and `google/gemma-2-27b-it`
+- [`google/gemma-2-2b`](https://huggingface.co/google/gemma-2-2b) and [`google/gemma-2-2b-it`](https://huggingface.co/google/gemma-2-2b-it)
+- [`google/gemma-2-9b`](https://huggingface.co/google/gemma-2-9b) and [`google/gemma-2-9b-it`](https://huggingface.co/google/gemma-2-9b-it)
+- [`google/gemma-2-27b`](https://huggingface.co/google/gemma-2-27b) and [`google/gemma-2-27b-it`](https://huggingface.co/google/gemma-2-27b-it)
 
 **Ollama** (easiest local setup):
 - `ollama run gemma2` — defaults to 9B (5.4 GB download)
@@ -218,7 +218,7 @@ For the 27B model: IQ2_XS (~8.4 GB) through Q8_0 (~28.9 GB). Recommended: Q4_K_M
 
 ## License
 
-Gemma 2 uses the **Gemma Terms of Use** — not Apache 2.0, and not an OSI-compliant open source license.
+Gemma 2 uses the **[Gemma Terms of Use](https://ai.google.dev/gemma/terms)** — not Apache 2.0, and not an OSI-compliant open source license.
 
 Key terms:
 - **Commercial use is permitted** — you can build commercial products on top of Gemma 2 models
@@ -274,6 +274,17 @@ The 8K context window is the clearest limitation — Llama 3.1's 128K context ar
 In mid-2026, Gemma 2 is superseded by [Gemma 3](/reviews/google-gemma-3-open-weights-multimodal-llm-review/) (128K context, vision, QAT) and [Gemma 4](/reviews/google-gemma-4-open-weight-multimodal-llm-review/). If you are starting a new project, there is no reason to use Gemma 2 over Gemma 3. But Gemma 2 is worth understanding because it established the architectural foundation — the sliding-window pattern, the distillation training approach, the large vocabulary — that Gemma 3 built on.
 
 **Rating: 4/5.** Landmark results for open-weights at mid-2024 density, meaningful architectural innovations, and honest documentation. Demerits for the 8K context limit (already behind competition at launch), Flash Attention incompatibility during fine-tuning, and the absence of GPQA or multilingual benchmarks in the technical report.
+
+---
+
+## Sources
+
+- [Google developer blog — "Gemma 2 is now available to researchers and developers"](https://developers.googleblog.com/en/gemma-2-is-now-available-to-researchers-and-developers/) — June 27, 2024 launch announcement
+- [Gemma 2 technical report](https://arxiv.org/abs/2408.00118) — arXiv:2408.00118, Gemma Team, Google DeepMind; benchmark tables and architecture details
+- [HuggingFace — google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it) — 9B instruction-tuned model weights and model card
+- [HuggingFace — google/gemma-2-27b-it](https://huggingface.co/google/gemma-2-27b-it) — 27B instruction-tuned model weights
+- [LMSYS Chatbot Arena](https://chat.lmsys.org/) — blind human preference evaluation; source of ELO scores cited in this review
+- [Gemma Terms of Use](https://ai.google.dev/gemma/terms) — licensing terms for Gemma 2
 
 ---
 
