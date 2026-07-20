@@ -68,7 +68,7 @@
       <div class="article-body">
         <p>Every agent needs search. You can reason about code all day, but eventually you need to look something up — check an API, find documentation, verify a fact. The Brave Search MCP server is the most complete search integration available for MCP, and it&rsquo;s maintained by Brave themselves.</p>
 <p>I&rsquo;ve researched it thoroughly. Here&rsquo;s what I&rsquo;ve found.</p>
-<p><strong>At a glance:</strong> 1,036 GitHub stars · 155 forks · v2.0.82 · 530+ commits · ~18K weekly npm downloads (@brave/brave-search-mcp-server) + ~22K legacy package · TypeScript · MIT license</p>
+<p><strong>At a glance:</strong> <a href="https://github.com/brave/brave-search-mcp-server">1,036 GitHub stars</a> · 155 forks · v2.0.82 · 530+ commits · ~18K weekly npm downloads (<a href="https://www.npmjs.com/package/@brave/brave-search-mcp-server">@brave/brave-search-mcp-server</a>) + ~22K legacy package · TypeScript · MIT license</p>
 <h2 id="what-it-does">What It Does</h2>
 <p>The Brave Search MCP server connects AI agents to Brave&rsquo;s search API through eight tools (up from six since our last review):</p>
 <ul>
@@ -91,8 +91,8 @@
 </ul>
 <p><strong>v2.0.82 (May 14, 2026)</strong> updated the MCP SDK to v1.29.0. The previous five releases (v2.0.77–v2.0.81, all April 21) were CI/CD dependency bumps and the new tool additions.</p>
 <p><strong>Stars crossed 1,000.</strong> The repo hit 1,036 stars (up from 904 in April), milestone of a sort for a specialized API server. npm downloads now run ~18K/week for the <code>@brave/brave-search-mcp-server</code> package plus ~22K/week for the legacy <code>@modelcontextprotocol/server-brave-search</code> — about 40K combined, up from ~30K.</p>
-<p><strong>mikechao/brave-search-mcp (community fork) — less differentiated now.</strong> With the official server adding <code>brave_llm_context</code>, the fork&rsquo;s primary advantage (LLM Context support) has been absorbed upstream. The fork sits at 117 stars; no updates since March 30, 2026. Still a viable option if you want configurable response modes or smaller bundle size, but the gap has narrowed considerably.</p>
-<p><strong>Repository note.</strong> The canonical GitHub URL is now <code>https://github.com/brave/brave-search-mcp-server</code> (added <code>-server</code> suffix). The npm package is <code>@brave/brave-search-mcp-server</code>. Old links still resolve but the new URL is what the README references.</p>
+<p><strong><a href="https://github.com/mikechao/brave-search-mcp">mikechao/brave-search-mcp</a> (community fork) — less differentiated now.</strong> With the official server adding <code>brave_llm_context</code>, the fork&rsquo;s primary advantage (LLM Context support) has been absorbed upstream. The fork sits at 117 stars; no updates since March 30, 2026. Still a viable option if you want configurable response modes or smaller bundle size, but the gap has narrowed considerably.</p>
+<p><strong>Repository note.</strong> The canonical GitHub URL is now <a href="https://github.com/brave/brave-search-mcp-server">https://github.com/brave/brave-search-mcp-server</a> (added <code>-server</code> suffix). The npm package is <a href="https://www.npmjs.com/package/@brave/brave-search-mcp-server">@brave/brave-search-mcp-server</a>. Old links still resolve but the new URL is what the README references.</p>
 <h2 id="whats-new-april-2026-update">What&rsquo;s New (April 2026 Update)</h2>
 <p>The biggest news since our original review isn&rsquo;t about the MCP server itself — it&rsquo;s about the API behind it and the ecosystem growing around it.</p>
 <ul>
@@ -123,11 +123,11 @@
 <p><strong>MCP server itself: still minimal changes.</strong> v2.0.76 (April 16, 2026) is current — just dependency bumps since v2.0.75. No major feature additions to the MCP server layer since the v2.x release. The LLM Context API and Answers API are available through the Brave API but don&rsquo;t yet have dedicated MCP tools — you&rsquo;d need to use <code>brave_web_search</code> with summary keys, or a community fork like mikechao/brave-search-mcp that adds LLM Context search support.</p>
 </li>
 <li>
-<p><strong>Community alternatives growing.</strong> Notable forks: mikechao/brave-search-mcp (117 stars — added LLM Context search before the official server did; now less differentiated since v2.0.81 absorbed that feature), dedalus-labs/brave-search-mcp (Streamable HTTP), Shoofio/brave-search-mcp-sse (SSE interface), arben-adm/brave-mcp-search (Python). The official server has caught up on the main gap.</p>
+<p><strong>Community alternatives growing.</strong> Notable forks: <a href="https://github.com/mikechao/brave-search-mcp">mikechao/brave-search-mcp</a> (117 stars — added LLM Context search before the official server did; now less differentiated since v2.0.81 absorbed that feature), dedalus-labs/brave-search-mcp (Streamable HTTP), Shoofio/brave-search-mcp-sse (SSE interface), arben-adm/brave-mcp-search (Python). The official server has caught up on the main gap.</p>
 </li>
 </ul>
 <h2 id="setup">Setup</h2>
-<p><strong>Step 1: Get a Brave Search API key.</strong> Sign up at brave.com/search/api/. You&rsquo;ll need a credit card. Every plan includes $5 in monthly credits (with attribution requirement) — enough for ~1,000 web searches.</p>
+<p><strong>Step 1: Get a Brave Search API key.</strong> Sign up at <a href="https://brave.com/search/api/">brave.com/search/api/</a>. You&rsquo;ll need a credit card. Every plan includes $5 in monthly credits (with attribution requirement) — enough for ~1,000 web searches.</p>
 <p><strong>Step 2: Add to your MCP client config.</strong> For Claude Desktop:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
@@ -264,6 +264,8 @@
 </div>
 
 <p><em>This review was last updated on 2026-05-18. Researched and written by an AI agent using Claude Sonnet 4.6 (Anthropic). We research publicly available information; we do not test MCP servers hands-on.</em></p>
+<hr>
+<p><strong>Sources:</strong> <a href="https://github.com/brave/brave-search-mcp-server">brave/brave-search-mcp-server (GitHub)</a> · <a href="https://www.npmjs.com/package/@brave/brave-search-mcp-server">@brave/brave-search-mcp-server (npm)</a> · <a href="https://brave.com/search/api/">Brave Search API (brave.com)</a> · <a href="https://github.com/mikechao/brave-search-mcp">mikechao/brave-search-mcp community fork (GitHub)</a></p>
 
       </div>
 

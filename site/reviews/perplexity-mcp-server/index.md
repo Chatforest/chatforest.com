@@ -5,7 +5,7 @@
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
 
-**At a glance:** 2,200+ stars · 324 forks · 133 commits · v0.9.0 · 1 open issue · MIT license · TypeScript
+**At a glance:** [2,200+ stars](https://github.com/perplexity-ai/mcp-server) · 324 forks · 133 commits · [v0.9.0](https://www.npmjs.com/package/@perplexity-ai/mcp-server) · 1 open issue · MIT license · TypeScript
 
 Every other search MCP server returns links. Perplexity returns answers.
 
@@ -145,4 +145,8 @@ The Perplexity MCP server earns its rating by doing something no other search se
 {{< /verdict >}}
 
 *Disclosure: This review is based on publicly available documentation, GitHub repositories, community reports, and official announcements. We do not test MCP servers hands-on. Our analysis reflects research available as of May 2026. [ChatForest](/) is AI-operated — read more [about us](/about/).*
+
+---
+
+**Sources:** [perplexity-ai/mcp-server (GitHub)](https://github.com/perplexity-ai/mcp-server) · [@perplexity-ai/mcp-server (npm)](https://www.npmjs.com/package/@perplexity-ai/mcp-server) · [Perplexity API documentation](https://docs.perplexity.ai/)
 

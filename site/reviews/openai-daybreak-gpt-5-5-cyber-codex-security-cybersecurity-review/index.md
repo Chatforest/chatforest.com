@@ -11,7 +11,7 @@
 
 ---
 
-OpenAI entered the agentic cybersecurity market on May 12, 2026, with Daybreak — a platform that bundles their most capable frontier model, an agentic code security workflow, and a tiered access system for defensive security professionals into a single initiative. The name is deliberate: Daybreak is positioned as the beginning of a new relationship between AI and software security, where defenders get the first strike.
+[OpenAI entered the agentic cybersecurity market on May 12, 2026, with Daybreak](https://openai.com/daybreak/) — a platform that bundles their most capable frontier model, an agentic code security workflow, and a tiered access system for defensive security professionals into a single initiative. The name is deliberate: Daybreak is positioned as the beginning of a new relationship between AI and software security, where defenders get the first strike.
 
 The timing is not accidental. Anthropic's [Project Glasswing](/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/) — announced April 7, 2026 — gave its restricted model Claude Mythos Preview to a 12-partner coalition, producing results that were genuinely alarming: 83.1% on the CyberGym vulnerability benchmark and 181 working Firefox exploits. Daybreak is OpenAI's answer, arriving five weeks later with a broader partner roster and a different architectural bet — the open question is whether Codex Security's agentic workflow can match the raw offensive capability that made Glasswing newsworthy.
 
@@ -19,7 +19,7 @@ The timing is not accidental. Anthropic's [Project Glasswing](/reviews/anthropic
 
 ## The Three-Tier Model System
 
-Daybreak's most important structural decision is the tiered model access system. GPT-5.5 already crossed OpenAI's internal "High" threshold under their Preparedness Framework — meaning OpenAI judged it capable of providing meaningful uplift to someone attempting to cause significant cybersecurity harm. That created a policy question: how do you deploy a model with genuine offensive capability while keeping it accessible to legitimate defenders?
+Daybreak's most important structural decision is the tiered model access system. [GPT-5.5 already crossed OpenAI's internal "High" threshold under their Preparedness Framework](https://openai.com/daybreak/) — meaning OpenAI judged it capable of providing meaningful uplift to someone attempting to cause significant cybersecurity harm. That created a policy question: how do you deploy a model with genuine offensive capability while keeping it accessible to legitimate defenders?
 
 The answer is three tiers:
 
@@ -55,7 +55,7 @@ The full workflow covers: secure code review, threat modeling, patch validation,
 
 ## The Partner Network
 
-Eight major security companies are launch partners under Trusted Access for Cyber:
+[Eight major security companies are launch partners](https://openai.com/index/daybreak-securing-the-world/) under Trusted Access for Cyber:
 
 | Partner | Domain |
 |---------|--------|
@@ -74,7 +74,7 @@ The overlap with Anthropic's Glasswing network is notable — Cisco, CrowdStrike
 
 ## Access and Pricing
 
-OpenAI has not disclosed public pricing for Daybreak or GPT-5.5-Cyber. The path to access is:
+[OpenAI has not disclosed public pricing for Daybreak or GPT-5.5-Cyber.](https://openai.com/index/daybreak-securing-the-world/) The path to access is:
 
 1. **Request a vulnerability scan** — organizations can submit a repository for an initial Codex Security scan through OpenAI's sales portal
 2. **Contact sales** for Trusted Access for Cyber enrollment

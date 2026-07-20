@@ -9,7 +9,7 @@
 
 The dominant design assumption in AI coding tools through 2025 was that you, the developer, are always present. You type a prompt, the assistant responds, you review the result. Claude Code, Cursor, Copilot Chat — all of them were built around a conversation loop that waits for you at each step.
 
-OpenAI Codex Cloud breaks that assumption. It is not primarily a chat interface or an IDE plugin. It is a platform for running coding agents that work on your behalf — in parallel, in the cloud, while you sleep, while your laptop is closed, while you are in a meeting. The architecture shift is deliberate, and in May 2026, OpenAI made it more concrete: mobile access arrived on May 14, the plugin marketplace surpassed 90 integrations, and the pricing model shifted fully to token-based credits in April.
+OpenAI Codex Cloud breaks that assumption. It is not primarily a chat interface or an IDE plugin. It is a platform for running coding agents that work on your behalf — in parallel, in the cloud, while you sleep, while your laptop is closed, while you are in a meeting. The architecture shift is deliberate, and in May 2026, OpenAI made it more concrete: [mobile access arrived on May 14](https://openai.com/index/introducing-gpt-5-3-codex/), the plugin marketplace surpassed [90 integrations](https://developers.openai.com/codex/changelog), and the pricing model shifted fully to token-based credits in April.
 
 Whether this architecture is what you actually need is the question this review tries to answer.
 
@@ -56,7 +56,7 @@ Codex Cloud routes between models depending on task complexity:
 | GPT-5.4 | General-purpose within Codex workflow | 1M tokens |
 | GPT-5.4-Mini | Fast, lightweight subtasks | 128k tokens |
 
-codex-1 is the reason the platform exists. It is not GPT-5.5 with a system prompt; it is a distinct fine-tune optimized for software engineering execution — terminal tool use, applying patches, long-horizon planning across files, and knowing when to stop and ask rather than hallucinate forward. OpenAI has not published codex-1's benchmark scores independently of the Codex platform, which makes external verification difficult.
+codex-1 is the reason the platform exists. It is not GPT-5.5 with a system prompt; it is a distinct fine-tune optimized for software engineering execution — terminal tool use, applying patches, long-horizon planning across files, and knowing when to stop and ask rather than hallucinate forward. [OpenAI has not published codex-1's benchmark scores independently of the Codex platform](https://developers.openai.com/codex/changelog), which makes external verification difficult.
 
 On internal tasks where Codex Cloud agents have been evaluated against GPT-5.5 raw API calls, the agentic scaffolding — environment isolation, tool use, verification loops — appears to matter as much as the model itself.
 
@@ -92,7 +92,7 @@ OpenAI's pricing messaging is optimistic. Codex is "included" in ChatGPT plans. 
 
 The nuance: "high limits" on Pro does not mean unlimited. Codex Cloud switched to token-based credit pricing on April 2, 2026. Usage now tracks input tokens, cached input tokens, and output tokens at rates that vary by model. Fast Mode (prioritized compute queue) costs additionally.
 
-OpenAI's own estimate places average developer cost at **$100–200/developer/month** with significant variance based on model selection, number of parallel instances, automation frequency, and Fast Mode usage. A developer running Codex in full parallel-agent mode for active feature work will likely land at the upper end or beyond.
+[OpenAI's own estimate places average developer cost at **$100–200/developer/month**](https://openai.com/index/introducing-gpt-5-3-codex/) with significant variance based on model selection, number of parallel instances, automation frequency, and Fast Mode usage. A developer running Codex in full parallel-agent mode for active feature work will likely land at the upper end or beyond.
 
 For comparison: Claude Code is included with Claude Pro ($20/mo) and Claude Max ($100/mo), with usage limits that are substantial but also finite during heavy agentic workloads. Cursor Composer 2.5 prices at $0.50/$2.50 per million tokens — cheap per token, but without the cloud infrastructure and automation layer that Codex provides.
 
@@ -116,7 +116,7 @@ The third use case is the most interesting and the least proven. Remote computer
 
 On May 22, OpenAI shipped three Codex updates in what it internally called "Codex Thursday." All three are now live across the Codex app, IDE extensions, and CLI.
 
-**Goal Mode is no longer experimental.** Goal Mode exits preview and is now stable across the Codex app, VS Code and JetBrains extensions, and CLI version 0.128.0+. The design: instead of issuing one instruction and waiting, you assign an objective — a migration target, a test coverage threshold, a performance benchmark — and Codex pursues it autonomously across session breaks, token budget resets, and interruptions, potentially for hours or days. OpenAI describes it as suited for tasks where the next step depends on what Codex discovers along the way: package migrations, flaky test reproduction, overnight refactors, performance profiling and patching. Goal Mode's graduation to stable is the most significant update in this batch — it moves multi-day autonomous coding from demo status to production commitment.
+**Goal Mode is no longer experimental.** [Goal Mode exits preview and is now stable](https://openai.com/index/introducing-gpt-5-3-codex/) across the Codex app, VS Code and JetBrains extensions, and CLI version 0.128.0+. The design: instead of issuing one instruction and waiting, you assign an objective — a migration target, a test coverage threshold, a performance benchmark — and Codex pursues it autonomously across session breaks, token budget resets, and interruptions, potentially for hours or days. OpenAI describes it as suited for tasks where the next step depends on what Codex discovers along the way: package migrations, flaky test reproduction, overnight refactors, performance profiling and patching. Goal Mode's graduation to stable is the most significant update in this batch — it moves multi-day autonomous coding from demo status to production commitment.
 
 **Appshots (macOS only).** Double-press Command to inject the frontmost app window into any active Codex thread, delivering both a screenshot and the window's available text. The intended workflow: you are in another application and want to point Codex at exactly what is on screen without describing it. Appshots is macOS-only; no Windows or Linux support has been announced.
 

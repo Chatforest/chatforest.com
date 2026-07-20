@@ -73,7 +73,7 @@
 <p>That licensing shift, paired with a 218B sparse MoE architecture that runs on two H100 GPUs, makes Command A+ the most practically deployable open-weight enterprise model in the market. Whether that combination justifies a $2.50/$10.00 API price tag — against alternatives that are cheaper or more capable on raw benchmarks — depends on what you&rsquo;re building.</p>
 <hr>
 <h2 id="release-context">Release Context</h2>
-<p>Command A+ was announced <strong>May 20, 2026</strong> in a blog post titled &ldquo;Introducing Command A+: Our Most Open, Capable, and Efficient Model Yet.&rdquo;</p>
+<p>Command A+ was <a href="https://cohere.com/blog/command-a-plus">announced <strong>May 20, 2026</strong></a> in a blog post titled &ldquo;Introducing Command A+: Our Most Open, Capable, and Efficient Model Yet.&rdquo;</p>
 <p>The release is a substantial departure from Cohere&rsquo;s prior release cadence. Command A (the predecessor) was released in March 2025 under CC-BY-NC 4.0 — the same terms as Command R+. Command A Reasoning, a thinking-mode variant, arrived later under similar restrictions. Command A+ collapses both into a single model with a fundamentally different license.</p>
 <p><strong>Predecessor comparison:</strong></p>
 <table>
@@ -120,7 +120,7 @@
 <p>The genuinely innovative piece in Command A+ is <strong>Quantization-Aware Distillation (QAD)</strong>: rather than applying uniform quantization across the model, QAD preserves attention pathway weights at full precision while quantizing only the MoE expert layers. The result is near-lossless W4A4 quantization — Cohere claims the compressed model retains quality while running on significantly less hardware. Independent verification of &ldquo;near-lossless&rdquo; claims will take time to accumulate from the research community, but the hardware footprint reduction is concrete.</p>
 <p><strong>W4A4 performance numbers (Cohere-reported):</strong></p>
 <ul>
-<li>Output throughput: 375 tokens/second</li>
+<li>Output throughput: <a href="https://huggingface.co/CohereLabs/command-a-plus-05-2026">375 tokens/second</a></li>
 <li>Time-to-First-Token: 113ms</li>
 <li>Hardware: 2×H100 or 1×Blackwell B200</li>
 </ul>
@@ -332,7 +332,7 @@
 </tbody>
 </table>
 <h3 id="what-the-intelligence-index-tells-you">What the Intelligence Index Tells You</h3>
-<p>The Artificial Analysis Intelligence Index composite score of <strong>37</strong> is the most important third-party number for builders benchmarking Command A+ against alternatives. For context:</p>
+<p>The <a href="https://artificialanalysis.ai/models/command-a-plus">Artificial Analysis Intelligence Index composite score of <strong>37</strong></a> is the most important third-party number for builders benchmarking Command A+ against alternatives. For context:</p>
 <table>
 <thead>
 <tr>
@@ -437,8 +437,8 @@
 <p>At W4A4, Cohere reports 375 tokens/second output throughput and 113ms time-to-first-token. For most agentic applications (tool use, RAG, document processing), 375 t/s is more than adequate.</p>
 <p><strong>Available on HuggingFace (CohereLabs):</strong></p>
 <ul>
-<li>BF16 weights: <code>CohereLabs/command-a-plus-05-2026</code></li>
-<li>FP8: <code>CohereLabs/command-a-plus-05-2026-fp8</code></li>
+<li>BF16 weights: <a href="https://huggingface.co/CohereLabs/command-a-plus-05-2026">CohereLabs/command-a-plus-05-2026</a></li>
+<li>FP8: <a href="https://huggingface.co/CohereLabs/command-a-plus-05-2026-fp8">CohereLabs/command-a-plus-05-2026-fp8</a></li>
 <li>W4A4: quantized via QAD (Cohere&rsquo;s tooling)</li>
 </ul>
 <p>vLLM and standard Transformers inference are supported from day one. Azure AI Foundry integration confirmed at launch.</p>

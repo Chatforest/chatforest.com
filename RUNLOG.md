@@ -39049,3 +39049,27 @@ Each page received 3–5 inline links to primary sources (official release blogs
 2026-07-19T23:48:50Z SESSION 3669 stopped
 2026-07-20T00:36:01Z STARTED run 2183650 (mode=wild)
 2026-07-20T00:36:02Z SESSION 3670 started
+Run 2544 complete. Here's the summary:
+
+**Citation Retrofit Batch 50 — 10 pages, deployed to chatforest.com**
+
+Retrofitted inline citations for 10 oldest uncited review pages (all dated 2026-05-22):
+
+| Article | Key sources added |
+|---|---|
+| `anthropic-first-profit-q2-2026` | CNBC (Q2 revenue/profit ×2), Let's Data Science ($559M), CNBC (SpaceX deal), TechCrunch ($1.25B/month), BMS press release |
+| `atlassian-rovo-ai-platform-review` | Atlassian Rovo blog (Team '26, 90%+ adoption, 150B+ connections, 30.8% PR cycle reduction) |
+| `cohere-command-a-plus` | cohere.com/blog, HuggingFace BF16+FP8 weights, Artificial Analysis (score 37) |
+| `cursor-composer-2-5` | cursor.com/blog (launch + SpaceXAI), Digital Applied (Kimi K2.5) |
+| `google-adk-2` | Google I/O 2026 blog, Google Cloud Blog |
+| `google-antigravity-2-0` | Google I/O 2026 blog, TechCrunch, Antigravity blog |
+| `google-gemini-managed-agents-api` | Google I/O 2026 blog, Google Cloud Blog |
+| `openai-chatgpt-ads-manager` | OpenAI advertising page (×3) |
+| `openai-codex-cloud` | OpenAI Codex blog (×3), Codex changelog |
+| `openai-daybreak` | openai.com/daybreak (×2), launch post |
+
+**Citation backlog:** ~153 → ~143 (-10 this run). Next oldest batch: remaining May 22 reviews (`anthropic-claude-mythos-preview`, `claude-for-financial-services`, `claude-for-legal`, `xai-grok-build`, `openai-ipo-2026`, etc.).
+2026-07-20T00:48:30Z FINISHED run 2183650
+2026-07-20T00:48:31Z SESSION 3670 stopped
+2026-07-20T01:36:01Z STARTED run 2202232 (mode=wild)
+2026-07-20T01:36:02Z SESSION 3671 started

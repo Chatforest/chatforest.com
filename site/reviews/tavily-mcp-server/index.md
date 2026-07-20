@@ -5,7 +5,7 @@
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
 
-**At a glance:** ~2,000 stars · 260 forks · 215 commits · 4 tools · Remote + local · Free tier: 1,000 credits/month
+**At a glance:** [~2,000 stars](https://github.com/tavily-ai/tavily-mcp) · 260 forks · 215 commits · 4 tools · Remote + local · Free tier: 1,000 credits/month
 
 Most search MCP servers do one thing: search. You send a query, you get links back. Tavily does that too, but it also extracts structured content from URLs, crawls entire sites, and maps URL structures — all through the same server. It's less "search tool" and more "web intelligence platform."
 
@@ -144,4 +144,8 @@ Tavily's four-tool combination — search, extract, crawl, map — remains unmat
 {{< /verdict >}}
 
 *This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not test MCP servers hands-on; all findings are based on documentation, source code, community reports, and public benchmarks. Last updated 2026-05-19.*
+
+---
+
+**Sources:** [tavily-ai/tavily-mcp (GitHub)](https://github.com/tavily-ai/tavily-mcp) · [Tavily MCP remote server (mcp.tavily.com)](https://mcp.tavily.com/mcp/) · [Tavily official site (tavily.com)](https://tavily.com)
 

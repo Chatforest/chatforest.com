@@ -3,7 +3,7 @@
 > Doist's official Todoist MCP server (now @doist/todoist-mcp, v9.0.0) gives AI agents 41+ tools for tasks, projects, sections, comments, labels, filters, reminders, and assignments — with OAuth, Streamable HTTP, and MCP Apps widgets.
 
 
-**At a glance:** 488 GitHub stars, 47 forks, v9.0.0, ~54.9K all-time PulseMCP visitors (#625 globally, ~1,500 weekly), 41+ tools across 10 categories, MIT license
+**At a glance:** [488 GitHub stars](https://github.com/Doist/todoist-mcp), 47 forks, [v9.0.0](https://www.npmjs.com/package/@doist/todoist-mcp), ~54.9K all-time PulseMCP visitors (#625 globally, ~1,500 weekly), 41+ tools across 10 categories, MIT license
 
 The Todoist MCP server is Doist's official bridge between AI assistants and their task management platform. It's part of a broader `todoist-ai` SDK — the tools aren't just for MCP but can be imported directly into custom AI applications. The MCP server is one distribution surface for a reusable tool library.
 
@@ -328,4 +328,8 @@ Doist isn't just maintaining an MCP server — they're building an AI integratio
 **Category**: [Business & Productivity](/categories/business-productivity/)
 
 *This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic).*
+
+---
+
+**Sources:** [Doist/todoist-mcp (GitHub)](https://github.com/Doist/todoist-mcp) · [@doist/todoist-mcp (npm)](https://www.npmjs.com/package/@doist/todoist-mcp) · [Todoist MCP hosted endpoint (ai.todoist.net)](https://ai.todoist.net/mcp)
 

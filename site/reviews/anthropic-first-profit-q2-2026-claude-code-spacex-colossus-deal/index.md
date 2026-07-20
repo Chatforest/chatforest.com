@@ -5,7 +5,7 @@
 
 ## The Headline
 
-Anthropic told investors this week it expects to generate **$10.9 billion in revenue in Q2 2026** and post its **first-ever operating profit of approximately $559 million**. That follows $4.8 billion in Q1 — meaning the company more than doubled revenue in a single quarter, posting roughly 130% sequential growth.
+[Anthropic told investors this week it expects to generate **$10.9 billion in revenue in Q2 2026**](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) and post its [**first-ever operating profit of approximately $559 million**](https://letsdatascience.com/blog/anthropic-first-operating-profit-q2-2026-559-million). That follows [$4.8 billion in Q1](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) — meaning the company more than doubled revenue in a single quarter, posting roughly 130% sequential growth.
 
 Just one year ago, Anthropic projected it wouldn't turn a full-year profit until at least 2028. The timeline has collapsed dramatically.
 
@@ -17,20 +17,20 @@ Just one year ago, Anthropic projected it wouldn't turn a full-year profit until
 
 The primary growth driver is **Claude Code**, Anthropic's agentic coding tool, which has seen explosive enterprise adoption. Enterprise clients now generate more than half of Claude Code's total revenue. Named customers include:
 
-- **Bristol Myers Squibb** — deployed Claude to 30,000+ employees for drug discovery
+- [**Bristol Myers Squibb** — deployed Claude to 30,000+ employees for drug discovery](https://news.bms.com/news/details/2026/Bristol-Myers-Squibb-Announces-Strategic-Agreement-with-Anthropic-to-Position-Claude-Enterprise-as-the-Shared-Intelligence-Platform-Across-Its-Global-Operations/default.aspx)
 - **Netflix, Spotify, KPMG, Salesforce, L'Oréal** — all cited as active enterprise accounts
 
 Claude Code went from a niche developer tool to a core enterprise productivity platform in under a year, a shift that reshaped Anthropic's revenue profile entirely.
 
 ### Run-Rate Context
 
-In March 2026, Anthropic was nearing a $20 billion annual run rate. By April, the company announced it had surpassed $30 billion on an annualized basis. If Q2 revenue lands at $10.9B, that implies an annual pace of roughly **$40B+** — a number that starts making the company's rumored $900B valuation more defensible.
+In March 2026, Anthropic was nearing a $20 billion annual run rate. By April, the company [announced it had surpassed $30 billion on an annualized basis](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html). If Q2 revenue lands at $10.9B, that implies an annual pace of roughly **$40B+** — a number that starts making the company's rumored $900B valuation more defensible.
 
 ---
 
 ## The SpaceX Colossus Deal
 
-Alongside the financial news, SpaceX's public S-1 filing revealed a key infrastructure deal: **Anthropic is paying SpaceX $1.25 billion per month** — through May 2029 — for exclusive access to the entire capacity of **Colossus 1**, SpaceX's AI supercomputer facility in Memphis, Tennessee.
+Alongside the financial news, SpaceX's public S-1 filing revealed a key infrastructure deal: [**Anthropic is paying SpaceX $1.25 billion per month**](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) — through May 2029 — for exclusive access to the entire capacity of **Colossus 1**, SpaceX's AI supercomputer facility in Memphis, Tennessee. [TechCrunch confirmed the deal terms](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/).
 
 The deal gives Anthropic access to:
 - **220,000+ Nvidia GPUs** — H100, H200, and next-generation GB200 accelerators
