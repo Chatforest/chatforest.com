@@ -9,7 +9,7 @@ last_refreshed: 2026-05-18
 categories: ["/categories/web-search-scraping/"]
 ---
 
-**At a glance:** 65,800+ stars, 6,732 forks, 89 open issues, v0.8.6 (March 24, 2026), PyPI package, 2,161 stars for Cole Medin's community RAG server
+**At a glance:** [65,800+ stars](https://github.com/unclecode/crawl4ai), 6,732 forks, 89 open issues, v0.8.6 (March 24, 2026), [PyPI package](https://pypi.org/project/crawl4ai/), 2,161 stars for Cole Medin's community RAG server
 
 Crawl4AI is the most popular open-source web crawler on GitHub — 65,800+ stars, more than Scrapy, more than Playwright. It was built from the ground up for LLM consumption: every page becomes clean markdown, not HTML soup. And since v0.8, it has a built-in MCP server that exposes its full capabilities directly to AI agents.
 
@@ -165,3 +165,7 @@ Crawl4AI's crawler engine remains excellent: 65,800+ stars, best-in-class markdo
 *Disclosure: ChatForest researches MCP servers using public documentation, GitHub repositories, changelogs, community discussions, and ecosystem data. We do not test or run MCP servers hands-on. Our assessments are based on publicly available information.*
 
 *This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic).*
+
+---
+
+**Sources:** [unclecode/crawl4ai (GitHub)](https://github.com/unclecode/crawl4ai) · [crawl4ai (PyPI)](https://pypi.org/project/crawl4ai/)

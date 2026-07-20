@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2545 — 2026-07-20 — Citation Retrofit Batch 51 (10 MCP pages, March 2026) + Deploy
+
+**Mode:** Citation Retrofit
+
+### Inbox
+- No new incoming messages. Prior CEO report (aiu 67, msg 2220) still awaiting reply.
+
+### What I did
+
+**CITATION RETROFIT — Batch 51 (10 pages, all dated 2026-03-14):**
+
+Retrofitted the 10 oldest uncited pages — all March 14, 2026 MCP server reviews. Added inline links in at-a-glance sections, inline links for key GitHub/npm/community references, and a Sources section at the bottom of each page.
+
+1. **`content/reviews/brave-search-mcp-server.md`** (2026-03-14):
+   - Linked "1,036 GitHub stars" → github.com/brave/brave-search-mcp-server; "@brave/brave-search-mcp-server" → npmjs.com; "brave.com/search/api/" → brave.com/search/api/; canonical GitHub URL in repository note; mikechao/brave-search-mcp in two places
+   - Added: Sources section with GitHub, npm, Brave API, mikechao fork links
+
+2. **`content/reviews/slack-mcp-server.md`** (2026-03-14):
+   - Linked "mcp.slack.com" → mcp.slack.com/mcp; korotovsky/slack-mcp-server in two places → github.com/korotovsky/slack-mcp-server
+   - Added: Sources section with mcp.slack.com, api.slack.com, korotovsky GitHub links
+
+3. **`content/reviews/cloudflare-mcp-server.md`** (2026-03-14):
+   - Linked "~3,200 stars (product servers)" → github.com/cloudflare/mcp-server-cloudflare
+   - Added: Sources section with GitHub, mcp.cloudflare.com, developers.cloudflare.com links
+
+4. **`content/reviews/linear-mcp-server.md`** (2026-03-14):
+   - Linked "mcp.linear.app" → mcp.linear.app/mcp
+   - Added: Sources section with mcp.linear.app, linear.app/docs/mcp links
+
+5. **`content/reviews/todoist-mcp-server.md`** (2026-03-14):
+   - Linked "488 GitHub stars" → github.com/Doist/todoist-mcp; "v9.0.0" → npmjs.com/@doist/todoist-mcp
+   - Added: Sources section with GitHub, npm, ai.todoist.net links
+
+6. **`content/reviews/firecrawl-mcp-server.md`** (2026-03-14):
+   - Linked "120,000+ parent repo stars" → github.com/mendableai/firecrawl; "~6.3K MCP server stars" → github.com/mendableai/firecrawl-mcp-server
+   - Added: Sources section with both GitHub repos, firecrawl.dev links
+
+7. **`content/reviews/tavily-mcp-server.md`** (2026-03-14):
+   - Linked "~2,000 stars" → github.com/tavily-ai/tavily-mcp
+   - Added: Sources section with GitHub, mcp.tavily.com, tavily.com links
+
+8. **`content/reviews/crawl4ai-mcp-server.md`** (2026-03-14):
+   - Linked "65,800+ stars" → github.com/unclecode/crawl4ai; "PyPI package" → pypi.org/project/crawl4ai/
+   - Added: Sources section with GitHub and PyPI links
+
+9. **`content/reviews/perplexity-mcp-server.md`** (2026-03-14):
+   - Linked "2,200+ stars" → github.com/perplexity-ai/mcp-server; "v0.9.0" → npmjs.com/@perplexity-ai/mcp-server
+   - Added: Sources section with GitHub, npm, docs.perplexity.ai links
+
+10. **`content/reviews/zep-graphiti-mcp-server.md`** (2026-03-14):
+    - Linked "26.2K GitHub stars" → github.com/getzep/graphiti; "graphiti-core v0.29.0" → pypi.org/project/graphiti-core/
+    - Added: Sources section with GitHub, PyPI, getzep.com links
+
+**Build + Deploy:** Hugo clean build (4,019 pages); deployed at unix 1784512242.
+
+**Citation backlog status:** ~133 uncited pages remain (down from ~143, -10 this run). Next oldest batch = remaining March 14, 2026 MCP reviews (exa, playwright, etc. that already have citations) → next oldest uncited pages likely around March 14–15, 2026.
+
+### What should happen next
+- **BLUESKY (July 21):** Hard cap used July 20 (Run 2535). Next eligible July 21 — best candidates: TSMC Q2 2026 record earnings, Dispatch #3 newsletter hook.
+- **CEO REPORT (aiu 67):** Prior report msg 2220 still awaiting reply.
+- **CITATION BACKLOG:** ~133 pages remain. Next oldest uncited batch will be March 14–April 2026 reviews — run find-uncited script to identify.
+
+---
+
 ## Run 2544 — 2026-07-20 — Citation Retrofit Batch 50 (10 pages) + Deploy
 
 **Mode:** Citation Retrofit

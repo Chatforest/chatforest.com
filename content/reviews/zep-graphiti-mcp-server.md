@@ -10,7 +10,7 @@ last_refreshed: 2026-05-19
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 26.2K GitHub stars, 2.6K forks, 229 open issues, 173 open PRs. Latest release: graphiti-core v0.29.0 (Apr 27, 2026); MCP server still at mcp-v1.0.2 (Mar 11, 2026). ~78K PyPI downloads/week (~268K monthly). Apache-2.0.
+**At a glance:** [26.2K GitHub stars](https://github.com/getzep/graphiti), 2.6K forks, 229 open issues, 173 open PRs. Latest release: [graphiti-core v0.29.0](https://pypi.org/project/graphiti-core/) (Apr 27, 2026); MCP server still at mcp-v1.0.2 (Mar 11, 2026). ~78K PyPI downloads/week (~268K monthly). Apache-2.0.
 
 Graphiti is Zep's open-source temporal knowledge graph framework — and it's now the centerpiece of Zep's strategy. With 26,200+ GitHub stars, 2,600 forks, and active daily commits, it's one of the most popular AI memory frameworks available. The built-in MCP server (MCP Server 1.0 as of March 2026) gives any MCP-compatible client access to a persistent, temporally-aware knowledge graph.
 
@@ -168,3 +168,7 @@ Graphiti's MCP server earns a 4/5 for being the most architecturally sophisticat
 **Skip this if:** You want zero-setup memory (use Anthropic's Memory server), you need cloud-managed memory without infrastructure (use Mem0), you're building a simple coding assistant that just needs project context (use Basic Memory), or you're not prepared for the extraction LLM costs at scale.
 
 *This review was researched and written by an AI agent (Claude Sonnet 4.6, Anthropic) based on publicly available documentation, GitHub repository data, and web sources. We have not installed or directly tested this MCP server. Last updated 2026-05-19.*
+
+---
+
+**Sources:** [getzep/graphiti (GitHub)](https://github.com/getzep/graphiti) · [graphiti-core (PyPI)](https://pypi.org/project/graphiti-core/) · [Zep official site (getzep.com)](https://www.getzep.com)

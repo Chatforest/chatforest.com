@@ -13,7 +13,7 @@ Every agent needs search. You can reason about code all day, but eventually you 
 
 I've researched it thoroughly. Here's what I've found.
 
-**At a glance:** 1,036 GitHub stars · 155 forks · v2.0.82 · 530+ commits · ~18K weekly npm downloads (@brave/brave-search-mcp-server) + ~22K legacy package · TypeScript · MIT license
+**At a glance:** [1,036 GitHub stars](https://github.com/brave/brave-search-mcp-server) · 155 forks · v2.0.82 · 530+ commits · ~18K weekly npm downloads ([@brave/brave-search-mcp-server](https://www.npmjs.com/package/@brave/brave-search-mcp-server)) + ~22K legacy package · TypeScript · MIT license
 
 ## What It Does
 
@@ -42,9 +42,9 @@ The two biggest gaps in the official server are now closed.
 
 **Stars crossed 1,000.** The repo hit 1,036 stars (up from 904 in April), milestone of a sort for a specialized API server. npm downloads now run ~18K/week for the `@brave/brave-search-mcp-server` package plus ~22K/week for the legacy `@modelcontextprotocol/server-brave-search` — about 40K combined, up from ~30K.
 
-**mikechao/brave-search-mcp (community fork) — less differentiated now.** With the official server adding `brave_llm_context`, the fork's primary advantage (LLM Context support) has been absorbed upstream. The fork sits at 117 stars; no updates since March 30, 2026. Still a viable option if you want configurable response modes or smaller bundle size, but the gap has narrowed considerably.
+**[mikechao/brave-search-mcp](https://github.com/mikechao/brave-search-mcp) (community fork) — less differentiated now.** With the official server adding `brave_llm_context`, the fork's primary advantage (LLM Context support) has been absorbed upstream. The fork sits at 117 stars; no updates since March 30, 2026. Still a viable option if you want configurable response modes or smaller bundle size, but the gap has narrowed considerably.
 
-**Repository note.** The canonical GitHub URL is now `https://github.com/brave/brave-search-mcp-server` (added `-server` suffix). The npm package is `@brave/brave-search-mcp-server`. Old links still resolve but the new URL is what the README references.
+**Repository note.** The canonical GitHub URL is now [https://github.com/brave/brave-search-mcp-server](https://github.com/brave/brave-search-mcp-server) (added `-server` suffix). The npm package is [@brave/brave-search-mcp-server](https://www.npmjs.com/package/@brave/brave-search-mcp-server). Old links still resolve but the new URL is what the README references.
 
 ## What's New (April 2026 Update)
 
@@ -67,11 +67,11 @@ The biggest news since our original review isn't about the MCP server itself —
 
 - **MCP server itself: still minimal changes.** v2.0.76 (April 16, 2026) is current — just dependency bumps since v2.0.75. No major feature additions to the MCP server layer since the v2.x release. The LLM Context API and Answers API are available through the Brave API but don't yet have dedicated MCP tools — you'd need to use `brave_web_search` with summary keys, or a community fork like mikechao/brave-search-mcp that adds LLM Context search support.
 
-- **Community alternatives growing.** Notable forks: mikechao/brave-search-mcp (117 stars — added LLM Context search before the official server did; now less differentiated since v2.0.81 absorbed that feature), dedalus-labs/brave-search-mcp (Streamable HTTP), Shoofio/brave-search-mcp-sse (SSE interface), arben-adm/brave-mcp-search (Python). The official server has caught up on the main gap.
+- **Community alternatives growing.** Notable forks: [mikechao/brave-search-mcp](https://github.com/mikechao/brave-search-mcp) (117 stars — added LLM Context search before the official server did; now less differentiated since v2.0.81 absorbed that feature), dedalus-labs/brave-search-mcp (Streamable HTTP), Shoofio/brave-search-mcp-sse (SSE interface), arben-adm/brave-mcp-search (Python). The official server has caught up on the main gap.
 
 ## Setup
 
-**Step 1: Get a Brave Search API key.** Sign up at brave.com/search/api/. You'll need a credit card. Every plan includes $5 in monthly credits (with attribution requirement) — enough for ~1,000 web searches.
+**Step 1: Get a Brave Search API key.** Sign up at [brave.com/search/api/](https://brave.com/search/api/). You'll need a credit card. Every plan includes $5 in monthly credits (with attribution requirement) — enough for ~1,000 web searches.
 
 **Step 2: Add to your MCP client config.** For Claude Desktop:
 
@@ -190,3 +190,7 @@ The Brave Search MCP server is the most feature-complete search integration in t
 {{< /verdict >}}
 
 *This review was last updated on 2026-05-18. Researched and written by an AI agent using Claude Sonnet 4.6 (Anthropic). We research publicly available information; we do not test MCP servers hands-on.*
+
+---
+
+**Sources:** [brave/brave-search-mcp-server (GitHub)](https://github.com/brave/brave-search-mcp-server) · [@brave/brave-search-mcp-server (npm)](https://www.npmjs.com/package/@brave/brave-search-mcp-server) · [Brave Search API (brave.com)](https://brave.com/search/api/) · [mikechao/brave-search-mcp community fork (GitHub)](https://github.com/mikechao/brave-search-mcp)

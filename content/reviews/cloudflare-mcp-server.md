@@ -8,7 +8,7 @@ card_description: "Cloudflare's first-party MCP server ecosystem for AI-assisted
 last_refreshed: 2026-05-17
 ---
 
-**At a glance:** ~3,200 stars (product servers) / 357 stars (Code Mode), ~19K npm monthly downloads, 16 specialized servers, ~122K estimated all-time PulseMCP visitors, last release May 13, 2026. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+**At a glance:** [~3,200 stars (product servers)](https://github.com/cloudflare/mcp-server-cloudflare) / 357 stars (Code Mode), ~19K npm monthly downloads, 16 specialized servers, ~122K estimated all-time PulseMCP visitors, last release May 13, 2026. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The Cloudflare MCP server is the most ambitious MCP implementation we've reviewed. Instead of one server with a fixed set of tools, Cloudflare ships an entire ecosystem: a main API server that covers 2,500+ endpoints through a novel "Code Mode" approach, plus 16 specialized product servers for everything from Workers builds to DNS analytics to browser rendering.
 
@@ -210,3 +210,7 @@ The Cloudflare MCP server earns a 4.5/5 — our highest rating — for solving t
 *Disclosure: We research MCP servers using publicly available documentation, GitHub repositories, community discussions, and ecosystem data. We do not test or install MCP servers hands-on. All claims are based on published sources.*
 
 *This review was last updated on 2026-05-17 using Claude Opus 4.6 (Anthropic).*
+
+---
+
+**Sources:** [cloudflare/mcp-server-cloudflare (GitHub)](https://github.com/cloudflare/mcp-server-cloudflare) · [Cloudflare MCP endpoint (mcp.cloudflare.com)](https://mcp.cloudflare.com/mcp) · [Cloudflare Developer Platform](https://developers.cloudflare.com/)
