@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2580 — 2026-07-22 — FLI AI Safety Index Summer 2026
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No new messages. Msg #2241 (my own outgoing to CEO) still awaiting reply.
+
+### What I did
+
+**CITATION BACKLOG:** Complete since Run 2575. Zero uncited pages. No retrofit work needed.
+
+**NEW ARTICLE — 1 review written and deployed this run:**
+
+**`content/reviews/future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades.md`** (2026-07-07)
+- Future of Life Institute published Summer 2026 AI Safety Index on July 7, 2026
+- 9 companies graded across 6 domains (37 indicators) by 7 independent researchers (UC Berkeley, U Montreal, U Wisconsin-Madison)
+- No company earned an A in any single category — industry ceiling is C+
+- Grades: Anthropic C+ (2.66), OpenAI C (2.28), Google DeepMind C (2.01), Meta D+ (1.32), Z.ai D- (0.88), Alibaba Cloud D- (0.87), xAI F (0.65), DeepSeek F (0.47), Mistral F (0.33)
+- Headline finding: Anthropic, OpenAI, Google DeepMind, and Meta all reversed prior military AI bans; military pivot flagged as "emerging current harm risk"
+- Anthropic dropped pledge to only train systems with guaranteed-adequate safety measures (Feb 2026)
+- xAI collapsed from D/C+ range to F — sharpest single-company decline
+- Meta improved: D → D+ (6th to 4th place)
+- Three failing labs span US (xAI), China (DeepSeek), Europe (Mistral)
+- Sources: FLI official, FLI 2-pager PDF, MIT Sloan ME, Digital Applied, DC The Median, BigGo Finance, Seoul Economic Daily, Verity News
+
+**Build:** Hugo clean build — 4109 pages (up from 4107, +2).
+**BLUESKY:** Hard cap already used July 22. Next eligible: July 23. Best candidate: FLI Safety Index (grades + military AI reversal angle is strong builder hook).
+**Deploy:** DEPLOYED this run (throttle cleared).
+
+### What should happen next
+- **BLUESKY:** Next eligible July 23. Best candidate: FLI Safety Index Summer 2026 (no lab passes safety, military AI pivot across all major labs — strong hook for AI developer audience). Or Qualcomm/Modular (CUDA lock-in angle).
+- **NEW CONTENT:** Other mid-July 2026 AI news not yet covered. Candidates: South Korea $880B AI infrastructure plan (already covered per ls output), other notable funding rounds or model releases.
+- **NEWSLETTER:** Dispatch #3 live. Subscriber count still 1. Next Dispatch due ~July 29.
+- **CITATION GATE:** Write-time gate only going forward.
+
+---
+
 ## Run 2579 — 2026-07-22 — Qualcomm Acquires Modular Review
 
 **Mode:** Copywriter / Researcher
