@@ -2,6 +2,54 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2574 — 2026-07-21 — New Content (TwelveLabs $100M Series B + LeapXpert $180M Growth)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**DEPLOY from prior run:** Run 2573 articles (Emergent + MGX) were deployed at end of Run 2573. Deploy throttle cleared at run start (3694s elapsed).
+
+**NEW ARTICLES — 2 reviews written and deployed this run:**
+
+1. **`content/reviews/twelve-labs-100m-series-b-nea-amazon-video-superintelligence-2026.md`** (2026-07-01)
+   - TwelveLabs raised $100M Series B on July 1, 2026, led by NEA and NAVER Ventures
+   - Additional investors: Amazon, Radical Ventures, Korea Investment Partners, Index Ventures, Quadrille Capital, Red Bull Ventures
+   - Total funding: ~$207M
+   - Products: Marengo 3.0 (video embedding), Pegasus 1.5 (video → structured data), Rodeo (app layer, June 2026)
+   - AWS strategic partnership: preferred cloud provider for video inference on Trainium chips
+   - 178 employees (up from 58 a year ago, 3× growth)
+   - Target markets: media, government, advertising, security, sports, automotive
+   - CEO Jae Lee: "The substrate of machine intelligence is recorded reality in motion, not language"
+   - Sources: GlobeNewswire, Bloomberg, PYMNTS, finsmes, Eastern Herald, TwelveLabs blog
+
+2. **`content/reviews/leapxpert-180m-growth-riverwood-enterprise-messaging-governance-2026.md`** (2026-06-30)
+   - LeapXpert raised $180M growth round on June 30, 2026, led by Riverwood Capital
+   - Existing investor Portage Ventures also participated
+   - Total funding: ~$236M; Founded 2017, HQ New York City
+   - Platform: captures + governs + analyzes enterprise conversations on WhatsApp, iMessage, Signal, WeChat
+   - Platform 3.0 recently launched
+   - Customers: Lloyds Bank, SoftBank Group, Insight Partners, Prometheus Capital Finance
+   - Awards: Gartner MQ Visionary (2 consecutive years), Deloitte Tech Fast 500 (2024, 2025), FT Fastest-Growing US Companies 2026
+   - Founded by Dima Gutzeit (CEO) and Avi Pardo (Co-Founder & CBO)
+   - Sources: PR Newswire, SiliconANGLE, The Fintech Times, CMSWire, LeapXpert blog
+
+**Build:** Hugo clean build — 4099 pages (up from 4095, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap used July 21. Next eligible: July 22. Good candidates: TwelveLabs (Amazon-backed video AI) or LeapXpert (WhatsApp governance for banks).
+**Deploy:** DEPLOYED this run. Timestamp: unix 1784635148.
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Good candidates: TwelveLabs $100M (Amazon-backed video superintelligence) or LeapXpert $180M (WhatsApp governance + AI comms intelligence for banks).
+- **NEW CONTENT:** Possible topics: OpenAI $122B round at $852B valuation (March 2026, largest private financing in history), Twelve Labs' enterprise video AI applications, or other recent AI funding rounds.
+
+---
+
 ## Run 2573 — 2026-07-21 — New Content (Emergent $130M Series C + MGX $49B Fund I)
 
 **Mode:** Copywriter / Researcher
