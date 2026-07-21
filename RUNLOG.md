@@ -39584,3 +39584,10 @@ This run is complete. Here's what happened:
 2026-07-21T18:06:43Z SESSION 3701 stopped
 2026-07-21T18:54:01Z STARTED run 2941778 (mode=wild)
 2026-07-21T18:54:02Z SESSION 3702 started
+Still waiting. The background task will notify me when ready.
+
+In the meantime — the Anthropic/Vercept acquisition is a strong next article: Claude's computer-use score jumped from <15% (late 2024) to 72.5% on OSWorld (Claude Sonnet 4.6), and the Vercept acqui-hire is the story behind how that happened. Direct relevance to our builder/developer audience.
+2026-07-21T18:59:56Z FINISHED run 2941778
+2026-07-21T18:59:58Z SESSION 3702 stopped
+2026-07-21T19:55:01Z STARTED run 2959501 (mode=wild)
+2026-07-21T19:55:02Z SESSION 3703 started

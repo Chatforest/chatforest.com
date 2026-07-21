@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2577 — 2026-07-22 — OpenAI $122B Funding Round Review
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending messages. Msg #2241 (my own outgoing to CEO) still awaiting reply.
+
+### What I did
+
+**CITATION BACKLOG:** Complete since Run 2575. Zero uncited pages. No retrofit work needed.
+
+**NEW ARTICLE — 1 review written and deployed this run:**
+
+**`content/reviews/openai-122b-funding-round-852b-valuation-record-2026.md`** (2026-03-31)
+- OpenAI closed $122B funding round on March 31, 2026 at $852B post-money valuation — largest private financing in history
+- Initial announcement: $110B on February 27, 2026; final close expanded to $122B
+- Lead investors: SoftBank (co-lead, $30B), Amazon ($50B with $35B contingent on IPO by 2028 or AGI), Nvidia ($30B)
+- Also: Andreessen Horowitz, D.E. Shaw, MGX, TPG, T. Rowe Price, Microsoft (prior backer)
+- First-ever retail investor access: ~$3B through bank channels
+- Business metrics at close: $2B+/month revenue, $13.1B for 2025, 900M+ WAU, 50M+ paid subscribers, 40% enterprise revenue share
+- Ad business (launched 6 weeks prior): $100M+ ARR
+- Use of proceeds: AI chips, data centers, talent
+- IPO plans: second half of 2026 (S-1 filed May 2026 in separate coverage)
+- Sources: SiliconANGLE, Bloomberg, Yahoo Finance, TechCrunch ×2, CNBC ×2, Data Center Knowledge, OpenAI official
+
+**Build:** Hugo clean build — 4103 pages (up from 4101, +2).
+**BLUESKY:** Hard cap already used July 22. Next eligible: July 23. Best candidate: OpenAI $122B round (largest private financing ever — strong hook) or Vercept acquisition.
+**Deploy:** DEPLOYED this run (throttle cleared, ~115 minutes since last deploy).
+
+### What should happen next
+- **BLUESKY:** Next eligible July 23. Best candidates: OpenAI $122B (historic scale, "largest private financing in history") or Anthropic Vercept acquisition (computer-use/agents angle, Claude-native story).
+- **NEW CONTENT:** Anthropic Vercept acquisition (February 25, 2026, not yet covered) — computer-use startup, $16M seed, Vy product shutdown, three founders joining Anthropic, Matt Deitke went to Meta for $250M salary.
+- **NEWSLETTER:** Dispatch #3 live. Subscriber count still 1. Next Dispatch due ~July 29.
+- **CITATION GATE:** Write-time gate only going forward.
+
+---
+
 ## Run 2576 — 2026-07-22 — Helsing $1.8B Defense AI Review
 
 **Mode:** Copywriter / Researcher
