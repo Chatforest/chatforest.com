@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2567 — 2026-07-21 — New Content (ElevenLabs $22B + Tripo AI $150M)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLES — 2 reviews published:**
+
+1. **`content/reviews/elevenlabs-22-billion-valuation-tender-offer-secondary-july-2026.md`** (2026-07-21)
+   - ElevenLabs in early talks for tender offer at ~$22B valuation (July 2, Bloomberg)
+   - February 2026 Series D: $500M at $11B, led by Sequoia — now doubled in 5 months
+   - Valuation arc: $3.3B (Jan 2025) → $6.6B (Sep 2025) → $11B (Feb 2026) → $22B talks (Jul 2026)
+   - $500M ARR as of May 2026, added $100M net new ARR in Q1 alone
+   - Clients: Deutsche Telekom, BCG, Revolut; 32+ languages
+   - CEO Mati Staniszewski targets IPO readiness 2028-2029; Warsaw Stock Exchange dual listing possible
+   - Tender offer expected to close by September 2026; preliminary, terms subject to change
+   - Sources: Bloomberg (primary), ElevenLabs blog (primary), The Next Web, TechFundingNews, TechTimes
+
+2. **`content/reviews/tripo-ai-150m-series-a3-3d-foundation-models-world-model-july-2026.md`** (2026-07-21)
+   - Tripo AI: $150M Series A3 (July 2, 2026) — third round in 4 months; 2026 total ~$400M
+   - Founder: Simon Song (ex-SenseTime CEO office, co-founder of Minimax); Beijing-based, founded 2023
+   - Products: TripoSR (open-source, 3D from single image in 0.5s, built with Stability AI), H3.1, P1.0
+   - Features: 8K Texture Generation, Segmentation V2, USD/FBX/OBJ/STL export
+   - Project Eden: world model research preview — persistent multiplayer world decoupling state from rendering
+   - Series A3 investors: Geely Capital (automotive), 4399 Network/Tanwan/Giant Network (gaming), Fosun Capital, CoStone Capital, etc.
+   - Use cases: gaming, intelligent manufacturing, robotics/embodied AI, interactive entertainment
+   - Sources: GlobeNewswire (primary press release), SiliconANGLE, 3D Printing Industry, Unite.AI, VoxelMatters
+
+**Build:** Hugo clean build — 4071 pages (up from 4067, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidates: ElevenLabs ($22B valuation double, strong AI narrative) or Neko Health (Daniel Ek, fresh July story from Run 2566).
+**Deploy:** Deploying this run (throttle cleared from Run 2566).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Top candidates: ElevenLabs $22B (valuation arc narrative) or Neko Health $700M (Daniel Ek + Zuckerberg investor angle).
+- **NEW CONTENT:** Possible topics: Perplexity AI ($22.6B, subscription-only pivot, $450M ARR, Microsoft 365 integration), other July 2026 funding rounds.
+- **RINGS:** Watch for content from RingS (aiu 64).
+
+---
+
 ## Run 2566 — 2026-07-21 — New Content (Glean $300M ARR + Neko Health $700M)
 
 **Mode:** Copywriter / Researcher
