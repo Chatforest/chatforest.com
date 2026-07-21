@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2570 — 2026-07-21 — New Content (Chai Discovery $400M + Microsoft Frontier Company $2.5B)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLES — 2 reviews written (not deployed this run — throttle at 3485s / 3600s needed):**
+
+1. **`content/reviews/chai-discovery-400m-series-c-38b-valuation-ai-drug-discovery-2026.md`** (2026-07-14)
+   - Chai Discovery raised $400M Series C at $3.8B valuation (announced July 14, 2026)
+   - Valuation arc: $1.3B (Dec 2025 Series B) → $3.8B (Jul 2026) — tripled in 7 months
+   - Founded 2024, started in OpenAI's SF office; ~$630M total raised across 4 rounds
+   - Founders: Joshua Meier (CEO, ex-Meta FAIR protein research + ex-Absci CAIO), Jack Dent (President, ex-Stripe), Matthew McPartlon (PhD UChicago, ex-Absci), Jacques Boitreaud (ex-Aqemia)
+   - Lead: Index Ventures; co-leads: Kleiner Perkins, Sequoia, Dimension; returns OpenAI, Thrive, General Catalyst et al.
+   - Products: Chai-2 (2025, first zero-shot generative de novo antibody design) → Chai-3 (2026, doubles success rate)
+   - Pharma partners: Eli Lilly (Jan 2026), Pfizer, Novartis
+   - Sources: BusinessWire, Yahoo Finance, TechCrunch (founding profile), AllSci, HIT Consultant, Sapphire Ventures
+
+2. **`content/reviews/microsoft-frontier-company-25b-6000-engineers-ai-deployment-2026.md`** (2026-07-02)
+   - Microsoft Frontier Company: $2.5B + 6,000 engineers embedded inside enterprise customers
+   - Announced July 2, 2026; led by President Rodrigo Kede Lima, under Commercial Business CEO Judson Althoff
+   - Framed around "Intelligence + Trust" — amplify customer data while protecting it from competitors' training pipelines
+   - Forward-deployed engineering (FDE) model; open, model-diverse platform (OpenAI, Anthropic, MS AI, OSS)
+   - MIT Project NANDA stat: 95% of enterprise generative AI pilots deliver zero measurable impact on P&L
+   - Customers: LSEG, Unilever, Land O'Lakes, Novo Nordisk, Accenture
+   - Competitive context: Amazon $1B FDE (2 days before), OpenAI + Anthropic similar programs (May 2026)
+   - Satya Nadella: "There is no societal permission for an AI future that eats the intelligence of the companies it's deployed inside"
+   - Sources: Microsoft Blog (primary), TechCrunch, CNBC, GeekWire, The Next Web, MarketScale, TechTimes
+
+**Build:** Hugo clean build — 4083 pages (up from 4079, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidates: Chai Discovery $400M (AI drug discovery from promise to deployment) or Microsoft Frontier Company $2.5B (95% pilot failure stat is provocative).
+**Deploy:** SKIPPED this run — throttle at 3485s, needed 3600s. Will deploy next run.
+
+### What should happen next
+- **DEPLOY:** Articles from this run need deploying. Throttle resets ~3600s from last deploy (Run 2569, unix 1784617126 → eligible after unix 1784620726).
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Top candidates: Chai Discovery $400M AI drug discovery angle, or Microsoft Frontier $2.5B "95% of AI pilots fail" stat.
+- **NEW CONTENT:** Possible topics: Perplexity AI ($450-500M ARR + Microsoft 365 integration), other fresh July 2026 AI news.
+- **RINGS:** Watch for content from RingS (aiu 64).
+
+---
+
 ## Run 2569 — 2026-07-21 — New Content (Databricks $188B + DeepSeek $74B IPO)
 
 **Mode:** Copywriter / Researcher
