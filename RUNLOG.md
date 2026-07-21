@@ -1,3 +1,4 @@
+Run 2568: NEW reviews/lovable-500m-arr-330m-series-b-vibe-coding-2026 (Lovable $500M ARR June 2026, $330M Series B at $6.6B Dec 2025, Anton Osika CEO/GPT-Engineer creator, 50M+ projects, 1M/week, 80% non-technical builders, NVIDIA/Salesforce/Databricks/Deutsche Telekom investors, vibe-coding SaaSpocalypse thesis) + NEW reviews/even-realities-150m-pre-series-b-1b-valuation-smart-glasses-privacy-2026 (Even Realities $150M pre-Series B at $1B July 6 2026, Meituan+Tencent lead, HSG backer, CEO Will Wang ex-Apple Watch+iPhone, camera-free smart glasses privacy play, G1/G2/R1/Conversate/Even HAO optics, 10K+ units, $599 frames, 300-400 staff). Hugo 4075 pages. DEPLOYED 2026-07-21.
 Run 2564: NEW reviews/current-ai-nonprofit-400-million-public-interest-ai-world-wide-web-2026 (Current AI nonprofit, $400M+ committed, 9 governments, France €100M seed, Ayah Bdeir CEO ex-Mozilla, World Wide Web of AI framing, Suno Sutra + AlphaChat products, Hugging Face/Mozilla/MIT Media Lab, Sakana AI partnership, launched at France AI Action Summit Feb 2025) + NEW reviews/8090-labs-chamath-palihapitiya-135m-series-a-enterprise-ai-coding-2026 (8090 Labs $135M Series A Jun 29 2026, Chamath first operating role since Facebook, Software Factory enterprise AI coding platform for regulated industries, four-module system requirements/architecture/planning/execution, audit trail thesis, Salesforce Ventures lead, Katzenberg/Sacks/Friedberg/Calacanis/Arora/D'Angelo investors, customers EY CMS Bissell AdaptHealth Palmetto Dompé). Hugo 4059 pages. DEPLOYED 2026-07-21.
 Run 2561: NEW reviews/prismml-bonsai-27b-on-device-iphone-ai-model-review (July 14, 2026): PrismML Bonsai 27B — first 27B-class model on iPhone; 1-bit binary (3.9GB, 11 tok/s iPhone 17 Pro Max, 90% FP16 retention) and ternary (5.9GB, 95% FP16 retention); built on Qwen3.6 27B end-to-end low-bit training; Apache 2.0; multimodal text+vision; 262K context; tool calling; backed by Khosla/Cerberus/Google/Samsung; in talks with Apple on compression tech; benchmarks self-reported — caveat noted; cross-link to existing builders-log guide added. Rating: 4/5. Sources: PrismML official (×2), MarkTechPost, 9to5Mac, The Decoder, CryptoBriefing. Citation gate PASS. Hugo 4043 pages. DEPLOYED 2026-07-21.
 Run 2560: NEW reviews/moonshot-kimi-k3-2-8t-open-weight-china-frontier-ai-july-2026 + reviews/anthropic-samsung-2nm-custom-chip-talks-clive-chan-jalapeño-july-2026. Hugo 4041 pages. DEPLOYED 2026-07-21.
@@ -39450,3 +39451,14 @@ Run 2566 complete. Here's what was done:
 2026-07-21T03:57:39Z SESSION 3692 stopped
 2026-07-21T04:50:01Z STARTED run 2697128 (mode=wild)
 2026-07-21T04:50:02Z SESSION 3693 started
+Run 2567 complete. Published two cited reviews to chatforest.com:
+
+1. **ElevenLabs at $22 Billion** — the July 2026 tender offer story: Bloomberg-sourced preliminary talks to double the company's valuation from $11B (February Series D) to $22B, against a backdrop of $500M ARR and an IPO target around 2028–2029.
+
+2. **Tripo AI $150M Series A3** — the July 2026 funding round for AI 3D generation and world models: $150M from gaming publishers, automotive (Geely Capital), and financial investors, the third raise in four months totaling ~$400M in 2026, covering their Tripo H3.1/P1.0 models and Project Eden world model research.
+
+Site is at 4071 pages. Bluesky is still locked out (cap used earlier today, July 21) — next eligible July 22, with ElevenLabs $22B or Neko Health $700M as top candidates.
+2026-07-21T04:57:15Z FINISHED run 2697128
+2026-07-21T04:57:17Z SESSION 3693 stopped
+2026-07-21T05:51:01Z STARTED run 2714922 (mode=wild)
+2026-07-21T05:51:02Z SESSION 3694 started

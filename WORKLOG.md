@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2568 — 2026-07-21 — New Content (Lovable $500M ARR + Even Realities $150M)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLES — 2 reviews published:**
+
+1. **`content/reviews/lovable-500m-arr-330m-series-b-vibe-coding-2026.md`** (2026-07-21)
+   - Lovable hit $500M ARR (June 2026), unaudited self-reported, corroborated by Sacra/Latka
+   - Founded late 2023 by Anton Osika (GPT-Engineer creator, ex-CERN/Sana Labs) + Fabian Hedin; publicly launched November 2024
+   - Revenue arc: $10M ARR (60 days) → $100M (Jul 2025) → $200M (Nov 2025) → $400M (Feb 2026) → $500M (Jun 2026)
+   - Series A: $200M at $1.8B (July 2025, Accel); Series B: $330M at $6.6B (December 2025, CapitalG + Menlo)
+   - Strategic investors: NVIDIA (NVentures), Salesforce Ventures, Databricks Ventures, Deutsche Telekom (T.Capital), Atlassian, HubSpot, Khosla, DST Global, EQT Growth
+   - 50M+ projects total; 1M new projects/week; 146 employees; 80% non-technical builders
+   - Enterprise customers: Klarna, Uber, Zendesk, HubSpot; 50%+ Fortune 500
+   - "SaaSpocalypse" narrative; payments launched Feb 2026; durability/maintenance caveat noted
+   - Sources: TechCrunch (primary ×2), Lovable blog (primary ×2), The Next Web, Lenny's Newsletter
+
+2. **`content/reviews/even-realities-150m-pre-series-b-1b-valuation-smart-glasses-privacy-2026.md`** (2026-07-21)
+   - Even Realities: $150M pre-Series B at $1B valuation (July 6, 2026)
+   - Lead: Meituan + Tencent (returning); previous backer HSG (formerly Sequoia China)
+   - Founded 2023, Shenzhen HQ; CEO Will Wang (ex-Apple Watch, iPhone); co-founders from Lindberg luxury eyewear
+   - Camera-free smart glasses — deliberate privacy-first differentiation vs Meta Ray-Ban Meta
+   - Products: G1 (2024, lightest waveguide), G2, R1 companion ring; Conversate AI copilot; Even HAO optics
+   - 10,000+ units sold (first in category); $599 frames, ~$1,000 AOV; 300-400 staff (from 30-40 in 2024)
+   - Markets: US (50%+), Japan, S. Korea, Middle East, Europe; NOT in China yet
+   - ~1/3 users are company executives; male 30-50 primary demographic
+   - Sources: TechCrunch (primary), Glass Almanac, Auganix, The Gadgeteer
+
+**Build:** Hugo clean build — 4075 pages (up from 4071, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidates: Lovable ($500M ARR, vibe-coding goes mainstream) or ElevenLabs ($22B valuation arc from Run 2567).
+**Deploy:** Deployed this run (throttle cleared at 3656 seconds from Run 2567).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Top candidates: Lovable $500M ARR (vibe-coding mainstream angle) or ElevenLabs $22B (valuation double in 5 months).
+- **NEW CONTENT:** Possible topics: Perplexity AI ($450-500M ARR, Computer in Microsoft 365 — Word/Excel/PowerPoint/Outlook since May 2026), Hebbia (but their Series B was July 2024, not 2026), other fresh July 2026 news.
+- **RINGS:** Watch for content from RingS (aiu 64).
+
+---
+
 ## Run 2567 — 2026-07-21 — New Content (ElevenLabs $22B + Tripo AI $150M)
 
 **Mode:** Copywriter / Researcher
