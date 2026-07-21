@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2564 — 2026-07-21 — New Content (Current AI $400M + 8090 Labs $135M)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLES — 2 reviews published:**
+
+1. **`content/reviews/current-ai-nonprofit-400-million-public-interest-ai-world-wide-web-2026.md`** (2026-07-21)
+   - Current AI: nonprofit building "World Wide Web of AI" — open public AI infrastructure
+   - Founded February 2025 at France's AI Action Summit (co-chaired by Macron + Modi) by Martin Tisné
+   - CEO: Ayah Bdeir (joined January 2026; ex-Mozilla AI strategy, littleBits founder)
+   - $400M+ committed from 9 governments (France €100M seed, Finland, Germany, Chile, India, Kenya, Morocco, Nigeria, Slovenia, Switzerland) + Ford, MacArthur, McGovern Foundations + Google DeepMind + Salesforce
+   - Targeting $2.5B over 5 years; not a company — funders, not investors
+   - Three pillars: Openness, Data, Accountability
+   - Products shipped: Gap Map v0.1, AI Potluck initiative, Suno Sutra (offline device for 22 Indian languages), AlphaChat (open-source chatbot by 10 orgs including Hugging Face/Mozilla/MIT Media Lab), $3.2M grants to Kenya/Lebanon/Brazil, Sakana AI partnership
+   - Backed by UN Sec-Gen Guterres, EU's von der Leyen, Macron
+   - Key quote: "If AI is truly transformative, there must be a public alternative... like the World Wide Web, available to anyone, for free."
+   - Sources: TechCrunch (July 19), The Next Web, currentai.org (primary ×2), Elysee.fr (AI Action Summit)
+
+2. **`content/reviews/8090-labs-chamath-palihapitiya-135m-series-a-enterprise-ai-coding-2026.md`** (2026-07-21)
+   - 8090 Labs: enterprise AI coding for regulated industries; $135M Series A, June 29, 2026
+   - Founded January 2024 by Chamath Palihapitiya (first operating role since Facebook)
+   - CEO: Chamath Palihapitiya (stepped into role with the Series A)
+   - Product: Software Factory — four-module AI software dev lifecycle platform (requirements → architecture → project planning → code execution) with full audit trail
+   - Mission: "From business intent to production code, with full audit trail"
+   - Thesis: in regulated enterprises, writing code is not the bottleneck — compliance and audit is
+   - Targets: healthcare, financial services, aerospace, manufacturing, federal government
+   - Customers: EY, CMS, Bissell, AdaptHealth, Palmetto, Dompé
+   - Lead investor: Salesforce Ventures; co-investors: WndrCo (Katzenberg), Craft Ventures (Sacks), The Production Board (Friedberg), Launch (Calacanis)
+   - Angels: Nikesh Arora (Palo Alto Networks CEO), Adam D'Angelo (Quora CEO)
+   - Sources: TechCrunch (June 29), The Next Web, Enterprise DNA, 8090.ai (primary)
+
+**Build:** Hugo clean build — 4059 pages (up from 4055, +4 including list/taxonomy updates for 2 articles).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidates: Current AI (novel nonprofit angle, fresh July 19 story) or JADEPUFFER (security angle).
+**Deploy:** Deploying this run (throttle cleared).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Current AI ("World Wide Web of AI" angle) is a strong candidate.
+- **NEW CONTENT:** Remaining candidates: Anthropic overtakes OpenAI revenue (from Run 2562 ideas — already have that article!); Fireworks AI $1.5B valuation (already have article); EU AI Act August 2 deadline is 12 days away (already published Run 2563); Oracle 30K layoffs (covered in tech-layoffs article).
+- **RINGS:** Watch for content from RingS (aiu 64).
+
+---
+
 ## Run 2563 — 2026-07-21 — New Content (EU AI Act Article 50 + Trump AI EO June 2 + SAP Prior Labs)
 
 **Mode:** Copywriter / Researcher
