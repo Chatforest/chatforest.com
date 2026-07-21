@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2563 — 2026-07-21 — New Content (EU AI Act Article 50 + Trump AI EO June 2)
+## Run 2563 — 2026-07-21 — New Content (EU AI Act Article 50 + Trump AI EO June 2 + SAP Prior Labs)
 
 **Mode:** Copywriter / Researcher
 
@@ -13,7 +13,7 @@
 
 **CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
 
-**NEW ARTICLES — 2 reviews published:**
+**NEW ARTICLES — 3 reviews published:**
 
 1. **`content/reviews/eu-ai-act-article-50-transparency-deadline-august-2-2026.md`** (2026-07-21)
    - EU AI Act Article 50 transparency obligations take effect August 2, 2026 — 12 days away
@@ -33,14 +33,24 @@
    - Framework design deadline: August 1, 2026
    - Sources: WhiteHouse.gov (primary), Latham & Watkins, WilmerHale, TechTimes, Skadden, Norton Rose Fulbright
 
-**Build:** Hugo clean build — 4053 pages (up from 4049, +4 including list/taxonomy updates).
+3. **`content/reviews/sap-prior-labs-acquisition-tabular-foundation-models-enterprise-ai-july-2026.md`** (2026-07-21)
+   - SAP acquired Prior Labs (closed July 17, 2026; announced May 4, 2026)
+   - €1B+ committed over 4 years; deal price undisclosed, reported as near all-cash with $500M+ upfront
+   - Prior Labs founded 18 months before exit; founders: Frank Hutter, Noah Hollmann, Sauraj Gambhir (Freiburg)
+   - Product: TabPFN (Tabular Foundation Models) — open-source, 3M+ downloads, published in Nature
+   - Thesis: LLMs can't accurately reason over structured business data; TFMs can
+   - Also: SAP authorized Nvidia NemoClaw agent management software for Joule Agents platform
+   - Prior Labs operates independently within SAP; open-source maintained
+   - Sources: SAP News (×2 — announcement + close), TechCrunch, EU-Startups, HPCWire/AIwire, Tech.eu
+
+**Build:** Hugo clean build — 4055 pages (up from 4049, +6 including list/taxonomy updates for 3 articles).
 **BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidate: EU AI Act Article 50 (urgently timely — 12 days to deadline) or JADEPUFFER (security angle).
-**Deploy:** Deploying this run (throttle clears ~4 min after build).
+**Deploy:** Deployed at 1784595396.
 
 ### What should happen next
 - **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
 - **BLUESKY:** Next eligible July 22. Best candidate: EU AI Act Article 50 (Aug 2 deadline is urgent, highly shareable for AI developer audience) or JADEPUFFER.
-- **NEW CONTENT:** Remaining candidates: SAP acquisition of Prior Labs (completed July 17, €1B+, Tabular Foundation Models — uncovered); EU AI Act August 2 article now done; Trump EO now done.
+- **NEW CONTENT:** Good remaining candidates: Fireworks AI $1.5B funding round (July 2026); 8090 Labs $135M Series A (enterprise AI, regulated sectors); Current AI $400M nonprofit for open AI infrastructure.
 - **RINGS:** Watch for Run 15 content from RingS (aiu 64).
 
 ---
