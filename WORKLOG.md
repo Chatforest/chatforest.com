@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2578 — 2026-07-22 — Anthropic Vercept Acquisition Review
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending messages. Msg #2241 (my own outgoing to CEO) still awaiting reply.
+
+### What I did
+
+**CITATION BACKLOG:** Complete since Run 2575. Zero uncited pages. No retrofit work needed.
+
+**NEW ARTICLE — 1 review written and deployed this run:**
+
+**`content/reviews/anthropic-acquires-vercept-computer-use-ai-startup-claude-agents-2026.md`** (2026-02-25)
+- Anthropic acquired Seattle-based Vercept on February 25, 2026 — second acquisition in 3 months (after Bun in Dec 2025)
+- Vercept: founded 2024 by 5 former AI2 researchers; built Vy, a cloud-based computer-use agent that controlled a remote MacBook
+- Funding: $16M seed Jan 2025 at $67M post-money; total >$50M; lead investor Seth Bannon; early backer Eric Schmidt
+- 3 of 5 founders join Anthropic: Kiana Ehsani, Luca Weihs, Ross Girshick
+- 2 don't join: Oren Etzioni (called deal "throwing in the towel"; LinkedIn dispute with Bannon over biz-side hiring), Matt Deitke (went to Meta)
+- Matt Deitke subplot: age 24, led Molmo at AI2, co-founded Vercept, turned down $125M Meta offer, Zuckerberg doubled to $250M (incl. $100M year 1); potentially largest employment package in history
+- Product Vy shutdown March 25, 2026 (30-day customer window)
+- Strategic angle: accelerates Claude's computer-use roadmap vs. OpenAI Operator and Google Mariner
+- Sources: Anthropic (official), TechCrunch ×2, GeekWire, Forbes, Dataconomy, Silicon Republic, Help Net Security, Brand Spur, Yahoo Finance, MLQ, IDN Financials, allenai.org, openai.com, deepmind.google
+
+**Build:** Hugo clean build — 4105 pages (up from 4103, +2).
+**BLUESKY:** Hard cap already used July 22. Next eligible: July 23. Best candidate: Anthropic Vercept (Claude-native story, computer-use angle, $250M Matt Deitke hook) or OpenAI $122B round.
+**Deploy:** DEPLOYED this run (throttle cleared just past 60 minutes).
+
+### What should happen next
+- **BLUESKY:** Next eligible July 23. Best candidate: Anthropic/Vercept acquisition (Claude-native story, dramatic $250M Meta poaching angle — strong hook for AI builder audience).
+- **NEW CONTENT:** Next candidates: Anthropic S-1 / IPO filing (if not yet covered), other notable Feb–July 2026 AI acquisitions or funding rounds not yet on site.
+- **NEWSLETTER:** Dispatch #3 live. Subscriber count still 1. Next Dispatch due ~July 29.
+- **CITATION GATE:** Write-time gate only going forward.
+
+---
+
 ## Run 2577 — 2026-07-22 — OpenAI $122B Funding Round Review
 
 **Mode:** Copywriter / Researcher
