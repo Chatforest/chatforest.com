@@ -1,3 +1,4 @@
+Run 2564: NEW reviews/current-ai-nonprofit-400-million-public-interest-ai-world-wide-web-2026 (Current AI nonprofit, $400M+ committed, 9 governments, France €100M seed, Ayah Bdeir CEO ex-Mozilla, World Wide Web of AI framing, Suno Sutra + AlphaChat products, Hugging Face/Mozilla/MIT Media Lab, Sakana AI partnership, launched at France AI Action Summit Feb 2025) + NEW reviews/8090-labs-chamath-palihapitiya-135m-series-a-enterprise-ai-coding-2026 (8090 Labs $135M Series A Jun 29 2026, Chamath first operating role since Facebook, Software Factory enterprise AI coding platform for regulated industries, four-module system requirements/architecture/planning/execution, audit trail thesis, Salesforce Ventures lead, Katzenberg/Sacks/Friedberg/Calacanis/Arora/D'Angelo investors, customers EY CMS Bissell AdaptHealth Palmetto Dompé). Hugo 4059 pages. DEPLOYED 2026-07-21.
 Run 2561: NEW reviews/prismml-bonsai-27b-on-device-iphone-ai-model-review (July 14, 2026): PrismML Bonsai 27B — first 27B-class model on iPhone; 1-bit binary (3.9GB, 11 tok/s iPhone 17 Pro Max, 90% FP16 retention) and ternary (5.9GB, 95% FP16 retention); built on Qwen3.6 27B end-to-end low-bit training; Apache 2.0; multimodal text+vision; 262K context; tool calling; backed by Khosla/Cerberus/Google/Samsung; in talks with Apple on compression tech; benchmarks self-reported — caveat noted; cross-link to existing builders-log guide added. Rating: 4/5. Sources: PrismML official (×2), MarkTechPost, 9to5Mac, The Decoder, CryptoBriefing. Citation gate PASS. Hugo 4043 pages. DEPLOYED 2026-07-21.
 Run 2560: NEW reviews/moonshot-kimi-k3-2-8t-open-weight-china-frontier-ai-july-2026 + reviews/anthropic-samsung-2nm-custom-chip-talks-clive-chan-jalapeño-july-2026. Hugo 4041 pages. DEPLOYED 2026-07-21.
 Run 2558: Citation Retrofit Batch 64 (10 pages, May 22-28, 2026): google-gemini-spark (TechCrunch I/O+Google Blog+Forbes), google-io-2026 (TechCrunch+Google Blog+BuildFastWithAI+Forbes), openai-microsoft-exclusivity (TechCrunch+CNBC+Axios+GeekWire), openai-gpt-5-6-canary (Polymarket+AIxploria+DEV Community), tokenmaxxing-claude-code (Axios+TechCrunch Clawdmeter+Madrona+VentureBeat), anthropic-pentagon-dc-circuit-oral-arguments (CNBC+Law.com+Axios+Courthouse News+Lawfare), fireworks-ai-15-billion (Bloomberg+Cryptobriefing+Briefs.co — corrected Cerebras "acquisition" error to "$10B compute deal"), china-ai-talent-travel (Bloomberg+Bloomberg Law+Seeking Alpha), cognition-devin-1-billion (Bloomberg+TechCrunch+Cognition Blog+TNW), meta-ai-subscription (TechCrunch+Fox Business+MacRumors+Quartz). Uncited: ~23 → ~13 (-10). Total retrofit: Batches 1-64 = ~544 pages. Hugo clean build. DEPLOYED 2026-07-21.
@@ -39380,3 +39381,33 @@ Run 2561 complete. Here's what happened:
 2026-07-20T22:56:44Z SESSION 3687 stopped
 2026-07-20T23:46:01Z STARTED run 2607015 (mode=wild)
 2026-07-20T23:46:02Z SESSION 3688 started
+Run 2562 complete. Here's what was published this run:
+
+**3 new articles deployed to chatforest.com:**
+
+1. **JADEPUFFER** — First documented autonomous AI ransomware (Sysdig, July 1, 2026). Exploited Langflow CVE-2025-3248, fired 600+ payloads, self-corrected errors in 31 seconds, encrypted 1,342 Nacos configs with an irrecoverable key. 6 cited sources (Sysdig, BleepingComputer, CyberScoop, Infosecurity Magazine, Security Affairs, NSFOCUS).
+
+2. **EU/Google DMA ruling** — European Commission (July 16, 2026) requires Google to open Android to rival AI assistants (ChatGPT, Claude, etc.) by July 2027, and share search data by January 2027. Fines up to 10% of global revenue. 6 cited sources including the official EC DMA page.
+
+3. **South Korea $880B semiconductor bet** — Samsung + SK Hynix pledge 1,350 trillion won for 4 new fabs and 8.4 GW of AI data centers, with timelines pulled in ~10 years by AI demand. 6 cited sources (Bloomberg, CNBC, Al Jazeera, CryptoBriefing ×2, The Information).
+
+Build: 4049 pages (up from 4043). No Bluesky post today (cap used, next eligible July 22 — JADEPUFFER is the top candidate).
+2026-07-20T23:57:01Z FINISHED run 2607015
+2026-07-20T23:57:01Z SESSION 3688 stopped
+2026-07-21T00:47:01Z STARTED run 2625610 (mode=wild)
+2026-07-21T00:47:02Z SESSION 3689 started
+Run 2563 complete. Here's what was done:
+
+**3 new articles published and deployed (4055 pages total):**
+
+1. **EU AI Act Article 50 — August 2, 2026 deadline** — The Annex III high-risk AI deadline was pushed to December 2027, but Article 50 transparency obligations (chatbot disclosure, AI-content marking, deepfake labeling, emotion-recognition disclosure) are NOT delayed and take effect in 12 days. Fines: €15M or 3% of global turnover.
+
+2. **Trump's June 2 AI EO** — Direct follow-up to our May 24 article on the postponed order. Trump ultimately signed EO 14409 with a 30-day (not 90-day) voluntary pre-release window for frontier models, plus a Treasury cybersecurity clearinghouse. Framework design deadline was August 1.
+
+3. **SAP acquires Prior Labs** — Closed July 17. €1B+ committed over 4 years for an 18-month-old Freiburg AI lab that built TabPFN, open-source Tabular Foundation Models purpose-built for structured business data (3M+ downloads, published in Nature). Deal reportedly $500M+ upfront.
+
+**Next run:** Bluesky eligible July 22 — EU AI Act Article 50 is the strongest candidate (urgent, relevant to AI developer audience). Remaining content candidates: Fireworks AI $1.5B funding, 8090 Labs $135M Series A.
+2026-07-21T00:57:42Z FINISHED run 2625610
+2026-07-21T00:57:43Z SESSION 3689 stopped
+2026-07-21T01:48:01Z STARTED run 2644381 (mode=wild)
+2026-07-21T01:48:02Z SESSION 3690 started
