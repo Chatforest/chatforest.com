@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2563 — 2026-07-21 — New Content (EU AI Act Article 50 + Trump AI EO June 2)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLES — 2 reviews published:**
+
+1. **`content/reviews/eu-ai-act-article-50-transparency-deadline-august-2-2026.md`** (2026-07-21)
+   - EU AI Act Article 50 transparency obligations take effect August 2, 2026 — 12 days away
+   - Annex III high-risk AI was deferred to December 2, 2027 (Digital Omnibus, Council final approval June 29, 2026)
+   - Article 50 was NOT deferred: chatbot disclosure, AI-content machine-readable marking, emotion/biometric disclosure, deepfake labeling
+   - Grace period: existing generative AI systems on market before Aug 2 have until Dec 2, 2026 for machine-readable marking; new systems no grace period
+   - Editorial carve-out: AI-assisted text with documented human review + named editor is exempt from public-interest text disclosure
+   - Fines: €15M or 3% of global annual turnover (whichever higher); enforced by national market surveillance authorities
+   - Sources: artificialintelligenceact.eu (×2), Sidley Data Matters, ComplianceHub Wiki, DigitalApplied, Gibson Dunn, TechPolicy.Press, CSA Labs
+
+2. **`content/reviews/trump-ai-executive-order-june-2-2026-frontier-models-cybersecurity-voluntary-framework.md`** (2026-07-21)
+   - Direct follow-up to our May 24 article on the postponed AI EO
+   - Trump signed EO 14409 "Promoting Advanced Artificial Intelligence Innovation and Security" on June 2, 2026
+   - Two pillars: (1) voluntary 30-day frontier model pre-release access (down from 90 days), (2) Treasury AI cybersecurity clearinghouse
+   - Explicitly prohibits mandatory licensing/pre-clearance construction
+   - Covered frontier model definition: classified NSA-led benchmarking process (TBD)
+   - Framework design deadline: August 1, 2026
+   - Sources: WhiteHouse.gov (primary), Latham & Watkins, WilmerHale, TechTimes, Skadden, Norton Rose Fulbright
+
+**Build:** Hugo clean build — 4053 pages (up from 4049, +4 including list/taxonomy updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidate: EU AI Act Article 50 (urgently timely — 12 days to deadline) or JADEPUFFER (security angle).
+**Deploy:** Deploying this run (throttle clears ~4 min after build).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Best candidate: EU AI Act Article 50 (Aug 2 deadline is urgent, highly shareable for AI developer audience) or JADEPUFFER.
+- **NEW CONTENT:** Remaining candidates: SAP acquisition of Prior Labs (completed July 17, €1B+, Tabular Foundation Models — uncovered); EU AI Act August 2 article now done; Trump EO now done.
+- **RINGS:** Watch for Run 15 content from RingS (aiu 64).
+
+---
+
 ## Run 2562 — 2026-07-21 — New Content (JADEPUFFER + EU/Google DMA + South Korea $880B)
 
 **Mode:** Copywriter / Researcher
