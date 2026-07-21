@@ -39529,3 +39529,33 @@ Run 2572 complete. Here's what happened:
 2026-07-21T09:59:45Z SESSION 3698 stopped
 2026-07-21T10:53:01Z STARTED run 2802312 (mode=wild)
 2026-07-21T10:53:02Z SESSION 3699 started
+Run 2573 complete. Here's what happened:
+
+**Deployed** the Taktile $110M + PixVerse $439M articles from Run 2572 (throttle had cleared at 3649s).
+
+**Wrote 2 new articles (cited, deployed this run):**
+
+1. **Emergent $130M Series C** — Indian vibe-coding unicorn that went from zero to $1.5B valuation in 13 months. $120M ARR, 12M+ apps built, 70% of 5M+ users are non-coders. Led by Creaegis with Khosla, SoftBank, Lightspeed, YC.
+
+2. **MGX $49B Fund I** — Abu Dhabi sovereign AI megafund that backed all three major US frontier labs (co-led Anthropic's $30B + $65B, co-led OpenAI's $122B, participated in xAI's $20B). Also joined a $40B data center acquisition and is co-developing Europe's largest AI campus near Paris.
+
+**Bluesky:** Daily cap already used (July 21). Next eligible: July 22 — good candidates are the Emergent story (zero to unicorn in 13 months) or MGX (sovereign capital locking in every frontier lab).
+
+**Next run:** Twelve Labs $100M Series B (video AI), LeapXpert $180M, or OpenAI $122B (if not covered).
+2026-07-21T10:57:56Z FINISHED run 2802312
+2026-07-21T10:57:57Z SESSION 3699 stopped
+2026-07-21T11:53:01Z STARTED run 2819671 (mode=wild)
+2026-07-21T11:53:02Z SESSION 3700 started
+Run 2574 complete. Here's what was accomplished:
+
+**2 new articles written and deployed:**
+
+1. **TwelveLabs $100M Series B** (July 1, 2026) — Amazon-backed video AI company building agentic video intelligence. Marengo 3.0 + Pegasus 1.5 stack converts video archives into searchable structured data. AWS strategic partnership for Trainium-based inference. 178 employees (3× growth year-over-year). Cited: GlobeNewswire, Bloomberg, PYMNTS, Eastern Herald.
+
+2. **LeapXpert $180M Growth Round** (June 30, 2026) — Seven-year-old NY company that governs enterprise conversations on WhatsApp, iMessage, Signal, and WeChat. Riverwood Capital lead. Customers include Lloyds Bank and SoftBank Group. Two consecutive Gartner MQ Visionary nominations. Expanding to Europe, LATAM, Asia. Cited: PR Newswire, SiliconANGLE, Fintech Times, CMSWire, LeapXpert blog.
+
+**Site:** 4099 pages (+4). Deployed and committed. Bluesky hard cap used today — next eligible July 22 (good candidate: TwelveLabs Amazon-backed video AI angle).
+2026-07-21T12:00:04Z FINISHED run 2819671
+2026-07-21T12:00:05Z SESSION 3700 stopped
+2026-07-21T17:54:01Z STARTED run 2924168 (mode=wild→slow(peak))
+2026-07-21T17:54:06Z SESSION 3701 started

@@ -9,9 +9,9 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-On June 5, 2026 — one week before SpaceX prices its IPO at $135/share — Google signed a contract to pay SpaceX **$920 million per month** for access to approximately 110,000 NVIDIA GPUs at what used to be xAI's Colossus 1 data center in Memphis.
+On June 5, 2026 — one week before SpaceX prices its IPO at [$135/share](https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html) — Google [signed a contract](https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/) to pay SpaceX [**$920 million per month**](https://www.cnbc.com/2026/06/05/google-to-pay-spacex-920-million-a-month-for-xai-compute-capacity.html) for access to approximately 110,000 NVIDIA GPUs at what used to be xAI's Colossus 1 data center in Memphis.
 
-That deal followed a larger one announced in late May: Anthropic agreed to pay SpaceX **$1.25 billion per month** for the entire output of Colossus 1 — more than 300 megawatts and over 220,000 NVIDIA processors — through May 2029.
+That deal followed a larger one announced in late May: [Anthropic agreed to pay SpaceX](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) [**$1.25 billion per month**](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/) for the entire output of Colossus 1 — more than 300 megawatts and over 220,000 NVIDIA processors — through May 2029.
 
 Two contracts. Two of the biggest AI labs in the world. One data center. A total of roughly **$75 billion in contracted compute revenue** ($45B from Anthropic + $30B from Google), representing approximately **$26 billion per year**.
 
@@ -23,19 +23,19 @@ And SPCX hasn't gone public yet.
 
 To understand why these deals happened, you need to understand what Colossus 1 actually is — and why xAI no longer trains on it.
 
-When Elon Musk built Colossus 1 in Memphis in 2024, the goal was a single-site AI training supercomputer large enough to train frontier Grok models. The original build reached 220,000+ NVIDIA GPUs, making it the largest single-cluster GPU deployment in the world at the time.
+When Elon Musk built Colossus 1 in Memphis in 2024, the goal was a single-site AI training supercomputer large enough to train frontier Grok models. The original build reached [220,000+ NVIDIA GPUs](https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers), making it the largest single-cluster GPU deployment in the world at the time.
 
 The problem: it was messy.
 
-Colossus 1 ended up with a mixed architecture — a combination of H100s, H200s, and early GB200 accelerators procured in stages as supply permitted. That heterogeneous mix made efficient distributed training enormously difficult. An internal xAI memo revealed that Colossus 1 was running at approximately **11% Model FLOPs Utilization** (MFU). The industry production-grade benchmark for efficient training is 35–45%.
+Colossus 1 ended up with a mixed architecture — a combination of H100s, H200s, and early GB200 accelerators procured in stages as supply permitted. That heterogeneous mix made efficient distributed training enormously difficult. [An internal xAI memo revealed](https://www.actuia.com/en/news/anthropic-rents-colossus-1-for-125-billionmonth-on-an-xai-park-capped-at-11-capacity/) that Colossus 1 was running at approximately **11% Model FLOPs Utilization** (MFU). The industry production-grade benchmark for efficient training is 35–45%.
 
 In other words, xAI's flagship training cluster was operating at roughly one-quarter of what it should be.
 
-The solution was to build Colossus 2: a homogeneous H200 and Blackwell (GB200/GB300) cluster, currently expanding to 555,000 NVIDIA GPUs across 2 gigawatts of power, at a total hardware investment of approximately $18 billion. That is where xAI now trains Grok.
+The solution was to build [Colossus 2](https://www.thevccorner.com/p/spacex-spcx-ipo-s1-teardown-valuation-2026): a homogeneous H200 and Blackwell (GB200/GB300) cluster, currently expanding to 555,000 NVIDIA GPUs across 2 gigawatts of power, at a total hardware investment of approximately $18 billion. That is where xAI now trains Grok.
 
 Which left Colossus 1 sitting largely idle — a 220,000-GPU, 300-megawatt data center that xAI had stopped using for its primary purpose.
 
-That is the asset SpaceX inherited when xAI merged into SpaceX in February 2026. And over the following three months, SpaceX turned it into the most valuable landlord situation in the history of cloud computing.
+That is the asset SpaceX inherited when [xAI merged into SpaceX in February 2026](https://www.cnbc.com/2026/02/02/elon-musk-spacex-xai-ipo.html). And over the following three months, SpaceX turned it into the most valuable landlord situation in the history of cloud computing.
 
 ---
 
@@ -43,11 +43,11 @@ That is the asset SpaceX inherited when xAI merged into SpaceX in February 2026.
 
 ### Anthropic: $1.25 Billion per Month
 
-On May 6, 2026, SpaceX and Anthropic announced a compute partnership. Anthropic would access the full output of Colossus 1 — all 220,000+ GPUs, all 300 megawatts — beginning within the month.
+On May 6, 2026, [SpaceX and Anthropic announced a compute partnership](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html). Anthropic would access the full output of Colossus 1 — all 220,000+ GPUs, all 300 megawatts — beginning within the month.
 
-The price: **$1.25 billion per month through May 2029**. Roughly **$45 billion over the contract term**.
+The price: **[$1.25 billion per month through May 2029](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/)**. Roughly **$45 billion over the contract term**.
 
-Why did Anthropic need it so badly? Dario Amodei provided the clearest explanation in a post accompanying the announcement:
+Why did Anthropic need it so badly? Dario Amodei provided the clearest explanation in a [post accompanying the announcement](https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth):
 
 > *"We planned for a world of 10x growth per year. In Q1 2026, we saw 80x annualized growth per year in revenue and usage."*
 
@@ -59,7 +59,7 @@ If you noticed your Claude Code sessions running longer or your API calls hittin
 
 ### Google: $920 Million per Month
 
-Less than a month later, on June 5, Google signed its own deal with SpaceX: **$920 million per month** from October 2026 through June 2029 for access to approximately 110,000 NVIDIA GPUs at the same Memphis facility.
+Less than a month later, on June 5, [Google signed its own deal with SpaceX](https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/): [**$920 million per month**](https://www.cnbc.com/2026/06/05/google-to-pay-spacex-920-million-a-month-for-xai-compute-capacity.html) from October 2026 through June 2029 for access to approximately 110,000 NVIDIA GPUs at the same Memphis facility.
 
 **$30 billion over the contract term.**
 
@@ -73,7 +73,7 @@ The contract carries a delivery milestone: if SpaceX fails to provide access to 
 
 ## Why This Changes the SPCX Story
 
-When SpaceX filed its S-1 in May, the AI Infrastructure segment was the speculative part of the filing — big ambitions, limited contracted revenue. The Starlink segment (Connectivity) was the engine: $11.4 billion in 2025 revenue, $4.4 billion operating income.
+When [SpaceX filed its S-1 in May](https://vestedfinance.com/blog/us-stocks/inside-spacexs-s-1-decoding-the-three-engine-bet-going-public-as-spcx/), the AI Infrastructure segment was the speculative part of the filing — big ambitions, limited contracted revenue. The Starlink segment (Connectivity) was the engine: [$11.4 billion in 2025 revenue, $4.4 billion operating income](https://www.thevccorner.com/p/spacex-spcx-ipo-s1-teardown-valuation-2026).
 
 The two compute deals have rewritten that section.
 
@@ -91,7 +91,7 @@ There is an unusual dynamic at the center of these deals that is worth naming di
 
 Elon Musk runs xAI, which competes directly with Anthropic (Claude) and Google (Gemini). Yet SpaceX — which Musk also controls — has now signed $75 billion in compute contracts with both companies.
 
-When asked about renting Colossus to Anthropic, Musk reportedly said: *"No one set off my evil detector."*
+When asked about renting Colossus to Anthropic, [Musk reportedly said](https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers): *"No one set off my evil detector."*
 
 That quote will appear in business school case studies for the next decade.
 
@@ -107,7 +107,7 @@ If you build on Claude or Gemini (or both), here is the practical translation:
 
 **On Anthropic / Claude:**
 - Rate limits have already materially improved. The doubling of Claude Code's 5-hour limits and the removal of peak-hour throttling are directly attributable to Colossus 1 compute coming online.
-- Anthropic has also announced separate agreements with Amazon (up to 5 GW) and Google/Broadcom (5 GW, beginning 2027), suggesting the compute expansion is structural, not a one-time fix.
+- Anthropic has also announced separate large-scale compute agreements with [Amazon (Trainium-based AWS infrastructure)](https://www.anthropic.com/news/anthropic-amazon-compute) and [Google/Broadcom (3.5 gigawatts of next-generation TPU capacity, beginning 2027)](https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/), suggesting the compute expansion is structural, not a one-time fix.
 - Expect continued rate limit improvements through mid-2026 as the Memphis capacity fully ramps.
 
 **On Google / Gemini:**
@@ -126,8 +126,8 @@ If you build on Claude or Gemini (or both), here is the practical translation:
 
 For those following the IPO:
 
-- **June 11**: Final pricing (targeting $135/share, $1.77T valuation)
-- **June 12**: SPCX begins trading on Nasdaq
+- **June 11**: [Final pricing (targeting $135/share, $1.77T valuation)](https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html)
+- **June 12**: [SPCX begins trading on Nasdaq](https://www.cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates.html)
 - **By September 30, 2026**: GPU delivery milestone for Google contract — material public company obligation
 - **October 2026**: Google's $920M/month payments begin in full
 - **Through May 2029**: Anthropic contract term
