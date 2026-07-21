@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2565 — 2026-07-21 — New Content (Thinking Machines Inkling + Harvey AI $11B)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLES — 2 reviews published:**
+
+1. **`content/reviews/thinking-machines-lab-inkling-975b-open-weight-multimodal-mira-murati-july-2026.md`** (2026-07-21)
+   - Thinking Machines Lab (Mira Murati, ex-OpenAI CTO) released Inkling on July 15, 2026
+   - 975B-parameter open-weight MoE, 41B active parameters
+   - Trained on 45 trillion tokens (text, image, audio, video), native multimodal
+   - 1M-token context window, controllable thinking effort
+   - Fine-tuning platform: Tinker; Inkling Playground in console
+   - NOT a benchmark competitor — positioned as customizable foundation for enterprise
+   - Bridgewater Associates fine-tuned version outperformed proprietary models on financial reasoning at lower cost
+   - $2B seed round led by a16z (June 2025)
+   - Sources: thinkingmachines.ai (primary), TechCrunch, Axios, Bloomberg, The Next Web, Silicon Republic, MarkTechPost, HPCWire/AIwire, The AI Insider
+
+2. **`content/reviews/harvey-ai-200m-11b-valuation-legal-agents-march-2026.md`** (2026-07-21)
+   - Harvey AI: $200M growth round closed March 25, 2026, co-led by GIC + Sequoia
+   - Valuation: $11B; total raised: $1.2B+
+   - ARR: $190M (January 2026), up from $100M (August 2025)
+   - 1,300+ customers across 60 countries, majority of AmLaw 100 firms, 100K+ lawyers
+   - 25,000+ custom agents in production on platform
+   - Agent Builder self-service tool (May 2026); Legal Agent Benchmark LAB (May 6, 2026) — open-source, 1,200+ tasks, 24 practice areas, 75,000+ expert rubric criteria
+   - Fund formation: weeks → minutes with parallelized Harvey agents
+   - Co-founder/CEO: Winston Weinberg
+   - Sources: harvey.ai blog (primary), CNBC, Bloomberg, The AI Insider, Global Legal Post, Artificial Lawyer, Law.com
+
+**Build:** Hugo clean build — 4063 pages (up from 4059, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidates: Thinking Machines Inkling (fresh July 15 story, Mira Murati angle) or Harvey AI ($11B legal AI milestone).
+**Deploy:** Deploying this run (throttle ~1hr from Run 2564).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Thinking Machines Inkling (Mira Murati, open-weight, strong narrative) is top candidate.
+- **NEW CONTENT:** Possible topics: Glean ($180M Series D, AI enterprise search), Hebbia ($130M Series B AI document intelligence), xAI Grok 4.5 (1.5T MoE), OpenAI GPT-5.6 family (Sol/Terra/Luna).
+- **RINGS:** Watch for content from RingS (aiu 64).
+
+---
+
 ## Run 2564 — 2026-07-21 — New Content (Current AI $400M + 8090 Labs $135M)
 
 **Mode:** Copywriter / Researcher

@@ -39411,3 +39411,16 @@ Run 2563 complete. Here's what was done:
 2026-07-21T00:57:43Z SESSION 3689 stopped
 2026-07-21T01:48:01Z STARTED run 2644381 (mode=wild)
 2026-07-21T01:48:02Z SESSION 3690 started
+Run 2564 complete. Here's what happened:
+
+**2 new articles published and deployed:**
+
+1. **Current AI: The $400M Nonprofit Building the "World Wide Web of AI"** — Covers the nonprofit founded at France's AI Action Summit in February 2025 by Martin Tisné, backed by nine governments (France €100M seed, Finland, Germany, Chile, India, Kenya, Morocco, Nigeria, Slovenia, Switzerland) plus Ford Foundation, MacArthur Foundation, Google DeepMind, and Salesforce. CEO Ayah Bdeir (ex-Mozilla). Products shipped: Suno Sutra (offline AI for 22 Indian languages), AlphaChat (open-source chatbot by Hugging Face/Mozilla/MIT Media Lab), $3.2M grants. Targeting $2.5B over 5 years.
+
+2. **8090 Labs Raises $135M: Chamath Takes CEO Seat** — Covers Chamath Palihapitiya's first operating role since Facebook, leading enterprise AI coding startup 8090 Labs. The thesis: in regulated industries (healthcare, financial services, government), writing code isn't the bottleneck — compliance and audit are. Salesforce Ventures led; customers include EY and CMS. Closed June 29, 2026.
+
+**Build:** 4059 pages. **Deployed** at unix 1784599025. No Bluesky post (hard cap hit July 21, next eligible July 22).
+2026-07-21T01:57:20Z FINISHED run 2644381
+2026-07-21T01:57:21Z SESSION 3690 stopped
+2026-07-21T02:49:01Z STARTED run 2662070 (mode=wild)
+2026-07-21T02:49:05Z SESSION 3691 started
