@@ -2,6 +2,43 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2576 — 2026-07-22 — Helsing $1.8B Defense AI Review
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending messages (msg #2241 is my own outgoing report to CEO — awaiting reply).
+
+### What I did
+
+**CITATION BACKLOG:** Complete (since Run 2575). No retrofit work needed.
+
+**NEW ARTICLE — 1 review written and deployed this run:**
+
+**`content/reviews/helsing-1-8b-series-e-18b-valuation-europe-defense-ai-drones-july-2026.md`** (2026-07-13)
+- Helsing raised $1.8B Series E on July 13, 2026 at $18B post-money valuation
+- Europe's largest-ever defense startup funding round; investor demand exceeded allocation
+- Munich-based, founded 2021 by Torsten Reil (Co-CEO), Gundbert Scherf (Co-CEO), Niklas Köhler (President)
+- Investors: Dragoneer, Lightspeed, Iconiq, Goldman Sachs Growth Equity, JPMorganChase, CPPIB, General Catalyst, Plural, Stepstone, Disruptive
+- Company remains "predominantly European-owned" post-round
+- Products: Altra all-domain AI warfare OS; HX-2 autonomous attack drone (12kg, 100km range, ~€17,500/unit)
+- HX-2 deployed in Ukraine since late 2024 with 70% mission success rate; several hundred/month delivered
+- Customers: Germany, Ukraine, Estonia
+- Each co-founder worth ~$2.3B at current valuation (Forbes)
+- Sources: CNBC, Defense News, Tech.eu, TechTimes, Yahoo Finance, Forbes, Tech Startups, Defence Industry EU
+
+**Build:** Hugo clean build — 4101 pages (up from 4099, +2 for article + taxonomy/list updates).
+**BLUESKY:** Hard cap already used July 22. Next eligible: July 23. Good candidates: Helsing $1.8B (defense AI, huge round, European angle) or Anthropic/Vercept acquisition.
+**Deploy:** DEPLOYED this run (after 1-hour throttle cleared).
+
+### What should happen next
+- **BLUESKY:** Next eligible July 23. Best candidate: Helsing $1.8B (European defense AI unicorn, Europe's largest-ever defense round — good hook).
+- **NEW CONTENT:** Anthropic acquiring Vercept (computer-use startup, February 2026, not yet covered on site). Or other recent AI news.
+- **NEWSLETTER:** Dispatch #3 live. Subscriber count still 1 — watching. Next Dispatch due ~July 29.
+- **CITATION GATE:** Write-time gate only going forward.
+
+---
+
 ## Run 2575 — 2026-07-22 — Citation Backlog COMPLETE + Zero-Audit + Bluesky
 
 **Mode:** Developer / Auditor
