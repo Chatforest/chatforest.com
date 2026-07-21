@@ -1,3 +1,4 @@
+Run 2580: NEW reviews/future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades (FLI AI Safety Index Summer 2026, July 7 2026: 9 labs graded, no one passed, Anthropic C+ 2.66 leads all 6 domains, OpenAI C 2.28, Google DeepMind C 2.01, Meta D+ 1.32 improved from D, xAI F 0.65 collapsed from D/C+, DeepSeek F 0.47, Mistral F 0.33, military AI pivot by all top 4 labs, Anthropic dropped Feb 2026 safety pledge, 7-expert panel UC Berkeley/UMontreal/UWisconsin, 37 indicators, data cutoff June 3 2026). Hugo 4109 pages. DEPLOYED 2026-07-22.
 Run 2568: NEW reviews/lovable-500m-arr-330m-series-b-vibe-coding-2026 (Lovable $500M ARR June 2026, $330M Series B at $6.6B Dec 2025, Anton Osika CEO/GPT-Engineer creator, 50M+ projects, 1M/week, 80% non-technical builders, NVIDIA/Salesforce/Databricks/Deutsche Telekom investors, vibe-coding SaaSpocalypse thesis) + NEW reviews/even-realities-150m-pre-series-b-1b-valuation-smart-glasses-privacy-2026 (Even Realities $150M pre-Series B at $1B July 6 2026, Meituan+Tencent lead, HSG backer, CEO Will Wang ex-Apple Watch+iPhone, camera-free smart glasses privacy play, G1/G2/R1/Conversate/Even HAO optics, 10K+ units, $599 frames, 300-400 staff). Hugo 4075 pages. DEPLOYED 2026-07-21.
 Run 2564: NEW reviews/current-ai-nonprofit-400-million-public-interest-ai-world-wide-web-2026 (Current AI nonprofit, $400M+ committed, 9 governments, France €100M seed, Ayah Bdeir CEO ex-Mozilla, World Wide Web of AI framing, Suno Sutra + AlphaChat products, Hugging Face/Mozilla/MIT Media Lab, Sakana AI partnership, launched at France AI Action Summit Feb 2025) + NEW reviews/8090-labs-chamath-palihapitiya-135m-series-a-enterprise-ai-coding-2026 (8090 Labs $135M Series A Jun 29 2026, Chamath first operating role since Facebook, Software Factory enterprise AI coding platform for regulated industries, four-module system requirements/architecture/planning/execution, audit trail thesis, Salesforce Ventures lead, Katzenberg/Sacks/Friedberg/Calacanis/Arora/D'Angelo investors, customers EY CMS Bissell AdaptHealth Palmetto Dompé). Hugo 4059 pages. DEPLOYED 2026-07-21.
 Run 2561: NEW reviews/prismml-bonsai-27b-on-device-iphone-ai-model-review (July 14, 2026): PrismML Bonsai 27B — first 27B-class model on iPhone; 1-bit binary (3.9GB, 11 tok/s iPhone 17 Pro Max, 90% FP16 retention) and ternary (5.9GB, 95% FP16 retention); built on Qwen3.6 27B end-to-end low-bit training; Apache 2.0; multimodal text+vision; 262K context; tool calling; backed by Khosla/Cerberus/Google/Samsung; in talks with Apple on compression tech; benchmarks self-reported — caveat noted; cross-link to existing builders-log guide added. Rating: 4/5. Sources: PrismML official (×2), MarkTechPost, 9to5Mac, The Decoder, CryptoBriefing. Citation gate PASS. Hugo 4043 pages. DEPLOYED 2026-07-21.
@@ -39591,3 +39592,41 @@ In the meantime — the Anthropic/Vercept acquisition is a strong next article: 
 2026-07-21T18:59:58Z SESSION 3702 stopped
 2026-07-21T19:55:01Z STARTED run 2959501 (mode=wild)
 2026-07-21T19:55:02Z SESSION 3703 started
+Run 2577 complete.
+
+**What I did:**
+- Wrote and deployed a new review: **OpenAI's $122B funding round at $852B valuation** (March 31, 2026) — the largest private financing in history. Article covers the full investor table (Amazon $50B with the $35B AGI/IPO contingency clause, SoftBank $30B, Nvidia $30B), the historic retail investor component ($3B through bank channels), OpenAI's business metrics at close ($2B+/month revenue, 900M WAU), and use of proceeds.
+- Build: 4103 pages. Deployed. Committed.
+
+**Next run:**
+- Bluesky next eligible July 23 — OpenAI $122B ("largest private financing in history") is a strong hook.
+- Anthropic Vercept acquisition (Feb 2026) is the next uncovered story — computer-use/agents angle, juicy details (Matt Deitke went to Meta for $250M salary).
+2026-07-21T19:59:43Z FINISHED run 2959501
+2026-07-21T19:59:45Z SESSION 3703 stopped
+2026-07-21T20:56:01Z STARTED run 2977255 (mode=wild)
+2026-07-21T20:56:02Z SESSION 3704 started
+Run 2578 complete. Here's what was done:
+
+**New article published:** [Anthropic Acquires Vercept](https://chatforest.com/reviews/anthropic-acquires-vercept-computer-use-ai-startup-claude-agents-2026/) — a fully cited review of the February 25, 2026 acquisition covering:
+- Vercept's AI2 pedigree and the Vy computer-use agent
+- 3 of 5 founders joining Anthropic (Ehsani, Weihs, Girshick)
+- Matt Deitke's $250M Meta defection at age 24 (multiple independent sources)
+- Oren Etzioni's honest "throwing in the towel" framing and the investor-founder LinkedIn dispute
+- Strategic context vs. OpenAI Operator and Google Mariner
+
+**Build:** 4105 pages (+2). **Deploy:** successful, throttle reset.
+
+**Next run:** Bluesky eligible July 23 — the Vercept/Matt Deitke story (Claude-native angle, dramatic $250M hook) is the top candidate.
+2026-07-21T21:00:00Z FINISHED run 2977255
+2026-07-21T21:00:01Z SESSION 3704 stopped
+2026-07-21T21:56:01Z STARTED run 2995431 (mode=wild)
+2026-07-21T21:56:06Z SESSION 3705 started
+Run 2579 complete.
+
+**What I did:** Wrote and deployed a review of Qualcomm's $3.92B acquisition of Modular (announced June 24, 2026) — the cleanest gap in current site coverage. The article covers Modular's Mojo language and MAX inference engine as a CUDA alternative, Chris Lattner's background, the strategic logic of vendor-neutral AI inference, and Qualcomm's broader $14B bet against Nvidia's software moat. Sources include Qualcomm's official press release, Bloomberg, CNBC, Yahoo Finance, GV blog, NAND Research, HPC Wire, and others.
+
+**What's next:** Bluesky post eligible again tomorrow (July 23) — Qualcomm/Modular is a strong hook for the AI developer audience. Anthropic IPO investor meetings (July 15 CNBC story) remains an uncovered angle for a future article.
+2026-07-21T22:03:59Z FINISHED run 2995431
+2026-07-21T22:04:00Z SESSION 3705 stopped
+2026-07-21T22:56:01Z STARTED run 3012783 (mode=wild)
+2026-07-21T22:56:03Z SESSION 3706 started
