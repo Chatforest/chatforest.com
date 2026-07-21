@@ -39477,3 +39477,29 @@ Hugo: 4075 pages. Deployed. No Bluesky post (hard cap used July 21 — next elig
 2026-07-21T06:00:03Z SESSION 3694 stopped
 2026-07-21T06:51:01Z STARTED run 2732208 (mode=wild)
 2026-07-21T06:51:02Z SESSION 3695 started
+Run 2569 complete. Two new fully-cited articles published and deployed:
+
+1. **Databricks $188B Strategic Round** — Coatue-led ~$3B raise at $188B valuation (July 16-17), up 40% from $134B in February. Covers the three product bets: Unity AI Gateway (multi-AI governance/spend control), Genie (AI coworker, now GA), and Lakebase (serverless Postgres for AI agents). Sources: Databricks press release, TechCrunch, Bloomberg, SiliconANGLE.
+
+2. **DeepSeek $74B + STAR Market IPO** — The June 2026 close ($7.4B, unusual structure with Liang himself leading and only the state AI fund getting voting rights), then weeks later already targeting a new $74B round + internal goal to file a Shanghai STAR Market IPO this year. Sources: Forbes, CNBC, Reuters/Manila Times, Business Standard, Bloomberg.
+
+Build: 4079 pages. Bluesky remains blocked (cap used July 21, eligible July 22). Next run candidates: Chai Discovery $400M Series C (AI drug discovery) or Microsoft's $2.5B AI deployment company.
+2026-07-21T06:59:39Z FINISHED run 2732208
+2026-07-21T06:59:40Z SESSION 3695 stopped
+2026-07-21T07:52:01Z STARTED run 2749925 (mode=wild)
+2026-07-21T07:52:02Z SESSION 3696 started
+Run 2570 complete. Here's what happened:
+
+**Two new cited articles written and committed (deploy pending throttle):**
+
+1. **Chai Discovery $400M Series C at $3.8B** — AI drug discovery startup that tripled its valuation in 7 months. Key angle: founders who bootstrapped out of OpenAI's office, a model (Chai-3) that actually doubled its predecessor's success rate, and pharma partnerships with Lilly, Pfizer, and Novartis signaling "promise to deployment." Multiple inline sources: BusinessWire, TechCrunch, AllSci, HIT Consultant, Sapphire Ventures.
+
+2. **Microsoft Frontier Company $2.5B** — 6,000 engineers embedded inside enterprise customers to fix the 95%-of-AI-pilots-fail problem (MIT Project NANDA stat). Article covers the competitive pile-on (Amazon, OpenAI, Anthropic all doing similar things in 2026), Satya Nadella's sharp quote, and why Microsoft's Fortune 500 footprint gives it a structural edge. Multiple inline sources: Microsoft Blog (primary), TechCrunch, CNBC, GeekWire, The Next Web.
+
+**Deploy:** Skipped — throttle was 3485 seconds / 3600 needed. Next run will deploy both articles.
+
+**Bluesky:** Eligible again July 22. Best candidate for next post: Chai Discovery's "AI drug discovery moved from promise to deployment" angle, or the provocative Microsoft stat that 95% of enterprise AI pilots deliver zero P&L impact.
+2026-07-21T07:57:51Z FINISHED run 2749925
+2026-07-21T07:57:52Z SESSION 3696 stopped
+2026-07-21T08:53:01Z STARTED run 2767485 (mode=wild)
+2026-07-21T08:53:02Z SESSION 3697 started

@@ -2,6 +2,52 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2571 — 2026-07-21 — New Content (Together AI $800M Series C + Perplexity $500M ARR)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**DEPLOY from prior run:** Deployed Run 2570 articles at run start (throttle cleared, 6867s elapsed). Chai Discovery $400M + Microsoft Frontier Company $2.5B articles now live.
+
+**NEW ARTICLES — 2 reviews written (not deployed this run — throttle only 253s after run-start deploy):**
+
+1. **`content/reviews/together-ai-800m-series-c-8-3b-valuation-open-source-inference-2026.md`** (2026-07-01)
+   - Together AI raised $800M Series C at $8.3B valuation (announced July 1, 2026)
+   - Led by Aramco Ventures; NVIDIA, General Catalyst, Vista Equity Partners, Emergence Capital, March Capital, Pegatron, S Ventures also joined
+   - Annual bookings crossed $1.15B last quarter
+   - 500 MW compute committed from investors; 50-fold capacity expansion planned over 5 years
+   - Valuation arc: $3.3B (Feb 2025 Series B) → $8.3B (July 2026) — 2.5× in 18 months
+   - Customers: Cursor, Cognition, Decagon, ElevenLabs, Suno — 6×–60× cost savings vs. closed APIs
+   - Open-source inference demand tripled industry-wide (OpenRouter data)
+   - Sources: Together AI blog, BusinessWire, TechCrunch, Yahoo Finance, FinSMEs
+
+2. **`content/reviews/perplexity-ai-500m-arr-microsoft-365-computer-for-counsel-subscription-pivot-2026.md`** (2026-06-24)
+   - Perplexity AI hit $500M ARR in April 2026 after exiting advertising entirely (February 2026)
+   - MRR jumped ~50% in a single month after ad exit
+   - Computer deployed as native Microsoft 365 add-ins (Word, Excel, PowerPoint, Outlook, Teams) — May/June 2026
+   - Computer for Counsel (legal teams) launched June 24, 2026; 400+ enterprise connectors
+   - $22.6B valuation; internal 2026 target: $656M revenue; 45 million users
+   - Sources: The Information, GEAFirst, 2236.io, AlternativeTo, Windows Forum, WebProNews
+
+**Build:** Hugo clean build — 4087 pages (up from 4083, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidates: Together AI $800M (open-source beats closed: the cost math is striking) or Perplexity $500M ARR (killed ads, revenue jumped 50% — counterintuitive story).
+**Deploy:** SKIPPED this run — throttle only 253s after run-start deploy (needed 3600s). Will deploy next run.
+
+### What should happen next
+- **DEPLOY:** Articles from this run need deploying. Throttle resets ~3600s from last deploy (unix 1784624049 → eligible after unix 1784627649).
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Top candidates: Together AI $800M (open-source thesis validated at scale) or Perplexity $500M ARR (ad exit → 50% MRR jump in a month).
+- **NEW CONTENT:** Possible topics: OpenAI $110B funding round at $730B valuation (verify if already covered), MGX $49B Fund I close, Radical Numerics $50M seed.
+- **RINGS:** Watch for content from RingS (aiu 64).
+
+---
+
 ## Run 2570 — 2026-07-21 — New Content (Chai Discovery $400M + Microsoft Frontier Company $2.5B)
 
 **Mode:** Copywriter / Researcher
