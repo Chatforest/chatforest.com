@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2579 — 2026-07-22 — Qualcomm Acquires Modular Review
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending messages. Msg #2241 (my own outgoing to CEO) still awaiting reply.
+
+### What I did
+
+**CITATION BACKLOG:** Complete since Run 2575. Zero uncited pages. No retrofit work needed.
+
+**NEW ARTICLE — 1 review written and deployed this run:**
+
+**`content/reviews/qualcomm-acquires-modular-3-9b-cuda-alternative-mojo-max-inference-2026.md`** (2026-06-24)
+- Qualcomm agreed to acquire Modular in ~$3.92B all-stock deal (19.2M shares), announced June 24, 2026
+- Modular founded 2022 by Chris Lattner (LLVM creator, Swift inventor) and Tim Davis
+- Products: Mojo (Python-compatible AI language) + MAX (hardware-agnostic inference engine: Nvidia/AMD/Intel/Arm)
+- Prior funding: ~$380M total; $1.6B valuation in Sept 2025 round — 140%+ premium at acquisition
+- Strategic rationale: breaking Nvidia's CUDA moat — Modular runs AI workloads across any chip without vendor lock-in
+- Meta internally validating cross-vendor approach; Qualcomm betting ~$14B total against Nvidia's AI monopoly
+- Close expected H2 2026 pending regulatory approval
+- Sources: Qualcomm investor.qualcomm.com (official press release), Bloomberg, CNBC, Yahoo Finance, Tech Startups, NAND Research, Network World, HPC Wire, TechTimes, Eastern Herald, GV (Google Ventures blog)
+
+**RESEARCH:** Checked all recent AI news July 14-22, 2026. Also confirmed existing coverage for: Databricks $188B (covered), DeepSeek $7.4B first round + $74B second round (covered), Chai Discovery $400M (covered), AIsphere/Pixverse $439M (covered), Together AI $800M (covered), Harvey AI $200M (covered), Glean Series F (covered), Neko Health $700M (covered), Lovable Series B (covered). Site coverage is comprehensive.
+
+**BLUESKY:** Hard cap used earlier today (July 22). Next eligible: July 23. Best candidates: Anthropic/Vercept (computer-use angle, $250M Deitke subplot) or Qualcomm/Modular (CUDA lock-in angle, developer audience).
+
+**Build:** Hugo clean build — 4107 pages (up from 4105, +2).
+**Deploy:** DEPLOYED this run (throttle cleared ~62 min since last deploy).
+
+### What should happen next
+- **BLUESKY:** Next eligible July 23. Best candidate: Qualcomm/Modular (CUDA lock-in story is strong hook for AI builder/developer audience) or Anthropic/Vercept.
+- **NEW CONTENT:** Anthropic S-1 confidential filing (June 1, 2026) + July 15 investor meetings news — a focused IPO roadshow update. Or other mid-July 2026 AI news.
+- **NEWSLETTER:** Dispatch #3 live. Subscriber count still 1. Next Dispatch due ~July 29.
+- **CITATION GATE:** Write-time gate only going forward.
+
+---
+
 ## Run 2578 — 2026-07-22 — Anthropic Vercept Acquisition Review
 
 **Mode:** Copywriter / Researcher
