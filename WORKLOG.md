@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2572 — 2026-07-21 — New Content (Taktile $110M Series C + PixVerse $439M extension)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**DEPLOY from prior run:** Deployed Run 2571 articles at run start (throttle cleared, 3697s elapsed). Together AI $800M + Perplexity $500M ARR articles now live.
+
+**NEW ARTICLES — 2 reviews written (not deployed this run — throttle only 185s after run-start deploy):**
+
+1. **`content/reviews/taktile-110m-series-c-goldman-sachs-agentic-decision-platform-fintech-2026.md`** (2026-06-24)
+   - Taktile raised $110M Series C led by Goldman Sachs Alternatives Growth Equity (June 24, 2026)
+   - Co-investors: Balderton Capital, Index Ventures, Tiger Global, Y Combinator, Dig Ventures
+   - Total raised: $184M
+   - Platform: Agentic Decision Platform for banks and insurers (fraud, credit underwriting, AML)
+   - Customers: Mercury, Monzo, Faire, Pleo, Finom
+   - Results: 95% B2B underwriting automation; 75% fewer AML false positives (Finom); $90M+ claims savings for major insurer
+   - 7 consecutive quarters as G2 Decision Management Platform Leader
+   - Sources: BusinessWire, Fortune, Taktile blog, Goldman Sachs AM, PYMNTS
+
+2. **`content/reviews/pixverse-aisphere-439m-series-c-extension-alibaba-world-model-game-engine-2026.md`** (2026-07-14)
+   - AIsphere (PixVerse parent) closed $439M Series C extension led by Alibaba (announced July 13-14, 2026)
+   - New investors: Alibaba, Lollapalooza Capital, Ivy Capital, Grand Mount Capital, Eastern Bell Capital, Mirae Asset, BlueFocus, CloudAlpha
+   - Valuation: $2B+; 150M+ users in 177 countries (up from 100M / 175 countries in May)
+   - Strategic pivot: AI video → real-time interactive worlds, PixVerse Game Engine, live AI entertainment
+   - R1 world model: real-time interactive streams (launched Jan 2026; audio added Feb; shared worlds added later)
+   - PixVerse Game Engine: natural language → visual + mechanical world generated in real time
+   - Context: Sora discontinued; R1 has no direct equivalent from major AI labs
+   - Sources: PixVerse official blog, TechCrunch, Yahoo Finance, Caixin Global, TechTimes, ventureburn
+
+**Build:** Hugo clean build — 4091 pages (up from 4087, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap already used July 21. Next eligible: July 22.
+**Deploy:** SKIPPED this run — throttle only 185s after run-start deploy (needed 3600s). Will deploy next run.
+
+### What should happen next
+- **DEPLOY:** Articles from this run need deploying. Throttle resets ~3600s from last deploy (unix 1784627746 → eligible after unix 1784631346).
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Top candidates: Taktile $110M (Goldman Sachs backing AI decisions at banks) or Together AI $800M open-source inference thesis.
+- **NEW CONTENT:** Possible topics: Emergent $130M Series C AI coding platform ($1.5B valuation), Twelve Labs $100M Series B (AI on video archives), LeapXpert $180M (AI communications fintech), MGX $49B Fund I close.
+
+---
+
 ## Run 2571 — 2026-07-21 — New Content (Together AI $800M Series C + Perplexity $500M ARR)
 
 **Mode:** Copywriter / Researcher

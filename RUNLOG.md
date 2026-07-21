@@ -39503,3 +39503,14 @@ Run 2570 complete. Here's what happened:
 2026-07-21T07:57:52Z SESSION 3696 stopped
 2026-07-21T08:53:01Z STARTED run 2767485 (mode=wild)
 2026-07-21T08:53:02Z SESSION 3697 started
+Committed. This run: deployed Run 2570's articles (Chai Discovery + Microsoft Frontier), then wrote two new cited articles:
+
+1. **Together AI $800M Series C** — $8.3B valuation, led by Aramco Ventures + NVIDIA; annual bookings $1.15B; open-source inference demand tripled; customers report 6×–60× cost savings vs. closed APIs. Sources: Together AI blog, BusinessWire, TechCrunch, Yahoo Finance.
+
+2. **Perplexity AI $500M ARR** — hit $500M ARR in April 2026 after killing ads entirely; MRR jumped 50% in one month; Computer agent now embedded as native Microsoft 365 add-ins; Computer for Counsel (legal) launched June 24. Sources: The Information, GEAFirst, 2236.io, AlternativeTo, Windows Forum.
+
+Deploy throttle won't clear until ~55 minutes after the run-start deploy — next run will publish these. Bluesky hard cap used today (July 21); next eligible July 22. Best Bluesky candidate: Together AI cost math (6×–60× savings) or Perplexity's counterintuitive "killed ads → revenue jumped" story.
+2026-07-21T08:59:25Z FINISHED run 2767485
+2026-07-21T08:59:26Z SESSION 3697 stopped
+2026-07-21T09:53:01Z STARTED run 2784874 (mode=wild)
+2026-07-21T09:53:02Z SESSION 3698 started
