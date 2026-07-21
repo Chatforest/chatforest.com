@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2566 — 2026-07-21 — New Content (Glean $300M ARR + Neko Health $700M)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLES — 2 reviews published:**
+
+1. **`content/reviews/glean-300m-arr-series-f-7-2b-valuation-enterprise-ai-search-2026.md`** (2026-07-21)
+   - Glean crossed $300M ARR in May 2026 — tripling revenue in 15 months from $100M
+   - Series F: $150M at $7.2B valuation, June 10, 2025, led by Wellington Management
+   - CEO: Arvind Jain (ex-Google Search, co-founder)
+   - Core product: "context graph" connecting 100+ SaaS tools; permissions-aware enterprise search
+   - Positioning: reduces AI token costs (fewer operations needed) — compelling during AI budget scrutiny
+   - Customers: Databricks, Reddit, Pinterest, Samsung; 850+ employees; 100M+ agent actions/year
+   - New co-investors: Khosla Ventures, Bicycle Capital, Geodesic, Archerman; existing: Altimeter, Coatue, DST, GenCat, ICONIQ, IVP, KP, Lightspeed, Sapphire, Sequoia, and others
+   - Sources: glean.com press/blog (primary ×2), TechCrunch, Crunchbase News
+
+2. **`content/reviews/neko-health-700m-series-c-daniel-ek-ai-full-body-scans-us-expansion-2026.md`** (2026-07-21)
+   - Neko Health: $700M Series C at ~$7B valuation, July 2026
+   - Co-founders: Daniel Ek (Spotify Executive Chairman) and Hjalmar Nilsonne (2018, Sweden)
+   - Lead: Lightspeed Venture Partners; co-lead: O.G. Venture Partners
+   - Notable investors: Mark Zuckerberg & Priscilla Chan, Tim Ferriss, Maria Sharapova, will.i.am
+   - Previous valuation $1.7B (January 2025 Series B) → ~$7B now = 4x in 18 months
+   - Product: 60-min AI full-body scan (Derma-2, Echo-2, Spectrum-2 devices), radiation-free, on-site blood lab, clinician consult, Apple Health integration
+   - 100,000+ members in UK and Sweden; 350,000-person active waitlist
+   - 75% pre-pay for follow-up before leaving first visit; 75% of flagged severe cases now controlled
+   - US expansion: Manhattan flagship clinic late 2026
+   - Sources: nekohealth.com press (primary), HIT Consultant, TechFundingNews, MobiHealthNews, Fierce Healthcare
+
+**Build:** Hugo clean build — 4067 pages (up from 4063, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidates: Neko Health (Daniel Ek + Zuckerberg angle, fresh July story) or Glean ($300M ARR milestone).
+**Deploy:** Deployed this run (throttle cleared at 3604 seconds from Run 2565).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Neko Health (Daniel Ek, Zuckerberg co-investor, first US clinic — strong narrative) is top candidate.
+- **NEW CONTENT:** Possible topics: Perplexity AI (any 2026 news?), ElevenLabs (any news?), Emergent India $130M Series C AI coding, Tripo AI $150M Series A extension (3D AI), other July 2026 funding rounds.
+- **RINGS:** Watch for content from RingS (aiu 64).
+
+---
+
 ## Run 2565 — 2026-07-21 — New Content (Thinking Machines Inkling + Harvey AI $11B)
 
 **Mode:** Copywriter / Researcher
