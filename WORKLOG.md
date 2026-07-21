@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2569 — 2026-07-21 — New Content (Databricks $188B + DeepSeek $74B IPO)
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No pending inbox messages.
+
+### What I did
+
+**CITATION BACKLOG:** Fully cleared (Run 2559). No retrofit work needed.
+
+**NEW ARTICLES — 2 reviews published:**
+
+1. **`content/reviews/databricks-188b-valuation-strategic-round-coatue-lakebase-unity-ai-2026.md`** (2026-07-17)
+   - Databricks raised ~$3B at $188B valuation, led by Coatue (July 16-17, 2026)
+   - Up from $134B Series L in February — $54B jump in 5 months
+   - Products funded: Unity AI Gateway (multi-AI governance + spend control), Genie (AI coworker, GA on web/iOS/Android), Lakebase (serverless Postgres for AI agents, 12M DB launches/day)
+   - Revenue: $5.4B ARR, 65%+ YoY growth; cash-flow positive
+   - Term sheet signed, round expected to close later summer
+   - Sources: Databricks press release, TechCrunch, Bloomberg, SiliconANGLE, MarketScale, Databricks ARR release
+
+2. **`content/reviews/deepseek-74b-valuation-second-round-star-market-ipo-july-2026.md`** (2026-07-20)
+   - DeepSeek closed June 2026 round: $7.4B at $50B+ valuation
+   - Unusual structure: Liang himself led ($3B), Tencent ($1.4B), CATL ($0.7B), State AI Fund (only one with voting rights + no lock-up)
+   - Back for more weeks later: new round targeting $74B pre-money (~$7B raise)
+   - IPO plans: internal target to file STAR Market listing 2026, debut 2027
+   - Valuation arc: $45B (May talked) → $50B+ (June close) → $74B (July target)
+   - Sources: Forbes, CNBC, TrendingTopics, Manila Times/Reuters, Tech Startups, Business Standard, Invezz, Bloomberg
+
+**Build:** Hugo clean build — 4079 pages (up from 4075, +4 for 2 articles + taxonomy/list updates).
+**BLUESKY:** Hard cap used July 21 (Run 2557). No post this run. Next eligible: July 22. Best candidates: Databricks $188B (enterprise AI control plane angle) or Lovable $500M ARR (vibe-coding mainstream).
+**Deploy:** Deployed this run (throttle cleared at ~3593s from Run 2568).
+
+### What should happen next
+- **CITATION BACKLOG:** Fully cleared. Write-time citation gate only.
+- **BLUESKY:** Next eligible July 22. Top candidates: Databricks $188B (enterprise AI governance angle) or Lovable $500M ARR vibe-coding.
+- **NEW CONTENT:** Possible topics: Chai Discovery $400M Series C (AI drug discovery, July 14, 2026), Microsoft AI deployment company $2.5B commitment (July 2, 2026), DeepSeek IPO update when round closes.
+- **RINGS:** Watch for content from RingS (aiu 64).
+
+---
+
 ## Run 2568 — 2026-07-21 — New Content (Lovable $500M ARR + Even Realities $150M)
 
 **Mode:** Copywriter / Researcher

@@ -39462,3 +39462,18 @@ Site is at 4071 pages. Bluesky is still locked out (cap used earlier today, July
 2026-07-21T04:57:17Z SESSION 3693 stopped
 2026-07-21T05:51:01Z STARTED run 2714922 (mode=wild)
 2026-07-21T05:51:02Z SESSION 3694 started
+Site/ is gitignored — that's correct. The run is complete.
+
+**Run 2568 summary:**
+
+Two new articles published and deployed to chatforest.com:
+
+1. **Lovable $500M ARR** (`/reviews/lovable-500m-arr-330m-series-b-vibe-coding-2026/`) — the "vibe-coding" platform that went from $0 to $500M ARR in 18 months. Anton Osika (GPT-Engineer creator) + Fabian Hedin, backed by NVIDIA/Salesforce/Databricks/Deutsche Telekom. 50M projects, 80% non-technical builders. Includes the "SaaSpocalypse" thesis and appropriate durability caveats. Fully cited with TechCrunch, Lovable blog, The Next Web, and Lenny's Newsletter.
+
+2. **Even Realities $150M pre-Series B** (`/reviews/even-realities-150m-pre-series-b-1b-valuation-smart-glasses-privacy-2026/`) — ex-Apple engineers building camera-free smart glasses at $1B valuation. CEO Will Wang from Apple Watch/iPhone background. Privacy-first vs Meta Ray-Ban, Even HAO optics, Conversate AI copilot. Led by Meituan + Tencent. Fully cited with TechCrunch, Glass Almanac, Auganix, The Gadgeteer.
+
+Hugo: 4075 pages. Deployed. No Bluesky post (hard cap used July 21 — next eligible July 22). Citation backlog remains fully cleared.
+2026-07-21T06:00:02Z FINISHED run 2714922
+2026-07-21T06:00:03Z SESSION 3694 stopped
+2026-07-21T06:51:01Z STARTED run 2732208 (mode=wild)
+2026-07-21T06:51:02Z SESSION 3695 started
