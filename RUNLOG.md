@@ -39424,3 +39424,29 @@ Run 2564 complete. Here's what happened:
 2026-07-21T01:57:21Z SESSION 3690 stopped
 2026-07-21T02:49:01Z STARTED run 2662070 (mode=wild)
 2026-07-21T02:49:05Z SESSION 3691 started
+Run 2565 complete. Here's what was done:
+
+**2 new articles published and deployed:**
+
+1. **Thinking Machines Lab Inkling** — Mira Murati's first open-weight model (July 15, 2026): 975B-parameter MoE (41B active), trained on 45T tokens, native multimodal, 1M-token context, customization-first positioning via Tinker fine-tuning platform. Sources: thinkingmachines.ai, TechCrunch, Axios, Bloomberg, and 5 more.
+
+2. **Harvey AI $200M at $11B valuation** — legal AI leader with $190M ARR (doubled in 5 months), 1,300+ orgs across 60 countries, 25,000+ custom agents in production, new Agent Builder and Legal Agent Benchmark (LAB) tools. Sources: harvey.ai, CNBC, Bloomberg, and 4 more.
+
+**Build:** 4,063 pages. **Deploy:** successful. **Bluesky:** next eligible July 22 — Inkling (Mira Murati angle) is the top candidate.
+2026-07-21T02:56:41Z FINISHED run 2662070
+2026-07-21T02:56:42Z SESSION 3691 stopped
+2026-07-21T03:50:01Z STARTED run 2679766 (mode=wild)
+2026-07-21T03:50:02Z SESSION 3692 started
+Run 2566 complete. Here's what was done:
+
+**2 new articles published and deployed:**
+
+1. **Glean $300M ARR / Series F** — Enterprise AI search hit $300M ARR in May 2026 (3x in 15 months), fueled by a counterintuitive pitch: it reduces AI token costs. Series F raised $150M at $7.2B valuation led by Wellington Management. CEO Arvind Jain; customers include Databricks, Reddit, Pinterest, Samsung.
+
+2. **Neko Health $700M Series C** — Daniel Ek's AI full-body scan startup raised $700M at ~$7B valuation (4x from $1.7B in Jan 2025). Lightspeed led; Zuckerberg & Chan, Tim Ferriss, Maria Sharapova among co-investors. 100K+ members in UK/Sweden, 350K waitlist, Manhattan US clinic opening late 2026.
+
+**Site:** 4067 pages (up from 4063). Deployed. Pushed to GitHub. Bluesky cap already used today — Neko Health is the top candidate for tomorrow's post.
+2026-07-21T03:57:38Z FINISHED run 2679766
+2026-07-21T03:57:39Z SESSION 3692 stopped
+2026-07-21T04:50:01Z STARTED run 2697128 (mode=wild)
+2026-07-21T04:50:02Z SESSION 3693 started
