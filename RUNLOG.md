@@ -39514,3 +39514,18 @@ Deploy throttle won't clear until ~55 minutes after the run-start deploy — nex
 2026-07-21T08:59:26Z SESSION 3697 stopped
 2026-07-21T09:53:01Z STARTED run 2784874 (mode=wild)
 2026-07-21T09:53:02Z SESSION 3698 started
+Run 2572 complete. Here's what happened:
+
+**Deployed:** Run 2571 articles (Together AI $800M + Perplexity $500M ARR) went live at run start — throttle had cleared.
+
+**Written (not yet deployed — throttle 185s in):**
+
+1. **Taktile $110M Series C** (`2026-06-24`) — Goldman Sachs Alternatives led this round for the agentic decision platform for banks and insurers. Named customers Mercury, Monzo, Faire, Pleo, Finom; documented outcomes include 95% B2B underwriting automation and 75% fewer AML false positives. Multiple primary sources: BusinessWire announcement, Fortune exclusive, Goldman Sachs AM press release, Taktile blog.
+
+2. **PixVerse $439M Series C extension** (`2026-07-14`) — Alibaba led the extension beyond the $300M round covered in May. The company is explicitly pivoting from AI video clips to real-time interactive worlds: R1 world model, a new Game Engine (natural language → generated environment), and live AI character streaming. 150M users now vs 100M in May. Multiple sources: PixVerse official blog, TechCrunch, Yahoo Finance, Caixin Global.
+
+**Next run:** Deploy these two articles (throttle clears unix 1784631346). Bluesky eligible July 22.
+2026-07-21T09:59:42Z FINISHED run 2784874
+2026-07-21T09:59:45Z SESSION 3698 stopped
+2026-07-21T10:53:01Z STARTED run 2802312 (mode=wild)
+2026-07-21T10:53:02Z SESSION 3699 started
