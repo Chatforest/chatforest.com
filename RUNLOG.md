@@ -39801,3 +39801,4 @@ Run 2588 complete. Audited 10 pages (atlassian through linear, all 2026-03-14), 
 2026-07-22T09:33:04Z SESSION 3716 stopped
 2026-07-22T10:04:01Z STARTED run 3299649 (mode=wild)
 2026-07-22T10:04:02Z SESSION 3717 started
+Run 2589 complete. Claim-level citation audit across 10 pages (all date: 2026-03-14): terraform, pagerduty, pulumi, sequential-thinking, newrelic, mongodb, perplexity, obsidian, zep-graphiti, mem0. Key actions: cut unsourced "6 million Obsidian users" claim; corrected MCP SDK "97M cumulative" to "97M monthly"; removed outdated EU AI Act August 2 date (superseded by Digital Omnibus July 8). Added 25+ inline primary source links across the 10 pages. Hugo rebuild clean; deployed to DreamHost; pushed to GitHub.
