@@ -3,8 +3,83 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chatforest.com/ai/best-practices/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chatforest.com/</loc>
     <lastmod>2026-07-22T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/rag-best-practices-anthropic-claude/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/rag-best-practices-anthropic-claude/2026-07-22/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/rag-best-practices-anthropic-claude/2026-07-22/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/rag-best-practices-anthropic-claude/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/rag-best-practices-generic/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/rag-best-practices-generic/2026-07-22/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/rag-best-practices-generic/2026-07-22/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/rag-best-practices-generic/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/python-rag-best-practices/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/python-rag-best-practices/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/best-practices/python-rag-best-practices/2026-07-22/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatforest.com/ai/beginner/python-rag-best-practices/2026-07-22/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -169,21 +244,6 @@
   
   <url>
     <loc>https://chatforest.com/ai/best-practices/langgraph-orchestration-patterns/2026-07-20/</loc>
-    <lastmod>2026-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/ai/best-practices/</loc>
-    <lastmod>2026-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/ai/beginner/</loc>
-    <lastmod>2026-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chatforest.com/ai/</loc>
     <lastmod>2026-07-20T00:00:00+00:00</lastmod>
   </url>
   

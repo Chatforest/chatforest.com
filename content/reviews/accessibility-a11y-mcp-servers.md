@@ -1,10 +1,11 @@
 ---
 title: "Accessibility & a11y MCP Servers — Axe-Core, WCAG Auditing, Color Contrast, BrowserStack, and More"
 date: 2026-03-15T12:55:00+09:00
+sources_audited: 2026-07-23
 description: "Accessibility and a11y MCP servers are enabling AI-powered WCAG compliance testing and remediation. We reviewed 25+ servers across 7 subcategories."
 og_description: "Accessibility MCP servers: Deque axe MCP (official, 2 tools, paid), a11ymcp (86 stars, 6 tools, axe-core), mcp-accessibility-scanner (49 stars, 15+ tools, Playwright), BrowserStack MCP (139 stars, 20+ tools), WCAG reference server (20 tools), accessibility-agents v5.4.0 (276 stars), and new Android accessibility MCP. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Accessibility and a11y MCP servers for WCAG compliance testing, color contrast checking, code remediation, and enterprise accessibility scanning. The biggest development this cycle: **Community-Access/accessibility-agents surged to v5.4.0 (276 stars, +17%)**, migrating to a GitHub Skills installation model with native Go binaries, expanded document accessibility (Office formats, PDF), and deeper VS Code 1.113 integration. The community leader is ronantakizawa/a11ymcp (86 stars, 6,000+ downloads) with 6 tools covering URL testing, HTML snippet testing, rule exploration, color contrast, ARIA validation, and orientation lock detection. JustasMonkev's mcp-accessibility-scanner (49 stars) provides Playwright-powered multi-page crawling, keyboard navigation testing, and matrix scanning — the most comprehensive free scanner available. A new **Android Accessibility MCP Server** (benoberkfell) now fills part of the long-standing mobile testing gap using Android's Accessibility API. Deque's official axe MCP (4 stars, paid) and BrowserStack's MCP (139 stars, paid) represent the enterprise tier. Rating: 3.5/5."
+card_description: "Accessibility and a11y MCP servers for WCAG compliance testing, color contrast checking, code remediation, and enterprise accessibility scanning. The biggest development this cycle: **Community-Access/accessibility-agents surged to v5.4.0 (276 stars, +17%)**, migrating to a GitHub Skills installation model with native Go binaries, expanded document accessibility (Office formats, PDF), and deeper VS Code 1.113 integration. The community leader is ronantakizawa/a11ymcp (86 stars, 10,000+ downloads) with 6 tools covering URL testing, HTML snippet testing, rule exploration, color contrast, ARIA validation, and orientation lock detection. JustasMonkev's mcp-accessibility-scanner (49 stars) provides Playwright-powered multi-page crawling, keyboard navigation testing, and matrix scanning — the most comprehensive free scanner available. A new **Android Accessibility MCP Server** (benoberkfell) now fills part of the long-standing mobile testing gap using Android's Accessibility API. Deque's official axe MCP (4 stars, paid) and BrowserStack's MCP (139 stars, paid) represent the enterprise tier. Rating: 3.5/5."
 last_refreshed: 2026-05-20
 ---
 
@@ -12,7 +13,7 @@ Accessibility MCP servers are bringing automated WCAG compliance testing directl
 
 The landscape now spans seven areas: **full-page auditing** (axe-core-powered scanners), **WCAG reference & knowledge** (guideline lookup tools), **color contrast checking** (dedicated contrast ratio tools), **WCAG analysis & remediation** (code-level fixing), **enterprise integration** (Deque, BrowserStack), **color blindness simulation** (visual impairment previews), and **dual-engine testing** (multiple accessibility engines).
 
-The headline findings this cycle: **Community-Access/accessibility-agents shipped five major releases** (v5.0.0 through v5.4.0) in 30 days, jumping from 236 to **276 stars (+17%)** — the highest velocity of any project in the category. The v5.x series migrated to a GitHub Skills installation model with **native Go binaries**, expanded document accessibility coverage (DOCX, XLSX, PPTX, PDF, EPUB, Markdown), and deepened VS Code 1.113 integration. **Three competing free axe-core scanners** still dominate open-source adoption — ronantakizawa/a11ymcp (86 stars, 6,000+ downloads), JustasMonkev's mcp-accessibility-scanner (49 stars, 15+ tools), and priyankark/a11y-mcp (44 stars). **The most capable free scanner is JustasMonkev's**, with Playwright-based multi-page crawling, keyboard navigation testing, and matrix scanning across viewport variants. Deque's official axe MCP (dequelabs/axe-mcp-server-public, 4 stars) and BrowserStack's MCP (139 stars) remain the paid enterprise tier. **A new Android Accessibility MCP Server** (benoberkfell) now provides AI-driven accessibility testing for Android apps via the Accessibility API — the first server to address the mobile testing gap this review has flagged since launch. **The biggest remaining gaps**: iOS VoiceOver testing, screen reader emulation, and VPAT/ACR generation remain unaddressed.
+The headline findings this cycle: **Community-Access/accessibility-agents shipped five major releases** (v5.0.0 through v5.4.0) in 30 days, jumping from 236 to **276 stars (+17%)** — the highest velocity of any project in the category. The v5.x series migrated to a GitHub Skills installation model with **native Go binaries**, expanded document accessibility coverage (DOCX, XLSX, PPTX, PDF, EPUB, Markdown), and deepened VS Code 1.113 integration. **Three competing free axe-core scanners** still dominate open-source adoption — ronantakizawa/a11ymcp (86 stars, 10,000+ downloads), JustasMonkev's mcp-accessibility-scanner (49 stars, 15+ tools), and priyankark/a11y-mcp (44 stars). **The most capable free scanner is JustasMonkev's**, with Playwright-based multi-page crawling, keyboard navigation testing, and matrix scanning across viewport variants. Deque's official axe MCP (dequelabs/axe-mcp-server-public, 4 stars) and BrowserStack's MCP (139 stars) remain the paid enterprise tier. **A new Android Accessibility MCP Server** (benoberkfell) now provides AI-driven accessibility testing for Android apps via the Accessibility API — the first server to address the mobile testing gap this review has flagged since launch. **The biggest remaining gaps**: iOS VoiceOver testing, screen reader emulation, and VPAT/ACR generation remain unaddressed.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -26,7 +27,7 @@ The headline findings this cycle: **Community-Access/accessibility-agents shippe
 |--------|-------|----------|---------|-------|
 | [ronantakizawa/a11ymcp](https://github.com/ronantakizawa/a11ymcp) | 86 | JavaScript | MIT | 6 |
 
-The most popular free accessibility MCP server, with **6,000+ downloads** and a **#20 ranking on ProductHunt**. Uses axe-core and Puppeteer to provide six distinct tools. 87 commits. Verified on MseeP.ai and listed in the Glama.ai MCP registry.
+The most popular free accessibility MCP server, with **10,000+ downloads** and a [**#20 ranking on ProductHunt**](https://www.producthunt.com/products/web-accessibility-testing-mcp). Uses axe-core and Puppeteer to provide six distinct tools. 87 commits. Verified on MseeP.ai and listed in the Glama.ai MCP registry.
 
 - **test_accessibility** — scan any public URL with customizable viewport dimensions
 - **test_html_string** — test raw HTML snippets without deploying
@@ -140,7 +141,7 @@ Supports **multi-framework analysis** across HTML, React, Vue, and Angular. Avai
 - **analyze** — scan pages for accessibility violations using the full axe engine
 - **remediate** — AI-powered code fixes for detected violations
 
-Integrates with **Claude, GitHub Copilot, Cursor**, and any MCP-compatible AI coding agent. Included in Deque's Axe DevTools for Web bundle at no additional cost for existing customers. First announced at Axe-con 2025, now generally available.
+Integrates with **Claude, GitHub Copilot, Cursor**, and any MCP-compatible AI coding agent. Included in Deque's Axe DevTools for Web bundle at no additional cost for existing customers. Now generally available and [included in Axe DevTools for Web](https://www.deque.com/blog/axe-devtools-for-web-now-includes-axe-mcp-server-for-earlier-fixes-and-faster-delivery/).
 
 **Requires a paid Axe DevTools for Web subscription** and an API key from axe.deque.com. This is the first time the upstream engine provider has entered the MCP space directly — creating an interesting dynamic where the community servers use Deque's open-source axe-core library for free, while Deque's own server adds proprietary remediation intelligence on top. Only 3 stars and 7 commits so far, suggesting early-stage adoption.
 
@@ -157,7 +158,7 @@ BrowserStack's official MCP server includes accessibility as part of a broader t
 
 Powered by **Spectra™**, BrowserStack's accessibility engine. The key differentiator: it analyzes violations in context, aligns fixes with your design system, and suggests **production-ready code** — not just violation reports. AI-generated contextual code fixes directly in the IDE.
 
-**Requires a BrowserStack Accessibility license** — this is not a free tool. Available on AWS Marketplace. For teams already using BrowserStack, adding accessibility scanning to their AI workflow is straightforward.
+**Requires a BrowserStack Accessibility license** — this is not a free tool. [Available on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-hcllard6w7na4). For teams already using BrowserStack, adding accessibility scanning to their AI workflow is straightforward.
 
 ## WCAG Reference & Knowledge
 

@@ -17,7 +17,7 @@ The headline findings: **The vendor gap is closing fast** — DocuSign launched 
 |--------|-------|----------|---------|-------|
 | DocuSign MCP (official) | — | — | — | — |
 
-**The biggest gap in the original review — now filled.** DocuSign launched an official remote MCP server at `mcp-d.docusign.com/mcp`, exposing the Intelligent Agreement Management (IAM) platform to any MCP-compatible client. Agents can create and send envelopes for signature, check envelope status, query agreement metadata and key dates through Navigator, trigger Maestro workflows for multi-step approval processes, and retrieve AI-powered agreement insights. Compatible with Claude Desktop, Claude Code, ChatGPT, GitHub Copilot, and custom agent frameworks. DocuSign also partnered with Anthropic to bring capabilities directly into Claude Cowork. With over 1 million customers, this is by far the most widely-used platform in the legal MCP ecosystem. Currently in beta. Multiple community implementations also exist: luthersystems/mcp-server-docusign (Python, JWT auth, 8 tools), thisdot/docusign-navigator-mcp (TypeScript, MIT, Navigator queries), and CData's read-only connector.
+**The biggest gap in the original review — now filled.** DocuSign launched an official remote MCP server at `mcp-d.docusign.com/mcp`, exposing the Intelligent Agreement Management (IAM) platform to any MCP-compatible client. Agents can create and send envelopes for signature, check envelope status, query agreement metadata and key dates through Navigator, trigger Maestro workflows for multi-step approval processes, and retrieve AI-powered agreement insights. Compatible with Claude Desktop, Claude Code, ChatGPT, GitHub Copilot, and custom agent frameworks. DocuSign also partnered with Anthropic to bring capabilities directly into Claude Cowork. With [over 1.8 million customers](https://www.sec.gov/Archives/edgar/data/1261333/000126133326000021/docu-20260131.htm), this is by far the most widely-used platform in the legal MCP ecosystem. Currently in beta. Multiple community implementations also exist: luthersystems/mcp-server-docusign (Python, JWT auth, 8 tools), thisdot/docusign-navigator-mcp (TypeScript, MIT, Navigator queries), and CData's read-only connector.
 
 ### PandaDoc Official MCP Server *(NEW)*
 
@@ -49,7 +49,7 @@ Official MCP server from SendForSign enabling AI agents to interact with documen
 |--------|-------|----------|---------|-------|
 | SignNow MCP | — | — | — | — |
 
-Official MCP server from SignNow (an airSlate product) for comprehensive e-signature management. Covers template management, signature invites, embedded signing experiences, and document downloads. SignNow has over 28 million users, making this one of the larger platforms with MCP support. The embedded signing capability is notable — it allows building signing flows directly into AI-assisted workflows rather than redirecting users to external pages.
+Official MCP server from SignNow (an airSlate product) for comprehensive e-signature management. Covers template management, signature invites, embedded signing experiences, and document downloads. SignNow has [over 28 million users](https://blog.signnow.com/why-users-trust-signnow/), making this one of the larger platforms with MCP support. The embedded signing capability is notable — it allows building signing flows directly into AI-assisted workflows rather than redirecting users to external pages.
 
 ### caffeinebounce/docuseal-mcp-server (DocuSeal Integration)
 
@@ -57,7 +57,7 @@ Official MCP server from SignNow (an airSlate product) for comprehensive e-signa
 |--------|-------|----------|---------|-------|
 | [caffeinebounce/docuseal-mcp-server](https://github.com/caffeinebounce/docuseal-mcp-server) | — | — | — | — |
 
-MCP server for DocuSeal, the open-source document signing platform. Manages document templates, creates and tracks signature requests, and monitors submission status. DocuSeal itself has 8,000+ GitHub stars as an open-source alternative to DocuSign, making this integration particularly relevant for self-hosted legal workflows. Agents can create signing flows from templates and track completion without switching between interfaces.
+MCP server for [DocuSeal](https://github.com/docusealco/docuseal), the open-source document signing platform (17,000+ GitHub stars). Manages document templates, creates and tracks signature requests, and monitors submission status. DocuSeal is a widely-used open-source alternative to DocuSign, making this integration particularly relevant for self-hosted legal workflows. Agents can create signing flows from templates and track completion without switching between interfaces.
 
 ### bmbouter/mcp-dropbox-sign
 
@@ -109,7 +109,7 @@ Comprehensive access to U.S. legislation through government APIs. Search federal
 |--------|-------|----------|---------|-------|
 | CourtListener MCP | — | — | — | — |
 
-Legal research across **3,352 U.S. courts** using the CourtListener API (from Free Law Project). Search opinions, access dockets, and retrieve court documents across federal and state courts. CourtListener is one of the largest free legal databases in the U.S., and this MCP server makes its full breadth accessible to AI agents. The 3,352-court coverage spans from the Supreme Court down to municipal courts.
+Legal research across [**3,350+ U.S. courts**](https://www.courtlistener.com/courts/) using the CourtListener API (from Free Law Project). Search opinions, access dockets, and retrieve court documents across federal and state courts. CourtListener is one of the largest free legal databases in the U.S., and this MCP server makes its full breadth accessible to AI agents. The 3,350+ court coverage spans from the Supreme Court down to municipal courts.
 
 ### JustlyAI/DocketBird MCP Server
 
@@ -231,7 +231,7 @@ Interacts with the Blawx API for discovering ontologies and performing rule-base
 |--------|-------|----------|---------|-------|
 | [open-agreements/open-agreements](https://github.com/open-agreements/open-agreements) | 30 | JavaScript | MIT | — |
 
-Fills standard legal agreement templates and produces signable DOCX files. **40+ templates** covering NDAs, cloud service agreements (Common Paper, Bonterms), employment docs, contractor agreements, Y Combinator SAFEs, and NVCA financing documents. Multi-language support (English, Spanish, Chinese, Portuguese, German). Includes SOC 2 readiness assessment and ISO 27001 internal audit tools. Works with Claude Code, Gemini CLI, Cursor, and as a hosted MCP server. At 30 stars with 382 commits, this is the most mature legal document generation MCP server — and the most practical for startups needing standard legal documents without outside counsel.
+Fills standard legal agreement templates and produces signable DOCX files. Six template collections covering NDAs, cloud service agreements (Common Paper, Bonterms), employment docs, contractor agreements, Y Combinator SAFEs, and NVCA financing documents. Multi-language support (English, Spanish, Chinese, Portuguese, German). Includes SOC 2 readiness assessment and ISO 27001 internal audit tools. Works with Claude Code, Gemini CLI, Cursor, and as a hosted MCP server. At 30 stars with 382 commits, this is the most mature legal document generation MCP server — and the most practical for startups needing standard legal documents without outside counsel.
 
 ## IP & Trademarks
 
@@ -410,7 +410,7 @@ The vendor gap is closing faster than expected — three major platforms (DocuSi
 
 Legal and contract management MCP servers earn **4.0 out of 5**, up from 3.5 in March.
 
-**What works:** The vendor gap is closing — DocuSign (official remote server), PandaDoc (official MCP bundle), and Concord (first CLM with MCP) all launched since March. Geographic diversity expanded to 17+ countries including strong new Dutch, Greek, and UK coverage. The Ansvar-Systems suite brings professional-grade compliance servers with daily freshness checks, remote endpoints, and control mappings to ISO 27001:2022 and NIST CSF 2.0. Patent coverage is now excellent with 54-star, 52-tool USPTO server plus PatSnap and Google Patents. Open Agreements provides practical document generation for startups. The Lex API MCP (219K UK acts, 70K judgments, 19 tools) is one of the most comprehensive single-jurisdiction legal servers in the entire MCP ecosystem. Clio practice management has 3+ community servers.
+**What works:** The vendor gap is closing — DocuSign (official remote server), PandaDoc (official MCP bundle), and Concord (first CLM with MCP) all launched since March. Geographic diversity expanded to 17+ countries including strong new Dutch, Greek, and UK coverage. The Ansvar-Systems suite brings professional-grade compliance servers with daily freshness checks, remote endpoints, and control mappings to ISO 27001:2022 and NIST CSF 2.0. Patent coverage is now excellent with 54-star, 52-tool USPTO server plus PatSnap and Google Patents. [Open Agreements](https://github.com/open-agreements/open-agreements) provides practical document generation for startups. The Lex API MCP (219K UK acts, 70K judgments, 19 tools) is one of the most comprehensive single-jurisdiction legal servers in the entire MCP ecosystem. Clio practice management has 3+ community servers.
 
 **What doesn't:** LexisNexis and Westlaw — the two most important legal research databases — still have no MCP servers, preferring proprietary AI tools. Ironclad and Icertis (enterprise CLM) are absent. No Adobe Sign server. The contract negotiation/redlining workflow between document generation and signing remains a gap. Many newer jurisdiction-specific servers still have low star counts.
 

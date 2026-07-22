@@ -7,7 +7,7 @@ Backup and disaster recovery MCP servers are giving AI assistants direct access 
 
 The landscape now spans six areas: **enterprise backup platforms** (Commvault and Veeam), **Kubernetes backup** (Velero), **cloud storage and sync** (rclone), **database backup** (Databasement), **file-level backup** (MCP-Backup-Server, autorestic-mcp, and the new Duplicati MCP server), and **cloud infrastructure** (AWS API MCP server for backup services).
 
-The headline findings: **Databasement surged from 311 to 823 stars (+512) in one month** — the most dramatic star growth in the category's history, signaling strong community demand for database backup tooling with AI integration. **Commvault reached 13 stars** with continued active development (Salesforce tools, Metallic gateway, filter query support). **Veeam's official server** (launched March 31, 2026) reached 10 stars as enterprise teams begin adopting the 16+ capability server across VBR, Veeam ONE, and VSPC. **kubectl-mcp-server hit 889 stars** with its Velero module for Kubernetes backup. **New: kcofoni/duplicati-mcp** wraps the Duplicati REST API via MCP — directly filling a gap listed in our April review. **The remaining gaps are still significant**: no Rubrik, no Cohesity (despite their $17B valuation), no Acronis, no Veritas, no Nakivo, no HYCU, no Druva, no Datto, and no BorgBackup or Kopia MCP servers. Gartner projects 90% of backup platforms will feature GenAI by 2029 — MCP adoption is accelerating but still early. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+The headline findings: **Databasement** has surged to over 1,500 stars — signaling strong community demand for database backup tooling with AI integration. **Commvault reached 13 stars** with continued active development (Salesforce tools, Metallic gateway, filter query support). **Veeam's official server** (launched March 31, 2026) reached 10 stars as enterprise teams begin adopting the 16+ capability server across VBR, Veeam ONE, and VSPC. **kubectl-mcp-server hit 889 stars** with its Velero module for Kubernetes backup. **New: kcofoni/duplicati-mcp** wraps the Duplicati REST API via MCP — directly filling a gap listed in our April review. **The remaining gaps are still significant**: no Rubrik, no Cohesity (despite their $7B valuation), no Acronis, no Veritas, no Nakivo, no HYCU, no Druva, no Datto, and no BorgBackup or Kopia MCP servers. [Gartner projects 90% of backup platforms will feature GenAI by 2029](https://www.blocksandfiles.com/data-protection/2026/07/03/veeam-leads-2026-gartner-backup-mq-by-a-whisker/5266085) — MCP adoption is accelerating but still early. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## Enterprise Backup Platforms
 
@@ -23,9 +23,9 @@ The tool set covers **job management** (view details, history, suspend, resume, 
 
 **New since March 2026:** Commvault added **Salesforce MCP tools** (opt-in via `ENABLE_SALESFORCE_TOOLS=true`) for browsing backed-up Salesforce records with filtering and pagination. **Metallic gateway routing** now routes Metallic requests through the gateway (April 22). **Filter query support** was added for more precise data retrieval (April 2). An Azure Application Gateway WAF compatibility fix resolves User-Agent blocking issues.
 
-Notable features: **OAuth authentication** (preferred, supported on Innovation Release 11.42.27+), API key fallback, **three transport modes** (stdio, streamable-http, SSE), and optional **third-party integrations** — DocuSign envelope backup/restore and the new Salesforce integration.
+Notable features: [**OAuth authentication**](https://documentation.commvault.com/11.42/software/commvault_mcp_server.html) (preferred, supported on Innovation Release 11.42.27+), API key fallback, **three transport modes** (stdio, streamable-http, SSE), and optional **third-party integrations** — DocuSign envelope backup/restore and the new Salesforce integration.
 
-Requires Python 3.11+ and the uv package manager. The official Commvault documentation at documentation.commvault.com covers setup in detail.
+Requires Python 3.11+ and the uv package manager. The [official Commvault documentation](https://documentation.commvault.com/11.42/software/commvault_mcp_server.html) covers setup in detail.
 
 ### Veeam Intelligence (Official)
 
@@ -33,7 +33,7 @@ Requires Python 3.11+ and the uv package manager. The official Commvault documen
 |--------|-------|----------|---------|-------|
 | [veeam-ai/veeam-mcp-server](https://github.com/veeam-ai/veeam-mcp-server) | 10 | TypeScript | MIT | 16+ categories |
 
-**Launched March 31, 2026** — Veeam is now the second major enterprise backup vendor (after Commvault) to ship an official MCP server. This is a significant milestone for the category. The server has grown from 7 stars at launch to 10 stars as enterprise adoption begins.
+**[Launched March 31, 2026](https://www.veeam.com/blog/veeam-intelligence-mcp-server.html)** — Veeam is now the second major enterprise backup vendor (after Commvault) to ship an official MCP server. This is a significant milestone for the category. The server has grown from 7 stars at launch to 10 stars as enterprise adoption begins.
 
 The server exposes **16+ capability categories** across three Veeam products (VBR, Veeam ONE, and VSPC): **threat/malware visibility**, **license intelligence**, **job operations**, **restore point and RPO coverage**, **repository health**, **proxy capacity**, **WAN acceleration**, **NAS protection**, **agent health**, **cloud and SaaS workloads**, **service provider operations**, and more.
 
@@ -107,7 +107,7 @@ This fills a gap we noted in our original review. While rclone isn't strictly a 
 
 A self-hosted database backup manager with web UI **and MCP server integration** for AI assistants. Supports **MySQL, PostgreSQL, MariaDB, MongoDB, SQLite, and Redis**. Backs up to S3, SFTP, or local storage. Actively updated through May 2026.
 
-**Exceptional growth:** Databasement surged from 311 to 823 stars (+512) in one month — the largest single-month jump in the backup/DR category to date. This mirrors the project's broader appeal: it's not just a backup tool but a full database management platform with web UI, and its MCP integration appears to be driving significant interest from AI-assisted DevOps workflows.
+**Strong growth:** Databasement has surged to 1,500+ stars — reflecting its broader appeal as a full database management platform with web UI, with its MCP integration driving significant interest from AI-assisted DevOps workflows.
 
 The MCP server lets AI agents trigger backups, check backup status, and manage retention policies for database infrastructure.
 
@@ -163,7 +163,7 @@ The gaps in this category are shrinking but still substantial:
 
 **Enterprise vendors without MCP servers:**
 - **Rubrik** — $17B public company, has Rubrik Annapurna for GenAI but no MCP server
-- **Cohesity** (merged with Veritas) — no MCP server
+- **[Cohesity](https://fintech.global/2024/12/12/data-protection-leader-cohesity-secures-7bn-valuation-following-veritas-merger/)** (merged with Veritas, $7B valuation) — no MCP server
 - **Acronis** — no MCP server
 - **Nakivo** — no MCP server
 - **HYCU** — no MCP server
@@ -187,7 +187,7 @@ The gaps in this category are shrinking but still substantial:
 
 ## The Bottom Line
 
-**Rating: 3.5 / 5** *(up from 3.0)* — The category continues to improve. **Two of the top three enterprise backup vendors now have official MCP servers** — Veeam's March 31 launch with 16+ capability categories is a significant validation of MCP in enterprise data protection, and Commvault continues active development. **Databasement's explosive growth** (311 → 823 stars in one month) is the biggest signal yet of community appetite for AI-integrated database backup tooling. The **Duplicati MCP server** fills another open-source gap. New: rclone-mcp for cloud storage and autorestic-mcp for restic visibility.
+**Rating: 3.5 / 5** *(up from 3.0)* — The category continues to improve. **Two of the top three enterprise backup vendors now have official MCP servers** — Veeam's March 31 launch with 16+ capability categories is a significant validation of MCP in enterprise data protection, and Commvault continues active development. **Databasement's rapid growth** (now 1,500+ stars) is a strong signal of community appetite for AI-integrated database backup tooling. The **Duplicati MCP server** fills another open-source gap. New: rclone-mcp for cloud storage and autorestic-mcp for restic visibility.
 
 The remaining opportunity is still large: Rubrik and Cohesity MCP servers seem inevitable given both companies' AI investments. A full restic MCP server (with backup creation, not just read-only inspection) would be immediately useful. And disaster recovery orchestration — automated failover, runbook execution, DR testing — remains completely unaddressed.
 

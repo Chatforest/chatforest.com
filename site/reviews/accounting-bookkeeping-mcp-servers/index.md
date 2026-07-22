@@ -7,11 +7,11 @@ Accounting MCP servers are connecting AI assistants to financial data, invoicing
 
 The landscape spans seven areas: **cloud accounting platforms** (Xero, QuickBooks, Zoho Books, Wave, FreshBooks), **enterprise accounting** (Sage Intacct, Odoo ERP), **plain-text accounting** (Beancount, Ledger CLI), **European/regional accounting** (Norman Finance, Moneybird, Holded), **tax & compliance** (OpenAccountants, AgentTax), **CData connectors** (read-only JDBC bridges for multiple platforms), and **specialized tools** (invoice automation, expense tracking).
 
-The headline findings: **Two major vendors have official MCP servers** — Xero (253 stars, 50+ tools, v0.0.15) and Intuit's QuickBooks (176 stars, expanded API coverage), making accounting one of the few domains where platform vendors are actively embracing MCP. **Sage has an official MCP server too** — available through the Sage Intacct Developer Portal as part of their AI Gateway initiative, now joined by a community Intacct server. **Tax preparation is emerging** — openaccountants (30 stars, 371 tax skills across 134 countries) is the first serious cross-border tax MCP project. **European bookkeeping is growing** — Norman Finance (41 stars, 165 commits) covers European bookkeeping and tax filing, with Moneybird (Dutch) and Holded (Spanish) also appearing. **Plain-text accounting is well-served** — both Ledger CLI and Beancount have dedicated MCP servers with meaningful star counts. **Zoho Books has the most community implementations** — three independent servers plus a CData connector, with bu5hm4nn actively adding vendor management and bank transaction features.
+The headline findings: **Two major vendors have official MCP servers** — Xero (253 stars, 50+ tools, v0.0.15) and Intuit's QuickBooks (176 stars, expanded API coverage), making accounting one of the few domains where platform vendors are actively embracing MCP. **Sage has an official MCP server too** — available through the Sage Intacct Developer Portal as part of their AI Gateway initiative, now joined by a community Intacct server. **Tax preparation is emerging** — openaccountants (262 stars, 1,000+ guides across 190+ jurisdictions) is the first serious cross-border tax MCP project. **European bookkeeping is growing** — Norman Finance (41 stars, 165 commits) covers European bookkeeping and tax filing, with Moneybird (Dutch) and Holded (Spanish) also appearing. **Plain-text accounting is well-served** — both Ledger CLI and Beancount have dedicated MCP servers with meaningful star counts. **Zoho Books has the most community implementations** — three independent servers plus a CData connector, with bu5hm4nn actively adding vendor management and bank transaction features.
 
 ## What's New (April–May 2026)
 
-- **Xero official v0.0.16** (May 5) — added granular OAuth scope configuration for Custom Connections, improved error handling. Stars 253→**286** (+13%).
+- **Xero official v0.0.16** — added granular OAuth scope configuration for Custom Connections, improved error handling. Stars 253→**286** (+13%).
 - **QuickBooks official — sustained growth:** Stars 176→**223** (+27%). 15 commits in the April–May window covering OAuth reliability (persist rotated tokens, robust headless callback), README rewrites, contract tests for `get_general_ledger`. Intuit is actively co-authoring commits with Claude AI agents.
 - **OpenAccountants doubled in stars:** 30→**66** stars (+120%). Added Canada T1135 Foreign Income Verification Statement skill (v2.2 with penalty schedules and VDP). Repositioning as a broader "tax skills for AI" library with MCP as one delivery channel.
 - **Odoo MCP (ivnvxd) — most actively developed:** Stars 250→**288**, v0.5.0→**v0.6.0** (three releases). v0.5.1 fixed search limit env var; v0.5.2 added `post_message` tool for Odoo chatter and fixed stdio protocol errors; v0.6.0 added `aggregate_records` (server-side aggregation) and `call_model_method` (generic XML-RPC with safety restrictions).
@@ -23,7 +23,7 @@ The headline findings: **Two major vendors have official MCP servers** — Xero 
 - **NEW: dubbl-org/dubbl — 13 stars.** Open-source Xero/QuickBooks alternative with built-in MCP integration. API-first design, active May 2026.
 - **NEW: masing-ai/mcp-smartaccounts-eu** — MCP for SmartAccounts.eu (Nordic bookkeeping SaaS). Created May 9.
 - **NEW: doublebash/xero-mcp** — Xero MCP variant deploying via Cloudflare Workers with OAuth 2.0 (created May 8). Lowers hosting barrier for serverless deployments.
-- **No new CVEs** specific to accounting MCP servers confirmed in the window. CVE-2026-30623 (command injection in Anthropic MCP SDK stdio) remains a systemic ecosystem risk affecting any stdio-transport accounting server.
+- **No new CVEs** specific to accounting MCP servers confirmed in the window. [CVE-2026-30623](https://docs.litellm.ai/blog/mcp-stdio-command-injection-april-2026) (command injection in LiteLLM's MCP server creation, rooted in a stdio transport design flaw disclosed by OX Security) remains a systemic ecosystem risk affecting any stdio-transport accounting server.
 
 ## Cloud Accounting Platforms
 
@@ -149,7 +149,7 @@ A focused FreshBooks integration for invoicing and time tracking. Five tools: li
 
 ### Sage Intacct MCP Server (Official)
 
-Sage launched an **official MCP server** for Intacct through their Developer Portal in November 2025, built on Sage's AI Gateway. The server is built on top of Sage Intacct REST APIs and enables AI agents to orchestrate tasks, handle planning, and retrieve financial information. Available at developer.sage.com — notably, this is one of very few enterprise accounting vendors with an official MCP server.
+Sage launched an **official MCP server** for Intacct through their [Developer Portal](https://developer.sage.com/) in November 2025, built on Sage's AI Gateway. The server is built on top of Sage Intacct REST APIs and enables AI agents to orchestrate tasks, handle planning, and retrieve financial information. Available at developer.sage.com — notably, this is one of very few enterprise accounting vendors with an official MCP server.
 
 CData also provides read-only MCP servers for both **Sage Intacct** and **Sage Cloud Accounting** via JDBC drivers, available on GitHub.
 
@@ -248,9 +248,9 @@ A self-described **official MCP server for Frihet ERP** (Nordic-focused), create
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) | 66 | Python | — | 371 skills |
+| [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) | 262 | Python | — | 1,000+ guides |
 
-The **fastest-growing tax-focused MCP project**. Open-source tax skills for AI agents covering **134 countries** with quality tiers (Q1–Q5). Created April 9, 2026 and already at 66 stars (+120% in 28 days). The May update added Canada's T1135 Foreign Income Verification Statement skill (v2.2) with penalty schedules, Voluntary Disclosure Programme guidance, and filing tests. Rather than connecting to a specific tax platform, this provides structured tax knowledge that can be uploaded to any LLM or connected via MCP — a library-first approach that makes it unusually portable.
+The **fastest-growing tax-focused MCP project**. Open-source tax skills for AI agents covering **190+ jurisdictions** with quality tiers (Q1–Q5). Created April 9, 2026 and reaching 66 stars within 28 days of launch (now 262). The May update added Canada's T1135 Foreign Income Verification Statement skill (v2.2) with penalty schedules, Voluntary Disclosure Programme guidance, and filing tests. Rather than connecting to a specific tax platform, this provides structured tax knowledge that can be uploaded to any LLM or connected via MCP — a library-first approach that makes it unusually portable.
 
 ### Other Tax Servers
 
@@ -262,7 +262,7 @@ The **fastest-growing tax-focused MCP project**. Open-source tax skills for AI a
 
 ## Notable Gaps
 
-- **Tax preparation still platform-absent** — OpenAccountants (66 stars, 134 countries) and AgentTax are growing, but TurboTax, H&R Block, TaxJar, and Avalara have shipped no MCP servers
+- **Tax preparation still platform-absent** — OpenAccountants (262 stars, 190+ jurisdictions) and AgentTax are growing, but TurboTax, H&R Block, TaxJar, and Avalara have shipped no MCP servers
 - **No payroll-first servers** — ADP, Gusto, and Paychex are covered in our [HR & Recruiting review](/reviews/hr-recruiting-mcp-servers/) but not in accounting-focused servers
 - **No FreshBooks official** — despite FreshBooks' API maturity, community servers remain at 0–2 stars
 - **No Wave official** — Wave (now owned by H&R Block) has no official MCP presence; community server at 16 stars
@@ -271,7 +271,7 @@ The **fastest-growing tax-focused MCP project**. Open-source tax skills for AI a
 - **No bank feed integration** — no MCP servers for Plaid, Yodlee, or direct bank connections for transaction import
 - **No expense management** — Expensify, Brex, Ramp, and SAP Concur have no MCP servers (though Brex has general API tools)
 - **No audit trail** — none of the servers provide SOC 2 or audit-grade logging of AI-initiated financial changes
-- **CVE-2026-30623 systemic risk** — command injection in Anthropic MCP SDK stdio affects any accounting server using stdio transport; no accounting-specific patches published
+- **[CVE-2026-30623](https://docs.litellm.ai/blog/mcp-stdio-command-injection-april-2026) systemic risk** — command injection in LiteLLM's MCP server creation (rooted in a stdio transport design flaw, disclosed by OX Security) creates risk for any stdio-transport accounting server; no accounting-specific patches published
 
 ## The Bottom Line
 
@@ -279,7 +279,7 @@ Accounting and bookkeeping MCP servers earn **4.0 out of 5**. This is one of the
 
 The official servers continue to strengthen. XeroAPI/xero-mcp-server (286 stars, 50+ tools, v0.0.16) is one of the most comprehensive vendor-built MCP servers in any category — v0.0.16 added granular OAuth scope configuration, a meaningful usability improvement for organizations using Custom Connections. Intuit's QuickBooks server has grown to 223 stars with 15 commits in the April–May window; notably, Intuit is actively co-authoring commits using Claude AI agents, suggesting this is a first-class internal investment rather than a skunkworks project. The community QuickBooks server from laf-rge deserves special mention for its draft-by-default safety model — a thoughtful approach to AI-assisted financial operations.
 
-The most interesting development this cycle is on two fronts. Odoo MCP (288 stars, v0.6.0) shipped three releases with meaningful new capabilities — `aggregate_records` for server-side computation and `call_model_method` for generic XML-RPC — making it the most actively developed accounting MCP of the period. OpenAccountants doubled in stars to 66 and expanded to Canada's T1135 filing requirements, further cementing its position as the leading tax knowledge MCP.
+The most interesting development this cycle is on two fronts. Odoo MCP (288 stars, v0.6.0) shipped three releases with meaningful new capabilities — `aggregate_records` for server-side computation and `call_model_method` for generic XML-RPC — making it the most actively developed accounting MCP of the period. OpenAccountants has grown to 262 stars and expanded to Canada's T1135 filing requirements, further cementing its position as the leading tax knowledge MCP.
 
 Geographic expansion continues. Norman Finance (47 stars) is actively fixing schema compatibility issues, a sign of real-world usage across multiple MCP clients. New entrant Frihet-io/frihet-mcp brings 52 tools for Nordic accounting. A wave of zero-star country-specific tax MCPs (France, Germany, Ireland, South Africa) suggests genuine interest from local developer communities even without platform-vendor backing.
 
@@ -299,7 +299,7 @@ Plain-text accounting users are well-served. Ledger CLI (48 stars, 9 tools) and 
 
 **Best for free accounting:** [vinnividivicci/wave_mcp](https://github.com/vinnividivicci/wave_mcp) (16 stars, Wave Accounting)
 
-**Best for tax research:** [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) (66 stars, 371 skills across 134 countries)
+**Best for tax research:** [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) (262 stars, 1,000+ guides across 190+ jurisdictions)
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Customer Support & Helpdesk MCP Servers — Zendesk, Intercom, Freshdesk, ServiceNow, Plain, and More"
 date: 2026-03-15T12:00:00+09:00
+sources_audited: 2026-07-23
 description: "Customer support and helpdesk MCP servers are giving AI assistants direct access to ticket management, conversation handling, and support workflows."
 og_description: "Customer Support & Helpdesk MCP servers: Freshworks MCP Gateway (May 14, bidirectional), ServiceNow Action Fabric (May 13, full platform open, Anthropic first design partner), Salesforce Hosted MCP GA (fills Service Cloud gap), HubSpot expanded write access, Zendesk still no official server (96 stars community), Tidio official connector, Front community servers. Rating: 4.5/5."
 content_type: "Review"
@@ -12,7 +13,7 @@ Customer support and helpdesk MCP servers are giving AI assistants direct access
 
 The landscape spans five areas: **enterprise helpdesks** (Zendesk, Freshdesk, ServiceNow), **modern support platforms** (Intercom, Plain, Pylon, Kustomer), **live chat and messaging** (Crisp, Tidio, LiveChat), **open-source helpdesks** (Zammad), and **specialized support tools** (Help Scout, Gorgias, HubSpot, Zoho Desk).
 
-The headline findings: **Freshworks shipped a bidirectional MCP Gateway at Refresh 2026 (May 14, 2026)** — the first customer support vendor to offer both inbound MCP (external AI clients querying Freshdesk data) and outbound MCP (Freshdesk AI agents acting in external tools). **ServiceNow launched Action Fabric at Knowledge 2026 (May 13, 2026)** — its MCP Server Console now exposes the full platform: flows, playbooks, approvals, catalogs, and more — with Anthropic named as the first design partner; Claude Cowork connects directly to ServiceNow's governance system. **Salesforce Hosted MCP Servers reached GA in April 2026**, filling the previously noted Service Cloud gap. **HubSpot expanded its MCP server** with write access to all ticket, contact, and engagement types. **Tidio shipped an official MCP connector.** **Zendesk still has no official MCP server** — now the most glaring exception in a category where every other major vendor has shipped — but its community server grew to ~96 stars. **Front's gap is partially closed** by two new community implementations.
+The headline findings: **Freshworks shipped a bidirectional MCP Gateway at Refresh 2026 (May 14, 2026)** — the first customer support vendor to offer both inbound MCP (external AI clients querying Freshdesk data) and outbound MCP (Freshdesk AI agents acting in external tools). **ServiceNow launched Action Fabric at Knowledge 2026 (May 13, 2026)** — its MCP Server Console now exposes the full platform: flows, playbooks, approvals, catalogs, and more — with Anthropic named as the first design partner; Claude Cowork connects directly to ServiceNow's governance system. **[Salesforce Hosted MCP Servers reached GA in April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available)**, filling the previously noted Service Cloud gap. **HubSpot expanded its MCP server** with write access to all ticket, contact, and engagement types. **Tidio shipped an official MCP connector.** **Zendesk still has no official MCP server** — now the most glaring exception in a category where every other major vendor has shipped — but its community server grew to ~96 stars. **Front's gap is partially closed** by two new community implementations.
 
 ## Enterprise Helpdesks
 
@@ -38,14 +39,14 @@ The headline findings: **Freshworks shipped a bidirectional MCP Gateway at Refre
 | [Freshworks MCP Gateway](https://www.freshworks.com/news/freshworks-unveils-freddy-ai-agent-studio-and-mcp-gateway/) | — | — | — | Multiple |
 | [effytech/freshdesk_mcp](https://github.com/effytech/freshdesk_mcp) | 57 | Python | MIT | 30 |
 
-**MAJOR: Freshworks launched its MCP Gateway at Refresh 2026 (May 14, 2026)** — the most significant Freshdesk development since the category launched. The Gateway operates bidirectionally:
+**MAJOR: [Freshworks launched its MCP Gateway at Refresh 2026](https://siliconangle.com/2026/05/14/freshworks-unveils-freddy-ai-agent-studio-mcp-gateway-freshservice/) (May 14, 2026)** — the most significant Freshdesk development since the category launched. The Gateway operates bidirectionally:
 
 - **Inbound MCP**: External AI clients (Claude, Cursor, Microsoft Copilot) can query live Freshservice and Freshdesk data directly — tickets, asset records, knowledge base articles — without custom integrations.
 - **Outbound MCP**: Freshdesk AI agents can take actions in external tools (Atlassian, Notion, ClickUp, Linear) without bespoke connectors.
 
-The announcement paired with **Freddy AI Agent Studio** for Freshservice — a no-code builder for enterprise IT service automation. **Email AI agents for Freshdesk go live May 29, 2026** on Pro and Enterprise plans.
+The announcement paired with **Freddy AI Agent Studio** for Freshservice — a no-code builder for enterprise IT service automation. **[Email AI agents for Freshdesk go live May 29, 2026](https://www.freshworks.com/theworks/company-news/may-2026-launch/)** on Pro and Enterprise plans.
 
-**Pricing**: Free during a promotional period; session-based AI Agent pricing ($0.49/session) and usage-based MCP pricing begin October 2026.
+**Pricing**: Free during a promotional period; session-based AI Agent pricing applies per Freshworks' published plans.
 
 The **effytech/freshdesk_mcp** community server (57 stars, 30 tools) remains the most comprehensive community option for those not yet on the MCP Gateway, covering ticket management, contact management, agent management, company management, and conversation management — including unique merge contacts support.
 
@@ -59,7 +60,7 @@ The **effytech/freshdesk_mcp** community server (57 stars, 30 tools) remains the
 | [Happy-Technologies-LLC/mcp-servicenow-nodejs](https://github.com/Happy-Technologies-LLC/mcp-servicenow-nodejs) | — | Node.js | — | 15+ |
 | [aartiq/servicenow-mcp](https://github.com/aartiq/servicenow-mcp) | — | Python | — | 400+ |
 
-**MAJOR: ServiceNow launched Action Fabric at Knowledge 2026 (May 13, 2026)** — extending the MCP Server Console from the Zurich release to expose the full ServiceNow platform to external AI agents. This is a step-change from the initial Zurich launch: any external AI agent (Claude, Copilot, custom builds) can now invoke **flows, playbooks, approvals, and catalogs headlessly** through MCP.
+**MAJOR: [ServiceNow launched Action Fabric at Knowledge 2026](https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-opens-its-full-system-of-action-to-every-AI-Agent-in-the-enterprise/default.aspx) (May 2026)** — extending the MCP Server Console from the Zurich release to expose the full ServiceNow platform to external AI agents. This is a step-change from the initial Zurich launch: any external AI agent (Claude, Copilot, custom builds) can now invoke **flows, playbooks, approvals, and catalogs headlessly** through MCP.
 
 **Anthropic is the first design partner**: Claude Cowork connects directly to ServiceNow's governance system. The partnership validates the MCP Server Console as the reference architecture for enterprise AI integration.
 
@@ -197,7 +198,7 @@ The ticket write access makes HubSpot's MCP server meaningfully more useful for 
 |--------|-------|----------|---------|-------|
 | [Salesforce Hosted MCP Servers](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) | — | — | — | Multiple |
 
-**The previously noted "Salesforce Service Cloud" gap is now filled.** Salesforce Hosted MCP Servers reached **general availability in April 2026** (beta since October 2025), available to every Enterprise Edition org and above at no additional cost. Salesforce hosts, scales, and authenticates the servers — no infrastructure management required.
+**The previously noted "Salesforce Service Cloud" gap is now filled.** [Salesforce Hosted MCP Servers reached **general availability in April 2026**](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) (beta since October 2025), available to every Enterprise Edition org and above at no additional cost. Salesforce hosts, scales, and authenticates the servers — no infrastructure management required.
 
 Prebuilt standard servers cover Agentforce 360 Platform, Tableau Next, Data 360 SQL, and more; custom servers can expose flows, Apex actions, and Named Query APIs. A **Data 360 MCP Server** (developer preview) was announced May 2026. While Salesforce's MCP is not a dedicated Service Cloud server, its CRM-wide coverage (Cases, Contacts, Accounts) gives Service Cloud users a meaningful MCP path.
 

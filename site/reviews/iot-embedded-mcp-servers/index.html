@@ -93,7 +93,7 @@
 </tbody>
 </table>
 <p>Home Assistant includes MCP server support as an official core integration (since HA 2025.2, now at <strong>2026.6.2</strong>). Any Home Assistant installation can expose its entities, automations, and services to MCP-compatible AI agents without third-party add-ons.</p>
-<p><strong>2026.6 update</strong>: Previously advanced options are now enabled by default, broadening accessibility. HA now ships two integrations: <strong>MCP Server</strong> (HA acts as server for external clients) and <strong>MCP Client</strong> (HA connects out to external MCP servers, including Claude, ChatGPT, Cursor). A read-only home state snapshot resource was added for inspection and debugging. <strong>Silver quality classification</strong>. Adopted by <strong>2.6% of active HA installations</strong> — meaningful scale for a relatively new protocol integration.</p>
+<p><strong>2026.6 update</strong>: Previously advanced options are now enabled by default, broadening accessibility. HA now ships two integrations: <strong>MCP Server</strong> (HA acts as server for external clients) and <strong>MCP Client</strong> (HA connects out to external MCP servers, including Claude, ChatGPT, Cursor). A read-only home state snapshot resource was added for inspection and debugging. <strong>Silver quality classification</strong>. Adopted by <a href="https://www.home-assistant.io/integrations/mcp_server/"><strong>3.2% of active HA installations</strong></a> — meaningful scale for a relatively new protocol integration.</p>
 <h3 id="homeassistant-aiha-mcp-community-leader--3300-stars">homeassistant-ai/ha-mcp (Community Leader — 3,300 Stars)</h3>
 <table>
 <thead>
@@ -528,7 +528,7 @@
 </table>
 <p><strong>The biggest star-growth story in the IoT category since our April refresh: ESP-Claw quintupled from 304 to 1,500 stars.</strong> Espressif&rsquo;s official &ldquo;Chat Coding&rdquo; AI agent framework for ESP32 devices acts as <strong>both MCP server and client</strong> — exposing hardware capabilities to external agents while calling external services.</p>
 <p>Key features: <strong>on-device memory</strong> (structured long-term memory lives on-chip, preferences and routines auto-extracted from conversations), <strong>Chat Coding</strong> (define device behavior through natural conversation, with LLM handling dynamic decisions and local Lua scripts executing deterministically even offline), and support for OpenAI, Anthropic, DeepSeek, Qwen, and custom LLM endpoints.</p>
-<p>Hardware support has expanded: originally ESP32-S3 only, now also supports <strong>ESP32-P4, ESP32-C5, ESP32-S31</strong>, and a variety of dev boards including M5Stack CoreS3. <strong>M5Stack has officially forked esp-claw</strong> for their device line — a significant sign of ecosystem momentum. Last updated June 2026.</p>
+<p>Hardware support has expanded: originally ESP32-S3 only, now also supports <strong>ESP32-P4, ESP32-C5, ESP32-S31</strong>, and a variety of dev boards including M5Stack CoreS3. <strong><a href="https://github.com/m5stack/ESP-Claw">M5Stack has officially forked esp-claw</a></strong> for their device line — a significant sign of ecosystem momentum. Last updated June 2026.</p>
 <h3 id="esp-idf-60-built-in-mcp-server-official">ESP-IDF 6.0 Built-in MCP Server (Official)</h3>
 <table>
 <thead>
@@ -553,7 +553,7 @@
 <p>ESP-IDF 6.0 (released March 2026) ships with a <strong>built-in MCP server</strong> for development workflows. Tools cover building, flashing, setting the target, and cleaning, plus resources for querying project configuration, build status, and connected devices. Launched via <code>eim run</code> using the ESP-IDF Installation Manager.</p>
 <p>The official embedded development framework for the world&rsquo;s most popular IoT microcontroller now treats MCP as a first-class feature.</p>
 <h3 id="espressif-documentation-mcp-server-official-hosted--new">Espressif Documentation MCP Server (Official Hosted — NEW)</h3>
-<p>Espressif launched a <strong>hosted documentation MCP server</strong> at <code>https://mcp.espressif.com/docs</code> (announced April 8, 2026). Authentication via GitHub or WeChat. Connects AI agents to all official Espressif documentation in real time — ESP-IDF, ESP chips, SDKs. Read-only; does not execute code or modify files.</p>
+<p>Espressif <a href="https://developer.espressif.com/blog/2026/04/doc-mcp-server/">launched a <strong>hosted documentation MCP server</strong></a> at <code>https://mcp.espressif.com/docs</code> (announced April 8, 2026). Authentication via GitHub or WeChat. Connects AI agents to all official Espressif documentation in real time — ESP-IDF, ESP chips, SDKs. Read-only; does not execute code or modify files.</p>
 <p>Combined with the ESP-IDF 6.0 built-in tools server, this gives AI agents a complete ESP32 development workflow: look up docs via the hosted server, build and flash via the local tools server.</p>
 <h3 id="espressifesp-rainmaker-mcp-official--iot-device-control">espressif/esp-rainmaker-mcp (Official — IoT Device Control)</h3>
 <table>

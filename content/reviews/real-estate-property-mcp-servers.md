@@ -1,6 +1,7 @@
 ---
 title: "Real Estate & Property MCP Servers — Zillow, MLS, Airbnb, BatchData, Mortgage Analysis, and More"
 date: 2026-03-15T12:57:00+09:00
+sources_audited: 2026-07-23
 description: "Real estate and property MCP servers are bringing property search, valuation, and market analysis into AI workflows. We reviewed 40+ servers across 8 subcategories."
 og_description: "Real estate MCP servers: Airbnb MCP (467 stars, 2 tools), Zillow MCP (45 stars, 7 tools), HouseCanary MCP (149 tools, enterprise valuations+forecasts+comps), LoopnetMCP (commercial RE via LoopNet scrape), PriceHubble (4 MCPs, 11 countries, external beta open), ATTOM community server (55+ endpoints), AppFolio property management (8 stars), BatchData (30 stars, 8 tools), agentic-ops real estate MCP (41 stars, 30+ tools), RealVest (31 calculators), Cotality & ATTOM enterprise data, MLS RESO server, Apify portal aggregators (Zillow+Redfin+Realtor.com without enterprise contracts), and regional market servers. Rating: 4.0/5."
 content_type: "Review"
@@ -84,9 +85,9 @@ Multiple alternative Airbnb MCP servers exist: **vedantparmar12/airbnb-mcp** add
 
 A major development since the original review: **all three major U.S. consumer real estate portals** now have apps inside ChatGPT, built on OpenAI's Apps SDK which uses the Model Context Protocol:
 
-- **Zillow** — launched October 2025 as one of OpenAI's pilot partners. Users can browse listings on an interactive map inside ChatGPT, with the AI interpreting intent and dynamically querying Zillow's data.
-- **Redfin** — launched February 6, 2026. Surfaces listings and allows conversational home search with neighborhood info and market trends. Redfin is owned by Rocket Companies.
-- **Realtor.com** — launched March 30, 2026. Includes safeguards: listing previews only (not full data), MLS data training strictly prohibited, agents remain central to the workflow.
+- **Zillow** — [launched October 2025](https://zillow.mediaroom.com/2025-10-06-Zillow-debuts-the-only-real-estate-app-in-ChatGPT) as one of OpenAI's early partners. Users can browse listings on an interactive map inside ChatGPT, with the AI interpreting intent and dynamically querying Zillow's data.
+- **Redfin** — [launched February 6, 2026](https://www.redfin.com/news/redfin-debuts-its-home-search-app-in-chatgpt/). Surfaces listings and allows conversational home search with neighborhood info and market trends. Redfin is [owned by Rocket Companies](https://ir.rocketcompanies.com/news-and-events/press-releases/press-release-details/2025/Rocket-Companies-Completes-Acquisition-of-Redfin/default.aspx) (acquisition completed July 1, 2025).
+- **Realtor.com** — [launched March 30, 2026](https://www.prnewswire.com/news-releases/search-homes-and-see-what-you-can-afford-with-the-new-realtorcom-app-in-chatgpt-302727498.html). Includes safeguards: listing previews only (not full data), MLS data training strictly prohibited, agents remain central to the workflow.
 
 **Important caveat:** These are ChatGPT-exclusive integrations, not open MCP servers that any client can connect to. You can't point Claude Desktop or a custom agent at Zillow's MCP endpoint. But they represent the first time major real estate platforms have engaged with MCP as infrastructure for AI data access, and they signal where the industry is heading.
 
@@ -149,7 +150,7 @@ Connects Claude to the **ATTOM Data API** for US property analysis. ATTOM aggreg
 |--------|-------|----------|---------|-------|
 | [Cotality MCP](https://www.cotality.com/platforms/mcp-server) | — | — | Commercial | Multiple |
 
-**The largest property data company enters the MCP ecosystem.** Cotality (formerly CoreLogic) launched its MCP server on March 31, 2026, providing a universal connector between AI models and its property intelligence platform:
+**The largest property data company enters the MCP ecosystem.** Cotality (formerly CoreLogic) [launched its MCP server on March 31, 2026](https://www.businesswire.com/news/home/20260331394970/en/Cotality-Launches-a-Universal-Connector-for-AI-Unveiling-Its-MCP-Server-and-AI-Ready-Property-Intelligence), providing a universal connector between AI models and its property intelligence platform:
 
 - **CLIP ID access** — Cotality's unique property identifiers for unambiguous cross-system property matching across the entire U.S. housing stock
 - **Property details** — comprehensive property attributes, characteristics, and ownership data
@@ -184,7 +185,7 @@ Supports querying by property ID, address, coordinates, or parcel number (APN). 
 |--------|-------|----------|---------|-------|
 | [HouseCanary MCP](https://www.housecanary.com/blog/housecanary-mcp-server) | — | Python | Commercial | 149 |
 
-**The highest tool count of any real estate MCP server**, launched April 27, 2026. AI agents — Claude, ChatGPT, custom internal copilots — can call 149 HouseCanary endpoints directly across 11 categories:
+**The highest tool count of any real estate MCP server**, [launched April 27, 2026](https://www.housecanary.com/blog/housecanary-mcp-server). AI agents — Claude, ChatGPT, custom internal copilots — can call 149 HouseCanary endpoints directly across 11 categories:
 
 - **Property valuations** — automated valuations at individual property level
 - **36-month forecasts** — available at property, ZIP, block, block group, metro division, MSA, and state levels

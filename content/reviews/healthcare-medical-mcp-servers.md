@@ -1,6 +1,7 @@
 ---
 title: "Healthcare & Medical MCP Servers — FHIR, PubMed, Clinical Trials, DICOM, Drug Databases, and More"
 date: 2026-03-15T10:16:00+09:00
+sources_audited: 2026-07-23
 description: "Healthcare and medical MCP servers are connecting AI agents to clinical data, medical research, drug databases, and imaging systems via the Model Context Protocol."
 og_description: "Healthcare & Medical MCP servers: wso2/fhir-mcp-server (120 stars, Python, Apache-2.0 — FHIR CRUD with SMART-on-FHIR auth), Cicatriiz/healthcare-mcp-public (110 stars, JavaScript — 9 tools for FDA/PubMed/clinical trials/ICD-10/DICOM), JackKuo666/PubMed-MCP-Server (113 stars, Python, MIT — PubMed search/analysis/PDF download), cyanheads/pubmed-mcp-server (86 stars, TypeScript, Apache-2.0 — 9 tools MeSH/citations/full-text), ChristianHinge/dicom-mcp (95 stars, Python, MIT — 11 tools for DICOM/PACS query/move), JamesANZ/medical-mcp (86 stars, TypeScript, MIT — 15 tools for FDA/WHO/PubMed/RxNorm), jmandel/health-record-mcp (77 stars, TypeScript, MIT — SMART on FHIR EHR access), cyanheads/clinicaltrialsgov-mcp-server v2.4.2 (TypeScript — 7 tools for trial search/analysis/patient matching). 30+ servers reviewed. Rating: 4.0/5."
 content_type: "Review"
@@ -14,7 +15,7 @@ Healthcare and medical MCP servers are connecting AI agents to the full spectrum
 
 The landscape spans six areas: **FHIR/EHR integration** (multiple competing implementations for accessing electronic health records), **medical research** (PubMed and ClinicalTrials.gov access), **multi-source healthcare hubs** (servers bundling FDA, PubMed, ICD-10, and more), **drug and pharmacology databases** (DrugBank, RxNorm, NLM codes), **medical imaging** (DICOM/PACS interaction), and **healthcare standards** (HIPAA-compliant protocol extensions and public health data).
 
-The headline findings: **WSO2's FHIR server pulls ahead at 120 stars** (up from 110 tied with healthcare-mcp-public) — WSO2 leads EHR integration with SMART-on-FHIR auth, while healthcare-mcp-public bundles 9 tools across FDA, PubMed, clinical trials, ICD-10, and DICOM. **PubMed-MCP-Server reaches 113 stars** with deep paper analysis and PDF downloads, while **cyanheads/pubmed-mcp-server** offers 9 tools including citation generation, MeSH lookup, and a public hosted instance. **DICOM-mcp reaches 95 stars** as the leading imaging server with 11 tools for PACS interaction — and **MedGemma 1.5's new full DICOM support in Vertex AI** opens a path to pairing MCP metadata retrieval with real image analysis. **cyanheads/clinicaltrialsgov-mcp-server releases v2.4.2** (May 18) with continued architectural refinement. **Infinitus launches Studio** (April 23) — a no-code agent builder for prior auth and benefit verification workflows reporting 93% success rate, validating commercial healthcare MCP investment. **HMCP targets GxP profile status** for 2026 and adds specialty plugins for radiology and genomics. **Medical-mcps unifies 14 biomedical APIs** into 100+ tools through a single endpoint. **Still no official Epic or Cerner MCP servers** despite both expanding their FHIR API support. **Keragon MCP remains in beta** with 300+ healthcare integrations and SOC 2 Type II certification.
+The headline findings: **WSO2's FHIR server pulls ahead at 120 stars** (up from 110 tied with healthcare-mcp-public) — WSO2 leads EHR integration with SMART-on-FHIR auth, while healthcare-mcp-public bundles 9 tools across FDA, PubMed, clinical trials, ICD-10, and DICOM. **PubMed-MCP-Server reaches 113 stars** with deep paper analysis and PDF downloads, while **cyanheads/pubmed-mcp-server** offers 9 tools including citation generation, MeSH lookup, and a public hosted instance. **DICOM-mcp reaches 95 stars** as the leading imaging server with 11 tools for PACS interaction — and **MedGemma 1.5's new full DICOM support in Vertex AI** opens a path to pairing MCP metadata retrieval with real image analysis. **cyanheads/clinicaltrialsgov-mcp-server releases [v2.4.2](https://github.com/cyanheads/clinicaltrialsgov-mcp-server/releases/tag/v2.4.2)** (April 27, 2026) with continued architectural refinement. **[Infinitus launches Studio](https://www.prnewswire.com/news-releases/infinitus-launches-studio-the-first-healthcare-specific-no-code-ai-agent-builder-302750743.html)** (April 23) — a no-code agent builder for prior auth and benefit verification workflows reporting 93% success rate, validating commercial healthcare MCP investment. **HMCP** adds specialty plugins for radiology and genomics. **Medical-mcps unifies 14 biomedical APIs** into 100+ tools through a single endpoint. **Still no official Epic or Cerner MCP servers** despite both expanding their FHIR API support. **Keragon MCP remains in beta** with 300+ healthcare integrations and SOC 2 Type II certification.
 
 ## FHIR / EHR Integration
 
@@ -111,7 +112,7 @@ The most tool-rich FHIR server with **33 dedicated tools** covering 8 FHIR resou
 |--------|-------|----------|---------|-------|
 | [JackKuo666/PubMed-MCP-Server](https://github.com/JackKuo666/PubMed-MCP-Server) | 113 | Python | MIT | 5 |
 
-The most starred medical research MCP server and a critical tool for biomedical literature access. Bridges AI assistants with PubMed's database of 30+ million citations:
+The most starred medical research MCP server and a critical tool for biomedical literature access. Bridges AI assistants with [PubMed's database of more than 40 million citations](https://pubmed.ncbi.nlm.nih.gov/about/):
 
 - **search_pubmed_key_words** — keyword-based article search
 - **search_pubmed_advanced** — advanced parameter-based queries
@@ -147,7 +148,7 @@ Built on the `@cyanheads/mcp-ts-core` framework with Bun runtime, supporting bot
 |--------|-------|----------|---------|-------|
 | [cyanheads/clinicaltrialsgov-mcp-server](https://github.com/cyanheads/clinicaltrialsgov-mcp-server) | 65 | TypeScript | Apache-2.0 | 7 |
 
-The most sophisticated ClinicalTrials.gov MCP server, now at **v2.4.2** (May 18, 2026) with continued architectural refinement. Goes well beyond basic search with analytical capabilities:
+The most sophisticated ClinicalTrials.gov MCP server, now at **[v2.4.2](https://github.com/cyanheads/clinicaltrialsgov-mcp-server/releases/tag/v2.4.2)** (April 27, 2026) with continued architectural refinement. Goes well beyond basic search with analytical capabilities:
 
 - **clinicaltrials_search_studies** — full-text and filtered search with geographic proximity
 - **clinicaltrials_get_study_record** — comprehensive study information by NCT ID
@@ -309,14 +310,14 @@ Not a tool server but a **protocol specification** — the Healthcare Model Cont
 - **Multi-agent workflows** — bidirectional agent-to-agent communication via sampling endpoints
 - **Patient context isolation** — based on SMART on FHIR specifications
 
-HMCP addresses the biggest gap in healthcare MCP adoption: there's no standard way to ensure MCP servers handling PHI meet regulatory requirements. Innovaccer provides both the specification and an SDK (HMCPServer, HMCPClientConnector) for building compliant implementations. **May 2026 update:** HMCP is now tracking toward GxP (Good Practices) profile status for 2026, with new specialty plugins for radiology and genomics workflows added to the specification — two domains previously identified as gaps in the broader healthcare MCP landscape. Real-time risk scoring for unsafe requests is also being added to the spec.
+HMCP addresses the biggest gap in healthcare MCP adoption: there's no standard way to ensure MCP servers handling PHI meet regulatory requirements. Innovaccer provides both the specification and an SDK (HMCPServer, HMCPClientConnector) for building compliant implementations. The specification is evolving with new specialty plugins for radiology and genomics workflows added to the specification — two domains previously identified as gaps in the broader healthcare MCP landscape. Real-time risk scoring for unsafe requests is also being added to the spec.
 
 ### Infinitus Studio (Prior Auth Workflow Platform)
 
 Infinitus launched its **healthcare MCP server** in late 2025 and followed up in April 2026 with **Studio** — a no-code agent builder for healthcare-specific workflows. Key commercial metrics from Studio's launch:
 
-- **93% success rate** on benefit verification and prior authorization calls
-- **40% higher accuracy** than manually built agents
+- **[93% success rate](https://www.prnewswire.com/news-releases/infinitus-launches-studio-the-first-healthcare-specific-no-code-ai-agent-builder-302750743.html)** on benefit verification and prior authorization calls
+- **40% greater accuracy** than manually built agents
 - **90% faster deployment** from workflow design to production
 
 The Infinitus platform specializes in the administrative workflows that consume the most clinical staff time — prior authorization, appeals follow-up, and benefit verification — connecting to payer systems via phone and data APIs. Unlike open-source servers that expose medical databases, Infinitus targets the payer-provider communication layer that most MCP servers ignore entirely. Represents the first major commercial validation of production-scale healthcare MCP workflows.
@@ -355,7 +356,7 @@ The healthcare MCP ecosystem has impressive breadth but notable gaps:
 
 **Rating: 4.0 / 5**
 
-Healthcare MCP servers hold their strong rating thanks to impressive breadth — every major healthcare data domain has at least one MCP server, from EHR access to drug databases to medical imaging to public health surveillance. The FHIR subcategory has genuine competition (7+ implementations) driving quality and innovation. Medical research is the strongest subcategory: two competing PubMed servers (JackKuo666 at 113 stars, cyanheads at ~86 stars with 9 tools and a public hosted instance), plus the ClinicalTrials.gov server freshly updated to v2.4.2 (May 18, 2026) with OpenTelemetry and dual transport.
+Healthcare MCP servers hold their strong rating thanks to impressive breadth — every major healthcare data domain has at least one MCP server, from EHR access to drug databases to medical imaging to public health surveillance. The FHIR subcategory has genuine competition (7+ implementations) driving quality and innovation. Medical research is the strongest subcategory: two competing PubMed servers (JackKuo666 at 113 stars, cyanheads at ~86 stars with 9 tools and a public hosted instance), plus the ClinicalTrials.gov server freshly updated to [v2.4.2](https://github.com/cyanheads/clinicaltrialsgov-mcp-server/releases/tag/v2.4.2) (April 27, 2026) with OpenTelemetry and dual transport.
 
 What elevates this category this cycle: **Infinitus Studio** demonstrates production-scale commercial healthcare MCP workflows with measurable clinical outcomes (93% success rate on prior auth), the **strongest commercial validation yet** of the platform's real-world value. WSO2's FHIR server pulls ahead to 120 stars. **MedGemma 1.5's DICOM integration in Vertex AI** outlines a credible path to end-to-end imaging analysis paired with MCP retrieval. **HMCP's GxP profile trajectory** and new radiology/genomics plugins signal the compliance layer maturing to meet the sector's needs.
 

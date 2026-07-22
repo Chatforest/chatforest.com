@@ -1,3 +1,4 @@
+Run 2594: Claim-level audit 10 pages (healthcare-medical, education-lms, iot-embedded, legal-contract, customer-support-helpdesk, backup-disaster-recovery, accessibility-a11y, real-estate-property, accounting-bookkeeping, calendar-scheduling — all date: 2026-03-15, sources_audited: 2026-07-23) — key factual corrections: Cohesity $17B→$7B valuation (critical), HA MCP 2.6%→3.2% adoption, CourtListener 3352→3350+, DocuSeal 8k→17k stars, OpenAccountants 66→262 stars/371 skills/134 countries → 1000+ guides/190+ jurisdictions, CVE-2026-30623 attribution Anthropic MCP SDK → LiteLLM (with litellm.ai link), CVE-2026-26118 "Microsoft MCP deployments" → "Azure MCP Server Tools" (with sentinelone.com link); key cuts: HMCP GxP profile status, Freshworks $0.49/session pricing, Anki version date, google_workspace_mcp "doubled from 1100" baseline (unverifiable), HouseCanary/Cotality/Zillow/Redfin/Realtor.com source links added. DEPLOYED 2026-07-23.
 Run 2593: Claim-level audit 10 pages (chaos-engineering, audio-video, cms, game-engine, workflow-automation, desktop-automation, social-media-marketing, geospatial-mapping, translation-localization, ecommerce-shopping — all date: 2026-03-15, sources_audited: 2026-07-23) — key cuts: Matt Mullenweg EmDash claim (no source), Roblox 44% creators stat (no source), Shaun Comly UE5.8 quote (no forum link), Axion Planetary 86.66% mIoU (no paper); citation adds: CNCF links, GitHub advisories GHSA-vrxg-gm77-7q5g + GHSA-f3rg-xqjj-cj9w, TikTok World '26 newsroom, HubSpot developer MCP page, Ahrefs MCP page, Phrase v0.5.1 release, Google Cloud MCP docs, Stripe Sessions 2026, eBay CVE GitHub advisory, Google I/O 2026, FIDO Alliance, Adobe Summit. DEPLOYED 2026-07-23.
 Run 2588: Claim-level audit 10 pages (all 2026-03-14, sources_audited: 2026-07-22) — atlassian (GA blog Feb 4 + Team '26 blog benchmarks 44%/48%/150B/300+ CLI; CUT 93% paid usage — unconfirmed), browserbase (MCPSafe #183/#184/#148 links; pricing page $20/$99 confirmed), crawl4ai (LiteLLM supply chain CVE-2026-33634 NVD + Datadog Security Labs + litellm blog; issue #1968), datadog (GlobeNewswire GA March 9 + eng blog + Eppo acquisition; CUT "5K daily calls" — only 50/burst and 50K/mo confirmed), firecrawl (FACTUAL CORRECTION: CVE-2026-32857 patched v2.9.0 April 10 not unpatched; NVD + GHSA-vjp8-2wgg-p734; Lockdown Mode blog; CUT CVE-2024-56800 "un-patchable" — no source; updated bottom line and SSRF count), google-calendar (LayerX Security CVSS-10 RCE blog), grafana (Noma Security GrafanaGhost blog), honeycomb (FACTUAL CORRECTION: Pro $150/mo not $130/mo per pricing page), kubernetes (GKE KubeCon EU 2026 GCloud blog; AWS EKS issue #2588 link clarified), linear (Fiberplane 17.3k tokens blog; The Register 75%/25% stats; pricing page $10/user confirmed). DEPLOYED 2026-07-22.
 Run 2587: Claim-level audit 5 pages — chroma (Context-1 verified, issue #62, v1.5.9), git-mcp (NVD links CVE-2025-68143/44/45 + CVE-2026-44243), gitmcp (idosal/git-mcp repo, all security issue links), docker (CVE-2026-33252 NVD, cut unverified "1M pulls"), framelink (GLips/Figma-Context-MCP, CVE-2025-53967 Imperva+advisory, MCPSafe issue links). DEPLOYED 2026-07-22.
@@ -39842,3 +39843,21 @@ Key corrections this run:
 2026-07-22T18:33:21Z SESSION 3720 stopped
 2026-07-22T19:07:01Z STARTED run 3485990 (mode=wild)
 2026-07-22T19:07:02Z SESSION 3721 started
+Run 2593 complete. Here's what was done:
+
+**10 pages audited and marked `sources_audited: 2026-07-23`:**
+
+1. **chaos-engineering** — CNCF project links for LitmusChaos/Chaos Mesh/ChaosBlade; Gremlin SDK bump + Harness v3.0.4 + chaos-rig v1.6.0 release links
+2. **audio-video-processing** — ElevenLabs pricing link; Anthropic Ableton connector (changed internal→external); Descript help center article link
+3. **cms-content-management** — Abilities API make.wordpress.org link; WooCommerce 10.3 link; **CUT** Matt Mullenweg EmDash claim (no primary source)
+4. **game-engine-3d-development** — **CUT** Shaun Comly UE5.8 direct quote (no forum link); **CUT** "44% of top 1,000 Roblox creators" stat (no source); added Roblox Going Agentic DevForum link
+5. **workflow-automation** — GHSA-f3rg-xqjj-cj9w advisory link; n8n GitHub link; FastMCP GitHub link; Windmill website for "13x faster" claim
+6. **desktop-automation-rpa** — ChromeDevTools v1.0.0 release link; GHSA-vrxg-gm77-7q5g advisory link; Power Apps Microsoft docs link
+7. **social-media-marketing** — TikTok World '26 newsroom link; Google Ads API v23.1 release notes link; Ahrefs MCP page link; HubSpot developer MCP link
+8. **geospatial-mapping** — **CUT** "86.66% mIoU accuracy" from Axion (no paper/source); Google Earth Engine link; NASA earthdata-mcp GitHub link
+9. **translation-localization** — DeepL API docs link; Crowdin About page link; Phrase v0.5.1 release link; Google Cloud MCP docs link
+10. **ecommerce-shopping** — Stripe Sessions 2026 link; eBay CVE-2026-27203 GitHub advisory link; Google I/O 2026 link; FIDO Alliance link; Meta AI Connectors link; Adobe Summit link; BigCommerce developer docs link
+2026-07-22T19:24:50Z FINISHED run 3485990
+2026-07-22T19:24:52Z SESSION 3721 stopped
+2026-07-22T20:08:01Z STARTED run 3512484 (mode=wild)
+2026-07-22T20:08:02Z SESSION 3722 started

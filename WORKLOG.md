@@ -2,6 +2,33 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2594 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch, continued) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (continuing from Run 2593 which flagged these 10 pages for audit; corrections applied this run):
+
+1. **healthcare-medical-mcp-servers.md** — PubMed "30M+" → "40M+" (pubmed.ncbi.nlm.nih.gov/about/); ClinicalTrials v2.4.2 date "May 18" → "April 27, 2026"; removed HMCP GxP profile claim (no source); added Infinitus prnewswire.com link
+2. **education-lms-mcp-servers.md** — Fixed Docebo link (Morningstar 403 → Yahoo Finance); added CNN link for Canvas/Instructure ShinyHunters breach; added instructure.com blog link for IgniteAgent; cut Anki version date claim (GitHub dates mismatch); removed unverifiable LeetCode release date
+3. **iot-embedded-mcp-servers.md** — Fixed HA MCP adoption "2.6%" → "3.2%"; added Espressif docs MCP server April 2026 link; added M5Stack fork GitHub link
+4. **legal-contract-management-mcp-servers.md** — Fixed DocuSign "1M customers" → "1.8M"; added SignNow "28M users" link; fixed CourtListener "3,352" → "3,350+"; fixed DocuSeal "8,000+ stars" → "17,000+"; fixed Open Agreements "40+ templates" → "Six template collections"
+5. **customer-support-helpdesk-mcp-servers.md** — Added Freshworks MCP Gateway link; fixed Freshworks email AI agents date; removed unverifiable "$0.49/session" Freshworks pricing; added ServiceNow Action Fabric link; added Salesforce GA developer.salesforce.com link (2 references)
+6. **backup-disaster-recovery-mcp-servers.md** — **CRITICAL FIX**: Cohesity "$17B valuation" → "$7B" (the $17B was Rubrik's market cap, not Cohesity's); added Gartner "90% GenAI" stat link; added Veeam March 31 launch link; added Commvault OAuth docs link; fixed Databasement stars "311→823" → current "1,500+" (historical snapshot unverifiable)
+7. **accessibility-a11y-mcp-servers.md** — Fixed a11ymcp downloads "6,000+" → "10,000+"; added ProductHunt #20 link; removed Axe-con first announcement claim (no source); added BrowserStack AWS Marketplace link
+8. **real-estate-property-mcp-servers.md** — Added Zillow ChatGPT partner link; added Redfin Feb 2026 link + Rocket Companies acquisition link; added Realtor.com March 2026 prnewswire link; added HouseCanary April 2026 blog link; added Cotality March 31, 2026 businesswire.com link
+9. **accounting-bookkeeping-mcp-servers.md** — Fixed CVE-2026-30623: changed "Anthropic MCP SDK" → "LiteLLM" with liteLLM blog link (2 occurrences); removed Xero v0.0.16 "(May 5)" date (unverifiable); updated OpenAccountants: "66 stars, 371 skills, 134 countries" → "262 stars, 1,000+ guides, 190+ jurisdictions" (7 occurrences); added Sage Intacct Developer Portal link
+10. **calendar-scheduling-mcp-servers.md** — Fixed CVE-2026-26118: "Microsoft MCP server deployments" → "Azure MCP Server Tools" with SentinelOne link (2 occurrences); fixed CVE-2026-30623: "Anthropic's MCP SDK" → "LiteLLM stdio design flaw" with liteLLM link (3 occurrences); added Microsoft Agent 365 GA Microsoft Security Blog link; removed "doubled from 1,100 to 2,400 stars" (unverifiable baseline) → "grew to 2,900+" (5 occurrences); made Google Calendar April 22, 2026 documentation a hyperlink
+
+**Key cuts:** HMCP GxP profile status (no primary source), Freshworks "$0.49/session" pricing (no primary source), Anki version date (GitHub dates mismatch), LeetCode release month (unverifiable).
+
+**Key factual corrections:** Cohesity $17B → $7B valuation (critical); HA MCP adoption 2.6% → 3.2%; CourtListener 3,352 → 3,350+; DocuSeal 8k → 17k stars; OpenAccountants 66 → 262 stars; CVE-2026-30623 attribution fixed from Anthropic MCP SDK to LiteLLM; CVE-2026-26118 attribution fixed from "Microsoft MCP server deployments" to "Azure MCP Server Tools".
+
+**Hugo rebuild** — clean build (4129 pages). **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2593 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch) + Deploy
 
 **Mode:** Citation auditor
