@@ -6,6 +6,7 @@ og_description: "Education MCP servers: Canvas LMS (107+ stars, create_rubric ad
 content_type: "Review"
 card_description: "Education and EdTech MCP servers for learning management systems, flashcard apps, academic research, assessment platforms, and STEM computation. The education MCP ecosystem is fragmented but growing fast — 52+ education servers on PulseMCP. Canvas LMS dominates with multiple competing implementations — vishalsachdev/canvas-mcp (107 stars, 88+ tools, May 2026: create_rubric tool + read_course_file added) has overtaken DMontgomery40/mcp-canvas-lms as the most-starred. Moodle has peancor/moodle-mcp-server (36 stars, MIT). D2L Brightspace now has 3+ implementations including RohanMuppa (14 stars, AES-256 encryption). Google Classroom remains minimal (3 read-only tools). The flashcard space is dominated by ankimcp/anki-mcp-server (237 stars, v0.15.1 — security hardening for path traversal + SSRF; native Anki addon launched at ankimcp.ai, no AnkiConnect dependency). For academic research, blazickjp/arxiv-mcp-server (2,700 stars +4%, MIT, 8 tools including semantic search) is the standout. openags/paper-search-mcp (1,500 stars +25%) now aggregates 20+ academic sources. Udemy Business MCP remains in GA (since March 31, 2026). NEW: nwolke/coursera-mcp — first Coursera MCP integration (Playwright-based progress scraper). NEW: O'Reilly Learning Platform MCP on PulseMCP. OpenEdu MCP (7 stars, 21+ tools, K-2 through College grade filtering, Common Core/NGSS). Khan Academy MCP (early stage). EduBase/MCP (25 stars, MIT) brings assessment infrastructure with LaTeX and GDPR compliance. Policy context: 134 AI-in-education bills across 31 US states, Ohio mandating formal AI policies by July 2026. Notable gaps: no Blackboard/Sakai/Open edX; no SIS integrations; no library systems; no plagiarism detection; no adaptive learning. Rating: 3.5/5 — academic research tools are excellent (paper-search-mcp +25%), Anki security-hardened with native addon, Canvas gaining new tools, first Coursera coverage. But Blackboard's absence, missing SIS/library integrations, and thin K-12 coverage prevent a higher score."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-23
 ---
 
 *Part of the [Education & Learning](/categories/education-learning/) category.*
@@ -64,7 +65,7 @@ Offers 8 agent skills via `skills.sh` for 40+ coding agents, a code execution AP
 | [lucanardinocchi/canvas-mcp](https://github.com/lucanardinocchi/canvas-mcp) | — | TypeScript | — | Multiple |
 | [mtgibbs/canvas-lms-mcp](https://github.com/mtgibbs/canvas-lms-mcp) | — | TypeScript | — | Multiple |
 
-At least five additional Canvas MCP servers exist, ranging from minimal read-only grade checkers to university-specific implementations (CMU). r-huijts/canvas-mcp grew to 12 stars with privacy-first anonymization and a PulseMCP listing. The fragmentation reflects Canvas's dominance in higher education — Instructure powers over 6,000 institutions, making it the most targeted LMS for MCP integration.
+At least five additional Canvas MCP servers exist, ranging from minimal read-only grade checkers to university-specific implementations (CMU). r-huijts/canvas-mcp grew to 12 stars with privacy-first anonymization and a PulseMCP listing. The fragmentation reflects Canvas's dominance in higher education — Instructure powers over [7,000 institutions](https://canvashelp.ku.edu/about), making it the most targeted LMS for MCP integration.
 
 ### Moodle MCP Server
 
@@ -95,7 +96,7 @@ A minimal implementation providing read-only access to Google Classroom data:
 - **course-details** — detailed course info with announcements
 - **assignments** — assignment data for a course
 
-Uses OAuth 2.0 authentication with automatic token refresh. Given Google Classroom's massive adoption in K-12 education (150M+ users), the limited tool count here represents a significant gap — there's no assignment submission, grade posting, or student roster management.
+Uses OAuth 2.0 authentication with automatic token refresh. Given Google Classroom's [massive adoption in K-12 education (150M+ users)](https://blog.google/products-and-platforms/products/education/google-classroom-anniversary-teachers/), the limited tool count here represents a significant gap — there's no assignment submission, grade posting, or student roster management.
 
 ### D2L Brightspace MCP Servers
 
@@ -194,7 +195,7 @@ Focused on **Semantic Scholar and Crossref** integration, providing comprehensiv
 |--------|-------|----------|---------|-------|
 | Udemy Business MCP | — | — | Commercial | Multiple |
 
-The **first publicly-traded EdTech company to ship a production MCP server**. Udemy Business AI Connectors went **GA on March 31, 2026** — moving from preview to general availability. Implements MCP spec version 2025-11-25 with OAuth and static client credentials. Key capabilities:
+The **first publicly-traded EdTech company to ship a production MCP server**. Udemy Business AI Connectors went [**GA on March 31, 2026**](https://business.udemy.com/blog/udemy-model-context-protocol-mcp-server/) — moving from preview to general availability. Implements MCP spec version 2025-11-25 with OAuth and static client credentials. Key capabilities:
 
 - **On-demand support** — real-time problem-solving via micro-courses and curated lessons
 - **Plug-and-play integration** — pre-built MCP connectors for ChatGPT, Claude, Cursor, custom enterprise agents
@@ -272,7 +273,7 @@ A **curriculum-aligned educational MCP server** pulling from Open Library, Wikip
 |--------|-------|----------|---------|-------|
 | [aicoder2009/khanacademyMCP](https://github.com/aicoder2009/khanacademyMCP) | ~1 | — | MIT | 12 tools |
 
-The **first Khan Academy MCP server** — tools include search, list_subjects, get_topic_tree, get_content, get_course, and get_transcript. No API key required. Very early stage (1 star), but fills a conspicuous gap — Khan Academy is one of the largest free educational platforms (120M+ registered users) and was previously absent from the MCP ecosystem entirely.
+The **first Khan Academy MCP server** — tools include search, list_subjects, get_topic_tree, get_content, get_course, and get_transcript. No API key required. Very early stage (1 star), but fills a conspicuous gap — Khan Academy is one of the largest free educational platforms ([189.6M registered users](https://www.annualreport.khanacademy.org/)) and was previously absent from the MCP ecosystem entirely.
 
 ### Coursera MCP (nwolke/coursera-mcp)
 
@@ -294,14 +295,12 @@ Added to PulseMCP — integrates with O'Reilly's learning platform API to search
 
 A regulatory wave is creating both urgency and uncertainty for education MCP adoption:
 
-- **134 AI-in-education bills** introduced across 31 US states in the 2026 legislative session
-- **Ohio** mandates all public school districts adopt formal AI policies by July 1, 2026
-- **Maryland** requires AI guidance, AI literacy integration, AI coordinators, and university-certified compliant AI tools
-- 50-84% of K-12 students already use AI for schoolwork; ~90% in higher education
-- Only 13% of schools have formal AI policies despite 87% teacher interest
-- Only 48% of institutions have formal AI policies; just 6% of teachers say those policies are clear
+- **[134 AI-in-education bills](https://www.multistate.us/insider/2026/4/9/how-states-are-regulating-ai-in-education-this-legislative-session)** introduced across 31 US states in the 2026 legislative session
+- **Ohio** [mandates all public school districts adopt formal AI policies by July 1, 2026](https://education.ohio.gov/Topics/AI-in-Ohio-s-Education/Model-Policy)
+- **Maryland** [requires AI guidance, AI literacy integration, AI coordinators, and university-certified compliant AI tools](https://mgaleg.maryland.gov/2026RS/fnotes/bil_0000/sb0720.pdf)
+- [50-84% of K-12 students already use AI for schoolwork](https://newsroom.collegeboard.org/new-research-majority-high-school-students-use-generative-ai-schoolwork); [~90% in higher education](https://www.digitaleducationcouncil.com/resource-library-items/ai-in-higher-education-global-survey-2026)
 
-**Khan TED Institute (April 14, 2026)** — Khan Academy, TED, and ETS announced a $10,000 bachelor's degree in applied AI at TED2026 in Vancouver. The degree uses Khanmigo AI tutoring infrastructure. Launch partners include Google, Microsoft, Accenture, McKinsey, and Replit. Applications expected to open in 12–18 months. This is the largest single edtech AI announcement of the 2026 cycle and signals where Khan Academy is heading — toward deep AI-native credential infrastructure, not just a content library. Whether that trajectory accelerates official MCP integration for Khan Academy remains to be seen.
+**[Khan TED Institute](https://www.axios.com/2026/04/14/khan-academy-ted-ets-institute-college) (April 14, 2026)** — Khan Academy, TED, and ETS [announced a $10,000 bachelor's degree in applied AI](https://sfstandard.com/2026/04/14/sal-khan-ted-ai-degree/) at TED2026 in Vancouver. The degree uses Khanmigo AI tutoring infrastructure. Launch partners include Google, Microsoft, Accenture, McKinsey, and Replit. Applications expected to open in 12–18 months. This is the largest single edtech AI announcement of the 2026 cycle and signals where Khan Academy is heading — toward deep AI-native credential infrastructure, not just a content library. Whether that trajectory accelerates official MCP integration for Khan Academy remains to be seen.
 
 The policy fragmentation may slow institutional MCP adoption (IT departments hesitate without clear guidance), but mandates like Ohio's push districts toward structured, auditable AI tooling — exactly what MCP provides.
 
@@ -318,7 +317,7 @@ The education MCP ecosystem has significant gaps:
 - **Standardized testing** — no SAT, GRE, AP, or state assessment integrations
 - **Learning analytics** — no xAPI/Caliper, learning record stores, or analytics dashboards
 - **Proctoring** — no Respondus, ExamSoft, or ProctorU integrations
-- **K-12 specific** — Google Classroom support is minimal (3 read-only tools for a platform with 150M+ users)
+- **K-12 specific** — Google Classroom support is minimal (3 read-only tools for a [platform with 150M+ users](https://blog.google/products-and-platforms/products/education/google-classroom-anniversary-teachers/))
 
 ## The bottom line
 

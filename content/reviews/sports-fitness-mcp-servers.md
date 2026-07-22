@@ -6,6 +6,7 @@ og_description: "Sports & fitness MCP servers: Garmin Connect (420 stars, 96+ to
 content_type: "Review"
 card_description: "Sports and fitness MCP servers for workout tracking, live scores, athletic analytics, and fantasy sports. This is one of the deepest MCP categories — Garmin Connect has 96+ tools covering activities, health metrics, workouts, devices, nutrition, and challenges, now at 420 stars. Strava grew to 366 stars with 25 tools. A new data-sovereignty approach emerged: nrvim/garmin-givemydata (95 stars, 44 MCP tools) stores Garmin data in local SQLite with Cloudflare bypass and professional training metrics (CTL/ATL/TSB). The TypeScript Garmin alternative (Nicolasvegam/garmin-connect-mcp) grew to 120 stars with 61 tools. Apple Health hit 177 stars. COROS grew to 45 stars with 68 commits. TrainingPeaks reached 54 stars. MacroFactor nutrition hit 20 stars. sportscore-mcp NEW — free multi-sport API (football, basketball, cricket, tennis) with 8 tools. For spectator sports, Balldontlie covers 18 leagues with 250+ endpoints. Two official first-party servers: PGA of America (mcp.pga.com) and MySwimPro (mcp.myswimpro.com). Remaining gaps: rugby, Peloton, CrossFit. Rating: 4.5/5 — fitness wearable coverage is best-in-class across the entire MCP ecosystem."
 last_refreshed: 2026-04-30
+sources_audited: 2026-07-23
 categories: ["/categories/sports-fitness/"]
 ---
 
@@ -147,7 +148,7 @@ Small but functional — covers the core WHOOP data that athletes care about mos
 
 **rajvirtual/oura-mcp-server** (14 stars) focuses on sleep analysis, readiness scores, HRV tracking, and stress comparisons. **daveremy/oura-mcp** (4 stars) doubles as a standalone CLI tool and Claude Code skill with 10 tools covering daily summaries, sleep, readiness, activity, workouts, heart rate, stress, SpO2, sessions, and trends.
 
-⚠️ **Security note**: A trojanized Oura MCP server was discovered in February 2026, distributing the SmartLoader/StealC infostealer via fake forks. Only install Oura MCP servers from verified, well-starred repositories.
+⚠️ **Security note**: A trojanized Oura MCP server was discovered in February 2026, [distributing the SmartLoader/StealC infostealer via fake forks](https://www.straiker.ai/blog/smartloader-clones-oura-ring-mcp-to-deploy-supply-chain-attack) ([The Hacker News](https://thehackernews.com/2026/02/smartloader-attack-uses-trojanized-oura.html)). Only install Oura MCP servers from verified, well-starred repositories.
 
 ### COROS MCP Server
 
@@ -402,11 +403,11 @@ The **PGA of America** launched an official MCP server at [mcp.pga.com](https://
 
 ### MySwimPro Official MCP
 
-**MySwimPro** — the #1 swim training app (used in 180+ countries) — launched an official MCP server at [mcp.myswimpro.com](https://mcp.myswimpro.com/). Provides OAuth-authenticated access to workouts, activities, and training plans. This fills the swimming gap that existed in March — and does so with a first-party official server rather than a community scraper.
+**MySwimPro** launched an official MCP server at [mcp.myswimpro.com](https://mcp.myswimpro.com/). Provides OAuth-authenticated access to workouts, activities, and training plans. This fills the swimming gap that existed in March — and does so with a first-party official server rather than a community scraper.
 
 ### Sportradar Official MCP
 
-**Sportradar** launched an official MCP server in February 2026 at developer.sportradar.com covering 20+ sport profiles (football, soccer, basketball, tennis, and more) for API documentation access. Sportradar is the data backbone for many major sports media companies.
+[**Sportradar** launched an official MCP server](https://developer.sportradar.com/sportradar-updates/changelog/new-mcp-server-for-ai-assisted-development) in February 2026 at developer.sportradar.com covering 20+ sport profiles (football, soccer, basketball, tennis, and more) for API documentation access.
 
 ## Fitness Coaching & Tracking
 

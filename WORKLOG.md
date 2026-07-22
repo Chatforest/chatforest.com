@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2595 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch, third cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (all dated 2026-03-15, this run's batch):
+
+1. **sports-fitness-mcp-servers.md** — Added Straiker.ai + HackerNews links for Oura SmartLoader/StealC trojan (Feb 2026); removed unverifiable "#1 swim training app (used in 180+ countries)" MySwimPro marketing claim; added Sportradar changelog link for Feb 2026 MCP launch; removed unsourced "data backbone for many major sports media companies" claim
+
+2. **supply-chain-logistics-mcp-servers.md** — Added news.sap.com/2026/05 link for SAP Sapphire 2026 / Anthropic partnership (2 occurrences); added cloudwars.com link for D365 650,000+ operations claim (2 occurrences)
+
+3. **nonprofit-charity-mcp-servers.md** — Removed "controls roughly 40% of the nonprofit CRM market" Blackbaud claim (no primary source; softened to "dominant CRM provider for mid-to-large nonprofits"); added civicrm.org link for 14,000+ orgs; added Virtuous/Fundraising.AI 2026 report link for 92%/7% nonprofit AI stat; **CRITICAL FIX**: Givebutter "$150M+ in donations processed" → "$5B+ in donations processed as of March 2025" (prnewswire.com)
+
+4. **agriculture-farming-mcp-servers.md** — Added USDA ERS Brazil link; corrected Rwanda workforce "over 70%" → "roughly 55%" (World Bank); removed Digital Green "30+ million smallholder farmers" claim (documented figure ~8M, no source for 30M); fixed FarmerChat countries: Brazil → Nepal (Brazil was not confirmed)
+
+5. **government-public-sector-mcp-servers.md** — Fixed "OECD Open Data Index" → "OECD OURdata Index" (correct official name) with data.gouv.fr link; fixed "five government agencies" claim: removed FedScoop as count source (article only covered 2 agencies) → "at least five government agencies across four countries"; replaced OBBB GitHub link → IRS newsroom link (2 occurrences)
+
+6. **education-edtech-mcp-servers.md** — Updated Canvas "6,000+" → "7,000+" with canvashelp.ku.edu link; **FACTUAL FIX**: Khan Academy "120M+ registered users" → "189.6M registered users" (official annual report); added Khan TED Institute Axios + SF Standard links (April 14, 2026 announcement); added multistate.us link for 134 bills/31 states; added Ohio DOE link for July 1 mandate; added Maryland SB 720 link; added College Board + Digital Education Council links for 50-84% / ~90% AI usage stats; **CUT** "13% of schools have formal AI policies despite 87% teacher interest" (not confirmed by any primary source); **CUT** "48% of institutions have formal AI policies; just 6% of teachers say those policies are clear" (not confirmed — 48% was a budget stat from Ellucian survey); added Google Blog link for Google Classroom 150M+ (2 occurrences); added Udemy blog link for GA March 31, 2026
+
+7. **sports-athletics-mcp-servers.md** — Updated Strava "120M+" → "150M+" with press.strava.com link
+
+8. **travel-tourism-mcp-servers.md** — Added tripadvisor.com/business/about link confirming "world's largest travel guidance platform" self-description
+
+9. **music-audio-production-mcp-servers.md** — Added Google Cloud blog link for Lyria 3 Pro on Vertex AI; updated Anthropic Ableton Connector link from relative internal path to primary anthropic.com/news/claude-for-creative-work
+
+10. **blockchain-web3-mcp-servers.md** — **CUT** "The MCP ecosystem crossed 10,000 public servers and 97 million monthly SDK downloads by April 2026" (no primary Anthropic source found); added tally.xyz/team link for Dennison Bertram (CEO, confirmed)
+
+**Key cuts:** MySwimPro "#1 in 180 countries" (self-marketing, old source), Digital Green "30+ million farmers" (no primary source), Blackbaud "40% market share" (no Gartner/Forrester primary), 13%/87% AI policy stats (unconfirmed), 48%/6% institutional policy stats (48% was a budget stat, not policy count), MCP "10K servers / 97M downloads" (no Anthropic primary), Rwanda "70% agriculture employment" (World Bank says ~55%)
+
+**Key factual corrections:** Givebutter $150M → $5B+ (critical — 33× off); Khan Academy 120M → 189.6M users; Strava 120M → 150M users; Rwanda ag employment 70% → 55%; FarmerChat Nepal not Brazil; France "Open Data Index" → "OURdata Index"
+
+**Research method:** 5 parallel research agents verified claims against primary sources; all corrections based on live primary source verification.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2594 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch, continued) + Deploy
 
 **Mode:** Citation auditor

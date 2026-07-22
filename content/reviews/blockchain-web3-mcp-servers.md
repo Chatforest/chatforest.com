@@ -6,6 +6,7 @@ og_description: "Blockchain & Web3 MCP servers: EVM MCP Server (362 stars, 22 to
 content_type: "Review"
 card_description: "Blockchain and Web3 MCP servers across multi-chain platforms, single-chain specialists, DeFi, and market data. The EVM MCP Server (362 stars) offers the most comprehensive Ethereum ecosystem coverage — 22 tools across 60+ EVM networks with automatic ABI fetching and ENS resolution. GOAT (398 stars) provides the broadest onchain action coverage with 200+ tools spanning DeFi, minting, analytics, and betting across EVM, Solana, and 10+ other chains. For Solana, the official Foundation server serves developer documentation while SendAI's Agent Kit powers protocol-level operations. Bitcoin has a solid Lightning-enabled server. The category is large but fragmented — most servers cover either reading or writing, rarely both safely."
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-23
 ---
 
 Blockchain and Web3 is one of the largest MCP categories by server count but also one of the most fragmented. AI agents that can query balances, decode transactions, interact with smart contracts, and execute DeFi operations through natural language represent a natural evolution — blockchains are API-native systems with deterministic interfaces, ideal for tool-based interaction. The category spans six areas: **multi-chain platforms** (EVM MCP Server, Tatum, GOAT, Strangelove web3-mcp), **Solana** (official Foundation server, SendAI Agent Kit, openSVM), **Ethereum/EVM wallets and explorers** (dcSpark, Etherscan, Bankless), **Bitcoin** (AbdelStark bitcoin-mcp with Lightning), **DeFi and trading** (defi-trading-mcp, DeFAI), and **market data** (CoinGecko, CoinMarketCap).
@@ -116,7 +117,7 @@ This is a wallet-focused server rather than a blockchain data server. It handles
 |--------|-------|----------|-------|-----------|
 | [crazyrabbitLTC/mcp-etherscan-server](https://github.com/crazyrabbitLTC/mcp-etherscan-server) | 26 | TypeScript | 6 | stdio |
 
-**crazyrabbitLTC/mcp-etherscan-server** (26 stars, TypeScript, MIT) provides Ethereum blockchain data through Etherscan's API. Six tools: check ETH balance, view transaction history, track ERC-20 transfers, fetch contract ABIs, monitor gas prices, and resolve ENS names. Created by Dennison Bertram (CEO of Tally.xyz, former OpenZeppelin Developer Advocate).
+**crazyrabbitLTC/mcp-etherscan-server** (26 stars, TypeScript, MIT) provides Ethereum blockchain data through Etherscan's API. Six tools: check ETH balance, view transaction history, track ERC-20 transfers, fetch contract ABIs, monitor gas prices, and resolve ENS names. Created by [Dennison Bertram](https://www.tally.xyz/team) (CEO of Tally.xyz, former OpenZeppelin Developer Advocate).
 
 Focused and well-built for its scope, but the EVM MCP Server (above) covers Etherscan data access plus much more across 60+ networks. This is useful if you only need Ethereum mainnet and want a lightweight server.
 
@@ -166,7 +167,7 @@ Multiple community CoinMarketCap MCP servers exist: **longmans/coin_api_mcp** pr
 
 **Chainstack MCP expands to 70+ chains (May 2026).** [Chainstack's MCP server](https://chainstack.com/mcp/) was updated May 5, 2026, adding structured access to live RPC data, smart contract storage, and on-chain state across 70+ chains — including Ethereum, Solana, BNB Smart Chain, Base, Arbitrum, Polygon, Hyperliquid, Monad, and MegaETH. This is the broadest single-server chain coverage yet, eclipsing EVM MCP Server's 60+ networks by also covering non-EVM chains.
 
-**MCP reaches "de facto protocol" status (April 2026).** The MCP ecosystem crossed 10,000 public servers and 97 million monthly SDK downloads by April 2026. For blockchain, this accelerated institutional adoption: BitGo's documentation MCP server, SettleMint's enterprise integration, and OpenSea's official server are all seeing broader use as developers treat MCP as the standard connection layer.
+**MCP reaches "de facto protocol" status (April 2026).** For blockchain, MCP is accelerating institutional adoption: BitGo's documentation MCP server, SettleMint's enterprise integration, and OpenSea's official server are all seeing broader use as developers treat MCP as the standard connection layer.
 
 **DeMCP: first decentralized MCP network launches.** DeMCP launched as a fully decentralized MCP network with pay-as-you-go LLM access (GPT-4, Claude) via stablecoins — an interesting experiment in applying blockchain payment rails to MCP server economics. Early-stage, but architecturally notable.
 

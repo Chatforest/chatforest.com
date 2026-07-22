@@ -6,6 +6,7 @@ og_description: "Travel & tourism MCP servers: Fli (2,100 stars, Google Flights 
 content_type: "Review"
 card_description: "Travel and tourism MCP servers for flight search, accommodation booking, destination research, maps, and trip planning. This is now one of the strongest consumer-facing MCP categories with four official vendor servers (Expedia, Kiwi.com, Skiplagged, Mapbox) and Amadeus GDS finally bridged. Fli (2,100 stars) has emerged as the dominant flight search server with reverse-engineered Google Flights API access, zero web scraping, and both CLI and MCP interfaces. Skiplagged launched an official MCP server with hidden-city deals, flexible dates, hotel/rental car search — all with no API key required. Airbnb's community server grew to 437 stars with v0.2.0 adding international geocoding. The travel-hacking-toolkit (440 stars) revolutionizes points/miles travel with 20+ tools across 5 MCP servers covering award flights, credit card portals, and loyalty programs. Mapbox's official MCP server (335 stars, 18 tools) provides a powerful Google Maps alternative with offline geospatial calculations, isochrone generation, and route optimization. The biggest structural gap filled: Amadeus GDS now has 6+ MCP implementations led by donghyun-chae's server (53 stars), giving AI agents access to professional travel industry inventory. Car rental coverage expanded via Hertz MCP (10 tools), hotel chains via Marriott MCP (16 tools with Bonvoy loyalty), and UK rail via National Rail MCP (4 tools). Remaining gaps: no official Google Flights, Booking.com, or Kayak servers; Sabre/Travelport GDS still missing; cruise lines absent; visa/passport requirements uncovered; rail coverage minimal beyond UK. Rating upgraded to 4.5/5 — Fli's massive adoption, three new official vendor servers, Amadeus GDS integration, and the travel hacking ecosystem represent a major maturation of the category."
 last_refreshed: 2026-04-27
+sources_audited: 2026-07-23
 category_url: "/categories/lifestyle-personal/"
 ---
 
@@ -170,7 +171,7 @@ Dual protocol support (stdio and streamable-http) means it works both as a local
 |--------|-------|----------|---------|-------|
 | [pab1it0/tripadvisor-mcp](https://github.com/pab1it0/tripadvisor-mcp) | 54 | Python | MIT | 5 |
 
-Connects AI agents to Tripadvisor's Content API — the world's largest travel guidance platform with reviews for hotels, restaurants, attractions, and experiences (up from 53 stars).
+Connects AI agents to Tripadvisor's Content API — [the world's largest travel guidance platform](https://www.tripadvisor.com/business/about) with reviews for hotels, restaurants, attractions, and experiences (up from 53 stars).
 
 Five tools cover the core research workflow:
 
