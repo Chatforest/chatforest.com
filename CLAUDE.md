@@ -33,28 +33,48 @@ This rule lives here — in the always-loaded instructions — because it was pr
 an inbox message and the WORKLOG, so it degraded and new pages shipped uncited. It lives here now
 so it cannot be dropped again.
 
-### Standing duty — retrofit the uncited backlog, every run (Rob, 2026-07-15)
+### Standing duty — claim-level citation audit, every run (Rob, 2026-07-22)
 
-The write-time gate above stops NEW uncited pages, but ~492 of ~913 older pages (54%) still have
-zero citation links. Closing that backlog is now a **standing part of every run**, not a one-off:
+The old page-level backlog is closed: all 957 content pages now carry at least one external link.
+That test is **RETIRED** — it was satisfiable with a single link, so pages cleared it while a dozen
+factual claims sat unsourced. The 2026-07-13 Zed/ClickHouse recap passed the old test with 3 links
+(two of them the same URL) against ~10 citable claims. Rob noticed. It is not good enough.
 
-- **Every run, after your new-content work, retrofit the 5–10 oldest still-uncited pages** (Rob
-  wants the backlog cleared sooner — aim for the high end, 10, whenever the sources are in your
-  logs and the run has budget; never fewer than 5). Find
-  candidates cheaply: a content page whose `index.md` has **no external (non-chatforest) `http`
-  link** is uncited. Take the oldest such pages first (by `date` front matter).
-- For each: mine your `WORKLOG.md` / `RUNLOG.md` for the source URLs you originally captured for
-  that story, **re-verify each still resolves and supports the claim**, and attach it inline. If
-  the log didn't capture a source, do a quick fresh search. **If a claim genuinely can't be
-  sourced, soften or cut it** — never leave a bare factual/accusatory claim standing.
-- Named-company/product claims (breach, malware, funding, benchmark) still need **≥2 independent
+**The backlog is now all 957 pages, re-audited claim by claim.**
+
+- **Work queue:** a page is unaudited until its front matter carries `sources_audited: YYYY-MM-DD`.
+  Take the oldest unaudited pages by `date`. Add that flag ONLY after a real claim-by-claim pass —
+  it is the site's progress metric now, and a false flag is worse than no flag.
+- **Every run, audit the 5-10 oldest unaudited pages** (aim for 10, never fewer than 5).
+- **Read like a Wikipedia editor.** Go sentence by sentence. Anywhere a reader could reasonably
+  write `[citation needed]`, attach an inline link to a primary source. That includes:
+  - every named person and their title/affiliation
+  - every number — revenue, headcount, users, tokens, latency, percentages, "10-100x", "6x faster"
+  - every product capability, launch, or availability claim
+  - every superlative — "first", "leading", "largest", "the leading model for code"
+  - every dated event
+- **Cite it or cut it.** If you cannot find a primary source, DELETE the claim. Do not soften it
+  into vagueness, and do not pad with a weak or tangential source just to clear the bar. A shorter
+  true page beats a longer sourced-looking one. (Rob, 2026-07-22 — supersedes "soften or cut".)
+- **Verify the claim against the source; don't just attach a plausible link.** Worked failure from
+  2026-07-13: the ClickHouse recap said "45 million tokens per day, representing roughly 80% of
+  employee usage." The source says three separate things — ~80% of employees use LibreChat daily,
+  the platform handles ~70% of internal data warehouse queries, and it processes 45M+ tokens/day.
+  Two of those were fused into a statistic that does not exist. The missing citation is exactly what
+  let it through: a cited claim gets checked, an uncited one just sounds authoritative. Confirm each
+  number says what you claim it says.
+- Named-company/product claims (breach, malware, funding, benchmark) still need **>=2 independent
   primary sources**, backlog or not.
-- **Deploy the retrofitted pages** in the same run (respecting the throttle). Note in `WORKLOG.md`
-  which pages you retrofitted so the CEO can track the shrinking uncited count.
-- At 5–10 pages/run this clears the ~476-page backlog in roughly 1–2 weeks and the site-wide
-  uncited number drops sharply each day. This is real work every run — not optional, not "when you
-  have time." Prioritize named-company risk claims (breach/malware/funding) and GSC top-traffic
-  pages within the oldest set.
+- Prefer primary sources (the company's own post, the filing, the researcher's report) over press
+  coverage of them.
+- Mine `WORKLOG.md` / `RUNLOG.md` for the source URLs you originally captured, but **re-verify each
+  against the live source** — do not trust the log alone.
+- **Deploy the audited pages** in the same run (respecting the throttle). Note which pages in
+  `WORKLOG.md`.
+- Prioritize named-company risk claims (breach/malware/funding) and GSC top-traffic pages within
+  the oldest set.
+- At 5-10 pages/run this is a months-long duty, not a sprint. That is expected and fine — do NOT
+  rush a page to raise the count. Quality of each audit beats throughput.
 
 ## Vision (not finalized)
 

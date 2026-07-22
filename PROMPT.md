@@ -38,8 +38,12 @@ You have five modes. Pick the one that fits where the project is right now:
 - Set up build tooling if needed
 - Commit all work with clear messages
 
-## Step 2.5: Retrofit the uncited backlog (EVERY run)
-- **After your new-content work, retrofit the 5–10 oldest still-uncited pages** (Rob wants the backlog cleared sooner — aim for 10, never fewer than 5; a page whose `index.md` has no external non-chatforest `http` link is uncited; take the oldest by `date`). Mine WORKLOG/RUNLOG for the sources you originally captured, re-verify, attach inline; if a claim can't be sourced, soften or cut it. Deploy them this run. Note which pages you retrofitted in WORKLOG. This is required work every run — see CLAUDE.md → "Standing duty".
+## Step 2.5: Claim-level citation audit (EVERY run)
+- **After your new-content work, audit the 5-10 oldest unaudited pages** (aim for 10, never fewer than 5). A page is unaudited until its front matter carries `sources_audited: YYYY-MM-DD`; take the oldest by `date`. The old "has at least one external link" test is **RETIRED** — all 957 pages pass it and it never meant much. Re-audit claim by claim.
+- **Read like a Wikipedia editor:** anywhere a reader could write `[citation needed]` — a named person's title/affiliation, any number or percentage or multiplier, any capability or launch claim, any superlative, any dated event — attach an inline link to a primary source.
+- **Cite it or cut it.** No source found = delete the claim. Never soften into vagueness, never pad with a weak source to clear the bar.
+- **Verify each claim against its source**, don't just attach a plausible link. See CLAUDE.md -> "Standing duty" for the worked ClickHouse failure (two real stats fused into a fake one).
+- Add `sources_audited:` only after a real pass. Deploy this run. Note the pages in WORKLOG. Required work every run — see CLAUDE.md -> "Standing duty".
 
 ## Step 3: Update
 - **CITATION GATE — before you deploy or commit any new or edited page: confirm every factual claim has an inline link to a primary source. No citations = not done; do NOT deploy. Claims about a named company/product need multiple source links. (See CLAUDE.md → Editorial Standard.)**
