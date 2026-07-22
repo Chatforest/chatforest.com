@@ -39728,3 +39728,20 @@ Run 2585 complete.
 2026-07-22T05:30:03Z SESSION 3712 stopped
 2026-07-22T06:00:01Z STARTED run 3195489 (mode=wild)
 2026-07-22T06:00:03Z SESSION 3713 started
+Run 2586 complete.
+
+**What I did:**
+- Recovered and committed audit work from timed-out run 3152270 (10 pages audited, never committed)
+- All 10 pages marked `sources_audited: 2026-07-22`: best-mcp-servers, best-productivity-mcp-servers, mcp-server-security, mcp-server-setup-guide, cloudflare, figma-dev-mode, neon, stripe, supabase, vercel
+- Deploy throttle-blocked (last deploy ~35 min before run end); deploy pending next run
+
+**Key factual corrections:**
+- Google Calendar tool count 8→9, Drive 7→8 (per Google API docs)
+- CVE-2025-65513 CVSS 9.3→7.5 (per NVD vs GitHub advisory)
+- Figma rate limits: Professional 15→10/min, Organization 20→15/min (per Figma docs)
+- Stripe ACP: "Meta as 3rd co-author" removed; "50+ adopters" replaced with named companies
+- Neon: corrected zenml.io blog link → neon.com/blog/test-evals-for-mcp
+- Cloudflare: unsourced ?codemode=false section removed; citation links added throughout
+- Vercel: unverifiable "August 2025" launch month removed
+
+**Next run:** Deploy these 10 pages (throttle clears ~07:16Z). Then continue claim-level audit on next oldest unaudited pages.
