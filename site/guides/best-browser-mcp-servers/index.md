@@ -5,7 +5,7 @@
 
 Browser automation is one of the most requested capabilities for AI agents. Navigating pages, filling forms, clicking buttons, taking screenshots — these are things humans do in browsers every day, and agents need to do them too.
 
-But there are now multiple MCP servers competing for this role, each with a different philosophy. We've spent significant time with all of them. Here's how they compare, and which one you should use.
+But there are now multiple MCP servers competing for this role, each with a different philosophy. We've researched all of them — reading documentation, source code, GitHub issues, and published benchmarks. Here's how they compare, and which one you should use.
 
 ## The Contenders
 
@@ -58,9 +58,9 @@ The accessibility tree approach is fundamentally more reliable. It doesn't requi
 
 ### For most new projects: Playwright MCP
 
-This is the default answer in 2026. The accessibility tree targeting makes browser automation dramatically more reliable for AI agents. The tool set is comprehensive (22+ tools), it supports three browser engines, and the ecosystem has rallied behind it — Claude Desktop, VS Code, Cursor, GitHub Copilot, and 15+ other MCP clients all recommend or bundle it. GitHub Copilot's Coding Agent now auto-configures Playwright MCP with zero setup.
+This is the default answer in 2026. The accessibility tree targeting makes browser automation dramatically more reliable for AI agents. The tool set is comprehensive (22+ tools), it supports three browser engines, and the ecosystem has rallied behind it — Claude Desktop, VS Code, Cursor, GitHub Copilot, and other major MCP clients all support it.
 
-**Update (April 2026):** Microsoft also released `@playwright/cli`, a companion CLI tool that uses plain shell commands instead of the MCP protocol. The CLI uses roughly 4x fewer tokens per session (~27k vs ~114k), making it more efficient for coding agents that don't need the full MCP protocol. The MCP server remains the right choice for interactive browser automation; the CLI is better for scripted test generation workflows.
+**Update (April 2026):** Microsoft also released [`@playwright/cli`](https://github.com/microsoft/playwright-mcp), a companion CLI tool that uses plain shell commands instead of the MCP protocol. The CLI uses roughly 4x fewer tokens per session (~27k vs ~114k), making it more efficient for coding agents that don't need the full MCP protocol. The MCP server remains the right choice for interactive browser automation; the CLI is better for scripted test generation workflows.
 
 Read our [full Playwright MCP review](/reviews/playwright-mcp-server/) for the detailed breakdown.
 
@@ -88,7 +88,7 @@ Read our [full Puppeteer MCP review](/reviews/puppeteer-mcp-server/) for histori
 
 If you're running agents in production that need to automate browsers across hundreds or thousands of sessions, running local Chrome processes won't scale. Browserbase gives you managed, cloud-hosted browsers with session recording, anti-bot stealth, and Stagehand's AI-native element targeting.
 
-**Update (April 2026):** Browserbase's MCP server now runs on **Stagehand v3.0**, which brings 20-40% faster performance across all core operations (act, extract, observe) via automatic caching, enhanced extraction across iframes and shadow roots, and multi-browser compatibility (Playwright, Puppeteer, Patchright drivers). Stagehand's new caching system eliminates redundant LLM calls — when it encounters a page structure it's seen before, it serves cached results instantly, yielding up to **2x faster execution and ~30% cost reduction** on repeat workflows. Stagehand is now available across Python, Go, Ruby, Java, and Rust (not just JavaScript). Browserbase is also a one-click integration on the Vercel Agent Marketplace.
+**Update (April 2026):** Browserbase's MCP server now runs on [**Stagehand v3.0**](https://www.browserbase.com/blog/stagehand-v3), which brings [44% faster performance](https://www.browserbase.com/blog/stagehand-v3) via a CDP-native architecture (removing the Playwright dependency for core operations), enhanced extraction across iframes and shadow roots, and multi-language support (Python, Go, Ruby, Java, and Rust — not just JavaScript). Browserbase is also a one-click integration on the Vercel Agent Marketplace.
 
 The trade-off is still cost ($20-99+/mo) and vendor dependency, though the performance improvements are substantial. For development and small-scale use, local Playwright is better. For production at scale, Browserbase is worth evaluating.
 
@@ -96,7 +96,7 @@ Read our [full Browserbase MCP review](/reviews/browserbase-mcp-server/) for the
 
 ### For debugging and performance analysis: Chrome DevTools MCP
 
-**New in 2026.** Google's Chrome DevTools team released an official MCP server that exposes Chrome DevTools capabilities to AI agents via CDP. This isn't a general-purpose browser automation tool — it's a debugging powerhouse. Agents can take screenshots, monitor console output (with source-mapped stack traces), inspect network requests, run performance traces, and execute Lighthouse audits.
+**New in 2026.** [Google's Chrome DevTools team released an official MCP server](https://developer.chrome.com/blog/chrome-devtools-mcp) that exposes Chrome DevTools capabilities to AI agents via CDP. This isn't a general-purpose browser automation tool — it's a debugging powerhouse. Agents can take screenshots, monitor console output (with source-mapped stack traces), inspect network requests, run performance traces, and execute Lighthouse audits.
 
 The standout feature: agents can connect to **active browser sessions**, including existing debugging sessions in the DevTools UI. This means an agent can pick up exactly where you left off — no re-authentication, no session duplication.
 
@@ -140,7 +140,7 @@ If your agent needs to extract content from web pages — pull article text, cra
 
 ## What About Stagehand?
 
-Stagehand (from Browserbase) takes a hybrid approach — it uses vision models and LLMs to identify page elements instead of CSS selectors or accessibility trees. Think of it as "AI-native" element targeting. With **v3.0** (released early 2026), Stagehand is 44% faster on average, supports iframes and shadow roots, and works with multiple browser drivers beyond just Playwright. The new caching system eliminates redundant LLM calls on repeat page structures, delivering up to 2x faster execution. Stagehand is now available across Python, Go, Ruby, Java, and Rust — not just JavaScript. It's a strong option for pages where neither CSS selectors nor accessibility trees work well (canvas apps, custom widgets), and the caching helps mitigate the latency/cost concern from LLM calls. Worth watching — and if you're already on Browserbase, it's the default engine.
+Stagehand (from Browserbase) takes a hybrid approach — it uses vision models and LLMs to identify page elements instead of CSS selectors or accessibility trees. Think of it as "AI-native" element targeting. With [**v3.0**](https://www.browserbase.com/blog/stagehand-v3) (released early 2026), Stagehand is 44% faster on average via a CDP-native architecture, supports iframes and shadow roots, and runs across Python, Go, Ruby, Java, and Rust — not just JavaScript. It's a strong option for pages where neither CSS selectors nor accessibility trees work well (canvas apps, custom widgets), and the caching helps mitigate the latency/cost concern from LLM calls. Worth watching — and if you're already on Browserbase, it's the default engine.
 
 ## The Bottom Line
 

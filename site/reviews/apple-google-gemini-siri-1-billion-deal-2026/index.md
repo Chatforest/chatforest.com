@@ -1,9 +1,9 @@
 # Apple's $1 Billion Surrender: Why the World's Most Valuable Company Chose Google to Build Its AI Future
 
-> Apple signed a deal worth $1 billion per year to make Google Gemini the foundation of a rebuilt Siri. Here's what that decision means for the AI industry, the two billion devices it affects, and the antitrust fire it lit.
+> Apple signed a deal worth $1 billion per year to make Google Gemini the foundation of a rebuilt Siri. Here's what that decision means for the AI industry, the 2.5 billion devices it affects, and the antitrust fire it lit.
 
 
-**At a glance:** Apple-Google Gemini deal for Siri. Announced January 12, 2026. $1 billion/year. Custom 1.2T parameter model. 2 billion devices. DOJ scrutiny. Phase 1: iOS 26.4 (spring 2026). Phase 2: iOS 27 / iPhone 18 (September 2026). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Apple-Google Gemini deal for Siri. Announced January 12, 2026. $1 billion/year. Custom 1.2T parameter model. 2.5 billion devices. DOJ scrutiny. Phase 1: iOS 26.4 (spring 2026). Phase 2: iOS 27 / iPhone 18 (September 2026). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
@@ -25,7 +25,7 @@ Apple is the world's most valuable company. It employs thousands of ML researche
 
 And it still couldn't close the gap.
 
-The story of how that happened matters. Apple's AI strategy through 2023-2024 was built around on-device execution: small, efficient models that ran locally, preserved privacy, and worked offline. That strategy was coherent and defensible — until the ChatGPT moment made it clear that users wanted intelligence that required frontier-scale compute, not just efficiency. Apple's ~3 billion parameter on-device models and ~150 billion parameter cloud models simply didn't perform at the level users had come to expect from GPT-4, Gemini Ultra, and Claude.
+The story of how that happened matters. Apple's AI strategy through 2023-2024 was built around on-device execution: small, efficient models that ran locally, preserved privacy, and worked offline. That strategy was coherent and defensible — until the ChatGPT moment made it clear that users wanted intelligence that required frontier-scale compute, not just efficiency. Apple's [~3 billion parameter on-device models](https://machinelearning.apple.com/research/introducing-apple-foundation-models) and larger cloud models simply didn't perform at the level users had come to expect from GPT-4, Gemini Ultra, and Claude.
 
 By January 2026, the decision was apparently made: license what you can't build, build what you can. Apple keeps the device layer, the privacy infrastructure, the user interface, and the trust relationship. Google provides the model.
 
@@ -35,7 +35,7 @@ By January 2026, the decision was apparently made: license what you can't build,
 
 To understand why this deal matters to Google, consider the distribution math.
 
-Google has approximately 400 million monthly active Gemini users across its own products. Apple has approximately **two billion active devices** — iPhones, iPads, Macs, Apple Watches, HomePods. Every one of those devices, under iOS 27 and macOS 27, will route Siri's intelligence through a Gemini-backed backend.
+By early 2026, [Google's Gemini app had surpassed 750 million monthly active users](https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/). Apple has approximately [**2.5 billion active devices**](https://9to5mac.com/2026/01/29/apple-reveals-it-has-2-5-billion-active-devices-around-the-world/) — iPhones, iPads, Macs, Apple Watches, HomePods. Every one of those devices, under iOS 27 and macOS 27, will route Siri's intelligence through a Gemini-backed backend.
 
 That's the largest single distribution pipeline for any AI model in existence. By comparison, Google's own deployment of Gemini through Search, Workspace, and the Gemini app looks modest. The Apple deal effectively puts Gemini in front of every Apple user whether they've heard of it or not.
 
@@ -49,7 +49,7 @@ The question that circulated when the deal broke: why not Anthropic, whose model
 
 The answer appears to be infrastructure. Apple's Private Cloud Compute requires a specific integration architecture — models can't just be called via API from a third-party cloud. They need to run within Apple's controlled inference environment. Google had both the model capability *and* the enterprise infrastructure flexibility to build a custom deployment pathway. Google Cloud's technical reach made the integration tractable in a way that smaller lab deployments weren't.
 
-There's also a prior relationship: Google has paid Apple approximately $20 billion per year to remain the default search engine on iOS. That relationship comes with deep technical integration work between the two companies. Adding AI to an existing partnership is operationally simpler than building a new one from scratch.
+There's also a prior relationship: Google has paid Apple [approximately $20 billion per year](https://www.bloomberg.com/news/articles/2024-05-01/google-s-payments-to-apple-reached-20-billion-in-2022-cue-says) to remain the default search engine on iOS. That relationship comes with deep technical integration work between the two companies. Adding AI to an existing partnership is operationally simpler than building a new one from scratch.
 
 ---
 

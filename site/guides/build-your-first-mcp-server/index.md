@@ -182,7 +182,7 @@ Restart Claude Desktop and look for the hammer icon.
 
 ### Option B: VS Code (Copilot)
 
-VS Code has built-in MCP support since version 1.116. Create `.vscode/mcp.json` in your project:
+[VS Code has built-in MCP support](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) (since version 1.116). Create `.vscode/mcp.json` in your project:
 
 ```json
 {
@@ -422,7 +422,7 @@ What changes is what's inside the functions. Some ideas for your next server:
 
 ### Features We Didn't Cover
 
-The MCP Python SDK (v1.27.0 as of April 2026, pin to `mcp>=1.25,<2` — V2 is coming) has more capabilities for when you're ready:
+The [MCP Python SDK](https://pypi.org/project/mcp/) (v1.27.0 as of April 2026, pin to `mcp>=1.25,<2` — V2 is coming) has more capabilities for when you're ready:
 
 - **Prompts** (`@mcp.prompt()`) — reusable prompt templates that clients can discover and use
 - **Context object** — accept a `Context` parameter in your tools for logging (`ctx.info()`, `ctx.debug()`), progress reporting (`ctx.report_progress()`), and requesting user input via elicitation (`ctx.elicit()`)

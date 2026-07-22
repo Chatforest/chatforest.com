@@ -117,7 +117,7 @@
 <tr>
 <td><strong>MCP Security</strong></td>
 <td><strong>Crisis</strong></td>
-<td><strong>OX Security disclosed systemic RCE flaw in MCP architecture — 200K servers vulnerable, Anthropic declined to fix</strong></td>
+<td><a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/"><strong>OX Security disclosed systemic RCE flaw in MCP architecture</strong></a> <strong>— 200K vulnerable instances, Anthropic declined protocol-level fix</strong></td>
 </tr>
 </tbody>
 </table>
@@ -214,7 +214,7 @@
 <h3 id="1-centralized-registries-context7-docfork-deepcon">1. Centralized Registries (Context7, Docfork, Deepcon)</h3>
 <p>A company maintains a cloud-hosted registry of pre-processed documentation. Your agent queries their API, and the server returns relevant chunks. The documentation is crawled, processed, and stored ahead of time — not fetched at query time.</p>
 <p><strong>When it works best:</strong> Standard libraries with well-known docs. You ask about React hooks or FastAPI middleware, and the server returns current, pre-chunked documentation instantly. No setup, no indexing — it just works.</p>
-<p><strong>When it fails:</strong> When the registry hasn&rsquo;t crawled the library you need. When the documentation is community-contributed and hasn&rsquo;t been verified against the official source (Context7&rsquo;s <a href="https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/">ContextCrush vulnerability</a> showed this risk). When the vendor changes pricing — Context7 cut its free tier by 83–92% in January 2026.</p>
+<p><strong>When it fails:</strong> When the registry hasn&rsquo;t crawled the library you need. When the documentation is community-contributed and hasn&rsquo;t been verified against the official source (Context7&rsquo;s <a href="https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/">ContextCrush vulnerability</a> showed this risk). When the vendor changes pricing — <a href="https://blog.devgenius.io/context7-quietly-slashed-its-free-tier-by-92-16fa05ddce03">Context7 cut its free tier by 83–92% in January 2026</a>.</p>
 <h3 id="2-repo-based-retrieval-gitmcp-rtfmbro">2. Repo-Based Retrieval (GitMCP, rtfmbro)</h3>
 <p>Instead of maintaining a separate registry, these servers read documentation directly from the source — the actual GitHub repository. GitMCP turns any public repo into an MCP endpoint by replacing <code>github.com</code> with <code>gitmcp.io</code> in the URL. rtfmbro reads from the exact git tag matching your lockfile.</p>
 <p><strong>When it works best:</strong> Any public library, including obscure ones no registry has indexed. You get the documentation the maintainers actually wrote, not a third party&rsquo;s processed version. No vendor lock-in, no rate limit surprises.</p>

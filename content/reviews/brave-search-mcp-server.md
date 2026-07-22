@@ -6,6 +6,7 @@ og_description: "Brave's official MCP server gives AI agents web, image, video, 
 content_type: "Review"
 card_description: "Six search tools and the only independent Western search index. The most complete search MCP server — but the free tier is gone."
 last_refreshed: 2026-05-18
+sources_audited: 2026-07-22
 categories: ["/categories/web-search-scraping/"]
 ---
 
@@ -50,16 +51,16 @@ The two biggest gaps in the official server are now closed.
 
 The biggest news since our original review isn't about the MCP server itself — it's about the API behind it and the ecosystem growing around it.
 
-- **Free tier eliminated (February 12, 2026).** Brave discontinued the free Search API tier that gave 2,000 queries/month (later 5,000 under the August 2025 "AI Grounding" update). All plans now use metered billing. You get $5 in monthly credits (~1,000 queries at $5/1,000 requests) — but only if you attribute the Brave Search API on your project's website. Previous free tier had no attribution requirement. Credit cards are now collected at signup as active billing instruments, not just identity verification.
+- **Free tier eliminated (February 12, 2026).** Brave [discontinued the free Search API tier](https://brave.com/blog/most-powerful-search-api-for-ai/) that gave 2,000 queries/month (later 5,000 under the August 2025 "AI Grounding" update). All plans now use metered billing. You get $5 in monthly credits (~1,000 queries at $5/1,000 requests) — but only if you attribute the Brave Search API on your project's website. Previous free tier had no attribution requirement. Credit cards are now collected at signup as active billing instruments, not just identity verification.
 
 - **New plan structure.** Three paid plans replace the old Free/Pro tiers:
   - **Search** — $5 per 1,000 requests. Includes web, images, news, videos, and the new LLM Context search.
-  - **Answers** — $4 per 1,000 web searches + $5 per million tokens. Returns grounded responses with citations (94.1% F1-score on SimpleQA benchmark). OpenAI SDK compatible.
+  - **Answers** — $4 per 1,000 web searches + $5 per million tokens. Returns grounded responses with citations ([94.1% F1-score on SimpleQA benchmark](https://brave.com/blog/most-powerful-search-api-for-ai/)). OpenAI SDK compatible.
   - **Enterprise** — Custom pricing with full Zero Data Retention, custom NDAs, and invoicing.
 
 - **New LLM Context API.** Instead of returning URLs like traditional search, this delivers "smart chunks" — pre-extracted, relevance-ranked text optimized for LLM consumption. Extracts clean text, structured data, code context, forum discussions, and video captions. Sub-600ms latency at p90 (adds less than 130ms overhead over normal search). Supports token budgets for cost control. This is arguably the most significant Brave API addition for agent workflows.
 
-- **Brave is now the only independent Western search index.** Microsoft discontinued the Bing Search API in summer 2025. Google blocks most AI use cases. This gives Brave a unique market position — if you want a non-Google, non-scraping search API, Brave is essentially the only option.
+- **Brave is now the only independent Western search index.** [Microsoft discontinued the Bing Search API on August 11, 2025](https://learn.microsoft.com/en-us/lifecycle/announcements/bing-search-api-retirement). Google blocks most AI use cases. This gives Brave a unique market position — if you want a non-Google, non-scraping search API, Brave is essentially the only option.
 
 - **Brave API Skills.** Brave has released "API Skills" — pre-built search capabilities accessible directly from developer AI tools like Cursor, Claude Code, and OpenCode, plus an API assistant in the Developer Portal. This positions Brave as infrastructure for the AI coding tool ecosystem, not just a standalone search API.
 
@@ -131,7 +132,7 @@ If you used the v1.x server, here's what changed:
 
 **The tool breadth is genuinely useful.** Web search handles 90% of agent needs, but the other tools fill real gaps. News search is great for "what happened with X this week" queries. Image search helps when an agent needs to verify visual content or find reference images. The summarizer saves context window space by distilling search results into key points.
 
-**Brave's independent index is now uniquely important.** With Bing's API discontinued (summer 2025) and Google blocking most AI use cases, Brave operates the only independent Western search index accessible to AI agents. This isn't just a differentiator anymore — it's a monopoly position. Brave's 30+ billion page index is the only non-Google, non-scraping option for programmatic search.
+**Brave's independent index is now uniquely important.** With [Bing's API discontinued (August 11, 2025)](https://learn.microsoft.com/en-us/lifecycle/announcements/bing-search-api-retirement) and Google blocking most AI use cases, Brave operates the only independent Western search index accessible to AI agents. This isn't just a differentiator anymore — it's a monopoly position. Brave's 30+ billion page index is the only non-Google, non-scraping option for programmatic search.
 
 **Privacy as a feature.** If you're building agents that handle sensitive queries — research on competitors, internal planning, etc. — Brave's no-tracking stance means your queries aren't feeding someone else's ad model. This matters more than most people think.
 
@@ -149,7 +150,7 @@ If you used the v1.x server, here's what changed:
 
 **Search quality trails Google for niche queries.** Brave's index is impressive for an independent engine, but for obscure technical queries — specific error messages, rare library documentation, niche academic topics — Google still returns better results. For mainstream queries, the difference is negligible. Know your use case.
 
-**The Answers API still isn't exposed.** Brave's Answers API (grounded responses with citations, 94.1% F1-score on SimpleQA, OpenAI SDK compatible) exists at the API level but has no dedicated MCP tool yet. The LLM Context gap was closed in v2.0.81, but Answers remains unimplemented in the MCP server. This is the remaining lag between what the API offers and what the MCP server exposes.
+**The Answers API still isn't exposed.** Brave's [Answers API](https://brave.com/blog/most-powerful-search-api-for-ai/) (grounded responses with citations, 94.1% F1-score on SimpleQA, OpenAI SDK compatible) exists at the API level but has no dedicated MCP tool yet. The LLM Context gap was closed in v2.0.81, but Answers remains unimplemented in the MCP server. This is the remaining lag between what the API offers and what the MCP server exposes.
 
 **Node.js 22 requirement is steep.** Many developers are still on Node 18 or 20 (both LTS). Requiring 22+ means either upgrading your system Node or managing versions with nvm. Docker sidesteps this entirely, but it's still friction for the npx path.
 

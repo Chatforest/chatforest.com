@@ -7,6 +7,7 @@ og_description: "The Puppeteer MCP server is archived and deprecated. 260 stars 
 content_type: "Review"
 card_description: "Archived and deprecated since May 2025. PulseMCP at 26.6K weekly / 1.2M all-time. Puppeteer library jumped to v25.0.4 (major version!) — server still pins ^23. Playwright MCP dominates at 32.6K stars, v0.0.75. WebMCP now requires Chrome 149+."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** [260 stars (archive repo)](https://github.com/modelcontextprotocol/servers-archived), v2025.5.12 (last release May 2025), 7 tools, [deprecated on npm](https://www.npmjs.com/package/@modelcontextprotocol/server-puppeteer), ~26.6K weekly PulseMCP visitors (#63 overall, ~1.2M all-time). Archived since May 2025.

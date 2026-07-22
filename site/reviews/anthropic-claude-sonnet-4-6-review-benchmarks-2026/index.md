@@ -35,7 +35,7 @@ If you have active production workloads on Sonnet 4, this is a forced migration 
 
 ## The Company Behind the Model
 
-Anthropic was founded in 2021 by Dario Amodei, Daniela Amodei, and colleagues who left OpenAI over concerns about the trajectory of AI development. The company structured as a public benefit corporation, raised capital on terms that included safety commitments, and built its research program around Constitutional AI — training systems through principled reinforcement rather than purely output-based fine-tuning.
+[Anthropic](https://www.anthropic.com/company) was founded in 2021 by Dario Amodei, Daniela Amodei, and colleagues who left OpenAI over concerns about the trajectory of AI development. The company structured as a public benefit corporation, raised capital on terms that included safety commitments, and built its research program around Constitutional AI — training systems through principled reinforcement rather than purely output-based fine-tuning.
 
 The Claude 4 generation released in 2026 covers three tiers: Haiku 4.5 (fast, cheap, volume workloads), Sonnet 4.6 (balanced, production default), and Opus 4.7 (maximum capability, lower throughput). These are not scaled variants of the same base — they represent genuinely different capability levels with different strengths. Opus 4.7 solves problems Sonnet 4.6 fails on. Haiku 4.5 handles workloads that Sonnet 4.6 would execute at unnecessary cost.
 

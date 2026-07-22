@@ -2,6 +2,80 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2583 — 2026-07-22 — ClickHouse Fix + Claim-Level Audit: 7 Pages
+
+**Mode:** Priority fix + Citation auditor
+
+### Inbox
+- **Msg #2242 (Rob, HIGH PRIORITY):** Fix fused statistic in Zed/ClickHouse webinar recap + reading new standing duty for claim-level audit. Marked seen. Done.
+
+### What I did
+
+**PRIORITY FIX — `builders-log/zed-clickhouse-sonnet-5-webinar-recap-july-13-production-agents-builder-guide/index.md`:**
+
+Rob flagged a live factual error: "processes more than 45 million tokens per day, representing roughly 80% of employee usage" fused two separate statistics into a non-existent metric.
+
+Fixes applied:
+- **Fused stat split into 3 separate, cited facts:** ~80% of employees use LibreChat daily | ~70% of internal data warehouse queries | 45M+ tokens/day
+- **DWAINE agent named and described:** Data Warehouse AI Natural Expert — enables employees to query business data through natural language
+- **Token growth trend added with citations:** 15M → 33M (Oct 2025) → 45M+ now (sources: clickhouse-agents-beta + librechat-open-source-agentic-data-stack)
+- **All 3 speaker names/titles cited** via official Anthropic webinar page
+- **Zed 100K daily developers** — noted as Neel Chotai's statement at the session (webinar page cited)
+- **4,000 customers + $250M ARR** — linked to clickhouse-tops-250m-arr-and-4000-customers
+- **"petabyte-scale"** — linked to OpenAI/ClickHouse petabyte-scale observability post
+- **"6x join improvement"** — linked to clickhouse-agents-beta
+- **"leading model for code"** endorsement — linked to clickhouse-agents-beta
+- **April 22 Zed parallel agents launch** — linked to zed.dev/blog/parallel-agents
+- **Sonnet 5 + Opus 4.8 pricing** — linked to anthropic.com/pricing
+- `sources_audited: 2026-07-22` added
+
+**CLAIM-LEVEL CITATION AUDIT — 7 pages audited and marked `sources_audited: 2026-07-22`:**
+
+1. **`reviews/puppeteer-mcp-server.md`** — Well-cited (sources section covers archived status, Puppeteer v25.0.4, Playwright star count). Added sources_audited.
+
+2. **`reviews/sqlite-mcp-server.md`** — Excellent inline citations (Trend Micro CVE link, GitHub issue #3314, Akamai, The Register, alternatives all linked). Added sqlite-explorer-fastmcp GitHub link + sources_audited.
+
+3. **`reviews/filesystem-mcp-server.md`** — Converted all 15 bare GitHub issue/PR numbers to clickable links (#4157, #4158, #4172, #4179, #4109, #3277, #3232, #4129, #4186, #4178, #4175, #4195, #4115, #3752, #3756, #3791, #3921, #3402). Added Sources section at bottom. Added sources_audited.
+
+4. **`reviews/playwright-mcp-server.md`** — Good overall. Added link for CLI token efficiency benchmark claim (playwright-mcp GitHub). Added Sources section. Added sources_audited.
+
+5. **`guides/build-your-first-mcp-server.md`** — Tutorial content. Added VS Code MCP docs link for "built-in MCP support since version 1.116" claim. Added PyPI link for MCP SDK version claim. Added sources_audited.
+
+6. **`reviews/brave-search-mcp-server.md`** — Added 3 missing citations:
+   - "Free tier eliminated February 12, 2026" → Brave blog (most-powerful-search-api-for-ai)
+   - "Microsoft discontinued the Bing Search API in summer 2025" → Microsoft Learn retirement announcement (August 11, 2025 confirmed)
+   - "94.1% F1-score on SimpleQA benchmark" → Brave blog (most-powerful-search-api-for-ai)
+   Added sources_audited.
+
+**Pages deferred to next run (need more research):**
+- `reviews/postgres-mcp-server.md` — Datadog citation, Google Toolbox/pgEdge/DBHub/Supabase links need adding
+- `reviews/slack-mcp-server.md` — "$27.7B acquisition" Salesforce claim needs verification; "25x growth in tool invocations" needs primary source
+- `reviews/memory-mcp-server.md` — Benchmark scores (OMEGA 95.4%, agentmemory 96.2%, etc.) need individual citations
+- `reviews/fetch-mcp-server.md` — CVE-2025-65513 Snyk link needed; body intro has outdated stats (202K vs 244K)
+
+**Build:** Hugo clean build — same page count.
+**Deploy:** DEPLOYED this run.
+
+### Sources used this run
+- ClickHouse agents beta: https://clickhouse.com/blog/clickhouse-agents-beta
+- ClickHouse LibreChat agentic data stack: https://clickhouse.com/blog/librechat-open-source-agentic-data-stack
+- ClickHouse 4K customers/$250M ARR: https://clickhouse.com/blog/clickhouse-tops-250m-arr-and-4000-customers
+- ClickHouse petabyte OpenAI: https://clickhouse.com/blog/why-openai-uses-clickhouse-for-petabyte-scale-observability
+- Zed parallel agents launch: https://zed.dev/blog/parallel-agents
+- Anthropic webinar (speaker titles): https://www.anthropic.com/webinars/production-grade-agents-on-claude-sonnet-5-live-with-zed-and-clickhouse
+- Anthropic pricing: https://www.anthropic.com/pricing
+- sqlite-explorer-fastmcp GitHub: https://github.com/hannesrudolph/sqlite-explorer-fastmcp-mcp-server
+- Bing Search API retirement: https://learn.microsoft.com/en-us/lifecycle/announcements/bing-search-api-retirement
+- Brave free tier/SimpleQA: https://brave.com/blog/most-powerful-search-api-for-ai/
+
+### What should happen next
+- **CLAIM AUDIT (priority):** Next oldest pages are `postgres-mcp-server.md`, `slack-mcp-server.md`, `memory-mcp-server.md`, `fetch-mcp-server.md` (deferred this run). Then continue with the next batch of 2026-03-14 reviews.
+- **BLUESKY:** Next eligible July 23. Best candidates: FLI Safety Index Summer 2026 (no lab passes safety, military AI pivot) or Gemini 3.6 Flash (17% cheaper, government-only cyber model).
+- **NEW CONTENT:** Grok 4.5 review (July 8, xAI/SpaceX Cursor-trained coding model, $2/$6 pricing, 83.3% Terminal-Bench) — not yet in reviews section, only in builders-log.
+- **NEWSLETTER:** Dispatch #3 live. Next Dispatch due ~July 29.
+
+---
+
 ## Run 2582 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages
 
 **Mode:** Citation auditor

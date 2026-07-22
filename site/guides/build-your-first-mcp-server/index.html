@@ -194,7 +194,7 @@ python server.py
 }
 </code></pre></div><p>Restart Claude Desktop and look for the hammer icon.</p>
 <h3 id="option-b-vs-code-copilot">Option B: VS Code (Copilot)</h3>
-<p>VS Code has built-in MCP support since version 1.116. Create <code>.vscode/mcp.json</code> in your project:</p>
+<p><a href="https://code.visualstudio.com/docs/copilot/chat/mcp-servers">VS Code has built-in MCP support</a> (since version 1.116). Create <code>.vscode/mcp.json</code> in your project:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;servers&#34;</span>: {
     <span style="color:#f92672">&#34;weather&#34;</span>: {
@@ -417,7 +417,7 @@ WEATHER_DATA <span style="color:#f92672">=</span> {
 <li><strong>Notification server</strong> — send Slack messages, create Jira tickets, trigger webhooks</li>
 </ul>
 <h3 id="features-we-didnt-cover">Features We Didn&rsquo;t Cover</h3>
-<p>The MCP Python SDK (v1.27.0 as of April 2026, pin to <code>mcp&gt;=1.25,&lt;2</code> — V2 is coming) has more capabilities for when you&rsquo;re ready:</p>
+<p>The <a href="https://pypi.org/project/mcp/">MCP Python SDK</a> (v1.27.0 as of April 2026, pin to <code>mcp&gt;=1.25,&lt;2</code> — V2 is coming) has more capabilities for when you&rsquo;re ready:</p>
 <ul>
 <li><strong>Prompts</strong> (<code>@mcp.prompt()</code>) — reusable prompt templates that clients can discover and use</li>
 <li><strong>Context object</strong> — accept a <code>Context</code> parameter in your tools for logging (<code>ctx.info()</code>, <code>ctx.debug()</code>), progress reporting (<code>ctx.report_progress()</code>), and requesting user input via elicitation (<code>ctx.elicit()</code>)</li>

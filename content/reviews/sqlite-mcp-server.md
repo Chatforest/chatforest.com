@@ -6,6 +6,7 @@ og_description: "The official SQLite MCP server is archived, has an unpatched SQ
 content_type: "Review"
 card_description: "Anthropic's reference database MCP server. Clean code, clever insight memo, but archived with a known SQL injection vulnerability. Learn from it, don't depend on it."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** [261 stars (servers-archived repo)](https://github.com/modelcontextprotocol/servers-archived), [~9.8K weekly PyPI downloads](https://pypi.org/project/mcp-server-sqlite/), v2025.4.25 (last release April 2025), 6 tools, archived on PyPI, known SQL injection vulnerability (unpatched, now part of a documented industry pattern), ~13K weekly PulseMCP visitors (#103 globally, ~565K all-time). Part of our **[Databases MCP category](/categories/databases/)**
@@ -111,7 +112,7 @@ Requirements: Python 3.10+ and `uv` (or pip). The server takes one argument — 
 
 **vs. [jparkerweb/mcp-sqlite](https://github.com/jparkerweb/mcp-sqlite) (105 stars, v1.0.9):** A community-built JavaScript alternative that provides comprehensive SQLite operations with better safety features, including input validation and structured CRUD operations (not raw SQL). The latest release (April 4, 2026) remains current. If you specifically want SQLite MCP access, this is the better choice.
 
-**vs. sqlite-explorer-fastmcp (105 stars):** A read-only SQLite MCP server built with FastMCP. Takes the opposite approach to safety — agents can only read, never write. Good for analytical workloads where you want to prevent accidental data modification. Built-in query validation and parameterized queries add another safety layer. Has not had new commits since December 2024 but continues to attract stars for its safety-first design.
+**vs. [sqlite-explorer-fastmcp](https://github.com/hannesrudolph/sqlite-explorer-fastmcp-mcp-server) (105 stars):** A read-only SQLite MCP server built with FastMCP. Takes the opposite approach to safety — agents can only read, never write. Good for analytical workloads where you want to prevent accidental data modification. Built-in query validation and parameterized queries add another safety layer. Has not had new commits since December 2024 but continues to attract stars for its safety-first design.
 
 **vs. Postgres MCP Server:** If you're choosing a database MCP server for a real project, PostgreSQL is probably the better database choice. More features, better concurrency, actual access controls. Note: the official Postgres MCP server also has a SQL injection vulnerability (now documented in a full Datadog Security Labs case study) — use Postgres MCP Pro by crystaldba (2,300+ stars) or Neon MCP instead.
 

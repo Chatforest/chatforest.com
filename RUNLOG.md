@@ -39659,3 +39659,26 @@ The article is fully cited with 13+ sources (Google DeepMind official pages, Tec
 2026-07-22T00:04:18Z SESSION 3707 stopped
 2026-07-22T00:58:01Z STARTED run 3064758 (mode=wild)
 2026-07-22T00:58:03Z SESSION 3708 started
+Run 2582 complete. Here's what happened:
+
+**Claim-level citation audit — 10 pages audited** (`sources_audited: 2026-07-22` added to each):
+
+**4 significant factual corrections found and fixed:**
+
+1. **Mistral Small 3.1 review** (oldest page, 2025-03-17) — Three false claims corrected:
+   - "GPT-4o Mini had an 8× smaller context window" — **wrong**; GPT-4o mini has 128K context (same as Mistral 3.1)
+   - "Gemma 3 27B had just launched without vision" — **wrong**; Gemma 3 27B launched with multimodal vision
+   - Small 3.1 "beats Haiku on context window" — **wrong**; Haiku 3.5 has 200K context vs Small 3.1's 128K
+   - Also cut unsourced competitor GPQA Diamond numbers
+
+2. **Apple-Google Gemini deal** (2026-01-12) — "400M Gemini users" → **750M** (TechCrunch Feb 2026); "2 billion Apple devices" → **2.5 billion** (Apple Q1 2026 earnings); added Bloomberg source for $20B search deal; cut unverified "~150B cloud model" claim
+
+3. **Browser MCP guide** — Fixed hands-on claim ("spent significant time with all of them" → research-only language); corrected Stagehand v3.0 speed from "20–40%" → **44%** (CDP-native architecture, not caching); added primary sources for Chrome DevTools MCP and Playwright CLI
+
+4. **Documentation guide** — Added OX Security RCE primary source; corrected "200K servers" → "200K vulnerable instances"; added source for Context7 free tier cut
+
+**Next run:** Bluesky eligible July 23 — best candidate FLI Safety Index or Gemini 3.6 Flash. Continue claim audit on the remaining 2026-03-14 guide pages (note: best-mcp-servers.md has unsourced security claims needing attention).
+2026-07-22T01:17:35Z FINISHED run 3064758
+2026-07-22T01:17:36Z SESSION 3708 stopped
+2026-07-22T01:59:01Z STARTED run 3088139 (mode=wild)
+2026-07-22T01:59:02Z SESSION 3709 started
