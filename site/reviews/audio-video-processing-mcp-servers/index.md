@@ -21,7 +21,7 @@ The headline findings: **ElevenLabs' official MCP server dominates cloud audio**
 
 Capabilities: **Text-to-Speech** — generate speech with configurable voices, languages, and output formats. **Speech-to-Speech** — voice conversion with style transfer. **Voice Cloning** — create custom voices from audio samples. **Voice Design** — create and preview new synthetic voices. **Transcription** — speech-to-text with speaker identification. **Sound Effects** — generate sound effects and soundscapes from text descriptions. **Music Composition** — `compose_music` and `create_composition_plan` for AI-generated music. **Audio Isolation** — separate speech from background noise. **Conversational AI** — create and manage voice agents with knowledge bases. **Outbound Calls** — voice agents that can make phone calls. **Voice Library** — search and browse the shared voice library. **Phone Numbers** — list available phone numbers for voice agents.
 
-Three output modes: `files` (save to disk), `resources` (return via MCP resources), or `both`. Enterprise data residency control via `ELEVENLABS_API_RESIDENCY` with `eu`/`in` shorthand aliases. Free tier provides 10,000 credits/month. MCP tool annotations on all 24 tools. Supports Gemini Extensions and Python 3.14.
+Three output modes: `files` (save to disk), `resources` (return via MCP resources), or `both`. Enterprise data residency control via `ELEVENLABS_API_RESIDENCY` with `eu`/`in` shorthand aliases. Free tier provides [10,000 credits/month](https://elevenlabs.io/pricing). MCP tool annotations on all 24 tools. Supports Gemini Extensions and Python 3.14.
 
 This is effectively a complete audio production API accessible through natural language. The breadth is unmatched — no other audio MCP server combines TTS, STT, speech-to-speech, music composition, cloning, isolation, sound effects, and voice agents.
 
@@ -191,7 +191,7 @@ Capabilities: MIDI and audio track creation/modification, instrument and effect 
 
 The high star count reflects genuine interest in AI-assisted music production, though the tool count is relatively modest compared to more specialized alternatives.
 
-**April 28, 2026:** Anthropic launched an official [Claude Connector for Ableton Live](/guides/claude-connectors-creative-tools/) — a documentation-access tool giving Claude knowledge of Ableton's full documentation library. It does not interact with Live projects directly; that's what ahujasid/ableton-mcp does. The two serve different needs.
+**April 28, 2026:** Anthropic launched an official [Claude Connector for Ableton Live](https://www.anthropic.com/news/claude-for-creative-work) — a documentation-access tool giving Claude knowledge of Ableton's full documentation library. It does not interact with Live projects directly; that's what ahujasid/ableton-mcp does. The two serve different needs.
 
 ### Ableton Live (Copilot)
 
@@ -239,7 +239,7 @@ The tools serve as customizable templates — designed for AI agents to extend r
 
 ### Descript (Official)
 
-**Descript** has launched an official hosted MCP server at `api.descript.com/v2/mcp` (May 2026). Documented in Descript's help center under "Use Descript with an AI assistant." Authentication is handled via OAuth — no API token management required.
+**Descript** has launched an official hosted MCP server at `api.descript.com/v2/mcp` (May 2026). Documented in Descript's [help center](https://help.descript.com/hc/en-us/articles/46056322186509-Descript-MCP-overview) under "Use Descript with an AI assistant." Authentication is handled via OAuth — no API token management required.
 
 Tools cover Descript's **Underlord AI editing toolkit**: automatic filler word removal, Studio Sound background noise cleanup, automatic captioning generation, B-roll suggestions, and access to projects and compositions. Unlike most MCP servers in this list which require local installation, this is a hosted server — connect directly from your MCP client using the URL.
 

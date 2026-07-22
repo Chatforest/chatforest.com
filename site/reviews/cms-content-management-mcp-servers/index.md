@@ -19,7 +19,7 @@ The headline findings: **WordPress is pioneering CMS-level AI integration** — 
 |--------|-------|----------|-----------|
 | [WordPress/mcp-adapter](https://github.com/WordPress/mcp-adapter) | 663 | PHP | HTTP, STDIO |
 
-**WordPress/mcp-adapter** (663 stars, 77 commits) is the official MCP implementation for WordPress, and it represents a fundamentally different approach from other CMS servers. Rather than wrapping the WordPress REST API, it bridges the **Abilities API** — a new WordPress Core feature shipping in version 6.9 — to the Model Context Protocol.
+**WordPress/mcp-adapter** (663 stars, 77 commits) is the official MCP implementation for WordPress, and it represents a fundamentally different approach from other CMS servers. Rather than wrapping the WordPress REST API, it bridges the **[Abilities API](https://make.wordpress.org/core/tag/abilities-api/)** — a new WordPress Core feature shipping in version 6.9 — to the Model Context Protocol.
 
 The Abilities API lets any WordPress plugin, theme, or core component register "abilities" — typed, discoverable capabilities with defined inputs and outputs. The MCP adapter automatically converts these abilities into MCP tools, resources, and prompts. This means the MCP surface grows as plugins register their own abilities — no separate MCP server development needed.
 
@@ -71,7 +71,7 @@ The WordPress MCP ecosystem is notably crowded — 7+ implementations compete fo
 
 ### WooCommerce MCP Integration
 
-WooCommerce 10.3 includes **native MCP support** built on the WordPress Abilities API and MCP Adapter. AI assistants can interact directly with WooCommerce stores — managing products, orders, customers, shipping, taxes, and store configuration through the standard MCP interface.
+[WooCommerce 10.3](https://woocommerce.com/posts/) includes **native MCP support** built on the WordPress Abilities API and MCP Adapter. AI assistants can interact directly with WooCommerce stores — managing products, orders, customers, shipping, taxes, and store configuration through the standard MCP interface.
 
 Community alternatives include: **techspawn/woocommerce-mcp-server** (JSON-RPC 2.0, comprehensive REST API coverage), **iOSDevSK/mcp-for-woocommerce** (based on Automattic's MCP, STDIO + HTTP, read-only public store data), and **brucealdridge/wc-mcp** (exploratory implementation).
 
@@ -234,7 +234,7 @@ Architecture choices favor agents: content stored as **portable text** (structur
 
 **Key features:** definePlugin() API with lifecycle hooks, KV storage, settings, admin pages, dashboard widgets, custom block types, and API routes. Astro-powered theming. Native x402 payment support. Runs on Cloudflare (D1 + R2 + Workers) or any Node.js server with SQLite. MIT licensed, open source.
 
-**Limitations:** v0.1.0 preview — very early. No migration tooling from WordPress or other platforms. Nascent plugin and theme ecosystem. Cloudflare-native deployment is the primary path. WordPress co-founder Matt Mullenweg has publicly questioned whether EmDash exists primarily to sell Cloudflare services.
+**Limitations:** v0.1.0 preview — very early. No migration tooling from WordPress or other platforms. Nascent plugin and theme ecosystem. Cloudflare-native deployment is the primary path.
 
 ## What's Missing
 

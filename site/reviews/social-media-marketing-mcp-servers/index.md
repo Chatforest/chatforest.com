@@ -154,7 +154,7 @@ The massive gap remains — there's no comprehensive YouTube MCP server with upl
 
 ### TikTok Ads MCP Server — Official Platform Integration *(May 2026)*
 
-**TikTok's official MCP server, announced at TikTok World '26 (May 13, 2026):**
+**TikTok's official MCP server, announced at [TikTok World '26](https://newsroom.tiktok.com/en-us/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions) (May 13, 2026):**
 
 - **Campaign creation** — AI agents create and launch ad campaigns autonomously via TikTok Marketing API
 - **Budget management** — shift budgets across campaigns and ad groups without manual intervention
@@ -225,7 +225,7 @@ A new commercial entrant offering a **unified remote MCP server** for all four m
 
 Important clarification since our last review: the official Google Ads MCP server is **intentionally read-only**. It exposes just two tools: `list_accessible_customers` and `search` (raw GAQL queries). **Cannot modify bids, pause campaigns, or create assets** — mutations stay in the REST API. This is the safety model by design.
 
-Now runs on Google Ads API v23.1 (February 25, 2026), which adds programmatic control of AI-generated ad copy via Campaign.text_guidelines. Discord discussion on v24 features planned for April 23.
+Now runs on [Google Ads API v23.1](https://developers.google.com/google-ads/api/docs/release-notes) (February 25, 2026), which adds programmatic control of AI-generated ad copy via Campaign.text_guidelines. Discord discussion on v24 features planned for April 23.
 
 A separate repo at **googleads/google-ads-mcp** provides an alternative local implementation.
 
@@ -256,7 +256,7 @@ Stars up slightly from 224 to 225. Last updated **April 13, 2026** — actively 
 
 ### Ahrefs Remote MCP (Official — Paid, Local Server Archived)
 
-The local ahrefs-mcp-server repository is now **officially deprecated and not recommended**. Ahrefs has fully transitioned to a remote MCP server:
+The local ahrefs-mcp-server repository is now **officially deprecated and not recommended**. Ahrefs has fully transitioned to a [remote MCP server](https://ahrefs.com/mcp/):
 
 - **Streamable HTTP (recommended):** `https://api.ahrefs.com/mcp/mcp`
 - **Legacy SSE (deprecated):** `https://api.ahrefs.com/mcp/mcpSse`
@@ -275,7 +275,7 @@ Semrush API integration with seven tools. Requires a Semrush API key (paid plans
 
 ### HubSpot MCP (Official — Now GA With Read+Write)
 
-The biggest email/CRM update since our last review. **HubSpot's remote MCP server graduated from beta to GA**, adding significant new capabilities:
+The biggest email/CRM update since our last review. **[HubSpot's remote MCP server](https://developers.hubspot.com/mcp) graduated from beta to GA**, adding significant new capabilities:
 
 - **Write access** to CRM objects: Contacts, Companies, Deals, Tickets, Line Items, Products, and all Engagement types (Calls, Meetings, Notes, Tasks, Emails)
 - **Read-only access** to marketing content: Campaigns, landing pages, website pages, blog posts

@@ -17,7 +17,7 @@ The headline finding: **LitmusChaos has the strongest official MCP server** with
 |--------|-------|----------|-------|-----------|
 | [litmuschaos/litmus-mcp-server](https://github.com/litmuschaos/litmus-mcp-server) | 15 | Go | 17 | stdio |
 
-**litmuschaos/litmus-mcp-server** (15 stars, Go, 30 commits) is the official MCP server for LitmusChaos 3.x, the CNCF-incubating chaos engineering platform. Seventeen tools organized into seven categories:
+**litmuschaos/litmus-mcp-server** (15 stars, Go, 30 commits) is the official MCP server for LitmusChaos 3.x, the [CNCF-incubating](https://www.cncf.io/projects/litmus/) chaos engineering platform. Seventeen tools organized into seven categories:
 
 **Experiment management** (4 tools) — `list_chaos_experiments`, `get_chaos_experiment`, `run_chaos_experiment`, `stop_chaos_experiment`. Full lifecycle control: discover available experiments, inspect details, execute on-demand or via cron-like schedules, and stop running experiments with granular control.
 
@@ -41,7 +41,7 @@ Installation via `go install`, `make build`, or Docker container. Requires Go 1.
 |--------|-------|----------|-------|-----------|
 | [ernestolee13/chaos-mesh-mcp](https://github.com/ernestolee13/chaos-mesh-mcp) | 2 | Python | 33 | stdio |
 
-**ernestolee13/chaos-mesh-mcp** (2 stars, Python, MIT, 10 commits, December 2025) is a community MCP server for Chaos Mesh, the CNCF-incubating chaos engineering platform. Thirty-three tools organized across 7 chaos types plus management:
+**ernestolee13/chaos-mesh-mcp** (2 stars, Python, MIT, 10 commits, December 2025) is a community MCP server for Chaos Mesh, the [CNCF-incubating](https://www.cncf.io/projects/chaosmesh/) chaos engineering platform. Thirty-three tools organized across 7 chaos types plus management:
 
 **NetworkChaos** (4 tools) — delay, packet loss, network partition, corruption. Simulate degraded network conditions between services or pods.
 
@@ -75,7 +75,7 @@ Requirements: Kubernetes v1.15+ (tested with v1.27.6), Chaos Mesh v2.6+ (tested 
 
 Key use cases: identify services that need testing, discover uncovered critical dependencies, detect gaps in test coverage, generate reliability reports, and now trigger reliability tests. RBAC scoping via API keys adds access control. Containerized isolation for security.
 
-**May 2026 update:** No new feature commits, but Gremlin bumped `@modelcontextprotocol/sdk` from 1.15.0 to 1.29.0 on May 15 — patching cross-client data leaks, a ReDoS vulnerability, and DNS rebinding protections. Dev transitive dependencies (vite, rollup, postcss, picomatch) were pinned via npm overrides in the same update. Installation docs were also refreshed for VSCode and Cursor.
+**May 2026 update:** No new feature commits, but Gremlin [bumped `@modelcontextprotocol/sdk` from 1.15.0 to 1.29.0](https://github.com/gremlin/mcp/commits/main) on May 15 — patching cross-client data leaks, a ReDoS vulnerability, and DNS rebinding protections. Dev transitive dependencies (vite, rollup, postcss, picomatch) were pinned via npm overrides in the same update. Installation docs were also refreshed for VSCode and Cursor.
 
 Requires Node.js 22+, npm, and a Gremlin account with REST API key. Part of Gremlin's broader Reliability Intelligence launch. The evolution from read-only to including test execution marked a significant shift; current 2026 activity focuses on security hygiene rather than new capabilities.
 
@@ -109,7 +109,7 @@ Docker deployment: `docker run -i --rm -e API_TOKEN ghcr.io/steadybit/mcp:latest
 
 The server has evolved from individual per-resource tools to a dispatch model where tools like `harness_list`, `harness_get`, and `harness_create` route to any resource type. For chaos engineering, this means experiment discovery, execution, result retrieval, and probe management are all available through the consolidated tool interface. The server also includes 27 prompt templates for common workflows and supports multi-project discovery without hardcoded configuration.
 
-**May 2026 update (v3.0.0–v3.0.4, May 11–20):** v3.0.0 added `additionalSchemas` parameter for richer resource type definitions. v3.0.3 enhanced `harness_execute` with blocking execution waits and added HTTP MCP auth hardening with deployment mode support. v3.0.4 (May 20) added output schemas and structured content to all MCP tools; also landed an IaCM (Infrastructure as Code Management) toolset migration. 30 open issues. The release pace — roughly daily commits and multiple releases per week — makes Harness the most actively developed server in this category by a large margin.
+**May 2026 update (v3.0.0–v3.0.4, May 11–20):** v3.0.0 added `additionalSchemas` parameter for richer resource type definitions. v3.0.3 enhanced `harness_execute` with blocking execution waits and added HTTP MCP auth hardening with deployment mode support. [v3.0.4](https://github.com/harness/mcp-server/releases/tag/v3.0.4) (May 20) added output schemas and structured content to all MCP tools; also landed an IaCM (Infrastructure as Code Management) toolset migration. 30 open issues. The release pace — roughly daily commits and multiple releases per week — makes Harness the most actively developed server in this category by a large margin.
 
 Requires Harness Platform access with Chaos Engineering enabled, API key, Organization ID, and Project ID. Supports both stdio and HTTP transport, with Docker and Kubernetes deployment options. The value proposition is strongest for teams already using Harness — you get chaos engineering alongside 29 other platform toolsets in one server. For chaos-only use cases, LitmusChaos's dedicated server offers more focused tooling.
 
@@ -133,7 +133,7 @@ Read-only mode by default is the right safety choice for a fault injection servi
 
 Three related projects focus on testing the resilience of AI agents and MCP clients themselves:
 
-**Typewise/mcp-chaos-rig** (10 stars, TypeScript, MIT, v1.6.0 May 2026) is a local MCP server that breaks on demand for testing MCP client implementations. It provides a web UI (localhost:4100/ui) where developers can simulate: **authentication failures** (OAuth 2.1 flow breakdowns, bearer token rejection, token expiry, refresh token issues), **tool instability** (enable/disable tools, schema version switching, `tools/changed` notifications), and **reliability degradation** (random latency injection, configurable failure rates 0–100%). Live request logging with JSON-RPC inspection and SSE response monitoring. This is not traditional chaos engineering — it's fault injection for MCP protocol compliance testing. **v1.6.0 (May 20)** added tools for large schemas (~50 inputs) and different input types, plus a `typeEcho` tool demonstrating all JSON Schema primitives. v1.5.0 (April 6) had already added contact retrieval tools and fixed WWW-Authenticate header compliance per RFC 6750.
+**Typewise/mcp-chaos-rig** (10 stars, TypeScript, MIT, [v1.6.0](https://github.com/Typewise/mcp-chaos-rig/releases) May 2026) is a local MCP server that breaks on demand for testing MCP client implementations. It provides a web UI (localhost:4100/ui) where developers can simulate: **authentication failures** (OAuth 2.1 flow breakdowns, bearer token rejection, token expiry, refresh token issues), **tool instability** (enable/disable tools, schema version switching, `tools/changed` notifications), and **reliability degradation** (random latency injection, configurable failure rates 0–100%). Live request logging with JSON-RPC inspection and SSE response monitoring. This is not traditional chaos engineering — it's fault injection for MCP protocol compliance testing. **v1.6.0 (May 20)** added tools for large schemas (~50 inputs) and different input types, plus a `typeEcho` tool demonstrating all JSON Schema primitives. v1.5.0 (April 6) had already added contact retrieval tools and fixed WWW-Authenticate header compliance per RFC 6750.
 
 **deepankarm/agent-chaos** (22 stars, Python, Apache 2.0, 57 commits, v0.1.3) is a chaos engineering framework for testing AI agent resilience. Instead of breaking infrastructure, it breaks the AI stack itself — injecting LLM failures (rate limits, server errors, timeouts, stream interruptions), tool failures (errors, timeouts, data corruption), and prompt injection attacks. Integrates with DeepEval and Pydantic Evals for semantic evaluation. Randomized chaos combinations via fuzzing. No new commits since January 2026, but still the most complete agent-level chaos framework available.
 
@@ -149,7 +149,7 @@ Three related projects focus on testing the resilience of AI agents and MCP clie
 |--------|-------|----------|-------------|
 | [KeKe-Li/chaosblade-mcp](https://github.com/KeKe-Li/chaosblade-mcp) | 4 | Python | Feb 28, 2026 |
 
-**KeKe-Li/chaosblade-mcp** (4 stars, Python, February 2026) is a community MCP integration for Alibaba's ChaosBlade, the CNCF Sandbox chaos engineering tool (6,000+ stars). ChaosBlade supports fault injection across containers, Kubernetes, JVM applications, C++ services, Node.js, and physical machines. The MCP server went quiet after February 28, 2026 — only a few weeks after creation. No official ChaosBlade MCP server from Alibaba exists. The gap is acknowledged but not yet filled in any meaningful way.
+**KeKe-Li/chaosblade-mcp** (4 stars, Python, February 2026) is a community MCP integration for Alibaba's ChaosBlade, the [CNCF Sandbox](https://www.cncf.io/projects/chaosblade/) chaos engineering tool (6,000+ stars). ChaosBlade supports fault injection across containers, Kubernetes, JVM applications, C++ services, Node.js, and physical machines. The MCP server went quiet after February 28, 2026 — only a few weeks after creation. No official ChaosBlade MCP server from Alibaba exists. The gap is acknowledged but not yet filled in any meaningful way.
 
 ## What's Missing
 

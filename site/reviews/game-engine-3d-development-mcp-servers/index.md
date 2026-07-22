@@ -143,7 +143,7 @@ The emergence of a commercial product signals market maturation — game studios
 
 The Unreal MCP space is growing fast and now spans three tiers: **StraySpark for commercial/studio use** (207 tools, supported), **chongdashu/unreal-mcp for the largest community** (1,800 stars, though development appears dormant since April 2025), and **ChiR24/Unreal_mcp for native automation** (552 stars, HTTP/SSE, UE 5.0-5.7, most actively releasing with v0.5.21 in April 2026). **flopperam/unreal-engine-mcp** (852 stars) is the most actively maintained open-source option with autonomous scene building capabilities.
 
-Epic Games still has no official MCP server, but per Epic staff member Shaun Comly on the developer forums, Epic is "actively investigating MCP and very interested in it" — and hinted that **Unreal Engine 5.8 (expected summer 2026) "could be of interest"** to those seeking MCP functionality. Nothing confirmed, but signals are positive.
+Epic Games still has no official MCP server as of May 2026.
 
 ## Godot
 
@@ -229,7 +229,7 @@ The built-in MCP server received two major updates in early 2026:
 - **Per-session/per-prompt script edit auto-approval** — Assistant can apply changes, run verification loops, and iterate on implementations autonomously
 - Full tool parity between external MCP clients and built-in Assistant
 
-This is the most ambitious native MCP integration in any game engine. Roblox announced **"Roblox Studio is Going Agentic"** in April 2026 — with a playtest automation agent (beta), planning mode, and self-correcting build-test-fix loops. **44% of top 1,000 Roblox creators now use AI tools** via MCP or Roblox Assistant. External IDEs (Claude Code, VS Code, Cursor, Codex) can connect to the built-in server. Documentation at [create.roblox.com/docs/studio/mcp](https://create.roblox.com/docs/studio/mcp). Roblox plans to add third-party MCP server integration, potentially enabling Blender and Figma workflows directly from Studio.
+This is the most ambitious native MCP integration in any game engine. Roblox announced **"[Roblox Studio is Going Agentic](https://devforum.roblox.com/)"** in April 2026 — with a playtest automation agent (beta), planning mode, and self-correcting build-test-fix loops. External IDEs (Claude Code, VS Code, Cursor, Codex) can connect to the built-in server. Documentation at [create.roblox.com/docs/studio/mcp](https://create.roblox.com/docs/studio/mcp). Roblox plans to add third-party MCP server integration, potentially enabling Blender and Figma workflows directly from Studio.
 
 ### boshyxd/robloxstudio-mcp (Community Leader)
 

@@ -100,7 +100,7 @@
 <li><strong>Language detection</strong> — automatic source language identification</li>
 <li><strong>Document translation</strong> — preserves formatting across file types</li>
 </ul>
-<p>DeepL&rsquo;s free API tier allows 500,000 characters per month at no cost, making this accessible for experimentation. Integrates with Claude Desktop, Claude Code, and other MCP clients. 83 commits show active maintenance. Stars grew from 95 to 102 since March 2026.</p>
+<p>DeepL&rsquo;s <a href="https://www.deepl.com/en/docs-api">free API tier allows 500,000 characters per month</a> at no cost, making this accessible for experimentation. Integrates with Claude Desktop, Claude Code, and other MCP clients. 83 commits show active maintenance. Stars grew from 95 to 102 since March 2026.</p>
 <h3 id="translatedlara-mcp-translation-memory-pioneer">translated/lara-mcp (Translation Memory Pioneer)</h3>
 <table>
 <thead>
@@ -196,7 +196,7 @@
 <li><strong>Pre-translation</strong> — automated translation using TM, MT, or AI engines</li>
 </ul>
 <p>The server connects via Crowdin&rsquo;s hosted infrastructure — no local installation required. Works with Claude Desktop, Cursor, and other MCP-compatible clients. Crowdin is also building an MCP marketplace in the Crowdin Store for third-party localization MCPs.</p>
-<p>Crowdin (the platform) has 500,000+ users and supports 100+ file formats, making this the most battle-tested TMS behind any MCP server.</p>
+<p><a href="https://crowdin.com/page/about">Crowdin</a> (the platform) has 500,000+ users and supports 100+ file formats, making this the most battle-tested TMS behind any MCP server.</p>
 <p><strong>April 2026 update: Crowdin Copilot launched</strong> — a major evolution from MCP server to AI orchestration platform. Crowdin Copilot goes beyond translation to manage your entire localization ecosystem with two built-in agents:</p>
 <ul>
 <li><strong>Ask Agent</strong> — read-only companion that queries project stats, reviews string statuses, explores translation memory, and generates reports without risk of unintended changes</li>
@@ -224,7 +224,7 @@
 </tr>
 </tbody>
 </table>
-<p>Phrase&rsquo;s official MCP server covers both of their products and has <strong>expanded significantly from 65 to 96 tools</strong> in v0.5.1 (April 24, 2026):</p>
+<p>Phrase&rsquo;s official MCP server covers both of their products and has <strong>expanded significantly from 65 to 96 tools</strong> in <a href="https://github.com/phrase/phrase-mcp-server/releases/tag/phrase-mcp-server-v0.5.1">v0.5.1</a> (April 24, 2026):</p>
 <p><strong>Phrase Strings (66 tools, up from 47):</strong></p>
 <ul>
 <li>Project management — create, list, configure translation projects</li>
@@ -585,7 +585,7 @@
 <p>Bridges the gap between design and development localization — designers define text in Figma, this server extracts it into a format developers can use directly in their i18n setup.</p>
 <h2 id="whats-missing">What&rsquo;s Missing</h2>
 <p>The translation and localization MCP landscape has meaningful gaps:</p>
-<p><strong>No Google Cloud Translation MCP server.</strong> Despite Google now offering <strong>30+ managed remote MCP servers</strong> for BigQuery, Cloud SQL, Spanner, Compute Engine, Cloud Run, and many more — there is still no dedicated Cloud Translation MCP server. Google published a blog post on building multilingual chatbots with Gemini, Gemma, and MCP, but this is an architecture pattern, not a standalone translation server. This remains the most surprising omission in the category.</p>
+<p><strong>No Google Cloud Translation MCP server.</strong> Despite Google now offering <a href="https://cloud.google.com/docs/ai/model-context-protocol"><strong>30+ managed remote MCP servers</strong></a> for BigQuery, Cloud SQL, Spanner, Compute Engine, Cloud Run, and many more — there is still no dedicated Cloud Translation MCP server. Google published a blog post on building multilingual chatbots with Gemini, Gemma, and MCP, but this is an architecture pattern, not a standalone translation server. This remains the most surprising omission in the category.</p>
 <p><strong>No Transifex or Mozilla Pontoon MCP servers.</strong> Two major open-source localization platforms have no MCP presence. Transifex serves large open-source projects, and Pontoon powers Mozilla&rsquo;s extensive localization ecosystem.</p>
 <p><strong>Limited local translation options.</strong> TranslateGemma is the only fully local option, and its 82GB Docker image makes it impractical for most development workflows. There&rsquo;s room for lighter-weight local translation servers using smaller models.</p>
 <p><strong>No cross-TMS abstraction.</strong> Organizations using multiple TMS platforms (common during migrations or with different teams) have no way to manage translations across Crowdin, Phrase, and Lokalise through a unified MCP interface.</p>

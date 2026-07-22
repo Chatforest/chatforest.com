@@ -348,7 +348,7 @@
 <p>Still does exactly one thing: <strong>extract subtitles from YouTube videos</strong> using yt-dlp. Last updated February 2026 with improvements to strip non-text content (timestamps), enabling longer videos. No API key required.</p>
 <p>The massive gap remains — there&rsquo;s no comprehensive YouTube MCP server with upload, analytics, channel management, or comment moderation capabilities.</p>
 <h3 id="tiktok-ads-mcp-server--official-platform-integration-may-2026">TikTok Ads MCP Server — Official Platform Integration <em>(May 2026)</em></h3>
-<p><strong>TikTok&rsquo;s official MCP server, announced at TikTok World &lsquo;26 (May 13, 2026):</strong></p>
+<p><strong>TikTok&rsquo;s official MCP server, announced at <a href="https://newsroom.tiktok.com/en-us/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions">TikTok World &lsquo;26</a> (May 13, 2026):</strong></p>
 <ul>
 <li><strong>Campaign creation</strong> — AI agents create and launch ad campaigns autonomously via TikTok Marketing API</li>
 <li><strong>Budget management</strong> — shift budgets across campaigns and ad groups without manual intervention</li>
@@ -511,7 +511,7 @@
 </tbody>
 </table>
 <p>Important clarification since our last review: the official Google Ads MCP server is <strong>intentionally read-only</strong>. It exposes just two tools: <code>list_accessible_customers</code> and <code>search</code> (raw GAQL queries). <strong>Cannot modify bids, pause campaigns, or create assets</strong> — mutations stay in the REST API. This is the safety model by design.</p>
-<p>Now runs on Google Ads API v23.1 (February 25, 2026), which adds programmatic control of AI-generated ad copy via Campaign.text_guidelines. Discord discussion on v24 features planned for April 23.</p>
+<p>Now runs on <a href="https://developers.google.com/google-ads/api/docs/release-notes">Google Ads API v23.1</a> (February 25, 2026), which adds programmatic control of AI-generated ad copy via Campaign.text_guidelines. Discord discussion on v24 features planned for April 23.</p>
 <p>A separate repo at <strong>googleads/google-ads-mcp</strong> provides an alternative local implementation.</p>
 <h3 id="amekalaads-mcp-cross-platform-ads">amekala/ads-mcp (Cross-Platform Ads)</h3>
 <table>
@@ -566,7 +566,7 @@
 </table>
 <p>Stars up slightly from 224 to 225. Last updated <strong>April 13, 2026</strong> — actively maintained. Still provides free access to Ahrefs data through four tools (backlinks, keyword generation, traffic estimation, keyword difficulty) via scraping with automatic CAPTCHA solving. The fragility caveat remains: this can break if Ahrefs changes their frontend.</p>
 <h3 id="ahrefs-remote-mcp-official--paid-local-server-archived">Ahrefs Remote MCP (Official — Paid, Local Server Archived)</h3>
-<p>The local ahrefs-mcp-server repository is now <strong>officially deprecated and not recommended</strong>. Ahrefs has fully transitioned to a remote MCP server:</p>
+<p>The local ahrefs-mcp-server repository is now <strong>officially deprecated and not recommended</strong>. Ahrefs has fully transitioned to a <a href="https://ahrefs.com/mcp/">remote MCP server</a>:</p>
 <ul>
 <li><strong>Streamable HTTP (recommended):</strong> <code>https://api.ahrefs.com/mcp/mcp</code></li>
 <li><strong>Legacy SSE (deprecated):</strong> <code>https://api.ahrefs.com/mcp/mcpSse</code></li>
@@ -596,7 +596,7 @@
 <p>Semrush API integration with seven tools. Requires a Semrush API key (paid plans only).</p>
 <h2 id="email-marketing--crm">Email Marketing &amp; CRM</h2>
 <h3 id="hubspot-mcp-official--now-ga-with-readwrite">HubSpot MCP (Official — Now GA With Read+Write)</h3>
-<p>The biggest email/CRM update since our last review. <strong>HubSpot&rsquo;s remote MCP server graduated from beta to GA</strong>, adding significant new capabilities:</p>
+<p>The biggest email/CRM update since our last review. <strong><a href="https://developers.hubspot.com/mcp">HubSpot&rsquo;s remote MCP server</a> graduated from beta to GA</strong>, adding significant new capabilities:</p>
 <ul>
 <li><strong>Write access</strong> to CRM objects: Contacts, Companies, Deals, Tickets, Line Items, Products, and all Engagement types (Calls, Meetings, Notes, Tasks, Emails)</li>
 <li><strong>Read-only access</strong> to marketing content: Campaigns, landing pages, website pages, blog posts</li>

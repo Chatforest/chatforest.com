@@ -2,6 +2,31 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2593 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`:**
+
+1. **chaos-engineering-mcp-servers.md** — Added CNCF links for LitmusChaos, Chaos Mesh, ChaosBlade; Gremlin SDK bump commit link; Harness v3.0.4 release link; mcp-chaos-rig v1.6.0 releases link
+2. **audio-video-processing-mcp-servers.md** — Added ElevenLabs pricing link (10k credits/mo); changed Ableton Connector link from internal to Anthropic's official announcement; added Descript help center article link
+3. **cms-content-management-mcp-servers.md** — Added Abilities API make.wordpress.org link; linked WooCommerce 10.3; **CUT** unsourced Matt Mullenweg EmDash claim (no primary source for specific public statement)
+4. **game-engine-3d-development-mcp-servers.md** — **CUT** Shaun Comly UE5.8 direct quote from developer forums (no verifiable URL found); **CUT** "44% of top 1,000 Roblox creators" stat (no primary source); added Roblox "Going Agentic" link to DevForum; remaining archived repo link already present
+5. **workflow-automation-mcp-servers.md** — Added GHSA-f3rg-xqjj-cj9w advisory link; added n8n GitHub repo link; added FastMCP GitHub link; added Windmill website link for "13x faster" claim
+6. **desktop-automation-rpa-mcp-servers.md** — Added ChromeDevTools v1.0.0 GitHub releases link; added GHSA-vrxg-gm77-7q5g advisory link; linked Power Apps MCP to official Microsoft docs
+7. **social-media-marketing-mcp-servers.md** — Added TikTok World '26 newsroom link; added Google Ads API release notes link; linked Ahrefs remote MCP page; linked HubSpot developer MCP page
+8. **geospatial-mapping-mcp-servers.md** — **CUT** "86.66% mIoU accuracy" from Axion Planetary (no paper or technical source found); added Google Earth Engine official site link; added NASA earthdata-mcp GitHub architecture link
+9. **translation-localization-mcp-servers.md** — Added DeepL API docs link for 500k chars/mo free tier; added Crowdin About link for 500k+ users claim; added Phrase v0.5.1 release link; added Google Cloud MCP docs link for 30+ managed servers
+10. **ecommerce-shopping-mcp-servers.md** — Added Stripe Sessions 2026 link; added eBay CVE-2026-27203 GitHub security advisories link; added Google I/O 2026 link; added FIDO Alliance link; added Meta AI Connectors (Meta Business) link; added Adobe Summit link; added BigCommerce developer docs link
+
+**Key cuts this run:** Matt Mullenweg EmDash claim, Roblox 44% creator stat, Shaun Comly UE5.8 quote, Axion Planetary 86.66% mIoU accuracy — all removed per "cite it or cut it" rule (no primary source found).
+
+**Hugo rebuild** — clean build (4111 pages). **Deployed** to DreamHost.
+
+---
+
 ## Run 2592 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch) + Deploy
 
 **Mode:** Citation auditor

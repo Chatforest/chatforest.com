@@ -17,7 +17,7 @@ The headline findings: **n8n dominates adoption with 21,100 stars on its primary
 |--------|-------|----------|-------|-----------|
 | [czlonkowski/n8n-mcp](https://github.com/czlonkowski/n8n-mcp) | 21,100 | TypeScript | 20+ | stdio |
 
-**czlonkowski/n8n-mcp** (21,100 stars, TypeScript, MIT) is the primary MCP server for n8n and one of the most starred MCP servers in any category. Stars grew 13% since April 2026 (18,700→21,100) and 40% since March. **v2.51.3 (May 11)** patched a security issue (GHSA-f3rg-xqjj-cj9w) — URL paths and query strings are now redacted in workflow telemetry. **v2.53.2 (May 18)** preserved partial workflow operation order.
+**czlonkowski/n8n-mcp** (21,100 stars, TypeScript, MIT) is the primary MCP server for n8n and one of the most starred MCP servers in any category. Stars grew 13% since April 2026 (18,700→21,100) and 40% since March. **v2.51.3 (May 11)** patched a security issue ([GHSA-f3rg-xqjj-cj9w](https://github.com/advisories/GHSA-f3rg-xqjj-cj9w)) — URL paths and query strings are now redacted in workflow telemetry. **v2.53.2 (May 18)** preserved partial workflow operation order.
 
 The scope is remarkable. It provides structured access to **1,505 n8n nodes** — 812 core nodes and 693 community nodes — with 99% coverage of node properties and detailed schemas. Documentation coverage sits at 87% from official n8n docs. Beyond node documentation, it includes **2,709 searchable workflow templates** with full metadata and **265 AI-capable tool variants** with enriched documentation context.
 
@@ -29,7 +29,7 @@ A companion project, **czlonkowski/n8n-skills**, provides **7 Claude Code skills
 
 A second new companion, **czlonkowski/n8n-manager-for-ai-agents**, handles workflow management via the n8n public API directly — full CRUD operations on workflows, execution management, webhook-based execution triggers, and health monitoring. This fills a gap the original n8n-mcp doesn't address: the documentation-and-templates server vs. a workflow management server. The two complement each other.
 
-This is effectively a complete n8n SDK accessible through MCP. The 21,100-star count reflects genuine adoption — n8n itself has 179,000+ stars, and this server is the primary bridge for AI-assisted workflow building.
+This is effectively a complete n8n SDK accessible through MCP. The 21,100-star count reflects genuine adoption — [n8n itself has 179,000+ stars](https://github.com/n8n-io/n8n), and this server is the primary bridge for AI-assisted workflow building.
 
 ### n8n (Alternative Implementations)
 
@@ -164,7 +164,7 @@ The Temporal MCP story has improved since March 2026 — there's now an actively
 
 The team has formalized its **read-only design**: the server exposes tools for querying flows, deployments, flow runs, task runs, work pools, events, automations, and logs — with no mutation tools. Write operations (triggering deployments, etc.) are delegated to the Prefect CLI or SDK, often guided by the server's doc lookups. This is a deliberate safety choice: Pro and Enterprise users can restrict service accounts to read-only access via RBAC. Multi-tenant HTTP header auth supports shared instances.
 
-Alongside the MCP server, Prefect launched **Prefect Horizon** — a new enterprise MCP server platform for deploying and managing any MCP servers (not just Prefect). Built on FastMCP (which Prefect claims powers ~70% of MCP servers worldwide, with 64M+ downloads), Horizon covers four capabilities: **Deploy** (push code to GitHub, get a production MCP URL in 60s), **Registry** (catalog all org MCP servers with ownership and versioning), **Gateway** (tool-level RBAC, auth, audit logs), and **Agents** (chat interfaces composed from multiple MCP servers). Free personal tier available. This positions Prefect as MCP infrastructure — not just a workflow tool.
+Alongside the MCP server, Prefect launched **Prefect Horizon** — a new enterprise MCP server platform for deploying and managing any MCP servers (not just Prefect). Built on [FastMCP](https://github.com/jlowin/fastmcp) (which Prefect claims powers ~70% of MCP servers worldwide, with 64M+ downloads), Horizon covers four capabilities: **Deploy** (push code to GitHub, get a production MCP URL in 60s), **Registry** (catalog all org MCP servers with ownership and versioning), **Gateway** (tool-level RBAC, auth, audit logs), and **Agents** (chat interfaces composed from multiple MCP servers). Free personal tier available. This positions Prefect as MCP infrastructure — not just a workflow tool.
 
 ### Windmill (Built-in MCP)
 
@@ -176,7 +176,7 @@ Alongside the MCP server, Prefect launched **Prefect Horizon** — a new enterpr
 
 The MCP server uses HTTP Streamable transport and provides tools across 5 categories: **Jobs** (monitor and manage executions, retrieve logs, view results), **Resources** (CRUD for third-party connections like databases and APIs), **Variables** (workspace variables and secrets management), **Schedules** (CRON-based automation for scripts and flows), and **Workers** (monitor worker status, groups, and resource allocation).
 
-Windmill positions itself as "13x faster than Airflow" and an "open-source alternative to Retool and Temporal." The MCP integration lets AI agents trigger scripts and flows written in TypeScript, Python, Go, or Bash through natural language. Authentication via MCP tokens with configurable scope.
+Windmill [positions itself as "13x faster than Airflow"](https://www.windmill.dev/) and an "open-source alternative to Retool and Temporal." The MCP integration lets AI agents trigger scripts and flows written in TypeScript, Python, Go, or Bash through natural language. Authentication via MCP tokens with configurable scope.
 
 For code-first teams who want workflow automation with MCP access, Windmill is now a strong contender alongside Prefect — particularly appealing if you also need the UI builder and app capabilities.
 

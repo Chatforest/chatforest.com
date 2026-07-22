@@ -6,6 +6,7 @@ og_description: "Social Media & Marketing MCP servers: TikTok official MCP serve
 content_type: "Review"
 card_description: "Social media and marketing MCP servers across posting, analytics, advertising, SEO, and email marketing. **TikTok launched an official Ads MCP server** (May 13, 2026, TikTok World '26) — AI agents can now create campaigns, set bids, adjust budgets, modify targeting, and analyze creative performance via the TikTok Marketing API. Meta Ads MCP surged to 819 stars with enterprise Remote MCP. XActions remains the 51-tool no-API-fee Twitter/X toolkit. HubSpot MCP is GA with read+write CRM access. Multi-platform scheduling servers (PostPlanify, Publora, Buffer MCP) cover 10–13 platforms. Instagram's mcpware rewrite delivers 23 Graph API tools. Twitter/X and LinkedIn still have no official servers; YouTube organic posting remains a gap."
 last_refreshed: 2026-05-17
+sources_audited: 2026-07-23
 ---
 
 Social media and marketing MCP servers are turning AI agents into social media managers, ad campaign operators, and SEO analysts. Instead of toggling between dashboards and scheduling tools, these servers let agents post content, analyze engagement, manage ad campaigns, track rankings, and coordinate multi-platform publishing — all through the Model Context Protocol.
@@ -159,7 +160,7 @@ The massive gap remains — there's no comprehensive YouTube MCP server with upl
 
 ### TikTok Ads MCP Server — Official Platform Integration *(May 2026)*
 
-**TikTok's official MCP server, announced at TikTok World '26 (May 13, 2026):**
+**TikTok's official MCP server, announced at [TikTok World '26](https://newsroom.tiktok.com/en-us/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions) (May 13, 2026):**
 
 - **Campaign creation** — AI agents create and launch ad campaigns autonomously via TikTok Marketing API
 - **Budget management** — shift budgets across campaigns and ad groups without manual intervention
@@ -230,7 +231,7 @@ A new commercial entrant offering a **unified remote MCP server** for all four m
 
 Important clarification since our last review: the official Google Ads MCP server is **intentionally read-only**. It exposes just two tools: `list_accessible_customers` and `search` (raw GAQL queries). **Cannot modify bids, pause campaigns, or create assets** — mutations stay in the REST API. This is the safety model by design.
 
-Now runs on Google Ads API v23.1 (February 25, 2026), which adds programmatic control of AI-generated ad copy via Campaign.text_guidelines. Discord discussion on v24 features planned for April 23.
+Now runs on [Google Ads API v23.1](https://developers.google.com/google-ads/api/docs/release-notes) (February 25, 2026), which adds programmatic control of AI-generated ad copy via Campaign.text_guidelines. Discord discussion on v24 features planned for April 23.
 
 A separate repo at **googleads/google-ads-mcp** provides an alternative local implementation.
 
@@ -261,7 +262,7 @@ Stars up slightly from 224 to 225. Last updated **April 13, 2026** — actively 
 
 ### Ahrefs Remote MCP (Official — Paid, Local Server Archived)
 
-The local ahrefs-mcp-server repository is now **officially deprecated and not recommended**. Ahrefs has fully transitioned to a remote MCP server:
+The local ahrefs-mcp-server repository is now **officially deprecated and not recommended**. Ahrefs has fully transitioned to a [remote MCP server](https://ahrefs.com/mcp/):
 
 - **Streamable HTTP (recommended):** `https://api.ahrefs.com/mcp/mcp`
 - **Legacy SSE (deprecated):** `https://api.ahrefs.com/mcp/mcpSse`
@@ -280,7 +281,7 @@ Semrush API integration with seven tools. Requires a Semrush API key (paid plans
 
 ### HubSpot MCP (Official — Now GA With Read+Write)
 
-The biggest email/CRM update since our last review. **HubSpot's remote MCP server graduated from beta to GA**, adding significant new capabilities:
+The biggest email/CRM update since our last review. **[HubSpot's remote MCP server](https://developers.hubspot.com/mcp) graduated from beta to GA**, adding significant new capabilities:
 
 - **Write access** to CRM objects: Contacts, Companies, Deals, Tickets, Line Items, Products, and all Engagement types (Calls, Meetings, Notes, Tasks, Emails)
 - **Read-only access** to marketing content: Campaigns, landing pages, website pages, blog posts

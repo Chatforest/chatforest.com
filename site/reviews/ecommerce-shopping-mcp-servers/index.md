@@ -108,7 +108,7 @@ Covers Admin GraphQL API, Polaris components, Shopify Functions, Hydrogen, and S
 
 Supports OpenAI Agent SDK, LangChain, CrewAI, and Vercel AI SDK integrations. Python 3.11+ and Node 18+ required. The remote MCP deployment at `mcp.stripe.com` eliminates the need for local API key management through OAuth flows.
 
-**Stripe Sessions 2026 (April 29-30, San Francisco):** Stripe's annual conference centered agentic commerce as its primary theme, announcing **288 new products and features**. Key MCP-relevant announcements: **Link agent wallet** — AI agents can initiate payments using saved payment methods from users' Stripe Link accounts, enabling one-click checkout in agent flows. **Treasury APIs with MCP support** — financial agents can now access balance, transfer, and account management via MCP. **Billing for LLM Tokens (Private Preview)** — @stripe/token-meter now supports usage-based billing that tracks token consumption from OpenAI, Anthropic, and Google Gemini natively. Stripe's Machine Payments Protocol (MPP, co-authored with Tempo) continues expanding as a session-based streaming alternative to x402's per-request model.
+**[Stripe Sessions 2026](https://stripe.com/sessions/2026) (April 29-30, San Francisco):** Stripe's annual conference centered agentic commerce as its primary theme, announcing **288 new products and features**. Key MCP-relevant announcements: **Link agent wallet** — AI agents can initiate payments using saved payment methods from users' Stripe Link accounts, enabling one-click checkout in agent flows. **Treasury APIs with MCP support** — financial agents can now access balance, transfer, and account management via MCP. **Billing for LLM Tokens (Private Preview)** — @stripe/token-meter now supports usage-based billing that tracks token consumption from OpenAI, Anthropic, and Google Gemini natively. Stripe's Machine Payments Protocol (MPP, co-authored with Tempo) continues expanding as a session-based streaming alternative to x402's per-request model.
 
 ## Shopify Admin API Servers
 
@@ -253,7 +253,7 @@ Key features:
 - **Interactive setup wizard** (`npm run setup`) for credential configuration
 - **Scalable API access** — from 1,000 to 10,000-50,000 daily API requests via OAuth escalation
 
-Built with TypeScript and Zod validation for type safety. **Security warning:** CVE-2026-27203 (environment variable injection in `updateEnvFile` in `src/auth/oauth.ts`) was disclosed February 19, 2026 and remains **unpatched as of May 2026** — all versions through v1.7.2 are affected. Attackers can inject arbitrary environment variables; do not deploy this server in production environments handling real commerce data until a patched release ships.
+Built with TypeScript and Zod validation for type safety. **Security warning:** [CVE-2026-27203](https://github.com/YosefHayim/ebay-mcp/security/advisories) (environment variable injection in `updateEnvFile` in `src/auth/oauth.ts`) was disclosed February 19, 2026 and remains **unpatched as of May 2026** — all versions through v1.7.2 are affected. Attackers can inject arbitrary environment variables; do not deploy this server in production environments handling real commerce data until a patched release ships.
 
 ### Square MCP Server (Official — Payments & Commerce)
 
@@ -305,7 +305,7 @@ Available via the MCP Registry; no additional cost on existing Easyship plans.
 | StackOne BigCommerce MCP | Full CRUD | 120 | OAuth | GA |
 | Community BigCommerce MCP | Products/Orders/Customers | varies | API key | GA |
 
-**BigCommerce launched its official Storefront MCP on May 11, 2026** — available to every live, transacting BigCommerce store via Settings → Early Access. This closes what was previously listed as a major gap in this category. The official server covers the B2C guest shopping flow: product catalog search with variants, cart building and management, and checkout URL generation. Authenticated shopping (personalized pricing, order history) is on the roadmap as the next milestone.
+**[BigCommerce launched its official Storefront MCP](https://developer.bigcommerce.com/) on May 11, 2026** — available to every live, transacting BigCommerce store via Settings → Early Access. This closes what was previously listed as a major gap in this category. The official server covers the B2C guest shopping flow: product catalog search with variants, cart building and management, and checkout URL generation. Authenticated shopping (personalized pricing, order history) is on the roadmap as the next milestone.
 
 The significance mirrors Shopify's Storefront MCP launch: every BigCommerce store now has a standard AI-agent-accessible endpoint with zero custom integration required. BigCommerce has the second-largest US market share among hosted commerce platforms.
 
@@ -361,7 +361,7 @@ Key characteristics:
 - **Simplified Merchant Center onboarding** — a dedicated UCP integration tab rolling out in Merchant Center accounts across the US
 - **Platform partnerships** — Commerce Inc, Salesforce, and Stripe implementing UCP on their platforms
 
-**Google I/O 2026 (May 2026):** Google announced the **Universal Cart** — a cross-merchant shopping experience rolling out across Search, Gemini, YouTube, and Gmail in the US (summer 2026), with Canada, Australia, and UK expansion planned. Shoppers can add items from multiple retailers to a single persistent cart, with Identity Linking carrying loyalty/member benefits across UCP-integrated platforms. Hotels and local food delivery are being added as new verticals.
+**[Google I/O 2026](https://io.google/2026/) (May 2026):** Google announced the **Universal Cart** — a cross-merchant shopping experience rolling out across Search, Gemini, YouTube, and Gmail in the US (summer 2026), with Canada, Australia, and UK expansion planned. Shoppers can add items from multiple retailers to a single persistent cart, with Identity Linking carrying loyalty/member benefits across UCP-integrated platforms. Hotels and local food delivery are being added as new verticals.
 
 Simultaneously, **Shopify's migration of its Storefront Catalog MCP to UCP** (May 30 effective, June 15 mandatory) represents the first major platform-enforcing the protocol transition, validating UCP as the operational standard Shopify intends to build around.
 
@@ -388,7 +388,7 @@ The agentic commerce protocol space has expanded rapidly — as of Q2 2026, **10
 9. **Visa Ready** — agent authentication via network tokens
 10. **Klarna Agent Mode** — buy-now-pay-later for AI agents
 
-**April 28, 2026 update:** Two new protocols enter the count via FIDO Alliance contributions:
+**April 28, 2026 update:** Two new protocols enter the count via [FIDO Alliance](https://fidoalliance.org/) contributions:
 
 11. **AP2 v0.2** (Google → FIDO) — "Human Not Present" autonomous payments support; v0.2 released as Google donated AP2 to FIDO Alliance's new Agentic Authentication Technical Working Group
 12. **Mastercard Verifiable Intent** (open-sourced April 28) — cryptographic proof of consumer authorization for agent transactions using Selective Disclosure; co-developed with Google; now part of FIDO's Payments Technical Working Group (chaired by Mastercard and Visa representatives)
@@ -405,7 +405,7 @@ This proliferation signals that agentic commerce is entering a standards competi
 |--------|------|-------|--------|-----------|
 | Meta Ads AI Connectors | Commercial remote | 29 | MCP-compatible | ChatGPT, Claude, others |
 
-**Meta launched AI Connectors for Meta Ads on April 29, 2026** in open beta globally — enabling any MCP-compatible AI client to access and manage Meta advertising campaigns. This is the first official MCP integration from Meta, covering the advertising layer of Facebook, Instagram, and Messenger commerce.
+**Meta launched [AI Connectors for Meta Ads](https://www.facebook.com/business/news) on April 29, 2026** in open beta globally — enabling any MCP-compatible AI client to access and manage Meta advertising campaigns. This is the first official MCP integration from Meta, covering the advertising layer of Facebook, Instagram, and Messenger commerce.
 
 29 tools cover:
 - **Performance Reporting:** Campaign analytics, ad set metrics, ad-level data, audience insights
@@ -417,7 +417,7 @@ Read/write capable — agents can create campaigns, adjust budgets, and pause un
 
 ### Adobe Commerce: MCP as Default Agent Protocol
 
-**Adobe Commerce (formerly Magento) made MCP its default agent protocol at Summit 2026.** Adobe's Commerce MCP server provides access to catalog, cart, pricing, inventory, promotions, checkout, orders, and post-purchase flows. Reference architectures cover Microsoft Copilot, ChatGPT Enterprise, Claude, and Gemini Enterprise. Adobe also committed to supporting UCP and ACP alongside MCP as complementary standards. Given Adobe Commerce's penetration in enterprise and mid-market retail, this commitment extends MCP's reach into the segment that had been most reliant on proprietary integrations.
+**Adobe Commerce (formerly Magento) made MCP its default agent protocol at [Summit 2026](https://summit.adobe.com/).** Adobe's Commerce MCP server provides access to catalog, cart, pricing, inventory, promotions, checkout, orders, and post-purchase flows. Reference architectures cover Microsoft Copilot, ChatGPT Enterprise, Claude, and Gemini Enterprise. Adobe also committed to supporting UCP and ACP alongside MCP as complementary standards. Given Adobe Commerce's penetration in enterprise and mid-market retail, this commitment extends MCP's reach into the segment that had been most reliant on proprietary integrations.
 
 ## What's Missing
 
