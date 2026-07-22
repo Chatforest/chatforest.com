@@ -7,11 +7,12 @@ og_description: "Framelink is the community Figma MCP server with 14,800+ stars.
 content_type: "Review"
 card_description: "The community Figma MCP server with 14,800+ GitHub stars. Descriptive JSON output instead of prescriptive React code, preserved component nesting, 25% smaller payloads, HTTP transport. Stdio crash fixed on main (unreleased). MCPSafe Grade D security scan."
 last_refreshed: 2026-05-21
+sources_audited: 2026-07-22
 ---
 
-**At a glance:** ~14,800 GitHub stars, ~1,200 forks, v0.11.0 (Apr 20, 2026), 2 tools, MIT license, ~51K weekly npm downloads, 25 releases
+**At a glance:** [~14,800 GitHub stars](https://github.com/GLips/Figma-Context-MCP), ~1,200 forks, v0.11.0 (Apr 20, 2026), 2 tools, MIT license, [~51K weekly npm downloads](https://www.npmjs.com/package/figma-developer-mcp), 25 releases
 
-Framelink is what happens when the community builds a better solution before the platform owner shows up. With 14,400+ GitHub stars, it's the de facto standard for design-to-code MCP workflows. And for good reason: it produces better output for the most common use case.
+Framelink is what happens when the community builds a better solution before the platform owner shows up. With [14,400+ GitHub stars](https://github.com/GLips/Figma-Context-MCP), it's the de facto standard for design-to-code MCP workflows. And for good reason: it produces better output for the most common use case.
 
 The server does one thing well: it reads Figma designs and gives your AI assistant descriptive data about layouts, styles, and component structure. Instead of prescriptive React + Tailwind code (Figma's approach), Framelink sends descriptive JSON — "this element has a 1px border and 16px padding" — and lets your AI decide how to build it using your existing components and conventions.
 
@@ -78,7 +79,7 @@ Supports: Cursor, Claude Code, Windsurf, Cline, VS Code, Zed, Amp, Codex, Roo, O
 
 **API key via command-line arg — partially addressed.** The `--figma-api-key=YOUR-KEY` approach puts your token in shell history and process lists. Environment variable support exists (`FIGMA_API_KEY`). Issue #264 was closed April 30 via PR #365 (feat: support per-request Figma API keys) — users can now pass a key directly in individual tool calls, enabling multi-tenant scenarios. The fix is on main but not yet released in a versioned npm package.
 
-**MCPSafe security scan: Grade D (70/100).** The MCPSafe automated scanner (using a 5-LLM consensus panel to detect prompt injection risks, over-scoped tool schemas, and supply chain issues) flagged Framelink with 3 high-severity and 11 medium-severity findings in May 2026 — zero critical findings. The full detailed report is on the MCPSafe registry. No response from maintainers visible in the open issues (#377, #378). Enterprise and security-conscious teams should factor this into their evaluation.
+**MCPSafe security scan: Grade D (70/100).** The MCPSafe automated scanner (using a 5-LLM consensus panel to detect prompt injection risks, over-scoped tool schemas, and supply chain issues) flagged Framelink with 3 high-severity and 11 medium-severity findings in May 2026 — zero critical findings. The full detailed report is on the MCPSafe registry. No response from maintainers visible in the open issues ([#377](https://github.com/GLips/Figma-Context-MCP/issues/377), [#378](https://github.com/GLips/Figma-Context-MCP/issues/378)). Enterprise and security-conscious teams should factor this into their evaluation.
 
 ## How It Compares
 
@@ -129,7 +130,7 @@ Other Figma MCP servers exist — GitHub has 221+ Figma MCP repos — but none a
 
 **Downloads continuing to normalize.** Weekly npm downloads peaked at ~198,000 in mid-April and have dropped further: ~105,000/week at the April 24 refresh, ~51,000/week as of mid-May — still 4.4x the early March baseline (~11,500) but the adoption spike is fading. Stars grew from ~14,500 to ~14,800. Forks from ~1,140 to ~1,200.
 
-**Critical RCE vulnerability (CVE-2025-53967)** was disclosed and patched in v0.6.3 (September 2025). Imperva researchers found a command injection flaw in `fetchWithRetry` — the curl fallback interpolated URLs into shell commands. Fully resolved, but a useful reminder that self-hosted MCP servers carry security responsibility.
+**[Critical RCE vulnerability (CVE-2025-53967)](https://github.com/advisories/GHSA-gxw4-4fc5-9gr5)** was disclosed and patched in v0.6.3 (September 2025). [Imperva researchers](https://www.imperva.com/blog/another-critical-rce-discovered-in-a-popular-mcp-server/) found a command injection flaw in `fetchWithRetry` — the curl fallback interpolated URLs into shell commands. Fully resolved, but a useful reminder that self-hosted MCP servers carry security responsibility.
 
 ## What's New (May 2026 Update)
 
@@ -139,9 +140,9 @@ No new npm releases since v0.11.0 (April 20), but meaningful changes landed on t
 
 **Issue #264 fixed via PR #365 (April 30) — per-request API keys, unreleased.** Support for passing a Figma API key directly in individual tool calls is now on main. This enables multi-tenant deployments where different users provide their own credentials per-request, without sharing a server-level key. Addresses the core security concern about API keys in shell history/process lists. Also not yet in a versioned release.
 
-**MCPSafe security scan: Grade D (70/100), May 12.** An automated security scanner (MCPSafe, using a 5-LLM consensus panel) flagged Framelink with 3 high-severity and 11 medium-severity findings — no critical issues. The findings appear to cover prompt injection risks, tool schema scoping, and supply chain concerns typical for open-source MCP servers. No maintainer response visible in GitHub issues #377/#378. Enterprise users should review the MCPSafe registry entry before deploying.
+**MCPSafe security scan: Grade D (70/100), May 12.** An automated security scanner (MCPSafe, using a 5-LLM consensus panel) flagged Framelink with 3 high-severity and 11 medium-severity findings — no critical issues. The findings appear to cover prompt injection risks, tool schema scoping, and supply chain concerns typical for open-source MCP servers. No maintainer response visible in GitHub issues [#377](https://github.com/GLips/Figma-Context-MCP/issues/377)/[#378](https://github.com/GLips/Figma-Context-MCP/issues/378). Enterprise users should review the MCPSafe registry entry before deploying.
 
-**Issue #354 (telemetry leaking file keys) remains open.** The PostHog telemetry introduced in v0.10.0 still leaks Figma file keys and node IDs in error messages. PR #356 (redaction fix) has not been merged. Privacy-sensitive users should consider disabling telemetry or waiting for a release that resolves this.
+**[Issue #354](https://github.com/GLips/Figma-Context-MCP/issues/354) (telemetry leaking file keys) remains open.** The PostHog telemetry introduced in v0.10.0 still leaks Figma file keys and node IDs in error messages. [PR #356](https://github.com/GLips/Figma-Context-MCP/pull/356) (redaction fix) has not been merged. Privacy-sensitive users should consider disabling telemetry or waiting for a release that resolves this.
 
 **npm downloads: ~105K → ~51K/week.** The normalization that began after the April peak continues. The MCP ecosystem stabilization is real — Framelink's initial viral spike has passed. The server still processes tens of thousands of weekly installs and retains its lead over all competitors.
 

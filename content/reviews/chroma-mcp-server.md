@@ -6,15 +6,16 @@ og_description: "Chroma's official MCP server lets AI agents manage vector datab
 content_type: "Review"
 card_description: "Chroma's first-party MCP server for AI-assisted vector database management. 13 tools covering collections, documents, semantic search, regex matching, and embedding configuration — the most comprehensive vector DB MCP experience available."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-22
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** 547 GitHub stars · 109 forks · 13 tools · 14 open issues · v0.2.6 (last release Aug 2025, last commit Sep 2025) · ~44K weekly PyPI downloads · PulseMCP: 484K all-time visitors (last measured Apr 2026)
+**At a glance:** 547 GitHub stars · 109 forks · 13 tools · 14 open issues · v0.2.6 (last release Aug 2025, last commit Sep 2025) · [~44K weekly PyPI downloads](https://pypi.org/project/chroma-mcp/) · PulseMCP: 484K all-time visitors (last measured Apr 2026)
 
 The Chroma MCP server is the official tool for connecting AI coding agents to Chroma, the open-source vector database that powers RAG applications for millions of developers. Instead of writing Python scripts to manage embeddings and run similarity searches, your agent can create collections, add documents, query semantically, and manage embedding configurations — all through natural language.
 
-It's first-party, maintained by the Chroma team at [chroma-core/chroma-mcp](https://github.com/chroma-core/chroma-mcp). With 547 GitHub stars and support for four deployment modes — ephemeral, persistent local, self-hosted HTTP, and Chroma Cloud — it's the most flexible vector database MCP server available. The core Chroma project has 26,700+ stars and is one of the most popular AI infrastructure tools in the Python ecosystem.
+It's first-party, maintained by the Chroma team at [chroma-core/chroma-mcp](https://github.com/chroma-core/chroma-mcp). With 547 GitHub stars and support for four deployment modes — ephemeral, persistent local, self-hosted HTTP, and Chroma Cloud — it's the most flexible vector database MCP server available. The [core Chroma project](https://github.com/chroma-core/chroma) has 26,700+ stars and is one of the most popular AI infrastructure tools in the Python ecosystem.
 
 This is our first vector database MCP server review, and it sets a solid baseline for the category — though it also reveals how young the vector DB MCP space still is.
 
@@ -121,7 +122,7 @@ Six embedding providers are supported out of the box: Default (Chroma's built-in
 
 **No official MCP directory listing.** Despite being first-party, chroma-mcp isn't listed in the official [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) directory. This limits discoverability — developers searching for vector database MCP servers might not find it.
 
-**Effectively abandoned — and accumulating new bugs.** Seven releases from April to August 2025 (v0.2.0 to v0.2.6), then zero commits since September 17, 2025 — now **nine months** of total inactivity. A **critical SQL injection vulnerability** was disclosed in April 2026 (issue #62): 8 of 13 tools pass collection name parameters unsanitized into SQLite queries, and 4 tools are susceptible to prompt injection, creating a chained attack vector (malicious document → prompt injection → crafted collection name → SQL execution). Zero maintainer response after 7+ weeks. A **protocol-compliance bug** (issue #66, April 2026) sends banner text to stdout, corrupting the MCP stdio handshake for strict clients — PR #67 fixes it, unreviewed. **Persistent mode creates zombie processes** (issues #63, #65): server processes survive client disconnects, consuming RAM indefinitely. The MCP dependency security update (v1.10.0+, issue #53) remains unaddressed after 6+ months. 14 open issues, 11 open PRs with none merged. The core Chroma project reached v1.5.9 (May 2026) with nine releases in 2026 — sharding, quantized search, maxscore indexing, getCollectionById. The MCP server still pins chromadb at 1.0.16.
+**Effectively abandoned — and accumulating new bugs.** Seven releases from April to August 2025 (v0.2.0 to v0.2.6), then zero commits since September 17, 2025 — now **nine months** of total inactivity. A **[critical SQL injection vulnerability](https://github.com/chroma-core/chroma-mcp/issues/62)** was disclosed in April 2026 (issue #62): 8 of 13 tools pass collection name parameters unsanitized into SQLite queries, and 4 tools are susceptible to prompt injection, creating a chained attack vector (malicious document → prompt injection → crafted collection name → SQL execution). Zero maintainer response after 7+ weeks. A **protocol-compliance bug** (issue #66, April 2026) sends banner text to stdout, corrupting the MCP stdio handshake for strict clients — PR #67 fixes it, unreviewed. **Persistent mode creates zombie processes** (issues #63, #65): server processes survive client disconnects, consuming RAM indefinitely. The MCP dependency security update (v1.10.0+, issue #53) remains unaddressed after 6+ months. 14 open issues, 11 open PRs with none merged. The core Chroma project reached v1.5.9 (May 2026) with nine releases in 2026 — sharding, quantized search, maxscore indexing, getCollectionById. The MCP server still pins chromadb at 1.0.16.
 
 **Query results can bloat context.** `query_documents` returns full document content by default. For collections with long documents, a single query can consume significant context window space. There's no built-in truncation or summary mode — your agent gets everything, whether it needs it or not.
 
@@ -143,7 +144,7 @@ The chroma-mcp repository crossed its **ninth month of total inactivity** with n
 
 **New memory leak confirmed (issue #65, April 23):** In persistent mode, chroma-mcp.exe processes survive Claude Desktop/Claude Code client disconnects indefinitely, consuming RAM until manually killed. Combined with issue #63 (zombie Windows processes from the April 20 review), the server has two confirmed resource-leak bugs affecting normal use cases.
 
-**Core Chroma reached v1.5.9 (May 5, 2026).** The main database added sharded collection support (group-by with sharding, maxscore index), plus CLI 1.4.4. That's **nine core releases in 2026** while the MCP server hasn't had a single commit. The MCP server still pins `chromadb` at 1.0.16 — fourteen major versions behind the current library.
+**[Core Chroma reached v1.5.9 (May 5, 2026)](https://github.com/chroma-core/chroma/releases).** The main database added sharded collection support (group-by with sharding, maxscore index), plus CLI 1.4.4. That's **nine core releases in 2026** while the MCP server hasn't had a single commit. The MCP server still pins `chromadb` at 1.0.16 — fourteen major versions behind the current library.
 
 **All prior issues remain open.** SQL injection vulnerability (issue #62, 7 weeks, zero response), MCP dependency update (issue #53, 6+ months), PR #61 (Ollama/SentenceTransformer embeddings, 7 weeks) — none addressed.
 
@@ -153,7 +154,7 @@ The chroma-mcp repository crossed its **ninth month of total inactivity** with n
 
 The chroma-mcp repository has had zero commits since September 17, 2025. No new releases, no merged PRs, no issue responses. The last release (v0.2.6) is now **eight months old**.
 
-**Critical SQL injection disclosed (issue #62, April 2).** Security researcher 8endit used mcpfuzz to discover that 8 of 13 tools (62%) pass collection name parameters unsanitized into SQLite queries, enabling arbitrary SQL injection via LLM-driven input. Four tools are also susceptible to prompt injection, creating a full attack chain: a malicious document embedded with hidden instructions can trick the LLM into invoking a tool with a crafted collection name (e.g., `'; DROP TABLE embeddings; --`), which executes as SQL against the database. The maintainers have not responded. This is a **critical unpatched vulnerability** in a server with ~96K weekly downloads.
+**[Critical SQL injection disclosed](https://github.com/chroma-core/chroma-mcp/issues/62) (issue #62, April 2).** Security researcher 8endit used mcpfuzz to discover that 8 of 13 tools (62%) pass collection name parameters unsanitized into SQLite queries, enabling arbitrary SQL injection via LLM-driven input. Four tools are also susceptible to prompt injection, creating a full attack chain: a malicious document embedded with hidden instructions can trick the LLM into invoking a tool with a crafted collection name (e.g., `'; DROP TABLE embeddings; --`), which executes as SQL against the database. The maintainers have not responded. This is a **critical unpatched vulnerability** in a server with ~96K weekly downloads.
 
 **New issue #63 (April 16):** chroma-mcp.exe processes remain running as zombies on Windows after Claude Desktop/Claude Code close, consuming RAM indefinitely. No maintainer response.
 
@@ -167,7 +168,7 @@ Meanwhile, the core Chroma project shipped **three more releases** in April 2026
 
 That's **eight core releases in Q1-Q2 2026** (v1.5.0 through v1.5.8) while the MCP server hasn't had a single commit. The gap is now enormous — quantized search, sharding, getCollectionById, and GoogleGemini embeddings are all inaccessible through the MCP server.
 
-**Chroma released Context-1 (March 26)** — a 20B parameter agentic search model designed as a retrieval subagent. It achieves frontier-model retrieval performance at 10× faster inference and 25× lower cost, with a self-editing context mechanism (0.94 pruning accuracy) that discards irrelevant passages mid-search. This signals Chroma's strategic direction is shifting toward agentic AI infrastructure — making the neglected MCP server feel even more like a leftover from a previous era.
+**[Chroma released Context-1 (March 26)](https://www.trychroma.com/research/context-1)** — a 20B parameter agentic search model designed as a retrieval subagent. It achieves frontier-model retrieval performance at 10× faster inference and 25× lower cost, with a self-editing context mechanism (0.94 pruning accuracy) that discards irrelevant passages mid-search. This signals Chroma's strategic direction is shifting toward agentic AI infrastructure — making the neglected MCP server feel even more like a leftover from a previous era.
 
 **Community contributions still piling up.** Nine open PRs sit waiting, including PR #61 (Ollama/SentenceTransformer, Mar 2026), PR #58 (MCP tool annotations, Dec 2025), PR #55 (SSL verification, Dec 2025), PR #54 (proper logging, Nov 2025), and PR #34 (Docker support, May 2025 — nearly a year old). None reviewed.
 
@@ -198,7 +199,7 @@ Vector databases are the infrastructure backbone of RAG — retrieval-augmented 
 
 Chroma's MCP server is still the most tool-rich in the vector database category, but the maintenance situation has crossed from "gap" to "compounding risk." The critical SQL injection vulnerability (issue #62) affects 62% of the server's tools, has a viable prompt injection attack chain, and has received zero maintainer response after 7+ weeks. A new protocol-compliance bug corrupts the MCP handshake; persistent mode leaks process resources. ~44K developers are downloading this server weekly. The vulnerability count is growing while the maintainer is silent.
 
-The core Chroma project shipped nine releases in 2026 (v1.5.0 through v1.5.9) — multi-region, quantized search, 1-bit RaBitQ compression, sharding, getCollectionById, GoogleGemini embeddings, maxscore indexing — while the MCP server hasn't had a commit in nine months. The company also released Context-1, a 20B agentic search model, signaling that Chroma's strategic focus has shifted to agentic AI infrastructure at a higher level than MCP tool servers.
+The [core Chroma project](https://github.com/chroma-core/chroma/releases) shipped nine releases in 2026 (v1.5.0 through v1.5.9) — multi-region, quantized search, 1-bit RaBitQ compression, sharding, getCollectionById, GoogleGemini embeddings, maxscore indexing — while the MCP server hasn't had a commit in nine months. The company also released Context-1, a 20B agentic search model, signaling that Chroma's strategic focus has shifted to agentic AI infrastructure at a higher level than MCP tool servers.
 
 The stdio-only transport is also a strategic miss. The MCP ecosystem is clearly moving toward remote servers with OAuth — Chroma Cloud already has the authentication infrastructure for this. A hosted MCP server at something like `mcp.trychroma.com` would be a natural evolution, and the open feature request for HTTP transport (issue #44) has been waiting since July 2025.
 
