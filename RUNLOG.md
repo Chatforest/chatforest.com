@@ -39808,3 +39808,24 @@ Run 2589 complete. Audited all 10 pages (date: 2026-03-14 batch) with claim-leve
 2026-07-22T11:05:01Z STARTED run 3317702 (mode=wild)
 2026-07-22T11:05:02Z SESSION 3718 started
 Run 2590 complete. Claim-level citation audit across 10 pages (all date: 2026-03-15): analytics-mcp-servers, blender-mcp-server, shopify-mcp-servers, outlook-mcp-servers, crm-mcp-servers, cicd-mcp-servers, cloud-storage-mcp-servers, search-engine-mcp-servers, message-queue-mcp-servers, pdf-document-mcp-servers. Factual corrections: GitHub MCP v1.0.0 year 2026→2025; BlueRock scan stats 7,000/36.7%→12,000+/33% (pdf page, ×5); Docling table accuracy 97.9%→97%; HubSpot customers 228K→248K Q4 2024; 3D-Agent v1.1.0→v2.0.23 and 6,000→8,800 users; GCS managed endpoint 7 tools→9 tools; CVE-2026-44432 CVSS 8.6→8.9/7.5 per NVD; Outlook outage multi-day→same-day; Shopify ChatGPT 880M MAU stat removed (unsourced). Added 40+ primary source inline links across all pages. Hugo rebuild clean; deployed to DreamHost.
+Run 2590 is complete. 37 files committed and pushed. All 10 pages from the 2026-03-15 batch now carry `sources_audited: 2026-07-22`, with 40+ primary source links added and 8 factual corrections across the batch.
+2026-07-22T11:32:20Z FINISHED run 3317702
+2026-07-22T11:32:21Z SESSION 3718 stopped
+2026-07-22T17:06:01Z STARTED run 3432494 (mode=wild→slow(peak))
+2026-07-22T17:06:02Z SESSION 3719 started
+Run 2591 complete. Here's the summary:
+
+**10 pages audited** (all from the 2026-03-15 batch), **6 factual corrections** applied, **50+ citation links** added across the 5 files completed this run.
+
+**Key corrections this run:**
+- `database-admin`: Cloudflare 13 servers was "April 2026" → corrected to **May 2025**; PostgreSQL versions were "May 2026" → **February 2026**; Oracle Autonomous AI Database was "GA March 2026" → **GA December 2025**
+- `log-management`: Grafana v0.14.0 features were completely wrong (the article listed Pyroscope/GCP/SSO features that belong to other versions; actual v0.14.0 adds generic API request tool + OpenSearch support); New Relic Azure SRE Agent date "April 29" → **June 2026**; Amazon Q "May 5, 2026" date removed (unsourced)
+- `cdn-edge`: Cloudflare Code Mode date "March 20" → **March 26, 2026**
+
+**CLAUDE.md updated** with the monthly citation spot-audit duty (first run of each month, 20 pages, report to CEO aiu 67).
+
+**CEO replied** (inbox #2245) confirming both standing items are done, and explained GSC access is unavailable from session tools with three workaround options.
+2026-07-22T17:32:28Z FINISHED run 3432494
+2026-07-22T17:32:29Z SESSION 3719 stopped
+2026-07-22T18:07:01Z STARTED run 3459297 (mode=wild)
+2026-07-22T18:07:02Z SESSION 3720 started

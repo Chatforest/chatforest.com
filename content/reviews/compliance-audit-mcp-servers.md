@@ -6,6 +6,7 @@ og_description: "Compliance & Audit MCP servers: Agentic MCP Gateway Registry (6
 content_type: "Review"
 card_description: "Compliance and audit MCP servers across compliance platforms, policy enforcement proxies, audit logging tools, and security standards. The Agentic MCP Gateway Registry (656 stars, v1.24.1) remains the clear enterprise governance leader — v1.23 added Splunk JSON Lines logging and 5-tier cloud detection; v1.24 added local stdio MCP server support, server-side OAuth session store (breaking: SECRET_KEY now mandatory), per-server encrypted HTTP headers, IPv6 dual-stack, and resource-bound JWT tokens. Microsoft MCP Gateway (642 stars) added an agent/session subsystem preview. apisec-inc/mcp-audit (149 stars) added source-scan: detects Prompt-In-Shell-Out attack chains in MCP server source code. Three compliance platforms: Vanta (60 stars, read-write), Drata (official hosted), and Secureframe (7 stars, dormant). Most monitoring and audit tools remain dormant. The category is still maturing unevenly — the leaders are pulling further ahead."
 last_refreshed: 2026-05-21
+sources_audited: 2026-07-23
 ---
 
 Compliance and audit is one of the most critical — and most underdeveloped — categories in the MCP ecosystem. Enterprises deploying MCP servers face a predictable set of compliance requirements: **audit trails** (what did the AI agent do?), **policy enforcement** (what is the agent allowed to do?), **access controls** (who authorized the agent?), and **compliance evidence** (can we prove we're meeting SOC 2, HIPAA, GDPR, ISO 27001?). The tools in this category attempt to solve these problems from different angles. Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
@@ -26,7 +27,7 @@ The headline finding: **this category is maturing unevenly — the leaders are p
 
 **Tests and test entities** — query automated security tests and their status across compliance frameworks. **Controls** — manage security controls and their associated documentation. **Documents** — enumerate compliance documents and evidence. **Integrations** — explore connected service integrations and their resources. **Frameworks** — access framework adoption metrics and drill into specific requirements. **People** — personnel management and access reviews. **Risk and vulnerability tracking** — monitor risk scenarios with treatment plans and track vulnerabilities.
 
-The project uses a "consolidated tool pattern" — the original design had 53 tools, reduced to 43, then consolidated further to 13 by using intelligent parameter handling. This is a smart architectural choice that keeps the tool surface manageable for LLM context windows while preserving full functionality. Recent PRs added trusted publishing and primary region routing. An open PR (#42) adds `VANTA_MCP_ENABLED_TOOLS` for enabling additional tools. Still in "public preview" with 96 commits and no formal releases. **No new commits since February 2026** — development has gone quiet.
+The project uses a "consolidated tool pattern" — the original design had 53 tools, reduced to 43, then consolidated further to 13 by using intelligent parameter handling. This is a smart architectural choice that keeps the tool surface manageable for LLM context windows while preserving full functionality. Recent PRs added trusted publishing and primary region routing. An open PR (#42) adds `VANTA_MCP_ENABLED_TOOLS` for enabling additional tools. **The repository was archived in June 2026** — it is now read-only and no longer receiving updates.
 
 ### Secureframe
 
@@ -51,7 +52,7 @@ The contrast with Vanta is stark: Secureframe's server is strictly read-only (no
 
 **NEW.** Drata — the third major compliance automation platform — now has MCP support through two routes.
 
-**Drata's official MCP server** is a proprietary hosted service (no public GitHub repo). It was merged into the official MCP integrations directory (modelcontextprotocol/servers PR #2157). Unlike Secureframe's read-only approach, Drata's official server supports **read and write access**, scoped to the account's permissions. It can summarize failed compliance tests, generate real-time risk and controls reports, collect evidence, and power AI workflows with live compliance context. Supports SOC 2, HIPAA, ISO 27001, and other frameworks via Drata's platform. Branded as "AI-Native Trust Management."
+**Drata's official MCP server** is a proprietary hosted service (no public GitHub repo). It was merged into the official MCP integrations directory ([modelcontextprotocol/servers PR #2157](https://github.com/modelcontextprotocol/servers/pull/2157)). Unlike Secureframe's read-only approach, Drata's official server supports **read and write access**, scoped to the account's permissions. It can summarize failed compliance tests, generate real-time risk and controls reports, collect evidence, and power AI workflows with live compliance context. Supports SOC 2, HIPAA, ISO 27001, and other frameworks via Drata's platform. Branded as "AI-Native Trust Management."
 
 **sderosiaux/drata-mcp** (5 stars, Python, MIT, 6 commits) is a community-built read-only alternative. Thirteen tools — all GET operations: `get_compliance_summary`, `list_controls`, `list_controls_with_issues`, `get_control_details`, `get_monitors_for_control`, `list_monitors`, `list_failing_monitors`, `list_personnel`, `list_personnel_with_issues`, `list_policies`, `list_pending_policy_acknowledgments`, `list_connections`, `list_vendors`. Focused on SOC 2 Type II audit preparation.
 
@@ -260,7 +261,7 @@ The compliance and audit MCP category still has notable gaps, though some from o
 
 **No unified compliance dashboard** — Vanta, Secureframe, and now Drata solve their own platforms' needs, but there's no MCP server that aggregates compliance status across multiple frameworks and providers.
 
-**OPA/Rego integration emerging** — Red Hat has published Claude Code skills (redhat-et/rhacm-gatekeeper-skills) for generating OPA Gatekeeper policies on OpenShift/RHACM, including NIST SP 800-53 and BSI IT-Grundschutz compliance agents. This isn't a standalone MCP server yet, but it's the first bridge between OPA policy-as-code and MCP-connected AI agents.
+**OPA/Rego integration emerging** — Red Hat has published [Claude Code skills (redhat-et/rhacm-gatekeeper-skills)](https://github.com/redhat-et/rhacm-gatekeeper-skills) for generating OPA Gatekeeper policies on OpenShift/RHACM, including NIST SP 800-53 and BSI IT-Grundschutz compliance agents. This isn't a standalone MCP server yet, but it's the first bridge between OPA policy-as-code and MCP-connected AI agents.
 
 **No real-time alerting** — the audit tools log events, but none trigger real-time alerts when policy violations occur. SentinelGate blocks violations but doesn't alert on patterns.
 

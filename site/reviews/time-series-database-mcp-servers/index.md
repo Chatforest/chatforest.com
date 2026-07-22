@@ -25,7 +25,7 @@ The key architectural choice: tool categories are configurable. Disable what you
 
 This is effectively a universal time-series MCP gateway. If your observability stack runs through Grafana, this single server provides AI agent access to all your time-series backends.
 
-**April 2026 update:** At GrafanaCON 2026, Grafana Labs announced a **remote hosted MCP server** — external agents can connect to Grafana's MCP endpoint without deploying anything locally. They also open-sourced **[o11y-bench](https://grafana.com/blog/o11y-bench-open-benchmark-for-observability-agents/)**, a benchmark that evaluates AI agents on observability workflows against a real Grafana stack with MCP access. AI Observability entered public preview in Grafana Cloud, and the new **gcx CLI** simplifies agent-to-Grafana connectivity. Grafana Tempo 2.9 shipped with an **embedded MCP server** for distributed tracing (the standalone [tempo-mcp-server](https://github.com/grafana/tempo-mcp-server) repo was archived). A standalone **[Loki MCP server](https://github.com/grafana/loki-mcp)** (Go, 31 commits) also exists for teams using Loki without Grafana dashboards.
+**April 2026 update:** At GrafanaCON 2026, Grafana Labs announced a **remote hosted MCP server** — external agents can connect to Grafana's MCP endpoint without deploying anything locally. They also open-sourced **[o11y-bench](https://grafana.com/blog/o11y-bench-open-benchmark-for-observability-agents/)**, a benchmark that evaluates AI agents on observability workflows against a real Grafana stack with MCP access. AI Observability entered public preview in Grafana Cloud, and the new **gcx CLI** simplifies agent-to-Grafana connectivity. Grafana Tempo 2.9 shipped with an **embedded MCP server** for distributed tracing. A standalone **[Loki MCP server](https://github.com/grafana/loki-mcp)** (Go, 31 commits) also exists for teams using Loki without Grafana dashboards.
 
 ### Grafana (Community)
 
@@ -262,7 +262,7 @@ The time-series MCP category earns 4.0/5 because of the breadth of official vend
 **What changed since March 15, 2026:**
 
 - **SigNoz MCP Server — NEW** (88 stars, Go, 30+ tools). First comprehensive open-source observability platform with a dedicated MCP server. Metrics, traces, logs, alerts, dashboards.
-- **Grafana GrafanaCON 2026** — Remote hosted MCP server, o11y-bench agent benchmark (open source), AI Observability in public preview, gcx CLI. Tempo 2.9 shipped embedded MCP server (standalone repo archived). Stars 2,500→2,900 (+16%), commits 473→563.
+- **Grafana GrafanaCON 2026** — Remote hosted MCP server, o11y-bench agent benchmark (open source), AI Observability in public preview, gcx CLI. Tempo 2.9 shipped embedded MCP server. Stars 2,500→2,900 (+16%), commits 473→563.
 - **ClickHouse Cloud Remote MCP** — Managed read-only MCP endpoint in private preview, AWS Marketplace "AI Agents and Tools" category. Stars 715→761.
 - **VictoriaMetrics promoted to main org** — From VictoriaMetrics-Community to VictoriaMetrics. Hosted MCP in VictoriaMetrics Cloud. VictoriaLogs GA. Stars 130→160 (+23%), commits 302→351.
 - **giantswarm/mcp-prometheus** — OAuth 2.1 support, per-call URL/org overrides. Commits nearly doubled: 62→117 (+89%).
