@@ -6,6 +6,7 @@ og_description: "Telecom & communications MCP servers: UniFi Suite (274 stars, 2
 content_type: "Review"
 card_description: "Telecommunications and communications MCP servers for CPaaS platforms, network infrastructure management, SMS/voice, messaging, and video conferencing. This category stands out for strong official vendor participation — Twilio, Telnyx, Sinch, Vonage, and Plivo all have official or vendor-community MCP servers, making it one of the best-supported MCP categories by established companies. The biggest development since our initial review is the UniFi explosion — sirkirby/unifi-mcp (274 stars, 224 tools) now covers Network, Protect, and Access, making it the most popular network infrastructure MCP server by star count, surpassing even NetBox (158 stars). Vonage has upgraded from a minimal 2-tool server to a full 14-tool API binding platform plus a dedicated documentation MCP server. Voice AI is emerging as a new subcategory — popcornspace/voice-call-mcp-server (59 stars) enables real-time AI voice calls via Twilio and GPT-4o Realtime. RingCentral's App Connect MCP (alpha) partially fills the biggest UCaaS gap. Cisco's Network MCP Docker Suite (34 stars, +36%) continues growing with 10 containerized servers for unified AIOps. The CAMARA project expanded to 60 APIs including 10 stable/production-ready, though public MCP implementations remain pending. Gaps narrowing: RingCentral partially addressed, voice AI emerging, European CPaaS represented (sipgate). Still missing: Asterisk/FreeSWITCH/SIP PBX, WebRTC-native, full UCaaS platforms (8x8, Genesys), carrier network APIs. Rating holds at 4.0/5."
 last_refreshed: 2026-04-27
+sources_audited: 2026-07-23
 ---
 
 Telecommunications and communications MCP servers are giving AI agents the power to send messages, make phone calls, manage network infrastructure, and orchestrate multi-channel communications — all through natural language. Instead of writing custom integrations for each provider, an AI agent can discover and use Twilio's SMS API, check Cisco Meraki network health, or send a WhatsApp message through a standardized MCP interface.
@@ -326,7 +327,7 @@ Four competing Nmap MCP servers that expose network scanning through AI agents �
 
 The most significant long-term development in telecom MCP isn't a single server — it's the **CAMARA project** under the Linux Foundation. CAMARA standardizes network APIs across mobile carriers (Quality on Demand, Device Location, SIM Swap detection, Number Verification) and is actively developing MCP bridges to expose these APIs as MCP tools.
 
-**Update (April 2026):** CAMARA expanded to **60 APIs in Fall 2025**, including **23 new APIs and 10 stable/production-ready APIs**. The project is exploring MCP server functionality to enable faster innovation while maintaining alignment with stable API versioning.
+**Update (April 2026):** CAMARA expanded to [**60 APIs in Fall 2025**, including 23 new APIs and 10 stable/production-ready APIs](https://camaraproject.org/2025/10/07/camara-the-global-telco-api-alliance-issues-its-latest-meta-release-of-stable-network-apis-advancing-api-interoperability/). The project is exploring MCP server functionality to enable faster innovation while maintaining alignment with stable API versioning.
 
 This means AI applications could eventually:
 - **Request better network quality** for video calls dynamically via QoD APIs
@@ -334,7 +335,7 @@ This means AI applications could eventually:
 - **Verify device location** for location-sensitive applications
 - **Check number verification** without SMS OTP
 
-The January 2026 white paper from the Linux Foundation outlines the architecture: an MCP server acts as a translator, turning CAMARA APIs into MCP tools that AI applications can discover and call. Major carriers (Deutsche Telekom, Telefónica, and others) are participating. This is still early-stage — no public MCP implementations yet — but the expansion to 60 APIs (with 10 stable) indicates the underlying API platform is maturing faster than MCP adoption can follow.
+The [January 2026 white paper from the Linux Foundation](https://www.linuxfoundation.org/press/camara-charts-a-path-for-network-aware-ai-applications-with-mcp) outlines the architecture: an MCP server acts as a translator, turning CAMARA APIs into MCP tools that AI applications can discover and call. Major carriers (Deutsche Telekom, Telefónica, and others) are participating. This is still early-stage — no public MCP implementations yet — but the expansion to 60 APIs (with 10 stable) indicates the underlying API platform is maturing faster than MCP adoption can follow.
 
 ## What's missing
 

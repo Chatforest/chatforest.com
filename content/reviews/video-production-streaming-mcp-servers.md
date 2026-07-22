@@ -6,6 +6,7 @@ og_description: "Video production & streaming MCP servers: Runway Official MCP (
 content_type: "Review"
 card_description: "Video production and streaming MCP servers across live broadcasting, YouTube channel management, AI video generation, video hosting, programmatic video creation, short-form content automation, and subtitle generation. REFRESH (April 27, 43 days since initial review): The biggest story is Runway launching an official MCP server (runwayml/runway-api-mcp-server, 16 stars) with Gen-4.5 support including native audio generation, multi-shot sequencing, and character-consistent long-form video up to one minute. HeyGen shipped massive upgrades — Avatar V (most advanced avatar model, 15-second recording to studio-quality video), Video Agent with 100+ curated visual styles, 4K upscaling via Topaz Starlight Precise 2.5, HyperFrames (open-source HTML-to-MP4 for agents), and Claude Code Skills integration. Mux launched a hosted Remote MCP at mcp.mux.com with OAuth authentication — no local install needed, one-click setup. Vimeo shipped 9 new AI API endpoints (transcription, subtitle translation, audio dubbing) available to Enterprise users. Short-form video creation exploded — gyoridavid/short-video-maker (799+ stars) automates TikTok/Reels/Shorts creation with text-to-speech, captions, background videos, and music, while AITuber MCP provides 1,300+ AI voices and 27+ visual styles for full video pipeline automation. OBS control quadrupled — ironystock/agentic-obs (69 tools in 8 groups with Claude Skills, TUI dashboard, screenshot monitoring) and sbroenne/mcp-server-obs (.NET 10, VS Code extension) join royshil/obs-mcp. The caption translation gap is partially filled — Video Caption MCP on Apify generates and translates captions in 99+ languages using Whisper + Qwen. Google launched Workspace MCP servers at Cloud Next 2026 (Gmail, Drive, Calendar, Chat) but still no YouTube-specific MCP server. ZubeidHendricks/youtube-mcp-server grew 490→502 stars. Rating upgraded 4.0→4.5/5 — Runway official MCP, Mux remote hosting, HeyGen's comprehensive agent integration, and short-form video automation represent major maturation of the category."
 last_refreshed: 2026-04-27
+sources_audited: 2026-07-23
 ---
 
 Video production and streaming MCP servers are enabling AI agents to control live broadcasts, manage YouTube channels, generate AI-powered videos, host and deliver content at scale, create programmatic video from code, automate short-form content creation, and add subtitles — all through natural language. Instead of switching between OBS, YouTube Studio, and a video editor, an AI agent can handle the entire production pipeline: "Switch to the interview scene in OBS, start recording, generate a highlights reel with subtitles when we're done, and upload it to YouTube with optimized metadata."
@@ -136,7 +137,7 @@ The fastest-growing subcategory, now with an official Runway MCP server alongsid
 
 **Runway's official MCP server** — the first major AI video generation platform to ship an official MCP server under its own GitHub organization. Connects Claude, Cursor, or any MCP-compatible assistant directly to Runway's generation capabilities:
 
-- **Gen-4.5** — text-to-video and image-to-video, 2-10 second clips, top score (1247) on Artificial Analysis text-to-video benchmark
+- **Gen-4.5** — text-to-video and image-to-video, 2-10 second clips, [top score (1247) on Artificial Analysis text-to-video benchmark](https://runwayml.com/research/introducing-runway-gen-4.5)
 - **Native Audio** — dialogue, ambient soundtracks, and synchronized audio generated directly within the model
 - **Multi-Shot Sequencing** — create coherent multi-shot sequences for longer narratives
 - **Character-Consistent Long-Form** — up to one-minute video with character consistency
@@ -388,7 +389,7 @@ Neither server provides full broadcast control — no scene switching, alert man
 Despite 70+ servers (up from 60+), some gaps remain:
 
 - **No official YouTube MCP from Google** — Google launched Workspace MCP servers (Gmail, Drive, Calendar, Chat) at Cloud Next 2026 but still no YouTube; 40+ community servers fill the gap
-- **No Kick, Rumble, or alternative streaming platforms** — Twitch is the only gaming/live streaming platform with MCP servers, despite Kick reaching 494M hours watched
+- **No Kick, Rumble, or alternative streaming platforms** — Twitch is the only gaming/live streaming platform with MCP servers, despite Kick [surpassing 500M hours watched in March 2026](https://streamscharts.com/news/kick-reaches-over-500-million-hours-watched-march-2026)
 - **No professional broadcast protocols** — no SRT (Secure Reliable Transport), RTMP management, NDI, or SDI workflow tools
 - **No video CDN analytics beyond Mux** — no Fastly, Akamai, or AWS CloudFront video analytics
 - ~~No caption translation~~ — **partially filled** by Video Caption MCP (99+ languages via Whisper + Qwen on Apify)

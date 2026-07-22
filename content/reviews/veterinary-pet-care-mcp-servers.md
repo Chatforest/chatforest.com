@@ -7,6 +7,7 @@ content_type: "Review"
 card_description: "Veterinary and pet care MCP servers across animal health, livestock genetics, pet management, pet adoption, and species databases. This remains one of the thinnest MCP ecosystems we've reviewed. NEW since last review: mattlgroff/petfinder-mcp-server (4 stars, TypeScript, 7 tools) is the FIRST real pet adoption MCP server — searches adoptable pets and organizations via the Petfinder API with OAuth, breed/size/location filtering, and 7 tools including pets.search, pets.get, organizations.search, organizations.get, types.list, types.get, and breeds.list. This is the first server in this category that connects to an actual pet welfare platform. Also new: siegerts/tama96 (12 stars, Rust, MIT, 7 tools) is a far more sophisticated virtual pet than MCPet — a real Tamagotchi P1 recreation with desktop (Tauri+React), terminal (ratatui TUI), and MCP agent interfaces, real-time lifecycle (1 real day = 1 pet year), full P1 evolution matrix with 8+ adult outcomes, per-action permissions and rate limiting for AI agents. lundgrenalex/mcp-fishbase (0 stars, TypeScript, MIT, 8 tools) brings FishBase data to MCP with n8n integration — 4x the tools of the original fish-mcp-server with ecology, distribution, morphology data, and name validation. The only server with genuine agricultural utility remains epicpast/nsip-api-client (1 star, Python, 15 tools) — the NSIP sheep genetic evaluation tool with 148 commits. bruno-portfolio/agrobr-mcp (21→23 stars) continues growing. Despite new entries, the veterinary industry itself has NOT adopted MCP — ezyVet, IDEXX, Vetspire, PetDesk, Covetrus, and Shepherd are all investing in AI (SOAP note transcription, clinical summaries) but none have published MCP servers. The gaps remain: no vet practice management, no pet health records, no livestock management beyond sheep, no wildlife/conservation, no equine, no pet insurance, no vet diagnostics integration. Rating holds at 2.5/5 — the Petfinder server is a meaningful addition but the ecosystem is still far too thin for veterinary professionals."
 last_refreshed: 2026-04-28
 category_url: "/categories/lifestyle-personal/"
+sources_audited: 2026-07-23
 ---
 
 Veterinary and pet care MCP servers would let AI agents access animal health records, manage livestock genetics, search species databases, track pet vaccinations, and integrate with veterinary practice management systems. The operative word is still largely "would" — but the ecosystem is slowly showing signs of life.
@@ -76,7 +77,7 @@ A **faithful Tamagotchi P1 recreation** that goes far beyond toy MCP demos — t
 
 Real-time lifecycle where 1 real day = 1 pet year. Full P1 evolution matrix with 8+ distinct adult character outcomes based on care quality. Three interfaces: Tauri+React desktop app, ratatui terminal TUI, and Node.js MCP sidecar for AI agents. Per-action permissions and rate limiting prevent AI agents from overfeeding or neglecting pets. MCP resources include `pet://status`, `pet://evolution-chart`, and `pet://permissions`.
 
-Built on a shared Rust core library (tama-core) for the game engine, with the MCP server as a sidecar process. v0.1.14 as of April 2026. #7 on Product Hunt launch day with 140+ upvotes. Still a pet simulation rather than veterinary software, but by far the most polished MCP pet project in the ecosystem.
+Built on a shared Rust core library (tama-core) for the game engine, with the MCP server as a sidecar process. v0.1.14 as of April 2026. [#7 on Product Hunt launch day with 139 upvotes](https://hunted.space/dashboard/tama96-desktop-terminal-ai-pet). Still a pet simulation rather than veterinary software, but by far the most polished MCP pet project in the ecosystem.
 
 ### MCPet
 
@@ -194,7 +195,7 @@ It's worth noting that the **veterinary software industry is investing heavily i
 - **ezyVet** — AI-Assisted Notes (voice recording to SOAP conversion), piloting stage
 - **Provet Cloud** — AI clinical summaries, auto-populated discharge instructions
 - **Vetspire** — AI Scribe (conversation transcription), AI summary feature
-- **PetDesk** — AI transcription for SOAP notes, used by 8,000+ clinics
+- **PetDesk** — AI transcription for SOAP notes, [used by 12,000+ veterinary practices](https://petdesk.com/products/veterinary-ai-transcription-platform)
 - **DaySmart Vet** — Daisy Voice (AI scribe for SOAP dictation)
 
 Every major vet platform is building AI transcription and clinical note automation. **None have published MCP servers.** The AI investment is locked inside proprietary platforms — useful for the vets using those specific systems, but inaccessible to third-party AI agents. This is the fundamental disconnect: the data and workflows exist, the AI capability exists, but the open integration layer (MCP) is absent.

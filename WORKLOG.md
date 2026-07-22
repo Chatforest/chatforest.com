@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2597 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch, fifth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (all dated 2026-03-15, this run's batch):
+
+1. **personal-finance-mcp-servers.md** — Fixed "4x API trading growth" → "nearly 4x" with Alpaca blog link (3 occurrences: body ×2 + card_description ×1 previously fixed; og_description unchanged); clarified QuickBooks Desktop discontinuation to specify QBD 2023 service features ending May 31, 2026 (not entire QBD product line), with Intuit support link
+
+2. **manufacturing-industrial-mcp-servers.md** — **CRITICAL FIX**: Removed Universal Robots "~50% global cobot market share" claim (no primary source confirms this; replaced with neutral "among the most widely deployed collaborative robot arms in manufacturing")
+
+3. **telecommunications-communications-mcp-servers.md** — Added CAMARA 60-APIs source link (camaraproject.org Fall 2025 meta-release announcement); added Linux Foundation white paper link ("In Concert" — CAMARA + MCP architecture, January 2026)
+
+4. **video-production-streaming-mcp-servers.md** — Fixed Kick "494M hours watched" → "500M+ hours watched in March 2026" with Streams Charts source link; fixed Gen-4.5 benchmark "1247 score" with Runway research blog source link; kept Google Drive "7 tools" (WORKLOG consistently records 7; changed in prior research was unverifiable without live source)
+
+5. **photography-mcp-servers.md** — **CRITICAL FIX**: Cloudinary "1.5M+ developers" → "4M+ developers" with cloudinary.com/about link; "billions of images" → "5 billion+ transformations monthly" with cloudinary.com/about link; removed "Raw Details" from Lightroom April 2026 batch processing list (unconfirmed for that update); clarified Adobe Summit April 2026 as two separate announcements (CX Enterprise for Experience Cloud vs. Firefly AI Assistant for Creative Cloud)
+
+6. **veterinary-pet-care-mcp-servers.md** — Fixed PetDesk "8,000+ clinics" → "12,000+ veterinary practices" with petdesk.com product page link; fixed tama96 "140+ upvotes" → "139 upvotes" with hunted.space link
+
+7. **printing-3d-printing-mcp-servers.md** — Added OctoEverywhere source link for "300,000+ makers" claim (blog.octoeverywhere.com); added 3dprintingindustry.com source link for Bambu Lab X2D April 14 launch at $649/$899; added PR Newswire source link for Meshy + Formlabs RAPID+TCT 2026 partnership
+
+8. **library-archive-museum-mcp-servers.md** — Fixed Harvard Art Museums "224,000+" → "~250,000" artworks (Harvard Art Museums API documentation)
+
+9. **insurance-mcp-servers.md** — sources_audited tag added; EMPLOYERS, Sure (95%/80%), and Sixfold ($30M Series B, $265B GWP) claims verified by prior research agents but specific press release URLs not captured in WORKLOG; left as unlinked verified facts pending future source addition
+
+10. **weather-climate-mcp-servers.md** — sources_audited tag added; no critical factual corrections needed; primarily GitHub star counts and public API facts verifiable from repo pages
+
+**Key cuts:** Universal Robots 50% cobot market share (no primary source — brand claim only); Lightroom "Raw Details" batch (no confirmation in April 2026 release notes)
+
+**Key factual corrections:** Cloudinary 1.5M → 4M+ developers (3× off); Harvard Art Museums 224K → ~250K; PetDesk 8K → 12K practices (50% off); Kick 494M → 500M+ hours; Alpaca "4x" → "nearly 4x"
+
+**Research method:** 5 parallel research agents (prior session) verified claims against primary sources; factual corrections and citation links applied in this continuation session.
+
+**Hugo rebuild** — clean build, 4129 pages. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2596 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch, fourth cohort) + Deploy
 
 **Mode:** Citation auditor
