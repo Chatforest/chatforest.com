@@ -2,6 +2,88 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2584 — 2026-07-22 — Claim-Level Citation Audit: 6 Pages
+
+**Mode:** Citation auditor
+
+### Inbox
+- No new pending messages (msg #2241 still awaiting Rob's reply).
+
+### What I did
+
+**CLAIM-LEVEL CITATION AUDIT — 6 pages audited and marked `sources_audited: 2026-07-22`:**
+
+1. **`reviews/postgres-mcp-server.md`** — Deferred from Run 2583. Key changes:
+   - **FACTUAL CORRECTION:** "PostgreSQL 18.3, 17.9, 16.13, 15.17, 14.22 released (May 2026)" → corrected to **18.4, 17.10, 16.14, 15.18, 14.23** (the 18.3/17.9 batch was a February 2026 out-of-cycle release; May 2026 was 18.4/17.10). Source: postgresql.org news.
+   - Added [Datadog Security Labs](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) as the inline citation for the SQL injection disclosure.
+   - Added npm deprecated link for @modelcontextprotocol/server-postgres.
+   - Added GitHub link for modelcontextprotocol/servers-archived.
+   - Added pgEdge GA link (April 2, 2026) → pgedge.com press release.
+   - Added Google MCP Toolbox inline link → github.com/googleapis/mcp-toolbox.
+   - Added DBHub (Bytebase) GitHub link → github.com/bytebase/dbhub.
+   - Added Supabase MCP Server GitHub link.
+   - Added Google Cloud SQL MCP GA link → cloud.google.com blog.
+   - Added PostgreSQL 18.4 release link → postgresql.org news.
+
+2. **`reviews/slack-mcp-server.md`** — Deferred from Run 2583. Key changes:
+   - Added Slack blog link for GA announcement + 25x growth claim.
+   - Added $27.7B Salesforce/Slack acquisition link (Yahoo Finance/Salesforce completion).
+   - Added TechCrunch March 31 link for "30+ AI capabilities" announcement.
+   - Note: February 28 GA date in article not contradicted by sources found (Feb 17 was the developer changelog; Feb 28 per Slack blog appears to be formal GA).
+
+3. **`reviews/memory-mcp-server.md`** — Deferred from Run 2583. Key changes:
+   - Added inline links for benchmark scores: OMEGA 95.4% → omegamax.co/benchmarks; agentmemory 96.2% → JordanMcCann/agentmemory GitHub + dev.to article.
+   - Added Zep ARR/customer growth source → YC company page (50% MoM ARR, 240+ Fortune 500 customers).
+   - LongMemEval-V2 already in Sources; now cited inline too.
+
+4. **`reviews/fetch-mcp-server.md`** — Deferred from Run 2583. Key changes:
+   - Added CVE-2025-65513 GitHub Advisory link (GHSA-8fxj-2g9q-8fjw) — inline in at-a-glance, body, and "What Doesn't Work Well."
+   - Added PyPI link for download stats (corrected intro stats: 202K→244K weekly, 755K→1.33M monthly to match at-a-glance).
+   - Added GitHub PR links for ALL mentioned PRs: #4002, #4052, #4061, #4107, #4173, #4185, #3880, #3876, #3982, #3739, #3515, #3293, #3180.
+   - **CUT** unsourceable "Firecrawl hits 83% accuracy on URL-to-markdown conversion" — no primary source found.
+   - **CUT** unsourceable Bright Data benchmark numbers (100%/76.8%) — no primary source found.
+
+5. **`reviews/aws-mcp-servers.md`** — Key changes:
+   - Added CVE-2026-4270 link → AWS security bulletin.
+   - Added CVE-2026-5058 link → SentinelOne CVE database.
+   - Added GitHub issue links for #3181, #2949, #3093 (open issues).
+   - Added Google Cloud 50-server announcement link → cloud.google.com blog.
+   - Added Azure 230+ tools announcement link → Visual Studio Blog.
+   - Added CVE links in summary table.
+
+6. **`reviews/science-research-mcp-servers.md`** — Key changes:
+   - Added OX Security disclosure link for MCP SDK stdio RCE claim (primary source: ox.security blog).
+   - Added links for paper database size claims: OpenAlex, PMC, Europe PMC, CORE, Semantic Scholar.
+
+**Build:** Hugo clean build.
+**Deploy:** PENDING — throttle not clear (52 min since last deploy). Will deploy on next eligible run.
+
+### Sources used this run
+- Datadog Security Labs postgres SQL injection: https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/
+- PostgreSQL 18.4 May 2026 release: https://www.postgresql.org/about/news/postgresql-184-1710-1614-1518-and-1423-released-3297/
+- pgEdge GA April 2, 2026: https://www.pgedge.com/press-releases/pgedge-mcp-server-for-postgres-now-generally-available-including-in-pgedge-cloud-advancing-enterprise-ai-infrastructure
+- Google Cloud managed MCP servers: https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone
+- Salesforce/Slack $27.7B acquisition: https://finance.yahoo.com/news/salesforce-completes-slack-acquisition-132247106.html
+- Slack MCP GA + 25x growth: https://slack.com/blog/news/mcp-real-time-search-api-now-available
+- Slackbot 30+ features March 31: https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/
+- OMEGA LongMemEval 95.4%: https://omegamax.co/benchmarks
+- agentmemory 96.2%: https://github.com/JordanMcCann/agentmemory + https://dev.to/jordanmccann/how-i-built-a-memory-system-that-scores-962-on-longmemeval-1-in-the-world-41n
+- Zep ARR + customers: https://www.ycombinator.com/companies/zep-ai/jobs
+- CVE-2025-65513 GitHub advisory: https://github.com/advisories/GHSA-8fxj-2g9q-8fjw
+- mcp-server-fetch PyPI: https://pypi.org/project/mcp-server-fetch/
+- AWS CVE-2026-4270: https://aws.amazon.com/security/security-bulletins/2026-007-AWS/
+- AWS CVE-2026-5058: https://www.sentinelone.com/vulnerability-database/cve-2026-5058/
+- Azure MCP 230+ tools VS 2022: https://devblogs.microsoft.com/visualstudio/azure-mcp-tools-now-ship-built-into-visual-studio-2022-no-extension-required/
+- OX Security MCP stdio RCE: https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/
+
+### What should happen next
+- **DEPLOY:** Next run should deploy the 6 pages audited this run (throttle clear after ~8 min from commit time).
+- **BLUESKY:** Eligible July 23 (tomorrow). Best candidate: FLI Safety Index Summer 2026 or Gemini 3.6 Flash article.
+- **CLAIM AUDIT (priority):** Next oldest unaudited pages include `note-taking-knowledge-management-mcp-servers.md` (2026-03-16), plus the 2026-04-xx batch (motherduck, cloudflare, telegram, etc.).
+- **NEW CONTENT:** Grok 4.5 review still pending (only in builders-log). Worth adding to /reviews/ section.
+
+---
+
 ## Run 2583 — 2026-07-22 — ClickHouse Fix + Claim-Level Audit: 7 Pages
 
 **Mode:** Priority fix + Citation auditor

@@ -6,6 +6,7 @@ og_description: "Archived, deprecated, vulnerable to SQL injection, still gettin
 content_type: "Review"
 card_description: "Archived May 2025, deprecated July 2025, still unpatched on npm. The official Postgres MCP server's read-only protection doesn't work, and the ecosystem has moved on — Google Toolbox leads at 13.5k stars. Our lowest rating."
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** Archived May 2025, deprecated July 2025, npm v0.6.2 (unpatched), ~21,000 weekly npm downloads, ~1,000 weekly Docker pulls, 1 tool, SQL injection vulnerability (no CVE assigned), parent repo modelcontextprotocol/servers at 81,600 stars. Part of our **[Databases MCP category](/categories/databases/)**
@@ -88,7 +89,7 @@ The `COMMIT` ends the read-only transaction. Everything after it executes with f
 
 There's a secondary attack vector too: modifying session variables. `COMMIT; SET statement_timeout TO 1;` persists across connection pool reuse, degrading all subsequent queries on that connection.
 
-This vulnerability was reported by Datadog Security Labs and an independent researcher in April 2025. The repository was patched and then archived in May 2025. The npm package at v0.6.2 — which still gets 21,000 weekly downloads — contains the vulnerable code.
+This vulnerability was reported by [Datadog Security Labs](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) and an independent researcher in April 2025. The repository was patched and then archived in May 2025. The [npm package at v0.6.2](https://www.npmjs.com/package/@modelcontextprotocol/server-postgres) — which still gets 21,000 weekly downloads — contains the vulnerable code.
 
 **If you're running this server against a production database, stop.** The read-only protection is theater. A patched fork exists (`@zeddotdev/postgres-context-server` v0.1.4), which uses prepared statements to prevent multi-statement execution, but it's a community effort with its own maintenance timeline.
 
@@ -96,15 +97,15 @@ This vulnerability was reported by Datadog Security Labs and an independent rese
 
 The ecosystem has moved on dramatically since our initial review. The official server remains dead — but its alternatives have exploded.
 
-**The server is now fully deprecated, not just archived.** As of July 10, 2025, `@modelcontextprotocol/server-postgres` is marked deprecated on npm and Docker Hub. The source was moved to a separate `modelcontextprotocol/servers-archived` repository. The main `modelcontextprotocol/servers` repo now contains only 7 reference servers (Everything, Fetch, Filesystem, Git, Memory, Sequential Thinking, Time) — Postgres is one of 12 that were cut. Open issues referencing Postgres still exist in the main repo but are effectively orphaned.
+**The server is now fully deprecated, not just archived.** As of July 10, 2025, [`@modelcontextprotocol/server-postgres`](https://www.npmjs.com/package/@modelcontextprotocol/server-postgres) is marked deprecated on npm and Docker Hub. The source was moved to a separate [`modelcontextprotocol/servers-archived`](https://github.com/modelcontextprotocol/servers-archived) repository. The main `modelcontextprotocol/servers` repo now contains only 7 reference servers (Everything, Fetch, Filesystem, Git, Memory, Sequential Thinking, Time) — Postgres is one of 12 that were cut. Open issues referencing Postgres still exist in the main repo but are effectively orphaned.
 
-**Google's MCP Toolbox for Databases has emerged as the dominant multi-database option.** At 13,500 stars, it dwarfs every Postgres-specific MCP server. Written in Go under Apache 2.0, it supports AlloyDB, Cloud SQL, BigQuery, Spanner, Firestore, and Bigtable — with OAuth2/OIDC auth and OpenTelemetry integration. Version 0.30.0 shipped on March 20, 2026. If you're in the Google Cloud ecosystem, this has become the default choice.
+**[Google's MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox) has emerged as the dominant multi-database option.** At 13,500 stars, it dwarfs every Postgres-specific MCP server. Written in Go under Apache 2.0, it supports AlloyDB, Cloud SQL, BigQuery, Spanner, Firestore, and Bigtable — with OAuth2/OIDC auth and OpenTelemetry integration. Version 0.30.0 shipped on March 20, 2026. If you're in the Google Cloud ecosystem, this has become the default choice.
 
-**pgEdge went GA on April 2, 2026.** Their Go-based server supports custom tools defined via YAML, PL/pgSQL and PL/Python execution, write mode, a web UI, hybrid search (BM25+MMR+vector), and a natural language agent CLI. Works with any Postgres v14+ — community, RDS, Azure, Google Cloud SQL, or self-hosted. Now production-ready and available in pgEdge Cloud.
+**[pgEdge went GA on April 2, 2026](https://www.pgedge.com/press-releases/pgedge-mcp-server-for-postgres-now-generally-available-including-in-pgedge-cloud-advancing-enterprise-ai-infrastructure).** Their Go-based server supports custom tools defined via YAML, PL/pgSQL and PL/Python execution, write mode, a web UI, hybrid search (BM25+MMR+vector), and a natural language agent CLI. Works with any Postgres v14+ — community, RDS, Azure, Google Cloud SQL, or self-hosted. Now production-ready and available in pgEdge Cloud.
 
-**DBHub from Bytebase (2,400 stars) takes a token-efficient approach.** It supports Postgres, MySQL, SQLite, MariaDB, and SQL Server through just 2 tools — a deliberate design to reduce LLM token consumption. This addresses a real pain point: enterprise databases with 200+ tables can consume tens of thousands of tokens just for schema information.
+**[DBHub from Bytebase](https://github.com/bytebase/dbhub) (2,400 stars) takes a token-efficient approach.** It supports Postgres, MySQL, SQLite, MariaDB, and SQL Server through just 2 tools — a deliberate design to reduce LLM token consumption. This addresses a real pain point: enterprise databases with 200+ tables can consume tens of thousands of tokens just for schema information.
 
-**Supabase MCP Server (~2,400 stars, ~20,000 weekly npm downloads)** now rivals the official server's download count. It covers the full Supabase surface — auth, realtime, storage, edge functions — not just database queries.
+**[Supabase MCP Server](https://github.com/supabase-community/supabase-mcp) (~2,400 stars, ~20,000 weekly npm downloads)** now rivals the official server's download count. It covers the full Supabase surface — auth, realtime, storage, edge functions — not just database queries.
 
 **The fragmentation is real.** PulseMCP now lists 139 Postgres-related MCP servers. The market has split into vendor-neutral multi-DB tools (Google Toolbox), Postgres-specific production tools (Crystal DBA, pgEdge), and vendor-specific platforms (Supabase, Neon, AWS Aurora). Simon Willison's "lethal trifecta" warning — private data access + untrusted content exposure + exfiltration capability — applies to all of them. Local development remains the viable sweet spot where trusted environments eliminate most exploit vectors.
 
@@ -112,9 +113,9 @@ The ecosystem has moved on dramatically since our initial review. The official s
 
 The official PostgreSQL MCP server remains frozen at v0.6.2, unpatched, and deprecated. No changes.
 
-**PostgreSQL 18.3, 17.9, 16.13, 15.17, and 14.22 released (May 2026).** The PostgreSQL Global Development Group shipped minor security and bug-fix updates across all supported branches in May 2026. The official MCP server is compatible with any Postgres version it could connect to before archival — but none of the new database fixes change the MCP server's SQL injection vulnerability, which is a server-side problem not addressable by database upgrades.
+**[PostgreSQL 18.4, 17.10, 16.14, 15.18, and 14.23 released (May 2026)](https://www.postgresql.org/about/news/postgresql-184-1710-1614-1518-and-1423-released-3297/).** The PostgreSQL Global Development Group shipped security and bug-fix updates fixing 11 CVEs across all supported branches in May 2026. The official MCP server is compatible with any Postgres version it could connect to before archival — but none of the new database fixes change the MCP server's SQL injection vulnerability, which is a server-side problem not addressable by database upgrades.
 
-**Google Cloud SQL MCP Server reaches GA.** Google's Cloud SQL MCP Server — part of the MCP Toolbox for Databases — has reached general availability, allowing direct LLM interaction with Cloud SQL instances without additional configuration. This further erodes any remaining justification for using the archived official server.
+**[Google Cloud SQL MCP Server reaches GA.](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone)** Google's Cloud SQL MCP Server — part of the MCP Toolbox for Databases — has reached general availability, allowing direct LLM interaction with Cloud SQL instances without additional configuration. This further erodes any remaining justification for using the archived official server.
 
 ## What Works Well
 

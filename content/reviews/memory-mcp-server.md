@@ -6,6 +6,7 @@ og_description: "The official Memory MCP server gives agents persistent memory v
 content_type: "Review"
 card_description: "Anthropic's knowledge graph memory server for persistent agent context. ~68.5K weekly npm downloads (+54% in 30 days) despite 4 months without a release — and a security audit fix merged May 16 that hasn't reached npm yet. Graphiti (26K stars) and Letta keep shipping; the Memory server keeps waiting."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-22
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
@@ -103,8 +104,8 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 
 **The original LongMemEval leaderboard remains unchanged.** The benchmark positions from the April review stand:
 - **Supermemory** claims ~99% using ASMR (parallel LLM agents) — experimental
-- **agentmemory** (Jordan McCann) scored 96.2% (481/500), built solo in 16 days for ~$1K
-- **OMEGA** scored 95.4% — local-first, zero external dependencies, 25 MCP tools, AES-256 encryption
+- **[agentmemory](https://github.com/JordanMcCann/agentmemory)** (Jordan McCann) [scored 96.2% (481/500)](https://dev.to/jordanmccann/how-i-built-a-memory-system-that-scores-962-on-longmemeval-1-in-the-world-41n), built solo in 16 days for ~$1K
+- **OMEGA** [scored 95.4%](https://omegamax.co/benchmarks) — local-first, zero external dependencies, 25 MCP tools, AES-256 encryption
 - **Mem0 Temporal Reasoning** scored 94.8% (launched May 12)
 - **Mastra Observational Memory** scored 94.87% using GPT-5-mini
 - **Zep/Graphiti** scored 71.2% — "lower" scorer that still vastly outperforms string-matching retrieval
@@ -149,7 +150,7 @@ Requirements: Node.js 18+ and npm. That's it. No API keys, no accounts, no confi
 
 ## Compared to Alternatives
 
-**vs. [Zep/Graphiti](https://github.com/getzep/graphiti) (26,200 GitHub stars, MCP Server 1.0):** Zep has repositioned as a "context engineering platform" built on Graphiti, a temporal knowledge graph engine where time is a first-class dimension. Now at 26.2K stars with 50% month-over-month ARR growth and 240+ customers including Fortune 500. v0.29.0 (April 27) delivered major efficiency improvements, cheaper ingestion, and a reworked search pipeline. Scores 71.2% on LongMemEval — far below the frontier but still dramatically better than what string-matching retrieval can achieve. The clear winner for anything beyond personal use. See our [Zep/Graphiti review](/reviews/zep-graphiti-mcp-server/).
+**vs. [Zep/Graphiti](https://github.com/getzep/graphiti) (26,200 GitHub stars, MCP Server 1.0):** Zep has repositioned as a "context engineering platform" built on Graphiti, a temporal knowledge graph engine where time is a first-class dimension. Now at 26.2K stars with [50% month-over-month ARR growth and 240+ customers including Fortune 500](https://www.ycombinator.com/companies/zep-ai/jobs). v0.29.0 (April 27) delivered major efficiency improvements, cheaper ingestion, and a reworked search pipeline. Scores 71.2% on LongMemEval — far below the frontier but still dramatically better than what string-matching retrieval can achieve. The clear winner for anything beyond personal use. See our [Zep/Graphiti review](/reviews/zep-graphiti-mcp-server/).
 
 **vs. [mem0](https://github.com/mem0ai/mem0) (~56,000 GitHub stars, SDK v2.0.2):** SDK v2.0.0 launched April 16 with single-pass extraction (~50% latency reduction), hybrid retrieval (semantic + BM25 + entity-graph boosting), and entity linking replacing graph memory — Neo4j no longer required. Graph features still paywalled at $249/month (Pro tier). OpenMemory (self-hosted local option) was sunset in May 2026, with users directed to the Mem0 self-hosted server. SQL/Cypher injection (GHSA-5gv3-2fv6-jvhx, CVSS 8.1) was patched in v2.0.2 (May 7). Temporal Reasoning now scores 94.8% on LongMemEval. See our [mem0 review](/reviews/mem0-mcp-server/).
 

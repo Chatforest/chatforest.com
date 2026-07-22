@@ -1,6 +1,7 @@
 ---
 title: "Science & Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More"
 date: 2026-03-16T12:30:00+09:00
+sources_audited: 2026-07-22
 description: "Science and research MCP servers are turning AI agents into research assistants — searching papers, analyzing citations, querying protein databases, and running mathematical"
 og_description: "Science & Research MCP servers: arxiv-mcp-server (2,400 stars, Apache-2.0 — paper search/download/analysis), paper-search-mcp (796 stars, MIT — 7 academic sources), mcp.science (117 stars — 12+ scientific computing servers), UniProt MCP (26 bioinformatics tools), PDB MCP (protein structure access), Wolfram MCP (symbolic math). 35+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
@@ -58,11 +59,11 @@ Standardized output across all databases via a `Paper` class. Asynchronous reque
 Covers **6 major academic sources** with citation-focused features:
 
 - **arXiv** — 2.3M+ STEM preprints
-- **OpenAlex** — 200M+ scholarly papers with citation data
-- **PMC (PubMed Central)** — 7M+ biomedical full-text papers
-- **Europe PMC** — 40M+ life sciences articles
+- **[OpenAlex](https://openalex.org/)** — 200M+ scholarly papers with citation data
+- **[PMC (PubMed Central)](https://www.ncbi.nlm.nih.gov/pmc/)** — 7M+ biomedical full-text papers
+- **[Europe PMC](https://europepmc.org/)** — 40M+ life sciences articles
 - **bioRxiv/medRxiv** — 500K+ biology and medical preprints
-- **CORE** — 200M+ open access research papers
+- **[CORE](https://core.ac.uk/)** — 200M+ open access research papers
 
 Tools: `list_categories`, `fetch_latest`, `fetch_top_cited`, `search_papers`, `fetch_content`. The `fetch_top_cited` tool is particularly useful for literature reviews — find the most-cited papers on any topic since a given date. Published on npm as `@futurelab-studio/latest-science-mcp`.
 
@@ -81,7 +82,7 @@ Multiple implementations of Semantic Scholar's API, which adds **AI-enhanced cit
 - **alperenkocyigit's Graph API** — focuses on citation network exploration and literature reviews.
 - **AIRA-SemanticScholar** (hamid-vakilzadeh) — Academic Graph API with intelligent literature search.
 
-Semantic Scholar's corpus covers 200M+ papers with AI-generated citation contexts — useful for understanding not just *that* a paper was cited, but *how* it was used.
+[Semantic Scholar](https://www.semanticscholar.org/)'s corpus covers 200M+ papers with AI-generated citation contexts — useful for understanding not just *that* a paper was cited, but *how* it was used.
 
 ### connerlambden/bgpt-mcp (Experimental Data Extraction)
 
@@ -244,7 +245,7 @@ The gaps in science MCP servers reveal where AI-assisted research hasn't reached
 
 ## What's New (May 2026)
 
-**MCP SDK stdio RCE vulnerability disclosed (April 2026).** OX Security disclosed a systemic remote code execution vulnerability in the MCP SDK's stdio transport layer — affecting all language SDKs and estimated at 150M+ downloads across 7,000+ servers. Science and research MCP servers that rely on stdio transport (including the arXiv server, paper-search-mcp, and most mcp.science components) are potentially affected. Users running these servers should update to the latest SDK versions and review whether remote access is necessary for their use case. Local-only deployments reduce risk significantly.
+**MCP SDK stdio RCE vulnerability disclosed (April 2026).** [OX Security disclosed a systemic remote code execution vulnerability](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/) in the MCP SDK's stdio transport layer — affecting all language SDKs and estimated at 150M+ downloads across 7,000+ servers. Science and research MCP servers that rely on stdio transport (including the arXiv server, paper-search-mcp, and most mcp.science components) are potentially affected. Users running these servers should update to the latest SDK versions and review whether remote access is necessary for their use case. Local-only deployments reduce risk significantly.
 
 **OAuth 2.1 added to MCP spec (April 2026).** The MCP protocol added OAuth 2.1 authorization with incremental scope consent, enabling research MCP servers to request only the permissions they need rather than broad access grants. This is particularly relevant for institutional research environments where data governance is strict — servers accessing PubMed, institutional repositories, or subscription databases can now authenticate with minimal-scope credentials.
 
