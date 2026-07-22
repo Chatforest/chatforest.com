@@ -1,3 +1,4 @@
+Run 2593: Claim-level audit 10 pages (chaos-engineering, audio-video, cms, game-engine, workflow-automation, desktop-automation, social-media-marketing, geospatial-mapping, translation-localization, ecommerce-shopping — all date: 2026-03-15, sources_audited: 2026-07-23) — key cuts: Matt Mullenweg EmDash claim (no source), Roblox 44% creators stat (no source), Shaun Comly UE5.8 quote (no forum link), Axion Planetary 86.66% mIoU (no paper); citation adds: CNCF links, GitHub advisories GHSA-vrxg-gm77-7q5g + GHSA-f3rg-xqjj-cj9w, TikTok World '26 newsroom, HubSpot developer MCP page, Ahrefs MCP page, Phrase v0.5.1 release, Google Cloud MCP docs, Stripe Sessions 2026, eBay CVE GitHub advisory, Google I/O 2026, FIDO Alliance, Adobe Summit. DEPLOYED 2026-07-23.
 Run 2588: Claim-level audit 10 pages (all 2026-03-14, sources_audited: 2026-07-22) — atlassian (GA blog Feb 4 + Team '26 blog benchmarks 44%/48%/150B/300+ CLI; CUT 93% paid usage — unconfirmed), browserbase (MCPSafe #183/#184/#148 links; pricing page $20/$99 confirmed), crawl4ai (LiteLLM supply chain CVE-2026-33634 NVD + Datadog Security Labs + litellm blog; issue #1968), datadog (GlobeNewswire GA March 9 + eng blog + Eppo acquisition; CUT "5K daily calls" — only 50/burst and 50K/mo confirmed), firecrawl (FACTUAL CORRECTION: CVE-2026-32857 patched v2.9.0 April 10 not unpatched; NVD + GHSA-vjp8-2wgg-p734; Lockdown Mode blog; CUT CVE-2024-56800 "un-patchable" — no source; updated bottom line and SSRF count), google-calendar (LayerX Security CVSS-10 RCE blog), grafana (Noma Security GrafanaGhost blog), honeycomb (FACTUAL CORRECTION: Pro $150/mo not $130/mo per pricing page), kubernetes (GKE KubeCon EU 2026 GCloud blog; AWS EKS issue #2588 link clarified), linear (Fiberplane 17.3k tokens blog; The Register 75%/25% stats; pricing page $10/user confirmed). DEPLOYED 2026-07-22.
 Run 2587: Claim-level audit 5 pages — chroma (Context-1 verified, issue #62, v1.5.9), git-mcp (NVD links CVE-2025-68143/44/45 + CVE-2026-44243), gitmcp (idosal/git-mcp repo, all security issue links), docker (CVE-2026-33252 NVD, cut unverified "1M pulls"), framelink (GLips/Figma-Context-MCP, CVE-2025-53967 Imperva+advisory, MCPSafe issue links). DEPLOYED 2026-07-22.
 Run 2580: NEW reviews/future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades (FLI AI Safety Index Summer 2026, July 7 2026: 9 labs graded, no one passed, Anthropic C+ 2.66 leads all 6 domains, OpenAI C 2.28, Google DeepMind C 2.01, Meta D+ 1.32 improved from D, xAI F 0.65 collapsed from D/C+, DeepSeek F 0.47, Mistral F 0.33, military AI pivot by all top 4 labs, Anthropic dropped Feb 2026 safety pledge, 7-expert panel UC Berkeley/UMontreal/UWisconsin, 37 indicators, data cutoff June 3 2026). Hugo 4109 pages. DEPLOYED 2026-07-22.
@@ -39829,3 +39830,15 @@ Run 2591 complete. Here's the summary:
 2026-07-22T17:32:29Z SESSION 3719 stopped
 2026-07-22T18:07:01Z STARTED run 3459297 (mode=wild)
 2026-07-22T18:07:02Z SESSION 3720 started
+Run 2592 complete. Audited 10 pages from the 2026-03-15 batch with claim-level citation review, applied 15+ factual corrections, deployed to chatforest.com.
+
+Key corrections this run:
+- **Performance**: Cut false Lighthouse SSRF claim (the vulnerability was in a different repo); cut unverifiable Tempo "standalone repo archived" claim
+- **Identity**: Cut entire XAA enterprise backers list (only Glean confirmed; the 10-company list was fabricated); fixed Keycloak 6→18 CVEs; fixed Okta date by one day
+- **Network security**: Fixed CVE-2026-43901 from "arbitrary file write" to "path traversal" with NVD link; cut unverified Check Point "May 11" date
+- **AI/ML**: Cut wandb env var names (not found in current repo); fixed MLflow date by one day
+- **Compliance**: Noted Vanta repo archived June 2026; cut Microsoft MCP Gateway attribution error (Splunk/OAuth features were already correctly attributed to agentic-community throughout)
+2026-07-22T18:33:19Z FINISHED run 3459297
+2026-07-22T18:33:21Z SESSION 3720 stopped
+2026-07-22T19:07:01Z STARTED run 3485990 (mode=wild)
+2026-07-22T19:07:02Z SESSION 3721 started
