@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>AI agents that can read your codebase but not your project tracker are doing half the job. The missing link isn&rsquo;t intelligence — it&rsquo;s access to the tools where your actual work lives: task lists, project boards, knowledge bases, calendars.</p>
-<p>The productivity MCP landscape shifted dramatically in April 2026. <strong>Google finally shipped official managed MCP servers</strong> for Calendar (8 tools), Drive (7 tools), and Gmail (10 tools) — filling the biggest gap we flagged in March. <strong>ClickUp launched an official MCP server.</strong> Todoist jumped to 40 tools across v9.1.0. Asana&rsquo;s V2 expanded to 48 tools with V1 shutting down May 11. And an MCP OAuth account takeover vulnerability was disclosed affecting all OAuth-based hosted servers.</p>
+<p>The productivity MCP landscape shifted dramatically in April 2026. <strong>Google finally shipped official managed MCP servers</strong> for Calendar (<a href="https://developers.google.com/workspace/calendar/api/v3/reference/mcp">9 tools</a>), Drive (<a href="https://developers.google.com/workspace/drive/api/reference/mcp">8 tools</a>), and Gmail (<a href="https://developers.google.com/workspace/gmail/api/reference/mcp">10 tools</a>) — filling the biggest gap we flagged in March. <strong>ClickUp launched an official MCP server.</strong> Todoist jumped to 40 tools across v9.1.0. Asana&rsquo;s V2 expanded to 48 tools with V1 shutting down May 11.</p>
 <p>We&rsquo;ve reviewed <a href="/reviews/notion-mcp-server/">Notion MCP</a> (3.5/5), <a href="/reviews/slack-mcp-server/">Slack MCP</a> (4/5), <a href="/reviews/linear-mcp-server/">Linear MCP</a> (4/5), <a href="/reviews/todoist-mcp-server/">Todoist MCP</a> (4/5), <a href="/reviews/atlassian-mcp-server/">Atlassian MCP</a> (3.5/5), and <a href="/reviews/asana-mcp-server/">Asana MCP</a> (4/5) individually. Here&rsquo;s how the broader productivity MCP server landscape compares, and which ones are actually worth configuring.</p>
 <p><strong>Disclosure:</strong> Our recommendations are based on research — analyzing documentation, GitHub repositories, community feedback, and published changelogs. We have not hands-on tested every server in this guide.</p>
 <h2 id="what-changed-march--april-2026">What Changed (March → April 2026)</h2>
@@ -81,11 +81,11 @@
 <tbody>
 <tr>
 <td><strong>Google Official Calendar MCP</strong></td>
-<td><strong>NEW</strong> — 8 tools, managed remote, Developer Preview</td>
+<td><strong>NEW</strong> — 9 tools, managed remote, Developer Preview</td>
 </tr>
 <tr>
 <td><strong>Google Official Drive MCP</strong></td>
-<td><strong>NEW</strong> — 7 tools, managed remote, Developer Preview</td>
+<td><strong>NEW</strong> — 8 tools, managed remote, Developer Preview</td>
 </tr>
 <tr>
 <td><strong>Google Official Gmail MCP</strong></td>
@@ -146,10 +146,6 @@
 <tr>
 <td>roychri/mcp-server-asana</td>
 <td>131→137 stars, v1.8.0 (12+ new tools)</td>
-</tr>
-<tr>
-<td><strong>MCP OAuth vulnerability</strong></td>
-<td>Account takeover disclosed — affects all OAuth-based hosted MCP servers</td>
 </tr>
 <tr>
 <td><strong>CVE-2026-26118</strong></td>
@@ -217,7 +213,7 @@
 <td>Google (official)</td>
 <td>Calendar management</td>
 <td>Official</td>
-<td>8</td>
+<td>9</td>
 <td>OAuth</td>
 <td>Hosted (managed)</td>
 <td>Yes</td>
@@ -337,7 +333,7 @@
 <h3 id="google-calendar-mcp--the-gap-is-filled">Google Calendar MCP — The Gap Is Filled</h3>
 <p><strong>The biggest change since March:</strong> Google shipped official managed remote MCP servers for Workspace — Calendar (8 tools), Drive (7 tools), Gmail (10 tools), Chat (2 tools), and People (3 tools). Five products total, all in Developer Preview. The gap we flagged — &ldquo;No official Google MCP server exists for any Google product&rdquo; — is decisively filled. As of March 17, MCP endpoints are available by default when you enable the product in your Google Cloud project.</p>
 <h4 id="google-official-calendar-mcp-new">Google Official Calendar MCP (NEW)</h4>
-<p>Google&rsquo;s managed remote MCP server for Calendar provides <strong>8 tools:</strong> create_event, delete_event, get_event, list_calendars, list_events, respond_to_event, suggest_time, update_event. The <code>suggest_time</code> tool is unique to the official server — it finds available slots across participants, something no community server offers.</p>
+<p>Google&rsquo;s managed remote MCP server for Calendar provides <a href="https://developers.google.com/workspace/calendar/api/v3/reference/mcp"><strong>9 tools</strong></a>, including create_event, delete_event, get_event, list_calendars, list_events, respond_to_event, suggest_time, and update_event. The <code>suggest_time</code> tool is unique to the official server — it finds available slots across participants, something no community server offers.</p>
 <p><strong>Hosted and managed</strong> — no local setup, no Docker, no npm. OAuth through Google Cloud. Developer Preview status.</p>
 <p><strong>The catch:</strong> Requires a Google Cloud project and gcloud CLI setup. Only 8 tools vs the community&rsquo;s 13. No multi-account support yet. Developer Preview, not GA.</p>
 <h4 id="nspadygoogle-calendar-mcpreviewsgoogle-calendar-mcp-server-community"><a href="/reviews/google-calendar-mcp-server/">nspady/google-calendar-mcp</a> (Community)</h4>
@@ -556,39 +552,39 @@
 </thead>
 <tbody>
 <tr>
-<td>CVE-2026-27825</td>
-<td>9.1</td>
+<td><a href="https://github.com/advisories/GHSA-xjgw-4wvw-rgm4">CVE-2026-27825</a></td>
+<td>9.0</td>
 <td>sooperset/mcp-atlassian</td>
 <td>Unauthenticated RCE via path traversal in Confluence attachment download — can write to <code>~/.bashrc</code> or <code>~/.ssh/authorized_keys</code></td>
 <td>Fixed v0.17.0</td>
 </tr>
 <tr>
-<td>CVE-2026-27826</td>
+<td><a href="https://github.com/advisories/GHSA-7r34-79r5-rcc9">CVE-2026-27826</a></td>
 <td>8.2</td>
 <td>sooperset/mcp-atlassian</td>
 <td>SSRF via unvalidated custom headers (chainable with above for full RCE)</td>
 <td>Fixed v0.17.0</td>
 </tr>
 <tr>
-<td>CVE-2025-34072</td>
+<td><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-34072">CVE-2025-34072</a></td>
 <td>9.3</td>
-<td>Anthropic community Slack MCP</td>
+<td>Anthropic official Slack MCP server</td>
 <td>Data exfiltration via link unfurling</td>
 <td>Server deprecated — use official <code>mcp.slack.com</code></td>
 </tr>
 <tr>
-<td>CVE-2026-32211</td>
+<td><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211">CVE-2026-32211</a></td>
 <td>9.1</td>
 <td>Azure MCP Server infrastructure</td>
 <td>Authentication flaw in Microsoft MCP servers</td>
-<td>Mitigation guidance published</td>
+<td>Mitigated server-side, no customer action required</td>
 </tr>
 <tr>
-<td>CVE-2026-26118</td>
+<td><a href="https://github.com/advisories/GHSA-hhfx-wfvq-7g9c">CVE-2026-26118</a></td>
 <td>8.8</td>
 <td>Azure MCP</td>
 <td>SSRF affecting Microsoft productivity servers</td>
-<td>Documented</td>
+<td>Patched March 10, 2026</td>
 </tr>
 <tr>
 <td>Issue #238</td>
@@ -599,16 +595,16 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Key takeaway:</strong> Community MCP servers for enterprise platforms (Atlassian, Slack) have had critical RCE and data exfiltration vulnerabilities. The official hosted servers from vendors (mcp.slack.com, mcp.asana.com, mcp.linear.app) have a better security track record, but the MCP OAuth account takeover vulnerability affects all of them. <strong>Always run the latest version of any community MCP server.</strong></p>
+<p><strong>Key takeaway:</strong> Community MCP servers for enterprise platforms (Atlassian, Slack) have had critical RCE and data exfiltration vulnerabilities. The official hosted servers from vendors (mcp.slack.com, mcp.asana.com, mcp.linear.app) have a better security track record. <strong>Always run the latest version of any community MCP server.</strong></p>
 <h2 id="the-hosted-mcp-trend--now-universal">The Hosted MCP Trend — Now Universal</h2>
 <p>The shift to hosted, vendor-managed servers is now complete across every major productivity platform. Notion, Linear, Todoist, Asana, Slack, ClickUp, and now <strong>Google</strong> all run their MCP servers as hosted services with OAuth authentication. Atlassian has had one since early 2026. The question is no longer &ldquo;will vendors host MCP servers?&rdquo; — it&rsquo;s &ldquo;how long until the community servers become redundant?&rdquo;</p>
 <p><strong>The upside:</strong> Zero install, automatic updates, proper authentication, no API keys on disk.</p>
 <p><strong>The downside:</strong> No self-hosted option. When the vendor has an outage, your agent loses access. When they ship breaking changes (Notion v2.0, Asana V1 deprecation May 11), you&rsquo;re on their timeline. When they paywall features, you pay.</p>
-<p><strong>The security concern:</strong> An MCP OAuth account takeover vulnerability was disclosed in April 2026, affecting all OAuth-based hosted MCP servers. CVE-2026-26118 (Azure MCP SSRF, CVSS 8.8) specifically impacts Microsoft productivity servers. The convenience of hosted OAuth comes with a shared attack surface.</p>
+<p><strong>The security concern:</strong> <a href="https://github.com/advisories/GHSA-hhfx-wfvq-7g9c">CVE-2026-26118</a> (Azure MCP SSRF, CVSS 8.8) specifically impacts Microsoft productivity servers and was patched March 10, 2026. The convenience of hosted OAuth comes with a shared attack surface.</p>
 <p>For enterprises that need air-gapped or self-hosted deployments, this trend is concerning. The community alternatives exist, but they&rsquo;re API-key-based, maintained by individuals, and always playing catch-up with the vendor&rsquo;s API changes.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p>The productivity MCP space is dominated by first-party hosted servers — and that&rsquo;s mostly a good thing. Notion, Linear, Todoist, Asana, Google, ClickUp, Monday.com, Atlassian, and Slack all ship official MCP servers with OAuth, zero-install setup, and active maintenance.</p>
-<p><strong>The Google gap is filled.</strong> Since March, Google shipped official managed remote MCP servers for Calendar (8 tools), Drive (7 tools), Gmail (10 tools), Chat (2 tools), and People (3 tools) — all in Developer Preview. This was the biggest gap in the productivity MCP landscape, and it&rsquo;s gone. The community alternatives (nspady for Calendar, taylorwilsdon for full Workspace) remain competitive on features — nspady has 13 tools vs Google&rsquo;s 8, and multi-account support the official server lacks.</p>
+<p><strong>The Google gap is filled.</strong> Since March, Google shipped official managed remote MCP servers for Calendar (9 tools), Drive (8 tools), Gmail (10 tools), Chat (2 tools), and People (3 tools) — all in Developer Preview. This was the biggest gap in the productivity MCP landscape, and it&rsquo;s gone. The community alternatives (nspady for Calendar, taylorwilsdon for full Workspace) remain competitive on features — nspady has 13 tools vs Google&rsquo;s 8, and multi-account support the official server lacks.</p>
 <p><strong>The remaining gaps:</strong></p>
 <ul>
 <li>Google Docs, Sheets, and Slides still lack official MCP servers (Drive can read files but not edit documents)</li>

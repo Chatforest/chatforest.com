@@ -5,6 +5,7 @@ description: "How to evaluate and secure MCP servers. Real vulnerabilities, auth
 content_type: "Guide"
 card_description: "How to evaluate and secure MCP servers. Real vulnerabilities, a security checklist, and lessons from reviewing 19 servers."
 last_refreshed: 2026-04-16
+sources_audited: 2026-07-22
 ---
 
 MCP servers connect your AI assistant to external tools and data. That connection is powerful — and risky. Every MCP server you install becomes a bridge between an AI model and your systems: your databases, your files, your cloud infrastructure.
@@ -83,7 +84,7 @@ http://localhost:8080/admin                (local services)
 http://10.0.0.1/                           (internal network)
 ```
 
-This was formally assigned [CVE-2025-65513](https://github.com/advisories/GHSA-8fxj-2g9q-8fjw) (CVSS 9.3, Critical) in December 2025, confirming that the `is_ip_private()` function fails to properly validate private IP addresses. A fix (PR #3180) was proposed but **still hasn't been merged** as of April 2026 — over a year after disclosure.
+This was formally assigned [CVE-2025-65513](https://github.com/advisories/GHSA-8fxj-2g9q-8fjw) (CVSS 7.5, High per NVD) in December 2025, confirming that the `is_ip_private()` function fails to properly validate private IP addresses. A fix (PR #3180) was proposed but **still hasn't been merged** as of April 2026 — over a year after disclosure.
 
 **Lesson:** Any tool that makes HTTP requests needs URL validation. Block private IP ranges, cloud metadata endpoints, and localhost by default.
 
@@ -91,13 +92,13 @@ This was formally assigned [CVE-2025-65513](https://github.com/advisories/GHSA-8
 
 [Context7](/reviews/context7-mcp-server/) had a "ContextCrush" vulnerability: anyone could register libraries on the platform with malicious instructions embedded in documentation. When an agent fetched those docs, the injected prompts could instruct it to read `.env` files, exfiltrate credentials, or delete files.
 
-The vulnerability was patched within five days of disclosure (reported Feb 18, fixed Feb 23, 2026). But it illustrates an architectural risk: any centralized registry that feeds content to AI agents is a prompt injection target.
+The vulnerability was [patched within five days](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) of disclosure (reported Feb 18, fixed Feb 23, 2026). But it illustrates an architectural risk: any centralized registry that feeds content to AI agents is a prompt injection target.
 
 **Lesson:** Treat all external content as untrusted input. Centralized registries need content scanning and sandboxed execution.
 
 ### MCPwnfluence — Atlassian MCP Server (April 2026)
 
-The most impactful MCP vulnerability of 2026 so far. [CVE-2026-27825](https://arcticwolf.com/resources/blog/cve-2026-27825/) (CVSS 9.1) and CVE-2026-27826 (CVSS 8.2) form an unauthenticated SSRF-to-RCE chain in [mcp-atlassian](https://github.com/plutosecurity/MCPwnfluence), the most widely used Atlassian MCP server (4+ million downloads). Researchers at [Pluto Security](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) demonstrated that anyone on the same local network could execute code as root by sending two HTTP requests — no authentication required.
+The most impactful MCP vulnerability of 2026 so far. [CVE-2026-27825](https://arcticwolf.com/resources/blog/cve-2026-27825/) (CVSS 9.1) and CVE-2026-27826 (CVSS 8.2) form an unauthenticated SSRF-to-RCE chain in [mcp-atlassian](https://github.com/plutosecurity/MCPwnfluence), the most widely used Atlassian MCP server ([8+ million PyPI downloads](https://pepy.tech/projects/mcp-atlassian)). Researchers at [Pluto Security](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) demonstrated that anyone on the same local network could execute code as root by sending two HTTP requests — no authentication required.
 
 The attack chain works because: (1) the server honors attacker-controlled `X-Atlassian-Confluence-Url` headers without validation (SSRF), and (2) the Confluence attachment downloader writes files to attacker-specified paths without restricting them to a safe base directory. Combined, an attacker redirects attachment requests to their own server and writes a malicious payload to `~/.bashrc` or `~/.ssh/authorized_keys`.
 
@@ -239,10 +240,10 @@ The risks go beyond the servers themselves:
 
 - **Reconnaissance exposure.** Even a read-only MCP endpoint leaks internal system names, tool schemas, resource paths, and namespace structures. An attacker who discovers an MCP server gets a map of what it connects to.
 - **Execution surface.** If an agent can be prompt-injected, every tool the server exposes becomes an attack vector — opening tickets, triggering deployments, running queries, changing configurations.
-- **Static credentials at scale.** Qualys cites research showing 53% of servers rely on static secrets, creating systemic risk across downstream systems. The CVE pace confirms this: [30+ CVEs in the first 60 days of 2026](/guides/mcp-growing-pains-2026/), with critical RCE chains like [MCPwnfluence](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) (4M+ downloads affected) demonstrating real-world exploitation potential.
+- **Static credentials at scale.** [Astrix research](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) found that 53% of servers rely on static secrets, creating systemic risk across downstream systems. The CVE pace confirms this: [30+ CVEs in the first 60 days of 2026](/guides/mcp-growing-pains-2026/), with critical RCE chains like [MCPwnfluence](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) (4M+ downloads affected) demonstrating real-world exploitation potential.
 - **No inventory.** Most organizations don't know how many MCP servers are running, who started them, or what they connect to.
 
-The [MCP Dev Summit 2026](/guides/mcp-dev-summit-2026-guide/) dedicated its largest track (23 sessions) to security and operations, reflecting how central this concern has become. Key sessions covered mix-up attacks, host-layer security, and real-world MCP server exploitation.
+The [MCP Dev Summit 2026](/guides/mcp-dev-summit-2026-guide/) dedicated its largest track ([23 sessions](https://www.linuxfoundation.org/press/agentic-ai-foundation-unveils-mcp-dev-summit-north-america-2026-schedule)) to security and operations, reflecting how central this concern has become. Key sessions covered mix-up attacks, host-layer security, and real-world MCP server exploitation.
 
 ### What Organizations Should Do
 
@@ -257,7 +258,7 @@ Qualys recommends a four-step operational playbook:
 
 Tool poisoning is a specialized form of prompt injection where malicious instructions hide inside MCP tool metadata — descriptions, parameter names, and even tool outputs. The AI model follows these instructions while the user sees nothing unusual. Researchers at Invariant Labs and CyberArk have demonstrated working attacks that exfiltrate SSH keys, redirect emails, and steal credentials from Claude Desktop and Cursor.
 
-This is serious enough that OWASP lists it as [MCP03](https://owasp.org/www-project-mcp-top-10/) in their MCP Top 10. Invariant Labs (an ETH Zurich spin-off [acquired by Snyk](https://labs.snyk.io/resources/snyk-labs-invariant-labs/) in June 2025) built [mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) — now rebranded as **Snyk Agent Scan** (v0.4.13, April 2026) — a dedicated scanner that detects tool poisoning, rug pulls, and cross-origin escalation. With 2,000+ GitHub stars, it remains the most widely adopted MCP security scanner.
+This is serious enough that OWASP lists it as [MCP03](https://owasp.org/www-project-mcp-top-10/) in their MCP Top 10. Invariant Labs (an ETH Zurich spin-off [acquired by Snyk](https://labs.snyk.io/resources/snyk-labs-invariant-labs/) in June 2025) built [mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) — a dedicated scanner that detects tool poisoning, rug pulls, and cross-origin escalation. With ~2,800 GitHub stars, it is the most widely adopted MCP security scanner. Snyk also maintains [Agent Scan](https://github.com/snyk/agent-scan), a separate MCP security scanner.
 
 **We've written a full deep-dive:** [MCP Tool Poisoning Attacks: How They Work and How to Defend Against Them](/guides/mcp-tool-poisoning-attacks/) covers five attack vectors (description poisoning, tool shadowing, full-schema poisoning, output poisoning, and rug pulls), the research behind them, and a practical defense checklist.
 

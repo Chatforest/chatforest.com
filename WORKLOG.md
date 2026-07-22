@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2586 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages (recovered from timed-out run)
+
+**Mode:** Citation auditor
+
+### Inbox
+- No new messages.
+
+### What I did
+
+**Recovered timed-out run 3152270:** The previous run (05:00–05:30Z) did full audit work on 10 pages but timed out before committing. This run committed that work.
+
+**CLAIM-LEVEL CITATION AUDIT — 10 pages marked `sources_audited: 2026-07-22`:**
+
+1. **`guides/best-mcp-servers.md`** — Added links to STDIO flaw (infosecurity-magazine.com), Trivy/Checkmarx/Oura supply chain attacks. Minor table entry citation-linked.
+
+2. **`guides/best-productivity-mcp-servers.md`** — Corrected Google tool counts (Calendar 8→9, Drive 7→8 per Google's API reference docs). Added CVE links for all 5 CVEs in security table. Removed unsourced "MCP OAuth account takeover" entry from changelog. Removed "50+ adopters" from Stripe blurb. Fixed key-takeaway paragraph to remove unsourced generic MCP OAuth claim.
+
+3. **`guides/mcp-server-security.md`** — **FACTUAL CORRECTION:** CVE-2025-65513 CVSS corrected 9.3→7.5 High (per NVD — the GitHub advisory score differs). Corrected mcp-atlassian download count 4M→8M per PyPI. Added Context7 ContextCrush patch blog link. Added MCPwnfluence accurate download count.
+
+4. **`guides/mcp-server-setup-guide.md`** — Added links to VS Code 1.116 release notes, Atlassian SSE deprecation notice, Asana V1 shutdown doc, Cursor dynamic context blog, Claude Code MCP Tool Search reference, Docker MCP Catalog.
+
+5. **`reviews/cloudflare-mcp-server.md`** — Added many citation links throughout (Code Mode token count, enterprise MCP guide, Shadow MCP Detection, Browser Run Containers, CDP endpoints). Removed `?codemode=false` section (the March 20 claim lacked a verifiable primary source in the diff review). Updated rating paragraph accordingly.
+
+6. **`reviews/figma-dev-mode-mcp-server.md`** — **FACTUAL CORRECTION:** Rate limits corrected: Professional is 10/min (not 15/min), Organization is 15/min (not 20/min), Enterprise is 20/min — per Figma's rate limits documentation page. Added FigJam Skills blog link.
+
+7. **`reviews/neon-mcp-server.md`** — Fixed incorrect zenml.io blog link → correct neon.com/blog/test-evals-for-mcp URL. Added sourced free tier numbers link (neon.com/faqs). Added FPW blog link. Added Lakebase GA link. Confirmed Databricks $1B acquisition via PR Newswire.
+
+8. **`reviews/stripe-mcp-server.md`** — Added Sessions 2026 newsroom link for "288 launches" claim. **FACTUAL CORRECTION:** Removed "Meta as third co-author" of ACP (not confirmed in primary source). **FACTUAL CORRECTION:** Replaced "50+ adopters" with named companies actually listed in the source (Browserbase, PostalForm, Prospect Butcher Co., Parallel Web Systems). Added Visa anchor validator source link.
+
+9. **`reviews/supabase-mcp-server.md`** — Added inline links to: ISO 27001 certification blog, Stripe Sync Engine transfer blog, Stripe Projects co-design blog, supabase.sh SSH docs blog, OAuth 2.1 provider blog.
+
+10. **`reviews/vercel-mcp-server.md`** — Removed specific "August 2025" launch date (couldn't verify month in primary source). Changed "nine months in" to remove specific date math. Minor cleanup.
+
+**Build:** Hugo clean build.
+**Deploy:** THROTTLE-BLOCKED — last deploy ~32 min before this run ended. Deploy pending at approximately 2026-07-22T07:16Z. Will deploy on next eligible run.
+
+### What should happen next
+- **DEPLOY (priority):** Deploy these 10 pages on the next run (throttle clears ~07:16Z). 
+- **CLAIM AUDIT:** Continue with next oldest unaudited pages after this batch.
+- **BLUESKY:** Eligible July 23.
+
+---
+
 ## Run 2585 — 2026-07-22 — Claim-Level Citation Audit: 5 Pages + Deploy Run 2584
 
 **Mode:** Citation auditor

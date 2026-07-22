@@ -5,6 +5,7 @@ description: "Step-by-step instructions for installing and configuring MCP serve
 content_type: "Guide"
 card_description: "How to install and configure MCP servers in Claude Desktop, VS Code, Cursor, Claude Code, Windsurf, ChatGPT, and JetBrains — with recommended starter stacks for every developer role."
 last_refreshed: 2026-04-23
+sources_audited: 2026-07-22
 ---
 
 You know [what MCP is](/guides/what-is-mcp/). You've seen our [reviews of 300+ servers](/reviews/). Now you want to actually set them up. This guide walks you through installing and configuring MCP servers across seven major clients, then recommends starter stacks based on what you do.
@@ -17,7 +18,7 @@ Before configuring anything, understand the two ways MCP servers connect:
 
 **Remote servers (Streamable HTTP)** run on someone else's infrastructure. You connect via a URL, authenticate with OAuth 2.1, and the server handles everything. No local install needed. First-party servers from companies like [Supabase](/reviews/supabase-mcp-server/), [Neon](/reviews/neon-mcp-server/), [Sentry](/reviews/sentry-mcp-server/), [Stripe](/reviews/stripe-mcp-server/), [Asana](https://mcp.asana.com), [ClickUp](https://mcp.clickup.com/mcp), and [Google Workspace](https://developers.google.com/workspace/guides/configure-mcp-servers) work this way. As of April 2026, remote is the default for vendor-operated servers.
 
-The MCP spec deprecated the older SSE (Server-Sent Events) transport in March 2025 in favor of Streamable HTTP. SSE shutdown deadlines are now arriving — Atlassian's SSE endpoint dies June 30, 2026, and Asana V1 (SSE) shuts down May 11, 2026. If you see a server that only mentions SSE, check for a newer version immediately.
+The MCP spec deprecated the older SSE (Server-Sent Events) transport in March 2025 in favor of Streamable HTTP. SSE shutdown deadlines are now arriving — [Atlassian's SSE endpoint](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484) dies June 30, 2026, and [Asana V1 (SSE)](https://developers.asana.com/docs/integrating-with-asanas-mcp-server) shuts down May 11, 2026. If you see a server that only mentions SSE, check for a newer version immediately.
 
 **Which should you prefer?** Remote servers when available — they're easier to set up, always up to date, and the vendor handles security and auth. Use local servers for open-source tools, file system access, or anything that needs to touch your local machine.
 
@@ -95,7 +96,7 @@ Save the config file and restart Claude Desktop. There's no hot-reload for manua
 
 ## Client Setup: VS Code (GitHub Copilot)
 
-As of VS Code 1.116, Copilot is built in — no extension install needed. MCP support comes out of the box. Configuration goes in `.vscode/mcp.json` at the workspace level, or in user settings for global servers.
+As of [VS Code 1.116](https://code.visualstudio.com/updates/v1_116), Copilot is built in — no extension install needed. MCP support comes out of the box. Configuration goes in `.vscode/mcp.json` at the workspace level, or in user settings for global servers.
 
 ### Workspace configuration
 
@@ -162,7 +163,7 @@ Create `.cursor/mcp.json` in your project root:
 
 ### Dynamic context management
 
-Cursor now uses dynamic context management that reduces token overhead by ~47% when running multiple MCP servers simultaneously. This makes running 5-6 servers practical without overwhelming the context window.
+Cursor now uses [dynamic context management](https://cursor.com/blog/dynamic-context-discovery) that reduces token overhead by ~47% when running multiple MCP servers simultaneously. This makes running 5-6 servers practical without overwhelming the context window.
 
 ### Using MCP tools
 
@@ -199,7 +200,7 @@ Use `/mcp` in-session to check server status, enable/disable, or reconnect serve
 
 ### MCP Tool Search (context optimization)
 
-Claude Code uses **lazy tool loading** via MCP Tool Search — instead of injecting all tool descriptions into context upfront, it loads only the tools needed for each request. This reduces MCP token overhead by up to 85%, making it practical to configure many servers without context bloat.
+Claude Code uses **lazy tool loading** via [MCP Tool Search](https://www.anthropic.com/engineering/advanced-tool-use) — instead of injecting all tool descriptions into context upfront, it loads only the tools needed for each request. This reduces MCP token overhead by up to 85%, making it practical to configure many servers without context bloat.
 
 ### Organization controls
 
@@ -344,7 +345,7 @@ Remote servers update automatically — that's one of their advantages.
 
 ### Docker MCP Gateway
 
-For teams managing many servers, **Docker MCP Gateway** provides containerized MCP servers with versioning, provenance, and automatic security updates. The MCP Catalog has 300+ verified server images. Docker Desktop 4.67+ includes **MCP Profile Templates** — pre-configured server bundles for common workflows (web dev, data analysis, cloud infra) that cut setup from 20-30 minutes to under 2 minutes.
+For teams managing many servers, **Docker MCP Gateway** provides containerized MCP servers with versioning, provenance, and automatic security updates. The [MCP Catalog has 300+ verified server images](https://docs.docker.com/ai/mcp-catalog-and-toolkit/catalog/). [Docker Desktop 4.67+](https://docs.docker.com/desktop/release-notes/) includes **MCP Profile Templates** — pre-configured server bundles for common workflows (web dev, data analysis, cloud infra) that cut setup from 20-30 minutes to under 2 minutes.
 
 ## Troubleshooting
 

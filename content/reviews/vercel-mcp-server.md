@@ -6,11 +6,12 @@ og_description: "Vercel's official MCP server connects AI assistants to your dep
 content_type: "Review"
 card_description: "Vercel's first-party MCP server for AI-assisted deployment management. OAuth authentication, 19 tools covering projects, deployments, logs, domains, toolbar threads, and documentation — all from a remote server at mcp.vercel.com."
 last_refreshed: 2026-05-18
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** Remote server at mcp.vercel.com, OAuth authentication, 19 tools, Streamable HTTP transport. 12 approved MCP clients (Claude Code, Claude.ai, ChatGPT, Codex CLI, Cursor, VS Code Copilot, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, Gemini CLI). PulseMCP ~216K all-time visitors (#231 globally, ~10.2K weekly). Public beta. Free. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
-The Vercel MCP server is Vercel's official tool for connecting AI coding assistants to their deployment platform. It launched in August 2025 as a hosted remote server at `mcp.vercel.com` — no npm package to install, no stdio process to manage. Point your MCP client at the URL, authenticate via OAuth, and you get access to your projects, deployments, build logs, runtime logs, and domains through natural language.
+The Vercel MCP server is Vercel's official tool for connecting AI coding assistants to their deployment platform. It launched in 2025 as a hosted remote server at `mcp.vercel.com` — no npm package to install, no stdio process to manage. Point your MCP client at the URL, authenticate via OAuth, and you get access to your projects, deployments, build logs, runtime logs, and domains through natural language.
 
 It implements the latest MCP specifications: Streamable HTTP transport and MCP Authorization. Vercel has positioned this as a reference implementation for how remote MCP servers should work — and they've built the [`mcp-handler`](https://github.com/vercel/mcp-handler) package to let others deploy MCP servers on their platform using the same architecture.
 
@@ -26,7 +27,7 @@ The biggest change since April is tool expansion — the server has grown from 1
 
 **PulseMCP traffic surged.** Weekly visitors climbed from ~8K to ~10.2K (+28%), and all-time estimated visitors reached ~216K (+33% from ~162K). The server moved from #235 to #231 globally. Unlike some servers that plateau after initial launch interest, Vercel's traffic is still growing — likely driven by the continued expansion of AI coding tools that use Vercel for deployment.
 
-**Still in public beta — nine months in.** The server launched August 2025 and remains in public beta as of May 2026, with no GA date announced.
+**Still in public beta — nine months in.** The server remains in public beta as of May 2026, with no GA date announced.
 
 ## What It Does
 
@@ -121,7 +122,7 @@ First connection opens a browser for OAuth consent. You select your Vercel team,
 
 **Client allowlisting limits adoption.** Only Vercel-approved clients can connect. If your MCP client isn't on the list, you're out of luck. This trades openness for security, but it means you can't use this with every MCP-compatible tool. The approved list has expanded to 12 clients — Claude Code, Claude Desktop, ChatGPT, Codex CLI, Cursor, VS Code Copilot, Devin, Raycast, Goose, Windsurf, Gemini Code Assist, and Gemini CLI. That covers most major AI coding tools, but niche or enterprise-internal clients still can't connect.
 
-**Still in public beta after 9+ months.** Launched August 2025, still beta as of May 2026 with no GA date announced. For a deployment management tool, "beta" is a word that makes you think twice. The 6 new Toolbar tools show active development, but the core platform gaps (env vars, analytics, edge config) that existed at launch remain unresolved.
+**Still in public beta after 9+ months.** Launched in 2025, still beta as of May 2026 with no GA date announced. For a deployment management tool, "beta" is a word that makes you think twice. The 6 new Toolbar tools show active development, but the core platform gaps (env vars, analytics, edge config) that existed at launch remain unresolved.
 
 **Domain purchase feels out of place.** The `buy_domain` tool requires full registrant PII (name, address, phone, email) and makes an irreversible purchase. Giving an AI assistant the ability to buy domains feels like it should require more safeguards than a single tool call. There's no confirmation step in the MCP protocol itself — your client's tool approval is the only gate.
 

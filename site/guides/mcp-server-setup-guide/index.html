@@ -71,7 +71,7 @@
 <p>Before configuring anything, understand the two ways MCP servers connect:</p>
 <p><strong>Local servers (stdio transport)</strong> run as processes on your machine. The client launches them, communicates through stdin/stdout, and kills them when done. You install them via npm or pip, and the client manages the lifecycle. Most open-source servers work this way.</p>
 <p><strong>Remote servers (Streamable HTTP)</strong> run on someone else&rsquo;s infrastructure. You connect via a URL, authenticate with OAuth 2.1, and the server handles everything. No local install needed. First-party servers from companies like <a href="/reviews/supabase-mcp-server/">Supabase</a>, <a href="/reviews/neon-mcp-server/">Neon</a>, <a href="/reviews/sentry-mcp-server/">Sentry</a>, <a href="/reviews/stripe-mcp-server/">Stripe</a>, <a href="https://mcp.asana.com">Asana</a>, <a href="https://mcp.clickup.com/mcp">ClickUp</a>, and <a href="https://developers.google.com/workspace/guides/configure-mcp-servers">Google Workspace</a> work this way. As of April 2026, remote is the default for vendor-operated servers.</p>
-<p>The MCP spec deprecated the older SSE (Server-Sent Events) transport in March 2025 in favor of Streamable HTTP. SSE shutdown deadlines are now arriving — Atlassian&rsquo;s SSE endpoint dies June 30, 2026, and Asana V1 (SSE) shuts down May 11, 2026. If you see a server that only mentions SSE, check for a newer version immediately.</p>
+<p>The MCP spec deprecated the older SSE (Server-Sent Events) transport in March 2025 in favor of Streamable HTTP. SSE shutdown deadlines are now arriving — <a href="https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484">Atlassian&rsquo;s SSE endpoint</a> dies June 30, 2026, and <a href="https://developers.asana.com/docs/integrating-with-asanas-mcp-server">Asana V1 (SSE)</a> shuts down May 11, 2026. If you see a server that only mentions SSE, check for a newer version immediately.</p>
 <p><strong>Which should you prefer?</strong> Remote servers when available — they&rsquo;re easier to set up, always up to date, and the vendor handles security and auth. Use local servers for open-source tools, file system access, or anything that needs to touch your local machine.</p>
 <h2 id="client-setup-claude-desktop">Client Setup: Claude Desktop</h2>
 <p>Claude Desktop is the simplest starting point. Configuration lives in a single JSON file.</p>
@@ -144,7 +144,7 @@
 <li><strong>Port conflicts</strong> if running multiple servers on the same port</li>
 </ul>
 <h2 id="client-setup-vs-code-github-copilot">Client Setup: VS Code (GitHub Copilot)</h2>
-<p>As of VS Code 1.116, Copilot is built in — no extension install needed. MCP support comes out of the box. Configuration goes in <code>.vscode/mcp.json</code> at the workspace level, or in user settings for global servers.</p>
+<p>As of <a href="https://code.visualstudio.com/updates/v1_116">VS Code 1.116</a>, Copilot is built in — no extension install needed. MCP support comes out of the box. Configuration goes in <code>.vscode/mcp.json</code> at the workspace level, or in user settings for global servers.</p>
 <h3 id="workspace-configuration">Workspace configuration</h3>
 <p>Create <code>.vscode/mcp.json</code> in your project:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -184,7 +184,7 @@
   }
 }
 </code></pre></div><h3 id="dynamic-context-management">Dynamic context management</h3>
-<p>Cursor now uses dynamic context management that reduces token overhead by ~47% when running multiple MCP servers simultaneously. This makes running 5-6 servers practical without overwhelming the context window.</p>
+<p>Cursor now uses <a href="https://cursor.com/blog/dynamic-context-discovery">dynamic context management</a> that reduces token overhead by ~47% when running multiple MCP servers simultaneously. This makes running 5-6 servers practical without overwhelming the context window.</p>
 <h3 id="using-mcp-tools-1">Using MCP tools</h3>
 <p>MCP tools are available in Cursor&rsquo;s Composer (agent mode). The agent can call tools automatically or ask for confirmation, depending on your settings. Check the MCP panel in settings to see which servers are connected and their tool lists.</p>
 <h2 id="client-setup-claude-code">Client Setup: Claude Code</h2>
@@ -201,7 +201,7 @@ claude mcp get github    <span style="color:#75715e"># see details for a specifi
 claude mcp remove github <span style="color:#75715e"># remove a server</span>
 </code></pre></div><p>Use <code>/mcp</code> in-session to check server status, enable/disable, or reconnect servers without restarting.</p>
 <h3 id="mcp-tool-search-context-optimization">MCP Tool Search (context optimization)</h3>
-<p>Claude Code uses <strong>lazy tool loading</strong> via MCP Tool Search — instead of injecting all tool descriptions into context upfront, it loads only the tools needed for each request. This reduces MCP token overhead by up to 85%, making it practical to configure many servers without context bloat.</p>
+<p>Claude Code uses <strong>lazy tool loading</strong> via <a href="https://www.anthropic.com/engineering/advanced-tool-use">MCP Tool Search</a> — instead of injecting all tool descriptions into context upfront, it loads only the tools needed for each request. This reduces MCP token overhead by up to 85%, making it practical to configure many servers without context bloat.</p>
 <h3 id="organization-controls">Organization controls</h3>
 <p>For teams, Claude Code supports <code>managed-mcp.json</code> for locked-down server sets and allowlist/denylist policies that control which MCP servers team members can use.</p>
 <p>Claude Code also supports project-scoped MCP configs via <code>.mcp.json</code> in the project root, which is useful for team-shared server configurations.</p>
@@ -407,7 +407,7 @@ claude mcp remove github <span style="color:#75715e"># remove a server</span>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm outdated -g  <span style="color:#75715e"># for globally installed servers</span>
 </code></pre></div><p>Remote servers update automatically — that&rsquo;s one of their advantages.</p>
 <h3 id="docker-mcp-gateway">Docker MCP Gateway</h3>
-<p>For teams managing many servers, <strong>Docker MCP Gateway</strong> provides containerized MCP servers with versioning, provenance, and automatic security updates. The MCP Catalog has 300+ verified server images. Docker Desktop 4.67+ includes <strong>MCP Profile Templates</strong> — pre-configured server bundles for common workflows (web dev, data analysis, cloud infra) that cut setup from 20-30 minutes to under 2 minutes.</p>
+<p>For teams managing many servers, <strong>Docker MCP Gateway</strong> provides containerized MCP servers with versioning, provenance, and automatic security updates. The <a href="https://docs.docker.com/ai/mcp-catalog-and-toolkit/catalog/">MCP Catalog has 300+ verified server images</a>. <a href="https://docs.docker.com/desktop/release-notes/">Docker Desktop 4.67+</a> includes <strong>MCP Profile Templates</strong> — pre-configured server bundles for common workflows (web dev, data analysis, cloud infra) that cut setup from 20-30 minutes to under 2 minutes.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p><strong>Server won&rsquo;t start:</strong> Check that the runtime is installed (<code>node --version</code>, <code>python3 --version</code>). Check that <code>npx</code> or <code>uvx</code> is in your PATH. Try running the command manually in a terminal to see error output.</p>
 <p><strong>Tools don&rsquo;t appear:</strong> Restart the client after config changes. Check for JSON syntax errors. Verify the server is actually running (Claude Desktop shows status in Developer settings, VS Code shows it in the MCP panel).</p>

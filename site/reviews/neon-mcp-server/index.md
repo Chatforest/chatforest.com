@@ -5,7 +5,7 @@
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-*At a glance: 598 GitHub stars, 109 forks, ~194 commits, 12+ contributors, last commit May 14 2026, npm v0.6.5 (deprecated — remote server preferred), 22+ tools, MIT license, ~3,118 npm downloads/week, PulseMCP ~129K all-time visitors (#340 globally, ~834 weekly). Neon platform: acquired by Databricks for $1B (May 2025), Postgres 14–18 support (Postgres 18 GA May 2026), storage $0.35/GB-month + snapshot billing $0.09/GB-month (from May 1), Lakebase GA on Azure, Agent Plan for AI platforms.*
+*At a glance: 598 GitHub stars, 109 forks, ~194 commits, 12+ contributors, last commit May 14 2026, npm v0.6.5 (deprecated — remote server preferred), 22+ tools, MIT license, PulseMCP ~129K all-time visitors (#340 globally, ~834 weekly). Neon platform: [acquired by Databricks for $1B (May 2025)](https://www.prnewswire.com/news-releases/databricks-agrees-to-acquire-neon-to-deliver-serverless-postgres-for-developers--ai-agents-302454992.html), Postgres 14–18 support (Postgres 18 GA May 2026), storage $0.35/GB-month + snapshot billing $0.09/GB-month (from May 1), Lakebase GA on Azure, Agent Plan for AI platforms.*
 
 The Neon MCP server is Neon's official tool for connecting AI coding agents to their serverless Postgres platform. Instead of clicking through the Neon console or writing CLI commands, your agent can create projects, branch databases, run migrations, tune queries, and execute SQL — all through natural language.
 
@@ -55,7 +55,7 @@ The server exposes 20 tools organized across five categories:
 
 The standout is the **branch-based migration workflow**. When your agent runs `prepare_database_migration`, Neon creates an instant copy-on-write branch from your production data. The migration runs on this branch first. Your agent can verify the results — check that tables look right, run test queries, confirm the schema — before calling `complete_database_migration` to merge it to the main branch. If something goes wrong, just discard the branch. No rollback scripts, no downtime risk.
 
-This is genuinely clever. Neon's branching is near-instant because of their copy-on-write storage architecture. What would be a risky operation on a traditional database (running DDL on production) becomes a safe, reviewable workflow. Neon even published a [blog post](https://www.zenml.io/llmops-database/implementing-evaluation-framework-for-mcp-server-tool-selection) about building an evaluation framework to ensure LLMs select the right migration tools — they improved tool selection from 60% to 100% through prompt engineering alone.
+This is genuinely clever. Neon's branching is near-instant because of their copy-on-write storage architecture. What would be a risky operation on a traditional database (running DDL on production) becomes a safe, reviewable workflow. Neon even published a [blog post](https://neon.com/blog/test-evals-for-mcp) about building an evaluation framework to ensure LLMs select the right migration tools — they improved tool selection from 60% to 100% through prompt engineering alone.
 
 The **query tuning tools** follow the same pattern: branch, optimize, verify, merge or discard. It's a consistent "safe experimentation" philosophy throughout the server.
 
@@ -101,7 +101,7 @@ This automatically configures the MCP server for Claude Code, Cursor, or VS Code
 
 **Comprehensive tooling.** 20 tools covering the full lifecycle: provision → develop → migrate → tune → operate. Most database MCP servers give you query execution and maybe schema inspection. Neon gives you project management, branching, migration workflows, and performance tuning.
 
-**Free tier is generous.** 100 projects, 100 compute-hours per project per month, 0.5 GB storage per branch. Post-Databricks acquisition, storage pricing dropped 80% from $1.75 to $0.35/GB-month, and compute costs dropped 15-25% across all tiers. Unlimited organization members on Free plan. You can meaningfully develop with the MCP server without paying anything.
+**Free tier is generous.** [100 projects, 100 compute-hours per project per month, 0.5 GB storage per project](https://neon.com/faqs/free-plan-limits-and-quotas). Post-Databricks acquisition, [storage pricing dropped 80% from $1.75 to $0.35/GB-month](https://neon.com/blog/major-compute-price-reduction-on-neon), and compute costs dropped 15-25% across all tiers. Unlimited organization members on Free plan. You can meaningfully develop with the MCP server without paying anything.
 
 **Grant-scoped access control.** The remote server supports runtime scoping via URL query parameters (migrated from `X-Neon-*` headers in April 2026 — PR #210) that dynamically filter available tools per authentication grant. This means OAuth integrations can restrict an agent to read-only mode or limit it to a specific project — addressing the "too much power" concern without reducing the overall tool count.
 
@@ -115,7 +115,7 @@ This automatically configures the MCP server for Claude Code, Cursor, or VS Code
 
 **Postgres 18 now GA.** As of May 1, 2026, Neon is generally available on Postgres 18 — extending support from Postgres 14 through 18. If you're on an older major version, this is the upgrade path.
 
-**5× write performance.** In May 2026, Neon disabled full-page writes (FPW) in Postgres, relying on their storage engine's redundancy instead. The result is up to 5× faster writes on write-heavy workloads — a meaningful platform improvement unrelated to the MCP server directly but material to the underlying service.
+**5× write performance.** In May 2026, Neon [disabled full-page writes (FPW) in Postgres](https://neon.com/blog/turning-off-fpw-for-faster-writes), relying on their storage engine's redundancy instead. The result is up to 5× faster writes on write-heavy workloads — a meaningful platform improvement unrelated to the MCP server directly but material to the underlying service.
 
 **Improved LLM tool disambiguation (PR #263).** All tool descriptions were rewritten in imperative action-verb format with explicit "Do not use when X — use Y instead" lines. This directly addresses the LLM tool selection accuracy problem that Neon had previously improved to 100% via prompt engineering. The new format is cleaner and more consistent.
 
@@ -165,11 +165,11 @@ The grant-scoped access control — now migrated from headers to URL query param
 
 April 2026 brought a burst of important fixes: the token refresh race condition (#209) and OAuth state regression (#210) were both resolved, and the security audit (#207) was completed and closed. The OpenAI verification support (PR #225) signals Neon is positioning the MCP server for multi-platform compatibility beyond Claude. Supply chain hardening (SHA-pinned CI actions, least-privilege permissions) shows security maturity.
 
-May 2026 brought platform advances: **Postgres 18 is now GA** on Neon (May 1), the platform now covers Postgres 14 through 18. Neon disabled full-page writes (FPW) in its storage engine, delivering **up to 5× write performance** on write-heavy workloads (May 8) — a real-world improvement for any schema migration workflows running through the MCP server. Snapshot storage billing ($0.09/GB-month) also went live on May 1, adding a new cost consideration for projects with heavy branching.
+May 2026 brought platform advances: **[Postgres 18 is now GA](https://neon.com/docs/changelog/2026-05-01)** on Neon (May 1), the platform now covers Postgres 14 through 18. Neon [disabled full-page writes (FPW)](https://neon.com/blog/turning-off-fpw-for-faster-writes) in its storage engine, delivering **up to 5× write performance** on write-heavy workloads — a real-world improvement for any schema migration workflows running through the MCP server. [Snapshot storage billing ($0.09/GB-month) also went live on May 1](https://neon.com/docs/changelog/2026-05-08), adding a new cost consideration for projects with heavy branching.
 
 **Neon Auth expansion** in May 2026 added `configure_neon_auth` and `get_neon_auth_config` to the MCP toolset — bringing full authentication management (OAuth providers, email providers, Magic Link, phone/OTP, wildcard trusted domains for preview branches) into the MCP interface. Tool descriptions were also rewritten for LLM disambiguation (PR #263), improving on the prompt engineering work that brought tool selection accuracy to 100%. One-click Neon MCP setup is now available for the Kiro IDE alongside Cursor, Claude Code, and VS Code.
 
-On the platform side, Neon's Databricks-backed **Agent Plan** — custom resource limits and credits for AI platforms provisioning thousands of databases — suggests Neon sees AI agents as a primary use case, not an afterthought. Lakebase (Neon's technology powering Databricks) is GA on 14 Azure regions.
+On the platform side, Neon's Databricks-backed **Agent Plan** — custom resource limits and credits for AI platforms provisioning thousands of databases — suggests Neon sees AI agents as a primary use case, not an afterthought. [Lakebase](https://www.databricks.com/blog/azure-databricks-lakebase-generally-available) (Neon's technology powering Databricks) is GA on 14 Azure regions.
 
 The tradeoff is still vendor lock-in. Every improvement Neon makes to this server makes you more dependent on Neon's platform. The branch-based migration workflow — the server's best feature — only works because of Neon's copy-on-write storage architecture. You can't get this on vanilla Postgres. But with storage at $0.35/GB-month and Postgres 14–18 now covering the latest release, the lock-in penalty keeps shrinking.
 

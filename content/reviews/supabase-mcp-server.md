@@ -7,6 +7,7 @@ og_description: "Supabase's official MCP server manages your entire backend thro
 content_type: "Review"
 card_description: "Supabase's first-party MCP server for AI-assisted backend management. OAuth 2.1 authentication, 8 tool groups covering database, edge functions, storage, branching, and debugging — the widest scope of any database-related MCP server we've reviewed. v0.8.0 shipped the anticipated RLS advisory and server instructions; v0.8.1 fixed a stdio regression same-day. PulseMCP weekly traffic surged from ~37K to ~67K (+81%) in the May cycle."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-22
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
@@ -124,15 +125,15 @@ When running Supabase locally via `supabase start`, a local MCP server is availa
 
 **Server instructions support (PR #258, merged April 21).** The MCP spec's `instructions` field is now populated, giving LLM clients extra context about how to interact with Supabase via the MCP server. This was preceded by Supabase's April 9 blog post "[AI Agents Know About Supabase. They Don't Always Use It Right](https://supabase.com/blog)" — an open-source set of instructions teaching agents how to build on Supabase correctly. The server-side instructions formalize this guidance at the protocol level.
 
-**Supabase ISO 27001:2022 certified (April 22).** The certification covers Supabase's information security management system across the entire platform — database, auth, storage, realtime, edge functions, and data API. Supabase now holds ISO 27001, SOC 2, and HIPAA compliance. For MCP users, this adds another layer of assurance that the backend platform your agents are managing meets international security standards.
+**[Supabase ISO 27001:2022 certified (April 22)](https://supabase.com/blog/supabase-is-now-iso-27001-certified).** The certification covers Supabase's information security management system across the entire platform — database, auth, storage, realtime, edge functions, and data API. Supabase now holds ISO 27001, SOC 2, and HIPAA compliance. For MCP users, this adds another layer of assurance that the backend platform your agents are managing meets international security standards.
 
-**Stripe Sync Engine transferred to Stripe (April 14).** Supabase transferred ownership of their open-source Stripe Sync Engine directly to Stripe, deepening the partnership beyond the Stripe Projects co-design collaboration. This continues to position Supabase as a first-class citizen in Stripe's developer ecosystem.
+**[Stripe Sync Engine transferred to Stripe (April 14)](https://supabase.com/blog/stripe-sync-engine-transfer).** Supabase transferred ownership of their open-source Stripe Sync Engine directly to Stripe, deepening the partnership beyond the Stripe Projects co-design collaboration. This continues to position Supabase as a first-class citizen in Stripe's developer ecosystem.
 
 **GitHub integration now available on all plans.** Previously, deploying migrations from GitHub required a paid plan with branching. Now free tier users can connect their repo and deploy migrations from their main branch via CI/CD — no branching required. This significantly lowers the bar for MCP-driven development workflows where agents generate migrations that flow through version control.
 
-**Stripe Projects co-design partnership.** Supabase is a co-design partner in Stripe Projects, a new CLI tool that provisions and connects services (Supabase, Vercel, Clerk) from your terminal with credentials auto-synced to `.env`. Create a full Supabase project — Postgres, auth, storage, edge functions, realtime — with a single command.
+**Stripe Projects co-design partnership.** Supabase is a [co-design partner in Stripe Projects](https://supabase.com/blog/supabase-joins-the-stripe-projects-developer-preview), a new CLI tool that provisions and connects services (Supabase, Vercel, Clerk) from your terminal with credentials auto-synced to `.env`. Create a full Supabase project — Postgres, auth, storage, edge functions, realtime — with a single command.
 
-**supabase.sh: documentation over SSH.** Supabase now serves its full documentation as a virtual filesystem over SSH. Run `ssh supabase.sh` and agents get bash access to every doc page via `grep`, `find`, `cat`. Pipe directly into Claude Code with `ssh supabase.sh setup | claude`. This complements the MCP server's built-in Knowledge Base tool group.
+**[supabase.sh: documentation over SSH](https://supabase.com/blog/supabase-docs-over-ssh).** Supabase now serves its full documentation as a virtual filesystem over SSH. Run `ssh supabase.sh` and agents get bash access to every doc page via `grep`, `find`, `cat`. Pipe directly into Claude Code with `ssh supabase.sh setup | claude`. This complements the MCP server's built-in Knowledge Base tool group.
 
 **Studio AI assistant integration.** The Supabase dashboard now has "Fix with Assistant" buttons across multiple touchpoints, with a dropdown to send prompts to Claude or ChatGPT. Separate from the MCP server but shows Supabase deepening AI integration across the platform.
 
@@ -152,7 +153,7 @@ When running Supabase locally via `supabase start`, a local MCP server is availa
 
 **BYO MCP: deploy your own MCP servers on Supabase.** Supabase lets you build and deploy custom MCP servers on Edge Functions using the official MCP TypeScript SDK, mcp-lite, or mcp-handler. Your MCP server runs at the edge with an HTTP endpoint accepting JSON-RPC requests.
 
-**Supabase Auth becomes an OAuth 2.1/OIDC provider.** In public beta since November 2025, Supabase Auth can now act as an identity provider for third-party apps and MCP servers. Row Level Security policies automatically apply to OAuth tokens.
+**[Supabase Auth becomes an OAuth 2.1/OIDC provider](https://supabase.com/blog/oauth2-provider).** In public beta since November 2025, Supabase Auth can now act as an identity provider for third-party apps and MCP servers. Row Level Security policies automatically apply to OAuth tokens.
 
 **OAuth scope concerns (Issue #239).** The MCP server requests full account access regardless of which tool groups are enabled — if you only need database tools, the server still asks for permissions to manage edge functions, storage, and everything else. Still unresolved.
 

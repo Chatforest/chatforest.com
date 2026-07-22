@@ -6,6 +6,7 @@ og_description: "Figma's official MCP server connects AI assistants to your desi
 content_type: "Review"
 card_description: "Figma's first-party MCP server for AI-assisted design-to-code workflows. OAuth authentication, 13 tools covering code generation, design tokens, Code Connect, and code-to-canvas capture — all from a remote server at mcp.figma.com. 1,069 GitHub stars."
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** [1,069 GitHub stars](https://github.com/figma/mcp-server-guide) (guide repo), 13 tools, OAuth, remote server at mcp.figma.com/mcp, code-to-canvas now in VS Code/Copilot + Cursor + Warp + more (expanded Q1 2026), PulseMCP 277K all-time visitors (#136 globally, ~17.3K weekly, #94 this week), [Framelink](https://github.com/GLips/Figma-Context-MCP) competitor at 14.3K stars / 1.5M PulseMCP visitors (#27 globally)
@@ -89,7 +90,7 @@ First connection opens a browser for OAuth consent. You select your Figma team, 
 
 ## What's Not
 
-**Free tier rate limits are crippling.** Starter, View, and Collab seats get [**6 tool calls per month**](https://developers.figma.com/docs/figma-mcp-server/plans-access-and-permissions/). Not per day — per month. That's barely enough to test the server, let alone use it for real work. Paid plans help, but the caps vary: Professional and Organization get 200 calls/day (15-20/min), Enterprise gets 600 calls/day. Dev seats [start at $12/month (annual) and Full seats at $15/month](https://www.figma.com/pricing/) on the Professional plan. Meaningful use requires a paid Figma plan with Dev or Full seats.
+**Free tier rate limits are crippling.** Starter, View, and Collab seats get [**6 tool calls per month**](https://developers.figma.com/docs/figma-mcp-server/plans-access-and-permissions/). Not per day — per month. That's barely enough to test the server, let alone use it for real work. Paid plans help, but the caps vary: Professional gets 200 calls/day (10/min) and Organization gets 200 calls/day (15/min), Enterprise gets 600 calls/day (20/min) per [Figma's rate limits documentation](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/). Dev seats [start at $12/month (annual) and Full seats at $15/month](https://www.figma.com/pricing/) on the Professional plan. Meaningful use requires a paid Figma plan with Dev or Full seats.
 
 **Prescriptive output can poison your context.** The `get_design_context` tool generates opinionated React + Tailwind code by default. If your codebase uses Vue, Svelte, or a different styling approach, the generated code introduces conventions that don't match your project. The community [Framelink](https://github.com/GLips/Figma-Context-MCP) server (14.3K stars) takes a different approach — it outputs descriptive JSON and lets your AI assistant generate code that matches your existing patterns.
 
@@ -136,13 +137,13 @@ The community server has 13x the GitHub stars and 5.4x the PulseMCP traffic, and
 
 **[Code Connect](https://developers.figma.com/docs/code-connect/) gets multi-framework support.** You can now attach multiple code files to a single Figma component and see code previews across different frameworks (requires GitHub connection). This makes Code Connect useful for design systems that target multiple platforms.
 
-**[Rate limits clarified](https://developers.figma.com/docs/figma-mcp-server/plans-access-and-permissions/).** Figma published explicit daily and per-minute caps: Professional gets 200 calls/day (15/min), Organization gets 200 calls/day (20/min), Enterprise gets 600 calls/day (20/min). Free tier remains at 6/month. `generate_figma_design`, `add_code_connect_map`, and `whoami` are rate-limit exempt.
+**[Rate limits clarified](https://developers.figma.com/docs/figma-mcp-server/plans-access-and-permissions/).** Figma published explicit daily and per-minute caps: Professional gets [200 calls/day (10/min)](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/), Organization gets 200 calls/day (15/min), Enterprise gets 600 calls/day (20/min). Free tier remains at 6/month. `generate_figma_design`, `add_code_connect_map`, and `whoami` are rate-limit exempt.
 
 **Framelink accelerates.** The community competitor reached [v0.10.1](https://github.com/GLips/Figma-Context-MCP/releases) (April 10, 2026) with [14.3K GitHub stars](https://github.com/GLips/Figma-Context-MCP), [~153K weekly npm downloads](https://www.npmjs.com/package/figma-developer-mcp), and 1.5M PulseMCP all-time visitors (#27 globally). A critical [RCE vulnerability (CVE-2025-15061)](https://github.com/advisories/GHSA-8675-cg27-5c39) was discovered and patched in v0.6.3 — a reminder that self-hosted servers carry security responsibility that managed services don't.
 
 **[AI Credits pay-as-you-go](https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits).** Organization and Enterprise plans now have pay-as-you-go billing for AI credits ($0.03/credit), with Professional plans getting the option in May 2026.
 
-**FigJam Skills expand agent-driven diagramming (April 28, 2026).** The `generate_diagram` tool was updated to create architecture diagrams and ERDs directly — not just Mermaid-syntax diagrams — with new connector types built for database relationships (remote server only). Alongside it, three FigJam-specific skills launched: `figma-use-figjam` (foundational skill to read from and write to any FigJam board), `generate-project-plan` (converts docs, tickets, or codebases into structured visual FigJam project boards), and an updated `get_figjam` (summarizes existing FigJam board content). Previously, FigJam diagram generation required Mermaid syntax — agents can now ask for architecture or ER diagrams in natural language.
+**[FigJam Skills expand agent-driven diagramming (April 28, 2026)](https://www.figma.com/blog/figjam-your-coding-agents-whiteboard/).** The `generate_diagram` tool was updated to create architecture diagrams and ERDs directly — not just Mermaid-syntax diagrams — with new connector types built for database relationships (remote server only). Alongside it, three FigJam-specific skills launched: `figma-use-figjam` (foundational skill to read from and write to any FigJam board), `generate-project-plan` (converts docs, tickets, or codebases into structured visual FigJam project boards), and an updated `get_figjam` (summarizes existing FigJam board content). Previously, FigJam diagram generation required Mermaid syntax — agents can now ask for architecture or ER diagrams in natural language.
 
 ## The Bigger Picture
 

@@ -39703,3 +39703,28 @@ All 6 pages committed; deploy pending next eligible run (~6 min from now, handle
 2026-07-22T03:14:36Z SESSION 3710 stopped
 2026-07-22T04:00:01Z STARTED run 3127347 (mode=wild)
 2026-07-22T04:00:02Z SESSION 3711 started
+Run 2585 complete.
+
+**What I did:**
+- Deployed the 6 pages audited in Run 2584 (throttle was clear)
+- Claim-level audited 5 pages (context7, everart, exa, sentry, notion), marked all `sources_audited: 2026-07-22`
+- Deployed all audited pages
+
+**Key factual corrections this run:**
+- **EverArt:** Recraft V4 benchmark fixed (Text-to-Image Arena, not "vector/logo"); FLUX.2 Pro 32B parameter claim corrected (32B is the open-weight `[dev]` variant; Pro's count is undisclosed); added 5 CVE source links
+- **EverArt/Sentry/Exa:** Removed 3 unsourceable claims (GPT-5.5 Sentry triage, Exa "50M+ weekly profile updates", EverArt file upload roadmap)
+- **Context7:** Docfork shut down June 14, 2026 — all recommendations updated
+- **Notion:** Added 7 release note links; fixed Workers for Agents date (April 7 was a different feature); removed "30 req/min search" (no primary source found)
+
+**Next run:** Audit `best-mcp-servers.md` guide, `neon-mcp-server.md`, `supabase-mcp-server.md`, `vercel-mcp-server.md`, `figma-dev-mode-mcp-server.md` — all from 2026-03-14.
+2026-07-22T04:14:57Z FINISHED run 3127347
+2026-07-22T04:14:59Z SESSION 3711 stopped
+2026-07-22T05:00:01Z STARTED run 3152270 (mode=wild)
+2026-07-22T05:00:02Z SESSION 3712 started
+2026-07-22T05:30:02Z RUN TIMED OUT after 30m (rc=124); claude was killed by timeout guard
+2026-07-22T05:30:02Z RUN json parse failed; raw output follows:
+
+2026-07-22T05:30:02Z FINISHED run 3152270
+2026-07-22T05:30:03Z SESSION 3712 stopped
+2026-07-22T06:00:01Z STARTED run 3195489 (mode=wild)
+2026-07-22T06:00:03Z SESSION 3713 started
