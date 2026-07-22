@@ -9,6 +9,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-14
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** Mistral Small 3.1, released March 17, 2025. 24B dense parameters. 128K context (4× over Small 3). Apache 2.0. Vision input added. 150 tokens/second. Single RTX 4090 deployable. MMLU 80.62%. HumanEval 88.41%. DocVQA 94.08%. $0.10/$0.30 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -19,7 +20,7 @@ last_refreshed: 2026-05-14
 
 The model takes the 24-billion-parameter foundation of Mistral Small 3 — released in January 2025, already competitive with GPT-4o Mini — and addresses its two most obvious gaps: it adds vision understanding, and it quadruples the context window from 32K to 128K tokens. The parameter count does not change. The Apache 2.0 license does not change. A single RTX 4090 or a Mac with 32GB RAM still runs it. But the model now processes images and 128K-token documents in the same inference call.
 
-For the small-model tier in March 2025, that package was genuinely differentiated. GPT-4o Mini had an 8× smaller context window. Gemma 3 27B had just launched without vision at that parameter scale. Claude 3.5 Haiku was vision-capable but closed-source and hosted-only. Mistral Small 3.1 offered multimodal capability, large context, open weights, and consumer hardware deployment — all four simultaneously.
+For the small-model tier in March 2025, that package was genuinely differentiated. [GPT-4o Mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) had no open weights and was API-only. [Gemma 3 27B](https://developers.googleblog.com/introducing-gemma3/) had just launched with its own multimodal capabilities, but under a custom Google license rather than Apache 2.0. Claude 3.5 Haiku was vision-capable but closed-source and hosted-only. Mistral Small 3.1 offered multimodal capability, large context, Apache 2.0 open weights, and consumer hardware deployment — all four simultaneously.
 
 Companion to our **[Mistral AI review](/reviews/mistral-ai-le-chat-frontier-llm-company-review/)**, which covers the broader company model lineup, business model, and Le Chat platform.
 
@@ -34,7 +35,7 @@ Mistral Small 3.1 was released seventy-six days later. It is not a new training 
 The release date matters for competitive context. March 2025 was a crowded month:
 
 - **Google Gemma 3** had just launched (March 12, 2025) with its own multimodal push at the 27B scale.
-- **GPT-4o Mini** remained the dominant small-model API reference point, but at 8K context and closed-source.
+- **[GPT-4o Mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)** remained the dominant small-model API reference point, but closed-source with no open-weight option.
 - **Mistral Small 4** (119B MoE, 6B active) would not arrive until March 2026 — a full year later.
 - **Mistral Small 3.2**, an incremental refinement of 3.1, would follow in June 2025.
 
@@ -78,11 +79,11 @@ Mistral published the following text benchmark results for Mistral Small 3.1 in 
 
 **MMLU at 80.62%** places it just below GPT-4o Mini (82.0%) and slightly above Mistral Small 3 on this metric. At the 24B scale, this is a strong result — well above Llama 3.1 8B (~68%) and competitive with models twice its size from six months earlier.
 
-**HumanEval at 88.41%** is the standout text number. For comparison: GPT-4o Mini scores ~87%, and Claude 3.5 Haiku is in the ~88–90% range depending on the evaluation pass. At the 24B scale for an Apache-licensed model, this coding performance is exceptional — it implies meaningful productivity on real code tasks, not just benchmark-optimized toy problems.
+**HumanEval at 88.41%** is the standout text number. [Per Mistral's published benchmarks](https://mistral.ai/news/mistral-small-3-1/), GPT-4o Mini scores ~87% on HumanEval. At the 24B scale for an Apache-licensed model, this coding performance is exceptional — it implies meaningful productivity on real code tasks, not just benchmark-optimized toy problems.
 
 **MATH at 69.3%** is solid for a non-reasoning model. Mistral notes that Small 3 (the predecessor) actually edged ahead of 3.1 on MATH in some evaluations, suggesting the vision training may have introduced a slight regression on this specific benchmark — a known trade-off when adding modalities.
 
-**GPQA Diamond at 45.96%** reflects the ceiling for a dense instruct model without chain-of-thought reasoning. For comparison: Claude 3.5 Sonnet scored ~59%, GPT-4o scored ~53.6%. Expert-level scientific Q&A requires the kind of deliberate multi-step reasoning that Mistral Small 3.1 does not provide. A reasoning model this size did not exist in Mistral's lineup at this time — that would wait until Magistral Small in June 2025.
+**GPQA Diamond at 45.96%** reflects the ceiling for a dense instruct model without chain-of-thought reasoning. Expert-level scientific Q&A requires the kind of deliberate multi-step reasoning that Mistral Small 3.1 does not provide — frontier models with extended thinking significantly outperform this tier on GPQA. A reasoning model this size did not exist in Mistral's lineup at this time — that would wait until Magistral Small in June 2025.
 
 **SimpleQA at 10.43%** is the most jarring number. SimpleQA tests direct factual recall (no multiple choice, no context provided). A 10.43% score means the model struggles to reliably produce short factual answers to straightforward questions. This is a known limitation of instruction-tuned smaller models — they learn to generate plausible responses rather than to have reliable factual recall. It is not unique to Mistral Small 3.1, but the score is low enough to matter for applications that depend on factual grounding without retrieval.
 
@@ -107,7 +108,7 @@ The vision suite is where Mistral Small 3.1 makes its strongest competitive case
 
 **ChartQA at 86.24%** covers data chart interpretation — reading bar graphs, line charts, pie charts and answering quantitative questions. Above 85% is competitive for a model in this tier.
 
-**MathVista at 68.91%** covers mathematical reasoning on images (geometry diagrams, plotted functions, math figures). This is harder than reading charts; it requires symbolic and spatial reasoning over visual representations. 68.91% is decent but below frontier vision models (GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro run 65–75%+ on this benchmark, with more capable models reaching 80%+).
+**MathVista at 68.91%** covers mathematical reasoning on images (geometry diagrams, plotted functions, math figures). This is harder than reading charts; it requires symbolic and spatial reasoning over visual representations. 68.91% is competitive for a 24B model but below what larger frontier vision models achieve on this benchmark.
 
 **MMMU-Pro at 49.25%** is the most demanding vision benchmark: college-level multi-discipline questions requiring both visual understanding and domain knowledge. At 49.25%, Small 3.1 is performing at the boundary of what smaller models can do on expert-level visual reasoning.
 
@@ -151,7 +152,7 @@ The East Asian score (69.17%) is lower but not negligible — meaningful for Chi
 
 ## Pricing and Availability
 
-**La Plateforme API:** approximately $0.10 per million input tokens, $0.30 per million output tokens. At these rates, Small 3.1 is among the cheapest multimodal API endpoints available — notably cheaper than GPT-4o Mini ($0.15/$0.60) and well below Claude 3.5 Haiku ($0.80/$4.00) at launch pricing.
+**La Plateforme API:** approximately $0.10 per million input tokens, $0.30 per million output tokens. At these rates, Small 3.1 is among the cheapest multimodal API endpoints available — notably cheaper than [GPT-4o Mini ($0.15/$0.60 per million tokens)](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) and well below Claude 3.5 Haiku at launch pricing.
 
 **Self-hosting:** Apache 2.0 license means zero API cost for self-hosted deployments. HuggingFace weights are freely available. Community GGUF quantizations on Ollama reduce the VRAM requirement to ~14–16GB, enabling deployment on a single RTX 4090, RTX 3090, or Apple M-series Mac with 32GB unified memory.
 
@@ -168,9 +169,9 @@ The East Asian score (69.17%) is lower but not negligible — meaningful for Chi
 ## What It Beats — and What Beats It
 
 **Small 3.1 outperforms (at its March 2025 launch):**
-- **GPT-4o Mini** on: context window (128K vs 16K), multilingual benchmarks, open weights (GPT-4o Mini is closed), self-hosting cost ($0 vs API-only)
-- **Gemma 3 27B** on: vision benchmarks (DocVQA 94% vs Gemma 3's launch without vision at 27B), multilingual tasks; Gemma 3 27B edged ahead on some text benchmarks given its larger parameter count
-- **Claude 3.5 Haiku** on: open weights (Haiku is closed-source), self-hosting, context window
+- **[GPT-4o Mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)** on: multilingual benchmarks, open weights (GPT-4o Mini is closed-source), self-hosting cost ($0 vs API-only)
+- **[Gemma 3 27B](https://developers.googleblog.com/introducing-gemma3/)** on: Apache 2.0 licensing (Gemma 3 uses a custom Google license); multilingual tasks; Gemma 3 27B edged ahead on some text benchmarks given its larger parameter count
+- **Claude 3.5 Haiku** on: open weights (Haiku is closed-source), self-hosting
 
 **Small 3.1 lags behind:**
 - **GPT-4o Mini** on: MMLU (80.6% vs 82.0%), raw short-context text quality

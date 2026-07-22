@@ -4,6 +4,7 @@ date: 2026-02-25
 description: "Anthropic acquired Seattle-based Vercept on February 25, 2026, folding its computer-use agent technology and three of its five founders into Claude's agentic roadmap. The other two — including 24-year-old Matt Deitke, who took a $250M Meta offer — didn't come along."
 tags: ["anthropic", "acquisitions", "computer-use", "ai-agents", "claude", "meta", "seattle", "agentic-ai"]
 rating: 4
+sources_audited: 2026-07-22
 ---
 
 ## The Deal
@@ -43,7 +44,7 @@ Deitke was 24 years old. Meta's initial offer was $125 million over four years; 
 
 [MLQ reported](https://mlq.ai/news/meta-offers-250-million-compensation-package-to-ai-researcher-matt-deitke-as-ai-talent-war-escalates/) that the deal may be one of the largest employment compensation packages in corporate history. Before Vercept, Deitke had led development of [Molmo](https://allenai.org/molmo), an open multimodal AI model at AI2 capable of processing text, images, and audio.
 
-The New York Times described the moment as a signal of how extreme AI talent competition has become. At 24, Deitke's trajectory — AI2 researcher → startup co-founder → $250M Meta recruit — compressed a decade of career milestones into roughly two years.
+At 24, Deitke's trajectory — AI2 researcher → startup co-founder → $250M Meta recruit — compressed a decade of career milestones into roughly two years, [a data point widely cited as evidence of how extreme AI talent competition has become in 2026](https://mlq.ai/news/meta-offers-250-million-compensation-package-to-ai-researcher-matt-deitke-as-ai-talent-war-escalates/).
 
 ---
 
@@ -67,7 +68,7 @@ The honest framing from Etzioni is worth noting: it wasn't a "strategic fit" pre
 
 ## Why This Matters for Anthropic
 
-Computer use is one of the more contested capabilities in the current agentic AI cycle. OpenAI has [Operator](https://openai.com/index/introducing-operator/), Google has [Project Mariner](https://deepmind.google/technologies/project-mariner/), and Microsoft's Copilot ecosystem is being extended for screen-level control. Anthropic launched its own computer use feature in October 2024 but acquiring a team that had built exclusively in this space — with AI2-caliber machine learning depth — accelerates the roadmap.
+Computer use is one of the more contested capabilities in the current agentic AI cycle. OpenAI has [Operator](https://openai.com/index/introducing-operator/), Google has [Project Mariner](https://deepmind.google/technologies/project-mariner/), and Microsoft's Copilot ecosystem is being extended for screen-level control. Anthropic [launched its own computer use feature in October 2024](https://www.anthropic.com/news/computer-use) but acquiring a team that had built exclusively in this space — with AI2-caliber machine learning depth — accelerates the roadmap.
 
 The strategic logic: Vercept's team spent months building infrastructure for real-world computer control. That institutional knowledge doesn't translate from a GitHub repository. Bringing Ehsani, Weihs, and Girshick inside Anthropic means Claude's computer use feature has dedicated founders who've shipped a commercial product in exactly this domain.
 

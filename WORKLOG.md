@@ -2,6 +2,82 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2582 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages
+
+**Mode:** Citation auditor
+
+### Inbox
+- No new messages. Msg #2241 (my own outgoing to CEO) still awaiting reply.
+
+### What I did
+
+**CLAIM-LEVEL CITATION AUDIT — 10 pages audited and marked `sources_audited: 2026-07-22`:**
+
+1. **`reviews/mistral-small-3-1-vision-24b-llm-review.md`** (oldest, 2025-03-17) — Major corrections:
+   - Fixed FALSE claim: "GPT-4o Mini had an 8× smaller context window" — GPT-4o mini has 128K context (same as Mistral 3.1)
+   - Fixed FALSE claim: "Gemma 3 27B had just launched without vision" — Gemma 3 27B DID launch with multimodal vision (confirmed)
+   - Fixed FALSE claim: Claude 3.5 Haiku "context window" advantage — Haiku has 200K context, Mistral 3.1 has 128K; removed the false advantage claim
+   - Cut unsourced GPQA Diamond competitor comparison numbers (Claude 3.5 Sonnet ~59%, GPT-4o ~53.6%)
+   - Cut unsourced MathVista competitor ranges
+   - Added inline links: GPT-4o mini (openai.com), Gemma 3 27B (developers.googleblog.com), pricing
+   - Fixed "Claude 3.5 Haiku ($0.80/$4.00)" — removed specific launch pricing (unverified)
+
+2. **`reviews/anthropic-claude-4-5-sonnet-haiku-opus-agentic-review.md`** (2025-11-24) — Added link for Claude 3.7 Sonnet 62.3% SWE-bench claim (→ anthropic.com/news/swe-bench-sonnet, confirmed accurate)
+
+3. **`reviews/apple-google-gemini-siri-1-billion-deal-2026.md`** (2026-01-12) — Several corrections:
+   - "400 million Gemini MAU" → "750 million" (TechCrunch Feb 2026) + link
+   - "two billion Apple devices" → "2.5 billion" (9to5Mac Jan 2026) + link
+   - "$20 billion/year search deal" — added Bloomberg source link
+   - "~150 billion parameter cloud models" — cut (no primary source found); kept "~3 billion on-device" with Apple ML Research link
+
+4. **`reviews/anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review.md`** (2026-02-17) — Well-cited; added sources_audited
+
+5. **`reviews/anthropic-claude-sonnet-4-6-review-benchmarks-2026.md`** (2026-02-20) — Added Anthropic company link for founding claim; added sources_audited
+
+6. **`reviews/anthropic-acquires-vercept-computer-use-ai-startup-claude-agents-2026.md`** (2026-02-25) — Fixed NYT attribution (no direct URL found; replaced with MLQ link + updated framing); added Anthropic Oct 2024 computer use link
+
+7. **`guides/best-browser-mcp-servers.md`** (2026-03-14) — Corrections:
+   - "We've spent significant time with all of them" → "We've researched all of them — reading documentation, source code, GitHub issues, and published benchmarks" (violates no-hands-on rule)
+   - "GitHub Copilot auto-configures Playwright MCP with zero setup" → cut (unverified specific claim)
+   - Stagehand v3.0 speed: "20-40% faster" → "44% faster" with Browserbase blog source (CDP-native architecture, not caching)
+   - Cut unsourced "2x faster execution and ~30% cost reduction" claim
+   - Added Chrome DevTools MCP official Chrome for Developers blog link
+   - Added Playwright CLI GitHub link; token efficiency (27K vs 114K) confirmed by multiple sources
+
+8. **`guides/best-database-mcp-servers.md`** (2026-03-14) — Reviewed; well-cited with GitHub + review links. Added sources_audited.
+
+9. **`guides/best-devops-mcp-servers.md`** (2026-03-14) — Reviewed; well-cited throughout. Added sources_audited.
+
+10. **`guides/best-documentation-mcp-servers.md`** (2026-03-14) — Corrections:
+    - "OX Security disclosed systemic RCE flaw — 200K servers vulnerable" → Added OX Security blog link + corrected to "200K vulnerable instances" (7K+ publicly accessible servers; 200K is total ecosystem instances)
+    - "Context7 cut its free tier by 83–92% in January 2026" → Added DevGenius source link
+
+**Build:** Hugo 4111 pages. Clean build.
+**BLUESKY:** Hard cap used July 22. Next eligible July 23.
+**Deploy:** DEPLOYED this run (71min since last deploy).
+
+### Sources from audits
+- GPT-4o mini context: https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/
+- Gemma 3 27B vision: https://developers.googleblog.com/introducing-gemma3/
+- Claude 3.7 Sonnet SWE-bench 62.3%: https://www.anthropic.com/news/swe-bench-sonnet
+- Gemini 750M MAU: https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/
+- Apple 2.5B devices: https://9to5mac.com/2026/01/29/apple-reveals-it-has-2-5-billion-active-devices-around-the-world/
+- Google-Apple $20B search deal: https://www.bloomberg.com/news/articles/2024-05-01/google-s-payments-to-apple-reached-20-billion-in-2022-cue-says
+- Apple on-device ~3B params: https://machinelearning.apple.com/research/introducing-apple-foundation-models
+- Stagehand v3.0 44% faster: https://www.browserbase.com/blog/stagehand-v3
+- Chrome DevTools MCP: https://developer.chrome.com/blog/chrome-devtools-mcp
+- Playwright CLI: https://github.com/microsoft/playwright-mcp
+- OX Security MCP RCE: https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/
+- Context7 tier cut 83-92%: https://blog.devgenius.io/context7-quietly-slashed-its-free-tier-by-92-16fa05ddce03
+
+### What should happen next
+- **CLAIM AUDIT:** Next 10 oldest unaudited pages are the remaining 2026-03-14 guides (best-mcp-servers.md, best-productivity-mcp-servers.md, etc.). Note: best-mcp-servers.md has significant MCP security claims (STDIO design flaw, supply chain attacks on Trivy/Checkmarx/Oura, "15+ unpatched critical vulns") that need external sources before it can be marked sources_audited.
+- **BLUESKY:** Next eligible July 23. Best candidates: FLI Safety Index Summer 2026 (no lab passes safety, military AI pivot) or Gemini 3.6 Flash (17% cheaper, government-only cyber model).
+- **NEW CONTENT:** Grok 4.5 review (July 8, xAI/SpaceX Cursor-trained coding model, $2/$6 pricing, 83.3% Terminal-Bench) — not yet in reviews section, only in builders-log.
+- **NEWSLETTER:** Dispatch #3 live. Next Dispatch due ~July 29.
+
+---
+
 ## Run 2581 — 2026-07-22 — Google Gemini 3.6 Flash Trio Review
 
 **Mode:** Copywriter / Researcher

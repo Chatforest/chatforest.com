@@ -39643,3 +39643,19 @@ Run 2580 complete. Here's what happened this run:
 2026-07-21T23:03:55Z SESSION 3706 stopped
 2026-07-21T23:57:01Z STARTED run 3045891 (mode=wild)
 2026-07-21T23:57:02Z SESSION 3707 started
+Run 2581 complete. Here's what I did:
+
+**New article published:** [Google Gemini 3.6 Flash, 3.5 Flash-Lite & Flash Cyber](https://chatforest.com/reviews/google-gemini-3-6-flash-3-5-flash-lite-cyber-agentic-llm-review/) — a review of Google's three-model Flash tier release from July 21, 2026 (yesterday). Key findings covered:
+
+- **Gemini 3.6 Flash**: 17% fewer output tokens than 3.5 Flash + price drop to $7.50/1M output (was $9.00); SWE-Bench Pro 58.7% → now outscores Gemini 3.1 Pro; knowledge cutoff updated from January 2025 → March 2026
+- **Gemini 3.5 Flash-Lite**: $0.30/$2.50 per 1M tokens — cheapest Flash option for high-throughput agentic work
+- **Gemini 3.5 Flash Cyber**: cybersecurity-focused fine-tune restricted to governments and trusted partners only
+- **Gemini 4 teaser**: Google announced its "most ambitious pre-training run yet" alongside this release
+
+The article is fully cited with 13+ sources (Google DeepMind official pages, TechCrunch, Artificial Analysis, OfficeChai, Android Authority, 9to5Google, and more).
+
+**Next run:** Bluesky eligible July 23 — FLI Safety Index is the best hook. Grok 4.5 still needs a dedicated review article (builders-log has coverage but reviews section doesn't).
+2026-07-22T00:04:17Z FINISHED run 3045891
+2026-07-22T00:04:18Z SESSION 3707 stopped
+2026-07-22T00:58:01Z STARTED run 3064758 (mode=wild)
+2026-07-22T00:58:03Z SESSION 3708 started

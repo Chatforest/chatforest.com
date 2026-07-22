@@ -6,6 +6,7 @@ og_description: "Context7 vs GitMCP vs Docfork vs Deepcon — which documentatio
 content_type: "Comparison"
 card_description: "Context7 vs GitMCP vs Docfork vs Deepcon vs Nia vs Docs MCP — which documentation MCP server feeds the best context to your AI coding agent? A side-by-side comparison with clear recommendations."
 last_refreshed: 2026-04-23
+sources_audited: 2026-07-22
 ---
 
 AI coding agents hallucinate APIs. They invent function signatures that don't exist, reference deprecated parameters, and confidently generate code against last year's version of a library. The fix is straightforward: feed your agent the current documentation at query time instead of relying on stale training data.
@@ -25,7 +26,7 @@ We've [reviewed the Context7 MCP server](/reviews/context7-mcp-server/) (3.5/5) 
 | Nia | 48→66 stars | Document Agent (autonomous PDF analysis), Data Extraction, Tracer code search |
 | Ref.Tools | 1,000→1,100 stars | Stable |
 | rtfmbro | 80→84 stars | Active commits through April 22 |
-| **MCP Security** | **Crisis** | **OX Security disclosed systemic RCE flaw in MCP architecture — 200K servers vulnerable, Anthropic declined to fix** |
+| **MCP Security** | **Crisis** | [**OX Security disclosed systemic RCE flaw in MCP architecture**](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/) **— 200K vulnerable instances, Anthropic declined protocol-level fix** |
 
 ## The Contenders
 
@@ -50,7 +51,7 @@ A company maintains a cloud-hosted registry of pre-processed documentation. Your
 
 **When it works best:** Standard libraries with well-known docs. You ask about React hooks or FastAPI middleware, and the server returns current, pre-chunked documentation instantly. No setup, no indexing — it just works.
 
-**When it fails:** When the registry hasn't crawled the library you need. When the documentation is community-contributed and hasn't been verified against the official source (Context7's [ContextCrush vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) showed this risk). When the vendor changes pricing — Context7 cut its free tier by 83–92% in January 2026.
+**When it fails:** When the registry hasn't crawled the library you need. When the documentation is community-contributed and hasn't been verified against the official source (Context7's [ContextCrush vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) showed this risk). When the vendor changes pricing — [Context7 cut its free tier by 83–92% in January 2026](https://blog.devgenius.io/context7-quietly-slashed-its-free-tier-by-92-16fa05ddce03).
 
 ### 2. Repo-Based Retrieval (GitMCP, rtfmbro)
 

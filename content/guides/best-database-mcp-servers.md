@@ -6,6 +6,7 @@ og_description: "MongoDB's 37-tool MCP server leads the pack. Plus Neon, Supabas
 content_type: "Comparison"
 card_description: "The official database MCP servers are archived. Here's what actually works: Postgres MCP Pro, DuckDB, DBHub, and the community alternatives worth using."
 last_refreshed: 2026-04-04
+sources_audited: 2026-07-22
 ---
 
 The official Anthropic database MCP servers — both SQLite and PostgreSQL — are archived. No security patches, no updates, and in Postgres's case, a [SQL injection vulnerability that bypasses read-only protection](/reviews/postgres-mcp-server/). If you're still using them, it's time to switch.
