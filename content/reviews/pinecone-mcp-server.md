@@ -6,6 +6,7 @@ og_description: "Pinecone's Developer MCP server brings cloud vector search to A
 content_type: "Review"
 card_description: "Pinecone's first-party Developer MCP server for AI-assisted vector search. 9 tools covering index management, record operations, cascading search, reranking, and documentation lookup — the most search-quality-focused vector DB MCP experience available."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-22
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
@@ -14,7 +15,7 @@ Part of our **[Databases MCP category](/categories/databases/)**.
 
 The Pinecone MCP server is the official tool for connecting AI coding agents to Pinecone, the managed vector database that pioneered serverless vector search. Instead of writing API calls to manage indexes and query embeddings, your agent can create indexes, upsert records, search across multiple indexes simultaneously, and rerank results — all through natural language.
 
-It's first-party, maintained by Pinecone at [pinecone-io/pinecone-mcp](https://github.com/pinecone-io/pinecone-mcp). With 64 GitHub stars, it's far less adopted than [Qdrant's MCP server](/reviews/qdrant-mcp-server/) (1,359 stars) or even [Chroma's](/reviews/chroma-mcp-server/) (535 stars). But Pinecone itself is one of the most widely used vector databases in production — 2.6 billion queries served — and the MCP server reflects a search-first philosophy rather than a database-management philosophy.
+It's first-party, maintained by Pinecone at [pinecone-io/pinecone-mcp](https://github.com/pinecone-io/pinecone-mcp). With 64 GitHub stars, it's far less adopted than [Qdrant's MCP server](/reviews/qdrant-mcp-server/) (1,359 stars) or even [Chroma's](/reviews/chroma-mcp-server/) (535 stars). But Pinecone itself is one of the most widely used vector databases in production, and the MCP server reflects a search-first philosophy rather than a database-management philosophy.
 
 This is actually one of *three* Pinecone MCP integrations. The Developer MCP (this review) handles index operations and documentation search. The Assistant MCP handles retrieval from Pinecone Assistant knowledge bases. And the **Claude Code Plugin** (launched February 11, 2026) brings Pinecone directly into Claude Code's plugin marketplace with semantic search, index management, assistant integration, and slash commands like `/pinecone:query`. Pinecone has said they may eventually merge the MCP servers, but for now, they serve different use cases.
 
@@ -81,7 +82,7 @@ Supported clients include Claude Desktop, Claude Code, Cursor, and Gemini CLI.
 
 **PulseMCP data unavailable** — the PulseMCP listing returns 404 as of May 2026.
 
-**Meanwhile, Pinecone the product is very active.** May 2026 saw a burst of major announcements: **Full Text Search** entered public preview May 7 (BM25 scoring, Lucene query syntax, 18-language tokenization, unified dense+sparse+metadata indexes); **Pinecone Nexus** ("Knowledge Engine for Agents") launched May 4; **Pinecone Marketplace** launched May 5; the **Builder Plan** ($20/month flat-rate tier, 10 indexes, 200 assistants) launched May 6 targeting developers between prototype and production; and **Dedicated Read Nodes** reached GA April 15. None of these product launches translated into MCP server updates.
+**Meanwhile, Pinecone the product is very active.** May 2026 saw a burst of major announcements: [**Full Text Search** entered public preview May 7](https://www.pinecone.io/blog/full-text-search/) (BM25 scoring, Lucene query syntax, 18-language tokenization, unified dense+sparse+metadata indexes); [**Pinecone Nexus** ("Knowledge Engine for Agents") launched May 4](https://www.pinecone.io/blog/knowledge-infrastructure-for-agents/); **Pinecone Marketplace** launched May 5; the [**Builder Plan** ($20/month flat-rate tier, 10 indexes, 200 assistants) launched May 6](https://www.pinecone.io/blog/builder-plan/) targeting developers between prototype and production; and **Dedicated Read Nodes** reached GA April 15. None of these product launches translated into MCP server updates.
 
 **Claude Code Plugin diverged: v1.4.0 released May 7.** While the MCP server sits dormant, [the Pinecone Plugin for Claude Code](https://github.com/pinecone-io/pinecone-claude-code-plugin) (60 stars, 10 forks) jumped to v1.4.0 on May 7 — adding a Full Text Search skill same-day as the FTS product launch, with a v1.4.1 quick-fix the same day. Last pushed May 18. This is a diverging trajectory: Pinecone is investing in the Claude Code Plugin while letting the broader MCP server stagnate. For Claude users, the Plugin is increasingly the better-maintained path.
 

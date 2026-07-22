@@ -79,9 +79,9 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 
 **npm downloads declined sharply: ~93K → ~26K/week.** Weekly downloads spiked to ~128K around the April 24 release, then settled to ~26K by mid-May — a 72% drop from the April 19 baseline of ~93K. This is a meaningful decline; whether it reflects a normalization after an inflated baseline or genuine traffic loss is unclear, but the number warrants watching.
 
-**Nebius acquisition: still no formal closure (3+ months).** The $275M deal was announced February 10, 2026. Three months later, no official press release confirms closing. Teams continue to operate together (Snowflake and MongoDB integrations are co-published), but no public announcement. API, data policies, and zero data retention remain unchanged.
+**Nebius acquisition: still no formal closure (3+ months).** [The $275M deal was announced February 10, 2026](https://siliconangle.com/2026/02/10/ai-infrastructure-giant-nebius-buys-agentic-search-startup-tavily/). Three months later, no official press release confirms closing. Teams continue to operate together (Snowflake and MongoDB integrations are co-published), but no public announcement. API, data policies, and zero data retention remain unchanged.
 
-**Previous updates (February–April 2026):** Nebius acquisition announced at $275M. Cursor MCP marketplace integration. Generative UI Research Canvas with LangChain/Tako/CopilotKit. Pay-as-you-go pricing at $0.008/credit. Research API pricing (4–250 credits/request). OpenClaw, NVIDIA AI-Q Blueprint, JetBrains Junie integrations. Tavily CLI (`tvly`) launched. Stars grew from ~1,500 to ~1,800. 3M monthly SDK downloads, 1M+ developer community.
+**Previous updates (February–April 2026):** [Nebius acquisition announced at $275M](https://siliconangle.com/2026/02/10/ai-infrastructure-giant-nebius-buys-agentic-search-startup-tavily/). Cursor MCP marketplace integration. Generative UI Research Canvas with LangChain/Tako/CopilotKit. Pay-as-you-go pricing at $0.008/credit. Research API pricing (4–250 credits/request). OpenClaw, NVIDIA AI-Q Blueprint, JetBrains Junie integrations. Tavily CLI (`tvly`) launched. Stars grew from ~1,500 to ~1,800. 3M monthly SDK downloads, 1M+ developer community.
 
 ## What Works Well
 
@@ -97,7 +97,7 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 
 ## What Doesn't Work Well
 
-**Search quality is keyword-based, not semantic.** Tavily scores 71% on the WebWalker benchmark compared to Exa's 81%. For specific, well-defined queries ("Next.js middleware configuration"), this doesn't matter. For conceptual queries ("frameworks that help with LLM observability"), keyword matching misses results that semantic search would find. This is the fundamental trade-off.
+**Search quality is keyword-based, not semantic.** Tavily scores 71% on the WebWalker benchmark compared to Exa's 81%, [per Exa's own comparison page](https://exa.ai/versus/tavily). For specific, well-defined queries ("Next.js middleware configuration"), this doesn't matter. For conceptual queries ("frameworks that help with LLM observability"), keyword matching misses results that semantic search would find. This is the fundamental trade-off.
 
 **Credits don't roll over (on monthly plans).** Unused credits expire at the end of each billing cycle. If you have a quiet month, those credits are gone. At the Growth tier ($500/month for 100,000 credits), this policy stings. The new pay-as-you-go option ($0.008/credit) mitigates this — you only pay for what you use — but the per-credit rate is higher than any monthly plan. Compare this to Brave's straightforward per-query pricing with no expiration on prepaid credits.
 
@@ -111,7 +111,7 @@ No npm, no Node.js, no Docker. This is the fastest MCP server setup I've seen �
 
 **No formal GitHub releases and infrequent npm releases.** Version 0.2.19 shipped April 24 — six weeks after 0.2.18. The releases page on GitHub remains empty; versioning goes entirely through npm. That's acceptable, but the long gap between releases means any fix or new feature is unavailable to pinned users for weeks.
 
-**Nebius acquisition still pending after three months.** The $275M deal was announced February 10, 2026. Three months later, no official closure announcement. The teams are clearly operating together (joint integrations with Snowflake and MongoDB), but no public statement confirms the close. Roadmap uncertainty persists. Pricing, free tier policy, and strategic direction could all shift under formal new ownership.
+**Nebius acquisition still pending after three months.** [The $275M deal was announced February 10, 2026](https://siliconangle.com/2026/02/10/ai-infrastructure-giant-nebius-buys-agentic-search-startup-tavily/). Three months later, no official closure announcement. The teams are clearly operating together (joint integrations with Snowflake and MongoDB), but no public statement confirms the close. Roadmap uncertainty persists. Pricing, free tier policy, and strategic direction could all shift under formal new ownership.
 
 ## Compared to Alternatives
 

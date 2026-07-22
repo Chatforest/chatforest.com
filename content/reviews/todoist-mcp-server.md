@@ -6,6 +6,7 @@ og_description: "Doist's official Todoist MCP server connects AI assistants to t
 content_type: "Review"
 card_description: "Doist's official MCP server for AI-assisted task management. 41+ tools covering tasks, projects, sections, comments, labels, filters, reminders, assignments, attachments, and workspaces. Remote-first at ai.todoist.net with OAuth and Streamable HTTP. MCP Apps for interactive widgets. Package renamed to @doist/todoist-mcp in v9.0.0."
 last_refreshed: 2026-05-18
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** [488 GitHub stars](https://github.com/Doist/todoist-mcp), 47 forks, [v9.0.0](https://www.npmjs.com/package/@doist/todoist-mcp), ~54.9K all-time PulseMCP visitors (#625 globally, ~1,500 weekly), 41+ tools across 10 categories, MIT license
@@ -26,14 +27,14 @@ Development continues at the same breakneck pace — **9 more releases from v8.9
 - **Package renamed to `@doist/todoist-mcp`** (v9.0.0, May 14) — the old `@doist/todoist-ai` package is now deprecated. Users on the old package name need to update their install commands and config. The hosted endpoint `ai.todoist.net/mcp` is unchanged.
 
 **Bug fixes that close previous criticisms:**
-- **`add-sections` bug closed** (#333, May 5) — the HTTP 500 error in Claude Web is fixed. The root cause was that section responses included extra fields that violated the output schema; v8.12.1 stripped the offending fields. No more "use Claude Code or ChatGPT instead" workaround needed.
-- **Auth error #323 closed** (April 22) — significant community engagement (29 comments, 12 reactions); resolved by Doist after investigation.
+- **`add-sections` bug closed** ([#333](https://github.com/Doist/todoist-mcp/issues/333), May 5) — the HTTP 500 error in Claude Web is fixed. The root cause was that section responses included extra fields that violated the output schema; v8.12.1 stripped the offending fields. No more "use Claude Code or ChatGPT instead" workaround needed.
+- **Auth error [#323](https://github.com/Doist/todoist-mcp/issues/323) closed** (April 22) — significant community engagement (29 comments, 12 reactions); resolved by Doist after investigation.
 
 **New tool:**
 - **`update-labels`** (v8.10.0, April 29) — labels now have full CRUD coverage. Tool count is 41+.
 
 **Goal tools in development:**
-- **5 new Goal MCP tools** are pending SDK integration (issue #433, updated May 15). Doist's Goals feature isn't currently reachable via MCP; this would be a significant addition when shipped.
+- **5 new Goal MCP tools** are pending SDK integration (issue [#433](https://github.com/Doist/todoist-mcp/issues/433), updated May 15). Doist's Goals feature isn't currently reachable via MCP; this would be a significant addition when shipped.
 
 **Infrastructure changes:**
 - **`@doist/todoist-sdk` upgraded to v10** (v8.11.0, May 1), then v10.1.1 (May 11) — keeping dependencies current
@@ -47,12 +48,12 @@ Development continues at the same breakneck pace — **9 more releases from v8.9
 - **npm**: `@doist/todoist-ai` ~3,518/week; `@doist/todoist-mcp` adding ~1,357/week in its first 4 days of existence — combined run-rate ~5K/week as the migration accelerates
 
 **Still open (as of May 18):**
-- **#332** (folder placement for `add-projects`) — still no fix; create-then-move workflow still required
-- **#481** (May 16) — bulk task creation hitting HTTP 403 rate limits at ~45+ tasks per call
-- **#478** (May 14) — OAuth `invalid_client` error when connecting via ChatGPT; client_id returned as URL instead of identifier
-- **#475** (May 11) — Hosted MCP requiring frequent reauth in Claude Code CLI even after token-refresh deployment; assigned to maintainer
-- **#191** (ongoing) — File attachment support for `add-comment` still in progress; assigned to maintainer
-- **#2** (long-standing) — Quick Add using Todoist's natural-language parser syntax still unimplemented
+- **[#332](https://github.com/Doist/todoist-mcp/issues/332)** (folder placement for `add-projects`) — still no fix; create-then-move workflow still required
+- **[#481](https://github.com/Doist/todoist-mcp/issues/481)** (May 16) — bulk task creation hitting HTTP 403 rate limits at ~45+ tasks per call
+- **[#478](https://github.com/Doist/todoist-mcp/issues/478)** (May 14) — OAuth `invalid_client` error when connecting via ChatGPT; client_id returned as URL instead of identifier
+- **[#475](https://github.com/Doist/todoist-mcp/issues/475)** (May 11) — Hosted MCP requiring frequent reauth in Claude Code CLI even after token-refresh deployment; assigned to maintainer
+- **[#191](https://github.com/Doist/todoist-mcp/issues/191)** (ongoing) — File attachment support for `add-comment` still in progress; assigned to maintainer
+- **[#2](https://github.com/Doist/todoist-mcp/issues/2)** (long-standing) — Quick Add using Todoist's natural-language parser syntax still unimplemented
 
 ---
 
@@ -79,8 +80,8 @@ Development remains relentless — **15 more releases from v8.4.1 to v8.9.0** be
 - **TextContent fix** (v8.8.5) — removed invalid `mimeType` property from TextContent blocks.
 
 **Still open:**
-- **`add-sections` bug** (#333) — still open with p1 label and Anthropic involvement. The client-specific issue in Claude Web persists; works in Claude Code, ChatGPT, and local MCP.
-- **Folder placement for `add-projects`** (#332) — still open. Create-then-move workflow still required.
+- **`add-sections` bug** ([#333](https://github.com/Doist/todoist-mcp/issues/333)) — still open with p1 label and Anthropic involvement. The client-specific issue in Claude Web persists; works in Claude Code, ChatGPT, and local MCP.
+- **Folder placement for `add-projects`** ([#332](https://github.com/Doist/todoist-mcp/issues/332)) — still open. Create-then-move workflow still required.
 
 **Todoist platform news:**
 - **Todoist Ramble** expanded: now supports sections ("Add quarterly report to the In Progress section"), available on Android Wear OS in beta, and recognizes contextual cues like launching from Today view.
