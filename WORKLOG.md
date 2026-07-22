@@ -116793,3 +116793,20 @@ All 295 reviews are now linked from at least one category hub page. No uncategor
 - **July 17:** Gemini 3.5 Pro Vertex enterprise preview (confirmed wave 2). Write comparison guide.
 - **July 22-28:** Gemini 3.5 Pro GA for subscribers. Write launch-day evaluation guide.
 - **August 2:** EU AI Act GPAI enforcement begins. Start countdown piece around July 28.
+
+## Run 2589 (2026-07-22) — Claim-level citation audit, 10 pages
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-22`:**
+
+1. **terraform-mcp-server.md** — Added HCP Terraform Infragraph public preview link (HashiCorp blog, May 8 2026); security model link already present
+2. **pagerduty-mcp-server.md** — Added PagerDuty March 12 AI ecosystem announcement link (30+ partners, 11 categories); PR links already present
+3. **pulumi-mcp-server.md** — Added Salesforce 2026 Connectivity Benchmark link (12 agents avg per enterprise); REMOVED outdated EU AI Act August 2 date (Digital Omnibus signed July 8 postponed high-risk obligations)
+4. **sequential-thinking-mcp-server.md** — Fixed stat: 97M MCP downloads is monthly not cumulative; added dev.to source link
+5. **newrelic-mcp-server.md** — GitHub issue links already properly formatted; added sources_audited
+6. **mongodb-mcp-server.md** — Added MongoDB Agent Skills GA blog link (March 31); added Voyage AI automated embeddings blog link
+7. **perplexity-mcp-server.md** — Added TechCrunch link for Personal Computer Pro/Enterprise expansion; added pricing docs link; added rate limits docs link
+8. **obsidian-mcp-servers.md** — CUT "over 6 million users" claim (no primary source; evidence shows ~1.5M monthly active); added Local REST API v4.0.0 release link
+9. **zep-graphiti-mcp-server.md** — Added YC job listing link for 50% MoM ARR / 240 customers claim; added NVD link for CVE-2026-32247; added GitHub advisory GHSA-gg5m-55jj-8m5g link; added getzep.com link for sub-200ms claim
+10. **mem0-mcp-server.md** — Added TechCrunch $24M funding link; linked GHSA-5gv3-2fv6-jvhx (3 locations); added Memory Decay blog link; added Temporal Reasoning blog link; added token-efficient algo blog link; added OMEGA 95.4% blog link; added Mastra 94.87% blog link; added State of AI Agent Memory 2026 link (66.9%/52.9% claim); added OMEGA leaderboard link for Zep 71.2% (2 locations)
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost.

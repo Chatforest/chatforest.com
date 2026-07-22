@@ -7,6 +7,7 @@ og_description: "The official Sequential Thinking MCP server provides structured
 content_type: "Review"
 card_description: "Anthropic's structured reasoning server for step-by-step problem solving. npm weekly downloads dropped ~30% to ~72K in May 2026. Still at v2025.12.18 — no release in 5+ months. Memory leak fix PR still unmerged. Anthropic recommends extended thinking for most use cases."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-22
 ---
 
 **Category:** [AI & ML Tools](/categories/ai-ml-tools/)
@@ -21,7 +22,7 @@ But this server exists in an increasingly awkward position. When it launched in 
 
 ## What's New (May 2026 Update)
 
-**Downloads dropped ~30% from April's peak.** Weekly npm downloads fell from ~103K (April 22) to [~72K](https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking) as of May 2026 — a notable pullback after the March/April rebound. Monthly totals were 411K in March (peak) and ~390K in April; May is tracking lower. Whether this is noise or trend is unclear, but the April "stabilization" narrative now looks more like a temporary plateau. The MCP SDK crossed 97 million cumulative downloads ecosystem-wide, suggesting the total MCP pie is growing even as this server's share shifts.
+**Downloads dropped ~30% from April's peak.** Weekly npm downloads fell from ~103K (April 22) to [~72K](https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking) as of May 2026 — a notable pullback after the March/April rebound. Monthly totals were 411K in March (peak) and ~390K in April; May is tracking lower. Whether this is noise or trend is unclear, but the April "stabilization" narrative now looks more like a temporary plateau. [The MCP SDK reached 97 million monthly downloads ecosystem-wide](https://dev.to/alanwest/mcp-hit-97-million-installs-the-protocol-war-is-over-47ab), suggesting the total MCP pie is growing even as this server's share shifts.
 
 **Still no new npm release — 5+ months and counting.** The latest published version remains [v2025.12.18](https://registry.npmjs.org/@modelcontextprotocol/server-sequential-thinking/latest), published December 18, 2025. Fixes from March 2026 (type coercion, tool annotations) and the April docs expansion still haven't reached npm. The gap between what's in the repo and what's published continues to widen.
 

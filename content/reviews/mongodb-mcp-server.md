@@ -6,6 +6,7 @@ og_description: "MongoDB's official MCP server is now GA with 41+ tools, Agent S
 content_type: "Review"
 card_description: "Now GA — the most comprehensive database MCP server with 40+ tools, an Agent Skills package bundling 7 MongoDB-specialist skills for coding agents, elicitation-based confirmation for destructive operations, and an interactive setup utility. 1,000 stars and climbing."
 last_refreshed: 2026-05-02
+sources_audited: 2026-07-22
 ---
 
 No other database MCP server comes close to this tool count. Part of our **[Databases MCP category](/categories/databases/)**.
@@ -25,7 +26,7 @@ The MongoDB MCP server connects AI agents to MongoDB databases — both self-hos
 The core of the server. These tools handle everyday database work:
 
 - **find** / **aggregate** / **count** — Query documents with full MongoDB query syntax, aggregation pipelines, and document counting.
-- **insert-many** / **update-many** / **delete-many** — CRUD operations with bulk support. The `insert-many` tool can now automatically generate embeddings for fields with vector search indexes using Voyage AI models.
+- **insert-many** / **update-many** / **delete-many** — CRUD operations with bulk support. The `insert-many` tool can now [automatically generate embeddings for fields with vector search indexes using Voyage AI models](https://www.mongodb.com/company/blog/product-release-announcements/unlocking-ai-search-introducing-automated-embedding-in-mongodb-vector-search).
 - **create-collection** / **drop-collection** / **rename-collection** / **drop-database** — Schema management tools. Yes, `drop-database` exists — read-only mode matters.
 - **create-index** / **drop-index** / **collection-indexes** — Index management, now including vector search indexes via a unified tool.
 - **collection-schema** / **collection-storage-size** / **db-stats** — Introspection tools for understanding data shape and storage.
@@ -125,7 +126,7 @@ npx mongodb-mcp-server --transport http --httpPort 3000
 
 **GENERALLY AVAILABLE (v1.9.0, March 24).** The MongoDB MCP Server exited public preview and is now GA. This is a significant milestone — the "public preview" label that cautioned about possible breaking changes is gone. Lexical and vector search functionality also moved from preview to GA in the same release.
 
-**MongoDB Agent Skills Package GA (March 31).** A new [mongodb/agent-skills](https://github.com/mongodb/agent-skills) repository (98 stars, Apache 2.0) bundles **seven Agent Skills** with the MCP Server. These are structured instructions and best practices that transform generalist coding agents into MongoDB specialists — covering connection management, schema design (with heuristics to avoid over-normalization), indexing strategies, query patterns, performance optimization, vector search/RAG, and operational safeguards. Available as single-install plugins for **Claude Code, Cursor, Gemini CLI, and VS Code** — each plugin bundles both the MCP Server and Agent Skills together.
+**[MongoDB Agent Skills Package GA (March 31)](https://www.mongodb.com/company/blog/product-release-announcements/introducing-mongodb-agent-skills).** A new [mongodb/agent-skills](https://github.com/mongodb/agent-skills) repository (98 stars, Apache 2.0) bundles **seven Agent Skills** with the MCP Server. These are structured instructions and best practices that transform generalist coding agents into MongoDB specialists — covering connection management, schema design (with heuristics to avoid over-normalization), indexing strategies, query patterns, performance optimization, vector search/RAG, and operational safeguards. Available as single-install plugins for **Claude Code, Cursor, Gemini CLI, and VS Code** — each plugin bundles both the MCP Server and Agent Skills together.
 
 **Interactive setup utility (v1.9.0).** Run `npx mongodb-mcp-server setup` for a guided configuration wizard that walks through AI client selection, read-only mode, connection string, and Atlas credentials. Creates the configuration file automatically and shows where it's stored.
 

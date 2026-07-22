@@ -6,6 +6,7 @@ og_description: "Zep's Graphiti MCP server builds temporal knowledge graphs for 
 content_type: "Review"
 card_description: "Zep's Graphiti MCP server for temporal AI agent memory. Nine tools across episode management, entity search, and fact retrieval. Open source, multi-database (FalkorDB/Neo4j), multi-LLM provider support."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-22
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
@@ -16,7 +17,7 @@ Graphiti is Zep's open-source temporal knowledge graph framework — and it's no
 
 Unlike flat memory stores that treat facts as static, Graphiti maintains temporal validity windows — it tracks not just what information exists, but when it was true, when it changed, and what replaced it. "Alice works at Acme" and "Alice left Acme in January" are both represented, with the graph understanding their temporal relationship.
 
-The MCP server lives inside the main `getzep/graphiti` repo (Apache 2.0, Python). Zep claims "hundreds of thousands of weekly users" for the MCP server and sub-200ms P95 retrieval latency. Zep reports 50% month-over-month ARR growth and 240+ customers including Fortune 500 companies — the company is actively hiring engineers and developer relations staff (posted March 2026).
+The MCP server lives inside the main `getzep/graphiti` repo (Apache 2.0, Python). Zep claims "hundreds of thousands of weekly users" for the MCP server and [sub-200ms P95 retrieval latency](https://www.getzep.com/). [Zep reports 50% month-over-month ARR growth and 240+ customers](https://www.ycombinator.com/companies/zep-ai/jobs/fY8UQN1-founding-gtm) including Fortune 500 companies — the company is actively hiring engineers and developer relations staff (posted March 2026).
 
 ## What It Does
 
@@ -125,7 +126,7 @@ v0.29.0 also ships a **Saga summarization API** (`Graphiti.summarize_saga(saga_i
 
 **Telemetry enabled by default.** The server phones home unless you explicitly disable it via environment variable. Not a dealbreaker, but worth knowing.
 
-**CVE-2026-32247 (patched in v0.28.2).** A high-severity Cypher injection vulnerability (CWE-943) in the search-filter construction logic for non-Kuzu backends. An attacker could execute arbitrary Cypher queries against the database — either directly or via indirect prompt injection in MCP deployments, where an LLM client could be induced to call `search_nodes` with attacker-controlled `entity_types` values. A payload like `Person) DETACH DELETE n RETURN n //` could destroy all graph data. The Kuzu backend was unaffected due to parameterized label handling. This was fixed in v0.28.2 (March 11) — upgrade immediately if running an older version.
+**[CVE-2026-32247](https://nvd.nist.gov/vuln/detail/CVE-2026-32247) (patched in v0.28.2).** A high-severity Cypher injection vulnerability (CWE-943) in the search-filter construction logic for non-Kuzu backends ([GitHub advisory GHSA-gg5m-55jj-8m5g](https://github.com/getzep/graphiti/security/advisories/GHSA-gg5m-55jj-8m5g)). An attacker could execute arbitrary Cypher queries against the database — either directly or via indirect prompt injection in MCP deployments, where an LLM client could be induced to call `search_nodes` with attacker-controlled `entity_types` values. A payload like `Person) DETACH DELETE n RETURN n //` could destroy all graph data. The Kuzu backend was unaffected due to parameterized label handling. This was fixed in v0.28.2 (March 11) — upgrade immediately if running an older version.
 
 ## Graphiti vs. Zep Cloud
 
@@ -161,7 +162,7 @@ The 229 open issues (and 173 open PRs) continue to grow, and the cluster of `bui
 
 ## Rating: 4/5
 
-Graphiti's MCP server earns a 4/5 for being the most architecturally sophisticated AI memory MCP server available — temporal knowledge graphs, multi-database support (FalkorDB, Neo4j, Kuzu, Neptune), multi-LLM provider flexibility, nine entity types, and full open-source deployment under Apache 2.0. v0.29.0's combined extraction (single LLM call for node + edge extraction, down from two) directly addresses the long-standing cost concern. It loses a point for heavy infrastructure requirements (Docker + graph DB + LLM API key minimum), 229 open issues including hallucination bugs and an unresolved `build_communities` cluster (six issues, six weeks, no fixes), 173 open PRs showing contribution flow outpacing merge capacity, "experimental" status despite the 1.0 label, and no hosted/remote option for zero-ops deployment. The disclosed CVE-2026-32247 (Cypher injection, patched in v0.28.2) is a reminder to keep versions current. But for teams that need agents to understand how information evolves over time, nothing else in the MCP ecosystem comes close.
+Graphiti's MCP server earns a 4/5 for being the most architecturally sophisticated AI memory MCP server available — temporal knowledge graphs, multi-database support (FalkorDB, Neo4j, Kuzu, Neptune), multi-LLM provider flexibility, nine entity types, and full open-source deployment under Apache 2.0. v0.29.0's combined extraction (single LLM call for node + edge extraction, down from two) directly addresses the long-standing cost concern. It loses a point for heavy infrastructure requirements (Docker + graph DB + LLM API key minimum), 229 open issues including hallucination bugs and an unresolved `build_communities` cluster (six issues, six weeks, no fixes), 173 open PRs showing contribution flow outpacing merge capacity, "experimental" status despite the 1.0 label, and no hosted/remote option for zero-ops deployment. The disclosed [CVE-2026-32247](https://nvd.nist.gov/vuln/detail/CVE-2026-32247) (Cypher injection, patched in v0.28.2) is a reminder to keep versions current. But for teams that need agents to understand how information evolves over time, nothing else in the MCP ecosystem comes close.
 
 **Use this if:** You're building conversational agents or complex applications where facts change over time, you want full data control with self-hosted deployment, you need multi-LLM and multi-database flexibility, and your infrastructure can support Docker + a graph database.
 

@@ -6,6 +6,7 @@ og_description: "Perplexity's official MCP server gives AI agents four tools spa
 content_type: "Review"
 card_description: "Four tools that return synthesized answers instead of links — search, ask, research, and reason. The answer engine approach, now reviewed."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-22
 ---
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
@@ -24,7 +25,7 @@ We've been comparing it against [Brave Search](/reviews/brave-search-mcp-server/
 
 **MCP server stagnant since April 14.** No new commits or releases since the April 14 Kiro badge consolidation. The server remains at v0.9.0 with 133 commits. PR #96 (draft Claude Code plugin manifest) was quietly closed without merge — reducing open PRs from three to two. PRs #97 (custom LLM gateway configuration) and #98 (GitHub Actions CI workflow) remain open. The 1 open issue (Sonar Reasoning Pro irrelevant results, #101) is also unresolved.
 
-**Personal Computer expanded to Pro and Enterprise (May 7).** Previously exclusive to Max subscribers ($200/month), Personal Computer is now available to Pro ($20/month) and Enterprise users. The Mac app was redesigned with a native experience and now supports local file editing, local computer use, Comet browser integration, and voice orchestration. The Computer tier has transitioned from premium feature to standard Perplexity infrastructure — making the agentic AI layer accessible to the much larger Pro subscriber base.
+**[Personal Computer expanded to Pro and Enterprise (May 7)](https://techcrunch.com/2026/05/07/perplexitys-personal-computer-is-now-available-everyone-on-mac/).** Previously exclusive to Max subscribers ($200/month), Personal Computer is now available to Pro ($20/month) and Enterprise users. The Mac app was redesigned with a native experience and now supports local file editing, local computer use, Comet browser integration, and voice orchestration. The Computer tier has transitioned from premium feature to standard Perplexity infrastructure — making the agentic AI layer accessible to the much larger Pro subscriber base.
 
 **Computer platform upgrades (May 4).** Claude Opus 4.7 was added as an orchestrator model option alongside GPT-5.4 and Claude Sonnet 4.6. Workflows & Skills introduced repeatable guided tasks covering market research, sales prep, slide creation, website audits, and website building. Snowflake and Databricks connectors added — enterprise teams can now query live warehouse data and produce cited reports directly within Computer. Microsoft Teams integration launched, bringing Computer workflows into team communication channels.
 
@@ -47,7 +48,7 @@ The Perplexity MCP server connects AI agents to Perplexity's Sonar API through f
 
 All four tools accept a `strip_thinking` parameter (boolean) that removes `<think>...</think>` tags from responses, conserving context tokens when you don't need to see the model's reasoning process.
 
-The four-tool design maps to four distinct use cases: quick lookups (search), everyday questions (ask), thorough investigation (research), and complex problem-solving (reason). Most search MCP servers give you one tool with different parameters. Perplexity gives you four tools with different models.
+The four-tool design maps to four distinct use cases: quick lookups (search), everyday questions (ask), thorough investigation (research), and complex problem-solving (reason). Most search MCP servers give you one tool with different parameters. Perplexity gives you four tools with [different models and pricing tiers](https://docs.perplexity.ai/docs/pricing).
 
 ## Setup
 
@@ -112,7 +113,7 @@ The HTTP server listens at `http://localhost:8080/mcp` with configurable `PORT`,
 
 **Pay-per-token pricing is hard to predict.** Perplexity's pricing combines per-token costs ($1–15/million depending on model) with per-request fees that vary by search mode ($5–14/1,000 requests for Low through High context). The free citation tokens help (see What's New above), but a `perplexity_ask` call still costs roughly $0.01 for a typical query while a `perplexity_research` call can cost significantly more — and the cost varies based on response length, search mode, and reasoning depth. Compare this to Brave's flat $5/1,000 queries or Tavily's credit system where you know the cost before you make the call.
 
-**Rate limits start low.** New accounts (Tier 0) get 50 requests per minute (1 QPS). This scales through five tiers up to Tier 5 at 2,000 requests per minute (33 QPS), but advancement is based on cumulative spending — you can't just pay for higher limits upfront. Deep Research is even more constrained at 5 requests per minute for lower tiers and 10 for higher tiers. For production deployments that need immediate throughput, this ramp-up period is an obstacle.
+**Rate limits start low.** [New accounts (Tier 0) get 50 requests per minute (1 QPS). This scales through five tiers up to Tier 5 at 2,000 requests per minute (33 QPS)](https://docs.perplexity.ai/docs/admin/rate-limits-usage-tiers), but advancement is based on cumulative spending — you can't just pay for higher limits upfront. Deep Research is even more constrained at 5 requests per minute for lower tiers and 10 for higher tiers. For production deployments that need immediate throughput, this ramp-up period is an obstacle.
 
 **No remote hosted server.** Tavily offers a hosted URL endpoint (`mcp.tavily.com/mcp/`) where you just paste a URL and you're connected — no npm, no Node.js, no Docker. Perplexity requires local installation via npx or Docker. For a company that runs a hosted AI service, the lack of a hosted MCP endpoint is a missed opportunity.
 

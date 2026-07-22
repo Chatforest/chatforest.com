@@ -7,6 +7,7 @@ content_type: "Review"
 card_description: "Pulumi's MCP server — registry documentation, stack management, resource search across clouds, and autonomous infrastructure via Neo agent delegation. Local npm + remote hosted modes."
 last_refreshed: 2026-05-21
 lastmod: 2026-05-21
+sources_audited: 2026-07-22
 ---
 
 Where the [Terraform MCP server](/reviews/terraform-mcp-server/) deliberately stops at documentation, Pulumi's MCP server keeps going.
@@ -111,7 +112,7 @@ docker pull mcp/pulumi:latest
 
 **Bun runtime support (April 2026).** Pulumi now [supports Bun as a fully supported runtime](https://www.pulumi.com/blog/), allowing TypeScript program execution without Node.js. This matters for MCP server users because `deploy-to-aws` and other code generation tools can now target Bun-based Pulumi programs — one fewer dependency in the toolchain.
 
-**Agent sprawl governance positioning.** Pulumi is [positioning its IaC platform](https://www.pulumi.com/blog/agent-sprawl-iac-platform-is-the-answer/) as the governance answer to enterprise AI agent proliferation. With the Salesforce 2026 Connectivity Benchmark estimating the average enterprise has twelve agents today (projected 67% growth over two years), and the EU AI Act's high-risk obligations taking effect August 2, 2026, the argument is that typed infrastructure graphs provide a better reasoning surface for agents than YAML or bash scripts. Neo operates on top of IaC, ESC, and policy features as guardrails, automatically respecting security rules and maintaining audit trails.
+**Agent sprawl governance positioning.** Pulumi is [positioning its IaC platform](https://www.pulumi.com/blog/agent-sprawl-iac-platform-is-the-answer/) as the governance answer to enterprise AI agent proliferation. With the [Salesforce 2026 Connectivity Benchmark](https://www.salesforce.com/news/stories/connectivity-report-announcement-2026/) estimating the average enterprise has twelve agents today (projected 67% growth over two years), the argument is that typed infrastructure graphs provide a better reasoning surface for agents than YAML or bash scripts. Neo operates on top of IaC, ESC, and policy features as guardrails, automatically respecting security rules and maintaining audit trails.
 
 **Previous provider version docs in registry (March 2026).** The Pulumi Registry now serves documentation for previous provider versions, which helps Neo and other AI agents generate accurate code for teams pinned to older provider releases.
 

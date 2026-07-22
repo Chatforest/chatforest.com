@@ -6,6 +6,7 @@ og_description: "Terraform MCP server: real-time registry docs, 40+ tools, plan/
 content_type: "Review"
 card_description: "HashiCorp's Terraform MCP server — real-time registry documentation, 40+ tools across registry, plan/apply inspection, workspace management, variable sets, stacks, and policy governance. Dual transport, OTel instrumentation, Go-native."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** 1,370 GitHub stars, 157 forks, 13 releases, v0.5.2 (Apr 28, 2026), 8 open issues, 5 open PRs. Available on AWS Marketplace (free) and Docker MCP Catalog. PulseMCP: ~487K all-time visitors, ~3.3K weekly, #118 globally. HashiCorp BSL. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
@@ -160,7 +161,7 @@ TRANSPORT_MODE=streamable-http terraform-mcp-server
 
 **Formal security model.** HashiCorp published a [dedicated security model](https://developer.hashicorp.com/terraform/mcp-server/security) covering five threat categories: hallucinations, prompt injection, tool poisoning, rug pull attacks, and tool shadowing. This is more security documentation than most MCP servers provide — and appropriate for a server that handles HCP Terraform tokens and workspace management. A May 2026 MCPSafe scan (issue [#361](https://github.com/hashicorp/terraform-mcp-server/issues/361)) scored the server 94/100, Grade B — "strong security posture" with 0 critical, 0 high, and 5 medium findings. No maintainer response yet, but the score reflects well relative to most MCP servers.
 
-**Growing ecosystem presence.** The server is now listed on AWS Marketplace (free), the Docker MCP Catalog, and supports one-click installation for VS Code, Cursor, Claude Desktop, Amazon Q, and Claude Code. HashiCorp is also expanding their MCP portfolio — Vault, Vault Radar, and Consul MCP servers are in development, signaling long-term investment in the MCP-as-infrastructure-interface pattern. IBM Think 2026 (May 2026) brought a related announcement: **HCP Terraform powered by Infragraph** entered public preview on May 8 for US customers. Infragraph is a centralized, event-driven knowledge graph providing a unified view of hybrid/multi-cloud infrastructure — IBM is framing MCP servers as foundational to "agentic infrastructure automation," with the Terraform MCP server as a flagship product in that narrative.
+**Growing ecosystem presence.** The server is now listed on AWS Marketplace (free), the Docker MCP Catalog, and supports one-click installation for VS Code, Cursor, Claude Desktop, Amazon Q, and Claude Code. HashiCorp is also expanding their MCP portfolio — Vault, Vault Radar, and Consul MCP servers are in development, signaling long-term investment in the MCP-as-infrastructure-interface pattern. IBM Think 2026 (May 2026) brought a related announcement: [**HCP Terraform powered by Infragraph** entered public preview on May 8 for US customers](https://www.hashicorp.com/en/blog/introducing-hcp-terraform-powered-by-infragraph-in-public-preview). Infragraph is a centralized, event-driven knowledge graph providing a unified view of hybrid/multi-cloud infrastructure — IBM is framing MCP servers as foundational to "agentic infrastructure automation," with the Terraform MCP server as a flagship product in that narrative.
 
 ## What Doesn't Work Well
 

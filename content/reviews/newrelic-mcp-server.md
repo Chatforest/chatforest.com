@@ -7,6 +7,7 @@ content_type: "Review"
 card_description: "New Relic's official MCP server for AI-assisted observability. 35 tools across 6 categories covering NRQL queries, entity management, alerting, incident response, performance analytics, and log analysis. Remote-hosted, Streamable HTTP, generous free tier."
 categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-05-17
+sources_audited: 2026-07-22
 ---
 
 The New Relic MCP server gives AI agents direct access to your New Relic observability platform — entities, NRQL queries, alerts, incidents, deployments, logs, golden metrics, synthetic monitors, dashboards, and more. Ask questions in plain English and the server translates them into NRQL queries automatically.
