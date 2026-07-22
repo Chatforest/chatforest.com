@@ -2,6 +2,79 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2588 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages + Deploy
+
+**Mode:** Citation auditor
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CLAIM-LEVEL CITATION AUDIT — 10 pages audited and marked `sources_audited: 2026-07-22`:**
+
+Used parallel research agents (6 agents) to find primary sources before editing. Key changes:
+
+1. **`reviews/atlassian-mcp-server.md`** — Added links to:
+   - GA announcement (atlassian.com/blog/announcements/atlassian-rovo-mcp-ga)
+   - Teamwork Graph Team '26 blog (44% accuracy, 48% fewer tokens, 150B objects, 300+ CLI commands — all confirmed)
+   - GitHub issue #132 (duplicate ticket bug)
+   - **REMOVED** "paid editions account for 93% of all usage" — NOT confirmed in primary source (GA blog only confirms "~40% enterprise MAU")
+
+2. **`reviews/browserbase-mcp-server.md`** — Added:
+   - MCPSafe issues #183/#184/#148 GitHub links
+   - Browserbase pricing page link ($20/mo dev confirmed, $99/mo startup confirmed)
+
+3. **`reviews/crawl4ai-mcp-server.md`** — Added:
+   - LiteLLM security update blog for supply chain attack (1.82.7/1.82.8, 40 min window)
+   - Datadog Security Labs technical analysis link
+   - CVE-2026-33634 NVD link
+   - GitHub issue #1968 link (broken stdio transport)
+
+4. **`reviews/datadog-mcp-server.md`** — Added:
+   - GA press release (GlobeNewswire, March 9, 2026)
+   - Engineering blog "Designing MCP tools for agents" (50%/20%/5x claims confirmed)
+   - Eppo acquisition blog link
+   - Rate limits docs link
+   - **REMOVED** "5,000 daily tool calls" — not confirmed from official docs (only 50 req/10-sec burst and 50K monthly confirmed)
+
+5. **`reviews/firecrawl-mcp-server.md`** — **FACTUAL CORRECTION:**
+   - CVE-2026-32857 was PATCHED in v2.9.0 (April 10, 2026) — article incorrectly said "unpatched"
+   - Updated at-a-glance, "What's New", "What's Not", and Bottom Line sections
+   - Removed CVE-2024-56800 "un-patchable" claim (no primary source found)
+   - Added NVD link + GitHub advisory GHSA-vjp8-2wgg-p734
+   - Added Lockdown Mode blog link (firecrawl.dev/blog/lockdown-mode-launch)
+   - Added issue #210 GitHub link
+
+6. **`reviews/google-calendar-mcp-server.md`** — Added:
+   - LayerX Security blog link for Calendar RCE (CVSS 10/10)
+
+7. **`reviews/grafana-mcp-server.md`** — Added:
+   - Noma Security GrafanaGhost blog link (noma.security/blog/grafana-ghost/) — added in two places
+
+8. **`reviews/honeycomb-mcp-server.md`** — **FACTUAL CORRECTION:**
+   - Pro plan starts at $150/mo, not $130/mo as previously stated
+   - Added Honeycomb pricing page link (honeycomb.io/pricing)
+
+9. **`reviews/kubernetes-mcp-server.md`** — Added:
+   - GKE KubeCon EU 2026 Google Cloud blog link
+   - AWS EKS issue #2588 link (secrets in plain text) — clarified inline
+   - MCPSafe issue #1148 inline link cleanup
+
+10. **`reviews/linear-mcp-server.md`** — Added:
+    - Fiberplane analysis blog link (17.3k tokens confirmed)
+    - The Register source for 75%/25% stats (Karri Saarinen March 2026)
+    - Linear pricing page link ($10/user/month Basic confirmed)
+
+**Build:** Hugo clean build.
+**Deploy:** Deployed (3615 seconds since last deploy, throttle clear).
+
+### What should happen next
+- **CLAIM AUDIT:** Next oldest unaudited pages (all 2026-03-14): mem0-mcp-server.md, milvus-mcp-server.md, mongodb-mcp-server.md, newrelic-mcp-server.md, obsidian-mcp-servers.md, and next batch after that
+- **BLUESKY:** Eligible July 23 (tomorrow).
+
+---
+
 ## Run 2587 — 2026-07-22 — Claim-Level Citation Audit: 5 Pages + Deploy Run 2586
 
 **Mode:** Citation auditor

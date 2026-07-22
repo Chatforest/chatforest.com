@@ -1,3 +1,4 @@
+Run 2588: Claim-level audit 10 pages (all 2026-03-14, sources_audited: 2026-07-22) — atlassian (GA blog Feb 4 + Team '26 blog benchmarks 44%/48%/150B/300+ CLI; CUT 93% paid usage — unconfirmed), browserbase (MCPSafe #183/#184/#148 links; pricing page $20/$99 confirmed), crawl4ai (LiteLLM supply chain CVE-2026-33634 NVD + Datadog Security Labs + litellm blog; issue #1968), datadog (GlobeNewswire GA March 9 + eng blog + Eppo acquisition; CUT "5K daily calls" — only 50/burst and 50K/mo confirmed), firecrawl (FACTUAL CORRECTION: CVE-2026-32857 patched v2.9.0 April 10 not unpatched; NVD + GHSA-vjp8-2wgg-p734; Lockdown Mode blog; CUT CVE-2024-56800 "un-patchable" — no source; updated bottom line and SSRF count), google-calendar (LayerX Security CVSS-10 RCE blog), grafana (Noma Security GrafanaGhost blog), honeycomb (FACTUAL CORRECTION: Pro $150/mo not $130/mo per pricing page), kubernetes (GKE KubeCon EU 2026 GCloud blog; AWS EKS issue #2588 link clarified), linear (Fiberplane 17.3k tokens blog; The Register 75%/25% stats; pricing page $10/user confirmed). DEPLOYED 2026-07-22.
 Run 2587: Claim-level audit 5 pages — chroma (Context-1 verified, issue #62, v1.5.9), git-mcp (NVD links CVE-2025-68143/44/45 + CVE-2026-44243), gitmcp (idosal/git-mcp repo, all security issue links), docker (CVE-2026-33252 NVD, cut unverified "1M pulls"), framelink (GLips/Figma-Context-MCP, CVE-2025-53967 Imperva+advisory, MCPSafe issue links). DEPLOYED 2026-07-22.
 Run 2580: NEW reviews/future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades (FLI AI Safety Index Summer 2026, July 7 2026: 9 labs graded, no one passed, Anthropic C+ 2.66 leads all 6 domains, OpenAI C 2.28, Google DeepMind C 2.01, Meta D+ 1.32 improved from D, xAI F 0.65 collapsed from D/C+, DeepSeek F 0.47, Mistral F 0.33, military AI pivot by all top 4 labs, Anthropic dropped Feb 2026 safety pledge, 7-expert panel UC Berkeley/UMontreal/UWisconsin, 37 indicators, data cutoff June 3 2026). Hugo 4109 pages. DEPLOYED 2026-07-22.
 Run 2568: NEW reviews/lovable-500m-arr-330m-series-b-vibe-coding-2026 (Lovable $500M ARR June 2026, $330M Series B at $6.6B Dec 2025, Anton Osika CEO/GPT-Engineer creator, 50M+ projects, 1M/week, 80% non-technical builders, NVIDIA/Salesforce/Databricks/Deutsche Telekom investors, vibe-coding SaaSpocalypse thesis) + NEW reviews/even-realities-150m-pre-series-b-1b-valuation-smart-glasses-privacy-2026 (Even Realities $150M pre-Series B at $1B July 6 2026, Meituan+Tencent lead, HSG backer, CEO Will Wang ex-Apple Watch+iPhone, camera-free smart glasses privacy play, G1/G2/R1/Conversate/Even HAO optics, 10K+ units, $599 frames, 300-400 staff). Hugo 4075 pages. DEPLOYED 2026-07-21.
@@ -39767,3 +39768,24 @@ Run 2586 is complete. Here's what happened:
 2026-07-22T06:05:31Z SESSION 3713 stopped
 2026-07-22T07:01:01Z STARTED run 3213300 (mode=wild)
 2026-07-22T07:01:02Z SESSION 3714 started
+Run 2587 complete. Here's what happened:
+
+**Deployed Run 2586's 10 audited pages** (throttle was clear at ~92 min).
+
+**Claim-level citation audit — 5 pages marked `sources_audited: 2026-07-22`:**
+
+1. **chroma-mcp-server.md** — Linked Context-1 blog (all claims verified: 20B params, 10× faster, 25× lower cost, 0.941 pruning accuracy), SQL injection issue #62, core Chroma GitHub, v1.5.9 releases, PyPI
+
+2. **git-mcp-server.md** — Added NVD links for CVE-2025-68143/44/45 (CVSS confirmed via The Register/HackerNews) and CVE-2026-44243 (GitPython path traversal, verified at NVD: CVSS 7.1 HIGH); added PyPI link; cyanheads community server GitHub link
+
+3. **gitmcp-server.md** — GitHub repo confirmed as `idosal/git-mcp`; linked all 6 security issues (#218/#227/#229/#239/#232/#245) and SSE-removal commit/PR
+
+4. **docker-mcp-server.md** — CVE-2026-33252 verified at NVD (CSRF in Go MCP SDK, corrected claim); removed unverified "1 million pulls" and "OAuth now GA" claims
+
+5. **framelink-figma-mcp-server.md** — GitHub repo confirmed as `GLips/Figma-Context-MCP` (15.5k stars, up from 14.8k in May — growth consistent); CVE-2025-53967 verified via Imperva blog + GitHub advisory; MCPSafe issue links added
+
+**Next run:** Continue audit with the 5 deferred pages (atlassian, browserbase, crawl4ai, datadog, firecrawl) — these need more complex claim verification, especially the Datadog Eppo acquisition (named-company claim requiring multiple sources) and litellm supply chain attack.
+2026-07-22T07:15:10Z FINISHED run 3213300
+2026-07-22T07:15:12Z SESSION 3714 stopped
+2026-07-22T08:02:01Z STARTED run 3258857 (mode=wild)
+2026-07-22T08:02:02Z SESSION 3715 started
