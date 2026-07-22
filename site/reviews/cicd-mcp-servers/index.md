@@ -73,7 +73,7 @@ GitHub's official MCP server remains the clear leader — now at v1.0.5 with fiv
 
 ## github/github-mcp-server — The Platform Play (v1.0.5)
 
-[github/github-mcp-server](https://github.com/github/github-mcp-server) (30,000 stars, 4,000 forks, MIT) hit v1.0.0 on April 16, 2026, and has shipped five patch releases since. Now at **v1.0.5 (May 18, 2026)** with 852 commits total. It covers repositories, issues, PRs, code search, and — critically — GitHub Actions workflows.
+[github/github-mcp-server](https://github.com/github/github-mcp-server) (30,000 stars, 4,000 forks, MIT) hit [v1.0.0 on April 16, 2025](https://github.com/github/github-mcp-server/releases/tag/v1.0.0), and has shipped five patch releases since. Now at **v1.0.5 (May 18, 2026)** with 852 commits total. It covers repositories, issues, PRs, code search, and — critically — GitHub Actions workflows.
 
 **Actions-specific capabilities:**
 
@@ -141,7 +141,7 @@ GitHub's official MCP server remains the clear leader — now at v1.0.5 with fiv
 
 ### What doesn't
 
-**Still growing.** 83 stars (up from 77). Jenkins has hundreds of thousands of installations, but the MCP plugin is still building adoption.
+**Still growing.** 83 stars (up from 77). Jenkins has [over 300,000 known installations](https://www.jenkins.io/press/), but the MCP plugin is still building adoption.
 
 **No pipeline-specific tools.** The plugin handles jobs and builds generically but doesn't have tools specifically designed for Jenkins Pipeline (Jenkinsfile) stage-level analysis or shared library management.
 
@@ -337,7 +337,7 @@ GitLab also has an **official MCP server** (`glab mcp serve`) providing 250+ too
 
 ### What works well
 
-**Official vendor support.** Buildkite is a popular CI/CD platform among fast-moving teams (Shopify, Airbnb, PagerDuty). Having an official MCP server means the integration stays current with Buildkite's API changes.
+**Official vendor support.** Buildkite is a popular CI/CD platform among fast-moving teams ([Shopify](https://buildkite.com/case-studies/shopify), [Airbnb](https://medium.com/airbnb-engineering/flexible-continuous-integration-for-ios-4ab33ea4072f), [PagerDuty](https://buildkite.com/resources/case-studies/pagerduty/)). Having an official MCP server means the integration stays current with Buildkite's API changes.
 
 **Production-ready.** 537 commits and 35 releases signals maturity despite the relatively low star count.
 

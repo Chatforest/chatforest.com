@@ -159,7 +159,7 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 **Monorepo move complicates contributions.** The standalone repo is archived. Contributing now means navigating PostHog's full monorepo (40,000+ commits). For a small bug fix or feature request, this raises the barrier.
 
-**PostHog pricing structure.** PostHog Cloud has a generous free tier (1M events/month), but costs scale with usage. The MCP server makes it easier to query data, but PostHog's usage-based pricing means heavy agent usage of analytics queries could increase costs.
+**PostHog pricing structure.** PostHog Cloud has a [generous free tier (1M events/month)](https://posthog.com/pricing), but costs scale with usage. The MCP server makes it easier to query data, but PostHog's usage-based pricing means heavy agent usage of analytics queries could increase costs.
 
 ---
 
@@ -289,7 +289,7 @@ The gap is closing: Sentry's hosted Plausible server means privacy-first teams n
 
 ### Why it matters
 
-**Free and official.** Clarity is a completely free analytics tool (no usage caps). Combined with an official MCP server from the `microsoft/` GitHub organization, this is the lowest-cost entry point for analytics MCP integration. 81 stars and 52 commits show active development.
+**Free and official.** [Clarity](https://clarity.microsoft.com/) is a completely free analytics tool (no usage caps). Combined with an official MCP server from the `microsoft/` GitHub organization, this is the lowest-cost entry point for analytics MCP integration. 81 stars and 52 commits show active development.
 
 **Session recordings are unique.** No other analytics MCP server exposes session recording data. An AI agent can search for specific user sessions — useful for debugging UX issues or understanding user behavior patterns that aggregate metrics miss.
 

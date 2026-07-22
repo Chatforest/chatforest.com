@@ -27,7 +27,7 @@ The headline finding this cycle: **Confluent's official server now targets self-
 
 **Critical update: the "Confluent Cloud-only" limitation is removed.** The server now explicitly supports **Confluent Platform** (self-managed/on-premises Kafka) in addition to Confluent Cloud, addressing the biggest gap from prior reviews. Self-managed Kafka operators no longer need to fall back to community servers.
 
-**Confluent Intelligence Q1 2026 — A2A integration for Streaming Agents (Open Preview):** Confluent's Streaming Agents can now use the **Agent2Agent (A2A) protocol** to trigger and coordinate external AI agents across LangChain, CrewAI, SAP, Salesforce, and other A2A-capable platforms — all over a reliable, replayable Kafka backbone. The MCP+A2A two-layer stack (MCP for tool integration, A2A for agent-to-agent coordination) is Confluent's bet on the enterprise agentic architecture standard.
+**[Confluent Intelligence Q1 2026](https://www.confluent.io/blog/2026-q1-confluent-intelligence-update/) — A2A integration for Streaming Agents (Open Preview):** Confluent's Streaming Agents can now use the **Agent2Agent (A2A) protocol** to trigger and coordinate external AI agents across LangChain, CrewAI, SAP, Salesforce, and other A2A-capable platforms — all over a reliable, replayable Kafka backbone. The MCP+A2A two-layer stack (MCP for tool integration, A2A for agent-to-agent coordination) is Confluent's bet on the enterprise agentic architecture standard.
 
 *Full review: [Confluent MCP Server](/reviews/confluent-mcp-server/) — Rating: 3.5/5*
 
@@ -124,7 +124,7 @@ This is what a mature cloud-native MCP server looks like — managed infrastruct
 |--------|-------|----------|-------|------|---------|
 | [microsoft/mcp](https://github.com/microsoft/mcp) (Azure MCP) | 3,000 | TypeScript | 276 across 57 services | Azure identities | — |
 
-**Azure MCP Server 2.0** (stable, April 2026) is a major milestone. The consolidated [microsoft/mcp](https://github.com/microsoft/mcp) (3,000 stars) now contains **276 MCP tools across 57 Azure services**, covering end-to-end scenarios from provisioning to deployment to monitoring and operational diagnostics. The original [Azure/azure-mcp](https://github.com/Azure/azure-mcp) was archived in February 2026 — all development is in the microsoft/mcp monorepo. **Azure MCP Server is now built into Visual Studio 2026**, further broadening its reach.
+**Azure MCP Server 2.0** (stable, April 2026) is a major milestone. The consolidated [microsoft/mcp](https://github.com/microsoft/mcp) (3,000 stars) now contains **[276 MCP tools across 57 Azure services](https://devblogs.microsoft.com/azure-sdk/announcing-azure-mcp-server-2-0-stable-release/)**, covering end-to-end scenarios from provisioning to deployment to monitoring and operational diagnostics. The original [Azure/azure-mcp](https://github.com/Azure/azure-mcp) was archived in February 2026 — all development is in the microsoft/mcp monorepo. **Azure MCP Server is now built into Visual Studio 2026**, further broadening its reach.
 
 The 2.0 release introduces **self-hosted remote MCP server support** — Azure MCP can now run as a remote server (not just stdio), and is also available as an **MCP Bundle (.mcpb)** format for single-file distribution. Service Bus tools remain: queue management (create, list, delete), topic management, subscription management, **message peeking** (inspect without consuming), message details, and runtime details (message counts, status).
 

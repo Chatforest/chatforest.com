@@ -336,7 +336,7 @@
 </table>
 <p>GitHub&rsquo;s official MCP server remains the clear leader — now at v1.0.5 with five patch releases since v1.0.0. Jenkins has the deepest ecosystem with five servers. Buildkite is a stable official vendor entry. Azure DevOps is pioneering the cloud-native approach with a hosted Remote MCP Server still in public preview. CircleCI still has the best diagnostic-first tooling. Argo CD&rsquo;s 16.5% star growth in 30 days is the strongest momentum signal in this category.</p>
 <h2 id="githubgithub-mcp-server--the-platform-play-v105">github/github-mcp-server — The Platform Play (v1.0.5)</h2>
-<p><a href="https://github.com/github/github-mcp-server">github/github-mcp-server</a> (30,000 stars, 4,000 forks, MIT) hit v1.0.0 on April 16, 2026, and has shipped five patch releases since. Now at <strong>v1.0.5 (May 18, 2026)</strong> with 852 commits total. It covers repositories, issues, PRs, code search, and — critically — GitHub Actions workflows.</p>
+<p><a href="https://github.com/github/github-mcp-server">github/github-mcp-server</a> (30,000 stars, 4,000 forks, MIT) hit <a href="https://github.com/github/github-mcp-server/releases/tag/v1.0.0">v1.0.0 on April 16, 2025</a>, and has shipped five patch releases since. Now at <strong>v1.0.5 (May 18, 2026)</strong> with 852 commits total. It covers repositories, issues, PRs, code search, and — critically — GitHub Actions workflows.</p>
 <p><strong>Actions-specific capabilities:</strong></p>
 <ul>
 <li><strong>get_job_logs</strong> — retrieve workflow job logs for debugging failed builds</li>
@@ -384,7 +384,7 @@
 <p><strong>Extensible architecture.</strong> The <code>McpServerExtension</code> interface lets other Jenkins plugins expose their own MCP tools. This means the ecosystem can grow without the core plugin becoming monolithic.</p>
 <p><strong>Replay support.</strong> The <code>replayBuild</code> and <code>getReplayScripts</code> tools let an agent replay a build with modified Groovy scripts — useful for debugging Pipeline issues without committing code changes.</p>
 <h3 id="what-doesnt-1">What doesn&rsquo;t</h3>
-<p><strong>Still growing.</strong> 83 stars (up from 77). Jenkins has hundreds of thousands of installations, but the MCP plugin is still building adoption.</p>
+<p><strong>Still growing.</strong> 83 stars (up from 77). Jenkins has <a href="https://www.jenkins.io/press/">over 300,000 known installations</a>, but the MCP plugin is still building adoption.</p>
 <p><strong>No pipeline-specific tools.</strong> The plugin handles jobs and builds generically but doesn&rsquo;t have tools specifically designed for Jenkins Pipeline (Jenkinsfile) stage-level analysis or shared library management.</p>
 <hr>
 <h2 id="lanbaoshenmcp-jenkins--the-standalone-alternative">lanbaoshen/mcp-jenkins — The Standalone Alternative</h2>
@@ -528,7 +528,7 @@
 <li>Built from Chainguard static image, runs as unprivileged user (container-first security)</li>
 </ul>
 <h3 id="what-works-well-6">What works well</h3>
-<p><strong>Official vendor support.</strong> Buildkite is a popular CI/CD platform among fast-moving teams (Shopify, Airbnb, PagerDuty). Having an official MCP server means the integration stays current with Buildkite&rsquo;s API changes.</p>
+<p><strong>Official vendor support.</strong> Buildkite is a popular CI/CD platform among fast-moving teams (<a href="https://buildkite.com/case-studies/shopify">Shopify</a>, <a href="https://medium.com/airbnb-engineering/flexible-continuous-integration-for-ios-4ab33ea4072f">Airbnb</a>, <a href="https://buildkite.com/resources/case-studies/pagerduty/">PagerDuty</a>). Having an official MCP server means the integration stays current with Buildkite&rsquo;s API changes.</p>
 <p><strong>Production-ready.</strong> 537 commits and 35 releases signals maturity despite the relatively low star count.</p>
 <h3 id="what-doesnt-6">What doesn&rsquo;t</h3>
 <p><strong>Low adoption.</strong> 49 stars — essentially flat over 30 days. Buildkite&rsquo;s market share is smaller than GitHub Actions, Jenkins, or GitLab CI.</p>

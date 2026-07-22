@@ -1,7 +1,8 @@
 ---
 title: "CRM MCP Servers — Salesforce, HubSpot, Pipedrive, and Beyond"
 date: 2026-03-15T02:05:00+09:00
-lastmod: 2026-05-21T18:00:00+09:00
+lastmod: 2026-07-22
+sources_audited: 2026-07-22
 description: "CRM MCP servers let AI agents query leads, manage contacts, update deals, and run reports across Salesforce, HubSpot, Pipedrive, and more."
 og_description: "CRM MCP servers: Salesforce CLI (408 stars, crossed 400, v0.30.9), HubSpot remote GA (full read/write), Attio v1.0.0 (1,385 commits), smn2gnt token-optimized output (-75% tokens). Rating: 4/5."
 content_type: "Review"
@@ -115,11 +116,11 @@ The landscape has shifted dramatically. Four CRM platforms — Salesforce, HubSp
 
 ## HubSpot — From Empty Repo to Full GA in One Quarter
 
-The biggest shift in the CRM MCP landscape: HubSpot went from an empty GitHub repo to **two production GA servers** in early 2026. This changes the calculus for HubSpot's 228,000+ customers.
+The biggest shift in the CRM MCP landscape: HubSpot went from an empty GitHub repo to **two production GA servers** in early 2026. This changes the calculus for [HubSpot's nearly 248,000 customers (as of Q4 2024)](https://ir.hubspot.com/news-releases/news-release-details/hubspot-reports-fourth-quarter-2024-results).
 
 ### HubSpot Remote MCP Server (GA — April 13, 2026)
 
-The [remote HubSpot MCP server](https://developers.hubspot.com/mcp) is a hosted, first-party server that gives any MCP-compatible AI tool secure read and write access to your HubSpot CRM data.
+The [remote HubSpot MCP server](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available) is a hosted, first-party server that gives any MCP-compatible AI tool secure read and write access to your HubSpot CRM data.
 
 **Read and write access:**
 - CRM objects: contacts, companies, deals, tickets, carts, products, orders, line items, invoices, quotes, subscriptions, segments (lists)
@@ -155,7 +156,7 @@ But for standard CRM operations (CRUD on deals, tickets, contacts, companies, en
 
 **v1.4.0 consolidated 70+ resource-specific tools into 18 universal tools** (68% reduction) while maintaining full functionality. Complete CRUD for Companies, People, Deals, Tasks, Lists, and Notes. Advanced AND/OR filtering, batch operations, content search, 10 MCP prompts, and Claude Skills with workspace schema auto-generation. ChatGPT Developer Mode integration with MCP safety annotations for auto-approval workflows. OAuth support for Cloudflare Workers deployment. 89.7% speed improvement with 227KB memory reduction in recent performance work.
 
-If you use Attio, this is a first-class MCP integration. The 97.15/100 production readiness score speaks for itself.
+If you use Attio, this is a first-class MCP integration. The [97.15/100 production readiness score](https://github.com/kesslerio/attio-mcp-server) (self-reported in the README) speaks for itself.
 
 ### Pipedrive — Read-Only Leader, Write-Capable Newcomer
 
@@ -169,7 +170,7 @@ The Dynamics 365 story has changed completely. **Microsoft's Dataverse MCP serve
 
 **11 tools:** create_record, describe_table, list_tables, read_query (T-SQL SELECT), update_record, create_table, update_table, delete_table, delete_record, search, and fetch. Supports Copilot Studio agents, VS Code GitHub Copilot, Claude Desktop, Claude Code, and other MCP clients.
 
-**New in April 2026 — Management MCP Server (GA):** Microsoft launched a **Dataverse Management MCP Server** as part of the 2026 Wave 1 release. This is a meta-level capability — a central API-based foundation for discovering and building custom MCP servers. Developers can query and explore over **1,470 connectors** and their individual actions, discover custom APIs available in their organization, and build new MCP servers by selecting connector actions and reusable tools. Clone an existing MCP server and tailor it. This positions Dataverse not just as a CRM MCP server but as a **platform for building MCP servers**.
+**New in April 2026 — Management MCP Server (GA):** Microsoft launched a **Dataverse Management MCP Server** as part of the 2026 Wave 1 release. This is a meta-level capability — a central API-based foundation for discovering and building custom MCP servers. Developers can query and explore over **[1,470 connectors](https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/data-platform/discover-build-customize-extend-management-mcp-server)** and their individual actions, discover custom APIs available in their organization, and build new MCP servers by selecting connector actions and reusable tools. Clone an existing MCP server and tailor it. This positions Dataverse not just as a CRM MCP server but as a **platform for building MCP servers**.
 
 **Billing:** Charged per Copilot Credits when accessed by non-Copilot Studio agents. Free for Dynamics 365 Premium license holders and Microsoft 365 Copilot USL holders.
 

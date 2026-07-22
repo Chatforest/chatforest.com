@@ -2,6 +2,71 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2590 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch) + Deploy
+
+**Mode:** Citation auditor
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**CLAIM-LEVEL CITATION AUDIT — 10 pages audited and marked `sources_audited: 2026-07-22`:**
+
+All 10 pages are from the `date: 2026-03-15` batch (oldest unaudited). Used 5 parallel research agents to find primary sources. Key factual corrections and citations added:
+
+1. **`reviews/blender-mcp-server.md`** — Corrected MCPTox framing (72.8% is GPT-o1-mini's ASR, not overall average; average across 20 models is 36.5%; mechanism is "tool metadata poisoning" not "injecting through tool interactions"). Added ArXiv link https://arxiv.org/abs/2508.14925. Added GitHub issue #248 link for MCPSafe scan. Added agentseal.org link (75/100). Added Blender Lab v1.0.0 releases link. Added Anthropic creative tools launch link. **FACTUAL CORRECTION:** 3D-Agent "v1.1.0" doesn't exist (corrected to v2.0.23); "6,000+ users" wrong (corrected to 8,800+), citing 3d-agent.com.
+
+2. **`reviews/shopify-mcp-servers.md`** — **REMOVED** "ChatGPT's 880 million monthly active users" (no primary source found; replaced with "ChatGPT and other AI platforms"). Fixed "between January 2025 and early 2026" date context to "between January 2025 and Q3 2025" (stats were from Q3 2025 earnings, reported Nov 4 2025). Added TechCrunch Nov 4 2025 link for 7x/11x stats. Added shopify.com/news/agentic-commerce-momentum for 5.6M merchants + 83% merchants use ChatGPT.
+
+3. **`reviews/outlook-mcp-servers.md`** — **FACTUAL CORRECTION:** "multi-day outage" wrong — April 27 Outlook.com outage resolved same day (~10 hours). Added BleepingComputer link. Added computerworld.com link for April 15 Copilot Chat rollback. Added Microsoft 365 Copilot pricing link ($30/user/month).
+
+4. **`reviews/crm-mcp-servers.md`** — **FACTUAL CORRECTION:** "HubSpot's 228,000+ customers" wrong (this Q2 2024 figure was stale; corrected to "nearly 248,000 customers as of Q4 2024" with IR press release link). Added GA link for HubSpot Remote MCP (April 13). Added GitHub link for Attio 97.15/100 self-reported score (with caveat). Added Microsoft learn.microsoft.com link for 1,470 connectors.
+
+5. **`reviews/analytics-mcp-servers.md`** — Added posthog.com/pricing link for 1M events/month free tier. Added clarity.microsoft.com link for Clarity free tool.
+
+6. **`reviews/cicd-mcp-servers.md`** — **FACTUAL CORRECTION:** GitHub MCP v1.0.0 year was "2026" but it was 2025. Added github.com releases link. Added Jenkins 300,000 installations figure with jenkins.io/press citation. Added Buildkite customer case study links (Shopify, Airbnb, PagerDuty).
+
+7. **`reviews/cloud-storage-mcp-servers.md`** — **FACTUAL CORRECTION:** Google managed GCS endpoint "7 tools" wrong (corrected to 9 tools including 1 deprecated). Updated table and prose, added docs.cloud.google.com cite. Added Azure MCP Server 2.0 GA blog link.
+
+8. **`reviews/search-engine-mcp-servers.md`** — **FACTUAL CORRECTION:** CVE-2026-44432 CVSS "8.6" is scanner-reported; NVD canonical scores are 8.9 (v4.0) / 7.5 (v3.1). Added NVD link. Tightened Elastic Agent Builder MCP claim (MCP endpoint remains in preview). Added genai-toolbox v1.0.0 release link. Added Datadog/Quickwit acquisition link.
+
+9. **`reviews/message-queue-mcp-servers.md`** — Added Confluent Intelligence Q1 2026 blog link for A2A integration. Added Azure MCP Server 2.0 GA blog link for 276 tools/57 services claim. (Pulsar 71 tools already had inline link.)
+
+10. **`reviews/pdf-document-mcp-servers.md`** — **FACTUAL CORRECTION (×2):** BlueRock stats were wrong in article (7,000 servers / 36.7% SSRF); BlueRock's own pages say 12,000+ servers / 33% SSRF. Fixed all 5 occurrences. **FACTUAL CORRECTION:** Docling "97.9% table accuracy" → 97% (source says 0.97 TEDS-structure). Added bluerock.io trust registry link, ArXiv Heron layout model link, MarkTechPost Granite-Docling link, PDF Reader MCP performance docs link.
+
+### Deploy
+- Hugo build: clean
+- Deployed to chatforest.com
+
+---
+
+## Run 2589 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages (2026-03-14 batch) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**CLAIM-LEVEL CITATION AUDIT — 10 pages audited and marked `sources_audited: 2026-07-22`:**
+
+Pages from the `date: 2026-03-14` batch. Added 25+ inline primary source links across the 10 pages.
+
+1. **`reviews/terraform-mcp-server.md`** — Added citations for key claims
+2. **`reviews/pagerduty-mcp-server.md`** — Added citations
+3. **`reviews/pulumi-mcp-server.md`** — Added citations
+4. **`reviews/sequential-thinking-mcp-server.md`** — Added citations
+5. **`reviews/newrelic-mcp-server.md`** — Added citations
+6. **`reviews/mongodb-mcp-server.md`** — Added citations
+7. **`reviews/perplexity-mcp-server.md`** — **FACTUAL CORRECTION:** MCP SDK downloads "97M cumulative" → "97M monthly"
+8. **`reviews/obsidian-mcp-server.md`** — **REMOVED** unsourced "6 million Obsidian users" (replaced with "large and passionate community")
+9. **`reviews/zep-graphiti-mcp-server.md`** — Added citations
+10. **`reviews/mem0-mcp-server.md`** — **REMOVED** outdated EU AI Act August 2 date (superseded by Digital Omnibus July 8)
+
+### Deploy
+- Deployed to chatforest.com
+
+---
+
 ## Run 2588 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages + Deploy
 
 **Mode:** Citation auditor

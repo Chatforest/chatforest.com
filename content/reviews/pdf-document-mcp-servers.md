@@ -1,10 +1,11 @@
 ---
 title: "PDF & Document Processing MCP Servers — MarkItDown, Docling, PDF Reader, and More"
 date: 2026-03-15T03:12:00+09:00
+sources_audited: 2026-07-22
 description: "PDF and document processing MCP servers let AI agents extract text, convert formats, parse tables, and analyze documents across PDF, DOCX, EPUB, and 30+ file types."
-og_description: "PDF & document MCP servers: Adobe official MCP fills the biggest gap, Docling MCP v2.0.0 goes remote-first (90% smaller), MarkItDown 124K stars, PDF Reader MCP v2.4.0 715 stars, jztan/pdf-mcp v1.12.1 13,800 downloads doubled. SSRF warning: 36.7% of MCP servers vulnerable. Rating: 4.0/5."
+og_description: "PDF & document MCP servers: Adobe official MCP fills the biggest gap, Docling MCP v2.0.0 goes remote-first (90% smaller), MarkItDown 124K stars, PDF Reader MCP v2.4.0 715 stars, jztan/pdf-mcp v1.12.1 13,800 downloads doubled. SSRF warning: 33% of MCP servers vulnerable. Rating: 4.0/5."
 content_type: "Review"
-card_description: "PDF and document processing MCP servers: Adobe's official MCP server fills the category's biggest gap (Acrobat PDF generation, form filling, contracts), Docling MCP v2.0.0 shifts to remote-first (90% size reduction), MarkItDown crosses 124K stars, PDF Reader MCP hits v2.4.0 at 715 stars, and jztan/pdf-mcp doubles PyPI downloads to 13,800 with six new releases. Security alert: BlueRock's scan of 7,000 MCP servers found 36.7% vulnerable to SSRF — including MarkItDown MCP. New entrant PDFMux introduces smart per-page extraction routing. Rating raised to 4.0/5."
+card_description: "PDF and document processing MCP servers: Adobe's official MCP server fills the category's biggest gap (Acrobat PDF generation, form filling, contracts), Docling MCP v2.0.0 shifts to remote-first (90% size reduction), MarkItDown crosses 124K stars, PDF Reader MCP hits v2.4.0 at 715 stars, and jztan/pdf-mcp doubles PyPI downloads to 13,800 with six new releases. Security alert: BlueRock's scan of 12,000+ MCP servers found 33% vulnerable to SSRF — including MarkItDown MCP. New entrant PDFMux introduces smart per-page extraction routing. Rating raised to 4.0/5."
 last_refreshed: 2026-05-20
 ---
 
@@ -14,7 +15,7 @@ The headline finding this cycle: **Adobe finally shipped an official MCP server*
 
 **Docling MCP v2.0.0 (May 19, 2026) is a breaking architectural shift** — from local-only to remote-first. The default mode now connects to Docling Serve instead of downloading models locally, cutting the package size 90% (500MB → 50MB). Local mode is still available. The core Docling library reached v2.94.0 with Granite Vision 4.1, TikZ rendering, and multi-lingual OCR via kserve-triton. **MarkItDown crossed 124,000 stars** with no new core release but its OCR plugin (v0.1.0, March 2026) is now the recommended path for scanned documents.
 
-**Security alert: SSRF affects 36.7% of MCP servers — including MarkItDown MCP.** BlueRock scanned 7,000 publicly accessible MCP servers and found over a third accept arbitrary URLs including cloud metadata endpoints. PDF MCP servers are especially exposed because they commonly fetch remote PDFs by URL. jztan/pdf-mcp fixed its SSRF exposure in v1.9.0; MarkItDown MCP's exposure is unpatched as of this writing. Prompt injection via malicious PDF content is a separate systemic risk.
+**Security alert: SSRF affects a third of MCP servers — including MarkItDown MCP.** [BlueRock scanned 12,000+ publicly accessible MCP servers](https://www.bluerock.io/products/mcp-trust-registry) and found 33% accept arbitrary URLs including cloud metadata endpoints. PDF MCP servers are especially exposed because they commonly fetch remote PDFs by URL. jztan/pdf-mcp fixed its SSRF exposure in v1.9.0; MarkItDown MCP's exposure is unpatched as of this writing. Prompt injection via malicious PDF content is a separate systemic risk.
 
 **jztan/pdf-mcp** jumped from v1.7.0 to v1.12.1 with six releases — adding section-level search, configurable embedding models (BYOM), and security hardening. PyPI downloads roughly doubled to 13,800 in ~six weeks. **PDF Reader MCP** reached v2.4.0 at 715 stars. New entrant **PDFMux** routes each PDF page to the best extraction backend automatically, with a built-in MCP server at 64 stars.
 
@@ -50,7 +51,7 @@ The MCP server exposes a single tool — `convert_to_markdown(uri)` — that acc
 
 **Format coverage is the broadest of any document MCP server.** PDF, Word, PowerPoint, Excel, HTML, CSV, JSON, XML, EPUB, images (with EXIF metadata and optional OCR via the `markitdown-ocr` plugin), audio (with transcription), YouTube URLs, and ZIP archives. The `markitdown-ocr` plugin (v0.1.0, March 2026) adds LLM Vision-based OCR for scanned PDFs, DOCX, PPTX, and XLSX — using the same `llm_client`/`llm_model` pattern as the core library, requiring no additional ML dependencies. This is now the recommended path for scanned document handling.
 
-**Security concern: MarkItDown MCP is vulnerable to SSRF.** BlueRock's independent scan of 7,000 MCP servers confirmed MarkItDown MCP accepts arbitrary URLs including cloud metadata endpoints (e.g., `http://169.254.169.254/latest/meta-data/`). This is unpatched as of May 2026. Do not expose MarkItDown MCP on untrusted networks without URL filtering at the infrastructure layer.
+**Security concern: MarkItDown MCP is vulnerable to SSRF.** [BlueRock's scan](https://www.bluerock.io/products/mcp-trust-registry) of 12,000+ MCP servers confirmed MarkItDown MCP accepts arbitrary URLs including cloud metadata endpoints (e.g., `http://169.254.169.254/latest/meta-data/`). This is unpatched as of May 2026. Do not expose MarkItDown MCP on untrusted networks without URL filtering at the infrastructure layer.
 
 **The other trade-offs persist.** One tool means no fine-grained control — you can't extract just page 5, or get images separately, or preserve table coordinates. PDF extraction quality depends on the underlying parser, and complex layouts (multi-column, nested tables) can lose structure. No new core release since February — the MCP server layer is stable but not rapidly iterating. Now listed in the official MCP Registry and indexed on CopilotHub (discoverable via GitHub Copilot and VS Code).
 
@@ -81,7 +82,7 @@ This shift matters for cloud-hosted agent workflows — Docling MCP can now run 
 
 Where MarkItDown converts everything to flat Markdown, **Docling preserves document structure** — it outputs DoclingDocument (structured JSON) that retains layout information, table structures, reading order, and document hierarchy. The MCP server can export to Markdown too, but the structured format is the differentiator for complex PDFs.
 
-**Core library rapid iteration continues:** v2.91.0 (VML image extraction from DOCX), v2.92.0 (multi-lingual OCR via kserve-triton, modular `docling-slim` package), v2.93.0 (Granite Vision 4.1 for table and chart analysis), v2.94.0 (LaTeX TikZ rendering via Tectonic, threaded layout model with staged HuggingFace downloads, gRPC round-robin scheduling). The Heron layout model (20.6-23.9% mAP improvement) and 97.9% table extraction accuracy from Granite-Docling-258M remain the accuracy anchors.
+**Core library rapid iteration continues:** v2.91.0 (VML image extraction from DOCX), v2.92.0 (multi-lingual OCR via kserve-triton, modular `docling-slim` package), v2.93.0 (Granite Vision 4.1 for table and chart analysis), v2.94.0 (LaTeX TikZ rendering via Tectonic, threaded layout model with staged HuggingFace downloads, gRPC round-robin scheduling). The [Heron layout model (20.6-23.9% mAP improvement)](https://arxiv.org/html/2509.11720v1) and [97% table extraction accuracy from Granite-Docling-258M](https://www.marktechpost.com/2025/09/17/ibm-ai-releases-granite-docling-258m-an-open-source-enterprise-ready-document-ai-model/) remain the accuracy anchors.
 
 **Install via uvx:** `uvx docling-mcp-server`. Supports Claude Desktop, LM Studio, and containerized deployments. In remote-first mode, no local GPU or model downloads required.
 
@@ -103,7 +104,7 @@ These focus exclusively on PDF processing, trading format breadth for depth.
 | Version | v2.4.0 (May 3, 2026) |
 | npm | `@sylphx/pdf-reader-mcp` |
 
-**The fastest PDF extraction MCP server, now at v2.4.0.** PDF Reader MCP claims 5-10x faster throughput than sequential processing via automatic parallelization, with benchmarks of 5,575 ops/sec for text extraction and 12,933 ops/sec for error handling. Stars have grown from 657 to 715 (+58 since April). Active release cadence continues — v2.4.0 dropped May 3, two weeks after v2.3.1.
+**The fastest PDF extraction MCP server, now at v2.4.0.** PDF Reader MCP claims 5-10x faster throughput than sequential processing via automatic parallelization, with [benchmarks of 5,575 ops/sec for text extraction and 12,933 ops/sec for error handling](https://github.com/SylphxAI/pdf-reader-mcp/blob/main/docs/performance/index.md). Stars have grown from 657 to 715 (+58 since April). Active release cadence continues — v2.4.0 dropped May 3, two weeks after v2.3.1.
 
 The single `read_pdf` tool handles text extraction (full document or specific pages), image extraction as base64-encoded PNG, metadata access, and page counting. Y-coordinate based content ordering preserves natural reading order — a detail that matters for multi-column layouts where naive extraction scrambles text.
 
@@ -151,7 +152,7 @@ Eight dedicated tools cover the full read workflow: inspect document structure a
 - **v1.11.0**: Configurable embedding models (BYOM — Bring Your Own Model) instead of fixed embedding
 - **v1.12.0/1.12.1**: Fixed hybrid search schema issues, tokenized keyword queries, corrected `total_matches` reporting
 
-**Security hardening is ahead of most PDF MCP servers.** The author Kevin Tan published a self-audit finding 8 vulnerabilities and fixed all of them — SSRF via unconstrained URL fetching (the same flaw confirmed across 36.7% of MCP servers), prompt injection via malicious PDF content, path traversal, resource exhaustion, and weak MD5 cache hashing. Current versions (v1.9.0+) include SSRF protection, access control lists, HTTPS-only remote requests, and per-page text coverage metadata.
+**Security hardening is ahead of most PDF MCP servers.** The author Kevin Tan published a self-audit finding 8 vulnerabilities and fixed all of them — SSRF via unconstrained URL fetching (the same flaw [confirmed across 33% of MCP servers](https://www.bluerock.io/products/mcp-trust-registry)), prompt injection via malicious PDF content, path traversal, resource exhaustion, and weak MD5 cache hashing. Current versions (v1.9.0+) include SSRF protection, access control lists, HTTPS-only remote requests, and per-page text coverage metadata.
 
 **Growing but still niche:** at 38 stars, this remains a specialist tool. But the approach — caching, hybrid search, section-level reading, security-first design — is more sophisticated than its star count suggests.
 
@@ -268,7 +269,7 @@ Still early at 64 stars, but the per-page routing philosophy is novel and addres
 
 **OCR is still inconsistent.** MarkItDown now has an OCR plugin, Docling includes it natively, jztan/pdf-mcp supports it in v1.9.0+, and PDFMux routes to OCR per-page. But PDF Reader MCP (the most popular PDF-specific option) still has no OCR support. If your PDFs are scans, your options remain narrower than for digital text PDFs.
 
-**Security is a systemic concern.** BlueRock's scan found 36.7% of MCP servers vulnerable to SSRF. PulseMCP now lists 212+ PDF-related MCP servers — most with minimal security review. Prompt injection via malicious PDF content is under-documented across the ecosystem. Organizations deploying PDF MCP servers should audit URL fetching behavior before connecting to untrusted document sources.
+**Security is a systemic concern.** [BlueRock's scan](https://www.bluerock.io/products/mcp-trust-registry) found 33% of 12,000+ MCP servers vulnerable to SSRF. PulseMCP now lists 212+ PDF-related MCP servers — most with minimal security review. Prompt injection via malicious PDF content is under-documented across the ecosystem. Organizations deploying PDF MCP servers should audit URL fetching behavior before connecting to untrusted document sources.
 
 ## How to Choose
 
@@ -280,7 +281,7 @@ Still early at 64 stars, but the per-page routing philosophy is novel and addres
 
 **"I need to convert many document types"** → [MarkItDown MCP](https://github.com/microsoft/markitdown). 29+ formats, one tool, massive community. Add `markitdown-ocr` for scanned documents. Note: SSRF vulnerability unpatched — filter URLs at infrastructure level.
 
-**"I have complex PDFs with tables and layouts"** → [Docling MCP](https://github.com/docling-project/docling-mcp). IBM's Heron layout model + 97.9% table accuracy preserves structure that flat extraction loses. v2.0.0 now remote-first — no local GPU required.
+**"I have complex PDFs with tables and layouts"** → [Docling MCP](https://github.com/docling-project/docling-mcp). IBM's Heron layout model + 97% table accuracy preserves structure that flat extraction loses. v2.0.0 now remote-first — no local GPU required.
 
 **"I need to convert between formats"** → [mcp-pandoc](https://github.com/vivekVells/mcp-pandoc). Bidirectional conversion powered by Pandoc.
 
@@ -296,7 +297,7 @@ The PDF/document processing MCP ecosystem closed its biggest gap this cycle. Ado
 
 **Docling MCP v2.0.0's remote-first pivot** is a meaningful architectural improvement — dropping the install from 500MB to ~50MB opens Docling to cloud-hosted agent workflows that previously couldn't absorb the local model requirements. Combined with four core library releases in the review window (Granite Vision 4.1, TikZ, multi-lingual OCR, gRPC scheduling), Docling's technical depth continues to widen its lead on complex document understanding.
 
-**The security picture is concerning.** BlueRock's ecosystem-wide SSRF finding — 36.7% of MCP servers vulnerable, including MarkItDown MCP — is the clearest signal yet that the MCP ecosystem is building faster than it's hardening. jztan/pdf-mcp self-audited and fixed eight vulnerabilities; MarkItDown MCP's SSRF remains open. Prompt injection via malicious PDF content is a systemic risk that none of the servers address at the protocol level.
+**The security picture is concerning.** [BlueRock's ecosystem-wide scan](https://www.bluerock.io/products/mcp-trust-registry) found 33% of 12,000+ MCP servers vulnerable to SSRF, including MarkItDown MCP — is the clearest signal yet that the MCP ecosystem is building faster than it's hardening. jztan/pdf-mcp self-audited and fixed eight vulnerabilities; MarkItDown MCP's SSRF remains open. Prompt injection via malicious PDF content is a systemic risk that none of the servers address at the protocol level.
 
 **The fragmentation problem is real.** PulseMCP now lists 212+ PDF-related MCP servers — most doing slight variations of the same text extraction with minimal security review. The proliferation makes discovery harder without meaningfully expanding capability coverage. PDFMux's per-page routing and jztan/pdf-mcp's section-level search are genuine architectural innovations; most of the 212 are not.
 

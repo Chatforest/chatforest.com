@@ -164,7 +164,7 @@
 <td><a href="https://docs.cloud.google.com/storage/docs/reference/mcp">storage.googleapis.com MCP</a> (managed)</td>
 <td>—</td>
 <td>Managed</td>
-<td>7</td>
+<td>9 (1 deprecated)</td>
 <td>Google Cloud auth</td>
 <td>—</td>
 </tr>
@@ -193,7 +193,7 @@
 <li><strong>Destructive tools</strong> (opt-in via <code>--enable-destructive-tools</code>): <code>delete_bucket</code>, <code>update_bucket_labels</code>, <code>delete_object</code>, <code>update_object_metadata</code>, <code>move_object</code>, <code>write_object</code>, <code>upload_object</code>, <code>copy_object</code></li>
 </ul>
 <p>The v0.5.1 release (April 28) moved <code>delete_object</code> from safe to destructive — a welcome correction that tightens the security model. The safe/destructive split remains the best security model we&rsquo;ve seen in storage MCP servers. New objects can always be created (safe), but overwriting or deleting existing objects requires explicit opt-in (destructive). Storage Insights integration lets agents run BigQuery queries against storage metadata — unique to this server.</p>
-<p><strong>New: Google also offers a managed/hosted MCP endpoint</strong> at <code>storage.googleapis.com</code> with 7 tools (<code>create_bucket</code>, <code>get_object_metadata</code>, <code>list_buckets</code>, <code>list_objects</code>, <code>read_object</code>, <code>read_text</code>, <code>write_text</code>). This is separate from the open-source gcloud-mcp server and runs as a Google-managed remote MCP server — no local setup required. The <code>read_text</code> tool is optimized for reduced token consumption, and <code>read_object</code> handles binary files (images, PDFs, archives). Fewer tools than the open-source server (7 vs 21) but zero deployment friction.</p>
+<p><strong>New: Google also offers a managed/hosted MCP endpoint</strong> at <code>storage.googleapis.com</code> with 7 tools (<code>create_bucket</code>, <code>get_object_metadata</code>, <code>list_buckets</code>, <code>list_objects</code>, <code>read_object</code>, <code>read_text</code>, <code>write_text</code>). This is separate from the open-source gcloud-mcp server and runs as a Google-managed remote MCP server — no local setup required. The <code>read_text</code> tool is optimized for reduced token consumption, and <code>read_object</code> handles binary files (images, PDFs, archives). Fewer tools than the open-source server (9 vs 21, including one deprecated <code>read_text</code>) but zero deployment friction.</p>
 <h3 id="azure-blob-storage">Azure Blob Storage</h3>
 <table>
 <thead>
@@ -234,7 +234,7 @@
 </tbody>
 </table>
 <p>*Monorepo star count (3,100 stars, 1,731 commits, 469 forks) covering 40+ Azure services.</p>
-<p><strong>Note:</strong> The older Azure/azure-mcp repository was archived on February 6, 2026. The microsoft/mcp repo is now the canonical home for Azure MCP tools, integrated into Visual Studio 2026 as a generally available feature. <strong>Azure MCP Server 2.0 went GA on April 10, 2026</strong> — the headline feature is remote MCP server support, allowing team-wide deployments rather than local-only installations.</p>
+<p><strong>Note:</strong> The older Azure/azure-mcp repository was archived on February 6, 2026. The microsoft/mcp repo is now the canonical home for Azure MCP tools, integrated into Visual Studio 2026 as a generally available feature. <strong><a href="https://devblogs.microsoft.com/azure-sdk/announcing-azure-mcp-server-2-0-stable-release/">Azure MCP Server 2.0 went GA on April 10, 2026</a></strong> — the headline feature is remote MCP server support, allowing team-wide deployments rather than local-only installations.</p>
 <p>Azure&rsquo;s official MCP server (microsoft/mcp) includes storage tools as part of a broader Azure management server covering 40+ services. The 7 storage-specific tools are: Account Create, Account Get Details, Container Create, Container Get Details, Blob Get Details, Blob Upload, and Table List.</p>
 <p><strong>The gaps persist — 46 days and counting:</strong> no blob download tool, no blob delete tool, and no SAS URL generation. You can upload a file to Azure Blob Storage but you can&rsquo;t download one through the official MCP server. Azure MCP Server 2.0 brought remote deployment and production-grade infrastructure, but the storage tool set is unchanged. For a platform as mature as Azure, this remains the most surprising gap in the entire category. The community server harveymarshall/azure-blob-storage-mcp-server adds download support but has zero stars.</p>
 <p>Auth uses the Azure credential chain (CLI, environment variables, Entra ID), which is solid.</p>

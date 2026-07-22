@@ -1,7 +1,8 @@
 ---
 title: "Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond"
 date: 2026-03-15T02:30:00+09:00
-lastmod: 2026-04-29
+lastmod: 2026-07-22
+sources_audited: 2026-07-22
 description: "Analytics MCP servers let AI agents query traffic data, analyze user behavior, run retention reports, and manage experiments across Google Analytics, Mixpanel, PostHog, Amplitude, Pendo, Microsoft Clarity"
 og_description: "Analytics MCP servers: Google Analytics (2K stars, official), PostHog (27+ tools, 34.2K mono), Amplitude (24+ tools, Session Replays, MCP App, 27 skills), Pendo (NEW official, Claude Connectors), Microsoft Clarity (81 stars), Mixpanel (beta + ChatGPT/Gemini), Sentry's Plausible MCP hosted. 25+ servers reviewed. Rating: 4/5."
 content_type: "Review"
@@ -165,7 +166,7 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 **Monorepo move complicates contributions.** The standalone repo is archived. Contributing now means navigating PostHog's full monorepo (40,000+ commits). For a small bug fix or feature request, this raises the barrier.
 
-**PostHog pricing structure.** PostHog Cloud has a generous free tier (1M events/month), but costs scale with usage. The MCP server makes it easier to query data, but PostHog's usage-based pricing means heavy agent usage of analytics queries could increase costs.
+**PostHog pricing structure.** PostHog Cloud has a [generous free tier (1M events/month)](https://posthog.com/pricing), but costs scale with usage. The MCP server makes it easier to query data, but PostHog's usage-based pricing means heavy agent usage of analytics queries could increase costs.
 
 ---
 
@@ -295,7 +296,7 @@ The gap is closing: Sentry's hosted Plausible server means privacy-first teams n
 
 ### Why it matters
 
-**Free and official.** Clarity is a completely free analytics tool (no usage caps). Combined with an official MCP server from the `microsoft/` GitHub organization, this is the lowest-cost entry point for analytics MCP integration. 81 stars and 52 commits show active development.
+**Free and official.** [Clarity](https://clarity.microsoft.com/) is a completely free analytics tool (no usage caps). Combined with an official MCP server from the `microsoft/` GitHub organization, this is the lowest-cost entry point for analytics MCP integration. 81 stars and 52 commits show active development.
 
 **Session recordings are unique.** No other analytics MCP server exposes session recording data. An AI agent can search for specific user sessions — useful for debugging UX issues or understanding user behavior patterns that aggregate metrics miss.
 

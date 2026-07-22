@@ -39,7 +39,7 @@ ofershap/mcp-server-s3 covers 7 tools including put, delete, and presigned URLs,
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
 | [googleapis/gcloud-mcp](https://github.com/googleapis/gcloud-mcp) (storage-mcp) | 764* | TypeScript | 21 | gcloud CLI / service account | Apache 2.0 |
-| [storage.googleapis.com MCP](https://docs.cloud.google.com/storage/docs/reference/mcp) (managed) | — | Managed | 7 | Google Cloud auth | — |
+| [storage.googleapis.com MCP](https://docs.cloud.google.com/storage/docs/reference/mcp) (managed) | — | Managed | 9 (1 deprecated) | Google Cloud auth | — |
 | [uysalserkan/gcp-storage-mcp](https://github.com/uysalserkan/gcp-storage-mcp) | 10 | Python | ~15 | API key header | — |
 | [gitskyflux/cloudstorage-mcp](https://github.com/gitskyflux/cloudstorage-mcp) | 2 | JavaScript | 7 | Service account JSON | MIT |
 
@@ -52,7 +52,7 @@ ofershap/mcp-server-s3 covers 7 tools including put, delete, and presigned URLs,
 
 The v0.5.1 release (April 28) moved `delete_object` from safe to destructive — a welcome correction that tightens the security model. The safe/destructive split remains the best security model we've seen in storage MCP servers. New objects can always be created (safe), but overwriting or deleting existing objects requires explicit opt-in (destructive). Storage Insights integration lets agents run BigQuery queries against storage metadata — unique to this server.
 
-**New: Google also offers a managed/hosted MCP endpoint** at `storage.googleapis.com` with 7 tools (`create_bucket`, `get_object_metadata`, `list_buckets`, `list_objects`, `read_object`, `read_text`, `write_text`). This is separate from the open-source gcloud-mcp server and runs as a Google-managed remote MCP server — no local setup required. The `read_text` tool is optimized for reduced token consumption, and `read_object` handles binary files (images, PDFs, archives). Fewer tools than the open-source server (7 vs 21) but zero deployment friction.
+**New: Google also offers a managed/hosted MCP endpoint** at `storage.googleapis.com` with 7 tools (`create_bucket`, `get_object_metadata`, `list_buckets`, `list_objects`, `read_object`, `read_text`, `write_text`). This is separate from the open-source gcloud-mcp server and runs as a Google-managed remote MCP server — no local setup required. The `read_text` tool is optimized for reduced token consumption, and `read_object` handles binary files (images, PDFs, archives). Fewer tools than the open-source server (9 vs 21, including one deprecated `read_text`) but zero deployment friction.
 
 ### Azure Blob Storage
 
@@ -64,7 +64,7 @@ The v0.5.1 release (April 28) moved `delete_object` from safe to destructive —
 
 *Monorepo star count (3,100 stars, 1,731 commits, 469 forks) covering 40+ Azure services.
 
-**Note:** The older Azure/azure-mcp repository was archived on February 6, 2026. The microsoft/mcp repo is now the canonical home for Azure MCP tools, integrated into Visual Studio 2026 as a generally available feature. **Azure MCP Server 2.0 went GA on April 10, 2026** — the headline feature is remote MCP server support, allowing team-wide deployments rather than local-only installations.
+**Note:** The older Azure/azure-mcp repository was archived on February 6, 2026. The microsoft/mcp repo is now the canonical home for Azure MCP tools, integrated into Visual Studio 2026 as a generally available feature. **[Azure MCP Server 2.0 went GA on April 10, 2026](https://devblogs.microsoft.com/azure-sdk/announcing-azure-mcp-server-2-0-stable-release/)** — the headline feature is remote MCP server support, allowing team-wide deployments rather than local-only installations.
 
 Azure's official MCP server (microsoft/mcp) includes storage tools as part of a broader Azure management server covering 40+ services. The 7 storage-specific tools are: Account Create, Account Get Details, Container Create, Container Get Details, Blob Get Details, Blob Upload, and Table List.
 

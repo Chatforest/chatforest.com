@@ -1,6 +1,7 @@
 ---
 title: "Shopify MCP Servers — From 2 Servers to an Agentic Commerce Platform"
 date: 2026-03-15T01:45:00+09:00
+sources_audited: 2026-07-22
 description: "Shopify now ships four official MCP servers — Dev, Storefront, Customer Accounts, and Checkout (preview) — plus official Claude and ChatGPT merchant connectors and 33+ community servers. Official Admin API access is now live through Claude and ChatGPT."
 og_description: "Shopify MCP servers: official Claude+ChatGPT merchant connectors launched May 4, UCP migration deadline June 15, 33+ on PulseMCP, Dev MCP 488 stars, GeLi2001 31 tools. Rating: 4/5."
 content_type: "Review"
@@ -8,7 +9,7 @@ card_description: "Shopify's MCP ecosystem — four official servers (Dev, Store
 last_refreshed: 2026-05-20
 ---
 
-Shopify isn't just adding MCP support — they've built an agentic commerce platform around it. What started as two servers (Dev MCP and Storefront MCP) in the Winter '26 Edition has grown into a four-server official suite, official merchant connectors inside Claude and ChatGPT, and 33+ servers on PulseMCP. Agentic Storefronts have connected 5.6 million merchants to ChatGPT's 880 million monthly active users, with AI-referred traffic growing 7x and AI-attributed orders up 11x between January 2025 and early 2026.
+Shopify isn't just adding MCP support — they've built an agentic commerce platform around it. What started as two servers (Dev MCP and Storefront MCP) in the Winter '26 Edition has grown into a four-server official suite, official merchant connectors inside Claude and ChatGPT, and 33+ servers on PulseMCP. Agentic Storefronts have [connected 5.6 million merchants](https://www.shopify.com/news/agentic-commerce-momentum) to ChatGPT and other AI platforms, with [AI-referred traffic growing 7x and AI-attributed orders up 11x](https://techcrunch.com/2025/11/04/shopify-says-ai-traffic-is-up-7x-since-january-ai-driven-orders-are-up-11x/) between January 2025 and Q3 2025.
 
 *Updated May 20, 2026: Official Claude and ChatGPT merchant connectors launched May 4 (manage products, inventory, orders, discounts, analytics from inside Claude/ChatGPT). UCP migration replacing Storefront Catalog MCP — new endpoint effective May 30, old endpoint removed June 15 (no extension). PulseMCP count 29→33 Shopify servers. DotDev 2026 developer event scheduled July 21–22 in Toronto.*
 
@@ -18,7 +19,7 @@ The ecosystem is maturing fast. The long-requested official Admin API access has
 
 ## What's New (May 2026)
 
-**May 4, 2026 — Official Claude and ChatGPT Merchant Connectors launched.** Shopify shipped two first-party connector apps letting merchants manage their entire store from inside Claude or ChatGPT. The Claude connector is live at [claude.com/connectors/shopify](https://claude.com/connectors/shopify). Capabilities: add products, adjust inventory across locations, create discount codes, browse recent orders, view customer details, and pull store performance analytics — all without opening the Shopify admin. Shopify's internal survey says 83% of merchants already use ChatGPT; Finkelstein's framing was "manage your store from your phone without opening the app." This addresses the main gap from the April review — official Shopify Admin API access through AI — though it arrives as a hosted connector in Claude/ChatGPT rather than a standalone MCP server for developer integrations.
+**May 4, 2026 — Official Claude and ChatGPT Merchant Connectors launched.** Shopify shipped two first-party connector apps letting merchants manage their entire store from inside Claude or ChatGPT. The Claude connector is live at [claude.com/connectors/shopify](https://claude.com/connectors/shopify). Capabilities: add products, adjust inventory across locations, create discount codes, browse recent orders, view customer details, and pull store performance analytics — all without opening the Shopify admin. [Shopify's internal survey](https://www.shopify.com/news/agentic-commerce-momentum) says 83% of merchants already use ChatGPT; Finkelstein's framing was "manage your store from your phone without opening the app." This addresses the main gap from the April review — official Shopify Admin API access through AI — though it arrives as a hosted connector in Claude/ChatGPT rather than a standalone MCP server for developer integrations.
 
 **UCP migration: June 15 hard deadline, no extension.** Shopify flipped the Storefront Catalog MCP to the Universal Commerce Protocol (UCP) on April 22, 2026. The migration is a Breaking API Change:
 - **May 30, 2026** — UCP endpoints become the effective API version
@@ -96,13 +97,13 @@ Also listed on PulseMCP (488 weekly visitors), the Catalog MCP server enables pr
 
 Shopify's broader strategy has matured significantly since our March review:
 
-**Agentic Storefronts** — One toggle in Shopify admin connects your products to ChatGPT, Perplexity, and Microsoft Copilot. Native shopping in Google AI Mode and the Gemini app is rolling out via UCP (Universal Commerce Protocol, co-developed with Google). This connected 5.6 million merchants to ChatGPT's 880 million MAUs.
+**Agentic Storefronts** — One toggle in Shopify admin connects your products to ChatGPT, Perplexity, and Microsoft Copilot. Native shopping in Google AI Mode and the Gemini app is rolling out via UCP (Universal Commerce Protocol, co-developed with Google). This [connected 5.6 million merchants](https://www.shopify.com/news/agentic-commerce-momentum) to ChatGPT and other AI platforms.
 
 **Universal Commerce Protocol (UCP)** — The open standard replacing web scraping with structured AI-agent-to-commerce-backend communication. Shopify's MCP servers are UCP-compliant. The Checkout MCP requires UCP agent profile URIs for capability negotiation.
 
 **Hydrogen MCP Proxy** — Every Hydrogen storefront now exposes `/api/mcp` automatically when `proxyStandardRoutes` is enabled. Zero custom setup for merchants on Hydrogen 2026.1.4+.
 
-**Traffic growth** — AI-referred traffic to Shopify grew 7x between January 2025 and early 2026, with AI-attributed orders up 11x. This isn't theoretical anymore.
+**Traffic growth** — AI-referred traffic to Shopify [grew 7x between January 2025 and Q3 2025](https://techcrunch.com/2025/11/04/shopify-says-ai-traffic-is-up-7x-since-january-ai-driven-orders-are-up-11x/), with AI-attributed orders up 11x. This isn't theoretical anymore.
 
 ## Community Admin API Servers
 

@@ -1,6 +1,7 @@
 ---
 title: "Outlook MCP Servers — Microsoft's Enterprise Email Meets the Agent Era"
 date: 2026-03-15T02:00:00+09:00
+sources_audited: 2026-07-22
 description: "Outlook MCP servers let AI agents read, search, send, and manage Microsoft 365 email."
 og_description: "Outlook MCP servers: Microsoft's official Work IQ Mail, Softeria's ms-365-mcp-server (665 stars, v0.91.0, 200+ tools), pnp doubled to 101 stars. Rating: 3.5/5."
 content_type: "Review"
@@ -11,7 +12,7 @@ lastmod: 2026-04-30T18:00:00+09:00
 
 If [Gmail MCP servers](/reviews/gmail-mcp-servers/) deal with personal inboxes, Outlook MCP servers deal with corporate ones. Microsoft 365 mail sits behind Entra ID, compliance policies, Data Loss Prevention rules, and IT admin controls. That's the whole point — and it's what makes the MCP integration story more complicated than Gmail's.
 
-The good news: Microsoft shipped official MCP servers for Outlook Mail and Calendar as part of their Work IQ platform. The bad news: they require a Microsoft 365 Copilot license (~$30/user/month) and are still in preview — and as of April 15, 2026, Microsoft pulled back Copilot Chat access from M365 apps for large enterprise users without the full Copilot license, making the paywall even more relevant. Then on April 27, Outlook.com suffered a multi-day outage caused by authentication key failures — a reminder of how fragile the auth infrastructure that every MCP server depends on can be. Community servers fill the gap for everyone else — and Softeria's ms-365-mcp-server has accelerated to v0.91.0 with 665 stars, adding webhooks, sensitivity labels, and mail delta sync in the past week alone. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
+The good news: Microsoft shipped official MCP servers for Outlook Mail and Calendar as part of their Work IQ platform. The bad news: they require a Microsoft 365 Copilot license (~$30/user/month) and are still in preview — and as of April 15, 2026, Microsoft pulled back Copilot Chat access from M365 apps for large enterprise users without the full Copilot license, making the paywall even more relevant. Then on April 27, Outlook.com suffered [a same-day outage caused by authentication key failures](https://www.bleepingcomputer.com/news/microsoft/microsoft-says-outlookcom-outage-is-causing-sign-in-failures/) — a reminder of how fragile the auth infrastructure that every MCP server depends on can be. Community servers fill the gap for everyone else — and Softeria's ms-365-mcp-server has accelerated to v0.91.0 with 665 stars, adding webhooks, sensitivity labels, and mail delta sync in the past week alone. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 ## The Landscape
 
@@ -67,7 +68,7 @@ Microsoft's own Mail MCP server is part of the broader [Work IQ](https://github.
 
 ### What doesn't
 
-**Copilot license required — and the paywall is tightening.** You need a Microsoft 365 Copilot license to use Work IQ MCP servers. At ~$30/user/month, this immediately prices out individual developers, small teams, and anyone who just wants Outlook MCP access without the full Copilot suite. **As of April 15, 2026, Microsoft pulled back Copilot Chat access from M365 apps (Word, Excel, PowerPoint, OneNote) for large enterprise users without the full Copilot license** — reinforcing the premium boundary rather than relaxing it. The community servers exist largely because of this paywall.
+**Copilot license required — and the paywall is tightening.** You need a Microsoft 365 Copilot license to use Work IQ MCP servers. At ~$30/user/month, this immediately prices out individual developers, small teams, and anyone who just wants Outlook MCP access without the full Copilot suite. **As of April 15, 2026, Microsoft [pulled back Copilot Chat access from M365 apps](https://www.computerworld.com/article/4150022/microsoft-backtracks-on-copilot-chat-access-in-m365-apps.html) (Word, Excel, PowerPoint, OneNote) for large enterprise users without the full Copilot license** — reinforcing the premium boundary rather than relaxing it. The community servers exist largely because of this paywall.
 
 **Preview means preview.** Just like the Teams server, Microsoft warns this may be "substantially modified before release." Building production email workflows on preview APIs is risky.
 
@@ -210,7 +211,7 @@ It's also strong for **Azure management** tasks — subscriptions, billing, reso
 | Folder management | Label management | No | Yes |
 | Attachment handling | Limited | No | Via OneDrive tools |
 | Calendar bundled | Separate server | Separate Work IQ server | Yes (with delta sync) |
-| License cost | Free (Google account) | Copilot license (~$30/mo) | Free (M365 account) |
+| License cost | Free (Google account) | [Copilot license (~$30/mo)](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/enterprise) | Free (M365 account) |
 | Community standard | taylorwilsdon (1,700 stars) | N/A | Softeria (665 stars) |
 | Services covered | Gmail + 11 Google services | Mail only | 200+ tools across M365 |
 | Tool discovery | N/A | N/A | BM25 search + presets |
@@ -235,7 +236,7 @@ It's also strong for **Azure management** tasks — subscriptions, billing, reso
 
 ## The Bottom Line
 
-**Rating: 3.5/5** — The official/community split remains the defining characteristic of this ecosystem. Microsoft's Work IQ Mail server has hosted architecture, KQL search, and enterprise-grade auth — but the Copilot license requirement (~$30/user/month) creates a paywall that's getting tighter, not looser. The April 15 rollback of Copilot Chat access signals that Microsoft is reinforcing premium boundaries. Then the April 27 Outlook.com outage (authentication key failures, 2-3 days of intermittent access) underscored that every MCP server in this ecosystem depends on Microsoft's auth infrastructure — when it breaks, nothing works.
+**Rating: 3.5/5** — The official/community split remains the defining characteristic of this ecosystem. Microsoft's Work IQ Mail server has hosted architecture, KQL search, and enterprise-grade auth — but the Copilot license requirement (~$30/user/month) creates a paywall that's getting tighter, not looser. The April 15 rollback of Copilot Chat access signals that Microsoft is reinforcing premium boundaries. Then the April 27 [Outlook.com outage](https://www.bleepingcomputer.com/news/microsoft/microsoft-says-outlookcom-outage-is-causing-sign-in-failures/) (authentication key failures, resolved same day) underscored that every MCP server in this ecosystem depends on Microsoft's auth infrastructure — when it breaks, nothing works.
 
 Softeria's ms-365-mcp-server (665 stars, 200+ tools, v0.91.0) continues accelerating. The past week alone brought 7 releases adding webhook subscriptions for real-time change notifications, MIP sensitivity labels for enterprise compliance, Excel range writes, OneDrive sharing links, and mail copy/categories/delta sync. Open issues dropped from 15 to 10, though new bugs in tool exposure (#436) and file upload (#414) show the pace still outpaces polish. The pnp/cli-microsoft365-mcp-server doubled from 52 to 101 stars — the CLI-wrapping approach is finding its audience. ryaker's Power Automate integration (353 stars) and lokka's raw Graph API access (242 stars) fill distinct niches.
 
