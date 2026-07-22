@@ -33,7 +33,7 @@ The breadth here is unmatched. No other single MCP server covers SAST + SCA + Ia
 
 **SonarQube's official MCP server has the largest community in the code security MCP category and continues to ship at a strong pace.** 556 stars (up from 538, +3%), 408+ commits (up from 378) — 3 releases in 30 days. Available as a Docker image (`mcp/sonarqube`).
 
-**New this cycle:** SonarSource launched **[mcp.sonarqube.com](https://mcp.sonarqube.com)** — a dedicated configuration generator UI that walks you through the setup steps and produces a ready-to-paste MCP config. This is a significant UX win: instead of reading docs, you fill in a form and get the right JSON. The `search_dependency_risks` tool now has **pagination** (v1.18.0) for teams with large dependency graphs. A `/info` endpoint exposes version info (v1.17.0). Gemini CLI extension installation fixed in v1.18.1.
+**New this cycle:** SonarSource launched **[mcp.sonarqube.com](https://mcp.sonarqube.com/config-generator.html)** — a dedicated configuration generator UI that walks you through the setup steps and produces a ready-to-paste MCP config. This is a significant UX win: instead of reading docs, you fill in a form and get the right JSON. The `search_dependency_risks` tool now has **pagination** (v1.18.0) for teams with large dependency graphs. A `/info` endpoint exposes version info (v1.17.0). Gemini CLI extension installation fixed in v1.18.1.
 
 **Still the standout from March:** SonarQube MCP is natively embedded in SonarQube Cloud — no local Docker required for enterprise deployments. AI agents can autonomously verify code against quality gates, update issue status, and mark false positives without switching to the UI.
 
@@ -141,7 +141,7 @@ Cycode positions itself as an Application Security Posture Management (ASPM) pla
 
 3 tools: **aikido_full_scan** (combined SAST + secrets scan), **aikido_sast_scan** (static analysis only), and **aikido_secrets_scan** (secrets detection only). Simple, opinionated, and purpose-built for the "vibe coding" workflow.
 
-**New this cycle (adjacent):** Aikido became **AWS Kiro's first global security partner** (April 30, 2026). Kiro is AWS's new AI IDE (launched April 2026), and Aikido's security scanning ships as a native integration. This is the first major IDE-level security partnership in the category — if Kiro gets traction, Aikido benefits more than any other MCP security vendor.
+**New this cycle (adjacent):** Aikido became [**AWS Kiro's first global security partner**](https://www.aikido.dev/blog/aikido-x-kiro) (April 30, 2026). Kiro is AWS's new AI IDE (launched April 2026), and Aikido's security scanning ships as a native integration. This is the first major IDE-level security partnership in the category — if Kiro gets traction, Aikido benefits more than any other MCP security vendor.
 
 Supports VS Code, Cursor, Windsurf, Kiro, Claude, OpenAI, Gemini, GitHub Copilot, Mistral, and JetBrains AI. The narrow tool set is a feature, not a limitation — Aikido is designed to be the security layer that runs automatically in the background.
 
@@ -185,11 +185,11 @@ This serves a different audience than Snyk or SonarQube. CodeQL is a *semantic* 
 
 The security landscape around MCP has matured significantly since March 2026:
 
-- **OWASP MCP Top 10** published — formalizes threats including model misbinding, context spoofing, prompt-state manipulation, insecure memory references, and covert channel abuse. Risks amplified in agentic AI scenarios with model chaining and multi-modal orchestration.
-- **OWASP Top 10 for Agentic Applications 2026** — covers Agent Goal Hijack (ASI01), Agentic Supply Chain Vulnerabilities (ASI04), tool poisoning, and command injection in MCP environments. Developed by 100+ experts.
-- **BlueRock Security** analyzed 7,000+ MCP servers: **36.7% potentially vulnerable to SSRF**. Trend Micro found 492 servers with zero client authentication and zero encryption on the public internet.
-- **"Agentic security"** was the dominant theme at **RSAC 2026** (March 2026) — Snyk, Endor Labs, Checkmarx, Mend, and others all announced MCP/agent security products.
-- **Snyk's 2026 State of Agentic AI Adoption Report**: for every AI model deployed, enterprises introduce ~3× as many untracked software components.
+- **[OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/)** published — formalizes threats including model misbinding, context spoofing, prompt-state manipulation, insecure memory references, and covert channel abuse. Risks amplified in agentic AI scenarios with model chaining and multi-modal orchestration.
+- **[OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** — covers Agent Goal Hijack (ASI01), Agentic Supply Chain Vulnerabilities (ASI04), tool poisoning, and command injection in MCP environments.
+- **BlueRock Security** analyzed [12,000+ MCP servers](https://www.bluerock.io/products/mcp-trust-registry): **33% potentially vulnerable to SSRF**. [Trend Micro found 492 servers](https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/mcp-security-network-exposed-servers-are-backdoors-to-your-private-data) with zero client authentication and zero encryption on the public internet.
+- **"Agentic security"** was the dominant theme at **RSAC 2026** (March 23–26, 2026) — Snyk, Endor Labs, Checkmarx, Mend, and others all announced MCP/agent security products.
+- **[Snyk's 2026 State of Agentic AI Adoption Report](https://snyk.io/lp/state-of-agentic-ai-adoption/)**: for every AI model deployed, enterprises introduce ~3× as many untracked software components.
 
 This context makes code security MCP servers more important than ever — they're the frontline defense against vulnerabilities introduced by AI-assisted development.
 

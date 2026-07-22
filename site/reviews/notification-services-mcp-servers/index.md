@@ -31,7 +31,7 @@ Community alternatives exist (PSU3D0/resend-mcp, gui-wf/resend-mcp-server, Hawst
 |--------|-------|----------|-------|------|-----------|
 | [twilio-labs/mcp](https://github.com/twilio-labs/mcp) | ~104 | TypeScript | 1,800+ endpoints | API Key + Secret | stdio |
 
-**Twilio's MCP server went from the most stagnant to one of the most capable in this category.** On **May 7, 2026**, Twilio launched a **Public Beta** that dramatically expands the server's scope: access to **1,800+ endpoints across 30+ Twilio products** — SMS, Voice, Messaging, WhatsApp, Email, Verify, Video, Conversations, Flex, and more — all through a single MCP server.
+**Twilio's MCP server went from the most stagnant to one of the most capable in this category.** On [**May 7, 2026**](https://www.twilio.com/en-us/blog/developers/introducing-twilio-mcp-skills), Twilio launched a **Public Beta** that dramatically expands the server's scope: access to **1,800+ endpoints across 30+ Twilio products** — SMS, Voice, Messaging, WhatsApp, Email, Verify, Video, Conversations, Flex, and more — all through a single MCP server.
 
 The key new tools: **`twilio__search`** (natural language API discovery — describe what you want to do and it finds the right Twilio API) and **`twilio__retrieve`** (full operation specifications including schema and examples). This is a major UX improvement over the previous approach of manually specifying `--services` or `--tags` filters. Discoverability was the core weakness of the old server; the search tool addresses it directly.
 
@@ -102,7 +102,7 @@ For teams that just need to send transactional emails from an AI agent and check
 
 All servers are cloud-hosted at `mcp.infobip.com/{service}` — no local installation required. Authentication supports both API key (`App ${INFOBIP_API_KEY}` header) and OAuth 2.1 with scope discovery via `.well-known/oauth-authorization-server`. Transport options include HTTPS (direct), SSE (`/sse` suffix), and stdio bridge via `mcp-remote`.
 
-**Major development: Infobip launched AgentOS on April 1, 2026** — a fully managed AI-native platform that orchestrates autonomous, goal-driven customer journeys across 15+ channels. AgentOS integrates MCP servers as the communication layer for AI agents, enabling businesses to move from campaigns and workflows to autonomous interactions. This positions Infobip's MCP servers not just as standalone tools, but as the communication backbone for a complete agentic platform. Human-in-the-loop design ensures AI handles scale while specialists handle complex cases.
+**Major development: Infobip [launched AgentOS on April 1, 2026](https://www.businesswire.com/news/home/20260226218185/)** — a fully managed AI-native platform that orchestrates autonomous, goal-driven customer journeys across 15+ channels. AgentOS integrates MCP servers as the communication layer for AI agents, enabling businesses to move from campaigns and workflows to autonomous interactions. This positions Infobip's MCP servers not just as standalone tools, but as the communication backbone for a complete agentic platform. Human-in-the-loop design ensures AI handles scale while specialists handle complex cases.
 
 The open-source framework powering these servers is [infobip/infobip-openapi-mcp](https://github.com/infobip/infobip-openapi-mcp) (28 stars, Java, Spring AI/Spring Boot 3.5.x, Java 21+, v0.1.13) — a generic OpenAPI-to-MCP converter with auto schema transformation, mock mode, live reload, OAuth with auto scope discovery, automatic JSON error correction, and tool annotations (readOnly, destructive, idempotent). 99 commits. Any team with OpenAPI specs can use this to build their own MCP servers.
 
@@ -152,7 +152,7 @@ This is one of the most comprehensive transformations in the review — from an 
 | Vonage Documentation MCP | — | Hosted | Documentation Q&A | API key | Remote |
 | Vonage MCP Tooling Server | — | Hosted | SMS, Voice, WhatsApp, balance | API credentials | Remote |
 
-**Vonage has gone from minimal to enterprise-ready with two official servers in early 2026.** Both are discoverable on the **Postman API Network** (reaching 40M+ Postman users) and integrate with Claude, Cursor, VS Code Copilot, and Antigravity.
+**[Vonage has gone from minimal to enterprise-ready](https://www.prnewswire.com/news-releases/vonage-expands-developer-ecosystem-to-accelerate-the-next-era-of-enterprise-digital-transformation-302692247.html) with two official servers in early 2026.** Both are discoverable on the **Postman API Network** (reaching 40M+ Postman users) and integrate with Claude, Cursor, VS Code Copilot, and Antigravity.
 
 **Vonage Documentation MCP Server**: Query Vonage's official API documentation inline — ask about SDK usage, error codes, or integration patterns and get context-aware answers without leaving your AI client. Purpose-built for the 1.8M registered Vonage developers.
 
@@ -166,7 +166,7 @@ This is a meaningful reversal from our last review, where Vonage's community-onl
 |--------|-------|----------|-------|------|-----------|
 | [Klaviyo MCP](https://developers.klaviyo.com/en/docs/klaviyo_mcp_server) | — | Hosted | 15+ | OAuth / API key | Remote |
 
-**Klaviyo's official MCP server closes the biggest gap from our April review** — where we flagged the absence of any official Klaviyo integration as a notable weakness. Built in partnership with Anthropic, Klaviyo's MCP brings email marketing automation to **200,000+ e-commerce brands** using the platform.
+**Klaviyo's [official MCP server](https://www.klaviyo.com/newsroom/klaviyo-anthropic-expanded-integration) closes the biggest gap from our April review** — where we flagged the absence of any official Klaviyo integration as a notable weakness. Built in partnership with Anthropic, Klaviyo's MCP brings email marketing automation to **200,000+ e-commerce brands** using the platform.
 
 Tools cover: **campaigns** (create, draft, schedule, deploy), **flows** (automation sequences), **profiles** (subscriber data), **lists and segments**, **events** (track customer actions), **metrics** (performance analytics), **templates** (email designs). Auth via OAuth or private API key.
 
@@ -180,7 +180,7 @@ This shifts Klaviyo from "missing" to competitive with Courier and Novu for mult
 |--------|-------|----------|-------|------|-----------|
 | Adobe Marketo Engage MCP | — | Hosted | 100+ | OAuth | Remote |
 
-**Adobe launched an official Marketo Engage MCP server in April 2026** with 100+ operations covering email programs, lead management, forms, custom objects, and campaign execution. This is the first enterprise marketing automation platform with an official MCP server at scale — Marketo Engage powers some of the world's largest B2B marketing operations.
+**Adobe launched an [official Marketo Engage MCP server](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/mcp-server) in April 2026** with 100+ operations covering email programs, lead management, forms, custom objects, and campaign execution. This is the first enterprise marketing automation platform with an official MCP server at scale — Marketo Engage powers some of the world's largest B2B marketing operations.
 
 The tool surface is broad: lead database management, smart list operations, email asset management, program creation and scheduling, form submissions, and activity logging. For B2B marketing teams already on Marketo, the MCP unlocks AI-assisted campaign planning and execution without API scripting.
 
@@ -190,7 +190,7 @@ The tool surface is broad: lead database management, smart list operations, emai
 |--------|-------|----------|-------|------|-----------|
 | [Fastmail MCP](https://www.fastmail.com/blog/an-mcp-server-for-fastmail/) | — | Hosted | 6+ | OAuth (3 levels) | Remote HTTP |
 
-**Fastmail launched an official MCP server on April 22, 2026 (National Email Day).** Available at `api.fastmail.com/mcp`, this is the first privacy-focused email provider with an official MCP integration. No local installation needed — any MCP-compatible client (Claude, ChatGPT, Cursor) connects directly.
+**Fastmail [launched an official MCP server on April 22, 2026](https://www.fastmail.com/blog/an-mcp-server-for-fastmail/) (National Email Day).** Available at `api.fastmail.com/mcp`, this is the first privacy-focused email provider with an official MCP integration. No local installation needed — any MCP-compatible client (Claude, ChatGPT, Cursor) connects directly.
 
 Tools include: **email operations** (get recent emails, get specific email, send email, search emails), **contacts** (list contacts), and **calendar** (create events with participants, locations, and ISO 8601 times). OAuth consent screen offers three access levels: read-only, write (update emails, save drafts, edit contacts/events), and send (send emails).
 
@@ -204,7 +204,7 @@ Community alternatives exist (MadLlama25/fastmail-mcp, gr3enarr0w/fastmail-mcp-s
 |--------|-------|----------|-------|------|-----------|
 | [AgentMail MCP](https://docs.agentmail.to/integrations/mcp) | — | Hosted | Multiple | API key | MCP |
 
-**AgentMail represents a new paradigm: email infrastructure designed for AI agents, not humans.** Y Combinator Summer 2025 batch, $6M seed round (March 2026) led by General Catalyst with investors including Paul Graham, Dharmesh Shah (HubSpot CTO), Paul Copplestone (Supabase CEO), and Karim Atiyeh (Ramp CTO).
+**AgentMail represents a new paradigm: email infrastructure designed for AI agents, not humans.** [Y Combinator Summer 2025 batch, $6M seed round (March 2026)](https://www.globenewswire.com/news-release/2026/03/10/3253159/0/en/AgentMail-Raises-6M-led-by-General-Catalyst-to-Build-the-First-Email-Provider-for-AI-Agents.html) led by General Catalyst with investors including Paul Graham, Dharmesh Shah (HubSpot CTO), Paul Copplestone (Supabase CEO), and Karim Atiyeh (Ramp CTO).
 
 Instead of connecting AI agents to existing human email accounts (like Fastmail's MCP or Gmail integrations), AgentMail gives agents their own email inboxes. Agents can create, send, receive, and manage email threads entirely via API. One customer provisions 25,000 inboxes and processes millions of emails through AgentMail.
 
@@ -228,7 +228,7 @@ Still, its existence is significant — Amazon SES backs a massive share of the 
 |--------|-------|----------|-------|------|-----------|
 | [PowerDMARC MCP](https://powerdmarc.com/) | — | Hosted | 10+ | API key | Remote |
 
-**PowerDMARC launched an official MCP server on May 11, 2026** — the first email authentication and domain security service with MCP support. The server exposes: live domain portfolio audits, email authentication health scores (DMARC/DKIM/SPF), spoofing detection alerts, DNS/WHOIS lookups, and deliverability diagnostics.
+**PowerDMARC [launched an official MCP server on May 11, 2026](https://www.newsfilecorp.com/release/296898/PowerDMARC-Launches-MCP-Server)** — the first email authentication and domain security service with MCP support. The server exposes: live domain portfolio audits, email authentication health scores (DMARC/DKIM/SPF), spoofing detection alerts, DNS/WHOIS lookups, and deliverability diagnostics.
 
 This is a niche but important entrant. Email delivery failures due to misconfigured DMARC records are one of the most common causes of transactional email problems. An MCP server that lets AI agents audit and diagnose authentication issues in context — without switching to a separate dashboard — fills a real operational gap for email platform teams. Integrates with Claude, Cursor, and other major AI clients.
 

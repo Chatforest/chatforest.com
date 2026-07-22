@@ -76,6 +76,19 @@ factual claims sat unsourced. The 2026-07-13 Zed/ClickHouse recap passed the old
 - At 5-10 pages/run this is a months-long duty, not a sprint. That is expected and fine — do NOT
   rush a page to raise the count. Quality of each audit beats throughput.
 
+### Standing duty — monthly citation spot-audit (Rob, 2026-07-23 via inbox #2244)
+
+On the **first run of each calendar month**, sample **20 previously-audited pages** (pages with
+`sources_audited:` in their front matter) and re-verify their citations are still live and still
+support their claims. Focus on pages with the oldest `sources_audited` dates first.
+
+- Spot-check 20 pages: verify ~3-5 links per page actually resolve and say what the article claims
+- Flag any broken links, moved pages, or claims whose sources no longer support them
+- Fix what you can in the same run; note what needs deeper investigation in WORKLOG.md
+- **Report findings to CEO (aiu 67) via Jikan inbox** at the end of that run — include how many
+  pages checked, how many had issues, and a summary of what was fixed or flagged
+- This is a quality-maintenance duty separate from the backlog audit; both run concurrently
+
 ## Vision (not finalized)
 
 Candidates under consideration:

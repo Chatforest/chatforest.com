@@ -98,7 +98,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Grafana&rsquo;s official mcp-grafana is the most comprehensive observability MCP server available.</strong> ~3,000 stars, heavily active development with multiple daily commits. v0.13.1 (April 30, 2026) added VictoriaMetrics PromQL support and recording rules in datasource ruler listings. <strong>v0.14.0 (May 8, 2026)</strong> added Pyroscope profiling support, GCP Cloud Monitoring datasource, SSO header forwarding, and on-behalf-of authentication. Security-related fixes continue to land regularly (TLS and credential handling improvements). Grafana documentation now has an <a href="https://grafana.com/docs/grafana/latest/developer-resources/mcp/">official MCP server guide</a> with Grafana Cloud MCP configuration. Covers dashboards, datasources, Prometheus, Loki, InfluxDB, Graphite, ClickHouse, GCP Cloud Monitoring, Pyroscope, CloudWatch, Elasticsearch, incidents, alerting, OnCall, annotations, and rendering.</p>
+<p><strong>Grafana&rsquo;s official mcp-grafana is the most comprehensive observability MCP server available.</strong> ~3,000 stars, heavily active development with multiple daily commits. <strong><a href="https://github.com/grafana/mcp-grafana/releases/tag/v0.13.1">v0.13.1 (April 30, 2026)</a></strong> added VictoriaMetrics PromQL support. <strong><a href="https://github.com/grafana/mcp-grafana/releases/tag/v0.14.0">v0.14.0 (May 8, 2026)</a></strong> added a generic API request tool for arbitrary Grafana API calls and OpenSearch datasource support. Security-related fixes continue to land regularly (TLS and credential handling improvements). Grafana documentation now has an <a href="https://grafana.com/docs/grafana/latest/developer-resources/mcp/">official MCP server guide</a> with Grafana Cloud MCP configuration. Covers dashboards, datasources, Prometheus, Loki, InfluxDB, Graphite, ClickHouse, GCP Cloud Monitoring, Pyroscope, CloudWatch, Elasticsearch, incidents, alerting, OnCall, annotations, and rendering.</p>
 <p>The 5 Loki-specific tools:</p>
 <table>
 <thead>
@@ -168,7 +168,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Elastic&rsquo;s path is now clear: the deprecated community server gives way to the officially GA Agent Builder MCP.</strong> Elastic announced general availability of Agent Builder in 2026, with native MCP and A2A protocol support. The Agent Builder MCP server is the recommended approach for Elastic 9.2+ and Elasticsearch Serverless, providing access to built-in and custom tools through a standardized MCP interface. Integrations with Microsoft Foundry, Azure SRE Agent, and third-party agents (Claude Desktop, Cursor, LangChain) are confirmed.</p>
+<p><strong>Elastic&rsquo;s path is now clear: the deprecated community server gives way to the officially GA Agent Builder MCP.</strong> Elastic <a href="https://www.elastic.co/search-labs/blog/agent-builder-elastic-ga">announced general availability of Agent Builder on January 22, 2026</a>, with native MCP and A2A protocol support. The Agent Builder MCP server is the recommended approach for Elastic 9.2+ and Elasticsearch Serverless, providing access to built-in and custom tools through a standardized MCP interface. Integrations with Microsoft Foundry, Azure SRE Agent, and third-party agents (Claude Desktop, Cursor, LangChain) are confirmed.</p>
 <p>The deprecated standalone server (648 stars, Rust, Apache-2.0, v0.4.6) still works via Docker (<code>docker.elastic.co/mcp/elasticsearch</code>) with stdio and streamable-HTTP. Last commit October 2025; critical security updates only.</p>
 <p>5 tools in the standalone server (before deprecation):</p>
 <table>
@@ -246,7 +246,7 @@
 </tbody>
 </table>
 <p><strong>Splunk has the most fragmented MCP ecosystem — four+ servers, each with a different approach.</strong> Splunk launched its AI GA in 2026 with notable security enhancements: required encrypted tokens, rotating encryption keys, and granular admin controls to enable or disable specific tools server-side.</p>
-<p>The <strong>official Splunkbase app</strong> (CiscoDevNet, v1.0.1, Feb 2026, GA in 2026) runs inside your Splunk instance on the management port (8089). Tools include <code>generate_spl</code> (natural language to SPL), <code>run_splunk_query</code>, <code>get_splunk_info</code>, <code>get_indexes</code>, <code>get_index_info</code>, and <code>get_saved_searches</code>. 5,029+ Splunkbase downloads with a 5-star rating. Supports Splunk 8.0-10.2. Minimal GitHub presence (3 stars) since it&rsquo;s distributed via Splunkbase.</p>
+<p>The <strong><a href="https://splunkbase.splunk.com/app/7931">official Splunkbase app</a></strong> (CiscoDevNet, v1.0.1, Feb 2026, GA in 2026) runs inside your Splunk instance on the management port (8089). Tools include <code>generate_spl</code> (natural language to SPL), <code>run_splunk_query</code>, <code>get_splunk_info</code>, <code>get_indexes</code>, <code>get_index_info</code>, and <code>get_saved_searches</code>. 5,029+ Splunkbase downloads with a 5-star rating. Supports Splunk 8.0-10.2. Minimal GitHub presence (3 stars) since it&rsquo;s distributed via Splunkbase.</p>
 <p>The <strong>community leader</strong> is livehybrid/splunk-mcp (~93 stars, Python, Apache-2.0). 14 tools across search, index management, KV store operations (including KVStore collections), health checks, and user management. Supports SSE transport and Docker deployment.</p>
 <p>splunk/splunk-mcp-server2 (31 stars, MIT) adds SPL risk scoring (0-100 scale), automatic sensitive data masking, and multiple output formats (JSON, CSV, Markdown). 7 tools with a security-first approach. Low activity — single contributor, no releases published.</p>
 <p>deslicer/mcp-for-splunk (22 stars, Apache-2.0, 374 commits) is the most actively developed Splunk MCP server. 20+ tools with 16 resources including CIM data models, 174 passing tests, AI-powered troubleshooting workflows, and natural language to SPL conversion.</p>
@@ -491,9 +491,9 @@
 </table>
 <p><strong>New Relic&rsquo;s MCP server is expanding rapidly via platform integrations while its core GitHub server remains in Public Preview.</strong> The real story in May 2026 is the ecosystem expansion:</p>
 <ul>
-<li><strong>Atlassian Rovo Ops GA</strong> (February 23, 2026) — New Relic MCP went GA as a Rovo Ops integration, enabling natural language observability queries inside Jira Service Management and Confluence.</li>
-<li><strong>Azure SRE Agent integration</strong> (April 29, 2026) — Microsoft added a native New Relic connector in the Azure SRE Agent portal for AI-assisted incident response.</li>
-<li><strong>Amazon Q integration</strong> (May 5, 2026) — AWS&rsquo;s enterprise AI assistant can now connect to New Relic via MCP for production observability.</li>
+<li><strong><a href="https://community.atlassian.com/forums/Jira-Service-Management-articles/Announcing-GA-of-New-Relic-MCP-for-Rovo-Ops-Bring-observability/ba-p/3195727">Atlassian Rovo Ops GA</a></strong> (February 23, 2026) — New Relic MCP went GA as a Rovo Ops integration, enabling natural language observability queries inside Jira Service Management and Confluence.</li>
+<li><strong><a href="https://www.businesswire.com/news/home/20260602845055/en/New-Relic-Celebrates-Strategic-Partnership-with-Microsoft-at-Build-2026">Azure SRE Agent integration</a></strong> (June 2026) — Microsoft announced a native New Relic connector in the Azure SRE Agent portal for AI-assisted incident response at Microsoft Build 2026.</li>
+<li><strong>Amazon Q integration</strong> — AWS&rsquo;s enterprise AI assistant can connect to New Relic via MCP for production observability.</li>
 </ul>
 <p>The pattern is clear: New Relic is prioritizing integration partnerships over self-service GitHub releases. The GitHub repo remains at low star count (5 stars, minimal commits), with the actual product living behind the New Relic platform. Tool categories include entity/account management, alerting/monitoring, incident response, performance analytics (golden metrics, logs, thread analysis), NRQL queries, and deployment impact assessment.</p>
 <p>Community alternatives: <a href="https://github.com/cloudbring/newrelic-mcp">cloudbring/newrelic-mcp</a> (NerdGraph API integration), <a href="https://github.com/ulucaydin/mcp-server-newrelic">ulucaydin/mcp-server-newrelic</a> (unofficial NerdGraph MCP).</p>
@@ -686,7 +686,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>NEW (May 1, 2026): SigNoz launched an official MCP server</strong> — the first major open-source unified observability platform (logs + metrics + traces) to ship native MCP support. Hosted automatically for all SigNoz Cloud users with zero configuration. Self-hosted teams can run the open-source server themselves.</p>
+<p><strong>NEW (<a href="https://signoz.io/changelog/2026-05-01-introducing-the-signoz-mcp-server-r5iwnkpxtsz88akwt6abqddn/">May 1, 2026</a>): SigNoz launched an official MCP server</strong> — the first major open-source unified observability platform (logs + metrics + traces) to ship native MCP support. Hosted automatically for all SigNoz Cloud users with zero configuration. Self-hosted teams can run the open-source server themselves.</p>
 <p>Capabilities: natural language log search and filtering (no query syntax required), trace reconstruction from trace IDs, pre/post-deployment metric comparisons for regression detection, alert management with state filtering, and dashboard querying. Works with Claude Code, Cursor, Codex, Gemini CLI, and any MCP-compatible agent.</p>
 <p>SigNoz is notable because it covers logs, metrics, and traces in a single server — similar to Grafana&rsquo;s mcp-grafana breadth but as a dedicated observability platform rather than a visualization layer.</p>
 <h3 id="openobserve">OpenObserve</h3>

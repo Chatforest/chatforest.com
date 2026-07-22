@@ -6,6 +6,7 @@ og_description: "Container registry MCP servers: Docker Hub (official, 13 tools,
 content_type: "Review"
 card_description: "Container registry MCP servers across Docker Hub, JFrog, AWS ECR, Azure ACR, Harbor, Nexus, and now Quay.io. Docker Hub's official server has AI-powered image discovery across 100k+ images. JFrog covers the full artifact lifecycle with 22+ tools. Azure MCP Server v2.0 cuts startup time from 20s to 1-2s. Quay.io's official MCP server closes a long-standing gap."
 last_refreshed: 2026-05-21
+sources_audited: 2026-07-23
 ---
 
 Container registries are the storage backbone of modern deployment — **every container that runs in production was pulled from one**. MCP servers for registries let AI agents search for images, manage repository metadata, push builds, and scan for vulnerabilities without the developer juggling CLI tools and web consoles.
@@ -22,7 +23,7 @@ The headline finding: **official vendor investment is strong and deepening**. Do
 |--------|-------|----------|-------|------|-----------|
 | [docker/hub-mcp](https://github.com/docker/hub-mcp) | ~104 | TypeScript | 13 | Optional PAT | stdio |
 
-**Docker Hub's official MCP server brings AI-powered image discovery across 100,000+ public images.** ~104 stars, Apache 2.0, backed by Docker, Inc. Requires Node.js 22+. Also available through Docker MCP Toolkit in Docker Desktop for one-click setup. Docker Desktop 4.67.0 (March 30, 2026) added MCP profile template cards with an onboarding tour and fixed CVE-2026-33990 (SSRF vulnerability in Docker Model Runner's OCI registry client).
+**Docker Hub's official MCP server brings AI-powered image discovery across 100,000+ public images.** ~104 stars, Apache 2.0, backed by Docker, Inc. Requires Node.js 22+. Also available through Docker MCP Toolkit in Docker Desktop for one-click setup. Docker Desktop 4.67.0 (March 30, 2026) added MCP profile template cards with an onboarding tour and fixed [CVE-2026-33990](https://github.com/docker/model-runner/security/advisories/GHSA-x2f5-332j-9xwq) (SSRF vulnerability in Docker Model Runner's OCI registry client).
 
 13 tools across three domains:
 
@@ -67,7 +68,7 @@ The Docker MCP Toolkit integration means Claude Desktop, Cursor, and VS Code use
 
 **JFrog now offers two MCP server options.** The experimental `mcp-jfrog` (111 stars) remains available for local use, but JFrog now explicitly directs users to the **official remote hosted MCP server** (`jfrog-mcp-server`) — a cloud-hosted server maintained by JFrog with OAuth authentication and automatic tool updates. The hosted server covers Resource Management, Artifact Search, Catalog/Curation, and Security Monitoring.
 
-**Also new: JFrog Universal MCP Registry** (launched March 18, 2026) — treats every MCP server as a governed artifact with centralized discovery, configuration, and project-level permissions. This is a meta-registry for managing MCP servers themselves, not container images, but it's relevant because it brings supply chain governance patterns to the MCP ecosystem. Available as part of JFrog AI Catalog.
+**Also new: [JFrog Universal MCP Registry](https://jfrog.com/press-room/jfrog-unveils-universal-mcp-registry-for-ai-software-supply-chain/)** (launched March 18, 2026) — treats every MCP server as a governed artifact with centralized discovery, configuration, and project-level permissions. This is a meta-registry for managing MCP servers themselves, not container images, but it's relevant because it brings supply chain governance patterns to the MCP ecosystem. Available as part of JFrog AI Catalog.
 
 JFrog Artifactory supports Docker, Maven, npm, PyPI, and dozens of other package formats — making this useful far beyond just container images.
 
@@ -127,7 +128,7 @@ The **immutable tags** enforcement is a security best practice — preventing ta
 |--------|-------|----------|-------|------|-----------|
 | [microsoft/mcp](https://github.com/microsoft/mcp) | ~3,000 | C# | 2 ACR tools | Azure credentials | stdio, .mcpb |
 
-**Azure Container Registry gets two read-only tools inside Microsoft's broader Azure MCP server.** MIT, now covers 45+ Azure services with 230+ tools total. **Azure MCP Server v2.0** (May 2026) is the major update: startup time slashed from ~20 seconds to 1-2 seconds — a 10–20× improvement that makes the server practical for interactive agent workflows. Azure MCP tools are built into Visual Studio 2026 natively. Available as an MCP Bundle (.mcpb) for no-runtime-required install into Claude Desktop and other clients.
+**Azure Container Registry gets two read-only tools inside Microsoft's broader Azure MCP server.** MIT, now covers 45+ Azure services with 230+ tools total. **[Azure MCP Server v2.0](https://devblogs.microsoft.com/azure-sdk/announcing-azure-mcp-server-2-0-stable-release/)** (May 2026) is the major update: startup time slashed from ~20 seconds to 1-2 seconds — a 10–20× improvement that makes the server practical for interactive agent workflows. Azure MCP tools are built into Visual Studio 2026 natively. Available as an MCP Bundle (.mcpb) for no-runtime-required install into Claude Desktop and other clients.
 
 ACR-specific tools:
 
@@ -206,7 +207,7 @@ Available via pip or Docker. Includes AI-guided configuration helpers.
 |--------|-------|----------|-------|------|-----------|
 | [aquasecurity/trivy-mcp](https://github.com/aquasecurity/trivy-mcp) | ~37 | Go | Multiple | Optional | stdio, HTTP, SSE |
 
-**Trivy's MCP plugin scans container images for vulnerabilities through natural language queries.** 37 stars, MIT, official Aqua Security project, 67 commits, v0.0.20 (December 2025). Installs as a Trivy plugin (`trivy plugin install mcp`, then `trivy mcp`). Supports VS Code, Cursor, JetBrains IDEs, and Claude Desktop. Optional Aqua Platform integration for enhanced scanning and policy compliance. Note: Trivy experienced a security incident in March 2026 (malicious v0.69.4 release, compromised GitHub Actions) — the main Trivy project is now at v0.70.0 with incident resolved.
+**Trivy's MCP plugin scans container images for vulnerabilities through natural language queries.** 37 stars, MIT, official Aqua Security project, 67 commits, v0.0.20 (December 2025). Installs as a Trivy plugin (`trivy plugin install mcp`, then `trivy mcp`). Supports VS Code, Cursor, JetBrains IDEs, and Claude Desktop. Optional Aqua Platform integration for enhanced scanning and policy compliance. Note: Trivy experienced a [security incident in March 2026](https://github.com/aquasecurity/trivy/security/advisories/GHSA-69fq-xp46-6x23) (malicious v0.69.4 release via compromised GitHub Actions) — v0.69.3 is the last safe release before the incident.
 
 While covered in our [Code Security MCP Servers review](/reviews/code-security-mcp-servers/), Trivy is relevant here because **container image scanning is a core registry workflow**. Ask "Are there any critical CVEs in nginx:1.25?" and Trivy scans the image layers. This complements registry management servers — one manages the images, the other tells you if they're safe.
 

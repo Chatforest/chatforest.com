@@ -7,6 +7,7 @@ content_type: "Review"
 card_description: "Monitoring and uptime MCP servers across UptimeRobot, Uptime Kuma, OneUptime, Better Stack, and infrastructure diagnostics. New standalone monitoring platforms with native MCP: PingZen (44 tools, 22 protocols), Uptrack, and UptimeBolt (AI-first, Claude Copilot). DavidFuchs/mcp-uptime-kuma holds at 23 tools in v0.7.0."
 categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-05-21
+sources_audited: 2026-07-23
 ---
 
 Uptime monitoring is table stakes for any production system — and now AI agents can interact with monitoring platforms directly. The MCP ecosystem here splits between **commercial platforms with official hosted servers** (UptimeRobot, OneUptime, and Better Stack), **open-source platforms with community-built integrations** (Uptime Kuma), and an emerging category of **standalone AI-native monitoring platforms** that launched with MCP as a first-class feature rather than retrofitting it.
@@ -27,7 +28,7 @@ The tool set covers the full monitoring lifecycle: **list and manage monitors** 
 
 Security is handled sensibly. You can use a **read-only API key** for pure monitoring visibility, or the main API key for full read/write access. The token goes in a Bearer authorization header, keeping it out of URL parameters.
 
-UptimeRobot's free tier (50 monitors, 5-minute intervals) works with MCP. Paid plans ($7/month Pro, 50 monitors at 30-second intervals) add more capacity. The MCP integration itself doesn't appear to add extra cost.
+UptimeRobot's [free tier](https://uptimerobot.com/pricing/) (50 monitors, 5-minute intervals) works with MCP. Paid plans (Solo, Team, and Enterprise tiers) add shorter intervals and more monitors. The MCP integration itself doesn't appear to add extra cost.
 
 The gap: UptimeRobot's MCP documentation is sparse. Tool names and capabilities auto-discover, but there's no public reference listing every available tool with parameter schemas. You're trusting the MCP client's tool discovery to surface everything.
 
@@ -41,9 +42,9 @@ The gap: UptimeRobot's MCP documentation is sparse. Tool names and capabilities 
 | [phukit29182/uptime-kuma-mcp-server](https://github.com/phukit29182/uptime-kuma-mcp-server) | 1 | Python | 12 | Username/password | stdio, SSE |
 | [gryfai/mcp-uptime-kuma-open](https://github.com/gryfai/mcp-uptime-kuma-open) | 0 | Python | 8 (read-only) | Username/password | stdio |
 
-**Uptime Kuma is the most popular self-hosted monitoring tool** ([louislam/uptime-kuma](https://github.com/louislam/uptime-kuma), 85.9K stars), and it has the most MCP servers in this category — though none are official.
+**Uptime Kuma is the most popular self-hosted monitoring tool** ([louislam/uptime-kuma](https://github.com/louislam/uptime-kuma), 85K+ stars), and it has the most MCP servers in this category — though none are official.
 
-**DavidFuchs/mcp-uptime-kuma** is the clear community leader and has undergone a **major expansion in v0.7.0** (March 24, 2026). The tool count jumped from 9 to **23 tools** across six categories: **9 monitor tools** (get summaries, list, create, update, delete, pause, resume), **2 heartbeat tools**, **4 notification tools**, **3 tag tools**, **2 maintenance tools**, and **2 status pages & settings tools**. The v0.7.0 release added authentication improvements with Uptime Kuma v2 and full write-side MCP tools — you can now create, update, and delete monitors directly through MCP, not just read them. Now at 22 stars, 58+ commits, context-efficient by design. Supports both stdio (local via npx) and Streamable HTTP (remote via Docker). Authentication includes anonymous, username/password, and JWT tokens. TypeScript, MIT. No releases after v0.7.0, but the server is stable and actively starred.
+**DavidFuchs/mcp-uptime-kuma** is the clear community leader and has undergone a **major expansion in [v0.7.0](https://github.com/DavidFuchs/mcp-uptime-kuma/releases)** (March 24, 2026). The tool count jumped from 9 to **23 tools** across six categories: **9 monitor tools** (get summaries, list, create, update, delete, pause, resume), **2 heartbeat tools**, **4 notification tools**, **3 tag tools**, **2 maintenance tools**, and **2 status pages & settings tools**. The v0.7.0 release added authentication improvements with Uptime Kuma v2 and full write-side MCP tools — you can now create, update, and delete monitors directly through MCP, not just read them. Now at 22 stars, 58+ commits, context-efficient by design. Supports both stdio (local via npx) and Streamable HTTP (remote via Docker). Authentication includes anonymous, username/password, and JWT tokens. TypeScript, MIT. No releases after v0.7.0, but the server is stable and actively starred.
 
 **lefty3382/uptime-kuma-mcp** is a new Python entry (March 2026) with a broader tool surface: **35 tools across 8 categories** — monitors, notifications, status pages, Docker host management, maintenance windows, tags, heartbeats, and server administration (database shrink, clear events/stats). Notably, 9 destructive operations require a `confirm=True` safety flag, which prevents accidental deletes. Uses FastMCP with asyncio bridge; Docker deployment supported. 0 stars and still unproven in production, but the tool coverage surpasses DavidFuchs on paper — particularly the Docker host management and server admin tools that DavidFuchs lacks.
 
@@ -104,7 +105,7 @@ This fills what was the most notable gap in the monitoring MCP landscape. Better
 
 These servers don't integrate with a monitoring platform — they perform diagnostic checks directly.
 
-**ProbeOps MCP Server** is the most interesting standalone option. 21 tools across infrastructure diagnostics: `ssl_check`, `dns_lookup`, `is_it_down`, `latency_test`, `traceroute`, `port_check`, `ping`, `whois`, `nmap_port_check`, `tcp_ping`, `keyword_check`, `websocket_check`, `banner_grab`, `api_health`, plus 6 DNS shortcuts and geo-proxy browsing from 6 global regions (US East, US West, EU Central, Canada, India, Australia). It works instantly with no API key required (demo mode: 11 tools, 10 calls/day). Free tier: 21 tools, 100 calls/day. Professional tier: 5,000 calls/day. Multi-region execution is genuinely useful — you can test if a site is down globally or just from your location.
+**ProbeOps MCP Server** is the most interesting standalone option. 21 tools across infrastructure diagnostics: `ssl_check`, `dns_lookup`, `is_it_down`, `latency_test`, `traceroute`, `port_check`, `ping`, `whois`, `nmap_port_check`, `tcp_ping`, `keyword_check`, `websocket_check`, `banner_grab`, `api_health`, plus 6 DNS shortcuts and geo-proxy browsing from 6 global regions (US East, US West, EU Central, Canada, India, Australia). It works instantly with no API key required ([demo mode: 11 tools, 10 calls/day](https://probeops.com/pricing)). Free tier: 21 tools, 100 calls/day. Professional tier: 5,000 calls/day. Multi-region execution is genuinely useful — you can test if a site is down globally or just from your location.
 
 **mcp-checkuptime** provides just 2 tools (`ping_host`, `check_website`) for basic connectivity checking. MIT, runs as both MCP server and standalone web API on port 9000. Useful for Open WebUI integration.
 
@@ -124,7 +125,7 @@ A new pattern has emerged: purpose-built monitoring platforms that launched with
 
 **Uptrack** (uptrack.app) launched its MCP server in May 2026 — the most recently released entry in this category. No detailed tool list yet, but the product page targets Claude, ChatGPT, Cursor, VS Code, and Windsurf as clients. Early stage.
 
-**UptimeBolt** (clm-cloud-solutions/uptimebolt-mcp-server) is an AI-first monitoring platform with a built-in Claude-powered Copilot alongside its MCP server. Monitors HTTP, TCP, DNS, Heartbeat, Synthetic, Email, and Database. Pricing: Free (10 monitors), $23/mo Starter, $79/mo Pro, $239/mo Enterprise. 1 star. The "AI-first" positioning and multi-protocol support are interesting, but it's a brand-new platform with no track record.
+**UptimeBolt** (clm-cloud-solutions/uptimebolt-mcp-server) is an AI-first monitoring platform with a built-in Claude-powered Copilot alongside its MCP server. Monitors HTTP, TCP, DNS, Heartbeat, Synthetic, Email, and Database. Offers free and paid tiers. 1 star. The "AI-first" positioning and multi-protocol support are interesting, but it's a brand-new platform with no track record.
 
 These three represent a new direction: platforms that treat AI agent integration as a founding premise rather than an integration add-on. None have meaningful traction yet (0–1 stars, launched March–May 2026), so treat them as ones to watch rather than production recommendations.
 

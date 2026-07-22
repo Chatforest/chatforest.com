@@ -6,6 +6,7 @@ og_description: "15+ API gateway MCP servers reviewed — Kong, APISIX, Cloudfla
 content_type: "Review"
 card_description: "API gateway MCP servers across Kong, APISIX, Cloudflare, Envoy, Traefik, Gravitee, Apigee, AgentGateway, and new entrants. AgentGateway hits 2,800 stars with v1.2.1 (CEL policies, route delegation, agctl debugger, post-quantum TLS). Envoy AI Gateway v0.6.0 ships MCPRoute v1beta1 — the first production-ready MCP routing CRD — with v1.0 GA targeted for June 2026. Google Apigee API Hub adds MCP Tools in Public Preview. Docker MCP Gateway actively shipping. Databricks Unity AI Gateway enters with MCP governance in Unity Catalog."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-23
 ---
 
 API gateways sit at the intersection of every API call in production infrastructure. Making them accessible to AI agents unlocks powerful capabilities: **natural language route configuration, automated traffic analysis, real-time debugging, and intelligent plugin management**. But this category splits into two distinct stories.
@@ -153,7 +154,7 @@ Can run in standalone mode with your existing MCP servers config file — meanin
 
 ### Kong AI Gateway + Agent Gateway
 
-Kong Gateway 3.14 (April 14, 2026) launched **Kong Agent Gateway** — the **first platform to unify LLM, MCP, and A2A governance in a single control plane**. This extends the existing MCP plugins (AI MCP Proxy, AI MCP OAuth2, Prometheus MCP metrics) from Gateway 3.12+ with full Agent-to-Agent protocol support.
+[Kong Gateway 3.14](https://konghq.com/blog/product-releases/kong-agent-gateway) (April 14, 2026) launched **Kong Agent Gateway** — Kong's most comprehensive AI gateway for the agentic era, extending MCP plugins (AI MCP Proxy, AI MCP OAuth2, Prometheus MCP metrics) from Gateway 3.12+ with full Agent-to-Agent protocol support.
 
 Kong's enterprise MCP Gateway addresses server sprawl, security gaps, and cost management for organizations running many MCP servers. The gateway converts RESTful APIs defined as Kong Gateway Services into MCP tools automatically — acting as a protocol bridge between MCP and HTTP. Kong 3.15 is expected around June 2026 per Kong's quarterly cadence; no release in the April 22–May 20 window.
 
@@ -183,14 +184,14 @@ Apigee provides **native, zero-code MCP support** — it dynamically discovers e
 
 - **Apigee Hybrid v1.16.1 (April 20):** Broader set of MCP methods supported; governance bypass for essential system-level operations.
 - **Apigee API Hub — Unified MCP Proxy Configuration (May 7):** Select API operations from catalog, bundle into an MCP server, auto-deploy — without writing a spec.
-- **Apigee API Hub — MCP Tools in Public Preview (May 12):** API Hub now exposes read-only APIs directly as MCP tools. MCP Discovery Proxies (also Public Preview) let you create and deploy MCP discovery proxies from API Hub without manual spec authoring. Agent Registry Integration automatically syncs MCP server and tool metadata to the Agent Registry for AI agent discovery.
-- **Apigee Hybrid v1.16.2 (May 13):** Critical security fix — `LLMTokenQuota` operations were not enforcing model-based access restrictions; patched.
+- **[Apigee API Hub — MCP Tools in Public Preview (May 12)](https://docs.cloud.google.com/apigee/docs/apihub/release-notes):** API Hub now exposes read-only APIs directly as MCP tools. MCP Discovery Proxies (also Public Preview) let you create and deploy MCP discovery proxies from API Hub without manual spec authoring. Agent Registry Integration automatically syncs MCP server and tool metadata to the Agent Registry for AI agent discovery.
+- **[Apigee Hybrid v1.16.2 (May 13)](https://docs.cloud.google.com/apigee/docs/hybrid/release-notes):** Critical security fix — `LLMTokenQuota` operations were not enforcing model-based access restrictions; patched.
 
 This is arguably the most enterprise-ready approach: existing API governance (rate limits, quotas, analytics, security policies) automatically applies to MCP tool invocations. The May 12 Public Preview additions (MCP Tools, Discovery Proxies, Agent Registry sync) meaningfully reduce the friction of bringing an existing API catalog into the MCP ecosystem.
 
 ### Databricks Unity AI Gateway (NEW)
 
-**Databricks rebranded and expanded AI Gateway as "Unity AI Gateway" (April 15, 2026)**, integrating it into Unity Catalog for unified data + AI governance. The key MCP addition: fine-grained permissions governing which AI agents can access external systems via MCP, with On-Behalf-Of (OBO) access and complete end-to-end observability for LLM and MCP calls. Rate limiting, fallback routing, and cost controls span model providers. For organizations already on Databricks, this is the natural governance layer for MCP traffic — no separate gateway to deploy.
+**[Databricks rebranded and expanded AI Gateway as "Unity AI Gateway" (April 15, 2026)](https://www.databricks.com/blog/ai-gateway-governance-layer-agentic-ai)**, integrating it into Unity Catalog for unified data + AI governance. The key MCP addition: fine-grained permissions governing which AI agents can access external systems via MCP, with On-Behalf-Of (OBO) access and complete end-to-end observability for LLM and MCP calls. Rate limiting, fallback routing, and cost controls span model providers. For organizations already on Databricks, this is the natural governance layer for MCP traffic — no separate gateway to deploy.
 
 ### Higress API Gateway (MCP)
 

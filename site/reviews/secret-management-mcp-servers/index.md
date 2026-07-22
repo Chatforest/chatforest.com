@@ -5,7 +5,7 @@
 
 Secrets are the keys to everything — **API tokens, database passwords, TLS certificates, encryption keys**. MCP servers for secret management let AI agents store, retrieve, rotate, and audit credentials without developers copy-pasting sensitive values through chat windows or hardcoding them in config files.
 
-The headline finding: **this category is surprisingly mature and growing**. HashiCorp has an official Vault MCP server with KV and PKI support (now 44 stars, Vault 2.0 released April 2026 under IBM lifecycle). Bitwarden shipped an official MCP server with 30+ tools covering vault management and organization administration (150 stars). Infisical and Doppler both have official servers. CyberArk has expanded significantly — its MCP server and new Agent Guard product are now on AWS Marketplace. The major cloud providers cover their secret stores through broader platform MCP servers, with Azure Key Vault expanding to 9 tools including certificate import. And a growing sub-category of **MCP credential security tools** protects the secrets *used by* MCP servers themselves — a critical concern given GitGuardian's finding that **24,008 unique secrets were exposed in MCP configuration files** on public GitHub. The OWASP MCP Top 10 (beta, 2026) lists token mismanagement as the #1 risk. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**. Also part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
+The headline finding: **this category is surprisingly mature and growing**. HashiCorp has an official Vault MCP server with KV and PKI support (now 44 stars, Vault 2.0 released April 2026 under IBM lifecycle). Bitwarden shipped an official MCP server with 30+ tools covering vault management and organization administration (150 stars). Infisical and Doppler both have official servers. CyberArk has expanded significantly — its MCP server and new Agent Guard product are now on AWS Marketplace. The major cloud providers cover their secret stores through broader platform MCP servers, with Azure Key Vault expanding to 9 tools including certificate import. And a growing sub-category of **MCP credential security tools** protects the secrets *used by* MCP servers themselves — a critical concern given GitGuardian's finding that **24,008 unique secrets were exposed in MCP configuration files** on public GitHub. The [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (beta, 2026) lists token mismanagement as the #1 risk. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**. Also part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
 
 ## The Landscape
 
@@ -15,7 +15,7 @@ The headline finding: **this category is surprisingly mature and growing**. Hash
 |--------|-------|----------|-------|------|-----------|
 | [hashicorp/vault-mcp-server](https://github.com/hashicorp/vault-mcp-server) | ~47 | Go | 16 | Vault token | stdio, StreamableHTTP |
 
-**HashiCorp's official Vault MCP server provides KV secret management, PKI certificate operations, and mount management.** 47 stars (+3 since April), 126 commits, 15 forks, beta status. Requires Go 1.24+ to build from source or Docker. Supports both stdio (local dev) and StreamableHTTP (distributed) transports. **Vault 2.0 released April 2026** — the first major version bump since 1.0, now under IBM lifecycle and versioning following the acquisition. Vault 2.0 adds IBM Passport Advantage licensing and LDAP static role support, though the MCP server tools remain unchanged at 16.
+**HashiCorp's official Vault MCP server provides KV secret management, PKI certificate operations, and mount management.** 47 stars (+3 since April), 126 commits, 15 forks, beta status. Requires Go 1.24+ to build from source or Docker. Supports both stdio (local dev) and StreamableHTTP (distributed) transports. **[Vault 2.0 released April 2026](https://www.hashicorp.com/en/blog/vault-enterprise-20-modernizes-identity-security-at-scale)** — the first major version bump since 1.0, now under IBM lifecycle and versioning following the acquisition. Vault 2.0 adds IBM Passport Advantage licensing and LDAP static role support, though the MCP server tools remain unchanged at 16.
 
 16 tools across three domains:
 
@@ -81,7 +81,7 @@ Useful for security teams running automated secret scanning — an agent can que
 |--------|-------|----------|-------|------|-----------|
 | [bitwarden/mcp-server](https://github.com/bitwarden/mcp-server) | ~166 | TypeScript | 40+ | BW_SESSION token | stdio |
 
-**Bitwarden's official MCP server provides the broadest password manager feature set — covering both individual vault management and organization administration.** 166 stars (+16 since April), GPL-3.0, requires Node.js 22+ and the Bitwarden CLI. Install via `npx @bitwarden/mcp-server`. **Latest version v2026.5.0 (May 20, 2026)** — the first release since v2026.2.0 (February 2026).
+**Bitwarden's official MCP server provides the broadest password manager feature set — covering both individual vault management and organization administration.** 166 stars (+16 since April), GPL-3.0, requires Node.js 22+ and the Bitwarden CLI. Install via `npx @bitwarden/mcp-server`. **[Latest version v2026.5.0 (May 20, 2026)](https://github.com/bitwarden/mcp-server/releases/tag/v2026.5.0)** — the first release since v2026.2.0 (February 2026).
 
 Two major tool groups (40+ tools total — 20+ vault management, 20+ org administration):
 
@@ -120,7 +120,7 @@ Two community-built servers cover 1Password, with very different scopes:
 
 **1Password-MCP is the more actively used option** — 14 stars (up from 3 in April), updated May 9, 2026. 8 tools for vault listing, item management, password generation, and passphrase creation, plus 4 prompts for credential rotation workflows and vault auditing. Uses Service Account tokens, which limits scope to designated vaults only.
 
-Both are community-built — **1Password has no dedicated MCP server for vault access yet**, though the company is clearly investing in the AI agent space. 1Password now publishes MCP developer documentation at `1password.dev/mcp`, signaling official tooling may be in development. In March 2026, 1Password launched its **Unified Access** platform for AI agent security, partnering with Anthropic, Cursor, GitHub, Perplexity, and Vercel. They also shipped an **MCP Server for Trelica** (their app governance solution, available on AWS Marketplace) and integrated with **Runlayer** for MCP credential management (March 17, 2026). Natoma, an MCP gateway provider, now integrates 1Password to inject credentials into agent sessions. The direction is clear — 1Password is building the AI agent security layer rather than a standalone vault MCP server.
+Both are community-built — **1Password has no dedicated MCP server for vault access yet**, though the company is clearly investing in the AI agent space. 1Password now publishes [MCP developer documentation at `1password.dev/mcp`](https://1password.dev/mcp), signaling official tooling may be in development. In March 2026, 1Password launched its **[Unified Access](https://1password.com/press/2026/mar/1password-unified-access)** platform for AI agent security, partnering with Anthropic, Cursor, GitHub, Perplexity, and Vercel. They also shipped an **MCP Server for Trelica** (their app governance solution, available on AWS Marketplace) and integrated with **Runlayer** for MCP credential management (March 17, 2026). Natoma, an MCP gateway provider, now integrates 1Password to inject credentials into agent sessions. The direction is clear — 1Password is building the AI agent security layer rather than a standalone vault MCP server.
 
 The security warnings are worth heeding: secrets may be retained by LLM providers, there's no end-to-end encryption during MCP transit, and Service Account tokens should be treated as master keys.
 
@@ -169,7 +169,7 @@ Tool categories cover:
 
 The `--read-only` flag restricts to GET operations only — useful when you want agents to read secrets but never modify them. You can also scope to a specific project (`--project`) and config (`--config`) to limit blast radius.
 
-Doppler's blog has published detailed guidance on MCP credential security, noting that **48% of reviewed MCP servers recommend storing credentials in plaintext** `.env` or JSON files. Their server is designed to replace those patterns.
+[Doppler's blog](https://www.doppler.com/blog/february-26-product-update) has published detailed guidance on MCP credential security, noting that **48% of reviewed MCP servers recommend storing credentials in plaintext** `.env` or JSON files. Their server is designed to replace those patterns.
 
 ### AWS Secrets Manager (Community)
 
@@ -218,7 +218,7 @@ CyberArk has significantly expanded its MCP presence since March 2026, now offer
 
 **Secrets Manager MCP Server** — Provides AI models with the ability to read and update Secrets Manager data. Can create workloads and secrets, assign permissions, scan source code for hardcoded credentials, and propose replacements with managed secrets. Uses OAuth with PKCE for authentication (short-lived tokens only). Available as a Docker container.
 
-**SCA (Secure Cloud Access) MCP Server** — Purpose-built to embed **Zero Standing Privileges** into developer tools. Enforces dynamic, scoped access for cloud resources in AI-driven workflows. Works with Amazon Q Developer, Claude for Desktop, and other MCP clients. **Now available on AWS Marketplace** in the new AI Agents and Tools category.
+**SCA (Secure Cloud Access) MCP Server** — Purpose-built to embed **Zero Standing Privileges** into developer tools. Enforces dynamic, scoped access for cloud resources in AI-driven workflows. Works with Amazon Q Developer, Claude for Desktop, and other MCP clients. **[Now available on AWS Marketplace](https://www.cyberark.com/press/cyberark-announces-availability-of-tools-to-secure-ai-agents-in-the-new-aws-marketplace-ai-agents-and-tools-category/)** in the new AI Agents and Tools category.
 
 **CyberArk Agent Guard** (new) — Secures AI agent credential retrieval across secret providers including AWS Secrets Manager and CyberArk Secrets Manager. Acts as an **MCP proxy** that dynamically retrieves secrets, injects them into the MCP server session, and disposes them after use. Provides traceability of all AI agent MCP communications. Also **available on AWS Marketplace**.
 
@@ -242,7 +242,7 @@ A growing sub-category focuses on securing the secrets *used by MCP servers them
 | [mcp-keyring-injector](https://github.com/astrogilda/mcp-keyring-injector) | Session-scoped credential injection — keys auto-injected at startup, auto-removed at exit. v1.1.0 adds SessionEnd cleanup hook for automatic credential removal when Claude Code exits. |
 | [mcp-secrets](https://github.com/ai-mcp-garage/mcp-secrets) (new) | Cross-platform framework (Python + JS + Rust) storing secrets in system keychains with native OS dialogs for credential input. 4 stars, 12 commits. Verification codes prevent phishing. Session-based caching reduces prompt fatigue. |
 
-The scale of the problem is now quantified: GitGuardian's State of Secrets Sprawl 2026 found **24,008 unique secrets exposed in MCP configuration files on public GitHub**, with **2,117 still valid** at time of scan. The OWASP MCP Top 10 (beta, 2026) lists token mismanagement and secret exposure as **MCP01** — the #1 risk category. MCPGUARD reports 8,000+ MCP servers publicly accessible on the internet as of February 2026.
+The scale of the problem is now quantified: [GitGuardian's State of Secrets Sprawl 2026](https://www.gitguardian.com/state-of-secrets-sprawl-report-2026) found **24,008 unique secrets exposed in MCP configuration files on public GitHub**, with **2,117 still valid** at time of scan. The OWASP MCP Top 10 (beta, 2026) lists token mismanagement and secret exposure as **MCP01** — the #1 risk category. [MCPGUARD reports 8,000+ MCP servers publicly accessible](https://github.com/JulienPoitou/MCPGUARD) on the internet as of February 2026.
 
 ## What's Missing
 
