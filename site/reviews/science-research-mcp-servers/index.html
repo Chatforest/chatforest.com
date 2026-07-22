@@ -155,11 +155,11 @@
 <p>Covers <strong>6 major academic sources</strong> with citation-focused features:</p>
 <ul>
 <li><strong>arXiv</strong> — 2.3M+ STEM preprints</li>
-<li><strong>OpenAlex</strong> — 200M+ scholarly papers with citation data</li>
-<li><strong>PMC (PubMed Central)</strong> — 7M+ biomedical full-text papers</li>
-<li><strong>Europe PMC</strong> — 40M+ life sciences articles</li>
+<li><strong><a href="https://openalex.org/">OpenAlex</a></strong> — 200M+ scholarly papers with citation data</li>
+<li><strong><a href="https://www.ncbi.nlm.nih.gov/pmc/">PMC (PubMed Central)</a></strong> — 7M+ biomedical full-text papers</li>
+<li><strong><a href="https://europepmc.org/">Europe PMC</a></strong> — 40M+ life sciences articles</li>
 <li><strong>bioRxiv/medRxiv</strong> — 500K+ biology and medical preprints</li>
-<li><strong>CORE</strong> — 200M+ open access research papers</li>
+<li><strong><a href="https://core.ac.uk/">CORE</a></strong> — 200M+ open access research papers</li>
 </ul>
 <p>Tools: <code>list_categories</code>, <code>fetch_latest</code>, <code>fetch_top_cited</code>, <code>search_papers</code>, <code>fetch_content</code>. The <code>fetch_top_cited</code> tool is particularly useful for literature reviews — find the most-cited papers on any topic since a given date. Published on npm as <code>@futurelab-studio/latest-science-mcp</code>.</p>
 <h3 id="semantic-scholar-servers">Semantic Scholar Servers</h3>
@@ -204,7 +204,7 @@
 <li><strong>alperenkocyigit&rsquo;s Graph API</strong> — focuses on citation network exploration and literature reviews.</li>
 <li><strong>AIRA-SemanticScholar</strong> (hamid-vakilzadeh) — Academic Graph API with intelligent literature search.</li>
 </ul>
-<p>Semantic Scholar&rsquo;s corpus covers 200M+ papers with AI-generated citation contexts — useful for understanding not just <em>that</em> a paper was cited, but <em>how</em> it was used.</p>
+<p><a href="https://www.semanticscholar.org/">Semantic Scholar</a>&lsquo;s corpus covers 200M+ papers with AI-generated citation contexts — useful for understanding not just <em>that</em> a paper was cited, but <em>how</em> it was used.</p>
 <h3 id="connerlambdenbgpt-mcp-experimental-data-extraction">connerlambden/bgpt-mcp (Experimental Data Extraction)</h3>
 <table>
 <thead>
@@ -524,7 +524,7 @@
 <li><strong>Peer Review &amp; Publishing</strong> — no manuscript submission, no reviewer assignment, no journal recommendation workflows.</li>
 </ul>
 <h2 id="whats-new-may-2026">What&rsquo;s New (May 2026)</h2>
-<p><strong>MCP SDK stdio RCE vulnerability disclosed (April 2026).</strong> OX Security disclosed a systemic remote code execution vulnerability in the MCP SDK&rsquo;s stdio transport layer — affecting all language SDKs and estimated at 150M+ downloads across 7,000+ servers. Science and research MCP servers that rely on stdio transport (including the arXiv server, paper-search-mcp, and most mcp.science components) are potentially affected. Users running these servers should update to the latest SDK versions and review whether remote access is necessary for their use case. Local-only deployments reduce risk significantly.</p>
+<p><strong>MCP SDK stdio RCE vulnerability disclosed (April 2026).</strong> <a href="https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/">OX Security disclosed a systemic remote code execution vulnerability</a> in the MCP SDK&rsquo;s stdio transport layer — affecting all language SDKs and estimated at 150M+ downloads across 7,000+ servers. Science and research MCP servers that rely on stdio transport (including the arXiv server, paper-search-mcp, and most mcp.science components) are potentially affected. Users running these servers should update to the latest SDK versions and review whether remote access is necessary for their use case. Local-only deployments reduce risk significantly.</p>
 <p><strong>OAuth 2.1 added to MCP spec (April 2026).</strong> The MCP protocol added OAuth 2.1 authorization with incremental scope consent, enabling research MCP servers to request only the permissions they need rather than broad access grants. This is particularly relevant for institutional research environments where data governance is strict — servers accessing PubMed, institutional repositories, or subscription databases can now authenticate with minimal-scope credentials.</p>
 <p><strong>Qubitsok: quantum computing + arXiv server (May 5, 2026).</strong> A new server combining quantum computing job search and arXiv paper discovery launched in early May 2026 — reflecting growing interest in quantum-computing-aware research assistance. Still early-stage but notable as an intersection between research literature and computation.</p>
 <p><strong>mcp.science ecosystem reaches 12+ servers.</strong> The <a href="https://github.com/pathintegral-institute/mcp.science">pathintegral-institute/mcp.science</a> hub continues to add specialized scientific computing tools under its <code>uvx mcp-science &lt;name&gt;</code> unified installation pattern. It remains the most comprehensive single entry point for scientific computing MCP servers.</p>

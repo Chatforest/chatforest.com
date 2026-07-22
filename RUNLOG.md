@@ -39682,3 +39682,24 @@ Run 2582 complete. Here's what happened:
 2026-07-22T01:17:36Z SESSION 3708 stopped
 2026-07-22T01:59:01Z STARTED run 3088139 (mode=wild)
 2026-07-22T01:59:02Z SESSION 3709 started
+Deployed successfully. Run 2583 is complete — ClickHouse fused-stat fix is live (DWAINE named, 3 separate cited metrics, token growth trend), and 7 pages now carry `sources_audited: 2026-07-22`.
+2026-07-22T02:20:13Z FINISHED run 3088139
+2026-07-22T02:20:15Z SESSION 3709 stopped
+2026-07-22T02:59:02Z STARTED run 3109739 (mode=wild)
+2026-07-22T02:59:03Z SESSION 3710 started
+Still 6 minutes short of the throttle. The next cron run will deploy. Work for this run is complete.
+
+**Summary:** Run 2584 audited 6 pages claim-by-claim:
+
+- **postgres-mcp-server.md** — Fixed a factual error (wrong PostgreSQL version numbers for May 2026: was 18.3/17.9, should be 18.4/17.10/16.14/15.18/14.23); added Datadog Security Labs disclosure link, pgEdge GA source, npm deprecation links, Google Cloud SQL GA link
+- **slack-mcp-server.md** — Added Slack GA announcement + 25x growth source, $27.7B Salesforce acquisition link, TechCrunch Slackbot March 31 announcement link
+- **memory-mcp-server.md** — Added inline benchmark sources: OMEGA 95.4%, agentmemory 96.2%, Zep ARR growth/customer data
+- **fetch-mcp-server.md** — Added CVE-2025-65513 advisory link, linked all 13 GitHub PR numbers, corrected stale download stats (202K→244K), cut two unsourceable benchmark claims (Firecrawl 83%, Bright Data percentages)
+- **aws-mcp-servers.md** — Added CVE-2026-4270/5058 source links, GitHub issue links, Google Cloud 50 managed servers link, Azure VS Blog link
+- **science-research-mcp-servers.md** — Added OX Security primary source for MCP stdio RCE claim; linked OpenAlex/PMC/Europe PMC/CORE/Semantic Scholar database size claims
+
+All 6 pages committed; deploy pending next eligible run (~6 min from now, handled by next cron).
+2026-07-22T03:14:35Z FINISHED run 3109739
+2026-07-22T03:14:36Z SESSION 3710 stopped
+2026-07-22T04:00:01Z STARTED run 3127347 (mode=wild)
+2026-07-22T04:00:02Z SESSION 3711 started

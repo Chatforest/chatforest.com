@@ -68,7 +68,7 @@
       <div class="article-body">
         <p>The Exa MCP server is Exa&rsquo;s official tool for connecting AI agents to their semantic search API. Where traditional search engines match keywords, Exa uses neural embeddings to understand what you&rsquo;re actually looking for — and the difference shows up in practice. Ask for &ldquo;startups building developer tools for LLM observability&rdquo; and Exa returns companies that match the <em>concept</em>, not just pages containing those exact words.</p>
 <p>It&rsquo;s first-party, built and maintained by Exa at <a href="https://github.com/exa-labs/exa-mcp-server">exa-labs/exa-mcp-server</a>. With 4,438 GitHub stars, 335 forks, and 380+ commits, it&rsquo;s one of the more actively developed MCP servers in the ecosystem — another 40+ commits landed between April 16 and May 17 alone. The MIT license means you can use it commercially without restrictions. On PulseMCP, it has 915K total visitors and ranks #65 globally.</p>
-<p><strong>At a glance:</strong> 4,438 stars · 335 forks · 380+ commits · TypeScript · MIT license · 4 active tools (consolidated from 9 in March 2026) · Hosted + local install · PulseMCP #65 (915K visitors)</p>
+<p><strong>At a glance:</strong> 4,438 stars · 335 forks · 380+ commits · TypeScript · MIT license · 4 active tools (consolidated from 9 in March 2026) · Hosted + local install · <a href="https://www.pulsemcp.com/servers/exa-labs-exa-mcp-server">PulseMCP #65 (915K visitors)</a> (as of May 2026)</p>
 <p>This is the second search-focused MCP server we&rsquo;ve reviewed, after the <a href="/reviews/brave-search-mcp-server/">Brave Search MCP server</a> (4/5). Where Brave gives you traditional web search at scale, Exa gives you semantic search with specialized verticals. Different tools for different jobs.</p>
 <h2 id="whats-new-aprilmay-2026">What&rsquo;s New (April–May 2026)</h2>
 <p>Since our last refresh (April 16, 2026), Exa has shipped significant product and infrastructure updates:</p>
@@ -81,14 +81,14 @@
 <li><strong>OAuth active development</strong> — PRs #331, #336, #337, #340 (all May 2026) are steadily advancing OAuth: JWT validation, WWW-Authenticate error signaling, client metadata forwarding, and protected resource metadata. PRs #294 and #299 (Claude Code plugin manifest and session-start auth) remain open.</li>
 <li><strong><code>highlights:true</code> default (April 30, 2026)</strong> — PR #323 switched <code>web_search_exa</code> to use <code>highlights:true</code> instead of the prior <code>maxCharacters:2000</code> default. Better highlight quality out of the box.</li>
 <li><strong>Smithery dependency dropped (May 5, 2026)</strong> — PR #324 removed <code>@smithery/cli</code> and switched to esbuild for bundling the stdio entry point. Leaner build.</li>
-<li><strong>ICML 2026</strong> — Exa will present at ICML in Seoul, South Korea (July 6–11, 2026) on large-scale web embeddings and distributed vector search.</li>
+<li><strong><a href="https://exa.ai/blog/exa-icml-2026">ICML 2026</a></strong> — Exa will present at ICML in Seoul, South Korea (July 6–11, 2026) on large-scale web embeddings and distributed vector search.</li>
 </ul>
 <p><strong>Earlier (March–April 16, 2026):</strong></p>
 <ul>
 <li><strong><a href="https://exa.ai/blog/exa-deep">Exa Deep</a></strong> — Revamped agentic search endpoint (March 2026). Faster, cheaper, with structured outputs and field-level grounding.</li>
 <li><strong>Fast search</strong> — Sub-500ms P50 (Exa&rsquo;s current benchmark figure; earlier marketing cited sub-200ms for specific modes).</li>
 <li><strong>Pricing clarification</strong> — Contents for 10 results per search now bundled free. Exa Deep confirmed at $12/1K (20% reduction). New &ldquo;Reasoning&rdquo; tier at $15/1K. <a href="https://exa.ai/pricing">Full pricing</a>.</li>
-<li><strong>Singapore office</strong> — Exa Labs opened its first Asia office in Singapore, focused on core engineering: retrieval stack, embedding/indexing pipelines, Rust vector database, H200 infrastructure.</li>
+<li><strong><a href="https://exa.ai/blog/exa-singapore">Singapore office</a></strong> — Exa Labs opened its first Asia office in Singapore, focused on core engineering: retrieval stack, embedding/indexing pipelines, Rust vector database, H200 infrastructure.</li>
 </ul>
 <h2 id="what-it-does">What It Does</h2>
 <p>The server exposes 9 tools across three tiers:</p>
@@ -102,7 +102,7 @@
 <ul>
 <li><code>web_search_advanced_exa</code> — Full control over filters: domain inclusion/exclusion, date ranges, text matching, and content extraction options. For when the basic search isn&rsquo;t precise enough.</li>
 <li><code>crawling_exa</code> — Extract full page content from a known URL. Similar to our <a href="/reviews/fetch-mcp-server/">Fetch MCP server</a>, but through Exa&rsquo;s extraction pipeline.</li>
-<li><code>people_search_exa</code> — Find people and professional profiles. Exa claims <a href="https://exa.ai/docs/changelog/people-search-launch">over 1 billion indexed profiles</a> with 50M+ weekly updates.</li>
+<li><code>people_search_exa</code> — Find people and professional profiles. Exa claims <a href="https://exa.ai/docs/changelog/people-search-launch">over 1 billion indexed profiles</a>.</li>
 <li><code>deep_researcher_start</code> — Launch an autonomous AI research agent that searches, reads, and synthesizes a detailed report. This is an asynchronous operation — you start it and check back.</li>
 <li><code>deep_researcher_check</code> — Poll the status of a deep research task and retrieve the completed report.</li>
 <li><code>deep_search_exa</code> — Deep search with query expansion and synthesized answers, now powered by the revamped <a href="https://exa.ai/blog/exa-deep">Exa Deep</a> engine (March 2026). Faster and cheaper than before, with structured outputs and field-level grounding. Requires a personal API key (not available on the free tier).</li>

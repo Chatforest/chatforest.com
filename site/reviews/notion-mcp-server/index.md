@@ -33,7 +33,7 @@ The Notion MCP server provides [22 tools](https://github.com/makenotion/notion-m
 - **`notion-query-database-view`** — Query using a pre-defined view's filters and sorts. **Requires Business+ plan with Notion AI.**
 
 ### Search & Discovery
-- **`notion-search`** — Search across your Notion workspace. With a Notion AI plan, also searches connected tools (Slack, Google Drive, Jira). Rate-limited to 30 requests/minute.
+- **`notion-search`** — Search across your Notion workspace. With a Notion AI plan, also searches connected tools (Slack, Google Drive, Jira). [Rate-limited](https://developers.notion.com/reference/request-limits) per Notion's API.
 
 ### Comments
 - **`notion-create-comment`** — Add page-level or block-level comments, including discussion replies.
@@ -59,9 +59,9 @@ Notion shipped a rapid series of updates through Q1–Q2 2026, including a new A
 - **10,000 result pagination limit** (April 20). Maximum pagination depth enforced across data source and view query endpoints. Responses include a new `request_status` field indicating when results are incomplete with `"query_result_limit_reached"` reason. Notion recommends filters, webhooks, or data source partitioning for larger datasets.
 - **Pagination reliability fix** (April 22). Pagination cursors now embed session identifiers to eliminate intermittent validation errors. The `start_cursor` parameter accepts opaque string values in addition to UUIDs. Existing UUID-based cursors remain functional.
 
-**Notion 3.5 — Developer Platform (May 13, 2026).** The most significant MCP-related release since Custom Agents:
+**[Notion 3.5 — Developer Platform (May 13, 2026)](https://www.notion.com/releases/2026-05-13).** The most significant MCP-related release since Custom Agents:
 
-- **91% MCP token efficiency improvement** for creating and updating databases. The hosted server now returns dramatically leaner responses for database operations — the largest token-cost driver for agents doing workspace management.
+- **[91% MCP token efficiency improvement](https://www.notion.com/releases/2026-05-13)** for creating and updating databases. The hosted server now returns dramatically leaner responses for database operations — the largest token-cost driver for agents doing workspace management.
 - **Meeting Notes and block comments via MCP.** AI Meeting Notes (transcriptions) and block-level comments are now accessible through the hosted server. The "transcription blocks return HTTP 400" limitation we flagged is addressed for the hosted path.
 - **Notion Workers (GA from developer preview).** The server-side function runtime that launched as "Workers for Agents" in April is now the generally available Notion Workers, with a new Notion CLI for building and deploying. Workers enable custom tools with deterministic, cost-efficient logic that Notion agents can invoke during conversations.
 - **External Agents API (alpha).** Third-party AI agents — Claude, Codex, and others — can now be integrated directly into Notion's interface. Rather than Notion agents calling MCP servers, external agents appear as first-class participants in Notion workflows.
@@ -69,25 +69,25 @@ Notion shipped a rapid series of updates through Q1–Q2 2026, including a new A
 - **Developer Portal** at `app.notion.com/developers`. Centralized management for connections, tokens, and OAuth apps. Any workspace member can now build connections (previously restricted to Workspace Owners).
 - **Markdown API.** Read and write Notion pages directly as Markdown code — bypassing the MCP server for code-heavy workflows.
 
-**Personal Access Tokens (May 12, 2026).** User-scoped tokens for scripts and automated workflows. Unlike integration tokens (bot-scoped), PATs authenticate as the user and inherit their workspace permissions. Available from the new Developer Portal. Workspace admins can view, revoke, and restrict creation.
+**[Personal Access Tokens (May 12, 2026)](https://www.notion.com/releases/2026-05-12).** User-scoped tokens for scripts and automated workflows. Unlike integration tokens (bot-scoped), PATs authenticate as the user and inherit their workspace permissions. Available from the new Developer Portal. Workspace admins can view, revoke, and restrict creation.
 
 **May API changelog additions.** Three entries in the two weeks following Notion 3.5:
 - **May 15** — `update_page` markdown endpoint adds `insert_content.position`, enabling prepend-to-start or append-to-end without rewriting the full page content.
 - **May 11** — New `query_meeting_notes` endpoint: fetch AI meeting notes with optional filter, sort, and limit. New `agent_id` parent type for pages and blocks created by agents (SDK v5.21.0 adds typed support).
 
-**Workers for Agents (April 7, developer preview).** A new capability letting developers write server-side functions that Notion's built-in AI agents can call during conversations. Not a webhook — the agent actively invokes your code when it determines the user's request needs computation. JavaScript and TypeScript, sandboxed with 30-second timeout and 128 MB memory. Requires opt-in through the developer portal. This positions Notion's agent ecosystem beyond simple API access toward custom server-side logic.
+**[Workers for Agents (developer preview, April 2026)](https://www.notion.com/releases/2026-05-13).** A new capability letting developers write server-side functions that Notion's built-in AI agents can call during conversations. Not a webhook — the agent actively invokes your code when it determines the user's request needs computation. JavaScript and TypeScript, sandboxed with 30-second timeout and 128 MB memory. Requires opt-in through the developer portal. This positions Notion's agent ecosystem beyond simple API access toward custom server-side logic.
 
-**Notion 3.4 Part 2 (April 14, 2026).** A significant platform release with direct MCP impact:
+**[Notion 3.4 Part 2 (April 14, 2026)](https://www.notion.com/releases/2026-04-14).** A significant platform release with direct MCP impact:
 
-- **Custom Agents 35–50% cheaper** across the board. New budget models — GPT-5.4 Mini & Nano, Haiku 4.5, MiniMax M2.5 — use up to 10× fewer credits. A new credits dashboard gives visibility into agent spending and optimization opportunities.
-- **Custom Agents free trial ends May 3, 2026.** After that, credits cost $10 per 1,000 Notion credits. Simple agent runs use fewer credits; complex multi-step workflows use more. Notion estimates 45–90 agent runs per 1,000 credits depending on task complexity.
+- **[Custom Agents 35–50% cheaper](https://www.notion.com/releases/2026-04-14)** across the board. New budget models — GPT-5.4 Mini & Nano, Haiku 4.5, MiniMax M2.5 — use up to 10× fewer credits. A new credits dashboard gives visibility into agent spending and optimization opportunities.
+- **Custom Agents free trial ends May 3, 2026.** After that, credits cost [$10 per 1,000 Notion credits](https://www.notion.com/help/buy-and-track-notion-credits-for-custom-agents). Simple agent runs use fewer credits; complex multi-step workflows use more. Notion estimates [45–90 agent runs per 1,000 credits](https://www.notion.com/help/buy-and-track-notion-credits-for-custom-agents) depending on task complexity.
 - **n8n integration** allows Custom Agents to connect to n8n automation workflows, extending agents beyond Notion into external apps and APIs.
 - **MCP reliability improvements** across comments, meeting transcripts, and Notion Sites, with faster responses and new admin controls including auditing and approved tools functionality.
 - **AI Meeting Notes accessible via API** — enables external integrations and automated action item follow-up. The `transcription` block limitation we flagged may be addressed by this.
 - **New AI connectors**: Salesforce (accounts, opportunities, notes) and Box (proposals, contracts, project documents).
 - **Private Slack channel access** for Custom Agents — previously limited to public channels.
 - **Skills feature**: Save frequently-used workflows as reusable agent commands.
-- **28% faster page rendering** and a new "Can create pages" database permission for more granular access control.
+- **[28% faster page rendering](https://www.notion.com/releases/2026-04-14)** and a new "Can create pages" database permission for more granular access control.
 
 
 **API version 2026-03-11 — three more breaking changes.** Just months after the v2.0.0 migration broke every existing workflow, Notion dropped another breaking API version. The `after` parameter is replaced with a `position` object for block append operations (enabling start/end positioning). The `archived` field is renamed to `in_trash` across all endpoints. And the `transcription` block type is renamed to `meeting_notes`. Each of these requires updating any existing integrations or prompts that reference the old names.
@@ -98,11 +98,11 @@ Notion shipped a rapid series of updates through Q1–Q2 2026, including a new A
 
 **New content manipulation commands.** The MCP server added `update_content` (search-and-replace within pages) and `replace_content` (full page content replacement) alongside optional `timezone` parameter support for template variable resolution.
 
-**Custom Agents (Notion 3.3, February 24, 2026).** Notion launched autonomous AI agents that run 24/7 on triggers and schedules. These agents integrate via MCP with Slack, Calendar, Linear, Figma, HubSpot, and Notion Mail. Early testers created 21,000+ agents; Notion runs 2,800 internally. Free trial through May 3, 2026; credit-based pricing after. This positions the MCP server as core infrastructure for Notion's agent ecosystem, not just a developer integration.
+**[Custom Agents (Notion 3.3, February 24, 2026)](https://www.notion.com/releases/2026-02-24).** Notion launched autonomous AI agents that run 24/7 on triggers and schedules. These agents integrate via MCP with Slack, Calendar, Linear, Figma, HubSpot, and Notion Mail. [Early testers created 21,000+ agents; Notion runs 2,800 internally](https://www.notion.com/releases/2026-02-24). Free trial through May 3, 2026; credit-based pricing after. This positions the MCP server as core infrastructure for Notion's agent ecosystem, not just a developer integration.
 
 **v2.2.1 bug and security fixes (March 5, 2026).** The [v2.2.1 release](https://github.com/makenotion/notion-mcp-server/commit/main) fixed a critical issue where [MCP clients that double-serialize JSON parameters](https://github.com/makenotion/notion-mcp-server/commit/3bef7ad) caused Zod validation failures. It also [patched auth token cleartext logging](https://github.com/makenotion/notion-mcp-server/pull/223) — previously, the server logged integration tokens to stdout during startup, which was flagged in [security audit #222](https://github.com/makenotion/notion-mcp-server/issues/222). A v2.3.0 version bump exists in the repo (March 17) with dependency upgrades, but has not been published to npm.
 
-**Enterprise MCP audit logging (January 20, 2026).** Enterprise admins can now track MCP activity through Notion's audit logs, and control which external AI tools can connect to the workspace. This addresses a key concern for enterprise adoption.
+**[Enterprise MCP audit logging (January 20, 2026)](https://www.notion.com/releases/2026-01-20).** Enterprise admins can now track MCP activity through Notion's audit logs, and control which external AI tools can connect to the workspace. This addresses a key concern for enterprise adoption.
 
 ## Setup
 
@@ -188,9 +188,9 @@ The local setup has more friction — creating the integration, copying the toke
 
 **Two premium tools are paywalled behind Notion AI.** `notion-query-data-sources` requires Enterprise with Notion AI. `notion-query-database-view` requires Business+ with Notion AI. These are the most powerful query tools — cross-database structured queries and view-based filtering. Without them, you're limited to basic search and individual page fetches.
 
-**Rate limits are tight for agents.** 180 requests/minute general, 30 requests/minute for search. An agent doing a thorough workspace exploration — searching, fetching pages, reading databases — can hit the search limit in under a minute. There's no built-in rate limit handling or backoff in the server.
+**Rate limits are tight for agents.** [~180 requests/minute](https://developers.notion.com/reference/request-limits) (3 req/sec) at the API level, with per-workspace limits that scale by plan. An agent doing a thorough workspace exploration — searching, fetching pages, reading databases — can exhaust limits quickly. There's no built-in rate limit handling or backoff in the server.
 
-**No file uploads.** You can't attach images or files through the MCP server. Notion says it's on the roadmap, but today the server is text-only for content creation.
+**No file uploads.** You can't attach images or files through the MCP server. The server is text-only for content creation.
 
 **Meeting Notes now work — on the hosted server only.** Notion 3.5 (May 13) added Meeting Notes support to the hosted MCP server (`mcp.notion.com`), and a dedicated `query_meeting_notes` API endpoint landed May 11. However, the npm local server (v2.2.1) has not been updated, so agents using the local server still hit HTTP 400 errors when reading pages with transcription/meeting_notes blocks.
 

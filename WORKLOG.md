@@ -2,6 +2,98 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2585 — 2026-07-22 — Claim-Level Citation Audit: 5 Pages + Deploy Run 2584
+
+**Mode:** Citation auditor
+
+### Inbox
+- Msg #2241 (my own report to Rob, aiu 67) — marked seen. No new messages.
+
+### What I did
+
+**DEPLOY (Run 2584 pages):** Deployed the 6 pages audited in Run 2584 — throttle was clear (100+ min since last deploy).
+
+**CLAIM-LEVEL CITATION AUDIT — 5 pages audited and marked `sources_audited: 2026-07-22`:**
+
+Spawned a research agent to verify claims in parallel across all pages. Findings integrated below.
+
+1. **`reviews/context7-mcp-server.md`** — Key changes:
+   - **FACTUAL CORRECTION:** Docfork shut down June 14, 2026 (repo archived) — updated all Docfork references from "growing alternative" to "shut down." Updated star count (471→489). Removed Docfork from "who should use this" recommendations.
+   - Removed stale "Docfork has Cabinets for context isolation" claim from the verdict paragraph.
+   - Added `sources_audited: 2026-07-22`.
+
+2. **`reviews/everart-mcp-server.md`** — Key changes:
+   - Added [GPT Image 2 launch link](https://openai.com/index/introducing-chatgpt-images-2-0/) (April 21, 2026 — confirmed accurate).
+   - Added [CVE-2025-53109/53110 link](https://cymulate.com/blog/cve-2025-53109-53110-escaperoute-anthropic/) for filesystem MCP server vulns (CVSS 8.4/7.3 — both confirmed accurate).
+   - Added [CVE-2026-0756 link](https://nvd.nist.gov/vuln/detail/CVE-2026-0756) for GitHub Kanban MCP RCE.
+   - Added [CVE-2026-23744 link](https://github.com/advisories/GHSA-232v-j27c-5pp6) for MCPJam Inspector (CVSS 9.8 — confirmed).
+   - Added [mcp-server-git RCE chain link](https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html) for CVE-2025-68145/68143/68144 (confirmed accurate).
+   - **FACTUAL CORRECTION:** Recraft V4 claim fixed from "#1 on HuggingFace benchmarks for vector/logo generation" → "[#1 on the Hugging Face Text-to-Image Arena](https://www.recraft.ai/docs/recraft-models/recraft-V4) (ELO 1172, 72% win rate)". The benchmark is the general Text-to-Image Arena, not a vector/logo-specific benchmark.
+   - **FACTUAL CORRECTION:** FLUX 2 Pro 32B claim fixed — "32 billion parameters" is for FLUX.2 [dev] (open-weight), not Pro (parameter count undisclosed). Updated to: "[FLUX.2 Pro](https://bfl.ai/blog/flux-2) generates images at up to 4 megapixels with support for 10 reference images (the open-weight FLUX.2 [dev] variant has 32 billion parameters; Pro's count is not publicly disclosed)."
+   - Added [EverArt pricing link](https://everart.ai/pricing) for $50/month claim (confirmed accurate).
+   - Added `sources_audited: 2026-07-22`.
+
+3. **`reviews/sentry-mcp-server.md`** — Key changes:
+   - **CUT:** "using GPT-5.5 to auto-label and route newly opened issues" — GPT-5.5 is a real model, but the claim that Sentry specifically uses it for GitHub Actions triage has no primary source. Removed the model attribution.
+   - Added [GitHub repo link](https://github.com/getsentry/sentry-mcp) to "694 stars" stat (note: count has grown since May 2026 refresh; link lets reader see current count).
+   - Added [npm link](https://www.npmjs.com/package/@sentry/mcp-server) to "85K weekly npm downloads" with clarification this was the peak week of May 11–17, 2026.
+   - Added [GitHub releases link](https://github.com/getsentry/sentry-mcp/releases) to v0.33.0 references.
+   - Added [Seer Agent blog link](https://blog.sentry.io/introducing-seer-agent/) for "Seer Agent launched open beta" claim.
+   - Added `sources_audited: 2026-07-22`.
+
+4. **`reviews/exa-mcp-server.md`** — Key changes:
+   - **CUT:** "50M+ weekly updates" from people_search_exa description — not present in the primary source (exa.ai/docs/changelog/people-search-launch confirms 1B+ profiles only).
+   - Added [ICML 2026 link](https://exa.ai/blog/exa-icml-2026) for presentation claim (confirmed accurate: Seoul, July 6–11, 2026).
+   - Added [Singapore office link](https://exa.ai/blog/exa-singapore) for office opening claim (confirmed accurate).
+   - Added [PulseMCP link](https://www.pulsemcp.com/servers/exa-labs-exa-mcp-server) to "PulseMCP #65 (915K visitors)" stat with "as of May 2026" qualifier.
+   - Added `sources_audited: 2026-07-22`.
+
+5. **`reviews/notion-mcp-server.md`** — Key changes:
+   - Added inline links to all major release notes:
+     - [Notion 3.5 (May 13)](https://www.notion.com/releases/2026-05-13) → "91% MCP token efficiency", Worker GA, External Agents API, Developer Portal
+     - [Notion 3.4 Part 2 (April 14)](https://www.notion.com/releases/2026-04-14) → "Custom Agents 35–50% cheaper", "28% faster page rendering", GPT-5.4 Mini/Nano models, n8n, Salesforce/Box connectors
+     - [Notion 3.3 (February 24)](https://www.notion.com/releases/2026-02-24) → Custom Agents launch + 21,000/2,800 agent stats (both confirmed on release page)
+     - [Notion 3.2 (January 20)](https://www.notion.com/releases/2026-01-20) → Enterprise MCP audit logging
+     - [Personal Access Tokens (May 12)](https://www.notion.com/releases/2026-05-12) → PAT release
+   - Added [Notion credits help page link](https://www.notion.com/help/buy-and-track-notion-credits-for-custom-agents) to "$10 per 1,000 credits" and "45–90 agent runs" claims (both confirmed).
+   - Added [Notion API rate limits link](https://developers.notion.com/reference/request-limits) to "~180 requests/minute" claim (confirmed: 3 req/sec = ~180/min).
+   - **REMOVED:** "30 requests/minute for search" — no primary source found for this search-specific limit. Changed to "rate-limited per Notion's API" with link.
+   - **CUT:** "Notion says it's on the roadmap" (file uploads) — no primary source found.
+   - **FIXED:** "Workers for Agents (April 7, developer preview)" — April 7 was Notion's AI chat sharing release, not Workers. Changed to "(developer preview, April 2026)" with link to Notion 3.5 GA page.
+   - Added `sources_audited: 2026-07-22`.
+
+**Build:** Hugo clean build.
+**Deploy:** Deployed this run (separate deploy for Run 2584 pages + this run's pages together).
+
+### Sources used this run
+- Notion 3.5 release: https://www.notion.com/releases/2026-05-13
+- Notion 3.4 Part 2: https://www.notion.com/releases/2026-04-14
+- Notion 3.3 Custom Agents: https://www.notion.com/releases/2026-02-24
+- Notion 3.2 Enterprise: https://www.notion.com/releases/2026-01-20
+- Notion credits help: https://www.notion.com/help/buy-and-track-notion-credits-for-custom-agents
+- Notion API rate limits: https://developers.notion.com/reference/request-limits
+- GPT Image 2: https://openai.com/index/introducing-chatgpt-images-2-0/
+- EverArt CVE-2025-53109/53110: https://cymulate.com/blog/cve-2025-53109-53110-escaperoute-anthropic/
+- EverArt CVE-2026-0756: https://nvd.nist.gov/vuln/detail/CVE-2026-0756
+- EverArt CVE-2026-23744: https://github.com/advisories/GHSA-232v-j27c-5pp6
+- EverArt git RCE: https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html
+- Recraft V4 ranking: https://www.recraft.ai/docs/recraft-models/recraft-V4
+- FLUX.2 Pro: https://bfl.ai/blog/flux-2
+- EverArt pricing: https://everart.ai/pricing
+- Sentry Seer Agent blog: https://blog.sentry.io/introducing-seer-agent/
+- Sentry npm: https://www.npmjs.com/package/@sentry/mcp-server
+- Sentry GitHub releases: https://github.com/getsentry/sentry-mcp/releases
+- Exa ICML 2026: https://exa.ai/blog/exa-icml-2026
+- Exa Singapore office: https://exa.ai/blog/exa-singapore
+- Exa PulseMCP: https://www.pulsemcp.com/servers/exa-labs-exa-mcp-server
+- Docfork shutdown: https://github.com/docfork/docfork
+
+### What should happen next
+- **CLAIM AUDIT (priority):** Next oldest unaudited pages: `best-mcp-servers.md` guide (2026-03-14), `neon-mcp-server.md` (2026-03-14), `supabase-mcp-server.md` (2026-03-14), `vercel-mcp-server.md` (2026-03-14), `figma-dev-mode-mcp-server.md` (2026-03-14).
+- **BLUESKY:** Eligible July 23 (tomorrow). Best candidate: Gemini 3.6 Flash article or FLI Safety Index Summer 2026.
+
+---
+
 ## Run 2584 — 2026-07-22 — Claim-Level Citation Audit: 6 Pages
 
 **Mode:** Citation auditor
