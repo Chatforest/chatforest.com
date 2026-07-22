@@ -169,7 +169,7 @@ Uses Playwright for headless Chromium automation with session management (30-min
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [jlsookiki/secondhand-mcp](https://github.com/jlsookiki/secondhand-mcp) | 9 | TypeScript | MIT | 3 |
+| [jlsookiki/secondhand-mcp](https://github.com/jlsookiki/secondhand-mcp) | 28 | TypeScript | MIT | 3 |
 
 The **most significant new addition to fashion MCP** — a server that searches across four major secondhand marketplaces:
 
@@ -179,7 +179,7 @@ The **most significant new addition to fashion MCP** — a server that searches 
 
 Each marketplace has optimized parameters — Facebook emphasizes location and delivery methods, eBay provides condition data, and Poshmark offers brand/department filtering. Depop and Poshmark require a headless browser (Chrome/Chromium auto-detected). eBay uses the official Browse API (requires developer credentials). Facebook Marketplace needs no authentication.
 
-At 9 stars and 30 commits across v0.4.0, this is the most mature new server in the category. It fills what was the biggest gap in our original review — the $200+ billion secondhand fashion market (with 58% of Americans now shopping secondhand) had zero MCP representation before this server. For sustainable fashion-conscious users, this is immediately practical: ask your AI assistant to find a specific brand or item across multiple resale platforms simultaneously.
+At 28 stars and 30 commits across v0.4.0, this is the most mature new server in the category. It fills what was the biggest gap in our original review — the [$208 billion secondhand fashion market](https://www.gminsights.com/industry-analysis/second-hand-fashion-market) (with [58% of Americans now shopping secondhand](https://newsroom.thredup.com/news/thredup-13th-resale-report) per ThredUp's 2025 Resale Report) had zero MCP representation before this server. For sustainable fashion-conscious users, this is immediately practical: ask your AI assistant to find a specific brand or item across multiple resale platforms simultaneously.
 
 ## Color & Design
 

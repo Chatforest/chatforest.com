@@ -7,7 +7,7 @@ Construction and architecture MCP servers are connecting AI agents to BIM softwa
 
 The landscape spans seven areas: **BIM & Revit** (Autodesk's flagship and the largest MCP ecosystem in construction), **CAD platforms** (AutoCAD, GstarCAD, ZWCAD, BricsCAD), **3D modeling** (SketchUp, Rhino, Grasshopper, Fusion 360), **architecture BIM** (ArchiCAD), **structural engineering** (ETABS, Tekla Structures), **OpenBIM/IFC** (open standards for BIM data exchange), and **construction management** (cost estimation, project management).
 
-The headline findings: **Autodesk is pivoting its MCP strategy** — archiving the Node.js Platform Services server and shifting toward the MCP Apps pattern (aps-mcp-app-example, now 14 stars) and cloud Automation API bundles. **The Revit community has exploded** — the original revit-mcp (414 stars, archived) spawned a successor monorepo (170 stars) plus active community servers. **Tekla is still the most actively developed construction MCP server** — teknovizier/tekla_mcp_server shipped rectangular grid placement, move/copy elements, drawing revision marks, and per-provider configuration in May 2026. **Rhino crossed 400 stars** — rhinomcp (407 stars) shipped v0.2.2 with run_command, get_commands, object attribute tools, safety gates, and a macOS installer. **ArchiCAD shipped v0.4.0** — tapir-archicad-MCP updated to Tapir 1.4.0 (61 stars, May 18). **AutoCAD has seven implementations** — and Civil 3D has its first dedicated MCP server at 6 stars. **The Procore gap is closing fast** — the community server has exploded from 7 to 2,482+ auto-generated tools covering the full Procore REST API. **SketchUp and AutoCAD are accumulating stars passively** — 267 and 347 stars respectively despite dormancy. **The design phase remains far stronger than construction operations** — but the gap is narrowing.
+The headline findings: **Autodesk is pivoting its MCP strategy** — archiving the Node.js Platform Services server and shifting toward the MCP Apps pattern (aps-mcp-app-example, now 14 stars) and cloud Automation API bundles. **The Revit community has exploded** — the original revit-mcp (414 stars, archived) spawned a successor monorepo (170 stars) plus active community servers. **Tekla is still the most actively developed construction MCP server** — teknovizier/tekla_mcp_server shipped rectangular grid placement, move/copy elements, drawing revision marks, and per-provider configuration in May 2026. **Rhino nears 1,000 stars** — rhinomcp (941 stars) shipped v0.2.2 with run_command, get_commands, object attribute tools, safety gates, and a macOS installer. **ArchiCAD shipped v0.4.0** — tapir-archicad-MCP updated to Tapir 1.4.0 (61 stars, May 18). **AutoCAD has seven implementations** — and Civil 3D has its first dedicated MCP server at 6 stars. **The Procore gap is closing fast** — the community server provides 7 meta-tools exposing the full Procore REST API with cross-platform OAuth. **SketchUp and AutoCAD are accumulating stars passively** — 267 and 347 stars respectively despite dormancy. **The design phase remains far stronger than construction operations** — but the gap is narrowing.
 
 **Category:** [Logistics & Industry](/categories/logistics-industry/)
 
@@ -95,7 +95,7 @@ Autodesk's MCP strategy has evolved since early 2026. The Node.js Platform Servi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [daobataotie/CAD-MCP](https://github.com/daobataotie/CAD-MCP) | ~347 | Python | MIT | Multiple |
+| [daobataotie/CAD-MCP](https://github.com/daobataotie/CAD-MCP) | ~453 | Python | MIT | Multiple |
 
 The most popular CAD MCP server. An innovative natural language CAD control service supporting multiple platforms:
 
@@ -181,7 +181,7 @@ Two-way TCP socket communication between Claude and SketchUp. Dormant since Marc
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [jingcheng-chen/rhinomcp](https://github.com/jingcheng-chen/rhinomcp) | ~407 | Python | Apache-2.0 | 9+ |
+| [jingcheng-chen/rhinomcp](https://github.com/jingcheng-chen/rhinomcp) | ~941 | Python | Apache-2.0 | 9+ |
 
 The second most-starred construction MCP server. Connects Rhino 3D to AI agents for prompt-assisted modeling and architectural design:
 
@@ -350,17 +350,16 @@ From Trimble, a major construction technology company, but currently a minimal p
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [TylerIlunga/procore-mcp-server](https://github.com/TylerIlunga/procore-mcp-server) | ~2 | TypeScript | — | 2,482+ |
+| [TylerIlunga/procore-mcp-server](https://github.com/TylerIlunga/procore-mcp-server) | ~2 | TypeScript | — | 7 |
 
-The first dedicated Procore MCP server — and it has expanded dramatically since launch. Originally 7 tools, it now auto-generates 2,482 tools covering the breadth of the Procore REST API:
+The first dedicated Procore MCP server. It provides 7 meta-tools that expose the full [Procore REST API](https://developers.procore.com/reference/rest/docs/rest-api-overview):
 
 - **API category/endpoint discovery** — browse available Procore API capabilities
 - **Search and detail retrieval** — find and inspect API endpoints
 - **API call execution** — make authenticated Procore API requests
 - **Config management** — OAuth with auto-refresh and cross-platform browser launch (Windows, macOS, Linux added May 7, 2026)
-- **2,482+ auto-generated tools** — migrated to the SDK's registerTool API with improved metadata; older duplicate endpoint versions removed for coherence (May 8, 2026)
 
-Created April 2026. The tool explosion from 7 → 2,482+ means essentially the full Procore API is now accessible via MCP, filling the most significant gap in the construction MCP ecosystem.
+Created April 2026. The 7 meta-tools expose essentially the full Procore API surface via MCP, filling the most significant gap in the construction MCP ecosystem.
 
 ### Procore (via Third-Party MCP Gateways)
 
@@ -376,7 +375,7 @@ No official Procore MCP server exists yet, but the dedicated community server ab
 
 The construction MCP ecosystem still has significant gaps, particularly in the construction operations phase, though some are narrowing:
 
-- **No Bentley Systems servers** — MicroStation, OpenBuildings, OpenBridge, OpenRoads all absent (Bentley released MicroStation 2026 with AI features but no MCP server)
+- **No public Bentley Systems servers** — MicroStation, OpenBuildings, OpenBridge, OpenRoads have no public GitHub MCP repos ([Bentley has released MCP integrations for MicroStation and STAAD per trade press](https://connectedworld.com/bentley-ai-powered-digital-twin-workflows/), but no open-source repository exists)
 - **No official Procore MCP** — a community server now exists (see above) but Procore hasn't shipped an official one
 - **No building code compliance** — no automated code checking or plan review
 - **No permit management** — PermitFlow and other permit platforms have no MCP servers
@@ -394,7 +393,7 @@ The construction MCP ecosystem still has significant gaps, particularly in the c
 
 **Rating: 4.0/5** — The construction and architecture MCP ecosystem remains one of the most active verticals for a traditionally offline, desktop-heavy industry. Rhino crossed 400 stars with v0.2.2 adding run_command, object attribute tools, safety gates, and a macOS installer. ArchiCAD shipped v0.4.0 with Tapir 1.4.0 support and new commands across Element Creation, Modification, Navigator, and Grouping namespaces. Tekla continues its remarkable streak — rectangular grid placement, move/copy elements, drawing revision marks, and per-provider configuration all shipped in a single May 20 burst. oakplank/RevitMCP added schedule inspection/editing and view navigation as of May 20. SketchUp (267 stars) and daobataotie/CAD-MCP (347 stars) keep accumulating stars despite dormancy, signaling strong latent demand.
 
-The design-versus-construction divide is narrowing meaningfully. The Procore community server has exploded from 7 to 2,482+ auto-generated tools (May 2026), covering the full Procore REST API with cross-platform OAuth. But construction scheduling, estimating, safety, inspections, and permitting still have no MCP representation. For a $2 trillion global industry, the construction operations side remains underserved — though the trajectory is improving.
+The design-versus-construction divide is narrowing meaningfully. The Procore community server provides 7 meta-tools exposing the full Procore REST API with cross-platform OAuth (May 2026). But construction scheduling, estimating, safety, inspections, and permitting still have no MCP representation. For a [$13 trillion global construction industry](https://www.statista.com/statistics/1290563/global-construction-market-value/), the construction operations side remains underserved — though the trajectory is improving.
 
 **Install if:** you work with Revit, AutoCAD, Rhino, SketchUp, ArchiCAD, Tekla Structures, or Civil 3D and want AI-assisted modeling, design automation, or BIM data queries.
 

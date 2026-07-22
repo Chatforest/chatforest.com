@@ -149,10 +149,10 @@ Available via Docker or UV package manager. The website at aeroastro.org provide
 |--------|-------|----------|-------|-------|
 | [Flightradar24/fr24api-mcp](https://github.com/Flightradar24/fr24api-mcp) | 16 | Node.js | 15 | **Official**, 16 commits |
 
-**The first major flight tracking platform to ship an MCP server.** Flightradar24 — the world's most popular flight tracking service — released an official MCP server providing comprehensive aviation data access:
+**The first major flight tracking platform to ship an MCP server.** [Flightradar24](https://www.flightradar24.com/) — the world's most popular flight tracking service — released an official MCP server providing comprehensive aviation data access:
 
 - **Live flight data** (3 tools) — real-time aircraft positions globally, basic/full position data, flight counts
-- **Historical flight data** (3 tools) — past positions and historical counts going back to May 2016
+- **Historical flight data** (3 tools) — past positions and historical counts [going back to May 11, 2016](https://fr24api.flightradar24.com/docs/endpoints/flight-positions-resolution)
 - **Flight summaries** (3 tools) — takeoff/landing information with flexible filtering
 - **Specific flight tracking** (1 tool) — detailed trajectory data for individual flights
 - **Reference data** (5 tools) — airline and airport information in basic/comprehensive formats
@@ -196,7 +196,7 @@ Built with FastMCP, each endpoint exposed as a decorated `@mcp.tool()` function.
 |--------|-------|----------|-------|
 | [ion-g-ion/MAVLinkMCP](https://github.com/ion-g-ion/MAVLinkMCP) | 16 | Python | MAVLink protocol, PX4/ArduPilot |
 
-The **most significant drone MCP server**, enabling natural language control of drones via the MAVLink protocol — the standard communication protocol used by PX4 and ArduPilot, the two largest drone software platforms running on millions of drones worldwide. Now backed by academic research — a [January 2026 paper on arXiv](https://arxiv.org/html/2601.15486v1) demonstrated real UAV flight control via LLM-MCP with 15,000 lines of code, 45 tools, and integration with Google Maps MCP for real-time navigation:
+The **most significant drone MCP server**, enabling natural language control of drones via the [MAVLink protocol](https://docs.px4.io/main/en/mavlink/index) — the standard communication protocol used by PX4 and ArduPilot, the two largest drone software platforms running on millions of drones worldwide. Now backed by academic research — a [January 2026 paper on arXiv](https://arxiv.org/html/2601.15486v1) demonstrated real UAV flight control via LLM-MCP with 15,000 lines of code, 45 tools, and integration with Google Maps MCP for real-time navigation:
 
 - **Natural Language Commands** — the LLM interprets intent and translates to MAVLink commands
 - **Telemetry Access** — real-time sensor data, GPS position, battery status, flight mode

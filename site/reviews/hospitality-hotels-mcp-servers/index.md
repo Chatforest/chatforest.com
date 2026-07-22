@@ -7,7 +7,7 @@ Hospitality and hotel MCP servers let AI assistants search for accommodations, b
 
 This review covers the **hospitality and hotels** vertical — vacation rentals, hotel booking, restaurant reservations, review platforms, and travel planning. For broader travel infrastructure like flights and transit, see our travel-adjacent reviews. For event and conference management, see our [Event Management & Ticketing MCP review](/reviews/event-management-ticketing-mcp-servers/).
 
-The headline findings: **Travel hacking toolkit matches Airbnb** as co-leader at 436 stars. **Strider Labs ships 5+ consumer hospitality servers** in a single sprint. **Three major gaps filled** — food delivery, hotel loyalty programs, and per-OTA rate comparison. **Uber Eats POC hits 221 stars** proving massive demand. **Enterprise hospitality goes MCP** — Aven/Sabre (35,000+ hotels), SiteMinder (53,000 hotels), Agentic Hospitality, and Apaleo all launch or announce MCP integrations. **ExpediaGroup goes official.** Rating upgraded from **3.5 to 4.0/5**.
+The headline findings: **Travel hacking toolkit matches Airbnb** as co-leader at 585 stars. **Strider Labs ships 5+ consumer hospitality servers** in a single sprint. **Three major gaps filled** — food delivery, hotel loyalty programs, and per-OTA rate comparison. **Uber Eats POC hits 221 stars** proving massive demand. **Enterprise hospitality goes MCP** — [Sabre](https://www.sabre.com/) (40,000+ hotels), SiteMinder (53,000 hotels), Agentic Hospitality, and Apaleo all launch or announce MCP integrations. **ExpediaGroup goes official.** Rating upgraded from **3.5 to 4.0/5**.
 
 ## Vacation Rentals
 
@@ -283,7 +283,7 @@ The tool list is configurable — choose which tools to expose to your MCP clien
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [borski/travel-hacking-toolkit](https://github.com/borski/travel-hacking-toolkit) | 436 | — | — | 22 |
+| [borski/travel-hacking-toolkit](https://github.com/borski/travel-hacking-toolkit) | 585 | — | — | 22 |
 
 The **most comprehensive travel MCP toolkit** and the new co-leader of the hospitality category:
 
@@ -292,7 +292,7 @@ The **most comprehensive travel MCP toolkit** and the new co-leader of the hospi
 - Integrates Skiplagged, Kiwi, Trivago, Ferryhopper, Airbnb, LiteAPI, Duffel, Google Flights, Seats.aero, Southwest, Chase Travel, Amex Travel, AwardWallet, TripAdvisor, and more
 - Drop-in skills for Claude Code and OpenCode
 
-This is a paradigm shift for travel MCP — rather than individual servers for each platform, this toolkit orchestrates across dozens of travel services with a focus on finding the best deals using points, miles, and hidden-city ticketing. 436 stars and 32 forks make it the fastest-growing server in the category.
+This is a paradigm shift for travel MCP — rather than individual servers for each platform, this toolkit orchestrates across dozens of travel services with a focus on finding the best deals using points, miles, and hidden-city ticketing. 585 stars and 32 forks make it the fastest-growing server in the category.
 
 ### skarlekar/mcp_travelassistant
 
@@ -358,13 +358,13 @@ The enterprise side of hospitality MCP went from completely absent to rapidly em
 
 Claims the **industry's first hotel MCP booking transaction**. Connects hotel CRS/PMS systems directly to AI platforms (ChatGPT, Claude). Enables real-time availability, rates, and inventory surfacing inside AI assistants. Includes an "Agentic Booking Engine" overlay for conversational booking flows. Launched March 2026. No public GitHub repo — commercial platform only.
 
-### Aven Hospitality (formerly Sabre) — MCP Enablement
+### Sabre Hospitality — MCP Enablement
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| Aven Hospitality MCP (commercial) | — | — | Proprietary | — |
+| Sabre Hospitality MCP (commercial) | — | — | Proprietary | — |
 
-**MCP integration across the SynXis CRS platform serving 35,000+ hotels globally.** Hotels can expose official rates, availability, and amenities to AI-driven discovery surfaces without custom integrations. Q2 2026 Early Access Program announced. This is massive — Sabre/Aven is one of the "Big Three" global distribution systems alongside Amadeus and Travelport. No public GitHub repo — enterprise product.
+**MCP integration across the [SynXis CRS platform](https://www.sabre.com/hospitality/) serving 40,000+ hotels globally.** Hotels can expose official rates, availability, and amenities to AI-driven discovery surfaces without custom integrations. Q2 2026 Early Access Program announced. This is massive — [Sabre](https://www.sabre.com/) is one of the "Big Three" global distribution systems alongside Amadeus and Travelport. No public GitHub repo — enterprise product.
 
 ### SiteMinder — MCP-Powered AI Distribution
 
@@ -393,13 +393,13 @@ Apaleo is a cloud-native PMS used by boutique and lifestyle hotels. No public Gi
 
 ### Enterprise Assessment
 
-The pattern is clear: **enterprise hospitality platforms are building proprietary MCP servers** (Agentic Hospitality, Aven/Sabre, SiteMinder, Apaleo) while **open-source GitHub repos remain mostly consumer-facing booking wrappers**. Industry publications (Hospitality Net, Skift, PhocusWire) are declaring "2026 is the year of MCP" for hotels. The enterprise gap is closing fast at the commercial level, even though open-source enterprise tooling remains absent.
+The pattern is clear: **enterprise hospitality platforms are building proprietary MCP servers** (Agentic Hospitality, Sabre, SiteMinder, Apaleo) while **open-source GitHub repos remain mostly consumer-facing booking wrappers**. Industry publications (Hospitality Net, Skift, PhocusWire) are declaring "2026 is the year of MCP" for hotels. The enterprise gap is closing fast at the commercial level, even though open-source enterprise tooling remains absent.
 
 ## What's Missing
 
 The hospitality MCP ecosystem has narrowed dramatically since March 2026. Enterprise platforms are arriving commercially, but open-source gaps remain:
 
-- **No open-source PMS or CRS servers** — Apaleo, Aven/Sabre, and Agentic Hospitality all offer MCP but as proprietary products. Oracle Hospitality/OPERA, Mews ($2.5B valuation), Cloudbeds, and Guesty have no MCP presence at all.
+- **No open-source PMS or CRS servers** — Apaleo, Sabre, and Agentic Hospitality all offer MCP but as proprietary products. Oracle Hospitality/OPERA, Mews ($2.5B valuation), Cloudbeds, and Guesty have no MCP presence at all.
 - **No revenue management** — no dynamic pricing, demand forecasting, or rate optimization servers (open or proprietary)
 - **No guest experience platforms** — Revinate, TrustYou, ReviewPro for reputation management
 - **No event/conference venue management** — Cvent, Social Tables, Tripleseat for event planning
@@ -415,11 +415,11 @@ Hospitality MCP servers earn **4.0/5** (up from 3.5). The category saw remarkabl
 
 **Strider Labs is the story of this refresh** — a single developer (markswendsen-code) shipped Marriott Bonvoy, Hilton Honors, DoorDash, OpenTable, Booking.com, and Grubhub MCP servers all in March 2026, using a consistent Playwright browser automation architecture. While individual star counts are low, the npm download numbers (395/week for DoorDash) show real usage.
 
-**The travel planning space transformed** with borski/travel-hacking-toolkit (436 stars) — a comprehensive points/miles optimization toolkit that integrates 22+ tools across dozens of travel services. It joins mcp-server-airbnb (437 stars) as the category's co-leader.
+**The travel planning space transformed** with borski/travel-hacking-toolkit (585 stars) — a comprehensive points/miles optimization toolkit that integrates 22+ tools across dozens of travel services. It joins mcp-server-airbnb (437 stars) as the category's co-leader.
 
 **The demand signal is clear**: uber-eats-mcp-server hit 221 stars as a bare POC, proving that food delivery automation is one of the most wanted MCP use cases. ExpediaGroup publishing an official server (18 stars) adds commercial credibility.
 
-What still holds the category back from a higher rating: enterprise hospitality is arriving but behind closed doors. Aven/Sabre (35,000+ hotels), SiteMinder (53,000 hotels), Agentic Hospitality, and Apaleo have all launched or announced MCP integrations — but all are proprietary commercial products with no open-source repos. Mews, Cloudbeds, and Oracle Hospitality haven't published any MCP integrations at all. Revenue management and guest experience platforms remain completely absent. The enterprise gap is closing fast commercially, but the open-source ecosystem still serves travelers far better than hoteliers.
+What still holds the category back from a higher rating: enterprise hospitality is arriving but behind closed doors. Sabre (40,000+ hotels), SiteMinder (53,000 hotels), Agentic Hospitality, and Apaleo have all launched or announced MCP integrations — but all are proprietary commercial products with no open-source repos. Mews, Cloudbeds, and Oracle Hospitality haven't published any MCP integrations at all. Revenue management and guest experience platforms remain completely absent. The enterprise gap is closing fast commercially, but the open-source ecosystem still serves travelers far better than hoteliers.
 
 *This review was refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic). Original review published 2026-03-15.*
 

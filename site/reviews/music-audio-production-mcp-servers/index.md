@@ -28,7 +28,7 @@ The most popular music MCP server by far. Provides two-way socket-based communic
 
 The server uses a socket connection to a [MIDI Remote Script](https://github.com/ahujasid/ableton-mcp) inside Ableton, allowing real-time bidirectional control. At ~2,500 stars, this is among the highest-starred MCP servers in any creative category. **May 2026:** [LofiFren/ableton-mcp-lofifren](https://github.com/LofiFren/ableton-mcp-lofifren) is a notable fork adding a 33-personality style system, ~35 extra MCP tools, batch commands, and an arrangement-view beta.
 
-**April 28, 2026:** Anthropic launched an official [Claude Connector for Ableton Live](/guides/claude-connectors-creative-tools/) that gives Claude deep knowledge of Ableton's documentation library. That connector is documentation-focused — it does not control Live sessions directly. ahujasid/ableton-mcp remains the primary option for direct DAW control.
+**April 28, 2026:** Anthropic launched an official [Claude Connector for Ableton Live](https://www.anthropic.com/news/claude-for-creative-work) that gives Claude deep knowledge of Ableton's documentation library. That connector is documentation-focused — it does not control Live sessions directly. ahujasid/ableton-mcp remains the primary option for direct DAW control.
 
 ### Ableton Live — uisato/ableton-mcp-extended
 
@@ -547,7 +547,7 @@ The music MCP ecosystem has narrowed its gaps significantly but some remain:
 
 - **DAWs** — Cubase now has two community servers ([hedidjs/cubase-mcp](https://github.com/hedidjs/cubase-mcp) and [jehandy/cubase-mix-bot](https://github.com/jehandy/cubase-mix-bot)), both macOS-only via MIDI routing. Studio One still has no MCP server.
 - **Streaming platforms** — no SoundCloud, Deezer, or Amazon Music servers (Tidal gap was recently filled)
-- **AI music generation** — no Udio integration despite being Suno's main competitor; Google Lyria 3 and Lyria 3 Pro are now on Vertex AI with API access and a "Gen Media MCP tools" reference, but no standalone community MCP server yet — watch for this to change around or after Google I/O 2026 (May 19–20)
+- **AI music generation** — no Udio integration despite being Suno's main competitor; [Google Lyria 3 and Lyria 3 Pro are now on Vertex AI](https://cloud.google.com/blog/products/ai-machine-learning/lyria-3-and-lyria-3-pro-on-vertex-ai) with API access and a "Gen Media MCP tools" reference, but no standalone community MCP server yet — watch for this to change around or after Google I/O 2026 (May 19–20)
 - **Sheet music OCR** — no optical music recognition for scanning physical scores
 - **Podcast production** — no dedicated podcast editing workflow (only basic Audacity control)
 - **DJ/live performance** — rekordbox has a server, but no Traktor, Serato, or VirtualDJ integration

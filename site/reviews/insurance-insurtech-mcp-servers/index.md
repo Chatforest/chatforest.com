@@ -36,7 +36,7 @@ Install via npm with your Root API key. Now at **v1.3.22** and actively maintain
 |--------|-------|----------|---------|-------|
 | [Socotra MCP](https://docs.socotra.com/aiGuide/mcpServer/mcpServerOverview.html) | — | — | Commercial | Full lifecycle |
 
-Described as **"the most mature MCP server in the insurance industry"** — Socotra's commercial offering covers the full insurance lifecycle:
+Described as [**"the most mature MCP server in the insurance industry"**](https://www.socotra.com/socotra-launches-agentic-ai-for-insurance-product-configuration/) — Socotra's commercial offering covers the full insurance lifecycle:
 
 - **Policy administration** — product configuration, policy creation, endorsements, renewals
 - **Claims management** — FNOL, investigation, adjudication, payment
@@ -44,13 +44,13 @@ Described as **"the most mature MCP server in the insurance industry"** — Soco
 - **Enterprise security** — capability-scoped authentication, encrypted agent sessions, policy-aware authorization
 - **Full audit trail** — every AI action is logged and traceable
 
-Their "Agentic Configuration" feature claims to reduce product development time by 50%, costs by 75%, and prototype iteration time by 90%. **Now generally available** to all customers and select partners across all insurance lines and geographic markets. 10-minute setup for Claude, Cursor, and VS Code. In March 2026, Socotra became the first insurance core to release generally available AI. For insurance companies already on the Socotra platform, this provides the most comprehensive AI agent integration available.
+Their "Agentic Configuration" feature claims to reduce product development time by 50%, costs by 75%, and prototype iteration time by 90%. **Now generally available** to all customers and select partners across all insurance lines and geographic markets. 10-minute setup for Claude, Cursor, and VS Code. In March 2026, [Socotra became the first insurance core to release generally available AI](https://www.businesswire.com/news/home/20260311449961/). For insurance companies already on the Socotra platform, this provides the most comprehensive AI agent integration available.
 
 ### Sure MCP (Commercial)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Sure MCP](https://www.sureapp.com/press/sure-launches-insurance-industrys-first-model-context-protocol-mcp-capability-enabling-ai-agents-to-quote-bind-and-service-policies) | — | — | Commercial | Full lifecycle |
+| [Sure MCP](https://www.prnewswire.com/news-releases/sure-launches-insurance-industrys-first-model-context-protocol-mcp-capability-enabling-ai-agents-to-quote-bind-and-service-policies-302476913.html) | — | — | Commercial | Full lifecycle |
 
 Sure launched what it calls **the insurance industry's first MCP capability** enabling AI agents to handle the complete insurance lifecycle:
 
@@ -156,7 +156,7 @@ Particularly useful for underwriters and claims adjusters who need to quickly fi
 |--------|-------|----------|---------|-------|
 | [Fenris MCP](https://fenrisd.com/mcp/) | — | — | Commercial | Multiple |
 
-Launched March 2026, Fenris positions its MCP server as **the data layer for insurance AI** — giving AI agents direct access to real insurance intelligence:
+[Launched March 2026](https://www.einpresswire.com/article/898757431/), Fenris positions its MCP server as **the data layer for insurance AI** — giving AI agents direct access to real insurance intelligence:
 
 - **Consumer data** — household composition, demographics, and predictive scoring
 - **Property attributes** — real-time property data for underwriting

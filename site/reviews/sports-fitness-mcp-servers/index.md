@@ -141,7 +141,7 @@ Small but functional — covers the core WHOOP data that athletes care about mos
 
 **rajvirtual/oura-mcp-server** (14 stars) focuses on sleep analysis, readiness scores, HRV tracking, and stress comparisons. **daveremy/oura-mcp** (4 stars) doubles as a standalone CLI tool and Claude Code skill with 10 tools covering daily summaries, sleep, readiness, activity, workouts, heart rate, stress, SpO2, sessions, and trends.
 
-⚠️ **Security note**: A trojanized Oura MCP server was discovered in February 2026, distributing the SmartLoader/StealC infostealer via fake forks. Only install Oura MCP servers from verified, well-starred repositories.
+⚠️ **Security note**: A trojanized Oura MCP server was discovered in February 2026, [distributing the SmartLoader/StealC infostealer via fake forks](https://www.straiker.ai/blog/smartloader-clones-oura-ring-mcp-to-deploy-supply-chain-attack) ([The Hacker News](https://thehackernews.com/2026/02/smartloader-attack-uses-trojanized-oura.html)). Only install Oura MCP servers from verified, well-starred repositories.
 
 ### COROS MCP Server
 
@@ -396,11 +396,11 @@ The **PGA of America** launched an official MCP server at [mcp.pga.com](https://
 
 ### MySwimPro Official MCP
 
-**MySwimPro** — the #1 swim training app (used in 180+ countries) — launched an official MCP server at [mcp.myswimpro.com](https://mcp.myswimpro.com/). Provides OAuth-authenticated access to workouts, activities, and training plans. This fills the swimming gap that existed in March — and does so with a first-party official server rather than a community scraper.
+**MySwimPro** launched an official MCP server at [mcp.myswimpro.com](https://mcp.myswimpro.com/). Provides OAuth-authenticated access to workouts, activities, and training plans. This fills the swimming gap that existed in March — and does so with a first-party official server rather than a community scraper.
 
 ### Sportradar Official MCP
 
-**Sportradar** launched an official MCP server in February 2026 at developer.sportradar.com covering 20+ sport profiles (football, soccer, basketball, tennis, and more) for API documentation access. Sportradar is the data backbone for many major sports media companies.
+[**Sportradar** launched an official MCP server](https://developer.sportradar.com/sportradar-updates/changelog/new-mcp-server-for-ai-assisted-development) in February 2026 at developer.sportradar.com covering 20+ sport profiles (football, soccer, basketball, tennis, and more) for API documentation access.
 
 ## Fitness Coaching & Tracking
 

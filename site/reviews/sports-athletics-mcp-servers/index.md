@@ -421,7 +421,7 @@ A **minimal MCP implementation** from Cloudbet (crypto sports betting platform).
 |--------|-------|----------|---------|-------|
 | [r-huijts/strava-mcp](https://github.com/r-huijts/strava-mcp) | 357 | TypeScript | MIT | 25 |
 
-The **highest-starred sports MCP server** — 25 tools for Strava fitness data. Stars surged **276→357 (+29%)**. v1.2.1 with active April 2026 development. New features include sport-type icons, local timestamps, segment leaderboards, athlete shoes, and activity streams with ~70-80% data size reduction. Strava has 120M+ users.
+The **highest-starred sports MCP server** — 25 tools for Strava fitness data. Stars surged **276→357 (+29%)**. v1.2.1 with active April 2026 development. New features include sport-type icons, local timestamps, segment leaderboards, athlete shoes, and activity streams with ~70-80% data size reduction. Strava has [150M+ users](https://press.strava.com/articles/strava-mid-year-data-shows-how-athletes-are-tracking-toward-2025-goals).
 
 ### Taxuspt/garmin_mcp
 

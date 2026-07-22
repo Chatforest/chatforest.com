@@ -123,7 +123,7 @@ Connects LLMs to **19 public Brazilian agricultural data sources** — the most 
 
 Available tools include `preco_diario` (spot prices), `futuros_b3` (futures adjustments), `estimativa_safra` (crop estimates), and `producao_anual` (historical production). All data logic lives in the separate `agrobr` Python library, which handles collection, parsing, and caching — the MCP server is a thin wrapper for text formatting.
 
-Brazil is the world's largest producer of soybeans, coffee, sugar, and orange juice, and a top-5 producer of corn, cotton, and beef — so having comprehensive MCP access to Brazilian agricultural data is globally significant, not just locally useful.
+Brazil is [one of the world's largest agricultural producers](https://www.ers.usda.gov/topics/international-markets-us-trade/countries-regions/brazil/) — including soybeans, coffee, sugar, and orange juice — so having comprehensive MCP access to Brazilian agricultural data is globally significant, not just locally useful.
 
 ## Smallholder Farmer AI
 
@@ -133,7 +133,7 @@ Brazil is the world's largest producer of soybeans, coffee, sugar, and orange ju
 |--------|-------|----------|---------|-------|
 | [digitalgreenorg/DG_Open](https://github.com/digitalgreenorg/DG_Open) | — | Python | — | 12 servers |
 
-The **most ambitious agricultural MCP project** we've reviewed. Digital Green — a nonprofit that has reached 30+ million smallholder farmers — built FarmerChat-MCP as a unified agricultural intelligence system using **12 interconnected MCP servers** that power multiple interfaces without duplicate code. Note: the DG_Open repository has been frozen since November 2025 with no new commits — development activity may have shifted internally or paused.
+The **most ambitious agricultural MCP project** we've reviewed. Digital Green — a nonprofit focused on smallholder agricultural advisory — built FarmerChat-MCP as a unified agricultural intelligence system using **12 interconnected MCP servers** that power multiple interfaces without duplicate code. Note: the DG_Open repository has been frozen since November 2025 with no new commits — development activity may have shifted internally or paused.
 
 The architecture synthesizes data from multiple sources in parallel:
 
@@ -146,7 +146,7 @@ The architecture synthesizes data from multiple sources in parallel:
 
 A farmer can describe their situation ("I have 2 acres of clay soil at 1,200m elevation, dry season coming") and FarmerChat synthesizes soil type, weather forecast, elevation, and groundwater data to recommend specific crops ("plant wheat and drought-tolerant lentils"), planting schedules, and management practices.
 
-The system operates across **India, Ethiopia, Kenya, Nigeria, and Brazil** — regions where the difference between good and bad agricultural advice can mean the difference between food security and hunger. This is not a hobbyist project — it's production infrastructure for agricultural extension at scale.
+The system operates across **India, Ethiopia, Kenya, Nigeria, and Nepal** — regions where the difference between good and bad agricultural advice can mean the difference between food security and hunger. This is not a hobbyist project — it's production infrastructure for agricultural extension at scale.
 
 ## Livestock & Breeding
 
@@ -273,7 +273,7 @@ Docker and Kubernetes deployment supported, making it suitable for farm manageme
 |--------|-------|----------|---------|-------|
 | [s-bakire/rwasis-mcp](https://github.com/s-bakire/rwasis-mcp) | 0 | — | — | — |
 
-A **new MCP server for Rwanda's national soil information system** (RwaSIS). Provides AI-assisted access to soil data, fertilizer recommendations, and parcel information for Rwandan agricultural land. The geographic scope is narrow but the use case is concrete — precision soil data for smallholder farmers in a country where agriculture employs over 70% of the workforce.
+A **new MCP server for Rwanda's national soil information system** (RwaSIS). Provides AI-assisted access to soil data, fertilizer recommendations, and parcel information for Rwandan agricultural land. The geographic scope is narrow but the use case is concrete — precision soil data for smallholder farmers in a country where [agriculture employs roughly 55% of the workforce](https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS?locations=RW).
 
 Complements Digital Green's FarmerChat-MCP (which covers multiple African countries) with more granular national-level soil data for Rwanda specifically. Very early stage (last commit April 23, 0 stars).
 

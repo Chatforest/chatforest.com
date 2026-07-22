@@ -6,6 +6,7 @@ og_description: "Genealogy MCP servers: GedcomMCP (13 stars, 53 tools), gramps-m
 content_type: "Review"
 card_description: "Genealogy and family history MCP servers for AI-powered ancestor research — from parsing GEDCOM files to searching historical records across multiple platforms. This is a niche but surprisingly active category, driven by a dedicated **Genealogy-MCP GitHub organization** that maintains coordinated servers for WikiTree, Gramps, and GEDCOM. **GedcomMCP is the new powerhouse** — airy10/GedcomMCP (13 stars, 53 tools, MIT) handles creation, editing, querying, relationship analysis, duplicate detection, and batch operations on .ged files. The original reeeeemo/ancestry-mcp (34 stars) is now **archived and deprecated**. Genealogy-MCP/gedcom-mcp (7 tools, AGPL-3.0) offers a lighter alternative. **Gramps Web is the best-served platform** with 4 independent implementations, led by cabout-me/gramps-mcp (33 stars, 16 tools) offering smart search across people, families, events, places, and sources, with data management and tree analysis. The Genealogy-MCP organization's version exposes 19 operations via a token-efficient meta-tool pattern (v2.2.1), and recently migrated to a shared `mcp-codemode` library and CI pipeline (April 2026). The entire Gramps stack can be self-hosted, keeping sensitive family data private. **FamilySearch coverage has thinned** — only smithery-ai/familysearch-mcp remains active after the original dulbrich implementation was deleted. **WikiTree has two implementations** — PeWu's TypeScript server (5 tools, Apache-2.0, no auth required) and Genealogy-MCP's Python version (12 tools including photos and categories). **The research-sources-mcp server is uniquely valuable** — 7 tools aggregating Library of Congress newspaper archives, WikiTree, OpenArch.nl European records, and Find A Grave into a single search interface with cross-referencing. The tree-analyzer-mcp (8 tools) catches data quality issues: duplicate persons via fuzzy matching, chronological inconsistencies, and missing source documentation. Major gaps: no official servers from the 'Big Four' genealogy platforms, no consumer DNA/genetic genealogy analysis, no OCR tools for handwritten historical documents. The category earns 3.5/5 — impressive community organization around an open-source core, but limited by the lack of commercial platform integrations."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-23
 lastmod: 2026-05-20T12:00:00+09:00
 ---
 
@@ -108,7 +109,7 @@ Four independent Gramps MCP implementations make it the **best-served genealogy 
 |--------|-------|----------|---------|-------|
 | [smithery-ai/familysearch-mcp](https://github.com/smithery-ai/familysearch-mcp) | [3](https://github.com/smithery-ai/familysearch-mcp/stargazers) | TypeScript | ISC | Multiple |
 
-Connects to [FamilySearch](https://www.familysearch.org/), the **world's largest free genealogy platform** with billions of historical records. Capabilities include:
+Connects to [FamilySearch](https://www.familysearch.org/), the **world's largest free genealogy platform** with [billions of historical records](https://www.familysearch.org/en/newsroom/company-facts) (16.93 billion searchable names, 5.9 billion digital images). Capabilities include:
 
 - **Authentication** with FamilySearch credentials (config, auth, account info)
 - **Family Tree access** — person search, individual details, ancestor exploration (up to 8 generations), descendant exploration (up to 3 generations)
@@ -128,7 +129,7 @@ FamilySearch is operated by The Church of Jesus Christ of Latter-day Saints and 
 |--------|-------|----------|---------|-------|
 | [PeWu/wikitree-mcp](https://github.com/PeWu/wikitree-mcp) | [1](https://github.com/PeWu/wikitree-mcp/stargazers) | TypeScript | Apache-2.0 | [5](https://github.com/PeWu/wikitree-mcp#readme) |
 
-Integrates with the [WikiTree](https://www.wikitree.com/) API — a **free, collaborative genealogy platform** with over 38 million profiles. WikiTree's key differentiator is that profiles are public and collaboratively maintained (like Wikipedia for family trees). The [5 tools](https://github.com/PeWu/wikitree-mcp#readme):
+Integrates with the [WikiTree](https://www.wikitree.com/) API — a **free, collaborative genealogy platform** with [over 43 million profiles](https://www.wikitree.com/wiki/Special:Statistics). WikiTree's key differentiator is that profiles are public and collaboratively maintained (like Wikipedia for family trees). The [5 tools](https://github.com/PeWu/wikitree-mcp#readme):
 
 - **get_person** — retrieve profile details
 - **get_ancestors** / **get_descendants** — navigate family trees

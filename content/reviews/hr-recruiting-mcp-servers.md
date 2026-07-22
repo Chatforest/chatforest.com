@@ -6,6 +6,7 @@ og_description: "HR & Recruiting MCP servers: 50+ servers from BambooHR (8 imple
 content_type: "Review"
 card_description: "HR and recruiting MCP servers across HRIS platforms, applicant tracking systems, payroll, workforce management, and recruiting intelligence. The biggest development in May 2026: Workable launched an official hosted MCP server (59 tools, read/write, OAuth2) spanning both ATS and HRIS — candidates, jobs, offers, requisitions, employees, time off, time tracking, and performance reviews — included in all plans at no extra cost. Previously: Indeed launched an official MCP server (beta) with job search, job detail, and company data tools. Lever now has two MCP implementations (59-tool Go server + 16-tool TypeScript/Cloudflare). The HR MCP ecosystem has 50+ servers covering BambooHR (8 implementations), Workday, SAP SuccessFactors, PeopleSoft, Greenhouse, Ashby (4 implementations), CATS ATS (228 tools), and Check Payroll (17 stars, 263 tools). The category earns 4.0/5 — official ATS+HRIS coverage from Workable strengthens enterprise credibility despite continued absences of LinkedIn Recruiter, iCIMS, Lattice, and Culture Amp."
 last_refreshed: 2026-05-17
+sources_audited: 2026-07-23
 ---
 
 HR and recruiting MCP servers are giving AI assistants direct access to employee data, applicant tracking, payroll processing, and workforce management. Instead of navigating clunky HR portals, these servers let AI agents query employee records, manage job applications, run payroll reports, and coordinate hiring workflows — all through the Model Context Protocol. Part of our **[Business & Productivity MCP category](/categories/business-productivity/)**.
@@ -124,7 +125,7 @@ One of the few **official vendor MCP servers** in the HR space. Passgage is a wo
 |--------|------|------|-------|
 | [Workable MCP](https://workable.readme.io/reference/workable-mcp-server) | Remote (mcp.workable.com) | OAuth2 | 59 |
 
-**The most significant official ATS MCP launch of 2026.** Workable — an ATS and HRIS platform used by 6,200+ companies in 100+ countries — launched a hosted remote MCP server on May 13, 2026, included in all subscription plans at no additional cost.
+**The most significant official ATS MCP launch of 2026.** [Workable](https://www.workable.com/) — an ATS and HRIS platform used by 35,000+ companies in 100+ countries — launched a hosted remote MCP server on May 13, 2026, included in all subscription plans at no additional cost.
 
 The 59 tools span both **recruiting** and **HR management** across 14 categories:
 
@@ -214,7 +215,7 @@ Regional ATS coverage for Brazil's market-leading platform. 40+ tools across 5 A
 |--------|-------|----------|---------|-------|
 | [check-technologies/mcp-server-check](https://github.com/check-technologies/mcp-server-check) | 17 | Python | — | 263 |
 
-The **highest-starred HR MCP server** and the most comprehensive payroll implementation. Check is an embedded payroll infrastructure provider (powers payroll for platforms like Gusto, Justworks, and others), and their official MCP server exposes **263 tools across 17 toolsets**: companies, employees, contractors, payrolls, tax configuration, embedded components, and more.
+The **highest-starred HR MCP server** and the most comprehensive payroll implementation. [Check](https://www.checkhq.com/) is an embedded payroll infrastructure provider — its [65+ platform partners](https://www.checkhq.com/partners) include 7shifts, Homebase, Wave, and others — and their official MCP server exposes **263 tools across 17 toolsets**: companies, employees, contractors, payrolls, tax configuration, embedded components, and more.
 
 Key features: **sandbox environment** for safe testing, **fine-grained tool filtering** (load only the toolsets you need), **read-only mode**, and **multiple transports** (stdio, SSE, streamable-http). Currently in Early Access Beta. *Updated April 2026: grew from 14 to 17 stars. New `check init` CLI command to generate CLAUDE.md, consistent user-agent fix for all API calls, and architecture refactor with `build_body`/`build_params` helpers. Active development continues.*
 
@@ -241,7 +242,7 @@ Key features: **sandbox environment** for safe testing, **fine-grained tool filt
 |--------|-------|----------|---------|-------|
 | [CDataSoftware/adp-mcp-server-by-cdata](https://github.com/CDataSoftware/adp-mcp-server-by-cdata) | 2 | Java | MIT | 3 |
 
-CData's standard read-only JDBC pattern for ADP. Given ADP's market dominance (920,000+ clients), the lack of a comprehensive MCP server is a significant gap.
+CData's standard read-only JDBC pattern for ADP. Given [ADP's market dominance](https://investors.adp.com/news/news-details/2025/ADP-Reports-Fourth-Quarter-and-Fiscal-2025-Results/default.aspx) (1.1 million+ clients across 140+ countries), the lack of a comprehensive MCP server is a significant gap.
 
 ### Payrolla (Turkish Payroll)
 

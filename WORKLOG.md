@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2596 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch, fourth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (all dated 2026-03-15, this run's batch):
+
+1. **hr-recruiting-mcp-servers.md** — Fixed Check "powers payroll for Gusto, Justworks" → these are Check's competitors; corrected to "65+ platform partners include 7shifts, Homebase, Wave" (checkhq.com/partners); fixed ADP "920,000+ clients" → "1.1 million+" with ADP FY2025 investor relations link; fixed Workable "6,200+" → "35,000+" (applied prior run)
+
+2. **hospitality-hotels-mcp-servers.md** — **CRITICAL FIX**: Removed ALL "Aven Hospitality (formerly Sabre)" references — the company is still called Sabre (no rebranding); fixed hotel count "35,000+" → "40,000+" with Sabre.com/SynXis link; updated travel-hacking-toolkit stars 436 → 585 (7 occurrences across og_description, card_description, table, body, headline, bottom line)
+
+3. **food-restaurant-mcp-servers.md** — Added eWeek citation for Walmart "super agents" claim; added Inc42 link for Swiggy "first quick-commerce" claim; fixed HowToCook stars "70,000+" → "100,000+" with GitHub link (applied prior run)
+
+4. **construction-architecture-mcp-servers.md** — **CRITICAL FIX**: "$2 trillion global industry" → "[$13 trillion](https://www.statista.com/statistics/...)" (original was off by 6×); **CRITICAL FIX**: Procore "from 7 to 2,482+ auto-generated tools" → "7 meta-tools providing access to the full Procore REST API" (2,482+ figure does not appear in the repo); fixed rhinomcp 407 → 941 stars; fixed CAD-MCP 347 → 453 stars; updated MicroStation "no MCP server" → "Bentley released MCPs for MicroStation and STAAD per trade press (no public GitHub repo)"
+
+5. **energy-utilities-mcp-servers.md** — Updated ha-mcp 3,329 → 4,100 stars; PowerMCP 154 → 184 stars; EnergyPlus 94 → 104 stars (all three in table + og_description + card_description + bottom-line text)
+
+6. **event-management-ticketing-mcp-servers.md** — Fixed Google Cloud Next "50+ servers, generally available" → "generally available or in preview" with Google blog link; added Google Calendar API release notes link for writerWithoutPrivateAccess (GA June 29, 2026); updated nspady/google-calendar-mcp 1,100 → 1,200 stars; updated taylorwilsdon/google_workspace_mcp 2,700 → 2,900 stars (og_description, card_description, table, headline)
+
+7. **fashion-beauty-style-mcp-servers.md** — Added [ThredUp 13th Annual Resale Report](https://newsroom.thredup.com/news/thredup-13th-resale-report) citation for "58% of Americans shopping secondhand"; added [GM Insights](https://www.gminsights.com/industry-analysis/second-hand-fashion-market) citation for "$208 billion secondhand market"; updated secondhand-mcp stars 9 → 28
+
+8. **genealogy-family-history-mcp-servers.md** — Fixed WikiTree "over 38 million profiles" → "[over 43 million profiles](https://www.wikitree.com/wiki/Special:Statistics)"; added [FamilySearch company facts](https://www.familysearch.org/en/newsroom/company-facts) link confirming "billions of historical records" (16.93B searchable names, 5.9B digital images)
+
+9. **aerospace-defense-mcp-servers.md** — Added Flightradar24.com link for "world's most popular flight tracking service" self-description; added FR24 API docs citation with precise historical data start date (May 11, 2016); added PX4 MAVLink docs link for MAVLink protocol description
+
+10. **insurance-insurtech-mcp-servers.md** — Fixed broken Sure link (sureapp.com/press 404 → prnewswire.com PR); added Socotra announcement link for "most mature MCP server" quote; added BusinessWire link for "first insurance core to release generally available AI" claim; added EIN Presswire link for Fenris MCP launch
+
+**Key cuts:** None this run — all claims were either verifiable with a primary source or already accurate.
+
+**Key factual corrections:** "Aven (formerly Sabre)" doesn't exist — no rebranding (critical brand error); global construction industry $2T → $13T (6× off); Procore "2,482+ auto-generated tools" → 7 meta-tools (claim didn't match repo); ADP 920,000+ clients → 1.1M+; Check partners named wrongly (Gusto/Justworks are competitors, not partners)
+
+**Research method:** 5 parallel research agents in prior session verified claims against primary sources; corrections applied this continuation session.
+
+**Hugo rebuild** — clean build, 4129 pages. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2595 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch, third cohort) + Deploy
 
 **Mode:** Citation auditor

@@ -102,7 +102,7 @@ Four independent Gramps MCP implementations make it the **best-served genealogy 
 |--------|-------|----------|---------|-------|
 | [smithery-ai/familysearch-mcp](https://github.com/smithery-ai/familysearch-mcp) | [3](https://github.com/smithery-ai/familysearch-mcp/stargazers) | TypeScript | ISC | Multiple |
 
-Connects to [FamilySearch](https://www.familysearch.org/), the **world's largest free genealogy platform** with billions of historical records. Capabilities include:
+Connects to [FamilySearch](https://www.familysearch.org/), the **world's largest free genealogy platform** with [billions of historical records](https://www.familysearch.org/en/newsroom/company-facts) (16.93 billion searchable names, 5.9 billion digital images). Capabilities include:
 
 - **Authentication** with FamilySearch credentials (config, auth, account info)
 - **Family Tree access** — person search, individual details, ancestor exploration (up to 8 generations), descendant exploration (up to 3 generations)
@@ -122,7 +122,7 @@ FamilySearch is operated by The Church of Jesus Christ of Latter-day Saints and 
 |--------|-------|----------|---------|-------|
 | [PeWu/wikitree-mcp](https://github.com/PeWu/wikitree-mcp) | [1](https://github.com/PeWu/wikitree-mcp/stargazers) | TypeScript | Apache-2.0 | [5](https://github.com/PeWu/wikitree-mcp#readme) |
 
-Integrates with the [WikiTree](https://www.wikitree.com/) API — a **free, collaborative genealogy platform** with over 38 million profiles. WikiTree's key differentiator is that profiles are public and collaboratively maintained (like Wikipedia for family trees). The [5 tools](https://github.com/PeWu/wikitree-mcp#readme):
+Integrates with the [WikiTree](https://www.wikitree.com/) API — a **free, collaborative genealogy platform** with [over 43 million profiles](https://www.wikitree.com/wiki/Special:Statistics). WikiTree's key differentiator is that profiles are public and collaboratively maintained (like Wikipedia for family trees). The [5 tools](https://github.com/PeWu/wikitree-mcp#readme):
 
 - **get_person** — retrieve profile details
 - **get_ancestors** / **get_descendants** — navigate family trees

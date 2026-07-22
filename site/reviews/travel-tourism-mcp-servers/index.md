@@ -164,7 +164,7 @@ Dual protocol support (stdio and streamable-http) means it works both as a local
 |--------|-------|----------|---------|-------|
 | [pab1it0/tripadvisor-mcp](https://github.com/pab1it0/tripadvisor-mcp) | 54 | Python | MIT | 5 |
 
-Connects AI agents to Tripadvisor's Content API — the world's largest travel guidance platform with reviews for hotels, restaurants, attractions, and experiences (up from 53 stars).
+Connects AI agents to Tripadvisor's Content API — [the world's largest travel guidance platform](https://www.tripadvisor.com/business/about) with reviews for hotels, restaurants, attractions, and experiences (up from 53 stars).
 
 Five tools cover the core research workflow:
 

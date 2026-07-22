@@ -132,7 +132,7 @@ The **first major nonprofit CRM to offer native MCP integration**, announced Dec
 - **View Gifts** — giving history, donation amounts, recurring gift status
 - **Generate Communications** — AI-drafted thank-you notes and outreach emails referencing actual donor data
 
-No code required — works as a Claude Connector for "Claude for Nonprofits" users. This is significant because Blackbaud controls roughly 40% of the nonprofit CRM market. The ability to query donor data and draft personalized communications through natural language is a genuine productivity gain for development officers.
+No code required — works as a Claude Connector for "Claude for Nonprofits" users. This is significant because Blackbaud is a dominant CRM provider for mid-to-large nonprofits. The ability to query donor data and draft personalized communications through natural language is a genuine productivity gain for development officers.
 
 **March 2026 update:** Blackbaud launched **"Development Agent"** — their first "Agent for Good" — a fully autonomous fundraising AI agent for Raiser's Edge NXT customers in the US. Also announced a Grant Review Agent for grant review processes. Expanding to Blackbaud Enterprise Fundraising CRM next. This represents the shift from MCP connectors (query data) to autonomous AI agents (take action).
 
@@ -171,7 +171,7 @@ Over 40,000 nonprofits use Salesforce. If your organization is already on Salesf
 - **Custom field discovery** — automatic discovery with human-readable labeling across all entities
 - **System status** — health checks for the CiviCRM instance
 
-Requires Node.js 18+ and a running CiviCRM instance with valid API credentials. The automatic custom field discovery is particularly valuable — CiviCRM installations are heavily customized, and this server lets agents reference fields by display names rather than technical API identifiers. This serves the 14,000+ organizations worldwide running CiviCRM, including the Free Software Foundation, Creative Commons, Wikimedia Foundation, and CERN.
+Requires Node.js 18+ and a running CiviCRM instance with valid API credentials. The automatic custom field discovery is particularly valuable — CiviCRM installations are heavily customized, and this server lets agents reference fields by display names rather than technical API identifiers. This serves the [14,000+ organizations worldwide running CiviCRM](https://civicrm.org/), including the Free Software Foundation, Creative Commons, Wikimedia Foundation, and CERN.
 
 ### CiviCRM via Pipedream
 
@@ -325,7 +325,7 @@ Several nonprofit platforms lack dedicated MCP servers but are accessible throug
 | Platform | Via | Use Case |
 |----------|-----|----------|
 | **Donorbox** | Zapier MCP | Fundraising, donation management |
-| **Givebutter** | Zapier/Pipedream MCP | Free fundraising platform ($150M+ in donations processed) |
+| **Givebutter** | Zapier/Pipedream MCP | Free fundraising platform ([$5B+ in donations processed](https://www.prnewswire.com/news-releases/givebutter-surpasses-5-billion-in-donations-processed-demonstrating-explosive-growth-in-nonprofit-fundraising-302394860.html) as of March 2025) |
 | **Little Green Light** | Zapier MCP | Donor management CRM for small nonprofits |
 | **NationBuilder** | Pipedream/Zapier MCP | Community management, advocacy (standalone MCP deleted) |
 | **CiviCRM** | Pipedream MCP | Open-source nonprofit CRM |
@@ -349,7 +349,7 @@ The nonprofit MCP space has narrowed its gaps but several remain:
 
 **What works:** Grant discovery arrived with three options — Granted AI (87K+ grants, 133K+ foundations, free), Tar-ive/grants-mcp (government grants), and GSA-TTS's official Grants.gov MCP (government-built). Civic open data exploded with us-gov-open-data-mcp's 300+ tools across 40+ federal APIs and GovInfo's official GPO MCP. CiviCRM finally has a dedicated MCP server (11 tools) serving 14K+ organizations. Blackbaud launched "Development Agent" — the first fully autonomous fundraising AI agent. Salesforce rebranded to "Agentforce Nonprofit" with 4 purpose-built AI agents. The Claude connector directory grew to 200+ integrations.
 
-**What doesn't:** No grant *writing* assistance exists (only discovery). DonorPerfect and Bloomerang remain unconnected. Volunteer scheduling has no dedicated MCP server (though Salesforce's Volunteer Agent is GA early 2026). Open-source impact measurement is still absent. charity-mcp-server appears abandoned (2 stars, no commits since Jan 2025), and NationBuilder MCP was deleted. Industry-wide, 92% of nonprofits use AI but only 7% report major impact — an "efficiency plateau" that better tooling could address.
+**What doesn't:** No grant *writing* assistance exists (only discovery). DonorPerfect and Bloomerang remain unconnected. Volunteer scheduling has no dedicated MCP server (though Salesforce's Volunteer Agent is GA early 2026). Open-source impact measurement is still absent. charity-mcp-server appears abandoned (2 stars, no commits since Jan 2025), and NationBuilder MCP was deleted. Industry-wide, [92% of nonprofits use AI but only 7% report major impact](https://virtuous.org/blog/2026-nonprofit-ai-adoption-report/) — an "efficiency plateau" that better tooling could address.
 
 **What changed since March 2026:** Grant discovery (3 new servers including government-built), CiviCRM standalone MCP (gap filled), civic/government data (3 new servers — us-gov-open-data-mcp, mcp-civic-data, GovInfo), Blackbaud Development Agent launched, Salesforce rebranded to Agentforce Nonprofit, Candid unified search launched + 20% staff layoff for AI pivot, Goodera-Benevity API integration went live, propublica-mcp v1.0.0, mcp-charity v1.0.6, HDX Docker Toolkit, NationBuilder MCP deleted. Net: 15+→35+ servers.
 

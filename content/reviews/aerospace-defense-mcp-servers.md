@@ -7,6 +7,7 @@ og_description: "Aerospace & defense MCP servers: NASA official earthdata-mcp (9
 content_type: "Review"
 card_description: "Aerospace and defense MCP servers across NASA data access, orbital mechanics, aviation operations, drone control, satellite tracking, and earth observation. Two watershed developments since March 2026: NASA published its first official MCP server (nasa/earthdata-mcp, 9 stars, 142 commits) providing semantic search over the Common Metadata Repository, and Flightradar24 released an official MCP server (16 stars, 15 tools) — the first major flight tracking platform to ship MCP support, filling a gap we flagged in March. The community space data landscape is anchored by ProgramComputer/NASA-MCP-server (83 stars, TypeScript, npm v1.0.11) providing AI access to 20+ NASA APIs. Earth observation saw the biggest leap: Dhenenjay's Axion MCP (218 stars, +15%) completed a V2.0 rebuild on AWS with 935 commits and introduced an exclusive SAR-to-optical foundation model for cloud-free Earth observation. Commercial satellite imagery ordering arrived via SkyFi MCP (150+ satellite providers) and Microsoft Planetary Computer MCP for STAC data. For orbital mechanics, IO-Aerospace's SPICE-powered MCP server was previously the production-grade option, but the GitHub repo was removed in April 2026 — the hosted endpoint status at mcp.io-aerospace.org is unclear. alti3/stk-mcp grew to 26 stars bridging LLMs to Ansys STK. Aviation expanded with Flightradar24 official (live positions, historical data back to 2016, airline/airport reference) plus community alternatives (sunsetcoder, 46 stars) and an OpenSky Network MCP for open ADS-B data. cheesejaguar/aerospace-mcp continues as the most comprehensive server with 44+ tools and 62 commits spanning aviation and space. Drone control matured with MAVLinkMCP (16 stars) and a January 2026 academic paper demonstrating real UAV flight control via LLM-MCP. Astronomical data access expanded with astro_mcp (60 commits, DESI/SIMBAD/Gaia/40+ services). Defense remains completely absent — no contractors, no C2 systems, no military logistics. The category holds at 3.5/5 — NASA going official and Flightradar24 entering are significant milestones, and earth observation is thriving, but defense is still entirely absent and several subcategories remain thin."
 last_refreshed: 2026-04-30
+sources_audited: 2026-07-23
 ---
 
 Aerospace and defense MCP servers are enabling AI agents to query NASA's vast data archives, simulate orbital mechanics with SPICE-level accuracy, control drones via natural language, track flights through Flightradar24's official API, order commercial satellite imagery, and analyze earth observation data — all through natural language. Instead of writing Python scripts to query the APOD API or manually running STK scenarios, an AI agent can handle it conversationally: "Show me near-earth asteroids approaching within 5 lunar distances this week, then calculate an observation window from my location."
@@ -155,10 +156,10 @@ Available via Docker or UV package manager. The website at aeroastro.org provide
 |--------|-------|----------|-------|-------|
 | [Flightradar24/fr24api-mcp](https://github.com/Flightradar24/fr24api-mcp) | 16 | Node.js | 15 | **Official**, 16 commits |
 
-**The first major flight tracking platform to ship an MCP server.** Flightradar24 — the world's most popular flight tracking service — released an official MCP server providing comprehensive aviation data access:
+**The first major flight tracking platform to ship an MCP server.** [Flightradar24](https://www.flightradar24.com/) — the world's most popular flight tracking service — released an official MCP server providing comprehensive aviation data access:
 
 - **Live flight data** (3 tools) — real-time aircraft positions globally, basic/full position data, flight counts
-- **Historical flight data** (3 tools) — past positions and historical counts going back to May 2016
+- **Historical flight data** (3 tools) — past positions and historical counts [going back to May 11, 2016](https://fr24api.flightradar24.com/docs/endpoints/flight-positions-resolution)
 - **Flight summaries** (3 tools) — takeoff/landing information with flexible filtering
 - **Specific flight tracking** (1 tool) — detailed trajectory data for individual flights
 - **Reference data** (5 tools) — airline and airport information in basic/comprehensive formats
@@ -202,7 +203,7 @@ Built with FastMCP, each endpoint exposed as a decorated `@mcp.tool()` function.
 |--------|-------|----------|-------|
 | [ion-g-ion/MAVLinkMCP](https://github.com/ion-g-ion/MAVLinkMCP) | 16 | Python | MAVLink protocol, PX4/ArduPilot |
 
-The **most significant drone MCP server**, enabling natural language control of drones via the MAVLink protocol — the standard communication protocol used by PX4 and ArduPilot, the two largest drone software platforms running on millions of drones worldwide. Now backed by academic research — a [January 2026 paper on arXiv](https://arxiv.org/html/2601.15486v1) demonstrated real UAV flight control via LLM-MCP with 15,000 lines of code, 45 tools, and integration with Google Maps MCP for real-time navigation:
+The **most significant drone MCP server**, enabling natural language control of drones via the [MAVLink protocol](https://docs.px4.io/main/en/mavlink/index) — the standard communication protocol used by PX4 and ArduPilot, the two largest drone software platforms running on millions of drones worldwide. Now backed by academic research — a [January 2026 paper on arXiv](https://arxiv.org/html/2601.15486v1) demonstrated real UAV flight control via LLM-MCP with 15,000 lines of code, 45 tools, and integration with Google Maps MCP for real-time navigation:
 
 - **Natural Language Commands** — the LLM interprets intent and translates to MAVLink commands
 - **Telemetry Access** — real-time sensor data, GPS position, battery status, flight mode

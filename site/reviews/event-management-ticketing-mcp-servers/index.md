@@ -7,7 +7,7 @@ Event management and ticketing MCP servers let AI agents discover live events, m
 
 This review covers the **event management and ticketing** vertical — calendar scheduling, ticket discovery, event platforms, community events, and conference navigation. For meeting/video call servers, see our [Communication & Messaging MCP review](/reviews/telecommunications-messaging-mcp-servers/). For restaurant/venue booking, see our [Food & Restaurant MCP review](/reviews/food-restaurant-mcp-servers/).
 
-The headline finding: **Google shipped official Calendar MCP** — a remote MCP server at `calendarmcp.googleapis.com/mcp/v1` with 8 tools and OAuth 2.0 authentication. This is the first major platform to offer official MCP support in this category. Meanwhile, the community side continues to grow, with nspady/google-calendar-mcp holding at 1,100 stars and taylorwilsdon/google_workspace_mcp reaching 2,200 stars. But outside calendaring, no Ticketmaster, Eventbrite, or Live Nation official servers exist.
+The headline finding: **Google shipped official Calendar MCP** — a remote MCP server at `calendarmcp.googleapis.com/mcp/v1` with 8 tools and OAuth 2.0 authentication. This is the first major platform to offer official MCP support in this category. Meanwhile, the community side continues to grow, with nspady/google-calendar-mcp holding at 1,100 stars and taylorwilsdon/google_workspace_mcp reaching 2,900 stars. But outside calendaring, no Ticketmaster, Eventbrite, or Live Nation official servers exist.
 
 **Category:** [Business & Productivity](/categories/business-productivity/)
 
@@ -30,13 +30,13 @@ The server lives at `https://calendarmcp.googleapis.com/mcp/v1` and works with G
 
 Google also launched official MCP servers for **Gmail** (10 tools), **Google Drive** (7 tools), **People API** (3 tools), and **Google Chat** (2 tools) as part of the same Workspace MCP initiative. This makes Google the first major productivity platform to ship official MCP across multiple services.
 
-**June 2026 update**: Google highlighted all Workspace MCP servers at **Google Cloud Next '26** as part of the broader Google-managed MCP platform (50+ servers, generally available). The Calendar MCP server itself remains in Developer Preview. Also notable: the Google Calendar API is adding a new access level, **`writerWithoutPrivateAccess`** (GA June 29, 2026), which allows read/write access to non-private events while marking private events as busy blocks — a useful addition for agent workflows that need to schedule around private appointments without exposing their content.
+**June 2026 update**: Google highlighted all Workspace MCP servers at **Google Cloud Next '26** as part of the [broader Google-managed MCP platform](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) (50+ servers, generally available or in preview). The Calendar MCP server itself remains in Developer Preview. Also notable: the Google Calendar API is adding a new access level, **`writerWithoutPrivateAccess`** (GA June 29, 2026 per [Calendar API release notes](https://developers.google.com/workspace/calendar/release-notes)), which allows read/write access to non-private events while marking private events as busy blocks — a useful addition for agent workflows that need to schedule around private appointments without exposing their content.
 
 ### Google Calendar MCP (Community)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [nspady/google-calendar-mcp](https://github.com/nspady/google-calendar-mcp) | 1,100 | TypeScript | MIT | 12 |
+| [nspady/google-calendar-mcp](https://github.com/nspady/google-calendar-mcp) | 1,200 | TypeScript | MIT | 12 |
 
 The **most popular community calendar MCP server** and one of the highest-starred in this entire review. Features:
 
@@ -56,7 +56,7 @@ The intelligent import feature is particularly useful — paste a screenshot of 
 
 | Server | Stars | Language | License | Services |
 |--------|-------|----------|---------|----------|
-| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 2,700 | Python | MIT | 12 |
+| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 2,900 | Python | MIT | 12 |
 
 The **most-starred community server touching Google Calendar** — though it's a comprehensive Workspace MCP, not calendar-specific. Covers Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Chat, Tasks, Contacts, Apps Script, and Custom Search. Features OAuth 2.1 multi-user support, tiered tool loading (core/extended/complete), read-only mode, and stateless container-friendly deployment. If you need calendar plus other Google services from a single MCP server, this is the leading option.
 

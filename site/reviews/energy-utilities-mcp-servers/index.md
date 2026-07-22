@@ -17,7 +17,7 @@ The headline findings: **PowerMCP hits v0.1.0** — first formal releases June 1
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Power-Agent/PowerMCP](https://github.com/Power-Agent/PowerMCP) | 154 | Python | MIT | 12 integrations |
+| [Power-Agent/PowerMCP](https://github.com/Power-Agent/PowerMCP) | 184 | Python | MIT | 12 integrations |
 
 The **most ambitious power system MCP project** — a collection of MCP servers bridging AI agents to 12 different power system simulation tools. Shipped its **first formal releases** on June 10, 2026:
 
@@ -62,7 +62,7 @@ A focused MCP server for **PyPSA energy system modeling** through natural langua
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [LBNL-ETA/EnergyPlus-MCP](https://github.com/LBNL-ETA/EnergyPlus-MCP) | 94 | Python | — | 35 |
+| [LBNL-ETA/EnergyPlus-MCP](https://github.com/LBNL-ETA/EnergyPlus-MCP) | 104 | Python | — | 35 |
 
 The **most comprehensive building energy simulation MCP server**, developed by the Energy Technologies Area at Lawrence Berkeley National Laboratory. 35 tools across 5 categories for the complete building energy simulation lifecycle.
 
@@ -189,10 +189,10 @@ A **carbon emission calculation** MCP server covering electricity, travel (car/p
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 3,329 | — | — | Multiple |
+| [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 4,100 | — | — | Multiple |
 | [tevonsb/homeassistant-mcp](https://github.com/tevonsb/homeassistant-mcp) | 568 | TypeScript | MIT | Multiple |
 
-**ha-mcp continues its explosive growth** — 2,558→3,329 stars (+771 since April), maintaining its position as the dominant Home Assistant MCP implementation by a wide margin. The tevonsb fork (568 stars) is largely stagnant.
+**ha-mcp continues its explosive growth** — 2,558→4,100 stars (+1,542 since April), maintaining its position as the dominant Home Assistant MCP implementation by a wide margin. The tevonsb fork (568 stars) is largely stagnant.
 
 **v7.7.0 (June 10, 2026)** — major new feature: **Read-Only Mode toggle**
 
@@ -280,7 +280,7 @@ The energy & utilities MCP landscape's gaps are narrowing, but significant ones 
 
 ## The Bottom Line
 
-Energy & utilities MCP servers continue their rapid maturation. The scientific simulation layer (PowerMCP v0.1.0 with 12 simulators, EnergyPlus MCP on v26.1.0, two US national labs) is now world-class. The smart home layer (ha-mcp at 3,329 stars, Victron solar/battery, HomeWizard P1 smart meter) is growing fastest. The grid market data layer has finally started filling in — EIA data for U.S. markets, ENTSO-E for Europe, Swiss national data.
+Energy & utilities MCP servers continue their rapid maturation. The scientific simulation layer (PowerMCP v0.1.0 with 12 simulators, EnergyPlus MCP on v26.1.0, two US national labs) is now world-class. The smart home layer (ha-mcp at 4,100 stars, Victron solar/battery, HomeWizard P1 smart meter) is growing fastest. The grid market data layer has finally started filling in — EIA data for U.S. markets, ENTSO-E for Europe, Swiss national data.
 
 The loss of IoT-Edge MCP is notable but offset: zavora-ai/mcp-scada launched days before this refresh with a more safety-conscious design appropriate for critical infrastructure.
 
