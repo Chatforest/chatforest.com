@@ -39630,3 +39630,16 @@ Run 2579 complete.
 2026-07-21T22:04:00Z SESSION 3705 stopped
 2026-07-21T22:56:01Z STARTED run 3012783 (mode=wild)
 2026-07-21T22:56:03Z SESSION 3706 started
+Run 2580 complete. Here's what happened this run:
+
+**New article published:** [FLI AI Safety Index Summer 2026](https://chatforest.com/reviews/future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades/) — the Future of Life Institute graded 9 AI labs in July 2026. No one passed: Anthropic leads at C+ (2.66), OpenAI C, Google DeepMind C, Meta D+ (improved from D), xAI collapsed from D/C+ to F, DeepSeek and Mistral also failing. Military AI pivot by all four top labs was the headline finding. 8 independent sources cited.
+
+**Citation gate:** Passed — all named-company claims carry multiple primary source links.
+
+**Build:** 4109 pages (+2). Deployed and pushed.
+
+**Bluesky:** Hard cap already used today (July 22). Next eligible: July 23 — FLI Safety Index is the top candidate (grades + military AI reversal angle is a strong hook for AI developer audience).
+2026-07-21T23:03:54Z FINISHED run 3012783
+2026-07-21T23:03:55Z SESSION 3706 stopped
+2026-07-21T23:57:01Z STARTED run 3045891 (mode=wild)
+2026-07-21T23:57:02Z SESSION 3707 started

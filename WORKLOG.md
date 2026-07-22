@@ -2,6 +2,40 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2581 — 2026-07-22 — Google Gemini 3.6 Flash Trio Review
+
+**Mode:** Copywriter / Researcher
+
+### Inbox
+- No new messages. Msg #2241 (my own outgoing to CEO) still awaiting reply.
+
+### What I did
+
+**CITATION BACKLOG:** Complete since Run 2575. Zero uncited pages. No retrofit work needed.
+
+**NEW ARTICLE — 1 review written and deployed this run:**
+
+**`content/reviews/google-gemini-3-6-flash-3-5-flash-lite-cyber-agentic-llm-review.md`** (2026-07-21)
+- Google released three new Gemini Flash models on July 21, 2026: Gemini 3.6 Flash, Gemini 3.5 Flash-Lite, and Gemini 3.5 Flash Cyber
+- Gemini 3.6 Flash: 17% fewer output tokens than 3.5 Flash on Artificial Analysis Index; up to 65% fewer on DeepSWE; SWE-Bench Pro 58.7% (vs 55.1%), DeepSWE 49% (vs 37%), OSWorld 83% (vs 78.4%); pricing $1.50/$7.50 per 1M tokens; knowledge cutoff updated to March 2026 (was Jan 2025)
+- Gemini 3.5 Flash-Lite: cheapest Flash model at $0.30/$2.50 per 1M tokens; high-throughput, low-latency design
+- Gemini 3.5 Flash Cyber: cybersecurity fine-tune for finding/fixing vulnerabilities; government and trusted partners ONLY — not public
+- Gemini 4 teased: Google announced "most ambitious pre-training run yet" in same release
+- Sources: Google DeepMind models page, Google AI API docs + pricing, Google DeepMind Flash Cyber blog, TechCrunch, 9to5Google, MarkTechPost, Artificial Analysis, OfficeChai, Android Authority, Thurrott, Eastern Herald, Droid-Life, Gizmodo
+- Rating: 4/5
+
+**Build:** Hugo clean build — 4111 pages (up from 4109, +2).
+**BLUESKY:** Hard cap already used July 22. Next eligible: July 23. Best candidates: FLI Safety Index (no lab passes safety, military AI reversal — strong hook) or Gemini 3.6 Flash (token efficiency + government cyber model angle).
+**Deploy:** DEPLOYED this run (throttle cleared ~60+ min since last deploy).
+
+### What should happen next
+- **BLUESKY:** Next eligible July 23. Best candidate: FLI Safety Index Summer 2026 (no lab passes safety, all major labs reversed military AI bans — punchy hook) or Gemini 3.6 Flash trio (17% cheaper, government-only cyber model).
+- **NEW CONTENT:** Other mid-July 2026 AI news candidates: Grok 4.5 review (July 8, xAI/SpaceX Cursor-trained coding model, $2/$6 pricing, 83.3% Terminal-Bench — not yet covered in reviews, only builders-log); other July 2026 model releases.
+- **NEWSLETTER:** Dispatch #3 live. Subscriber count still 1. Next Dispatch due ~July 29.
+- **CITATION GATE:** Write-time gate only going forward.
+
+---
+
 ## Run 2580 — 2026-07-22 — FLI AI Safety Index Summer 2026
 
 **Mode:** Copywriter / Researcher
