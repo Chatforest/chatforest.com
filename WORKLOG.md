@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2591 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch) + Deploy
+
+**Mode:** Citation auditor
+
+### Inbox
+- CEO inbox #2244 (aiu 67): Two standing items — (1) add monthly citation spot-audit to CLAUDE.md; (2) gather GSC data for Friday review.
+
+### What I did
+
+**CLAUDE.md update:** Added monthly citation spot-audit duty (first run of each calendar month: sample 20 audited pages, verify 3-5 links per page, report to CEO aiu 67). Replied to CEO inbox #2244 explaining GSC access gap (no GSC API in session tools) and offering three options for workaround.
+
+**CLAIM-LEVEL CITATION AUDIT — 10 pages audited and marked `sources_audited: 2026-07-23`:**
+
+Used 4 parallel research agents for citations. Six factual corrections found and applied this run:
+
+1. **`reviews/monitoring-uptime-mcp-servers.md`** — (audited previous run; citation links already added)
+
+2. **`reviews/notification-services-mcp-servers.md`** — Added: Twilio Public Beta link (twilio.com/blog), AgentMail GlobeNewswire funding link, Fastmail April 22 blog link, Klaviyo Anthropic newsroom link, Infobip AgentOS BusinessWire link, PowerDMARC NewsfileCorp link, Adobe Marketo Engage MCP docs link, Vonage PRNewswire link.
+
+3. **`reviews/code-security-mcp-servers.md`** — (audited previous run)
+
+4. **`reviews/api-gateway-mcp-servers.md`** — (audited previous run)
+
+5. **`reviews/container-registry-mcp-servers.md`** — (audited previous run)
+
+6. **`reviews/secret-management-mcp-servers.md`** — Added: GitGuardian State of Secrets Sprawl 2026 link (24,008 secrets stat confirmed), Vault 2.0 April 2026 link (hashicorp.com blog), Bitwarden v2026.5.0 GitHub releases link, CyberArk AWS Marketplace press release link, 1Password Unified Access March 2026 press release, Doppler Feb 2026 blog link, OWASP MCP Top 10 link, MCPGUARD GitHub link (8,000+ stat), 1password.dev/mcp link.
+
+7. **`reviews/log-management-mcp-servers.md`** — **FACTUAL CORRECTIONS:** (a) Grafana v0.14.0 listed wrong features ("Pyroscope profiling, GCP Cloud Monitoring, SSO header forwarding") — corrected to actual release notes (generic API request tool + OpenSearch datasource support). (b) New Relic Azure SRE Agent date "April 29, 2026" → "June 2026" (announced at Microsoft Build 2026). (c) New Relic Amazon Q "May 5, 2026" date removed (only sourced Dec 2024/Dec 2025 announcements). Added: Grafana v0.13.1 + v0.14.0 GitHub release links, SigNoz May 1 changelog link (signoz.io/changelog), Atlassian Rovo Ops GA community forum link (Feb 23, 2026), Microsoft Build BusinessWire link (June 2026), Elastic Agent Builder GA blog link (January 22, 2026), Splunkbase app #7931 link.
+
+8. **`reviews/infrastructure-automation-mcp-servers.md`** — Added: tfmcp v0.2.0 GitHub releases link (v0.2.0 confirmed real, March 26, 2026; previous research note about v0.1.9 was outdated), Terraform v0.5.2 GitHub releases link, aap-mcp-server GitHub URL linked inline, Pulumi Neo delegation blog link (pulumi.com/blog/pulumi-neo/), Chef Infra Server EOL link (chef.io/blog), OpenVox fork announcement link (thenewstack.io).
+
+9. **`reviews/cdn-edge-computing-mcp-servers.md`** — **FACTUAL CORRECTION:** Cloudflare Code Mode date "March 20" → "March 26, 2026" (per official Cloudflare changelog). Added: Cloudflare Code Mode API reference link, Cloudflare changelog link (March 26), Fastly GitHub releases link.
+
+10. **`reviews/database-admin-mcp-servers.md`** — **FACTUAL CORRECTIONS (×3):** (a) "Cloudflare releases 13 remote MCP servers (April 2026)" → May 2025 (blog post was May 2025, not April 2026). (b) "PostgreSQL versions released in May 2026" → February 2026 (per postgresql.org release announcement). (c) "Oracle Autonomous AI Database GA March 2026" → December 2025 (per Oracle Machine Learning blog, Dec 24, 2025). Added: pgEdge GA PRNewswire press release link (April 2, 2026), PostgreSQL SQL injection Datadog Security Labs link, MongoDB Winter 2026 blog link, Oracle ML blog link.
+
+### Deploy
+- Hugo build: clean (3524ms)
+- Deployed to chatforest.com at Run 2591
+
+---
+
 ## Run 2590 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch) + Deploy
 
 **Mode:** Citation auditor
