@@ -7,6 +7,7 @@ og_description: "Linear's official remote MCP server connects AI assistants to p
 content_type: "Review"
 card_description: "Linear's first-party remote MCP server for AI-assisted project management. 23+ tools covering issues, projects, cycles, initiatives, milestones, comments, and documents. Remote OAuth server at mcp.linear.app with Streamable HTTP transport."
 last_refreshed: 2026-05-21
+sources_audited: 2026-07-22
 ---
 
 The Linear MCP server is Linear's official, centrally hosted bridge between AI assistants and their project management system. Unlike many MCP servers that require local installation and API key management, Linear's server runs remotely at `mcp.linear.app` — you connect via OAuth, and Linear handles the rest.
@@ -15,7 +16,7 @@ The server provides 23+ tools covering the core project management lifecycle: cr
 
 Linear built this in partnership with Cloudflare and Anthropic, following the authenticated remote MCP specification (2025-03-26). It works natively with Claude, Cursor, VS Code, Windsurf, Zed, Codex, and other MCP-compatible clients.
 
-**At a glance:** Remote-first ([mcp.linear.app](https://mcp.linear.app/mcp)), OAuth 2.1, Streamable HTTP, 23+ tools (consolidated), ~642K all-time PulseMCP visitors (#72 globally, ~28K weekly), May 2025 launch, Apache 2.0 (server), requires paid Linear subscription ($10/user/month Basic). Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
+**At a glance:** Remote-first ([mcp.linear.app](https://mcp.linear.app/mcp)), OAuth 2.1, Streamable HTTP, 23+ tools (consolidated), ~642K all-time PulseMCP visitors (#72 globally, ~28K weekly), May 2025 launch, Apache 2.0 (server), requires paid [Linear subscription ($10/user/month Basic)](https://linear.app/pricing). Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 The key question: is Linear's remote-first approach to MCP better than the community-built local servers that came before it?
 
@@ -50,7 +51,7 @@ Since our last review, Linear has launched a major AI product and continued iter
 - **Skills** — save reusable workflows that the agent can execute on demand
 - **Automations** — trigger agent workflows automatically when issues enter triage (Business/Enterprise)
 - **Code Intelligence** (coming soon) — non-technical team members can ask questions about codebases (Business/Enterprise)
-- CEO Karri Saarinen declared "issue tracking is dead," positioning Linear as an agent-first platform. Coding agents are installed in 75% of Linear enterprise workspaces, and 25% of new issues are now agent-created (5× increase over three months)
+- CEO Karri Saarinen declared ["issue tracking is dead,"](https://www.theregister.com/2026/03/26/linear_agent/) positioning Linear as an agent-first platform. [Coding agents are installed in 75% of Linear enterprise workspaces, and 25% of new issues are now agent-created](https://www.theregister.com/2026/03/26/linear_agent/) (5× increase over three months)
 - **MCP server**: `list_comments` now supports pagination via `cursor`, `limit`, and `orderBy` parameters. Initiatives accept multiple parent initiatives instead of a single parent
 
 **April 2, 2026 — Web Forms for Linear Asks:**
@@ -200,7 +201,7 @@ The transport protocol is **Streamable HTTP** at `https://mcp.linear.app/mcp`. L
 
 ## What's Not
 
-**High context cost.** The Fiberplane analysis measured the tool definitions at 17.3k tokens — expanding context usage from 61k to 78k tokens before any actual work begins. For agents with limited context windows, dedicating that much budget to tool definitions is expensive. There's no way to load a subset of tools (e.g., read-only tools only) to reduce this cost.
+**High context cost.** [The Fiberplane analysis](https://blog.fiberplane.com/blog/mcp-server-analysis-linear/) measured the tool definitions at 17.3k tokens — expanding context usage from 61k to 78k tokens before any actual work begins. For agents with limited context windows, dedicating that much budget to tool definitions is expensive. There's no way to load a subset of tools (e.g., read-only tools only) to reduce this cost.
 
 **Responses return too much data.** List operations return full objects including avatar URLs, timestamps, and metadata that agents rarely need. When you list issues to find one to update, you don't need every field — you need the ID, title, and status. The server doesn't offer a way to request concise vs. detailed responses, so every query consumes more tokens than necessary.
 

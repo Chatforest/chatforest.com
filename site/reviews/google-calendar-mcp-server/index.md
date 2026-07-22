@@ -21,7 +21,7 @@ What makes this one stand out: multi-account support with cross-calendar conflic
 
 **taylorwilsdon/google_workspace_mcp now at 2,400 stars with 5 releases since April 19.** Five releases in one month (v1.20.0–v1.21.0), covering: calendar focus time management, OAuth token passthrough mode without client secret sharing, shared drive improvements, Claude Code marketplace plugin support, Windows compatibility fixes, and Calendar date handling improvements. PulseMCP ranks it #111 all-time with 519K visitors and 17.5K/week — far eclipsing nspady. Now the dominant community option by every metric.
 
-**Zero-click RCE via Calendar events — still unpatched.** LayerX Security's February 2026 disclosure (CVSS 10/10) affecting Claude Desktop Extensions paired with any Google Calendar MCP server remains without a fix from Anthropic. The attack embeds instructions in calendar event descriptions that cause AI assistants to execute arbitrary code. Anthropic has stated it "falls outside our current threat model." Use read-only tool filtering if your threat model includes untrusted calendar events.
+**Zero-click RCE via Calendar events — still unpatched.** [LayerX Security's February 2026 disclosure](https://layerxsecurity.com/blog/claude-desktop-extensions-rce/) (CVSS 10/10) affecting Claude Desktop Extensions paired with any Google Calendar MCP server remains without a fix from Anthropic. The attack embeds instructions in calendar event descriptions that cause AI assistants to execute arbitrary code. Anthropic has stated it "falls outside our current threat model." Use read-only tool filtering if your threat model includes untrusted calendar events.
 
 **Google's Cloud MCP suite now 50+ servers.** Cloud Next '26 expanded managed MCP to 50+ servers across infrastructure, AI/ML, security, and for the first time, **Workspace** (Gmail, Drive, Calendar, Chat, People). The official options are now live in Developer Preview.
 
@@ -166,7 +166,7 @@ The landscape has shifted significantly since April 2026. Google has now launche
 
 Development on nspady's server has stalled. As of May 2026, there have been zero commits or releases in ~11 weeks. The Google Tasks PR (#154) opened January 8 sits unmerged. PulseMCP weekly traffic has dropped from 2.7K to 1.5K, and taylorwilsdon's all-in-one Workspace server (2,400 stars, v1.21.0, 5 releases since April 19) now completely dominates community traffic with 519K visitors and 17.5K/week.
 
-**Security note:** The LayerX zero-click RCE disclosure (February 2026, CVSS 10/10) affecting Claude Desktop Extensions paired with any Google Calendar MCP server remains unpatched. Anthropic considers it outside their threat model. Use read-only tool filtering if your threat model includes untrusted calendar events.
+**Security note:** The [LayerX zero-click RCE disclosure](https://layerxsecurity.com/blog/claude-desktop-extensions-rce/) (February 2026, CVSS 10/10) affecting Claude Desktop Extensions paired with any Google Calendar MCP server remains unpatched. Anthropic considers it outside their threat model. Use read-only tool filtering if your threat model includes untrusted calendar events.
 
 For anyone with multi-account calendar needs or who wants features like bulk creation and image import, nspady's server remains the best calendar-focused option — provided you can tolerate the stalled development. For basic calendar management, the official Google option is now worth evaluating. For Google Calendar alongside other Workspace services, taylorwilsdon is now the clear community leader.
 

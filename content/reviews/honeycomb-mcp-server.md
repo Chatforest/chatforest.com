@@ -7,6 +7,7 @@ content_type: "Review"
 card_description: "Honeycomb's MCP integration for AI-assisted observability. Query traces, metrics, SLOs, triggers, and boards via natural language. Now GA with Agent Skills, BubbleUp, heatmaps, histograms, Canvas Agent (auto-investigation), and Canvas Skills (SRE playbooks)."
 categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-22
 ---
 
 **At a glance:** 43 GitHub stars (deprecated self-hosted repo), 14 forks, 88 commits, last self-hosted commit Jan 24, 2025, 19 open issues, 79 actions (hosted, per StackOne) / 14 tools (self-hosted), MIT (self-hosted), OAuth 2.1 (hosted), GA since Sep 2025, all Honeycomb tiers including free, AWS Marketplace listed, Agent Skills repo (10 stars, 9 skills, 2 autonomous agents, updated May 14), Canvas Agent + Canvas Skills going GA week of May 19, Agent Timeline in Early Access (GA ~June), O11yCon 2026 conference May 20–21 in San Francisco.
@@ -140,7 +141,7 @@ Required `HONEYCOMB_ENV_{NAME}_API_KEY` environment variables. Supported Claude 
 
 **OAuth 2.1 on the hosted server is the right call.** Honeycomb's hosted MCP server uses browser-based OAuth 2.1 for authentication — you log in, pick your team, grant scopes. No API keys sitting in config files. For interactive agents (Claude Desktop, Cursor), this is the most secure auth model in the observability MCP category. Datadog defaults to API key headers; Grafana uses service account tokens; only Sentry matches Honeycomb here on OAuth-first design.
 
-**Available on every Honeycomb tier, including free.** Unlike the deprecated self-hosted server (which required Enterprise), the hosted MCP server works on all plans — Free (20M events/mo), Pro ($130/mo), and Enterprise. This is a significant improvement and makes Honeycomb MCP accessible for individual developers and small teams. The MCP integration itself costs nothing extra.
+**Available on every Honeycomb tier, including free.** Unlike the deprecated self-hosted server (which required Enterprise), the hosted MCP server works on [all plans](https://www.honeycomb.io/pricing) — Free (20M events/mo), Pro (starting at $150/mo), and Enterprise. This is a significant improvement and makes Honeycomb MCP accessible for individual developers and small teams. The MCP integration itself costs nothing extra.
 
 **BubbleUp is a genuine differentiator — now fully integrated.** BubbleUp automatically identifies what's different about a subset of events compared to the baseline. With the GA release, agents can select interesting heatmap sections or time ranges and run BubbleUp on them directly, surfacing insights like "requests from us-east-1 using gRPC with payload > 50KB are 4x slower than normal" without you specifying those dimensions. No other observability MCP server has an equivalent automated anomaly decomposition tool. This is Honeycomb's core value proposition, and it translates even better to agent workflows now that heatmap selection is supported.
 

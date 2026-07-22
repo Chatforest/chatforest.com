@@ -6,6 +6,7 @@ og_description: "Crawl4AI's MCP server exposes the most-starred web crawler (65,
 content_type: "Review"
 card_description: "Seven tools from the most-starred open-source web crawler — 65,800+ stars, no new release since March. Stdio transport broken (Issue #1968, fix pending). Cloud API still in closed beta. Firecrawl v2.10 widening the gap."
 last_refreshed: 2026-05-18
+sources_audited: 2026-07-22
 categories: ["/categories/web-search-scraping/"]
 ---
 
@@ -21,7 +22,7 @@ We've been comparing it against Firecrawl, Tavily, and Playwright across web scr
 
 **No new release since v0.8.6 — development quiet period.** As of May 18, 2026, v0.8.6 (March 24) remains the latest release — 7+ weeks without a version bump. The GitHub commit log shows no merges to main after March 30. Stars have grown from 64,100 to 65,800 (+1,700) and forks from 6,600 to 6,732 (+132), but the surge in open issues from 17 to 89 suggests demand is outpacing current development throughput.
 
-**Stdio transport confirmed broken — Issue #1968 (filed May 13, fix pending).** The root cause was identified: `async_logger.py:139` routes Crawl4AI's console output to `sys.stdout` instead of `sys.stderr`, corrupting JSON-RPC streams and breaking any stdio-based MCP connection. PR #1971 (filed May 17) proposes the fix — routing logger output to stderr — but it remains unmerged as of May 18. Until the fix lands, the official built-in server cannot be used via stdio; SSE and WebSocket remain the only working transports.
+**Stdio transport confirmed broken — [Issue #1968](https://github.com/unclecode/crawl4ai/issues/1968) (filed May 13, fix pending).** The root cause was identified: `async_logger.py:139` routes Crawl4AI's console output to `sys.stdout` instead of `sys.stderr`, corrupting JSON-RPC streams and breaking any stdio-based MCP connection. PR #1971 (filed May 17) proposes the fix — routing logger output to stderr — but it remains unmerged as of May 18. Until the fix lands, the official built-in server cannot be used via stdio; SSE and WebSocket remain the only working transports.
 
 **Four open MCP-layer issues reveal feature parity and reliability gaps:**
 - **#1968** — AsyncLogger stdout breaks stdio transport (PR #1971 pending, unmerged)
@@ -35,7 +36,7 @@ We've been comparing it against Firecrawl, Tavily, and Playwright across web scr
 
 ## What's New (April 2026 Update)
 
-**v0.8.6 (March 24, 2026) — Critical security hotfix.** This release replaced the `litellm` dependency with `unclecode-litellm` in response to a major PyPI supply chain compromise. On March 24, malicious versions of litellm (1.82.7 and 1.82.8) were published to PyPI containing a three-stage payload: a credential harvester targeting 50+ categories of secrets, a Kubernetes lateral movement toolkit, and a persistent backdoor. The compromised packages were live for about 40 minutes before PyPI quarantined them. Crawl4AI responded the same day with v0.8.6. If you're still on v0.8.5, upgrade immediately.
+**v0.8.6 (March 24, 2026) — Critical security hotfix.** This release replaced the `litellm` dependency with `unclecode-litellm` in response to a major PyPI supply chain compromise. On March 24, [malicious versions of litellm (1.82.7 and 1.82.8) were published to PyPI](https://docs.litellm.ai/blog/security-update-march-2026) containing a three-stage payload: a credential harvester targeting 50+ categories of secrets, a Kubernetes lateral movement toolkit, and a persistent backdoor ([detailed technical analysis](https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/), [CVE-2026-33634](https://nvd.nist.gov/vuln/detail/CVE-2026-33634)). The compromised packages were live for about 40 minutes before PyPI quarantined them. Crawl4AI responded the same day with v0.8.6. If you're still on v0.8.5, upgrade immediately.
 
 **Both major MCP bugs are now fixed.** Issue #1316 (SSE "Unexpected message" errors) was closed on March 22 via PRs #1519 and #1525, fixing the port configuration conflict that caused connection failures. Issue #1311 (missing `type` fields breaking Gemini CLI) was closed as a duplicate of #1652, with the fix merged into the develop branch. These were the two most prominent MCP layer issues we flagged in previous reviews — their resolution marks a meaningful improvement in MCP stability.
 

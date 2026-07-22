@@ -3,7 +3,7 @@
 > Anthropic's official Git MCP server gives AI agents local git operations — status, diff, commit, branch. But with no push, pull, or merge, it's half a workflow. Three CVEs patched in late 2025. Tool annotations and injection guards added March 2026.
 
 
-**At a glance:** ~85,800 GitHub stars (monorepo), 10,700+ forks, v2026.1.14 (Jan 14, 2026), 12 tools, MIT, ~286K weekly PyPI downloads (~1.74M/month), PulseMCP 6.4M all-time (#13 globally, ~273K weekly, #10 this week)
+**At a glance:** ~85,800 GitHub stars (monorepo), 10,700+ forks, v2026.1.14 (Jan 14, 2026), 12 tools, MIT, [~286K weekly PyPI downloads](https://pypi.org/project/mcp-server-git/) (~1.74M/month), PulseMCP 6.4M all-time (#13 globally, ~273K weekly, #10 this week)
 
 Twelve tools. No push.
 
@@ -91,7 +91,7 @@ The Git MCP server occupies a specific niche: local git operations for AI agents
 
 **vs. [GitHub MCP Server](/reviews/github-mcp-server/) (4/5):** These are complementary, not competitive. GitHub's server handles the GitHub API — PRs, issues, Actions, code search across repos. The Git server handles local repository operations — diffs, commits, branches. A complete agent workflow would use both: Git for local work, GitHub for remote collaboration. But with no push in the Git server, you need the GitHub server (or manual intervention) to get code to the remote.
 
-**vs. cyanheads/git-mcp-server (216 stars, v2.15.1):** The community alternative offers **28 tools** across 7 categories — more than double. It includes push, pull, fetch, merge, rebase, stash, tag, blame, clone, and worktree operations. Supports both stdio and Streamable HTTP. Has enterprise features like GPG/SSH commit signing, JWT/OAuth authentication, configurable response formatting (JSON or Markdown), and optional directory sandboxing via `GIT_BASE_DIR`. Built in TypeScript on Bun/Node.js (actively maintained — 4 releases between April 23 and May 6 alone). Recent improvements include strict schema validation (.strict() on all schemas), tag signature verification with 5 verification outcomes, and SSH/file URL support for `git_clone`. PulseMCP: ~41.6K all-time. If you need a complete git workflow, this community server is significantly more capable — though less proven at scale. Licensed Apache 2.0.
+**vs. [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) (216 stars, v2.15.1):** The community alternative offers **28 tools** across 7 categories — more than double. It includes push, pull, fetch, merge, rebase, stash, tag, blame, clone, and worktree operations. Supports both stdio and Streamable HTTP. Has enterprise features like GPG/SSH commit signing, JWT/OAuth authentication, configurable response formatting (JSON or Markdown), and optional directory sandboxing via `GIT_BASE_DIR`. Built in TypeScript on Bun/Node.js (actively maintained — 4 releases between April 23 and May 6 alone). Recent improvements include strict schema validation (.strict() on all schemas), tag signature verification with 5 verification outcomes, and SSH/file URL support for `git_clone`. PulseMCP: ~41.6K all-time. If you need a complete git workflow, this community server is significantly more capable — though less proven at scale. Licensed Apache 2.0.
 
 **vs. GitKraken MCP Server:** GitKraken's MCP server is embedded in GitLens 17.5+ (requires VS Code 1.101.0+) — auto-installs with no separate configuration. It ships **27 tools** across 6 categories covering Git operations (status, blame, diff, log, push, stash, branch, worktree), GitLens features, Issues, Pull Requests, and GitKraken workspaces. The key differentiator is multi-provider integration — commits, PRs, and issues unified across GitHub, GitLab, Bitbucket, Azure DevOps, and Jira. A commercial offering with safety confirmations built in. Supports VS Code, Cursor, Windsurf, and Kiro.
 
@@ -99,7 +99,7 @@ The Git MCP server occupies a specific niche: local git operations for AI agents
 
 ## What's New (May 2026 Update)
 
-**New GitPython CVE patched silently (May 5, 2026).** A dependency bump in the git server source addressed **CVE-2026-44243** (CVSS 7.1 HIGH) — a path traversal vulnerability in GitPython allowing arbitrary file write/delete outside the repository, fixed in GitPython 3.1.48+. The mcp-server-git source now pulls GitPython 3.1.49. Notably, **no new version of mcp-server-git was tagged** — users with flexible dependency constraints get the patch automatically; those with pinned versions do not. This is the only code change to the git server since the March 2026 security hardening.
+**New GitPython CVE patched silently (May 5, 2026).** A dependency bump in the git server source addressed **[CVE-2026-44243](https://nvd.nist.gov/vuln/detail/CVE-2026-44243)** (CVSS 7.1 HIGH) — a path traversal vulnerability in GitPython allowing arbitrary file write/delete outside the repository, fixed in GitPython 3.1.48+. The mcp-server-git source now pulls GitPython 3.1.49. Notably, **no new version of mcp-server-git was tagged** — users with flexible dependency constraints get the patch automatically; those with pinned versions do not. This is the only code change to the git server since the March 2026 security hardening.
 
 **Push support still blocked — now 15+ months.** Issue [#618](https://github.com/modelcontextprotocol/servers/issues/618) has been open since February 2025. On April 20, reviewer cliffhall added "enhancement" and "server-git" labels to PR #2961 — the first activity on that PR since November 2025. But label additions suggest awareness, not action; no merge is pending.
 
@@ -115,9 +115,9 @@ The Git MCP server occupies a specific niche: local git operations for AI agents
 
 **Three CVEs disclosed and patched (late 2025).** Security researcher Yarden Porat (Cyata) reported three vulnerabilities, all patched by December 2025:
 
-- **CVE-2025-68143** (CVSS 8.8/v3, 6.5/v4) — The `git_init` tool accepted arbitrary filesystem paths, letting attackers turn any directory into a git repository. **Fix:** `git_init` removed entirely (v2025.9.25).
-- **CVE-2025-68144** (CVSS 8.1/v3, 6.4/v4) — Argument injection in `git_diff` and `git_checkout`. Injecting `--output=/path/to/file` could overwrite or delete files. **Fix:** Input sanitization (v2025.12.18).
-- **CVE-2025-68145** (CVSS 7.1/v3, 6.3/v4) — Path traversal bypass in the `--repository` flag. The path validation didn't actually enforce boundaries, allowing access to any repository on the system. **Fix:** Proper path validation (v2025.12.18).
+- **[CVE-2025-68143](https://nvd.nist.gov/vuln/detail/CVE-2025-68143)** (CVSS 8.8/v3, 6.5/v4) — The `git_init` tool accepted arbitrary filesystem paths, letting attackers turn any directory into a git repository. **Fix:** `git_init` removed entirely (v2025.9.25).
+- **[CVE-2025-68144](https://nvd.nist.gov/vuln/detail/CVE-2025-68144)** (CVSS 8.1/v3, 6.4/v4) — Argument injection in `git_diff` and `git_checkout`. Injecting `--output=/path/to/file` could overwrite or delete files. **Fix:** Input sanitization (v2025.12.18).
+- **[CVE-2025-68145](https://nvd.nist.gov/vuln/detail/CVE-2025-68145)** (CVSS 7.1/v3, 6.3/v4) — Path traversal bypass in the `--repository` flag. The path validation didn't actually enforce boundaries, allowing access to any repository on the system. **Fix:** Proper path validation (v2025.12.18).
 
 The three vulnerabilities could be chained with the Filesystem MCP server to achieve remote code execution via Git's smudge/clean filter mechanism — a prompt injection attack that exploits the interaction between two "safe" MCP servers. As Porat noted: "Each MCP server might look safe in isolation, but combine two of them...and you get a toxic combination." The story was covered by [The Register](https://www.theregister.com/2026/01/20/anthropic_prompt_injection_flaws/) and [The Hacker News](https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html) in January 2026.
 

@@ -6,6 +6,7 @@ og_description: "Kubernetes MCP server: Go-native API access, 7 modular toolsets
 content_type: "Review"
 card_description: "Go-native Kubernetes MCP server — direct API access without kubectl, 7 modular toolsets (core, config, Helm, KubeVirt, Kiali, KCP, Tekton NEW), multi-cluster support, read-only and non-destructive modes. v0.0.62 adds MCP resource capability and startup auth validation. Microsoft Entra ID OBO auth. 6,100+/week npm downloads. MCPSafe 84/100. v0.1.0 milestone 99% complete."
 last_refreshed: 2026-05-18
+sources_audited: 2026-07-22
 ---
 
 Most Kubernetes MCP servers shell out to kubectl. This one doesn't.
@@ -24,7 +25,7 @@ With 1,600+ stars, 340 forks, and 62 releases, it's the most mature of the six-p
 
 **v0.0.61 shipped (Apr 24, 2026) — Tekton toolset, Microsoft Entra ID auth, rate limiting.** A new seventh toolset — **Tekton** — adds pipeline and task management for CI/CD workflows on Kubernetes. **Microsoft Entra ID On-Behalf-Of (OBO) token exchange** enables enterprise SSO, making the server viable for corporate environments requiring federated identity. Per-session **rate limiting** via MCP middleware is configurable. Multi-arch builds extended to s390x and ppc64le. Gateway API HTTPRoute support added to the Helm chart. The Helm chart's root filesystem is now read-only; ServiceAccount token auto-mount is configurable. Bug fixes: KEP-2227 default container resolution for multi-container pods, SIGHUP config reload, authorization header passthrough, and kubeconfig empty `current-context` handling.
 
-**MCPSafe AIVSS score: 84/100, Grade B (May 12, 2026).** Issue [#1148](https://github.com/containers/kubernetes-mcp-server/issues/1148) reports the server scored 84/100 — 34 medium findings (all around container and Kubernetes resource access scoping), zero critical or high. The project is actively working on formalizing its security posture with a SECURITY.md policy (#1132) and a private disclosure route (#1126).
+**MCPSafe AIVSS score: 84/100, Grade B (May 12, 2026).** [Issue #1148](https://github.com/containers/kubernetes-mcp-server/issues/1148) reports the server scored 84/100 — 34 medium findings (all around container and Kubernetes resource access scoping), zero critical or high. The project is actively working on formalizing its security posture with a SECURITY.md policy (#1132) and a private disclosure route (#1126).
 
 **npm downloads up 36%.** Weekly npm downloads jumped from ~4,500 to ~6,110 — continued organic growth in the post-Q1 MCP adoption wave.
 
@@ -202,9 +203,9 @@ The Kubernetes MCP server ecosystem is fragmented. At least six implementations 
 
 **vs. rohitg00/kubectl-mcp-server (~870 stars):** Python/Node.js, kubectl wrapper. Now listed in the CNCF Landscape. Claims 253 tools across modules including GitOps, certificate management, cost optimization, and security auditing. Integrates with 15+ AI assistants. Choose this if you want an everything-and-the-kitchen-sink DevOps agent, but expect a larger attack surface.
 
-**vs. Google GKE MCP Server:** Fully managed remote MCP endpoint from Google (`container.googleapis.com/mcp`). No self-hosting, no binary to install. Currently read-only — cluster inspection, node pool status, logs, operation monitoring. GKE-specific. Production-available. Highlighted at KubeCon EU 2026 (Google Cloud blog post, May 17, 2026) and being used for multi-agent deployment with ADK and Gemini CLI. Choose this if you're on GKE and want zero-setup read-only cluster access. Not comparable for write operations or multi-cloud.
+**vs. Google GKE MCP Server:** Fully managed remote MCP endpoint from Google (`container.googleapis.com/mcp`). No self-hosting, no binary to install. Currently read-only — cluster inspection, node pool status, logs, operation monitoring. GKE-specific. Production-available. [Highlighted at KubeCon EU 2026](https://cloud.google.com/blog/products/containers-kubernetes/gke-and-oss-innovation-at-kubecon-eu-2026) (Google Cloud blog post, May 17, 2026) and being used for multi-agent deployment with ADK and Gemini CLI. Choose this if you're on GKE and want zero-setup read-only cluster access. Not comparable for write operations or multi-cloud.
 
-**vs. AWS EKS MCP Server:** Part of the [AWS MCP suite](/reviews/aws-mcp-servers/) (4/5). EKS-specific — only works with AWS-managed Kubernetes. Still in **preview** (the broader AWS MCP Server for general AWS APIs went GA May 6, 2026, but the EKS-specific server remains preview). Deep AWS integration but [exposes K8s secrets in plain text](https://github.com/awslabs/mcp/issues/2588). Integrates with Kiro CLI, Amazon Q Developer, Cursor, Cline. Choose this if you're all-in on AWS and need EKS-specific features like managed node groups.
+**vs. AWS EKS MCP Server:** Part of the [AWS MCP suite](/reviews/aws-mcp-servers/) (4/5). EKS-specific — only works with AWS-managed Kubernetes. Still in **preview** (the broader AWS MCP Server for general AWS APIs went GA May 6, 2026, but the EKS-specific server remains preview). Deep AWS integration but [exposes K8s secrets in plain text (issue #2588)](https://github.com/awslabs/mcp/issues/2588). Integrates with Kiro CLI, Amazon Q Developer, Cursor, Cline. Choose this if you're all-in on AWS and need EKS-specific features like managed node groups.
 
 **vs. strowk/mcp-k8s-go (~370 stars):** Another Go-native implementation. Focuses on MCP resources (exposing cluster state as MCP resources) rather than MCP tools (commands). More of a read-only cluster browser than a management tool. Different philosophy.
 

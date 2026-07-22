@@ -5,11 +5,11 @@
 
 GitMCP has the simplest pitch in the documentation MCP space: change `github.com` to `gitmcp.io` in any repo URL and you have an MCP server. No signup, no API key, no npm install, no local dependencies. Your AI assistant immediately gets access to that project's documentation.
 
-That pitch has earned 8,083 GitHub stars, 709 forks. In a category where [Context7](/reviews/context7-mcp-server/) charges $10/month for 5,000 requests and Nia costs $14.99/month, GitMCP is completely free with no rate limits of its own.
+That pitch has earned [8,083 GitHub stars, 709 forks](https://github.com/idosal/git-mcp). In a category where [Context7](/reviews/context7-mcp-server/) charges $10/month for 5,000 requests and Nia costs $14.99/month, GitMCP is completely free with no rate limits of its own.
 
 The architecture is the opposite of Context7's centralized registry. Instead of indexing thousands of libraries into a curated database, GitMCP reads documentation directly from GitHub repositories at query time — `llms.txt`, `llms-full.txt`, `README.md`, and other documentation files. No intermediary, no community curation, no poisoning risk from registry submissions.
 
-But "reads from GitHub" means you inherit GitHub's limitations. Public repos only. Search quality depends on how well the repo is documented. And the security picture has worsened significantly since launch: beyond the original R2 endpoint exposure (#218), new findings include prompt injection via repository content (#227), tool description injection (#229), and a security scan scoring 20/100 with 77 findings (#239). Free doesn't mean risk-free. May 2026 brought additional operational concerns: SSE transport was removed, a Cloudflare rate-limit incident took the service down, and open issues grew from 51 to 67.
+But "reads from GitHub" means you inherit GitHub's limitations. Public repos only. Search quality depends on how well the repo is documented. And the security picture has worsened significantly since launch: beyond the original R2 endpoint exposure ([#218](https://github.com/idosal/git-mcp/issues/218)), new findings include prompt injection via repository content ([#227](https://github.com/idosal/git-mcp/issues/227)), tool description injection ([#229](https://github.com/idosal/git-mcp/issues/229)), and a security scan scoring 20/100 with 77 findings ([#239](https://github.com/idosal/git-mcp/issues/239)). Free doesn't mean risk-free. May 2026 brought additional operational concerns: SSE transport was removed, a Cloudflare rate-limit incident took the service down, and open issues grew from 51 to 67.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -62,7 +62,7 @@ The dynamic endpoint is more flexible but less focused — your agent needs to s
 
 **Supported clients:** Cursor, Claude Desktop (via mcp-remote bridge), Windsurf, VS Code, Cline, Highlight AI, Augment Code, Msty AI, Zed, and others that support **Streamable HTTP transport**.
 
-**Note (May 2026):** SSE (Server-Sent Events) transport was removed in commit `7c96a4a` on May 8, 2026. If your configuration used SSE, you must migrate to Streamable HTTP or the `mcp-remote` bridge.
+**Note (May 2026):** SSE (Server-Sent Events) transport was removed in [commit `7c96a4a`](https://github.com/idosal/git-mcp/commit/7c96a4a) ([PR #243](https://github.com/idosal/git-mcp/pull/243)) on May 8, 2026. If your configuration used SSE, you must migrate to Streamable HTTP or the `mcp-remote` bridge.
 
 For Claude Desktop, which expects stdio transport, you'll need the `mcp-remote` bridge:
 ```json
@@ -110,13 +110,13 @@ No support for private repositories. This is the most-requested feature (#157, #
 
 GitMCP's security picture has deteriorated significantly since March 2026, with multiple new findings stacking on top of the original #218 report — and as of May 18, 2026, all four remain open with no patches shipped:
 
-**Prompt injection via repository content (#227):** The most fundamental issue. GitMCP loads repository content — READMEs, documentation, code comments — directly into LLM context without sanitization. Any public repository can contain attacker-crafted instructions that hijack agent behavior. When other MCP tools (filesystem, terminal) are connected alongside GitMCP, malicious repo content could instruct the AI to write files, execute commands, or exfiltrate credentials. This is an architectural vulnerability inherent to the design. The project added `readOnlyHint: true` metadata to tools (a minimal signal), but no content sanitization has shipped.
+**[Prompt injection via repository content (#227)](https://github.com/idosal/git-mcp/issues/227):** The most fundamental issue. GitMCP loads repository content — READMEs, documentation, code comments — directly into LLM context without sanitization. Any public repository can contain attacker-crafted instructions that hijack agent behavior. When other MCP tools (filesystem, terminal) are connected alongside GitMCP, malicious repo content could instruct the AI to write files, execute commands, or exfiltrate credentials. This is an architectural vulnerability inherent to the design. The project added `readOnlyHint: true` metadata to tools (a minimal signal), but no content sanitization has shipped.
 
-**Tool description injection + missing output sanitization (#229):** An audit found that tool descriptions serving repository content aren't validated against malicious patterns, and repository materials returned to model context lack scanning for injection attacks. Maintainers could embed covert directives in READMEs to manipulate any agent consuming that repository. Still open with zero maintainer response as of May 2026.
+**[Tool description injection + missing output sanitization (#229)](https://github.com/idosal/git-mcp/issues/229):** An audit found that tool descriptions serving repository content aren't validated against malicious patterns, and repository materials returned to model context lack scanning for injection attacks. Maintainers could embed covert directives in READMEs to manipulate any agent consuming that repository. Still open with zero maintainer response as of May 2026.
 
-**Security scan: 20/100 (F grade) with 77 findings (#239):** A comprehensive scan across 36 tools found unbounded string parameters with no `maxLength` or `pattern` validation, imprecise tool descriptions that lead LLMs to overestimate capabilities, and no individual access controls on tools. A separate scan (#232) by AgentSeal scored 88/100 and characterized most findings as low-risk or mitigated, but the original auditor's findings remain unaddressed.
+**[Security scan: 20/100 (F grade) with 77 findings (#239)](https://github.com/idosal/git-mcp/issues/239):** A comprehensive scan across 36 tools found unbounded string parameters with no `maxLength` or `pattern` validation, imprecise tool descriptions that lead LLMs to overestimate capabilities, and no individual access controls on tools. A [separate scan (#232)](https://github.com/idosal/git-mcp/issues/232) by AgentSeal scored 88/100 and characterized most findings as low-risk or mitigated, but the original auditor's findings remain unaddressed.
 
-**Original R2 endpoint exposure (#218):** The unauthenticated Cloudflare R2 endpoint and stack trace exposure found in the original audit. PR #228 was proposed as a fix but has not merged.
+**[Original R2 endpoint exposure (#218)](https://github.com/idosal/git-mcp/issues/218):** The unauthenticated Cloudflare R2 endpoint and stack trace exposure found in the original audit. [PR #228](https://github.com/idosal/git-mcp/pull/228) was proposed as a fix but has not merged.
 
 The core issue is architectural: GitMCP's value proposition — serving repository content directly to LLMs — is inherently a prompt injection surface. Unlike Context7's curated registry (which has its own risks), GitMCP serves whatever is in the repo, including potentially malicious content. 30+ days after these findings were filed, the project has shipped no mitigations.
 
@@ -126,7 +126,7 @@ On May 8, 2026 (commit `7c96a4a`, PR #243), GitMCP removed SSE (Server-Sent Even
 
 ### Cloudflare Downtime (May 2026)
 
-Issue #245 (filed May 11, resolved May 17) reports that `gitmcp.io` was fully unavailable due to Cloudflare rate limiting. The maintainer resolved it, but no public explanation of the root cause or long-term mitigation was provided. For a zero-infrastructure-of-your-own service, Cloudflare dependency means full outages with no workaround except self-hosting. Issue #244 (filed May 10) also reports Cloudflare 1101 Worker exceptions on Streamable HTTP — still open.
+[Issue #245](https://github.com/idosal/git-mcp/issues/245) (filed May 11, resolved May 17) reports that `gitmcp.io` was fully unavailable due to Cloudflare rate limiting. The maintainer resolved it, but no public explanation of the root cause or long-term mitigation was provided. For a zero-infrastructure-of-your-own service, Cloudflare dependency means full outages with no workaround except self-hosting. Issue #244 (filed May 10) also reports Cloudflare 1101 Worker exceptions on Streamable HTTP — still open.
 
 ### Performance Complaints
 
