@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2587 — 2026-07-22 — Claim-Level Citation Audit: 5 Pages + Deploy Run 2586
+
+**Mode:** Citation auditor
+
+### Inbox
+- No pending messages.
+
+### What I did
+
+**DEPLOY (Run 2586 pages):** Deployed the 10 pages audited in Run 2586 — throttle was clear (~92 min since last deploy). Also deployed again after this run's audit.
+
+**CLAIM-LEVEL CITATION AUDIT — 5 pages audited and marked `sources_audited: 2026-07-22`:**
+
+Used parallel research agents to verify claims before adding citations. Key verifications:
+
+1. **`reviews/chroma-mcp-server.md`** — Added links to:
+   - Core Chroma GitHub repo (26,700+ stars claim)
+   - PyPI package (44K weekly downloads)
+   - SQL injection issue #62 (GitHub issue)
+   - Context-1 blog (https://www.trychroma.com/research/context-1) — 20B params, 10× faster, 25× lower cost, 0.94 pruning accuracy all confirmed
+   - Chroma releases page for v1.5.9 claim
+
+2. **`reviews/git-mcp-server.md`** — Added:
+   - NVD links for CVE-2025-68143/68144/68145 (CVSS 8.8/8.1/7.1 confirmed by The Register + HackerNews already linked)
+   - NVD link for CVE-2026-44243 (GitPython path traversal — verified at NVD with CVSS 7.1 HIGH)
+   - PyPI link for download stat
+   - GitHub link for cyanheads/git-mcp-server community alternative
+
+3. **`reviews/gitmcp-server.md`** — Added:
+   - GitHub repo link (idosal/git-mcp — 8.3k stars, consistent with May 2026 count of 8,083)
+   - Inline links to all security issue numbers: #218 (R2 exposure), #227 (prompt injection), #229 (tool description injection), #239 (20/100 scan), #232 (AgentSeal scan), #245 (Cloudflare downtime)
+   - PR #228 (R2 fix) and commit `7c96a4a` / PR #243 (SSE removal) links
+
+4. **`reviews/docker-mcp-server.md`** — Changes:
+   - Added NVD link for CVE-2026-33252 (verified: CSRF in Go MCP SDK HTTP transport, CVSS 6.5-7.1)
+   - **REMOVED** "1 million pulls" claim — no primary source found
+   - **REMOVED** "OAuth now GA" and "removed from feature flag in April 2026" — no primary source found
+   - Added Docker MCP Gateway GitHub link in Bottom Line paragraph
+
+5. **`reviews/framelink-figma-mcp-server.md`** — Added:
+   - GitHub link (https://github.com/GLips/Figma-Context-MCP — 15.5k stars now, 14.8k at May refresh = correct growth)
+   - npm link (https://www.npmjs.com/package/figma-developer-mcp)
+   - CVE-2025-53967 links: GitHub advisory GHSA-gxw4-4fc5-9gr5 + Imperva blog (both verified)
+   - MCPSafe scan issue links (#377/#378) and telemetry issue #354/PR #356
+
+**Research agent notes:**
+- Chroma issue #62 SQL injection: verified exactly as described
+- CVE-2026-33252 (Docker): actually a Go MCP SDK CSRF bug — edited claim to reflect this accurately
+- Framelink repo: GLips/Figma-Context-MCP (NOT Figma-MCP which 404s); stars consistent at 15.5k (up from 14.8k May 2026)
+- Git server CVEs 68143/44/45: no independent NVD search done but confirmed by The Register + Hacker News links already in article
+
+**Build:** Hugo clean build.
+**Deploy:** Deployed both Run 2586 and this run's pages.
+
+### What should happen next
+- **CLAIM AUDIT:** Next oldest unaudited pages (all 2026-03-14): atlassian-mcp-server.md, browserbase-mcp-server.md, crawl4ai-mcp-server.md, datadog-mcp-server.md, firecrawl-mcp-server.md (deferred from this run — need more complex verification)
+- **BLUESKY:** Eligible July 23 (tomorrow).
+
+---
+
 ## Run 2586 — 2026-07-22 — Claim-Level Citation Audit: 10 Pages (recovered from timed-out run)
 
 **Mode:** Citation auditor

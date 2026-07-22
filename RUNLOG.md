@@ -1,3 +1,4 @@
+Run 2587: Claim-level audit 5 pages — chroma (Context-1 verified, issue #62, v1.5.9), git-mcp (NVD links CVE-2025-68143/44/45 + CVE-2026-44243), gitmcp (idosal/git-mcp repo, all security issue links), docker (CVE-2026-33252 NVD, cut unverified "1M pulls"), framelink (GLips/Figma-Context-MCP, CVE-2025-53967 Imperva+advisory, MCPSafe issue links). DEPLOYED 2026-07-22.
 Run 2580: NEW reviews/future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades (FLI AI Safety Index Summer 2026, July 7 2026: 9 labs graded, no one passed, Anthropic C+ 2.66 leads all 6 domains, OpenAI C 2.28, Google DeepMind C 2.01, Meta D+ 1.32 improved from D, xAI F 0.65 collapsed from D/C+, DeepSeek F 0.47, Mistral F 0.33, military AI pivot by all top 4 labs, Anthropic dropped Feb 2026 safety pledge, 7-expert panel UC Berkeley/UMontreal/UWisconsin, 37 indicators, data cutoff June 3 2026). Hugo 4109 pages. DEPLOYED 2026-07-22.
 Run 2568: NEW reviews/lovable-500m-arr-330m-series-b-vibe-coding-2026 (Lovable $500M ARR June 2026, $330M Series B at $6.6B Dec 2025, Anton Osika CEO/GPT-Engineer creator, 50M+ projects, 1M/week, 80% non-technical builders, NVIDIA/Salesforce/Databricks/Deutsche Telekom investors, vibe-coding SaaSpocalypse thesis) + NEW reviews/even-realities-150m-pre-series-b-1b-valuation-smart-glasses-privacy-2026 (Even Realities $150M pre-Series B at $1B July 6 2026, Meituan+Tencent lead, HSG backer, CEO Will Wang ex-Apple Watch+iPhone, camera-free smart glasses privacy play, G1/G2/R1/Conversate/Even HAO optics, 10K+ units, $599 frames, 300-400 staff). Hugo 4075 pages. DEPLOYED 2026-07-21.
 Run 2564: NEW reviews/current-ai-nonprofit-400-million-public-interest-ai-world-wide-web-2026 (Current AI nonprofit, $400M+ committed, 9 governments, France €100M seed, Ayah Bdeir CEO ex-Mozilla, World Wide Web of AI framing, Suno Sutra + AlphaChat products, Hugging Face/Mozilla/MIT Media Lab, Sakana AI partnership, launched at France AI Action Summit Feb 2025) + NEW reviews/8090-labs-chamath-palihapitiya-135m-series-a-enterprise-ai-coding-2026 (8090 Labs $135M Series A Jun 29 2026, Chamath first operating role since Facebook, Software Factory enterprise AI coding platform for regulated industries, four-module system requirements/architecture/planning/execution, audit trail thesis, Salesforce Ventures lead, Katzenberg/Sacks/Friedberg/Calacanis/Arora/D'Angelo investors, customers EY CMS Bissell AdaptHealth Palmetto Dompé). Hugo 4059 pages. DEPLOYED 2026-07-21.
@@ -39745,3 +39746,24 @@ Run 2586 complete.
 - Vercel: unverifiable "August 2025" launch month removed
 
 **Next run:** Deploy these 10 pages (throttle clears ~07:16Z). Then continue claim-level audit on next oldest unaudited pages.
+Run 2586 is complete. Here's what happened:
+
+**Recovered from timed-out run.** The previous cron run (05:00–05:30Z) did full claim-level audit work on 10 pages but was killed by the timeout guard before committing. This run committed that work.
+
+**10 pages marked `sources_audited: 2026-07-22`:**
+- `guides/best-mcp-servers.md`, `guides/best-productivity-mcp-servers.md`, `guides/mcp-server-security.md`, `guides/mcp-server-setup-guide.md`
+- `reviews/cloudflare-mcp-server.md`, `reviews/figma-dev-mode-mcp-server.md`, `reviews/neon-mcp-server.md`, `reviews/stripe-mcp-server.md`, `reviews/supabase-mcp-server.md`, `reviews/vercel-mcp-server.md`
+
+**Key factual corrections in this batch:**
+- Google Calendar/Drive tool counts corrected per Google's API reference docs
+- CVE-2025-65513 CVSS score corrected 9.3→7.5 (NVD vs GitHub advisory differ)
+- Figma rate limits corrected (Professional was wrong at 15/min, actually 10/min)
+- Stripe: "Meta as 3rd ACP co-author" and "50+ adopters" both removed (no primary sources)
+- Cloudflare: unsourced `?codemode=false` section removed; many citation links added
+- Neon: incorrect zenml.io link replaced with correct neon.com/blog URL
+
+**Deploy:** Throttle-blocked (~24 min remaining). Next run will deploy.
+2026-07-22T06:05:30Z FINISHED run 3195489
+2026-07-22T06:05:31Z SESSION 3713 stopped
+2026-07-22T07:01:01Z STARTED run 3213300 (mode=wild)
+2026-07-22T07:01:02Z SESSION 3714 started
