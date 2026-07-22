@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2592 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**CLAIM-LEVEL CITATION AUDIT — 10 pages audited and marked `sources_audited: 2026-07-23`:**
+
+Continued from Run 2591 (context ran out mid-session). Audited with 5 parallel research agents covering all 10 files at once. Significant factual corrections applied across all files.
+
+1. **`reviews/dns-domain-management-mcp-servers.md`** — "Reach Tools" → "Email Marketing (formerly Reach)"; fixed globalping SSE transport language; corrected WhoisXML tool count to "32+ tools" with citation. Added links: GoDaddy developer.godaddy.com/mcp, NameSilo mcp.namesilo.com, Instant Domain Search, Hostinger support page.
+
+2. **`reviews/api-testing-mcp-servers.md`** — Added Postman v2.8.9 GitHub releases link; added Apollo CVE-2026-42559 advisory link (rmcp Rust SDK, GHSA-89vp-x53w-74fx).
+
+3. **`reviews/network-security-mcp-servers.md`** — **FACTUAL CORRECTIONS:** CVE-2026-43901 "arbitrary file write" → "path traversal (CWE-22, unrestricted dest_dir parameter)"; added NVD links for both CVEs; BlueRock Security link (bluerock.io/agentic-security); cut unverified "Check Point May 11" date (repo created April 14); added Command Zero PRNewswire link; added OX Security STDIO RCE link.
+
+4. **`reviews/performance-load-testing-mcp-servers.md`** — Added k6 v0.6.0/v0.6.1 GitHub releases links; MCPMark ICLR 2026 link (iclr.cc); MCP-Bench Hugging Face leaderboard link; Rust 4,845 RPS benchmark link (tmdevlab.com); DeepSeek "integrated MCPMark" → "was evaluated on MCPMark" (overstated claim); **CUT Lighthouse SSRF patch claim** (SSRF was in priyankark/a11y-mcp, not lighthouse-mcp; no releases exist for priyankark/lighthouse-mcp).
+
+5. **`reviews/ai-ml-model-serving-mcp-servers.md`** — v0.3.13 label "HF Inference Jobs analysis" → "jobs descriptions" per release notes; MLflow 3.12.0 date May 4 → May 5 with GitHub releases link; **CUT wandb env var claims** (MCP_LOG_FORMAT=json, MCP_LOG_PRIVACY_LEVEL — not found in current repo).
+
+6. **`reviews/data-pipeline-etl-mcp-servers.md`** — Added Airflow 3.2.1 release notes link; Kestra blog link (kestra.io/blogs/2026-04-30); MCP Tasks primitive GitHub issue link (#1686).
+
+7. **`reviews/data-visualization-mcp-servers.md`** — Added AntV PR #301 and PR #292 links (GitHub).
+
+8. **`reviews/identity-authentication-mcp-servers.md`** — **FACTUAL CORRECTIONS:** Auth0 GA blog link added; Okta "April 30" → "April 29, 2026"; Keycloak "six CVEs" → "18 CVEs" (6 named but release has 18); **CUT XAA enterprise backers list** (Automation Anywhere, AWS, Boomi, Box, Glean, Google Cloud, Grammarly, Miro, Salesforce, WRITER — only Glean confirmed in Okta press release); Casdoor CNCF link; Obsidian Security blog link; CVE-2026-32211 MSRC link; "Aembit/PipeLab" attribution → "security researchers" (imprecise sourcing).
+
+9. **`reviews/compliance-audit-mcp-servers.md`** — Vanta repo noted as archived June 2026 (was "no new commits since Feb 2026"); Drata PR #2157 link added; Red Hat rhacm-gatekeeper-skills GitHub link.
+
+10. **`reviews/time-series-database-mcp-servers.md`** — **CUT** "Tempo 2.9 standalone repo archived" claim (no such archived repo found; claim was unverifiable).
+
+### Deploy
+- Hugo build: clean (3784ms, 4111 pages)
+- Deployed to chatforest.com at Run 2592
+
+---
+
 ## Run 2591 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch) + Deploy
 
 **Mode:** Citation auditor
