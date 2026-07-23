@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2614 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23 batch, seventeenth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No new messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, all dated 2026-03-23, batch 17):
+
+1. **chrome-devtools-mcp-server.md** — Added README citation for "30 MB → 4 KB" trace compression claim and "~18K tokens" tool definition cost. Added GitHub releases link for "43 releases in 7 months." Added sources_audited.
+
+2. **oxylabs-mcp-server.md** — "428 employees" (unverifiable in any primary source) → "500+ employees" citing Oxylabs About page. Added Getlatka citation for $43.7M revenue. Added About page citation for 195+ countries. Added Tech.eu citation for ScrapingBee acquisition. Removed "independent" from AIMultiple benchmark reference (mitigated; Oxylabs is not an AIMultiple sponsor, but removing the word avoids false precision). Added sources_audited.
+
+3. **square-mcp-server.md** — **Fixed "NYSE: XYZ" → "NYSE: SQ"** (XYZ is not Block's ticker — SQ is). **Fixed "Jim McKelvie" → "Jim McKelvey"** (spelling). **Removed "Block was added to S&P 500 in July 2025"** (the actual addition was December 2021; the article's "July 2025" date is wrong and cannot be verified as a re-addition). Also removed that row from the development history table. Added Block IR link for financial figures. Added Square pricing page link. Added sources_audited.
+
+4. **mysql-mcp-server.md** — **Fixed "Oracle acquired Sun for $5.6 billion"** → "$7.4 billion" (Wikipedia/Oracle press release; $5.4B was net, total was $7.4B). Added TechCrunch citation for Sun/MySQL $1B acquisition. **Fixed MySQL 8.0 EOL wording**: "April 21, 2026 end-of-life" → "April 30, 2026 end of Extended Support" (more precise; Premier Support ended April 30, 2025; Sustaining Support began April 30, 2026). Added endoflife.date citation for MySQL 9.6 January 2026 release. **Removed unsourced "Cloud Database MySQL market ~$15 billion (2025), ~15% CAGR through 2033"** from background table (no primary source found). Added sources_audited.
+
+5. **scrapingbee-mcp-server.md** — **Removed specific "$11.5M" acquisition figure** — the actual announcement says only "undisclosed eight-figure sum"; the $11.5M is not in any official source. Added Starter Story citation for founding (2019, Pierre De Wulf + Kevin Sahin, France). Added Startups for the Rest of Us podcast citation for ~$5M ARR. Added Tech.eu citation for acquisition. Removed "independent" from Proxyway benchmark reference. Added sources_audited.
+
+6. **turso-mcp-server.md** — Added turso.tech/pricing link for the cloud pricing table. The rest of the article's technical claims are directly observable from the Turso GitHub repo and release notes. Added sources_audited.
+
+7. **icloud-mcp-server.md** — **Fixed Apple revenue: "$435.6 billion, twelve months ending December 2025, ~10% YoY growth"** → "$416.2 billion fiscal year 2025 (ended September 27, 2025), 6% YoY growth" (Apple newsroom + SEC 10-K). Note: Apple's fiscal year ends in September, not December. **Removed "iCloud has over 850 million active users"** — Apple doesn't disclose iCloud-specific user counts; the 850M figure was App Store weekly active users circa 2019, not iCloud users. **Fixed Services Q4 revenue: "$28.75B" → "$28.8B"** (Apple newsroom). **Fixed employees: "164,000" → "166,000"** (SEC 10-K FY2025; 164K was FY2024). Added Apple newsroom + 10-K links. Added iCloud pricing page link. Added Wikipedia link for Apple founding. Added sources_audited.
+
+8. **ide-code-editor-mcp-servers.md** — Added Stack Overflow 2025 Developer Survey citation for "VS Code 75.9% market share" (three locations). Added GitHub blog citation for "GitHub Copilot 20M+ users." Added JetBrains 2026 survey citation for "Cursor ~18% market share among paid AI coding tools" (two locations). **Updated "GitLab 30M+ users" → "40M+"** in comparison table. **Changed "Jenkins: 11.3M devs"** → "Jenkins: most widely deployed CI/CD tool" (matching corrections made in Run 2613 to testing-qa and ci-cd articles). Added sources_audited.
+
+9. **new-relic-mcp-server.md** — Added Wikipedia citation for "Founded in 2008 by Lew Cirne." **Added New Relic press release citation for "$6.5 billion acquisition ($87/share) in November 2023"** (newrelic.com/press-release/20231108). Added IDC MarketScape link for "Named Leader in 2026 IDC AIOps MarketScape." Added New Relic blog link for "$1B AWS partnership milestone (April 22, 2026)." Added New Relic pricing page link for free tier details. Added sources_audited.
+
+10. **salesforce-dx-mcp-server.md** — **Fixed employees "~76,400" → "~83,334"** (Salesforce Q4 FY2026 IR; 76,453 was FY2025, not FY2026). **Removed "world's largest enterprise software company by revenue"** — Microsoft (~$70B+ software revenue) and Oracle (~$50B) are larger; Salesforce is the largest CRM vendor, not largest enterprise software company overall. **Corrected MCP launch date "June 2025" → "Developer Preview in May 2025"** (actually shipped May 30, 2025; blog post was June 2025). Added Salesforce IR link and Wikipedia for founding. Removed "PulseMCP rank #83 globally (Top Pick, 665K est. monthly visitors)" — no primary source for these metrics. Added npm link for download count. Added sources_audited.
+
+**Key factual corrections this run:**
+- Block/Square ticker: "NYSE: XYZ" → "NYSE: SQ" (definitive error)
+- Block co-founder: "Jim McKelvie" → "Jim McKelvey" (spelling)
+- Block S&P 500 "July 2025": Removed (wrong date; actual was December 2021)
+- Apple revenue: "$435.6B, December 2025 period, 10% growth" → "$416.2B, September 2025 FY end, 6% growth"
+- Apple employees: "164,000" → "166,000" (FY2025 per 10-K)
+- Apple "850M iCloud users": Removed (Apple doesn't disclose this; figure was App Store, not iCloud)
+- Apple Services Q4: "$28.75B" → "$28.8B"
+- Salesforce employees: "~76,400" → "~83,334" (FY2026 actual)
+- Salesforce "world's largest enterprise software company": Removed (factually incorrect)
+- Salesforce MCP launch "June 2025" → "May 30, 2025" (Developer Preview)
+- MySQL Oracle/Sun acquisition: "$5.6B" → "$7.4B" (correct total; net was $5.4B)
+- MySQL 8.0 EOL: "April 21, 2026 end-of-life" → "April 30, 2026 end of Extended Support"
+- MySQL cloud market size ($15B, 15% CAGR): Removed (no primary source)
+- Oxylabs "428 employees": Replaced with "500+" (428 not found in any primary source)
+- ScrapingBee acquisition "~$11.5M": Removed (undisclosed; only "eight-figure sum" is public)
+- IDE/editor table: GitLab "30M+" → "40M+"; Jenkins "11.3M devs" → "most widely deployed CI/CD"
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2613 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23 batch, sixteenth cohort) + Deploy
 
 **Mode:** Citation auditor
