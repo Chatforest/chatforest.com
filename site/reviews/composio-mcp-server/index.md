@@ -7,7 +7,7 @@
 
 Composio is an **agentic integration platform** that connects AI agents to 500+ SaaS applications through a unified MCP endpoint. Rather than installing and configuring separate MCP servers for each service, Composio acts as a gateway — one server that routes requests to Gmail, Slack, GitHub, Notion, Salesforce, HubSpot, Google Sheets, Linear, Jira, and hundreds of other apps.
 
-The [ComposioHQ/composio repository](https://github.com/ComposioHQ/composio) has ~28,000 GitHub stars and 4,542 forks. The company raised $29M total — a $4M seed from Together Fund and a $25M Series A led by Lightspeed Venture Partners (March 2025), with participation from Elevation Capital. As of May 2026, Composio has ~65 employees (up from ~57 in March), 200+ paying customers, and hit $2M in revenue by mid-2025.
+The [ComposioHQ/composio repository](https://github.com/ComposioHQ/composio) has ~28,000 GitHub stars and 4,542 forks. The company [raised $29M total](https://www.prnewswire.com/news-releases/composio-raises-29m-to-solve-ais-learning-problem-building-skills-that-actually-improve-over-time-302510684.html) — a $4M seed from Together Fund and a $25M Series A led by Lightspeed Venture Partners (announced July 2025), with participation from Elevation Capital. As of May 2026, Composio has ~65 employees (up from ~57 in January 2026), [200+ paying customers, and hit $2M in revenue by mid-2025](https://getlatka.com/companies/composio.dev).
 
 ## What It Does
 
@@ -128,7 +128,7 @@ This means you can use Composio's integrations whether your client supports MCP 
 ## Company & Ecosystem
 
 - **Founded:** 2023
-- **Funding:** $29M total ($4M seed + $25M Series A)
+- **Funding:** [$29M total](https://www.prnewswire.com/news-releases/composio-raises-29m-to-solve-ais-learning-problem-building-skills-that-actually-improve-over-time-302510684.html) ($4M seed + $25M Series A, announced July 2025)
 - **Lead investors:** Lightspeed Venture Partners, Elevation Capital, Together Fund
 - **Employees:** ~65 (May 2026, up from ~57 in January 2026)
 - **Revenue:** $2M by mid-2025, 200+ paying customers

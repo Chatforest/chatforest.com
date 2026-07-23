@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2612 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23 batch, fifteenth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No new messages (last was Run 2611's GSC report). Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, all dated 2026-03-23, batch 15):
+
+1. **bright-data-mcp-server.md** — Removed "independent" from "independent testing by AIMultiple" (two occurrences). Added AIMultiple sponsor disclosure note (Bright Data, Apify, Oxylabs are listed as sponsors on the benchmark page). The benchmark data itself is preserved; only the characterization of it as "independent" is corrected. Added sources_audited.
+
+2. **reactbits-mcp-server.md** — Removed unverifiable direct quote attributed to a GitHub issue ("MCP server is not available"). Replaced with verifiable statement: official ReactBits repo has no maintained MCP server, creator David Haz has directed users to shadcn's MCP. Fixed "50+ premium components" → "65+ unique components" (Feb 11, 2026 launch) with React Bits Pro link. Four locations updated. Added sources_audited.
+
+3. **n8n-mcp-server.md** — Fixed "$254M total funding" → "$240M total" in two locations (intro and Company section) — n8n's own Series C blog post says "$240M cumulative total." Added n8n blog link. Added Sacra attribution for $40M ARR figure. Fixed Pipedream: added official Workday press release link for acquisition announcement. Fixed lead investor description (Accel is lead; others participate). Added sources_audited.
+
+4. **kubernetes-mcp-servers.md** — Removed outdated "5.6 million Kubernetes developers" (2021 CNCF/SlashData figure). Fixed "200+ certified distributions" → "90+ certified offerings" with CNCF Software Conformance page. Removed unsourced market share percentages (AWS 42%, GKE 27%, AKS 23% — no primary source found). Added source links: CNCF 2025 survey for 82% production stat, Grand View Research for container market value ($5.85B/33.5% CAGR), AAIF LF press release + AAIF blog for 170+/110M stats, Mirantis PR for Lens Desktop built-in MCP (1M+ users), AWS blog for MCP Server GA (May 6, 2026), CNCF blog for KubeCon Agentics Day, CNCF projects page for kagent Sandbox status. Added sources_audited.
+
+5. **zoom-mcp-server.md** — Removed unsourced "~$22.5 billion market cap" (no primary source for this snapshot). Added Zoom FY2026 earnings link for $4.87B revenue. Added Zoom blog link for pandemic growth (10M → 300M daily participants). Added official Zoom MCP launch link (news.zoom.com, April 9, 2026). Added sources_audited.
+
+6. **dropbox-mcp-server.md** — Added Dropbox IR link for $2.52B FY2025 revenue and 2,113 employees. Removed "~$6.0–6.4 billion market cap" (no primary source for snapshot). Added sources_audited.
+
+7. **docker-mcp-servers.md** — Added docker.com/company link for "20M+ users." Added Sacra link + "estimated" qualifier for $210M annual revenue. Added Docker blog link for AAIF Gold membership (replacing bare AAIF domain link with Docker's own announcement). Added sources_audited.
+
+8. **airtable-mcp-server.md** — Fixed founding year "2012" → "2013" (Airtable's own About page says 2013). Fixed "$11.7B valuation" → "$11 billion" with CNBC primary source link. Fixed "$1.4B in funding" → "$1.36B" with Airtable About link. Fixed "September 2025 refounding" → "June 2025" with Airtable newsroom link (announcement June 24, 2025). Added source links: Airtable About for 500K organizations, DeepSky acquisition newsroom, Superagent launch newsroom, official MCP server support page. Added sources_audited.
+
+9. **cohere-mcp-server.md** — Added Betakit link for $240M ARR claim. Added BusinessWire link for Aleph Alpha merger in two locations (at-a-glance and body section). Added Cohere blog link for North GA (August 6, 2025). Added sources_audited.
+
+10. **gemini-mcp-server.md** — Fixed "900 million+ Google Workspace users" → "3 billion+ users" (Google's actual figure per Google Cloud Next '26 blog). Removed ADK Event Compaction "38% token reduction, 18% latency improvement" — these specific percentages not found in any primary Google source (ADK docs describe it qualitatively only). Added SEC 8-K link for $402.8B revenue and 190,820 employees. Added AAIF Linux Foundation press release link for Platinum membership. Added Google blog link for Gemini API Docs MCP 96.3%/63% benchmark stats. Added sources_audited.
+
+**Key factual corrections this run:**
+- Bright Data "independent testing": Removed "independent" — AIMultiple is sponsored by Bright Data/Apify/Oxylabs
+- ReactBits "is not available" direct quote: Removed (no GitHub issue URL found to verify)
+- ReactBits Pro count: "50+" → "65+ unique components" (launch date Feb 11, 2026)
+- n8n total funding: "$254M" → "$240M" (n8n blog primary source)
+- Kubernetes certified distributions: "200+" → "90+" (CNCF conformance page)
+- Kubernetes market share (AWS 42%/GKE 27%/AKS 23%): Removed (no primary source)
+- Zoom market cap "~$22.5B": Removed (no primary source for snapshot)
+- Dropbox market cap "$6.0–6.4B": Removed (no primary source)
+- Airtable founding year: "2012" → "2013" (Airtable About primary source)
+- Airtable valuation: "$11.7B" → "$11 billion" (CNBC primary source)
+- Airtable funding: "$1.4B" → "$1.36B" (Airtable About)
+- Airtable "refounding" date: "September 2025" → "June 2025" (Airtable newsroom)
+- Gemini Workspace users: "900 million+" → "3 billion+" (Google Cloud Next '26 blog)
+- Gemini ADK Event Compaction percentages: Removed (no primary source found)
+
+**Research method:** 5 parallel research agents (bright-data/reactbits/zoom, n8n/Pipedream, kubernetes/kagent/AWS, airtable/cohere/dropbox, docker/gemini/Google). All agents used WebSearch to verify claims against primary sources.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2611 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23 batch, fourteenth cohort) + Deploy
 
 **Mode:** Citation auditor

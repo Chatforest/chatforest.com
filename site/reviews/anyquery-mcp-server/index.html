@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>Part of our <strong><a href="/categories/databases/">Databases MCP category</a></strong>.</p>
-<p><strong>At a glance:</strong> ~1,600 GitHub stars · v0.4.4 (October 2, 2025, <strong>no release in 7 months</strong>) · Go · AGPLv3 license · 47 plugins + 13 database connectors + 22 SQLite extensions · stdio/SSE/HTTP transports</p>
+<p><strong>At a glance:</strong> ~1,600 GitHub stars · <a href="https://github.com/julien040/anyquery/releases/tag/v0.4.4">v0.4.4</a> (October 2, 2025, <strong>no release in 7 months</strong>) · Go · AGPLv3 license · 47 plugins + 13 database connectors + 22 SQLite extensions · stdio/SSE/HTTP transports</p>
 <p>Most MCP servers connect to one thing. The <a href="https://github.com/julien040/anyquery">Anyquery MCP server</a> by Julien Cagniart connects to everything — or tries to. Install a plugin, and your GitHub issues, Notion databases, Slack messages, Gmail inbox, Spotify playlists, and CSV files all become SQL tables that your AI agent can query.</p>
 <p>That breadth is the pitch. One binary, one SQL interface, 40+ data sources. No per-API MCP server to install and configure separately. For agents that need to correlate data across multiple systems, this is a genuinely different approach.</p>
 <h2 id="what-it-does">What It Does</h2>
@@ -191,12 +191,7 @@ anyquery install google_sheets
 <span style="color:#75715e"># Each plugin prompts for credentials (API tokens, OAuth)</span>
 </code></pre></div><p>Plugin configuration happens once. After setup, the MCP server automatically exposes all installed plugins as tables.</p>
 <h2 id="performance">Performance</h2>
-<p>According to available documentation and analysis:</p>
 <ul>
-<li><strong>Sub-second latency</strong> for most queries via on-demand API fetching</li>
-<li><strong>60-second response caching</strong> reduces redundant API calls</li>
-<li><strong>Predicate pushdown</strong> filters data at source APIs where supported, reducing data transfer</li>
-<li><strong>Memory footprint under 50MB</strong> — lightweight for what it does</li>
 <li><strong>Read-only</strong> — write operations are in development but not yet available</li>
 </ul>
 <p>The read-only limitation matters. Your agent can query GitHub issues but can&rsquo;t close them. Can read Notion pages but can&rsquo;t update them. For data analysis and correlation this is fine; for workflow automation, you&rsquo;ll still need separate write-capable MCP servers.</p>
@@ -206,7 +201,7 @@ anyquery install google_sheets
 <li><strong>Token encryption</strong> via <code>anyquery config set --encrypt</code> — encrypts stored API credentials</li>
 <li><strong>Localhost binding</strong> recommended for server mode — don&rsquo;t expose the MySQL port to the network</li>
 <li><strong>Schema-only transit</strong> — only table schemas pass through the MCP protocol; raw credentials stay on-device</li>
-<li><strong>CVE-2025-61679</strong> was patched in v0.4.4 — the fix added default authorization for MCP HTTP servers</li>
+<li>v0.4.4 added default authorization for MCP HTTP servers (security fix)</li>
 <li><strong>AGPLv3 license</strong> means modifications to Anyquery itself must be shared (plugins are independently licensed)</li>
 </ul>
 <p>The v0.4.4 security fix is notable: prior versions running MCP over HTTP had no default authentication, meaning anyone who could reach the port could query your data. This is now fixed with default authorization, but it highlights why localhost binding matters.</p>

@@ -7,7 +7,7 @@
 
 n8n is a **workflow automation platform** that has become one of the most comprehensive MCP implementations available — not because it's another standalone MCP server, but because it covers **three distinct MCP roles**. As of v2.14.0 (April 2026), n8n can now *build* workflows from natural language prompts through an official instance-level MCP server, *expose* any workflow as a tool that external AI agents can call, and *consume* tools from external MCP servers inside n8n's own AI agents.
 
-The [n8n-io/n8n repository](https://github.com/n8n-io/n8n) has 186,000 GitHub stars, 56,100+ forks, and 631 contributors. The company raised $254M total across four rounds, reaching a $2.5B valuation with its $180M Series C in October 2025 (led by Accel, with participation from NVIDIA's NVentures, Meritech, Redpoint, Sequoia, Highland Europe, and Felicis Ventures). ARR hit $40M by mid-2025 with 230,000+ active users. As of March 31, 2026, n8n has 858 employees.
+The [n8n-io/n8n repository](https://github.com/n8n-io/n8n) has 186,000 GitHub stars, 56,100+ forks, and 631 contributors. The company [raised $240M total](https://blog.n8n.io/series-c/) across four rounds, reaching a $2.5B valuation with its $180M Series C in October 2025 (led by Accel, with participation from NVIDIA's NVentures, Meritech, Redpoint, Sequoia, Highland Europe, and Felicis Ventures). ARR hit [$40M by mid-2025](https://sacra.com/c/n8n/) (Sacra estimate) with 230,000+ active users. As of March 31, 2026, n8n has 858 employees.
 
 ## What It Does
 
@@ -140,10 +140,10 @@ Self-hosting is genuinely free with no execution limits. You run it on your own 
 
 - **Founded:** 2019 (Berlin, Germany)
 - **Founder:** Jan Oberhauser
-- **Funding:** $254M total ($180M Series C at $2.5B valuation, October 2025)
-- **Lead investors:** Accel, NVentures (NVIDIA), Sequoia, Highland Europe, Felicis Ventures
+- **Funding:** [$240M total](https://blog.n8n.io/series-c/) ($180M Series C at $2.5B valuation, October 2025)
+- **Lead investors:** Accel, with participation from NVentures (NVIDIA), Sequoia, Highland Europe, Felicis Ventures
 - **Team:** 858 employees (as of March 31, 2026)
-- **Revenue:** $40M ARR (mid-2025)
+- **Revenue:** [$40M ARR (mid-2025)](https://sacra.com/c/n8n/) (Sacra estimate)
 - **Users:** 230,000+ active
 - **Repository:** 186,000 stars, 56,100+ forks, 631 contributors
 - **License:** Sustainable Use License (fair-code) — free for internal business use and non-commercial use; commercial redistribution restricted
@@ -183,7 +183,7 @@ Annual billing gives a 17% discount. 14-day free trial on Starter and Pro plans,
 
 **vs. Composio:** Composio's strength is managed OAuth across 500+ apps from a single endpoint. n8n requires you to configure each integration individually but gives you full workflow logic, human-in-the-loop controls, and no per-call fees. Different trade-offs: Composio is fastest to get running with many apps; n8n is most powerful for custom orchestration.
 
-**vs. Pipedream:** Pipedream has broader app coverage (2,800+) with auto-generated tools. n8n's tools are hand-crafted workflows you build yourself — more work to set up, but higher quality and fully customizable. Pipedream's Workday acquisition (November 2025) introduces platform uncertainty; n8n remains independent with strong funding.
+**vs. Pipedream:** Pipedream has broader app coverage (2,800+) with auto-generated tools. n8n's tools are hand-crafted workflows you build yourself — more work to set up, but higher quality and fully customizable. [Pipedream's announced acquisition by Workday](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream) (November 2025) introduces platform uncertainty; n8n remains independent with strong funding.
 
 **Unique advantage:** n8n is the only platform in this comparison that supports **bidirectional MCP** — acting as both server (exposing tools) and client (consuming tools) simultaneously. This enables n8n to serve as a middleware layer that composes multiple MCP servers behind a single, orchestrated tool interface.
 

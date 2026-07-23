@@ -185,8 +185,8 @@
 </ul>
 <p>The trade-off: accessibility trees don&rsquo;t capture everything. Custom-drawn UI, games, and applications that don&rsquo;t properly implement UI Automation will appear as opaque regions. Screenshot mode exists as a fallback for these cases.</p>
 <h2 id="performance">Performance</h2>
-<p>Typical action-to-action latency ranges from <strong>0.2 to 0.9 seconds</strong>, depending on system load and the number of active applications. That&rsquo;s the server-side overhead — total round-trip time also depends on your LLM&rsquo;s inference speed.</p>
-<p>Version 0.6.0 (January 2026) delivered a <strong>~6x performance improvement</strong> through execution optimization and thread management fixes. The server uses minimal memory and has no heavy dependencies beyond the Python standard library and the <code>pywinauto</code>/UI Automation bindings.</p>
+<p>Typical action-to-action latency ranges from <strong><a href="https://github.com/CursorTouch/Windows-MCP">0.2 to 0.5 seconds</a></strong>, depending on system load and the number of active applications. That&rsquo;s the server-side overhead — total round-trip time also depends on your LLM&rsquo;s inference speed.</p>
+<p><a href="https://github.com/CursorTouch/Windows-MCP/releases/tag/v0.6.0">Version 0.6.0 (January 2026)</a> delivered a <strong>~6x performance improvement</strong> through execution optimization and PostHog analytics batching. The server uses minimal memory and has no heavy dependencies beyond the Python standard library and the <code>pywinauto</code>/UI Automation bindings.</p>
 <h2 id="setup">Setup</h2>
 <p><strong>Prerequisites:</strong> Python 3.13+, <a href="https://docs.astral.sh/uv/">UV package manager</a></p>
 <h3 id="claude-desktop">Claude Desktop</h3>
@@ -390,7 +390,7 @@
 </tr>
 <tr>
 <td><strong>Adoption</strong></td>
-<td>2M+ users via Claude Desktop Extensions</td>
+<td><a href="https://github.com/CursorTouch/Windows-MCP">2M+ users via Claude Desktop Extensions</a></td>
 </tr>
 </tbody>
 </table>

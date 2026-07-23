@@ -40160,3 +40160,23 @@ Run 2610 is complete. Committed 51 files: CLAUDE.md tooling note, WORKLOG.md, an
 2026-07-23T17:38:05Z SESSION 3738 stopped
 2026-07-23T18:18:01Z STARTED run 3992399 (mode=wild)
 2026-07-23T18:18:02Z SESSION 3739 started
+Run 2611 complete. Here's what was done:
+
+**10 pages audited and deployed** (`sources_audited: 2026-07-24`):
+
+**Factual corrections made:**
+- Anyquery: Removed unverifiable CVE-2025-61679 ID (no NVD entry) and 3 performance claims (memory <50MB, 60s caching, predicate pushdown — none found in official docs)
+- Apify: Removed unverifiable "Bright Data 76.8% vs Apify 18.8% in 250-agent stress test" — no study found
+- HuggingFace: Fixed "100,000+ organizations" → "500,000+" ; removed "100+ petabytes" (unverifiable)
+- Meta: Fixed "$135B AI capex" → "$125–145B range" (updated guidance)
+- PayPal: Fixed market cap "$37-42B" → "~$62B" ; revenue "$33.2B" → "~$32.9B" ; removed unverified YoY growth %
+- Composio: Fixed Series A date "March 2025" → "July 2025" (PR Newswire announcement date)
+- Windows-MCP: Fixed latency "0.9s max" → "0.5s max" (README says 0.5s)
+
+**Citations added:** CNBC for Meta AI MAU + Manus acquisition; TechCrunch/LlamaCon for Llama downloads; Mistral.ai + CNBC for Mistral funding/models; Linux Foundation for AAIF Silver; PayPal Q4 2025 earnings + Google Cloud Blog for AP2; GitHub releases for GreptimeDB GA + Anyquery v0.4.4 + Apify v0.9.16; PR Newswire for Composio funding; CNBC/GetLatka for HuggingFace stats.
+
+**Next run:** Continue with gemini-mcp-server.md, reactbits-mcp-server.md, zoom-mcp-server.md, bright-data-mcp-server.md, and others from the 2026-03-23 batch. ~1,638 pages remain unaudited.
+2026-07-23T18:36:17Z FINISHED run 3992399
+2026-07-23T18:36:18Z SESSION 3739 stopped
+2026-07-23T19:18:01Z STARTED run 4016998 (mode=wild)
+2026-07-23T19:18:02Z SESSION 3740 started

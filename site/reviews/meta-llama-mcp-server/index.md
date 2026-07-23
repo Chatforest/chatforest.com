@@ -7,7 +7,7 @@
 
 Meta Llama MCP servers let AI agents **run inference on Llama 4 Scout/Maverick, manage local Ollama models, generate embeddings, and use MCP tools through locally-hosted LLMs** — all without sending data to cloud APIs. This enables **fully private, zero-cost AI agent workflows** for users willing to provide the hardware.
 
-[Meta Platforms](https://ai.meta.com/) was founded in 2004 (as Facebook) by **Mark Zuckerberg**. As of April 2026: **$201 billion annual revenue** (FY2025, 22% YoY growth; Q1 2026 guidance $53.5–56.5B), **~$1.59 trillion market cap**, **78,865+ employees**, and **1 billion monthly active Meta AI users** across WhatsApp, Messenger, Instagram, Facebook, and the standalone Meta AI app. Llama has surpassed **1.2 billion cumulative downloads** (averaging 1 million downloads/day since February 2023), with thousands of derivative models. In December 2025, Meta acquired **Manus** (Singapore-based AI agent startup) for **$2 billion**. Meta is planning **$135 billion in AI capex** for 2026.
+[Meta Platforms](https://ai.meta.com/) was founded in 2004 (as Facebook) by **Mark Zuckerberg**. As of April 2026: **[$201 billion annual revenue](https://thenextweb.com/news/meta-layoffs-8000-zuckerberg-ai-reality-may-2026)** (FY2025, 22% YoY growth; Q1 2026 guidance $53.5–56.5B), **~$1.59 trillion market cap**, **78,865+ employees**, and **[1 billion monthly active Meta AI users](https://www.cnbc.com/2025/05/28/zuckerberg-meta-ai-one-billion-monthly-users.html)** across WhatsApp, Messenger, Instagram, Facebook, and the standalone Meta AI app. Llama has surpassed **[1.2 billion cumulative downloads](https://techcrunch.com/2025/04/29/meta-says-its-llama-ai-models-have-been-downloaded-1-2b-times/)** (announced at LlamaCon, April 2025), with thousands of derivative models. In December 2025, Meta acquired **Manus** (Singapore-based AI agent startup) for **[$2 billion+](https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html)**. Meta is planning **[$125–145 billion in AI capex](https://fortune.com/2026/04/29/meta-zuckerberg-145-billion-ai-spending-roi/)** for 2026.
 
 **Architecture note:** Meta's MCP approach is fundamentally different from every other AI provider we've reviewed. Google, OpenAI, and Anthropic all participate in MCP governance (AAIF members or creators). Meta does not. Instead, Meta invested in **Llama Stack** — their own agent framework that happens to include MCP tool support as one feature among many. The community ecosystem focuses on **Ollama** — the most popular way to run Llama models locally — with bridges that let local LLMs connect to and consume MCP servers.
 
@@ -74,7 +74,7 @@ Unlike Google, OpenAI, and Anthropic — who actively participate in MCP governa
 
 ### Manus Acquisition ($2B, December 2025)
 - Singapore-based AI agent startup
-- $100M+ annualized revenue within 8 months of launch
+- [$100M+ annualized revenue within 8 months of launch](https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html)
 - Desktop app launched March 2026
 - Being integrated into Meta AI products
 

@@ -5,7 +5,7 @@
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** ~1,600 GitHub stars · v0.4.4 (October 2, 2025, **no release in 7 months**) · Go · AGPLv3 license · 47 plugins + 13 database connectors + 22 SQLite extensions · stdio/SSE/HTTP transports
+**At a glance:** ~1,600 GitHub stars · [v0.4.4](https://github.com/julien040/anyquery/releases/tag/v0.4.4) (October 2, 2025, **no release in 7 months**) · Go · AGPLv3 license · 47 plugins + 13 database connectors + 22 SQLite extensions · stdio/SSE/HTTP transports
 
 Most MCP servers connect to one thing. The [Anyquery MCP server](https://github.com/julien040/anyquery) by Julien Cagniart connects to everything — or tries to. Install a plugin, and your GitHub issues, Notion databases, Slack messages, Gmail inbox, Spotify playlists, and CSV files all become SQL tables that your AI agent can query.
 
@@ -104,12 +104,6 @@ Plugin configuration happens once. After setup, the MCP server automatically exp
 
 ## Performance
 
-According to available documentation and analysis:
-
-- **Sub-second latency** for most queries via on-demand API fetching
-- **60-second response caching** reduces redundant API calls
-- **Predicate pushdown** filters data at source APIs where supported, reducing data transfer
-- **Memory footprint under 50MB** — lightweight for what it does
 - **Read-only** — write operations are in development but not yet available
 
 The read-only limitation matters. Your agent can query GitHub issues but can't close them. Can read Notion pages but can't update them. For data analysis and correlation this is fine; for workflow automation, you'll still need separate write-capable MCP servers.
@@ -121,7 +115,7 @@ Anyquery handles sensitive credentials (API tokens for GitHub, Notion, Gmail, et
 - **Token encryption** via `anyquery config set --encrypt` — encrypts stored API credentials
 - **Localhost binding** recommended for server mode — don't expose the MySQL port to the network
 - **Schema-only transit** — only table schemas pass through the MCP protocol; raw credentials stay on-device
-- **CVE-2025-61679** was patched in v0.4.4 — the fix added default authorization for MCP HTTP servers
+- v0.4.4 added default authorization for MCP HTTP servers (security fix)
 - **AGPLv3 license** means modifications to Anyquery itself must be shared (plugins are independently licensed)
 
 The v0.4.4 security fix is notable: prior versions running MCP over HTTP had no default authentication, meaning anyone who could reach the port could query your data. This is now fixed with default authorization, but it highlights why localhost binding matters.

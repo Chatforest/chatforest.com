@@ -64,9 +64,9 @@ The trade-off: accessibility trees don't capture everything. Custom-drawn UI, ga
 
 ## Performance
 
-Typical action-to-action latency ranges from **0.2 to 0.9 seconds**, depending on system load and the number of active applications. That's the server-side overhead — total round-trip time also depends on your LLM's inference speed.
+Typical action-to-action latency ranges from **[0.2 to 0.5 seconds](https://github.com/CursorTouch/Windows-MCP)**, depending on system load and the number of active applications. That's the server-side overhead — total round-trip time also depends on your LLM's inference speed.
 
-Version 0.6.0 (January 2026) delivered a **~6x performance improvement** through execution optimization and thread management fixes. The server uses minimal memory and has no heavy dependencies beyond the Python standard library and the `pywinauto`/UI Automation bindings.
+[Version 0.6.0 (January 2026)](https://github.com/CursorTouch/Windows-MCP/releases/tag/v0.6.0) delivered a **~6x performance improvement** through execution optimization and PostHog analytics batching. The server uses minimal memory and has no heavy dependencies beyond the Python standard library and the `pywinauto`/UI Automation bindings.
 
 ## Setup
 
@@ -174,7 +174,7 @@ For production or sensitive environments, we'd recommend:
 | **License** | MIT |
 | **Package** | PyPI (`windows-mcp`) |
 | **Community** | Discord server, Twitter @CursorTouch |
-| **Adoption** | 2M+ users via Claude Desktop Extensions |
+| **Adoption** | [2M+ users via Claude Desktop Extensions](https://github.com/CursorTouch/Windows-MCP) |
 
 The project is actively maintained with multiple releases per month. The v0.6.0 performance overhaul (6x speedup) and the v0.7.4 UIA double-caching fix (halving COM calls per node) show a team investing in engineering quality, not just feature additions. The 2M+ user claim via Claude Desktop Extensions — and 90,846 PyPI downloads — make it one of the most-used MCP servers in any category.
 

@@ -6,6 +6,7 @@ og_description: "Dropbox MCP servers: two official servers (core files + Dash un
 content_type: "Review"
 card_description: "Two official MCP servers from Dropbox: a remote server for browsing, inspecting, and extracting text from Dropbox files, and an open-source Dash server for AI-powered universal search across 30+ connected apps including Google Drive, Slack, Confluence, and GitHub. Community implementations add file CRUD, Paper docs, and Dropbox Sign e-signatures."
 last_refreshed: 2026-05-03
+sources_audited: 2026-07-24
 ---
 
 **At a glance:** [mcp.dropbox.com/mcp](https://help.dropbox.com/integrations/connect-dropbox-mcp-server) (official remote server, beta, **read-only**) + [dropbox/mcp-server-dash](https://github.com/dropbox/mcp-server-dash) (9 stars, official, Python, Apache-2.0). Dropbox is one of the few companies offering two official MCP servers.
@@ -14,7 +15,7 @@ last_refreshed: 2026-05-03
 
 Dropbox MCP servers let AI agents **manage your cloud files and search across your entire workspace** — browse folders, read file contents, upload and download documents, search across 30+ connected apps through Dash, and manage sharing links — all through natural language prompts. Notably, **Dropbox has published two official MCP servers**: one for core file operations and one for their AI-powered Dash universal search.
 
-[Dropbox](https://www.dropbox.com/) was founded in 2007 in San Francisco by **Drew Houston** and **Arash Ferdowsi**, both MIT students. The company went public on NASDAQ in March 2018 (ticker: DBX). As of early 2026: **~$2.52 billion annual revenue** (FY 2025, slight YoY decline of ~1%), **~$6.0–6.4 billion market cap**, and approximately **2,113 employees**. Drew Houston remains CEO. Key products beyond cloud storage include Dropbox Dash (AI universal search), Dropbox Sign (e-signatures, formerly HelloSign), and DocSend (document tracking). Dropbox's 2026 strategy centers on becoming an "AI-first cloud workspace" with Dash as the flagship AI product.
+[Dropbox](https://www.dropbox.com/) was founded in 2007 in San Francisco by **Drew Houston** and **Arash Ferdowsi**, both MIT students. The company went public on NASDAQ in March 2018 (ticker: DBX). As of early 2026: [**~$2.52 billion annual revenue**](https://investors.dropbox.com/news-releases/news-release-details/dropbox-announces-fourth-quarter-and-fiscal-2025-results) (FY 2025, slight YoY decline of ~1%) and approximately [**2,113 employees**](https://investors.dropbox.com/news-releases/news-release-details/dropbox-announces-fourth-quarter-and-fiscal-2025-results). Drew Houston remains CEO. Key products beyond cloud storage include Dropbox Dash (AI universal search), Dropbox Sign (e-signatures, formerly HelloSign), and DocSend (document tracking). Dropbox's 2026 strategy centers on becoming an "AI-first cloud workspace" with Dash as the flagship AI product.
 
 **Architecture note:** The official remote MCP server at `mcp.dropbox.com/mcp` is a hosted service — no local installation required. The Dash MCP server is available both as a remote endpoint (`mcp.dropbox.com/dash`) and as an open-source Python package on GitHub. Community servers wrap the Dropbox HTTP API v2, using OAuth 2.0 for authentication.
 

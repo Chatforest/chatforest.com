@@ -7,7 +7,7 @@
 
 Most web scraping MCP servers work great — until the target site fights back. CAPTCHAs, IP blocks, fingerprint detection, geo-restrictions: these are the problems that [Bright Data's MCP Server](https://github.com/brightdata/brightdata-mcp) was built to solve. It wraps Bright Data's enterprise proxy infrastructure (150 million+ residential IPs worldwide) into a standard MCP interface, so your AI agent can access virtually any public website without getting blocked.
 
-The benchmark results back this up. In [independent testing by AIMultiple](https://aimultiple.com/browser-mcp), Bright Data achieved **100% success rate** on web search and extraction tasks — the only server to hit perfect accuracy. In a 250-concurrent-agent stress test, it led all competitors with a **76.8% success rate** at 48.7 seconds average completion time.
+The benchmark results back this up. [AIMultiple's MCP benchmark](https://aimultiple.com/browser-mcp) found Bright Data achieved a **100% success rate** on web search and extraction tasks — the only server to hit perfect accuracy. In a 250-concurrent-agent stress test, it led all competitors with a **76.8% success rate** at 48.7 seconds average completion time. (Note: Bright Data, Apify, and Oxylabs are listed as AIMultiple sponsors.)
 
 The key question: is a paid enterprise platform justified when free alternatives like [Fetch MCP](/reviews/fetch-mcp-server/) and [Crawl4AI](/reviews/web-scraping-crawling-mcp-servers/#crawl4ai) handle most use cases without cost?
 
@@ -111,7 +111,7 @@ Add to your MCP client config:
 
 ## Benchmark Performance
 
-Independent benchmarks from [AIMultiple's MCP stress test](https://aimultiple.com/browser-mcp) put Bright Data at the top:
+Benchmarks from [AIMultiple's MCP stress test](https://aimultiple.com/browser-mcp) put Bright Data at the top:
 
 ### Web Search & Extraction Accuracy
 

@@ -7,13 +7,13 @@
 
 Mistral AI is **Europe's most prominent AI company** and a champion of open-weight models. Rather than publishing MCP servers that wrap its API, Mistral has taken a **client-first approach**: Le Chat connects to external MCP servers, and the Agents API lets developers wire MCP tools into Mistral-powered agents. The models themselves — from 3B Ministral to 675B Mistral Large 3 — are available under Apache 2.0 and run anywhere.
 
-[Mistral AI](https://mistral.ai/) was founded in April 2023 by Arthur Mensch (ex-Google DeepMind), Guillaume Lample (ex-Meta), and Timothee Lacroix (ex-Meta). Headquartered in Paris with offices in London and Palo Alto. As of early 2026: approximately **EUR 300 million ARR** (September 2025, targeting EUR 1 billion by end of 2026), **$14 billion valuation** (September 2025 Series C), over **$3 billion total funding** (investors include ASML at 11%, General Catalyst, Andreessen Horowitz, Lightspeed), approximately **800+ employees**. Mistral is an **AAIF Silver member** (joined February 2026 expansion).
+[Mistral AI](https://mistral.ai/) was founded in April 2023 by Arthur Mensch (ex-Google DeepMind), Guillaume Lample (ex-Meta), and Timothee Lacroix (ex-Meta). Headquartered in Paris with offices in London and Palo Alto. As of early 2026: approximately **[EUR 300 million ARR](https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai/)** (September 2025, targeting EUR 1 billion by end of 2026), **[$14 billion valuation](https://www.cnbc.com/2025/09/09/ai-firm-mistral-valued-at-14-billion-as-asml-takes-major-stake.html)** (September 2025 Series C), over **$3 billion total funding** ([investors include ASML at 11%](https://www.cnbc.com/2025/09/09/ai-firm-mistral-valued-at-14-billion-as-asml-takes-major-stake.html), General Catalyst, Andreessen Horowitz, Lightspeed), approximately **800+ employees**. Mistral is an **[AAIF Silver member](https://www.linuxfoundation.org/press/agentic-ai-foundation-welcomes-97-new-members)** (joined February 2026 expansion).
 
 ## What's Changed Since March 2026
 
-**Mistral Medium 3.5** (April 29, 2026): A 128B dense model with 77.6% SWE-Bench Verified performance and a 91.4 τ³-Telecom agentic score. Priced at $1.50/$7.50 per million tokens. 256K context window. Open weights under a modified MIT license. Self-hostable on 4 GPUs. Powers Vibe Remote Agents.
+**[Mistral Medium 3.5](https://mistral.ai/news/mistral-medium-3-5/)** (April 29, 2026): A 128B dense model with [77.6% SWE-Bench Verified performance](https://mistral.ai/news/mistral-medium-3-5/) and a 91.4 τ³-Telecom agentic score. Priced at $1.50/$7.50 per million tokens. 256K context window. Open weights under a modified MIT license. Self-hostable on 4 GPUs. Powers Vibe Remote Agents.
 
-**Voxtral TTS** (March 23, 2026): Mistral's first voice model — a 4B text-to-speech system (3.4B transformer decoder + 390M acoustic transformer + 300M neural audio codec) built on Ministral 3B. Supports 9 languages, voice cloning from 3 seconds of reference audio, and cross-lingual transfer. Priced at $0.016 per 1,000 characters. Available via API and Le Chat. Weights released as CC BY NC 4.0 (non-commercial).
+**[Voxtral TTS](https://mistral.ai/news/voxtral-tts/)** (March 23, 2026): Mistral's first voice model — a 4B text-to-speech system (3.4B transformer decoder + 390M acoustic transformer + 300M neural audio codec) built on Ministral 3B. Supports 9 languages, voice cloning from 3 seconds of reference audio, and cross-lingual transfer. Priced at $0.016 per 1,000 characters. Available via API and Le Chat. Weights released as CC BY NC 4.0 (non-commercial).
 
 **Connectors formalized** (April 15, 2026): Mistral published a dedicated Connectors API formalizing custom MCP support across Studio, Le Chat, and Vibe. Developers can now create, modify, list, and delete MCP connectors programmatically. The `requires_confirmation` parameter provides human-in-the-loop control on sensitive tools. This is the biggest MCP-specific improvement since the original launch.
 
@@ -46,7 +46,7 @@ Le Chat, Mistral's consumer and enterprise AI assistant, gained MCP support on S
 - Users can connect to **any remote MCP server** beyond the built-in directory
 - Admin-level connector control with on-behalf authentication for Enterprise
 - Available on all tiers including the Free plan
-- 4.2 million active users in the first month after mobile launch
+- [4.2 million active users](https://venturebeat.com/ai/french-ai-startup-mistral-launches-le-chat-mobile-app-for-iphone-android-can-it-take-enterprise-eyes-off-deepseek/) in the first month after mobile launch
 
 **April 2026 Connectors update:** Mistral formalized a centralized connector registry (April 15, 2026) spanning Studio, Le Chat, and Vibe. New capabilities:
 - **Custom MCP connectors** — create, modify, list, and delete via Conversation API, Completions API, and Agent SDK
@@ -56,7 +56,7 @@ Le Chat, Mistral's consumer and enterprise AI assistant, gained MCP support on S
 
 ### Le Chat Work Mode (April 2026)
 
-Le Chat gained an **agentic Work Mode** (April 29, 2026, preview) for Pro, Team, and Enterprise plans:
+Le Chat gained an **[agentic Work Mode](https://www.testingcatalog.com/mistral-ai-unveils-medium-3-5-model-and-work-mode-for-le-chat/)** (April 29, 2026, preview) for Pro, Team, and Enterprise plans:
 - Cross-tool orchestration: email, calendar, messaging, documents, and web in a single workflow
 - Inbox triage with drafted replies and automatic issue creation in connected trackers
 - Research and synthesis across web sources and internal documents
@@ -141,7 +141,7 @@ All API pricing per 1 million tokens:
 |-------|-----------|--------|---------|-------|--------|---------|
 | Mistral Large 3 | 675B MoE | 41B | 256K | $0.50 | $1.50 | Apache 2.0 |
 | **Mistral Medium 3.5** *(NEW Apr 29)* | 128B dense | 128B | 256K | $1.50 | $7.50 | Modified MIT |
-| Mistral Small 4 | 119B MoE (128 experts) | 6.5B | 256K | $0.15 | $0.60 | Apache 2.0 |
+| [Mistral Small 4](https://mistral.ai/news/mistral-small-4/) | 119B MoE (128 experts) | 6.5B | 256K | $0.15 | $0.60 | Apache 2.0 |
 | Mistral Medium 3.1 | N/A | N/A | 128K | $0.40 | $2.00 | Proprietary |
 | Magistral Medium 1.2 | N/A | N/A | N/A | $2.00 | $5.00 | Proprietary |
 | Magistral Small 1.2 | 24B | 24B | N/A | Free | Free | Apache 2.0 |

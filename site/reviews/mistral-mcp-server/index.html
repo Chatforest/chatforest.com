@@ -68,10 +68,10 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> Mistral AI has <strong>no official MCP server</strong> — instead, they built MCP client support into <a href="https://chat.mistral.ai/">Le Chat</a> (20+ MCP connectors, now with custom MCP support and a centralized Studio connector registry) and the <a href="https://docs.mistral.ai/agents/tools/mcp">Agents API</a> (stdio + SSE transport). <strong>May 2026 update:</strong> Mistral Medium 3.5 launched April 29 (128B dense, 77.6% SWE-Bench Verified, $1.50/$7.50/M tokens); Voxtral TTS launched March 23 (4B voice model, $0.016/1K chars, 9 languages); Le Chat got Work Mode (April 29, agentic cross-tool workflows for Pro/Team/Enterprise) and formalized custom MCP connector support (April 15). Community servers remain small: <a href="https://github.com/everaldo/mcp-mistral-ocr">everaldo/mcp-mistral-ocr</a> (37 stars, MIT) and <a href="https://github.com/itisaevalex/mistr-agent">itisaevalex/mistr-agent</a> (17 stars, MIT). Part of our <strong><a href="/categories/ai-providers/">AI Providers MCP category</a></strong>.</p>
 <p>Mistral AI is <strong>Europe&rsquo;s most prominent AI company</strong> and a champion of open-weight models. Rather than publishing MCP servers that wrap its API, Mistral has taken a <strong>client-first approach</strong>: Le Chat connects to external MCP servers, and the Agents API lets developers wire MCP tools into Mistral-powered agents. The models themselves — from 3B Ministral to 675B Mistral Large 3 — are available under Apache 2.0 and run anywhere.</p>
-<p><a href="https://mistral.ai/">Mistral AI</a> was founded in April 2023 by Arthur Mensch (ex-Google DeepMind), Guillaume Lample (ex-Meta), and Timothee Lacroix (ex-Meta). Headquartered in Paris with offices in London and Palo Alto. As of early 2026: approximately <strong>EUR 300 million ARR</strong> (September 2025, targeting EUR 1 billion by end of 2026), <strong>$14 billion valuation</strong> (September 2025 Series C), over <strong>$3 billion total funding</strong> (investors include ASML at 11%, General Catalyst, Andreessen Horowitz, Lightspeed), approximately <strong>800+ employees</strong>. Mistral is an <strong>AAIF Silver member</strong> (joined February 2026 expansion).</p>
+<p><a href="https://mistral.ai/">Mistral AI</a> was founded in April 2023 by Arthur Mensch (ex-Google DeepMind), Guillaume Lample (ex-Meta), and Timothee Lacroix (ex-Meta). Headquartered in Paris with offices in London and Palo Alto. As of early 2026: approximately <strong><a href="https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai/">EUR 300 million ARR</a></strong> (September 2025, targeting EUR 1 billion by end of 2026), <strong><a href="https://www.cnbc.com/2025/09/09/ai-firm-mistral-valued-at-14-billion-as-asml-takes-major-stake.html">$14 billion valuation</a></strong> (September 2025 Series C), over <strong>$3 billion total funding</strong> (<a href="https://www.cnbc.com/2025/09/09/ai-firm-mistral-valued-at-14-billion-as-asml-takes-major-stake.html">investors include ASML at 11%</a>, General Catalyst, Andreessen Horowitz, Lightspeed), approximately <strong>800+ employees</strong>. Mistral is an <strong><a href="https://www.linuxfoundation.org/press/agentic-ai-foundation-welcomes-97-new-members">AAIF Silver member</a></strong> (joined February 2026 expansion).</p>
 <h2 id="whats-changed-since-march-2026">What&rsquo;s Changed Since March 2026</h2>
-<p><strong>Mistral Medium 3.5</strong> (April 29, 2026): A 128B dense model with 77.6% SWE-Bench Verified performance and a 91.4 τ³-Telecom agentic score. Priced at $1.50/$7.50 per million tokens. 256K context window. Open weights under a modified MIT license. Self-hostable on 4 GPUs. Powers Vibe Remote Agents.</p>
-<p><strong>Voxtral TTS</strong> (March 23, 2026): Mistral&rsquo;s first voice model — a 4B text-to-speech system (3.4B transformer decoder + 390M acoustic transformer + 300M neural audio codec) built on Ministral 3B. Supports 9 languages, voice cloning from 3 seconds of reference audio, and cross-lingual transfer. Priced at $0.016 per 1,000 characters. Available via API and Le Chat. Weights released as CC BY NC 4.0 (non-commercial).</p>
+<p><strong><a href="https://mistral.ai/news/mistral-medium-3-5/">Mistral Medium 3.5</a></strong> (April 29, 2026): A 128B dense model with <a href="https://mistral.ai/news/mistral-medium-3-5/">77.6% SWE-Bench Verified performance</a> and a 91.4 τ³-Telecom agentic score. Priced at $1.50/$7.50 per million tokens. 256K context window. Open weights under a modified MIT license. Self-hostable on 4 GPUs. Powers Vibe Remote Agents.</p>
+<p><strong><a href="https://mistral.ai/news/voxtral-tts/">Voxtral TTS</a></strong> (March 23, 2026): Mistral&rsquo;s first voice model — a 4B text-to-speech system (3.4B transformer decoder + 390M acoustic transformer + 300M neural audio codec) built on Ministral 3B. Supports 9 languages, voice cloning from 3 seconds of reference audio, and cross-lingual transfer. Priced at $0.016 per 1,000 characters. Available via API and Le Chat. Weights released as CC BY NC 4.0 (non-commercial).</p>
 <p><strong>Connectors formalized</strong> (April 15, 2026): Mistral published a dedicated Connectors API formalizing custom MCP support across Studio, Le Chat, and Vibe. Developers can now create, modify, list, and delete MCP connectors programmatically. The <code>requires_confirmation</code> parameter provides human-in-the-loop control on sensitive tools. This is the biggest MCP-specific improvement since the original launch.</p>
 <p><strong>Work Mode</strong> (April 29, 2026, preview): Le Chat&rsquo;s new agentic mode for Pro/Team/Enterprise enables cross-tool workflows spanning email, calendar, messages, and documents in a single persistent session.</p>
 <p><strong>Workflows</strong> (April 27, 2026, public preview): Durable orchestration layer via Python SDK v3.0, backed by Temporal. Supports <code>wait_for_input()</code> for human-in-the-loop pauses. Targeted at enterprise deployments; production customers include ASML and CMA-CGM.</p>
@@ -127,7 +127,7 @@
 <li>Users can connect to <strong>any remote MCP server</strong> beyond the built-in directory</li>
 <li>Admin-level connector control with on-behalf authentication for Enterprise</li>
 <li>Available on all tiers including the Free plan</li>
-<li>4.2 million active users in the first month after mobile launch</li>
+<li><a href="https://venturebeat.com/ai/french-ai-startup-mistral-launches-le-chat-mobile-app-for-iphone-android-can-it-take-enterprise-eyes-off-deepseek/">4.2 million active users</a> in the first month after mobile launch</li>
 </ul>
 <p><strong>April 2026 Connectors update:</strong> Mistral formalized a centralized connector registry (April 15, 2026) spanning Studio, Le Chat, and Vibe. New capabilities:</p>
 <ul>
@@ -137,7 +137,7 @@
 <li>Connector registry is shared across Le Chat (consumer), Studio (developer), and Vibe (coding agent)</li>
 </ul>
 <h3 id="le-chat-work-mode-april-2026">Le Chat Work Mode (April 2026)</h3>
-<p>Le Chat gained an <strong>agentic Work Mode</strong> (April 29, 2026, preview) for Pro, Team, and Enterprise plans:</p>
+<p>Le Chat gained an <strong><a href="https://www.testingcatalog.com/mistral-ai-unveils-medium-3-5-model-and-work-mode-for-le-chat/">agentic Work Mode</a></strong> (April 29, 2026, preview) for Pro, Team, and Enterprise plans:</p>
 <ul>
 <li>Cross-tool orchestration: email, calendar, messaging, documents, and web in a single workflow</li>
 <li>Inbox triage with drafted replies and automatic issue creation in connected trackers</li>
@@ -321,7 +321,7 @@
 <td>Modified MIT</td>
 </tr>
 <tr>
-<td>Mistral Small 4</td>
+<td><a href="https://mistral.ai/news/mistral-small-4/">Mistral Small 4</a></td>
 <td>119B MoE (128 experts)</td>
 <td>6.5B</td>
 <td>256K</td>
