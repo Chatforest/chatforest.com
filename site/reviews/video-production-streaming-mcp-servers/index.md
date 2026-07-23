@@ -131,7 +131,7 @@ The fastest-growing subcategory, now with an official Runway MCP server alongsid
 
 **Runway's official MCP server** — the first major AI video generation platform to ship an official MCP server under its own GitHub organization. Connects Claude, Cursor, or any MCP-compatible assistant directly to Runway's generation capabilities:
 
-- **Gen-4.5** — text-to-video and image-to-video, 2-10 second clips, top score (1247) on Artificial Analysis text-to-video benchmark
+- **Gen-4.5** — text-to-video and image-to-video, 2-10 second clips, [top score (1247) on Artificial Analysis text-to-video benchmark](https://runwayml.com/research/introducing-runway-gen-4.5)
 - **Native Audio** — dialogue, ambient soundtracks, and synchronized audio generated directly within the model
 - **Multi-Shot Sequencing** — create coherent multi-shot sequences for longer narratives
 - **Character-Consistent Long-Form** — up to one-minute video with character consistency
@@ -383,7 +383,7 @@ Neither server provides full broadcast control — no scene switching, alert man
 Despite 70+ servers (up from 60+), some gaps remain:
 
 - **No official YouTube MCP from Google** — Google launched Workspace MCP servers (Gmail, Drive, Calendar, Chat) at Cloud Next 2026 but still no YouTube; 40+ community servers fill the gap
-- **No Kick, Rumble, or alternative streaming platforms** — Twitch is the only gaming/live streaming platform with MCP servers, despite Kick reaching 494M hours watched
+- **No Kick, Rumble, or alternative streaming platforms** — Twitch is the only gaming/live streaming platform with MCP servers, despite Kick [surpassing 500M hours watched in March 2026](https://streamscharts.com/news/kick-reaches-over-500-million-hours-watched-march-2026)
 - **No professional broadcast protocols** — no SRT (Secure Reliable Transport), RTMP management, NDI, or SDI workflow tools
 - **No video CDN analytics beyond Mux** — no Fastly, Akamai, or AWS CloudFront video analytics
 - ~~No caption translation~~ — **partially filled** by Video Caption MCP (99+ languages via Whisper + Qwen on Apify)

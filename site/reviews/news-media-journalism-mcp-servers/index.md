@@ -386,13 +386,13 @@ While this is a single implementation and relies on AI judgment (which has its o
 
 ### Microsoft Publisher Content Marketplace
 
-Microsoft unveiled its **Publisher Content Marketplace (PCM)** in February 2026, creating a formal content licensing framework for AI systems. First-wave pilot partners include **The Associated Press, Condé Nast, Vox Media, Business Insider, USA Today, Hearst Magazines**, and more. The marketplace supports:
+Microsoft unveiled its **[Publisher Content Marketplace (PCM)](https://about.ads.microsoft.com/en/blog/post/february-2026/building-toward-a-sustainable-content-economy-for-the-agentic-web)** in February 2026, creating a formal content licensing framework for AI systems. First-wave pilot partners include **The Associated Press, Condé Nast, Vox Media, Business Insider, USA Today, Hearst Magazines**, and more. The marketplace supports:
 
 - Transparent licensing with "bring-your-own-license" for publishers with existing agreements
 - Sustainable publisher revenue through structured AI content access
 - Higher-quality AI experiences through rights-cleared content
 
-While not an MCP server itself, PCM signals that the infrastructure for legitimate AI-news partnerships is being built at scale. Combined with Anthropic's MCP becoming an industry standard (projected 75% enterprise gateway vendor adoption by end of 2026), the technical and business frameworks for news-AI integration are converging.
+While not an MCP server itself, PCM signals that the infrastructure for legitimate AI-news partnerships is being built at scale. Combined with MCP's rapid adoption across the AI industry, the technical and business frameworks for news-AI integration are converging.
 
 ### Publisher MCP Adoption Trend
 

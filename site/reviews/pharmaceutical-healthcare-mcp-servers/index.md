@@ -84,7 +84,7 @@ The **most ambitious structural contribution** to healthcare MCP — rather than
 - **Multi-transport** — SSE and streamable HTTP protocols
 - **Low-code agent builder** — no-code interface for building additional healthcare AI agents
 
-HMCP is important not just as a tool but as a signal — when a major healthcare data platform (Innovaccer processes data for health systems covering 55+ million lives) invests in extending MCP for healthcare, it validates the protocol's relevance in regulated industries. The specification is open (MIT licensed), inviting the broader healthcare AI community to build on it.
+HMCP is important not just as a tool but as a signal — when a major healthcare data platform ([Innovaccer has unified health records for 54+ million people](https://innovaccer.com/)) invests in extending MCP for healthcare, it validates the protocol's relevance in regulated industries. The specification is open (MIT licensed), inviting the broader healthcare AI community to build on it.
 
 ### healthcare-mcp-public
 
@@ -137,7 +137,7 @@ FDB also announced two complementary AI solutions:
 - **FDB Script Agent™** — a prescription automation agent for ambulatory settings where physicians dictate prescriptions that get structured and queued for review
 - **FDB VerifyAssist™** — an inpatient pharmacy verification assistant that runs drug checks at the point of need, reducing chart-digging time for pharmacists
 
-The platform is already in production at **Artera** — a patient communications platform serving over 1,000 healthcare organizations and more than 100 million patients annually. This makes FDB MedProof MCP one of the largest-scale healthcare MCP deployments documented to date.
+The platform is already in production at **Artera** — a [patient communications platform serving over 1,000 healthcare organizations and more than 100 million patients annually](https://artera.io/company/). This makes FDB MedProof MCP one of the largest-scale healthcare MCP deployments documented to date.
 
 This is a notable shift: a major clinical data vendor building MCP-native products rather than retrofitting existing APIs. It signals that MCP is becoming the expected integration standard for healthcare AI, not just an option.
 
@@ -157,7 +157,7 @@ The **most comprehensive drug discovery MCP server**, providing advanced access 
 - **Drug development** (4 tools) — clinical pipeline tracking, approval status, indication mapping
 - **Chemical properties** (4 tools) — ADMET analysis, physicochemical properties, advanced filtering
 
-ChEMBL contains bioactivity data for 2.4 million compounds against 15,000+ targets — having 22 MCP tools to navigate this database transforms drug discovery research workflows. A medicinal chemist using Claude Desktop could search for compounds active against a specific target, filter by potency and selectivity, check ADMET properties, and review the clinical pipeline — all in a single conversation.
+[ChEMBL 34 contains bioactivity data for 2.4 million compounds against 15,600+ targets](https://chembl.blogspot.com/2024/04/chembl-34-is-out.html) — having 22 MCP tools to navigate this database transforms drug discovery research workflows. A medicinal chemist using Claude Desktop could search for compounds active against a specific target, filter by potency and selectivity, check ADMET properties, and review the clinical pipeline — all in a single conversation.
 
 ### DrugBank MCP Server
 
@@ -193,7 +193,7 @@ PubMed is the **most replicated MCP server category in healthcare** — at least
 
 The **cyanheads implementation leads** with 66 stars, 7 tools, full NCBI E-utilities integration (ESearch, EFetch, ESummary, ELink, ESpell, EInfo), citation formatting in APA 7th/MLA 9th/BibTeX/RIS, full-text article retrieval from PubMed Central with section filtering, and Cloudflare Workers deployment. The Augmented-Nature version offers 16 tools exposing the full NCBI E-utilities and PMC APIs.
 
-The proliferation of PubMed MCP servers tells a clear story: biomedical literature search is the killer app for healthcare MCP. Researchers want to query 36 million citations from within their AI assistant rather than context-switching to the PubMed website.
+The proliferation of PubMed MCP servers tells a clear story: biomedical literature search is the killer app for healthcare MCP. Researchers want to query [40+ million citations](https://pubmed.ncbi.nlm.nih.gov/about/) from within their AI assistant rather than context-switching to the PubMed website.
 
 ### NCBI MCP Server
 
@@ -201,7 +201,7 @@ The proliferation of PubMed MCP servers tells a clear story: biomedical literatu
 |--------|-------|----------|---------|-------|
 | [vitorpavinato/ncbi-mcp-server](https://github.com/vitorpavinato/ncbi-mcp-server) | — | Python | — | Multiple |
 
-Designed for researchers across life sciences, providing access to PubMed's 35+ million articles through natural language queries. Focused on making NCBI's E-utilities accessible without requiring researchers to learn the API syntax.
+Designed for researchers across life sciences, providing access to PubMed's [40+ million articles](https://pubmed.ncbi.nlm.nih.gov/about/) through natural language queries. Focused on making NCBI's E-utilities accessible without requiring researchers to learn the API syntax.
 
 ## Medical Imaging
 
@@ -293,7 +293,7 @@ Despite being the deepest vertical MCP category, some areas remain uncovered:
 
 **MCP Healthcare Server launches with openFDA integration (April 3, 2026).** A new general-purpose [MCP Healthcare Server](https://conare.ai/marketplace/mcp/mcp-healthcare-server) became available combining several data sources under a single MCP interface: real-time drug interaction checking via the openFDA API, ICD-10-CM diagnosis code lookup and keyword search, FDA adverse event reports for specific medications, Medicare Part D prescribing statistics, and clinical guideline search via PubMed. This fills a gap for clinical decision support that previously required separate FHIR, PubMed, and openFDA MCP servers.
 
-**FDA and EMA joint guidance on AI in drug development (January 2026).** The FDA and EMA jointly released ["Guiding Principles of Good AI Practice in Drug Development"](https://intuitionlabs.ai/articles/model-context-protocol-mcp-in-pharma) — 10 key principles laying the foundation for using AI (including MCP-powered agents) in pharmaceutical workflows. This regulatory clarity is significant: it begins to define what "compliant" means for MCP servers used in GxP environments. Five trend areas are now shaping the pharma MCP roadmap through 2032: regulated extensions and compliance-by-design with HMCP/GxP profiles, certified MCP servers for clinical and lab data systems, agentic automation for clinical trials and manufacturing, auditability and model governance toolchains, and convergence with digital twins and edge orchestration.
+**FDA and EMA joint guidance on AI in drug development (January 2026).** The FDA and EMA jointly released ["Guiding Principles of Good AI Practice in Drug Development"](https://www.ema.europa.eu/en/news/ema-fda-set-common-principles-ai-medicine-development-0) — 10 key principles laying the foundation for using AI (including MCP-powered agents) in pharmaceutical workflows. This regulatory clarity is significant: it begins to define what "compliant" means for MCP servers used in GxP environments. Five trend areas are now shaping the pharma MCP roadmap through 2032: regulated extensions and compliance-by-design with HMCP/GxP profiles, certified MCP servers for clinical and lab data systems, agentic automation for clinical trials and manufacturing, auditability and model governance toolchains, and convergence with digital twins and edge orchestration.
 
 **LMS-integrated AI grading reaches healthcare education.** Agentic AI assessment tools that operate inside Canvas, Moodle, and Blackboard via LTI grade passback are now being piloted in medical school and nursing program curricula — an early signal that healthcare training institutions are connecting their LMS and clinical simulation environments through MCP.
 

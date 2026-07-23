@@ -58,7 +58,7 @@ The **most ambitious 3D printing MCP server** — and one of the most tool-rich 
 |--------|-------|----------|---------|-------|
 | [OctoEverywhere/mcp](https://github.com/OctoEverywhere/mcp) | 34 | Cloud-based | Apache-2.0 | ~5 |
 
-A **free cloud-based approach** — no local server setup needed. Supports OctoPrint, Klipper, Bambu Lab, Creality, Prusa, Elegoo, Anycubic, and **Elegoo Centauri**. Capabilities include printer status monitoring, webcam snapshots (multi-camera), pause/resume/cancel control, and **Gadget AI print failure detection.** Trusted by 300,000+ makers. The easiest entry point for AI-powered 3D printing. Stars 28→34.
+A **free cloud-based approach** — no local server setup needed. Supports OctoPrint, Klipper, Bambu Lab, Creality, Prusa, Elegoo, Anycubic, and **Elegoo Centauri**. Capabilities include printer status monitoring, webcam snapshots (multi-camera), pause/resume/cancel control, and **Gadget AI print failure detection.** Trusted by [300,000+ makers](https://blog.octoeverywhere.com/mcp-server-for-3d-printing/). The easiest entry point for AI-powered 3D printing. Stars 28→34.
 
 ### BambuStudio MCP
 
@@ -272,8 +272,8 @@ The gap list has shrunk dramatically since our March review. Two of our biggest 
 
 Several developments accelerated this ecosystem since our March review:
 
-- **Bambu Lab X2D launched April 14** — the X1 Carbon successor at $649/$899, with dual-nozzle system, 300°C nozzle temp, and 65°C active chamber heating. This will likely drive demand for MCP-based dual-nozzle workflow automation.
-- **Meshy + Formlabs AI-to-physical pipeline** — debuted at RAPID + TCT 2026. The first time an AI generation pipeline has been fully linked to professional-grade physical manufacturing end-to-end. xTool, Snapmaker, and Flashforge are building on Meshy's API.
+- **Bambu Lab X2D [launched April 14](https://3dprintingindustry.com/news/bambu-lab-launches-x2d-dual-nozzle-3d-printer-targeting-reduced-post-processing-and-material-waste-251005/)** — the X1 Carbon successor at $649/$899, with dual-nozzle system, 300°C nozzle temp, and 65°C active chamber heating. This will likely drive demand for MCP-based dual-nozzle workflow automation.
+- **[Meshy + Formlabs AI-to-physical pipeline](https://www.prnewswire.com/news-releases/meshy-ai-announces-integration-with-formlabs-to-bridge-the-gap-between-generative-ai-and-professional-3d-manufacturing-debuts-at-rapid--tct-2026-302742030.html)** — debuted at RAPID + TCT 2026. The first time an AI generation pipeline has been fully linked to professional-grade physical manufacturing end-to-end. xTool, Snapmaker, and Flashforge are building on Meshy's API.
 - **Blender Foundation endorsed MCP** through the Blender Lab initiative, launching their own official MCP server alongside the community ahujasid implementation.
 - **AI CAD stack emerging** — industry consensus (per Awesome-Physical-Engineering-AI) is coalescing around: LLM → agent framework → tools via MCP → CAD/CAE/CAM. The 2026 engineering AI stack is MCP-centric.
 

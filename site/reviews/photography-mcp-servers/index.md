@@ -520,7 +520,7 @@ The most established camera MCP server by star count. Suitable for machine visio
 - **Analysis** — AI-powered image analysis, moderation, and content recognition
 - **MediaFlows** — workflow automation for image processing pipelines
 
-Cloudinary processes billions of images monthly for 1.5M+ developers. The MCP servers bring this infrastructure to AI agents — upload images, apply transformations (resize, crop, format conversion, effects), and build automated pipelines through natural language. Complemented by **Cloudinary Skills** — installable agent skills that guide LLMs for correct Cloudinary API usage patterns. Documentation actively updated as of April 2026.
+Cloudinary processes [5 billion+ transformations monthly](https://cloudinary.com/about) for [4M+ developers](https://cloudinary.com/about). The MCP servers bring this infrastructure to AI agents — upload images, apply transformations (resize, crop, format conversion, effects), and build automated pipelines through natural language. Complemented by **Cloudinary Skills** — installable agent skills that guide LLMs for correct Cloudinary API usage patterns. Documentation actively updated as of April 2026.
 
 ## Image Compression
 
@@ -553,8 +553,8 @@ The content-aware approach is interesting — a photo with fine detail (landscap
 
 ## Industry Context (April 2026 Update)
 
-- **Adobe adopted MCP as its default agent protocol** at Summit April 2026, rebranding Experience Cloud as "CX Enterprise" — an agentic AI system built on MCP and A2A. Firefly AI Assistant now orchestrates workflows across Photoshop, Premiere, Lightroom, and Illustrator.
-- **Lightroom April 2026 update** (Classic 15.3, Desktop 9.3) added natural language photo search, background AI batch processing (Denoise, Raw Details, Super Resolution), and mood board generation via Firefly.
+- At Summit April 2026, **Adobe made two MCP-based announcements**: Experience Cloud was rebranded as **CX Enterprise** (an enterprise AI system built on MCP and A2A, targeting marketing and experience workflows), while **Firefly AI Assistant** was announced to orchestrate Creative Cloud workflows across Photoshop, Premiere, Lightroom, and Illustrator.
+- **Lightroom April 2026 update** (Classic 15.3, Desktop 9.3) added natural language photo search, background AI batch processing (Denoise, Super Resolution), and mood board generation via Firefly.
 - **Canva AI 2.0** launched with an official MCP server, transforming Canva into a conversational design platform powered by the Canva Design Model.
 - **Google Photos + Gemini** integration arrived — users can connect their photo library to Gemini for personalized image generation using their own photos as context.
 - **Capture One v16.7.0** added AI clothes masking, combined masks, and facial retouching, but still no MCP or agent integration.

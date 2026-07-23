@@ -79,7 +79,7 @@ Also available as a CLI tool and Claude Code skill. A strong alternative to Clim
 - **Simulation execution** — run EnergyPlus simulations with weather files automatically
 - **Results visualization** — generate interactive plots, energy breakdowns, and performance reports
 
-EnergyPlus can model thermal dynamics, HVAC operations, and environmental interactions, with simulations achieving 20–60% energy savings compared to conventional building codes. Recent updates improved setup documentation and inspector instructions. Requires EnergyPlus 25.1.0; Docker deployment available.
+EnergyPlus can model thermal dynamics, HVAC operations, and environmental interactions. [Published in SoftwareX (2025)](https://www.osti.gov/pages/biblio/3015372). Recent updates improved setup documentation and inspector instructions. Requires EnergyPlus 25.1.0; Docker deployment available.
 
 ---
 

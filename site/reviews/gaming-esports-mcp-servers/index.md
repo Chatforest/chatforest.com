@@ -17,7 +17,7 @@ The headline findings: **Roblox is the first major gaming platform with official
 
 ### Roblox Studio Built-in MCP Server — Official, Native Integration
 
-**The biggest story in gaming MCP: Roblox built MCP directly into Roblox Studio** (announced March 5, 2026), making it the first major gaming platform to offer official MCP support. The built-in server:
+**The biggest story in gaming MCP: [Roblox built MCP directly into Roblox Studio](https://devforum.roblox.com/t/assistant-updates-studio-built-in-mcp-server-and-playtest-automation/4474643)** (announced March 5, 2026), making it the first major gaming platform to offer official MCP support. The built-in server:
 
 - **Automatic tool synchronization** — every Assistant tool is automatically available through MCP
 - **Multi-instance support** — connect one AI client to multiple Studio instances simultaneously

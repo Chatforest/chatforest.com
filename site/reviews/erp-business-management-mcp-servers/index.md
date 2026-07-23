@@ -117,7 +117,7 @@ The jump from ~6 tools (v0.0.1, March 18) to 22 tools (v0.2.0, April 28) in six 
 
 ### Official Dynamics 365 ERP MCP Server — GA February 2026
 
-**The dynamic framework reached GA in February 2026**, evolving from 13 static tools to unlocking hundreds of thousands of ERP functions:
+**The [dynamic framework reached GA in February 2026](https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2025/11/11/dynamics-365-erp-model-context-protocol/)**, evolving from 13 static tools to unlocking hundreds of thousands of ERP functions:
 
 - **Three tool categories** — Data tools (CRUD operations), Form tools (navigate server forms like a human), Analytics tools
 - **Dynamic framework** — automatically exposes ISV extensions and customizations
@@ -193,7 +193,7 @@ The shjanjua/OCI-MCP-Servers (2 stars) is effectively superseded by oracle/mcp's
 
 ## Sage Intacct — Official MCP Server
 
-**Sage published an official MCP server for Sage Intacct** as part of the 2026 R1 release, available on the Sage Developer Portal. This fills a significant gap — Sage was previously listed as having zero MCP coverage.
+**Sage published an official MCP server for Sage Intacct** as part of the 2026 R1 release, available on the [Sage Developer Portal](https://developer.sage.com/intacct/mcps/intacct-mcp/latest/intacct-mcp-server). This fills a significant gap — Sage was previously listed as having zero MCP coverage.
 
 ## Workday — Official Reference Architecture
 

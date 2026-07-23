@@ -63,7 +63,7 @@ The first MCP server for Universal Robots industrial cobots — the most widely 
 - **Commercial licensing** — AGPLv3 for open source, commercial license required for >10 users
 - **11 language documentation**
 
-Significant because Universal Robots has ~50% global cobot market share. This bridges AI directly to production-floor cobots.
+Significant because Universal Robots cobots are among the most widely deployed collaborative robot arms in manufacturing. This bridges AI directly to production-floor cobots.
 
 ### Yutarop/ros-mcp
 

@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2598 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-16 batch, first cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (all dated 2026-03-16, this run's batch):
+
+1. **digital-accessibility-mcp-servers.md** — **CRITICAL FIX**: BrowserStack MCP launch date "January 2026" → "June 2025" with BrowserStack docs link (article had wrong date by 7+ months); added Deque axe-con 2025 announcement link for axe-core MCP server debut
+
+2. **pharmaceutical-healthcare-mcp-servers.md** — Fixed PubMed count "36 million" → "40+ million" with NCBI About link (two occurrences — article used outdated 2022 figure); fixed Innovaccer "55+ million lives" → "54+ million people" with innovaccer.com link (AWS case study shows 54M); added ChEMBL 34 release blog link for "2.4 million compounds against 15,600+ targets" claim; added Artera.io company page link for "1,000 healthcare organizations and more than 100 million patients"; replaced secondary `intuitionlabs.ai` link for FDA/EMA guidance with primary EMA press release link
+
+3. **sustainability-climate-mcp-servers.md** — Added EnergyPlus-MCP SoftwareX (2025) publication link (Vol 32, DOI 10.1016/j.softx.2025.102367); **CUT**: unsourced "20–60% energy savings compared to conventional building codes" claim (no primary source found)
+
+4. **logistics-supply-chain-mcp-servers.md** — Added Shippo unicorn valuation link (FreightWaves: reached $1B+ in June 2021 with $50M raise); removed unsourced "$178B last-mile market" figure (Grand View Research shows ~$181B for 2026 but I lacked a verified URL, so cut the specific dollar amount); removed unsourced "95% volume prediction accuracy" from DHL claim (decoupled from Greenplan route optimization)
+
+5. **news-media-journalism-mcp-servers.md** — Added Microsoft Publisher Content Marketplace (PCM) primary source link (Microsoft Advertising blog, February 2026); **CUT**: "75% enterprise gateway vendor adoption" (Gartner actually says "75% of API gateway vendors will have MCP features" — different claim; replaced with neutral "MCP's rapid adoption across the AI industry")
+
+6. **telecommunications-messaging-mcp-servers.md** — Added Sinch IDC MarketScape 2026 Leader link (sinch.com/news) in two places; added Cordial PR Newswire link for "3-7x higher click-through rates than SMS" claim; added Twilio blog link for "1,400+ API endpoints" claim
+
+7. **gaming-esports-mcp-servers.md** — Added Roblox DevForum primary source link for Studio built-in MCP server announcement (March 5, 2026)
+
+8. **compliance-data-governance-mcp-servers.md** — Fixed Vanta "1,200+" → "1,300+" automated security tests with vanta.com/features link; **CUT**: Drata "now serving 8,000+ customers" (no primary source URL verified this specific count)
+
+9. **erp-business-management-mcp-servers.md** — Added Microsoft Dynamics 365 ERP MCP GA blog post link (dynamics-365/blog, February 2026); added Sage Developer Portal link for Sage Intacct official MCP server
+
+10. **transportation-mobility-mcp-servers.md** — No critical factual corrections needed; sources_audited tag added
+
+**Key cuts this run:** EnergyPlus 20-60% savings range (no primary source); "$178B last-mile market" specific figure (no URL verified); DHL "95% volume prediction accuracy" (decoupled from Greenplan claim); Gartner "75% enterprise gateway adoption" miswording (replaced with neutral); Drata "8,000+ customers" (unverified count)
+
+**Key factual corrections:** BrowserStack launch date 7+ months wrong (Jan 2026 → June 2025); PubMed count outdated by ~4 million (36M → 40+M); Vanta test count 1,200+ → 1,300+; Microsoft PCM link upgraded to primary source
+
+**Research method:** 10 parallel research agents verified claims across all pages in prior session context; corrections applied in continuation session.
+
+**Hugo rebuild** — clean build, 4129 pages. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2597 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-15 batch, fifth cohort) + Deploy
 
 **Mode:** Citation auditor

@@ -21,7 +21,7 @@ The headline findings: **Deque has launched their official axe MCP Server** — 
 |--------|-------|----------|---------|-------|
 | [axe-mcp-server-public](https://github.com/dequelabs/axe-mcp-server-public) | 3 | — | Proprietary | 2 |
 
-**The biggest gap from our initial review is now closed** — Deque, the creators of axe-core, have launched their official MCP server. First introduced at Axe-con 2025 and now available to all Axe DevTools for Web customers:
+**The biggest gap from our initial review is now closed** — Deque, the creators of axe-core, have launched their official MCP server. [First introduced at Axe-con 2025](https://www.deque.com/blog/a-closer-look-at-axe-mcp-server/) and now available to all Axe DevTools for Web customers:
 
 - **analyze** — comprehensive accessibility scans using axe in a real browser environment (via the axe DevTools Browser Extension)
 - **remediate** — AI-powered, code-level guidance to fix accessibility issues
@@ -38,7 +38,7 @@ The proprietary/paid nature limits adoption compared to open-source alternatives
 |--------|-------|----------|---------|-------|
 | [browserstack/mcp-server](https://github.com/browserstack/mcp-server) | 137 | TypeScript | — | 20 |
 
-**The first enterprise testing platform with dedicated accessibility MCP tooling** — BrowserStack's official MCP server launched January 2026 with full accessibility capabilities:
+**The first enterprise testing platform with dedicated accessibility MCP tooling** — BrowserStack's official MCP server [launched in June 2025](https://www.browserstack.com/docs/browserstack-mcp-server/overview) with full accessibility capabilities:
 
 - **runAccessibilityScan** — automated WCAG compliance scans using BrowserStack's Spectra™ rule engine
 - **accessibilityExpert** — AI expert guidance on accessibility standards and best practices

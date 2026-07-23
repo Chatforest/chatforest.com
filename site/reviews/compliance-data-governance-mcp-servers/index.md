@@ -22,7 +22,7 @@ The headline findings: **Vanta leads compliance with 55 stars and 43 tools**, Se
 **The leading compliance MCP server** — provides AI assistants with direct access to Vanta's automated security compliance platform, which monitors SOC 2, ISO 27001, HIPAA, GDPR, and other frameworks:
 
 - **43 consolidated tools** — smart consolidation from 53 tools covering controls (3), documents (2), frameworks (2), integrations (2), people (1), risks (1), tests (2), vulnerabilities (1), and additional resource operations
-- **Comprehensive test monitoring** — access to 1,200+ automated security tests that continuously monitor compliance across your entire infrastructure
+- **Comprehensive test monitoring** — access to [1,300+ automated security tests](https://www.vanta.com/features) that continuously monitor compliance across your entire infrastructure
 - **Filter by status** — view passing or failing tests, filter by cloud provider (AWS, Azure, GCP), or specific compliance frameworks
 - **Automated tool registry** — new tools are automatically discovered and registered without manual configuration
 - **Type-safe implementation** — full TypeScript coverage with DRY principles and centralized utilities
@@ -50,7 +50,7 @@ Currently in public beta. Works with Claude, Cursor, ChatGPT, and other MCP-comp
 |--------|-------|----------|---------|-------|
 | [Drata MCP](https://drata.com/mcp) | — | — | — | Multiple |
 
-**Enterprise compliance meets AI workflows** — Drata's MCP server brings compliance, risk, and monitoring data to AI-native environments, now serving 8,000+ customers:
+**Enterprise compliance meets AI workflows** — Drata's MCP server brings compliance, risk, and monitoring data to AI-native environments:
 
 - **Hosted MCP solution** — Drata hosts the protocol in a hardened environment, so you're up and running in minutes with no servers, dependencies, or upkeep
 - **Vendor Risk Management Agent** — autonomously retrieves vendor documents, evaluates them against criteria, and sends follow-up questionnaires

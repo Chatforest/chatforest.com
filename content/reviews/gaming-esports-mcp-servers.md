@@ -6,6 +6,7 @@ og_description: "Gaming & esports MCP servers: Roblox Studio built-in MCP (FIRST
 content_type: "Review"
 card_description: "Gaming and esports MCP servers for player analytics, game libraries, live game control, game server management, streaming platforms, retro gaming, and game databases. **Roblox is the FIRST major gaming platform with official MCP support** — built directly into Roblox Studio (March 2026), with playtest automation, mouse/keyboard simulation, and character navigation via pathfinding. The standalone Roblox/studio-rust-mcp-server (464 stars, MIT) was archived after the built-in server became the recommended option. **Minecraft remains the most popular gaming MCP** — yuniko-software/minecraft-mcp-server surged to 555 stars with v2.0.4 and 220+ commits, enabling real-time AI character control via Mineflayer. **OP.GG expanded to 30+ tools** — opgginc/opgg-mcp (89 stars) covers League of Legends, TFT, and Valorant with field selection syntax for efficient payloads. **Steam finally gets a unified server** — TMHSDigital/steam-mcp offers 25 tools (18 read + 7 write) covering store data, player stats, reviews, pricing, achievements, workshop, leaderboards, inventory, and lobbies. **Retro gaming gap is closing** — mario-andreschak/mcp-gameboy (27 stars, MIT) enables LLMs to play GameBoy ROMs through an emulator with screen capture and button controls. **Formula 1 racing data arrives** — Panth1823/formula1-mcp (15 stars, 29 tools) covers live telemetry, car positions, team radio, weather, and historical data back to 1950. **New game-specific servers** — RuneScape/OSRS data (11 stars), Pokemon TCG card search (8 stars), Twitch Chat integration (7 stars). **Chess.com grew to 71 stars** with four independent implementations still active. **notpoiu/roblox-mcp surged 150%** (18→45 stars) for game client interaction. The category earns 4.0/5 — upgraded from 3.5 because Roblox's official support breaks the 'no platform MCPs' barrier, the ecosystem added retro gaming and racing data, and server count grew from 25+ to 35+."
 last_refreshed: 2026-04-28
+sources_audited: 2026-07-23
 ---
 
 *Part of the [Media & Entertainment](/categories/media-entertainment/) category.*
@@ -22,7 +23,7 @@ The headline findings: **Roblox is the first major gaming platform with official
 
 ### Roblox Studio Built-in MCP Server — Official, Native Integration
 
-**The biggest story in gaming MCP: Roblox built MCP directly into Roblox Studio** (announced March 5, 2026), making it the first major gaming platform to offer official MCP support. The built-in server:
+**The biggest story in gaming MCP: [Roblox built MCP directly into Roblox Studio](https://devforum.roblox.com/t/assistant-updates-studio-built-in-mcp-server-and-playtest-automation/4474643)** (announced March 5, 2026), making it the first major gaming platform to offer official MCP support. The built-in server:
 
 - **Automatic tool synchronization** — every Assistant tool is automatically available through MCP
 - **Multi-instance support** — connect one AI client to multiple Studio instances simultaneously

@@ -294,7 +294,7 @@ This makes it particularly useful for researchers, educators, and writers who ne
 ### Additional Museum Servers
 
 - **[mikechao/artic-mcp](https://github.com/mikechao/artic-mcp)** (TypeScript, MIT, 7 tools) — Art Institute of Chicago collection with full-text search, artist browsing, medium search, and an **art gallery prompt** that generates interactive HTML galleries
-- **[AlexLin1234/harvard-art-museums-mcp-server](https://github.com/AlexLin1234/harvard-art-museums-mcp-server)** (Python, MIT, 5 tools) — access to 224,000+ artworks, artists, and museum objects with random artwork discovery
+- **[AlexLin1234/harvard-art-museums-mcp-server](https://github.com/AlexLin1234/harvard-art-museums-mcp-server)** (Python, MIT, 5 tools) — access to ~250,000 artworks, artists, and museum objects with random artwork discovery
 - **[behole/cooper-hewitt-mcp](https://github.com/behole/cooper-hewitt-mcp)** (TypeScript, MIT, 2 tools) — Cooper Hewitt, Smithsonian Design Museum collection access with object search and detailed retrieval — the first design-focused museum MCP server
 
 Six world-class museums now have dedicated community-built MCP servers, and **open-museum-mcp** adds federated multi-institution search on top. None has built an official server, but community coverage now spans individual institution access (Rijksmuseum, Met, Smithsonian, AIC, Harvard, Cooper Hewitt) plus federated cross-collection search. Combined with the IIIF MCP server above, AI agents can access museum-specific collections, federated search, and the broader universe of IIIF-compliant digital archives.

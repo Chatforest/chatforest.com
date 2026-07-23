@@ -26,7 +26,7 @@ The **first agentic shipping platform** — Shippo's official MCP server exposes
 - **Customs declarations** — handle international shipping documentation
 - **Carrier management** — manage multiple carrier accounts through a single integration
 
-Install via `npx -y @shippo/shippo-mcp start` with your Shippo API key. This is significant because Shippo is a well-funded shipping infrastructure company (valued at $1B+) — this isn't a hobbyist wrapper but a commercially-backed agentic interface to real shipping operations. Natural language prompts translate directly into shipping actions.
+Install via `npx -y @shippo/shippo-mcp start` with your Shippo API key. This is significant because Shippo is a well-funded shipping infrastructure company ([valued at $1B+](https://www.freightwaves.com/news/shippo-reaches-unicorn-status-with-50m-raise)) — this isn't a hobbyist wrapper but a commercially-backed agentic interface to real shipping operations. Natural language prompts translate directly into shipping actions.
 
 **April 2026 update:** Shippo has expanded well beyond label generation into a full agentic shipping operations platform. New capabilities include **automated returns** (prepaid labels, validated addresses, customer updates without manual work), **WISMO inquiry handling** (AI agents answer "where is my order" questions), **proactive tracking updates**, **batch processing** for multiple shipments, **pickup scheduling**, **end-of-day manifest generation**, and **shipping analytics** (delivery trends, spend distribution across carriers). Both retailers and platform customers are actively experimenting with conversational rate shopping and automated returns workflows.
 
@@ -310,11 +310,11 @@ The logistics MCP ecosystem has matured in shipping and is beginning to bridge t
 - **No demand planning or forecasting** — no AI-powered demand sensing, S&OP planning, or inventory optimization servers (ReplenishRadar's forecasting is e-commerce-focused, not enterprise S&OP)
 - **No customs & trade compliance** — Descartes, Amber Road, Integration Point for cross-border logistics
 - **No cold chain monitoring** — no temperature tracking, pharmaceutical logistics, or food safety compliance
-- **No last-mile delivery optimization** — Route4Me, OptimoRoute, Onfleet for delivery route planning (despite the $178B last-mile market)
+- **No last-mile delivery optimization** — Route4Me, OptimoRoute, Onfleet for delivery route planning despite the scale of the last-mile market
 - **No Coupa procurement** — SAP Ariba has a read-only MCP bridge via CData, but Coupa and Jaggaer remain absent
 - **No freight marketplaces** — Convoy, Uber Freight, DAT, Loadsmart for freight matching and booking
 - **No 3PL/fulfillment** — ShipBob, Deliverr, Flexport API integration for outsourced logistics
-- **No DHL official MCP** — despite DHL's heavy AI investment (Greenplan routing, 95% volume prediction accuracy), no official MCP server exists
+- **No DHL official MCP** — despite DHL's heavy AI investment including Greenplan route optimization, no official MCP server exists
 - **No returns management** — Loop Returns, Happy Returns, Returnly for reverse logistics (though Shippo now handles returns automation)
 
 The gap between "ship a parcel" and "manage a supply chain" is narrowing — Oracle Integration's MCP capability and CData's SAP Ariba bridge show enterprise platforms are beginning to expose supply chain data to AI agents. But dedicated, purpose-built MCP servers for enterprise logistics remain absent.

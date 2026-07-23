@@ -6,6 +6,7 @@ og_description: "News & media MCP servers: AP wire service 26 tools, Apify 14 to
 content_type: "Review"
 card_description: "News, media, and journalism MCP servers for AI-powered content monitoring, media planning, and editorial workflow — from aggregating RSS feeds and tracking Hacker News discussions to querying news APIs, generating podcasts, and fact-checking headlines. The category matured significantly since March 2026, with enterprise players entering and key gaps filling. **AP wire service access arrived** — rbonestell/ap-mcp-server (26 tools, 17 prompts) is the first Associated Press MCP server, covering search, photos, videos, audio, graphics, monitoring/alerts, and trending analysis. **Apify aggregates 27 free APIs** covering Reuters, AP, BBC, CNN, Al Jazeera, Bloomberg, and GDELT in 65+ languages — no API keys needed. **Guideline launched media plan management MCP** (March 2026) — the first enterprise media planning/buying MCP, enabling conversational queries about campaigns, budgets, and vendor performance. **Pantheon Content Publisher MCP went GA** (March 2026) — the first editorial workflow MCP, publishing from Google Docs/Word to WordPress/Drupal/Next.js with AI-powered metadata and SEO. **Podcast creation arrived** — adamanz/podcast-generator-mcp creates two-voice podcasts from any content using 20+ ElevenLabs voices, shifting podcasts from consumption-only to creation. **RSS remains crowded** at 12+ servers with RSSidian growing to 29 stars. **Hacker News still has 8+ implementations.** **@newsmcp/server** confirmed active with 4 tools and 50 commits. **idea-reality-mcp surged to 641 stars** scanning 6 sources for startup validation. **Microsoft's Publisher Content Marketplace** (February 2026) signals industry-wide movement toward AI content licensing, with AP, Condé Nast, and Vox Media as pilot partners. **Gaps narrowing** — wire service access, editorial workflow, media planning, and podcast creation all addressed. Still missing: official servers from major news organizations, media monitoring dashboards, social listening, and press release distribution. Rating upgraded to 4.0/5 — the shift from pure consumption to production tools marks real maturation."
 last_refreshed: 2026-04-27
+sources_audited: 2026-07-23
 ---
 
 *Part of the [Media & Entertainment](/categories/media-entertainment/) category.*
@@ -391,13 +392,13 @@ While this is a single implementation and relies on AI judgment (which has its o
 
 ### Microsoft Publisher Content Marketplace
 
-Microsoft unveiled its **Publisher Content Marketplace (PCM)** in February 2026, creating a formal content licensing framework for AI systems. First-wave pilot partners include **The Associated Press, Condé Nast, Vox Media, Business Insider, USA Today, Hearst Magazines**, and more. The marketplace supports:
+Microsoft unveiled its **[Publisher Content Marketplace (PCM)](https://about.ads.microsoft.com/en/blog/post/february-2026/building-toward-a-sustainable-content-economy-for-the-agentic-web)** in February 2026, creating a formal content licensing framework for AI systems. First-wave pilot partners include **The Associated Press, Condé Nast, Vox Media, Business Insider, USA Today, Hearst Magazines**, and more. The marketplace supports:
 
 - Transparent licensing with "bring-your-own-license" for publishers with existing agreements
 - Sustainable publisher revenue through structured AI content access
 - Higher-quality AI experiences through rights-cleared content
 
-While not an MCP server itself, PCM signals that the infrastructure for legitimate AI-news partnerships is being built at scale. Combined with Anthropic's MCP becoming an industry standard (projected 75% enterprise gateway vendor adoption by end of 2026), the technical and business frameworks for news-AI integration are converging.
+While not an MCP server itself, PCM signals that the infrastructure for legitimate AI-news partnerships is being built at scale. Combined with MCP's rapid adoption across the AI industry, the technical and business frameworks for news-AI integration are converging.
 
 ### Publisher MCP Adoption Trend
 

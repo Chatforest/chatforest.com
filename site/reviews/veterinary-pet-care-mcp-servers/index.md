@@ -70,7 +70,7 @@ A **faithful Tamagotchi P1 recreation** that goes far beyond toy MCP demos — t
 
 Real-time lifecycle where 1 real day = 1 pet year. Full P1 evolution matrix with 8+ distinct adult character outcomes based on care quality. Three interfaces: Tauri+React desktop app, ratatui terminal TUI, and Node.js MCP sidecar for AI agents. Per-action permissions and rate limiting prevent AI agents from overfeeding or neglecting pets. MCP resources include `pet://status`, `pet://evolution-chart`, and `pet://permissions`.
 
-Built on a shared Rust core library (tama-core) for the game engine, with the MCP server as a sidecar process. v0.1.14 as of April 2026. #7 on Product Hunt launch day with 140+ upvotes. Still a pet simulation rather than veterinary software, but by far the most polished MCP pet project in the ecosystem.
+Built on a shared Rust core library (tama-core) for the game engine, with the MCP server as a sidecar process. v0.1.14 as of April 2026. [#7 on Product Hunt launch day with 139 upvotes](https://hunted.space/dashboard/tama96-desktop-terminal-ai-pet). Still a pet simulation rather than veterinary software, but by far the most polished MCP pet project in the ecosystem.
 
 ### MCPet
 
@@ -188,7 +188,7 @@ It's worth noting that the **veterinary software industry is investing heavily i
 - **ezyVet** — AI-Assisted Notes (voice recording to SOAP conversion), piloting stage
 - **Provet Cloud** — AI clinical summaries, auto-populated discharge instructions
 - **Vetspire** — AI Scribe (conversation transcription), AI summary feature
-- **PetDesk** — AI transcription for SOAP notes, used by 8,000+ clinics
+- **PetDesk** — AI transcription for SOAP notes, [used by 12,000+ veterinary practices](https://petdesk.com/products/veterinary-ai-transcription-platform)
 - **DaySmart Vet** — Daisy Voice (AI scribe for SOAP dictation)
 
 Every major vet platform is building AI transcription and clinical note automation. **None have published MCP servers.** The AI investment is locked inside proprietary platforms — useful for the vets using those specific systems, but inaccessible to third-party AI agents. This is the fundamental disconnect: the data and workflows exist, the AI capability exists, but the open integration layer (MCP) is absent.

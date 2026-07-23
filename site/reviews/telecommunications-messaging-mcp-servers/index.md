@@ -19,7 +19,7 @@ The headline findings: **Eight major CPaaS providers have official MCP servers**
 
 The **official Twilio MCP monorepo** — the most comprehensive CPaaS MCP integration available:
 
-- **All 1,400+ Twilio API endpoints** exposed as MCP tools
+- **[All 1,400+ Twilio API endpoints](https://www.twilio.com/en-us/blog/developers/introducing-twilio-mcp-skills)** exposed as MCP tools
 - **OpenAPI-to-MCP generator** — automatically converts any Twilio API surface to MCP tools
 - **Full platform coverage** — SMS, voice, video, conversations, verify, taskrouter, and more
 - Published on npm as `@twilio-alpha/mcp`
@@ -99,7 +99,7 @@ The **official Sinch MCP server** with expanded multi-channel messaging and voic
 - **Streamable HTTP transport** — modern MCP transport support
 - **Interactive messaging** — buttons, quick replies, template localization
 
-Sinch was named a **Leader in the IDC MarketScape 2026 Communications Engagement Platforms** assessment. Expanded from basic messaging to 25 distinct tools with RCS support. Also see [messagemedia/sinch-engage-mcp-server](https://github.com/messagemedia/sinch-engage-mcp-server) for Sinch Engage (EU) and MessageMedia (AU) with contact management and reporting.
+Sinch was named a **[Leader in the IDC MarketScape 2026 Communications Engagement Platforms](https://sinch.com/news/sinch-leader-idc-marketscape-2026/)** assessment. Expanded from basic messaging to 25 distinct tools with RCS support. Also see [messagemedia/sinch-engage-mcp-server](https://github.com/messagemedia/sinch-engage-mcp-server) for Sinch Engage (EU) and MessageMedia (AU) with contact management and reporting.
 
 ### infobip/mcp (Official)
 
@@ -455,10 +455,10 @@ The telecom industry's MCP adoption accelerated significantly since our initial 
 
 - **CAMARA / Open Gateway** — Infobip now has a CAMARA MCP server endpoint in production, providing SIM Swap and Number Verification capabilities through MCP. This is the first production CAMARA-MCP integration
 - **Agentic AI Foundation** — Infobip joined as Gold Member, directly shaping the infrastructure standards for AI agent communication
-- **IDC MarketScape 2026** — Sinch named a Leader in Communications Engagement Platforms, with MCP as a core enablement technology
+- **[IDC MarketScape 2026](https://sinch.com/news/sinch-leader-idc-marketscape-2026/)** — Sinch named a Leader in Communications Engagement Platforms, with MCP as a core enablement technology
 - **MCP Dev Summit 2026** — Twilio participated in sessions on SSO consolidation and cross-app access, signaling enterprise-grade MCP standardization
 - **Voice AI consensus** — Industry declaring 2026 as "Year of the Voice Agent" with sub-100ms latency, native audio reasoning, and MCP-native telephony
-- **Cordial** — launched MCP interface with RCS as a supported channel, with early studies showing 3-7x higher click-through rates than SMS
+- **[Cordial](https://www.prnewswire.com/news-releases/cordial-expands-innovation-with-mcp-interface-and-rcs-messaging-302540495.html)** — launched MCP interface with RCS as a supported channel, with early studies showing 3-7x higher click-through rates than SMS
 - **Streamable HTTP adoption** — Sinch and Infobip both adopted Streamable HTTP transport, aligning with the broader MCP ecosystem's move away from SSE
 
 The direction is clear: CPaaS providers are moving from "we have an MCP server" to "MCP is our primary AI agent integration layer."
