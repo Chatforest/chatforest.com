@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2609 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-22/23 batch, twelfth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (oldest unaudited by date, 2026-03-22 to 2026-03-23):
+
+1. **best-iot-mcp-servers.md** — Fixed HA native MCP adoption: "~1.5% of active installations" → [3.2%](https://www.home-assistant.io/integrations/mcp_server/). Qualified Siemens "world's largest" to "world's leading by revenue and PLC market share" with citation. Added Matter 1.5 CSA press release link for cameras/energy management; added community tracker link for "750+" product count (CSA counts 1,000+ with variants). Added sources_audited.
+
+2. **best-pdf-document-processing-mcp-servers.md** — Removed unverifiable "January 15, 2026" specific launch date for @modelcontextprotocol/server-pdf (npm blocked, date not found). Corrected Stirling PDF stars: 56K+ → ~87K (per GitHub). Added LF AI & Data Foundation link for Docling (incubation-stage, April 2025 donation). Added sources_audited.
+
+3. **semgrep-mcp-server.md** — Added primary citation for 1.9× IDOR recall (Semgrep PR Newswire). Moved "up to 8× more true positives, 50% fewer false positives" claim to Semgrep Multimodal section (correct attribution) with Semgrep blog link. Removed false "$10M in API credits to Semgrep" from OpenAI program entry — the $10M was the total pool for 4 recipients, not Semgrep alone; rewritten to correctly describe the program. Added taint analysis speedup link to Semgrep changelog. Added sources_audited.
+
+4. **best-message-queue-mcp-servers.md** — Added citation link for Azure Service Bus SDK retirement September 30, 2026 (Microsoft Tech Community). Added sources_audited.
+
+5. **mailgun-mcp-server.md** — Added citation for Sinch/Pathwire $1.9B acquisition (December 2021, Sinch press release). Removed unverifiable revenue (~$60-75M) and employee (204) figures for Mailgun (Sinch does not report subsidiary financials). Added sources_audited.
+
+6. **mailersend-mcp-server.md** — Added citation for Vercom acquiring MailerLite for $90M April 2022 (Vercom press release). Corrected Vercom employees: 178 → 163 (as of Dec 31, 2024, per Stock Analysis). Removed unverifiable MailerSend $870K revenue figure. Added WSE stock analysis links. Added sources_audited.
+
+7. **twilio-mcp-server.md** — Added third co-founder John Wolthuis (article only listed Jeff Lawson and Evan Cooke). Corrected revenue: $4.9B → $5.07B FY2025 (Twilio IR). Corrected market cap: $18.8B → ~$32.7B (July 2026). Added sources_audited.
+
+8. **anthropic-mcp-server.md** — Clarified "$30B revenue" as ARR (not actual revenue); removed unverifiable "1,400% YoY growth" claim. Added primary citation links for: Series G $380B valuation (Anthropic press release), $800B investor offers (Bloomberg), IPO October 2026 / underwriter selection (TechTimes), Stainless acquisition (Anthropic announcement), Gates Foundation $200M commitment (Anthropic announcement, clarified as blended grants+credits not pure cash), Ox Security STDIO disclosure (Ox Security report) in both What's New and Known Issues sections. Added sources_audited.
+
+9. **sqlite-mcp-servers.md** — Fixed "trillions of active databases" → "over one trillion" (per sqlite.org/mostdeployed.html, their own language). Updated latest SQLite version: 3.53.0 → 3.53.3 (June 26, 2026) with release log links. Changed "12,665+ companies" → "12,000+ companies" with citation to 6sense (third-party estimate). Fixed Cloudflare D1 city count: 300+ → 330+ (per Cloudflare's own network page). Added deployment row link to sqlite.org/mostdeployed.html. Added sources_audited.
+
+10. **netlify-mcp-server.md** — Corrected revenue estimate: ~$52M → ~$46M ARR (per GetLatka third-party estimates). Corrected employee count: 180-200 → approximately 179 (current). Added sources_audited.
+
+**Key factual corrections this run:**
+- HA MCP adoption 1.5% → 3.2% (primary source showed current figure)
+- Stirling PDF 56K stars → ~87K (significantly underreported)
+- Semgrep OpenAI "$10M in API credits" was false — $10M is total program pool for 4 recipients, not Semgrep alone
+- Semgrep "8× true positives" was misattributed to OpenAI program — it's from Semgrep Multimodal's own data
+- Twilio has 3 co-founders, not 2 (John Wolthuis omitted)
+- Twilio revenue $4.9B → $5.07B FY2025; market cap $18.8B → $32.7B
+- Anthropic "$30B revenue" is ARR not actual revenue; "1,400% YoY" claim unverifiable/removed
+- SQLite "trillions" → "one trillion" (official sqlite.org phrasing says "over one trillion")
+- Cloudflare D1 300+ cities → 330+ (Cloudflare's own number)
+- MailerSend Vercom employees 178 → 163 per primary source
+- Mailgun revenue/employees removed (no primary source; Sinch doesn't report Mailgun separately)
+
+**Research method:** 3 parallel research agents verified all claims: Agent 1 (IoT/PDF/Semgrep), Agent 2 (message queue/Mailgun/MailerSend/Twilio), Agent 3 (Anthropic/SQLite/Netlify). WebSearch and WebFetch used extensively.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2608 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-22 batch, eleventh cohort) + Deploy
 
 **Mode:** Citation auditor

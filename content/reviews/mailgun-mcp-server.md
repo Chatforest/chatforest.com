@@ -6,6 +6,7 @@ og_description: "Mailgun MCP Server: 85 MCP tools for email sending, analytics, 
 content_type: "Review"
 card_description: "Official MCP server for Mailgun's email API. v2.0.0 TypeScript rewrite (April 2026) added 15 new tools for a total of 85 across messaging, analytics, templates, suppressions, mailing lists, webhooks, domains, routes, IP management, and bounce classification. No-delete safety design keeps blast radius low."
 last_refreshed: 2026-05-03
+sources_audited: 2026-07-23
 category_url: "/categories/email-notification-services/"
 ---
 
@@ -13,7 +14,7 @@ category_url: "/categories/email-notification-services/"
 
 Mailgun's MCP server exposes **85 tools** across the full Mailgun API surface — from sending emails and managing templates to querying analytics, tracking suppressions, and configuring IP pools. This is one of the most comprehensive single-service MCP servers we've reviewed, covering nearly every Mailgun API endpoint as a callable tool.
 
-The [mailgun-mcp-server repository](https://github.com/mailgun/mailgun-mcp-server) has 55 GitHub stars and 22 forks. It's maintained by the Mailgun team (part of [Sinch](https://sinch.com/), which acquired Mailgun's parent company Pathwire for $1.9 billion in 2021). Mailgun processes billions of emails for ~150,000+ customers with ~$60–75M in annual revenue and 204 employees.
+The [mailgun-mcp-server repository](https://github.com/mailgun/mailgun-mcp-server) has 55 GitHub stars and 22 forks. It's maintained by the Mailgun team (part of [Sinch](https://sinch.com/), which [acquired Mailgun's parent company Pathwire for approximately $1.9 billion in December 2021](https://sinch.com/news/sinch-completes-acquisition-pathwire/)). Mailgun processes billions of emails for approximately 150,000+ customers (Sinch does not report Mailgun financials separately).
 
 **April 2026 update:** v2.0.0 (released April 22, 2026) is a full TypeScript rewrite that raises the tool count from 70 to 85, upgrades to Zod 4 for validation, shortens tool IDs (removing `_name` suffixes from path parameters — a breaking change for clients using hardcoded tool names), and requires Node.js 22.22.2+. v2.1.0 is in progress (open PR as of late April) and will add email validation, inbox placement, and email preview tools. Note: the npm registry still shows v1.0.2 as of early May — users installing via `npx @mailgun/mcp-server` get the older version until the team publishes v2.0.0 to npm.
 

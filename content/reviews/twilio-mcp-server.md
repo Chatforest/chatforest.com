@@ -6,6 +6,7 @@ og_description: "Twilio MCP: ~2,000 API endpoints across 40+ services — SMS, v
 content_type: "Review"
 card_description: "Official first-party MCP server from Twilio Labs exposing nearly 2,000 API endpoints across 40+ Twilio services including SMS, voice, video, conversations, TaskRouter, Studio, and Serverless. TypeScript monorepo with OpenAPI-to-MCP generator, stdio and Streamable HTTP transport, API key authentication."
 last_refreshed: 2026-05-04
+sources_audited: 2026-07-23
 category_url: "/categories/email-notification-services/"
 ---
 
@@ -15,7 +16,7 @@ category_url: "/categories/email-notification-services/"
 
 Twilio's MCP server is an **open-source, first-party monorepo** that gives AI agents access to nearly all of Twilio's communications APIs — SMS, voice, video, conversations, TaskRouter, Studio, Serverless, and dozens more. Rather than hand-crafting individual MCP tools, the server auto-generates them from Twilio's OpenAPI specifications, exposing ~2,000 endpoints. The tradeoff: you need to filter aggressively with `--services` and `--tags` flags, because no LLM context window can handle all of them at once.
 
-[Twilio](https://www.twilio.com/) is the dominant cloud communications platform, founded in 2008 by Jeff Lawson and Evan Cooke in San Francisco. Publicly traded on NYSE (TWLO) since 2016. As of early 2026: ~5,500 employees, ~$4.9B annual revenue, ~$18.8B market cap. Twilio powers communications for companies like Uber, Airbnb, Netflix, Shopify, and Morgan Stanley. The MCP server was built by Twilio's Emerging Tech and Innovation (ETI) team and published under the `@twilio-alpha` npm scope — the "alpha" label is intentional.
+[Twilio](https://www.twilio.com/) is the dominant cloud communications platform, founded in 2008 by [Jeff Lawson, Evan Cooke, and John Wolthuis](https://en.wikipedia.org/wiki/Twilio) in San Francisco. Publicly traded on NYSE (TWLO) since 2016. As of mid-2026: ~5,587 employees, [$5.07B annual revenue (FY2025)](https://investors.twilio.com/news-releases/news-release-details/twilio-announces-fourth-quarter-and-full-year-2025-results), ~$32.7B market cap. Twilio powers communications for companies like Uber, Airbnb, Netflix, Shopify, and Morgan Stanley. The MCP server was built by Twilio's Emerging Tech and Innovation (ETI) team and published under the `@twilio-alpha` npm scope — the "alpha" label is intentional.
 
 ## What It Does
 

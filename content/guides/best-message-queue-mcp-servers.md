@@ -6,6 +6,7 @@ og_description: "35+ message queue MCP servers compared: Confluent Kafka (149 st
 content_type: "Comparison"
 card_description: "Confluent (149 stars, 50+ tools, Kafka+Flink+Schema Registry+Tableflow) vs kanapuli/mcp-kafka (75 stars, Go, self-managed) vs Google Pub/Sub (managed remote, 15 tools) vs AWS SQS/SNS (official, IAM) vs NATS (42 tools, embedded server) vs Apache Pulsar (70+ tools) — plus RabbitMQ, MQTT, Redis Streams, Azure, ActiveMQ, and IBM MQ."
 last_refreshed: 2026-04-16
+sources_audited: 2026-07-23
 ---
 
 Message queues and event streaming are the nervous system of distributed systems — and now AI agents can produce messages, consume events, manage topics, monitor consumer lag, and orchestrate pipelines directly through MCP. Every major messaging platform has at least one MCP server, and several have official vendor-backed implementations.
@@ -192,7 +193,7 @@ Microsoft's unified Azure MCP server covers all three messaging services, but wi
 - Event Hubs is the strongest, Event Grid and Service Bus are thin
 - Requires Azure identity auth — no API key option
 - Previous standalone repo (Azure/azure-mcp, 1,200 stars) was archived August 2025
-- Note: Some Azure Service Bus SDK libraries will be retired September 30, 2026 — migrate to latest Azure SDK libraries
+- Note: [Some Azure Service Bus SDK libraries will be retired September 30, 2026](https://techcommunity.microsoft.com/blog/messagingonazureblog/some-azure-service-bus-sdk-libraries-will-be-retired-on-30-september-2026%e2%80%94migrat/3917853) — migrate to latest Azure SDK libraries
 
 **Best for:** Azure teams who need Event Hubs management. Service Bus users will find the read-only tooling limiting.
 

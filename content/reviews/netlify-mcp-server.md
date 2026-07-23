@@ -6,6 +6,7 @@ og_description: "Netlify MCP: deploy sites, manage projects, install extensions,
 content_type: "Review"
 card_description: "Official first-party MCP server from Netlify for developers building AI-assisted deployment workflows. Enables AI agents to create and deploy sites, manage environment variables and secrets, install and uninstall extensions, configure access controls, fetch user and team information, and manage form submissions — going from prompt to production in a single conversation."
 last_refreshed: 2026-05-03
+sources_audited: 2026-07-23
 ---
 
 **At a glance:** [GitHub](https://github.com/netlify/netlify-mcp) — 40 stars, 29 forks, TypeScript. Official first-party from [Netlify](https://www.netlify.com/). npm package: `@netlify/mcp` (v1.15.1). AI agents go from prompt to live site. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
@@ -14,7 +15,7 @@ last_refreshed: 2026-05-03
 
 The Netlify MCP Server is the **official first-party MCP integration** for [Netlify's](https://www.netlify.com/) web development platform. It bridges AI coding agents directly to Netlify's API and CLI, enabling developers to create projects, deploy applications, manage infrastructure, and iterate — all through natural language prompts without leaving their editor.
 
-[Netlify](https://www.netlify.com/) was founded in 2014 by **Mathias Biilmann** (CEO) and **Christian Bach** (Chief Strategy and Creative Officer). The company has raised **$212M** in total funding across four rounds (Series A through D), with the 2021 Series D of $105M led by Bessemer Venture Partners valuing the company at **$2 billion**. Other investors include Andreessen Horowitz, Kleiner Perkins, and EQT Ventures. As of 2026: ~180-200 employees, ~$52M annual revenue. Trusted by LG Electronics, NBCUniversal, Riot Games, and Unilever.
+[Netlify](https://www.netlify.com/) was founded in 2014 by **Mathias Biilmann** (CEO) and **Christian Bach** (Chief Strategy and Creative Officer). The company has raised **$212M** in total funding across four rounds (Series A through D), with the 2021 Series D of $105M led by Bessemer Venture Partners valuing the company at **$2 billion**. Other investors include Andreessen Horowitz, Kleiner Perkins, and EQT Ventures. As of 2026: approximately 179 employees, ~$46M ARR (per [third-party estimates](https://getlatka.com/companies/netlify)). Trusted by LG Electronics, NBCUniversal, Riot Games, and Unilever.
 
 **Architecture note:** Unlike MCP servers that merely expose API endpoints, Netlify's MCP server wraps both the **Netlify API and CLI**, giving agents the full deployment lifecycle — from project creation through build and deploy to live URL — within a single conversation.
 

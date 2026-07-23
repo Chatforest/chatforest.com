@@ -6,9 +6,10 @@ og_description: "SQLite MCP servers: Anthropic's reference (archived), jparkerwe
 content_type: "Review"
 card_description: "SQLite has the most MCP servers of any database — but no canonical winner. Anthropic's reference server is archived, the community is fragmented across 15+ options, and the most capable server (139 tools) has almost no adoption. The ecosystem reflects SQLite's nature: everywhere, embedded in everything, but nobody's in charge."
 last_refreshed: 2026-05-04
+sources_audited: 2026-07-23
 ---
 
-SQLite is the most deployed database engine in the world — trillions of active databases across every iPhone, every Android device, every browser, every Mac, every Windows machine, and even the Mars rovers. It's likely used more than all other database engines combined. Part of our **[Databases MCP category](/categories/databases/)**.
+SQLite is the most deployed database engine in the world — [over one trillion active databases](https://sqlite.org/mostdeployed.html) across every iPhone, every Android device, every browser, every Mac, every Windows machine, and even the Mars rovers. It's likely used more than all other database engines combined. Part of our **[Databases MCP category](/categories/databases/)**.
 
 You'd expect the MCP ecosystem to match that dominance. It doesn't — but it's interesting.
 
@@ -234,16 +235,16 @@ SQLite has the most total MCP servers but the lowest top-server adoption. The ec
 | Aspect | Detail |
 |--------|--------|
 | Origin | Created by D. Richard Hipp in 2000 for the U.S. Navy |
-| Latest version | SQLite 3.53.0 (April 9, 2026) — WAL-reset corruption fix, new Query Result Formatter (QRF) library; 3.52.0 was withdrawn for compatibility issues |
+| Latest version | [SQLite 3.53.3](https://sqlite.org/releaselog/3_53_3.html) (June 26, 2026; [3.53.0](https://sqlite.org/releaselog/3_53_0.html) released April 9, 2026 added WAL-reset corruption fix and new Query Result Formatter (QRF) library; 3.52.0 was withdrawn for compatibility issues) |
 | License | Public domain (no copyright — one of the few major software projects with this status) |
 | Market position | Most deployed database engine in the world (trillions of instances), 3.18% of relational DB market by vendor usage, 1.9% of DBMS market |
-| Deployment | Every iPhone, Android, Mac, Windows 10+, Chrome, Firefox, Safari; Airbus A350; Mars rovers |
-| Users | 12,665+ companies (2026); used in virtually every smartphone and browser |
+| Deployment | [Every iPhone, Android, Mac, Windows 10+, Chrome, Firefox, Safari; Airbus A350; Mars rovers](https://sqlite.org/mostdeployed.html) |
+| Users | [12,000+ companies](https://6sense.com/tech/relational-databases/sqlite-market-share) (third-party estimate per 6sense; used in virtually every smartphone and browser) |
 | Revenue | $0 (public domain; Hipp's consortium model charges for support/testing) |
 | Key trend | "SQLite Renaissance" — growing production use via Turso, Cloudflare D1, libSQL, Litestream |
 | Performance | 10K–50K writes/sec (WAL mode on NVMe), ~0.01ms read latency (local) |
 
-**The SQLite Renaissance:** SQLite in 2025–2026 is experiencing a transformation from "embedded-only" to "production database." Turso provides edge replicas across 30+ locations. Cloudflare D1 runs SQLite on 300+ edge cities. libSQL (a SQLite fork by Turso) adds native replication, server mode, WASM UDFs, and vector search. Litestream enables continuous streaming backups to cloud storage. LiteFS offers FUSE-based replication (though deprioritized by Fly.io since mid-2024).
+**The SQLite Renaissance:** SQLite in 2025–2026 is experiencing a transformation from "embedded-only" to "production database." Turso provides edge replicas across 30+ locations. Cloudflare D1 runs SQLite on [330+ cities](https://www.cloudflare.com/network/). libSQL (a SQLite fork by Turso) adds native replication, server mode, WASM UDFs, and vector search. Litestream enables continuous streaming backups to cloud storage. LiteFS offers FUSE-based replication (though deprioritized by Fly.io since mid-2024).
 
 This trend suggests the SQLite MCP ecosystem will grow significantly. As more teams use SQLite in production — not just as an embedded database but as a distributed edge database — the need for robust MCP tooling will increase.
 
