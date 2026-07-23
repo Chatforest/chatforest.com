@@ -1,6 +1,7 @@
 ---
 title: "New Relic MCP Server — AI-Powered Observability with NRQL Queries, Alerts, Entity Discovery, and Log Analysis"
 date: 2026-03-23T23:30:00+09:00
+sources_audited: 2026-07-24
 description: "New Relic's official MCP server gives AI assistants access to observability data including NRQL queries, alert management, entity discovery, deployment analysis, and log examination."
 og_description: "New Relic MCP: NRQL queries, alerts, entity discovery, log analysis, deployment impact. Official first-party observability MCP. Rating: 3.0/5."
 content_type: "Review"
@@ -13,7 +14,7 @@ last_refreshed: 2026-05-03
 
 The New Relic MCP Server is the **official first-party MCP integration** for [New Relic's](https://newrelic.com/) observability platform. It connects AI agents and development tools directly to New Relic's telemetry data, enabling engineers to query metrics, investigate alerts, analyze performance, and generate insights using natural language — all without leaving their IDE or AI assistant.
 
-[New Relic](https://newrelic.com/) was founded in 2008 by Lew Cirne. The company was taken private in November 2023 when [Francisco Partners](https://www.franciscopartners.com/) and [TPG](https://www.tpg.com/) completed a **$6.5 billion acquisition** ($87/share). As of 2026: ~3,050 employees, ~$960M annual revenue (TTM). New Relic provides a unified observability platform covering APM, infrastructure monitoring, log management, digital experience monitoring, serverless, and more.
+[New Relic](https://newrelic.com/) was [founded in 2008 by Lew Cirne](https://en.wikipedia.org/wiki/New_Relic). The company was taken private in November 2023 when [Francisco Partners](https://www.franciscopartners.com/) and [TPG](https://www.tpg.com/) [completed a **$6.5 billion acquisition** ($87/share)](https://newrelic.com/press-release/20231108). As of 2026: ~3,050 employees, ~$960M annual revenue (TTM). New Relic provides a unified observability platform covering APM, infrastructure monitoring, log management, digital experience monitoring, serverless, and more.
 
 **Architecture note:** The MCP server acts as an **action engine** rather than a simple data connector. It translates natural language requests into NRQL queries, retrieves telemetry data, and provides AI-powered analysis including root cause identification and deployment impact assessment.
 
@@ -111,9 +112,9 @@ Access is governed by New Relic's **Role-Based Access Control (RBAC)**. The MCP 
 | Feb 24, 2026 | **Agentic Platform** launched (still in preview): no-code agent builder, SRE Nerd Agent, dynamic agent runtime, Workflow Automation (GA) |
 | Mar 4, 2026 | **Michael Frendo** appointed CTO |
 | Mar 15, 2026 | Issue #3: JSON Schema breakage (Gemini 2.5/OpenAI SDK incompatibility) filed — no response |
-| Mar 24, 2026 | New Relic named Leader in 2026 IDC MarketScape for AIOps |
+| Mar 24, 2026 | [New Relic named Leader in 2026 IDC MarketScape for AIOps](https://newrelic.com/blog/news/new-relic-named-a-leader-in-the-2026-idc-marketscape-for-worldwide-aiops) |
 | Apr 8, 2026 | Issue #4: OAuth/SSO auth breakage filed — no response |
-| Apr 22, 2026 | $1B transacted in AWS partnership milestone |
+| Apr 22, 2026 | [$1B transacted in AWS partnership milestone](https://newrelic.com/blog/news/aws-partnership-milestone) (announced at AWS Summit London) |
 | Apr 28, 2026 | Cloud Cost Intelligence GA; Session Replay for mobile launched |
 | 2025-2026 | Community implementations emerge (cloudbring, thrashy, ulucaydin, piekstra, buallen, ducduyn31, ruminaider, karldane, and others) |
 
@@ -127,7 +128,7 @@ The lack of any maintainer engagement on these issues — particularly the OAuth
 
 ## Pricing
 
-The MCP server itself is available through New Relic's platform. New Relic's pricing is based on **users + data ingest**:
+The MCP server itself is available through New Relic's platform. [New Relic's pricing](https://newrelic.com/pricing) is based on **users + data ingest**:
 
 | Edition | Monthly Cost | Data Ingest | Users |
 |---------|-------------|-------------|-------|

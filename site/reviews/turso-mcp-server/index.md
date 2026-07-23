@@ -148,7 +148,7 @@ The database itself (not just the MCP server) runs in-process across Go, JavaScr
 
 ### Cloud Integration
 
-For production use, Turso Cloud offers hosted databases with global edge replication:
+For production use, [Turso Cloud](https://turso.tech/pricing) offers hosted databases with global edge replication:
 
 | Plan | Price | Storage | Databases | Row Reads/Month |
 |------|-------|---------|-----------|-----------------|

@@ -81,7 +81,7 @@ The Skills layer is available via Claude Code (`claude.com/plugins/nimble`) and 
 
 ## Benchmark Performance
 
-In [independent testing by AIMultiple](https://aimultiple.com/browser-mcp) across multiple MCP servers:
+In [testing by AIMultiple](https://aimultiple.com/browser-mcp) across multiple MCP servers *(disclosure: Bright Data, Apify, and Oxylabs are disclosed sponsors of the AIMultiple benchmark page; Nimble is not a listed sponsor)*:
 
 **Web Search & Extraction (single-agent):**
 

@@ -5,7 +5,7 @@
 
 **At a glance:** MySQL now has **both community and a nascent official presence** in the MCP ecosystem. The two leading MySQL-specific servers are [benborla/mcp-server-mysql](https://github.com/benborla/mcp-server-mysql) (1.6k stars, TypeScript, MIT) with SSH tunnel support and Claude Code integration, and [designcomputer/mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server) (1.2k stars, Python, MIT) focused on simplicity and security. Multi-database servers [Bytebase DBHub](https://github.com/bytebase/dbhub) (2.7k stars) and [Google's MCP Toolbox](https://github.com/googleapis/mcp-toolbox) (14.9k stars) also support MySQL alongside other databases. Oracle released a **proof-of-concept MCP server for MySQL HeatWave** (cloud-only, not production-ready), ending the era of zero official Oracle MCP presence. Cloud vendors AWS, Azure, and Google all provide MySQL MCP support through their platform servers. Part of our **[Databases MCP category](/categories/databases/)**.
 
-MySQL is the **world's most popular open-source relational database** — powering roughly **39% of the relational database market** with over 235,000 companies using it worldwide. Created in 1995 by Michael "Monty" Widenius, David Axmark, and Allan Larsson as MySQL AB, it was acquired by Sun Microsystems for $1 billion in 2008, then passed to Oracle when Oracle acquired Sun for $5.6 billion in 2010. The latest Innovation release is **MySQL 9.6** (January 2026); the current Long-Term Support release is **MySQL 8.4.5**. **MySQL 8.0 reached end-of-life on April 21, 2026** — that milestone has now passed, putting the ecosystem firmly in the 8.4 LTS + 9.x era.
+MySQL is the **world's most popular open-source relational database** — powering roughly **39% of the relational database market** with over 235,000 companies using it worldwide. Created in 1995 by Michael "Monty" Widenius, David Axmark, and Allan Larsson as MySQL AB, it was [acquired by Sun Microsystems for $1 billion in 2008](https://techcrunch.com/2008/01/16/sun-picks-up-mysql-for-1-billion-open-source-is-a-legitimate-business-model/), then passed to Oracle when [Oracle acquired Sun for $7.4 billion in 2010](https://en.wikipedia.org/wiki/Acquisition_of_Sun_Microsystems_by_Oracle_Corporation). The [latest Innovation release is **MySQL 9.6**](https://endoflife.date/mysql) (January 2026); the current Long-Term Support release is **MySQL 8.4.5**. **MySQL 8.0 reached the end of Extended Support on [April 30, 2026](https://www.mysql.com/support/eol-notice.html)** and entered Oracle Sustaining Support — that milestone has now passed, putting the ecosystem firmly in the 8.4 LTS + 9.x era.
 
 **Architecture note:** MySQL's "no official server" story has changed slightly. Oracle has released a **proof-of-concept MCP server** via [oracle.com/mcp/](https://www.oracle.com/mcp/) for MySQL HeatWave and MySQL AI — covering connection management, query execution, vector store management, and OCI Object Store integration. However, it is cloud-only (HeatWave), PoC-grade (not production-ready), and separate from community MySQL. The dominant open-source alternative MariaDB (forked from MySQL in 2009 by Widenius himself) has its own [official MCP server](https://github.com/MariaDB/mcp) (166 stars), making it the best-served MySQL-compatible database for official MCP support.
 
@@ -162,15 +162,14 @@ Anthropic included a MySQL-compatible PostgreSQL server pattern in the original 
 | Aspect | Detail |
 |--------|--------|
 | Origin | MySQL AB, Sweden (1995), by Michael Widenius, David Axmark, Allan Larsson |
-| Ownership | Oracle Corporation (via Sun Microsystems acquisition, 2010) |
-| Latest Innovation release | MySQL 9.6.0 (January 2026); MySQL 9.7 LTS expected mid-2026 |
+| Ownership | Oracle Corporation (via [Sun Microsystems acquisition, $7.4B, 2010](https://en.wikipedia.org/wiki/Acquisition_of_Sun_Microsystems_by_Oracle_Corporation)) |
+| Latest Innovation release | [MySQL 9.6.0 (January 2026)](https://endoflife.date/mysql); MySQL 9.7 LTS expected mid-2026 |
 | Latest LTS release | MySQL 8.4.5 |
-| End-of-life: MySQL 8.0 | April 21, 2026 (now past — Oracle Sustaining Support only) |
+| End of Extended Support: MySQL 8.0 | [April 30, 2026](https://www.mysql.com/support/eol-notice.html) (now past — Oracle Sustaining Support only) |
 | License | GPL v2 (Community Edition) / Commercial (Enterprise Edition) |
 | Market share | 39.3% of relational databases ([6sense](https://6sense.com/tech/relational-databases/mysql-market-share)) |
 | Companies using MySQL | 235,000+ worldwide |
 | Top users | Facebook, YouTube, Twitter/X, WordPress, Uber, Netflix, Airbnb, Shopify |
-| Cloud Database MySQL market | ~$15 billion (2025), ~15% CAGR through 2033 |
 | Fork | MariaDB (forked 2009 by Widenius after Oracle acquisition) |
 
 MySQL's dual licensing (open-source GPL + commercial Enterprise Edition) and Oracle's stewardship have driven some users toward PostgreSQL or MariaDB, but MySQL remains the default database for web applications — particularly in the LAMP stack (Linux, Apache, MySQL, PHP/Python) that powers a massive share of the internet.
@@ -198,7 +197,7 @@ MySQL's dual licensing (open-source GPL + commercial Enterprise Edition) and Ora
 
 3. **No performance analysis tools** — Unlike PostgreSQL's Postgres MCP Pro with its index tuning and workload analysis, no MySQL MCP server provides deep performance optimization capabilities. MySQL administrators get schema browsing and query execution, not DBA-grade performance tooling.
 
-4. **MySQL 8.0 end-of-life passed** — MySQL 8.0 reached EOL on April 21, 2026, entering Oracle Sustaining Support only. Many MCP servers haven't documented compatibility with MySQL 9.x Innovation releases or the 8.4 LTS track. Organizations running 8.0 should upgrade to 8.4 LTS (supported through April 2032) or 9.x Innovation releases. MySQL 9.7 LTS is expected mid-2026.
+4. **MySQL 8.0 Extended Support ended** — MySQL 8.0 [entered Oracle Sustaining Support on April 30, 2026](https://www.mysql.com/support/eol-notice.html) (Extended Support ended; Premier Support had ended April 30, 2025). Many MCP servers haven't documented compatibility with MySQL 9.x Innovation releases or the 8.4 LTS track. Organizations running 8.0 should upgrade to 8.4 LTS (supported through April 2032) or 9.x Innovation releases. MySQL 9.7 LTS is expected mid-2026.
 
 5. **Oracle's dual licensing creates confusion** — MySQL's GPL v2 license means MCP servers using MySQL client libraries must navigate GPL compatibility. Some servers choose MIT/Apache licenses for their own code while depending on GPL MySQL connectors — the legal implications aren't always clear.
 

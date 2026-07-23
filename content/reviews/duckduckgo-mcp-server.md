@@ -1,6 +1,7 @@
 ---
 title: "The DuckDuckGo MCP Server — Free Web Search for AI Agents (No API Key Required)"
 date: 2026-03-23T23:30:00+09:00
+sources_audited: 2026-07-24
 description: "DuckDuckGo MCP server gives AI agents free web search with no API key. 1.1K GitHub stars, 2 tools, Python, MIT license."
 og_description: "DuckDuckGo MCP server: free web search for AI agents, no API key needed. 1.1K stars, 2 tools, Python, MIT. The free alternative to Brave Search MCP. Rating: 3.5/5."
 content_type: "Review"
@@ -60,7 +61,7 @@ But there's a catch. DuckDuckGo doesn't offer an official API for programmatic s
 
 2. **Rate limits are real.** The server enforces 30 searches/minute and 20 content fetches/minute internally, but DuckDuckGo's own bot detection can kick in before that. Heavy use from a single IP can trigger blocks or degraded results.
 
-3. **Search quality depends on Bing.** DuckDuckGo's results come primarily from Bing's index. With Microsoft discontinuing the Bing Search API in 2025, the relationship between DuckDuckGo and Bing's index continues — but DuckDuckGo adds its own ranking signals and privacy layer on top.
+3. **Search quality depends on Bing.** [DuckDuckGo's own sources page](https://duckduckgo.com/duckduckgo-help-pages/results/sources) states that results are "largely sourced from Bing" for traditional web links and images — with DuckDuckGo adding its own crawl data, ranking signals, and privacy layer on top.
 
 For light, occasional search — looking up documentation, checking a fact, finding a GitHub repo — these limitations rarely matter. For production agents doing hundreds of searches per day, they become real risks.
 

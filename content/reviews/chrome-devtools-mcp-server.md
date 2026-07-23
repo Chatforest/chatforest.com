@@ -6,6 +6,7 @@ og_description: "Chrome DevTools MCP: official Google browser debugging server f
 content_type: "Review"
 card_description: "Official Google Chrome DevTools MCP server for AI coding agents. 29 tools covering browser automation, performance tracing with Core Web Vitals, memory heap snapshots, Lighthouse audits, network request inspection, and console debugging. Connect to your existing browser session or launch headless. 34K GitHub stars, 414K weekly npm downloads."
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-24
 ---
 
 **At a glance:** Official Google project, [34,014 GitHub stars](https://github.com/ChromeDevTools/chrome-devtools-mcp), 29 tools, TypeScript, Apache 2.0, [v0.26.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases), 106 contributors, [~414K weekly npm downloads](https://www.npmjs.com/package/chrome-devtools-mcp), stdio transport
@@ -79,7 +80,7 @@ The server exposes 29 tools across seven categories:
 | `take_screenshot` | Screenshot the full page or a specific element |
 | `take_snapshot` | Accessibility-tree-based text snapshot with unique element UIDs |
 
-The performance tools are where this server separates itself from every other browser MCP server. A performance trace can generate 30 MB of raw data — the server condenses that into approximately 4 KB of AI-consumable summaries, pulling out Core Web Vitals (LCP, CLS, TBT) and actionable insights. The agent can then drill into specific insights with `performance_analyze_insight` for root cause analysis.
+The performance tools are where this server separates itself from every other browser MCP server. A performance trace can generate 30 MB of raw data — the server condenses that into approximately 4 KB of AI-consumable summaries, pulling out Core Web Vitals (LCP, CLS, TBT) and actionable insights ([per the project README](https://github.com/ChromeDevTools/chrome-devtools-mcp#readme)). The agent can then drill into specific insights with `performance_analyze_insight` for root cause analysis.
 
 ## Slim Mode
 
@@ -186,7 +187,7 @@ If you need cross-browser testing: Playwright MCP. If you need to understand why
 
 ## What's Not
 
-**Token consumption is significant.** At ~18K tokens for tool definitions alone, this server takes a meaningful bite out of your agent's context window before any work begins. Every tool costs tokens whether you use it or not. The slim mode helps, but it's all-or-nothing — there's no way to load, say, just the performance and debugging tools without the input automation tools.
+**Token consumption is significant.** At [~18K tokens for tool definitions](https://github.com/ChromeDevTools/chrome-devtools-mcp#readme) alone, this server takes a meaningful bite out of your agent's context window before any work begins. Every tool costs tokens whether you use it or not. The slim mode helps, but it's all-or-nothing — there's no way to load, say, just the performance and debugging tools without the input automation tools.
 
 **Security surface area is real.** When connected to your browser session, the MCP server has access to everything the browser can see — authenticated sessions, cookies, page content. A prompt injection on any page the agent visits could potentially escalate to accessing data in other open tabs. The Chrome team has added the permission dialog for `--autoConnect`, but the fundamental risk of giving an AI agent browser-level access remains.
 
@@ -214,7 +215,7 @@ If you need cross-browser testing: Playwright MCP. If you need to understand why
 - **December 2025:** autoConnect feature for connecting to existing Chrome 144+ sessions without manual port configuration.
 - **March 2026 (v0.20.x):** Performance tracing with Core Web Vitals insights, memory heap snapshots, Lighthouse audits, network request inspection, console message retrieval, CrUX integration, slim mode, form filling, emulation tools. [Memory leak fix](https://github.com/ChromeDevTools/chrome-devtools-mcp/pull/1200) for autoConnect mode. Multiple releases per week with active bug fixes.
 - **April 2026 ([v0.21.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.21.0)):** Added memory leak detection skill using `take_memory_snapshot`. Experimental `--experimental-vision` and `--experimental-screencast` flags. CLI fixes for user data directory handling and page management.
-- **May 2026 (v0.26.0):** The team has shipped 43 releases in 7 months, maintaining a roughly weekly cadence. v0.26.0 is the latest as of mid-May 2026. The release velocity — faster than almost any MCP server in the ecosystem — reflects both active Google engineering investment and a growing user base surfacing edge cases quickly. New debugging skills for accessibility audits and LCP diagnosis added in the April–May window.
+- **May 2026 (v0.26.0):** The team has shipped [43 releases in 7 months](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases), maintaining a roughly weekly cadence. v0.26.0 is the latest as of mid-May 2026. The release velocity — faster than almost any MCP server in the ecosystem — reflects both active Google engineering investment and a growing user base surfacing edge cases quickly. New debugging skills for accessibility audits and LCP diagnosis added in the April–May window.
 
 ## The Bottom Line
 

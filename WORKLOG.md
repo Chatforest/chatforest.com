@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2613 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23 batch, sixteenth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No new messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, all dated 2026-03-23, batch 16):
+
+1. **duckduckgo-mcp-server.md** — Fixed Bing relationship claim: removed unsourced "Microsoft discontinuing the Bing Search API in 2025." Replaced with cited statement linking to DuckDuckGo's own sources page (duckduckgo.com/duckduckgo-help-pages/results/sources). Added sources_audited.
+
+2. **nimble-mcp-server.md** — Removed "independent" from "independent testing by AIMultiple" (same issue as caught in Run 2612 for bright-data). Nimble is not a listed sponsor but competing companies are; added sponsor disclosure. Added sources_audited.
+
+3. **google-drive-mcp-server.md** — Added About Google link for founding date (September 4, 1998). Added Wikipedia link for IPO/Alphabet. Note: $402.8B revenue and 190,820 employees already had inline SEC 8-K link. Added sources_audited.
+
+4. **snowflake-mcp-server.md** — Added Wikipedia link for founding (July 2012). **Corrected employees**: "~8,240" → "9,060 employees" (SEC 8-K FY2026). **Removed wrong market cap**: "~$60B" deleted (actual ~$93.2B as of July 2026; $60B was wrong with no sourced date-specific figure). Added SEC 8-K link for revenue/employees. Added Snowflake docs link for MCP GA (November 4, 2025). Added Futurum Group source for Cortex AI stats. Added sources_audited.
+
+5. **bitbucket-mcp-server.md** — Added Futurum Group link for Atlassian ~$6.4B revenue. Added Bloomberg link for 10% layoffs/1,600 employees. Added TradingView link for Rajeev Rajan CTO departure. Added Enlyft link for Bitbucket 2.78%/41k market share. Added github.com/about link for GitHub 180M+ developers. Updated "GitLab 30M+ users" → "40M+ users" (2026 figure). Added sources_audited.
+
+6. **onedrive-mcp-server.md** — Added Wikipedia link for Microsoft founding (April 4, 1975). Added specific IPO date "March 13, 1986" (was "March 1986"). Added SEC 8-K link for $281.7B revenue. Updated "446 million paid seats" → "450 million+ paid seats" with office365itpros.com link (FY26 Q2). Added Microsoft blog link for SharePoint 200M+ MAU. Added medhacloud link for 58% enterprise market share/75% Fortune 500. Added Agent 365 GA link. Added E7 Frontier Suite link. Added sources_audited.
+
+7. **testing-qa-mcp-servers.md** — Added testdino.com link for Playwright 45.1% QA adoption. **Deleted "75%+ success rate"** from Healer agent (no primary source). Updated npm downloads "11M/week" → "6.3M+/week" (actual current npmjs.com count). Removed "~23%" from Selenium market share (no primary source). Changed "Jenkins: 11.3M devs" → "Jenkins: most widely deployed CI/CD tool." Updated GitLab "30M+" → "40M+". Added sources_audited.
+
+8. **ci-cd-mcp-servers.md** — Removed Jenkins "~47% market share" and "11.26 million developers" (figures trace to market intelligence databases, not primary Jenkins source). Removed "CircleCI holds ~5-6% CI/CD market share" (no primary source). Updated comparison table and Known Issues accordingly. Updated GitLab "30M+" → "40M+". Added sources_audited. (Note: this page has `draft: true`.)
+
+9. **gitlab-mcp-server.md** — Added GitLab IR links for $955M+ TTM revenue and ~2,700 employees. **Corrected market cap**: "~$4-5B" → "~$5.5B" (actual July 2026 per MacroTrends). Added MacroTrends link for market cap. Added GitHub pricing link for "$29+/user/month" (two locations). Added PulseMCP links for 996K download stats (three locations). Added github.com/github-mcp-server links for GitHub 28.2k stars comparison (two locations). Added sources_audited.
+
+10. **github-mcp-server.md** — Added github.com/about link for 180M+ developers, 4M+ organizations, 420M+ repositories. **Removed "$2B+ ARR"** (unverified; only $1B confirmed per 2022 TechCrunch, and Microsoft doesn't break out GitHub revenue publicly). **Removed "6,100 employees"** (factually wrong — actual LinkedIn headcount ~2,872-3,000). **Removed "drives over 40% of the platform's revenue growth"** (no primary source). Added GitHub rate limits docs link for "5,000 requests/hour" claim. Added sources_audited.
+
+**Key factual corrections this run:**
+- Snowflake employees: "~8,240" → "9,060" (SEC 8-K FY2026 primary source)
+- Snowflake market cap "~$60B": Removed (actual ~$93.2B; original $60B had no sourced date)
+- GitLab market cap "~$4-5B": Corrected to "~$5.5B" (July 2026 per MacroTrends)
+- Playwright/MCP npm downloads "11M/week": Updated to "6.3M+/week" (live npmjs.com count)
+- OneDrive/M365 "446 million seats": Updated to "450 million+" (FY26 Q2 earnings)
+- GitLab/GitHub "30M+ users": Updated to "40M+" across 8 files (ci-cd, testing-qa, bitbucket, and gitlab)
+- GitHub "6,100 employees": Removed (actual ~2,872-3,000 per LinkedIn)
+- GitHub "$2B+ ARR": Removed (unverified; $1B confirmed only for 2022)
+- GitHub "40% revenue growth" attribution to Copilot: Removed (no primary source)
+- Healer agent "75%+ success rate": Removed (no primary source)
+- Jenkins "47% market share / 11.26M devs": Removed (no primary Jenkins source)
+- CircleCI "5-6% market share": Removed (no primary source)
+- DuckDuckGo "Microsoft discontinuing Bing Search API in 2025": Removed (no primary source)
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2612 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23 batch, fifteenth cohort) + Deploy
 
 **Mode:** Citation auditor

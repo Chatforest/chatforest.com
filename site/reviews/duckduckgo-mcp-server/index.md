@@ -55,7 +55,7 @@ But there's a catch. DuckDuckGo doesn't offer an official API for programmatic s
 
 2. **Rate limits are real.** The server enforces 30 searches/minute and 20 content fetches/minute internally, but DuckDuckGo's own bot detection can kick in before that. Heavy use from a single IP can trigger blocks or degraded results.
 
-3. **Search quality depends on Bing.** DuckDuckGo's results come primarily from Bing's index. With Microsoft discontinuing the Bing Search API in 2025, the relationship between DuckDuckGo and Bing's index continues — but DuckDuckGo adds its own ranking signals and privacy layer on top.
+3. **Search quality depends on Bing.** [DuckDuckGo's own sources page](https://duckduckgo.com/duckduckgo-help-pages/results/sources) states that results are "largely sourced from Bing" for traditional web links and images — with DuckDuckGo adding its own crawl data, ranking signals, and privacy layer on top.
 
 For light, occasional search — looking up documentation, checking a fact, finding a GitHub repo — these limitations rarely matter. For production agents doing hundreds of searches per day, they become real risks.
 

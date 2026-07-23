@@ -68,7 +68,7 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> <a href="https://github.com/square/square-mcp-server">GitHub</a> — 99 stars, 21 forks, TypeScript. <a href="https://www.npmjs.com/package/square-mcp-server">npm</a> — square-mcp-server v0.1.2. Official first-party from <a href="https://squareup.com/">Square</a> (<a href="https://block.xyz/">Block, Inc.</a>). Apache 2.0 license. 3 MCP tools wrapping 40+ API services, hosted remote + local server options.</p>
 <p>The Square MCP Server is the <strong>official first-party MCP integration</strong> for <a href="https://squareup.com/">Square&rsquo;s</a> commerce and payments platform. Rather than exposing individual API endpoints as separate tools, it provides a dynamic discovery interface — three meta-tools that let AI assistants explore and execute any Square API operation across payments, orders, inventory, customers, loyalty, and more.</p>
-<p><a href="https://squareup.com/">Square</a> was founded in 2009 by Jack Dorsey and Jim McKelvie, originally known for its iconic white card reader. The parent company rebranded to <a href="https://block.xyz/">Block, Inc.</a> in December 2021. As of 2025: ~10,200 employees, $24.2B annual revenue, ~$36-40B market cap (NYSE: XYZ). Block was added to the S&amp;P 500 in July 2025. The company operates Square (merchant services), Cash App (consumer finance), TIDAL (music streaming), and TBD (decentralized finance).</p>
+<p><a href="https://squareup.com/">Square</a> was <a href="https://en.wikipedia.org/wiki/Block,_Inc.">founded in 2009 by Jack Dorsey and Jim McKelvey</a>, originally known for its iconic white card reader. The parent company <a href="https://block.xyz/">rebranded to Block, Inc. in December 2021</a>. As of 2025: <a href="https://investor.block.com/">~10,200 employees, $24.2B annual revenue, ~$36-40B market cap (NYSE: SQ)</a>. The company operates Square (merchant services), Cash App (consumer finance), TIDAL (music streaming), and TBD (decentralized finance).</p>
 <p><strong>Architecture note:</strong> The repository is <strong>auto-generated from Square&rsquo;s OpenAPI Specification</strong>. This means contributions require upstream generator changes rather than direct code edits. The server exposes Square&rsquo;s entire REST API through three meta-tools rather than individual endpoint wrappers — a fundamentally different approach from most MCP servers.</p>
 <h2 id="what-it-does">What It Does</h2>
 <p>The server provides <strong>3 meta-tools</strong> that dynamically access <strong>40+ Square API services</strong>:</p>
@@ -255,10 +255,6 @@ Add the URL <code>https://mcp.squareup.com/sse</code> via Settings → Integrati
 <td>block/square-mcp archived, deprecated in favor of square/square-mcp-server</td>
 </tr>
 <tr>
-<td>Jul 2025</td>
-<td>Block added to S&amp;P 500</td>
-</tr>
-<tr>
 <td>2025-2026</td>
 <td>Remote hosted server at mcp.squareup.com launched</td>
 </tr>
@@ -278,7 +274,7 @@ Add the URL <code>https://mcp.squareup.com/sse</code> via Settings → Integrati
 </table>
 <p>The original <code>block/square-mcp</code> (4 stars, Python, MIT license) was a simpler implementation that required manual access token configuration. Square replaced it with the current auto-generated TypeScript server under the <code>square</code> organization, adding OAuth support and the hosted remote server option.</p>
 <h2 id="pricing">Pricing</h2>
-<p>The MCP server itself is free and open source (Apache 2.0). Standard Square transaction fees apply to API operations:</p>
+<p>The MCP server itself is free and open source (Apache 2.0). <a href="https://squareup.com/us/en/payments/our-fees">Standard Square transaction fees</a> apply to API operations:</p>
 <table>
 <thead>
 <tr>

@@ -7,7 +7,7 @@
 
 The Salesforce DX MCP Server is the **official first-party MCP integration** for developers building on the [Salesforce](https://www.salesforce.com/) platform. It provides AI assistants with deep access to Salesforce development workflows — deploying metadata, running SOQL queries, analyzing code quality, managing DevOps Center pipelines, building Lightning Web Components, and migrating Aura components to LWC.
 
-[Salesforce](https://www.salesforce.com/) was founded in 1999 by Marc Benioff, Parker Harris, Dave Moellenhoff, and Frank Dominguez. The company pioneered cloud-based CRM and has grown into the world's largest enterprise software company by revenue. As of fiscal year 2026 (ending January 31, 2026): ~76,400 employees, $41.5B annual revenue (up 10% YoY), ~$186B market cap. Salesforce is publicly traded on NYSE (CRM). The DX MCP server launched in June 2025 as part of Salesforce's broader MCP strategy announced alongside Agentforce 3.
+[Salesforce](https://www.salesforce.com/) was [founded in 1999 by Marc Benioff, Parker Harris, Dave Moellenhoff, and Frank Dominguez](https://en.wikipedia.org/wiki/Salesforce). The company pioneered cloud-based CRM and is the world's leading CRM vendor. As of [fiscal year 2026 (ending January 31, 2026)](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Fourth-Quarter-Fiscal-2026-Results/default.aspx): ~83,334 employees, $41.5B annual revenue (up 10% YoY), ~$186B market cap. Salesforce is publicly traded on NYSE (CRM). The DX MCP server launched as a [Developer Preview in May 2025](https://developer.salesforce.com/blogs/2025/06/level-up-your-developer-tools-with-salesforce-dx-mcp) as part of Salesforce's broader MCP strategy announced alongside Agentforce 3.
 
 Beyond the DX MCP server, Salesforce's MCP ecosystem includes the **Heroku Platform MCP Server** (GA, 30+ tools for app management) and the **MuleSoft MCP Server** (GA, integration platform management). This review focuses on the DX MCP server, with context on the broader ecosystem.
 
@@ -174,7 +174,7 @@ The experimental `--dynamic-tools` flag takes this further by discovering tools 
 | Date | Event |
 |------|-------|
 | June 23, 2025 | Salesforce announces MCP support across the platform |
-| June 2025 | DX MCP Server launched (Developer Preview) |
+| May 30, 2025 | DX MCP Server launched (Developer Preview) |
 | August 27, 2025 | Issue tracking moved from salesforcecli/mcp to forcedotcom/mcp |
 | March 23, 2026 | v0.26.9 (original review snapshot) |
 | March 26, 2026 | v0.29.5 — Bitbucket support for DevOps; expanded AST language support in Code Analyzer |
@@ -255,7 +255,7 @@ Additionally, **Agentforce** (Salesforce's AI agent platform) is adding native M
 
 **Rating: 4 out of 5**
 
-The Salesforce DX MCP Server earns its rating through **official first-party backing from the world's largest enterprise software company**, an **unmatched depth of 60+ tools** organized into logical toolsets, and **rapid, sustained development** — advancing from v0.26.9 to v0.30.8 in just six weeks. Key milestones since the March 2026 review: the **DevOps toolset went fully GA** (April 23), a new **Experts-Validation toolset** arrived at GA (March 30), and the new **ApexGuru** tool uniquely combines static AST analysis with org runtime telemetry to prioritize real performance bottlenecks. At ~121K monthly npm downloads (up 15% in six weeks) and **PulseMCP rank #83 globally** (Top Pick, 665K est. monthly visitors), this is one of the most widely used MCP servers in the ecosystem.
+The Salesforce DX MCP Server earns its rating through **official first-party backing from a major enterprise software company**, an **unmatched depth of 60+ tools** organized into logical toolsets, and **rapid, sustained development** — advancing from v0.26.9 to v0.30.8 in just six weeks. Key milestones since the March 2026 review: the **DevOps toolset went fully GA** (April 23), a new **Experts-Validation toolset** arrived at GA (March 30), and the new **ApexGuru** tool uniquely combines static AST analysis with org runtime telemetry to prioritize real performance bottlenecks. At [~121K monthly npm downloads](https://www.npmjs.com/package/@salesforce/mcp) (up 15% in six weeks), this is one of the most widely used MCP servers in the ecosystem.
 
 It still loses a point for **overall beta/pilot status** (the server as a whole remains subject to Beta Services Terms), **SOQL-only data access** (no CRUD operations for records), and **metadata deployment bugs** across multiple open issues. The Salesforce CLI pre-authentication requirement adds setup friction.
 

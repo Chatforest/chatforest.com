@@ -9,7 +9,7 @@
 
 ScrapingBee's MCP server takes a different approach from most entries in the MCP ecosystem: it's a **fully hosted, managed endpoint** — there's no repository to clone, no server to run, and no infrastructure to maintain. You get an MCP URL with your API key baked in, point your AI client at it, and your agent can immediately scrape websites, take screenshots, download files, and query specialized data extractors for Google, Amazon, Walmart, and other major platforms.
 
-[ScrapingBee](https://www.scrapingbee.com/) was founded in 2019 by Pierre De Wulf and Kevin Sahin in France. The company bootstrapped to ~$5M ARR with just 7 employees before being [acquired by Oxylabs](https://www.scrapingbee.com/blog/scrapingbee-acquisition/) in June 2025 for an eight-figure sum (~$11.5M). ScrapingBee continues operating as a separate product and entity, with both founders staying on. Oxylabs is a Lithuanian web data extraction company — the acquisition expands their reach into the direct-to-consumer market.
+[ScrapingBee](https://www.scrapingbee.com/) was [founded in 2019 by Pierre De Wulf and Kevin Sahin in France](https://www.starterstory.com/stories/2183-web-scraping-as-a-business). The company [bootstrapped to ~$5M ARR with a small team](https://www.startupsfortherestofus.com/episodes/episode-783-bootstrapping-scrapingbee-to-5m-arr-and-an-8-figure-exit) before being [acquired by Oxylabs](https://tech.eu/2025/06/20/oxylabs-group-strengthens-position-with-eight-figure-acquisition-of-scrapingbee/) in June 2025 for an undisclosed eight-figure sum. ScrapingBee continues operating as a separate product and entity, with both founders staying on. Oxylabs is a Lithuanian web data extraction company — the acquisition expands their reach into the direct-to-consumer market.
 
 ## What It Does
 
@@ -54,7 +54,7 @@ These tools are purpose-built for specific high-value targets:
 | **Expedia** | Travel listings and pricing |
 | **ChatGPT** | Scrape ChatGPT-generated answers |
 
-The specialized scrapers handle the anti-bot complexity of each platform automatically. Success rates exceed 90% for Amazon, Google, and Walmart according to [independent testing by Proxyway](https://proxyway.com/best/mcp-servers-for-web-scraping).
+The specialized scrapers handle the anti-bot complexity of each platform automatically. Success rates exceed 90% for Amazon, Google, and Walmart according to [Proxyway's 2026 MCP benchmark](https://proxyway.com/best/mcp-servers-for-web-scraping).
 
 ## Transport & Authentication
 

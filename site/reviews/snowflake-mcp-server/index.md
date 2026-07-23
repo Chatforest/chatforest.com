@@ -21,7 +21,7 @@
 
 The Snowflake MCP Server is the **official first-party MCP integration** for working with the [Snowflake](https://www.snowflake.com/) Data Cloud. It provides AI assistants with access to Snowflake's Cortex AI suite — search over unstructured data, natural language to SQL via semantic models, agentic orchestration across data sources — plus SQL execution with fine-grained permission controls, database object management, and semantic view querying.
 
-[Snowflake](https://www.snowflake.com/) was founded in 2012 by Benoit Dageville, Thierry Cruanes, and Marcin Żukowski. The company pioneered cloud-native data warehousing with separation of storage and compute. As of fiscal year 2026: ~8,240 employees, $4.68B annual revenue (29% YoY growth), ~$60B market cap. Snowflake is publicly traded on NYSE (SNOW).
+[Snowflake](https://www.snowflake.com/) was [founded in July 2012](https://en.wikipedia.org/wiki/Snowflake_Inc.) by Benoit Dageville, Thierry Cruanes, and Marcin Żukowski. The company pioneered cloud-native data warehousing with separation of storage and compute. As of fiscal year 2026 (ended January 31, 2026): [9,060 employees and $4.68B annual revenue (29% YoY growth)](https://www.sec.gov/Archives/edgar/data/1640147/000164014726000013/ex991_pressreleasex033126.htm). Snowflake is publicly traded on NYSE (SNOW).
 
 Snowflake offers **two MCP deployment options**: an open-source local server (Snowflake-Labs/mcp on GitHub) and a **managed MCP endpoint** built into the Snowflake platform (GA since November 2025). This review covers both, with emphasis on the open-source server.
 
@@ -155,7 +155,7 @@ Docker and Docker Compose configurations are provided for containerized deployme
 
 ## Managed MCP Server (Cloud Endpoint)
 
-Snowflake also offers a **managed MCP endpoint** built directly into the platform — no separate server to deploy. This went GA in November 2025.
+Snowflake also offers a **managed MCP endpoint** built directly into the platform — no separate server to deploy. This [went GA on November 4, 2025](https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp).
 
 ### Managed Server Tools
 
@@ -261,9 +261,9 @@ Cortex AI features (Search, Analyst, Agents) consume additional credits based on
 
 **Rating: 4 out of 5**
 
-The major development since the last review is the **deprecation of the open-source Snowflake-Labs/mcp repository** — v1.4.2 (May 15, 2026) initiated the end-of-life process, with Snowflake directing all users to migrate to the managed endpoint. This is not a setback; it's a strategic consolidation. Snowflake's managed MCP server now supports 15+ AI platforms (Amazon Bedrock AgentCore, Azure AI Foundry, Salesforce Agentforce, Windsurf, Workday, and more), MCP connectors for Jira, Salesforce, and Google Workspace, and enterprise data partnerships with MSCI, Nasdaq, and the Associated Press. Over 9,100 Snowflake accounts now use Cortex AI weekly, with 200%+ growth in AI workloads.
+The major development since the last review is the **deprecation of the open-source Snowflake-Labs/mcp repository** — v1.4.2 (May 15, 2026) initiated the end-of-life process, with Snowflake directing all users to migrate to the managed endpoint. This is not a setback; it's a strategic consolidation. Snowflake's managed MCP server now supports 15+ AI platforms (Amazon Bedrock AgentCore, Azure AI Foundry, Salesforce Agentforce, Windsurf, Workday, and more), MCP connectors for Jira, Salesforce, and Google Workspace, and enterprise data partnerships with MSCI, Nasdaq, and the Associated Press. Over [9,100 Snowflake accounts now use Cortex AI weekly, with 200%+ growth in AI workloads](https://futurumgroup.com/insights/snowflake-q4-fy-2026-results-highlight-ai-led-consumption-and-platform-expansion/).
 
-The Snowflake MCP Server earns its rating through **official first-party backing from a major data platform** ($4.68B revenue, ~8,240 employees), **deep Cortex AI integration** that no community server offers (Search for RAG, Analyst for natural language SQL, Agents for multi-source orchestration), and a **rapidly expanding ecosystem** with enterprise partners, cloud platform integrations, and workflow tool connectors. The managed endpoint's SQL command (`CREATE MCP SERVER`) remains the easiest entry point — built-in OAuth, RBAC, and zero infrastructure.
+The Snowflake MCP Server earns its rating through **official first-party backing from a major data platform** ($4.68B revenue, 9,060 employees), **deep Cortex AI integration** that no community server offers (Search for RAG, Analyst for natural language SQL, Agents for multi-source orchestration), and a **rapidly expanding ecosystem** with enterprise partners, cloud platform integrations, and workflow tool connectors. The managed endpoint's SQL command (`CREATE MCP SERVER`) remains the easiest entry point — built-in OAuth, RBAC, and zero infrastructure.
 
 The open-source server's deprecation resolves the dual-path confusion but also closes the door on local deployment flexibility, Docker containers, and the full object management toolkit. Known security issues (#166 permission middleware bypass, #176 auth token expiry) remain open and are now unlikely to be resolved. The managed endpoint's limitations — no streaming, semantic views only, no government regions — apply to anyone moving off the open-source path. Snowflake Summit 26 (June 1–4) with Anthropic's Daniela Amodei in the opening keynote is expected to bring further MCP announcements.
 

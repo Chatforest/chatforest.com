@@ -1,6 +1,7 @@
 ---
 title: "OneDrive MCP Servers — AI Agents That Manage Your Microsoft 365 Files, Email, Calendar, and Teams"
 date: 2026-03-23T23:00:00+09:00
+sources_audited: 2026-07-24
 description: "Microsoft's Agent 365 went GA on May 1, 2026. Anthropic's M365 Connector for Claude now gives all Claude users direct OneDrive/M365 access with no Azure app registration. Softeria community server at 635 stars."
 og_description: "OneDrive MCP servers: Anthropic's new M365 Connector removes the auth barrier for Claude users. Agent 365 GA, Work IQ expanding, Softeria at 635 stars. Rating: 4.0/5."
 content_type: "Review"
@@ -8,11 +9,11 @@ card_description: "Anthropic's Microsoft 365 Connector for Claude (all plans, fr
 last_refreshed: 2026-05-04
 ---
 
-**At a glance:** [microsoft/work-iq](https://github.com/microsoft/work-iq) (773 stars, official, CC-BY-4.0) + [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) (635 stars, community, MIT). OneDrive sits at the center of 446 million Microsoft 365 seats. **Anthropic's Microsoft 365 Connector** (all Claude plans, no Azure app registration) has dramatically lowered the auth barrier — the biggest knock against this ecosystem in early 2026.
+**At a glance:** [microsoft/work-iq](https://github.com/microsoft/work-iq) (773 stars, official, CC-BY-4.0) + [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) (635 stars, community, MIT). OneDrive sits at the center of 450 million+ Microsoft 365 seats. **Anthropic's Microsoft 365 Connector** (all Claude plans, no Azure app registration) has dramatically lowered the auth barrier — the biggest knock against this ecosystem in early 2026.
 
 OneDrive MCP servers let AI agents **search, read, create, and manage files across your Microsoft 365 environment** — browse OneDrive folders, read and write documents, manage Outlook email, schedule Calendar events, access SharePoint sites, and apply enterprise security labels — all through natural language prompts. **Microsoft has an official Work IQ OneDrive remote server** in preview, while a growing community ecosystem already covers the full M365 suite.
 
-[Microsoft](https://www.microsoft.com/) was founded on April 4, 1975, by **Bill Gates** and **Paul Allen**. The company went public in March 1986 (NASDAQ: MSFT). As of early 2026: **~$281.7 billion annual revenue** (FY 2025, ~15% YoY growth), **~$2.98-3.15 trillion market cap**. Microsoft 365 has over **446 million paid seats** globally, with commercial revenue exceeding **$60 billion annually**. SharePoint Online has **200+ million users**. Microsoft 365 holds approximately **58% enterprise market share** among organizations with 1,000+ employees, and **75% of Fortune 500** companies use M365 as their primary productivity suite.
+[Microsoft](https://www.microsoft.com/) was [founded on April 4, 1975](https://en.wikipedia.org/wiki/Microsoft), by **Bill Gates** and **Paul Allen**. The company went public on March 13, 1986 (NASDAQ: MSFT). As of early 2026: [**~$281.7 billion annual revenue**](https://www.sec.gov/Archives/edgar/data/789019/000095017025100226/msft-ex99_1.htm) (FY 2025, ~15% YoY growth), **~$2.98-3.15 trillion market cap**. Microsoft 365 has over [**450 million paid seats**](https://office365itpros.com/2026/01/30/microsoft-fy26-q2-results/) globally, with commercial revenue exceeding **$60 billion annually**. SharePoint Online has [**200+ million monthly active users**](https://www.microsoft.com/en-us/microsoft-365/blog/2020/12/08/over-200-million-users-rely-on-sharepoint-as-microsoft-is-again-recognized-as-a-leader-in-the-2020-gartner-content-services-platforms-magic-quadrant-report/). Microsoft 365 holds approximately [**58% enterprise market share**](https://medhacloud.com/blog/microsoft-365-statistics-2026) among organizations with 1,000+ employees, and [**75% of Fortune 500**](https://medhacloud.com/blog/microsoft-365-statistics-2026) companies use M365 as their primary productivity suite.
 
 **Architecture note:** Microsoft's official MCP server is a managed remote endpoint hosted by Microsoft — no local installation required, but it requires a **Microsoft 365 Copilot license** ($30/user/month). Community implementations wrap the Microsoft Graph API, using Azure Entra ID (formerly Azure AD) for authentication. Most support device code flow, OAuth 2.0 authorization code flow, or certificate-based auth.
 
@@ -118,7 +119,7 @@ A companion **Work IQ SharePoint** server handles organizational files separatel
 
 Work IQ is Microsoft's broader M365 data access tool — natural language queries across emails, meetings, documents, Teams, and OneDrive. It serves as the official catalog and reference for Microsoft's MCP server ecosystem.
 
-**May 2026 enterprise context:** Microsoft Agent 365 went GA on **May 1, 2026** ($15/user/month standalone). The new **Microsoft 365 E7 "Frontier Suite"** bundles M365 E5, Microsoft 365 Copilot, and Agent 365 at $99/user/month. Work IQ is the intelligence layer underpinning all of it. The Work IQ MCP server itself remains in **public preview** — a remote MCP server and REST API format were planned for May 2026 per Microsoft's roadmap. GitHub Copilot can also connect to Work IQ, extending M365 context into code editors.
+**May 2026 enterprise context:** [Microsoft Agent 365 went GA on **May 1, 2026**](https://m365admin.handsontek.net/microsoft-agent-365-generally-available-may-1-2026/) ($15/user/month standalone). The new [**Microsoft 365 E7 "Frontier Suite"**](https://blog.admindroid.com/microsoft365-e7-frontier-suite/) bundles M365 E5, Microsoft 365 Copilot, and Agent 365 at $99/user/month. Work IQ is the intelligence layer underpinning all of it. The Work IQ MCP server itself remains in **public preview** — a remote MCP server and REST API format were planned for May 2026 per Microsoft's roadmap. GitHub Copilot can also connect to Work IQ, extending M365 context into code editors.
 
 ## Community Implementations
 

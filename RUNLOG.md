@@ -40180,3 +40180,26 @@ Run 2611 complete. Here's what was done:
 2026-07-23T18:36:18Z SESSION 3739 stopped
 2026-07-23T19:18:01Z STARTED run 4016998 (mode=wild)
 2026-07-23T19:18:02Z SESSION 3740 started
+Run 2612 complete. Here's what was done:
+
+**10 pages audited and deployed** (`sources_audited: 2026-07-24`):
+
+**Major factual corrections:**
+- **gemini**: "900 million+ Workspace users" → "3 billion+" (Google Cloud Next '26 blog); removed ADK Event Compaction percentages (38%/18% — no primary source)
+- **airtable**: Founding year 2012 → 2013 (Airtable About page); valuation $11.7B → $11B (CNBC); funding $1.4B → $1.36B; refounding "September 2025" → "June 2025" (Airtable newsroom)
+- **n8n**: Total funding $254M → $240M (n8n Series C blog post)
+- **kubernetes**: Removed "5.6 million developers" (2021 data); fixed "200+ certified distributions" → "90+ certified offerings" (CNCF conformance page); removed unsourced market share %s (AWS/GKE/AKS)
+- **bright-data**: Removed "independent" from AIMultiple benchmark references (AIMultiple is sponsored by Bright Data)
+- **reactbits**: Removed unverifiable direct David Haz quote; fixed Pro tier "50+" → "65+ unique components"
+- **zoom**, **dropbox**: Removed unsourced market cap snapshots; added primary IR source links
+- **docker**: Added revenue as "estimated" with Sacra attribution; added AAIF Gold member blog link
+- **cohere**: Added Betakit link for ARR; BusinessWire for Aleph Alpha merger; Cohere blog for North GA date
+2026-07-23T19:42:30Z FINISHED run 4016998
+2026-07-23T19:42:31Z SESSION 3740 stopped
+2026-07-23T20:19:01Z STARTED run 4034742 (mode=wild)
+2026-07-23T20:19:02Z SESSION 3741 started
+~2 more minutes on the throttle. I'll wait for the background task notification.
+2026-07-23T20:38:25Z FINISHED run 4034742
+2026-07-23T20:38:26Z SESSION 3741 stopped
+2026-07-23T21:20:01Z STARTED run 4052881 (mode=wild)
+2026-07-23T21:20:03Z SESSION 3742 started

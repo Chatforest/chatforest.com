@@ -1,6 +1,7 @@
 ---
 title: "Oxylabs MCP Server — Two Scraping Engines in One, With the Fastest Stress Test Times"
 date: 2026-03-23T22:00:00+09:00
+sources_audited: 2026-07-24
 description: "The Oxylabs MCP Server combines a traditional Web Scraper API with AI-powered extraction tools in a single Python package. 94 GitHub stars, MIT license, 8 tools across two modes."
 og_description: "Oxylabs MCP Server: dual-engine web scraping for AI agents. 94 stars, MIT license, 8 tools (Web Scraper API + AI Studio), 75% search accuracy, fastest stress test completion (31.7s avg). Free trials for both engines. Rating: 3/5."
 content_type: "Review"
@@ -26,9 +27,9 @@ Part of our **[Web Search & Data Extraction MCP category](/categories/web-search
 
 Oxylabs takes a different approach from most web scraping MCP servers: instead of one unified tool set, it exposes **two distinct scraping engines** through a single MCP interface. Provide Web Scraper API credentials and you get traditional proxy-backed scraping. Provide an AI Studio API key and you get AI-powered extraction. Provide both and the server exposes all 8 tools.
 
-The [Oxylabs MCP Server](https://github.com/oxylabs/oxylabs-mcp) comes from a company with $43.7M in revenue (2025), 428 employees, and a proxy network covering 195+ countries. They also [acquired ScrapingBee](https://oxylabs.io/) in June 2025, consolidating their position in the web data space.
+The [Oxylabs MCP Server](https://github.com/oxylabs/oxylabs-mcp) comes from a company with [$43.7M in revenue (2025)](https://getlatka.com/companies/oxylabs.io), [500+ employees](https://oxylabs.io/about-us), and a [proxy network covering 195+ countries](https://oxylabs.io/about-us). They also [acquired ScrapingBee in June 2025](https://tech.eu/2025/06/20/oxylabs-group-strengthens-position-with-eight-figure-acquisition-of-scrapingbee/), consolidating their position in the web data space.
 
-In [AIMultiple's independent benchmarks](https://aimultiple.com/browser-mcp), Oxylabs hit **75% accuracy** on web search and extraction — middle of the pack — but posted the **fastest stress test completion time** at 31.7 seconds average per successful task. Speed is the story here, not raw accuracy.
+In [AIMultiple's benchmarks](https://aimultiple.com/browser-mcp), Oxylabs hit **75% accuracy** on web search and extraction — middle of the pack — but posted the **fastest stress test completion time** at 31.7 seconds average per successful task. Speed is the story here, not raw accuracy.
 
 ## What It Does
 
@@ -190,7 +191,7 @@ The dual pricing is both a strength and a complication. You can start with just 
 
 ## Limitations
 
-- **Low community adoption** — 86 GitHub stars vs thousands for competitors. Less community support, fewer third-party integrations, fewer battle-tested edge cases
+- **Low community adoption** — 94 GitHub stars vs thousands for competitors. Less community support, fewer third-party integrations, fewer battle-tested edge cases
 - **75% accuracy** — one in four web search/extraction tasks fails in benchmarks. Bright Data (100%) and Nimble (93%) are significantly more reliable
 - **Maintenance-only updates** — v0.8.1 (April 2026) broke a 4-month release drought, but the update was pure dependency housekeeping — no new tools, no new features. Active maintenance is confirmed, but meaningful capability additions remain absent
 - **Dual billing complexity** — two separate products with different pricing models, credit systems, and billing cycles

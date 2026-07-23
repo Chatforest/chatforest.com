@@ -1,6 +1,7 @@
 ---
 title: "Nimble MCP Server — Enterprise Web Intelligence With the Best Google Maps Tools"
 date: 2026-03-23T22:00:00+09:00
+sources_audited: 2026-07-24
 description: "The Nimble MCP Server gives AI agents structured web data through enterprise proxy infrastructure, 18 specialized tools, and the only Google Maps extraction suite in the MCP ecosystem."
 og_description: "Nimble MCP Server: enterprise web intelligence for AI agents. 18 tools, 93% search accuracy, Google Maps extraction, crawl/map/agents capabilities, Databricks Marketplace, SOC 2 certified. Free trial: 5,000 pages. Rating: 3.5/5."
 content_type: "Review"
@@ -86,7 +87,7 @@ The Skills layer is available via Claude Code (`claude.com/plugins/nimble`) and 
 
 ## Benchmark Performance
 
-In [independent testing by AIMultiple](https://aimultiple.com/browser-mcp) across multiple MCP servers:
+In [testing by AIMultiple](https://aimultiple.com/browser-mcp) across multiple MCP servers *(disclosure: Bright Data, Apify, and Oxylabs are disclosed sponsors of the AIMultiple benchmark page; Nimble is not a listed sponsor)*:
 
 **Web Search & Extraction (single-agent):**
 
