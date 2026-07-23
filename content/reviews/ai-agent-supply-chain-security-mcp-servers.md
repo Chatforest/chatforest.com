@@ -6,9 +6,10 @@ og_description: "AI agent supply chain security MCP servers: OX Security STDIO R
 content_type: "Review"
 card_description: "AI agent supply chain security escalated from theoretical to crisis in April 2026. **OX Security's 'Mother of All AI Supply Chains' disclosure** revealed a systemic RCE flaw in MCP's STDIO interface — affecting 200,000 servers, 150M+ downloads, and projects like LiteLLM, LangChain, Cursor, and Windsurf. Anthropic confirmed the behavior is 'by design.' The response: **runtime security tools exploded.** **Pipelock** (342 stars, NEW) is a full AI agent firewall with DLP scanning (48 patterns), SSRF protection, bidirectional MCP scanning, tool poisoning detection, and prompt injection blocking — the first true runtime proxy scanner. **MCP Guardian** (190+ stars, NEW, Rust) enables real-time approval/denial of individual tool calls. **Snyk Agent Scan** (1,800 stars, v0.4.6) launched Skill Inspector — a free web tool for instant malicious skill detection — plus background monitoring for MDM/CrowdStrike integration. **Docker MCP Gateway** (1,300 stars) added interceptors for fine-grained policy enforcement and secret blocking. **Cisco MCP Scanner** v4.6 (830 stars) remains actively maintained. Protocol-level security improved: OAuth 2.1 authorization with Resource Indicators (RFC 8707) standardized, official MCP Registry launched with namespace authentication. But cryptographic tool signing still absent. The gap between 'scan for problems' and 'prevent problems' is narrowing — but 30+ CVEs filed in 60 days shows the threat is accelerating faster than defenses."
 last_refreshed: 2026-05-02
+sources_audited: 2026-07-23
 ---
 
-AI agent supply chain security went from theoretical to crisis in April 2026. **OX Security's "Mother of All AI Supply Chains" disclosure** (April 15, 2026) revealed a systemic remote code execution flaw baked into MCP's STDIO interface — the command executes regardless of whether the process starts successfully. The impact: **200,000 vulnerable server instances, 7,000+ publicly accessible servers, 150 million+ downloads affected.** Anthropic confirmed the behavior is "by design" and declined to modify the protocol. CVE-2026-30623 was assigned for LiteLLM alone. The affected projects read like a who's-who of AI tooling: LiteLLM, LangChain, LangFlow, Flowise, LettaAI, LangBot, Windsurf, Cursor.
+AI agent supply chain security went from theoretical to crisis in April 2026. [OX Security's "Mother of All AI Supply Chains" disclosure](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/) (April 15, 2026) revealed a systemic remote code execution flaw baked into MCP's STDIO interface — the command executes regardless of whether the process starts successfully. The impact: **7,000+ publicly accessible servers, up to 200,000 vulnerable instances in total, 150 million+ downloads affected.** Anthropic confirmed the behavior is "by design" and declined to modify the protocol. [CVE-2026-30623](https://nvd.nist.gov/vuln/detail/CVE-2026-30623) was assigned for LiteLLM alone (CVSS 9.8 Critical). The affected projects read like a who's-who of AI tooling: LiteLLM, LangChain, LangFlow, Flowise, LettaAI, LangBot, Windsurf, Cursor.
 
 The ecosystem's response has been swift: **runtime security tools exploded**, the MCP Authorization Specification was formalized with OAuth 2.1, and an official MCP Registry launched. But 30+ CVEs filed in just 60 days (January–February 2026) showed the threat was already accelerating before the OX disclosure made headlines.
 
@@ -110,7 +111,7 @@ An AI-first security scanner with specific MCP and AI agent security rules. Unli
 
 **Bidirectional MCP scanning.** Scans both inbound (tool descriptions, responses) and outbound (arguments, data flows) MCP traffic. Detects tool poisoning, prompt injection, and exfiltration in real time — not retrospectively.
 
-**DLP with 48 built-in patterns.** API keys, tokens, credentials, cryptocurrency keys, environment variable secrets, financial identifiers — all with checksum validation. This directly addresses the credential exposure problem (53% of MCP servers use static API keys).
+**DLP with 48 built-in patterns.** API keys, tokens, credentials, cryptocurrency keys, environment variable secrets, financial identifiers — all with checksum validation. This directly addresses the credential exposure problem ([~53% of MCP servers rely on static credentials: API keys or personal access tokens](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/)).
 
 **SSRF protection.** Blocks outbound requests to internal networks, cloud metadata endpoints, and other SSRF targets. Critical given the OX Security disclosure's finding of unauthenticated UI injection in AI frameworks.
 
@@ -168,7 +169,7 @@ Docker's approach to MCP security is infrastructure-level: **don't just scan ser
 
 **Defense in depth.** Every MCP server image in the Docker Catalog is built by Docker, digitally signed, and includes an SBOM. On pull, Docker verifies provenance and runs supply-chain checks via Docker Scout. At runtime, containers get 1 CPU, 2 GB memory, and no host filesystem access by default. This is the most comprehensive security posture available for running MCP servers.
 
-**Interceptors (NEW).** MCP Gateway interceptors provide fine-grained policy enforcement, authentication, and request modification at the gateway level. Secret blocking scans inbound and outbound payloads for sensitive information (API tokens, credentials), preventing accidental or malicious exposure. Docker reports 60% reduction in security incidents for organizations using interceptors.
+**Interceptors (NEW).** MCP Gateway interceptors provide fine-grained policy enforcement, authentication, and request modification at the gateway level. Secret blocking scans inbound and outbound payloads for sensitive information (API tokens, credentials), preventing accidental or malicious exposure.
 
 **300+ verified servers.** The Docker MCP Catalog is a curated collection — not every MCP server on GitHub, but ones that have passed Docker's vetting pipeline including security code review, dependency analysis, malware scans, and policy validation.
 
@@ -281,7 +282,7 @@ A comprehensive security analysis framework wrapping Snyk CLI, CycloneDX SBOM ge
 
 A focused supply chain scanner for MCP configurations. Detects typosquat packages (using Levenshtein distance against 40+ known legitimate MCP packages), checks for known CVEs, identifies hardcoded credentials, flags dangerous filesystem permissions, and verifies publishers. Supports Claude Desktop, Cursor, VS Code, and Windsurf configs. Integrates into CI/CD with exit codes (0=safe, 1=high risk, 2=critical).
 
-**Niche but useful:** The typosquat detection is particularly relevant — the `postmark-mcp` incident (a counterfeit npm package that BCC'd all outgoing emails to an attacker) proved this attack vector is real, not theoretical.
+**Niche but useful:** The typosquat detection is particularly relevant — the [`postmark-mcp` incident](https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package) (a counterfeit npm package that BCC'd all outgoing emails to an attacker's address) proved this attack vector is real, not theoretical.
 
 ## Standards and Checklists
 
@@ -311,11 +312,11 @@ Understanding why these tools exist requires understanding the attacks — which
 - **Tool poisoning:** Malicious instructions hidden in MCP tool descriptions that are invisible to users but executed by AI models. Invariant Labs demonstrated this could silently exfiltrate entire WhatsApp conversation histories.
 - **Rug pulls:** Clean MCP servers submitted for approval, then updated with malicious tool descriptions. Most MCP clients don't re-verify descriptions after initial connection.
 - **Typosquatting:** Counterfeit packages (like `postmark-mcp`) that mimic legitimate MCP servers. One caught package was BCC'ing every outgoing email to an attacker.
-- **Credential exposure:** 88% of MCP servers require credentials, 53% use static API keys/PATs that are rarely rotated, and only 8.5% use OAuth. (The new MCP Authorization Specification addresses this, but adoption is gradual.)
+- **Credential exposure:** 88% of MCP servers require credentials, [~53% rely on static credentials (API keys or PATs)](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) that are rarely rotated, and only 8.5% use OAuth. (The new MCP Authorization Specification addresses this, but adoption is gradual.)
 - **Toxic flows:** Multi-server environments where data from one compromised server poisons another trusted server's context.
 - **CVE flood (NEW).** 30+ CVEs filed targeting MCP servers, clients, and infrastructure between January–February 2026 — ranging from path traversals to a CVSS 9.6 RCE in a package with nearly half a million downloads.
 
-A scan of 1,808 MCP servers found 66% had security findings. This isn't a theoretical threat — it's the current state of the ecosystem, now confirmed at massive scale by the OX Security disclosure.
+[A scan of 1,808 MCP servers found 66% had security findings](https://agentseal.org/blog/mcp-server-security-findings). This isn't a theoretical threat — it's the current state of the ecosystem, now confirmed at massive scale by the [OX Security disclosure](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/).
 
 ## Protocol-Level Security Improvements
 

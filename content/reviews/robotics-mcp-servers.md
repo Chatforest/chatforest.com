@@ -6,6 +6,7 @@ og_description: "Robotics MCP servers: DimOS SURGED 1,700→3,100 stars (+82%) a
 content_type: "Review"
 card_description: "Robotics MCP servers for controlling physical hardware through AI agents — from industrial robot arms to smart home devices to embedded microcontrollers. This is one of the most exciting MCP categories because it bridges the digital-physical gap. **UPDATE (May 2026):** DimOS SURGED from 1,700 to 3,100 stars (+82%) with daemon mode, temporal-spatial memory, and Go2 fleet control. xiaozhi-esp32 grew to 26,100 stars with v2.2.6. Home Assistant now has OFFICIAL built-in MCP integration (Streamable HTTP) alongside ha-mcp (86 tools, consolidated from 96). phosphobot MCP NEW — first VLA (vision-language-action) model integration for SO-100/SO-101 robot arms. wise-vision/ros2_mcp NEW — advanced ROS2 MCP with image streaming and auto QoS. Isaac Sim v0.3.0 adds USD 3D asset search. CSOAI-ORG/robotics-control-mcp NEW — HARVI humanoid project with serial+HTTP hardware control. ROS crossed 1,200 stars with 160 forks. Still no major manufacturer official servers. Rating holds 4.5/5 — the VLA paradigm (phosphobot) and agentic robotics OS (DimOS surge) represent a shift from 'control a robot' to 'teach a robot' via MCP."
 last_refreshed: 2026-05-02
+sources_audited: 2026-07-23
 ---
 
 *Part of the [IoT & Hardware](/categories/iot-hardware/) category.*

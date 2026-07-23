@@ -6,6 +6,7 @@ og_description: "Video conferencing MCP servers: Zoom Official MCP Connector (Ap
 content_type: "Review"
 card_description: "Video conferencing and meeting intelligence MCP servers across Zoom (official), Microsoft Work IQ Teams, Joinly, Vexa, Otter.ai, Fireflies.ai, tl;dv, Meeting BaaS, and Webex. The ecosystem has matured significantly with Zoom's official MCP connector (April 2026), Microsoft Agent 365 Work IQ Teams, and major meeting intelligence platforms launching MCP servers."
 last_refreshed: 2026-04-28
+sources_audited: 2026-07-23
 ---
 
 Meetings are where decisions happen, context lives, and information gets trapped. Every organization runs on video calls — Zoom, Google Meet, Microsoft Teams — but the content of those calls has been locked away from AI agents. MCP servers are changing that — and as of April 2026, the major platforms are finally shipping official integrations.
@@ -30,7 +31,7 @@ The biggest development since our March review: major platforms are shipping off
 | Auth | Zoom account + AI Companion license |
 | Type | Hosted/managed connector |
 
-**The single biggest gap in meeting MCP has closed.** Zoom launched its official MCP connector on April 9, 2026, providing secure access to meeting summaries, transcripts, recordings, and scheduling capabilities directly within Claude.
+**The single biggest gap in meeting MCP has closed.** [Zoom launched its official MCP connector on April 9, 2026](https://news.zoom.com/zoom-meeting-intelligence-in-claude/), providing secure access to meeting summaries, transcripts, recordings, and scheduling capabilities directly within Claude.
 
 ### What Works Well
 
@@ -269,7 +270,7 @@ Joinly is connector middleware that enables AI agents to join and actively parti
 | Latest | v1.0.8 (March 16, 2026) |
 | Install | Docker or Python + uv |
 
-The most popular community Teams MCP server, built by Inditex (the parent company of Zara). Focuses on **messaging** — read messages, create messages, reply to threads, mention members. Now has an official alternative in Microsoft Work IQ Teams (see above), but remains valuable for organizations without Copilot licensing.
+The most popular community Teams MCP server, built by [Inditex](https://www.inditex.com/itxcomweb/es/en/brands) (the parent company of Zara). Focuses on **messaging** — read messages, create messages, reply to threads, mention members. Now has an official alternative in Microsoft Work IQ Teams (see above), but remains valuable for organizations without Copilot licensing.
 
 ### What Works Well
 
@@ -395,7 +396,7 @@ Not an MCP server, but the most popular open-source meeting assistant by a massi
 
 **~~No official Microsoft Teams meeting MCP server.~~** ✅ **PARTIALLY CLOSED.** Microsoft Work IQ Teams provides official 25+ tool messaging/channel management. Meeting-specific features (recordings, transcriptions) are still via Work IQ Calendar for scheduling only.
 
-**No official Google Meet MCP server.** Google launched a Workspace MCP Server in preview covering Calendar, Drive, Gmail, and Chat — but **Google Meet was not included**. Despite 110 million+ monthly "Take Notes For Me" users, there's no dedicated Meet MCP server. The community server (23 tools) fills the gap partially. This is now the biggest remaining platform gap.
+**No official Google Meet MCP server.** Google launched a Workspace MCP Server in preview covering Calendar, Drive, Gmail, and Chat — but **Google Meet was not included**. Despite [110 million+ monthly "Take Notes For Me" users](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026), there's no dedicated Meet MCP server. The community server (23 tools) fills the gap partially. This is now the biggest remaining platform gap.
 
 **No meeting summarization server.** Transcription is covered (Vexa, tl;dv, Otter.ai, Fireflies.ai), and some platforms provide AI-generated summaries, but no standalone MCP server specializes in generating structured meeting summaries, action items, or decision logs from arbitrary transcript input.
 

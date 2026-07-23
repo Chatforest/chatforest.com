@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2604 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-18/19 batch, seventh cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (oldest unaudited by date):
+
+1. **presentation-slides-mcp-servers.md** — Added Canva newsroom link for Canva Create 2026/AI 2.0/Claude Design partnership; added Google Cloud blog link for "50+ managed MCP servers at Cloud Next 2026"; added Apple newsroom link for Creator Studio January 2026; added "(self-reported by the author)" qualifier for Slidev-mcp ModelScope award; added sources_audited
+
+2. **ai-agent-supply-chain-security-mcp-servers.md** — Fixed "200,000 vulnerable server instances" → "7,000+ publicly accessible servers, up to 200,000 vulnerable instances in total" (OX Security disclosure wording); added OX Security link and CVE-2026-30623 NVD link for LiteLLM (CVSS 9.8 Critical); fixed Pipelock "53%" → "~53% of MCP servers rely on static credentials" with Astrix Security link; **CUT** "Docker reports 60% reduction in security incidents" (no primary source found, Docker blog is qualitative only); added postmark-mcp incident link to Postmark blog; added AgentSeal link for "1,808 MCP servers / 66% had security findings"; added OX Security link in Threat Landscape closing; added sources_audited
+
+3. **threat-intelligence-mcp-servers.md** — **CUT** "Shodan $69/lifetime or $19/month" (factually wrong; $69 is the Freelancer monthly plan, no $19/month plan and no lifetime option); replaced with link to billing page; updated HEARTH "50+" → "130+" with GitHub link (live repo shows 130+); added Google Cloud Next 2026 link for autonomous security agent announcement; added Team Cymru press release link for Pure Signal GA; added sources_audited
+
+4. **ocr-document-intelligence-mcp-servers.md** — Added MinerU GitHub link for 86.2% on OmniDocBench (clarified: this is the MinerU pipeline result, not the VLM model in isolation); added arXiv:2601.21957 link for PaddleOCR-VL-1.5 94.5% accuracy claim; added Mistral OCR 3 source for 74% win rate/$2 per 1,000 pages; added sources_audited
+
+5. **speech-recognition-transcription-mcp-servers.md** — Fixed "Groq Whisper MCP achieves 216x real-time" → "217x real-time" with Groq pricing link; **CUT** "at 9x lower cost than OpenAI's API" (no primary Groq source for 9x figure); fixed ElevenLabs Scribe "99+ languages" → "90 languages" with ElevenLabs blog link (90 is the correct spec for the 150ms real-time model); added OpenAI pricing link for "$0.006/minute" Whisper API claim; added sources_audited
+
+6. **video-conferencing-mcp-servers.md** — Added Zoom news.zoom.com link for April 9 official MCP connector launch; added Inditex brand portfolio link for "parent company of Zara" claim; added Google Workspace blog link for "110 million+ Take Notes For Me users"; added sources_audited
+
+7. **e-signature-digital-signing-mcp-servers.md** — Added DocuSign newsroom link for "Anthropic partnership (February 2026)"; added sources_audited
+
+8. **robotics-mcp-servers.md** — No critical factual corrections needed; all major claims linked to repos or vendor pages; added sources_audited
+
+9. **scientific-computing-mathematics-mcp-servers.md** — No critical factual corrections needed; PulseMCP traffic stats attributed; star counts time-stamped to review date; added sources_audited
+
+10. **chemistry-molecular-modeling-mcp-servers.md** — Fixed PubChem "110 million+" → "124 million+" with direct PubChem link (ChEMBL 37, May 2026 confirms ~124M); fixed ChEMBL "~2.4 million compounds" → "~2.9 million compounds" with ChEMBL 37 release notes link (2,921,148 compounds in ChEMBL 37); added sources_audited
+
+**Key factual corrections:** Shodan pricing cut (wrong numbers); Groq speed 216x → 217x; ElevenLabs languages 99 → 90; Docker 60% security reduction cut (no source); ChEMBL 2.4M → 2.9M; PubChem 110M → 124M; HEARTH hunts 50+ → 130+.
+
+**Research method:** 3 parallel research agents verified claims across all 10 pages (continued from prior conversation context; additional inline edits made in current session).
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2603 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-17/18 batch, sixth cohort) + Deploy
 
 **Mode:** Citation auditor

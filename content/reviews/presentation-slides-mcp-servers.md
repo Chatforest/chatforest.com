@@ -6,6 +6,7 @@ og_description: "Presentation MCP servers: Canva official 32 tools, Gamma offici
 content_type: "Review"
 card_description: "The presentation MCP ecosystem had a breakout month. Canva launched an official hosted MCP server at mcp.canva.com with 32 tools and a Claude Design partnership with Anthropic. Gamma launched its own official hosted MCP at developers.gamma.app. presenton grew to 4,800 stars with active development. The former PowerPoint leader GongRzhe/Office-PowerPoint-MCP-Server (1,700 stars) is now ARCHIVED. matteoantoci/google-slides-mcp exploded 9→176 stars showing massive demand for Google Slides MCP. NEW ykuwai/ppt-mcp brings 154 tools via COM automation. Figma Slides finally has community MCP coverage. Google's official Workspace MCP still skips Slides. 30+ servers across the ecosystem."
 last_refreshed: 2026-04-29
+sources_audited: 2026-07-23
 ---
 
 Presentation and slides MCP servers let AI assistants create slide decks, generate PowerPoint files, control Google Slides and Keynote, and build Markdown-based presentations. Instead of manually designing layouts, formatting text, and placing images, you can have AI agents produce complete presentations through the Model Context Protocol.
@@ -24,7 +25,7 @@ The headline findings: **Canva launched an official hosted MCP server** at mcp.c
 
 **The biggest story in presentation MCP** — Canva launched an official hosted MCP server at `mcp.canva.com/mcp` with **32 tools across 10 categories**: designs, assets, autofill, brand templates, comments, exports, folders, imports, editing transactions, and resizes. OAuth authentication, integrated as a connector in Claude, ChatGPT, and other AI tools.
 
-At Canva Create 2026, the company announced **Canva AI 2.0** with conversational design and agentic editing. The **Claude Design** partnership with Anthropic (powered by Claude) enables AI-driven design directly within Canva. Canva itself now uses MCP to connect to external services (Gmail, Slack, Zoom, Drive, Notion).
+At [Canva Create 2026](https://www.canva.com/newsroom/news/canva-claude-design/), the company announced **Canva AI 2.0** with conversational design and agentic editing. The **Claude Design** partnership with Anthropic (powered by Claude) enables AI-driven design directly within Canva. Canva itself now uses MCP to connect to external services (Gmail, Slack, Zoom, Drive, Notion).
 
 A separate **Canva Dev MCP Server** exists for building Canva app integrations. The official hosted MCP server is the one most users want.
 
@@ -138,7 +139,7 @@ The **original PowerPoint MCP server** — 10 tools for complete presentation cr
 
 39 forks, 16 commits. Has spawned derivative projects like bohachu/botrun-google-slides-mcp with service account authentication.
 
-**Google Official Workspace MCP** — Google launched 50+ managed MCP servers at Cloud Next 2026 covering Gmail, Drive, Calendar, Chat, and People API. **Slides is notably absent** from the official lineup. taylorwilsdon/google_workspace_mcp (2,200 stars, up from 1,400 — +57%) remains the best way to access Slides alongside other Google services.
+**Google Official Workspace MCP** — [Google launched 50+ managed MCP servers at Cloud Next 2026](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) covering Gmail, Drive, Calendar, Chat, and People API. **Slides is notably absent** from the official lineup. taylorwilsdon/google_workspace_mcp (2,200 stars, up from 1,400 — +57%) remains the best way to access Slides alongside other Google services.
 
 ## Keynote
 
@@ -152,7 +153,7 @@ Grew from 34 to 51 stars (+50%) — uses **AppleScript to control the Keynote ap
 
 **macOS-only** with Keynote installed. An enhanced fork at [betancur/keynote-mcp](https://github.com/betancur/keynote-mcp) adds modular architecture and theme-aware content management.
 
-**Apple context:** Apple launched Apple Creator Studio in January 2026 with AI features for Keynote (text-to-slides beta) but has released **no official Apple MCP server**.
+**Apple context:** [Apple launched Apple Creator Studio in January 2026](https://www.apple.com/newsroom/2026/01/introducing-apple-creator-studio-an-inspiring-collection-of-creative-apps/) with AI features for Keynote (text-to-slides beta) but has released **no official Apple MCP server**.
 
 ## Markdown-Based Slides
 
@@ -182,7 +183,7 @@ Generates **Reveal.js HTML presentations** from Markdown content with 12 visual 
 |--------|-------|----------|-------|
 | [slidev-mcp](https://github.com/LSTM-Kirigaya/slidev-mcp) | 89 | — | — |
 
-MCP server for **Slidev**, the Vue.js-based developer presentation framework. Auto-generates web presentations from natural language descriptions. Won the **Best Application Award** in the ModelScope MCP & Agent Competition. 56 commits, 10 forks — significant traction for a niche tool.
+MCP server for **Slidev**, the Vue.js-based developer presentation framework. Auto-generates web presentations from natural language descriptions. Won the **Best Application Award** in the ModelScope MCP & Agent Competition ([self-reported by the author](https://github.com/LSTM-Kirigaya/slidev-ai)). 56 commits, 10 forks — significant traction for a niche tool.
 
 ## Commercial / SaaS
 

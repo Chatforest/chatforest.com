@@ -7,6 +7,7 @@ content_type: "Review"
 categories: ["/categories/government-legal/"]
 card_description: "E-signature MCP servers for AI-powered contract workflows. DocuSign is now in Global Open Beta at mcp-d.docusign.com/mcp — no intake form required — with IAM, eSignature, Navigator, Maestro, and Momentum 2026 additions: Iris AI Assistant (contract review, redlining, obligation tracking) and Agent Studio (natural language → custom agents; U.S. early access, broader rollout July 2026) plus the Anthropic partnership. PandaDoc ships an official hosted MCP server at developers.pandadoc.com/mcp with 12+ tools. SignNow has the most complete open-source server with 18 tools (6 stars) including embedded signing. BoldSign provides an official npm package with 14 tools. eSignatures.com leads community stars at 36. SignWell offers official npx-based installation. luthersystems adds JWT server-to-server auth with 8 FastMCP tools for headless automation. Adobe Acrobat Sign accessible through Cequence AI Gateway. Dropbox Sign still has no dedicated server. Rating: 3.5/5 — vendor support is the strongest of any MCP category, but the full draft-negotiate-sign-store workflow gap persists."
 last_refreshed: 2026-06-11
+sources_audited: 2026-07-23
 ---
 
 E-signatures are one of the few business workflows where AI automation has an obvious, immediate payoff. Draft a contract, fill in signer details, send for signature, track status, download the signed document — every step is API-shaped and benefits from natural language orchestration.
@@ -40,7 +41,7 @@ The biggest name in e-signatures now has an official hosted MCP server at `mcp-d
 
 **Maestro workflow orchestration.** Trigger multi-step approval processes, conditional routing, and complex document workflows. Moves beyond single-envelope signing into full business process automation.
 
-**Anthropic partnership (February 2026).** DocuSign and Anthropic announced a partnership bringing DocuSign capabilities directly into Cowork. This is the deepest AI vendor integration any e-signature company has achieved.
+**Anthropic partnership (February 2026).** [DocuSign and Anthropic announced a partnership](https://www.docusign.com/company/news-center/docusign-partners-with-anthropic-to-bring-its-intelligent-contract-workflows-to-cowork) bringing DocuSign capabilities directly into Cowork. This is the deepest AI vendor integration any e-signature company has achieved.
 
 **Enterprise governance preserved.** The MCP server enforces the same permissions, access controls, and audit policies as the DocuSign web UI. Actions are logged in DocuSign's audit trail.
 
