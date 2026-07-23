@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2605 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-20/21/22 batch, eighth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (oldest unaudited by date, 2026-03-20 to 2026-03-22):
+
+1. **google-cloud-mcp-servers.md** — Added Chrome for Developers link for WebMCP stats (67% fewer errors, 45% better task completion; industry commitments from Booking/Shopify/Instacart/Intuit); added Google Cloud Blog link for ADK 2.0 multi-language launch; added sources_audited
+
+2. **vector-database-embedding-mcp-servers.md** — Added Milvus press release link confirming NVIDIA/Salesforce/eBay/Airbnb/DoorDash production users; updated claude-context stars 9,800 → 12,200+ (GitHub); added GitHub link for 40% token reduction and 14-language claims; added sources_audited
+
+3. **azure-mcp-servers.md** — Added NVD link for CVE-2026-26118 (SSRF, CVSS 8.8) in both occurrences; **CUT** "The June 2026 Patch Tuesday fixed 200 flaws including 6 zero-days" (unverifiable — MSRC historical data not accessible); added sources_audited
+
+4. **mcp-server-frameworks-sdks.md** — Updated FastMCP downloads 1.9M/day → 3.1M/day (PyPI, verified July 2026); added NVD link for CVE-2026-0621 ReDoS (CVSS 7.5 HIGH); added Prefect link for Jeremiah Lowin attribution; added sources_audited
+
+5. **asana-mcp-server.md** — Updated "22 pre-built teammates" → "30 pre-built teammates" (asana.com/product/ai/ai-teammates now shows 30); added Asana IR link for Q4 FY26 earnings ($6M ARR, 15% FY27 target); added Morningstar case study link (~15,000 person-hours); added Asana press release link for "200+ organizations, 2x faster" beta claims; added developers.asana.com link for V1 shutdown confirmation; added sources_audited
+
+6. **google-colab-mcp-server.md** — **CUT** "Google published a blog post on Google Cloud covering this server" (no URL found; blog post existence could not be verified); added sources_audited
+
+7. **zapier-mcp-server.md** — **FIXED** "founded in 2012" → "founded in 2011" with YC profile link (Zapier was founded 2011, went through YC Summer 2012); **CUT** "1.5 billion tasks monthly — a 60% increase since 2023" (no primary Zapier source; third-party aggregators suggest this is outdated, current figure is ~3.1B); added Forbes link for ~$5B valuation; added trust.zapier.com for SOC 2 Type II; added Workday newsroom link for Pipedream acquisition (Nov 19, 2025); added help.zapier.com link for AI Guardrails; added sources_audited
+
+8. **discord-mcp-servers.md** — Added Business of Apps source for "200M monthly users, 19M servers"; added Discord API docs link for "50 requests/second" rate limit; Discord Developer Newsletter March 2026 link already present; added sources_audited
+
+9. **teams-mcp-servers.md** — Added techcommunity.microsoft.com link for "320 million monthly active users" (noting it's most recent official figure from Q1 FY2024); added Inditex brand portfolio link for InditexTech/Zara claim; added sources_audited
+
+10. **hubspot-mcp-server.md** — Updated "200,000+ customers" → "approximately 300,000 customers (299,458 Q1 2026)" with HubSpot IR link; added HubSpot changelog link for MCP GA April 13, 2026; added Spring 2026 Spotlight changelog link; added sources_audited
+
+**Key factual corrections:** Zapier founding year 2012 → 2011; Zapier 1.5B tasks cut (no primary source, outdated); Azure Patch Tuesday claim cut (unverifiable); Colab Google blog post claim cut (not found); FastMCP 1.9M → 3.1M downloads/day; claude-context 9.8K → 12.2K stars; Asana teammates 22 → 30; HubSpot 200K → ~300K customers.
+
+**Research method:** 3 parallel research agents verified claims across all 10 pages simultaneously (Zapier/Discord/Teams stats, Google Cloud/Asana/HubSpot claims, FastMCP/Milvus/Azure/Colab claims).
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2604 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-18/19 batch, seventh cohort) + Deploy
 
 **Mode:** Citation auditor

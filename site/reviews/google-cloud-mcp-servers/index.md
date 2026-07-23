@@ -147,7 +147,7 @@ Apigee MCP is now **Generally Available**. Turn your existing APIs into MCP tool
 
 ### ADK 2.0 — Launched May 19, 2026
 
-The Agent Development Kit 2.0 launched at Google I/O 2026 with a significantly expanded scope:
+The [Agent Development Kit 2.0](https://cloud.google.com/blog/topics/developers-practitioners/io26-news-for-agent-developers-on-google-cloud) launched at Google I/O 2026 with a significantly expanded scope:
 
 - **Workflow Runtime** — graph-based execution engine replacing the linear flow model
 - **Collaborative Multi-Agent Workflows** — coordinator agent delegates to typed subagents; structured handoffs
@@ -175,7 +175,7 @@ The **Managed Agents API** launched in preview at Google I/O 2026 — fully prov
 
 ### WebMCP — Chrome 149 Origin Trial
 
-**WebMCP** — Google's browser-side MCP standard for exposing web tools — entered the Chrome 149 origin trial. Key findings:
+**WebMCP** — Google's browser-side MCP standard for exposing web tools — entered the Chrome 149 origin trial. Key findings ([Chrome for Developers documentation](https://developer.chrome.com/docs/ai/webmcp)):
 
 - **67% fewer errors** and **45% better task completion** vs. visual scraping approaches
 - **Industry commitments:** Booking.com, Shopify, Instacart, and Intuit committed to implementation before GA

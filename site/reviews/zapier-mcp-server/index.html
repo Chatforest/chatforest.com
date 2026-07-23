@@ -68,7 +68,7 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> ~45 GitHub stars, 19 forks, remote-only (hosted), Streamable HTTP + SSE transport, 9,000+ apps, 40,000+ actions, $5B valuation, ~$300M+ revenue (2026 projected).</p>
 <p>Zapier MCP is the <strong>official MCP server from the world&rsquo;s largest automation platform</strong>. It connects AI agents like Claude, ChatGPT, and Cursor to 9,000+ apps and 40,000+ actions through Zapier&rsquo;s hosted infrastructure — no self-hosting, no local setup, no OAuth plumbing. Two configuration modes are available: <strong>Classic</strong> (manually select actions via web dashboard) and <strong>Agentic</strong> (Beta — 14 built-in meta-tools for in-chat action discovery and execution).</p>
-<p>The <a href="https://github.com/zapier/zapier-mcp">zapier/zapier-mcp repository</a> has 30 GitHub stars and 14 forks — modest numbers because the actual server runs on Zapier&rsquo;s infrastructure. The repo contains plugins, skills, and configuration guides rather than server source code. <a href="https://zapier.com/">Zapier</a> was founded in 2012, is valued at ~$5B, operates fully remote across 40 countries with 10 million monthly active users across 750,000+ organizations, and projects annual revenue exceeding $300M in 2026. The company automates 1.5 billion tasks monthly — a 60% increase since 2023.</p>
+<p>The <a href="https://github.com/zapier/zapier-mcp">zapier/zapier-mcp repository</a> has 30 GitHub stars and 14 forks — modest numbers because the actual server runs on Zapier&rsquo;s infrastructure. The repo contains plugins, skills, and configuration guides rather than server source code. <a href="https://zapier.com/">Zapier</a> was <a href="https://www.ycombinator.com/companies/zapier">founded in 2011</a>, is valued at <a href="https://www.forbes.com/sites/alexkonrad/2021/03/08/zapier-bootstraps-to-5-billion-valuation/">~$5B</a>, operates fully remote across 40 countries with 10 million monthly active users across 750,000+ organizations, and projects annual revenue exceeding $300M in 2026.</p>
 <h2 id="how-it-works">How It Works</h2>
 <p>Unlike most MCP servers that run locally or self-hosted, Zapier MCP is a <strong>fully managed remote server</strong>. The architecture:</p>
 <pre><code>AI Agent → MCP Client → Zapier MCP Server (remote) → Zapier Platform → Target App API
@@ -330,11 +330,11 @@
 <li><strong>Endpoint encryption</strong> — all traffic over HTTPS</li>
 <li><strong>Rate limiting</strong> — prevents abuse and runaway agents</li>
 <li><strong>Activity audit logs</strong> — centralized log for admins to see all server and tool changes for compliance and troubleshooting</li>
-<li><strong>SOC 2 Type II compliance</strong> — Zapier&rsquo;s platform-level security certification</li>
+<li><strong><a href="https://trust.zapier.com/">SOC 2 Type II compliance</a></strong> — Zapier&rsquo;s platform-level security certification</li>
 <li><strong>Credential isolation</strong> — app credentials stored on Zapier&rsquo;s side, never exposed to the AI model</li>
 <li><strong>URL rotation</strong> — regenerate your MCP server URL if compromised</li>
 <li><strong>Granular action control</strong> — on/off toggles for individual actions without deletion</li>
-<li><strong>AI Guardrails</strong> (launched March 30, 2026) — inline safety checks that detect PII (30+ types), prompt injection attempts, toxic language, and negative sentiment before AI outputs reach downstream systems. Powered by AWS Comprehend (ML actions with confidence scores) and Amazon Bedrock (LLM actions). Available on all plans and callable as MCP tools directly from AI clients</li>
+<li><strong><a href="https://help.zapier.com/hc/en-us/articles/43960366238221-How-to-get-started-with-AI-Guardrails-by-Zapier">AI Guardrails</a></strong> (launched March 30, 2026) — inline safety checks that detect PII (30+ types), prompt injection attempts, toxic language, and negative sentiment before AI outputs reach downstream systems. Powered by AWS Comprehend (ML actions with confidence scores) and Amazon Bedrock (LLM actions). Available on all plans and callable as MCP tools directly from AI clients</li>
 </ul>
 <h2 id="comparison-with-alternatives">Comparison With Alternatives</h2>
 <table>
@@ -421,7 +421,7 @@
 </tbody>
 </table>
 <p><strong>vs. Composio:</strong> Composio has fewer apps (850+ vs. 9,000+) but offers self-hosting, MIT-licensed code, and a dramatically more generous free tier (20K calls/month vs. ~50 MCP calls). Composio now enforces MCP API key authentication by default (since March 2026) with SOC2/ISO certification. For agent-heavy workloads, Composio&rsquo;s pricing is significantly cheaper.</p>
-<p><strong>vs. Pipedream:</strong> Pipedream sits between them — 2,800+ apps, per-app MCP endpoints that auto-generate tools, and a credit-based pricing model. Pipedream offers more developer control (three tool modes, self-hosted option) but was acquired by Workday (November 2025), introducing platform uncertainty.</p>
+<p><strong>vs. Pipedream:</strong> Pipedream sits between them — 2,800+ apps, per-app MCP endpoints that auto-generate tools, and a credit-based pricing model. Pipedream offers more developer control (three tool modes, self-hosted option) but was <a href="https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream">acquired by Workday (November 2025)</a>, introducing platform uncertainty.</p>
 <p><strong>vs. n8n:</strong> n8n is the developer-first choice — self-hosted, fair-code licensed, unlimited executions on self-hosted instances. Far fewer integrations (400+) but n8n now supports MCP on both sides: it can consume MCP servers as tools for its AI agents <em>and</em> expose its own workflows as MCP servers for external agents. Best for teams that want full control and don&rsquo;t mind managing infrastructure.</p>
 <p><strong>vs. Individual MCP Servers:</strong> Dedicated servers for specific platforms (like the <a href="/reviews/github-mcp-server/">GitHub MCP Server</a> or <a href="/reviews/slack-mcp-server/">Slack MCP Server</a>) will always offer deeper, more complete API coverage. Zapier trades depth for breadth — convenient when you need many integrations, limiting when you need every feature of one API.</p>
 <h2 id="known-issues">Known Issues</h2>

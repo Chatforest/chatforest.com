@@ -78,7 +78,7 @@ A complementary [RDKit](https://www.rdkit.org/) MCP server focused on **molecula
 |--------|-------|----------|---------|
 | [PubChem-MCP-Server](https://github.com/Augmented-Nature/PubChem-MCP-Server) | 36 | Node.js | — |
 
-Access to **over 110 million chemical compounds** through [PubChem](https://pubchem.ncbi.nlm.nih.gov/)'s REST API — molecular properties, bioassay data, and cheminformatics tools. Part of [Augmented-Nature](https://github.com/Augmented-Nature)'s extensive suite of scientific database MCP servers.
+Access to **over [124 million chemical compounds](https://pubchem.ncbi.nlm.nih.gov/)** through PubChem's REST API — molecular properties, bioassay data, and cheminformatics tools. Part of [Augmented-Nature](https://github.com/Augmented-Nature)'s extensive suite of scientific database MCP servers.
 
 ### cyanheads/pubchem-mcp-server
 
@@ -102,7 +102,7 @@ An independent [PubChem](https://pubchem.ncbi.nlm.nih.gov/) MCP implementation p
 - **Similarity and substructure search** — find structurally related compounds
 - **Drug-likeness analysis** — property summaries and filtering
 
-[ChEMBL](https://www.ebi.ac.uk/chembl/) contains bioactivity data for ~2.4 million compounds — this server makes that accessible conversationally. Also available from [BioMCP-Hub](https://github.com/BioMCP-Hub) and [JackKuo666](https://github.com/JackKuo666) as alternative implementations.
+[ChEMBL](https://www.ebi.ac.uk/chembl/) contains bioactivity data for [~2.9 million compounds (ChEMBL 37, May 2026)](https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_37_release_notes.txt) — this server makes that accessible conversationally. Also available from [BioMCP-Hub](https://github.com/BioMCP-Hub) and [JackKuo666](https://github.com/JackKuo666) as alternative implementations.
 
 ## Drug & Pharmacology Databases
 

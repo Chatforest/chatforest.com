@@ -7,7 +7,7 @@
 
 Zapier MCP is the **official MCP server from the world's largest automation platform**. It connects AI agents like Claude, ChatGPT, and Cursor to 9,000+ apps and 40,000+ actions through Zapier's hosted infrastructure — no self-hosting, no local setup, no OAuth plumbing. Two configuration modes are available: **Classic** (manually select actions via web dashboard) and **Agentic** (Beta — 14 built-in meta-tools for in-chat action discovery and execution).
 
-The [zapier/zapier-mcp repository](https://github.com/zapier/zapier-mcp) has 30 GitHub stars and 14 forks — modest numbers because the actual server runs on Zapier's infrastructure. The repo contains plugins, skills, and configuration guides rather than server source code. [Zapier](https://zapier.com/) was founded in 2012, is valued at ~$5B, operates fully remote across 40 countries with 10 million monthly active users across 750,000+ organizations, and projects annual revenue exceeding $300M in 2026. The company automates 1.5 billion tasks monthly — a 60% increase since 2023.
+The [zapier/zapier-mcp repository](https://github.com/zapier/zapier-mcp) has 30 GitHub stars and 14 forks — modest numbers because the actual server runs on Zapier's infrastructure. The repo contains plugins, skills, and configuration guides rather than server source code. [Zapier](https://zapier.com/) was [founded in 2011](https://www.ycombinator.com/companies/zapier), is valued at [~$5B](https://www.forbes.com/sites/alexkonrad/2021/03/08/zapier-bootstraps-to-5-billion-valuation/), operates fully remote across 40 countries with 10 million monthly active users across 750,000+ organizations, and projects annual revenue exceeding $300M in 2026.
 
 ## How It Works
 
@@ -151,11 +151,11 @@ Annual billing offers a 33% discount over monthly billing across all paid plans.
 - **Endpoint encryption** — all traffic over HTTPS
 - **Rate limiting** — prevents abuse and runaway agents
 - **Activity audit logs** — centralized log for admins to see all server and tool changes for compliance and troubleshooting
-- **SOC 2 Type II compliance** — Zapier's platform-level security certification
+- **[SOC 2 Type II compliance](https://trust.zapier.com/)** — Zapier's platform-level security certification
 - **Credential isolation** — app credentials stored on Zapier's side, never exposed to the AI model
 - **URL rotation** — regenerate your MCP server URL if compromised
 - **Granular action control** — on/off toggles for individual actions without deletion
-- **AI Guardrails** (launched March 30, 2026) — inline safety checks that detect PII (30+ types), prompt injection attempts, toxic language, and negative sentiment before AI outputs reach downstream systems. Powered by AWS Comprehend (ML actions with confidence scores) and Amazon Bedrock (LLM actions). Available on all plans and callable as MCP tools directly from AI clients
+- **[AI Guardrails](https://help.zapier.com/hc/en-us/articles/43960366238221-How-to-get-started-with-AI-Guardrails-by-Zapier)** (launched March 30, 2026) — inline safety checks that detect PII (30+ types), prompt injection attempts, toxic language, and negative sentiment before AI outputs reach downstream systems. Powered by AWS Comprehend (ML actions with confidence scores) and Amazon Bedrock (LLM actions). Available on all plans and callable as MCP tools directly from AI clients
 
 ## Comparison With Alternatives
 
@@ -174,7 +174,7 @@ Annual billing offers a 33% discount over monthly billing across all paid plans.
 
 **vs. Composio:** Composio has fewer apps (850+ vs. 9,000+) but offers self-hosting, MIT-licensed code, and a dramatically more generous free tier (20K calls/month vs. ~50 MCP calls). Composio now enforces MCP API key authentication by default (since March 2026) with SOC2/ISO certification. For agent-heavy workloads, Composio's pricing is significantly cheaper.
 
-**vs. Pipedream:** Pipedream sits between them — 2,800+ apps, per-app MCP endpoints that auto-generate tools, and a credit-based pricing model. Pipedream offers more developer control (three tool modes, self-hosted option) but was acquired by Workday (November 2025), introducing platform uncertainty.
+**vs. Pipedream:** Pipedream sits between them — 2,800+ apps, per-app MCP endpoints that auto-generate tools, and a credit-based pricing model. Pipedream offers more developer control (three tool modes, self-hosted option) but was [acquired by Workday (November 2025)](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream), introducing platform uncertainty.
 
 **vs. n8n:** n8n is the developer-first choice — self-hosted, fair-code licensed, unlimited executions on self-hosted instances. Far fewer integrations (400+) but n8n now supports MCP on both sides: it can consume MCP servers as tools for its AI agents *and* expose its own workflows as MCP servers for external agents. Best for teams that want full control and don't mind managing infrastructure.
 

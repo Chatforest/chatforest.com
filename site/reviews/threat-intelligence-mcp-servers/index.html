@@ -104,7 +104,7 @@
 <p>The most comprehensive official security MCP project. Google&rsquo;s mcp-security is a mono-repo containing five server modules, with the Google Threat Intelligence (GTI) server being the crown jewel for CTI analysts. The <strong>Remote MCP Server for Google SecOps</strong> — described as &ldquo;fully managed, enterprise-ready&rdquo; — is a significant addition since our last review, bringing hosted deployment to the platform.</p>
 <h3 id="what-works-well">What Works Well</h3>
 <p><strong>Full Google security stack.</strong> GTI provides VirusTotal-powered threat intelligence (file/URL/domain/IP analysis, threat actor tracking, campaign intelligence). Chronicle wraps Google&rsquo;s SIEM for log search and alert investigation. Security Command Center covers cloud security posture. SOAR handles playbook execution. This isn&rsquo;t just a VirusTotal wrapper — it&rsquo;s an AI interface to Google&rsquo;s entire security operations platform.</p>
-<p><strong>Google Cloud Next 2026 agentic defense.</strong> Google unveiled autonomous security agents at Cloud Next 2026: a Threat Hunting agent that proactively hunts for novel attack patterns and stealthy adversary behaviors, and a Detection Engineering agent that identifies coverage gaps and creates new detections. Both leverage the mcp-security platform. Google SecOps MCP is now automatically activated alongside the main API, simplifying setup.</p>
+<p><strong>Google Cloud Next 2026 agentic defense.</strong> <a href="https://cloud.google.com/blog/products/identity-security/next26-redefining-security-for-the-ai-era-with-google-cloud-and-wiz">Google unveiled autonomous security agents at Cloud Next 2026</a>: a Threat Hunting agent that proactively hunts for novel attack patterns and stealthy adversary behaviors, and a Detection Engineering agent that identifies coverage gaps and creates new detections. Both leverage the mcp-security platform. Google SecOps MCP is now automatically activated alongside the main API, simplifying setup.</p>
 <p><strong>Multiple deployment methods.</strong> uv, pip, Docker via Google ADK — flexible enough for local analyst workstations or production infrastructure. GCP Application Default Credentials handle auth cleanly. The new Remote MCP Server adds fully managed enterprise deployment.</p>
 <p><strong>Active development.</strong> 368 commits (up from 356) and growing, with regular additions of new tools and server modules.</p>
 <h3 id="what-doesnt-work-well">What Doesn&rsquo;t Work Well</h3>
@@ -242,7 +242,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Team Cymru Pure Signal MCP</td>
+<td><a href="https://www.team-cymru.com/press-releases/press-releases-pure-signal-mcp-server-ai-threat-intelligence">Team Cymru Pure Signal MCP</a></td>
 <td>GA (April 29, 2026)</td>
 </tr>
 <tr>
@@ -368,7 +368,7 @@
 <p><strong>CVE integration is practical.</strong> The cve_lookup and cves_by_product tools go beyond Shodan&rsquo;s core network intelligence into vulnerability management territory. Combined with ip_lookup, an analyst can quickly answer &ldquo;is this IP running vulnerable software?&rdquo;</p>
 <p><strong>Published to MCP Registry.</strong> Listed in the official MCP server registry, which means better discoverability and some implicit vetting.</p>
 <h3 id="what-doesnt-work-well-7">What Doesn&rsquo;t Work Well</h3>
-<p><strong>Shodan API key costs.</strong> Free Shodan accounts have very limited query access. Meaningful use requires a paid membership ($69/lifetime or $19/month for enterprise features). The search tool specifically requires a paid plan.</p>
+<p><strong>Shodan API key costs.</strong> Free Shodan accounts have very limited query access. Meaningful use requires a <a href="https://account.shodan.io/billing">paid membership</a>. The search tool specifically requires a paid plan.</p>
 <p><strong>No streaming API.</strong> Shodan&rsquo;s Monitor and Streaming APIs (real-time alerts on network changes) aren&rsquo;t exposed — only the REST API for point-in-time lookups.</p>
 <h3 id="osint-tools-mcp-server">OSINT Tools MCP Server</h3>
 <table>
@@ -625,7 +625,7 @@
 <p>The most conceptually interesting server in this review. While every other server here does IOC lookups (&ldquo;is this IP malicious?&quot;), the Threat Hunting MCP takes a <strong>TTP-first behavioral approach</strong> — helping analysts hunt for adversary behaviors rather than indicators.</p>
 <h3 id="what-works-well-11">What Works Well</h3>
 <p><strong>Framework-driven hunting.</strong> Supports PEAK, SQRRL, and TaHiTI threat hunting methodologies. Rather than ad-hoc querying, analysts follow structured hunting frameworks that ensure comprehensive coverage.</p>
-<p><strong>HEARTH community hunts.</strong> 50+ pre-built hunt packages from the HEARTH repository, giving analysts a library of proven hunt hypotheses to test against their environment.</p>
+<p><strong>HEARTH community hunts.</strong> <a href="https://github.com/THORCollective/HEARTH">130+ pre-built hunt packages</a> from the HEARTH repository, giving analysts a library of proven hunt hypotheses to test against their environment.</p>
 <p><strong>MITRE ATT&amp;CK, Diamond Model, and Cyber Kill Chain mapping.</strong> Every hunt is contextualized within standard threat frameworks, making findings actionable and reportable.</p>
 <p><strong>Cognitive bias detection.</strong> A unique feature — the server includes a module that flags potential analytical biases in threat hunting conclusions. Novel and genuinely useful for reducing false conclusions.</p>
 <p><strong>Splunk integration.</strong> Direct query execution against Splunk instances for running hunt queries against real log data.</p>

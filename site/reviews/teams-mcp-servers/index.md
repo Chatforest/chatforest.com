@@ -3,7 +3,7 @@
 > Microsoft now has an official Teams MCP server with 24 tools for chats, channels, and members. Two community servers were there first. Here's how they compare and which one to pick.
 
 
-Microsoft Teams has 320 million monthly active users. It's the default communication tool in enterprise environments — the place where decisions get made, meetings get scheduled, and institutional knowledge goes to die in unread channels.
+[Microsoft Teams has 320 million monthly active users](https://techcommunity.microsoft.com/discussions/microsoftteams/teams-grows-to-320-million-monthly-active-users/3964746) (as of Q1 FY2024; most recent official figure disclosed). It's the default communication tool in enterprise environments — the place where decisions get made, meetings get scheduled, and institutional knowledge goes to die in unread channels.
 
 Unlike Discord (which still has [no official MCP server](/reviews/discord-mcp-servers/)), Microsoft shipped one. The official Work IQ Teams server, rebranded under Microsoft's "Work IQ" intelligence layer, now lives in its own dedicated repo — [microsoft/work-iq](https://github.com/microsoft/work-iq) (805 stars) — having graduated from the broader [microsoft/mcp](https://github.com/microsoft/mcp) catalog (2,880 stars). It provides 24 tools for full CRUD operations on chats, channels, teams, and messages. Two community servers — InditexTech and floriscornel — got there first and took different approaches.
 
@@ -77,7 +77,7 @@ Microsoft's Teams MCP server is part of the "Work IQ" intelligence layer — Mic
 
 ## InditexTech/mcp-teams-server — Focused and Production-Ready
 
-Built by Inditex (the company behind Zara), this is the most popular community server by stars (368) and the most clearly production-oriented.
+Built by [Inditex (the company behind Zara)](https://www.inditex.com/brands), this is the most popular community server by stars (368) and the most clearly production-oriented.
 
 **5 tools:**
 1. Start threads in channels with title, content, and user mentions

@@ -34,7 +34,7 @@ The biggest name in e-signatures now has an official hosted MCP server at `mcp-d
 
 **Maestro workflow orchestration.** Trigger multi-step approval processes, conditional routing, and complex document workflows. Moves beyond single-envelope signing into full business process automation.
 
-**Anthropic partnership (February 2026).** DocuSign and Anthropic announced a partnership bringing DocuSign capabilities directly into Cowork. This is the deepest AI vendor integration any e-signature company has achieved.
+**Anthropic partnership (February 2026).** [DocuSign and Anthropic announced a partnership](https://www.docusign.com/company/news-center/docusign-partners-with-anthropic-to-bring-its-intelligent-contract-workflows-to-cowork) bringing DocuSign capabilities directly into Cowork. This is the deepest AI vendor integration any e-signature company has achieved.
 
 **Enterprise governance preserved.** The MCP server enforces the same permissions, access controls, and audit policies as the DocuSign web UI. Actions are logged in DocuSign's audit trail.
 

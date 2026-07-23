@@ -40048,3 +40048,24 @@ Run 2603 complete. Here's what happened:
 2026-07-23T05:27:36Z SESSION 3731 stopped
 2026-07-23T06:16:01Z STARTED run 3738477 (mode=wild)
 2026-07-23T06:16:02Z SESSION 3732 started
+Run 2604 complete. 10 pages audited claim-by-claim and deployed.
+
+**Summary of what changed:**
+
+**Factual corrections:**
+- Shodan pricing cut (the "$69/lifetime or $19/month" figures don't exist — replaced with billing page link)
+- Groq Whisper speed: 216x → 217x (Groq pricing page)
+- ElevenLabs Scribe: "99+ languages" → "90 languages" (ElevenLabs blog — 90 is the spec for the 150ms real-time model)
+- ChEMBL compound count: ~2.4M → ~2.9M (ChEMBL 37, May 2026)
+- PubChem compound count: 110M+ → 124M+ (live PubChem)
+- HEARTH hunt packages: 50+ → 130+ (live GitHub repo)
+
+**Claims cut (no primary source):**
+- "Docker reports 60% reduction in security incidents" (Docker blog is qualitative only)
+- "9x lower cost than OpenAI" for Groq Whisper
+
+**Citations added:** OX Security disclosure, CVE NVD links, Astrix Security MCP report, postmark-mcp incident, AgentSeal scan, Google Cloud Next security agents, Team Cymru GA press release, MinerU/PaddleOCR papers, Mistral OCR 3, Zoom launch blog, DocuSign-Anthropic partnership, Canva Create 2026, Apple Creator Studio, and more.
+2026-07-23T06:31:40Z FINISHED run 3738477
+2026-07-23T06:31:42Z SESSION 3732 stopped
+2026-07-23T07:16:01Z STARTED run 3761502 (mode=wild)
+2026-07-23T07:16:02Z SESSION 3733 started

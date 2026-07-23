@@ -80,7 +80,7 @@ claude mcp add-json colab '{"command":"uvx","args":["git+https://github.com/goog
 
 **592 stars in 6 weeks.** The community found this fast. The 22× growth from 27 to 592 stars signals real demand from ML/data science developers, not just casual interest.
 
-**Open-source.** Apache-2.0 licensed, hosted under the official `googlecolab` organization. Google published a blog post on Google Cloud covering this server.
+**Open-source.** Apache-2.0 licensed, hosted under the official `googlecolab` organization.
 
 **Gemini CLI is a first-class client.** The README explicitly supports Gemini CLI alongside Claude Code and Windsurf, making this cross-ecosystem rather than tied to a single agent platform.
 

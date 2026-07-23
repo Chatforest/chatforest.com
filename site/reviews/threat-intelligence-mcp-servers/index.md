@@ -27,7 +27,7 @@ The most comprehensive official security MCP project. Google's mcp-security is a
 
 **Full Google security stack.** GTI provides VirusTotal-powered threat intelligence (file/URL/domain/IP analysis, threat actor tracking, campaign intelligence). Chronicle wraps Google's SIEM for log search and alert investigation. Security Command Center covers cloud security posture. SOAR handles playbook execution. This isn't just a VirusTotal wrapper — it's an AI interface to Google's entire security operations platform.
 
-**Google Cloud Next 2026 agentic defense.** Google unveiled autonomous security agents at Cloud Next 2026: a Threat Hunting agent that proactively hunts for novel attack patterns and stealthy adversary behaviors, and a Detection Engineering agent that identifies coverage gaps and creates new detections. Both leverage the mcp-security platform. Google SecOps MCP is now automatically activated alongside the main API, simplifying setup.
+**Google Cloud Next 2026 agentic defense.** [Google unveiled autonomous security agents at Cloud Next 2026](https://cloud.google.com/blog/products/identity-security/next26-redefining-security-for-the-ai-era-with-google-cloud-and-wiz): a Threat Hunting agent that proactively hunts for novel attack patterns and stealthy adversary behaviors, and a Detection Engineering agent that identifies coverage gaps and creates new detections. Both leverage the mcp-security platform. Google SecOps MCP is now automatically activated alongside the main API, simplifying setup.
 
 **Multiple deployment methods.** uv, pip, Docker via Google ADK — flexible enough for local analyst workstations or production infrastructure. GCP Application Default Credentials handle auth cleanly. The new Remote MCP Server adds fully managed enterprise deployment.
 
@@ -124,7 +124,7 @@ Zscaler's official MCP server bridges its entire zero-trust security platform wi
 
 | Detail | Info |
 |--------|------|
-| Team Cymru Pure Signal MCP | GA (April 29, 2026) |
+| [Team Cymru Pure Signal MCP](https://www.team-cymru.com/press-releases/press-releases-pure-signal-mcp-server-ai-threat-intelligence) | GA (April 29, 2026) |
 | License | — (Commercial platform) |
 | Status | Generally available to Pure Signal customers |
 
@@ -212,7 +212,7 @@ The community standard for Shodan. IP lookups, search queries, CVE lookups, DNS 
 
 ### What Doesn't Work Well
 
-**Shodan API key costs.** Free Shodan accounts have very limited query access. Meaningful use requires a paid membership ($69/lifetime or $19/month for enterprise features). The search tool specifically requires a paid plan.
+**Shodan API key costs.** Free Shodan accounts have very limited query access. Meaningful use requires a [paid membership](https://account.shodan.io/billing). The search tool specifically requires a paid plan.
 
 **No streaming API.** Shodan's Monitor and Streaming APIs (real-time alerts on network changes) aren't exposed — only the REST API for point-in-time lookups.
 
@@ -366,7 +366,7 @@ The most conceptually interesting server in this review. While every other serve
 
 **Framework-driven hunting.** Supports PEAK, SQRRL, and TaHiTI threat hunting methodologies. Rather than ad-hoc querying, analysts follow structured hunting frameworks that ensure comprehensive coverage.
 
-**HEARTH community hunts.** 50+ pre-built hunt packages from the HEARTH repository, giving analysts a library of proven hunt hypotheses to test against their environment.
+**HEARTH community hunts.** [130+ pre-built hunt packages](https://github.com/THORCollective/HEARTH) from the HEARTH repository, giving analysts a library of proven hunt hypotheses to test against their environment.
 
 **MITRE ATT&CK, Diamond Model, and Cyber Kill Chain mapping.** Every hunt is contextualized within standard threat frameworks, making findings actionable and reportable.
 

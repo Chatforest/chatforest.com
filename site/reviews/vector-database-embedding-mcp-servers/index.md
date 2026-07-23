@@ -57,9 +57,9 @@ What sets Chroma apart is **four deployment modes** — ephemeral (in-memory for
 
 **12 tools** with the unique strength of **five search types**: text search, vector search, hybrid search (text + vector combined), text similarity search, and filter-based queries. Full collection CRUD and data operations round out the feature set. Supports both stdio and SSE transport.
 
-Milvus is the **most-starred open-source vector database** (40,000+ GitHub stars) and powers production AI at NVIDIA, Salesforce, eBay, Airbnb, and DoorDash.
+Milvus is the **most-starred open-source vector database** ([40,000+ GitHub stars](https://github.com/milvus-io/milvus)) and [powers production AI at NVIDIA, Salesforce, eBay, Airbnb, and DoorDash](https://www.prnewswire.com/news-releases/milvus-surpasses-40-000-github-stars-reinforcing-leadership-in-open-source-vector-databases-302646510.html).
 
-**The Milvus/Zilliz ecosystem has expanded significantly.** Zilliz now ships a separate [zilliz-mcp-server](https://github.com/zilliztech/zilliz-mcp-server) for Zilliz Cloud management — listing projects, clusters, and creating free-tier Milvus clusters through MCP. More significantly, Zilliz launched [claude-context](https://github.com/zilliztech/claude-context) (9,800 stars) — a **code search MCP powered by Milvus** that uses hybrid BM25 + dense vector search to make entire codebases available as context for coding agents. It achieves ~40% token reduction under equivalent retrieval quality, supports 14 programming languages, and ships as a monorepo with a VS Code extension alongside the MCP server. At 9,800 stars, claude-context is **the most popular MCP server in the entire vector database ecosystem**.
+**The Milvus/Zilliz ecosystem has expanded significantly.** Zilliz now ships a separate [zilliz-mcp-server](https://github.com/zilliztech/zilliz-mcp-server) for Zilliz Cloud management — listing projects, clusters, and creating free-tier Milvus clusters through MCP. More significantly, Zilliz launched [claude-context](https://github.com/zilliztech/claude-context) (12,200+ stars) — a **code search MCP powered by Milvus** that uses hybrid BM25 + dense vector search to make entire codebases available as context for coding agents. It achieves [~40% token reduction under equivalent retrieval quality, supports 14 programming languages](https://github.com/zilliztech/claude-context), and ships as a monorepo with a VS Code extension alongside the MCP server. claude-context is **the most popular MCP server in the entire vector database ecosystem**.
 
 **Best for:** Self-hosted production deployments, teams that need hybrid search, enterprise environments already running Milvus or Zilliz Cloud, and (via claude-context) AI-powered code search.
 
@@ -235,7 +235,7 @@ A single MCP server that supports **ChromaDB, Couchbase, MongoDB, Qdrant, and PG
 | **Turbopuffer** | — | 2 (Code Mode) | Vector, hybrid | stdio | Cloud only (S3-native) | Yes |
 | **LanceDB** | 23+ | 3 | Semantic | stdio | Serverless (disk/cloud) | Yes |
 | **pgvector** (mcp-memory) | 58+ | — | Semantic + tags | SSE | Requires PostgreSQL | Community |
-| **claude-context** (Milvus) | 9,800 | — | BM25 + dense vector | stdio | Local + Milvus/Zilliz | Yes (Zilliz) |
+| **claude-context** (Milvus) | 12,200+ | — | BM25 + dense vector | stdio | Local + Milvus/Zilliz | Yes (Zilliz) |
 
 ## What Works Well
 

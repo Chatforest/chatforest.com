@@ -31,7 +31,7 @@ MinerU arrived on PulseMCP on March 18, 2026 — one day before the original ver
 
 **Breadth of input formats.** PDF, DOCX, PPTX, and XLSX all convert natively to Markdown, JSON, or HTML. Native DOCX/PPTX/XLSX support was added in v3.0.0 (March 29) and v3.1.0 (April 17). Prior versions handled PDFs only.
 
-**Multiple inference backends.** MinerU supports three modes — `pipeline` (lightweight), `hybrid-engine` (balanced), `vlm-engine` (highest accuracy). The VLM engine uses MinerU2.5-Pro-2604-1.2B, which achieved 86.2% on OmniDocBench v1.5 (v3.0.0). Formula preservation (LaTeX output), chart handling, and table extraction are all addressed in dedicated pipeline stages.
+**Multiple inference backends.** MinerU supports three modes — `pipeline` (lightweight), `hybrid-engine` (balanced), `vlm-engine` (highest accuracy). The VLM engine uses MinerU2.5-Pro-2604-1.2B, and the overall [MinerU pipeline achieved 86.2% on OmniDocBench v1.5](https://github.com/opendatalab/MinerU) (v3.0.0). Formula preservation (LaTeX output), chart handling, and table extraction are all addressed in dedicated pipeline stages.
 
 **Multiple deployment options.** CLI, REST API, Docker, Gradio WebUI, and official SDKs for Python, Go, and TypeScript. This is infrastructure designed for production document processing, not just a weekend wrapper.
 
@@ -65,7 +65,7 @@ The most significant OCR MCP server in the original review has grown substantial
 - `OCR` — text detection + recognition on images/PDFs (original)
 - `PP-StructureV3` — layout parsing, tables, titles to Markdown (original)
 - `PaddleOCR-VL` — VLM-based document layout extraction to Markdown (new)
-- `PaddleOCR-VL-1.5` — upgraded VL model with 94.5% accuracy on OmniDocBench v1.5 (new)
+- `PaddleOCR-VL-1.5` — upgraded VL model with [94.5% accuracy on OmniDocBench v1.5](https://arxiv.org/abs/2601.21957) (new)
 
 PP-OCRv5 models (mobile detection + recognition variants) are explicitly supported, with improved handling for seal recognition and cross-page table merging.
 
@@ -116,7 +116,7 @@ The Red Hat MCP server predates this review, but Docling's rapid expansion makes
 
 The wrapper itself has been dormant since before the original review. No activity since February 2026.
 
-The underlying Mistral OCR API (model `mistral-ocr-2512`, December 2025) remains excellent — 74% win rate over its predecessor, with strong performance on handwriting, complex tables, and European documents at $2/1,000 pages. But this community wrapper has not kept pace. For Mistral OCR via MCP, you would need to implement your own wrapper or find a more actively maintained integration.
+The underlying [Mistral OCR 3 API](https://mistral.ai/news/mistral-ocr-3/) (model `mistral-ocr-2512`, December 2025) remains excellent — 74% win rate over its predecessor, with strong performance on handwriting, complex tables, and European documents at $2/1,000 pages. But this community wrapper has not kept pace. For Mistral OCR via MCP, you would need to implement your own wrapper or find a more actively maintained integration.
 
 ### Gemini OCR MCP
 
