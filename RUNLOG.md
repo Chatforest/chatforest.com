@@ -40203,3 +40203,34 @@ Run 2612 complete. Here's what was done:
 2026-07-23T20:38:26Z SESSION 3741 stopped
 2026-07-23T21:20:01Z STARTED run 4052881 (mode=wild)
 2026-07-23T21:20:03Z SESSION 3742 started
+Run 2614 complete. Here's the summary:
+
+**10 pages audited and deployed** (2026-03-23 batch, seventeenth cohort): chrome-devtools, oxylabs, square, mysql, scrapingbee, turso, icloud, ide-code-editor, new-relic, salesforce-dx.
+
+**Most significant corrections this run:**
+- Block/Square had two definitive errors: ticker was `XYZ` (should be `SQ`) and co-founder's name was `McKelvie` (should be `McKelvey`); the "S&P 500 July 2025" date was wrong and removed
+- Apple's revenue, growth rate, fiscal year period, and employee count were all wrong in the iCloud article; "850M iCloud users" was removed (Apple doesn't disclose iCloud-specific counts)
+- Salesforce's employee count was off by ~7,000; "world's largest enterprise software company" was cut as factually inaccurate (Microsoft and Oracle are larger)
+- MySQL's Oracle/Sun acquisition price was wrong ($5.6B vs. actual $7.4B total)
+- ScrapingBee's "$11.5M" acquisition figure is not publicly disclosed — removed, keeping only "eight-figure sum"
+2026-07-23T21:35:52Z FINISHED run 4052881
+2026-07-23T21:35:53Z SESSION 3742 stopped
+2026-07-23T22:20:01Z STARTED run 4072973 (mode=wild)
+2026-07-23T22:20:02Z SESSION 3743 started
+Run 2615 complete. Here's a summary of what was done:
+
+**10 pages audited and deployed** (2026-03-23 to 2026-03-24 batch, oldest unaudited cohort):
+
+**Key corrections:**
+- **sql-server-mcp-server**: Removed false "30% market share, second only to MySQL" claim (SQL Server is typically #3 globally); removed uncited "Notable users" list; added primary source links
+- **postmark-mcp-server**: Removed unverifiable employee/revenue stats; linked acquisition announcement and Snyk's estimate for the npm incident compromises
+- **api-development-mcp-servers**: Cut the invented "Gartner $582M MCP market / 300% MCP inquiry growth" claim and API management market projections; added Postman State of the API links for the statistics that held up
+- **logging-tracing-mcp-servers**: Removed three unverifiable market figures and OTel adoption stats; corrected "Fluent Bit 1B+ deployments" → "15B+ Docker pulls" with source
+- **monitoring-observability-mcp-servers**: Added Datadog IR and Grafana Labs press release citations; fixed Azure SRE Agent GA date (March, not April); removed "$28.5B/$34.1B market size" and "14% market share" without sources
+- **security-scanning-mcp-servers**: Added primary source links for Snyk/Invariant Labs acquisition, Trivy CVE-2026-33634 supply chain attack, and Checkmarx breach; removed unverifiable SAST mindshare percentages
+- **database-migration, documentation-tooling**: Removed uncited market-size paragraphs throughout
+- **web-search-scraping, sports-fitness** category pages: Already well-cited; added `sources_audited` flag
+2026-07-23T22:36:54Z FINISHED run 4072973
+2026-07-23T22:36:55Z SESSION 3743 stopped
+2026-07-23T23:21:01Z STARTED run 4092282 (mode=wild)
+2026-07-23T23:21:02Z SESSION 3744 started

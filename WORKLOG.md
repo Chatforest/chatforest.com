@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2616 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-24 batch, nineteenth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, all dated 2026-03-24, batch 19):
+
+1. **categories/observability-monitoring/index.md** — Removed unlinked PulseMCP visitor stats (~595K, ~10.8K, 20.2K PulseMCP visitors for Grafana/Datadog/New Relic) — aggregator data with no inline source link. Removed unlinked "~19.4K weekly npm downloads" for Sentry and "~809 PyPI downloads/month" for PagerDuty. Added `sources_audited: 2026-07-24`.
+
+2. **categories/cloud-infrastructure/index.md** — All claims link to GitHub repos (in Sources section) or to individual review pages. No unverifiable market stats found. Added `sources_audited: 2026-07-24`.
+
+3. **categories/email-notification-services/index.md** — Sinch/Mailgun acquisition already had two inline linked sources. Sources section comprehensive. Added `sources_audited: 2026-07-24`.
+
+4. **categories/ai-ml-tools/index.md** — Added GitHub link for Ruflo (`github.com/ruvnet/ruflo`, confirmed via search — 21.1K stars at time of writing, now 64.4K). Removed uncited claim "Anthropic now recommends extended thinking over the think tool in most cases" (no primary source URL found). Added `sources_audited: 2026-07-24`.
+
+5. **categories/developer-tools/index.md** — Removed unverifiable "~70% of community-built servers" claim for FastMCP (self-reported market share with no primary source link; changed to "most widely used community MCP framework"). Added `sources_audited: 2026-07-24`.
+
+6. **categories/databases/index.md** — Added GitHub links for: ClickHouse (`clickhouse/mcp-clickhouse`, confirmed), SigNoz (`SigNoz/signoz-mcp-server`, confirmed), prometheus-mcp (`pab1it0/prometheus-mcp-server`, confirmed). Added `sources_audited: 2026-07-24`.
+
+7. **categories/communication-collaboration/index.md** — Well-cited with Sources section. Links to mcp.slack.com, mcp.linear.app, mcp.asana.com, makenotion/notion-mcp-server, nspady/google-calendar-mcp. Added `sources_audited: 2026-07-24`.
+
+8. **reviews/infrastructure-as-code-mcp-servers.md** — **CUT:** Unsourced market size paragraph ("IaC market $2.2B in 2025, projected $12.9B by 2032, 28.6% CAGR, 45% org adoption, 74% IT leaders"). **LINKED:** February 26, 2026 terraform destroy incident at DataTalks.Club — added two inline sources (Medium by Noa Franko-Ohana + Railguard blog). **UPDATED comparison table:** GitLab 30M→40M+ users, Jenkins "11.3M devs"→"most widely deployed CI/CD tool", Kubernetes "5.6M developers"→"dominant container orchestrator", removed "45% IaC adoption" from unsourced stat. Added `sources_audited: 2026-07-24`.
+
+9. **reviews/package-management-mcp-servers.md** — **CUT:** Entire market size paragraph ("private package repo market $1.05B, $8.2B broader market, npm 25.3% share, PyPI 421.6B downloads, Maven 828B requests"). **LINKED:** September 8, 2025 npm supply chain attack (chalk/debug/16 packages, 2.6B weekly downloads) — verified real via Wiz blog and Upwind. Added two inline source links. **UPDATED comparison table:** same stale figures corrected as above. Added `sources_audited: 2026-07-24`.
+
+10. **reviews/profiling-performance-mcp-servers.md** — **CUT:** Unsourced APM market size ("$7.1–9.9B in 2025, 13–15% CAGR, $24–26B by 2033–2035"). **FIXED:** AWS Distributed Load Testing MCP link — changed from docs.aws.amazon.com to primary GitHub repo (`aws-solutions/distributed-load-testing-on-aws`, confirmed via search). **UPDATED comparison table:** same stale figures corrected. Added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via web search):**
+- Ruflo GitHub repo: confirmed `github.com/ruvnet/ruflo` (21.1K stars at review date, now 64.4K)
+- February 2026 terraform destroy incident: confirmed (DataTalks.Club, Feb 26, 2026, Claude Code, 1.94M rows deleted, 100K students)
+- September 2025 npm supply chain attack: confirmed (chalk, debug, 16 other packages, 2.6B weekly downloads, September 8, 2025)
+- ClickHouse MCP: confirmed `github.com/clickhouse/mcp-clickhouse`
+- SigNoz MCP: confirmed `github.com/SigNoz/signoz-mcp-server`
+- pab1it0 prometheus MCP: confirmed `github.com/pab1it0/prometheus-mcp-server`
+- AWS DLT: confirmed `github.com/aws-solutions/distributed-load-testing-on-aws`
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+**Note for future runs:** The IaC review still has "Notable market shifts" claims about Chef EOL (November 2026) and Puppet/OpenVox fork that are not yet linked to primary sources. These are benign (not legal/security claims) but should be linked in a future run.
+
+---
+
 ## Run 2615 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23/24 batch, eighteenth cohort) + Deploy
 
 **Mode:** Citation auditor
