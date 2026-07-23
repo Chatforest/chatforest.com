@@ -6,6 +6,7 @@ og_description: "Brave vs Exa vs Tavily vs Perplexity Sonar — which search MCP
 content_type: "Comparison"
 card_description: "Brave vs Exa vs Tavily vs Perplexity Sonar vs Kagi vs Linkup — which search MCP server should your agent use? A side-by-side comparison with clear recommendations."
 last_refreshed: 2026-04-05
+sources_audited: 2026-07-23
 ---
 
 Search is the most fundamental capability an AI agent can have. Without it, your agent is limited to its training data and whatever files you give it access to. With it, your agent can verify facts, find documentation, research competitors, and stay current.
@@ -41,7 +42,7 @@ Traditional search: your agent sends a query string, the engine matches it again
 ### 2. Semantic Search (Exa, Linkup)
 Neural search: the query is converted to an embedding, and results are ranked by conceptual similarity rather than keyword overlap. Exa's neural index understands that "companies making AI debugging tools" and "LLM observability platform" are related concepts, even though they share no words.
 
-**When it works best:** Research, exploration, discovering companies or tools you don't know the name of yet. Exa scores 81% on the WebWalker benchmark vs Tavily's 71% specifically because semantic matching handles ambiguous queries better.
+**When it works best:** Research, exploration, discovering companies or tools you don't know the name of yet. Exa scores [81% on the WebWalker benchmark vs Tavily's 71%](https://exa.ai/versus/tavily) specifically because semantic matching handles ambiguous queries better (per Exa's own comparison page — evaluate accordingly).
 
 **When it fails:** Exact lookups where you need a specific page. Semantic search can over-generalize — searching for a specific error message might return conceptually related but wrong results.
 
@@ -109,7 +110,7 @@ Tavily is the search API most AI frameworks integrate by default. LangChain, Lla
 - Search + extract in one pipeline — find pages then pull structured content
 - Site mapping and crawling tools go beyond basic search
 
-**What changed recently:** Tavily is now available in Cursor's MCP marketplace, giving coding agents real-time web access without manual configuration. The Nebius acquisition (February 2026) is proceeding — Nebius is positioning the combination as "core AI infrastructure + production-grade web access" for agentic systems.
+**What changed recently:** Tavily is now available in Cursor's MCP marketplace, giving coding agents real-time web access without manual configuration. The [Nebius acquisition](https://nebius.com/newsroom/nebius-announces-agreement-to-acquire-tavily-to-add-agentic-search-to-its-ai-cloud-platform) (announced February 2026) is proceeding — Nebius is positioning the combination as "core AI infrastructure + production-grade web access" for agentic systems.
 
 **The catch:** Keyword-based search, not semantic — scores 71% on WebWalker vs Exa's 81%. The Nebius acquisition introduces roadmap uncertainty, though the team frames it as increased investment rather than a pivot. Free tier credits don't roll over and expire after 90 days. At scale (100K queries), costs reach ~$800/month.
 
@@ -135,7 +136,7 @@ Perplexity Sonar is fundamentally different from the other servers here. Instead
 - Citation tokens no longer billed (2026 cost cut)
 - Pro, Max, and Enterprise subscribers can connect Perplexity to external tools via remote MCP connectors (400+ prebuilt connectors available)
 
-**⚠️ Strategic uncertainty (March 2026):** At the Ask 2026 conference, Perplexity CTO Denis Yarats announced that Perplexity is internally moving away from MCP toward APIs and CLIs. The stated reasons: MCP's tool schema overhead consumes up to 72% of available context window space, and authentication is clunky. Perplexity launched the Agent API (GA February 2026) as their preferred alternative — a single endpoint routing to models from OpenAI, Anthropic, Google, xAI, and NVIDIA with built-in search. The MCP server is still maintained, but it's no longer Perplexity's primary integration path. This doesn't affect the MCP server today, but expect slower feature development going forward.
+**⚠️ Strategic uncertainty (March 2026):** Perplexity CTO Denis Yarats signaled that Perplexity is internally moving away from MCP toward APIs and CLIs, citing MCP's tool schema overhead and clunky authentication. Perplexity launched the Agent API (GA February 2026) as their preferred alternative — a single endpoint routing to models from OpenAI, Anthropic, Google, xAI, and NVIDIA with built-in search. The MCP server is still maintained, but it's no longer Perplexity's primary integration path. This doesn't affect the MCP server today, but expect slower feature development going forward.
 
 **The catch:** No free tier — highest entry barrier in the search category. Deep research can timeout in clients with short tool-call limits. Less control over the retrieval process — you get Perplexity's interpretation, not raw sources. Per-token pricing is harder to predict than flat-rate alternatives. The CTO's public shift away from MCP raises questions about long-term investment in the MCP server.
 
@@ -167,7 +168,7 @@ Kagi is the search engine for people who pay for ad-free, tracker-free, high-qua
 
 **[LinkupPlatform/linkup-mcp-server](https://github.com/LinkupPlatform/linkup-mcp-server)** | 24 stars
 
-Linkup positions itself as the most factually accurate search API, citing a #1 ranking on OpenAI's SimpleQA benchmark. The MCP server is simple — two tools, three search depth modes — but the accuracy claim is worth evaluating.
+Linkup positions itself as the most factually accurate search API, citing [state-of-the-art performance on OpenAI's SimpleQA benchmark](https://www.linkup.so/blog/linkup-establishes-sota-performance-on-simpleqa) (90%+ score). The MCP server is simple — two tools, three search depth modes — but the accuracy claim is worth evaluating.
 
 **Tools (2):**
 - `linkup-search` — Web search with fast, standard, or deep depth modes
@@ -281,7 +282,7 @@ Need search for an AI agent?
 
 A few gaps worth noting:
 
-1. **No Google Search MCP.** The most-used search engine in the world has no official MCP integration for web search. Worse, Google has **closed the Custom Search JSON API to new customers** as of 2026, with existing customers having until January 1, 2027 to transition. This makes community Google Search wrappers even harder to build. Google *has* released a Developer Knowledge MCP server (for searching Google's developer documentation), but that's not general web search.
+1. **No Google Search MCP.** The most-used search engine in the world has no official MCP integration for web search. Worse, Google has [**closed the Custom Search JSON API to new customers**](https://developers.google.com/custom-search/v1/overview) as of 2026, with existing customers having until January 1, 2027 to transition. This makes community Google Search wrappers even harder to build. Google *has* released a Developer Knowledge MCP server (for searching Google's developer documentation), but that's not general web search.
 
 2. **Self-hosted option now exists (SearXNG).** Multiple SearXNG MCP server implementations launched in March 2026, filling what was previously the biggest gap in the ecosystem. SearXNG is a privacy-respecting meta-search engine that aggregates results from multiple search engines. Implementations include [mcp-searxng](https://github.com/ihor-sokoliuk/mcp-searxng) and [searxng-mcp](https://github.com/tisDDM/searxng-mcp) — the latter works out-of-the-box by auto-selecting a random public instance, or can connect to your own private SearXNG deployment. These are community-maintained (not from the SearXNG project itself), but they fill a real need for users who want search without commercial API dependencies.
 
@@ -289,7 +290,7 @@ A few gaps worth noting:
 
 4. **Limited search analytics.** None of these servers report query costs, rate limit status, or usage metrics back to the agent. Your agent can burn through API credits without knowing it.
 
-5. **MCP protocol overhead concerns.** Perplexity's CTO publicly called out MCP's tool schema overhead consuming up to 72% of context window space. This isn't unique to search — it affects all MCP servers — but search is where agents interact with MCP most frequently. The MCP protocol may need to evolve to address this.
+5. **MCP protocol overhead concerns.** Perplexity's CTO has signaled concern about MCP's tool schema overhead consuming significant context window space. This isn't unique to search — it affects all MCP servers — but search is where agents interact with MCP most frequently. The MCP protocol may need to evolve to address this.
 
 ---
 

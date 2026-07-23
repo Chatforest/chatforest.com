@@ -6,6 +6,7 @@ og_description: "Slack vs Teams vs Discord MCP servers compared — official ser
 content_type: "Comparison"
 card_description: "Slack vs Microsoft Teams vs Discord — three communication platforms, three different MCP stories. Head-to-head comparison with clear recommendations."
 last_refreshed: 2026-04-05
+sources_audited: 2026-07-23
 ---
 
 Communication platforms are where work happens. Slack channels, Teams threads, Discord servers — they hold institutional knowledge, decisions, and context that AI agents need but can't reach without an MCP integration.
@@ -40,7 +41,7 @@ We've reviewed all three: the [Slack MCP server](/reviews/slack-mcp-server/) (4/
 Slack's official MCP server is the benchmark for communication platform integration. Hosted at `mcp.slack.com`, it requires zero local setup — no npm install, no Docker, no local process. Your MCP client connects directly to Slack's endpoint.
 
 **What makes it the best:**
-- **OAuth with granular scopes + PKCE.** You choose exactly what the agent can access: public channels, private channels, DMs, group DMs. Each requires separate consent. **PKCE went GA on March 30, 2026** — desktop/mobile clients can now authenticate without embedding a client secret. This is the right security model.
+- **OAuth with granular scopes + PKCE.** You choose exactly what the agent can access: public channels, private channels, DMs, group DMs. Each requires separate consent. **[PKCE went GA on March 30, 2026](https://docs.slack.dev/changelog/2026/03/30/pkce/)** — desktop/mobile clients can now authenticate without embedding a client secret. This is the right security model.
 - **Natural language responses.** Search results come back formatted for LLM consumption, not raw API JSON. Less token waste, more usable answers.
 - **Search that works.** Searching across an entire workspace — by date, user, content type — is genuinely powerful for knowledge retrieval.
 - **Canvas integration.** Create and update Slack canvases programmatically. Export as markdown. Useful for agents that generate reports or documentation.

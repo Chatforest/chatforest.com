@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2607 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-22 batch, tenth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (oldest unaudited by date, all dated 2026-03-22):
+
+1. **best-email-mcp-servers.md** — No critical corrections needed; existing citations adequate. Added sources_audited.
+
+2. **best-observability-mcp-servers.md** — Fixed Grafana mcp-grafana tool count: "40+ tools across 15 categories" → "[60+ tools across 20+ configurable categories](https://github.com/grafana/mcp-grafana)" (GitHub README). Fixed Docker Hub pulls: "252K+" → "1M+". Updated feature comparison table Grafana tool count from "40+" → "60+". Removed Datadog GA date "March 10, 2026" (not found in linked press release — kept GA claim). Added Honeycomb free tier pricing link. Added sources_audited.
+
+3. **best-workflow-automation-mcp-servers.md** — Fixed Zapier app/action count: "8,000+ apps, 40,000+ actions" → "[9,000+ apps and 30,000+ actions](https://zapier.com/mcp)" (zapier.com/mcp). Fixed comparison table Zapier entry. Fixed Zapier Agentic Beta meta-tool count: "14 static meta-tools" → "[15 static meta-tools](https://docs.zapier.com/mcp/how-tools-work)". Fixed change table "14 meta-tools" → "15 meta-tools". Added Airflow 3.2.0 release notes link for "April 7, 2026" release claim. Added sources_audited.
+
+4. **best-cms-mcp-servers.md** — CUT unverifiable EmDash version-claim detail: "went from v0.1.0 preview to v0.5.0 in three days (April 12–14), shipping four releases in rapid succession" → "shipped multiple releases in rapid succession in April 2026". CUT EmDash "two weeks" from trends section. Added WordPress Abilities API link for "Abilities API" in WordPress 6.9. Added sources_audited.
+
+5. **best-communication-mcp-servers.md** — Added Slack PKCE GA source link: "[PKCE went GA on March 30, 2026](https://docs.slack.dev/changelog/2026/03/30/pkce/)". Added sources_audited.
+
+6. **best-memory-mcp-servers.md** — Fixed Zep pricing: removed specific wrong prices ("$25-$475/month"), linked to [getzep.com/pricing](https://www.getzep.com/pricing/) instead (plans may have changed). Added mem0 performance claims citation: "[+26% accuracy over OpenAI Memory, 91% faster responses, and 90% lower token usage](https://mem0.ai/research-3)". Added Graphiti CVE advisory link: "[CVE-2026-32247](https://github.com/getzep/graphiti/security/advisories/GHSA-gg5m-55jj-8m5g) (High severity, CVSS 8.1)". Added sources_audited.
+
+7. **best-project-management-mcp-servers.md** — Fixed CVE-2026-27825 CVSS score: "9.1" → "8.0–9.0 depending on scorer" with NVD links for both CVEs. Fixed OX Security STDIO claim attribution: added "[OX Security disclosed](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/)" link. Added Atlassian Rovo MCP GA link: "[went GA on February 4, 2026](https://www.atlassian.com/blog/announcements/atlassian-rovo-mcp-ga)". Added Bitbucket Cloud support link: "[Bitbucket Cloud support was added April 8, 2026](https://www.atlassian.com/blog/bitbucket/the-atlassian-rovo-mcp-server-now-supports-bitbucket-cloud)". Added sources_audited.
+
+8. **best-search-mcp-servers.md** — Removed Perplexity CTO "72% of context window" claim (no primary source); softened to "consuming significant context window space". Removed "72%" from What's Missing section. Added Exa WebWalker benchmark self-report note + link with "(per Exa's own comparison page — evaluate accordingly)" caveat. Added Nebius acquisition link (February 2026). Added Google Custom Search API closure link. Fixed Linkup "#1 ranking on SimpleQA" → "[state-of-the-art performance on OpenAI's SimpleQA benchmark](https://www.linkup.so/blog/linkup-establishes-sota-performance-on-simpleqa) (90%+ score)". Added sources_audited.
+
+9. **best-spreadsheet-mcp-servers.md** — Added Microsoft-Arcade partnership link: "[Microsoft-Arcade partnership](https://www.arcade.dev/blog/microsoft-office-365-mcp-servers-launch/)". Added sources_audited.
+
+10. **best-vector-database-mcp-servers.md** — Fixed arXiv attribution: "An [ecosystem-wide audit] of 8,000+ MCP servers" was citing arXiv paper that only analyzed 4 servers → corrected to "[BlueRock Security scan](https://www.bluerock.io/post/mcp-furi-microsoft-markitdown-vulnerabilities) of 7,000+ MCP servers". Fixed Milvus CVE patch versions (critical error): split CVE-2026-26190 (patched 2.5.27+/2.6.10+) from CVE-2025-64513 (patched 2.4.24+/2.5.21+/2.6.5+ — completely different versions, previously wrong). Added GitHub advisory links for both CVEs. Fixed Chroma tool count: "12" → "13" throughout (intro table, comparison body, feature comparison table). Added sources_audited.
+
+**Key factual corrections this run:** Grafana tool count 40→60; Zapier app count 8K→9K, action count 40K→30K; Zapier meta-tool count 14→15; Zep pricing cut (wrong prices); Linkup "#1 ranking" overstated; Perplexity "72%" cut (unsourced); arXiv paper misattributed for 7K-server scan (correct: BlueRock Security); Milvus CVE-2025-64513 patch versions were completely wrong (different patch branches than CVE-2026-26190); Chroma tool count 12→13 in three places.
+
+**Research method:** 3 parallel research agents from prior context verified claims across all 10 pages (email/observability/memory, workflow/CMS/search, PM/spreadsheet/vector-DB groups).
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2606 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-22 batch, ninth cohort) + Deploy
 
 **Mode:** Citation auditor

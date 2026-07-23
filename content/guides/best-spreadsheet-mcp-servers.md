@@ -6,6 +6,7 @@ og_description: "25+ spreadsheet MCP servers compared: Excel, Google Sheets, Air
 content_type: "Comparison"
 card_description: "excel-mcp-server (3,600 stars, Python, cross-platform) vs google_workspace_mcp (2,000 stars, full suite) vs Airtable (official + 432-star community) vs Arcade Office 365 (Microsoft partnership) — plus Go, C#, and LibreOffice options."
 last_refreshed: 2026-04-05
+sources_audited: 2026-07-23
 ---
 
 Spreadsheets are arguably the world's most-used data tool, and connecting AI agents to them is a high-value use case — from financial modeling to data cleaning to automated reporting. The MCP ecosystem has responded with dozens of servers, and the landscape is more nuanced than you'd expect.
@@ -140,7 +141,7 @@ A smaller server that provides macOS real-time editing via AppleScript integrati
 
 **Launched:** March 13, 2026 | **Type:** Hosted (Arcade platform) | [arcade.dev](https://www.arcade.dev/blog/microsoft-office-365-mcp-servers-launch)
 
-Five integrated MCP servers for Word, Excel, PowerPoint, OneDrive, and SharePoint — built through a Microsoft-Arcade partnership. This partially closes the gap of "no official Microsoft Excel MCP server."
+Five integrated MCP servers for Word, Excel, PowerPoint, OneDrive, and SharePoint — built through a [Microsoft-Arcade partnership](https://www.arcade.dev/blog/microsoft-office-365-mcp-servers-launch/). This partially closes the gap of "no official Microsoft Excel MCP server."
 
 **What makes it stand out:**
 - **Microsoft Graph API integration** — connects to Excel Online / Microsoft 365, not local files
