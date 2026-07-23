@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2601 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-16/17 batch, fourth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (dates 2026-03-16 and 2026-03-17):
+
+1. **prompt-engineering-optimization-mcp-servers.md** — Added arXiv links for [Tree of Thoughts (arXiv 2305.10601)](https://arxiv.org/abs/2305.10601) and [Medprompt (arXiv 2311.16452)](https://arxiv.org/abs/2311.16452) for specific benchmark claims; changed "Lee Boonstra's 68-page prompt engineering guide" → linked to [Google's prompt engineering guide on Kaggle](https://www.kaggle.com/whitepaper-prompt-engineering) (removed unverifiable "68-page" count); added sources_audited
+
+2. **serverless-faas-mcp-servers.md** — **CRITICAL FIX**: Cloudflare Code Mode "~2 million tokens" → **"~1.17 million tokens"** per [Cloudflare's official blog post](https://blog.cloudflare.com/code-mode-mcp/) (the "2 million" figure was incorrect — actual is 1.17M from the primary source); added source link; added sources_audited
+
+3. **robotics-iot-mcp-servers.md** — Added GitHub link to [ThingsBoard (18K+ stars)](https://github.com/thingsboard/thingsboard) for the "open-source IoT platform" claim; added sources_audited
+
+4. **sports-fitness-analytics-mcp-servers.md** — **CRITICAL FIX**: "Fantasy football alone has over 60 million players in the US" → **"Over 53 million Americans participate in fantasy sports"** per [Fantasy Sports & Gaming Association (FSGA)](https://thefsga.org/) — article conflated fantasy football alone with all fantasy sports and overstated the number; added source links for [SmartLoader attack (The Hacker News)](https://thehackernews.com/2026/02/smartloader-attack-uses-trojanized-oura.html) and [Security Affairs](https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html); linked Sportradar launch to [Sportradar changelog](https://developer.sportradar.com/sportradar-updates/changelog/new-mcp-server-for-ai-assisted-development); added sources_audited
+
+5. **regex-text-processing-mcp-servers.md** — Added [DeepL pricing link](https://www.deepl.com/en/pro#developer) for 500K character/month free tier claim; added [LanguageTool Pro subscription link](https://languagetool.org/premium/); added [Google diff-match-patch GitHub link](https://github.com/google/diff-match-patch); added sources_audited
+
+6. **network-automation-infrastructure-mcp-servers.md** — Added [Netmiko GitHub link](https://github.com/ktbyers/netmiko) for 14,300+ stars claim; **CUT** "2026 AI Excellence Award winner for Forward AI" (award grantor completely unverifiable, no primary source found — cut per CLAUDE.md); added sources_audited
+
+7. **spreadsheet-office-suite-mcp-servers.md** — No corrections needed; existing links to GitHub repos serve as primary sources for star counts and feature claims; added sources_audited
+
+8. **code-quality-linting-mcp-servers.md** — No corrections needed; existing links to GitHub repos, eslint.org, semgrep.dev serve as primary sources; added sources_audited
+
+9. **cryptocurrency-defi-mcp-servers.md** — **CRITICAL FIX**: "30+ security audits" → **"27+ security audits"** per [deBridge's official security page](https://debridge.com/security/); corrected volume: $20B+ → $22B+; added [pump.fun DeFiLlama link](https://defillama.com/protocol/pump.fun) for Q1 2026 $2B volume claim; added [OpenSea blog link](https://opensea.io/blog/articles/opensea-digest-august-28-2025) for August 2025 MCP beta launch; **CORRECTED x402 co-founders**: "Coinbase co-launched with Cloudflare and the x402 Foundation" → clarified that x402 was co-developed by **Coinbase, Cloudflare, and Stripe** (Stripe was a co-developer; the Foundation was a later governance body) with [Coinbase blog](https://www.coinbase.com/blog/coinbase-and-cloudflare-will-launch-x402-foundation) and [Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol) sources; added [BitGo BusinessWire launch announcement](https://www.businesswire.com/news/home/20260323339524/en/BitGo-Launches-MCP-Server-Bringing-Institutional-Grade-Crypto-Infrastructure-to-AI-Agents); added sources_audited
+
+10. **package-management-dependency-mcp-servers.md** — Added [NuGet.Mcp.Server package link](https://www.nuget.org/packages/NuGet.Mcp.Server) for NuGetSolver/Microsoft Research claim; Snyk acquisition of Invariant Labs was confirmed by existing internal links; added sources_audited
+
+**Key factual corrections:** Cloudflare Code Mode "~2 million tokens" → "~1.17 million tokens" (1.8× off); Fantasy football "60 million players" → "53 million Americans in all fantasy sports" (wrong sport scope AND inflated number); deBridge "30+" → "27+" security audits; $20B → $22B volume; x402 co-founders "Cloudflare and the x402 Foundation" → "Cloudflare and Stripe" (Foundation is governance structure, not a co-developer); "2026 AI Excellence Award" for Forward AI (CUT — unverifiable).
+
+**Research method:** 3 parallel research agents verified claims across all 10 pages simultaneously. Agents checked primary sources for sports statistics, crypto security figures, and tech documentation.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2600 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-16 batch, third cohort) + Deploy
 
 **Mode:** Citation auditor

@@ -6,6 +6,7 @@ og_description: "Regex & text processing MCP servers: zcaceres/markdownify-mcp (
 content_type: "Review"
 card_description: "Regex and text processing MCP servers for AI-powered pattern matching, text comparison, translation, format conversion, grammar checking, and encoding. **Document conversion dominates and deepened significantly** — zcaceres/markdownify-mcp (2,600 stars, TypeScript, v1.0.4 April 2026) converts PDFs, images, audio, DOCX, XLSX, PPTX, YouTube transcripts, and web pages to Markdown through 10 dedicated tools. Microsoft's markitdown-mcp (part of the 119K-star markitdown project, v0.1.5) gained plugin architecture (markitdown-ocr) and Azure Document Intelligence integration. NEW docling-mcp (598 stars, IBM/Linux Foundation) provides advanced PDF layout analysis with AI models, table structure recognition, and RAG integration with Milvus — the most sophisticated document processor in the category. vivekVells/mcp-pandoc (533 stars, Python) wraps Pandoc for bidirectional conversion. NEW Tele-AI/doc-ops-mcp (138 stars, 11+ tools) offers pure-JS document conversion with smart conversion planning, style preservation, and PDF watermarking. **Diff and text comparison has strong coverage** — benjamine/jsondiffpatch's diff-mcp (5,100-star parent) compares text and structured data. samihalawa/mcp-server-diff-editor provides 12 tools for diff, merge, and semantic analysis. **Translation is well-served by official providers** — DeepLcom/deepl-mcp-server (102 stars) provides 8 tools for text/document translation with glossary support. translated/lara-mcp (79 stars) offers unique translation memory. **TWO MAJOR GAPS NOW CLOSED** — LanguageTool MCP server (dpesch/languagetool-mcp-server, v1.1.0 March 2026) finally exists on Codeberg with 3 tools (lt_check_text, lt_check_text_summary, lt_list_languages), though requires LanguageTool Pro subscription. Dedicated OCR MCP servers now exist: rjn32s/mcp-ocr (Tesseract, multi-language, URL/file/bytes input), maximdx/tesseract-mcp-server (PDF OCR, multi-language), lka/mcp_server_tesseract (Windows-optimized). **Regex testing remains niche** — PatzEdi/MCPGex and myuon/refactor-mcp unchanged. **Encoding** — crypto-mcp (10 stars) still provides AES/DES/hashing/Base64. **Multi-tool servers growing** — Dicklesworthstone/ultimate_mcp_server surged 129→148 stars with OCR/Tesseract integration, redline visual diffs, and smart document chunking. tumf/mcp-text-editor grew to 190 stars. **Remaining gaps** — no template engine MCP (Jinja/Handlebars), limited NLP beyond similarity, no i18n pipeline beyond translation. LanguageTool MCP requires paid Pro subscription."
 last_refreshed: 2026-05-01
+sources_audited: 2026-07-23
 ---
 
 Regex and text processing MCP servers let AI agents test regex patterns, compare and diff text, translate content, convert between document formats, check grammar and spelling, and handle encoding operations. Instead of manually running regex testers, diff tools, or format converters, AI assistants can process text through natural language commands.
@@ -131,7 +132,7 @@ A good choice when you need document processing without Python dependencies. The
 
 **The most capable diff MCP** — backed by the established jsondiffpatch library:
 
-- **Text comparison** — uses Google's diff-match-patch algorithm for character-level diffs
+- **Text comparison** — uses [Google's diff-match-patch algorithm](https://github.com/google/diff-match-patch) for character-level diffs
 - **Structured data** — JSON, JSON5, YAML, TOML, XML, HTML comparison
 - **Multiple output formats** — text, JSON, JSONPatch
 - **Battle-tested** — jsondiffpatch has 5,100+ stars and years of production use
@@ -179,7 +180,7 @@ More than simple text comparison — this server understands code structure and 
 - **Glossary support** — consistent terminology across translations
 - **Language tools** — list source/target languages, manage glossary entries
 
-The most complete translation MCP. Requires a DeepL API key (free tier available with 500K characters/month).
+The most complete translation MCP. Requires a [DeepL API key](https://www.deepl.com/en/pro#developer) (free tier available with 500,000 characters/month).
 
 ### translated/lara-mcp — Translation with Memory
 
@@ -279,7 +280,7 @@ Useful for AI agents working with encoded data, verifying hashes, or testing enc
 - **lt_check_text_summary** — quick one-line assessment without detailed breakdowns
 - **lt_list_languages** — reference of supported language codes with filtering
 - **v1.1.0** (March 2026) — hosted on Codeberg, STDIO and HTTP transports
-- **Requires LanguageTool Pro** — paid subscription with API access required (free tier does not provide API access)
+- **Requires [LanguageTool Pro](https://languagetool.org/premium/)** — paid subscription with API access required (free tier does not provide API access)
 - **No installation needed** — `npx @dpesch/languagetool-mcp-server` in MCP config
 
 This closes the single biggest gap identified in our original review. The Pro requirement limits adoption (no free tier API access), but for teams already paying for LanguageTool, this is a significant addition.

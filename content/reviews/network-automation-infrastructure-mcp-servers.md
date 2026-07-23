@@ -6,6 +6,7 @@ og_description: "Network automation MCP servers: Cisco ThousandEyes OFFICIAL (re
 content_type: "Review"
 card_description: "Network automation and infrastructure MCP servers for multi-vendor device management, DCIM/IPAM, SSH device automation, firewalls, network diagnostics, and network digital twins. **THREE BIGGEST GAPS FILLED** — Juniper OFFICIAL junos-mcp-server (88 stars, PyEZ/SSH, command guardrails, streamable-http), Palo Alto OFFICIAL Cortex MCP Server (open beta, SOC investigations, XDR integration) plus community PanOS servers (116 tools, 16 modules), and Fortinet ecosystem EXPLODED with 4 servers (FortiGate 30 tools, FortiAnalyzer 63 tools SOC operations, FortiMonitor 241 tools, FortiManager archived→Code Mode). **netclaw SURGED** 135→460 stars (+241%), now 112 skills across 69 MCP servers (was 82/37), added DefenseClaw (Cisco AI Defense governance), MemPalace institutional memory, Jenkins/GitLab/Atlassian DevOps, Splunk/Datadog observability, Three.js 3D operations dashboard. **NetBox MCP reached v1.0.0** — 127→158 stars (+24%), native field filtering, HTTP/SSE transport, Docker support, global cross-object search. **NEW Itential MCP** — enterprise network automation orchestration with 56+ tools across 10 categories, policy-driven AI execution, GPL v3. **Forward Networks launched Forward AI** — agentic AI with MCP, GA April 2026, mathematical verification of recommendations. **IETF standardization underway** — draft-zeng-mcp-network-mgmt defines MCP extensions for YANG datastores and NETCONF, draft-yang-nmrg-mcp-nm on applicability. **pyATS_MCP grew** 66→72 stars, MCPyATS 66 stars VibeOps framework. **Arista community servers appeared** — CloudVision MCP and arista-mcp-automation. **Nautobot MCP** (16 stars, archived) adds second DCIM/IPAM source. **mcp-domaintools renamed to mcp-netutils**. Category grew 25+→40+ servers, from vendor-fragmented to enterprise production-ready with official vendor MCPs from 4 major vendors. Rating upgraded 4→4.5/5."
 last_refreshed: 2026-05-05
+sources_audited: 2026-07-23
 ---
 
 Network automation and infrastructure MCP servers let AI agents manage routers, switches, and firewalls across vendors, query DCIM/IPAM systems for device inventories, automate CLI commands over SSH, perform DNS and WHOIS lookups, trace network paths, and interact with network digital twins — all through natural language. Instead of writing Ansible playbooks or SSH scripts, an AI agent can ask "show me all BGP neighbors on the core routers" or "what IPs are available in the 10.0.1.0/24 subnet" and get structured results.
@@ -322,7 +323,7 @@ Arista has publicly embraced MCP, with blog posts on "Generative and Agentic AI 
 - **Log and metric collection** for analysis
 - **Troubleshooting automation** — streamline diagnostic workflows
 
-Netmiko (14,300+ stars) is the most widely used Python library for SSH to network devices. This MCP wrapper makes it accessible to AI agents.
+[Netmiko](https://github.com/ktbyers/netmiko) (14,300+ stars) is the most widely used Python library for SSH to network devices. This MCP wrapper makes it accessible to AI agents.
 
 ### upa/mcp-netmiko-server — LLM-to-Device Interaction
 
@@ -409,7 +410,6 @@ Particularly valuable for diagnosing latency issues, DNS propagation problems, o
 - **Semantic search** using embedding-based similarity matching of network queries (NQE)
 - **Bloomsearch integration** for efficient handling of large result sets with automatic bloom filter generation
 - **Snapshot management** for point-in-time network state capture and comparison
-- 2026 AI Excellence Award winner for Forward AI
 
 Forward Enterprise creates a mathematical model of your entire network — this MCP server makes that model queryable by AI agents. Forward AI takes this further: instead of just answering queries, it plans and executes multi-step workflows while maintaining mathematical certainty about its recommendations.
 

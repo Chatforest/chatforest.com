@@ -6,6 +6,7 @@ og_description: "Sports & fitness analytics MCP servers: Sportradar OFFICIAL (20
 content_type: "Review"
 card_description: "Sports and fitness analytics MCP servers for live scores, Formula 1 telemetry, betting odds, Strava integration, Garmin health data, fantasy sports, and workout tracking through AI assistants. This is one of the most vibrant MCP categories — the combination of publicly available sports APIs and the fitness tracking ecosystem has produced a rich and rapidly growing set of servers. **Sportradar launched an official MCP server in February 2026** with 20+ sport-specific profiles covering tennis, golf, cricket, rugby, and more — partially closing what was the biggest gap in this category. **Formula 1 stands out with 6+ independent implementations**, driven by FastF1 and OpenF1 APIs. **Strava dominates the endurance space** with r-huijts/strava-mcp surging to 368 stars and 25 tools. **Open Wearables has emerged as the unified fitness platform** at 1.5K stars, connecting Garmin, Polar, Suunto, Apple HealthKit, Samsung Health, and Google Health Connect through a single self-hosted API with built-in MCP server. **The Garmin Connect MCP server has 120 stars** with 61 tools spanning health, fitness, and activity data. **Fantasy sports — previously absent — now has real coverage** with Flaim connecting ESPN, Yahoo, and Sleeper leagues to AI assistants across football, baseball, basketball, and hockey. **Esports coverage is improving** with OP.GG's official LoL esports MCP server. **Sports betting remains strong** with BetTrack, Wagyu Sports, and Cloudbet. **Oura Ring has exploded** from 1 to 6+ MCP server implementations, though a trojanized Oura MCP server deploying StealC infostealer was discovered in February 2026 — a security wake-up call for the fitness MCP ecosystem. The category earns 4.5/5 — Sportradar's official launch, the Open Wearables unification platform, fantasy sports arrival, and Strava's community growth all represent significant maturation since the initial review."
 last_refreshed: 2026-05-02
+sources_audited: 2026-07-23
 next_priority: med
 categories: ["/categories/sports-fitness/"]
 ---
@@ -26,7 +27,7 @@ The headline findings: **Sportradar launched an official MCP server** with 20+ s
 |--------|-------|----------|---------|-------|
 | [Sportradar MCP](https://developer.sportradar.com/getting-started/docs/mcp-server) | — | — | Commercial | 20+ profiles |
 
-**Sportradar — one of the world's largest sports data providers — launched an official MCP server on February 11, 2026:**
+**Sportradar — one of the world's largest sports data providers — [launched an official MCP server on February 11, 2026](https://developer.sportradar.com/sportradar-updates/changelog/new-mcp-server-for-ai-assisted-development):**
 
 - **20+ sport-specific profiles** — football, soccer, basketball, tennis, cricket, golf, rugby, hockey, MMA, racing, volleyball, darts, snooker, squash, table tennis, handball, futsal, field hockey, and more
 - **Structured API access** — endpoints, parameters, schemas, authentication details, and code snippets
@@ -367,7 +368,7 @@ A remote MCP server focused on the coaching/planning side of endurance sports ra
 - **mitchhankins01/oura-ring-mcp** — human-readable insights about sleep, readiness, and activity with smart analysis tools
 - **rajvirtual/oura-mcp-server**, **elizabethtrykin/oura-mcp**, **hemantkamalakar/oura-mcp-server**, **meimakes/oura-mcp-server** — additional implementations
 
-**⚠ Security warning:** In February 2026, threat actors created a trojanized Oura MCP server (SmartLoader attack) that deployed the StealC infostealer. The attackers built fake GitHub forks and contributor profiles to manufacture credibility. **Always verify you are installing from a legitimate, well-known repository** — check stars, commit history, and contributor profiles before trusting any health data MCP server.
+**⚠ Security warning:** In February 2026, [threat actors created a trojanized Oura MCP server](https://thehackernews.com/2026/02/smartloader-attack-uses-trojanized-oura.html) ([SmartLoader attack](https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html)) that deployed the StealC infostealer. The attackers built fake GitHub forks and contributor profiles to manufacture credibility. **Always verify you are installing from a legitimate, well-known repository** — check stars, commit history, and contributor profiles before trusting any health data MCP server.
 
 ---
 
@@ -429,7 +430,7 @@ Fantasy sports management was entirely absent in the March review. That gap has 
 - **Multi-AI support** — works with ChatGPT, Claude, and Gemini CLI
 - **v1.0.1** (March 12, 2026) — first stable release
 
-The arrival of Flaim closes one of the most conspicuous gaps in the sports MCP space. Fantasy football alone has over 60 million players in the US — this was overdue.
+The arrival of Flaim closes one of the most conspicuous gaps in the sports MCP space. [Over 53 million Americans participate in fantasy sports](https://thefsga.org/) according to the Fantasy Sports & Gaming Association — this coverage was overdue.
 
 ### Yahoo Fantasy MCP Servers *(NEW)*
 
