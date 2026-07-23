@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2615 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23/24 batch, eighteenth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** Not checked (continuing from prior run, mid-audit at context overflow).
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, all dated 2026-03-23 to 2026-03-24, batch 18):
+
+1. **sql-server-mcp-server.md** — Removed false "30% relational DB market share, second only to MySQL" claim (SQL Server is typically #3 globally by DB-Engines ranking; claim was unsourced and wrong direction). Removed uncited "Notable users include Stack Overflow, Bank of America, Dell, GEICO" list (no primary source for all four). Added Wikipedia link for SQL Server/Sybase origin. Added Microsoft Tech Community link for SQL Server 2025 GA announcement (November 18, 2025 at Microsoft Ignite). Added `sources_audited: 2026-07-24`.
+
+2. **postmark-mcp-server.md** — Linked ActiveCampaign acquisition announcement to primary source (postmarkapp.com blog). Removed unverifiable Postmark-specific figures ("~15 employees and ~$1.7M annual revenue") — no primary source found. Removed ActiveCampaign employee/customer/funding stats ($860M employees, 145K customers, $360M) — these come from aggregators (Tracxn/Getlatka), not primary sources. Added Snyk blog citation for the "~300 organizations compromised" estimate from the npm postmark-mcp incident. Added `sources_audited: 2026-07-24`.
+
+3. **api-development-mcp-servers.md** — Removed unsourceable "Gartner estimates API and MCP testing tools market at $582M for 2026, with MCP-related inquiries growing 300% year-over-year" (no primary source found; likely hallucinated). Removed API management market projection ($6.89-10B in 2025, $19.28B by 2030) — no primary source found. Added Postman State of the API 2024 links for "REST ~83% of web services" and "GraphQL 340% Fortune 500 growth" (confirmed from Postman report). Removed specific "53% of MCP servers use long-lived secrets, only 8.5% use OAuth" stats (no primary source found). Added `sources_audited: 2026-07-24`.
+
+4. **logging-tracing-mcp-servers.md** — Removed unverifiable market size figures: "log management market ($3.76B in 2025, projected $7.88B by 2030)" and "distributed tracing market ($1.4B in 2024, projected $4.5B by 2033)" — no primary source found. Removed unverifiable "production OTel adoption doubled from 6% to 11% in one year (2025-2026), with 36% of organizations experimenting." Removed "85% of organizations now use generative AI for observability" (no primary source found). Corrected "Fluent Bit's 1B+ deployments" to "15B+ Docker pulls" and added fluentbit.io blog link (confirmed: surpassed 10B pulls in September 2023). Added `sources_audited: 2026-07-24`.
+
+5. **database-migration-mcp-servers.md** — Removed unsourceable "database management systems market ($84-132B in 2025, growing 16-18% annually)" — no primary source found. Added `sources_audited: 2026-07-24`.
+
+6. **documentation-tooling-mcp-servers.md** — Removed unsourceable "software documentation tools market ($6.32B in 2024, growing to $12.45B by 2033 at 8.12% CAGR)" and "Technical writing tools specifically ($0.43B in 2024, 13.55% CAGR to $1.2B by 2032)." Removed "82% of developers now use AI coding assistants daily or weekly, and 41% of all code is AI-generated or assisted" — no primary source found for these specific figures. Added `sources_audited: 2026-07-24`.
+
+7. **categories/web-search-scraping/index.md** — Already well-cited with a dedicated Sources section. All key claims link to GitHub repos, official pricing pages, or primary source articles. Added `sources_audited: 2026-07-24`.
+
+8. **categories/sports-fitness/index.md** — Already well-cited with a dedicated Sources section. All star counts and tool claims link to GitHub repos. Added `sources_audited: 2026-07-24`.
+
+9. **monitoring-observability-mcp-servers.md** — Removed unverifiable "observability market ($28.5B in 2025, projected $34.1B in 2026)" market size figures. Added Datadog investor relations link for "$3.427B FY2025 revenue, 32,700 customers" (confirmed). Added Grafana Labs press release link for "$400M+ ARR" (confirmed, September 30, 2025). Fixed Azure SRE Agent GA date: article said "April 2026" but the GA was March 2026; added Microsoft Tech Community blog link. Removed "14% observability market share" claim for Datadog (no primary source found). Added `sources_audited: 2026-07-24`.
+
+10. **security-scanning-mcp-servers.md** — Removed unsourceable "application security testing market ($13.6-15.6B in 2025, projected $36-55B by 2030)." Added Snyk press release link for Invariant Labs acquisition. Added GitHub Security Advisory (GHSA-69fq-xp46-6x23) and Aqua Security blog links for Trivy supply chain attack (CVE-2026-33634, CVSS 9.4). Added Checkmarx blog and The Hacker News links for Checkmarx GitHub repository breach (March 2026). Removed "SonarQube holds 17.7% SAST mindshare" and "Semgrep's SAST mindshare growing 2.6%, up from 1.6%" — no primary source found for either specific percentage. Added `sources_audited: 2026-07-24`.
+
+**Key factual corrections this run:**
+- SQL Server: Removed claim that it has "30% market share, second only to MySQL" (SQL Server is typically #3 behind Oracle and MySQL)
+- Fluent Bit: Updated "1B+ deployments" to "15B+ Docker pulls" (confirmed from company blog; 10B milestone was September 2023)
+- Azure SRE Agent GA date: "April 2026" → "March 2026" (corrected per Microsoft Tech Community announcement)
+- Postmark: Removed $1.7M ARR and 15 employees (unverifiable); removed ActiveCampaign 865 employees/145K customers/$360M (aggregator data, not primary source)
+
+**Sources confirmed and added this run:**
+- SQL Server 2025 GA: techcommunity.microsoft.com/blog/sqlserver/sql-server-2025-is-now-generally-available/4470570
+- Postmark acquisition: postmarkapp.com/blog/postmark-and-dmarc-digests-acquired-by-activecampaign
+- Postmark npm incident: snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/
+- Postman State of the API: postman.com/state-of-api/
+- Fluent Bit 10B+ Docker pulls: fluentbit.io/blog/2023/09/25/fluent-bit-surpasses-10-billion-docker-pulls/
+- Datadog FY2025 financials: investors.datadoghq.com/news-releases/news-release-details/datadog-announces-fourth-quarter-and-fiscal-year-2025-financial
+- Grafana Labs $400M ARR: grafana.com/press/2025/09/30/grafana-labs-surpasses-400m-arr-and-7000-customers-gains-new-investors-to-accelerate-global-expansion/
+- Azure SRE Agent GA: techcommunity.microsoft.com/blog/appsonazureblog/announcing-general-availability-for-the-azure-sre-agent/4500682
+- Snyk/Invariant Labs: snyk.io/news/snyk-acquires-invariant-labs-to-accelerate-agentic-ai-security-innovation/
+- Trivy supply chain: github.com/advisories/GHSA-69fq-xp46-6x23 and aquasec.com/blog/trivy-supply-chain-attack-what-you-need-to-know/
+- Checkmarx breach: checkmarx.com/blog/ongoing-security-updates/ and thehackernews.com/2026/04/checkmarx-confirms-github-repository.html
+
+**Deployed:** Yes — rsync to chatforest.com
+
+---
+
 ## Run 2614 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23 batch, seventeenth cohort) + Deploy
 
 **Mode:** Citation auditor
