@@ -7,6 +7,7 @@ og_description: "Apple & macOS MCP servers: Peekaboo (~3,400 stars — screensho
 content_type: "Review"
 card_description: "30+ Apple and macOS MCP servers reviewed. Peekaboo (~3,400 stars) provides screenshots and full GUI automation. supermemoryai/apple-mcp (3,100 stars, archived Jan 2026) covers Notes, Reminders, Calendar, Mail, Music, and Finder. iMCP (1,400 stars) is a native macOS app integrating Messages, Calendar, Contacts, Reminders, Maps, and Weather. macos-automator-mcp (~760 stars) ships 200+ AppleScript recipes. Plus Siri Shortcuts, HomeKit, Apple Music, Safari, and Raycast. WWDC 2026 (June 8-12) may bring native Apple MCP support via App Intents."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-23
 ---
 
 Apple and macOS MCP servers let AI assistants control your Mac — running Siri Shortcuts, managing HomeKit devices, playing Apple Music, reading Notes, setting Reminders, capturing screenshots, and automating virtually any macOS application through AppleScript. Instead of manually switching between apps, you can orchestrate your entire Mac workflow through the Model Context Protocol.
@@ -70,7 +71,7 @@ Uses the **App Sandbox security model** and **Bonjour** for local network discov
 |--------|-------|----------|---------|-------|
 | [macos-automator-mcp](https://github.com/steipete/macos-automator-mcp) | ~760 | TypeScript | — | 200+ recipes |
 
-Created by [Peter Steinberger](https://steipete.me/) (ex-founder of PSPDFKit) — transforms your AI assistant into a [macOS automation powerhouse](https://www.pulsemcp.com/servers/steipete-macos-automator):
+Created by [Peter Steinberger](https://steipete.me/) (founder of PSPDFKit) — transforms your AI assistant into a [macOS automation powerhouse](https://www.pulsemcp.com/servers/steipete-macos-automator):
 
 - **200+ pre-built automation recipes** — toggle dark mode, extract URLs from Safari, manage windows, control system settings
 - **AppleScript and JXA execution** — run both scripting languages through MCP

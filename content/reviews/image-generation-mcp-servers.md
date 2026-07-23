@@ -2,15 +2,16 @@
 title: "Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50+ More"
 date: 2026-03-16T20:00:00+09:00
 description: "Image generation MCP servers let AI agents create, edit, and manipulate images through platforms like DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, Replicate, fal.ai, and Google Imagen."
-og_description: "Image generation MCP servers: ComfyUI (294 stars, v1.0 rewrite), Stability AI (84 stars, SD 3.5), Gemini (105 stars, Nano Banana 2/Pro), fal.ai (77 stars, 600+ models), Replicate official MCP with auto-discovery, gpt-image-2 support arriving (April 2026). NEW: Adobe Firefly MCP (gap closing), Draw Things local Mac generation. 50+ servers across 12 subcategories. Rating: 4.0/5."
+og_description: "Image generation MCP servers: ComfyUI (294 stars, v1.0 rewrite), Stability AI (84 stars, SD 3.5), Gemini (105 stars, Gemini 3.1 Flash/3 Pro images), fal.ai (77 stars, 600+ models), Replicate official MCP with auto-discovery, gpt-image-2 support arriving (April 2026). NEW: Adobe Firefly MCP (gap closing), Draw Things local Mac generation. 50+ servers across 12 subcategories. Rating: 4.0/5."
 content_type: "Review"
-card_description: "Image generation MCP servers across DALL-E/OpenAI, Stable Diffusion, ComfyUI, Flux, Midjourney, Replicate, fal.ai, Together AI, Google Gemini/Imagen, Ideogram, Leonardo AI, and multi-provider platforms. BIGGEST NEWS: OpenAI released gpt-image-2 (April 21, 2026) with GPT-5.4 backbone, 4K resolution, ~99% text accuracy — lansespirit/image-gen-mcp already supports it. ComfyUI dominates with joenorton/comfyui-mcp-server hitting 294 stars (+31%) and a v1.0 rewrite featuring streamable HTTP transport and job management. shinpr/mcp-image surged to 105 stars (+28%) now powered by Gemini 3.1 Flash Image ('Nano Banana 2') and Gemini 3 Pro Image ('Nano Banana Pro'). Adobe Firefly gap partially closed — msabramo/python-firefly (2 stars) provides MCP server for Adobe Firefly API. Stability AI at 84 stars with SD 3.5 support. Replicate official MCP now has auto-discovery via MCP Registry. NEW: james-see/mcp-drawthings (9 stars, MIT) enables local Mac generation via Draw Things on Apple Silicon. ARCHIVED: GongRzhe/Image-Generation-MCP-Server (top Flux server) and RamboRogers/cyberimage (multi-provider). Remaining gaps: no Canva image generation, limited inpainting outside ComfyUI, no dedicated prompt engineering helpers. Rating: 4.0/5."
+card_description: "Image generation MCP servers across DALL-E/OpenAI, Stable Diffusion, ComfyUI, Flux, Midjourney, Replicate, fal.ai, Together AI, Google Gemini/Imagen, Ideogram, Leonardo AI, and multi-provider platforms. BIGGEST NEWS: OpenAI released gpt-image-2 (April 21, 2026) with GPT-5.4 backbone, 4K resolution, ~99% text accuracy — lansespirit/image-gen-mcp already supports it. ComfyUI dominates with joenorton/comfyui-mcp-server hitting 294 stars (+31%) and a v1.0 rewrite featuring streamable HTTP transport and job management. shinpr/mcp-image surged to 105 stars (+28%) now powered by Gemini 3.1 Flash Image and Gemini 3 Pro Image. Adobe Firefly gap partially closed — msabramo/python-firefly (2 stars) provides MCP server for Adobe Firefly API. Stability AI at 84 stars with SD 3.5 support. Replicate official MCP now has auto-discovery via MCP Registry. NEW: james-see/mcp-drawthings (9 stars, MIT) enables local Mac generation via Draw Things on Apple Silicon. ARCHIVED: GongRzhe/Image-Generation-MCP-Server (top Flux server) and RamboRogers/cyberimage (multi-provider). Remaining gaps: no Canva image generation, limited inpainting outside ComfyUI, no dedicated prompt engineering helpers. Rating: 4.0/5."
 last_refreshed: 2026-04-28
+sources_audited: 2026-07-23
 ---
 
 Image generation is one of the most natural use cases for MCP integration. Instead of switching between generation platforms, tweaking parameters in web UIs, or managing API keys across services, an AI agent can generate, edit, upscale, and manipulate images conversationally. The ecosystem has responded with over 50 MCP servers spanning every major generation platform.
 
-**April 2026 update:** OpenAI released **gpt-image-2** on April 21, 2026 — built on the GPT-5.4 backbone with 4K resolution, ~99% text accuracy across multiple scripts, and 2x faster generation than gpt-image-1. MCP servers are already adding support. Google's Gemini image models have been rebranded as "Nano Banana" variants (Gemini 3.1 Flash Image = Nano Banana 2, Gemini 3 Pro Image = Nano Banana Pro). ComfyUI's lead server hit 294 stars with a major v1.0 architectural rewrite. Adobe Firefly finally has an MCP server (closing a key gap from our initial review), though adoption is early.
+**April 2026 update:** OpenAI released **gpt-image-2** on April 21, 2026 — built on the GPT-5.4 backbone with 4K resolution, ~99% text accuracy across multiple scripts, and 2x faster generation than gpt-image-1. MCP servers are already adding support. ComfyUI's lead server hit 294 stars with a major v1.0 architectural rewrite. Adobe Firefly finally has an MCP server (closing a key gap from our initial review), though adoption is early.
 
 The landscape splits into three tiers: **local generation** (ComfyUI, Stable Diffusion WebUI, local Flux models running on your GPU, Draw Things on Mac), **API-based generation** (OpenAI/DALL-E/gpt-image-2, Stability AI, Google Imagen/Nano Banana, Midjourney via proxies), and **platform aggregators** (Replicate, fal.ai, Together AI, PiAPI — services that provide access to hundreds of models through a single API).
 
@@ -52,7 +53,7 @@ The ComfyUI subcategory is the most feature-rich in the entire image generation 
 
 ## DALL-E / OpenAI (7+ servers)
 
-**Breaking: gpt-image-2 released April 21, 2026.** OpenAI's latest image model runs on the GPT-5.4 backbone with 4K (4096×4096) resolution, ~99% character-level text accuracy across Latin, CJK, Hindi, and Bengali scripts, and 2x faster generation than gpt-image-1. It replaces both DALL-E 3 and the interim gpt-image-1.5 in ChatGPT. API access rolling out to developers in early May 2026. MCP servers are already adding support — lansespirit/image-gen-mcp was first.
+**Breaking: [gpt-image-2 released April 21, 2026](https://openai.com/index/introducing-chatgpt-images-2-0/).** OpenAI's latest image model runs on the GPT-5.4 backbone with 4K (4096×4096) resolution, ~99% character-level text accuracy across Latin, CJK, Hindi, and Bengali scripts, and 3-5x faster generation than gpt-image-1. It replaces both DALL-E 3 and the interim gpt-image-1.5 in ChatGPT. API access rolling out to developers in early May 2026. MCP servers are already adding support — lansespirit/image-gen-mcp was first.
 
 | Server | Stars | Language | License | Tools | Key Feature |
 |--------|-------|----------|---------|-------|-------------|
@@ -89,15 +90,15 @@ Most other Flux servers route through Replicate's API, making them easy to set u
 
 ## Google Gemini / Imagen (3+ servers)
 
-Google's image generation capabilities have undergone a rebranding: the Gemini image models are now marketed as **"Nano Banana"** variants — Gemini 3.1 Flash Image is "Nano Banana 2" and Gemini 3 Pro Image is "Nano Banana Pro". The category continues to grow rapidly.
+Google's Gemini image generation capabilities continue to grow rapidly.
 
 | Server | Stars | Language | License | Tools | Key Feature |
 |--------|-------|----------|---------|-------|-------------|
-| [shinpr/mcp-image](https://github.com/shinpr/mcp-image) | 105 | TypeScript | MIT | 1 | **Nano Banana 2 (Gemini 3.1 Flash) + Nano Banana Pro (Gemini 3 Pro)**, auto prompt optimization via Gemini 2.5 Flash, 3 quality tiers, character consistency, multi-image blending, Google Search grounding |
+| [shinpr/mcp-image](https://github.com/shinpr/mcp-image) | 105 | TypeScript | MIT | 1 | Gemini 3.1 Flash Image + Gemini 3 Pro Image, auto prompt optimization via Gemini 2.5 Flash, 3 quality tiers, character consistency, multi-image blending, Google Search grounding |
 | [lansespirit/image-gen-mcp](https://github.com/lansespirit/image-gen-mcp) | 56 | Python | — | 3 | **gpt-image-2 + gpt-image-1.5 + gpt-image-1 + Imagen-4/4-Ultra/4-Fast/3**, multi-provider, STDIO/HTTP/SSE, Docker, Redis caching, 10+ prompt templates |
 | [qhdrl12/mcp-server-gemini-image-generator](https://github.com/qhdrl12/mcp-server-gemini-image-generator) | 29 | Python | MIT | 3 | Gemini Flash, txt2img + img2img, intelligent filename generation, auto-translation |
 
-**shinpr/mcp-image** (105 stars, up 28% from 82) is the most-starred dedicated image generation server outside ComfyUI and has seen significant model upgrades. It now uses Nano Banana 2 (Gemini 3.1 Flash Image) for fast/balanced tiers and Nano Banana Pro (Gemini 3 Pro Image) for quality tier, with prompt optimization powered by Gemini 2.5 Flash. New features include multi-image blending for composite scenes and Google Search grounding for factually-accurate image generation. Character consistency across multiple generations remains a key differentiator.
+**shinpr/mcp-image** (105 stars, up 28% from 82) is the most-starred dedicated image generation server outside ComfyUI and has seen significant model upgrades. It now uses Gemini 3.1 Flash Image for fast/balanced tiers and Gemini 3 Pro Image for quality tier, with prompt optimization powered by Gemini 2.5 Flash. New features include multi-image blending for composite scenes and Google Search grounding for factually-accurate image generation. Character consistency across multiple generations remains a key differentiator.
 
 **lansespirit/image-gen-mcp** (56 stars, up from 51) has expanded dramatically to become the most comprehensive multi-provider server. It now supports **six OpenAI models** (gpt-image-2, gpt-image-1.5, gpt-image-1, DALL-E 3, DALL-E 2) and **four Google models** (Imagen-4, Imagen-4 Ultra, Imagen-4 Fast, Imagen-3). Being the first MCP server to support gpt-image-2 gives it a notable edge. Redis caching integration is new for production deployments.
 
@@ -168,7 +169,7 @@ Ideogram is known for superior text rendering in generated images — a weakness
 
 **apinetwork/piapi-mcp-server** (70 stars, up from 68) has expanded its service coverage to include Hunyuan, Skyreels, and Wan video generation plus MMAudio music creation, alongside the existing Midjourney, Flux, Kling, Luma, Suno, and Trellis integrations. This is the closest thing to a "universal creative AI" MCP server.
 
-**writingmate/imagegen-mcp** now supports **SeedDream-4** (ByteDance's image model) and **Nano Banana** (Google's Gemini 2.5 Flash Image Preview) alongside OpenAI, Imagen 4, and Flux — useful for comparing outputs across six providers without switching MCP configurations.
+**writingmate/imagegen-mcp** now supports **SeedDream-4** (ByteDance's image model) and Gemini 2.5 Flash Image Preview alongside OpenAI, Imagen 4, and Flux — useful for comparing outputs across six providers without switching MCP configurations.
 
 **maheshcr/image-gen-mcp** includes budget alerts and cost tracking with Cloudflare R2 storage — a practical feature for teams worried about runaway API costs.
 
