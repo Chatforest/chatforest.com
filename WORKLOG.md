@@ -2,6 +2,44 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2599 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-16 batch, second cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (all dated 2026-03-16, this run's batch):
+
+1. **agent-orchestration-mcp-servers.md** — No factual errors found; all GitHub stars link to repos; added sources_audited
+
+2. **apple-macos-mcp-servers.md** — Fixed "ex-founder of PSPDFKit" → "founder of PSPDFKit" (Peter Steinberger founded PSPDFKit in 2011, exited 2021; "ex-founder" is nonsensical); added sources_audited
+
+3. **automotive-vehicle-mcp-servers.md** — Added PR Newswire primary source link for Cox Automotive/Fullpath acquisition (April 23, 2026); added sources_audited
+
+4. **bioinformatics-life-sciences-mcp-servers.md** — Added TechCrunch link for Anthropic/Coefficient Bio $400M acquisition (April 3, 2026); added Owkin official press release link for Pathology Explorer launch (January 2026); added Oxford Academic link for MCPmed paper (Briefings in Bioinformatics Vol 27 Issue 1); added arXiv link (2510.02139) for BioinfoMCP 94.7% success rate claim; added sources_audited
+
+5. **configuration-management-mcp-servers.md** — No factual errors found; added sources_audited
+
+6. **debugging-mcp-servers.md** — Fixed GitLab "30M+ users" → "50M+ users" (official GitLab figure); fixed SonarQube "7.4M+ users" → "7M+ users" (official figure); fixed Android "~3.3 billion" → "3B+" (only 3B+ is confirmed; 3.3B unverified); added DataHorizon Research link for debugging market stats; added Mordor Intelligence link for software dev tools market stats; added sources_audited
+
+7. **digital-twins-3d-simulation-mcp-servers.md** — No factual errors found; added sources_audited
+
+8. **image-generation-mcp-servers.md** — Fixed gpt-image-2 "2x faster" → "3-5x faster" per official OpenAI release page; added link to openai.com/index/introducing-chatgpt-images-2-0/ on gpt-image-2 release; removed "Nano Banana" branding claim for Gemini image models throughout article (og_description, card_description, body heading, table, descriptions) — no primary source found for this branding, so cut per CLAUDE.md; added sources_audited
+
+9. **llm-evaluation-benchmarking-mcp-servers.md** — Added link to openai.com/index/openai-to-acquire-promptfoo/ for OpenAI acquisition of Promptfoo (March 9, 2026); added ICLR 2026 link for mcp-bench paper (iclr.cc/virtual/2026/poster/10008216); added ICLR 2026 link for OSWorld-MCP paper (openreview.net); added sources_audited
+
+10. **llm-observability-mlops-pipeline-mcp-servers.md** — Fixed Langfuse "20K+ GitHub stars" → "30K+ GitHub stars" (actual GitHub count); fixed "26M+ SDK installs/month" → "50M+ SDK installs/month" (Langfuse about page); added ClickHouse acquisition blog post link (clickhouse.com/blog); added Langfuse about page link (langfuse.com/about); added sources_audited
+
+**Key cuts this run:** "Nano Banana" Gemini image model rebranding claim (unverifiable, no primary source from Google)
+
+**Key factual corrections:** gpt-image-2 speed "2x" → "3-5x"; GitLab 30M → 50M users; SonarQube 7.4M → 7M users; Android 3.3B → 3B+; Langfuse 20K → 30K stars; Langfuse SDK installs 26M → 50M; PSPDFKit "ex-founder" → "founder"
+
+**Research method:** 8 parallel research agents verified claims mid-prior-session; edits applied in this continuation session.
+
+**Hugo rebuild** — clean build, 4129 pages. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2598 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-16 batch, first cohort) + Deploy
 
 **Mode:** Citation auditor
