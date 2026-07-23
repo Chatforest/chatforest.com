@@ -6,6 +6,7 @@ og_description: "CAD & 3D modeling MCP servers: Official Blender MCP (Anthropic 
 content_type: "Review"
 card_description: "April 2026 brought a sea change: **Autodesk launched three official MCP servers** (Fusion MCP for local modeling, Fusion Data MCP for cloud data, Product Help MCP for docs across 110+ products) and **Anthropic became a Blender Development Fund Corporate Patron**, releasing the **official Blender MCP** (developed by Blender Lab). The community servers remain essential: **ahujasid/blender-mcp** (~20,000 stars) is still the most widely installed Blender MCP. **FreeCAD MCP** (617 stars) gives AI agents 10 tools for parametric CAD with parts library access. **KiCad MCP** (405 stars) enables AI-assisted PCB design with netlist, BOM, and DRC. **CAD-MCP** (270 stars) controls AutoCAD, GstarCAD, and ZWCAD. **AutoCAD MCP** (177 stars) has dual backends, P&ID symbols, and undo/redo. **OpenSCAD MCP** (135 stars) generates 3D models from text via Gemini AI. **SolidWorks MCP** (67 stars) bridges Claude via C# COM adapter. The biggest gap in our March review — no official vendor servers from Autodesk — is now closed. Dassault, Siemens, and PTC remain gaps."
 last_refreshed: 2026-05-02
+sources_audited: 2026-07-23
 ---
 
 CAD and 3D modeling MCP servers let AI agents create, modify, and analyze engineering designs and 3D models through natural language. The category spans **3D modeling** (Blender, OpenSCAD), **parametric CAD** (FreeCAD, Fusion 360, SolidWorks, Onshape), **2D drafting** (AutoCAD, GstarCAD, ZWCAD), and **electronic design automation** (KiCad PCB design).
@@ -24,9 +25,9 @@ The headline: **ahujasid/blender-mcp** grew from 17,800 → ~20,000 stars and re
 | Developer | Blender Foundation (Blender Lab) |
 | Announced | April 28, 2026 |
 | License | Open source |
-| Sponsor | Anthropic (Corporate Patron, €240,000/year) |
+| Sponsor | [Anthropic (Corporate Patron, €240,000/year)](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/) |
 
-On April 28, 2026, Blender announced an official MCP connector developed by Blender Lab — the Foundation's program for experimental features. Anthropic became a Blender Development Fund Corporate Patron at €240,000/year to support the integration. The connector is built on the open MCP standard, so it works with any MCP-capable LLM, not just Claude.
+On April 28, 2026, Blender announced an official MCP connector developed by Blender Lab — the Foundation's program for experimental features. [Anthropic became a Blender Development Fund Corporate Patron at €240,000/year](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/) to support the integration. The connector is built on the open MCP standard, so it works with any MCP-capable LLM, not just Claude.
 
 **What it offers:** A direct bridge to Blender's Python API from any MCP client. The same scene inspection, Python code execution, and automation capabilities as the community server — but developed and maintained by the Blender Foundation itself. For long-term production use, the official server is the supported path.
 
@@ -119,7 +120,7 @@ On April 28, 2026 — as part of Anthropic's "Claude for Creative Work" launch (
 
 On April 9, Autodesk had already announced the **Autodesk Product Help MCP Server** — a read-only service providing AI agents access to help documentation across 110+ Autodesk products (Fusion, AutoCAD, Revit, Civil 3D, and more). Available at no cost.
 
-Autodesk is a gold-level member of the Agentic AI Foundation and plans additional MCP servers for Revit and other products.
+Autodesk is a [gold-level member of the Agentic AI Foundation](https://adsknews.autodesk.com/en/news/product-help-mcp-server/) and plans additional MCP servers for Revit and other products.
 
 The **original community server** by [Joe-Spencer](https://github.com/Joe-Spencer/fusion-mcp-server) was developed by an Autodesk employee and served as the technical foundation for this work. **JustusBraitinger's server** (30+ tools — sketching, features, analysis, export) remains the most feature-complete Fusion MCP implementation for power users who need capabilities not yet in the official server.
 

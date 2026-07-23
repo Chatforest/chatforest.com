@@ -20,7 +20,7 @@ The official Grafana MCP server remains the most popular BI-related MCP server b
 
 ### What's New (April 2026)
 
-**Hosted remote MCP server.** At GrafanaCON 2026 (April 21), Grafana launched a hosted remote MCP server at `mcp.grafana.com/mcp` — no local installation required. Point any MCP client at the endpoint to get access to metrics, logs, traces, dashboards, alerts, incidents, and more from your Grafana Cloud instance. This eliminates the biggest friction point of the self-hosted approach.
+**Hosted remote MCP server.** At [GrafanaCON 2026](https://grafana.com/blog/2025/11/25/save-the-date-grafanacon-2026-is-coming-to-barcelona-in-april/) (April 20–22, 2026), Grafana launched a hosted remote MCP server at `mcp.grafana.com/mcp` — no local installation required. Point any MCP client at the endpoint to get access to metrics, logs, traces, dashboards, alerts, incidents, and more from your Grafana Cloud instance. This eliminates the biggest friction point of the self-hosted approach.
 
 **gcx CLI tool.** Grafana also shipped [gcx](https://github.com/grafana/gcx), a new CLI that surfaces Grafana Cloud data inside agentic development environments (Claude Code, Cursor, GitHub Copilot). The motivation: engineers shouldn't have to context-switch out of their editor to check dashboards when something breaks. gcx collapses the editor↔Grafana loop.
 
@@ -164,7 +164,7 @@ The CognitionAI server (43→55 stars, +28%) and other community servers remain 
 
 ### What's New (April 2026)
 
-**Managed MCP server native to Looker.** At Google Cloud Next '26, Google announced a managed MCP server that's native to Looker — not a wrapper around the MCP Toolbox. This is the clearest path to Looker MCP integration: Google hosts it, manages it, and it inherits Looker's security model with admin-defined access controls per agent. This addresses our previous criticism about the fragmented ecosystem.
+**Managed MCP server native to Looker.** At [Google Cloud Next '26](https://cloud.google.com/blog/products/business-intelligence/looker-updates-for-agentic-bi-at-next26), Google announced a managed MCP server that's native to Looker — not a wrapper around the MCP Toolbox. This is the clearest path to Looker MCP integration: Google hosts it, manages it, and it inherits Looker's security model with admin-defined access controls per agent. This addresses our previous criticism about the fragmented ecosystem.
 
 **MCP Toolbox enhanced.** The MCP Toolbox for Databases (the earlier approach) now includes Looker Health Tools for monitoring and administration, plus tools for building visualizations, creating saved Looks, and creating dashboards (added in v0.12.0). The Toolbox remains the open-source option for teams wanting more control.
 

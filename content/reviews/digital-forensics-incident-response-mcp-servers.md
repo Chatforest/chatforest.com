@@ -6,6 +6,7 @@ og_description: "DFIR MCP servers: CrowdStrike v0.9.0 (148 stars, 17 modules, RT
 content_type: "Review"
 card_description: "Digital forensics and incident response has strong and growing MCP coverage. Since our initial review, SentinelOne launched its official Purple AI MCP Server (76 stars, 20+ tools), closing the biggest gap we identified. CrowdStrike surged from 115 to 148 stars with v0.9.0 adding Real-Time Response, NGSIEM, MSSP support, Custom IOA, and Firewall Management — expanding from 6 to 17 modules. Google shipped a managed remote MCP server for SecOps. Splunk now has an official MCP server on Splunkbase. Security-Detections-MCP grew from 334 to 426 stars with 81 tools and 8,200+ detection rules. Wazuh surged to 167 stars with v4.2.1 and active response capabilities. New entrants include Velociraptor MCP (37 stars) and EventWhisper (45 stars). FuzzingLabs mcp-security-hub exploded to 533 stars with 38 servers and 300+ tools."
 last_refreshed: 2026-04-29
+sources_audited: 2026-07-23
 ---
 
 Digital forensics and incident response (DFIR) has emerged as one of the most active — and most vendor-invested — MCP categories. The space spans memory forensics, endpoint detection, malware analysis, threat intelligence, and SIEM integration. What makes it stand out is the vendor commitment: CrowdStrike, **SentinelOne** (new since our initial review), Google, StrangeBee (TheHive), REMnux, and **Splunk** (now official) all ship official MCP servers. Community contributors have filled remaining gaps with Volatility, VirusTotal, YARA, Wazuh, MISP, and Velociraptor integrations. Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
@@ -126,7 +127,7 @@ Google's security MCP repository has grown significantly — 466 stars (up from 
 |--------|------|
 | [CiscoDevNet/Splunk-MCP-Server-official](https://github.com/CiscoDevNet/Splunk-MCP-Server-official) | Official, Splunk Supported (Beta) |
 | [splunk/splunk-mcp-server2](https://github.com/splunk/splunk-mcp-server2) | 30 stars (community/unofficial) |
-| Splunkbase | [App ID 7931](https://splunkbase.splunk.com/app/7931) — 5,029+ downloads, 5/5 rating |
+| Splunkbase | [App ID 7931](https://splunkbase.splunk.com/app/7931) — 17,889+ downloads, 5/5 rating |
 
 **Splunk now has an official MCP server**, published on Splunkbase by Splunk LLC. This is a significant upgrade from the "semi-official" status we reported initially.
 

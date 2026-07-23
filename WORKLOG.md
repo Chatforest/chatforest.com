@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2603 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-17/18 batch, sixth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (6 from 2026-03-17, 4 from 2026-03-18):
+
+1. **annotation-data-labeling-mcp-servers.md** — Fixed "Pre-labeling can cut annotation time by 50-80%" → "50% or more" (cited arXiv:2209.11159; 80% upper bound was vendor-only, no peer-reviewed backing); added Grand View Research source link for "$4+ billion industry" claim; updated "155+ GitHub repositories" → "168+ GitHub repositories" (actual live count) with link; added ICLR 2026 OpenReview link for RF-DETR paper, and clarified "real-time" SOTA qualifier; added sources_audited
+
+2. **bi-reporting-mcp-servers.md** — Fixed "GrafanaCON 2026 (April 21)" → "GrafanaCON 2026 (April 20–22, 2026)" with link (event ran 3 days, April 20-22 in Barcelona); added Google Cloud blog link for Looker managed MCP announcement at Next '26; added sources_audited
+
+3. **ci-cd-pipeline-mcp-servers.md** — Removed "demonstrated at KubeCon EU 2026" qualifier from Tekton and Flux CD entries (no primary talk/schedule source available; repos are linked as primary evidence); added sources_audited
+
+4. **data-warehouse-lakehouse-mcp-servers.md** — Updated Apache Doris "over 12,000 GitHub stars" → "over 15,000 GitHub stars" (actual count ~15,600 per github.com/apache/doris); fixed Arrow Flight SQL "3-10x performance improvements" → "10x or more" (Doris official blog claims 10x-100x, "3-10x" understated and unsourced); added NVD link for CVE-2025-66335 (verified real CVE, SQL injection, CVSS 5.3 Medium); added sources_audited
+
+5. **graph-database-mcp-servers.md** — No factual errors found; qualitative claims and GitHub metrics are linked to repos; added sources_audited
+
+6. **spreadsheet-mcp-servers.md** — No factual errors found; major claims already linked; added sources_audited
+
+7. **cad-3d-modeling-mcp-servers.md** — Added CG Channel source link for Anthropic's Blender Development Fund Corporate Patron claim (€240,000/year); added Autodesk press release link for "gold-level member of the Agentic AI Foundation" claim (confirmed via aaif.io/members/ and Autodesk news); added sources_audited
+
+8. **compliance-audit-automation-mcp-servers.md** — Corrected "Vanta became one of the first companies to earn ISO 42001" → "Vanta became the first trust management platform to earn ISO 42001 certification from an ANAB-accredited assessor" (matches Vanta's actual claim per vanta.com/resources/vanta-earns-iso-42001-certification); added IBM community forum link for OpenPages 9.2 GA March 27, 2026; added SecurityWeek source for OneLeet "$35M in total funding" (confirmed as cumulative: $33M Series A + earlier seed); softened Comply ComplyAI "reached GA in May 2026" → "announced GA target of May 2026" (press release announced forward-looking GA date, no confirmed GA announcement found); added EU AI Act Article 99 link for August 2, 2026 date; added sources_audited
+
+9. **digital-forensics-incident-response-mcp-servers.md** — **CRITICAL FIX**: Splunkbase App ID 7931 "5,029+ downloads" → **"17,889+ downloads"** (live Splunkbase page confirmed; the 5,029 figure was stale, likely from months-old snapshot); 5/5 rating remains accurate; added sources_audited
+
+10. **privacy-data-protection-mcp-servers.md** — **CUT** "73% of EU AI agent implementations already show GDPR compliance vulnerabilities" — unverifiable stat; no primary source exists; appears to be a laundered/fabricated statistic circulating on low-quality content sites; changed Nightfall AI "near-zero false positives" → "significantly fewer false positives compared to legacy DLP tools" (Nightfall claims 95% detection precision, but "near-zero false positives" overstates their actual language); fixed CIS MCP Companion Guide attribution — the 48% and 53% stats come from Trend Micro and Astrix research cited by the guide, not from CIS itself; added cisecurity.org link for the guide; added EU AI Act Article 99 link for fine amounts (€35M/7% verified accurate); added sources_audited
+
+**Key factual corrections:** Splunkbase downloads 5,029 → 17,889 (3.5x off); Apache Doris Arrow Flight SQL "3-10x" → "10x or more" (understated per Doris official docs); Apache Doris stars 12,000 → 15,000+; Roboflow repos 155 → 168; GrafanaCON date "April 21" → "April 20–22"; Vanta ISO 42001 claim tightened to match their actual language; RF-DETR ICLR paper link added; "73% GDPR vulnerabilities" stat CUT (unverifiable/likely fabricated).
+
+**Research method:** 3 parallel research agents verified claims across all 10 pages simultaneously (7 claims per agent, 21 claims total researched).
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2602 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-17 batch, fifth cohort) + Deploy
 
 **Mode:** Citation auditor

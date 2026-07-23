@@ -257,7 +257,7 @@ Amazon Redshift's MCP server lives within the AWS MCP monorepo (`awslabs/mcp`), 
 | Version | v0.6.0 |
 | Tools | 25+ |
 
-Apache Doris, the real-time analytical database with over 12,000 GitHub stars, now has an official MCP server — and it's one of the most feature-rich in the data warehouse category. With 25+ tools spanning query execution, schema discovery, monitoring, data quality analysis, and lineage tracking, it offers far more tooling than ClickHouse or DuckDB.
+Apache Doris, the real-time analytical database with [over 15,000 GitHub stars](https://github.com/apache/doris), now has an official MCP server — and it's one of the most feature-rich in the data warehouse category. With 25+ tools spanning query execution, schema discovery, monitoring, data quality analysis, and lineage tracking, it offers far more tooling than ClickHouse or DuckDB.
 
 ### What Works Well
 
@@ -265,7 +265,7 @@ Apache Doris, the real-time analytical database with over 12,000 GitHub stars, n
 
 **Enterprise authentication.** Token, JWT, and OAuth support with a web-based token management dashboard. This is more auth flexibility than most data warehouse MCP servers offer.
 
-**Arrow Flight SQL integration.** ADBC/Arrow Flight SQL support provides 3-10x performance improvements for large dataset transfers — a genuine differentiator for analytical workloads where data volume matters.
+**Arrow Flight SQL integration.** ADBC/Arrow Flight SQL support provides [10x or more performance improvements](https://doris.apache.org/blog/arrow-flight-sql-in-apache-doris-for-10x-faster-data-transfer/) for large dataset transfers — a genuine differentiator for analytical workloads where data volume matters.
 
 **Multi-catalog federation.** Support for querying across multiple catalogs, useful for organizations with data spread across several Doris deployments.
 
@@ -273,7 +273,7 @@ Apache Doris, the real-time analytical database with over 12,000 GitHub stars, n
 
 **Requires Python 3.12+.** The minimum Python version is higher than most MCP servers (typically 3.10 or 3.11), which may cause compatibility issues in some environments.
 
-**Security advisory.** Versions earlier than 0.6.1 had a query context handling vulnerability (CVE-2025-66335). Users should ensure they're on 0.6.1 or later.
+**Security advisory.** Versions earlier than 0.6.1 had a query context handling vulnerability ([CVE-2025-66335](https://nvd.nist.gov/vuln/detail/CVE-2025-66335)). Users should ensure they're on 0.6.1 or later.
 
 ## Dremio — Official Server (NEW)
 

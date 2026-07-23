@@ -6,6 +6,7 @@ og_description: "Graph database MCP servers: Neo4j (official + Labs), Neptune (A
 content_type: "Review"
 card_description: "Graph databases have strong MCP coverage — Neo4j leads with two servers (official 218 + Labs 940 stars), ArangoDB now has an official server, NebulaGraph joins the ecosystem, and Memgraph's ai-toolkit nearly quadrupled in stars. 20+ servers across 12+ databases."
 last_refreshed: 2026-04-29
+sources_audited: 2026-07-23
 ---
 
 Graph databases are having a moment in AI. Knowledge graphs, RAG with structured relationships, agent memory — they all benefit from graph traversal that relational databases can't match. And the MCP ecosystem has noticed. Part of our **[Databases MCP category](/categories/databases/)**.

@@ -447,15 +447,15 @@
 </tr>
 </tbody>
 </table>
-<p>Apache Doris, the real-time analytical database with over 12,000 GitHub stars, now has an official MCP server — and it&rsquo;s one of the most feature-rich in the data warehouse category. With 25+ tools spanning query execution, schema discovery, monitoring, data quality analysis, and lineage tracking, it offers far more tooling than ClickHouse or DuckDB.</p>
+<p>Apache Doris, the real-time analytical database with <a href="https://github.com/apache/doris">over 15,000 GitHub stars</a>, now has an official MCP server — and it&rsquo;s one of the most feature-rich in the data warehouse category. With 25+ tools spanning query execution, schema discovery, monitoring, data quality analysis, and lineage tracking, it offers far more tooling than ClickHouse or DuckDB.</p>
 <h3 id="what-works-well-6">What Works Well</h3>
 <p><strong>Comprehensive tooling.</strong> 25+ MCP tools across query execution (<code>exec_query</code>), schema and metadata (<code>get_table_schema</code>, <code>get_db_table_list</code>), query analysis (<code>get_sql_explain</code>, <code>get_sql_profile</code>), monitoring metrics, data quality analysis, lineage tracking, freshness monitoring, and access pattern analysis. This is the most tool-rich data warehouse MCP server.</p>
 <p><strong>Enterprise authentication.</strong> Token, JWT, and OAuth support with a web-based token management dashboard. This is more auth flexibility than most data warehouse MCP servers offer.</p>
-<p><strong>Arrow Flight SQL integration.</strong> ADBC/Arrow Flight SQL support provides 3-10x performance improvements for large dataset transfers — a genuine differentiator for analytical workloads where data volume matters.</p>
+<p><strong>Arrow Flight SQL integration.</strong> ADBC/Arrow Flight SQL support provides <a href="https://doris.apache.org/blog/arrow-flight-sql-in-apache-doris-for-10x-faster-data-transfer/">10x or more performance improvements</a> for large dataset transfers — a genuine differentiator for analytical workloads where data volume matters.</p>
 <p><strong>Multi-catalog federation.</strong> Support for querying across multiple catalogs, useful for organizations with data spread across several Doris deployments.</p>
 <h3 id="what-doesnt-work-well-6">What Doesn&rsquo;t Work Well</h3>
 <p><strong>Requires Python 3.12+.</strong> The minimum Python version is higher than most MCP servers (typically 3.10 or 3.11), which may cause compatibility issues in some environments.</p>
-<p><strong>Security advisory.</strong> Versions earlier than 0.6.1 had a query context handling vulnerability (CVE-2025-66335). Users should ensure they&rsquo;re on 0.6.1 or later.</p>
+<p><strong>Security advisory.</strong> Versions earlier than 0.6.1 had a query context handling vulnerability (<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-66335">CVE-2025-66335</a>). Users should ensure they&rsquo;re on 0.6.1 or later.</p>
 <h2 id="dremio--official-server-new">Dremio — Official Server (NEW)</h2>
 <table>
 <thead>

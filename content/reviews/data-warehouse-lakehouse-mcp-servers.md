@@ -6,6 +6,7 @@ og_description: "Data Warehouse & Lakehouse MCP servers: ClickHouse official (76
 content_type: "Review"
 card_description: "Data warehousing has exceptional MCP coverage — every major platform has official or vendor-backed support. ClickHouse leads the open-source community with 764 stars. Apache Doris is a notable new official entry with 289 stars and 25+ tools. DuckDB/MotherDuck now supports HTTP transport. BigQuery is auto-enabled. Snowflake has both managed GA and open-source servers. Databricks added SQL as a 4th managed server. Dremio brings lakehouse analytics. **Teradata now has an official MCP server (v0.2.2, May 2026)** with the broadest tool set of any data warehouse MCP server — 190+ tools spanning SQL execution, in-database ML via 120+ teradataml functions, in-database LLM inference (CompleteChat), Enterprise Feature Store, RAG pipelines, graph lineage, DBA operations, backup/restore, and data quality. This is one of the strongest enterprise MCP categories."
 last_refreshed: 2026-05-17
+sources_audited: 2026-07-23
 ---
 
 Data warehousing and lakehouse platforms have some of the best MCP coverage in the entire ecosystem. Every major vendor — Snowflake, Google BigQuery, Databricks, ClickHouse, MotherDuck/DuckDB, Amazon Redshift, Apache Doris, and Dremio — now offers official or vendor-backed MCP servers. Enterprise AI platforms like Palantir Foundry — which go beyond traditional warehousing into ontology-centric data modeling — also have official MCP servers, covered in this roundup. This makes sense: data warehouses are where enterprise data lives, and connecting AI agents to structured data through SQL is one of the highest-value MCP use cases.
@@ -262,7 +263,7 @@ Amazon Redshift's MCP server lives within the AWS MCP monorepo (`awslabs/mcp`), 
 | Version | v0.6.0 |
 | Tools | 25+ |
 
-Apache Doris, the real-time analytical database with over 12,000 GitHub stars, now has an official MCP server — and it's one of the most feature-rich in the data warehouse category. With 25+ tools spanning query execution, schema discovery, monitoring, data quality analysis, and lineage tracking, it offers far more tooling than ClickHouse or DuckDB.
+Apache Doris, the real-time analytical database with [over 15,000 GitHub stars](https://github.com/apache/doris), now has an official MCP server — and it's one of the most feature-rich in the data warehouse category. With 25+ tools spanning query execution, schema discovery, monitoring, data quality analysis, and lineage tracking, it offers far more tooling than ClickHouse or DuckDB.
 
 ### What Works Well
 
@@ -270,7 +271,7 @@ Apache Doris, the real-time analytical database with over 12,000 GitHub stars, n
 
 **Enterprise authentication.** Token, JWT, and OAuth support with a web-based token management dashboard. This is more auth flexibility than most data warehouse MCP servers offer.
 
-**Arrow Flight SQL integration.** ADBC/Arrow Flight SQL support provides 3-10x performance improvements for large dataset transfers — a genuine differentiator for analytical workloads where data volume matters.
+**Arrow Flight SQL integration.** ADBC/Arrow Flight SQL support provides [10x or more performance improvements](https://doris.apache.org/blog/arrow-flight-sql-in-apache-doris-for-10x-faster-data-transfer/) for large dataset transfers — a genuine differentiator for analytical workloads where data volume matters.
 
 **Multi-catalog federation.** Support for querying across multiple catalogs, useful for organizations with data spread across several Doris deployments.
 
@@ -278,7 +279,7 @@ Apache Doris, the real-time analytical database with over 12,000 GitHub stars, n
 
 **Requires Python 3.12+.** The minimum Python version is higher than most MCP servers (typically 3.10 or 3.11), which may cause compatibility issues in some environments.
 
-**Security advisory.** Versions earlier than 0.6.1 had a query context handling vulnerability (CVE-2025-66335). Users should ensure they're on 0.6.1 or later.
+**Security advisory.** Versions earlier than 0.6.1 had a query context handling vulnerability ([CVE-2025-66335](https://nvd.nist.gov/vuln/detail/CVE-2025-66335)). Users should ensure they're on 0.6.1 or later.
 
 ## Dremio — Official Server (NEW)
 

@@ -6,6 +6,7 @@ og_description: "Spreadsheet MCP servers: Excel (3,800 stars, most popular), Goo
 content_type: "Review"
 card_description: "Spreadsheets are the world's most-used data tool — and the MCP ecosystem has responded with dozens of servers. Excel leads with a 3,800-star Python server. Google shipped official Workspace MCP servers at Cloud Next 2026 but deliberately skipped Sheets. Smartsheet migrated to a new hosted official server. The sbroenne Windows COM server surged 77%."
 last_refreshed: 2026-04-29
+sources_audited: 2026-07-23
 ---
 
 Spreadsheets are arguably the world's most-used data tool, and connecting AI agents to them is a high-value use case — from financial modeling to data cleaning to report generation. The MCP ecosystem has responded with dozens of servers, and the picture shifted significantly in April 2026: **Google shipped official Workspace MCP servers at [Cloud Next 2026](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026) — but deliberately skipped Google Sheets**, covering only Gmail, Drive, Calendar, People, and Chat. Meanwhile, **Smartsheet deprecated its GitHub repo** in favor of a new hosted official server, and the **sbroenne Windows COM Excel server surged 77% in stars** with 113 releases. Part of our **[Business & Productivity MCP category](/categories/business-productivity/)**.

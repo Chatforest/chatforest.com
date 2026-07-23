@@ -19,9 +19,9 @@ The headline: **ahujasid/blender-mcp** grew from 17,800 → ~20,000 stars and re
 | Developer | Blender Foundation (Blender Lab) |
 | Announced | April 28, 2026 |
 | License | Open source |
-| Sponsor | Anthropic (Corporate Patron, €240,000/year) |
+| Sponsor | [Anthropic (Corporate Patron, €240,000/year)](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/) |
 
-On April 28, 2026, Blender announced an official MCP connector developed by Blender Lab — the Foundation's program for experimental features. Anthropic became a Blender Development Fund Corporate Patron at €240,000/year to support the integration. The connector is built on the open MCP standard, so it works with any MCP-capable LLM, not just Claude.
+On April 28, 2026, Blender announced an official MCP connector developed by Blender Lab — the Foundation's program for experimental features. [Anthropic became a Blender Development Fund Corporate Patron at €240,000/year](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/) to support the integration. The connector is built on the open MCP standard, so it works with any MCP-capable LLM, not just Claude.
 
 **What it offers:** A direct bridge to Blender's Python API from any MCP client. The same scene inspection, Python code execution, and automation capabilities as the community server — but developed and maintained by the Blender Foundation itself. For long-term production use, the official server is the supported path.
 
@@ -114,7 +114,7 @@ On April 28, 2026 — as part of Anthropic's "Claude for Creative Work" launch (
 
 On April 9, Autodesk had already announced the **Autodesk Product Help MCP Server** — a read-only service providing AI agents access to help documentation across 110+ Autodesk products (Fusion, AutoCAD, Revit, Civil 3D, and more). Available at no cost.
 
-Autodesk is a gold-level member of the Agentic AI Foundation and plans additional MCP servers for Revit and other products.
+Autodesk is a [gold-level member of the Agentic AI Foundation](https://adsknews.autodesk.com/en/news/product-help-mcp-server/) and plans additional MCP servers for Revit and other products.
 
 The **original community server** by [Joe-Spencer](https://github.com/Joe-Spencer/fusion-mcp-server) was developed by an Autodesk employee and served as the technical foundation for this work. **JustusBraitinger's server** (30+ tools — sketching, features, analysis, export) remains the most feature-complete Fusion MCP implementation for power users who need capabilities not yet in the official server.
 

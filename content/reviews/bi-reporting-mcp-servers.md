@@ -6,6 +6,7 @@ og_description: "BI & Reporting MCP servers: Grafana (2,900 stars, 70+ tools, ho
 content_type: "Review"
 card_description: "Business intelligence now has the strongest MCP coverage of any category — every major BI platform ships official MCP server support. Grafana leads with 2,900 stars and 70+ tools plus a hosted remote MCP server. Metabase shipped a built-in MCP server in v60 (April 2026). Apache Superset 5.0 includes native MCP. Google announced a managed Looker MCP server at Next '26. Microsoft Power BI passed 700 stars. Tableau reached v1.18.5 with 33 releases. The former gap — no official Metabase or Superset servers — is now fully closed."
 last_refreshed: 2026-04-29
+sources_audited: 2026-07-23
 ---
 
 Business intelligence and reporting platforms have become the single strongest MCP category we track. Every major BI vendor — Grafana, Microsoft Power BI, Salesforce Tableau, Google Looker, Metabase, and Apache Superset — now ships official MCP server support. The last two gaps closed in April 2026: Metabase shipped a built-in MCP server in v60, and Apache Superset 5.0 includes native MCP integration. Combined with Grafana's hosted remote MCP server announced at GrafanaCON 2026 and Google's managed Looker MCP at Next '26, this category has gone from "strong" to "complete."
@@ -25,7 +26,7 @@ The official Grafana MCP server remains the most popular BI-related MCP server b
 
 ### What's New (April 2026)
 
-**Hosted remote MCP server.** At GrafanaCON 2026 (April 21), Grafana launched a hosted remote MCP server at `mcp.grafana.com/mcp` — no local installation required. Point any MCP client at the endpoint to get access to metrics, logs, traces, dashboards, alerts, incidents, and more from your Grafana Cloud instance. This eliminates the biggest friction point of the self-hosted approach.
+**Hosted remote MCP server.** At [GrafanaCON 2026](https://grafana.com/blog/2025/11/25/save-the-date-grafanacon-2026-is-coming-to-barcelona-in-april/) (April 20–22, 2026), Grafana launched a hosted remote MCP server at `mcp.grafana.com/mcp` — no local installation required. Point any MCP client at the endpoint to get access to metrics, logs, traces, dashboards, alerts, incidents, and more from your Grafana Cloud instance. This eliminates the biggest friction point of the self-hosted approach.
 
 **gcx CLI tool.** Grafana also shipped [gcx](https://github.com/grafana/gcx), a new CLI that surfaces Grafana Cloud data inside agentic development environments (Claude Code, Cursor, GitHub Copilot). The motivation: engineers shouldn't have to context-switch out of their editor to check dashboards when something breaks. gcx collapses the editor↔Grafana loop.
 
@@ -169,7 +170,7 @@ The CognitionAI server (43→55 stars, +28%) and other community servers remain 
 
 ### What's New (April 2026)
 
-**Managed MCP server native to Looker.** At Google Cloud Next '26, Google announced a managed MCP server that's native to Looker — not a wrapper around the MCP Toolbox. This is the clearest path to Looker MCP integration: Google hosts it, manages it, and it inherits Looker's security model with admin-defined access controls per agent. This addresses our previous criticism about the fragmented ecosystem.
+**Managed MCP server native to Looker.** At [Google Cloud Next '26](https://cloud.google.com/blog/products/business-intelligence/looker-updates-for-agentic-bi-at-next26), Google announced a managed MCP server that's native to Looker — not a wrapper around the MCP Toolbox. This is the clearest path to Looker MCP integration: Google hosts it, manages it, and it inherits Looker's security model with admin-defined access controls per agent. This addresses our previous criticism about the fragmented ecosystem.
 
 **MCP Toolbox enhanced.** The MCP Toolbox for Databases (the earlier approach) now includes Looker Health Tools for monitoring and administration, plus tools for building visualizations, creating saved Looks, and creating dashboards (added in v0.12.0). The Toolbox remains the open-source option for teams wanting more control.
 

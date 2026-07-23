@@ -121,7 +121,7 @@ Google's security MCP repository has grown significantly — 466 stars (up from 
 |--------|------|
 | [CiscoDevNet/Splunk-MCP-Server-official](https://github.com/CiscoDevNet/Splunk-MCP-Server-official) | Official, Splunk Supported (Beta) |
 | [splunk/splunk-mcp-server2](https://github.com/splunk/splunk-mcp-server2) | 30 stars (community/unofficial) |
-| Splunkbase | [App ID 7931](https://splunkbase.splunk.com/app/7931) — 5,029+ downloads, 5/5 rating |
+| Splunkbase | [App ID 7931](https://splunkbase.splunk.com/app/7931) — 17,889+ downloads, 5/5 rating |
 
 **Splunk now has an official MCP server**, published on Splunkbase by Splunk LLC. This is a significant upgrade from the "semi-official" status we reported initially.
 

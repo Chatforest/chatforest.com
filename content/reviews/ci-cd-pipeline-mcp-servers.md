@@ -6,6 +6,7 @@ og_description: "CI/CD pipeline MCP servers: Jenkins (v2.1 plugin, 15+ tools), C
 content_type: "Review"
 card_description: "CI/CD pipelines now have comprehensive MCP coverage. Jenkins v2.1, Argo CD v0.7.0, and TeamCity 2026.1 native MCP shipped in May 2026. Harness adds 30 toolsets across the full SDLC. The ecosystem is broad but fragmented across platforms."
 last_refreshed: 2026-05-17
+sources_audited: 2026-07-23
 aliases: ["/reviews/ci-cd-mcp-servers/"]
 ---
 
@@ -305,9 +306,9 @@ Harness is also available in [Google's Gemini Enterprise](https://workspace.goog
 
 **[Woodpecker CI](https://woodpecker-ci.org/)** — [denysvitali/woodpecker-ci-mcp](https://github.com/denysvitali/woodpecker-ci-mcp) (4 stars) provides pipeline management, build status monitoring, and repository management for [Woodpecker CI](https://woodpecker-ci.org/). There's also a specialized pipeline failure analysis server for Woodpecker with IDE integration.
 
-**[Tekton](https://tekton.dev/)** — [tektoncd/mcp-server](https://github.com/tektoncd/mcp-server) is now an official server from the Tekton project (demonstrated at KubeCon EU 2026). It focuses on tektoncd/pipeline objects with future expansion planned, and integrates with Artifact Hub for task and pipeline discovery. An earlier [OpenShift Pipelines Tekton MCP server](https://www.pulsemcp.com/servers/openshift-pipelines-tekton) also provides natural language control of [Tekton](https://tekton.dev/) pipelines in [Kubernetes](https://kubernetes.io/) environments.
+**[Tekton](https://tekton.dev/)** — [tektoncd/mcp-server](https://github.com/tektoncd/mcp-server) is now an official server from the Tekton project. It focuses on tektoncd/pipeline objects with future expansion planned, and integrates with Artifact Hub for task and pipeline discovery. An earlier [OpenShift Pipelines Tekton MCP server](https://www.pulsemcp.com/servers/openshift-pipelines-tekton) also provides natural language control of [Tekton](https://tekton.dev/) pipelines in [Kubernetes](https://kubernetes.io/) environments.
 
-**[Flux CD](https://fluxcd.io/)** — [controlplaneio-fluxcd/flux-operator](https://github.com/controlplaneio-fluxcd/flux-operator) includes an MCP server for AI-assisted GitOps, demonstrated at KubeCon EU 2026 (published April 21, 2026). Flux is one of the two dominant GitOps tools for Kubernetes (alongside Argo CD), and this fills an important gap for teams that chose Flux over Argo CD. The integration focuses on Flux Operator resources and GitOps reconciliation workflows.
+**[Flux CD](https://fluxcd.io/)** — [controlplaneio-fluxcd/flux-operator](https://github.com/controlplaneio-fluxcd/flux-operator) includes an MCP server for AI-assisted GitOps (published April 21, 2026). Flux is one of the two dominant GitOps tools for Kubernetes (alongside Argo CD), and this fills an important gap for teams that chose Flux over Argo CD. The integration focuses on Flux Operator resources and GitOps reconciliation workflows.
 
 **[Drone CI](https://www.drone.io/)** — Community implementation [madappa-sharath/drone-ci-mcp](https://github.com/madappa-sharath/drone-ci-mcp) exposes Drone CI/CD pipelines as MCP tools. Early stage but covers the basics for teams on the Drone/Harness Drone stack.
 
