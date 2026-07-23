@@ -68,7 +68,7 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> <a href="https://github.com/ActiveCampaign/postmark-mcp">GitHub</a> — 41 stars, 14 forks, JavaScript (100%), 22 commits, stdio transport, 4 tools, MIT license, free tier (100 emails/mo). Official first-party from <a href="https://www.activecampaign.com/">ActiveCampaign</a>.</p>
 <p>Postmark&rsquo;s MCP server is a <strong>first-party, officially maintained</strong> integration from Postmark Labs that lets AI agents send transactional emails, dispatch template-based emails, list available templates, and retrieve delivery statistics. You clone the repo, install dependencies, configure your server token, and your AI assistant can start sending emails through Postmark&rsquo;s infrastructure.</p>
-<p><a href="https://postmarkapp.com/">Postmark</a> is a transactional email service known for fast delivery speeds and high deliverability rates. Originally bootstrapped, Postmark was acquired by <a href="https://www.activecampaign.com/">ActiveCampaign</a> in May 2022 (ActiveCampaign had a $3B valuation at the time). Postmark operates as a focused product with ~15 employees and ~$1.7M annual revenue (as of mid-2025), while parent company ActiveCampaign has 865 employees, 145,000 customers, and $360M in total funding across three rounds.</p>
+<p><a href="https://postmarkapp.com/">Postmark</a> is a transactional email service known for fast delivery speeds and high deliverability rates. Originally bootstrapped, Postmark was <a href="https://postmarkapp.com/blog/postmark-and-dmarc-digests-acquired-by-activecampaign">acquired by ActiveCampaign in May 2022</a>. Postmark continues to operate as a focused transactional email product under ActiveCampaign&rsquo;s ownership.</p>
 <h2 id="what-it-does">What It Does</h2>
 <p>The MCP server exposes 4 tools across three categories: <strong>email sending</strong>, <strong>template management</strong>, and <strong>analytics</strong>.</p>
 <h3 id="email-sending">Email Sending</h3>
@@ -257,7 +257,7 @@ npm start
 <li>Versions 1.0.0 through 1.0.15 were functionally identical to the legitimate library — building trust over 15 clean releases</li>
 <li>Version 1.0.16 (September 17, 2025) injected a <strong>one-line backdoor</strong>: every outgoing email silently added a hidden BCC to <code>phan@giftshop[.]club</code></li>
 <li>The package accumulated 1,643 total downloads before removal</li>
-<li>Security researchers estimated ~300 organizations were compromised, with 3,000–15,000 emails per organization potentially exfiltrated during the exposure window</li>
+<li>Security researchers <a href="https://snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/">estimated ~300 organizations were compromised, with 3,000–15,000 emails per organization</a> potentially exfiltrated during the exposure window</li>
 </ol>
 <p><strong>Exposed data included:</strong> password reset emails, MFA codes, invoices, customer PII, and confidential business documents.</p>
 <p>Postmark <a href="https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package">confirmed</a> they had no involvement with the malicious package and that their official API and services were unaffected.</p>

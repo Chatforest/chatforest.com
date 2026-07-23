@@ -4,6 +4,7 @@ date: 2026-03-24T10:50:00+09:00
 description: "Comprehensive reviews of 19 Web Search & Data Extraction MCP server categories — from Brave Search, Tavily, and Perplexity to Firecrawl, Crawl4AI, Bright Data, Apify, Ahrefs, and browser automation."
 og_description: "19 Web Search & Data Extraction MCP server reviews covering web search, scraping, SEO, and browser automation. Brave Search, Tavily, Perplexity, DuckDuckGo, Firecrawl, and more. 200+ servers evaluated."
 content_type: "Category"
+sources_audited: 2026-07-24
 ---
 
 We've reviewed **19 categories** of Web Search & Data Extraction MCP servers, evaluating over **200 individual servers** across the full web data pipeline. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.

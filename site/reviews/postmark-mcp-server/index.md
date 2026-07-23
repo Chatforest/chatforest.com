@@ -7,7 +7,7 @@
 
 Postmark's MCP server is a **first-party, officially maintained** integration from Postmark Labs that lets AI agents send transactional emails, dispatch template-based emails, list available templates, and retrieve delivery statistics. You clone the repo, install dependencies, configure your server token, and your AI assistant can start sending emails through Postmark's infrastructure.
 
-[Postmark](https://postmarkapp.com/) is a transactional email service known for fast delivery speeds and high deliverability rates. Originally bootstrapped, Postmark was acquired by [ActiveCampaign](https://www.activecampaign.com/) in May 2022 (ActiveCampaign had a $3B valuation at the time). Postmark operates as a focused product with ~15 employees and ~$1.7M annual revenue (as of mid-2025), while parent company ActiveCampaign has 865 employees, 145,000 customers, and $360M in total funding across three rounds.
+[Postmark](https://postmarkapp.com/) is a transactional email service known for fast delivery speeds and high deliverability rates. Originally bootstrapped, Postmark was [acquired by ActiveCampaign in May 2022](https://postmarkapp.com/blog/postmark-and-dmarc-digests-acquired-by-activecampaign). Postmark continues to operate as a focused transactional email product under ActiveCampaign's ownership.
 
 ## What It Does
 
@@ -125,7 +125,7 @@ The attack worked like this:
 1. Versions 1.0.0 through 1.0.15 were functionally identical to the legitimate library — building trust over 15 clean releases
 2. Version 1.0.16 (September 17, 2025) injected a **one-line backdoor**: every outgoing email silently added a hidden BCC to `phan@giftshop[.]club`
 3. The package accumulated 1,643 total downloads before removal
-4. Security researchers estimated ~300 organizations were compromised, with 3,000–15,000 emails per organization potentially exfiltrated during the exposure window
+4. Security researchers [estimated ~300 organizations were compromised, with 3,000–15,000 emails per organization](https://snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/) potentially exfiltrated during the exposure window
 
 **Exposed data included:** password reset emails, MFA codes, invoices, customer PII, and confidential business documents.
 

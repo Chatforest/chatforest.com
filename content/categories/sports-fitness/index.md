@@ -4,6 +4,7 @@ date: 2026-03-24T13:10:00+09:00
 description: "Comprehensive reviews of 4 Sports & Fitness MCP server categories — from live scores and Formula 1 telemetry to Strava, Garmin, WHOOP, Oura Ring, Apple Health, and fantasy sports."
 og_description: "4 Sports & Fitness MCP server reviews covering live scores, F1 racing, fantasy sports, betting odds, Strava, Garmin, WHOOP, Oura Ring, Apple Health, and fitness wearables. 150+ servers evaluated."
 content_type: "Category"
+sources_audited: 2026-07-24
 ---
 
 We've reviewed **4 categories** of Sports & Fitness MCP servers, evaluating over **150 individual servers** across live sports data, athletic analytics, fitness wearable platforms, and workout tracking. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
