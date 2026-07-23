@@ -4,6 +4,7 @@ date: 2026-03-24T21:00:00+09:00
 description: "Comprehensive reviews of 26 Database MCP servers — 12 category reviews plus 14 individual server deep-dives covering vector databases, AI memory, and database platforms."
 og_description: "26 Database MCP server reviews covering PostgreSQL, MongoDB, Redis, MySQL, SQLite, Supabase, Neon, Turso, Prisma, vector databases, AI memory, graph, time-series, and more. 100+ servers evaluated."
 content_type: "Category"
+sources_audited: 2026-07-24
 ---
 
 We've reviewed **26 Database MCP servers** — 12 category-level reviews plus 14 individual server deep-dives — evaluating over **100 individual servers** across the entire data layer. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
@@ -39,7 +40,7 @@ Purpose-built engines for vectors, graphs, and time-series data — increasingly
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Vector Database & Embedding](/reviews/vector-database-embedding-mcp-servers/) | 4/5 | [Qdrant](https://github.com/qdrant/mcp-server-qdrant) (1.3k stars), Chroma (515 stars), Milvus (220 stars) |
-| [Time-Series Database](/reviews/time-series-database-mcp-servers/) | 4/5 | [mcp-grafana](https://github.com/grafana/mcp-grafana) (2.9k stars, remote hosted), ClickHouse official (761 stars, Cloud Remote MCP), SigNoz (88 stars, 30+ tools), prometheus-mcp (427 stars) |
+| [Time-Series Database](/reviews/time-series-database-mcp-servers/) | 4/5 | [mcp-grafana](https://github.com/grafana/mcp-grafana) (2.9k stars, remote hosted), [ClickHouse official](https://github.com/ClickHouse/mcp-clickhouse) (761 stars, Cloud Remote MCP), [SigNoz](https://github.com/SigNoz/signoz-mcp-server) (88 stars, 30+ tools), [prometheus-mcp](https://github.com/pab1it0/prometheus-mcp-server) (427 stars) |
 | [Graph Database](/reviews/graph-database-mcp-servers/) | 3.5/5 | Neo4j official (~188 stars), TigerGraph (34 tools), Neptune (AWS) |
 
 ## Database Operations

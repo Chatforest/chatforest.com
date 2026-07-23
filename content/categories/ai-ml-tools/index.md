@@ -4,6 +4,7 @@ date: 2026-03-24T18:00:00+09:00
 description: "Comprehensive reviews of 5 AI & ML MCP server categories — from multi-agent orchestration frameworks and model hubs (HuggingFace, Ollama, Replicate) to LLM evaluation benchmarks"
 og_description: "5 AI & ML MCP server reviews covering agent orchestration (mcp-agent 8.1K stars, Ruflo 21.1K stars, 15+ servers), model serving (HuggingFace, Ollama, Replicate, W&B, 20+ servers), LLM evaluation (promptfoo 10.8K stars, MCP-Bench, 15+ servers), prompt engineering (just-prompt 718 stars, 20+ servers), and sequential thinking (Anthropic official, 81.6K monorepo stars). 70+ servers evaluated."
 content_type: "Category"
+sources_audited: 2026-07-24
 ---
 
 We've reviewed **5 categories** of AI & ML MCP servers, evaluating over **70 individual servers** across agent orchestration, model serving and inference, LLM evaluation and benchmarking, prompt engineering, and structured reasoning. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
@@ -18,7 +19,7 @@ Multi-agent coordination frameworks — from composable workflow patterns to swa
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [AI Agent Orchestration](/reviews/agent-orchestration-mcp-servers/) | 4/5 | [mcp-agent](https://github.com/lastmile-ai/mcp-agent) (8.1K stars, Anthropic agent patterns, parallel/router/map-reduce), [fast-agent](https://github.com/evalstate/fast-agent) (3.7K stars, chain/parallel/MAKER voting), Ruflo (21.1K stars, 60+ agents, 215 tools), [Agent-MCP](https://github.com/rinadelph/Agent-MCP) (1.2K stars, knowledge graph), task-orchestrator (170 stars, work item graph), A2A-MCP-Server (145 stars, protocol bridge) |
+| [AI Agent Orchestration](/reviews/agent-orchestration-mcp-servers/) | 4/5 | [mcp-agent](https://github.com/lastmile-ai/mcp-agent) (8.1K stars, Anthropic agent patterns, parallel/router/map-reduce), [fast-agent](https://github.com/evalstate/fast-agent) (3.7K stars, chain/parallel/MAKER voting), [Ruflo](https://github.com/ruvnet/ruflo) (21.1K stars at time of review, 60+ agents, 215 tools), [Agent-MCP](https://github.com/rinadelph/Agent-MCP) (1.2K stars, knowledge graph), task-orchestrator (170 stars, work item graph), A2A-MCP-Server (145 stars, protocol bridge) |
 
 ## Model Serving & Inference
 
@@ -60,7 +61,7 @@ Explicit step-by-step reasoning tools that make AI thinking visible and controll
 
 ### What stands out
 
-**Agent orchestration is the most ambitious MCP subcategory.** Ruflo (21.1K stars, 215 tools, 60+ agents) is the most starred project purpose-built for MCP agent coordination. [mcp-agent by LastMile AI](https://github.com/lastmile-ai/mcp-agent) (8.1K stars) implements Anthropic's own "Building Effective Agents" patterns as composable building blocks. The ecosystem splits between workflow-centric (define patterns) and swarm-centric (deploy fleets) approaches — both are maturing fast.
+**Agent orchestration is the most ambitious MCP subcategory.** [Ruflo](https://github.com/ruvnet/ruflo) (21.1K stars at time of review, 215 tools, 60+ agents) is the most starred project purpose-built for MCP agent coordination. [mcp-agent by LastMile AI](https://github.com/lastmile-ai/mcp-agent) (8.1K stars) implements Anthropic's own "Building Effective Agents" patterns as composable building blocks. The ecosystem splits between workflow-centric (define patterns) and swarm-centric (deploy fleets) approaches — both are maturing fast.
 
 **Every major ML platform has MCP support.** HuggingFace, Replicate, Weights & Biases, MLflow, and AWS SageMaker all have MCP server implementations. The gap: no single server covers the full ML lifecycle from training to deployment — you need to combine multiple servers.
 
@@ -68,7 +69,7 @@ Explicit step-by-step reasoning tools that make AI thinking visible and controll
 
 **Prompt engineering is the youngest subcategory.** The highest-starred server (just-prompt, 718 stars) is really a multi-LLM router. Dedicated optimization tools are mostly under 25 stars. But emerging approaches — evolutionary optimization, research-backed technique libraries implementing Tree of Thoughts and Constitutional AI — show the space is developing quickly.
 
-**Structured reasoning is being absorbed into models.** Sequential Thinking's [npm downloads dropped ~32% in two months](https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking) as Claude gained extended thinking and GPT added chain-of-thought. Anthropic now recommends extended thinking over the think tool in most cases. The server remains useful for complex tool chains and policy-heavy environments, but the trend is clear.
+**Structured reasoning is being absorbed into models.** Sequential Thinking's [npm downloads dropped ~32% in two months](https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking) as Claude gained extended thinking and GPT added chain-of-thought. The server remains useful for complex tool chains and policy-heavy environments, but the trend is clear.
 
 ---
 

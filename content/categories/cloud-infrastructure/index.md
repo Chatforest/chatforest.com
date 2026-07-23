@@ -5,6 +5,7 @@ lastmod: 2026-05-16T22:00:00+09:00
 description: "Comprehensive reviews of 25 Cloud & Infrastructure MCP server categories — from the big three cloud platforms to containers, infrastructure as code, serverless, chaos engineering"
 og_description: "25 Cloud & Infrastructure MCP server reviews covering AWS, Azure, Google Cloud, Docker, Kubernetes, Terraform, Cloudflare, chaos engineering, serverless, networking, and more. 365+ servers evaluated."
 content_type: "Category"
+sources_audited: 2026-07-24
 ---
 
 We've reviewed **25 entries** in the Cloud & Infrastructure MCP space, evaluating over **365 individual servers** across the full infrastructure stack. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.

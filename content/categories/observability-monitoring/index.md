@@ -4,6 +4,7 @@ date: 2026-03-24T15:30:00+09:00
 description: "Comprehensive reviews of 10 Observability & Monitoring MCP server categories — from full-stack platforms like Grafana, Datadog, and New Relic to error tracking, incident"
 og_description: "10 Observability & Monitoring MCP server reviews covering Grafana (2,600+ stars), Datadog (50+ tools), Sentry (603 stars), PagerDuty (60+ tools), New Relic, Honeycomb, log management, uptime monitoring, and LLM observability. 75+ servers evaluated."
 content_type: "Category"
+sources_audited: 2026-07-24
 ---
 
 We've reviewed **10 categories** of Observability & Monitoring MCP servers, evaluating over **75 individual servers** across application performance monitoring, error tracking, incident management, log aggregation, uptime monitoring, and LLM observability. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
@@ -18,9 +19,9 @@ The major observability platforms that provide unified dashboards, metrics, trac
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Grafana](/reviews/grafana-mcp-server/) | 4/5 | [mcp-grafana](https://github.com/grafana/mcp-grafana) (2,600+ stars, 303 forks, v0.11.3), 252K+ Docker Hub pulls, 40+ tools across 15 categories, ~595K all-time PulseMCP visitors (#66 globally) |
-| [Datadog](/reviews/datadog-mcp-server/) | 4/5 | [Official Datadog MCP](https://github.com/datadog-labs/mcp-server) (22 stars, GA since March 9 2026), 50+ tools across 14 modular toolsets, ~10.8K weekly PulseMCP visitors |
-| [New Relic](/reviews/newrelic-mcp-server/) | 4/5 | [Remote-hosted at mcp.newrelic.com](https://github.com/newrelic/mcp-server) (Streamable HTTP), 35+ tools across 6 categories, Public Preview, 20.2K all-time PulseMCP visitors |
+| [Grafana](/reviews/grafana-mcp-server/) | 4/5 | [mcp-grafana](https://github.com/grafana/mcp-grafana) (2,600+ stars, 303 forks, v0.11.3), 40+ tools across 15 categories |
+| [Datadog](/reviews/datadog-mcp-server/) | 4/5 | [Official Datadog MCP](https://github.com/datadog-labs/mcp-server) (22 stars, GA since March 9 2026), 50+ tools across 14 modular toolsets |
+| [New Relic](/reviews/newrelic-mcp-server/) | 4/5 | [Remote-hosted at mcp.newrelic.com](https://github.com/newrelic/mcp-server) (Streamable HTTP), 35+ tools across 6 categories, Public Preview |
 | [New Relic NRQL & Alerts](/reviews/new-relic-mcp-server/) | 3.5/5 | [Official first-party](https://github.com/newrelic/mcp-server) (4 stars, Public Preview), 15+ observability tools across 6 categories — NRQL queries, alerts, entity discovery, log analysis |
 | [Honeycomb](/reviews/honeycomb-mcp-server/) | 4/5 | [Official hosted MCP](https://github.com/honeycombio/honeycomb-mcp) (replaced deprecated self-hosted, 41 stars, 12 forks), 14 tools, GA since Sep 2025, [Agent Skills](https://github.com/honeycombio/agent-skill) + Automated Investigations launched Mar 2026 |
 
@@ -30,8 +31,8 @@ The tools teams reach for when things break — from error monitoring to on-call
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Sentry](/reviews/sentry-mcp-server/) | 4/5 | [sentry-mcp](https://github.com/getsentry/sentry-mcp) (603 stars, 93 forks, v0.30.0), ~19.4K weekly npm downloads, ~302K all-time PulseMCP visitors (#113 globally), ~20 tools |
-| [PagerDuty](/reviews/pagerduty-mcp-server/) | 4/5 | [pagerduty-mcp](https://github.com/PagerDuty/pagerduty-mcp-server) (57 stars, 30 forks, v0.15.1, 270 commits), 60+ tools, ~809 PyPI downloads/month, 126K all-time PulseMCP visitors |
+| [Sentry](/reviews/sentry-mcp-server/) | 4/5 | [sentry-mcp](https://github.com/getsentry/sentry-mcp) (603 stars, 93 forks, v0.30.0), ~20 tools |
+| [PagerDuty](/reviews/pagerduty-mcp-server/) | 4/5 | [pagerduty-mcp](https://github.com/PagerDuty/pagerduty-mcp-server) (57 stars, 30 forks, v0.15.1, 270 commits), 60+ tools |
 
 ## Log Management & Uptime Monitoring
 

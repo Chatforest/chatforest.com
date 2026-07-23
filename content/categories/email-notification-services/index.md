@@ -4,6 +4,7 @@ date: 2026-03-24T17:00:00+09:00
 description: "Comprehensive reviews of 7 Email & Notification Services MCP server categories — from transactional email APIs like Resend, MailerSend, and Mailgun to multi-channel notification"
 og_description: "7 Email & Notification Services MCP server reviews covering Resend (475 stars, 30+ tools), MailerSend (34+ tools, cloud-hosted), Mailgun (70 tools), Mailtrap (9 tools), Postmark (4 tools), Twilio (~2,000 endpoints), and multi-channel notifications (20+ servers). 100+ servers evaluated."
 content_type: "Category"
+sources_audited: 2026-07-24
 ---
 
 We've reviewed **7 categories** of Email & Notification Services MCP servers, evaluating over **100 individual servers** across transactional email APIs, SMS and telephony, push notifications, and multi-channel notification orchestration. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
