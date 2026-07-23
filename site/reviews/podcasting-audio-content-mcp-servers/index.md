@@ -31,7 +31,7 @@ The **official ElevenLabs MCP server** — provides access to their full AI audi
 - **Data Residency** — NEW enterprise configuration for data location preferences
 - **Configurable Output Modes** — file output, resource output, or both
 
-Free tier includes 10,000 credits/month. Requires ElevenLabs API key. Works with Claude Desktop, Cursor, Windsurf, and OpenAI Agents. Also available as a community-maintained server: mamertofabian/elevenlabs-mcp-server (118 stars) with SQLite voice generation history tracking and a SvelteKit web client.
+Free tier includes [10,000 credits/month](https://elevenlabs.io/pricing). Requires ElevenLabs API key. Works with Claude Desktop, Cursor, Windsurf, and OpenAI Agents. Also available as a community-maintained server: mamertofabian/elevenlabs-mcp-server (118 stars) with SQLite voice generation history tracking and a SvelteKit web client.
 
 ### blacktop/mcp-tts (Multi-Engine)
 
@@ -251,7 +251,7 @@ REAPER has the best DAW MCP coverage of any audio production software with 5+ de
 | [lioensky/MCP-Suno](https://github.com/lioensky/MCP-Suno) | 25 | TypeScript | — | 1 |
 | [CodeKeanu/suno-mcp](https://github.com/CodeKeanu/suno-mcp) | 2 | Python | — | 6 |
 
-**AI music generation from text prompts** via the Suno API — the dominant text-to-music platform (Suno v5 released March 2026 with voice cloning, custom model fine-tuning, and Suno Studio DAW):
+**AI music generation from text prompts** via the Suno API — the dominant text-to-music platform ([Suno v5.5 released March 26, 2026](https://weraveyou.com/2026/04/suno-v-5-5-voice-cloning-custom-models-taste-profiling/) with voice cloning and custom model fine-tuning; Suno Studio DAW launched with v5 in September 2025):
 
 - **Custom mode** — provide lyrics, style tags, and title for precise control
 - **Inspiration mode** — describe what you want and get a fully produced song
@@ -296,7 +296,7 @@ The podcast-specific workflow gap identified in March 2026 is **actively filling
 
 ### Podigee MCP (FIRST Hosting Platform — NEW)
 
-**Podigee launched the world's first podcast hosting platform MCP server** (April 2025). Instead of navigating traditional dashboards, podcasters can ask natural language questions like "What were my top episodes this month?" Capabilities include:
+**[Podigee launched the world's first podcast hosting platform MCP server](https://www.podigee.com/en/blog/unlock-the-future-of-podcast-analytics-with-podigees-mcp-server/)** (April 2025). Instead of navigating traditional dashboards, podcasters can ask natural language questions like "What were my top episodes this month?" Capabilities include:
 
 - **Natural Language Analytics** — trend analysis, episode comparisons, listener behavior patterns
 - **Workflow Automation** — content distribution, show notes generation, social media posting

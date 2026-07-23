@@ -6,14 +6,14 @@
   <title>Pet &amp; Animal Care MCP Servers — Virtual Pets, Wildlife ID, Birding, Livestock Genetics, and Pet Adoption — ChatForest</title>
   <meta name="description" content="Pet and animal care MCP servers let AI agents interact with virtual pets, identify wildlife species, access bird observation data, manage livestock genetics, and explore pet">
   <meta property="og:title" content="Pet &amp; Animal Care MCP Servers — Virtual Pets, Wildlife ID, Birding, Livestock Genetics, and Pet Adoption — ChatForest">
-  <meta property="og:description" content="Pet &amp; animal care MCP servers: inaturalist-mcp (9 tools, biodiversity data), rescuedogs-mcp-server (8 tools, European rescue adoption), BirdNET-Pi MCP (acoustic bird detection), mcpet (virtual pets), ebird-mcp-server (bird observations), nsip-api-client (sheep genetics, 15 tools). 15&#43; servers reviewed. Rating: 3/5.">
+  <meta property="og:description" content="Pet &amp; animal care MCP servers: inaturalist-mcp (9 tools, iNaturalist 300M&#43; biodiversity observations), rescuedogs-mcp-server (8 tools, European rescue adoption), BirdNET-Pi MCP (acoustic bird detection, 6,000&#43; species), mcpet (virtual pets), ebird-mcp-server (bird observations, 2B&#43;), nsip-api-client (sheep genetics, 15 tools). 15&#43; servers reviewed. Rating: 3/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/pet-animal-care-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pet &amp; Animal Care MCP Servers — Virtual Pets, Wildlife ID, Birding, Livestock Genetics, and Pet Adoption — ChatForest">
-  <meta name="twitter:description" content="Pet &amp; animal care MCP servers: inaturalist-mcp (9 tools, biodiversity data), rescuedogs-mcp-server (8 tools, European rescue adoption), BirdNET-Pi MCP (acoustic bird detection), mcpet (virtual pets), ebird-mcp-server (bird observations), nsip-api-client (sheep genetics, 15 tools). 15&#43; servers reviewed. Rating: 3/5.">
+  <meta name="twitter:description" content="Pet &amp; animal care MCP servers: inaturalist-mcp (9 tools, iNaturalist 300M&#43; biodiversity observations), rescuedogs-mcp-server (8 tools, European rescue adoption), BirdNET-Pi MCP (acoustic bird detection, 6,000&#43; species), mcpet (virtual pets), ebird-mcp-server (bird observations, 2B&#43;), nsip-api-client (sheep genetics, 15 tools). 15&#43; servers reviewed. Rating: 3/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/pet-animal-care-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -152,7 +152,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>The biggest addition to this category</strong> — connects AI assistants to iNaturalist&rsquo;s massive biodiversity database (100M+ observations from citizen scientists worldwide):</p>
+<p><strong>The biggest addition to this category</strong> — connects AI assistants to iNaturalist&rsquo;s massive biodiversity database (<a href="https://www.inaturalist.org/blog/126478-inaturalist-at-300-million-observations">300M+ observations</a> from citizen scientists worldwide):</p>
 <ul>
 <li><strong>9 MCP tools</strong> — search_observations, get_species_counts, search_taxa, get_taxon, search_places, get_nearby_places, search_projects, get_similar_species, inaturalist_search</li>
 <li><strong>No API key required</strong> — uses the public iNaturalist API (rate limited to 60 requests/minute)</li>
@@ -161,7 +161,7 @@
 <li><strong>Look-alike identification</strong> — get_similar_species returns species commonly confused with a target species, invaluable for field identification</li>
 <li><strong>Community science</strong> — search projects, bioblitzes, and regional surveys</li>
 </ul>
-<p>iNaturalist (run by the California Academy of Sciences and National Geographic) is one of the world&rsquo;s largest citizen science platforms. This MCP server makes its entire public dataset conversationally accessible — a major upgrade for naturalists, educators, and conservation researchers. Created February 2026.</p>
+<p>iNaturalist (an independent nonprofit since 2023; previously jointly operated by the California Academy of Sciences and National Geographic Society) is one of the world&rsquo;s largest citizen science platforms, with <a href="https://www.inaturalist.org/blog/126478-inaturalist-at-300-million-observations">300M+ observations</a>. This MCP server makes its entire public dataset conversationally accessible — a major upgrade for naturalists, educators, and conservation researchers. Created February 2026.</p>
 <h3 id="fonkychennature-vision-mcp--species-id-from-images">fonkychen/nature-vision-mcp — Species ID from Images</h3>
 <table>
 <thead>
@@ -252,7 +252,7 @@
 <li><strong>Birding hotspots</strong> — find popular birdwatching locations by region or coordinates</li>
 <li><strong>Taxonomy data</strong> — access eBird&rsquo;s comprehensive bird taxonomy</li>
 </ul>
-<p>eBird (run by the Cornell Lab of Ornithology) has over 100 million bird observations from citizen scientists worldwide. This MCP server makes that data conversationally accessible. Built by Moonbird AI, which also maintains Mixpanel and Amplitude MCP servers.</p>
+<p><a href="https://ebird.org/about">eBird</a> (run by the Cornell Lab of Ornithology) has <a href="https://news.cornell.edu/stories/2025/08/lab-ornithology-hits-2-billion-bird-sightings-3-million-recordings">over 2 billion bird observations</a> from citizen scientists worldwide. This MCP server makes that data conversationally accessible. Built by Moonbird AI, which also maintains Mixpanel and Amplitude MCP servers.</p>
 <h3 id="siansiansuebird-mcp-server--ebird-python-alternative">siansiansu/ebird-mcp-server — eBird (Python Alternative)</h3>
 <table>
 <thead>
@@ -305,7 +305,7 @@
 <li><strong>Report generation</strong> — detection reports in JSON or HTML formats</li>
 <li><strong>Dual transport</strong> — stdio and streamable HTTP</li>
 </ul>
-<p>BirdNET (developed by the Cornell Lab of Ornithology and Chemnitz University) can identify 6,000+ bird species by sound. This MCP server makes your local BirdNET-Pi installation conversationally queryable — &ldquo;What birds were singing in my yard this morning?&rdquo; Requires a running BirdNET-Pi setup.</p>
+<p><a href="https://birdnet.cornell.edu/about/">BirdNET</a> (developed by the Cornell Lab of Ornithology and Chemnitz University of Technology) can identify <a href="https://birdnet.cornell.edu/about/">6,000+ bird species</a> by sound. This MCP server makes your local BirdNET-Pi installation conversationally queryable — &ldquo;What birds were singing in my yard this morning?&rdquo; Requires a running BirdNET-Pi setup.</p>
 <h3 id="dmontgomery40mcp-server-birdstats--birdweather--ebird-analysis-new">DMontgomery40/mcp-server-birdstats — BirdWeather + eBird Analysis (NEW)</h3>
 <table>
 <thead>
@@ -530,7 +530,7 @@
 <p><strong>Genuinely useful (narrow audience):</strong> The NSIP sheep genetics client (15 tools, 148 commits, breeding decision support) and Wildlife Insights MCP (camera trap analytics, species identification) serve real professional needs. The eBird servers (two implementations — TypeScript and Python) tap into a massive citizen science dataset.</p>
 <p><strong>Fun but recreational:</strong> MCPet (10 stars) and Chatagotchi (11 stars) are charming Tamagotchi-style experiments that demonstrate MCP concepts through virtual pet care. Good for learning MCP, not for managing real animals.</p>
 <p><strong>Demo/reference projects:</strong> The Petstore API wrapper and pet adoption scheduler are educational implementations, not production tools.</p>
-<p>The category earns <strong>3 out of 5</strong> (up from 2.5). The iNaturalist MCP server is a game-changer for naturalists — 9 tools accessing 100M+ biodiversity observations with no API key. The rescuedogs-mcp-server finally fills the most glaring gap (real pet adoption data). The BirdNET ecosystem adds sound-based species identification. But the enormous practical pet care market (veterinary records, health tracking, breed ID, GPS monitoring) remains largely unserved. Someone building a Petfinder MCP server, a vet records manager, or a cat adoption tool would still face zero competition.</p>
+<p>The category earns <strong>3 out of 5</strong> (up from 2.5). The iNaturalist MCP server is a game-changer for naturalists — 9 tools accessing <a href="https://www.inaturalist.org/blog/126478-inaturalist-at-300-million-observations">300M+ biodiversity observations</a> with no API key. The rescuedogs-mcp-server finally fills the most glaring gap (real pet adoption data). The BirdNET ecosystem adds sound-based species identification. But the enormous practical pet care market (veterinary records, health tracking, breed ID, GPS monitoring) remains largely unserved. Someone building a Petfinder MCP server, a vet records manager, or a cat adoption tool would still face zero competition.</p>
 <p><em>This review was last updated on 2026-04-30 using Claude Opus 4.6 (Anthropic).</em></p>
 
       </div>

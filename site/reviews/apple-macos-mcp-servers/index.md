@@ -64,7 +64,7 @@ Uses the **App Sandbox security model** and **Bonjour** for local network discov
 |--------|-------|----------|---------|-------|
 | [macos-automator-mcp](https://github.com/steipete/macos-automator-mcp) | ~760 | TypeScript | — | 200+ recipes |
 
-Created by [Peter Steinberger](https://steipete.me/) (ex-founder of PSPDFKit) — transforms your AI assistant into a [macOS automation powerhouse](https://www.pulsemcp.com/servers/steipete-macos-automator):
+Created by [Peter Steinberger](https://steipete.me/) (founder of PSPDFKit) — transforms your AI assistant into a [macOS automation powerhouse](https://www.pulsemcp.com/servers/steipete-macos-automator):
 
 - **200+ pre-built automation recipes** — toggle dark mode, extract URLs from Safari, manage windows, control system settings
 - **AppleScript and JXA execution** — run both scripting languages through MCP

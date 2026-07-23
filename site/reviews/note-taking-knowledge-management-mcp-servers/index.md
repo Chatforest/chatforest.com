@@ -33,7 +33,7 @@ For our full analysis of the Notion MCP server, see [our dedicated Notion review
 
 ### Bear Notes (Official + Community — GAP FILLED)
 
-**The biggest gap from our March review is now closed.** Bear 2.8 beta (announced April 22, 2026) ships with an official command-line utility (`bearcli`), MCP server, and one-click Claude connector — all built into the macOS app. The official implementation supports reading, searching, creating, and editing notes using the same search engine as Bear's in-app search field. Encrypted notes can be listed but not read or edited. Setup is as simple as Help → Advanced → Install Claude Connector for Claude Desktop users, or connecting the MCP server for Claude Code and other MCP clients.
+**The biggest gap from our March review is now closed.** [Bear 2.8 beta (announced April 22, 2026)](https://blog.bear.app/2026/04/bear-2-8-bearcli-claude-connector-and-mcp-server/) ships with an official command-line utility (`bearcli`), MCP server, and one-click Claude connector — all built into the macOS app. The official implementation supports reading, searching, creating, and editing notes using the same search engine as Bear's in-app search field. Encrypted notes can be listed but not read or edited. Setup is as simple as Help → Advanced → Install Claude Connector for Claude Desktop users, or connecting the MCP server for Claude Code and other MCP clients.
 
 The community was already ahead of the announcement. [bear-notes-mcp](https://github.com/vasylenko/bear-notes-mcp) by vasylenko (187 stars, v2.12.0, MIT) provides 12 MCP tools for searching, reading, creating, and updating Bear Notes — available as both a Claude Desktop extension and standalone npm package. It reads Bear's SQLite database for fast search with OCR support and uses Bear's native API for writes. Fully local with no external network connections.
 
@@ -128,7 +128,7 @@ The knowledge graph category has **exploded** since our March review. What was a
 
 **No Anytype MCP server.** Anytype's local-first, peer-to-peer architecture would benefit from MCP integration, but the protocol's complexity may deter community builders.
 
-**No Dendron or Foam MCP servers.** Dendron is in maintenance-only mode (development ceased February 2023), and Foam's VS Code extension architecture doesn't lend itself to MCP integration.
+**No Dendron or Foam MCP servers.** [Dendron is in maintenance-only mode](https://randomgeekery.org/post/2023/02/dendron-is-officially-in-maintenance-mode/) (development ceased February 2023), and Foam's VS Code extension architecture doesn't lend itself to MCP integration.
 
 **No standardized PKM interchange.** Each server speaks its platform's native language. There's no MCP server that provides a unified interface across multiple note-taking apps — you can't search Obsidian and Notion simultaneously through one MCP tool. Supermemory MCP's "universal memory" approach partially addresses this, but it creates its own memory layer rather than searching across existing apps.
 

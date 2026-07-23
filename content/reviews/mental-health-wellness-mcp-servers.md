@@ -1,6 +1,7 @@
 ---
 title: "Mental Health & Wellness MCP Servers — Therapy, Mood Tracking, Journaling, Meditation, and Personal Wellbeing"
 date: 2026-03-16T16:00:00+09:00
+sources_audited: 2026-07-23
 description: "Mental health and wellness MCP servers let AI agents support mood tracking, journaling, meditation, therapeutic conversations, and personal wellbeing through the Model Context Protocol."
 og_description: "Mental health MCP servers: private-journal-mcp (338 stars, v1.1.0, local semantic search), oura-mcp-server (38 stars, Oura Ring data), Zenify (11 stars, RAG chatbot with crisis detection), Wellness-Pulse (CDC mental health benchmarks), stresszero-mcp (burnout scoring). 20+ servers reviewed. Rating: 3/5."
 content_type: "Review"
@@ -298,7 +299,7 @@ A gamified approach to personal development. No user data collected. The scale o
 
 **Connects AI systems to population-level mental health data** — a new paradigm for wellness MCP servers:
 
-- **CDC PLACES benchmarks** — mental health data lookups by ZIP code or county, drawing on CDC's population health dataset
+- **[CDC PLACES](https://www.cdc.gov/places/index.html) benchmarks** — mental health data lookups by ZIP code or county, drawing on CDC's population health dataset
 - **Institutional wellness snapshots** — daily trend monitoring for organizations
 - **Alert thresholds** — week-over-week wellness change detection, calibrated by organization size and location type
 - **Sector aggregation** — aggregated data analysis across healthcare, education, HR, and public health
@@ -319,7 +320,7 @@ Privacy-first: no user tracking, no PII storage. This is the first MCP server to
 - **quick_burnout_check** — simplified screening
 - **Free tier** — 500 API calls/month, no payment required
 
-The first burnout-specific MCP server. While it requires an external API (not local-first), the free tier is generous and the three-dimensional burnout model (physical, emotional, effectiveness) aligns with established burnout research frameworks like the Maslach Burnout Inventory.
+The first burnout-specific MCP server. While it requires an external API (not local-first), the free tier is generous and the three-dimensional burnout model (physical, emotional, effectiveness) aligns with established burnout research frameworks like the [Maslach Burnout Inventory](https://www.mindgarden.com/117-maslach-burnout-inventory).
 
 ---
 

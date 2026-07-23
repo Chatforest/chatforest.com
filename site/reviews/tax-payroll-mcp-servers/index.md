@@ -27,7 +27,7 @@ The headline findings: **One standout US tax server exists** — irs-taxpayer-mc
 - **Year-end optimization** — personalized recommendations including tax-loss harvesting, charitable bunching, income timing, deduction acceleration
 - **State tax** — multi-state tax calculations
 
-Supports TY2024 and TY2025 including the **One Big Beautiful Bill Act** (OBBB Act) with updated bracket adjustments and SALT cap changes. All calculations run locally — no data leaves the machine. Published as an npm package for easy installation.
+Supports TY2024 and TY2025 including the [**One Big Beautiful Bill Act**](https://bipartisanpolicy.org/explainer/salt-deduction-changes-in-the-one-big-beautiful-bill-act/) (OBBB Act, signed July 4, 2025 as H.R. 1, Public Law 119-21) with updated bracket adjustments and [SALT cap raised to $40,000](https://bipartisanpolicy.org/explainer/salt-deduction-changes-in-the-one-big-beautiful-bill-act/). All calculations run locally — no data leaves the machine. Published as an npm package for easy installation.
 
 This is a genuinely useful tool for tax planning conversations — an AI assistant with this server can model "what if I max my 401k?" or "should I do a Roth conversion this year?" with real numbers. Documentation available in English, Chinese, Spanish, and Japanese.
 

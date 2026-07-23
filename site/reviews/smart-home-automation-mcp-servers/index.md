@@ -422,7 +422,7 @@ A second implementation, MvdMunnik26/Hubitat-MCP, also connects to Hubitat Eleva
 
 The smart home MCP ecosystem has closed most of its original gaps. What remains:
 
-- **Matter protocol** — no direct MCP-to-Matter bridge (the home-assistant-matter-hub project was archived January 2026, though a community fork continues). Matter is accessible indirectly through Home Assistant's Matter integration + ha-mcp
+- **Matter protocol** — no direct MCP-to-Matter bridge (the [home-assistant-matter-hub project was archived March 2026](https://github.com/t0bst4r/home-assistant-matter-hub), though a community fork continues). Matter is accessible indirectly through Home Assistant's Matter integration + ha-mcp
 - **Energy monitoring** — no solar panel management, battery storage, or whole-home energy monitoring MCP servers (energy data is available through Home Assistant's energy dashboard + ha-mcp, but no standalone solution)
 - **ADT / SimpliSafe** — Ring has an MCP server but ADT and SimpliSafe do not
 - **Google Home breadth** — current server is limited to smart plugs; broader device control not yet available

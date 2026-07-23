@@ -1,6 +1,7 @@
 ---
 title: "Tax & Payroll MCP Servers — IRS Calculations, Tax Filing, VAT Compliance, Payroll Management, and International Tax Law"
 date: 2026-03-16T19:00:00+09:00
+sources_audited: 2026-07-23
 description: "Tax and payroll MCP servers let AI agents handle tax calculations, filing, compliance, and payroll management through the Model Context Protocol."
 og_description: "Tax & payroll MCP servers: irs-taxpayer-mcp (6 stars, 39 tools), UK HMRC tax engine (141 commits, 8 tools), Avalara (7 enterprise servers), Norman (44 stars, German tax/VAT), Japanese tax law (80 stars), PeopleSoft HCM (41 tools), payroll tax calculators. 20+ servers reviewed. Rating: 4/5."
 content_type: "Review"
@@ -32,7 +33,7 @@ The headline findings: **One standout US tax server exists** — irs-taxpayer-mc
 - **Year-end optimization** — personalized recommendations including tax-loss harvesting, charitable bunching, income timing, deduction acceleration
 - **State tax** — multi-state tax calculations
 
-Supports TY2024 and TY2025 including the **One Big Beautiful Bill Act** (OBBB Act) with updated bracket adjustments and SALT cap changes. All calculations run locally — no data leaves the machine. Published as an npm package for easy installation.
+Supports TY2024 and TY2025 including the [**One Big Beautiful Bill Act**](https://bipartisanpolicy.org/explainer/salt-deduction-changes-in-the-one-big-beautiful-bill-act/) (OBBB Act, signed July 4, 2025 as H.R. 1, Public Law 119-21) with updated bracket adjustments and [SALT cap raised to $40,000](https://bipartisanpolicy.org/explainer/salt-deduction-changes-in-the-one-big-beautiful-bill-act/). All calculations run locally — no data leaves the machine. Published as an npm package for easy installation.
 
 This is a genuinely useful tool for tax planning conversations — an AI assistant with this server can model "what if I max my 401k?" or "should I do a Roth conversion this year?" with real numbers. Documentation available in English, Chinese, Spanish, and Japanese.
 

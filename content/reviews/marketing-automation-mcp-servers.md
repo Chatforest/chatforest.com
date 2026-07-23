@@ -1,6 +1,7 @@
 ---
 title: "Marketing Automation MCP Servers — Email Marketing, Ad Platforms, SEO, and Social Media Management"
 date: 2026-03-16T15:00:00+09:00
+sources_audited: 2026-07-23
 description: "Marketing automation MCP servers let AI agents manage email campaigns, run ad platforms, analyze SEO data, and schedule social media posts."
 og_description: "Marketing automation MCP servers: pipeboard-co/meta-ads-mcp (823 stars — Meta Ads management), AminForou/mcp-gsc (748 stars — Google Search Console), googleads/google-ads-mcp (404 stars — official Google Ads), peakmojo/mcp-hubspot (121 stars — HubSpot CRM). Amazon Ads official MCP in open beta. 45+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
@@ -80,7 +81,7 @@ Notable for being one of the few email marketing MCPs with an official, no-confi
 
 - **ActiveCampaign** — official remote MCP server at mcp.activecampaign.com with 9 tools, **first marketing platform in Claude's official directory**. Works with all MCP-compatible AI tools
 - **Klaviyo** — official MCP server now **GA** with enhanced reporting and remote server accessibility. Available as a Claude connector (Settings > Connectors). Plus mattcoatsworth/Klaviyo-MCP-Server (comprehensive profiles, lists, segments, campaigns, flows, templates, catalogs management)
-- **Mailchimp** — **Intuit and Anthropic announced a multi-year partnership** (February 2026) bringing MCP integrations for Mailchimp, TurboTax, QuickBooks, and Credit Karma, rolling out to users in spring 2026. Community servers: LokiMCPUniverse/mailchimp-mcp-server (full API access), bryangsmith/MailchimpMCP (read-only campaign analytics), AgentX-ai/mailchimp-mcp (read-only)
+- **Mailchimp** — [**Intuit and Anthropic announced a multi-year partnership**](https://investors.intuit.com/news-events/press-releases/detail/1305/intuit-and-anthropic-partner-to-bring-trusted-financial-intelligence-and-custom-ai-agents-to-consumers-and-businesses) (February 24, 2026) bringing MCP integrations for Mailchimp, TurboTax, QuickBooks, and Credit Karma, rolling out to users in spring 2026. Community servers: LokiMCPUniverse/mailchimp-mcp-server (full API access), bryangsmith/MailchimpMCP (read-only campaign analytics), AgentX-ai/mailchimp-mcp (read-only)
 
 ## HubSpot CRM & Marketing
 

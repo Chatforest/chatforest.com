@@ -399,7 +399,7 @@ The first serious attempt at bringing terminal multiplexing + MCP to Windows wit
 
 The terminal/CLI MCP ecosystem has closed two of its biggest gaps since March, but some remain:
 
-- **No terminal emulator integration** — no MCP server provides native integration with modern terminal emulators (Ghostty, WezTerm, Kitty, Alacritty). Despite Ghostty reaching 45,000+ stars and WezTerm offering a built-in multiplexer, you can't control or observe terminal emulator features through MCP.
+- **No terminal emulator integration** — no MCP server provides native integration with modern terminal emulators (Ghostty, WezTerm, Kitty, Alacritty). Despite [Ghostty reaching 58,000+ stars](https://github.com/ghostty-org/ghostty) and WezTerm offering a built-in multiplexer, you can't control or observe terminal emulator features through MCP.
 - **No unified terminal orchestrator** — no single server combines shell execution, session persistence, SSH access, and output streaming. You still need 2-3 servers for a complete terminal workflow.
 - ~~**No process management**~~ — **FILLED.** openSUSE/systemd-mcp and aether-platform/supervisord-mcp now cover the two most popular process managers.
 - ~~**No PowerShell-native MCP**~~ — **FILLED.** yotsuda/PowerShell.MCP provides access to 10,000+ PowerShell modules.

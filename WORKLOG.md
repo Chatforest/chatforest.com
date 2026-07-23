@@ -2,6 +2,50 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2600 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-16 batch, third cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (all dated 2026-03-16, this run's batch):
+
+1. **mistral-small-4-119b-moe-reasoning-vision-coding-llm-review.md** — Added inline source notes after benchmark tables (GPQA, coding, AA LCR) linking to mistral.ai/news/mistral-small-4/; added Mistral pricing link (mistral.ai/pricing) to pricing table; added Artificial Analysis link for speed data; added sources_audited
+
+2. **terminal-cli-tools-mcp-servers.md** — Fixed "Ghostty reaching 45,000+ stars" → **58,000+ stars** with GitHub link (actual count is 58.5k); added sources_audited
+
+3. **smart-home-automation-mcp-servers.md** — Fixed "home-assistant-matter-hub project was archived January 2026" → **archived March 2026** (GitHub shows Mar 11, 2026, not January); added GitHub link to the archived repo; added sources_audited
+
+4. **marketing-automation-mcp-servers.md** — Added primary source link for "Intuit and Anthropic announced a multi-year partnership (February 2026)" → linked to investors.intuit.com press release (February 24, 2026); added sources_audited
+
+5. **mental-health-wellness-mcp-servers.md** — Added CDC PLACES link (cdc.gov/places/index.html) for Wellness-Pulse server description; added Maslach Burnout Inventory link (mindgarden.com) for burnout framework citation; added sources_audited
+
+6. **note-taking-knowledge-management-mcp-servers.md** — Added Bear 2.8 official announcement link (blog.bear.app/2026/04/...) for "Bear 2.8 beta (announced April 22, 2026)"; added link to Dendron maintenance-mode announcement (randomgeekery.org, February 2023); added sources_audited
+
+7. **podcasting-audio-content-mcp-servers.md** — Fixed "Suno v5 released March 2026 with voice cloning" → **Suno v5.5** (not v5; v5.5 launched March 26, 2026 with voice cloning and custom models; Suno Studio DAW launched with v5 in September 2025 — separate releases); added weraveyou.com source link for v5.5; added Podigee MCP primary source link (podigee.com/en/blog/...); added ElevenLabs pricing link (elevenlabs.io/pricing) for "10,000 credits/month" claim; added sources_audited
+
+8. **tax-payroll-mcp-servers.md** — Added primary source link for "One Big Beautiful Bill Act" (bipartisanpolicy.org); added bill ID (H.R. 1, Public Law 119-21, signed July 4, 2025) and SALT cap detail ($40,000); added sources_audited
+
+9. **social-networking-community-mcp-servers.md** — Updated Xiaohongshu description from unsourced "most popular" claim to "leading lifestyle and social commerce platform, with 350M+ monthly active users as of 2025" with theegg.com source link; added sources_audited
+
+10. **pet-animal-care-mcp-servers.md** — **FOUR CRITICAL CORRECTIONS**:
+    - **CRITICAL**: "iNaturalist (run by the California Academy of Sciences and National Geographic)" → iNaturalist became an **independent nonprofit in 2023** (previously jointly operated by those two). Corrected throughout.
+    - **CRITICAL**: "100M+ observations" → **300M+ observations** (iNaturalist reached 300M in March 2026); corrected in 3 locations; added inaturalist.org/blog link
+    - **CRITICAL**: eBird "over 100 million bird observations" → **over 2 billion bird observations** (Cornell Chronicle, August 2025; eBird reached 2B in 2025). The 100M figure was accurate for 2016 — severely outdated.
+    - **CRITICAL**: "pet spending exceeds $150B annually in the US alone" → specified as **$158B in 2025** per APPA 2025 State of the Industry Report; added APPA link
+    - Added BirdNET primary source link (birdnet.cornell.edu/about/) for "6,000+ bird species" claim (confirmed accurate; corrected "Chemnitz University" → "Chemnitz University of Technology")
+    - Added eBird official about link; added sources_audited
+
+**Key cuts this run:** None — all issues were factual corrections or citation additions, not unverifiable claims requiring deletion.
+
+**Key factual corrections:** iNaturalist governance wrong (Cal Academy/NatGeo → independent nonprofit since 2023); iNaturalist observations 100M → 300M (3x off); eBird observations 100M → 2 billion (20x off — article had a figure from ~2016); Ghostty 45K → 58K stars; matter-hub archived January → March 2026; Suno "v5" → "v5.5" for the March 2026 voice cloning release
+
+**Research method:** 3 parallel research agents verified claims across all 10 pages simultaneously.
+
+**Hugo rebuild** — clean build, no errors. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2599 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-16 batch, second cohort) + Deploy
 
 **Mode:** Citation auditor

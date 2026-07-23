@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p><strong>At a glance:</strong> Debugging is one of the highest-leverage uses of MCP — instead of copying error messages into a chat window, a debugging MCP server gives the agent <strong>direct access to the debugger itself</strong>. The ecosystem has matured rapidly and broadly. <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">Chrome DevTools MCP</a> (37.8k stars, 33 tools) lets agents control a live browser — now with Chrome extensions debugging and WebM screencast support. <a href="https://github.com/microsoft/DebugMCP">Microsoft&rsquo;s DebugMCP</a> (321 stars) brings multi-language debugging into VS Code. <a href="https://github.com/debugmcp/mcp-debugger">debugmcp/mcp-debugger</a> (101 stars) now supports <strong>seven languages</strong> (added .NET/C#) through the Debug Adapter Protocol. Reverse engineering has <strong>exploded</strong> since our initial review — <a href="https://github.com/LaurieWired/GhidraMCP">GhidraMCP</a> (8.7k stars), <a href="https://github.com/mrexodia/ida-pro-mcp">ida-pro-mcp</a> (8.1k stars), and <a href="https://github.com/radareorg/radare2-mcp">radare2-mcp</a> (220 stars, official) have completely closed what was our biggest gap. Native debugger servers cover <strong>GDB, LLDB, and WinDbg</strong>. Language-specific servers handle <strong>PHP</strong> (Xdebug). The embedded hardware debugger for <strong>ARM Cortex-M and RISC-V</strong> continues growing. This is the <strong>eighteenth review in our <a href="/categories/developer-tools/">Developer Tools MCP category</a></strong>.</p>
-<p>The debugging software market ($2.5B in 2023, growing to $7.8B by 2033 at 12.2% CAGR) reflects the universal need for debugging in software development. The broader software development tools market ($6.41B in 2025, growing at 16.12% CAGR to $15.72B by 2031) is growing even faster. AI-powered debugging tools are a key growth driver. The MCP ecosystem&rsquo;s strength across browser, IDE, multi-language, native binary, and embedded debugging makes this one of the most practically useful categories we&rsquo;ve reviewed.</p>
+<p>The <a href="https://datahorizzonresearch.com/software-debugging-market-40736">debugging software market</a> ($2.5B in 2023, growing to $7.8B by 2033 at 12.2% CAGR) reflects the universal need for debugging in software development. The broader <a href="https://www.mordorintelligence.com/industry-reports/software-development-tools-market">software development tools market</a> ($6.41B in 2025, growing at 16.12% CAGR to $15.72B by 2031) is growing even faster. AI-powered debugging tools are a key growth driver. The MCP ecosystem&rsquo;s strength across browser, IDE, multi-language, native binary, and embedded debugging makes this one of the most practically useful categories we&rsquo;ve reviewed.</p>
 <p><strong>Architecture note:</strong> Debugging MCP servers follow five patterns. <strong>Browser control</strong> (Chrome DevTools MCP) gives agents full browser access — automation, debugging, performance, network. <strong>IDE-integrated</strong> (DebugMCP, claude-debugs-for-you) extend VS Code&rsquo;s debugger to MCP clients, leveraging existing debug adapters. <strong>Protocol-based multi-language</strong> (debugmcp/mcp-debugger) use the Debug Adapter Protocol (DAP) to support many languages through a single server. <strong>Native debugger wrappers</strong> (lldb-mcp, MDB-MCP, gdb-mcp) expose GDB/LLDB/WinDbg commands as MCP tools. <strong>Domain-specific</strong> (embedded-debugger-mcp, x64DbgMCPServer, xdebug-mcp, jdwp-mcp) target specific debugging scenarios with specialized toolsets.</p>
 <p>For browser automation and testing (without debugging focus), see our <a href="/reviews/playwright-mcp-server/">Playwright</a> and <a href="/reviews/puppeteer-mcp-server/">Puppeteer</a> reviews. For error tracking platforms, see our <a href="/reviews/sentry-mcp-server/">Sentry</a> and <a href="/reviews/datadog-mcp-server/">Datadog</a> reviews. For the official MCP server testing tool, the MCP Inspector is covered at the end of this review.</p>
 <h2 id="whats-available">What&rsquo;s Available</h2>
@@ -702,7 +702,7 @@
 <tr>
 <td><strong>Platform users</strong></td>
 <td>180M+ developers</td>
-<td>30M+ users</td>
+<td>50M+ users</td>
 <td>~41k companies</td>
 <td>20M+ users</td>
 <td>5.6M developers</td>
@@ -720,7 +720,7 @@
 <td>Mintlify: 28k+ stars, Docusaurus: 60k+ stars</td>
 <td>Chrome: 65%+ browser share, VS Code: 75.9% IDE share, x64dbg: 45k+ stars</td>
 <td>APM market: $7-10B, Pyroscope: 11k+ stars, async-profiler: 9k+ stars</td>
-<td>SonarQube: 7.4M+ users, CodeRabbit: top AI reviewer, Qodo/PR-Agent: 10.5k stars</td>
+<td>SonarQube: 7M+ users, CodeRabbit: top AI reviewer, Qodo/PR-Agent: 10.5k stars</td>
 </tr>
 <tr>
 <td><strong>Our rating</strong></td>
@@ -753,7 +753,7 @@
 <p><strong>Chrome DevTools MCP conflates debugging with automation</strong> — At 31k stars and 29 tools, Chrome DevTools MCP is the category leader, but only ~6 of its 29 tools are debugging-specific (evaluate_script, console messages, Lighthouse, screenshots, snapshots). The rest are input automation and navigation. Agents using it for debugging get a massive tool surface where most tools aren&rsquo;t relevant to the debugging task, increasing token cost and reducing accuracy.</p>
 </li>
 <li>
-<p><strong>No dedicated Android/ADB debugger MCP</strong> — Android has ~3.3 billion active devices, but no MCP server exposes ADB debugging commands (logcat, breakpoints, memory profiling, layout inspector). Android Studio&rsquo;s debugger has no MCP integration. Java debugging via debugmcp/mcp-debugger or jdwp-mcp can handle JVM logic but not Android-specific debugging (activity lifecycle, intent inspection, resource analysis).</p>
+<p><strong>No dedicated Android/ADB debugger MCP</strong> — Android has 3B+ active devices, but no MCP server exposes ADB debugging commands (logcat, breakpoints, memory profiling, layout inspector). Android Studio&rsquo;s debugger has no MCP integration. Java debugging via debugmcp/mcp-debugger or jdwp-mcp can handle JVM logic but not Android-specific debugging (activity lifecycle, intent inspection, resource analysis).</p>
 </li>
 <li>
 <p><strong>VS Code debugging fragmentation</strong> — Three competing VS Code debugging MCP servers (claude-debugs-for-you, DebugMCP, mcp-nodejs-debugger) with different capabilities, different language support, and different maintenance states. mcp-nodejs-debugger is archived. DebugMCP is Microsoft&rsquo;s first-party answer but has fewer stars than the community pioneer. Users must evaluate three options for the same use case.</p>

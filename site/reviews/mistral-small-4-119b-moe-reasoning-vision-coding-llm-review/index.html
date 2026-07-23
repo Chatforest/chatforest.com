@@ -170,6 +170,7 @@
 </tr>
 </tbody>
 </table>
+<p><em>Source: <a href="https://mistral.ai/news/mistral-small-4/">Mistral AI official release announcement</a></em></p>
 <p>The GPQA Diamond result is the most striking number in the Small 4 release. GPQA Diamond — Graduate-level Google-Proof Q&amp;A, Diamond subset — is a benchmark of expert-level science questions deliberately resistant to web lookup. A score of 71.2% places Small 4 in territory that, a year earlier, only frontier closed models occupied. GPT-4o Mini at 40.2% is not in the same tier. This is the clearest single-number indicator that Small 4 has crossed from &ldquo;competitive small model&rdquo; into &ldquo;open-weight frontier capability.&rdquo;</p>
 <p>MMLU at 88.5% similarly outpaces GPT-4o Mini (82.0%) and <a href="/reviews/mistral-small-3-1-vision-24b-llm-review/">Mistral Small 3.1</a> (80.62%) by meaningful margins.</p>
 <h3 id="coding">Coding</h3>
@@ -194,6 +195,7 @@
 </tr>
 </tbody>
 </table>
+<p><em>Source: <a href="https://mistral.ai/news/mistral-small-4/">Mistral AI official release announcement</a></em></p>
 <p>HumanEval at 92% is frontier-tier for code generation. More informative is the LiveCodeBench comparison: Small 4 outperforms GPT-OSS 120B (OpenAI&rsquo;s 120B open-weight release) on this test while producing 20% less output. Output brevity in coding matters in production — verbose responses that pad answers with explanation rather than working code are harder to integrate into agentic workflows.</p>
 <h3 id="mathematical-reasoning">Mathematical Reasoning</h3>
 <p>On AIME 2025, Mistral reports Small 4 as competitive with GPT-OSS 120B while generating significantly shorter responses. Specific AIME pass rates are not publicly reported by Mistral in their launch documentation. The AA LCR (logical consistency and reasoning) benchmark gives a cleaner number:</p>
@@ -213,6 +215,7 @@
 </tr>
 </tbody>
 </table>
+<p><em>Source: <a href="https://mistral.ai/news/mistral-small-4/">Mistral AI official release announcement</a></em></p>
 <p>Small 4 achieves equivalent LCR accuracy at roughly 3.5× lower verbosity than Qwen 3 models tested at the same point. In production agentic workloads where output tokens cost money and latency compounds across reasoning chains, this is a meaningful efficiency advantage.</p>
 <hr>
 <h2 id="hardware-reality">Hardware Reality</h2>
@@ -290,6 +293,7 @@
 </tr>
 </tbody>
 </table>
+<p><em>Source: <a href="https://mistral.ai/pricing">Mistral AI pricing</a></em></p>
 <p>At $0.15/$0.60, Small 4 is significantly more expensive than <a href="/reviews/mistral-small-3-1-vision-24b-llm-review/">Mistral Small 3.1</a> ($0.10/$0.30) and <a href="/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/">Mistral Small 3.2</a> — which also reflected a 24B dense model&rsquo;s lower operational cost. Small 4&rsquo;s API pricing is closer to mid-tier frontier model territory, reflecting the inference infrastructure required to serve 119B MoE weights at scale.</p>
 <p>By comparison: GPT-4o Mini at $0.15/$0.60 (same price), but with a significantly lower GPQA Diamond (40.2% vs 71.2%). At identical price points, the benchmark case for Small 4 over GPT-4o Mini is compelling for knowledge-intensive tasks.</p>
 <p><strong>Available via:</strong></p>
@@ -302,7 +306,7 @@
 <li><strong>NVIDIA NVFP4 quantization</strong> — <code>mistralai/Mistral-Small-4-119B-2603-NVFP4</code> for FP4-precision inference on H100/H200/B200</li>
 </ul>
 <p>The NVFP4 checkpoint is notable: NVIDIA&rsquo;s 4-bit float format is hardware-accelerated on Hopper and Blackwell GPUs (H100, H200, B200), and Mistral released an official NVFP4 checkpoint alongside the standard release, reducing the memory footprint significantly while retaining more quality than standard Q4 GGUF quantization.</p>
-<p><strong>Speed (Artificial Analysis measurement):</strong></p>
+<p><strong>Speed (<a href="https://artificialanalysis.ai/">Artificial Analysis</a> measurement):</strong></p>
 <ul>
 <li>Output speed: 157.8 tokens/second</li>
 <li>Time to first token: 0.70 seconds</li>

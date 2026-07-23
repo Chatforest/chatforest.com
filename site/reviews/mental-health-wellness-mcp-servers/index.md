@@ -291,7 +291,7 @@ A gamified approach to personal development. No user data collected. The scale o
 
 **Connects AI systems to population-level mental health data** — a new paradigm for wellness MCP servers:
 
-- **CDC PLACES benchmarks** — mental health data lookups by ZIP code or county, drawing on CDC's population health dataset
+- **[CDC PLACES](https://www.cdc.gov/places/index.html) benchmarks** — mental health data lookups by ZIP code or county, drawing on CDC's population health dataset
 - **Institutional wellness snapshots** — daily trend monitoring for organizations
 - **Alert thresholds** — week-over-week wellness change detection, calibrated by organization size and location type
 - **Sector aggregation** — aggregated data analysis across healthcare, education, HR, and public health
@@ -312,7 +312,7 @@ Privacy-first: no user tracking, no PII storage. This is the first MCP server to
 - **quick_burnout_check** — simplified screening
 - **Free tier** — 500 API calls/month, no payment required
 
-The first burnout-specific MCP server. While it requires an external API (not local-first), the free tier is generous and the three-dimensional burnout model (physical, emotional, effectiveness) aligns with established burnout research frameworks like the Maslach Burnout Inventory.
+The first burnout-specific MCP server. While it requires an external API (not local-first), the free tier is generous and the three-dimensional burnout model (physical, emotional, effectiveness) aligns with established burnout research frameworks like the [Maslach Burnout Inventory](https://www.mindgarden.com/117-maslach-burnout-inventory).
 
 ---
 

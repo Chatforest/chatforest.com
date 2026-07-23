@@ -48,7 +48,7 @@ One command grammar, 13 entities across 15+ data sources. The best choice if you
 - **Marketplace format** — installable through Claude Code Marketplace
 - **v1.1.1** (January 2026) — Benchling removed (incompatible with plugin system)
 
-Anthropic is going all-in on life sciences: acquired Coefficient Bio for $400M (April 3, 2026) to build specialized drug discovery and clinical workflow tools. The Coefficient Bio team joined Anthropic's Healthcare & Life Sciences group. Additionally, Owkin's Pathology Explorer launched with Claude for HCLS (January 2026) — the first pathology AI agent via MCP, trained on histopathology data from 800+ hospitals across 104 healthcare centers.
+Anthropic is going all-in on life sciences: acquired [Coefficient Bio](https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/) for $400M (April 3, 2026) to build specialized drug discovery and clinical workflow tools. The Coefficient Bio team joined Anthropic's Healthcare & Life Sciences group. Additionally, [Owkin's Pathology Explorer](https://www.owkin.com/newsfeed/owkins-specialized-biological-ai-agent-pathology-explorer-launches-with-anthropics-claude-for-healthcare-and-life-sciences) launched with Claude for HCLS (January 2026) — the first pathology AI agent via MCP, trained on histopathology data from 800+ hospitals across 104 healthcare centers.
 
 ---
 
@@ -436,11 +436,11 @@ The [MCPmed](https://github.com/MCPmed) organization (Germany) is building an ac
 | Cookiecutter-MCPmed | 5 | Project template for new servers |
 | breadcrumbs/breadcrumbsMCP | 1 | LLM tracing for reproducibility |
 
-MCPmed's vision is systematic MCP-enabling of existing bioinformatics web services, with breadcrumbs for reproducibility and a cookiecutter template for creating new servers. **Their paper was published in Briefings in Bioinformatics (Volume 27, Issue 1, January 2026, Oxford Academic)** — elevating from arXiv preprint to peer-reviewed journal, lending academic credibility to the MCP-for-bioinformatics approach.
+MCPmed's vision is systematic MCP-enabling of existing bioinformatics web services, with breadcrumbs for reproducibility and a cookiecutter template for creating new servers. **Their paper was [published in Briefings in Bioinformatics](https://academic.oup.com/bib/article/27/1/bbag076/8495038) (Volume 27, Issue 1, January 2026, Oxford Academic)** — elevating from arXiv preprint to peer-reviewed journal, lending academic credibility to the MCP-for-bioinformatics approach.
 
 ### BioinfoMCP — Automated Tool Conversion
 
-The BioinfoMCP platform automatically converts existing bioinformatics tools into MCP servers using LLMs — achieving a 94.7% success rate across 38 tools in benchmark tests. This could dramatically accelerate MCP adoption across the thousands of existing bioinformatics tools.
+The BioinfoMCP platform automatically converts existing bioinformatics tools into MCP servers using LLMs — achieving a [94.7% success rate across 38 tools](https://arxiv.org/abs/2510.02139) in benchmark tests. This could dramatically accelerate MCP adoption across the thousands of existing bioinformatics tools.
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Smart Home & Home Automation MCP Servers — Home Assistant, Apple HomeKit, Samsung SmartThings, Amazon Alexa, Google Home, Philips Hue, Tuya, Zigbee2MQTT, and IoT Device Control"
 date: 2026-03-16T14:00:00+09:00
+sources_audited: 2026-07-23
 description: "Smart home and home automation MCP servers let AI agents control lights, thermostats, locks, and cameras, manage automations, and monitor device states through the Model Context Protocol."
 og_description: "Smart home MCP servers: ha-mcp (2,600+ stars, 86+ tools for Home Assistant), HomeClaw (99 stars, Apple HomeKit 10 tools), Samsung SmartThings MCP, Amazon Alexa MCP, Google Home MCP, Philips Hue (5+ servers), Tuya official SDK, Zigbee2MQTT bridge, Ring security, Roborock vacuum. 30+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
@@ -427,7 +428,7 @@ A second implementation, MvdMunnik26/Hubitat-MCP, also connects to Hubitat Eleva
 
 The smart home MCP ecosystem has closed most of its original gaps. What remains:
 
-- **Matter protocol** — no direct MCP-to-Matter bridge (the home-assistant-matter-hub project was archived January 2026, though a community fork continues). Matter is accessible indirectly through Home Assistant's Matter integration + ha-mcp
+- **Matter protocol** — no direct MCP-to-Matter bridge (the [home-assistant-matter-hub project was archived March 2026](https://github.com/t0bst4r/home-assistant-matter-hub), though a community fork continues). Matter is accessible indirectly through Home Assistant's Matter integration + ha-mcp
 - **Energy monitoring** — no solar panel management, battery storage, or whole-home energy monitoring MCP servers (energy data is available through Home Assistant's energy dashboard + ha-mcp, but no standalone solution)
 - **ADT / SimpliSafe** — Ring has an MCP server but ADT and SimpliSafe do not
 - **Google Home breadth** — current server is limited to smart plugs; broader device control not yet available

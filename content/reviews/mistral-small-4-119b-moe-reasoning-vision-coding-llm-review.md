@@ -4,6 +4,7 @@ date: 2026-03-16T12:00:00+09:00
 description: "Mistral Small 4 (March 16, 2026) is a 119B Mixture-of-Experts model with 6.5B active parameters per token, 256K context, configurable reasoning, vision input, and Apache 2.0 license. GPQA Diamond 71.2%. MMLU-Pro 78.0%. HumanEval 92%. Outperforms GPT-OSS 120B on LiveCodeBench. $0.15/$0.60 per million tokens. Rating: 4/5."
 og_description: "Mistral Small 4 (March 16, 2026): 119B MoE, 6.5B active/token, 256K context, Apache 2.0. Configurable reasoning (Magistral), vision (Pixtral), and agentic coding (Devstral) consolidated into one open-weight model. GPQA Diamond 71.2%, MMLU-Pro 78.0%, HumanEval 92%. 157.8 tok/s. $0.15/$0.60 per M tokens. Requires 4×H100 minimum for self-hosting. Rating: 4/5."
 card_description: "Mistral Small 4 (released March 16, 2026) is a 119-billion-parameter Mixture-of-Experts model that consolidates three previously separate Mistral products — Magistral (reasoning), Pixtral (vision), and Devstral (coding) — into a single open-weight release under Apache 2.0. Only 6.5 billion parameters are active per token (8B with embeddings), giving frontier-class capability at small-model inference cost. Context window: 256K tokens — double the 128K of Mistral Small 3.1/3.2. Configurable reasoning via API: reasoning_effort=none delivers fast responses; reasoning_effort=high enables deep chain-of-thought. Native image input alongside text. Benchmarks: GPQA Diamond 71.2% (vs GPT-4o Mini 40.2%), MMLU-Pro 78.0% (vs GPT-4o Mini 64.8%), HumanEval 92%, MMLU 88.5%. AA LCR 0.72 with 1.6K output characters vs Qwen's 5.8-6.1K for equivalent accuracy. Outperforms GPT-OSS 120B on LiveCodeBench with 20% shorter responses. Speed: 157.8 tokens/second (Artificial Analysis). Pricing: $0.15/$0.60 per million tokens via Mistral API. Self-hosting requires 4×NVIDIA H100 or 2×H200 minimum — a data-center footprint despite the 'Small' name. Available on HuggingFace (mistralai/Mistral-Small-4-119B-2603), Mistral API, NVIDIA NIM, and via vLLM/llama.cpp/SGLang. 40% lower latency and 3× higher throughput vs Mistral Small 3. Rating: 4/5."
+sources_audited: 2026-07-23
 tags: ["llm", "open-weight", "mistral", "vision", "multimodal", "moe", "reasoning", "coding", "apache-license", "long-context", "function-calling", "agentic"]
 categories: ["reviews"]
 rating: 4
@@ -88,6 +89,8 @@ Mistral's published results and third-party evaluations show Small 4 performing 
 | MMLU-Pro | **78.0%** | 64.8% |
 | MMLU | **88.5%** | 82.0% |
 
+*Source: [Mistral AI official release announcement](https://mistral.ai/news/mistral-small-4/)*
+
 The GPQA Diamond result is the most striking number in the Small 4 release. GPQA Diamond — Graduate-level Google-Proof Q&A, Diamond subset — is a benchmark of expert-level science questions deliberately resistant to web lookup. A score of 71.2% places Small 4 in territory that, a year earlier, only frontier closed models occupied. GPT-4o Mini at 40.2% is not in the same tier. This is the clearest single-number indicator that Small 4 has crossed from "competitive small model" into "open-weight frontier capability."
 
 MMLU at 88.5% similarly outpaces GPT-4o Mini (82.0%) and [Mistral Small 3.1](/reviews/mistral-small-3-1-vision-24b-llm-review/) (80.62%) by meaningful margins.
@@ -99,6 +102,8 @@ MMLU at 88.5% similarly outpaces GPT-4o Mini (82.0%) and [Mistral Small 3.1](/re
 | HumanEval | **92%** | Self-reported, pass@1 |
 | LiveCodeBench | Beats GPT-OSS 120B | With 20% shorter output |
 
+*Source: [Mistral AI official release announcement](https://mistral.ai/news/mistral-small-4/)*
+
 HumanEval at 92% is frontier-tier for code generation. More informative is the LiveCodeBench comparison: Small 4 outperforms GPT-OSS 120B (OpenAI's 120B open-weight release) on this test while producing 20% less output. Output brevity in coding matters in production — verbose responses that pad answers with explanation rather than working code are harder to integrate into agentic workflows.
 
 ### Mathematical Reasoning
@@ -108,6 +113,8 @@ On AIME 2025, Mistral reports Small 4 as competitive with GPT-OSS 120B while gen
 | Benchmark | Mistral Small 4 | Qwen (comparable) |
 |---|---|---|
 | AA LCR | **0.72** (1.6K output chars) | ~0.72 (5.8–6.1K output chars) |
+
+*Source: [Mistral AI official release announcement](https://mistral.ai/news/mistral-small-4/)*
 
 Small 4 achieves equivalent LCR accuracy at roughly 3.5× lower verbosity than Qwen 3 models tested at the same point. In production agentic workloads where output tokens cost money and latency compounds across reasoning chains, this is a meaningful efficiency advantage.
 
@@ -166,6 +173,8 @@ The implementation mirrors what Anthropic introduced with [Claude 3.7 Sonnet's](
 | Output | $0.60 per million tokens |
 | Cache read | $0.15 per million tokens |
 
+*Source: [Mistral AI pricing](https://mistral.ai/pricing)*
+
 At $0.15/$0.60, Small 4 is significantly more expensive than [Mistral Small 3.1](/reviews/mistral-small-3-1-vision-24b-llm-review/) ($0.10/$0.30) and [Mistral Small 3.2](/reviews/mistral-small-3-2-24b-instruct-refinement-llm-review/) — which also reflected a 24B dense model's lower operational cost. Small 4's API pricing is closer to mid-tier frontier model territory, reflecting the inference infrastructure required to serve 119B MoE weights at scale.
 
 By comparison: GPT-4o Mini at $0.15/$0.60 (same price), but with a significantly lower GPQA Diamond (40.2% vs 71.2%). At identical price points, the benchmark case for Small 4 over GPT-4o Mini is compelling for knowledge-intensive tasks.
@@ -180,7 +189,7 @@ By comparison: GPT-4o Mini at $0.15/$0.60 (same price), but with a significantly
 
 The NVFP4 checkpoint is notable: NVIDIA's 4-bit float format is hardware-accelerated on Hopper and Blackwell GPUs (H100, H200, B200), and Mistral released an official NVFP4 checkpoint alongside the standard release, reducing the memory footprint significantly while retaining more quality than standard Q4 GGUF quantization.
 
-**Speed (Artificial Analysis measurement):**
+**Speed ([Artificial Analysis](https://artificialanalysis.ai/) measurement):**
 - Output speed: 157.8 tokens/second
 - Time to first token: 0.70 seconds
 - Ranks #10 out of 61 open-weight models in throughput class

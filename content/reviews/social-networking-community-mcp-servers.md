@@ -1,6 +1,7 @@
 ---
 title: "Social Networking & Community MCP Servers — Twitter/X, Bluesky, LinkedIn, Reddit, Discord, Mastodon, YouTube, TikTok, and More"
 date: 2026-03-16T19:30:00+09:00
+sources_audited: 2026-07-23
 description: "Social networking and community MCP servers are giving AI agents direct access to social platforms — posting, reading feeds, managing communities, and analyzing content via the Model Context Protocol."
 og_description: "Social Networking & Community MCP servers: xiaohongshu-mcp (13,100 stars — Chinese social EXPLOSION), reddit-mcp-buddy (630 stars — new Reddit leader), linkedin-mcp-server (1,100+ stars — 30+ tools), twitter-mcp (388 stars), activitypub-mcp (53 tools v1.1.0). FOUR GAPS FILLED: Threads, Pinterest, Twitch, Chinese platforms. 80+ servers. Rating: 5/5."
 content_type: "Review"
@@ -361,7 +362,7 @@ This is the biggest story in this refresh. Chinese social platforms went from ze
 |--------|-------|----------|---------|-------|
 | [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | 13,100 | Go | — | 11 |
 
-**13,100 stars** — one of the highest-starred MCP servers in ANY category. 11 tools: login, publish image/text/video, search, recommendation feed, post details, commenting, user profiles, replies, like/unlike, bookmark/unbookmark. Multiple deployment options (binary, Docker). Updated April 27, 2026. Xiaohongshu (RedNote/XHS) is China's most popular lifestyle and social commerce platform.
+**13,100 stars** — one of the highest-starred MCP servers in ANY category. 11 tools: login, publish image/text/video, search, recommendation feed, post details, commenting, user profiles, replies, like/unlike, bookmark/unbookmark. Multiple deployment options (binary, Docker). Updated April 27, 2026. [Xiaohongshu (RedNote/XHS)](https://www.theegg.com/social/china/xiaohongshu-red-chinas-rising-social-platform-impact-user-demographics-and-marketing-solutions/) is China's leading lifestyle and social commerce platform, with 350M+ monthly active users as of 2025.
 
 ### iFurySt/RedNote-MCP
 
