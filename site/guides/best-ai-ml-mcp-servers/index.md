@@ -52,7 +52,7 @@ This is where the MCP ecosystem gets ambitious — and where the most explosive 
 
 ### Strong alternatives
 
-**Ruflo** ([ruvnet/ruflo](https://github.com/ruvnet/ruflo)) — **32.6K stars** (up 54% from 21.1K in 36 days), 6,067 commits, v3.5.80 (April 2026). MCP tools expanded from 215→**314**, 16 defined agent roles, **AgentDB v3** with 8 new controllers, and intelligent **3-tier model routing** claiming up to 75% API cost savings. Reports 84.8% SWE-bench solve rate. The scope is enormous — evaluate which components you actually need.
+**Ruflo** ([ruvnet/ruflo](https://github.com/ruvnet/ruflo)) — **32.6K stars** (up 54% from 21.1K in 36 days), 6,067 commits, v3.5.80 (April 2026). MCP tools expanded from 215→**314**, 16 defined agent roles, **AgentDB v3** with 8 new controllers, and intelligent **3-tier model routing** claiming up to 75% API cost savings. Reports 84.8% SWE-bench solve rate (self-reported; independent audits have found results inconsistent with this figure — treat with caution). The scope is enormous — evaluate which components you actually need.
 
 **mcp-agent (LastMile AI)** ([lastmile-ai/mcp-agent](https://github.com/lastmile-ai/mcp-agent)) — 8.3K stars, Python, Apache 2.0. Still the most popular agent framework built on MCP. Implements Anthropic's "Building Effective Agents" patterns as composable building blocks: **parallel** fan-out/fan-in, **orchestrator-worker** decomposition, **evaluator-optimizer** loops, **routers**, and **map-reduce** pipelines. Full MCP support including elicitation. **New:** beta **cloud deployment** via mcp-c managed runtime alongside Temporal-backed durable execution. The safest bet for production workflow-based agents.
 
@@ -88,7 +88,7 @@ Once your models and agents are running, how do you monitor their behavior, mana
 
 **[Full review: LLM Evaluation & Benchmarking MCP Servers →](/reviews/llm-evaluation-benchmarking-mcp-servers/)** | Rating: 4.5/5
 
-Now **academically validated** with two ICLR 2026 papers (MCP-Bench, OSWorld-MCP). OpenAI's acquisition of Promptfoo, DeepEval tripling its community, and five distinct benchmarking frameworks make this one of the strongest categories.
+Now **academically validated** with two NeurIPS 2025 Workshop papers (MCP-Bench, OSWorld-MCP). OpenAI's acquisition of Promptfoo, DeepEval tripling its community, and five distinct benchmarking frameworks make this one of the strongest categories.
 
 ### The winner: promptfoo
 
@@ -96,15 +96,15 @@ Now **academically validated** with two ICLR 2026 papers (MCP-Bench, OSWorld-MCP
 
 ### Strong alternatives
 
-**DeepEval** ([confident-ai/deepeval](https://github.com/confident-ai/deepeval)) — **15K stars** (tripled from 5K), Python, Apache-2.0. Pytest-style LLM unit testing with **50+ metrics** (G-Eval, hallucination, answer relevancy, task completion). The **MCP-Use metric** evaluates how well agents use MCP servers. **New: Multi-Turn MCP Use metric** for conversational agent evaluation across extended dialogues. 9,276 commits — extremely active.
+**DeepEval** ([confident-ai/deepeval](https://github.com/confident-ai/deepeval)) — **15K stars**, Python, Apache-2.0. Pytest-style LLM unit testing with **50+ metrics** (G-Eval, hallucination, answer relevancy, task completion). The **MCP-Use metric** evaluates how well agents use MCP servers. **New: Multi-Turn MCP Use metric** for conversational agent evaluation across extended dialogues. 9,276 commits — extremely active.
 
 **MCP-Universe** ([SalesforceAIResearch/MCP-Universe](https://github.com/SalesforceAIResearch/MCP-Universe)) — **583 stars**, Python. Benchmarks with real-world MCP servers across 6 domains and 231 tasks. **New: MCP+** reduces token costs by up to 75%. Deep Research Agent achieves 62.2% on BrowseComp with GPT-5-medium. Top model GPT-5-High at 44.16% success. 272 commits.
 
-**MCP-Bench** ([Accenture/mcp-bench](https://github.com/Accenture/mcp-bench)) — **475 stars**, published at **ICLR 2026**. **28 live MCP servers, 250 tools** across finance, travel, science. First MCP benchmark at a top ML conference. GPT-5 leads leaderboard at 0.749.
+**MCP-Bench** ([Accenture/mcp-bench](https://github.com/Accenture/mcp-bench)) — **475 stars**, presented at the **NeurIPS 2025 Workshop on Scaling Environments for Agents (December 2025)**. **28 live MCP servers, 250 tools** across finance, travel, science. First MCP benchmark at a major ML conference. GPT-5 leads leaderboard at 0.749.
 
 **MCPMark** ([eval-sys/mcpmark](https://github.com/eval-sys/mcpmark)) — **413 stars**, Python, Apache-2.0. Stress-tests agents across 5 real MCP services (Notion, GitHub, Filesystem, Postgres, Playwright) with 127 tasks and isolated sandboxes.
 
-**OSWorld-MCP** ([X-PLUG/OSWorld-MCP](https://github.com/X-PLUG/OSWorld-MCP)) — **223 stars**, Python, **ICLR 2026**. First benchmark for computer-use agents' MCP tool invocation. 158 tools, 361 tasks across 7 applications. MCP tools boost OpenAI o3 from 8.3% to 17.6% success.
+**OSWorld-MCP** ([X-PLUG/OSWorld-MCP](https://github.com/X-PLUG/OSWorld-MCP)) — **223 stars**, Python, **NeurIPS 2025 Workshop**. First benchmark for computer-use agents' MCP tool invocation. 158 tools, 361 tasks across 7 applications. MCP tools boost OpenAI o3 from 8.3% to 17.6% success.
 
 **Red-teaming:** promptfoo/evil-mcp-server simulates malicious MCP behaviors (tool poisoning, data exfiltration, hidden instructions). Critical for understanding how agents behave with malicious tools.
 
@@ -167,7 +167,7 @@ Three trends define AI & ML MCP servers in April 2026:
 
 **1. Agent orchestration exploded.** Paperclip (57K stars in weeks), Ruflo (21.1K→32.6K stars, +54%), mcp-agent (8.3K), fast-agent (3.8K, now with ACP support) — the star counts and velocity here dwarf every other AI/ML MCP category. The ecosystem split into three philosophies: workflow-centric, swarm-centric, and company-centric. Enterprise infrastructure followed with mcp-gateway-registry (598 stars, A2A + OAuth + AgentCore). The community is betting that multi-agent coordination is the next major capability unlock.
 
-**2. Evaluation got acquired and validated.** OpenAI acquired promptfoo (March 9, 2026), signaling that eval tooling is strategically critical. DeepEval surged from 5K to 13K+ stars. MCP-Bench was accepted to NeurIPS 2025 Workshop. MCP-Universe added Wide & Deep research agents. This is the category closest to enterprise-ready, with the OpenAI acquisition accelerating investment.
+**2. Evaluation got acquired and validated.** OpenAI acquired promptfoo (March 9, 2026), signaling that eval tooling is strategically critical. DeepEval surged to 15K stars. MCP-Bench was presented at the NeurIPS 2025 Workshop on Scaling Environments for Agents. MCP-Universe added Wide & Deep research agents. This is the category closest to enterprise-ready, with the OpenAI acquisition accelerating investment.
 
 **3. The ML lifecycle is converging.** Both W&B (14 tools, hosted server, model registry) and MLflow (official MCP built into 3.5.1+, Databricks integration) now have comprehensive MCP support. HuggingFace's proxy tools open thousands of ML Spaces as MCP endpoints. The fragmentation is easing — though you still need 2-3 servers for a complete ML workflow.
 

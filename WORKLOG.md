@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2606 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-22 batch, ninth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (oldest unaudited by date, all dated 2026-03-22):
+
+1. **xai-grok-4-20-reasoning-non-reasoning-multi-agent-builder-guide/index.md** — Corrected pricing table: multi-agent was listed as $2.00/M input, $6.00/M output → corrected to $1.25/M input, $2.50/M output (per xAI API direct and OpenRouter; the $2.00/$6.00 figures appear on Artificial Analysis and reflect Azure provider markup). Fixed "2x input price, 2.4x output price" cost claim (math error plus factually wrong given same rate) → rewrote to explain cost differential is in token volume (1.5–2.5× more output tokens) not billing rate. Changed TTFT "10.85 seconds" (unverifiable specific number, providers show different values) → "approximately 10–14 seconds depending on provider". Changed agent names from "internally named" framing → added "(community-documented)" qualifier noting xAI has not published official docs. Updated benchmark table: output speed from "197.4 tokens/second | Above average for reasoning-class models" → "150–230 tokens/second | Varies by provider and load"; IFBench from "1st place" → "1st at launch; subsequently eclipsed by Grok 4.3". Added sources_audited.
+
+2. **best-cloud-mcp-servers.md** — No corrections needed (comparison article referencing individual reviews already audited). Added sources_audited.
+
+3. **best-design-mcp-servers.md** — Fixed Blender star count inconsistency (table said "17,800+" while body said "21,100+") → unified to "21,100+". Updated TalkToFigma: removed unsourced "went viral, earned 5,000+ stars" → "gained rapid community adoption and Grab adopted it as an official open-source project" with GitHub link. Added sources_audited.
+
+4. **best-kubernetes-container-mcp-servers.md** — Removed unverifiable "1M+ users" from Lens description → "the widely used Kubernetes IDE". Removed "1M+ pulls" from Docker MCP registry (unverifiable); added link to Docker MCP Catalog homepage instead. Verified kagent CNCF Sandbox "May 2025, donated by Solo.io" — CONFIRMED (May 22, 2025). Added sources_audited.
+
+5. **best-security-mcp-servers.md** — Fixed Snyk/Invariant Labs and Docker/MCP Defender timing: corrected implied "Jan-Feb 2026" context; added explicit dates (June 2025, September 2025) with primary source links for both acquisitions. Added Robby Beckett Substack link for "30+ CVEs in 60 days" stat. Added sources_audited.
+
+6. **best-data-analytics-mcp-servers.md** — CUT unverifiable "claiming 10-50x faster time to value" from GoodData entry; added link to GoodData blog post for the server itself. Added sources_audited.
+
+7. **best-file-storage-mcp-servers.md** — Added Cymulate blog citation for CVE-2025-53109/53110 (EscapeRoute) with CVSS scores (7.3 and 8.4). Added Endor Labs citation for "82% path traversal" stat (analysis of 2,614 MCP implementations). Added sources_audited.
+
+8. **best-testing-qa-mcp-servers.md** — Added CVE link for CVE-2025-9611 to cve.org. Verified BrowserStack AWS Marketplace, Sauce Labs RDC GA Feb 25 2026, mabl launch March 27 2026 — all confirmed. Added sources_audited.
+
+9. **best-api-gateway-mcp-servers.md** — Fixed CVE-2026-33032: "compromised 2,689 servers" → "Shodan scans found approximately 2,689 publicly exposed nginx-ui instances at time of disclosure" (exposed ≠ compromised; added The Hacker News citation). Added Gartner citation (k2view.com blog, doc 6387843) for "75% of API gateway vendors will have MCP features by 2026". Added Bifrost benchmark citations (GitHub + getmaxim.ai benchmarks page) for 11µs overhead and 50x faster claims. Added Bifrost 92% token reduction claim citation (Maxim AI blog). Fixed Traefik Hub GA dates throughout: "GA imminent — planned late April 2026" → "reached GA in May 2026". Fixed Agent Gateway Linux Foundation date: "March 2026" → "August 2025". Added sources_audited.
+
+10. **best-ai-ml-mcp-servers.md** — Fixed MCP-Bench venue: "published at ICLR 2026" → "presented at the NeurIPS 2025 Workshop on Scaling Environments for Agents (December 2025)" in all three occurrences (article body, OSWorld-MCP entry, trends section). Fixed DeepEval star growth: "tripled from 5K" → removed unsourced origin claim (just "15K stars"). Fixed trends section "5K to 13K+" → "to 15K stars". Added qualifier to Ruflo 84.8% SWE-bench claim: "(self-reported; independent audits have found results inconsistent with this figure — treat with caution)". Added sources_audited.
+
+**Key factual corrections this run:** xAI Grok 4.20 pricing table was wrong (Azure markup vs. xAI direct); "2x cost overhead" was a math error; TTFT and throughput figures were point estimates not verifiable by primary source; Agent Gateway Linux Foundation date off by 7 months; Traefik Hub GA off by ~2 weeks; CVE-2026-33032 "compromised" vs "exposed" (different claims); MCP-Bench venue wrong (ICLR vs NeurIPS workshop); DeepEval star count origin unsourced; Ruflo SWE-bench self-reported only.
+
+**Research method:** 3 parallel research agents (prior context) verified claims across xAI/API gateways/AI-ML pages. WebFetch calls to xAI API docs and OpenRouter to triangulate Grok 4.20 pricing.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2605 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-20/21/22 batch, eighth cohort) + Deploy
 
 **Mode:** Citation auditor

@@ -175,7 +175,7 @@ An official Kubernetes SIG project that provides a declarative API to deploy, ma
 
 ### Lens MCP Server — Commercial
 
-Lens, the Kubernetes IDE with 1M+ users, launched a built-in MCP server in March 2026. Works with Claude Code, ChatGPT, Cursor, and GitHub Copilot. Leverages Lens's Cloud Integrations (AWS, Azure, GCP) so there's no manual kubeconfig generation. Not open-source — requires Lens Desktop.
+[Lens](https://k8slens.dev/), the widely used Kubernetes IDE, launched a built-in MCP server in March 2026. Works with Claude Code, ChatGPT, Cursor, and GitHub Copilot. Leverages Lens's Cloud Integrations (AWS, Azure, GCP) so there's no manual kubeconfig generation. Not open-source — requires Lens Desktop.
 
 **Best for:** Teams already using Lens who want AI Kubernetes management without additional MCP server setup.
 
@@ -285,7 +285,7 @@ Docker's official MCP Gateway orchestrates multiple MCP servers, each running in
 
 ### docker/mcp-registry — Official MCP Registry
 
-**Stars:** 475 | A separate registry for MCP server discovery. The Docker MCP Catalog now lists 270-300+ servers (up from 200+), including 60+ remote servers, with 1M+ pulls. Open submission process for developers.
+**Stars:** 475 | A separate registry for MCP server discovery. The [Docker MCP Catalog](https://hub.docker.com/catalogs/mcp) now lists 270-300+ servers (up from 200+), including 60+ remote servers. Open submission process for developers.
 
 ### docker/hub-mcp — Docker Hub Integration
 

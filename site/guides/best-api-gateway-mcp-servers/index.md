@@ -3,11 +3,11 @@
 > We compared 20+ API gateway and API management MCP servers across Kong, Cloudflare, Traefik, AWS API Gateway, Azure APIM, Apigee, Gravitee, Apache APISIX, Tyk, Envoy, and open-source
 
 
-API gateways are the front door to every microservice, and now AI agents can manage routes, inspect traffic, configure plugins, analyze analytics, and even generate entire API clients — all through MCP. The convergence of API management and agentic AI is happening fast: Gartner projects 75% of API gateway vendors will integrate MCP features by end of 2026.
+API gateways are the front door to every microservice, and now AI agents can manage routes, inspect traffic, configure plugins, analyze analytics, and even generate entire API clients — all through MCP. The convergence of API management and agentic AI is happening fast: [Gartner projects that 75% of API gateway vendors (and 50% of iPaaS vendors) will have MCP features by 2026](https://www.k2view.com/blog/mcp-gartner/) (Gartner Innovation Insight on MCP, doc 6387843).
 
 The landscape splits into three layers. **Vendor management servers** (Kong, Cloudflare, Gravitee, APISIX, Tyk) let you manage your gateway through natural language. **Cloud platform MCP proxies** (AWS API Gateway, Azure APIM, Google Apigee) turn your existing REST APIs into MCP-compatible tools with zero code changes. And **MCP-native gateways** (Traefik Hub, Bifrost, ContextForge, Agent Gateway, Envoy AI Gateway, Lasso, Peta) are purpose-built to sit between AI agents and MCP servers, adding auth, observability, rate limiting, and security scanning.
 
-What surprised us: **CVE-2026-33032 (MCPwn)** — the first major MCP exploit in the wild — hit nginx-ui with a CVSS 9.8 auth bypass that compromised 2,689 servers before patching, proving MCP security is no longer theoretical. **Cloudflare** launched MCP Server Portals and Shadow MCP detection, creating the first enterprise governance layer for MCP traffic. **Bifrost** surged from 3.1K to 4.2K stars with MCP Gateway features claiming 92% token cost reduction. And **Envoy AI Gateway** shipped MCPRoute support, filling a critical gap in the CNCF ecosystem.
+What surprised us: **[CVE-2026-33032 (MCPwn)](https://thehackernews.com/2026/04/critical-nginx-ui-vulnerability-cve.html)** — the first major MCP exploit in the wild — hit nginx-ui with a CVSS 9.8 auth bypass. Shodan scans found approximately 2,689 publicly exposed nginx-ui instances at the time of disclosure, proving MCP security is no longer theoretical. **Cloudflare** launched MCP Server Portals and Shadow MCP detection, creating the first enterprise governance layer for MCP traffic. **Bifrost** surged from 3.1K to 4.2K stars with MCP Gateway features claiming 92% token cost reduction. And **Envoy AI Gateway** shipped MCPRoute support, filling a critical gap in the CNCF ecosystem.
 
 **What changed since March 2026:**
 
@@ -18,11 +18,11 @@ What surprised us: **CVE-2026-33032 (MCPwn)** — the first major MCP exploit in
 | Agent Gateway | 2,100 stars | 2,500 stars (+19%) | v1.1.0, moved to Linux Foundation, Solo Enterprise launched |
 | IBM ContextForge | 3,500 stars, Beta | 3,600 stars, RC3 | RC2+RC3: 40+ security controls, RBAC API, mTLS, plugin framework decoupled |
 | Envoy AI Gateway | Not covered | 1,500 stars (NEW) | MCPRoute, OAuth, tool routing, server multiplexing |
-| Traefik Hub | Early Access v3.20 | GA imminent (late April) | Regex Guard, Triple Gate architecture |
+| Traefik Hub | Early Access v3.20 | Reached GA in May 2026 | Regex Guard, Triple Gate architecture |
 | Tyk | Commercial AI Studio | Open source (March 2026) | Community Edition with remote MCP server, MCP tool generation |
 | Gravitee | 4.10 | 4.11 | MCP Resource Server V2, Client Credentials, AuthZen Bearer |
 | APISIX MCP | 25 stars | 36 stars (+44%) | Steady growth |
-| CVE-2026-33032 | — | CVSS 9.8, actively exploited | MCPwn: nginx-ui MCP auth bypass, 2,689 instances compromised |
+| CVE-2026-33032 | — | CVSS 9.8, actively exploited | MCPwn: nginx-ui MCP auth bypass, ~2,689 publicly exposed instances at disclosure |
 
 **Disclosure:** Our recommendations are based on research — analyzing documentation, GitHub repositories, community feedback, and published benchmarks. We have not hands-on tested every server in this guide.
 
@@ -213,7 +213,7 @@ These are purpose-built to sit between AI agents and MCP servers, adding securit
 
 ### Traefik Hub MCP Gateway — The Governance Leader
 
-**Status:** Early Access (v3.20, GA imminent — planned late April 2026) | **Transport:** Remote MCP
+**Status:** Reached GA in May 2026 (was Early Access v3.20) | **Transport:** Remote MCP
 
 Traefik Hub's MCP Gateway is the most feature-rich governance layer for MCP traffic. It's not an MCP server manager — it's an MCP-aware reverse proxy with identity, policy, and observability built in.
 
@@ -227,7 +227,6 @@ Traefik Hub's MCP Gateway is the most feature-rich governance layer for MCP traf
 - **Session-smart routing** — stabilizes long-running agent workflows with persistent session handling
 
 **Limitations:**
-- GA imminent (late April 2026) — currently Early Access, nearly production-ready
 - Commercial product — requires Traefik Hub license
 - Kubernetes-focused — may be overkill for simple setups
 - Not an MCP server itself — it governs other MCP servers
@@ -265,9 +264,9 @@ ContextForge federates MCP servers, A2A agents, and REST/gRPC APIs into a single
 Bifrost is both an LLM gateway and an MCP gateway in one binary. Built in Go for raw performance, and now the fastest-growing project in this guide (+35% stars in one month).
 
 **What makes it stand out:**
-- **11µs overhead** — sub-millisecond latency at 5,000 RPS, 50x faster than LiteLLM
+- **11µs overhead** — sub-millisecond latency at 5,000 RPS, [50x faster than LiteLLM](https://github.com/maximhq/bifrost) (per Bifrost's own benchmarks at [getmaxim.ai](https://www.getmaxim.ai/bifrost/resources/benchmarks))
 - **Dual gateway** — LLM routing (15+ providers) and MCP gateway (tool orchestration) in one
-- **MCP Gateway with governance** (April 2026) — centralized access control, cost governance, and policy enforcement for all MCP tool connections. Claims 92% token cost reduction at scale through Code Mode + tool aggregation
+- **MCP Gateway with governance** (April 2026) — centralized access control, cost governance, and policy enforcement for all MCP tool connections. [Claims 92% token cost reduction at scale](https://www.getmaxim.ai/blog/bifrost-mcp-gateway) through Code Mode + tool aggregation (per Bifrost's own published benchmarks)
 - **First-class tool logging** — every tool execution logged with tool name, server origin, arguments, result, latency, virtual key, and parent LLM request
 - **Code Mode + Agent Mode** — supports Cloudflare-style Code Mode and direct agent execution
 - **Tool filtering and hosting** — expose only the tools you need, host tools directly
@@ -286,10 +285,10 @@ Bifrost is both an LLM gateway and an MCP gateway in one binary. Built in Go for
 
 **Stars:** 2,500 | **Language:** Rust (57%), Go (29%) | **License:** Apache 2.0 | **Transport:** Multiple
 
-Built from the CNCF kgateway project, Agent Gateway is a Rust-based proxy for agent-to-agent and agent-to-tool communication. Now housed under The Linux Foundation (as of March 2026) with growing enterprise backing.
+Built from the CNCF kgateway project, Agent Gateway is a Rust-based proxy for agent-to-agent and agent-to-tool communication. Now housed under The Linux Foundation (as of August 2025) with growing enterprise backing.
 
 **What makes it stand out:**
-- **Linux Foundation governance** (March 2026) — moved from CNCF Sandbox to broader Linux Foundation governance, expanding community collaboration
+- **Linux Foundation governance** (August 2025) — moved from CNCF Sandbox to broader Linux Foundation governance, expanding community collaboration
 - **MCP OAuth 2.1** — tool-level RBAC, secure token exchange, and cryptographic audit trails
 - **MCP + A2A** — supports both Model Context Protocol and Agent-to-Agent protocol
 - **Solo Enterprise** (launched March 2026) — enterprise distribution with advanced security, observability, and governance. Includes Microsoft Entra SSO integration for MCP
@@ -379,7 +378,7 @@ Peta is "1Password for AI agents" — a zero-trust credential management layer f
 
 **Turning REST APIs into MCP tools?** → [Google Apigee](https://cloud.google.com/blog/products/ai-machine-learning/mcp-support-for-apigee) (zero-code, zero-deploy), [Azure APIM](https://learn.microsoft.com/en-us/azure/api-management/mcp-server-overview) (30+ policies), or [AWS API Gateway](https://aws.amazon.com/about-aws/whats-new/2025/12/api-gateway-mcp-proxy-support/) (MCP proxy). Pick your cloud.
 
-**Need MCP governance and RBAC?** → [Traefik Hub](https://traefik.io/solutions/mcp-gateway) (TBAC, Triple Gate, GA imminent — commercial) or [Agent Gateway](https://github.com/agentgateway/agentgateway) (Linux Foundation, Rust, OAuth 2.1, multi-tenant — open source).
+**Need MCP governance and RBAC?** → [Traefik Hub](https://traefik.io/solutions/mcp-gateway) (TBAC, Triple Gate, GA May 2026 — commercial) or [Agent Gateway](https://github.com/agentgateway/agentgateway) (Linux Foundation, Rust, OAuth 2.1, multi-tenant — open source).
 
 **Already running Envoy?** → [Envoy AI Gateway](https://github.com/envoyproxy/ai-gateway) (1.5K stars, MCPRoute, inherits Envoy networking — no new proxy layer needed).
 

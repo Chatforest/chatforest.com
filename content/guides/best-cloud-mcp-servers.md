@@ -6,6 +6,7 @@ og_description: "AWS vs Google Cloud vs Azure MCP servers compared: 54 servers v
 content_type: "Comparison"
 card_description: "AWS (54 servers, 8,800 stars) vs Google Cloud (46 managed endpoints, most GA, Toolbox v1.1 at 14.8K stars) vs Azure (2.0 stable, 276 tools, 57 services, remote hosting) — three architectures, all maturing fast."
 last_refreshed: 2026-04-23
+sources_audited: 2026-07-23
 ---
 
 The three major cloud providers have all shipped MCP servers. Each took a fundamentally different approach — and a month later, each has evolved dramatically.

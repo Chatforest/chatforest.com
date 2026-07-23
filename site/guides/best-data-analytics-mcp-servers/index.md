@@ -111,7 +111,7 @@ Community alternatives exist: [bintocher/qlik-sense-mcp](https://github.com/bint
 
 **Domo** ([DomoApps/domo-mcp-server](https://github.com/DomoApps/domo-mcp-server)) — announced March 25, 2026 at Domopalooza. The open-source server provides 7 tools: dataset metadata, schema retrieval, SQL queries, dataset search, and role management. The bigger story is Domo's AI Toolkits architecture — packaged capability sets that define what agents can do, exposed externally via MCP to Claude, Gemini, and ChatGPT. Unlike traditional MCP servers that return plain text, Domo's implementation renders interactive business experiences (dashboards, visualizations) directly inside chat interfaces. The AI Agent Builder (available now) and AI Library (summer 2026) complete the framework for building an "AI workforce" of specialized agents operating on enterprise data.
 
-**GoodData** launched an official MCP server (January 2026) with 24 tools for governed analytics execution, claiming 10-50x faster time to value.
+**GoodData** launched an [official MCP server](https://www.gooddata.com/blog/gooddata-mcp-server/) (January 2026) with 24 tools for governed analytics execution.
 
 Metabase has community servers — [CognitionAI/metabase-mcp-server](https://github.com/CognitionAI/metabase-mcp-server) (44 stars, 81+ tools) is the most comprehensive — but no official one. Apache Superset now includes a [built-in MCP server](https://superset.apache.org/admin-docs/configuration/mcp-server/) in the core project, plus the community [aptro/superset-mcp](https://github.com/aptro/superset-mcp) (174 stars, 50+ tools). Tableau, Power BI, and Looker remain the major holdouts.
 

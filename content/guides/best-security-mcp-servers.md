@@ -6,6 +6,7 @@ og_description: "100+ security MCP servers reviewed across code scanning, secret
 content_type: "Comparison"
 card_description: "The definitive guide to security MCP servers in 2026. We've reviewed 100+ servers across code scanning, secret management, threat intelligence, network security, compliance, DFIR, and supply chain protection. Every recommendation links to a full review."
 last_refreshed: 2026-04-05
+sources_audited: 2026-07-23
 ---
 
 Security is where MCP servers have the highest stakes and the most vendor investment. Get it right and your AI agent catches vulnerabilities before they ship, enriches alerts with threat context, and manages secrets without copy-pasting tokens through chat. Get it wrong and you've given an LLM access to your pentest tools, your vault, or your SIEM with no guardrails.
@@ -33,7 +34,7 @@ Most MCP categories are about productivity — do things faster. Security MCP se
 2. **They create new attack surface.** An MCP server with access to your vault, your SIEM, or your network scanner is a high-value target. Tool poisoning, prompt injection, and excessive permissions are real threats — [66% of 1,808 scanned MCP servers had security findings](https://dev.to/ecap0/we-scanned-20-top-mcp-servers-for-vulnerabilities-the-results-will-shock-you-21c5).
 3. **They require authorization context.** Network scanning, pentesting, and threat hunting tools must only be used on systems you own or have explicit permission to test.
 
-The ecosystem is responding. In January–February 2026 alone, 30+ CVEs were filed against MCP servers. Snyk acquired Invariant Labs' mcp-scan. Cisco shipped a multi-engine MCP scanner. Docker launched a gateway for containerized MCP execution. The meta-security layer — tools that secure the MCP ecosystem itself — is now a category of its own.
+The ecosystem is responding. In January–February 2026 alone, [30+ CVEs were filed against MCP servers](https://robbyb910.substack.com/p/mcp-security-crisis-30-cves-in-60). Earlier groundwork had been laid: [Snyk acquired Invariant Labs](https://snyk.io/news/snyk-acquires-invariant-labs/) (makers of mcp-scan) in June 2025, and [Docker acquired MCP Defender](https://www.docker.com/blog/docker-acquires-mcp-defender-ai-agent-security/) in September 2025. Cisco shipped a multi-engine MCP scanner. The meta-security layer — tools that secure the MCP ecosystem itself — is now a category of its own.
 
 ## Code Scanning — Catching Vulnerabilities at Generation Time
 
@@ -194,7 +195,7 @@ This is the meta-security layer: tools that secure MCP servers themselves. The t
 
 ### The winner: Snyk Agent Scan
 
-[snyk/agent-scan](https://github.com/snyk/agent-scan) — 1,900 stars, Python, Apache-2.0. Auto-discovers MCP configs across Claude, Cursor, Windsurf, and Gemini CLI, scanning for 15+ threat types: tool poisoning, prompt injection, tool shadowing, rug pulls, malware payloads, hardcoded secrets.
+[snyk/agent-scan](https://github.com/snyk/agent-scan) — 1,900 stars, Python, Apache-2.0. Snyk [acquired Invariant Labs](https://snyk.io/news/snyk-acquires-invariant-labs/) (the original mcp-scan creators) in June 2025 and now develops agent-scan under the Snyk brand. Auto-discovers MCP configs across Claude, Cursor, Windsurf, and Gemini CLI, scanning for 15+ threat types: tool poisoning, prompt injection, tool shadowing, rug pulls, malware payloads, hardcoded secrets.
 
 ### Strong alternatives
 

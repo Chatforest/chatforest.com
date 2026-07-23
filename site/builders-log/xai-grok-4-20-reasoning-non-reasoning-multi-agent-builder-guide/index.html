@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grok 4.20 Builder Guide: Three Variants, a Hallucination Record, and When to Use Which — ChatForest</title>
-  <meta name="description" content="xAI&#39;s Grok 4.20 family ships three distinct API variants — reasoning, non-reasoning, and multi-agent. The multi-agent version uses four named debating agents, a 2M token context window, and holds the record for lowest hallucination rate of any tested model. Here is the builder breakdown.">
+  <meta name="description" content="xAI&#39;s Grok 4.20 family ships three distinct API variants — reasoning, non-reasoning, and multi-agent. The multi-agent version uses four debating agents, a 2M token context window, and holds the record for lowest hallucination rate of any tested model. Here is the builder breakdown.">
   <meta property="og:title" content="Grok 4.20 Builder Guide: Three Variants, a Hallucination Record, and When to Use Which — ChatForest">
   <meta property="og:description" content="Grok 4.20 offers three API variants: grok-4.20-0309-reasoning, grok-4.20-0309-non-reasoning, and grok-4.20-multi-agent-0309. The multi-agent variant hit 78% non-hallucination on the Omniscience benchmark — a record. Here&#39;s what that means for builders and how to choose between them.">
   <meta property="og:type" content="article">
@@ -98,24 +98,25 @@
 <tr>
 <td><code>grok-4.20-multi-agent-0309</code></td>
 <td>2M tokens</td>
-<td>$2.00/M</td>
-<td>$6.00/M</td>
+<td>$1.25/M</td>
+<td>$2.50/M</td>
 <td>Parallel agent debate</td>
 </tr>
 </tbody>
 </table>
+<p><em>Pricing per <a href="https://docs.x.ai/developers/models">xAI API docs</a>. Third-party providers (Azure, AIML API, others) add their own markup. Check your provider&rsquo;s pricing page for the rate you&rsquo;ll actually pay.</em></p>
 <p>The &ldquo;0309&rdquo; suffix means March 9, 2026 — a locked checkpoint. If xAI ships a new version, it gets a new date suffix. You can pin to this checkpoint and get consistent behavior indefinitely.</p>
 <hr>
 <h2 id="what-reasoning-means-here">What &ldquo;Reasoning&rdquo; Means Here</h2>
-<p>The reasoning variant inserts an extended chain-of-thought pass before generating the final response. You don&rsquo;t see the reasoning tokens, but you pay for them — they increase latency (time to first token averages around 10.85 seconds) and total token count.</p>
+<p>The reasoning variant inserts an extended chain-of-thought pass before generating the final response. You don&rsquo;t see the reasoning tokens, but you pay for them — they increase latency (time to first token is typically 10–14 seconds depending on provider and load) and total token count.</p>
 <p>The non-reasoning variant skips that pass and responds directly. Same model, same price per token, lower latency.</p>
 <p><strong>65% reduction in hallucinations</strong> is the key benchmark that reasoning adds over Grok 4.1 (<a href="https://the-decoder.com/grok-4-20-trails-gemini-and-gpt-5-4-by-a-wide-margin-but-sets-a-new-record-for-not-hallucinating/">The Decoder</a>). If your workload is simple, direct tasks where latency matters more than accuracy, use non-reasoning. If you&rsquo;re doing multi-step problem solving, code debugging, or high-stakes inference where a wrong answer is costly, use reasoning.</p>
 <hr>
 <h2 id="the-multi-agent-variant-four-agents-debate-your-answer">The Multi-Agent Variant: Four Agents Debate Your Answer</h2>
-<p>The multi-agent variant is architecturally different. It doesn&rsquo;t run one model and return a response. It runs four specialized agents — internally named Grok, Harper, Benjamin, and Lucas — in parallel. Each focuses on a different aspect of the problem (web search, data analysis, synthesis, peer review). They coordinate tool calls, share context, and debate their outputs before the system synthesizes a final answer.</p>
+<p>The multi-agent variant is architecturally different. It doesn&rsquo;t run one model and return a response. It runs four specialized agents — community-documented as Grok (coordinator/synthesis), Harper (research), Benjamin (logic/math), and Lucas (contrarian) — in parallel. Each focuses on a different aspect of the problem. They coordinate tool calls, share context, and debate their outputs before the system synthesizes a final answer. (xAI has not published official documentation naming these agents; the names are widely reported across community sources.)</p>
 <p>At high or extra-high reasoning effort settings, the system scales up to 16 agents.</p>
 <p><strong>Why this matters:</strong> The debate step is what drives the hallucination number. On the <a href="https://artificialanalysis.ai/evaluations/omniscience">Artificial Analysis Omniscience benchmark</a>, which tests factual accuracy across a broad domain set, <code>grok-4.20-multi-agent-0309</code> achieved a <strong>78% non-hallucination rate</strong> — the highest of any model tested on that benchmark at the time of measurement (<a href="https://artificialanalysis.ai/models/grok-4-20-0309">Artificial Analysis Grok 4.20 profile</a>). For comparison, the reasoning-only variant achieved 65% better than Grok 4.1 but not at the 78% level.</p>
-<p>The tradeoff: 2x the input price, 2.4x the output price, and significantly more latency than the single-model variants.</p>
+<p>The tradeoff: the per-token billing rate is the same as the single-model variants at the xAI API level ($1.25/M input, $2.50/M output). However, the internal debate process generates approximately 1.5–2.5× more output tokens per conversation than a single-model call would — so effective cost per response is meaningfully higher despite identical rates. Latency is also significantly higher.</p>
 <p>Built-in capabilities for the multi-agent variant include:</p>
 <ul>
 <li>Web search</li>
@@ -139,7 +140,7 @@
 <tr>
 <td>Artificial Analysis Intelligence Index v4</td>
 <td>48</td>
-<td>8th overall at launch</td>
+<td>8th overall at launch (original grok-4.20-0309 checkpoint)</td>
 </tr>
 <tr>
 <td>Omniscience (non-hallucination rate)</td>
@@ -148,18 +149,18 @@
 </tr>
 <tr>
 <td>IFBench (instruction following)</td>
-<td>83%</td>
-<td>1st place</td>
+<td>~83%</td>
+<td>1st at launch; subsequently eclipsed by Grok 4.3</td>
 </tr>
 <tr>
 <td>τ²-Bench Telecom (agentic tool use)</td>
 <td>97%</td>
-<td>2nd place</td>
+<td>2nd place at launch</td>
 </tr>
 <tr>
 <td>Output speed</td>
-<td>197.4 tokens/second</td>
-<td>Above average for reasoning-class models</td>
+<td>150–230 tokens/second</td>
+<td>Varies by provider and load</td>
 </tr>
 </tbody>
 </table>
@@ -339,7 +340,7 @@ response <span style="color:#f92672">=</span> client<span style="color:#f92672">
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-20T00:00:00+09:00","datePublished":"2026-03-20T00:00:00+09:00","description":"xAI's Grok 4.20 family ships three distinct API variants — reasoning, non-reasoning, and multi-agent. The multi-agent version uses four named debating agents, a 2M token context window, and holds the record for lowest hallucination rate of any tested model. Here is the builder breakdown.","headline":"Grok 4.20 Builder Guide: Three Variants, a Hallucination Record, and When to Use Which","mainEntityOfPage":"https://chatforest.com/builders-log/xai-grok-4-20-reasoning-non-reasoning-multi-agent-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/xai-grok-4-20-reasoning-non-reasoning-multi-agent-builder-guide/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-03-20T00:00:00+09:00","datePublished":"2026-03-20T00:00:00+09:00","description":"xAI's Grok 4.20 family ships three distinct API variants — reasoning, non-reasoning, and multi-agent. The multi-agent version uses four debating agents, a 2M token context window, and holds the record for lowest hallucination rate of any tested model. Here is the builder breakdown.","headline":"Grok 4.20 Builder Guide: Three Variants, a Hallucination Record, and When to Use Which","mainEntityOfPage":"https://chatforest.com/builders-log/xai-grok-4-20-reasoning-non-reasoning-multi-agent-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/xai-grok-4-20-reasoning-non-reasoning-multi-agent-builder-guide/"}
 </script>
 
 

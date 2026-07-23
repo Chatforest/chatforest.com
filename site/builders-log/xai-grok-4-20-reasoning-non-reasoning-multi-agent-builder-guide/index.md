@@ -1,6 +1,6 @@
 # Grok 4.20 Builder Guide: Three Variants, a Hallucination Record, and When to Use Which
 
-> xAI's Grok 4.20 family ships three distinct API variants — reasoning, non-reasoning, and multi-agent. The multi-agent version uses four named debating agents, a 2M token context window, and holds the record for lowest hallucination rate of any tested model. Here is the builder breakdown.
+> xAI's Grok 4.20 family ships three distinct API variants — reasoning, non-reasoning, and multi-agent. The multi-agent version uses four debating agents, a 2M token context window, and holds the record for lowest hallucination rate of any tested model. Here is the builder breakdown.
 
 
 xAI released Grok 4.20 as a public beta on February 17, 2026, and it hit general availability on March 18, 2026 ([xAI release notes](https://docs.x.ai/developers/release-notes)). It ships three distinct API variants — reasoning, non-reasoning, and a multi-agent mode that runs four specialized agents in parallel and has them debate the answer before you see it ([xAI model docs](https://docs.x.ai/developers/models)).
@@ -15,7 +15,9 @@ The version name is deliberate. Elon Musk made it explicit: 4.20 is a cultural r
 |---|---|---|---|---|
 | `grok-4.20-0309-reasoning` | 1M tokens | $1.25/M | $2.50/M | Extended chain-of-thought |
 | `grok-4.20-0309-non-reasoning` | 1M tokens | $1.25/M | $2.50/M | Direct output |
-| `grok-4.20-multi-agent-0309` | 2M tokens | $2.00/M | $6.00/M | Parallel agent debate |
+| `grok-4.20-multi-agent-0309` | 2M tokens | $1.25/M | $2.50/M | Parallel agent debate |
+
+*Pricing per [xAI API docs](https://docs.x.ai/developers/models). Third-party providers (Azure, AIML API, others) add their own markup. Check your provider's pricing page for the rate you'll actually pay.*
 
 The "0309" suffix means March 9, 2026 — a locked checkpoint. If xAI ships a new version, it gets a new date suffix. You can pin to this checkpoint and get consistent behavior indefinitely.
 
@@ -23,7 +25,7 @@ The "0309" suffix means March 9, 2026 — a locked checkpoint. If xAI ships a ne
 
 ## What "Reasoning" Means Here
 
-The reasoning variant inserts an extended chain-of-thought pass before generating the final response. You don't see the reasoning tokens, but you pay for them — they increase latency (time to first token averages around 10.85 seconds) and total token count.
+The reasoning variant inserts an extended chain-of-thought pass before generating the final response. You don't see the reasoning tokens, but you pay for them — they increase latency (time to first token is typically 10–14 seconds depending on provider and load) and total token count.
 
 The non-reasoning variant skips that pass and responds directly. Same model, same price per token, lower latency.
 
@@ -33,13 +35,13 @@ The non-reasoning variant skips that pass and responds directly. Same model, sam
 
 ## The Multi-Agent Variant: Four Agents Debate Your Answer
 
-The multi-agent variant is architecturally different. It doesn't run one model and return a response. It runs four specialized agents — internally named Grok, Harper, Benjamin, and Lucas — in parallel. Each focuses on a different aspect of the problem (web search, data analysis, synthesis, peer review). They coordinate tool calls, share context, and debate their outputs before the system synthesizes a final answer.
+The multi-agent variant is architecturally different. It doesn't run one model and return a response. It runs four specialized agents — community-documented as Grok (coordinator/synthesis), Harper (research), Benjamin (logic/math), and Lucas (contrarian) — in parallel. Each focuses on a different aspect of the problem. They coordinate tool calls, share context, and debate their outputs before the system synthesizes a final answer. (xAI has not published official documentation naming these agents; the names are widely reported across community sources.)
 
 At high or extra-high reasoning effort settings, the system scales up to 16 agents.
 
 **Why this matters:** The debate step is what drives the hallucination number. On the [Artificial Analysis Omniscience benchmark](https://artificialanalysis.ai/evaluations/omniscience), which tests factual accuracy across a broad domain set, `grok-4.20-multi-agent-0309` achieved a **78% non-hallucination rate** — the highest of any model tested on that benchmark at the time of measurement ([Artificial Analysis Grok 4.20 profile](https://artificialanalysis.ai/models/grok-4-20-0309)). For comparison, the reasoning-only variant achieved 65% better than Grok 4.1 but not at the 78% level.
 
-The tradeoff: 2x the input price, 2.4x the output price, and significantly more latency than the single-model variants.
+The tradeoff: the per-token billing rate is the same as the single-model variants at the xAI API level ($1.25/M input, $2.50/M output). However, the internal debate process generates approximately 1.5–2.5× more output tokens per conversation than a single-model call would — so effective cost per response is meaningfully higher despite identical rates. Latency is also significantly higher.
 
 Built-in capabilities for the multi-agent variant include:
 - Web search
@@ -55,11 +57,11 @@ Built-in capabilities for the multi-agent variant include:
 
 | Benchmark | Result | Notes |
 |---|---|---|
-| Artificial Analysis Intelligence Index v4 | 48 | 8th overall at launch |
+| Artificial Analysis Intelligence Index v4 | 48 | 8th overall at launch (original grok-4.20-0309 checkpoint) |
 | Omniscience (non-hallucination rate) | 78% | Record at time of measurement (multi-agent) |
-| IFBench (instruction following) | 83% | 1st place |
-| τ²-Bench Telecom (agentic tool use) | 97% | 2nd place |
-| Output speed | 197.4 tokens/second | Above average for reasoning-class models |
+| IFBench (instruction following) | ~83% | 1st at launch; subsequently eclipsed by Grok 4.3 |
+| τ²-Bench Telecom (agentic tool use) | 97% | 2nd place at launch |
+| Output speed | 150–230 tokens/second | Varies by provider and load |
 
 The 78% Omniscience result is what separates Grok 4.20 from everything else in the xAI lineup and from most external models ([abit.ee benchmark breakdown](https://abit.ee/en/artificial-intelligence/grok-420-xai-beta-release-ifbench-artificial-analysis-ai-honesty-language-model-2026-en)). If factual reliability is your primary constraint, the multi-agent variant is the one to evaluate.
 

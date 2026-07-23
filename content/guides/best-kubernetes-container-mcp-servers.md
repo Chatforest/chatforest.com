@@ -6,6 +6,7 @@ og_description: "30+ Kubernetes & container MCP servers compared: native API vs 
 content_type: "Comparison"
 card_description: "containers/kubernetes-mcp-server (1,470 stars, native Go API) vs Flux159 (1,379 stars, TypeScript, CVE-2026-39884 fixed) vs kubectl-mcp-server (872 stars, 270+ tools) — plus kagent CNCF Sandbox, Docker MCP Defender, Podman, and Helm."
 last_refreshed: 2026-04-23
+sources_audited: 2026-07-23
 ---
 
 Kubernetes MCP servers let AI assistants manage clusters, debug pods, deploy workloads, and read logs — all through natural language. The ecosystem has matured fast: there are now 70+ Kubernetes-related MCP servers on registries like PulseMCP, and the CNCF is paying attention — kagent entered CNCF Sandbox, kubernetes-sigs shipped an MCP lifecycle operator, and KubeCon EU 2026 hosted a dedicated "Agentics Day: MCP + Agents" co-located event.
@@ -180,7 +181,7 @@ An official Kubernetes SIG project that provides a declarative API to deploy, ma
 
 ### Lens MCP Server — Commercial
 
-Lens, the Kubernetes IDE with 1M+ users, launched a built-in MCP server in March 2026. Works with Claude Code, ChatGPT, Cursor, and GitHub Copilot. Leverages Lens's Cloud Integrations (AWS, Azure, GCP) so there's no manual kubeconfig generation. Not open-source — requires Lens Desktop.
+[Lens](https://k8slens.dev/), the widely used Kubernetes IDE, launched a built-in MCP server in March 2026. Works with Claude Code, ChatGPT, Cursor, and GitHub Copilot. Leverages Lens's Cloud Integrations (AWS, Azure, GCP) so there's no manual kubeconfig generation. Not open-source — requires Lens Desktop.
 
 **Best for:** Teams already using Lens who want AI Kubernetes management without additional MCP server setup.
 
@@ -290,7 +291,7 @@ Docker's official MCP Gateway orchestrates multiple MCP servers, each running in
 
 ### docker/mcp-registry — Official MCP Registry
 
-**Stars:** 475 | A separate registry for MCP server discovery. The Docker MCP Catalog now lists 270-300+ servers (up from 200+), including 60+ remote servers, with 1M+ pulls. Open submission process for developers.
+**Stars:** 475 | A separate registry for MCP server discovery. The [Docker MCP Catalog](https://hub.docker.com/catalogs/mcp) now lists 270-300+ servers (up from 200+), including 60+ remote servers. Open submission process for developers.
 
 ### docker/hub-mcp — Docker Hub Integration
 

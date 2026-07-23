@@ -20,7 +20,7 @@ We've researched 30+ design MCP servers across the full landscape. This guide sy
 | UI component generation | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) | 5,700+ | [magicuidesign/mcp](https://github.com/magicuidesign/mcp) (Magic UI library) |
 | Design systems | [shadcn/ui MCP](https://shadcnstudio.com/mcp) | — | [Flowbite MCP](https://flowbite.com/) (Tailwind components) |
 | Diagramming | [Lucid Software MCP](https://lucid.co/) | — | — (first mover) |
-| CAD / 3D modeling | [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | 17,800+ | [jingcheng-chen/rhinomcp](https://github.com/jingcheng-chen/rhinomcp) (274 stars) |
+| CAD / 3D modeling | [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | 21,100+ | [jingcheng-chen/rhinomcp](https://github.com/jingcheng-chen/rhinomcp) (274 stars) |
 
 ## Why design MCP servers matter
 
@@ -97,7 +97,7 @@ These servers go beyond reading designs — they create and modify Figma element
 
 **Stars:** 6,300+ | **Language:** TypeScript | **License:** — | **Tools:** 20+
 
-[TalkToFigma](https://github.com/grab/cursor-talk-to-figma-mcp) started as a side project by a [Grab](https://www.grab.com/) engineer, built for his team. It went viral, earned 5,000+ stars, and Grab adopted it as an official open-source project.
+[TalkToFigma](https://github.com/grab/cursor-talk-to-figma-mcp) started as a side project by a [Grab](https://www.grab.com/) engineer, built for his team. It gained rapid community adoption and Grab adopted it as an [official open-source project](https://github.com/grab/cursor-talk-to-figma-mcp).
 
 **Why it wins:** Full bidirectional Figma control. Read designs, create shapes, modify text, adjust colors, manage components — all through natural language. Uses a WebSocket bridge between the MCP server and a Figma plugin, so it operates within Figma's plugin sandbox with proper permissions.
 

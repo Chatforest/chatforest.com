@@ -6,6 +6,7 @@ og_description: "35+ file & storage MCP servers compared: local filesystem, Goog
 content_type: "Comparison"
 card_description: "Official Filesystem (84K stars monorepo) vs Google Workspace (2,200 stars) vs Box (100 stars, official) vs MinIO (39 stars, official) — plus official Google Drive, Microsoft Work IQ, Dropbox remote, S3, and multi-cloud adapters."
 last_refreshed: 2026-04-23
+sources_audited: 2026-07-23
 ---
 
 File and storage MCP servers let AI assistants read, write, search, and manage files — whether on your local machine, in cloud storage, or across enterprise platforms. This is one of the most fundamental MCP categories: almost every AI workflow touches files somewhere.
@@ -60,9 +61,9 @@ The reference implementation from Anthropic, included in the [modelcontextprotoc
 - **Dynamic access control** — supports the MCP Roots protocol for runtime directory access changes without restarting
 - **Battle-tested** — used by Claude Desktop, VS Code, and most MCP clients out of the box
 
-**⚠️ Security alert (patched):** In mid-2025, Cymulate Research Labs disclosed two critical sandbox escape vulnerabilities:
-- **CVE-2025-53110** (directory containment bypass) — the server used naive `path.startsWith()` validation, allowing access via directories with similar name prefixes (e.g., `/tmp/allowed_dir_evil` bypasses `/tmp/allowed_dir`)
-- **CVE-2025-53109** (symlink bypass to code execution) — crafted symlinks bypass the access enforcement mechanism entirely, granting full read/write to the entire filesystem
+**⚠️ Security alert (patched):** In mid-2025, [Cymulate Research Labs disclosed two critical sandbox escape vulnerabilities](https://cymulate.com/blog/cve-2025-53109-53110-escaperoute-anthropic/):
+- **CVE-2025-53110** (CVSS 7.3, directory containment bypass) — the server used naive `path.startsWith()` validation, allowing access via directories with similar name prefixes (e.g., `/tmp/allowed_dir_evil` bypasses `/tmp/allowed_dir`)
+- **CVE-2025-53109** (CVSS 8.4, symlink bypass to code execution) — crafted symlinks bypass the access enforcement mechanism entirely, granting full read/write to the entire filesystem
 Both were patched in version 2025.7.1. **If you're running an older version, update immediately.** These CVEs demonstrate that even the reference implementation from the protocol's creators can have fundamental security flaws.
 
 **Limitations:**
@@ -494,7 +495,7 @@ In a single month (March–April 2026), Google, Microsoft, and Dropbox all shipp
 
 ### 2. File MCP security is proven broken
 
-Anthropic's own filesystem server — the reference implementation used by most MCP setups — had critical sandbox escape vulnerabilities (CVE-2025-53109, CVE-2025-53110). A naive `startsWith()` path check and missing symlink validation let attackers escape the directory sandbox entirely. Across the broader ecosystem, 82% of file-operation MCP servers are vulnerable to path traversal. This isn't theoretical — these are the specific patterns that file storage servers exhibit. Run the latest versions, use containers, and verify your path validation.
+Anthropic's own filesystem server — the reference implementation used by most MCP setups — had critical sandbox escape vulnerabilities (CVE-2025-53109, CVE-2025-53110). A naive `startsWith()` path check and missing symlink validation let attackers escape the directory sandbox entirely. Across the broader ecosystem, [82% of file-operation MCP server implementations are vulnerable to path traversal](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) (per Endor Labs' analysis of 2,614 MCP implementations). This isn't theoretical — these are the specific patterns that file storage servers exhibit. Run the latest versions, use containers, and verify your path validation.
 
 ### 3. Managed remote is becoming the default
 
@@ -508,6 +509,6 @@ Google, Microsoft, and Dropbox all chose managed remote hosting for their offici
 - **No iCloud MCP server** — Apple's ecosystem is completely absent from the MCP world. No official or community implementation exists
 - **No Backblaze B2 MCP server** — popular S3-compatible storage with no dedicated MCP support (OpenDAL covers it generically)
 - **No file sync/conflict resolution** — no MCP server handles bidirectional file sync between local and cloud storage
-- **File MCP security is fundamentally weak** — 82% of file-operation MCP servers vulnerable to path traversal, reference implementation had sandbox escape CVEs, no standard approach to path validation across the ecosystem
+- **File MCP security is fundamentally weak** — [82% of file-operation MCP server implementations vulnerable to path traversal](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) (Endor Labs), reference implementation had sandbox escape CVEs, no standard approach to path validation across the ecosystem
 - **5MB file limits on official servers** — Microsoft Work IQ limits all file operations to ≤5MB. Community servers handle larger files but lack official backing
 - **No file preview/transformation** — no server generates thumbnails, converts formats, or previews documents. AI agents get raw content or nothing

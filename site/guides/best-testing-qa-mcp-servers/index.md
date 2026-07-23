@@ -40,7 +40,7 @@ Browser automation is the most mature testing MCP category by far. Playwright MC
 
 Key features: the `@playwright/cli` companion reduces token usage by ~4x (~27K tokens per task vs ~114K via MCP). Network request mocking and routing. On-demand video recording with chapter markers. **143+ device presets** with automatic user-agent and touch emulation. Storage/auth state save and restore. Chrome extension ("Playwright MCP Bridge") for browser integration. Supported by 15+ MCP clients including GitHub Copilot Coding Agent (auto-configured). Microsoft maintains it alongside Playwright itself. Latest: **v0.0.70** (April 1, 2026).
 
-> **Security:** CVE-2025-9611 (DNS rebinding) was silently patched in v0.0.40 — attackers could access all server tools via DNS rebinding. Make sure you're running v0.0.40+. Also watch for the unofficial npm package `playwright-mcp` (no `@playwright/` scope) which gets ~2,000 weekly downloads and is a confusion/typosquat risk — always use `@playwright/mcp`.
+> **Security:** [CVE-2025-9611](https://www.cve.org/CVERecord?id=CVE-2025-9611) (DNS rebinding) was silently patched in v0.0.40 — attackers could access all server tools via DNS rebinding. Make sure you're running v0.0.40+. Also watch for the unofficial npm package `playwright-mcp` (no `@playwright/` scope) which gets ~2,000 weekly downloads and is a confusion/typosquat risk — always use `@playwright/mcp`.
 
 ### Strong alternatives
 
