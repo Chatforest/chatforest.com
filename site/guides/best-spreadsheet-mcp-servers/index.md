@@ -135,7 +135,7 @@ A smaller server that provides macOS real-time editing via AppleScript integrati
 
 **Launched:** March 13, 2026 | **Type:** Hosted (Arcade platform) | [arcade.dev](https://www.arcade.dev/blog/microsoft-office-365-mcp-servers-launch)
 
-Five integrated MCP servers for Word, Excel, PowerPoint, OneDrive, and SharePoint — built through a Microsoft-Arcade partnership. This partially closes the gap of "no official Microsoft Excel MCP server."
+Five integrated MCP servers for Word, Excel, PowerPoint, OneDrive, and SharePoint — built through a [Microsoft-Arcade partnership](https://www.arcade.dev/blog/microsoft-office-365-mcp-servers-launch/). This partially closes the gap of "no official Microsoft Excel MCP server."
 
 **What makes it stand out:**
 - **Microsoft Graph API integration** — connects to Excel Online / Microsoft 365, not local files

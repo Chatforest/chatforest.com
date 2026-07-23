@@ -5,7 +5,7 @@
 
 Your agent needs to read the web. The question is how much infrastructure you want between it and the HTML.
 
-The MCP ecosystem now has over a dozen servers for web access, ranging from a single `fetch` tool that returns markdown to full cloud browser platforms with CAPTCHA solving and proxy infrastructure. A recent security audit of 8,000+ MCP servers found **36.7% had SSRF vulnerabilities** — so choosing the right web access server isn't just about features, it's about security. We've researched and reviewed nine major options. Here's how they compare.
+The MCP ecosystem now has over a dozen servers for web access, ranging from a single `fetch` tool that returns markdown to full cloud browser platforms with CAPTCHA solving and proxy infrastructure. A recent [security audit of 7,000+ MCP servers](https://www.practical-devsecops.com/mcp-security-statistics-2026-report/) found **36.7% had SSRF vulnerabilities** — so choosing the right web access server isn't just about features, it's about security. We've researched and reviewed nine major options. Here's how they compare.
 
 ## The Contenders
 
@@ -114,8 +114,8 @@ The standout features are `firecrawl_agent` (autonomous multi-source research) a
 - Credit-based pricing requires monitoring usage
 
 **Pricing:**
-- Free: 500 credits (one-time, non-renewable)
-- Hobby: $16/mo (3K credits)
+- Free: 1,000 credits/month (renewable)
+- Hobby: $16/mo (5,000 credits)
 - Standard: $83/mo (100K credits)
 - Growth: $333/mo (500K credits)
 - Scale: $599/mo (1M credits)
@@ -132,7 +132,7 @@ Crawl4AI is the most-starred project in this entire space by a wide margin. It's
 
 The MCP server runs through Docker, connecting via SSE or WebSocket. There are also community wrappers (e.g., `coleam00/mcp-crawl4ai-rag` for RAG pipelines), but the built-in MCP server is now the canonical option.
 
-**⚠️ Security note (March 2026):** v0.8.6 was an emergency release replacing `litellm` with `unclecode-litellm` after the **LiteLLM PyPI supply chain attack**. Threat actors "TeamPCP" compromised litellm versions 1.82.7–1.82.8 with credential-harvesting malware. The compromised packages were live for ~5 hours but affected LiteLLM's 95M monthly downloads. If you're running Crawl4AI v0.8.5 or earlier, upgrade immediately.
+**⚠️ Security note (March 2026):** v0.8.6 was an emergency release replacing `litellm` with `unclecode-litellm` after the **LiteLLM PyPI supply chain attack**. Threat actors "[TeamPCP](https://cycode.com/blog/lite-llm-supply-chain-attack/)" compromised litellm versions 1.82.7–1.82.8 with credential-harvesting malware. The [compromised packages were live for approximately 2-3 hours](https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/) before PyPI quarantined them. If you're running Crawl4AI v0.8.5 or earlier, upgrade immediately.
 
 **Strengths:**
 - Completely free and open source — no credit limits
@@ -160,7 +160,7 @@ The MCP server runs through Docker, connecting via SSE or WebSocket. There are a
 
 Browserbase provides cloud browser instances with built-in stealth mode and CAPTCHA solving. Their MCP server hit **v3.0.0** (March 31, 2026), powered by the **Stagehand v3** AI framework for natural-language browser interaction — 8 tools including `act` (natural language actions), `extract` (content extraction), `observe` (element discovery), and session management.
 
-Stagehand v3 (January 2026) is a major upgrade: **44% faster** on average, dropped the Playwright dependency in favor of a modular driver system (Puppeteer/CDP), and added automatic caching of discovered elements (up to 2x faster, ~30% cost reduction on repeat workflows). Multi-language support expanded to Python, Go, Ruby, Java, and Rust.
+[Stagehand v3](https://www.browserbase.com/blog/stagehand-v3) (October 2025) is a major upgrade: **44% faster** on average, dropped the Playwright dependency in favor of a modular driver system (Puppeteer/CDP), and added automatic caching of discovered elements (up to 2x faster, ~30% cost reduction on repeat workflows). Multi-language support expanded to Python, Go, Ruby, Java, and Rust.
 
 This is the only option in this comparison that can reliably scrape sites with aggressive bot detection (Cloudflare challenges, reCAPTCHA, rate limiting). If the page you need is behind anti-bot protection, Browserbase may be your only option short of manual browsing. A hosted MCP endpoint at `mcp.browserbase.com` includes LLM costs for Gemini, reducing setup friction.
 
@@ -278,7 +278,7 @@ The MCP server at `mcp.apify.com` supports OAuth, and you can configure which Ac
 | Autonomous agent | No | No | No | Yes | No | No | No | No | No |
 | Academic search | No | No | No | No | No | No | Yes | No | No |
 | Self-hosted | Yes | Yes | Yes | Yes | Yes | No | Yes | No | No |
-| Free | Yes | Yes | Yes | 500 credits | Yes | 1 hr/mo | Rate-limited | 5K req/mo | Free tier |
+| Free | Yes | Yes | Yes | 1,000 credits/mo | Yes | 1 hr/mo | Rate-limited | 5K req/mo | Free tier |
 
 ## Our Recommendations
 

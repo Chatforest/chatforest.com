@@ -6,6 +6,7 @@ og_description: "45+ audio and video MCP servers reviewed across text-to-speech,
 content_type: "Comparison"
 card_description: "The definitive guide to audio and video MCP servers in 2026. We've reviewed 45+ servers across text-to-speech (ElevenLabs, MiniMax, Kokoro, multi-provider), transcription (Whisper, Deepgram CLI, local STT, YouTube), FFmpeg video processing, professional NLEs (DaVinci Resolve, Premiere Pro, After Effects), music production (Ableton, REAPER, Logic Pro, SuperCollider), music licensing (Epidemic Sound), and streaming platforms (Mux). Every recommendation links to a full review."
 last_refreshed: 2026-04-23
+sources_audited: 2026-07-23
 ---
 
 Audio and video is where MCP servers get creative. Instead of querying databases or managing infrastructure, these servers generate speech, transcribe meetings, edit video timelines, produce music, and control professional creative applications — all through natural language.

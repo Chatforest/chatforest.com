@@ -7,7 +7,7 @@ Vector databases are the infrastructure behind RAG, semantic search, and AI memo
 
 Some give you full collection management. Others give you two tools and call it done. Some only work with their own cloud service. Others run locally with zero infrastructure. The right choice depends on what you're actually trying to do — and whether the MCP server can keep up with the database behind it.
 
-**⚠️ Security note (April 2026):** This category has active security concerns. Chroma's MCP server has an unpatched SQL injection vulnerability affecting 8 of its tools. The underlying Milvus database has CVE-2026-26190 (CVSS 9.8), an unauthenticated REST API exploit. An [ecosystem-wide audit](https://arxiv.org/abs/2504.03767) of 8,000+ MCP servers found 36.7% had SSRF vulnerabilities. See individual server sections for details.
+**⚠️ Security note (April 2026):** This category has active security concerns. Chroma's MCP server has an unpatched SQL injection vulnerability affecting 8 of its tools. The underlying Milvus database has CVE-2026-26190 (CVSS 9.8), an unauthenticated REST API exploit. A [BlueRock Security scan](https://www.bluerock.io/post/mcp-furi-microsoft-markitdown-vulnerabilities) of 7,000+ MCP servers found 36.7% had SSRF vulnerabilities. See individual server sections for details.
 
 We've [reviewed Chroma](/reviews/chroma-mcp-server/) (3.5/5), [Milvus](/reviews/milvus-mcp-server/) (3.5/5), [Qdrant](/reviews/qdrant-mcp-server/) (3/5), and [Pinecone](/reviews/pinecone-mcp-server/) (3/5) in depth. Here's how every vector database MCP server compares.
 
@@ -15,7 +15,7 @@ We've [reviewed Chroma](/reviews/chroma-mcp-server/) (3.5/5), [Milvus](/reviews/
 
 | Server | Stars | Tools | Transport | Best For |
 |--------|-------|-------|-----------|----------|
-| [Chroma MCP](/reviews/chroma-mcp-server/) | 529 | 12 | stdio | Full vector DB management ⚠️ |
+| [Chroma MCP](/reviews/chroma-mcp-server/) | 529 | 13 | stdio | Full vector DB management ⚠️ |
 | [Qdrant MCP](/reviews/qdrant-mcp-server/) | 1,321 | 2 | stdio, SSE, Streamable HTTP | Semantic memory layer |
 | [Pinecone MCP](/reviews/pinecone-mcp-server/) | 62 | 9 | stdio | Cloud vector search with reranking |
 | [Milvus MCP](/reviews/milvus-mcp-server/) (Zilliz) | 224 | 14 | stdio, SSE | Self-hosted vector operations |
@@ -42,7 +42,7 @@ Which philosophy you want depends on your use case. Building a RAG pipeline that
 
 **[Read our full review](/reviews/chroma-mcp-server/)**
 
-[Chroma's official MCP server](https://github.com/chroma-core/chroma-mcp) has 12 tools — tied with Milvus for the most in the category. Seven handle collection management (create, list, peek, get info, count, modify, delete), five handle document operations (add, query, get, update, delete). It's the only server that lets your agent configure HNSW index parameters at collection creation time.
+[Chroma's official MCP server](https://github.com/chroma-core/chroma-mcp) has 13 tools. Seven handle collection management (create, list, peek, get info, count, modify, delete), and the remaining tools cover document operations (add, query, get, update, delete). It's the only server that lets your agent configure HNSW index parameters at collection creation time.
 
 **What sets it apart:**
 - Four deployment modes: ephemeral (in-memory), persistent (local files), self-hosted HTTP, and Chroma Cloud
@@ -103,7 +103,7 @@ Which philosophy you want depends on your use case. Building a RAG pipeline that
 - Works identically with self-hosted Milvus and Zilliz Cloud
 - Stdio and SSE transport
 
-**⚠️ Security warning (April 2026):** The underlying Milvus database has two critical vulnerabilities. [CVE-2026-26190](https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6) (CVSS 9.8) allows unauthenticated access to the REST API on metrics port 9091, enabling data exfiltration, credential theft, and potential RCE. [CVE-2025-64513](https://github.com/milvus-io/milvus/security/advisories/GHSA-mhjq-8c7m-3f7p) is an authentication bypass via forged HTTP headers. Both are patched in Milvus 2.5.27+ and 2.6.10+. **Ensure your Milvus instance is updated before connecting an MCP server to it.**
+**⚠️ Security warning (April 2026):** The underlying Milvus database has two critical vulnerabilities. [CVE-2026-26190](https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6) (CVSS 9.8) allows unauthenticated access to the REST API on metrics port 9091, enabling data exfiltration, credential theft, and potential RCE. [CVE-2025-64513](https://github.com/milvus-io/milvus/security/advisories/GHSA-mhjq-8c7m-3f7p) is an authentication bypass via forged HTTP headers. [CVE-2026-26190](https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6) is patched in Milvus 2.5.27+ and 2.6.10+. [CVE-2025-64513](https://github.com/advisories/GHSA-mhjq-8c7m-3f7p) is patched in Milvus 2.4.24+, 2.5.21+, and 2.6.5+. **Ensure your Milvus instance is updated before connecting an MCP server to it.**
 
 **The catch:** No embedded/local mode — requires a running Milvus instance (Docker or Zilliz Cloud). No document update (must delete and re-insert). Pre-release maturity (no versioned releases, only dev builds on PyPI, last commit December 2025). The service hang bug ([#51](https://github.com/zilliztech/mcp-server-milvus/issues/51)) has a workaround merged (try-except blocks in PR #54) but the issue remains technically open. No Streamable HTTP transport. Python-only.
 
@@ -155,7 +155,7 @@ This signals a broader trend: vector databases are beginning to embed MCP suppor
 
 | Feature | Chroma | Qdrant | Pinecone | Milvus | MongoDB | Weaviate | LanceDB |
 |---------|--------|--------|----------|--------|---------|----------|---------|
-| **Tools** | 12 | 2 | 9 | 14 | 39 | 2 | 3 |
+| **Tools** | 13 | 2 | 9 | 14 | 39 | 2 | 3 |
 | **Collection CRUD** | Full | None | Read-only | Full | Full | Insert only | Read-only |
 | **Document insert** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | **Document delete** | Yes | No | No | Yes | Yes | No | No |

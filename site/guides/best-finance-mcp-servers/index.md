@@ -7,7 +7,7 @@ Finance MCP servers are where AI agents meet real money. These servers let AI as
 
 We've researched 40+ finance and payment MCP servers across the entire fintech landscape. This guide synthesizes all of that into one page: what's worth using, what's not, and where the gaps are.
 
-> **⚠ April 2026 update:** The x402 protocol has been contributed to the Linux Foundation as the [x402 Foundation](https://www.linuxfoundation.org/), with founding members including Stripe, Visa, Mastercard, AWS, Google, Microsoft, and Coinbase. Visa launched its Agent Payments Program in Europe with 21 bank partners. Mercury Bank launched an official MCP server. The gap between "experimental" and "production" agentic payments is closing fast.
+> **⚠ April 2026 update:** The x402 protocol has been contributed to the Linux Foundation as the [x402 Foundation](https://www.linuxfoundation.org/), with founding members including Stripe, Visa, Mastercard, AWS, Google, Microsoft, and Coinbase. [Visa's Agentic Ready programme](https://www.visa.co.uk/about-visa/newsroom/press-releases.3437886.html) launched in Europe with 21 bank partners. Mercury Bank launched an official MCP server. The gap between "experimental" and "production" agentic payments is closing fast.
 
 *Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in April 2026.*
 
@@ -250,7 +250,7 @@ Insurance is a new addition to the finance MCP landscape. Two vendors launched M
 
 ## Four trends to watch
 
-**1. Agentic payments are production-ready.** The x402 Foundation (Linux Foundation, April 2026) has Visa, Mastercard, Stripe, AWS, Google, and Microsoft as founding members. Visa's Agent Payments Program is live in Europe with 21 bank partners — Banco Santander completed an end-to-end test where an AI agent bought a book using a tokenized Visa credential with no manual consumer input. Mastercard's Agent Suite has completed live agentic payment transactions across Latin America. This is no longer experimental.
+**1. Agentic payments are production-ready.** The x402 Foundation (Linux Foundation, April 2026) has Visa, Mastercard, Stripe, AWS, Google, and Microsoft as founding members. Visa's Agentic Ready programme launched in Europe — Banco Santander [demonstrated an end-to-end test](https://www.visa.co.uk/about-visa/newsroom/press-releases.3437886.html) where an AI agent bought a book using a Visa card with Payment Passkeys authentication and no manual consumer input. Mastercard's Agent Suite has completed live agentic payment transactions across Latin America. This is no longer experimental.
 
 **2. Banks are joining the MCP ecosystem.** Mercury, Griffin (UK), Slash, and Grasshopper (via Narmi) all launched official MCP servers. Plaid released its Dashboard MCP for developer diagnostics. GoCardless launched MCP for direct debit. Banking went from "the least mature category" to one showing rapid institutional adoption.
 

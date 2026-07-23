@@ -68,7 +68,7 @@
       <div class="article-body">
         <p>Vector databases are the infrastructure behind RAG, semantic search, and AI memory — and every major vendor now has an MCP server. The problem: they&rsquo;re all at different stages of maturity, with wildly different approaches to what &ldquo;vector database MCP&rdquo; even means.</p>
 <p>Some give you full collection management. Others give you two tools and call it done. Some only work with their own cloud service. Others run locally with zero infrastructure. The right choice depends on what you&rsquo;re actually trying to do — and whether the MCP server can keep up with the database behind it.</p>
-<p><strong>⚠️ Security note (April 2026):</strong> This category has active security concerns. Chroma&rsquo;s MCP server has an unpatched SQL injection vulnerability affecting 8 of its tools. The underlying Milvus database has CVE-2026-26190 (CVSS 9.8), an unauthenticated REST API exploit. An <a href="https://arxiv.org/abs/2504.03767">ecosystem-wide audit</a> of 8,000+ MCP servers found 36.7% had SSRF vulnerabilities. See individual server sections for details.</p>
+<p><strong>⚠️ Security note (April 2026):</strong> This category has active security concerns. Chroma&rsquo;s MCP server has an unpatched SQL injection vulnerability affecting 8 of its tools. The underlying Milvus database has CVE-2026-26190 (CVSS 9.8), an unauthenticated REST API exploit. A <a href="https://www.bluerock.io/post/mcp-furi-microsoft-markitdown-vulnerabilities">BlueRock Security scan</a> of 7,000+ MCP servers found 36.7% had SSRF vulnerabilities. See individual server sections for details.</p>
 <p>We&rsquo;ve <a href="/reviews/chroma-mcp-server/">reviewed Chroma</a> (3.5/5), <a href="/reviews/milvus-mcp-server/">Milvus</a> (3.5/5), <a href="/reviews/qdrant-mcp-server/">Qdrant</a> (3/5), and <a href="/reviews/pinecone-mcp-server/">Pinecone</a> (3/5) in depth. Here&rsquo;s how every vector database MCP server compares.</p>
 <h2 id="the-contenders">The Contenders</h2>
 <table>
@@ -85,7 +85,7 @@
 <tr>
 <td><a href="/reviews/chroma-mcp-server/">Chroma MCP</a></td>
 <td>529</td>
-<td>12</td>
+<td>13</td>
 <td>stdio</td>
 <td>Full vector DB management ⚠️</td>
 </tr>
@@ -149,7 +149,7 @@
 <h2 id="the-reviewed-servers">The Reviewed Servers</h2>
 <h3 id="chroma-mcp--most-comprehensive-355">Chroma MCP — Most Comprehensive (3.5/5)</h3>
 <p><strong><a href="/reviews/chroma-mcp-server/">Read our full review</a></strong></p>
-<p><a href="https://github.com/chroma-core/chroma-mcp">Chroma&rsquo;s official MCP server</a> has 12 tools — tied with Milvus for the most in the category. Seven handle collection management (create, list, peek, get info, count, modify, delete), five handle document operations (add, query, get, update, delete). It&rsquo;s the only server that lets your agent configure HNSW index parameters at collection creation time.</p>
+<p><a href="https://github.com/chroma-core/chroma-mcp">Chroma&rsquo;s official MCP server</a> has 13 tools. Seven handle collection management (create, list, peek, get info, count, modify, delete), and the remaining tools cover document operations (add, query, get, update, delete). It&rsquo;s the only server that lets your agent configure HNSW index parameters at collection creation time.</p>
 <p><strong>What sets it apart:</strong></p>
 <ul>
 <li>Four deployment modes: ephemeral (in-memory), persistent (local files), self-hosted HTTP, and Chroma Cloud</li>
@@ -197,7 +197,7 @@
 <li>Works identically with self-hosted Milvus and Zilliz Cloud</li>
 <li>Stdio and SSE transport</li>
 </ul>
-<p><strong>⚠️ Security warning (April 2026):</strong> The underlying Milvus database has two critical vulnerabilities. <a href="https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6">CVE-2026-26190</a> (CVSS 9.8) allows unauthenticated access to the REST API on metrics port 9091, enabling data exfiltration, credential theft, and potential RCE. <a href="https://github.com/milvus-io/milvus/security/advisories/GHSA-mhjq-8c7m-3f7p">CVE-2025-64513</a> is an authentication bypass via forged HTTP headers. Both are patched in Milvus 2.5.27+ and 2.6.10+. <strong>Ensure your Milvus instance is updated before connecting an MCP server to it.</strong></p>
+<p><strong>⚠️ Security warning (April 2026):</strong> The underlying Milvus database has two critical vulnerabilities. <a href="https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6">CVE-2026-26190</a> (CVSS 9.8) allows unauthenticated access to the REST API on metrics port 9091, enabling data exfiltration, credential theft, and potential RCE. <a href="https://github.com/milvus-io/milvus/security/advisories/GHSA-mhjq-8c7m-3f7p">CVE-2025-64513</a> is an authentication bypass via forged HTTP headers. <a href="https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6">CVE-2026-26190</a> is patched in Milvus 2.5.27+ and 2.6.10+. <a href="https://github.com/advisories/GHSA-mhjq-8c7m-3f7p">CVE-2025-64513</a> is patched in Milvus 2.4.24+, 2.5.21+, and 2.6.5+. <strong>Ensure your Milvus instance is updated before connecting an MCP server to it.</strong></p>
 <p><strong>The catch:</strong> No embedded/local mode — requires a running Milvus instance (Docker or Zilliz Cloud). No document update (must delete and re-insert). Pre-release maturity (no versioned releases, only dev builds on PyPI, last commit December 2025). The service hang bug (<a href="https://github.com/zilliztech/mcp-server-milvus/issues/51">#51</a>) has a workaround merged (try-except blocks in PR #54) but the issue remains technically open. No Streamable HTTP transport. Python-only.</p>
 <p>Zilliz also maintains a separate <a href="https://github.com/zilliztech/zilliz-mcp-server">Zilliz Cloud MCP server</a> (32 stars, 16 tools) that adds cloud management — cluster creation, suspension, metrics — plus Streamable HTTP transport. Both repos have been dormant through Q1 2026.</p>
 <p><strong>Best for:</strong> Teams running Milvus in production who want AI-assisted vector operations, especially hybrid search combining keyword and semantic retrieval. <strong>Patch your Milvus instance first.</strong></p>
@@ -242,7 +242,7 @@
 <tbody>
 <tr>
 <td><strong>Tools</strong></td>
-<td>12</td>
+<td>13</td>
 <td>2</td>
 <td>9</td>
 <td>14</td>

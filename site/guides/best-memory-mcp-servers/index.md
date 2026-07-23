@@ -49,7 +49,7 @@ If you're a solo developer who wants their Claude Desktop to remember your name 
 
 The Graphiti MCP server (v1.0.2, March 2026) exposes nine tools: `add_episode` (text/JSON/message input with automatic entity extraction), `search_nodes` (entity summaries), `search_facts` (edges between entities with temporal context), `get_episodes`, `delete_episode`, `get_entity_edge`, `delete_entity_edge`, `clear_graph`, and `get_status`. Unlike the old Zep Cloud MCP which was read-only, Graphiti's MCP server supports both reads and writes.
 
-**SECURITY — CVE-2026-32247 (High severity):** A Cypher injection vulnerability was disclosed in March 2026. Attacker-controlled `node_labels` values in `SearchFilters` were concatenated directly into Cypher label expressions without sanitization. In MCP deployments, this was exploitable via prompt injection — a malicious document could induce an LLM client to call `search_nodes` with crafted `entity_types`, executing arbitrary Cypher queries against Neo4j, FalkorDB, or Neptune backends. Fixed in graphiti-core v0.28.2 with regex-based validation. The MCP server v1.0.2 requires graphiti-core>=0.28.2. **Update immediately if running an older version.**
+**SECURITY — [CVE-2026-32247](https://github.com/getzep/graphiti/security/advisories/GHSA-gg5m-55jj-8m5g) (High severity, CVSS 8.1):** A Cypher injection vulnerability was disclosed in March 2026. Attacker-controlled `node_labels` values in `SearchFilters` were concatenated directly into Cypher label expressions without sanitization. In MCP deployments, this was exploitable via prompt injection — a malicious document could induce an LLM client to call `search_nodes` with crafted `entity_types`, executing arbitrary Cypher queries against Neo4j, FalkorDB, or Neptune backends. Fixed in graphiti-core v0.28.2 with regex-based validation. The MCP server v1.0.2 requires graphiti-core>=0.28.2. **Update immediately if running an older version.**
 
 **Strengths:**
 - Temporal awareness is unique — "Alice worked at Acme until 2025" is fundamentally different from "Alice works at Acme," and Graphiti tracks both with validity windows
@@ -66,7 +66,7 @@ The Graphiti MCP server (v1.0.2, March 2026) exposes nine tools: `add_episode` (
 - 200 open issues including hallucination in extraction (#760) and model compatibility problems
 - "Experimental" status despite the 1.0 label
 - CVE-2026-32247 shows that graph query injection is a real attack surface for memory servers
-- No hosted/remote server — self-hosted only (Zep Cloud is a separate product with separate pricing: free 1,000 episodes/month, $25-$475/month)
+- No hosted/remote server — self-hosted only (Zep Cloud is a separate product with separate [pricing](https://www.getzep.com/pricing/))
 
 **Best for:** Teams building conversational agents that need to track evolving user context over time. If you're building a customer support agent that needs to know a user changed their plan last Tuesday, Graphiti is the right tool. If you're building a personal coding assistant, it's massive overkill.
 
@@ -78,7 +78,7 @@ The Graphiti MCP server (v1.0.2, March 2026) exposes nine tools: `add_episode` (
 
 Nine MCP tools cover the full CRUD cycle: `add_memory`, `search_memories`, `get_memories`, `update_memory`, `delete_memory`, plus entity management. The OpenClaw v1.0.4 series (April 2026) added interactive login, unified `memory_delete` tool, and auto-recall with an 8-second timeout. Memories can be scoped to users, agents, apps, or individual runs — a feature the official server lacks entirely.
 
-mem0 claims +26% accuracy over OpenAI Memory, 91% faster responses, and 90% lower token usage compared to full-context approaches.
+mem0 claims [+26% accuracy over OpenAI Memory, 91% faster responses, and 90% lower token usage](https://mem0.ai/research-3) compared to full-context approaches.
 
 **SECURITY — Multiple CVEs (OpenClaw framework):** mem0's OpenClaw agentic framework has disclosed six CVEs in 2026, including multiple path traversal vulnerabilities (CVE-2026-26329, CVE-2026-32055, CVE-2026-33581, CVE-2026-22171) in skill-loader, browser upload, media download, and transcript file handling. The openclaw-v1.0.3 release (April 2, 2026) addressed the skill-loader path traversal and pinned mem0ai to exact v2.3.0 to prevent supply-chain risks. These affect the OpenClaw framework specifically, not the core mem0 library, but the overlap in the ecosystem warrants caution.
 
@@ -213,7 +213,7 @@ The architecture is distinctive: a REST API sits alongside the MCP interface, so
 
 **"I just want my Claude Desktop to remember me"** → Use the [official Memory server](/reviews/memory-mcp-server/). It's free, takes 30 seconds to set up, and handles simple personal context fine. You'll outgrow it, but it's the right starting point.
 
-**"I need agents that track evolving user context over time"** → Use **[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5). Temporal knowledge graphs are unique to Graphiti, and if your use case involves facts that change (customer plans, project status, team membership), nothing else handles that natively. The open-source version (Apache 2.0) is fully self-hosted and free — you need Docker + a graph database + an LLM API key. Zep Cloud is the managed alternative if you want zero-ops ($25-$475/month).
+**"I need agents that track evolving user context over time"** → Use **[Zep/Graphiti](/reviews/zep-graphiti-mcp-server/)** (4/5). Temporal knowledge graphs are unique to Graphiti, and if your use case involves facts that change (customer plans, project status, team membership), nothing else handles that natively. The open-source version (Apache 2.0) is fully self-hosted and free — you need Docker + a graph database + an LLM API key. [Zep Cloud](https://www.getzep.com/pricing/) is the managed alternative if you want zero-ops.
 
 **"I want smart memory retrieval without managing a graph"** → Use **mem0**. Semantic search finds related memories without you having to build explicit entity relationships. The multi-scope system (user/agent/app) provides natural isolation. Note: the standalone MCP server was archived in March 2026 — you'll use their cloud-hosted MCP endpoint.
 

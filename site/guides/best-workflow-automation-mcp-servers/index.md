@@ -44,9 +44,9 @@ The landscape splits into four categories: **low-code automation platforms** (n8
 
 ### Zapier MCP (Official)
 
-[zapier/zapier-mcp](https://github.com/zapier/zapier-mcp) — 35 stars, Official, TypeScript, MIT, remote-first at `mcp.zapier.com`. Access to **8,000+ apps and 40,000+ actions** without local installation.
+[zapier/zapier-mcp](https://github.com/zapier/zapier-mcp) — 35 stars, Official, TypeScript, MIT, remote-first at `mcp.zapier.com`. Access to [**9,000+ apps and 30,000+ actions**](https://zapier.com/mcp) without local installation.
 
-**April 2026: Agentic Beta launched.** Zapier shipped a major architectural shift on April 7 — **14 static meta-tools** that let AI agents dynamically discover, enable, and disable actions within a conversation. Instead of pre-configuring every action in the dashboard, agents can now browse Zapier's app catalog and activate integrations on the fly. This moves Zapier from a static tool provider to a dynamic integration discovery platform. Prompt injection protection was also added (April 16).
+**April 2026: Agentic Beta launched.** Zapier shipped a major architectural shift in April 2026 — [**15 static meta-tools**](https://docs.zapier.com/mcp/how-tools-work) that let AI agents dynamically discover, enable, and disable actions within a conversation. Instead of pre-configuring every action in the dashboard, agents can now browse Zapier's app catalog and activate integrations on the fly. This moves Zapier from a static tool provider to a dynamic integration discovery platform. Prompt injection protection was also added (April 16).
 
 **Architecture.** Two modes: classic (configure actions in dashboard, each becomes a callable tool) and the new Agentic Beta (agents self-serve from the full 8,000+ app catalog). Authentication via API key (personal) or OAuth (multi-user apps). Kiro IDE support added alongside Claude and other AI tools.
 
@@ -97,7 +97,7 @@ The landscape splits into four categories: **low-code automation platforms** (n8
 | Platform | MCP approach | Apps/integrations | Self-hostable | Stars (parent) | Stars (MCP) |
 |----------|-------------|-------------------|---------------|----------------|-------------|
 | n8n | Community MCP server (czlonkowski) | 1,239 nodes | Yes | 185.2K | 18,588 |
-| Zapier | Official remote MCP + Agentic Beta | 8,000+ apps | No | — | 35 |
+| Zapier | Official remote MCP + Agentic Beta | 9,000+ apps | No | — | 35 |
 | Make | Official hosted (legacy GitHub repo) | 1,800+ apps | No | — | 154 |
 | Pipedream | Official remote MCP | 3,000+ APIs | No | 11.3K | — |
 | ActivePieces | Every piece = MCP server | ~400 pieces | Yes | 21.8K | Built-in |
@@ -120,7 +120,7 @@ The landscape splits into four categories: **low-code automation platforms** (n8
 
 [call518/MCP-Airflow-API](https://github.com/call518/MCP-Airflow-API) — 44 stars, Python, v3.6.3 (April 21, 2026). Very actively maintained. **45 tools** — 43 shared tools plus 2 v2-exclusive asset management tools for data-aware scheduling.
 
-**The key differentiator:** Full **Airflow 3.0+ API v2 support** with dynamic version selection via `AIRFLOW_API_VERSION` environment variable. With Apache Airflow now at 3.2.0 (released April 7, 2026), this server is the only MCP option that properly supports the current Airflow API. Covers cluster management, service operations, configuration, and status monitoring. **If you're running Airflow 3.x, this is the better choice over yangkyeongmo.**
+**The key differentiator:** Full **Airflow 3.0+ API v2 support** with dynamic version selection via `AIRFLOW_API_VERSION` environment variable. With [Apache Airflow now at 3.2.0](https://airflow.apache.org/docs/apache-airflow/3.2.0/release_notes.html) (released April 7, 2026), this server is the only MCP option that properly supports the current Airflow API. Covers cluster management, service operations, configuration, and status monitoring. **If you're running Airflow 3.x, this is the better choice over yangkyeongmo.**
 
 ### Dagster MCP
 
@@ -165,7 +165,7 @@ The 11-tool count is modest but well-chosen. Kestra's parent project (16,800 sta
 | Server | Change |
 |--------|--------|
 | czlonkowski/n8n-mcp | 15,400 → 18,588 stars (+21%), v2.33.5 → v2.47.14 |
-| Zapier MCP | **Agentic Beta launched** — 14 meta-tools for dynamic tool discovery at runtime. Prompt injection protection added |
+| Zapier MCP | **Agentic Beta launched** — 15 meta-tools for dynamic tool discovery at runtime. Prompt injection protection added |
 | Make MCP | GitHub repo marked **legacy** → fully shifted to hosted at developers.make.com/mcp-server |
 | ActivePieces | 21,200 → 21,820 stars, 280+ → ~400 MCP pieces, rebranded around AI agents |
 | Pipedream | Parent project 9.8K → 11.3K stars, steady maintenance |

@@ -6,6 +6,7 @@ og_description: "40+ blockchain and Web3 MCP servers reviewed across multi-chain
 content_type: "Comparison"
 card_description: "The definitive guide to blockchain and Web3 MCP servers in 2026. We've researched 40+ servers across multi-chain toolkits, EVM networks, Solana, Bitcoin, DeFi data, NFT marketplaces, L2/alt-chain specialists, and market analytics. Every recommendation links to a full review."
 last_refreshed: 2026-04-04
+sources_audited: 2026-07-23
 ---
 
 Blockchain MCP servers are where AI agents meet onchain. These servers let AI assistants query balances, send transactions, interact with smart contracts, execute DeFi operations, mint NFTs, and pull market data — all through natural language instead of writing raw API calls or navigating block explorer UIs.

@@ -7,9 +7,10 @@ content_type: "Review"
 card_description: "Ahrefs' official MCP server for AI agents. Access backlink profiles, keyword data, domain ratings, and competitor insights through the Model Context Protocol. Remote server with OAuth — no local setup or API keys needed. Requires Ahrefs Lite plan ($129/mo) or higher."
 last_refreshed: 2026-05-03
 categories: ["/categories/web-search-scraping/"]
+sources_audited: 2026-07-23
 ---
 
-**At a glance:** Official Ahrefs remote MCP server, 42 tools, OAuth authentication (no API keys), backlink analysis, keyword research, domain ratings, site audit, rank tracking, batch analysis, requires Lite plan or higher ($129/mo+), Streamable HTTP transport (SSE deprecated), ~94 GitHub stars on the legacy local server (now archived)
+**At a glance:** Official Ahrefs remote MCP server, OAuth authentication (no API keys), backlink analysis, keyword research, domain ratings, site audit, rank tracking, batch analysis, requires Lite plan or higher ($129/mo+), Streamable HTTP transport (SSE deprecated), ~94 GitHub stars on the legacy local server (now archived)
 
 Ahrefs has released an [official MCP server](https://ahrefs.com/mcp/) that connects AI agents directly to one of the most comprehensive SEO data platforms in existence. If you're an SEO professional, content marketer, or digital strategist who works with AI coding agents, your agent can now pull backlink profiles, research keywords, check domain authority, and analyze competitors without you navigating the Ahrefs dashboard.
 
@@ -19,7 +20,7 @@ Ahrefs has moved from a local MCP server (now archived February 2026) to a remot
 
 ## What It Does
 
-The Ahrefs MCP server exposes 42 tools across Ahrefs' core platform modules:
+The Ahrefs MCP server exposes tools across [Ahrefs' core platform modules](https://ahrefs.com/mcp):
 
 - **Backlink analysis** — retrieve detailed backlink profiles, referring domains, anchor text distribution, and broken link data for any website. Essential for link building strategy, competitive analysis, and site audits.
 
@@ -94,7 +95,7 @@ Setup guides exist for: Claude (Web/Desktop/Mobile/Code), ChatGPT Web, Copilot S
 
 **Official and actively maintained.** This is Ahrefs' own MCP server, not a community wrapper. It's hosted, maintained, and documented by the Ahrefs team, which means reliable data and a clear update trajectory.
 
-**42 tools across the full platform.** Coverage spans backlinks, keywords, site audit, rank tracking, and batch analysis — the full Ahrefs suite, not a stripped-down API subset.
+**Coverage spans backlinks, keywords, site audit, rank tracking, and batch analysis** — the full Ahrefs suite, not a stripped-down API subset.
 
 **Zero-friction setup.** The remote server architecture with OAuth means no npm installs, no API key management, no local dependencies. Connect and authenticate through your browser. This is as frictionless as MCP setup gets.
 
@@ -124,11 +125,11 @@ Ahrefs' MCP server brings enterprise-grade SEO intelligence into the AI agent wo
 
 Since launch, Ahrefs has meaningfully improved the Lite plan experience: API unit allocation quadrupled (25,000 → 100,000) and row limits increased tenfold (10 → 100 per request). The original criticisms about constrained entry-level access are substantially addressed.
 
-The migration to Streamable HTTP transport and the tool count expansion to 42 (spanning backlinks, keywords, site audit, and rank tracking) round out a maturing integration. New client support for ChatGPT Web and Copilot Studio extends reach beyond the initial Claude/Cursor audience.
+The migration to Streamable HTTP transport and the expanded tool set (spanning backlinks, keywords, site audit, and rank tracking) round out a maturing integration. New client support for ChatGPT Web and Copilot Studio extends reach beyond the initial Claude/Cursor audience.
 
 The barrier remains cost. At $129/month minimum — and with the new $29/month Starter plan explicitly locked out — this is firmly for teams and professionals who already use or are ready to commit to Ahrefs. But for existing customers using AI agents, the MCP server is a meaningful productivity upgrade that keeps getting better.
 
-**Rating: 4 / 5** — Official backing from a major SEO platform, zero-friction remote setup, world-class data quality, 42 tools across the full Ahrefs suite. API limits dramatically improved since launch. The paid subscription floor remains the primary barrier.
+**Rating: 4 / 5** — Official backing from a major SEO platform, zero-friction remote setup, world-class data quality, tools spanning the full Ahrefs suite. API limits dramatically improved since launch. The paid subscription floor remains the primary barrier.
 
 ---
 

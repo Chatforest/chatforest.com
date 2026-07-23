@@ -80,7 +80,7 @@ Jira dominates enterprise project management, and its MCP ecosystem reflects tha
 
 **The catch:** A critical issue emerged in April: **Jira Cloud deprecated the GET `/search` endpoint** (HTTP 410), breaking `jira_search` for Cloud users (issue [#1295](https://github.com/sooperset/mcp-atlassian/issues/1295)). Also, the underlying FastMCP 2.x dependency has 3 unpatched CVEs ([#1234](https://github.com/sooperset/mcp-atlassian/issues/1234)) — upgrade to FastMCP 3.2.0+ is pending.
 
-**Security note:** Two critical CVEs were found and **patched in v0.17.0** (February 2026): CVE-2026-27825 (RCE via arbitrary file write, CVSS 9.1) and CVE-2026-27826 (SSRF, CVSS 8.2). Any installation running v0.17.0+ is safe.
+**Security note:** Two critical CVEs were found and **patched in v0.17.0** (February 2026): [CVE-2026-27825](https://nvd.nist.gov/vuln/detail/CVE-2026-27825) (RCE via arbitrary file write, CVSS 8.0–9.0 depending on scorer) and [CVE-2026-27826](https://nvd.nist.gov/vuln/detail/CVE-2026-27826) (SSRF, CVSS 8.2). Any installation running v0.17.0+ is safe.
 
 **Best for:** Teams on Jira Cloud or Data Center who want comprehensive Jira+Confluence access from their AI assistant. Update to v0.21.1 or later.
 
@@ -88,9 +88,9 @@ Jira dominates enterprise project management, and its MCP ecosystem reflects tha
 
 **Stars:** 608 | **Type:** Remote (cloud-hosted) | **Auth:** OAuth | **Platforms:** Jira, Confluence, Compass, Bitbucket Cloud
 
-[Atlassian's Rovo MCP Server](https://github.com/atlassian/atlassian-mcp-server) is the official, cloud-hosted MCP gateway. It went GA in February 2026 and supports Claude, ChatGPT, Cursor, VS Code, GitHub Copilot, and more.
+[Atlassian's Rovo MCP Server](https://github.com/atlassian/atlassian-mcp-server) is the official, cloud-hosted MCP gateway. It [went GA on February 4, 2026](https://www.atlassian.com/blog/announcements/atlassian-rovo-mcp-ga) and supports Claude, ChatGPT, Cursor, VS Code, GitHub Copilot, and more.
 
-**What's new:** Bitbucket Cloud support was added April 8, 2026 — covering workspace browsing, PR lifecycle (create/diff/comment/approve/merge), pipeline runs, and deployment management. This makes it a 4-product server now (Jira, Confluence, Compass, Bitbucket).
+**What's new:** [Bitbucket Cloud support was added April 8, 2026](https://www.atlassian.com/blog/bitbucket/the-atlassian-rovo-mcp-server-now-supports-bitbucket-cloud) — covering workspace browsing, PR lifecycle (create/diff/comment/approve/merge), pipeline runs, and deployment management. This makes it a 4-product server now (Jira, Confluence, Compass, Bitbucket).
 
 **The catch:** Cloud-only (no Data Center/Server support). The SSE endpoint (`/v1/sse`) is being deprecated **June 30, 2026** — update to `/v1/mcp`. Issue [#132](https://github.com/atlassian/atlassian-mcp-server/issues/132) (duplicate ticket creation) remains open. Bitbucket auth is API token only — OAuth not yet supported for Bitbucket.
 
@@ -444,7 +444,7 @@ The MCP ecosystem has significant security concerns that affect project manageme
 
 - **sooperset/mcp-atlassian:** CVE-2026-27825 (RCE, CVSS 9.1) and CVE-2026-27826 (SSRF, CVSS 8.2) — both patched in v0.17.0. FastMCP 2.x dependency has 3 additional unpatched CVEs.
 - **Notion official:** Prompt injection via hidden toggle blocks (issue #238) — unpatched, zero maintainer response since March 25.
-- **MCP STDIO supply chain crisis (April 2026):** OX Security disclosed that MCP's STDIO transport executes commands even when the server process fails to start, enabling arbitrary command injection across 200,000+ vulnerable server instances. Anthropic declined to change the protocol, stating it's "by design." This affects all locally-installed MCP servers. Hosted/remote servers are not affected.
+- **MCP STDIO supply chain crisis (April 2026):** [OX Security disclosed](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/) that MCP's STDIO transport has a design flaw enabling arbitrary command injection across 200,000+ vulnerable server instances. Anthropic declined to change the protocol, stating it's "by design." This affects all locally-installed MCP servers. Hosted/remote servers are not affected.
 
 **Our advice:** Prefer hosted/remote MCP servers where available. They eliminate the STDIO attack surface entirely. For local servers, keep versions current and audit your MCP client's command execution settings.
 

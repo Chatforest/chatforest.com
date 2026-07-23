@@ -7,7 +7,7 @@ CRM data is some of the most valuable information a business owns — contacts, 
 
 We've researched 40+ CRM MCP servers across the full landscape. This guide synthesizes all of that into one page: what's worth using, what's not, and where the gaps are.
 
-> **🔒 Security note (April 2026):** The MCP ecosystem has seen 30+ CVEs filed in the past 60 days, including critical authentication flaws in Azure MCP infrastructure (CVE-2026-32211, CVSS 9.1) and a command injection RCE in a Salesforce community MCP server (CVE-2026-26029). Always pin versions, audit tool permissions, and prefer official servers with enterprise auth. See our [MCP security coverage](/guides/mcp-security/) for the full picture.
+> **🔒 Security note (April 2026):** The MCP ecosystem has seen 30+ CVEs filed in the past 60 days, including a [missing-authentication information disclosure vulnerability in Azure MCP infrastructure (CVE-2026-32211, CVSS 9.1)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211) and a command injection RCE in a Salesforce community MCP server (CVE-2026-26029). Always pin versions, audit tool permissions, and prefer official servers with enterprise auth. See our [MCP security coverage](/guides/mcp-security/) for the full picture.
 
 *Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in April 2026.*
 

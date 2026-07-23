@@ -5,7 +5,7 @@
 
 MCP stands for Model Context Protocol. It's an open standard that lets AI models connect to external tools and data sources through a consistent interface. If you've used function calling or tool use with an LLM, MCP is the next step: a standardized way to package, distribute, and connect those tools.
 
-In December 2025, Anthropic donated MCP to the [Agentic AI Foundation](https://aaif.io/) (AAIF) under the Linux Foundation, co-founded by Anthropic, Block, and OpenAI. Platinum members now include AWS, Bloomberg, Cloudflare, Google, and Microsoft. With 97 million monthly SDK downloads, official SDKs in eight languages, and first-class client support across ChatGPT, Claude, Gemini, Copilot, and more, MCP has gone from experiment to cross-industry standard in just over a year.
+In December 2025, Anthropic donated MCP to the [Agentic AI Foundation](https://aaif.io/) (AAIF) under the Linux Foundation, co-founded by Anthropic, Block, and OpenAI. Platinum members include [Anthropic, AWS, Block, Bloomberg, Cloudflare, Google, Microsoft, and OpenAI](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation). With 97 million monthly SDK downloads, official SDKs in eight languages, and first-class client support across ChatGPT, Claude, Gemini, Copilot, and more, MCP has gone from experiment to cross-industry standard in just over a year.
 
 Here's what you need to know.
 

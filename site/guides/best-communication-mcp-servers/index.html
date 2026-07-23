@@ -162,7 +162,7 @@
 <p>Slack&rsquo;s official MCP server is the benchmark for communication platform integration. Hosted at <code>mcp.slack.com</code>, it requires zero local setup — no npm install, no Docker, no local process. Your MCP client connects directly to Slack&rsquo;s endpoint.</p>
 <p><strong>What makes it the best:</strong></p>
 <ul>
-<li><strong>OAuth with granular scopes + PKCE.</strong> You choose exactly what the agent can access: public channels, private channels, DMs, group DMs. Each requires separate consent. <strong>PKCE went GA on March 30, 2026</strong> — desktop/mobile clients can now authenticate without embedding a client secret. This is the right security model.</li>
+<li><strong>OAuth with granular scopes + PKCE.</strong> You choose exactly what the agent can access: public channels, private channels, DMs, group DMs. Each requires separate consent. <strong><a href="https://docs.slack.dev/changelog/2026/03/30/pkce/">PKCE went GA on March 30, 2026</a></strong> — desktop/mobile clients can now authenticate without embedding a client secret. This is the right security model.</li>
 <li><strong>Natural language responses.</strong> Search results come back formatted for LLM consumption, not raw API JSON. Less token waste, more usable answers.</li>
 <li><strong>Search that works.</strong> Searching across an entire workspace — by date, user, content type — is genuinely powerful for knowledge retrieval.</li>
 <li><strong>Canvas integration.</strong> Create and update Slack canvases programmatically. Export as markdown. Useful for agents that generate reports or documentation.</li>

@@ -253,7 +253,7 @@
 <p>Perforce — the version control system used by game studios, chip designers, and large enterprises with massive binary assets — now has an official MCP server.</p>
 <h3 id="the-winner-perforcep4mcp-server">The winner: perforce/p4mcp-server</h3>
 <p><strong>Stars:</strong> 76 | <strong>Language:</strong> Python (FastMCP) | <strong>Status:</strong> Community-supported (v2025.2)</p>
-<p><a href="https://github.com/perforce/p4mcp-server">perforce/p4mcp-server</a> — Perforce&rsquo;s official MCP server, announced January 2026 as part of broader MCP enablement across the Perforce Intelligence portfolio (also covering Delphix, Puppet, Perfecto, and BlazeMeter).</p>
+<p><a href="https://github.com/perforce/p4mcp-server">perforce/p4mcp-server</a> — Perforce&rsquo;s official MCP server, part of broader MCP enablement across the Perforce Intelligence portfolio (also covering Delphix, Puppet, Perfecto, and BlazeMeter).</p>
 <p><strong>Why it matters:</strong> This fills one of the biggest gaps we identified in our original guide. The server uses direct P4 Python bindings for native Perforce integration.</p>
 <p><strong>Key features:</strong></p>
 <ul>
@@ -311,7 +311,7 @@
 <p>The version control MCP ecosystem still has gaps, though two major ones closed since our last update:</p>
 <ul>
 <li><strong>No official Bitbucket MCP server.</strong> Atlassian&rsquo;s Rovo MCP server (now GA) covers Jira and Confluence but not Bitbucket. An active feature request (BCLOUD-23748) exists. The community is filling the gap, but enterprise teams want vendor support.</li>
-<li><strong>Perforce MCP is here, but community-supported.</strong> The official <a href="https://github.com/perforce/p4mcp-server">perforce/p4mcp-server</a> launched in January 2026, closing what was the biggest gap in the ecosystem. However, it&rsquo;s community-supported rather than commercially backed — game studios may want a stronger support commitment before production use.</li>
+<li><strong>Perforce MCP is here, but community-supported.</strong> The official <a href="https://github.com/perforce/p4mcp-server">perforce/p4mcp-server</a> closed what was the biggest gap in the ecosystem. However, it&rsquo;s community-supported rather than commercially backed — game studios may want a stronger support commitment before production use.</li>
 <li><strong>SVN MCP is minimal.</strong> <a href="https://github.com/gcorroto/mcp-svn">gcorroto/mcp-svn</a> exists but has only 14 stars. Legacy SVN codebases have an option now, but it&rsquo;s early-stage.</li>
 <li><strong>Limited merge conflict resolution.</strong> No MCP server specifically addresses AI-assisted merge conflict resolution — a natural fit for LLMs that remains unexploited.</li>
 <li><strong>No cross-platform PR management.</strong> There&rsquo;s no single MCP server that can manage pull requests across GitHub, GitLab, and Bitbucket simultaneously. Teams using multiple platforms need multiple servers.</li>

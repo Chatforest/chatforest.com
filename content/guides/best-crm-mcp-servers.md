@@ -6,13 +6,14 @@ og_description: "40+ CRM MCP servers reviewed across Salesforce, HubSpot, Pipedr
 content_type: "Comparison"
 card_description: "The definitive guide to CRM MCP servers in 2026. We've reviewed 40+ servers across Salesforce (official + community), HubSpot (official + community), Pipedrive, Attio, Dynamics 365 (now with official servers), Zoho, Monday.com, Close, and open-source CRMs like Twenty. Every recommendation links to a full review."
 last_refreshed: 2026-04-05
+sources_audited: 2026-07-23
 ---
 
 CRM data is some of the most valuable information a business owns — contacts, deals, pipeline stages, revenue forecasts, customer histories. Giving an AI agent access to that data changes how sales teams, customer success managers, and operations work. Instead of clicking through dashboards, you ask.
 
 We've researched 40+ CRM MCP servers across the full landscape. This guide synthesizes all of that into one page: what's worth using, what's not, and where the gaps are.
 
-> **🔒 Security note (April 2026):** The MCP ecosystem has seen 30+ CVEs filed in the past 60 days, including critical authentication flaws in Azure MCP infrastructure (CVE-2026-32211, CVSS 9.1) and a command injection RCE in a Salesforce community MCP server (CVE-2026-26029). Always pin versions, audit tool permissions, and prefer official servers with enterprise auth. See our [MCP security coverage](/guides/mcp-security/) for the full picture.
+> **🔒 Security note (April 2026):** The MCP ecosystem has seen 30+ CVEs filed in the past 60 days, including a [missing-authentication information disclosure vulnerability in Azure MCP infrastructure (CVE-2026-32211, CVSS 9.1)](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211) and a command injection RCE in a Salesforce community MCP server (CVE-2026-26029). Always pin versions, audit tool permissions, and prefer official servers with enterprise auth. See our [MCP security coverage](/guides/mcp-security/) for the full picture.
 
 *Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in April 2026.*
 

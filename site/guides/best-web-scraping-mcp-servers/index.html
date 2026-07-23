@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>Your agent needs to read the web. The question is how much infrastructure you want between it and the HTML.</p>
-<p>The MCP ecosystem now has over a dozen servers for web access, ranging from a single <code>fetch</code> tool that returns markdown to full cloud browser platforms with CAPTCHA solving and proxy infrastructure. A recent security audit of 8,000+ MCP servers found <strong>36.7% had SSRF vulnerabilities</strong> — so choosing the right web access server isn&rsquo;t just about features, it&rsquo;s about security. We&rsquo;ve researched and reviewed nine major options. Here&rsquo;s how they compare.</p>
+<p>The MCP ecosystem now has over a dozen servers for web access, ranging from a single <code>fetch</code> tool that returns markdown to full cloud browser platforms with CAPTCHA solving and proxy infrastructure. A recent <a href="https://www.practical-devsecops.com/mcp-security-statistics-2026-report/">security audit of 7,000+ MCP servers</a> found <strong>36.7% had SSRF vulnerabilities</strong> — so choosing the right web access server isn&rsquo;t just about features, it&rsquo;s about security. We&rsquo;ve researched and reviewed nine major options. Here&rsquo;s how they compare.</p>
 <h2 id="the-contenders">The Contenders</h2>
 <table>
 <thead>
@@ -229,8 +229,8 @@
 </ul>
 <p><strong>Pricing:</strong></p>
 <ul>
-<li>Free: 500 credits (one-time, non-renewable)</li>
-<li>Hobby: $16/mo (3K credits)</li>
+<li>Free: 1,000 credits/month (renewable)</li>
+<li>Hobby: $16/mo (5,000 credits)</li>
 <li>Standard: $83/mo (100K credits)</li>
 <li>Growth: $333/mo (500K credits)</li>
 <li>Scale: $599/mo (1M credits)</li>
@@ -241,7 +241,7 @@
 <p><strong>63,400+ GitHub stars | Docker self-hosted | <a href="/reviews/crawl4ai-mcp-server/">Full review</a></strong></p>
 <p>Crawl4AI is the most-starred project in this entire space by a wide margin. It&rsquo;s an open-source LLM-friendly crawler that converts pages to clean markdown, with browser-based JavaScript rendering, structured extraction, and caching. Now at <strong>v0.8.6</strong> (security hotfix), it ships with a built-in MCP server exposing 7 tools: <code>md</code> (markdown), <code>html</code>, <code>screenshot</code>, <code>pdf</code>, <code>execute_js</code>, <code>crawl</code>, and <code>ask</code>.</p>
 <p>The MCP server runs through Docker, connecting via SSE or WebSocket. There are also community wrappers (e.g., <code>coleam00/mcp-crawl4ai-rag</code> for RAG pipelines), but the built-in MCP server is now the canonical option.</p>
-<p><strong>⚠️ Security note (March 2026):</strong> v0.8.6 was an emergency release replacing <code>litellm</code> with <code>unclecode-litellm</code> after the <strong>LiteLLM PyPI supply chain attack</strong>. Threat actors &ldquo;TeamPCP&rdquo; compromised litellm versions 1.82.7–1.82.8 with credential-harvesting malware. The compromised packages were live for ~5 hours but affected LiteLLM&rsquo;s 95M monthly downloads. If you&rsquo;re running Crawl4AI v0.8.5 or earlier, upgrade immediately.</p>
+<p><strong>⚠️ Security note (March 2026):</strong> v0.8.6 was an emergency release replacing <code>litellm</code> with <code>unclecode-litellm</code> after the <strong>LiteLLM PyPI supply chain attack</strong>. Threat actors &ldquo;<a href="https://cycode.com/blog/lite-llm-supply-chain-attack/">TeamPCP</a>&rdquo; compromised litellm versions 1.82.7–1.82.8 with credential-harvesting malware. The <a href="https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/">compromised packages were live for approximately 2-3 hours</a> before PyPI quarantined them. If you&rsquo;re running Crawl4AI v0.8.5 or earlier, upgrade immediately.</p>
 <p><strong>Strengths:</strong></p>
 <ul>
 <li>Completely free and open source — no credit limits</li>
@@ -266,7 +266,7 @@
 <h3 id="browserbase-mcp-serverreviewsbrowserbase-mcp-server--the-anti-bot-specialist-355"><a href="/reviews/browserbase-mcp-server/">Browserbase MCP Server</a> — The Anti-Bot Specialist (3.5/5)</h3>
 <p><strong>3,200 GitHub stars | Cloud service | v3.0.0 | <a href="/reviews/browserbase-mcp-server/">Full review</a></strong></p>
 <p>Browserbase provides cloud browser instances with built-in stealth mode and CAPTCHA solving. Their MCP server hit <strong>v3.0.0</strong> (March 31, 2026), powered by the <strong>Stagehand v3</strong> AI framework for natural-language browser interaction — 8 tools including <code>act</code> (natural language actions), <code>extract</code> (content extraction), <code>observe</code> (element discovery), and session management.</p>
-<p>Stagehand v3 (January 2026) is a major upgrade: <strong>44% faster</strong> on average, dropped the Playwright dependency in favor of a modular driver system (Puppeteer/CDP), and added automatic caching of discovered elements (up to 2x faster, ~30% cost reduction on repeat workflows). Multi-language support expanded to Python, Go, Ruby, Java, and Rust.</p>
+<p><a href="https://www.browserbase.com/blog/stagehand-v3">Stagehand v3</a> (October 2025) is a major upgrade: <strong>44% faster</strong> on average, dropped the Playwright dependency in favor of a modular driver system (Puppeteer/CDP), and added automatic caching of discovered elements (up to 2x faster, ~30% cost reduction on repeat workflows). Multi-language support expanded to Python, Go, Ruby, Java, and Rust.</p>
 <p>This is the only option in this comparison that can reliably scrape sites with aggressive bot detection (Cloudflare challenges, reCAPTCHA, rate limiting). If the page you need is behind anti-bot protection, Browserbase may be your only option short of manual browsing. A hosted MCP endpoint at <code>mcp.browserbase.com</code> includes LLM costs for Gemini, reducing setup friction.</p>
 <p><strong>Strengths:</strong></p>
 <ul>
@@ -558,7 +558,7 @@
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>500 credits</td>
+<td>1,000 credits/mo</td>
 <td>Yes</td>
 <td>1 hr/mo</td>
 <td>Rate-limited</td>

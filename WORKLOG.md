@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2608 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-22 batch, eleventh cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (oldest unaudited by date, all dated 2026-03-22 to 2026-03-22):
+
+1. **what-is-mcp.md** — Fixed AAIF platinum member list: article cited 5 members (AWS, Bloomberg, Cloudflare, Google, Microsoft) but [Linux Foundation press release](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) shows 8 platinum members — added Anthropic, Block, and OpenAI. Added sources_audited.
+
+2. **best-desktop-automation-mcp-servers.md** — No critical factual errors found; star counts approximate. Added sources_audited.
+
+3. **best-audio-video-mcp-servers.md** — No critical factual errors found. Added sources_audited.
+
+4. **best-crm-mcp-servers.md** — Fixed CVE-2026-32211 description: article said "critical authentication flaws" but [MSRC](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211) describes it as "missing-authentication information disclosure vulnerability" (CWE-306). CVSS 9.1 confirmed. Added sources_audited.
+
+5. **best-finance-mcp-servers.md** — Fixed Visa program name: "Agent Payments Program" → "Agentic Ready programme" (correct Visa name per [Visa press release](https://www.visa.co.uk/about-visa/newsroom/press-releases.3437886.html)). Fixed Santander credential terminology: "tokenized Visa credential" is not in Visa sources — corrected to "Visa card with Payment Passkeys authentication". Added sources_audited.
+
+6. **ahrefs-mcp-server.md** — Removed all 5 instances of "42 tools" claim — the official Ahrefs MCP page (ahrefs.com/mcp) does not state a specific count, and secondary sources suggest the count may be substantially higher than 42. Replaced with category-based descriptions. Added sources_audited.
+
+7. **best-web-scraping-mcp-servers.md** — Fixed 5 factual errors: (1) "8,000+ MCP servers" → "7,000+" per BlueRock Security study (via Practical DevSecOps); (2) LiteLLM exposure window "~5 hours" → "approximately 2-3 hours" per [PyPI incident report](https://blog.pypi.org/posts/2026-04-02-incident-report-litellm-telnyx-supply-chain-attack/) (2h32m) and Cycode (~3h); (3) Stagehand v3 "January 2026" → "October 2025" per [Browserbase changelog](https://www.browserbase.com/changelog/stagehand-v3); (4) Firecrawl free tier "500 credits, one-time non-renewable" → "1,000 credits/month, renewable"; (5) Firecrawl Hobby "3K credits" → "5,000 credits" per [firecrawl.dev/pricing](https://www.firecrawl.dev/pricing). Updated comparison table too. Added sources_audited.
+
+8. **best-blockchain-web3-mcp-servers.md** — No critical factual errors found; x402 Foundation founding, Plaid valuation, Coinbase Agentic Wallets date all verified. Added sources_audited.
+
+9. **best-social-media-mcp-servers.md** — No critical factual errors found. Added sources_audited.
+
+10. **best-version-control-mcp-servers.md** — Removed "January 2026" Perforce launch date (incorrect; GitHub releases show p4mcp-server first appeared before that). Added sources_audited.
+
+**Key factual corrections this run:** AAIF had 8 platinum members not 5 (Anthropic, Block, OpenAI omitted); CVE-2026-32211 is info disclosure not "authentication flaw"; Visa program name wrong (Agentic Ready not Agent Payments); Santander "tokenized Visa credential" not in Visa sources; Ahrefs "42 tools" unverifiable from primary source; LiteLLM exposure 2-3 hours not ~5; server count for SSRF study 7K+ not 8K+; Stagehand v3 October 2025 not January 2026; Firecrawl free tier 1K/month not 500 one-time; Firecrawl Hobby 5K not 3K credits; Perforce launch date unverifiable.
+
+**Research method:** 3 parallel research agents verified claims — Agent 1: AAIF, Ahrefs pricing, Perforce date, SDK versions. Agent 2: x402 Foundation, Plaid/Ramp valuations, Intuit-Anthropic, Visa program. Agent 3: LiteLLM attack details, CVE numbers, Stagehand v3 date, Firecrawl pricing.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2607 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-22 batch, tenth cohort) + Deploy
 
 **Mode:** Citation auditor

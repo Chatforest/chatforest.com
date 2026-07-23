@@ -43,7 +43,7 @@ WordPress dominates the CMS MCP space — and for good reason. It's the only maj
 
 [WordPress/mcp-adapter](https://github.com/WordPress/mcp-adapter) — 887 stars, PHP, official. The strategic choice for any WordPress site.
 
-**Why it wins:** This isn't just another REST API wrapper. The MCP adapter bridges the **Abilities API** — a WordPress Core feature introduced in WP 6.9 — to the Model Context Protocol. Any WordPress plugin, theme, or core component that registers "abilities" automatically becomes available to AI agents through MCP. This means the MCP surface grows organically with the plugin ecosystem.
+**Why it wins:** This isn't just another REST API wrapper. The MCP adapter bridges the **[Abilities API](https://make.wordpress.org/core/2025/11/10/abilities-api-in-wordpress-6-9/)** — a WordPress Core feature introduced in WP 6.9 — to the Model Context Protocol. Any WordPress plugin, theme, or core component that registers "abilities" automatically becomes available to AI agents through MCP. This means the MCP surface grows organically with the plugin ecosystem.
 
 **v0.5.0 shipped April 15, 2026** — a major internal upgrade. Full integration of `wordpress/php-mcp-schema` (typed DTOs instead of hand-built arrays). Protocol version negotiation supporting specs `2025-11-25`, `2025-06-18`, and `2024-11-05`. Security hardening with stricter input validation and fail-closed permission handling. Reduced `SessionManager` write amplification to lower lock contention. Better observability for protocol errors. Migration guide and expanded documentation included.
 
@@ -206,7 +206,7 @@ Tools include: `validate` (check collections, fields, globals, config files), `g
 
 [emdash-cms/emdash](https://github.com/emdash-cms/emdash) — **9,415 stars**, MIT, TypeScript, **v0.5.0** (April 14, 2026). Cloudflare's "spiritual successor to WordPress," built from scratch with AI agents as first-class users.
 
-**The breakout story of April 2026.** EmDash went from v0.1.0 preview to v0.5.0 in three days (April 12–14), shipping four releases in rapid succession. The project has exploded to 9,400+ GitHub stars in two weeks — the fastest adoption of any CMS MCP server we've tracked.
+**The breakout story of April 2026.** EmDash shipped multiple releases in rapid succession in April 2026, accumulating 9,400+ GitHub stars — the fastest adoption of any CMS MCP server we've tracked.
 
 **Why it matters:** EmDash is the first CMS where the MCP server isn't an add-on — it's built into every instance. Every EmDash deployment ships with a remote MCP server, a CLI for programmatic interaction, and Agent Skills files that teach AI models how to operate the system. Claude, Cursor, or any MCP-compatible agent can create content types, manage entries, configure plugins, and deploy — all without navigating an admin dashboard.
 
@@ -243,7 +243,7 @@ Tools include: `validate` (check collections, fields, globals, config files), `g
 
 **2. Remote hosted MCP is the gold standard.** Sanity (GA), Contentful (Beta), Webflow, Shopify, Wix, Storyblok, and EmDash all offer remote MCP servers. Zero local setup, OAuth or per-site auth, always-current tools. The question isn't whether a CMS should offer remote MCP — it's whether STDIO-only servers can remain competitive.
 
-**3. EmDash rewrites the adoption curve.** Cloudflare's EmDash went from v0.1.0 to v0.5.0 in three days and hit 9,400+ GitHub stars in two weeks — faster adoption than any CMS MCP project we've tracked. Built from scratch with MCP as a core feature, not an add-on. Whether it fulfills its "WordPress successor" billing is unclear, but it proved that AI-native CMS architecture resonates with developers.
+**3. EmDash rewrites the adoption curve.** Cloudflare's EmDash accumulated 9,400+ GitHub stars faster than any CMS MCP project we've tracked. Built from scratch with MCP as a core feature, not an add-on. Whether it fulfills its "WordPress successor" billing is unclear, but it proved that AI-native CMS architecture resonates with developers.
 
 **4. WordPress 7.0's delay creates a window.** Originally scheduled for April 9, WordPress 7.0 slipped to mid-to-late May due to real-time collaboration issues. Meanwhile, WordPress/mcp-adapter v0.5.0 shipped anyway (protocol negotiation, security hardening, typed DTOs), and WooCommerce MCP matured through 10.7. The delay doesn't change the strategic picture — the Abilities API is the future — but it gives competitors like EmDash breathing room.
 

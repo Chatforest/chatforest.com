@@ -133,8 +133,8 @@
 <p><strong>The scale is real:</strong> n8n itself has 185,200+ GitHub stars. czlonkowski/n8n-mcp is the primary bridge for AI-assisted workflow building, and the 18,600-star count reflects genuine adoption, not just curiosity.</p>
 <p><strong>The catch:</strong> It&rsquo;s a community server, not official from n8n. The n8n MCP ecosystem is unusually crowded — competing implementations include salacoste/mcp-n8n-workflow-builder (221 stars, 17 tools, multi-instance support, active), leonardsellem/n8n-mcp-server (1,603 stars but stale since July 2025), spences10/mcp-n8n-builder (82 stars, active), and vredrick/n8n-mcp (32 stars). czlonkowski is the clear winner by every metric, but the fragmentation means you need to choose carefully.</p>
 <h3 id="zapier-mcp-official">Zapier MCP (Official)</h3>
-<p><a href="https://github.com/zapier/zapier-mcp">zapier/zapier-mcp</a> — 35 stars, Official, TypeScript, MIT, remote-first at <code>mcp.zapier.com</code>. Access to <strong>8,000+ apps and 40,000+ actions</strong> without local installation.</p>
-<p><strong>April 2026: Agentic Beta launched.</strong> Zapier shipped a major architectural shift on April 7 — <strong>14 static meta-tools</strong> that let AI agents dynamically discover, enable, and disable actions within a conversation. Instead of pre-configuring every action in the dashboard, agents can now browse Zapier&rsquo;s app catalog and activate integrations on the fly. This moves Zapier from a static tool provider to a dynamic integration discovery platform. Prompt injection protection was also added (April 16).</p>
+<p><a href="https://github.com/zapier/zapier-mcp">zapier/zapier-mcp</a> — 35 stars, Official, TypeScript, MIT, remote-first at <code>mcp.zapier.com</code>. Access to <a href="https://zapier.com/mcp"><strong>9,000+ apps and 30,000+ actions</strong></a> without local installation.</p>
+<p><strong>April 2026: Agentic Beta launched.</strong> Zapier shipped a major architectural shift in April 2026 — <a href="https://docs.zapier.com/mcp/how-tools-work"><strong>15 static meta-tools</strong></a> that let AI agents dynamically discover, enable, and disable actions within a conversation. Instead of pre-configuring every action in the dashboard, agents can now browse Zapier&rsquo;s app catalog and activate integrations on the fly. This moves Zapier from a static tool provider to a dynamic integration discovery platform. Prompt injection protection was also added (April 16).</p>
 <p><strong>Architecture.</strong> Two modes: classic (configure actions in dashboard, each becomes a callable tool) and the new Agentic Beta (agents self-serve from the full 8,000+ app catalog). Authentication via API key (personal) or OAuth (multi-user apps). Kiro IDE support added alongside Claude and other AI tools.</p>
 <p><strong>Strengths:</strong> Unmatched breadth — no other MCP server connects to as many services. Zero local setup. Two auth modes for different use cases. The Agentic Beta is genuinely novel — no other platform lets agents discover and enable integrations at runtime.</p>
 <p><strong>Weaknesses:</strong> Indirection — you&rsquo;re calling Zapier&rsquo;s API, which calls the target app&rsquo;s API. Higher latency, harder debugging, dependency on Zapier&rsquo;s uptime and pricing. Agentic Beta is still beta.</p>
@@ -181,7 +181,7 @@
 <tr>
 <td>Zapier</td>
 <td>Official remote MCP + Agentic Beta</td>
-<td>8,000+ apps</td>
+<td>9,000+ apps</td>
 <td>No</td>
 <td>—</td>
 <td>35</td>
@@ -221,7 +221,7 @@
 <p><strong>The catch:</strong> Community-built, not official. Still on Airflow API v1 — has not yet added Airflow 3.0 support. <del>Astronomer&rsquo;s official server (astro-airflow-mcp) offered consolidated, AI-friendly tools</del> — but it was <strong>archived on January 23, 2026</strong>, leaving the community server as the primary option.</p>
 <h3 id="strong-alternative-call518mcp-airflow-api">Strong alternative: call518/MCP-Airflow-API</h3>
 <p><a href="https://github.com/call518/MCP-Airflow-API">call518/MCP-Airflow-API</a> — 44 stars, Python, v3.6.3 (April 21, 2026). Very actively maintained. <strong>45 tools</strong> — 43 shared tools plus 2 v2-exclusive asset management tools for data-aware scheduling.</p>
-<p><strong>The key differentiator:</strong> Full <strong>Airflow 3.0+ API v2 support</strong> with dynamic version selection via <code>AIRFLOW_API_VERSION</code> environment variable. With Apache Airflow now at 3.2.0 (released April 7, 2026), this server is the only MCP option that properly supports the current Airflow API. Covers cluster management, service operations, configuration, and status monitoring. <strong>If you&rsquo;re running Airflow 3.x, this is the better choice over yangkyeongmo.</strong></p>
+<p><strong>The key differentiator:</strong> Full <strong>Airflow 3.0+ API v2 support</strong> with dynamic version selection via <code>AIRFLOW_API_VERSION</code> environment variable. With <a href="https://airflow.apache.org/docs/apache-airflow/3.2.0/release_notes.html">Apache Airflow now at 3.2.0</a> (released April 7, 2026), this server is the only MCP option that properly supports the current Airflow API. Covers cluster management, service operations, configuration, and status monitoring. <strong>If you&rsquo;re running Airflow 3.x, this is the better choice over yangkyeongmo.</strong></p>
 <h3 id="dagster-mcp">Dagster MCP</h3>
 <p><a href="https://github.com/kyryl-opens-ml/mcp-server-dagster">kyryl-opens-ml/mcp-server-dagster</a> — 21 stars, Python, MIT, v0.1.2. <strong>9 tools</strong>: list repositories/jobs/assets, recent runs, get run info, launch runs, materialize assets, terminate runs, get asset info.</p>
 <p><strong>Effectively dormant</strong> — no activity since April 2025 (a full year). No official Dagster MCP server exists. A new community alternative, <a href="https://github.com/fabdendev/dagster-mcp">fabdendev/dagster-mcp</a> (4 stars), wraps Dagster&rsquo;s GraphQL API and is actively maintained (pushed April 2026), but hasn&rsquo;t gained traction yet.</p>
@@ -256,7 +256,7 @@
 </tr>
 <tr>
 <td>Zapier MCP</td>
-<td><strong>Agentic Beta launched</strong> — 14 meta-tools for dynamic tool discovery at runtime. Prompt injection protection added</td>
+<td><strong>Agentic Beta launched</strong> — 15 meta-tools for dynamic tool discovery at runtime. Prompt injection protection added</td>
 </tr>
 <tr>
 <td>Make MCP</td>

@@ -7,6 +7,7 @@ content_type: "Comparison"
 card_description: "The definitive guide to social media MCP servers in 2026. We've reviewed 35+ servers across Twitter/X (8+ implementations), Bluesky, LinkedIn, Instagram, TikTok, YouTube, Reddit, and multi-platform solutions like Ayrshare and Postiz. Every recommendation links to a full review."
 last_refreshed: 2026-04-13
 lastmod: 2026-04-13
+sources_audited: 2026-07-23
 ---
 
 Social media is the most fragmented category in the entire MCP ecosystem. Twitter/X alone has 8+ competing implementations. Every major platform has at least one community server, but few have official support. The result: lots of options, uneven quality, and real confusion about which server to use.
