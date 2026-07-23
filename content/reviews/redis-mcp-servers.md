@@ -6,6 +6,7 @@ og_description: "Redis MCP servers: official mcp-redis (452 stars, 25+ tools, ve
 content_type: "Review"
 card_description: "The official Redis MCP server covers all data structures plus vector search and RAG. The Agent Memory Server adds a semantic memory layer for AI agents. Redis Cloud MCP manages infrastructure. Redis Agent Skills (Feb 2026) inject Redis expertise into coding agents. The ecosystem is strong and expanding."
 last_refreshed: 2026-05-04
+sources_audited: 2026-07-23
 ---
 
 Redis has three official MCP servers — and they're all doing different things. Part of our **[Databases MCP category](/categories/databases/)**.
@@ -190,23 +191,22 @@ Redis is unique in shipping three official servers solving distinct problems. Th
 | Aspect | Detail |
 |--------|--------|
 | Origin | Created by Salvatore Sanfilippo (antirez) in 2009, Redis Ltd. (formerly Redis Labs) |
-| Latest version | Redis 8.6.1 (February 2026); Redis 8.0 introduced AGPLv3 licensing |
-| License | Triple-licensed: AGPLv3 (since Redis 8.0) + RSALv2 + SSPLv1; MCP servers are MIT/Apache 2.0 |
-| Market position | #1 in-memory database, 94.3% market share in in-memory data stores |
-| Users | 56,000+ companies, 41,342+ using Redis as in-memory data store |
-| Revenue | $300M+ ARR (January 2026), up from $272.6M (2025) |
-| Valuation | ~$2B (2025) |
-| Employees | ~900–1,454 |
+| Latest version | [Redis 8.6.1](https://github.com/redis/redis/releases) (February 23, 2026) |
+| License | Triple-licensed: [AGPLv3 added May 2025](https://redis.io/blog/agplv3/) + RSALv2 + SSPLv1; MCP servers are MIT/Apache 2.0 |
+| Market position | #1 in-memory database, [~94% market share in in-memory data stores](https://6sense.com/tech/in-memory-data-store/redis-market-share) |
+| Users | [57,000+ companies](https://www.reo.dev/technology/redis) using Redis |
+| Revenue | [$300M+ ARR (January 2026)](https://www.globenewswire.com/news-release/2026/01/27/3226559/0/en/redis-passes-300m-in-annualized-recurring-revenue.html), up from $272.6M (2025) |
+| Valuation | ~$2B (2021 Series G; most recent publicly disclosed round) |
 | Headquarters | Mountain View, CA |
 | Voyage AI / Embeddings | Not applicable (Redis has native vector search, no acquired embedding provider) |
 
-**License saga:** Redis switched from BSD to RSALv2 + SSPLv1 in March 2024, sparking major backlash. The Linux Foundation launched [Valkey](https://valkey.io/) as a BSD-licensed fork backed by AWS, Google Cloud, Oracle, and Snap. In May 2025, Redis reversed course, adding AGPLv3 as an option starting with Redis 8.0, after antirez rejoined Redis Inc. The MCP servers (MIT/Apache 2.0) are unaffected by the database license drama — but the Valkey fork means organizations have an alternative if SSPL/RSALv2 compliance is a concern.
+**License saga:** Redis switched from BSD to RSALv2 + SSPLv1 in March 2024, sparking major backlash. The [Linux Foundation launched Valkey](https://www.linuxfoundation.org/press/linux-foundation-launches-open-source-valkey-community) as a BSD-licensed fork backed by AWS, Google Cloud, Oracle, Ericsson, and Snap. In [May 2025, Redis reversed course](https://redis.io/blog/agplv3/), adding AGPLv3 as an option starting with Redis 8.0, after antirez rejoined Redis Inc. The MCP servers (MIT/Apache 2.0) are unaffected by the database license drama — but the Valkey fork means organizations have an alternative if SSPL/RSALv2 compliance is a concern.
 
 ## The Bottom Line
 
 Redis's MCP ecosystem is the strongest of any in-memory database — and arguably the most thoughtfully structured of any database vendor. Three official servers, each solving a distinct problem, all actively maintained by Redis Inc.
 
-The main mcp-redis server (458 stars) provides comprehensive Redis data structure access plus vector search — everything from simple caching to RAG pipelines. The Agent Memory Server (207 stars) adds a unique semantic memory layer that no other database MCP server offers. And mcp-redis-cloud (39 stars) handles infrastructure management for DevOps teams.
+The main mcp-redis server (452 stars) provides comprehensive Redis data structure access plus vector search — everything from simple caching to RAG pipelines. The Agent Memory Server (207 stars) adds a unique semantic memory layer that no other database MCP server offers. And mcp-redis-cloud (39 stars) handles infrastructure management for DevOps teams.
 
 The deductions are for real gaps: stdio-only transport on the main server, no SSH tunnel support, no connection validation, and slow release cadence. The Agent Memory Server's 19 open issues and LLM dependency add complexity. And the community alternatives are either archived or low-adoption.
 

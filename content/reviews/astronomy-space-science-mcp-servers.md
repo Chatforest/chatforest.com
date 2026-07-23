@@ -6,6 +6,7 @@ og_description: "Astronomy & space science MCP servers: NASA-MCP-server (90 star
 content_type: "Review"
 card_description: "Astronomy and space science MCP servers for accessing NASA data, controlling telescopes, tracking satellites, exploring SpaceX launches, querying astronomical surveys, and computing celestial positions through AI assistants. This is a **maturing category** where the ecosystem has expanded significantly since our April refresh. **NASA API servers dominate** — ProgramComputer/NASA-MCP-server (90 stars) leads with access to 20+ NASA and JPL data sources. **NASA Earthdata hits v1.0** — nasa/earthdata-mcp (13 stars) released its first major version in late May, adding get_variables, get_citations, and get_keywords tools. **Aurora alerting is now covered** — cyanheads/noaa-spaceweather-mcp-server (June 2026) fills the previously identified gap with 6 NOAA SWPC tools including Kp index, aurora latitude guidance, and OVATION probability. **Satellite tracking has expanded dramatically** — kaushik701/spacetrack-mcp adds Space-Track collision risk queries, pipeworx-io/mcp-n2yo provides another N2YO option, and cstahly/satellites-overhead adds RTL-SDR capture scheduling and METEOR LRPT decoding. **Earth observation joins the mix** — marcoloco23/overview-mcp brings Sentinel-2 10m imagery, NASA GIBS true-color overlays, and NDVI/NDWI analysis with no API key for core tools. **SpaceX milestone** — Starship Version 3 successfully launched May 23, 2026; the 200th drone ship landing was achieved June 3. **Remaining gaps** — no Stellarium integration, no JWST dedicated pipeline, no ESA/JAXA/ISRO official servers, no multi-provider launch schedule, no INDI protocol support. The category holds at 3.5/5 — the aurora gap is filled and satellite tracking has deepened, but international space agency participation and JWST data access remain absent."
 last_refreshed: 2026-06-12
+sources_audited: 2026-07-23
 ---
 
 Astronomy and space science MCP servers connect AI agents to NASA data, telescope hardware, astronomical survey databases, satellite tracking systems, launch schedules, and celestial positioning tools. Instead of manually querying APIs, learning specialized astronomy software, or writing telescope control scripts, these servers let you explore space data and control observatory equipment through natural language via the Model Context Protocol. Part of our **[Science & Research MCP category](/categories/science-research/)**.
@@ -113,7 +114,7 @@ Lighter-weight NASA server with MIT license and Docker support. Integrates with 
 
 **Unified access to the major astronomical survey databases:**
 
-- **DESI** — Dark Energy Spectroscopic Instrument data (1.8M EDR, 18M+ DR1 spectra via SPARCL and Data Lab)
+- **DESI** — Dark Energy Spectroscopic Instrument data (~1.8M EDR, 18M+ DR1 spectra via [SPARCL and Data Lab](https://datalab.noirlab.edu/data/desi))
 - **Astroquery universal access** — automatic discovery of 40+ services including SIMBAD, VizieR, SDSS, Gaia, MAST, IRSA, ESASky, and many more
 - **search_objects** — cross-survey object lookup
 - **astroquery_query** — flexible queries against any supported service
@@ -178,7 +179,7 @@ A focused tool for astronomers and astrophysicists who live in NASA ADS. Having 
 - **getCelestialDetails** — equatorial and horizontal coordinates, visibility status, rise/transit/set times, distance (solar system), phase illumination (Moon/planets), upcoming lunar phases
 - **listCelestialObjects** — browse by category: planets, stars, Messier, NGC, IC, and other deep-sky objects
 - **getStarHoppingPath** — calculate navigation paths from bright stars to target objects using specified field-of-view parameters
-- **117,000+ stars** from the HYG star database
+- **~120,000 stars** from the [HYG star database](https://www.astronexus.com/projects/hyg)
 - **14,000+ deep-sky objects** from the OpenNGC catalog
 - **astronomy-engine library** for precise calculations
 
@@ -298,7 +299,7 @@ The AiBridge approach is different from the ASCOM MCP server above — instead o
 - **Starlink tracking** — satellite constellation status and deployment data
 - **Company information** — SpaceX corporate data and milestones
 
-**SpaceX milestones (May–June 2026):** Starship Version 3 successfully launched May 23, 2026 — the first flight of the new design. SpaceX also achieved its **200th drone ship landing** on June 3 and its **50th Starlink mission** by May 30. The SpaceX API v4 data covers historical milestones but real-time mission data typically reflects completed missions. Compatible with Claude Desktop, ChatGPT, and other MCP clients.
+**SpaceX milestones (May–June 2026):** [Starship Version 3 successfully launched May 22, 2026](https://www.space.com/news/live/spacex-starship-flight-12-launch-updates-may-22-2026) (Starship Flight Test 12) — the first flight of the new design. SpaceX also achieved its [50th Starlink mission of 2026 on May 30](https://spaceflightnow.com/2026/05/30/live-coverage-spacex-to-launch-50th-starlink-mission-of-2026/) and its 200th drone ship landing on June 3. The SpaceX API v4 data covers historical milestones but real-time mission data typically reflects completed missions. Compatible with Claude Desktop, ChatGPT, and other MCP clients.
 
 **Also available:** SpaceX Launch Intelligence on [Apify](https://apify.com/benthepythondev/spacex-launch-intelligence/api/mcp) provides a hosted MCP endpoint with similar capabilities.
 

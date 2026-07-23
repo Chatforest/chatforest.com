@@ -248,7 +248,7 @@ An alternative to ruslanlap's server focused specifically on full Lighthouse rep
 - **Dual SEO+GEO scoring** — real-time scores for both Google optimization and AI citation readiness side by side. This is the clearest differentiator: as AI search grows, optimizing for both traditional and AI search becomes essential
 - **End-to-end automation** — a single prompt can research a keyword, write an article, score and optimize it, publish to CMS, monitor performance, and auto-fix when rankings drop
 - **Multi-platform** — works with Claude Desktop, Cursor, Windsurf, Lovable, Replit
-- **MCP included from $39/mo** — significantly cheaper than Ahrefs or Semrush MCP access, which require enterprise plans
+- **MCP included** — significantly cheaper than Ahrefs or Semrush MCP access, which require enterprise plans
 
 Frase fills the content optimization gap that was the most glaring absence in March. Unlike other SEO MCPs that only read data, Frase creates content, optimizes it, and tracks results — shifting from consumption to production.
 

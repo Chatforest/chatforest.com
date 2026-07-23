@@ -42,7 +42,7 @@ Coinbase's official toolkit — **"every AI agent deserves a wallet."** The MCP 
 
 Active development with 517 commits and 703 forks. The dedicated Base network server lives at [base/base-mcp](https://github.com/base/base-mcp) (347 stars, TypeScript, MIT) — provides onchain tools for LLMs to interact with the Base network and Coinbase API.
 
-**x402 Payment Protocol** — Coinbase co-launched the x402 standard (with Cloudflare and the x402 Foundation) enabling machine-to-machine payments using the HTTP 402 "Payment Required" status code. AI agents can autonomously pay for API calls and MCP server access with stablecoins — no accounts or subscriptions needed. Supports Base and Solana mainnet. This is a fundamental new primitive for the agent economy.
+**x402 Payment Protocol** — Coinbase, Cloudflare, and Stripe [co-developed the x402 protocol](https://www.coinbase.com/blog/coinbase-and-cloudflare-will-launch-x402-foundation), enabling machine-to-machine payments using the HTTP 402 "Payment Required" status code. The [x402 Foundation](https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol) (Linux Foundation) was established to govern the standard. AI agents can autonomously pay for API calls and MCP server access with stablecoins — no accounts or subscriptions needed. Supports Base and Solana mainnet. This is a fundamental new primitive for the agent economy.
 
 ### mcpdotdirect/evm-mcp-server (Broadest EVM Coverage)
 
@@ -212,7 +212,7 @@ Aave V3 gets production-ready coverage on Base. Uniswap gets multi-chain swap au
 
 - **25+ EVM chains + Solana** — search 40,000+ tokens, get quotes, generate transaction data
 - **Non-custodial** — MCP server never touches private keys; users sign via generated deBridge App links
-- **30+ security audits, zero exploits** across $20B+ processed volume
+- **[27+ security audits, zero exploits](https://debridge.com/security/)** across $22B+ processed volume
 - **"Vibe Trading"** — describe the outcome you want, agent handles routing/bridging/swapping
 - **TRON integration** — added April 2026
 
@@ -315,7 +315,7 @@ Lightning Network gets two implementations for Bitcoin micropayments. The gasles
 
 ### OpenSea MCP (Official)
 
-OpenSea launched a **beta MCP server** in August 2025 providing AI agents with:
+OpenSea [launched a **beta MCP server** in August 2025](https://opensea.io/blog/articles/opensea-digest-august-28-2025) providing AI agents with:
 
 - Real-time NFT data across **20+ blockchains**
 - **Collection verification** and rarity scores
@@ -329,7 +329,7 @@ This is the first major NFT marketplace to ship official MCP support.
 
 | Server | Focus |
 |--------|-------|
-| [BitGo MCP](https://www.bitgo.com/) | Official institutional custody MCP — documentation access, API references, setup guidance. Transaction execution not yet available |
+| [BitGo MCP](https://www.businesswire.com/news/home/20260323339524/en/BitGo-Launches-MCP-Server-Bringing-Institutional-Grade-Crypto-Infrastructure-to-AI-Agents) | Official institutional custody MCP (launched March 2026) — documentation access, API references, setup guidance. Transaction execution not yet available |
 
 BitGo launched an official MCP server in March 2026, making institutional digital asset custody platform documentation accessible to AI development tools. Currently limited to documentation access — does not perform transactions or custody actions.
 

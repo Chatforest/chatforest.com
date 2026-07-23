@@ -345,31 +345,27 @@
 </tr>
 <tr>
 <td>Latest version</td>
-<td>Redis 8.6.1 (February 2026); Redis 8.0 introduced AGPLv3 licensing</td>
+<td><a href="https://github.com/redis/redis/releases">Redis 8.6.1</a> (February 23, 2026)</td>
 </tr>
 <tr>
 <td>License</td>
-<td>Triple-licensed: AGPLv3 (since Redis 8.0) + RSALv2 + SSPLv1; MCP servers are MIT/Apache 2.0</td>
+<td>Triple-licensed: <a href="https://redis.io/blog/agplv3/">AGPLv3 added May 2025</a> + RSALv2 + SSPLv1; MCP servers are MIT/Apache 2.0</td>
 </tr>
 <tr>
 <td>Market position</td>
-<td>#1 in-memory database, 94.3% market share in in-memory data stores</td>
+<td>#1 in-memory database, <a href="https://6sense.com/tech/in-memory-data-store/redis-market-share">~94% market share in in-memory data stores</a></td>
 </tr>
 <tr>
 <td>Users</td>
-<td>56,000+ companies, 41,342+ using Redis as in-memory data store</td>
+<td><a href="https://www.reo.dev/technology/redis">57,000+ companies</a> using Redis</td>
 </tr>
 <tr>
 <td>Revenue</td>
-<td>$300M+ ARR (January 2026), up from $272.6M (2025)</td>
+<td><a href="https://www.globenewswire.com/news-release/2026/01/27/3226559/0/en/redis-passes-300m-in-annualized-recurring-revenue.html">$300M+ ARR (January 2026)</a>, up from $272.6M (2025)</td>
 </tr>
 <tr>
 <td>Valuation</td>
-<td>~$2B (2025)</td>
-</tr>
-<tr>
-<td>Employees</td>
-<td>~900–1,454</td>
+<td>~$2B (2021 Series G; most recent publicly disclosed round)</td>
 </tr>
 <tr>
 <td>Headquarters</td>
@@ -381,10 +377,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>License saga:</strong> Redis switched from BSD to RSALv2 + SSPLv1 in March 2024, sparking major backlash. The Linux Foundation launched <a href="https://valkey.io/">Valkey</a> as a BSD-licensed fork backed by AWS, Google Cloud, Oracle, and Snap. In May 2025, Redis reversed course, adding AGPLv3 as an option starting with Redis 8.0, after antirez rejoined Redis Inc. The MCP servers (MIT/Apache 2.0) are unaffected by the database license drama — but the Valkey fork means organizations have an alternative if SSPL/RSALv2 compliance is a concern.</p>
+<p><strong>License saga:</strong> Redis switched from BSD to RSALv2 + SSPLv1 in March 2024, sparking major backlash. The <a href="https://www.linuxfoundation.org/press/linux-foundation-launches-open-source-valkey-community">Linux Foundation launched Valkey</a> as a BSD-licensed fork backed by AWS, Google Cloud, Oracle, Ericsson, and Snap. In <a href="https://redis.io/blog/agplv3/">May 2025, Redis reversed course</a>, adding AGPLv3 as an option starting with Redis 8.0, after antirez rejoined Redis Inc. The MCP servers (MIT/Apache 2.0) are unaffected by the database license drama — but the Valkey fork means organizations have an alternative if SSPL/RSALv2 compliance is a concern.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p>Redis&rsquo;s MCP ecosystem is the strongest of any in-memory database — and arguably the most thoughtfully structured of any database vendor. Three official servers, each solving a distinct problem, all actively maintained by Redis Inc.</p>
-<p>The main mcp-redis server (458 stars) provides comprehensive Redis data structure access plus vector search — everything from simple caching to RAG pipelines. The Agent Memory Server (207 stars) adds a unique semantic memory layer that no other database MCP server offers. And mcp-redis-cloud (39 stars) handles infrastructure management for DevOps teams.</p>
+<p>The main mcp-redis server (452 stars) provides comprehensive Redis data structure access plus vector search — everything from simple caching to RAG pipelines. The Agent Memory Server (207 stars) adds a unique semantic memory layer that no other database MCP server offers. And mcp-redis-cloud (39 stars) handles infrastructure management for DevOps teams.</p>
 <p>The deductions are for real gaps: stdio-only transport on the main server, no SSH tunnel support, no connection validation, and slow release cadence. The Agent Memory Server&rsquo;s 19 open issues and LLM dependency add complexity. And the community alternatives are either archived or low-adoption.</p>
 <p>But the foundation is exceptional. Official backing, MIT/Apache licensing, enterprise authentication, and a clear vision for how Redis fits into the AI agent stack — not just as a cache, but as a vector database, memory layer, and real-time data platform.</p>
 <p><strong>Rating: 4 out of 5</strong></p>

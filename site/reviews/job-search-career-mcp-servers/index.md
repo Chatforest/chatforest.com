@@ -373,7 +373,7 @@ The first MCP server for Upwork, partially filling the freelance gap. Community-
 |--------|-------|----------|---------|-------|
 | [headhunter-mcp-server](https://github.com/gmen1057/headhunter-mcp-server) | 9 | — | — | 10 |
 
-**HeadHunter (hh.ru) — largest job platform in Russia and CIS:**
+**[HeadHunter (hh.ru)](https://hh.ru/) — leading job platform in Russia and CIS:**
 
 - **Vacancy search** — search and filter job listings
 - **Apply** — submit applications

@@ -32,7 +32,7 @@ The headline finding: **web scraping MCP servers are production-ready**, with Fi
 
 **`web-agent` framework** (April 16) — open-source framework for building AI agents: `$ firecrawl create agent` bundles scrape, search, and interact with parallel sub-agent support and multi-LLM provider support.
 
-Independent benchmarks show **83% accuracy** with an average **7-second response time** — the fastest in the category. Over **113,000 stars** on the main Firecrawl repository (up from 85,000 in March). New Java SDK (March 12) and Elixir SDK expand language support. Supports both cloud API and self-hosted deployment.
+Over **113,000 stars** on the [main Firecrawl repository](https://github.com/mendableai/firecrawl) (up from 85,000 in March). New Java SDK (March 12) and Elixir SDK expand language support. Supports both cloud API and self-hosted deployment.
 
 ### brightdata/brightdata-mcp
 
@@ -49,7 +49,7 @@ Independent benchmarks show **83% accuracy** with an average **7-second response
 - **GEO & AI Brand Visibility** *(new)* — monitor how ChatGPT, Grok, and Perplexity perceive your brand; the ultimate feedback loop for Generative Engine Optimization (GEO)
 - **Code tool group** *(new, v2.9.3)* — npm and PyPI package lookup for coding agents: structured data, no scraping, always up to date
 
-Independent benchmarks give Bright Data **90% accuracy** — the highest in the category — though with slower **30-second average response times**. v2.8.6 (March 1) added minified markdown output for batch operations (~61% token reduction). **5,000 free requests/month.** 321 commits.
+v2.8.6 (March 1) added minified markdown output for batch operations (~61% token reduction). **5,000 free requests/month.** 321 commits.
 
 ## Open-Source Crawlers
 
@@ -69,7 +69,7 @@ Independent benchmarks give Bright Data **90% accuracy** — the highest in the 
 - **Shadow DOM flattening** *(v0.8.5)* — extract content from Shadow DOM components
 - **Full infrastructure control** — configure browser flags, proxy pools, CPU allocation, scaling policies
 
-**⚠️ SECURITY: v0.8.6 is a critical security hotfix.** On March 24, 2026, malicious litellm packages (v1.82.7/v1.82.8) were published to PyPI by the TeamPCP threat actor group, harvesting API keys, SSH keys, cloud credentials, and database secrets during a ~40-minute window. Crawl4AI v0.8.6 replaced litellm with the forked unclecode-litellm. **Users on v0.8.5 or earlier should upgrade immediately.**
+**⚠️ SECURITY: v0.8.6 is a critical security hotfix.** On March 24, 2026, [malicious litellm packages (v1.82.7/v1.82.8) were published to PyPI](https://docs.litellm.ai/blog/security-update-march-2026) by the [TeamPCP threat actor group](https://cycode.com/blog/lite-llm-supply-chain-attack/), harvesting API keys, SSH keys, cloud credentials, and database secrets during a ~40-minute window. Crawl4AI v0.8.6 replaced litellm with the forked unclecode-litellm. **Users on v0.8.5 or earlier should upgrade immediately.**
 
 Multiple MCP server implementations wrap the core library (community ecosystem is growing but fragmented):
 - **sadiuysal/crawl4ai-mcp-server** — lightweight wrapper with crawl, search, and smart_extract tools
@@ -127,7 +127,7 @@ Community wrappers for simpler use cases:
 |--------|-------|----------|---------|-------|
 | [crawlbase-mcp](https://github.com/crawlbase/crawlbase-mcp) | 54 | TypeScript | — | 3+ |
 
-**Battle-tested scraping infrastructure** — Crawlbase (trusted by 70,000+ developers) grew 7x in stars since March. Core tools:
+**Battle-tested scraping infrastructure** — Crawlbase grew 7x in stars since March. Core tools:
 
 - **`crawl`** — fetch raw HTML with JavaScript rendering and anti-bot protection
 - **`crawl_markdown`** — extract clean markdown content

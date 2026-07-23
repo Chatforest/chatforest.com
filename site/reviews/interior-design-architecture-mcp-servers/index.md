@@ -29,7 +29,7 @@ The headline findings: **blender-mcp has grown to 21,100 GitHub stars** (+3,500 
 
 - Built on the open MCP standard — works with Claude and other MCP-capable LLMs, not just Anthropic products
 - Provides a direct bridge to Blender's full Python API
-- **Anthropic joined the Blender Development Fund as Corporate Patron** at €240,000/year (alongside Netflix, Epic Games, Wacom)
+- **[Anthropic joined the Blender Development Fund as Corporate Patron](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/)** at €240,000/year (the same tier as [Netflix](https://www.cgchannel.com/2026/01/netflix-donates-e240000year-to-the-blender-development-fund/) and Wacom)
 - Long-term, the official server is the supported path; the community ahujasid/blender-mcp remains more widely installed for now
 
 **ahujasid/blender-mcp** has surged to **21,100 stars** (+3,500 from March, +20% growth) despite — or perhaps because of — the official release announcement.
@@ -107,7 +107,7 @@ An interesting approach that connects Blender to the broader automation ecosyste
 - **Blender Lab project** — the Blender Foundation's experimental features program
 - **Open MCP standard** — works with Claude and any other MCP-compatible LLM
 - **Full Python API access** — direct bridge to Blender's complete scripting interface
-- **Anthropic is Corporate Patron** — Anthropic joined Blender Development Fund at €240K/year
+- **Anthropic is Corporate Patron** — [Anthropic joined Blender Development Fund](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/) at €240K/year
 - **Long-term supported path** — vs. community ahujasid/blender-mcp (still more widely installed)
 
 ---

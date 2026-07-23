@@ -26,7 +26,7 @@ The headline findings: **Three official vendor MCP servers now shipping** — Mi
 - **Package version discovery** — find latest available versions from configured NuGet feeds
 - **Security updates** — update vulnerable packages to the lowest compatible patched version
 - **Version updates** — update packages to the highest compatible version for your target framework
-- **NuGetSolver algorithm** — developed with Microsoft Research for intelligent dependency conflict resolution
+- **NuGetSolver algorithm** — [developed with Microsoft Research](https://www.nuget.org/packages/NuGet.Mcp.Server) for intelligent dependency conflict resolution
 - **Private registry support** — works with configured NuGet feeds, not just nuget.org
 
 Installed via the new .NET `dnx` command. In Visual Studio 2026, the NuGet MCP server is built-in — just enable it in the Copilot Tools menu. This is **the first official package registry MCP that actively manages packages** (installs updates, fixes vulnerabilities), not just queries versions.

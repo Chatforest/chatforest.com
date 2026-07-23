@@ -2,6 +2,42 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2602 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-17 batch, fifth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-23`** (all dated 2026-03-17):
+
+1. **web-scraping-crawling-mcp-servers.md** — Added two citations for the litellm supply chain attack (v1.82.7/v1.82.8 malicious PyPI packages) linking to [LiteLLM's own security update](https://docs.litellm.ai/blog/security-update-march-2026) and [Cycode's analysis of the TeamPCP threat actor](https://cycode.com/blog/lite-llm-supply-chain-attack/); **CUT** "83% accuracy, 7-second response time — fastest in the category" (Firecrawl) — no primary source found; **CUT** "90% accuracy — highest in category" (Bright Data) — no primary source; **CUT** "(trusted by 70,000+ developers)" from Crawlbase — no primary source; added GitHub link for Firecrawl 113,000+ stars; added sources_audited
+
+2. **interior-design-architecture-mcp-servers.md** — **CORRECTION**: Removed "Epic Games" from "alongside Netflix, Epic Games, Wacom" as Corporate Patron of Blender Development Fund (research found only Netflix and Wacom confirmed; Epic Games not verifiable at that tier); added [CG Channel source](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/) for Anthropic joining Blender fund; added [Netflix CG Channel source](https://www.cgchannel.com/2026/01/netflix-donates-e240000year-to-the-blender-development-fund/); added sources_audited
+
+3. **astronomy-space-science-mcp-servers.md** — **CRITICAL FIX**: "Starship Version 3 successfully launched May 23, 2026" → **"May 22, 2026"** (actual date: Starship Flight Test 12 launched May 22 at 22:30 UTC; "May 23" appears to be UTC+9 artifact or error); added [space.com source](https://www.space.com/news/live/spacex-starship-flight-12-launch-updates-may-22-2026); added [spaceflightnow.com link](https://spaceflightnow.com/2026/05/30/spacex-lofts-50th-starlink-mission-from-cape-canaveral/) for 50th Starlink mission; **CORRECTION**: CelestialMCP HYG count "117,000+ stars" → "~120,000 stars" with [HYG project link](https://www.astronexus.com/projects/hyg) (HYG v4.2 contains 119,614 stars); added [DESI Data Lab link](https://datalab.noirlab.edu/data/desi); added sources_audited
+
+4. **aviation-flight-mcp-servers.md** — Already well-cited (GitHub links, official docs). No factual corrections needed. Added sources_audited
+
+5. **container-docker-kubernetes-mcp-servers.md** — Added [SentinelOne source for CVE-2026-39884](https://www.sentinelone.com/vulnerability-database/cve-2026-39884/) and [CVE-2026-33990](https://www.sentinelone.com/vulnerability-database/cve-2026-33990/) (Docker container escape vulnerabilities); added [SUSE Rancher KubeCon EU 2026 source](https://www.suse.com/c/kubecon-eu-2026-prime-ai-crews/) for the KubeCon AI/ML tracks claim; added sources_audited
+
+6. **job-search-career-mcp-servers.md** — Changed "HeadHunter (hh.ru) — largest job platform in Russia and CIS" → linked to [hh.ru](https://hh.ru/) and softened "largest" to "leading" (superlative requires verification); added sources_audited
+
+7. **seo-search-optimization-mcp-servers.md** — **CUT** "$39/mo" Frase pricing claim (pricing changes frequently and no primary source confirmed at time of audit); added sources_audited
+
+8. **advertising-ad-tech-mcp-servers.md** — Added [TikTok Newsroom link](https://newsroom.tiktok.com/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions?lang=en) for TikTok World '26 announcement; added [BusinessWire link for StackAdapt MCP launch](https://www.businesswire.com/news/home/20260421122109/en/StackAdapt-Brings-Campaign-Intelligence-Into-Claude-and-Other-AI-Workflows-With-Launch-of-MCP-Server); added [advertising.amazon.com link for Amazon Ads MCP open beta](https://advertising.amazon.com/library/news/amazon-ads-mcp-server-open-beta) (two occurrences); added [GlobeNewswire link for AdRoll+PubMatic integration](https://www.globenewswire.com/news-release/2026/04/23/3280009/0/en/adroll-and-pubmatic-enable-agent-powered-deal-troubleshooting-via-mcp-integration.html); added sources_audited
+
+9. **fitness-wearables-mcp-servers.md** — Added two citations for SmartLoader attack ([The Hacker News](https://thehackernews.com/2026/02/smartloader-attack-uses-trojanized-oura.html) and [Security Affairs](https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html)); **CUT** "third-largest sports watch brand after Garmin and Polar" (ranking unverifiable) → "a popular sports watch brand favored by competitive athletes"; added [Google Fit API deprecation link](https://developers.googleblog.com/en/announcing-the-deprecation-of-the-google-fit-rest-api/); added sources_audited
+
+10. **redis-mcp-servers.md** — Major background table audit: fixed "Redis 8.6.1 (Feb 23, 2026)" with [GitHub releases link](https://github.com/redis/redis/releases); corrected license history — "AGPLv3 added May 2025" per [Redis blog](https://redis.io/blog/agplv3/) (was "Redis 8.0 introduced AGPLv3 licensing"); changed market share "94.3%" → "~94%" per [6sense data](https://6sense.com/tech/in-memory-data-store/redis-market-share) (actual: 94.47%); changed company count "41,342+" → "57,000+ companies" per [Reo.dev data](https://www.reo.dev/technology/redis) (41,342 was unverifiable); added [$300M+ ARR GlobeNewswire source](https://www.globenewswire.com/news-release/2026/01/27/3226559/0/en/redis-passes-300m-in-annualized-recurring-revenue.html); changed valuation to "~$2B (2021 Series G; most recent publicly disclosed round)"; **REMOVED** employee count row "~900–1,454" (no verifiable source); fixed license saga: added [Linux Foundation Valkey launch link](https://www.linuxfoundation.org/press/linux-foundation-launches-open-source-valkey-community), added Ericsson to Valkey backer list (was omitted), linked "May 2025, Redis reversed course" to [redis.io/blog/agplv3/](https://redis.io/blog/agplv3/); fixed inconsistent star count in Bottom Line ("458" → "452"); added sources_audited
+
+**Key factual corrections:** Starship date May 23 → May 22, 2026; HYG star catalog 117K → ~120K; CelestialMCP claim corrected to match actual HYG v4.2 count; Epic Games removed from Blender Corporate Patron list (unverifiable); Redis employee count row removed (unverifiable range); multiple unverifiable benchmark percentages cut.
+
+**Research method:** 4 parallel research agents verified claims across all 10 pages simultaneously.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-23.
+
+---
+
 ## Run 2601 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-16/17 batch, fourth cohort) + Deploy
 
 **Mode:** Citation auditor

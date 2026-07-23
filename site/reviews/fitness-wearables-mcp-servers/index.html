@@ -515,7 +515,7 @@
 </tbody>
 </table>
 <p>The Oura Ring MCP ecosystem has <strong>exploded from 3 to 9+ servers</strong> since March 2026 — one of the fastest-growing device-specific categories. Oura&rsquo;s official API with Personal Access Tokens makes these servers relatively easy to set up compared to platforms requiring full OAuth flows. The daveremy/oura-mcp is notable for being a triple-threat: CLI tool, MCP server, and Claude Code skill in one package.</p>
-<p><strong>⚠️ Security alert:</strong> In February 2026, a SmartLoader supply-chain attack used trojanized clones of Oura MCP server repositories to deploy StealC infostealer malware. Attackers created 5+ fake GitHub accounts with manufactured forks and contributors for credibility. <strong>Always verify repository authenticity, check commit history, and review code before installing any MCP server</strong> — especially in the health data space where servers access sensitive biometric information. Open Wearables now includes Oura Ring support natively (v0.4.1+), offering a verified alternative.</p>
+<p><strong>⚠️ Security alert:</strong> In February 2026, a <a href="https://thehackernews.com/2026/02/smartloader-attack-uses-trojanized-oura.html">SmartLoader supply-chain attack</a> used trojanized clones of Oura MCP server repositories to deploy StealC infostealer malware (<a href="https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html">Security Affairs coverage</a>). Attackers created 5+ fake GitHub accounts with manufactured forks and contributors for credibility. <strong>Always verify repository authenticity, check commit history, and review code before installing any MCP server</strong> — especially in the health data space where servers access sensitive biometric information. Open Wearables now includes Oura Ring support natively (v0.4.1+), offering a verified alternative.</p>
 <hr>
 <h2 id="fitbit">Fitbit</h2>
 <h3 id="thedigitalninjamcp-fitbit--full-fitbit-data-access">TheDigitalNinja/mcp-fitbit — Full Fitbit Data Access</h3>
@@ -1105,7 +1105,7 @@
 <li><strong>No Coros API key required</strong> — uses COROS credentials via system keyring</li>
 <li><strong>v0.2 released May 14</strong> — active development continues</li>
 </ul>
-<p>COROS is the third-largest sports watch brand after Garmin and Polar, popular among competitive runners and cyclists for accuracy and battery life. Despite this, it had no meaningful MCP presence until cygnusb/coros-mcp appeared in April 2026 and grew to 66 stars in six weeks. The no-API-key approach (reverse-engineered, credentials via keyring) mirrors how garmin_mcp works. See also <a href="https://github.com/Dhivakarkd/corus-mcp">Dhivakarkd/corus-mcp</a> (older Python entry via unofficial API).</p>
+<p>COROS is a popular sports watch brand favored by competitive runners and cyclists for accuracy and battery life. Despite this, it had no meaningful MCP presence until cygnusb/coros-mcp appeared in April 2026 and grew to 66 stars in six weeks. The no-API-key approach (reverse-engineered, credentials via keyring) mirrors how garmin_mcp works. See also <a href="https://github.com/Dhivakarkd/corus-mcp">Dhivakarkd/corus-mcp</a> (older Python entry via unofficial API).</p>
 <hr>
 <h2 id="whats-missing">What&rsquo;s Missing</h2>
 <p>The fitness and wearables MCP ecosystem still has notable gaps, though the list is shrinking fast:</p>
@@ -1114,7 +1114,7 @@
 <li><strong>Zwift</strong> — still no dedicated Zwift MCP with meaningful traction. avasdowney/zwift_mcp has 0 stars. Adjacent: hhopke/intervals-icu-mcp v3.0.0 (released May 20) supports auto-sync to Zwift iPad via intervals_gateway.</li>
 <li><strong>Wahoo</strong> — armonge/wahoo-mcp leads with 6 stars (updated April 13, 2026). joaodrp/wahoo-systm-mcp (1 star) covers Wahoo SYSTM training data. Both small.</li>
 <li><strong>Apple Watch direct</strong> — only accessible via Apple Health export; no real-time Watch connection</li>
-<li><strong>Google Fit standalone</strong> — Google Fit API is scheduled for end-of-service by end of 2026. Migrate to Google Health Connect (supported by Open Wearables v0.3+)</li>
+<li><strong>Google Fit standalone</strong> — <a href="https://developers.googleblog.com/en/announcing-the-deprecation-of-the-google-fit-rest-api/">Google Fit API is scheduled for end-of-service by end of 2026</a>. Migrate to Google Health Connect (supported by Open Wearables v0.3+)</li>
 <li><strong>Amazfit / Xiaomi</strong> — partially closed: kubulashvili/zepp-life-mcp and mi-fitness-mcp exist but are early-stage (1–2 stars)</li>
 <li><strong>Samsung Health standalone</strong> — only via Open Wearables SDK</li>
 <li><strong>Standardized health format</strong> — no common data interchange format across fitness MCP servers</li>

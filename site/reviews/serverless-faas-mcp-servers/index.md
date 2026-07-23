@@ -149,7 +149,7 @@ All hosted as remote MCP servers at `*.mcp.cloudflare.com` — no local installa
 - **`search`** — discover API endpoints by natural language
 - **`execute`** — make authenticated API calls
 
-Uses a "Code Mode" pattern where agents write JavaScript executed server-side. Reduces token consumption from ~2 million (raw OpenAPI spec) to just **1,069 tokens**. Supports Workers, KV, R2, D1, Pages, DNS, Firewall, Load Balancers, Stream, Images, and more. Single URL: `mcp.cloudflare.com/mcp`. Enterprise adoption accelerated after Cloudflare's April 2026 MCP architecture blog post.
+Uses a "Code Mode" pattern where agents write JavaScript executed server-side. Reduces token consumption from [~1.17 million tokens](https://blog.cloudflare.com/code-mode-mcp/) (raw OpenAPI spec) to just **1,069 tokens**. Supports Workers, KV, R2, D1, Pages, DNS, Firewall, Load Balancers, Stream, Images, and more. Single URL: `mcp.cloudflare.com/mcp`. Enterprise adoption accelerated after Cloudflare's April 2026 MCP architecture blog post.
 
 ### cloudflare/workers-mcp (Worker-to-MCP Bridge)
 

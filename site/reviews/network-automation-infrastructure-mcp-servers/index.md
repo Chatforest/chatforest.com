@@ -317,7 +317,7 @@ Arista has publicly embraced MCP, with blog posts on "Generative and Agentic AI 
 - **Log and metric collection** for analysis
 - **Troubleshooting automation** — streamline diagnostic workflows
 
-Netmiko (14,300+ stars) is the most widely used Python library for SSH to network devices. This MCP wrapper makes it accessible to AI agents.
+[Netmiko](https://github.com/ktbyers/netmiko) (14,300+ stars) is the most widely used Python library for SSH to network devices. This MCP wrapper makes it accessible to AI agents.
 
 ### upa/mcp-netmiko-server — LLM-to-Device Interaction
 
@@ -404,7 +404,6 @@ Particularly valuable for diagnosing latency issues, DNS propagation problems, o
 - **Semantic search** using embedding-based similarity matching of network queries (NQE)
 - **Bloomsearch integration** for efficient handling of large result sets with automatic bloom filter generation
 - **Snapshot management** for point-in-time network state capture and comparison
-- 2026 AI Excellence Award winner for Forward AI
 
 Forward Enterprise creates a mathematical model of your entire network — this MCP server makes that model queryable by AI agents. Forward AI takes this further: instead of just answering queries, it plans and executes multi-step workflows while maintaining mathematical certainty about its recommendations.
 

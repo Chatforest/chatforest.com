@@ -7,6 +7,7 @@ content_type: "Review"
 card_description: "SEO and search optimization MCP servers for keyword research, backlink analysis, rank tracking, site audits, content optimization, and search console data through AI assistants. **FOUR MAJOR GAPS FILLED** since March — Moz, Screaming Frog, Google Trends, and content optimization all now have MCP servers. **Semrush launched an official hosted MCP server** at mcp.semrush.com with OAuth — joining Ahrefs, DataForSEO, and SE Ranking as the fourth major SEO platform with an official MCP. **mcp-gsc SURGED to 700+ stars** — added uvx zero-install method, get_capabilities tool, and a hosted version with GA4 integration. **SE Ranking expanded to 160+ tools** with 7 ready-to-use Claude Skills and AI Search share of voice tracking across ChatGPT, Gemini, Perplexity, and AI Overviews. **Frase launched the first content optimization MCP** — full pipeline from research through writing, optimization, monitoring, and auto-fix with dual SEO+GEO scoring at $39/mo. **Moz gap filled** — metehan777/moz-mcp (11 stars, 13+ tools) covers Domain Authority, keyword research, link analysis, and competitive intelligence. **Screaming Frog gap filled** — bzsasson/screaming-frog-mcp (20 stars, 8 tools) provides crawl, export, and audit data access. **Google Trends gap filled** — 4+ implementations including jmanek/google-news-trends-mcp and Apify scraper. **Google Business Profile MCP appeared** — local SEO gap narrowing. **Ahrefs fully remote** — Streamable HTTP at api.ahrefs.com, local server deprecated. **cnych/seo-mcp grew** to 225 stars. The category expanded from 20+ to 30+ servers with unprecedented enterprise adoption — every major SEO platform now has MCP connectivity. Rating upgraded to **4.5/5**."
 last_refreshed: 2026-05-02
 next_priority: "med"
+sources_audited: 2026-07-23
 categories: ["/categories/web-search-scraping/"]
 ---
 
@@ -255,7 +256,7 @@ An alternative to ruslanlap's server focused specifically on full Lighthouse rep
 - **Dual SEO+GEO scoring** — real-time scores for both Google optimization and AI citation readiness side by side. This is the clearest differentiator: as AI search grows, optimizing for both traditional and AI search becomes essential
 - **End-to-end automation** — a single prompt can research a keyword, write an article, score and optimize it, publish to CMS, monitor performance, and auto-fix when rankings drop
 - **Multi-platform** — works with Claude Desktop, Cursor, Windsurf, Lovable, Replit
-- **MCP included from $39/mo** — significantly cheaper than Ahrefs or Semrush MCP access, which require enterprise plans
+- **MCP included** — significantly cheaper than Ahrefs or Semrush MCP access, which require enterprise plans
 
 Frase fills the content optimization gap that was the most glaring absence in March. Unlike other SEO MCPs that only read data, Frase creates content, optimizes it, and tracks results — shifting from consumption to production.
 

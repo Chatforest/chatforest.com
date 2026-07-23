@@ -7,6 +7,7 @@ og_description: "Interior design & architecture MCP servers: blender-mcp (21.1k 
 content_type: "Review"
 card_description: "Interior design and architecture MCP servers for CAD control, BIM automation, 3D modeling, and parametric design through AI assistants. **MAJOR UPDATE (April 2026)**: Autodesk launched THREE official MCP servers (Product Help + Fusion MCP + Fusion Data MCP), Blender Lab released the official Blender MCP server, and SketchUp got an official connector — all on April 28, 2026 as part of Anthropic's 'Claude for Creative Work' launch. **blender-mcp has grown to 21,100 stars** (+3.5k since March). **SolidWorks and Onshape gaps are now partially closed** — community servers eyfel/mcp-server-solidworks (90+ tools) and jarvis-onshape-mcp (~60 tools) emerged in March–April 2026. **The biggest gap remains interior design itself** — no dedicated servers for room layout, furniture placement, color palette generation, or rendering engine integration. Rating upgraded 4→4.5/5 on the strength of official vendor momentum."
 last_refreshed: 2026-05-02
+sources_audited: 2026-07-23
 ---
 
 Interior design and architecture MCP servers connect AI agents to CAD software, BIM platforms, 3D modelers, and design tools. Instead of manually navigating complex CAD interfaces or switching between modeling applications, these servers let you create, modify, and analyze designs through natural language via the Model Context Protocol.
@@ -35,7 +36,7 @@ The headline findings: **blender-mcp has grown to 21,100 GitHub stars** (+3,500 
 
 - Built on the open MCP standard — works with Claude and other MCP-capable LLMs, not just Anthropic products
 - Provides a direct bridge to Blender's full Python API
-- **Anthropic joined the Blender Development Fund as Corporate Patron** at €240,000/year (alongside Netflix, Epic Games, Wacom)
+- **[Anthropic joined the Blender Development Fund as Corporate Patron](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/)** at €240,000/year (the same tier as [Netflix](https://www.cgchannel.com/2026/01/netflix-donates-e240000year-to-the-blender-development-fund/) and Wacom)
 - Long-term, the official server is the supported path; the community ahujasid/blender-mcp remains more widely installed for now
 
 **ahujasid/blender-mcp** has surged to **21,100 stars** (+3,500 from March, +20% growth) despite — or perhaps because of — the official release announcement.
@@ -113,7 +114,7 @@ An interesting approach that connects Blender to the broader automation ecosyste
 - **Blender Lab project** — the Blender Foundation's experimental features program
 - **Open MCP standard** — works with Claude and any other MCP-compatible LLM
 - **Full Python API access** — direct bridge to Blender's complete scripting interface
-- **Anthropic is Corporate Patron** — Anthropic joined Blender Development Fund at €240K/year
+- **Anthropic is Corporate Patron** — [Anthropic joined Blender Development Fund](https://www.cgchannel.com/2026/04/ai-developer-anthropic-becomes-blenders-latest-corporate-patron/) at €240K/year
 - **Long-term supported path** — vs. community ahujasid/blender-mcp (still more widely installed)
 
 ---

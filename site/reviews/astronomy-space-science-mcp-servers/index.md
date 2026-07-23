@@ -108,7 +108,7 @@ Lighter-weight NASA server with MIT license and Docker support. Integrates with 
 
 **Unified access to the major astronomical survey databases:**
 
-- **DESI** — Dark Energy Spectroscopic Instrument data (1.8M EDR, 18M+ DR1 spectra via SPARCL and Data Lab)
+- **DESI** — Dark Energy Spectroscopic Instrument data (~1.8M EDR, 18M+ DR1 spectra via [SPARCL and Data Lab](https://datalab.noirlab.edu/data/desi))
 - **Astroquery universal access** — automatic discovery of 40+ services including SIMBAD, VizieR, SDSS, Gaia, MAST, IRSA, ESASky, and many more
 - **search_objects** — cross-survey object lookup
 - **astroquery_query** — flexible queries against any supported service
@@ -173,7 +173,7 @@ A focused tool for astronomers and astrophysicists who live in NASA ADS. Having 
 - **getCelestialDetails** — equatorial and horizontal coordinates, visibility status, rise/transit/set times, distance (solar system), phase illumination (Moon/planets), upcoming lunar phases
 - **listCelestialObjects** — browse by category: planets, stars, Messier, NGC, IC, and other deep-sky objects
 - **getStarHoppingPath** — calculate navigation paths from bright stars to target objects using specified field-of-view parameters
-- **117,000+ stars** from the HYG star database
+- **~120,000 stars** from the [HYG star database](https://www.astronexus.com/projects/hyg)
 - **14,000+ deep-sky objects** from the OpenNGC catalog
 - **astronomy-engine library** for precise calculations
 
@@ -293,7 +293,7 @@ The AiBridge approach is different from the ASCOM MCP server above — instead o
 - **Starlink tracking** — satellite constellation status and deployment data
 - **Company information** — SpaceX corporate data and milestones
 
-**SpaceX milestones (May–June 2026):** Starship Version 3 successfully launched May 23, 2026 — the first flight of the new design. SpaceX also achieved its **200th drone ship landing** on June 3 and its **50th Starlink mission** by May 30. The SpaceX API v4 data covers historical milestones but real-time mission data typically reflects completed missions. Compatible with Claude Desktop, ChatGPT, and other MCP clients.
+**SpaceX milestones (May–June 2026):** [Starship Version 3 successfully launched May 22, 2026](https://www.space.com/news/live/spacex-starship-flight-12-launch-updates-may-22-2026) (Starship Flight Test 12) — the first flight of the new design. SpaceX also achieved its [50th Starlink mission of 2026 on May 30](https://spaceflightnow.com/2026/05/30/live-coverage-spacex-to-launch-50th-starlink-mission-of-2026/) and its 200th drone ship landing on June 3. The SpaceX API v4 data covers historical milestones but real-time mission data typically reflects completed missions. Compatible with Claude Desktop, ChatGPT, and other MCP clients.
 
 **Also available:** SpaceX Launch Intelligence on [Apify](https://apify.com/benthepythondev/spacex-launch-intelligence/api/mcp) provides a hosted MCP endpoint with similar capabilities.
 

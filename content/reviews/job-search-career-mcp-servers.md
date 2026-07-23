@@ -6,6 +6,7 @@ og_description: "Job search & career MCP servers: stickerdaniel/linkedin-mcp-ser
 content_type: "Review"
 card_description: "Job search and career MCP servers for LinkedIn scraping, multi-platform job aggregation, resume tailoring, interview preparation, and auto-apply automation through AI assistants. **stickerdaniel/linkedin-mcp-server dominates at 1,700 stars** — 9 releases in 46 days including self-healing Chromium automation and a working LinkedIn connect tool. **Multi-platform aggregators are the most practical** — borgius/jobspy-mcp-server covers Indeed, LinkedIn, Glassdoor, and ZipRecruiter. **Himalayas-App launched the first official remote-jobs MCP** with OAuth 2.1, salary benchmarking, and candidate search — the remote jobs gap is now closed. **LeetCode coding interview prep is now covered** — jinzcdev/leetcode-mcp-server (112 stars) fills the last major gap with daily challenges, problem search, code execution, and submission. **Auto-apply automation is a fast-emerging sub-category** — shortlistjobs-mcp (27 stars) automates ATS form submission across Ashby, Lever, SmartRecruiters, and Workable. Resume tools now include jsonresume/mcp (60 stars, GitHub Gist integration) and resumake-mcp (LaTeX PDF generation). **Rating upgraded to 4/5** — official platform growth (Himalayas), coding interview gap closed, and an increasingly mature resume and auto-apply ecosystem."
 last_refreshed: 2026-05-02
+sources_audited: 2026-07-23
 ---
 
 Job search and career MCP servers connect AI agents to job boards, professional networks, resume tools, and interview platforms. Instead of manually searching Indeed, tailoring resumes for each application, or practicing interview questions alone, these servers let you search across platforms, analyze job descriptions, generate tailored materials, and simulate interviews through natural language via the Model Context Protocol.
@@ -378,7 +379,7 @@ The first MCP server for Upwork, partially filling the freelance gap. Community-
 |--------|-------|----------|---------|-------|
 | [headhunter-mcp-server](https://github.com/gmen1057/headhunter-mcp-server) | 9 | — | — | 10 |
 
-**HeadHunter (hh.ru) — largest job platform in Russia and CIS:**
+**[HeadHunter (hh.ru)](https://hh.ru/) — leading job platform in Russia and CIS:**
 
 - **Vacancy search** — search and filter job listings
 - **Apply** — submit applications

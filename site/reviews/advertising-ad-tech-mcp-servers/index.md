@@ -146,7 +146,7 @@ Low star count but fills a niche — it's the only TypeScript-based Meta Ads ser
 
 ### TikTok MCP Server — Official Platform Integration *(May 2026)*
 
-**TikTok's official MCP server, announced at TikTok World '26 (May 13, 2026):**
+**[TikTok's official MCP server, announced at TikTok World '26 (May 13, 2026)](https://newsroom.tiktok.com/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions?lang=en):**
 
 - **Campaign creation** — AI agents create and launch ad campaigns autonomously
 - **Budget management** — shift budgets across campaigns and ad groups without manual intervention
@@ -249,7 +249,7 @@ The widest platform coverage of any advertising MCP server — 9 platforms inclu
 - **Reporting** — pull performance reports with natural language queries
 - **Recommendations** — access Amazon's optimization recommendations
 
-Available as a Streamable HTTP MCP server via MarketplaceAdPros' hosted service. MIT licensed. This fills a critical gap — Amazon is the second-largest digital advertising platform, and until now had no open-source MCP server. Amazon's own official MCP server remains in open beta (announced February 2026 at the IAB Annual Leadership Meeting) with tools for campaign creation, keyword/product targeting, performance reporting, bid optimization, and billing management.
+Available as a Streamable HTTP MCP server via MarketplaceAdPros' hosted service. MIT licensed. This fills a critical gap — Amazon is the second-largest digital advertising platform, and until now had no open-source MCP server. Amazon's own [official MCP server remains in open beta](https://advertising.amazon.com/library/news/amazon-ads-mcp-server-open-beta) (announced February 2026 at the IAB Annual Leadership Meeting) with tools for campaign creation, keyword/product targeting, performance reporting, bid optimization, and billing management.
 
 ---
 
@@ -257,7 +257,7 @@ Available as a Streamable HTTP MCP server via MarketplaceAdPros' hosted service.
 
 ### StackAdapt MCP Server — Official Programmatic DSP
 
-**The first major programmatic DSP to launch an official MCP server (April 21, 2026):**
+**The [first major programmatic DSP to launch an official MCP server (April 21, 2026)](https://www.businesswire.com/news/home/20260421122109/en/StackAdapt-Brings-Campaign-Intelligence-Into-Claude-and-Other-AI-Workflows-With-Launch-of-MCP-Server):**
 
 - **Campaign intelligence** — monitor performance, pacing, and audience results in real time
 - **Creative auditing** — review creative status and effectiveness
@@ -347,7 +347,7 @@ At 3,200 stars (up from 981 — tripled in six weeks), this is the runaway hit o
 - **JanNafta/propellerads-mcp** (0 stars, Python, MIT) — the only PropellerAds MCP server, with 19 tools for push/pop ad network campaign management, zone-level optimization, and auto-blacklisting of underperforming zones
 - **jshorwitz/awesome-agentic-advertising** — curated list of MCP servers and tools for AI-powered advertising across all major platforms
 - **Amazon Ads MCP (official)** — in open beta (Feb 2026) supporting Sponsored Products, Brands, Display, performance reporting, bid optimization, and billing. Announced at the IAB Annual Leadership Meeting. Now complemented by MarketplaceAdPros' open-source server (see Amazon Ads section above)
-- **AdRoll + PubMatic MCP integration** (April 23, 2026) — agent-to-agent diagnostics allowing demand-side AI agents to query supply-side diagnostics directly via MCP, demonstrating cross-ecosystem MCP adoption in programmatic advertising
+- **[AdRoll + PubMatic MCP integration](https://www.globenewswire.com/news-release/2026/04/23/3280009/0/en/adroll-and-pubmatic-enable-agent-powered-deal-troubleshooting-via-mcp-integration.html)** (April 23, 2026) — agent-to-agent diagnostics allowing demand-side AI agents to query supply-side diagnostics directly via MCP, demonstrating cross-ecosystem MCP adoption in programmatic advertising
 - **Pipeboard CLI** — new command-line tool from the meta-ads-mcp team providing access to Meta, Google, and TikTok Ads from a single binary, signaling Pipeboard's evolution from single-platform MCP server to multi-platform ad-tech company
 
 ---

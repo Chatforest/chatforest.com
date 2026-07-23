@@ -126,7 +126,7 @@ A good choice when you need document processing without Python dependencies. The
 
 **The most capable diff MCP** — backed by the established jsondiffpatch library:
 
-- **Text comparison** — uses Google's diff-match-patch algorithm for character-level diffs
+- **Text comparison** — uses [Google's diff-match-patch algorithm](https://github.com/google/diff-match-patch) for character-level diffs
 - **Structured data** — JSON, JSON5, YAML, TOML, XML, HTML comparison
 - **Multiple output formats** — text, JSON, JSONPatch
 - **Battle-tested** — jsondiffpatch has 5,100+ stars and years of production use
@@ -174,7 +174,7 @@ More than simple text comparison — this server understands code structure and 
 - **Glossary support** — consistent terminology across translations
 - **Language tools** — list source/target languages, manage glossary entries
 
-The most complete translation MCP. Requires a DeepL API key (free tier available with 500K characters/month).
+The most complete translation MCP. Requires a [DeepL API key](https://www.deepl.com/en/pro#developer) (free tier available with 500,000 characters/month).
 
 ### translated/lara-mcp — Translation with Memory
 
@@ -274,7 +274,7 @@ Useful for AI agents working with encoded data, verifying hashes, or testing enc
 - **lt_check_text_summary** — quick one-line assessment without detailed breakdowns
 - **lt_list_languages** — reference of supported language codes with filtering
 - **v1.1.0** (March 2026) — hosted on Codeberg, STDIO and HTTP transports
-- **Requires LanguageTool Pro** — paid subscription with API access required (free tier does not provide API access)
+- **Requires [LanguageTool Pro](https://languagetool.org/premium/)** — paid subscription with API access required (free tier does not provide API access)
 - **No installation needed** — `npx @dpesch/languagetool-mcp-server` in MCP config
 
 This closes the single biggest gap identified in our original review. The Pro requirement limits adoption (no free tier API access), but for teams already paying for LanguageTool, this is a significant addition.

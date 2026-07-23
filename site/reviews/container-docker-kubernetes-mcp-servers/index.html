@@ -261,7 +261,7 @@
 <li><strong>kubectl_reconnect</strong> tool (NEW in v3.5.0)</li>
 </ul>
 <p>Differentiator: <strong>built-in OpenTelemetry integration</strong> with distributed tracing supporting Jaeger, Tempo, Grafana, Datadog, and New Relic backends. Non-destructive mode and secrets masking available. 785 commits.</p>
-<p>⚠️ <strong>CVE-2026-39884 (CVSS 8.3, HIGH)</strong> — argument injection in port_forward, patched in v3.5.0. Constant-time auth token comparison also added. <strong>5 total security advisories</strong> — most of any Kubernetes MCP server. Update to v3.5.0 immediately if using older versions.</p>
+<p>⚠️ <strong><a href="https://www.sentinelone.com/vulnerability-database/cve-2026-39884/">CVE-2026-39884</a> (CVSS 8.3, HIGH)</strong> — argument injection in port_forward, patched in v3.5.0. Constant-time auth token comparison also added. <strong>5 total security advisories</strong> — most of any Kubernetes MCP server. Update to v3.5.0 immediately if using older versions.</p>
 <h2 id="docker-official-projects">Docker Official Projects</h2>
 <p>Docker is investing heavily in MCP as a first-class integration path, with three official projects:</p>
 <h3 id="dockermcp-gateway-docker-desktop-mcp-toolkit--surging">docker/mcp-gateway (Docker Desktop MCP Toolkit — Surging)</h3>
@@ -358,7 +358,7 @@
 <li><strong>Docker Desktop integration</strong> — browse in the MCP Toolkit UI</li>
 </ul>
 <p>100+ verified tools at launch from partners like Stripe, Elastic, and Neo4j.</p>
-<p>⚠️ <strong>CVE-2026-33990</strong> — critical SSRF vulnerability in Docker Model Runner&rsquo;s OCI Registry Client has been patched. Ensure Docker Desktop is updated.</p>
+<p>⚠️ <strong><a href="https://www.sentinelone.com/vulnerability-database/cve-2026-33990/">CVE-2026-33990</a></strong> — critical SSRF vulnerability in Docker Model Runner&rsquo;s OCI Registry Client has been patched. Ensure Docker Desktop is updated.</p>
 <h2 id="container-runtimes">Container Runtimes</h2>
 <h3 id="manusapodman-mcp-server-podman--docker">manusa/podman-mcp-server (Podman + Docker)</h3>
 <table>
@@ -458,7 +458,7 @@
 <p>Supports traditional HTTP Helm repositories and OCI registries (Docker Hub, GHCR). Authentication for basic auth, mTLS, and OCI credentials. Public instance available at mcp-helm.zekker.dev. <strong>v1.3.4 (April 2026)</strong> — actively maintained with regular releases.</p>
 <h2 id="enterprise-kubernetes-mcp">Enterprise Kubernetes MCP</h2>
 <h3 id="suse-rancher-prime-built-in-mcp--new">SUSE Rancher Prime (Built-in MCP — NEW)</h3>
-<p><strong>SUSE Rancher Prime</strong> announced built-in MCP support at <strong>KubeCon EU 2026</strong> — the first enterprise Kubernetes management platform with native MCP integration. The &ldquo;Liz&rdquo; AI assistant evolved into a multi-agent &ldquo;Crew&rdquo; system with specialized agents for Security, Observability, Platform, Linux, and App Collection. External MCP server integration available via Global Settings.</p>
+<p><strong><a href="https://www.suse.com/c/kubecon-eu-2026-prime-ai-crews/">SUSE Rancher Prime announced built-in MCP support at KubeCon EU 2026</a></strong> — the first enterprise Kubernetes management platform with native MCP integration. The &ldquo;Liz&rdquo; AI assistant evolved into a multi-agent &ldquo;Crew&rdquo; system with specialized agents for Security, Observability, Platform, Linux, and App Collection. External MCP server integration available via Global Settings.</p>
 <p>This is significant because it means MCP is moving from standalone tools into the platforms teams already use for Kubernetes management.</p>
 <h3 id="mrostamiirancher-mcp-server-fleet-gitops--new">mrostamii/rancher-mcp-server (Fleet GitOps — NEW)</h3>
 <p>A community MCP server for Rancher providing <strong>Fleet GitOps</strong> capabilities (GitRepo, Bundle, drift detection) and <strong>Harvester HCI</strong> management (VMs, storage, networks). Partially closes the GitOps gap in the container MCP ecosystem.</p>

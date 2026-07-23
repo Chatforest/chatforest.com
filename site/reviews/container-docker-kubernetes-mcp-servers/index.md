@@ -122,7 +122,7 @@ A **TypeScript-based Kubernetes server** with strong observability features:
 
 Differentiator: **built-in OpenTelemetry integration** with distributed tracing supporting Jaeger, Tempo, Grafana, Datadog, and New Relic backends. Non-destructive mode and secrets masking available. 785 commits.
 
-⚠️ **CVE-2026-39884 (CVSS 8.3, HIGH)** — argument injection in port_forward, patched in v3.5.0. Constant-time auth token comparison also added. **5 total security advisories** — most of any Kubernetes MCP server. Update to v3.5.0 immediately if using older versions.
+⚠️ **[CVE-2026-39884](https://www.sentinelone.com/vulnerability-database/cve-2026-39884/) (CVSS 8.3, HIGH)** — argument injection in port_forward, patched in v3.5.0. Constant-time auth token comparison also added. **5 total security advisories** — most of any Kubernetes MCP server. Update to v3.5.0 immediately if using older versions.
 
 ## Docker Official Projects
 
@@ -180,7 +180,7 @@ The **official curated MCP server catalog** with enterprise-grade trust — **76
 
 100+ verified tools at launch from partners like Stripe, Elastic, and Neo4j.
 
-⚠️ **CVE-2026-33990** — critical SSRF vulnerability in Docker Model Runner's OCI Registry Client has been patched. Ensure Docker Desktop is updated.
+⚠️ **[CVE-2026-33990](https://www.sentinelone.com/vulnerability-database/cve-2026-33990/)** — critical SSRF vulnerability in Docker Model Runner's OCI Registry Client has been patched. Ensure Docker Desktop is updated.
 
 ## Container Runtimes
 
@@ -245,7 +245,7 @@ Supports traditional HTTP Helm repositories and OCI registries (Docker Hub, GHCR
 
 ### SUSE Rancher Prime (Built-in MCP — NEW)
 
-**SUSE Rancher Prime** announced built-in MCP support at **KubeCon EU 2026** — the first enterprise Kubernetes management platform with native MCP integration. The "Liz" AI assistant evolved into a multi-agent "Crew" system with specialized agents for Security, Observability, Platform, Linux, and App Collection. External MCP server integration available via Global Settings.
+**[SUSE Rancher Prime announced built-in MCP support at KubeCon EU 2026](https://www.suse.com/c/kubecon-eu-2026-prime-ai-crews/)** — the first enterprise Kubernetes management platform with native MCP integration. The "Liz" AI assistant evolved into a multi-agent "Crew" system with specialized agents for Security, Observability, Platform, Linux, and App Collection. External MCP server integration available via Global Settings.
 
 This is significant because it means MCP is moving from standalone tools into the platforms teams already use for Kubernetes management.
 
