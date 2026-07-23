@@ -9,7 +9,7 @@
 
 The Shopify Dev MCP server is the **official first-party MCP integration** for developers building on the [Shopify](https://www.shopify.com/) platform. It gives AI assistants deep knowledge of Shopify's APIs, documentation, and development patterns — enabling them to search docs, explore GraphQL schemas, validate code, and provide accurate guidance based on current APIs and best practices.
 
-[Shopify](https://www.shopify.com/) was founded in 2006 by Tobias Lütke, Daniel Weinand, and Scott Lake. The company powers e-commerce for millions of merchants worldwide. As of 2025: ~8,100 employees, $11.56B annual revenue (up 30% YoY), ~$157B market cap. Shopify is publicly traded on NYSE (SHOP) and TSX. The Dev MCP server launched as part of Shopify's **Winter '26 Edition**, which positions AI as central to the Shopify developer experience — "AI-native, developer-ready" is the edition's tagline.
+[Shopify](https://www.shopify.com/) was [founded in 2006 by Tobias Lütke, Daniel Weinand, and Scott Lake](https://en.wikipedia.org/wiki/Shopify). The company powers e-commerce for millions of merchants worldwide. As of 2025: [~7,600 employees, $11.56B annual revenue (up 30% YoY), ~$157B market cap](https://investors.shopify.com/financial-information/annual-reports). Shopify is publicly traded on NYSE (SHOP) and TSX. The Dev MCP server launched as part of Shopify's **Winter '26 Edition**, which positions AI as central to the Shopify developer experience — "AI-native, developer-ready" is the edition's tagline.
 
 Beyond the Dev MCP server, Shopify also offers **Storefront MCP** and **Customer Accounts MCP** servers for building AI-powered shopping experiences. This review covers all three.
 
@@ -188,7 +188,7 @@ Storefront API calls follow Shopify's standard [API rate limits](https://shopify
 
 **Rating: 4 out of 5**
 
-The Shopify Dev MCP server earns its rating through **official first-party backing from the largest e-commerce platform** ($11.56B revenue, millions of merchants), a **unique three-server architecture** that cleanly separates developer, shopper, and customer use cases, and **code validation capabilities** that no competing e-commerce MCP server offers. The UCP migration strengthened the Storefront MCP significantly — better catalog search, product lookup, and order status tools mean it's now genuinely useful for building post-purchase AI agents, not just pre-purchase shopping assistants.
+The Shopify Dev MCP server earns its rating through **official first-party backing from the largest e-commerce platform** ([$11.56B revenue](https://investors.shopify.com/financial-information/annual-reports), millions of merchants), a **unique three-server architecture** that cleanly separates developer, shopper, and customer use cases, and **code validation capabilities** that no competing e-commerce MCP server offers. The UCP migration strengthened the Storefront MCP significantly — better catalog search, product lookup, and order status tools mean it's now genuinely useful for building post-purchase AI agents, not just pre-purchase shopping assistants.
 
 The dev-mcp package's pace of development is impressive: v1.7.0 to v1.13.0 in six weeks, ~90K monthly npm downloads, and the Shopify AI Toolkit packaging for zero-config setup. These are the signs of a platform that has committed to MCP long-term.
 

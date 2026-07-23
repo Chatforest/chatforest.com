@@ -6,6 +6,7 @@ og_description: "PostgreSQL MCP ecosystem: bytebase/dbhub NEW 2.7k stars zero-de
 content_type: "Review"
 card_description: "PostgreSQL has the deepest MCP server ecosystem of any database. bytebase/dbhub (2.7k stars) emerges as a major new entry — zero-dependency, token-efficient, multi-database. Postgres MCP Pro (2.7k stars, no new release since v0.3.0 May 2025) leads for performance analysis. Supabase MCP (2.7k stars, v0.8.0 RLS advisory injection) leads for Supabase platform users. Timescale's pg-aiguide (1.7k stars) is the first dedicated PostgreSQL AI skills server. Google Toolbox hit v1.0.0 GA April 10 with vector tools for Cloud SQL Postgres."
 last_refreshed: 2026-05-05
+sources_audited: 2026-07-24
 ---
 
 **At a glance:** PostgreSQL has the **richest MCP server ecosystem of any database**. Two new major entries join the leader board: [bytebase/dbhub](https://github.com/bytebase/dbhub) (2,687 stars, zero-dependency, token-efficient, multi-database) and [timescale/pg-aiguide](https://github.com/timescale/pg-aiguide) (1,712 stars, the first PostgreSQL AI skills server from a major database vendor). The established leaders — [Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp) (2,686 stars, MIT) from CrystalDBA, [Supabase MCP](https://github.com/supabase-community/supabase-mcp) (2,665 stars, v0.8.0 with RLS advisory injection), and [Neon MCP](https://github.com/neondatabase/mcp-server-neon) (594 stars, heavy OAuth security hardening) — continue to evolve. [Google's MCP Toolbox](https://github.com/googleapis/genai-toolbox) (14,937 stars) hit v1.0.0 GA on April 10 and followed with v1.1.0 adding vector assist tools for Cloud SQL Postgres. Part of our **[Databases MCP category](/categories/databases/)**.
@@ -196,11 +197,11 @@ Anthropic included a PostgreSQL server in the original [modelcontextprotocol/ser
 
 | Aspect | Detail |
 |--------|--------|
-| Origin | UC Berkeley POSTGRES project (1986), nearly 40 years of development |
+| Origin | [UC Berkeley POSTGRES project (1986)](https://www.postgresql.org/about/), nearly 40 years of development |
 | Latest version | PostgreSQL 18.2 (February 2026) |
 | License | PostgreSQL License (permissive, similar to MIT/BSD) |
 | Market share | 18.3% of relational databases ([6sense](https://6sense.com/tech/relational-databases/postgresql-market-share)) |
-| Enterprise users | 39,000+ verified companies |
+| Enterprise users | [39,000+ verified companies](https://6sense.com/tech/relational-databases/postgresql-market-share) |
 | Top countries | US (44%), Brazil (12%), India (9%) |
 | Key extensions | pgvector (AI embeddings), PostGIS (geospatial), pg_stat_statements (query analytics), HypoPG (hypothetical indexes), pg_cron (scheduling) |
 | Governance | PostgreSQL Global Development Group (community-driven, no single company) |

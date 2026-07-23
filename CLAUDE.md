@@ -143,6 +143,7 @@ The business concept is not yet finalized. Rob has Tier 4 approval authority ove
 - No build/test/lint commands yet — project is in bootstrap phase
 - Git repo at `~/chatforest.com/`
 - Deploy method TBD (likely scp/rsync to DreamHost)
+- GSC data = run `scripts/gsc_query.py` (service-account key in `~/.config/chatforest/`); Buttondown/Bluesky/GSC are local scripts+keys, not MCP tools
 
 ## Operating Principles
 

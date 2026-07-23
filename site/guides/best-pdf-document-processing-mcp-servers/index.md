@@ -53,7 +53,7 @@ What surprised us: The biggest shift since March is how fast the landscape is co
 
 **Downloads:** 779,217 npm/month (340K/week) | **Language:** TypeScript | **License:** MIT | **Version:** v1.7.0 (April 21, 2026)
 
-The official PDF server from the Model Context Protocol team. Part of the [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) monorepo (84,330 stars). Launched January 15, 2026 and already the most-downloaded PDF MCP server by a wide margin.
+The official PDF server from the Model Context Protocol team. Part of the [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) monorepo (84,330 stars). Launched in January 2026 and already the most-downloaded PDF MCP server by a wide margin.
 
 **What makes it stand out:**
 - **Official reference implementation** — maintained by the MCP team alongside the protocol itself
@@ -145,7 +145,7 @@ The fastest-growing document processing framework in the MCP ecosystem. Kreuzber
 
 **Stars:** 585 (MCP server) / 58,399 (Docling library) | **Language:** Python | **License:** MIT
 
-Docling is IBM's document processing library, now in the Linux Foundation. The MCP server brings its advanced PDF understanding to AI agents.
+Docling is IBM's document processing library, [donated to LF AI & Data Foundation](https://lfaidata.foundation/projects/docling/) (an incubation-stage project under the Linux Foundation) in April 2025. The MCP server brings its advanced PDF understanding to AI agents.
 
 **What makes it stand out:**
 - **Advanced PDF layout analysis** — page layout detection, reading order analysis, and table structure recognition using AI models. This is the key differentiator from MarkItDown
@@ -290,7 +290,7 @@ Servers that go beyond reading — merging, splitting, watermarking, compressing
 
 **Stars:** 1 | **Language:** TypeScript | **License:** GPL-3.0
 
-Tiny community, but wraps one of the most capable PDF processing platforms on the internet — Stirling PDF (56K+ stars, 25M+ downloads).
+Tiny community, but wraps one of the most capable PDF processing platforms on the internet — [Stirling PDF](https://github.com/Stirling-Tools/Stirling-PDF) (~87K stars, 25M+ downloads).
 
 **What makes it stand out:**
 - **10 manipulation tools** — merge_pdfs, split_pdf, compress_pdf, convert_pdf_to_images, rotate_pdf, add_watermark, remove_pages, extract_images, convert_images_to_pdf, ocr_pdf

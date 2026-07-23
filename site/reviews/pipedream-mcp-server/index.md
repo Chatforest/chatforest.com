@@ -7,7 +7,7 @@
 
 Pipedream's MCP pitch is simple: **connect your AI agent to any of 3,000+ APIs without writing integration code or managing OAuth tokens**. Instead of installing a separate MCP server for Slack, another for GitHub, another for Google Sheets — Pipedream provides a single platform where each app gets its own MCP endpoint with tools auto-generated from Pipedream's registry of pre-built actions.
 
-The [Pipedream repository](https://github.com/PipedreamHQ/pipedream) has 11,300 GitHub stars and 5,650 forks. The company raised $22M in Series A funding (May 2022) and [joined Workday](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream) — the $22B enterprise software giant — completing its acquisition in early 2026. Over 800,000 developers have registered accounts, with 5,000+ paying customers.
+The [Pipedream repository](https://github.com/PipedreamHQ/pipedream) has 11,300 GitHub stars and 5,650 forks. The company [raised $22M in total funding](https://www.prnewswire.com/news-releases/pipedream-closes-20-million-series-a-funding-round-led-by-true-ventures-301549167.html), including a $20M Series A (May 2022, led by True Ventures), and [joined Workday](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream) — completing its acquisition by January 2026. Over 800,000 developers have registered accounts, with 5,000+ paying customers.
 
 ## What It Does
 
@@ -170,7 +170,7 @@ The hosted MCP experience at mcp.pipedream.com is free for personal use. The fre
 
 **Source Available License, not open source.** The Pipedream Source Available License Version 1.0 is not an OSI-approved open-source license. You can read and modify the code, but the license restricts certain commercial uses.
 
-**Workday acquisition is complete — developer uncertainty remains.** Workday's acquisition of Pipedream (announced November 2025, expected close January 2026) has completed. This adds the backing of a $22B enterprise software giant with 75M end users, but also shifts Pipedream's center of gravity toward enterprise IT rather than independent developers. Questions about future pricing, product direction, and whether the developer-focused free tier will survive corporate priorities remain unanswered. Multiple analyst articles note that Pipedream's future "as a customer-facing entity is uncertain" for those not in the Workday ecosystem.
+**Workday acquisition is complete — developer uncertainty remains.** Workday's acquisition of Pipedream (announced November 2025, expected close January 2026) has completed. This adds the backing of an enterprise software company with [~$9.6B annual revenue and ~75M end users](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream), but also shifts Pipedream's center of gravity toward enterprise IT rather than independent developers. Questions about future pricing, product direction, and whether the developer-focused free tier will survive corporate priorities remain unanswered. Multiple analyst articles note that Pipedream's future "as a customer-facing entity is uncertain" for those not in the Workday ecosystem.
 
 **Cost scales with usage.** The free tier (100 credits, 3 accounts) is extremely limited. The Connect plan at $99/month is the realistic minimum for building multi-user agent applications. At scale, costs can accumulate quickly — especially with credit-based compute pricing where memory usage affects billing.
 

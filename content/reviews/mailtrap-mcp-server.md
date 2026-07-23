@@ -6,6 +6,7 @@ og_description: "Mailtrap MCP: send emails, manage templates, test in sandbox, a
 content_type: "Review"
 card_description: "Official first-party MCP server for Mailtrap's email delivery platform. 23 tools covering email sending, sandbox testing, domain management, email logs, templates, and analytics. TypeScript, stdio transport, npx install, free tier at 4,000 emails/mo."
 last_refreshed: 2026-05-03
+sources_audited: 2026-07-24
 category_url: "/categories/email-notification-services/"
 ---
 
@@ -15,7 +16,7 @@ category_url: "/categories/email-notification-services/"
 
 Mailtrap's MCP server is a **first-party, officially maintained** integration that lets AI agents send transactional emails, manage email templates, test messages in a sandbox environment, and query delivery analytics — all without writing code. You install it via npx, configure your API token, and your AI assistant can immediately start sending emails through Mailtrap's infrastructure.
 
-[Mailtrap](https://mailtrap.io/) is built by Railsware, a product studio founded in 2007 with ~201 employees and ~$75M annual revenue (as of August 2025). Mailtrap itself serves over 150,000 monthly active users including enterprise clients like Yelp, PayPal, Toptal, Atlassian, and Adobe. The platform covers both **Email Sandbox** (testing) and **Email API/SMTP** (production sending) — and the MCP server bridges both.
+[Mailtrap](https://mailtrap.io/) is built by [Railsware](https://railsware.com/), a product studio [founded in 2007 with ~201 employees and ~$75M annual revenue (as of August 2025)](https://www.starterstory.com/railsware-breakdown). Mailtrap itself [serves over 150,000 monthly active users](https://mailtrap.io/email-mcp-server/) including enterprise clients like [Yelp, PayPal, Toptal, Atlassian, and Adobe](https://mailtrap.io/email-mcp-server/). The platform covers both **Email Sandbox** (testing) and **Email API/SMTP** (production sending) — and the MCP server bridges both.
 
 ## What It Does
 
@@ -178,7 +179,7 @@ Business plan and above includes a **dedicated IP with auto warm-up**.
 | **Deletion safety** | Mixed (some delete ops) | Yes (no delete ops) | No | Varies |
 | **Free emails/mo** | 4,000 | 100/day (~3,000) | 3,000 | 100 |
 | **Paid from** | $15/mo | $35/mo | $20/mo | $15/mo |
-| **Deliverability score** | 91/100 | — | — | — |
+| **Deliverability score** | [91/100](https://emaildeliverabilityreport.com/en/review/mailtrap) | — | — | — |
 
 **Key differentiators:**
 

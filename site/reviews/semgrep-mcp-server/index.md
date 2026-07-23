@@ -31,19 +31,19 @@ The Semgrep MCP server exposes security scanning capabilities to any MCP-compati
 
 ## What's New Since March 2026
 
-**Semgrep Multimodal** (March 2026) — formerly Semgrep Assistant, now rebranded. Adds AI-powered detection for complex business logic flaws including IDOR (insecure direct object reference) and broken authorization — vulnerability classes that pure static analysis struggles to catch. Semgrep reports 1.9× better recall on IDOR detection compared to standalone LLMs.
+**Semgrep Multimodal** (March 2026) — formerly Semgrep Assistant, now rebranded. Adds AI-powered detection for complex business logic flaws including IDOR (insecure direct object reference) and broken authorization — vulnerability classes that pure static analysis struggles to catch. Semgrep [reports 1.9× better recall on IDOR detection](https://www.prnewswire.com/news-releases/semgrep-announces-the-private-beta-of-ai-powered-detection-to-uncover-business-logic-vulnerabilities-302612139.html) compared to standalone LLMs, and [up to 8× more true positives with 50% fewer false positives](https://semgrep.dev/blog/2026/attackers-cant-have-all-the-advantage-introducing-semgrep-multimodal/) vs. base models.
 
 **Autofix beta** (March 2026) — formerly "Click to Fix," now in beta. Generates AI-drafted pull requests for Code findings. Your agent detects a vulnerability, Autofix proposes the remediation as a PR. Still opt-in and beta-quality, but a meaningful step toward fully automated security remediation.
 
 **Supply chain hooks** (v1.158.0, April 9, 2026) — hooks now trigger on supply chain (SCA) findings in addition to SAST. This extends the automatic-scan-and-regenerate loop to dependency vulnerabilities, not just code pattern issues.
 
-**Taint engine redesign** (v1.158.0, April 9, 2026) — 20–40% performance improvement on taint-based analysis. Lambda taint tracking was added in v1.157.0 (March 31). More accurate, faster scans for MCP-driven security checks.
+**Taint engine redesign** (v1.158.0, April 9, 2026) — [20–40% performance improvement on taint-based analysis](https://semgrep.dev/changelog/). Lambda taint tracking was added in v1.157.0 (March 31). More accurate, faster scans for MCP-driven security checks.
 
 **Codex and VS Code now supported** — The supported editor list has expanded. Codex is configured via `~/.codex/config.toml`. VS Code via `.vscode/mcp.json`. The complete list: Claude Code, Cursor (+ Cursor Plugin Marketplace), Windsurf, Codex, VS Code, and any MCP-compatible client.
 
 **Cursor Plugin Marketplace listing** (March 11, 2026) — Semgrep is now officially listed in the Cursor Plugin Marketplace, improving discoverability for Cursor users.
 
-**OpenAI Trusted Access for Cyber Program** (April 2026) — Semgrep was selected for this program, receiving $10M in API credits for frontier model access. Claims: 8× more true positives, 50% fewer false positives compared to LLMs alone. Signals that Semgrep is deepening its AI integration rather than treating it as a side feature.
+**OpenAI Trusted Access for Cyber Program** (April 2026) — Semgrep was [selected for OpenAI's Trusted Access for Cyber Program](https://openai.com/index/trusted-access-for-cyber/), which provides frontier model access to qualifying cybersecurity vendors. Signals that Semgrep is deepening its AI integration rather than treating it as a side feature.
 
 **TeamPCP supply chain campaign** (February–March 2026) — A targeted supply chain attack campaign hit security vendors including Trivy, Checkmarx, LiteLLM, and Bitwarden. Semgrep confirmed unaffected and published detection rules within hours of each discovered attack.
 

@@ -6,15 +6,16 @@ og_description: "Prisma MCP: 17 tools across local and remote modes — migratio
 content_type: "Review"
 card_description: "Official first-party dual-mode MCP server from Prisma. Local mode (7 tools) handles migrations, schema management, and Prisma Studio. Remote mode (10 tools) manages Prisma Postgres infrastructure — provisioning, backups, SQL queries, schema introspection. Built into Prisma CLI since v6.6.0, TypeScript, Apache 2.0 license."
 last_refreshed: 2026-05-01
+sources_audited: 2026-07-24
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
 **At a glance:** [GitHub](https://github.com/prisma/mcp) — 41 stars, TypeScript, Apache 2.0 license, 28 commits. Local: 7 tools, stdio transport, CLI-integrated. Remote: 10 tools, HTTP transport, OAuth auth. Official first-party from [Prisma](https://www.prisma.io/). PulseMCP: ~225K all-time visitors, ~5.5K weekly, #209 globally.
 
-The Prisma MCP server is the **official first-party MCP integration** for [Prisma](https://www.prisma.io/), the most downloaded ORM for Node.js and TypeScript with ~7.8 million weekly npm downloads. Unlike most MCP servers that ship as a single package, Prisma takes a **dual-mode approach**: a local server for development workflows and a remote server for cloud infrastructure management.
+The Prisma MCP server is the **official first-party MCP integration** for [Prisma](https://www.prisma.io/), the most downloaded ORM for Node.js and TypeScript with [~13 million weekly npm downloads](https://www.npmjs.com/package/prisma). Unlike most MCP servers that ship as a single package, Prisma takes a **dual-mode approach**: a local server for development workflows and a remote server for cloud infrastructure management.
 
-[Prisma](https://www.prisma.io/) was founded in 2016 in Berlin by [Søren Bramer Schmidt](https://github.com/sorenbs) and [Johannes Schickling](https://github.com/schickling). The company has raised $56.5M from investors including Kleiner Perkins and Amplify Partners. As of 2024: ~130 employees, ~$9.2M revenue. Prisma ORM supports PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB, and CockroachDB. In November 2025, Prisma released [v7.0.0](https://www.prisma.io/blog/announcing-prisma-orm-7-0-0) — a major rewrite that removed the Rust engine, delivering 90% smaller bundles and 3x faster queries. Alongside the ORM, Prisma now offers **Prisma Postgres**, a managed database service that the remote MCP server is built to manage.
+[Prisma](https://www.prisma.io/) was [founded in 2016 in Berlin](https://nordic9.com/news/prisma-raises-4-5m-seed-round-led-by-kleiner-perkins-news7607101265/) by [Søren Bramer Schmidt](https://github.com/sorenbs) and [Johannes Schickling](https://github.com/schickling). The company has [raised $56.5M](https://tracxn.com/d/companies/prisma/__B3He-4OR9yGfYYdaKBgY9_NpeSOJibbXONowfLwA3Yw) from investors including Kleiner Perkins and Amplify Partners. [As of 2024: ~130 employees, ~$9.2M revenue](https://getlatka.com/companies/prisma1). Prisma ORM supports PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB, and CockroachDB. In November 2025, Prisma released [v7.0.0](https://www.prisma.io/blog/announcing-prisma-orm-7-0-0) — a major rewrite that removed the Rust engine, delivering 90% smaller bundles and 3x faster queries. Alongside the ORM, Prisma now offers **Prisma Postgres**, a managed database service that the remote MCP server is built to manage.
 
 ## What's New (May 2026 Updates)
 

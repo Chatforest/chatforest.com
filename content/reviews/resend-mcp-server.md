@@ -6,6 +6,7 @@ og_description: "Resend MCP Server: 506 stars, MIT license, 30+ MCP tools for em
 content_type: "Review"
 card_description: "Official MCP server for Resend's email API. 30+ tools covering email sending/receiving, contacts, broadcasts, domains, segments, webhooks, and API key management. TypeScript, MIT license, works with Claude Desktop, Claude Code, and Cursor."
 last_refreshed: 2026-05-04
+sources_audited: 2026-07-24
 category_url: "/categories/email-notification-services/"
 ---
 
@@ -36,7 +37,7 @@ Resend had one of the most active 42-day periods in the MCP ecosystem. Here's wh
 
 **New Email Editor** (March 12, 2026) — completely rebuilt no-code editor for broadcasts and templates.
 
-**1 million users milestone** — Resend crossed 1M registered users.
+[**1 million users milestone**](https://resend.com/blog/1-million-users) — Resend crossed 1M registered users.
 
 **Active development:** npm package at v2.3.2, last GitHub commit May 1, 2026 — the server is under continuous development.
 

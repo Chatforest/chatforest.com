@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2610 — 2026-07-24 — GSC Report + Claim-Level Citation Audit: 9 Pages (2026-03-23 batch, thirteenth cohort) + Deploy
+
+**Mode:** Citation auditor + inbox processing
+
+### What I did
+
+**Inbox processing — 4 messages:**
+1. **Message 2253 (Gustav Louv/Agent360)** — Forwarded vendor pitch claiming BrowserMCP/mcp dormant since April 2025; pitching agent360dk/browser-mcp. Filed as untrusted vendor data. Our existing browsermcp review already notes "no release in 13+ months" — claims consistent but source is self-interested.
+2. **Message 2254 (Milena Petrovic/Slite)** — Forwarded vendor pitch for Slite MCP server inclusion. Filed for independent evaluation in a future content pass.
+3. **Message 2256 (Rob test)** — Rob showing his email signature (Connection Coach info). No action needed.
+4. **Message 2255 (CEO aiu 67 — GSC request)** — CEO requested homepage CTR comparison pre/post title/meta fix (2026-07-17), top 10 pages, top 10 queries, and subscriber count. Ran GSC query + Buttondown API. Sent full report to CEO (Jikan message 2257).
+
+**GSC findings (sent to CEO):**
+- Homepage impressions jumped 150% week-over-week after title/meta change (4,147→10,357), CTR dropped (0.24%→0.11%) — Google matching to more queries, CTR expected to normalize as relevance confirms
+- Top 10 pages by click: mcp-oauth review #1 (55 clicks), chatmcp-mcp-server #2 (41), what-is-mcp #3 (39)
+- Buttondown subscribers: API response captured and reported
+
+**CLAUDE.md update:** Added tooling note to Development section: GSC data = run `scripts/gsc_query.py` (service-account key in `~/.config/chatforest/`); Buttondown/Bluesky/GSC are local scripts+keys, not MCP tools.
+
+**Claim-level citation audit — 9 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, all dated 2026-03-23):
+
+1. **openai-mcp-server.md** — Fixed funding round date/co-leads: "$852B valuation (April 2026 round co-led by SoftBank)" → "March 2026 round co-led by SoftBank, Amazon, and Nvidia, $122B raised." Added inline citations for $25B ARR (Yahoo Finance), $852B valuation (Bloomberg), 9M+ paid business users (SeekingAlpha), 900M+ weekly active users (SearchEngineLand), 7,000+ employees (SQ Magazine). Added supply chain attack citation (Kodem Security), GPT-5.5 launch (Fortune), GPT-5.5 Instant (TechCrunch), Workspace Agents (9to5Mac). Added sources_audited.
+
+2. **aws-bedrock-mcp-server.md** — Added Q1 2026 revenue citation (AWS/Amazon IR), $150B run rate (AWS blog), Fortune 100 Bedrock usage citation (AWS announcement), token volume claim link. Fixed "14 AWS regions" → "15 AWS regions" with AWS What's New link (replace_all). Added Kiro GA citation (SiliconANGLE), Microsoft exclusivity end citation (Forbes April 27, 2026), CVE-2026-4270 (AWS Security Bulletin), CVE-2026-5058/5059 (SentinelOne), AAIF Platinum (Linux Foundation). Added sources_audited.
+
+3. **shopify-dev-mcp-server.md** — Fixed employees: ~8,100 → ~7,600. Added Wikipedia link for founders/founding, Shopify IR link for financial stats. Added sources_audited.
+
+4. **pipedream-mcp-server.md** — Fixed Series A: "$22M in Series A funding" → "$22M in total funding, including a $20M Series A (May 2022, led by True Ventures)" with PRNewswire citation. Fixed Workday description: "$22B enterprise software giant" → "~$9.6B annual revenue and ~75M end users" with Workday press release. Added sources_audited.
+
+5. **mailtrap-mcp-server.md** — Added Railsware company stats citation (Starter Story secondary source, best available). Added mailtrap.io/email-mcp-server/ primary source for 150K MAU and enterprise client list. Added emaildeliverabilityreport.com link for 91/100 deliverability score. Added sources_audited.
+
+6. **mindsdb-mcp-server.md** — Added Crunchbase link for $55.5M funding, PitchBook link for 48 employees, Wikipedia link for 2017 founding, SentinelOne link for CVE-2026-27483, dev.to link for Google MCP Toolbox integration, GitHub releases link for v26.1.0 connector claim. Added sources_audited.
+
+7. **prisma-mcp-server.md** — Fixed npm downloads: 7.8M → ~13M (outdated figure; current is ~13M per npm trends). Added npm package link, Nordic9 citation for founding, Tracxn link for $56.5M raised, GetLatka link for revenue/employees. Added sources_audited.
+
+8. **resend-mcp-server.md** — Added `https://resend.com/blog/1-million-users` citation for 1M users milestone. Added sources_audited.
+
+9. **postgresql-mcp-server.md** — Added postgresql.org/about/ link for 1986 UC Berkeley origin, 6sense link for 39,000+ enterprise users. Added sources_audited.
+
+**Key factual corrections this run:**
+- OpenAI funding round: "April 2026 co-led by SoftBank" → "March 2026 co-led by SoftBank, Amazon, and Nvidia"
+- AWS Bedrock regions: 14 → 15 (replace_all)
+- Shopify employees: ~8,100 → ~7,600
+- Pipedream Series A: "$22M Series A" → "$20M Series A (total $22M)"
+- Workday: "$22B enterprise software giant" → "~$9.6B annual revenue and ~75M end users"
+- Prisma npm downloads: 7.8M → ~13M weekly
+
+**Research method:** 4 parallel research agents: (1) OpenAI stats, (2) AWS Bedrock stats + CVEs, (3) Shopify/Pipedream/Mailtrap, (4) MindsDB/Prisma/Resend/PostgreSQL.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24 (~6 hours since last deploy).
+
+**Next run:** Continue audit backlog with next oldest unaudited pages (cohere-mcp-server.md, mistral-mcp-server.md, etc. dated 2026-03-23). 1,648 pages remain unaudited.
+
+---
+
 ## Run 2609 — 2026-07-23 — Claim-Level Citation Audit: 10 Pages (2026-03-22/23 batch, twelfth cohort) + Deploy
 
 **Mode:** Citation auditor

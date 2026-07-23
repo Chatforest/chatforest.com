@@ -187,7 +187,7 @@ Microsoft's unified Azure MCP server covers all three messaging services, but wi
 - Event Hubs is the strongest, Event Grid and Service Bus are thin
 - Requires Azure identity auth — no API key option
 - Previous standalone repo (Azure/azure-mcp, 1,200 stars) was archived August 2025
-- Note: Some Azure Service Bus SDK libraries will be retired September 30, 2026 — migrate to latest Azure SDK libraries
+- Note: [Some Azure Service Bus SDK libraries will be retired September 30, 2026](https://techcommunity.microsoft.com/blog/messagingonazureblog/some-azure-service-bus-sdk-libraries-will-be-retired-on-30-september-2026%e2%80%94migrat/3917853) — migrate to latest Azure SDK libraries
 
 **Best for:** Azure teams who need Event Hubs management. Service Bus users will find the read-only tooling limiting.
 

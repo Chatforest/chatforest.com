@@ -30,7 +30,7 @@ Resend had one of the most active 42-day periods in the MCP ecosystem. Here's wh
 
 **New Email Editor** (March 12, 2026) — completely rebuilt no-code editor for broadcasts and templates.
 
-**1 million users milestone** — Resend crossed 1M registered users.
+[**1 million users milestone**](https://resend.com/blog/1-million-users) — Resend crossed 1M registered users.
 
 **Active development:** npm package at v2.3.2, last GitHub commit May 1, 2026 — the server is under continuous development.
 

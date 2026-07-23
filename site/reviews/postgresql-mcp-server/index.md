@@ -191,11 +191,11 @@ Anthropic included a PostgreSQL server in the original [modelcontextprotocol/ser
 
 | Aspect | Detail |
 |--------|--------|
-| Origin | UC Berkeley POSTGRES project (1986), nearly 40 years of development |
+| Origin | [UC Berkeley POSTGRES project (1986)](https://www.postgresql.org/about/), nearly 40 years of development |
 | Latest version | PostgreSQL 18.2 (February 2026) |
 | License | PostgreSQL License (permissive, similar to MIT/BSD) |
 | Market share | 18.3% of relational databases ([6sense](https://6sense.com/tech/relational-databases/postgresql-market-share)) |
-| Enterprise users | 39,000+ verified companies |
+| Enterprise users | [39,000+ verified companies](https://6sense.com/tech/relational-databases/postgresql-market-share) |
 | Top countries | US (44%), Brazil (12%), India (9%) |
 | Key extensions | pgvector (AI embeddings), PostGIS (geospatial), pg_stat_statements (query analytics), HypoPG (hypothetical indexes), pg_cron (scheduling) |
 | Governance | PostgreSQL Global Development Group (community-driven, no single company) |

@@ -44,7 +44,7 @@ The landscape splits into ten categories: **Home Assistant** (the most mature, 5
 
 Home Assistant is the clear leader in smart home MCP integration — and it just got stronger. With 5+ community servers, a rapidly growing flagship project, **and native MCP support now built into Home Assistant Core**, it's the safest entry point for AI-controlled smart homes.
 
-**Major development (since HA 2025.2):** Home Assistant Core now includes native MCP integrations — both an **MCP Server** (lets external AI clients control your HA instance) and an **MCP Client** (lets HA consume external MCP tools). This is built-in, not a third-party add-on. Currently used by ~1.5% of active installations.
+**Major development (since HA 2025.2):** Home Assistant Core now includes native MCP integrations — both an **MCP Server** (lets external AI clients control your HA instance) and an **MCP Client** (lets HA consume external MCP tools). This is built-in, not a third-party add-on. Currently used by [~3.2% of active installations](https://www.home-assistant.io/integrations/mcp_server/).
 
 ### The winner: homeassistant-ai/ha-mcp
 
@@ -252,7 +252,7 @@ MQTT is the backbone protocol of IoT. These servers let AI agents publish messag
 
 **[kukapay/modbus-mcp](https://github.com/kukapay/modbus-mcp)** (21 stars, Python, MIT, 6 tools) — Focused Modbus-only server supporting TCP, UDP, and serial connections. Read/write holding registers and coils. Best for simple PLC integration without the overhead of a full IIoT platform.
 
-**[cadugrillo/s7-mcp-bridge](https://github.com/cadugrillo/s7-mcp-bridge)** (14 stars, TypeScript, Docker) — Connects AI agents to **Siemens S7-1500 and S7-1200 PLCs**. 21+ tools for PLC interaction including auth, data read/write, alarm management, and system diagnostics. Siemens is the world's largest industrial automation vendor, making this a significant addition.
+**[cadugrillo/s7-mcp-bridge](https://github.com/cadugrillo/s7-mcp-bridge)** (14 stars, TypeScript, Docker) — Connects AI agents to **Siemens S7-1500 and S7-1200 PLCs**. 21+ tools for PLC interaction including auth, data read/write, alarm management, and system diagnostics. Siemens is [the world's leading industrial automation vendor by revenue and PLC market share](https://www.evsint.com/top-10-global-industrial-automation-companies-2026/), making this a significant addition.
 
 **[midhunxavier/OPCUA-MCP](https://github.com/midhunxavier/OPCUA-MCP)** (11 stars, Python + JavaScript, 7 tools) — Dedicated OPC UA MCP server. Read/write nodes, browse hierarchies, batch operations, method calls, and variable discovery. Dual Python and TypeScript implementations. Best for OPC UA environments (common in manufacturing).
 
@@ -322,7 +322,7 @@ Use this decision flowchart:
 
 **3. On-device MCP is real.** Projects like ESP32MCPServer and esp32-cam-ai prove that MCP servers can run directly on microcontrollers. This eliminates the bridge server — the hardware itself speaks MCP. As edge computing grows, expect more embedded MCP servers.
 
-**4. Gaps are closing — slowly.** Matter protocol now has two small MCP servers (7 and 6 stars). SmartThings has community servers (5 stars). Ring has a 3-star server. But Google Home/Nest, Azure IoT Hub, Z-Wave, LoRaWAN, and Thread remain unserved. The practical bridge for all of these is Home Assistant — which, via its native MCP integration, effectively fills these gaps indirectly. Matter itself has reached version 1.5 with cameras, energy management, and 750+ products — see our [Matter Meets MCP deep dive](/guides/mcp-matter-smart-home-protocol/) for the full picture.
+**4. Gaps are closing — slowly.** Matter protocol now has two small MCP servers (7 and 6 stars). SmartThings has community servers (5 stars). Ring has a 3-star server. But Google Home/Nest, Azure IoT Hub, Z-Wave, LoRaWAN, and Thread remain unserved. The practical bridge for all of these is Home Assistant — which, via its native MCP integration, effectively fills these gaps indirectly. [Matter 1.5](https://csa-iot.org/newsroom/matter-1-5-introduces-cameras-closures-and-enhanced-energy-management-capabilities/) (released November 2025) added cameras and energy management, with [750+ certified products](https://matter-smarthome.de/) per community tracker (CSA's own ledger includes 1,000+ counting variants) — see our [Matter Meets MCP deep dive](/guides/mcp-matter-smart-home-protocol/) for the full picture.
 
 ---
 

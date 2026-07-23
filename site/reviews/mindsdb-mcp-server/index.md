@@ -9,7 +9,7 @@ Part of our **[Databases MCP category](/categories/databases/)**.
 
 MindsDB's pitch is ambitious: **one MCP server to replace dozens of individual data connectors**. Instead of wiring up separate MCP servers for your PostgreSQL database, your Slack workspace, your Gmail inbox, and your Snowflake warehouse, MindsDB federates them all behind a single query interface. Your AI agent connects to one MCP endpoint and gets access to everything.
 
-The [MindsDB repository](https://github.com/mindsdb/mindsdb) has 38,800 GitHub stars and 810 contributors — making it one of the most popular open-source projects that functions as an MCP server. The company has raised $55.5M in funding, employs roughly 48 people across 5 continents, and has been building this federated query engine since 2017.
+The [MindsDB repository](https://github.com/mindsdb/mindsdb) has 38,800 GitHub stars and 810 contributors — making it one of the most popular open-source projects that functions as an MCP server. The company has [raised $55.5M in funding](https://www.crunchbase.com/organization/mindsdb), employs roughly [48 people](https://pitchbook.com/profiles/company/223449-22) across 5 continents, and has been [building this federated query engine since 2017](https://en.wikipedia.org/wiki/MindsDB).
 
 ## What It Does
 
@@ -44,7 +44,7 @@ This is the core value proposition. MindsDB connects to:
 
 Each connection is configured through MindsDB's SQL interface using `CREATE DATABASE` statements. Once connected, the data source appears as a queryable database in the federated layer — no ETL, no data copying.
 
-v26.1.0 (April 23, 2026) added five new connectors: **HubSpot Leads**, **Raindrop.io**, **Denodo**, **Freshdesk**, and **MotherDuck** (enhanced DuckDB support). The connector count continues to grow beyond the original 200+.
+[v26.1.0 (April 23, 2026)](https://github.com/mindsdb/mindsdb/releases) added five new connectors: **HubSpot Leads**, **Raindrop.io**, **Denodo**, **Freshdesk**, and **MotherDuck** (enhanced DuckDB support). The connector count continues to grow beyond the original 200+.
 
 ### Federated Query Architecture
 
@@ -61,7 +61,7 @@ MindsDB v26.0.0 introduced improved knowledge bases that combine structured and 
 - **Metadata filtering** — filter results by metadata fields alongside relevance scoring
 - **Relevance thresholds** — set minimum relevance scores to control result quality
 
-This positions MindsDB as both a data federation layer and a RAG infrastructure provider. In April 2026, MindsDB announced integration with Google's MCP Toolbox, adding unstructured data support (Gmail, Slack, files) to the federated query layer.
+This positions MindsDB as both a data federation layer and a RAG infrastructure provider. In April 2026, [MindsDB announced integration with Google's MCP Toolbox](https://dev.to/mindsdb/mindsdb-supercharges-googles-mcp-toolbox-with-unstructured-data-support-4cch), adding unstructured data support (Gmail, Slack, files) to the federated query layer.
 
 ### AI Agents and Job Scheduling
 
@@ -133,7 +133,7 @@ claude mcp add-json "mindsdb" '{"command":"npx","args":["-y","mindsdb"]}'
 
 **250 questions/month on the free cloud tier.** Self-hosted has no query limits, but cloud users hit a wall quickly. Paid pricing isn't publicly documented.
 
-**Security vulnerabilities — one patched, others unresolved.** CVE-2026-27483 (critical path traversal RCE via `/api/files` endpoint) was patched in v25.9.1.1, before our March review. The previously flagged tarfile extraction, SSRF bypass, and MySQL authentication issues have no documented resolution as of May 2026.
+**Security vulnerabilities — one patched, others unresolved.** [CVE-2026-27483](https://www.sentinelone.com/vulnerability-database/cve-2026-27483/) (critical path traversal RCE via `/api/files` endpoint) was patched in v25.9.1.1, before our March review. The previously flagged tarfile extraction, SSRF bypass, and MySQL authentication issues have no documented resolution as of May 2026.
 
 **Small team for a big surface area.** ~48 employees maintaining 200+ integrations and a federated query engine.
 
