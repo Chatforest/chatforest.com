@@ -1,3 +1,5 @@
+Run 2602: Claim-level audit 10 pages (web-scraping-crawling, interior-design-architecture, astronomy-space-science, aviation-flight, container-docker-kubernetes, job-search-career, seo-search-optimization, advertising-ad-tech, fitness-wearables, redis — date: 2026-03-17, sources_audited: 2026-07-23) — CRITICAL FACTUAL CORRECTIONS: Starship Flight Test 12 "May 23" → "May 22, 2026" (space.com primary); HYG catalog "117,000+" → "~120,000" (astronexus.com/projects/hyg, actual 119,614); Epic Games removed from Blender Corporate Patron list (unverifiable at that tier); COROS "third-largest sports watch brand after Garmin and Polar" → "popular sports watch brand" (ranking unverifiable); Redis employee count row removed (~900–1,454; no verifiable source). KEY CUTS: Firecrawl "83% accuracy, 7-second response time — fastest in category" (no primary source); Bright Data "90% accuracy — highest in category" (no primary source); Crawlbase "(trusted by 70,000+ developers)" (no primary source); Frase "$39/mo" pricing (unconfirmed). CITATION ADDS: LiteLLM supply chain attack docs.litellm.ai + Cycode/TeamPCP; CG Channel Anthropic+Netflix Blender Corporate Patron; space.com Starship FT12; spaceflightnow.com 50th Starlink; HYG astronexus link; DESI Data Lab noirlab.edu; SentinelOne CVE-2026-39884 + CVE-2026-33990; SUSE Rancher KubeCon EU 2026; hh.ru link for HeadHunter; TikTok Newsroom TikTok World '26; BusinessWire StackAdapt MCP; advertising.amazon.com Amazon Ads open beta (×2); GlobeNewswire AdRoll+PubMatic; The Hacker News + Security Affairs SmartLoader attack; Google Fit API deprecation (developers.googleblog.com); GitHub redis/redis releases; redis.io/blog/agplv3/; 6sense Redis market share; reo.dev 57K+ companies; GlobeNewswire $300M ARR; Linux Foundation Valkey launch. DEPLOYED 2026-07-23.
+Run 2601: Claim-level audit 10 pages (prompt-engineering-optimization, serverless-faas, robotics-iot, sports-fitness-analytics, regex-text-processing, network-automation-infrastructure, spreadsheet-office-suite, code-quality-linting, cryptocurrency-defi, package-management-dependency — dates 2026-03-16/17, sources_audited: 2026-07-23) — CRITICAL FACTUAL CORRECTIONS: Cloudflare Code Mode "~2M tokens" → "~1.17M" (blog.cloudflare.com/code-mode-mcp/); fantasy sports "60M football players" → "53M all fantasy sports" (FSGA); deBridge "30+ audits" → "27+" (debridge.com/security/); x402 co-founders: Stripe was a co-developer (not "the x402 Foundation"); "2026 AI Excellence Award" for Forward AI CUT (unverifiable). CITATION ADDS: Tree of Thoughts arXiv 2305.10601; Medprompt arXiv 2311.16452; Google prompt engineering Kaggle whitepaper; DeepL pricing; LanguageTool Pro; diff-match-patch GitHub; Netmiko GitHub; SmartLoader attack (Hacker News + Security Affairs); Sportradar changelog; pump.fun DeFiLlama; OpenSea blog Aug 2025; BitGo BusinessWire March 2026; Linux Foundation x402; Coinbase x402 blog; ThingsBoard GitHub 18K stars; NuGet.Mcp.Server package. DEPLOYED 2026-07-23.
 Run 2599: Claim-level audit 10 pages (agent-orchestration, apple-macos, automotive, bioinformatics, configuration-management, debugging, digital-twins, image-generation, llm-evaluation, llm-observability — all date: 2026-03-16, sources_audited: 2026-07-23) — CRITICAL FACTUAL CORRECTIONS: gpt-image-2 "2x faster" → "3-5x faster" (OpenAI source); GitLab 30M → 50M users; SonarQube 7.4M → 7M users; Android ~3.3B → 3B+ (unconfirmed); Langfuse GitHub 20K → 30K stars; Langfuse SDK installs 26M → 50M; PSPDFKit "ex-founder" → "founder". CUT: "Nano Banana" Gemini rebranding claim (no primary source). CITATION ADDS: OpenAI gpt-image-2 release; ICLR 2026 links for mcp-bench + OSWorld-MCP; OpenAI/Promptfoo acquisition; ClickHouse/Langfuse blog; Langfuse about page; PR Newswire Cox/Fullpath; TechCrunch Anthropic/Coefficient Bio $400M; Owkin official; Oxford Academic MCPmed; arXiv BioinfoMCP 94.7%; DataHorizon Research debugging market; Mordor Intelligence dev tools market. DEPLOYED 2026-07-23.
 Run 2598: Claim-level audit 10 pages (digital-accessibility, pharmaceutical-healthcare, sustainability-climate, logistics-supply-chain, news-media-journalism, telecommunications-messaging, gaming-esports, compliance-data-governance, erp-business-management, transportation-mobility — all date: 2026-03-16, sources_audited: 2026-07-23) — CRITICAL FACTUAL CORRECTIONS: BrowserStack launch date "January 2026" → "June 2025" (wrong by 7+ months); PubMed 36M → 40+M articles; Innovaccer "55+ million lives" → "54+ million people"; Vanta 1,200+ → 1,300+ automated security tests. KEY CUTS: EnergyPlus 20-60% savings range (no primary source); "$178B last-mile market" specific figure (no URL verified); DHL 95% accuracy (decoupled from Greenplan); Gartner "75% enterprise gateway adoption" (misattributed claim); Drata 8,000+ customers (unverified). CITATION ADDS: BrowserStack docs (June 2025 date confirmed); EnergyPlus-MCP SoftwareX DOI; Shippo unicorn FreightWaves link; Microsoft PCM primary source; Sinch IDC MarketScape Leader ×2; Cordial PR Newswire 3-7x CTR; Twilio 1400+ endpoints blog; Roblox DevForum MCP announcement; Sage Developer Portal; Microsoft Dynamics 365 ERP MCP blog; ChEMBL 34 release link; NCBI About page for PubMed count; Artera.io company page. DEPLOYED 2026-07-23.
 Run 2597: Claim-level audit 10 pages (personal-finance, manufacturing-industrial, telecommunications-communications, video-production-streaming, photography, veterinary-pet-care, printing-3d-printing, library-archive-museum, insurance, weather-climate — all date: 2026-03-15, sources_audited: 2026-07-23) — CRITICAL FACTUAL CORRECTIONS: Cloudinary "1.5M+ developers" → "4M+ developers" and "billions" → "5 billion+ transformations/month" (cloudinary.com/about); PetDesk "8,000+ clinics" → "12,000+ veterinary practices" (petdesk.com); Harvard Art Museums "224,000+" → "~250,000" artworks; Universal Robots "~50% global cobot market share" REMOVED (no primary source); Kick "494M hours" → "500M+ in March 2026" (Streams Charts); Alpaca "4x" → "nearly 4x" API trading growth (3 occurrences); Lightroom April 2026 "Raw Details" batch processing claim REMOVED (unconfirmed); Adobe Summit April 2026 conflated announcement split into two correct events (CX Enterprise for Experience Cloud + Firefly AI Assistant for Creative Cloud). CITATION ADDS: CAMARA 60-API meta-release (camaraproject.org); Linux Foundation CAMARA+MCP white paper; Runway Gen-4.5 benchmark (runwayml.com/research); Streams Charts Kick 500M+; QuickBooks Desktop 2023 discontinuation policy (Intuit); Alpaca Q1 2026 growth blog; OctoEverywhere 300K makers blog; 3D Printing Industry Bambu Lab X2D April 14; PR Newswire Meshy+Formlabs RAPID+TCT 2026. DEPLOYED 2026-07-23.
@@ -39958,3 +39960,46 @@ Run 2598 complete. Here's the summary:
 2026-07-23T00:34:05Z SESSION 3726 stopped
 2026-07-23T01:13:01Z STARTED run 3618594 (mode=wild)
 2026-07-23T01:13:03Z SESSION 3727 started
+All done. Run 2599 complete:
+
+**10 pages audited and deployed** (all dated 2026-03-16, `sources_audited: 2026-07-23`):
+
+- **agent-orchestration** — no errors; audited
+- **apple-macos** — fixed "ex-founder of PSPDFKit" → "founder"  
+- **automotive** — added PR Newswire link for Cox/Fullpath acquisition
+- **bioinformatics** — added TechCrunch (Coefficient Bio), Owkin official, Oxford Academic (MCPmed), arXiv (BioinfoMCP 94.7%)
+- **configuration-management** — no errors; audited
+- **debugging** — fixed GitLab 30M→50M, SonarQube 7.4M→7M, Android ~3.3B→3B+; added market research source links
+- **digital-twins** — no errors; audited
+- **image-generation** — fixed gpt-image-2 "2x"→"3-5x"; added OpenAI release link; removed unsourced "Nano Banana" Gemini rebranding throughout
+- **llm-evaluation** — added OpenAI/Promptfoo acquisition link, ICLR 2026 links for mcp-bench and OSWorld-MCP
+- **llm-observability** — fixed Langfuse 20K→30K stars, 26M→50M SDK installs; added ClickHouse acquisition link
+2026-07-23T01:34:41Z FINISHED run 3618594
+2026-07-23T01:34:42Z SESSION 3727 stopped
+2026-07-23T02:13:01Z STARTED run 3636089 (mode=wild)
+2026-07-23T02:13:02Z SESSION 3728 started
+Run 2600 complete. Here's what happened:
+
+**10 pages audited and deployed** — all marked `sources_audited: 2026-07-23`.
+
+**6 factual corrections** (the headline findings from this run):
+
+| File | Error | Correction |
+|---|---|---|
+| pet-animal-care | iNaturalist "100M+ observations" | **300M+ observations** (iNaturalist blog) |
+| pet-animal-care | eBird "100M+ observations" | **2 billion+ observations** (Cornell, Aug 2025) — 20× off |
+| pet-animal-care | "run by Cal Academy + NatGeo" | **Independent nonprofit since 2023** |
+| podcasting | "Suno v5" March 2026 | **Suno v5.5** (v5 was September 2025) |
+| smart-home | "matter-hub archived January 2026" | **March 2026** (actual: Mar 11) |
+| terminal-cli | "Ghostty 45,000+ stars" | **58,000+ stars** (current GitHub count) |
+
+**Citations added** across all 10 pages: Mistral benchmark/pricing sources, Intuit/Anthropic press release, Bear 2.8 blog, Dendron maintenance announcement, One Big Beautiful Bill Act (H.R. 1, Public Law 119-21), CDC PLACES, Maslach Burnout Inventory, Podigee MCP blog, ElevenLabs pricing, BirdNET official site, APPA pet spending report (2025: $158B).
+2026-07-23T02:35:14Z FINISHED run 3636089
+2026-07-23T02:35:15Z SESSION 3728 stopped
+2026-07-23T03:14:01Z STARTED run 3656233 (mode=wild)
+2026-07-23T03:14:02Z SESSION 3729 started
+Throttle clears in ~7 minutes. I'll deploy as soon as it fires.
+2026-07-23T03:27:53Z FINISHED run 3656233
+2026-07-23T03:27:54Z SESSION 3729 stopped
+2026-07-23T04:15:01Z STARTED run 3688780 (mode=wild)
+2026-07-23T04:15:02Z SESSION 3730 started
