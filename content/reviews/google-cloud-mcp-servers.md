@@ -6,6 +6,7 @@ og_description: "Google Cloud MCP servers: 50+ managed remote endpoints (22+ GA)
 content_type: "Review"
 card_description: "Google Cloud's MCP ecosystem — 50+ managed remote servers (22+ GA), MCP Toolbox v1.4.0 (14.9K+ stars), ADK 2.0 multi-language agent framework, Gemini 3.5 Flash MCP Atlas 83.6%, WebMCP origin trial, Gemini CLI deprecated → Antigravity CLI."
 last_refreshed: 2026-06-11
+sources_audited: 2026-07-23
 ---
 
 Google Cloud hasn't just shipped MCP servers — they've shipped managed MCP *endpoints*. While AWS built 68 servers in a monorepo that you run locally, Google took a different approach: remote MCP servers hosted on googleapis.com that your agent connects to directly. No local binaries, no Docker, no Node.js. Just an HTTP endpoint and your Google Cloud credentials.
@@ -152,7 +153,7 @@ Apigee MCP is now **Generally Available**. Turn your existing APIs into MCP tool
 
 ### ADK 2.0 — Launched May 19, 2026
 
-The Agent Development Kit 2.0 launched at Google I/O 2026 with a significantly expanded scope:
+The [Agent Development Kit 2.0](https://cloud.google.com/blog/topics/developers-practitioners/io26-news-for-agent-developers-on-google-cloud) launched at Google I/O 2026 with a significantly expanded scope:
 
 - **Workflow Runtime** — graph-based execution engine replacing the linear flow model
 - **Collaborative Multi-Agent Workflows** — coordinator agent delegates to typed subagents; structured handoffs
@@ -180,7 +181,7 @@ The **Managed Agents API** launched in preview at Google I/O 2026 — fully prov
 
 ### WebMCP — Chrome 149 Origin Trial
 
-**WebMCP** — Google's browser-side MCP standard for exposing web tools — entered the Chrome 149 origin trial. Key findings:
+**WebMCP** — Google's browser-side MCP standard for exposing web tools — entered the Chrome 149 origin trial. Key findings ([Chrome for Developers documentation](https://developer.chrome.com/docs/ai/webmcp)):
 
 - **67% fewer errors** and **45% better task completion** vs. visual scraping approaches
 - **Industry commitments:** Booking.com, Shopify, Instacart, and Intuit committed to implementation before GA

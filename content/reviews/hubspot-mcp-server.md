@@ -7,11 +7,12 @@ og_description: "HubSpot MCP Server went GA April 13, 2026. Full R/W across 12 C
 content_type: "Review"
 card_description: "HubSpot's official MCP server — generally available since April 13, 2026. Full read/write across 12 CRM object types and 5 engagement types. Two server types: remote (CRM data, GA) and local developer (app scaffolding, GA Feb 19). OAuth 2.1/PKCE auth."
 last_refreshed: 2026-05-03
+sources_audited: 2026-07-23
 ---
 
 **At a glance:** Official GA (April 13, 2026), two server types (remote CRM + local developer), OAuth 2.1/PKCE, 12 tools, full R/W across 12 CRM object types, community server (peakmojo) at ~121 GitHub stars, 642K all-time PulseMCP visits (#88 globally)
 
-HubSpot's [official MCP server](https://developers.hubspot.com/mcp) is now generally available, making one of the world's most popular CRMs directly accessible to AI agents through the Model Context Protocol. What launched in public beta in early 2026 with nine read-focused tools graduated to GA on April 13 with full read/write access across 12 CRM object types and 5 engagement types.
+HubSpot's [official MCP server](https://developers.hubspot.com/mcp) is now [generally available](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available), making one of the world's most popular CRMs directly accessible to AI agents through the Model Context Protocol. What launched in public beta in early 2026 with nine read-focused tools graduated to GA on April 13 with full read/write access across 12 CRM object types and 5 engagement types.
 
 If you're a sales rep, marketer, or service team member who uses AI coding agents, your agent can now pull contacts, search deals, review engagement history — and create contacts, update deal stages, and log activities — without you manually querying the HubSpot API.
 
@@ -110,7 +111,7 @@ The CLI walks you through selecting which agentic tools to enable.
 
 **OAuth 2.1 with PKCE.** Upgraded from OAuth 2.0 at beta. Proper modern auth standard with PKCE for added security. The Self-Service MCP Auth Apps UI makes creating and managing connectors straightforward.
 
-**Official and well-maintained.** Spring 2026 Spotlight featured MCP GA as a flagship developer announcement. HubSpot has 200,000+ customers and the resources to maintain this long-term.
+**Official and well-maintained.** [Spring 2026 Spotlight](https://developers.hubspot.com/changelog/spring-2026-spotlight) featured MCP GA as a flagship developer announcement. HubSpot has [approximately 300,000 customers](https://ir.hubspot.com/) (299,458 as of Q1 2026) and the resources to maintain this long-term.
 
 **Wide app/platform coverage.** HubSpot maintains setup guides for Claude Desktop, Claude Code, Cursor, VS Code, Copilot Studio, n8n, and more. This is one of the most widely integrated CRM MCP servers.
 

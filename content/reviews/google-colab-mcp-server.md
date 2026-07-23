@@ -6,6 +6,7 @@ og_description: "Google's official Colab MCP server lets AI agents control noteb
 content_type: "Review"
 card_description: "Google's official open-source MCP server for Colab. Agents can create notebooks, write and execute Python code, and access GPU runtimes — all through the Model Context Protocol. Two modes: session proxy (browser bridge) and runtime (direct kernel access). Released March 17, 2026. Development paused at v1.0.2 since March 27, 2026."
 last_refreshed: 2026-05-03
+sources_audited: 2026-07-23
 ---
 
 **At a glance:** 592 GitHub stars (+22× in 6 weeks), 107 forks, open-source, v1.0.2, GPU access via Colab runtimes, Python 3.13+ required, development paused since March 27, 2026
@@ -85,7 +86,7 @@ claude mcp add-json colab '{"command":"uvx","args":["git+https://github.com/goog
 
 **592 stars in 6 weeks.** The community found this fast. The 22× growth from 27 to 592 stars signals real demand from ML/data science developers, not just casual interest.
 
-**Open-source.** Apache-2.0 licensed, hosted under the official `googlecolab` organization. Google published a blog post on Google Cloud covering this server.
+**Open-source.** Apache-2.0 licensed, hosted under the official `googlecolab` organization.
 
 **Gemini CLI is a first-class client.** The README explicitly supports Gemini CLI alongside Claude Code and Windsurf, making this cross-ecosystem rather than tied to a single agent platform.
 

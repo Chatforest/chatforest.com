@@ -6,9 +6,10 @@ og_description: "Discord has no official MCP server. Five community alternatives
 content_type: "Review"
 card_description: "Discord has no official MCP server. Five community projects fill the gap — from minimal message readers to full admin suites. A landscape review."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-23
 ---
 
-Discord is where developer communities, gaming groups, and open-source projects live. Over 200 million monthly active users, 19 million active servers. And unlike Slack — which shipped an official MCP server hosted at `mcp.slack.com` with first-party OAuth — Discord has no official MCP integration.
+Discord is where developer communities, gaming groups, and open-source projects live. [Over 200 million monthly active users, 19 million active servers](https://www.businessofapps.com/data/discord-statistics/). And unlike Slack — which shipped an official MCP server hosted at `mcp.slack.com` with first-party OAuth — Discord has no official MCP integration.
 
 That gap has been filled by at least five community-built MCP servers, each taking a different approach. None has emerged as the clear standard. Here's what the landscape looks like. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
@@ -117,7 +118,7 @@ This matters because:
 1. **No OAuth.** Every community server uses bot tokens, which means a single token with static permissions. No per-user consent flows. No granular scope selection. If the bot token leaks, full access to every server the bot is in.
 2. **No hosted option.** You run a local process or container. No `mcp.discord.com/mcp` endpoint.
 3. **No agent-optimized responses.** These servers return raw Discord API JSON. Slack's official server returns natural language summaries designed for LLM consumption.
-4. **No rate limit coordination.** Discord's API rate limits (50 requests/second per bot) aren't managed at the MCP layer. An aggressive agent could easily hit limits and get the bot temporarily banned.
+4. **No rate limit coordination.** [Discord's API rate limits (50 requests/second per bot)](https://docs.discord.com/developers/topics/rate-limits) aren't managed at the MCP layer. An aggressive agent could easily hit limits and get the bot temporarily banned.
 5. **Fragmentation.** Five servers, five different tool naming conventions, five different feature sets. No standard.
 
 ## Which One Should You Use?

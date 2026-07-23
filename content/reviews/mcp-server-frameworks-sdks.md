@@ -1,18 +1,19 @@
 ---
 title: "MCP Server Frameworks & SDKs — FastMCP, Official SDKs, and the Tools That Power Every MCP Server"
 date: 2026-03-20T21:30:00+09:00
-description: "MCP server frameworks and SDKs reviewed: FastMCP (24,900 stars, ~1.9M downloads/day), Rust SDK reached v1.5.0, mcp-go v0.50.0 task-augmented tools, Go SDK v1.6.0-pre.1"
-og_description: "MCP server frameworks: FastMCP (24,900 stars, ~1.9M downloads/day, MCP Apps), official Python SDK (22,800 stars), TypeScript SDK (12,300 stars), FastAPI-MCP (11,800 stars), mcp-go (8,700 stars, v0.50.0 task-augmented tools), Go SDK (4,500 stars, v1.6.0-pre.1), C# SDK (4,200 stars, Microsoft), Rust SDK (3,400 stars, v1.5.0 NOW STABLE), Java SDK (3,400 stars, v1.1.2), Kotlin SDK (1,300 stars, v0.12.0), Quarkus MCP v1.12.0, Spring AI MCP. 12+ frameworks across 7 languages. Rating: 4.5/5."
+description: "MCP server frameworks and SDKs reviewed: FastMCP (24,900 stars, ~3.1M downloads/day), Rust SDK reached v1.5.0, mcp-go v0.50.0 task-augmented tools, Go SDK v1.6.0-pre.1"
+og_description: "MCP server frameworks: FastMCP (24,900 stars, ~3.1M downloads/day, MCP Apps), official Python SDK (22,800 stars), TypeScript SDK (12,300 stars), FastAPI-MCP (11,800 stars), mcp-go (8,700 stars, v0.50.0 task-augmented tools), Go SDK (4,500 stars, v1.6.0-pre.1), C# SDK (4,200 stars, Microsoft), Rust SDK (3,400 stars, v1.5.0 NOW STABLE), Java SDK (3,400 stars, v1.1.2), Kotlin SDK (1,300 stars, v0.12.0), Quarkus MCP v1.12.0, Spring AI MCP. 12+ frameworks across 7 languages. Rating: 4.5/5."
 content_type: "Review"
-card_description: "The frameworks and SDKs behind every MCP server. FastMCP dominates Python with 24,900 stars and ~1.9 million downloads per day — v3.2 adds MCP Apps support for interactive UIs in conversations. The Rust SDK reached v1.0 (March 2026) and iterated to v1.5.0 in six weeks. mcp-go v0.50.0 adds task-augmented tools for async operations. The Go SDK v1.6.0-pre.1 previews 2026-06-30 spec features. Whether you're building your first MCP server or migrating an existing API, one of these frameworks will get you there."
+card_description: "The frameworks and SDKs behind every MCP server. FastMCP dominates Python with 24,900 stars and ~3.1 million downloads per day — v3.2 adds MCP Apps support for interactive UIs in conversations. The Rust SDK reached v1.0 (March 2026) and iterated to v1.5.0 in six weeks. mcp-go v0.50.0 adds task-augmented tools for async operations. The Go SDK v1.6.0-pre.1 previews 2026-06-30 spec features. Whether you're building your first MCP server or migrating an existing API, one of these frameworks will get you there."
 last_refreshed: 2026-05-01
+sources_audited: 2026-07-23
 ---
 
 Every MCP server is built on something. Behind the 5,000+ servers in the ecosystem, a surprisingly small number of frameworks and SDKs do the heavy lifting — handling JSON-RPC transport, tool schema generation, authentication, and the protocol handshake that makes MCP work.
 
 This review covers the tools developers use to **build** MCP servers: official SDKs maintained by the [Agentic AI Foundation](https://github.com/modelcontextprotocol) (donated by Anthropic in late 2025), and the third-party frameworks that add higher-level abstractions on top. The ecosystem now spans **seven languages** — **Python**, **TypeScript**, **Go**, **Java**, **Kotlin**, **C#**, and **Rust** — with Python dominating adoption by a wide margin. Since our [original review in March 2026](#refresh-history), two new official SDKs launched (C# with Microsoft, Rust), the Rust SDK reached v1.0 and iterated to v1.5.0 in six weeks, and the MCP Apps specification introduced interactive UI capabilities that frameworks are racing to support.
 
-The headline: **FastMCP is the most important project in the MCP ecosystem that most users never see.** With 24,900 stars, ~1.9 million downloads per day (up from ~1 million last month), and an estimated 70% of all MCP servers running some version of it, FastMCP is to MCP what Express is to Node.js — the framework that made the protocol accessible. Its v3.2 release adds MCP Apps support, letting tools return interactive UIs — charts, dashboards, forms — rendered directly in conversations. The official SDKs provide the foundation, but FastMCP made it easy.
+The headline: **FastMCP is the most important project in the MCP ecosystem that most users never see.** With 24,900 stars, [~3.1 million downloads per day](https://pypistats.org/packages/fastmcp), and an estimated 70% of all MCP servers running some version of it, FastMCP is to MCP what Express is to Node.js — the framework that made the protocol accessible. Its v3.2 release adds MCP Apps support, letting tools return interactive UIs — charts, dashboards, forms — rendered directly in conversations. The official SDKs provide the foundation, but FastMCP made it easy.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -29,9 +30,9 @@ Python has the widest selection of MCP frameworks and the highest adoption. Two 
 | Language | Python |
 | Latest | v3.2.4 (April 2026) |
 | Commits | 3,439 |
-| Downloads | ~1.9 million/day (~27M/week, ~74.6M/month) |
+| Downloads | [~3.1 million/day](https://pypistats.org/packages/fastmcp) |
 
-FastMCP is the most popular MCP framework in any language. Created by Jeremiah Lowin (CEO of Prefect), it was the first framework to make building MCP servers genuinely simple. FastMCP 1.0 was so well-designed that it was incorporated directly into the official MCP Python SDK in 2024 — the standalone project continued evolving independently.
+FastMCP is the most popular MCP framework in any language. Created by [Jeremiah Lowin (CEO of Prefect)](https://prefect.io/), it was the first framework to make building MCP servers genuinely simple. FastMCP 1.0 was so well-designed that it was incorporated directly into the official MCP Python SDK in 2024 — the standalone project continued evolving independently.
 
 #### What Works Well
 
@@ -138,7 +139,7 @@ The official TypeScript SDK is the second reference implementation and the found
 
 #### What Doesn't Work Well
 
-**CVE-2026-0621 ReDoS vulnerability patched.** A regular expression denial of service vulnerability in UriTemplate regex patterns was discovered and fixed. A reminder that even foundational SDKs need security attention.
+**[CVE-2026-0621](https://nvd.nist.gov/vuln/detail/CVE-2026-0621) ReDoS vulnerability patched.** A regular expression denial of service vulnerability (CVSS 7.5 HIGH) in UriTemplate regex patterns was discovered and fixed. A reminder that even foundational SDKs need security attention.
 
 **Zod internalized via Standard Schema.** Zod was moved from a peer dependency to a direct internal dependency after Standard Schema support landed, simplifying installation for new users.
 
@@ -362,7 +363,7 @@ The official Rust SDK (`rmcp` crate) provides async MCP server and client implem
 
 The MCP framework ecosystem is mature, well-structured, and now covers **seven major languages** — up from five in our original review. This is exceptional for a protocol that's barely two years old.
 
-**FastMCP is the standout project.** With 24,900 stars, ~1.9 million downloads per day (nearly doubled from ~1 million last month), and an estimated 70% of MCP servers running some version of its code, it's the Rails of MCP. The progression from v1.0 to v3.2 (now with MCP Apps for interactive UIs, enterprise deployment via Prefect Horizon, and 96 releases) shows a project that's evolving faster than the ecosystem's needs — it's often ahead of them.
+**FastMCP is the standout project.** With 24,900 stars, [~3.1 million downloads per day](https://pypistats.org/packages/fastmcp) (up from ~1 million/day at the start of 2026), and an estimated 70% of MCP servers running some version of its code, it's the Rails of MCP. The progression from v1.0 to v3.2 (now with MCP Apps for interactive UIs, enterprise deployment via Prefect Horizon, and 96 releases) shows a project that's evolving faster than the ecosystem's needs — it's often ahead of them.
 
 **The MCP Apps specification changes what's possible.** Co-authored by Anthropic and OpenAI in January 2026, MCP Apps let tools return interactive UIs — charts, dashboards, forms — rendered directly in AI conversations. FastMCP 3.2 was the first framework to implement it. This is the biggest paradigm shift in MCP since the protocol launched, and frameworks that don't support it will feel increasingly limited.
 
