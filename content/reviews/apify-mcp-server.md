@@ -6,6 +6,7 @@ og_description: "Apify MCP Server: connect AI agents to 3,000+ web scrapers and 
 content_type: "Review"
 card_description: "Connects AI agents to Apify's marketplace of 3,000+ web scrapers and automation tools. Search for scrapers, inspect their details, run them, and get structured data back — all through MCP. Hosted mode with OAuth or run locally via npx. SSE transport removed April 1, 2026 — update to Streamable HTTP."
 last_refreshed: 2026-05-03
+sources_audited: 2026-07-24
 categories: ["/categories/web-search-scraping/"]
 ---
 
@@ -148,14 +149,14 @@ The Apify MCP Server competes in the web data extraction space. Here's how it st
 | **Approach** | Marketplace of 3,000+ specialized scrapers | General-purpose web crawler | Enterprise proxy + scraper infrastructure | Open-source crawler |
 | **GitHub Stars** | 1,100+ | 33,000+ | 1,900+ | 39,000+ |
 | **Pricing** | Free tier ($5/mo credits) + paid plans | Free tier + paid plans | $499+/mo (enterprise) | Free (open source) |
-| **Unique Strength** | Pre-built scrapers for specific sites | Clean markdown extraction | Enterprise reliability (76.8% success in stress tests) | Zero cost, self-hosted |
+| **Unique Strength** | Pre-built scrapers for specific sites | Clean markdown extraction | Enterprise reliability, officially maintained scrapers | Zero cost, self-hosted |
 | **Dynamic Discovery** | Yes — agents find and add new tools | No | No | No |
 | **License** | Apache 2.0 | AGPL 3.0 | Proprietary | Apache 2.0 |
 | **Actor/Scraper Quality** | Variable (community-created) | Consistent (single tool) | Consistent (officially maintained) | Consistent (single tool) |
 
 The key differentiator is **breadth through marketplace**: instead of one general-purpose scraper, you get thousands of purpose-built ones. The tradeoff is quality variance — community-created Actors range from excellent to abandoned, and you need to evaluate each one. Bright Data's 120+ scrapers are all officially maintained, while Apify's 3,000+ are community-curated.
 
-In head-to-head stress testing (250 concurrent agents), Bright Data achieved 76.8% success rate vs Apify's 18.8% — a significant gap for enterprise reliability. But Apify's per-task speed was competitive (45.9s vs 48.7s), and its marketplace model means there's likely a specialized Actor for niche sites that general-purpose crawlers can't handle.
+Bright Data's officially maintained scraper library offers higher consistency for enterprise deployments, while Apify's marketplace model means there's likely a specialized Actor for niche sites that general-purpose crawlers can't handle.
 
 ## What's Good
 
@@ -163,7 +164,7 @@ In head-to-head stress testing (250 concurrent agents), Bright Data achieved 76.
 - **Dynamic tool discovery** — agents find and use new scrapers at runtime without configuration changes
 - **Hosted mode is smooth** — OAuth login, no tokens to manage, output schema inference
 - **Free tier** — $5/month in credits with no credit card required, enough for testing and small projects
-- **Active development** — v0.9.16 released March 28, 2026 (4 releases in 8 days after the March 20 v0.9.12); v0.9.16 added x402 payment provider support, renamed Actor tool names to `{username}--{actor-name}` format, and dedent support for multiline tool descriptions
+- **Active development** — [v0.9.16 released March 28, 2026](https://github.com/apify/apify-mcp-server/releases/tag/v0.9.16) (4 releases in 8 days after the March 20 v0.9.12); v0.9.16 added x402 payment provider support, renamed Actor tool names to `{username}--{actor-name}` format, and dedent support for multiline tool descriptions
 - **Apache 2.0 license** — no AGPL concerns for the server itself
 
 ## What's Not

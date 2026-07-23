@@ -40091,3 +40091,72 @@ Run 2605 complete. Here's what was done:
 2026-07-23T07:32:21Z SESSION 3733 stopped
 2026-07-23T08:17:01Z STARTED run 3781606 (mode=wild)
 2026-07-23T08:17:02Z SESSION 3734 started
+Run 2606 complete. 10 pages audited, corrected, and deployed. Key corrections this run: Grok 4.20 pricing table was wrong (Azure markup vs. xAI direct rates); Agent Gateway Linux Foundation date was off by 7 months; Traefik Hub GA dates wrong throughout; CVE "compromised" vs "exposed" distinction fixed; MCP-Bench venue ICLR→NeurIPS 2025 Workshop across three occurrences; DeepEval star-growth claim unsourced and removed; Ruflo SWE-bench 84.8% now carries a self-reported caveat. Several unverifiable marketing claims cut entirely.
+2026-07-23T08:46:43Z FINISHED run 3781606
+2026-07-23T08:46:44Z SESSION 3734 stopped
+2026-07-23T09:17:01Z STARTED run 3808276 (mode=wild)
+2026-07-23T09:17:03Z SESSION 3735 started
+Deploy is running in the background — polling every 10 seconds until the hour throttle clears (~10 min), then rsync to DreamHost. All 11 files are committed. I'll get a notification when deploy completes.
+
+**Run 2607 summary:**
+- Audited 10 pages (2026-03-22 batch, tenth cohort), all marked `sources_audited: 2026-07-23`
+- Key corrections: Grafana 40→60 tools; Zapier app count 8K→9K, actions 40K→30K, meta-tools 14→15; Zep wrong prices cut; Linkup "#1 ranking" softened; Perplexity "72% context" cut (no source); arXiv paper misattributed for a 7K-server scan (correct: BlueRock Security); Milvus CVE patch versions were wrong for one CVE; Chroma tool count 12→13 in three places
+- Committed; deploy pending throttle
+2026-07-23T09:34:35Z FINISHED run 3808276
+2026-07-23T09:34:37Z SESSION 3735 stopped
+2026-07-23T10:17:01Z STARTED run 3830880 (mode=wild)
+2026-07-23T10:17:02Z SESSION 3736 started
+Run 2608 complete. Here's what was done:
+
+**10 pages audited and deployed** (all dated 2026-03-22):
+1. what-is-mcp.md
+2. best-desktop-automation-mcp-servers.md
+3. best-audio-video-mcp-servers.md
+4. best-crm-mcp-servers.md
+5. best-finance-mcp-servers.md
+6. ahrefs-mcp-server.md
+7. best-web-scraping-mcp-servers.md
+8. best-blockchain-web3-mcp-servers.md
+9. best-social-media-mcp-servers.md
+10. best-version-control-mcp-servers.md
+
+**11 factual corrections made:**
+- AAIF had 8 platinum members, not 5 (article omitted Anthropic, Block, OpenAI)
+- CVE-2026-32211 is an "information disclosure" flaw, not "authentication flaw"
+- Visa program is "Agentic Ready programme" not "Agent Payments Program"
+- Santander "tokenized Visa credential" → Visa uses "Payment Passkeys"
+- Ahrefs "42 tools" unverifiable from primary source — removed throughout
+- LiteLLM exposure window was ~2-3 hours, not ~5 hours
+- SSRF study covered 7,000+ servers, not 8,000+
+- Stagehand v3 launched October 2025, not January 2026
+- Firecrawl free tier is 1,000 credits/month (renewable), not 500 one-time
+- Firecrawl Hobby plan is 5,000 credits, not 3,000
+- Perforce MCP launch date "January 2026" was wrong — removed
+2026-07-23T10:27:50Z FINISHED run 3830880
+2026-07-23T10:27:51Z SESSION 3736 stopped
+2026-07-23T11:17:01Z STARTED run 3853250 (mode=wild)
+2026-07-23T11:17:02Z SESSION 3737 started
+Run 2609 complete. Here's what was done:
+
+**10 pages audited and deployed** (all dated 2026-03-22 to 2026-03-23):
+
+**Key factual corrections found and fixed:**
+- **IoT**: HA native MCP adoption was 1.5% — actual primary source shows **3.2%**
+- **PDF**: Stirling PDF stars cited as 56K — actually **~87K** (significantly stale)
+- **Semgrep**: Two errors — the "$10M in API credits" was the **total pool for 4 recipients**, not Semgrep alone; the "8× more true positives" was **misattributed** to the OpenAI program when it's Semgrep Multimodal's own claim
+- **Twilio**: Only two co-founders listed — **John Wolthuis** was omitted; revenue $4.9B→**$5.07B**; market cap $18.8B→**$32.7B**
+- **Anthropic**: "$30B revenue" clarified as **ARR** (not actual revenue); "1,400% YoY growth" claim was unverifiable and removed
+- **SQLite**: "trillions" of databases → **"over one trillion"** (SQLite.org's own phrasing); Cloudflare D1 "300+ cities" → **330+**; latest version updated to 3.53.3
+- **MailerSend**: Vercom employees **178→163** (corrected vs primary source); $870K revenue removed (no primary source)
+- **Mailgun**: Revenue and employee figures removed — Sinch doesn't report subsidiary financials and third-party estimates varied wildly
+
+Multiple primary citation links added across all 10 pages (Series G, Ox Security report, Gates Foundation, Stainless acquisition, Vercom acquisition, Sinch acquisition, Azure Service Bus retirement, Semgrep IDOR data, Matter 1.5, and more).
+2026-07-23T11:32:42Z FINISHED run 3853250
+2026-07-23T11:32:43Z SESSION 3737 stopped
+2026-07-23T17:18:01Z STARTED run 3975050 (mode=wild→slow(peak))
+2026-07-23T17:18:02Z SESSION 3738 started
+Run 2610 is complete. Committed 51 files: CLAUDE.md tooling note, WORKLOG.md, and 9 citation-audited reviews (openai, aws-bedrock, shopify, pipedream, mailtrap, mindsdb, prisma, resend, postgresql — all marked `sources_audited: 2026-07-24`). Key corrections this run: OpenAI funding round date/co-leads, AWS Bedrock 14→15 regions, Shopify employees 8,100→7,600, Pipedream Series A amount, Workday revenue description, Prisma npm downloads 7.8M→~13M. Next run: continue the backlog with cohere-mcp-server.md and mistral-mcp-server.md (1,648 pages remaining).
+2026-07-23T17:38:03Z FINISHED run 3975050
+2026-07-23T17:38:05Z SESSION 3738 stopped
+2026-07-23T18:18:01Z STARTED run 3992399 (mode=wild)
+2026-07-23T18:18:02Z SESSION 3739 started

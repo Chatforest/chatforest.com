@@ -6,13 +6,14 @@ og_description: "PayPal MCP: 32 tools for invoicing, payments, subscriptions, di
 content_type: "Review"
 card_description: "Official first-party MCP server from PayPal for developers and merchants building AI-assisted commerce workflows. Provides AI assistants with 32 tools across invoicing (create, send, remind, cancel, QR codes), order management (create, pay, refund), subscriptions (plans, billing cycles, cancellations), dispute handling, shipment tracking, catalog management, analytics, and gift card commerce. Available as both a local stdio server and PayPal-hosted remote server with OAuth 2.0 and streamable HTTP."
 last_refreshed: 2026-05-04
+sources_audited: 2026-07-24
 ---
 
 **At a glance:** [GitHub](https://github.com/paypal/paypal-mcp-server) — 9 stars, 4 forks, JavaScript/TypeScript. [npm](https://www.npmjs.com/package/@paypal/mcp) — @paypal/mcp (~264/week). Powered by [paypal/agent-toolkit](https://github.com/paypal/agent-toolkit) (188 stars, 103 forks). Official first-party from [PayPal](https://www.paypal.com/). Apache 2.0 license. 32 tools, local + remote server options.
 
 The PayPal MCP Server is the **official first-party MCP integration** for [PayPal's](https://www.paypal.com/) payment platform. It provides AI assistants with access to the full range of PayPal commerce capabilities — invoicing, order management, subscriptions, disputes, shipment tracking, product catalog management, and analytics — enabling what PayPal calls "agentic commerce."
 
-[PayPal](https://www.paypal.com/) was founded in 1998 (as Confinity, later merging with Elon Musk's X.com in 2000). The company went public in 2002, was acquired by eBay for $1.5B, and spun off as an independent public company in 2015. As of 2025: ~24,000 employees, $33.2B annual revenue (4.3% YoY growth), ~$37-42B market cap. PayPal operates in 200+ countries with 400M+ active accounts.
+[PayPal](https://www.paypal.com/) was [founded in 1998](https://en.wikipedia.org/wiki/PayPal) (as Confinity, later merging with Elon Musk's X.com in 2000). The company went public in 2002, was acquired by eBay for $1.5B, and spun off as an independent public company in 2015. As of [FY2025](https://newsroom.paypal-corp.com/2026-02-03-PayPal-Reports-Fourth-Quarter-and-Full-Year-2025-Results): ~24,000 employees, ~$32.9B annual revenue, ~$62B market cap. PayPal operates in 200+ countries with 400M+ active accounts.
 
 **Architecture note:** The `paypal-mcp-server` repo (9 stars, 9 commits, 2 contributors) is a thin entry point — no code has been committed since October 28, 2025. The real substance lives in `paypal/agent-toolkit` (188 stars, 11 contributors), which also supports OpenAI Agent SDK, LangChain, and Vercel AI SDK. In November 2025, PayPal moved the MCP server code out of agent-toolkit into its own repo. This review focuses on the MCP server interface.
 
@@ -167,7 +168,7 @@ Claude Desktop, Cursor, Cline, GitHub Copilot, Windsurf (available in Windsurf M
 
 PayPal was notably **early to market** with a hosted remote MCP server. As AlleyCorp partner Kenneth Auchenberg observed: *"Wait, PayPal shipped a remote MCP server, before Stripe?"* — highlighting PayPal's unusual first-mover advantage in this space. However, that early lead has stalled: as of May 2026, the last release is v1.8.1 from October 2025, and neither the MCP server repo nor the agent-toolkit has received a code commit since November 2025.
 
-**AP2 — Agent Payments Protocol (Conceptual, Sep 2025):** PayPal and Google have co-developed a proposed extension to MCP for verifiable agent payments, using W3C Verifiable Credentials and cryptographically signed mandates. This would allow an AI agent's payment mandate to be cryptographically verified — addressing the identity accountability gap noted in Known Issues below. As of May 2026, AP2 is a published proposal, not a shipping product or MCP specification update.
+**[AP2 — Agent Payments Protocol](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol) (Sep 2025):** PayPal and Google have [co-developed a proposed extension to MCP](https://developer.paypal.com/community/blog/PayPal-Agent-Payments-Protocol/) for verifiable agent payments, using W3C Verifiable Credentials and cryptographically signed mandates. This would allow an AI agent's payment mandate to be cryptographically verified — addressing the identity accountability gap noted in Known Issues below. As of May 2026, AP2 is a published proposal, not a shipping product or MCP specification update.
 
 ## Pricing
 
@@ -197,7 +198,7 @@ No additional API or MCP-specific fees. The remote hosted server is free to use.
 | **Last commit** | Nov 2025 | Unknown | Unknown | Apr 2026 |
 | **License** | Apache 2.0 | Varies | Proprietary | MIT |
 
-**PayPal MCP vs Stripe MCP:** Stripe's AI toolkit (`stripe/agent-toolkit`) has grown to 1,521 stars (vs PayPal's 188 toolkit / 9 MCP server) — now roughly 8x the community traction. More importantly, Stripe's toolkit is actively maintained with commits as recently as April 30, 2026, while PayPal's has been dormant since November 2025. PayPal still holds advantages in breadth (32 tools vs Stripe's ~20+ across invoicing, subscriptions, disputes, shipment tracking) and was first to market with a hosted remote server. But the maintenance gap is widening.
+**PayPal MCP vs Stripe MCP:** Stripe's AI toolkit ([`stripe/agent-toolkit`](https://github.com/stripe/agent-toolkit)) has grown to ~1,700 stars (vs PayPal's 188 toolkit / ~11 MCP server) — now roughly 9x the community traction. More importantly, Stripe's toolkit is actively maintained with commits as recently as April 30, 2026, while PayPal's has been dormant since November 2025. PayPal still holds advantages in breadth (32 tools vs Stripe's ~20+ across invoicing, subscriptions, disputes, shipment tracking) and was first to market with a hosted remote server. But the maintenance gap is widening.
 
 **PayPal MCP vs community alternatives:** The official server's advantages are clear: 30+ tools, remote hosting, OAuth 2.0, active development with regular feature additions. Community alternatives like DynamicEndpoints' server or CData's read-only connector serve narrower use cases.
 

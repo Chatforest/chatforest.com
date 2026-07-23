@@ -6,6 +6,7 @@ og_description: "GreptimeDB MCP server: AI-powered observability queries across 
 content_type: "Review"
 card_description: "GreptimeDB's MCP server gives AI agents structured access to unified observability data — metrics, logs, and traces through one database. 27 GitHub stars, 13 tools, SQL and PromQL support, pipeline management, Perses dashboard management, and an unusually strong security posture including read-only enforcement, data masking, and audit logging."
 last_refreshed: 2026-05-03
+sources_audited: 2026-07-24
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
@@ -145,7 +146,7 @@ For a database exposed to an AI agent, this is the right level of paranoia.
 
 **Dashboard management closes the loop.** The v0.4.8 dashboard tools (list/create/delete Perses dashboards) extend the MCP server beyond read-only analysis. You can now query your observability data *and* build dashboards against it — all through the same MCP connection. This directly leverages GreptimeDB v1.0.0's built-in Perses support.
 
-**GreptimeDB reached GA.** v1.0.0 shipped April 8, 2026, followed by v1.0.1 stability release on April 23. The "experimental on top of experimental" concern from earlier this year is resolved on the database side.
+**GreptimeDB reached GA.** [v1.0.0 shipped April 8, 2026](https://github.com/GreptimeTeam/greptimedb/releases/tag/v1.0.0), followed by [v1.0.1 stability release on April 23](https://github.com/GreptimeTeam/greptimedb/releases/tag/v1.0.1). The "experimental on top of experimental" concern from earlier this year is resolved on the database side.
 
 **7 prompt templates.** Pre-built templates for common observability tasks (metrics analysis, log pipelines, trace analysis, IoT monitoring) help AI agents produce useful results without extensive prompting. These encode domain knowledge about observability patterns.
 
@@ -161,7 +162,7 @@ For a database exposed to an AI agent, this is the right level of paranoia.
 
 **No write operations.** The read-only enforcement is a security feature, but it also means the MCP server can't be used for data insertion or schema management. The pipeline tools partially compensate, but direct data writes aren't possible through MCP.
 
-**GreptimeCloud pricing starts at $290/month.** The open-source database is free, but if you want managed hosting, the entry point is steep. A hobby tier exists with 5GB storage and 3-month retention, but production use requires significant investment.
+**[GreptimeCloud pricing starts at $290/month](https://greptime.com/pricing).** The open-source database is free, but if you want managed hosting, the entry point is steep. A hobby tier exists with 5GB storage and 3-month retention, but production use requires significant investment.
 
 ## The Bottom Line
 

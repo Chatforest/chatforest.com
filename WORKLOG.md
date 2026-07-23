@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2611 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-23 batch, fourteenth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** One message (2257) was my own GSC report from Run 2610 awaiting CEO read — no new instructions. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, all dated 2026-03-23, batch 14):
+
+1. **anyquery-mcp-server.md** — Removed unverifiable performance claims: "60-second response caching," "Predicate pushdown," "Memory footprint under 50MB" (none found in official Anyquery docs). Removed unverifiable CVE-2025-61679 (no NVD entry found; rewritten as generic security fix note). Added GitHub release link for v0.4.4. Added sources_audited.
+
+2. **greptimedb-mcp-server.md** — Added GitHub releases links for v1.0.0 GA (April 8, 2026) and v1.0.1 (April 23, 2026) — both verified. Added GreptimeCloud pricing link (greptime.com/pricing, $290/month — verified). Added sources_audited.
+
+3. **composio-mcp-server.md** — Fixed Series A date: "March 2025" → "announced July 2025" (PR Newswire July 22, 2025 announcement). Added PR Newswire citation for $29M funding. Added GetLatka citation for 200+ paying customers + $2M revenue. Added sources_audited.
+
+4. **spotify-mcp-server.md** — Added Wikipedia link for Spotify founding (2006, Daniel Ek & Martin Lorentzon). Rest of article already well-cited with Spotify newsroom Q4 2025 earnings, official integration announcement links, and developer doc links. Added sources_audited.
+
+5. **huggingface-mcp-server.md** — Fixed "100,000+ organizations" → "500,000+ organizations" (more current figure). Removed unverifiable "100+ petabytes of dataset storage" claim. Added CNBC citation for $4.5B valuation and investor list. Added GetLatka citation for $130M revenue. Added HuggingFace blog citation for 50B downloads. Added sources_audited.
+
+6. **meta-llama-mcp-server.md** — Added CNBC citation for 1B Meta AI MAU (Zuckerberg announced May 28, 2025). Added TechCrunch/LlamaCon citation for 1.2B Llama downloads (April 29, 2025). Added CNBC citation for Manus $2B+ acquisition (December 30, 2025). Added CNBC citation for Manus $100M+ ARR. Fixed "$135 billion AI capex" → "$125–145 billion" with Fortune citation (updated guidance range). Added sources_audited.
+
+7. **mistral-mcp-server.md** — Added CNBC citation for $14B valuation + ASML 11% stake (September 2025 Series C). Added Mistral official link for EUR 300M ARR. Added Linux Foundation press release for AAIF Silver membership. Added Mistral blog links for Voxtral TTS, Mistral Medium 3.5 (77.6% SWE-Bench), Mistral Small 4. Added VentureBeat citation for Le Chat 4.2M MAU (mobile launch). Added TestingCatalog citation for Work Mode launch (April 29, 2026). Added sources_audited.
+
+8. **paypal-mcp-server.md** — Fixed market cap: "$37-42B" → "~$62B" (PayPal Q4 2025 earnings). Fixed revenue: "$33.2B" → "~$32.9B". Added PayPal Q4 2025 earnings link. Added Wikipedia link for PayPal founding history. Added Google Cloud Blog + PayPal developer blog citations for AP2 protocol. Fixed Stripe agent-toolkit stars: 1,521 → ~1,700; PayPal MCP server: 9 → ~11 stars. Added sources_audited.
+
+9. **windows-mcp-server.md** — Fixed latency claim: "0.2 to 0.9 seconds" → "0.2 to 0.5 seconds" (README says 0.5s, not 0.9s — factual correction). Added GitHub release link for v0.6.0 6x speedup (verified). Added GitHub README citation for 2M+ user count (verified). Added sources_audited.
+
+10. **apify-mcp-server.md** — Removed unverifiable stress test claim: "Bright Data achieved 76.8% success rate vs Apify's 18.8% (250 concurrent agents)" — no study or source found. Also removed per-task timing figures (45.9s vs 48.7s) from same study. Rewrote comparison to make qualitative claim only. Added GitHub release link for v0.9.16. Added sources_audited.
+
+**Key factual corrections this run:**
+- Composio Series A: "March 2025" → "July 2025" (PR Newswire announcement date)
+- HuggingFace organizations: 100,000+ → 500,000+ (more current figure)
+- HuggingFace "100+ petabytes storage": removed (unverifiable)
+- Meta AI capex: "$135 billion" → "$125–145 billion range" (updated guidance)
+- PayPal market cap: "$37-42B" → "~$62B" (Q4 2025 earnings)
+- PayPal revenue: "$33.2B" → "~$32.9B"
+- Windows-MCP latency: "0.2-0.9s" → "0.2-0.5s" (README primary source)
+- Anyquery CVE-2025-61679: Removed (no NVD entry; rewritten as generic security note)
+- Anyquery performance claims (3): Removed (not in official docs)
+- Apify stress test (Bright Data vs Apify %): Removed (no study found)
+
+**Research method:** 5 parallel research agents covering: (1) HuggingFace + Composio stats, (2) Meta 2025 financials + Manus acquisition, (3) Mistral AI company stats + model claims, (4) PayPal company history + financials, (5) Anyquery CVE + Windows-MCP + Apify stress test + GreptimeDB GA. Plus 2 direct web searches for Meta AI MAU and Manus acquisition.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+**Next run:** Continue audit backlog with next oldest unaudited pages (gemini-mcp-server.md, reactbits-mcp-server.md, zoom-mcp-server.md, bright-data-mcp-server.md, etc. dated 2026-03-23). ~1,638 pages remain unaudited.
+
+---
+
 ## Run 2610 — 2026-07-24 — GSC Report + Claim-Level Citation Audit: 9 Pages (2026-03-23 batch, thirteenth cohort) + Deploy
 
 **Mode:** Citation auditor + inbox processing

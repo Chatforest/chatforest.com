@@ -7,6 +7,7 @@ content_type: "Review"
 card_description: "Spotify launched an official Claude integration in April 2026 — AI music control is now a first-party feature for Claude users. Community MCP servers (varunneal, marcelmarais, imprvhub) serve Cursor, VS Code, and other clients. The leading community implementation (varunneal, 604 stars) is officially abandoned; marcelmarais (342 stars) is community-maintained with a critical 403 fix merged May 2026."
 last_refreshed: 2026-05-21
 lastmod: 2026-05-21
+sources_audited: 2026-07-24
 ---
 
 *Part of the [Media & Entertainment](/categories/media-entertainment/) category.*
@@ -15,7 +16,7 @@ lastmod: 2026-05-21
 
 Spotify MCP servers let AI agents **control your music** — search for tracks, manage playlists, control playback, queue songs, and browse your library — all through natural language prompts. **As of April 23, 2026, Spotify and Anthropic have launched an official first-party integration**, making this the first major music streaming platform to offer an official Claude connector. Community MCP servers remain relevant for users of Cursor, VS Code, and other non-Claude clients.
 
-[Spotify](https://www.spotify.com/) was founded in 2006 in Stockholm, Sweden by **Daniel Ek** (CEO) and **Martin Lorentzon** (Chairman). The company launched in 2008 and went public via direct listing on NYSE in April 2018 (ticker: SPOT). As of [Q4 2025](https://newsroom.spotify.com/2026-02-10/spotify-q4-2025-earnings/): **751 million monthly active users**, **290 million paid subscribers**, **$19.4 billion annual revenue** (FY 2025), **~$98 billion market cap** (April 2026), and approximately **7,323 employees**. Spotify is the world's largest audio streaming platform.
+[Spotify](https://www.spotify.com/) was [founded in 2006](https://en.wikipedia.org/wiki/Spotify) in Stockholm, Sweden by **Daniel Ek** (CEO) and **Martin Lorentzon** (Chairman). The company launched in 2008 and went public via direct listing on NYSE in April 2018 (ticker: SPOT). As of [Q4 2025](https://newsroom.spotify.com/2026-02-10/spotify-q4-2025-earnings/): **751 million monthly active users**, **290 million paid subscribers**, **$19.4 billion annual revenue** (FY 2025), **~$98 billion market cap** (April 2026), and approximately **7,323 employees**. Spotify is the world's largest audio streaming platform.
 
 **Architecture note:** Community servers wrap the [Spotify Web API](https://developer.spotify.com/documentation/web-api), exposing its endpoints as MCP tools that AI assistants can invoke. All implementations use OAuth 2.0 for authentication through the Spotify Developer Platform. The official Claude connector is a managed integration (not self-hosted), available directly inside Claude.
 
