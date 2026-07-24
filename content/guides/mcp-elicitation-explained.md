@@ -5,6 +5,7 @@ description: "A practical guide to MCP elicitation — the protocol feature that
 content_type: "Guide"
 card_description: "MCP elicitation lets servers ask users for missing information mid-task — no upfront configuration needed. Here's how it works."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Most MCP tools require all their inputs up front. The client sends a request, the server processes it, and that's that. But what happens when a server needs information it doesn't have — a confirmation before a destructive action, a preference that wasn't specified, or credentials for a third-party service? Before elicitation, the answer was awkward workarounds: returning error messages, splitting tools into multiple steps, or requiring users to configure everything in advance.
@@ -277,7 +278,7 @@ Elicitation is still rolling out across the MCP ecosystem. As of March 2026:
 
 | Client | Form Mode | URL Mode | Notes |
 |--------|-----------|----------|-------|
-| **Claude Code** | Yes | Yes | Added in v2.1.76 (March 2026). Displays interactive dialogs for elicitation requests. |
+| **Claude Code** | Yes | Yes | [Added in v2.1.76](https://www.claudeupdates.dev/version/2.1.76) (March 13–14, 2026). Displays interactive dialogs for elicitation requests. |
 | **Cursor** | Yes | Likely | Broad MCP protocol coverage, including elicitation. |
 | **Claude Desktop** | Partial | Unknown | MCP support is mature, but elicitation support may lag behind Claude Code. |
 | **VS Code (Copilot)** | Unknown | Unknown | MCP support added, but elicitation status unclear. |

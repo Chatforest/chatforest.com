@@ -5,6 +5,7 @@ description: "A practical guide to error handling in MCP — covering JSON-RPC e
 content_type: "Guide"
 card_description: "MCP has two distinct error paths — protocol errors and tool execution errors. Here's how they work and how to handle both."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Things go wrong in MCP integrations. Servers crash, tools fail, parameters get mangled, network connections drop. How you handle these failures determines whether your MCP system degrades gracefully or silently loses data.

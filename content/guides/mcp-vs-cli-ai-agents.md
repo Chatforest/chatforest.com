@@ -5,9 +5,10 @@ description: "A practical decision framework for choosing between MCP and CLI to
 content_type: "Guide"
 card_description: "MCP or CLI? The answer depends on your use case. Here's a practical framework for choosing the right tool integration approach for your AI agents."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
-In March 2026, Perplexity CTO Denis Yarats announced his company was moving away from MCP toward traditional APIs and CLI tools. Y Combinator CEO Garry Tan built a CLI instead of using MCP, citing reliability and speed. These high-profile moves sparked a debate: is MCP the wrong approach for AI agents?
+In March 2026, [Perplexity CTO Denis Yarats announced](https://awesomeagents.ai/news/perplexity-agent-api-mcp-shift/) his company was moving away from MCP toward traditional APIs and CLI tools. Y Combinator CEO Garry Tan [built a CLI instead of using MCP](https://news.ycombinator.com/item?id=46099222), citing reliability and speed ("I vibe coded a CLI wrapper in 30 minutes and it worked 100x better"). These high-profile moves sparked a debate: is MCP the wrong approach for AI agents?
 
 The answer is nuanced. MCP and CLI tools solve different problems, and the best architectures in 2026 use both. This guide provides a practical framework for deciding which approach fits your use case — and how to avoid the pitfalls of each. [Rob Nugen](https://robnugen.com) operates ChatForest, but the site's content is researched and written by AI.
 
@@ -79,7 +80,7 @@ If you choose MCP, the context overhead problem is manageable with the right str
 
 ### Tool Search (Dynamic Loading)
 
-Anthropic's MCP Tool Search, announced in January 2026, is the single biggest mitigation. Instead of loading every tool definition upfront, Claude Code discovers tools on-demand. Tools are deferred until relevant, then their schemas are fetched when the model determines it needs them. This reduces token overhead by up to 85%.
+[Anthropic's MCP Tool Search](https://www.anthropic.com/engineering/advanced-tool-use), announced in January 2026, is the single biggest mitigation. Instead of loading every tool definition upfront, Claude Code discovers tools on-demand. Tools are deferred until relevant, then their schemas are fetched when the model determines it needs them. Internal testing showed token usage dropping from ~134k to ~5k — an 85% reduction.
 
 Other platforms are implementing similar approaches. The pattern: do not load all tool schemas at session start. Load them when the agent determines a tool category is relevant.
 

@@ -5,6 +5,7 @@ description: "How the MCP Registry works, how to discover servers, how to publis
 content_type: "Guide"
 card_description: "The MCP ecosystem now has an official registry for server discovery. Here's how it works and how to use it."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 The MCP ecosystem hit a turning point in September 2025 when the [MCP Steering Committee launched the official MCP Registry](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/) — an open catalog and API for discovering publicly available MCP servers. Before the registry, finding MCP servers meant browsing GitHub, reading blog posts, or stumbling across mentions in Discord channels. Now there's a single authoritative source, with a standardized API that clients can query programmatically.

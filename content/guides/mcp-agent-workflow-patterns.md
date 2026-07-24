@@ -5,6 +5,7 @@ description: "How to build multi-step AI agent workflows using MCP — covering 
 content_type: "Guide"
 card_description: "A single AI prompt is useful. A multi-step workflow that chains tool calls, makes decisions, and recovers from failures is where agents become genuinely productive."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 A single prompt to an AI agent can answer a question or generate text. But real-world automation — triaging a support ticket, processing a data pipeline, reviewing a pull request — requires *workflows*: sequences of steps with branching logic, shared state, error handling, and sometimes human approval gates.
@@ -96,7 +97,7 @@ Draft → Review → [acceptable?] → No: Revise → Review → ...
 
 **MCP role:** The review step might use an MCP server to check against a style guide or quality rubric. The revision step gets both the draft and review feedback.
 
-**Guard against:** Infinite loops. Always set a maximum iteration count. Three refinement cycles is usually the practical limit before diminishing returns — research consistently shows that quality plateaus after 2-3 iterations for most tasks.
+**Guard against:** Infinite loops. Always set a maximum iteration count. Three refinement cycles is usually the practical limit before diminishing returns — quality tends to plateau after 2–3 iterations for most tasks.
 
 ### Human-in-the-Loop
 
@@ -244,7 +245,7 @@ When a guardrail trips, it raises an exception that your application handles —
 
 ### Mastra: TypeScript-Native Workflows
 
-[Mastra](https://mastra.ai/) (from the team behind Gatsby, Y Combinator W25) offers a TypeScript-first approach with graph-based workflow definition.
+[Mastra](https://mastra.ai/) ([from the team behind Gatsby, Y Combinator W25](https://mastra.ai/about)) offers a TypeScript-first approach with graph-based workflow definition.
 
 ```typescript
 const workflow = new Workflow({ name: "content-pipeline" })

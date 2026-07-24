@@ -5,6 +5,7 @@ description: "A comprehensive guide to packaging and distributing MCP servers �
 content_type: "Guide"
 card_description: "Building an MCP server is the easy part. Getting it into other people's hands — with the right dependencies, across different platforms, through the right registries — is where most projects stall. The ecosystem now offers at least six distinct distribution paths: npm packages for JavaScript servers, PyPI for Python, Docker containers for isolation, DXT files for one-click desktop install, the official MCP Registry for discovery, and managed platforms for production HTTP deployment. This guide covers every path, with trade-offs, tooling, and step-by-step publishing workflows."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Building an MCP server is the easy part. Getting it into users' hands — reliably, across platforms, with the right dependencies — is where most projects stall. As of March 2026, the ecosystem offers at least six distinct distribution paths, each with different trade-offs around ease of use, security, discoverability, and production-readiness.
@@ -106,7 +107,7 @@ Docker is becoming the standard for production MCP server distribution. Containe
 
 Docker has built a comprehensive MCP infrastructure with three components:
 
-**Docker MCP Catalog** — A curated collection of 300+ verified MCP server images on Docker Hub (`hub.docker.com/mcp`). Each image has versioning, provenance tracking, and automated security updates. Think of it as Docker Hub specifically for MCP.
+**Docker MCP Catalog** — A curated collection of 300+ verified MCP server images on [Docker Hub](https://hub.docker.com/u/mcp). Each image has versioning, provenance tracking, and automated security updates. Think of it as Docker Hub specifically for MCP.
 
 **Docker MCP Toolkit** — A management interface integrated into Docker Desktop. Browse the catalog, launch servers with one click, organize them into profiles for different projects, and connect them to AI clients through the MCP Gateway. No manual configuration files needed.
 
@@ -157,7 +158,7 @@ ToolHive addresses a real gap: most MCP servers run with the same permissions as
 
 ## DXT: Desktop Extensions for One-Click Install
 
-Desktop Extensions (DXT) are Anthropic's answer to MCP's installation problem. Launched in June 2025, DXT packages an entire MCP server — code, dependencies, configuration — into a single `.dxt` file that non-technical users can install with one click in Claude Desktop.
+Desktop Extensions (DXT) are Anthropic's answer to MCP's installation problem. [Launched in June 2025](https://x.com/AnthropicAI/status/1938272883618312670), DXT packages an entire MCP server — code, dependencies, configuration — into a single `.dxt` file that non-technical users can install with one click in Claude Desktop.
 
 ### What's Inside a DXT File
 
@@ -220,7 +221,7 @@ dxt pack          # Generate the .dxt file
 
 ## The Official MCP Registry
 
-The [MCP Registry](https://registry.modelcontextprotocol.io) launched in preview in September 2025 with an API freeze at v0.1 in October 2025. It's the canonical place for MCP server discovery — a community-driven, permissively licensed registry maintained by the official MCP registry working group.
+The [MCP Registry](https://registry.modelcontextprotocol.io) [launched in preview in September 2025](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/) with an API freeze at v0.1 in October 2025. It's the canonical place for MCP server discovery — a community-driven, permissively licensed registry maintained by the official MCP registry working group.
 
 ### Namespace System
 
@@ -300,7 +301,7 @@ This is particularly valuable for API companies that want to offer MCP access wi
 
 ### Smithery: Registry and Deployment Platform
 
-[Smithery](https://smithery.ai) provides both a discovery directory (7,300+ servers) and a deployment platform. The Smithery CLI (`npx skills add smithery/cli`) lets developers install and configure MCP servers interactively. For server authors, Smithery offers hosted deployment where you push your code and Smithery handles containerization, scaling, and endpoint management.
+[Smithery](https://smithery.ai) provides both a discovery directory (thousands of servers) and a deployment platform. The Smithery CLI (`npx skills add smithery/cli`) lets developers install and configure MCP servers interactively. For server authors, Smithery offers hosted deployment where you push your code and Smithery handles containerization, scaling, and endpoint management.
 
 ### TrueFoundry: stdio-to-HTTP Deployment
 
