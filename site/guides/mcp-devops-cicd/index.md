@@ -293,13 +293,13 @@ In May 2025, researchers demonstrated a critical vulnerability in GitHub's MCP i
 
 This attack worked because the agent had both read access to public issues (where the injection payload lived) and read access to private repositories (the target). The combination of permissions created the vulnerability — neither permission alone was dangerous.
 
-### The mcp-remote Supply Chain Attack (CVE-2025-6514)
+### The mcp-remote Supply Chain Attack ([CVE-2025-6514](https://jfrog.com/blog/cve-2025-6514-critical-shell-injection-vulnerability-in-mcp-remote/))
 
-A critical OAuth vulnerability in `mcp-remote` — a widely-used MCP proxy package with nearly half a million users — enabled remote code execution. This was the first documented case of full system compromise through MCP infrastructure, turning a trusted development tool into an attack vector.
+A critical shell injection vulnerability in `mcp-remote` — a widely-used MCP proxy package with over 437,000 downloads — enabled remote code execution. This was one of the first documented cases of full system compromise through MCP infrastructure, turning a trusted development tool into an attack vector.
 
 ### The NeighborJack Vulnerability
 
-Hundreds of MCP servers were found configured to bind to `0.0.0.0` by default, exposing them to the network. Combined with OS command injection vulnerabilities, this gave attackers complete control over host systems. For infrastructure MCP servers, this could mean access to Kubernetes clusters, cloud credentials, and CI/CD pipelines.
+[Hundreds of MCP servers were found configured to bind to `0.0.0.0` by default](https://virtualizationreview.com/articles/2025/06/25/mcp-servers-hit-by-neighborjack-vulnerability-and-more.aspx), exposing them to any device on the same network without authentication. Combined with OS command injection vulnerabilities, this gave attackers complete control over host systems. For infrastructure MCP servers, this could mean access to Kubernetes clusters, cloud credentials, and CI/CD pipelines.
 
 ### Infrastructure-Specific Risks
 

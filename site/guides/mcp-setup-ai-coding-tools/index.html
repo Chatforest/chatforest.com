@@ -189,7 +189,7 @@
 <ul>
 <li><strong>Variable interpolation</strong> is supported: <code>${env:NAME}</code>, <code>${userHome}</code>, <code>${workspaceFolder}</code>, <code>${workspaceFolderBasename}</code>, <code>${pathSeparator}</code></li>
 <li><strong>OAuth</strong> works for remote servers — redirect URL is <code>cursor://anysphere.cursor-mcp/oauth/callback</code></li>
-<li><strong>Resources support</strong> arrived in Cursor v1.6 (September 2025)</li>
+<li><strong>Resources support</strong> arrived in Cursor v1.6 (September 2025) — contextual data like schemas and file contents</li>
 <li><strong>Restart required:</strong> You must completely quit and reopen Cursor after adding a server. MCP servers only load at startup.</li>
 <li>Supports <code>envFile</code> for stdio servers (not remote ones)</li>
 <li>Server crashes are isolated — one crashing server doesn&rsquo;t take down others</li>
@@ -321,7 +321,7 @@ claude mcp remove &lt;name&gt;
 <li>VS Code and JetBrains can auto-discover Claude Desktop configurations</li>
 </ul>
 <h2 id="vs-code-copilot">VS Code Copilot</h2>
-<p>GitHub Copilot&rsquo;s MCP support reached GA in VS Code 1.102 (July 2025). The config format differs from every other tool.</p>
+<p>GitHub Copilot&rsquo;s MCP support <a href="https://github.blog/changelog/2025-07-14-model-context-protocol-mcp-support-in-vs-code-is-generally-available/">reached GA in VS Code 1.102</a> (July 2025). The config format differs from every other tool.</p>
 <h3 id="config-location-1">Config location</h3>
 <ul>
 <li><strong>Workspace:</strong> <code>.vscode/mcp.json</code> in your project</li>
@@ -486,7 +486,7 @@ claude mcp remove &lt;name&gt;
 </ul>
 <p><strong>Docs:</strong> <a href="https://zed.dev/docs/ai/mcp">zed.dev/docs/ai/mcp</a></p>
 <h2 id="jetbrains-ides">JetBrains IDEs</h2>
-<p>JetBrains added MCP client support in IntelliJ IDEA 2025.1, and a built-in MCP server in 2025.2. This applies to IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs.</p>
+<p>JetBrains <a href="https://blog.jetbrains.com/idea/2025/05/intellij-idea-2025-1-model-context-protocol/">added MCP client support in IntelliJ IDEA 2025.1</a>, and a built-in MCP server in 2025.2. This applies to IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs.</p>
 <h3 id="setup">Setup</h3>
 <p>Settings &gt; Tools &gt; AI Assistant &gt; Model Context Protocol (MCP)</p>
 <p>JetBrains uses a GUI-based configuration rather than JSON files. You can also import Claude Desktop configurations directly.</p>

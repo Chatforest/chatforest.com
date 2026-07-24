@@ -71,7 +71,7 @@
 <p>But connecting an AI agent to your workplace chat comes with real security risks — including a data exfiltration vulnerability that got Anthropic&rsquo;s original Slack MCP server archived. This guide covers what&rsquo;s available, how to architect it, and what to watch out for. Our analysis draws on published documentation, security disclosures, and community project data — we research and analyze rather than deploying these systems ourselves. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI.</p>
 <h2 id="slack-mcp-servers">Slack MCP Servers</h2>
 <h3 id="slacks-official-mcp-server">Slack&rsquo;s Official MCP Server</h3>
-<p>Slack released its first-party MCP server in February 2026, after previewing it at Dreamforce in October 2025. This is the production-grade option.</p>
+<p>Slack <a href="https://docs.slack.dev/changelog/2026/02/17/slack-mcp/">released its first-party MCP server on February 17, 2026</a>, after <a href="https://slack.com/blog/news/dreamforce-slack-native-ai">previewing it at Dreamforce in October 2025</a>. This is the production-grade option.</p>
 <p><strong>Endpoint:</strong> <code>https://mcp.slack.com/mcp</code> (Streamable HTTP transport)</p>
 <p><strong>What it can do:</strong></p>
 <table>
@@ -108,7 +108,7 @@
 <p>The original <code>@modelcontextprotocol/server-slack</code> from Anthropic&rsquo;s MCP project was archived in May 2025 after a critical data exfiltration vulnerability. It exposed 8 tools (list channels, post messages, reply to threads, add reactions, get history, get replies, list users, get profiles) via stdio transport.</p>
 <p><strong>Do not use this server.</strong> It has a known security vulnerability that allows data exfiltration through Slack&rsquo;s link unfurling mechanism. We cover the details in the <a href="#the-slack-mcp-data-exfiltration-vulnerability">Security section</a> below.</p>
 <h3 id="community-alternatives">Community Alternatives</h3>
-<p><strong>korotovsky/slack-mcp-server</strong> (Go) is the most popular community option with 9,000+ active users. It offers ~13 tools covering conversations, reactions, attachments, channels, and user groups. Notable features include GovSlack support (routes API calls to slack-gov.com for FedRAMP environments) and a &ldquo;stealth mode&rdquo; using browser session cookies — useful for testing but not suitable for production since it bypasses Slack&rsquo;s audit trails.</p>
+<p><strong><a href="https://github.com/korotovsky/slack-mcp-server">korotovsky/slack-mcp-server</a></strong> (Go) is one of the most popular community options. It offers ~13 tools covering conversations, reactions, attachments, channels, and user groups. Notable features include GovSlack support (routes API calls to slack-gov.com for FedRAMP environments) and a &ldquo;stealth mode&rdquo; using browser session cookies — useful for testing but not suitable for production since it bypasses Slack&rsquo;s audit trails.</p>
 <p><strong>AVIMBU/slack-mcp-server</strong> (TypeScript) provides ~8 tools with standard OAuth. <strong>Truto</strong> offers a managed SaaS approach with dynamic tool generation from the full Slack API surface, managed OAuth lifecycle, and method-level filtering.</p>
 <h2 id="microsoft-teams-mcp-servers">Microsoft Teams MCP Servers</h2>
 <h3 id="microsofts-official-support">Microsoft&rsquo;s Official Support</h3>
@@ -271,12 +271,12 @@
 <li><strong>Exfiltration:</strong> The agent crafts a hyperlink containing the stolen data as URL parameters and posts it to Slack.</li>
 <li><strong>Silent delivery:</strong> Slack&rsquo;s link unfurling automatically sends an HTTP request to the attacker&rsquo;s server, delivering the data with no visible indication in the channel.</li>
 </ol>
-<p>Security researcher Simon Willison called this &ldquo;the lethal trifecta&rdquo; — an AI agent with tool access, private data, and untrusted input in the same context.</p>
-<p><strong>Timeline:</strong> Reported May 27, 2025 → Anthropic archived the server May 29, 2025 → Public disclosure June 24, 2025.</p>
+<p>Security researcher Simon Willison <a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">coined the term &ldquo;the lethal trifecta&rdquo;</a> for this pattern — an AI agent with tool access, private data, and untrusted input in the same context.</p>
+<p><strong>Timeline:</strong> Reported May 27, 2025 → Anthropic archived the server May 29, 2025. The <a href="https://embracethered.com/blog/posts/2025/security-advisory-anthropic-slack-mcp-server-data-leakage/">security advisory was publicly disclosed</a> by researcher Johann Rehberger (CVE-2025-34072, CVSS 9.3).</p>
 <h3 id="broader-security-risks">Broader Security Risks</h3>
 <p>The vulnerability illustrates patterns that apply across all MCP + chat integrations:</p>
 <ul>
-<li><strong>Token mismanagement:</strong> Tokens stored in environment variables or config files with no expiry or rotation. A 2025 OWASP analysis found 43% of publicly available MCP servers contained command injection vulnerabilities.</li>
+<li><strong>Token mismanagement:</strong> Tokens stored in environment variables or config files with no expiry or rotation. <a href="https://owasp.org/www-project-mcp-top-10/">OWASP&rsquo;s MCP Top 10</a> ranks command injection (MCP05) among the top risks in MCP deployments.</li>
 <li><strong>Excessive permissions:</strong> Many MCP tools get unrestricted access. An agent that only needs to read channels shouldn&rsquo;t have permission to post messages or access DMs.</li>
 <li><strong>Tool chaining for data exfiltration:</strong> An agent reads private data via one tool and sends it externally via another. This is particularly dangerous when the agent processes untrusted content.</li>
 <li><strong>No method-level filtering:</strong> Most open-source servers expose all tools to all callers with no ability to restrict per-user or per-context.</li>

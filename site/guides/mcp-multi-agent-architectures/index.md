@@ -221,7 +221,7 @@ OWASP released "Enterprise-Grade Security for the Model Context Protocol" guidel
 
 ## MCP vs A2A: When You Need Direct Agent Communication
 
-Google released the [Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/) in April 2025 for direct agent-to-agent communication. IBM's Agent Communication Protocol (ACP) merged into A2A in August 2025. Both MCP and A2A are now governed by the [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agentic-ai-initiative) under the Linux Foundation, co-founded by Anthropic, OpenAI, Google, Microsoft, AWS, and Block.
+Google released the [Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/) in April 2025 for direct agent-to-agent communication. [IBM's Agent Communication Protocol (ACP) merged into A2A in August 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/), with IBM donating ACP's assets to A2A under the Linux Foundation's LF AI & Data umbrella. Both MCP and A2A are now governed by the [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agentic-ai-initiative) under the Linux Foundation, co-founded by Anthropic, OpenAI, Google, Microsoft, AWS, and Block.
 
 The relationship is complementary:
 

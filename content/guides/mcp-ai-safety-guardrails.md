@@ -5,9 +5,10 @@ description: "A comprehensive guide to implementing AI safety with MCP — cover
 content_type: "Guide"
 card_description: "MCP gives AI agents real-world capabilities — database access, file operations, API calls, code execution. This guide covers the safety patterns you need: guardrail frameworks, content filtering, sandboxing, human-in-the-loop approvals, permission systems, audit logging, and lessons from real-world incidents."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
-MCP gives AI agents the ability to read files, query databases, execute code, send messages, and modify infrastructure. Every tool an MCP server exposes is a capability that can be used correctly — or catastrophically. In early 2026, the security research community documented 30 MCP CVEs in just 60 days. A single vulnerability in `mcp-remote` (CVE-2025-6514, CVSS 9.6) affected over 437,000 downloads with a remote code execution flaw. Real-world attacks have exfiltrated private GitHub repositories, leaked Asana data across tenant boundaries, and stolen complete WhatsApp message histories — all through MCP tool manipulation.
+MCP gives AI agents the ability to read files, query databases, execute code, send messages, and modify infrastructure. Every tool an MCP server exposes is a capability that can be used correctly — or catastrophically. In early 2026, the security research community documented 30 MCP CVEs in just 60 days. A single vulnerability in `mcp-remote` ([CVE-2025-6514](https://jfrog.com/blog/cve-2025-6514-critical-shell-injection-vulnerability-in-mcp-remote/), CVSS 9.6) affected over 437,000 downloads with a remote code execution flaw. Real-world attacks have [exfiltrated private GitHub repositories](https://invariantlabs.ai/blog/mcp-github-vulnerability), [leaked Asana data across tenant boundaries](https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/), and [stolen complete WhatsApp message histories](https://invariantlabs.ai/blog/whatsapp-mcp-exploited) — all through MCP tool manipulation.
 
 The safety challenge with MCP is unique. Traditional API security assumes the caller understands the API contract. MCP callers are language models that can be manipulated through prompt injection, confused by ambiguous tool descriptions, or tricked into calling tools with malicious parameters. Defending MCP systems requires a layered approach: protocol-level safety features, guardrail frameworks, content filtering, sandbox isolation, fine-grained permissions, human-in-the-loop approvals, audit logging, and cost controls.
 
@@ -15,7 +16,7 @@ This guide covers the patterns, tools, and frameworks for building safe MCP syst
 
 ## The MCP Safety Landscape
 
-Before diving into tools and patterns, it helps to understand the threat model. The OWASP Agentic Top 10 (December 2025), OWASP MCP Top 10 (March 2026), CoSAI MCP Security analysis (~40 threats, 12 categories), and Adversa AI MCP TOP 25 collectively paint a picture of the attack surface.
+Before diving into tools and patterns, it helps to understand the threat model. The [OWASP Agentic Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) (December 2025), [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (March 2026), [CoSAI MCP Security analysis](https://www.coalitionforsecureai.org/) (~40 threats, 12 categories), and [Adversa AI MCP TOP 25](https://adversa.ai/mcp-security-top-25-mcp-vulnerabilities/) collectively paint a picture of the attack surface.
 
 **Key threat categories:**
 
@@ -24,8 +25,8 @@ Before diving into tools and patterns, it helps to understand the threat model. 
 | **Tool poisoning** | Malicious tool descriptions manipulate agent behavior | GitHub MCP: hidden instructions in issue text exfiltrated private repos |
 | **Prompt injection via tools** | External data returned by tools contains injected instructions | Supabase/Cursor: support ticket text triggered data exfiltration |
 | **Rug pull** | Tool descriptions change after initial trust is established | Tools behave safely during review, then change behavior post-approval |
-| **Cross-tenant leakage** | MCP server shares state between users | Asana MCP leaked data across ~1,000 customer accounts |
-| **Token amplification** | Adversarial tools consume excessive tokens | Research showed 142.4x token amplification via "overthinking loops" |
+| **Cross-tenant leakage** | MCP server shares state between users | [Asana MCP leaked data across ~1,000 customer accounts](https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/) |
+| **Token amplification** | Adversarial tools consume excessive tokens | [Research showed 142.4x token amplification via "overthinking loops"](https://arxiv.org/abs/2602.14798) |
 | **Credential theft** | MCP servers receive OAuth tokens that can be misused | Stolen tokens used for lateral movement across connected services |
 | **Shadow tool execution** | Hidden tool calls embedded in responses | Tool annotations misused to execute actions users didn't approve |
 
@@ -189,7 +190,7 @@ Docker's official MCP Toolkit provides container-based isolation for MCP servers
 
 ### Microsoft Wassette (867+ Stars)
 
-[Wassette](https://github.com/aspect-build/aspect-workflows) implements a WebAssembly sandbox for MCP servers with a deny-by-default security model:
+[Wassette](https://github.com/microsoft/wassette) implements a WebAssembly sandbox for MCP servers with a deny-by-default security model:
 
 - **WASM isolation** — MCP servers compile to WebAssembly and run in a sandboxed runtime
 - **Capability-based security** — servers must explicitly declare which system capabilities they need (filesystem read, network access, environment variables)
@@ -373,7 +374,7 @@ Uncontrolled MCP usage can lead to runaway costs, both from LLM token consumptio
 
 ### Bifrost (3,300+ Stars)
 
-[Bifrost](https://github.com/bifrost-platform/bifrost) provides hierarchical budget management for AI systems including MCP:
+[Bifrost](https://github.com/maximhq/bifrost) provides hierarchical budget management for AI systems including MCP:
 
 - **Hierarchical budgets** — set limits at organization, team, project, and key levels
 - **Per-tool rate limiting** — different limits for different MCP tools (expensive API calls get lower limits)
@@ -382,7 +383,7 @@ Uncontrolled MCP usage can lead to runaway costs, both from LLM token consumptio
 
 ### Token Amplification Defense
 
-Research has documented a "denial-of-wallet" attack where adversarial MCP tools trigger overthinking loops in AI agents, amplifying token consumption by up to **142.4x**. Defenses include:
+Research ([arXiv:2602.14798](https://arxiv.org/abs/2602.14798)) has documented a "denial-of-wallet" attack where adversarial MCP tools trigger overthinking loops in AI agents, amplifying token consumption by up to **142.4x**. Defenses include:
 
 - **Per-tool-call token budgets** — limit how many tokens a single tool response can consume
 - **Loop detection** — detect when an agent is calling the same tool repeatedly without progress
@@ -413,7 +414,7 @@ Understanding past incidents is essential for building safe MCP systems. Here ar
 
 ### Asana Cross-Tenant Leak
 
-**What happened:** The Asana MCP server shared state between tenant sessions, allowing one user's agent to access another user's project data. Approximately 1,000 customers were affected.
+**What happened:** [The Asana MCP server shared state between tenant sessions](https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/), allowing one user's agent to access another user's project data. Approximately 1,000 customers were affected between June 5 and June 17, 2025.
 
 **Lesson:** MCP servers that serve multiple tenants must implement strict session isolation. Shared caches, connection pools, and in-memory state are all cross-tenant leak vectors.
 
@@ -427,7 +428,7 @@ Understanding past incidents is essential for building safe MCP systems. Here ar
 
 Six major frameworks now address MCP security. Each approaches the problem from a different angle.
 
-### OWASP MCP Top 10 (March 2026)
+### [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (March 2026)
 
 The most MCP-specific framework, covering:
 1. Tool poisoning
@@ -441,7 +442,7 @@ The most MCP-specific framework, covering:
 9. Improper error handling
 10. Unsafe MCP marketplace practices
 
-### OWASP Agentic Top 10 (December 2025)
+### [OWASP Agentic Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) (December 2025)
 
 Broader agentic AI security, applicable to MCP:
 - Excessive agency (agents with too many tools)
@@ -449,7 +450,7 @@ Broader agentic AI security, applicable to MCP:
 - Insecure output handling (trusting tool responses)
 - Supply chain attacks (malicious MCP servers)
 
-### CoSAI MCP Security Analysis
+### [CoSAI MCP Security Analysis](https://www.coalitionforsecureai.org/)
 
 The Coalition for Secure AI identified approximately 40 MCP-specific threats across 12 categories, with a focus on the protocol's unique attack surface (stateful sessions, bidirectional communication, tool discovery).
 
@@ -461,7 +462,7 @@ The Cloud Security Alliance's framework applies Zero Trust principles to AI agen
 - **Least privilege** — agents receive minimum necessary tool access
 - **Assume breach** — design systems assuming any agent may be compromised
 
-### Adversa AI MCP TOP 25 (September 2025)
+### [Adversa AI MCP TOP 25](https://adversa.ai/mcp-security-top-25-mcp-vulnerabilities/) (September 2025)
 
 The earliest MCP-specific threat taxonomy, identifying 25 attack vectors with risk scores and mitigations. Particularly valuable for its practical attack demonstrations.
 
@@ -529,7 +530,7 @@ Combining these tools and patterns into a coherent safety architecture requires 
 | **Wassette** | WASM sandbox | 867+ | Deny-by-default |
 | **MCP.run** | WASM servlets | — | Per-servlet isolation |
 | **Permit.io** | Authorization | — | RBAC/ABAC/ReBAC gateway |
-| **Bifrost** | Cost control | 3,300+ | Hierarchical budgets |
+| **[Bifrost](https://github.com/maximhq/bifrost)** | Cost control | 3,300+ | Hierarchical budgets |
 | **MintMCP** | Audit logging | — | SOC 2 Type II certified |
 
 ## Getting Started

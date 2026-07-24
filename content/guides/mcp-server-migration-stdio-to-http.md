@@ -5,6 +5,7 @@ description: "A practical migration guide for MCP server developers moving from 
 content_type: "Guide"
 card_description: "Your stdio MCP server works great locally. Here's how to add Streamable HTTP so it works everywhere — remote clients, multi-user, and production deployments."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Your MCP server works. It runs over stdio, your IDE picks it up, and tool calls flow smoothly. But now you need it to work for remote clients, handle multiple users, or deploy to a cloud environment. That means adding Streamable HTTP transport.
@@ -20,7 +21,7 @@ stdio is perfect for local, single-user scenarios. But it has hard limits:
 - **No web deployment.** You can't run a stdio server behind a load balancer, on a serverless platform, or as a shared service.
 - **No independent lifecycle.** The server process dies when the client disconnects.
 
-Streamable HTTP solves all of these. It's the MCP spec's recommended transport for anything beyond local development, and with the HTTP+SSE transport deprecated (sunset: June 30, 2026), it's the only HTTP-based option going forward.
+Streamable HTTP solves all of these. It's the [MCP spec's recommended transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports) for anything beyond local development, and with the HTTP+SSE transport deprecated (sunset: June 30, 2026), it's the only HTTP-based option going forward.
 
 ## What Actually Changes
 
@@ -422,7 +423,7 @@ If you're currently running stdio only and planning to add HTTP support, here's 
 4. **Week 2:** Deploy to staging. Verify client configurations. Monitor session lifecycle.
 5. **Week 3:** Production deployment. Keep stdio as fallback for local development.
 
-For servers currently on the deprecated HTTP+SSE transport, the MCP spec sets the backward-compatibility deadline at **June 30, 2026**. Some providers (like Keboola) have set earlier deadlines. Plan your migration accordingly.
+For servers currently on the deprecated HTTP+SSE transport, the [MCP spec](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports) sets the backward-compatibility deadline at **June 30, 2026**. Some providers (like Keboola) have set earlier deadlines. Plan your migration accordingly.
 
 ## Choosing Stateful vs. Stateless HTTP
 

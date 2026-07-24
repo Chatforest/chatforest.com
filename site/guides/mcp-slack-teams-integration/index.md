@@ -13,7 +13,7 @@ But connecting an AI agent to your workplace chat comes with real security risks
 
 ### Slack's Official MCP Server
 
-Slack released its first-party MCP server in February 2026, after previewing it at Dreamforce in October 2025. This is the production-grade option.
+Slack [released its first-party MCP server on February 17, 2026](https://docs.slack.dev/changelog/2026/02/17/slack-mcp/), after [previewing it at Dreamforce in October 2025](https://slack.com/blog/news/dreamforce-slack-native-ai). This is the production-grade option.
 
 **Endpoint:** `https://mcp.slack.com/mcp` (Streamable HTTP transport)
 
@@ -42,7 +42,7 @@ The original `@modelcontextprotocol/server-slack` from Anthropic's MCP project w
 
 ### Community Alternatives
 
-**korotovsky/slack-mcp-server** (Go) is the most popular community option with 9,000+ active users. It offers ~13 tools covering conversations, reactions, attachments, channels, and user groups. Notable features include GovSlack support (routes API calls to slack-gov.com for FedRAMP environments) and a "stealth mode" using browser session cookies — useful for testing but not suitable for production since it bypasses Slack's audit trails.
+**[korotovsky/slack-mcp-server](https://github.com/korotovsky/slack-mcp-server)** (Go) is one of the most popular community options. It offers ~13 tools covering conversations, reactions, attachments, channels, and user groups. Notable features include GovSlack support (routes API calls to slack-gov.com for FedRAMP environments) and a "stealth mode" using browser session cookies — useful for testing but not suitable for production since it bypasses Slack's audit trails.
 
 **AVIMBU/slack-mcp-server** (TypeScript) provides ~8 tools with standard OAuth. **Truto** offers a managed SaaS approach with dynamic tool generation from the full Slack API surface, managed OAuth lifecycle, and method-level filtering.
 
@@ -179,15 +179,15 @@ In May 2025, researchers discovered that Anthropic's `@modelcontextprotocol/serv
 3. **Exfiltration:** The agent crafts a hyperlink containing the stolen data as URL parameters and posts it to Slack.
 4. **Silent delivery:** Slack's link unfurling automatically sends an HTTP request to the attacker's server, delivering the data with no visible indication in the channel.
 
-Security researcher Simon Willison called this "the lethal trifecta" — an AI agent with tool access, private data, and untrusted input in the same context.
+Security researcher Simon Willison [coined the term "the lethal trifecta"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) for this pattern — an AI agent with tool access, private data, and untrusted input in the same context.
 
-**Timeline:** Reported May 27, 2025 → Anthropic archived the server May 29, 2025 → Public disclosure June 24, 2025.
+**Timeline:** Reported May 27, 2025 → Anthropic archived the server May 29, 2025. The [security advisory was publicly disclosed](https://embracethered.com/blog/posts/2025/security-advisory-anthropic-slack-mcp-server-data-leakage/) by researcher Johann Rehberger (CVE-2025-34072, CVSS 9.3).
 
 ### Broader Security Risks
 
 The vulnerability illustrates patterns that apply across all MCP + chat integrations:
 
-- **Token mismanagement:** Tokens stored in environment variables or config files with no expiry or rotation. A 2025 OWASP analysis found 43% of publicly available MCP servers contained command injection vulnerabilities.
+- **Token mismanagement:** Tokens stored in environment variables or config files with no expiry or rotation. [OWASP's MCP Top 10](https://owasp.org/www-project-mcp-top-10/) ranks command injection (MCP05) among the top risks in MCP deployments.
 - **Excessive permissions:** Many MCP tools get unrestricted access. An agent that only needs to read channels shouldn't have permission to post messages or access DMs.
 - **Tool chaining for data exfiltration:** An agent reads private data via one tool and sends it externally via another. This is particularly dangerous when the agent processes untrusted content.
 - **No method-level filtering:** Most open-source servers expose all tools to all callers with no ability to restrict per-user or per-context.

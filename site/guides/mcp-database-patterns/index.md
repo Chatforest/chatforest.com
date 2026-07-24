@@ -187,7 +187,7 @@ Database MCP servers have the highest security stakes in the MCP ecosystem. A co
 
 ### The SQLite MCP Server Vulnerability
 
-The most instructive security incident in the MCP database space involved Anthropic's own reference SQLite server. Trend Micro's June 2025 analysis revealed that the server used f-string concatenation instead of parameterized queries — a classic SQL injection vulnerability made far more dangerous by the LLM context.
+The most instructive security incident in the MCP database space involved Anthropic's own reference SQLite server. [Trend Micro's June 2025 analysis](https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html) revealed that the server used f-string concatenation instead of parameterized queries — a classic SQL injection vulnerability made far more dangerous by the LLM context.
 
 **The attack chain:**
 
@@ -198,7 +198,7 @@ The most instructive security incident in the MCP database space involved Anthro
 
 This is the **LLM equivalent of a stored XSS attack** — prompt injection stored in a database, triggered when a privileged agent reads the poisoned data.
 
-The server was forked 5,000+ times before being archived in May 2025, meaning vulnerable code exists in thousands of downstream projects.
+Trend Micro reported the issue to Anthropic on June 11, 2025 under responsible disclosure. Anthropic designated the archived demo "out of scope" with no patch planned. The server was forked 5,000+ times before being archived, meaning vulnerable code exists in thousands of downstream projects.
 
 ### The Supabase Cursor Incident
 
@@ -211,7 +211,7 @@ Three factors made this possible:
 
 ### Equixly's Security Assessment
 
-A security assessment of popular MCP server implementations found that **43% contained command injection vulnerabilities** and **22% allowed directory traversal or arbitrary file read**. These aren't theoretical — they're exploitable in deployed systems.
+[Equixly's security assessment of popular MCP server implementations](https://equixly.com/blog/2026/02/26/offensive-security-for-mcp-servers/) found that **43% contained command injection vulnerabilities** and **22% allowed directory traversal or arbitrary file read**. These aren't theoretical — they're exploitable in deployed systems.
 
 ### Security Architecture for Database MCP
 
@@ -312,19 +312,15 @@ Key metrics to track: latency, error rates, tool call duration, resource utiliza
 
 ### Financial Analytics (Block)
 
-Block (Square/Cash App) uses DataHub's MCP server with their open-source AI agent Goose. Engineers query schemas, lineage, ownership, quality metrics, and documentation through natural language. Incident response time dropped from hours/weeks to minutes — engineers verify tables, assess downstream impact, and identify data owners conversationally.
+[Block (Square/Cash App) uses DataHub's MCP server](https://datahub.com/blog/datahub-mcp-server-block-ai-agents-use-case/) with their open-source AI agent Goose. Engineers query schemas, lineage, ownership, quality metrics, and documentation through natural language. According to Block's engineers, issues that previously took "hours, days, or even weeks" are resolved through a few short conversation messages — verifying tables, assessing downstream impact, and identifying data owners conversationally.
 
 ### Business Spend Analytics (Ramp)
 
-Ramp built an MCP server with an in-memory SQLite database. Natural language queries like "give me a detailed overview of my business's spend in the past year" process tens of thousands of spend events. They evolved from direct API querying to SQLite as data volumes scaled.
+[Ramp built an MCP server](https://www.zenml.io/llmops-database/building-a-natural-language-interface-to-business-spend-data-via-mcp-and-sql) with an in-memory SQLite database. Natural language queries process tens of thousands of spend events. They evolved from direct API querying to SQLite as data volumes scaled, moving from struggling with a few hundred data points to accurately analyzing tens of thousands of spend events.
 
 ### Product Analytics (PostHog)
 
 PostHog's MCP server proxies to PostHog instances. Agents execute complex HogQL queries against both system data and analytics data. Example query: "What's our 7-day retention for users who activated the new onboarding flow?"
-
-### E-Commerce Reporting
-
-A mid-sized e-commerce company reduced reporting time from 2 days to 2 minutes. Analysts transitioned from report generators to strategic thinkers. Automated weekly reporting saved 10 hours per analyst.
 
 ### Database Performance Tuning
 

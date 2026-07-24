@@ -11,7 +11,7 @@ This guide covers the patterns, tools, and trade-offs for running MCP servers in
 
 ## MCP as a Critical Microservice
 
-Signadot's analysis on The New Stack frames the shift well: MCP servers are the "translation layer between probabilistic LLM reasoning and deterministic microservices." Traditional service-to-service communication uses strict REST or gRPC contracts, but MCP servers expose a world model rather than just API endpoints. This changes the deployment calculus.
+[Signadot's analysis on The New Stack](https://thenewstack.io/why-the-mcp-server-is-now-a-critical-microservice/) frames the shift well: MCP servers are the "translation layer between probabilistic LLM reasoning and deterministic microservices." Traditional service-to-service communication uses strict REST or gRPC contracts, but MCP servers expose a world model rather than just API endpoints. This changes the deployment calculus.
 
 **Key production concerns for MCP microservices:**
 

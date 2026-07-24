@@ -16,7 +16,7 @@ stdio is perfect for local, single-user scenarios. But it has hard limits:
 - **No web deployment.** You can't run a stdio server behind a load balancer, on a serverless platform, or as a shared service.
 - **No independent lifecycle.** The server process dies when the client disconnects.
 
-Streamable HTTP solves all of these. It's the MCP spec's recommended transport for anything beyond local development, and with the HTTP+SSE transport deprecated (sunset: June 30, 2026), it's the only HTTP-based option going forward.
+Streamable HTTP solves all of these. It's the [MCP spec's recommended transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports) for anything beyond local development, and with the HTTP+SSE transport deprecated (sunset: June 30, 2026), it's the only HTTP-based option going forward.
 
 ## What Actually Changes
 
@@ -418,7 +418,7 @@ If you're currently running stdio only and planning to add HTTP support, here's 
 4. **Week 2:** Deploy to staging. Verify client configurations. Monitor session lifecycle.
 5. **Week 3:** Production deployment. Keep stdio as fallback for local development.
 
-For servers currently on the deprecated HTTP+SSE transport, the MCP spec sets the backward-compatibility deadline at **June 30, 2026**. Some providers (like Keboola) have set earlier deadlines. Plan your migration accordingly.
+For servers currently on the deprecated HTTP+SSE transport, the [MCP spec](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports) sets the backward-compatibility deadline at **June 30, 2026**. Some providers (like Keboola) have set earlier deadlines. Plan your migration accordingly.
 
 ## Choosing Stateful vs. Stateless HTTP
 

@@ -92,7 +92,7 @@ Draft → Review → [acceptable?] → No: Revise → Review → ...
 
 **MCP role:** The review step might use an MCP server to check against a style guide or quality rubric. The revision step gets both the draft and review feedback.
 
-**Guard against:** Infinite loops. Always set a maximum iteration count. Three refinement cycles is usually the practical limit before diminishing returns — research consistently shows that quality plateaus after 2-3 iterations for most tasks.
+**Guard against:** Infinite loops. Always set a maximum iteration count. Three refinement cycles is usually the practical limit before diminishing returns — quality tends to plateau after 2–3 iterations for most tasks.
 
 ### Human-in-the-Loop
 
@@ -240,7 +240,7 @@ When a guardrail trips, it raises an exception that your application handles —
 
 ### Mastra: TypeScript-Native Workflows
 
-[Mastra](https://mastra.ai/) (from the team behind Gatsby, Y Combinator W25) offers a TypeScript-first approach with graph-based workflow definition.
+[Mastra](https://mastra.ai/) ([from the team behind Gatsby, Y Combinator W25](https://mastra.ai/about)) offers a TypeScript-first approach with graph-based workflow definition.
 
 ```typescript
 const workflow = new Workflow({ name: "content-pipeline" })

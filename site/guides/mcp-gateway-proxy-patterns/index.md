@@ -88,15 +88,15 @@ The major cloud providers have launched MCP gateway services:
 
 ### AWS
 
-**Amazon Bedrock AgentCore Gateway** converts APIs, Lambda functions, and existing services into MCP-compatible tools. It supports existing MCP servers as a target type, handles authentication centrally, and runs on serverless infrastructure. Amazon API Gateway also added MCP proxy support in December 2025, transforming REST APIs into MCP endpoints.
+**Amazon Bedrock AgentCore Gateway** converts APIs, Lambda functions, and existing services into MCP-compatible tools. It supports existing MCP servers as a target type, handles authentication centrally, and runs on serverless infrastructure. [Amazon API Gateway also added MCP proxy support in December 2025](https://aws.amazon.com/about-aws/whats-new/2025/12/api-gateway-mcp-proxy-support/), transforming REST APIs into MCP endpoints.
 
 ### Azure
 
-**Azure API Management** acts as an AI Gateway for MCP, centralizing authentication and authorization (via Entra ID) and wrapping existing REST APIs as MCP-compatible servers. **Azure API Center** provides a private MCP Registry for organizational tool catalogs. An MCP extension for Azure Functions entered preview in April 2025, supporting .NET, Java, JS, Python, and TypeScript. Microsoft also hosts [mcp.azure.com](https://mcp.azure.com) as a curated MCP center.
+**Azure API Management** acts as an AI Gateway for MCP, centralizing authentication and authorization (via Entra ID) and wrapping existing REST APIs as MCP-compatible servers. **Azure API Center** provides a private MCP Registry for organizational tool catalogs. [An MCP extension for Azure Functions entered preview in April 2025](https://techcommunity.microsoft.com/blog/appsonazureblog/announcing-early-preview-byo-remote-mcp-server-on-azure-functions/4445317), supporting .NET, Java, JS, Python, and TypeScript. Microsoft also hosts [mcp.azure.com](https://mcp.azure.com) as a curated MCP center.
 
 ### Kong
 
-**Kong Gateway 3.12** (October 2025) added an AI MCP Proxy plugin that bridges MCP and HTTP traffic, plus an AI MCP OAuth2 plugin for MCP server authentication. This extends Kong's existing API management capabilities to MCP traffic.
+**[Kong Gateway 3.12](https://konghq.com/blog/engineering/ai-gateway-mcp-gateway-mcp-server-breakdown)** (October 2025) added an AI MCP Proxy plugin that bridges MCP and HTTP traffic, plus an AI MCP OAuth2 plugin for MCP server authentication. This extends Kong's existing API management capabilities to MCP traffic.
 
 ### Other Vendors
 

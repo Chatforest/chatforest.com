@@ -76,7 +76,7 @@
 <li><strong>No web deployment.</strong> You can&rsquo;t run a stdio server behind a load balancer, on a serverless platform, or as a shared service.</li>
 <li><strong>No independent lifecycle.</strong> The server process dies when the client disconnects.</li>
 </ul>
-<p>Streamable HTTP solves all of these. It&rsquo;s the MCP spec&rsquo;s recommended transport for anything beyond local development, and with the HTTP+SSE transport deprecated (sunset: June 30, 2026), it&rsquo;s the only HTTP-based option going forward.</p>
+<p>Streamable HTTP solves all of these. It&rsquo;s the <a href="https://modelcontextprotocol.io/specification/2025-03-26/basic/transports">MCP spec&rsquo;s recommended transport</a> for anything beyond local development, and with the HTTP+SSE transport deprecated (sunset: June 30, 2026), it&rsquo;s the only HTTP-based option going forward.</p>
 <h2 id="what-actually-changes">What Actually Changes</h2>
 <p>The good news: your tool handlers, resource providers, and prompt templates don&rsquo;t change at all. MCP&rsquo;s transport layer is cleanly separated from your server logic. Here&rsquo;s what&rsquo;s different:</p>
 <table>
@@ -423,7 +423,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">analyze
 <li><strong>Week 2:</strong> Deploy to staging. Verify client configurations. Monitor session lifecycle.</li>
 <li><strong>Week 3:</strong> Production deployment. Keep stdio as fallback for local development.</li>
 </ol>
-<p>For servers currently on the deprecated HTTP+SSE transport, the MCP spec sets the backward-compatibility deadline at <strong>June 30, 2026</strong>. Some providers (like Keboola) have set earlier deadlines. Plan your migration accordingly.</p>
+<p>For servers currently on the deprecated HTTP+SSE transport, the <a href="https://modelcontextprotocol.io/specification/2025-03-26/basic/transports">MCP spec</a> sets the backward-compatibility deadline at <strong>June 30, 2026</strong>. Some providers (like Keboola) have set earlier deadlines. Plan your migration accordingly.</p>
 <h2 id="choosing-stateful-vs-stateless-http">Choosing Stateful vs. Stateless HTTP</h2>
 <p>This decision affects your architecture:</p>
 <p><strong>Stateful</strong> (default): The server maintains a session map. Clients get server-initiated notifications via SSE. Requires session affinity if load-balanced. Best for: interactive tools, long-running operations with progress updates, servers with few concurrent clients.</p>

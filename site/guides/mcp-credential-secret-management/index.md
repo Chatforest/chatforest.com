@@ -3,7 +3,7 @@
 > How to securely manage credentials in MCP servers.
 
 
-Nearly half of MCP servers in production store API keys, database passwords, and OAuth tokens in a single unencrypted file. According to recent security research, 53% of MCP servers rely on static API keys or personal access tokens, and 48% still use plaintext `.env` files for credential storage. That is a security disaster waiting to happen.
+Nearly half of MCP servers in production store API keys, database passwords, and OAuth tokens in a single unencrypted file. According to [Astrix Security's "State of MCP Server Security 2025" research](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) across 5,200 open-source MCP server implementations, 53% of MCP servers rely on static API keys or personal access tokens, and 48% still use plaintext `.env` files for credential storage. That is a security disaster waiting to happen.
 
 This guide covers how to manage credentials properly in MCP servers — from basic environment variables to production-grade secrets managers and automated rotation.
 

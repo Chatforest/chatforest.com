@@ -5,6 +5,7 @@ description: "A comprehensive guide to deploying MCP servers in microservice arc
 content_type: "Guide"
 card_description: "MCP servers are becoming first-class microservices. This guide covers the architectural patterns for deploying MCP in distributed systems — sidecar patterns, service mesh integration, API gateways, service discovery, load balancing, distributed tracing, event-driven messaging, and Kubernetes orchestration."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 MCP servers are no longer standalone tools running on a developer's laptop. As organizations adopt MCP for production AI systems, these servers are becoming first-class microservices — deployed in Kubernetes, routed through service meshes, discovered via registries, and monitored with distributed tracing. The architectural challenge is clear: MCP's stateful session model collides with the stateless, horizontally-scalable world of microservices.
@@ -15,7 +16,7 @@ This guide covers the patterns, tools, and trade-offs for running MCP servers in
 
 ## MCP as a Critical Microservice
 
-Signadot's analysis on The New Stack frames the shift well: MCP servers are the "translation layer between probabilistic LLM reasoning and deterministic microservices." Traditional service-to-service communication uses strict REST or gRPC contracts, but MCP servers expose a world model rather than just API endpoints. This changes the deployment calculus.
+[Signadot's analysis on The New Stack](https://thenewstack.io/why-the-mcp-server-is-now-a-critical-microservice/) frames the shift well: MCP servers are the "translation layer between probabilistic LLM reasoning and deterministic microservices." Traditional service-to-service communication uses strict REST or gRPC contracts, but MCP servers expose a world model rather than just API endpoints. This changes the deployment calculus.
 
 **Key production concerns for MCP microservices:**
 

@@ -243,7 +243,7 @@
 <h2 id="security-the-critical-section">Security: The Critical Section</h2>
 <p>Database MCP servers have the highest security stakes in the MCP ecosystem. A compromised database connection can leak customer data, corrupt records, or destroy entire datasets.</p>
 <h3 id="the-sqlite-mcp-server-vulnerability">The SQLite MCP Server Vulnerability</h3>
-<p>The most instructive security incident in the MCP database space involved Anthropic&rsquo;s own reference SQLite server. Trend Micro&rsquo;s June 2025 analysis revealed that the server used f-string concatenation instead of parameterized queries — a classic SQL injection vulnerability made far more dangerous by the LLM context.</p>
+<p>The most instructive security incident in the MCP database space involved Anthropic&rsquo;s own reference SQLite server. <a href="https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html">Trend Micro&rsquo;s June 2025 analysis</a> revealed that the server used f-string concatenation instead of parameterized queries — a classic SQL injection vulnerability made far more dangerous by the LLM context.</p>
 <p><strong>The attack chain:</strong></p>
 <ol>
 <li>Attacker submits malicious SQL through an input form (e.g., a support ticket)</li>
@@ -252,7 +252,7 @@
 <li>Compromised agent exfiltrates data via email or other communication channels</li>
 </ol>
 <p>This is the <strong>LLM equivalent of a stored XSS attack</strong> — prompt injection stored in a database, triggered when a privileged agent reads the poisoned data.</p>
-<p>The server was forked 5,000+ times before being archived in May 2025, meaning vulnerable code exists in thousands of downstream projects.</p>
+<p>Trend Micro reported the issue to Anthropic on June 11, 2025 under responsible disclosure. Anthropic designated the archived demo &ldquo;out of scope&rdquo; with no patch planned. The server was forked 5,000+ times before being archived, meaning vulnerable code exists in thousands of downstream projects.</p>
 <h3 id="the-supabase-cursor-incident">The Supabase Cursor Incident</h3>
 <p>A separate incident demonstrated the same pattern in a different context. A Cursor agent with a privileged <code>service_role</code> key (bypassing all row-level security) was processing support tickets containing user-supplied input. Attackers embedded SQL instructions that exfiltrated sensitive integration tokens into public support threads.</p>
 <p>Three factors made this possible:</p>
@@ -262,7 +262,7 @@
 <li><strong>External communication channel</strong> — the agent could write to public-facing threads</li>
 </ol>
 <h3 id="equixlys-security-assessment">Equixly&rsquo;s Security Assessment</h3>
-<p>A security assessment of popular MCP server implementations found that <strong>43% contained command injection vulnerabilities</strong> and <strong>22% allowed directory traversal or arbitrary file read</strong>. These aren&rsquo;t theoretical — they&rsquo;re exploitable in deployed systems.</p>
+<p><a href="https://equixly.com/blog/2026/02/26/offensive-security-for-mcp-servers/">Equixly&rsquo;s security assessment of popular MCP server implementations</a> found that <strong>43% contained command injection vulnerabilities</strong> and <strong>22% allowed directory traversal or arbitrary file read</strong>. These aren&rsquo;t theoretical — they&rsquo;re exploitable in deployed systems.</p>
 <h3 id="security-architecture-for-database-mcp">Security Architecture for Database MCP</h3>
 <p><strong>Access Control:</strong></p>
 <ul>
@@ -365,13 +365,11 @@
 <p>Key metrics to track: latency, error rates, tool call duration, resource utilization, connectivity health, and 95th/99th percentile latency distributions.</p>
 <h2 id="real-world-use-cases">Real-World Use Cases</h2>
 <h3 id="financial-analytics-block">Financial Analytics (Block)</h3>
-<p>Block (Square/Cash App) uses DataHub&rsquo;s MCP server with their open-source AI agent Goose. Engineers query schemas, lineage, ownership, quality metrics, and documentation through natural language. Incident response time dropped from hours/weeks to minutes — engineers verify tables, assess downstream impact, and identify data owners conversationally.</p>
+<p><a href="https://datahub.com/blog/datahub-mcp-server-block-ai-agents-use-case/">Block (Square/Cash App) uses DataHub&rsquo;s MCP server</a> with their open-source AI agent Goose. Engineers query schemas, lineage, ownership, quality metrics, and documentation through natural language. According to Block&rsquo;s engineers, issues that previously took &ldquo;hours, days, or even weeks&rdquo; are resolved through a few short conversation messages — verifying tables, assessing downstream impact, and identifying data owners conversationally.</p>
 <h3 id="business-spend-analytics-ramp">Business Spend Analytics (Ramp)</h3>
-<p>Ramp built an MCP server with an in-memory SQLite database. Natural language queries like &ldquo;give me a detailed overview of my business&rsquo;s spend in the past year&rdquo; process tens of thousands of spend events. They evolved from direct API querying to SQLite as data volumes scaled.</p>
+<p><a href="https://www.zenml.io/llmops-database/building-a-natural-language-interface-to-business-spend-data-via-mcp-and-sql">Ramp built an MCP server</a> with an in-memory SQLite database. Natural language queries process tens of thousands of spend events. They evolved from direct API querying to SQLite as data volumes scaled, moving from struggling with a few hundred data points to accurately analyzing tens of thousands of spend events.</p>
 <h3 id="product-analytics-posthog">Product Analytics (PostHog)</h3>
 <p>PostHog&rsquo;s MCP server proxies to PostHog instances. Agents execute complex HogQL queries against both system data and analytics data. Example query: &ldquo;What&rsquo;s our 7-day retention for users who activated the new onboarding flow?&rdquo;</p>
-<h3 id="e-commerce-reporting">E-Commerce Reporting</h3>
-<p>A mid-sized e-commerce company reduced reporting time from 2 days to 2 minutes. Analysts transitioned from report generators to strategic thinkers. Automated weekly reporting saved 10 hours per analyst.</p>
 <h3 id="database-performance-tuning">Database Performance Tuning</h3>
 <p>Using Postgres MCP Pro, teams run <code>analyze_workload_indexes</code> to get index recommendations based on actual query patterns. The agent identifies resource-intensive queries, simulates hypothetical indexes, and recommends the optimal set — work that previously required a DBA with deep PostgreSQL internals knowledge.</p>
 <h2 id="vector-databases-and-mcp">Vector Databases and MCP</h2>

@@ -5,7 +5,7 @@
 
 If you've built an MCP server using the [official Python SDK](/guides/mcp-server-frameworks-sdks/), you've written handler registrations, constructed JSON schemas by hand, and parsed arguments manually. FastMCP replaces all of that with Python decorators and type hints. Define a function, add `@mcp.tool`, and you have a working tool with automatic schema generation.
 
-FastMCP is the most widely used MCP server framework. The original version was incorporated into the official `mcp` Python SDK in 2024. The standalone package has since evolved far beyond that — adding a client library, server composition, proxy patterns, middleware, OpenAPI generation, and a CLI. Version 3.1 shipped in March 2026.
+FastMCP is the most widely used MCP server framework — the [FastMCP repository](https://github.com/PrefectHQ/fastmcp) reports it powers roughly 70% of MCP servers. The original version was incorporated into the official `mcp` Python SDK in 2024. The standalone package has since evolved far beyond that — adding a client library, server composition, proxy patterns, middleware, OpenAPI generation, and a CLI. Version 3.1 shipped in March 2026.
 
 This guide covers both the SDK-bundled version and the standalone package, with clear notes on which features require which. We've researched FastMCP's documentation, API, and ecosystem extensively, though we haven't built production servers with it ourselves.
 

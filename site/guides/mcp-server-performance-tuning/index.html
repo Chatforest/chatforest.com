@@ -185,7 +185,7 @@
 </table>
 <h3 id="what-this-means-in-practice">What This Means in Practice</h3>
 <p><strong>Go is the sweet spot for most teams.</strong> It matches Java&rsquo;s throughput while using 92% less memory — 18 MB versus 226 MB for CPU-bound work. At 92.6 requests per megabyte, Go&rsquo;s efficiency makes it ideal for cloud deployments where memory directly impacts cost.</p>
-<p><strong>Rust leads on raw performance</strong> but the MCP SDK ecosystem is less mature. A noteworthy finding: the Rust SDK (<code>rmcp</code>) had a bug that hardcoded <code>text/event-stream</code> content type, creating a 40ms latency floor. Fixing this via the <code>json_response: true</code> option (merged as PR #683 in rmcp v0.17.0) improved throughput from 1,283 to 4,845 RPS — a 3.8× gain from a single configuration change.</p>
+<p><strong>Rust leads on raw performance</strong> but the MCP SDK ecosystem is less mature. A noteworthy finding from the <a href="https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html">v2 benchmark</a>: the Rust SDK (<code>rmcp</code>) had a bug that hardcoded <code>text/event-stream</code> content type, creating a 40ms latency floor. Fixing this via the <code>json_response: true</code> option (merged as PR #683 in rmcp v0.17.0) improved throughput from 1,283 to 4,845 RPS — a 3.8× gain from a single configuration change.</p>
 <p><strong>Python and Node.js are fine for low-traffic scenarios</strong> — development tools, personal productivity servers, internal dashboards. But they saturate at 94-99% CPU under moderate load where Go and Java sit comfortably at 32%. Don&rsquo;t choose them for servers that will handle concurrent agent traffic.</p>
 <p><strong>GraalVM native images</strong> offer a middle path: 27-81% less memory than JVM at the cost of 20-36% lower throughput. Quarkus-native hit 3,449 RPS with just 36 MB RAM — compelling for memory-constrained environments.</p>
 <h3 id="the-python-ceiling">The Python Ceiling</h3>
@@ -231,7 +231,7 @@
 <li><strong>Migrate off SSE.</strong> It&rsquo;s deprecated and performs 8-10x worse than Streamable HTTP under load.</li>
 </ol>
 <h2 id="caching-the-biggest-single-win">Caching: The Biggest Single Win</h2>
-<p>Caching delivers the most dramatic improvement of any single optimization. Published benchmarks show tool-call latency dropping from ~2,485ms (cold start) to ~0.01ms on cache hits — a reduction of over 99.99%.</p>
+<p>Caching delivers the most dramatic improvement of any single optimization. <a href="https://www.tmdevlab.com/mcp-server-performance-benchmark.html">Published benchmarks</a> show tool-call latency dropping from ~2,485ms (cold start) to ~0.01ms on cache hits — a reduction of over 99.99%.</p>
 <h3 id="multi-level-cache-strategy">Multi-Level Cache Strategy</h3>
 <p>Effective MCP server caching operates at multiple levels:</p>
 <p><strong>Level 1 — In-memory cache (microsecond access)</strong>
@@ -354,8 +354,8 @@ Server E | error   | 99% CPU
 <li><strong>Bundle related operations.</strong> Instead of <code>get_user</code>, <code>get_user_email</code>, <code>get_user_plan</code>, offer a single <code>get_user</code> with a <code>fields</code> parameter.</li>
 </ol>
 <h2 id="geographic-deployment">Geographic Deployment</h2>
-<p>Physical proximity to the AI provider&rsquo;s infrastructure matters more than you might expect. Testing shows US-East data centers see 100-300ms lower latencies than European or Asian deployments when serving Claude.</p>
-<p>For servers that will primarily be called by Anthropic-hosted models, deploy in US-East. For multi-provider scenarios, use a CDN or edge deployment that routes to the nearest AI provider endpoint.</p>
+<p>Physical proximity to the AI provider&rsquo;s infrastructure matters for MCP servers. Round-trip latency between your MCP server and the AI provider adds up quickly across dozens of sequential tool calls in a conversation.</p>
+<p>For servers that will primarily be called by Anthropic-hosted models, deploy in US-East where Anthropic&rsquo;s infrastructure is concentrated. For multi-provider scenarios, use a CDN or edge deployment that routes to the nearest AI provider endpoint.</p>
 <h2 id="monitoring-and-performance-targets">Monitoring and Performance Targets</h2>
 <h3 id="target-metrics">Target Metrics</h3>
 <p>Production MCP servers should aim for:</p>

@@ -5,6 +5,7 @@ description: "How multiple AI agents coordinate through MCP — covering supervi
 content_type: "Guide"
 card_description: "One agent with tools is useful. Multiple agents sharing MCP infrastructure is where things get interesting — and complicated."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 A single AI agent connected to MCP servers can do impressive work. But complex tasks — triaging support tickets while monitoring infrastructure while updating documentation — often exceed what one agent can handle well. The solution is multiple agents, each specialized, coordinating through shared infrastructure.
@@ -225,7 +226,7 @@ OWASP released "Enterprise-Grade Security for the Model Context Protocol" guidel
 
 ## MCP vs A2A: When You Need Direct Agent Communication
 
-Google released the [Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/) in April 2025 for direct agent-to-agent communication. IBM's Agent Communication Protocol (ACP) merged into A2A in August 2025. Both MCP and A2A are now governed by the [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agentic-ai-initiative) under the Linux Foundation, co-founded by Anthropic, OpenAI, Google, Microsoft, AWS, and Block.
+Google released the [Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/) in April 2025 for direct agent-to-agent communication. [IBM's Agent Communication Protocol (ACP) merged into A2A in August 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/), with IBM donating ACP's assets to A2A under the Linux Foundation's LF AI & Data umbrella. Both MCP and A2A are now governed by the [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agentic-ai-initiative) under the Linux Foundation, co-founded by Anthropic, OpenAI, Google, Microsoft, AWS, and Block.
 
 The relationship is complementary:
 

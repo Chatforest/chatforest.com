@@ -182,7 +182,7 @@
 <p>Docker is becoming the standard for production MCP server distribution. Containers solve the &ldquo;works on my machine&rdquo; problem entirely — dependencies, runtimes, and configuration are all bundled in the image.</p>
 <h3 id="the-docker-mcp-ecosystem">The Docker MCP Ecosystem</h3>
 <p>Docker has built a comprehensive MCP infrastructure with three components:</p>
-<p><strong>Docker MCP Catalog</strong> — A curated collection of 300+ verified MCP server images on Docker Hub (<code>hub.docker.com/mcp</code>). Each image has versioning, provenance tracking, and automated security updates. Think of it as Docker Hub specifically for MCP.</p>
+<p><strong>Docker MCP Catalog</strong> — A curated collection of 300+ verified MCP server images on <a href="https://hub.docker.com/u/mcp">Docker Hub</a>. Each image has versioning, provenance tracking, and automated security updates. Think of it as Docker Hub specifically for MCP.</p>
 <p><strong>Docker MCP Toolkit</strong> — A management interface integrated into Docker Desktop. Browse the catalog, launch servers with one click, organize them into profiles for different projects, and connect them to AI clients through the MCP Gateway. No manual configuration files needed.</p>
 <p><strong>Docker MCP Gateway</strong> — Routes requests from AI clients (Claude Code, Cursor, Zed) to the right containerized server. Handles authentication, lifecycle management, and transport bridging.</p>
 <h3 id="publishing-a-docker-mcp-server">Publishing a Docker MCP Server</h3>
@@ -215,7 +215,7 @@
 <p><strong>Advantages:</strong> Complete environment isolation. Language-agnostic — any runtime works. Production-proven technology. Security sandboxing. Docker MCP Catalog provides curated discovery. ToolHive adds enterprise controls.</p>
 <p><strong>Disadvantages:</strong> Docker must be installed (significant overhead for casual users). Larger distribution size than npm/pip packages. Container startup adds latency. Filesystem access requires explicit volume mounts. More complex configuration than npx/uvx for development use.</p>
 <h2 id="dxt-desktop-extensions-for-one-click-install">DXT: Desktop Extensions for One-Click Install</h2>
-<p>Desktop Extensions (DXT) are Anthropic&rsquo;s answer to MCP&rsquo;s installation problem. Launched in June 2025, DXT packages an entire MCP server — code, dependencies, configuration — into a single <code>.dxt</code> file that non-technical users can install with one click in Claude Desktop.</p>
+<p>Desktop Extensions (DXT) are Anthropic&rsquo;s answer to MCP&rsquo;s installation problem. <a href="https://x.com/AnthropicAI/status/1938272883618312670">Launched in June 2025</a>, DXT packages an entire MCP server — code, dependencies, configuration — into a single <code>.dxt</code> file that non-technical users can install with one click in Claude Desktop.</p>
 <h3 id="whats-inside-a-dxt-file">What&rsquo;s Inside a DXT File</h3>
 <p>A <code>.dxt</code> file is a zip archive containing:</p>
 <ul>
@@ -261,7 +261,7 @@ dxt pack          <span style="color:#75715e"># Generate the .dxt file</span>
 <p><strong>Advantages:</strong> Zero technical knowledge required from users. One-click install. Bundled dependencies eliminate version conflicts. Keychain integration for secrets. Automatic updates. The best UX for non-developer audiences.</p>
 <p><strong>Disadvantages:</strong> Currently Claude Desktop only — other MCP clients don&rsquo;t support DXT yet. Larger file sizes due to bundled dependencies. Requires Node.js to build (though Node.js runtime is bundled in Claude Desktop). Limited to stdio transport. Building DXT packages adds a packaging step to your workflow.</p>
 <h2 id="the-official-mcp-registry">The Official MCP Registry</h2>
-<p>The <a href="https://registry.modelcontextprotocol.io">MCP Registry</a> launched in preview in September 2025 with an API freeze at v0.1 in October 2025. It&rsquo;s the canonical place for MCP server discovery — a community-driven, permissively licensed registry maintained by the official MCP registry working group.</p>
+<p>The <a href="https://registry.modelcontextprotocol.io">MCP Registry</a> <a href="https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/">launched in preview in September 2025</a> with an API freeze at v0.1 in October 2025. It&rsquo;s the canonical place for MCP server discovery — a community-driven, permissively licensed registry maintained by the official MCP registry working group.</p>
 <h3 id="namespace-system">Namespace System</h3>
 <p>Server names follow reverse-DNS format that ties them to verified identities:</p>
 <table>
@@ -341,7 +341,7 @@ dxt pack          <span style="color:#75715e"># Generate the .dxt file</span>
 </ul>
 <p>This is particularly valuable for API companies that want to offer MCP access without building servers from scratch.</p>
 <h3 id="smithery-registry-and-deployment-platform">Smithery: Registry and Deployment Platform</h3>
-<p><a href="https://smithery.ai">Smithery</a> provides both a discovery directory (7,300+ servers) and a deployment platform. The Smithery CLI (<code>npx skills add smithery/cli</code>) lets developers install and configure MCP servers interactively. For server authors, Smithery offers hosted deployment where you push your code and Smithery handles containerization, scaling, and endpoint management.</p>
+<p><a href="https://smithery.ai">Smithery</a> provides both a discovery directory (thousands of servers) and a deployment platform. The Smithery CLI (<code>npx skills add smithery/cli</code>) lets developers install and configure MCP servers interactively. For server authors, Smithery offers hosted deployment where you push your code and Smithery handles containerization, scaling, and endpoint management.</p>
 <h3 id="truefoundry-stdio-to-http-deployment">TrueFoundry: stdio-to-HTTP Deployment</h3>
 <p><a href="https://www.truefoundry.com/docs/mcp-server-deployment/deploy-mcp-server-from-npx-uvx">TrueFoundry</a> specializes in deploying npx/uvx-based stdio servers as production HTTP services. It wraps your server with mcp-proxy to convert stdio to Streamable HTTP, deploys it as a managed service, and provides monitoring, scaling, and authentication.</p>
 <h2 id="transport-bridging-stdio-to-http">Transport Bridging: stdio to HTTP</h2>

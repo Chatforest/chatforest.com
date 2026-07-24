@@ -273,7 +273,7 @@ Elicitation is still rolling out across the MCP ecosystem. As of March 2026:
 
 | Client | Form Mode | URL Mode | Notes |
 |--------|-----------|----------|-------|
-| **Claude Code** | Yes | Yes | Added in v2.1.76 (March 2026). Displays interactive dialogs for elicitation requests. |
+| **Claude Code** | Yes | Yes | [Added in v2.1.76](https://www.claudeupdates.dev/version/2.1.76) (March 13–14, 2026). Displays interactive dialogs for elicitation requests. |
 | **Cursor** | Yes | Likely | Broad MCP protocol coverage, including elicitation. |
 | **Claude Desktop** | Partial | Unknown | MCP support is mature, but elicitation support may lag behind Claude Code. |
 | **VS Code (Copilot)** | Unknown | Unknown | MCP support added, but elicitation status unclear. |

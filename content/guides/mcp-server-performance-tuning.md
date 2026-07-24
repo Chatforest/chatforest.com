@@ -5,6 +5,7 @@ description: "How to optimize MCP server performance — covering language selec
 content_type: "Guide"
 card_description: "Your MCP server is slower than it needs to be. Here's how to find and fix the bottlenecks that matter."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 A slow MCP server doesn't just waste time — it burns tokens, degrades the AI model's reasoning quality, and silently caps the complexity of work your agents can accomplish. When each tool call adds hundreds of milliseconds and returns bloated payloads, conversations hit context limits before reaching useful answers.
@@ -50,7 +51,7 @@ For I/O-bound workloads (database queries, API calls), a [follow-up benchmark](h
 
 **Go is the sweet spot for most teams.** It matches Java's throughput while using 92% less memory — 18 MB versus 226 MB for CPU-bound work. At 92.6 requests per megabyte, Go's efficiency makes it ideal for cloud deployments where memory directly impacts cost.
 
-**Rust leads on raw performance** but the MCP SDK ecosystem is less mature. A noteworthy finding: the Rust SDK (`rmcp`) had a bug that hardcoded `text/event-stream` content type, creating a 40ms latency floor. Fixing this via the `json_response: true` option (merged as PR #683 in rmcp v0.17.0) improved throughput from 1,283 to 4,845 RPS — a 3.8× gain from a single configuration change.
+**Rust leads on raw performance** but the MCP SDK ecosystem is less mature. A noteworthy finding from the [v2 benchmark](https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html): the Rust SDK (`rmcp`) had a bug that hardcoded `text/event-stream` content type, creating a 40ms latency floor. Fixing this via the `json_response: true` option (merged as PR #683 in rmcp v0.17.0) improved throughput from 1,283 to 4,845 RPS — a 3.8× gain from a single configuration change.
 
 **Python and Node.js are fine for low-traffic scenarios** — development tools, personal productivity servers, internal dashboards. But they saturate at 94-99% CPU under moderate load where Go and Java sit comfortably at 32%. Don't choose them for servers that will handle concurrent agent traffic.
 
@@ -89,7 +90,7 @@ The critical finding: **session pooling creates a 10x performance difference.** 
 
 ## Caching: The Biggest Single Win
 
-Caching delivers the most dramatic improvement of any single optimization. Published benchmarks show tool-call latency dropping from ~2,485ms (cold start) to ~0.01ms on cache hits — a reduction of over 99.99%.
+Caching delivers the most dramatic improvement of any single optimization. [Published benchmarks](https://www.tmdevlab.com/mcp-server-performance-benchmark.html) show tool-call latency dropping from ~2,485ms (cold start) to ~0.01ms on cache hits — a reduction of over 99.99%.
 
 ### Multi-Level Cache Strategy
 
@@ -225,9 +226,9 @@ Mitigation strategies:
 
 ## Geographic Deployment
 
-Physical proximity to the AI provider's infrastructure matters more than you might expect. Testing shows US-East data centers see 100-300ms lower latencies than European or Asian deployments when serving Claude.
+Physical proximity to the AI provider's infrastructure matters for MCP servers. Round-trip latency between your MCP server and the AI provider adds up quickly across dozens of sequential tool calls in a conversation.
 
-For servers that will primarily be called by Anthropic-hosted models, deploy in US-East. For multi-provider scenarios, use a CDN or edge deployment that routes to the nearest AI provider endpoint.
+For servers that will primarily be called by Anthropic-hosted models, deploy in US-East where Anthropic's infrastructure is concentrated. For multi-provider scenarios, use a CDN or edge deployment that routes to the nearest AI provider endpoint.
 
 ## Monitoring and Performance Targets
 

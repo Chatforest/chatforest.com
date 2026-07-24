@@ -439,10 +439,10 @@ deny[msg] {
 <li>Sensitive data is exfiltrated through crafted API calls</li>
 </ol>
 <p>This attack worked because the agent had both read access to public issues (where the injection payload lived) and read access to private repositories (the target). The combination of permissions created the vulnerability — neither permission alone was dangerous.</p>
-<h3 id="the-mcp-remote-supply-chain-attack-cve-2025-6514">The mcp-remote Supply Chain Attack (CVE-2025-6514)</h3>
-<p>A critical OAuth vulnerability in <code>mcp-remote</code> — a widely-used MCP proxy package with nearly half a million users — enabled remote code execution. This was the first documented case of full system compromise through MCP infrastructure, turning a trusted development tool into an attack vector.</p>
+<h3 id="the-mcp-remote-supply-chain-attack-cve-2025-6514httpsjfrogcomblogcve-2025-6514-critical-shell-injection-vulnerability-in-mcp-remote">The mcp-remote Supply Chain Attack (<a href="https://jfrog.com/blog/cve-2025-6514-critical-shell-injection-vulnerability-in-mcp-remote/">CVE-2025-6514</a>)</h3>
+<p>A critical shell injection vulnerability in <code>mcp-remote</code> — a widely-used MCP proxy package with over 437,000 downloads — enabled remote code execution. This was one of the first documented cases of full system compromise through MCP infrastructure, turning a trusted development tool into an attack vector.</p>
 <h3 id="the-neighborjack-vulnerability">The NeighborJack Vulnerability</h3>
-<p>Hundreds of MCP servers were found configured to bind to <code>0.0.0.0</code> by default, exposing them to the network. Combined with OS command injection vulnerabilities, this gave attackers complete control over host systems. For infrastructure MCP servers, this could mean access to Kubernetes clusters, cloud credentials, and CI/CD pipelines.</p>
+<p><a href="https://virtualizationreview.com/articles/2025/06/25/mcp-servers-hit-by-neighborjack-vulnerability-and-more.aspx">Hundreds of MCP servers were found configured to bind to <code>0.0.0.0</code> by default</a>, exposing them to any device on the same network without authentication. Combined with OS command injection vulnerabilities, this gave attackers complete control over host systems. For infrastructure MCP servers, this could mean access to Kubernetes clusters, cloud credentials, and CI/CD pipelines.</p>
 <h3 id="infrastructure-specific-risks">Infrastructure-Specific Risks</h3>
 <table>
 <thead>

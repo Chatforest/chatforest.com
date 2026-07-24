@@ -5,7 +5,7 @@
 
 Before an MCP client can call tools, read resources, or use prompts, it needs to establish a session with the server. That session follows a defined lifecycle — initialization, operation, and shutdown — with several utility mechanisms available throughout.
 
-This guide covers the MCP lifecycle and the four built-in utilities: **progress tracking**, **cancellation**, **logging**, and **ping**. These are the plumbing that makes MCP sessions reliable and observable.
+This guide covers the MCP lifecycle and the four built-in utilities: **progress tracking**, **cancellation**, **logging**, and **ping**. These are the plumbing that makes MCP sessions reliable and observable. Our analysis is based on the [official MCP specification (2025-03-26)](https://modelcontextprotocol.io/specification/2025-03-26).
 
 ## The Lifecycle at a Glance
 
@@ -257,7 +257,7 @@ Servers that emit logs must declare the `logging` capability during initializati
 
 ### Log Levels
 
-MCP uses the standard syslog severity levels from RFC 5424:
+MCP uses the standard syslog severity levels from [RFC 5424](https://datatracker.ietf.org/doc/html/rfc5424):
 
 | Level | When to use it |
 |---|---|
