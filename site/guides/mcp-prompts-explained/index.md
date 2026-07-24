@@ -271,7 +271,7 @@ Prompt support varies across MCP clients:
 | Windsurf | Yes | Command palette integration |
 | Zed | Partial | Basic prompt listing |
 
-Of the 58 MCP clients listed on the official MCP site, roughly 20 support the prompts primitive. Support is growing but not universal — if your server relies heavily on prompts, check your target clients.
+Of the [MCP clients listed on the official MCP site](https://modelcontextprotocol.io/clients), roughly 20 support the prompts primitive. Support is growing but not universal — if your server relies heavily on prompts, check your target clients.
 
 ## Prompts vs. Tools vs. Resources
 

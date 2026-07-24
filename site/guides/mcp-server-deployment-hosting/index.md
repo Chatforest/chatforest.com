@@ -244,9 +244,9 @@ Features relevant to MCP hosting:
 - **Scale-to-zero** for cost efficiency
 - **Session affinity** via `--sticky-sessions` flag
 - **Microsoft Entra ID** integration for authentication
-- **Dynamic sessions** — platform-managed sandboxed environments with Hyper-V isolation, useful for MCP servers that execute user code
+- **[Dynamic sessions](https://learn.microsoft.com/en-us/azure/container-apps/sessions)** — platform-managed sandboxed environments with Hyper-V isolation, useful for MCP servers that execute user code
 
-Azure Functions also supports MCP via an extension (public preview), enabling serverless MCP hosting with .NET, Java, JavaScript, Python, and TypeScript.
+[Azure Functions also supports MCP via an extension (public preview)](https://learn.microsoft.com/en-us/azure/azure-functions/self-hosted-mcp-servers), enabling serverless MCP hosting with .NET, JavaScript, Python, and TypeScript.
 
 ## Serverless Deployment
 
@@ -254,7 +254,7 @@ Serverless platforms work well for **stateless** MCP servers — tools that take
 
 ### Cloudflare Workers
 
-Cloudflare Workers have near-zero cold starts (~0ms) and run at 300+ edge locations, making them the fastest serverless option for MCP.
+Cloudflare Workers have [near-zero cold starts](https://developers.cloudflare.com/workers/reference/how-workers-works/) and run at [300+ edge locations](https://www.cloudflare.com/network/), making them the fastest serverless option for MCP.
 
 **Quick start:**
 
@@ -269,9 +269,9 @@ npm create cloudflare@latest my-mcp-server \
 npx wrangler deploy
 ```
 
-**Limitations:**
+**[Limitations](https://developers.cloudflare.com/workers/platform/limits/):**
 
-- 50ms CPU time per request (enough for most tool calls, not for heavy computation)
+- 30 seconds CPU time per request on paid plans (enough for most tool calls)
 - No native binary execution
 - 128MB memory limit
 
@@ -598,7 +598,7 @@ The MCP spec adopted OAuth 2.1 as its standard authorization mechanism. The flow
 5. Authorization code flow with PKCE
 6. Client includes bearer token on subsequent requests
 
-In practice, most MCP servers today use simpler API key auth — only about 8.5% of servers implement OAuth. But for production services with multiple users, OAuth is the right path. Frameworks like MCPEngine provide built-in OIDC support for Google, Auth0, and AWS Cognito.
+In practice, most MCP servers today use simpler API key auth — [only about 8.5% of servers implement OAuth](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/), per Astrix Security's analysis of 5,200 open-source MCP servers. But for production services with multiple users, OAuth is the right path. Frameworks like MCPEngine provide built-in OIDC support for Google, Auth0, and AWS Cognito.
 
 For a deep dive, see our [MCP Authorization & OAuth guide](/guides/mcp-authorization-oauth/).
 

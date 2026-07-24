@@ -5,9 +5,9 @@
 
 MCP has gone from internal experiment to industry standard in about a year. With 97 million monthly SDK downloads and over 10,000 active servers, the protocol's biggest challenge is no longer adoption — it's production readiness.
 
-The [2026 MCP roadmap](http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) lays out what the core maintainers plan to fix before the next specification release, tentatively slated for June 2026. The focus areas: transport scalability, enterprise deployment, server discovery, and governance reform.
+The [2026 MCP roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) lays out what the core maintainers plan to fix before the next specification release, tentatively slated for June 2026. The focus areas: transport scalability, enterprise deployment, server discovery, and governance reform.
 
-This guide breaks down each priority area, what problems they solve, and what server developers should do now to prepare. Our analysis is based on the [official roadmap](http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/), the [transport futures blog post](https://blog.modelcontextprotocol.io/posts/2025-12-19-mcp-transport-future/), active SEPs (Specification Enhancement Proposals), and community discussion — we research and analyze rather than building production MCP systems ourselves.
+This guide breaks down each priority area, what problems they solve, and what server developers should do now to prepare. Our analysis is based on the [official roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/), the [transport futures blog post](https://blog.modelcontextprotocol.io/posts/2025-12-19-mcp-transport-future/), active SEPs (Specification Enhancement Proposals), and community discussion — we research and analyze rather than building production MCP systems ourselves.
 
 ## The Big Picture: Why Now?
 
@@ -120,7 +120,7 @@ When a developer sets up MCP servers in their IDE, that configuration is typical
 
 Long-running tool calls are a pain point. Currently, when a client calls a tool, it waits for the response. If the operation takes minutes (database migrations, CI pipelines, large file processing), the connection sits open.
 
-[SEP-1391](https://github.com/modelcontextprotocol/modelcontextprotocol) from the Agents Working Group adds async support: servers can accept a tool call, return immediately with a task ID, and let clients check back later for results. This unlocks:
+[SEP-1391](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1391) from the Agents Working Group adds async support: servers can accept a tool call, return immediately with a task ID, and let clients check back later for results. This unlocks:
 
 - **Background processing** without blocking the client
 - **Progress reporting** on long-running operations
@@ -176,7 +176,7 @@ The June target is tentative. Complex proposals like stateless transport may tak
 ## Further Reading
 
 - [Official MCP Roadmap](https://modelcontextprotocol.io/development/roadmap)
-- [2026 MCP Roadmap Blog Post](http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/)
+- [2026 MCP Roadmap Blog Post](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/)
 - [Exploring the Future of MCP Transports](https://blog.modelcontextprotocol.io/posts/2025-12-19-mcp-transport-future/)
 - [MCP SEP Index](https://modelcontextprotocol.io/community/seps)
 - Our guide: [MCP Transports Explained](/guides/mcp-transports-explained/)

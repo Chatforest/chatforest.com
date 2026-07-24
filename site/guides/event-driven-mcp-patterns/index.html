@@ -172,7 +172,7 @@ Client decides whether to act (re-read resource, refresh tool list, etc.)
 </code></pre><p>This decoupling is deliberate. Notifications tell clients <em>that</em> something changed, not <em>what</em> changed. The client decides when and whether to fetch updated data. This keeps notification messages small and gives clients control over their context window usage.</p>
 <h3 id="the-client-support-problem">The Client Support Problem</h3>
 <p>Here&rsquo;s the uncomfortable truth: most MCP clients in the wild ignore notifications. An analysis by <a href="https://www.pulsemcp.com/">PulseMCP</a> documented this as a systemic &ldquo;Client Capabilities Gap&rdquo; — servers avoid implementing notification features because clients don&rsquo;t advertise support for them.</p>
-<p>Claude Desktop, one of the most widely used MCP clients, doesn&rsquo;t support resource subscriptions. Most other clients implement only the basic request-response flow. Community discussion on the MCP GitHub (Discussion #1192) confirms this is a known limitation.</p>
+<p>Claude Desktop, one of the most widely used MCP clients, doesn&rsquo;t support resource subscriptions. Most other clients implement only the basic request-response flow. Community discussion on the <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1192">MCP GitHub (Discussion #1192)</a> confirms this is a known limitation.</p>
 <p><strong>What this means for you:</strong> If you build a server that relies on notifications, test it against the specific client your users will use. Don&rsquo;t assume notification support exists.</p>
 <h2 id="resource-subscriptions-modified-pub-sub">Resource Subscriptions: Modified Pub-Sub</h2>
 <p>Resource subscriptions are MCP&rsquo;s closest equivalent to a publish-subscribe pattern. They let clients register interest in specific resources and receive notifications when those resources change.</p>
@@ -371,7 +371,7 @@ Server sends final result and closes stream
 <li>Auto-scaling is complicated by stateful sessions</li>
 <li>Session scope is unclear in distributed systems</li>
 </ul>
-<p>The December 2025 transport futures post acknowledges these problems and outlines a shift toward stateless protocol architecture.</p>
+<p>The MCP team has acknowledged these problems and outlined a shift toward stateless protocol architecture.</p>
 <h3 id="client-capability-fragmentation">Client Capability Fragmentation</h3>
 <p>The <a href="https://github.com/apify/mcp-client-capabilities">Apify mcp-client-capabilities registry</a> documents what each client actually supports. The picture is uneven — some clients support sampling but not subscriptions, others support notifications but not elicitation. There&rsquo;s no way to know without testing.</p>
 <h2 id="whats-coming">What&rsquo;s Coming</h2>
@@ -380,7 +380,7 @@ Server sends final result and closes stream
 <p><strong>Explicit subscription streams</strong> — replacing general-purpose GET streams with purpose-specific subscriptions that include TTL values and ETags for intelligent caching.</p>
 <p><strong>Stateless protocol architecture</strong> — sending shared information with each request/response instead of relying on session state. This would make MCP work better behind load balancers and in serverless environments.</p>
 <p><strong>Notification redesign</strong> — making notifications work independently of persistent connections.</p>
-<p><strong>June 2026 spec target</strong> — the next specification release is tentatively planned for June 2026, likely incorporating many of these changes.</p>
+<p><strong>June 2026 spec target</strong> — per the <a href="https://modelcontextprotocol.io/blog/roadmap-2026">2026 MCP roadmap</a>, the next specification release was planned for June 2026, incorporating many of these changes.</p>
 <h2 id="decision-framework-which-pattern-should-you-use">Decision Framework: Which Pattern Should You Use?</h2>
 <table>
 <thead>

@@ -5,7 +5,7 @@
 
 Building an MCP server is straightforward. Building MCP tools that AI agents use *effectively* is harder. The difference between a tool that works and a tool that agents reliably choose, invoke correctly, and chain into workflows comes down to design — how you name it, what you return, and how you handle failure.
 
-This guide covers the tool design patterns that matter most for production MCP servers. Our analysis draws on the MCP specification (2025-06-18), community patterns from production deployments, and published best practices — we research and analyze rather than testing implementations hands-on.
+This guide covers the tool design patterns that matter most for production MCP servers. Our analysis draws on the [MCP specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/tools), community patterns from production deployments, and published best practices — we research and analyze rather than testing implementations hands-on.
 
 ## Why Tool Design Matters More Than You Think
 
@@ -364,7 +364,7 @@ Start with naming and descriptions — they have the highest impact for the lowe
 ## Further Reading
 
 - [MCP Tools Specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) — the authoritative reference for tool definitions, outputSchema, and structured content
-- [54 Patterns for Building Better MCP Tools](https://www.arcade.dev/blog/mcp-tool-patterns) — Arcade's comprehensive pattern catalog from building 8,000+ production tools
+- [54 Patterns for Building Better MCP Tools](https://www.arcade.dev/blog/mcp-tool-patterns) — Arcade's comprehensive pattern catalog from building production MCP tools at scale
 - [Agent-Aware MCP: 10 Patterns for Actionable Tool Responses](https://medium.com/@kumaran.isk/agent-aware-mcp-10-patterns-for-actionable-tool-responses-54029e337941) — detailed exploration of response patterns that embed agent-actionable intelligence
 - [MCP Tool Design Best Practices (Workato)](https://docs.workato.com/en/mcp/mcp-server-tool-design.html) — practical guidance on composable, agent-friendly tool interfaces
 - [SEP-1382: Documentation Best Practices for MCP Tools](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1382) — community discussion on standardizing tool documentation

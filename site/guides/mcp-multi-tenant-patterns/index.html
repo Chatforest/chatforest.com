@@ -78,8 +78,8 @@
 <li><strong>AI hosting platforms</strong> connecting thousands of users to shared tool infrastructure</li>
 <li><strong>Internal developer tools</strong> serving multiple project teams from a single MCP endpoint</li>
 </ul>
-<p>A March 2025 GitHub discussion (#193 in the MCP spec repo) captured the core tension: &ldquo;I need to be able to spin up and execute potentially thousands of concurrent instances of the same MCP server, one per user, just to perform a simple API proxy operation with two input variables.&rdquo; The community agreed that requiring per-user processes creates unacceptable scaling overhead and reliability concerns.</p>
-<p>A separate issue (#2173 in the MCP servers repo) from a SaaS platform builder stated the challenge directly: &ldquo;We are really struggling to find a way to use the same MCP server to serve all of our tenants without running a separate MCP server per tenant.&rdquo;</p>
+<p>A <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/193">March 2025 GitHub discussion (#193 in the MCP spec repo)</a> captured the core tension: &ldquo;I need to be able to spin up and execute potentially thousands of concurrent instances of the same MCP server, one per user, just to perform a simple API proxy operation with two input variables.&rdquo; The community agreed that requiring per-user processes creates unacceptable scaling overhead and reliability concerns.</p>
+<p>A separate <a href="https://github.com/modelcontextprotocol/servers/issues/2173">issue (#2173 in the MCP servers repo)</a> from a SaaS platform builder stated the challenge directly: &ldquo;We are really struggling to find a way to use the same MCP server to serve all of our tenants without running a separate MCP server per tenant.&rdquo;</p>
 <h2 id="the-three-isolation-models">The Three Isolation Models</h2>
 <p>Multi-tenant MCP deployments fall into three patterns, each trading off isolation strength against operational complexity and cost.</p>
 <h3 id="1-dedicated-instance-per-tenant">1. Dedicated Instance Per Tenant</h3>
@@ -104,7 +104,7 @@
 <li>Cold start latency — spinning up new instances on demand adds response time</li>
 </ul>
 <p><strong>When to use:</strong> Healthcare, financial services, government, or any domain where regulatory requirements mandate physical tenant isolation. Also appropriate when tenant count is small (under ~50) and per-tenant resource cost is acceptable.</p>
-<p><strong>Real-world example:</strong> Fly.io&rsquo;s MCP deployment blueprint recommends single-tenant patterns where &ldquo;each user gets their own machine,&rdquo; using their auto-start/auto-stop capability to keep idle costs low.</p>
+<p><strong>Real-world example:</strong> Fly.io&rsquo;s MCP deployment guidance recommends single-tenant patterns where each user gets their own machine, using their auto-start/auto-stop capability to keep idle costs low.</p>
 <h3 id="2-pooled-multi-tenant-shared-server">2. Pooled Multi-Tenant (Shared Server)</h3>
 <p>A single MCP server instance handles requests from all tenants, using logical isolation to separate their data and permissions.</p>
 <p><strong>How it works:</strong></p>
@@ -493,7 +493,7 @@ TTL: 3600 seconds
 <li><strong>Track token consumption per tenant</strong> — count input/output tokens per tool call</li>
 <li><strong>Log tool invocations with tenant context</strong> — enables per-tenant billing dashboards</li>
 <li><strong>Set budget caps</strong> — alert or block when a tenant approaches their quota</li>
-<li><strong>Implement denial-of-wallet protection</strong> — the 142.4x token amplification attack (documented in MCP security research) means a single tool call can generate massive downstream token usage</li>
+<li><strong>Implement denial-of-wallet protection</strong> — the <a href="https://arxiv.org/abs/2602.14798">142.4x token amplification attack (arXiv:2602.14798)</a> means a single tool call can generate massive downstream token usage</li>
 </ul>
 <h2 id="observability-with-tenant-context">Observability with Tenant Context</h2>
 <p>Debugging multi-tenant MCP issues requires tenant-scoped observability. Without it, a &ldquo;tool call failed&rdquo; error gives no indication of which tenant was affected or whether the failure was tenant-specific.</p>
@@ -510,7 +510,7 @@ TTL: 3600 seconds
 </ul>
 <p><strong>Critical:</strong> Avoid storing raw PII in logs. Use pseudonymized user IDs and redact sensitive parameters. Tenant-scoped log access ensures operators can only view their own tenant&rsquo;s logs.</p>
 <h3 id="opentelemetry-integration">OpenTelemetry Integration</h3>
-<p>The MCP semantic conventions for OpenTelemetry (merged January 2026) provide standardized attribute names for tracing MCP operations. For multi-tenant deployments, extend these with:</p>
+<p>The <a href="https://github.com/open-telemetry/semantic-conventions/releases/tag/v1.39.0">MCP semantic conventions for OpenTelemetry (merged January 2026 in v1.39.0)</a> provide standardized attribute names for tracing MCP operations. For multi-tenant deployments, extend these with:</p>
 <ul>
 <li><code>mcp.tenant.id</code> — tenant identifier on every span</li>
 <li><code>mcp.tenant.tier</code> — tenant pricing tier (for SLA tracking)</li>

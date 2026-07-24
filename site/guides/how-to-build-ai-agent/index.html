@@ -82,7 +82,7 @@
 <p><strong>Strengths:</strong> Simple to implement, works well for straightforward tasks, supported by every major framework.</p>
 <p><strong>Weaknesses:</strong> Can get stuck in loops, doesn&rsquo;t plan ahead, token-expensive for complex tasks because it reasons step-by-step.</p>
 <h3 id="plan-and-execute">Plan-and-Execute</h3>
-<p>The model creates a plan first, then executes each step. Published benchmarks show this pattern achieves roughly 92% task completion rates — significantly higher than ReAct on complex multi-step tasks.</p>
+<p>The model creates a plan first, then executes each step. This pattern consistently outperforms ReAct on complex multi-step tasks in published evaluations.</p>
 <pre><code>Plan:
 1. Read the failing test
 2. Find the function it tests
@@ -94,7 +94,7 @@ Execute each step...
 </code></pre><p><strong>Strengths:</strong> Better for complex tasks, more predictable behavior, easier to debug because you can inspect the plan.</p>
 <p><strong>Weaknesses:</strong> The initial plan may be wrong, replanning is expensive, overhead isn&rsquo;t worth it for simple tasks.</p>
 <h3 id="reflection">Reflection</h3>
-<p>After completing a task (or failing), the model critiques its own output and tries again. Research shows this pattern can improve accuracy from roughly 80% to 91% on coding tasks.</p>
+<p>After completing a task (or failing), the model critiques its own output and tries again. The <a href="https://arxiv.org/abs/2303.11366">Reflexion paper (Shinn et al., 2023)</a> found this improved GPT-4 pass@1 on HumanEval from ~80% to 91%.</p>
 <p><strong>Strengths:</strong> Catches errors the first pass missed, produces higher-quality output.</p>
 <p><strong>Weaknesses:</strong> At least doubles token cost, diminishing returns after 2-3 iterations, can over-correct.</p>
 <h3 id="which-pattern-to-use">Which Pattern to Use</h3>
@@ -128,7 +128,7 @@ Execute each step...
 <h2 id="tool-use-how-agents-interact-with-the-world">Tool Use: How Agents Interact with the World</h2>
 <p>An agent without tools is just a chatbot that talks to itself. Tools are what give agents the ability to read files, query databases, call APIs, and take real actions.</p>
 <h3 id="the-model-context-protocol-mcp">The Model Context Protocol (MCP)</h3>
-<p><a href="/guides/what-is-mcp/">MCP</a> has become the standard protocol for connecting AI agents to tools. As of March 2026, the official SDKs see over 97 million monthly downloads. Every major AI coding tool supports it.</p>
+<p><a href="/guides/what-is-mcp/">MCP</a> has become the standard protocol for connecting AI agents to tools. <a href="https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/">As of March 2026, the official SDKs see over 97 million monthly downloads</a>. Every major AI coding tool supports it.</p>
 <p>MCP provides:</p>
 <ul>
 <li><strong>A standard interface</strong> — tools expose their capabilities via JSON-RPC, any compatible client can discover and call them</li>
@@ -181,7 +181,7 @@ Execute each step...
 </ul>
 <p>For a deep dive, see our <a href="/guides/mcp-tool-design-patterns/">MCP tool design patterns</a> guide.</p>
 <h2 id="memory-how-agents-remember">Memory: How Agents Remember</h2>
-<p>Context windows are large but not infinite. Claude Opus 4.6 offers 1M tokens, but most models give you 128K-200K. Either way, an agent that runs for hours will exceed its context window. Memory solves this.</p>
+<p>Context windows are large but not infinite. Most models give you 128K-200K tokens, but an agent that runs for hours will exceed its context window regardless. Memory solves this.</p>
 <h3 id="short-term-memory-context-window">Short-Term Memory (Context Window)</h3>
 <p>Everything in the current conversation. It&rsquo;s fast and reliable but limited by the context window size. For short tasks, this is all you need.</p>
 <p><strong>Optimization strategies:</strong></p>
@@ -240,7 +240,7 @@ Execute each step...
 <h3 id="the-major-frameworks-in-2026">The Major Frameworks in 2026</h3>
 <p><strong>Claude Agent SDK</strong> (Anthropic) — Minimal, Python-based. Provides the agentic loop, tool use, guardrails, and handoffs between agents. Designed for Claude models. Best when you want close control over agent behavior without framework abstractions getting in the way.</p>
 <p><strong>LangGraph</strong> (LangChain) — Graph-based agent orchestration. Agents are defined as state machines with nodes (actions) and edges (transitions). The most flexible option for complex, multi-step workflows. Steeper learning curve.</p>
-<p><strong>CrewAI</strong> — Role-based multi-agent framework. You define agents with roles (&ldquo;researcher&rdquo;, &ldquo;writer&rdquo;, &ldquo;reviewer&rdquo;) and they collaborate on tasks. Over 1 million monthly users. Best for multi-agent workflows where role specialization makes sense.</p>
+<p><strong>CrewAI</strong> — Role-based multi-agent framework. You define agents with roles (&ldquo;researcher&rdquo;, &ldquo;writer&rdquo;, &ldquo;reviewer&rdquo;) and they collaborate on tasks. Best for multi-agent workflows where role specialization makes sense.</p>
 <p><strong>OpenAI Agents SDK</strong> — OpenAI&rsquo;s framework for building agents with their models. Lightweight, with built-in handoffs, guardrails, and tracing. Similar philosophy to Claude Agent SDK but tied to OpenAI&rsquo;s model ecosystem.</p>
 <p><strong>Google Agent Development Kit (ADK)</strong> — Google&rsquo;s entry, tightly integrated with Gemini and Google Cloud. Supports MCP tools alongside native Google tool definitions.</p>
 <p><strong>Mastra</strong> — TypeScript-native agent framework. If your stack is JavaScript/TypeScript, this is the most natural fit. Good workflow engine, built-in MCP support.</p>
@@ -283,7 +283,7 @@ Execute each step...
 <p><strong>The honest take:</strong> If you&rsquo;re building a single-agent system with Claude, you might not need a framework at all. The raw API with a loop and error handling gets you surprisingly far. Frameworks earn their keep when you need multi-agent orchestration, complex state management, or production observability.</p>
 <p>For detailed MCP integration across frameworks, see our <a href="/guides/mcp-agent-framework-integrations/">MCP agent framework integrations</a> guide.</p>
 <h2 id="multi-agent-patterns">Multi-Agent Patterns</h2>
-<p>Sometimes one agent isn&rsquo;t enough. Complex tasks benefit from multiple specialized agents that coordinate through shared infrastructure. Gartner reported a 1,445% surge in enterprise inquiries about multi-agent systems in early 2026.</p>
+<p>Sometimes one agent isn&rsquo;t enough. Complex tasks benefit from multiple specialized agents that coordinate through shared infrastructure. <a href="https://www.gartner.com/en/articles/multiagent-systems">Gartner reported a 1,445% surge</a> in enterprise inquiries about multi-agent systems (measured through Q2 2025).</p>
 <p>But multi-agent systems are harder to debug, more expensive to run, and introduce coordination problems that don&rsquo;t exist with single agents. Use them deliberately.</p>
 <h3 id="supervisor-pattern">Supervisor Pattern</h3>
 <p>One &ldquo;manager&rdquo; agent delegates tasks to specialist agents and synthesizes their results.</p>
@@ -318,7 +318,7 @@ Splitter ┼── Agent (file2.py)  → Combiner
 <p><strong>Cost and latency:</strong> Track tokens consumed and wall-clock time per task. Set budgets and alert when agents exceed them.</p>
 <h3 id="evaluation-approaches">Evaluation Approaches</h3>
 <p><strong>Trajectory evaluation:</strong> Check that the agent took reasonable steps, not just that it got the right answer. An agent that deletes and recreates a file to fix a typo &ldquo;works&rdquo; but isn&rsquo;t good.</p>
-<p><strong>LLM-as-judge:</strong> Use a separate model to evaluate agent outputs. Research shows this correlates with human judgment when the evaluator model is strong enough (target Spearman correlation of 0.80+).</p>
+<p><strong>LLM-as-judge:</strong> Use a separate model to evaluate agent outputs. Research shows this correlates with human judgment when the evaluator model is strong enough — the key is using a capable model and giving it explicit rubrics.</p>
 <p><strong>Progressive gates:</strong> Set quality thresholds at each stage:</p>
 <ul>
 <li>Development: 70% pass rate on benchmark tasks</li>
@@ -392,9 +392,9 @@ Splitter ┼── Agent (file2.py)  → Combiner
 <ul>
 <li><strong>Protocol standardization</strong> — MCP for tool access, <a href="/guides/mcp-vs-a2a-protocol-comparison/">A2A for agent-to-agent communication</a>. These protocols are converging into a standard stack.</li>
 <li><strong>Agent registries</strong> — the <a href="/guides/mcp-registry-server-discovery/">MCP Registry</a> and similar directories are making tools discoverable, with verification and trust signals.</li>
-<li><strong>Enterprise adoption</strong> — Gartner predicts 40% of enterprise applications will embed AI agents by the end of 2026. The infrastructure (gateways, auth, audit) is catching up.</li>
+<li><strong>Enterprise adoption</strong> — <a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025">Gartner predicts 40% of enterprise applications will feature task-specific AI agents by the end of 2026</a>. The infrastructure (gateways, auth, audit) is catching up.</li>
 <li><strong>Better evaluation</strong> — Agent benchmarks are getting more rigorous, but we&rsquo;re still far from being able to predict production performance from benchmark scores.</li>
-<li><strong>Cost reduction</strong> — Models are getting cheaper and faster. Tasks that cost $5 in early 2025 cost $0.50 today. This trend will continue.</li>
+<li><strong>Cost reduction</strong> — Models are getting cheaper and faster. API costs per task have dropped dramatically since 2024 and this trend will continue.</li>
 </ul>
 <h2 id="getting-started">Getting Started</h2>
 <p>If you&rsquo;re building your first agent:</p>

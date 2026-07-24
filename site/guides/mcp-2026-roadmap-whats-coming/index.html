@@ -67,8 +67,8 @@
 
       <div class="article-body">
         <p>MCP has gone from internal experiment to industry standard in about a year. With 97 million monthly SDK downloads and over 10,000 active servers, the protocol&rsquo;s biggest challenge is no longer adoption — it&rsquo;s production readiness.</p>
-<p>The <a href="http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/">2026 MCP roadmap</a> lays out what the core maintainers plan to fix before the next specification release, tentatively slated for June 2026. The focus areas: transport scalability, enterprise deployment, server discovery, and governance reform.</p>
-<p>This guide breaks down each priority area, what problems they solve, and what server developers should do now to prepare. Our analysis is based on the <a href="http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/">official roadmap</a>, the <a href="https://blog.modelcontextprotocol.io/posts/2025-12-19-mcp-transport-future/">transport futures blog post</a>, active SEPs (Specification Enhancement Proposals), and community discussion — we research and analyze rather than building production MCP systems ourselves.</p>
+<p>The <a href="https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/">2026 MCP roadmap</a> lays out what the core maintainers plan to fix before the next specification release, tentatively slated for June 2026. The focus areas: transport scalability, enterprise deployment, server discovery, and governance reform.</p>
+<p>This guide breaks down each priority area, what problems they solve, and what server developers should do now to prepare. Our analysis is based on the <a href="https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/">official roadmap</a>, the <a href="https://blog.modelcontextprotocol.io/posts/2025-12-19-mcp-transport-future/">transport futures blog post</a>, active SEPs (Specification Enhancement Proposals), and community discussion — we research and analyze rather than building production MCP systems ourselves.</p>
 <h2 id="the-big-picture-why-now">The Big Picture: Why Now?</h2>
 <p>MCP was designed for local use — an AI assistant connecting to a tool running on your laptop. That model works. But as teams push MCP into production, three classes of problems keep surfacing:</p>
 <ol>
@@ -158,7 +158,7 @@
 <p>When a developer sets up MCP servers in their IDE, that configuration is typically stored locally in a tool-specific format. Enterprises want to define MCP configurations centrally and push them to developer machines. The roadmap envisions a standard configuration format that works across clients.</p>
 <h2 id="async-operations-sep-1391">Async Operations: SEP-1391</h2>
 <p>Long-running tool calls are a pain point. Currently, when a client calls a tool, it waits for the response. If the operation takes minutes (database migrations, CI pipelines, large file processing), the connection sits open.</p>
-<p><a href="https://github.com/modelcontextprotocol/modelcontextprotocol">SEP-1391</a> from the Agents Working Group adds async support: servers can accept a tool call, return immediately with a task ID, and let clients check back later for results. This unlocks:</p>
+<p><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1391">SEP-1391</a> from the Agents Working Group adds async support: servers can accept a tool call, return immediately with a task ID, and let clients check back later for results. This unlocks:</p>
 <ul>
 <li><strong>Background processing</strong> without blocking the client</li>
 <li><strong>Progress reporting</strong> on long-running operations</li>
@@ -219,7 +219,7 @@
 <h2 id="further-reading">Further Reading</h2>
 <ul>
 <li><a href="https://modelcontextprotocol.io/development/roadmap">Official MCP Roadmap</a></li>
-<li><a href="http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/">2026 MCP Roadmap Blog Post</a></li>
+<li><a href="https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/">2026 MCP Roadmap Blog Post</a></li>
 <li><a href="https://blog.modelcontextprotocol.io/posts/2025-12-19-mcp-transport-future/">Exploring the Future of MCP Transports</a></li>
 <li><a href="https://modelcontextprotocol.io/community/seps">MCP SEP Index</a></li>
 <li>Our guide: <a href="/guides/mcp-transports-explained/">MCP Transports Explained</a></li>

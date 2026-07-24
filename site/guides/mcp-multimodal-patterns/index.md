@@ -191,7 +191,7 @@ These are particularly valuable for privacy-sensitive applications since audio n
 
 Lightweight TTS servers include:
 
-- **mcp-tts** — supports macOS `say`, ElevenLabs, Google Gemini TTS, and OpenAI TTS through a unified interface
+- **mcp-tts** — community server providing a unified MCP interface to multiple TTS backends
 - **play-sound-mcp-server** — simple audio playback for notification sounds when tasks complete
 - **Epidemic Sound MCP** — searches and retrieves music from the Epidemic Sound catalog for content creation
 

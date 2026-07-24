@@ -201,7 +201,7 @@
     else:
         ask user before retrying
 </code></pre><h3 id="risk-assessment-for-tool-combinations">Risk Assessment for Tool Combinations</h3>
-<p>Individual tools might be safe, but combinations can create risk. Security researchers have identified what they call the <strong>&ldquo;lethal trifecta&rdquo;</strong> — when a session combines:</p>
+<p>Individual tools might be safe, but combinations can create risk. Security researchers have identified what Simon Willison calls the <a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"><strong>&ldquo;lethal trifecta&rdquo;</strong></a> — when a session combines:</p>
 <ol>
 <li>Access to private data (e.g., a database query tool)</li>
 <li>Exposure to untrusted content (e.g., a web scraping tool)</li>
@@ -221,13 +221,13 @@
 <h2 id="whats-coming-next">What&rsquo;s Coming Next</h2>
 <p>The tool annotations system is actively evolving. As of March 2026, five Specification Enhancement Proposals (SEPs) are under consideration:</p>
 <ul>
-<li><strong>SEP #1913</strong>: Trust and sensitivity annotations (a collaboration between GitHub and OpenAI)</li>
-<li><strong>SEP #1984</strong>: Comprehensive governance and UX annotations</li>
-<li><strong>SEP #1561</strong>: <code>unsafeOutputHint</code> — flagging tools whose output may contain untrusted content</li>
-<li><strong>SEP #1560</strong>: <code>secretHint</code> — marking tools that handle secrets or credentials</li>
-<li><strong>SEP #1487</strong>: <code>trustedHint</code> — server self-attestation of trust level</li>
+<li><strong><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1913">SEP #1913</a></strong>: Trust and sensitivity annotations (a collaboration between the community and OpenAI)</li>
+<li><strong><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1984">SEP #1984</a></strong>: Comprehensive governance and UX annotations</li>
+<li><strong><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1561">SEP #1561</a></strong>: <code>unsafeOutputHint</code> — flagging tools whose output may contain untrusted content</li>
+<li><strong><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1560">SEP #1560</a></strong>: <code>secretHint</code> — marking tools that handle secrets or credentials</li>
+<li><strong><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1487">SEP #1487</a></strong>: <code>trustedHint</code> — server self-attestation of trust level</li>
 </ul>
-<p>A <strong>Tool Annotations Interest Group</strong> is forming with participants from Microsoft, OpenAI, AWS, Cloudflare, and Anthropic to work through these proposals alongside related features like tool resolution and preflight checks.</p>
+<p>A <strong>Tool Annotations Interest Group</strong> has been established under <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1302">MCP governance (SEP-1302)</a> to work through these proposals alongside related features like tool resolution and preflight checks.</p>
 <p>The Interest Group has proposed five evaluation criteria for new annotations:</p>
 <ol>
 <li>What specific client behaviors does the annotation enable?</li>

@@ -6,6 +6,7 @@ content_type: "Guide"
 card_description: "MCP now supports images, audio, and rich media natively. Here's how to build and use multimodal MCP servers — from content types to production patterns."
 last_refreshed: 2026-04-12
 lastmod: 2026-04-12
+sources_audited: 2026-07-24
 ---
 
 AI agents are no longer text-only. The [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18/schema) now defines five content types — TextContent, ImageContent, AudioContent, EmbeddedResource, and ResourceLink — enabling agents to receive screenshots, generate images, transcribe audio, analyze video, and work with binary files through standardized tool interfaces. This shift from text-only to multimodal is one of the most significant changes in the MCP ecosystem in 2026.
@@ -196,7 +197,7 @@ These are particularly valuable for privacy-sensitive applications since audio n
 
 Lightweight TTS servers include:
 
-- **mcp-tts** — supports macOS `say`, ElevenLabs, Google Gemini TTS, and OpenAI TTS through a unified interface
+- **mcp-tts** — community server providing a unified MCP interface to multiple TTS backends
 - **play-sound-mcp-server** — simple audio playback for notification sounds when tasks complete
 - **Epidemic Sound MCP** — searches and retrieves music from the Epidemic Sound catalog for content creation
 

@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>Building an MCP server is straightforward. Building MCP tools that AI agents use <em>effectively</em> is harder. The difference between a tool that works and a tool that agents reliably choose, invoke correctly, and chain into workflows comes down to design — how you name it, what you return, and how you handle failure.</p>
-<p>This guide covers the tool design patterns that matter most for production MCP servers. Our analysis draws on the MCP specification (2025-06-18), community patterns from production deployments, and published best practices — we research and analyze rather than testing implementations hands-on.</p>
+<p>This guide covers the tool design patterns that matter most for production MCP servers. Our analysis draws on the <a href="https://modelcontextprotocol.io/specification/2025-06-18/server/tools">MCP specification (2025-06-18)</a>, community patterns from production deployments, and published best practices — we research and analyze rather than testing implementations hands-on.</p>
 <h2 id="why-tool-design-matters-more-than-you-think">Why Tool Design Matters More Than You Think</h2>
 <p>An MCP tool isn&rsquo;t called by a human reading documentation. It&rsquo;s called by an LLM that sees a JSON schema and a description string, then decides — probabilistically — whether to use it and how. This means:</p>
 <ol>
@@ -341,7 +341,7 @@ if you don't know the project key.
 <h2 id="further-reading">Further Reading</h2>
 <ul>
 <li><a href="https://modelcontextprotocol.io/specification/2025-06-18/server/tools">MCP Tools Specification (2025-06-18)</a> — the authoritative reference for tool definitions, outputSchema, and structured content</li>
-<li><a href="https://www.arcade.dev/blog/mcp-tool-patterns">54 Patterns for Building Better MCP Tools</a> — Arcade&rsquo;s comprehensive pattern catalog from building 8,000+ production tools</li>
+<li><a href="https://www.arcade.dev/blog/mcp-tool-patterns">54 Patterns for Building Better MCP Tools</a> — Arcade&rsquo;s comprehensive pattern catalog from building production MCP tools at scale</li>
 <li><a href="https://medium.com/@kumaran.isk/agent-aware-mcp-10-patterns-for-actionable-tool-responses-54029e337941">Agent-Aware MCP: 10 Patterns for Actionable Tool Responses</a> — detailed exploration of response patterns that embed agent-actionable intelligence</li>
 <li><a href="https://docs.workato.com/en/mcp/mcp-server-tool-design.html">MCP Tool Design Best Practices (Workato)</a> — practical guidance on composable, agent-friendly tool interfaces</li>
 <li><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1382">SEP-1382: Documentation Best Practices for MCP Tools</a> — community discussion on standardizing tool documentation</li>

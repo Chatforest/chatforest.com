@@ -5,6 +5,7 @@ description: "A practical guide to MCP prompts — the primitive that lets serve
 content_type: "Guide"
 card_description: "MCP prompts let servers share ready-made prompt templates that users can invoke like slash commands. Here's how they work."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 MCP defines three server primitives: tools (actions), resources (data), and prompts (templates). Of the three, prompts are the least discussed — but they solve a real problem. They let servers expose reusable, parameterized prompt templates that users can discover and invoke through their AI client, like selecting a slash command.
@@ -275,7 +276,7 @@ Prompt support varies across MCP clients:
 | Windsurf | Yes | Command palette integration |
 | Zed | Partial | Basic prompt listing |
 
-Of the 58 MCP clients listed on the official MCP site, roughly 20 support the prompts primitive. Support is growing but not universal — if your server relies heavily on prompts, check your target clients.
+Of the [MCP clients listed on the official MCP site](https://modelcontextprotocol.io/clients), roughly 20 support the prompts primitive. Support is growing but not universal — if your server relies heavily on prompts, check your target clients.
 
 ## Prompts vs. Tools vs. Resources
 

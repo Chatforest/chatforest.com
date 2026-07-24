@@ -3,7 +3,7 @@
 > A comprehensive guide to caching in MCP systems — covering Anthropic prompt caching (90% cost reduction), FastMCP ResponseCachingMiddleware, server-side patterns (Redis
 
 
-A typical MCP deployment with five servers and 58 tools consumes over 55,000 tokens before the first user message. Add a few more integrations — Jira alone uses ~17,000 tokens — and you're burning 100,000+ tokens of context window on tool definitions alone. Every API call that could return cached data but doesn't is wasted latency and money. At Anthropic's Opus 4.6 pricing, an uncached 100K-token prompt costs $0.50 per request; with prompt caching, that drops to $0.05.
+A typical MCP deployment with five servers and 58 tools [consumes over 55,000 tokens before the first user message](https://www.anthropic.com/engineering/advanced-tool-use). Add a few more integrations — [Jira alone uses ~17,000 tokens](https://www.anthropic.com/engineering/advanced-tool-use) — and you're burning 100,000+ tokens of context window on tool definitions alone. Every API call that could return cached data but doesn't is wasted latency and money. With [Anthropic prompt caching](https://www.anthropic.com/news/prompt-caching), cached tokens cost 90% less than regular input tokens.
 
 Caching in MCP systems operates across multiple layers: the protocol itself (notification-based invalidation), the API provider (Anthropic prompt caching), the server (FastMCP middleware, Redis), the gateway (ContextForge, Bifrost), and the application (semantic caching with vector embeddings). Each layer addresses different problems — token costs, response latency, API expenses, and context window overflow.
 
@@ -92,25 +92,21 @@ This is targeted for the **June 2026 specification release**, along with explici
 
 ## Anthropic Prompt Caching: The Biggest Win
 
-If you're using Claude models with MCP, Anthropic's prompt caching is the single highest-impact optimization available. Cached input tokens cost **10x less** than regular input tokens, and latency drops up to **85%** (a 100K-token prompt goes from 11.5 seconds to 2.4 seconds).
+If you're using Claude models with MCP, [Anthropic's prompt caching](https://www.anthropic.com/news/prompt-caching) is the single highest-impact optimization available. Cached input tokens cost **10x less** than regular input tokens, and [latency drops up to **85%**](https://www.anthropic.com/news/prompt-caching) (a 100K-token prompt goes from 11.5 seconds to 2.4 seconds).
 
 ### How It Works
 
 Anthropic caches prompt prefixes in strict order: **tools → system → messages**. When consecutive API calls share the same prefix, everything before the first change point is served from cache.
 
-**Pricing per million tokens:**
+**Pricing per million tokens** (see [Anthropic's pricing page](https://www.anthropic.com/pricing) for current rates):
 
-| Model | Base Input | 5-min Cache Write | 1-hour Cache Write | Cache Read |
-|-------|-----------|-------------------|--------------------|-----------|
-| Claude Opus 4.6 | $5.00 | $6.25 (1.25x) | $10.00 (2x) | $0.50 (0.1x) |
-| Claude Sonnet 4.6 | $3.00 | $3.75 | $6.00 | $0.30 |
-| Claude Haiku 4.5 | $1.00 | $1.25 | $2.00 | $0.10 |
+Cache reads cost 0.1× the base input price; 1-hour cache writes cost 2× base input; 5-min cache writes cost 1.25× base. This means cached tokens cost 90% less than uncached tokens.
 
-**Minimum cacheable tokens:**
+**Minimum cacheable tokens** (from [Anthropic prompt caching docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching)):
 
 | Model | Minimum |
 |-------|---------|
-| Claude Opus 4.6/4.5 | 4,096 tokens |
+| Claude Opus 4.x | 4,096 tokens |
 | Claude Sonnet 4.6 | 2,048 tokens |
 | Claude Sonnet 4.5/4/3.7 | 1,024 tokens |
 | Claude Haiku 4.5 | 4,096 tokens |
@@ -162,14 +158,14 @@ This is the simplest way to enable prompt caching for multi-turn MCP conversatio
 
 ### Progressive Disclosure: 85-98% Token Reduction
 
-Anthropic's advanced tool use feature (beta header `advanced-tool-use-2025-11-20`) introduced **deferred tool loading** — instead of loading all tool definitions upfront, a Tool Search Tool discovers tools on demand.
+Anthropic's [advanced tool use feature](https://www.anthropic.com/engineering/advanced-tool-use) (beta header `advanced-tool-use-2025-11-20`) introduced **deferred tool loading** — instead of loading all tool definitions upfront, a Tool Search Tool discovers tools on demand.
 
 Tools marked with `defer_loading: true` are excluded from the initial prompt. Claude only sees the Tool Search Tool plus critical tools (`defer_loading: false`). When the model needs a deferred tool, it searches for it, and the tool definition is loaded just in time.
 
-**Results from Anthropic's benchmarks:**
+**Results from [Anthropic's benchmarks](https://www.anthropic.com/engineering/advanced-tool-use):**
 - **85% reduction** in tool definition tokens
-- End-to-end workflow: **150K tokens → 2K tokens** (98.7% reduction)
 - Accuracy improvements: Opus 4 from 49% → 74%, Opus 4.5 from 79.5% → 88.1%
+- Separately, [code execution with MCP](https://www.anthropic.com/engineering/code-execution-with-mcp) achieves 98.7% token reduction on end-to-end workflows (150K → 2K tokens)
 
 This directly enables better prompt cache hit rates — fewer tokens in the tools prefix means the prefix changes less often, which means more cache hits.
 
@@ -308,7 +304,7 @@ For MCP servers that serve static content (schemas, documentation, templates), C
 Cache-Control: public, max-age=604800, immutable
 ```
 
-This offloads approximately 40% of requests to CDN edges. For medium-traffic applications, this can reduce origin server costs by $400-800 per month.
+This offloads approximately 40% of requests to CDN edges. For medium-traffic applications, CDN offloading can meaningfully reduce origin server costs.
 
 **Important note for Streamable HTTP:** The MCP spec recommends servers include the `X-Accel-Buffering: no` header for SSE streams to prevent reverse proxies (particularly nginx) from buffering events and introducing latency.
 
@@ -360,7 +356,7 @@ The `minProximity` parameter controls matching strictness — 0.95 requires very
 
 Both Bifrost and LiteLLM offer integrated semantic caching:
 
-- **Bifrost** reports **30-50% cost reductions** with semantic matching (vs. 15-20% with exact-match caching), with 11 microsecond overhead
+- **[Bifrost](https://github.com/maximhq/bifrost)** provides semantic caching with its stated [11 microsecond gateway overhead](https://github.com/maximhq/bifrost) at 5,000 requests/second
 - **LiteLLM** supports `redis-semantic` and `qdrant-semantic` cache modes with configurable similarity thresholds
 
 ### When to Use Semantic Caching with MCP Tools
@@ -376,9 +372,9 @@ Both Bifrost and LiteLLM offer integrated semantic caching:
 - Tools where exact parameters matter (specific IDs, dates)
 - Real-time data tools (stock prices, live metrics)
 
-### A 2026 Research Paper
+### A 2025 Research Paper
 
-A paper published on ResearchGate in 2026 — "Hierarchical Semantic Caching for MCP Servers: A Multi-Tier Context-Aware Approach to Optimize AI Model Data Access" — proposes a multi-tier semantic caching approach designed specifically for MCP servers. The existence of peer-reviewed research on MCP-specific caching signals growing academic interest in this space.
+A paper published on ResearchGate in November 2025 — ["Hierarchical Semantic Caching for MCP Servers: A Multi-Tier Context-Aware Approach to Optimize AI Model Data Access"](https://www.researchgate.net/publication/397793353_Hierarchical_Semantic_Caching_for_MCP_Servers_A_Multi_Tier_Context_Aware_Approach_to_Optimize_AI_Model_Data_Access) — proposes a multi-tier semantic caching approach designed specifically for MCP servers. The existence of peer-reviewed research on MCP-specific caching signals growing academic interest in this space.
 
 ## Client-Side Caching Behavior
 

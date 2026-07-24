@@ -274,21 +274,21 @@ aws ecs create-service <span style="color:#ae81ff">\
 <li><strong>Scale-to-zero</strong> for cost efficiency</li>
 <li><strong>Session affinity</strong> via <code>--sticky-sessions</code> flag</li>
 <li><strong>Microsoft Entra ID</strong> integration for authentication</li>
-<li><strong>Dynamic sessions</strong> — platform-managed sandboxed environments with Hyper-V isolation, useful for MCP servers that execute user code</li>
+<li><strong><a href="https://learn.microsoft.com/en-us/azure/container-apps/sessions">Dynamic sessions</a></strong> — platform-managed sandboxed environments with Hyper-V isolation, useful for MCP servers that execute user code</li>
 </ul>
-<p>Azure Functions also supports MCP via an extension (public preview), enabling serverless MCP hosting with .NET, Java, JavaScript, Python, and TypeScript.</p>
+<p><a href="https://learn.microsoft.com/en-us/azure/azure-functions/self-hosted-mcp-servers">Azure Functions also supports MCP via an extension (public preview)</a>, enabling serverless MCP hosting with .NET, JavaScript, Python, and TypeScript.</p>
 <h2 id="serverless-deployment">Serverless Deployment</h2>
 <p>Serverless platforms work well for <strong>stateless</strong> MCP servers — tools that take input, do work, and return results without maintaining conversation state.</p>
 <h3 id="cloudflare-workers">Cloudflare Workers</h3>
-<p>Cloudflare Workers have near-zero cold starts (~0ms) and run at 300+ edge locations, making them the fastest serverless option for MCP.</p>
+<p>Cloudflare Workers have <a href="https://developers.cloudflare.com/workers/reference/how-workers-works/">near-zero cold starts</a> and run at <a href="https://www.cloudflare.com/network/">300+ edge locations</a>, making them the fastest serverless option for MCP.</p>
 <p><strong>Quick start:</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm create cloudflare@latest my-mcp-server <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    -- --template<span style="color:#f92672">=</span>cloudflare/ai/demos/remote-mcp-server
 </code></pre></div><p><strong>Deploy:</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx wrangler deploy
-</code></pre></div><p><strong>Limitations:</strong></p>
+</code></pre></div><p><strong><a href="https://developers.cloudflare.com/workers/platform/limits/">Limitations</a>:</strong></p>
 <ul>
-<li>50ms CPU time per request (enough for most tool calls, not for heavy computation)</li>
+<li>30 seconds CPU time per request on paid plans (enough for most tool calls)</li>
 <li>No native binary execution</li>
 <li>128MB memory limit</li>
 </ul>
@@ -548,7 +548,7 @@ sudo certbot --nginx -d mcp.example.com
 <li>Authorization code flow with PKCE</li>
 <li>Client includes bearer token on subsequent requests</li>
 </ol>
-<p>In practice, most MCP servers today use simpler API key auth — only about 8.5% of servers implement OAuth. But for production services with multiple users, OAuth is the right path. Frameworks like MCPEngine provide built-in OIDC support for Google, Auth0, and AWS Cognito.</p>
+<p>In practice, most MCP servers today use simpler API key auth — <a href="https://astrix.security/learn/blog/state-of-mcp-server-security-2025/">only about 8.5% of servers implement OAuth</a>, per Astrix Security&rsquo;s analysis of 5,200 open-source MCP servers. But for production services with multiple users, OAuth is the right path. Frameworks like MCPEngine provide built-in OIDC support for Google, Auth0, and AWS Cognito.</p>
 <p>For a deep dive, see our <a href="/guides/mcp-authorization-oauth/">MCP Authorization &amp; OAuth guide</a>.</p>
 <h2 id="production-checklist">Production Checklist</h2>
 <p>Before going live, verify each of these:</p>

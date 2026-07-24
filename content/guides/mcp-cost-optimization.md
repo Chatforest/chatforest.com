@@ -5,6 +5,7 @@ description: "Practical strategies for reducing MCP token consumption by 60-99% 
 content_type: "Guide"
 card_description: "MCP tool schemas can consume 40-50% of your context window before your agent does any actual work. Here's how to fix that."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Connecting an AI agent to MCP servers is easy. Controlling the cost of those connections at scale is not.

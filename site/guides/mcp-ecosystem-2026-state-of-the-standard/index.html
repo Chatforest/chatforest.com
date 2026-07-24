@@ -145,7 +145,7 @@
 <p>The &ldquo;USB-C for AI&rdquo; metaphor became reality: a single protocol connecting any AI model to any tool.</p>
 <h3 id="phase-4-enterprise-scaling-and-growing-pains-march-2026--present">Phase 4: Enterprise Scaling and Growing Pains (March 2026 – Present)</h3>
 <p>With universal adoption came universal problems. Security researchers filed 30+ CVEs in January and February 2026. Enterprise deployments hit scaling walls with stateful Streamable HTTP connections. The first production incidents made headlines — Asana&rsquo;s cross-tenant data leak, Smithery&rsquo;s path traversal exposing 3,243 apps, and tool poisoning attacks affecting open-source servers.</p>
-<p>But the growing pains came alongside genuine enterprise success. In April 2026, Pinterest engineering published details of their production MCP ecosystem: domain-specific MCP servers for Presto, Spark, and Airflow behind a central registry, with human-in-the-loop approval for sensitive operations. The system recorded approximately 66,000 monthly invocations from 844 active users, saving an estimated 7,000 engineering hours per month. Pinterest&rsquo;s deployment demonstrates that MCP can scale to real enterprise workloads when paired with proper governance, security review, and gateway infrastructure.</p>
+<p>But the growing pains came alongside genuine enterprise success. In April 2026, <a href="https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1">Pinterest engineering published details</a> of their production MCP ecosystem: domain-specific MCP servers for Presto, Spark, and Airflow behind a central registry, with human-in-the-loop approval for sensitive operations. The system recorded approximately 66,000 monthly invocations from 844 active users, saving an estimated 7,000 hours per month. Pinterest&rsquo;s deployment demonstrates that MCP can scale to real enterprise workloads when paired with proper governance, security review, and gateway infrastructure.</p>
 <p>MCP had won the standard war. Now it had to survive production — and early evidence suggests it can.</p>
 <hr>
 <h2 id="3-the-protocol-landscape-mcp-a2a-acp-and-ucp">3. The Protocol Landscape: MCP, A2A, ACP, and UCP</h2>
@@ -199,7 +199,7 @@
 <h2 id="4-the-aaif-governance-that-actually-matters">4. The AAIF: Governance That Actually Matters</h2>
 <p>The Agentic AI Foundation isn&rsquo;t just a logo on a press release — it represents a genuine shift in how AI infrastructure standards are governed.</p>
 <h3 id="structure">Structure</h3>
-<p>The AAIF operates under the Linux Foundation with tiered membership:</p>
+<p>The <a href="https://aaif.io/">AAIF operates under the Linux Foundation</a> with tiered membership:</p>
 <ul>
 <li><strong>Platinum members</strong>: AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, OpenAI</li>
 <li><strong>Gold members</strong>: American Express, Autodesk, JPMorgan Chase, Lenovo, Red Hat, ServiceNow, UiPath, and others</li>
@@ -243,7 +243,7 @@
 <li><strong>DevOps automation</strong>: MCP servers wrapping infrastructure tools for AI-assisted operations</li>
 <li><strong>Data analysis pipelines</strong>: MCP connecting AI agents to data warehouses and analytics platforms</li>
 </ul>
-<p>The most detailed public case study comes from Pinterest, which published its MCP architecture in April 2026. Pinterest runs domain-specific MCP servers for data platforms (Presto, Spark, Airflow), a central registry for server discovery, and human-in-the-loop approval for high-risk operations. Each server must pass security, legal, privacy, and generative AI compliance reviews before production deployment. The system handles approximately 66,000 monthly tool invocations across 844 active users, with AI agents automating log analysis, bug report review, and insight generation — saving an estimated 7,000 engineering hours per month.</p>
+<p>The most detailed public case study comes from Pinterest, which published its MCP architecture in April 2026. Pinterest runs domain-specific MCP servers for data platforms (Presto, Spark, Airflow), a central registry for server discovery, and human-in-the-loop approval for high-risk operations. Each server must pass security, legal, privacy, and generative AI compliance reviews before production deployment. The <a href="https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1">system handles approximately 66,000 monthly tool invocations across 844 active users</a>, with AI agents automating log analysis, bug report review, and insight generation — saving an estimated 7,000 hours per month.</p>
 <h3 id="the-mcp-server-ecosystem">The MCP Server Ecosystem</h3>
 <p>The server ecosystem has evolved from simple wrappers to sophisticated integrations:</p>
 <table>
@@ -305,12 +305,12 @@
 </ul>
 <p><strong>June 2025</strong>: Infrastructure attacks</p>
 <ul>
-<li>Smithery.ai path traversal (malicious <code>dockerBuildPath</code>) exposed a fly.io authentication token granting root access to 3,243 apps</li>
+<li>Smithery.ai path traversal vulnerability (malicious <code>dockerBuildPath</code>) that could have exposed a fly.io authentication token granting root access to 3,243 apps — no confirmed exploitation per GitGuardian research</li>
 <li>Asana&rsquo;s MCP feature caused cross-tenant data leakage</li>
 </ul>
 <p><strong>July 2025</strong>: Client-side RCE</p>
 <ul>
-<li>CVE-2025-6514: <code>mcp-remote</code> npm package (437K downloads) had command injection in OAuth handling — first documented full RCE from simply connecting to an untrusted MCP server</li>
+<li><a href="https://jfrog.com/blog/cve-2025-6514-critical-shell-injection-vulnerability-in-mcp-remote/">CVE-2025-6514</a>: <code>mcp-remote</code> npm package (437K downloads) had command injection in OAuth handling — first documented full RCE from simply connecting to an untrusted MCP server</li>
 <li>MCPoison (CVE-2025-54136): Cursor trusted all future MCP config modifications without re-validation after initial approval</li>
 </ul>
 <p><strong>January–February 2026</strong>: The flood</p>
@@ -323,7 +323,7 @@
 <p><strong>February 2026</strong>: Supply chain attacks</p>
 <ul>
 <li>Snyk scanned 3,984 AI agent skills — 36.82% had at least one security flaw, 76 contained confirmed malicious payloads</li>
-<li>AgentSeal scanned 1,808 MCP servers — 66% had at least one security finding</li>
+<li><a href="https://agentseal.org/blog/mcp-server-security-findings">AgentSeal scanned 1,808 MCP servers — 66% had at least one security finding</a></li>
 </ul>
 <h3 id="the-owasp-mcp-top-10">The OWASP MCP Top 10</h3>
 <p>OWASP published a dedicated <a href="https://owasp.org/www-project-mcp-top-10/">MCP Top 10</a> addressing the protocol&rsquo;s unique attack surface. The key risk categories:</p>
@@ -352,7 +352,7 @@
 <li>A weather MCP server that discovered and exploited legitimate banking tools to steal account balances</li>
 <li>Tool descriptions that extracted private GitHub repository contents</li>
 </ul>
-<p>The MCPTox benchmark (published 2025) evaluated 20 prominent LLM agents against tool poisoning using 45 real-world MCP servers and 353 authentic tools. o1-mini achieved a 72.8% attack success rate. More capable models were often more susceptible, because the attack exploits superior instruction-following abilities.</p>
+<p>The <a href="https://arxiv.org/abs/2508.14925">MCPTox benchmark</a> (published 2025) evaluated 20 prominent LLM agents against tool poisoning using 45 real-world MCP servers and 353 authentic tools. o1-mini achieved a 72.8% attack success rate. More capable models were often more susceptible, because the attack exploits superior instruction-following abilities.</p>
 <p>For a comprehensive treatment of MCP security defenses, see our <a href="/guides/mcp-ai-safety-guardrails/">MCP AI Safety &amp; Guardrails</a> guide.</p>
 <h3 id="security-tools-and-defenses">Security Tools and Defenses</h3>
 <p>The security ecosystem has responded with dedicated tools:</p>

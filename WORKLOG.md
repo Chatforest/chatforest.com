@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2624 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-seventh cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 27):
+
+1. **guides/mcp-tool-design-patterns.md** — ADDED inline spec link for the "MCP specification (2025-06-18)" mention in the intro. SOFTENED Arcade "8,000+ production tools" claim (removed specific number, kept link to their blog post). Added `sources_audited: 2026-07-24`.
+
+2. **guides/mcp-multi-tenant-patterns.md** — LINKED GitHub discussion #193 in MCP spec repo. LINKED GitHub issue #2173 in MCP servers repo. ADDED arXiv:2602.14798 for 142.4x token amplification claim. LINKED OTel MCP semantic conventions v1.39.0 (January 2026). SOFTENED Fly.io quote (removed direct quote without a verifiable URL). Added `sources_audited: 2026-07-24`.
+
+3. **guides/how-to-build-ai-agent.md** — ADDED Reflexion arXiv:2303.11366 for 80%→91% accuracy on coding tasks (Shinn et al., 2023). REMOVED unsourced "92% task completion rates" for Plan-and-Execute (no source found). REMOVED "Claude Opus 4.6 offers 1M tokens" (unverifiable context window claim; replaced with general "128K-200K" guidance). REMOVED "CrewAI Over 1 million monthly users" (no primary source found by research agent; CrewAI official sources cite different metrics). FIXED Gartner 1,445% date: was "in early 2026" but measurement period was through Q2 2025; linked to Gartner article. ADDED Gartner 40% enterprise apps link (press release August 26, 2025). ADDED MCP roadmap blog link for 97M downloads claim. REMOVED unsourced "$5 in early 2025 costs $0.50 today" price claim. REMOVED unsourced "Spearman correlation 0.80+" threshold for LLM-as-judge. Added `sources_audited: 2026-07-24`.
+
+4. **guides/mcp-2026-roadmap-whats-coming.md** — FIXED SEP-1391 link from root MCP repo to specific issue #1391. FIXED http:// to https:// for blog.modelcontextprotocol.io links. Added `sources_audited: 2026-07-24`.
+
+5. **guides/mcp-compliance-regulated-industries.md** — ADDED FDB PR Newswire link for March 31, 2026 GA announcement. FIXED Wolters Kluwer: changed "unveiled" to "unveiled plans" per Yahoo Finance source (it was a roadmap announcement for developer early access, not a full product launch). FIXED Socotra date: "October 2025" → "September 2025" (September 15, 2025 per announcement). ADDED Socotra announcement link. ADDED Sure PR Newswire link for June 10, 2025 launch and 95% reduction claim. ADDED Proofpoint acquisition link for Acuvity (February 12, 2026). ADDED Lasso Security GlobeNewswire link for Gartner Cool Vendor AI Security 2024 designation. REPLACED "84.2% attack rate" (unconfirmed specific number) with arXiv:2508.14925 and confirmed "72.8% or higher" framing. ADDED arXiv:2506.13800 link for FHIR-MCP academic framework. SOFTENED "1,561 AI bills" to "over 1,500" with Multistate.ai link (number is tracker-based, date-sensitive). Added `sources_audited: 2026-07-24`.
+
+6. **guides/mcp-cost-optimization.md** — Already well-cited (all benchmarks linked to their sources). No substantive changes needed. Added `sources_audited: 2026-07-24`.
+
+7. **guides/mcp-ecosystem-2026-state-of-the-standard.md** — ADDED Pinterest Engineering Blog link (×2) for 66K invocations/844 users/7,000 hours/month figures. ADDED arXiv:2508.14925 for MCPTox o1-mini 72.8% attack success rate. ADDED AgentSeal source (agentseal.org/blog/mcp-server-security-findings). ADDED JFrog link for CVE-2025-6514. LINKED AAIF governance section to aaif.io. FIXED Smithery characterization: changed "exposed a fly.io authentication token granting root access to 3,243 apps" to correctly note it was a VULNERABILITY with no confirmed exploitation (per GitGuardian research). Added `sources_audited: 2026-07-24`.
+
+8. **guides/mcp-multimodal-patterns.md** — SOFTENED mcp-tts entry (removed unverified specific backend list, removed invented GitHub URL). Added `sources_audited: 2026-07-24`.
+
+9. **guides/mcp-notifications-explained.md** — Spec-based article; all major claims linked to MCP spec and JSON-RPC 2.0 spec. No unsourced factual claims found. Added `sources_audited: 2026-07-24`.
+
+10. **guides/mcp-prompts-explained.md** — REPLACED "58 MCP clients" specific count (unverifiable — official clients page URL changed) with link to official MCP clients page without asserting a specific count. Added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via research agent with web search):**
+- FDB MedProof MCP GA March 31, 2026: Confirmed (PR Newswire)
+- Wolters Kluwer Medi-Span Expert AI Feb 2026: Confirmed as "plans unveiled" (Yahoo Finance) — was a roadmap announcement, not full launch
+- Socotra insurance MCP: Date corrected to September 15, 2025 (was "October 2025")
+- Sure insurance MCP June 2025 / 95% reduction: Confirmed (PR Newswire)
+- Acuvity acquired by Proofpoint February 12, 2026: Confirmed (Proofpoint newsroom)
+- Lasso Security Gartner Cool Vendor AI Security 2024: Confirmed (GlobeNewswire November 12, 2024)
+- 1,561 AI bills / 45 states: Traced to Multistate.ai tracker (date-sensitive, not a static figure)
+- Pinterest 66K invocations / 844 users / 7,000 hours/month: Confirmed (Pinterest Engineering Blog on Medium)
+- MCPTox o1-mini 72.8% attack success rate: Confirmed (arXiv:2508.14925)
+- SEP-1391 "Long-Running Operations": Confirmed at GitHub issue #1391
+- Gartner 1,445% surge: Confirmed but period is Q1 2024–Q2 2025, not "early 2026" as originally stated
+- Gartner 40% enterprise apps by 2026: Confirmed (Gartner press release August 26, 2025)
+- CrewAI "1 million monthly users": NOT FOUND in any primary source — CUT
+- Plan-and-Execute "92% task completion rates": NOT FOUND — CUT
+- Reflexion 80%→91% on coding tasks: Confirmed (arXiv:2303.11366, Shinn et al. NeurIPS 2023)
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2623 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-sixth cohort) + Deploy
 
 **Mode:** Citation auditor

@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>A single developer connecting Claude Code to a local MCP server is straightforward. An enterprise rolling out MCP across hundreds of engineers — with compliance requirements, access control policies, and audit obligations — faces an entirely different set of challenges.</p>
-<p>2025 established MCP as the default integration protocol for AI tools, with adoption from OpenAI, Google, Microsoft, and Amazon alongside Anthropic. 2026 is the year enterprises move from pilot projects to production infrastructure. The <a href="https://modelcontextprotocol.io/blog/roadmap-2026">2026 MCP roadmap</a> makes enterprise readiness one of its four top priorities, alongside transport evolution, agent communication, and governance maturation.</p>
+<p>By 2025, MCP had gained <a href="https://modelcontextprotocol.io/blog/roadmap-2026">broad adoption</a> across the AI tool ecosystem, including from OpenAI, Google, Microsoft, and Amazon. 2026 is the year enterprises move from pilot projects to production infrastructure. The <a href="https://modelcontextprotocol.io/blog/roadmap-2026">2026 MCP roadmap</a> makes enterprise readiness one of its four top priorities, alongside transport evolution, agent communication, and governance maturation.</p>
 <p>This guide covers the architecture, tooling, and organizational patterns for deploying MCP at enterprise scale. Our analysis draws on the <a href="https://modelcontextprotocol.io/specification/2025-11-25">MCP specification</a>, the enterprise-managed authorization extension, published vendor documentation, and industry reports — we research and analyze rather than deploying enterprise MCP infrastructure ourselves.</p>
 <h2 id="the-core-enterprise-challenge">The Core Enterprise Challenge</h2>
 <p>Local MCP works because trust is implicit. You installed the server, you control what it accesses, and you can see what it does. Enterprise MCP breaks every one of those assumptions:</p>
@@ -173,7 +173,7 @@ Role: platform-engineer
 </ol>
 <p>The key improvement: IT administrators manage MCP access through the same policy engine they use for everything else. Revoking a user&rsquo;s access to an MCP server is the same process as revoking access to any other corporate application.</p>
 <h3 id="current-status">Current Status</h3>
-<p>As of March 2026, enterprise-managed authorization is a specification extension — implemented by some platforms but not yet universally supported. The <a href="https://workos.com/blog/2026-mcp-roadmap-enterprise-readiness">2026 roadmap</a> identifies it as a priority, but full ecosystem adoption is still ahead. Early adopters include platforms like <a href="https://duo.com/">Cisco Duo</a> and vendors building on <a href="https://workos.com/">WorkOS</a> and <a href="https://www.scalekit.com/">Scalekit</a>.</p>
+<p>As of March 2026, enterprise-managed authorization is a specification extension — implemented by some platforms but not yet universally supported. The <a href="https://workos.com/blog/2026-mcp-roadmap-enterprise-readiness">2026 roadmap</a> identifies it as a priority, but full ecosystem adoption is still ahead.</p>
 <h2 id="audit-logging-and-compliance">Audit Logging and Compliance</h2>
 <p>Every MCP tool invocation in an enterprise should produce an audit record. This isn&rsquo;t optional — it&rsquo;s a regulatory requirement for organizations handling sensitive data, and a security necessity for everyone else.</p>
 <h3 id="what-to-log">What to Log</h3>
@@ -243,7 +243,7 @@ Role: platform-engineer
 </ul>
 <p>Organizations define data classification policies specifying which data types may flow through agent tool calls. The gateway enforces these by inspecting tool responses and filtering or blocking accordingly.</p>
 <h3 id="opentelemetry-integration">OpenTelemetry Integration</h3>
-<p>The emerging standard for MCP observability is <a href="https://opentelemetry.io/">OpenTelemetry</a>. The MCP semantic conventions for OTel, merged in January 2026, define standard attribute names for MCP traces and metrics. This means MCP audit data integrates natively with existing observability stacks — Grafana, Datadog, Honeycomb, Splunk, New Relic — without custom integration work.</p>
+<p>The emerging standard for MCP observability is <a href="https://opentelemetry.io/">OpenTelemetry</a>. The <a href="https://github.com/open-telemetry/semantic-conventions/releases/tag/v1.39.0">MCP semantic conventions for OTel, merged in January 2026</a> (released in v1.39.0), define standard attribute names for MCP traces and metrics. This means MCP audit data integrates natively with existing observability stacks — Grafana, Datadog, Honeycomb, Splunk, New Relic — without custom integration work.</p>
 <p><a href="https://docs.stacklok.com/toolhive/">Stacklok&rsquo;s ToolHive</a> aligns with these conventions, emitting OTel-compatible traces that can feed both observability dashboards and compliance audit trails from the same data pipeline.</p>
 <h2 id="the-enterprise-mcp-gateway-landscape">The Enterprise MCP Gateway Landscape</h2>
 <p>Several platforms have emerged to address enterprise MCP governance. Here&rsquo;s how the current options compare:</p>
@@ -260,12 +260,12 @@ Role: platform-engineer
 </thead>
 <tbody>
 <tr>
-<td><strong>Lunar.dev MCPX</strong></td>
+<td><strong><a href="https://www.lunar.dev/product/mcp">Lunar.dev MCPX</a></strong></td>
 <td>Commercial</td>
 <td>Tool-level ACLs</td>
 <td>Immutable, SIEM-ready</td>
 <td>Cloud/on-prem</td>
-<td>~4ms latency, granular tool ACLs</td>
+<td><a href="https://docs.lunar.dev/latency-footprint/">~4ms p99 latency</a>, granular tool ACLs</td>
 </tr>
 <tr>
 <td><strong>Stacklok ToolHive</strong></td>

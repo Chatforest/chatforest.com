@@ -5,6 +5,7 @@ description: "A practical guide to MCP notifications — how servers signal tool
 content_type: "Guide"
 card_description: "MCP servers don't just respond to requests — they push notifications when tools change, resources update, or prompt lists shift. Here's how the notification system works."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 MCP is a request-response protocol built on JSON-RPC — but it's not *only* request-response. Servers can push **notifications** to clients without being asked. This is how MCP supports dynamic environments where tools appear and disappear, resources change underneath you, and prompt templates evolve at runtime.

@@ -20,9 +20,9 @@ The original MCP architecture assumed a local-first model: Claude Desktop spawns
 - **AI hosting platforms** connecting thousands of users to shared tool infrastructure
 - **Internal developer tools** serving multiple project teams from a single MCP endpoint
 
-A March 2025 GitHub discussion (#193 in the MCP spec repo) captured the core tension: "I need to be able to spin up and execute potentially thousands of concurrent instances of the same MCP server, one per user, just to perform a simple API proxy operation with two input variables." The community agreed that requiring per-user processes creates unacceptable scaling overhead and reliability concerns.
+A [March 2025 GitHub discussion (#193 in the MCP spec repo)](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/193) captured the core tension: "I need to be able to spin up and execute potentially thousands of concurrent instances of the same MCP server, one per user, just to perform a simple API proxy operation with two input variables." The community agreed that requiring per-user processes creates unacceptable scaling overhead and reliability concerns.
 
-A separate issue (#2173 in the MCP servers repo) from a SaaS platform builder stated the challenge directly: "We are really struggling to find a way to use the same MCP server to serve all of our tenants without running a separate MCP server per tenant."
+A separate [issue (#2173 in the MCP servers repo)](https://github.com/modelcontextprotocol/servers/issues/2173) from a SaaS platform builder stated the challenge directly: "We are really struggling to find a way to use the same MCP server to serve all of our tenants without running a separate MCP server per tenant."
 
 ## The Three Isolation Models
 
@@ -50,7 +50,7 @@ Each tenant gets their own MCP server instance — a separate process, container
 
 **When to use:** Healthcare, financial services, government, or any domain where regulatory requirements mandate physical tenant isolation. Also appropriate when tenant count is small (under ~50) and per-tenant resource cost is acceptable.
 
-**Real-world example:** Fly.io's MCP deployment blueprint recommends single-tenant patterns where "each user gets their own machine," using their auto-start/auto-stop capability to keep idle costs low.
+**Real-world example:** Fly.io's MCP deployment guidance recommends single-tenant patterns where each user gets their own machine, using their auto-start/auto-stop capability to keep idle costs low.
 
 ### 2. Pooled Multi-Tenant (Shared Server)
 
@@ -337,7 +337,7 @@ For SaaS platforms that need to bill tenants for MCP usage:
 - **Track token consumption per tenant** — count input/output tokens per tool call
 - **Log tool invocations with tenant context** — enables per-tenant billing dashboards
 - **Set budget caps** — alert or block when a tenant approaches their quota
-- **Implement denial-of-wallet protection** — the 142.4x token amplification attack (documented in MCP security research) means a single tool call can generate massive downstream token usage
+- **Implement denial-of-wallet protection** — the [142.4x token amplification attack (arXiv:2602.14798)](https://arxiv.org/abs/2602.14798) means a single tool call can generate massive downstream token usage
 
 ## Observability with Tenant Context
 
@@ -358,7 +358,7 @@ Every log entry should include:
 
 ### OpenTelemetry Integration
 
-The MCP semantic conventions for OpenTelemetry (merged January 2026) provide standardized attribute names for tracing MCP operations. For multi-tenant deployments, extend these with:
+The [MCP semantic conventions for OpenTelemetry (merged January 2026 in v1.39.0)](https://github.com/open-telemetry/semantic-conventions/releases/tag/v1.39.0) provide standardized attribute names for tracing MCP operations. For multi-tenant deployments, extend these with:
 
 - `mcp.tenant.id` — tenant identifier on every span
 - `mcp.tenant.tier` — tenant pricing tier (for SLA tracking)

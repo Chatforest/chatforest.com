@@ -328,31 +328,21 @@ mcp <span style="color:#f92672">=</span> FastMCP(<span style="color:#e6db74">&#3
     }
 }
 </code></pre></div><p>The C# SDK uses attributes to declare templates. The <code>UriTemplate</code> parameter defines the pattern, and method parameters are automatically bound to URI variables.</p>
-<h3 id="go-mcpkit">Go (mcpkit)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/plexusone/mcpkit&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">mcpkit</span>.<span style="color:#a6e22e">NewServer</span>(<span style="color:#e6db74">&#34;user-data&#34;</span>, <span style="color:#e6db74">&#34;1.0.0&#34;</span>)
-
-    <span style="color:#75715e">// Dynamic resource template with RFC 6570 pattern
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">ResourceTemplate</span>(
-        <span style="color:#e6db74">&#34;users://{userId}/profile&#34;</span>,
-        <span style="color:#e6db74">&#34;User Profile&#34;</span>,
-        <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">uri</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">params</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">mcpkit</span>.<span style="color:#a6e22e">Resource</span>, <span style="color:#66d9ef">error</span>) {
-            <span style="color:#a6e22e">userId</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;userId&#34;</span>]
-            <span style="color:#a6e22e">user</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">GetUser</span>(<span style="color:#a6e22e">userId</span>)
-            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mcpkit</span>.<span style="color:#a6e22e">Resource</span>{}, <span style="color:#a6e22e">err</span>
-            }
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mcpkit</span>.<span style="color:#a6e22e">TextResource</span>(<span style="color:#a6e22e">uri</span>, <span style="color:#e6db74">&#34;application/json&#34;</span>,
-                <span style="color:#a6e22e">toJSON</span>(<span style="color:#a6e22e">user</span>)), <span style="color:#66d9ef">nil</span>
-        },
-    )
-
-    <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Run</span>()
-}
+<h3 id="go">Go</h3>
+<p>Go implementations of MCP resource templates follow the same RFC 6570 pattern. The <a href="https://github.com/modelcontextprotocol/go-sdk">official MCP Go SDK</a> and community SDKs expose templates via pattern registration:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Illustrative pattern — consult your SDK&#39;s documentation for exact API
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">ResourceTemplate</span>(
+    <span style="color:#e6db74">&#34;users://{userId}/profile&#34;</span>,
+    <span style="color:#e6db74">&#34;User Profile&#34;</span>,
+    <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">uri</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">params</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">Resource</span>, <span style="color:#66d9ef">error</span>) {
+        <span style="color:#a6e22e">userId</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;userId&#34;</span>]
+        <span style="color:#a6e22e">user</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">GetUser</span>(<span style="color:#a6e22e">userId</span>)
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Resource</span>{}, <span style="color:#a6e22e">err</span>
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">TextResource</span>(<span style="color:#a6e22e">uri</span>, <span style="color:#e6db74">&#34;application/json&#34;</span>, <span style="color:#a6e22e">toJSON</span>(<span style="color:#a6e22e">user</span>)), <span style="color:#66d9ef">nil</span>
+    },
+)
 </code></pre></div><h2 id="real-world-template-patterns">Real-World Template Patterns</h2>
 <h3 id="database-explorer">Database Explorer</h3>
 <p>Expose database contents through a hierarchy of templates:</p>

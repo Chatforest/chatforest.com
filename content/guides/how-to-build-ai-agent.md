@@ -5,6 +5,7 @@ description: "A practical guide to building AI agents in 2026 — covering the a
 content_type: "Guide"
 card_description: "From architecture to deployment — everything you need to know about building AI agents that actually work in production."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 AI agents are software systems that use language models to observe their environment, make decisions, and take actions — repeatedly, in a loop, until a goal is met. Unlike a chatbot that responds to a single prompt, an agent can browse your codebase, run tests, fix failures, and open a pull request, all without you specifying each step.
@@ -36,7 +37,7 @@ The most common pattern. The model alternates between reasoning ("I need to find
 
 ### Plan-and-Execute
 
-The model creates a plan first, then executes each step. Published benchmarks show this pattern achieves roughly 92% task completion rates — significantly higher than ReAct on complex multi-step tasks.
+The model creates a plan first, then executes each step. This pattern consistently outperforms ReAct on complex multi-step tasks in published evaluations.
 
 ```
 Plan:
@@ -55,7 +56,7 @@ Execute each step...
 
 ### Reflection
 
-After completing a task (or failing), the model critiques its own output and tries again. Research shows this pattern can improve accuracy from roughly 80% to 91% on coding tasks.
+After completing a task (or failing), the model critiques its own output and tries again. The [Reflexion paper (Shinn et al., 2023)](https://arxiv.org/abs/2303.11366) found this improved GPT-4 pass@1 on HumanEval from ~80% to 91%.
 
 **Strengths:** Catches errors the first pass missed, produces higher-quality output.
 
@@ -77,7 +78,7 @@ An agent without tools is just a chatbot that talks to itself. Tools are what gi
 
 ### The Model Context Protocol (MCP)
 
-[MCP](/guides/what-is-mcp/) has become the standard protocol for connecting AI agents to tools. As of March 2026, the official SDKs see over 97 million monthly downloads. Every major AI coding tool supports it.
+[MCP](/guides/what-is-mcp/) has become the standard protocol for connecting AI agents to tools. [As of March 2026, the official SDKs see over 97 million monthly downloads](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/). Every major AI coding tool supports it.
 
 MCP provides:
 - **A standard interface** — tools expose their capabilities via JSON-RPC, any compatible client can discover and call them
@@ -114,7 +115,7 @@ For a deep dive, see our [MCP tool design patterns](/guides/mcp-tool-design-patt
 
 ## Memory: How Agents Remember
 
-Context windows are large but not infinite. Claude Opus 4.6 offers 1M tokens, but most models give you 128K-200K. Either way, an agent that runs for hours will exceed its context window. Memory solves this.
+Context windows are large but not infinite. Most models give you 128K-200K tokens, but an agent that runs for hours will exceed its context window regardless. Memory solves this.
 
 ### Short-Term Memory (Context Window)
 
@@ -160,7 +161,7 @@ You don't need a framework to build an agent — a loop that calls an LLM API an
 
 **LangGraph** (LangChain) — Graph-based agent orchestration. Agents are defined as state machines with nodes (actions) and edges (transitions). The most flexible option for complex, multi-step workflows. Steeper learning curve.
 
-**CrewAI** — Role-based multi-agent framework. You define agents with roles ("researcher", "writer", "reviewer") and they collaborate on tasks. Over 1 million monthly users. Best for multi-agent workflows where role specialization makes sense.
+**CrewAI** — Role-based multi-agent framework. You define agents with roles ("researcher", "writer", "reviewer") and they collaborate on tasks. Best for multi-agent workflows where role specialization makes sense.
 
 **OpenAI Agents SDK** — OpenAI's framework for building agents with their models. Lightweight, with built-in handoffs, guardrails, and tracing. Similar philosophy to Claude Agent SDK but tied to OpenAI's model ecosystem.
 
@@ -187,7 +188,7 @@ For detailed MCP integration across frameworks, see our [MCP agent framework int
 
 ## Multi-Agent Patterns
 
-Sometimes one agent isn't enough. Complex tasks benefit from multiple specialized agents that coordinate through shared infrastructure. Gartner reported a 1,445% surge in enterprise inquiries about multi-agent systems in early 2026.
+Sometimes one agent isn't enough. Complex tasks benefit from multiple specialized agents that coordinate through shared infrastructure. [Gartner reported a 1,445% surge](https://www.gartner.com/en/articles/multiagent-systems) in enterprise inquiries about multi-agent systems (measured through Q2 2025).
 
 But multi-agent systems are harder to debug, more expensive to run, and introduce coordination problems that don't exist with single agents. Use them deliberately.
 
@@ -252,7 +253,7 @@ Agent testing is different from traditional software testing. The same input can
 
 **Trajectory evaluation:** Check that the agent took reasonable steps, not just that it got the right answer. An agent that deletes and recreates a file to fix a typo "works" but isn't good.
 
-**LLM-as-judge:** Use a separate model to evaluate agent outputs. Research shows this correlates with human judgment when the evaluator model is strong enough (target Spearman correlation of 0.80+).
+**LLM-as-judge:** Use a separate model to evaluate agent outputs. Research shows this correlates with human judgment when the evaluator model is strong enough — the key is using a capable model and giving it explicit rubrics.
 
 **Progressive gates:** Set quality thresholds at each stage:
 - Development: 70% pass rate on benchmark tasks
@@ -334,9 +335,9 @@ The agent ecosystem is maturing fast. Key trends for the rest of 2026:
 
 - **Protocol standardization** — MCP for tool access, [A2A for agent-to-agent communication](/guides/mcp-vs-a2a-protocol-comparison/). These protocols are converging into a standard stack.
 - **Agent registries** — the [MCP Registry](/guides/mcp-registry-server-discovery/) and similar directories are making tools discoverable, with verification and trust signals.
-- **Enterprise adoption** — Gartner predicts 40% of enterprise applications will embed AI agents by the end of 2026. The infrastructure (gateways, auth, audit) is catching up.
+- **Enterprise adoption** — [Gartner predicts 40% of enterprise applications will feature task-specific AI agents by the end of 2026](https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025). The infrastructure (gateways, auth, audit) is catching up.
 - **Better evaluation** — Agent benchmarks are getting more rigorous, but we're still far from being able to predict production performance from benchmark scores.
-- **Cost reduction** — Models are getting cheaper and faster. Tasks that cost $5 in early 2025 cost $0.50 today. This trend will continue.
+- **Cost reduction** — Models are getting cheaper and faster. API costs per task have dropped dramatically since 2024 and this trend will continue.
 
 ## Getting Started
 
