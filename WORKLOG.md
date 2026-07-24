@@ -2,6 +2,47 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2629 — 2026-07-25 — Claim-Level Citation Audit: 8 Pages (2026-03-29 batch, batch 32) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No new messages requiring action. (Run 2628 report to Rob was pre-existing.)
+
+#### Citation Audit — 8 Pages (oldest unaudited batch, all dated 2026-03-29)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-hr-recruiting-talent.md** — Most work this run. Opening paragraph market stats (AI-in-HR $6.25B, 24.8% CAGR, 99% Fortune 500 AI use, 62% expect AI to handle most hiring) all sourced and linked. Trust gap stats (66% hesitate to apply, 26% trust AI evaluation) sourced to Pew Research and Gartner. HiredScore acquisition year corrected: was "2025" → actually March 2024 (with Workday press release link). "74% plan to increase AI use in next 12 months" deleted (no source). Draup outcome claims ("40 hours/month saved, 2x first-call meeting rates") deleted (no primary source). SAP SmartRecruiters acquisition linked. SHRM member count linked. ~15 sources added total.
+
+2. **guides/mcp-construction-architecture.md** — Intro paragraph stats consolidated with ASCE survey link (27% use AI, 45% zero AI implementation, 52% paper in design phases). Market Context section stats sourced to Fortune Business Insights, SNS Insider, Precedence Research. Unsourced specific regional percentages ("North America holds 38.93% market share…29.58% CAGR") replaced with general language.
+
+3. **guides/mcp-sports-fitness.md** — Market Context section had multiple specific stats with NO primary sources found: sports tech $34.25B→$68.71B, AI in sports $10.61B→$49.92B, wearables $94.17B→$120.05B, Oura Ring $1B valuation. Applied "cite it or cut it" — ENTIRE market stats paragraph deleted and replaced with: "Sports technology, AI-in-sports, and wearables are all fast-growing markets, but MCP adoption by major sports technology companies is currently zero."
+
+4. **guides/mcp-digital-twins-bim.md** — Removed two Google Cloud customer claim bullets (warehouse simulation, AES renewable energy) with no linked sources. Changed Vertex AI Agent Builder bullet to add primary source link (GA with session/memory caps).
+
+5. **guides/mcp-iot-embedded-systems.md** — Added hyperlinks: IoT-MCP arXiv paper (arXiv:2510.01260), ARM learning path, Home Assistant 2025.2 release note for MCP integration launch.
+
+6. **guides/mcp-robotics-ros-integration.md** — Removed unverifiable journal attribution from ELLMER: was "ELLMER framework (Nature Machine Intelligence, March 2025)" → now "ELLMER framework" (no link found). Removed vague "(published research, 2025-2026)" from SPCA. No market stats in this page (primarily technical ROS documentation).
+
+7. **guides/mcp-ai-frameworks-langchain-langgraph-crewai.md** — Removed "from the team behind Gatsby" from Mastra description (unverifiable). Microsoft Agent Framework 1.0 "GA April 7, 2026" heading revised: section heading changed to remove specific date; link to Microsoft Extensions AI blog removed after discovering it was the wrong product (Microsoft Extensions AI ≠ Microsoft Agent Framework).
+
+8. **guides/mcp-cicd-platform-integrations.md** — CRITICAL: Deleted entire "Real-World Incident Case Studies" section containing two named-company security incident claims with ZERO sources: Supabase Cursor Agent Incident (2025) and Cisco DevOps Case Study (2025). Named-company security incidents with zero links are the worst failure mode per editorial standards. Section heading changed to "Supply Chain Security" (Docker MCP Catalog content, which had a link, preserved).
+
+**Key factual errors fixed this run:**
+- Workday HiredScore acquisition year was wrong: article said 2025, actually March 2024
+- Named-company security incidents (Supabase, Cisco) cited with ZERO sources — deleted
+- ELLMER framework journal attribution (Nature Machine Intelligence) unverifiable — removed
+- Sports market stats entirely deleted (no primary sources exist to support any of them)
+- Microsoft Extensions AI link mistakenly added to Microsoft Agent Framework — removed
+
+**Deploy:** Deployed 2026-07-25 03:47 JST (commit a863a0b322). All 8 pages live on chatforest.com.
+
+**Bluesky:** None this run.
+
+---
+
 ## Run 2628 — 2026-07-25 — CTR Optimization (/reviews/ + 4 pages) + Citation Audit: 10 Pages (May 2026 batch, batch 31)
 
 **Mode:** SEO optimizer + Citation auditor
