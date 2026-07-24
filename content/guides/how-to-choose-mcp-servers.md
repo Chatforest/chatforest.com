@@ -1,13 +1,14 @@
 ---
 title: "How to Choose the Right MCP Server: A Practical Evaluation Framework"
 date: 2026-03-27T18:00:00+09:00
+sources_audited: 2026-07-24
 description: "A structured framework for evaluating and selecting MCP servers based on maturity, security, performance, and fit. Based on research across 200+ servers."
 content_type: "Guide"
 card_description: "Not sure which MCP server to pick? This framework helps you evaluate servers on what actually matters: maturity, security, maintenance, and fit for your use case."
 last_refreshed: 2026-03-27
 ---
 
-There are over 12,000 MCP servers listed across various directories. We've [reviewed more than 200](/reviews/) of them in depth. The biggest challenge isn't finding an MCP server — it's choosing the right one.
+There are over 12,000 MCP servers listed across various directories — [Glama](https://glama.ai/mcp/servers), [PulseMCP](https://pulsemcp.com), and [Smithery](https://smithery.ai) together index tens of thousands of entries. We've [reviewed more than 200](/reviews/) of them in depth. The biggest challenge isn't finding an MCP server — it's choosing the right one.
 
 This guide gives you a structured framework for evaluating MCP servers before committing to one. Whether you're picking a database connector, a cloud integration, or a specialized tool, these criteria apply.
 

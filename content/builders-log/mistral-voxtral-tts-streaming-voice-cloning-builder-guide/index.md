@@ -1,6 +1,7 @@
 ---
 title: "Mistral Voxtral TTS: Streaming, Voice Cloning, and Deployment — Builder Guide"
 date: 2026-03-26
+sources_audited: 2026-07-24
 description: "Voxtral TTS ships as a $0.016/1k-char API and open CC BY-NC weights. This builder guide covers format selection for streaming vs. batch, voice cloning from base64 audio, the API-vs-self-host break-even, and vLLM-Omni setup for on-premises deployment."
 og_description: "Voxtral TTS builder guide: PCM streaming hits 0.8s time-to-first-audio vs 3s for MP3. Voice cloning from 3 seconds of base64 audio. API costs $0.016/1k chars. Self-hosted vLLM-Omni needs 16GB VRAM and breaks even vs API at roughly 300M chars/month. Here's the full integration map."
 card_description: "The Voxtral TTS review covers what it is — this guide covers how to build with it. Format selection (PCM vs MP3 vs Opus), voice cloning integration patterns, smart interleaving for long content, cross-lingual cloning, the API vs self-hosted break-even, and a vLLM-Omni setup walkthrough. Includes the key licensing caveat: CC BY-NC weights require a separate commercial license for revenue-generating self-hosted deployments."
@@ -109,7 +110,7 @@ audio_bytes = response.content
 
 **What the model captures from the reference clip:** accent, intonation pattern, speaking rhythm, natural pauses, and emotional register. Emotion-steering tags in the text (e.g., `[excited]`, `[calm]`) layer on top of the cloned voice characteristics — you do not need separate reference clips per emotion.
 
-**Quality calibration:** Mistral's evaluation shows 68.4% overall voice-cloning win rate against ElevenLabs Flash v2.5, with notably stronger results for Hindi (79.8%), Spanish (87.8%), and Arabic (72.9%). If you are building a multilingual product and cloning accuracy matters, these three languages are where Voxtral TTS has the clearest advantage.
+**Quality calibration:** [Mistral's evaluation](https://mistral.ai/static/research/voxtral-tts.pdf) shows 68.4% overall voice-cloning win rate against ElevenLabs Flash v2.5 in blind listening tests by native speakers, with notably stronger results for Hindi (79.8%), Spanish (87.8%), and Arabic (72.9%). If you are building a multilingual product and cloning accuracy matters, these three languages are where Voxtral TTS has the clearest advantage.
 
 ---
 
@@ -270,13 +271,13 @@ response = client.audio.speech.create(
 - Multilingual voice cloning in the nine supported languages — especially Hindi, Spanish, or Arabic where the benchmark advantage versus ElevenLabs is largest
 - Research and non-commercial projects where CC BY-NC open weights provide full model access
 - Voice agents where PCM streaming and 0.8s time-to-first-audio is the priority
-- Cost-sensitive workloads where $0.016/1k chars ($16/1M) undercuts ElevenLabs (~$30/1M for Flash v2.5)
+- Cost-sensitive workloads where $0.016/1k chars ($16/1M) undercuts [ElevenLabs (~$50/1M for Flash v2.5)](https://elevenlabs.io/pricing)
 
 **Weaker fit:**
 - Applications requiring more than nine languages (ElevenLabs: 32, Google Cloud TTS: 75+)
 - Commercial self-hosted deployments at sub-break-even volume (the API is cheaper until ~200–350M chars/month)
 - Workloads where independent benchmark validation of voice quality is required before committing — Mistral's published numbers are self-reported
-- English-only applications where Microsoft MAI-Voice-1 (under 1 second for 60-second audio) may offer faster full-document synthesis
+- English-only applications where [Microsoft MAI-Voice-1](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-transcribe-1-mai-voice-1-and-mai-image-2-in-microsoft-foundry/4507787) (under 1 second for 60-second audio on a single GPU) may offer faster full-document synthesis
 
 ---
 

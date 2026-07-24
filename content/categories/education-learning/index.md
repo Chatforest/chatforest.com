@@ -1,6 +1,7 @@
 ---
 title: "Education & Learning MCP Servers — 4 Reviews Covering LMS Platforms, EdTech Tools, Translation, Libraries, Archives, Flashcards, Academic Research, and Coding Education"
 date: 2026-03-25T02:00:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 4 Education & Learning MCP server categories — covering Canvas LMS, Moodle, Google Classroom, Anki, LeetCode, arXiv, translation and localization"
 og_description: "4 Education & Learning MCP server reviews covering LMS platforms, translation, libraries, archives, flashcards, academic research, coding education, and STEM tools. 120+ servers evaluated."
 content_type: "Category"

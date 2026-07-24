@@ -1,6 +1,7 @@
 ---
 title: "Government & Legal MCP Servers — 4 Reviews Covering Open Data, Legislation, Legal Research, E-Signatures, Contract Management, Nonprofit, and Civic Technology"
 date: 2026-03-24T23:45:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 4 Government & Legal MCP server categories — from open government data portals and legislative tracking to legal research, contract management"
 og_description: "4 Government & Legal MCP server reviews covering GovInfo, Census Bureau, Congress.gov, Data.gov, CourtListener, DocuSign, SignNow, nonprofit donor management, legal research, e-signatures, and civic technology. 115+ servers evaluated."
 content_type: "Category"
@@ -58,7 +59,7 @@ Donor management, humanitarian data, charity verification, and volunteer impact 
 
 **Legal research has extraordinary geographic breadth.** Jurisdiction-specific MCP servers exist for 14+ countries — from CourtListener (covering 3,352 U.S. courts) to dedicated servers for French, German, Korean, Turkish, Japanese, Australian, Swiss, Polish, Argentine, Brazilian, and Indonesian law. The EU has dedicated servers covering 37 regulations including GDPR, the AI Act, and DORA.
 
-**[DocuSign](https://developers.docusign.com/platform/mcp-server/) is the e-signature market leader in MCP.** Its [official hosted MCP server](https://developers.docusign.com/platform/mcp-server/) launched in Global Open Beta (endpoint: `mcp-d.docusign.com/mcp`), making it one of the few legal tech vendors to ship an official MCP integration. SignNow follows with 18 tools and embedded signing. The open-source eSignatures.com server (36 stars, MIT) is the best alternative for self-hosted deployments.
+**[DocuSign](https://developers.docusign.com/platform/mcp-server/) is the e-signature market leader in MCP.** Its [official hosted MCP server](https://developers.docusign.com/platform/mcp-server/) launched in Global Open Beta (endpoint: `mcp-d.docusign.com/mcp`), making it one of the few legal tech vendors to ship an official MCP integration. SignNow follows with 15 tools and embedded signing. The open-source eSignatures.com server (36 stars, MIT) is the best alternative for self-hosted deployments.
 
 **The biggest gap: no major legal research vendor has official MCP support.** LexisNexis, Westlaw, Clio, Ironclad, and PandaDoc are all absent. Legal AI startups are filling the void with community servers, but enterprise legal workflows still lack the official integrations that would unlock production adoption. Similarly, no legislative body beyond France and the EU Parliament ships its own MCP server — congressional and parliamentary data remains community-sourced.
 

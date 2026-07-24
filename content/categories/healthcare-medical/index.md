@@ -1,6 +1,7 @@
 ---
 title: "Healthcare & Medical MCP Servers — 3 Reviews Covering FHIR, EHR, Drug Discovery, PubMed, Medical Imaging, Mental Health, and More"
 date: 2026-03-25T03:00:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 3 Healthcare & Medical MCP server categories — covering FHIR/EHR integration, drug discovery, PubMed, clinical trials, medical imaging, genomics, mental"
 og_description: "3 Healthcare & Medical MCP server reviews covering FHIR/EHR, drug discovery, medical imaging, genomics, mental health, and wellness. 85+ servers evaluated."
 content_type: "Category"
@@ -8,7 +9,7 @@ content_type: "Category"
 
 We've reviewed **3 categories** of Healthcare & Medical MCP servers, evaluating over **85 individual servers** across electronic health records, drug discovery, medical research, imaging, genomics, mental health, and wellness tracking. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
-Healthcare is the deepest and most mature vertical MCP category. FHIR proved to be the perfect complement to MCP — healthcare already had a standardized data format, so MCP servers could focus on the AI integration layer rather than data normalization. [WSO2's FHIR server](https://github.com/wso2/fhir-mcp-server) (98 stars) leads EHR integration with SMART-on-FHIR auth, while [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) (101 stars) bundles FDA, PubMed, clinical trials, ICD-10, and DICOM into a single gateway. The [OpenPharma initiative](https://github.com/OpenPharma) maintains 45 coordinated repositories — the largest organized MCP server collection for any industry. [ChEMBL's 22-tool drug discovery server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) and multiple PubMed implementations show genuine demand from biomedical researchers. Innovaccer's HMCP extends the MCP protocol itself for HIPAA compliance — a signal that healthcare takes this technology seriously.
+Healthcare is the deepest and most mature vertical MCP category. FHIR proved to be the perfect complement to MCP — healthcare already had a standardized data format, so MCP servers could focus on the AI integration layer rather than data normalization. [WSO2's FHIR server](https://github.com/wso2/fhir-mcp-server) (98 stars) leads EHR integration with SMART-on-FHIR auth, while [healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) (101 stars) bundles FDA, PubMed, clinical trials, ICD-10, and DICOM into a single gateway. The [OpenPharma initiative](https://github.com/OpenPharma) maintains 45 coordinated repositories — the largest organized MCP server collection for any industry. [ChEMBL's 22-tool drug discovery server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) and multiple PubMed implementations show genuine demand from biomedical researchers. [Innovaccer's HMCP](https://github.com/innovaccer/Healthcare-MCP) extends the MCP protocol itself for HIPAA compliance — a signal that healthcare takes this technology seriously.
 
 ---
 
@@ -22,7 +23,7 @@ The clinical data landscape spans FHIR/EHR integration (6+ competing implementat
 
 ## Pharmaceutical & Drug Discovery
 
-The deepest vertical MCP category we have reviewed — 40+ servers with institutional backing from WSO2, Innovaccer, and the OpenPharma initiative (45 coordinated repositories covering FDA, EMA, DrugBank, ClinicalTrials, PubMed, CDC, and more). Drug discovery has end-to-end MCP coverage: ChEMBL (22 tools for compound search, target analysis, bioactivity, ADMET), DrugBank (17,430+ drugs with sub-10ms SQLite queries), and genomics (NCBI 31 tools across 9 categories). PubMed is the most replicated MCP server in healthcare with 5+ independent implementations.
+The deepest vertical MCP category we have reviewed — 40+ servers with institutional backing from WSO2, Innovaccer, and the OpenPharma initiative (45 coordinated repositories covering FDA, EMA, DrugBank, ClinicalTrials, PubMed, CDC, and more). Drug discovery has end-to-end MCP coverage: ChEMBL (22 tools for compound search, target analysis, bioactivity, ADMET), DrugBank (17,430+ drugs), and genomics (NCBI 31 tools across 9 categories). PubMed is the most replicated MCP server in healthcare with 5+ independent implementations.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|

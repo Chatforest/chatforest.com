@@ -1,6 +1,7 @@
 ---
 title: "Data & Analytics MCP Servers — 7 Reviews Covering Warehouses, BI, Pipelines, Visualization, and Analytics Platforms"
 date: 2026-03-24T23:45:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 7 Data & Analytics MCP server categories — from data warehouses and BI platforms to ETL pipelines, visualization libraries, analytics tools, and annotation."
 og_description: "7 Data & Analytics MCP server reviews covering data warehouses, BI & reporting, ETL pipelines, visualization, analytics platforms, Snowflake, and annotation. 100+ servers evaluated."
 content_type: "Category"
@@ -60,7 +61,7 @@ A fragmented category where AntV dominates by star count. No official servers fr
 
 ## Data Labeling & Annotation
 
-An early-stage sub-category despite the $4B+ market. Only one dedicated MCP server exists (Label Studio). Expect significant growth in the next 6-12 months as annotation platforms catch up.
+An early-stage sub-category. Only one dedicated MCP server exists (Label Studio). Expect significant growth in the next 6-12 months as annotation platforms catch up.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
@@ -82,7 +83,7 @@ An early-stage sub-category despite the $4B+ market. Only one dedicated MCP serv
 
 **Analytics is mid-tier but improving fast.** Google Analytics, PostHog, Amplitude, and Mixpanel all have official servers — unusual vendor density. But most are read-only and relatively new. PostHog stands out with 27+ tools covering the full platform.
 
-**Data labeling is the weakest link.** At 2.5/5, Annotation & Data Labeling has the lowest rating in the category. The $4B+ annotation market has barely touched MCP. CVAT, Argilla, V7, Supervisely, Encord, Scale AI — none have MCP servers yet.
+**Data labeling is the weakest link.** At 2.5/5, Annotation & Data Labeling has the lowest rating in the category. Despite large market demand, the annotation space has barely touched MCP. CVAT, Argilla, V7, Supervisely, Encord, Scale AI — none have MCP servers yet.
 
 ### The data stack maturity curve
 
