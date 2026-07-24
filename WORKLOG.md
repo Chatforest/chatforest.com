@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2621 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-fourth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 24):
+
+1. **guides/mcp-registry-server-discovery.md** — Well-cited page (registry blog, GitHub repo, GitHub Copilot docs, Azure API Center, SEP GitHub issues all linked). No unsourced claims found. Added `sources_audited: 2026-07-24`.
+
+2. **guides/mcp-setup-ai-coding-tools.md** — ADDED inline link for "VS Code 1.102 GA" claim → linked to official GitHub Changelog announcement (July 14, 2025). ADDED inline link for "JetBrains added MCP client support in IntelliJ IDEA 2025.1, built-in MCP server in 2025.2" → linked to JetBrains blog. Both version claims confirmed. Cursor v1.6 September 2025 Resources support confirmed. Added `sources_audited: 2026-07-24`.
+
+3. **guides/mcp-agent-workflow-patterns.md** — CUT "research consistently shows quality plateaus after 2-3 iterations" (no inline primary source; softened to "quality tends to plateau"). ADDED inline source link for Mastra "from the team behind Gatsby, Y Combinator W25" → linked to mastra.ai/about (confirmed: co-founders Sam Bhagwat, Shane Thomas, Abhi Aiyer; YC W25). Added `sources_audited: 2026-07-24`.
+
+4. **guides/mcp-slack-teams-integration.md** — ADDED source links for: Slack MCP server launch (February 17, 2026 — Slack changelog); Dreamforce October 2025 preview (Slack blog). REMOVED unverified "9,000+ active users" claim for korotovsky server (replaced with "one of the most popular community options" + GitHub link). FIXED OWASP 43% claim: was "A 2025 OWASP analysis found 43% of publicly available MCP servers contained command injection vulnerabilities" — replaced with accurate reference to OWASP MCP Top 10 ranking command injection (MCP05) as a top risk, with link to owasp.org/www-project-mcp-top-10/. ADDED Simon Willison "lethal trifecta" source link (simonwillison.net/2025/Jun/16/the-lethal-trifecta/). UPDATED vulnerability disclosure section: added link to primary security advisory (embracethered.com) and CVE-2025-34072 (CVSS 9.3); confirmed May 27 report / May 29 archive timeline. Added `sources_audited: 2026-07-24`.
+
+5. **guides/mcp-vs-cli-ai-agents.md** — ADDED source link for Perplexity CTO Denis Yarats (awesomeagents.ai announcement). ADDED source link for Garry Tan CLI quote (HN item #46099222, confirmed quote "I vibe coded a CLI wrapper in 30 minutes and it worked 100x better"). UPDATED MCP Tool Search 85% reduction: added link to Anthropic engineering blog (anthropic.com/engineering/advanced-tool-use), confirmed January 14, 2026 announcement, 85% token reduction (~134k → ~5k tokens). Added `sources_audited: 2026-07-24`.
+
+6. **guides/fastmcp-production-guide.md** — ADDED inline citation for "most widely used MCP server framework" → linked to FastMCP repo with note "powers roughly 70% of MCP servers per FastMCP repository." Added `sources_audited: 2026-07-24`.
+
+7. **guides/mcp-server-packaging-distribution.md** — FIXED Docker MCP Catalog backtick URL to actual hyperlink (hub.docker.com/u/mcp). FIXED Smithery server count "7,300+" → "thousands of servers" (stale specific number). ADDED source for DXT launch June 2025 (Anthropic Twitter/X announcement link). ADDED source for MCP Registry September 2025 preview (blog.modelcontextprotocol.io). Added `sources_audited: 2026-07-24`.
+
+8. **guides/mcp-credential-secret-management.md** — ADDED primary source for "53% static API keys / 48% plaintext .env files" stat → Astrix Security "State of MCP Server Security 2025" research (5,200 open-source MCP implementations). Added `sources_audited: 2026-07-24`.
+
+9. **guides/mcp-elicitation-explained.md** — ADDED source for "Claude Code Added in v2.1.76 (March 2026)" → linked to claude-world.com release notes (confirmed March 13-14, 2026). Based on MCP specification (2025-11-25) which is already linked. Added `sources_audited: 2026-07-24`.
+
+10. **guides/mcp-error-handling-explained.md** — Well-cited page (MCP specification and JSON-RPC 2.0 specification both linked). All error codes and patterns drawn from the linked specs. No unsourced claims found. Added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via web search):**
+- Slack MCP server launch February 17, 2026: confirmed (Slack developer changelog)
+- Slack Dreamforce preview October 13, 2025: confirmed (Slack blog, Salesforce Ben)
+- Simon Willison "lethal trifecta" primary source: confirmed (simonwillison.net/2025/Jun/16/)
+- Slack vulnerability CVE-2025-34072 timeline: May 27 reported / May 29 archived confirmed (embracethered.com, VulnCheck)
+- OWASP 43% claim: NOT accurate as stated — was about CVE filings in Jan-Feb 2026, not a 2025 OWASP survey. Fixed to accurate OWASP MCP Top 10 reference.
+- Perplexity Denis Yarats announcement: confirmed (awesomeagents.ai, byteiota, others)
+- Garry Tan "I vibe coded a CLI wrapper in 30 minutes and it worked 100x better": confirmed (HN #46099222)
+- MCP Tool Search 85% reduction: confirmed (Anthropic engineering blog, January 14, 2026)
+- VS Code 1.102 GA for MCP: confirmed (GitHub Changelog July 14, 2025)
+- JetBrains 2025.1 MCP client / 2025.2 built-in MCP server: confirmed (JetBrains blog)
+- Mastra "team behind Gatsby, Y Combinator W25": confirmed (mastra.ai/about, YC listing)
+- Astrix Security 53%/48% credential stats: confirmed (5,200 server study)
+- DXT launch June 2025: confirmed (Anthropic X/Twitter announcement)
+- Claude Code v2.1.76 elicitation support March 2026: confirmed (claudeupdates.dev)
+- Windsurf Wave 3 MCP launch: confirmed (testingcatalog.com)
+- Cursor v1.6 September 2025 Resources support: confirmed
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
+
 ## Run 2620 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-third cohort) + Deploy
 
 **Mode:** Citation auditor
