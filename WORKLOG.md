@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2622 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-fifth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 25):
+
+1. **guides/mcp-gateway-proxy-patterns.md** — ADDED source links for three vendor-specific launch claims: Amazon API Gateway MCP proxy support December 2025 (aws.amazon.com/about-aws/whats-new/2025/12/api-gateway-mcp-proxy-support/), Azure Functions MCP extension preview April 2025 (techcommunity.microsoft.com blog), Kong Gateway 3.12 October 2025 (konghq.com blog). Added `sources_audited: 2026-07-24`.
+
+2. **guides/mcp-lifecycle-and-utilities-explained.md** — ADDED inline link to the official MCP specification (2025-03-26) in the intro. ADDED RFC 5424 link to the log levels section. This page is purely spec-based so both additions anchor all downstream claims. Added `sources_audited: 2026-07-24`.
+
+3. **guides/mcp-microservices-service-mesh.md** — ADDED Signadot/New Stack source link for "translation layer between probabilistic LLM reasoning and deterministic microservices" quote (thenewstack.io). Added `sources_audited: 2026-07-24`.
+
+4. **guides/mcp-server-migration-stdio-to-http.md** — ADDED MCP spec link for the SSE deprecation/June 30, 2026 sunset claim (appeared twice without citation). Added `sources_audited: 2026-07-24`.
+
+5. **guides/mcp-server-performance-tuning.md** — ADDED inline benchmark citation for caching ~2,485ms cold-start claim (TM Dev Lab v1 link). ADDED "from the v2 benchmark" inline citation for Rust SDK PR #683 throughput improvement. CUT unsourced "US-East 100-300ms lower latency" geographic claim (replaced with general principle, no specific number). Added `sources_audited: 2026-07-24`.
+
+6. **guides/mcp-database-patterns.md** — ADDED Trend Micro source for SQLite MCP vulnerability disclosure (June 11, 2025 responsible disclosure confirmed). ADDED Equixly source for 43% command injection / 22% path traversal statistics. ADDED DataHub blog link for Block/Goose case study with accurate quote ("hours, days, or even weeks"). ADDED ZenML/Ramp source for Ramp MCP SQLite architecture. CUT entirely unsourced "E-Commerce Reporting: 2 days to 2 minutes" case study (anonymous, no primary source). Added `sources_audited: 2026-07-24`.
+
+7. **guides/mcp-attack-vectors-defense.md** — CORRECTED Smithery Incident: article said "supply chain compromise affected 3,000+ applications" — reality was a path traversal VULNERABILITY (not exploitation; no confirmed exploitation per GitGuardian research). Rewrote with accurate description. CORRECTED Postmark Incident: article said "compromised MCP email server" — reality was a FAKE npm package impersonating Postmark, not Postmark's official server. Rewrote accurately. ADDED AgentSeal source (agentseal.org/blog/mcp-server-security-findings). ADDED Invariant Labs links for both WhatsApp (invariantlabs.ai/blog/whatsapp-mcp-exploited) and GitHub (invariantlabs.ai/blog/mcp-github-vulnerability) attacks. ADDED arXiv:2506.13538 for "5.5% of servers contain tool poisoning" claim. Added `sources_audited: 2026-07-24`.
+
+8. **guides/mcp-devops-cicd.md** — CORRECTED CVE-2025-6514 description: article said "OAuth vulnerability" → actual issue is shell injection (per JFrog blog). ADDED JFrog source link for CVE-2025-6514. ADDED NeighborJack vulnerability source (Virtualization Review article). Added `sources_audited: 2026-07-24`.
+
+9. **guides/mcp-ai-safety-guardrails.md** — CRITICAL FIX: Wassette GitHub URL was WRONG (aspect-build/aspect-workflows → microsoft/wassette). CRITICAL FIX: Bifrost GitHub URL was WRONG (bifrost-platform/bifrost → maximhq/bifrost). ADDED inline links to all framework references: OWASP MCP Top 10, OWASP Agentic Top 10, CoSAI, Adversa AI MCP TOP 25. ADDED JFrog source for CVE-2025-6514. ADDED BleepingComputer source for Asana leak (~1,000 customers). ADDED arXiv:2602.14798 for 142.4x token amplification claim. ADDED inline links to all framework section headings. Added `sources_audited: 2026-07-24`.
+
+10. **guides/mcp-multi-agent-architectures.md** — ADDED IBM ACP merger source (lfaidata.foundation blog, August 29, 2025) for "IBM's ACP merged into A2A in August 2025" claim. Added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via web search):**
+- Smithery incident: Path traversal vulnerability, NO actual exploitation confirmed (GitGuardian research)
+- Postmark incident: Fake npm package (1,643 downloads; not a compromised official server) — The Hacker News, Snyk
+- AgentSeal 1,808 servers / 66% findings: Confirmed (agentseal.org)
+- Trend Micro SQLite: Confirmed (June 11, 2025 responsible disclosure; Anthropic said "out of scope")
+- Invariant Labs WhatsApp: Confirmed (invariantlabs.ai/blog/whatsapp-mcp-exploited)
+- Invariant Labs GitHub: Confirmed (invariantlabs.ai/blog/mcp-github-vulnerability)
+- Equixly 43% cmd injection / 22% path traversal: Confirmed (equixly.com)
+- Kong Gateway 3.12 October 2025: Confirmed (konghq.com blog)
+- Azure Functions MCP April 2025: Confirmed (Microsoft Community Hub blog)
+- Amazon API Gateway December 2025: Confirmed (aws.amazon.com/about-aws/whats-new/2025/12/...)
+- Wassette real URL: microsoft/wassette (NOT aspect-build/aspect-workflows)
+- Bifrost real URL: maximhq/bifrost (NOT bifrost-platform/bifrost — that's a Polkadot bridge)
+- IBM ACP merged into A2A: Confirmed August 29, 2025 (LF AI & Data blog)
+- Asana ~1,000 customers: Confirmed June 5–17, 2025 (BleepingComputer)
+- Token amplification 142.4x: Confirmed (arXiv:2602.14798)
+- arXiv 5.5% tool poisoning: Confirmed (arXiv:2506.13538)
+- NeighborJack vulnerability: Confirmed (Virtualization Review, June 2025)
+- CVE-2025-6514 is shell injection (not OAuth): Confirmed (JFrog blog)
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2621 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-fourth cohort) + Deploy
 
 **Mode:** Citation auditor
