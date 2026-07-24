@@ -35,7 +35,7 @@ The key insight: knowledge graphs don't replace vector databases — they solve 
 
 ## GraphRAG vs Vector RAG: When to Use Which
 
-GraphRAG refers to retrieval-augmented generation that uses a knowledge graph as its retrieval backend instead of (or alongside) a vector store. The approach was [popularized by Microsoft's GraphRAG research](https://www.articsledge.com/post/graphrag-retrieval-augmented-generation) and has since been adopted across the ecosystem.
+GraphRAG refers to retrieval-augmented generation that uses a knowledge graph as its retrieval backend instead of (or alongside) a vector store. The approach was [popularized by Microsoft's GraphRAG research](https://www.microsoft.com/en-us/research/blog/graphrag-unlocking-llm-discovery-on-narrative-private-data/) and has since been adopted across the ecosystem.
 
 ### How GraphRAG Works
 

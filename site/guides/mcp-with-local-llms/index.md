@@ -19,7 +19,7 @@ Three reasons keep coming up:
 
 **Offline operation.** Disconnected environments — air-gapped networks, field work, travel — can still use MCP-powered tool workflows if everything runs locally.
 
-The cost is capability. As of April 2026, the gap is narrowing fast — [Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) jumped from 6.6% to 86.4% tool calling accuracy, and [Qwen3.5](https://qwen.ai/research) models match frontier performance on many benchmarks — but local models still lag behind Claude, GPT-4, and Gemini on complex multi-step tool calling. Simpler tool workflows (single tool, clear parameters) work well. Complex chains with ambiguous inputs need more capable models.
+The cost is capability. As of April 2026, the gap is narrowing fast — [Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) jumped from 6.6% to [86.4% tool calling accuracy](https://ai.google.dev/gemma/docs/capabilities/text/function-calling-gemma4), and [Qwen3.5](https://qwen.ai/research) models match frontier performance on many benchmarks — but local models still lag behind Claude, GPT-4, and Gemini on complex multi-step tool calling. Simpler tool workflows (single tool, clear parameters) work well. Complex chains with ambiguous inputs need more capable models.
 
 ## The Architecture: How Local MCP Works
 

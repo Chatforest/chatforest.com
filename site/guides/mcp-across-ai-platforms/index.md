@@ -80,7 +80,7 @@ For project-level sharing, Claude Code uses a `.mcp.json` file in the project ro
 
 **Supported transports:** stdio, SSE, Streamable HTTP.
 
-**Notable features:** Claude supports MCP sampling (letting the server request LLM completions), resource subscriptions, and prompt templates — the broadest feature set of any platform based on published documentation. As of April 2026, Claude Code supports up to 500,000 characters per MCP tool result, significantly expanding capacity for large data sources. Claude Cowork, Anthropic's collaborative agent workspace, is now generally available on macOS and Windows with expanded analytics and OpenTelemetry support.
+**Notable features:** Claude supports MCP sampling (letting the server request LLM completions), resource subscriptions, and prompt templates — the broadest feature set of any platform based on published documentation. As of April 2026, [Claude Code supports up to 500,000 characters per MCP tool result](https://code.claude.com/docs/en/mcp), significantly expanding capacity for large data sources. [Claude Cowork](https://www.anthropic.com/product/claude-cowork), Anthropic's agentic desktop workspace, reached general availability on macOS and Windows in April 2026.
 
 ### OpenAI ChatGPT
 
@@ -295,7 +295,7 @@ If you are building MCP servers intended for broad compatibility, several patter
 
 ## What's Coming
 
-The MCP ecosystem continues to evolve rapidly. The official [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) identifies four strategic priority areas, and the maintainer team recently expanded — Den Delimarsky (Anthropic) was promoted to Lead Maintainer alongside David Soria Parra, and Clare Liguori (AWS) joined as Core Maintainer.
+The MCP ecosystem continues to evolve rapidly. The official [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) identifies four strategic priority areas, and the maintainer team recently expanded — [Den Delimarsky (Anthropic) was promoted to Lead Maintainer alongside David Soria Parra, and Clare Liguori (AWS) joined as Core Maintainer](https://blog.modelcontextprotocol.io/posts/2026-04-08-maintainer-update/).
 
 **Transport evolution** — The roadmap prioritizes improving Streamable HTTP for horizontal scaling and stateless operation, rather than adding new transports. A standard metadata format via `.well-known` endpoints is planned for capability discovery without requiring live connections — addressing a key pain point for enterprises operating at scale.
 
@@ -307,7 +307,7 @@ The MCP ecosystem continues to evolve rapidly. The official [2026 MCP Roadmap](h
 
 **Enterprise readiness** — Audit trails, SSO-integrated auth, gateway behavior, and configuration portability are the main enterprise pain points identified in the roadmap. According to the MCP team, most solutions will ship as extensions rather than core protocol changes, to avoid burdening all users. Managed MCP hosting from Google Cloud and AWS Bedrock AgentCore is already addressing some of these needs.
 
-**Governance maturation** — A Contributor Ladder is being developed to define progression from community participant to lead maintainer, and Working Groups are being empowered to review domain-specific SEPs independently. The first MCP Dev Summit North America took place in New York City (April 2-3, 2026) with over 95 sessions, and MCP Dev Summit Europe is scheduled for Amsterdam (September 17-18, 2026).
+**Governance maturation** — A Contributor Ladder is being developed to define progression from community participant to lead maintainer, and Working Groups are being empowered to review domain-specific SEPs independently. The [first MCP Dev Summit North America took place in New York City (April 2-3, 2026) with over 95 sessions](https://events.linuxfoundation.org/2026/02/24/agentic-ai-foundation-unveils-mcp-dev-summit-north-america-2026-schedule/), and MCP Dev Summit Europe is scheduled for Amsterdam (September 17-18, 2026).
 
 ## Conclusion
 

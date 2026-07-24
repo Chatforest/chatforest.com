@@ -335,7 +335,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_
 <li>Azure generates an MCP endpoint URL</li>
 </ol>
 <p>This requires no code changes. Azure&rsquo;s AI gateway handles the MCP protocol, and you can add rate limiting, JWT auth, and IP filtering through policies.</p>
-<p><strong>Limitations</strong>: Only supports tools (not resources or prompts), and requires a paid APIM tier (not Consumption).</p>
+<p><strong>Limitations</strong>: <a href="https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server">For managed REST APIs exposed as MCP servers, Azure APIM currently supports tools only — not resources or prompts.</a> For external MCP servers connected through APIM, tools and resources are supported, but prompts are not. The Consumption tier is not listed as supported; Classic tiers (Developer, Basic, Standard, Premium) are required.</p>
 <h3 id="stainless">Stainless</h3>
 <p><a href="https://www.stainless.com/mcp">Stainless</a> auto-generates MCP servers from OpenAPI specs and publishes them as npm packages. This is designed for API providers who want to ship MCP support alongside their existing SDKs.</p>
 <p>End users can filter tools at runtime:</p>

@@ -304,7 +304,7 @@ mcp_call() {
 
 ## MCP Error Codes Reference
 
-MCP uses standard JSON-RPC error codes plus some MCP-specific additions:
+MCP uses [standard JSON-RPC error codes](https://modelcontextprotocol.io/specification/2025-03-26/server/utilities/errors) plus some MCP-specific additions:
 
 | Code | Name | Common Causes |
 |---|---|---|

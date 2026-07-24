@@ -171,8 +171,8 @@ All server-to-client communication went through the SSE stream. All client-to-se
 
 The ecosystem is transitioning away from HTTP+SSE:
 
-- **Atlassian** maintains HTTP+SSE support until June 30, 2026
-- **Keboola** deprecated SSE transport on April 1, 2026
+- **Atlassian** [maintains HTTP+SSE support until June 30, 2026](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484)
+- **Keboola** [deprecated SSE transport on April 1, 2026](https://changelog.keboola.com/sse-transport-deprecation-migration-to-streamable-http/)
 - **Most MCP SDKs** now support both, with Streamable HTTP as the default
 
 ### Backwards Compatibility

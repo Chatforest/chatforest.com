@@ -304,7 +304,7 @@ mcp <span style="color:#f92672">=</span> FastMCP(<span style="color:#e6db74">&#3
 <ul>
 <li>Excludes build tools from the final image</li>
 <li>Runs as a non-root user</li>
-<li>Produces a smaller image (often 50-70% smaller than single-stage)</li>
+<li>Produces a smaller image than single-stage builds</li>
 </ul>
 <h2 id="transport-options">Transport Options</h2>
 <p>How the MCP client and server communicate depends on where the server runs.</p>
@@ -515,7 +515,7 @@ logging<span style="color:#f92672">.</span>basicConfig(
     format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#34;</span>,
     handlers<span style="color:#f92672">=</span>[logging<span style="color:#f92672">.</span>StreamHandler(stream<span style="color:#f92672">=</span>sys<span style="color:#f92672">.</span>stderr)]
 )
-</code></pre></div><p>FastMCP 3.x supports <a href="https://opentelemetry.io/">OpenTelemetry</a> integration for distributed tracing across multi-server setups.</p>
+</code></pre></div><p>FastMCP supports <a href="https://opentelemetry.io/">OpenTelemetry</a> integration for distributed tracing across multi-server setups.</p>
 <h3 id="cloud-platform-deployment">Cloud Platform Deployment</h3>
 <p>Dockerized MCP servers deploy to any container platform:</p>
 <table>

@@ -311,7 +311,7 @@ WWW-Authenticate: Bearer resource_metadata=&quot;https://mcp.example.com/.well-k
 <h2 id="real-world-vulnerabilities-what-went-wrong">Real-World Vulnerabilities: What Went Wrong</h2>
 <p>The MCP auth ecosystem&rsquo;s first major security crisis hit in mid-2025, revealing fundamental implementation flaws that affected production deployments.</p>
 <h3 id="consent-bypass-attacks-julyaugust-2025">Consent Bypass Attacks (July–August 2025)</h3>
-<p>Security researchers at Obsidian Security discovered that MCP servers acting as OAuth proxies used a <strong>single static <code>client_id</code></strong> for all connecting MCP clients. This created a devastating attack chain:</p>
+<p><a href="https://www.obsidiansecurity.com/blog/when-mcp-meets-oauth-common-pitfalls-leading-to-one-click-account-takeover">Security researchers at Obsidian Security</a> discovered that MCP servers acting as OAuth proxies used a <strong>single static <code>client_id</code></strong> for all connecting MCP clients. This created a devastating attack chain:</p>
 <ol>
 <li><strong>Shared consent cache:</strong> Once a user grants consent for the proxy&rsquo;s <code>client_id</code>, the upstream SaaS authorization server remembers that decision. Subsequent requests from <em>any</em> MCP client see the same <code>client_id</code> and skip the consent prompt.</li>
 <li><strong>Attacker-initiated flow:</strong> An attacker completes the MCP consent layer themselves, then sends the resulting redirect URL to the victim. The victim lands at the SaaS authorization endpoint without realizing an attacker initiated the flow.</li>
@@ -321,9 +321,9 @@ WWW-Authenticate: Bearer resource_metadata=&quot;https://mcp.example.com/.well-k
 <h3 id="the-confused-deputy-problem">The Confused Deputy Problem</h3>
 <p>MCP servers that hold OAuth tokens for multiple users but fail to properly isolate actions create classic confused deputy vulnerabilities. An attacker tricks the server into using another user&rsquo;s credentials by exploiting the token-to-session mapping.</p>
 <h3 id="cve-2025-6514-mcp-remote-shell-injection">CVE-2025-6514: mcp-remote Shell Injection</h3>
-<p>The popular <code>mcp-remote</code> OAuth proxy library (used by over 437,000 developer environments) was vulnerable to a critical attack: a malicious MCP server could respond with an <code>authorization_endpoint</code> containing shell command injection. The proxy passed this endpoint directly to the system shell, enabling arbitrary code execution on developer machines.</p>
+<p>The popular <code>mcp-remote</code> OAuth proxy library (<a href="https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/">over 437,000 downloads at time of disclosure</a>) was vulnerable to a critical attack: a malicious MCP server could respond with an <code>authorization_endpoint</code> containing shell command injection. The proxy passed this endpoint directly to the system shell, enabling arbitrary code execution on developer machines.</p>
 <h3 id="cve-2025-49596-mcp-inspector-rce">CVE-2025-49596: MCP Inspector RCE</h3>
-<p>Anthropic&rsquo;s own MCP Inspector tool had a critical remote code execution vulnerability combining a browser flaw (0.0.0.0 Day) with a CSRF weakness, allowing attackers to execute arbitrary commands on developers&rsquo; machines.</p>
+<p><a href="https://www.tenable.com/blog/how-tenable-research-discovered-a-critical-remote-code-execution-vulnerability-on-anthropic">Anthropic&rsquo;s own MCP Inspector tool had a critical remote code execution vulnerability</a> combining a browser flaw (0.0.0.0 Day) with a CSRF weakness, allowing attackers to execute arbitrary commands on developers&rsquo; machines.</p>
 <h3 id="timeline-and-response">Timeline and Response</h3>
 <ul>
 <li><strong>July–August 2025:</strong> Vulnerabilities discovered and responsibly disclosed</li>

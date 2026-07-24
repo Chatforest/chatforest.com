@@ -3,7 +3,7 @@
 > A comprehensive guide to MCP server marketplaces, monetization platforms, pricing strategies, and publishing workflows — covering mcp.so, Glama, Smithery, MCPize, Apify, Agent
 
 
-MCP SDK downloads have reached approximately 97 million per month. Over 11,000 to 17,000+ MCP servers now exist across various registries and directories. Yet according to published reports, fewer than 5% of those servers are monetized in any way. The MCP economy is emerging fast, and the window for early movers is wide open.
+MCP SDK downloads [reached approximately 97 million per month](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) as of March 2026. Over 11,000 to 17,000+ MCP servers now exist across various registries and directories. Yet according to published reports, fewer than 5% of those servers are monetized in any way. The MCP economy is emerging fast, and the window for early movers is wide open.
 
 This is a research-based guide. We do not claim to have tested, tried, or used any of the platforms described here hands-on. All information is drawn from published documentation, public announcements, community reports, and developer accounts. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -15,10 +15,10 @@ For related context, see our guides on [MCP Registry & Server Discovery](/guides
 
 The numbers paint a clear picture of an ecosystem in rapid expansion:
 
-- **~97 million monthly SDK downloads** with reported 85%+ month-over-month growth
+- [**~97 million monthly SDK downloads**](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) — the Python and TypeScript SDKs combined, as of March 2026
 - **11,000–17,000+ MCP servers** listed across various registries and directories
 - **Less than 5% monetized** — the vast majority of servers remain free and open source
-- **Early revenue signals**: according to published accounts, 21st.dev reportedly hit $10K monthly recurring revenue (MRR) within 6 weeks of launch, with zero marketing spend, using a freemium model (5 free requests, then paid)
+- **Early revenue signals**: according to published accounts, 21st.dev reportedly hit $10K monthly recurring revenue (MRR) within 6 weeks of launch, with zero marketing spend, using a freemium model with a minimal free tier to drive conversion
 
 This pattern has historical parallels. The early iOS App Store (2008–2010), WordPress plugin ecosystem, and Shopify app marketplace all went through a similar arc: explosive growth in free offerings, followed by a monetization wave as developers discovered demand and platforms built payment infrastructure. MCP appears to be at the inflection point between those two phases.
 
@@ -85,7 +85,7 @@ MCPize appears designed as a turnkey monetization layer: wrap an existing MCP se
 
 ### Apify
 
-Apify reports over 36,000 active developers and 130,000+ monthly signups on its platform. Based on documentation, it uses a **pay-per-event model** built around its `Actor.charge()` API — developers define billable events (a scrape completed, data returned, etc.) and Apify handles metering and billing.
+Apify [reports over 36,000 active developers and 130,000+ monthly signups](https://apify.com/mcp/developers) on its platform. Based on documentation, it uses a **pay-per-event model** built around its `Actor.charge()` API — developers define billable events (a scrape completed, data returned, etc.) and Apify handles metering and billing.
 
 Notable aspects based on published reports:
 
@@ -178,7 +178,7 @@ Based on documented examples and published reports from the MCP ecosystem:
 
 | Model | Best For | Example | Pros | Cons |
 |-------|----------|---------|------|------|
-| **Freemium** | Broad-appeal tools, developer adoption | 21st.dev (5 free reqs, ~6% conversion reported) | Organic discovery, low friction, viral growth | Most users never pay; need volume |
+| **Freemium** | Broad-appeal tools, developer adoption | 21st.dev (minimal free tier; $10K MRR reportedly reached in 6 weeks) | Organic discovery, low friction, viral growth | Most users never pay; need volume |
 | **Per-Call / Usage-Based** | Commodity functions, variable-cost operations | Apify `Actor.charge()` | Fair to users, scales with value | Revenue unpredictable; hard to forecast |
 | **Subscription / Tiered** | Consistent-use tools, enterprise users | Monthly plans with request limits | Predictable revenue, simpler billing | May overshoot or undershoot value |
 | **Outcome-Based** | High-value results (lead gen, data enrichment) | Charge only on successful results | Aligns incentives perfectly | Complex to define "success"; disputes |
@@ -187,7 +187,7 @@ Based on documented examples and published reports from the MCP ecosystem:
 
 ### Key Observations from Published Data
 
-- **Freemium with low free tiers** appears to be the most successful early monetization pattern. The reported ~6% conversion rate at 21st.dev (with only 5 free requests) suggests that developers are willing to pay when the tool delivers clear value quickly.
+- **Freemium with low free tiers** appears to be the most successful early monetization pattern. The $10K MRR reportedly reached by 21st.dev in six weeks suggests that developers are willing to pay when the tool delivers clear value quickly.
 - **Per-call pricing** works well on platforms like Apify where the cost of each operation is variable and the value is easily attributable to a single call.
 - **Subscription models** are more common for tools used daily or integrated into workflows, where predictable billing matters more than precise usage alignment.
 - **Outcome-based pricing** is the highest-margin model but requires careful definition of what constitutes a successful outcome and robust tracking to verify it.

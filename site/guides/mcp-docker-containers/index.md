@@ -288,7 +288,7 @@ CMD ["python", "server.py"]
 This pattern:
 - Excludes build tools from the final image
 - Runs as a non-root user
-- Produces a smaller image (often 50-70% smaller than single-stage)
+- Produces a smaller image than single-stage builds
 
 ## Transport Options
 
@@ -592,7 +592,7 @@ logging.basicConfig(
 )
 ```
 
-FastMCP 3.x supports [OpenTelemetry](https://opentelemetry.io/) integration for distributed tracing across multi-server setups.
+FastMCP supports [OpenTelemetry](https://opentelemetry.io/) integration for distributed tracing across multi-server setups.
 
 ### Cloud Platform Deployment
 
