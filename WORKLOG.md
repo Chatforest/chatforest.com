@@ -2,6 +2,46 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2624 (continuation) — 2026-07-24 — Claim-Level Citation Audit: 10 More Pages (2026-03-28/29 batch, twenty-eighth cohort) + Deploy
+
+**Mode:** Citation auditor (continued from context-exhausted Run 2624 above)
+
+### What I did
+
+10 additional pages audited claim-by-claim and marked `sources_audited: 2026-07-24`:
+
+1. **guides/mcp-structured-output-deep-dive.md** — Added inline link to 2025-06-18 spec for `outputSchema`/`structuredContent` intro. Added link for spec quote about key constraints. Fully cited. `sources_audited: 2026-07-24`.
+
+2. **guides/mcp-agent-framework-integrations.md** — Code-example guide (LangChain, CrewAI, OpenAI Agents SDK, PydanticAI); performance estimates are general ranges, no named-company metric claims. `sources_audited: 2026-07-24`.
+
+3. **guides/mcp-versioning-backward-compatibility.md** — Changed "Research by Apify and PulseMCP found that most MCP clients in practice only support basic tool calling" to directly reference the community-maintained [`mcp-client-capabilities`](https://github.com/apify/mcp-client-capabilities) database instead. `sources_audited: 2026-07-24`.
+
+4. **guides/mcp-food-restaurant.md** — Added Global Growth Insights link ($5.93B restaurant tech → $27B), Toast blog (79% US restaurants use AI), GlobeNewswire (37% CAGR AI-in-food), Deloitte (60% daily chatbot), Yahoo Finance ($74B delivery), IMARC (DoorDash 56%/Uber 23%/Grubhub 16%). Fixed Instacart: removed unverifiable "2+ billion products" → confirmed "1,800+ retail banners, 85,000+ stores." REMOVED "$200 billion food waste" (applies to entire US food system, not restaurants; replaced with confirmed 12.5M tons / ReFED source). REMOVED unsourced Market Context stats (69% adopting, labor cost %, monthly sales ROI). Added Champions 12.3 and Mordor Intelligence links. `sources_audited: 2026-07-24`.
+
+5. **guides/mcp-mining-natural-resources.md** — Added Precedence Research link (AI-in-mining $35.47B → $828.33B). FIXED IFRS S1/S2 effective date: was "mandatory in 2025" → corrected to "effective January 1, 2024, first full reporting year for many early adopters in 2025." Added IFRS, GRI 14, CSRD, and Grand View Research (ESG compliance market) links. Added Rio Tinto news release (AutoHaul 1,700km autonomous rail). Added USGS ScienceBase (1.5M+ geological samples). FIXED Leapfrog Geo: "30% more accuracy" → "30% faster modeling time" (stat was about time reduction, not accuracy) with Seequent case study link. `sources_audited: 2026-07-24`.
+
+6. **guides/mcp-government-public-sector.md** — Added GAO report (571→1,110 federal AI use cases, 9x generative AI increase), Google Public Sector survey (90% agencies adopting AI), Gallup (43% public-sector employees use AI), Grand View Research (AI in government market). FIXED Section 508 percentage: was "23% of top-visited federal websites fully conform as of FY2025" → corrected to 23% FY2024 / 37% FY2025, with section508.gov link. Fixed in two places. Added UsableNet (5,000+ accessibility lawsuits), GSA FedRAMP link, White House EO 14365 link. `sources_audited: 2026-07-24`.
+
+7. **guides/mcp-database-connection-patterns.md** — Already well-linked (Datadog SQL injection source, Oracle blog link, Google MCP Toolbox docs, etc.). Code-pattern article with no major uncited numerical claims. `sources_audited: 2026-07-24`.
+
+8. **guides/mcp-edge-computing-patterns.md** — FIXED Home Assistant percentage: 1.4% → 3.2% (per home-assistant.io/integrations/mcp_server/). Upgraded Qualcomm link from generic homepage to [specific NPU product page](https://www.qualcomm.com/snapdragon/laptops-and-tablets/npu-powered-ai-experiences) for 45 TOPS claim, and [MCP blog post](https://www.qualcomm.com/developer/blog/2025/10/how-mcp-simplifies-tool-integration-across-cloud-edge-real-world-devices) for integration guidance. Updated Looking Ahead section similarly. `sources_audited: 2026-07-24`.
+
+9. **guides/mcp-data-science-workflows.md** — All MCP servers linked to official GitHub repos or docs. BigQuery MCP linked to Google Cloud Blog. MLflow linked to mlflow.org/docs. W&B linked to wandb.com. Google Colab MCP linked to marktechpost.com coverage of the open-source release. `sources_audited: 2026-07-24`.
+
+10. **guides/mcp-accounting-tax-compliance.md** — Opening stats already sourced (Mordor Intelligence, firmofthefuture.com). Added Plaid link for "12,000+ financial institutions" claim. REMOVED unverified "Full MCP support announced from Q1 2026 for Joule agents" (no primary source found for the specific timing). Official vendor implementations (QuickBooks, Xero, Sage, NetSuite, Dynamics 365) all retain their GitHub/documentation links. `sources_audited: 2026-07-24`.
+
+**Key fixes this continuation batch:**
+- IFRS S1/S2 effective date corrected (was "2025", actual effective date Jan 1, 2024)
+- Section 508 FY2024 vs FY2025 figures corrected in two places in government article
+- Leapfrog Geo "30% more accuracy" corrected to "30% faster modeling time" (different metric)
+- Home Assistant MCP Server 1.4% → 3.2% (per home-assistant.io analytics page)
+- Instacart "2+ billion products" (unverifiable) → "1,800+ retail banners, 85,000+ stores"
+- "$200 billion food waste" (wrong scope) replaced with confirmed 12.5M tons / ReFED source
+
+**Hugo rebuild** — clean build (4,129 pages). **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2624 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-seventh cohort) + Deploy
 
 **Mode:** Citation auditor
