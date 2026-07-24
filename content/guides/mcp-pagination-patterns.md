@@ -5,6 +5,7 @@ description: "How to implement pagination in MCP servers — covering the spec's
 content_type: "Guide"
 card_description: "MCP tools that return thousands of rows will choke your AI agent. Here's how to paginate properly at every level."
 last_refreshed: 2026-04-14
+sources_audited: 2026-07-24
 ---
 
 An MCP tool that returns 10,000 database rows in a single response will overwhelm any AI agent's context window. The tokens get consumed, the model loses focus, and the user gets a slow, expensive, unhelpful answer. Pagination solves this — but MCP handles it differently than traditional REST APIs.

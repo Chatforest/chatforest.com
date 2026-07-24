@@ -5,6 +5,7 @@ description: "A comprehensive guide to MCP authentication and authorization — 
 content_type: "Guide"
 card_description: "Authentication is the hardest part of deploying MCP servers in production. The spec has evolved dramatically — from coupling auth and resource servers to mandating OAuth 2.1 with PKCE, Protected Resource Metadata, and Client ID Metadata Documents. Meanwhile, real-world vulnerabilities exposed consent bypass attacks and token confusion flaws. This guide covers the full MCP auth landscape: the spec itself, three registration approaches, enterprise gateway patterns, SSO integration, known vulnerabilities, auth provider choices, and practical implementation paths for both local and remote servers."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Authentication is the hardest problem in the MCP ecosystem. It's the area that has evolved the most since the protocol launched in late 2024, the area that drew the sharpest community criticism, and the area where real-world vulnerabilities caused the most damage. If you're deploying MCP servers beyond your local machine, you need to understand auth deeply.
@@ -214,7 +215,7 @@ The MCP auth ecosystem's first major security crisis hit in mid-2025, revealing 
 
 ### Consent Bypass Attacks (July–August 2025)
 
-Security researchers at Obsidian Security discovered that MCP servers acting as OAuth proxies used a **single static `client_id`** for all connecting MCP clients. This created a devastating attack chain:
+[Security researchers at Obsidian Security](https://www.obsidiansecurity.com/blog/when-mcp-meets-oauth-common-pitfalls-leading-to-one-click-account-takeover) discovered that MCP servers acting as OAuth proxies used a **single static `client_id`** for all connecting MCP clients. This created a devastating attack chain:
 
 1. **Shared consent cache:** Once a user grants consent for the proxy's `client_id`, the upstream SaaS authorization server remembers that decision. Subsequent requests from *any* MCP client see the same `client_id` and skip the consent prompt.
 2. **Attacker-initiated flow:** An attacker completes the MCP consent layer themselves, then sends the resulting redirect URL to the victim. The victim lands at the SaaS authorization endpoint without realizing an attacker initiated the flow.
@@ -228,11 +229,11 @@ MCP servers that hold OAuth tokens for multiple users but fail to properly isola
 
 ### CVE-2025-6514: mcp-remote Shell Injection
 
-The popular `mcp-remote` OAuth proxy library (used by over 437,000 developer environments) was vulnerable to a critical attack: a malicious MCP server could respond with an `authorization_endpoint` containing shell command injection. The proxy passed this endpoint directly to the system shell, enabling arbitrary code execution on developer machines.
+The popular `mcp-remote` OAuth proxy library ([over 437,000 downloads at time of disclosure](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/)) was vulnerable to a critical attack: a malicious MCP server could respond with an `authorization_endpoint` containing shell command injection. The proxy passed this endpoint directly to the system shell, enabling arbitrary code execution on developer machines.
 
 ### CVE-2025-49596: MCP Inspector RCE
 
-Anthropic's own MCP Inspector tool had a critical remote code execution vulnerability combining a browser flaw (0.0.0.0 Day) with a CSRF weakness, allowing attackers to execute arbitrary commands on developers' machines.
+[Anthropic's own MCP Inspector tool had a critical remote code execution vulnerability](https://www.tenable.com/blog/how-tenable-research-discovered-a-critical-remote-code-execution-vulnerability-on-anthropic) combining a browser flaw (0.0.0.0 Day) with a CSRF weakness, allowing attackers to execute arbitrary commands on developers' machines.
 
 ### Timeline and Response
 

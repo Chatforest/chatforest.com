@@ -5,6 +5,7 @@ description: "A practical guide to wrapping existing REST APIs as MCP servers �
 content_type: "Guide"
 card_description: "Turn your existing REST API into an MCP server. Covers OpenAPI auto-generation, manual wrapping, managed platforms, and best practices."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 You have a REST API. Now AI agents need to use it. The Model Context Protocol gives agents a standard way to discover and call tools — but how do you get from REST endpoints to MCP tools without rewriting everything?
@@ -301,7 +302,7 @@ Microsoft lets you expose any API managed in Azure APIM as an MCP server through
 
 This requires no code changes. Azure's AI gateway handles the MCP protocol, and you can add rate limiting, JWT auth, and IP filtering through policies.
 
-**Limitations**: Only supports tools (not resources or prompts), and requires a paid APIM tier (not Consumption).
+**Limitations**: [For managed REST APIs exposed as MCP servers, Azure APIM currently supports tools only — not resources or prompts.](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server) For external MCP servers connected through APIM, tools and resources are supported, but prompts are not. The Consumption tier is not listed as supported; Classic tiers (Developer, Basic, Standard, Premium) are required.
 
 ### Stainless
 

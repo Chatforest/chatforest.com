@@ -5,6 +5,7 @@ description: "How to run MCP servers in Docker containers — covers Docker MCP 
 content_type: "Guide"
 card_description: "Docker brings isolation, portability, and security to MCP servers. This guide covers the Docker MCP Toolkit, custom Dockerfiles, transport options, Compose workflows, and production deployment patterns."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Running MCP servers directly on your host means installing runtimes, managing dependencies, and trusting every server with full access to your system. Docker changes the equation: each MCP server runs in its own isolated container with controlled access to files, networks, and secrets.
@@ -292,7 +293,7 @@ CMD ["python", "server.py"]
 This pattern:
 - Excludes build tools from the final image
 - Runs as a non-root user
-- Produces a smaller image (often 50-70% smaller than single-stage)
+- Produces a smaller image than single-stage builds
 
 ## Transport Options
 
@@ -596,7 +597,7 @@ logging.basicConfig(
 )
 ```
 
-FastMCP 3.x supports [OpenTelemetry](https://opentelemetry.io/) integration for distributed tracing across multi-server setups.
+FastMCP supports [OpenTelemetry](https://opentelemetry.io/) integration for distributed tracing across multi-server setups.
 
 ### Cloud Platform Deployment
 

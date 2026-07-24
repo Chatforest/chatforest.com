@@ -5,6 +5,7 @@ description: "How to connect AI agents to knowledge graphs via MCP — GraphRAG 
 content_type: "Guide"
 card_description: "Vector search finds similar text. Knowledge graphs find connected facts. Here's how MCP brings graph-powered reasoning to AI agents — and when you need it."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Vector databases find text that *sounds* similar to your query. Knowledge graphs find facts that are *structurally connected* to your query. For AI agents that need to reason across relationships — "which team members worked on projects that depend on this service?" or "what drugs interact with this patient's current medications?" — graph structure matters more than embedding similarity.
@@ -39,7 +40,7 @@ The key insight: knowledge graphs don't replace vector databases — they solve 
 
 ## GraphRAG vs Vector RAG: When to Use Which
 
-GraphRAG refers to retrieval-augmented generation that uses a knowledge graph as its retrieval backend instead of (or alongside) a vector store. The approach was [popularized by Microsoft's GraphRAG research](https://www.articsledge.com/post/graphrag-retrieval-augmented-generation) and has since been adopted across the ecosystem.
+GraphRAG refers to retrieval-augmented generation that uses a knowledge graph as its retrieval backend instead of (or alongside) a vector store. The approach was [popularized by Microsoft's GraphRAG research](https://www.microsoft.com/en-us/research/blog/graphrag-unlocking-llm-discovery-on-narrative-private-data/) and has since been adopted across the ecosystem.
 
 ### How GraphRAG Works
 

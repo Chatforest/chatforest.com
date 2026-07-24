@@ -5,6 +5,7 @@ description: "A practical guide to debugging MCP servers and connections — cov
 content_type: "Guide"
 card_description: "Your MCP server isn't working and you don't know why. Here's the systematic approach to finding and fixing the problem."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Your MCP server isn't connecting. Or it connects but tools don't appear. Or tools appear but calls fail silently. MCP debugging is uniquely frustrating because servers run as separate processes — often launched by clients you don't control — and the protocol's stdio transport means a single stray `print()` can corrupt the entire communication channel.
@@ -308,7 +309,7 @@ mcp_call() {
 
 ## MCP Error Codes Reference
 
-MCP uses standard JSON-RPC error codes plus some MCP-specific additions:
+MCP uses [standard JSON-RPC error codes](https://modelcontextprotocol.io/specification/2025-03-26/server/utilities/errors) plus some MCP-specific additions:
 
 | Code | Name | Common Causes |
 |---|---|---|

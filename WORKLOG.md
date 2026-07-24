@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2620 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-third cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 23):
+
+1. **guides/mcp-with-local-llms.md** — ADDED Google AI function calling docs link for the specific "86.4% tool calling accuracy" claim (in addition to existing blog.google link for Gemma 4 release). All other major claims already had inline links (MCPHost/ollmcp GitHub links, Qwen3.5/Llama4 primary docs links, LM Studio changelog, Open WebUI docs, llama.cpp news source). Added `sources_audited: 2026-07-24`.
+
+2. **guides/mcp-debugging-guide.md** — ADDED source link to MCP specification error handling for the error codes table ("MCP uses standard JSON-RPC error codes..."). All other claims were already procedural or had inline links (RFC 5424, Sentry, Datadog, mcp-proxy tools all linked). Added `sources_audited: 2026-07-24`.
+
+3. **guides/rest-api-to-mcp-server.md** — CORRECTED Azure APIM limitations: the article said "Only supports tools (not resources or prompts)" but per Microsoft Learn docs, external MCP servers in APIM support tools AND resources (just not prompts). Also clarified tier support (Classic tiers — Developer, Basic, Standard, Premium). ADDED Microsoft Learn link. Added `sources_audited: 2026-07-24`.
+
+4. **guides/mcp-docker-containers.md** — REMOVED unsourced "50-70% smaller" claim for multi-stage builds (no primary benchmark source). REMOVED version number "3.x" from "FastMCP 3.x supports OpenTelemetry" (version-specific claim not sourced). Added `sources_audited: 2026-07-24`.
+
+5. **guides/mcp-transports-explained.md** — ADDED source links for both SSE deprecation migration entries: Atlassian's "June 30, 2026" deadline (Atlassian Community forums) and Keboola's "April 1, 2026" deadline (Keboola changelog). Added `sources_audited: 2026-07-24`.
+
+6. **guides/mcp-authentication-oauth.md** — FIXED "over 437,000 developer environments" → "over 437,000 downloads at time of disclosure" (JFrog source link added). ADDED JFrog blog source for CVE-2025-6514 mcp-remote shell injection. ADDED Tenable research blog source for CVE-2025-49596 MCP Inspector RCE. ADDED Obsidian Security blog source for consent bypass attacks / Square MCP vulnerability. Added `sources_audited: 2026-07-24`.
+
+7. **guides/mcp-knowledge-graphs.md** — REPLACED articsledge.com secondary link for "Microsoft's GraphRAG research" with the primary Microsoft Research blog post link. Added `sources_audited: 2026-07-24`.
+
+8. **guides/mcp-marketplace-monetization.md** — ADDED Anthropic AAIF announcement link for "97 million monthly SDK downloads" claim. REMOVED unsourced "85%+ month-over-month growth" figure from lede. REMOVED specific "5 free requests" detail from 21st.dev example (couldn't verify vs. actual pricing; kept "minimal free tier" description). ADDED Apify developer page source for "36,000 active developers and 130,000+ monthly signups". Added `sources_audited: 2026-07-24`.
+
+9. **guides/mcp-across-ai-platforms.md** — ADDED Claude Code MCP docs link for "500,000 characters per MCP tool result" claim. REPLACED unsourced "expanded analytics and OpenTelemetry support" for Claude Cowork with confirmed Anthropic product page link. ADDED MCP maintainer update blog link for Den Delimarsky/Clare Liguori promotion claims. ADDED Linux Foundation events link for MCP Dev Summit "over 95 sessions" claim. Added `sources_audited: 2026-07-24`.
+
+10. **guides/mcp-pagination-patterns.md** — Already very well cited (Axiom, JetBrains, Microsoft, Workato, arXiv all linked inline). No changes needed; just added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via web search):**
+- Atlassian SSE deprecation June 30, 2026: confirmed (Atlassian Community forum announcement)
+- Keboola SSE deprecation April 1, 2026: confirmed (Keboola changelog)
+- CVE-2025-6514 mcp-remote: confirmed (JFrog blog; 437,000 downloads not "developer environments")
+- CVE-2025-49596 MCP Inspector RCE: confirmed (Tenable, SOCRadar, Oligo Security multiple sources)
+- Obsidian Security consent bypass / Square MCP: confirmed (Obsidian Security blog)
+- Microsoft GraphRAG primary source: confirmed (microsoft.com/en-us/research/blog)
+- MCP SDK 97M downloads: confirmed (Anthropic AAIF announcement, March 2026)
+- MCP Dev Summit 95 sessions: confirmed (Linux Foundation events announcement)
+- Den Delimarsky Lead Maintainer, Clare Liguori Core Maintainer: confirmed (MCP blog April 8, 2026)
+- Gemma 4 86.4% tool calling accuracy: confirmed (Google AI docs function calling page)
+- Azure APIM limitations: CORRECTED — supports tools+resources for external MCP servers (not just tools as article stated)
+- Apify 36K developers / 130K monthly signups: confirmed (Apify MCP developer page)
+- Claude Cowork GA: confirmed April 9, 2026 on macOS/Windows
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2619 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-27/28 batch, twenty-second cohort) + Deploy
 
 **Mode:** Citation auditor

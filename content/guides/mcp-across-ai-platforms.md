@@ -5,6 +5,7 @@ description: "How to use MCP servers with every major AI platform — covers Cla
 content_type: "Guide"
 card_description: "Build an MCP server once, use it everywhere. This guide covers MCP configuration for Claude, ChatGPT, Gemini, Copilot, Amazon Q, and coding tools — with platform comparison, config examples, and cross-platform tips."
 last_refreshed: 2026-04-15
+sources_audited: 2026-07-24
 ---
 
 When Anthropic open-sourced the Model Context Protocol in late 2024, MCP was a single-vendor affair. That changed fast. By early 2026, OpenAI, Google, Microsoft, and Amazon have all adopted MCP, and the protocol now lives under the Linux Foundation's Agentic AI Foundation (AAIF) — co-founded by Anthropic, OpenAI, and Block, with support from Google, Microsoft, AWS, Cloudflare, and Bloomberg — as a vendor-neutral standard. The ecosystem has grown to over 10,000 active public MCP servers according to published reports, spanning individual developer tools to Fortune 500 deployments — a clear signal that MCP has moved from experiment to infrastructure.
@@ -84,7 +85,7 @@ For project-level sharing, Claude Code uses a `.mcp.json` file in the project ro
 
 **Supported transports:** stdio, SSE, Streamable HTTP.
 
-**Notable features:** Claude supports MCP sampling (letting the server request LLM completions), resource subscriptions, and prompt templates — the broadest feature set of any platform based on published documentation. As of April 2026, Claude Code supports up to 500,000 characters per MCP tool result, significantly expanding capacity for large data sources. Claude Cowork, Anthropic's collaborative agent workspace, is now generally available on macOS and Windows with expanded analytics and OpenTelemetry support.
+**Notable features:** Claude supports MCP sampling (letting the server request LLM completions), resource subscriptions, and prompt templates — the broadest feature set of any platform based on published documentation. As of April 2026, [Claude Code supports up to 500,000 characters per MCP tool result](https://code.claude.com/docs/en/mcp), significantly expanding capacity for large data sources. [Claude Cowork](https://www.anthropic.com/product/claude-cowork), Anthropic's agentic desktop workspace, reached general availability on macOS and Windows in April 2026.
 
 ### OpenAI ChatGPT
 
@@ -299,7 +300,7 @@ If you are building MCP servers intended for broad compatibility, several patter
 
 ## What's Coming
 
-The MCP ecosystem continues to evolve rapidly. The official [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) identifies four strategic priority areas, and the maintainer team recently expanded — Den Delimarsky (Anthropic) was promoted to Lead Maintainer alongside David Soria Parra, and Clare Liguori (AWS) joined as Core Maintainer.
+The MCP ecosystem continues to evolve rapidly. The official [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) identifies four strategic priority areas, and the maintainer team recently expanded — [Den Delimarsky (Anthropic) was promoted to Lead Maintainer alongside David Soria Parra, and Clare Liguori (AWS) joined as Core Maintainer](https://blog.modelcontextprotocol.io/posts/2026-04-08-maintainer-update/).
 
 **Transport evolution** — The roadmap prioritizes improving Streamable HTTP for horizontal scaling and stateless operation, rather than adding new transports. A standard metadata format via `.well-known` endpoints is planned for capability discovery without requiring live connections — addressing a key pain point for enterprises operating at scale.
 
@@ -311,7 +312,7 @@ The MCP ecosystem continues to evolve rapidly. The official [2026 MCP Roadmap](h
 
 **Enterprise readiness** — Audit trails, SSO-integrated auth, gateway behavior, and configuration portability are the main enterprise pain points identified in the roadmap. According to the MCP team, most solutions will ship as extensions rather than core protocol changes, to avoid burdening all users. Managed MCP hosting from Google Cloud and AWS Bedrock AgentCore is already addressing some of these needs.
 
-**Governance maturation** — A Contributor Ladder is being developed to define progression from community participant to lead maintainer, and Working Groups are being empowered to review domain-specific SEPs independently. The first MCP Dev Summit North America took place in New York City (April 2-3, 2026) with over 95 sessions, and MCP Dev Summit Europe is scheduled for Amsterdam (September 17-18, 2026).
+**Governance maturation** — A Contributor Ladder is being developed to define progression from community participant to lead maintainer, and Working Groups are being empowered to review domain-specific SEPs independently. The [first MCP Dev Summit North America took place in New York City (April 2-3, 2026) with over 95 sessions](https://events.linuxfoundation.org/2026/02/24/agentic-ai-foundation-unveils-mcp-dev-summit-north-america-2026-schedule/), and MCP Dev Summit Europe is scheduled for Amsterdam (September 17-18, 2026).
 
 ## Conclusion
 

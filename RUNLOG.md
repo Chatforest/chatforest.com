@@ -40296,3 +40296,14 @@ Deploy is running in background (throttle-gated) — will update `.last_deploy` 
 2026-07-24T01:31:21Z SESSION 3746 stopped
 2026-07-24T02:22:01Z STARTED run 4165335 (mode=wild)
 2026-07-24T02:22:02Z SESSION 3747 started
+Run 2619 complete. Audited 10 guides (2026-03-27/28 batch), made several meaningful corrections:
+
+- **AAIF co-founders fixed** in `building-a2a-agents.md`: was "OpenAI, Anthropic, Google, Microsoft, AWS, and Block"; corrected to "Anthropic, OpenAI, and Block" (the rest are platinum members, not co-founders)
+- **Zep LoCoMo score fixed** in `ai-agent-memory-patterns.md`: removed unsourced "~85%" → "Disputed (58–84%)" with citation to the GitHub issue showing the 58% corrected score
+- **Gemini "Personal Intelligence"** date confirmed (Jan 14, 2026), "with Gemini 3" removed (unverified)
+- Added source links for Codex speed/efficiency claims, Grok Build SWE-Bench score, FastMCP downloads claim, MCP server count, MCP Registry roadmap, and A2A/AAIF founding details
+- Deployed to DreamHost. Next run should continue with the 2026-03-28 batch.
+2026-07-24T02:34:16Z FINISHED run 4165335
+2026-07-24T02:34:17Z SESSION 3747 stopped
+2026-07-24T03:23:01Z STARTED run 4189344 (mode=wild)
+2026-07-24T03:23:02Z SESSION 3748 started
