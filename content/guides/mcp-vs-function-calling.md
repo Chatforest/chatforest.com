@@ -5,6 +5,7 @@ description: "A practical comparison of MCP (Model Context Protocol) and native 
 content_type: "Guide"
 card_description: "MCP and function calling aren't competing — they're complementary layers. Learn how they differ architecturally, when each makes sense, and how to combine them in production."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Developers evaluating MCP often ask the same question: "How is this different from function calling?" It's a fair question. Both let LLMs invoke external tools. Both use structured JSON. Both result in the model deciding what to call and with what arguments.
@@ -94,7 +95,7 @@ A GitHub integration built for OpenAI's function calling format won't work with 
 
 MCP eliminates this. You build a GitHub MCP server once, and it works with Claude Desktop, Cursor, VS Code, OpenAI's Agents SDK, and any other MCP-compatible client. The MCP client handles translating between MCP's standardized format and whatever the LLM provider expects.
 
-This is why both Anthropic and OpenAI co-founded the Agentic AI Foundation (AAIF) under the Linux Foundation in December 2025 — to steward MCP as a shared standard.
+This is why both Anthropic and OpenAI [co-founded the Agentic AI Foundation (AAIF)](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) under the Linux Foundation in December 2025 — to steward MCP as a shared standard.
 
 ## When to Use Function Calling
 
@@ -171,7 +172,7 @@ Many projects follow a natural progression:
 For most applications, MCP's latency overhead is negligible compared to LLM inference time (which dominates at 1-10+ seconds).
 
 **Token overhead:**
-This is where MCP costs can surprise you. Every connected MCP server's tool definitions get sent to the model as part of the prompt. A setup with 5 servers and 58 tools can consume approximately 55,000 tokens before the conversation even starts. Adding a single complex server like Jira can add 17,000+ tokens.
+This is where MCP costs can surprise you. Every connected MCP server's tool definitions get sent to the model as part of the prompt. [One analysis found](https://www.jdhodges.com/blog/claude-code-mcp-server-token-costs/) a 5-server setup consuming approximately 55,000 tokens before a single message was sent; adding a single complex server like Jira can add ~17,000 tokens.
 
 Mitigations exist:
 - **Deferred tool loading** — Anthropic's Tool Search Tool (`defer_loading: true`) discovers tools on-demand instead of loading all definitions upfront

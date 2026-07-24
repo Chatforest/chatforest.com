@@ -5,6 +5,7 @@ description: "A cookbook of practical MCP testing recipes — schema drift detec
 content_type: "Guide"
 card_description: "Unit tests are table stakes. Here are 10 testing recipes that catch the bugs your test suite misses — schema drift, regressions, security holes, and performance cliffs."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-24
 ---
 
 You've written unit tests for your MCP server's tool handlers. You've got integration tests that run through `InMemoryTransport`. Good — that's the foundation. But MCP servers fail in ways that unit tests don't catch: schemas drift silently between releases, tool outputs change shape under load, and security vulnerabilities hide in input handling that "looks fine" in dev.

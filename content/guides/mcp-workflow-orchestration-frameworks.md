@@ -5,6 +5,7 @@ description: "A comprehensive guide to MCP workflow orchestration — covering d
 content_type: "Guide"
 card_description: "Composing MCP tools into workflows is one thing. Orchestrating them reliably in production — with retries, checkpointing, human-in-the-loop, and durable execution — is another. This guide covers the frameworks and patterns that make MCP workflows production-ready: mcp-agent with Temporal-backed durability, Mastra's graph engine, the code execution pattern that cuts token costs 98.7%, the inverted agent pattern, async Tasks, and lessons from real-world deployments."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Composing MCP tools into multi-step workflows is straightforward — you describe what needs to happen, and the AI agent calls tools in sequence. But production workflows demand more. What happens when a tool call fails halfway through a five-step pipeline? How do you checkpoint progress so a crashed agent can resume? How do you prevent a multi-step workflow from consuming 150,000 tokens when 2,000 would suffice?
@@ -77,7 +78,7 @@ fast-agent also implements the **MAKER error reduction** pattern — a structure
 
 ### Mastra (22.3K Stars, $13M Funding)
 
-[Mastra](https://github.com/mastra-ai/mastra) is a TypeScript AI agent framework from the Gatsby team, backed by Y Combinator (W25 batch) with $13M in funding. Launched January 2026, it reached 22.3K GitHub stars and 300K+ weekly npm downloads by March 2026.
+[Mastra](https://github.com/mastra-ai/mastra) is a TypeScript AI agent framework from the Gatsby team, backed by [Y Combinator (W25 batch)](https://www.ycombinator.com/companies/mastra) with [$13M in seed funding](https://mastra.ai/blog/seed-round). Launched January 2026, it reached 22.3K GitHub stars and 300K+ weekly npm downloads by March 2026.
 
 **Graph-based workflow engine:**
 
@@ -161,7 +162,7 @@ The most impactful orchestration pattern to emerge in 2026 isn't a framework —
 | Raw MCP tool calls | 12 | 150,000 |
 | Code Execution | 4 | 2,000 |
 
-That's a **98.7% token reduction** (150K → 2K tokens). On 12 Stripe API tasks benchmarked by Anthropic, Code Mode used 58% fewer tokens than raw MCP.
+That's a **98.7% token reduction** (150K → 2K tokens) for a Google Drive to Salesforce workflow.
 
 **How it works:**
 
@@ -329,7 +330,7 @@ Gateways aggregate tools from multiple MCP servers behind a unified endpoint, si
 | **Kong MCP Registry** | — | Kong ecosystem | Centralized governance within Kong Konnect |
 | **[MCP Gateway & Registry](https://github.com/agentic-community/mcp-gateway-registry)** | — | Open-source | Semantic search via FAISS indexing |
 
-Composio at 18,370+ stars and 500+ managed integrations has become the default managed gateway — providing a unified MCP endpoint to hundreds of tools without managing individual server connections.
+Composio at 18,370+ GitHub stars and 500+ managed integrations has become the default managed gateway — providing a unified MCP endpoint to hundreds of tools without managing individual server connections.
 
 ## Production Case Studies
 

@@ -5,6 +5,7 @@ description: "A comprehensive guide to Anthropic's MCP ecosystem — covering Cl
 content_type: "Guide"
 card_description: "Anthropic created MCP and has woven it into every Claude product — Desktop, Code, the API, and the web interface. This guide covers every integration point with configuration examples, SDK details, and practical guidance for choosing the right approach."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-24
 ---
 
 Anthropic didn't just adopt MCP — they created it. The Model Context Protocol started as an internal Anthropic project, was [open-sourced in November 2024](https://www.anthropic.com/news/model-context-protocol), and has since grown into an industry standard with 97 million monthly SDK downloads and adoption by every major AI platform. In December 2025, Anthropic [donated MCP](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) to the Agentic AI Foundation under the Linux Foundation, establishing open governance while remaining a platinum member and core maintainer.
@@ -376,7 +377,7 @@ Anthropic maintains the two official MCP SDKs that implement the full specificat
 
 ### TypeScript SDK (`@modelcontextprotocol/sdk`)
 
-- **Latest version:** 1.28.0 (March 25, 2026)
+- **Latest version:** [1.28.0](https://github.com/modelcontextprotocol/typescript-sdk/releases) (March 25, 2026)
 - **Install:** `npm install @modelcontextprotocol/sdk`
 - **GitHub:** [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk)
 - **Dependents:** 36,000+ packages on npm
@@ -391,7 +392,7 @@ Key features:
 
 ### Python SDK (`mcp` package)
 
-- **Latest version:** 1.26.0 (January 24, 2026)
+- **Latest version:** [1.26.0](https://pypi.org/project/mcp/) (January 24, 2026)
 - **Install:** `pip install mcp` or `uv add "mcp[cli]"`
 - **GitHub:** [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
 
@@ -407,7 +408,7 @@ Key features:
 
 - **FastMCP 3.0** (January 2026) added component versioning, granular authorization, OpenTelemetry instrumentation, multiple provider types (FileSystem, Skills, OpenAPI), hot reload, and custom providers
 - Currently at version **3.1.1**
-- Claims to power approximately 70% of MCP servers across all languages
+- [Claims to power approximately 70% of MCP servers across all languages](https://github.com/PrefectHQ/fastmcp) (per FastMCP's own README)
 
 ### Combined SDK Downloads
 
@@ -439,7 +440,7 @@ On December 9, 2025, Anthropic donated MCP to the **Agentic AI Foundation (AAIF)
 
 **Platinum members:** Amazon Web Services, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, and OpenAI
 
-**100+ total members** across the foundation
+**[100+ total members](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)** across the foundation
 
 Three projects were contributed at launch:
 1. **Model Context Protocol (MCP)** — by Anthropic

@@ -5,6 +5,7 @@ description: "How MCP and RAG work together — covering vector database MCP ser
 content_type: "Guide"
 card_description: "RAG retrieves knowledge. MCP connects to tools and data. Here's how they work together — and when to use each — for building AI systems that are both informed and effective."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 RAG gives AI models knowledge. MCP gives them capabilities. In production, you usually need both — an agent that can retrieve relevant documents *and* take actions through structured tool interfaces. But the boundary between these approaches has blurred as "agentic RAG" and MCP-based retrieval patterns converge.
@@ -288,7 +289,7 @@ How does MCP-based retrieval compare to established RAG frameworks like LangChai
 
 - Official MCP servers exist for Qdrant, Milvus, and Chroma, with community servers for Pinecone and others
 - The RAG-MCP paper demonstrated using retrieval to manage MCP tool selection at scale
-- Agentic RAG patterns are becoming standard — [57% of organizations](https://medium.com/@Micheal-Lanham/pipeline-rag-vs-agentic-rag-vs-knowledge-graph-rag-what-actually-works-and-when-47a26649a457) now deploy agents in production
+- Agentic RAG patterns are becoming standard across production AI deployments
 - Most production AI systems combine RAG for knowledge retrieval with MCP for tool use
 
 ### What's Emerging

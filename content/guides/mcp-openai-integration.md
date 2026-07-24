@@ -5,6 +5,7 @@ description: "A comprehensive guide to OpenAI's MCP integration — covering the
 content_type: "Guide"
 card_description: "OpenAI adopted MCP in March 2025 and has since woven it into every layer of their platform — the Responses API, Agents SDK, ChatGPT Developer Mode, Apps SDK, and Codex. This guide covers every integration point with code examples, security patterns, and practical guidance."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-24
 ---
 
 When Sam Altman [announced](https://x.com/OpenAIDevs/status/1904957755829481737) in March 2025 that "people love MCP and we are excited to add support across our products," it marked a turning point. The Model Context Protocol — created by Anthropic and open-sourced in late 2024 — went from a single-vendor experiment to an industry standard overnight. OpenAI's adoption meant that the two largest AI labs were now backing the same tool integration protocol.
@@ -137,7 +138,7 @@ response = client.responses.create(
 
 ### Model Support
 
-The MCP tool type works with GPT-4o series, GPT-4.1 series, and o-series reasoning models (o3, o4-mini). As of March 2026, GPT-5.3-Codex is also supported for Codex-specific workflows.
+The MCP tool type works with GPT-4o series, GPT-4.1 series, and o-series reasoning models (o3, o4-mini). See the [OpenAI models documentation](https://platform.openai.com/docs/models) for the current list of models supporting the MCP tool type.
 
 ### Limitations
 
@@ -473,7 +474,7 @@ For a comprehensive treatment of MCP security risks and mitigations, see our [MC
 ### Use the Apps SDK when:
 - Your tool needs interactive UI (charts, forms, previews)
 - You want cross-platform reach (ChatGPT + Claude + VS Code)
-- You're building a product for ChatGPT's 800+ million user base
+- You're building a product for [ChatGPT's large global user base](https://openai.com/index/chatgpt-1-year/)
 
 ### Use Codex MCP when:
 - You need AI coding agents to access external context

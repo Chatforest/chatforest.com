@@ -5,6 +5,7 @@ description: "How MCP's Tasks primitive enables long-running operations for AI a
 content_type: "Guide"
 card_description: "MCP's new Tasks primitive lets agent operations run for minutes or hours without timing out. Here's how to implement them."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Every MCP server developer eventually hits the same wall: a tool call that takes longer than the transport timeout allows.
@@ -100,7 +101,7 @@ This means existing client progress UI — spinners, progress bars, status messa
 
 ## Implementing Tasks with FastMCP
 
-[FastMCP](https://gofastmcp.com/servers/tasks), which powers an estimated 70% of Python MCP servers, already supports the Tasks primitive with a straightforward decorator-based API.
+[FastMCP](https://gofastmcp.com/servers/tasks), which [claims to power 70% of MCP servers across all languages](https://github.com/PrefectHQ/fastmcp), already supports the Tasks primitive with a straightforward decorator-based API.
 
 ### Basic Implementation
 
