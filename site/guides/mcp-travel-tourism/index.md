@@ -45,7 +45,7 @@ Flight search is the most developed category in the travel MCP ecosystem, with 2
 
 ### Official Enterprise Servers
 
-**ExpediaGroup/expedia-travel-recommendations-mcp** (14 stars) is the official Expedia MCP server — one of the first major online travel agencies to ship an MCP integration. It provides four endpoints covering hotel, flight, activity, and car rental recommendations through both stdio and streamable-http protocols. This is significant as a signal of enterprise adoption: Expedia was among seven launch partners for ChatGPT's MCP-based integrations.
+**ExpediaGroup/expedia-travel-recommendations-mcp** (14 stars) is the official Expedia MCP server — one of the first major online travel agencies to ship an MCP integration. It provides four endpoints covering hotel, flight, activity, and car rental recommendations through both stdio and streamable-http protocols. This is significant as a signal of enterprise adoption: Expedia was among [seven launch partners for ChatGPT's MCP-based apps](https://openai.com/index/introducing-apps-in-chatgpt/) (alongside Booking.com, Canva, Coursera, Figma, Spotify, and Zillow).
 
 **Kiwi.com** launched its MCP server in August 2025, becoming the first OTA to publicly ship an MCP integration. While not open-sourced on GitHub, this marked an inflection point for MCP adoption in the travel industry.
 
@@ -88,7 +88,7 @@ Flight search is the most developed category in the travel MCP ecosystem, with 2
 
 ### Official Enterprise Adoption
 
-Beyond dedicated MCP servers, the broader travel industry is integrating MCP at the platform level. Booking.com and Expedia were among seven launch partners for ChatGPT's MCP-based applications. Apaleo launched an MCP server for hotel property management in September 2025. These enterprise adoptions signal that MCP is moving from developer tooling to production travel infrastructure.
+Beyond dedicated MCP servers, the broader travel industry is integrating MCP at the platform level. Booking.com and Expedia were among the [seven launch partners for ChatGPT's MCP-based apps](https://openai.com/index/introducing-apps-in-chatgpt/). Apaleo launched an MCP server for hotel property management in September 2025. These enterprise adoptions signal that MCP is moving from developer tooling to production travel infrastructure.
 
 
 ## Maps and Navigation
@@ -358,7 +358,7 @@ The travel MCP ecosystem is notable for the number of official or enterprise-bac
 
 **Official MCP servers from mapping platforms.** Baidu Maps (415 stars), Mapbox (325 stars), and Stadia Maps (21 stars) all provide official MCP servers. Google Maps integration exists through multiple community servers but not an official Google MCP implementation. These mapping servers provide the foundational location infrastructure that all other travel applications build upon.
 
-**OTA adoption.** Expedia shipped an official MCP server (14 stars). Kiwi.com launched its MCP server in August 2025, becoming the first OTA to do so publicly. Booking.com was among seven launch partners for ChatGPT's MCP-based applications. These adoptions suggest that major online travel agencies see MCP as a distribution channel — a way for their inventory to be accessible through AI agents.
+**OTA adoption.** Expedia shipped an official MCP server (14 stars). Kiwi.com launched its MCP server in August 2025, becoming the first OTA to do so publicly. Booking.com was among the [seven launch partners for ChatGPT's MCP-based apps](https://openai.com/index/introducing-apps-in-chatgpt/). These adoptions suggest that major online travel agencies see MCP as a distribution channel — a way for their inventory to be accessible through AI agents.
 
 **Review platform integration.** Yelp's official MCP server and TripAdvisor's community MCP integration (plus TripAdvisor's partnership with Perplexity) indicate that review platforms are positioning for AI-mediated discovery — where travelers find restaurants and attractions through agent recommendations rather than manual search.
 
@@ -405,9 +405,9 @@ Several significant travel categories lack meaningful MCP coverage.
 
 ## Market Context
 
-The travel technology market is substantial and growing. Global travel technology spending reached an estimated $11-15 billion in 2025, growing at 5-8% annually and projected to reach $25 billion by 2035. AI adoption in travel is accelerating dramatically: the AI in travel market was valued at $222 billion in 2026 and is projected to reach $710 billion by 2030 at a 33.7% CAGR.
+AI adoption in travel is accelerating dramatically: the [AI in travel market was valued at $222 billion in 2026 and is projected to reach $710 billion by 2030 at a 33.7% CAGR](https://www.researchandmarkets.com/reports/6035331/artificial-intelligence-ai-in-travel-market).
 
-Consumer adoption is keeping pace with investment. Approximately 40% of global travelers used AI tools for travel planning in 2025, with adoption significantly higher among millennials and Gen Z (62%). Nearly 25% of travelers used generative AI specifically for trip planning by late 2025 — a threefold increase from 2022. Among US adults, 36% say they would delegate entire trip planning to an AI agent.
+Consumer adoption is keeping pace with investment. Travelers across demographics are increasingly using AI tools for trip planning and booking, with especially strong uptake among millennials and Gen Z.
 
 MCP's role in this market is as a distribution layer. For travel platforms, shipping an MCP server means their inventory becomes accessible through any AI agent that speaks the protocol — whether that's Claude, ChatGPT, Gemini, or a custom travel planning agent. For travelers, MCP means their AI assistant can seamlessly query multiple booking platforms, check real-time conditions, and manage logistics through a single conversational interface.
 

@@ -5,9 +5,10 @@ description: "AI agents connecting to manufacturing systems via MCP: 115+ server
 content_type: "Guide"
 card_description: "Manufacturing runs on layers of specialized systems — PLCs, SCADA, MES, ERP, CAD — each with its own protocols and data formats. This guide covers 115+ MCP servers across the manufacturing ecosystem, from Siemens TIA Portal and OPC-UA to SolidWorks, SAP, ROS robotics, and 3D printing, plus architecture patterns for predictive maintenance, quality control, and smart factory orchestration."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
-Manufacturing is among the most complex integration challenges in any industry. A single factory might have PLCs from Siemens, Rockwell, and Mitsubishi running production lines, a SCADA system monitoring processes, an MES tracking work orders, an ERP system managing materials and finances, CAD tools designing products, a CMMS scheduling maintenance, and an army of sensors streaming data through OPC-UA, MQTT, and Modbus. These layers evolved over decades with different vendors, protocols, and data formats — and bridging them has traditionally required expensive middleware, custom integrations, and specialized engineering expertise. The global AI-in-manufacturing market reached $34.18 billion in 2025, growing at 35.3% CAGR toward $155 billion by 2030, driven by predictive maintenance, quality inspection, and production optimization.
+Manufacturing is among the most complex integration challenges in any industry. A single factory might have PLCs from Siemens, Rockwell, and Mitsubishi running production lines, a SCADA system monitoring processes, an MES tracking work orders, an ERP system managing materials and finances, CAD tools designing products, a CMMS scheduling maintenance, and an army of sensors streaming data through OPC-UA, MQTT, and Modbus. These layers evolved over decades with different vendors, protocols, and data formats — and bridging them has traditionally required expensive middleware, custom integrations, and specialized engineering expertise. The [AI in manufacturing market reached $34.18 billion in 2025, growing at 35.3% CAGR toward $155 billion by 2030](https://www.marketsandmarkets.com/PressReleases/artificial-intelligence-manufacturing.asp), driven by predictive maintenance, quality inspection, and production optimization.
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to these manufacturing systems. Rather than building custom integrations for each industrial platform, MCP-connected agents can read PLC data, query SCADA historians, interact with CAD models, pull ERP records, and monitor IoT sensors through defined tool interfaces. The protocol brings AI capabilities to an industry where system integration has always been the hardest problem. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
@@ -231,7 +232,7 @@ Beckhoff's open architecture supporting MCP for integrating language models with
 
 ### ThingWorx (Velotic)
 
-**ThingWorx 10.1** includes announced MCP server support. PTC sold Kepware/ThingWorx to TPG for $725M in late 2025; the product now operates under the Velotic brand. While MCP support is mentioned in release notes, no public MCP server has been released yet.
+**ThingWorx 10.1** includes announced MCP server support. PTC [announced the sale of Kepware/ThingWorx to TPG for up to $725M](https://investor.ptc.com/resources/news/news-details/2025/TPG-to-Acquire-PTCs-Industrial-Connectivity-and-IoT-Businesses/default.aspx) in November 2025 and [completed the divestiture in 2026](https://www.ptc.com/en/news/2026/ptc-completes-divestiture-of-kepware-and-thingworx-businesses) (actual cash proceeds: $523M). While MCP support is mentioned in release notes, no public MCP server has been released yet.
 
 ## CAD, CAM, and Engineering Design
 
@@ -747,11 +748,11 @@ Connecting AI agents to manufacturing systems introduces critical security and s
 
 Manufacturing OT networks control physical processes — motors, valves, heaters, presses. A compromised AI agent with write access to a PLC could cause equipment damage, production stoppages, or physical harm to workers. The consequences of a security breach in manufacturing are not just data loss — they are physical.
 
-- **Manufacturing is the #1 targeted industry for cyberattacks** for four consecutive years (IBM X-Force)
-- **50% of organizations** report cybersecurity incidents across OT systems (Fortinet 2025)
-- **Average manufacturing breach cost**: $4.88 million (IBM, 2024)
-- **53% of MCP servers rely on insecure static secrets** (API keys, PATs); only 8.5% use OAuth
-- **492 publicly exposed MCP servers** have been identified as vulnerable to abuse
+- **[Manufacturing is the #1 targeted industry for cyberattacks](https://www.prnewswire.com/news-releases/2025-ibm-x-force-threat-index-large-scale-credential-theft-escalates-threat-actors-pivot-to-stealthier-tactics-302430850.html)** for four consecutive years (IBM X-Force 2025)
+- **50% of organizations** report [cybersecurity incidents across OT systems](https://www.fortinet.com/blog/business-and-technology/key-findings-from-the-fortinet-2025-operational-technology-security-report) (Fortinet 2025)
+- **[Average industrial sector breach cost](https://www.ibm.com/think/insights/cost-of-a-data-breach-industrial-sector)**: $5.56 million (IBM, 2024) — 13% above the $4.88M global average
+- **[53% of MCP servers rely on insecure static secrets](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/)** (API keys, PATs); only 8.5% use OAuth
+- **[492 publicly exposed MCP servers](https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/mcp-security-network-exposed-servers-are-backdoors-to-your-private-data)** have been identified as vulnerable to abuse
 
 ### Air Gap Erosion
 
@@ -844,24 +845,7 @@ The **Dynamics 365 MCP Server** (official Microsoft) or **Odoo MCP** covers ERP 
 
 ## Market Context
 
-The convergence of AI and manufacturing is accelerating across multiple dimensions:
-
-- **AI in manufacturing**: $34.18 billion (2025) → $155 billion by 2030 (35.3% CAGR)
-- **Generative AI in smart manufacturing**: $468 million (2026) → $5 billion by 2034 (34.5% CAGR)
-- **Manufacturing execution systems**: $18.6 billion (2026) → $56.7 billion by 2034 (14.9% CAGR)
-- **Predictive maintenance**: $17.1 billion (2026) → $97.4 billion by 2034 (24.3% CAGR)
-- **Digital twin market**: $49.5 billion (2026) → $328.5 billion by 2033 (16% CAGR)
-- **Industrial IoT**: Projected to surpass $602 billion in 2026
-
-Adoption statistics tell a story of rapid transformation:
-- 47% global smart manufacturing adoption in early 2026 (12% year-over-year increase)
-- 40%+ of manufacturers adopting AI for scheduling systems
-- 75% of companies have adopted digital-twin technologies of medium or higher complexity
-- 70% of industrial enterprises investing in automation technology
-- AI predictive maintenance reduces unplanned downtime by 43%
-- Digital twin virtual commissioning reduces on-site commissioning time by 52%
-
-The MCP ecosystem itself has reached significant scale: 97 million+ monthly SDK downloads, 5,800+ MCP servers, and 300+ MCP clients as of late 2025.
+The convergence of AI and manufacturing is accelerating. The [AI in manufacturing market reached $34.18 billion in 2025 and is projected to grow to $155 billion by 2030 at a 35.3% CAGR](https://www.marketsandmarkets.com/PressReleases/artificial-intelligence-manufacturing.asp), driven by predictive maintenance, quality inspection, and production optimization. For a broader set of manufacturing AI market data, see our [manufacturing operations guide](/guides/mcp-manufacturing-industrial/).
 
 ## Key Takeaways
 

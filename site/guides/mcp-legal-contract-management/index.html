@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>Legal work runs on information — statutes, case law, regulations, contracts, client documents, compliance frameworks, and precedent. A single matter might require searching federal and state codes, reviewing dozens of contracts, checking regulatory requirements across jurisdictions, pulling documents from a firm&rsquo;s DMS, and producing analysis that meets professional responsibility standards. The challenge isn&rsquo;t just finding information — it&rsquo;s synthesizing it across systems while maintaining the confidentiality, accuracy, and audit trails the profession demands.</p>
-<p>The market reflects the urgency. AI in legal services reached an estimated $1.75–4.59 billion in 2025, depending on the research source and scope definition. Growth projections range from 13% to 28% CAGR, with estimates reaching $7.4–10.8 billion by 2030–2035. Law firm AI adoption jumped from 19% to 79% among legal professionals in a single year. Legal tech spending surged 9.7% as firms race to integrate AI tools. Corporate legal team adoption more than doubled in the same period.</p>
+<p>The market reflects the urgency. AI in legal services reached an estimated $1.75–4.59 billion in 2025, depending on the research source and scope definition. Growth projections range from 13% to 28% CAGR, with estimates reaching $7.4–10.8 billion by 2030–2035. <a href="https://www.clio.com/resources/legal-trends/">Law firm AI adoption jumped from 19% to 79%</a> among legal professionals in a single year.</p>
 <p>MCP provides a structured protocol for connecting AI assistants to legal data sources and tools. Rather than copying text between systems or relying on AI that can only process what you paste into a chat window, MCP-connected agents can query legal databases, search across jurisdictions, pull contract data from CLM systems, check regulatory compliance, and interact with document management platforms — all through defined tool interfaces with proper authentication and access controls.</p>
 <p>This guide covers the legal MCP ecosystem — legal research servers, jurisdiction-specific law databases, contract and e-signature platforms, regulatory compliance tools, document management integrations, and architecture patterns for AI-assisted legal workflows. Our analysis draws on published documentation, open-source repositories, vendor announcements, and legal industry reporting — we research and analyze rather than deploying these systems ourselves. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI.</p>
 <h2 id="why-legal-work-needs-mcp">Why Legal Work Needs MCP</h2>
@@ -254,7 +254,7 @@
 <p>DocuSign has released an official MCP server in beta, available through their developer portal. The server enables AI agents to send documents for eSignature, track agreement status, manage templates, and automate workflows through natural language. Additionally, CData provides a read-only DocuSign MCP server (<code>CDataSoftware/docusign-mcp-server-by-cdata</code>) for querying DocuSign data.</p>
 <h3 id="spotdraft-mcp-server-alpha">SpotDraft MCP Server (Alpha)</h3>
 <p><strong>SpotDraft/spotdraft-mcp</strong> | <strong>License:</strong> Not specified | <strong>Language:</strong> Not specified | <strong>Status:</strong> Alpha</p>
-<p><a href="https://www.spotdraft.com">SpotDraft</a>, a contract lifecycle management platform backed by Qualcomm (valuation approaching $400M), released an <a href="https://github.com/SpotDraft/spotdraft-mcp">alpha MCP server</a> in April 2026. The server integrates SpotDraft&rsquo;s API into agentic workflows, enabling AI agents to:</p>
+<p><a href="https://www.spotdraft.com">SpotDraft</a>, a contract lifecycle management platform <a href="https://techcrunch.com/2026/01/26/qualcomm-backs-spotdraft-to-scale-on-device-contract-ai-with-valuation-doubling-toward-400m/">backed by Qualcomm with valuation approaching $400M</a>, released an <a href="https://github.com/SpotDraft/spotdraft-mcp">alpha MCP server</a> in April 2026. The server integrates SpotDraft&rsquo;s API into agentic workflows, enabling AI agents to:</p>
 <ul>
 <li>Retrieve contract status and key metadata directly from SpotDraft</li>
 <li>Pull contract data into external AI workflows</li>
@@ -499,7 +499,7 @@
 <h2 id="security-and-ethical-considerations">Security and Ethical Considerations</h2>
 <p>Legal AI involves some of the most sensitive data and highest professional responsibility standards of any industry. MCP deployments must address several critical concerns.</p>
 <h3 id="attorney-client-privilege">Attorney-Client Privilege</h3>
-<p>A landmark ruling from the Southern District of New York in February 2026 (Judge Rakoff) found that AI-generated documents created via consumer AI tools (specifically Claude) are <strong>not protected by attorney-client privilege or work product doctrine</strong>. The court characterized this as a &ldquo;nationwide&rdquo; matter of first impression.</p>
+<p>A <a href="https://www.debevoisedatablog.com/2026/02/11/district-court-rules-ai-generated-documents-are-not-protected-by-privilege/">landmark ruling from the Southern District of New York</a> in February 2026 (Judge Rakoff) found that AI-generated documents created via consumer AI tools (specifically Claude) are <strong>not protected by attorney-client privilege or work product doctrine</strong> — because the client had disclosed the material to a third-party AI with a provision that submissions were not confidential.</p>
 <p>This ruling has significant implications for MCP architecture:</p>
 <ul>
 <li><strong>Closed-loop systems preferred</strong> — purpose-built legal AI tools (Harvey, Clio integrations) that contractually prohibit training on user data preserve privilege better than consumer AI</li>
@@ -547,10 +547,7 @@
 <h3 id="ai-adoption-in-legal">AI Adoption in Legal</h3>
 <p>The legal industry&rsquo;s AI adoption has accelerated dramatically:</p>
 <ul>
-<li>Law firm AI adoption jumped from 19% to 79% among legal professionals in one year</li>
-<li>Corporate legal team adoption more than doubled in the same period</li>
-<li>Legal tech spending surged 9.7% as firms race to integrate AI</li>
-<li>Law firms report broad AI access exceeding 80%</li>
+<li><a href="https://www.clio.com/resources/legal-trends/">Law firm AI adoption jumped from 19% to 79%</a> among legal professionals in one year (Clio Legal Trends 2025)</li>
 </ul>
 <h3 id="market-size-estimates">Market Size Estimates</h3>
 <table>

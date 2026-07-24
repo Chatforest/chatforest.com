@@ -567,7 +567,7 @@ MCP server responses are ultimately consumed by language models, so token effici
 
 ### CSV vs JSON: The 29% Savings
 
-Research from the MCP ecosystem demonstrates that CSV-formatted responses use significantly fewer tokens than equivalent JSON:
+[Axiom's engineering research](https://axiom.co/blog/designing-mcp-servers-for-wide-events) demonstrates that CSV-formatted responses use significantly fewer tokens than equivalent JSON:
 
 - **5 rows of data:** CSV used 166 tokens vs 235 for JSON — a **29% savings**
 - **Per-row savings:** approximately 14 tokens per row

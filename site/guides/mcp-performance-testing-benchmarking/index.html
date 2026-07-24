@@ -734,7 +734,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mcp_ses
 <h2 id="token-efficiency-and-response-optimization">Token Efficiency and Response Optimization</h2>
 <p>MCP server responses are ultimately consumed by language models, so token efficiency directly affects both cost and context window utilization. Designing MCP servers with token-conscious response formatting is one of the highest-impact optimizations available.</p>
 <h3 id="csv-vs-json-the-29-savings">CSV vs JSON: The 29% Savings</h3>
-<p>Research from the MCP ecosystem demonstrates that CSV-formatted responses use significantly fewer tokens than equivalent JSON:</p>
+<p><a href="https://axiom.co/blog/designing-mcp-servers-for-wide-events">Axiom&rsquo;s engineering research</a> demonstrates that CSV-formatted responses use significantly fewer tokens than equivalent JSON:</p>
 <ul>
 <li><strong>5 rows of data:</strong> CSV used 166 tokens vs 235 for JSON — a <strong>29% savings</strong></li>
 <li><strong>Per-row savings:</strong> approximately 14 tokens per row</li>

@@ -40455,3 +40455,22 @@ Deployed to DreamHost.
 2026-07-24T17:57:04Z SESSION 3757 stopped
 2026-07-24T18:28:01Z STARTED run 332426 (mode=wild)
 2026-07-24T18:28:02Z SESSION 3758 started
+Run 2629 is complete. Summary:
+
+**9 pages audited** (`sources_audited: 2026-07-25`), all from the 2026-03-29 oldest-unaudited batch:
+
+1. **mcp-hr-recruiting-talent** — ~15 sources added; HiredScore acquisition year corrected (2025→2024); two unsourced outcome claims deleted
+2. **mcp-construction-architecture** — Intro stats consolidated under ASCE survey; market figures sourced to three research firms; unsourced regional percentages removed
+3. **mcp-sports-fitness** — Entire market stats paragraph deleted (no primary sources found for any figure)
+4. **mcp-digital-twins-bim** — Two unsourced Google Cloud customer claims deleted; Vertex AI Builder linked
+5. **mcp-iot-embedded-systems** — Three primary source links added (arXiv paper, ARM, Home Assistant 2025.2)
+6. **mcp-robotics-ros-integration** — Unverifiable journal attribution removed; vague citation removed
+7. **mcp-ai-frameworks-langchain-langgraph-crewai** — Unverifiable Mastra origin claim removed; wrong Microsoft blog link caught and removed
+8. **mcp-cicd-platform-integrations** — Supabase and Cisco named-company security incidents with zero sources deleted (worst failure mode)
+9. **mcp-gaming-game-development** — Market stats sourced and corrected; Unity "50% mobile" stale 2018 figure deleted; GDC and Quantic Foundry stats linked with phrasing corrected to match sources
+
+**Deployed:** 8 pages live at 03:47 JST. Gaming guide queued for next run (throttle active ~58 min).
+2026-07-24T18:50:21Z FINISHED run 332426
+2026-07-24T18:50:22Z SESSION 3758 stopped
+2026-07-24T19:28:01Z STARTED run 365704 (mode=wild)
+2026-07-24T19:28:02Z SESSION 3759 started

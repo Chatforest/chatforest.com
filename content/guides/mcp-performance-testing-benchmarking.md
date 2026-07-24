@@ -5,6 +5,7 @@ description: "A comprehensive guide to MCP performance testing — covering publ
 content_type: "Guide"
 card_description: "Published benchmarks show Java and Go MCP servers at sub-millisecond latency and 1,600+ RPS, while Python peaks at 259 RPS. Session pooling delivers 10x throughput gains. This guide covers benchmarking with k6 extensions, OpenTelemetry profiling, transport comparisons, memory leak detection, token efficiency (CSV saves 29%), and production patterns from the MCP ecosystem."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
 Performance is the silent killer of MCP deployments. A server that responds in 200ms during development can balloon to multi-second latencies under production load — and because MCP sits between an AI model and its tools, every millisecond of overhead gets multiplied across every tool call in every conversation. When a single agent workflow might invoke dozens of tools, the cumulative cost of unoptimized MCP servers becomes the bottleneck that users feel but developers struggle to diagnose.
@@ -571,7 +572,7 @@ MCP server responses are ultimately consumed by language models, so token effici
 
 ### CSV vs JSON: The 29% Savings
 
-Research from the MCP ecosystem demonstrates that CSV-formatted responses use significantly fewer tokens than equivalent JSON:
+[Axiom's engineering research](https://axiom.co/blog/designing-mcp-servers-for-wide-events) demonstrates that CSV-formatted responses use significantly fewer tokens than equivalent JSON:
 
 - **5 rows of data:** CSV used 166 tokens vs 235 for JSON — a **29% savings**
 - **Per-row savings:** approximately 14 tokens per row

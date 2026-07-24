@@ -104,7 +104,7 @@ For related patterns, see our guide on [MCP and text-to-SQL](/guides/mcp-text-to
 
 ### Atlan — AI-Native Metadata Platform
 
-Atlan is a Leader in the 2026 Gartner Magic Quadrant for Data and Analytics Governance. Its MCP server gives AI agents real-time access to the full metadata layer — lineage, glossary definitions, ownership, quality signals, and access policies.
+Atlan is a [Leader in the 2026 Gartner Magic Quadrant for Data and Analytics Governance](https://atlan.com/gartner-magic-quadrant-data-governance-2026/). Its MCP server gives AI agents real-time access to the full metadata layer — lineage, glossary definitions, ownership, quality signals, and access policies.
 
 **Search capabilities:**
 - Search assets by keyword, description, certification status, and modification date
@@ -366,7 +366,7 @@ Microsoft's approach of centralizing MCP server management in the Microsoft 365 
 
 ### Audit Trail Requirements
 
-Organizations without evidence-quality audit trails are reportedly 20-32 points behind on AI maturity metrics, yet 33% lack audit trails entirely. For data governance MCP, every interaction should produce an auditable record:
+For data governance MCP, every interaction should produce an auditable record:
 - What metadata was accessed
 - By which agent/user
 - For what stated purpose
@@ -408,11 +408,11 @@ Start in read-only mode. Disable mutation tools. Implement on-behalf-of-user aut
 
 Data governance MCP servers represent a fundamental shift: metadata is no longer just for humans browsing catalogs — it's infrastructure that AI agents depend on to make responsible data decisions.
 
-Gartner predicts that 40% of enterprise applications will integrate task-specific AI agents by end of 2026, up from less than 5% in mid-2025. As that adoption accelerates, the quality of metadata in your data catalog directly determines the quality of decisions your AI agents make.
+[Gartner predicts that 40% of enterprise applications will integrate task-specific AI agents by end of 2026](https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025), up from less than 5% in mid-2025. As that adoption accelerates, the quality of metadata in your data catalog directly determines the quality of decisions your AI agents make.
 
-The market is projected to reach $10.4 billion by 2026. The organizations that invest in governed metadata infrastructure now — complete catalogs, accurate lineage, well-maintained glossaries, and MCP servers with proper access controls — will have agents that make better, safer decisions than their competitors.
+The organizations that invest in governed metadata infrastructure now — complete catalogs, accurate lineage, well-maintained glossaries, and MCP servers with proper access controls — will have agents that make better, safer decisions than their competitors.
 
-The EU AI Act imposes penalties up to 7% of global revenue for governance failures. Regulators will increasingly ask: "How did AI agents access sensitive data? What did they do with it? Where is the audit trail?" Data governance MCP servers are where those answers need to come from.
+The [EU AI Act](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689) imposes penalties up to 7% of global annual turnover for governance failures. Regulators will increasingly ask: "How did AI agents access sensitive data? What did they do with it? Where is the audit trail?" Data governance MCP servers are where those answers need to come from.
 
 For more on building secure MCP deployments, see our [MCP server security guide](/guides/mcp-server-security/). For database-specific MCP patterns, see our guides on [database MCP servers](/guides/best-database-mcp-servers/), [database connection patterns](/guides/mcp-database-connection-patterns/), [text-to-SQL](/guides/mcp-text-to-sql-natural-language-database/), and [data pipelines](/guides/mcp-data-pipelines-etl/). For cloud platform MCP integrations, see our [cloud MCP servers guide](/guides/best-cloud-mcp-servers/). For observability integration, see our [observability MCP servers guide](/guides/best-observability-mcp-servers/). For data analytics and BI, see our [data analytics MCP servers guide](/guides/best-data-analytics-mcp-servers/).
 

@@ -275,7 +275,7 @@ The server translates these into Monte Carlo API calls and returns structured re
 
 ### Block (Square/Cash App) + DataHub
 
-Block manages 50+ data platforms under financial compliance requirements. They combined their open-source AI agent Goose with DataHub's MCP server for real-time incident response using metadata context. DataHub's MCP server provides entity search, metadata retrieval, lineage traversal, query association, and real-time access — enabling agents to quickly trace issues across the data stack during incidents.
+Block manages numerous data platforms under financial compliance requirements. They combined their open-source AI agent Goose with DataHub's MCP server for real-time incident response using metadata context. DataHub's MCP server provides entity search, metadata retrieval, lineage traversal, query association, and real-time access — enabling agents to quickly trace issues across the data stack during incidents.
 
 ### Confluent — Real-Time Streaming for AI Agents
 
@@ -411,11 +411,7 @@ For foundational MCP concepts, see our [What is MCP?](/guides/what-is-mcp/) guid
 
 ## The MCP Ecosystem in Numbers
 
-As of early 2026, the MCP ecosystem has reached significant scale:
-- 10,000+ active MCP servers in production
-- 500+ MCP clients across major platforms
-- 97 million monthly SDK downloads
-- MCP is now under the Linux Foundation's Agentic AI Foundation, co-founded by OpenAI, Anthropic, Google, Microsoft, AWS, and Block in December 2025
+MCP is now a founding project of the [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation), a Linux Foundation directed fund [launched in December 2025](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) by Anthropic, Block, and OpenAI, with supporting membership from Google, Microsoft, AWS, Cloudflare, and Bloomberg. This vendor-neutral governance structure ensures the protocol's long-term stability as a cross-industry data integration standard.
 
 The data engineering corner of this ecosystem is growing fast. A year ago, connecting AI agents to data pipelines meant writing custom API integrations. Today, official MCP servers from Astronomer, dbt Labs, Confluent, Snowflake, Google, Fivetran, Airbyte, and AWS cover most of the modern data stack. The gap is narrowing — and the agents are getting smarter about how to use these tools.
 

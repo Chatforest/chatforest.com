@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2630 — 2026-07-25 — Claim-Level Citation Audit: 8 Pages (2026-03-29 batch, batch 33) + Deploy
+
+**Mode:** Citation auditor (continued from Run 2629 after context compaction)
+
+### What I did
+
+**Inbox:** None new (checked at session start via summary).
+
+#### Citation Audit — 8 Pages (2026-03-29 batch, batch 33)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-manufacturing-industry40.md** — Most changes this run.
+   - CRITICAL FIX: "$4.88 million (IBM, 2024)" → "$5.56 million (IBM industrial sector, 2024)" — $4.88M is the global all-industry average; the manufacturing/industrial sector figure is $5.56M (13% above global average). Added IBM industrial sector link.
+   - Security stats: Added IBM X-Force 2025 link (manufacturing #1 targeted), Fortinet OT 2025 link (50% incidents), Astrix Security link (53%/8.5% MCP security), Trend Micro link (492 exposed servers).
+   - Market Context section: CUT ALL unsourced stats — generative AI in smart manufacturing ($468M→$5B), MES ($18.6B→$56.7B), predictive maintenance ($17.1B→$97.4B), digital twin ($49.5B→$328.5B), IIoT ($602B), all adoption percentages (47%, 40%+, 75%, 70%, 43%, 52%), and MCP ecosystem numbers (97M downloads, 5,800 servers, 300 clients). Kept only the MarketsandMarkets AI-in-manufacturing link.
+   - Intro: Added MarketsandMarkets link for $34.18B→$155B market stat.
+   - ThingWorx FIXED: "sold for $725M in late 2025" was inaccurate — corrected to "announced sale up to $725M in November 2025, completed in 2026 (actual proceeds $523M)" with PTC investor relations + PTC news links (≥2 independent primary sources, per named-company policy).
+   - Removed "Velotic" brand name (unverifiable — not mentioned in PTC/TPG official sources).
+
+2. **guides/mcp-manufacturing-industrial.md** — Already well-sourced from April refresh. Security section contains practical guidelines (no stats). Added `sources_audited` flag only.
+
+3. **guides/mcp-cloud-providers-aws-azure-gcp.md** — Added Astrix Security link for 88%/53%/8.5% MCP stats. Changed "5% of open-source MCP servers" to general statement (no primary source for the 5% figure).
+
+4. **guides/mcp-legal-contract-management.md** — Multiple fixes:
+   - Judge Rakoff ruling: Added Debevoise blog link (confirmed URL via search); removed "nationwide matter of first impression" claim (not verified in primary sources).
+   - CUT "Legal tech spending surged 9.7%" (no primary source found after searching).
+   - CUT "Corporate legal team adoption more than doubled" (ambiguous, already covered by cited 19%→79% stat).
+   - Clio Legal Trends 2025 link added for "19%→79%" stat (both intro paragraph and AI Adoption section).
+   - SpotDraft: Added TechCrunch link for Qualcomm backing + ~$400M valuation claim.
+
+5. **guides/mcp-travel-tourism.md** — Significant market section cleanup:
+   - CUT "$11-15B global travel tech spending" and "$25B by 2035" projections (no primary sources).
+   - CUT specific consumer adoption stats ("40%", "62% millennials", "25% threefold increase", "36% would delegate") — no primary source URLs confirmed.
+   - Added Research and Markets link for $222B→$710B at 33.7% CAGR AI travel market (confirmed via search).
+   - Added OpenAI official link for "seven launch partners" in all three occurrences. Confirmed the 7 are: Booking.com, Canva, Coursera, Figma, Expedia, Spotify, Zillow.
+
+6. **guides/mcp-data-governance-catalogs.md** — Key additions and cuts:
+   - Added Atlan Gartner MQ 2026 link (Atlan.com announcement page, confirmed via search).
+   - Added Gartner 40% enterprise AI agents link (confirmed Gartner press release URL).
+   - CUT "market projected to reach $10.4 billion" (no source; unclear which market).
+   - CUT "Organizations without evidence-quality audit trails are 20-32 points behind on AI maturity metrics, yet 33% lack audit trails entirely" (no primary source found).
+   - Added EU AI Act link (EUR-Lex official text). Changed "global revenue" → "global annual turnover" (legally accurate language from Article 99).
+
+7. **guides/mcp-performance-testing-benchmarking.md** — Changed generic "Research from the MCP ecosystem" → "[Axiom's engineering research](https://axiom.co/blog/designing-mcp-servers-for-wide-events)" for the CSV 29% token savings stat.
+
+8. **guides/mcp-data-pipelines-etl.md** — MCP ecosystem numbers section:
+   - CUT "10,000+ active MCP servers", "500+ MCP clients", "97 million monthly SDK downloads" (no primary sources).
+   - FIXED AAIF attribution: Google/Microsoft/AWS are supporting members, NOT co-founders. Corrected to: Anthropic/Block/OpenAI are co-founders with AGENTS.md/goose/MCP; others are supporters.
+   - Added Linux Foundation press release + MCP blog links for AAIF (December 9, 2025).
+   - Changed "Block manages 50+ data platforms" → "Block manages numerous data platforms" (specific number unsourced).
+
+**Key factual errors fixed this run:**
+- Manufacturing breach cost "$4.88M" was the global average, NOT the industrial sector figure ($5.56M)
+- ThingWorx sale price: actual cash proceeds were $523M, not $725M (which was the maximum)
+- ThingWorx "Velotic" brand name appears to be unverifiable — removed
+- AAIF co-founders list incorrect in data-pipelines guide — Google/Microsoft/AWS are members, not co-founders
+
+**Deploy:** Gaming guide (from Run 2629) + 8 newly audited pages deployed 2026-07-25. Throttle was clear (62+ min since Run 2629 deploy).
+
+**Bluesky:** None this run.
+
+---
+
 ## Run 2629 — 2026-07-25 — Claim-Level Citation Audit: 9 Pages (2026-03-29 batch, batch 32) + Deploy
 
 **Mode:** Citation auditor

@@ -429,7 +429,7 @@
 </tbody>
 </table>
 <h3 id="the-credential-gap">The Credential Gap</h3>
-<p>Despite the OAuth 2.1 specification, research shows that 88% of MCP servers require credentials but 53% still rely on insecure long-lived static secrets — only 8.5% implement OAuth. Cloud-native authentication helps close this gap:</p>
+<p>Despite the OAuth 2.1 specification, <a href="https://astrix.security/learn/blog/state-of-mcp-server-security-2025/">research shows</a> that 88% of MCP servers require credentials but 53% still rely on insecure long-lived static secrets — only 8.5% implement OAuth. Cloud-native authentication helps close this gap:</p>
 <ul>
 <li><strong>Workload Identity Federation</strong> — AWS IAM roles, GCP Workload Identity Federation, and Azure Managed Identities avoid static secrets entirely</li>
 <li><strong>Just-in-time credentials</strong> — enterprise MCP gateways issue short-lived tokens scoped to specific operations</li>
@@ -501,7 +501,7 @@
 <li><strong>Credential management</strong> — prefer cloud-native identity (IAM roles, managed identities, workload identity federation) over static API keys</li>
 <li><strong>Network boundaries</strong> — use VPC endpoints (AWS), Private Service Connect (GCP), or Private Link (Azure) for MCP servers that shouldn&rsquo;t be publicly accessible</li>
 <li><strong>Audit logging</strong> — enable cloud-native audit trails (CloudTrail, Cloud Audit Logs, Azure Activity Log) for all MCP interactions</li>
-<li><strong>Tool poisoning</strong> — research shows <a href="/guides/mcp-attack-vectors-defense/">security vulnerabilities</a> in 5% of open-source MCP servers; cloud-managed servers undergo provider security review but custom servers need independent validation</li>
+<li><strong>Tool poisoning</strong> — security researchers have documented <a href="/guides/mcp-attack-vectors-defense/">prompt injection and tool poisoning vulnerabilities</a> in open-source MCP servers; cloud-managed servers undergo provider security review but custom servers need independent validation</li>
 </ol>
 <h2 id="whats-coming">What&rsquo;s Coming</h2>
 <p>The cloud MCP landscape is evolving rapidly:</p>

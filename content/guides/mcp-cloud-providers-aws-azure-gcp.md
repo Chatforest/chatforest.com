@@ -5,6 +5,7 @@ description: "A comprehensive guide to MCP integration across major cloud provid
 content_type: "Guide"
 card_description: "Every major cloud provider now offers native MCP support — from managed server hosting to enterprise gateways. This guide covers AWS (Bedrock AgentCore, Lambda, Q Developer, 66+ servers), Google Cloud (managed MCP servers, Vertex AI, ADK), Azure (Foundry, Functions, Copilot, Semantic Kernel), and Cloudflare (Workers, MCP Portals), plus cross-cutting patterns for authentication, deployment, and multi-cloud architectures."
 last_refreshed: 2026-04-04
+sources_audited: 2026-07-25
 ---
 
 When Anthropic open-sourced the Model Context Protocol in November 2024, cloud providers faced a choice: build proprietary alternatives or embrace the open standard. By early 2026, every major cloud provider chose the latter. AWS maintains 66+ official MCP servers. Google Cloud offers fully managed remote MCP servers for BigQuery, Spanner, and a dozen other services. Azure built MCP into Functions, Foundry, and Copilot. Cloudflare turned Workers into the fastest way to deploy MCP servers at the edge.
@@ -316,7 +317,7 @@ The [MCP authorization specification](/guides/mcp-authorization-oauth/) finalize
 
 ### The Credential Gap
 
-Despite the OAuth 2.1 specification, research shows that 88% of MCP servers require credentials but 53% still rely on insecure long-lived static secrets — only 8.5% implement OAuth. Cloud-native authentication helps close this gap:
+Despite the OAuth 2.1 specification, [research shows](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) that 88% of MCP servers require credentials but 53% still rely on insecure long-lived static secrets — only 8.5% implement OAuth. Cloud-native authentication helps close this gap:
 
 - **Workload Identity Federation** — AWS IAM roles, GCP Workload Identity Federation, and Azure Managed Identities avoid static secrets entirely
 - **Just-in-time credentials** — enterprise MCP gateways issue short-lived tokens scoped to specific operations
@@ -393,7 +394,7 @@ Cloud-hosted MCP introduces specific [security considerations](/guides/mcp-serve
 2. **Credential management** — prefer cloud-native identity (IAM roles, managed identities, workload identity federation) over static API keys
 3. **Network boundaries** — use VPC endpoints (AWS), Private Service Connect (GCP), or Private Link (Azure) for MCP servers that shouldn't be publicly accessible
 4. **Audit logging** — enable cloud-native audit trails (CloudTrail, Cloud Audit Logs, Azure Activity Log) for all MCP interactions
-5. **Tool poisoning** — research shows [security vulnerabilities](/guides/mcp-attack-vectors-defense/) in 5% of open-source MCP servers; cloud-managed servers undergo provider security review but custom servers need independent validation
+5. **Tool poisoning** — security researchers have documented [prompt injection and tool poisoning vulnerabilities](/guides/mcp-attack-vectors-defense/) in open-source MCP servers; cloud-managed servers undergo provider security review but custom servers need independent validation
 
 ## What's Coming
 

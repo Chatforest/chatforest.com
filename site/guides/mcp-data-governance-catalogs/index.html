@@ -178,7 +178,7 @@
 <p>For related patterns, see our guide on <a href="/guides/mcp-text-to-sql-natural-language-database/">MCP and text-to-SQL</a>.</p>
 <h2 id="enterprise-data-catalog-mcp-servers">Enterprise Data Catalog MCP Servers</h2>
 <h3 id="atlan--ai-native-metadata-platform">Atlan — AI-Native Metadata Platform</h3>
-<p>Atlan is a Leader in the 2026 Gartner Magic Quadrant for Data and Analytics Governance. Its MCP server gives AI agents real-time access to the full metadata layer — lineage, glossary definitions, ownership, quality signals, and access policies.</p>
+<p>Atlan is a <a href="https://atlan.com/gartner-magic-quadrant-data-governance-2026/">Leader in the 2026 Gartner Magic Quadrant for Data and Analytics Governance</a>. Its MCP server gives AI agents real-time access to the full metadata layer — lineage, glossary definitions, ownership, quality signals, and access policies.</p>
 <p><strong>Search capabilities:</strong></p>
 <ul>
 <li>Search assets by keyword, description, certification status, and modification date</li>
@@ -519,7 +519,7 @@
 <p>One documented pattern: &ldquo;enthusiastic employees connected AI to systems via MCP without proper oversight.&rdquo; In the data governance context, this means shadow agents querying catalogs, building undocumented data pipelines, or using metadata to inform decisions without audit trails.</p>
 <p>Microsoft&rsquo;s approach of centralizing MCP server management in the Microsoft 365 admin center — providing organizational visibility into deployed servers, access patterns, and compliance status — represents one response to this challenge.</p>
 <h3 id="audit-trail-requirements">Audit Trail Requirements</h3>
-<p>Organizations without evidence-quality audit trails are reportedly 20-32 points behind on AI maturity metrics, yet 33% lack audit trails entirely. For data governance MCP, every interaction should produce an auditable record:</p>
+<p>For data governance MCP, every interaction should produce an auditable record:</p>
 <ul>
 <li>What metadata was accessed</li>
 <li>By which agent/user</li>
@@ -562,9 +562,9 @@ Use your platform&rsquo;s managed MCP servers — <strong>Databricks Unity Catal
 Start in read-only mode. Disable mutation tools. Implement on-behalf-of-user auth. Deploy an MCP gateway. Log everything. Only enable write operations after you&rsquo;ve established monitoring and audit trails.</p>
 <h2 id="the-bigger-picture">The Bigger Picture</h2>
 <p>Data governance MCP servers represent a fundamental shift: metadata is no longer just for humans browsing catalogs — it&rsquo;s infrastructure that AI agents depend on to make responsible data decisions.</p>
-<p>Gartner predicts that 40% of enterprise applications will integrate task-specific AI agents by end of 2026, up from less than 5% in mid-2025. As that adoption accelerates, the quality of metadata in your data catalog directly determines the quality of decisions your AI agents make.</p>
-<p>The market is projected to reach $10.4 billion by 2026. The organizations that invest in governed metadata infrastructure now — complete catalogs, accurate lineage, well-maintained glossaries, and MCP servers with proper access controls — will have agents that make better, safer decisions than their competitors.</p>
-<p>The EU AI Act imposes penalties up to 7% of global revenue for governance failures. Regulators will increasingly ask: &ldquo;How did AI agents access sensitive data? What did they do with it? Where is the audit trail?&rdquo; Data governance MCP servers are where those answers need to come from.</p>
+<p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025">Gartner predicts that 40% of enterprise applications will integrate task-specific AI agents by end of 2026</a>, up from less than 5% in mid-2025. As that adoption accelerates, the quality of metadata in your data catalog directly determines the quality of decisions your AI agents make.</p>
+<p>The organizations that invest in governed metadata infrastructure now — complete catalogs, accurate lineage, well-maintained glossaries, and MCP servers with proper access controls — will have agents that make better, safer decisions than their competitors.</p>
+<p>The <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689">EU AI Act</a> imposes penalties up to 7% of global annual turnover for governance failures. Regulators will increasingly ask: &ldquo;How did AI agents access sensitive data? What did they do with it? Where is the audit trail?&rdquo; Data governance MCP servers are where those answers need to come from.</p>
 <p>For more on building secure MCP deployments, see our <a href="/guides/mcp-server-security/">MCP server security guide</a>. For database-specific MCP patterns, see our guides on <a href="/guides/best-database-mcp-servers/">database MCP servers</a>, <a href="/guides/mcp-database-connection-patterns/">database connection patterns</a>, <a href="/guides/mcp-text-to-sql-natural-language-database/">text-to-SQL</a>, and <a href="/guides/mcp-data-pipelines-etl/">data pipelines</a>. For cloud platform MCP integrations, see our <a href="/guides/best-cloud-mcp-servers/">cloud MCP servers guide</a>. For observability integration, see our <a href="/guides/best-observability-mcp-servers/">observability MCP servers guide</a>. For data analytics and BI, see our <a href="/guides/best-data-analytics-mcp-servers/">data analytics MCP servers guide</a>.</p>
 
       </div>
