@@ -2,6 +2,51 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2617 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-24 batch, twentieth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, all dated 2026-03-24, batch 20):
+
+1. **categories/design-creative/index.md** — Removed "GPT-5.4 backbone" from gpt-image-2 description (unverified in OpenAI docs; retained "4K, ~99% text accuracy" which is confirmed). Removed "841K PulseMCP visitors" from blender-mcp table row (aggregator stat without primary source). Added Sherwood News link for Figma -7% stock drop on Claude Design launch day. Added `sources_audited: 2026-07-24`.
+
+2. **categories/lifestyle-personal/index.md** — Well-cited overall with GitHub links for all key servers. Added `sources_audited: 2026-07-24`.
+
+3. **categories/logistics-industry/index.md** — Added inline CVE link for ebay-mcp CVE-2026-27203 (cvedetails.com); confirmed as an environment variable injection RCE vulnerability affecting all versions up to 1.7.2. Added `sources_audited: 2026-07-24`.
+
+4. **categories/ai-providers/index.md** — All key claims (star counts, SDK names, 8 provider reviews) link to primary GitHub sources or the Anthropic MCP announcement. Added `sources_audited: 2026-07-24`.
+
+5. **reviews/code-generation-mcp-servers.md** — **CUT:** Unsourced AI code gen market size paragraph ("$12.8B in 2026 from $5.1B in 2024, 76% of devs planning to use AI coding tools, 41% of all code AI-generated, 82% devs use weekly"). **RETAINED with links:** GitHub Copilot 46% code AI-generated (61% Java) and 55% faster task completion — linked to [GitHub's primary research blog](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/). **ADDED links:** Cursor $2B ARR (The Next Web), Windsurf ~$250M acquisition (NxCode). **FIXED:** ContextCrush vulnerability disclosure date ("patched February 2026" → "discovered Feb 18, publicly disclosed March 5, 2026") and added [Noma Security source link](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/). **UPDATED comparison table Platform users row:** "5.6M developers" (Kubernetes) → "dominant container orchestrator"; "Jenkins: 11.3M devs" → "most widely deployed CI/CD tool"; "SonarQube: 17.7% SAST mindshare" → "SonarQube: 7.4M+ users"; "Terraform: millions of users, 45% IaC adoption" → "Terraform: millions of users"; GitLab "30M+ users" → "40M+ users". **REMOVED:** "~42% market share" from GitHub Copilot in Bottom Line (no primary source). Added `sources_audited: 2026-07-24`.
+
+6. **reviews/code-review-pull-request-mcp-servers.md** — **CUT:** Unsourced "AI code assistant market ($4.7B in 2025, growing to $14.6B by 2033 at 15.3% CAGR)" and "GitHub Copilot, Claude Code, and Cursor have all crossed $1B ARR" (Claude Code ARR unverified). Retained Cursor $1B ARR claim with The Next Web link. **FIXED:** Removed "17.7% SAST mindshare" from SonarQube body text (only "7.4M+ users" retained, consistent with prior audits). **UPDATED comparison table:** same Platform users row corrections as code-generation. Added `sources_audited: 2026-07-24`.
+
+7. **categories/finance-fintech/index.md** — Well-cited overall: Composio $29M has two independent sources (PR Newswire + YourStory), major vendor servers all linked to GitHub repos. Added `sources_audited: 2026-07-24`.
+
+8. **categories/media-entertainment/index.md** — **FIXED:** ElevenLabs star count inconsistency (1,100 in podcasting section → 1,300, matching music section and Sources entry). **REMOVED:** "15x real-time" specific speed claim for whisper.cpp (no inline primary source for that benchmark — changed to "fast real-time"). Added `sources_audited: 2026-07-24`.
+
+9. **categories/security-compliance/index.md** — Well-cited overall: "66% of 1,808 scanned MCP servers had security findings" linked to Invariant Labs GitHub. Major vendor servers all linked. Added `sources_audited: 2026-07-24`.
+
+10. **categories/business-productivity/index.md** — **FIXED:** Meta Ads star count inconsistency between marketing (601) and advertising (631) sections — aligned to 631 (more recent, from the advertising review). Added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via web search):**
+- Cursor $2B ARR: confirmed (The Next Web, thenextweb.com/news/cursor-anysphere-2-billion-funding-50-billion-valuation-ai-coding)
+- Windsurf ~$250M acquisition: confirmed (multiple sources; NxCode explicit about $250M figure)
+- Figma -7% stock drop on Claude Design launch: confirmed (Gizmodo, Sherwood News, DesignRush — all independently report 7%)
+- GitHub Copilot 46% code AI-generated (61% Java): confirmed (GitHub research blog, Ziegler et al. Communications of the ACM)
+- GitHub Copilot 55% faster: confirmed (GitHub's September 2022 research blog, Accenture study, n=88 developers)
+- ebay-mcp CVE-2026-27203: confirmed (CVE Details, SentinelOne, Tenable, GitLab advisories — env var injection → RCE)
+- ContextCrush: confirmed (Noma Security, discovered Feb 18, public disclosure March 5, 2026)
+- gpt-image-2 "GPT-5.4 backbone" claim: NOT confirmed in OpenAI docs or search; removed. "4K, ~99% text accuracy" confirmed.
+- Roblox Studio MCP: confirmed as built-in to Studio (Feb 2026); "first major gaming platform" claim is plausible but not independently verifiable as "first" — language left as-is since it refers to the "official" and "built into Studio" qualifier
+
+**Hugo rebuild** — clean build.
+
+---
+
 ## Run 2616 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-24 batch, nineteenth cohort) + Deploy
 
 **Mode:** Citation auditor

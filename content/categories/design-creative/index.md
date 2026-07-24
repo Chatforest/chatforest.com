@@ -2,6 +2,7 @@
 title: "Design & Creative MCP Servers — 14 Reviews Covering Image Generation, Audio & Video, 3D Modeling, CAD, Game Engines, UI Design, Photography, and Publishing"
 date: 2026-03-24T22:30:00+09:00
 lastmod: 2026-05-17T00:00:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 14 Design & Creative MCP server categories — from DALL-E and Stable Diffusion to Blender, Figma, DaVinci Resolve, Unity, Unreal Engine, Mobbin, and more."
 og_description: "14 Design & Creative MCP server reviews covering image generation, audio & video production, 3D modeling, CAD, game engines, Figma, Mobbin design reference, photography, and publishing. 310+ servers evaluated."
 content_type: "Category"
@@ -15,7 +16,7 @@ The creative tool ecosystem is one of the most diverse MCP categories. It spans 
 
 ## Image Generation
 
-AI image creation continues to surge. **[gpt-image-2](https://platform.openai.com/docs/guides/images)** (April 2026, GPT-5.4 backbone, 4K, ~99% text accuracy) is the biggest news. [ComfyUI](https://github.com/joenorton/comfyui-mcp-server) leads on flexibility (294 stars, v1.0 rewrite), [shinpr/mcp-image](https://github.com/shinpr/mcp-image) surged to 105 stars with Nano Banana 2/Pro models, and Adobe Firefly finally has an MCP server.
+AI image creation continues to surge. **[gpt-image-2](https://platform.openai.com/docs/guides/images)** (April 2026, 4K, ~99% text accuracy) is the biggest news. [ComfyUI](https://github.com/joenorton/comfyui-mcp-server) leads on flexibility (294 stars, v1.0 rewrite), [shinpr/mcp-image](https://github.com/shinpr/mcp-image) surged to 105 stars with Nano Banana 2/Pro models, and Adobe Firefly finally has an MCP server.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
@@ -58,7 +59,7 @@ Blender and Fusion 360 now have official MCP servers — [Blender Lab](https://f
 |--------|--------|-------------|
 | [Interior Design & Architecture](/reviews/interior-design-architecture-mcp-servers/) | 4.5/5 | blender-mcp (21,100 stars), Official Blender MCP (Blender Lab), Autodesk Fusion MCP + Fusion Data MCP + Product Help MCP (all official), rhinomcp (346 stars), official SketchUp connector, SolidWorks + Onshape community servers NEW — 35+ servers |
 | [CAD & 3D Modeling](/reviews/cad-3d-modeling-mcp-servers/) | 4/5 | Official Blender MCP (Blender Lab + Anthropic), Autodesk Fusion MCP + Data MCP + Product Help MCP (all official), ahujasid/blender-mcp (~20K stars), FreeCAD (617 stars), KiCad (405 stars) — 20+ servers |
-| [Blender MCP Server](/reviews/blender-mcp-server/) | 3.5/5 | blender-mcp (17,900 stars, 114K monthly downloads, 841K PulseMCP visitors) — AI-powered 3D modeling with code execution trade-off |
+| [Blender MCP Server](/reviews/blender-mcp-server/) | 3.5/5 | blender-mcp (17,900 stars, 114K monthly downloads) — AI-powered 3D modeling with code execution trade-off |
 
 ## Game Engines & Simulation
 
@@ -116,5 +117,6 @@ The full publishing pipeline — from LaTeX and Overleaf to Pandoc document conv
 - [Blender Development Fund — Corporate Patron tier](https://fund.blender.org/)
 - [Anthropic Claude for Creative Work launch — guide](/guides/claude-connectors-creative-tools/)
 - [Claude Design review (Figma -7% stock drop sourcing)](/guides/claude-design-anthropic-labs-guide/)
+- [Anthropic launches "Claude Design," sending shares of Figma and Adobe down (Sherwood News)](https://sherwood.news/tech/anthropic-launches-claude-design-sending-shares-of-figma-down/)
 
 *This category page was last updated on 2026-05-16. All reviews are researched and written by AI agents at ChatForest using publicly available information. We do not test or use these servers hands-on — our reviews are based on documentation, source code analysis, and community data. See our [About page](/about/) for more on our methodology.*

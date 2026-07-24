@@ -1,6 +1,7 @@
 ---
 title: "Media & Entertainment MCP Servers — 6 Reviews Covering Music Production, Gaming, Podcasting, News, Streaming, and Speech Recognition"
 date: 2026-03-24T23:30:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 6 Media & Entertainment MCP server categories — from Ableton Live and Spotify to Minecraft, Hacker News, ElevenLabs, and Whisper."
 og_description: "6 Media & Entertainment MCP server reviews covering music production, gaming & esports, podcasting, news & journalism, Spotify, and speech recognition. 170+ servers evaluated."
 content_type: "Category"
@@ -19,7 +20,7 @@ The richest subcategory. DAW integration is exceptional — Ableton Live alone h
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Music & Audio Production](/reviews/music-audio-production-mcp-servers/) | 4/5 | [Ableton Live](https://github.com/ahujasid/ableton-mcp) (2,300 stars, 4 implementations), [ElevenLabs](https://github.com/elevenlabs/elevenlabs-mcp) (1,300 stars, official TTS), [REAPER](https://github.com/bonfire-audio/reaper-mcp) (40 stars, mixing/mastering), [Spotify](https://github.com/varunneal/spotify-mcp) (587 stars), Suno (34 stars, AI music), SuperCollider, MuseScore, FL Studio, [Epidemic Sound](https://www.epidemicsound.com/blog/mcp-server/) (official) — 40+ servers |
-| [Podcasting & Audio Content](/reviews/podcasting-audio-content-mcp-servers/) | 4/5 | [ElevenLabs](https://github.com/elevenlabs/elevenlabs-mcp) (1,100 stars, TTS/voice cloning/transcription), total-reaper-mcp (600+ REAPER tools), speech-mcp (~80 stars, bidirectional voice), local-stt-mcp (whisper.cpp, Apple Silicon), MiniMax-MCP (421 stars), Kokoro TTS (local, free) — 30+ servers |
+| [Podcasting & Audio Content](/reviews/podcasting-audio-content-mcp-servers/) | 4/5 | [ElevenLabs](https://github.com/elevenlabs/elevenlabs-mcp) (1,300 stars, TTS/voice cloning/transcription), total-reaper-mcp (600+ REAPER tools), speech-mcp (~80 stars, bidirectional voice), local-stt-mcp (whisper.cpp, Apple Silicon), MiniMax-MCP (421 stars), Kokoro TTS (local, free) — 30+ servers |
 | [Spotify](/reviews/spotify-mcp-server/) | 3/5 | [varunneal/spotify-mcp](https://github.com/varunneal/spotify-mcp) (588 stars, leading), [marcelmarais/spotify-mcp-server](https://github.com/marcelmarais/spotify-mcp-server) (256 stars), 20+ community implementations — playback control, playlist management, search, library browsing, no official server |
 
 ## Gaming & Esports
@@ -64,7 +65,7 @@ The other half of voice AI. Local Whisper-based servers are surprisingly capable
 
 **RSS and Hacker News are the backbone of news MCP.** Ten RSS implementations and eight Hacker News servers make these the most-served individual protocols/platforms in the news category. The free @newsmcp/server covers 12 topics across 30+ regions with no API key — the easiest way to add real-time news to an AI agent.
 
-**Local speech recognition is genuinely viable.** whisper.cpp on Apple Silicon achieves 15x real-time transcription with speaker diarization, entirely offline. speech-mcp provides a complete bidirectional voice interface. You can build voice-interactive AI agents with zero cloud costs.
+**Local speech recognition is genuinely viable.** whisper.cpp on Apple Silicon achieves fast real-time transcription with speaker diarization, entirely offline. speech-mcp provides a complete bidirectional voice interface. You can build voice-interactive AI agents with zero cloud costs.
 
 **The biggest gap: end-to-end workflows.** Individual tools are strong — DAW control, TTS, transcription, music generation all work. But no server handles the full podcast lifecycle (record, edit, transcribe, publish, distribute, analyze) or the full journalism workflow (monitor, fact-check, write, publish). The category needs workflow orchestration, not more point tools.
 

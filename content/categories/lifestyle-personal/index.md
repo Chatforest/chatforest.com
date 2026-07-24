@@ -1,6 +1,7 @@
 ---
 title: "Lifestyle & Personal MCP Servers — 10 Reviews Covering Food, Travel, Hospitality, Fashion, Pet Care, Weather, Astrology, Genealogy, and Job Search"
 date: 2026-03-24T22:30:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 10 Lifestyle & Personal MCP server categories — from food and travel to weather, astrology, genealogy, job search, hospitality, fashion, and pet care."
 og_description: "10 Lifestyle & Personal MCP server reviews covering food, travel, weather, astrology, genealogy, job search, hospitality, fashion, pet care, and more. 215+ servers evaluated."
 content_type: "Category"

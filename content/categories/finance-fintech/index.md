@@ -1,6 +1,7 @@
 ---
 title: "Finance & Fintech MCP Servers — 13 Reviews Covering Payments, E-Commerce, Cryptocurrency, Personal Finance, Accounting, Tax, Blockchain, Insurance, and Real Estate"
 date: 2026-03-24T23:30:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 13 Finance & Fintech MCP server categories and individual servers — from Stripe and PayPal to Shopify's e-commerce ecosystem, cryptocurrency exchanges"
 og_description: "13 Finance & Fintech MCP server reviews covering payments, e-commerce, Shopify, cryptocurrency, DeFi, personal finance, accounting, tax, blockchain, insurance, and real estate. 350+ servers evaluated."
 content_type: "Category"

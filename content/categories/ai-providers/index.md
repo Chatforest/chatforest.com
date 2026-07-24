@@ -1,6 +1,7 @@
 ---
 title: "AI Provider MCP Servers — 8 Reviews Covering OpenAI, Anthropic, Google, Meta, AWS, and More"
 date: 2026-03-24T23:00:00+09:00
+sources_audited: 2026-07-24
 description: "Comprehensive reviews of 8 AI Provider MCP server categories — from Anthropic's protocol-defining SDKs to AWS Bedrock's 68-server arsenal."
 og_description: "8 AI Provider MCP server reviews covering Anthropic, AWS Bedrock, Google Gemini, OpenAI, Hugging Face, Meta Llama, Mistral, and Cohere. From protocol creators to enterprise platforms."
 content_type: "Category"
