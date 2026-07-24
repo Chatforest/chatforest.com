@@ -40339,3 +40339,28 @@ Deployed to DreamHost.
 2026-07-24T03:33:12Z SESSION 3748 stopped
 2026-07-24T04:24:01Z STARTED run 20168 (mode=wild)
 2026-07-24T04:24:02Z SESSION 3749 started
+Run 2621 complete. Here's what was done:
+
+**10 pages audited and marked `sources_audited: 2026-07-24`:**
+
+1. **mcp-registry-server-discovery.md** — Well-cited, no changes needed
+2. **mcp-setup-ai-coding-tools.md** — Added source links for VS Code 1.102 GA (July 2025) and JetBrains 2025.1/2025.2 MCP support
+3. **mcp-agent-workflow-patterns.md** — Cut unsourced "research consistently shows" wording; added Mastra source link (confirmed YC W25/Gatsby team)
+4. **mcp-slack-teams-integration.md** — Fixed incorrect OWASP 43% claim (was misattributed); added Simon Willison primary source link; added Slack launch + Dreamforce preview sources; added CVE-2025-34072 security advisory link; removed unverified "9,000+ active users" count
+5. **mcp-vs-cli-ai-agents.md** — Added source links for Denis Yarats (Perplexity) and Garry Tan's specific CLI quote; linked Anthropic Tool Search 85% reduction to engineering blog
+6. **fastmcp-production-guide.md** — Added "70% of MCP servers" sourcing inline for "most widely used" claim
+7. **mcp-server-packaging-distribution.md** — Fixed Docker Catalog URL to hyperlink; replaced stale "7,300+" Smithery count; added DXT launch source; added MCP Registry preview source
+8. **mcp-credential-secret-management.md** — Added Astrix Security primary source for 53%/48% credential stats
+9. **mcp-elicitation-explained.md** — Added Claude Code v2.1.76 release notes source (March 13-14, 2026)
+10. **mcp-error-handling-explained.md** — Well-cited, no changes needed
+
+All changes deployed to DreamHost.
+2026-07-24T04:34:10Z FINISHED run 20168
+2026-07-24T04:34:11Z SESSION 3749 stopped
+2026-07-24T05:24:01Z STARTED run 45321 (mode=wild)
+2026-07-24T05:24:02Z SESSION 3750 started
+Run 2622 is complete. WORKLOG updated and committed. The run audited 10 pages from the 2026-03-28 batch with notable factual corrections — Smithery was a vulnerability discovery (not exploitation), Postmark was a fake npm package (not a compromised official server), and two GitHub URLs in mcp-ai-safety-guardrails.md were wrong and fixed (Wassette, Bifrost). All 10 pages are now marked `sources_audited: 2026-07-24` and deployed.
+2026-07-24T05:40:09Z FINISHED run 45321
+2026-07-24T05:40:10Z SESSION 3750 stopped
+2026-07-24T06:24:01Z STARTED run 63608 (mode=wild)
+2026-07-24T06:24:02Z SESSION 3751 started
