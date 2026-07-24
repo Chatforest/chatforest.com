@@ -2,6 +2,69 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2634 — 2026-07-25 — Citation Audit: 5 Pages (batches 37 + start of 38) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** Message #2259 (outbound report to Rob) still pending. No new inbound messages.
+
+#### Citation Audit — 5 Pages (finishes 2026-03-29 batch + starts 2026-03-30 batch)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-finance-fintech.md** — 7 fixes:
+   - Added Personetics Global Consumer Banking Survey link for "84% of consumers would switch banks" claim (confirmed via survey page)
+   - Added Plaid homepage link for "12,000+ financial institutions" claim
+   - FIXED inconsistency: "9,698+ supported banks" (line 167) → "12,000+" (consistent with current Plaid data and intro)
+   - Updated CoinGecko stats: "1,000+ exchanges" → "1,500+ exchanges"; "8M+ tokens via GeckoTerminal" → "6M+ tokens" (per GeckoTerminal API docs)
+   - Added BusinessWire link for "Cetera, 12,000 professionals, selected Zocks as their AI assistant platform" (confirmed via press release)
+   - Added Moody's press release link for "600M+ companies; 2B+ ownership links" data coverage claim
+   - Added ComplianceHub.Wiki link for "$228.8 million sanctions fines in H1 2025 vs $3.7 million in H1 2024"
+
+2. **guides/mcp-legal-law.md** — 10 fixes:
+   - REWROTE intro: Cut unsourced "Legal AI specifically $1.45–4.59B" segment; cut "3.9x year-over-year" growth metric (not directly sourced); fixed projection from unsourced "$65.5B by 2034 at 9.2% CAGR" to Precedence Research's "$73B by 2035 at 9.4% CAGR" with link
+   - Added Artificial Lawyer link for "legal tech raised $5.99 billion in 2025, legal AI $2.4 billion"
+   - Added CNBC link for Harvey AI "$11 billion valuation in March 2026" (confirmed)
+   - CUT unverified adoption sub-stats: "87% of 51+ attorney firms", "71% solo practitioners", "93% UK mid-size firms" (publicly available 8am report data shows 39% large-firm adoption, not 87%); kept 69% overall + 8am link
+   - CUT unverified concerns stats: "data privacy (56%), cost (47%), hallucination (31%)"
+   - Added Gibson Dunn link for Judge Rakoff SDNY privilege ruling (United States v. Heppner, Feb 2026)
+   - CUT "Judge Brantley Starr" and "EOIR PM 25-40" specific claims (no sources found)
+   - CUT "Law360 tracked 280 AI incidents by 2024, rising to 729+ by end of 2025" (no primary source found)
+   - Added LawSites link for Sixth Circuit $30,000 sanctions (Whiting v. City of Athens, confirmed)
+   - Added EU Digital Strategy link for EU AI Act; added PRNewswire link for Ironclad $3.2B/$200M ARR; added Justia link for 50-state bar survey; added CourtListener homepage link for 9M+ cases/3,352 courts stats
+
+3. **guides/mcp-media-broadcasting.md** — 2 fixes:
+   - CUT entire unsourced market stats intro paragraph (6 claims with no primary sources: "$26-34B in M&E", "Generative AI $2.2-3.1B", "AI video adoption 342%", "49% marketers daily", "72% small biz by 2030", "content moderation $9.7-12.5B") — replaced with single sourced Grand View Research figure ($33.7B in 2025 → $99.5B by 2030 at 24.2% CAGR) with GVR link
+   - FIXED WordPress stat: "roughly 40% of the web" → "roughly 43% of the web" with W3Techs link
+
+4. **guides/mcp-telecommunications.md** — 4 fixes:
+   - Added Fortune Business Insights and GM Insights links for AI in telecom market size ($4.7B in 2025 → $45B–$88B by 2034)
+   - Added NVIDIA 2026 survey link for "network automation overtook customer experience as leading ROI use case" (50% vs 41%)
+   - Added GSMA/Radcom and NVIDIA 2026 survey links for "71% operators plan agentic AI, 89% budget increases, 88% at autonomy levels 1-3"
+   - Added NetClaw GitHub link and clarifying note "(per NetClaw documentation)" for TOON 40-60% token savings claim
+
+5. **guides/mcp-advertising-martech.md** (first 2026-03-30 page) — 3 fixes:
+   - Added martech.org link for "Scott Brinker's 2025 MarTech landscape: 15,384 tools"
+   - CUT "The global MarTech market reached approximately $175–198 billion" (MarketsandMarkets cited by name but no live primary-source URL found)
+   - CUT "AI adoption 91% of marketers, up from 63%" (Jasper 2026 report cited but no URL found)
+   - CUT "$64.6 billion AI marketing market in 2026" (no primary source identified)
+   - Added GlobeNewswire link for Pacvue "70,000+ brands, 100+ marketplaces, 12% of retail media ad spend" (confirmed via press release)
+
+**Key factual errors fixed:**
+- Finance: CoinGecko GeckoTerminal tokens was "8M+" — actual per API docs is "6M+"; exchange count was "1,000+" when current figure is 1,500+
+- Legal: "87% of large law firms with 51+ attorneys use generative AI" — publicly available 8am data shows 39%; 87% not found in accessible report sections
+- Finance: Plaid count stated as "9,698+" in one location vs "12,000+" in another — unified to 12,000+ (current Plaid figure)
+- Legal: Legal tech market projection "to hit $65.5 billion by 2034 at 9.2% CAGR" — this figure is lower than all major research firms' projections ($61–$78B range); replaced with Precedence Research's sourced $73B/9.4% figure
+- Media: WordPress "40%" → "43%" (W3Techs current figure)
+
+**Deploy:** 5 pages + Hugo build — deployed this run.
+
+**Next batch (batch 38 continued):** Continue 2026-03-30 pages. Remaining: mcp-ar-vr-spatial-computing.md, mcp-autonomous-vehicles-transportation.md, mcp-computer-vision-image-analysis.md, mcp-content-creation-podcasting-video.md, mcp-customer-support-helpdesk.md, mcp-cybersecurity-threat-intelligence.md, mcp-data-visualization-business-intelligence.md, mcp-digital-accessibility.md, mcp-education-elearning.md, and many more.
+
+---
+
 ## Run 2633 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-29 batch, batch 36) + Deploy
 
 **Mode:** Citation auditor

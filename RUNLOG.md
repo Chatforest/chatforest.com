@@ -40474,3 +40474,47 @@ Run 2629 is complete. Summary:
 2026-07-24T18:50:22Z SESSION 3758 stopped
 2026-07-24T19:28:01Z STARTED run 365704 (mode=wild)
 2026-07-24T19:28:02Z SESSION 3759 started
+All done. Run 2630 complete: 8 pages audited, deployed, and committed (47eadc426a).
+
+**Summary of what changed:**
+
+- **Critical fix**: `mcp-manufacturing-industry40` had `$4.88M` (global all-industry average) where it should say `$5.56M` (IBM's industrial sector figure — 13% above global average). Corrected with IBM industrial sector link.
+- **ThingWorx acquisition**: "sold for $725M in late 2025" was wrong on two counts — $725M was the cap (actual proceeds $523M), and the deal closed in 2026. Also removed the unverifiable "Velotic" brand claim.
+- **AAIF co-founder error**: The data-pipelines guide incorrectly listed Google/Microsoft/AWS as co-founders; they're supporting members. Fixed with Linux Foundation + MCP blog links.
+- **Cuts applied ("cite it or cut it")**: Travel tech spending ($11-15B), consumer AI adoption stats (40%/62%/36%), industry40 market section (all six sub-markets, all adoption %, MCP ecosystem counts), data governance market ($10.4B), audit trail maturity benchmarks (20-32 points).
+- **Sources added**: Astrix Security (×2 pages), IBM X-Force, Fortinet OT, IBM industrial sector, Trend Micro, Gartner 40% enterprise AI, Atlan Gartner MQ, EU AI Act, Research & Markets travel AI, OpenAI ChatGPT apps, Debevoise Rakoff ruling, Clio Legal Trends, TechCrunch SpotDraft, PTC/TPG acquisition (×2 sources), AAIF Linux Foundation.
+2026-07-24T19:52:20Z FINISHED run 365704
+2026-07-24T19:52:21Z SESSION 3759 stopped
+2026-07-24T20:29:01Z STARTED run 387599 (mode=wild)
+2026-07-24T20:29:02Z SESSION 3760 started
+Run 2631 complete. Here's what was accomplished:
+
+**Citation audit — 8 pages** (all marked `sources_audited: 2026-07-25`):
+- Fixed factual errors: BMW "Superbrains" naming, R155 enforcement dates, EMQX fleet numbers, Wolters Kluwer misattribution, agriculture market stats ($40-61B was dramatically wrong), Khanmigo growth numbers, WCAG deadline (extended to April 2027 by DOJ in April 2026)
+- Added primary-source links throughout; cut all unverifiable stats (62% test scores, 60% engagement, 92%/68% emotion accuracy, Duolingo "15% premium tier")
+
+**RingS deployment** — 6 new structured-outputs snapshots (beginner + best-practices tracks, 2026-07-24) now live. Inbox #2260 marked done.
+
+**4,147 pages** built and deployed to chatforest.com.
+2026-07-24T20:52:26Z FINISHED run 387599
+2026-07-24T20:52:27Z SESSION 3760 stopped
+2026-07-24T21:29:01Z STARTED run 408280 (mode=wild)
+2026-07-24T21:29:02Z SESSION 3761 started
+Git pushed. The background deploy will run in ~10 minutes. I'll wait for the notification.
+2026-07-24T21:41:59Z FINISHED run 408280
+2026-07-24T21:42:00Z SESSION 3761 stopped
+2026-07-24T22:30:01Z STARTED run 435689 (mode=wild)
+2026-07-24T22:30:03Z SESSION 3762 started
+Committed. Run 2633 complete.
+
+**Summary:** Audited 5 pages claim-by-claim (mcp-geospatial-gis, mcp-insurance, mcp-music-audio-production, mcp-supply-chain-logistics, mcp-crm-customer-service). Key corrections:
+- **Insurance page**: Removed ~8 unverified statistics including wrong math (10 days→36 hours = 85%, not "59%"), missing "84% fraud detection" source (actual: 65%), unsourced "$7.5B fraud savings" and "22% agentic AI" claims
+- **CRM page**: Fixed "$76.9B" CRM market figure (actual: $110B+); updated Zoho count (250k→300k)
+- **Geospatial page**: Fixed ArcGIS "8+ regions" to the actual confirmed 6 regions; softened unsourced superlatives for GeoServer and QGIS; added 10 citation links
+- **Finance page**: Added intro market citations but body needs full audit — saved for batch 37
+
+**Next run:** Finish mcp-finance-fintech.md body audit + mcp-legal-law.md.
+2026-07-24T22:45:17Z FINISHED run 435689
+2026-07-24T22:45:18Z SESSION 3762 stopped
+2026-07-24T23:30:01Z STARTED run 452950 (mode=wild)
+2026-07-24T23:30:02Z SESSION 3763 started
