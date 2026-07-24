@@ -5,6 +5,7 @@ description: "How to compose multiple MCP servers into powerful workflows — co
 content_type: "Guide"
 card_description: "One MCP server is useful. Multiple servers working together is where the real power lives. Here's how to compose them."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 A single MCP server connects your AI agent to one system. But real-world tasks rarely live inside one system. Filing a bug requires reading from a project tracker, searching code, and writing to an issue tracker. Summarizing a meeting means pulling from calendar, notes, and email. The power of MCP isn't any single server — it's what happens when multiple servers work together.

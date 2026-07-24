@@ -205,9 +205,9 @@ When you can't run MCP transports natively on mobile, [MCP Bridge](https://githu
 - Risk-based execution model: standard, confirmation workflow, and Docker isolation
 - LLM-agnostic — works with any backend regardless of vendor
 
-**Performance:** The REST proxy adds 1–2 ms over a persistent stdio pipe but is 2.5–4.3× faster than spawning a new server process per request. For mobile apps making occasional tool calls, this overhead is negligible.
+**Performance:** The REST proxy adds minimal overhead compared to spawning a new server process per request. For mobile apps making occasional tool calls, this overhead is negligible.
 
-**Academic backing:** Published as a paper on arXiv (2504.08999) with formal architecture and evaluation.
+**Academic backing:** Published as a paper on [arXiv:2504.08999](https://arxiv.org/abs/2504.08999) with formal architecture and evaluation.
 
 ## On-Device LLMs + MCP Tool Calling
 
@@ -220,18 +220,18 @@ The mobile LLM landscape has matured significantly:
 | Model | Parameters | Target |
 |---|---|---|
 | Llama 3.2 | 1B / 3B | Mobile and edge |
-| Gemma 3 | 270M+ | Ultra-efficient edge |
-| Phi-4 mini | 3.8B | Mobile reasoning |
+| [Gemma 3 270M](https://developers.googleblog.com/en/introducing-gemma-3-270m/) | 270M | Ultra-efficient edge |
+| [Phi-4 mini](https://azure.microsoft.com/en-us/blog/empowering-innovation-the-next-generation-of-the-phi-family/) | 3.8B | Mobile reasoning |
 | SmolLM2 | 135M–1.7B | Smallest practical models |
 | Qwen2.5 | 0.5B–1.5B | Multilingual mobile |
 
-Meta's ExecuTorch now serves billions of users across Instagram, WhatsApp, Messenger, and Facebook with a 50KB deployment footprint.
+[Meta's ExecuTorch serves billions of people across Instagram, WhatsApp, Messenger, and Facebook](https://engineering.fb.com/2025/07/28/android/executorch-on-device-ml-meta-family-of-apps/), with a [50KB base runtime footprint](https://github.com/pytorch/executorch/blob/main/README.md) (when built without additional kernels or backends).
 
 ### Constraints
 
 Mobile inference faces fundamental hardware limits:
 
-- **Memory bandwidth:** Mobile devices have 50–90 GB/s vs. data center GPUs at 2–3 TB/s (a 30–50× gap)
+- **Memory bandwidth:** Mobile devices have 50–90 GB/s vs. H100-class data center GPUs at ~3.35 TB/s — a roughly 40–60× gap depending on specific hardware
 - **Thermal throttling:** Under sustained load, mobile processors throttle significantly — thermal management supersedes peak compute as the primary constraint
 - **RAM sharing:** The LLM competes with the OS, other apps, and the MCP client for limited memory (4–12 GB total)
 
@@ -263,7 +263,7 @@ The practical pattern emerging in 2026 is a hybrid: a small language model (SLM)
 
 The SLM understands user requests and decides whether to handle them locally or delegate to remote MCP tools. Simple queries (local search, quick calculations, UI actions) stay on-device. Complex queries (multi-document analysis, code generation, API orchestration) route to cloud MCP servers.
 
-Edge Veda, a Flutter-based framework, demonstrated this pattern for on-device LLM integration in mobile apps as early as March 2026.
+[Edge Veda](https://pub.dev/packages/edge_veda), a Flutter SDK for on-device LLM integration, [demonstrated this pattern](https://medium.com/edge-veda/edge-veda-in-5-minutes-your-first-on-device-llm-in-flutter-789f3d53f297) as early as March 2026.
 
 ## Enterprise Mobile MCP
 

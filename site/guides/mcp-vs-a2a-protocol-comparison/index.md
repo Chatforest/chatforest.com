@@ -20,7 +20,7 @@ MCP handles the vertical. A2A handles the horizontal. Confusing the two is like 
 
 ### MCP: How Agents Use Tools
 
-[Model Context Protocol](https://modelcontextprotocol.io/), created by Anthropic in November 2024 and donated to the Linux Foundation in December 2025, standardizes how an AI agent accesses external capabilities. Before MCP, every tool integration was custom — a bespoke API wrapper, a proprietary plugin format, a framework-specific adapter. MCP replaced that with a universal protocol.
+[Model Context Protocol](https://modelcontextprotocol.io/), [created by Anthropic in November 2024](https://www.anthropic.com/news/model-context-protocol) and [donated to the Linux Foundation in December 2025](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/), standardizes how an AI agent accesses external capabilities. Before MCP, every tool integration was custom — a bespoke API wrapper, a proprietary plugin format, a framework-specific adapter. MCP replaced that with a universal protocol.
 
 The architecture has three layers:
 
@@ -44,7 +44,7 @@ The key insight about MCP is that the agent doesn't need to know *how* a tool wo
 
 ### A2A: How Agents Collaborate
 
-[Agent-to-Agent Protocol](https://a2a-protocol.org/), created by Google in April 2025 and donated to the Linux Foundation in June 2025, standardizes how AI agents discover each other, negotiate tasks, and exchange results. Before A2A, multi-agent systems used ad-hoc coordination — shared databases, custom message queues, or framework-specific wiring.
+[Agent-to-Agent Protocol](https://a2a-protocol.org/), [created by Google in April 2025](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) and [donated to the Linux Foundation in June 2025](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents), standardizes how AI agents discover each other, negotiate tasks, and exchange results. Before A2A, multi-agent systems used ad-hoc coordination — shared databases, custom message queues, or framework-specific wiring.
 
 A2A introduces several key concepts:
 
@@ -117,7 +117,7 @@ The `input-required` state is significant — it allows human-in-the-loop workfl
 | **Task tracking** | Not built-in | First-class with states and progress |
 | **Human-in-the-loop** | Via prompt templates | Via `input-required` task state |
 | **Auth model** | Scoped resource access, OAuth 2.1 | OAuth 2.0/PKCE, Bearer tokens, API keys |
-| **Adoption** | 97M+ monthly SDK downloads | 50+ launch partners |
+| **Adoption** | [97M+ monthly SDK downloads](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) | [50+ launch partners](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) |
 
 ## When to Use Each Protocol
 
@@ -169,7 +169,7 @@ MCP and A2A aren't the only protocols in the agent infrastructure space, though 
 
 ### ACP (Agent Communication Protocol)
 
-Created by IBM's BeeAI project in March 2025, backed by IBM, Cisco, and Red Hat. ACP focused on agent-to-agent communication with a REST-based design that was more lightweight than A2A's JSON-RPC approach. In September 2025, IBM announced that ACP would **merge with A2A** under the Linux Foundation, incorporating ACP's innovations into the A2A specification. This convergence reduced fragmentation and strengthened A2A as the standard for agent-to-agent communication.
+[Created by IBM's BeeAI project in March 2025](https://research.ibm.com/blog/agent-communication-protocol-ai), backed by IBM. ACP focused on agent-to-agent communication with a REST-based design that was more lightweight than A2A's JSON-RPC approach. In [August 2025, IBM and Google announced that ACP would **merge with A2A**](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/) under the Linux Foundation, incorporating ACP's innovations into the A2A specification. This convergence reduced fragmentation and strengthened A2A as the standard for agent-to-agent communication.
 
 ### Other Protocols
 
@@ -178,7 +178,7 @@ The ecosystem includes additional protocols at various stages of adoption:
 - **AGNTCY** — a framework-level approach to agent interoperability
 - **UCP (Unified Communication Protocol)** — aims to unify multiple protocol approaches
 
-However, the industry has largely consolidated around the MCP + A2A combination as the primary two-protocol stack, both governed under the Linux Foundation's Agentic AI Foundation (AAIF) with co-founders including OpenAI, Anthropic, Google, Microsoft, AWS, and Block.
+However, the industry has largely consolidated around the MCP + A2A combination as the primary two-protocol stack, both governed under the [Linux Foundation's Agentic AI Foundation (AAIF)](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/). The AAIF was co-founded by Anthropic, Block, and OpenAI (each donating a founding project: MCP, goose, and AGENTS.md respectively), with Google, Microsoft, AWS, Bloomberg, and Cloudflare joining as platinum supporting members.
 
 ## Security Considerations
 

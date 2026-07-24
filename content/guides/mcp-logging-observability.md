@@ -5,6 +5,7 @@ description: "How to add logging and observability to MCP servers — covering t
 content_type: "Guide"
 card_description: "MCP servers run as separate processes, often via stdio. When something goes wrong, you need logging that actually works. Here's how."
 last_refreshed: 2026-04-11
+sources_audited: 2026-07-24
 ---
 
 MCP servers run as separate processes. When a tool call fails or returns unexpected results, you can't just drop a breakpoint in the server — it's running in its own process, possibly started by a client you don't control. The protocol's stdio transport makes this worse: stdout is reserved for JSON-RPC messages, so a stray `print()` corrupts the entire communication channel.
@@ -314,7 +315,7 @@ This is the first tool to reach for when developing or debugging an MCP server. 
 
 ### Client-Specific Debugging
 
-**Claude Desktop**: Logs MCP communication to `~/Library/Logs/Claude/mcp*.log` on macOS. The built-in Chrome DevTools (accessible via the developer menu) show network activity and console output.
+**Claude Desktop**: Logs MCP communication to `~/Library/Logs/Claude/mcp*.log` on macOS ([Claude Code debugging docs](https://modelcontextprotocol.io/docs/tools/debugging)). The built-in Chrome DevTools (accessible via the developer menu) show network activity and console output.
 
 **Claude Code**: Surfaces MCP log messages directly in the terminal output, making it one of the better clients for debugging.
 

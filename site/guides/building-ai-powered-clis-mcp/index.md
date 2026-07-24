@@ -13,7 +13,7 @@ The shift to terminal-first AI development isn't aesthetic — it's architectura
 
 **Speed.** No rendering overhead, no UI state to manage, no websocket connections to maintain. A CLI agent can read a file, edit it, run tests, and check results in seconds.
 
-**Parallelism.** Terminal agents can spawn parallel processes trivially. One system reported that dispatching 4 concurrent agents in isolated git worktrees reduced a 4-hour task to 1 hour — something that's awkward to orchestrate through a GUI.
+**Parallelism.** Terminal agents can spawn parallel processes trivially — running multiple agents in isolated git worktrees is straightforward in a way that's awkward to orchestrate through a GUI.
 
 **Reproducibility.** Every action is a command that can be logged, replayed, and audited. No clicking through menus or relying on UI state.
 

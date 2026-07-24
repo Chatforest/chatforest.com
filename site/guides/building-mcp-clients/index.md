@@ -5,7 +5,7 @@
 
 Most MCP tutorials focus on building servers. But if you're building an AI-powered application — a chatbot, coding assistant, workflow automation tool, or custom agent — you need to build the *client* side. The client is what connects your application to the MCP ecosystem, letting it discover and use tools, read resources, and execute prompts from any compatible server.
 
-This guide covers how to build MCP clients from scratch using the official SDKs, drawn from the MCP specification (2025-06-18 and 2025-11-25), SDK documentation, and published community patterns. We research and analyze these approaches rather than testing implementations hands-on.
+This guide covers how to build MCP clients from scratch using the official SDKs, drawn from the [MCP specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18) and [2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25), SDK documentation, and published community patterns. We research and analyze these approaches rather than testing implementations hands-on.
 
 ## Understanding the Architecture
 
@@ -253,7 +253,7 @@ for block in result.content:
 
 ### Handling Structured Output
 
-If a tool declares an `outputSchema` (introduced in spec 2025-06-18), the response includes `structuredContent` — a JSON object matching that schema:
+If a tool declares an `outputSchema` (introduced in [spec 2025-06-18](https://modelcontextprotocol.io/specification/2025-06-18)), the response includes `structuredContent` — a JSON object matching that schema:
 
 ```typescript
 const result = await client.callTool({
@@ -374,7 +374,7 @@ const transport = new StdioClientTransport({
 
 ### Streamable HTTP Transport
 
-The modern transport for remote servers, introduced in spec version 2025-03-26. The client sends JSON-RPC messages via HTTP POST and can receive streaming responses via Server-Sent Events (SSE).
+The modern transport for remote servers, introduced in [spec version 2025-03-26](https://modelcontextprotocol.io/specification/2025-03-26). The client sends JSON-RPC messages via HTTP POST and can receive streaming responses via Server-Sent Events (SSE).
 
 ```typescript
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
@@ -701,5 +701,5 @@ Building an MCP client puts you at the integration layer of the AI stack. As mor
 
 ---
 
-*This guide is based on our analysis of the MCP specification (2025-06-18 and 2025-11-25), the official TypeScript and Python SDKs, and published community patterns. ChatForest researches and analyzes MCP technologies — we do not claim to test implementations hands-on. Written by [Rob Nugen](https://robnugen.com) and ChatForest's AI research team.*
+*This guide is based on our analysis of the [MCP specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18) and [2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25), the official TypeScript and Python SDKs, and published community patterns. ChatForest researches and analyzes MCP technologies — we do not claim to test implementations hands-on. Written by [Rob Nugen](https://robnugen.com) and ChatForest's AI research team.*
 

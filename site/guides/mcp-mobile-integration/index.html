@@ -240,8 +240,8 @@ client.initialize()
 <li>Risk-based execution model: standard, confirmation workflow, and Docker isolation</li>
 <li>LLM-agnostic — works with any backend regardless of vendor</li>
 </ul>
-<p><strong>Performance:</strong> The REST proxy adds 1–2 ms over a persistent stdio pipe but is 2.5–4.3× faster than spawning a new server process per request. For mobile apps making occasional tool calls, this overhead is negligible.</p>
-<p><strong>Academic backing:</strong> Published as a paper on arXiv (2504.08999) with formal architecture and evaluation.</p>
+<p><strong>Performance:</strong> The REST proxy adds minimal overhead compared to spawning a new server process per request. For mobile apps making occasional tool calls, this overhead is negligible.</p>
+<p><strong>Academic backing:</strong> Published as a paper on <a href="https://arxiv.org/abs/2504.08999">arXiv:2504.08999</a> with formal architecture and evaluation.</p>
 <h2 id="on-device-llms--mcp-tool-calling">On-Device LLMs + MCP Tool Calling</h2>
 <p>The convergence of on-device LLMs and MCP creates the possibility of fully local AI agents on mobile — no cloud required.</p>
 <h3 id="the-state-of-on-device-llms-march-2026">The State of On-Device LLMs (March 2026)</h3>
@@ -261,12 +261,12 @@ client.initialize()
 <td>Mobile and edge</td>
 </tr>
 <tr>
-<td>Gemma 3</td>
-<td>270M+</td>
+<td><a href="https://developers.googleblog.com/en/introducing-gemma-3-270m/">Gemma 3 270M</a></td>
+<td>270M</td>
 <td>Ultra-efficient edge</td>
 </tr>
 <tr>
-<td>Phi-4 mini</td>
+<td><a href="https://azure.microsoft.com/en-us/blog/empowering-innovation-the-next-generation-of-the-phi-family/">Phi-4 mini</a></td>
 <td>3.8B</td>
 <td>Mobile reasoning</td>
 </tr>
@@ -282,11 +282,11 @@ client.initialize()
 </tr>
 </tbody>
 </table>
-<p>Meta&rsquo;s ExecuTorch now serves billions of users across Instagram, WhatsApp, Messenger, and Facebook with a 50KB deployment footprint.</p>
+<p><a href="https://engineering.fb.com/2025/07/28/android/executorch-on-device-ml-meta-family-of-apps/">Meta&rsquo;s ExecuTorch serves billions of people across Instagram, WhatsApp, Messenger, and Facebook</a>, with a <a href="https://github.com/pytorch/executorch/blob/main/README.md">50KB base runtime footprint</a> (when built without additional kernels or backends).</p>
 <h3 id="constraints">Constraints</h3>
 <p>Mobile inference faces fundamental hardware limits:</p>
 <ul>
-<li><strong>Memory bandwidth:</strong> Mobile devices have 50–90 GB/s vs. data center GPUs at 2–3 TB/s (a 30–50× gap)</li>
+<li><strong>Memory bandwidth:</strong> Mobile devices have 50–90 GB/s vs. H100-class data center GPUs at ~3.35 TB/s — a roughly 40–60× gap depending on specific hardware</li>
 <li><strong>Thermal throttling:</strong> Under sustained load, mobile processors throttle significantly — thermal management supersedes peak compute as the primary constraint</li>
 <li><strong>RAM sharing:</strong> The LLM competes with the OS, other apps, and the MCP client for limited memory (4–12 GB total)</li>
 </ul>
@@ -312,7 +312,7 @@ client.initialize()
 │    large context windows)   │
 └─────────────────────────────┘
 </code></pre><p>The SLM understands user requests and decides whether to handle them locally or delegate to remote MCP tools. Simple queries (local search, quick calculations, UI actions) stay on-device. Complex queries (multi-document analysis, code generation, API orchestration) route to cloud MCP servers.</p>
-<p>Edge Veda, a Flutter-based framework, demonstrated this pattern for on-device LLM integration in mobile apps as early as March 2026.</p>
+<p><a href="https://pub.dev/packages/edge_veda">Edge Veda</a>, a Flutter SDK for on-device LLM integration, <a href="https://medium.com/edge-veda/edge-veda-in-5-minutes-your-first-on-device-llm-in-flutter-789f3d53f297">demonstrated this pattern</a> as early as March 2026.</p>
 <h2 id="enterprise-mobile-mcp">Enterprise Mobile MCP</h2>
 <h3 id="google-android-management-api">Google Android Management API</h3>
 <p>Google&rsquo;s <a href="https://developers.google.com/android/management/use-android-management-mcp">Android Management API MCP server</a> is an officially managed remote MCP server for enterprise Android fleet management. As of March 17, 2026, MCP support is automatically available when the Android Management API is enabled in a Google Cloud project.</p>

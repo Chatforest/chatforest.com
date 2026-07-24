@@ -310,7 +310,7 @@ This is the first tool to reach for when developing or debugging an MCP server. 
 
 ### Client-Specific Debugging
 
-**Claude Desktop**: Logs MCP communication to `~/Library/Logs/Claude/mcp*.log` on macOS. The built-in Chrome DevTools (accessible via the developer menu) show network activity and console output.
+**Claude Desktop**: Logs MCP communication to `~/Library/Logs/Claude/mcp*.log` on macOS ([Claude Code debugging docs](https://modelcontextprotocol.io/docs/tools/debugging)). The built-in Chrome DevTools (accessible via the developer menu) show network activity and console output.
 
 **Claude Code**: Surfaces MCP log messages directly in the terminal output, making it one of the better clients for debugging.
 

@@ -176,7 +176,7 @@
 </table>
 <h3 id="enterprise-testing-platforms">Enterprise Testing Platforms</h3>
 <p>Larger platforms have added MCP interfaces:</p>
-<p><strong>TestSprite 2.0</strong> — an autonomous AI testing agent with MCP server integration for Cursor, GitHub Copilot, and other IDEs. Claims to boost AI-generated code pass rates from 42% to 93% after one testing iteration. Used by 6,000+ development teams. Named a Top 10 AI tool on Product Hunt in 2025.</p>
+<p><strong><a href="https://www.prnewswire.com/news-releases/testsprite-2-0-aims-to-solve-ai-code-quality-crisis-with-its-new-mcp-server-302505031.html">TestSprite 2.0</a></strong> — an autonomous AI testing agent with MCP server integration for Cursor, GitHub Copilot, and other IDEs. Claims to boost AI-generated code pass rates from 42% to 93% after one testing iteration. Used by 6,000+ development teams. Ranked #2 product of the month for July 2025 on Product Hunt.</p>
 <p><strong>Tricentis</strong> — ships remote MCP servers for Tosca (test automation), NeoLoad (performance testing), qTest (test management), and SeaLights (test intelligence). NeoLoad 2025.1 introduced AI-driven &ldquo;Augmented Analysis&rdquo; and 2025.3 added Core Web Vitals. The 2026 roadmap includes a dedicated performance testing agent.</p>
 <p><strong>Microsoft Power Platform Test Engine</strong> — an MCP server for deterministic analysis of Power Apps. Combines rule-based analysis with generative AI for test recommendations and test creation. Open source.</p>
 <h2 id="playwright-mcp-the-de-facto-standard">Playwright MCP: The De Facto Standard</h2>
@@ -194,7 +194,7 @@
 <li><strong>Control:</strong> <code>browser_resize</code>, <code>browser_wait</code>, <code>browser_run_code</code>, <code>browser_install</code></li>
 </ul>
 <h3 id="cli-mode-4x-token-reduction">CLI Mode: 4x Token Reduction</h3>
-<p>In early 2026, Playwright introduced a CLI mode (<code>@playwright/cli</code>) as an alternative to the MCP interface. Where MCP requires JSON-based tool definitions and structured responses (~114,000 tokens for a typical browser automation task), CLI mode uses shell commands (~27,000 tokens — roughly 4x less).</p>
+<p>In early 2026, Playwright introduced a CLI mode (<code>@playwright/cli</code>) as an alternative to the MCP interface. <a href="https://scrolltest.medium.com/playwright-mcp-burns-114k-tokens-per-test-the-new-cli-uses-27k-heres-when-to-use-each-65dabeaac7a0">Third-party benchmarks</a> found MCP requires ~114,000 tokens for a typical browser automation task vs. ~27,000 for CLI — roughly 4x less.</p>
 <p>The decision between CLI and MCP depends on the agent&rsquo;s work pattern:</p>
 <ul>
 <li><strong>CLI</strong> is better when the agent &ldquo;acts more than it thinks&rdquo; — high-throughput coding agents balancing browser automation with large codebases</li>
@@ -210,7 +210,7 @@
 <h2 id="ai-assisted-testing-patterns">AI-Assisted Testing Patterns</h2>
 <h3 id="pattern-1-test-generation-from-natural-language">Pattern 1: Test Generation from Natural Language</h3>
 <p>The most common pattern: an AI agent reads a test case description (often from a test management tool via MCP) and generates executable test code.</p>
-<p><strong>Azure DevOps team case study</strong> (published July 2025): The team used Azure DevOps MCP to fetch test case details, then GitHub Copilot to generate Playwright TypeScript scripts. Key learning: a <strong>two-prompt approach</strong> works better than one. The first prompt retrieves test case details; the second generates the script. Breaking into two prompts produced more reliable code than trying to do everything at once. The result: hundreds of manual test cases converted to automated tests running in Azure Pipelines CI/CD.</p>
+<p><strong><a href="https://devblogs.microsoft.com/devops/from-manual-testing-to-ai-generated-automation-our-azure-devops-mcp-playwright-success-story/">Azure DevOps team case study</a></strong> (published July 24, 2025): The team used Azure DevOps MCP to fetch test case details, then GitHub Copilot to generate Playwright TypeScript scripts. Key learning: a <strong>two-prompt approach</strong> works better than one. The first prompt retrieves test case details; the second generates the script. Breaking into two prompts produced more reliable code than trying to do everything at once. The result: hundreds of manual test cases converted to automated tests running in Azure Pipelines CI/CD.</p>
 <p>Their finding: &ldquo;prompt is the king&rdquo; — clear, specific prompts yield dramatically better test code. The main limitation was non-textual steps (visual assertions, chart validation) where AI struggled.</p>
 <h3 id="pattern-2-self-healing-tests">Pattern 2: Self-Healing Tests</h3>
 <p>Traditional test automation breaks when the UI changes — a renamed button, a restructured form, a moved element. Self-healing tests use MCP to close the loop:</p>
@@ -233,7 +233,7 @@
 <p>MCP enables richer context than traditional test generators. The server passes structured information to the model: which test framework is in use, what files are open in the IDE, what code changed in the current diff. This produces more relevant tests than generic &ldquo;generate a test for this function&rdquo; prompts because the AI understands the surrounding codebase context.</p>
 <h2 id="visual-and-accessibility-testing">Visual and Accessibility Testing</h2>
 <h3 id="applitools-mcp-server">Applitools MCP Server</h3>
-<p>Applitools (named a Strong Performer in Forrester Wave Autonomous Testing Platforms Q4 2025) offers an MCP server with 6 tools:</p>
+<p>Applitools (<a href="https://applitools.com/blog/applitools-forrester-wave-autonomous-testing-q4-2025/">named a Strong Performer in the Forrester Wave: Autonomous Testing Platforms, Q4 2025</a>) offers an MCP server with 6 tools:</p>
 <ul>
 <li><code>eyes_verify_api_key</code> / <code>eyes_setup_project</code> — configuration</li>
 <li><code>eyes_add_checkpoints_to_test</code> — define visual checkpoints</li>
@@ -273,7 +273,7 @@ Report results
 <p>testrigor proposes adding a &ldquo;PromptOps&rdquo; layer to DevOps in 2026: AI agents access CI/CD pipeline data, assess deployment logs, open PRs, and execute runbook steps — all through MCP. This positions MCP not just as a testing protocol but as the interface layer between AI agents and the entire software delivery pipeline.</p>
 <h2 id="security-considerations">Security Considerations</h2>
 <h3 id="the-owasp-mcp-top-10">The OWASP MCP Top 10</h3>
-<p>OWASP published a beta MCP security top 10 (v0.1), identifying ten categories of risk. The ones most relevant to testing:</p>
+<p><a href="https://owasp.org/www-project-mcp-top-10/">OWASP published a beta MCP security top 10 (v0.1)</a>, identifying ten categories of risk. The ones most relevant to testing:</p>
 <table>
 <thead>
 <tr>
@@ -306,8 +306,8 @@ Report results
 </table>
 <h3 id="real-security-incidents">Real Security Incidents</h3>
 <p>These aren&rsquo;t theoretical risks:</p>
-<p><strong>43% command injection rate.</strong> March 2025 research found that 43% of publicly available MCP server implementations contained command injection vulnerabilities, and 30% permitted unrestricted URL fetching. Testing MCP servers that execute code or interact with browsers are particularly exposed.</p>
-<p><strong>CVE-2025-6514 (mcp-remote).</strong> A command injection vulnerability in the <code>mcp-remote</code> package allowed malicious MCP servers to execute arbitrary code on connected clients — full system compromise. The package had 437,000+ downloads and affected users of Cloudflare, Hugging Face, and Auth0 integrations.</p>
+<p><strong>43% command injection rate.</strong> <a href="https://equixly.com/blog/2025/03/29/mcp-server-new-security-nightmare/">March 2025 research by Equixly</a> found that 43% of publicly available MCP server implementations contained command injection vulnerabilities, and 30% permitted unrestricted URL fetching. Testing MCP servers that execute code or interact with browsers are particularly exposed.</p>
+<p><strong><a href="https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/">CVE-2025-6514</a> (mcp-remote).</strong> A command injection vulnerability in the <code>mcp-remote</code> package allowed malicious MCP servers to execute arbitrary code on connected clients — full system compromise. The package had <a href="https://thehackernews.com/2025/07/critical-mcp-remote-vulnerability.html">437,000+ downloads</a> and affected users of Cloudflare, Hugging Face, and Auth0 integrations.</p>
 <p><strong>Supabase Cursor incident.</strong> A Cursor agent with privileged service-role database access processed support tickets containing user-supplied SQL instructions. The agent executed the SQL, exfiltrating sensitive integration tokens into a public support thread. This demonstrates the risk of giving AI testing agents broad database access.</p>
 <h3 id="testing-specific-risks">Testing-Specific Risks</h3>
 <ul>

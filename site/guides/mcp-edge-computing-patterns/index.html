@@ -203,7 +203,7 @@
 <p>Results from testing with 22 sensor types across 6 microcontroller families: 100% task success rate, 205ms average response time, 74KB peak memory usage. A 12-hour production deployment in a multi-story building used 6 ESP32-S3 units.</p>
 <p>An IEEE paper on IoT Robotics (IoRT) describes MCP enabling modular service composition and semantic decoupling — treating devices as callable resources and tools rather than requiring protocol-specific integration code.</p>
 <h3 id="home-assistant-the-local-first-smart-home-mcp">Home Assistant: The Local-First Smart Home MCP</h3>
-<p><a href="https://www.home-assistant.io/">Home Assistant&rsquo;s MCP Server integration</a> (available since version 2025.2, 1.4% of active installations) runs entirely locally — data stays on your network. The unofficial <a href="https://github.com/homeassistant-ai/ha-mcp"><code>ha-mcp</code></a> (1,600+ stars) provides 96 tools for comprehensive smart home control.</p>
+<p><a href="https://www.home-assistant.io/integrations/mcp_server/">Home Assistant&rsquo;s MCP Server integration</a> (available since version 2025.2, used by 3.2% of active installations) runs entirely locally — data stays on your network. The unofficial <a href="https://github.com/homeassistant-ai/ha-mcp"><code>ha-mcp</code></a> (1,600+ stars) provides 96 tools for comprehensive smart home control.</p>
 <p>This is local-first edge computing in practice: no cloud dependency, low latency, full data privacy.</p>
 <p>For more IoT MCP servers, see our <a href="/guides/best-iot-mcp-servers/">Best IoT MCP Servers guide</a>.</p>
 <h3 id="mcp-over-mqtt-edge-native-protocol-transport">MCP over MQTT: Edge-Native Protocol Transport</h3>
@@ -258,7 +258,7 @@
 <ul>
 <li><strong>Raspberry Pi 5</strong> — Runs quantized models with MCP coordinating between inference engines and sensor pipelines</li>
 <li><strong>NVIDIA Jetson</strong> — GPU-accelerated edge inference with MCP tool orchestration</li>
-<li><strong>Qualcomm Snapdragon</strong> — NPU delivers up to 45 TOPS for on-device inference, with <a href="https://www.qualcomm.com/">Qualcomm publishing guidance</a> on MCP integration across cloud, edge, and real-world devices</li>
+<li><strong><a href="https://www.qualcomm.com/snapdragon/laptops-and-tablets/npu-powered-ai-experiences">Qualcomm Snapdragon</a></strong> — NPU delivers up to 45 TOPS for on-device inference, with <a href="https://www.qualcomm.com/developer/blog/2025/10/how-mcp-simplifies-tool-integration-across-cloud-edge-real-world-devices">Qualcomm publishing guidance</a> on MCP integration across cloud, edge, and real-world devices</li>
 <li><strong>ARM Cortex-A</strong> — MCP server as runtime abstraction layer over device I/O</li>
 </ul>
 <h2 id="edge-databases-with-mcp">Edge Databases with MCP</h2>
@@ -449,7 +449,7 @@
 <ul>
 <li><strong>MCP specification</strong> — SEP-1442 proposes making stateless mode the default, further simplifying edge deployment</li>
 <li><strong>WASM ecosystem</strong> — MCP.run&rsquo;s planned serverless execution and wasmcp&rsquo;s growing middleware library will make WASM MCP more accessible</li>
-<li><strong>Edge AI hardware</strong> — Qualcomm Snapdragon NPU (45 TOPS), Apple Neural Engine, and Google Edge TPU will make on-device MCP + local inference increasingly practical</li>
+<li><strong>Edge AI hardware</strong> — <a href="https://www.qualcomm.com/snapdragon/laptops-and-tablets/npu-powered-ai-experiences">Qualcomm Snapdragon NPU (45 TOPS)</a>, Apple Neural Engine, and Google Edge TPU will make on-device MCP + local inference increasingly practical</li>
 <li><strong>Protocol transports</strong> — MCP over MQTT is just the beginning; expect MCP over CoAP, BLE, and other IoT protocols</li>
 <li><strong>Gateway convergence</strong> — Projects like IBM ContextForge are federating MCP, A2A, REST, and gRPC under unified gateways, making edge routing simpler</li>
 </ul>

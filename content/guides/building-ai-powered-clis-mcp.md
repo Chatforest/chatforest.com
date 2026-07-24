@@ -5,6 +5,7 @@ description: "A practical guide to building AI-powered command-line tools using 
 content_type: "Guide"
 card_description: "Learn how to build CLI tools that AI agents can use, and how to build terminal-based AI agents powered by MCP."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 The terminal is having a moment. In 2026, the most capable AI coding tools — Claude Code, Aider, OpenCode, Gemini CLI — all run in the terminal, not in a GUI. Teams that built elaborate graphical interfaces are watching terminal-first agents outperform them on benchmarks and in production. This guide covers both sides of the CLI-AI relationship: how to design CLI tools that agents can use effectively, and how to build your own terminal-based AI agents using the Model Context Protocol. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
@@ -17,7 +18,7 @@ The shift to terminal-first AI development isn't aesthetic — it's architectura
 
 **Speed.** No rendering overhead, no UI state to manage, no websocket connections to maintain. A CLI agent can read a file, edit it, run tests, and check results in seconds.
 
-**Parallelism.** Terminal agents can spawn parallel processes trivially. One system reported that dispatching 4 concurrent agents in isolated git worktrees reduced a 4-hour task to 1 hour — something that's awkward to orchestrate through a GUI.
+**Parallelism.** Terminal agents can spawn parallel processes trivially — running multiple agents in isolated git worktrees is straightforward in a way that's awkward to orchestrate through a GUI.
 
 **Reproducibility.** Every action is a command that can be logged, replayed, and audited. No clicking through menus or relying on UI state.
 

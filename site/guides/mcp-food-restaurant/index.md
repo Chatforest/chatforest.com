@@ -3,7 +3,7 @@
 > A comprehensive guide to MCP integrations for food and restaurants — covering 60+ MCP servers across recipes (HowToCook 702 stars), nutrition tracking (15+ servers), POS systems
 
 
-Food is one of the most universal human needs, and the industry built around it is massive: restaurant technology alone is a $5.93 billion market in 2025, projected to reach $27 billion by 2035. AI adoption is accelerating — 79% of U.S. restaurants now use some form of AI, and the AI-in-food market is growing at nearly 37% annually. But the tooling is fragmented: POS systems, delivery platforms, reservation systems, recipe databases, nutrition trackers, kitchen display systems, and inventory management all live in separate silos.
+Food is one of the most universal human needs, and the industry built around it is massive: [restaurant technology alone is a $5.93 billion market in 2025, projected to reach $27 billion by 2035](https://www.globalgrowthinsights.com/market-reports/restaurant-technology-market-116768). AI adoption is accelerating — [79% of U.S. restaurants now use some form of AI](https://pos.toasttab.com/blog/data/ai-in-restaurants), and the [AI-in-food market is growing at nearly 37% annually](https://www.globenewswire.com/news-release/2025/12/12/3204534/0/en/ai-in-food-innovation-market-to-surge-at-a-cagr-of-37-3-reaching-usd-39-76-billion-by-2034.html). But the tooling is fragmented: POS systems, delivery platforms, reservation systems, recipe databases, nutrition trackers, kitchen display systems, and inventory management all live in separate silos.
 
 MCP is starting to bridge these silos, though unevenly. The consumer side is well-covered — recipe search, nutrition tracking, and restaurant discovery have dozens of MCP servers. The operational side (POS, kitchen ops, food safety) is almost empty. Three official MCP servers exist from food industry companies: Instacart (the landmark first grocery MCP integration with ChatGPT), Yelp (restaurant discovery and reviews), and Square (POS and payments). Major platforms like DoorDash, UberEats, Toast, and every restaurant chain remain absent.
 
@@ -16,11 +16,11 @@ The food industry has characteristics that make standardized AI integration both
 
 **Data silos are everywhere.** A single restaurant might use Toast for POS, DoorDash for delivery, OpenTable for reservations, Sysco for supply ordering, 7shifts for labor scheduling, Yelp for reviews, and QuickBooks for accounting. None of these systems talk to each other natively. An AI agent that could read POS data, check delivery orders, and compare against inventory — all through a standard protocol — would unlock cross-system intelligence that restaurant operators currently piece together manually.
 
-**Labor shortages are chronic.** The restaurant industry has a 79.6% annual turnover rate, and 45% of operators report insufficient staffing. AI agents that automate routine tasks — answering phones, taking reservations, managing inventory, generating marketing — aren't a luxury but a survival strategy. MCP provides the standard interface that lets these agents connect to the actual systems restaurants use.
+**Labor shortages are chronic.** [The restaurant industry has a 79.6% annual turnover rate](https://turnozo.com/blog/restaurant-staffing-statistics), and [45% of operators report insufficient staffing](https://restaurant.org/research-and-media/research/research-reports/state-of-the-industry/). AI agents that automate routine tasks — answering phones, taking reservations, managing inventory, generating marketing — aren't a luxury but a survival strategy. MCP provides the standard interface that lets these agents connect to the actual systems restaurants use.
 
-**Food waste is a $200 billion problem.** Restaurants and foodservice generated 12.5 million tons of surplus food in 2024, with more than 85% going to landfill. Predictive demand AI can cut food waste by 40% and labor costs by 25%, but only if it has access to sales data, inventory levels, weather forecasts, and event calendars. MCP can provide that access.
+**Food waste is a massive problem.** [Restaurants and foodservice generated 12.5 million tons of surplus food in 2024, with more than 85% going to landfill](https://refed.org/downloads/2024-refed-food-waste-report-updated-4-18-2025.pdf). Predictive demand AI can cut food waste by 40%, but only if it has access to sales data, inventory levels, weather forecasts, and event calendars. MCP can provide that access.
 
-**The consumer experience is already AI-driven.** Chatbots are the most widely deployed AI tool in restaurants (60% daily use). Voice ordering, personalized recommendations, and automated marketing are becoming standard. MCP servers for Yelp, Google Maps, and reservation platforms let AI agents help consumers find, evaluate, and book restaurants through a structured interface rather than screen-scraping.
+**The consumer experience is already AI-driven.** [Chatbots are the most widely deployed AI tool in restaurants, with 60% of operators using them daily](https://www.deloitte.com/us/en/insights/industry/retail-distribution/ai-in-restaurants.html). Voice ordering, personalized recommendations, and automated marketing are becoming standard. MCP servers for Yelp, Google Maps, and reservation platforms let AI agents help consumers find, evaluate, and book restaurants through a structured interface rather than screen-scraping.
 
 **Scale varies enormously.** A food truck, a family restaurant, a fast-casual chain with 500 locations, and a global franchise like McDonald's have fundamentally different technology needs. MCP's modular design — where each tool can be adopted independently — fits this spectrum better than monolithic platforms.
 
@@ -127,11 +127,11 @@ Other Open Food Facts servers:
 
 ## Food Delivery Platforms
 
-Food delivery is a $74+ billion industry in the US alone, yet no major delivery platform has released an official MCP server. The current landscape is entirely scrapers and proof-of-concept integrations.
+Food delivery is a [$74+ billion industry in the US alone](https://finance.yahoo.com/news/united-states-online-food-delivery-135000318.html), yet no major delivery platform has released an official MCP server. The current landscape is entirely scrapers and proof-of-concept integrations.
 
 ### The Official Void
 
-DoorDash (56% US market share), Uber Eats (23%), and Grubhub (16%) have no official MCP servers. This is a significant gap. Restaurants managing orders across multiple delivery platforms — a common pain point — would benefit enormously from a unified MCP interface. Third-party restaurant management platforms like Olo and Ordermark aggregate these already, but none have MCP servers either.
+[DoorDash (56% US market share), Uber Eats (23%), and Grubhub (16%)](https://www.imarcgroup.com/united-states-online-food-delivery-market) have no official MCP servers. This is a significant gap. Restaurants managing orders across multiple delivery platforms — a common pain point — would benefit enormously from a unified MCP interface. Third-party restaurant management platforms like Olo and Ordermark aggregate these already, but none have MCP servers either.
 
 ### What Exists
 
@@ -166,7 +166,7 @@ Regional/specialty:
 
 Instacart's MCP server is arguably the most significant official food industry MCP integration to date. Launched in December 2025, it was the first grocery company to enable full MCP-powered shopping within ChatGPT. The server provides three tools: create recipe pages (with ingredients, instructions, and URLs), create shopping list pages, and get nearby retailers by postal code.
 
-The significance goes beyond the tools themselves. Instacart connects to 1,800+ retailers and 2+ billion products. When an AI agent creates a recipe through this MCP server, the user gets a shoppable list with real prices and real-time availability at nearby stores. This is the model of what food industry MCP integration should look like: official, production-grade, and immediately useful.
+The significance goes beyond the tools themselves. [Instacart connects to 1,800+ retail banners across 85,000+ stores](https://www.instacart.com/company/). When an AI agent creates a recipe through this MCP server, the user gets a shoppable list with real prices and real-time availability at nearby stores. This is the model of what food industry MCP integration should look like: official, production-grade, and immediately useful.
 
 Production endpoint: mcp.instacart.com. Development: mcp.dev.instacart.tools.
 
@@ -407,9 +407,9 @@ Three food industry companies have released official MCP servers:
 | Company | Why It Matters | Market Position |
 |---------|---------------|----------------|
 | **Toast** | #1 restaurant POS | Hundreds of thousands of restaurant locations |
-| **DoorDash** | 56% US delivery market share | $74B+ US delivery market |
-| **Uber Eats** | 23% US delivery market share | Global presence |
-| **Grubhub** | 16% US delivery market share | First mover in US delivery |
+| **DoorDash** | [56% US delivery market share](https://www.imarcgroup.com/united-states-online-food-delivery-market) | [$74B+ US delivery market](https://finance.yahoo.com/news/united-states-online-food-delivery-135000318.html) |
+| **Uber Eats** | [23% US delivery market share](https://www.imarcgroup.com/united-states-online-food-delivery-market) | Global presence |
+| **Grubhub** | [16% US delivery market share](https://www.imarcgroup.com/united-states-online-food-delivery-market) | First mover in US delivery |
 | **OpenTable** | Dominant reservation platform | 60,000+ restaurants |
 | **Resy** | Premium reservation platform | High-end dining |
 | **McDonald's** | Largest restaurant chain globally | 40,000+ locations |
@@ -468,16 +468,14 @@ Look at **Instacart MCP** as the gold standard for official food industry MCP in
 
 The food industry's AI transformation is well underway, and the numbers underscore why MCP integration matters:
 
-- **Restaurant technology market:** $5.93B (2025) → $27.05B by 2035 (16.39% CAGR)
-- **AI in food & beverages:** $13.39B (2025) → $88.37B by 2031 (36.96% CAGR)
-- **US food delivery:** $74B+ industry, dominated by DoorDash (56%), Uber Eats (23%), Grubhub (16%)
-- **AI adoption:** 79% of US restaurants use some form of AI; 69% actively adopting in 2026
-- **Top AI applications:** Marketing/personalization (53%), predictive analytics (40%), voice ordering (39%)
-- **Labor crisis:** 79.6% annual turnover, 45% report insufficient staffing, 92% face rising labor costs
-- **Food waste:** 12.5 million tons from restaurants in 2024; 85%+ to landfill
-- **ROI:** Tech adopters see 15% lower labor costs, 20% higher monthly sales; predictive demand cuts food waste 40%
+- **Restaurant technology market:** [$5.93B (2025) → $27.05B by 2035 (16.39% CAGR)](https://www.globalgrowthinsights.com/market-reports/restaurant-technology-market-116768)
+- **AI in food & beverages:** [$13.39B (2025) → $88.37B by 2031 (36.96% CAGR)](https://www.mordorintelligence.com/industry-reports/artificial-intelligence-in-food-and-beverages-market)
+- **US food delivery:** [$74B+ industry](https://finance.yahoo.com/news/united-states-online-food-delivery-135000318.html), dominated by [DoorDash (56%), Uber Eats (23%), Grubhub (16%)](https://www.imarcgroup.com/united-states-online-food-delivery-market)
+- **AI adoption:** [79% of US restaurants use some form of AI](https://pos.toasttab.com/blog/data/ai-in-restaurants)
+- **Labor crisis:** [79.6% annual turnover](https://turnozo.com/blog/restaurant-staffing-statistics), [45% report insufficient staffing](https://restaurant.org/research-and-media/research/research-reports/state-of-the-industry/)
+- **Food waste:** [12.5 million tons from restaurants in 2024; 85%+ to landfill](https://refed.org/downloads/2024-refed-food-waste-report-updated-4-18-2025.pdf)
 
 The gap between AI adoption rates (79%) and MCP server availability (3 official servers) is enormous. Most restaurants are using AI through proprietary integrations — chatbots from their POS vendor, analytics from their delivery partner, marketing from their CRM. MCP's value proposition is unifying these into a single interface that any AI agent can use, but the infrastructure isn't there yet for most of the operational stack.
 
-For every $1 invested in food waste reduction, restaurants save $7 in operating costs. An AI agent that could connect to POS data (what's selling), inventory systems (what's in stock), weather APIs (tomorrow's demand), and event calendars (is there a concert nearby?) through MCP could make real-time waste-reduction decisions. The recipe and nutrition pieces exist. The operational pieces don't — yet.
+[For every $1 invested in food waste reduction, restaurants save $7 in operating costs](https://www.restaurantdive.com/news/restaurants-save-7-for-each-1-invested-in-cutting-food-waste-report-show/548996/). An AI agent that could connect to POS data (what's selling), inventory systems (what's in stock), weather APIs (tomorrow's demand), and event calendars (is there a concert nearby?) through MCP could make real-time waste-reduction decisions. The recipe and nutrition pieces exist. The operational pieces don't — yet.
 

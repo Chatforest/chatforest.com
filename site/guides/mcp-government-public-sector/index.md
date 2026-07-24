@@ -5,7 +5,7 @@
 
 Government operates the world's largest collection of disconnected information systems. A single federal agency might maintain dozens of databases — each with its own access controls, data formats, retention policies, and regulatory constraints — while state and local governments add thousands more. Citizens navigate this fragmentation daily when they search for benefits across agencies, track legislation across chambers, or try to understand how public money gets spent. Government employees face it too, spending significant time bridging systems that were never designed to talk to each other.
 
-The numbers reflect both enormous opportunity and real momentum. AI use cases across federal agencies doubled from 571 in 2023 to 1,110 in 2024, with generative AI usage increasing ninefold. Roughly 90% of US government agencies are adopting or planning to adopt AI, and 43% of public-sector employees now use AI at least a few times per year — up from 17% in early 2023. The AI in government market reached approximately $22–26 billion in 2024–2025, with projections ranging from $98 billion to $136 billion by 2033–2035 at about 18% CAGR.
+The numbers reflect both enormous opportunity and real momentum. [AI use cases across federal agencies doubled from 571 in 2023 to 1,110 in 2024, with generative AI usage increasing ninefold](https://files.gao.gov/reports/GAO-25-107653/index.html). [Roughly 90% of US government agencies are adopting or planning to adopt AI](https://cloud.google.com/blog/topics/public-sector/new-google-public-sector-research-shows-that-nearly-90-of-federal-agencies-are-already-using-ai), and [43% of public-sector employees now use AI at least a few times per year — up from 17% in early 2023](https://www.gallup.com/workplace/702983/adoption-rapidly-growing-public-sector.aspx). The [AI in government market reached approximately $22–26 billion in 2024–2025, with projections ranging from $98 billion to $136 billion by 2033–2035 at about 18% CAGR](https://www.grandviewresearch.com/industry-analysis/ai-government-public-services-market-report).
 
 MCP provides a structured protocol for connecting AI assistants to government data sources and systems. Rather than building custom integrations for each agency API, legislative database, open data portal, and procurement platform, MCP-connected agents can query congressional records, search open data catalogs, look up census statistics, track federal contracts, monitor regulatory changes, and access court records — all through defined tool interfaces with consistent authentication and error handling.
 
@@ -21,7 +21,7 @@ Government has characteristics that make standardized AI integration both except
 
 **Transparency and accountability are fundamental.** Government data is public by default (with specific exceptions), and citizens have a right to understand how AI systems use their data and make recommendations. MCP's explicit tool calls — where each action is visible and auditable — align well with government requirements for explainability and accountability that opaque AI integration approaches cannot satisfy.
 
-**Accessibility requirements apply universally.** Section 508 requires federal digital services to be accessible to people with disabilities, and only 23% of top-visited federal websites fully conform as of FY2025. AI agents that interact with government data through MCP must ensure their outputs support accessible formats and comply with WCAG 2.2 standards.
+**Accessibility requirements apply universally.** Section 508 requires federal digital services to be accessible to people with disabilities, and [only 23% of top-visited federal websites fully conformed as of FY2024](https://www.section508.gov/manage/section-508-assessment/2025/single-page-version/) (FY2025 data shows improvement to 37%). AI agents that interact with government data through MCP must ensure their outputs support accessible formats and comply with WCAG 2.2 standards.
 
 **Scale and diversity of use cases are unmatched.** Government AI applications span constituent services, policy analysis, regulatory enforcement, procurement optimization, fraud detection, emergency response, urban planning, and dozens of other domains. A standardized integration protocol means an AI agent built for legislative research can be extended to regulatory monitoring or procurement analysis without rebuilding the integration layer.
 
@@ -272,7 +272,7 @@ Government MCP deployments face the most demanding security and compliance requi
 
 ### FedRAMP and Cloud Authorization
 
-FedRAMP (Federal Risk and Authorization Management Program) is the mandatory standard for cloud services used by federal agencies. The FedRAMP 20x initiative is prioritizing authorization of AI cloud services, with Low authorization targets by January 2026 and predictions that the first FedRAMP High authorizations for "agentic AI" will arrive by mid-2026. Major cloud providers (Microsoft, Snowflake, C3 AI) achieved FedRAMP authorization for their AI services in late 2025.
+FedRAMP (Federal Risk and Authorization Management Program) is the mandatory standard for cloud services used by federal agencies. [The FedRAMP 20x initiative is prioritizing authorization of AI cloud services, with Low authorization targets by January 2026](https://www.gsa.gov/about-gsa/newsroom/news-releases/gsa-fedramp-prioritize-20x-authorizations-for-ai-08252025) and predictions that the first FedRAMP High authorizations for "agentic AI" will arrive by mid-2026. Major cloud providers (Microsoft, Snowflake, C3 AI) achieved FedRAMP authorization for their AI services in late 2025.
 
 For MCP deployments, FedRAMP considerations include where MCP servers run (on-premise vs. authorized cloud), how data flows between MCP clients and servers, whether AI model inference happens within FedRAMP boundaries, and how audit logs are retained and protected.
 
@@ -303,7 +303,7 @@ CJIS (Criminal Justice Information Services) governs law enforcement data access
 
 ### Section 508 and Accessibility
 
-Section 508 requires federal digital services to be accessible. As of FY2025, only 23% of top-visited federal websites fully conform with accessibility standards. WCAG 2.2 is now incorporated into 508 standards. Over 5,000 digital accessibility lawsuits were filed in 2025 (a 20% year-over-year increase), and municipalities with 50,000+ residents face stricter enforcement starting in 2026.
+Section 508 requires federal digital services to be accessible. [As of FY2024, only 23% of top-visited federal websites fully conformed with accessibility standards](https://www.section508.gov/manage/section-508-assessment/2025/single-page-version/) (FY2025 data shows improvement to 37%). WCAG 2.2 is now incorporated into 508 standards. [Over 5,000 digital accessibility lawsuits were filed in 2025 (a 20% year-over-year increase)](https://info.usablenet.com/hubfs/2025-MidYear-Report-FINAL.pdf), and municipalities with 50,000+ residents face stricter enforcement starting in 2026.
 
 AI agents that serve government functions must ensure their interfaces and outputs comply with accessibility requirements — this includes screen reader compatibility, keyboard navigation, sufficient color contrast, and clear language.
 
@@ -319,7 +319,7 @@ Government data exists on a spectrum from fully public (open data portals, publi
 
 ### Executive Orders and Policy Framework
 
-The December 2025 executive order "Ensuring a National Policy Framework for AI" established federal preemption of state AI laws and created a DOJ AI Litigation Task Force. OMB Memorandum M-25-21 ("Accelerating Federal Use of AI through Innovation, Governance, and Public Trust") requires agencies to convene AI Governance Boards by July 2, 2025, with full compliance by December 29, 2025. OMB M-25-22 addresses efficient AI procurement.
+[The December 2025 executive order "Ensuring a National Policy Framework for AI"](https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/) (EO 14365) established federal preemption of state AI laws and created a DOJ AI Litigation Task Force. OMB Memorandum M-25-21 ("Accelerating Federal Use of AI through Innovation, Governance, and Public Trust") requires agencies to convene AI Governance Boards by July 2, 2025, with full compliance by December 29, 2025. OMB M-25-22 addresses efficient AI procurement.
 
 These policies create both opportunity (agencies are mandated to explore AI) and constraint (governance boards must approve AI deployments, including MCP-based integrations).
 

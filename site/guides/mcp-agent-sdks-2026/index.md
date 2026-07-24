@@ -11,7 +11,7 @@ This guide covers five SDKs that represent distinct approaches to agent developm
 
 Three things changed in late 2025 and early 2026 that reshaped the SDK landscape:
 
-**MCP became table stakes.** With over 97 million monthly SDK downloads and 10,000+ indexed MCP servers, every serious agent framework now supports MCP natively. The question isn't whether to use MCP — it's how deeply the SDK integrates with it.
+**MCP became table stakes.** With [over 97 million monthly SDK downloads](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) and 10,000+ indexed MCP servers, every serious agent framework now supports MCP natively. The question isn't whether to use MCP — it's how deeply the SDK integrates with it.
 
 **Agent-to-agent coordination matured.** The [A2A protocol](/guides/mcp-vs-a2a-protocol-comparison/) moved from proposal to adoption, and the [Agentic AI Foundation](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) (AAIF) brought MCP and A2A under shared governance. SDKs now need strategies for both tool access (MCP) and agent coordination (A2A).
 
@@ -34,7 +34,7 @@ The SDK builds on three key ideas:
 
 **Subagents for parallel execution.** The orchestrator agent can spawn subagents that run in parallel with isolated context windows. Only relevant results return to the orchestrator, which keeps the main context clean. This is structurally similar to the supervisor/worker pattern described in our [multi-agent architectures guide](/guides/mcp-multi-agent-architectures/), but implemented as a first-class SDK feature rather than something you wire up yourself.
 
-**Context editing.** This is the SDK's most distinctive feature. In long agent sessions, stale tool call outputs accumulate in the context window, wasting tokens and degrading performance. Context editing automatically clears old outputs while preserving the conversation flow. According to Anthropic's published evaluations, this reduces token consumption by 84% in 100-turn sessions — a dramatic improvement for long-running workflows.
+**Context editing.** This is the SDK's most distinctive feature. In long agent sessions, stale tool call outputs accumulate in the context window, wasting tokens and degrading performance. Context editing automatically clears old outputs while preserving the conversation flow. According to [Anthropic's published evaluation](https://claude.com/blog/context-management), this reduces token consumption by 84% in 100-turn sessions — a dramatic improvement for long-running workflows.
 
 ### When to Use It
 
@@ -46,7 +46,7 @@ The Claude Agent SDK is the natural choice when you're already committed to Clau
 **Source:** Part of the broader Microsoft AI ecosystem
 **Model support:** Multi-model (Azure OpenAI, others)
 **MCP integration:** Protocol-level support
-**Status:** RC 1.0 released February 19, 2026; GA targeted end of Q1 2026
+**Status:** [RC 1.0 released February 19, 2026](https://devblogs.microsoft.com/foundry/microsoft-agent-framework-reaches-release-candidate/); GA targeted for late Q1 2026
 
 The Microsoft Agent Framework is the result of merging AutoGen and Semantic Kernel into a unified platform. It represents the enterprise approach to agent development — graph-based workflows, checkpointing, human-in-the-loop patterns, and deep integration with the Azure ecosystem.
 
@@ -190,7 +190,7 @@ Regardless of which SDK you choose, the same production challenges apply:
 
 ### Cost Management
 
-Multi-agent systems cost 2-5x more than single-agent approaches — typically $2-$5 per task versus $0.10-$0.50 for single agents. As documented in our [cost optimization guide](/guides/mcp-cost-optimization/), MCP tool schemas are the primary cost driver. SDKs that address this (Claude Agent SDK's context editing, mcp-agent's code execution patterns) have a significant cost advantage at scale.
+Multi-agent systems generally cost more than single-agent approaches — each additional LLM call and tool schema listing adds to the token bill. As documented in our [cost optimization guide](/guides/mcp-cost-optimization/), MCP tool schemas are the primary cost driver. SDKs that address this (Claude Agent SDK's context editing, mcp-agent's code execution patterns) have a significant cost advantage at scale.
 
 ### Security
 
@@ -200,7 +200,7 @@ Every MCP connection is a potential attack surface. [Tool poisoning attacks](htt
 
 Long-running agent sessions inevitably hit context limits. Only the Claude Agent SDK addresses this at the framework level (context editing). With other SDKs, you'll need to implement your own strategies: conversation summarization, sliding windows, or the code execution pattern where agents write scripts that call tools as APIs rather than passing results through the context.
 
-Anthropic's published benchmarks for the code execution pattern show token reduction from ~150,000 to ~2,000 — a 98.7% decrease. This pattern works with any SDK, but you'll need to implement it yourself outside the Claude Agent SDK.
+[Anthropic's published benchmark for the code execution pattern](https://www.anthropic.com/engineering/code-execution-with-mcp) showed token reduction from ~150,000 to ~2,000 in one illustrative example — a 98.7% decrease. This pattern works with any SDK, but you'll need to implement it yourself outside the Claude Agent SDK.
 
 ### Timeline Expectations
 

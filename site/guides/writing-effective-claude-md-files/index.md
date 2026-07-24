@@ -158,7 +158,7 @@ Path-scoped rules that activate when working in specific directories.
 **Level 4: Subdirectory CLAUDE.md files**
 Hyper-specific context for isolated subsystems (e.g., a `mobile/CLAUDE.md` for the mobile app portion of a monorepo).
 
-This structure keeps the always-loaded context small while making detailed guidance available when Claude needs it. Anthropic recommends keeping the root file under 200 lines; community experience suggests even tighter — under 60 lines — produces more consistent instruction following.
+This structure keeps the always-loaded context small while making detailed guidance available when Claude needs it. Anthropic recommends keeping the root file under 200 lines; community experience suggests even tighter — under 60 lines — produces more consistent instruction following. See the [Anthropic docs on memory](https://code.claude.com/docs/en/memory) for the official guidance.
 
 ## Writing Rules That Stick
 
@@ -173,7 +173,7 @@ To maximize compliance:
 1. **Use RFC 2119 language** for critical rules: MUST, MUST NOT, NEVER, ALWAYS. These signal non-negotiable constraints.
 2. **Make rules verifiable.** "Use 2-space indentation" is verifiable. "Format code properly" is not.
 3. **Include the trigger condition.** "When adding a new API endpoint, MUST add a corresponding test in tests/api/" is more actionable than "write tests."
-4. **Keep the total instruction count reasonable.** Claude Code's system prompt already contains roughly 50 instructions. Your CLAUDE.md has room for approximately 100-150 more before compliance starts to degrade.
+4. **Keep the total instruction count reasonable.** Your CLAUDE.md competes with Claude Code's own system prompt for the model's attention. Keep your CLAUDE.md to approximately 100-150 rules maximum before compliance starts to degrade.
 
 ## CLAUDE.md vs. Other AI Config Files
 
@@ -199,7 +199,7 @@ If your team uses multiple AI coding tools, you are dealing with a fragmented ec
 - Run /compact after long refactoring sessions
 ```
 
-This avoids duplicating instructions while letting each tool receive its specific configuration. AGENTS.md has the broadest adoption — it is supported by at least seven major AI coding tools as of early 2026.
+This avoids duplicating instructions while letting each tool receive its specific configuration. AGENTS.md has the broadest adoption — it is supported by 10+ major AI coding tools (Codex, Cursor, Copilot, Gemini CLI, Aider, Windsurf, Zed, Factory, Jules, and more) across 60,000+ repositories as of early 2026, and is stewarded by the [Linux Foundation's Agentic AI Foundation (AAIF)](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/).
 
 For a deeper look at AGENTS.md and the broader agentic web standards, see our guide on [AGENTS.md, llms.txt, and Making Your Site Agent-Ready](/guides/agentic-web-agents-md-llms-txt/).
 
@@ -223,7 +223,7 @@ To save something to auto memory: tell Claude "remember that..." in conversation
 
 ### The kitchen sink file
 
-A 500-line CLAUDE.md that tries to document everything. Compliance drops sharply as length increases — community analysis shows instruction adherence falling from 95% for short files to under 60% for long ones. Fix: ruthlessly prune to rules that Claude cannot infer from code.
+A 500-line CLAUDE.md that tries to document everything. Compliance drops sharply as length increases — practitioners consistently report that adding more instructions past the 100–200 line range causes Claude to miss earlier rules. Fix: ruthlessly prune to rules that Claude cannot infer from code.
 
 ### Linter rules in CLAUDE.md
 

@@ -94,7 +94,7 @@
 <li><strong><code>/sse</code> endpoint</strong> — Client opens a persistent SSE (Server-Sent Events) connection for server-to-client messages</li>
 <li><strong><code>/sse/messages</code> endpoint</strong> — Client sends JSON-RPC via HTTP POST for client-to-server messages</li>
 </ol>
-<p><strong>Why it was deprecated (April 1, 2026):</strong></p>
+<p><strong>Why it was <a href="https://modelcontextprotocol.io/specification/2025-03-26/changelog">deprecated in the March 2025 MCP specification</a>:</strong></p>
 <p>The two-connection model created serious operational problems at scale:</p>
 <ul>
 <li><strong>File descriptor exhaustion:</strong> Each client consumed two persistent connections, quickly hitting system limits under moderate concurrency</li>
@@ -198,7 +198,7 @@
 </tbody>
 </table>
 <h3 id="the-stateless-future-sep-1442">The Stateless Future: SEP-1442</h3>
-<p>The protocol is moving even further toward statelessness. SEP-1442 (&ldquo;Make MCP Stateless by Default&rdquo;) proposes:</p>
+<p>The protocol is moving even further toward statelessness. <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1442">SEP-1442 (&ldquo;Make MCP Stateless by Default&rdquo;)</a> proposes:</p>
 <ul>
 <li><strong>Eliminating the mandatory initialization handshake</strong> — every request becomes self-contained</li>
 <li><strong>Per-request capabilities</strong> — instead of negotiating capabilities once per session, each request declares what it needs</li>
@@ -206,7 +206,7 @@
 <li><strong>External state storage</strong> — session state moves to Redis, DynamoDB, or similar stores instead of in-memory</li>
 <li><strong>&ldquo;Pay As You Go&rdquo; principle</strong> — prefer statelessness, accept statefulness only as last resort</li>
 </ul>
-<p>SEP-1442 is in Draft status with 88+ comments, indicating significant community engagement. If adopted, it would enable truly serverless MCP deployments where any instance handles any request with zero connection affinity.</p>
+<p>SEP-1442 is in Draft status with significant community engagement. If adopted, it would enable truly serverless MCP deployments where any instance handles any request with zero connection affinity.</p>
 <h2 id="resource-subscriptions-mcps-pubsub-mechanism">Resource Subscriptions: MCP&rsquo;s Pub/Sub Mechanism</h2>
 <p>MCP includes a built-in publish-subscribe pattern for tracking changes to resources — the closest thing the protocol has to &ldquo;real-time streaming&rdquo; at the application level.</p>
 <h3 id="how-subscriptions-work">How Subscriptions Work</h3>
@@ -290,7 +290,7 @@ Client → Server: Return approved response
 </ul>
 <p><strong>Response:</strong> Returns model identifier, stop reason (<code>endTurn</code>/<code>stopSequence</code>/<code>maxTokens</code>), role, and content.</p>
 <h3 id="sampling-with-tools-november-2025-spec">Sampling with Tools (November 2025 Spec)</h3>
-<p>SEP-1577 extended sampling to allow servers to include tool definitions in their sampling requests. This enables server-side agent loops:</p>
+<p><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1577">SEP-1577</a> extended sampling to allow servers to include tool definitions in their sampling requests. This enables server-side agent loops:</p>
 <ul>
 <li>Server sends a sampling request with tool definitions</li>
 <li>The LLM can call those tools during its completion</li>
@@ -298,8 +298,8 @@ Client → Server: Return approved response
 <li>Enables multi-step reasoning chains initiated from within a tool</li>
 </ul>
 <p>This is significant for streaming because it means a single tool call can spawn an agentic loop with multiple intermediate LLM calls and tool invocations — all streaming progress back to the client.</p>
-<h3 id="streaming-tool-results-typescript-sdk-v1270-february-2026">Streaming Tool Results (TypeScript SDK v1.27.0, February 2026)</h3>
-<p>The TypeScript SDK v1.27.0 added streaming methods for elicitation and sampling under the task framework (PR #1528). This was a critical addition for agentic workflows:</p>
+<h3 id="streaming-tool-results-typescript-sdk-february-2026">Streaming Tool Results (TypeScript SDK, February 2026)</h3>
+<p>The TypeScript SDK added streaming methods for elicitation and sampling under the task framework (<a href="https://github.com/modelcontextprotocol/typescript-sdk/pull/1528">PR #1528, merged February 15, 2026</a>). This was a critical addition for agentic workflows:</p>
 <p><strong>Problem:</strong> Long-running tool calls that involve sampling or complex computation had no way to incrementally deliver results. The client either received everything at once (poor UX) or had to implement polling workarounds.</p>
 <p><strong>Solution:</strong> Streaming methods allow tool execution to emit results progressively — progress updates, intermediate outputs, and the final result all flow through the same SSE stream.</p>
 <p><strong>Current limitation:</strong> The MCP sampling specification returns responses as complete messages, not token-by-token. Progressive token streaming during sampling is not yet specified at the protocol level — though individual implementations may provide it through progress notifications.</p>
@@ -368,7 +368,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process
 </ul>
 <p>This push capability turns MCP from a purely request-response protocol into something closer to an event-driven architecture — though adoption of these push patterns remains limited in current clients.</p>
 <h2 id="the-tasks-primitive-async-streaming">The Tasks Primitive: Async Streaming</h2>
-<p>The Tasks primitive (SEP-1686), introduced experimentally in the November 2025 spec, addresses a fundamental limitation: what happens when an operation takes longer than an HTTP request/response cycle?</p>
+<p>The Tasks primitive (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1686">SEP-1686</a>), introduced experimentally in the November 2025 spec, addresses a fundamental limitation: what happens when an operation takes longer than an HTTP request/response cycle?</p>
 <h3 id="call-now-fetch-later">Call Now, Fetch Later</h3>
 <p>Tasks enable a &ldquo;fire and forget&rdquo; pattern for long-running operations:</p>
 <pre><code>Client → Server: Start operation (POST)

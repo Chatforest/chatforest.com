@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>Most MCP tutorials focus on building servers. But if you&rsquo;re building an AI-powered application — a chatbot, coding assistant, workflow automation tool, or custom agent — you need to build the <em>client</em> side. The client is what connects your application to the MCP ecosystem, letting it discover and use tools, read resources, and execute prompts from any compatible server.</p>
-<p>This guide covers how to build MCP clients from scratch using the official SDKs, drawn from the MCP specification (2025-06-18 and 2025-11-25), SDK documentation, and published community patterns. We research and analyze these approaches rather than testing implementations hands-on.</p>
+<p>This guide covers how to build MCP clients from scratch using the official SDKs, drawn from the <a href="https://modelcontextprotocol.io/specification/2025-06-18">MCP specification (2025-06-18)</a> and <a href="https://modelcontextprotocol.io/specification/2025-11-25">2025-11-25</a>, SDK documentation, and published community patterns. We research and analyze these approaches rather than testing implementations hands-on.</p>
 <h2 id="understanding-the-architecture">Understanding the Architecture</h2>
 <p>MCP uses a three-layer architecture: <strong>Host</strong>, <strong>Client</strong>, and <strong>Server</strong>.</p>
 <ul>
@@ -294,7 +294,7 @@ result <span style="color:#f92672">=</span> await session<span style="color:#f92
     <span style="color:#66d9ef">if</span> block<span style="color:#f92672">.</span>type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;text&#34;</span>:
         <span style="color:#66d9ef">print</span>(block<span style="color:#f92672">.</span>text)
 </code></pre></div><h3 id="handling-structured-output">Handling Structured Output</h3>
-<p>If a tool declares an <code>outputSchema</code> (introduced in spec 2025-06-18), the response includes <code>structuredContent</code> — a JSON object matching that schema:</p>
+<p>If a tool declares an <code>outputSchema</code> (introduced in <a href="https://modelcontextprotocol.io/specification/2025-06-18">spec 2025-06-18</a>), the response includes <code>structuredContent</code> — a JSON object matching that schema:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">callTool</span>({
   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get_device_status&#34;</span>,
   <span style="color:#a6e22e">arguments</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">device_id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;switch-01&#34;</span> },
@@ -377,7 +377,7 @@ result <span style="color:#f92672">=</span> await session<span style="color:#f92
 </code></pre></div><p><strong>Pros:</strong> Simple, no network setup, process lifecycle tied to client.
 <strong>Cons:</strong> Only local, one client per server process.</p>
 <h3 id="streamable-http-transport">Streamable HTTP Transport</h3>
-<p>The modern transport for remote servers, introduced in spec version 2025-03-26. The client sends JSON-RPC messages via HTTP POST and can receive streaming responses via Server-Sent Events (SSE).</p>
+<p>The modern transport for remote servers, introduced in <a href="https://modelcontextprotocol.io/specification/2025-03-26">spec version 2025-03-26</a>. The client sends JSON-RPC messages via HTTP POST and can receive streaming responses via Server-Sent Events (SSE).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">StreamableHTTPClientTransport</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@modelcontextprotocol/sdk/client/streamableHttp.js&#34;</span>;
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">transport</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">StreamableHTTPClientTransport</span>(
@@ -675,7 +675,7 @@ result <span style="color:#f92672">=</span> await session<span style="color:#f92
 </ul>
 <p>Building an MCP client puts you at the integration layer of the AI stack. As more tools and services adopt MCP, your client becomes the bridge between your application and an expanding ecosystem of capabilities.</p>
 <hr>
-<p><em>This guide is based on our analysis of the MCP specification (2025-06-18 and 2025-11-25), the official TypeScript and Python SDKs, and published community patterns. ChatForest researches and analyzes MCP technologies — we do not claim to test implementations hands-on. Written by <a href="https://robnugen.com">Rob Nugen</a> and ChatForest&rsquo;s AI research team.</em></p>
+<p><em>This guide is based on our analysis of the <a href="https://modelcontextprotocol.io/specification/2025-06-18">MCP specification (2025-06-18)</a> and <a href="https://modelcontextprotocol.io/specification/2025-11-25">2025-11-25</a>, the official TypeScript and Python SDKs, and published community patterns. ChatForest researches and analyzes MCP technologies — we do not claim to test implementations hands-on. Written by <a href="https://robnugen.com">Rob Nugen</a> and ChatForest&rsquo;s AI research team.</em></p>
 
       </div>
 

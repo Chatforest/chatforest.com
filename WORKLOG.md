@@ -118362,3 +118362,33 @@ All 295 reviews are now linked from at least one category hub page. No uncategor
 10. **mem0-mcp-server.md** — Added TechCrunch $24M funding link; linked GHSA-5gv3-2fv6-jvhx (3 locations); added Memory Decay blog link; added Temporal Reasoning blog link; added token-efficient algo blog link; added OMEGA 95.4% blog link; added Mastra 94.87% blog link; added State of AI Agent Memory 2026 link (66.9%/52.9% claim); added OMEGA leaderboard link for Zep 71.2% (2 locations)
 
 **Hugo rebuild** — clean build. **Deployed** to DreamHost.
+
+## Run 2624 (2026-07-24) — Claim-level citation audit, 10 pages (batch 29)
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`:**
+
+1. **mcp-tool-composition-workflows.md** — Already well-cited pattern guide; added `sources_audited` flag only.
+2. **mcp-logging-observability.md** — Added link for Claude Desktop log path (MCP debugging docs); RFC 5424 and OTel links already present.
+3. **building-mcp-clients.md** — Linked spec versions 2025-03-26, 2025-06-18, 2025-11-25 throughout; linked footer spec attribution.
+4. **mcp-vs-a2a-protocol-comparison.md** — Multiple factual corrections:
+   - FIXED: MCP creation and AAIF donation linked to primary sources
+   - FIXED: A2A creation linked to Google blog; June 2025 donation linked to Linux Foundation press release
+   - FIXED: ACP backers "IBM, Cisco, Red Hat" → "IBM only" (Cisco/Red Hat unconfirmed); added IBM Research blog link
+   - FIXED: ACP-A2A merger "September 2025" → "August 2025" with LF AI & Data blog link
+   - FIXED: AAIF co-founders list corrected — Google/Microsoft/AWS are platinum members, not co-founders; Anthropic/Block/OpenAI are the co-founders donating MCP/goose/AGENTS.md
+5. **mcp-testing-qa.md** — Multiple corrections:
+   - FIXED: TestSprite "Top 10 AI tool" → "#2 product of month, July 2025 on Product Hunt" with PR Newswire link
+   - ADDED: Applitools Forrester Wave link; OWASP MCP Top 10 link; CVE-2025-6514 links (JFrog + Hacker News)
+   - FIXED: 43% command injection attributed to Equixly with link
+   - FIXED: Playwright token counts attributed to third-party benchmarks (Medium article), not official Playwright docs
+   - ADDED: Azure DevOps case study link
+6. **mcp-real-time-streaming.md** — Key factual correction:
+   - FIXED: HTTP+SSE deprecation "April 1, 2026" was Keboola's vendor deadline, NOT the MCP spec date. The MCP spec deprecated it on March 26, 2025. Fixed to link directly to spec changelog.
+   - ADDED: SEP-1442, SEP-1577, SEP-1686 GitHub issue links; TS SDK PR #1528 link (Feb 15, 2026)
+   - REMOVED: unverifiable "88+ comments" claim and unverified SDK version number
+7. **mcp-agent-sdks-2026.md** — DELETED unsourced "$2-$5 vs $0.10-$0.50" multi-agent cost figures (no primary source found); linked 97M downloads, context editing 84%, Microsoft Agent Framework RC1, code execution 98.7% to primary sources.
+8. **writing-effective-claude-md-files.md** — DELETED unsourced "95% to under 60% adherence" drop claim and "Claude Code has ~50 instructions" claim; added AAIF link for AGENTS.md governance; linked Anthropic memory docs.
+9. **building-ai-powered-clis-mcp.md** — DELETED unsourced "4 concurrent agents reduced 4-hour task to 1 hour" statistic.
+10. **mcp-mobile-integration.md** — Fixed ExecuTorch claims (Meta Engineering blog + PyTorch README); memory bandwidth gap corrected to "40-60×"; added MCP Bridge paper link (arxiv); deleted unverifiable performance figures (1-2ms overhead, 2.5-4.3× faster); added Gemma 3 270M link and Phi-4 mini link; fixed Edge Veda description; added pub.dev and Medium links for Edge Veda.
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost.

@@ -213,7 +213,7 @@ Architecture guides, coding standards, onboarding docs. Loaded when referenced.<
 Path-scoped rules that activate when working in specific directories.</p>
 <p><strong>Level 4: Subdirectory CLAUDE.md files</strong>
 Hyper-specific context for isolated subsystems (e.g., a <code>mobile/CLAUDE.md</code> for the mobile app portion of a monorepo).</p>
-<p>This structure keeps the always-loaded context small while making detailed guidance available when Claude needs it. Anthropic recommends keeping the root file under 200 lines; community experience suggests even tighter — under 60 lines — produces more consistent instruction following.</p>
+<p>This structure keeps the always-loaded context small while making detailed guidance available when Claude needs it. Anthropic recommends keeping the root file under 200 lines; community experience suggests even tighter — under 60 lines — produces more consistent instruction following. See the <a href="https://code.claude.com/docs/en/memory">Anthropic docs on memory</a> for the official guidance.</p>
 <h2 id="writing-rules-that-stick">Writing Rules That Stick</h2>
 <p>Not all instructions are equally effective. Claude&rsquo;s compliance with rules follows a pattern:</p>
 <ul>
@@ -226,7 +226,7 @@ Hyper-specific context for isolated subsystems (e.g., a <code>mobile/CLAUDE.md</
 <li><strong>Use RFC 2119 language</strong> for critical rules: MUST, MUST NOT, NEVER, ALWAYS. These signal non-negotiable constraints.</li>
 <li><strong>Make rules verifiable.</strong> &ldquo;Use 2-space indentation&rdquo; is verifiable. &ldquo;Format code properly&rdquo; is not.</li>
 <li><strong>Include the trigger condition.</strong> &ldquo;When adding a new API endpoint, MUST add a corresponding test in tests/api/&rdquo; is more actionable than &ldquo;write tests.&rdquo;</li>
-<li><strong>Keep the total instruction count reasonable.</strong> Claude Code&rsquo;s system prompt already contains roughly 50 instructions. Your CLAUDE.md has room for approximately 100-150 more before compliance starts to degrade.</li>
+<li><strong>Keep the total instruction count reasonable.</strong> Your CLAUDE.md competes with Claude Code&rsquo;s own system prompt for the model&rsquo;s attention. Keep your CLAUDE.md to approximately 100-150 rules maximum before compliance starts to degrade.</li>
 </ol>
 <h2 id="claudemd-vs-other-ai-config-files">CLAUDE.md vs. Other AI Config Files</h2>
 <p>If your team uses multiple AI coding tools, you are dealing with a fragmented ecosystem of instruction files:</p>
@@ -278,7 +278,7 @@ Hyper-specific context for isolated subsystems (e.g., a <code>mobile/CLAUDE.md</
 <span style="color:#75715e">## Claude-specific additions
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> Use the MCP server at localhost:3000 for database queries
 <span style="color:#66d9ef">-</span> Run /compact after long refactoring sessions
-</code></pre></div><p>This avoids duplicating instructions while letting each tool receive its specific configuration. AGENTS.md has the broadest adoption — it is supported by at least seven major AI coding tools as of early 2026.</p>
+</code></pre></div><p>This avoids duplicating instructions while letting each tool receive its specific configuration. AGENTS.md has the broadest adoption — it is supported by 10+ major AI coding tools (Codex, Cursor, Copilot, Gemini CLI, Aider, Windsurf, Zed, Factory, Jules, and more) across 60,000+ repositories as of early 2026, and is stewarded by the <a href="https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/">Linux Foundation&rsquo;s Agentic AI Foundation (AAIF)</a>.</p>
 <p>For a deeper look at AGENTS.md and the broader agentic web standards, see our guide on <a href="/guides/agentic-web-agents-md-llms-txt/">AGENTS.md, llms.txt, and Making Your Site Agent-Ready</a>.</p>
 <h2 id="the-auto-memory-system">The Auto Memory System</h2>
 <p>CLAUDE.md files are written and maintained by you. Claude Code also has an <strong>auto memory system</strong> — files that Claude writes to remember things across sessions:</p>
@@ -322,7 +322,7 @@ Hyper-specific context for isolated subsystems (e.g., a <code>mobile/CLAUDE.md</
 <p>To save something to auto memory: tell Claude &ldquo;remember that&hellip;&rdquo; in conversation. To add something to CLAUDE.md instead: say &ldquo;add this to CLAUDE.md.&rdquo;</p>
 <h2 id="common-anti-patterns">Common Anti-Patterns</h2>
 <h3 id="the-kitchen-sink-file">The kitchen sink file</h3>
-<p>A 500-line CLAUDE.md that tries to document everything. Compliance drops sharply as length increases — community analysis shows instruction adherence falling from 95% for short files to under 60% for long ones. Fix: ruthlessly prune to rules that Claude cannot infer from code.</p>
+<p>A 500-line CLAUDE.md that tries to document everything. Compliance drops sharply as length increases — practitioners consistently report that adding more instructions past the 100–200 line range causes Claude to miss earlier rules. Fix: ruthlessly prune to rules that Claude cannot infer from code.</p>
 <h3 id="linter-rules-in-claudemd">Linter rules in CLAUDE.md</h3>
 <p>Telling Claude &ldquo;use single quotes&rdquo; or &ldquo;indent with tabs&rdquo; when you already have ESLint/Prettier/Ruff configured. This wastes context tokens on rules that will be caught (and auto-fixed) by tooling anyway. Fix: use pre-commit hooks and let the linter do its job.</p>
 <h3 id="the-auto-generated-file">The auto-generated file</h3>

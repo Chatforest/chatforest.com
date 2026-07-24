@@ -247,7 +247,7 @@ This matters for versioning because capabilities expand over time. A server buil
 
 ### The Capability Gap Problem
 
-Research by Apify and PulseMCP found that most MCP clients in practice only support basic tool calling, with inconsistent support for prompts, resources, sampling, and roots. This creates a feedback loop: servers do not implement advanced features because clients do not support them, and clients do not add support because few servers use them.
+The community-maintained [`mcp-client-capabilities`](https://github.com/apify/mcp-client-capabilities) database — built from testing across dozens of MCP clients — documents that most clients support only basic tool calling, with inconsistent support for prompts, resources, sampling, and roots. This creates a feedback loop: servers do not implement advanced features because clients do not support them, and clients do not add support because few servers use them.
 
 The community-maintained [`mcp-client-capabilities`](https://github.com/apify/mcp-client-capabilities) database tracks which clients support which features, so server authors can adapt behavior to specific clients.
 

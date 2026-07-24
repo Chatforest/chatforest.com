@@ -120,7 +120,7 @@ An IEEE paper on IoT Robotics (IoRT) describes MCP enabling modular service comp
 
 ### Home Assistant: The Local-First Smart Home MCP
 
-[Home Assistant's MCP Server integration](https://www.home-assistant.io/) (available since version 2025.2, 1.4% of active installations) runs entirely locally — data stays on your network. The unofficial [`ha-mcp`](https://github.com/homeassistant-ai/ha-mcp) (1,600+ stars) provides 96 tools for comprehensive smart home control.
+[Home Assistant's MCP Server integration](https://www.home-assistant.io/integrations/mcp_server/) (available since version 2025.2, used by 3.2% of active installations) runs entirely locally — data stays on your network. The unofficial [`ha-mcp`](https://github.com/homeassistant-ai/ha-mcp) (1,600+ stars) provides 96 tools for comprehensive smart home control.
 
 This is local-first edge computing in practice: no cloud dependency, low latency, full data privacy.
 
@@ -200,7 +200,7 @@ This pattern applies beyond telco — any scenario with high-volume sensor data 
 
 - **Raspberry Pi 5** — Runs quantized models with MCP coordinating between inference engines and sensor pipelines
 - **NVIDIA Jetson** — GPU-accelerated edge inference with MCP tool orchestration
-- **Qualcomm Snapdragon** — NPU delivers up to 45 TOPS for on-device inference, with [Qualcomm publishing guidance](https://www.qualcomm.com/) on MCP integration across cloud, edge, and real-world devices
+- **[Qualcomm Snapdragon](https://www.qualcomm.com/snapdragon/laptops-and-tablets/npu-powered-ai-experiences)** — NPU delivers up to 45 TOPS for on-device inference, with [Qualcomm publishing guidance](https://www.qualcomm.com/developer/blog/2025/10/how-mcp-simplifies-tool-integration-across-cloud-edge-real-world-devices) on MCP integration across cloud, edge, and real-world devices
 - **ARM Cortex-A** — MCP server as runtime abstraction layer over device I/O
 
 ## Edge Databases with MCP
@@ -415,7 +415,7 @@ The edge MCP ecosystem is evolving rapidly:
 
 - **MCP specification** — SEP-1442 proposes making stateless mode the default, further simplifying edge deployment
 - **WASM ecosystem** — MCP.run's planned serverless execution and wasmcp's growing middleware library will make WASM MCP more accessible
-- **Edge AI hardware** — Qualcomm Snapdragon NPU (45 TOPS), Apple Neural Engine, and Google Edge TPU will make on-device MCP + local inference increasingly practical
+- **Edge AI hardware** — [Qualcomm Snapdragon NPU (45 TOPS)](https://www.qualcomm.com/snapdragon/laptops-and-tablets/npu-powered-ai-experiences), Apple Neural Engine, and Google Edge TPU will make on-device MCP + local inference increasingly practical
 - **Protocol transports** — MCP over MQTT is just the beginning; expect MCP over CoAP, BLE, and other IoT protocols
 - **Gateway convergence** — Projects like IBM ContextForge are federating MCP, A2A, REST, and gRPC under unified gateways, making edge routing simpler
 

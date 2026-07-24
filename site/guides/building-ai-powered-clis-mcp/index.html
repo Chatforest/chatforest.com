@@ -71,7 +71,7 @@
 <p>The shift to terminal-first AI development isn&rsquo;t aesthetic — it&rsquo;s architectural. Terminal agents have concrete advantages:</p>
 <p><strong>Composability.</strong> Unix pipes, environment variables, and file I/O create a natural integration layer. An agent that can run shell commands can use any tool on the system without custom integrations.</p>
 <p><strong>Speed.</strong> No rendering overhead, no UI state to manage, no websocket connections to maintain. A CLI agent can read a file, edit it, run tests, and check results in seconds.</p>
-<p><strong>Parallelism.</strong> Terminal agents can spawn parallel processes trivially. One system reported that dispatching 4 concurrent agents in isolated git worktrees reduced a 4-hour task to 1 hour — something that&rsquo;s awkward to orchestrate through a GUI.</p>
+<p><strong>Parallelism.</strong> Terminal agents can spawn parallel processes trivially — running multiple agents in isolated git worktrees is straightforward in a way that&rsquo;s awkward to orchestrate through a GUI.</p>
 <p><strong>Reproducibility.</strong> Every action is a command that can be logged, replayed, and audited. No clicking through menus or relying on UI state.</p>
 <p>The Claude Code architecture demonstrates this well: a single-threaded master loop that observes, reasons, acts (via tools), and reflects — all orchestrated through the terminal. The entire Unix philosophy of small, composable commands maps naturally to how language models prefer to work.</p>
 <h2 id="two-sides-of-cli--ai">Two Sides of CLI + AI</h2>

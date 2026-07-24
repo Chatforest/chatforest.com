@@ -37,7 +37,7 @@ The first network transport used a two-endpoint architecture:
 1. **`/sse` endpoint** — Client opens a persistent SSE (Server-Sent Events) connection for server-to-client messages
 2. **`/sse/messages` endpoint** — Client sends JSON-RPC via HTTP POST for client-to-server messages
 
-**Why it was deprecated (April 1, 2026):**
+**Why it was [deprecated in the March 2025 MCP specification](https://modelcontextprotocol.io/specification/2025-03-26/changelog):**
 
 The two-connection model created serious operational problems at scale:
 
@@ -103,7 +103,7 @@ Clients can open a GET-based SSE stream to receive server-initiated messages —
 
 ### The Stateless Future: SEP-1442
 
-The protocol is moving even further toward statelessness. SEP-1442 ("Make MCP Stateless by Default") proposes:
+The protocol is moving even further toward statelessness. [SEP-1442 ("Make MCP Stateless by Default")](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1442) proposes:
 
 - **Eliminating the mandatory initialization handshake** — every request becomes self-contained
 - **Per-request capabilities** — instead of negotiating capabilities once per session, each request declares what it needs
@@ -111,7 +111,7 @@ The protocol is moving even further toward statelessness. SEP-1442 ("Make MCP St
 - **External state storage** — session state moves to Redis, DynamoDB, or similar stores instead of in-memory
 - **"Pay As You Go" principle** — prefer statelessness, accept statefulness only as last resort
 
-SEP-1442 is in Draft status with 88+ comments, indicating significant community engagement. If adopted, it would enable truly serverless MCP deployments where any instance handles any request with zero connection affinity.
+SEP-1442 is in Draft status with significant community engagement. If adopted, it would enable truly serverless MCP deployments where any instance handles any request with zero connection affinity.
 
 ## Resource Subscriptions: MCP's Pub/Sub Mechanism
 
@@ -228,7 +228,7 @@ Client → Server: Return approved response
 
 ### Sampling with Tools (November 2025 Spec)
 
-SEP-1577 extended sampling to allow servers to include tool definitions in their sampling requests. This enables server-side agent loops:
+[SEP-1577](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1577) extended sampling to allow servers to include tool definitions in their sampling requests. This enables server-side agent loops:
 
 - Server sends a sampling request with tool definitions
 - The LLM can call those tools during its completion
@@ -237,9 +237,9 @@ SEP-1577 extended sampling to allow servers to include tool definitions in their
 
 This is significant for streaming because it means a single tool call can spawn an agentic loop with multiple intermediate LLM calls and tool invocations — all streaming progress back to the client.
 
-### Streaming Tool Results (TypeScript SDK v1.27.0, February 2026)
+### Streaming Tool Results (TypeScript SDK, February 2026)
 
-The TypeScript SDK v1.27.0 added streaming methods for elicitation and sampling under the task framework (PR #1528). This was a critical addition for agentic workflows:
+The TypeScript SDK added streaming methods for elicitation and sampling under the task framework ([PR #1528, merged February 15, 2026](https://github.com/modelcontextprotocol/typescript-sdk/pull/1528)). This was a critical addition for agentic workflows:
 
 **Problem:** Long-running tool calls that involve sampling or complex computation had no way to incrementally deliver results. The client either received everything at once (poor UX) or had to implement polling workarounds.
 
@@ -336,7 +336,7 @@ This push capability turns MCP from a purely request-response protocol into some
 
 ## The Tasks Primitive: Async Streaming
 
-The Tasks primitive (SEP-1686), introduced experimentally in the November 2025 spec, addresses a fundamental limitation: what happens when an operation takes longer than an HTTP request/response cycle?
+The Tasks primitive ([SEP-1686](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1686)), introduced experimentally in the November 2025 spec, addresses a fundamental limitation: what happens when an operation takes longer than an HTTP request/response cycle?
 
 ### Call Now, Fetch Later
 

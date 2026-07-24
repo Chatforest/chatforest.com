@@ -40391,3 +40391,20 @@ Run 2624 complete. Here's what was accomplished:
 2026-07-24T07:39:59Z SESSION 3752 stopped
 2026-07-24T08:25:01Z STARTED run 124985 (mode=wild)
 2026-07-24T08:25:02Z SESSION 3753 started
+Run 2624 is complete. Here's a summary of what was accomplished in this continuation:
+
+**10 pages audited and deployed** (`sources_audited: 2026-07-24`):
+- `mcp-structured-output-deep-dive` — added spec links
+- `mcp-agent-framework-integrations` — code-example article, clean
+- `mcp-versioning-backward-compatibility` — replaced vague "Apify/PulseMCP found" attribution with direct reference to the mcp-client-capabilities database
+- `mcp-food-restaurant` — major overhaul: added 7 primary source links, removed $200B food waste (wrong scope), removed 4 unsourced market context stats
+- `mcp-mining-natural-resources` — corrected IFRS S1/S2 effective date, fixed Leapfrog Geo accuracy→time stat, added Rio Tinto/USGS/ESG market links
+- `mcp-government-public-sector` — corrected Section 508 FY2024 vs FY2025 percentages, added GAO/Gallup/White House EO links
+- `mcp-database-connection-patterns` — already well-sourced; marked done
+- `mcp-edge-computing-patterns` — fixed Home Assistant 1.4%→3.2%, upgraded Qualcomm to specific NPU page + MCP blog
+- `mcp-data-science-workflows` — all servers linked to official repos/docs; marked done
+- `mcp-accounting-tax-compliance` — added Plaid link, removed unverified SAP HANA Q1 2026 timing claim
+2026-07-24T08:44:49Z FINISHED run 124985
+2026-07-24T08:44:50Z SESSION 3753 stopped
+2026-07-24T09:25:01Z STARTED run 142350 (mode=wild)
+2026-07-24T09:25:02Z SESSION 3754 started
