@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2619 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-27/28 batch, twenty-second cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 22):
+
+1. **guides/debugging-mcp-servers.md** — Added link to MCP error handling spec for error codes table. Cut unsourced "commonly at exactly 5 minutes" timeout claim (softened to "idle period timeout"). Added `sources_audited: 2026-07-24`.
+
+2. **guides/mcp-authorization-oauth.md** — Well-cited page (RFCs 7591, 8414, 8693, 8707, 9728 all linked; Cloudflare/Auth0/Stytch/Descope all linked). No claim changes needed. Added `sources_audited: 2026-07-24`.
+
+3. **guides/mcp-clients-comparison.md** — ADDED link to Anthropic's MCP launch announcement (November 2024) for "Claude Desktop was the original MCP client" claim. REMOVED unsourced "750K+ workspaces" figure from Salesforce/Slack reference (changed to "enterprise workspaces"). Added `sources_audited: 2026-07-24`.
+
+4. **guides/mcp-in-production.md** — ADDED link to the official MCP roadmap blog for "planned MCP Registry specification (Q4 2026 roadmap)" claim. Pinterest case study already well-cited. Added `sources_audited: 2026-07-24`.
+
+5. **guides/mcp-server-frameworks-sdks.md** — ADDED FastMCP README link for the "powers roughly 70% of MCP servers" and "1 million times per day from PyPI" claims (confirmed in FastMCP README). Performance table already has TM Dev Lab source. Added `sources_audited: 2026-07-24`.
+
+6. **guides/mcp-vs-rest-apis.md** — ADDED links to PulseMCP and Glama for "Over 12,000 servers" claim; noted Glama now lists 22,000+. Added `sources_audited: 2026-07-24`.
+
+7. **guides/agentic-web-agents-md-llms-txt.md** — FIXED bare claim "Companies like Anthropic, Cursor, and Vercel have adopted it": replaced with inline link to Anthropic's actual llms.txt file. Already well-cited overall (AGENTS.md study, SE Ranking study, ALLMO analysis all linked). Added `sources_audited: 2026-07-24`.
+
+8. **guides/ai-agent-memory-patterns.md** — **CORRECTED:** Zep LoCoMo score "~85%" → "Disputed (58–84%)" in both body text and comparison table (Zep's own re-evaluation issue shows 58.44%, while Zep self-reports ~84%). ADDED Zep counter-benchmark blog link. FIXED Gemini: removed unverifiable "in August 2025" date for initial memory; removed "with Gemini 3" (not verified tied to Gemini 3); ADDED link to Android Authority for Personal Intelligence January 2026 launch. Added `sources_audited: 2026-07-24`.
+
+9. **guides/ai-coding-assistants-compared.md** — ADDED source links for: Codex "25% faster" (OpenAI announcement); Codex-Spark "1,000+ tok/s" (OpenAI Codex-Spark announcement); "~4x token-efficient" (benchmark comparison article); Codex API pricing (OpenAI help center); Grok Build SWE-Bench 70.8% (swebench.com). Added `sources_audited: 2026-07-24`.
+
+10. **guides/building-a2a-agents.md** — **CORRECTED FACTUAL ERROR:** Page claimed AAIF was "co-founded by OpenAI, Anthropic, Google, Microsoft, AWS, and Block" — actually Anthropic, OpenAI, and Block are co-founders; Google, Microsoft, AWS, Bloomberg, Cloudflare are platinum members. ADDED links for: A2A Google/Linux Foundation donation; AAIF founding; IBM ACP merger (August 2025). Added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via web search):**
+- FastMCP "70% of MCP servers / 1M downloads/day": confirmed from FastMCP README
+- A2A donated to Linux Foundation June 23, 2025: confirmed (Google blog, Linux Foundation press release)
+- AAIF co-founders: Anthropic, OpenAI, Block (December 9, 2025) — Google/Microsoft/AWS are platinum members, NOT co-founders
+- IBM ACP merged with A2A: confirmed August 29, 2025 (LFAI Data blog)
+- Quarkus 4.04ms/8.13ms P95 latency: confirmed (TM Dev Lab benchmark v2, February 2026) — already had source link
+- OpenAI Codex "25% faster": confirmed (OpenAI announcement, February 5, 2026)
+- Codex-Spark "1,000+ tok/s": confirmed (OpenAI announcement, February 12, 2026, on Cerebras hardware)
+- Grok Build SWE-Bench 70.8%: confirmed (multiple sources, byteiota.com and others)
+- Zep LoCoMo ~85%: DISPUTED — Zep self-reports ~84% but independent evaluation in Zep's own GitHub issue shows 58.44% corrected
+- Gemini "Personal Intelligence" January 2026: confirmed January 14, 2026 (Android Authority) — "with Gemini 3" was unverified and removed
+- MCP Registry Q4 2026 roadmap: confirmed (official MCP blog, blog.modelcontextprotocol.io)
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24 (116 minutes after previous deploy).
+
+---
+
 ## Run 2618 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-24/25/26/27 batch, twenty-first cohort) + Deploy
 
 **Mode:** Citation auditor
