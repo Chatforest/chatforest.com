@@ -80,15 +80,15 @@
 <tbody>
 <tr>
 <td><strong>TypeScript SDK</strong></td>
-<td><code>@modelcontextprotocol/sdk</code> — <code>Client</code> class with full lifecycle management</td>
+<td><a href="https://www.npmjs.com/package/@modelcontextprotocol/sdk"><code>@modelcontextprotocol/sdk</code></a> — <code>Client</code> class with full lifecycle management</td>
 </tr>
 <tr>
 <td><strong>Python SDK</strong></td>
-<td><code>mcp</code> (PyPI) — <code>ClientSession</code> with async context manager pattern</td>
+<td><a href="https://pypi.org/project/mcp/"><code>mcp</code></a> (PyPI) — <code>ClientSession</code> with async context manager pattern</td>
 </tr>
 <tr>
 <td><strong>FastMCP client</strong></td>
-<td><code>fastmcp.Client</code> — higher-level Pythonic API with auto-transport detection</td>
+<td><a href="https://github.com/jlowin/fastmcp"><code>fastmcp.Client</code></a> — higher-level Pythonic API with auto-transport detection</td>
 </tr>
 <tr>
 <td><strong>Primary transports</strong></td>
@@ -255,7 +255,7 @@ async <span style="color:#66d9ef">with</span> Client(transport<span style="color
 <li>Session resumability via <code>Last-Event-ID</code> header</li>
 </ul>
 <h3 id="sse--legacy-transport">SSE — Legacy Transport</h3>
-<p>SSE (Server-Sent Events) was deprecated in the 2025-03-26 spec revision. Some older servers still use it.</p>
+<p>SSE (Server-Sent Events) was <a href="https://modelcontextprotocol.io/development/changelog">deprecated in the 2025-03-26 spec revision</a>. Some older servers still use it.</p>
 <p><strong>TypeScript:</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">SSEClientTransport</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@modelcontextprotocol/sdk/client/sse.js&#34;</span>;
 
@@ -533,7 +533,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle_
 <h3 id="constraints">Constraints</h3>
 <p>Servers can only send <code>sampling/createMessage</code> during the handling of a client-initiated request (e.g., during a <code>tools/call</code>). Standalone server-initiated sampling outside of a request context is not supported.</p>
 <h2 id="elicitation-handling-server-initiated-user-input">Elicitation: Handling Server-Initiated User Input</h2>
-<p>Elicitation, introduced in the 2025-06-18 spec revision, lets servers request structured input from the user via the client. Two modes exist: form (structured data) and URL (sensitive data via external redirect).</p>
+<p>Elicitation, <a href="https://modelcontextprotocol.io/development/changelog">introduced in the 2025-06-18 spec revision</a>, lets servers request structured input from the user via the client. Two modes exist: form (structured data) and URL (sensitive data via external redirect).</p>
 <h3 id="declaring-elicitation-capability">Declaring Elicitation Capability</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Client</span>(
   { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;my-host&#34;</span>, <span style="color:#a6e22e">version</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.0.0&#34;</span> },

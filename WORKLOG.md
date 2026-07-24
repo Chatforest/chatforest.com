@@ -2,6 +2,65 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2632 — 2026-07-25 — Citation Audit: 8 Pages (2026-03-29 batch, batch 35) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** Message #2259 was the Run 2628 report to Rob (previously sent, no new inbound messages).
+
+#### Citation Audit — 8 Pages (oldest unaudited batch, 2026-03-29 dates, batch 35)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-maritime-ocean.md** — Three key fixes:
+   - CUT "heading toward $22.4 billion by 2035" (Lucintel link only cites $11.2B by 2030)
+   - FIXED GPS spoofing claim: Added Cydome 2026 maritime cyber trends report link for "40,000 vessels, ~1,000 incidents/day" stat
+   - CUT "Iranian-backed groups have been observed using VShell RAT to target vessel control systems" — named security group claim, zero primary sources found (VShell RAT in maritime not verifiable)
+
+2. **guides/mcp-nonprofit-social-impact.md** — Multiple fixes:
+   - Added PRNewswire link for the "2026 Nonprofit AI Adoption Report from Virtuous and Fundraising.AI" (stats confirmed: 92%, 7%, 81%, 4%, 47%)
+   - FIXED Mailchimp free tier: "500 contacts" → "250 contacts" (Mailchimp reduced free tier Jan 2026); added mailchimp.com/pricing and mailchimp.com/help/about-nonprofit-discount links
+   - Added Twilio.org link for nonprofit pricing; dropped unverified "85% off" from Slack (replaced with linked "discounted nonprofit plan")
+
+3. **guides/mcp-pharma-biotech-life-sciences.md** — Already very well sourced with ~30 primary source links. Added sources_audited flag only. No factual errors found.
+
+4. **guides/mcp-real-estate.md** — Three key additions:
+   - Added Research and Markets link for "$303 billion in 2025, projected to approach $1 trillion by 2029" (confirmed via search)
+   - Added JLL 2025 global real estate technology survey link for "5% to 92% in just three years" corporate RE AI pilots stat (confirmed)
+   - Added attomdata.com press release link for ATTOM MCP server launch Jan 29, 2026 (confirmed)
+
+5. **guides/mcp-real-estate-proptech.md** — Major intro fixes:
+   - CUT entire unsourced market stats paragraph ($164-184B AI in RE, proptech $33-36B, genAI $1.8B, projected CAGR ranges) — no primary source URLs found
+   - FIXED NAR stats: article claimed "35-50% of agents use AI, chatbots 45% of large brokerages" — NAR 2025 actual: 72% use at least one AI tool; chatbots only 7%; virtual staging 25-30% not confirmed. Replaced with accurate NAR 2025 survey stat with link
+
+6. **guides/mcp-energy-utilities.md** — Key fix:
+   - CUT specific percentages "33% deployed AI (below 42% cross-industry average), 71% in pilot phase" — secondary source aggregation (thinking.inc), no primary source URLs confirmed
+   - Kept general language about adoption challenges and trust deficit (removed 58% Eurelectric stat too since the specific study URL was not confirmed)
+
+7. **guides/mcp-event-management.md** — Three fixes:
+   - Added Allied Market Research (AMR) link for "$1.55 trillion globally by 2028" events industry claim (confirmed via search)
+   - CUT "Bizzabo reports a 25% increase in session engagement when AI recommendations align with behavior-based preferences" — not found on Bizzabo's website (unverifiable claim)
+   - Added Eventbrite blog link for "63% increase in ticket sales, 30% shorter campaign development cycles" (confirmed from Eventbrite's own blog)
+
+8. **guides/mcp-fashion-retail-ecommerce.md** — Two key fixes:
+   - CUT entire unsourced intro stats block: "$6.8 trillion" e-commerce, "85% of retail chains using AI", "AI-in-fashion $1.4-2.9 billion", "virtual try-on $8.5B by 2030", "social commerce $1.2 trillion" — multiple large claims, no primary source URLs confirmed
+   - Added WooCommerce statistics source link for "36% of all online stores" claim (confirmed: within range of 33-39% depending on methodology)
+
+**Key factual errors fixed this run:**
+- NAR AI adoption stats in proptech guide were wrong: article said 35-50% and chatbots 45%, actual NAR 2025 data shows 72% use AI and only 7% use chatbots
+- Mailchimp free tier changed from 500 → 250 contacts in January 2026
+- VShell RAT/Iranian maritime claim (named security incident, zero verifiable sources) — cut
+- Maritime market "$22.4B by 2035" had no source; Lucintel only cites $11.2B by 2030
+- Bizzabo "25% session engagement" claim not found on Bizzabo's site — cut
+
+**Deploy:** 8 pages + Hugo build — deploying this run.
+
+**Next batch (batch 36):** Continue 2026-03-29 pages. Remaining: mcp-geospatial-gis.md, mcp-insurance.md, mcp-music-audio-production.md, mcp-supply-chain-logistics.md, mcp-crm-customer-service.md, mcp-finance-fintech.md, mcp-legal-law.md (and check if event/energy have more sourcing issues deeper in the file).
+
+---
+
 ## Run 2631 — 2026-07-25 — Citation Audit: 8 Pages (2026-03-29 batch, batch 34) + RingS Structured-Outputs + Deploy
 
 **Mode:** Citation auditor (continued from Run 2630 after context compaction)

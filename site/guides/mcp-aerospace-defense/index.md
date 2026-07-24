@@ -113,7 +113,7 @@ Space operations MCP tooling is nascent but growing, anchored by the Ansys STK i
 
 **[alti3/stk-mcp](https://github.com/alti3/stk-mcp)** | 25 stars | Ansys/AGI Systems Tool Kit via MCP
 
-This is the standout server in the space operations category. Ansys STK (Systems Tool Kit, formerly AGI STK) is the industry-standard Digital Mission Engineering platform used by military space commands, satellite operators, and defense agencies worldwide for orbital analysis, sensor coverage modeling, communication link budgets, and mission planning. An MCP integration means AI agents could automate the complex analysis workflows that currently require deep STK expertise — calculating satellite access windows, modeling radar coverage, planning constellation deployments, and running interference analyses.
+This is the standout server in the space operations category. [Ansys STK](https://www.ansys.com/products/systems/ansys-stk) (Systems Tool Kit, formerly AGI STK) is the industry-standard Digital Mission Engineering platform used by military space commands, satellite operators, and defense agencies worldwide for orbital analysis, sensor coverage modeling, communication link budgets, and mission planning. An MCP integration means AI agents could automate the complex analysis workflows that currently require deep STK expertise — calculating satellite access windows, modeling radar coverage, planning constellation deployments, and running interference analyses.
 
 ### IO-Aerospace MCP Server
 

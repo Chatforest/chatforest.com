@@ -5,7 +5,7 @@
 
 Agriculture generates enormous volumes of data — soil conditions at multiple depths, weather forecasts across microclimates, satellite imagery tracking crop health over growing seasons, equipment telemetry from tractors and harvesters, livestock genetics and health records, commodity prices across markets, and regulatory requirements that vary by jurisdiction and crop. The challenge isn't a lack of data — it's that the data lives in dozens of disconnected systems, each with its own API, format, and access model. A single planting decision might require synthesizing soil moisture readings, 14-day weather forecasts, historical yield data, seed inventory, and equipment availability from five different platforms.
 
-The numbers reflect both the opportunity and the gap. AI in agriculture reached an estimated $2.5–5.9 billion in 2025, depending on the research source and scope. Growth projections range from 22% to 26% CAGR, with estimates reaching $40–61 billion by 2030–2035. Over 60% of large farms globally now use some form of AI-powered precision agriculture, while small and medium farms lag at 20–25% adoption. Farms using AI-driven precision techniques report 15–20% yield increases and up to 30% reduction in water usage. Yet 80% of agribusinesses recognize AI's potential while only 20% have fully adopted it — a gap that tooling complexity largely explains.
+The numbers reflect both the opportunity and the gap. [Grand View Research](https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-in-agriculture-market) projects AI in agriculture to reach $9.55 billion by 2030, growing at 25.5% CAGR from 2024, though estimates vary significantly across research firms.
 
 MCP provides a structured protocol for connecting AI assistants to agricultural data sources and tools. Rather than building custom integrations for every farm management platform, weather service, satellite provider, and market data feed, MCP-connected agents can query soil conditions, pull weather forecasts, analyze satellite imagery, access equipment data, and check commodity prices — all through defined tool interfaces with consistent authentication and data formats.
 
@@ -21,7 +21,7 @@ Agriculture has characteristics that make standardized AI integration both high-
 
 **Spatial and temporal dimensions matter.** Agricultural data is inherently geographic — soil conditions vary across a single field, weather differs between farm sections, and crop health changes week to week through a growing season. MCP servers that handle geospatial data (GeoJSON boundaries, coordinate-based queries, satellite imagery) enable spatially-aware AI assistance.
 
-**Smallholder farmers face the biggest information gap.** The 500+ million smallholder farms worldwide produce roughly a third of global food but have the least access to agricultural intelligence. MCP architectures that work across SMS, WhatsApp, and web interfaces — as FarmerChat-MCP demonstrates — can democratize access to soil, weather, and agronomic data.
+**Smallholder farmers face the biggest information gap.** [500+ million smallholder farms worldwide produce roughly a third of global food](https://www.fao.org/family-farming/detail/en/c/1398060/) but have the least access to agricultural intelligence. MCP architectures that work across SMS, WhatsApp, and web interfaces — as FarmerChat-MCP demonstrates — can democratize access to soil, weather, and agronomic data.
 
 **Regulatory and market complexity varies by region.** Crop insurance requirements, food safety regulations, subsidy programs, and commodity markets differ dramatically across countries and even states. AI agents that can query region-specific databases through MCP provide more reliable guidance than general-purpose models.
 
@@ -247,9 +247,9 @@ The most ambitious agricultural MCP project isn't aimed at large commercial oper
 
 ### FarmerChat-MCP
 
-**Digital Green** | **12 interconnected MCP servers** | **830,000+ users across 5 countries**
+**[Digital Green](https://digitalgreen.org/farmer.chat/)** | **12 interconnected MCP servers** | **830,000+ users across 5 countries**
 
-FarmerChat-MCP is a system of 12 interconnected MCP servers built by Digital Green, a nonprofit reaching 30+ million farmers. The architecture synthesizes multiple environmental data sources into contextual farming advice delivered via SMS, WhatsApp, web, and Claude Desktop — the same twelve servers power all interfaces without duplicate code.
+FarmerChat-MCP is a system of 12 interconnected MCP servers built by [Digital Green](https://digitalgreen.org/), a nonprofit reaching 30+ million farmers. The architecture synthesizes multiple environmental data sources into contextual farming advice delivered via SMS, WhatsApp, web, and Claude Desktop — the same twelve servers power all interfaces without duplicate code.
 
 **Data sources integrated across the 12 servers:**
 
@@ -263,7 +263,7 @@ FarmerChat-MCP is a system of 12 interconnected MCP servers built by Digital Gre
 
 The architecture principle: a sound farming decision requires environmental context (weather, soil, water availability), biological intelligence (pest pressure, crop suitability), social patterns (what works locally), and geopolitical boundaries (village, district, and state-level agricultural trends).
 
-**Countries served:** India, Ethiopia, Kenya, Nigeria, and Brazil — with over 5 million queries answered to date.
+**Countries served:** India, Ethiopia, Kenya, Nigeria, and Brazil — with [over 5 million queries answered to date](https://digitalgreen.org/farmer.chat/).
 
 FarmerChat-MCP represents a model for how MCP can democratize access to agricultural intelligence. The protocol's "build once, deploy everywhere" design means the same data integration works across low-bandwidth SMS and full-featured desktop AI clients.
 

@@ -3,7 +3,7 @@
 > A comprehensive guide to MCP integrations for fashion, retail, and e-commerce — covering Shopify, WooCommerce, Magento, marketplaces (Amazon, eBay, Etsy), payments (Stripe
 
 
-Retail and e-commerce are among the most data-intensive industries on the planet. A mid-size online fashion brand might simultaneously manage a Shopify storefront, list products on Amazon and eBay, process payments through Stripe, handle customer service via Zendesk, run email campaigns in Klaviyo, track analytics in Mixpanel, ship through multiple carriers, and maintain inventory across all channels — each platform operating in its own silo, each requiring manual synchronization. Global e-commerce reached $6.8 trillion in 2025 and continues to accelerate. The AI-in-retail market is projected at $12–14 billion, with 85% of retail chains now using some form of AI. Fashion specifically is seeing AI investment grow rapidly, with the AI-in-fashion market estimated at $1.4–2.9 billion and virtual try-on technology alone projected to reach $8.5 billion by 2030. Social commerce has crossed $1.2 trillion globally.
+Retail and e-commerce are among the most data-intensive industries on the planet. A mid-size online fashion brand might simultaneously manage a Shopify storefront, list products on Amazon and eBay, process payments through Stripe, handle customer service via Zendesk, run email campaigns in Klaviyo, track analytics in Mixpanel, ship through multiple carriers, and maintain inventory across all channels — each platform operating in its own silo, each requiring manual synchronization.
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to these platforms. Rather than building bespoke integrations for each e-commerce tool, MCP-connected agents can manage product listings, process orders, query customer data, run marketing campaigns, and coordinate fulfillment through defined tool interfaces. The protocol transforms AI assistants from isolated chatbots into operational tools that can work across the full retail stack. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
@@ -71,7 +71,7 @@ The sheer density of Shopify MCP implementations reflects both the platform's ma
 
 ### WooCommerce
 
-WooCommerce powers roughly 36% of all online stores, making it the single most-used e-commerce platform by market share. Its MCP ecosystem is smaller than Shopify's but includes an official WordPress implementation.
+WooCommerce [powers roughly 36% of all online stores](https://wpfactory.com/blog/woocommerce-statistics-2025/) globally, making it the single most-used e-commerce platform by market share. Its MCP ecosystem is smaller than Shopify's but includes an official WordPress implementation.
 
 **WordPress/mcp-adapter** | **Official (WordPress/Automattic)** | TypeScript
 

@@ -5,7 +5,7 @@
 
 Healthcare is where the Model Context Protocol meets its hardest test. The stakes are higher — a wrong query doesn't just return bad data, it could affect patient care. The regulations are stricter — HIPAA, the 2026 Security Rule updates, and FDA oversight create compliance requirements that don't exist in other domains. And the data is more fragmented — patient records spread across EHRs, imaging systems, labs, pharmacies, and specialty platforms that rarely talk to each other.
 
-Despite these challenges, MCP adoption in healthcare is accelerating. AWS, WSO2, Innovaccer, and dozens of open-source contributors have built MCP servers that connect AI agents to FHIR APIs, EHR systems like Epic and Cerner, DICOM imaging archives, clinical knowledge bases, and medical research databases. Wolters Kluwer calls MCP "the missing connective tissue that makes AI in healthcare safe, useful and scalable." A peer-reviewed paper in *Discover Health Systems* (Springer, 2026) maps out multi-agent clinical architectures built on the protocol. The ISPOR 2026 conference featured a poster specifically on standardizing AI model interaction with healthcare systems using MCP.
+Despite these challenges, MCP adoption in healthcare is accelerating. AWS, WSO2, Innovaccer, and dozens of open-source contributors have built MCP servers that connect AI agents to FHIR APIs, EHR systems like Epic and Cerner, DICOM imaging archives, clinical knowledge bases, and medical research databases. Dr. Charles Tuchinda of Hearst Health describes MCP as ["the missing connective tissue that makes AI in healthcare safe, useful and scalable"](https://www.wolterskluwer.com/en/expert-insights/exploring-mcp-how-model-context-protocol-supports-the-future-of-agentic-healthcare) (via Wolters Kluwer). A [peer-reviewed paper in *Discover Health Systems* (Springer, 2026)](https://link.springer.com/article/10.1007/s44250-026-00343-w) maps out multi-agent clinical architectures built on the protocol. The ISPOR 2026 conference featured a poster specifically on standardizing AI model interaction with healthcare systems using MCP.
 
 This guide covers the healthcare MCP ecosystem — FHIR servers, EHR integrations, medical imaging, clinical decision support, the Healthcare Model Context Protocol (HMCP) specification, and the security patterns needed to handle protected health information responsibly. Our analysis draws on published documentation, open-source repositories, vendor announcements, and academic publications — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -17,7 +17,7 @@ Healthcare data has a unique combination of properties that make standardized AI
 
 **Interoperability standards exist but aren't enough.** FHIR (Fast Healthcare Interoperability Resources) standardized how healthcare systems exchange data, but FHIR alone doesn't solve how AI agents discover, authenticate to, and reason about clinical data across multiple systems.
 
-**Regulatory requirements are non-negotiable.** HIPAA requires access controls, audit trails, encryption, and minimum necessary data access. The proposed 2026 HIPAA Security Rule updates would make encryption at rest, multi-factor authentication, and annual penetration testing mandatory — eliminating the "addressable" designation that let organizations treat these as optional.
+**Regulatory requirements are non-negotiable.** HIPAA requires access controls, audit trails, encryption, and minimum necessary data access. The [proposed 2026 HIPAA Security Rule updates](https://www.gammacompliance.com/compliance101/proposed-hipaa-security-rule-updates-2026) would make encryption at rest, multi-factor authentication, and annual penetration testing mandatory — eliminating the "addressable" designation that let organizations treat these as optional (as of mid-2026, these remain proposed; HHS has not issued a final rule).
 
 **The cost of errors is measured in patient outcomes.** Unlike a financial dashboard that shows stale data, an AI agent pulling the wrong medication list or missing a drug interaction creates direct patient safety risks.
 
@@ -237,7 +237,7 @@ This server queries multiple authoritative medical APIs including FDA, WHO, PubM
 
 ### FDB MedProof MCP (First Databank)
 
-**Product:** FDB MedProof MCP™ | **Type:** Commercial (enterprise) | **GA:** March 31, 2026
+**Product:** [FDB MedProof MCP™](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html) | **Type:** Commercial (enterprise) | **GA:** March 31, 2026
 
 The first MCP server built specifically for AI agent-driven medication decisions. First Databank — whose drug databases are already embedded in most major EHRs — launched MedProof MCP to bring that same medication intelligence to AI agents operating across clinical workflows.
 
@@ -248,7 +248,7 @@ FDB also announced two complementary AI solutions:
 - **FDB Script Agent™** — a prescription automation agent for ambulatory settings where physicians dictate prescriptions that get structured and queued for review
 - **FDB VerifyAssist™** — an inpatient pharmacy verification assistant that runs drug checks at the point of need, reducing the chart-digging time that currently consumes pharmacist hours
 
-The platform is already in production at Artera — a patient communications platform serving over 1,000 healthcare organizations and more than 100 million patients annually. This makes FDB MedProof MCP one of the largest-scale healthcare MCP deployments documented to date.
+The platform is already in production at [Artera](https://www.prnewswire.com/news-releases/himss-2026-artera-to-showcase-real-world-applications-of-ai-for-patient-communications-and-access-302706227.html) — a patient communications platform serving over 1,000 healthcare organizations and more than 100 million patients annually. This makes FDB MedProof MCP one of the largest-scale healthcare MCP deployments documented to date.
 
 This is a notable shift: a major clinical data vendor building MCP-native products rather than retrofitting existing APIs. It signals that MCP is becoming the expected integration standard for healthcare AI, not just an option.
 
@@ -463,7 +463,7 @@ The healthcare MCP ecosystem is maturing rapidly. Key trends to watch:
 
 **Vendor integration.** Major EHR vendors including athenahealth are already incorporating MCP. Epic's FHIR API ecosystem and Cerner's (now Oracle Health) open platform strategy make them natural candidates for deeper MCP integration.
 
-**Multi-agent clinical workflows.** The Springer paper on MCP in clinical medicine envisions "agent squads" — one agent diagnoses, another remediates, a third validates, and a fourth documents. This requires the coordination primitives that HMCP provides.
+**Multi-agent clinical workflows.** The [Springer paper on MCP in clinical medicine](https://link.springer.com/article/10.1007/s44250-026-00343-w) envisions "agent squads" — one agent diagnoses, another remediates, a third validates, and a fourth documents. This requires the coordination primitives that HMCP provides.
 
 **Real-time clinical data.** Current healthcare MCP servers are primarily request-response. As MCP's notification and streaming capabilities mature, real-time clinical alerting — lab results, vital sign changes, medication interactions — becomes possible.
 

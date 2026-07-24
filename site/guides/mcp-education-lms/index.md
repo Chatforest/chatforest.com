@@ -5,7 +5,7 @@
 
 Education may be the domain where MCP has the most transformative potential. Students and teachers interact with dozens of disconnected platforms — an LMS for coursework, a gradebook for scores, a library system for resources, an SIS for enrollment, a video platform for lectures, and increasingly, AI tutoring tools for personalized learning. Each system holds a piece of the picture, but none of them talk to each other well enough for an AI agent to act as a genuine teaching assistant.
 
-The numbers explain the urgency. The AI in education market reached $5.88 billion in 2024 and is growing at 31–35% CAGR toward a projected $32 billion by 2030. Ninety-two percent of university students now use AI tools (up from 66% in 2024). Eighty-three percent of K-12 teachers use generative AI, and those who integrate it weekly save an average of 5.9 hours per week. Khan Academy's Khanmigo grew from 68,000 users to 1.4 million in a single academic year. MagicSchool AI surpassed 6 million educator users by late 2025. Canvas launched an AI Teaching Agent in March 2026.
+The numbers explain the urgency. [Grand View Research](https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-in-education-market) estimates the AI in education market reached $5.88 billion in 2024, growing toward a projected $32 billion by 2030. A [2025 HEPI survey](https://www.hepi.ac.uk/reports/student-generative-ai-survey-2025/) found 92% of UK undergraduate students now use AI tools in their academic work (up from 66% in 2024). A [Center for Democracy & Technology 2024 report](https://cdt.org/insights/hand-in-hand-schools-embrace-of-ai-connected-to-increased-risks-to-students/) found 83% of K-12 teachers use generative AI; a [Gallup poll](https://news.gallup.com/poll/691967/three-teachers-weekly-saving-six-weeks-year.aspx) found weekly users save an average of 5.9 hours per week. Khan Academy's Khanmigo [grew from 68,000 users to over 700,000 in a single year](https://aiforcause.org/stories/khanmigo-ai-tutor). [MagicSchool AI](https://www.magicschool.ai/blog-posts/series-b-fundraise-for-teacher-ai) surpassed 6 million educator users by late 2025. Canvas [launched its IgniteAI Agent](https://www.prnewswire.com/news-releases/instructure-delivers-on-its-agentic-ai-promise-with-the-launch-of-igniteai-agent-302711937.html) in March 2026.
 
 MCP provides the standard integration layer that makes these AI tools genuinely useful rather than isolated novelties. Instead of each AI assistant requiring custom API integrations with every LMS, grading tool, and content library, MCP servers expose standardized tool interfaces that any MCP-compatible client can discover and use.
 
@@ -320,19 +320,19 @@ Understanding the broader AI tutoring ecosystem provides context for where MCP f
 
 ### Major AI Tutoring Platforms
 
-**Khanmigo** (Khan Academy) — the most prominent AI tutor, growing from 68,000 users in 2023-24 to 1.4 million by mid-2025. Partners with 380+ school districts. Uses GPT-4 with a Socratic questioning approach — it asks guiding questions rather than giving direct answers. Free for teachers, $4/month for parents and learners. Available in multiple languages globally.
+**Khanmigo** (Khan Academy) — the most prominent AI tutor, [growing from 68,000 users to over 700,000 in one year](https://aiforcause.org/stories/khanmigo-ai-tutor), with [partnerships spanning 380+ school districts](https://www.globalsociety.earth/post/khan-academy-rolls-out-ai-powered-teaching-tools-as-school-districts-scale-up-adoption). Uses GPT-4 with a Socratic questioning approach — it asks guiding questions rather than giving direct answers. Free for teachers, $4/month for parents and learners. Available in multiple languages globally.
 
-**MagicSchool AI** — surpassed 6 million educator users by October 2025. Focused on teacher productivity tools: lesson planning, assessment generation, communication drafting, and differentiation.
+**[MagicSchool AI](https://www.magicschool.ai/blog-posts/series-b-fundraise-for-teacher-ai)** — surpassed 6 million educator users by October 2025. Focused on teacher productivity tools: lesson planning, assessment generation, communication drafting, and differentiation.
 
-**Duolingo** — 47.7 million daily active users with a 15% premium AI tier that includes roleplay conversations and answer explanations. Demonstrates that AI-powered learning features drive subscription revenue. Internally, Duolingo has also built one of the largest enterprise MCP deployments, with [180+ MCP tools powering an AI Slackbot and no-code agentic workflow platform](/guides/duolingo-mcp-agentic-platform/).
+**Duolingo** — [47.7 million daily active users as of Q2 2025](https://investors.duolingo.com/news-releases/news-release-details/duolingo-surpasses-50-million-daily-active-users-grows-dau-36) (surpassing 50M by Q3 2025), with a paid subscription tier that includes AI roleplay conversations and answer explanations. Demonstrates that AI-powered learning features drive subscription revenue. Internally, Duolingo has also built one of the largest enterprise MCP deployments, with [180+ MCP tools powering an AI Slackbot and no-code agentic workflow platform](/guides/duolingo-mcp-agentic-platform/).
 
 **Claude for Education** (Anthropic) — launched April 2025, available in AWS Marketplace since July 2025. Features a "Learning Mode" that uses Socratic questioning instead of direct answers. Canvas LTI integration. Partnership with Teach For All reaching 100,000+ educators across 63 countries. Student privacy: conversations are private by default and excluded from AI training.
 
 ### Learning Outcomes Evidence
 
-A 2025 Harvard physics study found that students using AI tutors learned more than twice as much in less time compared to traditional active learning. Other research reports a 62% increase in test scores among students using AI-powered instruction and up to 60% increases in student engagement from AI-driven personalization.
+A [2025 Harvard physics study](https://www.nature.com/articles/s41598-025-97652-6) found that students using AI tutors learned more than twice as much in less time compared to traditional active learning.
 
-However, AI tutoring has limitations. Human tutors interpret student emotions with 92% accuracy versus 68% for AI systems — a gap that matters for younger students and for subjects where frustration and confidence significantly affect learning outcomes.
+However, AI tutoring has limitations. Human tutors read emotional cues — body language, vocal tone, micro-expressions — in ways that AI systems analyzing text and video currently cannot fully replicate. For younger students and subjects where frustration and confidence significantly affect learning, this gap matters.
 
 ### Where MCP Fits
 
@@ -408,7 +408,7 @@ Based on the ibl.ai higher education MCP architecture and emerging best practice
 
 ## Academic Integrity Considerations
 
-Ninety-five percent of the academic community believes AI is being misused at their institutions (Turnitin/Vanson Bourne 2025 survey). Sixty-eight percent of teachers rely on AI detection tools, but false positives remain a significant concern, and evasion tools outpace detection.
+A [Turnitin/Vanson Bourne 2025 survey](https://www.turnitin.com/press/turnitin-releases-new-findings-and-key-insights-from-focused-survey-on-impact-of-ai-in-education) found 95% of academic administrators, educators, and students believe AI is being misused at their institutions. Sixty-eight percent of teachers rely on AI detection tools, but false positives remain a significant concern, and evasion tools outpace detection.
 
 For MCP deployments, this creates a design tension: the same AI agent that helps a student learn can also help them cheat. Architecture decisions matter:
 
@@ -419,7 +419,7 @@ For MCP deployments, this creates a design tension: the same AI agent that helps
 
 ## Accessibility
 
-The April 24, 2026 deadline requires US higher education institutions to ensure all digital platforms meet WCAG 2.1 Level AA accessibility standards. WCAG 2.2 was approved as ISO/IEC 40500:2025 in October 2025.
+A DOJ rule adopted WCAG 2.1 Level AA as the standard for public institutions under ADA Title II. The original April 2026 compliance deadline was [extended to April 2027 by a DOJ Interim Final Rule issued April 20, 2026](https://www.federalregister.gov/documents/2026/04/20/2026-07663/extension-of-compliance-dates-for-nondiscrimination-on-the-basis-of-disability-accessibility-of-web), covering websites, mobile applications, and digital course materials at public colleges and universities.
 
 MCP servers that generate educational content or modify course materials need to produce accessible output. The canvas-mcp server's accessibility auditor skill is a practical example — it can check course content for WCAG compliance, identify issues, and suggest fixes. As more course content is AI-generated, building accessibility into the generation pipeline (rather than auditing after the fact) becomes critical.
 

@@ -13,9 +13,9 @@ This guide covers everything needed to build a production-quality MCP client, fr
 
 | Aspect | Key Detail |
 |---|---|
-| **TypeScript SDK** | `@modelcontextprotocol/sdk` — `Client` class with full lifecycle management |
-| **Python SDK** | `mcp` (PyPI) — `ClientSession` with async context manager pattern |
-| **FastMCP client** | `fastmcp.Client` — higher-level Pythonic API with auto-transport detection |
+| **TypeScript SDK** | [`@modelcontextprotocol/sdk`](https://www.npmjs.com/package/@modelcontextprotocol/sdk) — `Client` class with full lifecycle management |
+| **Python SDK** | [`mcp`](https://pypi.org/project/mcp/) (PyPI) — `ClientSession` with async context manager pattern |
+| **FastMCP client** | [`fastmcp.Client`](https://github.com/jlowin/fastmcp) — higher-level Pythonic API with auto-transport detection |
 | **Primary transports** | stdio (local), Streamable HTTP (remote), SSE (deprecated) |
 | **Capability negotiation** | Required first exchange — client and server declare supported features |
 | **Multi-server** | FastMCP `MCPConfig`, MetaMCP gateway, or custom namespace routing |
@@ -206,7 +206,7 @@ async with Client(transport=transport) as client:
 
 ### SSE — Legacy Transport
 
-SSE (Server-Sent Events) was deprecated in the 2025-03-26 spec revision. Some older servers still use it.
+SSE (Server-Sent Events) was [deprecated in the 2025-03-26 spec revision](https://modelcontextprotocol.io/development/changelog). Some older servers still use it.
 
 **TypeScript:**
 
@@ -552,7 +552,7 @@ Servers can only send `sampling/createMessage` during the handling of a client-i
 
 ## Elicitation: Handling Server-Initiated User Input
 
-Elicitation, introduced in the 2025-06-18 spec revision, lets servers request structured input from the user via the client. Two modes exist: form (structured data) and URL (sensitive data via external redirect).
+Elicitation, [introduced in the 2025-06-18 spec revision](https://modelcontextprotocol.io/development/changelog), lets servers request structured input from the user via the client. Two modes exist: form (structured data) and URL (sensitive data via external redirect).
 
 ### Declaring Elicitation Capability
 

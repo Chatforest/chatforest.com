@@ -5,11 +5,12 @@ description: "A comprehensive guide to MCP integrations for nonprofits and socia
 content_type: "Guide"
 card_description: "Nonprofits are adopting AI agents to connect donor databases, grant opportunities, volunteer systems, and impact data. This guide covers 105+ MCP servers relevant to nonprofit operations — from Salesforce NPSP and QuickBooks to World Bank data, Grants.gov, humanitarian platforms, and communication tools — plus architecture patterns for fundraising intelligence, grant discovery, and program impact analysis."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
 Nonprofits operate in a unique technology landscape — they need enterprise-grade capabilities on shoestring budgets, must coordinate across donors, volunteers, beneficiaries, and grant makers simultaneously, and are expected to demonstrate measurable impact while spending as little as possible on overhead. A typical mid-size nonprofit might juggle a donor CRM, email marketing platform, accounting software, grant management system, volunteer scheduling tool, and multiple spreadsheets tracking program outcomes — each disconnected from the others, each requiring manual data entry and reconciliation.
 
-The numbers tell the story of both opportunity and frustration. According to the 2026 Nonprofit AI Adoption Report from Virtuous and Fundraising.AI, 92% of nonprofits now use AI tools in some capacity — but only 7% report major strategic impact. Eighty-one percent use AI individually and ad hoc, while just 4% have documented, repeatable workflows. Nearly half have no formal AI governance policy. The adoption is wide but shallow: faster email drafts and quicker research, not transformed operations.
+The numbers tell the story of both opportunity and frustration. According to the [2026 Nonprofit AI Adoption Report from Virtuous and Fundraising.AI](https://www.prnewswire.com/news-releases/virtuous-and-fundraisingai-release-2026-nonprofit-ai-adoption-report-revealing-gap-between-ai-use-and-real-fundraising-impact-302688325.html), 92% of nonprofits now use AI tools in some capacity — but only 7% report major strategic impact. Eighty-one percent use AI individually and ad hoc, while just 4% have documented, repeatable workflows. Nearly half have no formal AI governance policy. The adoption is wide but shallow: faster email drafts and quicker research, not transformed operations.
 
 MCP provides a structured protocol for connecting AI assistants to the tools nonprofits already use — donor databases, fundraising platforms, grant portals, accounting systems, volunteer management, and impact data sources. Rather than building custom integrations for each platform, MCP-connected agents can query donor histories, search grant opportunities, analyze program outcomes, draft fundraising appeals, and reconcile financial data through defined tool interfaces. For resource-constrained organizations, this standardized approach to AI integration could bridge the gap between AI adoption and actual operational impact.
 
@@ -233,13 +234,13 @@ Nonprofits depend on multi-channel communication for fundraising, volunteer coor
 | sendgrid-mcp (Garoth) | 24 | Community | Twilio SendGrid v3 — contact lists, templates, single sends, stats |
 | constant-contact-mcp-2026 (BusyBee3333) | 2 | Community | Constant Contact with 100+ tools |
 
-For nonprofits, Mailchimp is particularly significant — it offers a free tier for up to 500 contacts and a 15% nonprofit discount. The 53-tool MCP server from damientilman enables AI agents to manage audience segments, create and schedule campaigns, set up automation workflows, and analyze engagement metrics.
+For nonprofits, Mailchimp is particularly significant — it offers a [free tier for up to 250 contacts](https://mailchimp.com/pricing/marketing/) and a [15% nonprofit discount](https://mailchimp.com/help/about-nonprofit-discount/). The 53-tool MCP server from damientilman enables AI agents to manage audience segments, create and schedule campaigns, set up automation workflows, and analyze engagement metrics.
 
 ### SMS and Messaging
 
 **Twilio MCP** | **twilio-labs/mcp** | 97 stars | **Official (Twilio)** | TypeScript
 
-Twilio's official MCP server exposes the full Twilio API as MCP tools, including an OpenAPI-to-MCP tool generator. For nonprofits, this enables AI-assisted SMS campaigns for fundraising, volunteer alerts, program reminders, and crisis communications. Twilio offers discounted nonprofit pricing through Twilio.org.
+Twilio's official MCP server exposes the full Twilio API as MCP tools, including an OpenAPI-to-MCP tool generator. For nonprofits, this enables AI-assisted SMS campaigns for fundraising, volunteer alerts, program reminders, and crisis communications. Twilio offers discounted nonprofit pricing through [Twilio.org](https://www.twilio.org/eligibility-requirements).
 
 | Server | Stars | Focus |
 |--------|-------|-------|
@@ -258,7 +259,7 @@ Twilio's official MCP server exposes the full Twilio API as MCP tools, including
 
 **Slack MCP** | **korotovsky/slack-mcp-server** | 1,491 stars | Community
 
-The most popular Slack MCP server — supports DMs, group messages, channels, and no special permission requirements. Many nonprofits use Slack's free tier or discounted nonprofit plan (85% off) for internal coordination. An AI agent connected through this MCP server can assist with volunteer coordination, cross-team updates, and automated reporting.
+The most popular Slack MCP server — supports DMs, group messages, channels, and no special permission requirements. Many nonprofits use Slack's free tier or [discounted nonprofit plan](https://slack.com/intl/en-us/help/articles/204368833-Slack-for-Nonprofits) for internal coordination. An AI agent connected through this MCP server can assist with volunteer coordination, cross-team updates, and automated reporting.
 
 ### Video and Meetings
 
