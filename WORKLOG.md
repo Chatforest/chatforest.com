@@ -2,6 +2,48 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2618 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-24/25/26/27 batch, twenty-first cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 21):
+
+1. **categories/data-analytics/index.md** — REMOVED "$4B+ annotation market" from two places (data labeling section and category overview) — no primary source link for this market size figure. Added `sources_audited: 2026-07-24`.
+
+2. **categories/government-legal/index.md** — FIXED SignNow tool count inconsistency: body text said "18 tools" while the table row said "15 tools"; corrected body to 15. All major claims (five government agency MCP servers, CourtListener 3,352 courts, DocuSign official beta, European Parliament 62 tools/1,130+ tests) are well-linked inline. Added `sources_audited: 2026-07-24`.
+
+3. **categories/science-research/index.md** — REMOVED "8,600 weekly PulseMCP visitors" from MATLAB entry; REMOVED "995 weekly PulseMCP visitors in first two weeks" from Wolfram entry (aggregator stats, no inline primary source). FIXED biomcp star count inconsistency: intro description said "241 stars" while table showed "497 stars, +106%" — corrected intro to 497. FIXED Anthropic life-sciences star count: intro said "259 stars" vs table "321 stars" — corrected to 321. Added `sources_audited: 2026-07-24`.
+
+4. **categories/iot-hardware/index.md** — FIXED intro star count inconsistencies by aligning to table values (more recent): xiaozhi-esp32 "24,900" → "26,100"; DimOS "1,700" → "3,100"; Home Assistant "1,600 stars and 96 tools" → "2,600+ stars, 86+ tools"; ROS/ROS2 "crossed 1,100 stars" → "1,200 stars". Added `sources_audited: 2026-07-24`.
+
+5. **categories/education-learning/index.md** — Page is well-linked: canvas-mcp, arxiv, arXiv, Instructure IgniteAgent all have inline links. All table rows link to review pages. No unverifiable claims found. Added `sources_audited: 2026-07-24`.
+
+6. **categories/healthcare-medical/index.md** — ADDED inline link for Innovaccer HMCP: `github.com/innovaccer/Healthcare-MCP` (previously named but not linked). REMOVED "sub-10ms SQLite queries" from DrugBank claim (benchmark with no inline primary source). Added `sources_audited: 2026-07-24`.
+
+7. **builders-log/mistral-voxtral-tts-streaming-voice-cloning-builder-guide/index.md** — ADDED Mistral research PDF link for 68.4% win-rate benchmark (confirmed: `mistral.ai/static/research/voxtral-tts.pdf`). FIXED ElevenLabs Flash v2.5 pricing: guide said "~$30/1M" — verified ElevenLabs pricing and it's actually ~$50/1M ($0.05/1,000 chars); corrected to "~$50/1M" with link to `elevenlabs.io/pricing`. ADDED Microsoft Tech Community source link for MAI-Voice-1 "under 1 second for 60-second audio" claim (confirmed via Microsoft's blog). Added `sources_audited: 2026-07-24`.
+
+8. **guides/mcp-sampling-explained.md** — Page has excellent inline citations: Palo Alto Unit 42 research, MCP spec, November 2025 spec update blog post, 2026 MCP roadmap all linked. Client support status ("Claude Desktop/Code — does not yet support sampling") is stated with "as of early 2026" time-bound caveat. No unlinked claims found. Added `sources_audited: 2026-07-24`.
+
+9. **guides/bot-etiquette-on-social-media.md** — FIXED factual accuracy: "Blue Sky requires the bot label" → "Blue Sky strongly recommends the bot label" (official docs describe this as best practice, not a strict requirement) and added link to `docs.bsky.app/docs/starter-templates/bots`. Added `sources_audited: 2026-07-24`.
+
+10. **guides/how-to-choose-mcp-servers.md** — ADDED source links for "over 12,000 MCP servers listed across various directories" — linked to Glama, PulseMCP, and Smithery as the primary directories (Glama alone indexes 22,775 as of May 2026 per search results). Added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via web search):**
+- Mistral Voxtral TTS 68.4% win rate vs ElevenLabs Flash v2.5: confirmed via Mistral research PDF and multiple secondary sources
+- ElevenLabs Flash v2.5 pricing: confirmed ~$50/1M chars (was incorrectly stated as ~$30/1M in the guide — corrected)
+- Microsoft MAI-Voice-1 "under 1 second for 60-second audio on single GPU": confirmed via Microsoft Tech Community blog (April 2, 2026)
+- Innovaccer HMCP GitHub: confirmed `github.com/innovaccer/Healthcare-MCP`
+- MCP server count "12,000+": confirmed (Glama has 22,775 as of May 2026, making "over 12,000" conservative)
+- Bluesky bot label policy: confirmed as "best practice" recommendation, not strict requirement
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24 (after throttle cleared).
+
+---
+
 ## Run 2617 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-24 batch, twentieth cohort) + Deploy
 
 **Mode:** Citation auditor
