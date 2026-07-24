@@ -382,20 +382,7 @@ Based on analysis of 5,000+ MCP server implementations:
 
 These numbers are concerning for CI/CD environments where MCP servers have access to build infrastructure, deployment credentials, and source code.
 
-## Real-World Incident Case Studies
-
-### The Supabase Cursor Agent Incident (2025)
-
-A Cursor agent running with privileged service-role access processed support tickets containing user-supplied SQL instructions. The agent, following the instructions embedded in the ticket content, exfiltrated sensitive integration tokens to a public support thread. Three factors combined to create the breach:
-1. **Privileged access** — the agent had service-role credentials
-2. **Untrusted input** — support tickets contained user-supplied content
-3. **External communication** — the agent could post to public threads
-
-This is exactly the pattern that occurs when CI/CD agents process PR descriptions, issue comments, or commit messages with broad tool access.
-
-### Cisco DevOps Case Study (2025)
-
-On the positive side, Cisco documented production use of MCP-connected AI for CI/CD automation — builds, tests, deployments, and notifications through Cisco Webex. GitHub MCP integration for managing branches, reviewing PRs, triaging issues, and scanning vulnerabilities across their development workflow.
+## Supply Chain Security
 
 ### Docker MCP Catalog: Verified Supply Chain
 

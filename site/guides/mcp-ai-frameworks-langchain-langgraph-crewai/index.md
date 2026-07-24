@@ -350,7 +350,7 @@ The Vercel AI SDK is client-only — it consumes MCP servers but doesn't expose 
 
 ## Mastra: Full MCP Client and Server
 
-[Mastra](https://mastra.ai/), the TypeScript AI framework from the team behind Gatsby, provides both MCP client and server capabilities as built-in features.
+[Mastra](https://mastra.ai/), a TypeScript AI framework, provides both MCP client and server capabilities as built-in features.
 
 ### MCP Client
 
@@ -501,9 +501,9 @@ These changes consolidate MCP deeper into the Spring AI project rather than rely
 
 Spring AI's MCP support targets enterprise Java teams who want to integrate AI tool use into existing Spring Boot applications without rewriting infrastructure.
 
-## Microsoft Agent Framework 1.0 (GA April 7, 2026)
+## Microsoft Agent Framework 1.0 (GA)
 
-Microsoft shipped **Agent Framework 1.0** on April 7, 2026, unifying Semantic Kernel and AutoGen into a single production-ready SDK for both .NET and Python. This is the framework that replaces the separate Semantic Kernel and AutoGen MCP approaches.
+Microsoft shipped **Agent Framework 1.0**, unifying Semantic Kernel and AutoGen into a single production-ready SDK for both .NET and Python. This is the framework that replaces the separate Semantic Kernel and AutoGen MCP approaches.
 
 ### Built-in MCP Support
 

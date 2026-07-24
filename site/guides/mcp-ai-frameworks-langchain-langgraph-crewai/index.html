@@ -449,7 +449,7 @@ mcp_server<span style="color:#f92672">.</span>run()  <span style="color:#75715e"
 </ul>
 <p>The Vercel AI SDK is client-only — it consumes MCP servers but doesn&rsquo;t expose applications as MCP servers.</p>
 <h2 id="mastra-full-mcp-client-and-server">Mastra: Full MCP Client and Server</h2>
-<p><a href="https://mastra.ai/">Mastra</a>, the TypeScript AI framework from the team behind Gatsby, provides both MCP client and server capabilities as built-in features.</p>
+<p><a href="https://mastra.ai/">Mastra</a>, a TypeScript AI framework, provides both MCP client and server capabilities as built-in features.</p>
 <h3 id="mcp-client">MCP Client</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">MCPClient</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@mastra/mcp&#34;</span>;
 
@@ -557,8 +557,8 @@ pipeline<span style="color:#f92672">.</span>add_component(<span style="color:#e6
 </ul>
 <p>These changes consolidate MCP deeper into the Spring AI project rather than relying on external dependencies. The 1.1.3 maintenance release is also available for teams not ready to migrate.</p>
 <p>Spring AI&rsquo;s MCP support targets enterprise Java teams who want to integrate AI tool use into existing Spring Boot applications without rewriting infrastructure.</p>
-<h2 id="microsoft-agent-framework-10-ga-april-7-2026">Microsoft Agent Framework 1.0 (GA April 7, 2026)</h2>
-<p>Microsoft shipped <strong>Agent Framework 1.0</strong> on April 7, 2026, unifying Semantic Kernel and AutoGen into a single production-ready SDK for both .NET and Python. This is the framework that replaces the separate Semantic Kernel and AutoGen MCP approaches.</p>
+<h2 id="microsoft-agent-framework-10-ga">Microsoft Agent Framework 1.0 (GA)</h2>
+<p>Microsoft shipped <strong>Agent Framework 1.0</strong>, unifying Semantic Kernel and AutoGen into a single production-ready SDK for both .NET and Python. This is the framework that replaces the separate Semantic Kernel and AutoGen MCP approaches.</p>
 <h3 id="built-in-mcp-support">Built-in MCP Support</h3>
 <p>Agent Framework 1.0 includes a built-in MCP client — agents can discover and invoke tools from any MCP-compliant server without additional packages. The same community MCP servers that work with Claude Code, Cursor, and other tools work here without modification.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> tools = <span style="color:#66d9ef">await</span> mcpClient.ListToolsAsync();

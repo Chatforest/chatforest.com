@@ -396,7 +396,7 @@ MCP is arriving at the same time as a broader shift in robotics: using large lan
 
 ### The SPCA Framework
 
-The Sense-Plan-Code-Act (SPCA) framework (published research, 2025-2026) separates robot autonomy into stages that map naturally to MCP tool calls:
+The Sense-Plan-Code-Act (SPCA) framework separates robot autonomy into stages that map naturally to MCP tool calls:
 
 1. **Sense.** Perceive the environment through cameras, lidar, and other sensors. MCP tools provide sensor data to the AI agent.
 2. **Plan.** The LLM reasons about the task and generates a high-level plan based on sensory input.
@@ -405,7 +405,7 @@ The Sense-Plan-Code-Act (SPCA) framework (published research, 2025-2026) separat
 
 ### ELLMER: Long-Horizon Embodied Planning
 
-The ELLMER framework (Nature Machine Intelligence, March 2025) demonstrates that LLMs can complete long-horizon manipulation tasks in unpredictable settings. Key findings:
+The ELLMER framework demonstrates that LLMs can complete long-horizon manipulation tasks in unpredictable settings. Key findings:
 
 - LLMs handle **task decomposition** — breaking complex goals into subtask sequences
 - **Tool-based interaction** — LLMs call perception and control functions rather than directly generating motor commands

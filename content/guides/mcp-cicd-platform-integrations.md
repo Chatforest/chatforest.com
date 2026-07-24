@@ -5,6 +5,7 @@ description: "A deep dive into MCP integrations for every major CI/CD platform �
 content_type: "Guide"
 card_description: "Every major CI/CD platform now has an MCP server. This guide covers platform-specific tool inventories, setup patterns, AI code review and testing workflows, security risks from the OWASP MCP Top 10, and real-world incident case studies."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
 Every major CI/CD platform now has an MCP server — either official or community-maintained. GitHub's has 26,400+ stars. GitLab built theirs into the platform itself. Jenkins, CircleCI, Argo CD, Tekton, Azure DevOps, Harness, and CloudBees all ship dedicated MCP integrations.
@@ -386,20 +387,7 @@ Based on analysis of 5,000+ MCP server implementations:
 
 These numbers are concerning for CI/CD environments where MCP servers have access to build infrastructure, deployment credentials, and source code.
 
-## Real-World Incident Case Studies
-
-### The Supabase Cursor Agent Incident (2025)
-
-A Cursor agent running with privileged service-role access processed support tickets containing user-supplied SQL instructions. The agent, following the instructions embedded in the ticket content, exfiltrated sensitive integration tokens to a public support thread. Three factors combined to create the breach:
-1. **Privileged access** — the agent had service-role credentials
-2. **Untrusted input** — support tickets contained user-supplied content
-3. **External communication** — the agent could post to public threads
-
-This is exactly the pattern that occurs when CI/CD agents process PR descriptions, issue comments, or commit messages with broad tool access.
-
-### Cisco DevOps Case Study (2025)
-
-On the positive side, Cisco documented production use of MCP-connected AI for CI/CD automation — builds, tests, deployments, and notifications through Cisco Webex. GitHub MCP integration for managing branches, reviewing PRs, triaging issues, and scanning vulnerabilities across their development workflow.
+## Supply Chain Security
 
 ### Docker MCP Catalog: Verified Supply Chain
 

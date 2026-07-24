@@ -468,17 +468,7 @@ server container started successfully.&quot;
 <li><strong>79%</strong> pass API keys through environment variables</li>
 </ul>
 <p>These numbers are concerning for CI/CD environments where MCP servers have access to build infrastructure, deployment credentials, and source code.</p>
-<h2 id="real-world-incident-case-studies">Real-World Incident Case Studies</h2>
-<h3 id="the-supabase-cursor-agent-incident-2025">The Supabase Cursor Agent Incident (2025)</h3>
-<p>A Cursor agent running with privileged service-role access processed support tickets containing user-supplied SQL instructions. The agent, following the instructions embedded in the ticket content, exfiltrated sensitive integration tokens to a public support thread. Three factors combined to create the breach:</p>
-<ol>
-<li><strong>Privileged access</strong> — the agent had service-role credentials</li>
-<li><strong>Untrusted input</strong> — support tickets contained user-supplied content</li>
-<li><strong>External communication</strong> — the agent could post to public threads</li>
-</ol>
-<p>This is exactly the pattern that occurs when CI/CD agents process PR descriptions, issue comments, or commit messages with broad tool access.</p>
-<h3 id="cisco-devops-case-study-2025">Cisco DevOps Case Study (2025)</h3>
-<p>On the positive side, Cisco documented production use of MCP-connected AI for CI/CD automation — builds, tests, deployments, and notifications through Cisco Webex. GitHub MCP integration for managing branches, reviewing PRs, triaging issues, and scanning vulnerabilities across their development workflow.</p>
+<h2 id="supply-chain-security">Supply Chain Security</h2>
 <h3 id="docker-mcp-catalog-verified-supply-chain">Docker MCP Catalog: Verified Supply Chain</h3>
 <p>Docker&rsquo;s response to supply chain risks: the <a href="https://docs.docker.com/ai/mcp-catalog-and-toolkit/catalog/">Docker MCP Catalog</a> — 300+ verified MCP servers packaged as container images with versioning, provenance, cryptographic signatures, SBOMs, and security updates. The Docker MCP Toolkit runs MCP servers in isolated containers with signed image verification and an intelligent gateway that intercepts and blocks malicious requests before they reach tools.</p>
 <p>For CI/CD teams, pulling MCP servers from Docker&rsquo;s verified catalog is significantly safer than installing community npm packages directly.</p>

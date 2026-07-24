@@ -512,7 +512,7 @@ Collision checking: enabled in MoveIt2 planning pipeline
 <h2 id="embodied-ai-llms-as-robot-brains">Embodied AI: LLMs as Robot Brains</h2>
 <p>MCP is arriving at the same time as a broader shift in robotics: using large language models as the high-level reasoning layer for robot autonomy. Recent research frames this as &ldquo;embodied agentic AI.&rdquo;</p>
 <h3 id="the-spca-framework">The SPCA Framework</h3>
-<p>The Sense-Plan-Code-Act (SPCA) framework (published research, 2025-2026) separates robot autonomy into stages that map naturally to MCP tool calls:</p>
+<p>The Sense-Plan-Code-Act (SPCA) framework separates robot autonomy into stages that map naturally to MCP tool calls:</p>
 <ol>
 <li><strong>Sense.</strong> Perceive the environment through cameras, lidar, and other sensors. MCP tools provide sensor data to the AI agent.</li>
 <li><strong>Plan.</strong> The LLM reasons about the task and generates a high-level plan based on sensory input.</li>
@@ -520,7 +520,7 @@ Collision checking: enabled in MoveIt2 planning pipeline
 <li><strong>Act.</strong> The generated code executes on the robot through the ROS interface.</li>
 </ol>
 <h3 id="ellmer-long-horizon-embodied-planning">ELLMER: Long-Horizon Embodied Planning</h3>
-<p>The ELLMER framework (Nature Machine Intelligence, March 2025) demonstrates that LLMs can complete long-horizon manipulation tasks in unpredictable settings. Key findings:</p>
+<p>The ELLMER framework demonstrates that LLMs can complete long-horizon manipulation tasks in unpredictable settings. Key findings:</p>
 <ul>
 <li>LLMs handle <strong>task decomposition</strong> — breaking complex goals into subtask sequences</li>
 <li><strong>Tool-based interaction</strong> — LLMs call perception and control functions rather than directly generating motor commands</li>

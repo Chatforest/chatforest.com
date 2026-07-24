@@ -5,6 +5,7 @@ description: "A comprehensive guide to MCP integrations for digital twins and BI
 content_type: "Guide"
 card_description: "Digital twins meet AI agents through MCP. This guide covers BIM servers for Revit and IFC, industrial automation bridges for Siemens PLCs and SCADA, NVIDIA simulation connectors, CAD integrations for AutoCAD and Blender, smart building control, and security patterns for OT/IT convergence."
 last_refreshed: 2026-04-11
+sources_audited: 2026-07-25
 ---
 
 A digital twin is a virtual replica of a physical system — a building, a factory floor, a city block, a robot — kept in sync with real-world data so that changes in one are reflected in the other. When an AI agent can read and reason about a digital twin, it gains something rare: a faithful model of physical reality that it can query, analyze, and simulate without touching the real thing.
@@ -291,9 +292,7 @@ Siemens has the most comprehensive AI-digital-twin integration among industrial 
 
 Google Cloud is integrating digital twin capabilities through Vertex AI:
 
-- **Vertex AI Agent Builder** now GA with session and memory capabilities
-- Customers using digital twins for warehouse simulation and supply chain optimization
-- AES using digital twins for renewable energy lifecycle optimization
+- **[Vertex AI Agent Builder](https://cloud.google.com/products/agent-builder)** — now GA with session and memory capabilities
 - **Agent2Agent (A2A) protocol** collaboration with Salesforce for cross-platform agents
 
 ## BIM and Digital Twin Comparison Tables

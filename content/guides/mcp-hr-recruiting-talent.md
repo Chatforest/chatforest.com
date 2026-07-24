@@ -5,9 +5,10 @@ description: "A comprehensive guide to MCP integrations for HR and recruiting �
 content_type: "Guide"
 card_description: "HR teams juggle dozens of disconnected systems — from applicant tracking to payroll to background checks. This guide covers 80+ MCP servers across the HR and recruiting ecosystem, from Greenhouse and Lever to LinkedIn, Workday, BambooHR, Checkr, and Gusto, plus architecture patterns for AI-powered recruiting pipelines, onboarding automation, and workforce analytics."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
-Human resources and recruiting run on fragmented software stacks. A typical mid-size company might track candidates in Greenhouse, manage employee data in BambooHR, run payroll through Gusto, conduct background checks via Checkr, post jobs on LinkedIn and Indeed, schedule interviews through Calendly, communicate through Slack, manage performance in Lattice, and handle global contractors through Deel — each system operating independently, each requiring manual data transfer between them. The global AI-in-HR market reached $6.25 billion in 2026, growing at 24.8% annually. Fortune 500 companies report that 99% use some form of AI in recruitment screening, and 62% of employers expect AI to handle most or all hiring steps by the end of 2026.
+Human resources and recruiting run on fragmented software stacks. A typical mid-size company might track candidates in Greenhouse, manage employee data in BambooHR, run payroll through Gusto, conduct background checks via Checkr, post jobs on LinkedIn and Indeed, schedule interviews through Calendly, communicate through Slack, manage performance in Lattice, and handle global contractors through Deel — each system operating independently, each requiring manual data transfer between them. The [global AI-in-HR market reached $6.25 billion in 2026, growing at 24.8% annually](https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-hr-market-report). [Fortune 500 companies report that 99% use some form of AI in recruitment screening](https://www.demandsage.com/ai-recruitment-statistics/), and [62% of employers expect AI to handle most or all hiring steps by the end of 2026](https://www.hrdive.com/news/ai-hiring-process/758384/).
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to these HR platforms. Rather than building custom integrations for each tool, MCP-connected agents can search candidates, advance applications through pipelines, query employee data, run background checks, and coordinate across the full HR technology stack through defined tool interfaces. The protocol transforms AI assistants from isolated chatbots into operational tools that can work across recruiting, onboarding, performance management, and workforce administration. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
@@ -27,7 +28,7 @@ HR technology stacks present integration challenges that MCP is architecturally 
 
 **Global workforce management multiplies complexity.** Companies hiring across borders need to navigate different employment laws, tax systems, benefits structures, and payroll providers for each country. Platforms like Deel and Remote.com address this, but coordinating between global payroll, local compliance, and central HRIS still requires extensive manual work that MCP-connected agents could streamline.
 
-**The trust gap demands transparency.** Research shows 66% of U.S. adults hesitate to apply when AI is used for screening, and only 26% of applicants trust AI to evaluate them fairly. This means AI tools in HR need to be explainable and auditable — MCP's structured tool interfaces provide clearer audit trails than opaque API integrations, making it easier to document what an AI agent accessed and why.
+**The trust gap demands transparency.** [Research shows 66% of U.S. adults hesitate to apply when AI is used for screening](https://www.pewresearch.org/internet/2023/04/20/ai-in-hiring-and-evaluating-workers-what-americans-think/), and only [26% of applicants trust AI to evaluate them fairly](https://www.gartner.com/en/newsroom/press-releases/2025-07-31-gartner-survey-shows-just-26-percent-of-job-applicants-trust-ai-will-fairly-evaluate-them). This means AI tools in HR need to be explainable and auditable — MCP's structured tool interfaces provide clearer audit trails than opaque API integrations, making it easier to document what an AI agent accessed and why.
 
 ## Applicant Tracking Systems (ATS)
 
@@ -170,7 +171,7 @@ Additional BambooHR implementations include **evrimalacan/mcp-bamboohr** (genera
 
 ### Workday
 
-Workday — the dominant enterprise HCM platform — has no standalone official MCP server yet, though they've announced plans. At DevCon 2025, Workday announced it will expose platform capabilities through MCP and A2A protocols via a new Agent Gateway. They acquired Pipedream (3,000+ APIs, 10,000+ tools) in late 2025 to accelerate this. Also acquired Paradox (AI recruiting), HiredScore (talent orchestration), and Sana (learning) in 2025.
+Workday — the dominant enterprise HCM platform — has no standalone official MCP server yet, though they've announced plans. Workday announced it will expose platform capabilities through MCP and A2A protocols via a new Agent Gateway. They [announced the acquisition of Pipedream](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream) (3,000+ APIs, 10,000+ tools) in November 2025 to accelerate this. Also completed acquisitions of [Paradox](https://newsroom.workday.com/2025-10-01-Workday-Completes-Acquisition-of-Paradox) (AI recruiting) and [Sana](https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana) (learning) in 2025; [HiredScore](https://newsroom.workday.com/2024-02-26-Workday-Announces-Intent-to-Acquire-HiredScore) (talent orchestration) was acquired in 2024.
 
 **CDataSoftware/workday-mcp-server-by-cdata** | Third-party commercial
 
@@ -242,7 +243,7 @@ The most tool-rich LinkedIn MCP server, spanning 14 categories including analyti
 
 **Anishshah2-gmail/candidate-sourcing-mcp** | Community
 
-Specifically designed for LinkedIn-based candidate sourcing with a multi-provider architecture. Notable context: Proxycurl, a popular LinkedIn data provider, shut down July 4, 2025 due to a LinkedIn lawsuit, forcing community servers to adopt alternative approaches.
+Specifically designed for LinkedIn-based candidate sourcing with a multi-provider architecture. Notable context: [Proxycurl](https://nubela.co/blog/goodbye-proxycurl/), a popular LinkedIn data provider, shut down July 4, 2025 due to a LinkedIn lawsuit, forcing community servers to adopt alternative approaches.
 
 Additional LinkedIn MCP servers include **saisudhir14/linkedin-mcp-search** (job search with location and experience filtering), **Rom7699/linkedin-jobs-mcp-server** (RapidAPI-based), **administrativetrick/linkedin-mcp** (TypeScript, Claude Desktop), and **adhikasp/mcp-linkedin** (feeds and job API interaction).
 
@@ -270,8 +271,7 @@ No MCP servers were found for Sterling, GoodHire, or First Advantage as standalo
 
 **Draup Talent Intelligence MCP** | **Official (vendor-built)**
 
-Draup provides an official MCP server for talent intelligence, announced December 2025. Data coverage spans 1 billion+ professional profiles, 23,000+ skills, 5,800+ locations, 33 industries, 140+ countries, and 240 languages. Provides real-time retrieval of skills trends, compensation benchmarks, talent mobility patterns, and labor market shifts. Integrates with Workday, SAP SuccessFactors, Greenhouse, and 30+ HR systems. SOC 2, GDPR, and ISO 27001 certified. Reported outcomes include 40 hours per month saved on data preparation and 2x increase in first-call meeting rates.
-
+Draup provides an official MCP server for talent intelligence, announced December 2025. Data coverage spans 1 billion+ professional profiles, 23,000+ skills, 5,800+ locations, 33 industries, 140+ countries, and 240 languages. Provides real-time retrieval of skills trends, compensation benchmarks, talent mobility patterns, and labor market shifts. Integrates with Workday, SAP SuccessFactors, Greenhouse, and 30+ HR systems. SOC 2, GDPR, and ISO 27001 certified.
 ## Resume and Candidate Tools
 
 **sms03/resume-mcp** | Community
@@ -509,12 +509,12 @@ Bullhorn's MCP server or the CATS implementation (228 tools covering the full AP
 
 ## Market Context
 
-The AI-in-HR market reached $6.25 billion in 2026, growing at 24.8% annually. More granularly, the AI recruitment market alone is valued at $703 million in 2025, projected to reach $1.23 billion by 2033. Adoption is accelerating: 43% of HR tasks now use AI in 2026, up from 26% in 2024.
+The [AI-in-HR market reached $6.25 billion in 2026, growing at 24.8% annually](https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-hr-market-report). More granularly, the [AI recruitment market alone is valued at $703 million in 2025, projected to reach $1.23 billion by 2033](https://www.openpr.com/news/4458015/ai-recruitment-market-to-reach-usd-1-236-0-million-by-2033-at-6-7). Adoption is accelerating: [43% of HR tasks now use AI in 2026, up from 26% in 2024](https://www.shrm.org/topics-tools/research/state-of-ai-hr-2026/full-report).
 
-Enterprise adoption is near-universal at the top. Fortune 500 companies report 99% use some form of AI in recruitment screening. Looking forward, 62% of employers expect AI to handle most or all hiring steps by 2026, and 74% plan to increase AI use in the next 12 months. Companies using AI in recruitment report up to 30% reduction in hiring costs.
+Enterprise adoption is near-universal at the top. [Fortune 500 companies report 99% use some form of AI in recruitment screening](https://www.demandsage.com/ai-recruitment-statistics/). [62% of employers expect AI to handle most or all hiring steps by 2026](https://www.hrdive.com/news/ai-hiring-process/758384/). Companies using AI in recruitment report [up to 30% reduction in hiring costs](https://www.shrm.org/labs/resources/the-evolving-role-of-ai-in-recruitment-and-retention).
 
-However, a significant trust gap exists. Research shows 66% of U.S. adults hesitate to apply to jobs when AI is used for screening, and only 26% of applicants trust AI to evaluate them fairly. This tension between employer adoption and candidate skepticism makes transparency and auditability — qualities that MCP's structured interface supports — particularly important.
+However, a significant trust gap exists. [Research shows 66% of U.S. adults hesitate to apply to jobs when AI is used for screening](https://www.pewresearch.org/internet/2023/04/20/ai-in-hiring-and-evaluating-workers-what-americans-think/), and only [26% of applicants trust AI to evaluate them fairly](https://www.gartner.com/en/newsroom/press-releases/2025-07-31-gartner-survey-shows-just-26-percent-of-job-applicants-trust-ai-will-fairly-evaluate-them). This tension between employer adoption and candidate skepticism makes transparency and auditability — qualities that MCP's structured interface supports — particularly important.
 
-Major vendor consolidation is reshaping the landscape. Workday acquired Paradox (AI recruiting), HiredScore (talent orchestration), Sana (learning), and Pipedream (API integration platform) in 2025. SAP acquired SmartRecruiters. These acquisitions signal that the major HCM platforms intend to build comprehensive AI capabilities internally, which will likely include official MCP servers as the protocol matures.
+Major vendor consolidation is reshaping the landscape. Workday completed acquisitions of [Paradox](https://newsroom.workday.com/2025-10-01-Workday-Completes-Acquisition-of-Paradox) (AI recruiting) and [Sana](https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana) (learning) in 2025, with [HiredScore](https://newsroom.workday.com/2024-02-26-Workday-Announces-Intent-to-Acquire-HiredScore) (talent orchestration) acquired in 2024. [SAP acquired SmartRecruiters](https://news.sap.com/2025/09/sap-completes-smartrecruiters-acquisition/) in September 2025. These acquisitions signal that the major HCM platforms intend to build comprehensive AI capabilities internally, which will likely include official MCP servers as the protocol matures.
 
 The MCP server count in HR continues to grow. Official vendor support from Checkr, Gusto, HiBob, Manatal, Leonar, and Draup provides production-ready starting points, while unified platforms (Unified.to covering 305+ HR integrations, Knit covering 200+) offer immediate broad coverage. The community ecosystem fills gaps for platforms like Greenhouse, Lever, LinkedIn, and BambooHR, with varying levels of maturity. The biggest structural gap remains employee engagement and learning platforms — categories where AI assistance could provide significant value but MCP adoption hasn't yet reached.

@@ -5,6 +5,7 @@ description: "A comprehensive guide to connecting AI agents with robots through 
 content_type: "Guide"
 card_description: "MCP connects AI agents to robots. This guide covers ROS/ROS2 integration via rosbridge, natural language robot control, manipulation and navigation tools, simulation environments, safety patterns for physical-world actuators, and the growing ecosystem of robotics MCP servers."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
 AI agents that can query databases and call APIs are useful. AI agents that can move a robot arm, navigate a warehouse, or fly a drone are transformative. The Model Context Protocol is making this possible by providing a standardized interface between language models and robot systems — most notably through the Robot Operating System (ROS).
@@ -400,7 +401,7 @@ MCP is arriving at the same time as a broader shift in robotics: using large lan
 
 ### The SPCA Framework
 
-The Sense-Plan-Code-Act (SPCA) framework (published research, 2025-2026) separates robot autonomy into stages that map naturally to MCP tool calls:
+The Sense-Plan-Code-Act (SPCA) framework separates robot autonomy into stages that map naturally to MCP tool calls:
 
 1. **Sense.** Perceive the environment through cameras, lidar, and other sensors. MCP tools provide sensor data to the AI agent.
 2. **Plan.** The LLM reasons about the task and generates a high-level plan based on sensory input.
@@ -409,7 +410,7 @@ The Sense-Plan-Code-Act (SPCA) framework (published research, 2025-2026) separat
 
 ### ELLMER: Long-Horizon Embodied Planning
 
-The ELLMER framework (Nature Machine Intelligence, March 2025) demonstrates that LLMs can complete long-horizon manipulation tasks in unpredictable settings. Key findings:
+The ELLMER framework demonstrates that LLMs can complete long-horizon manipulation tasks in unpredictable settings. Key findings:
 
 - LLMs handle **task decomposition** — breaking complex goals into subtask sequences
 - **Tool-based interaction** — LLMs call perception and control functions rather than directly generating motor commands

@@ -98,7 +98,7 @@
 <li>Security surface is larger — the MCP server is directly accessible</li>
 <li>Difficult to add authentication, logging, and access control on constrained hardware</li>
 </ul>
-<p><strong>Real-world example:</strong> ARM&rsquo;s official learning path demonstrates deploying a FastMCP server on Raspberry Pi 5 that exposes <code>read_temp()</code> (CPU temperature via <code>vcgencmd</code>) and <code>get_current_weather()</code> tools. The server runs on Uvicorn with SSE transport on port 8000, using uv as the Python package manager. For remote access, ngrok tunnels the local server to a public HTTPS endpoint.</p>
+<p><strong>Real-world example:</strong> <a href="https://learn.arm.com/learning-paths/cross-platform/mcp-ai-agent/">ARM&rsquo;s official learning path</a> demonstrates deploying a FastMCP server on Raspberry Pi 5 that exposes <code>read_temp()</code> (CPU temperature via <code>vcgencmd</code>) and <code>get_current_weather()</code> tools. The server runs on Uvicorn with SSE transport on port 8000, using uv as the Python package manager. For remote access, ngrok tunnels the local server to a public HTTPS endpoint.</p>
 <h3 id="pattern-2-gateway-mcp-server">Pattern 2: Gateway MCP Server</h3>
 <p>A gateway device (typically a Raspberry Pi, mini PC, or edge server) runs the MCP server and communicates with downstream IoT devices over their native protocols — MQTT, Modbus, BLE, Zigbee, or serial.</p>
 <pre><code>┌─────────────┐    JSON-RPC     ┌──────────────────┐
@@ -142,7 +142,7 @@
 </ul>
 <p><strong>Real-world example:</strong> AWS IoT SiteWise MCP Server (part of the <code>awslabs/mcp</code> monorepo with 8,500+ stars) exposes industrial asset models, measurements, and alarms through MCP tools. The Litmus MCP Server bridges LLMs with industrial edge platforms, exposing tools like <code>get_current_value_of_devicehub_tag</code> for live sensor values, <code>create_devicehub_device</code> for asset registration, <code>get_multiple_values_from_topic</code> for time-series retrieval, and <code>run_docker_container_on_litmusedge</code> for containerized edge application deployment.</p>
 <h2 id="the-iot-mcp-framework-published-benchmarks">The IoT-MCP Framework: Published Benchmarks</h2>
-<p>The most rigorous published research on MCP for IoT comes from the IoT-MCP paper (arXiv:2510.01260, accepted at ACM WiNTECH &lsquo;25). The framework implements a three-module decoupled architecture validated across 22 sensor types and 6 microcontroller units.</p>
+<p>The most rigorous published research on MCP for IoT comes from the <a href="https://arxiv.org/abs/2510.01260">IoT-MCP paper (arXiv:2510.01260, accepted at ACM WiNTECH &lsquo;25)</a>. The framework implements a three-module decoupled architecture validated across 22 sensor types and 6 microcontroller units.</p>
 <h3 id="architecture">Architecture</h3>
 <p><strong>Module 1 — Local Host.</strong> Houses the LLM and MCP servers in a controlled environment, isolated from IoT disruptions. Each MCP server manages specific sensor functions, generating JSON commands in the format:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -291,7 +291,7 @@
 </li>
 </ol>
 <h2 id="smart-home-integration">Smart Home Integration</h2>
-<p>Smart home is the most accessible IoT MCP use case. Home Assistant&rsquo;s MCP integration, introduced in version 2025.2, has driven rapid adoption.</p>
+<p>Smart home is the most accessible IoT MCP use case. <a href="https://www.home-assistant.io/blog/2025/02/05/release-20252/">Home Assistant&rsquo;s MCP integration, introduced in version 2025.2</a>, has driven rapid adoption.</p>
 <h3 id="home-assistant-mcp">Home Assistant MCP</h3>
 <p>Home Assistant can function as both an MCP client and an MCP server:</p>
 <p><strong>As MCP server</strong> (official integration). Exposes Home Assistant entities — lights, switches, sensors, climate controls, locks, covers — as MCP tools. AI systems like Claude Desktop can then control the home through natural language. Entity access control determines which devices are exposed.</p>

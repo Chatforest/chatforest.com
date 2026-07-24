@@ -5,6 +5,7 @@ description: "A comprehensive guide to MCP integrations for sports and fitness �
 content_type: "Guide"
 card_description: "The sports and fitness MCP ecosystem is one of the most active community-driven spaces in the protocol. This guide covers 100+ MCP servers across wearables (Garmin 311 stars 96 tools, Oura 113 stars, Apple Health 143 stars, Whoop, Fitbit, COROS, Wahoo), training platforms (Strava 305 stars 25 tools, TrainingPeaks 52 tools, Intervals.icu 48 tools), the Open Wearables platform (1,100 stars unified hub), sports data (BALLDONTLIE 250+ endpoints 18 leagues), nutrition databases (300K+ foods), fantasy sports, and coaching tools — plus architecture patterns, market data ($34B sports tech 2025), and ecosystem gaps."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
 Sports and fitness is one of the most active community-driven corners of the MCP ecosystem. While no major sports technology company has shipped an official MCP server, the community has built over 100 servers covering wearable devices, training platforms, sports data, nutrition tracking, and athletic analytics. The leading Garmin Connect server alone offers 96 tools. The Open Wearables platform — which unifies data from eight device ecosystems with a built-in MCP server — has attracted 1,100 GitHub stars.
@@ -389,13 +390,7 @@ Several significant categories lack MCP coverage:
 
 ## Market Context
 
-The sports technology market is valued at $34.25 billion in 2025 and projected to reach $68.71 billion by 2030, growing at 14.9% CAGR. North America accounts for $11.98 billion (36.9% share).
-
-AI in sports specifically is a $10.61 billion market in 2025, projected to reach $49.92 billion by 2033 at 21.6% CAGR. Sports analytics is a $2.29 billion segment growing to $4.75 billion by 2030.
-
-The wearables market — the primary data source for fitness MCP servers — stands at $94.17 billion in 2025 and is projected to reach $120.05 billion by 2031. Oura Ring alone is on track for $1 billion in 2025 sales, targeting approximately $2 billion in 2026.
-
-Despite these market sizes, MCP adoption by major sports technology companies is zero. Every server in this ecosystem is community-built. This contrasts with enterprise software (where Stripe, Salesforce, and others have shipped official MCP servers) and suggests that sports technology companies either see AI integration as a competitive advantage to keep proprietary or have not yet recognized MCP as a relevant standard.
+Sports technology, AI-in-sports, and wearables are all fast-growing markets, but MCP adoption by major sports technology companies is currently zero. Every server in this ecosystem is community-built. This contrasts with enterprise software (where Stripe, Salesforce, and others have shipped official MCP servers) and suggests that sports technology companies either see AI integration as a competitive advantage to keep proprietary or have not yet recognized MCP as a relevant standard.
 
 The community has filled the gap aggressively. The total GitHub stars across sports/fitness MCP servers exceeds 3,000, with the Open Wearables platform alone at 1,100. This bottom-up adoption pattern — users building the integrations they want rather than waiting for vendors — is characteristic of the fitness technology community and may eventually pressure platforms to provide official support.
 

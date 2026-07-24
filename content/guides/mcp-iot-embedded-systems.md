@@ -5,6 +5,7 @@ description: "A deep technical guide to deploying MCP in IoT and embedded system
 content_type: "Guide"
 card_description: "MCP bridges AI agents and the physical world. This guide covers IoT-MCP architecture, deployment patterns for ESP32 and Raspberry Pi, MQTT transport, industrial protocols, smart home integration, security for actuator control, and published benchmarks showing 205ms response times on microcontrollers."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
 MCP gives AI agents access to tools and data. But most MCP deployments connect to digital systems — databases, APIs, cloud services. The emerging frontier is the physical world: sensors that report temperature, actuators that open valves, microcontrollers that manage factory equipment, and smart home devices that control lighting and climate.
@@ -56,7 +57,7 @@ The MCP server runs directly on the IoT device — an ESP32, Raspberry Pi, or si
 - Security surface is larger — the MCP server is directly accessible
 - Difficult to add authentication, logging, and access control on constrained hardware
 
-**Real-world example:** ARM's official learning path demonstrates deploying a FastMCP server on Raspberry Pi 5 that exposes `read_temp()` (CPU temperature via `vcgencmd`) and `get_current_weather()` tools. The server runs on Uvicorn with SSE transport on port 8000, using uv as the Python package manager. For remote access, ngrok tunnels the local server to a public HTTPS endpoint.
+**Real-world example:** [ARM's official learning path](https://learn.arm.com/learning-paths/cross-platform/mcp-ai-agent/) demonstrates deploying a FastMCP server on Raspberry Pi 5 that exposes `read_temp()` (CPU temperature via `vcgencmd`) and `get_current_weather()` tools. The server runs on Uvicorn with SSE transport on port 8000, using uv as the Python package manager. For remote access, ngrok tunnels the local server to a public HTTPS endpoint.
 
 ### Pattern 2: Gateway MCP Server
 
@@ -114,7 +115,7 @@ The MCP server runs in the cloud, and IoT devices communicate through an interme
 
 ## The IoT-MCP Framework: Published Benchmarks
 
-The most rigorous published research on MCP for IoT comes from the IoT-MCP paper (arXiv:2510.01260, accepted at ACM WiNTECH '25). The framework implements a three-module decoupled architecture validated across 22 sensor types and 6 microcontroller units.
+The most rigorous published research on MCP for IoT comes from the [IoT-MCP paper (arXiv:2510.01260, accepted at ACM WiNTECH '25)](https://arxiv.org/abs/2510.01260). The framework implements a three-module decoupled architecture validated across 22 sensor types and 6 microcontroller units.
 
 ### Architecture
 
@@ -235,7 +236,7 @@ Connecting AI agents to industrial equipment demands additional safeguards beyon
 
 ## Smart Home Integration
 
-Smart home is the most accessible IoT MCP use case. Home Assistant's MCP integration, introduced in version 2025.2, has driven rapid adoption.
+Smart home is the most accessible IoT MCP use case. [Home Assistant's MCP integration, introduced in version 2025.2](https://www.home-assistant.io/blog/2025/02/05/release-20252/), has driven rapid adoption.
 
 ### Home Assistant MCP
 

@@ -287,9 +287,7 @@ Siemens has the most comprehensive AI-digital-twin integration among industrial 
 
 Google Cloud is integrating digital twin capabilities through Vertex AI:
 
-- **Vertex AI Agent Builder** now GA with session and memory capabilities
-- Customers using digital twins for warehouse simulation and supply chain optimization
-- AES using digital twins for renewable energy lifecycle optimization
+- **[Vertex AI Agent Builder](https://cloud.google.com/products/agent-builder)** — now GA with session and memory capabilities
 - **Agent2Agent (A2A) protocol** collaboration with Salesforce for cross-platform agents
 
 ## BIM and Digital Twin Comparison Tables

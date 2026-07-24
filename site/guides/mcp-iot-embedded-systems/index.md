@@ -52,7 +52,7 @@ The MCP server runs directly on the IoT device — an ESP32, Raspberry Pi, or si
 - Security surface is larger — the MCP server is directly accessible
 - Difficult to add authentication, logging, and access control on constrained hardware
 
-**Real-world example:** ARM's official learning path demonstrates deploying a FastMCP server on Raspberry Pi 5 that exposes `read_temp()` (CPU temperature via `vcgencmd`) and `get_current_weather()` tools. The server runs on Uvicorn with SSE transport on port 8000, using uv as the Python package manager. For remote access, ngrok tunnels the local server to a public HTTPS endpoint.
+**Real-world example:** [ARM's official learning path](https://learn.arm.com/learning-paths/cross-platform/mcp-ai-agent/) demonstrates deploying a FastMCP server on Raspberry Pi 5 that exposes `read_temp()` (CPU temperature via `vcgencmd`) and `get_current_weather()` tools. The server runs on Uvicorn with SSE transport on port 8000, using uv as the Python package manager. For remote access, ngrok tunnels the local server to a public HTTPS endpoint.
 
 ### Pattern 2: Gateway MCP Server
 
@@ -110,7 +110,7 @@ The MCP server runs in the cloud, and IoT devices communicate through an interme
 
 ## The IoT-MCP Framework: Published Benchmarks
 
-The most rigorous published research on MCP for IoT comes from the IoT-MCP paper (arXiv:2510.01260, accepted at ACM WiNTECH '25). The framework implements a three-module decoupled architecture validated across 22 sensor types and 6 microcontroller units.
+The most rigorous published research on MCP for IoT comes from the [IoT-MCP paper (arXiv:2510.01260, accepted at ACM WiNTECH '25)](https://arxiv.org/abs/2510.01260). The framework implements a three-module decoupled architecture validated across 22 sensor types and 6 microcontroller units.
 
 ### Architecture
 
@@ -231,7 +231,7 @@ Connecting AI agents to industrial equipment demands additional safeguards beyon
 
 ## Smart Home Integration
 
-Smart home is the most accessible IoT MCP use case. Home Assistant's MCP integration, introduced in version 2025.2, has driven rapid adoption.
+Smart home is the most accessible IoT MCP use case. [Home Assistant's MCP integration, introduced in version 2025.2](https://www.home-assistant.io/blog/2025/02/05/release-20252/), has driven rapid adoption.
 
 ### Home Assistant MCP
 

@@ -385,13 +385,7 @@ Several significant categories lack MCP coverage:
 
 ## Market Context
 
-The sports technology market is valued at $34.25 billion in 2025 and projected to reach $68.71 billion by 2030, growing at 14.9% CAGR. North America accounts for $11.98 billion (36.9% share).
-
-AI in sports specifically is a $10.61 billion market in 2025, projected to reach $49.92 billion by 2033 at 21.6% CAGR. Sports analytics is a $2.29 billion segment growing to $4.75 billion by 2030.
-
-The wearables market — the primary data source for fitness MCP servers — stands at $94.17 billion in 2025 and is projected to reach $120.05 billion by 2031. Oura Ring alone is on track for $1 billion in 2025 sales, targeting approximately $2 billion in 2026.
-
-Despite these market sizes, MCP adoption by major sports technology companies is zero. Every server in this ecosystem is community-built. This contrasts with enterprise software (where Stripe, Salesforce, and others have shipped official MCP servers) and suggests that sports technology companies either see AI integration as a competitive advantage to keep proprietary or have not yet recognized MCP as a relevant standard.
+Sports technology, AI-in-sports, and wearables are all fast-growing markets, but MCP adoption by major sports technology companies is currently zero. Every server in this ecosystem is community-built. This contrasts with enterprise software (where Stripe, Salesforce, and others have shipped official MCP servers) and suggests that sports technology companies either see AI integration as a competitive advantage to keep proprietary or have not yet recognized MCP as a relevant standard.
 
 The community has filled the gap aggressively. The total GitHub stars across sports/fitness MCP servers exceeds 3,000, with the Open Wearables platform alone at 1,100. This bottom-up adoption pattern — users building the integrations they want rather than waiting for vendors — is characteristic of the fitness technology community and may eventually pressure platforms to provide official support.
 

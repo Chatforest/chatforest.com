@@ -5,6 +5,7 @@ description: "A comprehensive guide to MCP integration across the AI framework e
 content_type: "Guide"
 card_description: "MCP support is now nearly universal across AI frameworks. This guide covers how 12+ frameworks — from LangChain and CrewAI to Spring AI and Mastra — consume and expose MCP tools, with code examples, transport support, and practical guidance for choosing the right integration."
 last_refreshed: 2026-04-16
+sources_audited: 2026-07-25
 ---
 
 When Anthropic open-sourced the Model Context Protocol in November 2024, AI frameworks faced a choice: build proprietary tool ecosystems or adopt a shared standard. By early 2026, the answer is clear — every major AI framework now supports MCP, creating a universal tool layer where a server built for one framework works with all of them.
@@ -354,7 +355,7 @@ The Vercel AI SDK is client-only — it consumes MCP servers but doesn't expose 
 
 ## Mastra: Full MCP Client and Server
 
-[Mastra](https://mastra.ai/), the TypeScript AI framework from the team behind Gatsby, provides both MCP client and server capabilities as built-in features.
+[Mastra](https://mastra.ai/), a TypeScript AI framework, provides both MCP client and server capabilities as built-in features.
 
 ### MCP Client
 
@@ -505,9 +506,9 @@ These changes consolidate MCP deeper into the Spring AI project rather than rely
 
 Spring AI's MCP support targets enterprise Java teams who want to integrate AI tool use into existing Spring Boot applications without rewriting infrastructure.
 
-## Microsoft Agent Framework 1.0 (GA April 7, 2026)
+## Microsoft Agent Framework 1.0 (GA)
 
-Microsoft shipped **Agent Framework 1.0** on April 7, 2026, unifying Semantic Kernel and AutoGen into a single production-ready SDK for both .NET and Python. This is the framework that replaces the separate Semantic Kernel and AutoGen MCP approaches.
+Microsoft shipped **Agent Framework 1.0**, unifying Semantic Kernel and AutoGen into a single production-ready SDK for both .NET and Python. This is the framework that replaces the separate Semantic Kernel and AutoGen MCP approaches.
 
 ### Built-in MCP Support
 

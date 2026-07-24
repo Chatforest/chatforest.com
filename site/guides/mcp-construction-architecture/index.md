@@ -14,7 +14,7 @@ This guide is research-based. We survey what MCP servers exist for construction 
 
 ## Why Construction and Architecture Need MCP
 
-Construction is one of the least digitized major industries on earth. Only 27% of AEC professionals use AI in operations. 45% of organizations report zero AI implementation. Paper is still used in 52% of design phases and 49% of planning phases. These statistics from a December 2025 ASCE survey reveal an industry where technology adoption lags far behind capability.
+Construction is one of the least digitized major industries on earth. Only [27% of AEC professionals use AI in operations; 45% of organizations report zero AI implementation; and paper is still used in 52% of design phases and 49% of planning phases](https://www.asce.org/publications-and-news/civil-engineering-source/article/2025/12/18/architecture-engineering-construction-sector-slow-to-adapt-ai-survey-shows) (ASCE survey, December 2025). This reveals an industry where technology adoption lags far behind capability.
 
 Four structural characteristics explain why MCP — a standard protocol for connecting AI agents to external tools — matters here.
 
@@ -438,13 +438,13 @@ The presence of peer-reviewed research distinguishes construction MCP from most 
 
 ## Market Context
 
-AI in construction is a $4-5 billion market in 2025, projected to reach $20-33 billion by 2032-2034 (CAGR 24-33% depending on source). But adoption remains strikingly low: only 27% of AEC professionals use AI in operations, 45% report zero implementation, and less than 1% have organization-wide AI deployment.
+AI in construction is a [$4–5 billion market in 2025, projected to reach $20–33 billion by 2032–2034](https://www.fortunebusinessinsights.com/ai-in-construction-market-109848) (CAGR 24–33% depending on source: [SNS Insider projects $33.31B at 26.38% CAGR by 2033](https://www.globenewswire.com/news-release/2025/11/13/3187026/0/en/AI-in-Construction-Market-to-Hit-USD-33-31-Billion-by-2033-Registering-a-CAGR-of-26-38-SNS-Insider.html); [Precedence Research projects $20.61B at 32.76% CAGR by 2034](https://www.precedenceresearch.com/artificial-intelligence-in-construction-market)). But [adoption remains strikingly low: only 27% of AEC professionals use AI in operations, 45% report zero implementation, and less than 1% have organization-wide AI deployment](https://www.asce.org/publications-and-news/civil-engineering-source/article/2025/12/18/architecture-engineering-construction-sector-slow-to-adapt-ai-survey-shows).
 
-The barriers are characteristic of construction: data-sharing security concerns (42%), cost and complexity (33%), regulatory uncertainty (69% report it affects implementation plans), and persistent paper usage (52% in design, 49% in planning).
+The [barriers are characteristic of construction: data-sharing security concerns (42%), cost and complexity (33%), regulatory uncertainty (69% report it affects implementation plans), and persistent paper usage (52% in design, 49% in planning)](https://www.asce.org/publications-and-news/civil-engineering-source/article/2025/12/18/architecture-engineering-construction-sector-slow-to-adapt-ai-survey-shows).
 
 MCP addresses several of these barriers directly. A standard protocol reduces integration cost and complexity. Tool-level access control addresses data-sharing security. The ability to connect AI agents to existing tools (rather than replacing them) lowers the adoption threshold — an architect keeps using Revit, but now has an AI assistant that can query and modify models through a standard interface.
 
-The regional picture: North America holds 38.93% market share, while Asia Pacific is the fastest-growing region at 29.58% CAGR. This matters for MCP developers building tools: the largest near-term market is North American, but the growth trajectory is global.
+The regional picture: North America holds the largest share of the AI-in-construction market, while Asia Pacific is the fastest-growing region. This matters for MCP developers building tools: the largest near-term market is North American, but the growth trajectory is global.
 
 
 ## Related Guides
