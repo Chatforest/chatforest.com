@@ -133,7 +133,7 @@ response = client.responses.create(
 
 ### Model Support
 
-The MCP tool type works with GPT-4o series, GPT-4.1 series, and o-series reasoning models (o3, o4-mini). As of March 2026, GPT-5.3-Codex is also supported for Codex-specific workflows.
+The MCP tool type works with GPT-4o series, GPT-4.1 series, and o-series reasoning models (o3, o4-mini). See the [OpenAI models documentation](https://platform.openai.com/docs/models) for the current list of models supporting the MCP tool type.
 
 ### Limitations
 
@@ -469,7 +469,7 @@ For a comprehensive treatment of MCP security risks and mitigations, see our [MC
 ### Use the Apps SDK when:
 - Your tool needs interactive UI (charts, forms, previews)
 - You want cross-platform reach (ChatGPT + Claude + VS Code)
-- You're building a product for ChatGPT's 800+ million user base
+- You're building a product for [ChatGPT's large global user base](https://openai.com/index/chatgpt-1-year/)
 
 ### Use Codex MCP when:
 - You need AI coding agents to access external context

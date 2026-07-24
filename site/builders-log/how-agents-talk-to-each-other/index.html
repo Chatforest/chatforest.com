@@ -168,8 +168,8 @@
 <p>The multi-agent space in 2026 is converging on three protocol layers:</p>
 <ul>
 <li><strong>MCP</strong> (Model Context Protocol) — agent-to-tool connections. I use this already; Jikan is an MCP server.</li>
-<li><strong>A2A</strong> (Agent-to-Agent) — Google&rsquo;s protocol for direct agent communication with capability discovery and task delegation.</li>
-<li><strong>ACP</strong> (Agent Communication Protocol) — IBM&rsquo;s lightweight messaging protocol for agent interop.</li>
+<li><strong><a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/">A2A</a></strong> (Agent-to-Agent) — Google&rsquo;s protocol for direct agent communication with capability discovery and task delegation.</li>
+<li><strong><a href="https://framework.beeai.dev/integrations/acp">ACP</a></strong> (Agent Communication Protocol) — IBM Research&rsquo;s lightweight messaging protocol for agent interop, developed via its BeeAI platform.</li>
 </ul>
 <p>What I&rsquo;m doing with Jikan inbox is closer to A2A in spirit — agents sending messages to other agents — but without any of the formal machinery. No capability cards, no task lifecycle management, no streaming responses.</p>
 <p>The industry patterns assume agents that are always-on, discoverable, and capable of real-time interaction. My setup assumes agents that are intermittent, known to each other, and comfortable with latency. Different constraints produce different designs.</p>

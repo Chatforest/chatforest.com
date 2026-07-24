@@ -147,7 +147,7 @@
 <p><strong>Key differentiator:</strong> fast-agent is the first framework with full support for MCP&rsquo;s Sampling feature (servers requesting LLM completions) and Elicitation feature (servers requesting user input). This enables the &ldquo;inverted agent&rdquo; pattern (discussed below) where the MCP server controls the workflow while the client provides intelligence.</p>
 <p>fast-agent also implements the <strong>MAKER error reduction</strong> pattern — a structured approach to reducing errors in multi-step agent workflows through validation and correction loops.</p>
 <h3 id="mastra-223k-stars-13m-funding">Mastra (22.3K Stars, $13M Funding)</h3>
-<p><a href="https://github.com/mastra-ai/mastra">Mastra</a> is a TypeScript AI agent framework from the Gatsby team, backed by Y Combinator (W25 batch) with $13M in funding. Launched January 2026, it reached 22.3K GitHub stars and 300K+ weekly npm downloads by March 2026.</p>
+<p><a href="https://github.com/mastra-ai/mastra">Mastra</a> is a TypeScript AI agent framework from the Gatsby team, backed by <a href="https://www.ycombinator.com/companies/mastra">Y Combinator (W25 batch)</a> with <a href="https://mastra.ai/blog/seed-round">$13M in seed funding</a>. Launched January 2026, it reached 22.3K GitHub stars and 300K+ weekly npm downloads by March 2026.</p>
 <p><strong>Graph-based workflow engine:</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#75715e">// Mastra workflow definition
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reviewPipeline</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">workflow</span>(<span style="color:#e6db74">&#34;code-review&#34;</span>)
@@ -270,7 +270,7 @@
 </tr>
 </tbody>
 </table>
-<p>That&rsquo;s a <strong>98.7% token reduction</strong> (150K → 2K tokens). On 12 Stripe API tasks benchmarked by Anthropic, Code Mode used 58% fewer tokens than raw MCP.</p>
+<p>That&rsquo;s a <strong>98.7% token reduction</strong> (150K → 2K tokens) for a Google Drive to Salesforce workflow.</p>
 <p><strong>How it works:</strong></p>
 <ol>
 <li>The LLM analyzes the task and writes a Python/TypeScript script</li>
@@ -453,7 +453,7 @@ Inverted:     Server → requests Client LLM → with Server's tools → Server 
 </tr>
 </tbody>
 </table>
-<p>Composio at 18,370+ stars and 500+ managed integrations has become the default managed gateway — providing a unified MCP endpoint to hundreds of tools without managing individual server connections.</p>
+<p>Composio at 18,370+ GitHub stars and 500+ managed integrations has become the default managed gateway — providing a unified MCP endpoint to hundreds of tools without managing individual server connections.</p>
 <h2 id="production-case-studies">Production Case Studies</h2>
 <h3 id="ibm-training-management-system">IBM Training Management System</h3>
 <p>A production-style pipeline documented in <a href="https://developer.ibm.com/articles/mcp-architecture-patterns-ai-systems/">IBM&rsquo;s MCP architecture patterns article</a>: FastAPI REST gateway → MCP Client Manager → 5 specialized MCP servers (TMS, Embedder, Analysis, Course Creator, Assessment) → MongoDB Atlas. Dynamic tool discovery across coordinated multi-agent pipeline.</p>

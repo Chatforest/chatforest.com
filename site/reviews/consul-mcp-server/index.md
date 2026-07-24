@@ -5,13 +5,13 @@
 
 Part of our **[Service Mesh & Network Infrastructure MCP Servers roundup](/reviews/service-mesh-network-infrastructure-mcp-servers/)**.
 
-**At a glance:** 2 GitHub stars, Go, BSL 1.1 license. v0.1.3 (October 1, 2025). Available as binary download, Go install, or Docker image. Announced September 25, 2025 at HashiConf.
+**At a glance:** [GitHub](https://github.com/hashicorp/consul-mcp-server), Go, [BSL 1.1 license](https://www.hashicorp.com/en/bsl). [v0.1.3 (October 1, 2025)](https://releases.hashicorp.com/consul-mcp-server/). Available as binary download, Go install, or Docker image. [Announced September 25, 2025 at HashiConf](https://www.hashicorp.com/en/blog/consul-1-22-and-mcp-server-add-better-security-telemetry-and-ux).
 
-HashiCorp Consul manages service discovery, service mesh, distributed configuration, and access control across enterprise infrastructure at companies like Expedia and Workday. Its HTTP API is comprehensive but complex: querying cross-datacenter health, understanding service intention graphs, auditing ACL token permissions, and tracing discovery chains all require knowing specific endpoints and parameter combinations. The Consul MCP server brings all of that under an AI interface — letting agents and developers query Consul's full observability surface in plain English.
+HashiCorp Consul manages service discovery, service mesh, distributed configuration, and access control across enterprise infrastructure at [companies like Expedia and Workday](https://www.hashicorp.com/en/blog/consul-1-22-and-mcp-server-add-better-security-telemetry-and-ux). Its HTTP API is comprehensive but complex: querying cross-datacenter health, understanding service intention graphs, auditing ACL token permissions, and tracing discovery chains all require knowing specific endpoints and parameter combinations. The Consul MCP server brings all of that under an AI interface — letting agents and developers query Consul's full observability surface in plain English.
 
-The server launched at HashiConf in September 2025 as part of HashiCorp's broader MCP strategy — they also shipped Terraform and Vault MCP servers the same year. It's 100% official, maintained by the Consul engineering team, and covers 15 toolsets with 50+ tools. The defining constraint: everything is read-only. You can diagnose but not remediate — no service registration, no KV writes, no intention management, no ACL token creation. HashiCorp has flagged write operations as a future roadmap item.
+The server [launched at HashiConf in September 2025](https://www.hashicorp.com/en/blog/consul-1-22-and-mcp-server-add-better-security-telemetry-and-ux) as part of HashiCorp's broader MCP strategy — they also shipped [Terraform](https://www.hashicorp.com/en/blog/build-secure-ai-driven-workflows-with-new-terraform-and-vault-mcp-servers) and [Vault MCP servers](https://www.hashicorp.com/en/blog/build-secure-ai-driven-workflows-with-new-terraform-and-vault-mcp-servers) the same year. It's 100% official, maintained by the Consul engineering team, and covers 15 toolsets with 50+ tools. The defining constraint: everything is read-only. You can diagnose but not remediate — no service registration, no KV writes, no intention management, no ACL token creation. HashiCorp has [flagged write operations as a future roadmap item](https://www.hashicorp.com/en/blog/consul-1-22-and-mcp-server-add-better-security-telemetry-and-ux).
 
-Note: HCP Consul Dedicated reached end-of-life November 12, 2025. This server targets self-managed Consul deployments — CE (Community Edition) or Enterprise.
+Note: [HCP Consul Dedicated reached end-of-life November 12, 2025](https://support.hashicorp.com/hc/en-us/articles/34859329877011-HCP-Consul-Dedicated-End-Of-Life). This server targets self-managed Consul deployments — CE (Community Edition) or Enterprise.
 
 ## What It Does
 
@@ -175,7 +175,7 @@ docker run -i --rm \
 
 No API key provisioning process, no cloud account — point it at your Consul cluster, provide an ACL token with appropriate read permissions, and connect. For **multi-datacenter** setups, run separate MCP server instances pointing at different datacenter addresses, then connect multiple MCP servers in your client configuration.
 
-Consul CE and Enterprise both work. v0.1.3 fixed a CE compatibility bug present in earlier releases — use v0.1.3 or later with Community Edition.
+Consul CE and Enterprise both work. [v0.1.3 fixed a CE compatibility bug](https://releases.hashicorp.com/consul-mcp-server/) present in earlier releases — use v0.1.3 or later with Community Edition.
 
 ## What's Good
 
@@ -187,7 +187,7 @@ Consul CE and Enterprise both work. v0.1.3 fixed a CE compatibility bug present 
 
 **ACL security auditing is genuinely useful.** Consul ACL configurations accrete complexity over time — tokens proliferate, policies overlap, roles inherit from roles. Having an AI agent reason over your entire token and policy set against least-privilege principles is a meaningful capability for security audits and compliance reviews.
 
-**Cross-datacenter troubleshooting.** HashiCorp's own demo scenario captures the value: "Investigate why service-hello in dc1 is unable to communicate with service-response in dc2?" — a query that spans catalog, health, Connect intentions, and peering state across multiple datacenters. Answering this manually requires CLI commands against multiple endpoints. Through the MCP server and a multi-datacenter configuration, it's a single natural language question.
+**Cross-datacenter troubleshooting.** [HashiCorp's own demo scenario](https://github.com/hashicorp/consul-mcp-server) captures the value: "Investigate why service-hello in dc1 is unable to communicate with service-response in dc2?" — a query that spans catalog, health, Connect intentions, and peering state across multiple datacenters. Answering this manually requires CLI commands against multiple endpoints. Through the MCP server and a multi-datacenter configuration, it's a single natural language question.
 
 **API docs resource is a smart addition.** The `consul://api-docs/*` resource gives agents access to Consul's reference documentation on demand. This helps agents construct accurate queries without hallucinating API behavior — an underappreciated safety improvement.
 
@@ -197,15 +197,15 @@ Consul CE and Enterprise both work. v0.1.3 fixed a CE compatibility bug present 
 
 **Read-only is the fundamental constraint.** You cannot register services, deregister nodes, write KV values, create or update intentions, manage ACL tokens, modify config entries, or change any Consul state. The server is entirely diagnostic. HashiCorp has acknowledged write operations as a future roadmap item — the blog post frames it as "foundational work" — but there's no timeline. For teams that want AI agents to take remediation actions (registering a replacement service, updating a failed intention, cleaning up stale sessions), this server doesn't yet deliver.
 
-**2 GitHub stars at time of research.** Announced at HashiConf in September 2025, but adoption is essentially zero outside of early evaluators. This is partly a reflection of Consul's enterprise audience (less active on GitHub than startup ecosystems) and partly a sign that the MCP ecosystem hasn't widely discovered this server yet. Low stars mean thin community documentation, few troubleshooting reports, and limited real-world validation.
+**Low GitHub stars at time of research.** [Announced at HashiConf in September 2025](https://www.hashicorp.com/en/blog/consul-1-22-and-mcp-server-add-better-security-telemetry-and-ux), but adoption is essentially zero outside of early evaluators. This is partly a reflection of Consul's enterprise audience (less active on GitHub than startup ecosystems) and partly a sign that the MCP ecosystem hasn't widely discovered this server yet. Low stars mean thin community documentation, few troubleshooting reports, and limited real-world validation.
 
-**BSL 1.1 license.** HashiCorp changed Consul's license from MPL to Business Source License 1.1 in August 2023 — this server inherits the same licensing. BSL is not open source: it restricts production use by "competitors" and grants a time-delayed conversion to Apache 2.0 (four years after each release). For most users this is irrelevant, but organizations that require OSI-approved open source licenses — or that are evaluating HashiCorp alternatives like OpenTofu — will note it.
+**BSL 1.1 license.** [HashiCorp changed Consul's license from MPL to Business Source License 1.1 in August 2023](https://www.globenewswire.com/news-release/2023/08/10/2723189/0/en/HashiCorp-adopts-the-Business-Source-License-for-future-releases-of-its-products) — this server inherits the same licensing. BSL is not open source: it restricts production use by "competitors" and grants a time-delayed conversion to Apache 2.0 (four years after each release). For most users this is irrelevant, but organizations that require OSI-approved open source licenses — or that are evaluating HashiCorp alternatives like OpenTofu — will note it.
 
 **No write operations means no automation workflows.** The most compelling use of AI agents in infrastructure is the ability to detect an issue and remediate it in one loop. The Consul MCP server supports the detection half but not the remediation half. An agent can tell you which services have failing health checks and diagnose why — but it can't deregister a stale service entry, update a misconfigured intention, or rotate a compromised ACL token.
 
 **No prompts defined.** The server ships with tools and resources but no MCP prompt templates. Users must construct their own queries from scratch. Purpose-built prompts for common scenarios (service mesh health report, ACL audit, cross-datacenter connectivity diagnosis) would dramatically improve the out-of-box experience.
 
-**HCP Consul Dedicated is dead.** If you were using HCP Consul Dedicated (HashiCorp's managed Consul cloud offering), it reached EOL on November 12, 2025. There is no HCP replacement to point this server at. Self-managed is the only path.
+**HCP Consul Dedicated is dead.** If you were using HCP Consul Dedicated (HashiCorp's managed Consul cloud offering), it [reached EOL on November 12, 2025](https://support.hashicorp.com/hc/en-us/articles/34859329877011-HCP-Consul-Dedicated-End-Of-Life). There is no HCP replacement to point this server at. Self-managed is the only path.
 
 **Enterprise namespace tools require Consul Enterprise.** The namespace toolset is useful for multi-tenant Consul deployments but requires a paid Consul Enterprise license. Community Edition users lose these 2 tools.
 
@@ -215,11 +215,11 @@ Three community Consul MCP servers predate or complement the official server:
 
 | Server | Stars | Language | License | Key Differentiator |
 |--------|-------|----------|---------|-------------------|
-| [kocierik/consul-mcp-server](https://github.com/kocierik/consul-mcp-server) | 16 | TypeScript | MIT | **Write operations** — service registration, KV put/delete, session management |
+| [kocierik/consul-mcp-server](https://github.com/kocierik/consul-mcp-server) | 17 | TypeScript | MIT | **Write operations** — service registration, KV put/delete, session management |
 | [3loka/consul-mcp-server](https://github.com/3loka/consul-mcp-server) | 2 | TypeScript | MIT | **Service diagram generation** — visual service connection maps |
 | [kswap/consul-mcp](https://github.com/kswap/consul-mcp) | 0 | Python | unspecified | Minimal; natural language service discovery |
 
-**kocierik's server** (16 stars, on PulseMCP) is the most important alternative — it's the only Consul MCP server that supports write operations. Service registration and deregistration, KV store put and delete, session creation, and event publishing are all available. The tradeoff: narrower read coverage than the official server. If your use case requires AI-assisted Consul management rather than pure diagnostics, kocierik's MIT-licensed server fills the gap the official server leaves.
+**kocierik's server** (17 stars, on PulseMCP) is the most important alternative — it's the only Consul MCP server that supports write operations. Service registration and deregistration, KV store put and delete, session creation, and event publishing are all available. The tradeoff: narrower read coverage than the official server. If your use case requires AI-assisted Consul management rather than pure diagnostics, kocierik's MIT-licensed server fills the gap the official server leaves.
 
 **3loka's server** is interesting for a different reason — it generates service mesh architecture diagrams, creating visual maps of service connections. This observability angle (understanding *how* services connect visually) complements the official server's operational diagnostic focus.
 
@@ -237,13 +237,13 @@ The MCP server's value proposition is clearest for platform engineering and SRE 
 
 The read-only constraint is real, but it's the right constraint for v0.1.x. Consul state is sensitive — unintended service deregistrations, ACL token deletions, or intention changes can disrupt production traffic. Starting with a comprehensive diagnostic layer and adding write operations incrementally (with appropriate safeguards) is the responsible approach.
 
-For teams already running Consul, this server deserves evaluation now. The setup is lightweight (Docker or a single binary), the breadth is genuinely comprehensive, and the diagnostic use cases are immediately applicable. The 2 GitHub stars reflect early awareness, not actual utility — this is a case where the official stamp and platform coverage matter more than the adoption signal.
+For teams already running Consul, this server deserves evaluation now. The setup is lightweight (Docker or a single binary), the breadth is genuinely comprehensive, and the diagnostic use cases are immediately applicable. The low GitHub star count reflects early awareness, not actual utility — this is a case where the official stamp and platform coverage matter more than the adoption signal.
 
 ## Rating: 3.5/5
 
 The HashiCorp Consul MCP server earns 3.5/5 for delivering comprehensive, official coverage of Consul's full platform across 15 toolsets and 50+ tools — with dual transport support, CE/Enterprise compatibility, and multi-datacenter capability. For platform engineering and SRE teams running Consul, it's a genuinely useful diagnostic layer that makes cross-datacenter troubleshooting, ACL auditing, and service mesh inspection conversationally accessible.
 
-The rating is held back by the read-only constraint (which limits use to diagnostics, not remediation), minimal adoption signal (2 stars), BSL 1.1 licensing, and the absence of write operations that would unlock automation workflows. The community kocierik server (MIT, write-capable) fills the write gap for teams that need it.
+The rating is held back by the read-only constraint (which limits use to diagnostics, not remediation), minimal adoption signal (low GitHub stars at research time), BSL 1.1 licensing, and the absence of write operations that would unlock automation workflows. The community kocierik server (MIT, write-capable) fills the write gap for teams that need it.
 
 **Use this if:** You run self-managed Consul (CE or Enterprise) and want AI-assisted service catalog queries, health diagnostics, KV exploration, ACL auditing, Connect intention review, or cross-datacenter troubleshooting. The diagnostic depth across all 15 toolsets is unmatched.
 

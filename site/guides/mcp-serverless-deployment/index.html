@@ -217,7 +217,7 @@
 <h3 id="why-workers-excel-for-mcp">Why Workers Excel for MCP</h3>
 <p><strong>Near-zero cold starts.</strong> Workers use V8 isolates, not containers. There&rsquo;s no JVM or Node.js runtime to boot — your code starts executing in milliseconds. For MCP tool calls where users are in an active conversation, this responsiveness matters.</p>
 <p><strong>CPU-time pricing.</strong> Cloudflare charges for CPU time, not wall-clock duration. MCP tool calls often spend most of their time waiting on external I/O (database queries, API calls). On Lambda, you pay for that wait time. On Workers, you don&rsquo;t.</p>
-<p><strong>Free tier:</strong> 100,000 requests/day, 10ms CPU time per invocation. Paid plan starts at $5/month.</p>
+<p><strong>Free tier:</strong> <a href="https://developers.cloudflare.com/workers/platform/pricing/">100,000 requests/day, 10ms CPU time per invocation. Paid plan starts at $5/month.</a></p>
 <h2 id="vercel">Vercel</h2>
 <p>Vercel&rsquo;s approach integrates MCP directly into the Next.js and Nuxt frameworks that many developers already use.</p>
 <h3 id="vercelmcp-handler">vercel/mcp-handler</h3>
@@ -256,10 +256,10 @@
 <li><strong>&ldquo;MCP with Next.js and Descope&rdquo;</strong> — authenticated MCP with identity management</li>
 </ul>
 <h3 id="fluid-compute">Fluid Compute</h3>
-<p>Vercel&rsquo;s Fluid Compute model is optimized for the bursty traffic patterns typical of AI agent interactions — one customer reportedly achieved 90% cost savings compared to traditional serverless for AI workloads.</p>
+<p>Vercel&rsquo;s <a href="https://vercel.com/docs/functions/fluid-compute">Fluid Compute</a> model is optimized for the bursty traffic patterns typical of AI agent interactions, with a pricing model designed to avoid paying for idle I/O wait time.</p>
 <h3 id="vercel-constraints">Vercel Constraints</h3>
 <ul>
-<li><strong>Timeout limits:</strong> 10 seconds on Hobby plan, 60 seconds on Pro. The <code>maxDuration</code> setting is critical for MCP tools that call slow APIs.</li>
+<li><strong>Timeout limits:</strong> <a href="https://vercel.com/docs/functions/runtimes#max-duration">10 seconds on Hobby plan, 60 seconds on Pro.</a> The <code>maxDuration</code> setting is critical for MCP tools that call slow APIs.</li>
 <li><strong>Cold starts:</strong> 1–3 seconds typically.</li>
 <li><strong>Best for:</strong> Teams already on Next.js who want to add MCP tools alongside their existing application without separate infrastructure.</li>
 </ul>
@@ -290,19 +290,19 @@
 </table>
 <p>The <a href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-mcp">Azure Functions MCP extension</a> supports stateless Streamable HTTP. The Node.js approach uses <code>StreamableHTTPServerTransport</code> with Express, setting <code>sessionIdGenerator: undefined</code> for stateless operation.</p>
 <p>A self-hosted option lets you deploy existing MCP SDK-based servers without code changes. In .NET, <code>builder.EnableMcpToolMetaData()</code> exposes tool metadata to LLM clients.</p>
-<p><strong>Free tier (Flex Consumption):</strong> 1 million requests/month, 400,000 GB-seconds execution time. Scales to zero when idle.</p>
+<p><strong>Free tier (Flex Consumption):</strong> <a href="https://azure.microsoft.com/pricing/details/functions/">1 million requests/month, 400,000 GB-seconds execution time.</a> Scales to zero when idle.</p>
 <p><strong>Limitation:</strong> Stateless servers only — legacy SSE not supported.</p>
 <h2 id="google-cloud-run">Google Cloud Run</h2>
 <p>Google recommends <strong>Cloud Run</strong> over Cloud Functions for MCP server hosting. Cloud Run supports both containerized and source-based deployments with scale-to-zero pricing.</p>
 <p>An official guide, &ldquo;Build and Deploy a Remote MCP Server to Google Cloud Run in Under 10 Minutes,&rdquo; covers the basics. Cloud Run supports both SSE and Streamable HTTP transports, handles Node.js and Python deployments, and includes built-in security via Cloud Run Invoker IAM roles.</p>
-<p><strong>Free tier:</strong> 2 million requests/month, 360,000 vCPU-seconds.</p>
+<p><strong>Free tier:</strong> <a href="https://cloud.google.com/run/pricing">2 million requests/month, 360,000 vCPU-seconds.</a></p>
 <p>Cloud Run sits between pure serverless (Lambda, Workers) and container platforms (ECS, Kubernetes). It offers longer execution times and container flexibility while still supporting scale-to-zero.</p>
 <h2 id="other-platforms">Other Platforms</h2>
 <h3 id="flyio">Fly.io</h3>
 <p><a href="https://fly.io/docs/blueprints/remote-mcp-servers/">Fly.io</a> offers experimental MCP support through <code>flyctl mcp</code> commands (<code>proxy</code>, <code>wrap</code>, <code>server</code>). Their Machines are lightweight VMs rather than functions, enabling a <strong>single-tenant pattern</strong> where each user gets a separate app. Unused Machines stop and start on demand.</p>
 <p>The documentation notes: &ldquo;MCP implementation is experimental and may still have sharp edges.&rdquo; Fly.io&rsquo;s <code>fly-replay</code> handles request routing, and <code>ssokenizer</code> manages OAuth token exchange.</p>
 <h3 id="fastmcp-cloud-prefect-horizon">FastMCP Cloud (Prefect Horizon)</h3>
-<p><a href="https://fastmcp.cloud">FastMCP Cloud</a> provides free hosting for FastMCP Python servers with one-command deployment (<code>fastmcp deploy</code>). FastMCP powers approximately 70% of MCP servers across all languages and supports a stateless mode for serverless environments. Note: servers run as dedicated processes rather than true serverless functions.</p>
+<p><a href="https://fastmcp.cloud">FastMCP Cloud</a> provides free hosting for FastMCP Python servers with one-command deployment (<code>fastmcp deploy</code>). FastMCP <a href="https://github.com/PrefectHQ/fastmcp">claims to power approximately 70% of MCP servers across all languages</a> and supports a stateless mode for serverless environments. Note: servers run as dedicated processes rather than true serverless functions.</p>
 <h3 id="mcpengine-featureform">MCPEngine (Featureform)</h3>
 <p><a href="https://github.com/featureform/mcp-engine">MCPEngine</a> is a Python framework with native Lambda support. Install with <code>pip install mcpengine[cli,lambda]</code>, generate a Lambda handler with <code>engine.get_lambda_handler()</code>. It&rsquo;s described as the only Python MCP implementation with built-in OIDC authentication (supporting Google, Cognito, Auth0). Uses Mangum for ASGI-to-Lambda adaptation.</p>
 <h3 id="mcphostingio">mcphosting.io</h3>
@@ -360,7 +360,7 @@
 </tr>
 <tr>
 <td><strong>AWS Lambda</strong></td>
-<td>1M req/month, 400K GB-sec</td>
+<td><a href="https://aws.amazon.com/lambda/pricing/">1M req/month, 400K GB-sec</a></td>
 <td>Wall-clock duration</td>
 <td>Mature ecosystem, most tools</td>
 </tr>

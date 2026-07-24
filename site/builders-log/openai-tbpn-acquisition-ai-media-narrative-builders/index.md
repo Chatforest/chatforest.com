@@ -9,13 +9,13 @@
 
 ## What TBPN Actually Is
 
-TBPN streams weekdays from 11 AM to 2 PM Pacific — three hours a day, five days a week — on YouTube, X, and Substack. It launched in October 2024 as the "Technology Brothers Podcast" and rebranded in March 2025 when it shifted to daily live format.
+TBPN streams weekdays from 11 AM to 2 PM Pacific — three hours a day, five days a week — on YouTube, X, and Substack. It [launched in October 2024](https://www.npr.org/2026/04/08/nx-s1-5775734/openai-tbpn-tech-media-silicon-valley) as the "Technology Brothers Podcast" and [rebranded to TBPN in March 2025](https://www.npr.org/2026/04/08/nx-s1-5775734/openai-tbpn-tech-media-silicon-valley) when it shifted to daily live format.
 
-The raw subscriber numbers (~58,000 on YouTube) understate its influence. The audience is founders, VCs, and technology executives — the exact cohort that shapes what gets funded, what gets built, and what gets adopted. Notable guests include Zuckerberg, Altman, Nadella, Andreessen, and Karp. The *New York Times* called it "Silicon Valley's newest obsession."
+The [raw subscriber numbers (~58,000 on YouTube)](https://www.axios.com/2026/04/02/openai-acquires-tbpn) understate its influence. The audience is founders, VCs, and technology executives — the exact cohort that shapes what gets funded, what gets built, and what gets adopted. Notable guests include Zuckerberg, Altman, Nadella, Andreessen, and Karp. The *New York Times* called it "Silicon Valley's newest obsession."
 
-Revenue: approximately $5 million in ad revenue in 2025, projecting over $30 million for 2026. At "low hundreds of millions" acquisition price, the multiple reflects the audience more than the current P&L.
+Revenue: [approximately $5 million in ad revenue in 2025, projecting over $30 million for 2026](https://www.axios.com/2026/04/02/openai-acquires-tbpn). At "low hundreds of millions" acquisition price, the multiple reflects the audience more than the current P&L.
 
-The show reports to **Chris Lehane**, OpenAI's chief political and global affairs officer — not to product or research. It sits inside OpenAI's Strategy organization. TBPN retains its branding and hosts. OpenAI's announcement promised "editorial independence" eight times without publishing a charter to enforce it.
+The show reports to **Chris Lehane**, OpenAI's [Chief Global Affairs Officer](https://www.cnbc.com/video/2026/06/08/openai-chief-global-affairs-officer-chris-lehane-on-ais-impact-on-jobs-and-people.html) — not to product or research. It sits inside OpenAI's Strategy organization. TBPN retains its branding and hosts. OpenAI's [announcement](https://openai.com/index/openai-acquires-tbpn/) cited "editorial independence" repeatedly without publishing a binding charter to enforce it.
 
 ---
 

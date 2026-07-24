@@ -284,7 +284,7 @@ How does MCP-based retrieval compare to established RAG frameworks like LangChai
 
 - Official MCP servers exist for Qdrant, Milvus, and Chroma, with community servers for Pinecone and others
 - The RAG-MCP paper demonstrated using retrieval to manage MCP tool selection at scale
-- Agentic RAG patterns are becoming standard — [57% of organizations](https://medium.com/@Micheal-Lanham/pipeline-rag-vs-agentic-rag-vs-knowledge-graph-rag-what-actually-works-and-when-47a26649a457) now deploy agents in production
+- Agentic RAG patterns are becoming standard across production AI deployments
 - Most production AI systems combine RAG for knowledge retrieval with MCP for tool use
 
 ### What's Emerging

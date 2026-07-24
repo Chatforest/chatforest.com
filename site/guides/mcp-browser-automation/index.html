@@ -228,7 +228,7 @@
 }
 </code></pre></div><p>Key flags: <code>--headless</code> (run without visible browser), <code>--browser chromium|firefox|webkit</code>, <code>--viewport 1280x720</code>, and <code>--user-data-dir /path/to/profile</code> for persistent sessions.</p>
 <h3 id="playwright-cli-the-token-efficient-alternative">Playwright CLI: The Token-Efficient Alternative</h3>
-<p>In 2026, Microsoft also released <code>@playwright/cli</code>, a companion that uses plain shell commands instead of the MCP protocol. The key insight: a typical browser automation task consumes approximately <strong>114,000 tokens via MCP versus 27,000 tokens via CLI</strong> — a roughly 4x reduction. The CLI approach trades the structured tool interface for raw command-line interaction, which some agents handle more efficiently.</p>
+<p>In 2026, Microsoft also released <code>@playwright/cli</code>, a companion that uses plain shell commands instead of the MCP protocol. The key insight: <a href="https://github.com/microsoft/playwright-mcp">a typical browser automation task consumes approximately <strong>114,000 tokens via MCP versus 27,000 tokens via CLI</strong></a> — a roughly 4x reduction. The CLI approach trades the structured tool interface for raw command-line interaction, which some agents handle more efficiently.</p>
 <h2 id="stagehand-by-browserbase--21k-stars">Stagehand by Browserbase — 21K+ Stars</h2>
 <p><a href="https://github.com/browserbase/stagehand">Stagehand</a> takes a fundamentally different approach. Instead of exposing low-level browser primitives (click, type, navigate), it provides <strong>three high-level AI primitives</strong> that handle the complexity internally:</p>
 <table>
@@ -262,21 +262,20 @@
 <p><strong>MCP integration:</strong> The <a href="https://github.com/browserbase/mcp-server-browserbase">Browserbase MCP Server</a> wraps Stagehand&rsquo;s capabilities as MCP tools, allowing any MCP-compatible agent to use <code>act</code>, <code>extract</code>, and <code>observe</code>.</p>
 <p><strong>Key features:</strong></p>
 <ul>
-<li><strong>Action caching:</strong> When Stagehand encounters a page structure it&rsquo;s seen before, it serves the cached result instantly — no LLM call needed. DOM hashing validates each match. Result: up to 2x faster execution and ~30% cost reduction on repeat workflows</li>
+<li><strong>Action caching:</strong> When Stagehand encounters a page structure it&rsquo;s seen before, it serves the cached result instantly — no LLM call needed. DOM hashing validates each match, reducing redundant LLM calls on repeat workflows.</li>
 <li><strong>Multi-language:</strong> Now available in Python, Go, Java, Ruby, Rust, and TypeScript</li>
 <li><strong>Enhanced extraction:</strong> Works across iframes and shadow roots</li>
-<li><strong>Cloud infrastructure:</strong> Backed by Browserbase&rsquo;s managed headless Chromium fleet with anti-bot stealth mode, CAPTCHA solving, session replay, and proxy rotation</li>
-<li><strong>20-40% faster</strong> in v3.0 through automatic caching improvements</li>
+<li><strong>Cloud infrastructure:</strong> Backed by <a href="https://www.browserbase.com/blog/series-b-and-beyond">Browserbase&rsquo;s</a> managed headless Chromium fleet with anti-bot stealth mode, CAPTCHA solving, session replay, and proxy rotation</li>
 </ul>
 <p><strong>When to choose Stagehand over Playwright MCP:</strong> When your automation is defined by <em>intent</em> (&ldquo;extract all pricing information&rdquo;) rather than <em>mechanics</em> (&ldquo;click ref e14, read text from ref e27&rdquo;). Stagehand handles the page interpretation internally, which is more resilient to layout changes but costs more LLM tokens per action.</p>
-<p><strong>Trade-off:</strong> Browserbase is a commercial cloud service ($40M Series B in 2025). You can use Stagehand locally with your own Playwright instance, but the full feature set (anti-detection, proxy rotation, CAPTCHA solving) requires a Browserbase account.</p>
+<p><strong>Trade-off:</strong> Browserbase is a commercial cloud service (<a href="https://www.browserbase.com/blog/series-b-and-beyond">$40M Series B, June 2025</a>). You can use Stagehand locally with your own Playwright instance, but the full feature set (anti-detection, proxy rotation, CAPTCHA solving) requires a Browserbase account.</p>
 <h2 id="browser-use--81k-stars">Browser-Use — 81K+ Stars</h2>
 <p><a href="https://github.com/browser-use/browser-use">Browser-Use</a> is the most starred browser automation project in the AI space, taking a <strong>vision-first approach</strong> to web interaction. Unlike Playwright MCP&rsquo;s accessibility tree, Browser-Use has the LLM look at the actual page — using screenshots and vision models to decide what to do.</p>
 <p><strong>Architecture:</strong> Browser-Use is a Python framework (3.11+) that wraps Playwright and adds an AI decision layer. The agent sees the page visually, uses an LLM (any OpenAI-compatible or Anthropic model) to decide the next action, and executes it. It&rsquo;s model-agnostic — you swap in whichever LLM you want.</p>
 <p><strong>MCP integration:</strong> Browser-Use can run as a local MCP server, connecting AI models to browser automation through the MCP standard. This is the open-source option that gives you direct, low-level control but requires your own LLM API keys.</p>
 <p><strong>Key stats:</strong></p>
 <ul>
-<li>89% accuracy on WebVoyager benchmark</li>
+<li><a href="https://browser-use.com/posts/sota-technical-report">89.1% accuracy on WebVoyager benchmark</a></li>
 <li>Real Chrome profile reuse — the agent inherits existing login sessions without re-authenticating</li>
 <li>Python-native — integrates naturally with Python AI/ML workflows</li>
 </ul>
@@ -320,7 +319,7 @@
 <h2 id="vercel-agent-browser--93-token-reduction">Vercel agent-browser — 93% Token Reduction</h2>
 <p><a href="https://github.com/vercel-labs/agent-browser">Vercel&rsquo;s agent-browser</a> is a CLI tool purpose-built for AI agents, focused obsessively on <strong>token efficiency</strong>.</p>
 <p><strong>Architecture:</strong> A three-layer stack — Rust CLI for fast command parsing, Node.js daemon for Playwright browser lifecycle management, with a Node.js fallback when native binaries aren&rsquo;t available. It uses accessibility snapshots like Playwright MCP but delivers them via CLI output rather than MCP tool calls.</p>
-<p><strong>Token efficiency:</strong> Up to <strong>93% context reduction</strong> compared to traditional MCP browser automation. Where Playwright MCP might use 114K tokens for a workflow, agent-browser targets 27K or less.</p>
+<p><strong>Token efficiency:</strong> <a href="https://github.com/vercel-labs/agent-browser">Up to <strong>93% context reduction</strong></a> compared to traditional MCP browser automation. Where Playwright MCP might use 114K tokens for a workflow, agent-browser targets 27K or less.</p>
 <p><strong>Usage:</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx agent-browser open example.org     <span style="color:#75715e"># Navigate</span>
 npx agent-browser snapshot -i          <span style="color:#75715e"># Get accessibility snapshot</span>
@@ -369,7 +368,7 @@ npx agent-browser screenshot output.png <span style="color:#75715e"># Take scree
 <li><strong>Minimal tokens:</strong> Sending a tool schema is vastly cheaper than sending a screenshot or accessibility snapshot</li>
 <li><strong>Publisher control:</strong> Site owners define exactly what agents can do — no unauthorized scraping or unexpected interactions</li>
 </ul>
-<p><strong>Current status:</strong> Available in Chrome 146 Canary behind the &ldquo;WebMCP for testing&rdquo; flag. Native browser support across Chrome and Edge expected in H2 2026. In February 2026, the WebMCP specification was submitted to the W3C.</p>
+<p><strong>Current status:</strong> Available in Chrome 146 Canary behind the &ldquo;WebMCP for testing&rdquo; flag. Native browser support across Chrome and Edge expected in H2 2026. The <a href="https://w3c-cg.github.io/aikr/webMCP/webmcp-technical-notes.html">WebMCP Draft Community Group Report</a> was published by the W3C on February 10, 2026.</p>
 <p><strong>When WebMCP matters:</strong> It doesn&rsquo;t replace Playwright MCP today — almost no sites expose WebMCP tools yet. But as adoption grows, it will become the preferred way for agents to interact with cooperating websites. Think of it like the difference between scraping a website vs using its API.</p>
 <h2 id="choosing-the-right-mcp-browser-server">Choosing the Right MCP Browser Server</h2>
 <table>
@@ -588,7 +587,7 @@ npx agent-browser screenshot output.png <span style="color:#75715e"># Take scree
 <p>The browser automation landscape is converging rapidly:</p>
 <p><strong>WebMCP adoption (H2 2026):</strong> As Google pushes WebMCP toward standardization, major websites will begin declaring tools for AI agents. This will make whole categories of browser automation unnecessary — instead of scraping a travel site, you&rsquo;ll call its declared <code>searchFlights</code> tool directly.</p>
 <p><strong>MCP at the Linux Foundation:</strong> With Anthropic donating MCP to the Linux Foundation in December 2025, the protocol is becoming an industry standard. Browser automation servers will benefit from stronger interoperability guarantees.</p>
-<p><strong>Chrome Auto Browse:</strong> Google launched Chrome Auto Browse in January 2026, powered by Gemini 3 — the largest deployment of agentic browser technology to date given Chrome&rsquo;s 3 billion user base. This normalizes AI-driven browsing and pushes the ecosystem forward.</p>
+<p><strong>Chrome Auto Browse:</strong> Google <a href="https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/">launched Chrome Auto Browse in January 2026</a>, powered by Gemini 3 — a major deployment of agentic browser technology given Chrome&rsquo;s <a href="https://backlinko.com/chrome-users">over 3.4 billion user base</a>. This normalizes AI-driven browsing and pushes the ecosystem forward.</p>
 <p><strong>Convergence of approaches:</strong> The trend is toward hybrid servers that default to accessibility trees and fall back to vision when needed, combining the efficiency of structured snapshots with the flexibility of visual reasoning.</p>
 <h2 id="related-guides">Related Guides</h2>
 <ul>

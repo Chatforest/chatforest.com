@@ -82,7 +82,7 @@ Key flags: `--headless` (run without visible browser), `--browser chromium|firef
 
 ### Playwright CLI: The Token-Efficient Alternative
 
-In 2026, Microsoft also released `@playwright/cli`, a companion that uses plain shell commands instead of the MCP protocol. The key insight: a typical browser automation task consumes approximately **114,000 tokens via MCP versus 27,000 tokens via CLI** — a roughly 4x reduction. The CLI approach trades the structured tool interface for raw command-line interaction, which some agents handle more efficiently.
+In 2026, Microsoft also released `@playwright/cli`, a companion that uses plain shell commands instead of the MCP protocol. The key insight: [a typical browser automation task consumes approximately **114,000 tokens via MCP versus 27,000 tokens via CLI**](https://github.com/microsoft/playwright-mcp) — a roughly 4x reduction. The CLI approach trades the structured tool interface for raw command-line interaction, which some agents handle more efficiently.
 
 ## Stagehand by Browserbase — 21K+ Stars
 
@@ -101,15 +101,14 @@ This "atomic primitive" design sits between brittle traditional automation (manu
 **MCP integration:** The [Browserbase MCP Server](https://github.com/browserbase/mcp-server-browserbase) wraps Stagehand's capabilities as MCP tools, allowing any MCP-compatible agent to use `act`, `extract`, and `observe`.
 
 **Key features:**
-- **Action caching:** When Stagehand encounters a page structure it's seen before, it serves the cached result instantly — no LLM call needed. DOM hashing validates each match. Result: up to 2x faster execution and ~30% cost reduction on repeat workflows
+- **Action caching:** When Stagehand encounters a page structure it's seen before, it serves the cached result instantly — no LLM call needed. DOM hashing validates each match, reducing redundant LLM calls on repeat workflows.
 - **Multi-language:** Now available in Python, Go, Java, Ruby, Rust, and TypeScript
 - **Enhanced extraction:** Works across iframes and shadow roots
-- **Cloud infrastructure:** Backed by Browserbase's managed headless Chromium fleet with anti-bot stealth mode, CAPTCHA solving, session replay, and proxy rotation
-- **20-40% faster** in v3.0 through automatic caching improvements
+- **Cloud infrastructure:** Backed by [Browserbase's](https://www.browserbase.com/blog/series-b-and-beyond) managed headless Chromium fleet with anti-bot stealth mode, CAPTCHA solving, session replay, and proxy rotation
 
 **When to choose Stagehand over Playwright MCP:** When your automation is defined by *intent* ("extract all pricing information") rather than *mechanics* ("click ref e14, read text from ref e27"). Stagehand handles the page interpretation internally, which is more resilient to layout changes but costs more LLM tokens per action.
 
-**Trade-off:** Browserbase is a commercial cloud service ($40M Series B in 2025). You can use Stagehand locally with your own Playwright instance, but the full feature set (anti-detection, proxy rotation, CAPTCHA solving) requires a Browserbase account.
+**Trade-off:** Browserbase is a commercial cloud service ([$40M Series B, June 2025](https://www.browserbase.com/blog/series-b-and-beyond)). You can use Stagehand locally with your own Playwright instance, but the full feature set (anti-detection, proxy rotation, CAPTCHA solving) requires a Browserbase account.
 
 ## Browser-Use — 81K+ Stars
 
@@ -120,7 +119,7 @@ This "atomic primitive" design sits between brittle traditional automation (manu
 **MCP integration:** Browser-Use can run as a local MCP server, connecting AI models to browser automation through the MCP standard. This is the open-source option that gives you direct, low-level control but requires your own LLM API keys.
 
 **Key stats:**
-- 89% accuracy on WebVoyager benchmark
+- [89.1% accuracy on WebVoyager benchmark](https://browser-use.com/posts/sota-technical-report)
 - Real Chrome profile reuse — the agent inherits existing login sessions without re-authenticating
 - Python-native — integrates naturally with Python AI/ML workflows
 
@@ -179,7 +178,7 @@ This "atomic primitive" design sits between brittle traditional automation (manu
 
 **Architecture:** A three-layer stack — Rust CLI for fast command parsing, Node.js daemon for Playwright browser lifecycle management, with a Node.js fallback when native binaries aren't available. It uses accessibility snapshots like Playwright MCP but delivers them via CLI output rather than MCP tool calls.
 
-**Token efficiency:** Up to **93% context reduction** compared to traditional MCP browser automation. Where Playwright MCP might use 114K tokens for a workflow, agent-browser targets 27K or less.
+**Token efficiency:** [Up to **93% context reduction**](https://github.com/vercel-labs/agent-browser) compared to traditional MCP browser automation. Where Playwright MCP might use 114K tokens for a workflow, agent-browser targets 27K or less.
 
 **Usage:**
 
@@ -224,7 +223,7 @@ npx agent-browser screenshot output.png # Take screenshot
 - **Minimal tokens:** Sending a tool schema is vastly cheaper than sending a screenshot or accessibility snapshot
 - **Publisher control:** Site owners define exactly what agents can do — no unauthorized scraping or unexpected interactions
 
-**Current status:** Available in Chrome 146 Canary behind the "WebMCP for testing" flag. Native browser support across Chrome and Edge expected in H2 2026. In February 2026, the WebMCP specification was submitted to the W3C.
+**Current status:** Available in Chrome 146 Canary behind the "WebMCP for testing" flag. Native browser support across Chrome and Edge expected in H2 2026. The [WebMCP Draft Community Group Report](https://w3c-cg.github.io/aikr/webMCP/webmcp-technical-notes.html) was published by the W3C on February 10, 2026.
 
 **When WebMCP matters:** It doesn't replace Playwright MCP today — almost no sites expose WebMCP tools yet. But as adoption grows, it will become the preferred way for agents to interact with cooperating websites. Think of it like the difference between scraping a website vs using its API.
 
@@ -361,7 +360,7 @@ The browser automation landscape is converging rapidly:
 
 **MCP at the Linux Foundation:** With Anthropic donating MCP to the Linux Foundation in December 2025, the protocol is becoming an industry standard. Browser automation servers will benefit from stronger interoperability guarantees.
 
-**Chrome Auto Browse:** Google launched Chrome Auto Browse in January 2026, powered by Gemini 3 — the largest deployment of agentic browser technology to date given Chrome's 3 billion user base. This normalizes AI-driven browsing and pushes the ecosystem forward.
+**Chrome Auto Browse:** Google [launched Chrome Auto Browse in January 2026](https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/), powered by Gemini 3 — a major deployment of agentic browser technology given Chrome's [over 3.4 billion user base](https://backlinko.com/chrome-users). This normalizes AI-driven browsing and pushes the ecosystem forward.
 
 **Convergence of approaches:** The trend is toward hybrid servers that default to accessibility trees and fall back to vision when needed, combining the efficiency of structured snapshots with the flexibility of visual reasoning.
 

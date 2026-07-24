@@ -219,7 +219,7 @@ response <span style="color:#f92672">=</span> client<span style="color:#f92672">
     input<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Read the config file and update the database settings accordingly&#34;</span>,
 )
 </code></pre></div><h3 id="model-support">Model Support</h3>
-<p>The MCP tool type works with GPT-4o series, GPT-4.1 series, and o-series reasoning models (o3, o4-mini). As of March 2026, GPT-5.3-Codex is also supported for Codex-specific workflows.</p>
+<p>The MCP tool type works with GPT-4o series, GPT-4.1 series, and o-series reasoning models (o3, o4-mini). See the <a href="https://platform.openai.com/docs/models">OpenAI models documentation</a> for the current list of models supporting the MCP tool type.</p>
 <h3 id="limitations">Limitations</h3>
 <ul>
 <li><strong>Remote only</strong> — The Responses API can only connect to remote MCP servers over HTTP. You cannot use stdio (local process) servers directly. If you need local servers, use the Agents SDK.</li>
@@ -487,7 +487,7 @@ async <span style="color:#66d9ef">with</span> MCPServerStdio(
 <ul>
 <li>Your tool needs interactive UI (charts, forms, previews)</li>
 <li>You want cross-platform reach (ChatGPT + Claude + VS Code)</li>
-<li>You&rsquo;re building a product for ChatGPT&rsquo;s 800+ million user base</li>
+<li>You&rsquo;re building a product for <a href="https://openai.com/index/chatgpt-1-year/">ChatGPT&rsquo;s large global user base</a></li>
 </ul>
 <h3 id="use-codex-mcp-when">Use Codex MCP when:</h3>
 <ul>

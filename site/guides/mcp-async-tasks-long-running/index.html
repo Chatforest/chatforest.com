@@ -159,7 +159,7 @@
 <p>Tasks don&rsquo;t introduce a separate progress channel. They reuse MCP&rsquo;s existing <a href="/guides/mcp-notifications-explained/">progress notification</a> mechanism. If the original request included a <code>progressToken</code>, that same token remains valid for the entire task lifetime. The server can emit standard progress notifications (percentage, status messages) until the task reaches a terminal state.</p>
 <p>This means existing client progress UI — spinners, progress bars, status messages — works with Tasks without modification.</p>
 <h2 id="implementing-tasks-with-fastmcp">Implementing Tasks with FastMCP</h2>
-<p><a href="https://gofastmcp.com/servers/tasks">FastMCP</a>, which powers an estimated 70% of Python MCP servers, already supports the Tasks primitive with a straightforward decorator-based API.</p>
+<p><a href="https://gofastmcp.com/servers/tasks">FastMCP</a>, which <a href="https://github.com/PrefectHQ/fastmcp">claims to power 70% of MCP servers across all languages</a>, already supports the Tasks primitive with a straightforward decorator-based API.</p>
 <h3 id="basic-implementation">Basic Implementation</h3>
 <p>The simplest approach adds <code>task=True</code> to a tool decorator:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fastmcp <span style="color:#f92672">import</span> FastMCP

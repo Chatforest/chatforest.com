@@ -71,7 +71,7 @@
 <p>This is not a typical model deprecation where the successor is obvious and the migration is a string swap. OpenAI announced no drop-in replacement for Sora. You need to evaluate alternatives and migrate before the deadline.</p>
 <hr>
 <h2 id="what-happened">What Happened</h2>
-<p>Sora launched publicly in December 2024 as OpenAI&rsquo;s flagship video generation model. It generated significant interest and was used for a wide range of applications, from short-form social content to commercial video production.</p>
+<p><a href="https://openai.com/index/sora-is-here/">Sora launched publicly on December 9, 2024</a> as OpenAI&rsquo;s flagship video generation model. It generated significant interest and was used for a wide range of applications, from short-form social content to commercial video production.</p>
 <p>OpenAI <a href="https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/">announced the discontinuation on March 24, 2026</a>. The apps (sora.com, iOS, Android) shut down on April 26. The API stays live until September 24, giving builders a 6-month runway to migrate.</p>
 <p>The reasoning OpenAI gave publicly was limited. But industry analysis points to unit economics:</p>
 <p><strong>Estimated cost vs. revenue:</strong></p>
@@ -152,7 +152,7 @@ operation <span style="color:#f92672">=</span> model<span style="color:#f92672">
 <p>Seedance 2.0 is a strong competitor in the audio-synchronized video space, comparable to Kling on audio features. It is worth evaluating alongside Kling if audio generation is a requirement.</p>
 <hr>
 <h2 id="the-aggregator-path-falai">The Aggregator Path: fal.ai</h2>
-<p>If you want to avoid provider lock-in this time, fal.ai provides unified API access to Veo 3.1, Kling 3.0, Seedance 2.0, Wan 2.7, and 600+ other AI models through a single API key and consistent request format.</p>
+<p>If you want to avoid provider lock-in this time, <a href="https://fal.ai">fal.ai</a> provides unified API access to Veo 3.1, Kling 3.0, Seedance 2.0, Wan 2.7, and <a href="https://fal.ai">600+ other AI models</a> through a single API key and consistent request format.</p>
 <p>The advantage: when a specific video model is deprecated or a new model is released, you change a model name in your request rather than migrating your entire integration.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> fal_client
 

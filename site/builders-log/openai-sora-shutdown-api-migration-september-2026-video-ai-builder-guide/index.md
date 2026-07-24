@@ -13,7 +13,7 @@ This is not a typical model deprecation where the successor is obvious and the m
 
 ## What Happened
 
-Sora launched publicly in December 2024 as OpenAI's flagship video generation model. It generated significant interest and was used for a wide range of applications, from short-form social content to commercial video production.
+[Sora launched publicly on December 9, 2024](https://openai.com/index/sora-is-here/) as OpenAI's flagship video generation model. It generated significant interest and was used for a wide range of applications, from short-form social content to commercial video production.
 
 OpenAI [announced the discontinuation on March 24, 2026](https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/). The apps (sora.com, iOS, Android) shut down on April 26. The API stays live until September 24, giving builders a 6-month runway to migrate.
 
@@ -136,7 +136,7 @@ Seedance 2.0 is a strong competitor in the audio-synchronized video space, compa
 
 ## The Aggregator Path: fal.ai
 
-If you want to avoid provider lock-in this time, fal.ai provides unified API access to Veo 3.1, Kling 3.0, Seedance 2.0, Wan 2.7, and 600+ other AI models through a single API key and consistent request format.
+If you want to avoid provider lock-in this time, [fal.ai](https://fal.ai) provides unified API access to Veo 3.1, Kling 3.0, Seedance 2.0, Wan 2.7, and [600+ other AI models](https://fal.ai) through a single API key and consistent request format.
 
 The advantage: when a specific video model is deprecated or a new model is released, you change a model name in your request rather than migrating your entire integration.
 

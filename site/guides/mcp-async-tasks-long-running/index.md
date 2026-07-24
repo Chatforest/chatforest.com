@@ -96,7 +96,7 @@ This means existing client progress UI — spinners, progress bars, status messa
 
 ## Implementing Tasks with FastMCP
 
-[FastMCP](https://gofastmcp.com/servers/tasks), which powers an estimated 70% of Python MCP servers, already supports the Tasks primitive with a straightforward decorator-based API.
+[FastMCP](https://gofastmcp.com/servers/tasks), which [claims to power 70% of MCP servers across all languages](https://github.com/PrefectHQ/fastmcp), already supports the Tasks primitive with a straightforward decorator-based API.
 
 ### Basic Implementation
 

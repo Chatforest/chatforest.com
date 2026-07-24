@@ -130,7 +130,7 @@ The [official Cloudflare MCP server](https://github.com/cloudflare/mcp-server-cl
 
 **CPU-time pricing.** Cloudflare charges for CPU time, not wall-clock duration. MCP tool calls often spend most of their time waiting on external I/O (database queries, API calls). On Lambda, you pay for that wait time. On Workers, you don't.
 
-**Free tier:** 100,000 requests/day, 10ms CPU time per invocation. Paid plan starts at $5/month.
+**Free tier:** [100,000 requests/day, 10ms CPU time per invocation. Paid plan starts at $5/month.](https://developers.cloudflare.com/workers/platform/pricing/)
 
 ## Vercel
 
@@ -157,11 +157,11 @@ Vercel provides clone-and-deploy templates:
 
 ### Fluid Compute
 
-Vercel's Fluid Compute model is optimized for the bursty traffic patterns typical of AI agent interactions — one customer reportedly achieved 90% cost savings compared to traditional serverless for AI workloads.
+Vercel's [Fluid Compute](https://vercel.com/docs/functions/fluid-compute) model is optimized for the bursty traffic patterns typical of AI agent interactions, with a pricing model designed to avoid paying for idle I/O wait time.
 
 ### Vercel Constraints
 
-- **Timeout limits:** 10 seconds on Hobby plan, 60 seconds on Pro. The `maxDuration` setting is critical for MCP tools that call slow APIs.
+- **Timeout limits:** [10 seconds on Hobby plan, 60 seconds on Pro.](https://vercel.com/docs/functions/runtimes#max-duration) The `maxDuration` setting is critical for MCP tools that call slow APIs.
 - **Cold starts:** 1–3 seconds typically.
 - **Best for:** Teams already on Next.js who want to add MCP tools alongside their existing application without separate infrastructure.
 
@@ -181,7 +181,7 @@ The [Azure Functions MCP extension](https://learn.microsoft.com/en-us/azure/azur
 
 A self-hosted option lets you deploy existing MCP SDK-based servers without code changes. In .NET, `builder.EnableMcpToolMetaData()` exposes tool metadata to LLM clients.
 
-**Free tier (Flex Consumption):** 1 million requests/month, 400,000 GB-seconds execution time. Scales to zero when idle.
+**Free tier (Flex Consumption):** [1 million requests/month, 400,000 GB-seconds execution time.](https://azure.microsoft.com/pricing/details/functions/) Scales to zero when idle.
 
 **Limitation:** Stateless servers only — legacy SSE not supported.
 
@@ -191,7 +191,7 @@ Google recommends **Cloud Run** over Cloud Functions for MCP server hosting. Clo
 
 An official guide, "Build and Deploy a Remote MCP Server to Google Cloud Run in Under 10 Minutes," covers the basics. Cloud Run supports both SSE and Streamable HTTP transports, handles Node.js and Python deployments, and includes built-in security via Cloud Run Invoker IAM roles.
 
-**Free tier:** 2 million requests/month, 360,000 vCPU-seconds.
+**Free tier:** [2 million requests/month, 360,000 vCPU-seconds.](https://cloud.google.com/run/pricing)
 
 Cloud Run sits between pure serverless (Lambda, Workers) and container platforms (ECS, Kubernetes). It offers longer execution times and container flexibility while still supporting scale-to-zero.
 
@@ -205,7 +205,7 @@ The documentation notes: "MCP implementation is experimental and may still have 
 
 ### FastMCP Cloud (Prefect Horizon)
 
-[FastMCP Cloud](https://fastmcp.cloud) provides free hosting for FastMCP Python servers with one-command deployment (`fastmcp deploy`). FastMCP powers approximately 70% of MCP servers across all languages and supports a stateless mode for serverless environments. Note: servers run as dedicated processes rather than true serverless functions.
+[FastMCP Cloud](https://fastmcp.cloud) provides free hosting for FastMCP Python servers with one-command deployment (`fastmcp deploy`). FastMCP [claims to power approximately 70% of MCP servers across all languages](https://github.com/PrefectHQ/fastmcp) and supports a stateless mode for serverless environments. Note: servers run as dedicated processes rather than true serverless functions.
 
 ### MCPEngine (Featureform)
 
@@ -263,7 +263,7 @@ When stateless isn't enough but full stateful hosting is overkill:
 | Platform | Free Tier | Pricing Model | MCP Advantage |
 |----------|-----------|---------------|---------------|
 | **Cloudflare Workers** | 100K req/day | CPU time only ($5/mo paid) | Don't pay for I/O wait |
-| **AWS Lambda** | 1M req/month, 400K GB-sec | Wall-clock duration | Mature ecosystem, most tools |
+| **AWS Lambda** | [1M req/month, 400K GB-sec](https://aws.amazon.com/lambda/pricing/) | Wall-clock duration | Mature ecosystem, most tools |
 | **Azure Functions** | 1M req/month, 400K GB-sec | Wall-clock duration | .NET/enterprise integration |
 | **Vercel Functions** | 100 GB-hrs/month | Wall-clock duration | Best for Next.js teams |
 | **Google Cloud Run** | 2M req/month, 360K vCPU-sec | Per-request + CPU/memory | Container flexibility |

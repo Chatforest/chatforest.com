@@ -67,17 +67,17 @@
 
       <div class="article-body">
         <p>Part of our <strong><a href="/reviews/network-automation-infrastructure-mcp-servers/">Network Automation &amp; Infrastructure MCP Servers roundup</a></strong>.</p>
-<p><strong>At a glance:</strong> Remote hosted at <code>https://api.thousandeyes.com/mcp</code>. 28 tools. Launched February 4, 2026. OAuth 2.0 or Bearer token auth. Claude Desktop, Cursor, VS Code, AWS Kiro. ThousandEyes subscription required.</p>
-<p>Cisco ThousandEyes is a network intelligence platform that monitors what&rsquo;s between your users and your services — the internet paths, ISPs, CDNs, DNS providers, and cloud infrastructure you don&rsquo;t own and can&rsquo;t instrument directly. Traditional observability tools (Datadog, Grafana, New Relic) show you what&rsquo;s happening <em>inside</em> your infrastructure. ThousandEyes shows you what&rsquo;s happening <em>outside</em> it: where packets are being dropped in an ISP backbone, which CDN POP is degraded, whether a BGP route change is causing reachability problems, and whether a SaaS outage is affecting just your organization or everyone on that provider.</p>
-<p>The ThousandEyes MCP server brings this network intelligence directly into AI assistants. Instead of clicking through dashboards during an incident, NOC engineers and MSPs can query synthetic test results, trace network paths, correlate outage data, and run on-demand tests through natural language. The server launched in February 2026 as a <strong>fully hosted remote MCP</strong> — no software to deploy, no Docker containers to run. Cisco hosts it.</p>
+<p><strong>At a glance:</strong> Remote hosted at <code>https://api.thousandeyes.com/mcp</code>. 28 tools. <a href="https://www.thousandeyes.com/blog/thousandeyes-mcp-server-now-generally-available">Launched February 4, 2026</a>. OAuth 2.0 or Bearer token auth. Claude Desktop, Cursor, VS Code, AWS Kiro. ThousandEyes subscription required.</p>
+<p><a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2020/m08/cisco-completes-acquisition-of-thousand-eyes.html">Cisco ThousandEyes</a> is a network intelligence platform that monitors what&rsquo;s between your users and your services — the internet paths, ISPs, CDNs, DNS providers, and cloud infrastructure you don&rsquo;t own and can&rsquo;t instrument directly. Traditional observability tools (Datadog, Grafana, New Relic) show you what&rsquo;s happening <em>inside</em> your infrastructure. ThousandEyes shows you what&rsquo;s happening <em>outside</em> it: where packets are being dropped in an ISP backbone, which CDN POP is degraded, whether a BGP route change is causing reachability problems, and whether a SaaS outage is affecting just your organization or everyone on that provider.</p>
+<p>The ThousandEyes MCP server brings this network intelligence directly into AI assistants. Instead of clicking through dashboards during an incident, NOC engineers and MSPs can query synthetic test results, trace network paths, correlate outage data, and run on-demand tests through natural language. The server <a href="https://www.thousandeyes.com/blog/thousandeyes-mcp-server-now-generally-available">launched in February 2026</a> as a <strong>fully hosted remote MCP</strong> — no software to deploy, no Docker containers to run. Cisco hosts it.</p>
 <h2 id="what-thousandeyes-does">What ThousandEyes Does</h2>
 <p>ThousandEyes runs scheduled synthetic tests from three vantage point types:</p>
 <ul>
-<li><strong>Cloud Agents</strong> — Cisco-managed agents in 300+ locations across ISPs, cloud regions, and data centers worldwide</li>
+<li><strong>Cloud Agents</strong> — Cisco-managed agents in <a href="https://docs.thousandeyes.com/product-documentation/global-vantage-points/cloud-agents">over 200 cities</a> across ISPs, cloud regions, and data centers worldwide</li>
 <li><strong>Enterprise Agents</strong> — Self-hosted agents in customer data centers and offices</li>
 <li><strong>Endpoint Agents</strong> — Software installed on employee laptops and devices</li>
 </ul>
-<p>Tests cover HTTP page loads, DNS resolution, BGP reachability, browser transactions, VoIP quality, and ICMP/ping. The platform also offers <strong>Internet Insights</strong> — collective intelligence aggregated across all ThousandEyes customers, surfacing macro-level outages at ISPs and SaaS providers before any single customer would detect them independently.</p>
+<p>Tests cover HTTP page loads, DNS resolution, BGP reachability, browser transactions, VoIP quality, and ICMP/ping. The platform also offers <strong><a href="https://docs.thousandeyes.com/product-documentation/global-vantage-points">Internet Insights</a></strong> — collective intelligence aggregated across all ThousandEyes customers, surfacing macro-level outages at ISPs and SaaS providers before any single customer would detect them independently.</p>
 <p>ThousandEyes targets enterprises, telcos, and MSPs — teams with complex hybrid environments where the internet itself is a dependency, not just a commodity.</p>
 <h2 id="the-28-tools">The 28 Tools</h2>
 <p>The MCP server exposes tools across 9 categories with an explicit two-group permission model: <strong>read-only</strong> (safe to enable broadly) and <strong>write/delete</strong> (for test management workflows). Cisco recommends enabling only what you need — enabling too many tools simultaneously causes latency and timeouts.</p>
@@ -346,8 +346,8 @@
 </code></pre></div><p><strong>VS Code / AWS Kiro</strong> — Use <code>npx mcp-remote@latest</code> as a local proxy (requires Node.js).</p>
 <p><strong>Authentication choices:</strong></p>
 <ul>
-<li><strong>Bearer token</strong> — shares the organization-wide rate limit (240 req/min)</li>
-<li><strong>OAuth2 Dynamic Client Registration</strong> — browser-based flow, grants a separate per-client rate limit (240 req/min independent of the org). Better for teams or heavy usage.</li>
+<li><strong>Bearer token</strong> — shares the <a href="https://developer.cisco.com/docs/thousandeyes/rate-limits/">organization-wide rate limit (240 req/min)</a></li>
+<li><strong>OAuth2 Dynamic Client Registration</strong> — browser-based flow, grants a <a href="https://developer.cisco.com/docs/thousandeyes/rate-limits/">separate per-client rate limit (240 req/min independent of the org)</a>. Better for teams or heavy usage.</li>
 </ul>
 <p><strong>ThousandEyes for Government</strong> does not include GenAI features — the MCP server is unavailable in Government deployments.</p>
 <h2 id="whats-not-exposed">What&rsquo;s Not Exposed</h2>
@@ -358,15 +358,15 @@
 <li><strong>Dashboard CRUD</strong> is not present. Templates can deploy dashboards but you can&rsquo;t query or modify existing dashboard configurations.</li>
 </ul>
 <h2 id="github-footprint">GitHub Footprint</h2>
-<p>The official repo <code>CiscoDevNet/ThousandEyes-MCP-Server-official</code> is effectively a configuration guide — 1 star, 3 commits, no production code. The actual server runs on Cisco&rsquo;s infrastructure. This isn&rsquo;t a criticism of the server&rsquo;s quality, but it does mean there&rsquo;s no community contribution path and no way to inspect the implementation.</p>
-<p>The community predecessor (<code>CiscoDevNet/thousandeyes-mcp-community</code>) was archived in March 2026 when the official server launched. The most useful adjacent project is <code>pamosima/network-mcp-docker-suite</code> (35 stars) — a Docker-based suite that runs ThousandEyes alongside Cisco Meraki, Catalyst Center, IOS XE, ISE, Splunk, and NetBox as a unified AIOps toolkit.</p>
+<p>The official repo <a href="https://github.com/CiscoDevNet/ThousandEyes-MCP-Server-official"><code>CiscoDevNet/ThousandEyes-MCP-Server-official</code></a> is effectively a configuration guide — 3 stars, 3 commits, no production code. The actual server runs on Cisco&rsquo;s infrastructure. This isn&rsquo;t a criticism of the server&rsquo;s quality, but it does mean there&rsquo;s no community contribution path and no way to inspect the implementation.</p>
+<p>The <a href="https://github.com/CiscoDevNet/thousandeyes-mcp-community">community predecessor (<code>CiscoDevNet/thousandeyes-mcp-community</code>) was archived in March 2026</a> when the official server launched. The most useful adjacent project is <a href="https://github.com/pamosima/network-mcp-docker-suite"><code>pamosima/network-mcp-docker-suite</code></a> (24 stars) — a Docker-based suite that runs ThousandEyes alongside Cisco Meraki, Catalyst Center, IOS XE, ISE, Splunk, and NetBox as a unified AIOps toolkit.</p>
 <h2 id="who-its-for">Who It&rsquo;s For</h2>
 <p>ThousandEyes MCP is purpose-built for <strong>network operations teams</strong> — NOC engineers, MSPs, and SREs at organizations where internet path quality is operationally significant. That&rsquo;s a narrower audience than most MCP servers on this site.</p>
 <p>If your team already uses ThousandEyes dashboards for incident response, the MCP server gives you natural language queries during war-room calls without screen sharing dashboards. If you&rsquo;re an MSP managing ThousandEyes across multiple customer accounts, the <code>Get Account Groups</code> tool and template deployment let you orchestrate monitoring setup conversationally.</p>
 <p>If you don&rsquo;t use ThousandEyes — or your monitoring needs are fully covered by Datadog, Grafana, or New Relic — there&rsquo;s no reason to consider this server. The platform and its MCP server are tightly coupled.</p>
 <h2 id="the-verdict">The Verdict</h2>
 <p><strong>3.5/5.</strong> Cisco ThousandEyes MCP delivers genuine operational value for its target audience. The 28-tool surface covers the core monitoring and diagnostic workflows. The remote-hosted model eliminates all deployment friction — connecting takes minutes. The two-group permission model (read-only vs. write/delete) reflects mature security thinking. OAuth2 Dynamic Client Registration separating per-client rate limits is the right design for multi-user teams.</p>
-<p>The gaps are real: no Internet Insights exposure (the platform&rsquo;s most unique capability), no alert rule management, performance concerns when enabling too many tools simultaneously, and no community development path. The GitHub repo&rsquo;s 1-star footprint reflects that this is a proprietary hosted service, not an open ecosystem project.</p>
+<p>The gaps are real: no Internet Insights exposure (the platform&rsquo;s most unique capability), no alert rule management, performance concerns when enabling too many tools simultaneously, and no community development path. The GitHub repo&rsquo;s 3-star footprint reflects that this is a proprietary hosted service, not an open ecosystem project.</p>
 <p>For ThousandEyes shops: <strong>install it.</strong> For everyone else: this is a specialized tool for a specialized platform — evaluate ThousandEyes the product first.</p>
 <hr>
 <p><strong>Quick reference</strong></p>
@@ -416,7 +416,7 @@
 </tr>
 <tr>
 <td>GitHub</td>
-<td><a href="https://github.com/CiscoDevNet/ThousandEyes-MCP-Server-official">CiscoDevNet/ThousandEyes-MCP-Server-official</a> (1 star)</td>
+<td><a href="https://github.com/CiscoDevNet/ThousandEyes-MCP-Server-official">CiscoDevNet/ThousandEyes-MCP-Server-official</a> (3 stars)</td>
 </tr>
 <tr>
 <td>Rating</td>
