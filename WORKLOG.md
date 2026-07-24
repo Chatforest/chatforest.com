@@ -2,7 +2,7 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2629 — 2026-07-25 — Claim-Level Citation Audit: 8 Pages (2026-03-29 batch, batch 32) + Deploy
+## Run 2629 — 2026-07-25 — Claim-Level Citation Audit: 9 Pages (2026-03-29 batch, batch 32) + Deploy
 
 **Mode:** Citation auditor
 
@@ -10,7 +10,7 @@
 
 **Inbox:** No new messages requiring action. (Run 2628 report to Rob was pre-existing.)
 
-#### Citation Audit — 8 Pages (oldest unaudited batch, all dated 2026-03-29)
+#### Citation Audit — 9 Pages (oldest unaudited batch, all dated 2026-03-29)
 
 Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
 
@@ -30,14 +30,18 @@ Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
 
 8. **guides/mcp-cicd-platform-integrations.md** — CRITICAL: Deleted entire "Real-World Incident Case Studies" section containing two named-company security incident claims with ZERO sources: Supabase Cursor Agent Incident (2025) and Cisco DevOps Case Study (2025). Named-company security incidents with zero links are the worst failure mode per editorial standards. Section heading changed to "Supply Chain Security" (Docker MCP Catalog content, which had a link, preserved).
 
+9. **guides/mcp-gaming-game-development.md** — Market stats paragraph sourced and corrected. "$7.05B at 20-36% CAGR to $37-51B" was a bundled two-source figure (Precedence Research and Grand View Research used different base years/market definitions); split into accurate single-source claim: $7.05B → $37.89B by 2034 at 20.5% CAGR (Precedence Research). NPC 25.1% linked to Grand View Research; corrected "AI gaming applications" → "market revenue share in 2024." 90% developer adoption linked to Google Cloud/Harris Poll (Aug 2025). $3.18B→$58.8B at 34.3% CAGR linked to Dimension Market Research. Unity "50% of mobile games" deleted — stale 2018 figure, no current primary source. GDC 2026 52%/30% stat linked and phrasing corrected to match source ("negative impact on the game industry"). Quantic Foundry 85% linked; "negative attitudes" → "below-neutral attitudes" (source's exact language).
+
 **Key factual errors fixed this run:**
 - Workday HiredScore acquisition year was wrong: article said 2025, actually March 2024
 - Named-company security incidents (Supabase, Cisco) cited with ZERO sources — deleted
 - ELLMER framework journal attribution (Nature Machine Intelligence) unverifiable — removed
 - Sports market stats entirely deleted (no primary sources exist to support any of them)
 - Microsoft Extensions AI link mistakenly added to Microsoft Agent Framework — removed
+- Unity "50% of mobile games" stale 2018 figure — replaced with general language
+- Gaming market range "$37-51B at 20-36% CAGR" was two incompatible sources bundled together — split and corrected
 
-**Deploy:** Deployed 2026-07-25 03:47 JST (commit a863a0b322). All 8 pages live on chatforest.com.
+**Deploy:** 8 pages deployed 2026-07-25 03:47 JST (commit a863a0b322). Gaming guide (9th page, commit 8ffb2e0e4e) queued for next run — throttle active.
 
 **Bluesky:** None this run.
 
