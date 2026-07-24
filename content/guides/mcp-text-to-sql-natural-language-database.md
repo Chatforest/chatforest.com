@@ -6,6 +6,7 @@ content_type: "Guide"
 card_description: "Text-to-SQL through MCP lets AI agents query databases in plain English. Covers DBHub, XiYan-SQL, QueryWeaver, Google MCP Toolbox, Oracle AI Database, Wren AI — with accuracy benchmarks, hallucination mitigation, security patterns, and production architecture."
 last_refreshed: 2026-04-12
 lastmod: 2026-04-12
+sources_audited: 2026-07-25
 ---
 
 Querying databases with natural language is one of the most practical applications of AI agents — and MCP is becoming the standard way to connect them. Instead of writing custom API integrations for each database, MCP provides a universal protocol that lets any AI agent discover schemas, generate SQL, execute queries, and return results through standardized tool calls.

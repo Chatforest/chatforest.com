@@ -5,6 +5,7 @@ description: "A comprehensive guide to building MCP clients — covering the off
 content_type: "Guide"
 card_description: "Most MCP tutorials focus on building servers. This guide covers the other side: building MCP clients (hosts) that connect to servers, invoke tools, handle sampling and elicitation, manage multi-server connections, implement OAuth 2.1, and test with in-memory transports. Covers the official TypeScript and Python SDKs, FastMCP's high-level client API, and patterns from Claude Desktop, Cursor, and open-source hosts."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
 Most MCP documentation focuses on building servers. That makes sense — servers are where the tools live. But the client side is where the complexity hides. A well-built MCP client needs to manage transport connections, negotiate capabilities, route tool calls across multiple servers, handle server-initiated requests for LLM completions (sampling) and user input (elicitation), validate structured output, implement OAuth 2.1 flows, and gracefully handle disconnections and timeouts.
@@ -17,9 +18,9 @@ This guide covers everything needed to build a production-quality MCP client, fr
 
 | Aspect | Key Detail |
 |---|---|
-| **TypeScript SDK** | `@modelcontextprotocol/sdk` — `Client` class with full lifecycle management |
-| **Python SDK** | `mcp` (PyPI) — `ClientSession` with async context manager pattern |
-| **FastMCP client** | `fastmcp.Client` — higher-level Pythonic API with auto-transport detection |
+| **TypeScript SDK** | [`@modelcontextprotocol/sdk`](https://www.npmjs.com/package/@modelcontextprotocol/sdk) — `Client` class with full lifecycle management |
+| **Python SDK** | [`mcp`](https://pypi.org/project/mcp/) (PyPI) — `ClientSession` with async context manager pattern |
+| **FastMCP client** | [`fastmcp.Client`](https://github.com/jlowin/fastmcp) — higher-level Pythonic API with auto-transport detection |
 | **Primary transports** | stdio (local), Streamable HTTP (remote), SSE (deprecated) |
 | **Capability negotiation** | Required first exchange — client and server declare supported features |
 | **Multi-server** | FastMCP `MCPConfig`, MetaMCP gateway, or custom namespace routing |
@@ -210,7 +211,7 @@ async with Client(transport=transport) as client:
 
 ### SSE — Legacy Transport
 
-SSE (Server-Sent Events) was deprecated in the 2025-03-26 spec revision. Some older servers still use it.
+SSE (Server-Sent Events) was [deprecated in the 2025-03-26 spec revision](https://modelcontextprotocol.io/development/changelog). Some older servers still use it.
 
 **TypeScript:**
 
@@ -556,7 +557,7 @@ Servers can only send `sampling/createMessage` during the handling of a client-i
 
 ## Elicitation: Handling Server-Initiated User Input
 
-Elicitation, introduced in the 2025-06-18 spec revision, lets servers request structured input from the user via the client. Two modes exist: form (structured data) and URL (sensitive data via external redirect).
+Elicitation, [introduced in the 2025-06-18 spec revision](https://modelcontextprotocol.io/development/changelog), lets servers request structured input from the user via the client. Two modes exist: form (structured data) and URL (sensitive data via external redirect).
 
 ### Declaring Elicitation Capability
 

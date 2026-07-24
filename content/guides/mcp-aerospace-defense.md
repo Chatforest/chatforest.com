@@ -7,6 +7,7 @@ content_type: "Guide"
 card_description: "120+ MCP servers for aerospace and defense — flight data, satellite tracking, orbital mechanics, aviation safety, defense intelligence, CAD/simulation, cybersecurity, and government procurement. Architecture patterns included."
 last_refreshed: 2026-04-13
 lastmod: 2026-04-13
+sources_audited: 2026-07-25
 ---
 
 Aerospace and defense represent some of the most technically demanding domains in engineering. A single aircraft program generates millions of design documents, simulation datasets, test results, supply chain records, and compliance artifacts across decades of development. Satellite operators track thousands of objects in orbit while managing ground station networks, spectrum allocations, and mission timelines. Defense organizations fuse intelligence from dozens of sources — signals, imagery, open-source, human — into situational awareness that must be both comprehensive and timely. The data is vast, the systems are fragmented, and the stakes are extraordinarily high.
@@ -119,7 +120,7 @@ Space operations MCP tooling is nascent but growing, anchored by the Ansys STK i
 
 **[alti3/stk-mcp](https://github.com/alti3/stk-mcp)** | 25 stars | Ansys/AGI Systems Tool Kit via MCP
 
-This is the standout server in the space operations category. Ansys STK (Systems Tool Kit, formerly AGI STK) is the industry-standard Digital Mission Engineering platform used by military space commands, satellite operators, and defense agencies worldwide for orbital analysis, sensor coverage modeling, communication link budgets, and mission planning. An MCP integration means AI agents could automate the complex analysis workflows that currently require deep STK expertise — calculating satellite access windows, modeling radar coverage, planning constellation deployments, and running interference analyses.
+This is the standout server in the space operations category. [Ansys STK](https://www.ansys.com/products/systems/ansys-stk) (Systems Tool Kit, formerly AGI STK) is the industry-standard Digital Mission Engineering platform used by military space commands, satellite operators, and defense agencies worldwide for orbital analysis, sensor coverage modeling, communication link budgets, and mission planning. An MCP integration means AI agents could automate the complex analysis workflows that currently require deep STK expertise — calculating satellite access windows, modeling radar coverage, planning constellation deployments, and running interference analyses.
 
 ### IO-Aerospace MCP Server
 

@@ -5,11 +5,12 @@ description: "A comprehensive guide to MCP integrations for retail and hospitali
 content_type: "Guide"
 card_description: "Retail and hospitality are rapidly adopting MCP for AI-powered commerce. This guide covers 70+ MCP servers across POS (Square official 95 stars), e-commerce (Shopify built-in on every store, WooCommerce 83 stars, Magento 53 stars), hotel PMS (Apaleo first hotel MCP, Airbnb 406 stars), restaurant operations (Uber Eats 216 stars, DoorDash 22 stars), payments (Stripe 1,400 stars official, PayPal, Adyen), CRM (Salesforce 312 stars, HubSpot 100+ tools), inventory (Dynamics 365, Pipe17), Google's Universal Commerce Protocol, and architecture patterns for agentic commerce."
 last_refreshed: 2026-03-29
+sources_audited: 2026-07-25
 ---
 
 Retail and hospitality are undergoing a fundamental shift in how customers discover, evaluate, and purchase products and services. Traditional commerce relied on humans browsing websites, walking into stores, and calling reservation desks. The emerging model has AI agents acting on behalf of customers — searching inventories, comparing prices, making reservations, processing payments, and managing post-purchase operations. MCP is becoming the connective layer that makes this agentic commerce possible.
 
-The market numbers reflect why this matters. AI in retail reached approximately $12–31 billion in 2024–2025 (depending on scope) and is projected to grow to $63–165 billion by 2030–2034, with CAGRs ranging from 18% to 32%. Hospitality AI reached $16.3 billion in 2023, heading toward $70.3 billion by 2031 at 20% CAGR. 89% of retailers are actively using or assessing AI, though only 7% have fully scaled deployments — a gap that standardized protocols like MCP are designed to close.
+The market numbers reflect why this matters. AI in retail ranges from [$11.6 billion (Grand View Research)](https://www.grandviewresearch.com/industry-analysis/ai-retail-market-report) to [$31 billion (MarketsandMarkets)](https://www.marketsandmarkets.com/Market-Reports/artificial-intelligence-ai-retail-market-36255973.html) in 2024, with projections to [$40–165 billion by 2030](https://www.grandviewresearch.com/press-release/global-ai-retail-market) depending on scope. [Hospitality AI reached $16.3 billion in 2023, heading toward $70.3 billion by 2031 at 20% CAGR](https://www.kingsresearch.com/ai-in-hospitality-market-671) (Kings Research).
 
 MCP provides a structured protocol for connecting AI assistants to commerce systems. Rather than building custom integrations for each e-commerce platform, POS system, hotel PMS, or payment processor, MCP-connected agents can search product catalogs, manage shopping carts, process payments, check hotel availability, make restaurant reservations, and track orders — all through defined tool interfaces with consistent authentication and error handling.
 
@@ -115,7 +116,7 @@ Payment processing has the strongest official MCP adoption of any retail subcate
 
 ## Hotel and Property Management
 
-Hospitality is where MCP's potential for disrupting incumbent distribution channels is most visible — hotels currently pay 15–25% commissions to online travel agencies (OTAs), and MCP-enabled direct booking could reclaim those margins.
+Hospitality is where MCP's potential for disrupting incumbent distribution channels is most visible — hotels currently pay [15–25% commissions to online travel agencies (OTAs)](https://www.mirai.com/blog/mcp-the-bridge-that-will-allow-hotels-to-compete-in-the-era-of-ai-assistants-and-llms/), and MCP-enabled direct booking could reclaim those margins.
 
 ### Apaleo — First Hotel PMS with MCP
 
@@ -135,7 +136,7 @@ Hospitality is where MCP's potential for disrupting incumbent distribution chann
 
 ### Industry Perspective
 
-Hotel distribution veteran Mirai has written about MCP as "the bridge that will allow hotels to compete in the era of AI assistants" — arguing that MCP gives hotels a chance to reclaim direct guest relationships from OTAs. When AI agents can query a hotel's PMS directly via MCP instead of going through Booking.com or Expedia, the distribution economics shift dramatically in favor of hotels.
+Hotel distribution veteran Mirai has written about [MCP as "the bridge that will allow hotels to compete in the era of AI assistants"](https://www.mirai.com/blog/mcp-the-bridge-that-will-allow-hotels-to-compete-in-the-era-of-ai-assistants-and-llms/) — arguing that MCP gives hotels a chance to reclaim direct guest relationships from OTAs. When AI agents can query a hotel's PMS directly via MCP instead of going through Booking.com or Expedia, the distribution economics shift dramatically in favor of hotels.
 
 ## Restaurant and Food Service
 
