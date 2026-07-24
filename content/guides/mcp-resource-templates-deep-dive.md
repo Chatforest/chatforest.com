@@ -5,6 +5,7 @@ description: "How to use MCP resource templates to expose dynamic, parameterized
 content_type: "Guide"
 card_description: "Go beyond static resources. Learn URI template syntax, auto-completion, subscriptions, and real-world patterns for dynamic MCP resource templates."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 MCP resources come in two flavors: static resources with fixed URIs, and resource templates that use parameterized URI patterns. Static resources work for things like a project README or a configuration file. But most real-world data is dynamic — user profiles, database records, log files, API responses keyed by parameters. That is where resource templates come in.
@@ -365,33 +366,24 @@ public class UserResources
 
 The C# SDK uses attributes to declare templates. The `UriTemplate` parameter defines the pattern, and method parameters are automatically bound to URI variables.
 
-### Go (mcpkit)
+### Go
+
+Go implementations of MCP resource templates follow the same RFC 6570 pattern. The [official MCP Go SDK](https://github.com/modelcontextprotocol/go-sdk) and community SDKs expose templates via pattern registration:
 
 ```go
-package main
-
-import "github.com/plexusone/mcpkit"
-
-func main() {
-    s := mcpkit.NewServer("user-data", "1.0.0")
-
-    // Dynamic resource template with RFC 6570 pattern
-    s.ResourceTemplate(
-        "users://{userId}/profile",
-        "User Profile",
-        func(uri string, params map[string]string) (mcpkit.Resource, error) {
-            userId := params["userId"]
-            user, err := db.GetUser(userId)
-            if err != nil {
-                return mcpkit.Resource{}, err
-            }
-            return mcpkit.TextResource(uri, "application/json",
-                toJSON(user)), nil
-        },
-    )
-
-    s.Run()
-}
+// Illustrative pattern — consult your SDK's documentation for exact API
+s.ResourceTemplate(
+    "users://{userId}/profile",
+    "User Profile",
+    func(uri string, params map[string]string) (Resource, error) {
+        userId := params["userId"]
+        user, err := db.GetUser(userId)
+        if err != nil {
+            return Resource{}, err
+        }
+        return TextResource(uri, "application/json", toJSON(user)), nil
+    },
+)
 ```
 
 ## Real-World Template Patterns

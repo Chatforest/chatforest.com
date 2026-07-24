@@ -5,13 +5,14 @@ description: "A comprehensive guide to MCP error handling and resilience — cov
 content_type: "Guide"
 card_description: "MCP servers fail. Networks drop. APIs time out. Databases lock. The question isn't whether your MCP server will encounter errors — it's whether your error handling helps the AI recover or leaves it stuck. This guide covers the full error handling stack: JSON-RPC protocol errors, tool execution errors with isError, structured messages for LLM self-correction, circuit breakers, retries, bulkheads, timeout budgets, session recovery, and production fault tolerance."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 MCP servers fail. Networks drop. APIs time out. Databases lock. Rate limits trigger. Sessions expire. The question isn't whether your MCP server will encounter errors — it's whether your error handling helps the AI agent recover or leaves it stuck in a loop of identical failing requests.
 
 The Model Context Protocol builds on JSON-RPC 2.0, which provides a structured error format. But MCP adds a unique dimension: the caller is a language model, not a human developer. A raw stack trace like `KeyError: 'id'` might help a Python developer debug, but it gives an LLM no useful recovery path. Effective MCP error handling means crafting error responses that serve as recovery instructions — turning failures into self-correction opportunities.
 
-Production MCP deployments in early 2026 have exposed systematic failure patterns. A March 2026 taxonomy paper (arxiv 2603.05637) documented five categories of real-world MCP faults across hundreds of servers. Claude Code users reported Streamable HTTP sessions dropping after ~89 minutes. The "Bridging Protocol and Production" paper (arxiv 2603.13417) identified three missing protocol primitives — including structured error semantics — and proposed the Structured Error Recovery Framework (SERF) for deterministic agent self-correction.
+Production MCP deployments in early 2026 have exposed systematic failure patterns. A March 2026 taxonomy paper ([arXiv:2603.05637](https://arxiv.org/abs/2603.05637)) documented five categories of real-world MCP faults across hundreds of servers. [Claude Code users reported Streamable HTTP sessions dropping after ~89 minutes](https://github.com/anthropics/claude-code/issues/21721) (specifically 5,322 seconds) with no automatic reconnection. The "Bridging Protocol and Production" paper ([arXiv:2603.13417](https://arxiv.org/abs/2603.13417)) identified three missing protocol primitives — including structured error semantics — and proposed the Structured Error Recovery Framework (SERF) for deterministic agent self-correction.
 
 This guide covers the full error handling and resilience stack for MCP servers. Our analysis draws on published documentation, academic research, SDK source code, and community reports — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -158,11 +159,11 @@ A consistent error message structure helps LLMs parse and act on errors reliably
 5. **Avoid internal details** — stack traces, memory addresses, internal variable names don't help the LLM
 6. **Include constraints** — time until rate limit resets, maximum file size, required format
 
-As the Alpic AI team noted: "Well-designed error messages significantly improve model task completion rates and enable AI agents to self-correct without human intervention."
+Well-designed error messages significantly improve model task completion rates and enable AI agents to self-correct without human intervention.
 
 ## The MCP Fault Taxonomy
 
-The paper "Real Faults in Model Context Protocol Software: a Comprehensive Taxonomy" (arxiv 2603.05637, March 2026) by researchers at Polytechnique Montreal presents the first large-scale empirical study of real-world faults in MCP servers. Their taxonomy identifies five high-level fault categories, validated through a practitioner survey.
+The paper ["Real Faults in Model Context Protocol Software: a Comprehensive Taxonomy"](https://arxiv.org/abs/2603.05637) (arXiv:2603.05637, March 2026) by researchers at Polytechnique Montréal presents the first large-scale empirical study of real-world faults in MCP servers. Their taxonomy identifies five high-level fault categories, validated through a practitioner survey.
 
 ### Five Fault Categories
 
@@ -324,7 +325,7 @@ into a single tool call if possible.
 
 ## Timeout Budget Allocation
 
-The "Bridging Protocol and Production" paper (arxiv 2603.13417) proposes Adaptive Timeout Budget Allocation (ATBA) — framing sequential tool invocation as a budget allocation problem.
+The ["Bridging Protocol and Production"](https://arxiv.org/abs/2603.13417) paper (arXiv:2603.13417) proposes Adaptive Timeout Budget Allocation (ATBA) — framing sequential tool invocation as a budget allocation problem.
 
 ### The Problem
 
@@ -426,7 +427,7 @@ Interceptors can be deployed on both client and server sides, supporting both sy
 
 ## The SERF Framework
 
-The Structured Error Recovery Framework (SERF), proposed in "Bridging Protocol and Production" (arxiv 2603.13417), addresses a fundamental gap: MCP has no standard way to express error semantics that enable deterministic agent self-correction.
+The Structured Error Recovery Framework (SERF), proposed in ["Bridging Protocol and Production"](https://arxiv.org/abs/2603.13417) (arXiv:2603.13417), addresses a fundamental gap: MCP has no standard way to express error semantics that enable deterministic agent self-correction.
 
 ### SERF's Approach
 
@@ -443,7 +444,7 @@ Without structured error semantics, LLMs must interpret free-text error messages
 
 ## The MCP Reliability Playbook
 
-The MCP Reliability Playbook (github.com/alexey-tyurin/reliable-mcp) is a reference implementation that demonstrates nine resilience patterns through a working chatbot with two MCP servers, LangGraphJS agent orchestration, and comprehensive testing.
+The [MCP Reliability Playbook](https://github.com/alexey-tyurin/reliable-mcp) is a reference implementation that demonstrates nine resilience patterns through a working chatbot with two MCP servers, LangGraphJS agent orchestration, and comprehensive testing.
 
 ### Nine Patterns Implemented
 
@@ -468,7 +469,7 @@ The playbook includes 317 tests and 63 evaluations, with 16 automated chaos test
 
 ## OpenAI Agents SDK: Built-In MCP Resilience
 
-OpenAI's Agents SDK (v0.12.5+) includes built-in MCP retry and error normalization, reflecting how the ecosystem is standardizing error handling:
+The [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) includes built-in MCP retry and error normalization, reflecting how the ecosystem is standardizing error handling:
 
 - Automatic retry for transient MCP connection failures
 - Error normalization across different MCP server implementations

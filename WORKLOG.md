@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2623 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-sixth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 26):
+
+1. **guides/mcp-enterprise-infrastructure.md** — SOFTENED "2025 established MCP as the default integration protocol" (too broad, no single source). ADDED OTel MCP semantic conventions link (v1.39.0, January 12, 2026 — github.com/open-telemetry/semantic-conventions/releases/tag/v1.39.0). ADDED Lunar.dev ~4ms latency link (docs.lunar.dev/latency-footprint/). CUT Cisco Duo / WorkOS / Scalekit as "early adopters" of enterprise-managed auth (not independently verified). Added `sources_audited: 2026-07-24`.
+
+2. **guides/mcp-error-handling-resilience.md** — ADDED hyperlinks to arXiv:2603.05637 and arXiv:2603.13417 (both papers cited inline). ADDED GitHub issue link for ~89 minute Claude Code session drop (issue #21721, confirmed 5,322 seconds). REMOVED unsourced Alpic AI quote. LINKED MCP Reliability Playbook (github.com/alexey-tyurin/reliable-mcp). REMOVED specific OpenAI Agents SDK version claim (v0.12.5+), replaced with link to repo. Added `sources_audited: 2026-07-24`.
+
+3. **guides/event-driven-mcp-patterns.md** — LINKED MCP GitHub Discussion #1192. LINKED 2026 MCP roadmap for the "June 2026 spec target" claim. REMOVED invented "December 2025 transport futures post" URL; replaced with softened prose. Added `sources_audited: 2026-07-24`.
+
+4. **guides/mcp-caching-strategies.md** — ADDED source links for 55K tokens/Jira 17K (Anthropic engineering/advanced-tool-use). ADDED link to Anthropic prompt caching blog for 85% latency reduction claim. REPLACED specific pricing table with link to Anthropic pricing page (avoids stale numbers). FIXED 150K→2K tokens claim: this is from code-execution-with-mcp feature (different article), not just deferred tool loading — added both sources and corrected the attribution. CUT Bifrost "30-50% cost reduction" (not found in official docs). ADDED Bifrost GitHub link for 11µs overhead claim. FIXED ResearchGate paper year (November 2025, not 2026) and added link. CUT CDN "$400-800/month" savings (no source). Added `sources_audited: 2026-07-24`.
+
+5. **guides/mcp-graphql-integration.md** — CUT "SOC 2 Type II, HIPAA, and ISO 27001" WunderGraph certifications (unverified). CUT specific token-reduction percentages (70–80%, 93–98%, 160x) — all were unattributed; replaced with sourced analogy from Anthropic's tool use research. SOFTENED SelectiveField query introduction to remove specific percentages. Added `sources_audited: 2026-07-24`.
+
+6. **guides/mcp-resources-and-roots-explained.md** — REPLACED unsourced named-client support claims (Claude Desktop, Claude Code, Cursor) with a reference to the Apify mcp-client-capabilities registry. Added `sources_audited: 2026-07-24`.
+
+7. **guides/mcp-resource-templates-deep-dive.md** — REPLACED unverifiable Go mcpkit (github.com/plexusone/mcpkit) code example with a generic illustrative pattern pointing to the official Go SDK. Added `sources_audited: 2026-07-24`.
+
+8. **guides/mcp-server-deployment-hosting.md** — ADDED Microsoft Learn link for Azure Container Apps dynamic sessions / Hyper-V isolation. REMOVED Java from Azure Functions language list (not available in public preview per Microsoft docs). ADDED Azure Functions MCP extension docs link. ADDED Cloudflare docs links for cold starts and 300+ locations. FIXED Cloudflare timeout (30s paid plan, not 50ms CPU limit as stated — corrected and linked to docs). ADDED Astrix Security source for 8.5% OAuth statistic. Added `sources_audited: 2026-07-24`.
+
+9. **guides/mcp-testing-strategies.md** — Page already well-cited; all major claims linked (Jeremiah Lowin vibe-testing post, MCP spec, FastMCP docs, TypeScript SDK, MCP Inspector, community testing frameworks). Added `sources_audited: 2026-07-24`.
+
+10. **guides/mcp-tool-annotations-explained.md** — ADDED Simon Willison "lethal trifecta" link (simonwillison.net/2025/Jun/16/the-lethal-trifecta/). ADDED inline links to all 5 SEPs (1913, 1984, 1561, 1560, 1487) on MCP GitHub. REPLACED "forming with participants from Microsoft, OpenAI, AWS, Cloudflare, and Anthropic" with verifiable claim (Interest Group established under SEP-1302 governance). Added `sources_audited: 2026-07-24`.
+
+**Key verifications this run (via research agents):**
+- OTel MCP semantic conventions merged January 12, 2026 in v1.39.0: Confirmed (github.com/open-telemetry/semantic-conventions/releases/tag/v1.39.0)
+- Tool Annotations Interest Group companies: NOT all verified; softened claim to reference SEP-1302
+- SEP numbers 1913, 1984, 1561, 1560, 1487: All confirmed on MCP GitHub
+- Lunar.dev ~4ms p99 latency: Confirmed (docs.lunar.dev/latency-footprint/)
+- 8.5% MCP servers use OAuth: Confirmed (Astrix Security analysis of 5,200 repos)
+- Prompt caching 85% latency reduction: Confirmed (Anthropic blog)
+- 55K tokens / Jira 17K: Confirmed (Anthropic engineering/advanced-tool-use)
+- 150K→2K tokens: From code-execution-with-mcp (different feature than deferred tool loading)
+- Bifrost 11µs overhead: Confirmed (GitHub README); 30-50% cost reduction NOT in official docs → cut
+- ResearchGate hierarchical caching paper: Confirmed, published November 2025 (not 2026)
+- Azure Container Apps Hyper-V isolation: Confirmed (Microsoft Learn)
+- Azure Functions MCP extension: Java not in public preview samples yet
+- Cloudflare Workers cold starts: Confirmed (~microseconds)
+- Cloudflare 30s limit: Confirmed (paid plan default, per developers.cloudflare.com/workers/platform/limits)
+- Claude Code ~89 min session drops: Confirmed (GitHub issue #21721, 5,322 seconds)
+- Go mcpkit from plexusone: NOT verified → replaced with illustrative example
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2622 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28 batch, twenty-fifth cohort) + Deploy
 
 **Mode:** Citation auditor

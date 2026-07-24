@@ -5,6 +5,7 @@ description: "A practical guide to MCP resources and roots — the primitives th
 content_type: "Guide"
 card_description: "MCP resources let servers share data as context. Roots let clients set boundaries. Here's how both work together."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Everyone talks about MCP tools — the model-controlled primitives that let AI decide when to call external functions. But MCP has another data primitive that often gets overlooked: **resources**. While tools let models *do* things, resources let servers *share* things — files, database schemas, API responses, configuration data, or any other context an LLM might need.
@@ -297,12 +298,7 @@ A docs server might:
 
 ## Current Client Support
 
-Resource support varies across MCP clients. As of early 2026:
-
-- **Claude Desktop** — supports listing and reading resources, but dynamic templates and automatic resource fetching have reported issues
-- **Claude Code** — does not currently consume resources
-- **Cursor** — supports basic resource operations
-- **Custom clients** — full support depends on implementation
+Resource support varies across MCP clients. As of early 2026, the [Apify mcp-client-capabilities registry](https://github.com/apify/mcp-client-capabilities) documents which clients implement which protocol features — resource subscriptions in particular are among the least-supported capabilities.
 
 This uneven support is one reason resources get overlooked. Developers building MCP servers may skip resources because the most popular clients don't fully support them yet. This is likely to improve as the ecosystem matures — the [MCP 2026 roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) signals continued investment in the protocol's core primitives.
 

@@ -5,6 +5,7 @@ description: "A comprehensive guide to integrating MCP with GraphQL APIs — cov
 content_type: "Guide"
 card_description: "GraphQL's schema introspection, selective field queries, and type safety make it a natural fit for MCP. Here's how to connect AI agents to your GraphQL APIs — and when it actually makes sense."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 GraphQL and MCP are converging. Both protocols share a core philosophy: let the client ask for exactly what it needs, and nothing more. For AI agents that consume tokens with every API response, this precision matters. A REST endpoint that returns 50 fields when you need 3 wastes context window space. A GraphQL query that requests only those 3 fields keeps the agent focused and the token bill low.
@@ -19,7 +20,7 @@ Before diving into specific servers, it's worth understanding why GraphQL and MC
 
 **Schema introspection is automatic discovery.** Every GraphQL API exposes its full schema via introspection. An MCP server can query this schema and automatically generate tool definitions — the AI agent learns what operations are available, what parameters they take, and what types they return without any manual configuration. This is the same self-describing property that makes GraphQL developer-friendly, now applied to AI agents.
 
-**Selective field queries reduce token usage.** This is the most concrete advantage. When an AI agent calls a REST API, it gets back the full response body — every field, every nested object. With GraphQL, the MCP server (or the agent itself) can request only the fields needed for the current task. Reports suggest this can reduce token usage by 70–80% compared to equivalent REST responses, though actual savings depend heavily on the specific API and use case.
+**Selective field queries reduce token usage.** This is the most concrete advantage. When an AI agent calls a REST API, it gets back the full response body — every field, every nested object. With GraphQL, the MCP server (or the agent itself) can request only the fields needed for the current task. The actual savings depend heavily on how verbose your REST APIs are and how many fields your agent actually needs.
 
 **Type safety maps to tool schemas.** GraphQL's type system (scalars, enums, input types, non-null markers) maps directly to JSON Schema, which MCP uses for tool parameter definitions. This means tool schemas can be generated with accurate type information, reducing the chance of an AI agent sending malformed requests.
 
@@ -101,7 +102,6 @@ The persisted query approach is significant for production use. Instead of letti
 - Only approved operations are exposed to AI agents
 - Preserves documentation comments from GraphQL schemas as tool metadata
 - Generates JSON Schema with semantic information for each operation
-- SOC 2 Type II, HIPAA, and ISO 27001 certifications
 
 WunderGraph's approach sits between Apollo (curated operations) and mcp-graphql (full schema access) — it auto-generates operation-specific tools while also offering direct schema access.
 
@@ -228,12 +228,7 @@ With REST, this would require three separate MCP tool calls, each consuming tool
 
 ### Reported Savings
 
-Exact numbers vary by implementation, but reported figures include:
-- **70–80% token reduction** compared to equivalent REST MCP tools (reported by independent implementations)
-- **93–98% prompt token reduction** when filtering API responses to relevant fields only
-- **Up to 160x token reduction** when using dynamic toolsets (loading only needed tool schemas) compared to static toolsets
-
-These numbers should be treated as upper bounds for specific scenarios, not guaranteed improvements. Your mileage will depend on how verbose your REST APIs are and how many fields your agent actually needs.
+The actual token savings from GraphQL field selection vary considerably depending on how verbose your API responses are and how many fields you actually need. The key principle: requesting only 2 of 50 fields means roughly 96% of response data is eliminated before it enters the model's context. For a concrete baseline, [Anthropic's advanced tool use research](https://www.anthropic.com/engineering/advanced-tool-use) found that reducing tool definitions (a related problem) could cut token overhead by 85% — the gains from GraphQL field selection are in the same conceptual category.
 
 ## Architecture Patterns
 

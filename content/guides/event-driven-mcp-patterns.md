@@ -5,6 +5,7 @@ description: "How to build event-driven AI agents with MCP."
 content_type: "Guide"
 card_description: "Build real-time AI agents with MCP. Notifications, resource subscriptions, Streamable HTTP streaming, sampling, async tasks — what works today and what's coming."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Most MCP interactions follow a simple pattern: the client asks, the server answers. But real-world AI agents need more. They need to react when files change, databases update, builds fail, or messages arrive. They need event-driven behavior.
@@ -75,7 +76,7 @@ This decoupling is deliberate. Notifications tell clients *that* something chang
 
 Here's the uncomfortable truth: most MCP clients in the wild ignore notifications. An analysis by [PulseMCP](https://www.pulsemcp.com/) documented this as a systemic "Client Capabilities Gap" — servers avoid implementing notification features because clients don't advertise support for them.
 
-Claude Desktop, one of the most widely used MCP clients, doesn't support resource subscriptions. Most other clients implement only the basic request-response flow. Community discussion on the MCP GitHub (Discussion #1192) confirms this is a known limitation.
+Claude Desktop, one of the most widely used MCP clients, doesn't support resource subscriptions. Most other clients implement only the basic request-response flow. Community discussion on the [MCP GitHub (Discussion #1192)](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1192) confirms this is a known limitation.
 
 **What this means for you:** If you build a server that relies on notifications, test it against the specific client your users will use. Don't assume notification support exists.
 
@@ -344,7 +345,7 @@ Current event delivery requires persistent SSE connections. This creates operati
 - Auto-scaling is complicated by stateful sessions
 - Session scope is unclear in distributed systems
 
-The December 2025 transport futures post acknowledges these problems and outlines a shift toward stateless protocol architecture.
+The MCP team has acknowledged these problems and outlined a shift toward stateless protocol architecture.
 
 ### Client Capability Fragmentation
 
@@ -362,7 +363,7 @@ The MCP spec is evolving rapidly. Key developments expected in 2026:
 
 **Notification redesign** — making notifications work independently of persistent connections.
 
-**June 2026 spec target** — the next specification release is tentatively planned for June 2026, likely incorporating many of these changes.
+**June 2026 spec target** — per the [2026 MCP roadmap](https://modelcontextprotocol.io/blog/roadmap-2026), the next specification release was planned for June 2026, incorporating many of these changes.
 
 ## Decision Framework: Which Pattern Should You Use?
 

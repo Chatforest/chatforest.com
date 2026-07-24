@@ -5,6 +5,7 @@ description: "A practical guide to testing MCP servers — covering unit tests w
 content_type: "Guide"
 card_description: "Stop vibe-testing your MCP servers. Here's how to write real tests at every level — unit, integration, and end-to-end."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Most MCP servers get tested the same way: someone connects them to Claude or ChatGPT, tries a few tool calls, and declares "looks good." This is what [Jeremiah Lowin calls "vibe-testing"](https://www.jlowin.dev/blog/stop-vibe-testing-mcp-servers) — and it's a problem.

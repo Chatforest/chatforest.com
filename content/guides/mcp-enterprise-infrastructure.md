@@ -5,11 +5,12 @@ description: "How enterprises deploy MCP at scale — covering governance models
 content_type: "Guide"
 card_description: "One developer running an MCP server locally is simple. Rolling it out to 500 engineers with compliance requirements is a different problem entirely."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 A single developer connecting Claude Code to a local MCP server is straightforward. An enterprise rolling out MCP across hundreds of engineers — with compliance requirements, access control policies, and audit obligations — faces an entirely different set of challenges.
 
-2025 established MCP as the default integration protocol for AI tools, with adoption from OpenAI, Google, Microsoft, and Amazon alongside Anthropic. 2026 is the year enterprises move from pilot projects to production infrastructure. The [2026 MCP roadmap](https://modelcontextprotocol.io/blog/roadmap-2026) makes enterprise readiness one of its four top priorities, alongside transport evolution, agent communication, and governance maturation.
+By 2025, MCP had gained [broad adoption](https://modelcontextprotocol.io/blog/roadmap-2026) across the AI tool ecosystem, including from OpenAI, Google, Microsoft, and Amazon. 2026 is the year enterprises move from pilot projects to production infrastructure. The [2026 MCP roadmap](https://modelcontextprotocol.io/blog/roadmap-2026) makes enterprise readiness one of its four top priorities, alongside transport evolution, agent communication, and governance maturation.
 
 This guide covers the architecture, tooling, and organizational patterns for deploying MCP at enterprise scale. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25), the enterprise-managed authorization extension, published vendor documentation, and industry reports — we research and analyze rather than deploying enterprise MCP infrastructure ourselves.
 
@@ -158,7 +159,7 @@ The key improvement: IT administrators manage MCP access through the same policy
 
 ### Current Status
 
-As of March 2026, enterprise-managed authorization is a specification extension — implemented by some platforms but not yet universally supported. The [2026 roadmap](https://workos.com/blog/2026-mcp-roadmap-enterprise-readiness) identifies it as a priority, but full ecosystem adoption is still ahead. Early adopters include platforms like [Cisco Duo](https://duo.com/) and vendors building on [WorkOS](https://workos.com/) and [Scalekit](https://www.scalekit.com/).
+As of March 2026, enterprise-managed authorization is a specification extension — implemented by some platforms but not yet universally supported. The [2026 roadmap](https://workos.com/blog/2026-mcp-roadmap-enterprise-readiness) identifies it as a priority, but full ecosystem adoption is still ahead.
 
 ## Audit Logging and Compliance
 
@@ -200,7 +201,7 @@ Organizations define data classification policies specifying which data types ma
 
 ### OpenTelemetry Integration
 
-The emerging standard for MCP observability is [OpenTelemetry](https://opentelemetry.io/). The MCP semantic conventions for OTel, merged in January 2026, define standard attribute names for MCP traces and metrics. This means MCP audit data integrates natively with existing observability stacks — Grafana, Datadog, Honeycomb, Splunk, New Relic — without custom integration work.
+The emerging standard for MCP observability is [OpenTelemetry](https://opentelemetry.io/). The [MCP semantic conventions for OTel, merged in January 2026](https://github.com/open-telemetry/semantic-conventions/releases/tag/v1.39.0) (released in v1.39.0), define standard attribute names for MCP traces and metrics. This means MCP audit data integrates natively with existing observability stacks — Grafana, Datadog, Honeycomb, Splunk, New Relic — without custom integration work.
 
 [Stacklok's ToolHive](https://docs.stacklok.com/toolhive/) aligns with these conventions, emitting OTel-compatible traces that can feed both observability dashboards and compliance audit trails from the same data pipeline.
 
@@ -210,7 +211,7 @@ Several platforms have emerged to address enterprise MCP governance. Here's how 
 
 | Platform | License | Access Control | Audit Logging | Deployment | Key Differentiator |
 |----------|---------|---------------|---------------|------------|-------------------|
-| **Lunar.dev MCPX** | Commercial | Tool-level ACLs | Immutable, SIEM-ready | Cloud/on-prem | ~4ms latency, granular tool ACLs |
+| **[Lunar.dev MCPX](https://www.lunar.dev/product/mcp)** | Commercial | Tool-level ACLs | Immutable, SIEM-ready | Cloud/on-prem | [~4ms p99 latency](https://docs.lunar.dev/latency-footprint/), granular tool ACLs |
 | **Stacklok ToolHive** | Apache 2.0 | Tool-level via vMCP | OTel-aligned | Kubernetes | Open source, K8s native |
 | **MintMCP Gateway** | Commercial | Role-based | SOC 2 Type II attested | Cloud | One-click deploy, SOC 2 certification |
 | **GitHub Copilot Registry** | Platform feature | Organization-level | Via GitHub audit log | GitHub-managed | Native IDE integration |
