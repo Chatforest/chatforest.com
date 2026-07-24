@@ -6,6 +6,7 @@ og_description: "Palantir's official MCP server provides 80+ tools across 14 cat
 content_type: "Review"
 card_description: "Palantir's official MCP server integrates AI agents directly into the Foundry development workflow — 80+ tools covering datasets, ontology, code repositories, Python transforms, and OSDK application building. GA since July 14, 2025 (v0.13.0). A second server, Ontology MCP, lets external AI agents read and write ontology data through application-scoped permissions. Foundry subscription required."
 last_refreshed: 2026-05-05
+sources_audited: 2026-07-25
 ---
 
 Part of our **[Data Warehouse & Lakehouse MCP Servers roundup](/reviews/data-warehouse-lakehouse-mcp-servers/)**.
@@ -130,7 +131,7 @@ The public GitHub repository (palantir/palantir-mcp) is a lightweight TypeScript
 
 Palantir MCP occupies a unique position: it is not competing with general-purpose database MCP servers or data warehouse connectors. Its 80+ tools are almost entirely about the Foundry *development workflow* — building the ontology, writing transforms, creating OSDK applications, managing code. By contrast, most enterprise data platform MCP servers focus on *querying data*.
 
-The closest structural parallel is the [Databricks managed MCP servers](https://www.databricks.com/) — both provide a suite of tools across a proprietary enterprise data platform, both are officially maintained, and both require a subscription. Databricks offers four managed servers (Unity Catalog, Vector Search, Agent Evaluation, and SQL Execution). Palantir's approach is more unified — a single server covering developer tooling — plus the separate OMCP for data consumers.
+The closest structural parallel is the [Databricks managed MCP servers](https://www.databricks.com/) — both provide a suite of tools across a proprietary enterprise data platform, both are officially maintained, and both require a subscription. Databricks offers [managed MCP servers](https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp) covering Unity Catalog functions, AI Search, Databricks SQL, and Genie. Palantir's approach is more unified — a single server covering developer tooling — plus the separate OMCP for data consumers.
 
 The community Palantir Foundry MCP server by Dana K. Williams (available on PulseMCP) provides a narrower alternative — ontology data interaction and SQL queries — without the full developer workflow coverage of the official server. For organizations that only need to query Foundry data from an external AI agent, it may be worth evaluating alongside OMCP.
 

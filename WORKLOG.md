@@ -2,6 +2,139 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2628 — 2026-07-25 — CTR Optimization (/reviews/ + 4 pages) + Citation Audit: 10 Pages (May 2026 batch, batch 31)
+
+**Mode:** SEO optimizer + Citation auditor
+
+### What I did
+
+**Inbox:** High-priority message from Rob (aiu 67, msg #2258) directing CTR optimization for /reviews/ and top pages by impressions, informed by GSC query data.
+
+#### GSC Script Upgrade
+Updated `scripts/gsc_query.py` to use dynamic date ranges (last N days from today, not hardcoded March–April 2026 dates) and to support `--page` filter using GSC API `dimensionFilterGroups`. Previous script silently ignored all CLI arguments and returned stale data.
+
+#### CTR Optimization — 5 Pages Updated
+
+Current 28-day GSC data (2026-06-26 to 2026-07-23):
+- `/reviews/` — 5,020 impressions, 1 click, 0.0% CTR, position 6.9
+- `/` — 33,639 impressions, 36 clicks, 0.1% CTR (homepage fix confirmed working!)
+
+Top queries driving /reviews/ impressions: `"https://api.instantdomainsearch.com/mcp/streamable-http"` (1,025 impr), `"api.instantdomainsearch.com/mcp/streamable-http"` (333 impr), `"search_domains" "api.instantdomainsearch.com"` (128 impr). These are niche API-doc queries; users aren't looking for review indexes. Title/meta optimization targets the users who ARE seeking reviews.
+
+Pages updated:
+
+1. **content/reviews/_index.md** (/reviews/)
+   - OLD title: "MCP Server Reviews — Honest, Research-Based Ratings for 2026"
+   - NEW title: "MCP Server Reviews — 300+ Tools Rated: Databases, DevOps, Security & More (2026)"
+   - OLD description: 188 chars — too long, truncated in SERP
+   - NEW description: "300+ MCP servers reviewed: databases, DevOps, security, AI/ML, social media, and more. GitHub stats, honest ratings, no sponsored picks." (136 chars)
+   - Rationale: Updated from "100+" to "300+" (accurate: 144 individual + 200 category MCP server reviews = 344); shortened description to under 155 chars; maintained the honest/no-sponsored-picks angle
+
+2. **content/guides/best-mcp-servers.md**
+   - OLD title: "Best MCP Servers for Developers in 2026"
+   - NEW title: "Best MCP Servers 2026 — Top Picks from 287 Researched Across 100+ Categories"
+   - NEW description: "287 MCP servers researched, 100+ categories compared. Top picks for databases, DevOps, GitHub, AI/ML, and more — every recommendation links to a full review."
+   - Rationale: front-loads the 287 count (specific, compelling); removes "for Developers" (too narrow for broad queries)
+
+3. **content/guides/ai-coding-assistants-compared.md**
+   - OLD description: 176 chars (too long)
+   - NEW description: "Claude Code, Cursor, Copilot, Windsurf, Codex, Kiro, Antigravity, Grok Build — ranked on features, pricing, and agent mode. Which fits your workflow?" (150 chars)
+   - Rationale: same tools listed (search intent match), shorter, ends with a question that invites the click
+
+4. **content/guides/a2a-protocol-v1-production-ready.md**
+   - OLD title: "A2A Protocol Hits v1.0: What Changes Now That Agent-to-Agent Communication Has a Stable Standard" (96 chars — too long)
+   - NEW title: "A2A Protocol v1.0: What It Means for Agent-to-Agent Communication in Production" (79 chars)
+   - NEW description: "A2A Protocol hit v1.0 on March 12, 2026. gRPC, signed Agent Cards, 5-language SDKs, AWS/Azure/Google Cloud support, 150+ orgs. What changed from v0.3 and what's next." (168 chars)
+   - Rationale: cleaner title; description leads with the key date and specifics
+
+5. **content/guides/best-social-media-mcp-servers.md**
+   - OLD title: "Best Social Media MCP Servers in 2026"
+   - NEW title: "Best Social Media MCP Servers 2026 — 35+ Tools for X, Bluesky, LinkedIn & More"
+   - NEW description: "35+ social media MCP servers rated: X, Bluesky, LinkedIn, Instagram, TikTok, YouTube, Reddit. Which ones work? Honest picks, no filler." (135 chars)
+   - Rationale: front-loads count; specific platform names (search intent match); cleaned up description
+
+#### Citation Audit — 10 Pages (batch 31, May 2026)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **reviews/mcp-security-cve-research** (2026-05-01) — Major corrections: CVE-2025-65513 CVSS score fixed (was 9.3, actually 6.3/7.5 depending on scorer); "16+ months unpatched" corrected (was ~5 months); CVE CVSS scores for three CVEs corrected; OWASP MCP Top 10 risk names that don't exist in published document removed; AgentSeal 72.8% attack success stat removed (no primary source); ~25 links added to GitHub advisories, security blog posts.
+
+2. **reviews/firebase-mcp-server** (2026-05-04) — Firestore Remote MCP GA date corrected (April 23 → April 20, 2026); CLI version for SSE mode corrected (v15.13.0 → v15.16.0); Google Cloud Next date corrected (April 28 → April 29); "1.6M weekly npm downloads" removed (actual: ~1.19M); "most widely deployed mobile and web backend platform" superlative removed.
+
+3. **reviews/weaviate-mcp-server** (2026-05-04) — "29,000+ GitHub stars" corrected to 16,600+ (was dramatically wrong); deprecation notice added (standalone server is now marked deprecated in README); comparison table star counts updated; "745K weekly downloads" for Qdrant MCP removed (no primary source for that specific claim).
+
+4. **reviews/nist-caisi-google-microsoft-xai-ai-pre-release-testing-2026** (2026-05-05) — "three weeks after Claude Mythos..." corrected to "two weeks after..."; Anthropic Mythos framing corrected; David Sacks title corrected (he had resigned as AI/crypto czar by May 2026); EO signing date corrected (May 22 → May 21); "dozens of model evaluations" updated to "more than 40" per NIST official figure.
+
+5. **reviews/confluent-mcp-server** (2026-05-05) — Deleted "Over 70% of Kafka deployments run on self-managed infrastructure" (no primary source found); removed overstated "SLA" claim for open-source server; Databricks comparison table fixed (per Agent 3 research, Databricks doesn't offer "Agent Evaluation" as a managed MCP server).
+
+6. **reviews/palantir-mcp-server** (2026-05-05) — Fixed Databricks comparison: was "four managed servers (Unity Catalog, Vector Search, Agent Evaluation, and SQL Execution)" — Agent Evaluation is not a Databricks managed MCP server; corrected to "managed MCP servers covering Unity Catalog functions, AI Search, Databricks SQL, and Genie" with primary link.
+
+7. **reviews/consul-mcp-server** (2026-05-05) — Added HashiConf announcement link; BSL 1.1 license change link; HCP Consul Dedicated EOL link; customer reference links; version and release links. Star count snapshot note added.
+
+8. **reviews/thousandeyes-mcp-server** (2026-05-05) — "300+ locations" for Cloud Agents corrected to "over 200 cities" (per official ThousandEyes docs); added GA launch date link; Cisco acquisition link; rate limit documentation link.
+
+9. **reviews/sap-developer-tools-mcp-servers** (2026-05-05) — Star counts updated (UI5: 81→93, CAP: 70→105, mcp-sap-docs: 169→209, arc-1: 1,367→3,474 unit tests); community list updated to "80+ entries"; added SAP "400,000 customers" link; ABAP GA at Sapphire 2026 link; Joule for Developers pricing link.
+
+10. **reviews/ibm-mcp-servers** (2026-05-05) — "largest enterprise software portfolio in the world" superlative replaced (no source); IBM/mcp star count updated (373→397); ContextForge stars corrected (3,655→~4,100); ContextForge GA date corrected (May 2026 → April 30, 2026); "Watson Knowledge Catalog" corrected to "IBM Knowledge Catalog"; "$4.5 trillion in annual commerce" deleted (no source, wrong platform); "95% of Fortune 500" claim deleted (wrong scope); IBM FileNet "dominant" replaced with "established."
+
+**Key factual errors fixed this run:**
+- CVE scores wrong in multiple entries (mcp-security-cve-research)
+- Weaviate 29,000+ stars was dramatically wrong (actually 16,600+); standalone server deprecated
+- NIST CAISI dates and David Sacks title corrections
+- Databricks "Agent Evaluation" MCP server doesn't exist (palantir review)
+- IBM FileNet "dominant ECM platform" factually wrong (it's ~7% market share per Enlyft)
+- ContextForge GA date wrong by a month
+- IBM Knowledge Catalog misspelled as "Watson Knowledge Catalog"
+
+**Deploy:** Throttled (last deploy ~6.5 min before this commit). Deploy of all above changes will occur in the next run. Committed and Hugo-built cleanly.
+
+**Newsletter subscribers:** 1 (from Buttondown API, regular status)
+
+**GSC data (last 28 days):** Homepage working — 36 clicks, 0.1% CTR. /reviews/ — 5,020 impressions, 1 click (big opportunity). /reviews/ top queries are niche API-doc searches (api.instantdomainsearch.com endpoint), not "mcp server reviews" type queries. Rob's note re: subscriber count: **1 subscriber**.
+
+---
+
+## Run 2627 — 2026-07-25 — Claim-Level Citation Audit: 2 Pages (targeted deep audit of MCP security and Firebase reviews)
+
+**Mode:** Citation auditor (targeted two files requested by user)
+
+### What I did
+
+**Claim-level citation audit — 2 pages marked `sources_audited: 2026-07-25`:**
+
+1. **reviews/mcp-security-cve-research.md** (2026-05-01) — Major audit. Key fixes:
+   - DELETED fabricated attack pattern percentages (43%/20%/13%/10%/8%/6%) — not found in cited PipeLab source; replaced table with categories only, noting source doesn't publish exact percentages
+   - CORRECTED CVE-2025-65513 CVSS: was "9.3 (Critical)" → "7.5 (HIGH per CISA-ADP); GitHub advisory: 6.3 Moderate" — GitHub Advisory says 6.3, NVD/CISA says 7.5
+   - CORRECTED CVE-2025-65513 timeframe: was "16+ months" → "since December 2025 disclosure" (article published May 2026 = only ~5 months)
+   - CORRECTED CVE-2025-68145 CVSS: was "7.1" → "9.1 per NVD" (NIST v3.1 score is 9.1)
+   - CORRECTED CVE-2025-68144 CVSS: was "8.1" → "7.1 per NVD"
+   - CORRECTED mem0 CVSS: clarified 8.1 is Neptune backend only; PGVector/MySQL are 6.5
+   - DELETED unverifiable "AgentSeal confirmed 72.8% attack success rate in lab testing" claim
+   - DELETED "schema poisoning" — term not in Invariant Labs source
+   - DELETED "insecure memory references" and "covert channel abuse" from OWASP MCP Top 10 description — not found in the published document
+   - DELETED "100% test coverage after fixes" for Git MCP CVEs — unverifiable
+   - DELETED CVE-2025-69872 (FastMCP pickle deserialization) row — no advisory URL found to verify
+   - DELETED real-time GitHub issue counts (128 open issues for Notion, 129 for BrowserMCP) — stale data without timestamps
+   - DELETED "Multiple downstream MCP servers (Firecrawl, MarkItDown) inherit this exposure" — unverified
+   - CORRECTED "Microsoft's AI Red Team" → "Microsoft" (source names MSRC/Eva Benn, not AI Red Team)
+   - FIXED Invariant Labs link: was Snyk Labs overview page → now points to original tool poisoning disclosure
+   - FIXED Checkmarx link: was company homepage → now points to specific incident blog post
+   - ADDED primary source links throughout: Pluto Security (2,689 instances, MCPwn codename, 12 tools, Recorded Future 31 CVEs), GitHub advisories for all major CVEs, GHSA for Trivy, The Hacker News for Oura/Postmark/Anthropic archiving, Cisco blog for primary report
+   - ADDED Firestore remote MCP GA date link, OWASP Agentic App link, genai.owasp.org December 2025 publication link
+
+2. **reviews/firebase-mcp-server.md** (2026-05-04) — Key fixes:
+   - CORRECTED Firestore Remote MCP GA date: was "April 23 2026" → "April 20, 2026" (confirmed via Firestore release notes)
+   - CORRECTED Firebase CLI version for SSE mode: was "v15.13.0" → "v15.16.0" (v15.13.0 added backendId validation; SSE came in v15.16.0)
+   - CORRECTED Google Cloud Next date: was "April 28" → "April 29" (per Google Cloud Blog)
+   - REMOVED "1.6M weekly npm downloads" — npm data shows ~1.19M; claim not confirmed; replaced with "millions of developers"
+   - REMOVED "11.7K total npm downloads" for gannonh/firebase-mcp — figure unlinked and inconsistent with 255/week rate
+   - REMOVED "most widely deployed" superlative for Firebase — unverifiable without source
+   - ADDED links: Firebase GA blog post, Firebase experimental launch blog, Firebase docs for 30+ tools, Firestore release notes for GA date, firebase-tools releases for v15.16.0 SSE, Google Cloud Blog for 50+ MCP servers
+
+**Deploy:** Skipped — deploy throttle active (only ~4 minutes since previous deploy). Pages are built and ready; deploy on next run.
+
+---
+
 ## Run 2626 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-04-02 to 2026-05-06 batch, thirtieth cohort) + Deploy
 
 **Mode:** Citation auditor

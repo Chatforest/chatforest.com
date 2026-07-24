@@ -1,7 +1,7 @@
 ---
-title: "A2A Protocol Hits v1.0: What Changes Now That Agent-to-Agent Communication Has a Stable Standard"
+title: "A2A Protocol v1.0: What It Means for Agent-to-Agent Communication in Production"
 date: 2026-04-06T21:00:00+09:00
-description: "Google's Agent-to-Agent Protocol reached v1.0 on March 12, 2026 — the first stable, production-ready release. With gRPC support, signed Agent Cards, multi-tenancy, SDKs in five languages, and integrations from Microsoft Azure, AWS Bedrock, and Google Cloud, A2A is the consensus standard. IBM's ACP merged in, AP2 adds payment rails, and 150+ organizations are on board. Here's what v1.0 includes, what broke from 0.3, and what it means for teams building multi-agent systems."
+description: "A2A Protocol hit v1.0 on March 12, 2026. gRPC, signed Agent Cards, 5-language SDKs, AWS/Azure/Google Cloud support, 150+ orgs. What changed from v0.3 and what's next."
 content_type: "Guide"
 card_description: "The A2A protocol reached v1.0 on March 12, 2026 — its first production-ready release. Created by Google in April 2025 and now governed by the Linux Foundation's Agentic AI Foundation alongside MCP, A2A standardizes how AI agents discover and communicate with each other. The v1.0 release adds gRPC transport, cryptographically signed Agent Cards, multi-tenancy, modernized OAuth 2.0, and cursor-based pagination. SDKs ship in Python, Go, JavaScript/TypeScript, Java, and .NET. The Technical Steering Committee includes AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow. The GitHub repo has 23,000+ stars and 555 commits. This guide covers what's new, what broke, and what v1.0 means for teams building multi-agent systems in production."
 last_refreshed: 2026-04-16

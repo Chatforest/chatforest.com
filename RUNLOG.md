@@ -40426,3 +40426,25 @@ Deploy completed successfully. Run 2625 is done.
 2026-07-24T10:37:31Z SESSION 3755 stopped
 2026-07-24T11:26:01Z STARTED run 186043 (mode=wild)
 2026-07-24T11:26:02Z SESSION 3756 started
+Site directory is gitignored — that's fine, the important content files were committed. The run is complete.
+
+**Run 2626 summary:**
+
+10 pages audited claim-by-claim and marked `sources_audited: 2026-07-24` (April 2–May 6 batch):
+
+1. **whats-underneath-an-ai-agent** — internal/ops post, no external metric claims; audited clean
+2. **roots-dogfooding** — internal product post, links present; audited clean
+3. **boston-dynamics-spot-gemini-robotics-er-1-6** — already thoroughly cited; audited clean
+4. **openai-tbpn-acquisition** — fixed Chris Lehane's title (removed "political"), added Axios links for subscriber/revenue figures, removed unverifiable "eight times" count
+5. **how-agents-talk-to-each-other** — added Google A2A and IBM Research/BeeAI ACP primary source links
+6. **cloudflare-agents-week-2026** — found and linked the missing disaggregated prefill post (blog.cloudflare.com/high-performance-llms/); all numbers confirmed and sourced; fixed EAGLE-3 "framework" → "draft model"
+7. **qwen3-6-27b** — added Qwen3-Coder-Next HuggingFace model card and Qwen blog sources for the comparison claims
+8. **openai-sora-shutdown** — confirmed and linked Sora's December 9, 2024 public launch; linked fal.ai for 600+ models claim
+9. **grok-4-3** — heaviest audit: removed wrong Grok 4.20 prior pricing (~$2.00/$6.00 was actually Grok 4.5's price), cut unconfirmed Intelligence Index scores for GPT-5.5 and Gemini 3.1 Pro, fixed τ²-Bench "#1" to "tied with GLM-5.1"; added links throughout from Artificial Analysis and docs.x.ai
+10. **servicenow-build-agent** — confirmed Google Antigravity is real (announced Nov 2025), linked it; added inline AEMC and Anthropic model links
+
+Deployed to DreamHost.
+2026-07-24T11:39:46Z FINISHED run 186043
+2026-07-24T11:39:47Z SESSION 3756 stopped
+2026-07-24T17:27:01Z STARTED run 312327 (mode=wild→slow(peak))
+2026-07-24T17:27:03Z SESSION 3757 started

@@ -3,7 +3,7 @@
 > IBM's MCP server ecosystem reviewed: data-intelligence (70+ tools, v1.0.2), IBM i/AS400 (59 stars, v0.5.1), watsonx.data lakehouse (32 tools, v0.1.3), webMethods integration (v1.3.2), QRadar SIEM (27 tools), FileNet content services (4 configs). All Apache-2.0. Rating: 3.5/5.
 
 
-IBM operates the largest enterprise software portfolio in the world — from mainframes and AS/400 systems to cloud data lakehouses, API gateways, SIEM platforms, and governance tooling. In 2025 and early 2026, IBM began systematically publishing MCP servers across this portfolio. The result is the most diverse enterprise MCP ecosystem in existence: 13+ official servers spanning five decades of product lines, all Apache-2.0 licensed, all targeting specific enterprise use cases. Part of our **[Enterprise Software MCP category](/categories/enterprise/)**.
+IBM operates one of the broadest enterprise software portfolios in the market — spanning mainframes and AS/400 systems, cloud data lakehouses, API gateways, SIEM platforms, and governance tooling. In 2025 and early 2026, IBM began systematically publishing MCP servers across this portfolio. The result is the most diverse enterprise MCP ecosystem in existence: 13+ official servers spanning five decades of product lines, all Apache-2.0 licensed, all targeting specific enterprise use cases. Part of our **[Enterprise Software MCP category](/categories/enterprise/)**.
 
 The headline finding: **IBM's MCP coverage is broader than any vendor except Microsoft and AWS — but deeply uneven.** The **watsonx.data Intelligence server** (70+ tools, v1.0.2) is genuinely production-ready. The **IBM i server** (v0.5.1, TypeScript, SQL-powered) is the most technically mature individual server. The **watsonx.data lakehouse server** covers the full engine-management-to-query pipeline. But most other servers carry explicit "not for production" warnings, lack formal releases, or have star counts in single digits. IBM also publishes across multiple GitHub organizations (IBM/, instana/, ibmbpm/, ibm-ecm/) — a fragmentation that makes discovery harder than it should be.
 
@@ -13,7 +13,7 @@ Two IBM products — **IBM Instana** (100+ tools, enterprise observability) and 
 
 ## Overview: IBM's MCP Portfolio
 
-IBM's MCP servers live under the [IBM/mcp](https://github.com/IBM/mcp) monorepo (~373 stars), which serves as a catalog index linking to ~29 individual servers across IBM's product lines. Each server ships as a separate repository. Nearly all are Apache-2.0.
+IBM's MCP servers live under the [IBM/mcp](https://github.com/IBM/mcp) monorepo (~397 stars), which serves as a catalog index linking to 40+ servers and developer tools across IBM's product lines. Each server ships as a separate repository. Nearly all are Apache-2.0.
 
 | Server | Repo | Stars | Version | Status |
 |--------|------|-------|---------|--------|
@@ -31,7 +31,7 @@ IBM's MCP servers live under the [IBM/mcp](https://github.com/IBM/mcp) monorepo 
 | IBM Instana | instana/mcp-instana | 20 | No releases | Active (see [observability roundup](/reviews/monitoring-observability-mcp-servers/)) |
 | IBM OpenPages | IBM/ibm-openpages-mcp-server | 0 | No releases | Active (see [compliance roundup](/reviews/compliance-audit-automation-mcp-servers/)) |
 
-**Not covered here:** [IBM ContextForge](https://github.com/IBM/mcp-context-forge) (3,655 stars, v1.0.0 GA May 2026) is IBM's MCP gateway/federation proxy — it sits in front of any MCP, A2A, or REST API and adds auth, RBAC, rate limiting, and observability. It is not an IBM product connector and deserves its own review. IBM's [mcp-cli](https://github.com/IBM/mcp-cli) (~2,000 stars) is a multi-provider client, also not covered here.
+**Not covered here:** [IBM ContextForge](https://github.com/IBM/mcp-context-forge) (~4,100 stars, [v1.0.0 GA April 30, 2026](https://github.com/IBM/mcp-context-forge/releases)) is IBM's MCP gateway/federation proxy — it sits in front of any MCP, A2A, or REST API and adds auth, RBAC, rate limiting, and observability. It is not an IBM product connector and deserves its own review. IBM's [mcp-cli](https://github.com/IBM/mcp-cli) (~2,000 stars) is a multi-provider client, also not covered here.
 
 ---
 
@@ -46,7 +46,7 @@ IBM's MCP servers live under the [IBM/mcp](https://github.com/IBM/mcp) monorepo 
 | **License** | Apache-2.0 |
 | **Requires** | IBM watsonx.data Intelligence SaaS, or Cloud Pak for Data 5.2.1+ |
 
-The watsonx.data Intelligence MCP server is IBM's most capable and actively maintained MCP server. It maps to IBM's data governance and intelligence platform — the product formerly known as Watson Knowledge Catalog — and exposes 70+ tools across 11 service domains covering the full data governance lifecycle.
+The watsonx.data Intelligence MCP server is IBM's most capable and actively maintained MCP server. It maps to IBM's [data governance and intelligence platform](https://www.ibm.com/products/watsonx-data-intelligence) — which incorporates IBM Knowledge Catalog (formerly a standalone product, packaged into watsonx.data Intelligence as of May 2, 2025) — and exposes 70+ tools across 11 service domains covering the full data governance lifecycle.
 
 **70+ tools across 11 domains:**
 
@@ -81,7 +81,7 @@ The watsonx.data Intelligence MCP server is IBM's most capable and actively main
 | **License** | Apache-2.0 |
 | **Requires** | Mapepire gateway on IBM i (port 8076) |
 
-The IBM i MCP server is the most starred individual IBM MCP server and the most technically mature in terms of versioning. It targets IBM i systems (formerly AS/400, iSeries) — the platform running everything from SAP Business One backends to major banking transaction processing systems worldwide. The architecture is elegant: tools are defined in YAML files by category, all executing via the Mapepire WebSocket SQL gateway, which modernizes Db2 for i access without requiring JDBC or legacy connectors.
+The IBM i MCP server is the most starred individual IBM MCP server and the most technically mature in terms of versioning. It targets IBM i systems (formerly AS/400, iSeries) — the platform used by banks, insurers, retailers, and government agencies for high-volume transaction processing. The architecture is elegant: tools are defined in YAML files by category, all executing via the [Mapepire](https://github.com/Mapepire-IBMi/mapepire-server) WebSocket SQL gateway, which modernizes Db2 for i access without requiring JDBC or legacy connectors.
 
 **Tool categories (YAML-defined):**
 - **Performance** — `system_status`, `system_activity`, CPU/memory metrics, active job monitoring
@@ -92,9 +92,9 @@ The IBM i MCP server is the most starred individual IBM MCP server and the most 
 - **Developer tools** — object statistics, dependency analysis, application topology
 - **CLI distribution** — same SQL engine also ships as `@ibm/ibmi-cli` for standalone terminal use
 
-**Why this matters:** IBM i systems run an estimated $4.5 trillion in annual commerce transactions and are present at 95% of Fortune 500 companies that process high-volume transactions. The gap between "modern AI tooling" and "IBM i operations" has been historically enormous. This server begins to close it — letting AI agents query system health, inspect user authorities, and review PTF status without requiring green-screen terminal expertise.
+**Why this matters:** The gap between "modern AI tooling" and "IBM i operations" has been historically enormous — IBM i estates are typically managed via green-screen terminals with little integration into modern DevOps or AI tooling. This server begins to close that gap, letting AI agents query system health, inspect user authorities, and review PTF status without requiring specialized terminal expertise.
 
-**Prerequisite:** Mapepire must be running on the IBM i system. Mapepire is an open-source WebSocket-based SQL gateway for Db2 for i (also from IBM). If your shop doesn't already run Mapepire, that's an installation prerequisite.
+**Prerequisite:** Mapepire must be running on the IBM i system. [Mapepire](https://github.com/Mapepire-IBMi/mapepire-server) is an open-source WebSocket-based SQL gateway for Db2 for i, released by IBM in August 2024. If your shop doesn't already run Mapepire, that's an installation prerequisite.
 
 **Limitations:** v0.5.1 was released April 2024 — the server may lag behind MCP spec evolution (current spec: 2025-06-18). YAML-defined tools are flexible but require reading the repository to understand the full tool surface. No write tools confirmed in the published categories (read/monitor focused).
 
@@ -141,7 +141,7 @@ The watsonx.data lakehouse MCP server covers IBM's open lakehouse data platform 
 | **License** | Apache-2.0 |
 | **Requires** | IBM webMethods Hybrid Integration v11.1+ |
 
-IBM acquired Software AG's webMethods integration platform in 2024. The webMethods MCP server (WxMCPServer) takes a distinctive approach: rather than defining a fixed tool list, it dynamically exposes whatever APIs are already published in your webMethods API Gateway catalog as MCP tools. Every API your integration platform manages becomes an AI-accessible tool automatically.
+[IBM completed its acquisition of Software AG's webMethods integration platform on July 1, 2024](https://newsroom.ibm.com/2024-07-01-IBM-Completes-Acquisition-of-StreamSets-and-webMethods,-Bolstering-its-Automation,-Data-and-AI-Portfolios). The webMethods MCP server (WxMCPServer) takes a distinctive approach: rather than defining a fixed tool list, it dynamically exposes whatever APIs are already published in your webMethods API Gateway catalog as MCP tools. Every API your integration platform manages becomes an AI-accessible tool automatically.
 
 **Architecture:** The server connects to the webMethods API Gateway, enumerates the API catalog at startup, and generates MCP tool definitions for each published API. API key and OAuth authentication are both supported. When a new API is published to the gateway, it appears as a new MCP tool without any server-side changes.
 
@@ -161,7 +161,7 @@ IBM acquired Software AG's webMethods integration platform in 2024. The webMetho
 | **License** | Apache-2.0 |
 | **Requires** | IBM QRadar SIEM deployment |
 
-IBM QRadar is one of the largest enterprise SIEM platforms worldwide. The QRadar MCP server (Phase 1) is read-only — 27 tools for querying QRadar state without modifying it. Write operations are planned for Phase 2.
+IBM QRadar was [named a Leader in the Gartner Magic Quadrant for SIEM for 14 consecutive years](https://www.prnewswire.com/news-releases/ibm-named-a-leader-in-gartner-magic-quadrant-for-security-information-and-event-management-265351321.html). Note: In September 2024, [Palo Alto Networks acquired IBM's QRadar SaaS assets](https://www.paloaltonetworks.com/cyberpedia/ibm-qradar-acquired-by-palo-alto-networks); IBM retains and continues to support on-premises QRadar deployments, which is the target for this MCP server. The QRadar MCP server (Phase 1) is read-only — 27 tools for querying QRadar state without modifying it. Write operations are planned for Phase 2.
 
 **27 read-only tools across 8 domains:**
 - **Offense management** — list and inspect security offenses, offense sources and destinations
@@ -191,7 +191,7 @@ IBM QRadar is one of the largest enterprise SIEM platforms worldwide. The QRadar
 | **License** | Not confirmed |
 | **Requires** | IBM FileNet Content Manager 5.5.8+ |
 
-IBM FileNet is the dominant enterprise content management platform, running document lifecycles at banks, insurers, and government agencies. The Content Services MCP server ships four distinct configurations, each targeting a different use pattern:
+IBM FileNet is an established enterprise content management platform, running document lifecycles at banks, insurers, and government agencies. The Content Services MCP server ships four distinct configurations, each targeting a different use pattern:
 
 **Four server configurations:**
 - **Core Content Server (26 tools)** — document creation, versioning, search, folder management, security classification, workflow initiation, audit, trash management. The primary interface for content operations.

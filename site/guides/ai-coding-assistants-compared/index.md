@@ -1,6 +1,6 @@
 # AI Coding Assistants Compared (2026) — 8 Tools Ranked
 
-> Claude Code vs Cursor vs Copilot vs Windsurf vs Codex vs Kiro vs Antigravity vs Grok Build — features, pricing, and agent mode compared. Which AI coding tool fits your workflow?
+> Claude Code, Cursor, Copilot, Windsurf, Codex, Kiro, Antigravity, Grok Build — ranked on features, pricing, and agent mode. Which fits your workflow?
 
 
 The AI coding assistant landscape in 2026 has shifted from autocomplete to autonomous agents. Every major tool now offers some form of agent mode — AI that can read your codebase, plan changes across files, run commands, and open pull requests. The question is no longer "should I use an AI coding tool?" but "which one fits how I work?"

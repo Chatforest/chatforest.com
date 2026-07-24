@@ -5,11 +5,11 @@
 
 Part of our **[Databases MCP category](/categories/databases/)**. See also: **[Vector Database & Embedding MCP Servers roundup](/reviews/vector-database-embedding-mcp-servers/)**, **[Qdrant](/reviews/qdrant-mcp-server/)**, **[Chroma](/reviews/chroma-mcp-server/)**, **[Milvus](/reviews/milvus-mcp-server/)**, **[Pinecone](/reviews/pinecone-mcp-server/)**.
 
-**At a glance:** Standalone server — 161 GitHub stars, 43+ forks, Go, official (Weaviate team). Built-in MCP — ships in Weaviate v1.37+ (April 23, 2026), preview feature. Weaviate core — 29,000+ GitHub stars, one of the most widely deployed open-source vector databases. Community alternative: sajal2692/mcp-weaviate (FastMCP Python, 11 tools, deployable via uvx).
+**At a glance:** Standalone server — 162 GitHub stars, 44 forks, Go, official (Weaviate team), now deprecated in favor of the built-in server. Built-in MCP — ships in [Weaviate v1.37+](https://weaviate.io/blog/weaviate-1-37-release) (April 23, 2026), preview feature. Weaviate core — [16,600+ GitHub stars](https://github.com/weaviate/weaviate), one of the most widely deployed open-source vector databases. Community alternative: sajal2692/mcp-weaviate (FastMCP Python, 11 tools, deployable via uvx).
 
 Weaviate didn't just ship an MCP server. It shipped MCP *inside the database itself*.
 
-When Weaviate v1.37 landed on April 23, 2026, it became the first vector database — and arguably the first database of any kind — to embed Model Context Protocol support directly into the core database process. No separate server to install, no glue code, no extra port to manage. Set one environment variable, and Weaviate begins serving a Streamable HTTP MCP endpoint on the same port as its REST API.
+When [Weaviate v1.37 landed on April 23, 2026](https://weaviate.io/blog/weaviate-1-37-release), it became the first vector database — and arguably the first database of any kind — to embed Model Context Protocol support directly into the core database process. No separate server to install, no glue code, no extra port to manage. Set one environment variable, and Weaviate begins serving a Streamable HTTP MCP endpoint on the same port as its REST API.
 
 That's genuinely new. Every other MCP server in this space — [Qdrant](/reviews/qdrant-mcp-server/), [Chroma](/reviews/chroma-mcp-server/), [Milvus](/reviews/milvus-mcp-server/), [Pinecone](/reviews/pinecone-mcp-server/) — is a separate process you run alongside your database. Weaviate's built-in server is architecturally different: it's the database answering MCP calls directly.
 
@@ -138,7 +138,7 @@ Weaviate also ships a [Docs MCP Server](https://docs.weaviate.io/weaviate/mcp/do
 
 ## About Weaviate
 
-Before evaluating the MCP layer, it's worth understanding what's underneath. Weaviate is a major open-source vector database with 29,000+ GitHub stars — in the same tier as Qdrant (23,000+) and Milvus (40,000+). It's one of the three most widely deployed dedicated vector databases in production AI systems.
+Before evaluating the MCP layer, it's worth understanding what's underneath. Weaviate is a major open-source vector database with [16,600+ GitHub stars](https://github.com/weaviate/weaviate) — in the same tier as [Qdrant](https://github.com/qdrant/qdrant) and [Milvus (40,000+)](https://milvus.io/blog/milvus-exceeds-40k-github-stars.md). It's one of the most widely deployed dedicated vector databases in production AI systems.
 
 Weaviate's technical strengths:
 
@@ -152,7 +152,7 @@ Weaviate's technical strengths:
 
 ## What's Good
 
-**Database-native MCP is architecturally significant.** The built-in v1.37 server isn't just a convenience — it's a different model for how databases interact with AI agents. Instead of a separate process translating MCP calls into database API calls, the database answers MCP calls directly. This eliminates a network hop, a process to maintain, and a deployment artifact to manage. If this approach spreads to other databases, the built-in server pattern will be Weaviate's legacy in the MCP ecosystem. Weaviate was first.
+**Database-native MCP is architecturally significant.** The [built-in v1.37 server](https://weaviate.io/blog/weaviate-1-37-release) isn't just a convenience — it's a different model for how databases interact with AI agents. Instead of a separate process translating MCP calls into database API calls, the database answers MCP calls directly. This eliminates a network hop, a process to maintain, and a deployment artifact to manage. If this approach spreads to other databases, the built-in server pattern will be Weaviate's legacy in the MCP ecosystem. Weaviate was first.
 
 **Zero infrastructure for v1.37 users.** If you're already running Weaviate, the upgrade path is a single environment variable. No package to install, no process to manage, no port to open beyond what's already open. The MCP endpoint appears on the existing Weaviate port alongside the REST API. This is the lowest-friction path to adding MCP to a production vector database we've seen — including [Neon](/reviews/neon-mcp-server/), [Supabase](/reviews/supabase-mcp-server/), and [Firebase](/reviews/firebase-mcp-server/).
 
@@ -162,19 +162,19 @@ Weaviate's technical strengths:
 
 **Go-based standalone server.** The official standalone server in Go has lower memory overhead and startup time than Python-based equivalents ([Qdrant MCP](/reviews/qdrant-mcp-server/), [Chroma MCP](/reviews/chroma-mcp-server/), [Milvus MCP](/reviews/milvus-mcp-server/)). For production deployments where process resources matter, the language choice is a practical advantage.
 
-**Community alternative fills the tool gap.** The sajal2692/mcp-weaviate server's 11 tools meaningfully expand what agents can do — listing collections, fetching schemas, and mixing search strategies. The `uvx` deployment model (no install required) is developer-friendly. It doesn't have the adoption numbers of [Chroma MCP](/reviews/chroma-mcp-server/) (535 stars) or [Qdrant MCP](/reviews/qdrant-mcp-server/) (1,357 stars), but it covers use cases the official server can't.
+**Community alternative fills the tool gap.** The [sajal2692/mcp-weaviate](https://github.com/sajal2692/mcp-weaviate) server's 11 tools meaningfully expand what agents can do — listing collections, fetching schemas, and mixing search strategies. The `uvx` deployment model (no install required) is developer-friendly. It has minimal adoption (5 stars at time of writing) compared to [Chroma MCP](/reviews/chroma-mcp-server/) or [Qdrant MCP](/reviews/qdrant-mcp-server/), but it covers use cases the official server can't.
 
 ## What's Not
 
 **Built-in server is preview.** "API and behavior may change in future releases" is a real caveat for production teams. If Weaviate changes the tool names, parameters, or behavior of `/v1/mcp` in v1.38 or v1.39, your agent prompts and workflows may break. This is a normal stage for a new feature, but it means the built-in server isn't production-ready for teams that can't absorb churn.
 
-**Standalone server: only 2 tools.** The official Go server matches Qdrant's minimalism — insert and hybrid query. No collection management, no schema inspection, no delete, no list. Unlike Qdrant's server (which at least auto-creates collections and supports embedded local mode), the Weaviate standalone server requires a pre-existing Weaviate instance and pre-existing collections. Agents can't bootstrap their own database structure through MCP. Compare to [Chroma MCP](/reviews/chroma-mcp-server/) with 13 tools including full collection CRUD, or [Milvus MCP](/reviews/milvus-mcp-server/) with 11 tools including five search types.
+**Standalone server: only 2 tools — and now deprecated.** The [official Go server](https://github.com/weaviate/mcp-server-weaviate) matches Qdrant's minimalism — insert and hybrid query. No collection management, no schema inspection, no delete, no list. Unlike Qdrant's server (which at least auto-creates collections and supports embedded local mode), the Weaviate standalone server requires a pre-existing Weaviate instance and pre-existing collections. Agents can't bootstrap their own database structure through MCP. The Weaviate team has now marked the standalone server as deprecated in favor of the built-in v1.37 server. Compare to [Chroma MCP](/reviews/chroma-mcp-server/) with 13 tools including full collection CRUD, or [Milvus MCP](/reviews/milvus-mcp-server/) with 11 tools including five search types.
 
 **No delete capability in either official server.** Neither the built-in MCP nor the standalone Go server exposes a delete tool. If your agent writes incorrect data, there's no MCP interface to remove it. You'd need to use the Weaviate REST API or client library directly. This is a gap shared with [Qdrant MCP](/reviews/qdrant-mcp-server/).
 
 **Standalone server requires building from source.** Unlike `uvx mcp-server-qdrant` (Qdrant) or `uvx chroma-mcp` (Chroma), the official Weaviate standalone server has no npm or PyPI package. You clone the repo and run `go build`. This raises the setup bar meaningfully — developers without a Go toolchain need to install one first.
 
-**Low adoption on standalone server.** 161 stars is modest compared to Qdrant (1,357), Chroma (535), and Milvus (228). The standalone server is unlikely to become a community focal point now that the built-in server exists — which means community extensions, forks, and ecosystem tooling are unlikely to accumulate around it.
+**Low adoption on standalone server — and now deprecated.** The [standalone server](https://github.com/weaviate/mcp-server-weaviate) has 162 stars, and the Weaviate team has deprecated it now that the built-in server exists. Community extensions, forks, and ecosystem tooling will not accumulate around a deprecated repository.
 
 **No stdio transport for built-in server.** The built-in MCP endpoint is Streamable HTTP only — no stdio support. This is actually appropriate for a database-native server (stdio doesn't make sense for an in-process endpoint), but it means the built-in server can't be used with MCP clients that only support stdio. The standalone Go server is stdio only, going the other direction.
 
@@ -182,7 +182,7 @@ Weaviate's technical strengths:
 
 | Feature | Weaviate MCP | Qdrant MCP | Chroma MCP | Milvus MCP | Pinecone MCP |
 |---------|-------------|-----------|------------|------------|--------------|
-| **Stars (standalone)** | 161 | 1,357 | 535 | 228 | 64 |
+| **Stars (standalone)** | 162 (deprecated) | 1,500+ | 1,800+ | 228 | 64 |
 | **Tools (official)** | 2 (standalone) / built-in (preview) | 2 | 13 | 11 | 9 |
 | **Transport** | stdio (standalone) + Streamable HTTP (built-in) | stdio, SSE, Streamable HTTP | stdio only | stdio, SSE | stdio |
 | **Search types** | Hybrid (BM25 + vector) | Semantic only | Vector + full-text + regex | Hybrid (5 types) | Text + metadata |
@@ -208,11 +208,11 @@ The question is whether other databases follow. If Weaviate's built-in approach 
 
 For now, the practical picture is this: if you're running Weaviate v1.37+ and want to give AI agents access to your vector database, the built-in server is the obvious starting point. Set `MCP_SERVER_ENABLED: 'true'`, point your agent at `/v1/mcp`, and you're connected. Expect the API to evolve. Watch the v1.38 release notes.
 
-If you're not yet on v1.37, or you need more tool coverage, the community sajal2692/mcp-weaviate server with 11 tools is the better choice over the minimal official standalone Go server. And if you're evaluating vector DB MCP servers without being committed to Weaviate, [Chroma MCP](/reviews/chroma-mcp-server/) (13 tools, full CRUD) or [Qdrant MCP](/reviews/qdrant-mcp-server/) (best transport support, 745K weekly downloads) are better-established options today.
+If you're not yet on v1.37, or you need more tool coverage, the community sajal2692/mcp-weaviate server with 11 tools is the better choice over the minimal official standalone Go server. And if you're evaluating vector DB MCP servers without being committed to Weaviate, [Chroma MCP](/reviews/chroma-mcp-server/) (13 tools, full CRUD) or [Qdrant MCP](/reviews/qdrant-mcp-server/) (best transport support, higher adoption) are better-established options today.
 
 ## Rating: 3.5/5
 
-Weaviate earns a 3.5/5 for pioneering database-native MCP — the first vector database (and likely first database of any kind) to ship MCP built directly into the database process. The built-in v1.37 server is a genuine architectural innovation: zero-infrastructure, database-auth-integrated, Streamable HTTP on the existing port. Weaviate's hybrid search and production pedigree (29,000+ stars) make it a credible foundation.
+Weaviate earns a 3.5/5 for pioneering database-native MCP — the [first vector database](https://weaviate.io/blog/weaviate-1-37-release) (and likely first database of any kind) to ship MCP built directly into the database process. The built-in v1.37 server is a genuine architectural innovation: zero-infrastructure, database-auth-integrated, Streamable HTTP on the existing port. Weaviate's hybrid search and [production pedigree (16,600+ GitHub stars)](https://github.com/weaviate/weaviate) make it a credible foundation.
 
 What holds it back: the built-in server is preview with potential API changes, the standalone Go server offers only 2 tools with no delete capability and requires building from source, and adoption metrics lag behind Qdrant and Chroma significantly. The innovation is real but the practical maturity isn't there yet.
 

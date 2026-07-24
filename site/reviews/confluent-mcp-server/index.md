@@ -237,7 +237,7 @@ That framing makes more sense when you consider the use cases where AI agents ad
 
 For teams building event-driven architectures on Confluent Cloud, the MCP server represents a meaningful improvement to the developer experience. The combination of Flink SQL execution, Tableflow pipeline management, stream governance tagging, and billing visibility in a single server — with vendor-backed support and enterprise-grade security hardening — is a strong package. The OAuth gap and thin Schema Registry coverage are real limitations, but they're tracked issues with clear resolution paths.
 
-The harder question is for the broader Kafka ecosystem. Over 70% of Kafka deployments run on self-managed infrastructure (strimzi, on-prem, cloud VMs, MSK). For those users, the official Confluent server offers 8 of 52 tools. The community has partially filled the gap — kanapuli and tuannvm cover basic self-managed Kafka with reasonable auth options — but no community server approaches the Flink or Tableflow capabilities that make the Confluent server interesting.
+The harder question is for the broader Kafka ecosystem. Many Kafka deployments run on self-managed infrastructure (strimzi, on-prem, cloud VMs, MSK). For those users, the official Confluent server offers 8 of 52 tools. The community has partially filled the gap — kanapuli and tuannvm cover basic self-managed Kafka with reasonable auth options — but no community server approaches the Flink or Tableflow capabilities that make the Confluent server interesting.
 
 ## Rating: 3.5/5
 

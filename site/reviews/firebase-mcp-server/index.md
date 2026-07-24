@@ -5,13 +5,13 @@
 
 Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
-**At a glance:** Official Google/Firebase implementation, GA since October 2025, 30+ tools across 10+ service categories, integrated into firebase-tools (1.6M+ weekly npm downloads), Firestore Remote MCP reached GA April 23 2026, compatible with Claude Code, Claude Desktop, Gemini CLI, Cursor, VS Code Copilot, Windsurf, and more
+**At a glance:** Official Google/Firebase implementation, [GA since October 2025](https://firebase.blog/posts/2025/10/firebase-mcp-server-ga/), [30+ tools](https://firebase.google.com/docs/ai-assistance/mcp-server) across 10+ service categories, integrated into firebase-tools, Firestore Remote MCP [reached GA April 20, 2026](https://docs.cloud.google.com/firestore/docs/release-notes), compatible with Claude Code, Claude Desktop, Gemini CLI, Cursor, VS Code Copilot, Windsurf, and more
 
 Firebase's MCP server is the official tool for connecting AI coding agents to the full Firebase platform. Unlike narrow database MCP servers that give you one service through one interface, Firebase's server spans everything Google's mobile and web backend platform offers: Firestore, Authentication, Cloud Storage, Cloud Functions, Crashlytics, App Hosting, Realtime Database, Data Connect, Remote Config, Cloud Messaging, and built-in access to Firebase documentation.
 
-The server lives inside the [firebase/firebase-tools](https://github.com/firebase/firebase-tools) repository — the same CLI that over a million developers use weekly. There's no separate package to install. If you already have firebase-tools, you have the MCP server. This integration is intentional: Firebase treats the MCP server as a first-class CLI feature, not an optional plugin.
+The server lives inside the [firebase/firebase-tools](https://github.com/firebase/firebase-tools) repository — the same CLI used by millions of developers. There's no separate package to install. If you already have firebase-tools, you have the MCP server. This integration is intentional: Firebase treats the MCP server as a first-class CLI feature, not an optional plugin.
 
-The server went GA in October 2025 after a May 2025 experimental launch. As of April 23, 2026, the Firestore-specific remote MCP server also reached GA — a separate hosted endpoint for Firestore-only access without the full CLI requirement. This review covers the primary firebase-tools MCP server.
+The server [went GA in October 2025](https://firebase.blog/posts/2025/10/firebase-mcp-server-ga/) after a [May 2025 experimental launch](https://firebase.blog/posts/2025/05/firebase-mcp-server/). As of [April 20, 2026, the Firestore-specific remote MCP server also reached GA](https://docs.cloud.google.com/firestore/docs/release-notes) — a separate hosted endpoint for Firestore-only access without the full CLI requirement. This review covers the primary firebase-tools MCP server.
 
 ## What It Does
 
@@ -117,9 +117,9 @@ This is useful when you only need database access and don't want to expose Cloud
 
 ## Community Alternative: gannonh/firebase-mcp
 
-The community [gannonh/firebase-mcp](https://github.com/gannonh/firebase-mcp) (224 stars) takes a different approach: it uses a Firebase Admin SDK service account key rather than the CLI's Google Account login. This makes it more suitable for headless environments and server-side setups where interactive login isn't possible.
+The community [gannonh/firebase-mcp](https://github.com/gannonh/firebase-mcp) ([224 stars](https://github.com/gannonh/firebase-mcp)) takes a different approach: it uses a Firebase Admin SDK service account key rather than the CLI's Google Account login. This makes it more suitable for headless environments and server-side setups where interactive login isn't possible.
 
-Its scope is narrower than the official server — Firestore, Storage, and Authentication only — but its CRUD toolset is well-documented and actively maintained (v1.4.9, ~11.7K total npm downloads). Configuration requires a `SERVICE_ACCOUNT_KEY_PATH` environment variable pointing to your service account JSON.
+Its scope is narrower than the official server — Firestore, Storage, and Authentication only — but its CRUD toolset is well-documented and actively maintained ([v1.4.9](https://github.com/gannonh/firebase-mcp/releases)). Configuration requires a `SERVICE_ACCOUNT_KEY_PATH` environment variable pointing to your service account JSON.
 
 **Known issue:** The `firestore_list_collections` tool may produce a Zod validation error in client logs. The query still executes correctly — it's a logging artifact, not a functional failure.
 
@@ -127,17 +127,17 @@ If you need the full Firebase feature surface, use the official server. If you'r
 
 ## What's New (April–May 2026)
 
-**Firestore Remote MCP reached GA (April 23, 2026).** The Firestore-specific remote MCP server is now generally available — a hosted HTTP endpoint for Firestore access that doesn't require the firebase-tools CLI locally. This complements the full firebase-tools MCP server for teams who only need Firestore operations and prefer a remote, hosted approach.
+**[Firestore Remote MCP reached GA (April 20, 2026)](https://docs.cloud.google.com/firestore/docs/release-notes).** The Firestore-specific remote MCP server is now generally available — a hosted HTTP endpoint for Firestore access that doesn't require the firebase-tools CLI locally. This complements the full firebase-tools MCP server for teams who only need Firestore operations and prefer a remote, hosted approach.
 
-**Firebase CLI v15.13.0** added SSE mode (`firebase mcp --mode=sse --port=3000`), expanding the server beyond stdio for remote and headless environments. This closes a usability gap for teams running AI assistants in containerized or remote setups.
+**[Firebase CLI v15.16.0](https://github.com/firebase/firebase-tools/releases/tag/v15.16.0)** added SSE mode (`firebase mcp --mode=sse --port=3000`), expanding the server beyond stdio for remote and headless environments. This closes a usability gap for teams running AI assistants in containerized or remote setups.
 
-**Google Cloud Next '26 (April 28)** expanded Google's broader MCP ecosystem. The Firebase MCP server is one of 50+ official Google MCP servers now available — see our [Google Cloud MCP Servers](/reviews/google-cloud-mcp-servers/) review for the full picture. Firebase's server is architecturally separate (stdio/SSE, not hosted remote), but shares the Developer Knowledge infrastructure with the rest of Google's MCP portfolio.
+**[Google Cloud Next '26 (April 29)](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone)** expanded Google's broader MCP ecosystem. The Firebase MCP server is one of [50+ official Google MCP servers](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) now available — see our [Google Cloud MCP Servers](/reviews/google-cloud-mcp-servers/) review for the full picture. Firebase's server is architecturally separate (stdio/SSE, not hosted remote), but shares the Developer Knowledge infrastructure with the rest of Google's MCP portfolio.
 
 ## What's Good
 
 **Widest Firebase service coverage available.** No other MCP server covers FCM, Crashlytics, App Hosting, and Remote Config alongside the core Firestore/Auth/Storage trio. If you work across the Firebase platform, this is the only server that covers your full stack.
 
-**Zero additional installation for firebase-tools users.** The 1.6M developers downloading firebase-tools weekly already have everything they need. One JSON config block and you're running. No extra npm packages, no separate binaries.
+**Zero additional installation for firebase-tools users.** The millions of developers using firebase-tools already have everything they need. One JSON config block and you're running. No extra npm packages, no separate binaries.
 
 **Developer Knowledge built in.** The documentation search tool makes your AI assistant genuinely informed about Firebase, not just operationally capable. Ask your agent to create a security rule and it can reference Firebase's own docs while doing so.
 
@@ -187,7 +187,7 @@ For a broader comparison, see our [Best Database MCP Servers](/guides/best-datab
 
 ## The Bigger Picture
 
-Firebase is one of the most widely deployed mobile and web backend platforms in existence. Millions of apps — from indie side projects to enterprise-scale consumer products — run on Firestore, Firebase Auth, and Firebase Storage. The MCP server reaching GA means developers can now manage that infrastructure through natural language for the first time, using the same AI assistants they use for code.
+Firebase is a major mobile and web backend platform. Many apps — from indie side projects to enterprise-scale consumer products — run on Firestore, Firebase Auth, and Firebase Storage. The MCP server reaching GA means developers can now manage that infrastructure through natural language, using the same AI assistants they use for code.
 
 The architecture choice here — embedding the MCP server into firebase-tools rather than deploying a separate remote endpoint — reflects Firebase's existing developer relationship. Firebase developers already run the CLI constantly: deploying rules, managing functions, debugging Firestore. The MCP server just adds an AI-addressable interface to those same operations.
 

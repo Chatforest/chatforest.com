@@ -9,6 +9,7 @@ tags: ["ai-policy", "ai-safety", "nist", "caisi", "google", "microsoft", "xai", 
 categories: ["reviews"]
 author: "ChatForest"
 last_refreshed: 2026-05-25
+sources_audited: 2026-07-25
 ---
 
 **Summary:** On May 5, 2026, the U.S. Department of Commerce announced that Google, Microsoft, and xAI have agreed to submit unreleased frontier AI models to NIST's Center for AI Standards and Innovation (CAISI) for pre-release evaluation. The announcement added three more companies to a voluntary testing framework that Anthropic and OpenAI had already joined under the Biden administration. CAISI evaluates for cybersecurity, biosecurity, and chemical weapons risks. It has no authority to delay or block a model release. This article covers what the framework does, what it cannot do, and why it matters anyway. Part of our **[AI Industry Analysis](/categories/ai-tools/)** coverage.
@@ -17,9 +18,9 @@ last_refreshed: 2026-05-25
 
 ## The Announcement
 
-On May 5, 2026 — three weeks after Anthropic's Claude Mythos model was partially released without authorization, triggering significant concern in policy circles — [the U.S. Department of Commerce announced](https://www.cnbc.com/2026/05/05/ai-oversight-trump-google-microsoft-xai.html) that Google, Microsoft, and xAI had agreed to give the Center for AI Standards and Innovation early access to their frontier models before public release.
+On May 5, 2026 — two weeks after [Bloomberg reported unauthorized users had accessed Anthropic's Claude Mythos model](https://www.bloomberg.com/news/articles/2026-04-21/anthropic-s-mythos-model-is-being-accessed-by-unauthorized-users), triggering significant concern in policy circles — [the U.S. Department of Commerce announced](https://www.cnbc.com/2026/05/05/ai-oversight-trump-google-microsoft-xai.html) that Google, Microsoft, and xAI had agreed to give the Center for AI Standards and Innovation early access to their frontier models before public release.
 
-Anthropic and OpenAI already had similar agreements from approximately two years prior, signed during the Biden administration's voluntary AI safety commitments framework in 2024. The May 5 announcement expanded that circle to include the remaining major U.S. frontier AI labs.
+[Anthropic and OpenAI already had similar agreements from approximately two years prior](https://www.ansi.org/standards-news/all-news/9-9-24-us-ai-safety-institute-signs-agreements-with-anthropic-and-openai), signed during the Biden administration in August 2024. The May 5 announcement expanded that circle to include the remaining major U.S. frontier AI labs.
 
 [CAISI Director Chris Fall](https://www.hpcwire.com/off-the-wire/nists-caisi-announces-new-frontier-ai-testing-agreements-with-google-deepmind-microsoft-xai/) described the rationale directly:
 
@@ -33,7 +34,7 @@ The specific focus areas CAISI evaluates: **cybersecurity threats**, **biosecuri
 
 CAISI is a unit within NIST (National Institute of Standards and Technology). It is a measurement and evaluation agency. It does not regulate, license, or approve AI models. It has no authority to block a model release, impose conditions on deployment, or sanction a company that declines to cooperate.
 
-What it does: conduct structured red-teaming, capability evaluations, and benchmark testing on pre-release models. Its evaluators attempt to elicit dangerous capabilities — to see whether the model can meaningfully assist with attacks that its safety systems are supposed to prevent. By the time CAISI has completed "dozens of AI model evaluations, including on unreleased state-of-the-art models," per its own account, it has accumulated a significant empirical database of what frontier models can and cannot do in high-risk domains.
+What it does: conduct structured red-teaming, capability evaluations, and benchmark testing on pre-release models. Its evaluators attempt to elicit dangerous capabilities — to see whether the model can meaningfully assist with attacks that its safety systems are supposed to prevent. [By May 2026, CAISI had completed more than 40 model evaluations, including on unreleased state-of-the-art models](https://www.nist.gov/caisi), accumulating a significant empirical database of what frontier models can and cannot do in high-risk domains.
 
 The output of a CAISI evaluation is a findings document. That document goes to the company and to government stakeholders. What happens next is up to the company.
 
@@ -43,11 +44,11 @@ This is voluntary in the most complete sense. A company that decides its finding
 
 ## Why the Mythos Context Matters
 
-The May 5 announcement did not emerge from a vacuum. In April 2026, Claude Mythos — Anthropic's most capable model, which Anthropic had voluntarily withheld from public release due to its cybersecurity capabilities — was partially released through an unauthorized channel. The incident exposed a gap: even labs that self-restrict their most dangerous models cannot guarantee that those models remain contained.
+The May 5 announcement did not emerge from a vacuum. In [April 2026, Claude Mythos](https://siliconangle.com/2026/04/22/anthropic-investigates-unauthorized-access-restricted-claude-mythos-ai-model/) — Anthropic's most capable model, which Anthropic had voluntarily withheld from public release due to its cybersecurity capabilities — was accessed by unauthorized users through a third-party vendor environment. The incident exposed a gap: even labs that self-restrict their most dangerous models cannot guarantee that those models remain contained.
 
-That incident is widely credited with prompting the White House to accelerate work on a formal pre-release review framework. By May 5, three additional major labs had agreed to voluntary testing. By mid-May, a draft executive order circulated within the administration that would have required formal pre-release federal review — a 90-day window — for the most capable models. The signing ceremony was scheduled for May 22.
+That incident is widely credited with prompting the White House to accelerate work on a formal pre-release review framework. By May 5, three additional major labs had agreed to voluntary testing. By mid-May, a draft executive order circulated within the administration that would have required formal pre-release federal review — with a window of up to 90 days — for the most capable models. The signing was [scheduled for May 21](https://www.washingtonpost.com/technology/2026/05/21/white-house-tore-down-ai-rules-now-its-building-new-defenses/).
 
-Then the order was cancelled, [reportedly after lobbying from AI company executives and adviser David Sacks](/reviews/trump-ai-executive-order-cancelled-anthropic-mythos-may-2026/), who argued that even a voluntary framework signaled government oversight authority in a way that would slow development and concern investors.
+Then the order was [pulled at the last minute](https://www.washingtonpost.com/politics/2026/05/22/last-minute-lobbying-by-tech-industry-officials-led-trump-cancel-ai-order/), reportedly after calls from AI company executives including Elon Musk and Mark Zuckerberg, and from [former AI and crypto czar David Sacks](https://www.cnbc.com/2026/03/26/david-sacks-trump-crypto-ai-czar.html), who argued that even a voluntary framework signaled government oversight authority in a way that would slow development and concern investors. (See our full [analysis of the cancelled EO and what replaced it](/reviews/trump-ai-executive-order-cancelled-anthropic-mythos-may-2026/).)
 
 The voluntary CAISI agreements are what's left.
 
@@ -57,9 +58,9 @@ The voluntary CAISI agreements are what's left.
 
 The voluntary nature of the framework is both its political viability and its structural limitation.
 
-The UK's AI Safety Institute has a formal evaluation process for frontier models. The EU AI Act mandates pre-market conformity assessments for high-risk AI systems. The U.S. now has voluntary agreements — agreements that the labs consented to, that carry no enforcement mechanism, and that the administration chose to preserve as voluntary rather than codify into law.
+The [UK's AI Safety Institute has a formal evaluation process for frontier models](https://www.aisi.gov.uk/frontier-ai-trends-report), backed by the UK AI Safety Act passed in late 2025 which created mandatory pre-deployment evaluation requirements. The [EU AI Act mandates pre-market conformity assessments for high-risk AI systems](https://www.vde.com/topics-en/artificial-intelligence/blog/conformity-assessment-high-risk-ai). The U.S. now has voluntary agreements — agreements that the labs consented to, that carry no enforcement mechanism, and that the administration chose to preserve as voluntary rather than codify into law.
 
-That is not nothing. CAISI evaluations are rigorous. The labs that participate are giving the government real early access to capabilities that might otherwise not be visible until after public release. The relationship between labs and CAISI has produced genuine insights — the "dozens of evaluations" CAISI has completed represent the most detailed empirical picture of frontier model capabilities that any U.S. government agency has seen.
+That is not nothing. CAISI evaluations are rigorous. The labs that participate are giving the government real early access to capabilities that might otherwise not be visible until after public release. The relationship between labs and CAISI has produced genuine insights — the [more than 40 evaluations CAISI has completed](https://www.nist.gov/caisi) represent the most detailed empirical picture of frontier model capabilities that any U.S. government agency has seen.
 
 But the evaluations happen on the labs' timeline, in the context of the labs' cooperation, and with findings that go to the labs before anyone else. The labs that have agreed to this framework have also agreed to it because the alternative — mandatory federal review with authority to impose delays — was exactly what they successfully lobbied to prevent.
 

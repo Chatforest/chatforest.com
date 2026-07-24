@@ -1,8 +1,8 @@
 ---
 title: "AI Coding Assistants Compared (2026) — 8 Tools Ranked"
 date: 2026-03-28T21:00:00+09:00
-description: "Claude Code vs Cursor vs Copilot vs Windsurf vs Codex vs Kiro vs Antigravity vs Grok Build — features, pricing, and agent mode compared. Which AI coding tool fits your workflow?"
-og_description: "Eight AI coding assistants compared: Claude Code, Cursor, GitHub Copilot, Windsurf, OpenAI Codex, Amazon Kiro, Google Antigravity, and Grok Build. Honest comparison with pricing."
+description: "Claude Code, Cursor, Copilot, Windsurf, Codex, Kiro, Antigravity, Grok Build — ranked on features, pricing, and agent mode. Which fits your workflow?"
+og_description: "Claude Code, Cursor, GitHub Copilot, Windsurf, OpenAI Codex, Amazon Kiro, Google Antigravity, and Grok Build compared — features, pricing, and agent mode. Honest 2026 rankings."
 content_type: "Guide"
 card_description: "Eight AI coding tools are competing to change how you write software — the newest: xAI Grok Build with worktree-isolated parallel agents, now included in SuperGrok ($30/mo). Honest comparison with pricing."
 last_refreshed: 2026-05-26
