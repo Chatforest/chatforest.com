@@ -5,9 +5,10 @@ description: "A comprehensive guide to MCP's outputSchema and structuredContent 
 content_type: "Guide"
 card_description: "Master MCP structured output — outputSchema definitions, dual content/structuredContent responses, schema design, validation, and migration from text-only tools."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
-MCP's `outputSchema` and `structuredContent` features, introduced in the 2025-06-18 specification, let tools declare and return typed data alongside human-readable content. This transforms MCP tools from "functions that return text" into "functions with real return types" — enabling programmatic validation, type-safe tool chaining, and reliable multi-agent workflows.
+MCP's `outputSchema` and `structuredContent` features, introduced in the [2025-06-18 specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools), let tools declare and return typed data alongside human-readable content. This transforms MCP tools from "functions that return text" into "functions with real return types" — enabling programmatic validation, type-safe tool chaining, and reliable multi-agent workflows.
 
 This guide goes deep on structured output: how it works at the protocol level, how to implement it in both TypeScript and Python SDKs, how clients should validate and consume it, and how to design schemas that serve both machines and language models well. Our analysis draws on the MCP specification, SDK source code, and published community patterns — we research and analyze rather than testing implementations hands-on.
 
@@ -75,7 +76,7 @@ Before `outputSchema`, MCP tools returned data as text strings inside `content` 
 }
 ```
 
-Key constraints from the specification:
+Key constraints from the [specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#structured-output):
 
 - **Root type must be `"object"`** — the schema enforces this with `"type": {"const": "object"}`. You cannot use arrays, primitives, or union types at the root level. If you need to return a list, wrap it: `{ "items": [...], "total": 42 }`.
 - **JSON Schema 2020-12 by default** — when no `$schema` is provided, the schema is interpreted as JSON Schema 2020-12.
@@ -118,7 +119,7 @@ The specification requires both fields to be present for tools with `outputSchem
 
 **Both fields must be semantically equivalent** — they represent the same information in different formats. `content` is optimized for token efficiency and natural language understanding. `structuredContent` is optimized for type-safe programmatic access.
 
-This dual approach exists for backward compatibility. Older clients that don't understand `structuredContent` continue to work by reading `content`. The specification states:
+This dual approach exists for backward compatibility. Older clients that don't understand `structuredContent` continue to work by reading `content`. The [specification states](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#structured-output):
 
 > A tool that returns structured content SHOULD also return the serialized JSON in a TextContent block.
 

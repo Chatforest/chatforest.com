@@ -5,6 +5,7 @@ description: "How to integrate MCP servers with popular AI agent frameworks."
 content_type: "Guide"
 card_description: "Every major AI agent framework now supports MCP. Learn how to connect MCP servers to LangChain, CrewAI, OpenAI Agents SDK, and PydanticAI — with working code examples and practical comparisons."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 MCP (Model Context Protocol) has become the standard way AI agents connect to external tools and data. But MCP is a protocol, not a framework — you still need an agent framework to orchestrate LLM reasoning, tool selection, and multi-step workflows.

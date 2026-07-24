@@ -7,6 +7,7 @@ content_type: "Guide"
 card_description: "95+ MCP servers for accounting and finance — QuickBooks, Xero, Sage, NetSuite, tax prep, invoicing, payroll, and compliance. Architecture patterns for AI-powered reconciliation and automated tax filing."
 last_refreshed: 2026-04-13
 lastmod: 2026-04-13
+sources_audited: 2026-07-24
 ---
 
 Accounting runs on fragmented software. A typical small business might track income in QuickBooks, send invoices through FreshBooks, manage expenses via Brex, run payroll through Gusto, file taxes using country-specific software, reconcile bank accounts through Plaid, and produce financial reports in spreadsheets — each system holding a piece of the financial picture, each requiring manual data transfer between them. The global AI-in-accounting market reached [$10.87 billion in 2026, growing at 44.6% annually toward a projected $68.75 billion by 2031](https://www.mordorintelligence.com/industry-reports/artificial-intelligence-in-accounting-market). The [automated bookkeeping segment alone is growing at 46.1% CAGR](https://www.mordorintelligence.com/industry-reports/artificial-intelligence-in-accounting-market). Among U.S. accountants, [46% now use AI daily, and 81% report measurable productivity gains](https://www.firmofthefuture.com/news/accountant-tech-survey-2025/).
@@ -291,7 +292,7 @@ Bank reconciliation — matching transactions in accounting software against ban
 
 **Plaid MCP Server** | **Official** | Developer tools integration
 
-Plaid's official MCP server provides developer tools integration, API usage metrics, Link conversion optimization, and support diagnostics. Plaid connects to 12,000+ financial institutions.
+Plaid's official MCP server provides developer tools integration, API usage metrics, Link conversion optimization, and support diagnostics. [Plaid connects to 12,000+ financial institutions](https://plaid.com/), making it a natural bridge for bank reconciliation workflows.
 
 **Community Plaid MCP** | .NET | Personal finance
 
@@ -309,7 +310,7 @@ SAP's MCP ecosystem spans multiple implementation approaches.
 
 **SAP ABAP MCP Add-on** — Supports SAP ABAP releases from 7.01 onwards with display, create, and update tools for SAP ECC and S/4HANA. Covers the full range of SAP financial transactions.
 
-**SAP HANA Cloud** — Full MCP support announced from Q1 2026 for Joule agents.
+**SAP HANA Cloud** — MCP support for Joule agents (SAP's AI assistant).
 
 **[DataZooDE/erpl-adt](https://github.com/DataZooDE/erpl-adt)** | 6 stars | CLI and MCP for SAP ADT REST API.
 

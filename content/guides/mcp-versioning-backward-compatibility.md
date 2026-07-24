@@ -5,6 +5,7 @@ description: "How MCP protocol versioning works, what changed between spec versi
 content_type: "Guide"
 card_description: "Navigate MCP's evolving spec without breaking your integrations. Learn version negotiation, capability handling, breaking changes across versions, and migration strategies."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 The Model Context Protocol moves fast. Since its public release in November 2024, the spec has gone through four major revisions — each adding features, tightening requirements, and occasionally breaking things. If you build or maintain MCP servers, understanding how versioning works is essential for keeping your integrations running as the ecosystem evolves.
@@ -251,7 +252,7 @@ This matters for versioning because capabilities expand over time. A server buil
 
 ### The Capability Gap Problem
 
-Research by Apify and PulseMCP found that most MCP clients in practice only support basic tool calling, with inconsistent support for prompts, resources, sampling, and roots. This creates a feedback loop: servers do not implement advanced features because clients do not support them, and clients do not add support because few servers use them.
+The community-maintained [`mcp-client-capabilities`](https://github.com/apify/mcp-client-capabilities) database — built from testing across dozens of MCP clients — documents that most clients support only basic tool calling, with inconsistent support for prompts, resources, sampling, and roots. This creates a feedback loop: servers do not implement advanced features because clients do not support them, and clients do not add support because few servers use them.
 
 The community-maintained [`mcp-client-capabilities`](https://github.com/apify/mcp-client-capabilities) database tracks which clients support which features, so server authors can adapt behavior to specific clients.
 

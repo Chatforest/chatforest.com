@@ -5,6 +5,7 @@ description: "How to connect AI agents to PostgreSQL, MySQL, SQLite, and other d
 content_type: "Guide"
 card_description: "Your database has the data your AI agents need. Here's how to connect them safely through MCP — from local SQLite to production PostgreSQL with multi-tenant access control."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Databases hold the data AI agents need most — customer records, product catalogs, analytics, internal knowledge. The Model Context Protocol gives agents a standard way to query and (sometimes) write to those databases. But getting the connection right means navigating real tradeoffs: how much schema to expose, how to prevent SQL injection, whether to allow writes, and how to scale beyond a single user.

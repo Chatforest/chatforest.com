@@ -5,6 +5,7 @@ description: "A practical guide to using MCP in data science workflows — cover
 content_type: "Guide"
 card_description: "MCP connects AI agents to Jupyter notebooks, ML experiments, feature stores, and data pipelines. This guide covers the tools and workflow patterns that make data science more productive."
 last_refreshed: 2026-03-28
+sources_audited: 2026-07-24
 ---
 
 Data science is fragmented. A typical workflow touches Jupyter notebooks, SQL databases, experiment trackers, feature stores, visualization tools, and pipeline orchestrators — each with its own interface, authentication, and mental model. MCP collapses that into a single AI conversation.
