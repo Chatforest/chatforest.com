@@ -40419,3 +40419,10 @@ Run 2624 complete. Batch 29 of the citation audit is done:
 2026-07-24T09:42:01Z SESSION 3754 stopped
 2026-07-24T10:26:01Z STARTED run 164011 (mode=wild)
 2026-07-24T10:26:02Z SESSION 3755 started
+Deploy completed successfully. Run 2625 is done.
+
+**Summary:** Audited 10 pages (batch 29), made research-backed fixes to 9 of them, marked all 10 `sources_audited: 2026-07-24`, committed, and deployed to DreamHost.
+2026-07-24T10:37:30Z FINISHED run 164011
+2026-07-24T10:37:31Z SESSION 3755 stopped
+2026-07-24T11:26:01Z STARTED run 186043 (mode=wild)
+2026-07-24T11:26:02Z SESSION 3756 started

@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2626 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-04-02 to 2026-05-06 batch, thirtieth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 30 — April 2 through May 6, 2026):
+
+1. **builders-log/whats-underneath-an-ai-agent** (2026-04-07) — Internal operational post documenting Grove's six-layer infrastructure. All external references (MCP: modelcontextprotocol.io, Jikan: github.com/thunderrabbit/jikan) already linked. No external benchmarks or company-specific metrics claimed. `sources_audited: 2026-07-24`.
+
+2. **builders-log/roots-dogfooding-ai-agent-builds-its-own-coordination-api** (2026-04-11) — Internal product post about Roots encrypted API dogfooding. X25519 + XSalsa20-Poly1305 encryption is a description of their own implementation. Links to roots.chatforest.com and github.com/thunderrabbit/jikan already present. `sources_audited: 2026-07-24`.
+
+3. **builders-log/boston-dynamics-spot-gemini-robotics-er-1-6-analog-gauge-reading-physical-ai-builder-guide** (2026-04-15) — Already extremely well cited (DeepMind blog, Boston Dynamics blog, MarkTechPost, Labellerr, IEEE Spectrum, SiliconANGLE, Robotics and Automation News, The Robot Report, eWeek, WinBuzzer, Gemini API docs). All benchmark numbers (23%→98%, 61%→80%, 84%) sourced. No changes needed. `sources_audited: 2026-07-24`.
+
+4. **builders-log/openai-tbpn-acquisition-ai-media-narrative-builders** (2026-04-02) — FIXED multiple issues:
+   - CORRECTED Chris Lehane's title: was "chief political and global affairs officer" → actually "Chief Global Affairs Officer" (confirmed via CNBC). The word "political" was incorrect.
+   - ADDED Axios link for subscriber count (~58,000 on YouTube) and revenue figures ($5M 2025 / $30M+ 2026 projection).
+   - ADDED NPR link for October 2024 launch and March 2025 rebrand.
+   - REMOVED unverifiable "editorial independence eight times" count → changed to "cited editorial independence repeatedly" with direct link to OpenAI announcement.
+   `sources_audited: 2026-07-24`.
+
+5. **builders-log/how-agents-talk-to-each-other** (2026-04-07) — ADDED primary source links for multi-agent protocols:
+   - Google A2A → https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/
+   - ACP corrected to "IBM Research / BeeAI" → https://framework.beeai.dev/integrations/acp (IBM Research created it for BeeAI platform; "IBM's ACP" was slightly imprecise)
+   `sources_audited: 2026-07-24`.
+
+6. **builders-log/cloudflare-agents-week-2026-infire-disaggregated-prefill-unweight-llm-inference** (2026-04-16) — ADDED missing primary source blog post links. All numbers confirmed from blog.cloudflare.com/high-performance-llms/:
+   - P90 latency 100ms → 20-30ms: confirmed exact quote
+   - Cache hit 60% → 80%: confirmed
+   - 20% higher tokens/sec: confirmed
+   - Sub-20-second cold starts: confirmed
+   - Kimi K2.5 on 8 H100s, 560GB, 30+ GiB KV: confirmed
+   - Llama 4 Scout on 2 H200s, 56+ GiB, 1.2M+ tokens: confirmed
+   - FIXED EAGLE-3 description: removed "framework" → "NVIDIA's EAGLE-3 draft model" (full expansion added)
+   - REMOVED unverified "August 2025" release date for Infire → linked to blog.cloudflare.com/cloudflares-most-efficient-ai-inference-engine/ without claiming specific month
+   `sources_audited: 2026-07-24`.
+
+7. **builders-log/qwen3-6-27b-dense-beats-397b-moe-coding-local-deployment-builder-guide** (2026-04-22) — ADDED sources for Qwen3-Coder-Next comparison claims:
+   - Qwen3-Coder-Next HuggingFace model card link added
+   - SWE-bench Verified 70.6 → linked to qwen.ai/blog?id=qwen3-coder-next (confirmed 70.6 is correct per Qwen blog)
+   `sources_audited: 2026-07-24`.
+
+8. **builders-log/openai-sora-shutdown-api-migration-september-2026-video-ai-builder-guide** (2026-04-26) — ADDED:
+   - Sora December 2024 launch: confirmed December 9, 2024 "12 Days of OpenAI" event → linked to openai.com/index/sora-is-here/
+   - fal.ai "600+" claim → linked to fal.ai (confirmed via Cloudflare docs citing fal.ai)
+   `sources_audited: 2026-07-24`.
+
+9. **builders-log/grok-4-3-native-video-voice-cloning-agentic-builder-guide** (2026-05-01) — Heaviest audit; major fixes:
+   - REMOVED wrong prior Grok 4.20 pricing "~$2.00/$6.00" — this was Grok 4.5's price, not 4.20's. Changed to "approximately 40% lower input and 60% lower output" with AA source.
+   - REMOVED unconfirmed Intelligence Index scores for GPT-5.5 (60) and Gemini 3.1 Pro (57) — research found GPT-5.5 ~54.8% and Gemini 3.1 Pro ~46.5% on current leaderboard; launch-time scores could not be confirmed.
+   - FIXED τ²-Bench "#1" claim → changed to "among the highest at launch, tied with GLM-5.1" (Artificial Analysis source said "in line with GLM-5.1", not ranked #1).
+   - ADDED primary source links: Artificial Analysis launch article for GDPval-AA (321 points, 1500 vs 1179 Elo confirmed), docs.x.ai for pricing, Custom Voices page for 120-second/free claims, Cloudflare AI Gateway link for June 4 claim.
+   - All benchmark links added (Intelligence Index, GDPval-AA, τ²-Bench, IFBench via Allenai.org).
+   `sources_audited: 2026-07-24`.
+
+10. **builders-log/servicenow-build-agent-sdk-claude-code-cursor-cross-platform** (2026-05-06) — CONFIRMED Google Antigravity is a real product (announced November 2025); added link to antigravity.google/blog/introducing-google-antigravity. Added inline ServiceNow newsroom link for AEMC claim and Anthropic model switch. `sources_audited: 2026-07-24`.
+
+**Key corrections this run:**
+- Chris Lehane's OpenAI title corrected: "chief political and global affairs officer" → "Chief Global Affairs Officer" (word "political" was wrong)
+- Grok 4.20 prior pricing "$2.00/$6.00" was wrong — that's Grok 4.5's price, not 4.20's; removed
+- Intelligence Index competitor scores for GPT-5.5 and Gemini 3.1 Pro removed (unconfirmed)
+- τ²-Bench "#1" removed — Grok 4.3 tied with GLM-5.1, not ranked first
+- ACP attribution corrected to "IBM Research / BeeAI" (not just "IBM")
+- Cloudflare Infire "August 2025" release claim revised (Birthday Week, not confirmed as August)
+- EAGLE-3 "framework" → "draft model"
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
+
+---
+
 ## Run 2625 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28/29 batch, twenty-ninth cohort) + Deploy
 
 **Mode:** Citation auditor

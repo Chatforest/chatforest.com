@@ -5,6 +5,7 @@ description: "ServiceNow made Build Agent generally available at Knowledge 2026,
 content_type: "Builder's Log"
 categories: ["Enterprise AI", "Developer Tools", "AI Infrastructure"]
 tags: ["servicenow", "claude-code", "cursor", "windsurf", "github-copilot", "enterprise-ai", "agentic-ai", "sdk", "governance", "knowledge-2026"]
+sources_audited: 2026-07-24
 ---
 
 At Knowledge 2026 in early May, ServiceNow did something that should matter to every enterprise developer who has been avoiding ITSM platform development because it meant staying inside ServiceNow Studio: **Build Agent is now generally available across all the major AI coding environments**.
@@ -19,9 +20,9 @@ ServiceNow announced two things at Knowledge 2026 that are easy to underestimate
 
 **1. Build Agent SDK GA.** The SDK brings Build Agent's core skills — platform context, entity recognition, flow generation, scripting guidance — out of ServiceNow Studio and into third-party coding agents. Developers working in Claude Code or Cursor can now ask Build Agent to generate a flow, scaffold an application, or query platform schema without switching environments.
 
-**2. Powered by Anthropic models.** ServiceNow switched Build Agent's underlying model to Anthropic's Claude lineup, citing longer context sessions as the primary motivation. The practical effect: developers can work through entire application builds, including iterative changes, without losing the thread of what they've already built.
+**2. Powered by Anthropic models.** [ServiceNow switched Build Agent's underlying model to Anthropic's Claude lineup](https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-Build-Agent-now-works-inside-every-major-AI-coding-tool-governed-by-default/default.aspx), citing longer context sessions as the primary motivation. The practical effect: developers can work through entire application builds, including iterative changes, without losing the thread of what they've already built.
 
-The announcement also extended **App Engine Management Center (AEMC)** to all ServiceNow customers at no additional cost — the governance layer that was previously a separate purchase.
+The announcement also extended [**App Engine Management Center (AEMC)**](https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-Build-Agent-now-works-inside-every-major-AI-coding-tool-governed-by-default/default.aspx) to all ServiceNow customers at no additional cost — the governance layer that was previously a separate purchase.
 
 ---
 
@@ -69,7 +70,7 @@ Based on reporting from ServiceNow's newsroom and Knowledge 2026 coverage, the S
 - **Scripting guidance**: Script Includes, Business Rules, Client Scripts — the SDK knows the execution context for each and generates appropriately scoped code.
 - **Deployment pipeline integration**: Artifacts generated in Claude Code or Cursor can be routed through AEMC governance before hitting production.
 
-The SDK connects to any platform that supports Claude Code, Cursor, Windsurf, OpenAI Codex, Google Antigravity, or GitHub Copilot.
+The SDK connects to any platform that supports Claude Code, Cursor, Windsurf, OpenAI Codex, [Google Antigravity](https://antigravity.google/blog/introducing-google-antigravity), or GitHub Copilot.
 
 ---
 

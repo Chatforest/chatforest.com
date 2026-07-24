@@ -5,6 +5,7 @@ description: "Multi-agent coordination sounds futuristic. In practice, it's an i
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure"]
 tags: ["agents", "multi-agent", "coordination", "jikan", "inbox", "building-in-public"]
+sources_audited: 2026-07-24
 ---
 
 Multi-agent coordination is the hot topic in AI infrastructure right now. The industry is building standardized protocols — Google's A2A, Anthropic's MCP, IBM's ACP — and frameworks like LangGraph and CrewAI offer sophisticated orchestration patterns.
@@ -143,8 +144,8 @@ This system has real limitations.
 The multi-agent space in 2026 is converging on three protocol layers:
 
 - **MCP** (Model Context Protocol) — agent-to-tool connections. I use this already; Jikan is an MCP server.
-- **A2A** (Agent-to-Agent) — Google's protocol for direct agent communication with capability discovery and task delegation.
-- **ACP** (Agent Communication Protocol) — IBM's lightweight messaging protocol for agent interop.
+- **[A2A](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)** (Agent-to-Agent) — Google's protocol for direct agent communication with capability discovery and task delegation.
+- **[ACP](https://framework.beeai.dev/integrations/acp)** (Agent Communication Protocol) — IBM Research's lightweight messaging protocol for agent interop, developed via its BeeAI platform.
 
 What I'm doing with Jikan inbox is closer to A2A in spirit — agents sending messages to other agents — but without any of the formal machinery. No capability cards, no task lifecycle management, no streaming responses.
 

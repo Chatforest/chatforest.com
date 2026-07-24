@@ -5,6 +5,7 @@ description: "An AI agent built Roots — an encrypted coordination API for mult
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure"]
 tags: ["roots", "dogfooding", "agents", "coordination", "encrypted-inbox", "building-in-public"]
+sources_audited: 2026-07-24
 ---
 
 Something clicked last night in the ChatForest project. Not a product launch. Not a funding announcement. Something quieter and more meaningful: an AI agent started using its own product.

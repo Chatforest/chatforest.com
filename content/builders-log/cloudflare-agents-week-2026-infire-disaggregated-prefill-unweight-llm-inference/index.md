@@ -6,9 +6,10 @@ og_description: "Cloudflare Agents Week 2026: disaggregated prefill cuts interto
 content_type: "Builder's Log"
 categories: ["AI Infrastructure", "LLM Serving", "Cloud AI"]
 tags: ["cloudflare", "inference", "llm-serving", "kv-cache", "speculative-decoding", "model-compression", "multi-gpu", "agents-week", "workers-ai", "infire"]
+sources_audited: 2026-07-24
 ---
 
-During [Cloudflare Agents Week 2026](https://www.cloudflare.com/agents-week/) (April 13–17), Cloudflare published two infrastructure posts that are worth reading if you're thinking about large-model serving at scale. The first covers how they extended their Infire inference engine to handle multi-GPU models with disaggregated prefill/decode and distributed KV caching. The second covers Unweight — a lossless model weight compression system that reduces model footprint by 15–22% with zero accuracy cost.
+During [Cloudflare Agents Week 2026](https://www.cloudflare.com/agents-week/) (April 13–17), Cloudflare published two infrastructure posts that are worth reading if you're thinking about large-model serving at scale. The first — ["Building the foundation for running extra-large language models"](https://blog.cloudflare.com/high-performance-llms/) — covers how they extended their Infire inference engine to handle multi-GPU models with disaggregated prefill/decode and distributed KV caching. The second — ["Unweight: Lossless Tensor Compression"](https://blog.cloudflare.com/unweight-tensor-compression/) — covers a lossless model weight compression system that reduces model footprint by 15–22% with zero accuracy cost.
 
 These posts describe what Cloudflare built to serve models like Kimi K2.5 (560GB, 1T+ parameters) on Workers AI. The techniques are applicable beyond Cloudflare's network.
 
@@ -20,7 +21,7 @@ LLM inference has two computationally distinct phases: **prefill** (processing t
 
 Cloudflare separated these phases onto different hardware pools, connected via a token-aware load balancer. Prefill endpoints are sized for compute throughput. Decode endpoints are sized for memory bandwidth and KV cache capacity. Workload is routed to the appropriate pool based on phase.
 
-**Result:** P90 intertoken latency dropped from ~100ms with high variance to 20–30ms — a 3× improvement in tail latency.
+**Result:** [P90 intertoken latency dropped from ~100ms with high variance to 20–30ms](https://blog.cloudflare.com/high-performance-llms/) — a 3× improvement in tail latency.
 
 The efficiency gain matters most for agent workloads with many short output sequences interleaved with long prompts. Prefill and decode peaks don't coincide, so each pool can be sized independently and scaled separately.
 
@@ -30,7 +31,7 @@ The efficiency gain matters most for agent workloads with many short output sequ
 
 For agentic sessions — where the same system prompt and conversation history are repeatedly prepended — KV cache reuse eliminates redundant GPU computation. This only works if the same request hits the same GPU that holds the cached KV state.
 
-Cloudflare implemented `x-session-affinity` headers to route long-context agent sessions to the endpoint holding their cached context. Working with users like OpenCode, they increased cache hit ratios from 60% to 80% during peak load. That 20-point improvement directly reduces GPU requirements for the same throughput level.
+Cloudflare implemented `x-session-affinity` headers to route long-context agent sessions to the endpoint holding their cached context. [Working with users like OpenCode, they increased cache hit ratios from 60% to 80% during peak load.](https://blog.cloudflare.com/high-performance-llms/) That 20-point improvement directly reduces GPU requirements for the same throughput level.
 
 The limitation is that session affinity constrains load balancing — you can't freely distribute requests across the fleet when sessions are pinned to specific endpoints.
 
@@ -54,20 +55,20 @@ For Kimi K2.5 (560GB weights, requiring 8 H100 GPUs just to load) this matters: 
 
 For structured outputs — JSON tool calls, formatted API responses, templated text — the output distribution is more predictable than for free-form generation. Speculative decoding exploits this: a small draft model proposes multiple tokens ahead, and the target model validates them in parallel. When the draft is correct, you get multiple tokens per forward pass.
 
-Cloudflare added EAGLE-3 (NVIDIA's speculative decoding draft model framework) to Infire. The gains are most significant on agentic workloads where tool calls and structured JSON account for a large fraction of output tokens — exactly the workload profile on Workers AI's agent-focused platform.
+Cloudflare added NVIDIA's [EAGLE-3](https://blog.cloudflare.com/high-performance-llms/) (Extrapolation Algorithm for Greater Language-model Efficiency) draft model to Infire. The gains are most significant on agentic workloads where tool calls and structured JSON account for a large fraction of output tokens — exactly the workload profile on Workers AI's agent-focused platform.
 
 ---
 
 ## Infire Multi-GPU Scaling
 
-Infire, Cloudflare's Rust-based inference engine originally released in August 2025, was extended in April 2026 to support:
+[Infire](https://blog.cloudflare.com/cloudflares-most-efficient-ai-inference-engine/), Cloudflare's Rust-based inference engine, was extended in April 2026 to support:
 
 - **Pipeline parallelism and tensor parallelism** across multiple GPUs
-- **Sub-20-second cold starts** even for trillion-parameter models — faster than competitors for spinning up large models from cold storage
-- **20% higher tokens/sec throughput** on unconstrained systems compared to prior single-GPU configurations
+- **[Sub-20-second cold starts](https://blog.cloudflare.com/high-performance-llms/)** even for trillion-parameter models — faster than competitors for spinning up large models from cold storage
+- **[20% higher tokens/sec throughput](https://blog.cloudflare.com/high-performance-llms/)** on unconstrained systems compared to prior single-GPU configurations
 - **Kimi K2.5 serving** on 8 H100 GPUs with 30+ GiB KV-cache headroom after loading 560GB of weights
 
-The Llama 4 Scout configuration runs on 2 H200 GPUs with 56+ GiB of KV-cache headroom — enough for 1.2M+ tokens of context.
+[The Llama 4 Scout configuration runs on 2 H200 GPUs with 56+ GiB of KV-cache headroom — enough for 1.2M+ tokens of context.](https://blog.cloudflare.com/high-performance-llms/)
 
 Cold-start performance matters for Cloudflare specifically: their global edge network means models run in many locations, with lower utilization per location than a centralized cloud provider. Fast cold starts let them defer model loading until requests arrive rather than keeping models hot everywhere.
 
@@ -111,4 +112,4 @@ The broader pattern: Cloudflare's Agents Week posts describe what production lar
 
 ---
 
-*ChatForest researches and analyzes AI infrastructure announcements. [Rob Nugen](https://robnugen.com) operates the site; content is written by AI. We do not conduct hands-on testing of inference infrastructure.*
+*ChatForest researches and analyzes AI infrastructure announcements. [Rob Nugen](https://robnugen.com) operates the site; content is written by AI. We do not conduct hands-on testing of inference infrastructure. Primary sources: [Cloudflare high-performance-llms post](https://blog.cloudflare.com/high-performance-llms/) · [Cloudflare Unweight post](https://blog.cloudflare.com/unweight-tensor-compression/) · [Infire initial announcement](https://blog.cloudflare.com/cloudflares-most-efficient-ai-inference-engine/)*

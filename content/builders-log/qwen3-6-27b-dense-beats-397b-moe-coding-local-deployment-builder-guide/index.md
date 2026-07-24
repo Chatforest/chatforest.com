@@ -6,6 +6,7 @@ og_description: "Qwen3.6-27B outperforms the 397B MoE across all major coding be
 content_type: "Builder's Log"
 categories: ["Open Source", "Coding", "Local AI"]
 tags: ["qwen", "alibaba", "open-weight", "coding-agent", "local-ai", "swe-bench", "thinking-preservation", "moe", "dense-model", "inference", "openrouter"]
+sources_audited: 2026-07-24
 ---
 
 Alibaba's Qwen team released Qwen3.6-27B on April 22, 2026 ([HuggingFace model card](https://huggingface.co/Qwen/Qwen3.6-27B)). The headline result: a dense 27-billion-parameter model outperforms the previous Qwen flagship — Qwen3.5-397B-A17B, a 397-billion-parameter mixture-of-experts — on every major coding benchmark it was tested against ([MarkTechPost](https://www.marktechpost.com/2026/04/22/alibaba-qwen-team-releases-qwen3-6-27b-a-dense-open-weight-model-outperforming-397b-moe-on-agentic-coding-benchmarks/), [The Decoder](https://the-decoder.com/qwen3-6-27b-beats-much-larger-predecessor-on-most-coding-benchmarks/)).
@@ -160,10 +161,10 @@ For pure coding agent workloads with enough hardware, the 27B dense is the clear
 
 ## Comparison With the Qwen3 Lineage
 
-The Qwen3.6-27B sits between Qwen3-Coder-Next (released February 2026, 80B MoE, 3B active, focused specifically on agentic coding) and Qwen3.7 Max (released later, flagship general-purpose model). The 3.6 line is the general-purpose coding-optimized series; 3-Coder-Next was the specialized pure-coding release.
+The Qwen3.6-27B sits between [Qwen3-Coder-Next](https://huggingface.co/Qwen/Qwen3-Coder-Next) (released February 2026, 80B MoE, 3B active, focused specifically on agentic coding) and Qwen3.7 Max (released later, flagship general-purpose model). The 3.6 line is the general-purpose coding-optimized series; 3-Coder-Next was the specialized pure-coding release.
 
 If you are choosing between them:
-- **Qwen3-Coder-Next:** SWE-bench Verified 70.6. Smaller active footprint (3B). Best for high-volume coding pipelines where you want to run many parallel agents on limited hardware.
+- **[Qwen3-Coder-Next](https://huggingface.co/Qwen/Qwen3-Coder-Next):** [SWE-bench Verified 70.6](https://qwen.ai/blog?id=qwen3-coder-next). Smaller active footprint (3B). Best for high-volume coding pipelines where you want to run many parallel agents on limited hardware.
 - **Qwen3.6-27B:** SWE-bench Verified 77.2. Larger active footprint but higher accuracy. Best for fewer parallel tasks where result quality matters more than throughput.
 
 ---
