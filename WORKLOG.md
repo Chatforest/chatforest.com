@@ -2,6 +2,53 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2625 — 2026-07-24 — Claim-Level Citation Audit: 10 Pages (2026-03-28/29 batch, twenty-ninth cohort) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages. Proceeded with audit.
+
+**Claim-level citation audit — 10 pages marked `sources_audited: 2026-07-24`** (oldest unaudited by date, batch 29):
+
+1. **guides/mcp-serverless-deployment.md** — Added pricing page links for Cloudflare, AWS Lambda, Azure Functions, Google Cloud Run, Vercel. REMOVED "90% cost savings" for Vercel Fluid Compute (no source found; replaced with factual description with docs link). Added FastMCP "70%" claim link to FastMCP GitHub README. `sources_audited: 2026-07-24`.
+
+2. **guides/mcp-vs-function-calling.md** — Added AAIF co-founding link (Anthropic blog post). Added source link for token overhead numbers (55K tokens / 17K Jira) via jdhodges.com analysis. `sources_audited: 2026-07-24`.
+
+3. **guides/mcp-async-tasks-long-running.md** — FastMCP "70%" claim now links to FastMCP's own GitHub README as the primary source. `sources_audited: 2026-07-24`.
+
+4. **guides/mcp-browser-automation.md** — ADDED source links: Browserbase $40M Series B (company blog, June 2025), Browser-Use 89.1% WebVoyager accuracy (technical report), Chrome Auto Browse Jan 2026/Gemini 3 (Google blog). FIXED Chrome users: "3 billion" → "over 3.4 billion" per Backlinko 2025-26. FIXED WebMCP claim: "submitted to W3C" → "Draft Community Group Report published Feb 10, 2026" (was August 2025 proposal, February was the W3C Draft publication). Added Vercel agent-browser 93% reduction source. REMOVED unverified "2x faster / 30% cheaper" action caching numbers for Stagehand (no primary source found). `sources_audited: 2026-07-24`.
+
+5. **guides/mcp-rag-patterns.md** — REMOVED "57% of organizations now deploy agents in production" stat — cited a Medium article that itself lacks a primary source. Replaced with factual non-quantified statement. `sources_audited: 2026-07-24`.
+
+6. **guides/mcp-workflow-orchestration-frameworks.md** — ADDED Mastra $13M seed round link (mastra.ai/blog/seed-round) and YC W25 profile. REMOVED "Code Mode used 58% fewer tokens than raw MCP on 12 Stripe API tasks" — not found in the Anthropic Engineering blog post (the 98.7% figure for a Google Drive→Salesforce workflow IS confirmed). Added FastMCP GitHub README link for "70%" claim. `sources_audited: 2026-07-24`.
+
+7. **guides/mcp-testing-tools-cookbook.md** — Article is well-linked throughout; all tools cite their GitHub repos or documentation. No substantive changes needed. `sources_audited: 2026-07-24`.
+
+8. **guides/mcp-openai-integration.md** — REMOVED "GPT-5.3-Codex" specific model name (not a recognized model in OpenAI's lineup; replaced with link to OpenAI models docs). REMOVED "ChatGPT's 800+ million user base" (800M was Nov 2025 milestone; replaced with link to OpenAI official announcement to avoid stale number). `sources_audited: 2026-07-24`.
+
+9. **guides/mcp-anthropic-claude-integration.md** — FastMCP "70%" claim now links to FastMCP's own GitHub README. Added AAIF "100+ members" link to Anthropic blog. Added links to TypeScript SDK releases page (GitHub) and Python SDK PyPI for version numbers. `sources_audited: 2026-07-24`.
+
+10. **guides/mcp-environmental-monitoring.md** — ADDED MarketsandMarkets PR Newswire link for environmental monitoring market ($16.1B 2025 → $21.1B 2030 at 5.6% CAGR). ADDED Polaris Market Research link for AI in environmental sustainability ($17.2B 2024 → $100B 2034 at 19.4% CAGR). REMOVED "Over 50% of environmental monitoring systems now integrate IoT and AI" — no primary source found (different from IoT adoption in mining). REMOVED "adoption of AI-enabled predictive environmental analytics has jumped 47%" — not found in any primary source. ADDED Copernicus/ESA link for Sentinel-2 "1.6 TB per pass" claim. `sources_audited: 2026-07-24`.
+
+**Key fixes this run (via research agents with web search):**
+- Chrome users corrected: "3 billion" → "3.4 billion+" per Backlinko (2025-26 estimate)
+- WebMCP W3C timeline clarified: proposal August 2025, Draft Community Group Report published Feb 10, 2026
+- Browser-Use WebVoyager benchmark: confirmed 89.1% (article said 89%)
+- Browserbase $40M Series B: confirmed June 18, 2025
+- Chrome Auto Browse + Gemini 3 + January 2026: confirmed
+- Mastra $13M + YC W25 + 300K npm downloads: all confirmed
+- FastMCP "70%" claim: confirmed in FastMCP GitHub README
+- Token overhead (55K tokens, 17K Jira): confirmed via jdhodges.com analysis
+- Anthropic code execution 98.7% token reduction: confirmed in blog post; "58% on Stripe tasks" NOT in post → removed
+- Environmental monitoring market stats: MarketsandMarkets + Polaris Market Research confirmed two stats; two others NOT FOUND → cut
+
+**Hugo rebuild** — clean build (4,129 pages). **Deployed** to DreamHost 2026-07-24.
+
+---
+
+
 ## Run 2624 (continuation) — 2026-07-24 — Claim-Level Citation Audit: 10 More Pages (2026-03-28/29 batch, twenty-eighth cohort) + Deploy
 
 **Mode:** Citation auditor (continued from context-exhausted Run 2624 above)
