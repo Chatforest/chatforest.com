@@ -6,6 +6,7 @@ og_description: "How to build AI agents that actually remember. Covers episodic,
 content_type: "Guide"
 card_description: "Context windows aren't memory. Here's how to build agents that persist, learn, and forget — covering the full memory stack from working memory to long-term storage."
 last_refreshed: 2026-04-11
+sources_audited: 2026-07-24
 ---
 
 An AI agent without memory is an expensive autocomplete. It forgets your name between sessions, re-asks questions you already answered, and treats every conversation like the first. The context window gives agents *short-term* memory — but when the conversation ends, everything vanishes.
@@ -112,7 +113,7 @@ The memory framework landscape has matured significantly. Here's how the major o
 
 **Architecture:** Graph RAG with temporal indexing via [Graphiti](https://github.com/getzep/graphiti), Zep's temporal knowledge graph engine. Integrates structured business data with conversational history. **Note:** Zep Community Edition was [deprecated in early 2026](https://github.com/getzep/zep) — only Zep Cloud remains actively supported.
 
-**Performance:** Independent evaluation shows ~85% on LoCoMo benchmark. P95 search latency of 0.632 seconds with concurrent search configuration, though [recent third-party benchmarks](https://blog.supermemory.ai/supermemory-vs-zep/) report recall latency closer to ~4 seconds. Zep's team has publicly challenged Mem0's benchmark methodology, with corrected scores showing Zep outperforming by ~10%.
+**Performance:** Zep self-reports ~84% on LoCoMo; [independent re-evaluation places the score at 58%](https://github.com/getzep/zep-papers/issues/5) after correcting methodology. P95 search latency of 0.632 seconds with concurrent search configuration, though [recent third-party benchmarks](https://blog.supermemory.ai/supermemory-vs-zep/) report recall latency closer to ~4 seconds. [Zep's team has publicly challenged Mem0's benchmark methodology](https://blog.getzep.com/lies-damn-lies-statistics-is-mem0-really-sota-in-agent-memory/), arguing corrected scores show Zep outperforming.
 
 **Best for:** Applications where *when* something was said matters as much as *what* was said. Enterprise use cases with compliance requirements around conversation history.
 
@@ -155,7 +156,7 @@ The memory framework landscape has matured significantly. Here's how the major o
 | Framework | Memory Type | Storage | Open Source | LoCoMo Score | Latency (p95) | Best For |
 |-----------|-------------|---------|-------------|-------------|----------------|----------|
 | Mem0 | Semantic + Graph | Vector + Neo4j | Partial | ~58-66% | 50-200ms recall | Managed memory API |
-| Zep | Temporal graph | Graph + Vector | Cloud only | ~85% | 632ms-4s search | Temporal/episodic memory |
+| Zep | Temporal graph | Graph + Vector | Cloud only | Disputed (58–84%) | 632ms-4s search | Temporal/episodic memory |
 | Letta | OS-inspired tiers | Editable blocks | Yes (Apache) | ~83.2% | Integrated | Agent-managed memory |
 | LangMem | JSON documents | Structured store | Yes | N/A | Varies | LangGraph users |
 | Supermemory | Graph + Vector + Keyword | Integrated | Partial | Claims SOTA | ~200ms recall | Speed-critical applications |
@@ -284,7 +285,7 @@ ChatGPT's memory stores facts learned during conversations and applies them to f
 
 ### Gemini (Google)
 
-Gemini added automatic memory with privacy controls in August 2025 and launched "Personal Intelligence" with Gemini 3 in January 2026. In March 2026, Google added [import tools](https://blog.google/innovation-and-ai/products/gemini-app/switch-to-gemini-app/) for migrating chat history and memories from ChatGPT and Claude (up to 5GB via ZIP upload). In April 2026, Google launched [Gemini Notebooks](https://gemini.google/release-notes/) — persistent project workspaces where the AI has read access to all files and chats within the workspace, functioning as a form of structured long-term context. Available for AI Ultra, Pro, and Plus subscribers.
+Gemini added automatic memory with privacy controls in 2025 and [launched "Personal Intelligence" in January 2026](https://www.androidauthority.com/google-gemini-personal-intelligence-rollout-3632287/) — a feature that connects Gemini to Gmail, Google Photos, and YouTube for personalized context. In March 2026, Google added [import tools](https://blog.google/innovation-and-ai/products/gemini-app/switch-to-gemini-app/) for migrating chat history and memories from ChatGPT and Claude (up to 5GB via ZIP upload). In April 2026, Google launched [Gemini Notebooks](https://gemini.google/release-notes/) — persistent project workspaces where the AI has read access to all files and chats within the workspace, functioning as a form of structured long-term context. Available for AI Ultra, Pro, and Plus subscribers.
 
 ### The Portability Trend
 

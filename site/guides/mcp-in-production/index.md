@@ -168,7 +168,7 @@ As of early 2025, Pinterest's MCP infrastructure handles **66,000 tool invocatio
 
 Pinterest runs a **central MCP registry** that acts as the source of truth for approved servers and their connectivity metadata. Both a human-friendly UI and an API allow discovery, validation, and integration into internal AI clients and IDEs. Clients consult the registry to validate permissions and server status before calling tools, enforcing governance consistently across the organization.
 
-This mirrors Pattern 1 (Gateway + Multiple MCP Servers) described above, but with a registry layer that adds discoverability and governance — something the broader MCP ecosystem is working toward through the planned MCP Registry specification (Q4 2026 roadmap).
+This mirrors Pattern 1 (Gateway + Multiple MCP Servers) described above, but with a registry layer that adds discoverability and governance — something the broader MCP ecosystem is working toward through the [planned MCP Registry specification (Q4 2026 roadmap)](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/).
 
 ### Security Model
 

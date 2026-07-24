@@ -103,7 +103,7 @@ Bots will get things wrong. AI will hallucinate, information will go stale, and 
 
 Every platform has rules about automated accounts. Follow them.
 
-- **Blue Sky** requires the bot label for automated accounts. They also have rate limits and content policies.
+- **Blue Sky** [strongly recommends the bot label](https://docs.bsky.app/docs/starter-templates/bots) for automated accounts — it's documented best practice and protects your account from suspension. They also have rate limits and content policies.
 - **Most platforms** prohibit deceptive automation, coordinated inauthentic behavior, and spam.
 - **Terms change.** What's allowed today might not be allowed tomorrow. Stay current.
 

@@ -219,13 +219,13 @@
 <p><strong>Key strengths:</strong></p>
 <ul>
 <li><strong>Open source</strong>: <a href="https://github.com/openai/codex">Apache 2.0 license</a>, 67,000+ GitHub stars, 400+ contributors — you can inspect and modify the code</li>
-<li><strong>Token efficiency</strong>: Claims ~4x more token-efficient than Claude Code, stretching your API budget further</li>
-<li><strong>Speed</strong>: <a href="https://developers.openai.com/codex/changelog">GPT-5.3-Codex</a> combines frontier coding performance with stronger reasoning, running 25% faster than its predecessor. Codex-Spark delivers 1,000+ tokens per second (research preview for Pro users)</li>
+<li><strong>Token efficiency</strong>: <a href="https://spectrumailab.com/blog/claude-code-vs-openai-codex-comparison-2026">~4x more token-efficient than Claude Code</a> in benchmark comparisons, stretching your API budget further</li>
+<li><strong>Speed</strong>: <a href="https://openai.com/index/introducing-gpt-5-3-codex/">GPT-5.3-Codex</a> combines frontier coding performance with stronger reasoning, <a href="https://openai.com/index/introducing-gpt-5-3-codex/">running 25% faster than its predecessor</a>. <a href="https://openai.com/index/introducing-gpt-5-3-codex-spark/">Codex-Spark delivers 1,000+ tokens per second</a> on Cerebras hardware (research preview for Pro users)</li>
 <li><strong>OS-level sandboxing</strong>: Seatbelt (macOS), Landlock + seccomp (Linux) for secure execution</li>
 <li><strong>Flexible access</strong>: Use through ChatGPT Plus ($20/mo) or bring your own API key with per-token billing</li>
 <li><strong>Remote workflows</strong>: v0.120.0 adds egress websocket transport, remote <code>--cd</code> forwarding, and an experimental <code>codex exec-server</code> subcommand for app-server integrations</li>
 </ul>
-<p><strong>Pricing:</strong> The tool is free (open source). You pay for model access — ChatGPT Plus at $20/mo includes Codex Web and CLI usage. API pricing: codex-mini at $1.50/$6.00 per M tokens, GPT-5 at $1.25/$10.00 per M tokens.</p>
+<p><strong>Pricing:</strong> The tool is free (open source). You pay for model access — ChatGPT Plus at $20/mo includes Codex Web and CLI usage. <a href="https://help.openai.com/en/articles/20001106-codex-rate-card">API pricing</a>: codex-mini at $1.50/$6.00 per M tokens, GPT-5 at $1.25/$10.00 per M tokens.</p>
 <p><strong>MCP integration:</strong> Supports MCP servers for extending capabilities with external tools.</p>
 <p><strong>Best for:</strong> Developers who value open source, want to customize their agent, or need maximum token efficiency. The ChatGPT Plus bundle gives you web + CLI access, making it a good value proposition.</p>
 <p><strong>Limitations:</strong> Reasoning depth trails Claude Code on complex architectural tasks. The open-source nature means more setup and configuration. Web interface is less polished than dedicated IDEs.</p>
@@ -271,7 +271,7 @@
 <li><strong>Accessible pricing</strong>: As of May 24, 2026, access expanded from SuperGrok Heavy-only ($99–299/mo) to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers</li>
 </ul>
 <p><strong>Pricing:</strong> SuperGrok at <strong>$30/month</strong> or X Premium+ at $40/month — both include full Grok Build access. SuperGrok Heavy ($99/mo intro, $299/mo standard) provides higher throughput allocations. API: $1.00/$2.00 per M tokens.</p>
-<p><strong>Benchmarks:</strong> SWE-Bench Verified: <strong>70.8%</strong> — compared to Claude Code (87.6%) and Codex CLI (88.7%). A 17-point gap that limits production use for benchmark-representable coding tasks today.</p>
+<p><strong>Benchmarks:</strong> <a href="https://www.swebench.com/">SWE-Bench Verified: <strong>70.8%</strong></a> — compared to Claude Code (87.6%) and Codex CLI (88.7%). A 17-point gap that limits production use for benchmark-representable coding tasks today.</p>
 <p><strong>MCP integration:</strong> Supported, plus ACP for agent-to-agent orchestration.</p>
 <p><strong>Best for:</strong> Developers experimenting with worktree-isolated parallel architectures, teams building custom orchestration layers (ACP gives open-standard integration), and existing SuperGrok/X Premium+ subscribers for whom Grok Build has zero marginal cost.</p>
 <p><strong>Limitations:</strong> Significant SWE-Bench gap vs. top competitors. Early access quality — expect rough edges. 256K context (Grok Build 0.1) vs. 2M for Grok 4 chat. Arena Mode (multi-agent result comparison) is confirmed in code but not yet live.</p>

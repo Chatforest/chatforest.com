@@ -49,7 +49,7 @@ This matters for agent workflows. If you're building an agent that needs to hand
 
 **REST:** Essentially every web service has a REST API (or REST-ish — many are actually RPC over HTTP). Decades of tooling, documentation, and developer experience.
 
-**MCP:** Over 12,000 servers listed in directories like PulseMCP as of early 2026. Growing rapidly, but still a fraction of the REST ecosystem. Many MCP servers are wrappers around REST APIs.
+**MCP:** Over 12,000 servers listed across directories like [PulseMCP](https://pulsemcp.com/) and [Glama](https://glama.ai/mcp/servers) as of early 2026 (Glama alone now lists 22,000+). Growing rapidly, but still a fraction of the REST ecosystem. Many MCP servers are wrappers around REST APIs.
 
 ## Comparison Table
 
@@ -60,7 +60,7 @@ This matters for agent workflows. If you're building an agent that needs to hand
 | **Transport** | HTTP (stateless) | JSON-RPC over stdio or HTTP (stateful) |
 | **Maturity** | Decades | ~1 year |
 | **Auth** | OAuth, API keys (mature) | OAuth 2.1, env vars (evolving) |
-| **Ecosystem** | Millions of APIs | 12,000+ servers |
+| **Ecosystem** | Millions of APIs | [12,000+ servers](https://glama.ai/mcp/servers) |
 | **Best for** | App-to-service calls | AI-to-tool integration |
 | **Flexibility** | Fixed at build time | Dynamic at runtime |
 

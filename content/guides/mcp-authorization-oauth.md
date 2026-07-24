@@ -5,6 +5,7 @@ description: "A practical guide to MCP's OAuth 2.1 authorization spec — coveri
 content_type: "Guide"
 card_description: "How does an AI agent prove it's allowed to access your data? Here's how MCP uses OAuth 2.1 to authorize remote server connections."
 last_refreshed: 2026-03-27
+sources_audited: 2026-07-24
 ---
 
 Local MCP servers run on your machine and inherit your filesystem permissions. Remote MCP servers are different — they run in the cloud, serve multiple users, and access sensitive data through APIs. They need a real authorization layer.

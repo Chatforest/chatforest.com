@@ -186,7 +186,7 @@ response <span style="color:#f92672">=</span> client<span style="color:#f92672">
 
 audio_bytes <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>content
 </code></pre></div><p><strong>What the model captures from the reference clip:</strong> accent, intonation pattern, speaking rhythm, natural pauses, and emotional register. Emotion-steering tags in the text (e.g., <code>[excited]</code>, <code>[calm]</code>) layer on top of the cloned voice characteristics — you do not need separate reference clips per emotion.</p>
-<p><strong>Quality calibration:</strong> Mistral&rsquo;s evaluation shows 68.4% overall voice-cloning win rate against ElevenLabs Flash v2.5, with notably stronger results for Hindi (79.8%), Spanish (87.8%), and Arabic (72.9%). If you are building a multilingual product and cloning accuracy matters, these three languages are where Voxtral TTS has the clearest advantage.</p>
+<p><strong>Quality calibration:</strong> <a href="https://mistral.ai/static/research/voxtral-tts.pdf">Mistral&rsquo;s evaluation</a> shows 68.4% overall voice-cloning win rate against ElevenLabs Flash v2.5 in blind listening tests by native speakers, with notably stronger results for Hindi (79.8%), Spanish (87.8%), and Arabic (72.9%). If you are building a multilingual product and cloning accuracy matters, these three languages are where Voxtral TTS has the clearest advantage.</p>
 <hr>
 <h2 id="cross-lingual-voice-cloning">Cross-Lingual Voice Cloning</h2>
 <p>One capability the announcement buries: Voxtral TTS supports zero-shot cross-lingual synthesis. You can provide a reference clip in one language and synthesize text in a different language — preserving the accent characteristics across the switch.</p>
@@ -344,14 +344,14 @@ response <span style="color:#f92672">=</span> client<span style="color:#f92672">
 <li>Multilingual voice cloning in the nine supported languages — especially Hindi, Spanish, or Arabic where the benchmark advantage versus ElevenLabs is largest</li>
 <li>Research and non-commercial projects where CC BY-NC open weights provide full model access</li>
 <li>Voice agents where PCM streaming and 0.8s time-to-first-audio is the priority</li>
-<li>Cost-sensitive workloads where $0.016/1k chars ($16/1M) undercuts ElevenLabs (~$30/1M for Flash v2.5)</li>
+<li>Cost-sensitive workloads where $0.016/1k chars ($16/1M) undercuts <a href="https://elevenlabs.io/pricing">ElevenLabs (~$50/1M for Flash v2.5)</a></li>
 </ul>
 <p><strong>Weaker fit:</strong></p>
 <ul>
 <li>Applications requiring more than nine languages (ElevenLabs: 32, Google Cloud TTS: 75+)</li>
 <li>Commercial self-hosted deployments at sub-break-even volume (the API is cheaper until ~200–350M chars/month)</li>
 <li>Workloads where independent benchmark validation of voice quality is required before committing — Mistral&rsquo;s published numbers are self-reported</li>
-<li>English-only applications where Microsoft MAI-Voice-1 (under 1 second for 60-second audio) may offer faster full-document synthesis</li>
+<li>English-only applications where <a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-transcribe-1-mai-voice-1-and-mai-image-2-in-microsoft-foundry/4507787">Microsoft MAI-Voice-1</a> (under 1 second for 60-second audio on a single GPU) may offer faster full-document synthesis</li>
 </ul>
 <hr>
 <h2 id="related">Related</h2>

@@ -42,7 +42,7 @@ The symptoms are maddening: the server starts, appears to connect, then immediat
 
 ## Understanding MCP Error Codes
 
-MCP uses standard JSON-RPC error codes. Here are the ones you'll actually encounter:
+MCP uses [standard JSON-RPC error codes](https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/error-handling). Here are the ones you'll actually encounter:
 
 | Error Code | Meaning | Likely Cause |
 |-----------|---------|-------------|
@@ -96,7 +96,7 @@ The newer Streamable HTTP transport (which replaced the deprecated SSE transport
 - Missing keep-alive mechanism in the server
 - Proxy or load balancer closing idle connections
 - Client AbortController triggering prematurely
-- ReadTimeout errors — commonly at exactly 5 minutes, suggesting a default timeout somewhere in the chain
+- ReadTimeout or connection-drop errors after idle periods — often caused by a default timeout somewhere in the proxy or load balancer chain
 
 **CORS issues (browser-based clients):**
 - Your server needs to return proper CORS headers:

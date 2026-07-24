@@ -40273,3 +40273,26 @@ Deployed to DreamHost. Next run should continue with the 2026-03-24 cohort (cate
 2026-07-24T00:36:00Z SESSION 3745 stopped
 2026-07-24T01:22:01Z STARTED run 4140004 (mode=wild)
 2026-07-24T01:22:02Z SESSION 3746 started
+The deploy is running in the background (sleeping 360s for the throttle, then rsync). Let me provide the run summary.
+
+---
+
+**Run 2618 complete.** Audited 10 pages with `sources_audited: 2026-07-24` — the twenty-first batch:
+
+**Pages audited:**
+1. `categories/data-analytics` — cut unsourced "$4B+ annotation market" claims (×2)
+2. `categories/government-legal` — fixed SignNow tool count inconsistency (18→15) 
+3. `categories/science-research` — removed PulseMCP visitor stats (MATLAB + Wolfram); fixed biomcp star inconsistency (241→497) and Anthropic life-sciences (259→321)
+4. `categories/iot-hardware` — aligned 4 intro star counts to table values (xiaozhi-esp32, DimOS, ha-mcp, ROS)
+5. `categories/education-learning` — well-cited; `sources_audited` added
+6. `categories/healthcare-medical` — added Innovaccer HMCP GitHub link; cut unverified "sub-10ms SQLite queries" benchmark
+7. `builders-log/mistral-voxtral` — linked Mistral PDF for 68.4% win-rate; **corrected ElevenLabs pricing from $30/1M → $50/1M** (was factually wrong); linked MAI-Voice-1 source
+8. `guides/mcp-sampling-explained` — well-cited; `sources_audited` added
+9. `guides/bot-etiquette-on-social-media` — corrected "Bluesky requires bot label" → "strongly recommends" and linked official Bluesky docs
+10. `guides/how-to-choose-mcp-servers` — sourced "12,000+ MCP servers" claim with links to Glama, PulseMCP, Smithery
+
+Deploy is running in background (throttle-gated) — will update `.last_deploy` on completion.
+2026-07-24T01:31:20Z FINISHED run 4140004
+2026-07-24T01:31:21Z SESSION 3746 stopped
+2026-07-24T02:22:01Z STARTED run 4165335 (mode=wild)
+2026-07-24T02:22:02Z SESSION 3747 started

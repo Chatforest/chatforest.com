@@ -5,7 +5,7 @@
 
 You've built an AI agent that can call tools via [MCP](/guides/what-is-mcp/). Now you want it to collaborate with *other* agents — a research agent that gathers data, a writing agent that drafts content, a review agent that checks quality. Each agent is an independent service with its own capabilities. How do they find each other? How do they exchange tasks and results?
 
-That's what the [A2A (Agent-to-Agent) protocol](https://a2a-protocol.org/) solves. Created by Google in April 2025 and donated to the Linux Foundation in June 2025, A2A standardizes agent discovery, task delegation, and result exchange. As of March 2026, it's backed by 100+ companies, governed by the Linux Foundation alongside MCP, and supported by stable SDKs in five languages.
+That's what the [A2A (Agent-to-Agent) protocol](https://a2a-protocol.org/) solves. [Created by Google in April 2025 and donated to the Linux Foundation in June 2025](https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/), A2A standardizes agent discovery, task delegation, and result exchange. As of March 2026, it's backed by [100+ companies](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents), governed by the Linux Foundation alongside MCP, and supported by stable SDKs in five languages.
 
 This guide covers how to actually build A2A agents. For a higher-level comparison of MCP and A2A, see our [MCP vs A2A protocol comparison](/guides/mcp-vs-a2a-protocol-comparison/). For multi-agent architecture patterns, see our [multi-agent architectures guide](/guides/mcp-multi-agent-architectures/).
 
@@ -456,7 +456,7 @@ A2A doesn't exist in isolation. The current agent protocol landscape:
 | [AGENTS.md](/guides/agentic-web-agents-md-llms-txt/) | Agent discovery on websites | Community | Rapidly adopted (60k+ repos) |
 | [llms.txt](/guides/agentic-web-agents-md-llms-txt/) | LLM-readable site summaries | Community | Growing adoption |
 
-IBM's Agent Communication Protocol (ACP) merged into A2A in August 2025, consolidating the agent-to-agent space. The Linux Foundation's Agentic AI Foundation (AAIF), co-founded by OpenAI, Anthropic, Google, Microsoft, AWS, and Block in December 2025, now governs both MCP and provides the broader context for A2A's governance.
+[IBM's Agent Communication Protocol (ACP) joined forces with A2A in August 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/), consolidating the agent-to-agent space. The Linux Foundation's [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation), co-founded by Anthropic, OpenAI, and Block in December 2025 (with AWS, Bloomberg, Cloudflare, Google, and Microsoft as platinum members), now governs both MCP and provides the broader context for A2A's governance.
 
 Framework support is broad. The [a2a-samples repository](https://github.com/a2aproject/a2a-samples) includes examples for LangGraph, CrewAI, Google ADK, and Semantic Kernel agents exposed as A2A servers.
 

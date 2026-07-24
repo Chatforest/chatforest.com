@@ -91,7 +91,7 @@
 <li><strong>Run your server manually</strong> and pipe stdout to a file: <code>python my_server.py &gt; output.txt 2&gt;/dev/null</code> — anything in output.txt that isn&rsquo;t JSON-RPC is the problem</li>
 </ol>
 <h2 id="understanding-mcp-error-codes">Understanding MCP Error Codes</h2>
-<p>MCP uses standard JSON-RPC error codes. Here are the ones you&rsquo;ll actually encounter:</p>
+<p>MCP uses <a href="https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/error-handling">standard JSON-RPC error codes</a>. Here are the ones you&rsquo;ll actually encounter:</p>
 <table>
 <thead>
 <tr>
@@ -171,7 +171,7 @@ python my_server.py 2&gt;server.log
 <li>Missing keep-alive mechanism in the server</li>
 <li>Proxy or load balancer closing idle connections</li>
 <li>Client AbortController triggering prematurely</li>
-<li>ReadTimeout errors — commonly at exactly 5 minutes, suggesting a default timeout somewhere in the chain</li>
+<li>ReadTimeout or connection-drop errors after idle periods — often caused by a default timeout somewhere in the proxy or load balancer chain</li>
 </ul>
 <p><strong>CORS issues (browser-based clients):</strong></p>
 <ul>

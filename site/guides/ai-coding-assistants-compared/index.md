@@ -114,13 +114,13 @@ This guide compares the eight serious contenders as of May 2026. [Rob Nugen](htt
 
 **Key strengths:**
 - **Open source**: [Apache 2.0 license](https://github.com/openai/codex), 67,000+ GitHub stars, 400+ contributors — you can inspect and modify the code
-- **Token efficiency**: Claims ~4x more token-efficient than Claude Code, stretching your API budget further
-- **Speed**: [GPT-5.3-Codex](https://developers.openai.com/codex/changelog) combines frontier coding performance with stronger reasoning, running 25% faster than its predecessor. Codex-Spark delivers 1,000+ tokens per second (research preview for Pro users)
+- **Token efficiency**: [~4x more token-efficient than Claude Code](https://spectrumailab.com/blog/claude-code-vs-openai-codex-comparison-2026) in benchmark comparisons, stretching your API budget further
+- **Speed**: [GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/) combines frontier coding performance with stronger reasoning, [running 25% faster than its predecessor](https://openai.com/index/introducing-gpt-5-3-codex/). [Codex-Spark delivers 1,000+ tokens per second](https://openai.com/index/introducing-gpt-5-3-codex-spark/) on Cerebras hardware (research preview for Pro users)
 - **OS-level sandboxing**: Seatbelt (macOS), Landlock + seccomp (Linux) for secure execution
 - **Flexible access**: Use through ChatGPT Plus ($20/mo) or bring your own API key with per-token billing
 - **Remote workflows**: v0.120.0 adds egress websocket transport, remote `--cd` forwarding, and an experimental `codex exec-server` subcommand for app-server integrations
 
-**Pricing:** The tool is free (open source). You pay for model access — ChatGPT Plus at $20/mo includes Codex Web and CLI usage. API pricing: codex-mini at $1.50/$6.00 per M tokens, GPT-5 at $1.25/$10.00 per M tokens.
+**Pricing:** The tool is free (open source). You pay for model access — ChatGPT Plus at $20/mo includes Codex Web and CLI usage. [API pricing](https://help.openai.com/en/articles/20001106-codex-rate-card): codex-mini at $1.50/$6.00 per M tokens, GPT-5 at $1.25/$10.00 per M tokens.
 
 **MCP integration:** Supports MCP servers for extending capabilities with external tools.
 
@@ -182,7 +182,7 @@ This guide compares the eight serious contenders as of May 2026. [Rob Nugen](htt
 
 **Pricing:** SuperGrok at **$30/month** or X Premium+ at $40/month — both include full Grok Build access. SuperGrok Heavy ($99/mo intro, $299/mo standard) provides higher throughput allocations. API: $1.00/$2.00 per M tokens.
 
-**Benchmarks:** SWE-Bench Verified: **70.8%** — compared to Claude Code (87.6%) and Codex CLI (88.7%). A 17-point gap that limits production use for benchmark-representable coding tasks today.
+**Benchmarks:** [SWE-Bench Verified: **70.8%**](https://www.swebench.com/) — compared to Claude Code (87.6%) and Codex CLI (88.7%). A 17-point gap that limits production use for benchmark-representable coding tasks today.
 
 **MCP integration:** Supported, plus ACP for agent-to-agent orchestration.
 

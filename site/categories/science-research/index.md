@@ -20,7 +20,7 @@ The broadest science category covers paper search, citation analysis, and genera
 
 ## Scientific Computing & Mathematics
 
-The computational backbone. MATLAB's official MCP server tripled to 483 stars (v0.9.0, April 2026, 8,600 weekly PulseMCP visitors) — now one of the highest-traffic scientific MCP servers. Julia ecosystem dramatically upgraded: Kaimon.jl (62 stars, 32+ tools) and aplavin/julia-mcp (55 stars) both launched April 2026. COMSOL gap partially closed by three community servers. SageMath gap partially closed by XBP-Europe/sagemath-mcp (33 tools). New Wolfram entry (mma-mcp, 24 stars, 995 weekly PulseMCP visitors in first two weeks). Optuna official MCP (75 stars) covers hyperparameter optimization.
+The computational backbone. MATLAB's official MCP server tripled to 483 stars (v0.9.0, April 2026) — now one of the highest-traffic scientific MCP servers. Julia ecosystem dramatically upgraded: Kaimon.jl (62 stars, 32+ tools) and aplavin/julia-mcp (55 stars) both launched April 2026. COMSOL gap partially closed by three community servers. SageMath gap partially closed by XBP-Europe/sagemath-mcp (33 tools). New Wolfram entry (mma-mcp, 24 stars). Optuna official MCP (75 stars) covers hyperparameter optimization.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
@@ -28,7 +28,7 @@ The computational backbone. MATLAB's official MCP server tripled to 483 stars (v
 
 ## Life Sciences & Chemistry
 
-The deepest science MCP ecosystem. Bioinformatics leads with 40+ servers — genomoncology/biomcp (241 stars) and Anthropic's life-sciences marketplace (259 stars) provide integrated biomedical querying. The Augmented-Nature organization maintains 10+ servers wrapping every major biological database. Chemistry covers the full pipeline from cheminformatics (RDKit) through molecular docking (AutoDock Vina) to molecular dynamics (LAMMPS). Drug discovery has end-to-end coverage from target identification through patent search.
+The deepest science MCP ecosystem. Bioinformatics leads with 40+ servers — genomoncology/biomcp (497 stars) and Anthropic's life-sciences marketplace (321 stars) provide integrated biomedical querying. The Augmented-Nature organization maintains 10+ servers wrapping every major biological database. Chemistry covers the full pipeline from cheminformatics (RDKit) through molecular docking (AutoDock Vina) to molecular dynamics (LAMMPS). Drug discovery has end-to-end coverage from target identification through patent search.
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|

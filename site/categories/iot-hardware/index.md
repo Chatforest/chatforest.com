@@ -5,7 +5,7 @@
 
 We've reviewed **5 categories** of IoT & Hardware MCP servers, evaluating over **150 individual servers** across robotics, smart home automation, IoT platforms, embedded systems, 3D printing, industrial controllers, and manufacturing. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.
 
-IoT & Hardware is where MCP meets the physical world. This is arguably the most exciting frontier in the MCP ecosystem — AI agents that can control robots, manage smart homes, program microcontrollers, and monitor industrial equipment. The breakout story is [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) (24,900 stars), an MCP-based voice AI platform running on ESP32 hardware. Home Assistant dominates smart home with 1,600 stars and 96 tools on its leading server. Robotics has matured fast — ROS/ROS2 integration crossed 1,100 stars and [DimOS](https://github.com/dimensionalOS/dimos) (1,700 stars) emerged as the first agentic robotics operating system.
+IoT & Hardware is where MCP meets the physical world. This is arguably the most exciting frontier in the MCP ecosystem — AI agents that can control robots, manage smart homes, program microcontrollers, and monitor industrial equipment. The breakout story is [xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) (26,100 stars), an MCP-based voice AI platform running on ESP32 hardware. Home Assistant dominates smart home with 2,600+ stars and 86+ tools on its leading server. Robotics has matured fast — ROS/ROS2 integration reached 1,200 stars and [DimOS](https://github.com/dimensionalOS/dimos) (3,100 stars) emerged as the first agentic robotics operating system.
 
 ---
 

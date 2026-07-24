@@ -5,6 +5,7 @@ description: "A practical comparison of official MCP SDKs, community frameworks,
 content_type: "Guide"
 card_description: "Which SDK should you use to build an MCP server? Here's a practical comparison across 10+ languages and frameworks."
 last_refreshed: 2026-03-27
+sources_audited: 2026-07-24
 ---
 
 Building an MCP server means picking an SDK. A year ago, you had two choices — the official TypeScript and Python SDKs. Today there are official SDKs in 10 languages, a formal tier system, and several higher-level frameworks that handle the boilerplate for you.
@@ -58,7 +59,7 @@ Official SDKs give you protocol-level primitives. Frameworks add opinions and co
 
 ### FastMCP (Python) — The Dominant Choice
 
-[FastMCP](https://github.com/PrefectHQ/fastmcp) (~24,100 stars) claims to power roughly 70% of MCP servers across all languages. It's downloaded about 1 million times per day from PyPI.
+[FastMCP](https://github.com/PrefectHQ/fastmcp) (~24,100 stars) [claims to power roughly 70% of MCP servers across all languages and is downloaded about 1 million times per day from PyPI](https://github.com/PrefectHQ/fastmcp/blob/main/README.md).
 
 FastMCP 3.0, released in January 2026, introduced a significant architecture overhaul:
 

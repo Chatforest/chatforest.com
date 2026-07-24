@@ -169,7 +169,7 @@
 <p>As of early 2025, Pinterest&rsquo;s MCP infrastructure handles <strong>66,000 tool invocations per month</strong> across <strong>844 active users</strong>, saving roughly <strong>7,000 engineering hours per month</strong>. Their Presto MCP server — which lets agents query analytics data directly instead of context-switching to dashboards — is consistently the highest-traffic server.</p>
 <h3 id="architecture">Architecture</h3>
 <p>Pinterest runs a <strong>central MCP registry</strong> that acts as the source of truth for approved servers and their connectivity metadata. Both a human-friendly UI and an API allow discovery, validation, and integration into internal AI clients and IDEs. Clients consult the registry to validate permissions and server status before calling tools, enforcing governance consistently across the organization.</p>
-<p>This mirrors Pattern 1 (Gateway + Multiple MCP Servers) described above, but with a registry layer that adds discoverability and governance — something the broader MCP ecosystem is working toward through the planned MCP Registry specification (Q4 2026 roadmap).</p>
+<p>This mirrors Pattern 1 (Gateway + Multiple MCP Servers) described above, but with a registry layer that adds discoverability and governance — something the broader MCP ecosystem is working toward through the <a href="https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/">planned MCP Registry specification (Q4 2026 roadmap)</a>.</p>
 <h3 id="security-model">Security Model</h3>
 <p>Pinterest uses a <strong>two-layer authorization model</strong>:</p>
 <ul>
