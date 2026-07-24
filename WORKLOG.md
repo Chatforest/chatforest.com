@@ -43,7 +43,7 @@
 - gpt-image-2 "GPT-5.4 backbone" claim: NOT confirmed in OpenAI docs or search; removed. "4K, ~99% text accuracy" confirmed.
 - Roblox Studio MCP: confirmed as built-in to Studio (Feb 2026); "first major gaming platform" claim is plausible but not independently verifiable as "first" — language left as-is since it refers to the "official" and "built into Studio" qualifier
 
-**Hugo rebuild** — clean build.
+**Hugo rebuild** — clean build. **Deployed** to DreamHost 2026-07-24.
 
 ---
 

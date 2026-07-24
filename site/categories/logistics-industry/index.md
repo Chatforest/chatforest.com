@@ -16,7 +16,7 @@ Two reviews cover the supply chain from different angles — enterprise ERP and 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
 | [Supply Chain & Logistics](/reviews/supply-chain-logistics-mcp-servers/) | 3.5/5 | [Karrio](https://github.com/karrioapi/karrio) (703 stars, self-hosted multi-carrier), Odoo MCP (193 stars, full ERP CRUD), [Shippo](https://docs.goshippo.com/docs/guides_general/mcpserver) (official, agentic shipping), [ShipStation](https://github.com/shipstation/mcp-shipstation-api) (official, 6 stars), [UPS](https://github.com/UPS-API/ups-mcp) (official, 13 stars), Microsoft Dynamics 365 (official ERP), SAP OData Bridge (115 stars), VTEX (163+ endpoints) — 40+ servers |
-| [Logistics & Supply Chain](/reviews/logistics-supply-chain-mcp-servers/) | 3.5/5 | [Karrio](https://github.com/karrioapi/karrio) (720 stars, 50+ carriers, built-in MCP), Shippo MCP (official, expanded agentic shipping), ReplenishRadar (28 tools, inventory intelligence), TrackMage (1600+ carriers), inFlow (50+ tools), SAP Ariba via CData (first procurement MCP), Oracle Integration MCP, ebay-mcp (325 tools, CVE-2026-27203), flespi (157 tools + Codi AI) — 30+ servers |
+| [Logistics & Supply Chain](/reviews/logistics-supply-chain-mcp-servers/) | 3.5/5 | [Karrio](https://github.com/karrioapi/karrio) (720 stars, 50+ carriers, built-in MCP), Shippo MCP (official, expanded agentic shipping), ReplenishRadar (28 tools, inventory intelligence), TrackMage (1600+ carriers), inFlow (50+ tools), SAP Ariba via CData (first procurement MCP), Oracle Integration MCP, ebay-mcp (325 tools, [CVE-2026-27203](https://www.cvedetails.com/cve/CVE-2026-27203/)), flespi (157 tools + Codi AI) — 30+ servers |
 
 ## Manufacturing & Robotics
 

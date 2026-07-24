@@ -129,7 +129,7 @@ The foundational layer — the tools used to build MCP servers themselves. FastM
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [MCP Server Frameworks & SDKs](/reviews/mcp-server-frameworks-sdks/) | 4.5/5 | [FastMCP](https://github.com/jlowin/fastmcp) (23.6K stars, powers ~70% of servers), Python SDK (22.2K stars), TypeScript SDK (11.9K stars), FastAPI-MCP (11.4K stars), mcp-go (8.4K stars) |
+| [MCP Server Frameworks & SDKs](/reviews/mcp-server-frameworks-sdks/) | 4.5/5 | [FastMCP](https://github.com/jlowin/fastmcp) (23.6K stars, most widely used community MCP framework), Python SDK (22.2K stars), TypeScript SDK (11.9K stars), FastAPI-MCP (11.4K stars), mcp-go (8.4K stars) |
 
 ## Utilities & Text Processing
 
@@ -164,7 +164,7 @@ Across all 48 reviews, key themes emerge:
 
 **Vendor commitment is accelerating.** GitHub, Docker, Hashicorp, Playwright, Apollo, Datadog, Sentry, SonarQube, Postman, LaunchDarkly, GrowthBook, Kong, and Google all ship official MCP servers. This was not the case even six months ago.
 
-**Context7 dominates developer mindshare.** [Context7](https://github.com/upstash/context7) at 50.1K stars is the most popular MCP server in 2026 — feeding real-time library docs into AI agents. The foundational layer matters too: [FastMCP](https://github.com/jlowin/fastmcp) (23.6K stars) powers ~70% of all community-built servers.
+**Context7 dominates developer mindshare.** [Context7](https://github.com/upstash/context7) at 50.1K stars is the most popular MCP server in 2026 — feeding real-time library docs into AI agents. The foundational layer matters too: [FastMCP](https://github.com/jlowin/fastmcp) (23.6K stars) is the most widely used community MCP framework.
 
 **Chrome DevTools is the debugging story.** At [30.8K stars](https://github.com/ChromeDevTools/chrome-devtools-mcp) with 29 tools and 330K weekly npm downloads, it's among the most adopted MCP servers across all categories.
 

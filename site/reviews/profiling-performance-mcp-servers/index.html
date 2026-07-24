@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p><strong>At a glance:</strong> The profiling and performance MCP ecosystem has substantially expanded since March 2026. Load testing — previously a near-total gap — is now broadly covered: <a href="https://github.com/grafana/mcp-k6">grafana/mcp-k6</a> (official, experimental) brings k6 into the MCP ecosystem, <a href="https://github.com/QAInsights/jmeter-mcp-server">QAInsights/jmeter-mcp-server</a> (64 stars) covers JMeter, <a href="https://github.com/QAInsights/locust-mcp-server">QAInsights/locust-mcp-server</a> fills the Locust gap, and <a href="https://github.com/gatling/gatling-ai-extensions">gatling/gatling-ai-extensions</a> (official, Enterprise only) covers Gatling. Language-specific profiling gaps have narrowed: <a href="https://github.com/pawurb/hotpath-rs">hotpath-rs</a> (1,500 stars) adds production-quality Rust profiling with a built-in MCP server; <a href="https://github.com/ZephyrDeng/pprof-analyzer-mcp">ZephyrDeng/pprof-analyzer-mcp</a> (50 stars) covers Go pprof; <a href="https://www.ej-technologies.com/jprofiler">JProfiler 16.1 MCP</a> (<code>@ej-technologies/jprofiler-mcp</code>) brings enterprise Java profiling into MCP; and <a href="https://github.com/nemanjavlahovic/instruments-mcp-server">instruments-mcp-server</a> fills the macOS/Xcode gap. <a href="https://codspeed.io/changelog/2026-03-16-mcp-server">CodSpeed</a> (5 tools, flamegraph analysis) and <a href="https://www.polarsignals.com/docs/mcp">Polar Signals</a> (remote, continuous profiling) remain the leading continuous profiling MCP servers. <a href="https://github.com/grafana/mcp-grafana">Grafana&rsquo;s mcp-grafana</a> (~3k stars, +500) expanded its Pyroscope tools with series query support. This is the <strong>nineteenth review in our <a href="/categories/developer-tools/">Developer Tools MCP category</a></strong>.</p>
-<p>The application performance management market ($7.1–9.9B in 2025, growing at 13–15% CAGR to $24–26B by 2033–2035) reflects the universal need to understand and optimize software performance. Continuous profiling platforms (Grafana Pyroscope, Polar Signals/Parca, Datadog) are growing rapidly as organizations shift from reactive debugging to always-on performance visibility. The MCP ecosystem&rsquo;s coverage has improved significantly in load testing and language-specific profiling, though open-source standalone profiling tools and Python/.NET profiling remain underserved.</p>
+<p>The application performance management (APM) space reflects the universal need to understand and optimize software performance. Continuous profiling platforms (Grafana Pyroscope, Polar Signals/Parca, Datadog) are growing rapidly as organizations shift from reactive debugging to always-on performance visibility. The MCP ecosystem&rsquo;s coverage has improved significantly in load testing and language-specific profiling, though open-source standalone profiling tools and Python/.NET profiling remain underserved.</p>
 <p><strong>Architecture note:</strong> Profiling MCP servers follow four patterns. <strong>Vendor platform connectors</strong> (CodSpeed, Polar Signals, NeoLoad) provide MCP interfaces to commercial profiling/testing platforms — the MCP server queries the vendor&rsquo;s API, not the profiling tool directly. <strong>Observability stack integration</strong> (Grafana mcp-grafana with Pyroscope) embeds profiling alongside metrics, logs, and traces in a unified MCP server. <strong>Runtime profiling wrappers</strong> (mcp-jperf for Java JFR/jcmd, hotpath-rs for Rust, pprof-analyzer-mcp for Go) give AI agents direct access to language-specific profiling tools. <strong>Web audit tools</strong> (PageSpeed MCP, Chrome DevTools performance tools) run synthetic performance checks against web pages.</p>
 <p>For application monitoring and observability (metrics, alerts, dashboards), see our <a href="/reviews/monitoring-observability-mcp-servers/">Monitoring &amp; Observability</a> review. For log analysis and distributed tracing, see our <a href="/reviews/logging-tracing-mcp-servers/">Logging &amp; Tracing</a> review. For debugging (breakpoints, stepping, variable inspection), see our <a href="/reviews/debugging-mcp-servers/">Debugging</a> review.</p>
 <h2 id="whats-available">What&rsquo;s Available</h2>
@@ -316,7 +316,7 @@
 <td>Enterprise: infrastructure, scenarios, execution, analysis, SAP</td>
 </tr>
 <tr>
-<td><a href="https://docs.aws.amazon.com/solutions/latest/distributed-load-testing-on-aws/mcp-server-integration.html">AWS Distributed Load Testing MCP</a></td>
+<td><a href="https://github.com/aws-solutions/distributed-load-testing-on-aws">AWS Distributed Load Testing MCP</a></td>
 <td>—</td>
 <td>TypeScript</td>
 <td>Apache-2.0</td>
@@ -545,16 +545,16 @@
 <tr>
 <td><strong>Platform users</strong></td>
 <td>180M+ developers</td>
-<td>30M+ users</td>
+<td>40M+ users</td>
 <td>~41k companies</td>
 <td>20M+ users</td>
-<td>5.6M developers</td>
-<td>Jenkins: 11.3M devs</td>
+<td>Kubernetes: dominant container orchestrator</td>
+<td>Jenkins: most widely deployed CI/CD tool</td>
 <td>VS Code: 75.9% market share</td>
 <td>Playwright: 45.1% QA adoption</td>
 <td>Datadog: 32.7k customers</td>
 <td>SonarQube: 17.7% SAST mindshare</td>
-<td>Terraform: millions of users, 45% IaC adoption</td>
+<td>Terraform: millions of users</td>
 <td>npm: 5B+ weekly downloads</td>
 <td>Copilot: 20M+ users, Cursor: 1M+ DAU</td>
 <td>Postman: 30M+ users, REST: ~83% of web APIs</td>
@@ -562,7 +562,7 @@
 <td>Flyway: 10.7k stars, Liquibase: 5.2k stars, Prisma: 43k stars</td>
 <td>Mintlify: 28k+ stars, Docusaurus: 60k+ stars</td>
 <td>Chrome: 65%+ browser share, VS Code: 75.9% IDE share</td>
-<td>APM market: $7-10B, k6: 25k+ stars, JMeter: most-downloaded perf tool, Pyroscope: 11k+ stars</td>
+<td>k6: 25k+ stars, JMeter: most-downloaded perf tool, Pyroscope: 11k+ stars</td>
 <td>SonarQube: 7.4M+ users, CodeRabbit: top AI reviewer, Qodo/PR-Agent: 10.5k stars</td>
 </tr>
 <tr>

@@ -15,7 +15,7 @@ CRM platforms lead enterprise MCP adoption. Salesforce has the deepest ecosystem
 
 | Review | Rating | Key Servers |
 |--------|--------|-------------|
-| [Marketing Automation](/reviews/marketing-automation-mcp-servers/) | 4/5 | Meta Ads (601 stars), Google Search Console (512 stars), HubSpot (72 stars, vector search), SendGrid, Brevo, MailerLite, Klaviyo official — 30+ servers |
+| [Marketing Automation](/reviews/marketing-automation-mcp-servers/) | 4/5 | Meta Ads (631 stars), Google Search Console (512 stars), HubSpot (72 stars, vector search), SendGrid, Brevo, MailerLite, Klaviyo official — 30+ servers |
 | [CRM](/reviews/crm-mcp-servers/) | 3.5/5 | Salesforce CLI (312 stars, official, 60+ tools), HubSpot (116 stars community), Pipedrive, Attio, Dynamics 365 — 20+ servers |
 | [Customer Support & Helpdesk](/reviews/customer-support-helpdesk-mcp-servers/) | 3.5/5 | Zendesk (72 stars community), Freshdesk (30 tools), ServiceNow (5+ implementations, 60+ tools), Intercom official, Plain official (30 tools), Pylon official — 30+ servers |
 
