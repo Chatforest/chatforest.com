@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2643 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-06/07 batch 47) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 5 Pages (batch 47)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/datadog-mcp-server-production-lessons.md** — 4 inline link additions:
+   - Added inline Datadog engineering blog links for "cut token usage roughly in half" (CSV/TSV) and "YAML saved about 20% versus JSON"
+   - Added inline link for "5x more records in the same number of tokens"
+   - Added inline link for "40% cheaper runs in their evaluation scenarios"
+   - Added inline link for direct Datadog engineer quote about query-based approach
+
+2. **guides/equinix-distributed-ai-hub-mcp-infrastructure.md** — 4 fixes (including 2 factual corrections):
+   - **FACTUAL CORRECTION:** "over 10,000 organizations colocating" → "10,500+ customers" per Equinix's own website; added equinix.com link
+   - Added equinix.com link for "approximately 3,000 cloud and IT service providers" claim
+   - Added Equinix blog link for Palo Alto Networks / Prisma AIRS partnership announcement
+   - **REMOVED "Tool Count" column** from hyperscaler comparison table: AWS "15,000+ APIs" was conflating total AWS API operations with MCP tool count (misleading); also removed specific counts for Azure/Google since they lacked inline sources
+   - Added inline link to Jon Lin's name/title in his quote (sourcing to newsroom press release)
+
+3. **guides/claude-freebsd-exploit-ai-vulnerability-research.md** — 1 cut:
+   - **CUT:** "the first time a major OS vendor has credited an AI system in a kernel exploit disclosure" — this is an unverifiable superlative; no primary source establishes it as "first time"
+
+4. **guides/red-hat-mcp-server-rhel-lightspeed.md** — 2 fixes:
+   - Fixed "Goose (an open-source LLM chat client)" → "Goose (Block's open-source AI agent)" — Goose is Block's AI agent framework, not a chat client; added github.com/block/goose link
+   - Added ollama.com link for "Ollama (local model hosting)"
+
+5. **guides/holo3-desktop-agent-osworld-record.md** — 6 fixes (including 2 factual corrections):
+   - **FACTUAL CORRECTION:** "one of the largest seed rounds in AI history" → "the largest AI seed round in European history at the time (May 2024)" — the global "AI history" claim was not supportable; at the time of the raise (May 2024) it was Europe's largest
+   - Added TechCrunch link for $220M seed round, investors (Eric Schmidt, Amazon, Samsung, UiPath), and Charles Kantor's Stanford background
+   - Added DeepMind AlphaGo Zero blog link for "Laurent Sifre, who contributed to AlphaGo"
+   - **FACTUAL CORRECTION:** "at roughly one-tenth the cost" → "at a fraction of the cost" — HuggingFace blog says "fraction of the cost"; "one-tenth" was a third-party calculation, not H Company's claim
+   - Added hcompany.ai/holo3 and Hugging Face model card links for pricing section
+   - **CUT:** "Scoring above 70% was considered a significant milestone earlier this year" — editorial commentary with no primary source
+
+**Key factual errors fixed this run:**
+- Equinix customer count: "over 10,000 organizations colocating" → "10,500+ customers" (Equinix's own language)
+- H Company seed round scope: "largest in AI history" → "largest in European history at the time" (Yann LeCun's later $1B round is now the European record)
+- Holo3 cost comparison: "one-tenth the cost" → "fraction of the cost" (only H Company's own phrasing, not "one-tenth")
+- Goose tool description: "LLM chat client" → "AI agent" (it's Block's extensible AI agent, not just a chat interface)
+
+**Deploy:** Hugo build clean (4147 pages). Deploying batch 47.
+
+**Next batch (batch 48):** Continue oldest unaudited pages from April 7, 2026:
+- guides/qualys-agent-val-ai-exploit-validation.md
+- guides/claude-mythos-anthropic-next-gen-model-leak.md
+- guides/mcp-memory-systems-persistent-context.md
+- guides/mcp-for-finance.md
+- guides/best-agent-frameworks.md
+
+---
+
 ## Run 2642 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-06 batch 46) + Deploy
 
 **Mode:** Citation auditor
