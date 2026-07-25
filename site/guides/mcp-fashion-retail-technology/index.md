@@ -5,7 +5,7 @@
 
 Retail is undergoing a fundamental shift toward what Shopify calls "agentic commerce" — AI agents that can browse products, compare prices, manage shopping carts, process payments, and track shipments autonomously. The MCP ecosystem for retail is remarkably mature compared to other verticals, with an unusually high number of official vendor servers. Shopify, Stripe, Square, PayPal, Commercetools, Saleor, Oracle NetSuite, SAP, Microsoft Dynamics 365, and ShipStation all provide first-party MCP servers, signaling that the retail industry sees AI agent integration as a strategic priority rather than an experiment.
 
-The AI in retail market is projected to reach $40–165 billion by 2030 at 23–46% CAGR, depending on market definition. Fashion-specific AI — covering virtual try-on, size recommendation, and style intelligence — is a $2–3 billion market today, projected to reach $39–60 billion by 2033–2034. The $50+ billion annual returns problem in fashion e-commerce (often 30–40% return rates for online apparel) drives massive investment in AI-powered sizing, virtual fitting, and personalization.
+The AI in retail market is projected to reach [$40 billion](https://www.grandviewresearch.com/press-release/global-ai-retail-market)–[$165 billion](https://www.marketsandmarkets.com/Market-Reports/artificial-intelligence-ai-retail-market-36255973.html) by 2030 at 23–46% CAGR, depending on market definition. Fashion-specific AI — covering virtual try-on, size recommendation, and style intelligence — is projected to [reach $60 billion by 2034](https://www.precedenceresearch.com/ai-in-fashion-market). The massive returns problem in fashion e-commerce — [total US retail returns exceeded $890 billion in 2024](https://nrf.com/media-center/press-releases/nrf-and-happy-returns-report-2024-retail-returns-total-890-billion), with [online apparel return rates averaging 30–40%](https://www.nrf.com/research/2025-retail-returns-landscape), the highest of any category — drives massive investment in AI-powered sizing, virtual fitting, and personalization.
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to e-commerce platforms, payment processors, shipping carriers, and retail data systems. Rather than building custom integrations for each platform, MCP-connected agents can manage products, process orders, generate shipping labels, and analyze sales data through defined tool interfaces. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
@@ -21,7 +21,7 @@ Retail operations span dozens of interconnected systems — exactly the kind of 
 
 **Fashion has unique AI needs.** Virtual try-on, size recommendation, style matching, and trend forecasting are fashion-specific challenges that benefit from AI agent orchestration. An MCP-connected fashion agent could combine visual similarity search with inventory data, sizing intelligence, and customer purchase history to provide genuinely personalized recommendations.
 
-**The returns crisis demands intelligent intervention.** Online fashion return rates of 30–40% cost the industry over $50 billion annually. AI agents that can access sizing data, customer measurement history, product specifications, and visual try-on tools through MCP could significantly reduce returns by improving pre-purchase fit confidence.
+**The returns crisis demands intelligent intervention.** [Online apparel return rates average 30–40%](https://nrf.com/research/2025-retail-returns-landscape), the highest of any e-commerce category, contributing to the [nearly $890 billion in total US retail returns in 2024](https://nrf.com/media-center/press-releases/nrf-and-happy-returns-report-2024-retail-returns-total-890-billion). AI agents that can access sizing data, customer measurement history, product specifications, and visual try-on tools through MCP could significantly reduce returns by improving pre-purchase fit confidence.
 
 ## E-Commerce Platform MCP Servers
 
@@ -534,7 +534,7 @@ Despite strong official vendor participation, significant gaps remain:
 
 **Virtual try-on — no dedicated servers.** Despite massive investment in AR/virtual try-on technology, no dedicated MCP servers exist. FASHN AI is accessible indirectly through fal.ai's general MCP server, but no try-on platform offers a native MCP integration.
 
-**Size recommendation — minimal coverage.** True Fit has MCP but competitors (Easysize, SizeSense, Bold Metrics, 3DLOOK, Fit Analytics/Snap) do not. Given the $50B returns problem, this gap is surprising.
+**Size recommendation — minimal coverage.** True Fit has MCP but competitors (Easysize, SizeSense, Bold Metrics, 3DLOOK, Fit Analytics/Snap) do not. Given the massive returns problem — [30-40% online apparel return rates, the highest of any category](https://nrf.com/research/2025-retail-returns-landscape) — this gap is surprising.
 
 **Warehouse management — zero dedicated servers.** No WMS-specific MCP servers exist despite open-source options like ModernWMS and GreaterWMS. Manhattan Associates, Blue Yonder, and other commercial WMS providers also lack MCP support.
 

@@ -3,7 +3,7 @@
 > A comprehensive guide to 25+ MCP integrations for digital accessibility — covering WCAG compliance testing tools (Deque's official Axe MCP Server with enterprise-grade scanning
 
 
-Digital accessibility is no longer optional. The European Accessibility Act took effect in June 2025, the US Department of Justice now requires WCAG 2.1 AA compliance for government websites under ADA Title II, and accessibility lawsuits continue to rise — with approximately 25% of 2024 cases targeting companies using overlay widgets. The global digital accessibility software market is valued at approximately $0.85 billion in 2025 and projected to reach $1.89 billion by 2034 at a 9.33% CAGR.
+Digital accessibility is no longer optional. The [European Accessibility Act took effect June 28, 2025](https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en), the [US Department of Justice now requires WCAG 2.1 AA compliance for state and local government websites under ADA Title II](https://www.ada.gov/resources/2024-03-08-web-rule/), and accessibility lawsuits continue to rise — with [approximately 25% of 2024 cases targeting companies using overlay widgets](https://www.accessibility.works/blog/ada-lawsuit-trends-statistics-2024-summary/). The [global digital accessibility software market is valued at approximately $0.85 billion in 2025 and projected to reach $1.89 billion by 2034 at a 9.33% CAGR](https://www.fortunebusinessinsights.com/digital-accessibility-software-market-111207).
 
 The Model Context Protocol is emerging as a critical bridge between AI coding assistants and accessibility testing tools, enabling developers to catch and fix accessibility issues without leaving their IDE. Rather than running separate audits after code is written, MCP-powered accessibility servers integrate compliance checks directly into the development workflow — shifting accessibility left to where it's cheapest and easiest to fix.
 
@@ -379,13 +379,13 @@ The EAA took effect on **June 28, 2025**, making it one of the most significant 
 - Ticketing and vending machines
 - E-books and e-readers
 
-The EAA applies to all businesses providing products or services in the EU, including organizations based outside the EU. It references **EN 301 549** (which incorporates WCAG 2.1 AA) with expectations of updating to WCAG 2.2. Penalties vary by EU member state — Germany has established fines up to €500,000.
+The EAA applies to all businesses providing products or services in the EU, including organizations based outside the EU. It references **EN 301 549** (which incorporates WCAG 2.1 AA) with expectations of updating to WCAG 2.2. Penalties vary by EU member state — [Germany's implementation (BFSG) sets a maximum fine of €100,000](https://www.demoup-cliplister.com/en/blog/european-accessibility-act-in-germany/).
 
 ### US ADA Requirements
 
 The US Department of Justice released new regulations under **ADA Title II** in 2024, requiring state and local government websites to comply with **WCAG 2.1 AA**. Courts in Title III cases (covering private businesses) are increasingly applying the same standard.
 
-Accessibility lawsuits continue to rise, with approximately **25% of 2024 cases targeting companies using overlay widgets and automated solutions** that claim to fix accessibility without actually addressing underlying code issues. This underscores the need for genuine code-level accessibility testing — exactly what MCP servers provide.
+Accessibility lawsuits continue to rise, with approximately [**25% of 2024 cases targeting companies using overlay widgets and automated solutions**](https://www.accessibility.works/blog/ada-lawsuit-trends-statistics-2024-summary/) that claim to fix accessibility without actually addressing underlying code issues. This underscores the need for genuine code-level accessibility testing — exactly what MCP servers provide.
 
 ### WCAG 3.0 Status
 
@@ -395,7 +395,7 @@ WCAG 3.0 remains in working draft with no release date set — W3C's issuance is
 
 ### Automated Testing Limitations
 
-Automated accessibility testing tools — including all MCP-powered servers in this guide — can typically detect only **30-40% of WCAG issues**. Many critical accessibility problems require human judgment:
+Automated accessibility testing tools — including all MCP-powered servers in this guide — have limited coverage. [Deque's research found that automated testing identifies 57% of digital accessibility issues](https://www.deque.com/blog/automated-testing-study-identifies-57-percent-of-digital-accessibility-issues/) when measured by issue volume; other analyses measuring by WCAG criteria coverage find lower percentages. Many critical accessibility problems require human judgment:
 
 - **Reading order** — does the visual order match the DOM order for screen reader users?
 - **Meaningful alt text** — is the description actually useful, or just technically present?
@@ -417,7 +417,7 @@ Human review of AI-generated alt text remains important, particularly for comple
 
 ### Overlay and Widget Concerns
 
-The accessibility community has broadly criticized automated overlay widgets that claim to fix accessibility through JavaScript injection. The high rate of lawsuits against overlay users (25% of 2024 cases) reflects their ineffectiveness. MCP-powered code-level testing is fundamentally different — it identifies real issues in actual code and generates real fixes, rather than papering over problems with a runtime layer.
+The accessibility community has broadly criticized automated overlay widgets that claim to fix accessibility through JavaScript injection. The [high rate of lawsuits against overlay users (25% of 2024 cases)](https://www.accessibility.works/blog/ada-lawsuit-trends-statistics-2024-summary/) reflects their ineffectiveness. MCP-powered code-level testing is fundamentally different — it identifies real issues in actual code and generates real fixes, rather than papering over problems with a runtime layer.
 
 ### Privacy in Accessibility Testing
 
@@ -472,7 +472,7 @@ Start with **AltText.ai MCP** for automated alt text generation across your imag
 Combine **tsmd/wcag-mcp** (for specification reference) with **Axe MCP** or **a11ymcp** (for automated scanning) and **Playwright MCP** (for accessibility tree inspection). This gives you a comprehensive toolkit: accurate WCAG guidance, automated detection, and the ability to inspect how pages present to assistive technology.
 
 ### For Project Managers
-Understand that automated MCP-powered testing covers approximately 30-40% of accessibility issues. Budget for manual testing, user testing with people with disabilities, and ongoing developer training alongside automated tooling. MCP servers accelerate the process but don't replace a comprehensive accessibility program.
+Understand that automated MCP-powered testing does not cover all accessibility issues — [Deque's research found 57% automated detection by issue volume](https://www.deque.com/blog/automated-testing-study-identifies-57-percent-of-digital-accessibility-issues/), with many critical problems (reading order, cognitive accessibility, keyboard patterns) requiring manual review. Budget for manual testing, user testing with people with disabilities, and ongoing developer training alongside automated tooling. MCP servers accelerate the process but don't replace a comprehensive accessibility program.
 
 ### For Open Source Contributors
 The gaps listed above represent significant opportunities. Screen reader integration, mobile accessibility testing, cognitive accessibility scoring, and PDF remediation are all areas where new MCP servers could have substantial impact. The accessibility community is welcoming of tools that genuinely improve inclusion.
