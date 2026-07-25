@@ -2,6 +2,62 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2635 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-30 batch 39) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** Message #2259 (outbound report to Rob) still pending. No new inbound messages.
+
+#### Citation Audit — 5 Pages (2026-03-30 batch)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-ar-vr-spatial-computing.md** — 6 fixes:
+   - Added SNS Insider/Yahoo Finance link for spatial computing market size ($164–$185B in 2025)
+   - CUT unsourced "enterprise AR deployments grew 40%+ year-over-year" claim
+   - Fixed Apple Vision Pro apps: "2,000+" → "1,000+ native apps within weeks of Feb 2024 launch" (AppleInsider confirmed)
+   - Added IDC/Next Reality citation for Meta's 74.6% headset market share (was "74%+")
+   - Updated Ray-Ban Meta glasses: "crossing 2 million units" → "crossed 2M by early 2025, then sales more than tripled in full-year 2025 alone" (Road to VR)
+   - Added Spatial Web Foundation link for IEEE 2874-2025 ratification (May 29, 2025 confirmed)
+
+2. **guides/mcp-autonomous-vehicles-transportation.md** — 5 fixes:
+   - Replaced unsourced "$96–105B in 2025 → $214B by 2030 at 19.9% CAGR" with GVR-confirmed ~$86B in 2025 at ~20% CAGR
+   - CUT unsourced arXiv paper citation (could not find direct link)
+   - CUT unsourced "Level 4 autonomy 38.2% CAGR" and "Robotaxis $7B by 2030 at 90% CAGR"
+   - Added Fortune Business Insights link for connected cars "$119B → $423B by 2032 at 19.8% CAGR" (confirmed)
+   - Added GVR/PRNewswire link for EV charging "$40B → $239B by 2033 at 25% CAGR" (confirmed)
+   - CUT unsourced "V2X 59.2% of smart transportation connectivity"
+
+3. **guides/mcp-computer-vision-image-analysis.md** — 4 fixes:
+   - Added GVR link for CV market size ($23–$27B in 2025; was "$20–$27B" uncited)
+   - Narrowed "$58–$111B by 2030–2034" to "$58–$68B by 2030–2031" with GVR ($58.29B) + Mordor ($68.38B) citations
+   - Added Mordor Intelligence links for "41% inspection/QA market share" (confirmed 41.08%) and "47% edge deployment" (confirmed 47.33%)
+   - CUT unverified "North America 49%" and "Asia-Pacific fastest-growing at 16.4% CAGR" CV market stats (these were from spatial computing, not CV)
+
+4. **guides/mcp-content-creation-podcasting-video.md** — 2 fixes:
+   - FIXED creator economy: "$214B in 2026" (no source) → "projected to approach $480B by 2027" per Goldman Sachs (matched their actual projection article)
+   - Updated WordPress "over 40% of the web" → "approximately 43%" with W3Techs citation
+
+5. **guides/mcp-customer-support-helpdesk.md** — 5 fixes:
+   - Added MarketsandMarkets press release link for AI customer support market ($15.12B in 2026 → $47.82B by 2030 at 25.8% CAGR) — confirmed
+   - **FIXED FACTUAL ERROR:** "Gartner predicts 80% of interactions handled by AI in 2026" was WRONG — Gartner's actual prediction is 80% by **2029** (agentic AI, March 2025 press release). Added correct Gartner link.
+   - Added Gartner citation for "$80B contact center labor cost reduction" (separate Gartner claim confirmed)
+   - CUT unsourced "$3.50 per $1 invested, up to 8x ROI" claims (appeared twice — intro and body)
+   - CUT unsourced "nine out of ten contact centers use AI, only 25% fully integrated" percentages
+
+**Key factual errors fixed:**
+- Customer Support: Gartner's "80% by 2026" was wrong — the actual Gartner prediction is 80% by 2029 (agentic AI resolution). The article misattributed a CoSupport AI stat to Gartner, two years off.
+- Content Creation: "$214 billion in 2026 creator economy" had wrong dollar figure — Goldman Sachs projects approaching $480B by 2027, not $214B in 2026. The GS link was already there but was attached to the wrong number.
+- CV page: "North America 49%" and "Asia-Pacific 16.4% CAGR" appeared in CV market context section but these regional stats came from spatial computing data, not computer vision — removed.
+
+**Deploy:** 5 pages + Hugo build — deployed this run.
+
+**Next batch (batch 40):** Continue 2026-03-30 pages. Remaining: mcp-cybersecurity-threat-intelligence.md, mcp-data-visualization-business-intelligence.md, mcp-digital-accessibility.md, mcp-education-elearning.md, mcp-fashion-retail-technology.md, mcp-freelancers-solopreneurs-small-business.md, mcp-hr-recruiting-technology.md, mcp-media-production-broadcasting.md, mcp-mental-health-therapy-wellness.md, mcp-nlp-text-analysis.md, and many more.
+
+---
+
 ## Run 2634 — 2026-07-25 — Citation Audit: 5 Pages (batches 37 + start of 38) + Deploy
 
 **Mode:** Citation auditor
