@@ -112,7 +112,7 @@
 </tr>
 <tr>
 <td><strong>Downloads</strong></td>
-<td>~30–50K/month (letta) · ~50–80K/month (letta-client) PyPI</td>
+<td><a href="https://pypistats.org/packages/letta">~30–50K/month (letta)</a> · <a href="https://pypistats.org/packages/letta-client">~50–80K/month (letta-client)</a> PyPI</td>
 </tr>
 <tr>
 <td><strong>Founded</strong></td>
@@ -122,7 +122,7 @@
 </table>
 <hr>
 <h2 id="the-core-idea-agents-that-remember">The Core Idea: Agents That Remember</h2>
-<p>Letta began as a 2023 UC Berkeley research paper (arXiv:2310.08560) introducing <strong>virtual context management</strong> — an operating-system-inspired technique that gives LLMs effectively unlimited memory by managing a hierarchy of storage tiers, analogous to how an OS uses fast RAM backed by slower disk.</p>
+<p>Letta began as a <a href="https://arxiv.org/abs/2310.08560">2023 UC Berkeley research paper (arXiv:2310.08560)</a> introducing <strong>virtual context management</strong> — an operating-system-inspired technique that gives LLMs effectively unlimited memory by managing a hierarchy of storage tiers, analogous to how an OS uses fast RAM backed by slower disk.</p>
 <p>The fundamental insight: LLMs have fixed context windows. When conversations or task histories grow beyond that window, information disappears. MemGPT solved this by letting the agent itself decide what to keep immediately available, what to move to long-term storage, and when to retrieve it — using tool calls as the mechanism.</p>
 <p>The production rebranding to <strong>Letta</strong> (from MemGPT) represents an evolution in framing: agents are not stateless chat sessions but <strong>persistent entities with identities</strong> that accumulate knowledge across many interactions with many users over time.</p>
 <p>In every other framework reviewed here — LangGraph, CrewAI, LlamaIndex Agents, Haystack — memory is something you add. In Letta, memory <em>is</em> the framework.</p>
@@ -274,8 +274,8 @@
 <p><strong>Git-backed memory</strong> (introduced late 2025): agent memory stored as version-controlled files, enabling memory versioning, diffing, and rollback. Block history is tracked via a dedicated <code>block_history</code> table regardless of which backend is used.</p>
 <hr>
 <h2 id="skill-learning">Skill Learning</h2>
-<p>December 2025 introduced <strong>skill learning</strong>: agents dynamically learn reusable skills from task trajectories, storing them in memory for application to future tasks. Benchmarks showed 21.1–36.8% improvement on Terminal Bench 2.0 with a 15.7% cost reduction. This is genuine online learning at the agent level — not fine-tuning, but structured experience accumulation.</p>
-<p><strong>Letta Code</strong> (December 2025, desktop app April 2026) applies this to coding: a memory-first coding agent that learns from past work in a repository and improves over time. It reached top performance on the Terminal-Bench benchmark.</p>
+<p>December 2025 introduced <strong>skill learning</strong>: agents dynamically learn reusable skills from task trajectories, storing them in memory for application to future tasks. On the original Terminal Bench, skill learning achieved a <a href="https://www.letta.com/blog/skill-learning">21.1% relative improvement with a 15.7% cost reduction</a>; on Terminal Bench 2.0, learned skills boost performance by <a href="https://www.letta.com/blog/skill-learning">36.8% relative (15.7% absolute)</a>. This is genuine online learning at the agent level — not fine-tuning, but structured experience accumulation.</p>
+<p><strong>Letta Code</strong> (December 2025, desktop app April 2026) applies this to coding: a memory-first coding agent that learns from past work in a repository and improves over time. It <a href="https://www.letta.com/blog/terminal-bench/">reached top performance on the Terminal-Bench benchmark</a>.</p>
 <hr>
 <h2 id="self-hosted-vs-letta-cloud">Self-Hosted vs Letta Cloud</h2>
 <p><strong>Self-hosted</strong> (Apache 2.0):</p>

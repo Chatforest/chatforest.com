@@ -112,7 +112,7 @@
 </tr>
 <tr>
 <td><strong>Downloads</strong></td>
-<td>~570,000 monthly PyPI downloads</td>
+<td><a href="https://pypistats.org/packages/smolagents">~570,000 monthly PyPI downloads</a></td>
 </tr>
 <tr>
 <td><strong>API stability</strong></td>
@@ -126,11 +126,11 @@
 <p>This is the <code>CodeAgent</code> — smolagents&rsquo; default and flagship agent type. Instead of calling a single tool per step via structured JSON, the agent can write a small Python program: call two tools and combine their results, iterate over a list, define a helper function, handle a conditional. Anything you can express in Python, the agent can do in a single step.</p>
 <p>Three papers back this approach:</p>
 <ul>
-<li><em>Executable Code Actions Elicit Better LLM Agents</em> (arXiv 2402.01030)</li>
-<li><em>If LLM Is the Wizard, Then Code Is the Wand</em> (arXiv 2401.00812)</li>
-<li><em>DynaSaur: Large Language Agents Beyond Predefined Actions</em> (arXiv 2411.01747)</li>
+<li><a href="https://arxiv.org/abs/2402.01030"><em>Executable Code Actions Elicit Better LLM Agents</em></a> (arXiv 2402.01030)</li>
+<li><a href="https://arxiv.org/abs/2401.00812"><em>If LLM Is the Wizard, Then Code Is the Wand</em></a> (arXiv 2401.00812)</li>
+<li><a href="https://arxiv.org/abs/2411.01747"><em>DynaSaur: Large Language Agents Beyond Predefined Actions</em></a> (arXiv 2411.01747)</li>
 </ul>
-<p>The empirical result: a smolagents multi-agent system reached <strong>#1 on the GAIA benchmark</strong> at 44.2% — four percentage points ahead of Microsoft&rsquo;s AutoGen at 40%.</p>
+<p>The empirical result: a smolagents multi-agent system <a href="https://huggingface.co/blog/beating-gaia">reached <strong>#1 on the GAIA benchmark</strong> at 44.2%</a> — four percentage points ahead of Microsoft&rsquo;s AutoGen at 40%.</p>
 <p>Smolagents also includes <code>ToolCallingAgent</code> for conventional JSON-based tool calling. It&rsquo;s provided for comparison, compatibility (some models handle JSON better), and dispatcher patterns — but it&rsquo;s not the main character.</p>
 <hr>
 <h2 id="core-abstractions">Core Abstractions</h2>

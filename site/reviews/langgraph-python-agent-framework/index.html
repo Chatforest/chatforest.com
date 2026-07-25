@@ -108,7 +108,7 @@
 </tr>
 <tr>
 <td><strong>GA date</strong></td>
-<td>LangGraph 1.0: October 22, 2025</td>
+<td><a href="https://github.com/langchain-ai/langgraph/releases/tag/v1.0.0">LangGraph 1.0: October 22, 2025</a></td>
 </tr>
 <tr>
 <td><strong>Install</strong></td>
@@ -116,7 +116,7 @@
 </tr>
 <tr>
 <td><strong>Downloads</strong></td>
-<td>34.5M monthly PyPI downloads</td>
+<td><a href="https://pypistats.org/packages/langgraph">34.5M monthly PyPI downloads</a></td>
 </tr>
 <tr>
 <td><strong>Maintainer</strong></td>
@@ -169,8 +169,8 @@ graph <span style="color:#f92672">=</span> StateGraph(State)
 <hr>
 <h2 id="mcp-integration">MCP Integration</h2>
 <h3 id="mcp-client-yes-official">MCP Client: Yes (Official)</h3>
-<p><strong>Package</strong>: <code>langchain-mcp-adapters</code>
-<strong>Version</strong>: 0.2.2 (March 16, 2026)
+<p><strong>Package</strong>: <a href="https://github.com/langchain-ai/langchain-mcp-adapters"><code>langchain-mcp-adapters</code></a>
+<strong>Version</strong>: <a href="https://github.com/langchain-ai/langchain-mcp-adapters/releases/tag/v0.2.2">0.2.2 (March 16, 2026)</a>
 <strong>Stars</strong>: ~3,500 (separate repo: <code>langchain-ai/langchain-mcp-adapters</code>)
 <strong>Install</strong>: <code>pip install langchain-mcp-adapters</code></p>
 <p>The adapter converts MCP tool schemas into LangChain <code>BaseTool</code> objects, making them directly callable from any LangGraph node. The key class is <code>MultiServerMCPClient</code>, which manages simultaneous connections to multiple MCP servers.</p>
@@ -268,10 +268,10 @@ graph <span style="color:#f92672">=</span> StateGraph(State)
 <h2 id="limitations">Limitations</h2>
 <p><strong>Steep learning curve.</strong> LangGraph&rsquo;s explicit state machines, reducer functions, and graph compilation are significantly more complex than CrewAI&rsquo;s role-based DSL. Teams new to the framework commonly spend days debugging edge routing before building anything useful.</p>
 <p><strong>No native MCP server.</strong> Agents cannot be exposed as MCP endpoints without external glue (FastMCP or custom HTTP wrapping). Agno and Mastra ship this natively.</p>
-<p><strong>State management complexity in production.</strong> LangChain&rsquo;s own 2026 State of Agent Engineering report notes that over 60% of production agent incidents relate to state management — conflicts, persistence failures, deployment difficulties. LangGraph&rsquo;s power (full state control) creates responsibility (you have to manage that state correctly).</p>
+<p><strong>State management complexity in production.</strong> LangGraph&rsquo;s power (full state control) creates responsibility — you have to manage that state correctly. Conflicts, persistence failures, and deployment difficulties are common failure modes in production stateful agent systems.</p>
 <p><strong>Multi-agent debugging is hard.</strong> Cascading failures across interconnected nodes in large multi-agent systems require distributed systems thinking to diagnose. LangSmith traces help significantly, but this is a non-trivial operational burden.</p>
 <p><strong>Python-first.</strong> LangGraph.js (TypeScript) exists and is actively maintained, but the Python version is more mature, more documented, and has a larger community. Teams building TypeScript-first applications may find Mastra a better fit.</p>
-<p><strong>Self-orchestration challenge.</strong> A University of Melbourne study (April 2026) found that frontier models given a full procedure in their system prompt — and left to self-orchestrate — consistently outperformed the same model orchestrated via LangGraph across procedural domains. The implication: LangGraph&rsquo;s overhead is only justified when the task genuinely requires state persistence, resumability, or explicit control flow that a single-prompt approach cannot provide.</p>
+<p><strong>Self-orchestration challenge.</strong> For tasks that can be fully specified in a system prompt, a single well-prompted agent often outperforms the same model behind framework orchestration overhead. LangGraph&rsquo;s value is only realized when the task genuinely requires state persistence, resumability, or explicit control flow that a single-prompt approach cannot provide.</p>
 <hr>
 <h2 id="compared-to-other-frameworks">Compared to Other Frameworks</h2>
 <table>
@@ -322,7 +322,7 @@ graph <span style="color:#f92672">=</span> StateGraph(State)
 </tr>
 </tbody>
 </table>
-<p>LangGraph&rsquo;s 34.5 million monthly PyPI downloads and 34% enterprise architecture citation rate (Gartner, Q1 2026) reflect real production usage that star counts alone don&rsquo;t capture. This is the framework most large organizations have already committed to or evaluated seriously. That installed base is both its moat and its gravity — frameworks in this position tend to attract tooling, documentation, and talent that accelerates the gap.</p>
+<p>LangGraph&rsquo;s <a href="https://pypistats.org/packages/langgraph">34.5 million monthly PyPI downloads</a> reflect real production usage that star counts alone don&rsquo;t capture. This is the framework most large organizations have already committed to or evaluated seriously. That installed base is both its moat and its gravity — frameworks in this position tend to attract tooling, documentation, and talent that accelerates the gap.</p>
 <hr>
 <h2 id="who-should-use-langgraph">Who Should Use LangGraph</h2>
 <p><strong>Good fit for:</strong></p>

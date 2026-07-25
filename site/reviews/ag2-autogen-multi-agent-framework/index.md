@@ -12,14 +12,14 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 ## The Split: Two AutoGen Repositories
 
 **microsoft/autogen** — the original project, created by Microsoft Research
-- **57,722 stars**, MIT license, Python + .NET
+- [**57,722 stars**](https://github.com/microsoft/autogen), MIT license, Python + .NET
 - **Status: maintenance mode** as of 2026 — no new features planned, Microsoft has shifted focus to its internal Microsoft Agent Framework (MAF) successor
 - Last major Python release: v0.7.5 (September 2024)
 
 **ag2ai/ag2** — the community fork that became an independent project
-- **4,508 stars**, Apache 2.0 license, Python only (3.10–3.13)
-- **Status: actively developed** — v0.12.2 released May 1, 2026; path to v1.0 announced
-- Governs itself under an open governance structure established when the fork was created in November 2024
+- [**4,508 stars**](https://github.com/ag2ai/ag2), Apache 2.0 license, Python only (3.10–3.13)
+- **Status: actively developed** — [v0.12.2 released May 1, 2026](https://github.com/ag2ai/ag2/releases/tag/v0.12.2); path to v1.0 announced
+- Governs itself under an open governance structure established when [the fork was created in November 2024](https://github.com/ag2ai/ag2)
 
 For anyone evaluating "AutoGen" as a framework to build on today, **ag2ai/ag2 is the living project**. The star count gap (57K vs. 4.5K) reflects inertia, not activity. This review covers ag2ai/ag2.
 
@@ -77,7 +77,7 @@ Chain multiple conversations in sequence, with each conversation's output passed
 
 ## The Beta Rewrite: What's Coming in v1.0
 
-AG2's most significant recent development is the **Beta API** (`autogen.beta`), launched in v0.11.3 (March 2026) and expanded in v0.12.x. It runs alongside the legacy API without breaking changes and is the foundation for v1.0 (legacy API deprecated at v0.14).
+AG2's most significant recent development is the **Beta API** (`autogen.beta`), [launched in v0.11.3 (March 2026)](https://github.com/ag2ai/ag2/releases/tag/v0.11.3) and expanded in v0.12.x. It runs alongside the legacy API without breaking changes and is the foundation for v1.0 (legacy API deprecated at v0.14).
 
 ### MemoryStream
 
@@ -182,8 +182,7 @@ Multimodal inputs — Image, Document, Audio, Video — are supported across Ope
 
 ## Security Notes
 
-- **CVE-2025-69872** — DiskCache vulnerability, fixed in v0.12.0 (April 2026)
-- **CVE-2026-23745, CVE-2026-23950, CVE-2026-24842** — three CVEs addressed in v0.10.5 (January 2026)
+- **[CVE-2025-69872](https://nvd.nist.gov/vuln/detail/CVE-2025-69872)** — DiskCache (python-diskcache) deserialization vulnerability; [fixed in AG2 v0.12.0](https://github.com/ag2ai/ag2/releases/tag/v0.12.0) (April 2026)
 - **v0.11.4 hardening** — shell injection prevention in ShellExecutor, path traversal protection on MCP resource URIs, credential leakage fix in FileLogger
 
 ---

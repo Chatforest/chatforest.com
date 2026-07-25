@@ -112,11 +112,11 @@
 </tr>
 <tr>
 <td><strong>Downloads</strong></td>
-<td>~6.8 million monthly PyPI downloads</td>
+<td><a href="https://pypistats.org/packages/dspy">~6.8 million monthly PyPI downloads</a></td>
 </tr>
 <tr>
 <td><strong>Paper</strong></td>
-<td>arXiv 2310.03714 (Oct 2023)</td>
+<td><a href="https://arxiv.org/abs/2310.03714">arXiv 2310.03714</a> (Oct 2023)</td>
 </tr>
 </tbody>
 </table>
@@ -124,7 +124,7 @@
 <h2 id="the-core-idea-compile-intent-into-performance">The Core Idea: Compile Intent Into Performance</h2>
 <p>DSPy stands for <strong>Declarative Self-improving Python</strong>. The name captures the thesis: instead of writing prompts by hand, you declare <em>what</em> each LLM step should do, then run an optimizer that figures out <em>how</em> to prompt the model to achieve it.</p>
 <p>The analogy from the original Stanford paper is useful: DSPy is to prompt engineering what PyTorch is to hand-coded gradient descent. You describe the computation; the framework optimizes the parameters.</p>
-<p>Those parameters are textual rather than numerical — instructions and few-shot demonstrations — but the optimization machinery is real. The 2023 foundational paper showed DSPy-compiled programs outperform standard few-shot prompting by &gt;25% for GPT-3.5 and &gt;65% for Llama-2-13b, and beat expert-crafted demonstrations by 5–46%.</p>
+<p>Those parameters are textual rather than numerical — instructions and few-shot demonstrations — but the optimization machinery is real. The <a href="https://arxiv.org/abs/2310.03714">2023 foundational paper</a> showed DSPy-compiled programs outperform standard few-shot prompting by &gt;25% for GPT-3.5 and &gt;65% for Llama-2-13b, and beat expert-crafted demonstrations by 5–46%.</p>
 <p>Three abstractions carry the whole framework:</p>
 <ol>
 <li><strong>Signatures</strong> — declarative specs of a step&rsquo;s inputs and outputs</li>
@@ -232,10 +232,10 @@ optimized <span style="color:#f92672">=</span> teleprompter<span style="color:#f
 <li><strong>Textual Feedback Integration</strong> — incorporates natural language feedback alongside scalar scores</li>
 <li><strong>Pareto-based Selection</strong> — maintains a Pareto frontier rather than just the top-1, preventing local optima</li>
 </ul>
-<p>GEPA reportedly achieves 20% better performance than RL-based methods at 1/35th the compute. Shopify used it to reduce a structured metadata extraction pipeline cost by ~550x.</p>
+<p><a href="https://dspy.ai/getting-started/gepa-optimization/">GEPA reportedly achieves 20% better performance than RL-based methods at 1/35th the compute</a>. <a href="https://dspy.ai/community/use-cases/">Shopify used it to reduce a structured metadata extraction pipeline cost by ~550x</a>.</p>
 <h3 id="finetuning">Finetuning</h3>
 <p><strong>BootstrapFinetune</strong> distills a prompt-optimized program into model weights. It bootstraps training traces for every module, assembles a multi-task fine-tuning dataset, and trains the underlying LM. The resulting program has the same structure; each step runs the fine-tuned model instead.</p>
-<p><strong>BetterTogether</strong> (based on arXiv 2407.10930) chains prompt optimization and fine-tuning in configurable sequences:</p>
+<p><strong>BetterTogether</strong> (based on <a href="https://arxiv.org/abs/2407.10930">arXiv 2407.10930</a>) chains prompt optimization and fine-tuning in configurable sequences:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">optimizer <span style="color:#f92672">=</span> dspy<span style="color:#f92672">.</span>BetterTogether(
     prompt_optimizer<span style="color:#f92672">=</span>dspy<span style="color:#f92672">.</span>MIPROv2(metric<span style="color:#f92672">=</span>my_metric),
     finetune_optimizer<span style="color:#f92672">=</span>dspy<span style="color:#f92672">.</span>BootstrapFinetune(metric<span style="color:#f92672">=</span>my_metric),
@@ -322,11 +322,11 @@ score <span style="color:#f92672">=</span> evaluator(program)
 <h2 id="production-use">Production Use</h2>
 <p>DSPy has crossed into serious production use:</p>
 <ul>
-<li><strong>Shopify</strong> — structured metadata extraction across all shops using DSPy + GEPA; reduced yearly infrastructure cost ~550x</li>
-<li><strong>Dropbox</strong> — optimized Dash&rsquo;s relevance judge using DSPy across ranking, training data generation, and offline evaluation</li>
-<li><strong>Databricks</strong> — deep integration; multiple Data + AI Summit 2025 sessions; official Databricks documentation</li>
+<li><strong><a href="https://dspy.ai/community/use-cases/">Shopify</a></strong> — structured metadata extraction across all shops using DSPy + GEPA; reduced yearly infrastructure cost ~550x</li>
+<li><strong><a href="https://dspy.ai/community/use-cases/">Dropbox</a></strong> — optimized Dash&rsquo;s relevance judge using DSPy across ranking, training data generation, and offline evaluation</li>
+<li><strong><a href="https://dspy.ai/community/use-cases/">Databricks</a></strong> — deep integration; multiple Data + AI Summit 2025 sessions; official Databricks documentation</li>
 </ul>
-<p>Benchmark: an independent 2025 study (&ldquo;Is It Time To Treat Prompts As Code?&quot;, arXiv 2507.03620) showed accuracy improving from 46.2% to 64.0% on prompt evaluation tasks using DSPy optimization.</p>
+<p>Benchmark: an independent 2025 study <a href="https://arxiv.org/abs/2507.03620">&ldquo;Is It Time To Treat Prompts As Code?&rdquo; (arXiv 2507.03620)</a> showed accuracy improving from 46.2% to 64.0% on prompt evaluation tasks using DSPy optimization.</p>
 <hr>
 <h2 id="limitations">Limitations</h2>
 <p><strong>ML engineering expertise required.</strong> DSPy is not a batteries-included framework. You need to define your own evaluation data and metric functions. Teams without ML engineering background find the learning curve steep.</p>

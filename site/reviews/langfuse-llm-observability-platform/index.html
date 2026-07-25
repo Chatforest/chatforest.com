@@ -108,11 +108,11 @@
 </tr>
 <tr>
 <td><strong>Authors</strong></td>
-<td>Clemens Rawert, Marc Klingen (CEO), Maximilian Deichmann — acquired by ClickHouse January 2026</td>
+<td>Clemens Rawert, Marc Klingen (CEO), Maximilian Deichmann — <a href="https://clickhouse.com/blog/clickhouse-acquires-langfuse-open-source-llm-observability">acquired by ClickHouse January 2026</a></td>
 </tr>
 <tr>
 <td><strong>Downloads</strong></td>
-<td>~796K/day PyPI (langfuse)</td>
+<td><a href="https://pypistats.org/packages/langfuse">~796K/day PyPI (langfuse)</a></td>
 </tr>
 <tr>
 <td><strong>Founded</strong></td>
@@ -127,7 +127,7 @@
 <p>The question Langfuse is positioned to answer is not <em>did it crash?</em> but <em>is it good?</em></p>
 <hr>
 <h2 id="the-clickhouse-acquisition">The ClickHouse Acquisition</h2>
-<p>In January 2026, <strong>ClickHouse acquired Langfuse</strong> following ClickHouse&rsquo;s $400M Series D round at a $15B valuation. This is relevant context for evaluation: Langfuse is no longer an independent startup but a product line inside one of the largest open-source database companies in the world.</p>
+<p>In January 2026, <strong>ClickHouse <a href="https://clickhouse.com/blog/clickhouse-acquires-langfuse-open-source-llm-observability">acquired Langfuse</a></strong> following ClickHouse&rsquo;s <a href="https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres">$400M Series D round at a $15B valuation</a>. This is relevant context for evaluation: Langfuse is no longer an independent startup but a product line inside one of the largest open-source database companies in the world.</p>
 <p>What changed: the storage architecture. Langfuse&rsquo;s self-hosted deployment previously used PostgreSQL alone. The current architecture uses a dual-storage design — PostgreSQL for structured metadata and ClickHouse for high-volume telemetry ingestion. This gives Langfuse the ability to handle hundreds of thousands of traces per day without the write contention that plagued earlier versions. It also represents a meaningful infrastructure dependency for self-hosters who did not previously run ClickHouse.</p>
 <p>What did not change: the MIT license on the core product, the open-source development model, and the public roadmap.</p>
 <hr>

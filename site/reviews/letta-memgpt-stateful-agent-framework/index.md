@@ -21,14 +21,14 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v0.16.7 (March 31, 2026) |
 | **Install** | `pip install letta-client` (client) · `pip install letta[server]` (server) |
 | **Authors** | Letta AI (spun from UC Berkeley Sky Computing Lab; founders: Charles Packer, Sarah Wooders) |
-| **Downloads** | ~30–50K/month (letta) · ~50–80K/month (letta-client) PyPI |
+| **Downloads** | [~30–50K/month (letta)](https://pypistats.org/packages/letta) · [~50–80K/month (letta-client)](https://pypistats.org/packages/letta-client) PyPI |
 | **Founded** | 2023 (MemGPT paper: October 2023) |
 
 ---
 
 ## The Core Idea: Agents That Remember
 
-Letta began as a 2023 UC Berkeley research paper (arXiv:2310.08560) introducing **virtual context management** — an operating-system-inspired technique that gives LLMs effectively unlimited memory by managing a hierarchy of storage tiers, analogous to how an OS uses fast RAM backed by slower disk.
+Letta began as a [2023 UC Berkeley research paper (arXiv:2310.08560)](https://arxiv.org/abs/2310.08560) introducing **virtual context management** — an operating-system-inspired technique that gives LLMs effectively unlimited memory by managing a hierarchy of storage tiers, analogous to how an OS uses fast RAM backed by slower disk.
 
 The fundamental insight: LLMs have fixed context windows. When conversations or task histories grow beyond that window, information disappears. MemGPT solved this by letting the agent itself decide what to keep immediately available, what to move to long-term storage, and when to retrieve it — using tool calls as the mechanism.
 
@@ -159,9 +159,9 @@ All agent state persists through a 51-model SQLAlchemy ORM — agents, memory bl
 
 ## Skill Learning
 
-December 2025 introduced **skill learning**: agents dynamically learn reusable skills from task trajectories, storing them in memory for application to future tasks. Benchmarks showed 21.1–36.8% improvement on Terminal Bench 2.0 with a 15.7% cost reduction. This is genuine online learning at the agent level — not fine-tuning, but structured experience accumulation.
+December 2025 introduced **skill learning**: agents dynamically learn reusable skills from task trajectories, storing them in memory for application to future tasks. On the original Terminal Bench, skill learning achieved a [21.1% relative improvement with a 15.7% cost reduction](https://www.letta.com/blog/skill-learning); on Terminal Bench 2.0, learned skills boost performance by [36.8% relative (15.7% absolute)](https://www.letta.com/blog/skill-learning). This is genuine online learning at the agent level — not fine-tuning, but structured experience accumulation.
 
-**Letta Code** (December 2025, desktop app April 2026) applies this to coding: a memory-first coding agent that learns from past work in a repository and improves over time. It reached top performance on the Terminal-Bench benchmark.
+**Letta Code** (December 2025, desktop app April 2026) applies this to coding: a memory-first coding agent that learns from past work in a repository and improves over time. It [reached top performance on the Terminal-Bench benchmark](https://www.letta.com/blog/terminal-bench/).
 
 ---
 

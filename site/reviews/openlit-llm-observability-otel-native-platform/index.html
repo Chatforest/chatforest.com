@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>OpenLIT occupies an interesting corner of the LLM observability market: it is arguably the most technically pure OTel-native implementation in the category, with the broadest provider coverage and the only GPU monitoring story of any LLM observability tool. It also has no cloud product, appears to be bootstrapped by a very small team, and forces every user onto a self-hosted ClickHouse deployment. For self-hosting teams doing MLOps, those facts make OpenLIT genuinely compelling. For everyone else, they introduce friction that the well-funded alternatives do not.</p>
-<p>The project launched in January 2024, reached 2,420 GitHub stars in roughly 16 months, and has been shipping at a rapid pace — with a Kubernetes eBPF controller arriving in late April 2026 that puts OpenLIT ahead of every competitor on zero-code instrumentation.</p>
+<p>The project launched in January 2024, reached 2,420 GitHub stars in roughly 16 months, and has been shipping at a rapid pace — with a <a href="https://github.com/openlit/openlit/releases/tag/controller-0.1.0">Kubernetes eBPF controller arriving in late April 2026</a> that puts OpenLIT ahead of every competitor on zero-code instrumentation.</p>
 <p>Part of our <strong><a href="/categories/developer-tools/">Developer Tools category</a></strong>.</p>
 <hr>
 <h2 id="at-a-glance">At a Glance</h2>
@@ -89,7 +89,7 @@
 </tr>
 <tr>
 <td><strong>Python SDK</strong></td>
-<td><code>openlit</code> v1.41.2 · ~1.74M downloads/month</td>
+<td><code>openlit</code> v1.41.2 · <a href="https://pypistats.org/packages/openlit">~1.74M downloads/month</a></td>
 </tr>
 <tr>
 <td><strong>TypeScript SDK</strong></td>
@@ -163,7 +163,7 @@ openlit<span style="color:#f92672">.</span>init(
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker compose up -d
 </code></pre></div><p>This spins up two containers: <code>clickhouse/clickhouse-server:24.4.1</code> (ports 9000, 8123) and <code>ghcr.io/openlit/openlit:latest</code> (port 3000 for the Next.js UI, ports 4317/4318 for OTLP gRPC/HTTP ingestion). ClickHouse stores the telemetry time-series; SQLite via Prisma stores application metadata.</p>
 <h3 id="the-ebpf-controller">The eBPF controller</h3>
-<p>Released April 30, 2026 as <code>controller-0.1.0</code>, the Kubernetes operator uses eBPF to intercept and instrument AI service calls without requiring any SDK integration — no code changes, no dependency injection, no restart. It uses the OpAMP protocol for Fleet Hub multi-deployment management. This is an architecturally meaningful addition: competing platforms require code changes to instrument; OpenLIT&rsquo;s controller instruments at the infrastructure level.</p>
+<p>Released <a href="https://github.com/openlit/openlit/releases/tag/controller-0.1.0">April 30, 2026</a> as <code>controller-0.1.0</code>, the Kubernetes operator uses eBPF to intercept and instrument AI service calls without requiring any SDK integration — no code changes, no dependency injection, no restart. It uses the OpAMP protocol for Fleet Hub multi-deployment management. This is an architecturally meaningful addition: competing platforms require code changes to instrument; OpenLIT&rsquo;s controller instruments at the infrastructure level.</p>
 <hr>
 <h2 id="integrations">Integrations</h2>
 <p>OpenLIT claims 60+ integrations. The Python SDK covers:</p>
@@ -298,11 +298,11 @@ openlit<span style="color:#f92672">.</span>init(
 <tr>
 <td>Funding</td>
 <td>Bootstrapped</td>
-<td>$4.5M</td>
-<td>Arize ($38M)</td>
+<td><a href="https://langfuse.com/blog/announcing-our-seed-round">$4.5M</a></td>
+<td><a href="https://www.prnewswire.com/news-releases/arize-ai-raises-38-million-series-b-to-scale-machine-learning-observability-platform-301620603.html">Arize ($38M)</a></td>
 <td>Y Combinator</td>
-<td>$121M</td>
-<td>$1.25B (LangChain)</td>
+<td><a href="https://www.braintrust.dev/blog/announcing-series-b">$121M</a></td>
+<td><a href="https://techcrunch.com/2025/10/16/langchain-raises-125m-series-b-at-1-25b-valuation/">$1.25B (LangChain)</a></td>
 <td>CoreWeave ($1.7B acq.)</td>
 </tr>
 <tr>

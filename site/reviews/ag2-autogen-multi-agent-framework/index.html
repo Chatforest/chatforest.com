@@ -72,15 +72,15 @@
 <h2 id="the-split-two-autogen-repositories">The Split: Two AutoGen Repositories</h2>
 <p><strong>microsoft/autogen</strong> — the original project, created by Microsoft Research</p>
 <ul>
-<li><strong>57,722 stars</strong>, MIT license, Python + .NET</li>
+<li><a href="https://github.com/microsoft/autogen"><strong>57,722 stars</strong></a>, MIT license, Python + .NET</li>
 <li><strong>Status: maintenance mode</strong> as of 2026 — no new features planned, Microsoft has shifted focus to its internal Microsoft Agent Framework (MAF) successor</li>
 <li>Last major Python release: v0.7.5 (September 2024)</li>
 </ul>
 <p><strong>ag2ai/ag2</strong> — the community fork that became an independent project</p>
 <ul>
-<li><strong>4,508 stars</strong>, Apache 2.0 license, Python only (3.10–3.13)</li>
-<li><strong>Status: actively developed</strong> — v0.12.2 released May 1, 2026; path to v1.0 announced</li>
-<li>Governs itself under an open governance structure established when the fork was created in November 2024</li>
+<li><a href="https://github.com/ag2ai/ag2"><strong>4,508 stars</strong></a>, Apache 2.0 license, Python only (3.10–3.13)</li>
+<li><strong>Status: actively developed</strong> — <a href="https://github.com/ag2ai/ag2/releases/tag/v0.12.2">v0.12.2 released May 1, 2026</a>; path to v1.0 announced</li>
+<li>Governs itself under an open governance structure established when <a href="https://github.com/ag2ai/ag2">the fork was created in November 2024</a></li>
 </ul>
 <p>For anyone evaluating &ldquo;AutoGen&rdquo; as a framework to build on today, <strong>ag2ai/ag2 is the living project</strong>. The star count gap (57K vs. 4.5K) reflects inertia, not activity. This review covers ag2ai/ag2.</p>
 <hr>
@@ -151,7 +151,7 @@
 <p>Chain multiple conversations in sequence, with each conversation&rsquo;s output passed as context to the next. Nested chats embed sub-conversations inside a parent agent&rsquo;s reasoning — useful for tool-augmented agents that need to spawn a focused sub-dialog to complete a step.</p>
 <hr>
 <h2 id="the-beta-rewrite-whats-coming-in-v10">The Beta Rewrite: What&rsquo;s Coming in v1.0</h2>
-<p>AG2&rsquo;s most significant recent development is the <strong>Beta API</strong> (<code>autogen.beta</code>), launched in v0.11.3 (March 2026) and expanded in v0.12.x. It runs alongside the legacy API without breaking changes and is the foundation for v1.0 (legacy API deprecated at v0.14).</p>
+<p>AG2&rsquo;s most significant recent development is the <strong>Beta API</strong> (<code>autogen.beta</code>), <a href="https://github.com/ag2ai/ag2/releases/tag/v0.11.3">launched in v0.11.3 (March 2026)</a> and expanded in v0.12.x. It runs alongside the legacy API without breaking changes and is the foundation for v1.0 (legacy API deprecated at v0.14).</p>
 <h3 id="memorystream">MemoryStream</h3>
 <p>A pub/sub event bus that isolates agent state from the conversation flow. Rather than sharing mutable state, agents publish to and subscribe from named streams. This enables real-time streaming, safe concurrent agent reuse, and clean separation of concerns.</p>
 <h3 id="agent-harness-v0122">Agent Harness (v0.12.2)</h3>
@@ -221,8 +221,7 @@ OpenAI, Anthropic, Google Gemini (+ Vertex AI), Mistral, Groq, Ollama, AWS Bedro
 <hr>
 <h2 id="security-notes">Security Notes</h2>
 <ul>
-<li><strong>CVE-2025-69872</strong> — DiskCache vulnerability, fixed in v0.12.0 (April 2026)</li>
-<li><strong>CVE-2026-23745, CVE-2026-23950, CVE-2026-24842</strong> — three CVEs addressed in v0.10.5 (January 2026)</li>
+<li><strong><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-69872">CVE-2025-69872</a></strong> — DiskCache (python-diskcache) deserialization vulnerability; <a href="https://github.com/ag2ai/ag2/releases/tag/v0.12.0">fixed in AG2 v0.12.0</a> (April 2026)</li>
 <li><strong>v0.11.4 hardening</strong> — shell injection prevention in ShellExecutor, path traversal protection on MCP resource URIs, credential leakage fix in FileLogger</li>
 </ul>
 <hr>

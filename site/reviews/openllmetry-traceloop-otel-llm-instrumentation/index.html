@@ -116,7 +116,7 @@
 </tr>
 <tr>
 <td><strong>Downloads</strong></td>
-<td>~3.85M/month (opentelemetry-instrumentation-openai) · ~2.7M/month (traceloop-sdk)</td>
+<td><a href="https://pypistats.org/packages/opentelemetry-instrumentation-openai">~3.85M/month (opentelemetry-instrumentation-openai)</a> · <a href="https://pypistats.org/packages/traceloop-sdk">~2.7M/month (traceloop-sdk)</a></td>
 </tr>
 <tr>
 <td><strong>Created</strong></td>
@@ -170,17 +170,17 @@ OpenAIInstrumentor()<span style="color:#f92672">.</span>instrument()
 <p>These are not inflated by framework dependency chains — they require explicit installation. For comparison context: 3.85 million monthly downloads puts the OpenAI instrumentation package in the tier of widely-used developer tooling, not a niche project. This validates the architectural bet that vendor-neutral OTel instrumentation has demand.</p>
 <hr>
 <h2 id="traceloop--servicenow-what-the-acquisition-means">Traceloop → ServiceNow: What the Acquisition Means</h2>
-<p>In March 2026, Traceloop announced it was joining ServiceNow. The technology is being integrated into ServiceNow&rsquo;s AI Control Tower, providing LLM observability and governance for enterprise AI deployments.</p>
+<p>In March 2026, Traceloop <a href="https://traceloop.com/blog/traceloop-is-joining-servicenow">announced it was joining ServiceNow</a>. The technology is being integrated into ServiceNow&rsquo;s AI Control Tower, providing LLM observability and governance for enterprise AI deployments.</p>
 <p>Nir Gazit (CEO) stated explicitly that <strong>OpenLLMetry will remain open-source</strong> and Traceloop plans to continue contributing to the OpenTelemetry ecosystem.</p>
 <p>The practical implications for users:</p>
 <p><strong>Neutral to positive short-term</strong>: The acquisition validates the technology. ServiceNow has resources to sustain development. Enterprise customers get a supported path to LLM observability that integrates with their existing ServiceNow investment.</p>
 <p><strong>Uncertain medium-term</strong>: Traceloop&rsquo;s commercial incentive was to compete in the LLM observability market. ServiceNow&rsquo;s incentive is to use the technology within its platform. Open-source maintenance may drift toward sustaining existing functionality rather than expanding coverage. The post-acquisition commit patterns — more dependabot dependency bumps, fewer human-authored feature commits — are an early signal worth watching.</p>
-<p><strong>Parallel to Helicone</strong>: Both Helicone (acquired by Mintlify, maintenance mode) and OpenLLMetry (acquired by ServiceNow, status evolving) entered 2026 as independent LLM observability players and exited as parts of larger platforms. The pattern reflects consolidation in a crowded market.</p>
+<p><strong>Parallel to Helicone</strong>: Both <a href="https://www.helicone.ai/blog/joining-mintlify">Helicone (acquired by Mintlify, maintenance mode)</a> and OpenLLMetry (acquired by ServiceNow, status evolving) entered 2026 as independent LLM observability players and exited as parts of larger platforms. The pattern reflects consolidation in a crowded market.</p>
 <p>The open-source commitment is meaningful — but it is a statement of intent, not a structural guarantee.</p>
 <hr>
 <h2 id="otel-genai-semantic-conventions-the-long-game">OTel GenAI Semantic Conventions: The Long Game</h2>
 <p>OpenLLMetry&rsquo;s core bet is that the OpenTelemetry project will successfully standardize LLM observability semantics through its GenAI Semantic Conventions working group. If that happens, OpenLLMetry becomes a reference implementation of a CNCF-governed standard — every observability backend in the ecosystem will need to understand the same span attributes.</p>
-<p>As of v0.60.0, OpenLLMetry is actively aligning its packages with GenAI semconv v1.40.0. The conventions are still in experimental status at CNCF — not yet stable, meaning attribute names can change between releases.</p>
+<p>As of v0.60.0, OpenLLMetry is actively aligning its packages with <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/">GenAI semconv v1.40.0</a>. The conventions are still in experimental status at CNCF — not yet stable, meaning attribute names can change between releases.</p>
 <p>This creates a transitional period where teams face a choice: adopt the evolving standard now and benefit from early integration, or wait for stability and risk migration debt. OpenLLMetry has been navigating this by updating packages to track the spec, but the v0.x versioning on the project itself reflects the same instability — no API stability guarantee exists yet.</p>
 <hr>
 <h2 id="limitations">Limitations</h2>

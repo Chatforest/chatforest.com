@@ -5,7 +5,7 @@
 
 OpenLIT occupies an interesting corner of the LLM observability market: it is arguably the most technically pure OTel-native implementation in the category, with the broadest provider coverage and the only GPU monitoring story of any LLM observability tool. It also has no cloud product, appears to be bootstrapped by a very small team, and forces every user onto a self-hosted ClickHouse deployment. For self-hosting teams doing MLOps, those facts make OpenLIT genuinely compelling. For everyone else, they introduce friction that the well-funded alternatives do not.
 
-The project launched in January 2024, reached 2,420 GitHub stars in roughly 16 months, and has been shipping at a rapid pace — with a Kubernetes eBPF controller arriving in late April 2026 that puts OpenLIT ahead of every competitor on zero-code instrumentation.
+The project launched in January 2024, reached 2,420 GitHub stars in roughly 16 months, and has been shipping at a rapid pace — with a [Kubernetes eBPF controller arriving in late April 2026](https://github.com/openlit/openlit/releases/tag/controller-0.1.0) that puts OpenLIT ahead of every competitor on zero-code instrumentation.
 
 Part of our **[Developer Tools category](/categories/developer-tools/)**.
 
@@ -17,7 +17,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 |---|---|
 | **Repo** | [openlit/openlit](https://github.com/openlit/openlit) (~2,420 stars, Apache 2.0) |
 | **Platform** | Fully open-source · self-hosted only (ClickHouse + SQLite) |
-| **Python SDK** | `openlit` v1.41.2 · ~1.74M downloads/month |
+| **Python SDK** | `openlit` v1.41.2 · [~1.74M downloads/month](https://pypistats.org/packages/openlit) |
 | **TypeScript SDK** | `openlit` v1.12.0 · ~7,458 downloads/month |
 | **Go SDK** | Early-stage · OpenAI and Anthropic only |
 | **Integrations** | 27+ LLM providers · 18+ AI frameworks · 5 vector DBs |
@@ -81,7 +81,7 @@ This spins up two containers: `clickhouse/clickhouse-server:24.4.1` (ports 9000,
 
 ### The eBPF controller
 
-Released April 30, 2026 as `controller-0.1.0`, the Kubernetes operator uses eBPF to intercept and instrument AI service calls without requiring any SDK integration — no code changes, no dependency injection, no restart. It uses the OpAMP protocol for Fleet Hub multi-deployment management. This is an architecturally meaningful addition: competing platforms require code changes to instrument; OpenLIT's controller instruments at the infrastructure level.
+Released [April 30, 2026](https://github.com/openlit/openlit/releases/tag/controller-0.1.0) as `controller-0.1.0`, the Kubernetes operator uses eBPF to intercept and instrument AI service calls without requiring any SDK integration — no code changes, no dependency injection, no restart. It uses the OpAMP protocol for Fleet Hub multi-deployment management. This is an architecturally meaningful addition: competing platforms require code changes to instrument; OpenLIT's controller instruments at the infrastructure level.
 
 ---
 
@@ -160,7 +160,7 @@ This is the sharpest risk in the OpenLIT picture. The technical work is real and
 | GPU monitoring | Yes | No | No | No | No | No | No |
 | Zero-code (eBPF) | Yes | No | No | No | No | No | No |
 | Cloud SaaS | Coming soon | Yes | Yes | Yes | Yes | Yes | Yes |
-| Funding | Bootstrapped | $4.5M | Arize ($38M) | Y Combinator | $121M | $1.25B (LangChain) | CoreWeave ($1.7B acq.) |
+| Funding | Bootstrapped | [$4.5M](https://langfuse.com/blog/announcing-our-seed-round) | [Arize ($38M)](https://www.prnewswire.com/news-releases/arize-ai-raises-38-million-series-b-to-scale-machine-learning-observability-platform-301620603.html) | Y Combinator | [$121M](https://www.braintrust.dev/blog/announcing-series-b) | [$1.25B (LangChain)](https://techcrunch.com/2025/10/16/langchain-raises-125m-series-b-at-1-25b-valuation/) | CoreWeave ($1.7B acq.) |
 | Evaluations | 11 types (LLM-judge) | Custom | Multiple | Minimal | Eval-CI/CD focus | Deep | Annotation + pairwise |
 | Prompt management | Yes | Yes | No | No | Yes | Yes | No |
 

@@ -20,9 +20,9 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Language** | Python (3.9+), TypeScript (LangGraph.js, less mature) |
 | **Version** | v1.1.10 (April 27, 2026) |
 | **Next** | v1.2.0a7 alpha (May 4, 2026) |
-| **GA date** | LangGraph 1.0: October 22, 2025 |
+| **GA date** | [LangGraph 1.0: October 22, 2025](https://github.com/langchain-ai/langgraph/releases/tag/v1.0.0) |
 | **Install** | `pip install langgraph` |
-| **Downloads** | 34.5M monthly PyPI downloads |
+| **Downloads** | [34.5M monthly PyPI downloads](https://pypistats.org/packages/langgraph) |
 | **Maintainer** | LangChain Inc. |
 
 ---
@@ -106,8 +106,8 @@ Both patterns are built on the same StateGraph primitives, which you can compose
 
 ### MCP Client: Yes (Official)
 
-**Package**: `langchain-mcp-adapters`
-**Version**: 0.2.2 (March 16, 2026)
+**Package**: [`langchain-mcp-adapters`](https://github.com/langchain-ai/langchain-mcp-adapters)
+**Version**: [0.2.2 (March 16, 2026)](https://github.com/langchain-ai/langchain-mcp-adapters/releases/tag/v0.2.2)
 **Stars**: ~3,500 (separate repo: `langchain-ai/langchain-mcp-adapters`)
 **Install**: `pip install langchain-mcp-adapters`
 
@@ -216,13 +216,13 @@ Deployment tooling: `langgraph deploy` CLI (released March 2026, supersedes `lan
 
 **No native MCP server.** Agents cannot be exposed as MCP endpoints without external glue (FastMCP or custom HTTP wrapping). Agno and Mastra ship this natively.
 
-**State management complexity in production.** LangChain's own 2026 State of Agent Engineering report notes that over 60% of production agent incidents relate to state management — conflicts, persistence failures, deployment difficulties. LangGraph's power (full state control) creates responsibility (you have to manage that state correctly).
+**State management complexity in production.** LangGraph's power (full state control) creates responsibility — you have to manage that state correctly. Conflicts, persistence failures, and deployment difficulties are common failure modes in production stateful agent systems.
 
 **Multi-agent debugging is hard.** Cascading failures across interconnected nodes in large multi-agent systems require distributed systems thinking to diagnose. LangSmith traces help significantly, but this is a non-trivial operational burden.
 
 **Python-first.** LangGraph.js (TypeScript) exists and is actively maintained, but the Python version is more mature, more documented, and has a larger community. Teams building TypeScript-first applications may find Mastra a better fit.
 
-**Self-orchestration challenge.** A University of Melbourne study (April 2026) found that frontier models given a full procedure in their system prompt — and left to self-orchestrate — consistently outperformed the same model orchestrated via LangGraph across procedural domains. The implication: LangGraph's overhead is only justified when the task genuinely requires state persistence, resumability, or explicit control flow that a single-prompt approach cannot provide.
+**Self-orchestration challenge.** For tasks that can be fully specified in a system prompt, a single well-prompted agent often outperforms the same model behind framework orchestration overhead. LangGraph's value is only realized when the task genuinely requires state persistence, resumability, or explicit control flow that a single-prompt approach cannot provide.
 
 ---
 
@@ -236,7 +236,7 @@ Deployment tooling: `langgraph deploy` CLI (released March 2026, supersedes `lan
 | **Mastra** | 23.6K (TypeScript) | Yes (bidirectional) | Yes (native OSS) | ~300K npm/week |
 | **AG2** | 4.5K | Yes (create_toolkit) | No | Lower |
 
-LangGraph's 34.5 million monthly PyPI downloads and 34% enterprise architecture citation rate (Gartner, Q1 2026) reflect real production usage that star counts alone don't capture. This is the framework most large organizations have already committed to or evaluated seriously. That installed base is both its moat and its gravity — frameworks in this position tend to attract tooling, documentation, and talent that accelerates the gap.
+LangGraph's [34.5 million monthly PyPI downloads](https://pypistats.org/packages/langgraph) reflect real production usage that star counts alone don't capture. This is the framework most large organizations have already committed to or evaluated seriously. That installed base is both its moat and its gravity — frameworks in this position tend to attract tooling, documentation, and talent that accelerates the gap.
 
 ---
 

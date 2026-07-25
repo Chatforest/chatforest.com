@@ -3,7 +3,7 @@
 > CrewAI reviewed: the most-starred Python agent framework on GitHub with 50.6K stars, MIT license, and v1.14.4 release. Crews, Flows, memory, 30+ built-in tools, MCP client support. Rating: 4.5/5.
 
 
-Before LangGraph, before Agno, before mcp-agent — most Python developers learning about AI agents encountered the idea of role-based agent teams through CrewAI. At **50,652 stars** and v1.14.4 (released April 30, 2026), it remains the most-starred Python agent framework on GitHub by a significant margin, and for good reason: its role/goal/backstory model for defining agents maps cleanly onto how people naturally think about dividing work.
+Before LangGraph, before Agno, before mcp-agent — most Python developers learning about AI agents encountered the idea of role-based agent teams through CrewAI. At [**50,652 stars**](https://github.com/crewAIInc/crewAI) and [v1.14.4 (released April 30, 2026)](https://github.com/crewAIInc/crewAI/releases/tag/1.14.4), it remains the most-starred Python agent framework on GitHub by a significant margin, and for good reason: its role/goal/backstory model for defining agents maps cleanly onto how people naturally think about dividing work.
 
 This is a framework that shaped vocabulary. When you read about "agent crews" or "agent roles" in a blog post or conference talk, you are usually reading about patterns CrewAI introduced. Part of our **[Developer Tools category](/categories/developer-tools/)**.
 
@@ -19,7 +19,7 @@ This is a framework that shaped vocabulary. When you read about "agent crews" or
 | **Language** | Python |
 | **Version** | v1.14.4 (April 30, 2026) |
 | **Install** | `pip install crewai` |
-| **Author** | João Moura / crewAI Inc. |
+| **Author** | [João Moura](https://github.com/joaomdmoura) / crewAI Inc. |
 | **Enterprise** | CrewAI AMP (cloud platform, separate) |
 
 ---
@@ -102,7 +102,7 @@ Exposing CrewAI agents as an MCP server endpoint — so that Cursor, Claude Desk
 
 ## Memory
 
-CrewAI's memory system uses **LanceDB** as the local storage backend, with an LLM-assisted layer that analyzes content on save. Rather than requiring you to categorize memories manually, the framework infers scope (path-like structures such as `/agent/researcher` or `/project/analysis`), importance, and categories automatically.
+CrewAI's memory system uses [**LanceDB**](https://lancedb.com) as the local storage backend, with an LLM-assisted layer that analyzes content on save. Rather than requiring you to categorize memories manually, the framework infers scope (path-like structures such as `/agent/researcher` or `/project/analysis`), importance, and categories automatically.
 
 Retrieval uses composite scoring: semantic similarity, recency, and importance are blended to surface the most relevant memories. Deep recall mode runs multi-step LLM query refinement for harder lookups.
 
@@ -112,7 +112,7 @@ The system also deduplicates: before saving, it checks for similar existing reco
 
 ## Tools Ecosystem
 
-CrewAI ships 30+ built-in tools as part of `crewai-tools`:
+CrewAI ships [30+ built-in tools](https://github.com/crewAIInc/crewAI-tools) as part of `crewai-tools`:
 
 - **Data retrieval**: `FileReadTool`, `DirectoryReadTool`, `PDFSearchTool`
 - **Web operations**: `WebsiteSearchTool`, `ScrapeWebsiteTool`, `FirecrawlScrapeWebsiteTool`

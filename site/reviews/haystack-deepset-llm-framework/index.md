@@ -21,7 +21,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v2.28.0 (April 20, 2026) |
 | **Install** | `pip install haystack-ai` |
 | **Authors** | deepset GmbH (Berlin; Milos Rusic, Malte Pietsch, Timo Möller) |
-| **Downloads** | ~729K monthly PyPI downloads |
+| **Downloads** | [~729K monthly PyPI downloads](https://pypistats.org/packages/haystack-ai) |
 | **Founded** | 2019 (v2.0 rewrite: early 2024) |
 
 ---
@@ -195,7 +195,7 @@ The privacy default is notable. Haystack explicitly disables content tracing to 
 
 ## Production Context
 
-Haystack is backed by deepset GmbH (Berlin, founded 2018), which raised $14M Series A (Google Ventures, 2022) and $30M Series B (Balderton Capital, 2023), and was named a Gartner Cool Vendor in AI Engineering in 2024. The framework has been in production longer than most of its competitors — Haystack 1.x dates to 2019 — and the Haystack 2.0 rewrite (early 2024) rebuilt on lessons from those years of enterprise deployment.
+Haystack is backed by deepset GmbH (Berlin, founded 2018), which raised $14M Series A (Google Ventures, 2022) and [$30M Series B (Balderton Capital, 2023)](https://www.deepset.ai/news/funding-announcement-balderton-capital), and was [named a Gartner Cool Vendor in AI Engineering in 2024](https://www.deepset.ai/news/deepset-2024-gartner-cool-vendors-ai-engineering). The framework has been in production longer than most of its competitors — Haystack 1.x dates to 2019 — and the Haystack 2.0 rewrite (early 2024) rebuilt on lessons from those years of enterprise deployment.
 
 Enterprise users include **Airbus** (combined table + text QA for pilots and maintenance), **Lufthansa Industry Solutions** (AI knowledge assistant), **The Economist**, **Oxford University Press**, **European Commission**, **Netflix**, **Apple**, **LEGO**, and **Intel**. Notable 2025 partnerships: Meta (Llama Stack), MongoDB, NVIDIA, AWS, and PwC.
 

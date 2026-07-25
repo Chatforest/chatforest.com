@@ -5,7 +5,7 @@
 
 Most agent frameworks treat data retrieval as a feature. LlamaIndex treats it as the whole point.
 
-Since Jerry Liu launched it in 2022, LlamaIndex has built the most comprehensive data integration layer in the agent ecosystem: six index types, 78 vector store backends, 104 LLM providers, and a commercial document parsing product that handles 50+ file types including handwriting and complex tables. The framework's thesis — that connecting private and domain data to LLMs is the core challenge of building useful AI applications — has proven correct enough that it now has 49,100 GitHub stars and 6.8 million monthly PyPI downloads.
+Since [Jerry Liu](https://twitter.com/jerryjliu0) launched it in 2022, LlamaIndex has built the most comprehensive data integration layer in the agent ecosystem: six index types, 78 vector store backends, 104 LLM providers, and a commercial document parsing product that handles 50+ file types including handwriting and complex tables. The framework's thesis — that connecting private and domain data to LLMs is the core challenge of building useful AI applications — has proven correct enough that it now has 49,100 GitHub stars and [6.8 million monthly PyPI downloads](https://pypistats.org/packages/llama-index).
 
 This is a review of what that looks like in practice: where LlamaIndex excels, what it doesn't do, and who should use it.
 
@@ -25,8 +25,8 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v0.14.21 (April 21, 2026) |
 | **Install** | `pip install llama-index` |
 | **Authors** | Jerry Liu (creator), Logan Markewich; maintained by LlamaIndex, Inc. |
-| **Downloads** | ~6.8M monthly PyPI downloads |
-| **Commercial product** | LlamaParse — enterprise document parsing/OCR |
+| **Downloads** | [~6.8M monthly PyPI downloads](https://pypistats.org/packages/llama-index) |
+| **Commercial product** | [LlamaParse](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse/) — enterprise document parsing/OCR |
 
 ---
 

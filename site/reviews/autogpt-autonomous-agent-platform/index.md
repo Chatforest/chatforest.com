@@ -3,7 +3,7 @@
 > AutoGPT reviewed: the project that started the autonomous agent revolution. Now a visual no-code/low-code continuous agent platform with 30+ integrations, drag-and-drop workflow builder, and agent marketplace. 184K stars, dual MIT/Polyform Shield license. Rating: 3.5/5.
 
 
-No other project in this series has a story quite like AutoGPT. Released in a single weekend in March 2023, it became the fastest-growing GitHub repository in history. It demonstrated, before most people had thought about it, that GPT-4 could chain tool calls into autonomous workflows — and the world noticed. Three years later, the original CLI experiment has been completely replaced by a visual platform that barely resembles what made it famous.
+No other project in this series has a story quite like AutoGPT. Released in a single weekend in March 2023, it became [one of the fastest-growing GitHub repositories in history](https://en.wikipedia.org/wiki/AutoGPT). It demonstrated, before most people had thought about it, that GPT-4 could chain tool calls into autonomous workflows — and the world noticed. Three years later, the original CLI experiment has been completely replaced by a visual platform that barely resembles what made it famous.
 
 Understanding AutoGPT in 2026 means understanding both halves: why it mattered, and what it has become.
 
@@ -33,7 +33,7 @@ On March 30, 2023, Toran Bruce Richards — founder of a small UK video game com
 
 The concept was not entirely new, but the timing was. GPT-4 had launched weeks earlier, and AutoGPT was the first accessible demonstration that these new models could act as autonomous agents rather than passive chat interfaces. Within days the repository accumulated over 100,000 stars, trending on GitHub, Twitter, and every AI newsletter. Venture capital took notice. The word "agentic" entered the mainstream AI vocabulary in part because of this project.
 
-The $12M raise from Redpoint Ventures and GitHub in October 2023 validated the interest — and also set the stage for the pivot.
+The [$12M raise from Redpoint Ventures and GitHub in October 2023](https://agpt.co/blog/autogpt-partners-with-github-for-ai-security) validated the interest — and also set the stage for the pivot.
 
 ---
 
@@ -120,7 +120,7 @@ The self-hosted path uses the platform code under Polyform Shield — permitted 
 
 ## The PyPI Package Question
 
-The `autogpt` Python package on PyPI receives only ~582 weekly downloads and has not been updated in over 12 months. This is not the active product. The platform is consumed through the web UI at platform.agpt.co or through a self-hosted Docker deployment, not through `pip install`. Developers who want a Python framework API for building agents programmatically are better served by LangGraph, CrewAI, PydanticAI, or other frameworks reviewed in this series.
+The `autogpt` [Python package on PyPI](https://pypistats.org/packages/autogpt) receives only ~582 weekly downloads and has not been updated in over 12 months. This is not the active product. The platform is consumed through the web UI at platform.agpt.co or through a self-hosted Docker deployment, not through `pip install`. Developers who want a Python framework API for building agents programmatically are better served by LangGraph, CrewAI, PydanticAI, or other frameworks reviewed in this series.
 
 ---
 

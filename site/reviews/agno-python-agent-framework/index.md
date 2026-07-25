@@ -3,9 +3,9 @@
 > Agno reviewed: a production-ready Python agent framework with 39.8K stars, MPL-2.0 license, and v2.6.4 release. Agents, Teams, Workflows, RAG, memory, and AgentOS runtime. MCP client support built in. Rating: 4.5/5.
 
 
-Most Python agent frameworks get their MCP integration as an afterthought. Agno treats it as a first-class production concern — not just a plugin, but part of a complete agent runtime that can both consume MCP servers and expose itself as one. At **39,800 stars** and v2.6.4 (released April 28, 2026), Agno is one of the largest Python agent projects on GitHub, and its performance-first design philosophy makes it worth a serious look.
+Most Python agent frameworks get their MCP integration as an afterthought. Agno treats it as a first-class production concern — not just a plugin, but part of a complete agent runtime that can both consume MCP servers and expose itself as one. At [**39,800 stars**](https://github.com/agno-agi/agno) and v2.6.4 (released April 28, 2026), Agno is one of the largest Python agent projects on GitHub, and its performance-first design philosophy makes it worth a serious look.
 
-Originally launched as Phidata and rebranded to Agno in January 2025, the framework has evolved from a data engineering tool into a dedicated agentic runtime. Part of our **[Developer Tools category](/categories/developer-tools/)**.
+Originally launched as Phidata and [rebranded to Agno in January 2025](https://github.com/agno-agi/agno), the framework has evolved from a data engineering tool into a dedicated agentic runtime. Part of our **[Developer Tools category](/categories/developer-tools/)**.
 
 ---
 
@@ -30,7 +30,7 @@ Agno is a Python framework for building production AI agent systems. The core be
 
 The framework organizes around four building blocks:
 
-1. **Agents** — autonomous LLM-powered agents with tools, memory, knowledge, and reasoning. Agent creation runs at approximately 2 microseconds and consumes ~3.75 KiB of memory on average. The team benchmarks this at ~10,000x faster and ~50x less memory than LangGraph, though these numbers measure framework overhead rather than LLM latency, which dominates in practice.
+1. **Agents** — autonomous LLM-powered agents with tools, memory, knowledge, and reasoning. Agent creation runs at approximately 2 microseconds and consumes ~3.75 KiB of memory on average. The team [benchmarks this at ~10,000x faster and ~50x less memory than LangGraph](https://github.com/agno-agi/agno?tab=readme-ov-file#performance), though these numbers measure framework overhead rather than LLM latency, which dominates in practice.
 2. **Teams** — groups of specialized agents that can collaborate, delegate tasks, and share state. Teams support coordinator patterns (one agent routes to specialists) as well as collaborative patterns (agents work in parallel on sub-problems).
 3. **Workflows** — structured, repeatable pipelines that orchestrate agents and functions through defined steps. Workflows are useful when you want predictable, inspectable execution — research pipelines, data processing, triage flows.
 4. **AgentOS** — a production runtime layer that wraps agents, teams, and workflows in a FastAPI-based REST API server. AgentOS handles session management, conversation storage, traces, and monitoring in your own database. It is what Agno calls "the missing piece" between a working agent prototype and a deployed product.

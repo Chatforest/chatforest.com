@@ -93,7 +93,7 @@
 </tr>
 <tr>
 <td><strong>PyPI downloads</strong></td>
-<td>~4.29M/month (<code>braintrust</code> package, v0.19.0, May 4, 2026)</td>
+<td><a href="https://pypistats.org/packages/braintrust">~4.29M/month</a> (<code>braintrust</code> package, v0.19.0, May 4, 2026)</td>
 </tr>
 <tr>
 <td><strong>Language</strong></td>
@@ -127,7 +127,7 @@
 </table>
 <hr>
 <h2 id="why-evals-first">Why Evals First?</h2>
-<p>Ankur Goyal&rsquo;s previous company, Impira, built document-processing AI products. When models or prompts changed, the team would debate whether quality improved — without a systematic way to measure it. They built internal tooling on Snowflake to score outputs against expected results across a consistent set of test cases. Goyal described the moment they first used it as a &ldquo;holy shit moment&rdquo;: debates evaporated, good changes shipped faster, bad changes were caught before production.</p>
+<p>Ankur Goyal&rsquo;s previous company, <a href="https://www.figma.com/blog/figma-acquires-impira/">Impira</a>, built document-processing AI products. When models or prompts changed, the team would debate whether quality improved — without a systematic way to measure it. They built internal tooling on Snowflake to score outputs against expected results across a consistent set of test cases. Goyal described the moment they first used it as a &ldquo;holy shit moment&rdquo;: debates evaporated, good changes shipped faster, bad changes were caught before production.</p>
 <p>Braintrust is an externalization of that tooling. The central argument: logging is necessary but not sufficient. Traces tell you what happened; evals tell you whether what happened was good. Without the evaluation layer, observability data accumulates without producing actionable signal. The platform is designed so that both layers are equally accessible and deeply integrated.</p>
 <hr>
 <h2 id="architecture">Architecture</h2>
@@ -150,7 +150,7 @@ braintrust<span style="color:#f92672">.</span>init(project<span style="color:#f9
 <h3 id="brainstore">Brainstore</h3>
 <p>In March 2025, Braintrust announced Brainstore: a proprietary database written in Rust, purpose-built for AI trace storage. The engineering team came from BigQuery and Dropbox&rsquo;s storage group.</p>
 <p>Architecture: each customer has an isolated data partition. Ingestion via WAL. Full-text indexing with Tantivy. The system connects S3, PostgreSQL, and Redis. It is now the default backend for all Braintrust customers, with self-hosted customers running separate reader nodes (16 vCPU, 32GB RAM, 1TB NVMe, 150K IOPS) and writer nodes (32 vCPU, 64GB RAM).</p>
-<p>The claimed performance number is 80× faster than data warehouses for full-text search on trace data — Braintrust published a specific comparison: 240ms for a query that took 78,963ms in a warehouse competitor. These benchmarks are Braintrust&rsquo;s own; independent verification is not available. The investment is real: building a custom database is an unusual commitment that signals how central high-performance trace storage is to the roadmap.</p>
+<p>The claimed performance number is 80× faster than data warehouses for full-text search on trace data — <a href="https://www.braintrust.dev/blog/brainstore-benchmarks">Braintrust published a specific comparison</a>: 240ms for a query that took 78,963ms in a warehouse competitor. These benchmarks are Braintrust&rsquo;s own; independent verification is not available. The investment is real: building a custom database is an unusual commitment that signals how central high-performance trace storage is to the roadmap.</p>
 <hr>
 <h2 id="core-features">Core Features</h2>
 <h3 id="evals-and-experiments">Evals and Experiments</h3>
@@ -274,7 +274,7 @@ LangChain · LangGraph · CrewAI · LlamaIndex · Mastra · Pydantic AI · OpenA
 <tr>
 <td>Series B</td>
 <td>Feb 2026</td>
-<td>$80M</td>
+<td><a href="https://www.braintrust.dev/blog/announcing-series-b">$80M</a></td>
 <td>ICONIQ (Matt Jacobson)</td>
 <td>$800M</td>
 </tr>

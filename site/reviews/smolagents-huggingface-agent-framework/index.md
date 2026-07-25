@@ -21,7 +21,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v1.24.0 (January 2026); releases frequently |
 | **Install** | `pip install smolagents` |
 | **Authors** | Aymeric Roucher, Merve Noyan, Thomas Wolf (HuggingFace) |
-| **Downloads** | ~570,000 monthly PyPI downloads |
+| **Downloads** | [~570,000 monthly PyPI downloads](https://pypistats.org/packages/smolagents) |
 | **API stability** | Experimental — subject to change |
 
 ---
@@ -33,11 +33,11 @@ The conventional agent loop works like this: the LLM receives a system prompt wi
 This is the `CodeAgent` — smolagents' default and flagship agent type. Instead of calling a single tool per step via structured JSON, the agent can write a small Python program: call two tools and combine their results, iterate over a list, define a helper function, handle a conditional. Anything you can express in Python, the agent can do in a single step.
 
 Three papers back this approach:
-- *Executable Code Actions Elicit Better LLM Agents* (arXiv 2402.01030)
-- *If LLM Is the Wizard, Then Code Is the Wand* (arXiv 2401.00812)
-- *DynaSaur: Large Language Agents Beyond Predefined Actions* (arXiv 2411.01747)
+- [*Executable Code Actions Elicit Better LLM Agents*](https://arxiv.org/abs/2402.01030) (arXiv 2402.01030)
+- [*If LLM Is the Wizard, Then Code Is the Wand*](https://arxiv.org/abs/2401.00812) (arXiv 2401.00812)
+- [*DynaSaur: Large Language Agents Beyond Predefined Actions*](https://arxiv.org/abs/2411.01747) (arXiv 2411.01747)
 
-The empirical result: a smolagents multi-agent system reached **#1 on the GAIA benchmark** at 44.2% — four percentage points ahead of Microsoft's AutoGen at 40%.
+The empirical result: a smolagents multi-agent system [reached **#1 on the GAIA benchmark** at 44.2%](https://huggingface.co/blog/beating-gaia) — four percentage points ahead of Microsoft's AutoGen at 40%.
 
 Smolagents also includes `ToolCallingAgent` for conventional JSON-based tool calling. It's provided for comparison, compatibility (some models handle JSON better), and dispatcher patterns — but it's not the main character.
 

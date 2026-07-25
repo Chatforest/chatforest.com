@@ -21,14 +21,14 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v0.0.15.1 (May 2, 2026) |
 | **Install** | `pip install openai-agents` |
 | **Authors** | OpenAI |
-| **Downloads** | ~25.7 million monthly PyPI downloads |
+| **Downloads** | [~25.7 million monthly PyPI downloads](https://pypistats.org/packages/openai-agents) |
 | **API stability** | Active development; some features (sandbox agents, LiteLLM) marked beta |
 
 ---
 
 ## The Core Idea: Minimal Abstractions, Maximum Access
 
-The OpenAI Agents SDK was released in March 2025 as the production successor to Swarm, OpenAI's earlier multi-agent experiment. Its design philosophy is Python-first minimalism: orchestration uses native asyncio, dataclasses, and Pydantic rather than a custom DSL, and the framework stays thin enough that you can understand it in an afternoon.
+The [OpenAI Agents SDK was released in March 2025](https://openai.com/index/the-next-evolution-of-the-agents-sdk/) as the production successor to Swarm, OpenAI's earlier multi-agent experiment. Its design philosophy is Python-first minimalism: orchestration uses native asyncio, dataclasses, and Pydantic rather than a custom DSL, and the framework stays thin enough that you can understand it in an afternoon.
 
 Everything in the SDK reduces to three primitives:
 

@@ -18,13 +18,13 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Organization** | [langchain-ai](https://github.com/langchain-ai) |
 | **SDK repo** | [langchain-ai/langsmith-sdk](https://github.com/langchain-ai/langsmith-sdk) (~874 stars, MIT) |
 | **Platform** | Proprietary SaaS · open-source SDK (MIT) |
-| **PyPI downloads** | ~78.8M/month (`langsmith` package, v0.8.1, May 5, 2026) |
-| **npm downloads** | ~19.96M/month (`langsmith` package) |
+| **PyPI downloads** | [~78.8M/month](https://pypistats.org/packages/langsmith) (`langsmith` package, v0.8.1, May 5, 2026) |
+| **npm downloads** | [~19.96M/month](https://www.npmjs.com/package/langsmith) (`langsmith` package) |
 | **Languages** | Python · TypeScript/JavaScript |
 | **Install** | `pip install langsmith` · `npm install langsmith` |
 | **Founders** | Harrison Chase (CEO) · Ankush Gola (COO) |
-| **Funding** | $125M total · Benchmark · Sequoia Capital · IVP |
-| **Valuation** | ~$1.25B (unicorn, October 2025) |
+| **Funding** | [$125M total](https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation) · IVP (lead) · Benchmark · Sequoia Capital · CapitalG · Sapphire · Amplify |
+| **Valuation** | [~$1.25B (unicorn, October 2025)](https://fortune.com/2025/10/20/exclusive-early-ai-darling-langchain-is-now-a-unicorn-with-a-fresh-125-million-in-funding/) |
 | **Notable customers** | Klarna, Rippling, Monday.com, Lyft, Uber, Coinbase, LinkedIn, Nvidia, Cisco, Harvey, Abridge |
 | **Founded** | 2022 (company formalized 2023) |
 
@@ -184,7 +184,7 @@ LangChain · LangGraph · AutoGen · CrewAI · PydanticAI · OpenAI Agents SDK �
 
 LangChain began as Harrison Chase's personal project in October 2022. The LangChain Python library reached 1,000 GitHub stars in its first week, 10,000 in under a month — driven by ChatGPT's emergence and LangChain's early synthesis of retrieval-augmented generation patterns. The LangSmith platform launched in 2023 as the commercial offering alongside the open-source framework.
 
-LangChain Inc. formalized as a company in early 2023. Investors include Benchmark Capital, Sequoia Capital, and IVP (Initialized Venture Partners). The company achieved unicorn status — $1.25B valuation — in October 2025, having raised $125M in total. LangChain claims 1 billion+ total open-source downloads and production relationships with 35% of Fortune 500 companies.
+LangChain Inc. formalized as a company in early 2023. The [October 2025 Series B](https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation) — led by IVP, with Benchmark Capital, Sequoia Capital, CapitalG, Sapphire Ventures, and Amplify Partners — raised $125M at a $1.25B valuation, making LangChain a unicorn. [LangChain claims](https://www.langchain.com) 1 billion+ total open-source downloads and production relationships with 35% of Fortune 500 companies.
 
 The LangGraph framework (31,300 stars) has become LangChain Inc.'s most strategically important open-source asset, providing the foundation for LangSmith Fleet's agent deployment capabilities.
 
@@ -228,7 +228,7 @@ The LangGraph framework (31,300 stars) has become LangChain Inc.'s most strategi
 
 ## Rating: 3.5 / 5
 
-LangSmith earns its position as the default choice for LangChain and LangGraph teams — the zero-configuration integration, the breadth of framework support, and Fleet's agent deployment capabilities are genuine differentiators. The $1.25B valuation and 35%-of-Fortune-500 customer claim reflect real enterprise adoption.
+LangSmith earns its position as the default choice for LangChain and LangGraph teams — the zero-configuration integration, the breadth of framework support, and Fleet's agent deployment capabilities are genuine differentiators. The [$1.25B valuation](https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation) and 35%-of-Fortune-500 customer claim reflect real enterprise adoption.
 
 The 3.5-point ceiling: the backend is closed-source in a market where [Langfuse](/reviews/langfuse-llm-observability-platform/) (MIT) and [Arize Phoenix](/reviews/arize-phoenix-llm-observability-platform/) (Apache 2.0 / ELv2) offer fully open, free-to-self-host alternatives with comparable observability and evaluation capabilities. The enterprise-only self-hosting restriction is the most consequential limitation — Langfuse and Phoenix can be fully deployed for free; LangSmith's equivalent requires an Enterprise contract with custom pricing. The inflated download numbers make ecosystem health harder to assess independently. And for teams focused on eval rigor, [Braintrust](/reviews/braintrust-ai-eval-observability-platform/) ($800M valuation, eval-first architecture, immutable Experiment records, eval-gated CI/CD) is a stronger pure-eval choice despite its higher entry price.
 
