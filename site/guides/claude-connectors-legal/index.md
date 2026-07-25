@@ -3,7 +3,7 @@
 > On May 12, 2026, Anthropic launched Claude for Legal — more than 20 MCP connectors wiring Claude into legal software, plus 12 practice-area plugins covering corporate, litigation, privacy, IP, and more. Here's what each piece does and what this launch means for legal teams.
 
 
-On May 12, 2026, Anthropic launched **Claude for Legal** — the most significant coordinated push into the legal technology market by any AI company since Harvey AI's emergence two years earlier. The announcement packaged three distinct things: more than 20 MCP connectors wiring Claude into the software law firms and legal departments already run on; 12 practice-area plugins providing pre-configured workflows for specific legal disciplines; and a set of access-to-justice partnerships targeting the 80% of civil litigants who appear in court without an attorney.
+On May 12, 2026, Anthropic [launched **Claude for Legal**](https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action/) — the most significant coordinated push into the legal technology market by any AI company since Harvey AI's emergence two years earlier. The announcement packaged three distinct things: more than 20 MCP connectors wiring Claude into the software law firms and legal departments already run on; 12 practice-area plugins providing pre-configured workflows for specific legal disciplines; and a set of access-to-justice partnerships targeting the 80% of civil litigants who appear in court without an attorney.
 
 The launch came less than three weeks after a parallel push into creative tools and closely followed a finance-focused release. The pattern is deliberate: Anthropic is systematically verticalizating Claude with deep integrations into software categories where knowledge workers are already spending their time.
 
@@ -37,7 +37,7 @@ Anthropic organized the connectors into functional categories that map to how le
 
 ### Legal AI Assistants
 
-**Harvey** — The highest-profile legal AI startup (11B valuation, $195M ARR as of March 2026) connects to Claude through an MCP integration, allowing Claude to work alongside or hand off to Harvey's legal-specific reasoning capabilities. Harvey has focused on case law research, document drafting, and due diligence workflows.
+**Harvey** — The highest-profile legal AI startup ([**$11B valuation** raised March 2026](https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html), [$195M ARR as of end of 2025](https://sacra.com/research/harvey-at-195m-arr/)) connects to Claude through an MCP integration, allowing Claude to work alongside or hand off to Harvey's legal-specific reasoning capabilities. Harvey has focused on case law research, document drafting, and due diligence workflows.
 
 **Solve Intelligence** — A contract intelligence platform that connects Claude to patent drafting, technical claim analysis, and prior art review. Primarily relevant for IP practice groups and patent prosecution teams.
 
@@ -107,7 +107,7 @@ See our [MCP and contract management guide](/guides/mcp-legal-contract-managemen
 
 ### Access to Justice
 
-**Courtroom5** — Platform designed for pro se (self-represented) civil litigants, who make up roughly 80% of civil court participants in the US. The Courtroom5 connector extends Claude's capabilities to people navigating civil courts without an attorney — drafting motions, understanding procedural rules, and preparing for hearings.
+**Courtroom5** — Platform designed for pro se (self-represented) civil litigants, who make up a substantial majority of civil court participants in the US. The Courtroom5 connector extends Claude's capabilities to people navigating civil courts without an attorney — drafting motions, understanding procedural rules, and preparing for hearings.
 
 **BoardWise** — Platform helping licensed professionals navigate state board matters, licensing disputes, and regulatory proceedings. The connector provides Claude with context about state board processes and requirements for professionals who cannot afford specialized legal counsel.
 

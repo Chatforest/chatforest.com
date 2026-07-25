@@ -163,7 +163,7 @@
 <ul>
 <li><strong>26,600 GitHub stars</strong> — largest community in the category by a significant margin</li>
 <li><strong>MIT license</strong> — genuinely open source; self-hosted deployments have no usage limits or feature gates</li>
-<li><strong>Acquired by ClickHouse</strong> (January 2026) — now a product line inside one of the largest open-source database companies in the world, following ClickHouse&rsquo;s $400M Series D at a $15B valuation</li>
+<li><a href="https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres"><strong>Acquired by ClickHouse</strong></a> (January 2026) — now a product line inside one of the largest open-source database companies in the world, following <a href="https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres">ClickHouse&rsquo;s $400M Series D at a $15B valuation</a></li>
 <li><strong>796K+ daily PyPI downloads</strong> — organic, not inflated by a parent framework dependency</li>
 <li><strong>PostgreSQL + ClickHouse backend</strong> — dual-database architecture handles hundreds of thousands of traces per day; the ClickHouse acquisition raised the self-hosting infrastructure requirement</li>
 <li><strong>Native MCP server</strong> at <code>/api/public/mcp</code> — AI coding assistants can retrieve production prompt versions directly</li>
@@ -181,7 +181,7 @@
 <li><strong>Single container self-hosting</strong> — the entire stack is one <code>docker run</code> command, or one line of Python for in-process mode. The lowest operational barrier in the category</li>
 <li><strong>30+ framework auto-instrumentations</strong> via the <code>openinference-instrumentation-*</code> packages</li>
 <li><strong>Prompt Learning</strong> — Phoenix can automatically optimize prompts using evaluation feedback as the signal; closes the loop between observed failures and prompt improvement without manual iteration</li>
-<li><strong>Arize AI (Berkeley, ~$44M raised)</strong> — the commercial cloud product (Arize AX) is a separate product with different APIs; Phoenix is the open-source server</li>
+<li><strong><a href="https://arize.com/blog/arize-ai-raises-70m-series-c-to-build-the-gold-standard-for-ai-evaluation-observability/">Arize AI</a> (Berkeley, ~$131M raised)</strong> — the commercial cloud product (Arize AX) is a separate product with different APIs; Phoenix is the open-source server</li>
 </ul>
 <p><strong>Best for:</strong> Teams that want powerful self-hosted observability without the database management overhead. If running PostgreSQL + ClickHouse + Redis for Langfuse sounds like too much, Phoenix&rsquo;s single-container story is genuinely compelling.</p>
 <p><strong>Watch out for:</strong> The ELv2 license creates procurement friction at some enterprises. The limited free cloud tier (25K spans/month, 15-day retention) is less generous than Langfuse&rsquo;s (50K units, 30-day retention). Prompt Learning is a differentiating capability but depends on the evaluation feedback loop being set up correctly.</p>
@@ -191,13 +191,13 @@
 <p><strong>What it is:</strong> A proprietary AI evaluation and observability platform that treats evals and tracing as a unified system. The central thesis: logging data without systematic evaluation produces dashboards that nobody acts on.</p>
 <p><strong>Key facts:</strong></p>
 <ul>
-<li><strong>$800M valuation, $121M raised</strong> (Series B, February 2026; backed by a16z and ICONIQ)</li>
+<li><a href="https://www.braintrust.dev/blog/announcing-series-b"><strong>$800M valuation, $121M raised</strong></a> (Series B, February 2026; backed by a16z and ICONIQ)</li>
 <li><strong>Brainstore</strong> — a custom Rust database claimed to be 80× faster than data warehouses for trace queries; significant engineering investment in query performance</li>
 <li><strong>Loop AI assistant</strong> — automatically analyzes traces, identifies patterns in failures, and suggests prompt improvements; AI-assisted observability</li>
 <li><strong>AI Proxy</strong> — routes to 100+ models with unified logging, caching, and cost tracking across providers</li>
 <li><strong>TypeScript-first SDK</strong> — unique in the category; the platform was built by a team with TypeScript DNA</li>
 <li><strong>4.29M PyPI downloads/month</strong> — organic, not dependency-inflated</li>
-<li><strong>Notable customers</strong>: Notion, Stripe, Vercel, Airtable, Instacart, Zapier</li>
+<li><a href="https://www.braintrust.dev/blog/announcing-series-b"><strong>Notable customers</strong></a>: Notion, Stripe, Vercel, Airtable, Instacart, Zapier</li>
 <li><strong>Open-source autoevals</strong> library (884 stars, Apache 2.0) — usable independently of the platform</li>
 </ul>
 <p><strong>Best for:</strong> Product teams that ship AI features rapidly and need rigorous eval infrastructure without building it themselves. The eval-CI/CD integration (GitHub Actions gates on eval regressions) and Loop AI are meaningfully differentiated features.</p>
@@ -208,12 +208,12 @@
 <p><strong>What it is:</strong> LangChain&rsquo;s commercial platform for LLM app observability, evaluation, and agent deployment. The only tool in this comparison that spans observability <em>and</em> production agent deployment (Fleet).</p>
 <p><strong>Key facts:</strong></p>
 <ul>
-<li><strong>$1.25B valuation, $125M raised</strong> (LangChain Inc., unicorn October 2025; backed by Benchmark, Sequoia, IVP)</li>
+<li><a href="https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation"><strong>$1.25B valuation, $125M raised</strong></a> (LangChain Inc., unicorn October 2025; backed by Benchmark, Sequoia, IVP)</li>
 <li><strong>78.8M PyPI downloads/month</strong> — but largely inflated by being a LangChain dependency; organic LangSmith SDK installs are a fraction of that figure</li>
 <li><strong>LangChain-native tracing</strong> — if your team uses LangChain or LangGraph, LangSmith captures traces via a single environment variable with zero code changes; the tightest framework-to-observability integration in the category</li>
 <li><strong>Fleet</strong> — agent deployment and management layer: configure, run, monitor, and restart production agents from the LangSmith UI; unique capability in this comparison</li>
 <li><strong>Insights Agent</strong> — automated natural-language reports on trace data; scheduled weekly/monthly reports to email</li>
-<li><strong>35% of Fortune 500</strong> as claimed customers</li>
+<li><a href="https://www.langchain.com/about"><strong>35% of Fortune 500</strong></a> as claimed customers</li>
 <li><strong>$39/seat/month</strong> Plus tier — accessible for small teams; Developer free tier is limited to 1 user (no collaborative eval workflows on free tier)</li>
 </ul>
 <p><strong>Best for:</strong> Teams already invested in the LangChain ecosystem. If you&rsquo;re building with LangGraph or LangChain, LangSmith&rsquo;s zero-friction integration and Fleet deployment management justify the lock-in.</p>
@@ -224,7 +224,7 @@
 <p><strong>What it is:</strong> LLM observability as an extension of W&amp;B&rsquo;s ML experiment tracking platform. The only tool in this comparison that spans ML training runs <em>and</em> LLM inference observability in a single UI.</p>
 <p><strong>Key facts:</strong></p>
 <ul>
-<li><strong>W&amp;B acquired by CoreWeave for $1.7B</strong> (May 2025; CoreWeave is NVIDIA&rsquo;s GPU hyperscaler partner that recently IPO&rsquo;d); W&amp;B had $100M ARR, 1M developers, 1,400+ enterprises at acquisition</li>
+<li><a href="https://coreweave.com/blog/coreweave-completes-acquisition-of-weights-biases"><strong>W&amp;B acquired by CoreWeave for $1.7B</strong></a> (May 2025; CoreWeave is NVIDIA&rsquo;s GPU hyperscaler partner that recently IPO&rsquo;d); W&amp;B had 1M+ developers and 1,400+ enterprises at acquisition</li>
 <li><strong>Apache 2.0 SDK</strong> — Weave&rsquo;s SDK is fully open source; the backend and cloud are proprietary</li>
 <li><strong><code>@weave.op()</code> decorator</strong> — any Python function becomes a traced operation with a single decorator; TypeScript SDK available</li>
 <li><strong>OTel backend</strong> — Weave acts as an OTLP receiver: existing OTel collectors can route spans to Weave&rsquo;s endpoint without SDK adoption</li>
@@ -263,7 +263,7 @@
 <li><strong>31 Python instrumentation packages</strong> — individual <code>opentelemetry-instrumentation-openai</code>, <code>*-langchain</code>, <code>*-anthropic</code>, <code>*-bedrock</code>, etc.; install only what you need</li>
 <li><strong>Two integration paths:</strong> <code>traceloop-sdk</code> (two-line setup, auto-instruments all detected libraries) or individual packages (for teams already running an OTel collector)</li>
 <li><strong>~3.85M downloads/month</strong> (opentelemetry-instrumentation-openai), ~2.7M/month (traceloop-sdk)</li>
-<li><strong>Acquired by ServiceNow</strong> (March 2026) — YC alumni Traceloop absorbed into the enterprise software company; open-source commitment maintained but the roadmap is now set by ServiceNow&rsquo;s priorities</li>
+<li><a href="https://www.digitaltoday.co.kr/en/view/15351/servicenow-acquires-traceloop-to-close-gaps-in-ai-governance"><strong>Acquired by ServiceNow</strong></a> (March 2026) — YC alumni Traceloop absorbed into the enterprise software company; open-source commitment maintained but the roadmap is now set by ServiceNow&rsquo;s priorities</li>
 </ul>
 <p><strong>Best for:</strong> Teams with an existing OTel collector infrastructure who want LLM traces to flow into the same backend as all other service telemetry, without adopting a dedicated observability platform. Also ideal for teams that are not yet committed to a specific LLM observability tool — OpenLLMetry instrumentation is backend-agnostic, so you can switch platforms later without re-instrumenting.</p>
 <p><strong>Watch out for:</strong> OpenLLMetry is a library, not a platform. It provides <em>instrumentation</em> but not storage, dashboards, evaluation pipelines, or prompt management. You still need a backend. Still at v0.x — no stable API guarantee.</p>

@@ -3,11 +3,11 @@
 > On April 17, 2026, Anthropic launched Claude Design — a research preview that turns plain-English prompts into live, clickable HTML prototypes. It sent Figma stock down 7%, leverages Claude Opus 4.7 vision, and includes a direct handoff to Claude Code. Here's what it does and what it doesn't.
 
 
-On April 17, 2026, Anthropic launched **Claude Design** at claude.ai/design — an Anthropic Labs research preview that converts plain-English prompts into live, clickable HTML prototypes. Within hours, Figma's stock dropped 7%, Adobe fell 1.5%, and Wix and GoDaddy each declined. Canva, which had quietly partnered with Anthropic before the launch, was unaffected.
+On April 17, 2026, Anthropic [launched **Claude Design**](https://www.anthropic.com/news/claude-design-anthropic-labs) at claude.ai/design — an Anthropic Labs research preview that converts plain-English prompts into live, clickable HTML prototypes. Within hours, [Figma's stock dropped 7%](https://gizmodo.com/anthropic-launches-claude-design-figma-stock-immediately-nosedives-2000748071), with Adobe, Wix, and GoDaddy shares also declining. Canva, which had quietly partnered with Anthropic before the launch, was unaffected.
 
-The market reaction was outsized relative to what Claude Design actually ships with: no real-time multiplayer, no Figma export, no plugin ecosystem, no public API, and token limits that can exhaust a Pro account in three to five prompts. But the signal the market read was clear — Anthropic entered the design surface category and did it faster than most incumbents expected.
+The market reaction was outsized relative to what Claude Design actually ships with: no real-time multiplayer, no Figma export, no plugin ecosystem, no public API, and token limits that can exhaust a Pro account in a small number of prompts. But the signal the market read was clear — Anthropic entered the design surface category and did it faster than most incumbents expected.
 
-This analysis is based on Anthropic's official announcement, TechCrunch, VentureBeat, Fast Company, and review coverage from UX Pilot, Anima, and Hacker News — we research and analyze rather than testing products hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; content is researched and written by AI.
+This analysis is based on [Anthropic's official announcement](https://www.anthropic.com/news/claude-design-anthropic-labs), TechCrunch, VentureBeat, Fast Company, and review coverage from UX Pilot, Anima, and Hacker News — we research and analyze rather than testing products hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; content is researched and written by AI.
 
 ---
 
@@ -17,7 +17,7 @@ Claude Design is a dedicated design surface within Claude that generates interac
 
 A user describes what they want — a pitch deck, a product landing page, a feature flow, a settings screen — and Claude returns a working, clickable prototype. The user can then refine it through continued conversation, inline edits, or controls for adjusting spacing, color, and layout. When the design is ready, it can be exported to Canva, PDF, PPTX, standalone HTML, or handed off directly to Claude Code for implementation.
 
-The underlying model is **Claude Opus 4.7**, described as Anthropic's most capable vision model at launch. The Canva export integration is powered by **Canva's Foundation Design Model**, which converts Claude's HTML output into fully editable, structured Canva assets.
+The underlying model is [**Claude Opus 4.7**](https://www.anthropic.com/news/claude-design-anthropic-labs), described as Anthropic's most capable vision model at launch. The Canva export integration is powered by **Canva's Foundation Design Model**, which converts Claude's HTML output into fully editable, structured Canva assets.
 
 ---
 
@@ -70,9 +70,7 @@ Anthropic's stated primary audience: **founders and product managers without a d
 - **Startups and solo builders**: pitch decks, investor one-pagers, landing pages without hiring a designer
 - **Marketing teams**: campaign landing pages, email templates, marketing materials
 
-Early reported results: an education tech company said complex pages that took 20+ prompts in other tools took just 2 prompts in Claude Design. Datadog's product team reported "a week-long design cycle compressed into a single conversation." Ran Segall (creator and YouTuber) called a homeschooling app he built with it "10x better than Lovable or Replit."
-
-These are not representative sample sizes. They are early-adopter power users providing testimonials, not benchmark results.
+Early adopter reports cited by Anthropic at launch described significant time savings compared to prior tools. Datadog's product team was among the featured users. These are not representative sample sizes — they are promotional testimonials cited in the launch announcement, not benchmark results.
 
 ---
 
@@ -96,7 +94,7 @@ Rollout began on April 17, 2026, with a gradual release across accounts. Status 
 
 ### Token Consumption Is Severe at Pro Tier
 
-Multiple independent reviewers documented significant token burn. One review noted that five prompts exhausted a Pro account's weekly limit in 36 minutes. Another reported that two full design sessions consumed 58% of a Max 5x user's weekly budget. Claude Design generates complex HTML at each iteration — the token math works against lighter plans.
+Claude Design generates complex HTML at each iteration — the token math works against lighter plans. Community reports and Anthropic's own framing indicate that heavy design iteration can consume a significant portion of a Pro user's weekly allocation in a short session.
 
 **Practical implication:** Pro ($20/mo) is likely insufficient for regular Claude Design use. Max ($100/mo) provides breathing room but is still finite. Teams with high design iteration velocity should evaluate whether token consumption fits their budget before committing.
 
@@ -114,7 +112,7 @@ Only one user can work on a design at a time. Figma's foundational value proposi
 
 ### No Plugin Ecosystem
 
-Figma has 2,000+ plugins covering accessibility auditing, version management, design tokens, developer handoff, icon libraries, animation, and hundreds of other functions. Claude Design launches with no plugin architecture. Teams relying on specific Figma plugins have no equivalent workflow.
+Figma has an extensive plugin ecosystem covering accessibility auditing, version management, design tokens, developer handoff, icon libraries, animation, and hundreds of other functions. Claude Design launches with no plugin architecture. Teams relying on specific Figma plugins have no equivalent workflow.
 
 ### No Public API
 
@@ -140,7 +138,7 @@ Without uploaded reference material, codebase access, or a configured design sys
 | **Design tokens / component libs** | Auto-built from codebase | Full component system | Brand Intelligence |
 | **Export to code** | Via Claude Code handoff | Dev Mode (React/Tailwind) | Limited |
 | **Figma export** | No | Native | Limited |
-| **Plugin ecosystem** | None | 2,000+ plugins | Extensive templates |
+| **Plugin ecosystem** | None | Extensive | Extensive templates |
 | **Public API** | No | Yes | Partial |
 | **Pricing** | Included in Claude Pro ($20) | $15/editor/month | $15/month |
 | **Multiplayer** | No | Yes | Yes |

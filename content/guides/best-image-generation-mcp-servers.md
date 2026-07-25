@@ -6,6 +6,7 @@ og_description: "25+ image generation MCP servers compared — GPT Image 2, mult
 content_type: "Comparison"
 card_description: "The most fragmented MCP category with 25+ servers. GPT Image 2 launched April 21, ComfyUI Cloud goes hosted, multi-provider aggregators emerge — compared with clear recommendations."
 last_refreshed: 2026-04-23
+sources_audited: 2026-07-25
 ---
 
 Image generation is the most fragmented category in the MCP ecosystem. There's no dominant server, no official reference that works well (the [EverArt server](/reviews/everart-mcp-server/) scored 2.5/5 and was archived), and no consensus on whether the right approach is single-provider wrappers, multi-provider aggregators, or local inference bridges.
@@ -216,7 +217,7 @@ This is the single biggest gap in the category right now. Whoever ships the firs
 
 **No batch generation.** No server is designed for generating multiple images efficiently — creating product catalogs, social media sets, or design variations at scale. GPT Image 2's 10-images-per-prompt capability has no MCP surface yet.
 
-**MCP security applies here too.** The systemic MCP stdio transport vulnerability (CVE-2026-30615 and related CVEs) affects image generation servers the same as any other category — arbitrary command execution via stdio. Anthropic has declined to fix, calling it "expected behavior." 200K+ servers affected across the ecosystem. Image generation servers that accept file paths are additionally exposed to path traversal attacks (82% of file-operation MCP servers are vulnerable).
+**MCP security applies here too.** The stdio transport model used by most MCP servers has known security implications — arbitrary command execution via stdio is the primary concern for locally-installed servers. Image generation servers that accept file paths have additional exposure to path traversal attacks. Review each server's permissions and trust model before deploying in shared environments.
 
 ## Decision Flowchart
 

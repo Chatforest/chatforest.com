@@ -7,6 +7,7 @@ card_description: "Seven LLM observability tools reviewed and ranked. From the C
 content_type: "Guide"
 last_refreshed: 2026-05-06
 lastmod: 2026-05-06
+sources_audited: 2026-07-25
 ---
 
 LLM observability has quietly become one of the most contested categories in AI infrastructure. In 2023, developers were piecing together custom logging scripts. By 2026, there are seven mature platforms competing for the same production traces — each with a different philosophy about what "observability" means for language model applications.
@@ -52,7 +53,7 @@ W&B Weave sits outside all three waves — it is an extension of ML experiment t
 **Key facts:**
 - **26,600 GitHub stars** — largest community in the category by a significant margin
 - **MIT license** — genuinely open source; self-hosted deployments have no usage limits or feature gates
-- **Acquired by ClickHouse** (January 2026) — now a product line inside one of the largest open-source database companies in the world, following ClickHouse's $400M Series D at a $15B valuation
+- [**Acquired by ClickHouse**](https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres) (January 2026) — now a product line inside one of the largest open-source database companies in the world, following [ClickHouse's $400M Series D at a $15B valuation](https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres)
 - **796K+ daily PyPI downloads** — organic, not inflated by a parent framework dependency
 - **PostgreSQL + ClickHouse backend** — dual-database architecture handles hundreds of thousands of traces per day; the ClickHouse acquisition raised the self-hosting infrastructure requirement
 - **Native MCP server** at `/api/public/mcp` — AI coding assistants can retrieve production prompt versions directly
@@ -75,7 +76,7 @@ W&B Weave sits outside all three waves — it is an extension of ML experiment t
 - **Single container self-hosting** — the entire stack is one `docker run` command, or one line of Python for in-process mode. The lowest operational barrier in the category
 - **30+ framework auto-instrumentations** via the `openinference-instrumentation-*` packages
 - **Prompt Learning** — Phoenix can automatically optimize prompts using evaluation feedback as the signal; closes the loop between observed failures and prompt improvement without manual iteration
-- **Arize AI (Berkeley, ~$44M raised)** — the commercial cloud product (Arize AX) is a separate product with different APIs; Phoenix is the open-source server
+- **[Arize AI](https://arize.com/blog/arize-ai-raises-70m-series-c-to-build-the-gold-standard-for-ai-evaluation-observability/) (Berkeley, ~$131M raised)** — the commercial cloud product (Arize AX) is a separate product with different APIs; Phoenix is the open-source server
 
 **Best for:** Teams that want powerful self-hosted observability without the database management overhead. If running PostgreSQL + ClickHouse + Redis for Langfuse sounds like too much, Phoenix's single-container story is genuinely compelling.
 
@@ -90,13 +91,13 @@ W&B Weave sits outside all three waves — it is an extension of ML experiment t
 **What it is:** A proprietary AI evaluation and observability platform that treats evals and tracing as a unified system. The central thesis: logging data without systematic evaluation produces dashboards that nobody acts on.
 
 **Key facts:**
-- **$800M valuation, $121M raised** (Series B, February 2026; backed by a16z and ICONIQ)
+- [**$800M valuation, $121M raised**](https://www.braintrust.dev/blog/announcing-series-b) (Series B, February 2026; backed by a16z and ICONIQ)
 - **Brainstore** — a custom Rust database claimed to be 80× faster than data warehouses for trace queries; significant engineering investment in query performance
 - **Loop AI assistant** — automatically analyzes traces, identifies patterns in failures, and suggests prompt improvements; AI-assisted observability
 - **AI Proxy** — routes to 100+ models with unified logging, caching, and cost tracking across providers
 - **TypeScript-first SDK** — unique in the category; the platform was built by a team with TypeScript DNA
 - **4.29M PyPI downloads/month** — organic, not dependency-inflated
-- **Notable customers**: Notion, Stripe, Vercel, Airtable, Instacart, Zapier
+- [**Notable customers**](https://www.braintrust.dev/blog/announcing-series-b): Notion, Stripe, Vercel, Airtable, Instacart, Zapier
 - **Open-source autoevals** library (884 stars, Apache 2.0) — usable independently of the platform
 
 **Best for:** Product teams that ship AI features rapidly and need rigorous eval infrastructure without building it themselves. The eval-CI/CD integration (GitHub Actions gates on eval regressions) and Loop AI are meaningfully differentiated features.
@@ -112,12 +113,12 @@ W&B Weave sits outside all three waves — it is an extension of ML experiment t
 **What it is:** LangChain's commercial platform for LLM app observability, evaluation, and agent deployment. The only tool in this comparison that spans observability *and* production agent deployment (Fleet).
 
 **Key facts:**
-- **$1.25B valuation, $125M raised** (LangChain Inc., unicorn October 2025; backed by Benchmark, Sequoia, IVP)
+- [**$1.25B valuation, $125M raised**](https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation) (LangChain Inc., unicorn October 2025; backed by Benchmark, Sequoia, IVP)
 - **78.8M PyPI downloads/month** — but largely inflated by being a LangChain dependency; organic LangSmith SDK installs are a fraction of that figure
 - **LangChain-native tracing** — if your team uses LangChain or LangGraph, LangSmith captures traces via a single environment variable with zero code changes; the tightest framework-to-observability integration in the category
 - **Fleet** — agent deployment and management layer: configure, run, monitor, and restart production agents from the LangSmith UI; unique capability in this comparison
 - **Insights Agent** — automated natural-language reports on trace data; scheduled weekly/monthly reports to email
-- **35% of Fortune 500** as claimed customers
+- [**35% of Fortune 500**](https://www.langchain.com/about) as claimed customers
 - **$39/seat/month** Plus tier — accessible for small teams; Developer free tier is limited to 1 user (no collaborative eval workflows on free tier)
 
 **Best for:** Teams already invested in the LangChain ecosystem. If you're building with LangGraph or LangChain, LangSmith's zero-friction integration and Fleet deployment management justify the lock-in.
@@ -133,7 +134,7 @@ W&B Weave sits outside all three waves — it is an extension of ML experiment t
 **What it is:** LLM observability as an extension of W&B's ML experiment tracking platform. The only tool in this comparison that spans ML training runs *and* LLM inference observability in a single UI.
 
 **Key facts:**
-- **W&B acquired by CoreWeave for $1.7B** (May 2025; CoreWeave is NVIDIA's GPU hyperscaler partner that recently IPO'd); W&B had $100M ARR, 1M developers, 1,400+ enterprises at acquisition
+- [**W&B acquired by CoreWeave for $1.7B**](https://coreweave.com/blog/coreweave-completes-acquisition-of-weights-biases) (May 2025; CoreWeave is NVIDIA's GPU hyperscaler partner that recently IPO'd); W&B had 1M+ developers and 1,400+ enterprises at acquisition
 - **Apache 2.0 SDK** — Weave's SDK is fully open source; the backend and cloud are proprietary
 - **`@weave.op()` decorator** — any Python function becomes a traced operation with a single decorator; TypeScript SDK available
 - **OTel backend** — Weave acts as an OTLP receiver: existing OTel collectors can route spans to Weave's endpoint without SDK adoption
@@ -182,7 +183,7 @@ W&B Weave sits outside all three waves — it is an extension of ML experiment t
 - **31 Python instrumentation packages** — individual `opentelemetry-instrumentation-openai`, `*-langchain`, `*-anthropic`, `*-bedrock`, etc.; install only what you need
 - **Two integration paths:** `traceloop-sdk` (two-line setup, auto-instruments all detected libraries) or individual packages (for teams already running an OTel collector)
 - **~3.85M downloads/month** (opentelemetry-instrumentation-openai), ~2.7M/month (traceloop-sdk)
-- **Acquired by ServiceNow** (March 2026) — YC alumni Traceloop absorbed into the enterprise software company; open-source commitment maintained but the roadmap is now set by ServiceNow's priorities
+- [**Acquired by ServiceNow**](https://www.digitaltoday.co.kr/en/view/15351/servicenow-acquires-traceloop-to-close-gaps-in-ai-governance) (March 2026) — YC alumni Traceloop absorbed into the enterprise software company; open-source commitment maintained but the roadmap is now set by ServiceNow's priorities
 
 **Best for:** Teams with an existing OTel collector infrastructure who want LLM traces to flow into the same backend as all other service telemetry, without adopting a dedicated observability platform. Also ideal for teams that are not yet committed to a specific LLM observability tool — OpenLLMetry instrumentation is backend-agnostic, so you can switch platforms later without re-instrumenting.
 

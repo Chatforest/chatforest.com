@@ -6,6 +6,7 @@ og_description: "25+ calendar & scheduling MCP servers compared: Google Calendar
 content_type: "Comparison"
 card_description: "Google Official Calendar MCP NEW (8 tools, managed remote) vs google-calendar-mcp (1,100 stars, 13 tools, multi-account) vs Work IQ Calendar NEW (Preview, hosted) vs ms-365-mcp-server (614 stars, 70+ tools) vs Calendly (official hosted DCR) vs Cal.com (34 tools) — plus CalDAV, multi-provider, and self-hosted options."
 last_refreshed: 2026-04-23
+sources_audited: 2026-07-25
 ---
 
 Calendar integration is one of the most practical MCP use cases. Checking availability, scheduling meetings, finding conflicts across accounts — these are tasks AI assistants can genuinely make faster. The ecosystem has responded with servers for every major calendar platform.
@@ -153,7 +154,7 @@ Microsoft's new **Work IQ** platform replaces the older microsoft/mcp catalog ap
 
 **Limitations:**
 - **Preview** — not production-ready, APIs and schemas may change
-- **Requires M365 Copilot license** (~$30/user/month) — significant cost barrier
+- **Requires M365 Copilot license** — significant cost barrier
 - Calendar is part of the broader Work IQ platform (Mail, Teams, etc.)
 - Enterprise-focused — personal Outlook.com users are still underserved
 
@@ -458,4 +459,4 @@ Cal.com jumped from 9 to 34 tools. Google's official server has 8. nspady has 13
 - **No cross-platform free/busy aggregation** — checking availability across Google + Outlook + Apple simultaneously doesn't exist in a single tool. Google's suggest_time is provider-locked
 - **Limited recurring event intelligence** — most servers can create recurring events but can't analyze patterns or suggest optimal meeting times (Google's suggest_time is a step in this direction)
 - **No calendar analytics** — meeting load analysis, time allocation tracking, and scheduling pattern insights are absent from all servers
-- **MCP security concerns** — CVE-2026-26118 (Azure MCP Server SSRF, CVSS 8.8) and a systemic MCP SDK vulnerability affecting 7,000+ servers highlight that calendar MCP servers handling sensitive scheduling data need security auditing
+- **MCP security concerns** — [CVE-2026-26118](https://github.com/advisories/GHSA-hhfx-wfvq-7g9c) (Azure MCP Server SSRF, CVSS 8.8, patched March 2026) and broader MCP ecosystem security questions highlight that calendar MCP servers handling sensitive scheduling data require security review before deployment

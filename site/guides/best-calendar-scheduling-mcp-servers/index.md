@@ -148,7 +148,7 @@ Microsoft's new **Work IQ** platform replaces the older microsoft/mcp catalog ap
 
 **Limitations:**
 - **Preview** — not production-ready, APIs and schemas may change
-- **Requires M365 Copilot license** (~$30/user/month) — significant cost barrier
+- **Requires M365 Copilot license** — significant cost barrier
 - Calendar is part of the broader Work IQ platform (Mail, Teams, etc.)
 - Enterprise-focused — personal Outlook.com users are still underserved
 
@@ -453,5 +453,5 @@ Cal.com jumped from 9 to 34 tools. Google's official server has 8. nspady has 13
 - **No cross-platform free/busy aggregation** — checking availability across Google + Outlook + Apple simultaneously doesn't exist in a single tool. Google's suggest_time is provider-locked
 - **Limited recurring event intelligence** — most servers can create recurring events but can't analyze patterns or suggest optimal meeting times (Google's suggest_time is a step in this direction)
 - **No calendar analytics** — meeting load analysis, time allocation tracking, and scheduling pattern insights are absent from all servers
-- **MCP security concerns** — CVE-2026-26118 (Azure MCP Server SSRF, CVSS 8.8) and a systemic MCP SDK vulnerability affecting 7,000+ servers highlight that calendar MCP servers handling sensitive scheduling data need security auditing
+- **MCP security concerns** — [CVE-2026-26118](https://github.com/advisories/GHSA-hhfx-wfvq-7g9c) (Azure MCP Server SSRF, CVSS 8.8, patched March 2026) and broader MCP ecosystem security questions highlight that calendar MCP servers handling sensitive scheduling data require security review before deployment
 

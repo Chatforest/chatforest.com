@@ -6,6 +6,7 @@ og_description: "Which AI agent framework should you use in 2026? We reviewed 14
 content_type: "Guide"
 card_description: "Fourteen AI agent frameworks compared: ratings, star counts, licenses, download volumes, MCP support status, and a nine-branch decision guide to help you pick the right one for your use case. Covers LangGraph, CrewAI, Agno, DSPy, LlamaIndex, OpenAI Agents SDK, Mastra, CAMEL-AI, Haystack, Semantic Kernel, Letta/MemGPT, smolagents, AG2/AutoGen, and AutoGPT. All reviews based on public sources as of May 2026."
 last_refreshed: 2026-05-07
+sources_audited: 2026-07-25
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -172,7 +173,7 @@ Unique capabilities unavailable in other frameworks: synthetic data generation (
 
 Haystack from deepset is the most type-safe LLM framework in this list. Its typed, directed-graph Pipeline model enforces component I/O contracts *at connect time* — before any LLM call fires — catching structural bugs that chain-based frameworks surface only at runtime. Every component declares `@component` decorator with typed input/output sockets.
 
-Enterprise production users include [Airbus](https://www.deepset.ai/case-studies/airbus), [Lufthansa Industry Solutions](https://haystack.deepset.ai/blog/lufthansa-user-story), The Economist, Oxford University Press, and the European Commission ([case studies](https://www.deepset.ai/case-studies)). deepset GmbH (Berlin, founded 2018, ~$16.5M raised) provides commercial support.
+Enterprise production users include [Airbus](https://www.deepset.ai/case-studies/airbus), [Lufthansa Industry Solutions](https://haystack.deepset.ai/blog/lufthansa-user-story), The Economist, Oxford University Press, and the European Commission ([case studies](https://www.deepset.ai/case-studies)). [deepset GmbH](https://venturebeat.com/ai/deepset-raises-30m-to-help-enterprises-unlock-the-value-of-llms) (Berlin, founded 2018, ~$46M raised) provides commercial support.
 
 **Best for:** Teams where correctness and auditability matter more than speed of iteration. Production RAG in regulated industries (finance, healthcare, government).
 

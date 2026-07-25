@@ -3,11 +3,11 @@
 > On May 11, 2026, Anthropic launched Claude Platform on AWS — a GA service that brings Anthropic's native API to teams via AWS billing and IAM auth. Day-one feature parity with the direct API, including Managed Agents, Skills, Remote MCP, Files API, Web Search, and Code Execution. We break down who should use it, how it differs from Bedrock, and what migration looks like.
 
 
-On May 11, 2026, Anthropic reached general availability on **Claude Platform on AWS** — a service that makes Anthropic's native Claude API available through existing AWS accounts, with IAM authentication, CloudTrail audit logging, and a single consolidated AWS invoice.
+On May 11, 2026, Anthropic reached general availability on [**Claude Platform on AWS**](https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/) — a service that makes Anthropic's native Claude API available through existing AWS accounts, with IAM authentication, CloudTrail audit logging, and a single consolidated AWS invoice.
 
 The proposition for developers is straightforward: you get the complete Anthropic API — every feature, on launch day — without maintaining a separate vendor relationship. The practical question is how it differs from Claude on Amazon Bedrock, and which one you should use. The answer depends primarily on compliance requirements and whether your team needs multi-model capabilities.
 
-This analysis draws on Anthropic's official blog post, the AWS GA announcement, the Claude API documentation, AWS docs, CloudZero's billing comparison, InfoQ, and the Classmethod engineering team's technical breakdown — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+This analysis draws on [Anthropic's official blog post](https://www.anthropic.com/news/anthropic-amazon-compute), the [AWS GA announcement](https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/), the Claude API documentation, AWS docs, [InfoQ's coverage](https://www.infoq.com/news/2026/05/anthropic-claude-aws/), and third-party technical breakdowns — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 ---
 

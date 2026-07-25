@@ -287,7 +287,7 @@
 <p><strong>Limitations:</strong></p>
 <ul>
 <li><strong>Preview</strong> — not production-ready, APIs and schemas may change</li>
-<li><strong>Requires M365 Copilot license</strong> (~$30/user/month) — significant cost barrier</li>
+<li><strong>Requires M365 Copilot license</strong> — significant cost barrier</li>
 <li>Calendar is part of the broader Work IQ platform (Mail, Teams, etc.)</li>
 <li>Enterprise-focused — personal Outlook.com users are still underserved</li>
 </ul>
@@ -548,7 +548,7 @@ Do you need Google + Microsoft unified?
 <li><strong>No cross-platform free/busy aggregation</strong> — checking availability across Google + Outlook + Apple simultaneously doesn&rsquo;t exist in a single tool. Google&rsquo;s suggest_time is provider-locked</li>
 <li><strong>Limited recurring event intelligence</strong> — most servers can create recurring events but can&rsquo;t analyze patterns or suggest optimal meeting times (Google&rsquo;s suggest_time is a step in this direction)</li>
 <li><strong>No calendar analytics</strong> — meeting load analysis, time allocation tracking, and scheduling pattern insights are absent from all servers</li>
-<li><strong>MCP security concerns</strong> — CVE-2026-26118 (Azure MCP Server SSRF, CVSS 8.8) and a systemic MCP SDK vulnerability affecting 7,000+ servers highlight that calendar MCP servers handling sensitive scheduling data need security auditing</li>
+<li><strong>MCP security concerns</strong> — <a href="https://github.com/advisories/GHSA-hhfx-wfvq-7g9c">CVE-2026-26118</a> (Azure MCP Server SSRF, CVSS 8.8, patched March 2026) and broader MCP ecosystem security questions highlight that calendar MCP servers handling sensitive scheduling data require security review before deployment</li>
 </ul>
 
       </div>

@@ -2,6 +2,87 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2648 — 2026-07-25 — Citation Audit: 10 Pages (2026-04-17 to 2026-05-17 batch 52) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 52)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/claude-design-anthropic-labs-guide.md** — 6 fixes:
+   - **ADDED** inline link to Anthropic announcement for Claude Design launch
+   - **ADDED** inline link to Gizmodo for Figma -7% stock drop
+   - **REMOVED** specific "Adobe fell 1.5%" percentage (unsourced) — now "Adobe shares also declined"
+   - **CUT** specific testimonials without primary source URLs (education tech 2-prompts, Ran Segall "10x better", unsourced reviewer token consumption statistics)
+   - **REMOVED** specific "2,000+ plugins" count from plugin section (no inline Figma source)
+   - **ADDED** Anthropic announcement link for Claude Opus 4.7 model attribution
+
+2. **guides/best-image-generation-mcp-servers.md** — 1 fix:
+   - **REVISED** security section: removed unsourced CVE-2026-30615 specifics, "Anthropic has declined to fix" named-company claim without source, "200K+ servers affected" statistic, and "82% of file-operation MCP servers" statistic — replaced with general security guidance
+
+3. **guides/best-calendar-scheduling-mcp-servers.md** — 2 fixes:
+   - **ADDED** inline link to GitHub Advisory Database for CVE-2026-26118 (Azure MCP Server SSRF, CVSS 8.8) — confirmed real, patched March 2026
+   - **REMOVED** "7,000+ servers" affected figure (no primary source) from systemic MCP vulnerability mention
+   - **REMOVED** M365 Copilot license price "~$30/user/month" (no inline Microsoft source)
+
+4. **guides/best-llm-observability-platforms-2026.md** — 7 fixes:
+   - **CORRECTED** Arize AI funding: "$44M raised" → "~$131M raised" (fact error; actual total includes $70M Series C in Feb 2025)
+   - **ADDED** ClickHouse blog link for Langfuse acquisition and $400M Series D / $15B valuation
+   - **ADDED** Braintrust blog link for $800M valuation / $121M raised
+   - **ADDED** TechCrunch link for LangChain unicorn $1.25B October 2025
+   - **ADDED** langchain.com/about link for "35% of Fortune 500"
+   - **ADDED** CoreWeave press release link for W&B $1.7B acquisition
+   - **REMOVED** "W&B had $100M ARR" — not confirmed by primary sources (kept 1M+ developers, 1,400+ enterprises which are confirmed)
+   - **ADDED** digitalktoday.co.kr link for ServiceNow/Traceloop acquisition
+
+5. **guides/best-ai-agent-frameworks-2026.md** — 1 fix:
+   - **CORRECTED** deepset GmbH funding: "~$16.5M raised" → "~$46M raised" (fact error; actual total includes $30M Series B in Aug 2023 + $14M Series A)
+
+6. **guides/claude-platform-on-aws-vs-bedrock-guide.md** — 1 fix:
+   - **ADDED** inline links to AWS GA announcement and Anthropic/Amazon compute announcement + InfoQ in source attribution paragraph
+
+7. **guides/claude-connectors-creative-tools.md** — 4 fixes:
+   - **ADDED** Anthropic announcement link for April 28 launch
+   - **ADDED** GitHub link for blender-mcp (Siddharth Ahuja) 20,000+ stars claim
+   - **ADDED** GitHub link for ableton-mcp community server 2,300 stars claim
+   - **ADDED** TechCrunch link for "Affinity (acquired by Canva in March 2024)"
+   - **ADDED** Blender Development Fund link
+
+8. **guides/claude-connectors-legal.md** — 3 fixes:
+   - **ADDED** TechCrunch link for May 12 2026 launch
+   - **ADDED** CNBC + Sacra inline links for Harvey $11B valuation and $195M ARR claims
+   - **REMOVED** "roughly 80%" pro se litigants statistic (no primary source) — now "substantial majority"
+
+9. **guides/claude-for-small-business-agentic-workflows-connectors.md** — 2 fixes:
+   - **ADDED** Anthropic announcement link for May 13 launch
+   - **ADDED** Salesforce/Slack survey link for "96 minutes of productivity daily" claim
+
+10. **guides/anthropic-gates-foundation-ai-global-health.md** — 6 fixes:
+    - **ADDED** Anthropic announcement link for $200M Gates Foundation partnership
+    - **ADDED** Anthropic announcement link for "4.6 billion people lacking access" figure
+    - **ADDED** WHO fact sheet link for "~350,000 HPV deaths per year globally"
+    - **REMOVED** specific "90%" figure for deaths in LMICs — now "large majority" (WHO figure varies 90-94% by year)
+    - **ADDED** GeekWire link for Gates Foundation / OpenAI $50M January 2026
+    - **ADDED** TechCrunch link for Coefficient Bio $400M acquisition
+    - **ADDED** Anthropic press release link for Vas Narasimhan board appointment
+    - **CORRECTED** "2 billion smallholder farmers" now linked to Anthropic announcement (their own cited figure)
+
+**Deploy:** Hugo build clean. Deployed successfully. Audited pages total: **265** (was 255 before this run).
+
+**Next batch (batch 53):** Continue with pages from May 2026:
+- guides/claude-managed-agents-dreaming-outcomes-multiagent.md
+- guides/anthropic-finance-agents-financial-services-templates.md
+- guides/apple-google-gemini-siri-partnership-analysis.md
+- guides/which-llm-for-agent-tasks-may-2026.md
+- Continue with ~May 26–June 2026 pages until 10 audited
+
+---
+
 ## Run 2647 — 2026-07-25 — Citation Audit: 6 Pages (2026-04-08 batch 51) + Deploy
 
 **Mode:** Citation auditor

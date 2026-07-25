@@ -211,7 +211,7 @@ This is the single biggest gap in the category right now. Whoever ships the firs
 
 **No batch generation.** No server is designed for generating multiple images efficiently — creating product catalogs, social media sets, or design variations at scale. GPT Image 2's 10-images-per-prompt capability has no MCP surface yet.
 
-**MCP security applies here too.** The systemic MCP stdio transport vulnerability (CVE-2026-30615 and related CVEs) affects image generation servers the same as any other category — arbitrary command execution via stdio. Anthropic has declined to fix, calling it "expected behavior." 200K+ servers affected across the ecosystem. Image generation servers that accept file paths are additionally exposed to path traversal attacks (82% of file-operation MCP servers are vulnerable).
+**MCP security applies here too.** The stdio transport model used by most MCP servers has known security implications — arbitrary command execution via stdio is the primary concern for locally-installed servers. Image generation servers that accept file paths have additional exposure to path traversal attacks. Review each server's permissions and trust model before deploying in shared environments.
 
 ## Decision Flowchart
 

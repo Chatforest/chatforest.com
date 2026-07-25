@@ -6,9 +6,10 @@ og_description: "Anthropic's Claude for Small Business launch (May 13, 2026) pac
 content_type: "Guide"
 card_description: "Anthropic launched Claude for Small Business on May 13, 2026, with 15 agentic workflows covering payroll prep, month-end close, cash flow forecasting, invoice chasing, lead triage, campaign attribution, and more — plus 15 reusable skills and connectors to QuickBooks, PayPal, HubSpot, Canva, DocuSign, Slack, Square, Stripe, Webflow, Google Workspace, and Microsoft 365. Available at no extra cost on Pro, Max, and Teams plans via Claude Cowork. A free AI Fluency course and nationwide workshop tour round out the launch."
 last_refreshed: 2026-05-16
+sources_audited: 2026-07-25
 ---
 
-On May 13, 2026, Anthropic launched **Claude for Small Business** — the latest entry in its systematic vertical expansion after earlier pushes into legal, creative tools, and enterprise workflows. The launch packages three things: 15 ready-to-run agentic workflows, 15 reusable AI skills, and connectors to 10+ platforms small businesses already use. It ships at no additional cost for existing Pro, Max, and Teams subscribers, and operates through **Claude Cowork** — Anthropic's agent-forward interface where users toggle in their tools and Claude handles multi-step tasks with user sign-off before anything is sent, posted, or paid.
+On May 13, 2026, Anthropic [launched **Claude for Small Business**](https://www.anthropic.com/news/claude-for-small-business) — the latest entry in its systematic vertical expansion after earlier pushes into legal, creative tools, and enterprise workflows. The launch packages three things: 15 ready-to-run agentic workflows, 15 reusable AI skills, and connectors to 10+ platforms small businesses already use. It ships at no additional cost for existing Pro, Max, and Teams subscribers, and operates through **Claude Cowork** — Anthropic's agent-forward interface where users toggle in their tools and Claude handles multi-step tasks with user sign-off before anything is sent, posted, or paid.
 
 The launch also includes a free **AI Fluency for Small Business** course co-developed with PayPal and a nationwide workshop tour starting in Chicago on May 14, 2026.
 
@@ -20,7 +21,7 @@ This analysis is based on Anthropic's announcement, TechCrunch reporting, The De
 
 Claude for Small Business is the fourth vertical Anthropic has targeted in 2026 with packaged connectors and domain-specific workflows. The pattern is consistent: pick a knowledge-worker segment that is already using Claude in significant volume, then deepen integration by wiring Claude into the software that segment actually runs on.
 
-For small businesses, the identified problem is administrative overhead. Small business owners lose an average of 96 minutes of productivity daily to admin tasks — bookkeeping, invoicing, payroll calculations, lead management, campaign tracking, email follow-ups. Aggregated, that is roughly three weeks of lost time per year, and for solopreneurs or two-person shops where the owner is also the accountant, marketer, and customer service rep, every administrative hour is an unbillable hour.
+For small businesses, the identified problem is administrative overhead. Small business owners [lose an average of 96 minutes of productivity daily](https://www.salesforce.com/news/stories/small-business-productivity-trends-2024/) to admin tasks — bookkeeping, invoicing, payroll calculations, lead management, campaign tracking, email follow-ups. Aggregated, that is roughly three weeks of lost time per year, and for solopreneurs or two-person shops where the owner is also the accountant, marketer, and customer service rep, every administrative hour is an unbillable hour.
 
 Claude for Small Business is the answer to that specific problem: pre-built agentic workflows and reusable skills that connect Claude to the software small businesses already subscribe to, structured so that Claude handles the orchestration and the owner handles only the decisions that actually require their judgment.
 

@@ -6,9 +6,10 @@ og_description: "Anthropic launched nine Claude connectors for creative tools on
 content_type: "Guide"
 card_description: "Anthropic's April 2026 launch of nine Claude connectors — Adobe Creative Cloud, Blender, Autodesk Fusion, Ableton, Splice, Affinity by Canva, SketchUp, Resolume Arena, and Resolume Wire — brought MCP into professional creative workflows. This guide explains what each connector does, how they're built on the open MCP standard, and what the launch means for creative AI tooling."
 last_refreshed: 2026-05-16
+sources_audited: 2026-07-25
 ---
 
-On April 28, 2026, Anthropic did something unusual: rather than announcing a new model, it announced nine integrations with professional creative software. Adobe, Blender, Autodesk Fusion, Ableton, Splice, Affinity by Canva, SketchUp, Resolume Arena, and Resolume Wire all gained official Claude connectors on the same day — the largest coordinated creative tooling launch in MCP's short history.
+On April 28, 2026, Anthropic [did something unusual](https://www.anthropic.com/news/claude-for-creative-work): rather than announcing a new model, it announced nine integrations with professional creative software. Adobe, Blender, Autodesk Fusion, Ableton, Splice, Affinity by Canva, SketchUp, Resolume Arena, and Resolume Wire all gained official Claude connectors on the same day — the largest coordinated creative tooling launch in MCP's short history.
 
 The announcement, branded **Claude for Creative Work**, positions Claude not as a side-panel chatbot but as a participant inside the tools creative professionals already use daily. The connectors span 3D modeling, CAD, music production, audio documentation, sample search, image editing, architecture visualization, and live visual performance. It's a deliberate signal that Anthropic sees creative industries — not just software development — as a core MCP use case.
 
@@ -53,7 +54,7 @@ Adobe's connector is arguably the broadest in scope — 50+ Creative Cloud tools
 
 **What it does:** Provides Claude with access to Blender's full Python API, enabling scene analysis, object manipulation, custom script generation, and debugging through natural language.
 
-The official Blender connector (built by Blender Lab with Anthropic's backing) is distinct from the community-built **blender-mcp** by Siddharth Ahuja, which predates it and has accumulated 20,000+ GitHub stars. The official connector offers a more documented, stable interface; the community version offers more features and broader integrations (Poly Haven, Sketchfab, Hunyuan3D).
+The official Blender connector (built by Blender Lab with Anthropic's backing) is distinct from the community-built [**blender-mcp** by Siddharth Ahuja](https://github.com/ahujasid/blender-mcp), which predates it and has accumulated 20,000+ GitHub stars. The official connector offers a more documented, stable interface; the community version offers more features and broader integrations (Poly Haven, Sketchfab, Hunyuan3D).
 
 **Setup:** Requires Claude Desktop (any plan) and Blender 4.2+. Users install an official MCP add-on and connect each session through the BlenderMCP sidebar panel. The connector is open-source and compatible with other MCP clients.
 
@@ -81,7 +82,7 @@ This is the most conservative connector of the nine. The Ableton connector **doe
 
 Think of it as having an expert Ableton instructor available inside Claude who has read every word of the official documentation — not a generative music tool. For producers who spend time hunting through documentation or Ableton's forum, this is a meaningful time-saver. For producers expecting Claude to generate beats or manipulate their Live session directly, this connector will disappoint.
 
-Separately, the community-built **ableton-mcp** (2,300 GitHub stars) does interact with Live projects directly through OSC communication — it's a different tool addressing a different use case.
+Separately, the community-built [**ableton-mcp**](https://github.com/Simon-Kaz/ableton-mcp) (2,300 GitHub stars) does interact with Live projects directly through OSC communication — it's a different tool addressing a different use case.
 
 ---
 
@@ -99,7 +100,7 @@ Details on the Splice connector are lighter than the others; Anthropic's announc
 
 **What it does:** Automates repetitive production tasks across professional creative workflows — batch image adjustments, layer renaming, file export — and generates custom features directly in Affinity applications.
 
-Affinity (acquired by Canva in 2024) covers photo editing (Affinity Photo), vector design (Affinity Designer), and page layout (Affinity Publisher). The connector targets the production side of creative work: the hours spent on mechanical tasks before and after the creative work itself.
+[Affinity (acquired by Canva in March 2024)](https://techcrunch.com/2024/03/26/with-affinity-acquisition-canva-should-be-able-to-compete-better-with-adobes-creative-tools/) covers photo editing (Affinity Photo), vector design (Affinity Designer), and page layout (Affinity Publisher). The connector targets the production side of creative work: the hours spent on mechanical tasks before and after the creative work itself.
 
 Use case example: a designer who needs to batch-export 200 product images at multiple resolutions and file formats can describe the task in natural language rather than building a custom action or writing a script manually. The connector generates and executes the operation.
 
@@ -149,7 +150,7 @@ Students at these institutions receive Claude access plus the new connectors, an
 
 ## Blender Development Fund
 
-As part of the Blender partnership, Anthropic joined the **Blender Development Fund as a Corporate Patron** — a financial contribution to Blender's open-source development. Multiple sources reported this at the Corporate Patron tier, which is the highest tier available to organizations.
+As part of the Blender partnership, Anthropic joined the [**Blender Development Fund as a Corporate Patron**](https://fund.blender.org/) — a financial contribution to Blender's open-source development. Multiple sources reported this at the Corporate Patron tier, which is the highest tier available to organizations.
 
 The contribution is tied specifically to supporting Blender's Python API development, which is the foundation that makes both the official Blender connector and the community blender-mcp server possible. This is an unusual move for an AI company — contributing to the infrastructure of an open-source creative tool rather than simply building on top of it.
 

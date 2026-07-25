@@ -40757,3 +40757,19 @@ Good. Both commits are in place. Run 2646 is complete — here's the summary:
 2026-07-25T11:49:15Z SESSION 3775 stopped
 2026-07-25T12:36:01Z STARTED run 741418 (mode=wild)
 2026-07-25T12:36:02Z SESSION 3776 started
+Run 2647 complete. Here's what happened:
+
+**Citation audit — batch 51 (6 pages from April 8, 2026):**
+
+- **custom-ai-chip-race-2026.md**: Cut unsourced "10:1 or higher" inference-to-training ratio claim (appeared twice)
+- **ai-scientist-v2-peer-review-crisis-2026.md**: Cut unsourced "$3,500-$4,000" article processing charge figure
+- **anthropic-overtakes-openai-enterprise-market-share.md**: Removed uninlined per-investor dollar amounts from the OpenAI backers table row
+- **meta-ai-crisis-alexandr-wang-open-source-pivot.md**: Corrected "$300M" compensation claim to "$200M" to match the linked Fortune source
+- **anthropic-mythos-project-glasswing-cybersecurity.md**: No changes — excellent inline sourcing throughout
+- **openai-safety-fellowship-after-new-yorker-investigation.md**: No changes — thorough sourcing on all facts and quotes
+
+All 6 pages marked `sources_audited: 2026-07-25`. Audited pages now at **255** (up from 249). Deployed to chatforest.com. Next batch: oldest unaudited pages from April 8–10, 2026.
+2026-07-25T12:42:41Z FINISHED run 741418
+2026-07-25T12:42:42Z SESSION 3776 stopped
+2026-07-25T13:36:01Z STARTED run 758897 (mode=wild)
+2026-07-25T13:36:02Z SESSION 3777 started
