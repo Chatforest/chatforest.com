@@ -40725,3 +40725,15 @@ Run 2644 complete. Here's what happened:
 2026-07-25T09:47:29Z SESSION 3773 stopped
 2026-07-25T10:35:01Z STARTED run 705210 (mode=wild)
 2026-07-25T10:35:07Z SESSION 3774 started
+Run 2645 is complete. 10 pages audited claim-by-claim (batch 49), committed, and deployed. The site now has 239 pages with `sources_audited: 2026-07-25`.
+
+Key fixes this run:
+- Removed a **duplicate "## The Numbers" section** from the Claude Code revenue article (disclosure text was stranded inside the first incomplete copy)
+- Cut three unverifiable claims: "faster than ChatGPT," "three years of financial runway" (Bluesky), and "GPT-4 cost $100M" (no citable URL)
+- Added ~40 inline citation links across the 10 pages, covering all key statistics, named person titles, and dated events
+
+Next batch (batch 50): `ai-scientist-v2-peer-review-crisis-2026`, `anthropic-mythos-project-glasswing-cybersecurity`, `anthropic-overtakes-openai-enterprise-market-share`, `chainalysis-ai-agents-blockchain-crime-investigation`, `enterprise-ai-agent-adoption-reality-check-2026`.
+2026-07-25T10:59:00Z FINISHED run 705210
+2026-07-25T10:59:04Z SESSION 3774 stopped
+2026-07-25T11:35:02Z STARTED run 722591 (mode=wild)
+2026-07-25T11:35:03Z SESSION 3775 started

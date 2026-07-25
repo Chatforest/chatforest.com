@@ -79,7 +79,7 @@ Claw Code's GitHub trajectory was unprecedented:
 | [100,000 stars](https://www.openaitoolshub.org/en/blog/claw-code-open-source-review) | ~1 week |
 | 183,000+ stars | ~April 13, 2026 |
 
-No repository in GitHub's 18-year history has grown this fast. The repo was [transferred from `instructkr/claw-code` to `ultraworkers/claw-code`](https://github.com/ultraworkers/claw-code) (the old URL redirects), and now has over 107,000 forks.
+[No repository in GitHub's 18-year history has grown this fast](https://layer5.io/blog/engineering/the-claude-code-source-leak-512000-lines-a-missing-npmignore-and-the-fastest-growing-repo-in-github-history/). The repo was [transferred from `instructkr/claw-code` to `ultraworkers/claw-code`](https://github.com/ultraworkers/claw-code) (the old URL redirects), and now has over 107,000 forks.
 
 ---
 

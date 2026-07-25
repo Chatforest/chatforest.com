@@ -5,6 +5,7 @@ description: "By March 2026, state lawmakers across 45 US states had introduced 
 content_type: "Guide"
 card_description: "State lawmakers across 45 US states have introduced 1,561 AI-related bills in 2026 — already surpassing all of 2024. California, Texas, Colorado, and Illinois lead with laws covering frontier model safety, algorithmic discrimination, AI hiring bias, and transparency requirements. But the Trump administration is pushing back hard: a DOJ task force is challenging state laws in court, $42B in broadband funding is conditioned on repealing AI regulations, and a March 2026 National Policy Framework asks Congress to preempt state laws entirely. For anyone building AI products, the question isn't whether regulation is coming — it's which government's rules you'll need to follow."
 last_refreshed: 2026-04-09
+sources_audited: 2026-07-25
 ---
 
 By March 2026, state lawmakers in [45 states had introduced 1,561 AI-related bills](https://www.multistate.ai/artificial-intelligence-ai-legislation). That already exceeds the [total number of AI bills introduced across all of 2024](https://www.ncsl.org/financial-services/artificial-intelligence-legislation-database).

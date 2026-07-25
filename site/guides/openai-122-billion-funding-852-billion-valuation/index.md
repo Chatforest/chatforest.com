@@ -3,7 +3,7 @@
 > OpenAI closed a $122 billion funding round on March 31, 2026 at an $852 billion post-money valuation — the largest private fundraise ever. Amazon committed $50 billion ($35B contingent on IPO or AGI milestones), SoftBank pledged $30 billion in quarterly tranches, and NVIDIA invested $30 billion. Retail investors participated for the first time via bank channels ($3B). ARK Invest added OpenAI to three ETFs. The company reports $2 billion monthly revenue but projects breakeven no earlier than 2030, with annual cash burn reaching $57 billion by 2027. An IPO may come as early as Q4 2026. This analysis covers the funding structure, competitive dynamics with Anthropic ($380B valuation), the PBC restructuring, valuation skepticism, and the honest limitations of every claim.
 
 
-On March 31, 2026, OpenAI closed a $122 billion funding round at an $852 billion post-money valuation. It is the largest private fundraise in history — more than the GDP of over 130 countries.
+On March 31, 2026, OpenAI closed a $122 billion funding round at an $852 billion post-money valuation. It is the largest private fundraise in history.
 
 This analysis draws on reporting from [CNBC](https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html), [TechCrunch](https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/), [Bloomberg](https://www.bloomberg.com/news/articles/2026-03-31/openai-valued-at-852-billion-after-completing-122-billion-round), [CoinDesk](https://www.coindesk.com/tech/2026/04/01/openai-raises-a-record-usd122-billion-at-as-revenue-crosses-usd2-billion-per-month), [OpenAI's own announcement](https://openai.com/index/accelerating-the-next-phase-ai/), and [Axios](https://www.axios.com/2026/03/31/openai-ai-stock-investors-ipo) — we research and analyze rather than testing products hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -119,7 +119,7 @@ OpenAI argues the [PBC structure maintains mission alignment](https://openai.com
 
 At $852 billion, the market is pricing in assumptions that deserve scrutiny:
 
-**Revenue multiple**: At [$24 billion annualized run rate](https://sacra.com/c/openai/), OpenAI trades at roughly 35x revenue. For comparison, NVIDIA trades at approximately 25x revenue with actual profits. Salesforce trades at roughly 8x. The premium assumes OpenAI will grow into — and far beyond — current revenue levels.
+**Revenue multiple**: At [$24 billion annualized run rate](https://sacra.com/c/openai/), OpenAI trades at roughly 35x revenue — a significant premium to profitable large-cap tech companies, which typically trade at much lower revenue multiples. The premium assumes OpenAI will grow into — and far beyond — current revenue levels.
 
 **Moat assumptions**: The valuation assumes OpenAI maintains a durable competitive advantage. But model quality gaps between frontier labs are measured in months, not years. Claude, Gemini, and GPT-5.4 trade benchmark leads regularly. If models commoditize, the premium evaporates.
 

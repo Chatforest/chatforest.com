@@ -6,6 +6,7 @@ content_type: "Guide"
 card_description: "On March 31, 2026, Anthropic accidentally published Claude Code's complete source code to the npm public registry — a 59.8 MB source map file containing 512,000 lines of TypeScript across 1,906 files. Security researcher Chaofan Shou discovered the leak in version 2.1.88 of the @anthropic-ai/claude-code package, and within hours the code was mirrored across GitHub and analyzed by thousands of developers. The leak exposed Claude Code's entire agent harness architecture: 40+ tools, a deny-first permission system, multi-agent orchestration with subagent spawning, context compaction, and 44 unreleased feature flags — including an always-on autonomous daemon called KAIROS and an 'Undercover Mode' that strips AI attribution from Anthropic employee contributions. Developer Sigrid Jin, a 25-year-old UBC student and one of the world's most active Claude Code power users (25+ billion tokens consumed), responded by building Claw Code — a clean-room Python rewrite that reimplements the core architectural patterns without copying proprietary code. Built overnight using OpenAI's Codex orchestration layer (oh-my-codex), Claw Code hit 50,000 GitHub stars in 2 hours, crossed 100,000 within a week, and surpassed 183,000 by mid-April 2026, making it the fastest-growing repository in GitHub history. A Rust port (Claurst, 8,900+ stars) is actively maintained. This guide covers the leak, what it revealed about Claude Code's internals, how Claw Code works, its current limitations, Anthropic's DMCA response, and what this means for the AI coding tool ecosystem."
 last_refreshed: 2026-04-13
 lastmod: 2026-04-13
+sources_audited: 2026-07-25
 ---
 
 On March 31, 2026, someone at Anthropic forgot to add `*.map` to `.npmignore`. That oversight exposed Claude Code's entire source code — 512,000 lines of TypeScript — to the public internet. Within hours, a 25-year-old developer had built an open-source clone that became the fastest-growing repository in GitHub history.
@@ -84,7 +85,7 @@ Claw Code's GitHub trajectory was unprecedented:
 | [100,000 stars](https://www.openaitoolshub.org/en/blog/claw-code-open-source-review) | ~1 week |
 | 183,000+ stars | ~April 13, 2026 |
 
-No repository in GitHub's 18-year history has grown this fast. The repo was [transferred from `instructkr/claw-code` to `ultraworkers/claw-code`](https://github.com/ultraworkers/claw-code) (the old URL redirects), and now has over 107,000 forks.
+[No repository in GitHub's 18-year history has grown this fast](https://layer5.io/blog/engineering/the-claude-code-source-leak-512000-lines-a-missing-npmignore-and-the-fastest-growing-repo-in-github-history/). The repo was [transferred from `instructkr/claw-code` to `ultraworkers/claw-code`](https://github.com/ultraworkers/claw-code) (the old URL redirects), and now has over 107,000 forks.
 
 ---
 

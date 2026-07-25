@@ -5,6 +5,7 @@ description: "SpaceX acquired Elon Musk's xAI in February 2026 for $250 billion,
 content_type: "Guide"
 card_description: "In February 2026, SpaceX acquired xAI for $250 billion in an all-stock deal — the largest corporate merger in history at a combined $1.25 trillion valuation. The strategic rationale: orbital data centers that merge Starlink satellite connectivity with Grok AI processing. But the deal triggered an exodus. All 11 original xAI co-founders have now left. Musk said xAI 'wasn't built right' and is rebuilding from the foundations. Then in April, SpaceX filed confidentially for a record $1.75 trillion IPO targeting $75 billion. Musk is requiring the 21 banks managing the IPO to buy Grok AI subscriptions. Grok holds 17.8% of the US chatbot market and projects $2 billion in 2026 revenue, but the co-founder void raises serious execution questions. Here is what the numbers actually show and what they leave out."
 last_refreshed: 2026-04-10
+sources_audited: 2026-07-25
 ---
 
 In February 2026, [SpaceX acquired xAI](https://www.cnbc.com/2026/02/02/elon-musk-spacex-xai-ipo.html) in a [$250 billion all-stock deal](https://www.cnbc.com/2026/02/03/musk-xai-spacex-biggest-merger-ever.html) — the [largest corporate merger by valuation in history](https://techcrunch.com/2026/02/02/elon-musk-spacex-acquires-xai-data-centers-space-merger/). Six weeks later, [every original co-founder had left the company](https://techcrunch.com/2026/03/28/elon-musks-last-co-founder-reportedly-leaves-xai/). By April, SpaceX had [filed for the largest IPO ever attempted](https://techcrunch.com/2026/04/01/spacex-files-confidentially-for-ipo-in-mega-listing-potentially-valued-at-1-75-trillion-report-says/).
@@ -25,7 +26,7 @@ This analysis draws on reporting from [CNBC](https://www.cnbc.com/2026/02/03/mus
 
 [Musk announced the merger in a blog post](https://techcrunch.com/2026/02/02/elon-musk-spacex-acquires-xai-data-centers-space-merger/), describing the goal as "the most ambitious, vertically-integrated innovation engine on (and off) Earth, with AI, rockets, space-based internet" and the X social media platform.
 
-At $1.25 trillion combined, this surpasses the [previous largest merger — AOL–Time Warner at $350 billion in 2000](https://www.history.com/this-day-in-history/january-10/aol-time-warner-formed) (inflation-adjusted: approximately $650 billion). The previous xAI private valuation was [$230 billion in a January 2026 Series E round](https://x.ai/news/series-e) — the $250 billion deal price represented only a modest premium.
+At $1.25 trillion combined, this surpasses the [previous largest merger — AOL–Time Warner at $350 billion in 2000](https://www.history.com/this-day-in-history/january-10/aol-time-warner-formed). The previous xAI private valuation was [$230 billion in a January 2026 Series E round](https://x.ai/news/series-e) — the $250 billion deal price represented only a modest premium.
 
 ---
 

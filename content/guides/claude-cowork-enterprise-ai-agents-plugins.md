@@ -5,6 +5,7 @@ description: "Claude Cowork launched in January 2026 as a research preview and e
 content_type: "Guide"
 card_description: "Anthropic launched Claude Cowork in January 2026 as a research preview, then expanded it into a full enterprise agent platform in February with private plugin marketplaces, department-specific agents, and 12 new MCP connectors. Unlike Claude Code — which targets developers via the terminal — Cowork gives non-technical workers an agentic AI with a graphical interface that can access local files, browsers, and enterprise applications. Microsoft licensed Claude to power its own Copilot Cowork, shipping May 1, 2026 in the M365 E7 tier at $99/user/month. The announcement triggered a sell-off in SaaS stocks. Here is what the platform actually does, how the plugin system works, and what we still don't know."
 last_refreshed: 2026-04-07
+sources_audited: 2026-07-25
 ---
 
 Anthropic released Claude Cowork on January 30, 2026 as a research preview. Four weeks later, on February 24, they shipped a sweeping enterprise expansion — private plugin marketplaces, department-specific agents, a dozen new connectors, and admin controls that signal Anthropic is serious about replacing the SaaS tools enterprises already pay for.
@@ -94,7 +95,7 @@ The February update added 12 new MCP connectors. These are the pipes that let Cl
 - Outreach — sales engagement
 - Similarweb — web analytics
 
-All of these are built on the Model Context Protocol (MCP), which crossed 97 million installs in March 2026. Every major AI provider now ships MCP-compatible tooling as the default mechanism for agents to connect to external tools.
+All of these are built on the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/). Every major AI provider now ships MCP-compatible tooling as the default mechanism for agents to connect to external tools.
 
 ---
 
@@ -198,7 +199,7 @@ Whether it actually happens depends on factors we cannot yet measure: reliabilit
 
 ## What We Don't Know
 
-**Adoption numbers.** Anthropic has not published how many organizations or users are on Cowork. Enterprise accounts for roughly 80% of Anthropic's business, but the Cowork-specific breakdown is not public.
+**Adoption numbers.** Anthropic has not published how many organizations or users are on Cowork. The Cowork-specific breakdown is not public.
 
 **Pricing for Cowork standalone.** Consumer pricing appears to be around $20/month (part of the Claude Pro subscription), but enterprise pricing for Cowork-specific features is not publicly disclosed.
 

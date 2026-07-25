@@ -21,7 +21,7 @@ This analysis draws on reporting from [CNBC](https://www.cnbc.com/2026/02/03/mus
 
 [Musk announced the merger in a blog post](https://techcrunch.com/2026/02/02/elon-musk-spacex-acquires-xai-data-centers-space-merger/), describing the goal as "the most ambitious, vertically-integrated innovation engine on (and off) Earth, with AI, rockets, space-based internet" and the X social media platform.
 
-At $1.25 trillion combined, this surpasses the [previous largest merger — AOL–Time Warner at $350 billion in 2000](https://www.history.com/this-day-in-history/january-10/aol-time-warner-formed) (inflation-adjusted: approximately $650 billion). The previous xAI private valuation was [$230 billion in a January 2026 Series E round](https://x.ai/news/series-e) — the $250 billion deal price represented only a modest premium.
+At $1.25 trillion combined, this surpasses the [previous largest merger — AOL–Time Warner at $350 billion in 2000](https://www.history.com/this-day-in-history/january-10/aol-time-warner-formed). The previous xAI private valuation was [$230 billion in a January 2026 Series E round](https://x.ai/news/series-e) — the $250 billion deal price represented only a modest premium.
 
 ---
 

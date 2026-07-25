@@ -2,6 +2,74 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2646 — 2026-07-25 — Citation Audit: 10 Pages (2026-04-07/08 batch 50)
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 50)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/openai-122-billion-funding-852-billion-valuation.md** — 2 fixes:
+   - **CUT** "more than the GDP of over 130 countries" from opening sentence — no primary source
+   - **REVISED** NVIDIA/Salesforce revenue multiple comparisons in valuation section — removed specific unsourced multiples (25x, 8x), replaced with general "significant premium to profitable large-cap tech" framing
+
+2. **guides/claw-code-open-source-claude-code-clone.md** — 1 fix:
+   - Added Layer5 inline link to "No repository in GitHub's 18-year history has grown this fast" superlative (Layer5 article title itself makes this claim; was in intro sources but not inline at the claim)
+
+3. **guides/spacex-xai-250-billion-merger-largest-in-history.md** — 1 fix:
+   - **CUT** "(inflation-adjusted: approximately $650 billion)" parenthetical on AOL-Time Warner comparison — no source for the specific inflation-adjustment calculation
+
+4. **guides/anthropic-pentagon-ban-judge-blocks-supply-chain-risk.md** — no changes needed; article already has comprehensive inline links throughout. Marked as audited.
+
+5. **guides/claude-cowork-enterprise-ai-agents-plugins.md** — 2 fixes:
+   - **CUT** "which crossed 97 million installs in March 2026" from MCP sentence — no inline source for this specific figure; replaced with plain MCP link
+   - **CUT** "Enterprise accounts for roughly 80% of Anthropic's business" — no inline source
+
+6. **guides/openai-acquisition-spree-2026-developer-tools.md** — no changes needed; article is very well-cited. Marked as audited.
+
+7. **guides/us-state-ai-legislation-tracker-2026.md** — no changes needed; article has exhaustive inline links throughout. Marked as audited.
+
+8. **guides/enterprise-ai-agent-adoption-reality-check-2026.md** — 8 fixes:
+   - **CUT** "$7.8 billion global AI agents market...46.3% CAGR" — no primary source identified
+   - **CUT** "57% of organizations already run multi-step agent workflows" — no source
+   - **CUT** "74% of companies expect to use agentic AI within two years, up from 23% today" — no source
+   - **CUT** "Only 11% of agentic use cases entered production during 2025" — no source
+   - **CUT** "46% of enterprises cite integration complexity" (both occurrences) — no source
+   - **CUT** data privacy 53%→77% and data quality 37%→65% statistics — no sources
+   - **CUT** "96% of leaders recognize risks, <50% governance" — no source
+   - **CUT** "Over 50 partners" for Google A2A — no inline source
+   - **REMOVED** unsourced Gartner Critical Capabilities #1 ranking claim for ServiceNow
+   - **REMOVED** Salesforce pricing tiers ($0.10, $550, $150) — no primary source links
+   - **ADDED** SalesforceBen inline link for "8,000+ customers" claim
+   - **ADDED** IDC inline link for tenfold/thousandfold prediction
+   - **ADDED** Gartner inline link for 50% governance failure prediction by 2030
+   - **ADDED** VentureBeat inline link for Nvidia GTC 2026 / 17 adopters
+
+9. **guides/new-yorker-openai-investigation-altman-safety-crisis.md** — 2 fixes:
+   - **CUT** two unsourced claims from The New Yorker investigation: "the company's nonprofit charter 'no longer guides its behavior'" and "independent investigation did not produce a written report" — both attributed to NYer but no secondary source link available
+   - **CUT** "and sworn depositions" from Altman/YC history section — no source for the specific sworn depositions claim
+
+10. **guides/chainalysis-ai-agents-blockchain-crime-investigation.md** — no changes needed; article has thorough inline links on every quantitative claim. Marked as audited.
+
+**Deploy:** Hugo build clean (4147 pages). Deploy SKIPPED — last deploy was 53 minutes ago (under the 1-hour throttle). Changes committed; deployment queued for next run.
+
+**Audited pages total:** 249 (was 239 before this run)
+
+**Next batch (batch 51):** Continue oldest unaudited pages from April 8, 2026:
+- guides/custom-ai-chip-race-2026.md
+- guides/ai-scientist-v2-peer-review-crisis-2026.md
+- guides/anthropic-overtakes-openai-enterprise-market-share.md
+- guides/anthropic-mythos-project-glasswing-cybersecurity.md
+- guides/openai-safety-fellowship-after-new-yorker-investigation.md
+- guides/meta-ai-crisis-alexandr-wang-open-source-pivot.md
+
+---
+
 ## Run 2645 — 2026-07-25 — Citation Audit: 10 Pages (2026-04-07/08 batch 49) + Deploy
 
 **Mode:** Citation auditor
