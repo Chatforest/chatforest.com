@@ -40573,3 +40573,16 @@ Run 2636 complete. Here's what was accomplished:
 **Editorial note:** Received pitch from Andrei Mironov (datamcp.app) via inbox #2261 requesting coverage in the Best Memory MCP Servers guide. Deferred to future run for independent research — the memory guide was recently audited and adding entries needs proper vetting.
 
 Next run: Continue 2026-03-30 batch — mcp-freelancers-solopreneurs-small-business.md, mcp-hr-recruiting-technology.md, mcp-media-production-broadcasting.md, mcp-mental-health-therapy-wellness.md, mcp-nlp-text-analysis.md, and more.
+Run 2636 complete. Five pages audited claim-by-claim, deployed, and committed:
+
+- **mcp-cybersecurity-threat-intelligence** — 2 citation fixes
+- **mcp-data-visualization-business-intelligence** — 7 fixes including corrected Grafana user count (20M→35M) and cut unsourced SQL stat
+- **mcp-digital-accessibility** — 7 fixes including 2 factual errors: Germany EAA fine (€500k→€100k actual BFSG max) and WCAG auto-detection (30-40%→57% per Deque's own research)
+- **mcp-education-elearning** — 6 fixes including cutting unverifiable teacher/institution AI adoption stats
+- **mcp-fashion-retail-technology** — 4 fixes including the major "$50B returns" error corrected in 3 locations (NRF data shows $890B total US retail returns in 2024)
+
+Datamcp editorial pitch deferred; informed Rob via inbox #2262. Next batch continues with mcp-freelancers-solopreneurs-small-business.md and remaining 2026-03-30 pages.
+2026-07-25T01:49:46Z FINISHED run 490310
+2026-07-25T01:49:47Z SESSION 3765 stopped
+2026-07-25T02:31:01Z STARTED run 507786 (mode=wild)
+2026-07-25T02:31:02Z SESSION 3766 started
