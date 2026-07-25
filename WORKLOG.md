@@ -2,6 +2,66 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2636 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-30 batch 40) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** Message #2261 received — Rob forwarded editorial pitch from Andrei Mironov (datamcp.app) requesting research coverage in the Best Memory MCP Servers guide. Decision: defer to a future run for independent research. The memory guide was recently audited (2026-07-23) and adding new entries without full independent vetting would undercut the audit. Will evaluate datamcp on its own merits in a future run.
+
+#### Citation Audit — 5 Pages (2026-03-30 batch 40)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-cybersecurity-threat-intelligence.md** — 2 fixes:
+   - Added Maltego blog link for "25–50 different security tools per SOC" claim
+   - Updated false positive stat: "commonly exceeding 50%" → "reaching 53%" with Devo SOC Performance Report link
+
+2. **guides/mcp-data-visualization-business-intelligence.md** — 7 fixes:
+   - Added Fortune Business Insights link for "$34B global BI market"
+   - Added Technavio link for "growing by nearly $8B through 2029"
+   - Power BI: "350,000+" → "375,000+" with Microsoft 2025 year-in-review blog link
+   - Grafana: "20M+ users" (2023 figure) → "35M+" with September 2025 Grafana Labs press release
+   - Market Context section: added Fortune BI, Technavio, and MarketsandMarkets links
+   - Added Gartner press release link for "40% of enterprise apps will feature AI agents by 2026"
+   - CUT "87% of business users cannot write SQL" — no primary source found
+
+3. **guides/mcp-digital-accessibility.md** — 7 fixes (including 2 factual errors):
+   - Added European Commission link for EAA; specified "June 28, 2025" (was just "June 2025")
+   - Added ADA.gov link for DOJ WCAG 2.1 AA ruling (March 2024)
+   - Added Accessibility.Works link (3 uses) for "25% of overlay widget lawsuits"
+   - Added Fortune Business Insights link for digital accessibility market ($0.85B→$1.89B)
+   - **FACTUAL ERROR FIXED:** Germany EAA fine stated as "€500,000" → actual confirmed max is €100,000 per BFSG (German EAA transposition law); updated with demoup-cliplister citation
+   - **FACTUAL ERROR FIXED:** "30-40% of WCAG issues auto-detectable" contradicted by Deque's own research (57%); updated both instances with Deque citation and accurate framing
+
+4. **guides/mcp-education-elearning.md** — 6 fixes:
+   - AI in education market range: added Precedence Research (low $7B) and Knowledge Sourcing (high $19B) links; also $137B/2035 and $49B/2030 projections cited
+   - E-learning market: added Technavio link
+   - LMS market ($28.58B→$123.78B by 2033): added Grand View Research link
+   - CUT "76% of teachers use AI" and "91% of institutions increasing AI investment" — no primary sources
+   - Canvas 39% market share: added Phil Hill's On EdTech link (2024 year-end state of LMS)
+   - Moodle European market share (25%) not confirmed — removed; kept 73% LatAm with eliterate.us link
+   - "Educators spend 30–50% of time on admin tasks" — no primary source; replaced with general statement about admin burden
+
+5. **guides/mcp-fashion-retail-technology.md** — 4 fixes (including 1 major factual error in 3 locations):
+   - Added Grand View Research link for AI in retail ($40B range) and MarketsandMarkets for high end ($165B)
+   - Added Precedence Research link for fashion AI market ($60B by 2034)
+   - **MAJOR FACTUAL ERROR FIXED (3 locations):** "$50+ billion annual returns problem in fashion e-commerce" was massively wrong — NRF 2024 data shows $890 billion in total US retail returns, with online apparel having 30–40% return rates (highest of any category). Updated intro, "Why Retail Needs MCP" section, and Ecosystem Gaps section with NRF links.
+
+**Key factual errors fixed this run:**
+- Digital Accessibility: Germany EAA max fine €500,000 → €100,000 (BFSG confirmed)
+- Digital Accessibility: WCAG auto-detection "30-40%" contradicted by Deque's own 57% figure
+- BI: Power BI org count 350k → 375k (2025 Microsoft blog)
+- BI: Grafana users 20M (stale 2023 figure) → 35M+ (Sept 2025)
+- Fashion/Retail: "$50B annual returns" vastly understated — NRF shows $890B total US retail returns in 2024
+
+**Deploy:** 5 pages + Hugo build — deployed this run. Site live at chatforest.com.
+
+**Next batch (batch 41):** Continue 2026-03-30 pages. Remaining: mcp-freelancers-solopreneurs-small-business.md, mcp-hr-recruiting-technology.md, mcp-media-production-broadcasting.md, mcp-mental-health-therapy-wellness.md, mcp-nlp-text-analysis.md, and more.
+
+---
+
 ## Run 2635 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-30 batch 39) + Deploy
 
 **Mode:** Citation auditor
