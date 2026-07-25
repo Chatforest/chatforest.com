@@ -5,6 +5,7 @@ description: "Six protocols now define how AI agents access tools, collaborate, 
 content_type: "Guide"
 card_description: "The AI agent ecosystem now has six major protocols spanning tool access, agent collaboration, commerce, discovery, and payments. This guide maps the full stack and explains how MCP, A2A, ACP, UCP, ANP, and x402 layer together in real-world systems."
 last_refreshed: 2026-04-05
+sources_audited: 2026-07-25
 ---
 
 If you're building AI agents in 2026, you've probably noticed the alphabet soup getting thicker. A year ago, MCP was the only protocol that mattered. Now there are at least six protocols that enterprises and developers need to understand — each solving a different problem, each backed by major companies, and several already in production.
@@ -90,8 +91,8 @@ Two competing-but-complementary protocols are emerging for agentic commerce: Goo
 **What it does:** UCP creates a standardized language for AI shopping surfaces (Google AI Mode, Gemini, third-party agents) to connect to merchant backends for product discovery, cart management, and checkout.
 
 **Key facts:**
-- Announced by Google at NRF (National Retail Federation) in January 2026
-- Partners include Shopify, Etsy, Wayfair, Target, Walmart, Visa, Mastercard, American Express, Adyen, Stripe
+- [Announced by Google at NRF (National Retail Federation) in January 2026](https://blog.google/company-news/inside-google/message-ceo/nrf-2026-remarks/)
+- [Partners include Shopify, Etsy, Wayfair, Target, Walmart, Visa, Mastercard, American Express, Adyen, Stripe](https://www.shopify.com/enterprise/blog/nrf-2026-recap)
 - Built on REST and JSON-RPC with native A2A and MCP integration
 - Open specification published at [ucp.dev](https://ucp.dev)
 - Early access checkout live for select US merchants
@@ -104,7 +105,7 @@ Two competing-but-complementary protocols are emerging for agentic commerce: Goo
 **What it does:** ACP is an open standard for programmatic commerce flows between any AI agent and any merchant, regardless of platform.
 
 **Key facts:**
-- Co-developed by OpenAI and Stripe, launched alongside ChatGPT Instant Checkout
+- [Co-developed by OpenAI and Stripe](https://stripe.com/newsroom/news/stripe-openai-instant-checkout), launched alongside ChatGPT Instant Checkout
 - Apache 2.0 licensed, specification at [agenticcommerce.dev](https://agenticcommerce.dev)
 - Date-versioned (v2026-01-16: capability negotiation; v2026-01-30: extensions, discounts, payment handlers)
 - Implementable as either a RESTful interface or an MCP server
@@ -253,7 +254,7 @@ Despite rapid progress, several gaps remain:
 | Sep 2025 | MCP Registry preview launches |
 | Oct 2025 | OpenAI adds MCP support across products |
 | Dec 2025 | Anthropic donates MCP to AAIF; IBM ACP merges into A2A |
-| Jan 2026 | Google announces UCP at NRF; OpenAI/Stripe launch ACP |
+| Jan 2026 | [Google announces UCP at NRF](https://blog.google/company-news/inside-google/message-ceo/nrf-2026-remarks/); [OpenAI/Stripe launch ACP](https://stripe.com/newsroom/news/stripe-openai-instant-checkout) |
 | Feb 2026 | x402 live on Base and Solana |
 | Mar 2026 | Microsoft adds MCP to Copilot; 2026 MCP roadmap published |
 | Apr 2026 | x402 joins Linux Foundation; MCP Dev Summit NYC (April 2-3) |

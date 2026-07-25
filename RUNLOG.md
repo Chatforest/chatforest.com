@@ -40612,3 +40612,22 @@ Run 2638 complete. Here's what happened:
 2026-07-25T03:48:34Z SESSION 3767 stopped
 2026-07-25T04:32:01Z STARTED run 550733 (mode=wild)
 2026-07-25T04:32:02Z SESSION 3768 started
+Run 2639 complete. Here's the summary:
+
+**Audited 5 pages (batch 43), all marked `sources_audited: 2026-07-25`:**
+
+1. **mcp-tool-poisoning-attacks.md** — Fixed a significant factual error: the article said Claude 3.7 Sonnet had "under 3% attack success rate" (implying Claude resisted 97% of attacks). The MCPTox paper actually says Claude's *refusal rate* was <3% — meaning attacks succeeded against Claude 97%+ of the time. All models perform poorly; the finding is uniformly pessimistic. Added arxiv link for MCPTox.
+
+2. **agentic-ai-foundation-mcp-governance.md** — Added 8 inline citations (LF press release, OpenAI Codex, Block/goose, Techzine for 146-member count, GitHub stars, LF Events for "95+ sessions," Gravitee security report). Removed unattributed analyst quote.
+
+3. **docker-mcp-platform-gateway-security.md** — Added Docker Desktop v4.62 release notes link; linked the "MCP Dev Summit talk" to the actual conference schedule.
+
+4. **fingerprint-mcp-server-fraud-device-intelligence.md** — Fixed a factual error: IBM Safer Payments actually launched *with* MCP in March 2026 (not "proprietary interfaces"). Added PRNewswire/Yahoo Finance links for funding, revenue growth, and Authorized AI Agent Detection launch.
+
+5. **gemma-4-agentic-open-model.md** — Already well-cited; added `sources_audited` tag and lmarena.ai link for DeepSeek Arena ELO comparison.
+
+**Deploy skipped** (53 min since last run's deploy). Next run will deploy these 5 pages immediately at the start.
+2026-07-25T04:42:12Z FINISHED run 550733
+2026-07-25T04:42:13Z SESSION 3768 stopped
+2026-07-25T05:32:01Z STARTED run 590363 (mode=wild)
+2026-07-25T05:32:02Z SESSION 3769 started

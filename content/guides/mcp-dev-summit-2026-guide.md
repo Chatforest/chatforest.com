@@ -6,6 +6,7 @@ content_type: "Guide"
 card_description: "~1,200 attendees, 97M monthly SDK downloads, 17 keynotes, 95+ sessions. The first official MCP conference covered security, enterprise adoption, SDK V2, and cross-platform interoperability. Here's what happened."
 last_refreshed: 2026-04-14
 lastmod: 2026-04-14
+sources_audited: 2026-07-25
 ---
 
 The first MCP Dev Summit North America took place April 2–3, 2026 in New York City, drawing [approximately 1,200 attendees](https://www.infoq.com/news/2026/04/aaif-mcp-summit/) to the New York Marriott Marquis. Organized by the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (AAIF) under the Linux Foundation, the event featured [17 keynotes and over 95 sessions](https://futurumgroup.com/insights/mcp-dev-summit-2026-aaif-sets-a-clear-direction-with-disciplined-guardrails/) spanning four tracks — Protocol in Depth, Security and Operations, Apps and Agents, and MCP Best Practices. It marked MCP's transition from a fast-growing open-source project — now registering [97 million monthly SDK downloads](https://futurumgroup.com/insights/mcp-dev-summit-2026-aaif-sets-a-clear-direction-with-disciplined-guardrails/) — to a formally governed industry standard with its own conference ecosystem.
@@ -64,7 +65,7 @@ Key security sessions included:
 - **"Threat Modeling Authorization"** — Sarah Cecchetti (OpenID Foundation)
 - **"Securing the MCP Ecosystem"** — Lisa Tagliaferri & Trevor Dunlap (Chainguard)
 
-Six sessions focused specifically on authentication, with **Aaron Parecki** (OAuth 2.1 specification author) and **Paul Carleton** (Anthropic) addressing the fragmented auth landscape. As pre-summit analysis noted, ["STDIO servers have no auth at all, HTTP servers implement it inconsistently"](https://dev.to/peytongreen_dev/mcp-dev-summit-2026-what-python-developers-should-actually-pay-attention-to-5ald) — a problem the summit aimed to align the community around solving.
+Six sessions focused specifically on authentication, with **[Aaron Parecki](https://aaronparecki.com/oauth-2-simplified/)** (OAuth 2.1 specification author) and **Paul Carleton** (Anthropic) addressing the fragmented auth landscape. As pre-summit analysis noted, ["STDIO servers have no auth at all, HTTP servers implement it inconsistently"](https://dev.to/peytongreen_dev/mcp-dev-summit-2026-what-python-developers-should-actually-pay-attention-to-5ald) — a problem the summit aimed to align the community around solving.
 
 ### Theme 4: Enterprise Production Patterns
 

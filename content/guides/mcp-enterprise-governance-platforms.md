@@ -6,6 +6,7 @@ og_description: "9 MCP governance platforms compared: RunLayer ($11M, VPC deploy
 content_type: "Comparison"
 card_description: "RunLayer (VPC deploy, threat scanning, $11M funding) vs MintMCP (SOC 2 Type II, Virtual MCPs) vs SurePath AI (real-time policy) vs Kong (REST-to-MCP, ACL) vs Composio (500+ integrations) vs Strata (identity gateway) vs Bifrost (open source, Go) vs ContextForge (federation, 40+ plugins) vs Transcend (privacy/compliance MCP governance) — the enterprise governance layer for MCP."
 last_refreshed: 2026-04-04
+sources_audited: 2026-07-25
 ---
 
 AI agents connecting to dozens of MCP servers is a developer productivity story. AI agents connecting to dozens of MCP servers *in a regulated enterprise* is a governance story. Which tools can agents access? Who authorized them? Is there an audit trail? Can the security team block a suspicious tool in real time?
@@ -47,7 +48,7 @@ Some platforms (Kong, Bifrost, ContextForge) span both categories. We cover thei
 
 ## RunLayer — The Security-First Startup
 
-**Funding:** $11M seed (Felicis, Khosla) | **Founded:** 2025 | **Status:** GA
+**Funding:** [$11M seed (Felicis, Khosla)](https://techcrunch.com/2025/11/17/mcp-ai-agent-security-startup-runlayer-launches-with-8-unicorns-11m-from-khoslas-keith-rabois-and-felicis/) | **Founded:** 2025 | **Status:** GA
 
 RunLayer launched with backing from some of the biggest names in venture capital, positioning itself as the "enterprise infrastructure layer for MCP." Its pitch is straightforward: organizations deploying AI agents need the same governance they have for traditional software — approval workflows, threat scanning, identity integration, and audit trails — but purpose-built for the MCP ecosystem.
 
@@ -62,7 +63,7 @@ RunLayer launched with backing from some of the biggest names in venture capital
 **Limitations:**
 
 - **Closed source** — no self-inspection of the governance layer itself
-- **Early stage** — launched November 2025 with 8 unicorn customers, but the product is still young
+- **Early stage** — [launched November 2025 with 8 unicorn customers](https://techcrunch.com/2025/11/17/mcp-ai-agent-security-startup-runlayer-launches-with-8-unicorns-11m-from-khoslas-keith-rabois-and-felicis/), but the product is still young
 - **Enterprise pricing** — no public pricing; likely expensive given the VC-backed enterprise positioning
 - **Vendor lock-in risk** — proprietary catalog format and policy engine
 
@@ -186,7 +187,7 @@ Strata Identity comes at MCP governance from the identity and access management 
 
 ## Bifrost — The Open-Source Performance Gateway
 
-**Stars:** 3,100+ | **Language:** Go | **License:** Apache 2.0 | **Maintainer:** Maxim AI
+**Stars:** [6,800+](https://github.com/maximhq/bifrost) | **Language:** Go | **License:** Apache 2.0 | **Maintainer:** Maxim AI
 
 Bifrost is primarily an LLM gateway, but its MCP gateway capabilities make it relevant for governance. It's the highest-performance open-source option, with Go's efficiency delivering 11µs overhead per request at 5,000 RPS.
 
@@ -194,7 +195,7 @@ Bifrost is primarily an LLM gateway, but its MCP gateway capabilities make it re
 
 - **Dual role** — functions as both an LLM gateway (model routing, failover, caching) and an MCP gateway (tool aggregation, access control) in a single binary. One deployment covers both concerns
 - **MCP client and server** — acts as an MCP client (connecting to upstream tool servers) and an MCP server (exposing aggregated tools through a single `/mcp` endpoint to Claude Desktop, Cursor, Claude Code)
-- **Code Mode** — replaces tool definitions with four meta-tools; the model writes a short Python script and Bifrost executes it in a sandboxed Starlark interpreter. Roughly 50% token cost reduction and 30-40% faster execution
+- **Code Mode** — replaces tool definitions with four meta-tools; the model writes a short Python script and Bifrost executes it in a sandboxed Starlark interpreter. [Roughly 50% token cost reduction and 30-40% faster execution](https://www.getmaxim.ai/articles/best-mcp-gateway-in-2026-how-bifrost-cuts-token-usage-by-50/)
 - **Apache 2.0** — fully open source with no enterprise-only governance features hidden behind a paywall
 - **Performance** — 11µs overhead at sustained 5,000 RPS. If latency matters for your agent workflows, nothing else comes close
 
@@ -209,7 +210,7 @@ Bifrost is primarily an LLM gateway, but its MCP gateway capabilities make it re
 
 ## IBM ContextForge — The Open-Source Federation Gateway
 
-**Stars:** 3,500+ | **Language:** Python | **License:** Open source | **Maintainer:** IBM
+**Stars:** [4,100+](https://github.com/IBM/mcp-context-forge) | **Language:** Python | **License:** Open source | **Maintainer:** IBM
 
 ContextForge is the most feature-rich open-source MCP gateway, with federation, multi-protocol support (MCP, A2A, REST, gRPC), and 40+ plugins. For large organizations with complex infrastructure, its federation capabilities solve real operational problems.
 
@@ -283,7 +284,7 @@ These platforms aren't always mutually exclusive. Common combinations:
 
 ## The Bigger Picture
 
-The MCP governance space is moving fast. Multiple enterprise governance frameworks launched in early 2026, and the Cloud Security Alliance started building MCP compliance frameworks covering SOC 2, HIPAA, and GDPR. The 2026 MCP roadmap explicitly lists enterprise readiness — audit trails, SSO-integrated auth, gateway behavior, and configuration portability — as a priority area.
+The MCP governance space is moving fast. Multiple enterprise governance frameworks launched in early 2026. The 2026 MCP roadmap explicitly lists enterprise readiness — audit trails, SSO-integrated auth, gateway behavior, and configuration portability — as a priority area.
 
 What this means for teams evaluating now:
 

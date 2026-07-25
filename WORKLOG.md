@@ -2,6 +2,65 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2640 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-03 batch 44) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+**Deploy:** Deployed batch 43 pages (throttle cleared, 104 min since last deploy). Hugo build clean.
+
+#### Citation Audit — 5 Pages (batch 44)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-dev-summit-2026-guide.md** — 1 fix:
+   - Added link for "Aaron Parecki (OAuth 2.1 specification author)" → aaronparecki.com/oauth-2-simplified/
+
+2. **guides/mcp-anti-patterns.md** — 1 fix:
+   - Changed "drops logarithmically" to "drops" + added arxiv.org/html/2602.14878v1 link — "logarithmic" was a specific mathematical characterization not confirmed by primary sources; research shows "non-linear/diminishing returns" but not specifically logarithmic shape
+
+3. **guides/mcp-enterprise-governance-platforms.md** — 6 fixes (including 2 factual errors):
+   - Added TechCrunch link for RunLayer "$11M seed (Felicis, Khosla)" and "8 unicorn customers" (November 2025)
+   - **FACTUAL ERROR FIXED:** Bifrost GitHub stars "3,100+" → "6,800+" (GitHub currently shows 6.8k; updated and added GitHub link)
+   - **FACTUAL ERROR FIXED:** IBM ContextForge stars "3,500+" → "4,100+" (GitHub currently shows 4.1k; updated and added GitHub link)
+   - Added getmaxim.ai link for Code Mode "50% token cost reduction and 30-40% faster execution"
+   - **CUT:** "the Cloud Security Alliance started building MCP compliance frameworks covering SOC 2, HIPAA, and GDPR" — no primary source found for this specific claim
+
+4. **guides/ai-agent-protocol-stack-2026.md** — 3 fixes:
+   - Added blog.google/nrf-2026-remarks link for "Announced by Google at NRF in January 2026" (UCP)
+   - Added shopify.com/enterprise/blog/nrf-2026-recap link for UCP partners list (Shopify, Etsy, Walmart, etc.)
+   - Added stripe.com/newsroom link for "Co-developed by OpenAI and Stripe" (ACP); also added to timeline entry
+
+5. **guides/best-ecommerce-mcp-servers.md** — 6 fixes (including 2 factual errors):
+   - **FACTUAL ERROR FIXED:** "~36% of all online stores" → "roughly one-third (estimates range from 32–38%)" with barn2.com link — sources show 32–39% range, 33.4% most commonly cited (StoreLeads); "~36%" was slightly high and unlinked
+   - Added advertising.amazon.com link for Amazon Ads MCP "open beta since February 2, 2026"
+   - Added shopify.com/news/agentic-commerce-momentum link for "Agentic Storefronts went live March 24, 2026" (two locations)
+   - **FACTUAL ERROR FIXED:** Saleor main platform stars "21,800+" → "23,000+" with GitHub link (GitHub shows 23,118)
+   - **FACTUAL ERROR FIXED:** Medusa main platform stars "27,400+" → "35,000+" with GitHub link (GitHub shows 35,200)
+   - Added link to security note's "30+ CVEs in 60 days" claim
+
+**Key factual errors fixed this run:**
+- Bifrost GitHub stars: "3,100+" → "6,800+" (more than doubled since April 2026)
+- IBM ContextForge GitHub stars: "3,500+" → "4,100+"
+- WooCommerce market share: "~36%" → "roughly one-third (32–38%)" (36% was high-end of range, unlinked)
+- Saleor platform stars: "21,800+" → "23,000+"
+- Medusa platform stars: "27,400+" → "35,000+" (jumped significantly since article was written)
+
+**Deploy:** Hugo build succeeded. Deployed (batch 43 pages + batch 44 pages). Site live at chatforest.com.
+
+**Next batch (batch 45):** Continue oldest unaudited pages from April 5, 2026:
+- guides/mcp-ietf-standardization.md
+- guides/mcp-matter-smart-home-protocol.md
+- guides/mcp-security-landscape-2026.md
+- guides/a2a-protocol-v1-production-ready.md
+- guides/ai-agent-traps-deepmind-adversarial-threats.md
+
+---
+
+
 ## Run 2639 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-05 batch 43)
 
 **Mode:** Citation auditor

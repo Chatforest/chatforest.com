@@ -5,6 +5,7 @@ description: "The most common MCP server mistakes — from wrapping every API en
 content_type: "Guide"
 card_description: "82% of MCP servers have filesystem vulnerabilities. Tool bloat tanks agent accuracy. These are the 12 anti-patterns we see most often — and how to fix each one."
 last_refreshed: 2026-04-04
+sources_audited: 2026-07-25
 ---
 
 MCP servers are everywhere. Every week, new ones launch for databases, cloud platforms, SaaS tools, and developer infrastructure. But quantity doesn't mean quality. An [Endor Labs study of 2,614 MCP implementations](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) found that 82% use filesystem operations vulnerable to path traversal, 67% are susceptible to code injection, and 34% are prone to command injection. [AgentSeal's scan of 1,808 servers](https://agentseal.org/blog/mcp-server-security-findings) found 66% had at least one security finding.
@@ -17,7 +18,7 @@ This is the single most common MCP design mistake. Developers take an existing R
 
 **Why it's a problem:**
 
-- Benchmarks show tool selection accuracy drops logarithmically as tool count increases
+- [Benchmarks show tool selection accuracy drops as tool count increases](https://arxiv.org/html/2602.14878v1)
 - [GitHub Copilot cut from 40 tools to 13](https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/) and saw 2–5 percentage point benchmark improvement plus 400ms latency reduction
 - [Block rebuilt its Linear MCP server three times](https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers), ultimately going from 30+ tools to just 2
 - Every additional tool description competes for space in the context window
