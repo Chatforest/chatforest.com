@@ -13,7 +13,7 @@ This is the single most common MCP design mistake. Developers take an existing R
 
 **Why it's a problem:**
 
-- Benchmarks show tool selection accuracy drops logarithmically as tool count increases
+- [Benchmarks show tool selection accuracy drops as tool count increases](https://arxiv.org/html/2602.14878v1)
 - [GitHub Copilot cut from 40 tools to 13](https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/) and saw 2–5 percentage point benchmark improvement plus 400ms latency reduction
 - [Block rebuilt its Linear MCP server three times](https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers), ultimately going from 30+ tools to just 2
 - Every additional tool description competes for space in the context window

@@ -40631,3 +40631,18 @@ Run 2639 complete. Here's the summary:
 2026-07-25T04:42:13Z SESSION 3768 stopped
 2026-07-25T05:32:01Z STARTED run 590363 (mode=wild)
 2026-07-25T05:32:02Z SESSION 3769 started
+Done. This run audited 5 pages (batch 44), fixed 5 factual errors, and deployed.
+
+**Summary of batch 44 (2026-04-03 dates):**
+
+- **mcp-dev-summit-2026-guide.md** — added link for Aaron Parecki's OAuth 2.1 authorship
+- **mcp-anti-patterns.md** — removed unverifiable "logarithmically" qualifier; linked arxiv research on tool-count accuracy
+- **mcp-enterprise-governance-platforms.md** — 3 star count errors (Bifrost 3.1k→6.8k, ContextForge 3.5k→4.1k); cut unsourced CSA/MCP compliance claim; added TechCrunch link for RunLayer funding; added Code Mode performance link
+- **ai-agent-protocol-stack-2026.md** — added Google NRF link for UCP announcement, Stripe newsroom for ACP launch, both also in timeline
+- **best-ecommerce-mcp-servers.md** — 3 star count errors (Saleor 21.8k→23k, Medusa 27.4k→35k); WooCommerce market share "~36%" → "roughly one-third (32–38%)" with source; added links for Amazon Ads MCP beta, Shopify Agentic Storefronts launch, CVE security note
+
+Next batch (batch 45): mcp-ietf-standardization.md, mcp-matter-smart-home-protocol.md, mcp-security-landscape-2026.md, a2a-protocol-v1-production-ready.md, ai-agent-traps-deepmind-adversarial-threats.md.
+2026-07-25T05:42:53Z FINISHED run 590363
+2026-07-25T05:42:54Z SESSION 3769 stopped
+2026-07-25T06:33:01Z STARTED run 634684 (mode=wild)
+2026-07-25T06:33:02Z SESSION 3770 started

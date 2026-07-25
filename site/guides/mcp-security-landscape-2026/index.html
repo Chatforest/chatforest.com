@@ -68,7 +68,7 @@
       <div class="article-body">
         <p>MCP adoption is accelerating. So are MCP vulnerabilities.</p>
 <p>In the first 60 days of 2026, security researchers filed over 30 CVEs against MCP servers, clients, and infrastructure. The NVD now lists 36 confirmed CVEs with &ldquo;Model Context Protocol&rdquo; in the description. Ecosystem audits of thousands of servers reveal that basic security failures — path traversal, command injection, missing authentication — are the norm, not the exception.</p>
-<p>This isn&rsquo;t a theoretical risk. The Postmark MCP npm package was backdoored to BCC every outgoing email to an attacker&rsquo;s domain, downloaded 1,500 times per week. The McpInject malware module deploys malicious MCP servers into AI coding assistant configs. Anthropic&rsquo;s own Slack MCP server had a zero-click data exfiltration vulnerability so severe that Anthropic archived the server rather than patching it.</p>
+<p>This isn&rsquo;t a theoretical risk. <a href="https://snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/">The Postmark MCP npm package was backdoored</a> to BCC every outgoing email to an attacker&rsquo;s domain, downloaded 1,500 times per week. The McpInject malware module deploys malicious MCP servers into AI coding assistant configs. Anthropic&rsquo;s own Slack MCP server had a zero-click data exfiltration vulnerability so severe that Anthropic archived the server rather than patching it.</p>
 <p>This guide presents the data — the CVEs, the audit numbers, the real incidents — and the tools and frameworks emerging to address the problem. Our analysis draws on NVD records, published research, and ecosystem audit reports — we research and analyze rather than testing servers hands-on. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI.</p>
 <p>For practical security advice on evaluating individual MCP servers, see our companion guide: <a href="/guides/mcp-server-security/">MCP Server Security: A Practical Guide for 2026</a>.</p>
 <hr>
@@ -86,7 +86,7 @@
 <tr>
 <td>NVD-confirmed MCP CVEs</td>
 <td>36</td>
-<td>NVD search, April 2026</td>
+<td><a href="https://nvd.nist.gov/vuln/search/results?query=%22model+context+protocol%22">NVD search, April 2026</a></td>
 </tr>
 <tr>
 <td>CVEs filed in Jan-Feb 2026</td>
@@ -116,7 +116,7 @@
 <tr>
 <td>Servers with critical vulns</td>
 <td>33% of 1,000+ servers</td>
-<td>Enkrypt AI scan</td>
+<td><a href="https://www.enkryptai.com/mcp-scan">Enkrypt AI scan</a></td>
 </tr>
 <tr>
 <td>Servers using OAuth</td>
@@ -126,22 +126,22 @@
 <tr>
 <td>Tool poisoning prevalence</td>
 <td>5.5% of servers in the wild</td>
-<td>Invariant Labs</td>
+<td><a href="https://invariantlabs.ai/blog/introducing-mcp-scan">Invariant Labs</a></td>
 </tr>
 <tr>
 <td>Auto-approve attack success</td>
 <td>84.2%</td>
-<td>Invariant Labs</td>
+<td><a href="https://invariantlabs.ai/blog/introducing-mcp-scan">Invariant Labs</a></td>
 </tr>
 <tr>
 <td>Exposed MCP servers on internet</td>
 <td>1,862</td>
-<td>Knostic</td>
+<td><a href="https://www.knostic.ai/blog/mapping-mcp-servers-study">Knostic</a></td>
 </tr>
 <tr>
 <td>Exploit probability (10 plugins)</td>
 <td>92%</td>
-<td>VentureBeat</td>
+<td><a href="https://venturebeat.com/security/mcp-stacks-have-a-92-exploit-probability-how-10-plugins-became-enterprise">VentureBeat</a></td>
 </tr>
 <tr>
 <td>Average security score (17 popular servers)</td>
@@ -182,17 +182,17 @@
 <h2 id="real-world-incidents">Real-World Incidents</h2>
 <p>These aren&rsquo;t hypothetical attacks. These happened.</p>
 <h3 id="postmark-mcp-supply-chain-attack-september-2025">Postmark MCP Supply Chain Attack (September 2025)</h3>
-<p>A backdoored Postmark MCP npm package silently BCC&rsquo;d every outgoing email to an attacker-controlled domain. The package was downloaded 1,500 times per week and used in hundreds of workflows before discovery. This was the first confirmed real-world MCP supply chain compromise.</p>
+<p><a href="https://snyk.io/blog/malicious-mcp-server-on-npm-postmark-mcp-harvests-emails/">A backdoored Postmark MCP npm package</a> silently BCC&rsquo;d every outgoing email to an attacker-controlled domain. The package was downloaded 1,500 times per week and used in hundreds of workflows before discovery. This was the first confirmed real-world MCP supply chain compromise.</p>
 <h3 id="mcpinject-malware-march-2026">McpInject Malware (March 2026)</h3>
-<p>The McpInject module deploys malicious MCP servers and injects them into AI coding assistant configurations, complete with embedded prompt injections designed to read sensitive files. Discovered as part of the Axios npm compromise wave.</p>
+<p><a href="https://socket.dev/blog/sandworm-mode-npm-worm-ai-toolchain-poisoning">The McpInject module</a> deploys malicious MCP servers and injects them into AI coding assistant configurations, complete with embedded prompt injections designed to read sensitive files. Discovered as part of the Axios npm compromise wave.</p>
 <h3 id="anthropic-git-mcp-server-exploit-chain-january-2026">Anthropic Git MCP Server Exploit Chain (January 2026)</h3>
 <p>Three chained vulnerabilities (CVE-2025-68143, CVE-2025-68144, CVE-2025-68145) in Anthropic&rsquo;s own mcp-server-git achieve full RCE via malicious .git/config files. Anthropic — the company that created MCP — shipped a server vulnerable to a three-step exploit chain.</p>
 <h3 id="github-mcp-integration-hijack-may-2025">GitHub MCP Integration Hijack (May 2025)</h3>
-<p>Invariant Labs demonstrated that malicious GitHub issues could hijack AI agents using GitHub MCP integrations, leaking private repository data.</p>
+<p><a href="https://invariantlabs.ai/blog/introducing-mcp-scan">Invariant Labs demonstrated</a> that malicious GitHub issues could hijack AI agents using GitHub MCP integrations, leaking private repository data.</p>
 <h3 id="asana-mcp-privacy-breach-june-2025">Asana MCP Privacy Breach (June 2025)</h3>
-<p>Customer data bled across MCP instances in Asana&rsquo;s integration. The MCP integration was pulled for two weeks while the issue was resolved.</p>
+<p><a href="https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/">Customer data bled across MCP instances in Asana&rsquo;s integration.</a> Approximately 1,000 customers were potentially exposed between June 5 and June 17, 2025, before Asana disabled the integration to patch the flaw.</p>
 <h3 id="supabase-cursor-agent-exploit-mid-2025">Supabase Cursor Agent Exploit (Mid-2025)</h3>
-<p>Attackers embedded SQL commands in support tickets to exfiltrate integration tokens from AI agents using Supabase MCP through Cursor IDE.</p>
+<p><a href="https://generalanalysis.com/blog/supabase-mcp-blog">Security researchers demonstrated</a> that attackers could embed SQL commands in support tickets to exfiltrate integration tokens from AI agents using Supabase MCP through Cursor IDE, exploiting the service_role&rsquo;s ability to bypass row-level security.</p>
 <hr>
 <h2 id="the-owasp-mcp-top-10">The OWASP MCP Top 10</h2>
 <p>OWASP published a dedicated <a href="https://owasp.org/www-project-mcp-top-10/">MCP Top 10</a> (currently in beta), identifying the ten most critical security risks specific to MCP deployments:</p>
@@ -265,7 +265,7 @@
 <p><strong>How it works:</strong> An attacker embeds malicious instructions in a tool&rsquo;s description metadata — the text that tells the AI model what the tool does. These instructions are invisible to human users reviewing tool lists but are processed by the model when selecting and invoking tools. A poisoned tool description might instruct the model to exfiltrate data, escalate privileges, or call other tools in unintended ways.</p>
 <p><strong>The &ldquo;rug pull&rdquo; variant:</strong> A tool establishes trust with benign behavior, then silently alters its description after the user has approved it. Standard MCP clients don&rsquo;t re-verify tool definitions on every invocation, so the changed behavior goes undetected.</p>
 <p><strong>Prevalence:</strong> Invariant Labs found that 5.5% of MCP servers in the wild exhibit tool poisoning vulnerabilities. When AI agents auto-approve tool calls (without human-in-the-loop confirmation), the attack success rate is 84.2%. With human approval, it drops below 5%.</p>
-<p><strong>The OpenClaw case study:</strong> OpenClaw — an MCP tool marketplace that launched in late 2025 and quickly reached 100,000+ GitHub stars — saw 8 critical CVEs in its first 6 weeks. A Koi Security audit of its skill marketplace found 824+ malicious skills among 10,700+ total submissions. Bitdefender estimated approximately 20% of submitted skills were malicious. 42,665 OpenClaw instances were found exposed on the internet.</p>
+<p><strong>The OpenClaw case study:</strong> OpenClaw — an MCP tool marketplace that launched in late 2025 and quickly reached 100,000+ GitHub stars — became a supply chain attack vector almost immediately. <a href="https://cybersecuritynews.com/openclaw-skill-marketplace-exposes-ai-agents/">A Koi Security audit of its ClawHub skill marketplace found 824+ malicious skills among 10,700+ total submissions.</a> <a href="https://www.bitdefender.com/en-us/blog/labs/helpful-skills-or-hidden-payloads-bitdefender-labs-dives-deep-into-the-openclaw-malicious-skill-trap">Bitdefender estimated approximately 17% of submitted skills carried malicious payloads.</a></p>
 <hr>
 <h2 id="the-authentication-gap">The Authentication Gap</h2>
 <p>Only 8.5% of MCP servers currently use OAuth, despite OAuth 2.1 being the required authentication mechanism in the MCP specification for HTTP-based transports since March 2025.</p>
@@ -276,15 +276,14 @@
 <li><strong>November 2025:</strong> Client ID Metadata Documents became the registration method; PKCE made mandatory</li>
 </ul>
 <p>Despite this, the MCP Dev Summit dedicated 6 of 95+ sessions to authentication, with OAuth 2.1 specification author Aaron Parecki present — a signal that the community acknowledges auth remains unsolved in practice.</p>
-<p>Knostic found 1,862 MCP servers exposed directly to the internet. When they manually tested 119 of these, every single one exposed its internal tool inventory without requiring authentication.</p>
+<p><a href="https://www.knostic.ai/blog/mapping-mcp-servers-study">Knostic found 1,862 MCP servers exposed directly to the internet.</a> When they manually tested 119 of these, every single one exposed its internal tool inventory without requiring authentication.</p>
 <hr>
 <h2 id="shadow-mcp-enterprise-blind-spot">Shadow MCP: Enterprise Blind Spot</h2>
-<p>OWASP MCP09 addresses a growing enterprise concern: developers spinning up unapproved MCP servers for experimentation, often with default credentials and permissive configurations.</p>
-<p>60% of organizations report lacking confidence in their ability to detect unauthorized AI deployments. These shadow MCP servers create data leakage risks, unauthorized access paths, and expanded attack surfaces that security teams can&rsquo;t monitor because they don&rsquo;t know the servers exist.</p>
+<p>OWASP MCP09 addresses a growing enterprise concern: developers spinning up unapproved MCP servers for experimentation, often with default credentials and permissive configurations. These shadow MCP servers create data leakage risks, unauthorized access paths, and expanded attack surfaces that security teams can&rsquo;t monitor because they don&rsquo;t know the servers exist.</p>
 <p>Qualys TotalAI now specifically targets shadow MCP detection, using network-level probes, host-level analysis, and supply-chain dependency scanning to find MCP servers that haven&rsquo;t gone through formal security review.</p>
 <hr>
 <h2 id="supply-chain-risk-the-math">Supply Chain Risk: The Math</h2>
-<p>VentureBeat reported a striking finding: deploying just 10 MCP plugins creates a 92% probability of exploitation. Three plugins exceed 50%. Even a single plugin carries a 9% exploit probability.</p>
+<p><a href="https://venturebeat.com/security/mcp-stacks-have-a-92-exploit-probability-how-10-plugins-became-enterprise">VentureBeat reported a striking finding</a>: deploying just 10 MCP plugins creates a 92% probability of exploitation. Three plugins exceed 50%. Even a single plugin carries a 9% exploit probability.</p>
 <p>The MCP ecosystem is heavily reliant on npm and PyPI packages with all the supply chain risks that entails. There is no centralized, trusted MCP server registry with mandatory security review. The Postmark backdoor, the McpInject malware, and the mcp-remote command injection (CVE-2025-6514, 437K+ downloads) demonstrate that these aren&rsquo;t theoretical risks.</p>
 <hr>
 <h2 id="security-tools-and-frameworks">Security Tools and Frameworks</h2>

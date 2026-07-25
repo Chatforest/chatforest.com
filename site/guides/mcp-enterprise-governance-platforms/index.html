@@ -212,7 +212,7 @@
 </table>
 <p>Some platforms (Kong, Bifrost, ContextForge) span both categories. We cover their governance features here.</p>
 <h2 id="runlayer--the-security-first-startup">RunLayer — The Security-First Startup</h2>
-<p><strong>Funding:</strong> $11M seed (Felicis, Khosla) | <strong>Founded:</strong> 2025 | <strong>Status:</strong> GA</p>
+<p><strong>Funding:</strong> <a href="https://techcrunch.com/2025/11/17/mcp-ai-agent-security-startup-runlayer-launches-with-8-unicorns-11m-from-khoslas-keith-rabois-and-felicis/">$11M seed (Felicis, Khosla)</a> | <strong>Founded:</strong> 2025 | <strong>Status:</strong> GA</p>
 <p>RunLayer launched with backing from some of the biggest names in venture capital, positioning itself as the &ldquo;enterprise infrastructure layer for MCP.&rdquo; Its pitch is straightforward: organizations deploying AI agents need the same governance they have for traditional software — approval workflows, threat scanning, identity integration, and audit trails — but purpose-built for the MCP ecosystem.</p>
 <p><strong>What stands out:</strong></p>
 <ul>
@@ -225,7 +225,7 @@
 <p><strong>Limitations:</strong></p>
 <ul>
 <li><strong>Closed source</strong> — no self-inspection of the governance layer itself</li>
-<li><strong>Early stage</strong> — launched November 2025 with 8 unicorn customers, but the product is still young</li>
+<li><strong>Early stage</strong> — <a href="https://techcrunch.com/2025/11/17/mcp-ai-agent-security-startup-runlayer-launches-with-8-unicorns-11m-from-khoslas-keith-rabois-and-felicis/">launched November 2025 with 8 unicorn customers</a>, but the product is still young</li>
 <li><strong>Enterprise pricing</strong> — no public pricing; likely expensive given the VC-backed enterprise positioning</li>
 <li><strong>Vendor lock-in risk</strong> — proprietary catalog format and policy engine</li>
 </ul>
@@ -327,13 +327,13 @@
 </ul>
 <p><strong>Best for:</strong> Organizations with mature IAM infrastructure (Okta, Entra) that want to extend existing identity governance to AI agents. If your security model is identity-centric, Strata fits naturally. The sandbox is worth trying even if you choose a different platform — it&rsquo;s the fastest way to understand MCP governance concepts.</p>
 <h2 id="bifrost--the-open-source-performance-gateway">Bifrost — The Open-Source Performance Gateway</h2>
-<p><strong>Stars:</strong> 3,100+ | <strong>Language:</strong> Go | <strong>License:</strong> Apache 2.0 | <strong>Maintainer:</strong> Maxim AI</p>
+<p><strong>Stars:</strong> <a href="https://github.com/maximhq/bifrost">6,800+</a> | <strong>Language:</strong> Go | <strong>License:</strong> Apache 2.0 | <strong>Maintainer:</strong> Maxim AI</p>
 <p>Bifrost is primarily an LLM gateway, but its MCP gateway capabilities make it relevant for governance. It&rsquo;s the highest-performance open-source option, with Go&rsquo;s efficiency delivering 11µs overhead per request at 5,000 RPS.</p>
 <p><strong>What stands out:</strong></p>
 <ul>
 <li><strong>Dual role</strong> — functions as both an LLM gateway (model routing, failover, caching) and an MCP gateway (tool aggregation, access control) in a single binary. One deployment covers both concerns</li>
 <li><strong>MCP client and server</strong> — acts as an MCP client (connecting to upstream tool servers) and an MCP server (exposing aggregated tools through a single <code>/mcp</code> endpoint to Claude Desktop, Cursor, Claude Code)</li>
-<li><strong>Code Mode</strong> — replaces tool definitions with four meta-tools; the model writes a short Python script and Bifrost executes it in a sandboxed Starlark interpreter. Roughly 50% token cost reduction and 30-40% faster execution</li>
+<li><strong>Code Mode</strong> — replaces tool definitions with four meta-tools; the model writes a short Python script and Bifrost executes it in a sandboxed Starlark interpreter. <a href="https://www.getmaxim.ai/articles/best-mcp-gateway-in-2026-how-bifrost-cuts-token-usage-by-50/">Roughly 50% token cost reduction and 30-40% faster execution</a></li>
 <li><strong>Apache 2.0</strong> — fully open source with no enterprise-only governance features hidden behind a paywall</li>
 <li><strong>Performance</strong> — 11µs overhead at sustained 5,000 RPS. If latency matters for your agent workflows, nothing else comes close</li>
 </ul>
@@ -346,7 +346,7 @@
 </ul>
 <p><strong>Best for:</strong> Teams that want open-source MCP gateway capabilities and are comfortable building governance features on top. Good as the routing/performance layer beneath a governance platform, not as a governance platform itself.</p>
 <h2 id="ibm-contextforge--the-open-source-federation-gateway">IBM ContextForge — The Open-Source Federation Gateway</h2>
-<p><strong>Stars:</strong> 3,500+ | <strong>Language:</strong> Python | <strong>License:</strong> Open source | <strong>Maintainer:</strong> IBM</p>
+<p><strong>Stars:</strong> <a href="https://github.com/IBM/mcp-context-forge">4,100+</a> | <strong>Language:</strong> Python | <strong>License:</strong> Open source | <strong>Maintainer:</strong> IBM</p>
 <p>ContextForge is the most feature-rich open-source MCP gateway, with federation, multi-protocol support (MCP, A2A, REST, gRPC), and 40+ plugins. For large organizations with complex infrastructure, its federation capabilities solve real operational problems.</p>
 <p><strong>What stands out:</strong></p>
 <ul>
@@ -402,7 +402,7 @@
 <li><strong>ContextForge (federation) + MintMCP (compliance)</strong> — ContextForge handles multi-cluster routing while MintMCP provides the compliance layer</li>
 </ul>
 <h2 id="the-bigger-picture">The Bigger Picture</h2>
-<p>The MCP governance space is moving fast. Multiple enterprise governance frameworks launched in early 2026, and the Cloud Security Alliance started building MCP compliance frameworks covering SOC 2, HIPAA, and GDPR. The 2026 MCP roadmap explicitly lists enterprise readiness — audit trails, SSO-integrated auth, gateway behavior, and configuration portability — as a priority area.</p>
+<p>The MCP governance space is moving fast. Multiple enterprise governance frameworks launched in early 2026. The 2026 MCP roadmap explicitly lists enterprise readiness — audit trails, SSO-integrated auth, gateway behavior, and configuration portability — as a priority area.</p>
 <p>What this means for teams evaluating now:</p>
 <ol>
 <li><strong>Don&rsquo;t wait for the spec</strong> — the governance platforms available today address real, immediate needs. The spec will catch up, and good platforms will adapt</li>

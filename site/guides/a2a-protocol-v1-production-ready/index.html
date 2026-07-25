@@ -229,7 +229,7 @@
 <ul>
 <li><strong>Microsoft</strong> — integrated A2A into <a href="https://azure.microsoft.com/en-us/products/ai-foundry">Azure AI Foundry</a> and Copilot Studio</li>
 <li><strong>AWS</strong> — added A2A support through <a href="https://aws.amazon.com/blogs/machine-learning/introducing-agent-to-agent-protocol-support-in-amazon-bedrock-agentcore-runtime/">Amazon Bedrock AgentCore Runtime</a>, acting as a transparent proxy layer for A2A containers with enterprise-grade session isolation. AgentCore also supports MCP and AG-UI protocols</li>
-<li><strong>Google Cloud</strong> — endorsed A2A as the default for agent-based systems, with first-class support through the Agent Development Kit (ADK)</li>
+<li><strong>Google Cloud</strong> — <a href="https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade">endorsed A2A as the default for agent-based systems</a>, with first-class support through the Agent Development Kit (ADK)</li>
 </ul>
 <h3 id="companies-with-published-a2a-implementations">Companies with published A2A implementations</h3>
 <ul>
@@ -265,7 +265,7 @@
 <h3 id="discovery-at-scale">Discovery at scale</h3>
 <p>Agent Cards at <code>/.well-known/agent-card.json</code> work for known endpoints, but there&rsquo;s no built-in registry or marketplace for discovering agents you don&rsquo;t already know about. The <a href="https://github.com/agent-network-protocol">Agent Network Protocol (ANP)</a> is attempting to solve open-internet agent discovery, but it&rsquo;s much earlier stage.</p>
 <h3 id="cost-attribution">Cost attribution</h3>
-<p>Like MCP, A2A has no protocol-level mechanism for tracking or attributing the cost of agent-to-agent interactions. When Agent A delegates a task to Agent B that delegates to Agent C, there&rsquo;s no standard way to track who consumed what resources. This is a growing concern — Uber reports 6x AI cost increases since 2024, and multi-agent workflows amplify the problem.</p>
+<p>Like MCP, A2A has no protocol-level mechanism for tracking or attributing the cost of agent-to-agent interactions. When Agent A delegates a task to Agent B that delegates to Agent C, there&rsquo;s no standard way to track who consumed what resources. This is a growing concern — <a href="https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development">Uber reports 6x AI cost increases since 2024</a>, and multi-agent workflows amplify the problem.</p>
 <h3 id="security-in-practice">Security in practice</h3>
 <p>Signed Agent Cards verify identity, but they don&rsquo;t prevent a compromised agent from acting maliciously within its declared capabilities. The v1.0 spec requires servers to validate all input parameters, but the security model is still focused on authentication and transport security rather than behavioral verification. Given the <a href="https://dev.to/kai_security_ai/30-cves-later-how-mcps-attack-surface-expanded-into-three-distinct-layers-ihp">30+ CVEs documented in the MCP ecosystem</a> in early 2026, the agent protocol space broadly has security maturity work ahead.</p>
 <h3 id="fragmentation-risk-diminishing">Fragmentation risk (diminishing)</h3>

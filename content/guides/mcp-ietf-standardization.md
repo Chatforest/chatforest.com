@@ -5,6 +5,7 @@ description: "MCP has moved beyond Anthropic's GitHub repo into formal internet 
 content_type: "Guide"
 card_description: "15+ IETF Internet-Drafts now reference MCP. From the mcp:// URI scheme to cryptographic agent passports to QUIC transport, the protocol is being pulled into the formal standards track. Here's what's happening and why it matters."
 last_refreshed: 2026-04-05
+sources_audited: 2026-07-25
 ---
 
 Something significant is happening in the IETF datatracker. As of April 2026, over 15 active Internet-Drafts directly reference or extend the Model Context Protocol. They cover server discovery, cryptographic security, high-performance transport, and network management — submitted by authors at Cisco, Google, Huawei, Deutsche Telekom, Orange, Telefonica, and independent researchers.
@@ -22,13 +23,13 @@ The IETF (Internet Engineering Task Force) is where internet protocols get stand
 - **Long-term stability** — IETF RFCs don't disappear when a company pivots
 - **Cross-industry legitimacy** — telecom operators, network vendors, and enterprise IT trust IETF standards
 
-MCP was contributed to the Linux Foundation in December 2025 as part of the Agentic AI Foundation (AAIF). Its internal governance uses Specification Enhancement Proposals (SEPs) for protocol changes. But SEPs are project-internal — the IETF drafts represent external engineers saying "this protocol needs to work at internet scale, and we need formal standards to make that happen."
+MCP was contributed to the Linux Foundation in December 2025 as part of the [Agentic AI Foundation (AAIF)](/guides/agentic-ai-foundation-mcp-governance/). Its internal governance uses Specification Enhancement Proposals (SEPs) for protocol changes. But SEPs are project-internal — the IETF drafts represent external engineers saying "this protocol needs to work at internet scale, and we need formal standards to make that happen."
 
 The current stage is early. All existing drafts are individual submissions — they represent their authors' views, not IETF consensus. This is comparable to where WebRTC and QUIC were before formal working groups formed. The key question is whether the volume of submissions triggers working group formation in 2026-2027.
 
 ## The Discovery Problem: mcp:// URI Scheme
 
-**Draft:** `draft-serra-mcp-discovery-uri-04` (Marco Serra, Mumble Group, Milan)
+**Draft:** [`draft-serra-mcp-discovery-uri-04`](https://datatracker.ietf.org/doc/draft-serra-mcp-discovery-uri/) (Marco Serra, Mumble Group, Milan)
 **Last updated:** March 26, 2026 | **Status:** Individual submission, Informational
 
 The most ambitious IETF MCP draft tackles a fundamental problem: how do you find and identify MCP servers on the internet?
@@ -81,7 +82,7 @@ The draft also supports payment advertisement — a `payment_required` flag with
 
 ### Relationship to SEP-2127 (Server Cards)
 
-MCP's own maintainers have a parallel proposal: SEP-2127, "MCP Server Cards," proposed by lead maintainer David Soria Parra. Server Cards use `/.well-known/mcp-server-card/{server-name}` for pre-connection identity and transport discovery.
+MCP's own maintainers have a parallel proposal: [SEP-2127, "MCP Server Cards,"](https://github.com/modelcontextprotocol/specification/discussions/2127) proposed by lead maintainer David Soria Parra. Server Cards use `/.well-known/mcp-server-card/{server-name}` for pre-connection identity and transport discovery.
 
 The two proposals are **complementary rather than competing.** Serra's draft (revision 04) explicitly includes a `server_card` field that can point to a SEP-2127 Server Card URL. The key differences:
 
@@ -99,10 +100,10 @@ A reference implementation exists at [mcpstandard.dev](https://mcpstandard.dev) 
 
 ## Cryptographic Security: Agent Passports and Signed Messages
 
-**Draft:** `draft-sharif-mcps-secure-mcp-00` (Raza Sharif, CyberSecAI Ltd)
+**Draft:** [`draft-sharif-mcps-secure-mcp-00`](https://datatracker.ietf.org/doc/draft-sharif-mcps-secure-mcp/) (Raza Sharif, CyberSecAI Ltd)
 **Published:** March 14, 2026 | **Status:** Individual submission
 
-With [36 CVEs filed against MCP servers](/guides/mcp-security-landscape-2026/) and 84.2% of tool poisoning attacks succeeding against auto-approve configurations, the security gap in MCP is well-documented. Sharif's MCPS (secure MCP) draft proposes a cryptographic layer that addresses four specific threats:
+With [36 CVEs filed against MCP servers](/guides/mcp-security-landscape-2026/) and [84.2% of tool poisoning attacks succeeding](/guides/mcp-security-landscape-2026/) against auto-approve configurations, the security gap in MCP is well-documented. Sharif's MCPS (secure MCP) draft proposes a cryptographic layer that addresses four specific threats:
 
 ### Agent Passports
 
@@ -146,7 +147,7 @@ The challenge is adoption. Adding cryptographic signing to every message introdu
 
 ## High-Performance Transport: MCP over QUIC
 
-**Draft:** `draft-jennings-ai-mcp-over-moq-00` (Cullen Jennings/Cisco, Ian Swett/Google, Jonathan Rosenberg/Five9, Suhas Nandakumar/Cisco)
+**Draft:** [`draft-jennings-ai-mcp-over-moq-00`](https://datatracker.ietf.org/doc/draft-jennings-ai-mcp-over-moq/) (Cullen Jennings/Cisco, Ian Swett/Google, Jonathan Rosenberg/Five9, Suhas Nandakumar/Cisco)
 **Published:** March 2, 2026 | **Status:** Individual submission
 
 The biggest names on any MCP-related IETF draft are on this one. Cullen Jennings (Cisco Fellow, former IETF Area Director) and Ian Swett (Google, QUIC working group contributor) propose transporting MCP over MOQT — Media over QUIC Transport.
@@ -177,7 +178,7 @@ The largest cluster of IETF MCP drafts — at least six — comes from Huawei, w
 
 ### The Core Proposal
 
-**Draft:** `draft-yang-nmrg-mcp-nm-02` (Yuanyuan Yang and Qin Wu/Huawei, Diego Lopez/Telefonica, Nathalie Romo Moreno/Deutsche Telekom, Lionel Tailhardat/Orange)
+**Draft:** [`draft-yang-nmrg-mcp-nm-02`](https://datatracker.ietf.org/doc/draft-yang-nmrg-mcp-nm/) (Yuanyuan Yang and Qin Wu/Huawei, Diego Lopez/Telefonica, Nathalie Romo Moreno/Deutsche Telekom, Lionel Tailhardat/Orange)
 **Last updated:** February 24, 2026
 
 The flagship draft defines four deployment patterns for MCP in network management:

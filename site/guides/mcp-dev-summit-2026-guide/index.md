@@ -59,7 +59,7 @@ Key security sessions included:
 - **"Threat Modeling Authorization"** — Sarah Cecchetti (OpenID Foundation)
 - **"Securing the MCP Ecosystem"** — Lisa Tagliaferri & Trevor Dunlap (Chainguard)
 
-Six sessions focused specifically on authentication, with **Aaron Parecki** (OAuth 2.1 specification author) and **Paul Carleton** (Anthropic) addressing the fragmented auth landscape. As pre-summit analysis noted, ["STDIO servers have no auth at all, HTTP servers implement it inconsistently"](https://dev.to/peytongreen_dev/mcp-dev-summit-2026-what-python-developers-should-actually-pay-attention-to-5ald) — a problem the summit aimed to align the community around solving.
+Six sessions focused specifically on authentication, with **[Aaron Parecki](https://aaronparecki.com/oauth-2-simplified/)** (OAuth 2.1 specification author) and **Paul Carleton** (Anthropic) addressing the fragmented auth landscape. As pre-summit analysis noted, ["STDIO servers have no auth at all, HTTP servers implement it inconsistently"](https://dev.to/peytongreen_dev/mcp-dev-summit-2026-what-python-developers-should-actually-pay-attention-to-5ald) — a problem the summit aimed to align the community around solving.
 
 ### Theme 4: Enterprise Production Patterns
 

@@ -72,7 +72,7 @@
 <p>This is the single most common MCP design mistake. Developers take an existing REST API and expose each endpoint as a separate MCP tool. A CRM integration ends up with <code>get_customer_by_email</code>, <code>list_customer_orders</code>, <code>get_order_status</code>, <code>get_shipping_details</code> — forcing the AI to chain four calls in the right sequence just to answer &ldquo;where&rsquo;s my order?&rdquo;</p>
 <p><strong>Why it&rsquo;s a problem:</strong></p>
 <ul>
-<li>Benchmarks show tool selection accuracy drops logarithmically as tool count increases</li>
+<li><a href="https://arxiv.org/html/2602.14878v1">Benchmarks show tool selection accuracy drops as tool count increases</a></li>
 <li><a href="https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/">GitHub Copilot cut from 40 tools to 13</a> and saw 2–5 percentage point benchmark improvement plus 400ms latency reduction</li>
 <li><a href="https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers">Block rebuilt its Linear MCP server three times</a>, ultimately going from 30+ tools to just 2</li>
 <li>Every additional tool description competes for space in the context window</li>

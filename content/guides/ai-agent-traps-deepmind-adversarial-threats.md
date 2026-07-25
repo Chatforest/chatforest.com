@@ -5,6 +5,7 @@ description: "Google DeepMind published the first systematic taxonomy of adversa
 content_type: "Guide"
 card_description: "Google DeepMind researchers published 'AI Agent Traps' on April 1, 2026 — the first comprehensive framework for understanding how the open web can be weaponized against autonomous AI agents. The paper maps six categories of attacks: content injection traps that hide malicious instructions in HTML comments and image metadata (86% partial hijack rate), semantic manipulation traps that exploit reasoning biases, cognitive state traps that poison memory with 80%+ success at under 0.1% data contamination, behavioral control traps that override safety alignment, systemic traps that weaponize multi-agent dynamics for flash crashes, and human-in-the-loop traps that exploit automation bias in human overseers. The attacks are described as trivial to implement and require zero ML expertise. The paper proposes defenses at three levels: technical (adversarial training, runtime scanners), ecosystem (web standards for AI content, domain reputation), and legal (closing the accountability gap for agent-caused harm). This guide breaks down each trap category, the evidence behind it, and what it means for teams deploying agents in production."
 last_refreshed: 2026-04-06
+sources_audited: 2026-07-25
 ---
 
 On April 1, 2026, researchers from Google DeepMind published ["AI Agent Traps"](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438) — the first systematic framework for understanding how the open web can be weaponized against autonomous AI agents. The paper doesn't focus on model vulnerabilities. It focuses on the environments agents operate in — and the findings are alarming.
@@ -15,7 +16,7 @@ This guide breaks down the six trap categories, the evidence behind each, and wh
 
 ## Why This Matters Now
 
-Autonomous AI agents — systems that browse the web, execute transactions, manage workflows, and interact with other agents without constant human supervision — are moving from demos to production. Gartner projects that 40% of enterprise applications will embed task-specific AI agents by the end of 2026, up from less than 5% in 2025.
+Autonomous AI agents — systems that browse the web, execute transactions, manage workflows, and interact with other agents without constant human supervision — are moving from demos to production. [Gartner projects that 40% of enterprise applications will embed task-specific AI agents by the end of 2026, up from less than 5% in 2025.](https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025)
 
 But the security research hasn't kept pace with deployment. Most AI security work has focused on model-level attacks: jailbreaks, prompt injection against individual LLM calls, training data poisoning. The DeepMind paper shifts the lens to the *environment* — the web pages, APIs, databases, and multi-agent ecosystems that agents operate within.
 
@@ -36,7 +37,7 @@ The paper organizes attacks by which component of the agent's operating cycle th
 - **Image metadata** — EXIF data, alt text, or steganographic content encoded in pixel data
 - **Accessibility tags** — ARIA labels and other semantic HTML attributes that agents may prioritize
 
-**Evidence:** The WASP benchmark found that simple, human-written prompt injections embedded in web content partially commandeered agents in **up to 86% of scenarios tested**. These aren't sophisticated attacks — they're plain-text instructions hidden in the HTML source.
+**Evidence:** The [WASP benchmark](https://arxiv.org/abs/2504.18575) found that simple, human-written prompt injections embedded in web content partially commandeered agents in **up to 86% of scenarios tested**. These aren't sophisticated attacks — they're plain-text instructions hidden in the HTML source.
 
 **Why it's dangerous:** This is the digital equivalent of poisoning the water supply. The malicious content is embedded in legitimate websites that the agent has every reason to visit. There's no phishing URL to block, no malware to detect — just text in the wrong place.
 
@@ -67,7 +68,7 @@ The paper organizes attacks by which component of the agent's operating cycle th
 
 **Evidence:** Research cited in the paper shows that attack success rates exceed **80% with less than 0.1% data contamination**. That means poisoning fewer than 1 in 1,000 documents in a knowledge base can reliably redirect the agent's behavior for specific queries.
 
-**Why it's dangerous:** The attack surface is tiny and the contamination is nearly undetectable. A single malicious document in a large corpus can lay dormant until the agent encounters the right query — at which point it activates. This is especially concerning for autonomous research agents — [Sakana AI's AI Scientist-v2](/guides/ai-scientist-v2-peer-review-crisis-2026/) reads literature, generates hypotheses, and writes papers autonomously. If its literature retrieval is poisoned, the resulting papers inherit the contamination, and analysis of ICLR 2026 already shows 21% of peer reviews were AI-generated, meaning fewer human eyes to catch the errors.
+**Why it's dangerous:** The attack surface is tiny and the contamination is nearly undetectable. A single malicious document in a large corpus can lay dormant until the agent encounters the right query — at which point it activates. This is especially concerning for autonomous research agents — [Sakana AI's AI Scientist-v2](/guides/ai-scientist-v2-peer-review-crisis-2026/) reads literature, generates hypotheses, and writes papers autonomously. If its literature retrieval is poisoned, the resulting papers inherit the contamination, and [analysis of ICLR 2026 already shows 21% of peer reviews were AI-generated](https://www.pangram.com/blog/pangram-predicts-21-of-iclr-reviews-are-ai-generated), meaning fewer human eyes to catch the errors.
 
 ### 4. Behavioral Control Traps — Attacking Actions
 

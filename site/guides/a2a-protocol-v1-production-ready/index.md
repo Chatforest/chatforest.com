@@ -143,7 +143,7 @@ All three major cloud providers now embed A2A directly into their agent platform
 
 - **Microsoft** — integrated A2A into [Azure AI Foundry](https://azure.microsoft.com/en-us/products/ai-foundry) and Copilot Studio
 - **AWS** — added A2A support through [Amazon Bedrock AgentCore Runtime](https://aws.amazon.com/blogs/machine-learning/introducing-agent-to-agent-protocol-support-in-amazon-bedrock-agentcore-runtime/), acting as a transparent proxy layer for A2A containers with enterprise-grade session isolation. AgentCore also supports MCP and AG-UI protocols
-- **Google Cloud** — endorsed A2A as the default for agent-based systems, with first-class support through the Agent Development Kit (ADK)
+- **Google Cloud** — [endorsed A2A as the default for agent-based systems](https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade), with first-class support through the Agent Development Kit (ADK)
 
 ### Companies with published A2A implementations
 
@@ -195,7 +195,7 @@ Agent Cards at `/.well-known/agent-card.json` work for known endpoints, but ther
 
 ### Cost attribution
 
-Like MCP, A2A has no protocol-level mechanism for tracking or attributing the cost of agent-to-agent interactions. When Agent A delegates a task to Agent B that delegates to Agent C, there's no standard way to track who consumed what resources. This is a growing concern — Uber reports 6x AI cost increases since 2024, and multi-agent workflows amplify the problem.
+Like MCP, A2A has no protocol-level mechanism for tracking or attributing the cost of agent-to-agent interactions. When Agent A delegates a task to Agent B that delegates to Agent C, there's no standard way to track who consumed what resources. This is a growing concern — [Uber reports 6x AI cost increases since 2024](https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development), and multi-agent workflows amplify the problem.
 
 ### Security in practice
 

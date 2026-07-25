@@ -69,7 +69,7 @@
         <p>E-commerce MCP servers let AI agents interact with online stores — managing products, processing orders, searching catalogs, handling inventory, and powering AI-driven shopping experiences. Instead of clicking through admin dashboards or writing API calls manually, you describe what you want and the agent executes it against your store&rsquo;s backend.</p>
 <p>We&rsquo;ve researched 40+ e-commerce MCP servers across the full landscape. This guide synthesizes all of that into one page: what&rsquo;s worth using, what&rsquo;s not, and where the gaps are.</p>
 <blockquote>
-<p><strong>⚠ Security note:</strong> The MCP ecosystem saw 30+ CVEs filed in 60 days in early 2026. E-commerce-adjacent vulnerabilities include CVE-2026-27203 (environment variable injection in a community eBay MCP server) and CVE-2026-1926 (WooCommerce Subscriptions auth bypass). Always vet community servers before connecting them to production stores.</p>
+<p><strong>⚠ Security note:</strong> The MCP ecosystem saw <a href="https://www.heyuan110.com/posts/ai/2026-03-10-mcp-security-2026/">30+ CVEs filed in 60 days in early 2026</a>. E-commerce-adjacent vulnerabilities include CVE-2026-27203 (environment variable injection in a community eBay MCP server) and CVE-2026-1926 (WooCommerce Subscriptions auth bypass). Always vet community servers before connecting them to production stores.</p>
 </blockquote>
 <p><em>Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in April 2026.</em></p>
 <h2 id="the-short-version">The short version</h2>
@@ -193,7 +193,7 @@
 <li><strong>Checkout initiation</strong> — starts the checkout flow from within the AI agent</li>
 <li><strong>MCP UI components</strong> — interactive product cards and cart UI within the agent interface</li>
 <li><strong>Available on every Shopify store</strong> — part of Hydrogen Winter &lsquo;26 Edition</li>
-<li><strong>Agentic Storefronts live (March 24, 2026)</strong> — millions of merchants now discoverable in ChatGPT</li>
+<li><strong><a href="https://shopify.com/news/agentic-commerce-momentum">Agentic Storefronts live (March 24, 2026)</a></strong> — millions of merchants now discoverable in ChatGPT</li>
 <li><strong>AI client integrations</strong> — ChatGPT, Perplexity, Microsoft Copilot live; Google AI Mode and Gemini rolling out</li>
 <li><strong>MCP UI components</strong> — remote resource URIs for interactive product cards, variant selection, bundles, subscriptions in sandboxed iframes</li>
 </ul>
@@ -237,7 +237,7 @@
 <p><strong>Full review:</strong> <a href="/reviews/shopify-mcp-servers/">Shopify MCP Servers</a></p>
 <hr>
 <h2 id="woocommerce-servers">WooCommerce servers</h2>
-<p>WooCommerce powers ~36% of all online stores via WordPress. <strong>The biggest news since our last update: WooCommerce now has native MCP support in beta.</strong> The ecosystem has matured significantly with both the official integration and the WordPress MCP Adapter as a foundation.</p>
+<p><a href="https://barn2.com/blog/woocommerce-stats/">WooCommerce powers roughly one-third of all online stores</a> (estimates range from 32–38% depending on the measurement methodology). <strong>The biggest news since our last update: WooCommerce now has native MCP support in beta.</strong> The ecosystem has matured significantly with both the official integration and the WordPress MCP Adapter as a foundation.</p>
 <h3 id="the-winner-woocommerce-native-mcp-official-beta--new">The winner: WooCommerce Native MCP (Official Beta — NEW)</h3>
 <p><strong>Status:</strong> Beta (WooCommerce 10.3+) | <strong>Auth:</strong> WooCommerce REST API keys | <strong>Transport:</strong> Via WordPress MCP Adapter</p>
 <p><a href="https://developer.woocommerce.com/docs/features/mcp/">WooCommerce Native MCP</a> is built into WooCommerce itself, starting with version 10.3. It bridges to existing REST API endpoints through the WordPress Abilities API and the <a href="https://github.com/WordPress/mcp-adapter">WordPress/mcp-adapter</a> plugin (805 stars, v0.4.1).</p>
@@ -305,7 +305,7 @@
 <p><strong>The catch:</strong> Commercial product — requires a Seller Labs subscription. Read-only by design (can&rsquo;t create campaigns or change bids). Not open-source.</p>
 <p><strong>Best for:</strong> Serious Amazon sellers and agencies who want AI-powered business intelligence.</p>
 <h3 id="the-winner-advertising-amazon-ads-mcp-server-official--major-update">The winner (advertising): Amazon Ads MCP Server (Official — MAJOR UPDATE)</h3>
-<p><strong>Status:</strong> Open beta (since February 2, 2026) | <strong>Auth:</strong> Amazon Ads API credentials | <strong>Tools:</strong> 50+</p>
+<p><strong>Status:</strong> <a href="https://advertising.amazon.com/library/news/amazon-ads-mcp-server-open-beta">Open beta (since February 2, 2026)</a> | <strong>Auth:</strong> Amazon Ads API credentials | <strong>Tools:</strong> 50+</p>
 <p><a href="https://advertising.amazon.com/">Amazon Ads MCP Server</a> is Amazon&rsquo;s official MCP server for advertising campaign management. This was previously a brief mention in our guide — it has since launched into open beta as a major product with extensive coverage.</p>
 <p><strong>Why it matters:</strong> 50+ tools spanning <strong>Sponsored Products, Sponsored Brands, Sponsored Display, DSP, and Amazon Marketing Cloud</strong>. End-to-end campaign creation in a single prompt (normally 3+ operations). Geographic campaign expansion with one prompt. Works with Claude, ChatGPT, Gemini, and any MCP-compatible client. Available globally to Amazon Ads partners with active API credentials.</p>
 <p><strong>Key capabilities:</strong></p>
@@ -348,7 +348,7 @@
 <p>Developer-first headless commerce platforms are shipping MCP servers that give AI agents direct access to their APIs. These are particularly interesting because the platforms themselves are designed for programmatic control.</p>
 <h3 id="the-winner-saleor-saleorsaleor-mcp-official">The winner (Saleor): saleor/saleor-mcp (Official)</h3>
 <p><strong>Stars:</strong> 13 | <strong>Language:</strong> Python | <strong>License:</strong> — | <strong>Transport:</strong> Streamable HTTP | <strong>Compatibility:</strong> Saleor 3.21+ | <strong>Latest:</strong> v0.1.4 (Feb 2026)</p>
-<p><a href="https://github.com/saleor/saleor-mcp">saleor/saleor-mcp</a> is the official MCP server for Saleor Commerce (21,800+ stars for the main platform). Production instance deployed at <code>mcp.saleor.app/mcp</code>.</p>
+<p><a href="https://github.com/saleor/saleor-mcp">saleor/saleor-mcp</a> is the official MCP server for <a href="https://github.com/saleor/saleor">Saleor Commerce (23,000+ stars)</a> for the main platform. Production instance deployed at <code>mcp.saleor.app/mcp</code>.</p>
 <p><strong>Why it wins:</strong> Official, hosted, production-ready. The Saleor team maintains it alongside their platform. Streamable HTTP transport means remote access without local installation. Compatible with Saleor Cloud instances.</p>
 <p><strong>Key features:</strong></p>
 <ul>
@@ -364,7 +364,7 @@
 <p><strong>Best for:</strong> Saleor users who want AI-powered data exploration and customer support tooling.</p>
 <h3 id="the-winner-medusa-sgfgovmedusa-mcp-promoted">The winner (Medusa): SGFGOV/medusa-mcp (PROMOTED)</h3>
 <p><strong>Stars:</strong> 54 | <strong>Forks:</strong> 18 | <strong>Language:</strong> TypeScript | <strong>Last pushed:</strong> March 2026</p>
-<p><a href="https://github.com/SGFGOV/medusa-mcp">SGFGOV/medusa-mcp</a> is now the dominant Medusa MCP server, surpassing minimalart/mcp-medusa in both stars and activity. Medusa (27,400+ stars for the main platform) positions itself as &ldquo;A Commerce Platform for Developers and Agents.&rdquo;</p>
+<p><a href="https://github.com/SGFGOV/medusa-mcp">SGFGOV/medusa-mcp</a> is now the dominant Medusa MCP server, surpassing minimalart/mcp-medusa in both stars and activity. <a href="https://github.com/medusajs/medusa">Medusa (35,000+ stars for the main platform)</a> positions itself as &ldquo;A Commerce Platform for Developers and Agents.&rdquo;</p>
 <p><strong>Why it wins:</strong> Active development (Claude skills added March 12, 2026), broader scope than alternatives, and growing community (54 stars). Covers carts, payments, shipping, pricing, returns, and fulfillment automation via the Medusa JS SDK.</p>
 <p><strong>Also notable (Medusa):</strong></p>
 <ul>
@@ -445,7 +445,7 @@
 <hr>
 <h2 id="four-trends-to-watch">Four trends to watch</h2>
 <h3 id="1-agentic-commerce-is-live-at-scale">1. Agentic commerce is live at scale</h3>
-<p>Shopify&rsquo;s Agentic Storefronts went live March 24, 2026 — millions of merchants are now discoverable and shoppable inside ChatGPT with no integration work. Google AI Mode and Gemini are rolling out support. BigCommerce is still in beta. This is no longer a trend to watch; it&rsquo;s a shipping feature.</p>
+<p><a href="https://shopify.com/news/agentic-commerce-momentum">Shopify&rsquo;s Agentic Storefronts went live March 24, 2026</a> — millions of merchants are now discoverable and shoppable inside ChatGPT with no integration work. Google AI Mode and Gemini are rolling out support. BigCommerce is still in beta. This is no longer a trend to watch; it&rsquo;s a shipping feature.</p>
 <h3 id="2-official-mcp-servers-are-proliferating-fast">2. Official MCP servers are proliferating fast</h3>
 <p>Since our March update, the number of <strong>official</strong> e-commerce MCP servers has expanded dramatically: Shopify (5 servers), WooCommerce (native beta), eBay (official), Square (official beta), Wix (official), Amazon Ads (50+ tools in open beta), Shippo (shipping). The community-only era is ending — platforms are owning their MCP strategy.</p>
 <h3 id="3-the-admin-gap-persists-but-is-narrowing">3. The admin gap persists but is narrowing</h3>

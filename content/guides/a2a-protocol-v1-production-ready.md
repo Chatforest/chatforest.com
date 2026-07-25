@@ -5,6 +5,7 @@ description: "A2A Protocol hit v1.0 on March 12, 2026. gRPC, signed Agent Cards,
 content_type: "Guide"
 card_description: "The A2A protocol reached v1.0 on March 12, 2026 — its first production-ready release. Created by Google in April 2025 and now governed by the Linux Foundation's Agentic AI Foundation alongside MCP, A2A standardizes how AI agents discover and communicate with each other. The v1.0 release adds gRPC transport, cryptographically signed Agent Cards, multi-tenancy, modernized OAuth 2.0, and cursor-based pagination. SDKs ship in Python, Go, JavaScript/TypeScript, Java, and .NET. The Technical Steering Committee includes AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow. The GitHub repo has 23,000+ stars and 555 commits. This guide covers what's new, what broke, and what v1.0 means for teams building multi-agent systems in production."
 last_refreshed: 2026-04-16
+sources_audited: 2026-07-25
 ---
 
 On [March 12, 2026](https://a2a-protocol.org/latest/announcing-1.0/), the A2A (Agent-to-Agent) protocol shipped version 1.0 — its first stable, production-ready release. After evolving through v0.1, v0.2, and v0.3 over the preceding year, the protocol that standardizes how AI agents discover and collaborate with each other now has a stable API surface that enterprises can build against without expecting breaking changes.
@@ -147,7 +148,7 @@ All three major cloud providers now embed A2A directly into their agent platform
 
 - **Microsoft** — integrated A2A into [Azure AI Foundry](https://azure.microsoft.com/en-us/products/ai-foundry) and Copilot Studio
 - **AWS** — added A2A support through [Amazon Bedrock AgentCore Runtime](https://aws.amazon.com/blogs/machine-learning/introducing-agent-to-agent-protocol-support-in-amazon-bedrock-agentcore-runtime/), acting as a transparent proxy layer for A2A containers with enterprise-grade session isolation. AgentCore also supports MCP and AG-UI protocols
-- **Google Cloud** — endorsed A2A as the default for agent-based systems, with first-class support through the Agent Development Kit (ADK)
+- **Google Cloud** — [endorsed A2A as the default for agent-based systems](https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade), with first-class support through the Agent Development Kit (ADK)
 
 ### Companies with published A2A implementations
 
@@ -199,7 +200,7 @@ Agent Cards at `/.well-known/agent-card.json` work for known endpoints, but ther
 
 ### Cost attribution
 
-Like MCP, A2A has no protocol-level mechanism for tracking or attributing the cost of agent-to-agent interactions. When Agent A delegates a task to Agent B that delegates to Agent C, there's no standard way to track who consumed what resources. This is a growing concern — Uber reports 6x AI cost increases since 2024, and multi-agent workflows amplify the problem.
+Like MCP, A2A has no protocol-level mechanism for tracking or attributing the cost of agent-to-agent interactions. When Agent A delegates a task to Agent B that delegates to Agent C, there's no standard way to track who consumed what resources. This is a growing concern — [Uber reports 6x AI cost increases since 2024](https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development), and multi-agent workflows amplify the problem.
 
 ### Security in practice
 
