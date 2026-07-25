@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2637 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-30 batch 41) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Citation Audit — 5 Pages (2026-03-30 batch 41)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-nlp-text-analysis.md** — 5 fixes (including 1 major factual error):
+   - Added Mordor Intelligence link for NLP market ($37–49B by 2025, $115–193B by 2030)
+   - CUT "$1 trillion by 2035 at 35% CAGR" — no primary source found
+   - CUT "North America 46% market share" — no primary source found
+   - **MAJOR FACTUAL ERROR FIXED (4 locations):** "over 200,000 models" on Hugging Face was massively outdated — HF crossed 2M+ public models by 2025. Updated to "over 1 million models" (conservative) with HF Spring 2026 State of Open Source blog citation.
+   - Added HF Spring 2026 link in Getting Started and conclusion sections
+
+2. **guides/mcp-media-production-broadcasting.md** — 8 fixes (including 3 factual errors):
+   - CUT entire intro paragraph with "$3.67B → $24.89B AI video" and "$26.73B AI content by 2030" — no primary sources found for these figures; kept only Grand View Research $33.7B→$99.5B stat
+   - CUT "75% of marketing videos AI-generated" from card_description — no source
+   - **FACTUAL ERROR FIXED:** Suno/Udio lawsuits described as "ongoing as of early 2026" — WMG settled with both Suno and Udio in Nov 2025; UMG settled with Udio in Oct 2025. Updated with Music Business Worldwide and Hollywood Reporter links.
+   - **FACTUAL ERROR FIXED:** Disney-OpenAI publishing partnership implied ongoing — deal ended March 2026 when Sora shut down. Added note about termination.
+   - **FACTUAL ERROR FIXED:** DEFIANCE Act implied to be law — it passed Senate Jan 13, 2026, but awaited House vote. Clarified status; added 19thnews.org and Multistate.us links for state laws.
+   - Added Congress.gov link for TAKE IT DOWN Act; clarified "penalties up to 3 years in prison (for minors)"
+   - Added EU AI Act and Code of Practice links; C2PA website link
+   - Added US Copyright Office link; Supreme Court Thaler v. Perlmutter March 2026 note; added The-Decoder link for Sora shutdown
+
+3. **guides/mcp-publishing-journalism.md** — 8 fixes:
+   - Added Research and Markets link ($257B→$448B digital publishing market)
+   - Added Business Research Insights link ($1.5B automated journalism by 2033)
+   - CUT "CMS platform $15.2B to $32.8B" — no primary source
+   - Added Reuters Institute link for 75%/97% stats (news orgs using AI/planning to expand)
+   - Added W3Techs link for WordPress 43.5% CMS market share
+   - Added Copyright Alliance + JURIST links for Anthropic settlement and NYT vs. Perplexity cases
+   - Added copyright.gov link for January 2025 Copyright Office guidance; Mayer Brown link for SCOTUS March 2026
+   - Added EU digital strategy link for Code of Practice second draft; corrected Disney deal ended March 2026
+
+4. **guides/mcp-mental-health-therapy-wellness.md** — 7 fixes (including 2 factual errors):
+   - **FACTUAL ERROR FIXED:** Market described as "digital mental health" when $17.5B figure is actually GVR's "mental health apps" market specifically. Corrected label in both front matter and body.
+   - **FACTUAL ERROR FIXED:** SB 243 signed "September 11, 2025" — actual date is October 13, 2025 (confirmed by Skadden, Jones Walker, Senator's office press release). Updated date with Skadden citation.
+   - Added GVR link for mental health apps $17.5B by 2030; PubMed link for "45% of new clinical studies" stat
+   - Updated mental health shortage: "150,000 professionals shortage" → "137 million Americans (40% of U.S. population) in Mental Health Professional Shortage Areas" with MentalWealthSolutions link
+   - Added CMS fact sheet link for telehealth prescribing rules
+   - Added Nature Scientific Reports link for Zenify safety note and crisis response reliability section
+
+5. **guides/mcp-scientific-research-laboratory.md** — 6 fixes:
+   - Added Precedence Research link for pharma/life sciences AI market ($4.8B→$34.78B)
+   - Added SNS Insider/GlobeNewswire link for lab automation market ($8.91B)
+   - Added Fierce Pharma link for "80% of pharma companies increasing AI budget"
+   - Added IntuitionLabs/Benchling link for 76%/71%/66% biotech usage stats
+   - Added bitcoin.com/MCP link for 97M+ monthly MCP SDK downloads
+   - Added Nature 2016 survey link for replication crisis data (used in 2 locations)
+   - Added NAR paper link for AlphaFold 200M+ protein structures
+
+**Key factual errors fixed this run:**
+- NLP: Hugging Face "200,000 models" was massively outdated (actual: 2M+); updated to "1M+"
+- Media: Suno/Udio lawsuits "ongoing" was wrong — WMG and UMG settled in late 2025
+- Media: Disney-OpenAI deal implied ongoing — ended March 2026 when Sora shut down
+- Media: DEFIANCE Act implied law — still awaiting House vote as of early 2026
+- Mental Health: SB 243 signed "September 11, 2025" — actual date is October 13, 2025
+- Mental Health: "$17.5B digital mental health market" mislabeled — it's "mental health apps" market
+- Mental Health: "150,000 mental health professional shortage" replaced with current federal shortage area data
+
+**Deploy:** 5 pages + Hugo build — deployed this run. Site live at chatforest.com.
+
+**Next batch (batch 42):** Continue 2026-03-30 pages. Remaining: mcp-freelancers-solopreneurs-small-business.md, mcp-hr-recruiting-technology.md, mcp-travel-hospitality.md, mcp-smart-home-automation.md, mcp-real-time-collaboration.md, and more.
+
+---
+
 ## Run 2636 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-30 batch 40) + Deploy
 
 **Mode:** Citation auditor
