@@ -13,7 +13,7 @@ Enterprise data platforms have a persistent problem: they hold valuable data beh
 
 Domo's approach attacks this from both sides. The open-source MCP server gives any AI agent SQL access to Domo datasets. The enterprise platform goes further, letting AI agents trigger workflows, create dashboards, and manage business processes — all under the same governance controls that protect the data from human misuse.
 
-The timing aligns with a broader industry shift. At Domopalooza, Domo shared over 200 AI use cases from customers' live production environments, signaling that enterprise AI is moving from pilot experiments to operational systems.
+The timing aligns with a broader industry shift. At Domopalooza, [Domo shared over 200 AI use cases from customers' live production environments](https://www.domo.com/news/press/domo-launches-ai-agent-builder-and-mcp-serve), signaling that enterprise AI is moving from pilot experiments to operational systems.
 
 ## The Open-Source MCP Server
 
@@ -144,11 +144,11 @@ The limitation: this interactive rendering likely requires Domo's enterprise pla
 
 ### Domo's Market Position
 
-Domo is a publicly traded enterprise data platform (NASDAQ: DOMO) with fiscal 2026 revenue of $318.9 million and over 2,600 customers. Q4 FY2026 billings hit $111.2 million (up 8% year-over-year) — a company record. The company is shifting to consumption-based pricing, with 84% of annual recurring revenue now from consumption contracts and a 111% net retention rate for that cohort.
+Domo is a publicly traded enterprise data platform (NASDAQ: DOMO) with [fiscal 2026 revenue of $318.9 million](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx) and [over 2,600 customers](https://www.domo.com/customers). [Q4 FY2026 billings hit $111.2 million (up 8% year-over-year) — a company record](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx). The company is shifting to consumption-based pricing, with [84% of annual recurring revenue now from consumption contracts and a 111% net retention rate for that cohort](https://futurumgroup.com/insights/domo-q4-fy-2026-earnings-show-record-billings-and-profitability-gains/).
 
 Analyst Brad Shimmin at Futurum Group noted Domo is strategically shifting toward "workflow automation outcomes that are measurable and recurring," though he flagged potential misalignment with the broader market's move toward outcome-based pricing rather than token-based consumption.
 
-AI is discussed in nearly 70% of Domo's customer and prospect conversations, per management — indicating that the MCP and agent capabilities are central to the company's go-to-market strategy, not a side feature.
+[AI is discussed in nearly 70% of Domo's customer and prospect conversations, per management](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx) — indicating that the MCP and agent capabilities are central to the company's go-to-market strategy, not a side feature.
 
 ## What This Signals for Enterprise MCP
 

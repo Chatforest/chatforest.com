@@ -79,7 +79,7 @@
 <h2 id="principle-1-be-frugal-with-context-windows">Principle 1: Be Frugal with Context Windows</h2>
 <p>The single biggest improvement Datadog made was changing how data reaches the agent.</p>
 <h3 id="format-matters-more-than-you-think">Format matters more than you think</h3>
-<p>Switching from JSON to CSV/TSV for tabular data cut token usage roughly in half. For nested data, YAML saved about 20% versus JSON. Combined with field trimming (removing rarely-used fields from default output), the team achieved approximately <strong>5x more records in the same number of tokens</strong>.</p>
+<p>Switching from JSON to CSV/TSV for tabular data <a href="https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/">cut token usage roughly in half</a>. For nested data, <a href="https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/">YAML saved about 20% versus JSON</a>. Combined with field trimming (removing rarely-used fields from default output), the team achieved approximately <a href="https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/"><strong>5x more records in the same number of tokens</strong></a>.</p>
 <p>This is a dramatic improvement from a change that requires zero modifications to the underlying data. Any MCP server returning structured data should consider format optimization:</p>
 <table>
 <thead>
@@ -122,8 +122,8 @@
 <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> service
 <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> error_count <span style="color:#66d9ef">DESC</span>
 <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>
-</code></pre></div><p>As Datadog&rsquo;s engineers noted: &ldquo;Agents are quite good at writing [queries], and it gives them fine-grained control over what data ends up in context.&rdquo;</p>
-<p>The query-based approach achieved roughly <strong>40% cheaper runs</strong> in their evaluation scenarios. The agent specifies filters, aggregations, and field selections server-side, so only relevant, summarized data enters the context window.</p>
+</code></pre></div><p>As Datadog&rsquo;s engineers <a href="https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/">noted</a>: &ldquo;Agents are quite good at writing [queries], and it gives them fine-grained control over what data ends up in context.&rdquo;</p>
+<p>The query-based approach achieved roughly <a href="https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/"><strong>40% cheaper runs</strong></a> in their evaluation scenarios. The agent specifies filters, aggregations, and field selections server-side, so only relevant, summarized data enters the context window.</p>
 <p>This principle applies broadly. If your MCP server exposes a data source where agents might need to search, filter, or aggregate, providing a query interface (SQL, a query DSL, or even structured filter parameters) will dramatically improve agent performance and reduce costs.</p>
 <h2 id="principle-3-design-error-messages-for-agents">Principle 3: Design Error Messages for Agents</h2>
 <p>When agents hit errors, they need actionable feedback — not HTTP status codes or generic messages.</p>

@@ -29,7 +29,7 @@ The single biggest improvement Datadog made was changing how data reaches the ag
 
 ### Format matters more than you think
 
-Switching from JSON to CSV/TSV for tabular data cut token usage roughly in half. For nested data, YAML saved about 20% versus JSON. Combined with field trimming (removing rarely-used fields from default output), the team achieved approximately **5x more records in the same number of tokens**.
+Switching from JSON to CSV/TSV for tabular data [cut token usage roughly in half](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/). For nested data, [YAML saved about 20% versus JSON](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/). Combined with field trimming (removing rarely-used fields from default output), the team achieved approximately [**5x more records in the same number of tokens**](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/).
 
 This is a dramatic improvement from a change that requires zero modifications to the underlying data. Any MCP server returning structured data should consider format optimization:
 
@@ -66,9 +66,9 @@ ORDER BY error_count DESC
 LIMIT 10
 ```
 
-As Datadog's engineers noted: "Agents are quite good at writing [queries], and it gives them fine-grained control over what data ends up in context."
+As Datadog's engineers [noted](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/): "Agents are quite good at writing [queries], and it gives them fine-grained control over what data ends up in context."
 
-The query-based approach achieved roughly **40% cheaper runs** in their evaluation scenarios. The agent specifies filters, aggregations, and field selections server-side, so only relevant, summarized data enters the context window.
+The query-based approach achieved roughly [**40% cheaper runs**](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/) in their evaluation scenarios. The agent specifies filters, aggregations, and field selections server-side, so only relevant, summarized data enters the context window.
 
 This principle applies broadly. If your MCP server exposes a data source where agents might need to search, filter, or aggregate, providing a query interface (SQL, a query DSL, or even structured filter parameters) will dramatically improve agent performance and reduce costs.
 

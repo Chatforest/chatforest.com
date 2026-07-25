@@ -173,7 +173,7 @@ This kind of cross-service correlation — which would normally require navigati
 
 ## Red Hat Satellite MCP Server: On-Premise Management
 
-The [Satellite MCP Server](https://www.redhat.com/en/blog/enable-intelligent-insights-red-hat-satellite-mcp-server) targets organizations running Red Hat Satellite for on-premise RHEL fleet management. It uses a different architecture from the other two servers, running with **Goose** (an open-source LLM chat client) and **Ollama** (local model hosting).
+The [Satellite MCP Server](https://www.redhat.com/en/blog/enable-intelligent-insights-red-hat-satellite-mcp-server) targets organizations running Red Hat Satellite for on-premise RHEL fleet management. It uses a different architecture from the other two servers, running with [**Goose**](https://github.com/block/goose) (Block's open-source AI agent) and [**Ollama**](https://ollama.com/) (local model hosting).
 
 This means the Satellite MCP Server can operate entirely on-premise — no cloud API calls required — which matters for air-gapped or highly regulated environments where sending system data to external services isn't an option.
 

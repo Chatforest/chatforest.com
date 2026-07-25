@@ -5,6 +5,7 @@ description: "Domo launched an MCP Server and AI Agent Builder at Domopalooza 20
 content_type: "Guide"
 card_description: "Domo's March 2026 announcements at Domopalooza include an open-source MCP Server (Python, MIT, 7 tools for dataset SQL queries and metadata), AI Agent Builder for custom conversational agents, AI Toolkits for packaged business capabilities, and a centralized AI Library. The standout feature: interactive dashboards rendered inside AI chat interfaces, not just text responses. This guide covers the architecture, open-source server, enterprise platform, governance model, and competitive positioning."
 last_refreshed: 2026-04-07
+sources_audited: 2026-07-25
 ---
 
 Most MCP servers return text. Domo's returns interactive dashboards — complete with filters and drilldowns — rendered directly inside AI chat interfaces. That's the headline feature from Domo's March 2026 Domopalooza announcements, but the broader story is about connecting governed enterprise data to the AI agent ecosystem through an open-source MCP server, a low-code AI Agent Builder, and a new AI Toolkit architecture.
@@ -17,7 +18,7 @@ Enterprise data platforms have a persistent problem: they hold valuable data beh
 
 Domo's approach attacks this from both sides. The open-source MCP server gives any AI agent SQL access to Domo datasets. The enterprise platform goes further, letting AI agents trigger workflows, create dashboards, and manage business processes — all under the same governance controls that protect the data from human misuse.
 
-The timing aligns with a broader industry shift. At Domopalooza, Domo shared over 200 AI use cases from customers' live production environments, signaling that enterprise AI is moving from pilot experiments to operational systems.
+The timing aligns with a broader industry shift. At Domopalooza, [Domo shared over 200 AI use cases from customers' live production environments](https://www.domo.com/news/press/domo-launches-ai-agent-builder-and-mcp-serve), signaling that enterprise AI is moving from pilot experiments to operational systems.
 
 ## The Open-Source MCP Server
 
@@ -148,11 +149,11 @@ The limitation: this interactive rendering likely requires Domo's enterprise pla
 
 ### Domo's Market Position
 
-Domo is a publicly traded enterprise data platform (NASDAQ: DOMO) with fiscal 2026 revenue of $318.9 million and over 2,600 customers. Q4 FY2026 billings hit $111.2 million (up 8% year-over-year) — a company record. The company is shifting to consumption-based pricing, with 84% of annual recurring revenue now from consumption contracts and a 111% net retention rate for that cohort.
+Domo is a publicly traded enterprise data platform (NASDAQ: DOMO) with [fiscal 2026 revenue of $318.9 million](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx) and [over 2,600 customers](https://www.domo.com/customers). [Q4 FY2026 billings hit $111.2 million (up 8% year-over-year) — a company record](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx). The company is shifting to consumption-based pricing, with [84% of annual recurring revenue now from consumption contracts and a 111% net retention rate for that cohort](https://futurumgroup.com/insights/domo-q4-fy-2026-earnings-show-record-billings-and-profitability-gains/).
 
 Analyst Brad Shimmin at Futurum Group noted Domo is strategically shifting toward "workflow automation outcomes that are measurable and recurring," though he flagged potential misalignment with the broader market's move toward outcome-based pricing rather than token-based consumption.
 
-AI is discussed in nearly 70% of Domo's customer and prospect conversations, per management — indicating that the MCP and agent capabilities are central to the company's go-to-market strategy, not a side feature.
+[AI is discussed in nearly 70% of Domo's customer and prospect conversations, per management](https://www.domoinvestors.com/news/news-details/2026/Domo-Announces-Fourth-Quarter-and-Fiscal-2026-Financial-Results/default.aspx) — indicating that the MCP and agent capabilities are central to the company's go-to-market strategy, not a side feature.
 
 ## What This Signals for Enterprise MCP
 

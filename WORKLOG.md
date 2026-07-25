@@ -2,6 +2,74 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2644 — 2026-07-25 — Citation Audit: 7 Pages (2026-04-07 batch 48) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+**Note:** The 3 pages listed for batch 48 in the previous WORKLOG (mcp-memory-systems-persistent-context, mcp-for-finance, best-agent-frameworks) do not exist in the content directory. Found the actual oldest unaudited pages by date sort.
+
+#### Citation Audit — 7 Pages (batch 48)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/cloudflare-emdash-mcp-server-wordpress-successor.md** — 5 fixes:
+   - Added inline Cloudflare blog links for "WordPress powers over 40% of the Internet" and "96% of its security vulnerabilities come from plugins" (opening sentence)
+   - **TITLE CORRECTION:** "product manager Matt Taylor and software engineer Matt Kane" → "Senior Product Manager Matt Taylor and Senior Principal Systems Engineer Matt Kane" (per The Register); added inline link
+   - Added inline Cloudflare blog link for "plugin review queue is over 800 plugins long with at least two-week wait times"
+   - Added inline link to Cloudflare Dynamic Workers blog for "100 times faster than traditional containers"
+   - **COUNT CORRECTION:** "12,000+ themes" → "14,000+ themes" (WordPress.org theme directory shows 14,000+, not 12,000+); added wordpress.org links for plugins and themes counts
+
+2. **guides/agentmon-codenotary-ai-agent-monitoring.md** — 4 fixes:
+   - Added Wikipedia link inline for Moshe Bar (CEO) background (Qumranet/Red Hat, XenSource/Citrix)
+   - **REMOVED unsourced total funding claim**: "approximately $40 million across multiple rounds" had no primary source; restructured to only cite the verified "$16.5 million raise in November 2025" with BusinessWire link
+   - Added BCG link for "AI agent market will grow at 45% CAGR over the next five years"
+   - **REMOVED "~0% overhead"** qualifier for LangSmith — no primary source for this specific claim
+
+3. **guides/uber-mcp-gateway-agentic-engineering.md** — 3 fixes:
+   - Intro paragraph "Our analysis draws on Uber's engineering blog, The Pragmatic Engineer's deep dive, the MCP Dev Summit presentation, and InfoQ's coverage" — added actual hyperlinks to each source (was listed as plain text with no links)
+   - Added note with inline Pragmatic Engineer link before the key metrics table (84%, 65-72%, 11%, 32%→63%, 6x cost increase) — previously all stats had no inline source
+   - Added inline InfoQ link for the uSpec section ("uSpec runs locally, connecting Claude AI...")
+
+4. **guides/anthropic-conway-always-on-agent-platform.md** — no changes needed; article already has extensive inline links throughout (TestingCatalog, Dataconomy, TechBriefly, AIBase, 36Kr, GitHub release notes, Google ADK docs). Marked as audited.
+
+5. **guides/domo-mcp-server-enterprise-ai-agents.md** — 4 fixes:
+   - Added inline link to Domo press release for "over 200 AI use cases from customers' live production environments"
+   - Added inline links to domoinvestors.com earnings release for revenue ($318.9M), customer count (2,600+), and Q4 billings ($111.2M)
+   - Added inline Futurum Group link for "84% of annual recurring revenue from consumption contracts and 111% net retention rate"
+   - Added inline domoinvestors.com link for "AI is discussed in nearly 70% of Domo's customer and prospect conversations"
+
+6. **guides/qualys-agent-val-ai-exploit-validation.md** — 4 fixes:
+   - Added inline Qualys blog links for "only about 1% are ever weaponized" and "from 62.5 million findings down to roughly 150,000 confirmed exploitable exposures, a 95% reduction"
+   - Added inline press release link for Qualys CEO Sumedh Thakar attribution
+   - Added inline Qualys blog link for "Patch Reliability Score — built on data from 140+ million deployed patches"
+   - Added inline NIST NVD link for "National Vulnerability Database tracks 200,000+ CVEs"
+
+7. **guides/claude-mythos-anthropic-next-gen-model-leak.md** — 3 fixes:
+   - Added inline Anthropic announcement link for Claude Opus 4.6 SWE-bench 80.8% and Terminal-Bench 2.0 65.4% scores (confirmed from Anthropic's own page)
+   - Added 3 inline links to Anthropic's Project Glasswing expansion announcement (anthropic.com/news/expanding-project-glasswing) for the June 2026 statistics: 150 organizations, 10,000+ high-severity vulnerabilities, 1,000+ open source projects scanned, 6,200+ issues found
+   - Added inline PYMNTS link for the "80-90% of a coordinated cyberattack against 30 organizations" claim (previously cited in intro only, not inline at the claim)
+
+**Key corrections this run:**
+- Cloudflare EmDash team titles were imprecise: Matt Taylor is "Senior Product Manager" not "product manager"; Matt Kane is "Senior Principal Systems Engineer" not "software engineer"
+- WordPress theme count was wrong: "12,000+ themes" → "14,000+ themes" (current wordpress.org count)
+- Codenotary total funding ($40M) removed as unverifiable; two confirmed rounds total ~$29M
+- LangSmith "~0% overhead" removed — no primary source found
+
+**Deploy:** Hugo build clean. Deployed batch 48. Site live at chatforest.com.
+
+**Next batch (batch 49):** Continue oldest unaudited pages from April 7, 2026:
+- guides/microsoft-agent-governance-toolkit.md (2026-04-07T14:00)
+- guides/gpt-5-4-computer-use-autonomous-agents.md (2026-04-07T17:00)
+- guides/claude-code-market-leader-2-5-billion-revenue.md (2026-04-07T20:00)
+- guides/bluesky-attie-ai-social-feed-builder.md (2026-04-07T22:00)
+- guides/fdb-medproof-mcp-medication-ai-agents.md (2026-04-07T22:00)
+
+---
+
 ## Run 2643 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-06/07 batch 47) + Deploy
 
 **Mode:** Citation auditor

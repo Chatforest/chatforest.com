@@ -104,13 +104,13 @@
 </ul>
 <p>According to Codenotary, AgentMon &ldquo;correlates token telemetry, behavioral baselines, and data lineage to transform opaque agent interactions into actionable intelligence.&rdquo; The platform visualizes agents as interconnected networks rather than isolated tools — closer to how you&rsquo;d monitor a distributed system than a single API endpoint.</p>
 <h2 id="who-built-it">Who Built It</h2>
-<p>Codenotary was founded in 2018 by Moshe Bar (CEO) and Dennis Zimmer (CTO). Bar previously co-founded Qumranet, which developed Linux KVM and was acquired by Red Hat in 2008, and XenSource, acquired by Citrix.</p>
+<p>Codenotary was founded in 2018 by <a href="https://en.wikipedia.org/wiki/Moshe_Bar_(investor)">Moshe Bar</a> (CEO) and Dennis Zimmer (CTO). Bar previously co-founded Qumranet, which developed Linux KVM and was acquired by Red Hat in 2008, and XenSource, acquired by Citrix.</p>
 <p>The company&rsquo;s core product is <a href="https://immudb.io/">immudb</a>, an open-source immutable database with over 15 million downloads. They&rsquo;ve built a software supply chain security business on top of it, serving hundreds of enterprise customers including major banks, governments, and defense organizations.</p>
-<p>Total funding stands at approximately $40 million across multiple rounds, with the most recent being a $16.5 million raise in November 2025 to expand their cybersecurity and trust automation platform.</p>
+<p>The most recent funding round was <a href="https://www.businesswire.com/news/home/20251125375655/en/Codenotary-Inc.-Raises-$16.5M-to-Accelerate-Global-Expansion-of-Its-Intelligent-Cybersecurity-Trust-Automation-Platform">a $16.5 million raise in November 2025</a> to expand their cybersecurity and trust automation platform.</p>
 <p>AgentMon extends their supply chain security DNA into AI operations. As CTO Dennis Zimmer put it: &ldquo;Agentic networks are growing explosively, and with that growth come entirely new categories of risk. Organizations are now asking critical questions: Are agents leaking sensitive data? How much are they costing us? Are they performing as expected?&rdquo;</p>
 <h2 id="the-agent-observability-landscape">The Agent Observability Landscape</h2>
 <p>AgentMon enters a crowded but immature market. According to <a href="https://aimultiple.com/agentic-monitoring">AIMultiple&rsquo;s 2026 survey</a>, at least 15 tools now compete in the AI agent observability space. The landscape breaks down roughly as follows:</p>
-<p><strong>Developer-focused tracing tools</strong> — LangSmith (LangChain-native, ~0% overhead), Langfuse (open-source, deep prompt-layer visibility), and AgentOps (production session replay). These prioritize debugging agent reasoning and tool selection during development.</p>
+<p><strong>Developer-focused tracing tools</strong> — LangSmith (LangChain-native), Langfuse (open-source, deep prompt-layer visibility), and AgentOps (production session replay). These prioritize debugging agent reasoning and tool selection during development.</p>
 <p><strong>Evaluation and testing platforms</strong> — Galileo (AI-powered hallucination detection), Braintrust (benchmark against test datasets), and Coval (pre-deployment simulation testing). These focus on quality assurance before agents reach production.</p>
 <p><strong>Infrastructure observability</strong> — Datadog (900+ integrations, correlating LLM signals with infrastructure), Prometheus + Grafana (open-source metrics and alerting). These extend existing monitoring stacks to include AI workloads.</p>
 <p><strong>Security and governance</strong> — Guardrails AI (input/output validation, toxicity/PII detection), and now AgentMon (enterprise security, compliance, and cost monitoring for agent networks).</p>
@@ -123,7 +123,7 @@
 <p><strong>Technical architecture.</strong> How telemetry is collected (SDK, sidecar, proxy, or other mechanism) hasn&rsquo;t been detailed. The overhead introduced by monitoring — a critical concern given the performance benchmarks other tools publish — is unknown.</p>
 <p><strong>Data retention and privacy.</strong> For a tool that monitors agent I/O (which may contain sensitive business data), the data handling and retention policies need scrutiny.</p>
 <h2 id="why-this-matters">Why This Matters</h2>
-<p>The market context is significant. Boston Consulting Group projects the AI agent market will grow at a <strong>45% CAGR</strong> over the next five years. As agents move from experimental to production, the monitoring gap becomes a governance problem.</p>
+<p>The market context is significant. <a href="https://www.bcg.com/capabilities/artificial-intelligence/ai-agents">Boston Consulting Group projects the AI agent market will grow at a <strong>45% CAGR</strong> over the next five years</a>. As agents move from experimental to production, the monitoring gap becomes a governance problem.</p>
 <p>Consider what happens without agent-specific monitoring:</p>
 <ul>
 <li><strong>Cost overruns</strong> go undetected until the monthly cloud bill arrives</li>

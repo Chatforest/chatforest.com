@@ -71,7 +71,7 @@
 <p>This guide covers the architecture, training pipeline, benchmark results, and implications for anyone building desktop agents. Our analysis draws on <a href="https://huggingface.co/blog/Hcompany/holo3">H Company&rsquo;s technical blog post</a>, the <a href="https://huggingface.co/Hcompany/Holo3-35B-A3B">model card on Hugging Face</a>, coverage from <a href="https://howaiworks.ai/blog/h-company-holo3-desktop-agent">HowAIWorks.ai</a>, <a href="https://www.testingcatalog.com/holo-company-launches-holo3-sota-computer-use-model/">TestingCatalog</a>, and <a href="https://neurabooks.online/news/posts/hcompany/holo3-a-new-record-for-ai-agents-that-operate-computers-2026-03-31">NeuraBooks</a> — we research and analyze rather than testing models hands-on. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI.</p>
 <hr>
 <h2 id="who-is-h-company">Who Is H Company?</h2>
-<p>H Company (formerly Holistic AI) is a Paris-based startup that raised <strong>$220 million in seed funding</strong> — one of the largest seed rounds in AI history. Investors include Eric Schmidt, Amazon, Samsung, and UiPath. The leadership team includes Stanford researcher Charles Kantor and Google DeepMind veteran Laurent Sifre, who contributed to AlphaGo.</p>
+<p>H Company (formerly Holistic AI) is a Paris-based startup that raised <a href="https://techcrunch.com/2024/05/21/french-ai-startup-h-raises-220-million-seed-round/"><strong>$220 million in seed funding</strong></a> — the largest AI seed round in European history at the time (May 2024). <a href="https://techcrunch.com/2024/05/21/french-ai-startup-h-raises-220-million-seed-round/">Investors include Eric Schmidt, Amazon, Samsung, and UiPath</a>. The leadership team includes <a href="https://techcrunch.com/2024/05/21/french-ai-startup-h-raises-220-million-seed-round/">Stanford-affiliated researcher Charles Kantor</a> and Google DeepMind veteran Laurent Sifre, who <a href="https://deepmind.google/discover/blog/alphago-zero-starting-from-scratch/">contributed to AlphaGo</a>.</p>
 <p>Their thesis: enterprise value isn&rsquo;t in chatbots — it&rsquo;s in agents that can actually operate the software employees use every day. Holo3 is their bid to prove it.</p>
 <h2 id="the-models-two-sizes-one-architecture">The Models: Two Sizes, One Architecture</h2>
 <p>Holo3 is a <strong>mixture-of-experts (MoE)</strong> family built on the Qwen3.5 architecture, with two variants:</p>
@@ -111,14 +111,14 @@
 </tr>
 </tbody>
 </table>
-<p>The MoE design is the key to Holo3&rsquo;s cost efficiency. Only a fraction of total parameters activate per token, which means inference costs are dramatically lower than dense models of equivalent capability. H Company claims comparable or better desktop-use performance to GPT-5.4 and Claude Opus 4.6 at roughly one-tenth the cost.</p>
+<p>The MoE design is the key to Holo3&rsquo;s cost efficiency. Only a fraction of total parameters activate per token, which means inference costs are dramatically lower than dense models of equivalent capability. H Company <a href="https://huggingface.co/blog/Hcompany/holo3">claims</a> comparable or better desktop-use performance to GPT-5.4 and Claude Opus 4.6 at a fraction of the cost.</p>
 <h3 id="pricing">Pricing</h3>
-<p><strong>Flagship (H Company platform):</strong></p>
+<p><strong>Flagship (<a href="https://hcompany.ai/holo3">H Company platform</a>):</strong></p>
 <ul>
 <li>$0.40 per million input tokens</li>
 <li>$3.00 per million output tokens</li>
 </ul>
-<p><strong>Open-source variant (Hugging Face):</strong></p>
+<p><strong>Open-source variant (<a href="https://huggingface.co/Hcompany/Holo3-35B-A3B">Hugging Face</a>):</strong></p>
 <ul>
 <li>Free tier: 10 requests per minute</li>
 <li>Paid: $0.25 / $1.80 per million input/output tokens</li>
@@ -156,7 +156,6 @@ Every training sample passes through an advanced data filtering pipeline before 
 <p>Holo3-122B-A10B&rsquo;s <strong>78.85%</strong> is the new state of the art. To put this in context:</p>
 <ul>
 <li>The benchmark requires executing real multi-step tasks on actual desktop environments</li>
-<li>Scoring above 70% was considered a significant milestone earlier this year</li>
 <li>Holo3 achieves this with only 10B active parameters — a fraction of what large proprietary models use</li>
 </ul>
 <p>The open-source Holo3-35B-A3B at <strong>77.8%</strong> is within 1.05 percentage points of the flagship model, despite having less than a third of the active parameters. For teams that need to self-host or fine-tune, this is the more interesting number.</p>

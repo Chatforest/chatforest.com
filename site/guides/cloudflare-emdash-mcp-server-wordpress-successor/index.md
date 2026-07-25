@@ -3,15 +3,15 @@
 > Cloudflare launched EmDash, an open-source TypeScript CMS with a built-in MCP server, sandboxed plugins, passkey auth, and x402 payments — positioning it as the WordPress successor built for AI agents.
 
 
-WordPress powers over 40% of the Internet, but 96% of its security vulnerabilities come from plugins. Cloudflare's answer: rebuild the CMS from scratch with plugins that can't escape their sandbox — and give every instance a built-in MCP server so AI agents can manage content alongside human editors.
+WordPress [powers over 40% of the Internet](https://blog.cloudflare.com/emdash-wordpress/), but [96% of its security vulnerabilities come from plugins](https://blog.cloudflare.com/emdash-wordpress/). Cloudflare's answer: rebuild the CMS from scratch with plugins that can't escape their sandbox — and give every instance a built-in MCP server so AI agents can manage content alongside human editors.
 
 EmDash v0.1.0 launched on April 1, 2026 as an MIT-licensed, open-source CMS written entirely in TypeScript. It runs on Cloudflare Workers or any Node.js server, uses Astro for themes, and treats AI agents as first-class users. Our analysis draws on [Cloudflare's official blog post](https://blog.cloudflare.com/emdash-wordpress/), [The Register's coverage](https://www.theregister.com/2026/04/02/cloudflare_previews_emdash_an_aidriven/), [SiliconANGLE's reporting](https://siliconangle.com/2026/04/02/cloudflare-debuts-emdash-challenge-aging-wordpress-ai-native-cms/), and the [EmDash GitHub repository](https://github.com/emdash-cms/emdash) — we research and analyze rather than testing implementations hands-on.
 
 ## Why Cloudflare Built a CMS
 
-Cloudflare already runs one of the largest edge networks in the world. They already serve and cache a significant percentage of WordPress traffic. But WordPress's plugin architecture has become a liability: the plugin review queue is over 800 plugins long with at least two-week wait times, and plugins have direct access to the database, filesystem, and network — any one of them can compromise an entire site.
+Cloudflare already runs one of the largest edge networks in the world. They already serve and cache a significant percentage of WordPress traffic. But WordPress's plugin architecture has become a liability: [the plugin review queue is over 800 plugins long with at least two-week wait times](https://blog.cloudflare.com/emdash-wordpress/), and plugins have direct access to the database, filesystem, and network — any one of them can compromise an entire site.
 
-EmDash doesn't try to fix WordPress. It reimagines the CMS for a world where serverless infrastructure, AI agents, and content-addressed security are the baseline expectations. Two Cloudflare engineers — product manager Matt Taylor and software engineer Matt Kane — built EmDash in two months using AI coding agents.
+EmDash doesn't try to fix WordPress. It reimagines the CMS for a world where serverless infrastructure, AI agents, and content-addressed security are the baseline expectations. Two Cloudflare engineers — [Senior Product Manager Matt Taylor and Senior Principal Systems Engineer Matt Kane](https://www.theregister.com/2026/04/02/cloudflare_previews_emdash_an_aidriven) — built EmDash in two months using AI coding agents.
 
 ## Architecture: Serverless, Sandboxed, AI-Native
 
@@ -19,7 +19,7 @@ EmDash's architecture is built around three design principles: isolation by defa
 
 ### Plugin Sandbox via Dynamic Workers
 
-This is EmDash's most significant architectural decision. Every plugin runs in its own isolated Dynamic Worker — Cloudflare's v8 isolate runtime via `workerd`. These are 100 times faster than traditional containers with millisecond startup times.
+This is EmDash's most significant architectural decision. Every plugin runs in its own isolated Dynamic Worker — Cloudflare's v8 isolate runtime via `workerd`. These are [100 times faster than traditional containers with millisecond startup times](https://blog.cloudflare.com/dynamic-workers/).
 
 A plugin's capabilities are strictly defined in its manifest:
 
@@ -152,7 +152,7 @@ EmDash v0.1.0 is a preview release. The plugin ecosystem is empty. The theme lib
 
 What EmDash does have is architectural clarity. The plugin sandbox solves a real security problem that WordPress cannot fix without breaking backward compatibility. The MCP server gives AI agents a structured interface to content management. Passkey authentication eliminates the most common attack vector. And the MIT license with portable abstractions means sites aren't locked to Cloudflare.
 
-Whether EmDash gains adoption depends less on its technology and more on whether developers build the plugins and themes that make a CMS useful. But as a demonstration of what a CMS designed for the AI era looks like — with MCP as a first-class interface — it's the most significant entry we've seen.
+Whether EmDash gains adoption depends less on its technology and more on whether developers build the plugins and themes that make a CMS useful. WordPress's [60,000+ plugins](https://wordpress.org/plugins/) and [14,000+ themes](https://wordpress.org/themes/) took 20 years to build. But as a demonstration of what a CMS designed for the AI era looks like — with MCP as a first-class interface — it's the most significant entry we've seen.
 
 ---
 

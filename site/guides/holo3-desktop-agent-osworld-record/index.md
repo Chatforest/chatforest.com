@@ -13,7 +13,7 @@ This guide covers the architecture, training pipeline, benchmark results, and im
 
 ## Who Is H Company?
 
-H Company (formerly Holistic AI) is a Paris-based startup that raised **$220 million in seed funding** — one of the largest seed rounds in AI history. Investors include Eric Schmidt, Amazon, Samsung, and UiPath. The leadership team includes Stanford researcher Charles Kantor and Google DeepMind veteran Laurent Sifre, who contributed to AlphaGo.
+H Company (formerly Holistic AI) is a Paris-based startup that raised [**$220 million in seed funding**](https://techcrunch.com/2024/05/21/french-ai-startup-h-raises-220-million-seed-round/) — the largest AI seed round in European history at the time (May 2024). [Investors include Eric Schmidt, Amazon, Samsung, and UiPath](https://techcrunch.com/2024/05/21/french-ai-startup-h-raises-220-million-seed-round/). The leadership team includes [Stanford-affiliated researcher Charles Kantor](https://techcrunch.com/2024/05/21/french-ai-startup-h-raises-220-million-seed-round/) and Google DeepMind veteran Laurent Sifre, who [contributed to AlphaGo](https://deepmind.google/discover/blog/alphago-zero-starting-from-scratch/).
 
 Their thesis: enterprise value isn't in chatbots — it's in agents that can actually operate the software employees use every day. Holo3 is their bid to prove it.
 
@@ -29,15 +29,15 @@ Holo3 is a **mixture-of-experts (MoE)** family built on the Qwen3.5 architecture
 | **License** | Proprietary (API) | Apache 2.0 |
 | **Availability** | H Company platform | Hugging Face + free API tier |
 
-The MoE design is the key to Holo3's cost efficiency. Only a fraction of total parameters activate per token, which means inference costs are dramatically lower than dense models of equivalent capability. H Company claims comparable or better desktop-use performance to GPT-5.4 and Claude Opus 4.6 at roughly one-tenth the cost.
+The MoE design is the key to Holo3's cost efficiency. Only a fraction of total parameters activate per token, which means inference costs are dramatically lower than dense models of equivalent capability. H Company [claims](https://huggingface.co/blog/Hcompany/holo3) comparable or better desktop-use performance to GPT-5.4 and Claude Opus 4.6 at a fraction of the cost.
 
 ### Pricing
 
-**Flagship (H Company platform):**
+**Flagship ([H Company platform](https://hcompany.ai/holo3)):**
 - $0.40 per million input tokens
 - $3.00 per million output tokens
 
-**Open-source variant (Hugging Face):**
+**Open-source variant ([Hugging Face](https://huggingface.co/Hcompany/Holo3-35B-A3B)):**
 - Free tier: 10 requests per minute
 - Paid: $0.25 / $1.80 per million input/output tokens
 
@@ -87,7 +87,6 @@ A representative complex task: extract equipment prices from a PDF, cross-refere
 Holo3-122B-A10B's **78.85%** is the new state of the art. To put this in context:
 
 - The benchmark requires executing real multi-step tasks on actual desktop environments
-- Scoring above 70% was considered a significant milestone earlier this year
 - Holo3 achieves this with only 10B active parameters — a fraction of what large proprietary models use
 
 The open-source Holo3-35B-A3B at **77.8%** is within 1.05 percentage points of the flagship model, despite having less than a third of the active parameters. For teams that need to self-host or fine-tune, this is the more interesting number.

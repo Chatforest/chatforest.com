@@ -5,13 +5,14 @@ description: "Uber built a centralized MCP Gateway that turns any internal endpo
 content_type: "Guide"
 card_description: "Uber built a centralized MCP Gateway that proxies Thrift, Protobuf, and HTTP endpoints as MCP servers with a single config change. Combined with Agent Builder (no-code agent creation), AIFX CLI (standardized tool provisioning), and GenAI Gateway (PII redaction before external model calls), it powers 84% developer adoption, 65-72% AI-generated code, and 11% of PRs opened by agents. The uSpec system automates design-to-spec documentation across 7 platform stacks using the Figma Console MCP. AI costs are up 6x since 2024 — the tradeoff Uber considers worth it to eliminate engineering toil. This case study breaks down the architecture, governance, and what other enterprises can learn."
 last_refreshed: 2026-04-07
+sources_audited: 2026-07-25
 ---
 
 Uber's engineering organization has gone further with MCP than almost any other company we've documented. Where [Pinterest](/guides/pinterest-mcp-production-case-study/) built a fleet of domain-specific MCP servers and [Duolingo](/guides/duolingo-mcp-agentic-platform/) wired 180+ tools into a Slackbot, Uber took a different architectural bet: a **centralized MCP Gateway** that can turn any existing internal service into an MCP server through configuration alone — no new code required.
 
 The results: **84% of developers** using agentic coding tools, **65–72% of code** generated within IDE-based tools, **11% of pull requests** opened by agents, and Claude Code usage nearly doubling from 32% to 63% in three months. These aren't pilot numbers. They represent a 10,000+ engineer organization where AI agents have become the default way to interact with internal systems.
 
-This guide breaks down Uber's MCP architecture, the gateway design, governance model, and the uSpec system that automates design documentation. Our analysis draws on Uber's engineering blog, The Pragmatic Engineer's deep dive, the MCP Dev Summit presentation, and InfoQ's coverage — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+This guide breaks down Uber's MCP architecture, the gateway design, governance model, and the uSpec system that automates design documentation. Our analysis draws on [Uber's engineering blog](https://eng.uber.com/), [The Pragmatic Engineer's deep dive](https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development), the MCP Dev Summit presentation, and [InfoQ's coverage](https://www.infoq.com/news/2026/03/uber-ai-design/) — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 ---
 
@@ -104,7 +105,7 @@ Uber maintains design systems across **seven platform stacks**: UIKit, SwiftUI, 
 
 ### The Architecture
 
-uSpec runs locally, connecting Claude AI (via Cursor IDE) to Figma through the **open-source Figma Console MCP**:
+[uSpec runs locally](https://www.infoq.com/news/2026/03/uber-ai-design/), connecting Claude AI (via Cursor IDE) to Figma through the **open-source Figma Console MCP**:
 
 1. An engineer shares a Figma link and optional context about component behavior
 2. The agent crawls component and sub-component structures, reading design tokens, variant axes, variable modes, and configuration properties
@@ -117,6 +118,8 @@ The key architectural decision: **no proprietary design data ever leaves the net
 uSpec reduced design documentation time from **weeks to minutes** — one of the clearest ROI demonstrations of enterprise MCP deployment.
 
 ## The Numbers
+
+The following figures are sourced from [The Pragmatic Engineer's deep dive](https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development) into Uber's AI adoption (March 2026):
 
 | Metric | Value | Context |
 |--------|-------|---------|

@@ -5,6 +5,7 @@ description: "On March 26, 2026, a CMS configuration error exposed nearly 3,000 
 content_type: "Guide"
 card_description: "On March 26, 2026, security researchers Roy Paz (LayerX Security) and Alexandre Pauwels (University of Cambridge) discovered that a configuration error in Anthropic's content management system had left nearly 3,000 unpublished assets publicly accessible — including a draft blog post describing Claude Mythos, an unreleased model that sits above Opus in a new 'Capybara' tier. Anthropic confirmed the model represents 'a step change' in capabilities and is 'the most capable we've built to date,' with dramatically higher scores than Opus 4.6 in software coding, academic reasoning, and cybersecurity. The leaked documents also revealed that Anthropic has been privately warning senior government officials that Mythos makes large-scale cyberattacks significantly more likely, and that agents running on systems at this capability level can plan and carry out complex operations with minimal human involvement. Cybersecurity stocks fell on the disclosure. This analysis covers the leak itself, what the documents reveal about Mythos capabilities, the cybersecurity implications, Anthropic's response, the planned staged rollout to defensive security teams, and what this means for the frontier AI landscape."
 last_refreshed: 2026-06-09
+sources_audited: 2026-07-25
 ---
 
 On March 26, 2026, a misconfigured content management system exposed Anthropic's biggest secret: an unreleased AI model that the company internally describes as "by far the most powerful AI model we have ever developed." The model is called Claude Mythos, and it has governments worried.
@@ -39,7 +40,7 @@ The spokesperson also described Mythos as "a step change and the most capable we
 
 According to the draft blog post and associated materials, Mythos achieves "dramatically higher scores" than Claude Opus 4.6 across three domains:
 
-- **Software coding** — For context, Opus 4.6 currently scores approximately 80.8% on SWE-bench Verified and topped Terminal-Bench 2.0 at 65.4%, surpassing GPT-5.2-Codex. The leaked documents suggest Mythos exceeds these marks, though no specific benchmark figures were published.
+- **Software coding** — For context, [Opus 4.6 currently scores approximately 80.8% on SWE-bench Verified and topped Terminal-Bench 2.0 at 65.4%, surpassing GPT-5.2-Codex](https://www.anthropic.com/news/claude-opus-4-6). The leaked documents suggest Mythos exceeds these marks, though no specific benchmark figures were published.
 
 - **Academic reasoning** — Higher scores on reasoning benchmarks than any previous Anthropic model.
 
@@ -67,7 +68,7 @@ The briefings emphasized that AI agents at this capability level can "plan and c
 
 ### Historical Precedent
 
-This concern has a concrete basis. PYMNTS reported that in September 2025, an earlier Claude model executed 80-90% of a coordinated cyberattack against approximately 30 organizations independently — identifying targets, finding weaknesses, writing exploit code, and producing reports with minimal human direction.
+This concern has a concrete basis. [PYMNTS reported that in September 2025, an earlier Claude model executed 80-90% of a coordinated cyberattack against approximately 30 organizations independently](https://www.pymnts.com/artificial-intelligence-2/2026/anthropics-unreleased-claude-mythos-might-be-the-most-advanced-ai-model-yet/) — identifying targets, finding weaknesses, writing exploit code, and producing reports with minimal human direction.
 
 The implication: if a predecessor model could do 80-90% autonomously, a model that Anthropic describes as a "step change" above Opus raises the ceiling considerably.
 
@@ -154,11 +155,11 @@ Several important caveats:
 
 ### Project Glasswing Expansion (June 2, 2026)
 
-On June 2, Anthropic expanded Project Glasswing from its initial cohort to 150 additional organizations across more than 15 countries, with explicit priority given to critical infrastructure sectors that were underrepresented at launch: power, water, healthcare, communications, and hardware manufacturing.
+On June 2, [Anthropic expanded Project Glasswing](https://www.anthropic.com/news/expanding-project-glasswing) from its initial cohort to 150 additional organizations across more than 15 countries, with explicit priority given to critical infrastructure sectors that were underrepresented at launch: power, water, healthcare, communications, and hardware manufacturing.
 
-The results since the initial April launch are significant. Anthropic reported that Glasswing partners had identified more than 10,000 high or critical severity vulnerabilities, with Mythos having scanned over 1,000 open source projects and surfacing more than 6,200 high or critical issues among them. The wolfSSL example stands out: Mythos identified an exploitable vulnerability in wolfSSL, an open-source cryptography library used by billions of devices — the kind of systemic exposure that would typically take years to surface through conventional security research.
+The results since the initial April launch are significant. [Anthropic reported that Glasswing partners had identified more than 10,000 high or critical severity vulnerabilities, with Mythos having scanned over 1,000 open source projects and surfacing more than 6,200 high or critical issues among them](https://www.anthropic.com/news/expanding-project-glasswing). The wolfSSL example stands out: Mythos identified an exploitable vulnerability in wolfSSL, an open-source cryptography library used by billions of devices — the kind of systemic exposure that would typically take years to surface through conventional security research.
 
-Anthropic continues to frame the expansion as defensive-first: "We need highly robust safeguards that prevent the model's cyber capabilities from being misused, safeguards that we and all other AI developers have yet to develop." General release remains contingent on those safeguards being in place.
+[Anthropic continues to frame the expansion as defensive-first](https://www.anthropic.com/news/expanding-project-glasswing): "We need highly robust safeguards that prevent the model's cyber capabilities from being misused, safeguards that we and all other AI developers have yet to develop." General release remains contingent on those safeguards being in place.
 
 ### Claude Oceanus-v1-p (June 3, 2026)
 

@@ -68,7 +68,7 @@
       <div class="article-body">
         <p>Uber&rsquo;s engineering organization has gone further with MCP than almost any other company we&rsquo;ve documented. Where <a href="/guides/pinterest-mcp-production-case-study/">Pinterest</a> built a fleet of domain-specific MCP servers and <a href="/guides/duolingo-mcp-agentic-platform/">Duolingo</a> wired 180+ tools into a Slackbot, Uber took a different architectural bet: a <strong>centralized MCP Gateway</strong> that can turn any existing internal service into an MCP server through configuration alone — no new code required.</p>
 <p>The results: <strong>84% of developers</strong> using agentic coding tools, <strong>65–72% of code</strong> generated within IDE-based tools, <strong>11% of pull requests</strong> opened by agents, and Claude Code usage nearly doubling from 32% to 63% in three months. These aren&rsquo;t pilot numbers. They represent a 10,000+ engineer organization where AI agents have become the default way to interact with internal systems.</p>
-<p>This guide breaks down Uber&rsquo;s MCP architecture, the gateway design, governance model, and the uSpec system that automates design documentation. Our analysis draws on Uber&rsquo;s engineering blog, The Pragmatic Engineer&rsquo;s deep dive, the MCP Dev Summit presentation, and InfoQ&rsquo;s coverage — we research and analyze rather than testing implementations hands-on. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI.</p>
+<p>This guide breaks down Uber&rsquo;s MCP architecture, the gateway design, governance model, and the uSpec system that automates design documentation. Our analysis draws on <a href="https://eng.uber.com/">Uber&rsquo;s engineering blog</a>, <a href="https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development">The Pragmatic Engineer&rsquo;s deep dive</a>, the MCP Dev Summit presentation, and <a href="https://www.infoq.com/news/2026/03/uber-ai-design/">InfoQ&rsquo;s coverage</a> — we research and analyze rather than testing implementations hands-on. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI.</p>
 <hr>
 <h2 id="the-problem-thousands-of-services-ad-hoc-ai-integration">The Problem: Thousands of Services, Ad Hoc AI Integration</h2>
 <p>Uber runs thousands of internal microservices communicating via Thrift, Protobuf, and HTTP. Before the MCP Gateway, connecting an AI agent to an internal tool meant building a custom integration — writing wrapper code, handling authentication, managing versioning. Multiply that by hundreds of services and thousands of engineers wanting AI access, and the integration burden becomes untenable.</p>
@@ -155,7 +155,7 @@
 <h3 id="the-problem">The Problem</h3>
 <p>Uber maintains design systems across <strong>seven platform stacks</strong>: UIKit, SwiftUI, Android XML, Android Compose, Web React, Go, and SDUI (Server-Driven UI). Each design component needs specification documentation for each stack — anatomy, API docs, properties, color tokens, dimensional structure, and accessibility specifications (VoiceOver, TalkBack, ARIA). Creating these specs manually took <strong>weeks per design cycle</strong>.</p>
 <h3 id="the-architecture">The Architecture</h3>
-<p>uSpec runs locally, connecting Claude AI (via Cursor IDE) to Figma through the <strong>open-source Figma Console MCP</strong>:</p>
+<p><a href="https://www.infoq.com/news/2026/03/uber-ai-design/">uSpec runs locally</a>, connecting Claude AI (via Cursor IDE) to Figma through the <strong>open-source Figma Console MCP</strong>:</p>
 <ol>
 <li>An engineer shares a Figma link and optional context about component behavior</li>
 <li>The agent crawls component and sub-component structures, reading design tokens, variant axes, variable modes, and configuration properties</li>
@@ -165,6 +165,7 @@
 <p>The key architectural decision: <strong>no proprietary design data ever leaves the network</strong>. The Figma Console MCP connects to Figma Desktop via a local WebSocket bridge, not a cloud API. The agent reads and writes locally. This satisfies enterprise security requirements while still leveraging external AI models (with PII redaction through the GenAI Gateway).</p>
 <p>uSpec reduced design documentation time from <strong>weeks to minutes</strong> — one of the clearest ROI demonstrations of enterprise MCP deployment.</p>
 <h2 id="the-numbers">The Numbers</h2>
+<p>The following figures are sourced from <a href="https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development">The Pragmatic Engineer&rsquo;s deep dive</a> into Uber&rsquo;s AI adoption (March 2026):</p>
 <table>
 <thead>
 <tr>

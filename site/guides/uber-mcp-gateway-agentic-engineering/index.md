@@ -7,7 +7,7 @@ Uber's engineering organization has gone further with MCP than almost any other 
 
 The results: **84% of developers** using agentic coding tools, **65–72% of code** generated within IDE-based tools, **11% of pull requests** opened by agents, and Claude Code usage nearly doubling from 32% to 63% in three months. These aren't pilot numbers. They represent a 10,000+ engineer organization where AI agents have become the default way to interact with internal systems.
 
-This guide breaks down Uber's MCP architecture, the gateway design, governance model, and the uSpec system that automates design documentation. Our analysis draws on Uber's engineering blog, The Pragmatic Engineer's deep dive, the MCP Dev Summit presentation, and InfoQ's coverage — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+This guide breaks down Uber's MCP architecture, the gateway design, governance model, and the uSpec system that automates design documentation. Our analysis draws on [Uber's engineering blog](https://eng.uber.com/), [The Pragmatic Engineer's deep dive](https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development), the MCP Dev Summit presentation, and [InfoQ's coverage](https://www.infoq.com/news/2026/03/uber-ai-design/) — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 ---
 
@@ -100,7 +100,7 @@ Uber maintains design systems across **seven platform stacks**: UIKit, SwiftUI, 
 
 ### The Architecture
 
-uSpec runs locally, connecting Claude AI (via Cursor IDE) to Figma through the **open-source Figma Console MCP**:
+[uSpec runs locally](https://www.infoq.com/news/2026/03/uber-ai-design/), connecting Claude AI (via Cursor IDE) to Figma through the **open-source Figma Console MCP**:
 
 1. An engineer shares a Figma link and optional context about component behavior
 2. The agent crawls component and sub-component structures, reading design tokens, variant axes, variable modes, and configuration properties
@@ -113,6 +113,8 @@ The key architectural decision: **no proprietary design data ever leaves the net
 uSpec reduced design documentation time from **weeks to minutes** — one of the clearest ROI demonstrations of enterprise MCP deployment.
 
 ## The Numbers
+
+The following figures are sourced from [The Pragmatic Engineer's deep dive](https://newsletter.pragmaticengineer.com/p/how-uber-uses-ai-for-development) into Uber's AI adoption (March 2026):
 
 | Metric | Value | Context |
 |--------|-------|---------|

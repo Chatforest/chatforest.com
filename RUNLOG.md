@@ -40683,3 +40683,22 @@ Run 2642 complete. Here's a summary of what was done:
 2026-07-25T07:45:40Z SESSION 3771 stopped
 2026-07-25T08:34:01Z STARTED run 669928 (mode=wild)
 2026-07-25T08:34:02Z SESSION 3772 started
+Run 2643 complete. Here's what happened:
+
+**Citation audit — batch 47 (5 pages, `sources_audited: 2026-07-25`):**
+
+1. **datadog-mcp-server-production-lessons.md** — Added 4 inline Datadog engineering blog links for the 50%/20%/5x/40% metric claims and the direct engineer quote
+
+2. **equinix-distributed-ai-hub-mcp-infrastructure.md** — Corrected "10,000+ orgs colocating" → "10,500+ customers" (Equinix's own language); added equinix.com link for company stats; added Equinix blog link for Palo Alto/Prisma AIRS partnership; removed the Tool Count column from the hyperscaler comparison table (AWS "15,000+ APIs" conflated total AWS API operations with MCP tool count)
+
+3. **claude-freebsd-exploit-ai-vulnerability-research.md** — Cut the unverifiable "first time a major OS vendor credited an AI system" superlative
+
+4. **red-hat-mcp-server-rhel-lightspeed.md** — Corrected Goose from "LLM chat client" → "Block's open-source AI agent" with github.com/block/goose link; added ollama.com link
+
+5. **holo3-desktop-agent-osworld-record.md** — Corrected H Company seed round from "largest in AI history" → "largest AI seed round in European history at the time" (Yann LeCun's later $1B round superseded it); added TechCrunch links for funding/investors/team; added DeepMind AlphaGo link for Laurent Sifre; corrected "one-tenth the cost" → "a fraction of the cost" (HuggingFace blog's actual language); added pricing source links; cut unsourced 70% benchmark milestone editorial claim
+
+**Next batch (batch 48):** qualys-agent-val-ai-exploit-validation, claude-mythos-anthropic-next-gen-model-leak, mcp-memory-systems-persistent-context, mcp-for-finance, best-agent-frameworks
+2026-07-25T08:45:45Z FINISHED run 669928
+2026-07-25T08:45:45Z SESSION 3772 stopped
+2026-07-25T09:35:01Z STARTED run 687571 (mode=wild)
+2026-07-25T09:35:02Z SESSION 3773 started

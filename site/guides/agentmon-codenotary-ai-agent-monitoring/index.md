@@ -56,11 +56,11 @@ According to Codenotary, AgentMon "correlates token telemetry, behavioral baseli
 
 ## Who Built It
 
-Codenotary was founded in 2018 by Moshe Bar (CEO) and Dennis Zimmer (CTO). Bar previously co-founded Qumranet, which developed Linux KVM and was acquired by Red Hat in 2008, and XenSource, acquired by Citrix.
+Codenotary was founded in 2018 by [Moshe Bar](https://en.wikipedia.org/wiki/Moshe_Bar_(investor)) (CEO) and Dennis Zimmer (CTO). Bar previously co-founded Qumranet, which developed Linux KVM and was acquired by Red Hat in 2008, and XenSource, acquired by Citrix.
 
 The company's core product is [immudb](https://immudb.io/), an open-source immutable database with over 15 million downloads. They've built a software supply chain security business on top of it, serving hundreds of enterprise customers including major banks, governments, and defense organizations.
 
-Total funding stands at approximately $40 million across multiple rounds, with the most recent being a $16.5 million raise in November 2025 to expand their cybersecurity and trust automation platform.
+The most recent funding round was [a $16.5 million raise in November 2025](https://www.businesswire.com/news/home/20251125375655/en/Codenotary-Inc.-Raises-$16.5M-to-Accelerate-Global-Expansion-of-Its-Intelligent-Cybersecurity-Trust-Automation-Platform) to expand their cybersecurity and trust automation platform.
 
 AgentMon extends their supply chain security DNA into AI operations. As CTO Dennis Zimmer put it: "Agentic networks are growing explosively, and with that growth come entirely new categories of risk. Organizations are now asking critical questions: Are agents leaking sensitive data? How much are they costing us? Are they performing as expected?"
 
@@ -68,7 +68,7 @@ AgentMon extends their supply chain security DNA into AI operations. As CTO Denn
 
 AgentMon enters a crowded but immature market. According to [AIMultiple's 2026 survey](https://aimultiple.com/agentic-monitoring), at least 15 tools now compete in the AI agent observability space. The landscape breaks down roughly as follows:
 
-**Developer-focused tracing tools** — LangSmith (LangChain-native, ~0% overhead), Langfuse (open-source, deep prompt-layer visibility), and AgentOps (production session replay). These prioritize debugging agent reasoning and tool selection during development.
+**Developer-focused tracing tools** — LangSmith (LangChain-native), Langfuse (open-source, deep prompt-layer visibility), and AgentOps (production session replay). These prioritize debugging agent reasoning and tool selection during development.
 
 **Evaluation and testing platforms** — Galileo (AI-powered hallucination detection), Braintrust (benchmark against test datasets), and Coval (pre-deployment simulation testing). These focus on quality assurance before agents reach production.
 
@@ -94,7 +94,7 @@ AgentMon's launch materials leave several important questions unanswered:
 
 ## Why This Matters
 
-The market context is significant. Boston Consulting Group projects the AI agent market will grow at a **45% CAGR** over the next five years. As agents move from experimental to production, the monitoring gap becomes a governance problem.
+The market context is significant. [Boston Consulting Group projects the AI agent market will grow at a **45% CAGR** over the next five years](https://www.bcg.com/capabilities/artificial-intelligence/ai-agents). As agents move from experimental to production, the monitoring gap becomes a governance problem.
 
 Consider what happens without agent-specific monitoring:
 
