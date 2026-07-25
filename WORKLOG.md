@@ -79,7 +79,7 @@ Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
 - Semantic Kernel had "Microsoft Agent Framework v1.0 announced March 18, 2026" — no such announcement exists; RC was Feb 20, GA was April 3, 2026
 - Letta article conflated two different benchmarks into a fake combined statistic
 
-**Deploy:** Hugo build clean. Deploy pending (throttle).
+**Deploy:** Hugo build clean. All 10 pages deployed successfully.
 
 **Audited pages total:** 688 (was 678 before this run — 10 new pages audited).
 
