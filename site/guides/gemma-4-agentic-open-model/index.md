@@ -105,7 +105,7 @@ Qwen 3.5's 397B flagship operates in a different class entirely. At the ~30B tie
 
 ### vs. DeepSeek
 
-DeepSeek-V3.2 scores approximately 1425 on Arena ELO compared to Gemma 4 31B's 1452. Google [explicitly positions Gemma 4 as a competitive response to Chinese open-weights models](https://www.theregister.com/2026/04/02/googles_gemma_4_open_weights/) from Moonshot AI, Alibaba, and Z.AI — a geopolitical angle that matters for enterprise procurement decisions.
+DeepSeek-V3.2 scores approximately 1425 on [Arena ELO](https://lmarena.ai/) compared to Gemma 4 31B's 1452. Google [explicitly positions Gemma 4 as a competitive response to Chinese open-weights models](https://www.theregister.com/2026/04/02/googles_gemma_4_open_weights/) from Moonshot AI, Alibaba, and Z.AI — a geopolitical angle that matters for enterprise procurement decisions.
 
 ### The License Shift
 

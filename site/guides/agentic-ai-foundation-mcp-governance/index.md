@@ -3,9 +3,9 @@
 > Anthropic, OpenAI, and Block donated MCP, AGENTS.md, and goose to the Linux Foundation's new Agentic AI Foundation (AAIF). With 146 members, 8 platinum sponsors, and events on 4 continents, this is the most ambitious attempt to prevent AI agent fragmentation. Here's what it means and what could go wrong.
 
 
-On December 9, 2025, three companies that compete fiercely in every other dimension of AI announced they were pooling their most important agent infrastructure into a single foundation. Anthropic donated the [Model Context Protocol (MCP)](/guides/what-is-mcp/). OpenAI contributed AGENTS.md. Block contributed goose. The result: the **Agentic AI Foundation (AAIF)**, a directed fund under the Linux Foundation with a mandate to prevent the agentic AI ecosystem from fragmenting into incompatible silos.
+On [December 9, 2025](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation), three companies that compete fiercely in every other dimension of AI announced they were pooling their most important agent infrastructure into a single foundation. Anthropic donated the [Model Context Protocol (MCP)](/guides/what-is-mcp/). OpenAI contributed [AGENTS.md](https://openai.com/index/introducing-codex/). Block contributed [goose](https://block.xyz/inside/block-open-source-introduces-codename-goose). The result: the **Agentic AI Foundation (AAIF)**, a directed fund under the Linux Foundation with a mandate to prevent the agentic AI ecosystem from fragmenting into incompatible silos.
 
-Four months later, the AAIF has **146 members**, **8 platinum sponsors** (AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, OpenAI), and a 2026 events calendar spanning six cities on four continents. It represents the most ambitious attempt yet to establish vendor-neutral governance for AI agent standards.
+Four months later, the AAIF has [**146 members**, **8 platinum sponsors**](https://www.techzine.eu/news/applications/139057/agentic-ai-foundation-the-home-of-mcp-grows-to-146-members/) (AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, OpenAI), and a 2026 events calendar spanning six cities on four continents. It represents the most ambitious attempt yet to establish vendor-neutral governance for AI agent standards.
 
 This guide covers what the AAIF is, what it governs, what it doesn't, and whether the governance structure can hold when the governed are also the governors. Our analysis draws on official announcements, press coverage, and community commentary — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -41,7 +41,7 @@ MCP is the AAIF's highest-profile project and the primary driver behind the foun
 AGENTS.md is a lightweight Markdown specification that provides AI coding agents with project-specific guidance. Think of it as README.md for agents — sitting alongside a project's existing documentation, it tells AI agents about build steps, testing requirements, coding conventions, and operational context that would clutter a human-oriented README.
 
 - **Origin:** Created by OpenAI for Codex, released August 2025
-- **Adoption:** 60,000+ open-source repositories; supported by Codex, Cursor, Devin, Gemini CLI, GitHub Copilot, Jules, VS Code, and others
+- **Adoption:** [60,000+ open-source repositories](https://openai.com/index/introducing-codex/); supported by Codex, Cursor, Devin, Gemini CLI, GitHub Copilot, Jules, VS Code, and others
 - **Purpose:** Gives agents a consistent, predictable location for project-specific instructions — preventing every AI tool from inventing its own configuration format
 - **Key distinction:** README.md is for humans; AGENTS.md is for agents. They complement each other
 
@@ -55,7 +55,7 @@ goose is Block's open-source, local-first AI agent framework. Where MCP defines 
 - **Architecture:** Works with any LLM, supports multi-model configuration, connects to 3,000+ MCP servers
 - **Differentiator:** Local-first design — runs on the developer's machine, not in the cloud
 - **Capabilities:** Beyond code suggestions — installs, executes, edits, and tests; available as desktop app and CLI
-- **GitHub:** 27,000+ stars (as of early 2026)
+- **GitHub:** [27,000+ stars (as of early 2026)](https://github.com/block/goose)
 
 goose serves as both a production agent framework and a reference implementation showing how agents should interact with MCP servers and consume AGENTS.md files.
 
@@ -75,7 +75,7 @@ This layering is intentional. The AAIF isn't trying to build one monolithic stan
 
 The AAIF Governing Board handles strategic decisions: budget allocation, member recruitment, and approval of new projects. It does **not** make technical decisions about individual projects.
 
-**Chair:** David Nalley, Director of Developer Experience at AWS.
+**Chair:** [David Nalley, Director of Developer Experience at AWS](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation).
 
 **Platinum members** (governing board seats): AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, OpenAI.
 
@@ -138,7 +138,7 @@ The AAIF has committed to an aggressive global events program:
 
 The **MCP Dev Summit** format provides focused, developer-oriented sessions on building with MCP, goose, and AGENTS.md. The **AGNTCon + MCPCon** events are the flagship conferences with broader scope — case studies, ecosystem collaboration, and strategic sessions.
 
-The April Dev Summit in New York featured 95+ sessions from MCP co-founders, maintainers, and production deployers. Six cities across four continents signals the foundation's intent to make agent standards a global effort, not a Silicon Valley concern.
+The [April Dev Summit in New York](https://events.linuxfoundation.org/2026/02/24/agentic-ai-foundation-unveils-mcp-dev-summit-north-america-2026-schedule/) featured 95+ sessions from MCP co-founders, maintainers, and production deployers. Six cities across four continents signals the foundation's intent to make agent standards a global effort, not a Silicon Valley concern.
 
 ## Legitimate Concerns
 
@@ -158,11 +158,11 @@ The AAIF governs MCP, AGENTS.md, and goose. It does **not** govern Google's Agen
 - **A2A** — agent-to-agent delegation (Google)
 - **ACP** — another agent communication standard
 
-Having MCP under the Linux Foundation helps, but an enterprise building agent infrastructure still needs to navigate a multi-protocol landscape. As one analyst noted: "Multi-vendor protocols achieve 'growing ecosystem momentum' in press releases and zero production deployments at meaningful scale."
+Having MCP under the Linux Foundation helps, but an enterprise building agent infrastructure still needs to navigate a multi-protocol landscape.
 
 ### The Governance vs. Reality Gap
 
-Nearly two-thirds of enterprises cite **security and risk concerns** as the top barrier to scaling agentic AI — well ahead of governance questions. The AAIF addresses protocol governance, but the [security vulnerabilities we documented in MCP](/guides/mcp-growing-pains-context-bloat-security/) (30+ CVEs in 60 days, 82% of implementations with path traversal vulnerabilities) are implementation problems that governance alone can't fix.
+Nearly two-thirds of enterprises cite [**security and risk concerns**](https://www.gravitee.io/state-of-ai-agent-security) as the top barrier to scaling agentic AI — well ahead of governance questions. The AAIF addresses protocol governance, but the [security vulnerabilities we documented in MCP](/guides/mcp-growing-pains-context-bloat-security/) (30+ CVEs in 60 days, 82% of implementations with path traversal vulnerabilities) are implementation problems that governance alone can't fix.
 
 There's also a risk of **agent sprawl** — the uncontrolled proliferation of redundant, ungoverned agents across teams. Foundations standardize protocols; they don't prevent organizations from deploying agents poorly.
 

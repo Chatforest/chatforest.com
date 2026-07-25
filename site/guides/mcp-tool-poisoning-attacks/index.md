@@ -7,7 +7,7 @@ Your AI agent trusts the tools it connects to. Tool poisoning exploits that trus
 
 In a tool poisoning attack, a malicious MCP server embeds hidden instructions in its tool metadata — instructions the AI model follows but you never see. The result: your agent reads your SSH keys, exfiltrates credentials, redirects your emails, or executes commands you never intended.
 
-This isn't theoretical. Researchers at [Invariant Labs](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) and [CyberArk](https://www.cyberark.com/resources/threat-research-blog/poison-everywhere-no-output-from-your-mcp-server-is-safe) have published working proof-of-concept attacks against Claude Desktop, Cursor, and other MCP clients. OWASP lists tool poisoning as [MCP03](https://owasp.org/www-project-mcp-top-10/) in its MCP Top 10. The MCPTox benchmark found attack success rates as high as 72.8% against some models.
+This isn't theoretical. Researchers at [Invariant Labs](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) and [CyberArk](https://www.cyberark.com/resources/threat-research-blog/poison-everywhere-no-output-from-your-mcp-server-is-safe) have published working proof-of-concept attacks against Claude Desktop, Cursor, and other MCP clients. OWASP lists tool poisoning as [MCP03](https://owasp.org/www-project-mcp-top-10/) in its MCP Top 10. The [MCPTox benchmark](https://arxiv.org/abs/2508.14925) found attack success rates as high as 72.8% against some models.
 
 This guide explains how these attacks work, what makes them dangerous, and what you can do about them.
 
@@ -88,11 +88,11 @@ Invariant Labs demonstrated a "sleeper rug pull" variant: the server serves beni
 
 ## Why More Capable Models Are More Vulnerable
 
-The MCPTox benchmark tested 20 LLM agents against tool poisoning attacks using 45 real-world MCP servers and 353 tools. A counterintuitive finding: **more capable models often had higher attack success rates**.
+The [MCPTox benchmark](https://arxiv.org/abs/2508.14925) tested 20 LLM agents against tool poisoning attacks using 45 real-world MCP servers and 353 tools. A counterintuitive finding: **more capable models often had higher attack success rates**.
 
 The reason is straightforward. Tool poisoning exploits instruction-following ability. The better a model is at following instructions, the more reliably it follows malicious ones embedded in tool metadata.
 
-However, models can be specifically trained to resist these attacks. Claude 3.7 Sonnet showed the highest refusal rate among tested models at under 3% attack success, likely because Anthropic has specifically hardened it against tool-mediated prompt injection.
+The results show how universal this vulnerability is: even Claude 3.7 Sonnet — the model with the highest refusal rate in the study — refused fewer than 3% of malicious requests. The paper's conclusion: "existing safety alignment is ineffective against malicious actions that use legitimate tools."
 
 ## How This Connects to OWASP MCP Top 10
 

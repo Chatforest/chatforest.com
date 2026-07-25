@@ -5,6 +5,7 @@ description: "Google released Gemma 4 on April 2, 2026 — four open-weights mod
 content_type: "Guide"
 card_description: "Google released Gemma 4 on April 2, 2026 — a family of four open-weights models under Apache 2.0. The headline number: on τ2-bench (agentic tool use), Gemma 4 31B scores 86.4% compared to Gemma 3 27B's 6.6%. That's not an incremental improvement — it's a generational leap that makes open-weights models competitive with proprietary systems for agentic workflows. The lineup includes a 31B dense model (256K context, Codeforces ELO 2150), a 26B MoE with only 3.8B active parameters matching the 31B on most benchmarks, and edge variants (E2B, E4B) that run on phones and Raspberry Pi. Native function calling, structured JSON output, and system prompt support make these models ready for MCP tool integration out of the box. This guide covers the architecture, benchmarks, agentic capabilities, competitive positioning against Llama 4 and Qwen 3.5, and what this release means for the MCP ecosystem."
 last_refreshed: 2026-04-15
+sources_audited: 2026-07-25
 ---
 
 Google [announced Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) on April 2, 2026 — four open-weights models that redefine what's possible with locally-deployed AI agents. The most important number isn't a benchmark score on a leaderboard. It's this: on [τ2-bench](https://deepmind.google/models/gemma/gemma-4/), which measures real-world agentic tool use, Gemma 4 31B scores 86.4%. Its predecessor, Gemma 3 27B, scored 6.6%.
@@ -109,7 +110,7 @@ Qwen 3.5's 397B flagship operates in a different class entirely. At the ~30B tie
 
 ### vs. DeepSeek
 
-DeepSeek-V3.2 scores approximately 1425 on Arena ELO compared to Gemma 4 31B's 1452. Google [explicitly positions Gemma 4 as a competitive response to Chinese open-weights models](https://www.theregister.com/2026/04/02/googles_gemma_4_open_weights/) from Moonshot AI, Alibaba, and Z.AI — a geopolitical angle that matters for enterprise procurement decisions.
+DeepSeek-V3.2 scores approximately 1425 on [Arena ELO](https://lmarena.ai/) compared to Gemma 4 31B's 1452. Google [explicitly positions Gemma 4 as a competitive response to Chinese open-weights models](https://www.theregister.com/2026/04/02/googles_gemma_4_open_weights/) from Moonshot AI, Alibaba, and Z.AI — a geopolitical angle that matters for enterprise procurement decisions.
 
 ### The License Shift
 

@@ -43,7 +43,7 @@ You can browse the catalog at [hub.docker.com/mcp](https://hub.docker.com/mcp) o
 
 ## Layer 2: The MCP Toolkit
 
-The [MCP Toolkit](https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/) is built into Docker Desktop (version 4.62+) and provides a management interface for running containerized MCP servers locally.
+The [MCP Toolkit](https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/) is built into [Docker Desktop (version 4.62+)](https://docs.docker.com/desktop/release-notes/) and provides a management interface for running containerized MCP servers locally.
 
 ### Profiles
 
@@ -201,7 +201,7 @@ Docker's MCP platform is evolving along several axes:
 
 - **MCP Defender as Gateway interceptors** — automated detection of tool poisoning, authority injection, and cross-tool manipulation attacks, integrated directly into the Gateway pipeline
 - **OAuth flow support** — the Gateway will handle OAuth authentication flows for MCP servers that require user-level tokens, removing the need for developers to manually configure tokens
-- **Dynamic MCP management** — based on Docker's MCP Dev Summit talk, the Gateway will support agentic discovery, configuration, and management of MCP workloads, letting AI agents spin up the MCP servers they need on demand
+- **Dynamic MCP management** — discussed at the [MCP Dev Summit North America 2026](https://events.linuxfoundation.org/mcp-dev-summit-north-america/program/schedule/), the Gateway roadmap includes agentic discovery, configuration, and management of MCP workloads, letting AI agents spin up the MCP servers they need on demand
 - **Custom catalogs** — organizations will be able to run private MCP catalogs with their own internal servers, using the same verification and signing infrastructure as the public catalog
 
 ## Further Reading

@@ -40586,3 +40586,29 @@ Datamcp editorial pitch deferred; informed Rob via inbox #2262. Next batch conti
 2026-07-25T01:49:47Z SESSION 3765 stopped
 2026-07-25T02:31:01Z STARTED run 507786 (mode=wild)
 2026-07-25T02:31:02Z SESSION 3766 started
+Run 2637 complete. Audited 5 guides (batch 41), fixed 7 factual errors, committed, and deployed to chatforest.com.
+
+**Summary of what changed:**
+- `mcp-nlp-text-analysis.md` — Hugging Face model count corrected from 200K to 1M+ (massively outdated); unverifiable $1T by 2035 NLP projection cut
+- `mcp-media-production-broadcasting.md` — Suno/Udio lawsuit status updated to settled (late 2025); Disney-OpenAI partnership noted as ended March 2026; DEFIANCE Act status clarified (awaiting House vote, not law); $3.67B and $26.73B projections cut (no sources)
+- `mcp-publishing-journalism.md` — Digital publishing market sourced; copyright cases (Anthropic settlement, NYT vs. Perplexity) linked; unsourced CMS market stat cut
+- `mcp-mental-health-therapy-wellness.md` — SB 243 date corrected (Sep 11 → Oct 13, 2025); market label fixed ("apps" not "digital"); mental health shortage stat updated to current federal data
+- `mcp-scientific-research-laboratory.md` — Six market/stat claims sourced; AlphaFold and replication crisis figures linked to primary papers
+2026-07-25T02:47:43Z FINISHED run 507786
+2026-07-25T02:47:44Z SESSION 3766 stopped
+2026-07-25T03:32:01Z STARTED run 525691 (mode=wild)
+2026-07-25T03:32:03Z SESSION 3767 started
+Run 2638 complete. Here's what happened:
+
+**Citation audit — 5 pages (batch 42), all marked `sources_audited: 2026-07-25`:**
+
+**Factual errors fixed:**
+- **Travel:** "market reached $8.6 billion in 2024" — the 8.6 is the CAGR%, not the 2024 market size. Also cut the "$5–7B AI travel by 2030" claim (actual sources show $13.38B). Ferryhopper/GDP claims linked to primary sources.
+- **Smart Home:** ha-mcp listed as "~1,800 stars" → actual ~3,800 (GitHub confirmed). Market claims now linked to Grand View Research and InsightAce Analytic.
+- **Freelancers:** US freelancers "76.4 million" → 64 million (Upwork 2023 press release). "5–8 hours/week reclaimed" claim cut (source "The AI Hat" does not exist as a verifiable primary source). All table stats now have inline links.
+- **HR:** Illinois law "AIPA" → "Artificial Intelligence Video Interview Act (AIVIA)" with ilga.gov link. Two unsourced stats cut (44% HR execs, 73% plan to invest). NYC LL144, Manatal, and Draup all linked to primary sources.
+- **Collaboration:** Market stats linked; "1.3M visitors" for Figma-Context-MCP cut (no source); "75% of firms" AI comms API claim cut (Gartner says a different metric at 80%); 283 MCP servers claim linked to glama.ai.
+2026-07-25T03:48:33Z FINISHED run 525691
+2026-07-25T03:48:34Z SESSION 3767 stopped
+2026-07-25T04:32:01Z STARTED run 550733 (mode=wild)
+2026-07-25T04:32:02Z SESSION 3768 started

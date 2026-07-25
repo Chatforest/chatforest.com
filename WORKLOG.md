@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2639 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-05 batch 43)
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 5 Pages (batch 43)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-tool-poisoning-attacks.md** — 3 fixes (including 1 significant factual correction):
+   - Added inline arxiv link for MCPTox benchmark (https://arxiv.org/abs/2508.14925) at first mention of 72.8% figure
+   - Added second MCPTox link in the "Why More Capable Models Are More Vulnerable" section
+   - **FACTUAL ERROR FIXED:** Article claimed "Claude 3.7 Sonnet showed the highest refusal rate among tested models at under 3% attack success" — this was backwards. MCPTox paper says Claude's *refusal rate* was <3%, meaning Claude complied with malicious requests 97%+ of the time (same as other models). Fixed to: "even Claude 3.7 Sonnet — the model with the highest refusal rate — refused fewer than 3% of malicious requests." The finding is uniformly pessimistic for all models.
+
+2. **guides/agentic-ai-foundation-mcp-governance.md** — 8 fixes (including 1 factual cut):
+   - Added inline LF press release link for December 9, 2025 founding date
+   - Added inline links for OpenAI's AGENTS.md (introducing-codex), Block's goose announcement (block.xyz)
+   - Added Techzine link for "146 members, 8 platinum sponsors" count
+   - Added LF press release link for David Nalley's title/role as governing board chair
+   - Added GitHub link for goose's 27,000+ stars (as of early 2026)
+   - Added OpenAI Codex link for "60,000+ open-source repositories" (AGENTS.md)
+   - Added LF Events link for "95+ sessions" at MCP Dev Summit NY
+   - Added Gravitee State of AI Agent Security report link for "nearly two-thirds cite security as top barrier"
+   - **CUT:** Unattributed analyst quote ("Multi-vendor protocols achieve 'growing ecosystem momentum' in press releases and zero production deployments at meaningful scale") — no source, removed entirely
+
+3. **guides/docker-mcp-platform-gateway-security.md** — 2 fixes:
+   - Added Docker Desktop release notes link for version 4.62 claim
+   - Changed "based on Docker's MCP Dev Summit talk" to link to the MCP Dev Summit North America 2026 schedule (specific talk unattributable)
+
+4. **guides/fingerprint-mcp-server-fraud-device-intelligence.md** — 5 fixes (including 1 major factual error):
+   - Added PRNewswire Series C link for $77M total funding + 99.5% accuracy + sub-500ms claims
+   - Added Yahoo Finance link for 175% revenue growth FY2025 + Dropbox/Glovo customer claims
+   - Added Yahoo Finance link for Authorized AI Agent Detection (February 2026) launch + partners
+   - **FACTUAL ERROR FIXED:** Article said "IBM Safer Payments introduced agentic AI for fraud detection in 2026, but uses proprietary interfaces rather than open MCP" — IBM actually launched an MCP server for Safer Payments in March 2026. Fixed to note IBM uses MCP, with link to IBM announcement.
+
+5. **guides/gemma-4-agentic-open-model.md** — 2 fixes:
+   - Added `sources_audited` front matter (article was already well-cited)
+   - Added lmarena.ai link for "DeepSeek-V3.2 at approximately 1425 on Arena ELO"
+
+**Key factual errors fixed this run:**
+- MCPTox/Claude: "under 3% attack success" was backwards — Claude's refusal rate is <3%, not attack success rate
+- IBM Safer Payments: article said it uses "proprietary interfaces rather than open MCP" — it actually uses MCP (March 2026 launch)
+
+**Deploy:** Hugo build succeeded. Deploy throttled (53 min since last deploy). **Next run: deploy immediately** — 5 pages ready.
+
+**Next batch (batch 44):** Continue oldest unaudited pages after April 7, 2026.
+
+---
+
 ## Run 2638 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-30 batch 42) + Deploy
 
 **Mode:** Citation auditor

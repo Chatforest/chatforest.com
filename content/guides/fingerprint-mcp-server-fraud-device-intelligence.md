@@ -5,6 +5,7 @@ description: "Fingerprint launched the first open-source MCP server for fraud pr
 content_type: "Guide"
 card_description: "Fingerprint's MCP Server connects AI assistants directly to its device intelligence platform, letting fraud analysts investigate suspicious activity through natural language instead of dashboards. This guide covers the architecture, tools exposed, Smart Signals integration, Authorized AI Agent Detection, and what the dual deployment model means for enterprise fraud teams."
 last_refreshed: 2026-04-06
+sources_audited: 2026-07-25
 ---
 
 Fraud investigation has always been dashboard-heavy — analysts click through visitor timelines, cross-reference IP addresses, and manually flag suspicious events. Fingerprint's MCP Server changes the interface: instead of dashboards, fraud teams talk to AI assistants that query device intelligence data directly.
@@ -13,9 +14,9 @@ Launched on March 16, 2026, Fingerprint's MCP Server is the first open-source MC
 
 ## What Fingerprint Does (and Why MCP Matters for It)
 
-Fingerprint is a device intelligence platform that identifies returning visitors with 99.5% accuracy in under 500 milliseconds. It processes nearly 100 browser, device, and network signals to generate a stable visitor identifier — even across incognito sessions, VPN changes, and browser updates.
+Fingerprint is a device intelligence platform that identifies returning visitors with [99.5% accuracy in under 500 milliseconds](https://www.prnewswire.com/news-releases/fingerprint-raises-33m-in-series-c-funding-to-accelerate-enterprise-device-intelligence-and-fraud-prevention-adoption-301958088.html). It processes nearly 100 browser, device, and network signals to generate a stable visitor identifier — even across incognito sessions, VPN changes, and browser updates.
 
-The company has raised $77 million across four funding rounds (Series C led by Nexus Venture Partners), reported 175% revenue growth in FY2025, and counts Dropbox, Glovo, and multiple Fortune 500 companies among its customers. Fingerprint serves fintech, e-commerce, SaaS, travel, and hospitality sectors.
+The company has raised [$77 million across four funding rounds (Series C led by Nexus Venture Partners)](https://www.prnewswire.com/news-releases/fingerprint-raises-33m-in-series-c-funding-to-accelerate-enterprise-device-intelligence-and-fraud-prevention-adoption-301958088.html), reported [175% revenue growth in FY2025](https://finance.yahoo.com/news/fingerprint-reports-175-revenue-growth-110000730.html), and counts [Dropbox, Glovo, and multiple Fortune 500 companies](https://finance.yahoo.com/news/fingerprint-reports-175-revenue-growth-110000730.html) among its customers. Fingerprint serves fintech, e-commerce, SaaS, travel, and hospitality sectors.
 
 Before MCP, integrating Fingerprint into AI workflows meant building custom API clients, writing glue code to parse responses, and maintaining those integrations as the API evolved. The MCP Server eliminates that friction — any AI assistant that speaks MCP can query Fingerprint's data directly, with no custom code required.
 
@@ -116,14 +117,14 @@ When a fraud analyst asks the AI assistant "show me all events from visitor X in
 
 ## Authorized AI Agent Detection: The Other Side of the Coin
 
-One month before launching the MCP Server, Fingerprint released **Authorized AI Agent Detection** (February 2026) — a capability for identifying legitimate AI agents visiting websites and distinguishing them from malicious bots.
+One month before launching the MCP Server, Fingerprint released [**Authorized AI Agent Detection** (February 2026)](https://finance.yahoo.com/news/fingerprint-launches-authorized-ai-agent-120000943.html) — a capability for identifying legitimate AI agents visiting websites and distinguishing them from malicious bots.
 
 This creates a two-sided value proposition:
 
 1. **MCP Server** — your AI agents query Fingerprint's data to investigate fraud
 2. **Agent Detection** — Fingerprint identifies other AI agents hitting your sites, telling you which are authorized and which are threats
 
-The Agent Detection ecosystem launched with partners including OpenAI, AWS AgentCore, Browserbase, Manus, and Anchor Browser. When a known, authorized AI agent visits a Fingerprint-protected site, the system returns a positive identification with 100% certainty rather than flagging it as bot traffic.
+The Agent Detection ecosystem [launched with partners](https://finance.yahoo.com/news/fingerprint-launches-authorized-ai-agent-120000943.html) including OpenAI, AWS AgentCore, Browserbase, Manus, and Anchor Browser. When a known, authorized AI agent visits a Fingerprint-protected site, the system returns a positive identification with 100% certainty rather than flagging it as bot traffic.
 
 This matters because the line between "legitimate AI automation" and "bot fraud" is getting harder to draw. An AI shopping agent placing orders on behalf of a user looks identical to a bot performing credential stuffing — unless you can verify its identity. Fingerprint's approach is to maintain a registry of known agent signatures and match incoming traffic against it.
 
@@ -176,7 +177,7 @@ Fingerprint positions this as "industry-first" — the first MCP server specific
 
 - **Stripe, PayPal, Square** have MCP servers for payment operations, but not fraud investigation
 - **Unit21** (a Fingerprint integration partner) focuses on case management, not device intelligence
-- **IBM Safer Payments** introduced agentic AI for fraud detection in 2026, but uses proprietary interfaces rather than open MCP
+- [**IBM Safer Payments**](https://www.ibm.com/new/announcements/ibm-safer-payments-introduces-agentic-ai-enabled-fraud-detections) also introduced agentic AI fraud detection via MCP in March 2026, though its focus is transaction-level risk intelligence rather than device signals
 
 Fingerprint's advantage is the depth of device signals. Most fraud APIs return basic risk scores; Fingerprint returns 30+ granular signals that explain *why* something is suspicious. Exposing those signals through MCP means AI assistants can reason about fraud patterns rather than just reporting scores.
 
