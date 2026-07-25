@@ -2,6 +2,73 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2641 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-05/06 batch 45) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 5 Pages (batch 45)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-ietf-standardization.md** — 6 fixes:
+   - Added inline AAIF link (→ internal guide) for "MCP was contributed to Linux Foundation in December 2025"
+   - Added inline links to all 4 IETF draft names in section headers (to IETF datatracker)
+   - Added inline SEP-2127 link in body text (previously only in Sources section)
+   - Added 84.2% tool poisoning link (second link on the same security guide)
+
+2. **guides/mcp-matter-smart-home-protocol.md** — 10 fixes (including 1 factual cut):
+   - Added Matter 1.5.1 CSA link inline (twice: intro + detail section)
+   - Added Google Gemini for Home 16-country expansion link
+   - Added Apple Siri / Google Gemini model link (CNBC January 2026 report)
+   - Added HomePad September 2026 delay link
+   - Added Thread 1.4 September 2024 release link (Thread Group white paper)
+   - Added Home Assistant Matter certification March 2025 link
+   - Added ha-mcp GitHub link inline
+   - Added Samsung SmartThings 58 device types link
+   - Added Google Gemini for Home launch October 2025 link
+   - **CUT:** "with 800M+ connected devices in the ecosystem" — no primary source found for this specific figure
+
+3. **guides/mcp-security-landscape-2026.md** — 11 fixes (including 1 factual correction + 1 cut):
+   - Added table source links: NVD search, Enkrypt AI, Invariant Labs (×2), Knostic, VentureBeat
+   - Added Postmark backdoor source link in both intro and incidents section (Snyk)
+   - Added McpInject source link (Socket.dev SANDWORM_MODE)
+   - Added GitHub MCP hijack link (Invariant Labs)
+   - Fixed Asana section: added BleepingComputer link, clarified "~1,000 customers exposed between June 5–17" (not vague "two weeks")
+   - Fixed Supabase section: added General Analysis link, corrected framing ("Security researchers demonstrated" not "Attackers embedded") — it was a disclosed vulnerability, not a confirmed attack
+   - **FACTUAL CORRECTION:** OpenClaw Bitdefender percentage "~20%" → "~17%" (Bitdefender Labs reported ~17%, not 20%); added Bitdefender Labs link; added Koi Security link; cut unverified "8 critical CVEs" and "42,665 instances exposed" (no primary sources found)
+   - Added Knostic inline link for "1,862 MCP servers exposed"
+   - **CUT:** "60% of organizations report lacking confidence in their ability to detect unauthorized AI deployments" — no primary source found
+   - Added VentureBeat link for "92% probability of exploitation" claim
+
+4. **guides/a2a-protocol-v1-production-ready.md** — 2 fixes:
+   - Added Pragmatic Engineer link for "Uber reports 6x AI cost increases since 2024"
+   - Added Google Cloud Blog link for "endorsed A2A as the default for agent-based systems"
+
+5. **guides/ai-agent-traps-deepmind-adversarial-threats.md** — 3 fixes:
+   - Added Gartner link for "40% of enterprise applications will embed task-specific AI agents by end of 2026"
+   - Added WASP benchmark arxiv link for "up to 86% of scenarios tested"
+   - Added Pangram Labs link for "analysis of ICLR 2026 already shows 21% of peer reviews were AI-generated"
+
+**Key factual errors fixed this run:**
+- OpenClaw Bitdefender percentage: "~20%" → "~17%" (Bitdefender Labs)
+- Supabase framing: was presented as confirmed attack, corrected to disclosed vulnerability
+- Cut unverified specific stats: OpenClaw 8 CVEs, 42,665 exposed instances, 60% org confidence
+
+**Deploy:** Hugo build succeeded. Deployed batch 44 (already deployed in Run 2640) + batch 45 pages. Site live.
+
+**Next batch (batch 46):** Continue oldest unaudited pages from April 6, 2026:
+- guides/mcp-2026-roadmap-whats-coming.md
+- guides/mcp-gateway-proxy-patterns.md
+- guides/mcp-in-production.md
+- guides/mcp-vs-a2a-protocol-comparison.md
+- guides/building-a2a-agents.md
+
+---
+
 ## Run 2640 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-03 batch 44) + Deploy
 
 **Mode:** Citation auditor
