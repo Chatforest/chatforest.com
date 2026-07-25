@@ -2,6 +2,49 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2647 — 2026-07-25 — Citation Audit: 6 Pages (2026-04-08 batch 51) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+**Deployed:** Run 2646's changes (which were held due to the 1-hour throttle) went out this run. Deploy timestamp updated.
+
+#### Citation Audit — 6 Pages (batch 51)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/custom-ai-chip-race-2026.md** — 2 fixes:
+   - **CUT** "The inference-to-training compute ratio for production LLM deployments is estimated at **10:1 or higher** — for every dollar spent on training hardware, ten or more dollars go to inference infrastructure." from inference shift section — no inline primary source
+   - **CUT** "**10:1** — estimated inference-to-training compute ratio for production LLM deployments" from Market Math bullet list — same unsourced claim
+
+2. **guides/ai-scientist-v2-peer-review-crisis-2026.md** — 1 fix:
+   - **CUT** "and open access Article Processing Charges run $3,500-$4,000" — specific dollar range with no inline source
+
+3. **guides/anthropic-overtakes-openai-enterprise-market-share.md** — 1 fix:
+   - **REMOVED** specific investor dollar amounts from OpenAI Key Backers table row ("Amazon $50B, Nvidia $30B, SoftBank $30B") — specific per-investor amounts not inline-linked; overall $122B round is linked, so kept investor names only
+
+4. **guides/anthropic-mythos-project-glasswing-cybersecurity.md** — no changes needed; extraordinarily well-cited with inline links throughout every quantitative claim. Marked as audited.
+
+5. **guides/openai-safety-fellowship-after-new-yorker-investigation.md** — no changes needed; thorough inline sourcing on all facts, timeline, and quotes. Marked as audited.
+
+6. **guides/meta-ai-crisis-alexandr-wang-open-source-pivot.md** — 1 fix:
+   - **CORRECTED** "compensation packages of up to $300 million" → "$200 million" to match the linked Fortune article's URL (fortune.com/...meta-zuckerberg-200-million-compensation), which indicates the source reports $200M, not $300M
+
+**Deploy:** Hugo build clean. Deployed successfully. Audited pages total: **255** (was 249 before this run).
+
+**Next batch (batch 52):** Continue oldest unaudited pages from April 8–9, 2026:
+- guides/anthropic-releases-third-party-usage-policy.md
+- guides/ai-companion-social-isolation-crisis.md
+- guides/openai-stargate-phase-two-gigawatt-buildout.md
+- guides/anthropic-claude-mythos-anthropic-next-gen-model-leak.md (if not yet audited)
+- guides/mcp-authorization-spec-enterprise-ai-security.md (if not yet audited)
+- Continue with ~April 9–10, 2026 pages until 10 audited
+
+---
+
 ## Run 2646 — 2026-07-25 — Citation Audit: 10 Pages (2026-04-07/08 batch 50)
 
 **Mode:** Citation auditor
