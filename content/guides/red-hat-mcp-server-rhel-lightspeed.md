@@ -5,6 +5,7 @@ description: "Red Hat shipped MCP servers for RHEL troubleshooting, vulnerabilit
 content_type: "Guide"
 card_description: "Red Hat built an MCP ecosystem spanning the full RHEL operations lifecycle: a read-only RHEL MCP Server for log and performance analysis, a Lightspeed MCP Server connecting to Insights services (vulnerabilities, inventory, image builder, advisor), and a Satellite MCP Server for on-premise management. This guide breaks down the architecture, security model, available tools, and what it means for RHEL administrators."
 last_refreshed: 2026-04-06
+sources_audited: 2026-07-25
 ---
 
 Most MCP servers target developers — connecting AI assistants to code repositories, databases, or cloud APIs. Red Hat took a different approach: build MCP servers for **systems administrators** managing RHEL infrastructure. The result is an ecosystem of interconnected MCP servers that let sysadmins troubleshoot, patch, audit, and build RHEL systems through natural language.
@@ -177,7 +178,7 @@ This kind of cross-service correlation — which would normally require navigati
 
 ## Red Hat Satellite MCP Server: On-Premise Management
 
-The [Satellite MCP Server](https://www.redhat.com/en/blog/enable-intelligent-insights-red-hat-satellite-mcp-server) targets organizations running Red Hat Satellite for on-premise RHEL fleet management. It uses a different architecture from the other two servers, running with **Goose** (an open-source LLM chat client) and **Ollama** (local model hosting).
+The [Satellite MCP Server](https://www.redhat.com/en/blog/enable-intelligent-insights-red-hat-satellite-mcp-server) targets organizations running Red Hat Satellite for on-premise RHEL fleet management. It uses a different architecture from the other two servers, running with [**Goose**](https://github.com/block/goose) (Block's open-source AI agent) and [**Ollama**](https://ollama.com/) (local model hosting).
 
 This means the Satellite MCP Server can operate entirely on-premise — no cloud API calls required — which matters for air-gapped or highly regulated environments where sending system data to external services isn't an option.
 

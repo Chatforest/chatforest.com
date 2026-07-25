@@ -5,6 +5,7 @@ description: "Datadog's engineering team rebuilt their MCP server after watching
 content_type: "Guide"
 card_description: "Datadog's MCP server went GA in March 2026. Their engineering team shares hard-won lessons: why API wrappers fail for agents, how to cut token usage 5x with format changes, why pagination needs rethinking, and four real-world use cases from enterprise teams."
 last_refreshed: 2026-04-06
+sources_audited: 2026-07-25
 ---
 
 Datadog's remote MCP server [went generally available on March 10, 2026](https://www.globenewswire.com/news-release/2026/03/09/3251890/0/en/Datadog-Launches-MCP-Server-to-Provide-AI-Agents-with-Secure-Real-Time-Access-to-Unified-Observability-Data.html). It's one of the most production-ready MCP integrations in the ecosystem — a hosted server with 16+ core tools, optional specialized toolsets, and integrations with Claude Code, Cursor, OpenAI Codex CLI, GitHub Copilot, VS Code, Goose, and more.
@@ -33,7 +34,7 @@ The single biggest improvement Datadog made was changing how data reaches the ag
 
 ### Format matters more than you think
 
-Switching from JSON to CSV/TSV for tabular data cut token usage roughly in half. For nested data, YAML saved about 20% versus JSON. Combined with field trimming (removing rarely-used fields from default output), the team achieved approximately **5x more records in the same number of tokens**.
+Switching from JSON to CSV/TSV for tabular data [cut token usage roughly in half](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/). For nested data, [YAML saved about 20% versus JSON](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/). Combined with field trimming (removing rarely-used fields from default output), the team achieved approximately [**5x more records in the same number of tokens**](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/).
 
 This is a dramatic improvement from a change that requires zero modifications to the underlying data. Any MCP server returning structured data should consider format optimization:
 
@@ -70,9 +71,9 @@ ORDER BY error_count DESC
 LIMIT 10
 ```
 
-As Datadog's engineers noted: "Agents are quite good at writing [queries], and it gives them fine-grained control over what data ends up in context."
+As Datadog's engineers [noted](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/): "Agents are quite good at writing [queries], and it gives them fine-grained control over what data ends up in context."
 
-The query-based approach achieved roughly **40% cheaper runs** in their evaluation scenarios. The agent specifies filters, aggregations, and field selections server-side, so only relevant, summarized data enters the context window.
+The query-based approach achieved roughly [**40% cheaper runs**](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/) in their evaluation scenarios. The agent specifies filters, aggregations, and field selections server-side, so only relevant, summarized data enters the context window.
 
 This principle applies broadly. If your MCP server exposes a data source where agents might need to search, filter, or aggregate, providing a query interface (SQL, a query DSL, or even structured filter parameters) will dramatically improve agent performance and reduce costs.
 

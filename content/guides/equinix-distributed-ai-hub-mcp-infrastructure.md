@@ -5,6 +5,7 @@ description: "Equinix built a vendor-neutral AI hub across 280 data centers, wit
 content_type: "Guide"
 card_description: "Equinix's Distributed AI Hub combines Fabric Intelligence — an AI-driven network control plane — with MCP servers exposing 40+ tools for connection management, cloud routing, telemetry, and pricing. Backed by a Palo Alto Networks security partnership and positioned as vendor-neutral infrastructure, this guide breaks down the architecture, MCP integration, and what it means for enterprise AI networking."
 last_refreshed: 2026-04-06
+sources_audited: 2026-07-25
 ---
 
 Most AI infrastructure conversations focus on compute — GPUs, model hosting, inference endpoints. But the network layer connecting those resources is just as critical, and it's where Equinix is making its move. The company launched the **Distributed AI Hub** in March 2026, backed by **Fabric Intelligence** (an AI-driven control plane) and an **MCP server** that lets AI agents manage network infrastructure through natural language.
@@ -17,7 +18,7 @@ Enterprise AI doesn't run in one place. Training happens on GPU clusters in one 
 
 Connecting all of this is a networking problem. Today, that networking is largely manual: provisioning connections through web portals, configuring BGP routing by hand, adjusting bandwidth through support tickets. When an AI workload needs to scale, the network becomes the bottleneck — not because of capacity, but because of operational friction.
 
-As Jon Lin, Equinix's Chief Business Officer, put it at the launch: "AI isn't centralized — but the right infrastructure can make it run as seamlessly as if it were."
+As [Jon Lin, Equinix's Chief Business Officer](https://newsroom.equinix.com/2026-03-11-Equinix-Unveils-the-Distributed-AI-Hub-to-Simplify-and-Secure-Enterprise-AI-Infrastructure), put it at the launch: "AI isn't centralized — but the right infrastructure can make it run as seamlessly as if it were."
 
 ## The Distributed AI Hub
 
@@ -35,7 +36,7 @@ The Hub provides a single entry point to:
 
 ### The Vendor-Neutral Angle
 
-This is where Equinix differentiates from hyperscaler AI marketplaces. AWS, Azure, and GCP all have AI infrastructure offerings, but they naturally favor their own services. Equinix positions itself as neutral ground — connecting approximately 3,000 cloud and IT service providers, with over 10,000 organizations colocating in its facilities.
+This is where Equinix differentiates from hyperscaler AI marketplaces. AWS, Azure, and GCP all have AI infrastructure offerings, but they naturally favor their own services. Equinix positions itself as neutral ground — [connecting approximately 3,000 cloud and IT service providers and 10,500+ customers](https://www.equinix.com/) as a neutral provider where they can control their infrastructure, preserve choice, and avoid vendor lock-in.
 
 Lloyd Taylor, CTO/CISO at Alembic, described the value: "It's more than compute and data, it's controlling where the data lives and how the compute runs. Equinix is framing that problem the right way, by bringing placement, governance, and predictable performance into the same architecture."
 
@@ -114,7 +115,7 @@ This turns network operations from a portal-clicking exercise into something an 
 
 ## Security: The Palo Alto Networks Partnership
 
-Announced alongside the Distributed AI Hub, Equinix partnered with Palo Alto Networks to integrate **Prisma AIRS** — an AI-specific security platform — directly into the Hub.
+Announced alongside the Distributed AI Hub, Equinix [partnered with Palo Alto Networks](https://blog.equinix.com/blog/2026/03/11/equinix-and-palo-alto-networks-partner-to-enable-ai-you-can-trust/) to integrate **Prisma AIRS** — an AI-specific security platform — directly into the Hub.
 
 ### What Prisma AIRS Adds
 
@@ -144,12 +145,12 @@ For infrastructure companies, this pattern is particularly interesting. A single
 
 Equinix isn't the only infrastructure provider with MCP support. Here's how the major players compare:
 
-| Provider | MCP Servers | Tool Count | Focus Area | Differentiator |
-|----------|------------|------------|-----------|----------------|
-| **Equinix** | 2 (Fabric, Peering) | 40+ | Network interconnection | Vendor-neutral, physical infrastructure |
-| **AWS** | 66 open-source + 1 managed | 15,000+ APIs | Full cloud stack | Breadth of services, IAM integration |
-| **Azure** | 2 (Infrastructure, DevOps) | 40+ | Infrastructure + DevOps | Active Directory integration |
-| **Google Cloud** | 4 (preview) | Varies | Compute, data, Kubernetes | BigQuery and GKE focus |
+| Provider | MCP Servers | Focus Area | Differentiator |
+|----------|------------|-----------|----------------|
+| **Equinix** | 2 (Fabric, Peering) | Network interconnection | Vendor-neutral, physical infrastructure |
+| **AWS** | Multiple (open-source) | Full cloud stack | Breadth of services, IAM integration |
+| **Azure** | 2 (Infrastructure, DevOps) | Infrastructure + DevOps | Active Directory integration |
+| **Google Cloud** | Multiple (preview) | Compute, data, Kubernetes | BigQuery and GKE focus |
 
 ### Where Equinix Fits
 
