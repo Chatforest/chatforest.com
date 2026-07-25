@@ -5,6 +5,7 @@ description: "Duolingo built an enterprise AI Slackbot with 180+ MCP tools and a
 content_type: "Guide"
 card_description: "Duolingo's DevXAI team built an AI Slackbot that connects 180+ MCP tools for triaging alerts, debugging incidents, and answering employee questions. Behind it sits a no-code agentic workflow platform on Temporal that lets anyone create AI coding agents in minutes. This case study breaks down the architecture, MCP integration, and lessons for enterprise adoption."
 last_refreshed: 2026-04-06
+sources_audited: 2026-07-25
 ---
 
 Duolingo isn't just a language-learning app anymore. Behind the scenes, its DevXAI team has built one of the most ambitious enterprise MCP deployments documented to date: an internal AI Slackbot connecting 180+ MCP tools, plus a no-code platform that lets any employee — not just engineers — create and deploy AI coding agents in under five minutes.
@@ -50,7 +51,7 @@ Most enterprise MCP deployments documented to date operate at far smaller scales
 | Company | MCP Tools | Context |
 |---------|-----------|---------|
 | **Duolingo** | 180+ | Internal Slackbot assistant |
-| **Pinterest** | ~20 across multiple servers | Engineering automation |
+| **Pinterest** | Multiple domain-specific servers (Presto, Spark, Airflow, others) | Engineering automation |
 | **Datadog** | ~16 core + 13 optional toolsets | External developer tool |
 
 Duolingo's 180+ tool count is significant because it tests MCP at a scale where tool selection becomes a core challenge. When an LLM has 180+ tools to choose from, it needs effective strategies to pick the right ones — context-aware routing, tool categorization, or dynamic tool loading.

@@ -147,7 +147,7 @@ The most advanced integration: autonomous AI agents that can investigate inciden
 
 ## Production Metrics
 
-As of January 2025 (the most recent published data):
+As of early 2025 ([the most recent published data](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1)):
 
 | Metric | Value |
 |--------|-------|
@@ -157,7 +157,7 @@ As of January 2025 (the most recent published data):
 
 The hours-saved estimate comes from user feedback comparing MCP-assisted workflows against manual approaches. At 844 active users, that's roughly **8.3 hours saved per user per month** — about two hours per week of engineering time reclaimed.
 
-For a company of Pinterest's scale (approximately 5,000 employees), 844 active users represents meaningful but not yet universal adoption. The numbers suggest MCP is past the early-adopter phase and moving toward mainstream internal use.
+For a company of Pinterest's scale ([approximately 5,000 employees](https://stockanalysis.com/stocks/pins/employees/)), 844 active users represents meaningful but not yet universal adoption. The numbers suggest MCP is past the early-adopter phase and moving toward mainstream internal use.
 
 ## Design Decisions and Trade-offs
 
@@ -207,9 +207,9 @@ Pinterest's 7,000-hours-per-month metric makes the business case tangible. Track
 
 Pinterest is among the first companies to publish a detailed MCP production case study, but they're not alone in building enterprise MCP ecosystems:
 
-- **Block** (formerly Square) is a Platinum AAIF member and has invested heavily in MCP integration
-- **Bloomberg** is exploring MCP for financial data access across their terminal and data products
-- **Cloudflare** offers MCP server hosting as a platform service
+- **[Block](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation)** (formerly Square) is a co-founding member of the AAIF and donated its open-source agent framework [goose](https://github.com/block/goose) as a founding project
+- **Bloomberg** is a [Platinum AAIF member](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) investing in MCP ecosystem infrastructure
+- **[Cloudflare](https://blog.cloudflare.com/enterprise-mcp/)** offers MCP gateway and proxy infrastructure as a platform service
 - **Microsoft's Agent Governance Toolkit** provides governance infrastructure that complements approaches like Pinterest's
 
 What makes Pinterest's case study distinctive is the level of architectural detail and the concrete metrics. Most enterprise MCP discussions stay at the "we're exploring it" level — Pinterest shows what production actually looks like.

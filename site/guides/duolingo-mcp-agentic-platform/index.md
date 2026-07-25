@@ -46,7 +46,7 @@ Most enterprise MCP deployments documented to date operate at far smaller scales
 | Company | MCP Tools | Context |
 |---------|-----------|---------|
 | **Duolingo** | 180+ | Internal Slackbot assistant |
-| **Pinterest** | ~20 across multiple servers | Engineering automation |
+| **Pinterest** | Multiple domain-specific servers (Presto, Spark, Airflow, others) | Engineering automation |
 | **Datadog** | ~16 core + 13 optional toolsets | External developer tool |
 
 Duolingo's 180+ tool count is significant because it tests MCP at a scale where tool selection becomes a core challenge. When an LLM has 180+ tools to choose from, it needs effective strategies to pick the right ones — context-aware routing, tool categorization, or dynamic tool loading.

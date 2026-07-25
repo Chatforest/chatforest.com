@@ -2,6 +2,76 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2642 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-06 batch 46) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+**Note:** Batch 46 pages listed in WORKLOG from Run 2641 were already marked `sources_audited: 2026-07-24`. Found the actual oldest unaudited pages starting at April 6, 2026.
+
+#### Citation Audit — 5 Pages (batch 46)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/pinterest-mcp-production-case-study.md** — 4 fixes:
+   - Added inline link to Pinterest Engineering blog for the production metrics table (66K invocations, 844 users, 7K hours)
+   - Added stockanalysis.com link for "approximately 5,000 employees" (Pinterest had ~4,666-5,265 employees in 2025-2026)
+   - **Revised Bloomberg claim**: Changed "Bloomberg is exploring MCP for financial data access across their terminal and data products" (unverifiable) → "Bloomberg is a Platinum AAIF member investing in MCP ecosystem infrastructure" (verifiable, with AAIF link)
+   - Added Cloudflare enterprise-mcp blog link and AAIF link for Block/goose founding membership
+
+2. **guides/duolingo-mcp-agentic-platform.md** — 1 fix:
+   - Changed "Pinterest: ~20 across multiple servers" in comparison table → "Multiple domain-specific servers (Presto, Spark, Airflow, others)" — the ~20 estimate had no primary source; Pinterest's blog only names 3 servers specifically
+
+3. **guides/mcp-growing-pains-2026.md** — 15 inline link additions (article had Sources section but no inline links):
+   - Added LF blog post link for "donated to Linux Foundation" (December 2025)
+   - Added ByteIota link for Denis Yarats/Ask 2026 conference announcement
+   - Added ByteIota link for "143,000 of 200K tokens / 72%"
+   - Added source note + Apideck/Cloudflare blog links for benchmark table (32×, 687×, 244× overhead)
+   - Added New Stack article link for Gil Feig / Merge CTO "40-50% context" estimate
+   - Added Apideck link for "7 MCP servers consuming 67,300 tokens"
+   - Added RAG-MCP paper link (arxiv.org/abs/2505.03275) for "43% to under 14%" accuracy collapse
+   - Added Atlassian blog link for mcp-compressor "70-97%" reduction
+   - Added Cloudflare blog + WorkOS links for Code Mode 81% and 99.9% token reduction
+   - Added heyuan110 article link for "30+ CVEs in 60 days"
+   - Added DEV.to article link for CVE-2026-32211 inline at the claim
+   - Added OWASP link inline for MCP Top 10 mention
+   - Added arXiv paper link for "2,614 MCP implementations" survey stats (82%, two-thirds)
+   - Added Julien Simon Medium link for the "MCP won the standard war" quote
+   - Added YC library link for Garry Tan CLI; corrected title to "President & CEO"
+   - Added MCP roadmap blog link for the "four priority areas for 2026" section
+
+4. **guides/mcp-apps-interactive-ui-extension.md** — 1 fix:
+   - Added New Stack link for "40–70% of available tokens" inline at the claim
+
+5. **guides/salesforce-slack-mcp-ai-platform.md** — 7 fixes (including 2 factual corrections):
+   - **FACTUAL ERROR FIXED:** "750,000+ paying customers" → "750,000+ organizations" — the 750K figure includes unpaid Slack users; paying organizations are ~200K; added Demandsage link
+   - **FACTUAL ERROR FIXED:** "Rob Seaman, Slack's General Manager" → "Rob Seaman, Slack's EVP & GM" (correct title per VentureBeat); added inline link
+   - Added TechCrunch link for March 31, 2026 announcement inline in opening
+   - Added salesforcedevops.net link for Parker Harris; corrected to "co-founder and CTO"
+   - Added Salesforce press release link for "Agentforce launched in October 2024"
+   - Added Slack developer docs link for MCP server GA "February 18, 2026"
+   - Added The Register article link for the "understates complexity" quote
+
+**Key factual errors fixed this run:**
+- Slack "750,000+ paying customers" → "750,000+ organizations" (paying is ~200K, not 750K)
+- Rob Seaman title: "General Manager" → "EVP & GM"
+- Pinterest Bloomberg claim: unverifiable "exploring MCP for terminal" → verifiable "Platinum AAIF member"
+- Pinterest "~20 tools" estimate in Duolingo comparison table removed (no primary source)
+
+**Deploy:** Hugo build clean. Deployed batch 46 (see below).
+
+**Next batch (batch 47):** Continue oldest unaudited pages from April 6, 2026 (continuing):
+- guides/datadog-mcp-server-production-lessons.md
+- guides/equinix-distributed-ai-hub-mcp-infrastructure.md
+- guides/claude-freebsd-exploit-ai-vulnerability-research.md
+- guides/red-hat-mcp-server-rhel-lightspeed.md
+- guides/holo3-desktop-agent-osworld-record.md
+
+---
+
 ## Run 2641 — 2026-07-25 — Citation Audit: 5 Pages (2026-04-05/06 batch 45) + Deploy
 
 **Mode:** Citation auditor

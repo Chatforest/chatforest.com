@@ -208,7 +208,7 @@
 <h3 id="autonomous-agents">Autonomous Agents</h3>
 <p>The most advanced integration: autonomous AI agents that can investigate incidents and propose code changes. These agents use multiple MCP servers in sequence — querying data sources, checking system status, and drafting pull requests — with human approval gates at critical steps.</p>
 <h2 id="production-metrics">Production Metrics</h2>
-<p>As of January 2025 (the most recent published data):</p>
+<p>As of early 2025 (<a href="https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1">the most recent published data</a>):</p>
 <table>
 <thead>
 <tr>
@@ -232,7 +232,7 @@
 </tbody>
 </table>
 <p>The hours-saved estimate comes from user feedback comparing MCP-assisted workflows against manual approaches. At 844 active users, that&rsquo;s roughly <strong>8.3 hours saved per user per month</strong> — about two hours per week of engineering time reclaimed.</p>
-<p>For a company of Pinterest&rsquo;s scale (approximately 5,000 employees), 844 active users represents meaningful but not yet universal adoption. The numbers suggest MCP is past the early-adopter phase and moving toward mainstream internal use.</p>
+<p>For a company of Pinterest&rsquo;s scale (<a href="https://stockanalysis.com/stocks/pins/employees/">approximately 5,000 employees</a>), 844 active users represents meaningful but not yet universal adoption. The numbers suggest MCP is past the early-adopter phase and moving toward mainstream internal use.</p>
 <h2 id="design-decisions-and-trade-offs">Design Decisions and Trade-offs</h2>
 <h3 id="what-pinterest-got-right">What Pinterest Got Right</h3>
 <p><strong>Domain isolation over convenience.</strong> Multiple small servers are harder to set up than one big server, but the benefits — access control, context management, team ownership — compound as the ecosystem grows.</p>
@@ -261,9 +261,9 @@
 <h2 id="how-this-compares-to-other-enterprise-mcp-deployments">How This Compares to Other Enterprise MCP Deployments</h2>
 <p>Pinterest is among the first companies to publish a detailed MCP production case study, but they&rsquo;re not alone in building enterprise MCP ecosystems:</p>
 <ul>
-<li><strong>Block</strong> (formerly Square) is a Platinum AAIF member and has invested heavily in MCP integration</li>
-<li><strong>Bloomberg</strong> is exploring MCP for financial data access across their terminal and data products</li>
-<li><strong>Cloudflare</strong> offers MCP server hosting as a platform service</li>
+<li><strong><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation">Block</a></strong> (formerly Square) is a co-founding member of the AAIF and donated its open-source agent framework <a href="https://github.com/block/goose">goose</a> as a founding project</li>
+<li><strong>Bloomberg</strong> is a <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation">Platinum AAIF member</a> investing in MCP ecosystem infrastructure</li>
+<li><strong><a href="https://blog.cloudflare.com/enterprise-mcp/">Cloudflare</a></strong> offers MCP gateway and proxy infrastructure as a platform service</li>
 <li><strong>Microsoft&rsquo;s Agent Governance Toolkit</strong> provides governance infrastructure that complements approaches like Pinterest&rsquo;s</li>
 </ul>
 <p>What makes Pinterest&rsquo;s case study distinctive is the level of architectural detail and the concrete metrics. Most enterprise MCP discussions stay at the &ldquo;we&rsquo;re exploring it&rdquo; level — Pinterest shows what production actually looks like.</p>

@@ -5,13 +5,14 @@ description: "Salesforce is turning Slackbot into an MCP client that connects to
 content_type: "Guide"
 card_description: "Salesforce announced 30 new AI features for Slackbot, including MCP client functionality that connects to Agentforce and 6,000+ enterprise apps. This breakdown covers the architecture, AI Skills system, official Slack MCP server, CRM integration, and what enterprises should know."
 last_refreshed: 2026-04-06
+sources_audited: 2026-07-25
 ---
 
-Salesforce just made its biggest move in the MCP ecosystem. On March 31, 2026, the company announced 30 new AI features for Slackbot — headlined by MCP client functionality that turns Slack's built-in assistant into an orchestration layer for Agentforce, Salesforce's AI agent platform.
+Salesforce just made its biggest move in the MCP ecosystem. On [March 31, 2026](https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/), the company announced 30 new AI features for Slackbot — headlined by MCP client functionality that turns Slack's built-in assistant into an orchestration layer for Agentforce, Salesforce's AI agent platform.
 
 The pitch: Slackbot becomes your primary work interface. Instead of switching between Salesforce CRM, Google Workspace, and dozens of enterprise apps, you stay in Slack and let the bot route tasks to the right agents and tools. MCP is the protocol that makes it work.
 
-This is notable because Slack has 750,000+ paying customers. If Salesforce ships MCP client support to all of them, it becomes one of the largest MCP client deployments by user count — far exceeding developer-focused clients like Claude Desktop or Cursor.
+This is notable because Slack serves [750,000+ organizations](https://www.demandsage.com/slack-statistics/). If Salesforce ships MCP client support across its customer base, it becomes one of the largest MCP client deployments by user count — far exceeding developer-focused clients like Claude Desktop or Cursor.
 
 Our analysis draws on Salesforce's official announcements, Slack's developer documentation, and reporting from SiliconANGLE, TechCrunch, VentureBeat, and The Register — we research and analyze rather than testing implementations hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -39,7 +40,7 @@ When a user asks Slackbot to do something, the bot:
 3. **Executes the action** — creating slides, drafting documents, querying CRM data, or chaining multiple steps
 4. **Returns results** in the Slack conversation
 
-Parker Harris, Salesforce CTO, framed it directly: "We see it as the future interface for work. Slack is where you can get the work done."
+[Parker Harris](https://salesforcedevops.net/index.php/2026/03/31/parker-harris-stop-logging-into-salesforce-slackbot-march-2026/), Salesforce co-founder and CTO, framed it directly: "We see it as the future interface for work. Slack is where you can get the work done."
 
 ### What Makes This Different from Other MCP Clients
 
@@ -49,7 +50,7 @@ Most MCP clients today are developer tools (Claude Desktop, Cursor, VS Code) or 
 2. **Enterprise app ecosystem.** The Salesforce AppExchange alone has 6,000+ apps built over two decades. MCP gives Slackbot a standard way to interact with them
 3. **Agent orchestration.** Slackbot doesn't just call tools — it routes to specialized Agentforce agents that have their own tool sets and reasoning capabilities
 
-Rob Seaman, Slack's General Manager, called Slackbot "the ultimate teammate" — positioning it as an orchestrator rather than just a chatbot.
+[Rob Seaman](https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and), Slack's EVP & GM, called Slackbot "the ultimate teammate" — positioning it as an orchestrator rather than just a chatbot.
 
 ---
 
@@ -111,7 +112,7 @@ This is functionally similar to Duolingo's approach of building a skill/tool lay
 
 ## Slack's Official MCP Server
 
-Separate from the MCP client announcement, Slack's first-party MCP server has been available since February 2026. It runs on the other side of the equation — letting external AI agents access Slack workspace data.
+Separate from the MCP client announcement, [Slack's first-party MCP server reached general availability on February 18, 2026](https://docs.slack.dev/changelog/2026/02/17/slack-mcp/). It runs on the other side of the equation — letting external AI agents access Slack workspace data.
 
 ### Architecture
 
@@ -144,7 +145,7 @@ For full details on Slack's MCP server architecture, security considerations, an
 
 ## The Agentforce Connection
 
-Agentforce is Salesforce's AI agent platform, launched in 2024. The Slack announcement positions Slackbot as the primary human interface for Agentforce agents.
+Agentforce is [Salesforce's AI agent platform, launched in October 2024](https://www.salesforce.com/news/press-releases/2024/10/29/agentforce-general-availability-announcement/). The Slack announcement positions Slackbot as the primary human interface for Agentforce agents.
 
 ### How the Pieces Fit
 
@@ -195,7 +196,7 @@ How does Salesforce's approach compare to other major MCP deployments?
 
 ### Skepticism Is Warranted
 
-The Register noted the announcement "understates the complexity of enterprise systems, and the challenge in ensuring the data held within them is up-to-date and well governed." Fair point. Connecting to 6,000+ apps via MCP sounds impressive, but:
+[The Register noted](https://www.theregister.com/2026/04/02/salesforce_slack_update/) the announcement "understates the complexity of enterprise systems, and the challenge in ensuring the data held within them is up-to-date and well governed." Fair point. Connecting to 6,000+ apps via MCP sounds impressive, but:
 
 - **Each app needs an MCP server.** Most of those 6,000 apps don't have one yet
 - **Data quality matters.** An AI agent routing through stale CRM data will produce stale results

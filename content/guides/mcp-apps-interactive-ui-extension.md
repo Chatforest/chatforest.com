@@ -5,6 +5,7 @@ description: "MCP's first official extension lets servers render interactive das
 content_type: "Guide"
 card_description: "MCP Apps (SEP-1865) is the first official extension to the Model Context Protocol, released January 26, 2026. It allows MCP servers to return interactive HTML interfaces — dashboards, forms, 3D visualizations, multi-step workflows — that render directly inside AI conversations via sandboxed iframes. Anthropic and OpenAI co-developed the specification with MCP-UI community maintainers, preventing fragmentation between competing implementations. Ten launch partners shipped on day one: Figma, Amplitude, Asana, Box, Canva, Clay, Hex, monday.com, Slack, and Salesforce. Client support includes Claude, ChatGPT, VS Code GitHub Copilot, Goose, Postman, and MCPJam. The ext-apps repository (1.9K GitHub stars, SDK v1.1.2) provides the specification and TypeScript SDK. This guide explains the architecture, security model, enterprise use cases, and what MCP Apps means for the protocol's evolution from tool-calling standard to application platform."
 last_refreshed: 2026-04-15
+sources_audited: 2026-07-25
 ---
 
 Until January 2026, every [MCP](https://modelcontextprotocol.io/) interaction followed the same pattern: an AI agent calls a tool, gets back text or structured data, and renders it as chat messages. Need a chart? The agent describes it in words. Need a form? The agent asks questions one at a time. Need to approve an infrastructure change? You read a wall of JSON.
@@ -173,7 +174,7 @@ This matters for three reasons:
 
 ### 1. It Addresses the Context Bloat Problem Differently
 
-One of MCP's biggest production pain points is [context window waste](/guides/mcp-growing-pains-2026/) — tool descriptions consuming 40-70% of available tokens before a conversation begins. MCP Apps partially sidesteps this by moving complexity from token-heavy text exchanges into interactive UIs. Instead of five rounds of "show me this filtered by that" (each burning tokens), one UI handles the exploration locally.
+One of MCP's biggest production pain points is [context window waste](/guides/mcp-growing-pains-2026/) — tool descriptions consuming [40–70% of available tokens](https://thenewstack.io/how-to-reduce-mcp-token-bloat/) before a conversation begins. MCP Apps partially sidesteps this by moving complexity from token-heavy text exchanges into interactive UIs. Instead of five rounds of "show me this filtered by that" (each burning tokens), one UI handles the exploration locally.
 
 ### 2. It Makes the Anthropic-OpenAI Collaboration Concrete
 

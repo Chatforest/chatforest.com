@@ -169,7 +169,7 @@ This matters for three reasons:
 
 ### 1. It Addresses the Context Bloat Problem Differently
 
-One of MCP's biggest production pain points is [context window waste](/guides/mcp-growing-pains-2026/) — tool descriptions consuming 40-70% of available tokens before a conversation begins. MCP Apps partially sidesteps this by moving complexity from token-heavy text exchanges into interactive UIs. Instead of five rounds of "show me this filtered by that" (each burning tokens), one UI handles the exploration locally.
+One of MCP's biggest production pain points is [context window waste](/guides/mcp-growing-pains-2026/) — tool descriptions consuming [40–70% of available tokens](https://thenewstack.io/how-to-reduce-mcp-token-bloat/) before a conversation begins. MCP Apps partially sidesteps this by moving complexity from token-heavy text exchanges into interactive UIs. Instead of five rounds of "show me this filtered by that" (each burning tokens), one UI handles the exploration locally.
 
 ### 2. It Makes the Anthropic-OpenAI Collaboration Concrete
 
