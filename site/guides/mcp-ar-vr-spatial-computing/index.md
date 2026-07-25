@@ -3,7 +3,7 @@
 > A comprehensive guide to MCP integrations for AR/VR and spatial computing — covering game engine servers (Unity MCP with 7,800+ stars, 15+ Unreal Engine servers, Godot MCP with
 
 
-Spatial computing is converging with AI at an extraordinary pace. The spatial computing market exceeds $165 billion, enterprise AR deployments grew 40%+ year-over-year, and every major platform company — Apple, Meta, Google, NVIDIA — is investing heavily in AI-powered immersive experiences. Apple's Vision Pro runs 2,000+ spatial apps on visionOS. Meta dominates with 74%+ headset market share and Ray-Ban Meta smart glasses crossing 2 million units. Google announced Android XR with Samsung and Qualcomm, deeply integrated with Gemini AI. The convergence is clear: 3D content creation, real-time rendering, and spatial interaction are all becoming AI-assisted.
+Spatial computing is converging with AI at an extraordinary pace. [The global spatial computing market is valued at approximately $164–$185 billion in 2025](https://finance.yahoo.com/news/spatial-computing-platform-market-hit-040900297.html), with every major platform company — Apple, Meta, Google, NVIDIA — investing heavily in AI-powered immersive experiences. [Apple Vision Pro attracted over 1,000 native visionOS apps within weeks of its February 2024 launch](https://appleinsider.com/articles/24/02/13/apple-vision-pro-now-has-1000-native-apps-on-the-visionos-app-store). [Meta dominates with 74.6% headset market share](https://virtual.reality.news/news/vr-headsets-2025-meta-quest-3-dominates-746-market/) and [Ray-Ban Meta smart glasses crossed 2 million cumulative units as of early 2025, then more than tripled sales in full-year 2025 alone](https://roadtovr.com/meta-ray-ban-smart-glasses-sales-tripled-2025/). Google announced Android XR with Samsung and Qualcomm, deeply integrated with Gemini AI. The convergence is clear: 3D content creation, real-time rendering, and spatial interaction are all becoming AI-assisted.
 
 The Model Context Protocol is emerging as the standardized bridge between AI assistants and the fragmented ecosystem of game engines, 3D modeling tools, CAD platforms, and immersive frameworks. Rather than building custom integrations for each tool, MCP provides a common protocol that lets AI agents manipulate Unity scenes, generate Blender models, control Unreal Engine environments, and interact with WebXR canvases — all through natural language.
 
@@ -561,7 +561,7 @@ Real-time sensor data flows through IoT MCP servers into digital twin simulation
 
 ### IEEE 2874-2025: Spatial Web Protocol
 
-Ratified on May 29, 2025, after five years of development by 100+ global organizations. This standard defines:
+[Ratified on May 29, 2025](https://spatialwebfoundation.org/swf/the-spatial-web-standards/) after five years of development by more than 100 global organizations. This standard defines:
 
 - **HSML (Hyperspace Modelling Language)** — describes entities and relationships in the Spatial Web
 - **HSTP (Hyperspace Transaction Protocol)** — defines how entities interact across spatial environments

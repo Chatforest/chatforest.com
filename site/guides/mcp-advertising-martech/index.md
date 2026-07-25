@@ -3,7 +3,7 @@
 > A comprehensive guide to 150+ MCP integrations for advertising and marketing technology — covering search/PPC advertising (Google Ads 10+ servers, Amazon Ads 32 stars), social
 
 
-Marketing technology has become one of the most fragmented software categories in existence. Scott Brinker's 2025 MarTech landscape cataloged 15,384 tools — a 100x increase over 15 years, with 2,489 new tools added in the past year alone and 77% of them AI-native. The global MarTech market reached approximately $175–198 billion in 2025 and is projected to hit $297 billion by 2030 according to MarketsandMarkets. AI adoption in marketing has reached 91% of marketers actively using AI tools according to Jasper's 2026 report, up from 63% the prior year. The global AI marketing market hit an estimated $64.6 billion in 2026, projected to reach $107.5 billion by 2028.
+Marketing technology has become one of the most fragmented software categories in existence. [Scott Brinker's 2025 MarTech landscape cataloged 15,384 tools](https://martech.org/the-number-of-martech-tools-is-now-15384/) — a 100x increase over 15 years, with 2,489 new tools added in the past year alone and 77% of them AI-native.
 
 Despite this explosion of tools and AI adoption, most marketing teams still manually switch between advertising platforms, analytics dashboards, SEO tools, email systems, and CRM databases. A single campaign optimization cycle might require pulling performance data from Google Ads, cross-referencing with Google Analytics, checking keyword rankings in Ahrefs, updating email segments in HubSpot, and adjusting bids across multiple platforms — a process that takes hours of manual work across disconnected interfaces.
 
@@ -71,7 +71,7 @@ Retail media — advertising sold by retailers on their own platforms — has gr
 
 **Pacvue Report MCP** | Official | Generally Available (May 2026)
 
-Pacvue is a commerce media operating system serving 70,000+ brands and agencies across 100+ global marketplaces, handling approximately 12% of global retail media ad spend. Their MCP server's first module — Report MCP — enables natural-language retrieval of advertising performance data across 13+ retail platforms: Amazon, Walmart, Instacart, Kroger, Target, Sam's Club, Chewy, DoorDash, eBay, Bol, Mercado Libre, Criteo, and Citrus. New platforms are added automatically as Pacvue integrates them.
+[Pacvue](https://www.globenewswire.com/news-release/2025/09/02/3142768/0/en/Pacvue-Launches-Every-Click-Campaign-Bringing-AI-Powered-Commerce-Operating-System-to-Life.html) is a commerce media operating system serving 70,000+ brands and agencies across 100+ global marketplaces, handling approximately 12% of global retail media ad spend. Their MCP server's first module — Report MCP — enables natural-language retrieval of advertising performance data across 13+ retail platforms: Amazon, Walmart, Instacart, Kroger, Target, Sam's Club, Chewy, DoorDash, eBay, Bol, Mercado Libre, Criteo, and Citrus. New platforms are added automatically as Pacvue integrates them.
 
 Report MCP is currently read-only: campaign performance metrics, keyword and search term analysis, share of voice data, and inventory metrics are returned as formatted CSV or Excel files directly within the AI client. Write operations (bid adjustments, budget changes, campaign creation) are under development. Compatible with Claude, ChatGPT, Cursor, VS Code, and any MCP-compatible client; also supports internal enterprise agent workflows.
 

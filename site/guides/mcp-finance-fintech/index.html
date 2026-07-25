@@ -214,10 +214,10 @@
 </ul>
 <p>The server enables banks to build autonomous conversational agents, predictive nudging systems, virtual financial advisors, and embedded financial wellness modules — all powered by Personetics&rsquo; existing financial intelligence models.</p>
 <p><strong>Enterprise-grade features</strong> include privacy-by-design architecture, full auditability, and compliance with global financial regulations. Banks define how insights are surfaced — through chatbots, mobile assistants, or embedded platform modules — creating customized agentic journeys.</p>
-<p>The market signal here is notable: 84% of consumers report they would switch banks to receive cognitive banking capabilities such as real-time, contextual financial guidance.</p>
+<p>The market signal here is notable: <a href="https://personetics.com/resource-center/personetics-global-consumer-banking-survey/">84% of consumers report they would switch banks</a> to receive cognitive banking capabilities such as real-time, contextual financial guidance (Personetics Global Consumer Banking Survey).</p>
 <h3 id="plaid-mcp-server">Plaid MCP Server</h3>
 <p><strong>Plaid</strong> | <strong>Official</strong> | <strong>SSE Transport</strong></p>
-<p>Plaid, the leading open banking data aggregation platform connecting 12,000+ financial institutions, provides an official MCP server with four tools for banking data access:</p>
+<p><a href="https://plaid.com">Plaid</a>, the leading open banking data aggregation platform connecting 12,000+ financial institutions, provides an official MCP server with four tools for banking data access:</p>
 <ul>
 <li><strong>Account information</strong> — retrieve linked account details, balances, and types</li>
 <li><strong>Transaction data</strong> — query transaction history with categorization</li>
@@ -225,7 +225,7 @@
 <li><strong>Identity verification</strong> — access verified account holder information</li>
 </ul>
 <p>The Plaid MCP server uses OAuth authentication — no API key setup required. An OAuth flow initiates when you connect, which aligns with open banking security requirements. AI assistants can query banking data using natural language, analyze transactions, and perform financial planning operations.</p>
-<p>Plaid&rsquo;s MCP server connects to 9,698+ supported banks and financial institutions, making it the broadest banking data access point in the MCP ecosystem.</p>
+<p>Plaid&rsquo;s MCP server connects to 12,000+ supported banks and financial institutions, making it the broadest banking data access point in the MCP ecosystem.</p>
 <p>A community implementation also exists (304techmaven/plaid-finance) offering a different approach to the same Plaid API surface.</p>
 <h3 id="grasshopper-bank-mcp-server">Grasshopper Bank MCP Server</h3>
 <p><strong>Grasshopper</strong> | <strong>Official</strong> | <strong>Enterprise</strong></p>
@@ -271,8 +271,8 @@
 <p><strong>CoinGecko</strong> | <strong>Official</strong> | <strong>Listed in MCP Official Servers</strong></p>
 <p>CoinGecko&rsquo;s official MCP server provides comprehensive crypto market data, and is notable for being listed in the official Model Context Protocol servers repository:</p>
 <ul>
-<li><strong>Market data</strong> — real-time prices for 15,000+ coins across 1,000+ exchanges</li>
-<li><strong>On-chain analytics</strong> — DEX price and liquidity data for 8M+ tokens via GeckoTerminal</li>
+<li><strong>Market data</strong> — real-time prices for 15,000+ coins across 1,500+ exchanges</li>
+<li><strong>On-chain analytics</strong> — DEX price and liquidity data for 6M+ tokens via GeckoTerminal</li>
 <li><strong>Network coverage</strong> — data across 200+ blockchain networks</li>
 <li><strong>Historical data</strong> — price history, market caps, and volume data</li>
 <li><strong>Exchange data</strong> — exchange-level trading data and liquidity metrics</li>
@@ -376,7 +376,7 @@
 </tr>
 </tbody>
 </table>
-<p>Zocks claims its platform saves financial advisors 10+ hours per week on administrative tasks. The MCP connector extends that value by making Zocks&rsquo; structured client data available to any MCP-compatible AI tool — an advisor can ask Claude to &ldquo;review everything the Johnsons discussed about estate planning in the last year&rdquo; and get results drawn from Zocks&rsquo; multi-source client profiles. Cetera, a financial services firm with 12,000 professionals, selected Zocks as their AI assistant platform.</p>
+<p>Zocks claims its platform saves financial advisors 10+ hours per week on administrative tasks. The MCP connector extends that value by making Zocks&rsquo; structured client data available to any MCP-compatible AI tool — an advisor can ask Claude to &ldquo;review everything the Johnsons discussed about estate planning in the last year&rdquo; and get results drawn from Zocks&rsquo; multi-source client profiles. <a href="https://www.businesswire.com/news/home/20260331025131/en/Cetera-Selects-Zocks-to-Offer-AI-Assistant-to-12000-Financial-Professionals">Cetera, a financial services firm with 12,000 professionals, selected Zocks as their AI assistant platform</a>.</p>
 <h3 id="moodys-agentic-solutions-mas">Moody&rsquo;s Agentic Solutions (MAS)</h3>
 <p><strong>Moody&rsquo;s</strong> | <strong>Official</strong> | Launched May 5, 2026</p>
 <p>Moody&rsquo;s launched an MCP application — Moody&rsquo;s Agentic Solutions — that embeds credit and compliance intelligence directly into Claude. Unlike most MCP servers that provide structured data access, MAS surfaces Moody&rsquo;s interactive workflows as first-class tools inside the Claude interface.</p>
@@ -390,7 +390,7 @@
 <tbody>
 <tr>
 <td><strong>Data coverage</strong></td>
-<td>600M+ public and private companies; 2B+ ownership links</td>
+<td><a href="https://www.moodys.com/web/en/us/media-relations/press-releases/moodys-brings-credit-and-compliance-workflows-directly-into-anthropics-claude.html">600M+ public and private companies; 2B+ ownership links</a></td>
 </tr>
 <tr>
 <td><strong>Availability</strong></td>
@@ -546,7 +546,7 @@
 <p><strong>Encryption in transit and at rest.</strong> All MCP communication must use TLS 1.2+. Financial data cached or stored by MCP servers must be encrypted at rest with appropriate key management.</p>
 <p><strong>Data residency.</strong> Financial regulations often require data to stay within specific jurisdictions. Self-hosted MCP servers (like Karrio for shipping, or on-premise Bloomberg) address this. Cloud-hosted MCP servers must document where data is processed and stored.</p>
 <h3 id="regulatory-compliance">Regulatory Compliance</h3>
-<p><strong>AML/KYC.</strong> Anti-money laundering and Know Your Customer requirements apply to any system that processes financial transactions. AI agents using payment MCP servers must respect transaction monitoring, suspicious activity reporting, and customer verification requirements. In the first half of 2025, global sanctions-related fines soared to $228.8 million — a sharp increase from $3.7 million in the same period of 2024.</p>
+<p><strong>AML/KYC.</strong> Anti-money laundering and Know Your Customer requirements apply to any system that processes financial transactions. AI agents using payment MCP servers must respect transaction monitoring, suspicious activity reporting, and customer verification requirements. <a href="https://compliancehub.wiki/the-compliance-crisis-deepens-regulatory-fines-skyrocket-417-in-first-half-of-2025/">In the first half of 2025, global sanctions-related fines soared to $228.8 million — a sharp increase from $3.7 million in the same period of 2024</a>.</p>
 <p><strong>SOX compliance.</strong> For publicly traded companies, Sarbanes-Oxley requires internal controls over financial reporting. MCP tool calls that modify financial data must be logged, auditable, and subject to the same controls as manual financial operations.</p>
 <p><strong>PSD2 / Open Banking.</strong> In Europe, PSD2 mandates strong customer authentication and secure data sharing. MCP servers accessing banking data through open banking APIs must implement the required consent flows and security measures.</p>
 <p><strong>SEC and FINRA.</strong> For investment-related applications, MCP servers must comply with record-keeping requirements, communication supervision rules, and best execution obligations. AI agents providing investment advice must respect suitability and fiduciary requirements.</p>

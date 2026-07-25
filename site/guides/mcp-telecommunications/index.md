@@ -5,7 +5,7 @@
 
 Telecommunications is one of the most complex infrastructure domains on earth. A single carrier operates across radio access networks (cell towers, antennas, spectrum), transport networks (fiber, microwave backhaul), core networks (packet switching, policy enforcement, subscriber databases), and business support systems (billing, CRM, order management, provisioning) — each layer built from equipment spanning multiple vendors, multiple generations of technology, and multiple regulatory regimes. A routine task like troubleshooting a customer's dropped calls might require correlating data from a Juniper router, a Nokia radio unit, a Cisco core switch, an Ericsson packet core, a billing system, and a CRM platform — each with its own CLI, API, data model, and access controls.
 
-The market reflects both the opportunity and the difficulty. AI in telecommunications reached an estimated $4.7–8.8 billion in 2025, with projections ranging from $45 billion to $88 billion by 2034 at 33–38% CAGR. Network automation has overtaken customer experience as the leading telecom AI use case for investment and ROI impact. 71% of telecom operators plan to deploy agentic AI in 2026, with 89% reporting AI budget increases. Yet 88% of organizations remain at autonomy levels 1–3 (of 5), and most generative AI initiatives are still in pilot. The gap between ambition and deployment is precisely where integration tooling matters.
+The market reflects both the opportunity and the difficulty. AI in telecommunications reached an estimated [$4.7 billion in 2025, with projections ranging from $45 billion to $88 billion by 2034 at 33–38% CAGR](https://www.fortunebusinessinsights.com/ai-in-telecommunication-market-109439) (Fortune Business Insights; [GM Insights](https://www.gminsights.com/industry-analysis/ai-in-telecommunication-market) gives a similar range). [Network automation has overtaken customer experience as the leading telecom AI use case for ROI impact](https://www.rcrwireless.com/20260219/ai/nvidia-ai-telco), with autonomous network optimization cited by 50% of operators vs. 41% for customer service (NVIDIA State of AI in Telecommunications 2026). [71% of telecom operators plan to deploy agentic AI in 2026](https://www.rcrwireless.com/20260721/carriers/agentic-ai-telecom-operators-google-cloud) (GSMA/Radcom), with [89% reporting AI budget increases and 88% remaining at autonomy levels 1–3](https://www.rcrwireless.com/20260219/ai/nvidia-ai-telco) of 5 (NVIDIA 2026 survey). Most generative AI initiatives are still in pilot. The gap between ambition and deployment is precisely where integration tooling matters.
 
 MCP provides a structured protocol for connecting AI agents to telecom systems. Rather than building custom integrations for every network vendor, BSS platform, monitoring tool, and telephony service, MCP-connected agents can query device configurations, analyze telemetry streams, manage IP address inventories, send SMS messages, and interact with billing systems — all through defined tool interfaces with consistent authentication and structured data formats.
 
@@ -33,12 +33,12 @@ The largest category of telecom MCP servers addresses the core challenge: enabli
 
 **automateyournetwork/netclaw** | **349 stars** | **Python**
 
-NetClaw is an AI agent built on OpenClaw with Anthropic Claude that provides 101 skills and 46 MCP integrations for comprehensive network automation. Its distinguishing feature is native gNMI (gRPC Network Management Interface) streaming telemetry support, shifting from periodic polling to real-time device-initiated state updates.
+[NetClaw](https://github.com/automateyournetwork/netclaw) is an AI agent built on OpenClaw with Anthropic Claude that provides 101 skills and 46 MCP integrations for comprehensive network automation. Its distinguishing feature is native gNMI (gRPC Network Management Interface) streaming telemetry support, shifting from periodic polling to real-time device-initiated state updates.
 
 **gNMI telemetry capabilities:**
 - **gnmi_get** — retrieve device state or configuration using YANG model paths, providing structured, typed, vendor-normalized data instead of parsing CLI text output
 - **gnmi_subscribe** — create real-time telemetry subscriptions in SAMPLE mode (polling at configurable intervals, minimum 1 second) or ON_CHANGE mode (firing only when state changes)
-- TOON serialization (Tabular Object Oriented Notation) for 40–60% token savings on tabular network data
+- TOON serialization (Tabular Object Oriented Notation) for 40–60% token savings on tabular network data (per NetClaw documentation)
 
 **Supported vendors for gNMI:**
 | Vendor | Default Port | Protocol |

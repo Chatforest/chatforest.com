@@ -5,9 +5,10 @@ description: "A comprehensive guide to 50+ MCP integrations for computer vision 
 content_type: "Guide"
 card_description: "The global computer vision market is valued at $20-27 billion in 2025, projected to reach $58-111 billion by 2030-2034. Inspection and quality assurance represent 41% of market revenue, while edge deployment comprises 47% of deployments. This guide covers 50+ MCP servers across computer vision and image analysis — from object detection and medical imaging to satellite imagery, video processing, OCR, and document understanding. The ecosystem features IDEA-Research's official DINO-X MCP for scene-level detection, ImageSorcery MCP (~297 stars) for local CV processing, Microsoft's Playwright MCP (~30K stars) for browser screenshots, NASA's official Earthdata MCP for satellite data, and Azure's Face API MCP for facial recognition. Architecture patterns cover automated visual inspection pipelines, medical imaging AI workflows, geospatial analysis agents, and multimodal document processing chains."
 last_refreshed: 2026-03-30
+sources_audited: 2026-07-25
 ---
 
-Computer vision is one of the fastest-growing segments of the AI market. Valued at approximately $20-27 billion in 2025, the global computer vision market is projected to reach $58-111 billion by 2030-2034, growing at 14-20% CAGR depending on the source. Inspection and quality assurance alone account for 41% of market revenue, edge deployment now comprises 47% of CV implementations, and vision-language models are rapidly replacing single-task classifiers with natural-language-queryable visual understanding.
+Computer vision is one of the fastest-growing segments of the AI market. The global computer vision market is valued at approximately [$23–$27 billion in 2025](https://www.grandviewresearch.com/industry-analysis/computer-vision-market) and projected to reach [$58–$68 billion by 2030–2031](https://www.mordorintelligence.com/industry-reports/computer-vision-market), growing at approximately 16–20% CAGR. [Inspection and quality assurance alone account for 41% of market revenue](https://www.mordorintelligence.com/industry-reports/computer-vision-market), [edge deployment now comprises 47% of CV implementations](https://www.mordorintelligence.com/industry-reports/computer-vision-market), and vision-language models are rapidly replacing single-task classifiers with natural-language-queryable visual understanding.
 
 The Model Context Protocol is creating a new interface layer between AI agents and computer vision capabilities. Rather than building custom integrations for every vision task, MCP servers expose object detection, image processing, OCR, medical imaging, satellite data, and video analysis as standardized tools that any MCP-compatible AI assistant can invoke. This means a developer using Claude Code, Cursor, or GitHub Copilot can ask "what objects are in this image?" or "extract text from this PDF" and get results from specialized CV models — without writing integration code.
 
@@ -572,11 +573,9 @@ This pattern chains document conversion, OCR, and object detection for comprehen
 
 The computer vision market is experiencing rapid growth across multiple segments:
 
-- **Overall market:** $20-27 billion in 2025, projected to reach $58-111 billion by 2030-2034 (14-20% CAGR)
-- **Inspection and quality assurance:** 41% of CV market revenue in 2025 — the single largest application segment
-- **Edge deployment:** 47% of CV implementations now run at the edge, growing at 17.3% CAGR
-- **North America:** 49% of 2025 market revenue
-- **Asia-Pacific:** fastest-growing region at 16.4% CAGR
+- **Overall market:** [$23–$27 billion in 2025](https://www.grandviewresearch.com/industry-analysis/computer-vision-market), projected to reach [$58–$68 billion by 2030–2031](https://www.mordorintelligence.com/industry-reports/computer-vision-market) (16–20% CAGR)
+- **Inspection and quality assurance:** [41% of CV market revenue in 2025](https://www.mordorintelligence.com/industry-reports/computer-vision-market) — the single largest application segment
+- **Edge deployment:** [47% of CV implementations now run at the edge, growing at 17.3% CAGR](https://www.mordorintelligence.com/industry-reports/computer-vision-market)
 
 ### Key Technology Trends
 

@@ -5,7 +5,7 @@
 
 Media and broadcasting encompasses one of the most diverse technology landscapes in any industry. A single production workflow might span video capture and editing, audio mixing and mastering, graphics and animation, content management and publishing, digital asset management, transcription and captioning, distribution across streaming platforms, and social media promotion — each step involving specialized software with its own interfaces, file formats, and operational conventions. A task as routine as producing a podcast episode might require recording in a DAW, transcribing with speech-to-text, editing in a video tool, generating thumbnails, publishing to a CMS, distributing to podcast directories, and promoting on social media — each with separate tools and manual handoffs.
 
-The market reflects both the opportunity and the complexity. AI in media and entertainment reached an estimated $26–34 billion in 2025, with projections ranging from $99 billion to $154 billion by 2030–2033 at 24–26% CAGR. Generative AI specifically in media reached $2.2–3.1 billion in 2025, growing at 25–37% CAGR. AI video tool adoption surged 342% year-over-year, with 49% of marketers now using AI for image and video generation daily. By 2030, 72% of small businesses are projected to adopt AI video tools. The content moderation market alone reached $9.7–12.5 billion in 2025, with media and entertainment accounting for 27% of demand.
+The market reflects both the opportunity and the complexity. [AI in media and entertainment reached an estimated $33.7 billion in 2025 and is projected to reach $99.5 billion by 2030 at a 24.2% CAGR](https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-media-entertainment-market-report) (Grand View Research).
 
 MCP provides a structured protocol for connecting AI agents to media tools. Rather than building custom integrations for every video editor, audio processor, CMS platform, and distribution channel, MCP-connected agents can edit video through FFmpeg, generate speech with ElevenLabs, manage WordPress content, retrieve YouTube transcripts, process images with OpenCV, and coordinate multi-step production workflows — all through defined tool interfaces with consistent authentication and structured data formats.
 
@@ -230,7 +230,7 @@ CMS integration is critical for media organizations that need to publish, manage
 
 ### WordPress
 
-WordPress powers roughly 40% of the web, and the MCP ecosystem reflects this dominance with numerous integration servers.
+[WordPress powers roughly 43% of the web](https://w3techs.com/technologies/details/cm-wordpress), and the MCP ecosystem reflects this dominance with numerous integration servers.
 
 **use-novamira/novamira** | **173 stars**
 
