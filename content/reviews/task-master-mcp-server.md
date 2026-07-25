@@ -6,13 +6,14 @@ og_description: "Task Master MCP gives AI agents structured task management with
 content_type: "Review"
 card_description: "An AI-powered task management MCP server that parses PRDs into structured task lists with dependencies, complexity analysis, and multi-model AI support. 36 tools across three loading tiers, designed for Cursor, Claude Code, Windsurf, and other AI editors. Wildly popular with significant rough edges."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-26
 ---
 
 Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
 
-*At a glance: 27,200 GitHub stars, 2,500 forks, 1,216 commits, last commit April 23 2026, npm v0.43.1 (no release in 49 days), 36 tools (in three loading tiers), MIT license with Commons Clause, ~30,500 npm downloads/week, PulseMCP ~1.8M all-time visitors (#38 globally, ~31,100 weekly). Created by Eyal Toledano, Ralph Krysler, and Jason Zhou. Launched March 2025.*
+*At a glance: [27,200 GitHub stars](https://github.com/eyaltoledano/claude-task-master), 2,500 forks, 1,216 commits, last commit April 23 2026, [npm v0.43.1](https://www.npmjs.com/package/task-master-ai) (no release in 49 days), 36 tools (in three loading tiers), MIT license with Commons Clause, ~30,500 npm downloads/week, [PulseMCP ~1.8M all-time visitors (#38 globally, ~31,100 weekly)](https://www.pulsemcp.com/servers/eyaltoledano-task-master). Created by Eyal Toledano, Ralph Krysler, and Jason Zhou. Launched March 2025.*
 
-Task Master is the breakout hit of the MCP ecosystem. In just over a year it went from zero to 26,600 GitHub stars — making it one of the most starred MCP servers in existence. The pitch is simple: give your AI coding agent a structured project manager. Feed it a PRD, get back a dependency-ordered task list, then let the agent work through tasks one at a time with full context awareness.
+Task Master is the breakout hit of the MCP ecosystem. In just over a year it went from zero to 27,200 GitHub stars — making it one of the most starred MCP servers in existence. The pitch is simple: give your AI coding agent a structured project manager. Feed it a PRD, get back a dependency-ordered task list, then let the agent work through tasks one at a time with full context awareness.
 
 Built by Eyal Toledano and maintained at [eyaltoledano/claude-task-master](https://github.com/eyaltoledano/claude-task-master), it's designed to slot into AI editors like Cursor, Windsurf, Claude Code, Lovable, and Roo Code. The npm package is `task-master-ai`, and there's also a companion platform called Hamster for team collaboration built on top.
 
@@ -75,7 +76,7 @@ Configuration lives in `.taskmaster/config.json` per project, where you set mode
 
 ## What's Good
 
-**Explosive adoption for a reason.** 26,600 stars in ~13 months isn't hype alone. The core idea — giving AI agents structured task management rather than letting them freestyle through a codebase — addresses a real pain point. Developers using Cursor or Claude Code report measurably fewer "AI wanders off track" incidents when tasks are pre-structured with dependencies.
+**Explosive adoption for a reason.** 27,200 stars in ~13 months isn't hype alone. The core idea — giving AI agents structured task management rather than letting them freestyle through a codebase — addresses a real pain point. Developers using Cursor or Claude Code report measurably fewer "AI wanders off track" incidents when tasks are pre-structured with dependencies.
 
 **Tiered tool loading.** The three-tier system (core/standard/all) is a design pattern more MCP servers should adopt. Context window space is precious, and most sessions only need 7 tools, not 36.
 

@@ -6,11 +6,12 @@ og_description: "Tinybird MCP server gives AI agents real-time analytics via man
 content_type: "Review"
 card_description: "A remote-hosted MCP server from Tinybird that connects AI agents to your managed ClickHouse workspace — query data sources, call API endpoints as tools, and run natural language analytics. Zero infrastructure, but requires a Tinybird account and depends on their hosted service."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-26
 ---
 
 Part of our **[Data & Analytics MCP category](/categories/data-analytics/)**.
 
-*At a glance: 79 GitHub stars (deprecated open-source repo), Apache-2.0 license, remote hosted at mcp.tinybird.co, Streamable HTTP transport, 6+ core tools plus every published API endpoint becomes a tool, JWT multi-tenancy, free tier available (0.25 vCPU, 10GB, 1K queries/day), PulseMCP ~13.1K all-time visitors (#1,879 globally, ~119 weekly). Tinybird is a $240M-valued company (52 employees, $70M raised).*
+*At a glance: 79 GitHub stars (deprecated open-source repo), Apache-2.0 license, remote hosted at mcp.tinybird.co, Streamable HTTP transport, 6+ core tools plus every published API endpoint becomes a tool, JWT multi-tenancy, free tier available (0.25 vCPU, 10GB, 1K queries/day), PulseMCP ~13.1K all-time visitors (#1,879 globally, ~119 weekly). Tinybird is a [$240M-valued company](https://techcrunch.com/2024/06/17/tinybird-raises-another-30-million-to-transform-data-into-real-time-apis/) (52 employees, $70M raised).*
 
 Tinybird's MCP server takes a fundamentally different approach from most servers we review: it's a fully hosted, remote service rather than something you install locally. You point your MCP client at `mcp.tinybird.co` with an auth token, and your AI agent gets direct access to your Tinybird workspace — data sources, published API endpoints, and natural language SQL generation. No npm install, no Docker, no local dependencies.
 
@@ -76,7 +77,7 @@ For non-default regions (GCP, Azure), add a `&host=` parameter with your region'
 
 **Token-efficient by design.** Results are returned in CSV format rather than JSON to minimize token consumption. The documentation recommends pagination, column selection, number rounding, and materialized views for pre-aggregated data. These aren't afterthoughts — they're built into the best practices because Tinybird understands that LLM token costs matter.
 
-**Strong company backing.** Tinybird has raised $70M at a $240M valuation, employs 52 people, and has been operating since 2019. This isn't a weekend project that might disappear. The MCP server is part of their product strategy, not a community contribution.
+**Strong company backing.** [Tinybird has raised $70M at a $240M valuation](https://techcrunch.com/2024/06/17/tinybird-raises-another-30-million-to-transform-data-into-real-time-apis/), employs 52 people, and has been operating since 2019. This isn't a weekend project that might disappear. The MCP server is part of their product strategy, not a community contribution.
 
 ## What's Not
 

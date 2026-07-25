@@ -6,6 +6,7 @@ og_description: "BrowserMCP: control your actual Chrome browser via MCP. 6.5K st
 content_type: "Review"
 card_description: "MCP server paired with a Chrome extension that gives AI agents control of your actual Chrome browser. Unlike Playwright MCP which spawns fresh browser instances, BrowserMCP connects to your existing browser profile — all your logged-in sessions, cookies, and extensions stay intact. Adapted from Microsoft's Playwright MCP with tools for navigation, clicking, typing, screenshots, tab management, and accessibility snapshots."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-26
 ---
 
 Part of our **[Web Scraping & Search MCP category](/categories/web-search-scraping/)**.
@@ -77,7 +78,7 @@ Compatible with Claude Desktop, Cursor, VS Code, and Windsurf.
 
 **Telemetry without opt-out.** The Chrome extension sends analytics to PostHog and Amplitude — an anonymous device ID plus tool call events. This was a major point of contention on Hacker News (616 points, 217 comments). The creator confirmed the telemetry but the closed-source extension makes independent verification impossible.
 
-**WebSocket security concerns unaddressed for 3+ months.** Issue #158 reports the WebSocket server binds to `0.0.0.0` instead of `localhost`, meaning any device on your local network could potentially connect and control your browser. Issue #163 documents a DoS vulnerability via infinite recursion on client disconnect (CVSS 7.5 High, CWE-674) — filed via responsible disclosure by Cyberneticsplus Services, which requested acknowledgment within 30 days. That window has long passed with no public response or fix. A third-party cross-site WebSocket hijacking (CSWSH) fix appeared in an external repo (May 10) but has not been merged upstream.
+**WebSocket security concerns unaddressed for 3+ months.** [Issue #158](https://github.com/browsermcp/mcp/issues/158) reports the WebSocket server binds to `0.0.0.0` instead of `localhost`, meaning any device on your local network could potentially connect and control your browser. [Issue #163](https://github.com/browsermcp/mcp/issues/163) documents a DoS vulnerability via infinite recursion on client disconnect (CVSS 7.5 High, CWE-674) — filed via responsible disclosure by Cyberneticsplus Services, which requested acknowledgment within 30 days. That window has long passed with no public response or fix. A third-party cross-site WebSocket hijacking (CSWSH) fix appeared in an external repo (May 10) but has not been merged upstream.
 
 **No releases in 13+ months.** v0.1.3 shipped April 11, 2025. npm downloads are declining (~21% drop since April). The GitHub repo has only 6 commits total — a partial mirror of a private monorepo. Issue #179 (May 18, 2026) reports the repo description still reads "Model Context Provider" instead of "Model Context Protocol" — a trivial typo unfixed for over a year, suggesting minimal maintainer engagement with the public repo.
 
@@ -93,8 +94,8 @@ Compatible with Claude Desktop, Cursor, VS Code, and Windsurf.
 - WebSocket binds to all interfaces (`0.0.0.0`) rather than localhost (issue #158) — network-adjacent attackers could potentially connect
 - DoS vulnerability via infinite recursion (issue #163, CVSS 7.5 High, CWE-674) — responsible disclosure window expired with no response
 - Telemetry data sent to PostHog and Amplitude analytics services
-- **MCPSafe AIVSS scan (May 12, 2026, issue #178):** Grade B (92/100) — 1 medium-severity finding (over-scoped tool schema), 0 critical/high/low. Maintainers have not responded to the scan report.
-- No formal security audit has been conducted; no BrowserMCP-specific CVEs filed, though the broader MCP ecosystem has seen 50+ tracked vulnerabilities (13 critical) per VulnerableMCP.info
+- **MCPSafe AIVSS scan (May 12, 2026, [issue #178](https://github.com/browsermcp/mcp/issues/178)):** Grade B (92/100) — 1 medium-severity finding (over-scoped tool schema), 0 critical/high/low. Maintainers have not responded to the scan report.
+- No formal security audit has been conducted; no BrowserMCP-specific CVEs filed, though the broader MCP ecosystem has seen 50+ tracked vulnerabilities (13 critical) per [VulnerableMCP.info](https://vulnerablemcp.info/)
 - The closed-source extension combined with authenticated session access creates a trust model where users must trust the developer's claims about data handling
 
 ## The Competition
@@ -107,7 +108,7 @@ Compatible with Claude Desktop, Cursor, VS Code, and Windsurf.
 
 **Browserbase MCP** — Cloud browser infrastructure with Stagehand integration. Managed remote browsers rather than local Chrome. Different deployment model.
 
-**Chrome DevTools MCP** (Google) — The threat to BrowserMCP has escalated significantly. Google's `ChromeDevTools/chrome-devtools-mcp` is now at v0.25.0 (May 6, 2026) and ~40K stars — up from ~34K in April. It ships weekly, requires no Chrome extension, uses CDP directly against live Chrome tabs, and is Apache-2.0 licensed. In parallel, Google launched **WebMCP**, which allows websites to expose themselves as MCP tools natively. Cloudflare Browser Run added WebMCP support on April 15, 2026. The first-party stack is growing fast and could make third-party Chrome MCP servers redundant within the year.
+**Chrome DevTools MCP** (Google) — The threat to BrowserMCP has escalated significantly. Google's [`ChromeDevTools/chrome-devtools-mcp`](https://github.com/ChromeDevTools/chrome-devtools-mcp) is now at v0.25.0 (May 6, 2026) and ~40K stars — up from ~34K in April. It ships weekly, requires no Chrome extension, uses CDP directly against live Chrome tabs, and is Apache-2.0 licensed. In parallel, Google launched **WebMCP**, which allows websites to expose themselves as MCP tools natively. Cloudflare Browser Run added WebMCP support on April 15, 2026. The first-party stack is growing fast and could make third-party Chrome MCP servers redundant within the year.
 
 ## Bottom Line
 

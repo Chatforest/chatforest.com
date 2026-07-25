@@ -6,6 +6,7 @@ og_description: "PydanticAI: type-safe Python agent framework with MCP client/se
 content_type: "Review"
 card_description: "Python agent framework with native MCP client and server support. Built by the Pydantic team — the validation layer behind OpenAI, Anthropic, LangChain, and FastAPI. Type-safe structured outputs, 30+ LLM provider integrations, dependency injection, streaming, human-in-the-loop, durable execution, and graph-based workflows. Agents can consume MCP tools or be exposed as MCP servers. 17.1K GitHub stars, 208M+ monthly PyPI downloads."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-26
 ---
 
 Part of our **[Agent Orchestration MCP category](/categories/agent-orchestration/)**.
@@ -36,7 +37,7 @@ This is the part our readers care about most.
 
 **As an MCP Server:** PydanticAI agents can be wrapped in `FastMCP` (from the official MCP Python SDK) and exposed as MCP servers themselves. Any MCP client — Claude Desktop, VS Code, another PydanticAI agent — can then call your agent as a tool. The framework also supports `MCPSamplingModel`, which lets an agent inside an MCP server delegate LLM calls back through the client connection rather than making its own API calls. Three integration approaches are now documented: Native MCP Client, FastMCP Client, and Provider-Native Tools via `MCPServerTool`.
 
-**mcp-run-python → Monty:** Pydantic retired their original mcp-run-python WASM sandbox (couldn't achieve safe execution with reasonable latency) and is actively developing **Monty**, a Rust-based Python sandbox. In May 2026 Pydantic ran a "Hack Monty" security bounty event — drawing 1.5M POST requests from 650+ IPs. A use-after-free RCE via `list.sort()` was found in under 48 hours; Pydantic patched it in Monty v0.0.16 and announced a second bounty round with higher prizes, now partnering with Prefect. Monty is promising but still being hardened — not yet production-grade for adversarial workloads.
+**mcp-run-python → Monty:** Pydantic retired their original mcp-run-python WASM sandbox (couldn't achieve safe execution with reasonable latency) and is actively developing **Monty**, a Rust-based Python sandbox. Pydantic ran a ["Hack Monty" security bounty event](https://pydantic.dev/articles/hack-monty) — a $5,000 bounty to break out of the sandbox. An [environment variable exfiltration was found](https://pydantic.dev/articles/hack-monty-postmortem); Pydantic patched it in Monty v0.0.16 and announced a [second bounty round](https://pydantic.dev/articles/hack-monty-2) with $10,000 in prizes, now partnering with Prefect and Hugging Face. Monty is promising but still being hardened — not yet production-grade for adversarial workloads.
 
 **Agent2Agent Protocol (A2A):** PydanticAI supports Google's A2A protocol for cross-framework agent interoperability. In May 2026 Pydantic donated their `FastA2A` implementation to Datalayer (MIT license preserved) to let Datalayer maintain it while Pydantic focuses on the core framework, Logfire, and validation. PydanticAI still supports A2A; Datalayer now owns the reference client/server library.
 
@@ -118,7 +119,7 @@ Python >=3.10 required. Works on Linux, macOS, Windows.
 
 ## What's Not
 
-**Two high-severity CVEs.** CVE-2026-25580 (SSRF, 8.6 High) affected versions 0.0.26–1.55.x — fixed in v1.56.0. CVE-2026-25640 (XSS via path traversal in the Web UI CDN URL, 7.1 High) was disclosed February 2026. Both are reminders that agent frameworks handling untrusted input need careful security review. Update to current versions.
+**One confirmed high-severity CVE.** [CVE-2026-25580](https://www.cvedetails.com/cve/CVE-2026-25580/) (SSRF, 8.6 High) affected versions 0.0.26–1.55.x — fixed in v1.56.0. The SSRF vulnerability allowed attackers to pass malicious URLs in message history, causing the server to make requests to internal resources. A reminder that agent frameworks handling untrusted input need careful security review. Update to current versions.
 
 **382 open issues, 185 open PRs.** The rapid release cadence (v1.98.0 in May 2026 — that's 98 minor releases since v1.0 in September 2025) means the API surface is large and evolving. Community contributions are piling up faster than they're being reviewed. Some issues report cost tracking gaps with certain providers, caching limitations with Anthropic, and integration rough edges with Temporal and Vercel.
 
@@ -150,13 +151,13 @@ The real question is PydanticAI vs. LangChain, and the answer depends on your pr
 
 PydanticAI is what happens when a team with a decade of library design experience builds an agent framework. The type safety isn't a marketing bullet point — it catches real bugs. The MCP integration isn't bolted on — it's built in. The code is concise, the API is thoughtful, and the Pydantic team's track record suggests this will be maintained for years.
 
-Since the last review, the gaps have narrowed. The MCP server story matured significantly with the unified `MCPToolset` in v1.97.0. The Logfire integration deepened (Online Evals, AI Gateway). The durable execution story expanded with Restate. The project is on a clear v2 trajectory for June 2026 with thoughtful deprecation paths. The two high-severity CVEs are patched. The Monty sandbox still needs hardening, but the Hack Monty bounty events show the team is taking security seriously rather than shipping quietly.
+Since the last review, the gaps have narrowed. The MCP server story matured significantly with the unified `MCPToolset` in v1.97.0. The Logfire integration deepened (Online Evals, AI Gateway). The durable execution story expanded with Restate. The project is on a clear v2 trajectory for June 2026 with thoughtful deprecation paths. The [CVE-2026-25580 SSRF](https://www.cvedetails.com/cve/CVE-2026-25580/) is patched. The Monty sandbox still needs hardening, but the [Hack Monty bounty events](https://pydantic.dev/articles/hack-monty) show the team is taking security seriously rather than shipping quietly.
 
 For Python developers building AI agents that need to interact with MCP servers — or who want to expose their agents as MCP servers — PydanticAI is the most ergonomic choice available. The v2 migration in June will be worth watching: if they clean up the API surface and tame the version churn, this could be the default agent framework recommendation for Python shops.
 
 **ChatForest Rating: 4.5 out of 5**
 
-The trajectory that earned a "could be 4.5" caveat in April has arrived. The MCP server story matured (unified `MCPToolset`), adoption is scaling (208M+ monthly PyPI downloads), and the Logfire ecosystem is deepening in useful ways. Half a point held back for two historical high-severity CVEs, an aggressive v2 API churn cycle that will briefly destabilize the ecosystem, and Monty still not being production-ready for adversarial workloads.
+The trajectory that earned a "could be 4.5" caveat in April has arrived. The MCP server story matured (unified `MCPToolset`), adoption is scaling (208M+ monthly PyPI downloads), and the Logfire ecosystem is deepening in useful ways. Half a point held back for [CVE-2026-25580](https://www.cvedetails.com/cve/CVE-2026-25580/) (SSRF, now patched), an aggressive v2 API churn cycle that will briefly destabilize the ecosystem, and Monty still not being production-ready for adversarial workloads.
 
 ---
 
