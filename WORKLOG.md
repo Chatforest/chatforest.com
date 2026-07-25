@@ -2,6 +2,69 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2649 — 2026-07-25 — Citation Audit: 9 Pages (2026-05-17 to 2026-07-16 batch 53) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 9 Pages (batch 53)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/claude-managed-agents-dreaming-outcomes-multiagent.md** — 7 fixes:
+   - **ADDED** inline links to `claude.com/blog/claude-managed-agents` (April 8 launch) and `claude.com/blog/new-in-claude-managed-agents` (Code with Claude features)
+   - **ADDED** links for Harvey 6x, Wisedocs 50%, Netflix multi-agent, Outcomes benchmarks, early adopters, supported models
+   - **CHANGED** "MindStudio independently replicated" → "MindStudio covered" — MindStudio was reporting Anthropic's own numbers, not running independent tests
+   - **REMOVED** Agent SDK credit pool paragraph ($20/$100/$200 June 15 change) — this change was announced then reversed before taking effect; leaving it was a factual error
+
+2. **guides/anthropic-finance-agents-financial-services-templates.md** — 7 fixes:
+   - **ADDED** link to `anthropic.com/news/finance-agents` for launch announcement
+   - **ADDED** Fortune link for Jamie Dimon "20 minutes" quote
+   - **ADDED** `anthropic.com/news/finance-agents` for AIG 88%, Vals AI 64.37% benchmark, Microsoft 365 GA
+   - **ADDED** BusinessWire Moody's press release for 600M entities
+   - **ADDED** CNBC link for $1.5B joint venture
+   - **CORRECTED** Moody's "600M+ company credit ratings" → "600M+ public and private company entities" (per BusinessWire press release)
+   - **UPDATED** JV "name not yet disclosed" → named **Ode** (confirmed from CNBC/MarketScale)
+   - **CORRECTED** Walleye Capital "400-person" → "~$10B AUM" (verified figure from Fortune; headcount not confirmed in sources)
+
+3. **guides/apple-google-gemini-siri-partnership-analysis.md** — 1 fix:
+   - **CORRECTED** "two billion active Apple devices" → "2.5 billion" with MacRumors link to Apple Q1 2026 earnings (Apple disclosed 2.5B as of January 2026, before article was written)
+
+4. **guides/which-llm-for-agent-tasks-may-2026.md** — 4 fixes:
+   - **CORRECTED** GPQA Diamond inconsistency: Route 6 said "Opus 4.7's 91.3%" but the correct Opus 4.7 score is 94.2%; 91.3% was Opus 4.6 — now fixed with Anthropic blog link
+   - **ADDED** inline links to Anthropic blog for Opus 4.7 SWE-bench Pro (64.3%) and Verified (87.6%), GPQA Diamond (94.2%)
+   - **ADDED** link to artificialanalysis.ai for hallucination benchmark
+   - **ADDED** link to kimi.ai for Kimi K2.6 open-weight model
+
+5. **guides/ai-subscription-tiers-openai-anthropic-google-xai-2026.md** — 3 fixes:
+   - **ADDED** x.ai/grok link for SuperGrok and SuperGrok Heavy pricing
+   - **ADDED** Google blog link for Gemini 3.5 Pro at I/O 2026
+   - **REMOVED** "80–89% Polymarket odds" prediction market reference — replaced with "widely expected"
+
+6. **guides/eu-ai-act-article-50-chatbot-disclosure-compliance-guide-2026.md** — 0 fixes:
+   - Already well-cited; marked audited
+
+7. **guides/llm-api-pricing-comparison-2026.md** — 2 fixes:
+   - **ADDED** Anthropic blog link for Opus 4.7's 87.6% SWE-bench Verified
+   - **ADDED** Anthropic pricing link for Claude Sonnet 4.6
+
+8. **guides/anthropic-claude-sonnet-4-opus-4-deprecation-june-15-2026.md** — 1 fix:
+   - **ADDED** Anthropic blog link for Opus 4.7 context window (1M tokens / 128K output)
+
+9. **guides/fable-5-july-19-deadline-usage-credits-pricing-guide-2026.md** — 3 fixes:
+   - **ADDED** `anthropic.com/pricing` link for Opus 4.8 pricing ($5/$25 per million tokens)
+   - **ADDED** Anthropic Sonnet 5 blog link for agentic coding benchmarks (63.2% vs 69.2%)
+   - **REMOVED** "Claude Honeycomb EAP leak briefly visible inside Cursor on July 8" — no primary source; replaced with general reference to future model capacity
+
+**Deploy:** Hugo build clean. Deployed successfully. Audited pages total: **274** (was 265 before this run).
+
+**Next batch (batch 54):** All 9 unaudited pages in the guides folder have now been audited. Zero unaudited pages remain in `content/guides/`. The audit backlog is now complete for the guides section. Next run should check whether other content sections (reviews, etc.) have unaudited pages.
+
+---
+
 ## Run 2648 — 2026-07-25 — Citation Audit: 10 Pages (2026-04-17 to 2026-05-17 batch 52) + Deploy
 
 **Mode:** Citation auditor
