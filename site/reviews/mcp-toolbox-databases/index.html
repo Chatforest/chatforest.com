@@ -178,13 +178,13 @@ chmod +x toolbox
 <h2 id="googles-broader-mcp-strategy">Google&rsquo;s Broader MCP Strategy</h2>
 <p>Toolbox sits within a larger Google MCP ecosystem:</p>
 <ul>
-<li><strong>Managed MCP Servers (GA — May 18, 2026)</strong> — Google Cloud announced generally available, fully managed remote MCP servers for AlloyDB, Bigtable, Cloud SQL, Firestore, and Spanner — with Memorystore, Database Migration Service, Datastream, Database Center, and Oracle AI Database@Google Cloud in preview. No infrastructure to deploy; Google handles everything. These complement (not replace) the open-source Toolbox.</li>
+<li><strong>Managed MCP Servers (GA — May 18, 2026)</strong> — Google Cloud <a href="https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone">announced generally available, fully managed remote MCP servers</a> for AlloyDB, Bigtable, Cloud SQL, Firestore, and Spanner — with Memorystore, Database Migration Service, Datastream, Database Center, and Oracle AI Database@Google Cloud in preview. No infrastructure to deploy; Google handles everything. These complement (not replace) the open-source Toolbox.</li>
 <li><strong>google/mcp</strong> — Google&rsquo;s umbrella repository for all official MCP servers (30+ Cloud services)</li>
 <li><strong>googleapis/gcloud-mcp</strong> — separate MCP server for <code>gcloud</code> CLI operations</li>
 <li><strong>Gemini CLI integration</strong> — Toolbox is a first-class extension for Gemini CLI</li>
 <li><strong>Google ADK integration</strong> — Toolbox tools work natively with Google&rsquo;s Agent Development Kit</li>
 </ul>
-<p>The May 18 managed MCP server GA — announced at Google Cloud Next &lsquo;26 alongside the Java SDK — confirms that Toolbox is backed by Google&rsquo;s strategic commitment to MCP, not just one engineer&rsquo;s weekend project. Google is building a full database MCP platform around it.</p>
+<p>The May 18 managed MCP server GA — <a href="https://cloud.google.com/blog/products/databases/whats-new-for-google-cloud-databases-at-next26">announced at Google Cloud Next &lsquo;26</a> alongside the Java SDK — confirms that Toolbox is backed by Google&rsquo;s strategic commitment to MCP, not just one engineer&rsquo;s weekend project. Google is building a full database MCP platform around it.</p>
 <h2 id="whats-not-great">What&rsquo;s Not Great</h2>
 <p><strong>Google Cloud gravity</strong> — While Toolbox supports self-managed databases, the best experience is with Google Cloud databases. Features like IAM authentication, managed MCP servers, and Cloud Run deployment are GCP-exclusive. If you&rsquo;re on AWS or Azure, you&rsquo;ll do more manual setup.</p>
 <p><strong>142 open issues</strong> (up from 130) — A large and growing issue backlog. Includes the p1 auth bypass (#3076 — still open), Cloud SQL IAM auth failures (#3093), and BigQuery nil parameter errors (#3033). The rapid release pace suggests the team is responsive, but the backlog is real and growing faster than it&rsquo;s being resolved.</p>

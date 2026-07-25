@@ -131,7 +131,7 @@ The MCP integration is one layer on top of this stack. Your AI agent talks to th
 
 **darinkishore/Inbox-MCP** — Nylas-based email MCP server. 6 tools (filter, triage, batch archive, search, read, send). Supports Gmail, Outlook, iCloud, Yahoo, and IMAP through Nylas API abstraction. Simpler, more tools, multi-provider. Free for up to 5 accounts.
 
-**AgentMail** — YC S25, $6M seed (March 2026). 62 MCP tools. Gives AI agents their own email inboxes with disposable addresses, structured parsing, and webhook notifications. Purpose-built for agent workflows, not human email management. Different use case.
+**AgentMail** — [YC S25, $6M seed (March 2026)](https://techcrunch.com/2026/03/10/agentmail-raises-6m-to-build-an-email-service-for-ai-agents/). 62 MCP tools. Gives AI agents their own email inboxes with disposable addresses, structured parsing, and webhook notifications. Purpose-built for agent workflows, not human email management. Different use case.
 
 **Cloudflare Agentic Inbox** — Self-hosted email client with built-in AI agent running entirely on Cloudflare Workers. MCP server at `/mcp` endpoint. Open source, serverless, no database needed. Early stage.
 

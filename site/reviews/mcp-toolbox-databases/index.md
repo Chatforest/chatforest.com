@@ -156,13 +156,13 @@ Six releases in under two months. That's Google Cloud team-level investment, not
 
 Toolbox sits within a larger Google MCP ecosystem:
 
-- **Managed MCP Servers (GA — May 18, 2026)** — Google Cloud announced generally available, fully managed remote MCP servers for AlloyDB, Bigtable, Cloud SQL, Firestore, and Spanner — with Memorystore, Database Migration Service, Datastream, Database Center, and Oracle AI Database@Google Cloud in preview. No infrastructure to deploy; Google handles everything. These complement (not replace) the open-source Toolbox.
+- **Managed MCP Servers (GA — May 18, 2026)** — Google Cloud [announced generally available, fully managed remote MCP servers](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) for AlloyDB, Bigtable, Cloud SQL, Firestore, and Spanner — with Memorystore, Database Migration Service, Datastream, Database Center, and Oracle AI Database@Google Cloud in preview. No infrastructure to deploy; Google handles everything. These complement (not replace) the open-source Toolbox.
 - **google/mcp** — Google's umbrella repository for all official MCP servers (30+ Cloud services)
 - **googleapis/gcloud-mcp** — separate MCP server for `gcloud` CLI operations
 - **Gemini CLI integration** — Toolbox is a first-class extension for Gemini CLI
 - **Google ADK integration** — Toolbox tools work natively with Google's Agent Development Kit
 
-The May 18 managed MCP server GA — announced at Google Cloud Next '26 alongside the Java SDK — confirms that Toolbox is backed by Google's strategic commitment to MCP, not just one engineer's weekend project. Google is building a full database MCP platform around it.
+The May 18 managed MCP server GA — [announced at Google Cloud Next '26](https://cloud.google.com/blog/products/databases/whats-new-for-google-cloud-databases-at-next26) alongside the Java SDK — confirms that Toolbox is backed by Google's strategic commitment to MCP, not just one engineer's weekend project. Google is building a full database MCP platform around it.
 
 ## What's Not Great
 

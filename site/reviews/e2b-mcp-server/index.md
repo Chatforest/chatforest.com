@@ -15,7 +15,7 @@ On April 16, 2026, E2B archived the repository. The standalone MCP server is no 
 
 E2B didn't abandon MCP — they absorbed it. In October 2025, E2B partnered with Docker to integrate MCP support directly into the E2B Sandbox platform. Instead of a standalone server that only let you run code, the new approach gives every E2B sandbox access to 300+ servers in Docker's MCP catalog (GitHub, Stripe, Notion, Grafana, Browserbase, and many more) — plus the ability to run custom MCP servers inside the sandbox.
 
-In April 2026, E2B became an **official sandbox provider in the OpenAI Agents SDK** — the integration lets agents edit files, run shell commands in isolated Firecracker environments, maintain workspace state across steps, and generate frontend output with preview URLs. Python-only at launch; TypeScript support is in progress. This integration appears to be driving the 4.4x jump in npm download volume seen between April and May 2026.
+In April 2026, [E2B became an **official sandbox provider in the OpenAI Agents SDK**](https://e2b.dev/blog/e2b-is-now-in-agents-sdk) — the integration lets agents edit files, run shell commands in isolated Firecracker environments, maintain workspace state across steps, and generate frontend output with preview URLs. Python-only at launch; TypeScript support is in progress. This integration appears to be driving the 4.4x jump in npm download volume seen between April and May 2026.
 
 The standalone `mcp-server` repository became redundant. Why maintain a separate MCP server for code execution when the sandbox itself is now an MCP-native environment?
 
@@ -41,7 +41,7 @@ E2B (the company) is doing well despite archiving this one repo:
 
 - **Main SDK** (`e2b-dev/E2B`): 12,200 stars, 861 forks, v2.21.0 JS / v2.21.1 Python (May 14–18, 2026)
 - **Code Interpreter SDK** (`e2b-dev/code-interpreter`): 2,300 stars, 206 forks, 859 commits
-- **Funding**: $43.8M total — $21M Series A led by Insight Partners (2025), with Decibel, Sunflower Capital, Kaya
+- **Funding**: $43.8M total — [$21M Series A led by Insight Partners (2025)](https://www.prnewswire.com/news-releases/e2b-raises-a-21m-series-a-to-offer-cloud-for-ai-agents-to-fortune-100-302514540.html), with Decibel, Sunflower Capital, Kaya
 - **Revenue**: $1.5M ARR as of mid-2025 with a 14-person team
 - **PyPI**: e2b-code-interpreter ~1.46M downloads/month; e2b npm SDK ~2.72M downloads/month (up from ~624K in April — 4.4x growth driven by OpenAI Agents SDK adoption)
 - **Firecracker microVMs**: Sub-200ms cold starts, hardware-level isolation, dedicated kernel per sandbox

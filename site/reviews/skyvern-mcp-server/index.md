@@ -5,7 +5,7 @@
 
 Part of our **[Browser Automation MCP category](/categories/browser-automation/)**.
 
-*At a glance: 21,700 GitHub stars, 2,000 forks, last commit May 18, 2026, v1.0.36 (May 10, 2026), 75+ tools, AGPL-3.0 license, PulseMCP ~368K all-time visitors (#148 globally, ~2,500 weekly). YC-backed, $2.7M raised. SOC2 Type II certified, HIPAA compliant. Founded by Suchintan Singh, Kerem Yilmaz, and Shuchang Zheng.*
+*At a glance: 21,700 GitHub stars, 2,000 forks, last commit May 18, 2026, v1.0.36 (May 10, 2026), 75+ tools, AGPL-3.0 license, PulseMCP ~368K all-time visitors (#148 globally, ~2,500 weekly). [YC-backed, $2.7M raised](https://www.skyvern.com/blog/skyvern-we-raised-2-7m-to-fix-browser-automation-open-source/). SOC2 Type II certified, HIPAA compliant. Founded by Suchintan Singh, Kerem Yilmaz, and Shuchang Zheng.*
 
 Skyvern takes a fundamentally different approach to browser automation than [Playwright MCP](/reviews/playwright-mcp-server/) or [Browserbase](/reviews/browserbase-mcp-server/). Where those servers rely on DOM selectors and accessibility trees, Skyvern uses computer vision and LLMs to understand what's actually on the screen. A "Submit" button is a "Submit" button whether it's a `<button>`, a styled `<div>`, or an image — if a human can see it, Skyvern can interact with it.
 
@@ -91,7 +91,7 @@ Also available via one-click `.mcpb` bundle for Claude Desktop (macOS/Windows). 
 
 **Credential management.** Native integration with Bitwarden, 1Password, and Azure Key Vault, plus automatic 2FA/TOTP handling. Logging into sites with MFA is one of the hardest browser automation problems, and Skyvern handles it out of the box.
 
-**WebBench SOTA for write tasks.** 64.4% overall accuracy on [WebBench](https://www.skyvern.com/blog/web-bench-a-new-way-to-compare-ai-browser-agents/) (5,750 tasks across 452 websites), and best-performing agent on WRITE tasks (form filling, login, downloads). 85.85% on the older WebVoyager benchmark.
+**WebBench SOTA for write tasks.** 64.4% overall accuracy on [WebBench](https://www.skyvern.com/blog/web-bench-a-new-way-to-compare-ai-browser-agents/) (5,750 tasks across 452 websites), and best-performing agent on WRITE tasks (form filling, login, downloads). [85.85% on the WebVoyager benchmark](https://www.skyvern.com/blog/skyvern-2-0-state-of-the-art-web-navigation-with-85-8-on-webvoyager-eval/) (643 tasks across 15 consumer websites).
 
 **Dual deployment model.** Cloud for zero-setup production use with anti-bot protection and proxy networks. Self-hosted for privacy-sensitive use cases where browser data shouldn't leave your network.
 
@@ -109,7 +109,7 @@ Also available via one-click `.mcpb` bundle for Claude Desktop (macOS/Windows). 
 
 **Cloud dependency for best experience.** Anti-bot protection, proxy networks, and parallel execution are cloud-only features. Self-hosted mode requires you to bring your own LLM API keys and handle infrastructure.
 
-**Accuracy ceiling.** 64.4% on WebBench means roughly 1 in 3 tasks fail. For complex multi-step workflows, compounding error rates can make end-to-end reliability challenging. Compare to Anthropic Sonnet 3.7 CUA (current SOTA) or Surfer 2 (97.1% on WebVoyager).
+**Accuracy ceiling.** 64.4% on WebBench means roughly 1 in 3 tasks fail. For complex multi-step workflows, compounding error rates can make end-to-end reliability challenging.
 
 **Python 3.11+ requirement.** Local mode won't run on Python 3.10 or earlier, which may exclude some environments.
 
@@ -142,7 +142,7 @@ Skyvern's security model has both strengths and gaps:
 
 **vs [Desktop Commander](/reviews/desktop-commander-mcp-server/)** (5.9K stars, 3.5/5): Desktop Commander is local-only, terminal+filesystem focused. Skyvern is browser-focused with cloud option. Different tools for different jobs.
 
-**vs Browser-Use** (91K+ stars, no review yet): Browser-Use has ballooned to 91K+ stars (up from 78K in April — a 4.3x advantage over Skyvern now). Higher benchmark accuracy (89.1% vs 64.4% on WebBench) and faster/cheaper per-action. However, Browser-Use is primarily a Python library, not a dedicated MCP server — Skyvern has a more polished MCP integration, managed cloud with anti-bot proxies, and enterprise compliance (SOC2, HIPAA) that Browser-Use doesn't offer.
+**vs Browser-Use** (91K+ stars, no review yet): Browser-Use has ballooned to 91K+ stars (up from 78K in April — a 4.3x advantage over Skyvern now). [Browser-Use reports 89.1% on the WebVoyager benchmark](https://browser-use.com/posts/sota-technical-report) (vs Skyvern's 85.85% on the same benchmark), and is faster/cheaper per-action. These benchmarks use different task sets from Skyvern's 64.4% WebBench score, so cross-benchmark comparisons should be read with caution. However, Browser-Use is primarily a Python library, not a dedicated MCP server — Skyvern has a more polished MCP integration, managed cloud with anti-bot proxies, and enterprise compliance (SOC2, HIPAA) that Browser-Use doesn't offer.
 
 ## Who Should Use This
 

@@ -9,6 +9,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-04-15
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** NVIDIA Ising, released April 14, 2026. Two-part open model family for quantum computing infrastructure: Ising Calibration (35B-parameter vision-language model) and Ising Decoding (two CNN variants, 0.9M and 1.8M parameters). Benchmarked 2.5x faster and 3x more accurate than pyMatching. Integrates with NVIDIA CUDA-Q and NVQLink. Available on GitHub and Hugging Face. Part of our **[Developer Tools reviews](/categories/developer-tools/)**.

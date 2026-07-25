@@ -4,6 +4,7 @@ date: 2026-03-31
 description: "OpenAI raised $122 billion in committed capital at an $852B post-money valuation — the largest private company funding round ever. Here's who invested, what the contingency clauses mean, and what OpenAI plans to do with the money."
 tags: ["openai", "funding", "ai-industry", "business", "investing", "amazon", "softbank", "nvidia"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 ## The Headline
@@ -69,15 +70,15 @@ The company's official statement, [published on its site](https://openai.com/ind
 
 ## What the Money Is For
 
-OpenAI has been explicit about where this capital is going: [AI chips, data center capacity, and top talent](https://www.datacenterknowledge.com/infrastructure/openai-raises-122b-to-expand-ai-infrastructure-broadens-cloud-and-chip-strategy). The company is competing on compute infrastructure at a scale that rivals sovereign wealth funds. Sam Altman has separately described approximately $1.4 trillion in planned infrastructure buildout over eight years — an ambition that makes the $122B raise look like a first tranche.
+OpenAI has been explicit about where this capital is going: [AI chips, data center capacity, and top talent](https://www.datacenterknowledge.com/infrastructure/openai-raises-122b-to-expand-ai-infrastructure-broadens-cloud-and-chip-strategy). The company is competing on compute infrastructure at a scale that rivals sovereign wealth funds. Sam Altman has separately described [approximately $1.4 trillion in planned infrastructure buildout over eight years](https://www.datacenterdynamics.com/en/news/sam-altman-openai-isnt-seeking-a-government-bailout-has-14tn-in-data-center-commitments-may-launch-an-ai-cloud-service/) — an ambition that makes the $122B raise look like a first tranche.
 
-The company also holds an expanded revolving credit facility of approximately $4.7 billion (untapped as of close) and will be included in multiple ARK Investment Management exchange-traded funds — further retail distribution without requiring a public listing.
+The company also holds an [expanded revolving credit facility of approximately $4.7 billion](https://openai.com/index/new-credit-facility-enhances-financial-flexibility/) (untapped as of close).
 
 ---
 
 ## IPO Trajectory
 
-The [CNBC coverage](https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html) noted IPO plans "as soon as the second half of 2026." (OpenAI did in fact file its confidential S-1 in May 2026, targeting a September Nasdaq debut — see our [separate IPO coverage](/reviews/openai-ipo-2026-s1-filing-valuation-risks-guide/).)
+The [CNBC coverage](https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html) noted IPO plans "as soon as the second half of 2026." ([OpenAI filed its confidential S-1 in June 2026](https://www.cnbc.com/2026/06/08/openai-confidentially-files-for-ipo-prepping-wall-street-for-ai-debut.html), targeting a Q4 2026 Nasdaq listing — see our [separate IPO coverage](/reviews/openai-ipo-2026-s1-filing-valuation-risks-guide/).)
 
 ---
 

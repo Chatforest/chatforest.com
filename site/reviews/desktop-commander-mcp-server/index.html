@@ -144,7 +144,7 @@
 <p><strong>Maintainer is transparent but selective on security.</strong> The symlink fix came promptly after a researcher filed a clear reproduction case. The command-injection cluster has been open longer with no merge path in sight — the blocklist model is fundamentally fragile and the maintainer knows it. Docker isolation remains the official recommendation for security-sensitive work.</p>
 <p><strong>111 open issues, 20 open PRs.</strong> Issue backlog grew from 80 to 111 (+31) in four weeks. Bug reports include Windows hanging behavior, file read returning empty content, and MCP approval not persisting.</p>
 <p><strong>Commit frequency has recovered.</strong> The April concern about only 5 commits in four weeks has reversed: v0.2.39 (April 23), v0.2.40 (April 27), and v0.2.41 (May 14) shipped in quick succession. The standalone app focus appears to be complementing the MCP server, not replacing it.</p>
-<p><strong>Behavioral instruction in tool description.</strong> Issue #384 flagged that tool descriptions contain behavioral instructions that could influence agent behavior — a known attack vector in the MCP ecosystem (see AgentSeal&rsquo;s research on prompt injection via tool descriptions).</p>
+<p><strong>Behavioral instruction in tool description.</strong> Issue #384 flagged that tool descriptions contain behavioral instructions that could influence agent behavior — a known attack vector in the MCP ecosystem where tool metadata can be used to manipulate agent behavior.</p>
 <h2 id="how-it-compares">How It Compares</h2>
 <table>
 <thead>

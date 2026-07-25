@@ -5,7 +5,7 @@
 
 Anthropic [announced on April 7, 2026](https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/), that it has expanded its strategic partnership with Google and Broadcom to secure approximately **3.5 gigawatts of next-generation AI compute**, beginning in 2027. The agreement roughly triples the scale of the deal Anthropic struck with the same partners in October 2025, when it secured access to roughly one million Google TPUs and more than one gigawatt of compute.
 
-The announcement came on the same day Anthropic disclosed that its run-rate revenue had surpassed **$30 billion** — up from approximately $9 billion at the end of 2025 — and that more than **1,000 enterprise customers** are now spending over $1 million per year on Claude, a number that had doubled in under two months.
+The announcement came on the same day Anthropic disclosed that its [run-rate revenue had surpassed **$30 billion**](https://www.bloomberg.com/news/articles/2026-04-06/broadcom-confirms-deal-to-ship-google-tpu-chips-to-anthropic) — up from approximately $9 billion at the end of 2025 — and that [more than **1,000 enterprise customers**](https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth) are now spending over $1 million per year on Claude, a number that had doubled in under two months.
 
 ## How the Deal Works
 
@@ -15,9 +15,9 @@ This is a three-party arrangement with distinct roles:
 - **Broadcom** performs the silicon implementation: converting Google's architecture into a manufacturable ASIC, supplying high-speed SerDes interconnects, managing power delivery, and handling advanced packaging. Broadcom's agreement to develop Google TPUs extends through at least **2031**, making this a long-duration commitment rather than a one-off supply deal.
 - **Anthropic** is the primary beneficiary — securing compute access well ahead of the infrastructure coming online, locking in capacity at a time when demand for frontier AI inference is accelerating faster than supply can follow.
 
-The vast majority of the 3.5GW will be sited in the **United States**, extending Anthropic's November 2025 commitment to invest $50 billion in American AI infrastructure.
+The vast majority of the 3.5GW will be sited in the **United States**, extending [Anthropic's November 2025 commitment to invest $50 billion in American AI infrastructure](https://www.cnbc.com/2025/11/12/anthropic-ai-data-centers-texas-new-york.html).
 
-Broadcom's SEC filing, submitted alongside the announcement, confirmed the deal scope. Mizuho analysts estimated before the announcement that Broadcom would record $21 billion in AI revenue attributable to Anthropic in 2026, rising to $42 billion in 2027 — figures they said would likely be revised materially higher once the full deal scope was disclosed.
+[Broadcom's SEC filing](https://www.cnbc.com/2026/04/06/broadcom-agrees-to-expanded-chip-deals-with-google-anthropic.html), submitted alongside the announcement, confirmed the deal scope. Mizuho analysts estimated before the announcement that Broadcom would record $21 billion in AI revenue attributable to Anthropic in 2026, rising to $42 billion in 2027 — figures they said would likely be revised materially higher once the full deal scope was disclosed.
 
 ## Why This Scale Matters
 

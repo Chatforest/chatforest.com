@@ -6,6 +6,7 @@ og_description: "Desktop Commander MCP gives AI agents full terminal control, di
 content_type: "Review"
 card_description: "A community MCP server that gives AI agents terminal access, diff-based file editing, and persistent process management. 22 tools covering terminal sessions, filesystem operations, code editing, and search — the most capable local development MCP server available, with significant security caveats."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-26
 ---
 
 Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
@@ -113,7 +114,7 @@ Also available via Smithery, Docker (recommended for security), bash script inst
 
 **Commit frequency has recovered.** The April concern about only 5 commits in four weeks has reversed: v0.2.39 (April 23), v0.2.40 (April 27), and v0.2.41 (May 14) shipped in quick succession. The standalone app focus appears to be complementing the MCP server, not replacing it.
 
-**Behavioral instruction in tool description.** Issue #384 flagged that tool descriptions contain behavioral instructions that could influence agent behavior — a known attack vector in the MCP ecosystem (see AgentSeal's research on prompt injection via tool descriptions).
+**Behavioral instruction in tool description.** Issue #384 flagged that tool descriptions contain behavioral instructions that could influence agent behavior — a known attack vector in the MCP ecosystem where tool metadata can be used to manipulate agent behavior.
 
 ## How It Compares
 

@@ -23,7 +23,7 @@ That combination — native output, system-aware generation — is why the react
 
 The timing of the launch was not incidental.
 
-April 14, 2026: [Anthropic CPO Mike Krieger resigned from Figma's board of directors](https://news.designrush.com/anthropic-claude-design-launch-figma). Krieger co-founded Instagram, joined Anthropic in 2023, and had held a board seat at Figma — a company he had a long personal relationship with — since before that acquisition attempt.
+April 14, 2026: [Anthropic CPO Mike Krieger resigned from Figma's board of directors](https://news.designrush.com/anthropic-claude-design-launch-figma). Krieger co-founded Instagram and [joined Anthropic in May 2024](https://www.cnbc.com/2024/05/15/instagram-co-founder-mike-krieger-joins-amazon-backed-anthropic.html) as CPO, and had held a board seat at Figma — a company he had a long personal relationship with — since before that acquisition attempt.
 
 April 17, 2026: Claude Design launched.
 
@@ -64,7 +64,7 @@ During onboarding, Claude Design asks for access to your codebase and your Figma
 
 Every subsequent generation uses that system. If your brand uses Inter at 16px/24px with a slate color palette and rounded cards at 8px radius, Claude Design applies those specifics rather than its own defaults.
 
-This is qualitatively different from Figma Make's approach. Figma's AI generation tool draws from its 372-component "Simple Design System" — a shared library that every Figma Make user gets. It is polished and consistent, but it is generic. Claude Design generates from *your* components.
+This is qualitatively different from Figma Make's approach. Figma's AI generation tool draws from a shared component library that every Figma Make user gets. It is polished and consistent, but it is generic. Claude Design generates from *your* components.
 
 The practical implication: Claude Design outputs that are closer to production-ready for teams with established design systems, and significantly further from it for teams without one.
 

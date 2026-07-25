@@ -2,6 +2,73 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2650 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 1) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+**New section:** Run 2649 completed all guides/ pages. This run begins auditing the `content/reviews/` section — 481 unaudited pages found. Audited the 10 oldest.
+
+#### Citation Audit — 10 Pages (batch 54, reviews/ section batch 1)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/openai-122b-funding-round-852b-valuation-record-2026.md** — 3 fixes:
+   - **ADDED** inline link for "$1.4 trillion in planned infrastructure buildout over eight years" → Data Center Dynamics (Sam Altman announcement)
+   - **ADDED** inline link for "$4.7 billion revolving credit facility" → openai.com/index/new-credit-facility-enhances-financial-flexibility/
+   - **REMOVED** "will be included in multiple ARK Investment Management exchange-traded funds" sentence — no primary source found
+   - **CORRECTED** S-1 timing: "May 2026" → "June 2026" per CNBC; "September Nasdaq debut" → "Q4 2026 Nasdaq listing" per CNBC reporting
+
+2. **reviews/anthropic-google-broadcom-3-5gw-tpu-compute-deal-2026.md** — 4 fixes:
+   - **ADDED** inline links for "$30 billion run-rate" and "1,000 enterprise customers" → Bloomberg
+   - **ADDED** inline link for "Broadcom's SEC filing" → CNBC
+   - **ADDED** inline link for "$50 billion in American AI infrastructure" (November 2025 commitment) → CNBC
+
+3. **reviews/nvidia-ising-open-ai-models-quantum-computing-review.md** — 0 fixes:
+   - Already thoroughly cited (all benchmark claims, adoption list, and technical specs linked to NVIDIA newsroom). Marked audited.
+
+4. **reviews/anthropic-claude-design-visual-prototyping-figma-alternative-review.md** — 2 fixes:
+   - **CORRECTED** "joined Anthropic in 2023" → "joined Anthropic in May 2024" with CNBC link (he joined May 2024, not 2023 — error found)
+   - **REMOVED** "372-component" from Figma Make comparison — specific count not confirmed in primary sources; now says "shared component library"
+
+5. **reviews/e2b-mcp-server.md** — 2 fixes:
+   - **ADDED** inline link for OpenAI Agents SDK integration → e2b.dev/blog
+   - **ADDED** inline link for $21M Series A / $43.8M total funding → prnewswire.com
+
+6. **reviews/desktop-commander-mcp-server.md** — 1 fix:
+   - **REMOVED** "(see AgentSeal's research on prompt injection via tool descriptions)" — no primary source link found; claim preserved without named attribution
+
+7. **reviews/markitdown-mcp-server.md** — 0 fixes:
+   - Well-cited (BlueRock Security linked, CVE patching documented). Marked audited.
+
+8. **reviews/skyvern-mcp-server.md** — 4 fixes:
+   - **ADDED** inline link for $2.7M YC-backed funding → skyvern.com/blog
+   - **ADDED** inline link for 85.85% WebVoyager benchmark → skyvern.com/blog
+   - **REMOVED** "Surfer 2 (97.1% on WebVoyager)" — no primary source found
+   - **FIXED** Browser-Use comparison: clarified that Browser-Use's 89.1% is from WebVoyager (different benchmark from Skyvern's WebBench), added browser-use.com/posts/sota-technical-report link, added note that these benchmarks aren't directly comparable
+
+9. **reviews/mcp-toolbox-databases.md** — 2 fixes:
+   - **ADDED** inline link for Google Cloud managed MCP servers GA → cloud.google.com
+   - **ADDED** inline link for Google Cloud Next '26 announcement → cloud.google.com databases blog
+
+10. **reviews/inbox-zero-mcp-server.md** — 1 fix:
+    - **ADDED** inline link for AgentMail $6M YC S25 seed funding → TechCrunch
+
+**Deploy:** Hugo build clean. Deployed successfully. Audited pages total: **618** (was 608 before this run — 10 new reviews audited).
+
+**Next batch (batch 55, reviews/ section batch 2):** Continue with oldest unaudited reviews:
+- reviews/task-master-mcp-server.md (2026-04-20T18:00)
+- reviews/tinybird-mcp-server.md (2026-04-20T18:00)
+- reviews/unity-mcp-server.md (2026-04-20T18:00)
+- reviews/browsermcp-mcp-server.md (2026-04-20T20:00)
+- reviews/magic-mcp-server.md (2026-04-20T20:00)
+- Continue with ~April 21–22 reviews until 10 pages audited
+
+---
+
 ## Run 2649 — 2026-07-25 — Citation Audit: 9 Pages (2026-05-17 to 2026-07-16 batch 53) + Deploy
 
 **Mode:** Citation auditor

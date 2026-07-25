@@ -5,6 +5,7 @@ description: "Anthropic launched Claude Design on April 17, 2026, a visual desig
 og_description: "Claude Design (April 17, 2026): Anthropic Labs product that generates live HTML prototypes from prompts. Reads your design system from codebase + Figma files. Exports to HTML, PDF, PPTX, Canva. Powered by Opus 4.7. $20/month on Pro. Figma stock fell 7% on launch day. Rating: 4/5."
 content_type: "Review"
 card_description: "Claude Design launched April 17, 2026 as an Anthropic Labs product built into Claude.ai. You describe a landing page, pitch deck, or marketing one-pager in plain language and Claude produces live, interactive HTML — not a static image. During onboarding, the tool scans your codebase and Figma files to extract brand tokens and components, then applies your design system to every subsequent generation. Refinement happens through chat, inline element comments, or AI-generated adjustment sliders for spacing, color, and layout. Exports are HTML, PDF, PPTX, Canva, and an internal shareable URL. The tool is powered by Claude Opus 4.7 and available to free tier users with limits; full access requires a Pro subscription at $20/month. Claude Design knocked 7% off Figma's stock on launch day, three days after Anthropic CPO Mike Krieger resigned from Figma's board. Rating: 4/5."
+sources_audited: 2026-07-26
 tags: ["anthropic", "claude", "claude-4", "design-tools", "prototyping", "figma", "visual-design", "developer-tools", "anthropic-labs"]
 categories: ["reviews"]
 rating: 4.0
@@ -32,7 +33,7 @@ That combination — native output, system-aware generation — is why the react
 
 The timing of the launch was not incidental.
 
-April 14, 2026: [Anthropic CPO Mike Krieger resigned from Figma's board of directors](https://news.designrush.com/anthropic-claude-design-launch-figma). Krieger co-founded Instagram, joined Anthropic in 2023, and had held a board seat at Figma — a company he had a long personal relationship with — since before that acquisition attempt.
+April 14, 2026: [Anthropic CPO Mike Krieger resigned from Figma's board of directors](https://news.designrush.com/anthropic-claude-design-launch-figma). Krieger co-founded Instagram and [joined Anthropic in May 2024](https://www.cnbc.com/2024/05/15/instagram-co-founder-mike-krieger-joins-amazon-backed-anthropic.html) as CPO, and had held a board seat at Figma — a company he had a long personal relationship with — since before that acquisition attempt.
 
 April 17, 2026: Claude Design launched.
 
@@ -73,7 +74,7 @@ During onboarding, Claude Design asks for access to your codebase and your Figma
 
 Every subsequent generation uses that system. If your brand uses Inter at 16px/24px with a slate color palette and rounded cards at 8px radius, Claude Design applies those specifics rather than its own defaults.
 
-This is qualitatively different from Figma Make's approach. Figma's AI generation tool draws from its 372-component "Simple Design System" — a shared library that every Figma Make user gets. It is polished and consistent, but it is generic. Claude Design generates from *your* components.
+This is qualitatively different from Figma Make's approach. Figma's AI generation tool draws from a shared component library that every Figma Make user gets. It is polished and consistent, but it is generic. Claude Design generates from *your* components.
 
 The practical implication: Claude Design outputs that are closer to production-ready for teams with established design systems, and significantly further from it for teams without one.
 

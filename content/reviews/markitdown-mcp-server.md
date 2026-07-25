@@ -6,6 +6,7 @@ og_description: "MarkItDown MCP: Microsoft's 124K-star document converter for AI
 content_type: "Review"
 card_description: "MarkItDown MCP Server by Microsoft is a single-tool MCP server that converts virtually any document format — PDF, Word, Excel, PowerPoint, images, audio, HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPub — to clean Markdown for LLM consumption. Built on the most-starred document conversion tool on GitHub (124K stars). The MCP package itself is a year-old alpha with declining weekly downloads."
 last_refreshed: 2026-05-19
+sources_audited: 2026-07-26
 ---
 
 Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.

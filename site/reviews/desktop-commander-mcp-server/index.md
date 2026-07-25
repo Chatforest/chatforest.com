@@ -108,7 +108,7 @@ Also available via Smithery, Docker (recommended for security), bash script inst
 
 **Commit frequency has recovered.** The April concern about only 5 commits in four weeks has reversed: v0.2.39 (April 23), v0.2.40 (April 27), and v0.2.41 (May 14) shipped in quick succession. The standalone app focus appears to be complementing the MCP server, not replacing it.
 
-**Behavioral instruction in tool description.** Issue #384 flagged that tool descriptions contain behavioral instructions that could influence agent behavior — a known attack vector in the MCP ecosystem (see AgentSeal's research on prompt injection via tool descriptions).
+**Behavioral instruction in tool description.** Issue #384 flagged that tool descriptions contain behavioral instructions that could influence agent behavior — a known attack vector in the MCP ecosystem where tool metadata can be used to manipulate agent behavior.
 
 ## How It Compares
 
