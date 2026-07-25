@@ -3,13 +3,14 @@ title: "MCP and HR/Recruiting Technology: How AI Agents Connect to Applicant Tra
 date: 2026-03-30T23:45:00+09:00
 description: "A comprehensive guide to 90+ MCP integrations for HR and recruiting technology — covering applicant tracking systems (Greenhouse MCP with Harvest API, Recruitee MCP with candidate"
 content_type: "Guide"
-card_description: "The AI in HR market is projected to reach $30.77 billion by 2034 at 15.94% CAGR, while AI in recruitment specifically is a $707 million market growing to $1.39 billion by 2035. Over 44% of HR executives already use AI for recruiting, and 73% of companies plan to invest in recruitment automation. This guide covers 90+ MCP servers across HR and recruiting technology — from applicant tracking systems and HRIS platforms to talent intelligence, job boards, resume parsing, interview scheduling, and workforce analytics — plus architecture patterns for building AI-powered HR workflows. The ecosystem features notable official participation from Manatal (first ATS with native MCP), Draup (talent intelligence tracking 850M+ professionals), Clockwork Recruiting, and Employment Hero, alongside strong community servers for BambooHR, Rippling, Greenhouse, and LinkedIn."
+card_description: "The AI in HR market is projected to reach $30.77 billion by 2034 at 15.94% CAGR, while AI in recruitment specifically is a $707 million market growing to $1.39 billion by 2035. This guide covers 90+ MCP servers across HR and recruiting technology — from applicant tracking systems and HRIS platforms to talent intelligence, job boards, resume parsing, interview scheduling, and workforce analytics — plus architecture patterns for building AI-powered HR workflows. The ecosystem features notable official participation from Manatal (first ATS with native MCP), Draup (talent intelligence tracking 850M+ professionals), Clockwork Recruiting, and Employment Hero, alongside strong community servers for BambooHR, Rippling, Greenhouse, and LinkedIn."
 last_refreshed: 2026-03-30
+sources_audited: 2026-07-25
 ---
 
-HR and recruiting sit at the intersection of data-heavy operations and deeply human decisions — exactly where AI agents can add the most value when connected to the right systems. The MCP ecosystem for HR technology is growing rapidly, with applicant tracking systems, HRIS platforms, and talent intelligence providers racing to offer standardized AI agent access. Manatal became the first ATS to ship a native MCP server, Draup opened its talent intelligence data (tracking 850 million professionals) through MCP, and unified API platforms like Unified.to now offer 60+ ATS connectors through a single MCP interface.
+HR and recruiting sit at the intersection of data-heavy operations and deeply human decisions — exactly where AI agents can add the most value when connected to the right systems. The MCP ecosystem for HR technology is growing rapidly, with applicant tracking systems, HRIS platforms, and talent intelligence providers racing to offer standardized AI agent access. [Manatal became the first ATS to ship a native MCP server](https://www.manatal.com/blog/manatal-mcp-server), [Draup opened its talent intelligence data](https://www.prnewswire.com/news-releases/draup-joins-the-mcp-ecosystem-delivering-live-talent-intelligence-to-llms-and-copilots-302637209.html) (tracking 850 million professionals) through MCP, and unified API platforms like Unified.to now offer 60+ ATS connectors through a single MCP interface.
 
-The AI in HR market is projected to grow from $8.16 billion in 2025 to $30.77 billion by 2034 at 15.94% CAGR. AI in recruitment specifically is a $707 million market growing at 7.2–7.4% CAGR, projected to reach $1.39 billion by 2035. Over 44% of HR executives already use AI for recruiting and hiring, and more than 73% of companies plan to invest in recruitment automation.
+[The AI in HR market is projected to grow from $8.16 billion in 2025 to $30.77 billion by 2034 at 15.94% CAGR](https://www.precedenceresearch.com/artificial-intelligence-in-hr-market). [AI in recruitment specifically is a $707 million market growing at over 7% CAGR, projected to reach $1.39 billion by 2035](https://www.researchnester.com/reports/ai-recruitment-market/6828).
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to HR platforms, job boards, talent databases, and people operations tools. Rather than building custom integrations for each HR system, MCP-connected agents can search candidates, manage pipelines, query employee data, parse resumes, and analyze workforce metrics through defined tool interfaces. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
@@ -33,7 +34,7 @@ Applicant tracking systems are among the most active HR categories in the MCP ec
 
 ### Manatal — First ATS with Native MCP
 
-**Manatal MCP Server** | Official | Enterprise Plus
+**[Manatal MCP Server](https://www.manatal.com/blog/manatal-mcp-server)** | Official | Enterprise Plus
 Manatal became the first recruitment software to provide a native MCP integration for ChatGPT, Claude, and other LLMs. The server connects live recruitment data directly to AI tools, enabling natural language queries across candidates, jobs, and pipeline data. Users can find deep insights, generate candidate summaries, and craft personalized outreach emails through conversational AI. Available to all Enterprise Plus users at no additional cost. Manatal also features an autonomous AI interviewer and advanced recommendation algorithms as part of their 2026 platform updates.
 
 ### Greenhouse
@@ -129,7 +130,7 @@ Talent intelligence is an emerging category where MCP provides significant value
 ### Draup — The Scale Leader
 
 **Draup Talent Intelligence MCP** | Official | Managed
-Draup provides what may be the largest talent intelligence dataset available through MCP, tracking over 1 million companies, 850 million professionals, 56,000 technologies, and 8,500 labor providers. The MCP connection delivers live skills data, talent mobility insights, job profiles, compensation information, and market signals without requiring custom integrations or batch processing. Updates are available immediately — no manual refreshes required. Draup announced their MCP ecosystem integration in early 2026, positioning it for HR copilots, recruiting assistants, and LLM-powered workforce planning applications.
+Draup provides what may be the largest talent intelligence dataset available through MCP, [tracking over 1 million companies, 850 million professionals, 56,000 technologies, and 8,500 labor providers](https://www.prnewswire.com/news-releases/draup-joins-the-mcp-ecosystem-delivering-live-talent-intelligence-to-llms-and-copilots-302637209.html). The MCP connection delivers live skills data, talent mobility insights, job profiles, compensation information, and market signals without requiring custom integrations or batch processing. Updates are available immediately — no manual refreshes required. Draup announced their MCP ecosystem integration in early 2026, positioning it for HR copilots, recruiting assistants, and LLM-powered workforce planning applications.
 
 ## Job Board and Job Search MCP Servers
 
@@ -405,7 +406,7 @@ HR data is among the most sensitive categories of personal information. AI agent
 
 - **GDPR (EU)**: Employee data processing requires lawful basis, purpose limitation, and data minimization. AI-assisted HR decisions may trigger GDPR's automated decision-making provisions (Article 22), requiring human oversight and the right to explanation
 - **CCPA/CPRA (California)**: Employee personal information has specific protections, including the right to know what data is collected and the right to deletion
-- **Local employment laws**: Many jurisdictions have specific rules about AI in hiring — Illinois AIPA requires disclosure of AI use in video interviews; New York City's Local Law 144 requires bias audits of automated employment decision tools; the EU AI Act classifies AI systems in employment as "high-risk," requiring conformity assessments
+- **Local employment laws**: Many jurisdictions have specific rules about AI in hiring — [Illinois's Artificial Intelligence Video Interview Act (AIVIA)](https://www.ilga.gov/Legislation/ILCS/Articles?ActID=4015&ChapterID=68&Print=True) requires disclosure of AI use in video interviews; [New York City's Local Law 144](https://www.nyc.gov/site/dca/about/new-laws-rules.page) requires bias audits of automated employment decision tools; the EU AI Act classifies AI systems in employment as "high-risk," requiring conformity assessments
 
 ### Bias and Fairness in AI Recruiting
 

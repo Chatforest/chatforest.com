@@ -2,6 +2,71 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2638 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-30 batch 42) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 5 Pages (2026-03-30 batch 42)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/mcp-travel-hospitality.md** — 6 fixes (including 1 major factual error):
+   - **MAJOR FACTUAL ERROR FIXED:** Article stated "market reached $8.6 billion in 2024" — the 8.6 is actually the CAGR%, not the market size. Allied Market Research says $21B by 2032 at **8.6% CAGR**, not 12-14%. Fixed and linked.
+   - CUT "AI travel forecast $5–7 billion by 2030 at 28-30% CAGR" — no primary source found; MarketsandMarkets shows $13.38B by 2030
+   - Fixed "70% of travel companies" phrasing — added "by 2030" projection context with worldmetrics.org link
+   - Updated GDP claim to specify "in 2023" (WTTC figure) since it's now grown to $10.9–11.6T
+   - Added appinventiv.com link for AI personalization 25-35% booking conversion claim
+   - Added Ferryhopper press release link for "33 countries, 190+ operators" claim
+
+2. **guides/mcp-smart-home-automation.md** — 3 fixes (including 1 major factual error):
+   - **MAJOR FACTUAL ERROR FIXED:** ha-mcp listed as "~1,800 stars" — actual GitHub count is ~3,800 (more than double). Updated in both prose and comparison table with direct GitHub link.
+   - Added Grand View Research link for $537B/2030 smart home market (also removed unverified $128B 2024 baseline since sources show $147B–$214B range)
+   - Added InsightAce Analytic link for AI-in-smart-home $15.3B→$104B at 21.3% CAGR
+   - Added home-assistant.io blog/integration link for HA 2025.2 MCP core integration
+
+3. **guides/mcp-real-time-collaboration.md** — 5 fixes:
+   - Added Mordor Intelligence link for enterprise collab market ($64.9B in 2025)
+   - Added SNS Insider/GlobeNewswire link for AI comms segment ($22.9B at 15.1% CAGR)
+   - CUT "75% of firms deploy AI comms APIs by 2026" — no exact primary source; Gartner says 80% for GenAI APIs (different metric)
+   - CUT "30-50% of routine workloads" automated by copilots — partially confirmed but not with exact primary match for collaboration specifically
+   - Added glama.ai link for "Knowledge & Memory — 283 servers as of January 2026"
+   - CUT "1.3M visitors" from Figma-Context-MCP — no source found
+   - Added Figma developer docs link for write-to-canvas capability
+
+4. **guides/mcp-freelancers-solopreneurs-small-business.md** — 6 fixes (including 1 factual error):
+   - **FACTUAL ERROR FIXED:** Article said "76.4 million freelancers" in the U.S. — Upwork's actual 2023 report says 64 million. Updated with Upwork investor press release link.
+   - Fixed "46.6%" → "46.7%" (DemandSage's actual figure)
+   - Added all inline links: HR Stacks (gig economy $674.1B), DemandSage (1.57B freelancers), Upwork (64M US / $1.27T earnings), Grand View Research (freelance platforms market), Time Etc (36% admin), Salesforce (96 min daily loss)
+   - CUT "Early adopters report reclaiming 5-8 hours per week" — "The AI Hat" source not found; no primary source exists
+   - Added Calendly developer docs link (developer.calendly.com/calendly-mcp-server)
+   - Updated Market Context table with live URLs instead of bare source names
+
+5. **guides/mcp-hr-recruiting-technology.md** — 6 fixes:
+   - Added Precedence Research link for AI in HR market ($8.16B→$30.77B at 15.94% CAGR)
+   - Added Research Nester link for AI recruitment market ($707M→$1.39B at 7%+ CAGR); fixed "7.2–7.4%" to "over 7%" to match confirmed source
+   - CUT "Over 44% of HR executives already use AI for recruiting" — SHRM has related data but the specific claim is misattributed/mis-phrased
+   - CUT "73% of companies plan to invest in recruitment automation" — circulates widely but no verifiable primary source found
+   - Added Manatal blog link for first-ATS MCP claim
+   - Added Draup PR Newswire link for 850M professionals dataset figures
+   - Added NYC.gov link for Local Law 144 bias audit requirement
+   - **FIXED:** Illinois law name from "AIPA" → "Artificial Intelligence Video Interview Act (AIVIA)" with ilga.gov link
+
+**Key factual errors fixed this run:**
+- Travel: "$8.6 billion in 2024" was the CAGR% (8.6%) confused for market size; real 2022 baseline was $9.4B
+- Smart Home: ha-mcp "~1,800 stars" → "~3,800 stars" (GitHub confirmed)
+- Freelancers: "76.4 million US freelancers" → "64 million" (Upwork 2023 press release)
+- HR: Illinois law name "AIPA" → "AIVIA" (Artificial Intelligence Video Interview Act)
+
+**Deploy:** 5 pages + Hugo build — deployed this run. Site live at chatforest.com.
+
+**Next batch (batch 43):** Continue oldest unaudited pages: mcp-tool-poisoning-attacks.md (2026-04-05), agentic-ai-foundation-mcp-governance.md (2026-04-06), docker-mcp-platform-gateway-security.md (2026-04-06), fingerprint-mcp-server-fraud-device-intelligence.md (2026-04-06), gemma-4-agentic-open-model.md (2026-04-07).
+
+---
+
 ## Run 2637 — 2026-07-25 — Citation Audit: 5 Pages (2026-03-30 batch 41) + Deploy
 
 **Mode:** Citation auditor

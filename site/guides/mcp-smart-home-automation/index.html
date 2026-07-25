@@ -67,8 +67,8 @@
 
       <div class="article-body">
         <p>Smart home automation represents one of the most tangible applications of the Model Context Protocol — bringing AI agent intelligence directly into the physical spaces where people live. Rather than tapping buttons in separate apps for lights, thermostats, locks, cameras, and speakers, MCP enables AI agents to understand the full context of a home and orchestrate devices across platforms through natural language.</p>
-<p>The global smart home market was valued at approximately $128 billion in 2024 and is projected to reach $537 billion by 2030, growing at a 27% CAGR. The AI-in-smart-home segment specifically was valued at $15.3 billion in 2024 and is projected to reach $104 billion by 2034 at a 21.3% CAGR. Growth drivers include IoT device proliferation, wireless protocol maturation (Matter, Thread, Zigbee 3.0), and increasing consumer demand for unified, intelligent home control.</p>
-<p>The convergence of MCP with smart home platforms is accelerating rapidly. Home Assistant — the dominant open-source home automation platform — shipped an official MCP Server core integration in version 2025.2, and the community has built multiple feature-rich alternatives with 95+ tools for comprehensive home control. Device manufacturers like Tuya and Samsung have released official MCP SDKs, and dedicated MCP servers exist for specific device categories from Philips Hue lights to Ring security cameras to Roborock vacuums.</p>
+<p>The global smart home market <a href="https://www.grandviewresearch.com/press-release/global-smart-homes-market">is projected to reach $537 billion by 2030, growing at a 27% CAGR</a>. The AI-in-smart-home segment specifically <a href="https://www.insightaceanalytic.com/report/ai-in-smart-home-technology-market/2704">was valued at $15.3 billion in 2024 and is projected to reach $104 billion by 2034 at a 21.3% CAGR</a>. Growth drivers include IoT device proliferation, wireless protocol maturation (Matter, Thread, Zigbee 3.0), and increasing consumer demand for unified, intelligent home control.</p>
+<p>The convergence of MCP with smart home platforms is accelerating rapidly. Home Assistant — the dominant open-source home automation platform — <a href="https://www.home-assistant.io/blog/2025/02/05/release-20252/">shipped an official MCP Server core integration in version 2025.2</a>, and the community has built multiple feature-rich alternatives with 95+ tools for comprehensive home control. Device manufacturers like Tuya and Samsung have released official MCP SDKs, and dedicated MCP servers exist for specific device categories from Philips Hue lights to Ring security cameras to Roborock vacuums.</p>
 <p>This guide is research-based. We survey what MCP servers exist across the smart home landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; the site&rsquo;s content is researched and written by AI. For background on MCP, see our <a href="/guides/what-is-mcp/">introduction to MCP</a> and the <a href="/reviews/">MCP server directory</a>.</p>
 <h2 id="why-smart-homes-need-mcp">Why Smart Homes Need MCP</h2>
 <p>Most smart home setups suffer from the same fundamental problem: fragmentation. Lights are in one app, thermostats in another, cameras in a third, and speakers in a fourth. Home Assistant and similar hubs address this at the device level, but MCP adds a layer of AI intelligence on top.</p>
@@ -92,7 +92,7 @@
 </ul>
 <p>The official integration takes a deliberately conservative approach — it exposes what Home Assistant already knows and can do, rather than adding new capabilities. This makes it the safest starting point for connecting AI agents to your smart home.</p>
 <h3 id="ha-mcp-unofficial-home-assistant-mcp-server">ha-mcp (Unofficial Home Assistant MCP Server)</h3>
-<p><strong>Repository:</strong> homeassistant-ai/ha-mcp (~1,800 stars) | <strong>Type:</strong> Community | <strong>PyPI:</strong> ha-mcp</p>
+<p><strong>Repository:</strong> <a href="https://github.com/homeassistant-ai/ha-mcp">homeassistant-ai/ha-mcp</a> (~3,800 stars) | <strong>Type:</strong> Community | <strong>PyPI:</strong> ha-mcp</p>
 <p>The most feature-rich Home Assistant MCP server, providing 95+ tools that go far beyond basic device control. This is the server that has become the de facto standard for comprehensive AI-powered home automation.</p>
 <p>Core capabilities:</p>
 <ul>
@@ -304,8 +304,8 @@
 </thead>
 <tbody>
 <tr>
-<td>ha-mcp (homeassistant-ai)</td>
-<td>~1,800</td>
+<td><a href="https://github.com/homeassistant-ai/ha-mcp">ha-mcp (homeassistant-ai)</a></td>
+<td>~3,800</td>
 <td>Community</td>
 <td>Home Assistant</td>
 <td>95+ tools, most comprehensive</td>

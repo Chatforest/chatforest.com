@@ -3,7 +3,7 @@
 > A comprehensive guide to 165+ MCP integrations for media production and broadcasting — covering video editing (DaVinci Resolve 732 stars, Premiere Pro 98 stars, Final Cut Pro 26
 
 
-AI is reshaping media production at an unprecedented pace. The global AI in media and entertainment market reached $33.7 billion in 2025, projected to hit $99.5 billion by 2030 at a 24.2% CAGR according to Grand View Research. The AI video generation and editing software segment alone is forecast to grow from $3.67 billion in 2026 to $24.89 billion by 2036. AI content generation broadly — spanning text, image, audio, and video — is expected to reach $26.73 billion by 2030. Companies built from the ground up on AI media tools are projected to operate with 20–30% of the human costs of traditional media companies by late 2026.
+AI is reshaping media production at an unprecedented pace. The [global AI in media and entertainment market reached $33.7 billion in 2025, projected to hit $99.5 billion by 2030 at a 24.2% CAGR](https://www.grandviewresearch.com/press-release/global-artificial-intelligence-ai-media-entertainment-market), according to Grand View Research.
 
 The creative tools ecosystem is responding. Every major game engine now has MCP integration. DaVinci Resolve, Premiere Pro, After Effects, and Ableton Live all have substantial community-built MCP servers. ElevenLabs launched an official MCP server with voice cloning, text-to-speech, and audio processing. Cloudinary, Figma, Canva, and Mux have released official MCP implementations connecting AI agents to media asset management, design, and video delivery infrastructure.
 
@@ -130,7 +130,7 @@ The highest-starred official vendor MCP server in the media production category.
 
 **sandraschi/suno-mcp** and **mcp-suno** (PyPI)
 
-Suno, one of the leading consumer AI music generation platforms, has community MCP servers enabling custom and inspiration-mode music generation. However, the broader AI music generation space remains legally uncertain — major label lawsuits against both Suno and Udio are ongoing as of early 2026, and Udio disabled downloads in October 2025 without restoring them.
+Suno, one of the leading consumer AI music generation platforms, has community MCP servers enabling custom and inspiration-mode music generation. The AI music generation legal landscape shifted significantly in late 2025: [Warner Music Group settled with both Suno and Udio](https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/) in November 2025, and [UMG settled with Udio](https://www.hollywoodreporter.com/music/music-industry-news/afm-lawsuit-umg-wmg-ai-song-generator-settlement-1236614835/) in October 2025. However, UMG and Sony continued litigation against Suno into 2026, leaving copyright liability for AI music training data still unresolved.
 
 Additional audio tools include axiomantic/audiomancer (AI-assisted music production with TidalCycles), bretbouchard/audio_agent_mcp (audio analysis and MIDI learning), and batch audio processing servers using FFmpeg backends.
 
@@ -356,7 +356,7 @@ The transcription ecosystem is functional but entirely community-built. No major
 
 AI video generation via MCP is in its earliest stages, with the landscape in flux due to major platform changes.
 
-**writingmate/sora-2-mcp** (2 stars) and **strato-space/media-gen-mcp** (8 stars) provide OpenAI Sora 2 integration. However, OpenAI announced the Sora app shutdown for April 26, 2026 and API shutdown for September 24, 2026, making these servers time-limited.
+**writingmate/sora-2-mcp** (2 stars) and **strato-space/media-gen-mcp** (8 stars) provide OpenAI Sora 2 integration. However, [OpenAI announced a two-stage Sora shutdown](https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/): app closure on April 26, 2026 and API shutdown on September 24, 2026, making these servers time-limited.
 
 **VidCraftAI** (2 stars) converts natural language to Manim mathematical animations. HeyGen MCP integration enables automated video creation via AI avatars. Google Veo MCP integration is referenced in skill tool repositories.
 
@@ -487,15 +487,15 @@ Media production MCP integrations operate in an increasingly regulated landscape
 
 ### AI Content Labeling and Transparency
 
-**EU AI Act Article 50** transparency obligations become enforceable **August 2, 2026** — requiring disclosure of AI interactions, labeling of synthetic content, and deepfake identification. The AI Code of Practice provides voluntary guidance on labeling, watermarking, metadata, and technical measures ahead of enforcement. MCP servers generating or modifying media content will need to support content provenance standards, particularly the **C2PA** (Coalition for Content Provenance and Authenticity) framework for cryptographic content authentication that major platforms are adopting.
+[**EU AI Act Article 50**](https://artificialintelligenceact.eu/transparency-rules-article-50/) transparency obligations become enforceable **August 2, 2026** — requiring disclosure of AI interactions, labeling of synthetic content, and deepfake identification. The [AI Code of Practice (second draft published March 5, 2026)](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-second-draft-code-practice-marking-and-labelling-ai-generated-content) provides voluntary guidance on labeling, watermarking, metadata, and technical measures ahead of enforcement. MCP servers generating or modifying media content will need to support content provenance standards, particularly the **[C2PA](https://c2pa.org/)** (Coalition for Content Provenance and Authenticity) framework for cryptographic content authentication that major platforms are adopting.
 
 ### Deepfake Legislation
 
-The United States has rapidly expanded deepfake legislation. The **TAKE IT DOWN Act** (signed May 2025) criminalizes publishing non-consensual intimate imagery including AI deepfakes, with penalties up to 3 years in prison and a 48-hour platform removal requirement. The **DEFIANCE Act** (passed Senate unanimously January 2026) provides a federal civil remedy with statutory damages up to $150,000 ($250,000 when linked to assault, stalking, or harassment). As of February 2026, **46 US states** have enacted AI-generated media legislation, with bills increasingly targeting not just creators but AI platforms, payment processors, and hosting services.
+The United States has rapidly expanded deepfake legislation. The [**TAKE IT DOWN Act**](https://www.congress.gov/crs-product/LSB11314) (signed May 19, 2025) criminalizes publishing non-consensual intimate imagery including AI deepfakes, with penalties up to 3 years in prison (for minors) and a 48-hour platform removal requirement. The [**DEFIANCE Act**](https://19thnews.org/2026/01/senate-defiance-act-nonconsensual-images-deepfakes/) (passed the U.S. Senate unanimously January 2026; awaiting House vote as of early 2026) would provide a federal civil remedy with statutory damages up to $150,000 ($250,000 when linked to assault, stalking, or harassment). [As of January 2026, **46 US states** had enacted laws governing the creation or distribution of deepfakes](https://www.multistate.us/insider/2026/2/12/how-ai-generated-content-laws-are-changing-across-the-country), with bills increasingly targeting not just creators but AI platforms, payment processors, and hosting services.
 
 ### Copyright Uncertainty
 
-The copyright status of AI-generated media remains actively contested. The US Copyright Office maintains that purely AI-generated works cannot be copyrighted, but human-guided AI-assisted works may be eligible. Major label lawsuits against Suno and Udio over music training data are ongoing, with implications for all generative audio tools. MCP servers connecting to AI generation tools should be deployed with awareness that the legal framework for AI-created content is still solidifying.
+The copyright status of AI-generated media remains actively contested. The [US Copyright Office](https://www.copyright.gov/ai/) maintains that purely AI-generated works cannot be copyrighted, but human-guided AI-assisted works may be eligible — a position affirmed when the [U.S. Supreme Court declined in March 2026](https://www.mayerbrown.com/en/insights/publications/2026/03/supreme-court-denies-review-in-ai-authorship-case) to hear an appeal challenging this standard. While Warner and UMG reached settlements with Suno and Udio in late 2025, UMG and Sony continued suing Suno into 2026, leaving copyright liability for AI music training data still contested. MCP servers connecting to AI generation tools should be deployed with awareness that the legal framework for AI-created content is still solidifying.
 
 ### Voice and Likeness Protection
 

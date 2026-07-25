@@ -1,11 +1,11 @@
 # MCP and Natural Language Processing: How AI Agents Connect to Text Analysis, Sentiment Detection, Named Entity Recognition, Translation, Speech Processing, OCR, Knowledge Graphs, Embeddings, Content Moderation, and Cloud NLP Services
 
-> A comprehensive guide to 80+ MCP integrations for natural language processing — covering LLM gateways (official Hugging Face MCP with ~212 stars for 200K+ models and dynamic
+> A comprehensive guide to 80+ MCP integrations for natural language processing — covering LLM gateways (official Hugging Face MCP with ~212 stars for 1M+ models and dynamic
 
 
 Natural language processing sits at the heart of what makes AI agents useful — the ability to understand, generate, translate, classify, and extract meaning from human language. The Model Context Protocol provides a standardized way for AI agents to access specialized NLP capabilities that go beyond their built-in abilities: professional-grade translation, speech recognition, domain-specific text analysis, knowledge graph construction, semantic search, and content moderation across dozens of platforms and services.
 
-The NLP market is projected to grow from approximately $37-49 billion in 2025 to $115-193 billion by 2030, with CAGR estimates ranging from 20% to 24% depending on the source. Some projections extend to over $1 trillion by 2035 at 35% CAGR. North America holds roughly 46% of the global market. Key growth drivers include cloud-based NLP adoption, digital transformation initiatives, and the explosion of AI-powered applications across healthcare, finance, legal, and customer service.
+The NLP market is projected to grow from approximately [$37–49 billion in 2025 to $115–193 billion by 2030](https://www.mordorintelligence.com/industry-reports/natural-language-processing-market), with CAGR estimates ranging from 20% to 24% depending on the source. Key growth drivers include cloud-based NLP adoption, digital transformation initiatives, and the explosion of AI-powered applications across healthcare, finance, legal, and customer service.
 
 The convergence of MCP with NLP is accelerating. Autonomous language agents — AI systems that can plan, take actions, and complete multi-step NLP tasks with minimal supervision — surged in 2025 and are expected to define the NLP landscape in 2026. Knowledge graphs, efficient attention mechanisms, and world models are emerging trends that MCP servers are beginning to address.
 
@@ -15,7 +15,7 @@ This guide is research-based. We survey what MCP servers exist across the NLP la
 
 AI agents already have strong language capabilities built in. So why do they need MCP servers for NLP tasks?
 
-**Specialized models outperform general ones on specific tasks.** A fine-tuned sentiment analysis model trained on financial earnings calls will dramatically outperform a general LLM on that domain. MCP servers let agents delegate to the right specialist model for each task — Hugging Face's 200,000+ models, domain-specific classifiers, or enterprise NLP platforms — without being limited to their own capabilities.
+**Specialized models outperform general ones on specific tasks.** A fine-tuned sentiment analysis model trained on financial earnings calls will dramatically outperform a general LLM on that domain. MCP servers let agents delegate to the right specialist model for each task — Hugging Face's [1M+ models](https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026), domain-specific classifiers, or enterprise NLP platforms — without being limited to their own capabilities.
 
 **Speech and audio require dedicated infrastructure.** LLMs process text. Converting speech to text (and back) requires separate audio processing pipelines. MCP servers for Whisper, ElevenLabs, and other speech platforms bridge this gap, letting text-based agents handle voice interactions, transcription, and audio content.
 
@@ -33,7 +33,7 @@ The largest category of NLP-adjacent MCP servers provides access to language mod
 
 **Repository:** huggingface/hf-mcp-server (~212 stars) | **Type:** Official
 
-The official Hugging Face MCP server provides access to the entire Hugging Face ecosystem — over 200,000 models, datasets, papers, and Spaces.
+The official Hugging Face MCP server provides access to the entire Hugging Face ecosystem — [over 1 million public models](https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026), datasets, papers, and Spaces.
 
 Core capabilities:
 - **Model and dataset search** — discover models by task, framework, or domain
@@ -416,7 +416,7 @@ Azure AI Foundry provides MCP server access to Azure services, potentially inclu
 
 | Category | Server | Stars | Type | Key Strength |
 |----------|--------|-------|------|-------------|
-| LLM Gateway | Hugging Face Official | ~212 | Official | 200K+ models, dynamic Spaces tools |
+| LLM Gateway | Hugging Face Official | ~212 | Official | 1M+ models, dynamic Spaces tools |
 | LLM Gateway | OpenRouter Multimodal | ~19 | Community | 300+ LLMs, vision support |
 | LLM Gateway | LiteLLM MCP | — | Community | Multi-provider, cost optimization |
 | Speech | ElevenLabs Official | — | Official | TTS + 90-lang transcription + voice cloning |
@@ -629,7 +629,7 @@ NLP applications carry specific regulatory and ethical requirements that MCP ser
 
 ### For NLP Engineers
 
-Start with the **Hugging Face official MCP server** for immediate access to 200,000+ models. The dynamic Spaces integration lets you connect existing NLP Gradio apps as MCP tools without building new servers. For production text analysis, evaluate **text-toolkit** for preprocessing and **knowledge-mcp** (LightRAG) for building queryable knowledge bases from analyzed text.
+Start with the **Hugging Face official MCP server** for immediate access to [1M+ models](https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026). The dynamic Spaces integration lets you connect existing NLP Gradio apps as MCP tools without building new servers. For production text analysis, evaluate **text-toolkit** for preprocessing and **knowledge-mcp** (LightRAG) for building queryable knowledge bases from analyzed text.
 
 ### For Content Teams
 
@@ -659,5 +659,5 @@ The gaps are equally telling. Foundational NLP libraries (spaCy, NLTK), cloud NL
 
 For teams building NLP-powered AI agent systems today, the architecture patterns in this guide — document processing pipelines, multilingual content platforms, conversational analytics, and research agents — are achievable with existing servers. The gaps represent opportunities for both open-source contributors and vendors looking to differentiate their NLP platforms.
 
-The NLP market's trajectory toward $100+ billion by 2030 suggests that MCP's role as the integration layer for language technology will only grow. The servers that exist today are the foundation; the ones being built tomorrow will fill the gaps that make NLP through MCP as natural as NLP through Python libraries is today.
+The [NLP market's trajectory toward $100+ billion by 2030](https://www.mordorintelligence.com/industry-reports/natural-language-processing-market) suggests that MCP's role as the integration layer for language technology will only grow. The servers that exist today are the foundation; the ones being built tomorrow will fill the gaps that make NLP through MCP as natural as NLP through Python libraries is today.
 

@@ -5,9 +5,9 @@
 
 Smart home automation represents one of the most tangible applications of the Model Context Protocol — bringing AI agent intelligence directly into the physical spaces where people live. Rather than tapping buttons in separate apps for lights, thermostats, locks, cameras, and speakers, MCP enables AI agents to understand the full context of a home and orchestrate devices across platforms through natural language.
 
-The global smart home market was valued at approximately $128 billion in 2024 and is projected to reach $537 billion by 2030, growing at a 27% CAGR. The AI-in-smart-home segment specifically was valued at $15.3 billion in 2024 and is projected to reach $104 billion by 2034 at a 21.3% CAGR. Growth drivers include IoT device proliferation, wireless protocol maturation (Matter, Thread, Zigbee 3.0), and increasing consumer demand for unified, intelligent home control.
+The global smart home market [is projected to reach $537 billion by 2030, growing at a 27% CAGR](https://www.grandviewresearch.com/press-release/global-smart-homes-market). The AI-in-smart-home segment specifically [was valued at $15.3 billion in 2024 and is projected to reach $104 billion by 2034 at a 21.3% CAGR](https://www.insightaceanalytic.com/report/ai-in-smart-home-technology-market/2704). Growth drivers include IoT device proliferation, wireless protocol maturation (Matter, Thread, Zigbee 3.0), and increasing consumer demand for unified, intelligent home control.
 
-The convergence of MCP with smart home platforms is accelerating rapidly. Home Assistant — the dominant open-source home automation platform — shipped an official MCP Server core integration in version 2025.2, and the community has built multiple feature-rich alternatives with 95+ tools for comprehensive home control. Device manufacturers like Tuya and Samsung have released official MCP SDKs, and dedicated MCP servers exist for specific device categories from Philips Hue lights to Ring security cameras to Roborock vacuums.
+The convergence of MCP with smart home platforms is accelerating rapidly. Home Assistant — the dominant open-source home automation platform — [shipped an official MCP Server core integration in version 2025.2](https://www.home-assistant.io/blog/2025/02/05/release-20252/), and the community has built multiple feature-rich alternatives with 95+ tools for comprehensive home control. Device manufacturers like Tuya and Samsung have released official MCP SDKs, and dedicated MCP servers exist for specific device categories from Philips Hue lights to Ring security cameras to Roborock vacuums.
 
 This guide is research-based. We survey what MCP servers exist across the smart home landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
@@ -46,7 +46,7 @@ The official integration takes a deliberately conservative approach — it expos
 
 ### ha-mcp (Unofficial Home Assistant MCP Server)
 
-**Repository:** homeassistant-ai/ha-mcp (~1,800 stars) | **Type:** Community | **PyPI:** ha-mcp
+**Repository:** [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) (~3,800 stars) | **Type:** Community | **PyPI:** ha-mcp
 
 The most feature-rich Home Assistant MCP server, providing 95+ tools that go far beyond basic device control. This is the server that has become the de facto standard for comprehensive AI-powered home automation.
 
@@ -327,7 +327,7 @@ This represents an important pattern: rather than typing commands to control a s
 
 | Server | Stars | Type | Platform | Key Strength |
 |--------|-------|------|----------|-------------|
-| ha-mcp (homeassistant-ai) | ~1,800 | Community | Home Assistant | 95+ tools, most comprehensive |
+| [ha-mcp (homeassistant-ai)](https://github.com/homeassistant-ai/ha-mcp) | ~3,800 | Community | Home Assistant | 95+ tools, most comprehensive |
 | HA Official MCP Server | Core | Official | Home Assistant | Built-in, secure, zero setup |
 | tevonsb/homeassistant-mcp | ~500 | Community | Home Assistant | SSE real-time updates |
 | Tuya MCP SDK | — | Official | Tuya Cloud | Official, Python + Go, 5 DCs |

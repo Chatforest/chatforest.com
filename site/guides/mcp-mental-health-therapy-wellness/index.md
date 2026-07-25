@@ -3,7 +3,7 @@
 > A comprehensive guide to MCP integrations for mental health and wellness — covering FHIR-based EHR servers (health-record-mcp with SMART on FHIR auth, WSO2 fhir-mcp-server
 
 
-Mental health is one of the most promising — and most ethically sensitive — domains for AI agent integration. The digital mental health market is projected to reach $17.5 billion by 2030, LLM-based chatbots now represent 45% of new mental health clinical studies, and the 2026 CMS Physician Fee Schedule establishes permanent telehealth reimbursement pathways specifically for behavioral health services. Meanwhile, therapist shortages remain acute: the U.S. faces an estimated shortage of over 150,000 mental health professionals.
+Mental health is one of the most promising — and most ethically sensitive — domains for AI agent integration. The [mental health apps market is projected to reach $17.5 billion by 2030](https://www.grandviewresearch.com/press-release/global-mental-health-apps-market), [LLM-based chatbots now represent 45% of new mental health clinical studies](https://pubmed.ncbi.nlm.nih.gov/40948070/), and the [2026 CMS Physician Fee Schedule establishes permanent telehealth reimbursement pathways specifically for behavioral health services](https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f). Meanwhile, therapist shortages remain acute: [as of December 2025, 137 million Americans — 40% of the U.S. population — live in a federally designated Mental Health Professional Shortage Area](https://mentalwealthsolutions.org/blog/mental-health-provider-shortage-areas-2026).
 
 The Model Context Protocol is emerging as the connective layer between AI assistants and the fragmented ecosystem of health records, therapy platforms, wearable devices, and wellness tools. Rather than building custom integrations for each system, MCP provides a standardized protocol that lets AI agents access clinical data through FHIR servers, query wearable health metrics, manage therapy documentation, and connect to compliance frameworks — all through a common interface.
 
@@ -250,7 +250,7 @@ Key capabilities:
 - **Local execution** — runs entirely on local hardware for maximum data privacy
 - **Animated UI** — designed with a soothing, calming interface
 
-Safety note: while Zenify implements crisis detection, research published in Nature's Scientific Reports (2025) found that most mental health chatbot agents "simultaneously fail to provide emergency resources and possibly elicit negative emotional responses" during crisis situations. Any crisis detection system should be considered a supplement to — not a replacement for — human crisis intervention services like the 988 Suicide and Crisis Lifeline.
+Safety note: while Zenify implements crisis detection, [research published in Nature's Scientific Reports (August 2025)](https://www.nature.com/articles/s41598-025-17242-4) found that most mental health chatbot agents "simultaneously fail to provide emergency resources and possibly elicit negative emotional responses" during crisis situations. Any crisis detection system should be considered a supplement to — not a replacement for — human crisis intervention services like the 988 Suicide and Crisis Lifeline.
 
 ### ChatCBT (Obsidian Plugin)
 
@@ -412,7 +412,7 @@ For MCP-connected systems, this means: if your AI agent provides clinical recomm
 
 ### California SB 243: Companion Chatbot Regulation
 
-California's SB 243, signed September 11, 2025, is the first U.S. law specifically regulating AI "companion chatbots" — and its requirements directly affect mental health AI applications:
+[California's SB 243](https://www.skadden.com/insights/publications/2025/10/new-california-companion-chatbot-law), signed October 13, 2025, is the first U.S. law specifically regulating AI "companion chatbots" — and its requirements directly affect mental health AI applications:
 
 - **Disclosure requirement** — chatbots must clearly state they are artificial, not human therapists
 - **Suicide prevention protocols** — mandatory safety measures when users express self-harm ideation
@@ -434,7 +434,7 @@ Any MCP server accessing therapy records must distinguish between standard clini
 
 Research consistently identifies several ethical tensions in AI-assisted mental health care:
 
-**Crisis response reliability.** A 2025 Nature Scientific Reports study evaluated mental health chatbot agents' performance in detecting and managing suicidal ideation. The findings were concerning: most chatbots "simultaneously fail to provide emergency resources and possibly elicit negative emotional responses, which might actively harm users experiencing a mental health crisis." MCP-connected AI agents that interact with vulnerable populations must implement robust crisis detection with immediate handoff to human responders.
+**Crisis response reliability.** [A 2025 study in Nature's Scientific Reports](https://www.nature.com/articles/s41598-025-17242-4) evaluated mental health chatbot agents' performance in detecting and managing suicidal ideation. The findings were concerning: most chatbots "simultaneously fail to provide emergency resources and possibly elicit negative emotional responses, which might actively harm users experiencing a mental health crisis." MCP-connected AI agents that interact with vulnerable populations must implement robust crisis detection with immediate handoff to human responders.
 
 **Therapeutic relationship concerns.** Therapy's effectiveness depends substantially on the therapeutic alliance — the trusting relationship between therapist and patient. AI agents that intervene in therapeutic workflows risk either undermining this relationship (if patients feel surveilled) or creating problematic pseudo-relationships (if patients form attachments to AI assistants). MCP system designers should keep AI in a support role, enhancing rather than replacing the human therapeutic relationship.
 

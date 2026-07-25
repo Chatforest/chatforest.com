@@ -5,9 +5,10 @@ description: "A comprehensive guide to 70+ MCP integrations for real-time collab
 content_type: "Guide"
 card_description: "The enterprise collaboration software market is valued at $64.9 billion in 2025, projected to reach $121.5 billion by 2030 at 13.4% CAGR. AI copilots are expected to automate 30-50% of routine collaboration workloads. This guide covers 70+ MCP servers across real-time collaboration — from Slack and Teams messaging to Notion and Confluence editing, Miro and Figma whiteboarding, video conferencing transcription, project management, and shared workspaces. The ecosystem features official first-party MCP servers from Slack, Notion, Atlassian, Miro, Figma, Airtable, Asana, and Linear, alongside community servers that often provide 3-5x more tools. Architecture patterns cover AI-augmented team communication, collaborative document workflows, meeting intelligence pipelines, and multi-agent project coordination."
 last_refreshed: 2026-04-04
+sources_audited: 2026-07-25
 ---
 
-Real-time collaboration is the foundation of modern work. The enterprise collaboration software market is valued at approximately $64.9 billion in 2025, projected to reach $121.5 billion by 2030 at 13.4% CAGR. Within this space, AI-enabled communications and collaboration tools represent a $22.9 billion segment growing at 15.1% CAGR. By 2026, 75% of firms plan to deploy AI-enabled communications APIs, and copilots embedded in collaboration tools are expected to automate 30-50% of routine workloads — meeting notes, document creation, status updates, and project analytics.
+Real-time collaboration is the foundation of modern work. The [enterprise collaboration software market is valued at approximately $64.9 billion in 2025, projected to reach $121.5 billion by 2030 at 13.4% CAGR](https://www.mordorintelligence.com/industry-reports/enterprise-collaboration-market). Within this space, [AI-enabled communications and collaboration tools represent a $22.9 billion segment growing at 15.1% CAGR](https://www.globenewswire.com/news-release/2026/03/06/3250896/0/en/AI-in-Enterprise-Communications-and-Collaboration-Market-Size-to-Hit-USD-92.93-Billion-by-2035-SNS-Insider.html). Copilots embedded in collaboration tools are expected to automate a substantial share of routine workloads — meeting notes, document creation, status updates, and project analytics.
 
 The Model Context Protocol is emerging as the bridge between AI agents and collaboration platforms. Rather than each AI tool building bespoke integrations with Slack, Notion, Jira, and Teams, MCP provides a standardized protocol that lets any MCP-compatible AI assistant — Claude Code, Cursor, Windsurf, GitHub Copilot — interact with collaboration tools through a common interface. The result: AI agents can read Slack channels, edit Notion pages, create Jira tickets, join whiteboarding sessions, and summarize meeting transcripts — all through the same protocol.
 
@@ -218,11 +219,11 @@ This is one of the few MCP servers in the collaboration space that implements ge
 
 **Type:** Official (first-party) | **Transport:** Streamable HTTP (remote) | **Status:** Open beta
 
-Figma's official MCP server represents a significant step toward AI-assisted design collaboration.
+[Figma's official MCP server](https://developers.figma.com/docs/figma-mcp-server/) represents a significant step toward AI-assisted design collaboration.
 
 Key capabilities:
 - **Design-to-code** — extract design information for code generation
-- **Write-to-canvas** (March 2026) — AI agents can create design elements directly on the canvas
+- **Write-to-canvas** (March 2026) — AI agents can [create design elements directly on the canvas](https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/)
 - **Code Connect** — link design components to code implementations
 - **UI capture** — screenshot and analyze existing designs
 - **FigJam support** — access to FigJam collaborative whiteboards
@@ -230,7 +231,7 @@ Key capabilities:
 
 **Figma-Context-MCP (GLips — Community)**
 
-**Repository:** GLips/Figma-Context-MCP (~5,000 stars, 1.3M visitors) | **Type:** Community | **Transport:** stdio
+**Repository:** GLips/Figma-Context-MCP (~5,000 stars) | **Type:** Community | **Transport:** stdio
 
 The community server that preceded the official one and drove significant adoption:
 - **Design context extraction** — pull design tokens, component specs, and layout information for AI coding agents
@@ -437,7 +438,7 @@ Two community servers provide access to any MediaWiki instance:
 
 ### Knowledge Base Ecosystem
 
-"Knowledge & Memory" is the single largest MCP server category with 283 servers as of January 2026, reflecting the enormous demand for connecting AI agents to organizational knowledge. Beyond the specific servers listed above, the category includes servers for Apple Notes, Bear, Logseq, and numerous custom knowledge management solutions.
+["Knowledge & Memory" is the single largest MCP server category with 283 servers as of January 2026](https://glama.ai/mcp/categories/knowledge-and-memory), reflecting the enormous demand for connecting AI agents to organizational knowledge. Beyond the specific servers listed above, the category includes servers for Apple Notes, Bear, Logseq, and numerous custom knowledge management solutions.
 
 ## Pair Programming and Code Collaboration
 
