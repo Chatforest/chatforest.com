@@ -8,6 +8,7 @@ content_type: "Review"
 card_description: "MetaMCP (2.3K stars, MIT, TypeScript) aggregates multiple MCP servers into one unified endpoint. Three-level hierarchy (Servers → Namespaces → Endpoints), pluggable middleware, rate limiting, OAuth support, multi-transport (SSE, Streamable HTTP, OpenAPI). Docker-based deployment with GUI management."
 categories: ["/categories/developer-tools/"]
 last_refreshed: 2026-05-21
+sources_audited: 2026-07-26
 ---
 
 MetaMCP is an MCP proxy that lets you aggregate multiple MCP servers into a single unified endpoint. Instead of configuring each MCP server separately in every client, you point your client at one MetaMCP endpoint and it routes requests to the right underlying server. It acts as aggregator, orchestrator, middleware layer, and gateway — all in one Docker stack.

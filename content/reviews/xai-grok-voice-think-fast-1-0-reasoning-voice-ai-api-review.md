@@ -8,6 +8,7 @@ tags: ["voice-ai", "xai", "grok", "api", "enterprise-ai", "real-time", "agentic"
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** Grok Voice Think Fast 1.0, released April 25, 2026 by xAI. Enterprise voice AI API with background reasoning — the model thinks while it speaks. τ-voice Bench: 67.3% (first place). Pricing: $0.05/min voice agent, half the cost of OpenAI Realtime at ~$0.10/min. 25+ languages with mid-call switching. OpenAI Realtime API compatible. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. See also our **[Grok 4.3 review](/reviews/xai-grok-4-3-native-video-agentic-llm-review/)** for context on xAI's text and multimodal models.

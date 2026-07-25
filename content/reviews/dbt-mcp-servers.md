@@ -6,6 +6,7 @@ og_description: "dbt MCP server reviewed — official dbt-labs/dbt-mcp (563 star
 content_type: "Review"
 card_description: "MCP server that connects AI agents to dbt projects for data discovery, semantic layer queries, lineage analysis, model execution, and code generation. Official server from dbt Labs with local and remote deployment options."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-26
 ---
 
 Part of our **[Data & Databases MCP category](/categories/data-databases/)**.
@@ -186,7 +187,7 @@ OAuth authentication is also supported for remote connections — v1.13.0 improv
 
 dbt Labs is a significant company in the data infrastructure space:
 
-- **Valuation:** $4.2B (Series D, $222M raised from Altimeter, a16z, Sequoia, Databricks, Snowflake)
+- **Valuation:** [$4.2B (Series D, $222M raised from Altimeter, a16z, Sequoia, Databricks, Snowflake)](https://www.getdbt.com/blog/dbt-labs-raises-222m-in-series-d-funding-at-4-2b-valuation-led-by-altimeter-with-participation-from-databricks-and-snowflake)
 - **Users:** 50,000+ organizations
 - **dbt Fusion:** Next-gen engine with Rust-based LSP, significant memory and performance improvements
 - **dbt Developer Agent:** In Preview as of May 6, 2026 (Starter + Enterprise tiers). Write/refactor dbt models from natural language, generate docs, tests, semantic models. Lives in dbt Studio IDE with auditable changes. Full suite includes development, data exploration, and pipeline monitoring agents — all powered by the MCP server

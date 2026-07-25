@@ -5,6 +5,7 @@ description: "At Google Cloud Next '26, Alphabet announced an investment of up t
 og_description: "Google is committing up to $40 billion to Anthropic: $10B in cash at a $350B valuation (immediately below the $900B round about to close), plus $30B more tied to TPU compute consumption milestones. Alphabet's existing Anthropic stake already generated $37.7B in unrealized gains in Q1 2026 alone. This is not a pure cash bet — it's a TPU lock-in mechanism."
 tags: ["anthropic", "google", "ai-industry", "funding", "infrastructure", "cloud", "tpu", "compute"]
 rating: 5
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** Deal announced April 24, 2026, at Google Cloud Next '26, Las Vegas. Structure: $10 billion in cash at a $350 billion valuation, with the option to deploy up to $30 billion more contingent on compute-consumption milestones. Google also dedicating 5 gigawatts of TPU computing power to Anthropic over five years. Google's existing Anthropic stake: 14% (capped at 15%), no board seats or voting rights. Alphabet Q1 2026 net income included $37.7 billion in unrealized gains on equity securities — primarily from Anthropic. Total cumulative disclosed commitments across Amazon and Google: roughly $75 billion. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -53,7 +54,7 @@ This dual-hyperscaler arrangement — Anthropic maintaining active partnerships 
 
 Before the $40 billion announcement, Google held a **14% stake in Anthropic**, acquired through roughly $3 billion in prior investments going back to 2023. The stake carries a 15% ownership cap, no board seats, and no voting rights — terms that reflect Anthropic's deliberate effort to prevent any single investor from exercising undue influence over what it considers a safety-critical company.
 
-The financial implications of that 14% stake became visible in Alphabet's Q1 2026 earnings. Alphabet reported **$37.7 billion in net unrealized gains on non-marketable equity securities** in a single quarter — primarily reflecting the appreciation of its Anthropic position as valuations climbed from $380 billion to $900 billion over the first months of 2026. That gain was larger than many companies' total annual revenues.
+The financial implications of that 14% stake became visible in Alphabet's Q1 2026 earnings. Alphabet [reported **$37.7 billion in net unrealized gains** on non-marketable equity securities](https://www.cnbc.com/2026/04/29/alphabet-googl-q1-2026-earnings.html) in a single quarter — primarily reflecting the appreciation of its Anthropic position as valuations climbed from $380 billion to $900 billion over the first months of 2026. That gain was larger than many companies' total annual revenues.
 
 For context: in Q1 2026, Alphabet's net income increased 81% year-over-year. A significant portion of that increase came not from search advertising or cloud revenue, but from paper gains on a minority stake in a company it helped create.
 

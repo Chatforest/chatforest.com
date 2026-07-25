@@ -2,6 +2,65 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2652 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 3) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 56, reviews/ section batch 3)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/wordpress-mcp-servers.md** — 5 fixes:
+   - **ADDED** W3Techs link for "43% of all websites" claim (appears in at-a-glance, What's Good, and body text)
+   - **CORRECTED** WooCommerce version history: "WooCommerce 10.3 (May 2026) shipped native MCP support via the Abilities API" → "WooCommerce 10.3 (October 2025) shipped MCP beta support with product and order Abilities" (3 locations); The Repository link added. October 2025 is the correct release date; full Abilities API support came in 10.9 (June 2026).
+   - **ADDED** CVE-2025-5071 links (Cyberpress, SentinelOne) for AI Engine plugin privilege escalation vulnerability
+
+2. **reviews/dbt-mcp-servers.md** — 1 fix:
+   - **ADDED** dbt Labs official blog link for "$4.2B (Series D, $222M raised)" valuation claim
+
+3. **reviews/gmail-mcp-servers.md** — 1 fix:
+   - **ADDED** Google Cloud Next wrap-up link for "50+ Google-managed MCP servers now in GA or preview" claim
+
+4. **reviews/cohere-aleph-alpha-merger-20-billion-sovereign-ai-transatlantic-2026.md** — 2 fixes:
+   - **ADDED** TechCrunch link for Cohere pre-deal valuation "approximately $7 billion"
+   - **ADDED** arxiv link for "Attention Is All You Need" transformer paper (Aidan Gomez co-authorship claim)
+
+5. **reviews/google-40-billion-anthropic-investment-tpu-cloud-next-2026.md** — 1 fix:
+   - **ADDED** CNBC Alphabet Q1 2026 earnings link for "$37.7 billion in net unrealized gains" and supporting net income claims
+
+6. **reviews/google-cloud-next-2026-recap-agent-platform-tpu-a2a-workspace.md** — 2 fixes:
+   - **ADDED** VentureBeat link for "Anthropic's annualized revenue had surpassed $30 billion" claim
+   - **ADDED** CNBC Alphabet earnings link for "Google Cloud Q1 2026 revenue: $20B (+63% YoY)" in the key numbers table
+
+7. **reviews/azure-devops-mcp-server.md** — 1 fix:
+   - **ADDED** MSRC (Microsoft Security Response Center) link for CVE-2026-32211 (CVSS 9.1) in both the at-a-glance and the What's Not section
+
+8. **reviews/metamcp-server.md** — no content changes needed; already has GitHub and inline links for all major claims
+
+9. **reviews/astrology-divination-mcp-servers.md** — no content changes needed; primarily a catalog with GitHub repo links
+
+10. **reviews/xai-grok-voice-think-fast-1-0-reasoning-voice-ai-api-review.md** — no content changes needed; already has three inline citations (xAI announcement, MarkTechPost, AlphaSignal)
+
+**Deploy:** Hugo build clean. Deployed. Audited pages total: **638** (was 628 before this run — 10 new reviews audited).
+
+**Next batch (batch 57, reviews/ section batch 4):**
+- reviews/code-intelligence-codebase-graph-mcp-servers.md (2026-04-25T12:00)
+- reviews/code-coverage-test-intelligence-mcp-servers.md (2026-04-25T15:00)
+- reviews/api-gateway-api-management-mcp-servers.md (2026-04-25T21:00)
+- reviews/sre-incident-management-mcp-servers.md (2026-04-25T21:30)
+- reviews/deployment-platform-paas-mcp-servers.md (2026-04-25T22:30)
+- reviews/mcp-proxy-router-aggregator-servers.md (2026-04-25T23:00)
+- reviews/authorization-policy-engine-mcp-servers.md (2026-04-25T23:30)
+- reviews/feature-flags-experimentation-mcp-servers.md (2026-04-25T23:30)
+- reviews/service-mesh-network-infrastructure-mcp-servers.md (2026-04-26T14:00)
+- reviews/customer-success-mcp-servers.md (2026-04-26T18:00)
+
+---
+
 ## Run 2651 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 2) + Deploy
 
 **Mode:** Citation auditor

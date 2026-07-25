@@ -6,11 +6,12 @@ og_description: "WordPress MCP servers reviewed — official mcp-adapter (1,098 
 content_type: "Review"
 card_description: "MCP servers that connect AI agents to WordPress sites for content management, plugin operations, media handling, and WooCommerce store management. Multiple options from official WordPress adapter to community servers and security-focused plugins."
 last_refreshed: 2026-05-20
+sources_audited: 2026-07-26
 ---
 
 Part of our **[CMS & Content Management MCP category](/categories/cms-content-management/)**.
 
-*At a glance: WordPress powers 43% of all websites. The MCP ecosystem includes the official WordPress/mcp-adapter (1,098 stars, ~96 commits, PHP, v0.5.0), the deprecated Automattic/wordpress-mcp (883 stars, archived Jan 2026), InstaWP/mcp-wp (81 stars, stagnant since April 8), Royal MCP (2,000+ active installations, v1.4.20, 67 core + 55 integration tools), and the WordPress.com built-in connector (OAuth 2.1, now write-enabled as of March 20). WordPress 6.9 introduced the server-side Abilities API; WordPress 7.0 (scheduled May 20, 2026) adds the JavaScript Abilities API (`@wordpress/abilities`), WP AI Client, Connectors API, and WordPress Playground MCP server. WooCommerce 10.3 shipped native MCP support via the Abilities API.*
+*At a glance: WordPress powers [43% of all websites](https://w3techs.com/technologies/details/cm-wordpress). The MCP ecosystem includes the official WordPress/mcp-adapter (1,098 stars, ~96 commits, PHP, v0.5.0), the deprecated Automattic/wordpress-mcp (883 stars, archived Jan 2026), InstaWP/mcp-wp (81 stars, stagnant since April 8), Royal MCP (2,000+ active installations, v1.4.20, 67 core + 55 integration tools), and the WordPress.com built-in connector (OAuth 2.1, now write-enabled as of March 20). WordPress 6.9 introduced the server-side Abilities API; WordPress 7.0 (scheduled May 20, 2026) adds the JavaScript Abilities API (`@wordpress/abilities`), WP AI Client, Connectors API, and WordPress Playground MCP server. [WooCommerce 10.3](https://www.therepository.email/woocommerce-10-3-brings-cost-of-goods-sold-to-core-mcp-beta-for-ai-integrations) (October 2025) shipped MCP beta support with product and order Abilities.*
 
 WordPress and MCP is a story of rapid convergence. In under a year, WordPress went from zero MCP support to having the Abilities API baked into core, an official adapter plugin, a hosted connector on WordPress.com, and a growing ecosystem of community servers. For the 810 million+ sites running WordPress, this opens the door to AI agents that can manage content, handle media, run WooCommerce stores, and administer plugins — all through standardized MCP tool calls.
 
@@ -189,11 +190,11 @@ Configure for Claude Desktop (STDIO mode via WP-CLI):
 
 **Royal MCP's security model.** API key auth, rate limiting, activity logging, sensitive data filtering, SSRF protection, and PKCE OAuth in a free plugin. This should be the baseline for all MCP servers, not the exception.
 
-**WooCommerce native MCP.** WooCommerce 10.3 (May 2026) shipped MCP support built directly on the Abilities API — any WooCommerce ability automatically becomes an MCP tool through the official adapter. Royal MCP also provides its 9-tool WooCommerce integration (with HPOS bug fixed in v1.4.20) for sites that need immediate functionality.
+**WooCommerce native MCP.** [WooCommerce 10.3](https://www.therepository.email/woocommerce-10-3-brings-cost-of-goods-sold-to-core-mcp-beta-for-ai-integrations) (October 2025) shipped MCP beta support with product and order Abilities — these automatically become MCP tools through the official adapter. Royal MCP also provides its 9-tool WooCommerce integration (with HPOS bug fixed in v1.4.20) for sites that need immediate functionality.
 
 **WordPress.org Plugin Directory MCP Server.** The official `@wporg/mcp` package (launched March 20) lets AI IDEs connect to the plugin directory for readme validation, plugin status checks, and plugin submission — a new use case the prior review didn't cover.
 
-**Massive addressable market.** WordPress powers 43% of websites. MCP support means AI agents can interact with nearly half the web's content management layer through a standardized protocol.
+**Massive addressable market.** WordPress powers [43% of websites](https://w3techs.com/technologies/details/cm-wordpress). MCP support means AI agents can interact with nearly half the web's content management layer through a standardized protocol.
 
 ## What's Not
 
@@ -213,7 +214,7 @@ Configure for Claude Desktop (STDIO mode via WP-CLI):
 
 WordPress MCP security is a layered problem — WordPress itself is a frequent target (thousands of CVEs annually across plugins), and MCP adds a new attack surface.
 
-**AI Engine plugin vulnerability (2025):** A critical flaw in the popular AI Engine plugin allowed privilege escalation to administrator via MCP. The No-Auth URL feature exposed bearer tokens in public REST API endpoints. Fixed June 2025, but demonstrates the risk of MCP + WordPress + third-party plugins.
+**AI Engine plugin vulnerability (2025):** A [critical flaw in the popular AI Engine plugin](https://cyberpress.org/100000-wordpress-sites-vulnerable/) ([CVE-2025-5071](https://www.sentinelone.com/vulnerability-database/cve-2025-5071/)) allowed privilege escalation to administrator via MCP. The No-Auth URL feature exposed bearer tokens in public REST API endpoints. Fixed June 2025, but demonstrates the risk of MCP + WordPress + third-party plugins.
 
 **Royal MCP security patches (2026):**
 - v1.4.2: Fixed authentication enforcement gap — earlier versions only required API key at session init, not on subsequent requests
@@ -256,13 +257,13 @@ These patches show the security surface is real and actively being probed.
 
 ## Bottom Line
 
-This cycle's changes are substantial. The WordPress.com connector gained write capabilities (19 operations, `user_confirmed` safety gate, role-based access) — removing the biggest objection from the April review. Royal MCP went from 700+ to 2,000 active installs in 30 days, shipping 15 releases including Elementor integration, OAuth hardening, and a WooCommerce HPOS fix. WordPress 7.0 (releasing May 20) brings the JavaScript Abilities API, WP AI Client, and WordPress Playground MCP server. WooCommerce 10.3 shipped native MCP support via the Abilities API.
+This cycle's changes are substantial. The WordPress.com connector gained write capabilities (19 operations, `user_confirmed` safety gate, role-based access) — removing the biggest objection from the April review. Royal MCP went from 700+ to 2,000 active installs in 30 days, shipping 15 releases including Elementor integration, OAuth hardening, and a WooCommerce HPOS fix. WordPress 7.0 (releasing May 20) brings the JavaScript Abilities API, WP AI Client, and WordPress Playground MCP server. [WooCommerce 10.3](https://www.therepository.email/woocommerce-10-3-brings-cost-of-goods-sold-to-core-mcp-beta-for-ai-integrations) (October 2025) shipped MCP beta support with product and order Abilities.
 
 For production WordPress MCP today, **Royal MCP remains the strongest option**: 67 core tools + 55 integration tools (Elementor, WooCommerce, GuardPress, SiteVault), the most rigorous security model in the category, and a release cadence that shows active product investment. The mcp-adapter (1,098 stars, v0.5.0, active development) is the architecturally correct long-term path and is worth adopting now for WordPress 6.9+ self-hosted sites — hook timing bugs and the growing issue backlog (42 open) are the main friction. The WordPress.com connector is now the easiest path for hosted sites with real content management capability, not just analysis.
 
 InstaWP's stall since April 8 is a concern for agencies relying on it — the PHP rewrite may be the successor, but the current TypeScript server is on an uncertain trajectory.
 
-The fragmentation hasn't fully resolved — four approaches still coexist — but the ecosystem is converging: WooCommerce 10.3 and the eventual Elementor and Yoast Abilities API adoption will make the official adapter increasingly dominant over time. The pace of change across all four options in one month is remarkable.
+The fragmentation hasn't fully resolved — four approaches still coexist — but the ecosystem is converging: The WooCommerce 10.3 MCP beta (October 2025) and the eventual Elementor and Yoast Abilities API adoption will make the official adapter increasingly dominant over time. The pace of change across all four options in one month is remarkable.
 
 **Rating: 4/5** — Bumped from 3.5/5. WordPress.com write capabilities close the biggest gap from the prior review. Royal MCP's tripled install base and sustained release cadence demonstrate genuine adoption. WordPress 7.0's JavaScript Abilities API and WooCommerce native MCP support show the ecosystem converging on a coherent architecture. Held back from 4.5/5 by the mcp-adapter's growing issue backlog, InstaWP's stall, and fragmentation that won't fully resolve until major plugins adopt the Abilities API.
 

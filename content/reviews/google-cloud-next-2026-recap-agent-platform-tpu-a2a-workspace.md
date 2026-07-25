@@ -4,6 +4,7 @@ date: 2026-04-24
 description: "Google Cloud Next '26 (April 22–24, Las Vegas) packed 260 announcements into three days: the Gemini Enterprise Agent Platform, Ironwood TPU going GA, two new 8th-gen chips, A2A protocol v1.2, Workspace Studio GA, and a $40 billion Anthropic commitment. Here is everything that matters."
 tags: ["google", "google-cloud", "gemini", "ai-agents", "tpu", "a2a-protocol", "workspace", "enterprise-ai", "cloud-next"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 ## The Headline
@@ -184,7 +185,7 @@ Project Mariner is Google's browser-native web agent, powered by Gemini 2.0:
 
 On the final day of Cloud Next (April 24), Google and Anthropic announced a **$40 billion investment commitment** — the largest AI investment in history. The deal includes $10 billion in immediate cash at a $350 billion Anthropic valuation, plus up to $30 billion in milestone-gated additional investment, plus a 5-gigawatt dedicated compute commitment on Google's TPU infrastructure.
 
-At the time of the announcement, Anthropic's annualized revenue had surpassed $30 billion, growing more than 3× in four months.
+At the time of the announcement, [Anthropic's annualized revenue had surpassed $30 billion](https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth), growing more than 3× in four months.
 
 For the full analysis of the deal structure, the TPU flywheel mechanics, and what it means for Anthropic's valuation trajectory, see the dedicated article: [Google's $40 Billion Anthropic Bet](/reviews/google-40-billion-anthropic-investment-tpu-cloud-next-2026/).
 
@@ -219,7 +220,7 @@ Cloud Next is where Google shows the plumbing — the Agent Platform, the TPU in
 | Workspace Studio MAUs | 3.5M |
 | Workspace tasks automated/month | 170M |
 | Google Cloud customers using AI | 75% |
-| Google Cloud Q1 2026 revenue | $20B (+63% YoY) |
+| [Google Cloud Q1 2026 revenue](https://www.cnbc.com/2026/04/29/alphabet-googl-q1-2026-earnings.html) | $20B (+63% YoY) |
 | Ironwood superpod (9,216 chips) | 42.5 exaFLOPS |
 | Virgo network bandwidth | 47 petabits/second |
 | Managed Lustre throughput | 10 TB/second |
