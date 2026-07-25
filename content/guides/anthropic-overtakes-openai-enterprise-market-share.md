@@ -5,6 +5,7 @@ description: "Anthropic now captures 40% of enterprise LLM API spend, up from 12
 content_type: "Guide"
 card_description: "The enterprise AI market has undergone a dramatic reversal. Anthropic now captures 40% of enterprise LLM API spend — up from just 12% in 2023 — while OpenAI has fallen from 50% to 27% over the same period. Ramp spending data shows the shift accelerating: Anthropic is taking 73% of all new enterprise AI purchases, up from a 50/50 split just ten weeks earlier. Claude Opus 4.6 became the first AI model to hold #1 across all three LMSYS Chatbot Arena leaderboards simultaneously. Anthropic's annualized revenue has reached $30 billion, surpassing OpenAI for the first time, with over 1,000 businesses now spending more than $1 million per year on Anthropic services. Both companies are racing toward late-2026 IPOs — Anthropic targeting a $60 billion raise at $380 billion valuation, OpenAI at $852 billion — in what could be the largest tech IPOs in history. This analysis covers the spending data, benchmark results, revenue trajectories, IPO dynamics, and what the shift means for enterprise AI strategy."
 last_refreshed: 2026-04-10
+sources_audited: 2026-07-25
 ---
 
 The enterprise AI market just flipped. Anthropic now captures [40% of enterprise LLM API spending](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/), up from 12% in 2023. OpenAI has [dropped to 27%](https://www.techmeme.com/251209/p35), down from 50% over the same period. The company that started as a safety-focused research lab has overtaken the company that kicked off the generative AI era — and the shift is accelerating.
@@ -93,7 +94,7 @@ Both companies are targeting late-2026 IPOs in what could be the [largest tech o
 | **Potential raise** | [$60 billion](https://letsdatascience.com/blog/anthropic-revenue-doubled-60-billion-ipo-october-2026) | Not disclosed |
 | **Valuation** | [$380 billion](https://www.cnbc.com/2026/02/12/anthropic-closes-30-billion-funding-round-at-380-billion-valuation.html) | [$852 billion](https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html) |
 | **Last funding** | [$30B Series G](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) (Feb 2026) | [$122B](https://openai.com/index/accelerating-the-next-phase-ai/) (Mar 2026) |
-| **Key backers** | Google, Lightspeed, Menlo | Amazon $50B, Nvidia $30B, SoftBank $30B |
+| **Key backers** | Google, Lightspeed, Menlo | Amazon, Nvidia, SoftBank |
 
 OpenAI reportedly wants to list before Anthropic, with [CEO Sam Altman pushing for a Q4 2026 listing](https://www.pymnts.com/news/ipo/2026/openai-leaders-at-odds-over-ipo-plans/). However, [CFO Sarah Friar has reportedly told colleagues the company isn't ready](https://www.notebookcheck.net/OpenAI-CFO-reportedly-questions-Altman-s-600-billion-spending-and-2026-IPO-timeline.1267088.0.html), questioning the timeline and [voicing concerns about $600 billion in spending commitments](https://www.outlookbusiness.com/corporate/openai-ipo-tensions-cfo-sarah-friar-warns-against-sam-altmans-push-for-2026-listing). Anthropic now has the stronger growth story: higher revenue growth rate, market share leadership, and benchmark dominance.
 

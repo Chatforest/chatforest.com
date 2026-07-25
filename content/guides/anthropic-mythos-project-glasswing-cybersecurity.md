@@ -5,6 +5,7 @@ description: "On April 7, 2026, Anthropic officially previewed Claude Mythos —
 content_type: "Guide"
 card_description: "Anthropic officially previewed Claude Mythos on April 7, 2026 — not as a product launch, but as a cybersecurity deployment. Project Glasswing pairs the unreleased frontier model with 12 founding partners — Apple, Microsoft, Google, Amazon, Nvidia, CrowdStrike, JPMorganChase, Broadcom, Cisco, Palo Alto Networks, the Linux Foundation, and more — to scan critical software for zero-day vulnerabilities. The results so far: thousands of previously unknown bugs in every major OS and browser, including a 27-year-old OpenBSD TCP crash and a 16-year-old FFmpeg flaw that fuzzers missed five million times. Mythos scores 83.1% on CyberGym vs. Opus 4.6's 66.6%, and can chain 4-5 vulnerabilities into working exploits including Linux kernel root escalation and browser sandbox escapes. Anthropic is committing $100M in credits and $4M in open-source donations — but won't release the model publicly. This is the first time a frontier AI lab has explicitly withheld a model on safety grounds while deploying it for defensive purposes."
 last_refreshed: 2026-04-09
+sources_audited: 2026-07-25
 ---
 
 On April 7, 2026, Anthropic made its most unusual product announcement to date: it [previewed its most powerful AI model ever built](https://www.anthropic.com/glasswing), then [said you can't have it](https://venturebeat.com/technology/anthropic-says-its-most-powerful-ai-cyber-model-is-too-dangerous-to-release).

@@ -5,6 +5,7 @@ description: "Sakana AI's AI Scientist-v2 produced the first fully AI-generated 
 content_type: "Guide"
 card_description: "Sakana AI's AI Scientist-v2 produced the first fully AI-generated paper to pass peer review — for $20 per paper. Then analysis revealed 21% of ICLR 2026 reviews were AI-generated too. AI is now writing science and reviewing it. Here's what happened, how it works, and what it means."
 last_refreshed: 2026-04-08
+sources_audited: 2026-07-25
 ---
 
 A paper written entirely by AI just [passed peer review](https://sakana.ai/ai-scientist-first-publication/) at a major machine learning conference. No human wrote any of it — not the hypothesis, not the experiments, not the analysis, not the manuscript. The system that produced it costs about [$20 per paper](https://github.com/SakanaAI/AI-Scientist-v2).
@@ -92,7 +93,7 @@ The [cost breakdown](https://github.com/SakanaAI/AI-Scientist-v2) for an AI Scie
 - **Writing:** ~$5 (LLM API calls for paper generation)
 - **Total:** ~$20-25 per paper
 
-For comparison, a typical ML research paper involves months of researcher time (salary: $100K-200K/year for a PhD student, more for postdocs and faculty), compute costs that can range from hundreds to millions of dollars for frontier experiments, and weeks of writing and revision. For context, [formatting alone costs a median of $477](https://blog.pebblous.ai/report/ai-science-new-era/en/), and open access Article Processing Charges run $3,500-$4,000.
+For comparison, a typical ML research paper involves months of researcher time (salary: $100K-200K/year for a PhD student, more for postdocs and faculty), compute costs that can range from hundreds to millions of dollars for frontier experiments, and weeks of writing and revision. For context, [formatting alone costs a median of $477](https://blog.pebblous.ai/report/ai-science-new-era/en/).
 
 The AI Scientist doesn't replace frontier research. It can't train a new foundation model or build novel hardware. But for the kind of incremental ML research that fills workshop proceedings — hypothesis testing, ablation studies, method comparisons — $20 per paper changes the math entirely.
 

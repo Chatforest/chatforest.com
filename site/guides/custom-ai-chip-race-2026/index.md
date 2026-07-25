@@ -17,7 +17,7 @@ This analysis draws on official announcements from [Meta](https://about.fb.com/n
 
 The economics of AI compute are changing. Training a frontier model is still astronomically expensive, but it's a one-time cost (per model version). Inference — actually running the model for every user query, every API call, every agent action — is where the money goes and keeps going.
 
-By 2026, [Deloitte projects](https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/compute-power-ai.html) inference accounts for **two-thirds of all AI compute**, up from one-third in 2023. The [market for inference-optimized chips will grow to over $50 billion in 2026](https://www.deloitte.com/us/en/about/press-room/deloitte-2026-tmt-predictions.html). The inference-to-training compute ratio for production LLM deployments is estimated at **10:1 or higher** — for every dollar spent on training hardware, ten or more dollars go to inference infrastructure.
+By 2026, [Deloitte projects](https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/compute-power-ai.html) inference accounts for **two-thirds of all AI compute**, up from one-third in 2023. The [market for inference-optimized chips will grow to over $50 billion in 2026](https://www.deloitte.com/us/en/about/press-room/deloitte-2026-tmt-predictions.html).
 
 This is why every hyperscaler is building inference-optimized custom chips. Training requires the most powerful, most general GPUs money can buy — and [Nvidia dominates that market with 90%+ share](https://siliconanalysts.com/analysis/nvidia-ai-accelerator-market-share-2024-2026). But inference has different requirements: lower precision, higher throughput, lower power consumption, and above all, lower cost per token. That's where custom silicon can compete.
 
@@ -177,7 +177,6 @@ The AI chip market tells the story in numbers:
 - [**90%+**](https://siliconanalysts.com/analysis/nvidia-ai-accelerator-market-share-2024-2026) — Nvidia's share of training (essentially unchanged)
 - [**15-25%**](https://www.bloomberg.com/company/press/ai-accelerator-market-looks-set-to-exceed-600-billion-by-2033-driven-by-hyperscale-spending-and-asic-adoption-according-to-bloomberg-intelligence/) — projected custom silicon market share by 2030, primarily hyperscaler internal inference
 - [**2/3**](https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/compute-power-ai.html) — share of all AI compute going to inference by 2026 (Deloitte), up from 1/3 in 2023
-- **10:1** — estimated inference-to-training compute ratio for production LLM deployments
 
 The math explains why every hyperscaler is building custom chips even as they keep buying Nvidia: the inference market is huge, growing, and has characteristics (lower precision, higher volume, more predictable patterns) that favor specialized hardware. Custom chips don't need to beat Nvidia everywhere — they just need to be cheaper for the workloads that matter most.
 

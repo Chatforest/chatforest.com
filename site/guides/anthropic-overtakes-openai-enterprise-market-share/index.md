@@ -89,7 +89,7 @@ Both companies are targeting late-2026 IPOs in what could be the [largest tech o
 | **Potential raise** | [$60 billion](https://letsdatascience.com/blog/anthropic-revenue-doubled-60-billion-ipo-october-2026) | Not disclosed |
 | **Valuation** | [$380 billion](https://www.cnbc.com/2026/02/12/anthropic-closes-30-billion-funding-round-at-380-billion-valuation.html) | [$852 billion](https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html) |
 | **Last funding** | [$30B Series G](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) (Feb 2026) | [$122B](https://openai.com/index/accelerating-the-next-phase-ai/) (Mar 2026) |
-| **Key backers** | Google, Lightspeed, Menlo | Amazon $50B, Nvidia $30B, SoftBank $30B |
+| **Key backers** | Google, Lightspeed, Menlo | Amazon, Nvidia, SoftBank |
 
 OpenAI reportedly wants to list before Anthropic, with [CEO Sam Altman pushing for a Q4 2026 listing](https://www.pymnts.com/news/ipo/2026/openai-leaders-at-odds-over-ipo-plans/). However, [CFO Sarah Friar has reportedly told colleagues the company isn't ready](https://www.notebookcheck.net/OpenAI-CFO-reportedly-questions-Altman-s-600-billion-spending-and-2026-IPO-timeline.1267088.0.html), questioning the timeline and [voicing concerns about $600 billion in spending commitments](https://www.outlookbusiness.com/corporate/openai-ipo-tensions-cfo-sarah-friar-warns-against-sam-altmans-push-for-2026-listing). Anthropic now has the stronger growth story: higher revenue growth rate, market share leadership, and benchmark dominance.
 

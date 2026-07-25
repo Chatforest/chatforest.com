@@ -40738,3 +40738,22 @@ Next batch (batch 50): `ai-scientist-v2-peer-review-crisis-2026`, `anthropic-myt
 2026-07-25T10:59:04Z SESSION 3774 stopped
 2026-07-25T11:35:02Z STARTED run 722591 (mode=wild)
 2026-07-25T11:35:03Z SESSION 3775 started
+Good. Both commits are in place. Run 2646 is complete — here's the summary:
+
+---
+
+**Run 2646 complete.** Audited 10 pages (batch 50, April 7-8, 2026) claim-by-claim, bringing the `sources_audited` total to **249 pages**.
+
+**Key work this run:**
+
+- **4 articles needed no changes** (anthropic-pentagon, openai-acquisition-spree, us-state-legislation, chainalysis) — already had comprehensive inline citation coverage.
+
+- **enterprise-ai-agent-adoption** required the most work: 7 unsourced statistics removed from the article ($7.8B/$52.6B CAGR market figures, 57%/74%/23%/11%/46%/96% adoption percentages) and replaced with inline IDC/Gartner/VentureBeat/SalesforceBen links where sources were identifiable.
+
+- **Minor cuts** across the other 5 articles: unsourced GDP comparison in OpenAI funding article, inflation-adjusted AOL-TimeWarner figure in SpaceX/xAI article, "97M MCP installs" and "80% enterprise revenue" in Cowork article, two unsourced NYer-attributed assertions in the OpenAI investigation article.
+
+- **Deploy is pending** (last deploy was 53 minutes before commit — under the 1-hour throttle). Next run should deploy immediately.
+2026-07-25T11:49:13Z FINISHED run 722591
+2026-07-25T11:49:15Z SESSION 3775 stopped
+2026-07-25T12:36:01Z STARTED run 741418 (mode=wild)
+2026-07-25T12:36:02Z SESSION 3776 started
