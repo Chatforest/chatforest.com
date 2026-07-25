@@ -6,6 +6,7 @@ og_description: "Data quality & observability MCP servers: Monte Carlo (14 skill
 content_type: "Review"
 card_description: "Data quality and data observability MCP servers are a rapidly growing category driven by the need for AI agents to monitor, validate, and troubleshoot data pipelines. Monte Carlo leads with its official mc-agent-toolkit (77 stars, Apache 2.0, 14 skills) covering incident response, asset health, automated triage, root cause analysis, and storage cost optimization — the most comprehensive data observability MCP offering available. Bigeye provides the deepest tool coverage with 47+ MCP tools spanning issue management, metrics, lineage, root cause analysis, sensitive data scanning, and a unique agent lineage tracking feature. Elementary brings dbt-native observability to MCP with discovery, lineage, test coverage, and incident management accessible through its cloud platform. Validio offers a hosted MCP server combining catalog, lineage, data quality incidents, and AI-powered validator recommendations. Qualytics launched its Data Control Layer with AgentQ and MCP support in April 2026, enabling natural-language rule authoring, anomaly investigation, and remediation workflows. Acceldata introduced the xLake MCP-DC Server — the first distributed data control plane for MCP with cross-lake coordination across Snowflake, Databricks, and on-prem. Atlan's agent-toolkit (29 stars, MIT, 15 tools) provides data catalog features including quality monitoring and lineage. For AI/ML data quality, Dingo (687 stars, Apache 2.0) evaluates training data with 100+ metrics via MCP. The dbt MCP server (544 stars, 50+ tools) includes data quality testing and model health tools. Notable gaps: Great Expectations, Soda, Anomalo, Lightup, Sifflet, and Metaplane have no MCP servers. The open-source data quality stack is almost entirely absent from MCP. Rating: 3.5/5 — strong commercial vendor coverage led by Monte Carlo and Bigeye, but the open-source data quality ecosystem remains unrepresented."
 last_refreshed: 2026-04-27
+sources_audited: 2026-07-26
 ---
 
 Data quality and data observability have become critical concerns as organizations rely on data pipelines feeding AI systems, analytics, and business decisions. MCP servers in this space let AI agents monitor data health, investigate incidents, trace lineage, validate schemas, and automate remediation — all through natural language. The ecosystem is splitting between **commercial platforms with official MCP servers** (Monte Carlo, Bigeye, Validio, Qualytics) and the **open-source data quality stack** (Great Expectations, Soda, dbt tests) which has almost no MCP representation. Part of our **[Data & Databases MCP category](/categories/data-databases/)**.
@@ -41,7 +42,7 @@ The headline finding: **Monte Carlo has the most sophisticated MCP integration**
 
 Authentication is **OAuth 2.1** via Monte Carlo's remote MCP server (HTTP transport), with header-based auth for legacy clients. Requires an Editor role or higher on a Monte Carlo account. The plugin bundles the MCP server, hooks, and agent-specific capabilities — no separate configuration needed.
 
-Supported clients: Claude Code, Cursor, Copilot CLI, OpenCode, Codex. Monte Carlo is the most widely deployed data observability platform, using ML to learn normal data patterns and alerting on freshness, volume, schema, distribution, or lineage deviations.
+Supported clients: Claude Code, Cursor, Copilot CLI, OpenCode, Codex. Monte Carlo is a widely deployed data observability platform, using ML to learn normal data patterns and alerting on freshness, volume, schema, distribution, or lineage deviations.
 
 ### Bigeye (Official)
 
@@ -116,7 +117,7 @@ This is the most architecturally ambitious MCP approach in the data quality spac
 |--------|-------|----------|---------|-------|----------|
 | Qualytics MCP Server | — | Hosted (SSE) | Commercial | Multiple | Yes |
 
-**Qualytics** ([qualytics.ai](https://qualytics.ai/)) launched its **Data Control Layer** in April 2026, including AgentQ and MCP server support. The MCP server exposes the entire Qualytics data quality infrastructure as callable tools:
+**Qualytics** ([qualytics.ai](https://qualytics.ai/)) [launched its **Data Control Layer** in April 2026](https://www.prweb.com/releases/qualytics-launches-data-control-layer-to-govern-context-for-ai-systems-302740093.html), including AgentQ and MCP server support. The MCP server exposes the entire Qualytics data quality infrastructure as callable tools:
 
 - **Triggering scans and quality checks**
 - **Retrieving quality scores and anomaly context**

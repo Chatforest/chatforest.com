@@ -6,11 +6,12 @@ og_description: "Product management MCP servers: Jira (official remote + 5.4K-st
 content_type: "Review"
 card_description: "Product management MCP servers are among the most mature and well-served categories in the MCP ecosystem. Nearly every major PM tool now ships an official MCP server — Atlassian (Jira + Confluence), Linear, Monday.com, Asana, Shortcut, Notion, Aha!, Plane, Wrike, and Smartsheet all have official implementations. SECURITY ALERT: sooperset/mcp-atlassian CVE-2026-27825 (RCE, CVSS 9.1) and CVE-2026-27826 (SSRF, CVSS 8.2) are patched in v0.17.0 — upgrade immediately. The community ecosystem is equally strong: sooperset/mcp-atlassian has 5,400 stars and 72 tools, roychri/mcp-server-asana offers 50+ tools. The trend toward hosted remote MCP is dominant — Atlassian, Linear, Monday.com, Asana, Shortcut, Notion, Wrike, and Smartsheet all offer zero-config hosted endpoints with OAuth. Productboard is the notable gap among dedicated PM tools. The dedicated roadmapping tools (Roadmunk, airfocus, Craft.io) have no MCP servers at all. Rating: 4.5/5 — the strongest vendor participation of any enterprise software category."
 last_refreshed: 2026-06-12
+sources_audited: 2026-07-26
 ---
 
 Product management is one of the **best-served categories in the entire MCP ecosystem**. Nearly every major PM tool now ships an official MCP server, and the community ecosystem is deep. **Atlassian** (Jira + Confluence), **Linear**, **Monday.com**, **Asana**, **Shortcut**, **Notion**, **Aha!**, **Plane**, **Wrike**, and **Smartsheet** all have official MCP servers. The community adds heavyweight implementations for **ClickUp** and **Jira** (5,400 stars). **Hosted remote MCP** is the dominant pattern — most vendors offer zero-config endpoints with OAuth. Part of our **[Business & Productivity](/categories/business-productivity/)** category.
 
-**⚠️ Security alert:** sooperset/mcp-atlassian has two critical patched CVEs — **CVE-2026-27825** (RCE, CVSS 9.1) and **CVE-2026-27826** (SSRF, CVSS 8.2). Upgrade to **mcp-atlassian >= 0.17.0** immediately if you run this server.
+**⚠️ Security alert:** sooperset/mcp-atlassian has two critical patched CVEs — [**CVE-2026-27825**](https://arcticwolf.com/resources/blog/cve-2026-27825/) (RCE, CVSS 9.1) and [**CVE-2026-27826**](https://www.sentinelone.com/vulnerability-database/cve-2026-27826/) (SSRF, CVSS 8.2). Upgrade to **mcp-atlassian >= 0.17.0** immediately if you run this server.
 
 This review covers **issue tracking and project management** (Jira, Linear, Asana, Monday.com, ClickUp, Shortcut, Plane, Wrike, Smartsheet), **dedicated product management** (Productboard, Aha!, Fibery), **knowledge and documentation** (Notion), **feature request management** (Canny), **product analytics** (PostHog, Mixpanel, Amplitude), and **feature flag management** (LaunchDarkly). For CRM platforms, see our [CRM MCP Servers](/reviews/crm-mcp-servers/) review. For IT service management, see [ITSM MCP Servers](/reviews/itsm-it-service-management-mcp-servers/).
 
@@ -31,7 +32,7 @@ The **official Rovo MCP server** provides secure, OAuth-authenticated access to 
 
 The community **sooperset/mcp-atlassian** server is a powerhouse — **72 tools** covering both Jira and Confluence, supporting Cloud and Server/Data Center (Confluence v6.0+, Jira v8.14+). Authentication via API tokens, Personal Access Tokens, or OAuth 2.0. Supports HTTP transport (SSE + Streamable HTTP). MIT license. At ~5,400 stars, it's one of the most starred MCP servers of any category.
 
-**⚠️ Critical security update:** Two CVEs were disclosed and patched in **v0.17.0**: **CVE-2026-27825** (CVSS 9.1, RCE) — arbitrary file write via unconstrained `download_path` in `confluence_download_attachment` could allow unauthenticated remote code execution; **CVE-2026-27826** (CVSS 8.2, SSRF) — unauthenticated SSRF via custom HTTP header parsing, allowing attackers to probe internal networks and cloud metadata services. Version 0.17.0 adds `validate_safe_path()` and `validate_url_for_ssrf()` with path confinement, scheme/domain allowlisting, and private-IP blocking. **Upgrade to mcp-atlassian >= 0.17.0 immediately.**
+**⚠️ Critical security update:** Two CVEs were disclosed and patched in **v0.17.0**: [**CVE-2026-27825**](https://arcticwolf.com/resources/blog/cve-2026-27825/) (CVSS 9.1, RCE) — arbitrary file write via unconstrained `download_path` in `confluence_download_attachment` could allow unauthenticated remote code execution; [**CVE-2026-27826**](https://www.sentinelone.com/vulnerability-database/cve-2026-27826/) (CVSS 8.2, SSRF) — unauthenticated SSRF via custom HTTP header parsing, allowing attackers to probe internal networks and cloud metadata services. Version 0.17.0 adds `validate_safe_path()` and `validate_url_for_ssrf()` with path confinement, scheme/domain allowlisting, and private-IP blocking. **Upgrade to mcp-atlassian >= 0.17.0 immediately.**
 
 The Jira ecosystem extends further: **blue7wings/mcp-jira-server** focuses on time tracking and version/release management, **guanghuang/jira-mcp** provides lightweight access, and **cfdude/mcp-jira** covers core issue operations. Multiple enterprise-grade MCP gateway solutions (MintMCP, Workato, CData) also provide managed Jira integration.
 
@@ -65,7 +66,7 @@ The community ecosystem includes **tacticlaunch/mcp-linear** (133 stars, TypeScr
 | [adlio/asanamcp](https://github.com/adlio/asanamcp) | — | Rust | — | — | No |
 | [n0zer0d4y/asana-project-ops](https://github.com/n0zer0d4y/asana-project-ops) | — | TypeScript | — | Batch ops | No |
 
-**Asana** provides an official hosted MCP at `mcp.asana.com/v2/mcp` with OAuth authentication and Streamable HTTP transport. **Asana V2 MCP is now GA.** The V1 Beta SSE endpoint at `mcp.asana.com/sse` was shut down May 11, 2026 — teams still on V1 need to migrate. Works with Claude, ChatGPT, and other MCP clients.
+**Asana** provides an official hosted MCP at `mcp.asana.com/v2/mcp` with OAuth authentication and Streamable HTTP transport. **Asana V2 MCP is now GA.** The V1 Beta SSE endpoint at `mcp.asana.com/sse` is deprecated and [extended to shut down August 5, 2026](https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647) (original May 11 date was extended) — teams still on V1 need to migrate to `mcp.asana.com/v2/mcp`. Works with Claude, ChatGPT, and other MCP clients.
 
 The community **roychri/mcp-server-asana** is excellent — **50+ tools** with read-only mode option, advanced task filtering with custom fields, resource templates, and a comprehensive prompt system. MIT license. **n0zer0d4y/asana-project-ops** adds batch operations, direct section assignment, and selective tool activation for high-efficiency AI workflows. **adlio/asanamcp** provides a Rust implementation for teams that want STDIO transport.
 
@@ -268,7 +269,7 @@ The **dedicated roadmapping tools** are the most conspicuous absence. Teams need
 
 5. **Read-only modes are common** — Shortcut, Asana, ClickUp, PostHog, and Canny all offer read-only modes. This reflects enterprise caution about AI agents making changes to production project management data.
 
-6. **Security vulnerabilities are now a real concern** — CVE-2026-27825/27826 in sooperset/mcp-atlassian are a wake-up call. High-star community MCP servers running with file system access are a meaningful attack surface. Organizations running self-hosted MCP servers should treat them as network-exposed services and apply patches promptly.
+6. **Security vulnerabilities are now a real concern** — [CVE-2026-27825](https://arcticwolf.com/resources/blog/cve-2026-27825/)/[CVE-2026-27826](https://www.sentinelone.com/vulnerability-database/cve-2026-27826/) in sooperset/mcp-atlassian are a wake-up call. High-star community MCP servers running with file system access are a meaningful attack surface. Organizations running self-hosted MCP servers should treat them as network-exposed services and apply patches promptly.
 
 ## Bottom Line
 

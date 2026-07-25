@@ -2,6 +2,73 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2654 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 5) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 58, reviews/ section batch 5)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/document-collaboration-wiki-mcp-servers.md** — 3 fixes:
+   - **ADDED** Atlassian blog link for "GA in February 2026" (Atlassian Rovo MCP server)
+   - **ADDED** notion.com/releases/2026-05-13 link for "May 13, 2026 update… 91% more token-efficient" (Notion databases)
+   - **ADDED** M365 dev blog link for "SharePoint & OneDrive Remote MCP Server deprecated March 13, 2026"
+
+2. **reviews/game-development-mcp-servers.md** — 1 fix:
+   - **ADDED** GitHub releases link for "batch execution (10–100x performance gains)" (CoderGamester/mcp-unity v1.3.0)
+
+3. **reviews/product-management-roadmapping-mcp-servers.md** — 3 fixes:
+   - **ADDED** Arctic Wolf link for CVE-2026-27825 (CVSS 9.1 RCE) in all 3 in-text mentions
+   - **ADDED** SentinelOne link for CVE-2026-27826 (CVSS 8.2 SSRF)
+   - **CORRECTED** Asana V1 shutdown date: "shut down May 11, 2026" → "extended to August 5, 2026" with Asana forum link
+
+4. **reviews/banking-fintech-mcp-servers.md** — 3 fixes:
+   - **CORRECTED** Moody's date: "GA May 5, 2026" → "GA April 9, 2026" (actual BusinessWire press release date)
+   - **ADDED** Moody's official press release link (moodys.com) for Anthropic partnership
+   - **ADDED** Nymbus press release link (nymbus.com) for "GA April 9, 2026" core banking launch
+
+5. **reviews/quantum-computing-mcp-servers.md** — 2 fixes:
+   - **ADDED** Tom's Hardware/The Quantum Insider links for IBM Nighthawk (120-qubit, T1 ~350μs, 5,000 gates) and Heron r3 specs
+   - **ADDED** SpinQ official press release link for "several hundred million RMB Series B funding (July 2025)"
+
+6. **reviews/linux-system-administration-mcp-servers.md** — no content changes; existing GitHub table links cover key factual claims
+
+7. **reviews/survey-forms-mcp-servers.md** — 3 fixes:
+   - **ADDED** SurveyMonkey newsroom link (surveymonkey.com/newsroom) for "official Claude MCP integration May 2026" (2 mentions)
+   - **ADDED** Tally docs link (tally.so/help/mcp) for "Free on all plans" claim
+
+8. **reviews/data-quality-observability-mcp-servers.md** — 2 fixes:
+   - **ADDED** PRWeb link for "Qualytics launched Data Control Layer in April 2026"
+   - **SOFTENED** "Monte Carlo is the most widely deployed data observability platform" → "a widely deployed…" (unsourced superlative)
+
+9. **reviews/publishing-typesetting-mcp-servers.md** — no content changes; GitHub table links cover key claims
+
+10. **reviews/itsm-service-management-mcp-servers.md** — 4 fixes:
+    - **ADDED** ServiceNow newsroom link for "Action Fabric at Knowledge 2026 (May 5, 2026)"
+    - **ADDED** GlobeNewswire link for Freshworks "47% of IT tickets outside standard business hours"
+    - **ADDED** Freshworks IR link for Amerisure/Bridgestone/New Balance/S&P Global/Sony Music customer citations
+    - **ADDED** Futurum Group PDF link for "168% ROI over 3 years" claim
+
+**Deploy:** Run 2653 pages (deferred last run) + Run 2654 pages all deployed. Hugo build clean. Deployed successfully.
+
+**Audited pages total:** 658 (was 648 before this run — 10 new pages audited).
+
+**Next batch (batch 59, reviews/ section batch 6):**
+- Continue from approximately 2026-04-30 dates in reviews/ section
+  - reviews/browser-extension-mcp-servers.md (2026-04-30)
+  - reviews/ibm-contextforge-mcp-gateway.md (2026-05-05)
+  - reviews/ibm-mcp-cli.md (2026-05-05)
+  - reviews/marianfoo-sap-community-mcp-servers.md (2026-05-05)
+  - reviews/dagger-container-use.md (2026-05-05)
+  - + 5 more from approximately 2026-05-06+
+
+---
+
 ## Run 2653 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 4) — Deploy deferred (throttle)
 
 **Mode:** Citation auditor

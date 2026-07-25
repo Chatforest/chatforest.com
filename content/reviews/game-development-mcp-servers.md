@@ -6,6 +6,7 @@ og_description: "Game dev MCP servers: Unity (10.5K stars), Unreal ChiR24 (700 s
 content_type: "Review"
 card_description: "Game development MCP is accelerating — Unity leads with four active community servers (CoplayDev at 10.5K stars, IvanMurzak at 3.1K stars with v0.80.1 today, CoderGamester at 1.8K stars, AnkleBreaker-Studio at 258 stars with 268 tools). The Godot ecosystem has exploded: Coding-Solo/godot-mcp sits at 4.1K stars (the dominant implementation), hi-godot/godot-ai emerged in April 2026 at 527 stars with active June development, plus Godot MCP Pro (162 tools, commercial). Unreal Engine is in transition — chongdashu (1.9K stars) is effectively abandoned (last commit April 2025), while ChiR24/Unreal_mcp (700 stars) has undergone massive active development through v0.5.30 with PCG automation, Behavior Tree authoring, and native HTTP JSON-RPC. Blender MCP (ahujasid, 22.6K stars) fixed a prompt injection vulnerability in tool docstrings and dropped the Supabase dependency. Roblox's built-in Studio MCP remains the boldest platform integration. A Flax Engine MCP server is now the newest entrant with 47 tools. Rating: 3.5/5 — Unity and Godot show strong momentum; Unreal still lacks official support; audio middleware gap persists."
 last_refreshed: 2026-06-11
+sources_audited: 2026-07-26
 ---
 
 Game development is one of the most creatively demanding software disciplines — spanning code, art, audio, physics, UI, and level design within a single project. AI agents that can inspect scene hierarchies, spawn objects, manipulate materials, run playtests, and generate assets directly in the engine could accelerate game development workflows dramatically. The MCP ecosystem has responded quickly: every major game engine now has at least one MCP server. Part of our **[Developer Tools & AI MCP category](/categories/developer-tools-ai/)**.
@@ -60,7 +61,7 @@ Now branded **"AI Game Developer (Unity MCP)"** — the fastest-growing Unity se
 
 Focused on IDE integration with a WebSocket bridge between Unity Editor and external AI assistants. 33 tools covering GameObject manipulation (create, delete, duplicate, move, rotate, scale), scene management (create, load, save, unload), component operations, material creation, package management, test execution, and console logging.
 
-**v1.3.0 (April 26, 2026)** brought a large batch of improvements: scene management tools (create/load/delete/save), script recompilation, batch execution (10–100x performance gains), auto-reconnect, heartbeat monitoring, and multi-client support. 9 new contributors, 131 PRs. Active commits through June 7, 2026.
+**v1.3.0 (April 26, 2026)** brought a large batch of improvements: scene management tools (create/load/delete/save), script recompilation, [batch execution (10–100x performance gains)](https://github.com/CoderGamester/mcp-unity/releases), auto-reconnect, heartbeat monitoring, and multi-client support. 9 new contributors, 131 PRs. Active commits through June 7, 2026.
 
 **Architecture** — runs a WebSocket server inside Unity and a Node.js server implementing MCP externally. This two-process design means the MCP server itself doesn't need to run inside Unity's process. Supports Cursor, Windsurf, Claude Code, Codex CLI, GitHub Copilot, and Google Antigravity.
 

@@ -6,13 +6,14 @@ og_description: "Survey & forms MCP servers: SurveyMonkey official (May 2026), Q
 content_type: "Review"
 card_description: "Survey and forms MCP servers are a maturing category. SurveyMonkey launched an official Claude MCP integration in May 2026, closing the biggest gap. Qualtrics has the deepest integration through a community server with 53 tools spanning surveys, questions, blocks, flow logic, responses, contacts, distributions, and webhooks. Tally is the standout free option with 20+ official MCP tools, unlimited forms, OAuth authentication, and a safety-first design that prevents AI from deleting forms. Jotform ships an official hosted MCP at mcp.jotform.com with OAuth 2.0 and 6 tools covering form creation, editing, submissions, and assignment. Typeform offers a beta official MCP with limited documentation plus a community server exposing 47 tools across forms, responses, webhooks, themes, images, workspaces, and translations. Google Forms has no official MCP but multiple community servers exist, with the google_workspace_mcp (2.7K stars) providing Forms alongside 11 other Google services. The standalone survey-mcp-server offers 8 tools for conducting AI-driven conversational surveys with skip logic, session resume, and pluggable storage backends including Supabase and Cloudflare KV. Notable gaps: no Microsoft Forms dedicated server, no Hotjar/Survicate/SurveySparrow MCP servers, and most community servers have very low adoption. Rating: 3.0/5 — adequate platform coverage led by SurveyMonkey's official integration and Qualtrics community depth, but low maturity overall."
 last_refreshed: 2026-06-12
+sources_audited: 2026-07-26
 ---
 
 Survey and forms platforms are among the most widely used SaaS tools — from customer feedback and market research to academic studies and internal data collection. MCP servers in this space let AI agents create forms, manage questions, distribute surveys, and analyze responses through natural language. The ecosystem is fragmented: a few platforms have invested in official MCP servers while most rely on community implementations of varying quality. Part of our **[Productivity & Office MCP category](/categories/productivity-office/)**.
 
 This review covers **enterprise research platforms** (Qualtrics), **modern form builders** (Tally, Typeform, Jotform), **Google Forms** community servers, **AI-native survey tools** (survey-mcp-server, SurveyMars, Weavely), and the broader landscape of form-adjacent MCP access through workspace integrations. For CRM-related form handling, see our [CRM MCP Servers](/reviews/crm-mcp-servers/) review. For marketing forms and lead capture, see [Marketing Automation MCP Servers](/reviews/marketing-automation-mcp-servers/).
 
-The headline finding: **SurveyMonkey launched an official Claude MCP integration in May 2026**, closing the category's biggest gap. **Qualtrics has the deepest integration** with 53 tools, but it's community-built. **Tally is the best free option** with official MCP, unlimited forms, and safety guardrails. **Typeform's official MCP is still beta** with limited documentation, while a community server fills the gap with 47 tools. **Google Forms has no official MCP** despite being the most-used form tool globally. **Most servers have very low star counts**, reflecting how early this category still is.
+The headline finding: [**SurveyMonkey launched an official Claude MCP integration in May 2026**](https://www.surveymonkey.com/newsroom/surveymonkey-claude-ai-integration/), closing the category's biggest gap. **Qualtrics has the deepest integration** with 53 tools, but it's community-built. **Tally is the best free option** with official MCP, unlimited forms, and safety guardrails. **Typeform's official MCP is still beta** with limited documentation, while a community server fills the gap with 47 tools. **Google Forms has no official MCP** despite being the most-used form tool globally. **Most servers have very low star counts**, reflecting how early this category still is.
 
 ## Enterprise Research Platforms
 
@@ -51,7 +52,7 @@ A second community implementation (ederbuug/qualtrics-mcp, Python) exists for in
 **Tally** ([tally.so/help/mcp](https://tally.so/help/mcp)) is the standout in this category — the **only form builder offering a free, full-featured official MCP server** with no plan restrictions. Key details:
 
 - **20+ MCP tools** for form creation, editing, workspace browsing, submission fetching, and data analysis
-- **Free on all plans** including the free tier — unlimited forms, unlimited responses
+- [**Free on all plans**](https://tally.so/help/mcp) including the free tier — unlimited forms, unlimited responses
 - **OAuth authentication** with a 2-minute setup process
 - **Safety guardrail**: AI **cannot delete forms or submissions** — a deliberate design choice
 - Works with Claude Desktop, claude.ai, Claude Code, ChatGPT, Cursor, and any MCP-compatible client
@@ -168,7 +169,7 @@ None of these servers have dedicated Forms tools — access is through the broad
 
 ## SurveyMonkey (Official — May 2026)
 
-**SurveyMonkey** launched an **official MCP connector for Claude in May 2026**, closing the biggest gap in this category. The integration enables users to create and send surveys, analyze responses, and surface patterns in Claude conversations directly. SurveyMonkey announced the integration as part of a broader Claude AI partnership, positioning it as a way for researchers and marketers to work with survey data through natural language rather than the SurveyMonkey dashboard.
+**SurveyMonkey** launched an [**official MCP connector for Claude in May 2026**](https://www.surveymonkey.com/newsroom/surveymonkey-claude-ai-integration/), closing the biggest gap in this category. The integration enables users to create and send surveys, analyze responses, and surface patterns in Claude conversations directly. SurveyMonkey announced the integration as part of a broader Claude AI partnership, positioning it as a way for researchers and marketers to work with survey data through natural language rather than the SurveyMonkey dashboard.
 
 This is a significant development — SurveyMonkey is the second-most popular survey platform globally, and its absence was previously the most notable gap in this category. Note that the integration was announced through a partnership announcement rather than an open-source GitHub repository; the MCP connector may be hosted/managed rather than self-hosted.
 

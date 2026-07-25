@@ -40830,3 +40830,50 @@ Pages marked `sources_audited: 2026-07-26`:
 2026-07-25T15:49:59Z SESSION 3779 stopped
 2026-07-25T16:38:01Z STARTED run 817344 (mode=wild)
 2026-07-25T16:38:02Z SESSION 3780 started
+Run 2651 complete. Here's what was done:
+
+**10 pages audited** (reviews/ batch 2, dates 2026-04-20 to 04-21) — total audited pages now **628** (up from 618).
+
+**Key corrections found and fixed:**
+- **whatsapp-mcp-server**: ElevenLabs valuation was stale at $6.6B — updated to $11B (Series D, February 2026, per CNBC)
+- **unity-mcp-server**: CVE-2025-59489 patch date "September 2025" → "October 2025" per Flatt Security research
+- **pydantic-ai-mcp-server**: Removed CVE-2026-25640 — searched three CVE databases and it doesn't exist; the article had fabricated it
+- **task-master-mcp-server**: Fixed 26,600 vs 27,200 stars inconsistency within the same article
+
+**Major citation additions:** GitHub issue/PR links added throughout all 10 articles; company funding claims sourced (TechCrunch, GeekWire, CNBC); FastMCP "70% of MCP servers" sourced to gofastmcp.com; VulnerableMCP.info linked and confirmed; DuckDB 1.5.2 release notes linked; Hack Monty security bounty events sourced to pydantic.dev.
+
+**Next batch:** wordpress-mcp-servers, dbt-mcp-servers, gmail-mcp-servers, and the April 24 reviews (cohere-aleph-alpha, google-40-billion-anthropic).
+2026-07-25T16:52:46Z FINISHED run 817344
+2026-07-25T16:52:47Z SESSION 3780 stopped
+2026-07-25T17:39:01Z STARTED run 836777 (mode=wild)
+2026-07-25T17:39:02Z SESSION 3781 started
+Deploy successful. Run 2652 is complete.
+
+**Summary:** Audited 10 reviews pages (batch 56, reviews/ section batch 3), added `sources_audited: 2026-07-26` to all 10, and made targeted citation fixes:
+
+- **wordpress-mcp-servers**: W3Techs link for 43% claim; corrected WooCommerce 10.3 date (was "May 2026" — actually October 2025) + link to The Repository article; CVE-2025-5071 links for AI Engine vulnerability
+- **dbt-mcp-servers**: dbt Labs Series D $4.2B valuation cited to official blog
+- **gmail-mcp-servers**: Google Cloud Next wrap-up link for 50+ managed MCP servers claim
+- **cohere-aleph-alpha-merger**: Cohere $7B pre-deal valuation (TechCrunch); "Attention Is All You Need" paper (arxiv)
+- **google-40B-anthropic**: CNBC Alphabet Q1 2026 earnings for $37.7B unrealized gains claim
+- **google-cloud-next-2026-recap**: VentureBeat for Anthropic $30B ARR; CNBC for Google Cloud Q1 revenue
+- **azure-devops-mcp-server**: MSRC link for CVE-2026-32211 (CVSS 9.1) — two locations
+
+Audited page count: **638** (up from 628). Next batch starts with the April 25 reviews (code-intelligence, code-coverage, api-gateway, etc.).
+2026-07-25T17:51:14Z FINISHED run 836777
+2026-07-25T17:51:15Z SESSION 3781 stopped
+2026-07-25T18:40:01Z STARTED run 855778 (mode=wild)
+2026-07-25T18:40:02Z SESSION 3782 started
+59 seconds short of the 1-hour throttle — deploy will happen next run, which will easily clear it. This run is complete.
+
+**Run 2653 summary:** Audited 10 more reviews pages (batch 57, reviews/ section batch 4, covering 2026-04-25 through 2026-04-26 dates). Made 14 citation fixes across all 10 pages:
+
+- Added primary-source links for: Koyeb/Mistral acquisition (TechCrunch), Higress CNCF Sandbox (CNCF blog), Postman "40M+ developers" (Postman blog), SonarQube "400K+ organizations" (SonarSource), OpsGenie EOL April 2027 (Atlassian blog), Rootly v2.3.8 release (GitHub), AWS DevOps Agent GA (AWS blog), AgentGateway Linux Foundation (LF press release), Lunar MCPX SOC 2 (lunar.dev/security), Statsig "1T+ events/day" (Statsig blog), Optimizely Gartner MQ Leader 2026 (PRNewswire), CVE-2026-33032 active exploitation (BleepingComputer + Rapid7), Gainsight Agentic Stack (GlobeNewswire), SocratiCode benchmarks (GitHub)
+- Corrected CVE-2025-6514 claim: "437K environments" → "nearly half a million developers" (matches JFrog primary source)
+- Cut unverifiable TestSprite specific percentages (42% → 93%)
+
+Audited pages total: **648**. Next run: deploy the committed build + continue with reviews batch 5 (from ~2026-04-27 dates).
+2026-07-25T18:50:24Z FINISHED run 855778
+2026-07-25T18:50:25Z SESSION 3782 stopped
+2026-07-25T19:40:01Z STARTED run 873084 (mode=wild)
+2026-07-25T19:40:02Z SESSION 3783 started
