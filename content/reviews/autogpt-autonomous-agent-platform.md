@@ -6,10 +6,11 @@ og_description: "AutoGPT (Significant-Gravitas/AutoGPT, ~184K stars) created the
 content_type: "Review"
 card_description: "AutoGPT (Significant-Gravitas/AutoGPT, ~184K stars) is the project that launched the autonomous LLM agent movement in March 2023 — the fastest-growing GitHub repo in history at that point. Today it is a completely different product: a visual no-code/low-code platform for building continuous agents using a drag-and-drop block workflow builder. 30+ integrations, multi-model support (OpenAI, Anthropic, Google, DeepSeek, Meta, xAI, Mistral, Perplexity, Amazon, Microsoft), credit-based execution billing, agent marketplace, workflow import from n8n/Make.com/Zapier, and Docker self-hosting. Dual license: MIT for the classic components, Polyform Shield for the platform folder. Still in beta (v0.6.58, April 2026). Raised $12M from Redpoint Ventures and GitHub in October 2023. Part of our **Developer Tools** category. Rating: 3.5/5."
 last_refreshed: 2026-05-06
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
-No other project in this series has a story quite like AutoGPT. Released in a single weekend in March 2023, it became the fastest-growing GitHub repository in history. It demonstrated, before most people had thought about it, that GPT-4 could chain tool calls into autonomous workflows — and the world noticed. Three years later, the original CLI experiment has been completely replaced by a visual platform that barely resembles what made it famous.
+No other project in this series has a story quite like AutoGPT. Released in a single weekend in March 2023, it became [one of the fastest-growing GitHub repositories in history](https://en.wikipedia.org/wiki/AutoGPT). It demonstrated, before most people had thought about it, that GPT-4 could chain tool calls into autonomous workflows — and the world noticed. Three years later, the original CLI experiment has been completely replaced by a visual platform that barely resembles what made it famous.
 
 Understanding AutoGPT in 2026 means understanding both halves: why it mattered, and what it has become.
 
@@ -39,7 +40,7 @@ On March 30, 2023, Toran Bruce Richards — founder of a small UK video game com
 
 The concept was not entirely new, but the timing was. GPT-4 had launched weeks earlier, and AutoGPT was the first accessible demonstration that these new models could act as autonomous agents rather than passive chat interfaces. Within days the repository accumulated over 100,000 stars, trending on GitHub, Twitter, and every AI newsletter. Venture capital took notice. The word "agentic" entered the mainstream AI vocabulary in part because of this project.
 
-The $12M raise from Redpoint Ventures and GitHub in October 2023 validated the interest — and also set the stage for the pivot.
+The [$12M raise from Redpoint Ventures and GitHub in October 2023](https://agpt.co/blog/autogpt-partners-with-github-for-ai-security) validated the interest — and also set the stage for the pivot.
 
 ---
 
@@ -126,7 +127,7 @@ The self-hosted path uses the platform code under Polyform Shield — permitted 
 
 ## The PyPI Package Question
 
-The `autogpt` Python package on PyPI receives only ~582 weekly downloads and has not been updated in over 12 months. This is not the active product. The platform is consumed through the web UI at platform.agpt.co or through a self-hosted Docker deployment, not through `pip install`. Developers who want a Python framework API for building agents programmatically are better served by LangGraph, CrewAI, PydanticAI, or other frameworks reviewed in this series.
+The `autogpt` [Python package on PyPI](https://pypistats.org/packages/autogpt) receives only ~582 weekly downloads and has not been updated in over 12 months. This is not the active product. The platform is consumed through the web UI at platform.agpt.co or through a self-hosted Docker deployment, not through `pip install`. Developers who want a Python framework API for building agents programmatically are better served by LangGraph, CrewAI, PydanticAI, or other frameworks reviewed in this series.
 
 ---
 

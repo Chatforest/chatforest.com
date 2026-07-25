@@ -5,6 +5,7 @@ description: "Arize Phoenix reviewed: OTel-native LLM observability with evals, 
 og_description: "Arize Phoenix (Arize-AI/phoenix, ~9.5K stars, ELv2, Python/TypeScript/Java, v15.4.0) is an open-source LLM observability platform built on OpenTelemetry and the OpenInference semantic convention. Features auto-instrumentation for 30+ frameworks, LLM-as-judge evals, datasets, experiments, prompt playground, prompt learning (automated optimization), and a native MCP server. Single Docker container self-hosting with SQLite or PostgreSQL. Arize AI, Berkeley CA, ~$44M raised. 26.3M cumulative PyPI downloads. Rating: 4/5."
 card_description: "Arize Phoenix (Arize-AI/phoenix, ~9.5K stars, ELv2, Python/TypeScript/Java, v15.4.0) is an LLM observability platform built on OpenTelemetry + the OpenInference semantic convention. Auto-instruments 30+ frameworks across Python, TypeScript, and Java. Core capabilities: hierarchical tracing, LLM-as-judge + code-based evaluations, datasets from production traffic, experiments for systematic prompt/model comparison, prompt playground with session replay, and automated prompt optimization (Prompt Learning). Native MCP server. Single Docker container self-hosting (SQLite or PostgreSQL). Arize AI, Berkeley CA, founded 2020, ~$44M raised. 26.3M cumulative PyPI downloads. Note: ELv2 license is source-available, not OSI-certified open source. Part of our **Developer Tools** category. Rating: 4/5."
 last_refreshed: 2026-05-06
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -26,8 +27,8 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v15.4.0 (May 5, 2026) |
 | **Install** | `pip install arize-phoenix` · `docker run arizephoenix/phoenix:latest` |
 | **Authors** | Arize AI — Aparna Dhinakaran & Jason Lopatecki, Berkeley CA |
-| **Downloads** | ~26.3M cumulative PyPI (arize-phoenix) |
-| **Founded** | 2020 · ~$44M raised |
+| **Downloads** | [~26.3M cumulative PyPI (arize-phoenix)](https://pypistats.org/packages/arize-phoenix) |
+| **Founded** | 2020 · [~$131M raised](https://arize.com/blog/arize-ai-raises-70m-series-c-to-build-the-gold-standard-for-ai-evaluation-observability/) ($19M Series A, [$38M Series B](https://www.prnewswire.com/news-releases/arize-ai-raises-38-million-series-b-to-scale-machine-learning-observability-platform-301620603.html), [$70M Series C](https://arize.com/blog/arize-ai-raises-70m-series-c-to-build-the-gold-standard-for-ai-evaluation-observability/)) |
 
 ---
 
@@ -37,7 +38,7 @@ Phoenix's architecture rests on two open standards layered together, and underst
 
 **OpenTelemetry (OTel)** is the CNCF-graduated standard for distributed tracing — the same span/trace model used by Jaeger, Honeycomb, and Datadog. Every operation in an LLM pipeline becomes an OTel span with timing, status, parent-child relationships, and arbitrary key-value attributes. Phoenix ingests spans over OTLP — OTel's wire protocol — on port 6006 (HTTP) or 4317 (gRPC).
 
-**OpenInference** is an Arize-developed semantic convention layer on top of OTel that standardizes the *LLM-specific* parts of a span. Without it, there is no shared definition for which OTel attribute contains the model name, the retrieved documents, or the input messages. OpenInference defines seven span kinds — `LLM`, `Chain`, `Retriever`, `Reranker`, `Embedding`, `Tool`, `Agent` — and maps LLM-specific fields onto named OTel attributes. This matters because it makes Phoenix spans legible to any OTel-compatible backend, not just Phoenix itself.
+**[OpenInference](https://github.com/Arize-AI/openinference)** is an Arize-developed semantic convention layer on top of OTel that standardizes the *LLM-specific* parts of a span. Without it, there is no shared definition for which OTel attribute contains the model name, the retrieved documents, or the input messages. OpenInference defines seven span kinds — `LLM`, `Chain`, `Retriever`, `Reranker`, `Embedding`, `Tool`, `Agent` — and maps LLM-specific fields onto named OTel attributes. This matters because it makes Phoenix spans legible to any OTel-compatible backend, not just Phoenix itself.
 
 The result is an observability platform where the data model is genuinely portable. Auto-instrumentation libraries (the `openinference-instrumentation-*` packages) wrap framework calls and emit spans; Phoenix collects and visualizes them.
 
@@ -193,7 +194,7 @@ For teams that want the simplest possible self-hosted observability stack, Phoen
 
 **AX cloud free tier**: 25K spans and 15-day retention is genuinely limited for production monitoring of active applications.
 
-**Funding transparency**: Arize is a venture-backed independent startup with approximately $44M raised. The Series B amount (~$25M, August 2023) is widely cited but the primary source (TechCrunch) was unavailable for verification. The company's long-term independence is less certain than Langfuse's post-acquisition path.
+**Funding**: Arize is a venture-backed company that has raised approximately $131M total: $19M Series A (2021, Battery Ventures), [$38M Series B (September 2022, TCV)](https://www.prnewswire.com/news-releases/arize-ai-raises-38-million-series-b-to-scale-machine-learning-observability-platform-301620603.html), and [$70M Series C (February 2025, Adams Street Partners)](https://arize.com/blog/arize-ai-raises-70m-series-c-to-build-the-gold-standard-for-ai-evaluation-observability/). With M12 (Microsoft's venture fund) among Series C investors, the company has significant institutional backing. The company's long-term independence is less certain than Langfuse's post-acquisition path.
 
 ---
 

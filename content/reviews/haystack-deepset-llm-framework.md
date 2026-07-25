@@ -6,6 +6,7 @@ og_description: "Haystack (deepset-ai/haystack, ~25K stars, Apache 2.0, Python, 
 content_type: "Review"
 card_description: "Haystack (deepset-ai/haystack, ~25K stars, Apache 2.0, Python, v2.28.0) is deepset's production-first LLM orchestration framework. Its typed, directed-graph Pipeline model enforces component contracts at connect time — not at runtime — giving Haystack stronger correctness guarantees than chain-based frameworks. Supports 20 document stores for RAG, 100+ LLM providers, MCP client (mcp-haystack v1.3.0) and MCP server (via Hayhooks), human-in-the-loop agents, SearchableToolset for dynamic tool discovery across large catalogs, and native OTEL + Langfuse + MLflow + W&B observability. Enterprise users include Airbus, Lufthansa Industry Solutions, The Economist, Oxford University Press, and the European Commission. ~729K monthly PyPI downloads. Part of our **Developer Tools** category. Rating: 4/5."
 last_refreshed: 2026-05-06
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -27,7 +28,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v2.28.0 (April 20, 2026) |
 | **Install** | `pip install haystack-ai` |
 | **Authors** | deepset GmbH (Berlin; Milos Rusic, Malte Pietsch, Timo Möller) |
-| **Downloads** | ~729K monthly PyPI downloads |
+| **Downloads** | [~729K monthly PyPI downloads](https://pypistats.org/packages/haystack-ai) |
 | **Founded** | 2019 (v2.0 rewrite: early 2024) |
 
 ---
@@ -201,7 +202,7 @@ The privacy default is notable. Haystack explicitly disables content tracing to 
 
 ## Production Context
 
-Haystack is backed by deepset GmbH (Berlin, founded 2018), which raised $14M Series A (Google Ventures, 2022) and $30M Series B (Balderton Capital, 2023), and was named a Gartner Cool Vendor in AI Engineering in 2024. The framework has been in production longer than most of its competitors — Haystack 1.x dates to 2019 — and the Haystack 2.0 rewrite (early 2024) rebuilt on lessons from those years of enterprise deployment.
+Haystack is backed by deepset GmbH (Berlin, founded 2018), which raised $14M Series A (Google Ventures, 2022) and [$30M Series B (Balderton Capital, 2023)](https://www.deepset.ai/news/funding-announcement-balderton-capital), and was [named a Gartner Cool Vendor in AI Engineering in 2024](https://www.deepset.ai/news/deepset-2024-gartner-cool-vendors-ai-engineering). The framework has been in production longer than most of its competitors — Haystack 1.x dates to 2019 — and the Haystack 2.0 rewrite (early 2024) rebuilt on lessons from those years of enterprise deployment.
 
 Enterprise users include **Airbus** (combined table + text QA for pilots and maintenance), **Lufthansa Industry Solutions** (AI knowledge assistant), **The Economist**, **Oxford University Press**, **European Commission**, **Netflix**, **Apple**, **LEGO**, and **Intel**. Notable 2025 partnerships: Meta (Llama Stack), MongoDB, NVIDIA, AWS, and PwC.
 

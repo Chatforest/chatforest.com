@@ -5,6 +5,7 @@ description: "OpenLLMetry (Traceloop) reviewed: open-source OTel-native instrume
 og_description: "OpenLLMetry (traceloop/openllmetry, ~7K stars, Apache 2.0, Python/JS, v0.60.0) is an OpenTelemetry-based instrumentation library for LLM applications — NOT an observability platform. Provides 31 Python packages for OpenAI, Anthropic, LangChain, LlamaIndex, CrewAI, and 25+ other providers and frameworks. Sends standard OTel traces to any compatible backend: Langfuse, Arize Phoenix, Datadog, Grafana, Honeycomb, and 20+ others. traceloop-sdk downloads: ~2.7M/month; opentelemetry-instrumentation-openai: ~3.85M/month. Acquired by ServiceNow March 2026; open-source commitment maintained. YC alumni. Rating: 3.5/5."
 card_description: "OpenLLMetry (traceloop/openllmetry, ~7K stars, Apache 2.0, Python/JS, v0.60.0) is a vendor-neutral OpenTelemetry instrumentation layer for LLM applications — NOT a standalone observability platform. Install one or more of its 31 Python packages, emit standard OTel spans, and route data to any compatible backend you already use: Datadog, Grafana, Langfuse, Arize Phoenix, Honeycomb, and 20+ others. Two integration paths: traceloop-sdk (auto-instruments everything with two lines) or individual opentelemetry-instrumentation-* packages (for teams already running an OTel collector). Coverage: OpenAI, Anthropic, AWS Bedrock, Vertex AI, LangChain, LlamaIndex, CrewAI, Haystack, Chroma, Pinecone, Qdrant, and more. Downloads: ~3.85M/month (openai package), ~2.7M/month (traceloop-sdk). YC alumni Traceloop acquired by ServiceNow March 2026; OSS commitment maintained. Still at v0.x — no stable API guarantee. Part of our **Developer Tools** category. Rating: 3.5/5."
 last_refreshed: 2026-05-06
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -27,7 +28,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v0.60.0 (April 19, 2026) |
 | **Install** | `pip install traceloop-sdk` or individual `opentelemetry-instrumentation-*` packages |
 | **Authors** | Traceloop — Nir Gazit & Gal Kleinman · YC alumni · Acquired by ServiceNow, March 2026 |
-| **Downloads** | ~3.85M/month (opentelemetry-instrumentation-openai) · ~2.7M/month (traceloop-sdk) |
+| **Downloads** | [~3.85M/month (opentelemetry-instrumentation-openai)](https://pypistats.org/packages/opentelemetry-instrumentation-openai) · [~2.7M/month (traceloop-sdk)](https://pypistats.org/packages/traceloop-sdk) |
 | **Created** | September 2023 |
 
 ---
@@ -123,7 +124,7 @@ These are not inflated by framework dependency chains — they require explicit 
 
 ## Traceloop → ServiceNow: What the Acquisition Means
 
-In March 2026, Traceloop announced it was joining ServiceNow. The technology is being integrated into ServiceNow's AI Control Tower, providing LLM observability and governance for enterprise AI deployments.
+In March 2026, Traceloop [announced it was joining ServiceNow](https://traceloop.com/blog/traceloop-is-joining-servicenow). The technology is being integrated into ServiceNow's AI Control Tower, providing LLM observability and governance for enterprise AI deployments.
 
 Nir Gazit (CEO) stated explicitly that **OpenLLMetry will remain open-source** and Traceloop plans to continue contributing to the OpenTelemetry ecosystem.
 
@@ -133,7 +134,7 @@ The practical implications for users:
 
 **Uncertain medium-term**: Traceloop's commercial incentive was to compete in the LLM observability market. ServiceNow's incentive is to use the technology within its platform. Open-source maintenance may drift toward sustaining existing functionality rather than expanding coverage. The post-acquisition commit patterns — more dependabot dependency bumps, fewer human-authored feature commits — are an early signal worth watching.
 
-**Parallel to Helicone**: Both Helicone (acquired by Mintlify, maintenance mode) and OpenLLMetry (acquired by ServiceNow, status evolving) entered 2026 as independent LLM observability players and exited as parts of larger platforms. The pattern reflects consolidation in a crowded market.
+**Parallel to Helicone**: Both [Helicone (acquired by Mintlify, maintenance mode)](https://www.helicone.ai/blog/joining-mintlify) and OpenLLMetry (acquired by ServiceNow, status evolving) entered 2026 as independent LLM observability players and exited as parts of larger platforms. The pattern reflects consolidation in a crowded market.
 
 The open-source commitment is meaningful — but it is a statement of intent, not a structural guarantee.
 
@@ -143,7 +144,7 @@ The open-source commitment is meaningful — but it is a statement of intent, no
 
 OpenLLMetry's core bet is that the OpenTelemetry project will successfully standardize LLM observability semantics through its GenAI Semantic Conventions working group. If that happens, OpenLLMetry becomes a reference implementation of a CNCF-governed standard — every observability backend in the ecosystem will need to understand the same span attributes.
 
-As of v0.60.0, OpenLLMetry is actively aligning its packages with GenAI semconv v1.40.0. The conventions are still in experimental status at CNCF — not yet stable, meaning attribute names can change between releases.
+As of v0.60.0, OpenLLMetry is actively aligning its packages with [GenAI semconv v1.40.0](https://opentelemetry.io/docs/specs/semconv/gen-ai/). The conventions are still in experimental status at CNCF — not yet stable, meaning attribute names can change between releases.
 
 This creates a transitional period where teams face a choice: adopt the evolving standard now and benefit from early integration, or wait for stability and risk migration debt. OpenLLMetry has been navigating this by updating packages to track the spec, but the v0.x versioning on the project itself reflects the same instability — no API stability guarantee exists yet.
 

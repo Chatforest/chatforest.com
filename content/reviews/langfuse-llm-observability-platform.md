@@ -5,6 +5,7 @@ description: "Langfuse reviewed: open-source LLM observability with tracing, eva
 og_description: "Langfuse (langfuse/langfuse, ~26.6K stars, MIT, TypeScript/Python, v3.172.1) is the leading open-source LLM observability platform. YC W23 company acquired by ClickHouse in January 2026. Features production tracing (hierarchical spans, multi-modal), LLM-as-a-judge and heuristic evaluations, prompt management with versioning, datasets and experiments, and a native MCP Server for prompt retrieval. Dual-storage architecture (PostgreSQL + ClickHouse). 796K+ daily PyPI downloads. Self-host MIT, cloud free tier available. Rating: 4.5/5."
 card_description: "Langfuse (langfuse/langfuse, ~26.6K stars, MIT, TypeScript/Python, v3.172.1) is the leading open-source LLM observability and engineering platform. Founded 2023, YC W23, $4M seed, acquired by ClickHouse in January 2026. Core capabilities: hierarchical production tracing, LLM-as-a-judge + heuristic evaluations, prompt management with versioning and one-click deploy, datasets and experiments for systematic testing, and a native MCP Server for prompt retrieval. Dual-storage architecture (PostgreSQL for metadata + ClickHouse for high-volume telemetry). SDK v4 (Python/TypeScript), drop-in OpenAI wrapper, integrations with LangChain, LlamaIndex, Haystack, PydanticAI, and 20+ frameworks. 796K+ daily PyPI downloads. Self-host under MIT; cloud free tier (50K units/month). Part of our **Developer Tools** category. Rating: 4.5/5."
 last_refreshed: 2026-05-06
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -25,8 +26,8 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Language** | TypeScript (server/UI), Python (SDKs) |
 | **Version** | v3.172.1 (May 1, 2026) |
 | **Install** | `pip install langfuse` · `npm install langfuse` |
-| **Authors** | Clemens Rawert, Marc Klingen (CEO), Maximilian Deichmann — acquired by ClickHouse January 2026 |
-| **Downloads** | ~796K/day PyPI (langfuse) |
+| **Authors** | Clemens Rawert, Marc Klingen (CEO), Maximilian Deichmann — [acquired by ClickHouse January 2026](https://clickhouse.com/blog/clickhouse-acquires-langfuse-open-source-llm-observability) |
+| **Downloads** | [~796K/day PyPI (langfuse)](https://pypistats.org/packages/langfuse) |
 | **Founded** | 2023 (YC W23) |
 
 ---
@@ -43,7 +44,7 @@ The question Langfuse is positioned to answer is not *did it crash?* but *is it 
 
 ## The ClickHouse Acquisition
 
-In January 2026, **ClickHouse acquired Langfuse** following ClickHouse's $400M Series D round at a $15B valuation. This is relevant context for evaluation: Langfuse is no longer an independent startup but a product line inside one of the largest open-source database companies in the world.
+In January 2026, **ClickHouse [acquired Langfuse](https://clickhouse.com/blog/clickhouse-acquires-langfuse-open-source-llm-observability)** following ClickHouse's [$400M Series D round at a $15B valuation](https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres). This is relevant context for evaluation: Langfuse is no longer an independent startup but a product line inside one of the largest open-source database companies in the world.
 
 What changed: the storage architecture. Langfuse's self-hosted deployment previously used PostgreSQL alone. The current architecture uses a dual-storage design — PostgreSQL for structured metadata and ClickHouse for high-volume telemetry ingestion. This gives Langfuse the ability to handle hundreds of thousands of traces per day without the write contention that plagued earlier versions. It also represents a meaningful infrastructure dependency for self-hosters who did not previously run ClickHouse.
 

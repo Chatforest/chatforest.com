@@ -6,6 +6,7 @@ og_description: "Semantic Kernel (microsoft/semantic-kernel, ~27.8K stars, MIT, 
 content_type: "Review"
 card_description: "Semantic Kernel (microsoft/semantic-kernel, ~27.8K stars, MIT, C#/Python/Java, dotnet-1.75.0 / python-1.41.3) is Microsoft's official SDK for building AI agents and multi-agent systems. Central Kernel DI container, five agent types, five multi-agent orchestration patterns, Filters middleware, first-class OpenTelemetry, MCP client + server, Vector Store connectors (16+ backends), Process Framework for business workflows. ~2.68M monthly PyPI downloads + 11.7M NuGet total. Part of our **Developer Tools** category. Rating: 4/5."
 last_refreshed: 2026-05-06
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -28,7 +29,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version (Python)** | python-1.41.3 (April 28, 2026) |
 | **Install (Python)** | `pip install semantic-kernel` |
 | **Install (.NET)** | `dotnet add package Microsoft.SemanticKernel` |
-| **Downloads** | ~2.68M/month PyPI · ~11.7M NuGet (all versions) |
+| **Downloads** | [~2.68M/month PyPI](https://pypistats.org/packages/semantic-kernel) · [~11.7M NuGet (all versions)](https://www.nuget.org/packages/Microsoft.SemanticKernel/) |
 | **Created** | February 2023 |
 
 ---
@@ -245,7 +246,7 @@ Available in .NET and Python. Still experimental; the API will change.
 
 Microsoft does not publicly name most SK customers, but the framework's production credentials are solid:
 
-- **Microsoft Agent Framework v1.0** (announced March 18, 2026) is built on Semantic Kernel and carries a long-term support commitment. This is a meaningful signal: Microsoft is building its own agent infrastructure on SK.
+- **[Microsoft Agent Framework v1.0](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/)** (GA released April 3, 2026) is built on Semantic Kernel and carries a long-term support commitment. This is a meaningful signal: Microsoft is building its own agent infrastructure on SK.
 - **Microsoft 365 Copilot** patterns align with SK's OpenAPI plugin architecture
 - **Azure AI Foundry** — SK is the recommended client SDK for Azure AI Foundry Agent Service
 - **Copilot Studio** integration — SK agents can interoperate with Microsoft's no-code Copilot Studio
@@ -313,7 +314,7 @@ In those contexts, SK's design strengths are real. The Kernel-based DI architect
 
 The deductions: the Java gap is severe (Java teams get a stripped-down subset), the experimental/preview/GA state matrix creates genuine uncertainty about what's production-safe, connector bugs are live in GitHub issues, and the framework's C#-first design philosophy makes the Python experience heavier than alternatives. For pure Python teams without Azure investment, LangChain, LlamaIndex, or LlamaIndex are likely faster to get started.
 
-The Microsoft Agent Framework v1.0 announcement (March 2026), built on SK with an LTS commitment, is the clearest signal of SK's trajectory: Microsoft is betting production-grade agent infrastructure on it, and that bet carries maintenance guarantees that few open-source alternatives can match.
+The [Microsoft Agent Framework v1.0 announcement](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/) (April 2026), built on SK with an LTS commitment, is the clearest signal of SK's trajectory: Microsoft is betting production-grade agent infrastructure on it, and that bet carries maintenance guarantees that few open-source alternatives can match.
 
 ---
 

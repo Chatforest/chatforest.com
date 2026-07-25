@@ -5,6 +5,7 @@ description: "Braintrust reviewed: eval-first AI observability platform with $80
 og_description: "Braintrust is an AI evaluation and observability platform that treats evals and tracing as a unified system. Proprietary SaaS backed by a16z and ICONIQ ($121M raised, $800M valuation). Open-source autoevals library (884 stars) and SDKs (Apache-2.0/MIT). Features: AI proxy for 100+ models, Brainstore (custom Rust database, 80x faster than data warehouses), Loop AI assistant, eval-CI/CD gates. Notable customers: Notion, Stripe, Vercel, Airtable. 4.29M PyPI downloads/month. Pricing: free → $249/month Pro. Rating: 4/5."
 card_description: "Braintrust is an AI evaluation and observability platform built around the idea that evals and production tracing belong in the same system. $121M raised, $800M valuation (Series B, Feb 2026). Open-source autoevals library (884 stars, Apache-2.0); proprietary SaaS platform. Features include: AI proxy for 100+ models with caching, Brainstore (custom Rust DB claimed 80x faster than data warehouses), Loop AI assistant that auto-analyzes traces and suggests prompt improvements, eval-CI/CD gates via GitHub Actions, and a 'trace-to-dataset' workflow for promoting production failures directly into eval test suites. Notable customers: Notion, Stripe, Vercel, Airtable, Instacart, Zapier. TypeScript-first SDK (unique in the category). 4.29M PyPI downloads/month. Pricing: free (1GB/mo, 14-day retention) → $249/month Pro → Enterprise (self-hosting). Part of our **Developer Tools** category. Rating: 4/5."
 last_refreshed: 2026-05-06
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -23,7 +24,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Organization** | [braintrustdata](https://github.com/braintrustdata) |
 | **Open-source components** | [autoevals](https://github.com/braintrustdata/autoevals) (~884 stars) · [braintrust-proxy](https://github.com/braintrustdata/braintrust-proxy) (~395 stars) |
 | **Platform** | Proprietary SaaS · open-source SDKs (Apache-2.0 / MIT) |
-| **PyPI downloads** | ~4.29M/month (`braintrust` package, v0.19.0, May 4, 2026) |
+| **PyPI downloads** | [~4.29M/month](https://pypistats.org/packages/braintrust) (`braintrust` package, v0.19.0, May 4, 2026) |
 | **Language** | TypeScript (primary) · Python · Go · Ruby · C# · Java |
 | **Install** | `pip install braintrust` · `npm install braintrust` |
 | **Founder/CEO** | Ankur Goyal — San Francisco, CA |
@@ -36,7 +37,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 
 ## Why Evals First?
 
-Ankur Goyal's previous company, Impira, built document-processing AI products. When models or prompts changed, the team would debate whether quality improved — without a systematic way to measure it. They built internal tooling on Snowflake to score outputs against expected results across a consistent set of test cases. Goyal described the moment they first used it as a "holy shit moment": debates evaporated, good changes shipped faster, bad changes were caught before production.
+Ankur Goyal's previous company, [Impira](https://www.figma.com/blog/figma-acquires-impira/), built document-processing AI products. When models or prompts changed, the team would debate whether quality improved — without a systematic way to measure it. They built internal tooling on Snowflake to score outputs against expected results across a consistent set of test cases. Goyal described the moment they first used it as a "holy shit moment": debates evaporated, good changes shipped faster, bad changes were caught before production.
 
 Braintrust is an externalization of that tooling. The central argument: logging is necessary but not sufficient. Traces tell you what happened; evals tell you whether what happened was good. Without the evaluation layer, observability data accumulates without producing actionable signal. The platform is designed so that both layers are equally accessible and deeply integrated.
 
@@ -75,7 +76,7 @@ In March 2025, Braintrust announced Brainstore: a proprietary database written i
 
 Architecture: each customer has an isolated data partition. Ingestion via WAL. Full-text indexing with Tantivy. The system connects S3, PostgreSQL, and Redis. It is now the default backend for all Braintrust customers, with self-hosted customers running separate reader nodes (16 vCPU, 32GB RAM, 1TB NVMe, 150K IOPS) and writer nodes (32 vCPU, 64GB RAM).
 
-The claimed performance number is 80× faster than data warehouses for full-text search on trace data — Braintrust published a specific comparison: 240ms for a query that took 78,963ms in a warehouse competitor. These benchmarks are Braintrust's own; independent verification is not available. The investment is real: building a custom database is an unusual commitment that signals how central high-performance trace storage is to the roadmap.
+The claimed performance number is 80× faster than data warehouses for full-text search on trace data — [Braintrust published a specific comparison](https://www.braintrust.dev/blog/brainstore-benchmarks): 240ms for a query that took 78,963ms in a warehouse competitor. These benchmarks are Braintrust's own; independent verification is not available. The investment is real: building a custom database is an unusual commitment that signals how central high-performance trace storage is to the roadmap.
 
 ---
 
@@ -188,7 +189,7 @@ The funding trajectory reflects how the market valued eval tooling over 24 month
 |---|---|---|---|---|
 | Seed | Dec 2023 | $5.1M | Greylock (Saam Motamedi) | — |
 | Series A | Oct 2024 | $36M | a16z (Martin Casado) | ~$150M |
-| Series B | Feb 2026 | $80M | ICONIQ (Matt Jacobson) | $800M |
+| Series B | Feb 2026 | [$80M](https://www.braintrust.dev/blog/announcing-series-b) | ICONIQ (Matt Jacobson) | $800M |
 
 Notable angels include Greg Brockman (OpenAI co-founder), Guillermo Rauch (Vercel), Clem Delangue (Hugging Face CEO), Arthur Mensch (Mistral AI CEO), Olivier Pomel (Datadog CEO), Bryan Helmig (Zapier CTO), and Howie Liu (Airtable CEO). The customer and investor overlap is meaningful: Vercel, Airtable, and Zapier are both investors and customers.
 

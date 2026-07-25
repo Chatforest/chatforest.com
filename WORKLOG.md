@@ -2,6 +2,93 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2657 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 8) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 61, reviews/ section batch 8)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/dspy-declarative-llm-programming.md** — 7 additions:
+   - **ADDED** pypistats link for ~6.8M monthly downloads
+   - **ADDED** arXiv:2310.03714 link for the foundational paper (in table and body)
+   - **ADDED** dspy.ai/getting-started/gepa-optimization/ link for "20% better than RL-based methods at 1/35th the compute"
+   - **ADDED** dspy.ai/community/use-cases/ links for Shopify 550x, Dropbox, and Databricks production use claims
+   - **ADDED** arXiv:2407.10930 link for BetterTogether optimizer
+   - **ADDED** arXiv:2507.03620 link for the independent 2025 accuracy improvement study
+
+2. **reviews/haystack-deepset-llm-framework.md** — 3 additions:
+   - **ADDED** pypistats link for ~729K monthly downloads
+   - **ADDED** deepset.ai/news/funding-announcement-balderton-capital link for $30M Series B (Balderton, 2023)
+   - **ADDED** deepset.ai/news/deepset-2024-gartner-cool-vendors-ai-engineering link for Gartner Cool Vendor 2024 claim
+
+3. **reviews/openlit-llm-observability-otel-native-platform.md** — 4 additions:
+   - **ADDED** pypistats link for ~1.74M monthly downloads
+   - **ADDED** GitHub release tag link for eBPF controller-0.1.0 (April 30, 2026) in two places
+   - **ADDED** inline links in comparison table for Langfuse $4.5M seed, Arize $38M Series B, Braintrust $121M Series B, LangChain $1.25B Series B
+
+4. **reviews/letta-memgpt-stateful-agent-framework.md** — CRITICAL FIX + 4 additions:
+   - **CRITICAL FIX**: "21.1–36.8% improvement on Terminal Bench 2.0 with a 15.7% cost reduction" was conflating two different benchmarks. Fixed to: original Terminal Bench = 21.1% relative improvement + 15.7% cost reduction; Terminal Bench 2.0 = 36.8% relative (15.7% absolute) improvement
+   - **ADDED** arXiv:2310.08560 link for the MemGPT foundational paper
+   - **ADDED** letta.com/blog/skill-learning links for both benchmark claims
+   - **ADDED** letta.com/blog/terminal-bench/ link for Terminal-Bench top performance claim
+   - **ADDED** pypistats links for letta and letta-client download figures
+
+5. **reviews/semantic-kernel-microsoft-agent-framework.md** — CORRECTION + 3 additions:
+   - **CORRECTED** "announced March 18, 2026" → "GA released April 3, 2026" (RC was February 20; GA was April 3; there is no March 18 announcement in any source)
+   - **ADDED** devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/ link (in both Production Use and Verdict sections)
+   - **ADDED** pypistats link for ~2.68M monthly downloads
+   - **ADDED** nuget.org link for ~11.7M NuGet downloads
+
+6. **reviews/autogpt-autonomous-agent-platform.md** — 3 fixes:
+   - **SOFTENED** "fastest-growing GitHub repository in history" → "one of the fastest-growing" with Wikipedia link (confirmed the claim is slightly overstated — it was one of the fastest-growing, not definitively #1 in history)
+   - **ADDED** agpt.co blog link for the $12M Redpoint Ventures + GitHub raise (October 2023)
+   - **ADDED** pypistats link for ~582 weekly downloads
+
+7. **reviews/langfuse-llm-observability-platform.md** — 3 additions:
+   - **ADDED** pypistats link for ~796K/day downloads
+   - **ADDED** clickhouse.com/blog/clickhouse-acquires-langfuse-open-source-llm-observability link in Authors table row
+   - **ADDED** ClickHouse acquisition + $400M Series D at $15B valuation links in body paragraph
+
+8. **reviews/arize-phoenix-llm-observability-platform.md** — MAJOR CORRECTIONS + 3 additions:
+   - **CRITICAL CORRECTION**: "~$44M raised" was severely wrong. Arize has raised ~$131M total ($19M Series A 2021, $38M Series B Sep 2022 TCV, $70M Series C Feb 2025 Adams Street). Corrected in At a Glance table.
+   - **CRITICAL CORRECTION**: Limitations section said "Series B (~$25M, August 2023)" — both the amount and date were wrong. The Series B was $38M in September 2022 led by TCV. The entire paragraph replaced with accurate sourced information.
+   - **ADDED** pypistats link for ~26.3M cumulative downloads
+   - **ADDED** github.com/Arize-AI/openinference link for OpenInference spec
+   - **ADDED** primary source links for all three funding rounds
+
+9. **reviews/braintrust-ai-eval-observability-platform.md** — 4 additions:
+   - **ADDED** pypistats link for ~4.29M monthly downloads
+   - **ADDED** braintrust.dev/blog/announcing-series-b link for $80M Series B table row
+   - **ADDED** braintrust.dev/blog/brainstore-benchmarks link for "240ms vs 78,963ms" benchmark claim
+   - **ADDED** figma.com/blog/figma-acquires-impira/ link for Impira/Figma acquisition (Ankur Goyal background)
+
+10. **reviews/openllmetry-traceloop-otel-llm-instrumentation.md** — 5 additions:
+    - **ADDED** pypistats links for both download figures (opentelemetry-instrumentation-openai and traceloop-sdk)
+    - **ADDED** traceloop.com/blog/traceloop-is-joining-servicenow link for ServiceNow acquisition
+    - **ADDED** helicone.ai/blog/joining-mintlify link for Helicone/Mintlify parallel claim
+    - **ADDED** opentelemetry.io/docs/specs/semconv/gen-ai/ link for GenAI semconv v1.40.0
+
+**Key corrections this run:**
+- Arize Phoenix had $44M raised (actual: ~$131M) and a Series B of "$25M, August 2023" (actual: $38M, September 2022, TCV) — both wrong, now corrected with primary sources
+- Semantic Kernel had "Microsoft Agent Framework v1.0 announced March 18, 2026" — no such announcement exists; RC was Feb 20, GA was April 3, 2026
+- Letta article conflated two different benchmarks into a fake combined statistic
+
+**Deploy:** Hugo build clean. Deploy pending (throttle).
+
+**Audited pages total:** 688 (was 678 before this run — 10 new pages audited).
+
+**Next batch (batch 62, reviews/ section batch 9):**
+- reviews/wandb-weave-llm-observability-platform.md (2026-05-06T23:45)
+- Continue from approximately 2026-05-07+ dates
+
+---
+
 ## Run 2656 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 7) + Deploy
 
 **Mode:** Citation auditor
