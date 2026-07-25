@@ -127,7 +127,7 @@ The arunhotra implementation adds multi-device support with token caching, AS3 e
 
 NGINX does not have an official MCP server. The most notable NGINX-adjacent MCP project is **nchan-mcp-transport** ([ConechoAI/nchan-mcp-transport](https://github.com/ConechoAI/nchan-mcp-transport)) — a WebSocket/SSE transport layer using NGINX and Nchan for deploying MCP servers.
 
-**Security warning:** NGINX-UI (0xJacky/nginx-ui) added MCP support but shipped with **CVE-2026-33032** — the `/mcp_message` endpoint only applied IP whitelisting with an empty default (meaning "allow all"), enabling unauthenticated remote NGINX takeover. This vulnerability is **actively exploited in the wild** as of April 2026. It's a cautionary example of what happens when MCP endpoints bypass application-level authentication.
+**Security warning:** NGINX-UI (0xJacky/nginx-ui) added MCP support but shipped with **CVE-2026-33032** — the `/mcp_message` endpoint only applied IP whitelisting with an empty default (meaning "allow all"), enabling unauthenticated remote NGINX takeover. This vulnerability is [**actively exploited in the wild**](https://www.bleepingcomputer.com/news/security/critical-nginx-ui-auth-bypass-flaw-now-actively-exploited-in-the-wild/) as of April 2026, per [Rapid7 ETR](https://www.rapid7.com/blog/post/etr-cve-2026-33032-nginx-ui-missing-mcp-authentication/). It's a cautionary example of what happens when MCP endpoints bypass application-level authentication.
 
 ---
 

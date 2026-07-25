@@ -9,7 +9,7 @@ That said, the use cases are compelling. An agent that can search your email for
 
 ## The Landscape
 
-The Gmail MCP ecosystem took another major step forward in May 2026. Google shipped a **dedicated Gmail MCP server** with its own endpoint and nine documented tools — this is no longer "Gmail bundled into Workspace MCP." At Google Cloud Next '26 (May 19, 2026), Google announced 50+ Google-managed MCP servers now in GA or preview. The landscape includes:
+The Gmail MCP ecosystem took another major step forward in May 2026. Google shipped a **dedicated Gmail MCP server** with its own endpoint and nine documented tools — this is no longer "Gmail bundled into Workspace MCP." At Google Cloud Next '26 (May 19, 2026), Google [announced 50+ Google-managed MCP servers](https://cloud.google.com/blog/topics/google-cloud-next/google-cloud-next-2026-wrap-up) now in GA or preview. The landscape includes:
 
 1. **Google's dedicated Gmail MCP server** — `gmailmcp.googleapis.com`, nine tools, developer preview (announced via Google Cloud Next '26)
 2. **Google's official MCP servers** — the [google/mcp](https://github.com/google/mcp) repository (4,100 stars, 48 commits) covers Workspace, Cloud, Maps, Firebase, and more

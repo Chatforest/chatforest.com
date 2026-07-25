@@ -97,7 +97,7 @@ Born from a hackathon and shipped to production — DevCycle has written about t
 |--------|-------|----------|---------|-------|
 | [GeLi2001/statsig-mcp](https://github.com/GeLi2001/statsig-mcp) | — | TypeScript | — | 27 |
 
-MCP server for Statsig, the enterprise-grade experimentation platform built by engineers from Facebook's experimentation team (handles 1 trillion+ events daily). Provides **27 Console API tools** organized by resource type, using a **hybrid three-API architecture**: Console API for project management (team users, event types), HTTP API for real-time feature checks (gates, configs, experiments, layers), and Events API for direct event logging.
+MCP server for Statsig, the enterprise-grade experimentation platform built by engineers from Facebook's experimentation team ([handles 1 trillion+ events daily](https://www.statsig.com/blog/how-statsig-streams-1-trillion-events-a-day)). Provides **27 Console API tools** organized by resource type, using a **hybrid three-API architecture**: Console API for project management (team users, event types), HTTP API for real-time feature checks (gates, configs, experiments, layers), and Events API for direct event logging.
 
 Tools cover feature gate management (CRUD), dynamic configuration management (full CRUD), experiment management, user segment creation and management, metrics access and analysis, and audit logs. The real-time feature check capability via the HTTP API is distinctive — most flag MCP servers only support management operations, but Statsig's can actually evaluate flags in real-time. The recently added metrics and metric source tools let agents read and analyze Statsig metrics metadata from within their workflows.
 
@@ -137,7 +137,7 @@ Tools are organized into three categories: **Query** (list projects, flags, expe
 
 Optimizely also launched companion servers: an **Analytics MCP Server** (find events/properties, build Funnel/Retention/Segmentation explorations, create dashboards, analyze experiment results) and an **Optimizely Commerce MCP Server** (8 capabilities covering B2B buyer journey configuration). Together these form the most comprehensive experimentation-plus-analytics MCP suite in the category.
 
-Optimizely is named a **Leader in the 2026 Gartner Magic Quadrant for Personalization Engines** (2nd year running). Their full public launch — with remote MCP, OAuth, and a three-server suite — signals that feature flag MCP servers are becoming table stakes for enterprise experimentation platforms.
+Optimizely is named a [**Leader in the 2026 Gartner Magic Quadrant for Personalization Engines**](https://www.prnewswire.com/news-releases/optimizely-named-a-leader-in-the-2026-gartner-magic-quadrant-for-personalization-engines-302680456.html) (2nd year running). Their full public launch — with remote MCP, OAuth, and a three-server suite — signals that feature flag MCP servers are becoming table stakes for enterprise experimentation platforms.
 
 ### Harness FME MCP Server
 

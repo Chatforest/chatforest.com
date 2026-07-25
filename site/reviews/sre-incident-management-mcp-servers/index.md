@@ -62,7 +62,7 @@ Part of our **[DevOps MCP category](/categories/devops/)**. The headline finding
 - **get_oncall_handoff_summary** — provides context for shift transitions so the next on-call person isn't starting from scratch
 - **get_oncall_shift_metrics** — shift counts, hours, and days on-call grouped by user, team, or schedule with primary/secondary role tracking
 
-**v2.3.8 (May 2026) — significant performance improvements:** Alert lookup optimized from **41 seconds to ~200ms** (parallelized pagination). Cold-cache on-call lookups dropped from ~15s to ~1s. A critical tool duplication bug was fixed — the `listIncidents`/`list_incidents` naming conflict was causing LLM client errors in some configurations. OAuth2 is now the primary authentication method (previously secondary). MCPcat analytics integration added for usage tracking.
+**[v2.3.8 (May 2026)](https://github.com/Rootly-AI-Labs/Rootly-MCP-server/releases) — significant performance improvements:** Alert lookup optimized from **41 seconds to ~200ms** (parallelized pagination). Cold-cache on-call lookups dropped from ~15s to ~1s. A critical tool duplication bug was fixed — the `listIncidents`/`list_incidents` naming conflict was causing LLM client errors in some configurations. OAuth2 is now the primary authentication method (previously secondary). MCPcat analytics integration added for usage tracking.
 
 **Tool subsets now documented by workflow:** Incident Response (25 tools), On-Call Management (35 tools), Monitoring/Alerting (40 tools), Post-Incident Analysis (30 tools), Analytics/Reporting (15 tools) — making it easier to limit which tools are exposed.
 
@@ -145,7 +145,7 @@ The hosted server connects via remote MCP — no local server installation neede
 |--------|-------|----------|---------|--------------|
 | [mcp-opsgenie](https://github.com/giantswarm/mcp-opsgenie) | 9 | Go | Apache-2.0 | 8 tools — **ARCHIVED** |
 
-**⚠️ ARCHIVED May 12, 2026.** Giant Swarm archived the repository (read-only, no new development). The archival timing aligns with OpsGenie's approaching end-of-life: Atlassian has confirmed **OpsGenie will be sunset on April 5, 2027**, with customers migrating to Jira Service Management.
+**⚠️ ARCHIVED May 12, 2026.** Giant Swarm archived the repository (read-only, no new development). The archival timing aligns with OpsGenie's approaching end-of-life: Atlassian has [confirmed **OpsGenie will be sunset on April 5, 2027**](https://www.atlassian.com/blog/announcements/evolution-of-it-operations/amp), with customers migrating to Jira Service Management.
 
 The server's final state (8 tools) remains functional for existing OpsGenie users: alert management (list, get, acknowledge, unacknowledge), team management (list, get), heartbeat monitoring (list, get). Multi-transport (stdio, SSE, HTTP) and self-update capability were maintained to the end.
 
@@ -235,7 +235,7 @@ ServiceNow was listed as a gap in our previous review. That gap has been meaning
 
 ### AWS DevOps Agent
 
-AWS announced general availability of a DevOps Agent for automated incident investigation in April 2026. It integrates with CloudWatch, PagerDuty, Datadog, Dynatrace, New Relic, Splunk, Grafana, GitHub, GitLab, and Azure DevOps via MCP. When an incident triggers (CloudWatch alarm, PagerDuty alert, ServiceNow ticket), the agent investigates immediately, accessing runbook libraries and executing predefined remediation actions. This represents the next evolution: AI agents that don't just read incident data but actively investigate and remediate.
+AWS [announced general availability of a DevOps Agent](https://aws.amazon.com/blogs/mt/announcing-general-availability-of-aws-devops-agent/) for automated incident investigation in April 2026. It integrates with CloudWatch, PagerDuty, Datadog, Dynatrace, New Relic, Splunk, Grafana, GitHub, GitLab, and Azure DevOps via MCP. When an incident triggers (CloudWatch alarm, PagerDuty alert, ServiceNow ticket), the agent investigates immediately, accessing runbook libraries and executing predefined remediation actions. This represents the next evolution: AI agents that don't just read incident data but actively investigate and remediate.
 
 ## Market Landscape
 

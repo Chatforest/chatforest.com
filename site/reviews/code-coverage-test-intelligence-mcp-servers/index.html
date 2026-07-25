@@ -107,7 +107,7 @@
 <li><strong>Docker container</strong> (self-hosted) — <code>docker run mcp/sonarqube</code> bridges your IDE to any SonarQube Server or Cloud instance. Configuration generator built in for Claude Code, VS Code, Cursor, Zed, Windsurf, and more</li>
 <li><strong>Native SonarQube Cloud endpoint</strong> (March 2026) — zero-installation MCP access built directly into SonarQube Cloud. No Docker needed, no local software. Just point your MCP client at the Cloud endpoint</li>
 </ol>
-<p><strong>Why it matters:</strong> SonarQube is used by 400,000+ organizations. Having coverage data flow directly from SonarQube into AI coding sessions means agents can check coverage impact before committing, understand which files have weak coverage, and prioritize test writing where it matters most.</p>
+<p><strong>Why it matters:</strong> SonarQube is <a href="https://www.sonarsource.com/company/customers/">used by 400,000+ organizations</a>. Having coverage data flow directly from SonarQube into AI coding sessions means agents can check coverage impact before committing, understand which files have weak coverage, and prioritize test writing where it matters most.</p>
 <p><strong>May 2026 updates (v1.17–v1.18.1):</strong> v1.17.0 (Apr 27) launched a configuration generator at <strong>mcp.sonarqube.com</strong> — generate your MCP config for any client without touching JSON manually, plus a <code>/info</code> endpoint for version retrieval. v1.18.0 (May 4) added pagination for <code>search_dependency_risks</code> and patched security vulnerabilities in dependencies. v1.18.1 (May 11) fixed a startup crash in sandboxed container runtimes (the Docker image would not start on restricted environments) and resolved a Gemini CLI installation issue. Separately, SonarSource&rsquo;s AC/DC (Agent-Centric Development Cycle) framework exposes two dedicated coverage tools — <code>search_files_by_coverage</code> (pinpoint candidates for test improvements by coverage level) and <code>get_file_coverage_details</code> (line-by-line coverage for a specific file) — surfacing coverage navigation as a first-class agent capability.</p>
 <p><strong>Limitation:</strong> Requires a SonarQube Server or Cloud instance — this isn&rsquo;t a standalone coverage tool. The Kotlin/JVM stack means the Docker image is heavier than Node.js alternatives. Coverage data is only as fresh as your last SonarQube analysis (typically CI/CD pipeline runs). Advanced analysis features require entitlements on certain SonarQube editions.</p>
 <h3 id="codacycodacy-mcp-server">codacy/codacy-mcp-server</h3>
@@ -443,7 +443,7 @@
 <p>Commercial AI-first testing platform available as an MCP server:</p>
 <ul>
 <li>Reads product requirements (PRD), analyzes codebase, generates and executes tests automatically</li>
-<li>Claims <strong>42% → 93% pass rate improvement</strong> after one iteration</li>
+<li>Claims significant pass rate improvements after one iteration</li>
 <li>Covers logic, edge cases, error handling, and performance</li>
 <li>Available on npm as <code>@testsprite/testsprite-mcp</code></li>
 </ul>

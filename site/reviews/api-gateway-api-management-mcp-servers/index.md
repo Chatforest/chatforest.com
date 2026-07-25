@@ -29,7 +29,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 - **Public MCP marketplace** — [mcp.higress.ai](https://mcp.higress.ai/) hosts community MCP servers accessible to any MCP client
 - **HiMarket enterprise platform** — launched April 24, 2026: packages MCP servers, LLM APIs, and Agent APIs into a unified enterprise marketplace with billing and metering roadmap
 
-**Why it matters:** Higress accepted into the CNCF Sandbox in March 2026 — placing it alongside Kubernetes, Envoy, and other production-grade cloud-native projects. Production-validated at Alibaba handling hundreds of thousands of requests per second. HiMarket signals a commercial layer being built on the open-source foundation.
+**Why it matters:** Higress [accepted into the CNCF Sandbox in March 2026](https://www.cncf.io/blog/2026/03/25/higress-joins-cncf-delivering-an-enterprise-grade-ai-gateway-and-a-seamless-path-from-nginx-ingress/) — placing it alongside Kubernetes, Envoy, and other production-grade cloud-native projects. Production-validated at Alibaba handling hundreds of thousands of requests per second. HiMarket signals a commercial layer being built on the open-source foundation.
 
 **Limitation:** Documentation is heavily Chinese-first (English docs exist but lag). The Wasm plugin model adds complexity compared to simpler MCP server frameworks. Alibaba Cloud branding may concern some organizations. Community is large but concentrated in China.
 
@@ -111,7 +111,7 @@ Key capabilities across modes:
 
 **Authentication options:** OAuth (US remote server), API key (all deployment modes). EU region supported via separate endpoints. Docker deployment available.
 
-**Why it matters:** Postman has 40M+ developers. Connecting agents to Postman workspaces means they can understand your API landscape, generate code from your specs, and manage collections — all through natural language.
+**Why it matters:** Postman has [40M+ developers](https://blog.postman.com/what-we-learned-from-building-an-ai-agent-for-40-million-developers/). Connecting agents to Postman workspaces means they can understand your API landscape, generate code from your specs, and manage collections — all through natural language.
 
 **Limitation:** Requires Postman account. The 100+ tools in full mode may overwhelm smaller LLMs — the minimal mode exists for this reason but trades capability for reliability. OAuth remote server is US-only (EU endpoint available separately).
 

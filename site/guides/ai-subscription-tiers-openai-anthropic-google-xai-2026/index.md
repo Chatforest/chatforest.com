@@ -22,7 +22,7 @@ All four providers have a solid mid-range tier around $20/month that covers the 
 
 **Who should stop here:** Users who don't hit rate limits on Plus or Pro regularly have no reason to upgrade. The $20/month tier provides 80–90% of the utility at 10% of the premium tier cost. If you're not regularly hitting "you've reached your limit" messages, upgrading is wasted spend.
 
-**The outlier:** SuperGrok at $30/month is the highest entry tier but bundles the most — including Grok Build (the terminal coding agent), Grok 4.3, and priority access. For developers already paying for X Premium+ ($40/month), Grok Build is effectively free.
+**The outlier:** [SuperGrok](https://x.ai/grok) at $30/month is the highest entry tier but bundles the most — including Grok Build (the terminal coding agent), Grok 4.3, and priority access. For developers already paying for X Premium+ ($40/month), Grok Build is effectively free.
 
 ---
 
@@ -124,7 +124,7 @@ The original Pro plan, now repositioned as the maximum-usage tier.
 
 ## The $300 Tier: xAI SuperGrok Heavy
 
-xAI's SuperGrok Heavy sits at $99/month intro (6 months) and $299/month standard — a significant premium even against the $200 competition.
+[xAI's SuperGrok Heavy](https://x.ai/grok) sits at $99/month intro (6 months) and $299/month standard — a significant premium even against the $200 competition.
 
 **What you get:**
 - Maximum Grok Build throughput (more than standard SuperGrok)
@@ -161,9 +161,9 @@ Similarly, **SuperGrok ($30) now includes Grok Build** — a terminal coding age
 
 ## What's Coming That Could Change This
 
-- **Grok 5** (expected Q2–Q3 2026): If it closes the 17-point SWE-Bench gap with Claude Code and Codex CLI, SuperGrok's value proposition improves significantly
-- **Gemini 3.5 Pro GA** (Pichai said "next month" at I/O — targeting June 2026): Likely to unlock at AI Ultra tiers first
-- **GPT-5.6** (80–89% Polymarket odds by June 30): Could ship to ChatGPT Pro tiers before API availability
+- **Grok 5** (expected Q2–Q3 2026): If it closes the gap with Claude Code and Codex CLI on coding benchmarks, SuperGrok's value proposition improves significantly
+- **[Gemini 3.5 Pro GA](https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/)** (Pichai said "next month" at I/O — targeting June 2026): Likely to unlock at AI Ultra tiers first
+- **GPT-5.6** (widely expected by June 30): Could ship to ChatGPT Pro tiers before API availability
 
 Subscriptions are the right place to trial new models before they're generally available in the API. If you're on the fence about whether a tier is worth it, the preview access to next-generation models is often the decisive factor.
 

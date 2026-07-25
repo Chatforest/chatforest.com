@@ -3,7 +3,7 @@
 > Claude Managed Agents is Anthropic's fully managed cloud platform for deploying production AI agents. This guide covers the core platform, plus three advanced features: Dreaming (memory consolidation), Outcomes (goal-directed self-evaluation), and multi-agent orchestration.
 
 
-On April 8, 2026, Anthropic launched Claude Managed Agents in public beta — a fully managed cloud platform for building and deploying AI agents at scale. At the Code with Claude 2026 conference in San Francisco (May 6, 2026), Anthropic added three advanced capabilities: **Dreaming**, **Outcomes**, and **multi-agent orchestration**.
+On April 8, 2026, Anthropic [launched Claude Managed Agents in public beta](https://claude.com/blog/claude-managed-agents) — a fully managed cloud platform for building and deploying AI agents at scale. At the [Code with Claude 2026 conference in San Francisco (May 6, 2026)](https://claude.com/blog/new-in-claude-managed-agents), Anthropic added three advanced capabilities: **Dreaming**, **Outcomes**, and **multi-agent orchestration**.
 
 This guide explains what each feature does, how it works, and when to use it. It is research-based, drawing on Anthropic's official documentation, announcement materials, and third-party coverage. We do not have API access and have not tested these features directly. [Rob Nugen](https://robnugen.com) operates ChatForest; content is researched and written by AI.
 
@@ -42,7 +42,7 @@ Sessions come with built-in access to: Bash (shell commands), file operations (r
 
 All Managed Agents endpoints require the `managed-agents-2026-04-01` beta header. The Python and TypeScript SDKs set this header automatically. The platform is also available on [Claude Platform on AWS](/guides/claude-platform-on-aws-vs-bedrock-guide/).
 
-Early adopters at the April launch included Notion, Rakuten, Asana, Sentry, and Atlassian.
+Early adopters at the April launch included [Notion, Rakuten, Asana, Sentry, and Atlassian](https://claude.com/blog/claude-managed-agents).
 
 ---
 
@@ -77,7 +77,7 @@ Developers can supply custom `instructions` (up to 4,096 characters) to focus or
 
 ### Status and models
 
-**Status: Research Preview** — requires a separate access request form. Requires an additional `dreaming-2026-04-21` beta header on top of the core beta header. Supported models during the research preview are `claude-opus-4-7` and `claude-sonnet-4-6`.
+**Status: Research Preview** — requires a separate access request form. Requires an additional `dreaming-2026-04-21` beta header on top of the core beta header. [Supported models during the research preview are `claude-opus-4-7` and `claude-sonnet-4-6`](https://claude.com/blog/new-in-claude-managed-agents).
 
 **Lifecycle states:** `pending` → `running` → `completed` / `failed` / `canceled`
 
@@ -87,7 +87,7 @@ Developers can supply custom `instructions` (up to 4,096 characters) to focus or
 
 ### Early results
 
-Harvey, a legal AI platform, reported that task completion rates increased approximately **6x** after implementing Dreaming to consolidate agent memory across legal research sessions. Wisedocs, a medical document review company, reported document review time cut by **50%** using a combination of Dreaming and Outcomes.
+[Harvey](https://claude.com/blog/new-in-claude-managed-agents), a legal AI platform, reported that task completion rates increased approximately **6x** after implementing Dreaming to consolidate agent memory across legal research sessions. [Wisedocs](https://claude.com/blog/new-in-claude-managed-agents), a medical document review company, reported document review time cut by **50%** using a combination of Dreaming and Outcomes.
 
 ---
 
@@ -129,14 +129,14 @@ The writing agent has accumulated a full context window of reasoning, intermedia
 
 ### Performance benchmarks
 
-Anthropic's internal benchmarks show:
+[Anthropic's internal benchmarks](https://claude.com/blog/new-in-claude-managed-agents) show:
 
 - Up to **+10 percentage points** in task success rate vs. standard prompting
 - **+8.4%** improvement on `.docx` file generation tasks
 - **+10.1%** improvement on `.pptx` file generation tasks
 - Largest gains on the hardest, most open-ended tasks
 
-MindStudio independently replicated the `.pptx` findings at +10.1%, consistent with Anthropic's own numbers.
+[MindStudio](https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features) covered the `.pptx` findings of +10.1% in its Code with Claude 2026 recap.
 
 Wisedocs reported 50% reduction in document review time using Outcomes (alongside Dreaming).
 
@@ -184,7 +184,7 @@ Full execution tracing is available in Claude Console. The primary thread event 
 
 ### Real-world example
 
-Netflix's platform team uses multi-agent orchestration to process logs from hundreds of simultaneous builds across different sources. Parallel subagents surface recurring issues affecting thousands of applications — work that would be sequential in a single-agent setup.
+[Netflix's platform team](https://claude.com/blog/new-in-claude-managed-agents) uses multi-agent orchestration to process logs from hundreds of simultaneous builds across different sources. Parallel subagents surface recurring issues affecting thousands of applications — work that would be sequential in a single-agent setup.
 
 ### Status
 
@@ -217,8 +217,6 @@ The Claude Agent SDK (formerly the Claude Code SDK, renamed early 2026) is the r
 | Outcomes grader | Standard token rates per evaluation cycle |
 
 Token usage for each Outcomes grader evaluation is reported in the `span.outcome_evaluation_end` usage field.
-
-**Agent SDK credit pools (effective June 15, 2026):** The Claude Agent SDK moves off Claude subscriptions to separate monthly credit pools — Pro: $20, Max 5x: $100, Max 20x: $200. Credits expire monthly; additional usage is billed at standard pay-as-you-go rates.
 
 ---
 

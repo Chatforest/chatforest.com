@@ -69,15 +69,15 @@ Replace `cursor` with `windsurf`, `cline`, or `claude` for other clients.
 
 **No formal releases and repo effectively stalled.** Zero tagged releases on GitHub after 77 commits. The last commit to the repository was February 17, 2026 — now 3 months ago — a security patch that bumped the MCP SDK. The npm packages (`@21st-dev/magic` v0.1.0, published June 2025; `@21st-dev/cli` v0.0.29, published June 2025) have not been updated in ~11 months. The company is actively developing a new product (see below), but Magic MCP is not receiving it.
 
-**Open prompt injection vulnerability — security advisory now 55 days without maintainer response.** Issue #46 (March 25, 2026) details a supply chain attack vector: a malicious component in the 21st.dev library could embed prompt injection instructions in code comments or variable names. When fetched by Magic MCP, these instructions enter the LLM's context and could direct the agent to introduce backdoors, exfiltrate credentials, or modify project files. Mapped to OWASP LLM01 and OWASP Agentic AG01/AG07. Zero maintainer engagement across three community comments — one commenter (May 14) asked "Is this project abandoned? I can't believe nobody is responding to this."
+**Open prompt injection vulnerability — security advisory now 55 days without maintainer response.** [Issue #46](https://github.com/21st-dev/magic-mcp/issues/46) (March 25, 2026) details a supply chain attack vector: a malicious component in the 21st.dev library could embed prompt injection instructions in code comments or variable names. When fetched by Magic MCP, these instructions enter the LLM's context and could direct the agent to introduce backdoors, exfiltrate credentials, or modify project files. Mapped to OWASP LLM01 and OWASP Agentic AG01/AG07. Zero maintainer engagement across three community comments — one commenter (May 14) asked "Is this project abandoned? I can't believe nobody is responding to this."
 
-**`[object Object]` errors in component builder — still unresolved.** Issues #55 and #58 (April 2026) report the primary `21st_magic_component_builder` tool returning `[object Object]` instead of actual component code. Multiple users affected across Windows and macOS. Both issues remain open with zero maintainer response. A community workaround exists for #58 but nothing official has shipped.
+**`[object Object]` errors in component builder — still unresolved.** [Issue #55](https://github.com/21st-dev/magic-mcp/issues/55) and [issue #58](https://github.com/21st-dev/magic-mcp/issues/58) (April 2026) report the primary `21st_magic_component_builder` tool returning `[object Object]` instead of actual component code. Multiple users affected across Windows and macOS. Both issues remain open with zero maintainer response. A community workaround exists for #58 but nothing official has shipped.
 
 **Limited scope — single components only.** Magic generates individual UI components, not full pages, layouts, or multi-component dashboards. For anything beyond a single component, you're making multiple requests and assembling the results yourself. Full-page generation tools like Bolt.new and v0 handle this better.
 
 **28 open issues, 7 open PRs, no visible triage — and zero commits in 3 months.** The Gemini API compatibility issue (#37) has been open since November 2025. The prompt injection advisory (#46) has no maintainer response after nearly two months. The last commit to the repository was February 17, 2026. The issue backlog is growing with no triage in sight.
 
-**Gemini incompatibility.** Issue #37 reports that Magic's tool names violate Gemini API function calling rules, making it incompatible with Gemini-based MCP clients. Unfixed since November 2025.
+**Gemini incompatibility.** [Issue #37](https://github.com/21st-dev/magic-mcp/issues/37) reports that Magic's tool names violate Gemini API function calling rules, making it incompatible with Gemini-based MCP clients. Unfixed since November 2025.
 
 ## How It Compares
 
@@ -97,7 +97,7 @@ The question is whether IDE-native component generation from a curated library i
 
 ## The Bigger Picture
 
-21st Labs has pivoted. On March 7, 2026, the company launched the **21st Agents SDK** — managed agent infrastructure with sandboxed execution (E2B microVMs), streaming via SSE, credential proxying (preventing API keys from reaching model context), session replay/observability, and model-agnostic support for Claude and OpenAI. The announcement positioned the company as "infrastructure for the agentic internet."
+21st Labs has pivoted. On March 7, 2026, the company launched the [**21st Agents SDK**](https://21st.dev/agents/docs) — managed agent infrastructure with sandboxed execution (E2B microVMs), streaming via SSE, credential proxying (preventing API keys from reaching model context), session replay/observability, and model-agnostic support for Claude and OpenAI. The announcement positioned the company as "infrastructure for the agentic internet."
 
 Magic MCP is not mentioned in the Agents SDK announcement. The last commit to the Magic MCP repository was February 17, 2026 — the day before the Agents SDK push began in earnest. This timing strongly suggests the team's development focus has shifted. The curated component library and IDE-native generation workflow are mature enough to run unattended, but they are not receiving maintenance or security attention.
 

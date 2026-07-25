@@ -5,9 +5,9 @@
 
 Part of our **[Agent Orchestration MCP category](/categories/agent-orchestration/)**.
 
-*At a glance: 25,200 GitHub stars, 2,000 forks, Apache-2.0 license, Python 3.10+, v3.3.1 (May 15, 2026). PyPI ~15.9M downloads/week (~65M/month). Created by Jeremiah Lowin (Prefect founder/CEO). Powers an estimated 70% of MCP servers across all languages. Originally created days after the MCP spec was announced. FastMCP Python ranks #6 on best-of-mcp-servers vs official Python SDK at #262. 100th release shipped in May 2026.*
+*At a glance: 25,200 GitHub stars, 2,000 forks, Apache-2.0 license, Python 3.10+, v3.3.1 (May 15, 2026). PyPI ~15.9M downloads/week (~65M/month). Created by Jeremiah Lowin (Prefect founder/CEO). Powers an estimated 70% of MCP servers across all languages. Originally created days after the MCP spec was announced. FastMCP Python ranks #6 on [best-of-mcp-servers](https://github.com/tolkonepiu/best-of-mcp-servers) vs official Python SDK at #262. 100th release shipped in May 2026.*
 
-FastMCP isn't an MCP server — it's the framework most MCP servers are built with. When the Model Context Protocol specification was released in late 2024, Jeremiah Lowin (founder and CEO of [Prefect](https://www.prefect.io/), the workflow orchestration platform) built FastMCP within days. The project was quickly incorporated into the official MCP Python SDK, and today some version of FastMCP powers roughly 70% of all MCP servers across all languages. It's downloaded roughly 16 million times per week from PyPI — making it one of the most downloaded AI infrastructure packages in the Python ecosystem.
+FastMCP isn't an MCP server — it's the framework most MCP servers are built with. When the Model Context Protocol specification was released in late 2024, Jeremiah Lowin (founder and CEO of [Prefect](https://www.prefect.io/), the workflow orchestration platform) built FastMCP within days. The project was quickly incorporated into the official MCP Python SDK, and today [some version of FastMCP powers roughly 70% of all MCP servers](https://gofastmcp.com/getting-started/welcome) across all languages. It's downloaded roughly 16 million times per week from PyPI — making it one of the most downloaded AI infrastructure packages in the Python ecosystem.
 
 The pitch is simple: building MCP servers with the raw SDK requires extensive boilerplate — JSON schemas, handler registration, transport configuration. FastMCP replaces all of that with Python decorators. You write `@mcp.tool()` on a function, and FastMCP infers the JSON schema from type hints, registers the handler, and manages the transport. This reduces setup code by roughly 70% compared to the raw SDK.
 
@@ -108,9 +108,9 @@ For optional extras: `pip install fastmcp[openai,anthropic,azure,code-mode,apps,
 
 **SSRF & Path Traversal in OpenAPIProvider (patched v3.2.0)** — The `_build_url()` method didn't URL-encode path parameters, allowing directory traversal to arbitrary backend endpoints. Patched in v3.2.0 (released March 2026). Anyone using OpenAPIProvider with user-controlled path parameters before v3.2.0 was vulnerable. Upgrade if you haven't.
 
-**DNS Rebinding Protection Gap (issue #3643, open)** — FastMCP's HTTP server lacks DNS rebinding protection, allowing attacker-controlled DNS to redirect requests through a victim's running server. Issue opened March 27, 2026 and still open as of mid-May. Mitigated in practice by binding to localhost (the default), but worth noting for deployments that expose FastMCP on accessible network interfaces.
+**DNS Rebinding Protection Gap ([issue #3643](https://github.com/PrefectHQ/fastmcp/issues/3643), open)** — FastMCP's HTTP server lacks DNS rebinding protection, allowing attacker-controlled DNS to redirect requests through a victim's running server. Issue opened March 27, 2026 and still open as of mid-May. Mitigated in practice by binding to localhost (the default), but worth noting for deployments that expose FastMCP on accessible network interfaces.
 
-**Code Mode sandbox limits (PR #4170, pending)** — A pending PR adds default sandbox resource limits and per-execution tool-call caps to Code Mode. Without it, a crafted prompt can cause runaway code execution within the sandbox. The fix is in review but not yet merged.
+**Code Mode sandbox limits ([PR #4170](https://github.com/PrefectHQ/fastmcp/pull/4170), pending)** — A pending PR adds default sandbox resource limits and per-execution tool-call caps to Code Mode. Without it, a crafted prompt can cause runaway code execution within the sandbox. The fix is in review but not yet merged.
 
 **Complexity growth** — FastMCP started as an elegant, minimal abstraction. With v3.0's providers, transforms, code mode, agents, and multiple auth strategies, the surface area has expanded significantly. The documentation is good but the learning curve is steeper than it was — and the docs site changelog is conspicuously out of date (last entry: v3.1.1, March 14), so users tracking v3.2.x and v3.3.x changes need to read GitHub release notes directly.
 
@@ -139,7 +139,7 @@ In other languages:
 
 Created by **Jeremiah Lowin**, founder and CEO of [Prefect](https://www.prefect.io/) (formerly Prefect.io). Lowin built FastMCP within days of the MCP spec release. Before Prefect, he worked in quantitative finance at King Street Capital and as an ML consultant.
 
-Prefect is a well-funded workflow orchestration company. In January 2026, they launched **Prefect Horizon** — a platform for managing the "context layer" where AI agents interface with business systems, with FastMCP as the technical foundation.
+Prefect is a well-funded workflow orchestration company. In January 2026, they launched [**Prefect Horizon**](https://www.prefect.io/blog/prefect-horizon) — a platform for managing the "context layer" where AI agents interface with business systems, with FastMCP as the technical foundation.
 
 FastMCP is stewarded by PrefectHQ but accepts community contributions (208+ contributors). The project has its own documentation site at [gofastmcp.com](https://gofastmcp.com) and active [GitHub Discussions](https://github.com/PrefectHQ/fastmcp/discussions).
 

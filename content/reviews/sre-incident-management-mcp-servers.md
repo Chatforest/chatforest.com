@@ -6,6 +6,7 @@ og_description: "SRE & incident management MCP servers: PagerDuty (69 stars, 69 
 content_type: "Review"
 card_description: "SRE and incident management tools for AI-assisted on-call, alerting, and incident response through MCP servers — enabling AI agents to triage incidents, check who's on-call, find related past incidents, and coordinate response without leaving the IDE. **Most tools** — PagerDuty/pagerduty-mcp-server (69 stars, Apache-2.0, Python) is the official PagerDuty MCP server with 69 tools plus 5 embedded MCP Apps (Incident Command Center with AI similar incident detection, On-Call Manager, Compensation Report, Service Dependency Graph, Onboarding Wizard). Read-only by default with explicit --enable-write-tools flag. **AI-powered analysis** — Rootly-AI-Labs/Rootly-MCP-server (43 stars, Python, v2.3.8) provides 150+ tools: find_related_incidents (TF-IDF similarity), suggest_solutions (historical resolution mining), check_oncall_health_risk, get_oncall_handoff_summary. v2.3.8 optimized alert lookup from 41s→200ms. OAuth2 primary auth. **Observability platform** — grafana/mcp-grafana (3K stars, Go, v0.14.0) includes 7 OnCall tools and 4 Incident tools as part of its 50+ tool observability server. New generic API request tool. Amazon Athena, Snowflake, VictoriaMetrics support added. **Enterprise ITSM** — echelon-ai-labs/servicenow-mcp (252 stars, Python) covers ServiceNow incidents, service catalog, change management, agile, workflows, knowledge base with RBAC packages. Leading community ServiceNow MCP. **Reliability platform** — firehydrant/firehydrant-mcp (4 stars, MIT, TypeScript, stalled Feb 2026). Incident management, alert tracking, retrospective generation. **Hosted remote MCP** — incident.io hosted MCP (superseded open-source prototype archived April 2026). Full incident lifecycle. **Alert management** — giantswarm/mcp-opsgenie (9 stars, Go, ARCHIVED May 12, 2026) — 8 tools, archived ahead of OpsGenie's April 2027 EOL. **Alerting platform** — iLert/mcp-ilert (14 stars, MIT, dormant since Sep 2025) remote Streamable HTTP. **Observability stack** — Better Stack remote MCP at mcp.betterstack.com, OAuth auth, ClickHouse SQL queries. Rating: 4.0/5 — PagerDuty's 69-tool server + MCP Apps and Rootly's v2.3.8 performance improvements strengthen the category. ServiceNow gap filled by echelon-ai-labs (252 stars). Negatives: mcp-opsgenie archived, iLert/FireHydrant stalled, overall adoption still low."
 last_refreshed: 2026-05-21
+sources_audited: 2026-07-26
 ---
 
 It's 3 AM. Your phone buzzes. A P1 incident just fired. You open your laptop, fumble between PagerDuty tabs, Slack channels, and runbook wikis, trying to figure out who's on-call, what changed, and whether this happened before.
@@ -67,7 +68,7 @@ Part of our **[DevOps MCP category](/categories/devops/)**. The headline finding
 - **get_oncall_handoff_summary** — provides context for shift transitions so the next on-call person isn't starting from scratch
 - **get_oncall_shift_metrics** — shift counts, hours, and days on-call grouped by user, team, or schedule with primary/secondary role tracking
 
-**v2.3.8 (May 2026) — significant performance improvements:** Alert lookup optimized from **41 seconds to ~200ms** (parallelized pagination). Cold-cache on-call lookups dropped from ~15s to ~1s. A critical tool duplication bug was fixed — the `listIncidents`/`list_incidents` naming conflict was causing LLM client errors in some configurations. OAuth2 is now the primary authentication method (previously secondary). MCPcat analytics integration added for usage tracking.
+**[v2.3.8 (May 2026)](https://github.com/Rootly-AI-Labs/Rootly-MCP-server/releases) — significant performance improvements:** Alert lookup optimized from **41 seconds to ~200ms** (parallelized pagination). Cold-cache on-call lookups dropped from ~15s to ~1s. A critical tool duplication bug was fixed — the `listIncidents`/`list_incidents` naming conflict was causing LLM client errors in some configurations. OAuth2 is now the primary authentication method (previously secondary). MCPcat analytics integration added for usage tracking.
 
 **Tool subsets now documented by workflow:** Incident Response (25 tools), On-Call Management (35 tools), Monitoring/Alerting (40 tools), Post-Incident Analysis (30 tools), Analytics/Reporting (15 tools) — making it easier to limit which tools are exposed.
 
@@ -150,7 +151,7 @@ The hosted server connects via remote MCP — no local server installation neede
 |--------|-------|----------|---------|--------------|
 | [mcp-opsgenie](https://github.com/giantswarm/mcp-opsgenie) | 9 | Go | Apache-2.0 | 8 tools — **ARCHIVED** |
 
-**⚠️ ARCHIVED May 12, 2026.** Giant Swarm archived the repository (read-only, no new development). The archival timing aligns with OpsGenie's approaching end-of-life: Atlassian has confirmed **OpsGenie will be sunset on April 5, 2027**, with customers migrating to Jira Service Management.
+**⚠️ ARCHIVED May 12, 2026.** Giant Swarm archived the repository (read-only, no new development). The archival timing aligns with OpsGenie's approaching end-of-life: Atlassian has [confirmed **OpsGenie will be sunset on April 5, 2027**](https://www.atlassian.com/blog/announcements/evolution-of-it-operations/amp), with customers migrating to Jira Service Management.
 
 The server's final state (8 tools) remains functional for existing OpsGenie users: alert management (list, get, acknowledge, unacknowledge), team management (list, get), heartbeat monitoring (list, get). Multi-transport (stdio, SSE, HTTP) and self-update capability were maintained to the end.
 
@@ -240,7 +241,7 @@ ServiceNow was listed as a gap in our previous review. That gap has been meaning
 
 ### AWS DevOps Agent
 
-AWS announced general availability of a DevOps Agent for automated incident investigation in April 2026. It integrates with CloudWatch, PagerDuty, Datadog, Dynatrace, New Relic, Splunk, Grafana, GitHub, GitLab, and Azure DevOps via MCP. When an incident triggers (CloudWatch alarm, PagerDuty alert, ServiceNow ticket), the agent investigates immediately, accessing runbook libraries and executing predefined remediation actions. This represents the next evolution: AI agents that don't just read incident data but actively investigate and remediate.
+AWS [announced general availability of a DevOps Agent](https://aws.amazon.com/blogs/mt/announcing-general-availability-of-aws-devops-agent/) for automated incident investigation in April 2026. It integrates with CloudWatch, PagerDuty, Datadog, Dynatrace, New Relic, Splunk, Grafana, GitHub, GitLab, and Azure DevOps via MCP. When an incident triggers (CloudWatch alarm, PagerDuty alert, ServiceNow ticket), the agent investigates immediately, accessing runbook libraries and executing predefined remediation actions. This represents the next evolution: AI agents that don't just read incident data but actively investigate and remediate.
 
 ## Market Landscape
 

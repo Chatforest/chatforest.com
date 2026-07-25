@@ -55,7 +55,7 @@ If your workloads are primarily agentic or involve complex multi-step reasoning,
 
 **Reasoning architecture:** Extended Thinking is replaced by Adaptive Thinking. Rather than requiring you to explicitly set a thinking budget, Opus 4.7 infers the right compute depth from the task. The practical difference: better results on ambiguous or underspecified prompts without needing manual budget tuning.
 
-**Context window:** 1 million tokens with 128K maximum output.
+[**Context window:** 1 million tokens with 128K maximum output.](https://www.anthropic.com/news/claude-opus-4-7)
 
 **Image resolution:** 3.75 megapixel maximum per image (up from 1.15MP at Opus 4 launch), improving computer-use and document-analysis pipelines.
 

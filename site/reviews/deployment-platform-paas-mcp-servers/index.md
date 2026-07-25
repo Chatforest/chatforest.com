@@ -173,7 +173,7 @@ Tools cover: create web services, static sites, cron jobs, Postgres instances, a
 |--------|-------|----------|---------|--------------|
 | [koyeb/mcp-server-koyeb](https://github.com/koyeb/mcp-server-koyeb) | 6 | — | — | Beta, app/service/deployment management |
 
-**Koyeb's official MCP server launched in 2026.** Koyeb is a serverless platform offering one-click deployment from Git or Docker — and was **acquired by Mistral AI in February 2026**, making it the only deployment platform MCP server from an AI company.
+**Koyeb's official MCP server launched in 2026.** Koyeb is a serverless platform offering one-click deployment from Git or Docker — and was [**acquired by Mistral AI in February 2026**](https://techcrunch.com/2026/02/17/mistral-ai-buys-koyeb-in-first-acquisition-to-back-its-cloud-ambitions/), making it the only deployment platform MCP server from an AI company.
 
 Tools cover: create and list apps; manage services; deployment tracking with logs; instance monitoring.
 

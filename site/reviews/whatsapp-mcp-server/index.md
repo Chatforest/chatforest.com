@@ -5,7 +5,7 @@
 
 Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
-*At a glance: 5,658 GitHub stars, 1,048 forks, MIT license, Go (51.2%) + Python (48.8%), only release v0.0.1 (April 6, 2025). Created by Luke Harries (Head of Growth at ElevenLabs). PulseMCP: ~1.1M all-time visitors, ~20,600 weekly, #56 globally. 78 open issues, 99 open PRs. Last commit: July 13, 2025 (README only). Main branch currently broken for many users.*
+*At a glance: [5,658 GitHub stars](https://github.com/lharries/whatsapp-mcp), 1,048 forks, MIT license, Go (51.2%) + Python (48.8%), only release v0.0.1 (April 6, 2025). Created by Luke Harries (Head of Growth at ElevenLabs). PulseMCP: ~1.1M all-time visitors, ~20,600 weekly, #56 globally. 78 open issues, 99 open PRs. Last commit: July 13, 2025 (README only). Main branch currently broken for many users.*
 
 WhatsApp MCP bridges AI agents directly to your personal WhatsApp account. You authenticate via QR code (same as WhatsApp Web), and the server gives Claude, Cursor, or other MCP clients the ability to search your messages, read conversations, look up contacts, and send messages — including images, videos, documents, and voice notes.
 
@@ -35,7 +35,7 @@ The MCP server exposes tools for:
 
 ## Who Built It
 
-**Luke Harries** — Head of Growth at ElevenLabs, the AI voice company valued at $6.6B. Previously interim Head of Product at PostHog, before that at Microsoft Research working on reinforcement learning. Cambridge-educated (pre-med). Also co-founded Fella, a men's health startup that pivoted through AI browser automation, COVID testing, digital CBT, and GLP-1 weight loss medication.
+**Luke Harries** — Head of Growth at ElevenLabs, the [AI voice company valued at $11B](https://www.cnbc.com/2026/02/04/nvidia-backed-ai-startup-elevenlabs-11-billion-valuation.html) (Series D, February 2026). Previously interim Head of Product at PostHog, before that at Microsoft Research working on reinforcement learning. Cambridge-educated (pre-med). Also co-founded Fella, a men's health startup that pivoted through AI browser automation, COVID testing, digital CBT, and GLP-1 weight loss medication.
 
 WhatsApp MCP appears to be a side project that caught fire — it has 5.7K stars but only 27 commits and a single release (v0.0.1, April 6, 2025). Harries built it, it went viral, and the community has been submitting PRs ever since (99 open PRs vs. 27 commits tells the story). He's been vocal about it on LinkedIn and Twitter, and featured it in a [Lenny's Newsletter piece](https://www.lennysnewsletter.com/p/the-ai-marketing-stack) about ElevenLabs' AI playbook that saved the company $140K. His last commit was a README update on July 13, 2025 — adding the prompt injection warning. He has made no public statements about the project's maintenance status or the growing security backlog.
 
@@ -76,9 +76,9 @@ Docker published a follow-up [horror story blog post](https://www.docker.com/blo
 
 **The main branch is currently broken.** WhatsApp changed its protocol; the whatsmeow library that powers this project updated its `context.Context` API accordingly. At least five community PRs (filed May 12–18, 2026) fix the incompatibility. None have been merged. For new users trying to install and run the project, it will fail. The fix exists — it's just sitting in the PR queue.
 
-**Path traversal vulnerability (CWE-22) — unaddressed.** Issue #241 (filed May 10, 2026) documents that the `sendWhatsAppMessage` function passes a `media_path` parameter directly to `os.ReadFile()` with no path sanitization. The proof-of-concept shows that posting `"media_path": "../../../etc/passwd"` reads arbitrary files from the host system. No maintainer response. No fix. No CVE assigned.
+**Path traversal vulnerability (CWE-22) — unaddressed.** [Issue #241](https://github.com/lharries/whatsapp-mcp/issues/241) (filed May 10, 2026) documents that the `sendWhatsAppMessage` function passes a `media_path` parameter directly to `os.ReadFile()` with no path sanitization. The proof-of-concept shows that posting `"media_path": "../../../etc/passwd"` reads arbitrary files from the host system. No maintainer response. No fix. No CVE assigned.
 
-**MCPSafe Grade D.** An automated security scan (Issues #246–247, filed May 12, 2026) gave the project an AIVSS score of 67/100 — Grade D — with 13 high-severity and 12 medium-severity findings. The scanner flagged it as having the highest count of high-severity findings across scanned repos. No maintainer response.
+**MCPSafe Grade D.** An automated security scan ([issue #246](https://github.com/lharries/whatsapp-mcp/issues/246), [issue #247](https://github.com/lharries/whatsapp-mcp/issues/247), filed May 12, 2026) gave the project an AIVSS score of 67/100 — Grade D — with 13 high-severity and 12 medium-severity findings. The scanner flagged it as having the highest count of high-severity findings across scanned repos. No maintainer response.
 
 **27 commits, v0.0.1 — over a year with no release.** Despite 5.7K stars and massive community interest, the repo has just 27 commits on main and only one release. 99 open PRs (up from 81 in April) suggest substantial community contributions piling up unmerged. 78 open issues remain unaddressed. The project feels more like a viral proof-of-concept that exceeded its maintenance capacity.
 
@@ -108,7 +108,7 @@ The project's own README warns about this. Invariant Labs used it as their prima
 
 If you use this: don't run it alongside untrusted MCP servers, be cautious about processing messages from unknown contacts, and understand that there is no permission boundary between the agent and your entire WhatsApp history.
 
-One policy footnote: in January 2026, Meta banned general-purpose AI chatbots from the WhatsApp Business API, primarily affecting official business integrations. Unofficial API users (including this project, which uses whatsmeow) were already ToS-violating; this change doesn't add new risk for them specifically, but it does further narrow the space of compliant alternatives.
+One policy footnote: in January 2026, [Meta banned general-purpose AI chatbots from the WhatsApp Business API](https://www.dataslayer.ai/blog/meta-bans-general-purpose-ai-chatbots-on-whatsapp-business), primarily affecting official business integrations. Unofficial API users (including this project, which uses whatsmeow) were already ToS-violating; this change doesn't add new risk for them specifically, but it does further narrow the space of compliant alternatives.
 
 ## Rating: 2/5
 

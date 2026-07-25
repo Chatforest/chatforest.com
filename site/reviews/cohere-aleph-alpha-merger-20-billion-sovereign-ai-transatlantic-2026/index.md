@@ -19,7 +19,7 @@ Digital ministers from both Canada and Germany attended the announcement in Berl
 
 The "merger" framing is generous. This is a 90/10 acquisition.
 
-Cohere — founded in 2019 by Aidan Gomez (a co-author of the original "Attention Is All You Need" transformer paper), Nick Frosst, and Ivan Zhang — entered this deal from a position of strength. Pre-deal valuation: approximately $7 billion.
+Cohere — founded in 2019 by Aidan Gomez (a co-author of the original ["Attention Is All You Need"](https://arxiv.org/abs/1706.03762) transformer paper), Nick Frosst, and Ivan Zhang — entered this deal from a position of strength. [Pre-deal valuation: approximately $7 billion](https://techcrunch.com/2025/09/24/cohere-hits-7b-valuation-a-month-after-its-last-raise-partners-with-amd).
 
 Aleph Alpha — founded in 2019 in Heidelberg, Germany, by Jonas Andrulis — did not. By late 2025, the company had pivoted away from building its own frontier large language models (a strategy that proved commercially marginal as OpenAI, Anthropic, and Google widened their lead) toward PhariaAI, a layered enterprise AI operating system targeting public sector and regulated industry customers. Andrulis stepped down as CEO in late 2025 and is reportedly founding a new AI startup. His departure left Aleph Alpha with a changed strategy, reduced commercial clarity, and a weakened negotiating position.
 

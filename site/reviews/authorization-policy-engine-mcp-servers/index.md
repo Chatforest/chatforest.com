@@ -93,7 +93,7 @@ Part of our **[Security MCP category](/categories/security/)**. The headline fin
 - **IETF standards track** — draft-farley-acta-signed-receipts (draft-02 pending), plus Microsoft Agent Governance Toolkit integration (PR #667 merged)
 - **External PDP support** — not limited to Cedar — can delegate to OPA, Cerbos, or any HTTP policy endpoint
 
-**Why it matters:** protect-mcp is the only tool producing tamper-evident, cryptographically signed audit trails for MCP tool calls. The CVE-anchored policy templates solve real attack vectors documented in production (the CVE-2025-6514 OAuth proxy hijacking affected 437K environments). The IETF Internet-Draft signals ambition beyond MCP-specific tooling — these signed receipts could become an industry standard for agent action accountability.
+**Why it matters:** protect-mcp is the only tool producing tamper-evident, cryptographically signed audit trails for MCP tool calls. The CVE-anchored policy templates solve real attack vectors documented in production ([CVE-2025-6514, the mcp-remote OAuth proxy RCE, affected nearly half a million developers](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/)). The IETF Internet-Draft signals ambition beyond MCP-specific tooling — these signed receipts could become an industry standard for agent action accountability.
 
 **Limitation:** 6 stars unchanged since April — no new GitHub traction in May 2026, and no commits after April 21. The project's ambitions outpace its adoption curve. The IETF draft and patent filings (5 Australian provisional patents) suggest a commercial play — the open-source core handles auditability while commercial ScopeBlind.com adds privacy-preserving metered authorization via VOPRF-based credentials. The Ed25519 receipts are excellent engineering but add complexity that most teams don't need yet. Microsoft's Agent Governance Toolkit referencing ScopeBlind as an integration is a credibility signal that may drive future discovery.
 
@@ -184,7 +184,7 @@ Part of our **[Security MCP category](/categories/security/)**. The headline fin
 
 **Microsoft's AI Agent Governance Toolkit covering all 10 OWASP Agentic Top 10 security items.** Released in 2026, this is Microsoft's answer to the enterprise question: "how do we govern AI agents end-to-end?"
 
-- **OWASP Agentic Top 10 coverage** — addresses all 10 items in the emerging standard for agentic AI security: prompt injection, insecure tool use, excessive permissions, data exfiltration, supply chain risks, and more
+- **[OWASP Agentic Top 10 coverage](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** — addresses all 10 items in the emerging standard for agentic AI security: prompt injection, insecure tool use, excessive permissions, data exfiltration, supply chain risks, and more
 - **Policy enforcement** — runtime controls on what agents can invoke and under what conditions
 - **Zero-trust identity** — agent identity verification integrated with enterprise IdP infrastructure
 - **Execution sandboxing** — isolated execution environments preventing lateral movement

@@ -102,7 +102,7 @@
 <li><strong>Public MCP marketplace</strong> — <a href="https://mcp.higress.ai/">mcp.higress.ai</a> hosts community MCP servers accessible to any MCP client</li>
 <li><strong>HiMarket enterprise platform</strong> — launched April 24, 2026: packages MCP servers, LLM APIs, and Agent APIs into a unified enterprise marketplace with billing and metering roadmap</li>
 </ul>
-<p><strong>Why it matters:</strong> Higress accepted into the CNCF Sandbox in March 2026 — placing it alongside Kubernetes, Envoy, and other production-grade cloud-native projects. Production-validated at Alibaba handling hundreds of thousands of requests per second. HiMarket signals a commercial layer being built on the open-source foundation.</p>
+<p><strong>Why it matters:</strong> Higress <a href="https://www.cncf.io/blog/2026/03/25/higress-joins-cncf-delivering-an-enterprise-grade-ai-gateway-and-a-seamless-path-from-nginx-ingress/">accepted into the CNCF Sandbox in March 2026</a> — placing it alongside Kubernetes, Envoy, and other production-grade cloud-native projects. Production-validated at Alibaba handling hundreds of thousands of requests per second. HiMarket signals a commercial layer being built on the open-source foundation.</p>
 <p><strong>Limitation:</strong> Documentation is heavily Chinese-first (English docs exist but lag). The Wasm plugin model adds complexity compared to simpler MCP server frameworks. Alibaba Cloud branding may concern some organizations. Community is large but concentrated in China.</p>
 <h3 id="kong-ai-gateway--agent-gateway--mcp-proxy">Kong AI Gateway — Agent Gateway + MCP Proxy</h3>
 <table>
@@ -235,7 +235,7 @@
 <li><strong>API evaluation</strong> — assess API quality against Postman&rsquo;s governance rules</li>
 </ul>
 <p><strong>Authentication options:</strong> OAuth (US remote server), API key (all deployment modes). EU region supported via separate endpoints. Docker deployment available.</p>
-<p><strong>Why it matters:</strong> Postman has 40M+ developers. Connecting agents to Postman workspaces means they can understand your API landscape, generate code from your specs, and manage collections — all through natural language.</p>
+<p><strong>Why it matters:</strong> Postman has <a href="https://blog.postman.com/what-we-learned-from-building-an-ai-agent-for-40-million-developers/">40M+ developers</a>. Connecting agents to Postman workspaces means they can understand your API landscape, generate code from your specs, and manage collections — all through natural language.</p>
 <p><strong>Limitation:</strong> Requires Postman account. The 100+ tools in full mode may overwhelm smaller LLMs — the minimal mode exists for this reason but trades capability for reliability. OAuth remote server is US-only (EU endpoint available separately).</p>
 <h3 id="postman-mcp-generator">Postman MCP Generator</h3>
 <p>Postman also offers an <a href="https://www.postman.com/explore/mcp-generator">MCP Generator</a> that lets you pick public API requests from the Postman API Network and generate MCP servers for them — a different approach from the workspace management server above. This turns Postman&rsquo;s API Network into a self-service MCP server factory.</p>

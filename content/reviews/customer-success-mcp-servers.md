@@ -6,6 +6,7 @@ og_description: "Customer success MCP servers: Gainsight Agentic Stack (4 MCP se
 content_type: "Review"
 card_description: "Customer success MCP servers let AI agents query health scores, manage customer accounts, track churn signals, run playbooks, and coordinate renewal workflows. Gainsight leads with four official MCP servers (CS+Staircase AI, Skilljar, Customer Communities, PX) plus an Agent Studio and CLI — the most complete agentic CS platform on the market. Pendo reached GA with new AI Agent Analytics tools. Intercom expanded from 6 to 12 tools including Help Center article creation. Custify ships an 18-tool open-source server. Community servers exist for Vitally (now 3 implementations) and ChurnZero. The biggest gap: Totango (merged with Catalyst) has no native MCP server. Similarly absent are ClientSuccess, SmartKarrot, and CustomerSuccessBox. Rating: 4.0/5 — tier-1 vendors have made massive investments; mid-market still wide open."
 last_refreshed: 2026-06-12
+sources_audited: 2026-07-26
 ---
 
 Customer success has become one of the more vendor-committed MCP categories in under six months. **Gainsight**, **Planhat**, and **Pendo** all launched official MCP servers in early 2026 — and on May 28, Gainsight raised the stakes dramatically with its **"Agentic Stack for Customer Retention"**: four official MCP servers (CS+Staircase AI, Skilljar, Customer Communities, Product Experience), a native Agent Studio for building AI workflows, and a CLI coming this summer. **Pendo's MCP server reached general availability** with four new AI Agent Analytics tools. **Custify** ships an open-source 18-tool server. Community implementations exist for **Vitally** (now three independent servers) and **ChurnZero**. **Intercom** expanded from 6 to 12 tools. Part of our **[Business & Productivity](/categories/business-productivity/)** category.
@@ -27,9 +28,9 @@ The headline finding: **Gainsight now has four official MCP servers** spanning t
 
 **Gainsight** has executed the most aggressive MCP expansion of any CS vendor. Their journey:
 
-- **April 2, 2026**: MCP announced for Gainsight CS + Staircase AI. GA availability April 25, 2026.
+- **April 2, 2026**: [MCP announced for Gainsight CS + Staircase AI](https://www.globenewswire.com/news-release/2026/04/02/3267679/0/en/gainsight-opens-its-platform-with-mcp-bringing-customer-retention-into-the-agentic-era.html). GA availability April 25, 2026.
 - **May 21, 2026**: Developer Studio for Customer Communities launched (vibe coding for community customization).
-- **May 28, 2026**: **Agentic Stack for Customer Retention** — MCP expanded to Skilljar, Customer Communities, and Product Experience (all in open beta); Gainsight Agent Studio launched; pre-built agents shipped; CLI announced.
+- **May 28, 2026**: [**Agentic Stack for Customer Retention**](https://www.globenewswire.com/news-release/2026/05/28/3303094/0/en/gainsight-launches-the-agentic-stack-for-customer-retention.html) — MCP expanded to Skilljar, Customer Communities, and Product Experience (all in open beta); Gainsight Agent Studio launched; pre-built agents shipped; CLI announced.
 
 **Gainsight CS + Staircase AI MCP** (GA) at `mcp.staircase.ai/mcp` provides unified access to both platforms in a single connection — Staircase AI for customer intelligence (sentiment, relationship maps, communication analysis) and Gainsight CS for the system of record (health scores, product usage, renewal/contract data) and system of action (CTAs, success plans, journey programs).
 

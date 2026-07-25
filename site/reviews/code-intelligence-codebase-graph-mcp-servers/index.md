@@ -221,7 +221,7 @@ Python-only (JavaScript, TypeScript, Go, Java planned). The deepest Python analy
 - **Interactive HTML viewer** — visual dependency and impact exploration
 - **Auto-setup** — automatically checks Docker, pulls images, starts containers, and downloads embedding models on first use; no configuration files or environment variables required
 
-On a 2.45M-line codebase, SocratiCode demonstrated 61% less context burned, 84% fewer tool calls, and 37× faster responses vs a grep-based AI agent. Works as a Claude Code plugin/skill/extension or MCP server.
+On a [2.45M-line codebase, SocratiCode demonstrated 61% less context burned, 84% fewer tool calls, and 37× faster responses](https://github.com/giancarloerra/socraticode) vs a grep-based AI agent. Works as a Claude Code plugin/skill/extension or MCP server.
 
 **Trade-off:** Commercial license (no MIT or Apache). The auto-setup depends on Docker. Cloud tier in beta.
 

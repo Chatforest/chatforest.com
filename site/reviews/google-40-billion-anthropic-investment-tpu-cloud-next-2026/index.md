@@ -49,7 +49,7 @@ This dual-hyperscaler arrangement — Anthropic maintaining active partnerships 
 
 Before the $40 billion announcement, Google held a **14% stake in Anthropic**, acquired through roughly $3 billion in prior investments going back to 2023. The stake carries a 15% ownership cap, no board seats, and no voting rights — terms that reflect Anthropic's deliberate effort to prevent any single investor from exercising undue influence over what it considers a safety-critical company.
 
-The financial implications of that 14% stake became visible in Alphabet's Q1 2026 earnings. Alphabet reported **$37.7 billion in net unrealized gains on non-marketable equity securities** in a single quarter — primarily reflecting the appreciation of its Anthropic position as valuations climbed from $380 billion to $900 billion over the first months of 2026. That gain was larger than many companies' total annual revenues.
+The financial implications of that 14% stake became visible in Alphabet's Q1 2026 earnings. Alphabet [reported **$37.7 billion in net unrealized gains** on non-marketable equity securities](https://www.cnbc.com/2026/04/29/alphabet-googl-q1-2026-earnings.html) in a single quarter — primarily reflecting the appreciation of its Anthropic position as valuations climbed from $380 billion to $900 billion over the first months of 2026. That gain was larger than many companies' total annual revenues.
 
 For context: in Q1 2026, Alphabet's net income increased 81% year-over-year. A significant portion of that increase came not from search advertising or cloud revenue, but from paper gains on a minority stake in a company it helped create.
 

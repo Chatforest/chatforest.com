@@ -34,7 +34,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 1. **Docker container** (self-hosted) — `docker run mcp/sonarqube` bridges your IDE to any SonarQube Server or Cloud instance. Configuration generator built in for Claude Code, VS Code, Cursor, Zed, Windsurf, and more
 2. **Native SonarQube Cloud endpoint** (March 2026) — zero-installation MCP access built directly into SonarQube Cloud. No Docker needed, no local software. Just point your MCP client at the Cloud endpoint
 
-**Why it matters:** SonarQube is used by 400,000+ organizations. Having coverage data flow directly from SonarQube into AI coding sessions means agents can check coverage impact before committing, understand which files have weak coverage, and prioritize test writing where it matters most.
+**Why it matters:** SonarQube is [used by 400,000+ organizations](https://www.sonarsource.com/company/customers/). Having coverage data flow directly from SonarQube into AI coding sessions means agents can check coverage impact before committing, understand which files have weak coverage, and prioritize test writing where it matters most.
 
 **May 2026 updates (v1.17–v1.18.1):** v1.17.0 (Apr 27) launched a configuration generator at **mcp.sonarqube.com** — generate your MCP config for any client without touching JSON manually, plus a `/info` endpoint for version retrieval. v1.18.0 (May 4) added pagination for `search_dependency_risks` and patched security vulnerabilities in dependencies. v1.18.1 (May 11) fixed a startup crash in sandboxed container runtimes (the Docker image would not start on restricted environments) and resolved a Gemini CLI installation issue. Separately, SonarSource's AC/DC (Agent-Centric Development Cycle) framework exposes two dedicated coverage tools — `search_files_by_coverage` (pinpoint candidates for test improvements by coverage level) and `get_file_coverage_details` (line-by-line coverage for a specific file) — surfacing coverage navigation as a first-class agent capability.
 
@@ -209,7 +209,7 @@ Perforce added an MCP server to Helix QAC in the 2026.1 release:
 Commercial AI-first testing platform available as an MCP server:
 
 - Reads product requirements (PRD), analyzes codebase, generates and executes tests automatically
-- Claims **42% → 93% pass rate improvement** after one iteration
+- Claims significant pass rate improvements after one iteration
 - Covers logic, edge cases, error handling, and performance
 - Available on npm as `@testsprite/testsprite-mcp`
 

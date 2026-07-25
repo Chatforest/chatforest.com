@@ -39,7 +39,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 |--------|-------|----------|---------|--------------|
 | [agentgateway](https://github.com/agentgateway/agentgateway) | 2,400 | Rust | Apache-2.0 | MCP multiplexing |
 
-**Production-grade MCP multiplexer that federates multiple servers behind a single endpoint.** AgentGateway reached v1.0.0 in March 2026 with 1M+ Docker pulls, and is now hosted under the Linux Foundation — shipping on a monthly release cadence since then:
+**Production-grade MCP multiplexer that federates multiple servers behind a single endpoint.** AgentGateway reached v1.0.0 in March 2026 with 1M+ Docker pulls, and is now [hosted under the Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-welcomes-agentgateway-project-to-accelerate-ai-agent-adoption-while-maintaining-security-observability-and-governance) — shipping on a monthly release cadence since then:
 
 - **MCP multiplexing** — combines multiple MCP servers (targets) into one unified endpoint where clients access all tools simultaneously
 - **Dual protocol** — supports both MCP and Google's A2A (Agent-to-Agent) protocol
@@ -105,7 +105,7 @@ Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Th
 - **Tool description rewriting** — administrators can modify how tools are described to LLMs without changing the underlying server
 - **Parameter locking** — constrain tool parameters at the gateway level to prevent misuse
 - **Remote-first aggregation** — zero-code integration, unified access, dynamic routing across multiple MCP servers
-- **SOC 2 certified** — Gartner-recognized as a Representative Vendor in AI Gateways and MCP Gateways
+- **[SOC 2 certified](https://www.lunar.dev/security)** — [Gartner-recognized as a Representative Vendor in AI Gateways and MCP Gateways](https://www.lunar.dev/)
 
 **Why it matters:** Production MCP deployments in regulated industries need more than aggregation — they need audit trails, access control, and credential management. Lunar MCPX is the most mature option for teams where "who called what tool with what parameters" is a compliance requirement.
 
