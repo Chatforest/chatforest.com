@@ -68,12 +68,12 @@
       <div class="article-body">
         <h1 id="helicone-review-llm-proxy--observability-now-in-maintenance-mode">Helicone Review: LLM Proxy + Observability (Now in Maintenance Mode)</h1>
 <p><strong>Rating: 3.5/5</strong></p>
-<p>Helicone is an open-source LLM observability platform and AI gateway with a genuinely clever integration model: rather than wrapping your LLM client in a new SDK, it asks you to change a single URL. That minimal-friction approach, combined with built-in caching and rate limiting, made Helicone stand out in a crowded observability space. There&rsquo;s a catch, though — Helicone was <a href="https://helicone.ai/">acquired by Mintlify</a> in March 2026 and is now in maintenance mode. No new features are coming. That changes the calculus for anyone evaluating it today.</p>
+<p>Helicone is an open-source LLM observability platform and AI gateway with a genuinely clever integration model: rather than wrapping your LLM client in a new SDK, it asks you to change a single URL. That minimal-friction approach, combined with built-in caching and rate limiting, made Helicone stand out in a crowded observability space. There&rsquo;s a catch, though — Helicone was <a href="https://helicone.ai/blog/joining-mintlify">acquired by Mintlify</a> in March 2026 and is now in maintenance mode. No new features are coming. That changes the calculus for anyone evaluating it today.</p>
 <hr>
 <h2 id="what-helicone-is">What Helicone Is</h2>
 <p>Helicone sits between your application and the LLM provider&rsquo;s API. Every request passes through Helicone&rsquo;s proxy, which logs the full request and response, tracks token counts and cost, and applies any configured behaviors — caching, rate limiting, custom metadata — before forwarding to the actual provider. The overhead claim is under 1ms in self-hosted mode.</p>
 <p>Alongside the proxy model, Helicone has an AI Gateway mode: a unified endpoint (<code>https://ai-gateway.helicone.ai</code>) that routes to 100+ models across providers, accepting a single API key and normalizing to an OpenAI-compatible interface. This is effectively a provider-agnostic LLM router bolted onto the observability layer.</p>
-<p>By March 2026, Helicone had processed <strong>14.2 trillion tokens</strong> across <strong>16,000 organizations</strong> — scale that suggests the proxy model works at production volumes.</p>
+<p>By March 2026, <a href="https://helicone.ai/blog/joining-mintlify">Helicone had processed <strong>14.2 trillion tokens</strong> across <strong>16,000 organizations</strong></a> — scale that suggests the proxy model works at production volumes.</p>
 <hr>
 <h2 id="integration-the-two-line-change">Integration: The Two-Line Change</h2>
 <p>The proxy integration is as close to zero-friction as you can get. For OpenAI in JavaScript:</p>
@@ -167,7 +167,7 @@ headers <span style="color:#f92672">=</span> {
 </ul>
 <hr>
 <h2 id="the-acquisition-what-it-means">The Acquisition: What It Means</h2>
-<p>On March 3, 2026, Mintlify — the documentation tooling company — <a href="https://helicone.ai/">acquired Helicone</a>. Founders Justin Torre and Cole Gottdank joined Mintlify. The stated rationale: integrate Helicone&rsquo;s routing, observability, and caching capabilities into Mintlify&rsquo;s documentation infrastructure.</p>
+<p>On March 3, 2026, Mintlify — the documentation tooling company — <a href="https://www.mintlify.com/blog/mintlify-acquires-helicone">acquired Helicone</a>. Founders Justin Torre and Cole Gottdank joined Mintlify. The stated rationale: integrate Helicone&rsquo;s routing, observability, and caching capabilities into Mintlify&rsquo;s documentation infrastructure.</p>
 <p><strong>For Helicone as a standalone product, this means:</strong></p>
 <ul>
 <li><strong>Maintenance mode</strong>: security patches, bug fixes, and new model additions will ship; no new features</li>

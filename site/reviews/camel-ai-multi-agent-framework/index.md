@@ -3,7 +3,7 @@
 > CAMEL-AI reviewed: the first published LLM multi-agent framework (NeurIPS 2023), ~16.9K GitHub stars, Apache 2.0. Role-playing architecture, 40+ LLM providers, MCP-native, #1 open-source GAIA score. Rating: 4/5.
 
 
-When people discuss the history of multi-agent AI frameworks, one paper keeps coming up as the starting point: *CAMEL: Communicative Agents for "Mind" Exploration of Large Language Model Society*, published at NeurIPS 2023 by Guohao Li et al. The repository it spawned — **camel-ai/camel** — predates AutoGen, CrewAI, and LangGraph. At ~16,879 stars and v0.2.90, it remains active and research-backed in a way few frameworks can claim.
+When people discuss the history of multi-agent AI frameworks, one paper keeps coming up as the starting point: [*CAMEL: Communicative Agents for "Mind" Exploration of Large Language Model Society*](https://arxiv.org/abs/2303.17760), published at NeurIPS 2023 by Guohao Li et al. The repository it spawned — **camel-ai/camel** — predates AutoGen, CrewAI, and LangGraph. At ~16,879 stars and v0.2.90, it remains active and research-backed in a way few frameworks can claim.
 
 CAMEL's defining contribution is role-playing between agents as a coordination mechanism: rather than one LLM trying to do everything, two agents take complementary roles — an AI user who gives instructions and an AI assistant who executes them — and converse iteratively until a task completes. That idea, formalized in 2023, is now foundational vocabulary in the field. Part of our **[Developer Tools category](/categories/developer-tools/)**.
 
@@ -66,7 +66,7 @@ The design separates planning, coordination, and execution cleanly — adding a 
 
 ## Benchmarks
 
-The clearest signal of CAMEL's current capability is the **OWL** (Optimized Workforce Learning) project, published at NeurIPS 2025 (arXiv: 2505.23885). OWL is a CAMEL-based multi-agent system that scored **69.09% on the GAIA benchmark** — the first open-source system to exceed OpenAI Deep Research (69.70%). The Workforce-enhanced variant scored even higher.
+The clearest signal of CAMEL's current capability is the **OWL** (Optimized Workforce Learning) project, published at NeurIPS 2025 ([arXiv: 2505.23885](https://arxiv.org/abs/2505.23885)). OWL is a CAMEL-based multi-agent system that scored [**69.09% on the GAIA benchmark**](https://github.com/camel-ai/owl) — the first open-source system to exceed OpenAI Deep Research (~67.36%). The Workforce-enhanced variant scored even higher at 69.70%.
 
 GAIA tests real-world multi-step reasoning, tool use, and web research — exactly the tasks CAMEL's Workforce was designed for. This is not a narrow academic benchmark; it is one of the most demanding LLM capability tests available.
 
@@ -127,7 +127,7 @@ This is CAMEL's most underappreciated feature and the one that most directly tra
 - **EvolInstruct** — iteratively evolves instructions to increase difficulty
 - **Source2Synth** — generates multi-hop question-answer pairs from source documents
 
-Training data from CAMEL agent runs was used in Microsoft Phi model training and the OpenHermes dataset. No other agent framework in this category ships comparable tools for this use case.
+Training data from CAMEL agent runs was used in [the OpenHermes dataset](https://huggingface.co/datasets/teknium/openhermes). No other agent framework in this category ships comparable tools for this use case.
 
 ---
 
@@ -161,7 +161,7 @@ CAMEL-AI.org operates as a community-driven research collective, not a tradition
 
 The framework has real academic output: NeurIPS publications in 2023, 2024, and 2025. The advisory board includes Philip Torr (Oxford, Fellow of the Royal Academy of Engineering) and Bernard Ghanem (KAUST AI Initiative Deputy Director). The project's stated mission is "finding the Scaling Laws of Agents" — treating agent systems the way OpenAI treated LLMs: scale up and discover emergent behavior.
 
-One industry data point suggests CAMEL-AI.org reached ~$990K revenue with a 9-person team in 2025, though this is a single unverified source. There is no disclosed VC funding.
+There is no disclosed VC funding.
 
 ---
 

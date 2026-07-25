@@ -75,7 +75,7 @@
 <p><strong>cedar, marin</strong> — Available only in the Realtime API. Not accessible via the TTS endpoint. If you try to use them in a standard TTS call, the request will fail.</p>
 <hr>
 <h2 id="cedar-and-marin">Cedar and Marin</h2>
-<p>OpenAI describes Cedar and Marin as representing &ldquo;the most significant improvements to natural-sounding speech&rdquo; in the API. The official documentation recommends: &ldquo;For best quality, we recommend using <code>marin</code> or <code>cedar</code>.&rdquo;</p>
+<p>OpenAI <a href="https://platform.openai.com/docs/guides/realtime">describes Cedar and Marin</a> as representing &ldquo;the most significant improvements to natural-sounding speech&rdquo; in the API. The official documentation recommends: &ldquo;For best quality, we recommend using <code>marin</code> or <code>cedar</code>.&rdquo;</p>
 <p>Both voices are designed for the professional-empathetic register — the tone that reads as competent and trustworthy rather than either stiff or casual. This makes them well-suited for B2B and professional use cases: intake agents, medical or legal Q&amp;A, financial support, and customer success workflows where synthetic-voice feel is a meaningful friction point.</p>
 <p>The rest of the catalog continues to serve consumer-casual and specific character personas. Ash, Ballad, Coral, and Verse in particular offer more expressive range that may be more appropriate for entertainment or informal consumer apps. The choice depends on the persona you are building toward, not objective quality alone.</p>
 <p>That said, if you are building a professional voice agent and have not specifically reason to pick a different voice, Cedar or Marin is the current recommended default.</p>
@@ -101,7 +101,7 @@
 <hr>
 <h2 id="cache-pricing-and-voice-agent-economics">Cache Pricing and Voice Agent Economics</h2>
 <p>gpt-realtime-2 supports prompt caching on both text and audio inputs. Cache hits dramatically reduce the cost of sessions that share substantial context.</p>
-<p>Current pricing:</p>
+<p>Current pricing (per <a href="https://platform.openai.com/docs/pricing">OpenAI pricing page</a>):</p>
 <table>
 <thead>
 <tr>

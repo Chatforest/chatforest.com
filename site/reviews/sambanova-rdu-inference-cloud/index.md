@@ -15,7 +15,7 @@ SambaNova Systems was founded in 2017 in Palo Alto, California by Rodrigo Liang 
 
 The company has raised approximately $1.4 billion across known rounds: a $150M Series B (Intel Capital led, 2019), $250M Series C (BlackRock led, 2020), $676M Series D (2021, at a $5.1B valuation), and a $350M+ Series E announced in February 2026. Investors include Intel Capital, BlackRock, SoftBank, Google Ventures, Samsung, SK Telecom, Temasek, and Walden International. Lip-Bu Tan — former CEO of Cadence Design Systems and founder of Walden International — serves as Executive Chairman.
 
-SambaNova does not publicly disclose ARR, but its 2025 annual report described "record bookings and revenue." Fast Company ranked it #4 in Computing on its 2025 Most Innovative Companies list, citing SambaNova's ability to run DeepSeek R1 671B at 231 tokens/second — three times faster than GPU-based providers at the time — at 5x better power efficiency. Fortune placed it on the Future 50 list in September 2025.
+SambaNova does not publicly disclose ARR, but its 2025 annual report described "record bookings and revenue." [Fast Company ranked it #4 in Computing](https://finance.yahoo.com/news/sambanova-named-4-fast-company-174400762.html) on its 2025 Most Innovative Companies list, citing SambaNova's ability to run DeepSeek R1 671B at 231 tokens/second — three times faster than GPU-based providers at the time — at 5x better power efficiency. [Fortune placed it on the Future 50 list](https://sambanova.ai/blog/sambanova-named-to-fortune-future-50-list-for-second-consecutive-year) in September 2025.
 
 ---
 
@@ -45,7 +45,7 @@ This memory architecture is the structural reason SambaNova can run 405-billion 
 
 The SN50 is the first chip designed specifically with agentic AI workloads in mind — multi-step reasoning chains that require rapid sequential inference rather than batch throughput.
 
-In April 2026, Intel announced a "Blueprint for Heterogeneous Inference" combining Intel GPUs for prefill (the prompt processing phase, naturally parallel), SambaNova RDUs for decode (the token-by-token generation phase, where dataflow excels), and Intel Xeon 6 processors for agentic tool execution. Production deployment is targeted for H2 2026. The collaboration signals that the industry is beginning to treat inference not as a monolithic GPU problem but as a multi-chip architecture problem.
+In April 2026, [SambaNova and Intel announced a "Blueprint for Heterogeneous Inference"](https://sambanova.ai/press/sambanova-announces-collaboration-with-intel-on-ai-solution) combining Intel GPUs for prefill (the prompt processing phase, naturally parallel), SambaNova RDUs for decode (the token-by-token generation phase, where dataflow excels), and Intel Xeon 6 processors for agentic tool execution. Production deployment is targeted for H2 2026. The collaboration signals that the industry is beginning to treat inference not as a monolithic GPU problem but as a multi-chip architecture problem.
 
 ---
 
@@ -115,7 +115,7 @@ Per independent benchmarks from Artificial Analysis:
 
 The gap between SambaNova and Cerebras inverts as model size grows. Cerebras's wafer-scale architecture delivers extreme throughput on models that fit entirely on a single chip. SambaNova's multi-tier memory hierarchy means it doesn't sacrifice accuracy or scale to fit larger models — it's the only production API offering both size and speed on 671B-parameter models.
 
-SambaNova also published an accuracy comparison against Groq's quantized Llama 3 8B: 3.16% better average performance across 15 general tasks, with a 9+ percentage point advantage on conversational tasks (CoQA benchmark). The precision advantage matters more in specialized domains where quantization errors compound.
+SambaNova also [published an accuracy comparison](https://sambanova.ai/blog/sambanova-vs-groq) against Groq's quantized Llama 3 8B: 3.16% better average performance across 15 general tasks, with a 9+ percentage point advantage on conversational tasks (CoQA benchmark). The precision advantage matters more in specialized domains where quantization errors compound.
 
 ---
 

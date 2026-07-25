@@ -6,6 +6,7 @@ tags: ["ai-infrastructure", "gpu-cloud", "h100", "rtx-4090", "ml-training", "spo
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 When GPU prices matter more than convenience, most developers end up at Vast.ai. Not because the platform is polished or enterprise-ready — it is neither — but because it consistently offers compute at 3–8× below hyperscaler rates and 2–3× below managed GPU clouds like Lambda Labs. For AI developers running fine-tuning jobs, diffusion training runs, or batch inference pipelines who can tolerate variability in exchange for radical cost savings, Vast.ai is often the best answer.
@@ -20,7 +21,7 @@ Vast.ai was incorporated on June 28, 2016 as a Delaware C corporation. Co-founde
 
 Travis Cannell (Jake's brother) later joined as COO. The company is headquartered in Los Angeles, California and as of 2025 maintains a team of approximately 38 people — intentionally lean by design.
 
-One naming note worth flagging: Vast.ai (vast.ai, the GPU marketplace) is a completely different company from VAST Data (vastdata.com), an AI storage platform with a $30B valuation backed by NVIDIA. The two companies share a confusingly similar name and frequently appear together in search results. This review covers Vast.ai — the GPU rental marketplace.
+One naming note worth flagging: Vast.ai (vast.ai, the GPU marketplace) is a completely different company from VAST Data (vastdata.com), an AI storage platform with a [$30B valuation backed by NVIDIA](https://www.vastdata.com/press-releases/vast-series-f-financing-at-30-billion-valuation). The two companies share a confusingly similar name and frequently appear together in search results. This review covers Vast.ai — the GPU rental marketplace.
 
 ### Funding
 
@@ -123,7 +124,7 @@ The most significant 2025 product launch was **Vast.ai Serverless** — a fully 
 
 Instead of finding a host, launching an instance, loading a model, managing uptime, and tearing down when done, Serverless handles this automatically: you define your workload, and Vast routes it to available compute, scales up under load, and scales down to zero when idle. Billing is per-request rather than per-hour.
 
-Serverless directly targets the inference market — which, per Morgan Stanley estimates, is projected to account for 70% of GPU cloud spend by late 2026. It is Vast.ai's answer to RunPod Serverless, and it extends the marketplace pricing advantage into the inference layer.
+Serverless directly targets the inference market. It is Vast.ai's answer to RunPod Serverless, and it extends the marketplace pricing advantage into the inference layer.
 
 Serverless is the right product for developers who want Vast.ai's cost structure without the operational overhead of instance lifecycle management.
 
@@ -157,7 +158,7 @@ If your job cannot tolerate interruption, use on-demand instances, not interrupt
 
 Your workloads run on third-party hardware. Model weights, training data, and intermediate outputs are physically resident on machines operated by unknown hosts. For workloads involving sensitive data — healthcare, finance, proprietary model weights, personal data — this is a material security concern.
 
-Vast.ai achieved [**SOC 2 Type I certification in April 2025**](https://vast.ai/press-release/vast-ai-soc-2-type-1-certification) and **SOC 2 Type II certification later in 2025**. This is a meaningful step and signals a deliberate push toward enterprise readiness. But it does not change the physical reality that your data is on someone else's machine.
+Vast.ai achieved [**SOC 2 Type I certification in April 2025**](https://vast.ai/press-release/vast-ai-soc-2-type-1-certification) and [**SOC 2 Type II certification in August 2025**](https://vast.ai/article/vast-soc2-typeII-certification). This is a meaningful step and signals a deliberate push toward enterprise readiness. But it does not change the physical reality that your data is on someone else's machine.
 
 For HIPAA, FedRAMP, or sensitive IP workloads, RunPod Secure Cloud, Lambda Labs, or CoreWeave provide stronger isolation guarantees.
 
@@ -165,7 +166,7 @@ For HIPAA, FedRAMP, or sensitive IP workloads, RunPod Secure Cloud, Lambda Labs,
 
 ## SOC 2 Certifications
 
-SOC 2 Type I (April 10, 2025) assessed whether Vast.ai's security controls were appropriately designed. SOC 2 Type II assessed whether those controls operated effectively over a defined period. Achieving both in a single year is a meaningful compliance milestone for a bootstrapped 38-person company, and it opens enterprise procurement conversations that were previously unavailable.
+[SOC 2 Type I (April 10, 2025)](https://vast.ai/press-release/vast-ai-soc-2-type-1-certification) assessed whether Vast.ai's security controls were appropriately designed. [SOC 2 Type II (August 2025)](https://vast.ai/article/vast-soc2-typeII-certification) assessed whether those controls operated effectively over a defined period. Achieving both in a single year is a meaningful compliance milestone for a bootstrapped 38-person company, and it opens enterprise procurement conversations that were previously unavailable.
 
 Vast.ai's security model covers the platform itself — the API, the control plane, billing, identity management, and data transit. Host-side security is governed by host verification procedures and contractual obligations, but Vast.ai cannot enforce on-premises security at each of 1,400+ independent host operators.
 

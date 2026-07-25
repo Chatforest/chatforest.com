@@ -19,7 +19,7 @@ That adoption story is accurate. What the marketing doesn't foreground: a supply
 | **Language** | Python |
 | **Version** | 1.83.14 stable (May 6, 2026); 1.84.0-rc.1 pre-release |
 | **Install** | `pip install litellm` |
-| **Monthly Downloads** | ~96M PyPI; 240M+ Docker pulls |
+| **Monthly Downloads** | [~96M PyPI](https://pypistats.org/packages/litellm); [240M+ Docker pulls](https://hub.docker.com/r/litellm/litellm) |
 | **Providers** | 140+ providers, 2,600+ models |
 | **Company** | BerriAI, YC W23, ~$2.5M ARR |
 
@@ -183,9 +183,9 @@ Per-team and per-user budget limits can run on different time windows simultaneo
 
 Two significant security incidents in a seven-week window warrant mention:
 
-**Supply chain attack (March 2026)**: Versions 1.82.7 and 1.82.8 were compromised when threat actor TeamPCP pushed malicious code via a Trivy CI/CD pipeline compromise. The malicious packages deployed a credential harvester (targeting SSH keys, cloud credentials, Kubernetes secrets, `.env` files, crypto wallets), a Kubernetes lateral movement toolkit, and a persistent backdoor via systemd service. Version 1.82.8 executed on every Python interpreter startup via a `.pth` file. Both versions were pulled from PyPI and safe versions were released. At the time of the attack, LiteLLM had ~95M monthly downloads — the blast radius was significant, though the attack required the malicious version to be installed.
+**[Supply chain attack (March 2026)](https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/)**: Versions 1.82.7 and 1.82.8 were compromised when threat actor TeamPCP pushed malicious code via a Trivy CI/CD pipeline compromise. The malicious packages deployed a credential harvester (targeting SSH keys, cloud credentials, Kubernetes secrets, `.env` files, crypto wallets), a Kubernetes lateral movement toolkit, and a persistent backdoor via systemd service. Version 1.82.8 executed on every Python interpreter startup via a `.pth` file. Both versions were pulled from PyPI and safe versions were released. At the time of the attack, LiteLLM had ~95M monthly downloads — the blast radius was significant, though the attack required the malicious version to be installed.
 
-**SQL injection (CVE-2026-42208, April 2026)**: CVSS 9.3 Critical. Exploited in the wild within 36 hours of disclosure. Patch released promptly, but the timeline highlights that LiteLLM's fast release cadence and large attack surface require diligent version management in production.
+**[SQL injection (CVE-2026-42208, April 2026)](https://docs.litellm.ai/blog/cve-2026-42208-litellm-proxy-sql-injection)**: CVSS 9.3 Critical. Exploited in the wild within 36 hours of disclosure. Patch released promptly, but the timeline highlights that LiteLLM's fast release cadence and large attack surface require diligent version management in production.
 
 **Mitigations**: Pin to specific verified versions, use lock files, monitor for new CVEs via GitHub's security advisories or OSV. BerriAI's response to both incidents was prompt, and the issues were resolved. For high-security environments, run through a private registry that pre-scans packages.
 
@@ -204,7 +204,7 @@ Two significant security incidents in a seven-week window warrant mention:
 | **Cost** | Free (infra costs) | ~$49/month+ | Free tier + paid | 5.5% model markup |
 | **Semantic cache** | Qdrant/Redis | Native | No | No |
 
-**vs. Portkey**: Portkey went fully open-source (Apache 2.0) in March 2026. Its managed tier handles compliance certifications and built-in PII redaction that LiteLLM leaves to the user. LiteLLM wins on infrastructure control and zero markup at scale.
+**vs. Portkey**: Portkey [went fully open-source (Apache 2.0) in March 2026](https://www.globenewswire.com/news-release/2026/03/24/3261574/0/en/portkey-s-gateway-is-now-fully-open-source-processing-over-1-trillion-tokens-every-day.html). Its managed tier handles compliance certifications and built-in PII redaction that LiteLLM leaves to the user. LiteLLM wins on infrastructure control and zero markup at scale.
 
 **vs. Helicone**: Helicone is primarily observability with gateway capabilities; its acquisition by Mintlify in March 2026 puts it in maintenance mode. LiteLLM is a better choice for new production deployments needing an active gateway.
 

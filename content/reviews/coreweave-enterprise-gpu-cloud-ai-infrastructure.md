@@ -6,6 +6,7 @@ tags: ["ai-infrastructure", "gpu-cloud", "h100", "gb200", "enterprise-ai", "hpc"
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 CoreWeave [reached $5.13 billion in revenue in 2025](https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Fourth-Quarter-and-Fiscal-Year-2025-Results/). In 2023, that number was $229 million. The trajectory is extraordinary: 730% growth from 2023 to 2024, then another 170% in 2025. No other cloud platform has crossed $5 billion annual revenue as fast. The company [went public on Nasdaq in March 2025](https://www.coreweave.com/news/coreweave-announces-pricing-of-initial-public-offering), carries a $66.8 billion contracted backlog, and is building toward $12 billion in 2026 guidance while simultaneously deploying $30–35 billion in new infrastructure capital.
@@ -183,13 +184,13 @@ CoreWeave's customer list reads as a who's who of the AI ecosystem:
 
 **Microsoft** — largest single customer. Approximately 62% of 2024 revenue, ~67% of FY2025 revenue. Actively diversifying; Microsoft is expected to fall below 50% of contracted future revenue as other customers grow. The concentration risk is real but declining.
 
-**OpenAI** — initial contract of up to $11.9B (announced at IPO, March 2025). Expanded by $4B (May 2025). Expanded again by $6.5B (late 2025/2026). Total OpenAI agreements: approximately **$22.4 billion**. OpenAI runs on Azure and CoreWeave simultaneously — a statement that even Microsoft's own cloud cannot provision at the scale and speed frontier labs require.
+**OpenAI** — [initial contract of up to $11.9B](https://investors.coreweave.com/news/news-details/2025/CoreWeave-Announces-Agreement-with-OpenAI-to-Deliver-AI-Infrastructure/default.aspx) (announced March 10, 2025). [Expanded by $4B](https://investors.coreweave.com/news/news-details/2025/CoreWeave-Expands-Agreement-with-OpenAI-by-up-to-6-5B/default.aspx) (May 2025). Expanded again by $6.5B (September 2025). Total OpenAI agreements: approximately **$22.4 billion**. OpenAI runs on Azure and CoreWeave simultaneously — a statement that even Microsoft's own cloud cannot provision at the scale and speed frontier labs require.
 
-**Meta** — initial deal of $14.2B over six years (through December 2032). Expanded to **$21 billion** (announced April/May 2026). Meta's use case is AI inference at scale for products like the Meta AI assistant.
+**Meta** — [initial deal of $14.2B](https://investors.coreweave.com/news/news-details/2026/CoreWeave-and-Meta-Announce-21-Billion-Expanded-AI-Infrastructure-Agreement/default.aspx) over six years (through December 2032). [Expanded to **$21 billion**](https://www.coreweave.com/news/coreweave-and-meta-announce-21-billion-expanded-ai-infrastructure-agreement) (announced April 9, 2026). Meta's use case is AI inference at scale for products like the Meta AI assistant.
 
-**Anthropic** — multi-year agreement announced May 2026 (financial terms undisclosed). Supports Claude model development and deployment at production scale.
+**Anthropic** — [multi-year agreement announced April 10, 2026](https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Multi-Year-Agreement-With-Anthropic/default.aspx) (financial terms undisclosed). Supports Claude model development and deployment at production scale.
 
-**Jane Street** — $6B deal signed April 2026. The quantitative trading firm is using GPU compute for ML-intensive trading strategy research.
+**Jane Street** — [$6B deal signed April 15, 2026](https://investors.coreweave.com/news/news-details/2026/Jane-Street-Signs-6-Billion-AI-Cloud-Agreement-With-CoreWeave/default.aspx). The quantitative trading firm is using GPU compute for ML-intensive trading strategy research.
 
 **IBM** — CoreWeave is delivering one of the first GB200 Grace Blackwell AI supercomputers to IBM, used for training next-generation Granite models.
 

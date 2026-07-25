@@ -6,6 +6,7 @@ og_description: "GPT-Realtime-2 is GA: 128K context, five reasoning effort level
 content_type: "Builder's Log"
 categories: ["AI APIs", "Voice AI", "OpenAI"]
 tags: ["openai", "realtime-api", "gpt-realtime-2", "voice-agents", "websocket", "streaming", "tool-calling", "migration", "audio"]
+sources_audited: 2026-07-26
 ---
 
 On May 7, 2026, OpenAI [shipped three new voice models](https://openai.com/index/introducing-gpt-realtime/) for the Realtime API and simultaneously moved the product out of beta. The beta API (`gpt-4o-realtime-preview`) was shut down on May 12. If you have voice agents running against the old endpoint, they have already failed or will fail the next time they try to connect.
@@ -52,7 +53,7 @@ Effort level directly trades latency for quality:
 | `high` | ~2.33 seconds |
 | `xhigh` | 3+ seconds |
 
-Benchmark gains are substantial at higher effort. On Big Bench Audio, `gpt-realtime-2` at `high` scores 96.6% vs. the old `gpt-realtime-1.5` at 81.4% — a 15-point improvement. On Audio MultiChallenge, `xhigh` reaches 48.5% vs. 34.7% previously.
+Benchmark gains are substantial at higher effort. On [Big Bench Audio, `gpt-realtime-2` at `high` scores 96.6% vs. the old `gpt-realtime-1.5` at 81.4%](https://openai.com/index/introducing-gpt-realtime/) — a 15-point improvement. On Audio MultiChallenge, `xhigh` reaches 48.5% vs. 34.7% previously.
 
 Practical guidance: `xhigh` is perceptibly laggy for phone-call UX. Use `low` or `medium` for conversational agents; reserve `high` and `xhigh` for use cases where quality matters more than latency (medical transcription review, high-stakes intake forms, compliance scenarios).
 
@@ -122,7 +123,7 @@ If you are building at volume, model the math before defaulting to `gpt-realtime
 
 ## Pricing Comparison: Beta vs. GA
 
-The pricing shift from the beta is significant and favors builders.
+The pricing shift from the beta is significant and favors builders. (Per [OpenAI pricing](https://platform.openai.com/docs/pricing).)
 
 | | `gpt-4o-realtime-preview` (deprecated) | `gpt-realtime-2` (GA) |
 |---|---|---|

@@ -72,7 +72,7 @@
 <h2 id="company-background">Company Background</h2>
 <p>SambaNova Systems was founded in 2017 in Palo Alto, California by Rodrigo Liang (CEO) and Kunle Olukotun (Chief Technologist). Olukotun is a Stanford professor known for pioneering chip multiprocessing research — the kind of credentials that signal a chip company built by people who understand computer architecture deeply, not just AI software stacked on commodity hardware.</p>
 <p>The company has raised approximately $1.4 billion across known rounds: a $150M Series B (Intel Capital led, 2019), $250M Series C (BlackRock led, 2020), $676M Series D (2021, at a $5.1B valuation), and a $350M+ Series E announced in February 2026. Investors include Intel Capital, BlackRock, SoftBank, Google Ventures, Samsung, SK Telecom, Temasek, and Walden International. Lip-Bu Tan — former CEO of Cadence Design Systems and founder of Walden International — serves as Executive Chairman.</p>
-<p>SambaNova does not publicly disclose ARR, but its 2025 annual report described &ldquo;record bookings and revenue.&rdquo; Fast Company ranked it #4 in Computing on its 2025 Most Innovative Companies list, citing SambaNova&rsquo;s ability to run DeepSeek R1 671B at 231 tokens/second — three times faster than GPU-based providers at the time — at 5x better power efficiency. Fortune placed it on the Future 50 list in September 2025.</p>
+<p>SambaNova does not publicly disclose ARR, but its 2025 annual report described &ldquo;record bookings and revenue.&rdquo; <a href="https://finance.yahoo.com/news/sambanova-named-4-fast-company-174400762.html">Fast Company ranked it #4 in Computing</a> on its 2025 Most Innovative Companies list, citing SambaNova&rsquo;s ability to run DeepSeek R1 671B at 231 tokens/second — three times faster than GPU-based providers at the time — at 5x better power efficiency. <a href="https://sambanova.ai/blog/sambanova-named-to-fortune-future-50-list-for-second-consecutive-year">Fortune placed it on the Future 50 list</a> in September 2025.</p>
 <hr>
 <h2 id="the-rdu-dataflow-vs-simd">The RDU: Dataflow vs. SIMD</h2>
 <p>To understand SambaNova&rsquo;s performance profile, you have to understand why it built a new chip category instead of optimizing GPU deployments.</p>
@@ -95,7 +95,7 @@
 <li>Support for models up to 10 trillion parameters with 10 million token context lengths</li>
 </ul>
 <p>The SN50 is the first chip designed specifically with agentic AI workloads in mind — multi-step reasoning chains that require rapid sequential inference rather than batch throughput.</p>
-<p>In April 2026, Intel announced a &ldquo;Blueprint for Heterogeneous Inference&rdquo; combining Intel GPUs for prefill (the prompt processing phase, naturally parallel), SambaNova RDUs for decode (the token-by-token generation phase, where dataflow excels), and Intel Xeon 6 processors for agentic tool execution. Production deployment is targeted for H2 2026. The collaboration signals that the industry is beginning to treat inference not as a monolithic GPU problem but as a multi-chip architecture problem.</p>
+<p>In April 2026, <a href="https://sambanova.ai/press/sambanova-announces-collaboration-with-intel-on-ai-solution">SambaNova and Intel announced a &ldquo;Blueprint for Heterogeneous Inference&rdquo;</a> combining Intel GPUs for prefill (the prompt processing phase, naturally parallel), SambaNova RDUs for decode (the token-by-token generation phase, where dataflow excels), and Intel Xeon 6 processors for agentic tool execution. Production deployment is targeted for H2 2026. The collaboration signals that the industry is beginning to treat inference not as a monolithic GPU problem but as a multi-chip architecture problem.</p>
 <hr>
 <h2 id="sambacloud-the-public-api">SambaCloud: The Public API</h2>
 <p>SambaNova&rsquo;s public inference API is available at cloud.sambanova.ai and is fully OpenAI-compatible — same endpoints, same client libraries. It bills per token, requires no credit card for signup, and offers $5 in free credits (valid for 30 days).</p>
@@ -200,7 +200,7 @@
 <li>Groq: 751 tokens/second</li>
 </ul>
 <p>The gap between SambaNova and Cerebras inverts as model size grows. Cerebras&rsquo;s wafer-scale architecture delivers extreme throughput on models that fit entirely on a single chip. SambaNova&rsquo;s multi-tier memory hierarchy means it doesn&rsquo;t sacrifice accuracy or scale to fit larger models — it&rsquo;s the only production API offering both size and speed on 671B-parameter models.</p>
-<p>SambaNova also published an accuracy comparison against Groq&rsquo;s quantized Llama 3 8B: 3.16% better average performance across 15 general tasks, with a 9+ percentage point advantage on conversational tasks (CoQA benchmark). The precision advantage matters more in specialized domains where quantization errors compound.</p>
+<p>SambaNova also <a href="https://sambanova.ai/blog/sambanova-vs-groq">published an accuracy comparison</a> against Groq&rsquo;s quantized Llama 3 8B: 3.16% better average performance across 15 general tasks, with a 9+ percentage point advantage on conversational tasks (CoQA benchmark). The precision advantage matters more in specialized domains where quantization errors compound.</p>
 <hr>
 <h2 id="pricing">Pricing</h2>
 <p><strong>Free tier</strong>: $5 in credits, no credit card required, expires 30 days after signup.</p>

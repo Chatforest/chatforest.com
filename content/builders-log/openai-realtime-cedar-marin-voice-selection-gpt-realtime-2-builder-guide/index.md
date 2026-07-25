@@ -6,6 +6,7 @@ og_description: "Cedar and Marin are the two new voices exclusive to the Realtim
 content_type: "Builder's Log"
 categories: ["AI APIs", "Voice AI", "OpenAI"]
 tags: ["openai", "realtime-api", "gpt-realtime-2", "voice-agents", "cedar", "marin", "voice-selection", "audio", "streaming"]
+sources_audited: 2026-07-26
 ---
 
 When OpenAI [shipped gpt-realtime-2](https://openai.com/index/introducing-gpt-realtime/) on May 7, 2026, the voice catalog expanded to ten options and two of them — Cedar and Marin — are available exclusively in the Realtime API. OpenAI's own [documentation](https://platform.openai.com/docs/guides/realtime) recommends them over the other eight for best quality. That recommendation has practical implications for how you configure new voice agents and whether existing ones should be updated.
@@ -26,7 +27,7 @@ gpt-realtime-2 supports ten voices:
 
 ## Cedar and Marin
 
-OpenAI describes Cedar and Marin as representing "the most significant improvements to natural-sounding speech" in the API. The official documentation recommends: "For best quality, we recommend using `marin` or `cedar`."
+OpenAI [describes Cedar and Marin](https://platform.openai.com/docs/guides/realtime) as representing "the most significant improvements to natural-sounding speech" in the API. The official documentation recommends: "For best quality, we recommend using `marin` or `cedar`."
 
 Both voices are designed for the professional-empathetic register — the tone that reads as competent and trustworthy rather than either stiff or casual. This makes them well-suited for B2B and professional use cases: intake agents, medical or legal Q&A, financial support, and customer success workflows where synthetic-voice feel is a meaningful friction point.
 
@@ -69,7 +70,7 @@ This has a few practical consequences:
 
 gpt-realtime-2 supports prompt caching on both text and audio inputs. Cache hits dramatically reduce the cost of sessions that share substantial context.
 
-Current pricing:
+Current pricing (per [OpenAI pricing page](https://platform.openai.com/docs/pricing)):
 
 | Input type | Uncached | Cached |
 |---|---|---|

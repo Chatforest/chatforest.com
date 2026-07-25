@@ -114,7 +114,7 @@
 </tr>
 </tbody>
 </table>
-<p>Benchmark gains are substantial at higher effort. On Big Bench Audio, <code>gpt-realtime-2</code> at <code>high</code> scores 96.6% vs. the old <code>gpt-realtime-1.5</code> at 81.4% — a 15-point improvement. On Audio MultiChallenge, <code>xhigh</code> reaches 48.5% vs. 34.7% previously.</p>
+<p>Benchmark gains are substantial at higher effort. On <a href="https://openai.com/index/introducing-gpt-realtime/">Big Bench Audio, <code>gpt-realtime-2</code> at <code>high</code> scores 96.6% vs. the old <code>gpt-realtime-1.5</code> at 81.4%</a> — a 15-point improvement. On Audio MultiChallenge, <code>xhigh</code> reaches 48.5% vs. 34.7% previously.</p>
 <p>Practical guidance: <code>xhigh</code> is perceptibly laggy for phone-call UX. Use <code>low</code> or <code>medium</code> for conversational agents; reserve <code>high</code> and <code>xhigh</code> for use cases where quality matters more than latency (medical transcription review, high-stakes intake forms, compliance scenarios).</p>
 <p>Set effort level in your session init:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -170,7 +170,7 @@
 <p>If you are building at volume, model the math before defaulting to <code>gpt-realtime-2</code>. A contact center running 10,000 hours/month of voice agent time at <code>gpt-realtime-2</code> pricing would spend materially more than at <code>gpt-realtime-mini</code> for interactions that do not require deep reasoning.</p>
 <hr>
 <h2 id="pricing-comparison-beta-vs-ga">Pricing Comparison: Beta vs. GA</h2>
-<p>The pricing shift from the beta is significant and favors builders.</p>
+<p>The pricing shift from the beta is significant and favors builders. (Per <a href="https://platform.openai.com/docs/pricing">OpenAI pricing</a>.)</p>
 <table>
 <thead>
 <tr>

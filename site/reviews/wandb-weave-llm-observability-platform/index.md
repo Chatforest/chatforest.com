@@ -19,11 +19,11 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Main SDK repo** | [wandb/weave](https://github.com/wandb/weave) (~1.1K stars, Apache 2.0) |
 | **Training platform** | [wandb/wandb](https://github.com/wandb/wandb) (~29K stars) |
 | **Platform** | Proprietary SaaS (W&B) · Apache 2.0 SDK |
-| **PyPI** | `weave` (Weave SDK) · `wandb` (~21.8M downloads/month) |
+| **PyPI** | `weave` (Weave SDK) · `wandb` ([~21.8M downloads/month](https://pypistats.org/packages/wandb)) |
 | **Language** | Python (primary) · TypeScript |
 | **Install** | `pip install weave` |
 | **Founders** | Lukas Biewald (CEO), Chris Van Pelt, Shawn Lewis — San Francisco |
-| **Acquisition** | CoreWeave acquired W&B for **$1.7B** (completed May 5, 2025) |
+| **Acquisition** | CoreWeave [acquired W&B for **$1.7B**](https://techcrunch.com/2025/03/04/coreweave-acquires-ai-developer-platform-weights-biases/) (completed May 5, 2025) |
 | **Scale at acquisition** | $100M ARR · 1M developers · 1,400+ enterprises |
 | **Notable customers** | OpenAI, Meta, NVIDIA, Snowflake, Toyota, Canva, AstraZeneca, Uber |
 | **Founded** | 2017 |
@@ -42,11 +42,11 @@ This heritage is Weave's most distinctive advantage. Every other platform in thi
 
 ## CoreWeave Acquisition
 
-On March 4, 2025, CoreWeave — the NVIDIA-backed GPU cloud that had recently filed for an IPO — announced its intent to acquire Weights & Biases. The deal closed May 5, 2025 at **$1.7 billion**.
+On March 4, 2025, CoreWeave — the NVIDIA-backed GPU cloud that had recently filed for an IPO — announced its intent to acquire Weights & Biases. [The deal closed May 5, 2025](https://coreweave.com/blog/coreweave-completes-acquisition-of-weights-biases) at **$1.7 billion**.
 
 CoreWeave's stated rationale: acquiring W&B adds a leading AI developer toolchain to their GPU cloud, enabling them to offer a vertically integrated platform from raw compute to experiment tracking and production observability. W&B's tools become a natural complement to CoreWeave's infrastructure offering.
 
-At the time of acquisition, W&B reported $100M ARR, 1M active developers, and 1,400+ enterprise customers. The acquisition was structured with a commitment to maintain W&B's platform as cloud-agnostic and interoperable — customers are not required to run on CoreWeave infrastructure to use W&B or Weave.
+At the time of acquisition, [W&B reported $100M ARR, 1M active developers, and 1,400+ enterprise customers](https://investors.coreweave.com/news/news-details/2025/CoreWeave-Completes-Acquisition-of-Weights--Biases/default.aspx). The acquisition was structured with a commitment to maintain W&B's platform as cloud-agnostic and interoperable — customers are not required to run on CoreWeave infrastructure to use W&B or Weave.
 
 For evaluators: CoreWeave's ownership creates questions about long-term platform independence and roadmap priorities that did not exist when W&B operated independently. The stated neutrality commitment is contractual, but strategic priorities shift over time. Teams evaluating Weave for multi-year infrastructure investments should weigh this context against the platform's technical merits.
 

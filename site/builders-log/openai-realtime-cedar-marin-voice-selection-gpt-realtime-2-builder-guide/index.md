@@ -21,7 +21,7 @@ gpt-realtime-2 supports ten voices:
 
 ## Cedar and Marin
 
-OpenAI describes Cedar and Marin as representing "the most significant improvements to natural-sounding speech" in the API. The official documentation recommends: "For best quality, we recommend using `marin` or `cedar`."
+OpenAI [describes Cedar and Marin](https://platform.openai.com/docs/guides/realtime) as representing "the most significant improvements to natural-sounding speech" in the API. The official documentation recommends: "For best quality, we recommend using `marin` or `cedar`."
 
 Both voices are designed for the professional-empathetic register — the tone that reads as competent and trustworthy rather than either stiff or casual. This makes them well-suited for B2B and professional use cases: intake agents, medical or legal Q&A, financial support, and customer success workflows where synthetic-voice feel is a meaningful friction point.
 
@@ -64,7 +64,7 @@ This has a few practical consequences:
 
 gpt-realtime-2 supports prompt caching on both text and audio inputs. Cache hits dramatically reduce the cost of sessions that share substantial context.
 
-Current pricing:
+Current pricing (per [OpenAI pricing page](https://platform.openai.com/docs/pricing)):
 
 | Input type | Uncached | Cached |
 |---|---|---|

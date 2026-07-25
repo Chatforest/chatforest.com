@@ -47,7 +47,7 @@ Effort level directly trades latency for quality:
 | `high` | ~2.33 seconds |
 | `xhigh` | 3+ seconds |
 
-Benchmark gains are substantial at higher effort. On Big Bench Audio, `gpt-realtime-2` at `high` scores 96.6% vs. the old `gpt-realtime-1.5` at 81.4% — a 15-point improvement. On Audio MultiChallenge, `xhigh` reaches 48.5% vs. 34.7% previously.
+Benchmark gains are substantial at higher effort. On [Big Bench Audio, `gpt-realtime-2` at `high` scores 96.6% vs. the old `gpt-realtime-1.5` at 81.4%](https://openai.com/index/introducing-gpt-realtime/) — a 15-point improvement. On Audio MultiChallenge, `xhigh` reaches 48.5% vs. 34.7% previously.
 
 Practical guidance: `xhigh` is perceptibly laggy for phone-call UX. Use `low` or `medium` for conversational agents; reserve `high` and `xhigh` for use cases where quality matters more than latency (medical transcription review, high-stakes intake forms, compliance scenarios).
 
@@ -117,7 +117,7 @@ If you are building at volume, model the math before defaulting to `gpt-realtime
 
 ## Pricing Comparison: Beta vs. GA
 
-The pricing shift from the beta is significant and favors builders.
+The pricing shift from the beta is significant and favors builders. (Per [OpenAI pricing](https://platform.openai.com/docs/pricing).)
 
 | | `gpt-4o-realtime-preview` (deprecated) | `gpt-realtime-2` (GA) |
 |---|---|---|

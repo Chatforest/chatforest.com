@@ -5,6 +5,7 @@ description: "W&B Weave reviewed: LLM observability from the ML experiment track
 og_description: "W&B Weave reviewed: LLM observability toolkit built on Weights & Biases' ML experiment tracking heritage. Apache 2.0, @weave.op decorator for zero-config tracing. 1M developers, 1,400+ enterprises, $100M ARR at time of CoreWeave acquisition ($1.7B, May 2025). 20+ framework integrations including OTel backend. Self-hosting via ClickHouse + S3 (requires paid license). Pricing: free → ~$50/seat Teams → Enterprise. Only platform spanning ML training AND LLM inference observability in a single UI. Rating: 3.5/5."
 card_description: "W&B Weave is Weights & Biases' LLM observability toolkit — an extension of the platform that made W&B the standard for ML experiment tracking. Apache 2.0, @weave.op decorator, 20+ framework integrations, OTel backend support, and a self-hosted deployment path. Unique position: teams already using W&B for model training get LLM inference observability in the same UI with no additional toolchain. W&B was acquired by CoreWeave for $1.7B in May 2025 (1M developers, 1,400+ enterprises, $100M ARR). Self-hosting available but requires a paid Weave license — unlike Langfuse (free) and Phoenix (free Docker). Part of our **Developer Tools** category. Rating: 3.5/5."
 last_refreshed: 2026-05-06
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -24,11 +25,11 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Main SDK repo** | [wandb/weave](https://github.com/wandb/weave) (~1.1K stars, Apache 2.0) |
 | **Training platform** | [wandb/wandb](https://github.com/wandb/wandb) (~29K stars) |
 | **Platform** | Proprietary SaaS (W&B) · Apache 2.0 SDK |
-| **PyPI** | `weave` (Weave SDK) · `wandb` (~21.8M downloads/month) |
+| **PyPI** | `weave` (Weave SDK) · `wandb` ([~21.8M downloads/month](https://pypistats.org/packages/wandb)) |
 | **Language** | Python (primary) · TypeScript |
 | **Install** | `pip install weave` |
 | **Founders** | Lukas Biewald (CEO), Chris Van Pelt, Shawn Lewis — San Francisco |
-| **Acquisition** | CoreWeave acquired W&B for **$1.7B** (completed May 5, 2025) |
+| **Acquisition** | CoreWeave [acquired W&B for **$1.7B**](https://techcrunch.com/2025/03/04/coreweave-acquires-ai-developer-platform-weights-biases/) (completed May 5, 2025) |
 | **Scale at acquisition** | $100M ARR · 1M developers · 1,400+ enterprises |
 | **Notable customers** | OpenAI, Meta, NVIDIA, Snowflake, Toyota, Canva, AstraZeneca, Uber |
 | **Founded** | 2017 |
@@ -47,11 +48,11 @@ This heritage is Weave's most distinctive advantage. Every other platform in thi
 
 ## CoreWeave Acquisition
 
-On March 4, 2025, CoreWeave — the NVIDIA-backed GPU cloud that had recently filed for an IPO — announced its intent to acquire Weights & Biases. The deal closed May 5, 2025 at **$1.7 billion**.
+On March 4, 2025, CoreWeave — the NVIDIA-backed GPU cloud that had recently filed for an IPO — announced its intent to acquire Weights & Biases. [The deal closed May 5, 2025](https://coreweave.com/blog/coreweave-completes-acquisition-of-weights-biases) at **$1.7 billion**.
 
 CoreWeave's stated rationale: acquiring W&B adds a leading AI developer toolchain to their GPU cloud, enabling them to offer a vertically integrated platform from raw compute to experiment tracking and production observability. W&B's tools become a natural complement to CoreWeave's infrastructure offering.
 
-At the time of acquisition, W&B reported $100M ARR, 1M active developers, and 1,400+ enterprise customers. The acquisition was structured with a commitment to maintain W&B's platform as cloud-agnostic and interoperable — customers are not required to run on CoreWeave infrastructure to use W&B or Weave.
+At the time of acquisition, [W&B reported $100M ARR, 1M active developers, and 1,400+ enterprise customers](https://investors.coreweave.com/news/news-details/2025/CoreWeave-Completes-Acquisition-of-Weights--Biases/default.aspx). The acquisition was structured with a commitment to maintain W&B's platform as cloud-agnostic and interoperable — customers are not required to run on CoreWeave infrastructure to use W&B or Weave.
 
 For evaluators: CoreWeave's ownership creates questions about long-term platform independence and roadmap priorities that did not exist when W&B operated independently. The stated neutrality commitment is contractual, but strategic priorities shift over time. Teams evaluating Weave for multi-year infrastructure investments should weigh this context against the platform's technical merits.
 

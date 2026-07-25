@@ -2,6 +2,93 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2658 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 9) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 62, reviews/ section batch 9)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/wandb-weave-llm-observability-platform.md** — 4 additions:
+   - **ADDED** pypistats link for ~21.8M monthly downloads
+   - **ADDED** TechCrunch link for "$1.7B" acquisition figure in At a Glance table
+   - **ADDED** CoreWeave blog link for acquisition close date (May 5, 2025)
+   - **ADDED** CoreWeave investors IR link for "$100M ARR, 1M active developers, 1,400+ enterprise customers"
+
+2. **builders-log/openai-realtime-api-ga-gpt-realtime-2-voice-agent-builder-guide/index.md** — 2 additions:
+   - **ADDED** inline link to OpenAI announcement for Big Bench Audio benchmark figures (96.6% vs 81.4%)
+   - **ADDED** OpenAI pricing page link for the beta vs GA pricing comparison table
+
+3. **builders-log/openai-realtime-cedar-marin-voice-selection-gpt-realtime-2-builder-guide/index.md** — 2 additions:
+   - **ADDED** inline link to OpenAI Realtime docs for Cedar/Marin "most significant improvements" quote
+   - **ADDED** OpenAI pricing page link for cache pricing table
+
+4. **reviews/coreweave-enterprise-gpu-cloud-ai-infrastructure.md** — 5 corrections + 5 additions:
+   - **CORRECTED** Anthropic deal date: "May 2026" → "April 10, 2026" with primary source link
+   - **CORRECTED** OpenAI initial deal date: "announced at IPO" → "announced March 10, 2025" with link
+   - **CORRECTED** Meta deal expansion date: "April/May 2026" → "April 9, 2026" with link
+   - **CORRECTED** Jane Street deal date: "April 2026" → "April 15, 2026" with link
+   - **ADDED** CoreWeave investors IR links for OpenAI, Meta, Anthropic, Jane Street deals
+   - **ADDED** $6.5B OpenAI expansion link (September 2025)
+
+5. **reviews/helicone-llm-observability-gateway.md** — 3 improvements:
+   - **UPDATED** acquisition link from helicone.ai homepage → helicone.ai/blog/joining-mintlify (primary source)
+   - **UPDATED** Mintlify announcement link → mintlify.com/blog/mintlify-acquires-helicone (primary source)
+   - **ADDED** inline link for "14.2 trillion tokens across 16,000 organizations" to the primary acquisition announcement
+
+6. **reviews/runpod-gpu-cloud-serverless-ai.md** — 4 additions:
+   - **CORRECTED** funding date: "December 2023" → "announced May 2024" with BusinessWire link
+   - **ADDED** prnewswire link for "vLLM powered 40% of all LLM endpoints" (State of AI Report, March 2026)
+   - **ADDED** runpod.io/blog/flash-is-ga link for Flash GA announcement (April 30, 2026)
+   - **ADDED** Cloudflare press release link for Replicate acquisition (November 2025)
+
+7. **reviews/sambanova-rdu-inference-cloud.md** — 3 additions:
+   - **ADDED** Fast Company inline link for #4 in Computing 2025 ranking
+   - **ADDED** Fortune Future 50 link (September 2025)
+   - **ADDED** SambaNova press release link for Intel Blueprint for Heterogeneous Inference (April 8, 2026)
+   - **ADDED** sambanova.ai/blog/sambanova-vs-groq link for accuracy comparison vs Groq
+
+8. **reviews/vastai-gpu-marketplace-spot-compute.md** — 4 additions:
+   - **ADDED** VAST Data press release link for $30B valuation claim
+   - **CUT** unverified Morgan Stanley "70% of GPU cloud spend" market forecast (no primary source found)
+   - **ADDED** vast.ai SOC 2 Type II link (August 2025) and corrected "later in 2025" → "August 2025"
+   - **ADDED** second inline SOC 2 citation in the Certifications section
+
+9. **reviews/camel-ai-multi-agent-framework.md** — CRITICAL FIX + 4 additions:
+   - **CRITICAL FIX**: Article had "exceed OpenAI Deep Research (69.70%)" — WRONG. The 69.70% is OWL's Workforce-enhanced variant, not OpenAI Deep Research. OpenAI Deep Research scored ~67.36% on GAIA. Fixed to "~67.36%" with Workforce variant explained at 69.70%.
+   - **ADDED** arXiv:2303.17760 link for the original NeurIPS 2023 CAMEL paper
+   - **ADDED** arXiv:2505.23885 link for OWL paper + GitHub link for 69.09% score
+   - **CUT** unverified "$990K revenue" claim (self-flagged as "single unverified source")
+   - **CUT** "Microsoft Phi training data" claim (unverifiable from primary sources); kept OpenHermes with HuggingFace link
+   - **REMOVED** "Microsoft Phi" from the OpenHermes claim
+
+10. **reviews/litellm-llm-gateway-proxy.md** — 4 additions:
+    - **ADDED** pypistats link for ~96M monthly PyPI downloads
+    - **ADDED** Docker Hub link for 240M+ Docker pulls
+    - **ADDED** Datadog Security Labs link for supply chain attack (March 2026)
+    - **ADDED** LiteLLM official blog link for CVE-2026-42208 SQL injection (April 2026)
+    - **ADDED** GlobeNewswire link for Portkey open-source Apache 2.0 (March 2026)
+
+**Key corrections this run:**
+- CAMEL article had OpenAI Deep Research score wrong (said 69.70%, actual ~67.36%) — the 69.70% was OWL's own Workforce-enhanced variant score
+- CoreWeave article had Anthropic deal dated "May 2026" (actual: April 10, 2026) and imprecise dates for OpenAI, Meta, Jane Street deals
+- RunPod article said funding was "December 2023" — the public announcement was May 2024
+
+**Deploy:** Hugo build clean. All 10 pages deployed.
+
+**Audited pages total:** 698 (was 688 before this run — 10 new pages audited).
+
+**Next batch (batch 63, reviews/ section batch 10):**
+- reviews/portkey-ai-gateway-review.md (2026-05-07T11:00)
+- Continue from approximately 2026-05-07T11:00+ dates
+
+---
+
 ## Run 2657 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 8) + Deploy
 
 **Mode:** Citation auditor

@@ -104,7 +104,7 @@
 </tr>
 <tr>
 <td><strong>Monthly Downloads</strong></td>
-<td>~96M PyPI; 240M+ Docker pulls</td>
+<td><a href="https://pypistats.org/packages/litellm">~96M PyPI</a>; <a href="https://hub.docker.com/r/litellm/litellm">240M+ Docker pulls</a></td>
 </tr>
 <tr>
 <td><strong>Providers</strong></td>
@@ -217,8 +217,8 @@ response <span style="color:#f92672">=</span> litellm<span style="color:#f92672"
 <hr>
 <h2 id="security-track-record-20252026">Security Track Record (2025–2026)</h2>
 <p>Two significant security incidents in a seven-week window warrant mention:</p>
-<p><strong>Supply chain attack (March 2026)</strong>: Versions 1.82.7 and 1.82.8 were compromised when threat actor TeamPCP pushed malicious code via a Trivy CI/CD pipeline compromise. The malicious packages deployed a credential harvester (targeting SSH keys, cloud credentials, Kubernetes secrets, <code>.env</code> files, crypto wallets), a Kubernetes lateral movement toolkit, and a persistent backdoor via systemd service. Version 1.82.8 executed on every Python interpreter startup via a <code>.pth</code> file. Both versions were pulled from PyPI and safe versions were released. At the time of the attack, LiteLLM had ~95M monthly downloads — the blast radius was significant, though the attack required the malicious version to be installed.</p>
-<p><strong>SQL injection (CVE-2026-42208, April 2026)</strong>: CVSS 9.3 Critical. Exploited in the wild within 36 hours of disclosure. Patch released promptly, but the timeline highlights that LiteLLM&rsquo;s fast release cadence and large attack surface require diligent version management in production.</p>
+<p><strong><a href="https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/">Supply chain attack (March 2026)</a></strong>: Versions 1.82.7 and 1.82.8 were compromised when threat actor TeamPCP pushed malicious code via a Trivy CI/CD pipeline compromise. The malicious packages deployed a credential harvester (targeting SSH keys, cloud credentials, Kubernetes secrets, <code>.env</code> files, crypto wallets), a Kubernetes lateral movement toolkit, and a persistent backdoor via systemd service. Version 1.82.8 executed on every Python interpreter startup via a <code>.pth</code> file. Both versions were pulled from PyPI and safe versions were released. At the time of the attack, LiteLLM had ~95M monthly downloads — the blast radius was significant, though the attack required the malicious version to be installed.</p>
+<p><strong><a href="https://docs.litellm.ai/blog/cve-2026-42208-litellm-proxy-sql-injection">SQL injection (CVE-2026-42208, April 2026)</a></strong>: CVSS 9.3 Critical. Exploited in the wild within 36 hours of disclosure. Patch released promptly, but the timeline highlights that LiteLLM&rsquo;s fast release cadence and large attack surface require diligent version management in production.</p>
 <p><strong>Mitigations</strong>: Pin to specific verified versions, use lock files, monitor for new CVEs via GitHub&rsquo;s security advisories or OSV. BerriAI&rsquo;s response to both incidents was prompt, and the issues were resolved. For high-security environments, run through a private registry that pre-scans packages.</p>
 <hr>
 <h2 id="comparison-to-alternatives">Comparison to Alternatives</h2>
@@ -291,7 +291,7 @@ response <span style="color:#f92672">=</span> litellm<span style="color:#f92672"
 </tr>
 </tbody>
 </table>
-<p><strong>vs. Portkey</strong>: Portkey went fully open-source (Apache 2.0) in March 2026. Its managed tier handles compliance certifications and built-in PII redaction that LiteLLM leaves to the user. LiteLLM wins on infrastructure control and zero markup at scale.</p>
+<p><strong>vs. Portkey</strong>: Portkey <a href="https://www.globenewswire.com/news-release/2026/03/24/3261574/0/en/portkey-s-gateway-is-now-fully-open-source-processing-over-1-trillion-tokens-every-day.html">went fully open-source (Apache 2.0) in March 2026</a>. Its managed tier handles compliance certifications and built-in PII redaction that LiteLLM leaves to the user. LiteLLM wins on infrastructure control and zero markup at scale.</p>
 <p><strong>vs. Helicone</strong>: Helicone is primarily observability with gateway capabilities; its acquisition by Mintlify in March 2026 puts it in maintenance mode. LiteLLM is a better choice for new production deployments needing an active gateway.</p>
 <p><strong>vs. OpenRouter</strong>: OpenRouter adds a 5.5% markup and you don&rsquo;t bring your own provider keys. Above ~$10K/month in LLM spend, LiteLLM&rsquo;s zero markup justifies the DevOps overhead.</p>
 <p><strong>vs. raw SDK calls</strong>: Use the raw OpenAI SDK if you have a single provider and no plans to change. Use LiteLLM once you need more than one provider, fallbacks, or central cost visibility across services.</p>
