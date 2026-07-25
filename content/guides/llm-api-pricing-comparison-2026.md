@@ -5,6 +5,7 @@ description: "Current API prices for Claude Opus 4.7, GPT-5.5, Gemini 3.5 Flash,
 tags: ["llm", "api", "pricing", "claude", "gpt", "gemini", "deepseek", "grok", "qwen", "buyer-guide", "cost-optimization"]
 categories: ["guides"]
 author: "ChatForest"
+sources_audited: 2026-07-25
 ---
 
 Choosing a model for production API use is partly a benchmark question and partly a cost question. This guide cuts to the prices — input and output per million tokens — for every major model available via API as of May 2026.
@@ -42,7 +43,7 @@ All prices are list prices (unless noted). Batch API and cached-input discounts 
 ### Cheapest Overall: DeepSeek V4 Flash ($0.14/$0.28/M)
 The lowest-cost frontier-quality model available. At $0.14/M input and $0.28/M output, DeepSeek V4 Flash is priced similarly to 2024-era commodity inference. It's a 284B-parameter MoE model running at 1M context. For high-volume, cost-sensitive workloads where you're processing many inputs with moderate complexity, nothing comes close on price.
 
-**Also note:** [DeepSeek V4 Pro dropped permanently to $0.435/$0.87/M on May 25, 2026](https://www.engadget.com/2180062/deepseek-permanently-reduces-the-price-of-its-flagship-v4-model-by-75-percent/) — making it 11× cheaper than Claude Opus 4.7 at comparable or better coding benchmark performance (80.6% SWE-Bench Verified vs. Opus 4.7's 87.6%).
+**Also note:** [DeepSeek V4 Pro dropped permanently to $0.435/$0.87/M on May 25, 2026](https://www.engadget.com/2180062/deepseek-permanently-reduces-the-price-of-its-flagship-v4-model-by-75-percent/) — making it 11× cheaper than Claude Opus 4.7 at comparable or better coding benchmark performance (80.6% SWE-Bench Verified vs. [Opus 4.7's 87.6%](https://www.anthropic.com/news/claude-opus-4-7)).
 
 ### Cheapest Cached: Gemini 3.5 Flash ($0.15 cached input)
 Google's 90% cached-input discount is the most aggressive in the market. For agentic workflows that reuse large system prompts, tool definitions, or long documents, Gemini 3.5 Flash's cached rate of $0.15/M input makes it extremely competitive. At 1M context and 289 tokens/second, it's also the fastest frontier model for tool-use workloads.
@@ -51,7 +52,7 @@ Google's 90% cached-input discount is the most aggressive in the market. For age
 2 million tokens at $0.20/M input is the best context-per-dollar ratio in the market. For tasks that require loading very large codebases, extensive document sets, or long conversation histories without truncation, Grok 4.3 offers a context depth no competitor currently matches at this price point.
 
 ### Best Reasoning-to-Cost: Claude Sonnet 4.6 ($3.00/$15.00/M)
-Claude Sonnet 4.6 at $3.00/M input sits between the high-performance flagship tier and the budget tier. With 1M context, strong coding performance (79.6% SWE-Bench Verified), and Adaptive Thinking, it's often the best cost-adjusted choice for production agentic workflows that need reasoning depth without Opus 4.7's full price.
+[Claude Sonnet 4.6](https://www.anthropic.com/pricing) at $3.00/M input sits between the high-performance flagship tier and the budget tier. With 1M context, strong coding performance (79.6% SWE-Bench Verified), and Adaptive Thinking, it's often the best cost-adjusted choice for production agentic workflows that need reasoning depth without Opus 4.7's full price.
 
 ### Highest Performance Ceiling: GPT-5.5 Pro ($30/$180/M)
 The most expensive model commonly available via API. If you need the highest possible reasoning quality for evaluation, complex analysis, or frontier research tasks where cost is secondary to quality, GPT-5.5 Pro is the ceiling. Not for production volume workloads.

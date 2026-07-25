@@ -8,6 +8,7 @@ card_description: "The EU AI Act's Annex III high-risk AI deadline got pushed 16
 tags: ["eu-ai-act", "regulation", "ai-policy", "compliance", "chatbot", "synthetic-content", "deepfake", "article-50", "transparency", "gdpr", "developer-guide"]
 categories: ["guides"]
 author: "ChatForest"
+sources_audited: 2026-07-25
 ---
 
 **At a glance:** [Article 50](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50) enforcement date: August 2, 2026. Obligations: chatbot disclosure, synthetic content marking, emotion recognition notice, deepfake labeling. Penalty for non-compliance: up to €15M or 3% of global revenue. Enforced by: national market surveillance authorities (per member state). Not changed by: the Digital Omnibus simplification deal. Part of our **[AI builder guides](/categories/developer-tools/)**.

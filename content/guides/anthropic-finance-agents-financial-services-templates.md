@@ -5,9 +5,10 @@ description: "Anthropic's Agents for Financial Services launched May 5, 2026: te
 content_type: "Guide"
 card_description: "Anthropic launched ten ready-to-run agent templates for financial services on May 5, 2026 — covering pitchbooks, KYC screening, general ledger reconciliation, and more. Built on Claude Managed Agents, they ship as plugins for Claude Cowork and Claude Code, plus autonomous cookbooks for overnight and book-wide workflows. Early adopters include JPMorgan, Goldman Sachs, Citadel, and Walleye Capital. This guide explains all ten templates, the integration stack, and how it all fits together."
 last_refreshed: 2026-05-17
+sources_audited: 2026-07-25
 ---
 
-On May 5, 2026, Anthropic announced **Agents for Financial Services**: ten ready-to-run Claude agent templates targeting the most time-intensive workflows in banking, asset management, private equity, and insurance. The templates were announced at an invite-only financial services briefing in New York, two to four weeks after [Claude Managed Agents](/guides/claude-managed-agents-dreaming-outcomes-multiagent/) entered public beta.
+On May 5, 2026, Anthropic [announced **Agents for Financial Services**](https://www.anthropic.com/news/finance-agents): ten ready-to-run Claude agent templates targeting the most time-intensive workflows in banking, asset management, private equity, and insurance. The templates were announced at an [invite-only financial services briefing in New York](https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/), two to four weeks after [Claude Managed Agents](/guides/claude-managed-agents-dreaming-outcomes-multiagent/) entered public beta.
 
 This guide explains what each template does, how they are deployed, what data they connect to, and who is already using them. It is research-based, drawing on Anthropic's official announcement, third-party coverage, and partner disclosures. We do not have API access and have not run these agents directly. [Rob Nugen](https://robnugen.com) operates ChatForest; content is researched and written by AI.
 
@@ -18,7 +19,7 @@ Anthropic organized the ten templates into two tracks: **Research and Client Cov
 ### Research and Client Coverage
 
 **1. Pitch builder**
-Creates target lists, runs comparable analyses, and drafts pitchbooks end-to-end. Output lands in three Microsoft 365 artifacts: a comps model in Excel, a pitchbook deck in PowerPoint, and a cover note drafted in Outlook. Jamie Dimon of JPMorgan Chase described a prototype in a related context: "In 20 minutes, it created a huge dashboard, with all the backup, and all the research, and it was very accurate."
+Creates target lists, runs comparable analyses, and drafts pitchbooks end-to-end. Output lands in three Microsoft 365 artifacts: a comps model in Excel, a pitchbook deck in PowerPoint, and a cover note drafted in Outlook. [Jamie Dimon of JPMorgan Chase described a prototype at the New York briefing](https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/): "In 20 minutes, it created a huge dashboard, with all the backup, and all the research, and it was very accurate."
 
 **2. Meeting preparer**
 Assembles client and counterparty briefs before calls — pulling recent filings, news, relationship history, and internal notes into a structured pre-read without the analyst having to chase down each source individually.
@@ -41,7 +42,7 @@ Validates proposed valuations against comparable transactions and internal firm 
 Reconciles accounts and runs net asset value (NAV) calculations. Targets fund administration and asset management operations teams doing routine but labor-intensive reconciliation work across large numbers of positions.
 
 **8. Month-end closer**
-Executes close checklists, prepares journal entries, and generates the supporting reports required for a financial close. FIS reported that AML investigation workflows running on similar Claude infrastructure compressed "days to minutes."
+Executes close checklists, prepares journal entries, and generates the supporting reports required for a financial close. [FIS reported](https://www.anthropic.com/news/finance-agents) that AML investigation workflows running on similar Claude infrastructure compressed "days to minutes."
 
 **9. Statement auditor**
 Reviews financial statements for internal consistency and audit-readiness before they go to external auditors or regulators. Surfaces discrepancies and flags items that require human resolution.
@@ -63,9 +64,9 @@ The cookbook format is what makes overnight and book-wide workflows possible. A 
 
 ### Microsoft 365 — generally available
 
-Claude for Excel, Claude for PowerPoint, and Claude for Word went generally available on May 5, 2026. Claude for Outlook was announced for upcoming availability. The key behavior: context carries automatically between apps. An analyst can start building a model in Excel, continue drafting slides in PowerPoint, and the agent understands the full context without needing to be re-briefed.
+[Claude for Excel, Claude for PowerPoint, and Claude for Word went generally available on May 5, 2026.](https://www.anthropic.com/news/finance-agents) Claude for Outlook was announced for upcoming availability. The key behavior: context carries automatically between apps. An analyst can start building a model in Excel, continue drafting slides in PowerPoint, and the agent understands the full context without needing to be re-briefed.
 
-Citadel reportedly uses Claude for Excel for building coverage models; Hg uses it for due diligence and financial modeling.
+[Citadel reportedly uses Claude for Excel for building coverage models; Hg uses it for due diligence and financial modeling.](https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/)
 
 ### Data connectors
 
@@ -78,7 +79,7 @@ FactSet, S&P Capital IQ, MSCI, PitchBook, Morningstar, Chronograph, LSEG, Daloop
 Dun & Bradstreet, Fiscal AI, Financial Modeling Prep, Guidepoint, IBISWorld, SS&C Intralinks (DealCenter AI data rooms), Third Bridge, Verisk, Experian, GLG
 
 **Flagship integration — Moody's MCP app:**
-Moody's launched a Claude MCP app embedding 600 million+ company credit ratings and financial data directly into Claude. This is one of the largest structured financial datasets made accessible via a native Claude integration.
+[Moody's launched a Claude MCP app](https://www.businesswire.com/news/home/20260409047490/en/Moodys-Brings-Credit-and-Compliance-Workflows-Directly-into-Anthropics-Claude) embedding data on 600 million+ public and private company entities directly into Claude. This is one of the largest structured financial datasets made accessible via a native Claude integration.
 
 ## Architecture
 
@@ -92,33 +93,33 @@ The Managed Agents runtime provides the infrastructure: long-running sessions fo
 
 ## Who is using it
 
-Anthropic disclosed a substantial list of financial institution adopters:
+[Anthropic disclosed a substantial list of financial institution adopters](https://www.anthropic.com/news/finance-agents):
 
 | Institution | Reported use |
 |---|---|
 | JPMorgan Chase | Asset swaps/Treasury analysis dashboard |
 | Goldman Sachs | Accounting and compliance autonomous agents; ~6 months of embedded Anthropic engineering |
 | Citi | Undisclosed pilot |
-| AIG | Insurance claims review; 88% accuracy vs. human expert |
+| AIG | [Insurance claims review; 88% accuracy vs. human expert](https://www.anthropic.com/news/finance-agents) |
 | Citadel | Claude for Excel coverage models |
 | FIS | AML investigation agents; days compressed to minutes |
 | BNY | End-to-end case processing |
 | Carlyle | Investing, operations, and portfolio management |
 | Mizuho | Meeting and call preparation |
 | Travelers | 400+ engineers; engineering productivity |
-| Walleye Capital | 100% employee adoption across 400-person hedge fund |
+| Walleye Capital | [100% employee adoption across ~$10B AUM hedge fund](https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/) |
 | Hg | Due diligence and financial modeling |
 | Visa | Undisclosed |
 
 ## The $1.5 billion joint venture
 
-Announced 48 hours before the template launch (May 3–4, 2026), Anthropic announced a $1.5 billion joint venture with Blackstone, Hellman & Friedman, and Goldman Sachs. Additional investors included General Atlantic, Leonard Green, Apollo Global Management, GIC, and Sequoia Capital.
+[Announced 48 hours before the template launch (May 3–4, 2026)](https://www.cnbc.com/2026/05/04/anthropic-goldman-blackstone-ai-venture.html), Anthropic formed a $1.5 billion joint venture named **Ode** with Blackstone, Hellman & Friedman, and Goldman Sachs. Additional investors included General Atlantic, Leonard Green, Apollo Global Management, GIC, and Sequoia Capital.
 
-The entity — whose name had not been disclosed at the time of this writing — embeds Anthropic engineers inside companies to redesign workflows end-to-end. Target customers are portfolio companies of the PE firm partners and mid-market companies across financial services, healthcare, manufacturing, retail, real estate, and infrastructure. The venture is distinct from the template product, but closely related: it represents the services-layer delivery mechanism for the same underlying AI infrastructure.
+Ode embeds Anthropic engineers inside companies to redesign workflows end-to-end. Target customers are portfolio companies of the PE firm partners and mid-market companies across financial services, healthcare, manufacturing, retail, real estate, and infrastructure. The venture is distinct from the template product, but closely related: it represents the services-layer delivery mechanism for the same underlying AI infrastructure.
 
 ## Benchmarks
 
-- **Vals AI Finance Agent benchmark: 64.37%** — Anthropic claims Claude Opus 4.7 leads the industry on this evaluation of economically valuable financial knowledge work
+- [**Vals AI Finance Agent benchmark: 64.37%**](https://www.anthropic.com/news/finance-agents) — Anthropic claims Claude Opus 4.7 leads the industry on this evaluation of economically valuable financial knowledge work
 - **GDPval-AA evaluation** — Top score for knowledge-work economic value
 - **AIG insurance claims:** 88% as accurate as a human expert reviewer
 - **FIS AML investigations:** Multi-day processes compressed to minutes

@@ -7,6 +7,7 @@ card_description: "Anthropic retires Claude Sonnet 4 (claude-sonnet-4-20250514) 
 tags: ["anthropic", "claude", "claude-4", "api", "deprecation", "migration", "developer-tools", "sonnet", "opus"]
 categories: ["guides"]
 author: "ChatForest"
+sources_audited: 2026-07-25
 ---
 
 **June 13 update: Two days remaining.** If you have not migrated yet, today is the day. The migration is a single line in most codebases — update the model string and ship. Instructions below.
@@ -61,7 +62,7 @@ If your workloads are primarily agentic or involve complex multi-step reasoning,
 
 **Reasoning architecture:** Extended Thinking is replaced by Adaptive Thinking. Rather than requiring you to explicitly set a thinking budget, Opus 4.7 infers the right compute depth from the task. The practical difference: better results on ambiguous or underspecified prompts without needing manual budget tuning.
 
-**Context window:** 1 million tokens with 128K maximum output.
+[**Context window:** 1 million tokens with 128K maximum output.](https://www.anthropic.com/news/claude-opus-4-7)
 
 **Image resolution:** 3.75 megapixel maximum per image (up from 1.15MP at Opus 4 launch), improving computer-use and document-analysis pipelines.
 

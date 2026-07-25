@@ -8,6 +8,7 @@ card_description: "Five frontier models, five different routing signals. A pract
 tags: ["llm", "agents", "mcp", "routing", "comparison", "claude", "gemini", "gpt", "qwen", "kimi"]
 last_refreshed: 2026-05-22
 lastmod: 2026-05-22
+sources_audited: 2026-07-25
 ---
 
 The agent routing question has gotten harder, not easier. In mid-2025 there were two serious choices. Today there are five — and each one leads the field on at least one benchmark that matters to someone building production agents.
@@ -36,9 +37,9 @@ The AA Intelligence Index measures composite intelligence and calibration — it
 
 **Choose: Claude Opus 4.7**
 
-For real-repository, multi-file, agentic coding tasks measured by SWE-Bench Pro, Claude Opus 4.7 leads the published field. It holds 64.3% on SWE-Bench Pro (up from 53.4% on Opus 4.6) and 87.6% on SWE-Bench Verified. It was the first Claude model with high-resolution image support (2576px / 3.75MP), which matters for UI debugging and screenshot-grounded coding agents.
+For real-repository, multi-file, agentic coding tasks measured by SWE-Bench Pro, Claude Opus 4.7 leads the published field. [It holds 64.3% on SWE-Bench Pro (up from 53.4% on Opus 4.6) and 87.6% on SWE-Bench Verified.](https://www.anthropic.com/news/claude-opus-4-7) It was the first Claude model with high-resolution image support (2576px / 3.75MP), which matters for UI debugging and screenshot-grounded coding agents.
 
-The GPQA Diamond score of 94.2% indicates strong domain-specific reasoning quality — the kind that matters when a coding agent needs to understand what the code is supposed to do, not just what it says.
+The [GPQA Diamond score of 94.2%](https://www.anthropic.com/news/claude-opus-4-7) indicates strong domain-specific reasoning quality — the kind that matters when a coding agent needs to understand what the code is supposed to do, not just what it says.
 
 **When to consider GPT-5.5 instead:** GPT-5.5 is competitive on SWE-bench metrics, leads ARC-AGI-2 at 84.6% (abstract reasoning), and leads Terminal-Bench 2.1 at 78.2% (CLI automation). If your coding agent is CLI-heavy or involves novel problem structures, the gap is worth testing.
 
@@ -83,7 +84,7 @@ At $1.50/$9.00 per million input/output tokens, Gemini 3.5 Flash is also priced 
 
 **Choose: Claude Opus 4.7**
 
-On the Artificial Analysis hallucination measure, Claude Opus 4.7 sits at 36%. This is not the lowest available number — MiMo-V2.5-Pro and Grok 4.3 both approach 25% — but among the frontier models with full agentic capability coverage, Opus 4.7 provides the best hallucination control with the least capability tradeoff.
+On the [Artificial Analysis hallucination measure](https://artificialanalysis.ai/), Claude Opus 4.7 sits at 36%. This is not the lowest available number — MiMo-V2.5-Pro and Grok 4.3 both approach 25% — but among the frontier models with full agentic capability coverage, Opus 4.7 provides the best hallucination control with the least capability tradeoff.
 
 GPT-5.5 is close at approximately 38%, and for legal, medical, or financial professional pipelines where either model could work, the hallucination gap between them is small enough that other factors (tool call success rate, reasoning quality on domain content, latency) should drive the decision.
 
@@ -95,7 +96,7 @@ GPT-5.5 is close at approximately 38%, and for legal, medical, or financial prof
 
 **Choose: Kimi K2.6**
 
-Kimi K2.6 from Moonshot AI is the current leader in open-weight agentic models. At 1T parameters / 32B active (MoE), it runs on hardware accessible to teams with serious but not hyperscaler-grade infrastructure. The MIT license is permissive for commercial use.
+[Kimi K2.6 from Moonshot AI](https://kimi.ai/) is the current leader in open-weight agentic models. At 1T parameters / 32B active (MoE), it runs on hardware accessible to teams with serious but not hyperscaler-grade infrastructure. The MIT license is permissive for commercial use.
 
 The Agent Swarm system — scaling to 300 sub-agents with up to 4,000 coordinated steps — is the feature that distinguishes Kimi K2.6 from other open-weight options. It is built for long-horizon agentic tasks, not single-turn inference.
 
@@ -113,7 +114,7 @@ Artificial Analysis Intelligence Index position of approximately #4 (behind Anth
 
 Qwen3.7-Max launched with native Anthropic API protocol compatibility — it speaks the same API conventions as Claude models, making it a drop-in alternative in systems already built on Claude API infrastructure. This is a meaningful operational advantage for teams with existing Claude API integrations who want to route some traffic to a lower-cost option.
 
-At $2.50/$7.50 per million tokens (input/output), Qwen3.7-Max costs roughly half of Claude Opus 4.7. It holds a competitive GPQA Diamond score (92.4% vs. Opus 4.7's 91.3%) and leads on HLE (41.4 vs. 40.0) and Apex Math Reasoning (44.5 vs. 34.5). The SWE-Verified score of 80.4% is strong for its price point.
+At $2.50/$7.50 per million tokens (input/output), Qwen3.7-Max costs roughly half of Claude Opus 4.7. It holds a competitive [GPQA Diamond score](https://www.anthropic.com/news/claude-opus-4-7) (92.4% vs. Opus 4.7's 94.2%) and leads on HLE (41.4 vs. 40.0) and Apex Math Reasoning (44.5 vs. 34.5). The SWE-Verified score of 80.4% is strong for its price point.
 
 **Key constraints:** Text-only at launch (no vision/audio). No open weights. 1M context window (up from 256K on Qwen3.6 Max Preview).
 

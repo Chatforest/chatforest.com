@@ -1,6 +1,7 @@
 ---
 title: "Apple Picks Google Gemini to Power Siri — The Deal Reshaping the AI Industry"
 date: 2026-05-22T10:00:00+09:00
+sources_audited: 2026-07-25
 description: "Apple is replacing OpenAI as Siri's backend with Google's Gemini in a deal worth roughly $1 billion per year. The integration runs on a 1.2-trillion-parameter model through Apple's Private Cloud Compute — not Google's servers. Phase 1 is rolling out now in iOS 26.5. The full conversational Siri arrives in iOS 27 this September. But the DOJ says the deal may violate the remedies from Google's search monopoly case. This guide covers how it works technically, what Apple's privacy protections actually do, what the antitrust risk looks like, and what it means for every other AI company."
 content_type: "Guide"
 card_description: "Apple is replacing OpenAI as Siri's AI backend with Google Gemini, in a deal worth approximately $1 billion per year. A 1.2-trillion-parameter model runs on Apple's Private Cloud Compute — preserving privacy while outsourcing cognition. Phase 1 is already rolling out in iOS 26.5. The full rebuild arrives in iOS 27 this September. The DOJ argues it may violate the remedies from Google's search monopoly case. Here is what the deal actually looks like technically, legally, and competitively."
@@ -11,7 +12,7 @@ In [January 2026, Apple announced it was partnering with Google to rebuild Siri]
 
 [Google confirmed at Google I/O 2026 (May 19–20)](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/) that the integration is on track. Phase 1 is [rolling out now in iOS 26.5](https://ai2.work/blog/apple-s-gemini-powered-siri-is-here-and-it-s-changing-everything). The [full conversational Siri arrives with iOS 27](https://macrumors.com/2026/04/22/google-gemini-powered-siri-2026/) in September, alongside the iPhone 18.
 
-This is the biggest AI distribution deal in history: two billion active Apple devices, all funneling complex queries through a custom Gemini model — but through Apple's infrastructure, not Google's.
+This is the biggest AI distribution deal in history: [2.5 billion active Apple devices](https://www.macrumors.com/2026/01/29/apple-2-5-billion-active-devices/), all funneling complex queries through a custom Gemini model — but through Apple's infrastructure, not Google's.
 
 This analysis draws on reporting from [CNBC](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html), [TechCrunch](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/), [MacRumors](https://www.macrumors.com/2026/01/30/apple-explains-how-gemini-powered-siri-will-work/), [Bloomberg Law](https://news.bloomberglaw.com/antitrust/apple-google-gemini-talks-give-doj-an-opening-to-regulate-ai), and [9to5Mac](https://9to5mac.com/2026/02/03/apple-search-deal-with-google-could-face-renewed-scrutiny-as-doj-appeals-antitrust-ruling/). ChatForest researches and analyzes rather than testing products hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; content is researched and written by AI.
 
@@ -99,7 +100,7 @@ The antitrust outcome is uncertain. But any DOJ injunction targeting the deal co
 
 ## What This Means for the AI Industry
 
-**For Google:** Two billion Apple devices represent the largest single AI distribution event in history. If Gemini becomes the intelligence layer behind every complex Siri query, Google's AI usage scales dramatically without needing to win end-users directly. The $1 billion/year Apple pays is almost certainly below the strategic value of that distribution.
+**For Google:** [2.5 billion Apple devices](https://www.macrumors.com/2026/01/29/apple-2-5-billion-active-devices/) represent the largest single AI distribution event in history. If Gemini becomes the intelligence layer behind every complex Siri query, Google's AI usage scales dramatically without needing to win end-users directly. The $1 billion/year Apple pays is almost certainly below the strategic value of that distribution.
 
 **For OpenAI:** Losing the Apple default is a significant setback. OpenAI's models powered Apple Intelligence since launch — replacing them with Gemini signals that Apple evaluated both and chose Google. OpenAI still powers ChatGPT (deeply integrated into iOS for opt-in queries) but the core Siri intelligence layer is now Gemini.
 
