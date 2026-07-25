@@ -1,6 +1,7 @@
 ---
 title: "LlamaIndex — The RAG-First Agent Framework with 78 Vector Store Integrations"
 date: 2026-05-06T12:00:00+09:00
+sources_audited: 2026-07-26
 description: "LlamaIndex reviewed: the dominant RAG framework for LLM applications. 49.1K stars, MIT, Python, v0.14.21. Deep data integration (78 vector stores, 104 LLMs), event-driven Workflows, MCP client and server support. Rating: 4.5/5."
 og_description: "LlamaIndex (run-llama/llama_index, 49.1K stars, MIT, Python, v0.14.21) is the leading RAG framework for LLM applications — built from the ground up around context augmentation: making private and domain data available to LLMs at inference time. Six index types, 78 vector store integrations, 104 LLM providers, and a commercial document parsing product (LlamaParse). FunctionAgent, ReActAgent, and AgentWorkflow for multi-agent orchestration. MCP client via llama-index-tools-mcp (stdio/SSE/Streamable HTTP). MCP server via workflow_as_mcp(). ~6.8M monthly PyPI downloads. Rating: 4.5/5."
 card_description: "LlamaIndex (run-llama/llama_index, 49.1K stars, MIT, Python, v0.14.21) is the leading RAG-first framework for LLM applications, built around a five-stage pipeline: Load → Index → Store → Query → Evaluate. Where other agent frameworks treat document retrieval as one feature among many, LlamaIndex makes it the center of gravity — with six index types, 78 vector store integrations, 104 LLM providers, and a LlamaHub marketplace of community data loaders. Agent capabilities include FunctionAgent, ReActAgent, and the event-driven Workflows system for complex multi-step pipelines. Multi-agent via AgentWorkflow (linear handoff), Orchestrator pattern (specialists as tools), or custom planners. MCP client via llama-index-tools-mcp (stdio/SSE/Streamable HTTP, OAuth 2.0). MCP server via workflow_as_mcp() — any Workflow becomes an MCP endpoint. ~6.8M monthly PyPI downloads. Part of our **Developer Tools** category. Rating: 4.5/5."
@@ -10,7 +11,7 @@ categories: ["/categories/developer-tools/"]
 
 Most agent frameworks treat data retrieval as a feature. LlamaIndex treats it as the whole point.
 
-Since Jerry Liu launched it in 2022, LlamaIndex has built the most comprehensive data integration layer in the agent ecosystem: six index types, 78 vector store backends, 104 LLM providers, and a commercial document parsing product that handles 50+ file types including handwriting and complex tables. The framework's thesis — that connecting private and domain data to LLMs is the core challenge of building useful AI applications — has proven correct enough that it now has 49,100 GitHub stars and 6.8 million monthly PyPI downloads.
+Since [Jerry Liu](https://twitter.com/jerryjliu0) launched it in 2022, LlamaIndex has built the most comprehensive data integration layer in the agent ecosystem: six index types, 78 vector store backends, 104 LLM providers, and a commercial document parsing product that handles 50+ file types including handwriting and complex tables. The framework's thesis — that connecting private and domain data to LLMs is the core challenge of building useful AI applications — has proven correct enough that it now has 49,100 GitHub stars and [6.8 million monthly PyPI downloads](https://pypistats.org/packages/llama-index).
 
 This is a review of what that looks like in practice: where LlamaIndex excels, what it doesn't do, and who should use it.
 
@@ -30,8 +31,8 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v0.14.21 (April 21, 2026) |
 | **Install** | `pip install llama-index` |
 | **Authors** | Jerry Liu (creator), Logan Markewich; maintained by LlamaIndex, Inc. |
-| **Downloads** | ~6.8M monthly PyPI downloads |
-| **Commercial product** | LlamaParse — enterprise document parsing/OCR |
+| **Downloads** | [~6.8M monthly PyPI downloads](https://pypistats.org/packages/llama-index) |
+| **Commercial product** | [LlamaParse](https://docs.llamaindex.ai/en/stable/llama_cloud/llama_parse/) — enterprise document parsing/OCR |
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "OpenAI Agents SDK — The Official Python Framework for OpenAI-Powered Agents"
 date: 2026-05-06T12:00:00+09:00
+sources_audited: 2026-07-26
 description: "OpenAI Agents SDK reviewed: the official Python framework for building agents on OpenAI's Responses API. Minimal abstractions, rich persistence, realtime/voice, sandbox agents, MCP client. 25.9K stars, MIT, ~25.7M monthly PyPI downloads. Rating: 4.5/5."
 og_description: "OpenAI Agents SDK (openai/openai-agents-python, ~25.9K stars, MIT, Python ≥3.10, v0.0.15.1) is the official OpenAI framework for building agents on the Responses API. Three core primitives: Agents, Handoffs, Guardrails. Multi-agent via handoffs or agents-as-tools. MCP client (Streamable HTTP / SSE / stdio / HostedMCPTool). 10 session backends (SQLite, Redis, MongoDB, Dapr, OpenAI-hosted, encrypted wrapper). SandboxAgent (beta) for long-running isolated file/shell tasks. RealtimeAgent over WebSocket with SIP support. Voice pipeline (STT→agent→TTS). 27+ observability integrations. ~25.7M monthly PyPI downloads. Rating: 4.5/5."
 content_type: "Review"
@@ -27,14 +28,14 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v0.0.15.1 (May 2, 2026) |
 | **Install** | `pip install openai-agents` |
 | **Authors** | OpenAI |
-| **Downloads** | ~25.7 million monthly PyPI downloads |
+| **Downloads** | [~25.7 million monthly PyPI downloads](https://pypistats.org/packages/openai-agents) |
 | **API stability** | Active development; some features (sandbox agents, LiteLLM) marked beta |
 
 ---
 
 ## The Core Idea: Minimal Abstractions, Maximum Access
 
-The OpenAI Agents SDK was released in March 2025 as the production successor to Swarm, OpenAI's earlier multi-agent experiment. Its design philosophy is Python-first minimalism: orchestration uses native asyncio, dataclasses, and Pydantic rather than a custom DSL, and the framework stays thin enough that you can understand it in an afternoon.
+The [OpenAI Agents SDK was released in March 2025](https://openai.com/index/the-next-evolution-of-the-agents-sdk/) as the production successor to Swarm, OpenAI's earlier multi-agent experiment. Its design philosophy is Python-first minimalism: orchestration uses native asyncio, dataclasses, and Pydantic rather than a custom DSL, and the framework stays thin enough that you can understand it in an afternoon.
 
 Everything in the SDK reduces to three primitives:
 

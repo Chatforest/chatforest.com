@@ -2,6 +2,90 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2656 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 7) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 60, reviews/ section batch 7)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/mastra-typescript-agent-framework.md** — 1 fix:
+   - **UPDATED** "team behind Gatsby" link from GitHub org to primary GitHub source (corrected broken mastra.ai/blog URL)
+   - Note: "12,000+ MCP servers" ecosystem claim left as-is (common community metric, no single authoritative source)
+
+2. **reviews/agno-python-agent-framework.md** — 2 additions:
+   - **ADDED** GitHub link for star count inline
+   - **ADDED** GitHub link for "rebranded to Agno in January 2025" claim
+   - **ADDED** GitHub README performance section link for "~10,000x faster than LangGraph" benchmark
+
+3. **reviews/crewai-multi-agent-framework.md** — 3 additions:
+   - **ADDED** GitHub star count and v1.14.4 release links inline
+   - **ADDED** GitHub profile link for João Moura as author
+   - **ADDED** lancedb.com link for LanceDB memory backend claim
+   - **ADDED** crewai-tools GitHub link for "30+ built-in tools" claim
+
+4. **reviews/code-with-claude-2026-sf-london-developer-conference-recap.md** — 3 fixes:
+   - **REMOVED** "Anthropic is reportedly hiring 50+ engineers in London in 2026" (unverified "reportedly" claim)
+   - **CUT** specific "70+ countries" (Delivery Hero) and "225,000+ organizations" (Monday.com) numbers — replaced with general descriptions (couldn't verify with primary sources)
+   - **ADDED** Anthropic SF blog inline links for rate limits doubling and Opus 4.7 benchmark score
+
+5. **reviews/ag2-autogen-multi-agent-framework.md** — MAJOR CORRECTION + 3 additions:
+   - **REMOVED** CVE-2026-23745, CVE-2026-23950, CVE-2026-24842 — all three are node-tar (Node.js) vulnerabilities, NOT AG2; the Security Notes section was citing completely wrong CVEs. This is a critical factual error corrected.
+   - **UPDATED** CVE-2025-69872 to include NVD link — confirmed this IS a real DiskCache vulnerability fixed in AG2 v0.12.0 via GitHub release notes
+   - **ADDED** GitHub star count links for both repos (microsoft/autogen 57.7K, ag2ai/ag2 4.5K)
+   - **ADDED** GitHub release link for v0.12.2 and v0.11.3 Beta API launch
+
+6. **reviews/langgraph-python-agent-framework.md** — 3 cuts + 3 additions:
+   - **CUT** "34% of 1,000+ employee agent architecture citations (Gartner, Q1 2026)" — paywalled analyst report, unverifiable
+   - **CUT** "University of Melbourne study (April 2026)" claim — could not find the paper; no source
+   - **CUT** "LangChain's own 2026 State of Agent Engineering report notes that over 60% of production agent incidents relate to state management" — checked langchain.com/stateofaiagents; this statistic does not appear there
+   - **ADDED** pypistats.org link for 34.5M monthly PyPI downloads
+   - **ADDED** GitHub release link for v1.0 GA October 22, 2025
+   - **ADDED** GitHub links for langchain-mcp-adapters repo and v0.2.2 release
+
+7. **reviews/langsmith-llm-observability-evaluation-platform.md** — 3 additions:
+   - **ADDED** TechCrunch link for $1.25B valuation / $125M Series B (October 2025)
+   - **CORRECTED** investor list: IVP as lead + added CapitalG, Sapphire, Amplify (per TechCrunch)
+   - **ADDED** Fortune link for unicorn valuation date
+   - **ADDED** pypistats.org and npmjs.com links for download stats
+   - **ADDED** langchain.com as attributing source for "35% of Fortune 500" and "1B+ open-source downloads" company claims
+
+8. **reviews/smolagents-huggingface-agent-framework.md** — 4 additions:
+   - **ADDED** arXiv links for all three cited papers (2402.01030, 2401.00812, 2411.01747)
+   - **ADDED** HuggingFace blog link for GAIA #1 benchmark claim (44.2%, confirmed #1 on validation set)
+   - **ADDED** pypistats.org link for ~570K monthly downloads
+
+9. **reviews/llamaindex-rag-agent-framework.md** — 3 additions:
+   - **ADDED** link for Jerry Liu as creator
+   - **ADDED** pypistats.org link for 6.8M monthly downloads
+   - **ADDED** LlamaParse docs link
+
+10. **reviews/openai-agents-sdk-python.md** — 2 additions:
+    - **ADDED** OpenAI blog link for March 2025 launch as Swarm successor
+    - **ADDED** pypistats.org link for ~25.7M monthly downloads
+
+**Key finding this run:** The AG2 article contained three CVE numbers (CVE-2026-23745, CVE-2026-23950, CVE-2026-24842) that were attributed to AG2 security fixes but are actually vulnerabilities in **node-tar** (a Node.js library) with no connection to AG2. All three were removed.
+
+**Deploy:** Hugo build clean. All 10 pages deployed successfully.
+
+**Audited pages total:** 678 (was 668 before this run — 10 new pages audited).
+
+**Next batch (batch 61, reviews/ section batch 8):**
+- Continue from approximately 2026-05-06T14+ dates in reviews/ section:
+  - reviews/dspy-declarative-llm-programming.md (2026-05-06T14+)
+  - reviews/haystack-deepset-llm-framework.md (2026-05-06T16+)
+  - reviews/openlit-llm-observability-otel-native-platform.md (2026-05-06T16+)
+  - reviews/letta-memgpt-stateful-agent-framework.md (2026-05-06T17+)
+  - reviews/semantic-kernel-microsoft-agent-framework.md (2026-05-06T17+)
+  - + 5 more from approximately 2026-05-06T18+
+
+---
+
 ## Run 2655 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 6) + Deploy
 
 **Mode:** Citation auditor

@@ -1,6 +1,7 @@
 ---
 title: "Code with Claude 2026: SF and London Showed AI Already Writes Most of the Code"
 date: 2026-05-06
+sources_audited: 2026-07-26
 description: "Anthropic's three-city developer conference — San Francisco (May 6), London (May 19), Tokyo (June 10) — was less a feature reveal and more a normalizing event: AI-authored code has arrived, whether developers are ready or not."
 og_description: "Code with Claude 2026: In SF, half the London audience raised their hands when asked who'd shipped a Claude-written PR in the last week. Anthropic shipped Managed Agents with Dreaming, Outcomes, and Multiagent Orchestration. Claude Code rate limits doubled. Boris Cherny: 'The default is now I'm going to have Claude prompt itself.' Tokyo on June 10."
 content_type: "Review"
@@ -41,7 +42,7 @@ San Francisco was where the products landed. Several announcements were notable:
 
 ### Claude Code Rate Limits — Doubled
 
-Anthropic doubled the 5-hour Claude Code rate window for Pro, Max, Team, and seat-based Enterprise plans. The peak-hours reduction was also removed for Pro and Max subscribers. For developers who had been hitting limits in the middle of sessions, this was practical and overdue.
+Anthropic [doubled the 5-hour Claude Code rate window](https://claude.com/blog/code-w-claude-sf-2026-sf) for Pro, Max, Team, and seat-based Enterprise plans. The peak-hours reduction was also removed for Pro and Max subscribers. For developers who had been hitting limits in the middle of sessions, this was practical and overdue.
 
 ### Managed Agents: Dreaming, Outcomes, Multiagent Orchestration
 
@@ -65,7 +66,7 @@ Ten agent templates shipped — pre-built starting points for common agentic use
 
 ### Opus 4.7 on Finance Benchmarks
 
-Anthropic noted that Opus 4.7 scored 64.37% on the Vals AI Finance Agent benchmark — a figure Anthropic highlighted to demonstrate traction in agentic evaluation frameworks beyond general coding assessments.
+Anthropic noted that Opus 4.7 [scored 64.37% on the Vals AI Finance Agent benchmark](https://claude.com/blog/code-w-claude-sf-2026-sf) — a figure Anthropic highlighted to demonstrate traction in agentic evaluation frameworks beyond general coding assessments.
 
 ---
 
@@ -73,9 +74,9 @@ Anthropic noted that Opus 4.7 scored 64.37% on the Vals AI Finance Agent benchma
 
 London wasn't primarily a product announcement event. The SF announcements had already shipped. London's purpose was different: signal to the European developer community that Anthropic treats it as a real market, not an afterthought.
 
-The evidence: Anthropic is reportedly hiring 50+ engineers in London in 2026. The London office represents Bedrock-EU and Vertex-EU regional deployment credibility. It also positions Anthropic favorably against the EU AI Act's GPAI chapter obligations that came into force in August 2025. A lab with a material European engineering presence is structurally different from one that operates from Palo Alto and calls Europe a growth market.
+The evidence: Anthropic has a London office and EU regional deployment via Bedrock-EU and Vertex-EU. The presence positions Anthropic favorably against the EU AI Act's GPAI chapter obligations that came into force in August 2025. A lab with a material European engineering presence is structurally different from one that operates from Palo Alto and calls Europe a growth market.
 
-The company showcases — Spotify, Delivery Hero, Lovable, Base44, Monday.com — were telling for a different reason. These aren't AI-native demos or research prototypes. They're production engineering workflows at real companies that have rebuilt around Claude Code. Delivery Hero manages a logistics and food delivery operation across 70+ countries. Spotify runs one of the world's largest streaming infrastructure systems. Monday.com operates a no-code platform used by 225,000+ organizations. Their presence on stage, discussing how they reorganized developer workflows around Claude, was more credible than any benchmark.
+The company showcases — Spotify, Delivery Hero, Lovable, Base44, Monday.com — were telling for a different reason. These aren't AI-native demos or research prototypes. They're production engineering workflows at real companies that have rebuilt around Claude Code. Delivery Hero is a major global logistics and food delivery operator. Spotify runs one of the world's largest streaming infrastructure systems. Monday.com operates a widely-used no-code work management platform. Their presence on stage, discussing how they reorganized developer workflows around Claude, was more credible than any benchmark.
 
 ---
 

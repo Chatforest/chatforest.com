@@ -1,6 +1,7 @@
 ---
 title: "Smolagents — HuggingFace's Minimal Code-First Agent Framework"
 date: 2026-05-06T10:00:00+09:00
+sources_audited: 2026-07-26
 description: "Smolagents reviewed: HuggingFace's minimal, code-first agent framework. CodeAgent writes and runs Python instead of calling JSON tools. 27.1K stars, Apache-2.0, MCP client support, GAIA benchmark #1. Rating: 4/5."
 og_description: "Smolagents (huggingface/smolagents, 27.1K stars, Apache-2.0, Python, v1.24.0) is HuggingFace's minimal agent framework built around a distinctive insight: agents perform better when they express actions as executable Python code rather than JSON tool calls. CodeAgent generates and runs code snippets; ToolCallingAgent provides conventional JSON-based tool calling for comparison. Hierarchical multi-agent via managed_agents. MCP client via ToolCollection.from_mcp() (stdio/SSE/Streamable HTTP). No MCP server support. In-process memory only — no persistence. ~570K monthly PyPI downloads. GAIA benchmark #1 (44.2%). Rating: 4/5."
 content_type: "Review"
@@ -27,7 +28,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Version** | v1.24.0 (January 2026); releases frequently |
 | **Install** | `pip install smolagents` |
 | **Authors** | Aymeric Roucher, Merve Noyan, Thomas Wolf (HuggingFace) |
-| **Downloads** | ~570,000 monthly PyPI downloads |
+| **Downloads** | [~570,000 monthly PyPI downloads](https://pypistats.org/packages/smolagents) |
 | **API stability** | Experimental — subject to change |
 
 ---
@@ -39,11 +40,11 @@ The conventional agent loop works like this: the LLM receives a system prompt wi
 This is the `CodeAgent` — smolagents' default and flagship agent type. Instead of calling a single tool per step via structured JSON, the agent can write a small Python program: call two tools and combine their results, iterate over a list, define a helper function, handle a conditional. Anything you can express in Python, the agent can do in a single step.
 
 Three papers back this approach:
-- *Executable Code Actions Elicit Better LLM Agents* (arXiv 2402.01030)
-- *If LLM Is the Wizard, Then Code Is the Wand* (arXiv 2401.00812)
-- *DynaSaur: Large Language Agents Beyond Predefined Actions* (arXiv 2411.01747)
+- [*Executable Code Actions Elicit Better LLM Agents*](https://arxiv.org/abs/2402.01030) (arXiv 2402.01030)
+- [*If LLM Is the Wizard, Then Code Is the Wand*](https://arxiv.org/abs/2401.00812) (arXiv 2401.00812)
+- [*DynaSaur: Large Language Agents Beyond Predefined Actions*](https://arxiv.org/abs/2411.01747) (arXiv 2411.01747)
 
-The empirical result: a smolagents multi-agent system reached **#1 on the GAIA benchmark** at 44.2% — four percentage points ahead of Microsoft's AutoGen at 40%.
+The empirical result: a smolagents multi-agent system [reached **#1 on the GAIA benchmark** at 44.2%](https://huggingface.co/blog/beating-gaia) — four percentage points ahead of Microsoft's AutoGen at 40%.
 
 Smolagents also includes `ToolCallingAgent` for conventional JSON-based tool calling. It's provided for comparison, compatibility (some models handle JSON better), and dispatcher patterns — but it's not the main character.
 
