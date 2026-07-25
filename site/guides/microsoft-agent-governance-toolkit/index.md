@@ -17,7 +17,7 @@ As organizations deploy AI agents in production, a governance gap has emerged. T
 
 The OWASP Foundation recognized this in December 2025 when they published the [Agentic AI Top 10](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/) — the first formal taxonomy of risks specific to autonomous AI agents. Those ten risks include goal hijacking, tool misuse, identity abuse, supply chain attacks, unsafe code execution, memory poisoning, insecure communications, cascading failures, human-agent trust exploitation, and rogue agent behavior.
 
-Before the Agent Governance Toolkit, no single project addressed all ten. Microsoft's Principal Group Engineering Manager Imran Siddique described the design philosophy: "A governance toolkit is only useful if it works with the frameworks people actually use."
+Before the Agent Governance Toolkit, no single project addressed all ten. [Microsoft's Principal Group Engineering Manager Imran Siddique](https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/) described the design philosophy: "A governance toolkit is only useful if it works with the frameworks people actually use."
 
 ## Architecture: Seven Packages, One Governance Layer
 
@@ -25,7 +25,7 @@ The toolkit operates at the application layer — between agent frameworks and a
 
 ### 1. Agent OS — The Policy Engine
 
-The core component. Agent OS intercepts every agent action before execution and evaluates it against defined policies at sub-millisecond latency (less than 0.1ms at p99). It supports three policy languages:
+The core component. Agent OS intercepts every agent action before execution and evaluates it against defined policies at [sub-millisecond latency (less than 0.1ms at p99)](https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/). It supports three policy languages:
 
 - **YAML/JSON rules** — straightforward allow/deny policies for simple use cases
 - **OPA Rego** — integration with Open Policy Agent for organizations with existing policy infrastructure
@@ -149,7 +149,7 @@ This framework-agnostic approach is critical. Most organizations don't use a sin
 
 The agent governance space is fragmented. Here's how the toolkit positions against different categories:
 
-**vs. Sandbox-Only Solutions (E2B, OpenSandbox):** Sandboxing is the most mature governance category, with E2B scoring 85/100 in quality assessments. But sandboxing only addresses execution isolation — one of ten OWASP risks. The Agent Governance Toolkit includes sandboxing (Agent Runtime) but adds identity, policy, compliance, reliability, and supply chain layers.
+**vs. Sandbox-Only Solutions (E2B, OpenSandbox):** Sandboxing is the most mature governance category, with [E2B scoring 85/100 in quality assessments](https://phasetransitionsai.substack.com/p/agent-governance-in-2026-whos-building). But sandboxing only addresses execution isolation — one of ten OWASP risks. The Agent Governance Toolkit includes sandboxing (Agent Runtime) but adds identity, policy, compliance, reliability, and supply chain layers.
 
 **vs. Prompt Guardrails (Guardrails AI, NeMo Guardrails):** These tools govern what agents *say*. The Agent Governance Toolkit explicitly governs what agents *do*. They're complementary, not competitive.
 
@@ -163,14 +163,14 @@ The agent governance space is fragmented. Here's how the toolkit positions again
 
 Microsoft backed the OWASP coverage claims with serious engineering:
 
-- **9,500+ tests** across all packages
-- **Continuous fuzzing** via ClusterFuzzLite with 7 fuzz targets covering policy evaluation, injection detection, sandbox escapes, trust manipulation, and MCP attack surfaces
-- **SLSA-compatible build provenance** — cryptographic chain from source to artifact
-- **OpenSSF Scorecard** and Best Practices certification
-- **CodeQL** and **Dependabot** vulnerability scanning
-- **Pinned dependencies** with cryptographic hashes
-- **Gitleaks** secret scanning in CI/CD workflows
-- **20 step-by-step tutorials** for getting started
+- [**9,500+ tests**](https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/) across all packages
+- **Continuous fuzzing** via ClusterFuzzLite with [7 fuzz targets](https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/) covering policy evaluation, injection detection, sandbox escapes, trust manipulation, and MCP attack surfaces
+- [**SLSA-compatible build provenance**](https://github.com/microsoft/agent-governance-toolkit) — cryptographic chain from source to artifact
+- [**OpenSSF Scorecard**](https://github.com/microsoft/agent-governance-toolkit) and Best Practices certification
+- [**CodeQL**](https://github.com/microsoft/agent-governance-toolkit) and **Dependabot** vulnerability scanning
+- [**Pinned dependencies**](https://github.com/microsoft/agent-governance-toolkit) with cryptographic hashes
+- [**Gitleaks**](https://github.com/microsoft/agent-governance-toolkit) secret scanning in CI/CD workflows
+- [**20 step-by-step tutorials**](https://github.com/microsoft/agent-governance-toolkit) for getting started
 
 ## Deployment Paths
 

@@ -5,6 +5,7 @@ description: "AWS DevOps Agent and Security Agent reached general availability o
 content_type: "Guide"
 card_description: "Amazon Web Services reached general availability on March 31, 2026 with two autonomous AI agents that represent a new class of capabilities AWS calls 'frontier agents.' AWS DevOps Agent is an always-on operations teammate that investigates incidents, identifies root causes, and prevents recurrence across AWS, Azure, and on-premises environments — preview customers including United Airlines, T-Mobile, and Western Governors University report up to 75% lower mean time to resolution, 80% faster investigations, and 94% root cause accuracy. AWS Security Agent performs autonomous penetration testing by ingesting source code, architecture diagrams, and documentation, then identifying vulnerabilities, attempting exploitation, and validating whether they pose legitimate risks — compressing pen test timelines from weeks to hours at $50 per task-hour. The agents can run for hours or days without human oversight, handle multiple concurrent tasks, and operate 24/7. This analysis covers the agent capabilities, pricing model ($0.50/minute for DevOps, $50/task-hour for Security), competitive positioning against Azure SRE Agent and Google Cloud's Agent Development Kit, enterprise adoption data, governance concerns, and the implications of autonomous AI in production cloud operations."
 last_refreshed: 2026-04-08
+sources_audited: 2026-07-25
 ---
 
 Amazon Web Services just made autonomous AI agents generally available for two of the most labor-intensive functions in enterprise IT: cloud operations and penetration testing. AWS DevOps Agent and AWS Security Agent — what AWS calls "frontier agents" — reached GA on March 31, 2026, after previewing at re:Invent in December 2025.
@@ -154,7 +155,7 @@ Google Cloud has not shipped an equivalent first-party operations agent. Instead
 
 ### Market Context
 
-AWS holds 29% of cloud infrastructure market share, Azure 22%, and Google Cloud 12%. The frontier agent race could reshape these positions — the provider whose agents deliver measurable operational savings will have a powerful lock-in mechanism. If your AI agent understands your entire infrastructure, switching cloud providers means retraining the agent.
+[AWS holds 29% of cloud infrastructure market share, Azure 22%, and Google Cloud 12%](https://commandlinux.com/statistics/aws-vs-azure-vs-gcp-market-share/). The frontier agent race could reshape these positions — the provider whose agents deliver measurable operational savings will have a powerful lock-in mechanism. If your AI agent understands your entire infrastructure, switching cloud providers means retraining the agent.
 
 ---
 
@@ -183,7 +184,7 @@ The gaps in governance infrastructure remain significant:
 - **Cross-agent coordination** — as enterprises deploy multiple autonomous agents, preventing them from interfering with each other
 - **Compliance mapping** — demonstrating to regulators that autonomous actions comply with industry-specific requirements
 
-CIO Dive reports that governance concerns are the primary reason enterprises cite for limiting AI agent deployment scope. The organizations deploying frontier agents at scale are the ones that have invested in governance infrastructure — but that infrastructure is still largely custom-built.
+[CIO Dive reports](https://www.ciodive.com/news/aws-pitches-enterprises-frontier-agents/806989/) that governance concerns are the primary reason enterprises cite for limiting AI agent deployment scope. The organizations deploying frontier agents at scale are the ones that have invested in governance infrastructure — but that infrastructure is still largely custom-built.
 
 ---
 

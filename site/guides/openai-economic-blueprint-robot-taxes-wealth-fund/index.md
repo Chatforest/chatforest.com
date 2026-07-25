@@ -31,7 +31,7 @@ The escalation in tone from 2025 to 2026 is striking. OpenAI is now explicitly w
 
 The core economic argument: if AI displaces enough workers, the wage-and-payroll tax revenue that funds Social Security, Medicaid, and SNAP will collapse. The money has to come from somewhere.
 
-OpenAI proposes shifting the tax base from payroll toward capital gains and corporate income. The logic is straightforward — if capital replaces labor, tax the capital. This echoes Bill Gates's 2017 "robot tax" proposal, but with a critical difference: Gates was an observer. OpenAI is the company building the technology that would trigger the tax.
+OpenAI proposes shifting the tax base from payroll toward capital gains and corporate income. The logic is straightforward — if capital replaces labor, tax the capital. This echoes [Bill Gates's 2017 "robot tax" proposal](https://qz.com/911968/bill-gates-the-robot-that-takes-your-job-should-pay-taxes), but with a critical difference: Gates was an observer. OpenAI is the company building the technology that would trigger the tax.
 
 The document advocates for:
 
@@ -53,7 +53,7 @@ The fund would:
 - Pay returns directly to citizens
 - Be nationally managed (not privately operated)
 
-This is structurally similar to Norway's Government Pension Fund or Alaska's Permanent Fund, but explicitly tied to AI-generated wealth. The idea isn't new — Sam Altman explored a version of this in his 2021 "Moore's Law for Everything" essay, which proposed an "American Equity Fund."
+This is structurally similar to Norway's Government Pension Fund or Alaska's Permanent Fund, but explicitly tied to AI-generated wealth. The idea isn't new — Sam Altman explored a version of this in his 2021 ["Moore's Law for Everything"](https://moores.samaltman.com/) essay, which proposed an "American Equity Fund."
 
 What's new is that OpenAI is now a $300+ billion company offering to help seed the fund. The question is how much "seeded in part" means in practice.
 
@@ -106,11 +106,11 @@ The timing of this document tells a story that the document itself doesn't.
 
 ### The Financial Picture
 
-- **$122 billion funding round** closed March 31, 2026 — led by Amazon ($50B), Nvidia ($30B), and SoftBank ($30B)
-- **$25 billion annualized revenue** as of February 2026, up from $6 billion at end of 2024
-- **$14 billion projected loss** in 2026, with annual cash burn expected to rise to $57 billion by 2027
-- **$1 trillion IPO** reportedly being discussed for Q4 2026, though CFO Sarah Friar has raised concerns about the pace
-- **Profitability not expected until 2029 or 2030**
+- [**$122 billion funding round**](/guides/openai-122-billion-funding-852-billion-valuation/) closed March 31, 2026 — led by Amazon ($50B), Nvidia ($30B), and SoftBank ($30B)
+- [**$25 billion annualized revenue**](https://www.axios.com/2026/04/06/behind-the-curtain-sams-superintelligence-new-deal) as of February 2026, up from $6 billion at end of 2024
+- [**$14 billion projected loss**](https://winbuzzer.com/2026/04/06/openai-ceo-cfo-split-ipo-timing-14b-loss-forecast-xcxwbn/) in 2026, with annual [cash burn expected to rise to $57 billion by 2027](https://www.rdworldonline.com/facing-14b-losses-in-2026-openai-is-now-seeking-100b-in-funding-but-can-it-ever-turn-a-profit/)
+- [**$1 trillion IPO**](https://winbuzzer.com/2026/04/06/openai-ceo-cfo-split-ipo-timing-14b-loss-forecast-xcxwbn/) reportedly being discussed for Q4 2026, though [CFO Sarah Friar has raised concerns](https://winbuzzer.com/2026/04/06/openai-ceo-cfo-split-ipo-timing-14b-loss-forecast-xcxwbn/) about the pace
+- [**Profitability not expected until 2029 or 2030**](https://www.rdworldonline.com/facing-14b-losses-in-2026-openai-is-now-seeking-100b-in-funding-but-can-it-ever-turn-a-profit/)
 
 ### The Regulatory Environment
 
@@ -130,7 +130,7 @@ OpenAI's [six acquisitions in Q1 2026](/guides/openai-acquisition-spree-2026-dev
 
 Fortune characterized expert reactions as accusing OpenAI of "regulatory nihilism" — making grand proposals that sound responsible while ensuring the actual regulatory environment remains permissive enough for the company to keep building.
 
-Anton Leicht, a visiting scholar at the Carnegie Endowment's technology and international affairs team, argued that a more credible approach would be for OpenAI to redirect its political funding and lobbying to actually advance these policies, rather than publishing a white paper.
+[Anton Leicht, a visiting scholar at the Carnegie Endowment's technology and international affairs team](https://fortune.com/2026/04/06/sam-altman-says-ai-superintelligence-is-so-big-that-we-need-a-new-deal-critics-say-openais-policy-ideas-are-a-cover-for-regulatory-nihilism/), argued that a more credible approach would be for OpenAI to redirect its political funding and lobbying to actually advance these policies, rather than publishing a white paper.
 
 ### "None of This Is New"
 

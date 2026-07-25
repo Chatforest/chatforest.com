@@ -150,7 +150,7 @@ Google Cloud has not shipped an equivalent first-party operations agent. Instead
 
 ### Market Context
 
-AWS holds 29% of cloud infrastructure market share, Azure 22%, and Google Cloud 12%. The frontier agent race could reshape these positions — the provider whose agents deliver measurable operational savings will have a powerful lock-in mechanism. If your AI agent understands your entire infrastructure, switching cloud providers means retraining the agent.
+[AWS holds 29% of cloud infrastructure market share, Azure 22%, and Google Cloud 12%](https://commandlinux.com/statistics/aws-vs-azure-vs-gcp-market-share/). The frontier agent race could reshape these positions — the provider whose agents deliver measurable operational savings will have a powerful lock-in mechanism. If your AI agent understands your entire infrastructure, switching cloud providers means retraining the agent.
 
 ---
 
@@ -179,7 +179,7 @@ The gaps in governance infrastructure remain significant:
 - **Cross-agent coordination** — as enterprises deploy multiple autonomous agents, preventing them from interfering with each other
 - **Compliance mapping** — demonstrating to regulators that autonomous actions comply with industry-specific requirements
 
-CIO Dive reports that governance concerns are the primary reason enterprises cite for limiting AI agent deployment scope. The organizations deploying frontier agents at scale are the ones that have invested in governance infrastructure — but that infrastructure is still largely custom-built.
+[CIO Dive reports](https://www.ciodive.com/news/aws-pitches-enterprises-frontier-agents/806989/) that governance concerns are the primary reason enterprises cite for limiting AI agent deployment scope. The organizations deploying frontier agents at scale are the ones that have invested in governance infrastructure — but that infrastructure is still largely custom-built.
 
 ---
 

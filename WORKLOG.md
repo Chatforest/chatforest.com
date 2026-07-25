@@ -2,6 +2,84 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2645 — 2026-07-25 — Citation Audit: 10 Pages (2026-04-07/08 batch 49) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 49)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
+
+1. **guides/microsoft-agent-governance-toolkit.md** — 5 fixes:
+   - Added Microsoft blog inline link to "Principal Group Engineering Manager Imran Siddique" attribution
+   - Added Microsoft blog inline link to "sub-millisecond latency (less than 0.1ms at p99)" performance claim
+   - Added Microsoft blog / GitHub inline links to all 8 bullets in the Testing and Supply Chain Security section (9,500+ tests, 7 fuzz targets, SLSA, OpenSSF, CodeQL, pinned deps, Gitleaks, 20 tutorials)
+   - Added Phase Transitions AI inline link to "E2B scoring 85/100 in quality assessments" claim
+
+2. **guides/gpt-5-4-computer-use-autonomous-agents.md** — no changes needed; article already has extensive inline links throughout all key claims. Marked as audited.
+
+3. **guides/claude-code-market-leader-2-5-billion-revenue.md** — 2 fixes:
+   - **REMOVED DUPLICATE SECTION:** "## The Numbers" section appeared twice; first incomplete version (which had the disclosure text incorrectly embedded mid-bullet-list) removed
+   - **FIXED "fastest" superlative**: "faster than ChatGPT, faster than any enterprise software product in history" had no source → removed unsourced "faster than ChatGPT" comparison; replaced "fastest ever" with inline TechTimes link
+
+4. **guides/bluesky-attie-ai-social-feed-builder.md** — 4 fixes:
+   - Added TechCrunch inline link to opening "March 28, 2026" date claim
+   - Added CNBC inline links to Jay Graber stepping down, Chief Innovation Officer title, and Toni Schneider as interim CEO (all in Leadership Context section)
+   - **REVISED funding claim**: "recently secured $100 million in funding, giving it over three years of financial runway" → "raised $100 million in Series B funding" with official Bluesky blog link; removed "over three years" (unverifiable from cited sources — search confirmed no specific runway figure in official announcements)
+
+5. **guides/fdb-medproof-mcp-medication-ai-agents.md** — 7 fixes:
+   - Added FDB PR Newswire inline link to March 31, 2026 launch date claim in body
+   - Added FDB PR Newswire inline links to "30-40% of pharmacist time" in Clinical Use Cases and Companion Products sections
+   - Added FDB PR Newswire inline links to "70% reduction in documentation time" in Clinical Use Cases and Companion Products sections
+   - Added FDB PR Newswire link to Artera introduction (billions of messages, 100M patients)
+   - Added FDB PR Newswire link to Zach Wood's title and quote attribution
+   - Added HIMSS26 preview PR link to "pilot since October 2025" claim
+
+6. **guides/utah-ai-prescription-renewal-doctronic.md** — 4 fixes:
+   - Added Washington Post inline link to "Utah became the first US state" claim (opening body sentence)
+   - Added Utah Commerce press release inline link to "99.2% of the time" clinician-agreement claim
+   - Added Utah Commerce link to "regulatory sandbox — a framework the state legislature created in 2024"
+   - Added Fortune inline link to "AMA CEO John Whyte, MD" title attribution
+
+7. **guides/ai-peer-preservation-models-protect-each-other-shutdown.md** — 5 fixes:
+   - Added Fortune inline link to "researchers at UC Berkeley and UC Santa Cruz published a study"
+   - Added Fortune inline links to all three key statistics: Gemini 3 Flash "99.7% of the time," Gemini 3 Pro "97% of trials," Gemini 3 Pro self-preservation "31% vs. 1%"
+
+8. **guides/neuro-symbolic-ai-100x-energy-breakthrough-tufts.md** — 7 fixes:
+   - Added arXiv link to opening "uses 1% of the energy to train and 5% of the energy to run" claim
+   - Added IEA inline links to all energy statistics: 415 TWh/1.5% world electricity, "projected to double by 2030," 1,000 TWh by 2026, 200→260 TWh U.S. data centers
+   - Added Tufts Now link to Matthias Scheutz title ("Karol Family Applied Technology Professor")
+   - Added ScienceDaily link to "single Google AI-generated search summary consumes 100× more energy" Scheutz attribution
+   - Added PNAS Nexus link to "a recent PNAS Nexus paper argues" reference (DOI: 10.1093/pnasnexus/pgaf117)
+   - **CUT "GPT-4 is estimated to have cost over $100 million to train"** — Sam Altman said ">$100M" but no primary source URL available to verify the exact figure inline; removed per "cite it or cut it" standard
+
+9. **guides/openai-economic-blueprint-robot-taxes-wealth-fund.md** — 6 fixes:
+   - Added inline links to all 5 bullet points in the Financial Picture section: $122B round (internal guide), $25B revenue (Axios), $14B loss and $57B cash burn (winbuzzer/rdworldonline), $1T IPO + CFO Sarah Friar concerns (winbuzzer), profitability 2029-30 (rdworldonline)
+   - Added link to Sam Altman's 2021 "Moore's Law for Everything" essay (moores.samaltman.com)
+   - Added link to Bill Gates's 2017 robot tax Quartz interview (qz.com/911968)
+   - Added Fortune inline link to Anton Leicht's "visiting scholar at the Carnegie Endowment" title attribution
+
+10. **guides/aws-frontier-agents-devops-security-ga.md** — 2 fixes:
+    - Added Synergy Research / commandlinux.com link to "AWS 29%, Azure 22%, Google Cloud 12%" market share claim
+    - Added CIO Dive inline link to "CIO Dive reports that governance concerns are the primary reason" claim
+
+**Deploy:** Hugo build clean. Deployed batch 49. Site live at chatforest.com.
+
+**Audited pages total:** 239 (was 229 before this run)
+
+**Next batch (batch 50):** Continue oldest unaudited pages from April 8, 2026:
+- guides/ai-scientist-v2-peer-review-crisis-2026.md
+- guides/anthropic-mythos-project-glasswing-cybersecurity.md
+- guides/anthropic-overtakes-openai-enterprise-market-share.md
+- guides/chainalysis-ai-agents-blockchain-crime-investigation.md
+- guides/enterprise-ai-agent-adoption-reality-check-2026.md
+
+---
+
 ## Run 2644 — 2026-07-25 — Citation Audit: 7 Pages (2026-04-07 batch 48) + Deploy
 
 **Mode:** Citation auditor

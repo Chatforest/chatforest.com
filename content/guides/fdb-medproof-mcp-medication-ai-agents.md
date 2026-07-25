@@ -5,9 +5,10 @@ description: "First Databank launched FDB MedProof MCP on March 31, 2026 — the
 content_type: "Guide"
 card_description: "On March 31, 2026, First Databank (FDB) launched MedProof MCP — the first Model Context Protocol server built specifically for AI agent-driven medication decisions. While MCP adoption has exploded across developer tools, cloud platforms, and enterprise data systems, healthcare has been notably absent. MedProof MCP changes that by giving AI agents standardized access to FDB's clinical-grade drug knowledge databases — the same databases already embedded in the majority of U.S. hospitals, pharmacies, and physician practices. Instead of letting LLMs extrapolate drug interactions from training data, agents query verified medication intelligence in real time: dosing, contraindications, formulary status, and patient-specific clinical context. Early adopter Artera, which handles billions of patient messages annually across Epic, athenahealth, eClinicalWorks, MEDITECH, and Oracle Health/Cerner, has adopted MedProof MCP as its foundation for agentic medication workflows. FDB also announced two companion products: Script Agent (ambient-listening prescription automation targeting 70% documentation reduction) and VerifyAssist (inpatient pharmacy verification addressing 30-40% of pharmacist time). This guide covers the architecture, clinical use cases, safety implications, the companion product ecosystem, and what MCP adoption in healthcare signals for the broader protocol ecosystem."
 last_refreshed: 2026-04-07
+sources_audited: 2026-07-25
 ---
 
-On March 31, 2026, First Databank launched FDB MedProof MCP — the first Model Context Protocol server built specifically for AI-driven medication decisions. It's a milestone that matters beyond healthcare: MCP has reached the domain where getting an answer wrong can kill someone.
+On March 31, 2026, First Databank [launched FDB MedProof MCP](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html) — the first Model Context Protocol server built specifically for AI-driven medication decisions. It's a milestone that matters beyond healthcare: MCP has reached the domain where getting an answer wrong can kill someone.
 
 While MCP servers have proliferated across developer tools, cloud infrastructure, and enterprise data platforms, healthcare has been conspicuously absent. The reason is obvious — clinical medication decisions demand a level of accuracy that LLM training data alone cannot guarantee. MedProof MCP addresses this by giving AI agents standardized, real-time access to FDB's validated drug knowledge databases, the same databases already embedded in the majority of U.S. hospitals, pharmacies, and physician practices.
 
@@ -84,11 +85,11 @@ MedProof MCP enables four primary workflow categories:
 
 ### 1. Prescription Automation
 
-AI agents using ambient listening technology capture spoken patient visit information and auto-queue structured prescription orders into EHR systems. The physician reviews and approves — the agent handles the documentation burden. FDB's companion product Script Agent targets a **70% reduction in documentation time** for ambulatory prescriptions.
+AI agents using ambient listening technology capture spoken patient visit information and auto-queue structured prescription orders into EHR systems. The physician reviews and approves — the agent handles the documentation burden. FDB's companion product Script Agent targets a [**70% reduction in documentation time**](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html) for ambulatory prescriptions.
 
 ### 2. Pharmacy Order Verification
 
-Hospital pharmacists spend an estimated **30-40% of their time** verifying medication orders — checking drug interactions, dosing appropriateness, and patient-specific contraindications. AI agents connected to MedProof MCP can automatically surface verification criteria, match them against patient clinical factors (labs, age, renal function), and flag only the cases requiring human pharmacist judgment.
+Hospital pharmacists spend an estimated [**30-40% of their time**](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html) verifying medication orders — checking drug interactions, dosing appropriateness, and patient-specific contraindications. AI agents connected to MedProof MCP can automatically surface verification criteria, match them against patient clinical factors (labs, age, renal function), and flag only the cases requiring human pharmacist judgment.
 
 ### 3. Medication Reconciliation
 
@@ -113,7 +114,7 @@ An AI-enabled prescription automation agent for ambulatory (outpatient) settings
 - Queues orders into the EHR for physician review
 - Available via MCP or traditional API integration
 - Currently in select EHR vendor pilots with broader availability planned
-- **Target metric:** 70% reduction in documentation time
+- **Target metric:** [70% reduction in documentation time](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html)
 
 ### FDB VerifyAssist
 
@@ -123,7 +124,7 @@ An inpatient pharmacy verification assistant:
 - Matches order data against patient clinical factors (labs, age, conditions)
 - Reduces chart navigation and cognitive load for pharmacists
 - Supports regulatory compliance requirements
-- **Target metric:** Addresses the 30-40% of pharmacist time currently spent on order verification
+- **Target metric:** Addresses the [30-40% of pharmacist time](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html) currently spent on order verification
 
 Both products connect to FDB's drug knowledge through MedProof MCP, demonstrating the value of a standardized foundation layer — build the MCP server once, then build specialized agents on top.
 
@@ -131,9 +132,9 @@ Both products connect to FDB's drug knowledge through MedProof MCP, demonstratin
 
 ## Early Adoption: Artera
 
-The most significant early adopter is Artera, a patient communications platform that processes **billions of messages annually** across five major EHR systems, serving **more than 100 million patients**.
+The most significant early adopter is [Artera](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html), a patient communications platform that processes **billions of messages annually** across five major EHR systems, serving **more than 100 million patients**.
 
-Artera adopted MedProof MCP as its foundation for agentic medication workflows. Zach Wood, Artera's Chief Product and Strategy Officer, stated: "Standardized access to trusted, continuously maintained medication intelligence gives our team the ability to move quickly."
+Artera adopted MedProof MCP as its foundation for agentic medication workflows. [Zach Wood, Artera's Chief Product and Strategy Officer](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html), stated: "Standardized access to trusted, continuously maintained medication intelligence gives our team the ability to move quickly."
 
 The Artera adoption matters because it validates MedProof MCP at genuine production scale — not a pilot with a single hospital, but infrastructure serving a substantial fraction of U.S. patient communications.
 
@@ -173,7 +174,7 @@ FDB claims MedProof MCP is "the first MCP server built specifically for AI agent
 
 ### Pilot Since October 2025
 
-MedProof MCP has been in pilot since October 2025, but the March 31, 2026 announcement marks general availability. The gap between pilot and GA suggests meaningful iteration, but also means production deployment data beyond the Artera case study is limited.
+MedProof MCP has been in [pilot since October 2025](https://www.prnewswire.com/news-releases/fdb-advances-safe-agentic-integrations-for-workflow-automation-with-mcp-server-and-new-intelligent-solutions-ahead-of-himss26-302700674.html), but the March 31, 2026 announcement marks general availability. The gap between pilot and GA suggests meaningful iteration, but also means production deployment data beyond the Artera case study is limited.
 
 ### EHR Integration Is Through Partners
 

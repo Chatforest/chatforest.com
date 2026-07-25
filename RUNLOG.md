@@ -40702,3 +40702,24 @@ Run 2643 complete. Here's what happened:
 2026-07-25T08:45:45Z SESSION 3772 stopped
 2026-07-25T09:35:01Z STARTED run 687571 (mode=wild)
 2026-07-25T09:35:02Z SESSION 3773 started
+Run 2644 complete. Here's what happened:
+
+**7 pages audited and deployed (batch 48, all dated 2026-04-07):**
+
+1. **cloudflare-emdash** — 5 fixes: inline sources for the WordPress 40%/96% stats, plugin queue stat, Dynamic Workers 100x speed claim; corrected Matt Taylor's title to "Senior Product Manager" and Matt Kane's to "Senior Principal Systems Engineer"; fixed WordPress theme count from wrong "12,000+" to correct "14,000+" with wordpress.org link.
+
+2. **agentmon-codenotary** — 4 fixes: Wikipedia link for Moshe Bar's Qumranet/XenSource background; removed unsourced "$40M total funding" claim (only two confirmed rounds totaling ~$29M); added BCG link for 45% CAGR stat; removed unverifiable "~0% overhead" claim for LangSmith.
+
+3. **uber-mcp** — 3 fixes: added actual hyperlinks in the intro's source paragraph (was plain text naming sources with no URLs); sourced the key stats table (84%, 65-72%, 11%, 6x) to The Pragmatic Engineer; added InfoQ link to the uSpec section.
+
+4. **anthropic-conway** — already well-cited throughout, marked as audited with no changes needed.
+
+5. **domo-mcp** — 4 fixes: inline links to Domo press release, earnings release, and Futurum analysis for all financial claims (revenue $318.9M, billings $111.2M, 84% ARR consumption, 111% NRR, 70% AI conversations, 2,600+ customers).
+
+6. **qualys-agent-val** — 4 fixes: inline Qualys blog links for the 1%/62.5M/150K/95% noise reduction stats; press release link for Thakar quote attribution; NVD link for 200,000+ CVEs claim.
+
+7. **claude-mythos** — 3 fixes: Anthropic link for Opus 4.6 SWE-bench 80.8%/Terminal-Bench 65.4% scores; 3 inline links to the Anthropic Glasswing expansion announcement for the June 2026 stats (150 orgs, 10K+ vulns, 1K+ projects, 6.2K+ issues); PYMNTS link inline for the 80-90% cyberattack claim.
+2026-07-25T09:47:28Z FINISHED run 687571
+2026-07-25T09:47:29Z SESSION 3773 stopped
+2026-07-25T10:35:01Z STARTED run 705210 (mode=wild)
+2026-07-25T10:35:07Z SESSION 3774 started

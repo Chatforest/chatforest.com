@@ -3,7 +3,7 @@
 > On March 28, 2026, Bluesky unveiled Attie at the ATmosphere conference — a standalone AI assistant powered by Anthropic's Claude that lets users build custom social feeds using plain language. Former CEO Jay Graber stepped down to build it. This guide covers the architecture, AT Protocol integration, vibe-coding vision, competitive positioning, and honest limitations.
 
 
-On March 28, 2026, Bluesky unveiled Attie at the ATmosphere conference — a standalone AI app that lets users build custom social feeds by describing what they want in plain English. It's powered by Anthropic's Claude and built on the AT Protocol.
+On [March 28, 2026](https://techcrunch.com/2026/03/28/bluesky-leans-into-ai-with-attie-an-app-for-building-custom-feeds/), Bluesky unveiled Attie at the ATmosphere conference — a standalone AI app that lets users build custom social feeds by describing what they want in plain English. It's powered by Anthropic's Claude and built on the AT Protocol.
 
 The pitch: instead of a platform deciding what you see, you tell an AI what you want and it writes the feed algorithm for you. No coding required. And the long-term vision goes further — Bluesky wants users to eventually vibe-code entire social applications from scratch using nothing but natural language.
 
@@ -62,9 +62,9 @@ The AI interprets these fuzzy, intent-based descriptions and maps them to concre
 
 ## Leadership Context
 
-Attie's significance is underscored by who's building it. Jay Graber, Bluesky's co-founder and CEO since its inception, stepped down from the CEO role to lead this project. She now holds the title of Chief Innovation Officer, heading a new Exploration team focused on building new products for the Atmosphere ecosystem.
+Attie's significance is underscored by who's building it. [Jay Graber](https://www.cnbc.com/2026/03/09/bluesky-ceo-jay-graber-toni-schneider.html), Bluesky's co-founder and CEO since its inception, [stepped down from the CEO role](https://www.cnbc.com/2026/03/09/bluesky-ceo-jay-graber-toni-schneider.html) to lead this project. She now holds the title of [Chief Innovation Officer](https://www.cnbc.com/2026/03/09/bluesky-ceo-jay-graber-toni-schneider.html), heading a new Exploration team focused on building new products for the Atmosphere ecosystem.
 
-Toni Schneider stepped in as interim CEO to handle day-to-day operations while Graber focuses on Attie and the broader vision of AI-powered social applications.
+[Toni Schneider](https://www.cnbc.com/2026/03/09/bluesky-ceo-jay-graber-toni-schneider.html) stepped in as interim CEO to handle day-to-day operations while Graber focuses on Attie and the broader vision of AI-powered social applications.
 
 This is unusual. CEOs don't typically step down to lead a single product unless they believe it represents the future of the company. It signals that Bluesky sees AI-powered user customization — not just decentralization — as its core competitive advantage.
 
@@ -110,7 +110,7 @@ Attie occupies a space no one else is targeting: **user-controlled AI-generated 
 
 Attie launched as an invite-only beta at the ATmosphere conference on March 28, 2026. Conference attendees were the first testers. A public waitlist is open for broader access.
 
-Bluesky recently secured $100 million in funding, giving it over three years of financial runway — important context for a product that generates no direct revenue and depends on Anthropic's Claude API (which costs money per request).
+Bluesky [raised $100 million in Series B funding](https://bsky.social/about/blog/03-19-2026-series-b) — important context for a product that generates no direct revenue and depends on Anthropic's Claude API (which costs money per request).
 
 ## Honest Limitations
 

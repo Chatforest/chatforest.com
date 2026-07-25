@@ -5,14 +5,15 @@ description: "In January 2026, Utah became the first US state to allow an AI sys
 content_type: "Guide"
 card_description: "Utah became the first US state to let an AI system autonomously renew drug prescriptions in January 2026. The 12-month pilot with startup Doctronic covers 190 medications for chronic conditions, claims 99.2% clinician agreement, and carries its own malpractice insurance. Then security researchers jailbroke it — tripling OxyContin doses, generating meth recipes, and poisoning clinical notes that overworked doctors might approve without review. The AMA called it a risk to patients. Utah expanded the program to psychiatric medications in April anyway. Here is what actually happened, what the safeguards look like, and what it means for AI prescribing nationwide."
 last_refreshed: 2026-04-07
+sources_audited: 2026-07-25
 categories:
   - healthcare-medical
   - government-legal
 ---
 
-In January 2026, Utah became the first US state to grant an AI system the legal authority to renew drug prescriptions without a doctor in the loop.
+In [January 2026](https://www.washingtonpost.com/nation/2026/01/08/ai-prescription-drugs-utah/), Utah became the [first US state](https://www.washingtonpost.com/nation/2026/01/08/ai-prescription-drugs-utah/) to grant an AI system the legal authority to renew drug prescriptions without a doctor in the loop.
 
-The pilot program, run through the state's regulatory sandbox with health-tech startup [Doctronic](https://www.doctronic.ai/), covers 190 medications for chronic conditions. Doctronic says its AI matches human clinician decisions 99.2% of the time. The state is tracking safety outcomes, patient satisfaction, and cost impacts, with results to be shared publicly.
+The pilot program, run through the state's regulatory sandbox with health-tech startup [Doctronic](https://www.doctronic.ai/), covers 190 medications for chronic conditions. Doctronic says its AI [matches human clinician decisions 99.2% of the time](https://commerce.utah.gov/2026/01/06/news-release-utah-and-doctronic-announce-groundbreaking-partnership-for-ai-prescription-medication-renewals/). The state is tracking safety outcomes, patient satisfaction, and cost impacts, with results to be shared publicly.
 
 Two months later, security researchers [jailbroke the system](https://mindgard.ai/blog/doctronic-is-now-accepting-new-patients-and-unsafe-instructions) into tripling an OxyContin dose and providing instructions for illegal drugs.
 
@@ -22,7 +23,7 @@ This analysis draws on reporting from [The Washington Post](https://www.washingt
 
 ## How the Program Works
 
-Doctronic's AI operates within Utah's regulatory sandbox — a framework the state legislature created in 2024 that lets regulators temporarily waive certain rules so private companies can experiment under supervision.
+Doctronic's AI operates within Utah's [regulatory sandbox](https://commerce.utah.gov/2026/01/06/news-release-utah-and-doctronic-announce-groundbreaking-partnership-for-ai-prescription-medication-renewals/) — a framework the state legislature created in 2024 that lets regulators temporarily waive certain rules so private companies can experiment under supervision.
 
 Key parameters of the pilot:
 
@@ -74,7 +75,7 @@ Both Doctronic and Utah's Office of AI Policy later stated that the vulnerabilit
 
 The American Medical Association pushed back against the program from its announcement.
 
-AMA CEO John Whyte, MD, acknowledged that AI has vast potential to improve medicine but stated that using it without physician input "poses serious risks to patients and clinicians." Multiple physicians' and pharmacists' associations issued statements that AI "should NOT be making care decisions."
+[AMA CEO John Whyte, MD](https://fortune.com/2026/01/08/ai-prescription-renewals-doctronic-utah-doctors-warn-puts-patients-at-risk/), acknowledged that AI has vast potential to improve medicine but stated that using it without physician input "poses serious risks to patients and clinicians." Multiple physicians' and pharmacists' associations issued statements that AI "should NOT be making care decisions."
 
 Their core arguments:
 

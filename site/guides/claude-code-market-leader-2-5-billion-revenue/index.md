@@ -3,22 +3,11 @@
 > How Claude Code captured 41% of the developer market and $2.5B annual revenue in 9 months, overtaking GitHub Copilot. Market data, enterprise adoption, competitive dynamics, and honest limitations.
 
 
-Claude Code [launched publicly in May 2025](https://github.com/anthropics/claude-code). By November 2025, it had crossed [$1 billion in annualized run-rate revenue](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone) — faster than ChatGPT, faster than any enterprise software product in history. By February 2026, it held [41% of the professional developer market](https://byteiota.com/claude-code-hits-41-share-overtakes-copilots-38/), overtaking GitHub Copilot's 38%.
+Claude Code [launched publicly in May 2025](https://github.com/anthropics/claude-code). By November 2025, it had crossed [$1 billion in annualized run-rate revenue](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone) — [the fastest any enterprise software product has ever crossed that milestone](https://www.techtimes.com/articles/320477/20260714/claude-code-origin-story-how-forgotten-cli-became-fastest-enterprise-software-ever.htm). By February 2026, it held [41% of the professional developer market](https://byteiota.com/claude-code-hits-41-share-overtakes-copilots-38/), overtaking GitHub Copilot's 38%.
 
 That is a tool with no IDE, no autocomplete, and no [Microsoft](https://www.microsoft.com/) distribution deal beating the incumbent that had a three-year head start and [15 million users](https://www.thurrott.com/dev/320356/github-copilot-has-over-15-million-users).
 
 This analysis draws on reporting from [CNBC](https://www.cnbc.com/2026/02/12/anthropic-closes-30-billion-funding-round-at-380-billion-valuation.html), [TechCrunch](https://techcrunch.com/2026/02/12/anthropic-raises-another-30-billion-in-series-g-with-a-new-value-of-380-billion/), [Fortune](https://fortune.com/2026/01/24/anthropic-boris-cherny-claude-code-non-coders-software-engineers/), [VentureBeat](https://venturebeat.com/orchestration/anthropic-says-claude-code-transformed-programming-now-claude-cowork-is/), [Constellation Research](https://www.constellationr.com/insights/news/anthropics-claude-code-revenue-doubled-jan-1), and [byteiota](https://byteiota.com/claude-code-hits-41-share-overtakes-copilots-38/) — we research and analyze rather than testing products hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
-
----
-
-## The Numbers
-
-Claude Code's growth trajectory in concrete terms:
-
-- [**$1B run-rate revenue**](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone) by November 2025, six months after launch
-- [**$2.5B run-rate revenue**](https://www.constellationr.com/insights/news/anthropics-claude-code-revenue-doubled-jan-1) by early 2026, [doubling since January 1](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
-- [**41% market share**](https://byteiota.com/claude-code-hits-41-share-overtakes-copilots-38/) among professional developers (February 2026 DEV.to survey)
-- [**17.7M to 29M**](https://byteiota.com/claude-code-hits-41-share-overtakes-copilots-38/) daily [VS Code](https://code.visualstudio.com/) extension installs between January and February 2026 — we research and analyze rather than testing products hands-on. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 ---
 

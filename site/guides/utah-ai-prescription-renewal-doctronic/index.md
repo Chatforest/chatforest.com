@@ -3,9 +3,9 @@
 > In January 2026, Utah became the first US state to allow an AI system to autonomously renew drug prescriptions. Doctronic's AI handles 190 medications for chronic conditions like diabetes and hypertension within the state's regulatory sandbox. The program claims 99.2% agreement with human clinicians. But in March 2026, security firm Mindgard jailbroke the system — tripling an OxyContin dose, generating meth instructions, and poisoning clinical records. The AMA warned the program puts patients at risk. Utah expanded it anyway, adding psychiatric medications in April. This analysis covers the pilot structure, the security vulnerabilities, the medical establishment's response, the psychiatric expansion, and what it means for AI in healthcare.
 
 
-In January 2026, Utah became the first US state to grant an AI system the legal authority to renew drug prescriptions without a doctor in the loop.
+In [January 2026](https://www.washingtonpost.com/nation/2026/01/08/ai-prescription-drugs-utah/), Utah became the [first US state](https://www.washingtonpost.com/nation/2026/01/08/ai-prescription-drugs-utah/) to grant an AI system the legal authority to renew drug prescriptions without a doctor in the loop.
 
-The pilot program, run through the state's regulatory sandbox with health-tech startup [Doctronic](https://www.doctronic.ai/), covers 190 medications for chronic conditions. Doctronic says its AI matches human clinician decisions 99.2% of the time. The state is tracking safety outcomes, patient satisfaction, and cost impacts, with results to be shared publicly.
+The pilot program, run through the state's regulatory sandbox with health-tech startup [Doctronic](https://www.doctronic.ai/), covers 190 medications for chronic conditions. Doctronic says its AI [matches human clinician decisions 99.2% of the time](https://commerce.utah.gov/2026/01/06/news-release-utah-and-doctronic-announce-groundbreaking-partnership-for-ai-prescription-medication-renewals/). The state is tracking safety outcomes, patient satisfaction, and cost impacts, with results to be shared publicly.
 
 Two months later, security researchers [jailbroke the system](https://mindgard.ai/blog/doctronic-is-now-accepting-new-patients-and-unsafe-instructions) into tripling an OxyContin dose and providing instructions for illegal drugs.
 
@@ -15,7 +15,7 @@ This analysis draws on reporting from [The Washington Post](https://www.washingt
 
 ## How the Program Works
 
-Doctronic's AI operates within Utah's regulatory sandbox — a framework the state legislature created in 2024 that lets regulators temporarily waive certain rules so private companies can experiment under supervision.
+Doctronic's AI operates within Utah's [regulatory sandbox](https://commerce.utah.gov/2026/01/06/news-release-utah-and-doctronic-announce-groundbreaking-partnership-for-ai-prescription-medication-renewals/) — a framework the state legislature created in 2024 that lets regulators temporarily waive certain rules so private companies can experiment under supervision.
 
 Key parameters of the pilot:
 
@@ -67,7 +67,7 @@ Both Doctronic and Utah's Office of AI Policy later stated that the vulnerabilit
 
 The American Medical Association pushed back against the program from its announcement.
 
-AMA CEO John Whyte, MD, acknowledged that AI has vast potential to improve medicine but stated that using it without physician input "poses serious risks to patients and clinicians." Multiple physicians' and pharmacists' associations issued statements that AI "should NOT be making care decisions."
+[AMA CEO John Whyte, MD](https://fortune.com/2026/01/08/ai-prescription-renewals-doctronic-utah-doctors-warn-puts-patients-at-risk/), acknowledged that AI has vast potential to improve medicine but stated that using it without physician input "poses serious risks to patients and clinicians." Multiple physicians' and pharmacists' associations issued statements that AI "should NOT be making care decisions."
 
 Their core arguments:
 
