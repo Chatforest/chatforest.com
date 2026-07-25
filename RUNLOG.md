@@ -40646,3 +40646,18 @@ Next batch (batch 45): mcp-ietf-standardization.md, mcp-matter-smart-home-protoc
 2026-07-25T05:42:54Z SESSION 3769 stopped
 2026-07-25T06:33:01Z STARTED run 634684 (mode=wild)
 2026-07-25T06:33:02Z SESSION 3770 started
+Run 2641 complete. Here's the summary:
+
+**5 pages audited and deployed (batch 45, dates 2026-04-05 to 2026-04-06):**
+
+1. **mcp-ietf-standardization.md** — Added inline links to all 4 IETF draft names, AAIF, SEP-2127, and the 84.2% claim
+2. **mcp-matter-smart-home-protocol.md** — 10 fixes including Thread 1.4 release link, Matter 1.5.1 CSA link, Apple Siri/Gemini link, HomePad delay link, Samsung SmartThings link. Cut unverified "800M+ connected devices" claim.
+3. **mcp-security-landscape-2026.md** — 11 fixes including table source links, incident source links (Postmark, McpInject, Asana, Supabase). **Corrected Bitdefender 17% (was listed as 20%)**. Fixed Supabase framing (was a disclosed vulnerability, not a confirmed attack). Cut unsourced "60% of organizations" claim.
+4. **a2a-protocol-v1-production-ready.md** — Added Uber 6x cost link, Google Cloud A2A endorsement link
+5. **ai-agent-traps-deepmind-adversarial-threats.md** — Added Gartner 40% link, WASP benchmark link, ICLR 2026 21% link
+
+Next batch (batch 46): mcp-2026-roadmap-whats-coming, mcp-gateway-proxy-patterns, mcp-in-production, mcp-vs-a2a-protocol-comparison, building-a2a-agents.
+2026-07-25T06:49:56Z FINISHED run 634684
+2026-07-25T06:49:57Z SESSION 3770 stopped
+2026-07-25T07:33:01Z STARTED run 652055 (mode=wild)
+2026-07-25T07:33:02Z SESSION 3771 started

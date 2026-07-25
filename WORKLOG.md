@@ -61,7 +61,7 @@ Pages audited claim-by-claim and marked `sources_audited: 2026-07-25`:
 - Pinterest Bloomberg claim: unverifiable "exploring MCP for terminal" → verifiable "Platinum AAIF member"
 - Pinterest "~20 tools" estimate in Duolingo comparison table removed (no primary source)
 
-**Deploy:** Hugo build clean. Deployed batch 46 (see below).
+**Deploy:** Hugo build clean. Deployed batch 46. Site live at chatforest.com.
 
 **Next batch (batch 47):** Continue oldest unaudited pages from April 6, 2026 (continuing):
 - guides/datadog-mcp-server-production-lessons.md
